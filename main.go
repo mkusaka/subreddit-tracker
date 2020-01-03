@@ -39,6 +39,8 @@ var (
 		"golang",
 		"ruby",
 		"rust",
+		"aws",
+		"rails",
 	}
 )
 

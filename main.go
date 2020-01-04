@@ -104,7 +104,7 @@ type PostData struct {
 	Selftext  string
 	Permalink string
 	Url       string
-	// Created   string
+	Created   int
 }
 
 type Post struct {
@@ -135,6 +135,7 @@ func generateMarkDown(posts []Post, subreddit string, depth int, withBody bool) 
 		data := post.Data
 		parmalink := baseURL + data.Permalink
 		// TODO: show created time
+
 		md += strings.Repeat("#", depth+1) + " [" + strconv.Itoa(idx+1) + "][" + data.Title + "](" + parmalink + ")\n" + "- url: " + data.Url + "\n"
 		if withBody {
 			md += "---\n" + data.Selftext + "\n"
@@ -181,7 +182,7 @@ func StoreAllMarkdownFromJSON() {
 }
 
 func main() {
-	FetchAllJSON()
+	// FetchAllJSON()
 	StoreEachSubredditMarkdownFromJSON()
 	StoreAllMarkdownFromJSON()
 }

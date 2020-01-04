@@ -33,7 +33,11 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2019/12/31/this-week-in-rust-319/
 ---
 
-## [3][Announcing AeroRust - The Unofficial Working Group For Rust in Aerospace](https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/)
+## [3][Reducing support for 32-bit Apple targets](https://www.reddit.com/r/rust/comments/ejk5s1/reducing_support_for_32bit_apple_targets/)
+- url: https://blog.rust-lang.org/2020/01/03/reducing-support-for-32-bit-apple-targets.html
+---
+
+## [4][Announcing AeroRust - The Unofficial Working Group For Rust in Aerospace](https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/)
 - url: https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/
 ---
 Hi Folks,
@@ -49,93 +53,82 @@ If you are interested, come join us:
 * Github: [https://github.com/AeroRust/Welcome](https://github.com/AeroRust/Welcome)
 * Discord: [https://discord.gg/RXNsMXc](https://discord.gg/RXNsMXc)
 * Resources: [https://github.com/AeroRust/awesome-space](https://github.com/AeroRust/awesome-space)
-## [4][Nvim-rs: Rust library for neovim clients](https://www.reddit.com/r/rust/comments/ejfceo/nvimrs_rust_library_for_neovim_clients/)
+## [5][Alex Ionescu (CrowdStrike) hires Rust developers](https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/)
+- url: https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/
+---
+I thought you might be interested in this. Alex Ionescu is a legend in the Windows internals world, a co-author of the Windows Internals book, a contributor to the ReactOS open source Windows (wannabe) alternative, and a speaker at well known conferences. And currently a Chief Architect at Crowdstrike. It turned out to be quite a praise :) but that's because I really admire him!  
+[https://twitter.com/aionescu/status/1213151075336888325](https://twitter.com/aionescu/status/1213151075336888325)
+## [6][Code Golf now supports rust :-)](https://www.reddit.com/r/rust/comments/ejk773/code_golf_now_supports_rust/)
+- url: https://code-golf.io
+---
+
+## [7][Announcing Razor, a model-finder for first-order theories](https://www.reddit.com/r/rust/comments/ejld0s/announcing_razor_a_modelfinder_for_firstorder/)
+- url: https://www.reddit.com/r/rust/comments/ejld0s/announcing_razor_a_modelfinder_for_firstorder/
+---
+I’m so excited to have published my first Rust crates and would love feedback:
+
+razor-fol: a library for parsing and syntactic manipulation of first-order (logic) formulae.
+razor-chase: a library for constructing models for first-order theories.
+razor: a model-finding tool for first-order theories.
+
+Here is a link to the GitHub repo: https://github.com/salmans/rusty-razor
+
+The project is still in its infancy but I’ve had a blast experimenting with Rust. The theorem-proving community cares about correctness and speed, so I’m expecting to see similar project in Rust in the near future.
+
+Any comment, feedback, or suggestion is much appreciated!
+## [8][Nvim-rs: Rust library for neovim clients](https://www.reddit.com/r/rust/comments/ejfceo/nvimrs_rust_library_for_neovim_clients/)
 - url: /r/neovim/comments/eiy5if/nvimrs_rust_library_for_neovim_clients/
 ---
 
-## [5][Updating Pernosco to Rust futures 0.3](https://www.reddit.com/r/rust/comments/ejd1wg/updating_pernosco_to_rust_futures_03/)
-- url: https://robert.ocallahan.org/2020/01/updating-pernosco-to-rust-futures-03.html?m=1
+## [9][Await-ing within trait function](https://www.reddit.com/r/rust/comments/ejpx88/awaiting_within_trait_function/)
+- url: https://www.reddit.com/r/rust/comments/ejpx88/awaiting_within_trait_function/
 ---
+Given I have a trait function that needs to return a `futures::future::Either`, and must do an `await` to read a Stream, how can I `await` within the function? I've tried using `async move {...}` but I cannot get the return type right. This is a simplifed version of what I am trying:
+```
+async move {
+            let body_result: Result&lt;BytesMut, Error&gt; = get_request_body(&amp;mut req).await;
+            match body_result {
+                Ok(bytes) =&gt; Either::Left(svc.call(req)),
+                Err(_) =&gt; Either::Right(ok(req.into_response(
+                    HttpResponse::BadRequest()
+                        .body("No payload found.")
+                        .into_body(),
+                ))),
+            }
+        }
+        .boxed_local()
+```
+For the sake of this example it doesn't do anything with the `BytesMut`, but my problem is the return type. I'd like it to be `LocalBoxFuture&lt;'static, Either&lt;S::Future, Ready&lt;Result&lt;Self::Response, Self::Error&gt;&gt;&gt;&gt;` but this is the error I get:
+```
+  --&gt; src\custom_middleware\auth.rs:79:12
+   |
+79 | impl&lt;S, B&gt; Service for AuthenticatorMiddleware&lt;S&gt;
+   |            ^^^^^^^ expected enum `futures_util::future::either::Either`, found enum `std::result::Result`
+   |
+   = note: expected type `futures_util::future::either::Either&lt;&lt;S as actix_service::Service&gt;::Future, futures_util::future::ready::Ready&lt;std::result::Result&lt;actix_web::service::ServiceResponse&lt;B&gt;, actix_http::error::Error&gt;&gt;&gt;`
 
-## [6][Update on const generics progress](https://www.reddit.com/r/rust/comments/ej10bh/update_on_const_generics_progress/)
-- url: https://github.com/rust-lang/rust/issues/44580#issuecomment-570191702
+```
+
+Not sure how I can get there, though. Any suggestions?
+## [10][Announcing Proq – Idiomatic Async Prometheus Query (PromQL) Client for Rust](https://www.reddit.com/r/rust/comments/ejjx9b/announcing_proq_idiomatic_async_prometheus_query/)
+- url: https://www.reddit.com/r/rust/comments/ejjx9b/announcing_proq_idiomatic_async_prometheus_query/
 ---
+[Documentation](https://docs.rs/proq/) | [GitHub Repo](https://github.com/vertexclique/proq) | [Crates.io](https://crates.io/crates/proq)
 
-## [7][Podcast: Using Rust for Machine Learning in Search at Etsy](https://www.reddit.com/r/rust/comments/ej7fqb/podcast_using_rust_for_machine_learning_in_search/)
-- url: https://changelog.com/practicalai/70
----
+We are happy to announce Proq. An idiomatic Async Prometheus Query (PromQL) Client for Rust.
 
-## [8][New to rust and loving it. Just published my first crate and would love feedback!](https://www.reddit.com/r/rust/comments/ejevh1/new_to_rust_and_loving_it_just_published_my_first/)
+This crate provides an async client for Prometheus Query API. That will enable you to query existing Prometheus instances for data points. It is executor independent and you can use it with any executor.
+
+It has a built-in server-side timeout and flexible crate API. Check it out! Spread the word!
+## [11][New to rust and loving it. Just published my first crate and would love feedback!](https://www.reddit.com/r/rust/comments/ejevh1/new_to_rust_and_loving_it_just_published_my_first/)
 - url: https://github.com/M-J-Hooper/playing-cards/
 ---
 
-## [9][I'm not feeling the async pressure [the importance of supporting backpressure in async ecosystems]](https://www.reddit.com/r/rust/comments/eiz65y/im_not_feeling_the_async_pressure_the_importance/)
-- url: https://lucumr.pocoo.org/2020/1/1/async-pressure/
+## [12][Any good Rust 3d engine compatible with WebAssembly?](https://www.reddit.com/r/rust/comments/ejgx3q/any_good_rust_3d_engine_compatible_with/)
+- url: https://www.reddit.com/r/rust/comments/ejgx3q/any_good_rust_3d_engine_compatible_with/
 ---
+Hi all,
 
-## [10][Adding and Subtracting *](https://www.reddit.com/r/rust/comments/ejb02a/adding_and_subtracting/)
-- url: https://www.reddit.com/r/rust/comments/ejb02a/adding_and_subtracting/
----
-Full disclosure: this post is probably just as much about my not understanding C++ as it is not understanding Rust. I am porting a C++ function with the following structure: 
+I did not play with Rust for quite a bit of time and I would like to play with 3D and Rust (only in WebAssembly for now). So if some of you already tried this I would like some feedback on the existing 3D engines available in pure Rust.
 
-```
-foo(const uint8_t* src, uint8_t* dst) {
-
-int m = 2;
-uint8 n = 3; 
-
-loop {
-    // change src, dst according incrementing variables not shown 
-    // as examples
-    // src += m
-    // dst += n
-}
-
-
-memcpy(src, dst,some_num);
-
-}
-```
-
-In Rust, I do the following: 
-
-```Rust
-
-fn foo( src: *mut u8, dst: *mut u8) {
-
-// dummy variables for addition below
-let n: u8; 
-let m: u8; 
-
-loop {
-    // increment/decrement src, dst according to loop variables not shown 
-    // as examples
-    // src += m
-    // dst += n
-}
-std::ptr::copy_nonoverlapping(src, dst, some_num)
-
-}
-```
-
-When I try to src/dst += in the Rust for loop, I get type errors (some variation of cannot cast between *-ptr and u8). Cannot chane type signature since those types are needed in the calls to the copy fns. This means I do not know how to +/- when using * int type in Rust. Anyone able to help? If this is too much of a beginner question, happy to move to the appropriate thread.
-## [11][Announcing postgres-query: write and execute SQL queries with ease!](https://www.reddit.com/r/rust/comments/ej3thz/announcing_postgresquery_write_and_execute_sql/)
-- url: https://github.com/nolanderc/rust-postgres-query
----
-
-## [12][Best error-handling practices - Jan 2020](https://www.reddit.com/r/rust/comments/ej67aa/best_errorhandling_practices_jan_2020/)
-- url: https://www.reddit.com/r/rust/comments/ej67aa/best_errorhandling_practices_jan_2020/
----
-I found this great survey of error-handling methods here:
-https://blog.yoshuawuyts.com/error-handling-survey/
-
-Is there any consensus on best (currently supported) error-handling libraries / practices for:
-
-1) Applications
-2) Libraries
-
-?
-
-At the very least, are there any approaches which are now wholly superseded by subsequent solutions?
-
-I recognize this is probably a bit controversial, but it’s also getting a bit overwhelming imho.
+So far, [Kiss3D](https://github.com/sebcrozet/kiss3d) seems the one that tick all the check for me.

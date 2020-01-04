@@ -79,83 +79,146 @@ Hi all I'm new here but I wanted to share with you my first proper react app -&g
 If is free to use, vacation days (days off work) tracker that allows you to share your calendar with other people and see the public holidays for a specific country (for now it only works for Bulgaria and Netherlands but more are coming).
 
 It would be great if you can check it, play with it, leave some feedback and if you like it share it with a fried :)
-## [4][Authentication with Flask, React, and Docker (updated)](https://www.reddit.com/r/reactjs/comments/ejfiho/authentication_with_flask_react_and_docker_updated/)
+## [4][Excalidraw: Sketch Diagramming app in React + TypeScript + Roughjs (by Vjeux, OG Core team member)](https://www.reddit.com/r/reactjs/comments/ejno4i/excalidraw_sketch_diagramming_app_in_react/)
+- url: https://github.com/excalidraw/excalidraw
+---
+
+## [5][[REPOST] Easily add responsive styles using objects such as {xxl: "color: red;"} with lovelyui, based on @emotion/core](https://www.reddit.com/r/reactjs/comments/ejo2r3/repost_easily_add_responsive_styles_using_objects/)
+- url: https://github.com/flakesrc/lovelyui
+---
+
+## [6][I've created a simple react state manager, it works really well in my current projects, I need your opinions.](https://www.reddit.com/r/reactjs/comments/ejmcyo/ive_created_a_simple_react_state_manager_it_works/)
+- url: https://www.reddit.com/r/reactjs/comments/ejmcyo/ive_created_a_simple_react_state_manager_it_works/
+---
+[**simple-react-state**](https://github.com/yezyilomo/simple-react-state) is a react state manager based on react hooks and react-redux which  makes working with both local and global state painless, it  also works pretty well with nested states. With [**simple-react-state**](https://github.com/yezyilomo/simple-react-state) you can manage state in your react application with only 4 utilities, `Provider`, `configureStore`, `useLocalState` and `useGlobalState` that's all you need. Here is the link to the project [https://github.com/yezyilomo/simple-react-state](https://github.com/yezyilomo/simple-react-state), Your opinions will be appreciated, Thank you.
+## [7][Authentication with Flask, React, and Docker (updated)](https://www.reddit.com/r/reactjs/comments/ejfiho/authentication_with_flask_react_and_docker_updated/)
 - url: https://testdriven.io/courses/auth-flask-react/
 ---
 
-## [5][I created 'Spy Instagram' web app with Reactjs + Nodejs with unofficial instagram API.](https://www.reddit.com/r/reactjs/comments/ej5uxt/i_created_spy_instagram_web_app_with_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/ej5uxt/i_created_spy_instagram_web_app_with_reactjs/
+## [8][What other tests can I run on this functional component?](https://www.reddit.com/r/reactjs/comments/ejsjxc/what_other_tests_can_i_run_on_this_functional/)
+- url: https://www.reddit.com/r/reactjs/comments/ejsjxc/what_other_tests_can_i_run_on_this_functional/
 ---
-[https://spy-insta.com](https://spy-insta.com)
+	import React from 'react';
+	import ReactDOM from 'react-dom';
+	import App from './App';
+	import { createStore } from 'redux';
+	import { Provider } from 'react-redux';
+	import rootReducer from './reducers/';
+	import { shallow, mount } from 'enzyme';
+	import { configure } from 'enzyme';
+	import Adapter from 'enzyme-adapter-react-16';
 
-It's a website that allows users to spy on Instagram stories and highlights anonymously. (Originally, only logged-in users can see the stories which will leave their user names on the story owner's seen by list)
+	configure({ adapter: new Adapter() });
 
-It's created with Reactjs for the front-ed and Nodejs for the server side.
 
-Since Instagram doesn't provide an official API that provides Instagram stories, I used unofficial Instagram API instead.
+	const store = createStore(rootReducer);
+	const shallowContainer = shallow(
+	  &lt;Provider store={store}&gt;
+		&lt;App /&gt;
+	  &lt;/Provider&gt;);
+	const container = mount(
+	  &lt;Provider store={store}&gt;
+		&lt;App /&gt;
+	  &lt;/Provider&gt;
+	);
 
-Take a look those who are interested!
-## [6][🔥A collection of beautiful and (hopefully) useful React hooks to speed-up your components and hooks development](https://www.reddit.com/r/reactjs/comments/eiz7ru/a_collection_of_beautiful_and_hopefully_useful/)
-- url: https://www.reddit.com/r/reactjs/comments/eiz7ru/a_collection_of_beautiful_and_hopefully_useful/
+	describe('&lt;Login /&gt; with no props', () =&gt; {
+
+	  it('renders without crashing', () =&gt; {
+		const div = document.createElement('div');
+		ReactDOM.render(
+		  &lt;Provider store={store}&gt;
+			&lt;App /&gt;
+		  &lt;/Provider&gt;,
+		  div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	  });
+
+	  it('should match the snapshot', () =&gt; {
+		expect(shallowContainer.html()).toMatchSnapshot();
+	  });
+
+	  it('should have 3 h1 element', () =&gt; {
+		expect(container.find('h1').length).toEqual(3);
+	  });
+
+	  it('should have proper props for the first h1', () =&gt; {
+		expect(container.find('div.w-full&gt;h1').props()).toEqual({
+		  children: 'My Tasks',
+		  className: 'text-2xl font-bold w-64'
+		});
+	  });
+
+
+	});
+
+Ran a bunch of tests on App.js and I am wondering if there are any other test I can run on it. I am pretty sure there are tons and tons, but I would like to know if there's any test worth doing.
+
+https://github.com/RitikPatni/react-todo/tree/master/src
+## [9][how to access local create-react-app from another computer?](https://www.reddit.com/r/reactjs/comments/ejowau/how_to_access_local_createreactapp_from_another/)
+- url: https://www.reddit.com/r/reactjs/comments/ejowau/how_to_access_local_createreactapp_from_another/
 ---
-Hello everyone,
+i'm an amateur and this is probably a dumb question, but i am trying to access my locally created 'create-react-app' from another computer on the same Wifi. i looked at this stack overflow question which asked a similar thing: 
 
-few days ago I've published a React hooks library on github &amp; npm hoping it will be useful to others as it is for me.I've based few other components on this library so far and I'm willing to share it in the best possible open source spirit.
+[https://stackoverflow.com/questions/47412363/how-to-open-a-create-react-app-from-another-computer-connected-to-the-same-netwo](https://stackoverflow.com/questions/47412363/how-to-open-a-create-react-app-from-another-computer-connected-to-the-same-netwo) 
 
-Recently I've updated the documentation (to clarify the reason why I've created this one and I'm not using other hook libraries) and added few more hooks.
+but when i run  HOST=0.0.0.0 npm run start, i get an error message saying: 
 
-Please feel free to comment, fork, share, star, whatever :)
+"'HOST' is not recognized as an internal or external command, operable program or batch file."
 
-Github: [https://github.com/antonioru/beautiful-react-hooks](https://github.com/antonioru/beautiful-react-hooks)
-## [7][Mentor React Developers into Contributing to Open Source? #UpSkillie](https://www.reddit.com/r/reactjs/comments/ejfktu/mentor_react_developers_into_contributing_to_open/)
-- url: https://www.reddit.com/r/reactjs/comments/ejfktu/mentor_react_developers_into_contributing_to_open/
----
-Hi all, We at UpSkillie.com train developers into becoming better developers for remote work. You can read more about us at
-
-As a part of our course, we run a program to encourage developers to contribute to open-source projects. So we are essentially looking for some good first-timer projects or maintainers for new projects where our students can contribute to.
-
-Searching for first-times-issues wasn't of much help as all the open issues are either taken or insignificant in adding any value.
-
-So if you are looking for spare hands to contribute to your open source project and that could be a good learning experience. Preferably the students should be able to deliver something in less than a week.
-
-You can read more about us at https://medium.com/upskillie/what-we-do-at-upskillie-bac826d6550a
-## [8][How to deal with failure in Redux's connect... without affecting performances or losing your mind.](https://www.reddit.com/r/reactjs/comments/ejfjgt/how_to_deal_with_failure_in_reduxs_connect/)
-- url: https://medium.com/iadvize-engineering/how-to-deal-with-failure-in-reduxs-connect-without-affecting-performances-or-losing-your-mind-621929d0d494
----
-
-## [9][How to upload files in React with NodeJS &amp; Express](https://www.reddit.com/r/reactjs/comments/ejcvsu/how_to_upload_files_in_react_with_nodejs_express/)
-- url: https://reactgo.com/react-file-upload/
----
-
-## [10][MacOS Notes app clone made with React](https://www.reddit.com/r/reactjs/comments/ej9fhv/macos_notes_app_clone_made_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ej9fhv/macos_notes_app_clone_made_with_react/
----
-Hello everyone. I have just returned to React after few months that I spent working around with Vue and I created this little app as warm up before facing some more complex topics.
-
-Its is simple clone of MacOS's Note app. Of course comparing to native app some features are missed there.
-
-Live: [https://hubert-wyszynski.github.io/notes-app/](https://hubert-wyszynski.github.io/notes-app/)
-
-Repo: [https://github.com/hubert-wyszynski/notes-app](https://github.com/hubert-wyszynski/notes-app)
-
-If you got any advice and comments, please let me know:)
-## [11][I'm having hard time understanding the difference between Server-Side rendering and Client-Side rendering. Could someone please explain ?](https://www.reddit.com/r/reactjs/comments/ejfpyr/im_having_hard_time_understanding_the_difference/)
-- url: https://www.reddit.com/r/reactjs/comments/ejfpyr/im_having_hard_time_understanding_the_difference/
----
-I've heard that SSR improves performance, SEO etc, etc but I'd like to hear what the terms actually mean ? An example would be good. Thanks.
-## [12][My first Chorme extension using react](https://www.reddit.com/r/reactjs/comments/ej987j/my_first_chorme_extension_using_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ej987j/my_first_chorme_extension_using_react/
----
-I created this extension because i love makinig notes, especially when i study online there are many content rich websites, it helps me to learn when i jot down some key points with my understanding. Initially, i found an extension called Note Anywhere, but it's a bit difficult to format text nicely, then i thought i could create a similar one using react and markdown! If you are interested, please try it out!
-
-[https://chrome.google.com/webstore/detail/markdown-sticky-notes/aiakblgmlabokilgljkglggnpflljdgp](https://chrome.google.com/webstore/detail/markdown-sticky-notes/aiakblgmlabokilgljkglggnpflljdgp)
-
-It's draggable, resizeble, autosave on typing and with an options page to manage notes!
+how do i get past this, and is there any other way of testing my create-react-app on another computer other than my local one? 
 
 &amp;#x200B;
 
-Right now, there are a few problems with it, the popover has conflicts with websites that use material-ui Paper, i am planning to move them to options page or reimplement them without material-ui.
+thanks a lot everyone!
+## [10][FlatList equivalent ReactJS](https://www.reddit.com/r/reactjs/comments/ejr53z/flatlist_equivalent_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/ejr53z/flatlist_equivalent_reactjs/
+---
+Any suggestions on simple light weight library that has a component similar to Flatlist or ScrollView in React Native? I have to render a list in a small pop up box on a SPA.
+## [11][My first React app that does a useful thing! It's a very, very simple mortgage calculator.](https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/)
+- url: https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/
+---
+Hi! I'm working on a career change to coding and I've been learning React, among other things. I made this mortgage calculator and I wanted to show it off, simple as it is.
 
-[https://github.com/qiweiii/markdown-sticky-notes](https://github.com/qiweiii/markdown-sticky-notes)
+I used test-driven development principles with Jest and Enzyme to write the logic and interface, and then tried to get the app as responsive as I could figure out with CSS.
 
-It's open sourced, if have any advice or issues, please let me know!
+I have some ideas for further enhancements...I mean, I could hardly sneeze without enhancing it because it's so bare-bones simple. One thing I'd like to do is eventually port it to React Native and Electron. But I'm interested in other ideas.
+
+Also, I'd appreciate any feedback on how close this is to a viable portfolio project. Thanks for taking a look and for any advice!
+
+[Here's the app!](https://mortgagecalculator.mikeshecket.com)
+
+[And here's the source!](https://github.com/mshecket/mortgage-calculator)
+## [12][Rendering a React component on the server to take a screenshot of it](https://www.reddit.com/r/reactjs/comments/ejmy0x/rendering_a_react_component_on_the_server_to_take/)
+- url: https://www.reddit.com/r/reactjs/comments/ejmy0x/rendering_a_react_component_on_the_server_to_take/
+---
+Hi all! I originally created a GitHub issue on the facebook/react repo for this question, but they suggested I ask this question here.
+
+So my React application has a list of to do lists like this:
+
+https://user-images.githubusercontent.com/12554095/71749785-47206c00-2e2b-11ea-8d0c-5a82ceba1b05.png
+
+\&gt; Replace the Figma canvas preview images with todo lists above.
+
+&amp;#x200B;
+
+In the list of todo lists, I'd like to include a preview of each list as well as its name.
+
+&amp;#x200B;
+
+Here's what I thought of to achieve this:
+
+\- Whenever a todo list is updated, run a AWS Lambda (Node.js environment) job which generates HTML for the todo list server-side (using \`ReactDOMServer.renderStaticMarkup\`.
+
+\- Then, serve that HTML locally, visit the page using puppeteer, and take a screenshot of the page
+
+&amp;#x200B;
+
+However, this seems like a lot of work. Is there an easier way of achieving this? Is there anything in the steps above that won't work?
+
+I've looked at \`repng\` \[1\] so far but it hasn't worked for the components I tested it with.
+
+&amp;#x200B;
+
+\[1\] [https://github.com/jxnblk/repng](https://github.com/jxnblk/repng)

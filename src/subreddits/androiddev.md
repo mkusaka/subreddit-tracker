@@ -25,85 +25,73 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I have created a tutorial for Recycler View Animation using Custom Layout Manager in Kotlin.](https://www.reddit.com/r/androiddev/comments/ejd9m6/i_have_created_a_tutorial_for_recycler_view/)
+## [3][Kotlinx Json vs Gson - a short article about Kotlin oriented cross-platform reflectionless serialization library from JetBrains.](https://www.reddit.com/r/androiddev/comments/ejjroe/kotlinx_json_vs_gson_a_short_article_about_kotlin/)
+- url: https://medium.com/@jurajkunier/kotlinx-json-vs-gson-4ba24a21bd73
+---
+
+## [4][I have created a tutorial for Recycler View Animation using Custom Layout Manager in Kotlin.](https://www.reddit.com/r/androiddev/comments/ejd9m6/i_have_created_a_tutorial_for_recycler_view/)
 - url: https://youtu.be/7gnBZ_fitdE
 ---
 
-## [4][Is it normal that mobile games tend to be performing on one platform?](https://www.reddit.com/r/androiddev/comments/ejdb9z/is_it_normal_that_mobile_games_tend_to_be/)
-- url: https://www.reddit.com/r/androiddev/comments/ejdb9z/is_it_normal_that_mobile_games_tend_to_be/
----
-Hey fellow android devs,
-
-I have a weird problem. I released two games of mine quite a while ago the first one was [Flat Fat Cat Bounce](https://flatfatcat.com) a physic based cat puzzle. I released it on PlayStore and AppStore at almost the same time with some what the same store descriptions, trailer, images etc. Today I have about 81% Android and 19% iOS for that game so far so good.
-
-But now the weird part I made a second game [Space Unicorns](https://spaceunicorns.de/), which is actually just a reskinning of Flat Fat Cat Bounce, instead of having cats we have unicorns with the same mechanics and game play. I also released that one on PlayStore and AppStore and the weird thing is for this game I have 91,2% iOS and only 8,8% Android.
-
-I can't really explain why that is so different and if it is just random or what ever. May be you encountered something similiar? Or is just normal?
-## [5][What are some good projects in Android studio i should do in order to get better and attract job offers/internships?](https://www.reddit.com/r/androiddev/comments/ejbp6l/what_are_some_good_projects_in_android_studio_i/)
-- url: https://www.reddit.com/r/androiddev/comments/ejbp6l/what_are_some_good_projects_in_android_studio_i/
+## [5][Animation with Flutter: creating the Medium clap animation](https://www.reddit.com/r/androiddev/comments/ejs9re/animation_with_flutter_creating_the_medium_clap/)
+- url: https://proandroiddev.com/flutter-animation-creating-mediums-clap-animation-in-flutter-3168f047421e
 ---
 
-## [6][Android studio image filters](https://www.reddit.com/r/androiddev/comments/ejgljq/android_studio_image_filters/)
-- url: https://www.reddit.com/r/androiddev/comments/ejgljq/android_studio_image_filters/
----
- 
-
-I tried some libraries for image Filters, but all of them caused my app to lag and/or crash, how can I use filters which don't lag? I already tried multi thread but that was just semi good working, eg. the app crashed on some pictures, but I couldn't find why these pictures caused the app to crash, thanks in advance for any Help :)
-
-EDIT: I tried this library [https://github.com/mukeshsolanki/photofilter](https://github.com/mukeshsolanki/photofilter) and this is also currently the library I use in my code, there isnt really a stacktrace, it just times out, its an issue with the memory, this is the code I currently use:
-
-    https://throwbin.io/K1vtEop
-
-Then a button starts the thread, this works good for small pictures, but when I use photos from the actuall camera, which takes larger pictures, it wont filter anymore, so how can I achieve that also photos can be used?
-## [7][Considering to disable app serving in India](https://www.reddit.com/r/androiddev/comments/ejcfwn/considering_to_disable_app_serving_in_india/)
-- url: https://www.reddit.com/r/androiddev/comments/ejcfwn/considering_to_disable_app_serving_in_india/
----
-So here is the deal, our app rating has been steady declining for a while now, from 4.2 to 3.9 atm, obviously this is bad. So we went to analyze our reviews and installs and earnings.  
-
-
-Turns out, 922 out of 957 1 star reviews are from India or Pakistani, but at the same time, 36% of installs are from India.  
-Our eCPM in India is 0.87$(pathetic) so we are considering to disable app serving in India.  
-
-
-Earnings are not that significant, despite the huge number of installs coming from India due to low eCPM.  
-Those 1 star reviews are not constructive or helpful, most of them go by: "Not good", "Very Bad","I didn't like"   
-But on the other hand, reviews from other countries are positive and well liked. There are some negative reviews but they are actual reviews saying what they don't like about app and they look like they are written by someone with IQ higher than room temperature. 
-
-Pros:  
-Less negative reviews, more actual positive and constructive reviews  
-Less people who demand that our app bring them coffee in bed  
-Less low quality traffic and installs  
-Cons:  
-Less overall installs  
-Minor revenue loss which we hope to regain once rating starts increasing  
-
-
-So what do you think? Do you think that this is a smart move? We are afraid that if we unlist India, it  will affect our ranking in other countries.
-## [8][Implementing your first Android lint rule](https://www.reddit.com/r/androiddev/comments/eizgcw/implementing_your_first_android_lint_rule/)
-- url: https://medium.com/@fabiocarballo/implementing-your-first-android-lint-rule-6e572383b292
+## [6][Emulator 29.3.4 Canary](https://www.reddit.com/r/androiddev/comments/ejptr8/emulator_2934_canary/)
+- url: https://androidstudio.googleblog.com/2020/01/emulator-2934-canary.html
 ---
 
-## [9][Emulator 29.3.3 Canary](https://www.reddit.com/r/androiddev/comments/ej8d7e/emulator_2933_canary/)
-- url: https://androidstudio.googleblog.com/2020/01/emulator-2933-canary.html
+## [7][What are your thoughts on MoPub?](https://www.reddit.com/r/androiddev/comments/ejjntl/what_are_your_thoughts_on_mopub/)
+- url: https://www.reddit.com/r/androiddev/comments/ejjntl/what_are_your_thoughts_on_mopub/
 ---
+Do you have any experience with them? I am looking for a serious ad network for mediation but for some reason they seem shady, and something about them just doesn't feel right. From their policy to how they collect and manage user data.  
 
-## [10][Want to buy cheap installs for an app through Google Ads, how much should it cost?](https://www.reddit.com/r/androiddev/comments/ejfakg/want_to_buy_cheap_installs_for_an_app_through/)
-- url: https://www.reddit.com/r/androiddev/comments/ejfakg/want_to_buy_cheap_installs_for_an_app_through/
+
+Have you worked with MoPub? What are your thoughts on MoPub?
+## [8][GG Console - Why the number of active users lower than new users (three times)?](https://www.reddit.com/r/androiddev/comments/ejqit5/gg_console_why_the_number_of_active_users_lower/)
+- url: https://www.reddit.com/r/androiddev/comments/ejqit5/gg_console_why_the_number_of_active_users_lower/
 ---
-I'm planning on launching a new app, and want to buy cheap installs from countries like India from Google Ads. How much should I spend? How much should buying 10K or 100K downloads cost? Are there any other cheaper services where I can do that? On Google ads, what should CPI/CPC be?
+Hi there,  I'm the developer of a booking app call TripU. We just started to run user acquisition campaigns and racked up millions of downloads in five-month. However, through Google Console, I found some risk statics that the number of active users is to low compared to new acquisition users. For example, I started on Monday and have 1000 active users, on Tuesday I get 1000 new user acquisitions but new number of active users just be 1200. Assume our retention = 0, so at least I must have \~ 2000 active users huh?
 
-My plan is getting the app on trending in the initial days after launch, and then marketing for high quality traffic.
+Active users in GG console mean ***"The number of users who have your app installed on at least one device that was active in the preceding 30 days"*** so I wonder that how can someone install my app without opening their device? It could there are some IDs installed my app on multiple devices. But it can't be too much like that.
 
-Also, is the indexing bug gone?
-## [11][I need help you guys](https://www.reddit.com/r/androiddev/comments/ejf9sa/i_need_help_you_guys/)
-- url: https://www.reddit.com/r/androiddev/comments/ejf9sa/i_need_help_you_guys/
+ So my question is: did you ever see a similar trend for one of your apps? So many thanks, guys.
+## [9][Experienced web developer looking to dip his toes into Android development](https://www.reddit.com/r/androiddev/comments/ejpvxk/experienced_web_developer_looking_to_dip_his_toes/)
+- url: https://www.reddit.com/r/androiddev/comments/ejpvxk/experienced_web_developer_looking_to_dip_his_toes/
 ---
-Recently i started developing an app for play store, which is basically a game. And i wanted to upload it to the play store. Now it turns out you need to pay 25 dollars for a developer account. So, i asked my parents to buy the developer account for me but theu refused to do so. they told me to study and not waste time on making apps. im 15 btw and really interested in app development. Ive written this post to ask for help from you guys, does anyone have a developer account which could be lent to me or something? Or can i publish my app through your account? Thanks in advance.
-## [12][Website for app translation](https://www.reddit.com/r/androiddev/comments/ejcr7h/website_for_app_translation/)
-- url: https://www.reddit.com/r/androiddev/comments/ejcr7h/website_for_app_translation/
+First off, thanks for the help in advance, and I know this has probably been asked a 1000 times in different ways and I have looked at some of the other posts including this one ([https://www.reddit.com/r/androiddev/comments/dqv8s6/learning\_android\_dev/](https://www.reddit.com/r/androiddev/comments/dqv8s6/learning_android_dev/)), but I don't know enough to know what I don't know, lol.  So I thought I ask you all for help.
+
+I'm an experienced web dev and aws solutions architect but my only mobile exposure has been through pwas and a bit of React Native play.  I have a few ideas I'd like to try to build and so I thought  I'd try to learn some Android development.  
+
+I have a million questions, but I thought I'd just start by asking if I should learn Kotlin (or java?) first and then dive into Android, or can I combine my language learning while diving into Android.  I don't need an intro to coding or OO &amp; functional techniques but have never worked in Kotlin (or java), so any recommendations on a learning path and resources would be greatly appreciated.
+
+Thanks again,
+## [10][What are some use-cases for EncryptedSharedPreferences?](https://www.reddit.com/r/androiddev/comments/ejh4kh/what_are_some_usecases_for/)
+- url: https://www.reddit.com/r/androiddev/comments/ejh4kh/what_are_some_usecases_for/
 ---
-Hi, i have seen some apps in which their developers adds an option for "translate for us"
+[EncryptedSharedPreferences](https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences)
 
-They upload their string resources to some website and user can download and translate their strings from that website.
+What are some practical use-cases for EncryptedSharedPreferences? I originally wanted to use it to store some user credit card information, but there aren't many discussions surrounding if/why this is a good/bad idea.
+## [11][Seeing which apps are used in a session](https://www.reddit.com/r/androiddev/comments/ejp6yv/seeing_which_apps_are_used_in_a_session/)
+- url: https://www.reddit.com/r/androiddev/comments/ejp6yv/seeing_which_apps_are_used_in_a_session/
+---
+Hi all, I am building an application for a research project, and I want to know if it is possible to keep track of which applications were used during each session. A session is defined as the time between screen unlock and lock.
 
-I don't know about that website can you suggest a good one?
+I know about the [UsageStatsManager api](https://developer.android.com/reference/android/app/usage/UsageStatsManager) but to my understanding it would not be able to show me data for intervals smaller than a day. I am trying to use native android apis as much as possible and to avoid 3rd party libraries, but if this can be solved with 3rd party libraries I would consider it. Maybe I'm completely misunderstanding how it works, as I've been looking at this for a couple of hours now.
+
+Another thing, if anyone knows, but does UsageStatsManager update the usage data right away, or is there a delay between me using an application for 10 minutes, and that respective information actually showing up when queried by the api?
+
+Thank you, any help is appreciated.
+## [12][Android dev here, what could I use to make a desktop app?](https://www.reddit.com/r/androiddev/comments/ejlixr/android_dev_here_what_could_i_use_to_make_a/)
+- url: https://www.reddit.com/r/androiddev/comments/ejlixr/android_dev_here_what_could_i_use_to_make_a/
+---
+Hello
+
+I am an Android developer with decent experience, both using java and kotlin, but now I want to make a desktop app. I use Linux, so that would be my target OS, but it also running on Windows and or Mac would be a nice plus.
+
+I don't want to run an Android app on my desktop in an emulator (don't know if there is a way to do that with good integration with the desktop, clipboard, that also doesn't swallow all my ram), instead I want to know what I could try that might be more familiar to an Android developer, like some java framework or something high level, not plain java... you get the idea... kotlin native seems too low level and not fully stable, but I don't know, you tell me...
+
+
+Thanks!
+
+EDIT: I rememberd about [Ambox](https://anbox.io/), haven't tried it (yet).

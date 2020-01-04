@@ -1,121 +1,110 @@
 # golang
-## [1][Chaos-mesh: A Chaos Engineering Platform for Kubernetes](https://www.reddit.com/r/golang/comments/ejbgmn/chaosmesh_a_chaos_engineering_platform_for/)
+## [1][Going all in with Golang from PHP. Am I too ambitious ?](https://www.reddit.com/r/golang/comments/ejjppg/going_all_in_with_golang_from_php_am_i_too/)
+- url: https://www.reddit.com/r/golang/comments/ejjppg/going_all_in_with_golang_from_php_am_i_too/
+---
+Sorry couldn't really construct the title well but this is not meant to be clickbaity. Our current SAAS product is PHP based and we are a 100% PHP team at the moment. I am in love with Golang and being the founder of the company, I decided to rewrite in Go due to the following reasons:
+
+\- Better performance. We sell a platform and performance is very important.
+
+\- Ease of deployment. Go Binaries are awesome.
+
+\- I want to find more technical partners who can promote. Using Golang, I can just give them the binary to self host wherever.
+
+\- Our current PHP stack is too bloated and since our platform can be customized for each client, the frameworks and bloat get in our way. It will be easier to have a slimmed down version and then customize on top for each client. Go's simplicity has won me over.
+
+\- We need to remove/simplify some features that are not really needed or are coded in a complex way. 
+
+\- Better suited to build REST APIs. I don't hate PHP (it has paid the bills) but I really like how simple Golang is with its http library
+
+\- Attract better developers ? This one has been so controversial. I want to attract better talent. Does that help ? Or I am stupid.
+
+&amp;#x200B;
+
+The cons:
+
+\- No one in our dev. team knows Golang. I  finally broke the news to my CTO and he was like WTF. He is very good at what he does and comes from a .NET background. So he can pick this up in 2-3 weeks BUT our team is mostly junior devs and they will need to learn Golang.
+
+\- Existing customers on the PHP platform will need to be supported forever. We cannot retire the legacy platform that quickly due to the complex functions built for clients.
+
+Am I committing business suicide ?
+
+&amp;#x200B;
+
+EDIT: Wow, so many great responses. I do appreciate everyone and I will think hard before putting our team at risk. It seems like the consensus is to not do a full re-write but consider chipping away slowly and may be build a few smaller components in Go as microservice if at all.
+## [2][Go: g0, Special Goroutine](https://www.reddit.com/r/golang/comments/ejjglc/go_g0_special_goroutine/)
+- url: https://medium.com/a-journey-with-go/go-g0-special-goroutine-8c778c6704d8
+---
+
+## [3][Im at a point in learning go where I just don't understand it anymore (Dependency Injection) what is the wisest move to do?](https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/)
+- url: https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/
+---
+Would reading the previous chapters in the tutorial I follow work or is it just a matter of time and excercise?
+## [4][Using local development modules without pushing to Github everytime](https://www.reddit.com/r/golang/comments/ejsgl0/using_local_development_modules_without_pushing/)
+- url: https://www.reddit.com/r/golang/comments/ejsgl0/using_local_development_modules_without_pushing/
+---
+So I am trying to learn the new module system where I put my codebase outside of GOPATH and I am trying to figure out if my development flow is incorrect or not.
+
+E.g. I developed this package/library: https://github.com/psykidellic/gomath. I checkout the repo $HOME/projects/gomath and start hacking on it.
+
+Now, I want to use this library in another of my side project $HOME/projects/"gomathtest". Now if I push changes from gomath to github and use it in my new project 
+
+    import (
+        "github.com/psykidellic/gomath/calc"
+    )
+
+everything works.
+
+But this means, during development I have to constantly push to github. Is there a way I can use the library gomath in gomathtest with the same import but then use the code from my local projects folder during development?
+
+In my final ci/cd, obviously I want to do the correct way where code is actually imported from github.
+## [5][koanf: Light weight extensible library for reading config (file, S3 etc.) in Go applications. Built in support for JSON, TOML, YAML, env, command line.](https://www.reddit.com/r/golang/comments/ejjyz8/koanf_light_weight_extensible_library_for_reading/)
+- url: https://github.com/knadh/koanf
+---
+
+## [6][Chaos-mesh: A Chaos Engineering Platform for Kubernetes](https://www.reddit.com/r/golang/comments/ejbgmn/chaosmesh_a_chaos_engineering_platform_for/)
 - url: https://github.com/pingcap/chaos-mesh
 ---
 
-## [2][Retrieving cookies from a webview in Go](https://www.reddit.com/r/golang/comments/ejg2qd/retrieving_cookies_from_a_webview_in_go/)
-- url: https://www.reddit.com/r/golang/comments/ejg2qd/retrieving_cookies_from_a_webview_in_go/
+## [7][Where to place project source code?](https://www.reddit.com/r/golang/comments/ejkbx0/where_to_place_project_source_code/)
+- url: https://www.reddit.com/r/golang/comments/ejkbx0/where_to_place_project_source_code/
 ---
-I'm writing a Go component, and on startup I want to provide personal user login before the program proceeds. This should ideally be done through a webview that connects to an identity server (not served by the program I am writing in Go; I simply want to use our pre-existing identity server in order to authorize users). Only the login part of the Go component should be webview based, as the rest of what it does is not GUI related.
+Hi, newbie Gopher here. I'm starting to learn Go for fun and I'm a bit confused about the relationship between the GOPATH directory and where my project source code should live. From the Go wiki on GitHub, I see that:
 
-There seems to be a few libraries that deal with webviews, notably [https://github.com/zserge/webview](https://github.com/zserge/webview). However, I have not found a way to extract cookies using this. Does anyone have experience with doing something similar?
+_The GOPATH environment variable is used to specify directories outside of $GOROOT that contain the source for Go projects and their binaries._
 
-I asked this same question on stackoverflow two weeks ago ( [https://stackoverflow.com/questions/59425959/how-do-i-retrieve-cookies-from-a-go-webview](https://stackoverflow.com/questions/59425959/how-do-i-retrieve-cookies-from-a-go-webview) ), but it seems that either my question is bad, or nobody knows the answer.
-## [3][sampler - visualization for any shell command output](https://www.reddit.com/r/golang/comments/ej1qy6/sampler_visualization_for_any_shell_command_output/)
-- url: https://github.com/sqshq/sampler
+Does this include my own projects? Am I breaking a convention if my Go source lives in some other directory? I'm using Go `1.13.5`
+## [8][Blackhat go book](https://www.reddit.com/r/golang/comments/ejjtbe/blackhat_go_book/)
+- url: https://www.reddit.com/r/golang/comments/ejjtbe/blackhat_go_book/
 ---
+Hey, 
 
-## [4][Introducing Horcrux, a program that lets you split your confidential files into encrypted fragments!](https://www.reddit.com/r/golang/comments/eiw4ma/introducing_horcrux_a_program_that_lets_you_split/)
-- url: https://github.com/jesseduffield/horcrux
----
+I'm learning/writing go for 2 months or so , and I saw this book . It's nearly out and a preview is available for few months . 
 
-## [5][Private secure notes](https://www.reddit.com/r/golang/comments/ejc2ci/private_secure_notes/)
-- url: https://www.reddit.com/r/golang/comments/ejc2ci/private_secure_notes/
----
-Hi guys, I made small service that encrypts/decrypts messages. It was my learning experience with cryptography and Google Cloud Run from the other side. Comments are appreciated. 
 
-Code: [https://github.com/blunext/obliviate/](https://github.com/blunext/obliviate/)
+Any recommendations? 
 
-Sevrice: [https://securenote.io/](https://securenote.io/)
-## [6][Authorization/Filter library/projects](https://www.reddit.com/r/golang/comments/ejby79/authorizationfilter_libraryprojects/)
-- url: https://www.reddit.com/r/golang/comments/ejby79/authorizationfilter_libraryprojects/
----
-Hi!
 
-I am looking for options for some kind of not just an auth library ( casbin/ OPA) , but something which also allows filtering of attributes based on users authorisation level.
-
-Ex:
-
-    Struct A {
-        id     int
-        atttr1 string
-        attr2 string
-        attr3 string
-    }
-
-Role 1
-
-    if id=100 Read  =&gt; attr1,attr2
-    if id=200 Read =&gt; attr2
-
-Role 2
-
-    All ids allow Read attr2,attr3
-
-I have a fairly complex and large data-set and would want to find  performant and architecturally correct/sensible way to do this. 
-
-Currently I am thinking of using either of the libraries to pick a template and apply something like mergo to set default values to nil. Is there a better way to achive this ? Or any open source project does this already?
-
-&amp;#x200B;
-
-Thanks!
-## [7][Go: Concurrency &amp; Scheduler Affinity](https://www.reddit.com/r/golang/comments/eiyog2/go_concurrency_scheduler_affinity/)
-- url: https://medium.com/a-journey-with-go/go-concurrency-scheduler-affinity-3b678f490488
+Cheers
+## [9][opencensus with jaeger, client and server example](https://www.reddit.com/r/golang/comments/ejoe3a/opencensus_with_jaeger_client_and_server_example/)
+- url: https://github.com/juanpabloaj/opencensus-go-example
 ---
 
-## [8][Am I the first person to write Golang in DOS](https://www.reddit.com/r/golang/comments/eis8fe/am_i_the_first_person_to_write_golang_in_dos/)
-- url: https://i.redd.it/tjweeu406a841.jpg
+## [10][Proper way to structure code? (for testing)](https://www.reddit.com/r/golang/comments/ejo9er/proper_way_to_structure_code_for_testing/)
+- url: https://www.reddit.com/r/golang/comments/ejo9er/proper_way_to_structure_code_for_testing/
 ---
+I have a service that uses various external dependencies that im currently refactoring. (Rest, DB, Object Storage). I want to be able to test the core code, while stubbing/mocking/etc the external dependencies whilst having clean, well structured code.
 
-## [9][Config service](https://www.reddit.com/r/golang/comments/eja1sn/config_service/)
-- url: https://www.reddit.com/r/golang/comments/eja1sn/config_service/
----
-Hey guys not sure if this is really adequate here but was wondering what do you usually use as configuration service. I've seen this https://cloud.spring.io/spring-cloud-config/reference/html/ but I think it uses github as a backend and that troubles me a little bit. Is using github as a backend scalable to 50 or so microservices (nvm the Java part of this post).
+Based on various strategies I've read, I've created a package for each dependency (Data, UserService, Storage) while having interfaces for required functionality in the core code. (Data.StoreImageMetadata(imageID int, data ImageData), UserService.GetUserData(userID int), Storage.Upload(data \[\]byte))
 
-Thanks in advance
-## [10][chaimleib/errors - informative and convenient errors for Go](https://www.reddit.com/r/golang/comments/ej8g1r/chaimleiberrors_informative_and_convenient_errors/)
-- url: https://www.reddit.com/r/golang/comments/ej8g1r/chaimleiberrors_informative_and_convenient_errors/
----
-&amp;#x200B;
+I have some concerns with this. 
 
-[Doctor Gopher helping with an error.](https://preview.redd.it/xyte0w0c0h841.png?width=861&amp;format=png&amp;auto=webp&amp;s=3ec8d7c5bcd9539b81818319b321b7f042522504)
+1. It feels too object oriented which seems to be an anti-pattern in go
+2. For the database package. I want to support transactions across various functions. Im not sure how to support this without using sql.TX in my business logic and passing it around to my data functions.
 
-[https://github.com/chaimleib/errors](https://github.com/chaimleib/errors)
+I have some thought on #2. The methods in the data package accept a context for other unrelated purposes. I was considering taking advantage of that. I am weary of using context, since it's meant for request scoped data and seems to be a hack rather than an answer most of the time.
 
-This is something I've been working on lately to make debugging easier for myself. What do you guys think?
+I would provide a startTx(ctx context.Context) function in the Data interface that creates a transaction and store it into the context in the database code. This allows the business logic to not require an import to sql. Commit/Rollback would look the same. Then any other database functions would check the context for a TX and if present execute statements on that TX instead of as standalone statements.
 
-* Stack trace with line numbers
-* See the argument values
-* See the module and function names
-* Abbreviated `go.mod` module name
-* Compatible with Go 1.13 `Unwrap()` API
+All of this stems from wanting to properly structure the code, and making testing easier.
 
-Improved stack trace error output:
-
-    main.main() prog.go:14 program failed
-    main.FileHasHello("greet.txt") prog.go:24 could not open file
-    open greet.txt: No such file or directory
-    No such file or directory
-
-Source ([try me!](https://goplay.space/#HE4BuAJaZYA))
-
-    func main() {
-    	b := errors.NewBuilder("")
-    	if err := FileHasHello("greet.txt"); err != nil {
-    		err = b.Wrap(err, "program failed")
-    		fmt.Println(errors.StackString(err))
-    		return
-    	}
-    }
-    
-    func FileHasHello(fpath string) error {
-    	b := errors.NewBuilder("%q", fpath)
-    	buf, err := ioutil.ReadFile(fpath)
-    	if err != nil {
-    		return b.Wrap(err, "could not open file")
-    	}
-    	if !bytes.Contains(buf, []byte("hello")) {
-    		return b.Errorf("could not find `hello` in file")
-    	}
-    	return nil
-    }
+Any thoughts are appreciated.

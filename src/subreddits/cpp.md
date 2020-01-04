@@ -57,23 +57,90 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Oh No! More Modern CMake - Deniz Bahadir - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/eje57u/oh_no_more_modern_cmake_deniz_bahadir_meeting_c/)
-- url: https://www.youtube.com/watch?v=y9kSr5enrSk
+## [2][Dry-comparisons: A C++ Library to Shorten Redundant If Statements](https://www.reddit.com/r/cpp/comments/ejkwqb/drycomparisons_a_c_library_to_shorten_redundant/)
+- url: https://www.fluentcpp.com/2020/01/03/dry-comparisons-a-c-library-to-shorten-redundant-if-statements/
 ---
 
 ## [3][C++ Pattern Matching proposal](https://www.reddit.com/r/cpp/comments/ejg1yc/c_pattern_matching_proposal/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf
 ---
 
-## [4][The Debug heap that created bugs](https://www.reddit.com/r/cpp/comments/ej39ma/the_debug_heap_that_created_bugs/)
+## [4][Oh No! More Modern CMake - Deniz Bahadir - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/eje57u/oh_no_more_modern_cmake_deniz_bahadir_meeting_c/)
+- url: https://www.youtube.com/watch?v=y9kSr5enrSk
+---
+
+## [5][A c++ based synchronous multi-peer music player](https://www.reddit.com/r/cpp/comments/ejs99e/a_c_based_synchronous_multipeer_music_player/)
+- url: https://github.com/VedantParanjape/audio-streamer
+---
+
+## [6][The Debug heap that created bugs](https://www.reddit.com/r/cpp/comments/ej39ma/the_debug_heap_that_created_bugs/)
 - url: http://lectem.github.io/windows/heap/appverifier/detours/2020/01/02/The-debug-heap-that-created-bugs.html
 ---
 
-## [5][CppCast: C++ 2020 News](https://www.reddit.com/r/cpp/comments/ej98qn/cppcast_c_2020_news/)
+## [7][CppCast: C++ 2020 News](https://www.reddit.com/r/cpp/comments/ej98qn/cppcast_c_2020_news/)
 - url: https://cppcast.com/cpp-2020-news/
 ---
 
-## [6][Any active C++ alternative operating system projects underway, or does Redox OS written in Rust have zero competition?](https://www.reddit.com/r/cpp/comments/ej403h/any_active_c_alternative_operating_system/)
+## [8][The way to do error handling](https://www.reddit.com/r/cpp/comments/ejk5ui/the_way_to_do_error_handling/)
+- url: https://www.reddit.com/r/cpp/comments/ejk5ui/the_way_to_do_error_handling/
+---
+[the link](https://github.com/Quaentor/status)
+
+If you could be oh so kind, please tell me what you think.
+
+This thing is a pretty general thing, and also highly composable. Because it is not only a set of classes, but a radical idea on how should be written code that deals with error handling, it is just impossible to describe it fully in a sane amount of words.
+
+Considering the extra classes the repo contains, it already gives you several ways to handle the problem. It was designed to be extended for the needed functionality to handle the problem just how You want to. But with the extra classes you probably would already have all you need.
+
+&amp;#x200B;
+
+The repo contains:
+
+* the main class `basic_status`, with which you can determine what type of error it was initialized with. It only stores the type. The class contains only one member of integral type. And all operations with it in assembly should take only one instruction.
+
+&amp;#x200B;
+
+    struct Error1{}; struct Error2{};
+
+To write a function that returns a status you would write
+
+    status&lt;Error1,Error2&gt;
+    foo(){
+        if(...) return Error1{};
+        else    return Error2{};
+        return {};
+    }
+
+To determine if it failed you would write
+
+    if(auto s = foo(); !s)
+
+To check if it returned a particular status you would write
+
+    foo().is&lt;Error1&gt;()
+
+If `Error2` was to be defined as `struct Error2 : Error1{};`, `foo().is&lt;Error1&gt;()` would return `true,` if `foo` returned `Error1` or `Error2`.
+
+&amp;#x200B;
+
+* the extra classes which all derive from `basic_status` :
+
+`basic_holding_status` for storing the object of the current type. The object would be of type `Error1` or `Error2`, so you could initialize them in `foo` with some data.
+
+`basic_acting_status` for giving a way to write a function that would be called when the status was initialized with some type(unsuccess state). You can choose when exactly the function is called -- in constructor of the status, in destructor, in destructor if the result was not checked.
+
+I lied that they derive from `basic_status`. They derive from a template parameter, meaning you can combine them (an example can be seen in the [first link](https://wandbox.org/permlink/POagc0Sact7acFEo) in the repo, in file test\_acting)
+
+&amp;#x200B;
+
+The repo contains a couple of links, where you can see some examples.
+
+The main reason why there aren't too many (though I think it's enough) is it's not mature enough yet to give examples on how to do things. And there could be two types of examples -- how to use given functionality, how to extend this functionality.
+
+It could become mature enough with your suggestions and requests.
+
+Maybe it's not that of a good idea, and it's not worth it. So tell me what you think.
+## [9][Any active C++ alternative operating system projects underway, or does Redox OS written in Rust have zero competition?](https://www.reddit.com/r/cpp/comments/ej403h/any_active_c_alternative_operating_system/)
 - url: https://www.reddit.com/r/cpp/comments/ej403h/any_active_c_alternative_operating_system/
 ---
 Am aware of Haiku, and I guess it may be using C++, not sure if it's used for their kernel layers, though...
@@ -85,7 +152,7 @@ MINIX3 is all C code (though does some microkernel architecture stuff too).
 My interest is to identify new operating system implementations that can replace Linux as a user-facing operating system (for the long term - not the near term, of course).
 
 I'd like to see a microkernel architecture where drivers aren't linked to the kernel. But to me the holy grail would be ability to use Linux device drivers. Kind of tough, right? Given the Linux device driver model. But I have some ideas of how to solve that.
-## [7][Guaranteed copy elision for named return values](https://www.reddit.com/r/cpp/comments/ej3fvy/guaranteed_copy_elision_for_named_return_values/)
+## [10][Guaranteed copy elision for named return values](https://www.reddit.com/r/cpp/comments/ej3fvy/guaranteed_copy_elision_for_named_return_values/)
 - url: https://www.reddit.com/r/cpp/comments/ej3fvy/guaranteed_copy_elision_for_named_return_values/
 ---
 Two days ago, I've [posted](https://www.reddit.com/r/cpp/comments/ei83am/alias_expressions/) a proposal draft on "alias expressions". I've got two primary reactions:
@@ -96,26 +163,9 @@ Two days ago, I've [posted](https://www.reddit.com/r/cpp/comments/ei83am/alias_e
 I'm not sure, but it looks like I've come up with some promising wording to make copy elision guaranteed. This will apply to existing code, no changes required.
 
 [The proposal link](https://gist.github.com/Anton3/594141354ff9625db0b85775799312c7)
-## [8][phmap now provides btree containers in addition to the fast hash maps.](https://www.reddit.com/r/cpp/comments/eipcq1/phmap_now_provides_btree_containers_in_addition/)
+## [11][phmap now provides btree containers in addition to the fast hash maps.](https://www.reddit.com/r/cpp/comments/eipcq1/phmap_now_provides_btree_containers_in_addition/)
 - url: https://www.reddit.com/r/cpp/comments/eipcq1/phmap_now_provides_btree_containers_in_addition/
 ---
 Phmap is a header only library which has provided very efficient (both time and space) hash maps for a while. Now it also provides similarly efficient btree alternatives for std::map and std::set, for when ordered containers are needed. 
 
 See https://github.com/greg7mdp/parallel-hashmap.
-## [9][File Local Namespace - Header Only Library](https://www.reddit.com/r/cpp/comments/eidzh1/file_local_namespace_header_only_library/)
-- url: https://www.reddit.com/r/cpp/comments/eidzh1/file_local_namespace_header_only_library/
----
-What do you guys think of this little thing I wrote? Avoid global scope name pollution by using file local namespaces! https://github.com/Cresspresso/file_local_namespace
-(Although I still recommend writing the full namespaces for the sake of being explicit, because the global namespace is polluted already.)
-## [10][Alias expressions](https://www.reddit.com/r/cpp/comments/ei83am/alias_expressions/)
-- url: https://www.reddit.com/r/cpp/comments/ei83am/alias_expressions/
----
-Hi! It's 1 hour till the New Year where I live, but I'm sitting there finishing a proposal draft. It aims to provide "guaranteed copy elision" for more cases, and together with [P0927 on lazy parameters](https://wg21.link/p0927) and [P1144 on relocation](https://wg21.link/p01144) could make writing move constructors a thing of the past.
-
-[Link to the proposal](https://gist.github.com/Anton3/f62dde10fdc6c3ae9d21650f54656157)
-
-There may be some horrible typos, but feel free to check it out, help brainstorm the problem, bikeshed the syntax or to express great indignation. Happy New Year! 🎄
-## [11][C++ at the end of 2019](https://www.reddit.com/r/cpp/comments/ei0zut/c_at_the_end_of_2019/)
-- url: https://www.bfilipek.com/2019/12/cpp-status-2019.html
----
-

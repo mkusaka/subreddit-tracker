@@ -1,9 +1,17 @@
 # ruby
-## [1][Extracting a tidy PORO from a messy Active Record model - Code with Jason](https://www.reddit.com/r/ruby/comments/ejlnt0/extracting_a_tidy_poro_from_a_messy_active_record/)
+## [1][Most Popular Program Languages in the World 2004-2019 (PYPL Index)](https://www.reddit.com/r/ruby/comments/ejvzm8/most_popular_program_languages_in_the_world/)
+- url: https://www.youtube.com/watch?v=BJ7DKztSfKE&amp;feature=share
+---
+
+## [2][Extracting a tidy PORO from a messy Active Record model - Code with Jason](https://www.reddit.com/r/ruby/comments/ejlnt0/extracting_a_tidy_poro_from_a_messy_active_record/)
 - url: https://www.codewithjason.com/extracting-tidy-poro-messy-active-record-model/
 ---
 
-## [2][Help getting started with ruby. I can't get the directories created.](https://www.reddit.com/r/ruby/comments/ejr8i0/help_getting_started_with_ruby_i_cant_get_the/)
+## [3][Ruby 2.7 NEWS: Commentary by Cookpad’s Full Time Ruby Comitters](https://www.reddit.com/r/ruby/comments/ejmrz5/ruby_27_news_commentary_by_cookpads_full_time/)
+- url: https://sourcediving.com/ruby-2-7-news-commentary-by-cookpads-full-time-ruby-comitters-bdbaacb36d0c
+---
+
+## [4][Help getting started with ruby. I can't get the directories created.](https://www.reddit.com/r/ruby/comments/ejr8i0/help_getting_started_with_ruby_i_cant_get_the/)
 - url: https://www.reddit.com/r/ruby/comments/ejr8i0/help_getting_started_with_ruby_i_cant_get_the/
 ---
 I can't get `rails new blog` to work. I have all the permissions. Removing --pretend flag isn't working as expected. 
@@ -55,27 +63,23 @@ I can't get `rails new blog` to work. I have all the permissions. Removing --pre
     -rw-rw-r--  1 dev dev  374 Jan  3 22:40 README.md
     -rw-rw-r--  1 dev dev   11 Jan  3 22:40 .ruby-version
     dev@vmdev:~$
-## [3][Ruby 2.7 NEWS: Commentary by Cookpad’s Full Time Ruby Comitters](https://www.reddit.com/r/ruby/comments/ejmrz5/ruby_27_news_commentary_by_cookpads_full_time/)
-- url: https://sourcediving.com/ruby-2-7-news-commentary-by-cookpads-full-time-ruby-comitters-bdbaacb36d0c
----
-
-## [4][Load test your rack-based web apps with this shadow-requesting middleware](https://www.reddit.com/r/ruby/comments/ejgper/load_test_your_rackbased_web_apps_with_this/)
+## [5][Load test your rack-based web apps with this shadow-requesting middleware](https://www.reddit.com/r/ruby/comments/ejgper/load_test_your_rackbased_web_apps_with_this/)
 - url: https://medium.com/carwow-product-engineering/shadow-requesting-for-great-good-92cde331363a
 ---
 
-## [5][UnicodePlot - plot your data on the terminal](https://www.reddit.com/r/ruby/comments/ej7p0p/unicodeplot_plot_your_data_on_the_terminal/)
+## [6][UnicodePlot - plot your data on the terminal](https://www.reddit.com/r/ruby/comments/ej7p0p/unicodeplot_plot_your_data_on_the_terminal/)
 - url: https://i.redd.it/0h29qquorg841.png
 ---
 
-## [6][Any tools and tutorials on rails and activitypub?](https://www.reddit.com/r/ruby/comments/ejfpsh/any_tools_and_tutorials_on_rails_and_activitypub/)
+## [7][Any tools and tutorials on rails and activitypub?](https://www.reddit.com/r/ruby/comments/ejfpsh/any_tools_and_tutorials_on_rails_and_activitypub/)
 - url: /r/rails/comments/ejfj4p/any_tools_and_tutorials_on_rails_and_activitypub/
 ---
 
-## [7][Relevance of Ruby today aside from Rails.](https://www.reddit.com/r/ruby/comments/ej5yz9/relevance_of_ruby_today_aside_from_rails/)
+## [8][Relevance of Ruby today aside from Rails.](https://www.reddit.com/r/ruby/comments/ej5yz9/relevance_of_ruby_today_aside_from_rails/)
 - url: https://www.reddit.com/r/ruby/comments/ej5yz9/relevance_of_ruby_today_aside_from_rails/
 ---
 I was talking to a friend recently and I told them I'm learning Ruby, to which they responded by saying Ruby has no actual market value today aside from Rails. Is that true? And Ruby Devs in the field today, what is your take on Ruby's relevance?
-## [8][Ruby Conferences &amp; Camps in 2020 - What's Upcoming? Anything Missing? Updates Welcome](https://www.reddit.com/r/ruby/comments/ej2eu4/ruby_conferences_camps_in_2020_whats_upcoming/)
+## [9][Ruby Conferences &amp; Camps in 2020 - What's Upcoming? Anything Missing? Updates Welcome](https://www.reddit.com/r/ruby/comments/ej2eu4/ruby_conferences_camps_in_2020_whats_upcoming/)
 - url: https://www.reddit.com/r/ruby/comments/ej2eu4/ruby_conferences_camps_in_2020_whats_upcoming/
 ---
 Hello,
@@ -110,11 +114,7 @@ Anything missing? Updates welcome, see [`data/conferences2020.yml`](https://gith
 in the `planetruby/calendar` repo.
 
 Cheers. Prosit 2020! Happy new year!
-## [9][Testing Ruby on Rails application with RSpec](https://www.reddit.com/r/ruby/comments/ej4fie/testing_ruby_on_rails_application_with_rspec/)
+## [10][Testing Ruby on Rails application with RSpec](https://www.reddit.com/r/ruby/comments/ej4fie/testing_ruby_on_rails_application_with_rspec/)
 - url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-testing-rspec-configuration/
 ---
 
-## [10][Ruby 2.7 allows calling a private method with self.](https://www.reddit.com/r/ruby/comments/ejd2pi/ruby_27_allows_calling_a_private_method_with_self/)
-- url: https://www.reddit.com/r/ruby/comments/ejd2pi/ruby_27_allows_calling_a_private_method_with_self/
----
-[https://blog.saeloun.com/2019/12/24/ruby-2-7-allows-calling-a-private-method-with-self](https://blog.saeloun.com/2019/12/24/ruby-2-7-allows-calling-a-private-method-with-self)

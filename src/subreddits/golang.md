@@ -1,5 +1,15 @@
 # golang
-## [1][Going all in with Golang from PHP. Am I too ambitious ?](https://www.reddit.com/r/golang/comments/ejjppg/going_all_in_with_golang_from_php_am_i_too/)
+## [1][New to Go, not to programming: tutorial frustration](https://www.reddit.com/r/golang/comments/ejtm8n/new_to_go_not_to_programming_tutorial_frustration/)
+- url: https://www.reddit.com/r/golang/comments/ejtm8n/new_to_go_not_to_programming_tutorial_frustration/
+---
+I've been programming for years in multiple languages, and I'm frustrated with the Go tutorials. They all teach the same thing: syntax. After learning the pieces (loops, slices, structs, etc.) in the end I'm left without knowing how to write an application. 
+
+I have yet to see anything in the tutorials that is more than a single file,  package main,  func main. If I search for packages, I see nothing but importing packages into that single file. 
+
+Am I missing something? Where can I find info on creating multi file applications? Code organization? I really want to delve into this but the tutorials are too basic to apply to useful functionality.
+
+Am I not getting far enough? Writing switch statements and for loops is not very satisfying.
+## [2][Going all in with Golang from PHP. Am I too ambitious ?](https://www.reddit.com/r/golang/comments/ejjppg/going_all_in_with_golang_from_php_am_i_too/)
 - url: https://www.reddit.com/r/golang/comments/ejjppg/going_all_in_with_golang_from_php_am_i_too/
 ---
 Sorry couldn't really construct the title well but this is not meant to be clickbaity. Our current SAAS product is PHP based and we are a 100% PHP team at the moment. I am in love with Golang and being the founder of the company, I decided to rewrite in Go due to the following reasons:
@@ -31,14 +41,25 @@ Am I committing business suicide ?
 &amp;#x200B;
 
 EDIT: Wow, so many great responses. I do appreciate everyone and I will think hard before putting our team at risk. It seems like the consensus is to not do a full re-write but consider chipping away slowly and may be build a few smaller components in Go as microservice if at all.
-## [2][Go: g0, Special Goroutine](https://www.reddit.com/r/golang/comments/ejjglc/go_g0_special_goroutine/)
-- url: https://medium.com/a-journey-with-go/go-g0-special-goroutine-8c778c6704d8
+## [3][Running A/B test](https://www.reddit.com/r/golang/comments/ejur6h/running_ab_test/)
+- url: https://www.reddit.com/r/golang/comments/ejur6h/running_ab_test/
 ---
+I am not sure if it is right sub to ask this.
 
-## [3][Im at a point in learning go where I just don't understand it anymore (Dependency Injection) what is the wisest move to do?](https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/)
-- url: https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/
----
-Would reading the previous chapters in the tutorial I follow work or is it just a matter of time and excercise?
+I want to perform A/B test with my go gRPC server so that
+
+1. Code does not become messy
+2. Can edit/add or stop the A/B test without deployment.
+
+I cannot use service proxy like Envoy or any traffic management for A/B test. Also, I have already created a separate server that add header to every request about the variant details. 
+
+Solution that I have thought:
+
+1. According to the request header, add a key value in context where key is some flag. (used [https://github.com/mwitkow/go-flagz](https://github.com/mwitkow/go-flagz)). 
+2. Create an informationMap that will be loaded from configMap in kubernetes. So, I can edit, add, stop the A/B test. 
+3. I have assumed that we have to use if/else for checking flag from context. 
+
+Can anyone suggest/ review this solution ?
 ## [4][Using local development modules without pushing to Github everytime](https://www.reddit.com/r/golang/comments/ejsgl0/using_local_development_modules_without_pushing/)
 - url: https://www.reddit.com/r/golang/comments/ejsgl0/using_local_development_modules_without_pushing/
 ---
@@ -57,15 +78,19 @@ everything works.
 But this means, during development I have to constantly push to github. Is there a way I can use the library gomath in gomathtest with the same import but then use the code from my local projects folder during development?
 
 In my final ci/cd, obviously I want to do the correct way where code is actually imported from github.
-## [5][koanf: Light weight extensible library for reading config (file, S3 etc.) in Go applications. Built in support for JSON, TOML, YAML, env, command line.](https://www.reddit.com/r/golang/comments/ejjyz8/koanf_light_weight_extensible_library_for_reading/)
+## [5][Go: g0, Special Goroutine](https://www.reddit.com/r/golang/comments/ejjglc/go_g0_special_goroutine/)
+- url: https://medium.com/a-journey-with-go/go-g0-special-goroutine-8c778c6704d8
+---
+
+## [6][Im at a point in learning go where I just don't understand it anymore (Dependency Injection) what is the wisest move to do?](https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/)
+- url: https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/
+---
+Would reading the previous chapters in the tutorial I follow work or is it just a matter of time and excercise?
+## [7][koanf: Light weight extensible library for reading config (file, S3 etc.) in Go applications. Built in support for JSON, TOML, YAML, env, command line.](https://www.reddit.com/r/golang/comments/ejjyz8/koanf_light_weight_extensible_library_for_reading/)
 - url: https://github.com/knadh/koanf
 ---
 
-## [6][Chaos-mesh: A Chaos Engineering Platform for Kubernetes](https://www.reddit.com/r/golang/comments/ejbgmn/chaosmesh_a_chaos_engineering_platform_for/)
-- url: https://github.com/pingcap/chaos-mesh
----
-
-## [7][Where to place project source code?](https://www.reddit.com/r/golang/comments/ejkbx0/where_to_place_project_source_code/)
+## [8][Where to place project source code?](https://www.reddit.com/r/golang/comments/ejkbx0/where_to_place_project_source_code/)
 - url: https://www.reddit.com/r/golang/comments/ejkbx0/where_to_place_project_source_code/
 ---
 Hi, newbie Gopher here. I'm starting to learn Go for fun and I'm a bit confused about the relationship between the GOPATH directory and where my project source code should live. From the Go wiki on GitHub, I see that:
@@ -73,38 +98,31 @@ Hi, newbie Gopher here. I'm starting to learn Go for fun and I'm a bit confused 
 _The GOPATH environment variable is used to specify directories outside of $GOROOT that contain the source for Go projects and their binaries._
 
 Does this include my own projects? Am I breaking a convention if my Go source lives in some other directory? I'm using Go `1.13.5`
-## [8][Blackhat go book](https://www.reddit.com/r/golang/comments/ejjtbe/blackhat_go_book/)
-- url: https://www.reddit.com/r/golang/comments/ejjtbe/blackhat_go_book/
----
-Hey, 
-
-I'm learning/writing go for 2 months or so , and I saw this book . It's nearly out and a preview is available for few months . 
-
-
-Any recommendations? 
-
-
-Cheers
-## [9][opencensus with jaeger, client and server example](https://www.reddit.com/r/golang/comments/ejoe3a/opencensus_with_jaeger_client_and_server_example/)
-- url: https://github.com/juanpabloaj/opencensus-go-example
+## [9][Chaos-mesh: A Chaos Engineering Platform for Kubernetes](https://www.reddit.com/r/golang/comments/ejbgmn/chaosmesh_a_chaos_engineering_platform_for/)
+- url: https://github.com/pingcap/chaos-mesh
 ---
 
-## [10][Proper way to structure code? (for testing)](https://www.reddit.com/r/golang/comments/ejo9er/proper_way_to_structure_code_for_testing/)
-- url: https://www.reddit.com/r/golang/comments/ejo9er/proper_way_to_structure_code_for_testing/
+## [10][Using channel to wait for message bus response.. good or bad idea?](https://www.reddit.com/r/golang/comments/ejk9wr/using_channel_to_wait_for_message_bus_response/)
+- url: https://www.reddit.com/r/golang/comments/ejk9wr/using_channel_to_wait_for_message_bus_response/
 ---
-I have a service that uses various external dependencies that im currently refactoring. (Rest, DB, Object Storage). I want to be able to test the core code, while stubbing/mocking/etc the external dependencies whilst having clean, well structured code.
+TL;DR Right way to have API endpoint send async message across message bus, wait for async msg resp, before sending response back to consumer of API, using go func and channels while handling threaded API requests
 
-Based on various strategies I've read, I've created a package for each dependency (Data, UserService, Storage) while having interfaces for required functionality in the core code. (Data.StoreImageMetadata(imageID int, data ImageData), UserService.GetUserData(userID int), Storage.Upload(data \[\]byte))
+Still learning/experimenting. Looking to understand what is considered good/bad (regardless if it works).
 
-I have some concerns with this. 
+Most of my APIs will be async by default, but some, like the web UI waiting on the response from an API in a sync manner, that on the server side uses a message bus to communicate between the API service (the UI called) and the back end service that does some logic and eventually (but most likely within milliseconds) responds back to the API (via another message).
 
-1. It feels too object oriented which seems to be an anti-pattern in go
-2. For the database package. I want to support transactions across various functions. Im not sure how to support this without using sql.TX in my business logic and passing it around to my data functions.
+So, to facilitate a mostly async architecture, using a message bus  and some form of consumer event/push notifications is my preferred architecture. With Web hooks, web sockets, and consumers that run in servers being able to provide callback endpoints.. it's trivial to do for the most part. Regardless of the way the consumer, be it another server or a UI, retrieves push notifications.. sometimes a consumer can't handle push (or is not configured to do so, etc) and needs a sync API call.. or maybe it just makes sense in some cases NOT to add the complexity of matching up an async request to an async push notification when the flow dictates that it is sync.
 
-I have some thought on #2. The methods in the data package accept a context for other unrelated purposes. I was considering taking advantage of that. I am weary of using context, since it's meant for request scoped data and seems to be a hack rather than an answer most of the time.
+One example is email verification. When a user gets an email with a link to verify their email.. and clicks it, it takes them to my site, which in turn, before the user sees the "next step" makes a SYNC API request to my server to let the server know the user has indeed verified their email. This on the back end, hits the API e.g. /verifyEmail endpoint. At this point, my back end user service (let's not argue/talk about how I have services set up for the sake of this post) is tied to the message bus via a few topics. One is user.verify, and the handler there takes in the email, looks up the user by email (at this point the user is nothing more than just an email, waiting on verification, before the UI next step allows the user to fill in username, password, details, etc).. finds the email (hopefully), and then returns a response via a message BACK to the API /verifyEmail endpoint.
 
-I would provide a startTx(ctx context.Context) function in the Data interface that creates a transaction and store it into the context in the database code. This allows the business logic to not require an import to sql. Commit/Rollback would look the same. Then any other database functions would check the context for a TX and if present execute statements on that TX instead of as standalone statements.
+SO.. it is this I wanted to discuss.. or rather ask if the way I think I should implement this is good, bad, if it works so be it, etc.
 
-All of this stems from wanting to properly structure the code, and making testing easier.
+I am still trying to grasp/understand go funcs and channels. My thought is this. The API endpoint /verifyEmail sends a message (to the user.verifyEmail as I said), and then waits on the response of a channel. So prior, it creates a new channel, then does the &lt;- waitOnResp (or whatever the name is). In the same API endpoint, in the init() func presumably, I have set up a subscription to the message bus, to topic user.verifyEmailResp.  Now, the handler, when it receives a message, would then write the resp payload of the message to the channel... which I assume, if I understand it right, would then cause the currently waiting API endpoint handler to get the data, and then be able to send a response back.. right?
 
-Any thoughts are appreciated.
+The one issue I am unsure of is an API handler needs to handle any number of incoming threads. So I assume I have to put this bit of code.. the part that sends the msg, then waits on the channel, in a go func(). But.. I am unsure if it will keep the web socket from the initial API request open.. so that when it receives the data from the channel and writes the response back out.. if it will go back to the API consumer (my UI that made the request).
+
+Hence.. is what I am trying to do here the "right way", and more so, if so, how do I properly set it up so it can continue to handle any number of API requests (because one day I hope to have millions of users on my web site :D) and properly send responses back to the write sockets.. or rather hopefully there isn't some way to screw things up in code to cause a response to go back to the wrong user.
+
+It is a bit winded.. hopefully it makes sense?
+
+Appreciate/thank you for any help.

@@ -23,7 +23,7 @@ jobs:
           ./update
           git add src/
           git commit -m "daily update "$(date +%F)
-          body="$(cat src/periods/daily.md)"
+          body="$(cat src/subreddits/all.md)"
           echo $body
           echo ::set-env name=pr_body::"$body"
       - name: push current changes

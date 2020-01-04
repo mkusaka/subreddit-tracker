@@ -33,11 +33,37 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2019/12/31/this-week-in-rust-319/
 ---
 
-## [3][Reducing support for 32-bit Apple targets](https://www.reddit.com/r/rust/comments/ejk5s1/reducing_support_for_32bit_apple_targets/)
+## [3][Announcing "Haskell Bits", a Functor/Applicative/Monad hierarchy in Rust](https://www.reddit.com/r/rust/comments/ejubtb/announcing_haskell_bits_a_functorapplicativemonad/)
+- url: https://github.com/clintonmead/haskell_bits
+---
+
+## [4][Reducing support for 32-bit Apple targets](https://www.reddit.com/r/rust/comments/ejk5s1/reducing_support_for_32bit_apple_targets/)
 - url: https://blog.rust-lang.org/2020/01/03/reducing-support-for-32-bit-apple-targets.html
 ---
 
-## [4][Announcing AeroRust - The Unofficial Working Group For Rust in Aerospace](https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/)
+## [5][Introduce async-socks5: async/.await version of SOCKS5!](https://www.reddit.com/r/rust/comments/ejwbaq/introduce_asyncsocks5_asyncawait_version_of_socks5/)
+- url: https://github.com/ark0f/async-socks5
+---
+
+## [6][Has anyone experimented with Qt for WebAssembly using Rust?](https://www.reddit.com/r/rust/comments/ejvfnn/has_anyone_experimented_with_qt_for_webassembly/)
+- url: https://www.reddit.com/r/rust/comments/ejvfnn/has_anyone_experimented_with_qt_for_webassembly/
+---
+I've been trying to develop a cross-platform desktop application that can also target the web. It seems like the two major choices are:
+
+1. A framework that compiles to HTML/CSS/JS, which is then wrapped by Electron for desktop use
+2. A framework that compiles to native for desktop, or WebAssembly for web use
+
+For 1, I looked into using [Yew](https://github.com/yewstack/yew) to create the WASM, but I found it difficult to use JS for interactive components, and Yew itself doesn't have the components I need out of the box (floating windows, dockable panels).
+
+For 2, it seems like Qt is a good option, because it compiles either to native or to WebAssembly depending on your target.
+
+Has anyone tried to use Rust bindings for Qt, compiling to WebAssembly? If there's an existing build process which works, I don't want to reinvent the wheel. It would also be great to contribute it back to [rust-qt](https://github.com/rust-qt/examples) for others to use.
+## [7][Alex Ionescu (CrowdStrike) hires Rust developers](https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/)
+- url: https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/
+---
+I thought you might be interested in this. Alex Ionescu is a legend in the Windows internals world, a co-author of the Windows Internals book, a contributor to the ReactOS open source Windows (wannabe) alternative, and a speaker at well known conferences. And currently a Chief Architect at Crowdstrike. It turned out to be quite a praise :) but that's because I really admire him!  
+[https://twitter.com/aionescu/status/1213151075336888325](https://twitter.com/aionescu/status/1213151075336888325)
+## [8][Announcing AeroRust - The Unofficial Working Group For Rust in Aerospace](https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/)
 - url: https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/
 ---
 Hi Folks,
@@ -53,16 +79,11 @@ If you are interested, come join us:
 * Github: [https://github.com/AeroRust/Welcome](https://github.com/AeroRust/Welcome)
 * Discord: [https://discord.gg/RXNsMXc](https://discord.gg/RXNsMXc)
 * Resources: [https://github.com/AeroRust/awesome-space](https://github.com/AeroRust/awesome-space)
-## [5][Alex Ionescu (CrowdStrike) hires Rust developers](https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/)
-- url: https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/
----
-I thought you might be interested in this. Alex Ionescu is a legend in the Windows internals world, a co-author of the Windows Internals book, a contributor to the ReactOS open source Windows (wannabe) alternative, and a speaker at well known conferences. And currently a Chief Architect at Crowdstrike. It turned out to be quite a praise :) but that's because I really admire him!  
-[https://twitter.com/aionescu/status/1213151075336888325](https://twitter.com/aionescu/status/1213151075336888325)
-## [6][Code Golf now supports rust :-)](https://www.reddit.com/r/rust/comments/ejk773/code_golf_now_supports_rust/)
+## [9][Code Golf now supports rust :-)](https://www.reddit.com/r/rust/comments/ejk773/code_golf_now_supports_rust/)
 - url: https://code-golf.io
 ---
 
-## [7][Announcing Razor, a model-finder for first-order theories](https://www.reddit.com/r/rust/comments/ejld0s/announcing_razor_a_modelfinder_for_firstorder/)
+## [10][Announcing Razor, a model-finder for first-order theories](https://www.reddit.com/r/rust/comments/ejld0s/announcing_razor_a_modelfinder_for_firstorder/)
 - url: https://www.reddit.com/r/rust/comments/ejld0s/announcing_razor_a_modelfinder_for_firstorder/
 ---
 I’m so excited to have published my first Rust crates and would love feedback:
@@ -76,11 +97,7 @@ Here is a link to the GitHub repo: https://github.com/salmans/rusty-razor
 The project is still in its infancy but I’ve had a blast experimenting with Rust. The theorem-proving community cares about correctness and speed, so I’m expecting to see similar project in Rust in the near future.
 
 Any comment, feedback, or suggestion is much appreciated!
-## [8][Nvim-rs: Rust library for neovim clients](https://www.reddit.com/r/rust/comments/ejfceo/nvimrs_rust_library_for_neovim_clients/)
-- url: /r/neovim/comments/eiy5if/nvimrs_rust_library_for_neovim_clients/
----
-
-## [9][Await-ing within trait function](https://www.reddit.com/r/rust/comments/ejpx88/awaiting_within_trait_function/)
+## [11][Await-ing within trait function](https://www.reddit.com/r/rust/comments/ejpx88/awaiting_within_trait_function/)
 - url: https://www.reddit.com/r/rust/comments/ejpx88/awaiting_within_trait_function/
 ---
 Given I have a trait function that needs to return a `futures::future::Either`, and must do an `await` to read a Stream, how can I `await` within the function? I've tried using `async move {...}` but I cannot get the return type right. This is a simplifed version of what I am trying:
@@ -110,25 +127,7 @@ For the sake of this example it doesn't do anything with the `BytesMut`, but my 
 ```
 
 Not sure how I can get there, though. Any suggestions?
-## [10][Announcing Proq – Idiomatic Async Prometheus Query (PromQL) Client for Rust](https://www.reddit.com/r/rust/comments/ejjx9b/announcing_proq_idiomatic_async_prometheus_query/)
-- url: https://www.reddit.com/r/rust/comments/ejjx9b/announcing_proq_idiomatic_async_prometheus_query/
----
-[Documentation](https://docs.rs/proq/) | [GitHub Repo](https://github.com/vertexclique/proq) | [Crates.io](https://crates.io/crates/proq)
-
-We are happy to announce Proq. An idiomatic Async Prometheus Query (PromQL) Client for Rust.
-
-This crate provides an async client for Prometheus Query API. That will enable you to query existing Prometheus instances for data points. It is executor independent and you can use it with any executor.
-
-It has a built-in server-side timeout and flexible crate API. Check it out! Spread the word!
-## [11][New to rust and loving it. Just published my first crate and would love feedback!](https://www.reddit.com/r/rust/comments/ejevh1/new_to_rust_and_loving_it_just_published_my_first/)
-- url: https://github.com/M-J-Hooper/playing-cards/
+## [12][Nvim-rs: Rust library for neovim clients](https://www.reddit.com/r/rust/comments/ejfceo/nvimrs_rust_library_for_neovim_clients/)
+- url: /r/neovim/comments/eiy5if/nvimrs_rust_library_for_neovim_clients/
 ---
 
-## [12][Any good Rust 3d engine compatible with WebAssembly?](https://www.reddit.com/r/rust/comments/ejgx3q/any_good_rust_3d_engine_compatible_with/)
-- url: https://www.reddit.com/r/rust/comments/ejgx3q/any_good_rust_3d_engine_compatible_with/
----
-Hi all,
-
-I did not play with Rust for quite a bit of time and I would like to play with 3D and Rust (only in WebAssembly for now). So if some of you already tried this I would like some feedback on the existing 3D engines available in pure Rust.
-
-So far, [Kiss3D](https://github.com/sebcrozet/kiss3d) seems the one that tick all the check for me.

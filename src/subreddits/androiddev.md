@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/ejewhf/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/ejewhf/weekly_anything_goes_thread/
+## [1][App Feedback Thread - January 04, 2020](https://www.reddit.com/r/androiddev/comments/ejw3fu/app_feedback_thread_january_04_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/ejw3fu/app_feedback_thread_january_04_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - December 30, 2019](https://www.reddit.com/r/androiddev/comments/ehkp99/weekly_questions_thread_december_30_2019/)
 - url: https://www.reddit.com/r/androiddev/comments/ehkp99/weekly_questions_thread_december_30_2019/
 ---
@@ -25,73 +40,125 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Kotlinx Json vs Gson - a short article about Kotlin oriented cross-platform reflectionless serialization library from JetBrains.](https://www.reddit.com/r/androiddev/comments/ejjroe/kotlinx_json_vs_gson_a_short_article_about_kotlin/)
+## [3][GitHub - lndmflngs/hat-view: Library that allow to put "hat" on TextView. Inspired by Telegram appbar title with Santa Claus hat 🎅🏻](https://www.reddit.com/r/androiddev/comments/ejvovk/github_lndmflngshatview_library_that_allow_to_put/)
+- url: https://github.com/lndmflngs/hat-view
+---
+
+## [4][How do some launcher apps import shortcuts and other settings from Nova Launcher?](https://www.reddit.com/r/androiddev/comments/ejv4lz/how_do_some_launcher_apps_import_shortcuts_and/)
+- url: https://www.reddit.com/r/androiddev/comments/ejv4lz/how_do_some_launcher_apps_import_shortcuts_and/
+---
+ 
+
+I've noticed that if you used Nova launcher, and you try out some launchers (such as Apex Launcher, Evie Launcher, ADW Launcher 2, and maybe others), they let you import various settings from Nova launcher, including the shortcuts to apps and even the widgets.
+
+How do they do it? How come it doesn't exist for other launchers? Are there other launchers that you can switch from, knowing that another launcher could import the data from?
+
+Is this a known API ?
+## [5][Kotlinx Json vs Gson - a short article about Kotlin oriented cross-platform reflectionless serialization library from JetBrains.](https://www.reddit.com/r/androiddev/comments/ejjroe/kotlinx_json_vs_gson_a_short_article_about_kotlin/)
 - url: https://medium.com/@jurajkunier/kotlinx-json-vs-gson-4ba24a21bd73
 ---
 
-## [4][I have created a tutorial for Recycler View Animation using Custom Layout Manager in Kotlin.](https://www.reddit.com/r/androiddev/comments/ejd9m6/i_have_created_a_tutorial_for_recycler_view/)
+## [6][what’s the current best practice for implementing Android Room?](https://www.reddit.com/r/androiddev/comments/ejwcpk/whats_the_current_best_practice_for_implementing/)
+- url: https://www.reddit.com/r/androiddev/comments/ejwcpk/whats_the_current_best_practice_for_implementing/
+---
+I’ve never done any MVVM thing before, and I don’t know what’s the significance of using such a headache!
+
+Room is currently working fine for me without too much complications, but I’m using GlobalScope launch to get access the database, which is highly discouraged as I read [here](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-global-scope/). 
+
+I wanna do it in a better way and learn more about the subject (MVVM, lifecycles, LiveData, etc), can you provide some links that help with that?
+
+I’m hoping that implementing these will result in a better code.
+
+Thanks, appreciate the help!
+## [7][SSL certificate unknown](https://www.reddit.com/r/androiddev/comments/ejwhst/ssl_certificate_unknown/)
+- url: https://www.reddit.com/r/androiddev/comments/ejwhst/ssl_certificate_unknown/
+---
+Hello,
+
+Trying to create secure MQTT connection to Mosquitto server.  I'm using CA.crt certificate to get secure connection with help of [sample application](https://github.com/eurbon/Paho-MQTT-Android-TCP-TLS-WSS-Example/blob/master/app/src/main/java/paho/android/mqtt_example/MainActivity.java). 
+
+&amp;#x200B;
+
+Mosquitto server reports with error:
+
+`1578142589: OpenSSL Error: error:14094416:SSL routines:SSL3_READ_BYTES:sslv3 alert certificate unknown`
+
+`1578142589: OpenSSL Error: error:140940E5:SSL routines:SSL3_READ_BYTES:ssl handshake failure`
+
+&amp;#x200B;
+
+I'm using same CA.crt certificate to connect from linux machine at it works fine:
+
+`mosquitto_sub -h` [`192.168.1.8`](https://192.168.1.8) `-t s1/ss --cafile ca.crt -p 8883 -d -u c -P c -i dd`
+
+&amp;#x200B;
+
+What might be wrong with my connection and how to solve this problem.
+## [8][[Need advice] AdMob restricted ad serving due to curse words](https://www.reddit.com/r/androiddev/comments/ejvto1/need_advice_admob_restricted_ad_serving_due_to/)
+- url: https://www.reddit.com/r/androiddev/comments/ejvto1/need_advice_admob_restricted_ad_serving_due_to/
+---
+Hello, fellow Android devs,
+
+I need advice on what to do in such a situation:
+
+My app plays Russian phrases that are popular in a game called Counter Strike: Global Offensive. I have released 2 versions of an app, one that contains no bad words and another that is basically full of curse words both in English and in Russian (I call this 'rage' version). I had integrated AdMob interstitial ads into both of the apps and it was working fine. However, yesterday I have received a notification that ads were restricted in 'rage' version. The issue is "Adult: Sexual content":
+
+&amp;#x200B;
+
+https://preview.redd.it/04ik6beg4r841.png?width=941&amp;format=png&amp;auto=webp&amp;s=1868a1cd06b06123fa02ab21a8b6088e0cd08c13
+
+As I said, the app contains no visual sexual content, only written and spoken phrases, here are some examples (upon pressing the play button the phrase is said in Russian):
+
+*Oh fuck - Блять*
+
+*Rush B whore bitch - Раш Б cука блять*
+
+*You make my dick hard with your performance - У меня встал от твоей игры*
+
+&amp;#x200B;
+
+This is how the app looks when you open it:
+
+&amp;#x200B;
+
+[Russian rage phrases for CS:GO](https://preview.redd.it/8gsv35nh3r841.jpg?width=606&amp;format=pjpg&amp;auto=webp&amp;s=65816dafcd08c52007ef2697eb88024c0b32d561)
+
+**Basically, these Ads are my only source of income from these apps. If I want to restore the AdMob serving to my app, what choices do I have?**
+
+**Will it be enough to blur curse words (whole or just one letter)? I don't want to lose user experience.**
+
+**Are there any alternatives to AdMob that does not have such restrictions?**
+
+&amp;#x200B;
+
+For those, who are interested, here are the links to these apps:
+
+mild version:  [https://play.google.com/store/apps/details?id=ether.paul.lt.russiansphrasesforcsgo](https://play.google.com/store/apps/details?id=ether.paul.lt.russiansphrasesforcsgo)
+
+rage version:  [https://play.google.com/store/apps/details?id=ether.paul.lt.russiansragephrasesforcsgo](https://play.google.com/store/apps/details?id=ether.paul.lt.russiansragephrasesforcsgo)
+## [9][I have created a tutorial for Recycler View Animation using Custom Layout Manager in Kotlin.](https://www.reddit.com/r/androiddev/comments/ejd9m6/i_have_created_a_tutorial_for_recycler_view/)
 - url: https://youtu.be/7gnBZ_fitdE
 ---
 
-## [5][Animation with Flutter: creating the Medium clap animation](https://www.reddit.com/r/androiddev/comments/ejs9re/animation_with_flutter_creating_the_medium_clap/)
-- url: https://proandroiddev.com/flutter-animation-creating-mediums-clap-animation-in-flutter-3168f047421e
+## [10][ML Kit face identification](https://www.reddit.com/r/androiddev/comments/ejuw5w/ml_kit_face_identification/)
+- url: https://www.reddit.com/r/androiddev/comments/ejuw5w/ml_kit_face_identification/
 ---
+Hey everyone! 
 
-## [6][Emulator 29.3.4 Canary](https://www.reddit.com/r/androiddev/comments/ejptr8/emulator_2934_canary/)
-- url: https://androidstudio.googleblog.com/2020/01/emulator-2934-canary.html
+I need to identify people with face detection in my app. I haven't been able to find such thing in ml docs. 
+
+Is there any way to identify and compare different faces with ml kit?
+
+Like for example does ml provide an ID for each individual face?
+## [11][Compile c source code with iconv](https://www.reddit.com/r/androiddev/comments/ejujw2/compile_c_source_code_with_iconv/)
+- url: https://www.reddit.com/r/androiddev/comments/ejujw2/compile_c_source_code_with_iconv/
 ---
+I am trying to compile c source code with iconv for Android. But getting error to reinstall iconv. 
 
-## [7][What are your thoughts on MoPub?](https://www.reddit.com/r/androiddev/comments/ejjntl/what_are_your_thoughts_on_mopub/)
-- url: https://www.reddit.com/r/androiddev/comments/ejjntl/what_are_your_thoughts_on_mopub/
+How to solve it ?
+## [12][How to create a custom music database like in Poweramp (my goal is get rid of MediaStore)?](https://www.reddit.com/r/androiddev/comments/ejudns/how_to_create_a_custom_music_database_like_in/)
+- url: https://www.reddit.com/r/androiddev/comments/ejudns/how_to_create_a_custom_music_database_like_in/
 ---
-Do you have any experience with them? I am looking for a serious ad network for mediation but for some reason they seem shady, and something about them just doesn't feel right. From their policy to how they collect and manage user data.  
+Poweramp has its own databse with albums/tracks/artists. It detects file changes, links tracks with albums, with artists etc.
 
-
-Have you worked with MoPub? What are your thoughts on MoPub?
-## [8][GG Console - Why the number of active users lower than new users (three times)?](https://www.reddit.com/r/androiddev/comments/ejqit5/gg_console_why_the_number_of_active_users_lower/)
-- url: https://www.reddit.com/r/androiddev/comments/ejqit5/gg_console_why_the_number_of_active_users_lower/
----
-Hi there,  I'm the developer of a booking app call TripU. We just started to run user acquisition campaigns and racked up millions of downloads in five-month. However, through Google Console, I found some risk statics that the number of active users is to low compared to new acquisition users. For example, I started on Monday and have 1000 active users, on Tuesday I get 1000 new user acquisitions but new number of active users just be 1200. Assume our retention = 0, so at least I must have \~ 2000 active users huh?
-
-Active users in GG console mean ***"The number of users who have your app installed on at least one device that was active in the preceding 30 days"*** so I wonder that how can someone install my app without opening their device? It could there are some IDs installed my app on multiple devices. But it can't be too much like that.
-
- So my question is: did you ever see a similar trend for one of your apps? So many thanks, guys.
-## [9][Experienced web developer looking to dip his toes into Android development](https://www.reddit.com/r/androiddev/comments/ejpvxk/experienced_web_developer_looking_to_dip_his_toes/)
-- url: https://www.reddit.com/r/androiddev/comments/ejpvxk/experienced_web_developer_looking_to_dip_his_toes/
----
-First off, thanks for the help in advance, and I know this has probably been asked a 1000 times in different ways and I have looked at some of the other posts including this one ([https://www.reddit.com/r/androiddev/comments/dqv8s6/learning\_android\_dev/](https://www.reddit.com/r/androiddev/comments/dqv8s6/learning_android_dev/)), but I don't know enough to know what I don't know, lol.  So I thought I ask you all for help.
-
-I'm an experienced web dev and aws solutions architect but my only mobile exposure has been through pwas and a bit of React Native play.  I have a few ideas I'd like to try to build and so I thought  I'd try to learn some Android development.  
-
-I have a million questions, but I thought I'd just start by asking if I should learn Kotlin (or java?) first and then dive into Android, or can I combine my language learning while diving into Android.  I don't need an intro to coding or OO &amp; functional techniques but have never worked in Kotlin (or java), so any recommendations on a learning path and resources would be greatly appreciated.
-
-Thanks again,
-## [10][What are some use-cases for EncryptedSharedPreferences?](https://www.reddit.com/r/androiddev/comments/ejh4kh/what_are_some_usecases_for/)
-- url: https://www.reddit.com/r/androiddev/comments/ejh4kh/what_are_some_usecases_for/
----
-[EncryptedSharedPreferences](https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences)
-
-What are some practical use-cases for EncryptedSharedPreferences? I originally wanted to use it to store some user credit card information, but there aren't many discussions surrounding if/why this is a good/bad idea.
-## [11][Seeing which apps are used in a session](https://www.reddit.com/r/androiddev/comments/ejp6yv/seeing_which_apps_are_used_in_a_session/)
-- url: https://www.reddit.com/r/androiddev/comments/ejp6yv/seeing_which_apps_are_used_in_a_session/
----
-Hi all, I am building an application for a research project, and I want to know if it is possible to keep track of which applications were used during each session. A session is defined as the time between screen unlock and lock.
-
-I know about the [UsageStatsManager api](https://developer.android.com/reference/android/app/usage/UsageStatsManager) but to my understanding it would not be able to show me data for intervals smaller than a day. I am trying to use native android apis as much as possible and to avoid 3rd party libraries, but if this can be solved with 3rd party libraries I would consider it. Maybe I'm completely misunderstanding how it works, as I've been looking at this for a couple of hours now.
-
-Another thing, if anyone knows, but does UsageStatsManager update the usage data right away, or is there a delay between me using an application for 10 minutes, and that respective information actually showing up when queried by the api?
-
-Thank you, any help is appreciated.
-## [12][Android dev here, what could I use to make a desktop app?](https://www.reddit.com/r/androiddev/comments/ejlixr/android_dev_here_what_could_i_use_to_make_a/)
-- url: https://www.reddit.com/r/androiddev/comments/ejlixr/android_dev_here_what_could_i_use_to_make_a/
----
-Hello
-
-I am an Android developer with decent experience, both using java and kotlin, but now I want to make a desktop app. I use Linux, so that would be my target OS, but it also running on Windows and or Mac would be a nice plus.
-
-I don't want to run an Android app on my desktop in an emulator (don't know if there is a way to do that with good integration with the desktop, clipboard, that also doesn't swallow all my ram), instead I want to know what I could try that might be more familiar to an Android developer, like some java framework or something high level, not plain java... you get the idea... kotlin native seems too low level and not fully stable, but I don't know, you tell me...
-
-
-Thanks!
-
-EDIT: I rememberd about [Ambox](https://anbox.io/), haven't tried it (yet).
+I want stop using MediaStore because it is buggy and many users complains about their music not updated, not displaying and so on.

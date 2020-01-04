@@ -71,31 +71,29 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [stackblitz]: https://stackblitz.com/
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][My first proper app](https://www.reddit.com/r/reactjs/comments/ejf1op/my_first_proper_app/)
-- url: https://www.reddit.com/r/reactjs/comments/ejf1op/my_first_proper_app/
----
-Hi all I'm new here but I wanted to share with you my first proper react app -&gt; [**https://foiz.io/**](https://foiz.io/?q=bg)
-
-If is free to use, vacation days (days off work) tracker that allows you to share your calendar with other people and see the public holidays for a specific country (for now it only works for Bulgaria and Netherlands but more are coming).
-
-It would be great if you can check it, play with it, leave some feedback and if you like it share it with a fried :)
-## [4][Excalidraw: Sketch Diagramming app in React + TypeScript + Roughjs (by Vjeux, OG Core team member)](https://www.reddit.com/r/reactjs/comments/ejno4i/excalidraw_sketch_diagramming_app_in_react/)
-- url: https://github.com/excalidraw/excalidraw
+## [3][React Tutorial: Build an e-commerce site from scratch using React and Netlify](https://www.reddit.com/r/reactjs/comments/ejtpy8/react_tutorial_build_an_ecommerce_site_from/)
+- url: https://www.youtube.com/watch?v=wPQ1-33teR4
 ---
 
-## [5][[REPOST] Easily add responsive styles using objects such as {xxl: "color: red;"} with lovelyui, based on @emotion/core](https://www.reddit.com/r/reactjs/comments/ejo2r3/repost_easily_add_responsive_styles_using_objects/)
-- url: https://github.com/flakesrc/lovelyui
+## [4][Infographic that summarizes how React performed in 2019 comparing to Vue and Angular](https://www.reddit.com/r/reactjs/comments/ejv4nr/infographic_that_summarizes_how_react_performed/)
+- url: https://vue-view.com/resources/top-javascript-frameworks-in-2019/
 ---
 
-## [6][I've created a simple react state manager, it works really well in my current projects, I need your opinions.](https://www.reddit.com/r/reactjs/comments/ejmcyo/ive_created_a_simple_react_state_manager_it_works/)
-- url: https://www.reddit.com/r/reactjs/comments/ejmcyo/ive_created_a_simple_react_state_manager_it_works/
+## [5][My first React app that does a useful thing! It's a very, very simple mortgage calculator.](https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/)
+- url: https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/
 ---
-[**simple-react-state**](https://github.com/yezyilomo/simple-react-state) is a react state manager based on react hooks and react-redux which  makes working with both local and global state painless, it  also works pretty well with nested states. With [**simple-react-state**](https://github.com/yezyilomo/simple-react-state) you can manage state in your react application with only 4 utilities, `Provider`, `configureStore`, `useLocalState` and `useGlobalState` that's all you need. Here is the link to the project [https://github.com/yezyilomo/simple-react-state](https://github.com/yezyilomo/simple-react-state), Your opinions will be appreciated, Thank you.
-## [7][Authentication with Flask, React, and Docker (updated)](https://www.reddit.com/r/reactjs/comments/ejfiho/authentication_with_flask_react_and_docker_updated/)
-- url: https://testdriven.io/courses/auth-flask-react/
----
+Hi! I'm working on a career change to coding and I've been learning React, among other things. I made this mortgage calculator and I wanted to show it off, simple as it is.
 
-## [8][What other tests can I run on this functional component?](https://www.reddit.com/r/reactjs/comments/ejsjxc/what_other_tests_can_i_run_on_this_functional/)
+I used test-driven development principles with Jest and Enzyme to write the logic and interface, and then tried to get the app as responsive as I could figure out with CSS.
+
+I have some ideas for further enhancements...I mean, I could hardly sneeze without enhancing it because it's so bare-bones simple. One thing I'd like to do is eventually port it to React Native and Electron. But I'm interested in other ideas.
+
+Also, I'd appreciate any feedback on how close this is to a viable portfolio project. Thanks for taking a look and for any advice!
+
+[Here's the app!](https://mortgagecalculator.mikeshecket.com)
+
+[And here's the source!](https://github.com/mshecket/mortgage-calculator)
+## [6][What other tests can I run on this functional component?](https://www.reddit.com/r/reactjs/comments/ejsjxc/what_other_tests_can_i_run_on_this_functional/)
 - url: https://www.reddit.com/r/reactjs/comments/ejsjxc/what_other_tests_can_i_run_on_this_functional/
 ---
 	import React from 'react';
@@ -156,69 +154,126 @@ It would be great if you can check it, play with it, leave some feedback and if 
 Ran a bunch of tests on App.js and I am wondering if there are any other test I can run on it. I am pretty sure there are tons and tons, but I would like to know if there's any test worth doing.
 
 https://github.com/RitikPatni/react-todo/tree/master/src
-## [9][how to access local create-react-app from another computer?](https://www.reddit.com/r/reactjs/comments/ejowau/how_to_access_local_createreactapp_from_another/)
-- url: https://www.reddit.com/r/reactjs/comments/ejowau/how_to_access_local_createreactapp_from_another/
+## [7][What can I do to take my project to the next level?](https://www.reddit.com/r/reactjs/comments/ejuyoq/what_can_i_do_to_take_my_project_to_the_next_level/)
+- url: https://www.reddit.com/r/reactjs/comments/ejuyoq/what_can_i_do_to_take_my_project_to_the_next_level/
 ---
-i'm an amateur and this is probably a dumb question, but i am trying to access my locally created 'create-react-app' from another computer on the same Wifi. i looked at this stack overflow question which asked a similar thing: 
+Hi all,
 
-[https://stackoverflow.com/questions/47412363/how-to-open-a-create-react-app-from-another-computer-connected-to-the-same-netwo](https://stackoverflow.com/questions/47412363/how-to-open-a-create-react-app-from-another-computer-connected-to-the-same-netwo) 
+In a quest to build something that is worthy of being looked at by potential employers, I decided to build an advanced to-do list app.
 
-but when i run  HOST=0.0.0.0 npm run start, i get an error message saying: 
+It currently has:
+- PWA, so you can install Everest on any device
+- Natural Language Processing of tasks for dates (think Todoist)
+- Firebase login to keep your data backed up securely so you can access it on any device
+- and a whole lot more listed on the repo
 
-"'HOST' is not recognized as an internal or external command, operable program or batch file."
+What can I do to show employers this is a project worth putting on a resume?
 
-how do i get past this, and is there any other way of testing my create-react-app on another computer other than my local one? 
 
-&amp;#x200B;
-
-thanks a lot everyone!
-## [10][FlatList equivalent ReactJS](https://www.reddit.com/r/reactjs/comments/ejr53z/flatlist_equivalent_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/ejr53z/flatlist_equivalent_reactjs/
+[Link to app](http://everest-todo.herokuapp.com)
+[Link to repo](http://github.com/diazabdulm/Everest)
+## [8][My first proper app](https://www.reddit.com/r/reactjs/comments/ejf1op/my_first_proper_app/)
+- url: https://www.reddit.com/r/reactjs/comments/ejf1op/my_first_proper_app/
 ---
-Any suggestions on simple light weight library that has a component similar to Flatlist or ScrollView in React Native? I have to render a list in a small pop up box on a SPA.
-## [11][My first React app that does a useful thing! It's a very, very simple mortgage calculator.](https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/)
-- url: https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/
+Hi all I'm new here but I wanted to share with you my first proper react app -&gt; [**https://foiz.io/**](https://foiz.io/?q=bg)
+
+If is free to use, vacation days (days off work) tracker that allows you to share your calendar with other people and see the public holidays for a specific country (for now it only works for Bulgaria and Netherlands but more are coming).
+
+It would be great if you can check it, play with it, leave some feedback and if you like it share it with a fried :)
+## [9][Hello from Taiwan!](https://www.reddit.com/r/reactjs/comments/ejv8gx/hello_from_taiwan/)
+- url: https://www.reddit.com/r/reactjs/comments/ejv8gx/hello_from_taiwan/
 ---
-Hi! I'm working on a career change to coding and I've been learning React, among other things. I made this mortgage calculator and I wanted to show it off, simple as it is.
-
-I used test-driven development principles with Jest and Enzyme to write the logic and interface, and then tried to get the app as responsive as I could figure out with CSS.
-
-I have some ideas for further enhancements...I mean, I could hardly sneeze without enhancing it because it's so bare-bones simple. One thing I'd like to do is eventually port it to React Native and Electron. But I'm interested in other ideas.
-
-Also, I'd appreciate any feedback on how close this is to a viable portfolio project. Thanks for taking a look and for any advice!
-
-[Here's the app!](https://mortgagecalculator.mikeshecket.com)
-
-[And here's the source!](https://github.com/mshecket/mortgage-calculator)
-## [12][Rendering a React component on the server to take a screenshot of it](https://www.reddit.com/r/reactjs/comments/ejmy0x/rendering_a_react_component_on_the_server_to_take/)
-- url: https://www.reddit.com/r/reactjs/comments/ejmy0x/rendering_a_react_component_on_the_server_to_take/
+Hello everyone! I'm new to the group and wanted to say hi. I'm an American "YouTube taught" developer living in Kaohsiung, Taiwan. I'm a big fan of React and looking forward to meeting the community!
+## [10][GitHub: Starter template for building a project using React, Typescript, Next.js, Jest, TailwindCSS and ESLint.](https://www.reddit.com/r/reactjs/comments/ejwetw/github_starter_template_for_building_a_project/)
+- url: https://github.com/abhishekbhardwaj/tailwind-react-next.js-typescript-eslint-jest-starter
 ---
-Hi all! I originally created a GitHub issue on the facebook/react repo for this question, but they suggested I ask this question here.
 
-So my React application has a list of to do lists like this:
+## [11][Excalidraw: Sketch Diagramming app in React + TypeScript + Roughjs (by Vjeux, OG Core team member)](https://www.reddit.com/r/reactjs/comments/ejno4i/excalidraw_sketch_diagramming_app_in_react/)
+- url: https://github.com/excalidraw/excalidraw
+---
 
-https://user-images.githubusercontent.com/12554095/71749785-47206c00-2e2b-11ea-8d0c-5a82ceba1b05.png
+## [12][Nested routes and tabs with React (in Ionic)](https://www.reddit.com/r/reactjs/comments/ejvulq/nested_routes_and_tabs_with_react_in_ionic/)
+- url: https://www.reddit.com/r/reactjs/comments/ejvulq/nested_routes_and_tabs_with_react_in_ionic/
+---
+Hello. I am posting this question again as I didn't get an answer last time on a different community. I have a list on my home page and when an item is clicked, I want to get the details of that item and show it in a tabbed format (3 different tabs to be specific). I am trying to get this done in React with Ionic 4. It involves nested routes like below:
 
-\&gt; Replace the Figma canvas preview images with todo lists above.
+```
+/items -&gt; All items in a list
+/items/:id -&gt; Get details of item with id = 'id'
+/items/:id/:tab(name) -&gt; Details page with tab 'name'
+```
 
-&amp;#x200B;
 
-In the list of todo lists, I'd like to include a preview of each list as well as its name.
+Here's how I set it up with Ionic 4 and React:
 
-&amp;#x200B;
+Home.jsx
+```
+const App = () =&gt; (
+  &lt;IonApp&gt;
+      &lt;IonReactRouter&gt;
+        &lt;Menu/&gt;
+        &lt;IonRouterOutlet id="main"&gt;
+          &lt;Route exact path="/items" component={ListPage} /&gt;
+          &lt;Route path="/items/:id" component={DetailsPage }/&gt;
+          &lt;Route exact path="/" render={() =&gt; &lt;Redirect to="/items" /&gt;} /&gt;
+        &lt;/IonRouterOutlet&gt;
+      &lt;/IonReactRouter&gt;
+  &lt;/IonApp&gt;
+);
 
-Here's what I thought of to achieve this:
+```
 
-\- Whenever a todo list is updated, run a AWS Lambda (Node.js environment) job which generates HTML for the todo list server-side (using \`ReactDOMServer.renderStaticMarkup\`.
+In DetailsPage, I plan to fetch the data based on ID and then pass it to child component for different tab.
 
-\- Then, serve that HTML locally, visit the page using puppeteer, and take a screenshot of the page
+```
+const DetailsPage = ({match}) =&gt; {
+	
+    // Fetch Data and pass it as props later
+	
+    return (
+      &lt;IonTabs&gt;
 
-&amp;#x200B;
+        &lt;IonRouterOutlet&gt;
+          &lt;Route exact path={`${match.path}/:tab(tab1)`}&gt;
+            &lt;TabOne goBack={goBack}/&gt;
+          &lt;/Route&gt;
+          
+          &lt;Route exact path={`${match.path}/:tab(tab2)`}&gt;
+            &lt;TabTwo goBack={goBack}/&gt;
+          &lt;/Route&gt;
+          
+          &lt;Route exact path={`${match.path}/:tab(tab3)`}&gt;
+            &lt;TabThree goBack={goBack}/&gt;
+          &lt;/Route&gt;
 
-However, this seems like a lot of work. Is there an easier way of achieving this? Is there anything in the steps above that won't work?
+          &lt;Route 
+            exact path={match.path} 
+            render={() =&gt; &lt;Redirect to={`${match.url}/tab1`}/&gt;}
+          /&gt;
 
-I've looked at \`repng\` \[1\] so far but it hasn't worked for the components I tested it with.
+        &lt;/IonRouterOutlet&gt;
 
-&amp;#x200B;
+        &lt;IonTabBar slot="bottom"&gt;
+          &lt;IonTabButton tab="tab1" href={`${match.url}/tab1`}&gt;
+            &lt;IonIcon icon={informationCircle} /&gt;
+            &lt;IonLabel&gt;Tab 1&lt;/IonLabel&gt;
+          &lt;/IonTabButton&gt;
+          &lt;IonTabButton tab="tab2" href={`${match.url}/tab2`}&gt;
+            &lt;IonIcon icon={people} /&gt;
+            &lt;IonLabel&gt;Tab 2&lt;/IonLabel&gt;
+          &lt;/IonTabButton&gt;
+          &lt;IonTabButton tab="tab3" href={`${match.url}/tab3`}&gt;
+            &lt;IonIcon icon={text} /&gt;
+            &lt;IonLabel&gt;Tab 3&lt;/IonLabel&gt;
+          &lt;/IonTabButton&gt;
+        &lt;/IonTabBar&gt;
 
-\[1\] [https://github.com/jxnblk/repng](https://github.com/jxnblk/repng)
+      &lt;/IonTabs&gt;
+    );
+};
+
+```
+
+I am not sure if it's the dynamic `:id` parameter or something else but navigating to the details page for the first time redirects to /tab1 but if I change the tab and go back to list page and then again navigate to details page, it doesn't seem to redirect me to /tab1. I can see some other weird behaviors but I have lack of better words to describe it. I think I am missing something with the routing.
+
+The complete code is available on [GitHub](https://github.com/imxdn/ionic-tabbed-page)

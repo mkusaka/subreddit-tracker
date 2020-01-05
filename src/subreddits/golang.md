@@ -1,5 +1,17 @@
 # golang
-## [1][New to Go, not to programming: tutorial frustration](https://www.reddit.com/r/golang/comments/ejtm8n/new_to_go_not_to_programming_tutorial_frustration/)
+## [1][Building a BitTorrent client from the ground up in Go](https://www.reddit.com/r/golang/comments/ek4dp3/building_a_bittorrent_client_from_the_ground_up/)
+- url: https://blog.jse.li/posts/torrent/
+---
+
+## [2][Just wrote up a cookbook for IO in Go](https://www.reddit.com/r/golang/comments/ek8nu9/just_wrote_up_a_cookbook_for_io_in_go/)
+- url: https://www.reddit.com/r/golang/comments/ek8nu9/just_wrote_up_a_cookbook_for_io_in_go/
+---
+https://github.com/jesseduffield/notes/wiki/Golang-IO-Cookbook
+
+I wrote this mostly for myself to consolidate the stuff I learnt when changing [Horcrux](https://github.com/jesseduffield/horcrux) to stream file data rather than load it all into memory. Maybe it can be of use to other people trying to get their heads around this stuff :)
+
+Please let me know if there's any corrections/changes you think I should make. And thanks again for all those who gave feedback on the original post about Horcrux!
+## [3][New to Go, not to programming: tutorial frustration](https://www.reddit.com/r/golang/comments/ejtm8n/new_to_go_not_to_programming_tutorial_frustration/)
 - url: https://www.reddit.com/r/golang/comments/ejtm8n/new_to_go_not_to_programming_tutorial_frustration/
 ---
 I've been programming for years in multiple languages, and I'm frustrated with the Go tutorials. They all teach the same thing: syntax. After learning the pieces (loops, slices, structs, etc.) in the end I'm left without knowing how to write an application. 
@@ -9,120 +21,68 @@ I have yet to see anything in the tutorials that is more than a single file,  pa
 Am I missing something? Where can I find info on creating multi file applications? Code organization? I really want to delve into this but the tutorials are too basic to apply to useful functionality.
 
 Am I not getting far enough? Writing switch statements and for loops is not very satisfying.
-## [2][Going all in with Golang from PHP. Am I too ambitious ?](https://www.reddit.com/r/golang/comments/ejjppg/going_all_in_with_golang_from_php_am_i_too/)
-- url: https://www.reddit.com/r/golang/comments/ejjppg/going_all_in_with_golang_from_php_am_i_too/
+
+EDIT: Thank you all for the many responses! There looks to be many great resources and suggestions here. Upvote for the community!
+## [4][How to extend a struct dynamically?](https://www.reddit.com/r/golang/comments/ekc11n/how_to_extend_a_struct_dynamically/)
+- url: https://www.reddit.com/r/golang/comments/ekc11n/how_to_extend_a_struct_dynamically/
 ---
-Sorry couldn't really construct the title well but this is not meant to be clickbaity. Our current SAAS product is PHP based and we are a 100% PHP team at the moment. I am in love with Golang and being the founder of the company, I decided to rewrite in Go due to the following reasons:
-
-\- Better performance. We sell a platform and performance is very important.
-
-\- Ease of deployment. Go Binaries are awesome.
-
-\- I want to find more technical partners who can promote. Using Golang, I can just give them the binary to self host wherever.
-
-\- Our current PHP stack is too bloated and since our platform can be customized for each client, the frameworks and bloat get in our way. It will be easier to have a slimmed down version and then customize on top for each client. Go's simplicity has won me over.
-
-\- We need to remove/simplify some features that are not really needed or are coded in a complex way. 
-
-\- Better suited to build REST APIs. I don't hate PHP (it has paid the bills) but I really like how simple Golang is with its http library
-
-\- Attract better developers ? This one has been so controversial. I want to attract better talent. Does that help ? Or I am stupid.
+I have a struct St1. In some places I use it as is -- as an array of St1. In other place I need to be able to dynamically attach extra data to each struct, **akin to adding a few additional fields \*dynamically\* to each St1.**
 
 &amp;#x200B;
 
-The cons:
-
-\- No one in our dev. team knows Golang. I  finally broke the news to my CTO and he was like WTF. He is very good at what he does and comes from a .NET background. So he can pick this up in 2-3 weeks BUT our team is mostly junior devs and they will need to learn Golang.
-
-\- Existing customers on the PHP platform will need to be supported forever. We cannot retire the legacy platform that quickly due to the complex functions built for clients.
-
-Am I committing business suicide ?
-
-&amp;#x200B;
-
-EDIT: Wow, so many great responses. I do appreciate everyone and I will think hard before putting our team at risk. It seems like the consensus is to not do a full re-write but consider chipping away slowly and may be build a few smaller components in Go as microservice if at all.
-## [3][Running A/B test](https://www.reddit.com/r/golang/comments/ejur6h/running_ab_test/)
-- url: https://www.reddit.com/r/golang/comments/ejur6h/running_ab_test/
+What's a way to go?
+## [5][What "Build a &lt;X&gt; With Go" deserves it's own online course](https://www.reddit.com/r/golang/comments/ekb54y/what_build_a_x_with_go_deserves_its_own_online/)
+- url: https://www.reddit.com/r/golang/comments/ekb54y/what_build_a_x_with_go_deserves_its_own_online/
 ---
-I am not sure if it is right sub to ask this.
+I'm a fanatic Go programmer and have quite some experience in teaching others. I believe the best way of teaching is to build something concrete! So what do you think would be the best topic of such an online course? 
 
-I want to perform A/B test with my go gRPC server so that
+First thing that comes to mind is the creation of an API or Web App but maybe that is already covered in-depth by others? 
 
-1. Code does not become messy
-2. Can edit/add or stop the A/B test without deployment.
-
-I cannot use service proxy like Envoy or any traffic management for A/B test. Also, I have already created a separate server that add header to every request about the variant details. 
-
-Solution that I have thought:
-
-1. According to the request header, add a key value in context where key is some flag. (used [https://github.com/mwitkow/go-flagz](https://github.com/mwitkow/go-flagz)). 
-2. Create an informationMap that will be loaded from configMap in kubernetes. So, I can edit, add, stop the A/B test. 
-3. I have assumed that we have to use if/else for checking flag from context. 
-
-Can anyone suggest/ review this solution ?
-## [4][Using local development modules without pushing to Github everytime](https://www.reddit.com/r/golang/comments/ejsgl0/using_local_development_modules_without_pushing/)
-- url: https://www.reddit.com/r/golang/comments/ejsgl0/using_local_development_modules_without_pushing/
+I'm curious what you think!
+## [6][How do I handle interdependent modules?](https://www.reddit.com/r/golang/comments/ekai39/how_do_i_handle_interdependent_modules/)
+- url: https://www.reddit.com/r/golang/comments/ekai39/how_do_i_handle_interdependent_modules/
 ---
-So I am trying to learn the new module system where I put my codebase outside of GOPATH and I am trying to figure out if my development flow is incorrect or not.
+For example lets say we have an online chatroom. Users can join a room and post messages there and the messages are delivered to other users in the room via some realtime delivery mechanism.
 
-E.g. I developed this package/library: https://github.com/psykidellic/gomath. I checkout the repo $HOME/projects/gomath and start hacking on it.
+So we have a `roomService` struct.
 
-Now, I want to use this library in another of my side project $HOME/projects/"gomathtest". Now if I push changes from gomath to github and use it in my new project 
+    type roomService struct {
+        room      messagerooms.RoomRepository 
+        message   messagerooms.MessageRepository 
+        publisher pubsub.Service 
+    }
 
-    import (
-        "github.com/psykidellic/gomath/calc"
-    )
+Here `roomService` is dependent on the `pubsub` service because every time a new message is posted, that message is sent to the pubsub system for distributing accross the room members via maybe an websocket connection.
 
-everything works.
+My Problem here is that if an user tries to subscribe to the message streams for a room, before subscribing the user to the stream, the `pubsub` service needs to check if that user is actually part of the room. And thus the `pubsub` service becomes dependent on the `roomService`  for deciding if the user is part of the room, which is creating a circular dependency.
 
-But this means, during development I have to constantly push to github. Is there a way I can use the library gomath in gomathtest with the same import but then use the code from my local projects folder during development?
-
-In my final ci/cd, obviously I want to do the correct way where code is actually imported from github.
-## [5][Go: g0, Special Goroutine](https://www.reddit.com/r/golang/comments/ejjglc/go_g0_special_goroutine/)
-- url: https://medium.com/a-journey-with-go/go-g0-special-goroutine-8c778c6704d8
+So how to handle situations like this?
+## [7][sshtargate - Host SSH portals to applications](https://www.reddit.com/r/golang/comments/ek3uez/sshtargate_host_ssh_portals_to_applications/)
+- url: https://git.sr.ht/~tslocum/sshtargate
 ---
 
-## [6][Im at a point in learning go where I just don't understand it anymore (Dependency Injection) what is the wisest move to do?](https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/)
-- url: https://www.reddit.com/r/golang/comments/ejn44m/im_at_a_point_in_learning_go_where_i_just_dont/
+## [8][Guys, using gorilla mux, a router and it's subrouter, are they different entities or are they connected?](https://www.reddit.com/r/golang/comments/ek24zu/guys_using_gorilla_mux_a_router_and_its_subrouter/)
+- url: https://www.reddit.com/r/golang/comments/ek24zu/guys_using_gorilla_mux_a_router_and_its_subrouter/
 ---
-Would reading the previous chapters in the tutorial I follow work or is it just a matter of time and excercise?
-## [7][koanf: Light weight extensible library for reading config (file, S3 etc.) in Go applications. Built in support for JSON, TOML, YAML, env, command line.](https://www.reddit.com/r/golang/comments/ejjyz8/koanf_light_weight_extensible_library_for_reading/)
-- url: https://github.com/knadh/koanf
+Does a middlware attached to the parent router affect the subrouter?
+Thank you
+## [9][How to Find All Packages that implements io.Reader](https://www.reddit.com/r/golang/comments/ek7k6c/how_to_find_all_packages_that_implements_ioreader/)
+- url: https://www.reddit.com/r/golang/comments/ek7k6c/how_to_find_all_packages_that_implements_ioreader/
 ---
+Disclaimer: I am a noob, so I apologize in advance if the terminology is incorrect.
 
-## [8][Where to place project source code?](https://www.reddit.com/r/golang/comments/ejkbx0/where_to_place_project_source_code/)
-- url: https://www.reddit.com/r/golang/comments/ejkbx0/where_to_place_project_source_code/
+The [csv.NewReader\(\)](https://golang.org/pkg/encoding/csv/#NewReader) from  re
+quires an io.Reader as an input. And [os.File](https://golang.org/pkg/os/#File.Read)
+has this same method so os.File type implements the io.Reader.
+
+My question is how to find all the packages in the standard library that implements the io.Reader. If the input needs an io.Reader, then it is not a problem. It is those methods like File.Read where the method is the same as the io.Reader.
+## [10][return (ok bool) instead of error?](https://www.reddit.com/r/golang/comments/ek2nib/return_ok_bool_instead_of_error/)
+- url: https://www.reddit.com/r/golang/comments/ek2nib/return_ok_bool_instead_of_error/
 ---
-Hi, newbie Gopher here. I'm starting to learn Go for fun and I'm a bit confused about the relationship between the GOPATH directory and where my project source code should live. From the Go wiki on GitHub, I see that:
+I am writing a function that is supposed to take a string, and return the first rune along with a new string where that character has been chopped off, e.g., `"hello" -&gt; ('h', "ello")`. However, I want to explicitly handle the case of the string being empty by returning an `error`. But as I think about it, this error shouldn't carry any information other than whether or not it exists; it shouldn't need to have the `Error()` function defined. So it feels like using the `error` interface is a bit heavy. I see that the language also commonly uses `(ok bool)` as a return type to indicate success or failure, but that seems limited to language features like type assertions. My third option is just to return a `nil` string that the caller has to check for, but that doesnt seem idiomatic either.
 
-_The GOPATH environment variable is used to specify directories outside of $GOROOT that contain the source for Go projects and their binaries._
+Would it be good practice to return `(rune, string, ok bool)`? Or should I still just return some instance of `error`? I come from Rust, and in this case I would have returned an `Option&lt;(char, &amp;str)&gt;`, which seems more analogous to a bool than an error.
 
-Does this include my own projects? Am I breaking a convention if my Go source lives in some other directory? I'm using Go `1.13.5`
-## [9][Chaos-mesh: A Chaos Engineering Platform for Kubernetes](https://www.reddit.com/r/golang/comments/ejbgmn/chaosmesh_a_chaos_engineering_platform_for/)
-- url: https://github.com/pingcap/chaos-mesh
----
+Thanks for any reply!
 
-## [10][Using channel to wait for message bus response.. good or bad idea?](https://www.reddit.com/r/golang/comments/ejk9wr/using_channel_to_wait_for_message_bus_response/)
-- url: https://www.reddit.com/r/golang/comments/ejk9wr/using_channel_to_wait_for_message_bus_response/
----
-TL;DR Right way to have API endpoint send async message across message bus, wait for async msg resp, before sending response back to consumer of API, using go func and channels while handling threaded API requests
-
-Still learning/experimenting. Looking to understand what is considered good/bad (regardless if it works).
-
-Most of my APIs will be async by default, but some, like the web UI waiting on the response from an API in a sync manner, that on the server side uses a message bus to communicate between the API service (the UI called) and the back end service that does some logic and eventually (but most likely within milliseconds) responds back to the API (via another message).
-
-So, to facilitate a mostly async architecture, using a message bus  and some form of consumer event/push notifications is my preferred architecture. With Web hooks, web sockets, and consumers that run in servers being able to provide callback endpoints.. it's trivial to do for the most part. Regardless of the way the consumer, be it another server or a UI, retrieves push notifications.. sometimes a consumer can't handle push (or is not configured to do so, etc) and needs a sync API call.. or maybe it just makes sense in some cases NOT to add the complexity of matching up an async request to an async push notification when the flow dictates that it is sync.
-
-One example is email verification. When a user gets an email with a link to verify their email.. and clicks it, it takes them to my site, which in turn, before the user sees the "next step" makes a SYNC API request to my server to let the server know the user has indeed verified their email. This on the back end, hits the API e.g. /verifyEmail endpoint. At this point, my back end user service (let's not argue/talk about how I have services set up for the sake of this post) is tied to the message bus via a few topics. One is user.verify, and the handler there takes in the email, looks up the user by email (at this point the user is nothing more than just an email, waiting on verification, before the UI next step allows the user to fill in username, password, details, etc).. finds the email (hopefully), and then returns a response via a message BACK to the API /verifyEmail endpoint.
-
-SO.. it is this I wanted to discuss.. or rather ask if the way I think I should implement this is good, bad, if it works so be it, etc.
-
-I am still trying to grasp/understand go funcs and channels. My thought is this. The API endpoint /verifyEmail sends a message (to the user.verifyEmail as I said), and then waits on the response of a channel. So prior, it creates a new channel, then does the &lt;- waitOnResp (or whatever the name is). In the same API endpoint, in the init() func presumably, I have set up a subscription to the message bus, to topic user.verifyEmailResp.  Now, the handler, when it receives a message, would then write the resp payload of the message to the channel... which I assume, if I understand it right, would then cause the currently waiting API endpoint handler to get the data, and then be able to send a response back.. right?
-
-The one issue I am unsure of is an API handler needs to handle any number of incoming threads. So I assume I have to put this bit of code.. the part that sends the msg, then waits on the channel, in a go func(). But.. I am unsure if it will keep the web socket from the initial API request open.. so that when it receives the data from the channel and writes the response back out.. if it will go back to the API consumer (my UI that made the request).
-
-Hence.. is what I am trying to do here the "right way", and more so, if so, how do I properly set it up so it can continue to handle any number of API requests (because one day I hope to have millions of users on my web site :D) and properly send responses back to the write sockets.. or rather hopefully there isn't some way to screw things up in code to cause a response to go back to the wrong user.
-
-It is a bit winded.. hopefully it makes sense?
-
-Appreciate/thank you for any help.
+Edit: Thanks to numerous responses, especially from u/ruertar, it seems like `error` is still the best option here. Thank you very much for all the discussion! It has been very interesting to see everyone's opinions :)

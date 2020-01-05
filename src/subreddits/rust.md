@@ -33,101 +33,157 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2019/12/31/this-week-in-rust-319/
 ---
 
-## [3][Announcing "Haskell Bits", a Functor/Applicative/Monad hierarchy in Rust](https://www.reddit.com/r/rust/comments/ejubtb/announcing_haskell_bits_a_functorapplicativemonad/)
-- url: https://github.com/clintonmead/haskell_bits
+## [3][Helps understanding a post on performances/syscalls](https://www.reddit.com/r/rust/comments/eka8rh/helps_understanding_a_post_on_performancessyscalls/)
+- url: https://www.reddit.com/r/rust/comments/eka8rh/helps_understanding_a_post_on_performancessyscalls/
+---
+Recently (well, half an hour ago) I stumbled across this ( https://drewdevault.com/2020/01/04/Slow.html ) post where the OP compares the "ideal" number of syscalls for an hello world vs the number of syscalls in a bunch of languages. It's a fun little comparison and I got curious. Some tests impressed me for better (Zig for example) or worse (C glib vs the musl counterpart), but I got puzzled as soon as I reached Rust. Rust does a wopping total of 123 total syscalls, 21 unique (so far more than write/exit). I don't have much experience with strace and the similar, nor with the rust's internals, so I asks you experts: why this difference? whose "fault" is that? Is it possible to reduce the gap with the ideal case without inlining assembler?
+
+The code:
+
+```
+fn main() {
+    println!("hello world");
+}
+```
+
+Compiled with: `rustc -C opt-levels=s test.rs`
+
+It doesn't say with version of the compiler, so I assume the latest stable. It's just a tought experiment, I don't think the author strived for the most performant but a "classic" version for every language. Thank you for everyone that will take time to help me understand! :)
+## [4][Projects for beginners](https://www.reddit.com/r/rust/comments/ek7mqr/projects_for_beginners/)
+- url: https://www.reddit.com/r/rust/comments/ek7mqr/projects_for_beginners/
+---
+I'm started learning Rust, but the actual books are a little boring.
+
+Does someone have an idea of projects that a beginner rust programmer can do?
+## [5][Blog Post: Mutexes Are Faster Than Spinlocks](https://www.reddit.com/r/rust/comments/ejx7y8/blog_post_mutexes_are_faster_than_spinlocks/)
+- url: https://matklad.github.io/2020/01/04/mutexes-are-faster-than-spinlocks.html
 ---
 
-## [4][Reducing support for 32-bit Apple targets](https://www.reddit.com/r/rust/comments/ejk5s1/reducing_support_for_32bit_apple_targets/)
-- url: https://blog.rust-lang.org/2020/01/03/reducing-support-for-32-bit-apple-targets.html
+## [6][How can I prevent expanding [ T ] to [ [ T ] ] while implementing a trait?](https://www.reddit.com/r/rust/comments/ekbhqn/how_can_i_prevent_expanding_t_to_t_while/)
+- url: https://www.reddit.com/r/rust/comments/ekbhqn/how_can_i_prevent_expanding_t_to_t_while/
+---
+I'm trying to overload methods using a specialization. 
+
+&amp;#x200B;
+
+Main trait is
+
+`pub trait Validate&lt;T: ?Sized&gt; {`
+
+`type Output: Output;`
+
+`fn validate(&amp;mut self, node: &amp;T) -&gt; Self::Output;`
+
+`}`
+
+&amp;#x200B;
+
+and it explodes when I add
+
+&amp;#x200B;
+
+`impl&lt;T, V, O, E&gt; Validate&lt;[T]&gt; for V`
+
+`where`
+
+`Self: Validate&lt;T, Output = Result&lt;O, E&gt;&gt;,`
+
+`{`
+
+`type Output = Result&lt;Vec&lt;O&gt;, E&gt;;`
+
+`fn validate(&amp;mut self, nodes: &amp;[T]) -&gt; Self::Output {`
+
+`nodes.iter().map(|node| self.validate(node)).collect()`
+
+`}`
+
+`}`
+
+`impl Analyzer {`
+
+`pub fn check&lt;T, O&gt;(&amp;mut self, node: &amp;T) -&gt; Option&lt;O&gt;`
+
+`where`
+
+`Self: Validate&lt;T, Output = Result&lt;O, Error&gt;&gt;,`
+
+`{`
+
+`let res: Result&lt;O, _&gt; = self.validate(node);`
+
+`match res {`
+
+`Ok(v) =&gt; Some(v),`
+
+`Err(..) =&gt; {`
+
+`// handle error`
+
+`None`
+
+`}`
+
+`}`
+
+`}`
+
+`}`
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+(Output trait is a trick to bypass the current limitation of the specialization)
+
+&amp;#x200B;
+
+As rustc prints
+
+= note: required because of the requirements on the impl of \`validator::Validate&lt;\[\_\]&gt;\` for \`analyzer::Analyzer&lt;'\_, '\_&gt;\`
+
+= note: required because of the requirements on the impl of \`validator::Validate&lt;\[\[\_\]\]&gt;\` for \`analyzer::Analyzer&lt;'\_, '\_&gt;\`
+
+= note: required because of the requirements on the impl of \`validator::Validate&lt;\[\[\[\_\]\]\]&gt;\` for \`analyzer::Analyzer&lt;'\_, '\_&gt;\`
+
+&amp;#x200B;
+
+I think it can be solved by preventing impl of \`Validate&lt;\[\[T\]\]&gt;\`. How can I do this?
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Playground: [https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=3145207592ca5a8ad41fd691094ce7ec](https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=3145207592ca5a8ad41fd691094ce7ec)
+## [7][Google's OSS-fuzz officially supports Rust since August](https://www.reddit.com/r/rust/comments/ek2l52/googles_ossfuzz_officially_supports_rust_since/)
+- url: https://github.com/google/oss-fuzz
 ---
 
-## [5][Introduce async-socks5: async/.await version of SOCKS5!](https://www.reddit.com/r/rust/comments/ejwbaq/introduce_asyncsocks5_asyncawait_version_of_socks5/)
+## [8][I just (sort of) finished my first project in rust, a simple image viewer and editor](https://www.reddit.com/r/rust/comments/ek4r9j/i_just_sort_of_finished_my_first_project_in_rust/)
+- url: https://github.com/sam-barr/png-rs
+---
+
+## [9][pkger - automated .rpm and .deb packaging using docker](https://www.reddit.com/r/rust/comments/ekczda/pkger_automated_rpm_and_deb_packaging_using_docker/)
+- url: https://www.reddit.com/r/rust/comments/ekczda/pkger_automated_rpm_and_deb_packaging_using_docker/
+---
+Hey Rustaceans!
+
+I wanted to show off my new project that I've started working on. It's called `pkger` and the idea behind it is to make it simple to build simple binary packages for multiple os, versions and architectures. To achieve this we have to define a recipe (containing all necessary build, install and metadata info) based on which `pkger` will build the desired package using docker's api to spawn and manipulate containers. Let me know if you have any ideas, suggestions or tips :) 
+
+Here is the repository: [pkger](https://github.com/wojciechkepka/pkger)
+## [10][Explaining Atomics in Rust](https://www.reddit.com/r/rust/comments/ejz4rs/explaining_atomics_in_rust/)
+- url: https://cfsamsonbooks.gitbook.io/explaining-atomics-in-rust/
+---
+
+## [11][chacha20_poly1305_rs: Implementation of ChaCha20, Poly1305, and an unsigned 256-bit integer (U256) in pure Rust with no additional dependencies](https://www.reddit.com/r/rust/comments/ek4r1x/chacha20_poly1305_rs_implementation_of_chacha20/)
+- url: https://github.com/jmg292/chacha20_poly1305_rs
+---
+
+## [12][Introduce async-socks5: async/.await version of SOCKS5!](https://www.reddit.com/r/rust/comments/ejwbaq/introduce_asyncsocks5_asyncawait_version_of_socks5/)
 - url: https://github.com/ark0f/async-socks5
----
-
-## [6][Has anyone experimented with Qt for WebAssembly using Rust?](https://www.reddit.com/r/rust/comments/ejvfnn/has_anyone_experimented_with_qt_for_webassembly/)
-- url: https://www.reddit.com/r/rust/comments/ejvfnn/has_anyone_experimented_with_qt_for_webassembly/
----
-I've been trying to develop a cross-platform desktop application that can also target the web. It seems like the two major choices are:
-
-1. A framework that compiles to HTML/CSS/JS, which is then wrapped by Electron for desktop use
-2. A framework that compiles to native for desktop, or WebAssembly for web use
-
-For 1, I looked into using [Yew](https://github.com/yewstack/yew) to create the WASM, but I found it difficult to use JS for interactive components, and Yew itself doesn't have the components I need out of the box (floating windows, dockable panels).
-
-For 2, it seems like Qt is a good option, because it compiles either to native or to WebAssembly depending on your target.
-
-Has anyone tried to use Rust bindings for Qt, compiling to WebAssembly? If there's an existing build process which works, I don't want to reinvent the wheel. It would also be great to contribute it back to [rust-qt](https://github.com/rust-qt/examples) for others to use.
-## [7][Alex Ionescu (CrowdStrike) hires Rust developers](https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/)
-- url: https://www.reddit.com/r/rust/comments/ejj6p1/alex_ionescu_crowdstrike_hires_rust_developers/
----
-I thought you might be interested in this. Alex Ionescu is a legend in the Windows internals world, a co-author of the Windows Internals book, a contributor to the ReactOS open source Windows (wannabe) alternative, and a speaker at well known conferences. And currently a Chief Architect at Crowdstrike. It turned out to be quite a praise :) but that's because I really admire him!  
-[https://twitter.com/aionescu/status/1213151075336888325](https://twitter.com/aionescu/status/1213151075336888325)
-## [8][Announcing AeroRust - The Unofficial Working Group For Rust in Aerospace](https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/)
-- url: https://www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/
----
-Hi Folks,
-
-We are happy to announce the formation of AeroRust Unofficial Working Group. Lately the Aerospace industry is picking up speed in commercialisation and even faster and rapid development in the area.
-
-This Working group is aiming to help push the Open-source community  more into the growing Aerospace industry, by providing information,  materials, tools, crates and etc. to hobbyists and the industry.  
-
-
-If you are interested, come join us:   
-
-
-* Github: [https://github.com/AeroRust/Welcome](https://github.com/AeroRust/Welcome)
-* Discord: [https://discord.gg/RXNsMXc](https://discord.gg/RXNsMXc)
-* Resources: [https://github.com/AeroRust/awesome-space](https://github.com/AeroRust/awesome-space)
-## [9][Code Golf now supports rust :-)](https://www.reddit.com/r/rust/comments/ejk773/code_golf_now_supports_rust/)
-- url: https://code-golf.io
----
-
-## [10][Announcing Razor, a model-finder for first-order theories](https://www.reddit.com/r/rust/comments/ejld0s/announcing_razor_a_modelfinder_for_firstorder/)
-- url: https://www.reddit.com/r/rust/comments/ejld0s/announcing_razor_a_modelfinder_for_firstorder/
----
-I’m so excited to have published my first Rust crates and would love feedback:
-
-razor-fol: a library for parsing and syntactic manipulation of first-order (logic) formulae.
-razor-chase: a library for constructing models for first-order theories.
-razor: a model-finding tool for first-order theories.
-
-Here is a link to the GitHub repo: https://github.com/salmans/rusty-razor
-
-The project is still in its infancy but I’ve had a blast experimenting with Rust. The theorem-proving community cares about correctness and speed, so I’m expecting to see similar project in Rust in the near future.
-
-Any comment, feedback, or suggestion is much appreciated!
-## [11][Await-ing within trait function](https://www.reddit.com/r/rust/comments/ejpx88/awaiting_within_trait_function/)
-- url: https://www.reddit.com/r/rust/comments/ejpx88/awaiting_within_trait_function/
----
-Given I have a trait function that needs to return a `futures::future::Either`, and must do an `await` to read a Stream, how can I `await` within the function? I've tried using `async move {...}` but I cannot get the return type right. This is a simplifed version of what I am trying:
-```
-async move {
-            let body_result: Result&lt;BytesMut, Error&gt; = get_request_body(&amp;mut req).await;
-            match body_result {
-                Ok(bytes) =&gt; Either::Left(svc.call(req)),
-                Err(_) =&gt; Either::Right(ok(req.into_response(
-                    HttpResponse::BadRequest()
-                        .body("No payload found.")
-                        .into_body(),
-                ))),
-            }
-        }
-        .boxed_local()
-```
-For the sake of this example it doesn't do anything with the `BytesMut`, but my problem is the return type. I'd like it to be `LocalBoxFuture&lt;'static, Either&lt;S::Future, Ready&lt;Result&lt;Self::Response, Self::Error&gt;&gt;&gt;&gt;` but this is the error I get:
-```
-  --&gt; src\custom_middleware\auth.rs:79:12
-   |
-79 | impl&lt;S, B&gt; Service for AuthenticatorMiddleware&lt;S&gt;
-   |            ^^^^^^^ expected enum `futures_util::future::either::Either`, found enum `std::result::Result`
-   |
-   = note: expected type `futures_util::future::either::Either&lt;&lt;S as actix_service::Service&gt;::Future, futures_util::future::ready::Ready&lt;std::result::Result&lt;actix_web::service::ServiceResponse&lt;B&gt;, actix_http::error::Error&gt;&gt;&gt;`
-
-```
-
-Not sure how I can get there, though. Any suggestions?
-## [12][Nvim-rs: Rust library for neovim clients](https://www.reddit.com/r/rust/comments/ejfceo/nvimrs_rust_library_for_neovim_clients/)
-- url: /r/neovim/comments/eiy5if/nvimrs_rust_library_for_neovim_clients/
 ---
 

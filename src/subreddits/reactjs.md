@@ -71,209 +71,131 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [stackblitz]: https://stackblitz.com/
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][React Tutorial: Build an e-commerce site from scratch using React and Netlify](https://www.reddit.com/r/reactjs/comments/ejtpy8/react_tutorial_build_an_ecommerce_site_from/)
+## [3][I built an iPod Classic using React Hooks &amp; Styled Components](https://www.reddit.com/r/reactjs/comments/ek181n/i_built_an_ipod_classic_using_react_hooks_styled/)
+- url: https://v.redd.it/kwfrv41kdt841
+---
+
+## [4][I developed Astuto, a self hosted customer feedback tool (React frontend)](https://www.reddit.com/r/reactjs/comments/ejxyhj/i_developed_astuto_a_self_hosted_customer/)
+- url: https://v.redd.it/uzy6heyy5s841
+---
+
+## [5][Recursive function - Array in state becoming empty](https://www.reddit.com/r/reactjs/comments/ekbx3o/recursive_function_array_in_state_becoming_empty/)
+- url: https://www.reddit.com/r/reactjs/comments/ekbx3o/recursive_function_array_in_state_becoming_empty/
+---
+What I am currently trying to achieve is simulating the mergeSort-algorithm equal to https://www.youtube.com/watch?v=ZRPoEKHXTJg using ReactJS. As a first step I just implemented merge sort without actually manipulating the array present in my state. Although none of my functions are actually accessing this.state or setting a new state, when the recursive function call of mergeSort finishes, the array is being displayed in the react component extension of chrome as being empty. How can this be the case?
+
+Here are the relevant code parts:
+
+    algorithm.mergeSortWrapper.call(this, this.state.arr);
+
+    // Wrapper function needed for calculating the number of recursive calls
+    // beforehand, enabling the incremental setting of state to display the sorting steps with a setTimeout for the animation
+    mergeSortWrapper: function(arr) {
+        algorithm.mergeSort.call(this, arr);
+        algorithm.counter = 0;
+      },
+      counter: 0
+
+    // The actual mergeSort method
+    // Functions are being called with (this) for setting state as part of the animation at a later stage of the implementation
+     mergeSort: function(arr) {
+        if (arr.length &lt;= 1) {
+          return arr;
+        }
+        let leftHalf = arr.splice(0, Math.floor(arr.length / 2));
+        let rightHalf = arr.splice(0, arr.length);
+        let left = algorithm.mergeSort.call(this, leftHalf);
+        let right = algorithm.mergeSort.call(this, rightHalf);
+        arr = merge.call(this, left, right);
+        return arr;
+      },
+
+
+    // The actual sorting functionality    
+    function merge(left, right, sortedArray = []) {
+      while (left.length &gt; 0 &amp;&amp; right.length &gt; 0) {
+        if (left[0].height &lt; right[0].height) {
+          sortedArray = [...sortedArray, left.shift()];
+        } else {
+          sortedArray = [...sortedArray, right.shift()];
+        }
+      }
+      while (left.length &gt; 0) {
+        sortedArray = [...sortedArray, left.shift()];
+      }
+      while (right.length &gt; 0) {
+        sortedArray = [...sortedArray, right.shift()];
+      }
+      return sortedArray;
+    }
+
+Hope someone with a deeper knowledge of React can help me out.
+## [6][Lazy loading images in SSR](https://www.reddit.com/r/reactjs/comments/ekbt8z/lazy_loading_images_in_ssr/)
+- url: https://www.reddit.com/r/reactjs/comments/ekbt8z/lazy_loading_images_in_ssr/
+---
+So, I need to have the images lazy loaded in an SSR rendered react app.
+
+There are a few packages that cater to this, but what I found amiss among those is, the placeholder images become the actual SSR rendered layout (when I check the DOC by inspecting the page, I see the placeholder images instead of the actual images). Or sometimes, images are lazy-loaded by removing it from the SSR layout and then loaded client-side (which is weird)
+
+After checking out a few websites, I found out Medium solves that pretty well.For instance: Consider this article, [https://medium.com/@filipvitas/lazy-load-images-with-zero-javascript-2c5bcb691274](https://medium.com/@filipvitas/lazy-load-images-with-zero-javascript-2c5bcb691274) if we check the DOC of this page, it has all the full-sized actual images, but when we actually visit the page, we are greeted with a placeholder image which actually changes to the actual image as we scroll.
+
+Any hints/ideas on how to approach this lazy loading problem?
+
+&amp;#x200B;
+
+PS: I would appreciate it if anyone could throw an explanation as to how Medium is doing it. What I can think of is, they are doing the whole manipulation thingy client-side and SSR serves the full layout, which makes me wonder, why isn't there a visible flicker
+## [7][Chat App using ReactJS and React Native](https://www.reddit.com/r/reactjs/comments/ekbj5j/chat_app_using_reactjs_and_react_native/)
+- url: https://www.reddit.com/r/reactjs/comments/ekbj5j/chat_app_using_reactjs_and_react_native/
+---
+Hello everyone!!! Just published an article on medium about a Chat App made by me on ReactJS for Web and React Native for Mobile with a NodeJS server. Pusher is used to handle real-time notifications between users. Do give it a read if you find it interesting.
+
+Github : [https://github.com/Hemant27031999/Chatter-front-end](https://github.com/Hemant27031999/Chatter-front-end)
+
+Medium : [https://medium.com/@hy27.1999/making-a-web-plus-mobile-chat-app-from-scratch-with-your-own-server-using-pusher-39ef97556396](https://medium.com/@hy27.1999/making-a-web-plus-mobile-chat-app-from-scratch-with-your-own-server-using-pusher-39ef97556396)
+## [8][create a portfolio for getting a job as a react developer junior](https://www.reddit.com/r/reactjs/comments/ekb4cf/create_a_portfolio_for_getting_a_job_as_a_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ekb4cf/create_a_portfolio_for_getting_a_job_as_a_react/
+---
+hello, i'm planning to create a portfolio for getting a job as a react developer junior. im not sure what i should create, probably a very small project. any suggestion what kind of portofolio should i make?
+sorry bad english
+
+edit : website project
+## [9][#1 - Redux - Inside, Inside of](https://www.reddit.com/r/reactjs/comments/ekahxn/1_redux_inside_inside_of/)
+- url: https://youtu.be/0H89XIltxhc
+---
+
+## [10][React Tutorial: Build an e-commerce site from scratch using React and Netlify](https://www.reddit.com/r/reactjs/comments/ejtpy8/react_tutorial_build_an_ecommerce_site_from/)
 - url: https://www.youtube.com/watch?v=wPQ1-33teR4
 ---
 
-## [4][Infographic that summarizes how React performed in 2019 comparing to Vue and Angular](https://www.reddit.com/r/reactjs/comments/ejv4nr/infographic_that_summarizes_how_react_performed/)
-- url: https://vue-view.com/resources/top-javascript-frameworks-in-2019/
+## [11][Craft.js - a React Framework for building extensible page editors](https://www.reddit.com/r/reactjs/comments/ejx9la/craftjs_a_react_framework_for_building_extensible/)
+- url: https://www.reddit.com/r/reactjs/comments/ejx9la/craftjs_a_react_framework_for_building_extensible/
 ---
+Hello everyone! I wanted to share with you something that I've been working on for the past few months. This is Craft.js, a React framework that helps you *easily* design any page editor.
 
-## [5][My first React app that does a useful thing! It's a very, very simple mortgage calculator.](https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/)
-- url: https://www.reddit.com/r/reactjs/comments/ejqhaj/my_first_react_app_that_does_a_useful_thing_its_a/
+There're existing libraries that come with a fully working page editor out of the box with a user interface and editable components. However, if you wish to make customisations such as modifying the user interface and its behaviour, it will most definitely involve modifying the library itself.
+
+Craft.js solves this problem by modularising the building blocks of a page editor. It ships with a drag-n-drop system and handles the way user components should be rendered, updated and moved - among other things. With this, you'll be able to build your own page editor from top to bottom exactly how you want it to look and behave, the same way as you would build any frontend application with React.
+
+Feel free to let me know your comments/thoughts/criticisms. I would love to hear from you! ❤️
+
+&amp;#x200B;
+
+https://reddit.com/link/ejx9la/video/7jph1r46tr841/player
+
+Live demo: [https://craft.js.org/](https://craft.js.org/) | Another demo: [https://craft.js.org/examples/basic](https://craft.js.org/examples/basic) .
+
+You would notice that these 2 demos look nothing alike! But they are both built with Craft.js!
+
+&amp;#x200B;
+
+Github/Source code: [https://github.com/prevwong/craft.js/](https://github.com/prevwong/craft.js/)
+
+Documentation: [https://craft.js.org/r/docs/overview/](https://craft.js.org/r/docs/overview/)
+
+***(p.s. At the moment, the demo is not mobile friendly. Will probably work on this after I sort out my uni assignments)***
+## [12][What problems have people run into with Gatsby theme Novella?](https://www.reddit.com/r/reactjs/comments/ek8moy/what_problems_have_people_run_into_with_gatsby/)
+- url: https://www.reddit.com/r/reactjs/comments/ek8moy/what_problems_have_people_run_into_with_gatsby/
 ---
-Hi! I'm working on a career change to coding and I've been learning React, among other things. I made this mortgage calculator and I wanted to show it off, simple as it is.
+I need to create a blog at work and was thinking of using [https://github.com/narative/gatsby-theme-novela](https://github.com/narative/gatsby-theme-novela)
 
-I used test-driven development principles with Jest and Enzyme to write the logic and interface, and then tried to get the app as responsive as I could figure out with CSS.
-
-I have some ideas for further enhancements...I mean, I could hardly sneeze without enhancing it because it's so bare-bones simple. One thing I'd like to do is eventually port it to React Native and Electron. But I'm interested in other ideas.
-
-Also, I'd appreciate any feedback on how close this is to a viable portfolio project. Thanks for taking a look and for any advice!
-
-[Here's the app!](https://mortgagecalculator.mikeshecket.com)
-
-[And here's the source!](https://github.com/mshecket/mortgage-calculator)
-## [6][What other tests can I run on this functional component?](https://www.reddit.com/r/reactjs/comments/ejsjxc/what_other_tests_can_i_run_on_this_functional/)
-- url: https://www.reddit.com/r/reactjs/comments/ejsjxc/what_other_tests_can_i_run_on_this_functional/
----
-	import React from 'react';
-	import ReactDOM from 'react-dom';
-	import App from './App';
-	import { createStore } from 'redux';
-	import { Provider } from 'react-redux';
-	import rootReducer from './reducers/';
-	import { shallow, mount } from 'enzyme';
-	import { configure } from 'enzyme';
-	import Adapter from 'enzyme-adapter-react-16';
-
-	configure({ adapter: new Adapter() });
-
-
-	const store = createStore(rootReducer);
-	const shallowContainer = shallow(
-	  &lt;Provider store={store}&gt;
-		&lt;App /&gt;
-	  &lt;/Provider&gt;);
-	const container = mount(
-	  &lt;Provider store={store}&gt;
-		&lt;App /&gt;
-	  &lt;/Provider&gt;
-	);
-
-	describe('&lt;Login /&gt; with no props', () =&gt; {
-
-	  it('renders without crashing', () =&gt; {
-		const div = document.createElement('div');
-		ReactDOM.render(
-		  &lt;Provider store={store}&gt;
-			&lt;App /&gt;
-		  &lt;/Provider&gt;,
-		  div
-		);
-		ReactDOM.unmountComponentAtNode(div);
-	  });
-
-	  it('should match the snapshot', () =&gt; {
-		expect(shallowContainer.html()).toMatchSnapshot();
-	  });
-
-	  it('should have 3 h1 element', () =&gt; {
-		expect(container.find('h1').length).toEqual(3);
-	  });
-
-	  it('should have proper props for the first h1', () =&gt; {
-		expect(container.find('div.w-full&gt;h1').props()).toEqual({
-		  children: 'My Tasks',
-		  className: 'text-2xl font-bold w-64'
-		});
-	  });
-
-
-	});
-
-Ran a bunch of tests on App.js and I am wondering if there are any other test I can run on it. I am pretty sure there are tons and tons, but I would like to know if there's any test worth doing.
-
-https://github.com/RitikPatni/react-todo/tree/master/src
-## [7][What can I do to take my project to the next level?](https://www.reddit.com/r/reactjs/comments/ejuyoq/what_can_i_do_to_take_my_project_to_the_next_level/)
-- url: https://www.reddit.com/r/reactjs/comments/ejuyoq/what_can_i_do_to_take_my_project_to_the_next_level/
----
-Hi all,
-
-In a quest to build something that is worthy of being looked at by potential employers, I decided to build an advanced to-do list app.
-
-It currently has:
-- PWA, so you can install Everest on any device
-- Natural Language Processing of tasks for dates (think Todoist)
-- Firebase login to keep your data backed up securely so you can access it on any device
-- and a whole lot more listed on the repo
-
-What can I do to show employers this is a project worth putting on a resume?
-
-
-[Link to app](http://everest-todo.herokuapp.com)
-[Link to repo](http://github.com/diazabdulm/Everest)
-## [8][My first proper app](https://www.reddit.com/r/reactjs/comments/ejf1op/my_first_proper_app/)
-- url: https://www.reddit.com/r/reactjs/comments/ejf1op/my_first_proper_app/
----
-Hi all I'm new here but I wanted to share with you my first proper react app -&gt; [**https://foiz.io/**](https://foiz.io/?q=bg)
-
-If is free to use, vacation days (days off work) tracker that allows you to share your calendar with other people and see the public holidays for a specific country (for now it only works for Bulgaria and Netherlands but more are coming).
-
-It would be great if you can check it, play with it, leave some feedback and if you like it share it with a fried :)
-## [9][Hello from Taiwan!](https://www.reddit.com/r/reactjs/comments/ejv8gx/hello_from_taiwan/)
-- url: https://www.reddit.com/r/reactjs/comments/ejv8gx/hello_from_taiwan/
----
-Hello everyone! I'm new to the group and wanted to say hi. I'm an American "YouTube taught" developer living in Kaohsiung, Taiwan. I'm a big fan of React and looking forward to meeting the community!
-## [10][GitHub: Starter template for building a project using React, Typescript, Next.js, Jest, TailwindCSS and ESLint.](https://www.reddit.com/r/reactjs/comments/ejwetw/github_starter_template_for_building_a_project/)
-- url: https://github.com/abhishekbhardwaj/tailwind-react-next.js-typescript-eslint-jest-starter
----
-
-## [11][Excalidraw: Sketch Diagramming app in React + TypeScript + Roughjs (by Vjeux, OG Core team member)](https://www.reddit.com/r/reactjs/comments/ejno4i/excalidraw_sketch_diagramming_app_in_react/)
-- url: https://github.com/excalidraw/excalidraw
----
-
-## [12][Nested routes and tabs with React (in Ionic)](https://www.reddit.com/r/reactjs/comments/ejvulq/nested_routes_and_tabs_with_react_in_ionic/)
-- url: https://www.reddit.com/r/reactjs/comments/ejvulq/nested_routes_and_tabs_with_react_in_ionic/
----
-Hello. I am posting this question again as I didn't get an answer last time on a different community. I have a list on my home page and when an item is clicked, I want to get the details of that item and show it in a tabbed format (3 different tabs to be specific). I am trying to get this done in React with Ionic 4. It involves nested routes like below:
-
-```
-/items -&gt; All items in a list
-/items/:id -&gt; Get details of item with id = 'id'
-/items/:id/:tab(name) -&gt; Details page with tab 'name'
-```
-
-
-Here's how I set it up with Ionic 4 and React:
-
-Home.jsx
-```
-const App = () =&gt; (
-  &lt;IonApp&gt;
-      &lt;IonReactRouter&gt;
-        &lt;Menu/&gt;
-        &lt;IonRouterOutlet id="main"&gt;
-          &lt;Route exact path="/items" component={ListPage} /&gt;
-          &lt;Route path="/items/:id" component={DetailsPage }/&gt;
-          &lt;Route exact path="/" render={() =&gt; &lt;Redirect to="/items" /&gt;} /&gt;
-        &lt;/IonRouterOutlet&gt;
-      &lt;/IonReactRouter&gt;
-  &lt;/IonApp&gt;
-);
-
-```
-
-In DetailsPage, I plan to fetch the data based on ID and then pass it to child component for different tab.
-
-```
-const DetailsPage = ({match}) =&gt; {
-	
-    // Fetch Data and pass it as props later
-	
-    return (
-      &lt;IonTabs&gt;
-
-        &lt;IonRouterOutlet&gt;
-          &lt;Route exact path={`${match.path}/:tab(tab1)`}&gt;
-            &lt;TabOne goBack={goBack}/&gt;
-          &lt;/Route&gt;
-          
-          &lt;Route exact path={`${match.path}/:tab(tab2)`}&gt;
-            &lt;TabTwo goBack={goBack}/&gt;
-          &lt;/Route&gt;
-          
-          &lt;Route exact path={`${match.path}/:tab(tab3)`}&gt;
-            &lt;TabThree goBack={goBack}/&gt;
-          &lt;/Route&gt;
-
-          &lt;Route 
-            exact path={match.path} 
-            render={() =&gt; &lt;Redirect to={`${match.url}/tab1`}/&gt;}
-          /&gt;
-
-        &lt;/IonRouterOutlet&gt;
-
-        &lt;IonTabBar slot="bottom"&gt;
-          &lt;IonTabButton tab="tab1" href={`${match.url}/tab1`}&gt;
-            &lt;IonIcon icon={informationCircle} /&gt;
-            &lt;IonLabel&gt;Tab 1&lt;/IonLabel&gt;
-          &lt;/IonTabButton&gt;
-          &lt;IonTabButton tab="tab2" href={`${match.url}/tab2`}&gt;
-            &lt;IonIcon icon={people} /&gt;
-            &lt;IonLabel&gt;Tab 2&lt;/IonLabel&gt;
-          &lt;/IonTabButton&gt;
-          &lt;IonTabButton tab="tab3" href={`${match.url}/tab3`}&gt;
-            &lt;IonIcon icon={text} /&gt;
-            &lt;IonLabel&gt;Tab 3&lt;/IonLabel&gt;
-          &lt;/IonTabButton&gt;
-        &lt;/IonTabBar&gt;
-
-      &lt;/IonTabs&gt;
-    );
-};
-
-```
-
-I am not sure if it's the dynamic `:id` parameter or something else but navigating to the details page for the first time redirects to /tab1 but if I change the tab and go back to list page and then again navigate to details page, it doesn't seem to redirect me to /tab1. I can see some other weird behaviors but I have lack of better words to describe it. I think I am missing something with the routing.
-
-The complete code is available on [GitHub](https://github.com/imxdn/ionic-tabbed-page)
+While this theme looks beautiful, I have seen luminaries like [https://mobile.twitter.com/swyx](https://mobile.twitter.com/swyx) and [https://mobile.twitter.com/dabit3](https://mobile.twitter.com/dabit3) move away from this theme. Are there any flaws with this theme I should be aware of before I use it?

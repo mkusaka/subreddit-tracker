@@ -13,79 +13,43 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][(December 2018) An Update on CDNJS from Cloudflare](https://www.reddit.com/r/javascript/comments/ejvfqg/december_2018_an_update_on_cdnjs_from_cloudflare/)
+## [3][Remote Development With VS Code in Your Browser](https://www.reddit.com/r/javascript/comments/ejzhvh/remote_development_with_vs_code_in_your_browser/)
+- url: https://medium.com/better-programming/set-up-remote-development-with-vs-code-in-your-browser-4b5750d3d141
+---
+
+## [4][An Abbreviated History of JavaScript Package Managers](https://www.reddit.com/r/javascript/comments/ek50dd/an_abbreviated_history_of_javascript_package/)
+- url: https://medium.com/@MattGoldwater/an-abbreviated-history-of-javascript-package-managers-f9797be7cf0e
+---
+
+## [5][I made a personal website which has admin panel and CMS](https://www.reddit.com/r/javascript/comments/ek60gj/i_made_a_personal_website_which_has_admin_panel/)
+- url: https://github.com/ahmetbcakici/DynamicPersonalWebsite
+---
+
+## [6][How to Fix the Refresh Button When Using Service Workers](https://www.reddit.com/r/javascript/comments/ek4811/how_to_fix_the_refresh_button_when_using_service/)
+- url: https://redfin.engineering/how-to-fix-the-refresh-button-when-using-service-workers-a8e27af6df68
+---
+
+## [7][(December 2018) An Update on CDNJS from Cloudflare](https://www.reddit.com/r/javascript/comments/ejvfqg/december_2018_an_update_on_cdnjs_from_cloudflare/)
 - url: https://blog.cloudflare.com/an-update-on-cdnjs/
 ---
 
-## [4][Statistics of the JavaScript front end frameworks in 2019](https://www.reddit.com/r/javascript/comments/ejvavn/statistics_of_the_javascript_front_end_frameworks/)
+## [8][Statistics of the JavaScript front end frameworks in 2019](https://www.reddit.com/r/javascript/comments/ejvavn/statistics_of_the_javascript_front_end_frameworks/)
 - url: https://vue-view.com/resources/top-javascript-frameworks-in-2019/
 ---
 
-## [5][[AskJS] Share with me your uplifting stories of supporting an AngularJS project in the year 2020](https://www.reddit.com/r/javascript/comments/ejlpbf/askjs_share_with_me_your_uplifting_stories_of/)
-- url: https://www.reddit.com/r/javascript/comments/ejlpbf/askjs_share_with_me_your_uplifting_stories_of/
----
-Because I’m about to throw myself out a window.
-## [6][Type error: undefined is not a function - Promise.all() error in Cloud Functions](https://www.reddit.com/r/javascript/comments/ejvxfu/type_error_undefined_is_not_a_function_promiseall/)
-- url: /r/Firebase/comments/ejvxa7/type_error_undefined_is_not_a_function_promiseall/
+## [9][Craft.js - A React framework for building extensible page editors](https://www.reddit.com/r/javascript/comments/ejx1g8/craftjs_a_react_framework_for_building_extensible/)
+- url: https://craft.js.org
 ---
 
-## [7][[AskJs] Sorting visualizer audiolizer](https://www.reddit.com/r/javascript/comments/ejvxah/askjs_sorting_visualizer_audiolizer/)
-- url: https://github.com/kumaraditya1999/The-Sound-Of-Sorting
+## [10][How to Add Comments to Gatsby Blog](https://www.reddit.com/r/javascript/comments/ek10t8/how_to_add_comments_to_gatsby_blog/)
+- url: https://groups.hyvor.com/HyvorTalk/460/how-to-add-comments-gatsby-blog
 ---
 
-## [8][[AskJS] tagtical - Tagged templates to enhance your text processing experience](https://www.reddit.com/r/javascript/comments/ejocox/askjs_tagtical_tagged_templates_to_enhance_your/)
-- url: https://www.reddit.com/r/javascript/comments/ejocox/askjs_tagtical_tagged_templates_to_enhance_your/
----
-Hi
-
-I'm working on a [side project](https://github.com/customcommander/tagtical) and I'm looking for early feedback:
-
-* Does it look useful?
-* Any suggestions?
-* Why would you not use it?
-* etc.
-
-Anything that can help me improve and grow ;-) Thanks!
-
-### Use case: pluralisation
-
-Depending on the value of `n` you need to produce a different text, e.g. "There is 1 fox", "There are 10 foxes", etc.
-
-A typical implementation would be:
-
-    `There ${n === 1 ? 'is' : 'are'} ${n} ${n === 1 ? 'fox' : 'foxes'}`
-    //=&gt; e.g. "There is 1 fox"
-    //=&gt; e.g. "There are 10 foxes"
-
-Simple enough yet already difficult for the brain to parse. The code sort of hides the intent, which is a shame IMHO.
-
-How about this?
-
-    pluralize`There is/are ${n} fox(es)`;
-    //=&gt; e.g. "There is 1 fox"
-    //=&gt; e.g. "There are 10 foxes"
-
-### Use case: default value
-
-Similar concept; you can embed default values to use when their interpolated siblings are empty. The default values are removed from the string when they're not needed:
-
-    defaults`Hi ${username}/guest, you have ${num}/no new emails`;
-    //=&gt; e.g. "Hi John, you have 10 new emails"
-    //=&gt; e.g. "Hi John, you have no new emails"
-    //=&gt; e.g. "Hi guest, you have no new emails"
-## [9][Vanilla JavaScript and HTML - No frameworks. No libraries. No problem.](https://www.reddit.com/r/javascript/comments/ejouma/vanilla_javascript_and_html_no_frameworks_no/)
-- url: https://johnpapa.net/render-html-2/
+## [11][How to Create Your Own Node.js Module](https://www.reddit.com/r/javascript/comments/ek8i4r/how_to_create_your_own_nodejs_module/)
+- url: https://zeroequalsfalse.com/posts/nodejs-module/
 ---
 
-## [10][Content and templates in HTML](https://www.reddit.com/r/javascript/comments/eju1ca/content_and_templates_in_html/)
-- url: https://www.codemotion.com/magazine/dev-hub/web-developer/content-and-templates-in-html/
----
-
-## [11][Things You Should Know About Array.findIndex](https://www.reddit.com/r/javascript/comments/ejuuch/things_you_should_know_about_arrayfindindex/)
-- url: https://dutzi.github.io/using-find-index/
----
-
-## [12][JSED - JavaScript Encoded Data. A solution to the local AJAX CORS error](https://www.reddit.com/r/javascript/comments/ejo4to/jsed_javascript_encoded_data_a_solution_to_the/)
-- url: https://leeviolander.github.io/JavaScriptEncodedData/
+## [12][JS Quiz: 14 Date Time Questions in JavaScript - Prove your knowledge!](https://www.reddit.com/r/javascript/comments/ek4waj/js_quiz_14_date_time_questions_in_javascript/)
+- url: https://danlevy.net/js-quiz-14-date-time-questions-test-your-knowledge/
 ---
 

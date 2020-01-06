@@ -20,19 +20,100 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Resources to learn Redux with Typescript](https://www.reddit.com/r/typescript/comments/ekb72e/resources_to_learn_redux_with_typescript/)
+## [2][My best VSCode Linting/Formatting configuration for Typescript Projects](https://www.reddit.com/r/typescript/comments/eks5qx/my_best_vscode_lintingformatting_configuration/)
+- url: https://medium.com/javascript-in-plain-english/my-best-vscode-linting-formatting-configuration-for-typescript-projects-ef400ed9b78f?source=friends_link&amp;sk=d1a797a25de1e668bcd4e69d247f2be4
+---
+
+## [3][How can I use TS in a PHP project](https://www.reddit.com/r/typescript/comments/ekttnn/how_can_i_use_ts_in_a_php_project/)
+- url: https://www.reddit.com/r/typescript/comments/ekttnn/how_can_i_use_ts_in_a_php_project/
+---
+In my project, some of thr values are gained by php echo  , like let abc=&lt;?php echo $d?&gt;. What is the correct way to handle such scenaio such that I can use TS in these projects?
+## [4][how to import TypeScript library main function and typings from same location](https://www.reddit.com/r/typescript/comments/ekm021/how_to_import_typescript_library_main_function/)
+- url: https://www.reddit.com/r/typescript/comments/ekm021/how_to_import_typescript_library_main_function/
+---
+I am writing a TypeScript library + an example-app, each in separate codebases. I am having trouble getting the library's main function and its typings to be accessible from its import root; I want to be able to consume the library like this:
+
+    import myMainFunc, { InterfaceA, InterfaceB } from 'my-lib';
+
+However, I can only import the types from my-lib, not the main func. I have an entrypoint `index.ts` containing a default export, and a `types.ts` containing all relevant types:
+
+    src/
+      index.ts
+      types.ts
+
+My package.json has
+
+      "files": [
+        "/dist/"
+      ],
+      "main": "dist/index.js",
+      "typings": "dist/types.d.ts",
+
+and my tsconfig has
+
+    {
+      "compilerOptions": {
+        "lib": ["es6", "dom", "es2017"],
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "./dist",
+        "strict": true
+      },
+      "include": ["src"],
+      "exclude": ["node_modules", "src/test/*"]
+    }
+
+The built dist directory looks like:
+
+    dist/
+      index.js
+      index.d.ts
+      types.js
+      types.d.ts
+
+Note: the library is not yet published, so I use `yarn link` to pull it in as a dependency to the example app.
+## [5][Resources to learn Redux with Typescript](https://www.reddit.com/r/typescript/comments/ekb72e/resources_to_learn_redux_with_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/ekb72e/resources_to_learn_redux_with_typescript/
 ---
 I am trying to learn redux but almost everything is using Raw javascript. is there any resource which teaches redux with typescript (free or paid)?
-## [3][Self-published my first book! 2020 goals complete :)](https://www.reddit.com/r/typescript/comments/ejydn9/selfpublished_my_first_book_2020_goals_complete/)
+## [6][Question: why this won't work?](https://www.reddit.com/r/typescript/comments/ekbl3g/question_why_this_wont_work/)
+- url: https://www.reddit.com/r/typescript/comments/ekbl3g/question_why_this_wont_work/
+---
+Trying to play with generic type:
+
+
+```typescript
+
+function AorB&lt;T extends "a" | "b"&gt;(x: T) {
+
+  const f: T extends "a" 
+
+           ? (x: "b") =&gt; void 
+
+           : (x: "a") =&gt; void = ((x: T) =&gt; {});
+
+
+
+  return f
+
+}
+```
+
+And got an error:
+
+&gt; Type '(x: T) =&gt; void' is not assignable to type 'T extends "a" ? (x: "b") =&gt; void : (x: "a") =&gt; void'.ts(2322)
+
+I have no idea why this happened, why TypeScript can't infer the type of the function? confused for a whole day...
+## [7][Self-published my first book! 2020 goals complete :)](https://www.reddit.com/r/typescript/comments/ejydn9/selfpublished_my_first_book_2020_goals_complete/)
 - url: https://www.amazon.com/gp/product/B083C5S9LV?pf_rd_p=ab873d20-a0ca-439b-ac45-cd78f07a84d8&amp;pf_rd_r=7R80GRNQ6N1GH5H9TFC4
 ---
 
-## [4][Things I've Learnt Building Firebase Functions Declarations](https://www.reddit.com/r/typescript/comments/ek3wv7/things_ive_learnt_building_firebase_functions/)
+## [8][Things I've Learnt Building Firebase Functions Declarations](https://www.reddit.com/r/typescript/comments/ek3wv7/things_ive_learnt_building_firebase_functions/)
 - url: https://dutzi.party/building-firebase-functions-declarations/
 ---
 
-## [5][Module suffixes problem - VSCode refactoring/servers not using ".js" ?](https://www.reddit.com/r/typescript/comments/ejw340/module_suffixes_problem_vscode_refactoringservers/)
+## [9][Module suffixes problem - VSCode refactoring/servers not using ".js" ?](https://www.reddit.com/r/typescript/comments/ejw340/module_suffixes_problem_vscode_refactoringservers/)
 - url: https://www.reddit.com/r/typescript/comments/ejw340/module_suffixes_problem_vscode_refactoringservers/
 ---
 Hi 👋 **Problem**:  I'm using es2015 modules, and targeting web browsers. When I move .ts files in VSCode, the updated module import paths will not have a .js suffix. E.g.: I had a module reference:
@@ -51,56 +132,11 @@ Sorry for the broad scope of this question, but it's causing me some issues. I'v
 **Update**: seems there is no easy way to alter this refactoring behavior, but using webpack might be a solution, and one that does not require a large build pipeline and loads of dependencies. Thanks guys!
 
 **Update 2**: the following webpack command makes debugging work as well, though you get the .js source maps instead of the .ts `webpack --entry .\js\main.js -o library.js --mode development --watch --devtool source-map`
-## [6][Distributing Pick&lt;T, K&gt;/Omit&lt;T,K&gt; over union types in TypeScript](https://www.reddit.com/r/typescript/comments/ejiudx/distributing_pickt_komittk_over_union_types_in/)
+## [10][Distributing Pick&lt;T, K&gt;/Omit&lt;T,K&gt; over union types in TypeScript](https://www.reddit.com/r/typescript/comments/ejiudx/distributing_pickt_komittk_over_union_types_in/)
 - url: https://davidgomes.com/pick-omit-over-union-types-in-typescript/
 ---
 
-## [7][A short time learning Haskell can shortly IMPROVE your Typescript skills!](https://www.reddit.com/r/typescript/comments/ejllr2/a_short_time_learning_haskell_can_shortly_improve/)
+## [11][A short time learning Haskell can shortly IMPROVE your Typescript skills!](https://www.reddit.com/r/typescript/comments/ejllr2/a_short_time_learning_haskell_can_shortly_improve/)
 - url: https://medium.com/@lironhazan/a-short-time-learning-haskell-can-shortly-improve-your-typescript-skills-523505900ac0?source=friends_link&amp;sk=daf9f13302e63282bc7664574873fa8c
----
-
-## [8][Top-level await in TS 3.8 Nightly Build?](https://www.reddit.com/r/typescript/comments/ejgajz/toplevel_await_in_ts_38_nightly_build/)
-- url: https://www.reddit.com/r/typescript/comments/ejgajz/toplevel_await_in_ts_38_nightly_build/
----
-I'm trying to use top-level await in a TS 3.8. I installed the dev release from today (1/3/20). 
-
-When writing typescript it continues to complain: "'await' expression is only allowed within an async function. (TS1308) when I run tsc.
-
-Am I missing some step to allow top-level await?
-## [9][Node CLI startup cache: any other projects like this?](https://www.reddit.com/r/typescript/comments/ejo4ez/node_cli_startup_cache_any_other_projects_like/)
-- url: https://www.reddit.com/r/typescript/comments/ejo4ez/node_cli_startup_cache_any_other_projects_like/
----
-I have an idea for a project to improve startup of CLI tools written in TypeScript / JavaScript via aggressive caching and lazy-loading of dependencies, without requiring pre-compilation or webpacking.  The idea is to hit a sweet-spot between CLI performance and developer experience.
-
-* use `bundleDependencies` to lock all dependency versions.
-* cache all `require.resolve()` results, all `fs.readFileSync()` related to loading modules
-* cache all `ts.transpileModule()` results from `ts-node`.
-* A bit of Proxy magic to lazy-load imports automatically, without code changes.
-* Include v8-compile-cache
-
-Effectively, code can be written to use ts-node in the simplest way possible.  At development time, this will "just work" without a compile step.  Production releases will automatically create a cache after the first startup.  For subsequent startups, a single cache file is loaded, after which everything is a cache hit in memory.  No more fs calls, no transpiler calls.
-
-Anyone know of a project that already does this?
-
-So far everything I've seen does not take this approach.  They either:
-
-a) bundle it all into a new node binary.  
-b) webpack, which can cause weird breakages, incompatibilities, and debugging issues.
-## [10][Is this Guard class useful?](https://www.reddit.com/r/typescript/comments/ejq53p/is_this_guard_class_useful/)
-- url: https://www.reddit.com/r/typescript/comments/ejq53p/is_this_guard_class_useful/
----
-Hey -- 
-
-I'm new to Typescript.  
-
-I created this class:
-
- [https://github.com/NickHodges/TSGuard/blob/master/Guard.ts](https://github.com/NickHodges/TSGuard/blob/master/Guard.ts) 
-
-is this useful in Typescript, or am I wasting my time?
-
-I can, of course, expand on it.
-## [11][Blogged Answers: Years in Review, 2018-2019 · Mark's Dev Blog - Story of redux and typescript](https://www.reddit.com/r/typescript/comments/ejc6g6/blogged_answers_years_in_review_20182019_marks/)
-- url: https://blog.isquaredsoftware.com/2020/01/blogged-answers-years-in-review-2018-2019/
 ---
 

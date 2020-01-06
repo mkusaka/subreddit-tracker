@@ -1,21 +1,5 @@
 # reactjs
-## [1][/r/reactjs State of the Subreddit 2019](https://www.reddit.com/r/reactjs/comments/eazfa4/rreactjs_state_of_the_subreddit_2019/)
-- url: https://www.reddit.com/r/reactjs/comments/eazfa4/rreactjs_state_of_the_subreddit_2019/
----
-Hey everyone!
-
-Over the past year this sub has more than doubled in subscribers, from **~75k** to **150k+**. This is incredible growth and we're happy so many people want to discuss, share, and learn react. We are continuously trying to improve this sub so that it stays a first-class source of react information.
-
-With that said, we'd like to learn more about you all! We put together a survey that will take under 5 minutes to complete. It consists of demographic surveying, tech stack questions, and general feedback on how we're doing moderating this community.
-
-[/r/reactjs State of the Subreddit Survey 2019](https://forms.gle/kEHgg22TBn47SuGx9)
-
-We value your feedback greatly and look forward to a follow-up post showing the results, likely in the new year. 
-
-**Happy Holidays and New Year!**
-
--mod team
-## [2][Beginner's Thread / Easy Questions (Jan 2020)](https://www.reddit.com/r/reactjs/comments/eictui/beginners_thread_easy_questions_jan_2020/)
+## [1][Beginner's Thread / Easy Questions (Jan 2020)](https://www.reddit.com/r/reactjs/comments/eictui/beginners_thread_easy_questions_jan_2020/)
 - url: https://www.reddit.com/r/reactjs/comments/eictui/beginners_thread_easy_questions_jan_2020/
 ---
 [Previous threads][wiki previous threads] can be found in the Wiki.
@@ -71,131 +55,107 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [stackblitz]: https://stackblitz.com/
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][I built an iPod Classic using React Hooks &amp; Styled Components](https://www.reddit.com/r/reactjs/comments/ek181n/i_built_an_ipod_classic_using_react_hooks_styled/)
-- url: https://v.redd.it/kwfrv41kdt841
+## [2][Who's Hiring? [Jan 2020]](https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
 ---
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
 
-## [4][I developed Astuto, a self hosted customer feedback tool (React frontend)](https://www.reddit.com/r/reactjs/comments/ejxyhj/i_developed_astuto_a_self_hosted_customer/)
-- url: https://v.redd.it/uzy6heyy5s841
+_I am sorry for the missing "Who's Available [Dec 2019]" 🙇‍♂️_
+
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
+
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
+
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
+
+examples:
+
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
+
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
+
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
+
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
+[format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
+## [3][I build an open api lists repository](https://www.reddit.com/r/reactjs/comments/ekjfqc/i_build_an_open_api_lists_repository/)
+- url: https://www.reddit.com/r/reactjs/comments/ekjfqc/i_build_an_open_api_lists_repository/
 ---
+I was so tired to find an open API that is (actually) useful.
 
-## [5][Recursive function - Array in state becoming empty](https://www.reddit.com/r/reactjs/comments/ekbx3o/recursive_function_array_in_state_becoming_empty/)
-- url: https://www.reddit.com/r/reactjs/comments/ekbx3o/recursive_function_array_in_state_becoming_empty/
----
-What I am currently trying to achieve is simulating the mergeSort-algorithm equal to https://www.youtube.com/watch?v=ZRPoEKHXTJg using ReactJS. As a first step I just implemented merge sort without actually manipulating the array present in my state. Although none of my functions are actually accessing this.state or setting a new state, when the recursive function call of mergeSort finishes, the array is being displayed in the react component extension of chrome as being empty. How can this be the case?
+ I wish there was a list of all the open APIs I can use. 
 
-Here are the relevant code parts:
+So, I googled and found a useful repository at github. ([Link](https://github.com/public-apis/public-apis))
 
-    algorithm.mergeSortWrapper.call(this, this.state.arr);
+But it seems that repo isn't managed anymore. (Look at the issues and pr requests waiting there)
 
-    // Wrapper function needed for calculating the number of recursive calls
-    // beforehand, enabling the incremental setting of state to display the sorting steps with a setTimeout for the animation
-    mergeSortWrapper: function(arr) {
-        algorithm.mergeSort.call(this, arr);
-        algorithm.counter = 0;
-      },
-      counter: 0
-
-    // The actual mergeSort method
-    // Functions are being called with (this) for setting state as part of the animation at a later stage of the implementation
-     mergeSort: function(arr) {
-        if (arr.length &lt;= 1) {
-          return arr;
-        }
-        let leftHalf = arr.splice(0, Math.floor(arr.length / 2));
-        let rightHalf = arr.splice(0, arr.length);
-        let left = algorithm.mergeSort.call(this, leftHalf);
-        let right = algorithm.mergeSort.call(this, rightHalf);
-        arr = merge.call(this, left, right);
-        return arr;
-      },
-
-
-    // The actual sorting functionality    
-    function merge(left, right, sortedArray = []) {
-      while (left.length &gt; 0 &amp;&amp; right.length &gt; 0) {
-        if (left[0].height &lt; right[0].height) {
-          sortedArray = [...sortedArray, left.shift()];
-        } else {
-          sortedArray = [...sortedArray, right.shift()];
-        }
-      }
-      while (left.length &gt; 0) {
-        sortedArray = [...sortedArray, left.shift()];
-      }
-      while (right.length &gt; 0) {
-        sortedArray = [...sortedArray, right.shift()];
-      }
-      return sortedArray;
-    }
-
-Hope someone with a deeper knowledge of React can help me out.
-## [6][Lazy loading images in SSR](https://www.reddit.com/r/reactjs/comments/ekbt8z/lazy_loading_images_in_ssr/)
-- url: https://www.reddit.com/r/reactjs/comments/ekbt8z/lazy_loading_images_in_ssr/
----
-So, I need to have the images lazy loaded in an SSR rendered react app.
-
-There are a few packages that cater to this, but what I found amiss among those is, the placeholder images become the actual SSR rendered layout (when I check the DOC by inspecting the page, I see the placeholder images instead of the actual images). Or sometimes, images are lazy-loaded by removing it from the SSR layout and then loaded client-side (which is weird)
-
-After checking out a few websites, I found out Medium solves that pretty well.For instance: Consider this article, [https://medium.com/@filipvitas/lazy-load-images-with-zero-javascript-2c5bcb691274](https://medium.com/@filipvitas/lazy-load-images-with-zero-javascript-2c5bcb691274) if we check the DOC of this page, it has all the full-sized actual images, but when we actually visit the page, we are greeted with a placeholder image which actually changes to the actual image as we scroll.
-
-Any hints/ideas on how to approach this lazy loading problem?
+So I forked that and make new one.
 
 &amp;#x200B;
 
-PS: I would appreciate it if anyone could throw an explanation as to how Medium is doing it. What I can think of is, they are doing the whole manipulation thingy client-side and SSR serves the full layout, which makes me wonder, why isn't there a visible flicker
-## [7][Chat App using ReactJS and React Native](https://www.reddit.com/r/reactjs/comments/ekbj5j/chat_app_using_reactjs_and_react_native/)
-- url: https://www.reddit.com/r/reactjs/comments/ekbj5j/chat_app_using_reactjs_and_react_native/
+Anyone whose interested can check or contribute. ([Link](https://github.com/public-api-lists/public-api-lists))
+
+Thanks.
+## [4][Redux pubsub?](https://www.reddit.com/r/reactjs/comments/ektu3d/redux_pubsub/)
+- url: https://www.reddit.com/r/reactjs/comments/ektu3d/redux_pubsub/
 ---
-Hello everyone!!! Just published an article on medium about a Chat App made by me on ReactJS for Web and React Native for Mobile with a NodeJS server. Pusher is used to handle real-time notifications between users. Do give it a read if you find it interesting.
+Maybe I don't yet have the right mental model of Redux as I've now seen it used in different ways in a couple of, admittedly, messy projects. But can I use Redux with Thunk as a traditional pubsub type system?
 
-Github : [https://github.com/Hemant27031999/Chatter-front-end](https://github.com/Hemant27031999/Chatter-front-end)
+If so, how do I connect events (i.e. actions) to other calls that have side effects, without having to explicitly design out a chain of dispatch calls? I'm assuming the right way to do it is to have the listeners watch for actions and know what to do.
 
-Medium : [https://medium.com/@hy27.1999/making-a-web-plus-mobile-chat-app-from-scratch-with-your-own-server-using-pusher-39ef97556396](https://medium.com/@hy27.1999/making-a-web-plus-mobile-chat-app-from-scratch-with-your-own-server-using-pusher-39ef97556396)
-## [8][create a portfolio for getting a job as a react developer junior](https://www.reddit.com/r/reactjs/comments/ekb4cf/create_a_portfolio_for_getting_a_job_as_a_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ekb4cf/create_a_portfolio_for_getting_a_job_as_a_react/
----
-hello, i'm planning to create a portfolio for getting a job as a react developer junior. im not sure what i should create, probably a very small project. any suggestion what kind of portofolio should i make?
-sorry bad english
+The *listeners* get called in the reducers, but I can't take the payload and call another service to update the backend -  I can, of course, update the front end state, but it's now out of sync on the backend. Where do I attach the API call if the reducer can't make it.
 
-edit : website project
-## [9][#1 - Redux - Inside, Inside of](https://www.reddit.com/r/reactjs/comments/ekahxn/1_redux_inside_inside_of/)
-- url: https://youtu.be/0H89XIltxhc
----
+For example:
 
-## [10][React Tutorial: Build an e-commerce site from scratch using React and Netlify](https://www.reddit.com/r/reactjs/comments/ejtpy8/react_tutorial_build_an_ecommerce_site_from/)
-- url: https://www.youtube.com/watch?v=wPQ1-33teR4
+* Click button
+* Callback makes post to update service A, and returns payload of state.A, dispatching action.A
+* Reducer B listens for Action.A and sees payload. It needs to take payload.A and update state.B, but should actually do it by calling service B and updating it's state when action.B is dispatched.
+
+How do I trigger A and B without having to explicitly call dispatchA().then(payload.A, dispatchB(payload.A))?
+## [5][My best VSCode Linting/Formatting configuration for Typescript Projects](https://www.reddit.com/r/reactjs/comments/eks63o/my_best_vscode_lintingformatting_configuration/)
+- url: https://medium.com/javascript-in-plain-english/my-best-vscode-linting-formatting-configuration-for-typescript-projects-ef400ed9b78f?source=friends_link&amp;sk=d1a797a25de1e668bcd4e69d247f2be4
 ---
 
-## [11][Craft.js - a React Framework for building extensible page editors](https://www.reddit.com/r/reactjs/comments/ejx9la/craftjs_a_react_framework_for_building_extensible/)
-- url: https://www.reddit.com/r/reactjs/comments/ejx9la/craftjs_a_react_framework_for_building_extensible/
+## [6][Sharing Code Between React and React-Native: What Not to Share - Ben Ellerby](https://www.reddit.com/r/reactjs/comments/eke9og/sharing_code_between_react_and_reactnative_what/)
+- url: https://youtu.be/QO7SkFqRd7s
 ---
-Hello everyone! I wanted to share with you something that I've been working on for the past few months. This is Craft.js, a React framework that helps you *easily* design any page editor.
 
-There're existing libraries that come with a fully working page editor out of the box with a user interface and editable components. However, if you wish to make customisations such as modifying the user interface and its behaviour, it will most definitely involve modifying the library itself.
-
-Craft.js solves this problem by modularising the building blocks of a page editor. It ships with a drag-n-drop system and handles the way user components should be rendered, updated and moved - among other things. With this, you'll be able to build your own page editor from top to bottom exactly how you want it to look and behave, the same way as you would build any frontend application with React.
-
-Feel free to let me know your comments/thoughts/criticisms. I would love to hear from you! ❤️
-
-&amp;#x200B;
-
-https://reddit.com/link/ejx9la/video/7jph1r46tr841/player
-
-Live demo: [https://craft.js.org/](https://craft.js.org/) | Another demo: [https://craft.js.org/examples/basic](https://craft.js.org/examples/basic) .
-
-You would notice that these 2 demos look nothing alike! But they are both built with Craft.js!
-
-&amp;#x200B;
-
-Github/Source code: [https://github.com/prevwong/craft.js/](https://github.com/prevwong/craft.js/)
-
-Documentation: [https://craft.js.org/r/docs/overview/](https://craft.js.org/r/docs/overview/)
-
-***(p.s. At the moment, the demo is not mobile friendly. Will probably work on this after I sort out my uni assignments)***
-## [12][What problems have people run into with Gatsby theme Novella?](https://www.reddit.com/r/reactjs/comments/ek8moy/what_problems_have_people_run_into_with_gatsby/)
-- url: https://www.reddit.com/r/reactjs/comments/ek8moy/what_problems_have_people_run_into_with_gatsby/
+## [7][How often do you/people use Redux in React projects?](https://www.reddit.com/r/reactjs/comments/eklce7/how_often_do_youpeople_use_redux_in_react_projects/)
+- url: https://www.reddit.com/r/reactjs/comments/eklce7/how_often_do_youpeople_use_redux_in_react_projects/
 ---
-I need to create a blog at work and was thinking of using [https://github.com/narative/gatsby-theme-novela](https://github.com/narative/gatsby-theme-novela)
+I am lerning React.js on Udemy and the lecturer says that every React project he has worked on used Redux and everyone who is working with React should know Redux.
 
-While this theme looks beautiful, I have seen luminaries like [https://mobile.twitter.com/swyx](https://mobile.twitter.com/swyx) and [https://mobile.twitter.com/dabit3](https://mobile.twitter.com/dabit3) move away from this theme. Are there any flaws with this theme I should be aware of before I use it?
+At the same time, I find Redux quite complex. At lest it introduces a new level of complexity which seems unneeded (for me as a learner). 
+
+**Questions:** Do you use Redux in your projects? Why? Does a developer really need to know Redux if he or she wants to work with React?
+## [8][Please advise on why I can't get Remote jobs with my Resume with my experience and skills](https://www.reddit.com/r/reactjs/comments/eku4ko/please_advise_on_why_i_cant_get_remote_jobs_with/)
+- url: https://www.reddit.com/r/reactjs/comments/eku4ko/please_advise_on_why_i_cant_get_remote_jobs_with/
+---
+I have worked in really challenging roles and did get good recommendations from previous employers. For some reason, I can't even get an interview chance.
+
+What is wrong with my Resume??
+## [9][Advanced React with TypeScript and Redux Course: Build a Sudoku App](https://www.reddit.com/r/reactjs/comments/ektr15/advanced_react_with_typescript_and_redux_course/)
+- url: https://www.youtube.com/watch?v=MUs4oAudvO0
+---
+
+## [10][Hooks + Redux + Tests open source project](https://www.reddit.com/r/reactjs/comments/ektonl/hooks_redux_tests_open_source_project/)
+- url: https://www.reddit.com/r/reactjs/comments/ektonl/hooks_redux_tests_open_source_project/
+---
+I’m looking for an open source project that uses hooks and redux, with plenty of tests, especially complex integration tests. 
+I want to learn about the architecture and testing of a non-trivial app. 
+
+I already checked video courses (I prefer real code), github and top posts in this /r. Not satisfied with my findings so far (I‘m fairly new to react, is not easy to find repos for three specific topics combined).
+
+Do you have a favorite project in mind that cover all the bases?
+
+Thanks.
+## [11][JavsScript TV : Tech talks on React, CSS and everything JavaScript](https://www.reddit.com/r/reactjs/comments/ektinl/javsscript_tv_tech_talks_on_react_css_and/)
+- url: http://jsgeeks.tv/
+---
+
+## [12][Code a Movie APP in React Native | React Native Tutorial for Beginners](https://www.reddit.com/r/reactjs/comments/eksmer/code_a_movie_app_in_react_native_react_native/)
+- url: https://www.youtube.com/watch?v=aZYCEGyMIN0&amp;feature=share
+---
+

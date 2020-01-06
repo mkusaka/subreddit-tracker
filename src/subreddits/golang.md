@@ -1,88 +1,69 @@
 # golang
-## [1][Building a BitTorrent client from the ground up in Go](https://www.reddit.com/r/golang/comments/ek4dp3/building_a_bittorrent_client_from_the_ground_up/)
-- url: https://blog.jse.li/posts/torrent/
+## [1][rqlite 5.0.0 released - the lightweight distributed DB built on SQLite, now with new Raft code](https://www.reddit.com/r/golang/comments/ekn0xk/rqlite_500_released_the_lightweight_distributed/)
+- url: http://www.philipotoole.com/rqlite-5-0-0-released/
 ---
 
-## [2][Just wrote up a cookbook for IO in Go](https://www.reddit.com/r/golang/comments/ek8nu9/just_wrote_up_a_cookbook_for_io_in_go/)
-- url: https://www.reddit.com/r/golang/comments/ek8nu9/just_wrote_up_a_cookbook_for_io_in_go/
+## [2][How to build a real-time collaborative text editor using go?](https://www.reddit.com/r/golang/comments/ekt6tp/how_to_build_a_realtime_collaborative_text_editor/)
+- url: https://www.reddit.com/r/golang/comments/ekt6tp/how_to_build_a_realtime_collaborative_text_editor/
 ---
-https://github.com/jesseduffield/notes/wiki/Golang-IO-Cookbook
+Hi,
 
-I wrote this mostly for myself to consolidate the stuff I learnt when changing [Horcrux](https://github.com/jesseduffield/horcrux) to stream file data rather than load it all into memory. Maybe it can be of use to other people trying to get their heads around this stuff :)
+I was searching on the google to find any resource that will help me to build a real time collaborative text editor. Such as, ot.js for node JS.
 
-Please let me know if there's any corrections/changes you think I should make. And thanks again for all those who gave feedback on the original post about Horcrux!
-## [3][New to Go, not to programming: tutorial frustration](https://www.reddit.com/r/golang/comments/ejtm8n/new_to_go_not_to_programming_tutorial_frustration/)
-- url: https://www.reddit.com/r/golang/comments/ejtm8n/new_to_go_not_to_programming_tutorial_frustration/
----
-I've been programming for years in multiple languages, and I'm frustrated with the Go tutorials. They all teach the same thing: syntax. After learning the pieces (loops, slices, structs, etc.) in the end I'm left without knowing how to write an application. 
-
-I have yet to see anything in the tutorials that is more than a single file,  package main,  func main. If I search for packages, I see nothing but importing packages into that single file. 
-
-Am I missing something? Where can I find info on creating multi file applications? Code organization? I really want to delve into this but the tutorials are too basic to apply to useful functionality.
-
-Am I not getting far enough? Writing switch statements and for loops is not very satisfying.
-
-EDIT: Thank you all for the many responses! There looks to be many great resources and suggestions here. Upvote for the community!
-## [4][How to extend a struct dynamically?](https://www.reddit.com/r/golang/comments/ekc11n/how_to_extend_a_struct_dynamically/)
-- url: https://www.reddit.com/r/golang/comments/ekc11n/how_to_extend_a_struct_dynamically/
----
-I have a struct St1. In some places I use it as is -- as an array of St1. In other place I need to be able to dynamically attach extra data to each struct, **akin to adding a few additional fields \*dynamically\* to each St1.**
+Unfortunately I didn't find anything like this. I want to integrate my own custom text editor front end with golang backend.
 
 &amp;#x200B;
 
-What's a way to go?
-## [5][What "Build a &lt;X&gt; With Go" deserves it's own online course](https://www.reddit.com/r/golang/comments/ekb54y/what_build_a_x_with_go_deserves_its_own_online/)
-- url: https://www.reddit.com/r/golang/comments/ekb54y/what_build_a_x_with_go_deserves_its_own_online/
----
-I'm a fanatic Go programmer and have quite some experience in teaching others. I believe the best way of teaching is to build something concrete! So what do you think would be the best topic of such an online course? 
-
-First thing that comes to mind is the creation of an API or Web App but maybe that is already covered in-depth by others? 
-
-I'm curious what you think!
-## [6][How do I handle interdependent modules?](https://www.reddit.com/r/golang/comments/ekai39/how_do_i_handle_interdependent_modules/)
-- url: https://www.reddit.com/r/golang/comments/ekai39/how_do_i_handle_interdependent_modules/
----
-For example lets say we have an online chatroom. Users can join a room and post messages there and the messages are delivered to other users in the room via some realtime delivery mechanism.
-
-So we have a `roomService` struct.
-
-    type roomService struct {
-        room      messagerooms.RoomRepository 
-        message   messagerooms.MessageRepository 
-        publisher pubsub.Service 
-    }
-
-Here `roomService` is dependent on the `pubsub` service because every time a new message is posted, that message is sent to the pubsub system for distributing accross the room members via maybe an websocket connection.
-
-My Problem here is that if an user tries to subscribe to the message streams for a room, before subscribing the user to the stream, the `pubsub` service needs to check if that user is actually part of the room. And thus the `pubsub` service becomes dependent on the `roomService`  for deciding if the user is part of the room, which is creating a circular dependency.
-
-So how to handle situations like this?
-## [7][sshtargate - Host SSH portals to applications](https://www.reddit.com/r/golang/comments/ek3uez/sshtargate_host_ssh_portals_to_applications/)
-- url: https://git.sr.ht/~tslocum/sshtargate
+Do you have any suggestions?
+## [3][Micro - a modern and intuitive terminal-based text editor](https://www.reddit.com/r/golang/comments/ekfwu9/micro_a_modern_and_intuitive_terminalbased_text/)
+- url: https://micro-editor.github.io/
 ---
 
-## [8][Guys, using gorilla mux, a router and it's subrouter, are they different entities or are they connected?](https://www.reddit.com/r/golang/comments/ek24zu/guys_using_gorilla_mux_a_router_and_its_subrouter/)
-- url: https://www.reddit.com/r/golang/comments/ek24zu/guys_using_gorilla_mux_a_router_and_its_subrouter/
+## [4][Chime A Go editor for macOS](https://www.reddit.com/r/golang/comments/ekdbiy/chime_a_go_editor_for_macos/)
+- url: https://www.chimehq.com/
 ---
-Does a middlware attached to the parent router affect the subrouter?
-Thank you
-## [9][How to Find All Packages that implements io.Reader](https://www.reddit.com/r/golang/comments/ek7k6c/how_to_find_all_packages_that_implements_ioreader/)
-- url: https://www.reddit.com/r/golang/comments/ek7k6c/how_to_find_all_packages_that_implements_ioreader/
+
+## [5][Go Things I Love: Channels and Goroutines](https://www.reddit.com/r/golang/comments/eku5xl/go_things_i_love_channels_and_goroutines/)
+- url: https://www.justindfuller.com/2020/01/go-things-i-love-channels-and-goroutines/?utm_source=reddit&amp;utm_medium=referral&amp;utm_campaign=go_things_i_love
 ---
-Disclaimer: I am a noob, so I apologize in advance if the terminology is incorrect.
 
-The [csv.NewReader\(\)](https://golang.org/pkg/encoding/csv/#NewReader) from  re
-quires an io.Reader as an input. And [os.File](https://golang.org/pkg/os/#File.Read)
-has this same method so os.File type implements the io.Reader.
-
-My question is how to find all the packages in the standard library that implements the io.Reader. If the input needs an io.Reader, then it is not a problem. It is those methods like File.Read where the method is the same as the io.Reader.
-## [10][return (ok bool) instead of error?](https://www.reddit.com/r/golang/comments/ek2nib/return_ok_bool_instead_of_error/)
-- url: https://www.reddit.com/r/golang/comments/ek2nib/return_ok_bool_instead_of_error/
+## [6][Tutorial Microservices in Go](https://www.reddit.com/r/golang/comments/ekj87w/tutorial_microservices_in_go/)
+- url: https://www.reddit.com/r/golang/comments/ekj87w/tutorial_microservices_in_go/
 ---
-I am writing a function that is supposed to take a string, and return the first rune along with a new string where that character has been chopped off, e.g., `"hello" -&gt; ('h', "ello")`. However, I want to explicitly handle the case of the string being empty by returning an `error`. But as I think about it, this error shouldn't carry any information other than whether or not it exists; it shouldn't need to have the `Error()` function defined. So it feels like using the `error` interface is a bit heavy. I see that the language also commonly uses `(ok bool)` as a return type to indicate success or failure, but that seems limited to language features like type assertions. My third option is just to return a `nil` string that the caller has to check for, but that doesnt seem idiomatic either.
+Someone knows a nice tutorial of Microservices in go?
+## [7][Introducing ZincECS. An entity component system package.](https://www.reddit.com/r/golang/comments/ektb7c/introducing_zincecs_an_entity_component_system/)
+- url: https://github.com/SirMetathyst/zinc
+---
 
-Would it be good practice to return `(rune, string, ok bool)`? Or should I still just return some instance of `error`? I come from Rust, and in this case I would have returned an `Option&lt;(char, &amp;str)&gt;`, which seems more analogous to a bool than an error.
+## [8][Text To Speech in Golang with AWS Polly in 15 minutes](https://www.reddit.com/r/golang/comments/ekt61y/text_to_speech_in_golang_with_aws_polly_in_15/)
+- url: https://medium.com/@mssr/text-to-speech-in-golang-with-aws-polly-in-15-minutes-b5f30eb34c1f
+---
 
-Thanks for any reply!
+## [9][Still stuck on apis and channels and threads...](https://www.reddit.com/r/golang/comments/ekq7nk/still_stuck_on_apis_and_channels_and_threads/)
+- url: https://www.reddit.com/r/golang/comments/ekq7nk/still_stuck_on_apis_and_channels_and_threads/
+---
+Posted recently about using channels to wait for an async response from a message bus. I verified that it DOES work.. but I am still not sure it works as I think.
 
-Edit: Thanks to numerous responses, especially from u/ruertar, it seems like `error` is still the best option here. Thank you very much for all the discussion! It has been very interesting to see everyone's opinions :)
+First, the basics of what I am trying to do (as short as I can). Microservices architecture, message bus between services, MQTT protocol with JSON payloads. I have rest APIs that are mostly going to be async based, but in some cases, sync. One such case would be a login flow. This may be an unorthodox way to do this, btw, and I am open to suggestions if there is a better way.. but basically I have a "user" service, which maintains... users (naturally). Each user has an email/password (for login), a role, name, and other various bits of info. On login, the consumer makes an API request.. /login  with email/password has request body. The API handler is a separate microservice.. so it does NOT have access to the user tables. Thus, it needs to send a message to the user service to try to find the user that is logging in. Now, message buses are async, right (unless there is some sync way of doing this?) so the /login API service sends a message to the use service.. and also has a func handler subscribed to a topic that the user service can send back on if it finds the user (or not). Simple enough.. login API sends msg, user service gets it, does some work, sends msg back, login API gets msg, and does something with it.
+
+The problem is that I have this login API sync request.. waiting... while the API sends async message to the use service, and then has to wait on the user service to find the user (or not) and send message back. The real problem is.. having the login handler code "wait" while it waits for the response from the user service. I solved this by creating a channel (on every single request I do this.. which is one of my concerns), then waits on the channel to return some data. The subscribed func when it receives a message from the user service, then writes the user data (assuming found user) to the channel, and the currently waiting channel gets the data and returns the user result to the consumer. 
+
+I actually have this working.. it's pretty neat. 
+
+The concerns. First, creating a channel on each and every request.. is that a bad thing? I am not knowledgeable enough with Go and runtime to know if that ends up being a potential memory hog, cpu hog, both, some sort of unforeseen runtime issue that can cause the API service to crash, etc.
+
+Second, probably the harder issue, is I \*think\* each request is wrapped in a Go func by the standard library (I am using Chi for API/routing/middleware, but it is based on the standard http.\*). I think this is the case. Haven't been able to confirm this, but I assume in order to handle tons of requests simultaneously, it must be doing something like this. That's great.. makes sense. However, what I am unsure of, if this is the case.. is if the channel I create tied to the specific go routine/thread that is handling a specific request, such that when my subscribe func gets  a response from the user service and writes to the channel.. if it is writing to the SAME channel as was created for that specific request?
+
+If it is.. that is fantastic (assuming creating a channel for every request is ALSO ok). However, there remains another issue.. ensuring the response from the user service matches the request lookup (e.g. email/password) before writing the user data to the channel. For this I would need some way, per request/instance/thread to "keep track" of the request email/password... or something like a UUID tied to the creation of the channel and the email/password... to ensure that the correct found user is returned thru the correct channel. Here I am a bit stumped. I am creating the channel in the request handler, but another func that listens for messages from the message bus, writes to the channel. To make this work so far, I am declaring a channel outside of the functions, which seems wrong (I am still trying to learn/understand scope within golang as well). I am worried that this one variable ends up being shared across threads/go routines/requests, and thus is more like a singleton.
+
+Another thought I had was to create an anonymous func IN the req handler to tie it to the channel/email/password data, so that it has access to those values to compare to the values of the user it responds to in a message from the user service. But I also very much dislike this route because if there are 1000 requests running at a time, that would mean every single request would have to potentially process up to 1000 messages until it finds the matching returned/found user matching the request user.
+
+Damn.. this is a pain in the ass. I think the idea of it is awesome. But I am unsure of if it is even possible, or if it is, if it is a potentially bottleneck in terms of memory or performance.
+
+Anyway, would love any help from someone that understands the whole API thread/go routine stuff with creating channels, matching them up correctly (if they dont automatically), etc.
+
+Thank you.
+## [10][How to mock OAuth 2.0 in Go](https://www.reddit.com/r/golang/comments/ekpket/how_to_mock_oauth_20_in_go/)
+- url: https://blog.seriesci.com/how-to-mock-oauth-in-go/
+---
+

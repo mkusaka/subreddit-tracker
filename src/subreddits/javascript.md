@@ -13,43 +13,56 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Remote Development With VS Code in Your Browser](https://www.reddit.com/r/javascript/comments/ejzhvh/remote_development_with_vs_code_in_your_browser/)
-- url: https://medium.com/better-programming/set-up-remote-development-with-vs-code-in-your-browser-4b5750d3d141
+## [3][ERA Engine - Open Source Three.js Engine/Wrapper](https://www.reddit.com/r/javascript/comments/ekm8jh/era_engine_open_source_threejs_enginewrapper/)
+- url: https://github.com/rogerscg/era-engine
 ---
 
-## [4][An Abbreviated History of JavaScript Package Managers](https://www.reddit.com/r/javascript/comments/ek50dd/an_abbreviated_history_of_javascript_package/)
-- url: https://medium.com/@MattGoldwater/an-abbreviated-history-of-javascript-package-managers-f9797be7cf0e
+## [4][A bit I wrote on optimizing build time and learning from the best](https://www.reddit.com/r/javascript/comments/ekim2b/a_bit_i_wrote_on_optimizing_build_time_and/)
+- url: https://dutzi.github.io/optimizing-our-build-time/
 ---
 
-## [5][I made a personal website which has admin panel and CMS](https://www.reddit.com/r/javascript/comments/ek60gj/i_made_a_personal_website_which_has_admin_panel/)
-- url: https://github.com/ahmetbcakici/DynamicPersonalWebsite
+## [5][Self-taught neural network learn how to shoot a Target](https://www.reddit.com/r/javascript/comments/eklry0/selftaught_neural_network_learn_how_to_shoot_a/)
+- url: https://github.com/victorqribeiro/bangBangML
 ---
 
-## [6][How to Fix the Refresh Button When Using Service Workers](https://www.reddit.com/r/javascript/comments/ek4811/how_to_fix_the_refresh_button_when_using_service/)
-- url: https://redfin.engineering/how-to-fix-the-refresh-button-when-using-service-workers-a8e27af6df68
+## [6][Starter project using the MERN Stack. ⚛️](https://www.reddit.com/r/javascript/comments/ekrvus/starter_project_using_the_mern_stack/)
+- url: https://github.com/harounchebbi/Mern-Stack-Crud-App
 ---
 
-## [7][(December 2018) An Update on CDNJS from Cloudflare](https://www.reddit.com/r/javascript/comments/ejvfqg/december_2018_an_update_on_cdnjs_from_cloudflare/)
-- url: https://blog.cloudflare.com/an-update-on-cdnjs/
+## [7][How to send scheduled messages to Slack with the Google Calendar API](https://www.reddit.com/r/javascript/comments/eksq7o/how_to_send_scheduled_messages_to_slack_with_the/)
+- url: https://medium.com/headfwd/how-to-send-scheduled-messages-to-slack-with-the-google-calendar-api-f491040195b1
 ---
 
-## [8][Statistics of the JavaScript front end frameworks in 2019](https://www.reddit.com/r/javascript/comments/ejvavn/statistics_of_the_javascript_front_end_frameworks/)
-- url: https://vue-view.com/resources/top-javascript-frameworks-in-2019/
+## [8][JavaScript to open link in new window without being popup blocked](https://www.reddit.com/r/javascript/comments/eku6p6/javascript_to_open_link_in_new_window_without/)
+- url: https://www.pixelstech.net/article/1537605113-JavaScript-to-open-link-in-new-window-without-being-popup-blocked
 ---
 
-## [9][Craft.js - A React framework for building extensible page editors](https://www.reddit.com/r/javascript/comments/ejx1g8/craftjs_a_react_framework_for_building_extensible/)
-- url: https://craft.js.org
+## [9][[AskJS] Why Javascript is your favorite language ?](https://www.reddit.com/r/javascript/comments/ektzau/askjs_why_javascript_is_your_favorite_language/)
+- url: https://www.reddit.com/r/javascript/comments/ektzau/askjs_why_javascript_is_your_favorite_language/
+---
+**A)** What are the strength of Javascript over C#, Java, Python or Php and is it the best programming language to learn in 2020 for webdev ? Do you feel the others are getting outdated or less popular ? 
+
+**B)** How's JS performance today compare to the others tech stack ? (interpreted vs compiled, single thread vs multi-threads etc) Are you guys worried about Web Assembly and the performance of C/C++ coming to webdev ?
+
+**C)** Why there is so much hate/disdain toward Javascript from programmer of other tech stack like C# / Java for example ? is it because they are stuck with their old 80’s concept and OO mentality and they have trouble with functional programming and the new stuffs ?
+## [10][[AskJS] Review call for my twitch bot](https://www.reddit.com/r/javascript/comments/ekdw5n/askjs_review_call_for_my_twitch_bot/)
+- url: https://www.reddit.com/r/javascript/comments/ekdw5n/askjs_review_call_for_my_twitch_bot/
+---
+I made a twitch bot some time ago I want to get any feedback on any flaws, feature requests, code style or just anything.
+
+Main features are:
+
+* Storing user information in local JSON database.
+* Configure custom commands and responses.
+* Configure custom periodic messages.
+* Betting system.
+
+[Github repo](https://github.com/spnq/twitch-sentry)
+## [11][I’ve made Quickstart Redux Create React Template](https://www.reddit.com/r/javascript/comments/ekqgtt/ive_made_quickstart_redux_create_react_template/)
+- url: https://github.com/morewings/cra-template-quickstart-redux
 ---
 
-## [10][How to Add Comments to Gatsby Blog](https://www.reddit.com/r/javascript/comments/ek10t8/how_to_add_comments_to_gatsby_blog/)
-- url: https://groups.hyvor.com/HyvorTalk/460/how-to-add-comments-gatsby-blog
----
-
-## [11][How to Create Your Own Node.js Module](https://www.reddit.com/r/javascript/comments/ek8i4r/how_to_create_your_own_nodejs_module/)
-- url: https://zeroequalsfalse.com/posts/nodejs-module/
----
-
-## [12][JS Quiz: 14 Date Time Questions in JavaScript - Prove your knowledge!](https://www.reddit.com/r/javascript/comments/ek4waj/js_quiz_14_date_time_questions_in_javascript/)
-- url: https://danlevy.net/js-quiz-14-date-time-questions-test-your-knowledge/
+## [12][ES-Everything: an ECMA Explainer](https://www.reddit.com/r/javascript/comments/eklxld/eseverything_an_ecma_explainer/)
+- url: https://www.matthewgerstman.com/tech/es-everything?reddit=1
 ---
 

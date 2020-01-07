@@ -1,102 +1,49 @@
 # ruby
-## [1][rails-pg-extras gem: PostgreSQL performance insights. Locks, index usage, buffer cache hit ratios, vacuum stats and more.](https://www.reddit.com/r/ruby/comments/eksf81/railspgextras_gem_postgresql_performance_insights/)
+## [1][A Ruby Reference updated for Ruby 2.7](https://www.reddit.com/r/ruby/comments/ela6jc/a_ruby_reference_updated_for_ruby_27/)
+- url: https://www.reddit.com/r/ruby/comments/ela6jc/a_ruby_reference_updated_for_ruby_27/
+---
+**[Ruby Reference](https://rubyreferences.github.io/rubyref/)** is intended to be most **full**, **actual** and **accessible** language reference. Most of the reference content is taken directly from Ruby documentation and reorganized for easier reading. The core docs were augmented with some quotes from the Ruby website, and some missing content that is written specifically for the book. The source of the book (rendering scripts, config, and unique content) is open and can be found at [GitHub](https://github.com/rubyreferences/rubyref/tree/master/_src).
+
+Today I am releasing the new version, which was fully re-rendered for Ruby 2.7 and also includes some content and style fixes. [Changelog](https://github.com/rubyreferences/rubyref/blob/master/_src/CHANGELOG.md).
+
+I hope somebody'll find this useful.
+## [2][Important information about Plataformatec's Elixir and Ruby Open Source projects](https://www.reddit.com/r/ruby/comments/el2u07/important_information_about_plataformatecs_elixir/)
+- url: http://blog.plataformatec.com.br/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/
+---
+
+## [3][Speed up your RoR test suite](https://www.reddit.com/r/ruby/comments/el8krk/speed_up_your_ror_test_suite/)
+- url: https://www.reddit.com/r/ruby/comments/el8krk/speed_up_your_ror_test_suite/
+---
+[https://medium.com/better-programming/cut-your-rspec-minitest-runtime-with-testprof-d19e55783050](https://medium.com/better-programming/cut-your-rspec-minitest-runtime-with-testprof-d19e55783050) I published a piece on Better Programming today. It's about making your RoR tests run much much faster.
+
+Would love to hear your thoughts
+## [4][Inheritance and Abstract Class Pattern for Rails Controllers](https://www.reddit.com/r/ruby/comments/el8qhu/inheritance_and_abstract_class_pattern_for_rails/)
+- url: https://pawelurbanek.com/ruby-abstract-class
+---
+
+## [5][fstrings: Python-alike fstrings (formatting strings) for Ruby](https://www.reddit.com/r/ruby/comments/elbkxu/fstrings_pythonalike_fstrings_formatting_strings/)
+- url: https://github.com/zverok/fstrings
+---
+
+## [6][Why is Ruby on Rails' default_scope bad?](https://www.reddit.com/r/ruby/comments/el3vsm/why_is_ruby_on_rails_default_scope_bad/)
+- url: https://piechowski.io/post/why-is-default-scope-bad-rails/
+---
+
+## [7][Ruby 2.7 pattern matching after 10 months of professional Elixir](https://www.reddit.com/r/ruby/comments/ekw7yp/ruby_27_pattern_matching_after_10_months_of/)
+- url: https://nts.strzibny.name/ruby-2-7-pattern-matching-after-10-months-of-professional-elixir/
+---
+
+## [8][How to make an image fixed (prevent it from scrolling down)?](https://www.reddit.com/r/ruby/comments/el6int/how_to_make_an_image_fixed_prevent_it_from/)
+- url: https://www.reddit.com/r/ruby/comments/el6int/how_to_make_an_image_fixed_prevent_it_from/
+---
+I'm using a jekyll theme on Github that isn't built with a header image. After putting one in, it "floats" down as you scroll rather than remaining fixed in the header. I tried just entering "position: fixed;" which didn't work. Any suggestions? I'm EXTREMELY new to programming, like Level 0, so please keep it at an ELI5 level. Thanks for any help!
+
+ [https://i.imgur.com/5pYCmvW.png](https://i.imgur.com/5pYCmvW.png)
+## [9][rails-pg-extras gem: PostgreSQL performance insights. Locks, index usage, buffer cache hit ratios, vacuum stats and more.](https://www.reddit.com/r/ruby/comments/eksf81/railspgextras_gem_postgresql_performance_insights/)
 - url: https://github.com/pawurb/rails-pg-extras
 ---
 
-## [2][Strange behaviour on console when pressing backspace](https://www.reddit.com/r/ruby/comments/ektwvm/strange_behaviour_on_console_when_pressing/)
-- url: https://www.reddit.com/r/ruby/comments/ektwvm/strange_behaviour_on_console_when_pressing/
+## [10][I have completed the free codeacademy course on Ruby. Where should I turn to next for daily practice? Any websites where I can attend Ruby tests/exams?](https://www.reddit.com/r/ruby/comments/ekup1y/i_have_completed_the_free_codeacademy_course_on/)
+- url: https://www.reddit.com/r/ruby/comments/ekup1y/i_have_completed_the_free_codeacademy_course_on/
 ---
-Not sure what's the reason, but I started to get some strange behavior from the Ruby console on production.
-
-Every time I press backspace, instead of deleting the character it goes one space/blank forwards, this makes is super impractical.
-
-For ex if i type "Company.find(12"
-
-and I want to delete "12" by pressing backspace twice, i get this:"Company.find(12  "
-
-What can cause this?Btw, i tried with multiple shells, restarted app, same thing.
-
-Thanks
-## [3][Like Relationships and Global ID](https://www.reddit.com/r/ruby/comments/ektpdq/like_relationships_and_global_id/)
-- url: https://www.driftingruby.com/episodes/like-relationships-and-global-id?utm_medium=social&amp;utm_campaign=weekly_episode&amp;utm_source=reddit
----
-
-## [4][Some of the top Ruby links of 2019](https://www.reddit.com/r/ruby/comments/ekt0bp/some_of_the_top_ruby_links_of_2019/)
-- url: https://superhighway.dev/ruby-2019
----
-
-## [5][How to test if gems are compatible when upgrading ruby from 2.0.0-p247 to 2.4.6](https://www.reddit.com/r/ruby/comments/ek7pbr/how_to_test_if_gems_are_compatible_when_upgrading/)
-- url: https://www.reddit.com/r/ruby/comments/ek7pbr/how_to_test_if_gems_are_compatible_when_upgrading/
----
-I'd like to know if there is a method/gem/script that allows automating the validate the compatibility of gems when upgrading **ruby from v2.0.0-p247 to v2.4.6**. I have run the **bundle install** which made me update a few of them and also, I ran my tests with rake and all are OK, but I'm not so sure if I can get further issues down the road.  
-
-
-Any help will be appreciated.
-## [6][How to Protect Strained, Sore Developer Eyes](https://www.reddit.com/r/ruby/comments/ek0kjr/how_to_protect_strained_sore_developer_eyes/)
-- url: https://piechowski.io/post/how-to-protect-developer-eyes/
----
-
-## [7][Help getting started with ruby. I can't get the directories created.](https://www.reddit.com/r/ruby/comments/ejr8i0/help_getting_started_with_ruby_i_cant_get_the/)
-- url: https://www.reddit.com/r/ruby/comments/ejr8i0/help_getting_started_with_ruby_i_cant_get_the/
----
-I can't get `rails new blog` to work. I have all the permissions. Removing --pretend flag isn't working as expected. 
-
-    dev@vmdev:~$ ruby -v
-    ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
-    dev@vmdev:~$ rails --version
-    Rails 6.0.2.1
-    dev@vmdev:~$ rails new blog -p
-          create
-          create  README.md
-          create  Rakefile
-          create  .ruby-version
-          create  config.ru
-          create  .gitignore
-          create  Gemfile
-          create  package.json
-          create  app
-          create  app/assets/config/manifest.js
-          create  app/assets/stylesheets/application.css
-          create  app/channels/application_cable/channel.rb
-          create  app/channels/application_cable/connection.rb
-          create  app/controllers/application_controller.rb
-          ...........[truncated]..............
-          create  storage
-          create  storage/.keep
-          create  tmp/storage
-          create  tmp/storage/.keep
-          remove  config/initializers/cors.rb
-          remove  config/initializers/new_framework_defaults_6_0.rb
-           rails  webpacker:install
-    dev@vmdev:~$ rails new blog
-          create
-          create  README.md
-          create  Rakefile
-          create  .ruby-version
-          create  config.ru
-          create  .gitignore
-          create  Gemfile
-             run  git init from "."
-    dev@vmdev:~$ ll blog/
-    total 32
-    drwxrwxr-x  2 dev dev 4096 Jan  3 22:40 ./
-    drwxr-xr-x 20 dev dev 4096 Jan  3 22:40 ../
-    -rw-rw-r--  1 dev dev  130 Jan  3 22:40 config.ru
-    -rw-rw-r--  1 dev dev 1976 Jan  3 22:40 Gemfile
-    -rw-rw-r--  1 dev dev  604 Jan  3 22:40 .gitignore
-    -rw-rw-r--  1 dev dev  227 Jan  3 22:40 Rakefile
-    -rw-rw-r--  1 dev dev  374 Jan  3 22:40 README.md
-    -rw-rw-r--  1 dev dev   11 Jan  3 22:40 .ruby-version
-    dev@vmdev:~$
-## [8][Ruby 2.7 NEWS: Commentary by Cookpad’s Full Time Ruby Comitters](https://www.reddit.com/r/ruby/comments/ejmrz5/ruby_27_news_commentary_by_cookpads_full_time/)
-- url: https://sourcediving.com/ruby-2-7-news-commentary-by-cookpads-full-time-ruby-comitters-bdbaacb36d0c
----
-
-## [9][Extracting a tidy PORO from a messy Active Record model - Code with Jason](https://www.reddit.com/r/ruby/comments/ejlnt0/extracting_a_tidy_poro_from_a_messy_active_record/)
-- url: https://www.codewithjason.com/extracting-tidy-poro-messy-active-record-model/
----
-
-## [10][Load test your rack-based web apps with this shadow-requesting middleware](https://www.reddit.com/r/ruby/comments/ejgper/load_test_your_rackbased_web_apps_with_this/)
-- url: https://medium.com/carwow-product-engineering/shadow-requesting-for-great-good-92cde331363a
----
-
+I am afraid I will forget everything I've learnt within a month as I'm learning coding as a hobby on the side. Hence want to find some place which will allow me to take Ruby tests/exams &amp; give me some projects to practice.

@@ -13,56 +13,69 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][ERA Engine - Open Source Three.js Engine/Wrapper](https://www.reddit.com/r/javascript/comments/ekm8jh/era_engine_open_source_threejs_enginewrapper/)
-- url: https://github.com/rogerscg/era-engine
+## [3][Treedoc Viewer is a feature-rich viewer for tree-like documents such as JSON/jsonex/textproto, YAML and XML. it provides source, tree and table view and flexible node navigation such as navigate through ref attributes for OpenAPI specs.](https://www.reddit.com/r/javascript/comments/el6bs2/treedoc_viewer_is_a_featurerich_viewer_for/)
+- url: http://treedoc.org
 ---
 
-## [4][A bit I wrote on optimizing build time and learning from the best](https://www.reddit.com/r/javascript/comments/ekim2b/a_bit_i_wrote_on_optimizing_build_time_and/)
-- url: https://dutzi.github.io/optimizing-our-build-time/
+## [4][Vue.js + IPFS = VIPFS. Create permanent web apps that can never be taken offline in just 5 commands](https://www.reddit.com/r/javascript/comments/ekxrd0/vuejs_ipfs_vipfs_create_permanent_web_apps_that/)
+- url: https://github.com/Ideea-inc/vipfs
 ---
 
-## [5][Self-taught neural network learn how to shoot a Target](https://www.reddit.com/r/javascript/comments/eklry0/selftaught_neural_network_learn_how_to_shoot_a/)
-- url: https://github.com/victorqribeiro/bangBangML
+## [5][Fully featured Qt binding for JavaScript with support for all major operating systems](https://www.reddit.com/r/javascript/comments/ekudg1/fully_featured_qt_binding_for_javascript_with/)
+- url: https://github.com/therecipe/entry
 ---
 
-## [6][Starter project using the MERN Stack. ⚛️](https://www.reddit.com/r/javascript/comments/ekrvus/starter_project_using_the_mern_stack/)
-- url: https://github.com/harounchebbi/Mern-Stack-Crud-App
+## [6][[AskJS] how does this site do this?](https://www.reddit.com/r/javascript/comments/el6zs6/askjs_how_does_this_site_do_this/)
+- url: https://www.reddit.com/r/javascript/comments/el6zs6/askjs_how_does_this_site_do_this/
+---
+Just trying to get pointed in the right direction.
+
+https://cookiecad.com
+
+The address posted takes an image that you upload and outputs a cookie cutter 3D file that you can 3D print. 
+
+I can't for the life of me figure out what kind of script or backend they are using to do this can anyone point me in the right direction or help me out?
+
+Sorry if this is not java. I wasn't sure where to start. 
+
+Thank you
+## [7][[AskJS] Do you know tiny analogs of most popular libraries?](https://www.reddit.com/r/javascript/comments/el9po7/askjs_do_you_know_tiny_analogs_of_most_popular/)
+- url: https://www.reddit.com/r/javascript/comments/el9po7/askjs_do_you_know_tiny_analogs_of_most_popular/
+---
+I am interesting to find tiny analogs of most popular libraries. I know next ones:
+
+* [react](https://github.com/facebook/react) =&gt; [preact](https://github.com/preactjs/preact)
+* [redux](https://github.com/reduxjs/redux) =&gt; [storeon](https://github.com/storeon/storeon)
+* [moment](https://github.com/moment/moment) =&gt; [dayjs](https://github.com/iamkun/dayjs)
+* [react-intl](https://github.com/formatjs/react-intl) =&gt; [eo-locale](https://github.com/ibitcy/eo-locale)
+* [react-router](https://github.com/ReactTraining/react-router) =&gt; [wouter](https://github.com/molefrog/wouter)
+
+Do you know something else?
+## [8][Can I get some help with this code? This is based on a simple discord bot template, and if neede use your own token of course.](https://www.reddit.com/r/javascript/comments/elbetz/can_i_get_some_help_with_this_code_this_is_based/)
+- url: https://drive.google.com/file/d/1eZb79Ie4RCzqaw7irltHvJCfcnhV6t_w/view?usp=sharing
 ---
 
-## [7][How to send scheduled messages to Slack with the Google Calendar API](https://www.reddit.com/r/javascript/comments/eksq7o/how_to_send_scheduled_messages_to_slack_with_the/)
-- url: https://medium.com/headfwd/how-to-send-scheduled-messages-to-slack-with-the-google-calendar-api-f491040195b1
+## [9][[AskJS] Minimal fuss backends for our app.](https://www.reddit.com/r/javascript/comments/el8zn6/askjs_minimal_fuss_backends_for_our_app/)
+- url: https://www.reddit.com/r/javascript/comments/el8zn6/askjs_minimal_fuss_backends_for_our_app/
+---
+This isn't really *directly* related to JavaScript but I'm looking for JS developers who have worked with these kinds of requirements.
+
+A friend and I are doing a side project together and we want to be able to concentrate on the frontend as much as possible (probably Gatsby or Next.js) but we still need some kind of backend storage and I'm keen to do as little work as possible in that area.
+
+My friend is advocating for firebase and he makes a lot of compelling arguments for it; can host for free (at least initially), comes with auth, can interact with it directly without the need for a REST or GraphQL interface and no server maintenance. Plus all the firebase extras like auto-syncing, though I'm not particularly interested in realtime stuff it would be nice in some areas.
+
+I'm suggesting strapi because I like the admin panel and REST/GraphQL is a paradigm I understand very well at this point. I would trust Postgres to safely store and index my firstborn child and I just like the predictability of it.
+
+Just wondering if anyone has any insights into building stuff with either (as in real life experience) or if you can make any other suggestions that might fit.
+## [10][How to *not* ditch your side project ever again](https://www.reddit.com/r/javascript/comments/elax7q/how_to_not_ditch_your_side_project_ever_again/)
+- url: https://medium.com/wix-engineering/lets-not-ditch-another-side-project-5181575e57ac
 ---
 
-## [8][JavaScript to open link in new window without being popup blocked](https://www.reddit.com/r/javascript/comments/eku6p6/javascript_to_open_link_in_new_window_without/)
-- url: https://www.pixelstech.net/article/1537605113-JavaScript-to-open-link-in-new-window-without-being-popup-blocked
+## [11][new subreddit - OpenSourceTeamUp](https://www.reddit.com/r/javascript/comments/elatcy/new_subreddit_opensourceteamup/)
+- url: /r/opensource/comments/el9x1q/new_subreddit_opensourceteamup/
 ---
 
-## [9][[AskJS] Why Javascript is your favorite language ?](https://www.reddit.com/r/javascript/comments/ektzau/askjs_why_javascript_is_your_favorite_language/)
-- url: https://www.reddit.com/r/javascript/comments/ektzau/askjs_why_javascript_is_your_favorite_language/
----
-**A)** What are the strength of Javascript over C#, Java, Python or Php and is it the best programming language to learn in 2020 for webdev ? Do you feel the others are getting outdated or less popular ? 
-
-**B)** How's JS performance today compare to the others tech stack ? (interpreted vs compiled, single thread vs multi-threads etc) Are you guys worried about Web Assembly and the performance of C/C++ coming to webdev ?
-
-**C)** Why there is so much hate/disdain toward Javascript from programmer of other tech stack like C# / Java for example ? is it because they are stuck with their old 80’s concept and OO mentality and they have trouble with functional programming and the new stuffs ?
-## [10][[AskJS] Review call for my twitch bot](https://www.reddit.com/r/javascript/comments/ekdw5n/askjs_review_call_for_my_twitch_bot/)
-- url: https://www.reddit.com/r/javascript/comments/ekdw5n/askjs_review_call_for_my_twitch_bot/
----
-I made a twitch bot some time ago I want to get any feedback on any flaws, feature requests, code style or just anything.
-
-Main features are:
-
-* Storing user information in local JSON database.
-* Configure custom commands and responses.
-* Configure custom periodic messages.
-* Betting system.
-
-[Github repo](https://github.com/spnq/twitch-sentry)
-## [11][I’ve made Quickstart Redux Create React Template](https://www.reddit.com/r/javascript/comments/ekqgtt/ive_made_quickstart_redux_create_react_template/)
-- url: https://github.com/morewings/cra-template-quickstart-redux
----
-
-## [12][ES-Everything: an ECMA Explainer](https://www.reddit.com/r/javascript/comments/eklxld/eseverything_an_ecma_explainer/)
-- url: https://www.matthewgerstman.com/tech/es-everything?reddit=1
+## [12][A Tour of the JavaScript Permissions API](https://www.reddit.com/r/javascript/comments/ekz8w7/a_tour_of_the_javascript_permissions_api/)
+- url: https://alligator.io/js/permissions-api/
 ---
 

@@ -33,124 +33,219 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ekpr6w/whats_everyone_working_on_this_week_22020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-2-2020/36546?u=llogiq)!
-## [3][Let The Compiler Do The Work](https://www.reddit.com/r/rust/comments/eksduv/let_the_compiler_do_the_work/)
+## [3][Translating Quake 3 into Rust](https://www.reddit.com/r/rust/comments/el2z0k/translating_quake_3_into_rust/)
+- url: https://immunant.com/blog/2020/01/quake3/
+---
+
+## [4][Writing an OS in Rust: Updates in December 2019](https://www.reddit.com/r/rust/comments/elas6x/writing_an_os_in_rust_updates_in_december_2019/)
+- url: https://os.phil-opp.com/status-update/2020-01-07/
+---
+
+## [5][What applications are better written in Rust than in other languages?](https://www.reddit.com/r/rust/comments/el9p2x/what_applications_are_better_written_in_rust_than/)
+- url: https://www.reddit.com/r/rust/comments/el9p2x/what_applications_are_better_written_in_rust_than/
+---
+Currently I know Java/Kotlin for backends &amp; Android, Javascript/Typescript for web &amp; mobile development, and C++ for games programming &amp; microcontrollers.
+
+I keep googling on what Rust can do, and I keep seeing results about people saying you can do anything. While that's true, I have no interest in writing backend servers or web frontends in Rust, when the frameworks &amp; libraries are far more mature in other languages. I would only write in Rust if there are clear benefits for doing so.
+
+I presume Rust overlaps with C++, which means it would be a better choice for writing games and microcontrollers. However I don't see a lot of game engines supporting Rust. I also don't see any mainstream support for Rust with Microcontrollers either, especially with Arduino. Certainly not enough to give up the amount of C++ libraries which are currently supported.
+
+So, in what applications does it make more sense to write in Rust? I really want to learn the language but it's hard to find a project where it would make more sense over the alternatives.
+## [6][Informal survey: PGO](https://www.reddit.com/r/rust/comments/elaghi/informal_survey_pgo/)
+- url: https://www.reddit.com/r/rust/comments/elaghi/informal_survey_pgo/
+---
+Curious how many people are using profile guided optimisation in Rust and how effective it has been for them.
+
+[Rustc PGO docs](https://rust-lang.github.io/rustc-guide/profile-guided-optimization.html)
+## [7][[GitPorn] Repository summary on your terminal](https://www.reddit.com/r/rust/comments/elas5f/gitporn_repository_summary_on_your_terminal/)
+- url: https://i.redd.it/g69jqzgtlc941.jpg
+---
+
+## [8][Let The Compiler Do The Work](https://www.reddit.com/r/rust/comments/eksduv/let_the_compiler_do_the_work/)
 - url: http://cliffle.com/p/dangerust/6/
 ---
 
-## [4][tomaka/redshirt: an OS prototype where binaries are WASM, run in ring 0](https://www.reddit.com/r/rust/comments/ekingn/tomakaredshirt_an_os_prototype_where_binaries_are/)
-- url: https://github.com/tomaka/redshirt
+## [9][Problem with RefCell](https://www.reddit.com/r/rust/comments/el9cy0/problem_with_refcell/)
+- url: https://www.reddit.com/r/rust/comments/el9cy0/problem_with_refcell/
 ---
+```
+use std::rc::Rc;
+use std::cell::RefCell;
 
-## [5][Is anyone concerned about this deep, deep nesting of dependencies for basic web functionality in Rust?](https://www.reddit.com/r/rust/comments/ekpa3i/is_anyone_concerned_about_this_deep_deep_nesting/)
-- url: https://www.reddit.com/r/rust/comments/ekpa3i/is_anyone_concerned_about_this_deep_deep_nesting/
+type Work = Box&lt;dyn FnMut() + Send + 'static&gt;;
+struct Inst {
+    work: Work,
+}
+
+fn main() {
+    let work = Box::new(||{ println!("hello"); });
+    let a = Rc::new(RefCell::new(Inst{work}));
+    (a.borrow_mut().work)();
+}
+```
+This code does not compile. The error is:
+```
+error[E0596]: cannot borrow data in a dereference of `std::cell::RefMut&lt;'_, Inst&gt;` as mutable
+  --&gt; src/main.rs:11:5
+   |
+11 |     (a.borrow_mut().work)();
+   |     ^^^^^^^^^^^^^^^^^^^^^ cannot borrow as mutable
+   |
+   = help: trait `DerefMut` is required to modify through a dereference, but it is not implemented for `std::cell::RefMut&lt;'_, Inst&gt;`
+```
+
+What's going on here? Doesn't RefMut implement DerefMut?
+## [10][Functional vs imperative styles - which of these is better form in Rust and how can this code be improved?](https://www.reddit.com/r/rust/comments/el7wpv/functional_vs_imperative_styles_which_of_these_is/)
+- url: https://www.reddit.com/r/rust/comments/el7wpv/functional_vs_imperative_styles_which_of_these_is/
 ---
-Today, I wanted to know what it would take to issue a basic HTTP request using \`reqwest\`, the de-facto standard library:
+Hello, I'm a long time systems developer but new to Rust. I'm writing my first crate which will be a cryptographic library. Please advise me which of these functions is better written and how I can improve them:
 
-    cargo new with_reqwest
-    cd with_reqwest
-    echo 'reqwest = "*"' &gt;&gt; Cargo.toml
-    cargo build
+```
+            pub fn multiparty_keygen(&amp;self) -&gt; (Vec&lt;SecretKey&gt;, Vec&lt;VerifyKey&gt;) {
+                let attributes_size = self.params.hs.len();
+                assert!(self.authorities_total &gt;= self.threshold);
+                assert!(attributes_size &gt; 0);
+        
+                let create_n_random_scalars = |n| -&gt; Vec&lt;_&gt; {
+                    (0..n).map(|_| self.params.random_scalar()).collect()
+                };
+        
+                // Generate polynomials
+                let v_poly = create_n_random_scalars(self.threshold);
+                let w_poly: Vec&lt;Vec&lt;bls::Scalar&gt;&gt; =
+                    (0..attributes_size).map(|_| create_n_random_scalars(self.threshold)).collect();
+        
+                // Generate shares
+                let x_shares: Vec&lt;bls::Scalar&gt; = (1..=self.authorities_total).map(
+                    |i| compute_polynomial(&amp;v_poly, i as u64)).collect();
+                let y_shares: Vec&lt;Vec&lt;bls::Scalar&gt;&gt; = (1..=self.authorities_total).map(
+                    |i| w_poly.iter().map(move |w_coefficients|
+                        compute_polynomial(&amp;w_coefficients, i as u64)).collect()).collect();
+        
+                // Set the keys
+                // sk_i = (x, (y_1, y_2, ..., y_q))
+                // vk_i = (g2^x, (g2^y_1, g2^y_2, ..., g2^y_q)) = (a, (B_1, B_2, ..., B_q))
+                let verify_keys: Vec&lt;VerifyKey&gt; =
+                    x_shares.iter()
+                        .zip(y_shares.iter())
+                        .map(
+                            |(x, y_share_parts)| 
+                            VerifyKey {
+                                alpha: self.params.g2 * x,
+                                beta: y_share_parts.iter().map(|y| self.params.g2 * y).collect()
+                        }).collect();
+                // We are moving out of x_shares into SecretKey, so this line happens
+                // after creating verify_keys to avoid triggering borrow checker.
+                let secret_keys: Vec&lt;SecretKey&gt; =
+                    x_shares.iter().zip(y_shares)
+                        .map(move |(&amp;x, y)| SecretKey{ x: x, y: y }).collect();
+        
+                (secret_keys, verify_keys)
+            }
+```
 
-This built 97 crates.
+And here is the imperative version:
 
-I tried another one with \`scraper\`, to scape HTML. 95 crates.
+```
+            pub fn multiparty_keygen2(&amp;self) -&gt; (Vec&lt;SecretKey&gt;, Vec&lt;VerifyKey&gt;) {
+                let attributes_size = self.params.hs.len();
+                assert!(self.authorities_total &gt;= self.threshold);
+                assert!(attributes_size &gt; 0);
+        
+                let create_n_random_scalars = |n| -&gt; Vec&lt;_&gt; {
+                    (0..n).map(|_| self.params.random_scalar()).collect()
+                };
+        
+                // Generate polynomials
+                let v_poly = create_n_random_scalars(self.threshold);
+                let w_poly: Vec&lt;Vec&lt;bls::Scalar&gt;&gt; =
+                    (0..attributes_size).map(|_| create_n_random_scalars(self.threshold)).collect();
+        
+                // Generate shares
+                let mut x_shares = Vec::new();
+                for i in 1..=self.authorities_total {
+                    x_shares.push(compute_polynomial(&amp;v_poly, i as u64));
+                }
+        
+                let mut y_shares = Vec::new();
+                for i in 1..=self.authorities_total {
+                    let mut y_parts = Vec::new();
+                    for w_coefficients in &amp;w_poly {
+                        y_parts.push(compute_polynomial(w_coefficients, i as u64));
+                    }
+                    y_shares.push(y_parts);
+                }
+        
+                // Set the keys
+                // sk_i = (x, (y_1, y_2, ..., y_q))
+                // vk_i = (g2^x, (g2^y_1, g2^y_2, ..., g2^y_q)) = (a, (B_1, B_2, ..., B_q))
+                let mut verify_keys = Vec::new();
+                for (x, y_parts) in x_shares.iter().zip(y_shares.iter()) {
+                    verify_keys.push(VerifyKey {
+                        alpha: self.params.g2 * x,
+                        beta: {
+                            let mut beta = Vec::new();
+                            for y in y_parts {
+                                beta.push(self.params.g2 * y);
+                            }
+                            beta
+                        }
+                    });
+                }
+        
+                // We are moving out of x_shares into SecretKey, so this line happens
+                // after creating verify_keys to avoid triggering borrow checker.
+                let mut secret_keys = Vec::new();
+                for (&amp;x, y) in x_shares.iter().zip(y_shares) {
+                    secret_keys.push(SecretKey{ x: x, y: y });
+                }
+        
+                (secret_keys, verify_keys)
+            }
+```
 
-For basic manipulation of JSON, using \`serde\` and \`serde\_json\`. 18 crates.
+What do you guys think between the two? Which is better written and how can we improve either of them?
 
-That's a lot of dependencies. Are there any potential issues this could cause? Is anyone worried about this?
-## [6][Announcing task_scope](https://www.reddit.com/r/rust/comments/ekqjih/announcing_task_scope/)
-- url: https://docs.rs/task_scope/0.1.0/task_scope/
+Thanks
+## [11][dtool 0.5.0 - A command line tool collection to assist development written in RUST](https://www.reddit.com/r/rust/comments/ela0wu/dtool_050_a_command_line_tool_collection_to/)
+- url: https://www.reddit.com/r/rust/comments/ela0wu/dtool_050_a_command_line_tool_collection_to/
 ---
+dtool 0.5.0 released
 
-## [7][Actix Web: Optimization Amongst Optimizations](https://www.reddit.com/r/rust/comments/ekshih/actix_web_optimization_amongst_optimizations/)
-- url: https://brandur.org/nanoglyphs/008-actix
----
+**About dtool**
 
-## [8][Official announcement: glsl-4.0](https://www.reddit.com/r/rust/comments/eklo6l/official_announcement_glsl40/)
-- url: https://www.reddit.com/r/rust/comments/eklo6l/official_announcement_glsl40/
----
-[glsl-4.0](https://crates.io/crates/glsl/4.0.0) and [glsl-quasiquote](https://crates.io/crates/glsl-quasiquote/4.0.0) just got released.
+dtool is a command line tool collection to assist development
 
-&gt; `glsl` is a [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language) parsing, syntax and transformation crate written in pure Rust. Its goals are to parse valid _GLSL450/460_ sources. `glsl-quasiquote` is a companion crate that is to `glsl` what `quote` is to Rust.
+ [Full description on github](https://github.com/guoxbin/dtool)
 
-Among the interesting features, `glsl` got support for two _backward-compatible_ keyword: `attribute` and `varying`. Those are not part of the _GLSL450_ but adding them would allow to parse older versions of GLSL for free.
+**New features**
 
-Another important part is that prior to 4.0, the `glsl` crate parsed binary operations as right-associative, which is not what the spec states (they should be left-associative). A patch has landed and this is now fixed. Thanks to [@jrmuizel](https://github.com/jrmuizel) for his commitment and help on that issue.
+* Pbkdf2
+* Case conversion (upper, lower, title, camel, pascal, snake, shouty snake, kebab)
+* New hashing algorithm (crc, blake2b)
 
-Keep the vibes!
-## [9][How do you get project ideas and motivation for coding in your spare time?](https://www.reddit.com/r/rust/comments/eknvoq/how_do_you_get_project_ideas_and_motivation_for/)
-- url: https://www.reddit.com/r/rust/comments/eknvoq/how_do_you_get_project_ideas_and_motivation_for/
----
-I am 25 and I've been coding for 6 years now. I found out, that coding is something I really like and I think I am/have the potential to be good at it. While trying to find a solution for a concrete problem, I often think of how to generalize it and try to find a solution for not the problem itself, but for the type of problems in a more general way. Sometimes this thing happens on the next (more general) level again and again and I catch myself trying to find the most generic solution possible, which can be very counterproductive for solving the actual problem.
+**Examples**
 
-Because of that I figured that I would love to create libraries/frameworks/APIs instead of end user products. I love the feeling of starting a fresh new project with just a main, planning and creating everything from scratch. When I started learning how to code I always came to the point where I trashed the whole project and started it all over again, because I realized, that I messed up the structure and learned how to make it better until I realized, that I messed up again...
-
-There are days, where I get really excited about programming (just thinking about it) and feel a strong urge to code and be productive. Its an energizing feeling, that I can't really describe and it comes over me just some days randomly, when I'm somehow in the mood. That feeling gets strong especially when learning something knew in the field of coding (reading the Rust book for example always gave me that feeling). Does anyone know what I mean?
-
-Anyway, I think I unfortunately am a really uncreative person, so I don't have many ideas of what to do. I used to program simple 2d games like tetris, which was fun and really instructive, but I wanna create something that is useful. I need a project, that I can work on when I get in the above described mood. In the rare cases of having a good project idea, I don't really know if it already exists and how to meet all the rules and conventions in general.
-
-I did some of those little programming exercises like adventOfCode or rustlings. Those little exercises are good to practice and get to know the basics of the language (syntax, standard library...), but are not really what I am looking for. I also thought of contributing to an existing project (Rust standard library or an existing crate), but every time I try to find something to contribute to, I feel overwhelmed by the things/rules that are necessary to follow and the reading into the existing code. For some reason I don't really know where to start and give up. I am not even aware of what exactly is stopping me.
-
-I also really find it hard to find people, that share those interests. I study IT and work as a programmer, but I feel like most of the people around there just do IT, because of the career possibilities and not because they really are interested in that kinda stuff.
-
-Does anyone have any suggestion on how to find a project to work on? How do you get the motivation or ideas for coding for fun? What do you code when you code in your free time and (how) are the projects different from the ones you work on at your job?
-## [10][Can anybody explain these differences in test results between platforms?](https://www.reddit.com/r/rust/comments/ekt3ox/can_anybody_explain_these_differences_in_test/)
-- url: https://www.reddit.com/r/rust/comments/ekt3ox/can_anybody_explain_these_differences_in_test/
----
-I recently created [a PR](https://github.com/tov/libffi-sys-rs/pull/29) for `libffi-sys` to support MSVC building. My next step is [a PR](https://github.com/tov/libffi-rs/pull/12) for the `libffi` crate to build and test with MSVC too via Github Actions.
-
-After playing CI whack-a-mole for a while I finally got it mostly working and found a single doc test [failing on Windows only](https://github.com/timfish/libffi-rs/runs/373201160):
-
-    extern "C" fn add(x: f64, y: &amp;f64) -&gt; f64 {
-        return x + y;
-    }
-    
-    use libffi::middle::*;
-    
-    let args = vec![Type::f64(), Type::pointer()];
-    let cif = Cif::new(args.into_iter(), Type::f64());
-    
-    let n = unsafe { cif.call(CodePtr(add as *mut _), &amp;[arg(&amp;5), arg(&amp;&amp;6)]) };
-    assert_eq!(11, n);
-
-Result:
-
-    ---- src\middle\mod.rs - middle::Cif (line 71) stdout ----
-    Test executable failed (exit code 101).
-    
-    stderr:
-    thread 'main' panicked at 'assertion failed: `(left == right)`
-      left: `11`,
-     right: `6`', src\middle\mod.rs:14:1
-
-I did some dirty `println!` debugging in the `add` function and found that at least on Windows, the `x: f64, y: &amp;f64` arguments were not 5 and 6 as expected. I quickly realised that there is no type safety in these ffi calls... I made the following change to the arguments to ensure that the numbers being passed were in fact `f64`:
-
-    let n = unsafe { cif.call(CodePtr(add as *mut _), &amp;[arg(&amp;5f64), arg(&amp;&amp;6f64)]) };
-
-Why was this test passing on macOS and Linux but failing on Windows?
-
-After making this change, this test [now fails for the same reason on every platform](https://github.com/timfish/libffi-rs/runs/374800102), which I'll take as a partial win, but I have no idea how to fix it and it seems like I should probably understand what's going on here before I precede!
-
-    ---- src\middle\mod.rs - middle::Cif (line 71) stdout ----
-    Test executable failed (exit code 101).
-    
-    stderr:
-    thread 'main' panicked at 'assertion failed: `(left == right)`
-      left: `11`,
-     right: `0`', src\middle\mod.rs:14:1
-## [11][Performance of Rust when used with Java and in smartphone development](https://www.reddit.com/r/rust/comments/ekpzyw/performance_of_rust_when_used_with_java_and_in/)
-- url: https://www.reddit.com/r/rust/comments/ekpzyw/performance_of_rust_when_used_with_java_and_in/
----
-Hello, 
-
-I am working on a project that requires a lot of hashing, encrypting and decrypting, as well as some networking. Since these operations can be computationally intense I was considering writing my library in Rust. 
-
-I found a question on stack overflow where someone made a [.dll file from his Rust](https://stackoverflow.com/questions/30258427/calling-rust-from-java) code and used it in java as well as an article on [medium]( https://link.medium.com/ZcnTOMXk12) explaining how to use Rust in android and iOS dev. 
+|Sub command| Desc |                                                                   Example                                                                   |Remark|Since |
+|-----------|------|---------------------------------------------------------------------------------------------------------------------------------------------|------|------|
+|  pbkdf2   |Pbkdf2|$ dtool pbkdf2 -a sha2_256 -s 0x646566 -i 2 -l 256\ &lt;br&gt; 0x616263&lt;br&gt;0x51a30556d0d133d859d3f3da86f861b7b12546c4f9a193eb\ &lt;br&gt;b374397467872514|      |v0.5.0|
+|   case    |Case conversion|$ dtool case -t upper &amp;#x27;good tool&amp;#x27;&lt;br&gt;GOOD TOOL|   Upper case    |v0.5.0|
+|   case    |Case conversion|$ dtool case -t lower &amp;#x27;GOOD TOOL&amp;#x27;&lt;br&gt;good tool|   Lower case    |v0.5.0|
+|   case    |Case conversion|$ dtool case -t title &amp;#x27;GOOD TOOL&amp;#x27;&lt;br&gt;Good Tool|   Title case    |v0.5.0|
+|   case    |Case conversion|$ dtool case -t camel &amp;#x27;GOOD TOOL&amp;#x27;&lt;br&gt;goodTool |   Camel case    |v0.5.0|
+|   case    |Case conversion|$ dtool case -t pascal &amp;#x27;GOOD TOOL&amp;#x27;&lt;br&gt;GoodTool|   Pascal case   |v0.5.0|
+|   case    |Case conversion|      $ dtool case -t snake GoodTool&lt;br&gt;good_tool       |   Snake case    |v0.5.0|
+|   case    |Case conversion|   $ dtool case -t shouty_snake GoodTool&lt;br&gt;GOOD_TOOL   |Shouty snake case|v0.5.0|
+|   case    |Case conversion|      $ dtool case -t kebab GoodTool&lt;br&gt;good-tool       |   Kebab case    |v0.5.0|
 
 
-Another pro is that I could use the same code base for all the devices, that would gain me some time. 
+**Installation**
 
-Do you think it is worth learning Rust and write the API/library in it to fasten the app ?
+&gt; cargo install dtool
+
+**Suggestion or contribution**
+
+[github](https://github.com/guoxbin/dtool)
 ## [12][Announcing the v0.11 release of Yew](https://www.reddit.com/r/rust/comments/ektzvd/announcing_the_v011_release_of_yew/)
 - url: https://www.reddit.com/r/rust/comments/ektzvd/announcing_the_v011_release_of_yew/
 ---
@@ -162,4 +257,7 @@ The latest release contains quite a few breaking changes and has a [transition g
 
 Also, I'd like to announce Yew's new documentation website that aims to help developers learn about Yew and start building Yew apps more quickly. You can find it here: [https://yew.rs](https://yew.rs). *Note that it's still a WIP, PR's welcome ;)*
 
-For the next release, we will be adding support for `web-sys` (while preserving support for `stdweb` and Emscripten targets) and will start integrating with the [gloo](https://github.com/rustwasm/gloo) toolkit. Also in the works.. we have folks working on CSS tooling, component libraries, and server side rendering. Come hang out in our [Gitter chat](https://gitter.im/yewframework/Lobby) if you'd like to learn more!
+For the next release, we will be adding support for `web-sys` (while preserving support for `stdweb` and Emscripten targets) and will start integrating with the [gloo](https://github.com/rustwasm/gloo) toolkit. Also in the works.. we have folks working on CSS tooling, component libraries, and server side rendering. Come hang out in our [Gitter chat](https://gitter.im/yewframework/Lobby) if you'd like to learn more!  
+
+
+EDIT: Just created a Twitter account for Yew ([@yewstack](https://twitter.com/yewstack)). Feel free to follow if you would like more frequent updates about the project :)

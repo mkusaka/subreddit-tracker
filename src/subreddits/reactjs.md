@@ -80,82 +80,93 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][I build an open api lists repository](https://www.reddit.com/r/reactjs/comments/ekjfqc/i_build_an_open_api_lists_repository/)
-- url: https://www.reddit.com/r/reactjs/comments/ekjfqc/i_build_an_open_api_lists_repository/
+## [3][I created a Microservices app created using React/Node.js/GraphQL/Docker, along with a full tutorial on how to build it](https://www.reddit.com/r/reactjs/comments/el6lkq/i_created_a_microservices_app_created_using/)
+- url: https://www.reddit.com/r/reactjs/comments/el6lkq/i_created_a_microservices_app_created_using/
 ---
-I was so tired to find an open API that is (actually) useful.
+One of my biggest gripes with microservices is how few full-blown tutorials are available for something that is such a hot-topic technology.
 
- I wish there was a list of all the open APIs I can use. 
+As such, I recently built a rather simple Classifieds app using a Microservices architecture, using the following technologies as a non-exhaustive list:
 
-So, I googled and found a useful repository at github. ([Link](https://github.com/public-apis/public-apis))
+* React;
+* Redux;
+* Node.js;
+* GraphQL;
+* Docker (and Docker Compose); and
+* Styled Components,
 
-But it seems that repo isn't managed anymore. (Look at the issues and pr requests waiting there)
+And also deployed it into AWS using Terraform.
 
-So I forked that and make new one.
+Here's the link to the full source code: [https://github.com/parkroolucas/microservices-demo](https://github.com/parkroolucas/microservices-demo)
+
+And here's the link to the full tutorial series: [https://www.youtube.com/watch?v=gD-WutJH0qc&amp;list=PLnTRniWXnjf8YC9qJFLSVCrXfS6cyj6x6](https://www.youtube.com/watch?v=gD-WutJH0qc&amp;list=PLnTRniWXnjf8YC9qJFLSVCrXfS6cyj6x6)
+## [4][Next.js 9.1.7: Smaller Client-Side Runtime, New Build Output, New Built-In Polyfills, Faster Page Loading, Strict Mode Ready, Automated React Canary Tests, Optional Chaining &amp; Nullish Coalescing, and Zero-Config `next export` Deployment](https://www.reddit.com/r/reactjs/comments/el9suh/nextjs_917_smaller_clientside_runtime_new_build/)
+- url: https://nextjs.org/blog/next-9-1-7
+---
+
+## [5][Timeline Component in React (and some CSS Magic 🎩)](https://www.reddit.com/r/reactjs/comments/ekvep1/timeline_component_in_react_and_some_css_magic/)
+- url: https://www.youtube.com/watch?v=tcUVUBlyXX8
+---
+
+## [6][CodeSandbox now with React Fast Refresh - Ives van Hoorne on Twitter](https://www.reddit.com/r/reactjs/comments/el1sfr/codesandbox_now_with_react_fast_refresh_ives_van/)
+- url: https://twitter.com/CompuIves/status/1214171786121793536
+---
+
+## [7][I have made a 1-page app. How do I add another different (home) page?](https://www.reddit.com/r/reactjs/comments/elawux/i_have_made_a_1page_app_how_do_i_add_another/)
+- url: https://www.reddit.com/r/reactjs/comments/elawux/i_have_made_a_1page_app_how_do_i_add_another/
+---
+Hi, 
+
+I have made an app that is a single-page app. Now I want to add a home page to the app. How do I do it?
+
+Thanks
+## [8][Create a Simple POS with React, Node and MongoDB #0: Initial Setup Frontend and Backend](https://www.reddit.com/r/reactjs/comments/el6g3y/create_a_simple_pos_with_react_node_and_mongodb_0/)
+- url: https://blog.soshace.com/create-a-simple-pos-with-react-node-and-mongodb-0-initial-setup-frontend-and-backend/
+---
+
+## [9][Custom Hook: return multiple getters (and no setter) ?](https://www.reddit.com/r/reactjs/comments/el8t6d/custom_hook_return_multiple_getters_and_no_setter/)
+- url: https://www.reddit.com/r/reactjs/comments/el8t6d/custom_hook_return_multiple_getters_and_no_setter/
+---
+Hi all,
+
+What is the customHook convention to only return multiple getters (and no setter) ?
+
+No setter because it is not needed
+
+    export const useSitesContainer = () =&gt; {
+        const [siteName, setSiteName] = useState('')
+        const [sites, ] = useSites()
+        const [loaded, setLoaded] = useState(false)
+    
+        useEffect(() =&gt; {
+            if(!loaded) {
+                getSites()
+                setLoaded(true)
+            }
+        }, [sites])
+    
+        let sitesContainer = useMemo( () =&gt; {
+            return &lt;SitesSelect sites={sites} setSiteName={setSiteName} /&gt;
+        }, [sites])
+    
+        return [siteName, sitesContainer]  // &lt;--- multiple getters, no setter returned
+    }
+## [10][react.js authentication with DRF blog, redux or jwt?](https://www.reddit.com/r/reactjs/comments/elakqf/reactjs_authentication_with_drf_blog_redux_or_jwt/)
+- url: https://www.reddit.com/r/reactjs/comments/elakqf/reactjs_authentication_with_drf_blog_redux_or_jwt/
+---
+i have started react.js couple of days ago. i have built a blog in django rest framework with token system and  drf\_yasg. i have already written the front page with react which is showing the post from the backend, thanx to corsheader. now i would like to do the authorization (login, logout,signup kinda thing along with a CMS) thing along with social account part (social account log in is not my priority now). from the react side what should i do? installing redux or just use djangoreastframework-jwt?
+
+i saw this djangorestframework-jwt concept in [medium.com](https://medium.com). i didn't try it. before trying if you have any advice for a newbie, it would be great help.
 
 &amp;#x200B;
 
-Anyone whose interested can check or contribute. ([Link](https://github.com/public-api-lists/public-api-lists))
-
-Thanks.
-## [4][Redux pubsub?](https://www.reddit.com/r/reactjs/comments/ektu3d/redux_pubsub/)
-- url: https://www.reddit.com/r/reactjs/comments/ektu3d/redux_pubsub/
+thanx in advance
+## [11][Is Redux Super Hard?](https://www.reddit.com/r/reactjs/comments/elafbi/is_redux_super_hard/)
+- url: https://www.reddit.com/r/reactjs/comments/elafbi/is_redux_super_hard/
 ---
-Maybe I don't yet have the right mental model of Redux as I've now seen it used in different ways in a couple of, admittedly, messy projects. But can I use Redux with Thunk as a traditional pubsub type system?
+Recently i take Stephen Grinder "Modern React With Redux" Course. And i am now at middle stage. I find out Redux is super hard to understand and write code. 
 
-If so, how do I connect events (i.e. actions) to other calls that have side effects, without having to explicitly design out a chain of dispatch calls? I'm assuming the right way to do it is to have the listeners watch for actions and know what to do.
-
-The *listeners* get called in the reducers, but I can't take the payload and call another service to update the backend -  I can, of course, update the front end state, but it's now out of sync on the backend. Where do I attach the API call if the reducer can't make it.
-
-For example:
-
-* Click button
-* Callback makes post to update service A, and returns payload of state.A, dispatching action.A
-* Reducer B listens for Action.A and sees payload. It needs to take payload.A and update state.B, but should actually do it by calling service B and updating it's state when action.B is dispatched.
-
-How do I trigger A and B without having to explicitly call dispatchA().then(payload.A, dispatchB(payload.A))?
-## [5][My best VSCode Linting/Formatting configuration for Typescript Projects](https://www.reddit.com/r/reactjs/comments/eks63o/my_best_vscode_lintingformatting_configuration/)
-- url: https://medium.com/javascript-in-plain-english/my-best-vscode-linting-formatting-configuration-for-typescript-projects-ef400ed9b78f?source=friends_link&amp;sk=d1a797a25de1e668bcd4e69d247f2be4
----
-
-## [6][Sharing Code Between React and React-Native: What Not to Share - Ben Ellerby](https://www.reddit.com/r/reactjs/comments/eke9og/sharing_code_between_react_and_reactnative_what/)
-- url: https://youtu.be/QO7SkFqRd7s
----
-
-## [7][How often do you/people use Redux in React projects?](https://www.reddit.com/r/reactjs/comments/eklce7/how_often_do_youpeople_use_redux_in_react_projects/)
-- url: https://www.reddit.com/r/reactjs/comments/eklce7/how_often_do_youpeople_use_redux_in_react_projects/
----
-I am lerning React.js on Udemy and the lecturer says that every React project he has worked on used Redux and everyone who is working with React should know Redux.
-
-At the same time, I find Redux quite complex. At lest it introduces a new level of complexity which seems unneeded (for me as a learner). 
-
-**Questions:** Do you use Redux in your projects? Why? Does a developer really need to know Redux if he or she wants to work with React?
-## [8][Please advise on why I can't get Remote jobs with my Resume with my experience and skills](https://www.reddit.com/r/reactjs/comments/eku4ko/please_advise_on_why_i_cant_get_remote_jobs_with/)
-- url: https://www.reddit.com/r/reactjs/comments/eku4ko/please_advise_on_why_i_cant_get_remote_jobs_with/
----
-I have worked in really challenging roles and did get good recommendations from previous employers. For some reason, I can't even get an interview chance.
-
-What is wrong with my Resume??
-## [9][Advanced React with TypeScript and Redux Course: Build a Sudoku App](https://www.reddit.com/r/reactjs/comments/ektr15/advanced_react_with_typescript_and_redux_course/)
-- url: https://www.youtube.com/watch?v=MUs4oAudvO0
----
-
-## [10][Hooks + Redux + Tests open source project](https://www.reddit.com/r/reactjs/comments/ektonl/hooks_redux_tests_open_source_project/)
-- url: https://www.reddit.com/r/reactjs/comments/ektonl/hooks_redux_tests_open_source_project/
----
-I’m looking for an open source project that uses hooks and redux, with plenty of tests, especially complex integration tests. 
-I want to learn about the architecture and testing of a non-trivial app. 
-
-I already checked video courses (I prefer real code), github and top posts in this /r. Not satisfied with my findings so far (I‘m fairly new to react, is not easy to find repos for three specific topics combined).
-
-Do you have a favorite project in mind that cover all the bases?
-
-Thanks.
-## [11][JavsScript TV : Tech talks on React, CSS and everything JavaScript](https://www.reddit.com/r/reactjs/comments/ektinl/javsscript_tv_tech_talks_on_react_css_and/)
-- url: http://jsgeeks.tv/
----
-
-## [12][Code a Movie APP in React Native | React Native Tutorial for Beginners](https://www.reddit.com/r/reactjs/comments/eksmer/code_a_movie_app_in_react_native_react_native/)
-- url: https://www.youtube.com/watch?v=aZYCEGyMIN0&amp;feature=share
+What you guys think? And any suggestions for me??
+## [12][ReactFormHelper: Simple way to build forms in React](https://www.reddit.com/r/reactjs/comments/ela42k/reactformhelper_simple_way_to_build_forms_in_react/)
+- url: https://github.com/EvandroLG/ReactFormHelper
 ---
 

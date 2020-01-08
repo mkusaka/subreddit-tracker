@@ -80,7 +80,84 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][I created a Microservices app created using React/Node.js/GraphQL/Docker, along with a full tutorial on how to build it](https://www.reddit.com/r/reactjs/comments/el6lkq/i_created_a_microservices_app_created_using/)
+## [3][A volunteer community of React Devs have been building an app/site to change global homelessness by building stronger social safety nets in communities. It's basic but has begun helping people. Could you improve it?](https://www.reddit.com/r/reactjs/comments/elmoxk/a_volunteer_community_of_react_devs_have_been/)
+- url: https://brightertomorrowmap.com
+---
+
+## [4][I made stock trading app with react, firebase and IEX api.](https://www.reddit.com/r/reactjs/comments/elhak3/i_made_stock_trading_app_with_react_firebase_and/)
+- url: https://www.reddit.com/r/reactjs/comments/elhak3/i_made_stock_trading_app_with_react_firebase_and/
+---
+It's one of my bigger web applications i made lately and i want to share it with you. 
+
+In this app you are able to trade us stocks using virtual money. You start with $100k. It has thousands of stocks, every stock has his own chart. Max chart range is 2 years. Sometimes when it comes to loading 1d chart you will see an error that's because i am using alpha vantage api for that and it has limited requests per minute so sorry for that. App is mostly reponsive. App has 2 themes default is dark theme and i don't recommend using the light one i didn't spend much time working on it. There is one test account available but i recommend creating an account with fake email for full experience. Feel free to test it. Have fun!
+
+&amp;#x200B;
+
+live:  [https://stocks-af048.web.app/](https://stocks-af048.web.app/)
+
+code:  [https://github.com/SongoMen/Trader24](https://github.com/SongoMen/Trader24)
+## [5][Does anyone have a clue how these guys made this trick with a cursor?](https://www.reddit.com/r/reactjs/comments/elsqfe/does_anyone_have_a_clue_how_these_guys_made_this/)
+- url: https://www.reddit.com/r/reactjs/comments/elsqfe/does_anyone_have_a_clue_how_these_guys_made_this/
+---
+Does anyone have a clue how these guys made this trick with a cursor?
+
+[https://www.kontrapunkt.com/](https://www.kontrapunkt.com/)
+
+screenshot  [https://yadi.sk/i/tgS3W\_fQ5kyMxQ](https://yadi.sk/i/tgS3W_fQ5kyMxQ)
+
+I wonder how to do something like this. The question is not really about React but the website is built with React. And I suppose someone from this community might have a clue. Thanks.
+## [6][Add Comments To React-Powered Blogs](https://www.reddit.com/r/reactjs/comments/elsne2/add_comments_to_reactpowered_blogs/)
+- url: https://github.com/HyvorTalk/hyvor-talk-react
+---
+
+## [7][react-router nesting problems](https://www.reddit.com/r/reactjs/comments/elscg7/reactrouter_nesting_problems/)
+- url: https://www.reddit.com/r/reactjs/comments/elscg7/reactrouter_nesting_problems/
+---
+\*New to react\* For nesting routes with react-router. Can you unmount the previous content? 
+
+    App.js
+    &lt;Route path="/" component={HomePage} exact /&gt;
+    &lt;Route path="/podcast/:pid" component={Podcast} /&gt;
+    &lt;Route path="/podcast/:pid/episode/:eid" component={Episode} /&gt; 
+    
+    Podcast.js
+    &lt;Link key={key} to={`/podcast/${this.state.id}/episode/${item.id}` }&gt;
+    .
+    .
+    &lt;/Link&gt;
+
+Homepage displays the top podcasts, then you press one you get to the podcast component and you see the episodes. Then when I press on a episode I want to arrive at a whole new page with a media player and so on but all the episode from the previous page is still there and the new content is rendered underneath everything else.
+## [8][Axios request issue with Safari on MacOs and iOs](https://www.reddit.com/r/reactjs/comments/els9vb/axios_request_issue_with_safari_on_macos_and_ios/)
+- url: https://www.reddit.com/r/reactjs/comments/els9vb/axios_request_issue_with_safari_on_macos_and_ios/
+---
+I'm trying to do an API request using Axios, it works in every windows' and Android browsers  but does not work on MacOs Safari (but in Chrome it works fine) or any iOs browser.
+
+In the same code I make another calls to the same API (different endpoints) and it works with no problems at all in safari and iOs.
+
+When I console.log the throwed exception turns out that's a Network error.
+
+I don't think that's a CORS issue, couse it works on another browsers.
+
+I'm sorry for my english, hope u guys can understand me.
+
+Thanks.
+
+&amp;#x200B;
+
+My request:
+
+`try {`  
+ `const response = await api.get("/precos/get",`  
+                `{`  
+ `headers: {`  
+ `'this.state-Type': 'application/json',`  
+ `'token': getToken()`  
+                    `}`  
+                `});`  
+ `//console.log("resultado do resquest preço" + response.data.data )`  
+ `this.filtraProdutoPorTabela(response.data.data);`  
+        `} catch (err)`
+## [9][I created a Microservices app created using React/Node.js/GraphQL/Docker, along with a full tutorial on how to build it](https://www.reddit.com/r/reactjs/comments/el6lkq/i_created_a_microservices_app_created_using/)
 - url: https://www.reddit.com/r/reactjs/comments/el6lkq/i_created_a_microservices_app_created_using/
 ---
 One of my biggest gripes with microservices is how few full-blown tutorials are available for something that is such a hot-topic technology.
@@ -99,74 +176,71 @@ And also deployed it into AWS using Terraform.
 Here's the link to the full source code: [https://github.com/parkroolucas/microservices-demo](https://github.com/parkroolucas/microservices-demo)
 
 And here's the link to the full tutorial series: [https://www.youtube.com/watch?v=gD-WutJH0qc&amp;list=PLnTRniWXnjf8YC9qJFLSVCrXfS6cyj6x6](https://www.youtube.com/watch?v=gD-WutJH0qc&amp;list=PLnTRniWXnjf8YC9qJFLSVCrXfS6cyj6x6)
-## [4][Next.js 9.1.7: Smaller Client-Side Runtime, New Build Output, New Built-In Polyfills, Faster Page Loading, Strict Mode Ready, Automated React Canary Tests, Optional Chaining &amp; Nullish Coalescing, and Zero-Config `next export` Deployment](https://www.reddit.com/r/reactjs/comments/el9suh/nextjs_917_smaller_clientside_runtime_new_build/)
-- url: https://nextjs.org/blog/next-9-1-7
+## [10][Trying to load Lightbox2 in index.html, it gets loaded but nothing happens on rendered page.](https://www.reddit.com/r/reactjs/comments/elrhho/trying_to_load_lightbox2_in_indexhtml_it_gets/)
+- url: https://www.reddit.com/r/reactjs/comments/elrhho/trying_to_load_lightbox2_in_indexhtml_it_gets/
 ---
+I'm trying to load Lightbox2
 
-## [5][Timeline Component in React (and some CSS Magic 🎩)](https://www.reddit.com/r/reactjs/comments/ekvep1/timeline_component_in_react_and_some_css_magic/)
-- url: https://www.youtube.com/watch?v=tcUVUBlyXX8
----
+[https://lokeshdhakar.com/projects/lightbox2/](https://lokeshdhakar.com/projects/lightbox2/#options)
 
-## [6][CodeSandbox now with React Fast Refresh - Ives van Hoorne on Twitter](https://www.reddit.com/r/reactjs/comments/el1sfr/codesandbox_now_with_react_fast_refresh_ives_van/)
-- url: https://twitter.com/CompuIves/status/1214171786121793536
----
+I have included css in header and the js file in index.html of public/index.html in my React App
 
-## [7][I have made a 1-page app. How do I add another different (home) page?](https://www.reddit.com/r/reactjs/comments/elawux/i_have_made_a_1page_app_how_do_i_add_another/)
-- url: https://www.reddit.com/r/reactjs/comments/elawux/i_have_made_a_1page_app_how_do_i_add_another/
----
-Hi, 
+        &lt;link rel="stylesheet" href="/css/lightbox.css"&gt;
+        &lt;script src="/js/lightbox.js"&gt;&lt;/script&gt;
 
-I have made an app that is a single-page app. Now I want to add a home page to the app. How do I do it?
+When I'm testing my webpage, I know that the above files load just fine by adding for example:
 
-Thanks
-## [8][Create a Simple POS with React, Node and MongoDB #0: Initial Setup Frontend and Backend](https://www.reddit.com/r/reactjs/comments/el6g3y/create_a_simple_pos_with_react_node_and_mongodb_0/)
-- url: https://blog.soshace.com/create-a-simple-pos-with-react-node-and-mongodb-0-initial-setup-frontend-and-backend/
----
+lightbox.css
 
-## [9][Custom Hook: return multiple getters (and no setter) ?](https://www.reddit.com/r/reactjs/comments/el8t6d/custom_hook_return_multiple_getters_and_no_setter/)
-- url: https://www.reddit.com/r/reactjs/comments/el8t6d/custom_hook_return_multiple_getters_and_no_setter/
----
-Hi all,
-
-What is the customHook convention to only return multiple getters (and no setter) ?
-
-No setter because it is not needed
-
-    export const useSitesContainer = () =&gt; {
-        const [siteName, setSiteName] = useState('')
-        const [sites, ] = useSites()
-        const [loaded, setLoaded] = useState(false)
-    
-        useEffect(() =&gt; {
-            if(!loaded) {
-                getSites()
-                setLoaded(true)
-            }
-        }, [sites])
-    
-        let sitesContainer = useMemo( () =&gt; {
-            return &lt;SitesSelect sites={sites} setSiteName={setSiteName} /&gt;
-        }, [sites])
-    
-        return [siteName, sitesContainer]  // &lt;--- multiple getters, no setter returned
+    * {
+    border: 5px solid black;
     }
-## [10][react.js authentication with DRF blog, redux or jwt?](https://www.reddit.com/r/reactjs/comments/elakqf/reactjs_authentication_with_drf_blog_redux_or_jwt/)
-- url: https://www.reddit.com/r/reactjs/comments/elakqf/reactjs_authentication_with_drf_blog_redux_or_jwt/
----
-i have started react.js couple of days ago. i have built a blog in django rest framework with token system and  drf\_yasg. i have already written the front page with react which is showing the post from the backend, thanx to corsheader. now i would like to do the authorization (login, logout,signup kinda thing along with a CMS) thing along with social account part (social account log in is not my priority now). from the react side what should i do? installing redux or just use djangoreastframework-jwt?
 
-i saw this djangorestframework-jwt concept in [medium.com](https://medium.com). i didn't try it. before trying if you have any advice for a newbie, it would be great help.
+and just a console.log("hello world"); on lightbox.js
 
 &amp;#x200B;
 
-thanx in advance
-## [11][Is Redux Super Hard?](https://www.reddit.com/r/reactjs/comments/elafbi/is_redux_super_hard/)
-- url: https://www.reddit.com/r/reactjs/comments/elafbi/is_redux_super_hard/
----
-Recently i take Stephen Grinder "Modern React With Redux" Course. And i am now at middle stage. I find out Redux is super hard to understand and write code. 
+On my React App I use the following code:
 
-What you guys think? And any suggestions for me??
-## [12][ReactFormHelper: Simple way to build forms in React](https://www.reddit.com/r/reactjs/comments/ela42k/reactformhelper_simple_way_to_build_forms_in_react/)
-- url: https://github.com/EvandroLG/ReactFormHelper
+    &lt;a className="col-4" 
+     href={"/media/docs/certs/" + item.credID + ".jpg"}
+     data-lightbox="certificate-set"
+     data-title={item.name + " Certificate"}
+     data-alt={item.name + " Certificate"}&gt;
+     {item.name + " Certificate"} 
+    &lt;/a&gt;
+
+and the result is this:
+
+    &lt;a class="col-4" href="/media/docs/certs/4TEQWQJXR5GY.jpg" data-lightbox="certificate-set" data-title="Learn to Program and Analyze Data with Python Certificate" data-alt="Learn to Program and Analyze Data with Python Certificate"&gt;Learn to Program and Analyze Data with Python Certificate&lt;/a&gt;
+
+However, only links are being shown. I do not see any images
+
+[https://i.imgur.com/79KaWyB.png](https://i.imgur.com/79KaWyB.png)
+## [11][Next.js 9.1.7: Smaller Client-Side Runtime, New Build Output, New Built-In Polyfills, Faster Page Loading, Strict Mode Ready, Automated React Canary Tests, Optional Chaining &amp; Nullish Coalescing, and Zero-Config `next export` Deployment](https://www.reddit.com/r/reactjs/comments/el9suh/nextjs_917_smaller_clientside_runtime_new_build/)
+- url: https://nextjs.org/blog/next-9-1-7
 ---
 
+## [12][Web + mobile](https://www.reddit.com/r/reactjs/comments/elq7op/web_mobile/)
+- url: https://www.reddit.com/r/reactjs/comments/elq7op/web_mobile/
+---
+Hello, 
+
+I need to create a website but i also want the ability to use it from mobile.
+
+From what i understand i have 2 options:
+
+1. Use react to make a website, and make sure it is responsive for mobile as well
+2. Use react and make website and then separately make app using react native  
+
+
+I have about 2 months to work on this therefore i think the second option is not possible.(correct me if i'm wrong)
+
+For the first option, how will i know to make it responsive for mobile + desktop.   
+Can someone point me to a certain tutorial?
+
+Basically i want to build a social network style website.
+
+Please let me know of your opinions and if i am missing an option.
+
+Thanks

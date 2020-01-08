@@ -20,15 +20,46 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][ReactFormHelper: Simple way to build forms in React](https://www.reddit.com/r/typescript/comments/el9zqo/reactformhelper_simple_way_to_build_forms_in_react/)
-- url: https://github.com/EvandroLG/ReactFormHelper
+## [2][How do I get the intersection of generic types?](https://www.reddit.com/r/typescript/comments/elnme2/how_do_i_get_the_intersection_of_generic_types/)
+- url: https://www.reddit.com/r/typescript/comments/elnme2/how_do_i_get_the_intersection_of_generic_types/
+---
+Suppose I have:
+
+    type union = string | number;
+    type subset = union &amp; string; // subset = string;
+
+I'd like to do something like:
+
+    interface A&lt;T&gt; { }
+    type union = A&lt;string&gt; | A&lt;number&gt;;
+    type subset = union &amp; A&lt;string&gt;; // expect subset = A&lt;string&gt;
+
+The subset type in this case becomes `(A&lt;string&gt; &amp; A&lt;string&gt;) | (A&lt;string&gt; &amp; A&lt;number&gt;)`, which I don't think is what I want.
+
+Update: I solved the problem using Extract&lt;T, U&gt; and by defining a property on my interface with the generic type:
+
+    interface A&lt;T&gt; { _type: T };
+    type union = A&lt;string&gt; | A&lt;number&gt;;
+    type subset = Extract&lt;union, A&lt;string&gt;&gt;; // A&lt;string&gt; as expected
+
+It is a bit hacky - in my actual code I have a class, so I defined a private setter with that type and it seems to work. The actual use case is a much more complex type whose details don't belong here, but the above sums it up well.
+## [3][How to extend the ExpressJS Request object with Typescript](https://www.reddit.com/r/typescript/comments/elqazk/how_to_extend_the_expressjs_request_object_with/)
+- url: https://medium.com/@andrey.palatnyi/how-to-extend-the-expressjs-request-object-with-typescript-26675cda0632?source=friends_link&amp;sk=400142c8ffed21c1354018ab85f28b39
 ---
 
-## [3][Absolute path resolver for Typescript with Babel and Webpack](https://www.reddit.com/r/typescript/comments/ekxkoc/absolute_path_resolver_for_typescript_with_babel/)
+## [4][Should you use TypeScript if you know JavaScript well?](https://www.reddit.com/r/typescript/comments/eljud4/should_you_use_typescript_if_you_know_javascript/)
+- url: https://medium.com/@Charles_Stover/should-you-use-typescript-if-you-know-javascript-well-85042756e594
+---
+
+## [5][Absolute path resolver for Typescript with Babel and Webpack](https://www.reddit.com/r/typescript/comments/ekxkoc/absolute_path_resolver_for_typescript_with_babel/)
 - url: https://github.com/turbothinh/ts-babel-webpack-boilerplate
 ---
 
-## [4][How can i override a property type of a merged type?](https://www.reddit.com/r/typescript/comments/ekv0wd/how_can_i_override_a_property_type_of_a_merged/)
+## [6][ReactFormHelper: Simple way to build forms in React](https://www.reddit.com/r/typescript/comments/el9zqo/reactformhelper_simple_way_to_build_forms_in_react/)
+- url: https://github.com/EvandroLG/ReactFormHelper
+---
+
+## [7][How can i override a property type of a merged type?](https://www.reddit.com/r/typescript/comments/ekv0wd/how_can_i_override_a_property_type_of_a_merged/)
 - url: https://www.reddit.com/r/typescript/comments/ekv0wd/how_can_i_override_a_property_type_of_a_merged/
 ---
 Hej Typescript people. :)
@@ -38,7 +69,7 @@ I need to override an existing type of a property. How can i achieve this?
 I've made an codesandbox example: [https://codesandbox.io/s/typescript-playground-export-u2203](https://codesandbox.io/s/typescript-playground-export-u2203)
 
 At the end, the test prop should accept strings and numbers.
-## [5][how to import TypeScript library main function and typings from same location](https://www.reddit.com/r/typescript/comments/ekm021/how_to_import_typescript_library_main_function/)
+## [8][how to import TypeScript library main function and typings from same location](https://www.reddit.com/r/typescript/comments/ekm021/how_to_import_typescript_library_main_function/)
 - url: https://www.reddit.com/r/typescript/comments/ekm021/how_to_import_typescript_library_main_function/
 ---
 I am writing a TypeScript library + an example-app, each in separate codebases. I am having trouble getting the library's main function and its typings to be accessible from its import root; I want to be able to consume the library like this:
@@ -83,51 +114,15 @@ The built dist directory looks like:
       types.d.ts
 
 Note: the library is not yet published, so I use `yarn link` to pull it in as a dependency to the example app.
-## [6][My best VSCode Linting/Formatting configuration for Typescript Projects](https://www.reddit.com/r/typescript/comments/eks5qx/my_best_vscode_lintingformatting_configuration/)
+## [9][My best VSCode Linting/Formatting configuration for Typescript Projects](https://www.reddit.com/r/typescript/comments/eks5qx/my_best_vscode_lintingformatting_configuration/)
 - url: https://medium.com/javascript-in-plain-english/my-best-vscode-linting-formatting-configuration-for-typescript-projects-ef400ed9b78f?source=friends_link&amp;sk=d1a797a25de1e668bcd4e69d247f2be4
 ---
 
-## [7][How can I use TS in a PHP project](https://www.reddit.com/r/typescript/comments/ekttnn/how_can_i_use_ts_in_a_php_project/)
+## [10][How can I use TS in a PHP project](https://www.reddit.com/r/typescript/comments/ekttnn/how_can_i_use_ts_in_a_php_project/)
 - url: https://www.reddit.com/r/typescript/comments/ekttnn/how_can_i_use_ts_in_a_php_project/
 ---
 In my project, some of thr values are gained by php echo  , like let abc=&lt;?php echo $d?&gt;. What is the correct way to handle such scenaio such that I can use TS in these projects?
-## [8][Resources to learn Redux with Typescript](https://www.reddit.com/r/typescript/comments/ekb72e/resources_to_learn_redux_with_typescript/)
+## [11][Resources to learn Redux with Typescript](https://www.reddit.com/r/typescript/comments/ekb72e/resources_to_learn_redux_with_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/ekb72e/resources_to_learn_redux_with_typescript/
 ---
 I am trying to learn redux but almost everything is using Raw javascript. is there any resource which teaches redux with typescript (free or paid)?
-## [9][Question: why this won't work?](https://www.reddit.com/r/typescript/comments/ekbl3g/question_why_this_wont_work/)
-- url: https://www.reddit.com/r/typescript/comments/ekbl3g/question_why_this_wont_work/
----
-Trying to play with generic type:
-
-
-```typescript
-
-function AorB&lt;T extends "a" | "b"&gt;(x: T) {
-
-  const f: T extends "a" 
-
-           ? (x: "b") =&gt; void 
-
-           : (x: "a") =&gt; void = ((x: T) =&gt; {});
-
-
-
-  return f
-
-}
-```
-
-And got an error:
-
-&gt; Type '(x: T) =&gt; void' is not assignable to type 'T extends "a" ? (x: "b") =&gt; void : (x: "a") =&gt; void'.ts(2322)
-
-I have no idea why this happened, why TypeScript can't infer the type of the function? confused for a whole day...
-## [10][Self-published my first book! 2020 goals complete :)](https://www.reddit.com/r/typescript/comments/ejydn9/selfpublished_my_first_book_2020_goals_complete/)
-- url: https://www.amazon.com/gp/product/B083C5S9LV?pf_rd_p=ab873d20-a0ca-439b-ac45-cd78f07a84d8&amp;pf_rd_r=7R80GRNQ6N1GH5H9TFC4
----
-
-## [11][Things I've Learnt Building Firebase Functions Declarations](https://www.reddit.com/r/typescript/comments/ek3wv7/things_ive_learnt_building_firebase_functions/)
-- url: https://dutzi.party/building-firebase-functions-declarations/
----
-

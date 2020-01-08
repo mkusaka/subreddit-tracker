@@ -57,7 +57,51 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Advice on debugging C++ on Linux](https://www.reddit.com/r/cpp/comments/el6y9e/advice_on_debugging_c_on_linux/)
+## [2][Is there any reason why C++20 does not contain constexpr functions for converting to and/or from strings?](https://www.reddit.com/r/cpp/comments/elfpmk/is_there_any_reason_why_c20_does_not_contain/)
+- url: https://www.reddit.com/r/cpp/comments/elfpmk/is_there_any_reason_why_c20_does_not_contain/
+---
+Since [More constexpr containers](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0784r7.html) and [Making std::string constexpr](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0980r1.pdf) were accepted to C++20, allowing transient allocations with strings, is there any reason why there is no way to convert the string to numeric values and vice versa in constexpr context? p0980r1 basically makes everything constexpr in the string header, except for the streaming operators, `getline` and the string conversions. While it's kind of obvious why the first two are not constexpr, I don't see any reason why the last one couldn't be. Initially I thought this would be supported by `std::from_chars` and `std::to_chars` since they are non-allocating, but there seems to be no push to make these constexpr either. The C functions with similar functionality are also out of the picture due to... well, being C functions. 
+
+Is there a way something like this could still get into C++20, at least for the from\_chars-like variant  (e.g. via NB comments), or at least C++23? Or is there something I'm missing?
+## [3][Changing from inheritance to std::variant inverts your header include hierarchy](https://www.reddit.com/r/cpp/comments/elhf4z/changing_from_inheritance_to_stdvariant_inverts/)
+- url: https://www.reddit.com/r/cpp/comments/elhf4z/changing_from_inheritance_to_stdvariant_inverts/
+---
+I have some code I originally wrote in a dynamically typed language, and I'm converting it to C++.  This involves applying type discipline to a design which was not designed with static typing in mind.
+
+The code in question (is unrelated to the web, but) was inspired by the idea of cascading style sheets (CSS):  it's a simplified declarative description of complicated runtime objects, so that you describe the style of an object with data and something else constructs it.
+
+An important point is that different subtypes of object style have different sets of valid properties.  So for instance something describing a linear slider has linear min/max properties, while something involving rotation has properties of rotational (angle) limits.
+
+My first approximation was to create a class hierarchy with common-to-all properties in the base class, and many derived classes for the various specific styles.  Standard OOP.
+
+However I decided I wanted to change the style objects to be value types, so that they can be passed by const&amp; or stored by value, without needing to use std::shared\_ptr or other memory management.
+
+In the inheritance model, more-specific style classes included the base class with common properties inside of the derived object.  In the updated design, the former base class (now a value type not a base) becomes the bigger object, containing within it the same common properties and a std::variant of all specific styles as a sub-object.
+
+What I found interesting was in the inheritance design the specific style header(s) included the base style header, but with a std::variant based design that relationship is inverted; what had been the base class header now includes all the of the specific style header(s) (in order to be able to describe what's in the std::variant).
+
+This may seem to be a trivial detail about header includes, but I believe in this case it also a deeper point about the difference between inheritance based designs and std::variant based designs.
+
+**tl;dr:**  When using inheritance, the more specific class(es) depend(s) on the more abstract class.  When using std::variant, the more abstract class depends on the more specific class(es).
+## [4][Grisu-Exact: a variant of Grisu, always producing shortest &amp; correctly rounded outputs](https://www.reddit.com/r/cpp/comments/elhev9/grisuexact_a_variant_of_grisu_always_producing/)
+- url: https://www.reddit.com/r/cpp/comments/elhev9/grisuexact_a_variant_of_grisu_always_producing/
+---
+I developed yet another float-to-string conversion algorithm based on Grisu and Ryu. It outperforms Ryu when the number of digits is small (up to 6\~7 for float's, up to 15\~16 for double's). The [paper](https://github.com/jk-jeon/Grisu-Exact/blob/master/other_files/Grisu-Exact.pdf) is not peer-reviewed so the algorithm might contain an error. Also, I didn't thoroughly test if the produced output is really shortest and correctly rounded, although it seems correct. Please check this repository if you are interested:
+
+ [https://github.com/jk-jeon/Grisu-Exact](https://github.com/jk-jeon/Grisu-Exact)
+## [5][A priority queue implementation in CUDA applied to the many-to-many shortest path problem](https://www.reddit.com/r/cpp/comments/elac6i/a_priority_queue_implementation_in_cuda_applied/)
+- url: https://github.com/crosetto/cupq/
+---
+
+## [6][msvc -isystem](https://www.reddit.com/r/cpp/comments/elewps/msvc_isystem/)
+- url: https://www.reddit.com/r/cpp/comments/elewps/msvc_isystem/
+---
+https://devblogs.microsoft.com/cppblog/broken-warnings-theory/
+
+Is there any news on that? Afaics it's still in 'experimental' state after 2+ years.
+
+Also still no CMake support: https://gitlab.kitware.com/cmake/cmake/issues/17904
+## [7][Advice on debugging C++ on Linux](https://www.reddit.com/r/cpp/comments/el6y9e/advice_on_debugging_c_on_linux/)
 - url: https://www.reddit.com/r/cpp/comments/el6y9e/advice_on_debugging_c_on_linux/
 ---
 I always use gdb for C/C++ programs. Unfortunately, latest features of C++ don't seem to fit well with gdb.
@@ -67,19 +111,7 @@ An example is a lambda function calling about 5 additional stack frames, and mos
 It has not been much of an issue till now, since I don't really like using these modern features anyways. But right now the company is making me debug another person's program, and these lambdas and STL containers are really killing me right now...
 
 Any general advice? A better debugger perhaps? Or gdb with plugins?
-## [3][Waiting for std::embed: Very Large Arrays in Clang](https://www.reddit.com/r/cpp/comments/ekvk0n/waiting_for_stdembed_very_large_arrays_in_clang/)
-- url: https://cor3ntin.github.io/posts/arrays/
----
-
-## [4][A New Decade, A New Tool](https://www.reddit.com/r/cpp/comments/ekwb4y/a_new_decade_a_new_tool/)
-- url: https://vector-of-bool.github.io/2020/01/06/new-decade.html
----
-
-## [5][A priority queue implementation in CUDA applied to the many-to-many shortest path problem](https://www.reddit.com/r/cpp/comments/elac6i/a_priority_queue_implementation_in_cuda_applied/)
-- url: https://github.com/crosetto/cupq/
----
-
-## [6][On build systems: attempt at finding right abstractions](https://www.reddit.com/r/cpp/comments/el8o4m/on_build_systems_attempt_at_finding_right/)
+## [8][On build systems: attempt at finding right abstractions](https://www.reddit.com/r/cpp/comments/el8o4m/on_build_systems_attempt_at_finding_right/)
 - url: https://www.reddit.com/r/cpp/comments/el8o4m/on_build_systems_attempt_at_finding_right/
 ---
 &gt;So, let me annoy everyone with my rant. If want to get to something more substantial just skip ahead.  
@@ -236,50 +268,17 @@ I don't know, maybe it's just me, but everyone for some reason jumps directly to
 This is where my mind is now. Maybe some abstraction levels are wrong. Maybe we need to merge/split something, or completely rework the workflow? I don't know. If you know - help everyone to figure it out.
 
 Anyways I'm super tired right now, hope this wall-of-text makes at least some sense.
-## [7][Anjuta and Test Driven Development](https://www.reddit.com/r/cpp/comments/elbiiy/anjuta_and_test_driven_development/)
-- url: https://www.reddit.com/r/cpp/comments/elbiiy/anjuta_and_test_driven_development/
----
-I love working with Anjuta. It was with me during my early days of programming on Linux and taught me a few basics regarding creating programming projects.
-
-Now, the question. I'm working on a rather large C++ library, and I want to implement Test Driven Development, but haven't really found anything that will work natively on Anjuta. I've previously worked with Qt's TDD tools, but have very little experience using others. So this is a kind of growth opportunity for me and I'd like to see what I can use.
-
-I know both Google and Boost provide TDD tools, but which would you recommend or are there others you'd think about using with Anjuta?
-
-Any and all help is appreciated.
-## [8][Consteval build system: what if we do not build systems anymore, just a compiler](https://www.reddit.com/r/cpp/comments/el0xvv/consteval_build_system_what_if_we_do_not_build/)
-- url: https://www.reddit.com/r/cpp/comments/el0xvv/consteval_build_system_what_if_we_do_not_build/
----
-Just tought today about having a file with a name like compileme.cpp in the project which has a bunch of consteval functions (consteval std::filesystem evtl. needed) ala cmake e.g. add\_executable, add\_library, target\_sources etc.
-
-those functions could be executed at compile time by the compiler-&gt; no need for a build system ala cmake, make etc. anymore...
-
-what do you think? which problems do you see with such an approach? Could this be probably standartized?
 ## [9][Why CMake encourages distributing it's *.cmake files instead of *.pc for libs configuration.](https://www.reddit.com/r/cpp/comments/el9b0u/why_cmake_encourages_distributing_its_cmake_files/)
 - url: https://www.reddit.com/r/cpp/comments/el9b0u/why_cmake_encourages_distributing_its_cmake_files/
 ---
 Some time ago it was a standard that must libraries distributed XYZ.pc files for pkg-config that could be later consumed by any build system (or none). Recently I see trend that it's encouraged to distribute appropriate FindXYZ.cmake or XYZConfig.cmake.
 
 Why is that so? What additional information can be conveyed through cmake files that is crucial for libraries?
-## [10][A C++ memory hunter review](https://www.reddit.com/r/cpp/comments/eku762/a_c_memory_hunter_review/)
-- url: https://oopscenities.net/2020/01/06/deleaker-part-0-intro/
+## [10][A New Decade, A New Tool](https://www.reddit.com/r/cpp/comments/ekwb4y/a_new_decade_a_new_tool/)
+- url: https://vector-of-bool.github.io/2020/01/06/new-decade.html
 ---
 
-## [11][Flecs 1.2: Introducing a C++11 API](https://www.reddit.com/r/cpp/comments/ekv776/flecs_12_introducing_a_c11_api/)
-- url: https://www.reddit.com/r/cpp/comments/ekv776/flecs_12_introducing_a_c11_api/
+## [11][Waiting for std::embed: Very Large Arrays in Clang](https://www.reddit.com/r/cpp/comments/ekvk0n/waiting_for_stdembed_very_large_arrays_in_clang/)
+- url: https://cor3ntin.github.io/posts/arrays/
 ---
-Link to the release: [https://github.com/SanderMertens/flecs/releases/tag/v1.2](https://github.com/SanderMertens/flecs/releases/tag/v1.2)
 
-Flecs is an Entity Component System written for C89, C99 and now C++11! Its unique features are a super fast SoA-based storage, a fully-fledged (nested) prefab workflow, hierarchies, time management and a plug&amp;play module system.
-
-If you'd like to know more about ECS, see [https://github.com/SanderMertens/ecs-faq](https://github.com/SanderMertens/ecs-faq).
-
-Flecs 1.2 features a new header-only C++11 API that follows modern C++ best practices. For example code see: [https://github.com/SanderMertens/flecs/tree/master/examples/cpp](https://github.com/SanderMertens/flecs/tree/master/examples/cpp)
-
-Other new features in 1.2 are:
-
-* Snapshots, a fast &amp; lightweight mechanism for restoring a game to a previous point in time
-* A new blob serializer for streaming games to/from a disk or network
-* On demand systems that are only executed when there is interest in their output
-* A new statistics API for monitoring server-side Flecs applications
-* 24 new API functions
-* And much more, see the [release notes](https://github.com/SanderMertens/flecs/releases/tag/v1.2) for more information.

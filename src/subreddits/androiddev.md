@@ -31,88 +31,72 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][CustomView design preview in Android Studio](https://www.reddit.com/r/androiddev/comments/elne4q/customview_design_preview_in_android_studio/)
-- url: https://i.redd.it/wjtjnjplbh941.png
+## [3][🤯 Just realized Dagger’s naming double entendre...](https://www.reddit.com/r/androiddev/comments/em495b/just_realized_daggers_naming_double_entendre/)
+- url: https://www.reddit.com/r/androiddev/comments/em495b/just_realized_daggers_naming_double_entendre/
+---
+Obviously the first one: daggers are able to pierce into things, thereby injecting dependencies. 
+
+The second: DAG’s (directed acyclic graphs) are how dependency creation order is determined. The “Dagger” library is a DAG creator or “DAGger”...
+
+Show of hands: how stupid am I? Did everyone already realize this?
+## [4][How did Telegram implement this theme change effect ? I know I can look at the code but needed the gist of the implementation. It animates the status bar color change as well! I'm fairly impressed.](https://www.reddit.com/r/androiddev/comments/eltrvl/how_did_telegram_implement_this_theme_change/)
+- url: https://i.redd.it/b68e2zi7kk941.jpg
 ---
 
-## [4][Even Google can't do better.](https://www.reddit.com/r/androiddev/comments/elcztt/even_google_cant_do_better/)
-- url: https://www.reddit.com/r/androiddev/comments/elcztt/even_google_cant_do_better/
----
-I just saw this and chuckled:
-
-[https://github.com/material-components/material-components-android/blob/master/lib/java/com/google/android/material/internal/ManufacturerUtils.java](https://github.com/material-components/material-components-android/blob/master/lib/java/com/google/android/material/internal/ManufacturerUtils.java)
-
-&amp;#x200B;
-
-Samsung is the redneck of Android world.
-## [5][How to make custom camera application without using implicit intent to phone camera](https://www.reddit.com/r/androiddev/comments/elqdy7/how_to_make_custom_camera_application_without/)
-- url: https://www.reddit.com/r/androiddev/comments/elqdy7/how_to_make_custom_camera_application_without/
+## [5][Write your JSON in Kotlin DSL | Create your JSON in a more easy and readable way | (github.com/hitanshu-dhawan/JsonDSL)](https://www.reddit.com/r/androiddev/comments/em6x1a/write_your_json_in_kotlin_dsl_create_your_json_in/)
+- url: https://i.redd.it/va9k5s1brp941.png
 ---
 
-## [6][File is magically rewritten with random text after updating to Android Studio 3.5.3](https://www.reddit.com/r/androiddev/comments/elowx0/file_is_magically_rewritten_with_random_text/)
-- url: https://www.reddit.com/r/androiddev/comments/elowx0/file_is_magically_rewritten_with_random_text/
+## [6][What is the requirement to be a "Senior" Android Developer?](https://www.reddit.com/r/androiddev/comments/em5vib/what_is_the_requirement_to_be_a_senior_android/)
+- url: https://www.reddit.com/r/androiddev/comments/em5vib/what_is_the_requirement_to_be_a_senior_android/
 ---
-Does anybody experienced this after updating to Android Studio 3.5.3?
+I know "Senior" require some of these soft skills:
 
-    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-    &lt;project version="4"&gt;
-      &lt;component name="AndroidLayouts"&gt;
-        &lt;shared&gt;
-          &lt;config&gt;
-            &lt;device id="pixel" /&gt;
-          &lt;/config&gt;
-        &lt;/shared&gt;
-      &lt;/component&gt;
-      &lt;component name="AndroidLogFilters"&gt;
-        &lt;option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" /&gt;
-      &lt;/component&gt;
-      &lt;component name="ChangeListManager"&gt;
-        &lt;list default="true" id="5f8ee286-50de-4b3e-b06b-452c3d44810a" name="Default Changelist" comment=""&gt;
-          &lt;change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" /&gt;
-          &lt;change be
+* Interpersonal Skill
+* Analytical Skill
+* Problem Solving Skill
+* Able to lead juniors
+* Able to be role model
+* Decent Communication Skill
+* Detail Oriented
 
-These just randomly occur every time I check a file I just updated. Then lint alerts that a random class used in the file cannot be located because the file was magically rewritten. I did not even update that file.
+But how about tech stack? Which tech skills to master to be more considered as "Senior"?
 
-Full android studio specs:
-
-    Android Studio 3.5.3
-    Build #AI-191.8026.42.35.6010548, built on November 15, 2019
-    JRE: 1.8.0_202-release-1483-b03 amd64
-    JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
-    Windows 10 10.0
-
-EDIT: Formatting
-## [7][Want to learn Android Dev](https://www.reddit.com/r/androiddev/comments/elsnqo/want_to_learn_android_dev/)
-- url: https://www.reddit.com/r/androiddev/comments/elsnqo/want_to_learn_android_dev/
----
-I am a first year college student, and would really like to learn mobile app development. I've searched around on the internet, but aren't quite sure how to proceed yet. i signed up for the course on Shaw Academy, but after reading more about it I don't know whether that's the best idea. Can anyone guide me as to how I Should proceed? Any online course recommendations would be highly helpful, and even if not, any other ways I could start learning?
-
-&amp;#x200B;
-
-Thank you for your time and consideration.
-## [8][Adding dark mode support to your android apps](https://www.reddit.com/r/androiddev/comments/else1l/adding_dark_mode_support_to_your_android_apps/)
-- url: https://heartbeat.fritz.ai/adding-dark-mode-support-to-your-android-apps-7ee6a902165c
+Some that I know: Unit Testing, understand UX, familiar with Android JetPack.
+## [7][Anyone notice any increase in RPM after using app-ads.txt?](https://www.reddit.com/r/androiddev/comments/em75c1/anyone_notice_any_increase_in_rpm_after_using/)
+- url: https://www.reddit.com/r/androiddev/comments/em75c1/anyone_notice_any_increase_in_rpm_after_using/
 ---
 
-## [9][When WorkManager Stops Working](https://www.reddit.com/r/androiddev/comments/elimiu/when_workmanager_stops_working/)
-- url: https://blog.danlew.net/2020/01/07/when-workmanager-stops-working/
+## [8][What the hell do I have to do to my notifications for my wearOS app to be accepted as a standalone app?!?!](https://www.reddit.com/r/androiddev/comments/em750k/what_the_hell_do_i_have_to_do_to_my_notifications/)
+- url: https://www.reddit.com/r/androiddev/comments/em750k/what_the_hell_do_i_have_to_do_to_my_notifications/
+---
+some context, I have a simple app that fetches a list of activities for the current day from a server and notifies you when they're about to start.
+
+on said notifications I have actions to both open the app to view activity details and to either start or stop activities as appropriate. it's set as quick actions and are displaying properly on every watch that I can get my hands on.
+
+Yet I get a "your notification does not provide enhanced functions to Wear OS users." message when submiting my app for review
+
+I EVEN REMOVED ALL NOTIFICATIONS FROM MY APP AND GOT THE EXACT SAME FUCKING MESSAGE (making it just a portal to view todays activities)!!!! WHAT THE FLYING FUCK DO YOU MEAN MY NOTIFICATIONS DON'T PROVIDE ENHANCED FUNCTIONS, I REMOVED ALL NOTIFICATIONS FROM THE FUCKING APP!!!!! AAAAAAAAARGH
+## [9][LeakCanary leak deobfuscation feature explained](https://www.reddit.com/r/androiddev/comments/em912f/leakcanary_leak_deobfuscation_feature_explained/)
+- url: https://polidea.com/blog/leakcanary-deobfuscation-feature-explained/
 ---
 
-## [10][Gradle 6.1 RC2 is out](https://www.reddit.com/r/androiddev/comments/elldin/gradle_61_rc2_is_out/)
-- url: https://docs.gradle.org/6.1-rc-2/release-notes.html
+## [10][Review my MVI study repo please](https://www.reddit.com/r/androiddev/comments/em903j/review_my_mvi_study_repo_please/)
+- url: https://www.reddit.com/r/androiddev/comments/em903j/review_my_mvi_study_repo_please/
 ---
+Hey fellow android devs. I started looking at MVI recently with talks such as [this](https://www.youtube.com/watch?v=0IKHxjkgop4) or [this](https://www.youtube.com/watch?v=Ls0uKLqNFz4&amp;list=PLsAfcuwrBov7NJOcGxBN7FU0SQdid6L0j). After I digested the information I tried creating a small sample app with the MVI architecture and the result is this [repo](https://github.com/acristescu/mvitest). All the app does is show a paginated list of github repos and loads the next page when the user reaches the bottom of the list.
 
-## [11][Companion Device Manager, anyone get it working?](https://www.reddit.com/r/androiddev/comments/eloxtw/companion_device_manager_anyone_get_it_working/)
-- url: https://www.reddit.com/r/androiddev/comments/eloxtw/companion_device_manager_anyone_get_it_working/
+Could I please ask members of the community that have more experience with MVI for some constructive criticism on this implementation?
+## [11][Accessibility text to speach.](https://www.reddit.com/r/androiddev/comments/em8m8v/accessibility_text_to_speach/)
+- url: https://www.reddit.com/r/androiddev/comments/em8m8v/accessibility_text_to_speach/
 ---
-There is literally ONE bit of sample code for this and it crashes in its own address space on Android 8, 9 and 10. Documentation is just about nil and can't find any other references to it anywhere even though it's been a thing since Android M. 
+I'm improving accessibility(TalkBack) on one of the screens and noticed that acronyms like API or HTML are not read like they should only on beloved Samsung device, others seems not to have issue with them. 
 
-Any leads would be awesome, want to use it to pair with a robotic Bluetooth arm that is mounted to a wheelchair.
-
-TIA
-## [12][How to access nested local jar](https://www.reddit.com/r/androiddev/comments/elrzf5/how_to_access_nested_local_jar/)
-- url: https://www.reddit.com/r/androiddev/comments/elrzf5/how_to_access_nested_local_jar/
+Any idea how this could be handled without additional string as a content description?
+This would require to have additional string that have to be translated in multiple supported languages.
+## [12][Lightweight PDF Library ?](https://www.reddit.com/r/androiddev/comments/em85ca/lightweight_pdf_library/)
+- url: https://www.reddit.com/r/androiddev/comments/em85ca/lightweight_pdf_library/
 ---
-I have this app that uses a local jar. The app also has a dependency on a self created library that also contains that same local jar. If i remove the local jar from my app it cannot access the jar from my library. Is there any way to do this so i only need to have the jar in my library and not in my app?
+Does anyone have any recommendations for a lightweight/low-size PDF viewer library to display PDF documents in-app ?
 
-Thanks in advance :)
+I've recently discovered my project's PDF library has a native dependency that's minimum 5mb per ABI (I use app bundles so it's not compounded for the total size, but still)

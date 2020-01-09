@@ -33,43 +33,80 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ekpr6w/whats_everyone_working_on_this_week_22020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-2-2020/36546?u=llogiq)!
-## [3][Elastic releases official Elasticsearch Rust client](https://www.reddit.com/r/rust/comments/elncpv/elastic_releases_official_elasticsearch_rust/)
-- url: https://github.com/elastic/elasticsearch-rs
+## [3][The panic messages now pointing to the location where they were called, rather than core's internals](https://www.reddit.com/r/rust/comments/em7gav/the_panic_messages_now_pointing_to_the_location/)
+- url: https://github.com/rust-lang/rust/pull/67887
 ---
 
-## [4][Nushell 0.8.0](https://www.reddit.com/r/rust/comments/elfv0p/nushell_080/)
-- url: https://www.nushell.sh/blog/2020/01/07/nushell-0_8_0.html
+## [4][FFI like it's 2020: Announcing *safe* FFI for Rust &lt;-&gt; C++](https://www.reddit.com/r/rust/comments/elvfyn/ffi_like_its_2020_announcing_safe_ffi_for_rust_c/)
+- url: https://github.com/dtolnay/cxx
 ---
 
-## [5][Mobc: yet another generic asynchronous connection pool](https://www.reddit.com/r/rust/comments/elmdav/mobc_yet_another_generic_asynchronous_connection/)
-- url: https://www.reddit.com/r/rust/comments/elmdav/mobc_yet_another_generic_asynchronous_connection/
----
-[https://github.com/importcjj/mobc](https://github.com/importcjj/mobc)
-## [6][Blog Post: Intro to Threads and Context Switching in Rust](https://www.reddit.com/r/rust/comments/eliszb/blog_post_intro_to_threads_and_context_switching/)
-- url: https://ryan-jacobs1.github.io/2019/12/29/threads.html
+## [5][Rust reimplemented xv6 buddy allocator](https://www.reddit.com/r/rust/comments/em6xhz/rust_reimplemented_xv6_buddy_allocator/)
+- url: https://github.com/jjyr/buddy-alloc
 ---
 
-## [7][Docuum: A Docker image garbage collector written in Rust](https://www.reddit.com/r/rust/comments/elm76w/docuum_a_docker_image_garbage_collector_written/)
-- url: https://github.com/stepchowfun/docuum
+## [6][This Week in Rust 320](https://www.reddit.com/r/rust/comments/em9hct/this_week_in_rust_320/)
+- url: https://this-week-in-rust.org/blog/2020/01/07/this-week-in-rust-320/
 ---
 
-## [8][Writing an OS in Rust: Updates in December 2019](https://www.reddit.com/r/rust/comments/elas6x/writing_an_os_in_rust_updates_in_december_2019/)
-- url: https://os.phil-opp.com/status-update/2020-01-07/
+## [7][Intimidated by advanced Rust](https://www.reddit.com/r/rust/comments/elzas3/intimidated_by_advanced_rust/)
+- url: https://www.reddit.com/r/rust/comments/elzas3/intimidated_by_advanced_rust/
+---
+Hi,
+
+&amp;#x200B;
+
+I was wondering whether some of you felt similarly. I really enjoy learning Rust. I use it pretty much exclusively for my personal projects and I feel my understanding of the language and its idioms increases with each project. That was until I started working on an implementation of a linked list to better understand RefCell and friends. To this end, I read [https://rust-unofficial.github.io/too-many-lists/](https://rust-unofficial.github.io/too-many-lists/), and at chapter 'A Bad Safe Deque', I got to a point (Iter and IterMut) where I feel really discouraged. I'm not sure I'll ever get to a level where I can reason like the author does in 'Iteration'. Holy moly, the compiler errors are dense and intimidating. Has anybody else been there and how did you overcome it? Just table more advanced topics and accept that this process takes time to fully master?
+
+Not trying to cry on your guys' shoulders but looking for a little guidance...
+
+&amp;#x200B;
+
+Thanks,
+## [8][Update of our Rust Boilerplate server with GraphQL (Async and Actix-web 2)](https://www.reddit.com/r/rust/comments/em8bx9/update_of_our_rust_boilerplate_server_with/)
+- url: https://www.reddit.com/r/rust/comments/em8bx9/update_of_our_rust_boilerplate_server_with/
+---
+Repo: [https://github.com/clifinger/canduma](https://github.com/clifinger/canduma)
+
+Changelist:
+
+* use async/await
+* use actix-web version 2
+* use anyhow + thiserror in place of failure
+* structopt
+## [9][Manning's Rust book and video course are half off today](https://www.reddit.com/r/rust/comments/em5ls8/mannings_rust_book_and_video_course_are_half_off/)
+- url: https://i.redd.it/h6vqe78p1p941.png
 ---
 
-## [9][State of Rust Web Frameworks &amp; Wasm Interop](https://www.reddit.com/r/rust/comments/elqfa2/state_of_rust_web_frameworks_wasm_interop/)
-- url: https://www.reddit.com/r/rust/comments/elqfa2/state_of_rust_web_frameworks_wasm_interop/
----
-I want to use Yew for my frontend. And since Yew is a Wasm framework, I was wondering if there's any rust web/backend framework(actix, warp etc) that can work nicely with Yew.
-## [10][A Rust CAD System v0.1.0](https://www.reddit.com/r/rust/comments/els9so/a_rust_cad_system_v010/)
-- url: https://crates.io/crates/arcs
+## [10][Help debug a performance degradation in parking_lot that only happen some processors](https://www.reddit.com/r/rust/comments/em0ru7/help_debug_a_performance_degradation_in_parking/)
+- url: https://github.com/Amanieu/parking_lot/issues/201
 ---
 
-## [11][Build and Flash Rust+Mynewt Firmware for PineTime Smart Watch](https://www.reddit.com/r/rust/comments/elnl9q/build_and_flash_rustmynewt_firmware_for_pinetime/)
-- url: https://medium.com/@ly.lee/build-and-flash-rust-mynewt-firmware-for-pinetime-smart-watch-5e14259c55?source=friends_link&amp;sk=150b2a73b84144e5ef25b985e65aebe9
+## [11][Videos from Rust Belt Rust 2019 are now available!](https://www.reddit.com/r/rust/comments/elw26j/videos_from_rust_belt_rust_2019_are_now_available/)
+- url: https://www.youtube.com/playlist?list=PLgC1L0fKd7UkVwjVlOySfMnn80Qs5TOLb
 ---
 
-## [12][Read-Log-Update Concurrency, ported from C to Rust](https://www.reddit.com/r/rust/comments/elknqo/readlogupdate_concurrency_ported_from_c_to_rust/)
-- url: https://github.com/hudson-ayers/rlu-rust
+## [12][Rust 2020: a conference in Latin America](https://www.reddit.com/r/rust/comments/em0ru8/rust_2020_a_conference_in_latin_america/)
+- url: https://www.reddit.com/r/rust/comments/em0ru8/rust_2020_a_conference_in_latin_america/
 ---
+Hello Rust community!
 
+Rust LATAM is the conference working on growing the interest around Rust in Latin America; the next iteration of the conference will happen in **Mexico City on May, 22nd-23rd 2020** 🇲🇽
+
+Rust LATAM is not only a conference, it's a community event and that means that is made by **YOU** all participating and spreading the word 💪
+
+The Rust LATAM team has opened the "Call for Papers" for the next LATAM2020 conference. We are accepting proposals for talks (or, if you have a ✨ cool idea ✨ for workshop, feel free to submit that, too!). So, get involved and get your chance to show something about your project, your experiments, a new development or about an aspect of Rust that improved your life as a developer (or not as much as you expected!).
+
+Do you have in mind a talk not strictly technical? That's great, we'd love to hear from you, too!
+
+Submit your proposals at [https://cfp.rustlatam.org](https://cfp.rustlatam.org)
+
+Are you a company working with Rust? Do you want to get in contact and support the conference? Contact us for a sponsorship opportunity at [sponsors@rustlatam.org](mailto:sponsors@rustlatam.org)
+
+The conference is made by and for the community, so don't miss this opportunity, save the date and take part to Rust LATAM 2020: help us make it happen! 🎉
+
+Check out our website [https://www.rustlatam.org](https://www.rustlatam.org), it will be updated as we will be getting closer to the conference.
+
+Follow us on Twitter @ RustLatamConf or join our Discord channel at: [https://discord.gg/b6MBzy](https://discord.gg/b6MBzy)
+
+See you there!

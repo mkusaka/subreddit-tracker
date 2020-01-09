@@ -80,167 +80,73 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][A volunteer community of React Devs have been building an app/site to change global homelessness by building stronger social safety nets in communities. It's basic but has begun helping people. Could you improve it?](https://www.reddit.com/r/reactjs/comments/elmoxk/a_volunteer_community_of_react_devs_have_been/)
+## [3][I built a Portfolio Gatsby theme](https://www.reddit.com/r/reactjs/comments/em001y/i_built_a_portfolio_gatsby_theme/)
+- url: https://v.redd.it/91j7re00rm941
+---
+
+## [4][Fielder docs just released - (A React form library)](https://www.reddit.com/r/reactjs/comments/em7wih/fielder_docs_just_released_a_react_form_library/)
+- url: https://fielder.andyrichardson.dev/
+---
+
+## [5][Beyond JavaScript Frameworks: Universal Login Button Component](https://www.reddit.com/r/reactjs/comments/em74py/beyond_javascript_frameworks_universal_login/)
+- url: https://auth0.com/blog/beyond-javascript-frameworks-universal-login-web-component
+---
+
+## [6][Jordan Walke – ReasonML: React to the Future](https://www.reddit.com/r/reactjs/comments/elv3kt/jordan_walke_reasonml_react_to_the_future/)
+- url: https://www.youtube.com/watch?v=5fG_lyNuEAw
+---
+
+## [7][The Case for Versioning Independent UI Components](https://www.reddit.com/r/reactjs/comments/em77m4/the_case_for_versioning_independent_ui_components/)
+- url: https://blog.bitsrc.io/versioning-independent-ui-components-why-and-how-7ea60d8be5f2
+---
+
+## [8][Internship projects?](https://www.reddit.com/r/reactjs/comments/em9c3i/internship_projects/)
+- url: https://www.reddit.com/r/reactjs/comments/em9c3i/internship_projects/
+---
+I've been working on an online store (just the front end) using react. Is this considered a very simple and easy project? Or would it impress employers?
+## [9][MyMovies Desktop app made with React +Electron](https://www.reddit.com/r/reactjs/comments/em0twf/mymovies_desktop_app_made_with_react_electron/)
+- url: https://youtu.be/tAmcWPn10XY
+---
+
+## [10][Facing performance issue with with Realtime data and graphs (plotly)](https://www.reddit.com/r/reactjs/comments/em7ip0/facing_performance_issue_with_with_realtime_data/)
+- url: https://www.reddit.com/r/reactjs/comments/em7ip0/facing_performance_issue_with_with_realtime_data/
+---
+Hi React community.   
+
+
+I'm currently working on a Frankenstein app. Basically we want to display live data from a canbus source.   
+To do this we stiched together:  
+\- a Python module that communicate in canbus with our electronic and send the data to Electron via Socket IO 
+
+\-an Electron backend for the app that communicate the data to the frontend via IPC
+
+\-a React frontend to look sexy that show Plotly graphs.
+
+&amp;#x200B;
+
+Now we have a good prototype walking on its 2 feets but it's clearly not scalable.  
+
+
+Currently the framerate is limited to once every 100ms for the amount of graphs (and there are about 5 graphs with 10 to 50K points each) is limited to 5.
+
+If we try to increase both of those parameter the whole application start to stutter. To manage the refresh i'm using this hook i found on the web : [https://overreacted.io/making-setinterval-declarative-with-react-hooks/](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)  
+
+
+Also the data that needs to be displayed are aggregated on each page that they are needed. This makes the code very hard to maintain with a  lot of dirty copy past.   
+
+
+I don't expect you guys to look at my code. However do you any similar project that I could look at ?   
+
+
+Subsequent question, would Redux be of any help to centralize all the data sent by the Python module or have i understood that wrong ?  
+
+
+I hope i'm not all over the place :(
+## [11][Implementing Undo/Redo Functionality in Redux using Immer](https://www.reddit.com/r/reactjs/comments/em6ddt/implementing_undoredo_functionality_in_redux/)
+- url: https://techinscribed.com/implementing-undo-redo-functionality-in-redux-using-immer/
+---
+
+## [12][A volunteer community of React Devs have been building an app/site to change global homelessness by building stronger social safety nets in communities. It's basic but has begun helping people. Could you improve it?](https://www.reddit.com/r/reactjs/comments/elmoxk/a_volunteer_community_of_react_devs_have_been/)
 - url: https://brightertomorrowmap.com
 ---
 
-## [4][I made stock trading app with react, firebase and IEX api.](https://www.reddit.com/r/reactjs/comments/elhak3/i_made_stock_trading_app_with_react_firebase_and/)
-- url: https://www.reddit.com/r/reactjs/comments/elhak3/i_made_stock_trading_app_with_react_firebase_and/
----
-It's one of my bigger web applications i made lately and i want to share it with you. 
-
-In this app you are able to trade us stocks using virtual money. You start with $100k. It has thousands of stocks, every stock has his own chart. Max chart range is 2 years. Sometimes when it comes to loading 1d chart you will see an error that's because i am using alpha vantage api for that and it has limited requests per minute so sorry for that. App is mostly reponsive. App has 2 themes default is dark theme and i don't recommend using the light one i didn't spend much time working on it. There is one test account available but i recommend creating an account with fake email for full experience. Feel free to test it. Have fun!
-
-&amp;#x200B;
-
-live:  [https://stocks-af048.web.app/](https://stocks-af048.web.app/)
-
-code:  [https://github.com/SongoMen/Trader24](https://github.com/SongoMen/Trader24)
-## [5][Does anyone have a clue how these guys made this trick with a cursor?](https://www.reddit.com/r/reactjs/comments/elsqfe/does_anyone_have_a_clue_how_these_guys_made_this/)
-- url: https://www.reddit.com/r/reactjs/comments/elsqfe/does_anyone_have_a_clue_how_these_guys_made_this/
----
-Does anyone have a clue how these guys made this trick with a cursor?
-
-[https://www.kontrapunkt.com/](https://www.kontrapunkt.com/)
-
-screenshot  [https://yadi.sk/i/tgS3W\_fQ5kyMxQ](https://yadi.sk/i/tgS3W_fQ5kyMxQ)
-
-I wonder how to do something like this. The question is not really about React but the website is built with React. And I suppose someone from this community might have a clue. Thanks.
-## [6][Add Comments To React-Powered Blogs](https://www.reddit.com/r/reactjs/comments/elsne2/add_comments_to_reactpowered_blogs/)
-- url: https://github.com/HyvorTalk/hyvor-talk-react
----
-
-## [7][react-router nesting problems](https://www.reddit.com/r/reactjs/comments/elscg7/reactrouter_nesting_problems/)
-- url: https://www.reddit.com/r/reactjs/comments/elscg7/reactrouter_nesting_problems/
----
-\*New to react\* For nesting routes with react-router. Can you unmount the previous content? 
-
-    App.js
-    &lt;Route path="/" component={HomePage} exact /&gt;
-    &lt;Route path="/podcast/:pid" component={Podcast} /&gt;
-    &lt;Route path="/podcast/:pid/episode/:eid" component={Episode} /&gt; 
-    
-    Podcast.js
-    &lt;Link key={key} to={`/podcast/${this.state.id}/episode/${item.id}` }&gt;
-    .
-    .
-    &lt;/Link&gt;
-
-Homepage displays the top podcasts, then you press one you get to the podcast component and you see the episodes. Then when I press on a episode I want to arrive at a whole new page with a media player and so on but all the episode from the previous page is still there and the new content is rendered underneath everything else.
-## [8][Axios request issue with Safari on MacOs and iOs](https://www.reddit.com/r/reactjs/comments/els9vb/axios_request_issue_with_safari_on_macos_and_ios/)
-- url: https://www.reddit.com/r/reactjs/comments/els9vb/axios_request_issue_with_safari_on_macos_and_ios/
----
-I'm trying to do an API request using Axios, it works in every windows' and Android browsers  but does not work on MacOs Safari (but in Chrome it works fine) or any iOs browser.
-
-In the same code I make another calls to the same API (different endpoints) and it works with no problems at all in safari and iOs.
-
-When I console.log the throwed exception turns out that's a Network error.
-
-I don't think that's a CORS issue, couse it works on another browsers.
-
-I'm sorry for my english, hope u guys can understand me.
-
-Thanks.
-
-&amp;#x200B;
-
-My request:
-
-`try {`  
- `const response = await api.get("/precos/get",`  
-                `{`  
- `headers: {`  
- `'this.state-Type': 'application/json',`  
- `'token': getToken()`  
-                    `}`  
-                `});`  
- `//console.log("resultado do resquest preço" + response.data.data )`  
- `this.filtraProdutoPorTabela(response.data.data);`  
-        `} catch (err)`
-## [9][I created a Microservices app created using React/Node.js/GraphQL/Docker, along with a full tutorial on how to build it](https://www.reddit.com/r/reactjs/comments/el6lkq/i_created_a_microservices_app_created_using/)
-- url: https://www.reddit.com/r/reactjs/comments/el6lkq/i_created_a_microservices_app_created_using/
----
-One of my biggest gripes with microservices is how few full-blown tutorials are available for something that is such a hot-topic technology.
-
-As such, I recently built a rather simple Classifieds app using a Microservices architecture, using the following technologies as a non-exhaustive list:
-
-* React;
-* Redux;
-* Node.js;
-* GraphQL;
-* Docker (and Docker Compose); and
-* Styled Components,
-
-And also deployed it into AWS using Terraform.
-
-Here's the link to the full source code: [https://github.com/parkroolucas/microservices-demo](https://github.com/parkroolucas/microservices-demo)
-
-And here's the link to the full tutorial series: [https://www.youtube.com/watch?v=gD-WutJH0qc&amp;list=PLnTRniWXnjf8YC9qJFLSVCrXfS6cyj6x6](https://www.youtube.com/watch?v=gD-WutJH0qc&amp;list=PLnTRniWXnjf8YC9qJFLSVCrXfS6cyj6x6)
-## [10][Trying to load Lightbox2 in index.html, it gets loaded but nothing happens on rendered page.](https://www.reddit.com/r/reactjs/comments/elrhho/trying_to_load_lightbox2_in_indexhtml_it_gets/)
-- url: https://www.reddit.com/r/reactjs/comments/elrhho/trying_to_load_lightbox2_in_indexhtml_it_gets/
----
-I'm trying to load Lightbox2
-
-[https://lokeshdhakar.com/projects/lightbox2/](https://lokeshdhakar.com/projects/lightbox2/#options)
-
-I have included css in header and the js file in index.html of public/index.html in my React App
-
-        &lt;link rel="stylesheet" href="/css/lightbox.css"&gt;
-        &lt;script src="/js/lightbox.js"&gt;&lt;/script&gt;
-
-When I'm testing my webpage, I know that the above files load just fine by adding for example:
-
-lightbox.css
-
-    * {
-    border: 5px solid black;
-    }
-
-and just a console.log("hello world"); on lightbox.js
-
-&amp;#x200B;
-
-On my React App I use the following code:
-
-    &lt;a className="col-4" 
-     href={"/media/docs/certs/" + item.credID + ".jpg"}
-     data-lightbox="certificate-set"
-     data-title={item.name + " Certificate"}
-     data-alt={item.name + " Certificate"}&gt;
-     {item.name + " Certificate"} 
-    &lt;/a&gt;
-
-and the result is this:
-
-    &lt;a class="col-4" href="/media/docs/certs/4TEQWQJXR5GY.jpg" data-lightbox="certificate-set" data-title="Learn to Program and Analyze Data with Python Certificate" data-alt="Learn to Program and Analyze Data with Python Certificate"&gt;Learn to Program and Analyze Data with Python Certificate&lt;/a&gt;
-
-However, only links are being shown. I do not see any images
-
-[https://i.imgur.com/79KaWyB.png](https://i.imgur.com/79KaWyB.png)
-## [11][Next.js 9.1.7: Smaller Client-Side Runtime, New Build Output, New Built-In Polyfills, Faster Page Loading, Strict Mode Ready, Automated React Canary Tests, Optional Chaining &amp; Nullish Coalescing, and Zero-Config `next export` Deployment](https://www.reddit.com/r/reactjs/comments/el9suh/nextjs_917_smaller_clientside_runtime_new_build/)
-- url: https://nextjs.org/blog/next-9-1-7
----
-
-## [12][Web + mobile](https://www.reddit.com/r/reactjs/comments/elq7op/web_mobile/)
-- url: https://www.reddit.com/r/reactjs/comments/elq7op/web_mobile/
----
-Hello, 
-
-I need to create a website but i also want the ability to use it from mobile.
-
-From what i understand i have 2 options:
-
-1. Use react to make a website, and make sure it is responsive for mobile as well
-2. Use react and make website and then separately make app using react native  
-
-
-I have about 2 months to work on this therefore i think the second option is not possible.(correct me if i'm wrong)
-
-For the first option, how will i know to make it responsive for mobile + desktop.   
-Can someone point me to a certain tutorial?
-
-Basically i want to build a social network style website.
-
-Please let me know of your opinions and if i am missing an option.
-
-Thanks

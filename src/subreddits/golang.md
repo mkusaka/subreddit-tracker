@@ -1,137 +1,125 @@
 # golang
-## [1][Will go ever be good for GUI?](https://www.reddit.com/r/golang/comments/eln3ub/will_go_ever_be_good_for_gui/)
-- url: https://www.reddit.com/r/golang/comments/eln3ub/will_go_ever_be_good_for_gui/
----
-So far implemented GUI libraries have generally just relied on Qt bindings or browser renderers. When daydreaming, I imagine a Go standard library which includes a convenient, open-source Go GUI lib.
-## [2][SimpleS3: AWS S3 Golang Library using REST with V4 Signing (without AWS Go SDK)](https://www.reddit.com/r/golang/comments/elh0cg/simples3_aws_s3_golang_library_using_rest_with_v4/)
-- url: https://github.com/rhnvrm/simples3
+## [1][Why we’re writing machine learning infrastructure in Go, not Python](https://www.reddit.com/r/golang/comments/elzoma/why_were_writing_machine_learning_infrastructure/)
+- url: https://towardsdatascience.com/why-were-writing-machine-learning-infrastructure-in-go-not-python-38d6a37e2d76
 ---
 
-## [3][Go Modules can now be scanned for vulnerabilities in GoCenter!](https://www.reddit.com/r/golang/comments/elh71w/go_modules_can_now_be_scanned_for_vulnerabilities/)
-- url: https://www.reddit.com/r/golang/comments/elh71w/go_modules_can_now_be_scanned_for_vulnerabilities/
----
-&amp;#x200B;
-
-https://preview.redd.it/6ca59ak92f941.jpg?width=800&amp;format=pjpg&amp;auto=webp&amp;s=98a4cbbea5986a561f1dca2ad6e76b57e97ec665
-
-A really cool security feature just got added to [GoCenter.io](https://GoCenter.io); JFrog Xray’s vulnerability scanning of Go modules! GoCenter automatically scans for known vulnerabilities recognized in the public vulnerability database NVD. Those results are stored in GoCenter and exposed on the Security page of the UI, which will list all vulnerabilities that exist in the module version. Learn more: [https://jfrog.com/blog/gocenter-reveals-go-module-vulnerabilities-with-xray/](https://jfrog.com/blog/gocenter-reveals-go-module-vulnerabilities-with-xray/)
-
-Disclaimer: I am an employee of JFrog, but think this is something that's pretty important for Go!
-## [4][Microservice that extends from messages-api is responsible for sending IoT messages through some providers such as NATS or MQTT](https://www.reddit.com/r/golang/comments/elpirn/microservice_that_extends_from_messagesapi_is/)
-- url: https://github.com/microapis/messages-iot-api
+## [2][How to Start with Logging in Go Projects. Part 2](https://www.reddit.com/r/golang/comments/em8uiu/how_to_start_with_logging_in_go_projects_part_2/)
+- url: https://blog.maddevs.io/how-to-start-with-logging-in-go-projects-part-2-1e57cc58f329
 ---
 
-## [5][Error trying to build an go-sdl2 project](https://www.reddit.com/r/golang/comments/elsipt/error_trying_to_build_an_gosdl2_project/)
-- url: https://www.reddit.com/r/golang/comments/elsipt/error_trying_to_build_an_gosdl2_project/
+## [3][JWT Authorization in Golang - CloudJourney IO](https://www.reddit.com/r/golang/comments/elwvxm/jwt_authorization_in_golang_cloudjourney_io/)
+- url: https://www.cloudjourney.io/articles/security/jwt_in_golang-su/
 ---
-I recently started programming in Go and I'm looking to set up go-sdl2 since I'm familiar with the library, and have downloaded the dependencies with  
-  
-    go get -v github.com/veandco/go-sdl2
-  
-I ran `make.bat` after I added the dependencies from `SDL2-devel-2.0.10-mingw\include\` into the go-sdl2 folder, which built without any errors. Then I have the following code in my `main.go` file:  
-  
-`package main
 
-    /*
-	#include &lt;stdio.h&gt;
-	#include &lt;errno.h&gt;
-    */
-    import "C"
+## [4][ditty - Terminal-based music player (beep/oto for audio)](https://www.reddit.com/r/golang/comments/em1et9/ditty_terminalbased_music_player_beepoto_for_audio/)
+- url: https://git.sr.ht/~tslocum/ditty
+---
+
+## [5][Go Get My/Vulnerabilities](https://www.reddit.com/r/golang/comments/em9iwq/go_get_myvulnerabilities/)
+- url: https://www.youtube.com/watch?v=GGQcv7fK0JY
+---
+
+## [6][bokeh for golang](https://www.reddit.com/r/golang/comments/em90f6/bokeh_for_golang/)
+- url: https://www.reddit.com/r/golang/comments/em90f6/bokeh_for_golang/
+---
+Does such a tool like bokeh [https://docs.bokeh.org/en/latest/index.html](https://docs.bokeh.org/en/latest/index.html) exist for golang? I think go would be ideal because a single binary can host the webserver and data for visualization. At the moment, I worry about setting up python runtime, webserver, and a proxy which is tedious!
+## [7][Help me understand goroutines](https://www.reddit.com/r/golang/comments/em5r4h/help_me_understand_goroutines/)
+- url: https://www.reddit.com/r/golang/comments/em5r4h/help_me_understand_goroutines/
+---
+For some reason I just struggle with goroutines with Channels. In other languages like python or C I’ve had breakthrough moments where I thought “ah ha, that’s how I can use x design pattern or data structure.” For some reason, concurrency/go routines/channels aren’t really clicking for me.
+
+So my question to the gophers is: What breakthrough helped you learn how to use channels and goroutines effectively? How can I get better at “thinking concurrently” if I come from a background of writing procedural and imperative code?
+## [8][How to monitor if my Go program is operating optimally?](https://www.reddit.com/r/golang/comments/eltqmr/how_to_monitor_if_my_go_program_is_operating/)
+- url: https://www.reddit.com/r/golang/comments/eltqmr/how_to_monitor_if_my_go_program_is_operating/
+---
+I have a little Go script running on a 16 vCPU Google Compute Engine.  
+
+
+This script establishes about ~1,300 web sockets to [polygon.io](https://polygon.io/sockets) to monitor stock trades for particular tickers. Behind the scenes this uses [gorilla/websocket](https://github.com/gorilla/websocket). When a trade comes in, some calculations are performed, and the result is stored in a [concurrent-map](https://github.com/orcaman/concurrent-map).
+
+According to Google's dashboard, my CPU utilization for this work is less than 1%. According to `iptraf`, my packet sizes are between 1 and 275 bytes.
+
+Still, I'd like to know if my calculations are operating "fast" enough--let's say, completing a trade calculation within 100ms. I can't shake the feeling that I have a bottleneck somewhere. I believe this is the case because when the script runs "live," nothing happens; but when I reply the day's activities in a debug mode, events that I expect to occur, occur (eg. recommending when to buy a particular stock). How can I ensure CPU throughout or network latency in my Go program are not issues?
+
+TIA
+## [9][A Chapter in the Life of Go’s Compiler](https://www.reddit.com/r/golang/comments/elyykn/a_chapter_in_the_life_of_gos_compiler/)
+- url: https://medium.com/samsara-engineering/a-chapter-in-the-life-of-gos-compiler-c89b9db74617
+---
+
+## [10][How to work with Go modules?](https://www.reddit.com/r/golang/comments/em0zxc/how_to_work_with_go_modules/)
+- url: https://www.reddit.com/r/golang/comments/em0zxc/how_to_work_with_go_modules/
+---
+Hello,
+
+I've started to learn about go modules and I've started with a simple Echo web server.
+
+    // main.go
+    package main
     
     import (
-	"fmt"
-	"unsafe"
-	"github.com/veandco/go-sdl2/sdl"
+    	"net/http"
+    
+    	"github.com/labstack/echo"
+    )
+    
+    func main() {
+    	e := echo.New()
+    	e.GET("/", func(c echo.Context) error {
+    		return c.String(http.StatusOK, "Hello, World!")
+    	})
+    	e.Logger.Fatal(e.Start(":1323"))
+    }
+
+Using `go get -u github.com/labstack/echo/...` , I can run the above code from within my GOPATH and a server starts with version 4.1.13.
+
+I have created a new folder for Go modules called /gomodules, which is outside my GOPATH. Inside /gomodules I created a folder called /echo (/gomodules/echo).
+
+Inside /echo I created a go.mod file:
+
+    // go.mod
+    module testing.com/main
+    
+    go 1.13
+
+I also copied the main.go file into the /echo folder.
+
+When I run main.go, Go gets v3.3.10 of Echo. I had expected it to get the latest version. Here is the result.
+
+    module testing.com/main
+    
+    go 1.13
+    
+    require (
+    	github.com/labstack/echo v3.3.10+incompatible // indirect
+    	github.com/labstack/gommon v0.3.0 // indirect
+    	golang.org/x/crypto v0.0.0-20200108215511-5d647ca15757 // indirect
     )
 
-    var w = *sdl.Wiindow
-    var r = *sdl.Renderer
+I've tried manually setting the mod.go file.
 
-    func main() {
-        if w, r, err := SDL_Init(SDL_INIT_EVERYTHING) != nil {
-                panic("Failed to init SDL2")
-        }
-        w, r, err := SDL_CreateWindowAndRenderer(
-		800, 600, 
-		sdl.WINDOW_SHOWN
-	)
-	if err != nil {
-		return nil, err
-	}
-    }
-  
-This gives an error on build:  
-  
-    could not determine kind of name for C.SDL_AudioCVT
-    could not determine kind of name for C.SDL_AudioCallback
-    could not determine kind of name for C.SDL_AudioDeviceID
-    could not determine kind of name for C.SDL_AudioFilter
-    could not determine kind of name for C.SDL_AudioFormat
-    could not determine kind of name for C.SDL_AudioSpec
-    could not determine kind of name for C.SDL_AudioStatus
-    could not determine kind of name for C.SDL_AudioStream
-    could not determine kind of name for C.Uint32
-    could not determine kind of name for C.Uint8
-    could not determine kind of name for C.int
-    could not determine kind of name for C.size_t  
-  
-I'm new to Go, and have tried googleling for help, but couldn't find anything to solve this problem. Also any tutorials on how to use SDL2 with go is greatly appreciated!
-## [6][Question: Server.Shutdown -- any way to force an early shutdown?](https://www.reddit.com/r/golang/comments/els1l2/question_servershutdown_any_way_to_force_an_early/)
-- url: https://www.reddit.com/r/golang/comments/els1l2/question_servershutdown_any_way_to_force_an_early/
----
-Hi,
+    module testing.com/main
+    
+    go 1.13
+    
+    require (
+    	github.com/labstack/echo v4.1.13 // indirect
+    )
 
-Does anyone here know much about [https://golang.org/pkg/net/http/#Server.Shutdown](https://golang.org/pkg/net/http/#Server.Shutdown) ? 
+As well as:
 
-I've been banging my head against the wall for a while trying to figure out why an in-flight request was still completing even though I was setting a short context timeout.
+    module testing.com/main
+    
+    go 1.13
+    
+    require (
+    	github.com/labstack/echo/v4 v4.1.13 // indirect
+    )
+    
 
-I *thought* the behaviour would have dropped any in-flight requests once the context timeout had expired, but I now think that the context timeout is there only for notification purposes, rather than being able to cause the side-effect of stopping the server early.
+The later will run but the first wont.  Even after the later runs and the go.mod file looks the same, when running main.go, I am stuck with v3.3.10.
 
-I now believe the docs suggest golang wont stop the server until the in-flight request has gone 'idle'. Meaning: I can't *force* it to shutdown early, but only be notified that my 'intended' timeout has been passed, and the server is still going to wait for a graceful shutdown.
+I've read the docs on modules and I feel lost as to how to get this to work. What am I missing?
 
-Just trying to bounce this thought process off some other people who might know about this sort of thing 😬
-## [7][How to write API gateway for microservices?](https://www.reddit.com/r/golang/comments/elnw9d/how_to_write_api_gateway_for_microservices/)
-- url: https://www.reddit.com/r/golang/comments/elnw9d/how_to_write_api_gateway_for_microservices/
----
-I have created microservices. Now I want to add an API gateway which will redirect http request to specific microservice. Should I need any third party library like GoKit? If not then how can I implement it using net/http package?
-## [8][autocache: groupcache using memberlist for peer enrollment](https://www.reddit.com/r/golang/comments/elfpg3/autocache_groupcache_using_memberlist_for_peer/)
-- url: https://github.com/pomerium/autocache
----
+&amp;#x200B;
 
-## [9][GoLand 2019.3.1 formatting changes - which setting to fix?](https://www.reddit.com/r/golang/comments/elk9pp/goland_201931_formatting_changes_which_setting_to/)
-- url: https://www.reddit.com/r/golang/comments/elk9pp/goland_201931_formatting_changes_which_setting_to/
----
-Upgraded GoLand from 2019.2 to 2019.3.1 today and now it corrupts the display of a fmt.Sprintf()
-
-The real code is `fmt.Sprintf("hello %s", name)` but it instead now displays as `fmt.Sprintf("hello #{name}")`
-
-Does anyone know the Setting which turns this corruption off?
-
-
-Update - Solution:
-
-To remove this; 
-
-1. Goto Settings-&gt;Editor-&gt;General-&gt;Code Folding
-2. Scroll down to the options for `Go`, and deselect `Format Strings`
-## [10][Best way to read chunks of S3 file into memory](https://www.reddit.com/r/golang/comments/elp5q6/best_way_to_read_chunks_of_s3_file_into_memory/)
-- url: https://www.reddit.com/r/golang/comments/elp5q6/best_way_to_read_chunks_of_s3_file_into_memory/
----
-I'm having a little trouble finding\\understanding the best method to read an S3 file line by line (or in chunks) without reading the entire file contents into memory. The below code works but I'm not sure it's the most effective. Ideally, I would like to create a data stream. Any help or suggestions would be greatly appreciated. 
-
-`req, err := svc.GetObject(&amp;s3.GetObjectInput{`  
-`Bucket: aws.String("my.s3.bucket"),`  
-`Key:    aws.String("TEST/test.log"),`  
-`})`  
-`if err != nil {`  
- `panic(err)`  
-`}`  
-`var reader io.Reader`  
-`reader = req.Body`  
-`data, _ := ioutil.ReadAll(reader)`  
-`var stringData string`  
-`stringData = string(data[:])`  
-`scanner := bufio.NewScanner(strings.NewReader(stringData))`  
-`for scanner.Scan() {`  
-    `fmt.Println(scanner.Text())`  
-`}`
+Thanks!

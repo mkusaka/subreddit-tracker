@@ -5,43 +5,51 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][How to move your project to TypeScript - at your own pace](https://www.reddit.com/r/javascript/comments/elkcow/how_to_move_your_project_to_typescript_at_your/)
-- url: https://www.twilio.com/blog/move-to-typescript
+## [2][WTF Wednesday (January 08, 2020)](https://www.reddit.com/r/javascript/comments/elunj6/wtf_wednesday_january_08_2020/)
+- url: https://www.reddit.com/r/javascript/comments/elunj6/wtf_wednesday_january_08_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Snowpack: Build web applications with less tooling and 10x faster iteration](https://www.reddit.com/r/javascript/comments/em1oqk/snowpack_build_web_applications_with_less_tooling/)
+- url: https://www.snowpack.dev
 ---
 
-## [3][Understanding filesystem takeover vulnerabilities in npm JavaScript package manager](https://www.reddit.com/r/javascript/comments/elqrjq/understanding_filesystem_takeover_vulnerabilities/)
-- url: https://snyk.io/blog/understanding-filesystem-takeover-vulnerabilities-in-npm-javascript-package-manager/
+## [4][5 trending open source machine learning JavaScript frameworks](https://www.reddit.com/r/javascript/comments/em8sub/5_trending_open_source_machine_learning/)
+- url: https://opensource.com/article/18/5/machine-learning-javascript-frameworks
 ---
 
-## [4][How to *not* ditch your side project ever again](https://www.reddit.com/r/javascript/comments/elax7q/how_to_not_ditch_your_side_project_ever_again/)
-- url: https://medium.com/wix-engineering/lets-not-ditch-another-side-project-5181575e57ac
+## [5][A great collection of JavaScript web components with MIT license](https://www.reddit.com/r/javascript/comments/em0h0j/a_great_collection_of_javascript_web_components/)
+- url: https://bossanova.uk/jsuites/
 ---
 
-## [5][Quick Overview of JavaScript Array Methods](https://www.reddit.com/r/javascript/comments/elqbt6/quick_overview_of_javascript_array_methods/)
-- url: https://blog.soshace.com/quick-overview-of-javascript-array-methods/
+## [6][We’re killing the mobile web](https://www.reddit.com/r/javascript/comments/elt6gd/were_killing_the_mobile_web/)
+- url: https://medium.com/@dannymoerkerke/were-killing-the-mobile-web-be5c5662c807?source=friends_link&amp;sk=b44b5a38ddde5d1a48cf2a9d78ace4b6
 ---
 
-## [6][React and AJAX - The Art of Fetching Data in React](https://www.reddit.com/r/javascript/comments/elqc4u/react_and_ajax_the_art_of_fetching_data_in_react/)
-- url: https://blog.soshace.com/react-and-ajax-the-art-of-fetching-data-in-react/
+## [7][Applying Sentiment Analysis on User Feedback with Java](https://www.reddit.com/r/javascript/comments/em8ax8/applying_sentiment_analysis_on_user_feedback_with/)
+- url: https://medium.com/@Oodles_AI/applying-sentiment-analysis-on-user-feedback-with-java-e77ecc340444
 ---
 
-## [7][A (very basic) boilerplate for developing standalone JS solutions using Webpack 4 + ES6 + Prettier + ESlint](https://www.reddit.com/r/javascript/comments/elkqoc/a_very_basic_boilerplate_for_developing/)
-- url: https://github.com/athersharif/webpack-boilerplate
+## [8][Web Share API for Native Sharing on Websites.](https://www.reddit.com/r/javascript/comments/em9irg/web_share_api_for_native_sharing_on_websites/)
+- url: https://dillionmegida.com/p/web-share-api/
 ---
 
-## [8][Yet another data binding library](https://www.reddit.com/r/javascript/comments/elsi2l/yet_another_data_binding_library/)
-- url: https://www.infoq.com/articles/datum-data-binding-library
+## [9][Manifest - An instant grid-based pinboard for note taking in your browser.](https://www.reddit.com/r/javascript/comments/em588b/manifest_an_instant_gridbased_pinboard_for_note/)
+- url: /r/opensource/comments/em53yy/manifest_an_instant_gridbased_pinboard_for_note/
 ---
 
-## [9][json-api-merge - JavaScript library with JSON:API algorithm for merging included resources into original data](https://www.reddit.com/r/javascript/comments/elshrx/jsonapimerge_javascript_library_with_jsonapi/)
-- url: https://github.com/char0n/json-api-merge
+## [10][Template project using React 16.12 with redux, typescript and Redux observables](https://www.reddit.com/r/javascript/comments/em65l4/template_project_using_react_1612_with_redux/)
+- url: https://github.com/beast911/react-redux-observables-typescript
 ---
 
-## [10][The Pipeline Operator -a simple introduction to how it'll improve your composition.](https://www.reddit.com/r/javascript/comments/elf6jr/the_pipeline_operator_a_simple_introduction_to/)
-- url: https://www.dev6.com/javascript/future-js-the-pipeline-operator/
+## [11][Speed up your site instantly using this simple script](https://www.reddit.com/r/javascript/comments/em7mqd/speed_up_your_site_instantly_using_this_simple/)
+- url: https://www.codeforest.net/speed-up-your-site-instantly-using-this-simple-tool
 ---
 
-## [11][Program an Autonomous Racecar in Javascript in your Browser](https://www.reddit.com/r/javascript/comments/elrekb/program_an_autonomous_racecar_in_javascript_in/)
-- url: https://roboton.io/challenge/oval
+## [12][Taking decisions to structure big projects with Hooks, Stores, Services and more…](https://www.reddit.com/r/javascript/comments/em6pnp/taking_decisions_to_structure_big_projects_with/)
+- url: https://medium.com/@CKGrafico/taking-decisions-to-structure-big-projects-with-hooks-stores-services-and-more-a703c7874480
 ---
 

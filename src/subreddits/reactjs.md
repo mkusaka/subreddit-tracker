@@ -80,73 +80,91 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][I built a Portfolio Gatsby theme](https://www.reddit.com/r/reactjs/comments/em001y/i_built_a_portfolio_gatsby_theme/)
+## [3][Wes Bos' uses.tech - A list of /uses pages detailing developer setups, gear, software and configs - Gatsby + Netlify site](https://www.reddit.com/r/reactjs/comments/emg036/wes_bos_usestech_a_list_of_uses_pages_detailing/)
+- url: https://github.com/wesbos/awesome-uses/tree/website
+---
+
+## [4][📣 Push out beautiful website announcements in React 📣](https://www.reddit.com/r/reactjs/comments/emq0bx/push_out_beautiful_website_announcements_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/emq0bx/push_out_beautiful_website_announcements_in_react/
+---
+I made a small component to push out simple components on a website. It's completely open source and I would love to get some feedback on the project or code. You can find the project here:
+
+ [https://github.com/kristofferandreasen/react-announcement](https://github.com/kristofferandreasen/react-announcement)
+## [5][I built a web analytics app using React.](https://www.reddit.com/r/reactjs/comments/emkzwq/i_built_a_web_analytics_app_using_react/)
+- url: https://www.reddit.com/r/reactjs/comments/emkzwq/i_built_a_web_analytics_app_using_react/
+---
+It was written 100% using Javascript. Pure React in frontend. NodeJS in backend.
+
+[Timelin9](https://timelin9.com)
+
+https://reddit.com/link/emkzwq/video/dz9ww87tcv941/player
+## [6][React.FC function](https://www.reddit.com/r/reactjs/comments/emppiu/reactfc_function/)
+- url: https://www.reddit.com/r/reactjs/comments/emppiu/reactfc_function/
+---
+Howdy folks, I'm learning React and added this to be able to create React Components from the CLI.  
+[https://www.npmjs.com/package/generate-react-cli](https://www.npmjs.com/package/generate-react-cli)
+
+It added typescript and made the tsx components really neat looking.  
+[https://pastebin.com/yESLsesG](https://pastebin.com/yESLsesG)   
+Where do I add functions?   
+All google searches (that I've found) just return how to create the .FC component, but none come up with create a function.  
+
+
+Sorry for the newbie question, but it's driving me mad.
+## [7][What are your favorite quality UI packages in React ecosystem? - Dan Abramov on Twitter](https://www.reddit.com/r/reactjs/comments/emi6ln/what_are_your_favorite_quality_ui_packages_in/)
+- url: https://twitter.com/dan_abramov/status/1215378405308469253?s=20
+---
+
+## [8][How to get value from switch case in parent file and pass it to child component.](https://www.reddit.com/r/reactjs/comments/emqw8l/how_to_get_value_from_switch_case_in_parent_file/)
+- url: https://www.reddit.com/r/reactjs/comments/emqw8l/how_to_get_value_from_switch_case_in_parent_file/
+---
+It is console logging the right array out all the time, but the point here is that it should be outputting that in the 'TodoList.tsx'. Not sure how to get that fixed in this case. Anyone who could help me with this. To see the bigger picture, please click on this link:
+
+[Link to Codesandbox](https://codesandbox.io/s/github/chiholiu/todo-react-typescript)
+
+I want the returned value from **App.js** currentFilter function pass it to **TodoListItem.js**, so it will update the map function constantly when user clicks on filter buttons.
+## [9][What are the best complete React courses that uses Hooks?](https://www.reddit.com/r/reactjs/comments/emqnxl/what_are_the_best_complete_react_courses_that/)
+- url: https://www.reddit.com/r/reactjs/comments/emqnxl/what_are_the_best_complete_react_courses_that/
+---
+I have access to Pluralsight, Egghead and Frotendmasters. I know that there are some great courses there, but some were made before the new features from React, specially regarding functional components only. I would like to update my company's onboarding guides, and I think you guys might help.
+
+I would like a complete course (made for beginners) that doesn't show hooks like "a new thing", but instead uses it as a de-facto solution. Thank you in advance.
+## [10][New Next.js Documentation released: Improved Content, Multi-Page Structure, Sidebar Search, and API Reference](https://www.reddit.com/r/reactjs/comments/emaa3o/new_nextjs_documentation_released_improved/)
+- url: https://nextjs.org/blog/new-documentation
+---
+
+## [11][I built a Portfolio Gatsby theme](https://www.reddit.com/r/reactjs/comments/em001y/i_built_a_portfolio_gatsby_theme/)
 - url: https://v.redd.it/91j7re00rm941
 ---
 
-## [4][Fielder docs just released - (A React form library)](https://www.reddit.com/r/reactjs/comments/em7wih/fielder_docs_just_released_a_react_form_library/)
-- url: https://fielder.andyrichardson.dev/
+## [12][How do you handle hundreds of API endpoints with cache invalidation and reload of data?](https://www.reddit.com/r/reactjs/comments/emnqr6/how_do_you_handle_hundreds_of_api_endpoints_with/)
+- url: https://www.reddit.com/r/reactjs/comments/emnqr6/how_do_you_handle_hundreds_of_api_endpoints_with/
 ---
-
-## [5][Beyond JavaScript Frameworks: Universal Login Button Component](https://www.reddit.com/r/reactjs/comments/em74py/beyond_javascript_frameworks_universal_login/)
-- url: https://auth0.com/blog/beyond-javascript-frameworks-universal-login-web-component
----
-
-## [6][Jordan Walke – ReasonML: React to the Future](https://www.reddit.com/r/reactjs/comments/elv3kt/jordan_walke_reasonml_react_to_the_future/)
-- url: https://www.youtube.com/watch?v=5fG_lyNuEAw
----
-
-## [7][The Case for Versioning Independent UI Components](https://www.reddit.com/r/reactjs/comments/em77m4/the_case_for_versioning_independent_ui_components/)
-- url: https://blog.bitsrc.io/versioning-independent-ui-components-why-and-how-7ea60d8be5f2
----
-
-## [8][Internship projects?](https://www.reddit.com/r/reactjs/comments/em9c3i/internship_projects/)
-- url: https://www.reddit.com/r/reactjs/comments/em9c3i/internship_projects/
----
-I've been working on an online store (just the front end) using react. Is this considered a very simple and easy project? Or would it impress employers?
-## [9][MyMovies Desktop app made with React +Electron](https://www.reddit.com/r/reactjs/comments/em0twf/mymovies_desktop_app_made_with_react_electron/)
-- url: https://youtu.be/tAmcWPn10XY
----
-
-## [10][Facing performance issue with with Realtime data and graphs (plotly)](https://www.reddit.com/r/reactjs/comments/em7ip0/facing_performance_issue_with_with_realtime_data/)
-- url: https://www.reddit.com/r/reactjs/comments/em7ip0/facing_performance_issue_with_with_realtime_data/
----
-Hi React community.   
+Hi!  
 
 
-I'm currently working on a Frankenstein app. Basically we want to display live data from a canbus source.   
-To do this we stiched together:  
-\- a Python module that communicate in canbus with our electronic and send the data to Electron via Socket IO 
-
-\-an Electron backend for the app that communicate the data to the frontend via IPC
-
-\-a React frontend to look sexy that show Plotly graphs.
-
-&amp;#x200B;
-
-Now we have a good prototype walking on its 2 feets but it's clearly not scalable.  
+I have a general question about how people usually handle API Endpoint management for their react app. At work now we have a MongoDB with about 25 different models where each model has about 5-8 different endpoints for various things.  
 
 
-Currently the framerate is limited to once every 100ms for the amount of graphs (and there are about 5 graphs with 10 to 50K points each) is limited to 5.
+What we want to achieve:
 
-If we try to increase both of those parameter the whole application start to stutter. To manage the refresh i'm using this hook i found on the web : [https://overreacted.io/making-setinterval-declarative-with-react-hooks/](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)  
-
-
-Also the data that needs to be displayed are aggregated on each page that they are needed. This makes the code very hard to maintain with a  lot of dirty copy past.   
-
-
-I don't expect you guys to look at my code. However do you any similar project that I could look at ?   
+ \- We use TypeScript  
+ \- Make requests to about 250 different endpoints  
+ \- Cache all GET-request  
+ \- Be able to clear cached request (should be able to clear per Model or ApiClient as we currently have, preferably by using Axios Cache Adapter)  
+ \- Re-fetch the data that had its cache removed for those component that needs it.  
 
 
-Subsequent question, would Redux be of any help to centralize all the data sent by the Python module or have i understood that wrong ?  
+Currently we have a BaseApi class that have get, post, delete, put methods and then we have one class for each "Api group" or model in MongoDB. So for example we have a UserApiClient class that extends BaseApi and then have some methods like "activateUser" which makes a certain request and so on.  
 
 
-I hope i'm not all over the place :(
-## [11][Implementing Undo/Redo Functionality in Redux using Immer](https://www.reddit.com/r/reactjs/comments/em6ddt/implementing_undoredo_functionality_in_redux/)
-- url: https://techinscribed.com/implementing-undo-redo-functionality-in-redux-using-immer/
----
+We have been using a lot of hooks in our new setup but it feels "hacky" to create all async functions in hooks and wrap them in useCallback (not all, but some) because the method needs to be in the dependency array of useEffect if we want some function to run on mount.  
 
-## [12][A volunteer community of React Devs have been building an app/site to change global homelessness by building stronger social safety nets in communities. It's basic but has begun helping people. Could you improve it?](https://www.reddit.com/r/reactjs/comments/elmoxk/a_volunteer_community_of_react_devs_have_been/)
-- url: https://brightertomorrowmap.com
----
 
+Then if i do a UserApiClient.clearCache() I want to maybe reload some data from the API in say BlogPostClient and if any component uses BlogPostClient.get() it should automatically make that fetch and update that components state.  
+
+
+I have tried to find some projects on github or anywhere but it is hard to find a large project with this structure.   
+
+
+Does anyone have some tips or guidance for me? Any help is appreciated

@@ -1,125 +1,74 @@
 # golang
-## [1][Why we’re writing machine learning infrastructure in Go, not Python](https://www.reddit.com/r/golang/comments/elzoma/why_were_writing_machine_learning_infrastructure/)
-- url: https://towardsdatascience.com/why-were-writing-machine-learning-infrastructure-in-go-not-python-38d6a37e2d76
+## [1]["How to write Go code" has been entirely re-written, and now also covers Go modules!](https://www.reddit.com/r/golang/comments/emgpj8/how_to_write_go_code_has_been_entirely_rewritten/)
+- url: https://golang.org/doc/code.html
 ---
 
-## [2][How to Start with Logging in Go Projects. Part 2](https://www.reddit.com/r/golang/comments/em8uiu/how_to_start_with_logging_in_go_projects_part_2/)
-- url: https://blog.maddevs.io/how-to-start-with-logging-in-go-projects-part-2-1e57cc58f329
+## [2][XML-RPC client library for Go](https://www.reddit.com/r/golang/comments/empq6x/xmlrpc_client_library_for_go/)
+- url: https://www.reddit.com/r/golang/comments/empq6x/xmlrpc_client_library_for_go/
+---
+I know, first thing you think about when you see XML-RPC is "*what year is this?!*" and "*but why?*".
+
+However I needed to make some XML-RPC calls to a third-party service for one of my projects. I've looked around and found a few projects that kind-of work but had weird quirks and several bugs that I would hit.
+
+Combine the above with me wanting to experiment a bit - I've created ~~yet another http router~~ XML-RPC client library for Go: [https://github.com/alexejk/go-xmlrpc](https://github.com/alexejk/go-xmlrpc)
+
+It most likely has some issues and improvements one could make - any feedback or PRs are  welcome!
+
+P.S: A more extended version of this post: [https://alexejk.io/article/handling-xmlrpc-in-go/](https://alexejk.io/article/handling-xmlrpc-in-go/)
+## [3][It Looks Like GCC's Long-Awaited Git Conversion Could Happen This Weekend](https://www.reddit.com/r/golang/comments/emm8ae/it_looks_like_gccs_longawaited_git_conversion/)
+- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=GCC-Git-Possibly-This-Weekend
 ---
 
-## [3][JWT Authorization in Golang - CloudJourney IO](https://www.reddit.com/r/golang/comments/elwvxm/jwt_authorization_in_golang_cloudjourney_io/)
-- url: https://www.cloudjourney.io/articles/security/jwt_in_golang-su/
+## [4][timex: a test-friendly replacement for golang's time package](https://www.reddit.com/r/golang/comments/emqosy/timex_a_testfriendly_replacement_for_golangs_time/)
+- url: https://github.com/cabify/timex
 ---
 
-## [4][ditty - Terminal-based music player (beep/oto for audio)](https://www.reddit.com/r/golang/comments/em1et9/ditty_terminalbased_music_player_beepoto_for_audio/)
-- url: https://git.sr.ht/~tslocum/ditty
+## [5][What is the correct approach to do table driven tests for http handler functions?](https://www.reddit.com/r/golang/comments/emok37/what_is_the_correct_approach_to_do_table_driven/)
+- url: https://www.reddit.com/r/golang/comments/emok37/what_is_the_correct_approach_to_do_table_driven/
 ---
+Hi,
 
-## [5][Go Get My/Vulnerabilities](https://www.reddit.com/r/golang/comments/em9iwq/go_get_myvulnerabilities/)
-- url: https://www.youtube.com/watch?v=GGQcv7fK0JY
----
+I have experimented with table driven tests by some functions. But http handlers have different things. They usually don't return something and the way this handlers take input is also not like normal functions, as they take user input data through http request object.
 
-## [6][bokeh for golang](https://www.reddit.com/r/golang/comments/em90f6/bokeh_for_golang/)
-- url: https://www.reddit.com/r/golang/comments/em90f6/bokeh_for_golang/
----
-Does such a tool like bokeh [https://docs.bokeh.org/en/latest/index.html](https://docs.bokeh.org/en/latest/index.html) exist for golang? I think go would be ideal because a single binary can host the webserver and data for visualization. At the moment, I worry about setting up python runtime, webserver, and a proxy which is tedious!
-## [7][Help me understand goroutines](https://www.reddit.com/r/golang/comments/em5r4h/help_me_understand_goroutines/)
-- url: https://www.reddit.com/r/golang/comments/em5r4h/help_me_understand_goroutines/
----
-For some reason I just struggle with goroutines with Channels. In other languages like python or C I’ve had breakthrough moments where I thought “ah ha, that’s how I can use x design pattern or data structure.” For some reason, concurrency/go routines/channels aren’t really clicking for me.
-
-So my question to the gophers is: What breakthrough helped you learn how to use channels and goroutines effectively? How can I get better at “thinking concurrently” if I come from a background of writing procedural and imperative code?
-## [8][How to monitor if my Go program is operating optimally?](https://www.reddit.com/r/golang/comments/eltqmr/how_to_monitor_if_my_go_program_is_operating/)
-- url: https://www.reddit.com/r/golang/comments/eltqmr/how_to_monitor_if_my_go_program_is_operating/
----
-I have a little Go script running on a 16 vCPU Google Compute Engine.  
-
-
-This script establishes about ~1,300 web sockets to [polygon.io](https://polygon.io/sockets) to monitor stock trades for particular tickers. Behind the scenes this uses [gorilla/websocket](https://github.com/gorilla/websocket). When a trade comes in, some calculations are performed, and the result is stored in a [concurrent-map](https://github.com/orcaman/concurrent-map).
-
-According to Google's dashboard, my CPU utilization for this work is less than 1%. According to `iptraf`, my packet sizes are between 1 and 275 bytes.
-
-Still, I'd like to know if my calculations are operating "fast" enough--let's say, completing a trade calculation within 100ms. I can't shake the feeling that I have a bottleneck somewhere. I believe this is the case because when the script runs "live," nothing happens; but when I reply the day's activities in a debug mode, events that I expect to occur, occur (eg. recommending when to buy a particular stock). How can I ensure CPU throughout or network latency in my Go program are not issues?
-
-TIA
-## [9][A Chapter in the Life of Go’s Compiler](https://www.reddit.com/r/golang/comments/elyykn/a_chapter_in_the_life_of_gos_compiler/)
-- url: https://medium.com/samsara-engineering/a-chapter-in-the-life-of-gos-compiler-c89b9db74617
----
-
-## [10][How to work with Go modules?](https://www.reddit.com/r/golang/comments/em0zxc/how_to_work_with_go_modules/)
-- url: https://www.reddit.com/r/golang/comments/em0zxc/how_to_work_with_go_modules/
----
-Hello,
-
-I've started to learn about go modules and I've started with a simple Echo web server.
-
-    // main.go
-    package main
-    
-    import (
-    	"net/http"
-    
-    	"github.com/labstack/echo"
-    )
-    
-    func main() {
-    	e := echo.New()
-    	e.GET("/", func(c echo.Context) error {
-    		return c.String(http.StatusOK, "Hello, World!")
-    	})
-    	e.Logger.Fatal(e.Start(":1323"))
-    }
-
-Using `go get -u github.com/labstack/echo/...` , I can run the above code from within my GOPATH and a server starts with version 4.1.13.
-
-I have created a new folder for Go modules called /gomodules, which is outside my GOPATH. Inside /gomodules I created a folder called /echo (/gomodules/echo).
-
-Inside /echo I created a go.mod file:
-
-    // go.mod
-    module testing.com/main
-    
-    go 1.13
-
-I also copied the main.go file into the /echo folder.
-
-When I run main.go, Go gets v3.3.10 of Echo. I had expected it to get the latest version. Here is the result.
-
-    module testing.com/main
-    
-    go 1.13
-    
-    require (
-    	github.com/labstack/echo v3.3.10+incompatible // indirect
-    	github.com/labstack/gommon v0.3.0 // indirect
-    	golang.org/x/crypto v0.0.0-20200108215511-5d647ca15757 // indirect
-    )
-
-I've tried manually setting the mod.go file.
-
-    module testing.com/main
-    
-    go 1.13
-    
-    require (
-    	github.com/labstack/echo v4.1.13 // indirect
-    )
-
-As well as:
-
-    module testing.com/main
-    
-    go 1.13
-    
-    require (
-    	github.com/labstack/echo/v4 v4.1.13 // indirect
-    )
-    
-
-The later will run but the first wont.  Even after the later runs and the go.mod file looks the same, when running main.go, I am stuck with v3.3.10.
-
-I've read the docs on modules and I feel lost as to how to get this to work. What am I missing?
+I don't know how to organize table driven tests that will give input to handler functions and checks numerous outputs like status codes, returned data and some other things (with table driven tests).
 
 &amp;#x200B;
 
-Thanks!
+I know, many of you guys faced this kind of problems and solved it too. So, please share with us what is approach to solve this problem?
+
+I'm using Echo framework, but examples of any framework or even standard library's Handler Function will also be appreciated.
+
+&amp;#x200B;
+
+Thanks
+## [6][I built a FOSS service to protect against link shorteners tracking us. It's GPLv3 and build completely with golang. Frontend is build with go templates. Help is very welcomed :D](https://www.reddit.com/r/golang/comments/em9pwi/i_built_a_foss_service_to_protect_against_link/)
+- url: https://unshort.link/
+---
+
+## [7][Go 1.13.6 and Go 1.12.15 are Released](https://www.reddit.com/r/golang/comments/emh2un/go_1136_and_go_11215_are_released/)
+- url: https://groups.google.com/forum/#!topic/golang-announce/RLFrcJ_FZZs
+---
+
+## [8][Attaching go services to a Python / Django app?](https://www.reddit.com/r/golang/comments/emnjf3/attaching_go_services_to_a_python_django_app/)
+- url: https://www.reddit.com/r/golang/comments/emnjf3/attaching_go_services_to_a_python_django_app/
+---
+I don’t have too much experience with the more complicated parts of managing a web app— the most I have is experience configuring monoliths to do what I want.
+
+Right now I’m trying to figure out a way to use a golang service for the real-time parts of my django app. Django has channels, but doesn’t quite fit my performance needs. How do two services like that (in this case, say a Django app and a websockets golang server) typically authenticate and communicate?
+## [9][Executing html template in an infinite loop, new templates append to the bottom of the previous](https://www.reddit.com/r/golang/comments/emo7hp/executing_html_template_in_an_infinite_loop_new/)
+- url: https://www.reddit.com/r/golang/comments/emo7hp/executing_html_template_in_an_infinite_loop_new/
+---
+Hey all. Racking my brain on this, and I'm wondering what I can be doing differently to solve this problem. I'm not putting the correct combination of words into Google to solve it either. But essentially I have an http handler that loads some data from an external API to fill in an html template. 
+
+So lets just say I'm running a goroutine that is updating a struct of data named `apiAnswer` and a for loop like the following:
+     
+    for {
+       indexTmpl.Execute(w, apiAnswer)
+       time.Sleep(10 * time.Second)
+    }
+
+It works! Sort of... Except the new version of the page gets reloaded under the previous, and repeatedly does so.. Is there any way to remove previous copies of the template execution?
+## [10][Development of Virtual Assistants Made Simpler with RASA](https://www.reddit.com/r/golang/comments/emnpen/development_of_virtual_assistants_made_simpler/)
+- url: https://medium.com/@Oodles_AI/development-of-virtual-assistants-made-simpler-with-rasa-d27bdb18e909
+---
+

@@ -29,84 +29,57 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
 Also check out [last week's thread](https://reddit.com/r/rust/comments/ehk18j/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What’s everyone working on this week (2/2020)?](https://www.reddit.com/r/rust/comments/ekpr6w/whats_everyone_working_on_this_week_22020/)
-- url: https://www.reddit.com/r/rust/comments/ekpr6w/whats_everyone_working_on_this_week_22020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-2-2020/36546?u=llogiq)!
-## [3][The panic messages now pointing to the location where they were called, rather than core's internals](https://www.reddit.com/r/rust/comments/em7gav/the_panic_messages_now_pointing_to_the_location/)
-- url: https://github.com/rust-lang/rust/pull/67887
----
-
-## [4][FFI like it's 2020: Announcing *safe* FFI for Rust &lt;-&gt; C++](https://www.reddit.com/r/rust/comments/elvfyn/ffi_like_its_2020_announcing_safe_ffi_for_rust_c/)
-- url: https://github.com/dtolnay/cxx
----
-
-## [5][Rust reimplemented xv6 buddy allocator](https://www.reddit.com/r/rust/comments/em6xhz/rust_reimplemented_xv6_buddy_allocator/)
-- url: https://github.com/jjyr/buddy-alloc
----
-
-## [6][This Week in Rust 320](https://www.reddit.com/r/rust/comments/em9hct/this_week_in_rust_320/)
+## [2][This Week in Rust 320](https://www.reddit.com/r/rust/comments/em9hct/this_week_in_rust_320/)
 - url: https://this-week-in-rust.org/blog/2020/01/07/this-week-in-rust-320/
 ---
 
-## [7][Intimidated by advanced Rust](https://www.reddit.com/r/rust/comments/elzas3/intimidated_by_advanced_rust/)
-- url: https://www.reddit.com/r/rust/comments/elzas3/intimidated_by_advanced_rust/
----
-Hi,
-
-&amp;#x200B;
-
-I was wondering whether some of you felt similarly. I really enjoy learning Rust. I use it pretty much exclusively for my personal projects and I feel my understanding of the language and its idioms increases with each project. That was until I started working on an implementation of a linked list to better understand RefCell and friends. To this end, I read [https://rust-unofficial.github.io/too-many-lists/](https://rust-unofficial.github.io/too-many-lists/), and at chapter 'A Bad Safe Deque', I got to a point (Iter and IterMut) where I feel really discouraged. I'm not sure I'll ever get to a level where I can reason like the author does in 'Iteration'. Holy moly, the compiler errors are dense and intimidating. Has anybody else been there and how did you overcome it? Just table more advanced topics and accept that this process takes time to fully master?
-
-Not trying to cry on your guys' shoulders but looking for a little guidance...
-
-&amp;#x200B;
-
-Thanks,
-## [8][Update of our Rust Boilerplate server with GraphQL (Async and Actix-web 2)](https://www.reddit.com/r/rust/comments/em8bx9/update_of_our_rust_boilerplate_server_with/)
-- url: https://www.reddit.com/r/rust/comments/em8bx9/update_of_our_rust_boilerplate_server_with/
----
-Repo: [https://github.com/clifinger/canduma](https://github.com/clifinger/canduma)
-
-Changelist:
-
-* use async/await
-* use actix-web version 2
-* use anyhow + thiserror in place of failure
-* structopt
-## [9][Manning's Rust book and video course are half off today](https://www.reddit.com/r/rust/comments/em5ls8/mannings_rust_book_and_video_course_are_half_off/)
-- url: https://i.redd.it/h6vqe78p1p941.png
+## [3][Proof of Concept: Rust code in Unreal Engine](https://www.reddit.com/r/rust/comments/emp0su/proof_of_concept_rust_code_in_unreal_engine/)
+- url: https://ejmahler.github.io/rust_in_unreal/
 ---
 
-## [10][Help debug a performance degradation in parking_lot that only happen some processors](https://www.reddit.com/r/rust/comments/em0ru7/help_debug_a_performance_degradation_in_parking/)
-- url: https://github.com/Amanieu/parking_lot/issues/201
+## [4][Way Cooler Post Mortem](https://www.reddit.com/r/rust/comments/emjwwp/way_cooler_post_mortem/)
+- url: http://way-cooler.org/blog/2020/01/09/way-cooler-post-mortem.html
 ---
 
-## [11][Videos from Rust Belt Rust 2019 are now available!](https://www.reddit.com/r/rust/comments/elw26j/videos_from_rust_belt_rust_2019_are_now_available/)
-- url: https://www.youtube.com/playlist?list=PLgC1L0fKd7UkVwjVlOySfMnn80Qs5TOLb
+## [5][Towards a Rust foundation](https://www.reddit.com/r/rust/comments/emd0cn/towards_a_rust_foundation/)
+- url: http://smallcultfollowing.com/babysteps/blog/2020/01/09/towards-a-rust-foundation/
 ---
 
-## [12][Rust 2020: a conference in Latin America](https://www.reddit.com/r/rust/comments/em0ru8/rust_2020_a_conference_in_latin_america/)
-- url: https://www.reddit.com/r/rust/comments/em0ru8/rust_2020_a_conference_in_latin_america/
+## [6][How Arc works in Rust](https://www.reddit.com/r/rust/comments/emosl0/how_arc_works_in_rust/)
+- url: https://link.medium.com/mU0aRn9d82
 ---
-Hello Rust community!
 
-Rust LATAM is the conference working on growing the interest around Rust in Latin America; the next iteration of the conference will happen in **Mexico City on May, 22nd-23rd 2020** 🇲🇽
+## [7][The panic messages now pointing to the location where they were called, rather than core's internals](https://www.reddit.com/r/rust/comments/em7gav/the_panic_messages_now_pointing_to_the_location/)
+- url: https://github.com/rust-lang/rust/pull/67887
+---
 
-Rust LATAM is not only a conference, it's a community event and that means that is made by **YOU** all participating and spreading the word 💪
+## [8][Why I like programming for #![no_std] in Rust (even without embedded)](https://www.reddit.com/r/rust/comments/emq98r/why_i_like_programming_for_no_std_in_rust_even/)
+- url: https://djugei.github.io/no-std-motivation/
+---
 
-The Rust LATAM team has opened the "Call for Papers" for the next LATAM2020 conference. We are accepting proposals for talks (or, if you have a ✨ cool idea ✨ for workshop, feel free to submit that, too!). So, get involved and get your chance to show something about your project, your experiments, a new development or about an aspect of Rust that improved your life as a developer (or not as much as you expected!).
+## [9][BLAKE3 - Evolution of BLAKE2](https://www.reddit.com/r/rust/comments/emf15c/blake3_evolution_of_blake2/)
+- url: https://github.com/BLAKE3-team/BLAKE3-specs
+---
 
-Do you have in mind a talk not strictly technical? That's great, we'd love to hear from you, too!
+## [10][The Library team is moving from IRC to Zulip - announcements](https://www.reddit.com/r/rust/comments/emig2y/the_library_team_is_moving_from_irc_to_zulip/)
+- url: https://internals.rust-lang.org/t/the-library-team-is-moving-from-irc-to-zulip/11598
+---
 
-Submit your proposals at [https://cfp.rustlatam.org](https://cfp.rustlatam.org)
+## [11][`enum_variant_type` -- proc macro derive to generate structs from enums and convert between them](https://www.reddit.com/r/rust/comments/emnjmm/enum_variant_type_proc_macro_derive_to_generate/)
+- url: https://users.rust-lang.org/t/enum-variant-type-proc-macro-derive-to-generate-structs-from-enums-and-convert-between-them/36737
+---
 
-Are you a company working with Rust? Do you want to get in contact and support the conference? Contact us for a sponsorship opportunity at [sponsors@rustlatam.org](mailto:sponsors@rustlatam.org)
+## [12][how mutex poisoning is detected in rust by mutex](https://www.reddit.com/r/rust/comments/eml4l8/how_mutex_poisoning_is_detected_in_rust_by_mutex/)
+- url: https://www.reddit.com/r/rust/comments/eml4l8/how_mutex_poisoning_is_detected_in_rust_by_mutex/
+---
+    let mut num = m.lock().unwrap();
 
-The conference is made by and for the community, so don't miss this opportunity, save the date and take part to Rust LATAM 2020: help us make it happen! 🎉
+&gt;The call to lock would fail if another thread holding the lock panicked. In that case, no one would ever be able to get the lock, so we’ve chosen to unwrap and have this thread panic if we’re in that situation.
 
-Check out our website [https://www.rustlatam.org](https://www.rustlatam.org), it will be updated as we will be getting closer to the conference.
+However, if another thread holding the mutex guard panics, then objects in that thread should be dropped. **Which should then release the mutex guard**. Then mutex implementation enters a 'poisoned' trait. 
 
-Follow us on Twitter @ RustLatamConf or join our Discord channel at: [https://discord.gg/b6MBzy](https://discord.gg/b6MBzy)
+Does this mean there is someway to detect drop is being called as a result of a panic? 
 
-See you there!
+ [https://doc.rust-lang.org/std/sync/struct.MutexGuard.html](https://doc.rust-lang.org/std/sync/struct.MutexGuard.html)  
+
+is this implemented in the  sys\_common::poison?

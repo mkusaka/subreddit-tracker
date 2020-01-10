@@ -57,15 +57,89 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Dynamic Class Member Function Reassignment](https://www.reddit.com/r/cpp/comments/em546u/dynamic_class_member_function_reassignment/)
-- url: https://github.com/TheMaverickProgrammer/C-Python-Like-Class-Member-Decorators
+## [2][CppCast: Clang Hacking](https://www.reddit.com/r/cpp/comments/emm4af/cppcast_clang_hacking/)
+- url: https://cppcast.com/saar-raz-clang-hacking/
 ---
 
 ## [3][Is visiting a C++ committee meeting a good idea if you're not a committee member, nor do you have any proposals?](https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/)
 - url: https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/
 ---
 Next month there will be a committee meeting in Prague, which is close enough for me to think about visiting. According to  [https://isocpp.org/std/meetings-and-participation](https://isocpp.org/std/meetings-and-participation), the meetings are open to the public. I am interested in learning how these events work and would also like to know what discussions around proposals look like. However I'm not sure it's worthwhile for an average Joe to visit events such as these. Could someone advise whether it's a good idea to ask for a few days off to visit a C++ committee meeting? Is it a good idea to visit for a day or two, or does one have to attend the whole event to gain anything from it?
-## [4][Fun with variadic lambdas, fold expressions... another zip()](https://www.reddit.com/r/cpp/comments/em0twe/fun_with_variadic_lambdas_fold_expressions/)
+## [4][DrMock: open-source testing/mocking framework](https://www.reddit.com/r/cpp/comments/emqt37/drmock_opensource_testingmocking_framework/)
+- url: https://www.reddit.com/r/cpp/comments/emqt37/drmock_opensource_testingmocking_framework/
+---
+https://github.com/DrCpp/DrMock
+
+After almost a year of development, we'd like to share DrMock, a C++ testing/mocking framework that generates the source code of your mock objects at compile time and offers a unique way of configuring mock objects using user-prepared *states*: Calling methods of the mock object changes the states of the object, which in turn determine the return values of the methods. This guarantees a high degree of configurability and allows coding unit tests without prior knowledge of the implementation (state verification), which we think is very useful. See the front-page of the GitHub repository for a demonstration.
+
+DrMock is written in C++ and python3.7. Building DrMock requires CMake and libclang. It can be deployed on macOS or Linux, where its use has been thoroughly tested. Windows support is one of the goals for the next major version.
+
+A guide to building DrMock, along with an extensive tutorial, sample projects and numerous examples are provided. The source code is well-documented, the C++ component is unit-tested, and the python component is tested functionally.
+
+We'd appreciate feedback on code quality and usability, bugs reports, feature requests - whatever comes to mind! If you're using DrMock on any of your projects or wish to contribute, we'd be delighted to hear about it.
+
+Have a great day!
+## [5][Cheetah engine, creating a game engine for personal study](https://www.reddit.com/r/cpp/comments/emfq70/cheetah_engine_creating_a_game_engine_for/)
+- url: https://www.reddit.com/r/cpp/comments/emfq70/cheetah_engine_creating_a_game_engine_for/
+---
+For the last few weeks I have thrown myself in the amazing world of c++ and graphics programming by starting to create a game engine. Using books, online tutorials and stackoverflow I finally did it! I made an engine able to create a most minimalistic 2d game capable of rendering awesome textures and using the the best sound there is, the sound of silence. 
+
+Alright, all jokes aside, I started working on this project as hobby in order to learn c++.  In my professional career I mostly work with c#, Js and SQL creating web applications but I've always had an interest in game development. After many failed game projects using unity or unreal I came to the conclusion that I enjoy **programming** games but not creating all the **art** that was needed for the types of games I had in mind. With that realization I started to develop an interest in the systems behind the scenes and came to the conclusion I should starting to try to create my own engine. 
+
+Now having learned everything from the internet or books I have not been able to get some critique from people with more experience in c++ then me so I am curious what you guys think of it. I have made the repository publicly available with a simple sample project of how the engine could be used, I have also created a template repository for creating games from scratch with the engine. 
+
+Engine repo with sample:  [https://github.com/Ruinerwarrior/Cheetah](https://github.com/Ruinerwarrior/Cheetah) 
+
+Engine template repo:  [https://github.com/Ruinerwarrior/Cheetah\_Template](https://github.com/Ruinerwarrior/Cheetah_Template) 
+
+Being the first time ever I made a c++ project publicly available and also the first time I worked with CMake, let me know if I need to make some changes in order to make it easier to use for people cloning the repo.
+
+For anyone interested in sources I used for information here a small list of the most important ones
+
+* Game Engine Architecture by Jason Gregory
+*  [https://learnopengl.com/](https://learnopengl.com/)  for anything opengl/graphics programming related
+* thebennybox  [https://www.youtube.com/channel/UCnlpv-hhcsAtEHKR2y2fW4Q](https://www.youtube.com/channel/UCnlpv-hhcsAtEHKR2y2fW4Q) for graphics programming an game engine design
+* The Cherno  [https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw](https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw)  for anything from c++, opengl to game engine design
+* stackoverflow for all my other questions
+
+Many thanks in advance for any advice you guys can give me!
+## [6][Constant global variable naming convention](https://www.reddit.com/r/cpp/comments/emobr9/constant_global_variable_naming_convention/)
+- url: https://www.reddit.com/r/cpp/comments/emobr9/constant_global_variable_naming_convention/
+---
+Assume that you are using the "\_" suffix for member variables and lowerCamelCase for enums.
+
+Which would it be in your opinion the best naming convention for constant global variables?
+
+The real question maybe boils down to: does highlighting that something is a constant helps the developer to understand better the code?  if yes, how do you express that in the naming conventions?
+
+Some examples and observations:
+
+static constexpr size\_t MY\_CONSTANT = 42; // Problems with macros?
+
+static constexpr size\_t myConstant\_g = 42; // \_g lets you know it is a global variable, but how do you know it is also constant?
+
+static constexpr size\_t kMyConstant\_g = 42; // both global/constant info in the name, but using a prefix  seems not the best solution when you want to use the IDE to look for something
+
+static constexpr size\_t myConstant\_gk = 42;  // how member variables would be named ? "\_k" doesn't look good, it would have worked if all member variables were using the \_m suffix perhaps (\_mk)
+
+&amp;#x200B;
+
+Any alternative?
+## [7][The 2019.12 version of vcpkg is now available](https://www.reddit.com/r/cpp/comments/embpox/the_201912_version_of_vcpkg_is_now_available/)
+- url: https://github.com/microsoft/vcpkg/releases/tag/2019.12
+---
+
+## [8][Dynamic Class Member Function Reassignment](https://www.reddit.com/r/cpp/comments/em546u/dynamic_class_member_function_reassignment/)
+- url: https://github.com/TheMaverickProgrammer/C-Python-Like-Class-Member-Decorators
+---
+
+## [9][Im learning C++ and Im learning STL now. What should I do next after STL ?](https://www.reddit.com/r/cpp/comments/em3516/im_learning_c_and_im_learning_stl_now_what_should/)
+- url: https://www.reddit.com/r/cpp/comments/em3516/im_learning_c_and_im_learning_stl_now_what_should/
+---
+Ive learned everything from Pointers to ploymorphism, streams, inheritance, smart pointers, operator overloading , OOP programming and now Im on a STL just getting into generic programming. Im learning online by myself, and I was wondering can I get a job with my knowledge of C++ now ? And how ? If not should I learn mooore C++ ? What do u recommend ?
+ 
+Edit: I do practice on a daily basis. Itd be nice if I make friends with actual programmers here.
+## [10][Fun with variadic lambdas, fold expressions... another zip()](https://www.reddit.com/r/cpp/comments/em0twe/fun_with_variadic_lambdas_fold_expressions/)
 - url: https://www.reddit.com/r/cpp/comments/em0twe/fun_with_variadic_lambdas_fold_expressions/
 ---
 https://godbolt.org/z/6AJdhk
@@ -73,55 +147,7 @@ https://godbolt.org/z/6AJdhk
 So, I've been messing around with C++17's fold expressions, std::apply() and variadic lambdas for a small matrix expression template library I'm working on. I put together a nice implementation of Pythons zip() function to make range based for loops natural and have pulled it out into a gist. It supports all the STL containers (even std::vector&lt;bool&gt;). 
 
 Check it out, have I missed something: [github](https://gist.github.com/ConorWilliams/2dc0be178c0917617e475f9da27bf3c6)
-## [5][Im learning C++ and Im learning STL now. What should I do next after STL ?](https://www.reddit.com/r/cpp/comments/em3516/im_learning_c_and_im_learning_stl_now_what_should/)
-- url: https://www.reddit.com/r/cpp/comments/em3516/im_learning_c_and_im_learning_stl_now_what_should/
----
-Ive learned everything from Pointers to ploymorphism, streams, inheritance, smart pointers, operator overloading , OOP programming and now Im on a STL just getting into generic programming. Im learning online by myself, and I was wondering can I get a job with my knowledge of C++ now ? And how ? If not should I learn mooore C++ ? What do u recommend ?
- 
-Edit: I do practice on a daily basis. Itd be nice if I make friends with actual programmers here.
-## [6][C++ Inliner Improvements](https://www.reddit.com/r/cpp/comments/eluo8d/c_inliner_improvements/)
+## [11][C++ Inliner Improvements](https://www.reddit.com/r/cpp/comments/eluo8d/c_inliner_improvements/)
 - url: https://devblogs.microsoft.com/cppblog/c-inliner-improvements-the-zipliner/
 ---
 
-## [7][C++ For HFT/Trading Systems](https://www.reddit.com/r/cpp/comments/em53yo/c_for_hfttrading_systems/)
-- url: https://www.reddit.com/r/cpp/comments/em53yo/c_for_hfttrading_systems/
----
-Hi, I'm curious on if anyone had any tips on where to get started if I'm interested in using C++ for building trading systems (I don't necessarily expect myself to be able to build something that works but rather just to get more exposure to that line of work)? I'm still in school right now so my knowledge (especially professional use) of the language is limited compared to a lot of the topics discussed here. I'm familiar with all the major STL stuff and all your data structures and algorithms, but more advanced topics like lambdas, move constructors, etc. I'd probably have to review.
-## [8][C++ real world applications for non-engineers](https://www.reddit.com/r/cpp/comments/eltc9l/c_real_world_applications_for_nonengineers/)
-- url: https://www.reddit.com/r/cpp/comments/eltc9l/c_real_world_applications_for_nonengineers/
----
-I love to code with C++, but I'm not an engineer, and I feel it is more for engineers who program for firmware and microcontrollers, my question how can I can use C++ to program real world applications to get hired?
-
-P.s: I'm not native English speaker so forgive me for any mistakes.
-
-Thank you in advance
-## [9][Launching the Meeting C++ Community Survey](https://www.reddit.com/r/cpp/comments/eltzcu/launching_the_meeting_c_community_survey/)
-- url: https://www.meetingcpp.com/meetingcpp/news/items/Launching-the-Meeting-Cpp-Community-Survey.html
----
-
-## [10][Changing from inheritance to std::variant inverts your header include hierarchy](https://www.reddit.com/r/cpp/comments/elhf4z/changing_from_inheritance_to_stdvariant_inverts/)
-- url: https://www.reddit.com/r/cpp/comments/elhf4z/changing_from_inheritance_to_stdvariant_inverts/
----
-I have some code I originally wrote in a dynamically typed language, and I'm converting it to C++.  This involves applying type discipline to a design which was not designed with static typing in mind.
-
-The code in question (is unrelated to the web, but) was inspired by the idea of cascading style sheets (CSS):  it's a simplified declarative description of complicated runtime objects, so that you describe the style of an object with data and something else constructs it.
-
-An important point is that different subtypes of object style have different sets of valid properties.  So for instance something describing a linear slider has linear min/max properties, while something involving rotation has properties of rotational (angle) limits.
-
-My first approximation was to create a class hierarchy with common-to-all properties in the base class, and many derived classes for the various specific styles.  Standard OOP.
-
-However I decided I wanted to change the style objects to be value types, so that they can be passed by const&amp; or stored by value, without needing to use std::shared\_ptr or other memory management.
-
-In the inheritance model, more-specific style classes included the base class with common properties inside of the derived object.  In the updated design, the former base class (now a value type not a base) becomes the bigger object, containing within it the same common properties and a std::variant of all specific styles as a sub-object.
-
-What I found interesting was in the inheritance design the specific style header(s) included the base style header, but with a std::variant based design that relationship is inverted; what had been the base class header now includes all the of the specific style header(s) (in order to be able to describe what's in the std::variant).
-
-This may seem to be a trivial detail about header includes, but I believe in this case it also a deeper point about the difference between inheritance based designs and std::variant based designs.
-
-**tl;dr:**  When using inheritance, the more specific class(es) depend(s) on the more abstract class.  When using std::variant, the more abstract class depends on the more specific class(es).
-## [11][Is there any reason why C++20 does not contain constexpr functions for converting to and/or from strings?](https://www.reddit.com/r/cpp/comments/elfpmk/is_there_any_reason_why_c20_does_not_contain/)
-- url: https://www.reddit.com/r/cpp/comments/elfpmk/is_there_any_reason_why_c20_does_not_contain/
----
-Since [More constexpr containers](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0784r7.html) and [Making std::string constexpr](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0980r1.pdf) were accepted to C++20, allowing transient allocations with strings, is there any reason why there is no way to convert the string to numeric values and vice versa in constexpr context? p0980r1 basically makes everything constexpr in the string header, except for the streaming operators, `getline` and the string conversions. While it's kind of obvious why the first two are not constexpr, I don't see any reason why the last one couldn't be. Initially I thought this would be supported by `std::from_chars` and `std::to_chars` since they are non-allocating, but there seems to be no push to make these constexpr either. The C functions with similar functionality are also out of the picture due to... well, being C functions. 
-
-Is there a way something like this could still get into C++20, at least for the from\_chars-like variant  (e.g. via NB comments), or at least C++23? Or is there something I'm missing?

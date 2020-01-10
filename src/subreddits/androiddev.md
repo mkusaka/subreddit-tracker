@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/ektosq/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/ektosq/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/emqf2y/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/emqf2y/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - January 06, 2020](https://www.reddit.com/r/androiddev/comments/ekslrd/weekly_questions_thread_january_06_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/ekslrd/weekly_questions_thread_january_06_2020/
 ---
@@ -31,72 +25,66 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][🤯 Just realized Dagger’s naming double entendre...](https://www.reddit.com/r/androiddev/comments/em495b/just_realized_daggers_naming_double_entendre/)
-- url: https://www.reddit.com/r/androiddev/comments/em495b/just_realized_daggers_naming_double_entendre/
----
-Obviously the first one: daggers are able to pierce into things, thereby injecting dependencies. 
-
-The second: DAG’s (directed acyclic graphs) are how dependency creation order is determined. The “Dagger” library is a DAG creator or “DAGger”...
-
-Show of hands: how stupid am I? Did everyone already realize this?
-## [4][How did Telegram implement this theme change effect ? I know I can look at the code but needed the gist of the implementation. It animates the status bar color change as well! I'm fairly impressed.](https://www.reddit.com/r/androiddev/comments/eltrvl/how_did_telegram_implement_this_theme_change/)
-- url: https://i.redd.it/b68e2zi7kk941.jpg
+## [3][Is there a way for developers to programmatically avoid triggering Huawei's HiTouch without foregoing the entire idea of having two fingers on the screen at the same time?](https://www.reddit.com/r/androiddev/comments/emn8ho/is_there_a_way_for_developers_to_programmatically/)
+- url: https://www.reddit.com/r/androiddev/comments/emn8ho/is_there_a_way_for_developers_to_programmatically/
 ---
 
-## [5][Write your JSON in Kotlin DSL | Create your JSON in a more easy and readable way | (github.com/hitanshu-dhawan/JsonDSL)](https://www.reddit.com/r/androiddev/comments/em6x1a/write_your_json_in_kotlin_dsl_create_your_json_in/)
-- url: https://i.redd.it/va9k5s1brp941.png
+## [4][First commits of ConstraintLayout in AOSP Jetpack Compose repo](https://www.reddit.com/r/androiddev/comments/emo2do/first_commits_of_constraintlayout_in_aosp_jetpack/)
+- url: https://www.reddit.com/r/androiddev/comments/emo2do/first_commits_of_constraintlayout_in_aosp_jetpack/
+---
+[Here's a merged commit](https://android-review.googlesource.com/c/platform/frameworks/support/+/1147725) for `ConstraintLayout` in Jetpack Compose. You can see an [example usage here](https://android-review.googlesource.com/c/platform/frameworks/support/+/1147725/22/ui/ui-layout/integration-tests/layout-demos/src/main/java/androidx/ui/layout/demos/ConstraintLayoutActivity.kt). It looks like they separated out declaring the children (which you do in the trailing lamda) from declaring the constraints (which you do as part of the `ConstraintSet` parameter to the `ConstraintLayout` composable function). They use the `Tag` modifier to link them together. My understanding is that the tag plays the same role as IDs did for referring to other views in the  ConstraintLayout XML.
+
+Of course - this is all very early and a lot could change. And of course a lot of stuff is missing (most notably, animations).
+## [5][Update not live yet, a week after submission - anyone else?](https://www.reddit.com/r/androiddev/comments/emm7em/update_not_live_yet_a_week_after_submission/)
+- url: https://www.reddit.com/r/androiddev/comments/emm7em/update_not_live_yet_a_week_after_submission/
+---
+Hey all - is this happening to anyone else? The update I published after new year's has not gone live yet.
+
+&amp;#x200B;
+
+I usually receive the "update is live" message within 24 hours.
+
+&amp;#x200B;
+
+For reference, there were only a couple of crash fixes in the new update so not sure why this would happen. The app has been out there for 5 years or so.
+## [6][Observing datastores with coroutines: Jetpack's Room now supports Flow in Kotlin](https://www.reddit.com/r/androiddev/comments/emcyda/observing_datastores_with_coroutines_jetpacks/)
+- url: https://medium.com/androiddevelopers/room-flow-273acffe5b57
 ---
 
-## [6][What is the requirement to be a "Senior" Android Developer?](https://www.reddit.com/r/androiddev/comments/em5vib/what_is_the_requirement_to_be_a_senior_android/)
-- url: https://www.reddit.com/r/androiddev/comments/em5vib/what_is_the_requirement_to_be_a_senior_android/
----
-I know "Senior" require some of these soft skills:
-
-* Interpersonal Skill
-* Analytical Skill
-* Problem Solving Skill
-* Able to lead juniors
-* Able to be role model
-* Decent Communication Skill
-* Detail Oriented
-
-But how about tech stack? Which tech skills to master to be more considered as "Senior"?
-
-Some that I know: Unit Testing, understand UX, familiar with Android JetPack.
-## [7][Anyone notice any increase in RPM after using app-ads.txt?](https://www.reddit.com/r/androiddev/comments/em75c1/anyone_notice_any_increase_in_rpm_after_using/)
-- url: https://www.reddit.com/r/androiddev/comments/em75c1/anyone_notice_any_increase_in_rpm_after_using/
+## [7][What actions have you taken to comply with CCPA? Will you take any actions?](https://www.reddit.com/r/androiddev/comments/emnne1/what_actions_have_you_taken_to_comply_with_ccpa/)
+- url: https://www.reddit.com/r/androiddev/comments/emnne1/what_actions_have_you_taken_to_comply_with_ccpa/
 ---
 
-## [8][What the hell do I have to do to my notifications for my wearOS app to be accepted as a standalone app?!?!](https://www.reddit.com/r/androiddev/comments/em750k/what_the_hell_do_i_have_to_do_to_my_notifications/)
-- url: https://www.reddit.com/r/androiddev/comments/em750k/what_the_hell_do_i_have_to_do_to_my_notifications/
+## [8][Flutter and Android docker images with support for emulators, VNC, Fastlane and more.](https://www.reddit.com/r/androiddev/comments/emqjyi/flutter_and_android_docker_images_with_support/)
+- url: https://www.reddit.com/r/androiddev/comments/emqjyi/flutter_and_android_docker_images_with_support/
 ---
-some context, I have a simple app that fetches a list of activities for the current day from a server and notifies you when they're about to start.
+Hi,  
+I have published docker images for android and flutter.  
 
-on said notifications I have actions to both open the app to view activity details and to either start or stop activities as appropriate. it's set as quick actions and are displaying properly on every watch that I can get my hands on.
 
-Yet I get a "your notification does not provide enhanced functions to Wear OS users." message when submiting my app for review
+The docker images contains sdks and also tools that will help you:  
+\* automate code review, code style review, execute tests and generate report and also html report.  
+\* docker images also has support for android emulators even on device without KVM.  
+\* support for VNC, FTP, QR code generation and more.
 
-I EVEN REMOVED ALL NOTIFICATIONS FROM MY APP AND GOT THE EXACT SAME FUCKING MESSAGE (making it just a portal to view todays activities)!!!! WHAT THE FLYING FUCK DO YOU MEAN MY NOTIFICATIONS DON'T PROVIDE ENHANCED FUNCTIONS, I REMOVED ALL NOTIFICATIONS FROM THE FUCKING APP!!!!! AAAAAAAAARGH
-## [9][LeakCanary leak deobfuscation feature explained](https://www.reddit.com/r/androiddev/comments/em912f/leakcanary_leak_deobfuscation_feature_explained/)
-- url: https://polidea.com/blog/leakcanary-deobfuscation-feature-explained/
+Android images: [https://hub.docker.com/repository/docker/bitsydarel/android](https://hub.docker.com/repository/docker/bitsydarel/android)  
+Flutter images: [https://hub.docker.com/repository/docker/bitsydarel/flutter-ci](https://hub.docker.com/repository/docker/bitsydarel/flutter-ci)  
+
+
+Docker allow you to build and run software without compromizing your host computer.
+## [9][Converting PyTorch float tensor to Android RGBA Bitmap with Kotlin](https://www.reddit.com/r/androiddev/comments/empazq/converting_pytorch_float_tensor_to_android_rgba/)
+- url: https://medium.com/@philipplies/converting-pytorch-float-tensor-to-android-rgba-bitmap-with-kotlin-ffd4602a16b6?source=friends_link&amp;sk=685a9b193132d2db33110e6dc4933d90
 ---
 
-## [10][Review my MVI study repo please](https://www.reddit.com/r/androiddev/comments/em903j/review_my_mvi_study_repo_please/)
-- url: https://www.reddit.com/r/androiddev/comments/em903j/review_my_mvi_study_repo_please/
+## [10][Scratch That Itch - An intro to scratch files.](https://www.reddit.com/r/androiddev/comments/em9ywc/scratch_that_itch_an_intro_to_scratch_files/)
+- url: https://zarah.dev/2019/11/21/scratch-files.html
 ---
-Hey fellow android devs. I started looking at MVI recently with talks such as [this](https://www.youtube.com/watch?v=0IKHxjkgop4) or [this](https://www.youtube.com/watch?v=Ls0uKLqNFz4&amp;list=PLsAfcuwrBov7NJOcGxBN7FU0SQdid6L0j). After I digested the information I tried creating a small sample app with the MVI architecture and the result is this [repo](https://github.com/acristescu/mvitest). All the app does is show a paginated list of github repos and loads the next page when the user reaches the bottom of the list.
 
-Could I please ask members of the community that have more experience with MVI for some constructive criticism on this implementation?
-## [11][Accessibility text to speach.](https://www.reddit.com/r/androiddev/comments/em8m8v/accessibility_text_to_speach/)
-- url: https://www.reddit.com/r/androiddev/comments/em8m8v/accessibility_text_to_speach/
+## [11][Google Play remove my app because app upload user data to another app what I never use it in my code? Why?](https://www.reddit.com/r/androiddev/comments/emkjep/google_play_remove_my_app_because_app_upload_user/)
+- url: https://www.reddit.com/r/androiddev/comments/emkjep/google_play_remove_my_app_because_app_upload_user/
 ---
-I'm improving accessibility(TalkBack) on one of the screens and noticed that acronyms like API or HTML are not read like they should only on beloved Samsung device, others seems not to have issue with them. 
-
-Any idea how this could be handled without additional string as a content description?
-This would require to have additional string that have to be translated in multiple supported languages.
-## [12][Lightweight PDF Library ?](https://www.reddit.com/r/androiddev/comments/em85ca/lightweight_pdf_library/)
-- url: https://www.reddit.com/r/androiddev/comments/em85ca/lightweight_pdf_library/
+Google Play remove my app because app upload user data to https://apps.applozic.com without a prominent disclosure. but I never do that. And there is noy any code about https://apps.applozic.com. Why google play do this decision?  do anyone know this app(https://apps.applozic.com)?
+## [12][Firebase specific question for importing a String](https://www.reddit.com/r/androiddev/comments/emnwd9/firebase_specific_question_for_importing_a_string/)
+- url: /r/Firebase/comments/emhhym/android_coding_question_reading_from_firebase/
 ---
-Does anyone have any recommendations for a lightweight/low-size PDF viewer library to display PDF documents in-app ?
 
-I've recently discovered my project's PDF library has a native dependency that's minimum 5mb per ABI (I use app bundles so it's not compounded for the total size, but still)

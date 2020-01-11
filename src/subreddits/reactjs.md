@@ -80,91 +80,211 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Wes Bos' uses.tech - A list of /uses pages detailing developer setups, gear, software and configs - Gatsby + Netlify site](https://www.reddit.com/r/reactjs/comments/emg036/wes_bos_usestech_a_list_of_uses_pages_detailing/)
-- url: https://github.com/wesbos/awesome-uses/tree/website
+## [3][We have a new subreddit snoo thanks to /u/fjellet!](https://www.reddit.com/r/reactjs/comments/ems5l0/we_have_a_new_subreddit_snoo_thanks_to_ufjellet/)
+- url: http://share.pickaxe.nl/react-snoo.png
 ---
 
-## [4][📣 Push out beautiful website announcements in React 📣](https://www.reddit.com/r/reactjs/comments/emq0bx/push_out_beautiful_website_announcements_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/emq0bx/push_out_beautiful_website_announcements_in_react/
----
-I made a small component to push out simple components on a website. It's completely open source and I would love to get some feedback on the project or code. You can find the project here:
-
- [https://github.com/kristofferandreasen/react-announcement](https://github.com/kristofferandreasen/react-announcement)
-## [5][I built a web analytics app using React.](https://www.reddit.com/r/reactjs/comments/emkzwq/i_built_a_web_analytics_app_using_react/)
-- url: https://www.reddit.com/r/reactjs/comments/emkzwq/i_built_a_web_analytics_app_using_react/
----
-It was written 100% using Javascript. Pure React in frontend. NodeJS in backend.
-
-[Timelin9](https://timelin9.com)
-
-https://reddit.com/link/emkzwq/video/dz9ww87tcv941/player
-## [6][React.FC function](https://www.reddit.com/r/reactjs/comments/emppiu/reactfc_function/)
-- url: https://www.reddit.com/r/reactjs/comments/emppiu/reactfc_function/
----
-Howdy folks, I'm learning React and added this to be able to create React Components from the CLI.  
-[https://www.npmjs.com/package/generate-react-cli](https://www.npmjs.com/package/generate-react-cli)
-
-It added typescript and made the tsx components really neat looking.  
-[https://pastebin.com/yESLsesG](https://pastebin.com/yESLsesG)   
-Where do I add functions?   
-All google searches (that I've found) just return how to create the .FC component, but none come up with create a function.  
-
-
-Sorry for the newbie question, but it's driving me mad.
-## [7][What are your favorite quality UI packages in React ecosystem? - Dan Abramov on Twitter](https://www.reddit.com/r/reactjs/comments/emi6ln/what_are_your_favorite_quality_ui_packages_in/)
-- url: https://twitter.com/dan_abramov/status/1215378405308469253?s=20
+## [4][Build a CRUD Application with React and Apollo GraphQL - CodeSource.io](https://www.reddit.com/r/reactjs/comments/en3xz7/build_a_crud_application_with_react_and_apollo/)
+- url: https://codesource.io/build-a-crud-application-with-react-and-apollo-graphql/
 ---
 
-## [8][How to get value from switch case in parent file and pass it to child component.](https://www.reddit.com/r/reactjs/comments/emqw8l/how_to_get_value_from_switch_case_in_parent_file/)
-- url: https://www.reddit.com/r/reactjs/comments/emqw8l/how_to_get_value_from_switch_case_in_parent_file/
----
-It is console logging the right array out all the time, but the point here is that it should be outputting that in the 'TodoList.tsx'. Not sure how to get that fixed in this case. Anyone who could help me with this. To see the bigger picture, please click on this link:
-
-[Link to Codesandbox](https://codesandbox.io/s/github/chiholiu/todo-react-typescript)
-
-I want the returned value from **App.js** currentFilter function pass it to **TodoListItem.js**, so it will update the map function constantly when user clicks on filter buttons.
-## [9][What are the best complete React courses that uses Hooks?](https://www.reddit.com/r/reactjs/comments/emqnxl/what_are_the_best_complete_react_courses_that/)
-- url: https://www.reddit.com/r/reactjs/comments/emqnxl/what_are_the_best_complete_react_courses_that/
----
-I have access to Pluralsight, Egghead and Frotendmasters. I know that there are some great courses there, but some were made before the new features from React, specially regarding functional components only. I would like to update my company's onboarding guides, and I think you guys might help.
-
-I would like a complete course (made for beginners) that doesn't show hooks like "a new thing", but instead uses it as a de-facto solution. Thank you in advance.
-## [10][New Next.js Documentation released: Improved Content, Multi-Page Structure, Sidebar Search, and API Reference](https://www.reddit.com/r/reactjs/comments/emaa3o/new_nextjs_documentation_released_improved/)
-- url: https://nextjs.org/blog/new-documentation
+## [5][React-three-fiber v4 released](https://www.reddit.com/r/reactjs/comments/en4z85/reactthreefiber_v4_released/)
+- url: https://twitter.com/0xca0a/status/1215617845314445312
 ---
 
-## [11][I built a Portfolio Gatsby theme](https://www.reddit.com/r/reactjs/comments/em001y/i_built_a_portfolio_gatsby_theme/)
-- url: https://v.redd.it/91j7re00rm941
+## [6][React Hooks Tutorial | Build Yelp in React #12 | starting to build Yelp's sub-navigation bar](https://www.reddit.com/r/reactjs/comments/en7g14/react_hooks_tutorial_build_yelp_in_react_12/)
+- url: https://www.youtube.com/watch?v=URaGI2AvKoQ
 ---
 
-## [12][How do you handle hundreds of API endpoints with cache invalidation and reload of data?](https://www.reddit.com/r/reactjs/comments/emnqr6/how_do_you_handle_hundreds_of_api_endpoints_with/)
-- url: https://www.reddit.com/r/reactjs/comments/emnqr6/how_do_you_handle_hundreds_of_api_endpoints_with/
+## [7][Best Practice when using Context?](https://www.reddit.com/r/reactjs/comments/en76h6/best_practice_when_using_context/)
+- url: https://www.reddit.com/r/reactjs/comments/en76h6/best_practice_when_using_context/
 ---
-Hi!  
+Following is my sample code when using context
+
+&amp;#x200B;
+
+I have created a class called createDataContext which has following code 
+
+&amp;#x200B;
+
+`import React, { useReducer } from "react";`  
+`export default (reducer, actions, defaultValue) =&gt; {`  
+ `const Context = React.createContext();`  
+ `const Provider = ({ children }) =&gt; {`  
+ `const [state, dispatch] = useReducer(reducer, defaultValue);`  
+ `const boundActions = {};`  
+ `for (let key in actions) {`  
+ `boundActions[key] = actions[key](dispatch);`  
+`}`  
+ `return (`  
+ `&lt;Context.Provider value={{ state, ...boundActions }}&gt;`  
+ `{children}`  
+ `&lt;/Context.Provider&gt;`  
+`);`  
+  `};`  
+ `return { Context: Context, Provider: Provider };`  
+`};`  
 
 
-I have a general question about how people usually handle API Endpoint management for their react app. At work now we have a MongoDB with about 25 different models where each model has about 5-8 different endpoints for various things.  
+Following is the code for one of my context 
+
+&amp;#x200B;
+
+`const authReducer = (state, action) =&gt; {`  
+ `switch (action.type) {`  
+ `case "error":`  
+ `return {`  
+`...state,`  
+`...{ loading: false },`  
+`...{ errorMessage: action.payload }`  
+`};`  
+ `case "customerMobileNumberLogIn":`  
+ `return {`  
+`...state,`  
+`...{ data: action.payload },`  
+`...{ loading: false },`  
+`...{ errorMessage: "" }`  
+`};`  
+   
+ `case "inProgress":`  
+ `return { ...state, ...{ loading: true }, ...{ errorMessage: "" } };`  
+ `default:`  
+ `return state;`  
+  `}`  
+`};`
+
+&amp;#x200B;
+
+`const customerMobileNumberLogin = dispatch =&gt; {`
+
+`..do api call with axios` 
+
+`}`
+
+&amp;#x200B;
+
+`export const { Provider, Context } = createDataContext(`  
+ `authReducer,`  
+  `{`  
+ `customerMobileNumberLogin`  
+  `},`  
+  `[]`  
+`);`  
 
 
-What we want to achieve:
+&amp;#x200B;
 
- \- We use TypeScript  
- \- Make requests to about 250 different endpoints  
- \- Cache all GET-request  
- \- Be able to clear cached request (should be able to clear per Model or ApiClient as we currently have, preferably by using Axios Cache Adapter)  
- \- Re-fetch the data that had its cache removed for those component that needs it.  
+I am using ReactRouter
 
+`import { Provider as AuthProvider } from "./context/AuthContext";`
 
-Currently we have a BaseApi class that have get, post, delete, put methods and then we have one class for each "Api group" or model in MongoDB. So for example we have a UserApiClient class that extends BaseApi and then have some methods like "activateUser" which makes a certain request and so on.  
+`ReactDOM.render(`  
+ `&lt;AuthProvider&gt;`  
+ `&lt;Router&gt;`  
+ `&lt;RootWithAuth /&gt;`  
+ `&lt;/Router&gt;`  
+ `&lt;/AuthProvider&gt;,`  
+ `document.getElementById("root")`  
+`);`  
+Now suppose I have many api calls and I decide to create separate context file for each api call, won't this approach slow down my app?The context api is causing the same problem as redux. I am not 100 percent sure if this is the right way of doing things but I followed Stephen Grider udemy React Native course for using this approach in Reactjs as well.
+## [8][Workflow using Storybook](https://www.reddit.com/r/reactjs/comments/en6nn1/workflow_using_storybook/)
+- url: https://www.reddit.com/r/reactjs/comments/en6nn1/workflow_using_storybook/
+---
+*I hope this is related enough to React.js, I don't know a sub where I can post text where it would fit better.*
 
+I'm working on a React project based on Next.js, using TypeScript and styled-components. I've just implemented Storybook as a system to test my UI components. I am also trying out some testing, but I'm really new to it and I know just the basics. 
 
-We have been using a lot of hooks in our new setup but it feels "hacky" to create all async functions in hooks and wrap them in useCallback (not all, but some) because the method needs to be in the dependency array of useEffect if we want some function to run on mount.  
+I would like to be able to automatically run all my tests when I commit to a feature branch, and if it's possible some sort of canceling/failing the commit if the tests fail. I would also like to prevent merging of a feature branch into master if the tests have failed.  I heard about CI systems but I don't know where to start. Should I use CircleCI? Where do I get started? Are there any developers willing to advise me on where to get started with this? I work on all my projects alone and I use GitHub. Thanks in advance!
+## [9][React Apollo Graphql Streaming Soundboard Application!](https://www.reddit.com/r/reactjs/comments/en4qoe/react_apollo_graphql_streaming_soundboard/)
+- url: https://www.reddit.com/r/reactjs/comments/en4qoe/react_apollo_graphql_streaming_soundboard/
+---
+Live streaming an app for my future twitch streams. The app is a soundboard that can be managed on the computer and then the sounds can get triggered from the phone. I want to make it so it can be added as a browser source in obs and streamlabs. Usually I get a few friends on here to help answer my questions and others. Come join in. help out or sit back and learn a bit. [https://twitch.tv/jamie\_337\_nichols](https://twitch.tv/jamie_337_nichols)
+## [10][A book-list app](https://www.reddit.com/r/reactjs/comments/en4ft9/a_booklist_app/)
+- url: https://www.reddit.com/r/reactjs/comments/en4ft9/a_booklist_app/
+---
+I want to make a book list app in react. It contains three inputs - Title, Author, ISBN and two buttons - Submit, Delete but I want to break this app into separate components and make communication among these components for managing data flow in these components, so how can I design this app in react components please give me suggestions I am beginner in react. Thank you.
+## [11][Can someone explain how this clock app works in written English?](https://www.reddit.com/r/reactjs/comments/en4bsk/can_someone_explain_how_this_clock_app_works_in/)
+- url: https://www.reddit.com/r/reactjs/comments/en4bsk/can_someone_explain_how_this_clock_app_works_in/
+---
+Clock found here: [http://demo1.downloader.tech/](http://demo1.downloader.tech/) 
 
+This clock app is really impressive to me, like, it's beautiful. I'd like to know how it works.
 
-Then if i do a UserApiClient.clearCache() I want to maybe reload some data from the API in say BlogPostClient and if any component uses BlogPostClient.get() it should automatically make that fetch and update that components state.  
+The code for the app can be found here:  [https://www.golangprograms.com/react-js-projects-for-beginners/react-js-compass-clock.html](https://www.golangprograms.com/react-js-projects-for-beginners/react-js-compass-clock.html)
 
+It's only 125 lines of React code and 115 lines of CSS. I don't know how to read all of it though. Can someone explain? It looks pretty complicated so maybe explaining in written English is too big of a challenge...
 
-I have tried to find some projects on github or anywhere but it is hard to find a large project with this structure.   
+I understand almost all of the individual lines of code but I don't get how it all comes together. The presence of the $ symbol in the code also confuses me -- I don't know what it does.
 
+I also see this line as being particularly important yet hard to understand: 
 
-Does anyone have some tips or guidance for me? Any help is appreciated
+    array = length =&gt; Array.from({length}).map((v, k) =&gt; k).map(x=&gt;x+1);
+## [12][Uploading DICOM (dcm) files from React App to django server](https://www.reddit.com/r/reactjs/comments/en37bo/uploading_dicom_dcm_files_from_react_app_to/)
+- url: https://www.reddit.com/r/reactjs/comments/en37bo/uploading_dicom_dcm_files_from_react_app_to/
+---
+Hi there,
+
+I need help with uploading a dataset of dicom files from my React App to a Django server.
+
+The hierarchy of the files are as follows:
+
+&gt;main/  
+&gt;  
+&gt;title/setOne/view  
+&gt;  
+&gt;1.dcm  
+2.dcm  
+&gt;  
+&gt;title/setTwo/view  
+&gt;  
+&gt;1.dcm  
+2.dcm
+
+&amp;#x200B;
+
+So the use case is that the user is going to upload the "main" directory and a script is supposed to generate the final list of objects to be posted to the server.
+
+Example of request needed to be sent to server:
+
+&gt;Array of objects  
+&gt;  
+&gt;The objects contain name of set and an array of files.  
+&gt;  
+&gt;`[`  
+&gt;  
+&gt;`{`  
+&gt;  
+&gt;`"name": setOne,`  
+&gt;  
+&gt;`"scans": [`  
+&gt;  
+&gt;`{"scan_image": 1.dcm},`  
+&gt;  
+&gt;`{"scan_image": 2.dcm}`  
+&gt;  
+&gt;`]`  
+&gt;  
+&gt;`},`  
+&gt;  
+&gt;`{`  
+&gt;  
+&gt;`"name": setOne,`  
+&gt;  
+&gt;`"scans": [`  
+&gt;  
+&gt;`{"scan_image": 1.dcm},`  
+&gt;  
+&gt;`{"scan_image": 2.dcm}`  
+&gt;  
+&gt;`]`  
+&gt;  
+&gt;`}`  
+&gt;  
+&gt;`]`
+
+&amp;#x200B;
+
+The problem I am facing is that for some reason the file objects upon posting them to the server using an axios POST request are all null. I have been looking around so much for a solution to this but with no luck. Hope I find it here.
+
+The GitHub Repo: [https://github.com/omargaber/Lesion-Lab-UI](https://github.com/omargaber/Lesion-Lab-UI)  
+The file where all the action happens: [https://github.com/omargaber/Lesion-Lab-UI/blob/master/src/Sidebar.jsx](https://github.com/omargaber/Lesion-Lab-UI/blob/master/src/Sidebar.jsx)

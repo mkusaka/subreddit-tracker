@@ -29,57 +29,247 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
 Also check out [last week's thread](https://reddit.com/r/rust/comments/ehk18j/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 320](https://www.reddit.com/r/rust/comments/em9hct/this_week_in_rust_320/)
-- url: https://this-week-in-rust.org/blog/2020/01/07/this-week-in-rust-320/
+## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.40]](https://www.reddit.com/r/rust/comments/ecxd62/official_rrust_whos_hiring_thread_for_jobseekers/)
+- url: https://www.reddit.com/r/rust/comments/ecxd62/official_rrust_whos_hiring_thread_for_jobseekers/
+---
+Welcome once again to the official /r/rust Who's Hiring thread!
+
+Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/dvxw6u/official_rrust_whos_hiring_thread_for_jobseekers/).
+
+This thread will be periodically stickied to the top of /r/rust every week, for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+
+Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
+
+#### Rules for individuals:
+
+* Don't create top-level comments; those are for employers.
+* Feel free to reply to top-level comments with on-topic questions.
+* I will create a stickied top-level comment for individuals looking for work.
+* I will create an additional top-level comment for meta discussion.
+
+#### Rules for employers:
+
+* To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link below that comment in order to see them.
+* To make a top-level comment you must be hiring directly; no third-party recruiters.
+* One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
+* Proofread your comment after posting it and edit it if necessary to correct mistakes.
+* Please base your comment on the following template:
+
+COMPANY: *[Company name; please link to your company's website or careers page.]*
+
+TYPE: *[Full time, part time, internship, contract, etc.]*
+
+DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+
+LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+
+REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+
+VISA: *[Does your company sponsor visas?]*
+
+CONTACT: *[How can someone get in touch with you?]*
+## [3][Blog: Why Rust? I have a GC!](https://www.reddit.com/r/rust/comments/emyill/blog_why_rust_i_have_a_gc/)
+- url: https://llogiq.github.io/2020/01/10/rustvsgc.html
 ---
 
-## [3][Proof of Concept: Rust code in Unreal Engine](https://www.reddit.com/r/rust/comments/emp0su/proof_of_concept_rust_code_in_unreal_engine/)
+## [4][Best way to start learning rust.](https://www.reddit.com/r/rust/comments/en3wjg/best_way_to_start_learning_rust/)
+- url: https://www.reddit.com/r/rust/comments/en3wjg/best_way_to_start_learning_rust/
+---
+I know some basic stuff from c,c++, and shell scripting. Where should i start with learning rust, im willing to purchase a book or class if that is a good way to start.
+## [5][Here's a PR showing how easy it is to remove a dependency on proc-macro-hack in Rust 1.40](https://www.reddit.com/r/rust/comments/emwjs1/heres_a_pr_showing_how_easy_it_is_to_remove_a/)
+- url: https://github.com/RustPython/RustPython/pull/1669/files
+---
+
+## [6][Proof of Concept: Rust code in Unreal Engine](https://www.reddit.com/r/rust/comments/emp0su/proof_of_concept_rust_code_in_unreal_engine/)
 - url: https://ejmahler.github.io/rust_in_unreal/
 ---
 
-## [4][Way Cooler Post Mortem](https://www.reddit.com/r/rust/comments/emjwwp/way_cooler_post_mortem/)
-- url: http://way-cooler.org/blog/2020/01/09/way-cooler-post-mortem.html
+## [7][Why does adding more threads only give about a 36% speedup?](https://www.reddit.com/r/rust/comments/en1slw/why_does_adding_more_threads_only_give_about_a_36/)
+- url: https://www.reddit.com/r/rust/comments/en1slw/why_does_adding_more_threads_only_give_about_a_36/
+---
+Full code is available as (short) gists; some of the cruft is to make sure LLVM doesn't optimize the whole example away. Note the timings really only capture the main loop, not the allocations, etc.:
+
+Serial: [https://gist.github.com/rodya-mirov/bb289d58f850cf42dc96e3b058ef024c](https://gist.github.com/rodya-mirov/bb289d58f850cf42dc96e3b058ef024c)
+
+Parallel: [https://gist.github.com/rodya-mirov/2a33917371fc88a57171f5c4113d1da7](https://gist.github.com/rodya-mirov/2a33917371fc88a57171f5c4113d1da7)
+
+&amp;#x200B;
+
+Basically the idea is you make a long vector (100 million f64s) and make a new vector to hold it (zeroed out to eliminate resizing noise) and \`out\[i\] = x\[i\] + x\[i\]\`.
+
+The serial version is just a simple loop, and the timing is 180 ms (not including allocation time).
+
+The parallel version uses a raw mut pointer; it divides it into chunks that aren't too small (65,536 elements), shared between rayon threads (wrapped in an unsafe Sync/Send struct), (unsafe) recast into a mut slice, and then just loop through the chunk and do \`out\[i\] = x\[i\] + x\[i\]\` in there.
+
+With one thread the parallel version also runs in 180ms, so the pointer / casting isn't costing anything relevant. With two threads, it runs in about 130 ms, and with three or more threads it takes about 115 ms.
+
+However since this is clear CPU bound I would expect the speedup to be completely linear in the number of threads, at least until we get to the number of cores (I have 4). In particular I would expect 2 threads to get 90 ms, 3 threads to get 60 ms, and 4+ to cap out around 45 ms.
+
+&amp;#x200B;
+
+Obviously I'm not getting it, and I'm pretty disappointed. What gives? Is it too much data and I'm maxing out the bus traffic or something? Is there a way to "unlock" my multiple cores?
+## [8][withoutboats doing a stream about Pin next Weds the 15th, 16:00 UTC](https://www.reddit.com/r/rust/comments/emrf7h/withoutboats_doing_a_stream_about_pin_next_weds/)
+- url: https://twitter.com/withoutboats/status/1215626280919621635
 ---
 
-## [5][Towards a Rust foundation](https://www.reddit.com/r/rust/comments/emd0cn/towards_a_rust_foundation/)
-- url: http://smallcultfollowing.com/babysteps/blog/2020/01/09/towards-a-rust-foundation/
+## [9][sha2::sha256 output variable seems to be a not valid decimal value](https://www.reddit.com/r/rust/comments/en7fd3/sha2sha256_output_variable_seems_to_be_a_not/)
+- url: https://www.reddit.com/r/rust/comments/en7fd3/sha2sha256_output_variable_seems_to_be_a_not/
+---
+I am working on a Rust function that will hash a given string, send it using a UdpSocket to a python server. The server should create a file with the hash as a name.
+
+This is my hashing part:
+
+    let mut hasher: Sha256 = Digest::new();		
+    hasher.input([&amp;counter.to_ne_bytes()[..], filename.as_bytes()].concat());		
+    let output = hasher.result();		
+    println!("Output: {:?}", &amp;output[..]);
+
+The printed value is:
+
+`Output: [19, 5, 75, 127, 209, 185, 93, 164, 135, 194, 21, 31, 22, 219, 44, 203, 197, 102, 137, 151, 198, 183, 249, 8, 177, 27, 141, 229, 10, 107, 226, 62]`
+
+From my understaning the output value is a hexadecimal array. Since the value the server gets is:
+
+`b'\x13\x05K\x7f\xd1\xb9]\xa4\x87\xc2\x15\x1f\x16\xdb,\xcb\xc5f\x89\x97\xc6\xb7\xf9\x08\xb1\x1b\x8d\xe5\nk\xe2&gt;'`
+
+which posses some non-valid hexadecimal values.
+
+Now if I try to print the hash as a string using
+
+    let mut hash = Vec::new();		
+    for value in &amp;output[..] {			
+    hash.push(value.to_owned());}		
+    println!("{:?}", String::from_utf8(hash).unwrap());
+
+The print line will output an error:
+
+`thread '&lt;unnamed&gt;' panicked at 'called \`Result::unwrap()\` on an \`Err\` value: FromUtf8Error { bytes: \[19, 5, 75, 127, 209, 185, 93, 164, 135, 194, 21, 31, 22, 219, 44, 203, 197, 102, 137, 151, 198, 183, 249, 8, 177, 27, 141, 229, 10, 107, 226, 62\], error: Utf8Error { valid\_up\_to: 7, error\_len: Some(1) } }', src\\libcore\\result.rs:1192:5note: run with \`RUST\_BACKTRACE=1\` environment variable to display a backtrace.\`
+
+Now I am not sure I am not correctly hashing the values or if the actual sha2::sha256 function is broken.
+
+Is anyone able to please help me out?
+## [10][Announcing postgres-query 0.3.1: dynamic SQL queries and multi-mapping!](https://www.reddit.com/r/rust/comments/en7evt/announcing_postgresquery_031_dynamic_sql_queries/)
+- url: https://www.reddit.com/r/rust/comments/en7evt/announcing_postgresquery_031_dynamic_sql_queries/
+---
+Since the [previous announcement](https://www.reddit.com/r/rust/comments/ej3thz/announcing_postgresquery_write_and_execute_sql/?utm_source=share&amp;utm_medium=web2x) last week I have been studying for exams on and off while working on the next version of [postgres-query](https://github.com/nolanderc/rust-postgres-query). I am very thankful of the feedback in the last post, some of which inspired the two major features in this release: dynamic queries and multi-mapping (see the README and documentation for details).
+
+For someone who has not previously done any extensive library development, I had some trouble nailing down an API for both of these features. The main issue regarded dynamic queries and parameter bindings. I experimented with having a very basic DSL built around small fragments of queries. This turned out to be a pain to achieve with low run-time overhead (a goal of this crate) due to an explosion in memory allocations.
+
+In the end, simply using strings was the way to go.  There already exists tools for working with strings efficiently, which reduces the scope of this crate, and it turned out to be much faster, at the expense of some compile-time verification of parameter bindings.
+
+As always, all and any feedback is welcome!
+## [11][Rust mail client lightning talk with cliffhanger](https://www.reddit.com/r/rust/comments/emx6j0/rust_mail_client_lightning_talk_with_cliffhanger/)
+- url: https://www.youtube.com/watch?v=-Om6NHyqAeU
 ---
 
-## [6][How Arc works in Rust](https://www.reddit.com/r/rust/comments/emosl0/how_arc_works_in_rust/)
-- url: https://link.medium.com/mU0aRn9d82
+## [12][CGAL wrapper in Rust?](https://www.reddit.com/r/rust/comments/emzvb4/cgal_wrapper_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/emzvb4/cgal_wrapper_in_rust/
 ---
+**TL;DR.** Requesting comments on the idea of creating a
+full-fledged wrapper to [CGAL](//www.cgal.org/).
 
-## [7][The panic messages now pointing to the location where they were called, rather than core's internals](https://www.reddit.com/r/rust/comments/em7gav/the_panic_messages_now_pointing_to_the_location/)
-- url: https://github.com/rust-lang/rust/pull/67887
----
+## Motivation
 
-## [8][Why I like programming for #![no_std] in Rust (even without embedded)](https://www.reddit.com/r/rust/comments/emq98r/why_i_like_programming_for_no_std_in_rust_even/)
-- url: https://djugei.github.io/no-std-motivation/
----
+I've been toying with the idea of creating a CGAL wrapper
+in Rust. Just seeking thoughts from the larger community
+here on possible road-blocks in creating and maintaining
+such a wrapper.
 
-## [9][BLAKE3 - Evolution of BLAKE2](https://www.reddit.com/r/rust/comments/emf15c/blake3_evolution_of_blake2/)
-- url: https://github.com/BLAKE3-team/BLAKE3-specs
----
+- **Why bindings?** [CGAL](//www.cgal.org/) is a fairly
+  comprehensive collection of comp. geom. algos exposed as a
+  C++ library.  To quote their webpage:
 
-## [10][The Library team is moving from IRC to Zulip - announcements](https://www.reddit.com/r/rust/comments/emig2y/the_library_team_is_moving_from_irc_to_zulip/)
-- url: https://internals.rust-lang.org/t/the-library-team-is-moving-from-irc-to-zulip/11598
----
+  &gt; The library offers data structures and algorithms like
+  &gt; triangulations, Voronoi diagrams, Boolean operations on
+  &gt; polygons and polyhedra, point set processing,
+  &gt; arrangements of curves, surface and volume mesh
+  &gt; generation, geometry processing, alpha shapes, convex
+  &gt; hull algorithms, shape reconstruction, AABB and KD
+  &gt; trees...
 
-## [11][`enum_variant_type` -- proc macro derive to generate structs from enums and convert between them](https://www.reddit.com/r/rust/comments/emnjmm/enum_variant_type_proc_macro_derive_to_generate/)
-- url: https://users.rust-lang.org/t/enum-variant-type-proc-macro-derive-to-generate-structs-from-enums-and-convert-between-them/36737
----
+  Further, it is actively developed, and has accrued a lot
+  of insights in the course of its development.
+  Re-implementing such a collection definitely seems
+  wasteful, if not impossible.
 
-## [12][how mutex poisoning is detected in rust by mutex](https://www.reddit.com/r/rust/comments/eml4l8/how_mutex_poisoning_is_detected_in_rust_by_mutex/)
-- url: https://www.reddit.com/r/rust/comments/eml4l8/how_mutex_poisoning_is_detected_in_rust_by_mutex/
----
-    let mut num = m.lock().unwrap();
+- **Why Rust?** Rust's powerful type-system allows us to
+  modularize naturally, and focus on a specific task a hand.
+  IMHO, it is one of the best languages to create algo.
+  applications in.
 
-&gt;The call to lock would fail if another thread holding the lock panicked. In that case, no one would ever be able to get the lock, so we’ve chosen to unwrap and have this thread panic if we’re in that situation.
+Access to all of CGAL's packages seems quite empowering to
+anyone trying to create comp. geom. application. My own
+interests are in a small subset of CGAL, but the thought of
+a full-fledged bindings library seems to be worthy of a
+discussion, to say the least.
 
-However, if another thread holding the mutex guard panics, then objects in that thread should be dropped. **Which should then release the mutex guard**. Then mutex implementation enters a 'poisoned' trait. 
+## State of Rust Ecosystem
 
-Does this mean there is someway to detect drop is being called as a result of a panic? 
+I'm unaware of a comprehensive CGAL like alternative in
+Rust. Listing what I have found in the rust eco-system;
+needless to say, this list is by no means exhaustive.
 
- [https://doc.rust-lang.org/std/sync/struct.MutexGuard.html](https://doc.rust-lang.org/std/sync/struct.MutexGuard.html)  
+1. [cgal-sys](//github.com/nyorem/cgal-sys). This is in the
+   spirit of this discussion, but does not seem to be in
+   active development. Also, only a very few features of
+   CGAL are exported. I hope the author of the crate also
+   chimes in to this discussion, and shares their opinions.
 
-is this implemented in the  sys\_common::poison?
+2. [spade](//github.com/Stoeoef/spade). This is an
+   independent implementation of the (2-D and 3-D?) delauney
+   triangulation, and related algos such as interpolation
+   (Sibson, etc.) Again, and I hope the author agrees, not
+   as comprehensive as all of CGAL.
+
+3. [GDAL](//github.com/georust/gdal). Not very related, but
+   an example of another reasonably large bindings library.
+   We've made some (fairly minor) contributions, and
+   maintain a [fork](//github.com/AspecScire/gdal) that is
+   slightly more recent than above.
+
+4. [AeroRust](//www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/).
+   This library probably has a lot of application in
+   Aerospace, but I'm not too familiar with the field, and
+   hence am not sure. Hope, members from the WG have some
+   insights on this. Writing this here, but also happy to
+   cross-post there if it makes sense.
+
+## Goals
+
+To set a tone for discussion: the end goal I imagine is a
+full-fledged wrapper to access (almost) all the features of
+CGAL. In particular, it should be reasonably simple to
+keep-up with updates to CGAL, assuming CGAL itself doesn't
+diverge too much from how it is at present.
+
+### Possible issues
+
+1. _CGAL is a C++ library_. To my understanding, the
+   [bindgen](//rust-lang.github.io/rust-bindgen/cpp.html) is
+   not ideal to handle many features of C++.
+
+1. _CGAL is header-only_. I'm not entirely sure if this is
+   good or bad. This probably means we should design
+   cargo-features to allow the user to selectively compile
+   only a subset they wish to use as otherwise the compiles
+   times might be prohibitive.
+
+1. _Keeping updated with mainstream_. CGAL is reasonably
+   actively developed. The SWIG bindings of CGAL seems to be
+   up-to-date with CGAL, but unfortunately (SWIG) does not
+   support Rust yet. I do not know if it is easier to
+   develop Rust support for SWIG or the goal here. Would
+   like to understand the feasibility of keeping the wrapper
+   in sync with the main repo.
+
+Overall, I hope to get insights on developing a wrapper as
+envisioned. Would be happy to implement / contribute if it
+is a reasonable effort.
+
+While not the best outcome, I'd still be happy to learn
+about unfortunate hard road-blocks to building such a
+wrapper in Rust. May be the Rust core team finds it
+insightful in that case.
+
+Thanks in advance, and please do share your thoughts on
+this.

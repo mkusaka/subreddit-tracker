@@ -57,15 +57,19 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][CppCast: Clang Hacking](https://www.reddit.com/r/cpp/comments/emm4af/cppcast_clang_hacking/)
-- url: https://cppcast.com/saar-raz-clang-hacking/
+## [2][Qt5 C++ Full Course For Beginner - More Than 5 Hours Training Course On Building GUI Applications In C++ Using Qt5 GUI Framework](https://www.reddit.com/r/cpp/comments/emtvkq/qt5_c_full_course_for_beginner_more_than_5_hours/)
+- url: https://youtu.be/Et_bgnJ_Hhg
 ---
 
-## [3][Is visiting a C++ committee meeting a good idea if you're not a committee member, nor do you have any proposals?](https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/)
-- url: https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/
+## [3][The C++20 Synchronization Library - Bryce Adelstein Lelbach - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/ems6in/the_c20_synchronization_library_bryce_adelstein/)
+- url: https://www.youtube.com/watch?v=zoMZAV6FEbc
 ---
-Next month there will be a committee meeting in Prague, which is close enough for me to think about visiting. According to  [https://isocpp.org/std/meetings-and-participation](https://isocpp.org/std/meetings-and-participation), the meetings are open to the public. I am interested in learning how these events work and would also like to know what discussions around proposals look like. However I'm not sure it's worthwhile for an average Joe to visit events such as these. Could someone advise whether it's a good idea to ask for a few days off to visit a C++ committee meeting? Is it a good idea to visit for a day or two, or does one have to attend the whole event to gain anything from it?
-## [4][DrMock: open-source testing/mocking framework](https://www.reddit.com/r/cpp/comments/emqt37/drmock_opensource_testingmocking_framework/)
+
+## [4][CppCon 2019: Timur Doumler “C++20: The small things”](https://www.reddit.com/r/cpp/comments/emvacl/cppcon_2019_timur_doumler_c20_the_small_things/)
+- url: https://www.youtube.com/watch?v=Xb6u8BrfHjw
+---
+
+## [5][DrMock: open-source testing/mocking framework](https://www.reddit.com/r/cpp/comments/emqt37/drmock_opensource_testingmocking_framework/)
 - url: https://www.reddit.com/r/cpp/comments/emqt37/drmock_opensource_testingmocking_framework/
 ---
 https://github.com/DrCpp/DrMock
@@ -79,7 +83,15 @@ A guide to building DrMock, along with an extensive tutorial, sample projects an
 We'd appreciate feedback on code quality and usability, bugs reports, feature requests - whatever comes to mind! If you're using DrMock on any of your projects or wish to contribute, we'd be delighted to hear about it.
 
 Have a great day!
-## [5][Cheetah engine, creating a game engine for personal study](https://www.reddit.com/r/cpp/comments/emfq70/cheetah_engine_creating_a_game_engine_for/)
+## [6][CppCast: Clang Hacking](https://www.reddit.com/r/cpp/comments/emm4af/cppcast_clang_hacking/)
+- url: https://cppcast.com/saar-raz-clang-hacking/
+---
+
+## [7][Is visiting a C++ committee meeting a good idea if you're not a committee member, nor do you have any proposals?](https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/)
+- url: https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/
+---
+Next month there will be a committee meeting in Prague, which is close enough for me to think about visiting. According to  [https://isocpp.org/std/meetings-and-participation](https://isocpp.org/std/meetings-and-participation), the meetings are open to the public. I am interested in learning how these events work and would also like to know what discussions around proposals look like. However I'm not sure it's worthwhile for an average Joe to visit events such as these. Could someone advise whether it's a good idea to ask for a few days off to visit a C++ committee meeting? Is it a good idea to visit for a day or two, or does one have to attend the whole event to gain anything from it?
+## [8][Cheetah engine, creating a game engine for personal study](https://www.reddit.com/r/cpp/comments/emfq70/cheetah_engine_creating_a_game_engine_for/)
 - url: https://www.reddit.com/r/cpp/comments/emfq70/cheetah_engine_creating_a_game_engine_for/
 ---
 For the last few weeks I have thrown myself in the amazing world of c++ and graphics programming by starting to create a game engine. Using books, online tutorials and stackoverflow I finally did it! I made an engine able to create a most minimalistic 2d game capable of rendering awesome textures and using the the best sound there is, the sound of silence. 
@@ -103,7 +115,7 @@ For anyone interested in sources I used for information here a small list of the
 * stackoverflow for all my other questions
 
 Many thanks in advance for any advice you guys can give me!
-## [6][Constant global variable naming convention](https://www.reddit.com/r/cpp/comments/emobr9/constant_global_variable_naming_convention/)
+## [9][Constant global variable naming convention](https://www.reddit.com/r/cpp/comments/emobr9/constant_global_variable_naming_convention/)
 - url: https://www.reddit.com/r/cpp/comments/emobr9/constant_global_variable_naming_convention/
 ---
 Assume that you are using the "\_" suffix for member variables and lowerCamelCase for enums.
@@ -125,29 +137,11 @@ static constexpr size\_t myConstant\_gk = 42;  // how member variables would be 
 &amp;#x200B;
 
 Any alternative?
-## [7][The 2019.12 version of vcpkg is now available](https://www.reddit.com/r/cpp/comments/embpox/the_201912_version_of_vcpkg_is_now_available/)
+## [10][The 2019.12 version of vcpkg is now available](https://www.reddit.com/r/cpp/comments/embpox/the_201912_version_of_vcpkg_is_now_available/)
 - url: https://github.com/microsoft/vcpkg/releases/tag/2019.12
 ---
 
-## [8][Dynamic Class Member Function Reassignment](https://www.reddit.com/r/cpp/comments/em546u/dynamic_class_member_function_reassignment/)
+## [11][Dynamic Class Member Function Reassignment](https://www.reddit.com/r/cpp/comments/em546u/dynamic_class_member_function_reassignment/)
 - url: https://github.com/TheMaverickProgrammer/C-Python-Like-Class-Member-Decorators
----
-
-## [9][Im learning C++ and Im learning STL now. What should I do next after STL ?](https://www.reddit.com/r/cpp/comments/em3516/im_learning_c_and_im_learning_stl_now_what_should/)
-- url: https://www.reddit.com/r/cpp/comments/em3516/im_learning_c_and_im_learning_stl_now_what_should/
----
-Ive learned everything from Pointers to ploymorphism, streams, inheritance, smart pointers, operator overloading , OOP programming and now Im on a STL just getting into generic programming. Im learning online by myself, and I was wondering can I get a job with my knowledge of C++ now ? And how ? If not should I learn mooore C++ ? What do u recommend ?
- 
-Edit: I do practice on a daily basis. Itd be nice if I make friends with actual programmers here.
-## [10][Fun with variadic lambdas, fold expressions... another zip()](https://www.reddit.com/r/cpp/comments/em0twe/fun_with_variadic_lambdas_fold_expressions/)
-- url: https://www.reddit.com/r/cpp/comments/em0twe/fun_with_variadic_lambdas_fold_expressions/
----
-https://godbolt.org/z/6AJdhk
-
-So, I've been messing around with C++17's fold expressions, std::apply() and variadic lambdas for a small matrix expression template library I'm working on. I put together a nice implementation of Pythons zip() function to make range based for loops natural and have pulled it out into a gist. It supports all the STL containers (even std::vector&lt;bool&gt;). 
-
-Check it out, have I missed something: [github](https://gist.github.com/ConorWilliams/2dc0be178c0917617e475f9da27bf3c6)
-## [11][C++ Inliner Improvements](https://www.reddit.com/r/cpp/comments/eluo8d/c_inliner_improvements/)
-- url: https://devblogs.microsoft.com/cppblog/c-inliner-improvements-the-zipliner/
 ---
 

@@ -20,23 +20,74 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Dealing with values you don't know the shape of (from being undocumented)](https://www.reddit.com/r/typescript/comments/emqpks/dealing_with_values_you_dont_know_the_shape_of/)
-- url: https://www.reddit.com/r/typescript/comments/emqpks/dealing_with_values_you_dont_know_the_shape_of/
+## [2][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/typescript/comments/emxvdn/announcing_typescript_38_beta/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/
 ---
-Current situation is I'm developing a shopify app on Node/Koa.js. It returns a context object with some important details such as the store name and other things. 
 
-I could tell Typescript `ctx.session` is `any` to turn off type checking. But then what is the point of TS, and also it's good for me as a developer to actually learn the shape of what I'm resolving for clarity.
+## [3][Diagram of every possible TypeScript type](https://www.reddit.com/r/typescript/comments/emxi8j/diagram_of_every_possible_typescript_type/)
+- url: https://gist.github.com/laughinghan/31e02b3f3b79a4b1d58138beff1a2a89
+---
 
-Documentation on ctx.session is lacking:
+## [4][Collection of resources related to Typescript internals](https://www.reddit.com/r/typescript/comments/emrdkq/collection_of_resources_related_to_typescript/)
+- url: https://typescript.tools/
+---
 
-[https://github.com/koajs/session](https://github.com/koajs/session)
+## [5][How can I define a field in an interface that can be one of 2 slightly different values?](https://www.reddit.com/r/typescript/comments/emy5td/how_can_i_define_a_field_in_an_interface_that_can/)
+- url: https://www.reddit.com/r/typescript/comments/emy5td/how_can_i_define_a_field_in_an_interface_that_can/
+---
+Hello, I'm trying to define a field in an interface where values are slightly different. An example:
 
-[https://www.npmjs.com/package/@shopify/koa-shopify-auth](https://www.npmjs.com/package/@shopify/koa-shopify-auth)
+    export interface HelloWorld {
+      aField: firstType | secondType;
+      ...
+    }
+    
+    export type firstType = 'hello' | 'world';
+    export type secondType = 'hello' | 'another' | 'world';
 
-Faced with this situation how do you guys proceed? I am thinking I should just run a test to see what comes back, log it and write an interface based on that.
+I recently had to create \`firstType\` where I don't want its value to be a string value of "another". The definition of the 2 different types and use of a union was my attempt at getting this to work, but I get a Type error code TS2322. Example error msg:
 
-If this is a situation you guys would just mark as `any` I am open to that advice too.
-## [3][casting a variable from a type to a subtype](https://www.reddit.com/r/typescript/comments/emnzj9/casting_a_variable_from_a_type_to_a_subtype/)
+    Types of property 'aField' are incompatible.
+      Type '"hello" | "another" | "world"' is not assignable to type '"hello" | "world"'.
+        Type '"another"' is not assignable to type '"hello" | "world"'.
+
+If I were to just define the interface using type \`firstType\`, tests will pass, no error. But this is incorrect for me because this field can have a value of "another" in certain cases.
+
+Any help is appreciated! Thank you
+## [6][TS2339: Property 'ctxSession' does not exist on type 'OAuthStartOptions'.](https://www.reddit.com/r/typescript/comments/emteem/ts2339_property_ctxsession_does_not_exist_on_type/)
+- url: https://www.reddit.com/r/typescript/comments/emteem/ts2339_property_ctxsession_does_not_exist_on_type/
+---
+Been staring at this one for 20 minutes and I guess I must not fully understand TS inside classes. Anyone know what's causing it? Setting the property to 'any' I thought would allow it to be set to anything.
+
+    export default class OAuth {
+      protected keys: Keys;
+      protected req: Request;
+      protected res: Response;
+      
+      public ctxSession: any;
+      
+      constructor(req: Request, res: Response, keys: Keys) {
+        this.keys = keys;
+        this.req = req;
+        this.res = res;
+      }
+      
+      public authenticateThenCaptureContext() {
+        shopifyAuth({
+          prefix : "/shopify"
+          , apiKey : this.keys.SHOPIFY_API_KEY
+          , secret : this.keys.SHOPIFY_API_SECRET
+          , scopes : this.keys.SCOPES
+          , afterAuth(ctx: any): void {
+            this.ctxSession = ctx.session // title error
+          }
+        })
+      }
+## [7][Since most companies have united behind TS is possible that it will replace JS in the browsers in the future?](https://www.reddit.com/r/typescript/comments/emupty/since_most_companies_have_united_behind_ts_is/)
+- url: https://www.reddit.com/r/typescript/comments/emupty/since_most_companies_have_united_behind_ts_is/
+---
+Also since it's a superset of js
+## [8][casting a variable from a type to a subtype](https://www.reddit.com/r/typescript/comments/emnzj9/casting_a_variable_from_a_type_to_a_subtype/)
 - url: https://www.reddit.com/r/typescript/comments/emnzj9/casting_a_variable_from_a_type_to_a_subtype/
 ---
 Given some type and an extension of that type:
@@ -76,140 +127,150 @@ function fn2(item: Item) {
 ```
 
 The first way seems more convenient, explicit, and doesn't require an extra function. With the second way, even though the compiler knows that the item has been casted to a new type, a human reader must either infer by the checker-function name or see what the checker returns.
-## [4][Missing basic DOM types in TypeScript project](https://www.reddit.com/r/typescript/comments/em13kc/missing_basic_dom_types_in_typescript_project/)
-- url: https://www.reddit.com/r/typescript/comments/em13kc/missing_basic_dom_types_in_typescript_project/
+## [9][How to implement Hierarchical types](https://www.reddit.com/r/typescript/comments/emu4ox/how_to_implement_hierarchical_types/)
+- url: https://www.reddit.com/r/typescript/comments/emu4ox/how_to_implement_hierarchical_types/
 ---
-When running tests I'm seeing errors for basic browser DOM functions (`ReferenceError: btoa is not defined`), classes, and operations.
+I'd like to do this:
 
-```
-TS2569: Type 'Uint8Array' is not an array type or a string type. Use compiler option '--downlevelIteration' to allow iterating of iterators.
+    type Predicate&lt;T&gt; =
+         ['ANY', ...Array&lt;Predicate&lt;T&gt;&gt;]
+        | ['ALL', ...Array&lt;Predicate&lt;T&gt;&gt;]
+        | [keyof T, '=', number]
+        | [keyof T, '&gt;', number]
+        | [keyof T, '&gt;=', number]
+        | [keyof T, '&lt;', number]
+        | [keyof T, '&lt;=', number]
+        | [keyof T, '&lt;&gt;', number]
+    ;
 
-let base64String = btoa(String.fromCharCode(...new Uint8Array(buffer)));
-```
+tsc complains that Predicate circularly references itself
 
-I've tried setting my `tsconfig.json` to may [variations of the compilerOptions](https://www.typescriptlang.org/docs/handbook/compiler-options.html) but none of them seem to work.
+Oddly vscode correctly hints the creation of instances of Predicate&lt;T&gt;
 
-```
-{
-    "compilerOptions": {
-        "lib": [
-            "es2016",
-            "dom"
-        ]
-    }
-}
-or
-{
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "lib": ["es6", "dom"],
-    }
-}
-
-```
-
-What am I missing? Do I need a reference to `lib.dom.d.ts` somewhere?
-
-- https://github.com/basarat/typescript-book/blob/master/docs/types/lib.d.ts.md#lib-option
-- https://github.com/Microsoft/TypeScript/blob/master/lib/lib.dom.d.ts
-## [5][A form that maintains its state between pages. Feedback needed.](https://www.reddit.com/r/typescript/comments/eltcl2/a_form_that_maintains_its_state_between_pages/)
-- url: https://www.reddit.com/r/typescript/comments/eltcl2/a_form_that_maintains_its_state_between_pages/
+Is there some other way to do this?
+## [10][Dealing with values you don't know the shape of (from being undocumented)](https://www.reddit.com/r/typescript/comments/emqpks/dealing_with_values_you_dont_know_the_shape_of/)
+- url: https://www.reddit.com/r/typescript/comments/emqpks/dealing_with_values_you_dont_know_the_shape_of/
 ---
-I have been recently asked to implement a form with pagination, dynamical elements that would maintain its state.
+Current situation is I'm developing a shopify app on Node/Koa.js. It returns a context object with some important details such as the store name and other things. 
 
-I have some experience in the Front End field, but I definitely need to learn a lot. 
+I could tell Typescript `ctx.session` is `any` to turn off type checking. But then what is the point of TS, and also it's good for me as a developer to actually learn the shape of what I'm resolving for clarity.
 
-I would appreciate it if you could take a look at the code and let me know what you think.
+Documentation on ctx.session is lacking:
 
-https://github.com/shpotainna/passengers
-## [6][How do I get the intersection of generic types?](https://www.reddit.com/r/typescript/comments/elnme2/how_do_i_get_the_intersection_of_generic_types/)
-- url: https://www.reddit.com/r/typescript/comments/elnme2/how_do_i_get_the_intersection_of_generic_types/
+[https://github.com/koajs/session](https://github.com/koajs/session)
+
+[https://www.npmjs.com/package/@shopify/koa-shopify-auth](https://www.npmjs.com/package/@shopify/koa-shopify-auth)
+
+Faced with this situation how do you guys proceed? I am thinking I should just run a test to see what comes back, log it and write an interface based on that.
+
+If this is a situation you guys would just mark as `any` I am open to that advice too.
+## [11][[Request] Fairly new to TS, need help with a problem involving generics](https://www.reddit.com/r/typescript/comments/emrryl/request_fairly_new_to_ts_need_help_with_a_problem/)
+- url: https://www.reddit.com/r/typescript/comments/emrryl/request_fairly_new_to_ts_need_help_with_a_problem/
 ---
-Suppose I have:
+EDIT: If the formatting is messed up, here is a paste of JUST the code: [https://paste.ofcode.org/MqUSEq5cyyUgX9wHednJkm](https://paste.ofcode.org/MqUSEq5cyyUgX9wHednJkm)
 
-    type union = string | number;
-    type subset = union &amp; string; // subset = string;
+&amp;#x200B;
 
-I'd like to do something like:
+I am using the library easy-peasy for a project at work. Most of my requests follow a similar form (data, status, a thunk to call the api, and listeners to update status based on the thunk), so in js, I used a function to generate most of it. I am trying to convert this to typescript now, but I am having issues. My code looks like this (some additional properties omitted until I figure out my problem):
 
-    interface A&lt;T&gt; { }
-    type union = A&lt;string&gt; | A&lt;number&gt;;
-    type subset = union &amp; A&lt;string&gt;; // expect subset = A&lt;string&gt;
-
-The subset type in this case becomes `(A&lt;string&gt; &amp; A&lt;string&gt;) | (A&lt;string&gt; &amp; A&lt;number&gt;)`, which I don't think is what I want.
-
-Update: I solved the problem using Extract&lt;T, U&gt; and by defining a property on my interface with the generic type:
-
-    interface A&lt;T&gt; { _type: T };
-    type union = A&lt;string&gt; | A&lt;number&gt;;
-    type subset = Extract&lt;union, A&lt;string&gt;&gt;; // A&lt;string&gt; as expected
-
-It is a bit hacky - in my actual code I have a class, so I defined a private setter with that type and it seems to work. The actual use case is a much more complex type whose details don't belong here, but the above sums it up well.
-## [7][Should you use TypeScript if you know JavaScript well?](https://www.reddit.com/r/typescript/comments/eljud4/should_you_use_typescript_if_you_know_javascript/)
-- url: https://medium.com/@Charles_Stover/should-you-use-typescript-if-you-know-javascript-well-85042756e594
----
-
-## [8][Absolute path resolver for Typescript with Babel and Webpack](https://www.reddit.com/r/typescript/comments/ekxkoc/absolute_path_resolver_for_typescript_with_babel/)
-- url: https://github.com/turbothinh/ts-babel-webpack-boilerplate
----
-
-## [9][ReactFormHelper: Simple way to build forms in React](https://www.reddit.com/r/typescript/comments/el9zqo/reactformhelper_simple_way_to_build_forms_in_react/)
-- url: https://github.com/EvandroLG/ReactFormHelper
----
-
-## [10][How can i override a property type of a merged type?](https://www.reddit.com/r/typescript/comments/ekv0wd/how_can_i_override_a_property_type_of_a_merged/)
-- url: https://www.reddit.com/r/typescript/comments/ekv0wd/how_can_i_override_a_property_type_of_a_merged/
----
-Hej Typescript people. :)
-
-I need to override an existing type of a property. How can i achieve this?
-
-I've made an codesandbox example: [https://codesandbox.io/s/typescript-playground-export-u2203](https://codesandbox.io/s/typescript-playground-export-u2203)
-
-At the end, the test prop should accept strings and numbers.
-## [11][how to import TypeScript library main function and typings from same location](https://www.reddit.com/r/typescript/comments/ekm021/how_to_import_typescript_library_main_function/)
-- url: https://www.reddit.com/r/typescript/comments/ekm021/how_to_import_typescript_library_main_function/
----
-I am writing a TypeScript library + an example-app, each in separate codebases. I am having trouble getting the library's main function and its typings to be accessible from its import root; I want to be able to consume the library like this:
-
-    import myMainFunc, { InterfaceA, InterfaceB } from 'my-lib';
-
-However, I can only import the types from my-lib, not the main func. I have an entrypoint `index.ts` containing a default export, and a `types.ts` containing all relevant types:
-
-    src/
-      index.ts
-      types.ts
-
-My package.json has
-
-      "files": [
-        "/dist/"
-      ],
-      "main": "dist/index.js",
-      "typings": "dist/types.d.ts",
-
-and my tsconfig has
-
-    {
-      "compilerOptions": {
-        "lib": ["es6", "dom", "es2017"],
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": true,
-        "outDir": "./dist",
-        "strict": true
-      },
-      "include": ["src"],
-      "exclude": ["node_modules", "src/test/*"]
+    import { actionOn, ActionOn, Thunk, thunk, TargetResolver, ActionTypes } from 'easy-peasy';
+    import RequestState from 'utils/request_states';
+    import { StoreModel } from 'store/store_root';
+    import RequestResponses, {PickResponse, Stub} from 'interfaces/request_responses';
+    
+    
+     interface RequestModel&lt;T&gt;{
+        status: RequestState;
+        data: T | null;
+        error: null | Error;
+        api_request: Thunk&lt;RequestModel&lt;T&gt;, any, any, StoreModel, Promise&lt;Stub&gt;&gt;;
+        onStart: ActionOn&lt;RequestModel&lt;T&gt;, StoreModel&gt;
+      };
+    
+    
+    export function StandardRequestGenerator&lt;T&gt;(init: T, api_req: any): RequestModel&lt;T&gt; {
+    	return {
+    		status: RequestState.VOID,
+    		data: init,
+    		error: null,
+    		api_request: thunk(async (actions, payloads, helpers) =&gt; {
+                
+                return api_req;
+            }),
+    		onStart: actionOn(
+    			(actions) =&gt; {
+            return actions.api_request.startType;
+          }
+    			(state) =&gt; {
+    				state.status = RequestState.LOADING;
+    			}
+    		)
+    	};
     }
 
-The built dist directory looks like:
+The idea being that the generic would be the type of the data returned from the API request. I think that the issue is that  since the type is unknown, what easy-peasy uses to map state and actions doesn't know what to do with it. This appears to be backed up the fact that if I remove the generic and use something like number, it works fine. Anyways, I get the following error:
 
-    dist/
-      index.js
-      index.d.ts
-      types.js
-      types.d.ts
+    Property 'api_request' does not exist on type 'ActionMapper&lt;Pick&lt;{ [P in "error" | "api_request" | "onStart" | ("status" &amp; { 1: "data"; 0: never; }[Extends&lt;T | null, object&gt;]) | ("data" &amp; { 1: "data"; 0: never; }[Extends&lt;T | null, object&gt;]) | ("error" &amp; { ...; }[Extends&lt;...&gt;]) | ("api_request" &amp; { ...; }[Extends&lt;...&gt;]) | ("onStart" &amp; { ...; }[Extends&lt;...&gt;])]: Re...'.ts(233
 
-Note: the library is not yet published, so I use `yarn link` to pull it in as a dependency to the example app.
+VSCode shows the shape of actions as:
+
+    (parameter) actions: ActionMapper&lt;Pick&lt;{ [P in "error" | "api_request" | "onStart" | ("status" &amp; {
+        1: "data";
+        0: never;
+    }[Extends&lt;T | null, object&gt;]) | ("data" &amp; {
+        1: "data";
+        0: never;
+    }[Extends&lt;T | null, object&gt;]) | ("error" &amp; {
+        ...;
+    }[Extends&lt;...&gt;]) | ("api_request" &amp; {
+        ...;
+    }[Extends&lt;...&gt;]) | ("onStart" &amp; {
+        ...;
+    }[Extends&lt;...&gt;])]: RequestModel&lt;...&gt;[P]; }, FilterKeys&lt;...&gt;&gt;, "1"&gt;
+
+The following is easy-peasy's action mapper, which is unfortunately gibberish to me.
+
+    type ActionMapper&lt;ActionsModel extends object, Depth extends string&gt; = {
+      [P in keyof ActionsModel]: ActionsModel[P] extends Action&lt;any, any&gt;
+        ? ActionCreator&lt;ActionsModel[P]['payload']&gt;
+        : ActionsModel[P] extends Thunk&lt;any, any, any, any, any&gt;
+        ? ActionsModel[P]['payload'] extends void
+          ? ThunkCreator&lt;void, ActionsModel[P]['result']&gt;
+          : ThunkCreator&lt;ActionsModel[P]['payload'], ActionsModel[P]['result']&gt;
+        : ActionsModel[P] extends object
+        ? RecursiveActions&lt;
+            ActionsModel[P],
+            Depth extends '1'
+              ? '2'
+              : Depth extends '2'
+              ? '3'
+              : Depth extends '3'
+              ? '4'
+              : Depth extends '4'
+              ? '5'
+              : '6'
+          &gt;
+        : unknown;
+    };
+    
+    type RecursiveActions&lt;
+      Model extends object,
+      Depth extends string
+    &gt; = Depth extends '6'
+      ? Model
+      : ActionMapper&lt;
+          O.Filter&lt;
+            O.Select&lt;Model, object&gt;,
+            | Array&lt;any&gt;
+            | RegExp
+            | Date
+            | string
+            | Reducer&lt;any, any&gt;
+            | Computed&lt;any, any, any&gt;
+            | ActionOn&lt;any, any&gt;
+            | ThunkOn&lt;any, any, any&gt;
+          &gt;,
+          Depth
+        &gt;;
+
+I am completely stuck on what to do here to get around this and would really appreciate it if someone could help me out. Thanks.

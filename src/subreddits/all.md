@@ -229,3 +229,49 @@
 - url: https://www.youtube.com/watch?v=-Om6NHyqAeU
 ### [12][CGAL wrapper in Rust?](https://www.reddit.com/r/rust/comments/emzvb4/cgal_wrapper_in_rust/)
 - url: https://www.reddit.com/r/rust/comments/emzvb4/cgal_wrapper_in_rust/
+## aws
+### [1][Why do i have to create a NAT Gateway per AZ but only one Internet Gateway?](https://www.reddit.com/r/aws/comments/ejk8nm/why_do_i_have_to_create_a_nat_gateway_per_az_but/)
+- url: https://www.reddit.com/r/aws/comments/ejk8nm/why_do_i_have_to_create_a_nat_gateway_per_az_but/
+### [2][AWS EC2 free tier + WordPress + Cloudfront + AWS SSL Certificate + Namecheap domain = AAAAAH](https://www.reddit.com/r/aws/comments/ejp4md/aws_ec2_free_tier_wordpress_cloudfront_aws_ssl/)
+- url: https://www.reddit.com/r/aws/comments/ejp4md/aws_ec2_free_tier_wordpress_cloudfront_aws_ssl/
+### [3][Secrets management](https://www.reddit.com/r/aws/comments/ejpr8c/secrets_management/)
+- url: https://www.reddit.com/r/aws/comments/ejpr8c/secrets_management/
+### [4][ELI5: DynamoDB vs RDS](https://www.reddit.com/r/aws/comments/ejo1g4/eli5_dynamodb_vs_rds/)
+- url: https://www.reddit.com/r/aws/comments/ejo1g4/eli5_dynamodb_vs_rds/
+### [5][Nesting security groups?](https://www.reddit.com/r/aws/comments/ejr2lz/nesting_security_groups/)
+- url: https://www.reddit.com/r/aws/comments/ejr2lz/nesting_security_groups/
+### [6][How to manage roles when using SAML or OIDC sso?](https://www.reddit.com/r/aws/comments/ejnfv8/how_to_manage_roles_when_using_saml_or_oidc_sso/)
+- url: https://www.reddit.com/r/aws/comments/ejnfv8/how_to_manage_roles_when_using_saml_or_oidc_sso/
+### [7][codebuild buildspec.yml: is it possible to substitute an environment variable to describe an SSM parameter name? example inside](https://www.reddit.com/r/aws/comments/ejkkww/codebuild_buildspecyml_is_it_possible_to/)
+- url: https://www.reddit.com/r/aws/comments/ejkkww/codebuild_buildspecyml_is_it_possible_to/
+### [8][AWS Shield Vs CloudFlare](https://www.reddit.com/r/aws/comments/ejhewd/aws_shield_vs_cloudflare/)
+- url: https://www.reddit.com/r/aws/comments/ejhewd/aws_shield_vs_cloudflare/
+### [9][Trying the free aws and invoice..](https://www.reddit.com/r/aws/comments/ejkmbx/trying_the_free_aws_and_invoice/)
+- url: https://www.reddit.com/r/aws/comments/ejkmbx/trying_the_free_aws_and_invoice/
+### [10][AWS Client VPN Pricing - Disassociate to save money](https://www.reddit.com/r/aws/comments/ejkky9/aws_client_vpn_pricing_disassociate_to_save_money/)
+- url: https://www.reddit.com/r/aws/comments/ejkky9/aws_client_vpn_pricing_disassociate_to_save_money/
+## rails
+### [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/e5z9l0/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/e5z9l0/personal_projects_show_off_your_own_project_andor/
+### [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/eiidds/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/eiidds/personal_projects_show_off_your_own_project_andor/
+### [3][Migrate Your Rails App from Heroku to AWS Lambda](https://www.reddit.com/r/rails/comments/ejpqku/migrate_your_rails_app_from_heroku_to_aws_lambda/)
+- url: https://www.reddit.com/r/rails/comments/ejpqku/migrate_your_rails_app_from_heroku_to_aws_lambda/
+### [4][What is the best way? (Rails app, smartTVs and views)](https://www.reddit.com/r/rails/comments/ejip1v/what_is_the_best_way_rails_app_smarttvs_and_views/)
+- url: https://www.reddit.com/r/rails/comments/ejip1v/what_is_the_best_way_rails_app_smarttvs_and_views/
+### [5][Concurrent Ruby vs Parallel? Has anyone tried both?](https://www.reddit.com/r/rails/comments/ejlt9z/concurrent_ruby_vs_parallel_has_anyone_tried_both/)
+- url: https://www.reddit.com/r/rails/comments/ejlt9z/concurrent_ruby_vs_parallel_has_anyone_tried_both/
+### [6][How to organize project for web app that has different "portals"/main pages for different products?](https://www.reddit.com/r/rails/comments/ejlrh6/how_to_organize_project_for_web_app_that_has/)
+- url: https://www.reddit.com/r/rails/comments/ejlrh6/how_to_organize_project_for_web_app_that_has/
+### [7][How to upload Live Video in Rails?](https://www.reddit.com/r/rails/comments/ejhr30/how_to_upload_live_video_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/ejhr30/how_to_upload_live_video_in_rails/
+### [8][How to seed a Postgres Production Database on Heroku?](https://www.reddit.com/r/rails/comments/ejljxj/how_to_seed_a_postgres_production_database_on/)
+- url: https://www.reddit.com/r/rails/comments/ejljxj/how_to_seed_a_postgres_production_database_on/
+### [9][Any tools and tutorials on rails and activitypub?](https://www.reddit.com/r/rails/comments/ejfj4p/any_tools_and_tutorials_on_rails_and_activitypub/)
+- url: https://www.reddit.com/r/rails/comments/ejfj4p/any_tools_and_tutorials_on_rails_and_activitypub/
+### [10][Schedule tasks at Heroku?](https://www.reddit.com/r/rails/comments/ejeg6t/schedule_tasks_at_heroku/)
+- url: https://www.reddit.com/r/rails/comments/ejeg6t/schedule_tasks_at_heroku/
+### [11][Add to Cart functionality with multiple models involved](https://www.reddit.com/r/rails/comments/ejl9xn/add_to_cart_functionality_with_multiple_models/)
+- url: https://www.reddit.com/r/rails/comments/ejl9xn/add_to_cart_functionality_with_multiple_models/
+### [12][Speed up your RoR test suite](https://www.reddit.com/r/rails/comments/ejbnrg/speed_up_your_ror_test_suite/)
+- url: https://www.reddit.com/r/rails/comments/ejbnrg/speed_up_your_ror_test_suite/

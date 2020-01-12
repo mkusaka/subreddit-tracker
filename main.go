@@ -63,7 +63,7 @@ func MarkDownfilenameGenerator(subreddit string) string {
 }
 
 func FetchAllJSON() {
-	c := NewClient(10 * time.Second)
+	c := NewClient(30 * time.Second)
 	for _, subreddit := range Subreddits {
 		url := URLGenerator(subreddit)
 		log.Println(url + "\n")
@@ -72,7 +72,7 @@ func FetchAllJSON() {
 			log.Fatal(err)
 		}
 		// golang client has strict limitation from reddit. so we use custom header.
-		req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36")
+		req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36")
 		resp, err := c.client.Do(req)
 		if err != nil {
 			log.Fatal(err)

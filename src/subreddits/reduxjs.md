@@ -1,5 +1,9 @@
 # reduxjs
-## [1][Why should I use Redux instead of Cookies or LocalStorage](https://www.reddit.com/r/reduxjs/comments/en7eh7/why_should_i_use_redux_instead_of_cookies_or/)
+## [1][Implementing Undo/Redo Functionality in Redux using Immer](https://www.reddit.com/r/reduxjs/comments/en4siw/implementing_undoredo_functionality_in_redux/)
+- url: https://techinscribed.com/implementing-undo-redo-functionality-in-redux-using-immer/
+---
+
+## [2][Why should I use Redux instead of Cookies or LocalStorage](https://www.reddit.com/r/reduxjs/comments/en7eh7/why_should_i_use_redux_instead_of_cookies_or/)
 - url: https://www.reddit.com/r/reduxjs/comments/en7eh7/why_should_i_use_redux_instead_of_cookies_or/
 ---
 Hi folks. 
@@ -7,10 +11,6 @@ Hi folks.
 I have a question about the redux and that is: Why should I use Redux instead of Cookies of LocalStorage. 
 
 Is there any benefit to it?
-## [2][Implementing Undo/Redo Functionality in Redux using Immer](https://www.reddit.com/r/reduxjs/comments/en4siw/implementing_undoredo_functionality_in_redux/)
-- url: https://techinscribed.com/implementing-undo-redo-functionality-in-redux-using-immer/
----
-
 ## [3][Redux &amp; React Router](https://www.reddit.com/r/reduxjs/comments/ektc6g/redux_react_router/)
 - url: https://www.reddit.com/r/reduxjs/comments/ektc6g/redux_react_router/
 ---

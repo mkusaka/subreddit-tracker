@@ -1,108 +1,165 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/e5z9l0/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/e5z9l0/personal_projects_show_off_your_own_project_andor/
+## [1][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/em8qtp/gimme_gems_thursdays_found_an_awesome_new_gem/)
+- url: https://www.reddit.com/r/rails/comments/em8qtp/gimme_gems_thursdays_found_an_awesome_new_gem/
 ---
-In this thread you can showcase your personal pet project to other redditors.
+Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
 
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/eiidds/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/eiidds/personal_projects_show_off_your_own_project_andor/
+Please include a **description** and a **link** to the gem's homepage in your comment.
+## [2][webpacker and svg vue components](https://www.reddit.com/r/rails/comments/enxxer/webpacker_and_svg_vue_components/)
+- url: https://www.reddit.com/r/rails/comments/enxxer/webpacker_and_svg_vue_components/
 ---
-In this thread you can showcase your personal pet project to other redditors.
+Anyone have luck with vue, webpacker, and svg importing like components?
 
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+I'm getting this warning: Invalid Component definition /packs/media/images/icons/chevron-down-fa5a06b100afba790b995b0eb306a631.svg
 
-A suggested format to get you started:
+I've tried the following:
 
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
+1. removing \`- svg\` from extensions in \`webpacker.yml\`
+2. adding vue-svg-loader
+3. Adding a new loader in \`webpack/loaders/vue-svg-loader.js\`
 
- 
+&amp;#8203;
 
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Migrate Your Rails App from Heroku to AWS Lambda](https://www.reddit.com/r/rails/comments/ejpqku/migrate_your_rails_app_from_heroku_to_aws_lambda/)
-- url: https://www.reddit.com/r/rails/comments/ejpqku/migrate_your_rails_app_from_heroku_to_aws_lambda/
+    module.exports = {
+        test: /.svg$/, 
+        use: [{ loader: 'vue-svg-loader' }] 
+    }
+
+I added the loader like I'm suppose too in the \`webpack/environment.js\`
+
+&gt;const vueSvgLoader = require('./loaders/vue-svg-loader')environment.loaders.append('vue-svg-loader', vueSvgLoader)
+## [3][Offline mode for mobile app with rails backend](https://www.reddit.com/r/rails/comments/eo3nrm/offline_mode_for_mobile_app_with_rails_backend/)
+- url: https://www.reddit.com/r/rails/comments/eo3nrm/offline_mode_for_mobile_app_with_rails_backend/
 ---
-**Using The New ActiveRecord Aurora Serverless Adapter.** Are you someone with a pet Rails project running on a Free, Hobby, or Professional Heroku plan? Perhaps your company or freelance gig has a valuable, but infrequently used, Rails application? Such applications make great candidates for both AWS Lambda &amp; Aurora Serverless using our [Lamby](https://lamby.custominktech.com) gem.
+Hey there!
 
-Hoping other Rails developers find [this guide](https://technology.customink.com/blog/2020/01/03/migrate-your-rails-app-from-heroku-to-aws-lambda/) useful as a way to learn AWS Lambda and other tools within the AWS ecosystem.
-## [4][What is the best way? (Rails app, smartTVs and views)](https://www.reddit.com/r/rails/comments/ejip1v/what_is_the_best_way_rails_app_smarttvs_and_views/)
-- url: https://www.reddit.com/r/rails/comments/ejip1v/what_is_the_best_way_rails_app_smarttvs_and_views/
+I just started to work in a company developing a rails backend app with companion mobile app (ios). This app needs to have an offline mode available which goes down to downloading all the data from the backend when internet connection is available.
+
+How it currently handled is: scheduled worker produces one huge json object with all the needed data (no pagination, no split to rest resources, simply everything in one big json file) and the second worker generates zip files with all the images/assets.
+
+As it works relatively well, i have this irritating feeling it's not how it should be done and i'm pretty sure someone came up with something better than that. Producing such json is heavy and long, data is not updated live in cause of caching (it can't be simply based on caching and cache invalidation as producing that json takes up to 2 minutes, we can't handle that live during the request and cache it). Producing zip files with assets is also pretty bad as those zip files weights A LOT from mobile app perspective and downloading them takes tons of time. Overall, it all seems sketchy both from client and developer perspective.
+
+Is there anything i should read more about in that matter? Any alternative approaches or patterns? Thanks in advance for any clues!
+## [4][Update Redis in AWS Cloud9 IDE](https://www.reddit.com/r/rails/comments/enpzbl/update_redis_in_aws_cloud9_ide/)
+- url: https://www.reddit.com/r/rails/comments/enpzbl/update_redis_in_aws_cloud9_ide/
 ---
- I  am working in my project about smart TVs that will be placed in some  points of my city. Those points display content uploaded by my customers  to my app, which is made in Ruby on rails.
+`$ sudo yum install redis`
 
-The appoach I have used for the TVs, is a raspberry PI which load a  web view full screen on start. Problem is... if sometimes does not load  correctly, then the only option is a manual restart... that is not a  choice.
+\*already did this - this gives me:
 
-I have been considering to do a little client which just ask for the  JSONs and make like a little game UI with some visual libraries (PyGame,  Ruby2d..etc). The advantages would be full control and the posibility to  implement a so-called 'manual caché' that will help me to spend less  money on AWS.
+Package redis-3.2.12-2.el6.x86\_64 already installed and latest version
 
-The question is: How can I do that as easy as possible? Any suggestion? Any bad or good aspect I have not considered?
+When I run Sidekiq: You are connecting to Redis v3.2.12, Sidekiq requires Redis v4.0.0 or greater
 
-PD: I have tech background but not consider myself really a professional, but an ethernal hack-ish amateur.
+I can't figure out how to get this to update. $ bundle update/install shows Using redis 4.1.3 (as does the gemfile.lock)
 
-Thanks in advance :)
-## [5][Concurrent Ruby vs Parallel? Has anyone tried both?](https://www.reddit.com/r/rails/comments/ejlt9z/concurrent_ruby_vs_parallel_has_anyone_tried_both/)
-- url: https://www.reddit.com/r/rails/comments/ejlt9z/concurrent_ruby_vs_parallel_has_anyone_tried_both/
+I got it to update on heroku by eliminating redis-to-go and adding Heroku Redis add-on - still not right in development though.
+
+**\*Solved** \- I ended up restarting my workspace with Ubuntu instead of Amazon Linux - It had redis at Redis server v=4.0.9 which got me what I needed to run in both dev and production.
+## [5][Reality Series on Webdev](https://www.reddit.com/r/rails/comments/enzawz/reality_series_on_webdev/)
+- url: https://www.reddit.com/r/rails/comments/enzawz/reality_series_on_webdev/
 ---
-In our codebase, we're often fetching data sequentially. I come from a JS/Hack background, so I'm used to running things in parallel using async/await. 
+Hi
 
-I found Parallel ([https://github.com/grosser/parallel](https://github.com/grosser/parallel)) and Concurrent Ruby ([https://github.com/ruby-concurrency/concurrent-ruby](https://github.com/ruby-concurrency/concurrent-ruby)). They can both do what I want, but Parallel is simpler.
+I'm doing a video series on creating a web application using Ruby on Rails. It's not meant to be a tutorial but more of a reality TV show on how one would go about creating an application. Mostly Ruby with some javascript stuff.
 
-I'm not experienced with Ruby, so I can't evaluate these packages. Has anyone tried them? What are some pros and cons of each?
-## [6][How to organize project for web app that has different "portals"/main pages for different products?](https://www.reddit.com/r/rails/comments/ejlrh6/how_to_organize_project_for_web_app_that_has/)
-- url: https://www.reddit.com/r/rails/comments/ejlrh6/how_to_organize_project_for_web_app_that_has/
----
-I've already built a web app for a company that sells product A. Now, I've been hired again to expand on the same web app for product B. I envision each product to have its own main or home pages. The only tables I imagine being shared between both products is the User table. There are also some more general-purpose files and functions I imagine will be used by both "sub-apps".
+I was just curious if any of you know anything similar (webdev specifically) or anyone doing the same thing (coding each step of the way w/ mistakes). I'm looking for similar content where the mistakes are discovered on the fly and how one would go about fixing it.
 
-I'm a little lost into how to organize this project. I imagine my URL will look like "[websitename.com/productA](https://websitename.com/productA)/" and "[websitename.com/productB/](https://websitename.com/productB/)". My initial instinct to use "namespaces" which I unfortunately know nothing about and haven't used yet. I was wondering if any of you have done this before and could point me to some resources on how to go about making this decision.
+Playlist link here:
 
-Edit: For example I'm not sure whether to have my apps folder split into appA and appB, or whether I should split in specific folders like models, eg: app/models/productA and app/models/productB
-## [7][How to upload Live Video in Rails?](https://www.reddit.com/r/rails/comments/ejhr30/how_to_upload_live_video_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/ejhr30/how_to_upload_live_video_in_rails/
----
-I want to implement Live Streaming in Rails. Users can record video on their device and send it to other clients while recording. I've googled and found out about WebRTC which uses P2P protocol to achieve this. However I also want to save the video on the server using ActiveStorage. For that I want the recorder client to send a stream of the video to Rails back end as well. First question is how can I send a stream of video to back end while the client is recording it. Now I know how to store files in ActiveStorage if I have the entire data. So my second question is how to achieve storing a stream of data in ActiveStorage?
-## [8][How to seed a Postgres Production Database on Heroku?](https://www.reddit.com/r/rails/comments/ejljxj/how_to_seed_a_postgres_production_database_on/)
-- url: https://www.reddit.com/r/rails/comments/ejljxj/how_to_seed_a_postgres_production_database_on/
----
-I've deployed a rails app (rails v 5.2 and ruby 2.6) to heroku and have no problem migrating my database with commands like `heroku run rake db:migrate` but haven't found an efficient mechanism for seeding that database. Running `heroku run rake db:seed` doesn't seem to yield any results and all posts on stack overflow seem outdated. Is it possible to seed a production pg database on heroku?
-## [9][Any tools and tutorials on rails and activitypub?](https://www.reddit.com/r/rails/comments/ejfj4p/any_tools_and_tutorials_on_rails_and_activitypub/)
-- url: https://www.reddit.com/r/rails/comments/ejfj4p/any_tools_and_tutorials_on_rails_and_activitypub/
----
-I recently discovered [pump.io](https://pump.io), activitypub and the concept of "federated" networks. One of my friends invited me to the network mastodon (in case you don't know, there's also [ruby.social](https://ruby.social) instance for people like us, ruby lovers!) and I made an account. I realized mastodon itself is written in ruby. I'm curious, is there anyway to make our rails apps federated? I did a bit of search but I found some of those projects are discontinued. And if yes, is there any tutorials? 
+[https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n\_JD82](https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
 
-Thanks a lot.
-## [10][Schedule tasks at Heroku?](https://www.reddit.com/r/rails/comments/ejeg6t/schedule_tasks_at_heroku/)
-- url: https://www.reddit.com/r/rails/comments/ejeg6t/schedule_tasks_at_heroku/
+Videos ongoing. Trying to do a video once a week or if I have time. For this one, I'm trying to build a book keeping system.
+## [6][Build a Blog Title Generator - Ruby Tutorial](https://www.reddit.com/r/rails/comments/ennekd/build_a_blog_title_generator_ruby_tutorial/)
+- url: https://www.reddit.com/r/rails/comments/ennekd/build_a_blog_title_generator_ruby_tutorial/
 ---
-I'm using an [addon](https://devcenter.heroku.com/articles/scheduler) which lets you run a rake or rails command every 10 minutes, but I need to run it more often than that, like every 2 or 3 minutes.
+Hi guys, I normally post a lot of Ruby on Rails builds on YouTube and I've shared a couple here in the past. This time I've decided to build something in pure Ruby. It's very beginner friendly but might be useful to those who dived straight into Rails without spending a ton of time learning the Ruby language. In the video I build a Ruby file that generates viral blog title ideas and returns them back to the user, the titles are based on the keyword that the user inputs via Terminal.
 
-How can I do this?
-## [11][Add to Cart functionality with multiple models involved](https://www.reddit.com/r/rails/comments/ejl9xn/add_to_cart_functionality_with_multiple_models/)
-- url: https://www.reddit.com/r/rails/comments/ejl9xn/add_to_cart_functionality_with_multiple_models/
----
-I'm creating a functionality where users can add a product to their cart. However, this product can have 0 or many 'add ons' that the user selects before clicking 'add to cart'. The Model is user &gt; cart &gt; cart items &gt; product\_type\_x &gt; product\_type\_x\_add\_ons. I've done it like that, because later on there will be other product types which have different attributes and no add ons (more traditional products). In other words, if the user selects a product\_x and then 2 add ons, and clicks add to cart, I would like to first: check if the user has a cart, if not, create it. Add a record to cart\_items, add a record to cart\_product\_type\_x, add two records to cart\_product\_type\_x\_add\_ons. All of the cart\_ product tables link back to the product and add on tables. So I was wondering what is a good way to implement this, given people recommend putting logic out of controller. Validations will need to be performed of course to ensure users are not adding add ons that do not apply to that product ( through a direct request or view source 'hacking' of ids). So all saves must fail if one validation/save to db fails.
-## [12][Speed up your RoR test suite](https://www.reddit.com/r/rails/comments/ejbnrg/speed_up_your_ror_test_suite/)
-- url: https://www.reddit.com/r/rails/comments/ejbnrg/speed_up_your_ror_test_suite/
----
-https://medium.com/better-programming/cut-your-rspec-minitest-runtime-with-testprof-d19e55783050
-I published a piece on Better Programming today. It's about making your RoR tests run much much faster.
+This could be easily adapted and used within a Rails app. Hopefully it's useful to some of you guys.
 
-Would love to hear your thoughts
+[https://www.youtube.com/watch?v=BC7VaxGkihY](https://www.youtube.com/watch?v=BC7VaxGkihY)
+
+I'm planning to post some more Ruby content so would be open to suggestions about content ideas.
+## [7][Do I need to deny access if the nginx root path is the public folder?](https://www.reddit.com/r/rails/comments/enlcp9/do_i_need_to_deny_access_if_the_nginx_root_path/)
+- url: https://www.reddit.com/r/rails/comments/enlcp9/do_i_need_to_deny_access_if_the_nginx_root_path/
+---
+Do I need to configure anything to prevent people from accessing my ruby files in a rails app, if the nginx config root is the public folder? If I just set the root as the public folder path, there's no way the app source code can be accessed through nginx right?
+## [8][Production Server setup — Vultr Tutorial](https://www.reddit.com/r/rails/comments/entvbl/production_server_setup_vultr_tutorial/)
+- url: https://www.reddit.com/r/rails/comments/entvbl/production_server_setup_vultr_tutorial/
+---
+
+This series is a guide to deploy a Ruby on Rails application via Capistrano to a VPS (virtual private server):
+
+[Part 1 : Deploy a server](https://itnext.io/deploy-rails-with-capistrano-tutorial-2020-part-1-fa732e0db144?source=friends_link&amp;sk=80430970822b0dcdaa1a472804da6711)
+
+[Part 2 — Server setup](https://itnext.io/production-server-setup-part-2-vultr-tutorial-87a6e19f9a2f?source=friends_link&amp;sk=ac823106b2d3fd321ccfa4e4e2e3397c)
+## [9][How do you handle image modals?](https://www.reddit.com/r/rails/comments/enjr2i/how_do_you_handle_image_modals/)
+- url: https://www.reddit.com/r/rails/comments/enjr2i/how_do_you_handle_image_modals/
+---
+Hi rails community.
+
+&amp;#x200B;
+
+I am making a simple rails blog with the goal of it being a personal resume site. Posts in the blog are handled with a simple CRUD posts generator like so:
+
+&amp;#x200B;
+
+`&lt;div class="projectcolumn"&gt; &lt;% posts.each do |post| %&gt;`
+
+`&lt;div class="blurbox"&gt; &lt;h1&gt;&lt;%= post.title %&gt;&lt;/h1&gt; &lt;p&gt;&lt;%= post.content %&gt;&lt;/p&gt;`
+
+`&lt;div class="postimage" id="myImg"&gt; &lt;%= image_tag(post.image)%&gt; &lt;/div&gt; &lt;/div&gt; &lt;% end %&gt;`
+
+I use active storage to store images with each post. I had the annoying idea that I want images on the site to be image modals, as so:
+
+`&lt;script&gt;// create references to the modal...`
+
+`var modal = document.getElementById('myModal');`
+
+`var images = document.getElementsByClassName('postimage');`
+
+`var modalImg = document.getElementById("img01");`
+
+`var captionText = document.getElementById("caption");`
+
+`// Go through all of the images with our custom class`
+
+`for (var i = 0; i &lt; images.length; i++) {`
+
+`var img = images[i];`
+
+`img.onclick = function(evt)`
+
+`{ modal.style.display = "block"; modalImg.src = this.src; }`
+
+`}`
+
+`var span = document.getElementsByClassName("close")[0]; span.onclick = function() { modal.style.display = "none"; }`
+
+`&lt;/script&gt;`
+
+The modal appears, however the image contents returns undefined. However testing with "static" images linked by URL works as expected. I thought that by adding the javascript at the bottom of the html, it would load after the ruby code had executed. Is there a problem in this line of thinking?
+
+Is there a "rails way" of doing image modals that you prefer?
+## [10][Why does Active Record Migrations not set default value for created_at in the migration files?](https://www.reddit.com/r/rails/comments/enkkww/why_does_active_record_migrations_not_set_default/)
+- url: https://www.reddit.com/r/rails/comments/enkkww/why_does_active_record_migrations_not_set_default/
+---
+I just came across this issue about the \`insert\_all\` method throwing ActiveRecord::NotNullViolation on created\_at and wondered why it is not set in the migration files by default as I think this issue didn't come up if it had been set.
+
+The issue I'm referring: \[insert\_all throws \`ActiveRecord::NotNullViolation\` for timestamps\]([https://github.com/rails/rails/issues/35493](https://github.com/rails/rails/issues/35493))
+
+A merged PR to support RDB specific functions like NOW() as a column default value: \[Add \`:expression\` option support on the schema default\]([https://github.com/rails/rails/pull/20005](https://github.com/rails/rails/pull/20005))
+## [11][Web Based Accounting System One to Many UI Flow](https://www.reddit.com/r/rails/comments/enfhf5/web_based_accounting_system_one_to_many_ui_flow/)
+- url: https://www.reddit.com/r/rails/comments/enfhf5/web_based_accounting_system_one_to_many_ui_flow/
+---
+Hi
+
+I've been doing a video series on how I would go about in building a web based accounting system. It's not a tutorial type but more of a learning process in exploring how to improve as a developer. I got to the part with a typical one to many relationship (to mode the T-Account entries in accounting using models AccountingEntry has\_many JournalEntry). Looking for advice as to how to deal with modifying / managing a one to many instance in a single module. Thinking of several aspects such as managing the main model (AccountingEntry) and having submodules to add in the has\_many records via an API layer similar to the current one in the video (see link below). I know we can have them as separate modules / crud sets but was looking into a richer user experience instead of having to load multiple pages. Anyway, just looking for opinions on it. If the structure in the current video is helpful to others, hoping to look into improving it for people who'd encounter a similar usecase.
+
+Regards,
+
+Video here:
+
+[https://www.youtube.com/watch?v=ITrhSwV4Gqs&amp;feature=youtu.be](https://www.youtube.com/watch?v=ITrhSwV4Gqs&amp;feature=youtu.be)

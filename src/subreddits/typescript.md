@@ -20,257 +20,167 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/typescript/comments/emxvdn/announcing_typescript_38_beta/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/
+## [2][Algebraic Structures: Things I wish someone had explained about functional programming](https://www.reddit.com/r/typescript/comments/enw3fi/algebraic_structures_things_i_wish_someone_had/)
+- url: https://jrsinclair.com/articles/2019/algebraic-structures-what-i-wish-someone-had-explained-about-functional-programming/
 ---
 
-## [3][Diagram of every possible TypeScript type](https://www.reddit.com/r/typescript/comments/emxi8j/diagram_of_every_possible_typescript_type/)
-- url: https://gist.github.com/laughinghan/31e02b3f3b79a4b1d58138beff1a2a89
+## [3][A Web Server From Scratch in TypeScript and Node](https://www.reddit.com/r/typescript/comments/enss8w/a_web_server_from_scratch_in_typescript_and_node/)
+- url: https://medium.com/@wim.jongeneel1/a-web-server-from-scratch-in-typescript-854642a85402?source=friends_link&amp;sk=6ef0220009102d3c21245a4f2d3e63c5
 ---
 
-## [4][Collection of resources related to Typescript internals](https://www.reddit.com/r/typescript/comments/emrdkq/collection_of_resources_related_to_typescript/)
-- url: https://typescript.tools/
+## [4][TS2304 Can not find name "QuerySnapshot" (firebase-admin)](https://www.reddit.com/r/typescript/comments/eo416c/ts2304_can_not_find_name_querysnapshot/)
+- url: https://www.reddit.com/r/typescript/comments/eo416c/ts2304_can_not_find_name_querysnapshot/
 ---
+I'm importing firebase-admin and firebase-functions while working on some methods meant to interact with Firestore. 
 
-## [5][How can I define a field in an interface that can be one of 2 slightly different values?](https://www.reddit.com/r/typescript/comments/emy5td/how_can_i_define_a_field_in_an_interface_that_can/)
-- url: https://www.reddit.com/r/typescript/comments/emy5td/how_can_i_define_a_field_in_an_interface_that_can/
+The following code lints the title error however. I'm referencing this page when setting the data type of response: [https://firebase.google.com/docs/reference/js/firebase.firestore.CollectionReference.html#get](https://firebase.google.com/docs/reference/js/firebase.firestore.CollectionReference.html#get)
+
+        try {
+          const response: Promise&lt;QuerySnapshot&lt;T&gt;&gt; = await db
+            .collection("globalRules")
+            .get();
+          const globalRules = response.map((record: any) =&gt; record.data());
+          
+        }
+        catch (e) {
+          console.log(e, `=====error=====`);
+        }
+
+The firebase SDK comes with its own type definitions so why is QuerySnapshot not found? Removing the &lt;T&gt; doesn't help. Or the Promise&lt;&gt; syntax.
+## [5][How to publish TypeScript library the right way - TS, ES5 and ES6 targets.](https://www.reddit.com/r/typescript/comments/enswds/how_to_publish_typescript_library_the_right_way/)
+- url: https://www.reddit.com/r/typescript/comments/enswds/how_to_publish_typescript_library_the_right_way/
 ---
-Hello, I'm trying to define a field in an interface where values are slightly different. An example:
+Hi All,
 
-    export interface HelloWorld {
-      aField: firstType | secondType;
-      ...
-    }
+I have a small library for server-side-rendered websites I've been using for small projects on the past year. I decided to rewrite it properly with TypeScript ( add tests, create docs etc. ). My question is how to publish the library so it can be consumed as ES6 module ( ex. `import Component from "lib"` ) , TS module, ES5 package ready to be distributed via CDN ( ex. `&lt;script src="`[`cdnjs.com/lib.js`](https://cdnjs.com/lib.js)`" /&gt;`  \- dev version with source maps and production build ) and ship it all with type definitions? I'm using Webpack to dev/build. 
+
+This will be my **first** public library and I'm looking for a minimal examples on well done publishing/build steps. I already searched on Github how other libraries do this, but all feels "hacky" ( ex. set TS target to ES6, then postbuild run babel to create ES5 code ).
+## [6][Anyone want to give me feedback on my first Typescript app? 😀](https://www.reddit.com/r/typescript/comments/eno91h/anyone_want_to_give_me_feedback_on_my_first/)
+- url: https://www.reddit.com/r/typescript/comments/eno91h/anyone_want_to_give_me_feedback_on_my_first/
+---
+It's called [Open Kitchen](https://openk1tchen.herokuapp.com). It's a web app to keep track of all of your recipes. The code can be found [here](https://github.com/peterzernia/open-kitchen) in the client directory. Any feedback would be greatly appreciated!
+## [7][What's the best library for the canvas element?](https://www.reddit.com/r/typescript/comments/ent1dy/whats_the_best_library_for_the_canvas_element/)
+- url: https://www.reddit.com/r/typescript/comments/ent1dy/whats_the_best_library_for_the_canvas_element/
+---
+What's the best library for the canvas element?
+
+This it the first time I'm trying to use canvas in a website and I wanted to know if there are any good libraries out there (especially ones which work well with react).
+
+Thxs in advance
+## [8][feedback on my first Rest API created on node Js, Typescript, Express and Mongo DB.](https://www.reddit.com/r/typescript/comments/enqa18/feedback_on_my_first_rest_api_created_on_node_js/)
+- url: https://www.reddit.com/r/typescript/comments/enqa18/feedback_on_my_first_rest_api_created_on_node_js/
+---
+I have completed a rest API of small projects. Here is  [link](https://github.com/devbinod/nodewithmongo.git). I want feedback on my code that really helps in my carrier. Thanks in advance.
+## [9][How do I add Types to deconstructed object returned by a function?](https://www.reddit.com/r/typescript/comments/enauq1/how_do_i_add_types_to_deconstructed_object/)
+- url: https://www.reddit.com/r/typescript/comments/enauq1/how_do_i_add_types_to_deconstructed_object/
+---
+I'm getting type definition error, but I'm not really sure how to add a type for this specific case. Normally, I would add an interface and assign the necessary types, but **I'm not sure how to add an interface to my deconstructed object from TimePickerAndroid.open()**. I've tried a few ways, but nothing seems to be working.
+
+**Error:**
+
+    src/DatePicker.tsx:47:15 - error TS2322: Type 'DatePickerAndroidOpenReturn' is not assignable to type 'Props'.
+      Type 'DatePickerAndroidDateSetAction' is missing the following properties from type 'Props': title, onValueChange, mode, date47
     
-    export type firstType = 'hello' | 'world';
-    export type secondType = 'hello' | 'another' | 'world';
+    const { action, year, month, day } : Props = await DatePickerAndroid.open({
 
-I recently had to create \`firstType\` where I don't want its value to be a string value of "another". The definition of the 2 different types and use of a union was my attempt at getting this to work, but I get a Type error code TS2322. Example error msg:
+**Interface:**
 
-    Types of property 'aField' are incompatible.
-      Type '"hello" | "another" | "world"' is not assignable to type '"hello" | "world"'.
-        Type '"another"' is not assignable to type '"hello" | "world"'.
+    // TypeScript: Types
+    interface Props {
+      title: string,
+      onValueChange: Function,
+      mode: 'calendar' | 'spinner' | 'default' | undefined,
+      action: 'dateSetAction' | 'dismissedAction',
+      date: Date | undefined,
+      minDate?: Date | undefined,
+      maxDate?: Date | undefined,
+      year?: number | Date,
+      month?: number | Date,
+      day?: number | Date,
+    }
 
-If I were to just define the interface using type \`firstType\`, tests will pass, no error. But this is incorrect for me because this field can have a value of "another" in certain cases.
+**TimePicker.tsx:**
 
-Any help is appreciated! Thank you
-## [6][TS2339: Property 'ctxSession' does not exist on type 'OAuthStartOptions'.](https://www.reddit.com/r/typescript/comments/emteem/ts2339_property_ctxsession_does_not_exist_on_type/)
-- url: https://www.reddit.com/r/typescript/comments/emteem/ts2339_property_ctxsession_does_not_exist_on_type/
----
-Been staring at this one for 20 minutes and I guess I must not fully understand TS inside classes. Anyone know what's causing it? Setting the property to 'any' I thought would allow it to be set to anything.
-
-    export default class OAuth {
-      protected keys: Keys;
-      protected req: Request;
-      protected res: Response;
-      
-      public ctxSession: any;
-      
-      constructor(req: Request, res: Response, keys: Keys) {
-        this.keys = keys;
-        this.req = req;
-        this.res = res;
-      }
-      
-      public authenticateThenCaptureContext() {
-        shopifyAuth({
-          prefix : "/shopify"
-          , apiKey : this.keys.SHOPIFY_API_KEY
-          , secret : this.keys.SHOPIFY_API_SECRET
-          , scopes : this.keys.SCOPES
-          , afterAuth(ctx: any): void {
-            this.ctxSession = ctx.session // title error
+      // Toggle Modal
+      const toggleModal = async (props: Props) =&gt; {
+        try {
+          // Check Platform (iOS)
+          if (Platform.OS === 'ios') {
+            // React Hook: Toggle Modal
+            toggle((modalVisible) =&gt; !modalVisible);
           }
-        })
-      }
-## [7][Since most companies have united behind TS is possible that it will replace JS in the browsers in the future?](https://www.reddit.com/r/typescript/comments/emupty/since_most_companies_have_united_behind_ts_is/)
-- url: https://www.reddit.com/r/typescript/comments/emupty/since_most_companies_have_united_behind_ts_is/
+    
+          // Check Platform (Android)
+          if (Platform.OS === 'android') {
+            const { action, hour, minute } = await TimePickerAndroid.open({
+              hour: date.getHours(),
+              minute: date.getMinutes(),
+              is24Hour: false,
+              mode: props.mode,
+            });
+    
+            // Action: Time Set
+            if (action === TimePickerAndroid.timeSetAction) {
+              // New Date
+              let newDate = date;
+    
+              // Set Hours
+              newDate.setHours(hour);
+    
+              // Set Minutes
+              newDate.setMinutes(minute);
+    
+              // Select Date
+              await selectDate(newDate);
+            }
+    
+            // Action: Dismissed
+            if (action === TimePickerAndroid.dismissedAction) {
+              // Do Nothing
+            }
+          }
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+## [10][React Native Typescript React navigation](https://www.reddit.com/r/typescript/comments/endtj8/react_native_typescript_react_navigation/)
+- url: https://www.reddit.com/r/typescript/comments/endtj8/react_native_typescript_react_navigation/
 ---
-Also since it's a superset of js
-## [8][casting a variable from a type to a subtype](https://www.reddit.com/r/typescript/comments/emnzj9/casting_a_variable_from_a_type_to_a_subtype/)
-- url: https://www.reddit.com/r/typescript/comments/emnzj9/casting_a_variable_from_a_type_to_a_subtype/
----
-Given some type and an extension of that type:
+    const StackNavigator = createBottomTabNavigator({
+        HomeScreen: {
+        screen: HomeScreen
+    },
+    },    
+    {
+        tabBarComponent: props =&gt; &lt;TabBarComponent {...props} /&gt; // errors out here
+    }}
 
-```
-interface Item {
-  type: string
-}
+ERROR: 
 
-interface ItemTypeA extends Item {
-  valA: number
-}
-```
+`'TabBarComponent' refers to a value, but is being used as a type here.`
 
-Sometimes I need to take a variable of the type and cast it to the more specific type via the `as` keyword:
-```
-function fn1(item: Item) {
-  if (item.type === 'A') {
-    const itemA = item as ItemTypeA;
-    const { valA } = itemA
-    // ...
-  }
-}
-```
+    Argument of type '{ tabBarComponent: (props: any) =&gt; boolean; }' is not assignable to parameter of type 'CreateNavigatorConfig&lt;Partial&lt;Config&gt;, NavigationTabRouterConfig, Partial&lt;NavigationBottomTabOptions&gt;, NavigationTabProp&lt;...&gt;&gt;'.
+  Type '{ tabBarComponent: (props: any) =&gt; boolean; }' is not assignable to type 'Partial&lt;Config&gt;'.
+    Types of property 'tabBarComponent' are incompatible.
+      Type '(props: any) =&gt; boolean' is not assignable to type 'ComponentClass&lt;any, any&gt; | FunctionComponent&lt;any&gt; | undefined'.
+        Type '(props: any) =&gt; boolean' is not assignable to type 'FunctionComponent&lt;any&gt;'.
+          Type 'boolean' is not assignable to type 'ReactElement&lt;any, string | ((props: any) =&gt; ReactElement&lt;any, string | ... | (new (props: any) =&gt; Component&lt;any, any, any&gt;)&gt; | null) | (new (props: any) =&gt; Component&lt;any, any, any&gt;)&gt; | null'.ts(2345)
 
-Alternatively, it can be done via a type checking function:
-
-```
-const itemIsA = (item: Item): item is ItemTypeA =&gt; item.type === 'A';
-
-function fn2(item: Item) {
-  if (itemIsA(item)) {
-    const { valA } = item;
-    // ...
-  }
-}
-```
-
-The first way seems more convenient, explicit, and doesn't require an extra function. With the second way, even though the compiler knows that the item has been casted to a new type, a human reader must either infer by the checker-function name or see what the checker returns.
-## [9][How to implement Hierarchical types](https://www.reddit.com/r/typescript/comments/emu4ox/how_to_implement_hierarchical_types/)
-- url: https://www.reddit.com/r/typescript/comments/emu4ox/how_to_implement_hierarchical_types/
----
-I'd like to do this:
-
-    type Predicate&lt;T&gt; =
-         ['ANY', ...Array&lt;Predicate&lt;T&gt;&gt;]
-        | ['ALL', ...Array&lt;Predicate&lt;T&gt;&gt;]
-        | [keyof T, '=', number]
-        | [keyof T, '&gt;', number]
-        | [keyof T, '&gt;=', number]
-        | [keyof T, '&lt;', number]
-        | [keyof T, '&lt;=', number]
-        | [keyof T, '&lt;&gt;', number]
-    ;
-
-tsc complains that Predicate circularly references itself
-
-Oddly vscode correctly hints the creation of instances of Predicate&lt;T&gt;
-
-Is there some other way to do this?
-## [10][Dealing with values you don't know the shape of (from being undocumented)](https://www.reddit.com/r/typescript/comments/emqpks/dealing_with_values_you_dont_know_the_shape_of/)
-- url: https://www.reddit.com/r/typescript/comments/emqpks/dealing_with_values_you_dont_know_the_shape_of/
----
-Current situation is I'm developing a shopify app on Node/Koa.js. It returns a context object with some important details such as the store name and other things. 
-
-I could tell Typescript `ctx.session` is `any` to turn off type checking. But then what is the point of TS, and also it's good for me as a developer to actually learn the shape of what I'm resolving for clarity.
-
-Documentation on ctx.session is lacking:
-
-[https://github.com/koajs/session](https://github.com/koajs/session)
-
-[https://www.npmjs.com/package/@shopify/koa-shopify-auth](https://www.npmjs.com/package/@shopify/koa-shopify-auth)
-
-Faced with this situation how do you guys proceed? I am thinking I should just run a test to see what comes back, log it and write an interface based on that.
-
-If this is a situation you guys would just mark as `any` I am open to that advice too.
-## [11][[Request] Fairly new to TS, need help with a problem involving generics](https://www.reddit.com/r/typescript/comments/emrryl/request_fairly_new_to_ts_need_help_with_a_problem/)
-- url: https://www.reddit.com/r/typescript/comments/emrryl/request_fairly_new_to_ts_need_help_with_a_problem/
----
-EDIT: If the formatting is messed up, here is a paste of JUST the code: [https://paste.ofcode.org/MqUSEq5cyyUgX9wHednJkm](https://paste.ofcode.org/MqUSEq5cyyUgX9wHednJkm)
+**Can someone please explain why this is happening?** 
 
 &amp;#x200B;
 
-I am using the library easy-peasy for a project at work. Most of my requests follow a similar form (data, status, a thunk to call the api, and listeners to update status based on the thunk), so in js, I used a function to generate most of it. I am trying to convert this to typescript now, but I am having issues. My code looks like this (some additional properties omitted until I figure out my problem):
+TabBarComponent.tsx
 
-    import { actionOn, ActionOn, Thunk, thunk, TargetResolver, ActionTypes } from 'easy-peasy';
-    import RequestState from 'utils/request_states';
-    import { StoreModel } from 'store/store_root';
-    import RequestResponses, {PickResponse, Stub} from 'interfaces/request_responses';
-    
-    
-     interface RequestModel&lt;T&gt;{
-        status: RequestState;
-        data: T | null;
-        error: null | Error;
-        api_request: Thunk&lt;RequestModel&lt;T&gt;, any, any, StoreModel, Promise&lt;Stub&gt;&gt;;
-        onStart: ActionOn&lt;RequestModel&lt;T&gt;, StoreModel&gt;
-      };
-    
-    
-    export function StandardRequestGenerator&lt;T&gt;(init: T, api_req: any): RequestModel&lt;T&gt; {
-    	return {
-    		status: RequestState.VOID,
-    		data: init,
-    		error: null,
-    		api_request: thunk(async (actions, payloads, helpers) =&gt; {
-                
-                return api_req;
-            }),
-    		onStart: actionOn(
-    			(actions) =&gt; {
-            return actions.api_request.startType;
-          }
-    			(state) =&gt; {
-    				state.status = RequestState.LOADING;
-    			}
-    		)
-    	};
+    const TabBarComponent = ({ navigation, ...data }) =&gt; {
+    return &lt;View&gt; ... &lt;/View&gt;
     }
 
-The idea being that the generic would be the type of the data returned from the API request. I think that the issue is that  since the type is unknown, what easy-peasy uses to map state and actions doesn't know what to do with it. This appears to be backed up the fact that if I remove the generic and use something like number, it works fine. Anyways, I get the following error:
+&amp;#x200B;
 
-    Property 'api_request' does not exist on type 'ActionMapper&lt;Pick&lt;{ [P in "error" | "api_request" | "onStart" | ("status" &amp; { 1: "data"; 0: never; }[Extends&lt;T | null, object&gt;]) | ("data" &amp; { 1: "data"; 0: never; }[Extends&lt;T | null, object&gt;]) | ("error" &amp; { ...; }[Extends&lt;...&gt;]) | ("api_request" &amp; { ...; }[Extends&lt;...&gt;]) | ("onStart" &amp; { ...; }[Extends&lt;...&gt;])]: Re...'.ts(233
+Thanks
+## [11][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/typescript/comments/emxvdn/announcing_typescript_38_beta/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/
+---
 
-VSCode shows the shape of actions as:
-
-    (parameter) actions: ActionMapper&lt;Pick&lt;{ [P in "error" | "api_request" | "onStart" | ("status" &amp; {
-        1: "data";
-        0: never;
-    }[Extends&lt;T | null, object&gt;]) | ("data" &amp; {
-        1: "data";
-        0: never;
-    }[Extends&lt;T | null, object&gt;]) | ("error" &amp; {
-        ...;
-    }[Extends&lt;...&gt;]) | ("api_request" &amp; {
-        ...;
-    }[Extends&lt;...&gt;]) | ("onStart" &amp; {
-        ...;
-    }[Extends&lt;...&gt;])]: RequestModel&lt;...&gt;[P]; }, FilterKeys&lt;...&gt;&gt;, "1"&gt;
-
-The following is easy-peasy's action mapper, which is unfortunately gibberish to me.
-
-    type ActionMapper&lt;ActionsModel extends object, Depth extends string&gt; = {
-      [P in keyof ActionsModel]: ActionsModel[P] extends Action&lt;any, any&gt;
-        ? ActionCreator&lt;ActionsModel[P]['payload']&gt;
-        : ActionsModel[P] extends Thunk&lt;any, any, any, any, any&gt;
-        ? ActionsModel[P]['payload'] extends void
-          ? ThunkCreator&lt;void, ActionsModel[P]['result']&gt;
-          : ThunkCreator&lt;ActionsModel[P]['payload'], ActionsModel[P]['result']&gt;
-        : ActionsModel[P] extends object
-        ? RecursiveActions&lt;
-            ActionsModel[P],
-            Depth extends '1'
-              ? '2'
-              : Depth extends '2'
-              ? '3'
-              : Depth extends '3'
-              ? '4'
-              : Depth extends '4'
-              ? '5'
-              : '6'
-          &gt;
-        : unknown;
-    };
-    
-    type RecursiveActions&lt;
-      Model extends object,
-      Depth extends string
-    &gt; = Depth extends '6'
-      ? Model
-      : ActionMapper&lt;
-          O.Filter&lt;
-            O.Select&lt;Model, object&gt;,
-            | Array&lt;any&gt;
-            | RegExp
-            | Date
-            | string
-            | Reducer&lt;any, any&gt;
-            | Computed&lt;any, any, any&gt;
-            | ActionOn&lt;any, any&gt;
-            | ThunkOn&lt;any, any, any&gt;
-          &gt;,
-          Depth
-        &gt;;
-
-I am completely stuck on what to do here to get around this and would really appreciate it if someone could help me out. Thanks.

@@ -57,91 +57,63 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Qt5 C++ Full Course For Beginner - More Than 5 Hours Training Course On Building GUI Applications In C++ Using Qt5 GUI Framework](https://www.reddit.com/r/cpp/comments/emtvkq/qt5_c_full_course_for_beginner_more_than_5_hours/)
-- url: https://youtu.be/Et_bgnJ_Hhg
+## [2][Influence of C++ on Swift](https://www.reddit.com/r/cpp/comments/eo10jo/influence_of_c_on_swift/)
+- url: https://www.quora.com/What-are-similarities-and-differences-between-C-and-Swift
 ---
 
-## [3][The C++20 Synchronization Library - Bryce Adelstein Lelbach - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/ems6in/the_c20_synchronization_library_bryce_adelstein/)
-- url: https://www.youtube.com/watch?v=zoMZAV6FEbc
+## [3][C++ Profiling with Perf and Flamegraphs](https://www.reddit.com/r/cpp/comments/enxeew/c_profiling_with_perf_and_flamegraphs/)
+- url: http://www.mycpu.org/flamegraphs-on-c++/
 ---
 
-## [4][CppCon 2019: Timur Doumler “C++20: The small things”](https://www.reddit.com/r/cpp/comments/emvacl/cppcon_2019_timur_doumler_c20_the_small_things/)
-- url: https://www.youtube.com/watch?v=Xb6u8BrfHjw
+## [4][Better Algorithm Intuition - Conor Hoekstra - code::dive 2019](https://www.reddit.com/r/cpp/comments/eo2mtl/better_algorithm_intuition_conor_hoekstra/)
+- url: https://www.youtube.com/watch?v=0z-cv3gartw
 ---
 
-## [5][DrMock: open-source testing/mocking framework](https://www.reddit.com/r/cpp/comments/emqt37/drmock_opensource_testingmocking_framework/)
-- url: https://www.reddit.com/r/cpp/comments/emqt37/drmock_opensource_testingmocking_framework/
----
-https://github.com/DrCpp/DrMock
-
-After almost a year of development, we'd like to share DrMock, a C++ testing/mocking framework that generates the source code of your mock objects at compile time and offers a unique way of configuring mock objects using user-prepared *states*: Calling methods of the mock object changes the states of the object, which in turn determine the return values of the methods. This guarantees a high degree of configurability and allows coding unit tests without prior knowledge of the implementation (state verification), which we think is very useful. See the front-page of the GitHub repository for a demonstration.
-
-DrMock is written in C++ and python3.7. Building DrMock requires CMake and libclang. It can be deployed on macOS or Linux, where its use has been thoroughly tested. Windows support is one of the goals for the next major version.
-
-A guide to building DrMock, along with an extensive tutorial, sample projects and numerous examples are provided. The source code is well-documented, the C++ component is unit-tested, and the python component is tested functionally.
-
-We'd appreciate feedback on code quality and usability, bugs reports, feature requests - whatever comes to mind! If you're using DrMock on any of your projects or wish to contribute, we'd be delighted to hear about it.
-
-Have a great day!
-## [6][CppCast: Clang Hacking](https://www.reddit.com/r/cpp/comments/emm4af/cppcast_clang_hacking/)
-- url: https://cppcast.com/saar-raz-clang-hacking/
+## [5][The New ConanCenter Improves Search and Discovery](https://www.reddit.com/r/cpp/comments/eo4ivz/the_new_conancenter_improves_search_and_discovery/)
+- url: https://blog.conan.io/2020/01/13/New-Conan-Center-Improves-Search-Discovery.html
 ---
 
-## [7][Is visiting a C++ committee meeting a good idea if you're not a committee member, nor do you have any proposals?](https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/)
-- url: https://www.reddit.com/r/cpp/comments/em88vy/is_visiting_a_c_committee_meeting_a_good_idea_if/
+## [6][latest c++ theory vs reality](https://www.reddit.com/r/cpp/comments/enuntq/latest_c_theory_vs_reality/)
+- url: https://www.reddit.com/r/cpp/comments/enuntq/latest_c_theory_vs_reality/
 ---
-Next month there will be a committee meeting in Prague, which is close enough for me to think about visiting. According to  [https://isocpp.org/std/meetings-and-participation](https://isocpp.org/std/meetings-and-participation), the meetings are open to the public. I am interested in learning how these events work and would also like to know what discussions around proposals look like. However I'm not sure it's worthwhile for an average Joe to visit events such as these. Could someone advise whether it's a good idea to ask for a few days off to visit a C++ committee meeting? Is it a good idea to visit for a day or two, or does one have to attend the whole event to gain anything from it?
-## [8][Cheetah engine, creating a game engine for personal study](https://www.reddit.com/r/cpp/comments/emfq70/cheetah_engine_creating_a_game_engine_for/)
-- url: https://www.reddit.com/r/cpp/comments/emfq70/cheetah_engine_creating_a_game_engine_for/
+Why is there a seemingly big discrepancy of existing and used c++ version? Despite good compiler support.
+
+When I see the new features of current c++ currently (17 and even 20 has wide compiler support already) i am amazed.
+
+But in reality:
+Open recent and active c++ project on github.
+It’s 98 or 11 in the best case
+Why on earth is every c++ code I (with my limited horizon) find in the wild uses such old standards?
+Also clang uses c++98 as default setting. Which is somewhat okay, because it can be easily adjusted. But it’s weird nonetheless.
+## [7][How does module linking works?](https://www.reddit.com/r/cpp/comments/enzvn1/how_does_module_linking_works/)
+- url: https://www.reddit.com/r/cpp/comments/enzvn1/how_does_module_linking_works/
 ---
-For the last few weeks I have thrown myself in the amazing world of c++ and graphics programming by starting to create a game engine. Using books, online tutorials and stackoverflow I finally did it! I made an engine able to create a most minimalistic 2d game capable of rendering awesome textures and using the the best sound there is, the sound of silence. 
+So i've read about modules, but I can't wrap my head around how they're linked
 
-Alright, all jokes aside, I started working on this project as hobby in order to learn c++.  In my professional career I mostly work with c#, Js and SQL creating web applications but I've always had an interest in game development. After many failed game projects using unity or unreal I came to the conclusion that I enjoy **programming** games but not creating all the **art** that was needed for the types of games I had in mind. With that realization I started to develop an interest in the systems behind the scenes and came to the conclusion I should starting to try to create my own engine. 
+Are compiled modules stored as a custom format or good ol' .so / .dll files? Since either way seems to break the structure of using ld (at least on Linux) to load a shared object dynamically and using some sort a header as a map of that shared object.
 
-Now having learned everything from the internet or books I have not been able to get some critique from people with more experience in c++ then me so I am curious what you guys think of it. I have made the repository publicly available with a simple sample project of how the engine could be used, I have also created a template repository for creating games from scratch with the engine. 
-
-Engine repo with sample:  [https://github.com/Ruinerwarrior/Cheetah](https://github.com/Ruinerwarrior/Cheetah) 
-
-Engine template repo:  [https://github.com/Ruinerwarrior/Cheetah\_Template](https://github.com/Ruinerwarrior/Cheetah_Template) 
-
-Being the first time ever I made a c++ project publicly available and also the first time I worked with CMake, let me know if I need to make some changes in order to make it easier to use for people cloning the repo.
-
-For anyone interested in sources I used for information here a small list of the most important ones
-
-* Game Engine Architecture by Jason Gregory
-*  [https://learnopengl.com/](https://learnopengl.com/)  for anything opengl/graphics programming related
-* thebennybox  [https://www.youtube.com/channel/UCnlpv-hhcsAtEHKR2y2fW4Q](https://www.youtube.com/channel/UCnlpv-hhcsAtEHKR2y2fW4Q) for graphics programming an game engine design
-* The Cherno  [https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw](https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw)  for anything from c++, opengl to game engine design
-* stackoverflow for all my other questions
-
-Many thanks in advance for any advice you guys can give me!
-## [9][Constant global variable naming convention](https://www.reddit.com/r/cpp/comments/emobr9/constant_global_variable_naming_convention/)
-- url: https://www.reddit.com/r/cpp/comments/emobr9/constant_global_variable_naming_convention/
+I am curious as to how modules will be handled as dynamic objects
+## [8][Should there be a compiler flag to pretend const_cast doesn't exist?](https://www.reddit.com/r/cpp/comments/enmo8c/should_there_be_a_compiler_flag_to_pretend_const/)
+- url: https://www.reddit.com/r/cpp/comments/enmo8c/should_there_be_a_compiler_flag_to_pretend_const/
 ---
-Assume that you are using the "\_" suffix for member variables and lowerCamelCase for enums.
+Considering how the possibility of const_casts can make certain optimisations impossible, it seems like there's a potential benefit from having a flag that can tell the compiler to assume that nothing will ever have its constness casted away.
 
-Which would it be in your opinion the best naming convention for constant global variables?
+There are plenty of applications where you can be confident that no const_casting will ever happen, so to have a small amount of performance lost because of a rarely-used feature is a bit frustrating.
 
-The real question maybe boils down to: does highlighting that something is a constant helps the developer to understand better the code?  if yes, how do you express that in the naming conventions?
+It's not like there's no precedent for this sort of thing either: The -ffast-math flag allows extra optimisations by assuming that no float can ever be NaN or Infinity, and that arguably has a much more significant effect.
 
-Some examples and observations:
+The biggest problem I see is that it's not easy to be sure if a const-cast will happen when you call someone else's code (or the standard library implementation you're using) so a flag like this might break something you're not aware of. Maybe that would stop this from ever being useful.
 
-static constexpr size\_t MY\_CONSTANT = 42; // Problems with macros?
-
-static constexpr size\_t myConstant\_g = 42; // \_g lets you know it is a global variable, but how do you know it is also constant?
-
-static constexpr size\_t kMyConstant\_g = 42; // both global/constant info in the name, but using a prefix  seems not the best solution when you want to use the IDE to look for something
-
-static constexpr size\_t myConstant\_gk = 42;  // how member variables would be named ? "\_k" doesn't look good, it would have worked if all member variables were using the \_m suffix perhaps (\_mk)
-
-&amp;#x200B;
-
-Any alternative?
-## [10][The 2019.12 version of vcpkg is now available](https://www.reddit.com/r/cpp/comments/embpox/the_201912_version_of_vcpkg_is_now_available/)
-- url: https://github.com/microsoft/vcpkg/releases/tag/2019.12
+Anyway, those are just some thoughts. What do you think?
+## [9][A header-only library for easy interactive parameters](https://www.reddit.com/r/cpp/comments/enq4lc/a_headeronly_library_for_easy_interactive/)
+- url: https://github.com/sharkdp/painless
 ---
 
-## [11][Dynamic Class Member Function Reassignment](https://www.reddit.com/r/cpp/comments/em546u/dynamic_class_member_function_reassignment/)
-- url: https://github.com/TheMaverickProgrammer/C-Python-Like-Class-Member-Decorators
+## [10][A quirk of qualified member lookup](https://www.reddit.com/r/cpp/comments/enhvos/a_quirk_of_qualified_member_lookup/)
+- url: https://quuxplusone.github.io/blog/2020/01/11/qualified-member-lookup/
+---
+
+## [11][Cpp-Taskflow v2.3.0 pre-release: A new Conditional Tasking interface for cyclic and dynamic control flows](https://www.reddit.com/r/cpp/comments/enk1s5/cpptaskflow_v230_prerelease_a_new_conditional/)
+- url: https://github.com/cpp-taskflow/cpp-taskflow
 ---
 

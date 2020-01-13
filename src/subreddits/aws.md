@@ -1,116 +1,125 @@
 # aws
-## [1][Why do i have to create a NAT Gateway per AZ but only one Internet Gateway?](https://www.reddit.com/r/aws/comments/ejk8nm/why_do_i_have_to_create_a_nat_gateway_per_az_but/)
-- url: https://www.reddit.com/r/aws/comments/ejk8nm/why_do_i_have_to_create_a_nat_gateway_per_az_but/
+## [1][Path routing to Fargate tasks](https://www.reddit.com/r/aws/comments/eo46j7/path_routing_to_fargate_tasks/)
+- url: https://www.reddit.com/r/aws/comments/eo46j7/path_routing_to_fargate_tasks/
 ---
-I'm a bit confused about this whole thing. It seems for every AZ with a public/private subnet setup, i need a NAT gateway so the private instances can talk to the internet. But all the public subnets only need a single internet gateway. Why is this?
-## [2][AWS EC2 free tier + WordPress + Cloudfront + AWS SSL Certificate + Namecheap domain = AAAAAH](https://www.reddit.com/r/aws/comments/ejp4md/aws_ec2_free_tier_wordpress_cloudfront_aws_ssl/)
-- url: https://www.reddit.com/r/aws/comments/ejp4md/aws_ec2_free_tier_wordpress_cloudfront_aws_ssl/
----
-Hi everyone,
-
-I am a total noob to this, so please bare with me here. I am trying to set up a blog to start writing a little bit and I created a free AWS EC2 instance today and installed Wordpress on it. I also have a TLD with Namecheap, that I only used as an email domain so far (with [Outlook.com](https://Outlook.com) Premium). I also got the A record and CNAME records set up properly, so that the URLs correctly forward to the WordPress installation on AWS (and my emails still work) - this involves an elastic IP and the respective DNS entries. Next, I created an SSL certificate with AWS and got it successfully validated through AWS DNS validation. So far so good. Only a few hours of work for someone who needs to google every step - at least I learned a lot :-).
-
-Now the last (at least for now it seems to me like that) is to activate the SSL certificate with my domain to make sure my blog uses HTTPS. So far all browsers show it as HTTP and "not secure" and when I enter the URL as HTTPS I get the usual message that the connection is not private.
-
-What I have understood is that I need to run the connection between the EC2 instance and the SSL through CloudFront, so I set that up and also created a CloudFront distribution, linked the instance as well as the alternate domain names and the SSL certificate, **but the website is still shown as not secure.** Safari shows in the certificate details "Certificate generated at boot time", so it seems the instance does not pull the correct certificate - for whatever reason :).
-
-I am sure I am missing a ton of details that I need to provide so that you guys can help me, but I would really appreciate some guidance here.
+Hi guys, I have a few doubts regarding networks, routing and Fargate that you fellas might have encountered before, or know how to circumvent :S.
 
 &amp;#x200B;
 
-Edit:
-
-* The instance is in the Ohio zone and the certificate in the Virginia zone - in case that make it worse
-* I have not done anything with IAM or security groups so far
-## [3][Secrets management](https://www.reddit.com/r/aws/comments/ejpr8c/secrets_management/)
-- url: https://www.reddit.com/r/aws/comments/ejpr8c/secrets_management/
----
-Mobycast started a two part podcast series on secrets management that goes into detail on both AWS Secrets Manager and AWS Systems Manager Parameter store. Good information for how to keep secrets exposure limited to the code that needs access to it and only at runtime.  [https://mobycast.fm/episode/93-psst-secrets-handling-for-cloud-native-apps-part-1/](https://mobycast.fm/episode/93-psst-secrets-handling-for-cloud-native-apps-part-1/)
-## [4][ELI5: DynamoDB vs RDS](https://www.reddit.com/r/aws/comments/ejo1g4/eli5_dynamodb_vs_rds/)
-- url: https://www.reddit.com/r/aws/comments/ejo1g4/eli5_dynamodb_vs_rds/
----
-I know DynamoDB is NoSQL while RDS is relational(SQL)
-
-It seems like all the functions you would want out of RDS(relations thought you have to do more loads) you could do with DynamoDB
-
-With DynamoDB you would have the scalability of NoSQL
-
-When would you want to use RDS over DynamoDB?
-
-It also appears to be more expensive to use RDS over DynamoDB because you're paying a set free(&gt;$600) per month whereas in DynamoDB you're paying per usage(WCU and RCU)
-## [5][Nesting security groups?](https://www.reddit.com/r/aws/comments/ejr2lz/nesting_security_groups/)
-- url: https://www.reddit.com/r/aws/comments/ejr2lz/nesting_security_groups/
----
-So I'm basically trying to block origin for anything other than our CDN, and our own public IP addresses. Problem is, we have many public IPs (many locations).  
-
-My original plan was to have 6 distinct security groups for our public CIDRs, and an extra one for our CDN CIDRs. I did not know that I could only have 5 security groups per ELB.
-
-I then tried nesting the public CIDR groups into the main CDN CIDR sg, but it seems that nesting is only used to allow instances and not actual CIDRs or IPs.
+Long story short, we are building a stack capable of handling, among other things, peaks of 200 plus Fargate tasks that need to be individually accessible using unique paths (1 path -&gt; 1 container/task).
 
 &amp;#x200B;
 
-Any recomendations on how to achieve this? My company has 160 public IPs, plus another 32 from our CDN.
+My original idea was to go with an ALB and use the "path routing" feature it supports, sadly that's limited to 100 route groups (cannot be increased)... So not ideal.
 
 &amp;#x200B;
 
-Thanks!
+With that limit in mind, I thought about setting 1 external ALB and 2 internal ones and chain them by using defaults, for a max of 300 route groups/paths, but testing that theory found out an ALB cannot point (as default at least) to another ALB... There goes that.
 
-  
-V.
-## [6][How to manage roles when using SAML or OIDC sso?](https://www.reddit.com/r/aws/comments/ejnfv8/how_to_manage_roles_when_using_saml_or_oidc_sso/)
-- url: https://www.reddit.com/r/aws/comments/ejnfv8/how_to_manage_roles_when_using_saml_or_oidc_sso/
+&amp;#x200B;
+
+So I went to CloudFront, which we are using either way, and tried setting an Origin Group pointing to the first ALB, which uppon failure, would point to the next one and so on, but sadly origin groups have a limit of 2 origins, leaving me with 200 tasks at the most... Not sure if that's a fixed number or can be increased, it doesn't look like it judging by the UI.
+
+&amp;#x200B;
+
+How would you approach this? Is there a component for this?
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Ps: As we are in the architecting/initial stages major changes can be done and work/complexity shouldn't be an issue.
+
+&amp;#x200B;
+
+Ps2: As a context, each task with both serve HLS to CF and have a small API to control both the container status and to perform certain operations.
+## [2][Could I run League of Legends constantly on AWS?](https://www.reddit.com/r/aws/comments/eo4l4z/could_i_run_league_of_legends_constantly_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/eo4l4z/could_i_run_league_of_legends_constantly_on_aws/
 ---
-Currently we have IAM users for each person who needs access to AWS. We assign permissions to groups, and then users to those groups as they make sense. Some of those might be department groups, others might be project or other special groups.
+Hey!
 
-With SAML, the user has to pick from a list of roles that they have permission to assume, and use the permissions granted to that role. They can switch to another role later if they need to.
+I've never used AWS and am starting a project to learn AWS Cloud Vmware.
 
-With users and groups, the user has the sum of all permissions on their groups (and on the user, if any). With roles, they get one set at a time. 
+I was thinking something that could be fun would be to run my favorite game League of Legends on AWS.
 
-Say Role A has permission to read from S3 Bucket A, and Role B has permission to write to Bucket B. Copying an object from A to B can still be done, but it isn't nearly as straight forward. You end up swapping roles a lot.
+I wanted to ask if this is possible and if so, how would one go about it?
 
-I see a couple possible options:
-
-* Duplicate the permissions in a whole bunch of roles. For users in Dept X and Project Y, create the DeptX\_ProjectY role. And the DeptX\_ProejctY\_ProjectZ role, and so on.
-* Calculate the permissions of each user, and create a role for each user. Programatically, hopefully.
-
-Are there tools to help with this? Is there some other solution that I'm missing?
-## [7][codebuild buildspec.yml: is it possible to substitute an environment variable to describe an SSM parameter name? example inside](https://www.reddit.com/r/aws/comments/ejkkww/codebuild_buildspecyml_is_it_possible_to/)
-- url: https://www.reddit.com/r/aws/comments/ejkkww/codebuild_buildspecyml_is_it_possible_to/
+Thanks in advance :)
+## [3][Building and scaling a micro-segmented enterprise network in AWS](https://www.reddit.com/r/aws/comments/enx5h6/building_and_scaling_a_microsegmented_enterprise/)
+- url: https://medium.com/@matt_69071/building-and-scaling-a-micro-segmented-network-in-aws-for-regulated-industries-af4f931cd48c
 ---
-is this possible?
 
-    env:
-      parameter-store:
-        ENV_PARAM_NAME: /$ENVIRONMENT/param-name
-      secrets-manager:
-        ENV_SECRET_NAME: $ENVIRONMENT/secret-name:SECRET_KEY
-
-where i could externally set `$ENVIRONMENT` to say `dev` or `prod`?
-
-the use case is a buildspec that is identical for both dev and prod with the exception of the parameter / secret name prefixes
-
-i have tried all of the approaches i could think of including: `"$ENVIRONMENT"`, `${ENVIRONMENT}`, `${$ENVIRONMENT}}`, `${${ENVIRONMENT}}`, `${env:$ENVIRONMENT}` 
-
-but none seem to work
-## [8][AWS Shield Vs CloudFlare](https://www.reddit.com/r/aws/comments/ejhewd/aws_shield_vs_cloudflare/)
-- url: https://www.reddit.com/r/aws/comments/ejhewd/aws_shield_vs_cloudflare/
+## [4][AWS Border Protection - Is there a list of all AWS services/resources that can be configured to be "publicly" accessed?](https://www.reddit.com/r/aws/comments/ensmyk/aws_border_protection_is_there_a_list_of_all_aws/)
+- url: https://www.reddit.com/r/aws/comments/ensmyk/aws_border_protection_is_there_a_list_of_all_aws/
 ---
-Can anyone explain the difference to me. What are some of the pros and cons of each?
-## [9][Trying the free aws and invoice..](https://www.reddit.com/r/aws/comments/ejkmbx/trying_the_free_aws_and_invoice/)
-- url: https://www.reddit.com/r/aws/comments/ejkmbx/trying_the_free_aws_and_invoice/
+Hi all -
+
+There are obvious services that can be configured to be "publicly" accessible such as EC2 instances or S3 buckets; however, there are also some less known cases such as making an ECR repository public or publishing a public AMI.
+
+*Does anyone know if there is a list maintained by AWS or by the community that lists all possible publicly facing endpoints for services/resources?* I'm looking at this from a cyber security perspective (i.e. border protection) with the use case of ensuring no services/resources from an AWS account can be accessed publicly. 
+
+Thank you for any help in advance.
+
+Best,
+
+Andrew
+## [5][Fargate Spot connection drainning?](https://www.reddit.com/r/aws/comments/eo4i21/fargate_spot_connection_drainning/)
+- url: https://www.reddit.com/r/aws/comments/eo4i21/fargate_spot_connection_drainning/
 ---
-hi everyone,
+When I was using EC2 spot, there was spot termination notice in metadata endpoint. All I had to do was to include check in my health check script. If it detected termination notice, it would report unhealthy and load balancer would drain the task.
 
-i was trying free aws. We got a $ 68 invioce. but I was using it for free. no warning was given to me. Why this invoice?
+I doesn't work the same way with Fargate spot. Notification is send to Event Bridge and ecs task receives stop signal which stop the task without draining.
 
-i don't have enough money to pay. please help me :( what can I do ???
-## [10][AWS Client VPN Pricing - Disassociate to save money](https://www.reddit.com/r/aws/comments/ejkky9/aws_client_vpn_pricing_disassociate_to_save_money/)
-- url: https://www.reddit.com/r/aws/comments/ejkky9/aws_client_vpn_pricing_disassociate_to_save_money/
+Do you have any tip how to ensure draining on load balancer? One solution would be to highjack stop signal on all containers in task but that seems complicated and I am hopping there is a simpler solution.
+## [6][Mapping multiple elastic IP addresses for nameservers on EC2](https://www.reddit.com/r/aws/comments/eo2tao/mapping_multiple_elastic_ip_addresses_for/)
+- url: https://www.reddit.com/r/aws/comments/eo2tao/mapping_multiple_elastic_ip_addresses_for/
 ---
-I'm using an AWS Client VPN Endpoint as a temporary remote management access point.   I don't need this VPN on all the time so I'm trying to avoid unneeded charges.
+Is it possible to map multiple IP addresses to one EC2 server instance, for use as nameservers
+## [7][Fargate load balancing &amp; routing](https://www.reddit.com/r/aws/comments/eo2mwn/fargate_load_balancing_routing/)
+- url: https://www.reddit.com/r/aws/comments/eo2mwn/fargate_load_balancing_routing/
+---
+Hello,
 
-Based on the documentation ( https://aws.amazon.com/vpn/pricing/ ) it appears you are charged for association time as well as connection time.
+I'm setting up my infra with Fargate (using AWS CDK scripting). As we have multiple applications running in the back-end, I'm currently investigating potential options for routing between applications. Below is an overview of the 3 options I currently have in mind. Do you have a strong opinion on which one I should go for, based on your experience ?
 
-If I simply disconnect from the VPN and also Disassociate any subnets when I'm done for the day, I should be free of any additional charges.  Then later when I need it again, just Associate and I'm ready to go.  Is this correct?
+&amp;#x200B;
 
-Any downsides to this that I may be overlooking, besides just having to wait for association time?
+https://preview.redd.it/w2ya3o2l1ja41.png?width=911&amp;format=png&amp;auto=webp&amp;s=0bdcfdeff6ed45ca9751d8c1b8f2d1b1932be2f8
+
+Thanks a ton in advance for the help!
+
+Cheers
+## [8][Semantic segmentation](https://www.reddit.com/r/aws/comments/eo24t6/semantic_segmentation/)
+- url: https://www.reddit.com/r/aws/comments/eo24t6/semantic_segmentation/
+---
+Hello, is it possible to use Sagemaker's semantic segmentation model locally?  Because the only deployment in example notebook is Amazon SageMaker hosted endpoint. Reference: [https://github.com/awslabs/amazon-sagemaker-examples/blob/master/introduction\_to\_amazon\_algorithms/semantic\_segmentation\_pascalvoc/semantic\_segmentation\_pascalvoc.ipynb](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/introduction_to_amazon_algorithms/semantic_segmentation_pascalvoc/semantic_segmentation_pascalvoc.ipynb). Thank you in advance!
+## [9][amplify custom domain name](https://www.reddit.com/r/aws/comments/enzlq4/amplify_custom_domain_name/)
+- url: https://www.reddit.com/r/aws/comments/enzlq4/amplify_custom_domain_name/
+---
+Hi,
+
+I've started using amplify for an SPA with angular.
+
+I'm trying to add my custom domain name with no luck. The domain name was bought/registered through AWS with Route53.
+
+The error:
+
+One or more of the CNAMEs you provided are already associated with a different resource.
+
+What I've tried:
+
+* I've tried recreating the app
+* Checked cloudfront - it's empty
+* Checked cloudformation for any old deployments
+* Checked S3 for static websites
+* I've tried adding another domain but now it's stuck "activating"
+
+Any ideas?
+
+Are there a better alternative to hosting a single page app in AWS?
+
+Thank you!
+## [10][What exactly are Region and different types of Zones in AWS? Describing Region, Availability Zone, Local Zone and Wavelength Zone](https://www.reddit.com/r/aws/comments/eo0kzi/what_exactly_are_region_and_different_types_of/)
+- url: https://itnext.io/what-exactly-are-region-and-different-types-of-zones-in-aws-333d7e0ce373?source=friends_link&amp;sk=f2c81db6cd87ac0b63ccc3c99d615e2b
+---
+

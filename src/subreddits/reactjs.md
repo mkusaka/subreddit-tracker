@@ -80,211 +80,290 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][We have a new subreddit snoo thanks to /u/fjellet!](https://www.reddit.com/r/reactjs/comments/ems5l0/we_have_a_new_subreddit_snoo_thanks_to_ufjellet/)
-- url: http://share.pickaxe.nl/react-snoo.png
+## [3][Non-typewriter style text carousel](https://www.reddit.com/r/reactjs/comments/eo2kcb/nontypewriter_style_text_carousel/)
+- url: https://github.com/chrismilson/react-not-typist
 ---
 
-## [4][Build a CRUD Application with React and Apollo GraphQL - CodeSource.io](https://www.reddit.com/r/reactjs/comments/en3xz7/build_a_crud_application_with_react_and_apollo/)
-- url: https://codesource.io/build-a-crud-application-with-react-and-apollo-graphql/
+## [4][I made HaloGameFinder, an app where you can post custom game lobbies and find new people to play with! Let me know what you think.](https://www.reddit.com/r/reactjs/comments/enpggx/i_made_halogamefinder_an_app_where_you_can_post/)
+- url: https://www.reddit.com/r/reactjs/comments/enpggx/i_made_halogamefinder_an_app_where_you_can_post/
+---
+I made this mostly for fun. It's all live-reloading and instantaneous. 
+
+The stack is MongoDB, React, [Socket.IO](https://Socket.IO), NodeJS.
+
+You can check it out [here](https://halogamefinder.com/) :)
+
+Let me know what you guys think!
+## [5][Build a Workout Diary App with React #3 | Create a new workout session](https://www.reddit.com/r/reactjs/comments/enr59e/build_a_workout_diary_app_with_react_3_create_a/)
+- url: https://www.youtube.com/watch?v=b2mdYdCByS8&amp;feature=share
 ---
 
-## [5][React-three-fiber v4 released](https://www.reddit.com/r/reactjs/comments/en4z85/reactthreefiber_v4_released/)
-- url: https://twitter.com/0xca0a/status/1215617845314445312
+## [6][Using Custom React Hooks to Simplify Forms](https://www.reddit.com/r/reactjs/comments/eo4zg1/using_custom_react_hooks_to_simplify_forms/)
+- url: https://upmostly.com/tutorials/using-custom-react-hooks-simplify-forms
 ---
 
-## [6][React Hooks Tutorial | Build Yelp in React #12 | starting to build Yelp's sub-navigation bar](https://www.reddit.com/r/reactjs/comments/en7g14/react_hooks_tutorial_build_yelp_in_react_12/)
-- url: https://www.youtube.com/watch?v=URaGI2AvKoQ
+## [7][Testing Stateful Functional Components with Jest &amp; Enzyme](https://www.reddit.com/r/reactjs/comments/eo4rdf/testing_stateful_functional_components_with_jest/)
+- url: https://www.reddit.com/r/reactjs/comments/eo4rdf/testing_stateful_functional_components_with_jest/
+---
+I'm finding it difficult testing stateful functional components with Jest + Enzyme. 
+
+Nothing seems to work and I keep getting the following error
+
+"ShallowWrapper::state() can only be called on class components"
+
+Everything works when I switch to class-based components. 
+
+Please help out
+## [8][Intermediate ReactJS Dashboard Course Suggestion](https://www.reddit.com/r/reactjs/comments/enxidu/intermediate_reactjs_dashboard_course_suggestion/)
+- url: https://www.reddit.com/r/reactjs/comments/enxidu/intermediate_reactjs_dashboard_course_suggestion/
+---
+Hello,
+
+I'm currently looking for a good course to learn how to make nice looking dashboards in ReactJS, not any special business ReactJS framework, just vanilla ReactJS, without any libraries or pre-built components. I'm willing to pay but there's so many ReactJS component-based tutorials so I'm kind of lost as far as that goes. Suggestions are much appreciated!
+## [9][Adding React Fast Refresh to your Create React App project](https://www.reddit.com/r/reactjs/comments/ensm3r/adding_react_fast_refresh_to_your_create_react/)
+- url: https://dutzi.party/react-fast-refresh/
 ---
 
-## [7][Best Practice when using Context?](https://www.reddit.com/r/reactjs/comments/en76h6/best_practice_when_using_context/)
-- url: https://www.reddit.com/r/reactjs/comments/en76h6/best_practice_when_using_context/
+## [10][Parent component's state change, but the child's props update every other time](https://www.reddit.com/r/reactjs/comments/eo3qvj/parent_components_state_change_but_the_childs/)
+- url: https://www.reddit.com/r/reactjs/comments/eo3qvj/parent_components_state_change_but_the_childs/
 ---
-Following is my sample code when using context
+So I have ParentComponent and ChildComponent.
+
+ParentComponent's state change everytime I click on the screen, and I give this state to ChildComponent as a prop.
+
+However, even though ParentComponent's state change everytime I click, for some reason, ChildComponent's props only change when I click twice on the screen.
+
+I tried to use both useState and useRef, as well as creating a function that return ChildComponent's markup, but to no avail.
+
+I can post more details about the code, or the code itself if needed, I just figured out simplifying the problem as much as possible would be better.
 
 &amp;#x200B;
 
-I have created a class called createDataContext which has following code 
+&amp;#x200B;
 
 &amp;#x200B;
 
-`import React, { useReducer } from "react";`  
-`export default (reducer, actions, defaultValue) =&gt; {`  
- `const Context = React.createContext();`  
- `const Provider = ({ children }) =&gt; {`  
- `const [state, dispatch] = useReducer(reducer, defaultValue);`  
- `const boundActions = {};`  
- `for (let key in actions) {`  
- `boundActions[key] = actions[key](dispatch);`  
-`}`  
- `return (`  
- `&lt;Context.Provider value={{ state, ...boundActions }}&gt;`  
- `{children}`  
- `&lt;/Context.Provider&gt;`  
-`);`  
-  `};`  
- `return { Context: Context, Provider: Provider };`  
-`};`  
+The code :
 
+    function Map() {
+        const initialPosShoe = [{
+            _id: "CUR",
+            shape: "circle",
+            coords: [333, 575, 10],
+            preFillColor: "blue"
+        }, {
+            _id: "ISEF",
+            shape: "circle",
+            coords: [377, 209, 10],
+            preFillColor: "blue"
+        }, {
+            _id: "BU",
+            shape: "circle",
+            coords: [412, 421, 10],
+            preFillColor: "blue"
+        }, {
+            _id: "UFR LETTRES",
+            shape: "circle",
+            coords: [402, 340, 10],
+            preFillColor: "blue"
+        },]
+        const initialPosFou = [{
+            _id: "1",
+            shape: "circle",
+            coords: [486, 127, 10],
+            preFillColor: "blue"
+        }, {
+            _id: "2",
+            shape: "circle",
+            coords: [480, 480, 10],
+            preFillColor: "blue"
+        }, {
+            _id: "3",
+            shape: "circle",
+            coords: [216, 402, 10],
+            preFillColor: "blue"
+        }, {
+            _id: "4",
+            shape: "circle",
+            coords: [902, 340, 10],
+            preFillColor: "blue"
+        }, {
+            _id: "5",
+            shape: "circle",
+            coords: [1175, 108, 10],
+            preFillColor: "blue"
+        }]
+    
+    
+        const WIDTH_CARTE_SHOE = 630;
+        const WIDTH_CARTE_FOUI = 1274;
+    
+    
+        const closestInformaticien = useRef([9999, 9999])
+        const [initialPos, setInitialPos] = useState(initialPosShoe)
+        const informaticiens = useRef(initialPos)
+        const [mapObjet,setMapObjet] = useState({name: "Carte du campus", areas: informaticiens})
+        const [carte, setCarte] = useState(Shoe)
+        const [width, setWidth] = useState(window.innerWidth * .6)
+        const [initialWidth, setInitialWidth] = useState(WIDTH_CARTE_SHOELCHER)
+        const ratio = width / initialWidth
+    
+        function searchClosestPoint(e) {
+            var posCursor = getCursorPosition(e)
+            let tempInformaticiens = getPositionWithRightRatio();
+            let closestInfo = getClosestInformaticien(tempInformaticiens, posCursor)
+            console.log("Map : Hey React, bro, you mind re-rendering me with closestInformaticien=" + closestInfo + " instead of " + closestInformaticien + " ? Thanks !")
+            closestInformaticien.current=closestInfo;
+            updateInformaticien(closestInfo)
+        }
+    
+        function getPositionWithRightRatio() {
+            let duplicate = _.cloneDeep(informaticiens.current);
+            duplicate = duplicate.map(objet =&gt; {
+                objet.coords[0] = objet.coords[0] * ratio;
+                objet.coords[1] = objet.coords[1] * ratio;
+                return objet
+            })
+    
+            return duplicate
+        }
+    
+        function getClosestInformaticien(arrayOfInformaticien, positionCurseur) {
+            let closestInfo = null;
+            let dist = 9999;
+            let temp = 9999;
+            arrayOfInformaticien.forEach(technicien =&gt; {
+                let positionTechnicien = technicien.coords
+                temp = distanceEuclidienne(positionTechnicien, positionCurseur);
+                if (temp &lt; dist) {
+                    dist = temp
+                    closestInfo = positionTechnicien
+                }
+            })
+            return closestInfo;
+        }
+    
+        function getCursorPosition(e) {
+            var rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left
+            const y = e.clientY - rect.top
+            console.log("I've clicked on :", x, y)
+            return [x, y]
+    
+        }
+    
+        function distanceEuclidienne(point1, point2) {
+            let result = 0;
+            result = puissance2(point1[0] - point2[0])
+            result += puissance2(point1[1] - point2[1])
+            result = Math.sqrt(result)
+            return result
+        }
+    
+        function arrayEgalite(array1, array2) {
+            let isEqual = true
+            for (let i = 0; i &lt; array1.length; i++) {
+                if (array1[i] != array2[i]) {
+                    isEqual = false;
+                }
+            }
+            return isEqual;
+        }
+    
+        function puissance2(nombre) {
+            return Math.pow(nombre, 2)
+        }
+    
+        function changeCampus(campusSelectionne) {
+            var image;
+            var positionDeBase
+            if (campusSelectionne.target.value.localeCompare("fouillole") === 0) {
+                image = Guad;
+                setInitialWidth(WIDTH_CARTE_FOUI)
+                positionDeBase = _.cloneDeep(initialPosFoui)
+            } else {
+                image = Shoe;
+                setInitialWidth(WIDTH_CARTE_SHOE);
+                positionDeBase = _.cloneDeep(initialPosShoe)
+            }
+            setCarte(image)
+            setInitialPos(positionDeBase)
+             }
+    
+        function updateInformaticien(closestOnePosition) {
+            let newInformaticiens
+            var choosenOne = closestOnePosition
+            newInformaticiens = _.cloneDeep(initialPos)
+            newInformaticiens = newInformaticiens.map(individu =&gt; {
+                let scaledCoords = [individu.coords[0] * ratio, individu.coords[1] * ratio, individu.coords[2]]
+                console.log("UseEffect : In here, for" + individu._id + " scaledCoords=" + scaledCoords + " and choosenOne=" + choosenOne + " , so comparing them give us " + _.isEqual(scaledCoords, choosenOne))
+                if (_.isEqual(scaledCoords, choosenOne)) {
+                    individu.preFillColor = 'red'
+                } else {
+                    individu.preFillColor = 'blue'
+                }
+                return individu
+            })
+            console.log("Map : Hey React, bro, you mind re-rendering me with informaticiens=" + JSON.stringify(newInformaticiens) + " instead of " + JSON.stringify(informaticiens) + " ? Thanks, you're a lifesaver !")
+            if(newInformaticiens!==undefined)
+    {
+            informaticiens.current=newInformaticiens
+            setMapObjet(m =&gt; ({...m,areas:informaticiens.current}))
+    }
+            console.log("Just sandwiching setInformaticiens to make sure this line of code is read")
+        }
+    
+        function renderMap()
+        {
+            console.log("This should get triggered on each re-render", informaticiens.current)
+            var map={name:"test", areas:informaticiens.current}
+            return (&lt;ImageMapper
+                clas="map"
+                src={carte}
+                map={map}
+                width={width}
+                imgWidth={initialWidth}
+            /&gt;)
+        }
+    
+       useEffect(() =&gt; {
+             console.log("UseEffect : I'm from the render using closestInformaticien = "+ closestInformaticien.current)
+             updateInformaticien(closestInformaticien.current);
+         },[initialPos, informaticiens, closestInformaticien])
+    
+        return (
+            &lt;div className={"contact_Map"}&gt;
+                &lt;InputLabel id="labelCampus"&gt;Campus&lt;/InputLabel&gt;
+                &lt;Select labelId="labelCampus" value={carte} onChange={changeCampus}&gt;
+                    &lt;MenuItem value={"foui"}&gt;Foui&lt;/MenuItem&gt;
+                    &lt;MenuItem value={"shoe"}&gt;Schoe&lt;/MenuItem&gt;
+                &lt;/Select&gt;
+                &lt;div id={"testMap"} onClick={searchClosestPoint}&gt;
+                    {renderMap()}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        );
+    }
+    
+    export default Map;
 
-Following is the code for one of my context 
-
-&amp;#x200B;
-
-`const authReducer = (state, action) =&gt; {`  
- `switch (action.type) {`  
- `case "error":`  
- `return {`  
-`...state,`  
-`...{ loading: false },`  
-`...{ errorMessage: action.payload }`  
-`};`  
- `case "customerMobileNumberLogIn":`  
- `return {`  
-`...state,`  
-`...{ data: action.payload },`  
-`...{ loading: false },`  
-`...{ errorMessage: "" }`  
-`};`  
-   
- `case "inProgress":`  
- `return { ...state, ...{ loading: true }, ...{ errorMessage: "" } };`  
- `default:`  
- `return state;`  
-  `}`  
-`};`
-
-&amp;#x200B;
-
-`const customerMobileNumberLogin = dispatch =&gt; {`
-
-`..do api call with axios` 
-
-`}`
-
-&amp;#x200B;
-
-`export const { Provider, Context } = createDataContext(`  
- `authReducer,`  
-  `{`  
- `customerMobileNumberLogin`  
-  `},`  
-  `[]`  
-`);`  
-
-
-&amp;#x200B;
-
-I am using ReactRouter
-
-`import { Provider as AuthProvider } from "./context/AuthContext";`
-
-`ReactDOM.render(`  
- `&lt;AuthProvider&gt;`  
- `&lt;Router&gt;`  
- `&lt;RootWithAuth /&gt;`  
- `&lt;/Router&gt;`  
- `&lt;/AuthProvider&gt;,`  
- `document.getElementById("root")`  
-`);`  
-Now suppose I have many api calls and I decide to create separate context file for each api call, won't this approach slow down my app?The context api is causing the same problem as redux. I am not 100 percent sure if this is the right way of doing things but I followed Stephen Grider udemy React Native course for using this approach in Reactjs as well.
-## [8][Workflow using Storybook](https://www.reddit.com/r/reactjs/comments/en6nn1/workflow_using_storybook/)
-- url: https://www.reddit.com/r/reactjs/comments/en6nn1/workflow_using_storybook/
+There's a couple of useless things, as I've been changing the code here and there to solve the problem.
+## [11][D3 + React Zoom not sticking after change](https://www.reddit.com/r/reactjs/comments/eo3mux/d3_react_zoom_not_sticking_after_change/)
+- url: https://www.reddit.com/r/reactjs/comments/eo3mux/d3_react_zoom_not_sticking_after_change/
 ---
-*I hope this is related enough to React.js, I don't know a sub where I can post text where it would fit better.*
+ After initializing my graph and am setting my position though afterwards if I zoom in our out it resets itself to the default position
 
-I'm working on a React project based on Next.js, using TypeScript and styled-components. I've just implemented Storybook as a system to test my UI components. I am also trying out some testing, but I'm really new to it and I know just the basics. 
+[https://codesandbox.io/s/silent-cache-463v8?fontsize=14&amp;hidenavigation=1&amp;theme=dark](https://codesandbox.io/s/silent-cache-463v8?fontsize=14&amp;hidenavigation=1&amp;theme=dark)
 
-I would like to be able to automatically run all my tests when I commit to a feature branch, and if it's possible some sort of canceling/failing the commit if the tests fail. I would also like to prevent merging of a feature branch into master if the tests have failed.  I heard about CI systems but I don't know where to start. Should I use CircleCI? Where do I get started? Are there any developers willing to advise me on where to get started with this? I work on all my projects alone and I use GitHub. Thanks in advance!
-## [9][React Apollo Graphql Streaming Soundboard Application!](https://www.reddit.com/r/reactjs/comments/en4qoe/react_apollo_graphql_streaming_soundboard/)
-- url: https://www.reddit.com/r/reactjs/comments/en4qoe/react_apollo_graphql_streaming_soundboard/
+Any thoughts on what is the cause?
+
+Thanks
+## [12][Best database for react or react native or electron react](https://www.reddit.com/r/reactjs/comments/eo37hy/best_database_for_react_or_react_native_or/)
+- url: https://www.reddit.com/r/reactjs/comments/eo37hy/best_database_for_react_or_react_native_or/
 ---
-Live streaming an app for my future twitch streams. The app is a soundboard that can be managed on the computer and then the sounds can get triggered from the phone. I want to make it so it can be added as a browser source in obs and streamlabs. Usually I get a few friends on here to help answer my questions and others. Come join in. help out or sit back and learn a bit. [https://twitch.tv/jamie\_337\_nichols](https://twitch.tv/jamie_337_nichols)
-## [10][A book-list app](https://www.reddit.com/r/reactjs/comments/en4ft9/a_booklist_app/)
-- url: https://www.reddit.com/r/reactjs/comments/en4ft9/a_booklist_app/
----
-I want to make a book list app in react. It contains three inputs - Title, Author, ISBN and two buttons - Submit, Delete but I want to break this app into separate components and make communication among these components for managing data flow in these components, so how can I design this app in react components please give me suggestions I am beginner in react. Thank you.
-## [11][Can someone explain how this clock app works in written English?](https://www.reddit.com/r/reactjs/comments/en4bsk/can_someone_explain_how_this_clock_app_works_in/)
-- url: https://www.reddit.com/r/reactjs/comments/en4bsk/can_someone_explain_how_this_clock_app_works_in/
----
-Clock found here: [http://demo1.downloader.tech/](http://demo1.downloader.tech/) 
+We are planning to making Different apps for react and the order statted options
 
-This clock app is really impressive to me, like, it's beautiful. I'd like to know how it works.
+At the moment we Made a rest API in symphony using API platform
 
-The code for the app can be found here:  [https://www.golangprograms.com/react-js-projects-for-beginners/react-js-compass-clock.html](https://www.golangprograms.com/react-js-projects-for-beginners/react-js-compass-clock.html)
-
-It's only 125 lines of React code and 115 lines of CSS. I don't know how to read all of it though. Can someone explain? It looks pretty complicated so maybe explaining in written English is too big of a challenge...
-
-I understand almost all of the individual lines of code but I don't get how it all comes together. The presence of the $ symbol in the code also confuses me -- I don't know what it does.
-
-I also see this line as being particularly important yet hard to understand: 
-
-    array = length =&gt; Array.from({length}).map((v, k) =&gt; k).map(x=&gt;x+1);
-## [12][Uploading DICOM (dcm) files from React App to django server](https://www.reddit.com/r/reactjs/comments/en37bo/uploading_dicom_dcm_files_from_react_app_to/)
-- url: https://www.reddit.com/r/reactjs/comments/en37bo/uploading_dicom_dcm_files_from_react_app_to/
----
-Hi there,
-
-I need help with uploading a dataset of dicom files from my React App to a Django server.
-
-The hierarchy of the files are as follows:
-
-&gt;main/  
-&gt;  
-&gt;title/setOne/view  
-&gt;  
-&gt;1.dcm  
-2.dcm  
-&gt;  
-&gt;title/setTwo/view  
-&gt;  
-&gt;1.dcm  
-2.dcm
-
-&amp;#x200B;
-
-So the use case is that the user is going to upload the "main" directory and a script is supposed to generate the final list of objects to be posted to the server.
-
-Example of request needed to be sent to server:
-
-&gt;Array of objects  
-&gt;  
-&gt;The objects contain name of set and an array of files.  
-&gt;  
-&gt;`[`  
-&gt;  
-&gt;`{`  
-&gt;  
-&gt;`"name": setOne,`  
-&gt;  
-&gt;`"scans": [`  
-&gt;  
-&gt;`{"scan_image": 1.dcm},`  
-&gt;  
-&gt;`{"scan_image": 2.dcm}`  
-&gt;  
-&gt;`]`  
-&gt;  
-&gt;`},`  
-&gt;  
-&gt;`{`  
-&gt;  
-&gt;`"name": setOne,`  
-&gt;  
-&gt;`"scans": [`  
-&gt;  
-&gt;`{"scan_image": 1.dcm},`  
-&gt;  
-&gt;`{"scan_image": 2.dcm}`  
-&gt;  
-&gt;`]`  
-&gt;  
-&gt;`}`  
-&gt;  
-&gt;`]`
-
-&amp;#x200B;
-
-The problem I am facing is that for some reason the file objects upon posting them to the server using an axios POST request are all null. I have been looking around so much for a solution to this but with no luck. Hope I find it here.
-
-The GitHub Repo: [https://github.com/omargaber/Lesion-Lab-UI](https://github.com/omargaber/Lesion-Lab-UI)  
-The file where all the action happens: [https://github.com/omargaber/Lesion-Lab-UI/blob/master/src/Sidebar.jsx](https://github.com/omargaber/Lesion-Lab-UI/blob/master/src/Sidebar.jsx)
+But my question Is what do you guys use for database or rest api
+Or is it Maybe better to use mongo or Express

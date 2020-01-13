@@ -1,53 +1,124 @@
 # golang
-## [1][How we optimized our DNS server using go tools](https://www.reddit.com/r/golang/comments/en4pds/how_we_optimized_our_dns_server_using_go_tools/)
-- url: https://medium.com/@arash.cordi/how-we-optimized-our-dns-server-using-go-tools-d753e1a5e709
+## [1][Golang IO Cookbook (found on HN)](https://www.reddit.com/r/golang/comments/ensegf/golang_io_cookbook_found_on_hn/)
+- url: https://github.com/jesseduffield/notes/wiki/Golang-IO-Cookbook
 ---
 
-## [2][A dead simple proxy server that allows you to support HTTPS automatically with the Let's Encrypt certificate authority](https://www.reddit.com/r/golang/comments/en2yvk/a_dead_simple_proxy_server_that_allows_you_to/)
-- url: https://www.reddit.com/r/golang/comments/en2yvk/a_dead_simple_proxy_server_that_allows_you_to/
----
-If anyone is interested, I just wrote a simply proxy server (called gossl) that allows you to easily support HTTPS through Let's Encrypt. Here's an example of serving static files with HTTPS:
-
-/home/ubuntu&gt; sudo ./gossl -staticDir=/path/to/your/static/content/dir -domains=[mydomain.com](https://slack-redir.net/link?url=http%3A%2F%2Fmydomain.com),[www.mydomain.com](https://slack-redir.net/link?url=http%3A%2F%2Fwww.mydomain.com)
-
-That's really all you need to do. No libraries to install. No certificate renewal service to set up. It uses the autocert library in Go. I have instructions on my GitHub page explaining how to set it up as a service using systemd on Linux and how to write a proxy mapping file. You can proxy to several different servers and still serve up static files. One good use for it is running your primary server on localhost on a non-public port and using gossl to provide HTTPS support. I'm not sure if this is useful to anyone else or if I'm reinventing the wheel (don't care--was still interesting to write), but if so, it's open source. There's also a link to a binary (built for Ubuntu 18.04) on the page and instructions for how to build it: [https://github.com/metaphyze/gossl](https://slack-redir.net/link?url=https%3A%2F%2Fgithub.com%2Fmetaphyze%2Fgossl)
-## [3][Multiplexing Channels in Go](https://www.reddit.com/r/golang/comments/en6nus/multiplexing_channels_in_go/)
-- url: https://katcipis.github.io/blog/mux-channels-go/
+## [2][Go-grpc makes use of go-micro plugins to create a better framework for gRPC development.](https://www.reddit.com/r/golang/comments/eo1cxq/gogrpc_makes_use_of_gomicro_plugins_to_create_a/)
+- url: https://github.com/vaniila/go-grpc
 ---
 
-## [4][Go 1.4 significant reduction in defer performance footprint](https://www.reddit.com/r/golang/comments/emr462/go_14_significant_reduction_in_defer_performance/)
-- url: https://twitter.com/janiszt/status/1215601972281253888?s=19
+## [3][storage - An application-oriented unified storage layer for Golang](https://www.reddit.com/r/golang/comments/eo12xc/storage_an_applicationoriented_unified_storage/)
+- url: https://www.reddit.com/r/golang/comments/eo12xc/storage_an_applicationoriented_unified_storage/
+---
+Hello everyone, I built a golang lib [storage](https://github.com/Xuanwo/storage) as an application-oriented unified storage layer. 
+
+This lib supports basic operations across all storage services and advanced operations across implemented storage services. All import changes are descibed in [proposals](https://github.com/Xuanwo/storage/tree/master/docs/design). For now, it supports azblob, cos, dropbox, local fs, gcs, kodo, oss, qingstor, s3, uss.
+
+There are many works to do, any comment or advice will be great for me, a star maybe better though (-;
+## [4][Vscode can't find package](https://www.reddit.com/r/golang/comments/eo2iti/vscode_cant_find_package/)
+- url: https://www.reddit.com/r/golang/comments/eo2iti/vscode_cant_find_package/
+---
+Mandatory: "I'm going crazy with this"
+
+I'm on go 1.13 and I'm trying to run a simple "hello world" for this UI package 
+
+    https://github.com/gizak/termui
+
+I run the main.go and it says:
+
+    build goChat: cannot load github.com/gizak/termui/v3: cannot find module providing package github.com/gizak/termui/v3
+
+The package is there though. This is my config
+
+    # Go env variables
+    export GOPATH="$HOME/golang/packages:$HOME/golang/proj"
+    export GOROOT=/usr/local/opt/go/libexec
+    export GOPROXY=off
+
+and the files are right there:
+
+    ~/golang/packages/src/github.com/gizak/termui/v3$ ls -l
+    total 160
+    -rw-r--r--   1 draco  draco   100B 13 Jan 10:12 alignment.go
+    -rw-r--r--   1 draco  draco   770B 13 Jan 10:12 backend.go
+    -rw-r--r--   1 draco  draco   2.7K 13 Jan 10:12 block.go
+    -rw-r--r--   1 draco  draco   1.5K 13 Jan 10:12 buffer.go
+    -rw-r--r--   1 draco  draco   753B 13 Jan 10:12 canvas.go
+    -rw-r--r--   1 draco  draco   280B 13 Jan 10:12 doc.go
+    drwxr-xr-x   3 draco  draco    96B 13 Jan 10:12 drawille/
+    -rw-r--r--   1 draco  draco   4.7K 13 Jan 10:12 events.go
+    -rw-r--r--   1 draco  draco   216B 13 Jan 10:12 go.mod
+    -rw-r--r--   1 draco  draco   641B 13 Jan 10:12 go.sum
+    -rw-r--r--   1 draco  draco   3.2K 13 Jan 10:12 grid.go
+    -rw-r--r--   1 draco  draco   768B 13 Jan 10:12 render.go
+    -rw-r--r--   1 draco  draco   1.3K 13 Jan 10:12 style.go
+    -rw-r--r--   1 draco  draco   3.8K 13 Jan 10:12 style_parser.go
+    -rw-r--r--   1 draco  draco   1.1K 13 Jan 10:12 symbols.go
+    -rw-r--r--   1 draco  draco   549B 13 Jan 10:12 symbols_other.go
+    -rw-r--r--   1 draco  draco   522B 13 Jan 10:12 symbols_windows.go
+    -rw-r--r--   1 draco  draco   2.7K 13 Jan 10:12 theme.go
+    -rw-r--r--   1 draco  draco   4.5K 13 Jan 10:12 utils.go
+    drwxr-xr-x  14 draco  draco   448B 13 Jan 10:12 widgets/
+    
+what to do?
+
+EDIT: This is my go.mod
+
+~/golang/proj/goChat$ cat go.mod
+module goChat
+
+go 1.13
+
+**EDIT: SOLVED** with GO111MODULE=off
+## [5][Unit test kubernetes client in Go](https://www.reddit.com/r/golang/comments/eo1rjk/unit_test_kubernetes_client_in_go/)
+- url: https://gianarb.it/blog/unit-testing-kubernetes-client-in-go
 ---
 
-## [5][ok-zoomer: A Go program that takes an image, uses pigo to detect a face, and creates a gif that zooms in on the face](https://www.reddit.com/r/golang/comments/en615f/okzoomer_a_go_program_that_takes_an_image_uses/)
-- url: https://github.com/jbirms/ok-zoomer
+## [6][Build a RESTful HTTP API in Golang w/ Mux](https://www.reddit.com/r/golang/comments/eo2e48/build_a_restful_http_api_in_golang_w_mux/)
+- url: https://youtu.be/HmiybuiEZI4
 ---
 
-## [6][Complete Guide to Create Docker Container for Your Golang Application](https://www.reddit.com/r/golang/comments/emxfxo/complete_guide_to_create_docker_container_for/)
-- url: https://medium.com/@afdolriski/complete-guide-to-create-docker-container-for-your-golang-application-80f3fb59a15e
+## [7][Sandy: A tiny sandbox to run untrusted code](https://www.reddit.com/r/golang/comments/enn0k4/sandy_a_tiny_sandbox_to_run_untrusted_code/)
+- url: https://github.com/hobochild/sandy
 ---
 
-## [7][Complete Go + Typescript application with proper system design, testing, and modern architecture explanations](https://www.reddit.com/r/golang/comments/emyffo/complete_go_typescript_application_with_proper/)
-- url: https://github.com/short-d/short#system-design
+## [8][Initializing services in parallel](https://www.reddit.com/r/golang/comments/eo3dq9/initializing_services_in_parallel/)
+- url: https://www.reddit.com/r/golang/comments/eo3dq9/initializing_services_in_parallel/
+---
+Hello all. I have around 10 services being initialized before my echo web server fires up. Some of them are redis, elastic search etc. But two of them are related to each other. Remaining 8 are independent. So I spawned up goroutines for each of them and decreased the boot time of my server. But those remaining 2 are related. When I put them in goroutines with a sync.Waitgroup it throws a panic. When those are running in the main routine everything is fine.
+
+I can't put up links or screenshots because the codebase is proprietary. I regret that.
+
+Anyone came across the same situation? Thank you.
+
+Okat this is my example post. 
+
+    package main
+    
+    import (
+        "fmt"
+        "sync"
+    )
+    
+    func hello(wg *sync.WaitGroup) {
+        wg.Add(1)
+        fmt.Println("Hello world goroutine")
+        wg.Done()
+    }
+    
+    func main() {
+        var wg sync.WaitGroup
+        go hello(&amp;wg)
+        wg.Wait()
+        fmt.Println("hello main")
+    }
+
+How do I make the multiple goroutines run before the main exits. In this example, I need the `hello` function to execute before printing `hello main`
+## [9][How to implement &amp; test a server-streaming gRPC API in Go](https://www.reddit.com/r/golang/comments/env6s0/how_to_implement_test_a_serverstreaming_grpc_api/)
+- url: https://youtu.be/SBPjEbZcgf8
 ---
 
-## [8][Ann: Repotrace and srctrace](https://www.reddit.com/r/golang/comments/en6mtd/ann_repotrace_and_srctrace/)
-- url: https://www.reddit.com/r/golang/comments/en6mtd/ann_repotrace_and_srctrace/
----
-friends
-
-The following is the first (of hopefully a few more to come) tools that I built for DevOps. Hoping it will be of use to the community. Both written in go and support a number of languages besides go.
-
-[https://github.com/RajaSrinivasan/srctrace.git](https://github.com/RajaSrinivasan/srctrace.git)
-
-[https://github.com/RajaSrinivasan/repotrace.git](https://github.com/RajaSrinivasan/repotrace.git)
-
-best, srini
-## [9][An experimental &amp; simple key-value service written in Go/C++](https://www.reddit.com/r/golang/comments/en6l5m/an_experimental_simple_keyvalue_service_written/)
-- url: https://www.reddit.com/r/golang/comments/en6l5m/an_experimental_simple_keyvalue_service_written/
----
-This is our fresher training project in [ZaloPay.](https://github.com/zalopay-oss) [GodBee](https://github.com/zalopay-oss/godbee) is a Key-Value Store Service project. In this project, we choose B-Tree and B+Tree data structures to organize and manipulate data. Key-Value Storage is written in C++ and Service layer is written in Golang programming language. We use gRPC services to handle requests from client and use CGO to access data from C++ storage.
-## [10][maildir-tools scripting tools for Maildirs, along with a simple TUI based email-client.](https://www.reddit.com/r/golang/comments/en5z7a/maildirtools_scripting_tools_for_maildirs_along/)
-- url: https://github.com/skx/maildir-tools
+## [10][Hi Gophers, I've just published this package using to make and train multi-layer neural network. Maybe you find it helpful.](https://www.reddit.com/r/golang/comments/ennq4p/hi_gophers_ive_just_published_this_package_using/)
+- url: https://github.com/dathoangnd/gonet
 ---
 

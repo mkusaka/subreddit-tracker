@@ -11,43 +11,49 @@ Show us here!
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Skill tree for a modern frontend developer](https://www.reddit.com/r/javascript/comments/en3hed/skill_tree_for_a_modern_frontend_developer/)
-- url: https://roadmap.sh/frontend
+## [3][Writing dependency-free client-side JavaScript](https://www.reddit.com/r/javascript/comments/enzlu7/writing_dependencyfree_clientside_javascript/)
+- url: https://magnushoff.com/blog/dependency-free-javascript/
 ---
 
-## [4][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/javascript/comments/emxuzt/announcing_typescript_38_beta/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/
+## [4][JavaScript framework to dynamically generate a portfolio site from a JSON resume](https://www.reddit.com/r/javascript/comments/eo3srg/javascript_framework_to_dynamically_generate_a/)
+- url: https://github.com/navdeepsekhon/portfolio-generator?js1
 ---
 
-## [5][The unseen performance costs of modern CSS-in-JS libraries in React apps](https://www.reddit.com/r/javascript/comments/emtqyx/the_unseen_performance_costs_of_modern_cssinjs/)
-- url: https://calendar.perfplanet.com/2019/the-unseen-performance-costs-of-css-in-js-in-react-apps/
+## [5][The JavaScript framework for visual programming](https://www.reddit.com/r/javascript/comments/enqsyh/the_javascript_framework_for_visual_programming/)
+- url: https://rete.js.org
 ---
 
-## [6][react-three-fiber v4 released](https://www.reddit.com/r/javascript/comments/en51i8/reactthreefiber_v4_released/)
-- url: https://github.com/react-spring/react-three-fiber/blob/master/whatsnew.md
+## [6][Server-Side Rendering (SSR) with ReactJS and Flask](https://www.reddit.com/r/javascript/comments/eo27br/serverside_rendering_ssr_with_reactjs_and_flask/)
+- url: https://medium.com/@olayenca/server-side-rendering-ssr-with-react-and-flask-47e589e1051f
 ---
 
-## [7][Safe Cross-origin Communication with JavaScript and window.postMessage()](https://www.reddit.com/r/javascript/comments/en66sv/safe_crossorigin_communication_with_javascript/)
-- url: https://medium.com/javascript-in-plain-english/javascript-and-window-postmessage-a60c8f6adea9
+## [7][[AskJS] Spell checkers and accessing built in browser checker.](https://www.reddit.com/r/javascript/comments/eo4clq/askjs_spell_checkers_and_accessing_built_in/)
+- url: https://www.reddit.com/r/javascript/comments/eo4clq/askjs_spell_checkers_and_accessing_built_in/
+---
+I was wondering if it is possible to access the results from the user agents built in spell checker? Eg: when I misspell something in the text area and the browser underlines it with the red squiggles. 
+
+Surely it should have some of that information available to us? 
+
+What have your solutions been to spell checking?
+## [8][obdo - Generate objects by flat chainable dot notation.](https://www.reddit.com/r/javascript/comments/eo1q9m/obdo_generate_objects_by_flat_chainable_dot/)
+- url: https://gitlab.com/ceigh/obdo
 ---
 
-## [8][[AskJS] What types of performance testing tools do you use for JS animation?](https://www.reddit.com/r/javascript/comments/en6oq9/askjs_what_types_of_performance_testing_tools_do/)
-- url: https://www.reddit.com/r/javascript/comments/en6oq9/askjs_what_types_of_performance_testing_tools_do/
----
-As the performance of JS animations are machine dependent,  what tools are you using to test animation performance on lower powered CPU/GPU's?
-## [9][Railroad Ink Game Implemented in TypeScript](https://www.reddit.com/r/javascript/comments/emqj9c/railroad_ink_game_implemented_in_typescript/)
-- url: https://ondras.github.io/rri/
+## [9][🧚pxi (pixie) is a small, fast, and magical command-line data processor similar to jq, mlr, and awk](https://www.reddit.com/r/javascript/comments/enuvs2/pxi_pixie_is_a_small_fast_and_magical_commandline/)
+- url: https://github.com/Yord/pxi
 ---
 
-## [10][Concurrent React - Suspense API and useTransition hook explained without using any data fetching library.](https://www.reddit.com/r/javascript/comments/emwi52/concurrent_react_suspense_api_and_usetransition/)
-- url: https://hackernoon.com/concurrent-react-using-suspense-and-usetransition-to-build-better-ux-cman2cdd
+## [10][Using Next.js with Nest](https://www.reddit.com/r/javascript/comments/eo249r/using_nextjs_with_nest/)
+- url: https://github.com/egoist/nest-next
 ---
 
-## [11][Everyone has JavaScript, right?](https://www.reddit.com/r/javascript/comments/emtovc/everyone_has_javascript_right/)
-- url: https://kryogenix.org/code/browser/everyonehasjs.html
+## [11][[AskJS] What's your favorite Node.js interview questions?](https://www.reddit.com/r/javascript/comments/enom4g/askjs_whats_your_favorite_nodejs_interview/)
+- url: https://www.reddit.com/r/javascript/comments/enom4g/askjs_whats_your_favorite_nodejs_interview/
 ---
+To prepare for my own interviews, I am putting together a cheatsheet of Node.js interview questions and wanna get some inputs and more questions here. This is what I have so far: https://www.cheaki.com/nodejs/nodejs-interview-questions 
 
-## [12][Need feedbacks! I created this starter kit for front-end development with NPM Scripts for building web sites. Please check it out!](https://www.reddit.com/r/javascript/comments/emsm8d/need_feedbacks_i_created_this_starter_kit_for/)
-- url: https://github.com/aymankheiri/ayman-starter-kit
+What's your favorite Node.js interview question (ask or being asked)? Thx!
+## [12][stuck (im beginner)](https://www.reddit.com/r/javascript/comments/eo1unx/stuck_im_beginner/)
+- url: /r/learnjavascript/comments/eo08md/stuck_im_beginner/
 ---
 

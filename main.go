@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"math/rand"
 )
 
 type Client struct {
@@ -93,7 +94,7 @@ func FetchAllJSON() {
 
 			jsonfile.WriteString(string(body))
 		}
-		time.Sleep(1 * time.Second)
+		time.Sleep(time.Duration(rand.Intn(10)) * time.Second)
 	}
 }
 
@@ -182,7 +183,7 @@ func StoreAllMarkdownFromJSON() {
 }
 
 func main() {
-	// FetchAllJSON()
+	FetchAllJSON()
 	StoreEachSubredditMarkdownFromJSON()
 	StoreAllMarkdownFromJSON()
 }

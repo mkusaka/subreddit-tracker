@@ -68,208 +68,120 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Blog: Why Rust? I have a GC!](https://www.reddit.com/r/rust/comments/emyill/blog_why_rust_i_have_a_gc/)
-- url: https://llogiq.github.io/2020/01/10/rustvsgc.html
+## [3][Cranelift backend for Rust](https://www.reddit.com/r/rust/comments/enxgwh/cranelift_backend_for_rust/)
+- url: https://www.reddit.com/r/rust/comments/enxgwh/cranelift_backend_for_rust/
 ---
+For any that don't know, there's an ongoing work to create a [backend](https://github.com/bjorn3/rustc_codegen_cranelift) for Rust built on cranelift.  This comes with a promise of [drastically](https://www.reddit.com/r/rust/comments/9xobgz/the_cranelift_backend_for_rustc_now_produces_code/) reduced debug compilation times.
 
-## [4][Best way to start learning rust.](https://www.reddit.com/r/rust/comments/en3wjg/best_way_to_start_learning_rust/)
-- url: https://www.reddit.com/r/rust/comments/en3wjg/best_way_to_start_learning_rust/
----
-I know some basic stuff from c,c++, and shell scripting. Where should i start with learning rust, im willing to purchase a book or class if that is a good way to start.
-## [5][Here's a PR showing how easy it is to remove a dependency on proc-macro-hack in Rust 1.40](https://www.reddit.com/r/rust/comments/emwjs1/heres_a_pr_showing_how_easy_it_is_to_remove_a/)
-- url: https://github.com/RustPython/RustPython/pull/1669/files
----
-
-## [6][Proof of Concept: Rust code in Unreal Engine](https://www.reddit.com/r/rust/comments/emp0su/proof_of_concept_rust_code_in_unreal_engine/)
-- url: https://ejmahler.github.io/rust_in_unreal/
----
-
-## [7][Why does adding more threads only give about a 36% speedup?](https://www.reddit.com/r/rust/comments/en1slw/why_does_adding_more_threads_only_give_about_a_36/)
-- url: https://www.reddit.com/r/rust/comments/en1slw/why_does_adding_more_threads_only_give_about_a_36/
----
-Full code is available as (short) gists; some of the cruft is to make sure LLVM doesn't optimize the whole example away. Note the timings really only capture the main loop, not the allocations, etc.:
-
-Serial: [https://gist.github.com/rodya-mirov/bb289d58f850cf42dc96e3b058ef024c](https://gist.github.com/rodya-mirov/bb289d58f850cf42dc96e3b058ef024c)
-
-Parallel: [https://gist.github.com/rodya-mirov/2a33917371fc88a57171f5c4113d1da7](https://gist.github.com/rodya-mirov/2a33917371fc88a57171f5c4113d1da7)
+A fantastic amount of progress has been made, with all but 57 tests from the rustc test suite passing.
 
 &amp;#x200B;
 
-Basically the idea is you make a long vector (100 million f64s) and make a new vector to hold it (zeroed out to eliminate resizing noise) and \`out\[i\] = x\[i\] + x\[i\]\`.
-
-The serial version is just a simple loop, and the timing is 180 ms (not including allocation time).
-
-The parallel version uses a raw mut pointer; it divides it into chunks that aren't too small (65,536 elements), shared between rayon threads (wrapped in an unsafe Sync/Send struct), (unsafe) recast into a mut slice, and then just loop through the chunk and do \`out\[i\] = x\[i\] + x\[i\]\` in there.
-
-With one thread the parallel version also runs in 180ms, so the pointer / casting isn't costing anything relevant. With two threads, it runs in about 130 ms, and with three or more threads it takes about 115 ms.
-
-However since this is clear CPU bound I would expect the speedup to be completely linear in the number of threads, at least until we get to the number of cores (I have 4). In particular I would expect 2 threads to get 90 ms, 3 threads to get 60 ms, and 4+ to cap out around 45 ms.
+Almost all of this work has been done single-handedly by [bjorn3](https://github.com/bjorn3).  I'm here hoping to raise awareness of the project and ask any who are capable and willing to support by [donating to bjorn3](https://liberapay.com/bjorn3/) or contributing via [github](https://github.com/bjorn3/rustc_codegen_cranelift).  Thank you!!
 
 &amp;#x200B;
 
-Obviously I'm not getting it, and I'm pretty disappointed. What gives? Is it too much data and I'm maxing out the bus traffic or something? Is there a way to "unlock" my multiple cores?
-## [8][withoutboats doing a stream about Pin next Weds the 15th, 16:00 UTC](https://www.reddit.com/r/rust/comments/emrf7h/withoutboats_doing_a_stream_about_pin_next_weds/)
-- url: https://twitter.com/withoutboats/status/1215626280919621635
+I firmly believe that getting compilation times down is vital for Rust's continued success - so I'm very excited to see this project completed!
+## [4][Update on rustysd: a minimal systemd compatible service manager written in rust](https://www.reddit.com/r/rust/comments/eo276v/update_on_rustysd_a_minimal_systemd_compatible/)
+- url: https://www.reddit.com/r/rust/comments/eo276v/update_on_rustysd_a_minimal_systemd_compatible/
+---
+Hello r/rust!
+
+I have posted here a few weeks back about my newest project: rustysd. Since then I have pushed the project further and have reached a point where I think it's worthwhile to share it again. [The repo is located here](https://github.com/KillingSpark/rustysd/tree/v0.1.0).
+
+The short summary of rustysd goes like this:
+"Rustysd is a service manager that tries to replicate systemd behaviour for a subset of the configuration possibilities. It focuses on the core functionality of a service manager."
+(So it is only minimal in the amount of features it tries to provide. The binaries can be somewhat small if built with musl and strip'ed, but generally rust produces relatively big binaries)
+
+This means rustysd can read (a subset of) systemd unit files and run them as if it were systemd, as far as the services will know. Since rustysd does not need to be PID1 it can provide this functionality to linux distros that don't use systemd and also to FreeBSD (other BSDs are untested right now). Additionally it can be used in docker as PID1 so you can run services that require to be run by systemd in a container.
+
+The biggest usability issue right now is probably the rsdctl tool which is the corresponding tool for systemds systemctl. I don't have a lot of experience in making good UIs so if you want to help me out with that I would be very thankful.
+
+The next steps will probably be:
+* make rsdctl a good tool
+* get rustysd to act as the init system in a VM
+* develop a test-suite to be able to catch regressions / bugs
+
+I would be glad about any feedback, especially regarding the unsafe blocks I had to use where I needed to use libc::* directly. (This is contained in the platform module if you are interested)
+
+If you have any use for this I'd like to hear from you! I have started this project for the fun of it but if anyone actually wants this I would love to make it as easy as possible for you!
+## [5][PROST! (a Protocol Buffers implementation) v0.6.0 released](https://www.reddit.com/r/rust/comments/enwvap/prost_a_protocol_buffers_implementation_v060/)
+- url: https://github.com/danburkert/prost/releases/tag/v0.6.0
 ---
 
-## [9][sha2::sha256 output variable seems to be a not valid decimal value](https://www.reddit.com/r/rust/comments/en7fd3/sha2sha256_output_variable_seems_to_be_a_not/)
-- url: https://www.reddit.com/r/rust/comments/en7fd3/sha2sha256_output_variable_seems_to_be_a_not/
+## [6][Shamir's Secret Sharing written in Rust](https://www.reddit.com/r/rust/comments/eo36fp/shamirs_secret_sharing_written_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/eo36fp/shamirs_secret_sharing_written_in_rust/
 ---
-I am working on a Rust function that will hash a given string, send it using a UdpSocket to a python server. The server should create a file with the hash as a name.
+Hi all, I've just published my first Rust crate so I would love to have other rustaceans opinions: [https://crates.io/crates/sharks](https://crates.io/crates/sharks)
 
-This is my hashing part:
+Basically it is a crate which implements Shamir's Secret Sharing ([https://en.wikipedia.org/wiki/Shamir's\_Secret\_Sharing](https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing)), an algorithm I find very very interesting.
 
-    let mut hasher: Sha256 = Digest::new();		
-    hasher.input([&amp;counter.to_ne_bytes()[..], filename.as_bytes()].concat());		
-    let output = hasher.result();		
-    println!("Output: {:?}", &amp;output[..]);
+I wanted it to be small, fast and secure, so I made it as idiomatic as possible and keeping external dependencies to a minimum. It only uses rand and num, so it is super easy to read! :)
 
-The printed value is:
-
-`Output: [19, 5, 75, 127, 209, 185, 93, 164, 135, 194, 21, 31, 22, 219, 44, 203, 197, 102, 137, 151, 198, 183, 249, 8, 177, 27, 141, 229, 10, 107, 226, 62]`
-
-From my understaning the output value is a hexadecimal array. Since the value the server gets is:
-
-`b'\x13\x05K\x7f\xd1\xb9]\xa4\x87\xc2\x15\x1f\x16\xdb,\xcb\xc5f\x89\x97\xc6\xb7\xf9\x08\xb1\x1b\x8d\xe5\nk\xe2&gt;'`
-
-which posses some non-valid hexadecimal values.
-
-Now if I try to print the hash as a string using
-
-    let mut hash = Vec::new();		
-    for value in &amp;output[..] {			
-    hash.push(value.to_owned());}		
-    println!("{:?}", String::from_utf8(hash).unwrap());
-
-The print line will output an error:
-
-`thread '&lt;unnamed&gt;' panicked at 'called \`Result::unwrap()\` on an \`Err\` value: FromUtf8Error { bytes: \[19, 5, 75, 127, 209, 185, 93, 164, 135, 194, 21, 31, 22, 219, 44, 203, 197, 102, 137, 151, 198, 183, 249, 8, 177, 27, 141, 229, 10, 107, 226, 62\], error: Utf8Error { valid\_up\_to: 7, error\_len: Some(1) } }', src\\libcore\\result.rs:1192:5note: run with \`RUST\_BACKTRACE=1\` environment variable to display a backtrace.\`
-
-Now I am not sure I am not correctly hashing the values or if the actual sha2::sha256 function is broken.
-
-Is anyone able to please help me out?
-## [10][Announcing postgres-query 0.3.1: dynamic SQL queries and multi-mapping!](https://www.reddit.com/r/rust/comments/en7evt/announcing_postgresquery_031_dynamic_sql_queries/)
-- url: https://www.reddit.com/r/rust/comments/en7evt/announcing_postgresquery_031_dynamic_sql_queries/
----
-Since the [previous announcement](https://www.reddit.com/r/rust/comments/ej3thz/announcing_postgresquery_write_and_execute_sql/?utm_source=share&amp;utm_medium=web2x) last week I have been studying for exams on and off while working on the next version of [postgres-query](https://github.com/nolanderc/rust-postgres-query). I am very thankful of the feedback in the last post, some of which inspired the two major features in this release: dynamic queries and multi-mapping (see the README and documentation for details).
-
-For someone who has not previously done any extensive library development, I had some trouble nailing down an API for both of these features. The main issue regarded dynamic queries and parameter bindings. I experimented with having a very basic DSL built around small fragments of queries. This turned out to be a pain to achieve with low run-time overhead (a goal of this crate) due to an explosion in memory allocations.
-
-In the end, simply using strings was the way to go.  There already exists tools for working with strings efficiently, which reduces the scope of this crate, and it turned out to be much faster, at the expense of some compile-time verification of parameter bindings.
-
-As always, all and any feedback is welcome!
-## [11][Rust mail client lightning talk with cliffhanger](https://www.reddit.com/r/rust/comments/emx6j0/rust_mail_client_lightning_talk_with_cliffhanger/)
-- url: https://www.youtube.com/watch?v=-Om6NHyqAeU
+Thank you very much for checking it out!
+## [7][Awesome wgpu-rs. List of learning resources, games, etc.](https://www.reddit.com/r/rust/comments/eo4pj8/awesome_wgpurs_list_of_learning_resources_games/)
+- url: https://github.com/rofrol/awesome-wgpu-rs
 ---
 
-## [12][CGAL wrapper in Rust?](https://www.reddit.com/r/rust/comments/emzvb4/cgal_wrapper_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/emzvb4/cgal_wrapper_in_rust/
+## [8][An update on Rust Database Connectivity (RDBC) and news about the move to Tokio](https://www.reddit.com/r/rust/comments/enphc2/an_update_on_rust_database_connectivity_rdbc_and/)
+- url: https://andygrove.io/2020/01/rust-database-connectivity-rdbc/
 ---
-**TL;DR.** Requesting comments on the idea of creating a
-full-fledged wrapper to [CGAL](//www.cgal.org/).
 
-## Motivation
+## [9][git-poly : A minimalist multi repo tool written in rust](https://www.reddit.com/r/rust/comments/eo1j54/gitpoly_a_minimalist_multi_repo_tool_written_in/)
+- url: https://www.reddit.com/r/rust/comments/eo1j54/gitpoly_a_minimalist_multi_repo_tool_written_in/
+---
+Hey,  
+ I wanted to share a small project I've been working on that helps with working on multiple git repos at once.
 
-I've been toying with the idea of creating a CGAL wrapper
-in Rust. Just seeking thoughts from the larger community
-here on possible road-blocks in creating and maintaining
-such a wrapper.
+[https://luke\_titley.gitlab.io/git-poly](https://luke_titley.gitlab.io/git-poly)
 
-- **Why bindings?** [CGAL](//www.cgal.org/) is a fairly
-  comprehensive collection of comp. geom. algos exposed as a
-  C++ library.  To quote their webpage:
+I wrote it for myself mostly, to help on a project at my work.
 
-  &gt; The library offers data structures and algorithms like
-  &gt; triangulations, Voronoi diagrams, Boolean operations on
-  &gt; polygons and polyhedra, point set processing,
-  &gt; arrangements of curves, surface and volume mesh
-  &gt; generation, geometry processing, alpha shapes, convex
-  &gt; hull algorithms, shape reconstruction, AABB and KD
-  &gt; trees...
+It's in the same sort of space as these projects:
 
-  Further, it is actively developed, and has accrued a lot
-  of insights in the course of its development.
-  Re-implementing such a collection definitely seems
-  wasteful, if not impossible.
+* git repo
+* git subtree
+* git slave
+* git submodule
 
-- **Why Rust?** Rust's powerful type-system allows us to
-  modularize naturally, and focus on a specific task a hand.
-  IMHO, it is one of the best languages to create algo.
-  applications in.
+It's written in rust.
+## [10][Show /r/rust: Optimath, linear algebra with const generics and SIMD. [no_std]](https://www.reddit.com/r/rust/comments/eo4ury/show_rrust_optimath_linear_algebra_with_const/)
+- url: https://djugei.github.io/optimath-0-3-0/
+---
 
-Access to all of CGAL's packages seems quite empowering to
-anyone trying to create comp. geom. application. My own
-interests are in a small subset of CGAL, but the thought of
-a full-fledged bindings library seems to be worthy of a
-discussion, to say the least.
+## [11][How to export C++ struct into Rust?](https://www.reddit.com/r/rust/comments/eo43dg/how_to_export_c_struct_into_rust/)
+- url: https://www.reddit.com/r/rust/comments/eo43dg/how_to_export_c_struct_into_rust/
+---
+I know `extern "C"` can extern functions from c++ and after building and linking this code, I can use it in Rust via libc crate and extern:
 
-## State of Rust Ecosystem
+    extern crate libc;
+    
+    extern {
+        fn mai() -&gt; libc::c_int;
+    }
+    
+    pub fn tar() {
+        unsafe {
+            mai()
+        };
+    }
 
-I'm unaware of a comprehensive CGAL like alternative in
-Rust. Listing what I have found in the rust eco-system;
-needless to say, this list is by no means exhaustive.
+But imagine I have a C++ struct:
 
-1. [cgal-sys](//github.com/nyorem/cgal-sys). This is in the
-   spirit of this discussion, but does not seem to be in
-   active development. Also, only a very few features of
-   CGAL are exported. I hope the author of the crate also
-   chimes in to this discussion, and shares their opinions.
+    struct Order {
+        // Some fields and code
+    }
 
-2. [spade](//github.com/Stoeoef/spade). This is an
-   independent implementation of the (2-D and 3-D?) delauney
-   triangulation, and related algos such as interpolation
-   (Sibson, etc.) Again, and I hope the author agrees, not
-   as comprehensive as all of CGAL.
+And I need to use this struct directly in Rust. How to do that?
+## [12][Has there been any community project started to revive CEF support in Servo?](https://www.reddit.com/r/rust/comments/eo2mwu/has_there_been_any_community_project_started_to/)
+- url: https://www.reddit.com/r/rust/comments/eo2mwu/has_there_been_any_community_project_started_to/
+---
+For reference CEF (Chromium Embedded Framework) is what's used to embed a chromium based browser in applications. It's what's used in Steam and Spotify for example.
+Some people in the Rust team were working on CEF support basically making it so Servo (Mozillas web-rendering engine written in Rust) could easily be used instead. 
+However about 2 years ago they dropped it to focus on other stuff hoping it would be a 3rd party project.
 
-3. [GDAL](//github.com/georust/gdal). Not very related, but
-   an example of another reasonably large bindings library.
-   We've made some (fairly minor) contributions, and
-   maintain a [fork](//github.com/AspecScire/gdal) that is
-   slightly more recent than above.
+https://groups.google.com/forum/#!topic/mozilla.dev.servo/5MHDnfMya3s
 
-4. [AeroRust](//www.reddit.com/r/rust/comments/ejdv7w/announcing_aerorust_the_unofficial_working_group/).
-   This library probably has a lot of application in
-   Aerospace, but I'm not too familiar with the field, and
-   hence am not sure. Hope, members from the WG have some
-   insights on this. Writing this here, but also happy to
-   cross-post there if it makes sense.
-
-## Goals
-
-To set a tone for discussion: the end goal I imagine is a
-full-fledged wrapper to access (almost) all the features of
-CGAL. In particular, it should be reasonably simple to
-keep-up with updates to CGAL, assuming CGAL itself doesn't
-diverge too much from how it is at present.
-
-### Possible issues
-
-1. _CGAL is a C++ library_. To my understanding, the
-   [bindgen](//rust-lang.github.io/rust-bindgen/cpp.html) is
-   not ideal to handle many features of C++.
-
-1. _CGAL is header-only_. I'm not entirely sure if this is
-   good or bad. This probably means we should design
-   cargo-features to allow the user to selectively compile
-   only a subset they wish to use as otherwise the compiles
-   times might be prohibitive.
-
-1. _Keeping updated with mainstream_. CGAL is reasonably
-   actively developed. The SWIG bindings of CGAL seems to be
-   up-to-date with CGAL, but unfortunately (SWIG) does not
-   support Rust yet. I do not know if it is easier to
-   develop Rust support for SWIG or the goal here. Would
-   like to understand the feasibility of keeping the wrapper
-   in sync with the main repo.
-
-Overall, I hope to get insights on developing a wrapper as
-envisioned. Would be happy to implement / contribute if it
-is a reasonable effort.
-
-While not the best outcome, I'd still be happy to learn
-about unfortunate hard road-blocks to building such a
-wrapper in Rust. May be the Rust core team finds it
-insightful in that case.
-
-Thanks in advance, and please do share your thoughts on
-this.
+Having looked into it recently as I'm leaning Rust and was looking into GUI options for potential projects I've found nothing that indicates it has been revived sadly.
+I'm mainly interested in this because as of now GUI development frameworks for Rust are seemingly in their infancy.
+Additionally Servo seems to be coming along well but I'd love it if there was a way of bringing it's speed to the nowadays oh so common web technology based desktop applications where chromium dominates trough both CEF and Electron. I think it would generate a lot of interest in Rust as a language.

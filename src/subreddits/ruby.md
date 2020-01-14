@@ -1,13 +1,48 @@
 # ruby
-## [1][Best guide/tutorial/course for Ruby?](https://www.reddit.com/r/ruby/comments/enyhnr/best_guidetutorialcourse_for_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/enyhnr/best_guidetutorialcourse_for_ruby/
+## [1][Rails tutorial - Why you should use Sentry logger in your project and how to configure it](https://www.reddit.com/r/ruby/comments/eol6qd/rails_tutorial_why_you_should_use_sentry_logger/)
+- url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-sentry-logger-installation-and-configuration/
 ---
-Hi, I'm a frontend developer, and this year I want to learn backend development, I choosed Ruby, with Ruby on Rails
 
-But for now I want to learn Ruby, can you please recommend the best Ruby guide/tutorial/course for you?
+## [2][www.viky.ai a Natural Language Processing platform (Ruby On Rails app + C NLP component)](https://www.reddit.com/r/ruby/comments/eojgtk/wwwvikyai_a_natural_language_processing_platform/)
+- url: https://www.reddit.com/r/ruby/comments/eojgtk/wwwvikyai_a_natural_language_processing_platform/
+---
+Hi,
 
-Thanks.
-## [2][Trying to understand advantages of dry-monads](https://www.reddit.com/r/ruby/comments/eo4829/trying_to_understand_advantages_of_drymonads/)
+[viky.ai](https://www.viky.ai/) is a **Natural Language Processing platform**. It allows you to **extract information from unstructured text contents**.
+
+The technical component *nlp*, written in C, allows the extraction of structured information, this extraction is defined within agents. The agents are multilingual assistants to find relevant data. The *nlp* component takes as input a set of agents in JSON format and unstructured textual content in order to provide a JSON stream of structured data as output.
+
+The second technical component webapp is a **Rails application** that allows you to work collaboratively to set up agents by offering dedicated interfaces. It also provides the interpret API in order to allow integration into a third-party system.
+
+**viky.ai** **is released under open-source license** (MIT), code is available on [Github](https://github.com/viky-ai/viky-ai).
+## [3][Use cases for ruby aside from web](https://www.reddit.com/r/ruby/comments/eoieg8/use_cases_for_ruby_aside_from_web/)
+- url: https://www.reddit.com/r/ruby/comments/eoieg8/use_cases_for_ruby_aside_from_web/
+---
+So yesterday I had asked about some use cases for the ruby language in data science, and the general idea was that Ruby isn't good for data science &amp; engineering. Which led me to wonder , "aside from rails, where else does ruby shine?"
+## [4][Cache Crispies - Fast, Flexible Rails Serializer](https://www.reddit.com/r/ruby/comments/eoegih/cache_crispies_fast_flexible_rails_serializer/)
+- url: https://www.reddit.com/r/ruby/comments/eoegih/cache_crispies_fast_flexible_rails_serializer/
+---
+Picking a method of doing JSON serialization in Rails has not been an easy decision as of late. Especially if you're not able to break your APIs by moving to a JSON API structure. And trying to mix in a caching strategy certainly doesn't help. That's the problem the new Cache Crispies gem was written to fix.  
+
+
+[https://codenoble.com/blog/introducing-cache-crispies/](https://codenoble.com/blog/introducing-cache-crispies/)  
+[https://github.com/codenoble/cache-crispies](https://github.com/codenoble/cache-crispies)
+## [5][Business software projects ?](https://www.reddit.com/r/ruby/comments/eol0b0/business_software_projects/)
+- url: https://www.reddit.com/r/ruby/comments/eol0b0/business_software_projects/
+---
+Sometime this semester, I will have a project to build a system in an area of my choosing. Among other things, I want to see if I can hack building software with business applications. Does anyone on this sub have an idea on what I can build?
+## [6][Ruby for Data Science.](https://www.reddit.com/r/ruby/comments/eo6ox3/ruby_for_data_science/)
+- url: https://www.reddit.com/r/ruby/comments/eo6ox3/ruby_for_data_science/
+---
+This semester I will be doing a scientific computing unit which I have come to learn is about data science (correct me if I'm wrong)  
+We will be using python, but I wanted to know if any experienced people on this sub have used Ruby for data science projects, and if so, would you mind sharing your experience with regards to the learning curve associated with it and any other relevant information?
+## [7][Problem with gems not bundling](https://www.reddit.com/r/ruby/comments/eo8je4/problem_with_gems_not_bundling/)
+- url: https://www.reddit.com/r/ruby/comments/eo8je4/problem_with_gems_not_bundling/
+---
+Hey all, I’m brand new to software engineering. I’m in the process of building a CLI gem using Ruby. I’m running in to a snag getting a few gems to bundle, namely nokogiri and pry. I’m running macOS 10.15.2
+
+If anyone can help or point me in the right direction I’d greatly appreciate it!
+## [8][Trying to understand advantages of dry-monads](https://www.reddit.com/r/ruby/comments/eo4829/trying_to_understand_advantages_of_drymonads/)
 - url: https://www.reddit.com/r/ruby/comments/eo4829/trying_to_understand_advantages_of_drymonads/
 ---
 Hey there!
@@ -31,7 +66,15 @@ And that makes me think...what's the profit? Is that better than writing it as b
     return current_user&amp;.info&amp;.bio || 'No bio set'
 
 Pardon my ignorance, it's probably because i can't find any real-life examples of some more complex refactors using dry family. No matter what - i have a strong feeling i'm not getting something in here fully. Thanks in advance for any clues!
-## [3][Reality Show on Ruby Programming](https://www.reddit.com/r/ruby/comments/enywfx/reality_show_on_ruby_programming/)
+## [9][Best guide/tutorial/course for Ruby?](https://www.reddit.com/r/ruby/comments/enyhnr/best_guidetutorialcourse_for_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/enyhnr/best_guidetutorialcourse_for_ruby/
+---
+Hi, I'm a frontend developer, and this year I want to learn backend development, I choosed Ruby, with Ruby on Rails
+
+But for now I want to learn Ruby, can you please recommend the best Ruby guide/tutorial/course for you?
+
+Thanks.
+## [10][Reality Show on Ruby Programming](https://www.reddit.com/r/ruby/comments/enywfx/reality_show_on_ruby_programming/)
 - url: https://www.reddit.com/r/ruby/comments/enywfx/reality_show_on_ruby_programming/
 ---
 Hi
@@ -45,111 +88,3 @@ Playlist link here:
 [https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n\_JD82](https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
 
 Videos ongoing. Trying to do a video once a week or if I have time. For this one, I'm trying to build a book keeping system.
-## [4][How to use Ruby with VsCode and RuboCop?](https://www.reddit.com/r/ruby/comments/envc0p/how_to_use_ruby_with_vscode_and_rubocop/)
-- url: https://www.reddit.com/r/ruby/comments/envc0p/how_to_use_ruby_with_vscode_and_rubocop/
----
-I am so confused at how to do this. I normally used iTerm with Ruby, but I've recently moved to VsCode.
-
-I've installed Rubocop, and I'm trying to have it auto format when you press cmd + shift + p. However, in VsCode this opens up the command pallette. It doesn't auto format.
-
-RuboCop is installed and it's working. I can see it making recommendations and underlining things in blue. But the cmd + shift + p command brings up the VsCode command pallette instead of auto formatting. How do I make this happen?
-
-Thanks
-## [5][Ruby Tutorial - Building a Blog Title Generator](https://www.reddit.com/r/ruby/comments/enojyf/ruby_tutorial_building_a_blog_title_generator/)
-- url: https://www.reddit.com/r/ruby/comments/enojyf/ruby_tutorial_building_a_blog_title_generator/
----
-Hi guys, I normally post a lot of Ruby on Rails builds on YouTube but this time I've decided to build something in pure Ruby. It's very beginner friendly but might be useful to those who dived straight into Rails without spending a ton of time learning the Ruby language. In the video I build a Ruby file that generates viral blog title ideas and returns them back to the user, the titles are based on the keyword that the user inputs via Terminal.
-
-This could be easily adapted and used within a Rails app. Hopefully it's useful to some of you guys.
-
-[https://www.youtube.com/watch?v=BC7VaxGkihY](https://www.youtube.com/watch?v=BC7VaxGkihY)
-
-I'm planning to post some more Ruby content so would be open to suggestions about content ideas.
-## [6][The Ruby Bibliography - Academic writing on the Ruby programming language](https://www.reddit.com/r/ruby/comments/eneopo/the_ruby_bibliography_academic_writing_on_the/)
-- url: https://rubybib.org/
----
-
-## [7][Profit and Loss Function: No Output](https://www.reddit.com/r/ruby/comments/enkzbx/profit_and_loss_function_no_output/)
-- url: https://www.reddit.com/r/ruby/comments/enkzbx/profit_and_loss_function_no_output/
----
-Hello all, good day to you.
-
-I am trying to create a function that prints profit, loss, or break even based on input (integer) provided. For some reason I do not get any output. I feel like I am overlooking something that is very obvious. I apologise if I am and thank you for your help.
-
-&amp;#x200B;
-
-Please find below two approaches I have used:
-
-&amp;#x200B;
-
-Approach 1:
-
-def accounts(input)  
-   
-   cost= 21000000  
-   price= 3000000  
-   revenue = sales \* price  
-   totalCosts = cost + insurance  
-   
- if revenue &gt; totalCosts  
- return "Profit"  
- elsif revenue ==totalCosts  
- return "Broke Even"  
- else  
- return "Loss"  
- end  
-   
- return accounts  
-   
-end  
-puts accounts(9)
-
-&amp;#x200B;
-
-Approach 2:
-
-cost = 21000000
-
-price = 3000000
-
-def accounts()
-
-result = ''
-
-revenue = sales \* price
-
-&amp;#x200B;
-
-totalCosts = cost + insurance
-
-if revenue &gt; totalCosts
-
-result= 'Profit'
-
-else if revenue == totalCosts
-
-result ="Broke Even"
-
-else
-
-result ="Loss"
-
-end
-
-&amp;#x200B;
-
-print result
-
-end
-## [8][puma is shipped with rails, why wasn't unicorn?](https://www.reddit.com/r/ruby/comments/enjjlm/puma_is_shipped_with_rails_why_wasnt_unicorn/)
-- url: https://www.reddit.com/r/ruby/comments/enjjlm/puma_is_shipped_with_rails_why_wasnt_unicorn/
----
-Why was webbrick (something not production ready) used instead of unicorn?
-## [9][Is it just me or is the sidebar missing on the web version of this subreddit?](https://www.reddit.com/r/ruby/comments/enjfg8/is_it_just_me_or_is_the_sidebar_missing_on_the/)
-- url: https://www.reddit.com/r/ruby/comments/enjfg8/is_it_just_me_or_is_the_sidebar_missing_on_the/
----
-Noticed that in my Relay app i can access the sidebar, but when accessing the sub via my PC's browser, i don't see any sidebar at all.
-## [10][Building an Asynchronous Scheduler for Ruby](https://www.reddit.com/r/ruby/comments/en4pyh/building_an_asynchronous_scheduler_for_ruby/)
-- url: https://www.youtube.com/watch?v=OlmySf03GUo&amp;feature=youtu.be
----
-

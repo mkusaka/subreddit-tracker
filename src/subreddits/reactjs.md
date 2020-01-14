@@ -80,290 +80,167 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Non-typewriter style text carousel](https://www.reddit.com/r/reactjs/comments/eo2kcb/nontypewriter_style_text_carousel/)
-- url: https://github.com/chrismilson/react-not-typist
+## [3][Styled components v5.0.0 released](https://www.reddit.com/r/reactjs/comments/eo839o/styled_components_v500_released/)
+- url: https://github.com/styled-components/styled-components/releases/tag/v5.0.0
 ---
 
-## [4][I made HaloGameFinder, an app where you can post custom game lobbies and find new people to play with! Let me know what you think.](https://www.reddit.com/r/reactjs/comments/enpggx/i_made_halogamefinder_an_app_where_you_can_post/)
-- url: https://www.reddit.com/r/reactjs/comments/enpggx/i_made_halogamefinder_an_app_where_you_can_post/
----
-I made this mostly for fun. It's all live-reloading and instantaneous. 
-
-The stack is MongoDB, React, [Socket.IO](https://Socket.IO), NodeJS.
-
-You can check it out [here](https://halogamefinder.com/) :)
-
-Let me know what you guys think!
-## [5][Build a Workout Diary App with React #3 | Create a new workout session](https://www.reddit.com/r/reactjs/comments/enr59e/build_a_workout_diary_app_with_react_3_create_a/)
-- url: https://www.youtube.com/watch?v=b2mdYdCByS8&amp;feature=share
+## [4][React-spring visualizer, tweak your spring configuration](https://www.reddit.com/r/reactjs/comments/eo5qse/reactspring_visualizer_tweak_your_spring/)
+- url: https://react-spring-visualizer.com/
 ---
 
-## [6][Using Custom React Hooks to Simplify Forms](https://www.reddit.com/r/reactjs/comments/eo4zg1/using_custom_react_hooks_to_simplify_forms/)
-- url: https://upmostly.com/tutorials/using-custom-react-hooks-simplify-forms
+## [5][Railroad Solitaire: made with React, svg, material-ui](https://www.reddit.com/r/reactjs/comments/eohypz/railroad_solitaire_made_with_react_svg_materialui/)
+- url: https://www.reddit.com/r/reactjs/comments/eohypz/railroad_solitaire_made_with_react_svg_materialui/
 ---
+I made recently as a Christmas present for a family member who enjoys this game. It is a variant called Russian Solitaire, give it a try!
 
-## [7][Testing Stateful Functional Components with Jest &amp; Enzyme](https://www.reddit.com/r/reactjs/comments/eo4rdf/testing_stateful_functional_components_with_jest/)
-- url: https://www.reddit.com/r/reactjs/comments/eo4rdf/testing_stateful_functional_components_with_jest/
+https://www.railroadsolitaire.com/
+
+Made with React, material-ui component library, and svg cards.
+## [6][Trouble with CSS Modules and modifying text color in Antd](https://www.reddit.com/r/reactjs/comments/eol3dg/trouble_with_css_modules_and_modifying_text_color/)
+- url: https://www.reddit.com/r/reactjs/comments/eol3dg/trouble_with_css_modules_and_modifying_text_color/
 ---
-I'm finding it difficult testing stateful functional components with Jest + Enzyme. 
-
-Nothing seems to work and I keep getting the following error
-
-"ShallowWrapper::state() can only be called on class components"
-
-Everything works when I switch to class-based components. 
-
-Please help out
-## [8][Intermediate ReactJS Dashboard Course Suggestion](https://www.reddit.com/r/reactjs/comments/enxidu/intermediate_reactjs_dashboard_course_suggestion/)
-- url: https://www.reddit.com/r/reactjs/comments/enxidu/intermediate_reactjs_dashboard_course_suggestion/
----
-Hello,
-
-I'm currently looking for a good course to learn how to make nice looking dashboards in ReactJS, not any special business ReactJS framework, just vanilla ReactJS, without any libraries or pre-built components. I'm willing to pay but there's so many ReactJS component-based tutorials so I'm kind of lost as far as that goes. Suggestions are much appreciated!
-## [9][Adding React Fast Refresh to your Create React App project](https://www.reddit.com/r/reactjs/comments/ensm3r/adding_react_fast_refresh_to_your_create_react/)
-- url: https://dutzi.party/react-fast-refresh/
----
-
-## [10][Parent component's state change, but the child's props update every other time](https://www.reddit.com/r/reactjs/comments/eo3qvj/parent_components_state_change_but_the_childs/)
-- url: https://www.reddit.com/r/reactjs/comments/eo3qvj/parent_components_state_change_but_the_childs/
----
-So I have ParentComponent and ChildComponent.
-
-ParentComponent's state change everytime I click on the screen, and I give this state to ChildComponent as a prop.
-
-However, even though ParentComponent's state change everytime I click, for some reason, ChildComponent's props only change when I click twice on the screen.
-
-I tried to use both useState and useRef, as well as creating a function that return ChildComponent's markup, but to no avail.
-
-I can post more details about the code, or the code itself if needed, I just figured out simplifying the problem as much as possible would be better.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-The code :
-
-    function Map() {
-        const initialPosShoe = [{
-            _id: "CUR",
-            shape: "circle",
-            coords: [333, 575, 10],
-            preFillColor: "blue"
-        }, {
-            _id: "ISEF",
-            shape: "circle",
-            coords: [377, 209, 10],
-            preFillColor: "blue"
-        }, {
-            _id: "BU",
-            shape: "circle",
-            coords: [412, 421, 10],
-            preFillColor: "blue"
-        }, {
-            _id: "UFR LETTRES",
-            shape: "circle",
-            coords: [402, 340, 10],
-            preFillColor: "blue"
-        },]
-        const initialPosFou = [{
-            _id: "1",
-            shape: "circle",
-            coords: [486, 127, 10],
-            preFillColor: "blue"
-        }, {
-            _id: "2",
-            shape: "circle",
-            coords: [480, 480, 10],
-            preFillColor: "blue"
-        }, {
-            _id: "3",
-            shape: "circle",
-            coords: [216, 402, 10],
-            preFillColor: "blue"
-        }, {
-            _id: "4",
-            shape: "circle",
-            coords: [902, 340, 10],
-            preFillColor: "blue"
-        }, {
-            _id: "5",
-            shape: "circle",
-            coords: [1175, 108, 10],
-            preFillColor: "blue"
-        }]
+    import React from 'react';
+    import { Typography, Icon } from 'antd';
+    import { Link } from "react-router-dom";
+    import styles from './Header.module.css';
     
+    const { Title } = Typography;
     
-        const WIDTH_CARTE_SHOE = 630;
-        const WIDTH_CARTE_FOUI = 1274;
-    
-    
-        const closestInformaticien = useRef([9999, 9999])
-        const [initialPos, setInitialPos] = useState(initialPosShoe)
-        const informaticiens = useRef(initialPos)
-        const [mapObjet,setMapObjet] = useState({name: "Carte du campus", areas: informaticiens})
-        const [carte, setCarte] = useState(Shoe)
-        const [width, setWidth] = useState(window.innerWidth * .6)
-        const [initialWidth, setInitialWidth] = useState(WIDTH_CARTE_SHOELCHER)
-        const ratio = width / initialWidth
-    
-        function searchClosestPoint(e) {
-            var posCursor = getCursorPosition(e)
-            let tempInformaticiens = getPositionWithRightRatio();
-            let closestInfo = getClosestInformaticien(tempInformaticiens, posCursor)
-            console.log("Map : Hey React, bro, you mind re-rendering me with closestInformaticien=" + closestInfo + " instead of " + closestInformaticien + " ? Thanks !")
-            closestInformaticien.current=closestInfo;
-            updateInformaticien(closestInfo)
-        }
-    
-        function getPositionWithRightRatio() {
-            let duplicate = _.cloneDeep(informaticiens.current);
-            duplicate = duplicate.map(objet =&gt; {
-                objet.coords[0] = objet.coords[0] * ratio;
-                objet.coords[1] = objet.coords[1] * ratio;
-                return objet
-            })
-    
-            return duplicate
-        }
-    
-        function getClosestInformaticien(arrayOfInformaticien, positionCurseur) {
-            let closestInfo = null;
-            let dist = 9999;
-            let temp = 9999;
-            arrayOfInformaticien.forEach(technicien =&gt; {
-                let positionTechnicien = technicien.coords
-                temp = distanceEuclidienne(positionTechnicien, positionCurseur);
-                if (temp &lt; dist) {
-                    dist = temp
-                    closestInfo = positionTechnicien
-                }
-            })
-            return closestInfo;
-        }
-    
-        function getCursorPosition(e) {
-            var rect = e.target.getBoundingClientRect();
-            const x = e.clientX - rect.left
-            const y = e.clientY - rect.top
-            console.log("I've clicked on :", x, y)
-            return [x, y]
-    
-        }
-    
-        function distanceEuclidienne(point1, point2) {
-            let result = 0;
-            result = puissance2(point1[0] - point2[0])
-            result += puissance2(point1[1] - point2[1])
-            result = Math.sqrt(result)
-            return result
-        }
-    
-        function arrayEgalite(array1, array2) {
-            let isEqual = true
-            for (let i = 0; i &lt; array1.length; i++) {
-                if (array1[i] != array2[i]) {
-                    isEqual = false;
-                }
-            }
-            return isEqual;
-        }
-    
-        function puissance2(nombre) {
-            return Math.pow(nombre, 2)
-        }
-    
-        function changeCampus(campusSelectionne) {
-            var image;
-            var positionDeBase
-            if (campusSelectionne.target.value.localeCompare("fouillole") === 0) {
-                image = Guad;
-                setInitialWidth(WIDTH_CARTE_FOUI)
-                positionDeBase = _.cloneDeep(initialPosFoui)
-            } else {
-                image = Shoe;
-                setInitialWidth(WIDTH_CARTE_SHOE);
-                positionDeBase = _.cloneDeep(initialPosShoe)
-            }
-            setCarte(image)
-            setInitialPos(positionDeBase)
-             }
-    
-        function updateInformaticien(closestOnePosition) {
-            let newInformaticiens
-            var choosenOne = closestOnePosition
-            newInformaticiens = _.cloneDeep(initialPos)
-            newInformaticiens = newInformaticiens.map(individu =&gt; {
-                let scaledCoords = [individu.coords[0] * ratio, individu.coords[1] * ratio, individu.coords[2]]
-                console.log("UseEffect : In here, for" + individu._id + " scaledCoords=" + scaledCoords + " and choosenOne=" + choosenOne + " , so comparing them give us " + _.isEqual(scaledCoords, choosenOne))
-                if (_.isEqual(scaledCoords, choosenOne)) {
-                    individu.preFillColor = 'red'
-                } else {
-                    individu.preFillColor = 'blue'
-                }
-                return individu
-            })
-            console.log("Map : Hey React, bro, you mind re-rendering me with informaticiens=" + JSON.stringify(newInformaticiens) + " instead of " + JSON.stringify(informaticiens) + " ? Thanks, you're a lifesaver !")
-            if(newInformaticiens!==undefined)
-    {
-            informaticiens.current=newInformaticiens
-            setMapObjet(m =&gt; ({...m,areas:informaticiens.current}))
-    }
-            console.log("Just sandwiching setInformaticiens to make sure this line of code is read")
-        }
-    
-        function renderMap()
-        {
-            console.log("This should get triggered on each re-render", informaticiens.current)
-            var map={name:"test", areas:informaticiens.current}
-            return (&lt;ImageMapper
-                clas="map"
-                src={carte}
-                map={map}
-                width={width}
-                imgWidth={initialWidth}
-            /&gt;)
-        }
-    
-       useEffect(() =&gt; {
-             console.log("UseEffect : I'm from the render using closestInformaticien = "+ closestInformaticien.current)
-             updateInformaticien(closestInformaticien.current);
-         },[initialPos, informaticiens, closestInformaticien])
-    
+    const Header = () =&gt; {
         return (
-            &lt;div className={"contact_Map"}&gt;
-                &lt;InputLabel id="labelCampus"&gt;Campus&lt;/InputLabel&gt;
-                &lt;Select labelId="labelCampus" value={carte} onChange={changeCampus}&gt;
-                    &lt;MenuItem value={"foui"}&gt;Foui&lt;/MenuItem&gt;
-                    &lt;MenuItem value={"shoe"}&gt;Schoe&lt;/MenuItem&gt;
-                &lt;/Select&gt;
-                &lt;div id={"testMap"} onClick={searchClosestPoint}&gt;
-                    {renderMap()}
+            &lt;div className={ styles.container }&gt;
+                &lt;div className={ styles.flexLinks }&gt;
+                    &lt;Link to="/home"&gt;
+                         &lt;Title className = {styles.link} level = {3}&gt;
+                           home
+                        &lt;/Title&gt;
+                    &lt;/Link&gt;
+                    &lt;Link to="/contact"&gt;
+                       &lt;Title className = {styles.link} level = {3}&gt;
+                         contact
+                      &lt;/Title&gt;
+                    &lt;/Link&gt;
+                &lt;/div&gt;
+                &lt;div style={ styles.mobileIcon }&gt;
+                    &lt;Icon style={ styles.menu } type="menu" /&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         );
     }
+    export default Header;
     
-    export default Map;
+    //Header.module.css file
+    
+    .container {
+        background-image: url("../../images/dark-paths.png");
+        padding: 30px;
+        text-align: center;
+        display: block;
+    }
+    
+    .link {
+      color: white;
+    }
+    
+    .flexLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
-There's a couple of useless things, as I've been changing the code here and there to solve the problem.
-## [11][D3 + React Zoom not sticking after change](https://www.reddit.com/r/reactjs/comments/eo3mux/d3_react_zoom_not_sticking_after_change/)
-- url: https://www.reddit.com/r/reactjs/comments/eo3mux/d3_react_zoom_not_sticking_after_change/
+The links inside Title are still black but should be white. The container styling works and if I use an inline style ie
+
+    &lt;Title style = {{color: 'white'}} level = {3}&gt;
+         home
+    &lt;/Title&gt;
+
+it works fine. I don't want to do this just to make it more manageable overall and consistent. Btw appending !important after it also works but I'm just trying to find the cleanest solution for future reference.
+
+Thanks!
+## [7][(Help) Can't import function in a .test.js file](https://www.reddit.com/r/reactjs/comments/eokulm/help_cant_import_function_in_a_testjs_file/)
+- url: https://www.reddit.com/r/reactjs/comments/eokulm/help_cant_import_function_in_a_testjs_file/
 ---
- After initializing my graph and am setting my position though afterwards if I zoom in our out it resets itself to the default position
+Hi,
 
-[https://codesandbox.io/s/silent-cache-463v8?fontsize=14&amp;hidenavigation=1&amp;theme=dark](https://codesandbox.io/s/silent-cache-463v8?fontsize=14&amp;hidenavigation=1&amp;theme=dark)
+I have a basic create-react-app. I installed all Jest dependencies, and created two files:
 
-Any thoughts on what is the cause?
+\- hello.js, which contains a "hello world" function
 
-Thanks
-## [12][Best database for react or react native or electron react](https://www.reddit.com/r/reactjs/comments/eo37hy/best_database_for_react_or_react_native_or/)
-- url: https://www.reddit.com/r/reactjs/comments/eo37hy/best_database_for_react_or_react_native_or/
+\- hello.test.js which imports hello() and test it.
+
+I then run yarn jest. The test only works if the function is directly written in the test file. It crashes if I try to import it. Why?
+
+hello.test.js:
+
+    import { hello } from "./hello";
+    
+    describe("HELLO WORLD", () =&gt; {
+      it("returns hello world", () =&gt; {
+        expect(hello()).toEqual("hello world!");
+      });
+    });
+
+hello.js:
+
+    export const hello = () =&gt; "hello world!";
+
+Also, the Jest crashes because of App.js - which I have not even modified -:
+
+     SyntaxError: /Users/mynamee/Desktop/helloapp/src/App.test.js: Unexpected token (6:31)
+    
+          4 |
+          5 | test('renders learn react link', () =&gt; {
+        &gt; 6 |   const { getByText } = render(&lt;App /&gt;);
+            |                                ^
+          7 |   const linkElement = getByText(/learn react/i);
+          8 |   expect(linkElement).toBeInTheDocument();
+          9 | });
+
+Thanks for your help!
+## [8][Implementing Loading Placeholder with React Content Loader](https://www.reddit.com/r/reactjs/comments/eod92c/implementing_loading_placeholder_with_react/)
+- url: https://www.kohei.dev/posts/react-content-loader?hl=en-US
 ---
-We are planning to making Different apps for react and the order statted options
 
-At the moment we Made a rest API in symphony using API platform
+## [9][Environment Settings for Build Once Deploy Everywhere Packages in React](https://www.reddit.com/r/reactjs/comments/eojsr9/environment_settings_for_build_once_deploy/)
+- url: https://www.daniellittle.dev/environment-settings-for-build-once-packages-in-react
+---
 
-But my question Is what do you guys use for database or rest api
-Or is it Maybe better to use mongo or Express
+## [10][styled media helper v2](https://www.reddit.com/r/reactjs/comments/eojnsl/styled_media_helper_v2/)
+- url: https://www.reddit.com/r/reactjs/comments/eojnsl/styled_media_helper_v2/
+---
+Easy media query usage for styled-components
+
+[https://github.com/dvpnt/styled-media-helper](https://github.com/dvpnt/styled-media-helper)
+## [11][Just launched the first stage of our side project - reserve your user ID now! ⚡️](https://www.reddit.com/r/reactjs/comments/eokh9q/just_launched_the_first_stage_of_our_side_project/)
+- url: https://www.reddit.com/r/reactjs/comments/eokh9q/just_launched_the_first_stage_of_our_side_project/
+---
+Hey, redditors!
+
+I and my friend are working on a side project, that's similar to reddit in the core but will have different features built on top. It's focused around creating like-minded communities. [Everchat](https://everch.at/) will be a place where you can send encrypted text and voice messages, images, videos, files, and more, free from any regulation.
+
+Our mission is to secure, protect, and empower the Internet freedom, and the freedom of speech in general, and our vision is to build the most secure group messaging out there, but the time (and hopefully our future community) will tell.
+
+Right now, you can support us with subscribing to our [Product Hunt Ship page](https://www.producthunt.com/upcoming/everchat) if you have a Product Hunt account, or reserve your user ID directly at [Everchat](https://everch.at/).
+
+All feedback is welcome, and I'm hoping to open up some Internet freedom- or content regulation-related discussion here. 🙂
+## [12][Which is the better way to validate my title text?](https://www.reddit.com/r/reactjs/comments/eohqfj/which_is_the_better_way_to_validate_my_title_text/)
+- url: https://www.reddit.com/r/reactjs/comments/eohqfj/which_is_the_better_way_to_validate_my_title_text/
+---
+    state = {
+        title: "Text",
+        error: null
+      };
+      changeTitle = e =&gt; {
+        this.setState({ title: e.target.value });
+        this.validateTitle();
+      };
+    
+      validateTitle() {
+        this.setState(state =&gt; {
+          return {
+            error: state.title.length === 0 ? "Title cant be blank" : null
+          };
+        });
+      }
+
+should I put `validateTitle` in the `componentDidUpdate?`

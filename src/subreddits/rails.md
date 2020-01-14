@@ -7,7 +7,99 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][webpacker and svg vue components](https://www.reddit.com/r/rails/comments/enxxer/webpacker_and_svg_vue_components/)
+## [2][How did you turn your Rails app into an Android and iOS app?](https://www.reddit.com/r/rails/comments/eoiq8q/how_did_you_turn_your_rails_app_into_an_android/)
+- url: https://www.reddit.com/r/rails/comments/eoiq8q/how_did_you_turn_your_rails_app_into_an_android/
+---
+Hello!
+
+How did you turn your Rails app into an Android and iOS app? What were the pros/cons? Was it easy to get accepted into App Store and Google Play?
+
+Im very new to the game but from what I understand, for a Rails app to be turned into mobile apps it would have to use PhoneGap to act as a browser basically? And then set up an API to communicate with the user's mobile phone and the Rails server?
+
+Thanks!
+## [3][Anyone willing to help an old man troubleshoot my rails 6 app?](https://www.reddit.com/r/rails/comments/eobzel/anyone_willing_to_help_an_old_man_troubleshoot_my/)
+- url: https://www.reddit.com/r/rails/comments/eobzel/anyone_willing_to_help_an_old_man_troubleshoot_my/
+---
+I'm 99 per cent sure the issue is with how I set up webpacker, despite my best efforts. User can't sign in or log out. Dropdown menus don't function and modal won't fire.
+
+Not sure what I did! I'm really an old man (77), volunteer webmaster for my church website. Is someone willing to clone it and give it a spin? [github.com/ThomasConnolly/paul](https://github.com/ThomasConnolly/paul)
+
+The error message I get when trying to log out is "ActiveRecord::RecordNotFound - Couldn't find User with 'id'=sign\_out:"
+
+The dropdowns &amp; modal just don't filre; no error message.
+## [4][What to keep in mind if I change an existing deployed Rails app to start using Docker?](https://www.reddit.com/r/rails/comments/eojyk1/what_to_keep_in_mind_if_i_change_an_existing/)
+- url: https://www.reddit.com/r/rails/comments/eojyk1/what_to_keep_in_mind_if_i_change_an_existing/
+---
+I've got an existing Rails app that's been running for a year or so. It's running Rails 5.2 and I deploy it to AWS using Elastic Beanstalk, with the database living in RDS. I was learning Rails (and a lot of other web dev stuff) as I made it, so now that I look back, I probably could have gotten away with a cheaper DigitalOcean instance or something similar. As is the way of things, there's enough of the app hooked into the AWS ecosystem that pulling it out would be pretty daunting.
+
+I was attempting to upgrade the app to Rails 6, but my existing instance was running Ruby 2.3, so I tried to make a new instance and do a blue-green deployment, but after quite a lot of trial-and-error, I was never able to get Rails 6 to work on Elastic Beanstalk. I tried searching around and trying arcane EB configuration tweaks, but I couldn't ever deploy it successfully. I'm guessing that webpacker and/or yarn weren't installing correctly, and those are two things I have only the most basic knowledge of.
+
+It occurred to me that having to tweak Elastic Beanstalk this much was sort of defeating the point of using a deployment system that's supposed to be simple, so I thought it was time I bit the bullet and start experimenting with Docker.
+
+I've been able to get development and test environments running on my local systems with docker-compose using a very basic [Dockerfile](https://github.com/HeadBeeGuy/alt-activities/blob/rails-6-docker/Dockerfile) and [docker-compose](https://github.com/HeadBeeGuy/alt-activities/blob/rails-6-docker/docker-compose.yml). I'm realizing that I can't just push these up to a webserver and expect it to take the place of the old instance, though. At the very least, I'd have to tell it that it's running in production, tell it how to talk to the production database, and make sure it's using a web server appropriate for production instead of development. I've got a couple newbie questions that I wanted to ask anyone who uses Docker in production:
+
+* Do I specify separate Dockerfiles or docker-compose.yml files for production? Is there a way to test these before deploying them?
+* Do I need the "db" image for production? Since the database lives in RDS, I imagine Rails will just talk to it and it doesn't need to be handled by Docker?
+* From my research so far, it looks like I can use Elastic Beanstalk, ECS, or Fargate to deploy Rails apps. Is there one that's generally preferable?
+* Should I use Puma? Passenger? nginx? Several in combination?
+
+The app has been able to handle its traffic thus far using only one instance, so for now I don't think I need to worry about auto-scaling. Raw performance hasn't been as important as being to iterate on features rapidly.
+
+Sorry this is scattered! Any advice would be welcome!
+## [5][Cache Crispies - Fast, Flexible Rails Serializer](https://www.reddit.com/r/rails/comments/eoes6h/cache_crispies_fast_flexible_rails_serializer/)
+- url: https://www.reddit.com/r/rails/comments/eoes6h/cache_crispies_fast_flexible_rails_serializer/
+---
+Picking a method of doing JSON serialization in Rails has not been an easy decision as of late. Especially if you're not able to break your APIs by moving to a JSON API structure. And trying to mix in a caching strategy, certainly doesn't help. That's the problem the new Cache Crispies gem was written to fix.  
+
+
+[https://codenoble.com/blog/introducing-cache-crispies/](https://codenoble.com/blog/introducing-cache-crispies/)  
+[https://github.com/codenoble/cache-crispies](https://github.com/codenoble/cache-crispies)
+## [6][The best way to pass join table has_many ids to frontend?](https://www.reddit.com/r/rails/comments/eocqod/the_best_way_to_pass_join_table_has_many_ids_to/)
+- url: https://www.reddit.com/r/rails/comments/eocqod/the_best_way_to_pass_join_table_has_many_ids_to/
+---
+I'm writing a Rails/React app and need to have a: 
+
+    class Outage &lt; ApplicationRecord 
+        has_many :service_outages
+        has_many :services, through: :service_outages
+    end
+    
+    class Service &lt; ApplicationRecord 
+        has_many :service_outages
+        has_many :outages, through: :services_outages
+    end
+    
+    class ServiceOutages &lt; ApplicationRecord
+        belongs_to :service 
+        belongs_to :outage
+    end
+
+with the \`ServiceOutage\` join table having \`service\_id\` and \`outage\_id\` as attributes. 
+
+&amp;#x200B;
+
+What is the best way to pass this data to my frontend so I can find appropriate relationships without having to create a separate controller and routes?
+## [7][Offline mode for mobile app with rails backend](https://www.reddit.com/r/rails/comments/eo3nrm/offline_mode_for_mobile_app_with_rails_backend/)
+- url: https://www.reddit.com/r/rails/comments/eo3nrm/offline_mode_for_mobile_app_with_rails_backend/
+---
+Hey there!
+
+I just started to work in a company developing a rails backend app with companion mobile app (ios). This app needs to have an offline mode available which goes down to downloading all the data from the backend when internet connection is available.
+
+How it currently handled is: scheduled worker produces one huge json object with all the needed data (no pagination, no split to rest resources, simply everything in one big json file) and the second worker generates zip files with all the images/assets.
+
+As it works relatively well, i have this irritating feeling it's not how it should be done and i'm pretty sure someone came up with something better than that. Producing such json is heavy and long, data is not updated live in cause of caching (it can't be simply based on caching and cache invalidation as producing that json takes up to 2 minutes, we can't handle that live during the request and cache it). Producing zip files with assets is also pretty bad as those zip files weights A LOT from mobile app perspective and downloading them takes tons of time. Overall, it all seems sketchy both from client and developer perspective.
+
+Is there anything i should read more about in that matter? Any alternative approaches or patterns? Thanks in advance for any clues!
+## [8][How should I include CSS and JS without Sprockets](https://www.reddit.com/r/rails/comments/eoambe/how_should_i_include_css_and_js_without_sprockets/)
+- url: https://www.reddit.com/r/rails/comments/eoambe/how_should_i_include_css_and_js_without_sprockets/
+---
+Hi, I created a new app with the --skip-sprockets flag. When I run the app, it shows a resource not found error in the JavaScript console for application.css. Since i'm not using sprockets, I should put all my CSS and JS in the public folder? The stylesheets folder in the app folder is not used at all now?
+## [9][Opensource Project using liquid gem/templates?](https://www.reddit.com/r/rails/comments/eo86y3/opensource_project_using_liquid_gemtemplates/)
+- url: https://www.reddit.com/r/rails/comments/eo86y3/opensource_project_using_liquid_gemtemplates/
+---
+Does anyone know of an open source project that uses liquid gem for creating liquid templates like Shopify does for its themes?
+## [10][webpacker and svg vue components](https://www.reddit.com/r/rails/comments/enxxer/webpacker_and_svg_vue_components/)
 - url: https://www.reddit.com/r/rails/comments/enxxer/webpacker_and_svg_vue_components/
 ---
 Anyone have luck with vue, webpacker, and svg importing like components?
@@ -30,136 +122,14 @@ I've tried the following:
 I added the loader like I'm suppose too in the \`webpack/environment.js\`
 
 &gt;const vueSvgLoader = require('./loaders/vue-svg-loader')environment.loaders.append('vue-svg-loader', vueSvgLoader)
-## [3][Offline mode for mobile app with rails backend](https://www.reddit.com/r/rails/comments/eo3nrm/offline_mode_for_mobile_app_with_rails_backend/)
-- url: https://www.reddit.com/r/rails/comments/eo3nrm/offline_mode_for_mobile_app_with_rails_backend/
+## [11][Boston Startup Hiring Software Engineers with Ember/Rails focus [$70-140k DOE] [NO REMOTE]](https://www.reddit.com/r/rails/comments/eo7ygh/boston_startup_hiring_software_engineers_with/)
+- url: https://www.reddit.com/r/rails/comments/eo7ygh/boston_startup_hiring_software_engineers_with/
 ---
-Hey there!
+[Mapdwell](https://mapdwell.com/) is hiring for a few engineering positions (Frontend Engineer, Full-Stack Engineer, and Senior Full-Stack Engineer), with a focus on Ember and Ruby on Rails.
 
-I just started to work in a company developing a rails backend app with companion mobile app (ios). This app needs to have an offline mode available which goes down to downloading all the data from the backend when internet connection is available.
+The positions involve working across our entire stack and product suite, with a focus on building beautiful, rich front-end web applications. There will also be involvement with algorithm design, machine learning models, data processing, geospatial databases, back-end services, APIs and deployment.
 
-How it currently handled is: scheduled worker produces one huge json object with all the needed data (no pagination, no split to rest resources, simply everything in one big json file) and the second worker generates zip files with all the images/assets.
+**About Mapdwell**  
+Mapdwell, an MIT spinoff, is a software and data intelligence startup that provides advanced tools for energy decision-making. We level the field for consumers by providing intuitive and actionable tools and leverage user engagement into powerful data intelligence for industry. Mapdwell uses hard science and data intelligence to uncover opportunities that align good business and best practices with a more resilient, healthier and more sustainable future by driving demand and empowering industry. Learn more at [mapdwell.com](http://mapdwell.com/).
 
-As it works relatively well, i have this irritating feeling it's not how it should be done and i'm pretty sure someone came up with something better than that. Producing such json is heavy and long, data is not updated live in cause of caching (it can't be simply based on caching and cache invalidation as producing that json takes up to 2 minutes, we can't handle that live during the request and cache it). Producing zip files with assets is also pretty bad as those zip files weights A LOT from mobile app perspective and downloading them takes tons of time. Overall, it all seems sketchy both from client and developer perspective.
-
-Is there anything i should read more about in that matter? Any alternative approaches or patterns? Thanks in advance for any clues!
-## [4][Update Redis in AWS Cloud9 IDE](https://www.reddit.com/r/rails/comments/enpzbl/update_redis_in_aws_cloud9_ide/)
-- url: https://www.reddit.com/r/rails/comments/enpzbl/update_redis_in_aws_cloud9_ide/
----
-`$ sudo yum install redis`
-
-\*already did this - this gives me:
-
-Package redis-3.2.12-2.el6.x86\_64 already installed and latest version
-
-When I run Sidekiq: You are connecting to Redis v3.2.12, Sidekiq requires Redis v4.0.0 or greater
-
-I can't figure out how to get this to update. $ bundle update/install shows Using redis 4.1.3 (as does the gemfile.lock)
-
-I got it to update on heroku by eliminating redis-to-go and adding Heroku Redis add-on - still not right in development though.
-
-**\*Solved** \- I ended up restarting my workspace with Ubuntu instead of Amazon Linux - It had redis at Redis server v=4.0.9 which got me what I needed to run in both dev and production.
-## [5][Reality Series on Webdev](https://www.reddit.com/r/rails/comments/enzawz/reality_series_on_webdev/)
-- url: https://www.reddit.com/r/rails/comments/enzawz/reality_series_on_webdev/
----
-Hi
-
-I'm doing a video series on creating a web application using Ruby on Rails. It's not meant to be a tutorial but more of a reality TV show on how one would go about creating an application. Mostly Ruby with some javascript stuff.
-
-I was just curious if any of you know anything similar (webdev specifically) or anyone doing the same thing (coding each step of the way w/ mistakes). I'm looking for similar content where the mistakes are discovered on the fly and how one would go about fixing it.
-
-Playlist link here:
-
-[https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n\_JD82](https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
-
-Videos ongoing. Trying to do a video once a week or if I have time. For this one, I'm trying to build a book keeping system.
-## [6][Build a Blog Title Generator - Ruby Tutorial](https://www.reddit.com/r/rails/comments/ennekd/build_a_blog_title_generator_ruby_tutorial/)
-- url: https://www.reddit.com/r/rails/comments/ennekd/build_a_blog_title_generator_ruby_tutorial/
----
-Hi guys, I normally post a lot of Ruby on Rails builds on YouTube and I've shared a couple here in the past. This time I've decided to build something in pure Ruby. It's very beginner friendly but might be useful to those who dived straight into Rails without spending a ton of time learning the Ruby language. In the video I build a Ruby file that generates viral blog title ideas and returns them back to the user, the titles are based on the keyword that the user inputs via Terminal.
-
-This could be easily adapted and used within a Rails app. Hopefully it's useful to some of you guys.
-
-[https://www.youtube.com/watch?v=BC7VaxGkihY](https://www.youtube.com/watch?v=BC7VaxGkihY)
-
-I'm planning to post some more Ruby content so would be open to suggestions about content ideas.
-## [7][Do I need to deny access if the nginx root path is the public folder?](https://www.reddit.com/r/rails/comments/enlcp9/do_i_need_to_deny_access_if_the_nginx_root_path/)
-- url: https://www.reddit.com/r/rails/comments/enlcp9/do_i_need_to_deny_access_if_the_nginx_root_path/
----
-Do I need to configure anything to prevent people from accessing my ruby files in a rails app, if the nginx config root is the public folder? If I just set the root as the public folder path, there's no way the app source code can be accessed through nginx right?
-## [8][Production Server setup — Vultr Tutorial](https://www.reddit.com/r/rails/comments/entvbl/production_server_setup_vultr_tutorial/)
-- url: https://www.reddit.com/r/rails/comments/entvbl/production_server_setup_vultr_tutorial/
----
-
-This series is a guide to deploy a Ruby on Rails application via Capistrano to a VPS (virtual private server):
-
-[Part 1 : Deploy a server](https://itnext.io/deploy-rails-with-capistrano-tutorial-2020-part-1-fa732e0db144?source=friends_link&amp;sk=80430970822b0dcdaa1a472804da6711)
-
-[Part 2 — Server setup](https://itnext.io/production-server-setup-part-2-vultr-tutorial-87a6e19f9a2f?source=friends_link&amp;sk=ac823106b2d3fd321ccfa4e4e2e3397c)
-## [9][How do you handle image modals?](https://www.reddit.com/r/rails/comments/enjr2i/how_do_you_handle_image_modals/)
-- url: https://www.reddit.com/r/rails/comments/enjr2i/how_do_you_handle_image_modals/
----
-Hi rails community.
-
-&amp;#x200B;
-
-I am making a simple rails blog with the goal of it being a personal resume site. Posts in the blog are handled with a simple CRUD posts generator like so:
-
-&amp;#x200B;
-
-`&lt;div class="projectcolumn"&gt; &lt;% posts.each do |post| %&gt;`
-
-`&lt;div class="blurbox"&gt; &lt;h1&gt;&lt;%= post.title %&gt;&lt;/h1&gt; &lt;p&gt;&lt;%= post.content %&gt;&lt;/p&gt;`
-
-`&lt;div class="postimage" id="myImg"&gt; &lt;%= image_tag(post.image)%&gt; &lt;/div&gt; &lt;/div&gt; &lt;% end %&gt;`
-
-I use active storage to store images with each post. I had the annoying idea that I want images on the site to be image modals, as so:
-
-`&lt;script&gt;// create references to the modal...`
-
-`var modal = document.getElementById('myModal');`
-
-`var images = document.getElementsByClassName('postimage');`
-
-`var modalImg = document.getElementById("img01");`
-
-`var captionText = document.getElementById("caption");`
-
-`// Go through all of the images with our custom class`
-
-`for (var i = 0; i &lt; images.length; i++) {`
-
-`var img = images[i];`
-
-`img.onclick = function(evt)`
-
-`{ modal.style.display = "block"; modalImg.src = this.src; }`
-
-`}`
-
-`var span = document.getElementsByClassName("close")[0]; span.onclick = function() { modal.style.display = "none"; }`
-
-`&lt;/script&gt;`
-
-The modal appears, however the image contents returns undefined. However testing with "static" images linked by URL works as expected. I thought that by adding the javascript at the bottom of the html, it would load after the ruby code had executed. Is there a problem in this line of thinking?
-
-Is there a "rails way" of doing image modals that you prefer?
-## [10][Why does Active Record Migrations not set default value for created_at in the migration files?](https://www.reddit.com/r/rails/comments/enkkww/why_does_active_record_migrations_not_set_default/)
-- url: https://www.reddit.com/r/rails/comments/enkkww/why_does_active_record_migrations_not_set_default/
----
-I just came across this issue about the \`insert\_all\` method throwing ActiveRecord::NotNullViolation on created\_at and wondered why it is not set in the migration files by default as I think this issue didn't come up if it had been set.
-
-The issue I'm referring: \[insert\_all throws \`ActiveRecord::NotNullViolation\` for timestamps\]([https://github.com/rails/rails/issues/35493](https://github.com/rails/rails/issues/35493))
-
-A merged PR to support RDB specific functions like NOW() as a column default value: \[Add \`:expression\` option support on the schema default\]([https://github.com/rails/rails/pull/20005](https://github.com/rails/rails/pull/20005))
-## [11][Web Based Accounting System One to Many UI Flow](https://www.reddit.com/r/rails/comments/enfhf5/web_based_accounting_system_one_to_many_ui_flow/)
-- url: https://www.reddit.com/r/rails/comments/enfhf5/web_based_accounting_system_one_to_many_ui_flow/
----
-Hi
-
-I've been doing a video series on how I would go about in building a web based accounting system. It's not a tutorial type but more of a learning process in exploring how to improve as a developer. I got to the part with a typical one to many relationship (to mode the T-Account entries in accounting using models AccountingEntry has\_many JournalEntry). Looking for advice as to how to deal with modifying / managing a one to many instance in a single module. Thinking of several aspects such as managing the main model (AccountingEntry) and having submodules to add in the has\_many records via an API layer similar to the current one in the video (see link below). I know we can have them as separate modules / crud sets but was looking into a richer user experience instead of having to load multiple pages. Anyway, just looking for opinions on it. If the structure in the current video is helpful to others, hoping to look into improving it for people who'd encounter a similar usecase.
-
-Regards,
-
-Video here:
-
-[https://www.youtube.com/watch?v=ITrhSwV4Gqs&amp;feature=youtu.be](https://www.youtube.com/watch?v=ITrhSwV4Gqs&amp;feature=youtu.be)
+See all openings and apply here: [http://jobs.mapdwell.com/](http://jobs.mapdwell.com/)

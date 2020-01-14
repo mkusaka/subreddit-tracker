@@ -1,124 +1,137 @@
 # golang
-## [1][Golang IO Cookbook (found on HN)](https://www.reddit.com/r/golang/comments/ensegf/golang_io_cookbook_found_on_hn/)
-- url: https://github.com/jesseduffield/notes/wiki/Golang-IO-Cookbook
+## [1][rqlite, the lightweight distributed DB built on SQLite and written in Go, now scales read performance with read-only nodes](https://www.reddit.com/r/golang/comments/eoe99h/rqlite_the_lightweight_distributed_db_built_on/)
+- url: https://github.com/rqlite/rqlite/releases/tag/v5.1.0
 ---
 
-## [2][Go-grpc makes use of go-micro plugins to create a better framework for gRPC development.](https://www.reddit.com/r/golang/comments/eo1cxq/gogrpc_makes_use_of_gomicro_plugins_to_create_a/)
-- url: https://github.com/vaniila/go-grpc
+## [2][A tool/library for graph visualising](https://www.reddit.com/r/golang/comments/eok7sl/a_toollibrary_for_graph_visualising/)
+- url: https://www.reddit.com/r/golang/comments/eok7sl/a_toollibrary_for_graph_visualising/
+---
+I'm looking for a tool/library that given a list of vertexes and edges with their labels, can visualise a graph.
+
+I have found different draw libraries, but with them I need to create everything from scratch and hope there can be an automated way already implemented.
+
+Some context is that I've found the [promviz](https://github.com/nghialv/promviz) library, that gets data from Prometheus and creates a graph where Prometheus labels are the vertexes and metrics values are edge labels. Unfortunately it's not updated since 2017. I'm trying to find something similar, or if not, to implement on my own.
+
+Thanks
+## [3][Test your CLIs easily with simple YAML definitions](https://www.reddit.com/r/golang/comments/eoknw8/test_your_clis_easily_with_simple_yaml_definitions/)
+- url: https://github.com/SimonBaeumer/commander
 ---
 
-## [3][storage - An application-oriented unified storage layer for Golang](https://www.reddit.com/r/golang/comments/eo12xc/storage_an_applicationoriented_unified_storage/)
-- url: https://www.reddit.com/r/golang/comments/eo12xc/storage_an_applicationoriented_unified_storage/
+## [4][Inline debugging of Lambda using AWS SAM CLI](https://www.reddit.com/r/golang/comments/eol46x/inline_debugging_of_lambda_using_aws_sam_cli/)
+- url: https://www.reddit.com/r/golang/comments/eol46x/inline_debugging_of_lambda_using_aws_sam_cli/
 ---
-Hello everyone, I built a golang lib [storage](https://github.com/Xuanwo/storage) as an application-oriented unified storage layer. 
+(TL;DR at the bottom) I've been tinkering around with Go for a little bit now, and I have been playing with the idea to develop some serverless applications using golang. However, my experience in debugging with Go using VSCode have been not so great, at least when compared to NodeJS.
 
-This lib supports basic operations across all storage services and advanced operations across implemented storage services. All import changes are descibed in [proposals](https://github.com/Xuanwo/storage/tree/master/docs/design). For now, it supports azblob, cos, dropbox, local fs, gcs, kodo, oss, qingstor, s3, uss.
+In NodeJS, I write some code that starts with `exports.handler`, use the following template as the `template.yaml`:
 
-There are many works to do, any comment or advice will be great for me, a star maybe better though (-;
-## [4][Vscode can't find package](https://www.reddit.com/r/golang/comments/eo2iti/vscode_cant_find_package/)
-- url: https://www.reddit.com/r/golang/comments/eo2iti/vscode_cant_find_package/
----
-Mandatory: "I'm going crazy with this"
+    AWSTemplateFormatVersion: '2010-09-09'
+    Transform: 'AWS::Serverless-2016-10-31'
+    Resources:
+      MyFunction:
+        Type: 'AWS::Serverless::Function'
+        Properties:
+          Handler: index.handler
+          CodeUri: ./
+          Runtime: nodejs8.10
 
-I'm on go 1.13 and I'm trying to run a simple "hello world" for this UI package 
+Run `sam local invoke -d 5858 -e some-event.json`, attach the debugger to the process using the vscode `launch.json`
 
-    https://github.com/gizak/termui
-
-I run the main.go and it says:
-
-    build goChat: cannot load github.com/gizak/termui/v3: cannot find module providing package github.com/gizak/termui/v3
-
-The package is there though. This is my config
-
-    # Go env variables
-    export GOPATH="$HOME/golang/packages:$HOME/golang/proj"
-    export GOROOT=/usr/local/opt/go/libexec
-    export GOPROXY=off
-
-and the files are right there:
-
-    ~/golang/packages/src/github.com/gizak/termui/v3$ ls -l
-    total 160
-    -rw-r--r--   1 draco  draco   100B 13 Jan 10:12 alignment.go
-    -rw-r--r--   1 draco  draco   770B 13 Jan 10:12 backend.go
-    -rw-r--r--   1 draco  draco   2.7K 13 Jan 10:12 block.go
-    -rw-r--r--   1 draco  draco   1.5K 13 Jan 10:12 buffer.go
-    -rw-r--r--   1 draco  draco   753B 13 Jan 10:12 canvas.go
-    -rw-r--r--   1 draco  draco   280B 13 Jan 10:12 doc.go
-    drwxr-xr-x   3 draco  draco    96B 13 Jan 10:12 drawille/
-    -rw-r--r--   1 draco  draco   4.7K 13 Jan 10:12 events.go
-    -rw-r--r--   1 draco  draco   216B 13 Jan 10:12 go.mod
-    -rw-r--r--   1 draco  draco   641B 13 Jan 10:12 go.sum
-    -rw-r--r--   1 draco  draco   3.2K 13 Jan 10:12 grid.go
-    -rw-r--r--   1 draco  draco   768B 13 Jan 10:12 render.go
-    -rw-r--r--   1 draco  draco   1.3K 13 Jan 10:12 style.go
-    -rw-r--r--   1 draco  draco   3.8K 13 Jan 10:12 style_parser.go
-    -rw-r--r--   1 draco  draco   1.1K 13 Jan 10:12 symbols.go
-    -rw-r--r--   1 draco  draco   549B 13 Jan 10:12 symbols_other.go
-    -rw-r--r--   1 draco  draco   522B 13 Jan 10:12 symbols_windows.go
-    -rw-r--r--   1 draco  draco   2.7K 13 Jan 10:12 theme.go
-    -rw-r--r--   1 draco  draco   4.5K 13 Jan 10:12 utils.go
-    drwxr-xr-x  14 draco  draco   448B 13 Jan 10:12 widgets/
-    
-what to do?
-
-EDIT: This is my go.mod
-
-~/golang/proj/goChat$ cat go.mod
-module goChat
-
-go 1.13
-
-**EDIT: SOLVED** with GO111MODULE=off
-## [5][Unit test kubernetes client in Go](https://www.reddit.com/r/golang/comments/eo1rjk/unit_test_kubernetes_client_in_go/)
-- url: https://gianarb.it/blog/unit-testing-kubernetes-client-in-go
----
-
-## [6][Build a RESTful HTTP API in Golang w/ Mux](https://www.reddit.com/r/golang/comments/eo2e48/build_a_restful_http_api_in_golang_w_mux/)
-- url: https://youtu.be/HmiybuiEZI4
----
-
-## [7][Sandy: A tiny sandbox to run untrusted code](https://www.reddit.com/r/golang/comments/enn0k4/sandy_a_tiny_sandbox_to_run_untrusted_code/)
-- url: https://github.com/hobochild/sandy
----
-
-## [8][Initializing services in parallel](https://www.reddit.com/r/golang/comments/eo3dq9/initializing_services_in_parallel/)
-- url: https://www.reddit.com/r/golang/comments/eo3dq9/initializing_services_in_parallel/
----
-Hello all. I have around 10 services being initialized before my echo web server fires up. Some of them are redis, elastic search etc. But two of them are related to each other. Remaining 8 are independent. So I spawned up goroutines for each of them and decreased the boot time of my server. But those remaining 2 are related. When I put them in goroutines with a sync.Waitgroup it throws a panic. When those are running in the main routine everything is fine.
-
-I can't put up links or screenshots because the codebase is proprietary. I regret that.
-
-Anyone came across the same situation? Thank you.
-
-Okat this is my example post. 
-
-    package main
-    
-    import (
-        "fmt"
-        "sync"
-    )
-    
-    func hello(wg *sync.WaitGroup) {
-        wg.Add(1)
-        fmt.Println("Hello world goroutine")
-        wg.Done()
-    }
-    
-    func main() {
-        var wg sync.WaitGroup
-        go hello(&amp;wg)
-        wg.Wait()
-        fmt.Println("hello main")
+    {
+      "version": "0.2.0",
+      "configurations": [
+        {
+        "name": "Attach to SAM CLI",
+        "type": "node",
+        "request": "attach",
+        "address": "localhost",
+        "port": 5858,
+        "localRoot": "",
+        "remoteRoot": "/var/task",
+        "protocol": "inspector",
+        "stopOnEntry": false
+        }
+      ]
     }
 
-How do I make the multiple goroutines run before the main exits. In this example, I need the `hello` function to execute before printing `hello main`
-## [9][How to implement &amp; test a server-streaming gRPC API in Go](https://www.reddit.com/r/golang/comments/env6s0/how_to_implement_test_a_serverstreaming_grpc_api/)
-- url: https://youtu.be/SBPjEbZcgf8
+and I'm ready to go.
+
+In Go however, this is not all to easy to accomplish. I start off with a simple Go lambda application using `sam init --runtime go1.x`.
+
+Running the lambda locally using sam was not a problem - I ran the commands as below.
+
+    make build
+    touch event.json # this I followed a standard API event structure
+    sam local invoke HelloWorldFunction -e event.json
+    
+    {"statusCode":200,"headers":null,"multiValueHeaders":null,"body":"Hello, 2.49.15.103\n"}
+
+With that, I refer to the documentation written here: [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-debugging-golang.html](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-debugging-golang.html)
+
+&amp;#x200B;
+
+After setting up everything, including recompiling the delve debugger, and setting delve api to 2 (or not, it does not matter), I would always get this error message:
+
+&amp;#x200B;
+
+    sam local invoke HelloWorldFunction -e event.json -d 5986 --debugger-path ./tmp --debug-args "-delveAPI=2"
+    Invoking hello-world (go1.x)
+    2020-01-14 17:06:03 Found credentials in shared credentials file: ~/.aws/credentials
+    
+    Fetching lambci/lambda:go1.x Docker container image......
+    Mounting /repos/go-lambda-sam/hello-world as /var/task:ro,delegated inside runtime container
+    Could not create config directory: mkdir /home/sbx_user1051: permission denied.API server listening at: [::]:5986
+    2020-01-14T13:06:07Z info layer=debugger launching process with args: [/var/task/hello-world]
+
+and with that (I have also tried removing and reinstalling golang), I gave up doing inline debugging with go on AWS SAM CLI.   
+
+
+TL;DR: I am wondering if anyone has other experiences dealing with this (inline debugging of go lambda using vscode and AWS SAM CLI) before, and I wonder why is setting up tooling for go more troublesome that it needs to be, or if I am looking at the wrong places.
+## [5][Goroutines don't scale linearly but go programs do?](https://www.reddit.com/r/golang/comments/eol1i1/goroutines_dont_scale_linearly_but_go_programs_do/)
+- url: https://www.reddit.com/r/golang/comments/eol1i1/goroutines_dont_scale_linearly_but_go_programs_do/
+---
+Hi,
+
+I'm looking for some general advice on optimizing for performance.
+
+I have a rather complex bit of code, but the code lives in a function (no globals), so I can either a) call this function in multiple goroutines:
+
+`output := make(chan int, 4)`
+
+`for w := 0; w &lt; 4; w++ {`  
+ `go DoStuff(output)`  
+`}`
+
+`for a := 0; a &lt; 4; a++ {`  
+ `fmt.Println(&lt;-output)`  
+`}`
+
+Or b) use the same kind of function, compile my go program and run the thing 4 times in parallel.
+
+&amp;#x200B;
+
+When I use 4 goroutines, it takes about 2.5x as long and running the compiled program in 4x in parallel! And 4 copies of the program running in parallel seem to run at the same speed as a single running version, i.e. near perfect scaling.
+
+As far as I can tell (still a Go-newb though), none of the goroutines accesses the same data, and I made deep copies for all the structs they process.
+
+I would love and tips on how to proceed. I want to scale to 32-cores, but after testing on up to 12-cores so far,  I get rapidly diminishing returns.
+## [6][goban: a linter to ban "bad" functions](https://www.reddit.com/r/golang/comments/eoknxi/goban_a_linter_to_ban_bad_functions/)
+- url: https://github.com/utrack/goban
 ---
 
-## [10][Hi Gophers, I've just published this package using to make and train multi-layer neural network. Maybe you find it helpful.](https://www.reddit.com/r/golang/comments/ennq4p/hi_gophers_ive_just_published_this_package_using/)
-- url: https://github.com/dathoangnd/gonet
+## [7][GoatCounter: privacy-friendly web analytics written in Go](https://www.reddit.com/r/golang/comments/eog4mt/goatcounter_privacyfriendly_web_analytics_written/)
+- url: https://github.com/zgoat/goatcounter
 ---
 
+## [8][Continuous Benchmark for Go Project](https://www.reddit.com/r/golang/comments/eo5u5h/continuous_benchmark_for_go_project/)
+- url: https://github.com/knqyf263/cob
+---
+
+## [9][cards - Playing card library (updated since receiving subreddit feedback)](https://www.reddit.com/r/golang/comments/eokum4/cards_playing_card_library_updated_since/)
+- url: https://git.sr.ht/~tslocum/cards?0.1.1
+---
+
+## [10][Hey gophers what are you working on in 2020?](https://www.reddit.com/r/golang/comments/eof2nd/hey_gophers_what_are_you_working_on_in_2020/)
+- url: https://www.reddit.com/r/golang/comments/eof2nd/hey_gophers_what_are_you_working_on_in_2020/
+---
+EDIT : 
+I am working on reddit api wrapper.

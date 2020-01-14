@@ -57,23 +57,90 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Influence of C++ on Swift](https://www.reddit.com/r/cpp/comments/eo10jo/influence_of_c_on_swift/)
-- url: https://www.quora.com/What-are-similarities-and-differences-between-C-and-Swift
+## [2][Little text game I made in C++](https://www.reddit.com/r/cpp/comments/eokn4p/little_text_game_i_made_in_c/)
+- url: https://gamejolt.com/games/robotlife/434756
 ---
 
-## [3][C++ Profiling with Perf and Flamegraphs](https://www.reddit.com/r/cpp/comments/enxeew/c_profiling_with_perf_and_flamegraphs/)
-- url: http://www.mycpu.org/flamegraphs-on-c++/
+## [3][Speeding up C++ GitHub Actions using ccache](https://www.reddit.com/r/cpp/comments/eoctdc/speeding_up_c_github_actions_using_ccache/)
+- url: https://cristianadam.eu/20200113/speeding-up-c-plus-plus-github-actions-using-ccache/
 ---
 
-## [4][Better Algorithm Intuition - Conor Hoekstra - code::dive 2019](https://www.reddit.com/r/cpp/comments/eo2mtl/better_algorithm_intuition_conor_hoekstra/)
-- url: https://www.youtube.com/watch?v=0z-cv3gartw
+## [4][Why isn't there an RAII guard for 20's new semaphore types?](https://www.reddit.com/r/cpp/comments/eobqfh/why_isnt_there_an_raii_guard_for_20s_new/)
+- url: https://www.reddit.com/r/cpp/comments/eobqfh/why_isnt_there_an_raii_guard_for_20s_new/
 ---
-
+It doesn't seem like it would be too complex (following `std::lock_guard`) to have a type that does acquire/release. But cppreference has no mention of such a type. Was it considered for the standard?
 ## [5][The New ConanCenter Improves Search and Discovery](https://www.reddit.com/r/cpp/comments/eo4ivz/the_new_conancenter_improves_search_and_discovery/)
 - url: https://blog.conan.io/2020/01/13/New-Conan-Center-Improves-Search-Discovery.html
 ---
 
-## [6][latest c++ theory vs reality](https://www.reddit.com/r/cpp/comments/enuntq/latest_c_theory_vs_reality/)
+## [6][Influence of C++ on Swift](https://www.reddit.com/r/cpp/comments/eo10jo/influence_of_c_on_swift/)
+- url: https://www.quora.com/What-are-similarities-and-differences-between-C-and-Swift
+---
+
+## [7][Better Algorithm Intuition - Conor Hoekstra - code::dive 2019](https://www.reddit.com/r/cpp/comments/eo2mtl/better_algorithm_intuition_conor_hoekstra/)
+- url: https://www.youtube.com/watch?v=0z-cv3gartw
+---
+
+## [8][abbreviated class templates?](https://www.reddit.com/r/cpp/comments/eoiscy/abbreviated_class_templates/)
+- url: https://www.reddit.com/r/cpp/comments/eoiscy/abbreviated_class_templates/
+---
+since we now have abbreviated function templates in c++20 (with concepts), I wonder if we could have something similar for structs/classes, concretely
+
+&amp;#x200B;
+
+`struct test {`
+
+`auto x;`
+
+`auto y;`
+
+`test(auto _x, auto _y) : x{ _x }, y{ _y } {}`
+
+`};`
+
+`auto obj = test{ 1, "aaa"s };`
+
+`// _x deduced to int, _y deduced to std::string as function template deduction for the ctor.`
+
+`// obj.x then deduced to int since it is initialized by _x, and _x is int, likewise for obj.y`
+
+the whole thing should be equivalent to
+
+`template&lt;typename T1, typename T2&gt;`
+
+`struct test {`
+
+`T1 x;`
+
+`T2 y;`
+
+`template&lt;typename T3, typename T4&gt;`
+
+`test(T3 _x, T4 _y) : x{ _x }, y{ _y } {}`
+
+`};`
+
+`template&lt;typename...T&gt;`  
+`test(T...)-&gt;test&lt;T...&gt;;`
+## [9][Towards deprecating volatile: A Simplified volatile read and write implementation in C++](https://www.reddit.com/r/cpp/comments/eofdxu/towards_deprecating_volatile_a_simplified/)
+- url: https://www.reddit.com/r/cpp/comments/eofdxu/towards_deprecating_volatile_a_simplified/
+---
+I have implemented a simplified header-only library to help make performing volatile read and writes easier in C++ codebases.
+Really handy especially if you're into embedded systems.
+
+It's a few lines but well documented and won't have to repeat yourself nor use the volatile keyword irresponsibly again. 
+
+More documentation and justification on the repo. 
+
+Contributions and reviews are highly welcome too 😀
+
+
+https://github.com/lamarrr/volta
+## [10][C++ Profiling with Perf and Flamegraphs](https://www.reddit.com/r/cpp/comments/enxeew/c_profiling_with_perf_and_flamegraphs/)
+- url: http://www.mycpu.org/flamegraphs-on-c++/
+---
+
+## [11][latest c++ theory vs reality](https://www.reddit.com/r/cpp/comments/enuntq/latest_c_theory_vs_reality/)
 - url: https://www.reddit.com/r/cpp/comments/enuntq/latest_c_theory_vs_reality/
 ---
 Why is there a seemingly big discrepancy of existing and used c++ version? Despite good compiler support.
@@ -85,35 +152,3 @@ Open recent and active c++ project on github.
 It’s 98 or 11 in the best case
 Why on earth is every c++ code I (with my limited horizon) find in the wild uses such old standards?
 Also clang uses c++98 as default setting. Which is somewhat okay, because it can be easily adjusted. But it’s weird nonetheless.
-## [7][How does module linking works?](https://www.reddit.com/r/cpp/comments/enzvn1/how_does_module_linking_works/)
-- url: https://www.reddit.com/r/cpp/comments/enzvn1/how_does_module_linking_works/
----
-So i've read about modules, but I can't wrap my head around how they're linked
-
-Are compiled modules stored as a custom format or good ol' .so / .dll files? Since either way seems to break the structure of using ld (at least on Linux) to load a shared object dynamically and using some sort a header as a map of that shared object.
-
-I am curious as to how modules will be handled as dynamic objects
-## [8][Should there be a compiler flag to pretend const_cast doesn't exist?](https://www.reddit.com/r/cpp/comments/enmo8c/should_there_be_a_compiler_flag_to_pretend_const/)
-- url: https://www.reddit.com/r/cpp/comments/enmo8c/should_there_be_a_compiler_flag_to_pretend_const/
----
-Considering how the possibility of const_casts can make certain optimisations impossible, it seems like there's a potential benefit from having a flag that can tell the compiler to assume that nothing will ever have its constness casted away.
-
-There are plenty of applications where you can be confident that no const_casting will ever happen, so to have a small amount of performance lost because of a rarely-used feature is a bit frustrating.
-
-It's not like there's no precedent for this sort of thing either: The -ffast-math flag allows extra optimisations by assuming that no float can ever be NaN or Infinity, and that arguably has a much more significant effect.
-
-The biggest problem I see is that it's not easy to be sure if a const-cast will happen when you call someone else's code (or the standard library implementation you're using) so a flag like this might break something you're not aware of. Maybe that would stop this from ever being useful.
-
-Anyway, those are just some thoughts. What do you think?
-## [9][A header-only library for easy interactive parameters](https://www.reddit.com/r/cpp/comments/enq4lc/a_headeronly_library_for_easy_interactive/)
-- url: https://github.com/sharkdp/painless
----
-
-## [10][A quirk of qualified member lookup](https://www.reddit.com/r/cpp/comments/enhvos/a_quirk_of_qualified_member_lookup/)
-- url: https://quuxplusone.github.io/blog/2020/01/11/qualified-member-lookup/
----
-
-## [11][Cpp-Taskflow v2.3.0 pre-release: A new Conditional Tasking interface for cyclic and dynamic control flows](https://www.reddit.com/r/cpp/comments/enk1s5/cpptaskflow_v230_prerelease_a_new_conditional/)
-- url: https://github.com/cpp-taskflow/cpp-taskflow
----
-

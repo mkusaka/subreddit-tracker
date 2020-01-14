@@ -1,125 +1,93 @@
 # aws
-## [1][Path routing to Fargate tasks](https://www.reddit.com/r/aws/comments/eo46j7/path_routing_to_fargate_tasks/)
-- url: https://www.reddit.com/r/aws/comments/eo46j7/path_routing_to_fargate_tasks/
----
-Hi guys, I have a few doubts regarding networks, routing and Fargate that you fellas might have encountered before, or know how to circumvent :S.
-
-&amp;#x200B;
-
-Long story short, we are building a stack capable of handling, among other things, peaks of 200 plus Fargate tasks that need to be individually accessible using unique paths (1 path -&gt; 1 container/task).
-
-&amp;#x200B;
-
-My original idea was to go with an ALB and use the "path routing" feature it supports, sadly that's limited to 100 route groups (cannot be increased)... So not ideal.
-
-&amp;#x200B;
-
-With that limit in mind, I thought about setting 1 external ALB and 2 internal ones and chain them by using defaults, for a max of 300 route groups/paths, but testing that theory found out an ALB cannot point (as default at least) to another ALB... There goes that.
-
-&amp;#x200B;
-
-So I went to CloudFront, which we are using either way, and tried setting an Origin Group pointing to the first ALB, which uppon failure, would point to the next one and so on, but sadly origin groups have a limit of 2 origins, leaving me with 200 tasks at the most... Not sure if that's a fixed number or can be increased, it doesn't look like it judging by the UI.
-
-&amp;#x200B;
-
-How would you approach this? Is there a component for this?
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Ps: As we are in the architecting/initial stages major changes can be done and work/complexity shouldn't be an issue.
-
-&amp;#x200B;
-
-Ps2: As a context, each task with both serve HLS to CF and have a small API to control both the container status and to perform certain operations.
-## [2][Could I run League of Legends constantly on AWS?](https://www.reddit.com/r/aws/comments/eo4l4z/could_i_run_league_of_legends_constantly_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/eo4l4z/could_i_run_league_of_legends_constantly_on_aws/
----
-Hey!
-
-I've never used AWS and am starting a project to learn AWS Cloud Vmware.
-
-I was thinking something that could be fun would be to run my favorite game League of Legends on AWS.
-
-I wanted to ask if this is possible and if so, how would one go about it?
-
-Thanks in advance :)
-## [3][Building and scaling a micro-segmented enterprise network in AWS](https://www.reddit.com/r/aws/comments/enx5h6/building_and_scaling_a_microsegmented_enterprise/)
-- url: https://medium.com/@matt_69071/building-and-scaling-a-micro-segmented-network-in-aws-for-regulated-industries-af4f931cd48c
+## [1][7 Common Mistakes in Architecture Diagrams](https://www.reddit.com/r/aws/comments/eokico/7_common_mistakes_in_architecture_diagrams/)
+- url: https://blog.ilograph.com/posts/diagram-mistakes/
 ---
 
-## [4][AWS Border Protection - Is there a list of all AWS services/resources that can be configured to be "publicly" accessed?](https://www.reddit.com/r/aws/comments/ensmyk/aws_border_protection_is_there_a_list_of_all_aws/)
-- url: https://www.reddit.com/r/aws/comments/ensmyk/aws_border_protection_is_there_a_list_of_all_aws/
----
-Hi all -
-
-There are obvious services that can be configured to be "publicly" accessible such as EC2 instances or S3 buckets; however, there are also some less known cases such as making an ECR repository public or publishing a public AMI.
-
-*Does anyone know if there is a list maintained by AWS or by the community that lists all possible publicly facing endpoints for services/resources?* I'm looking at this from a cyber security perspective (i.e. border protection) with the use case of ensuring no services/resources from an AWS account can be accessed publicly. 
-
-Thank you for any help in advance.
-
-Best,
-
-Andrew
-## [5][Fargate Spot connection drainning?](https://www.reddit.com/r/aws/comments/eo4i21/fargate_spot_connection_drainning/)
-- url: https://www.reddit.com/r/aws/comments/eo4i21/fargate_spot_connection_drainning/
----
-When I was using EC2 spot, there was spot termination notice in metadata endpoint. All I had to do was to include check in my health check script. If it detected termination notice, it would report unhealthy and load balancer would drain the task.
-
-I doesn't work the same way with Fargate spot. Notification is send to Event Bridge and ecs task receives stop signal which stop the task without draining.
-
-Do you have any tip how to ensure draining on load balancer? One solution would be to highjack stop signal on all containers in task but that seems complicated and I am hopping there is a simpler solution.
-## [6][Mapping multiple elastic IP addresses for nameservers on EC2](https://www.reddit.com/r/aws/comments/eo2tao/mapping_multiple_elastic_ip_addresses_for/)
-- url: https://www.reddit.com/r/aws/comments/eo2tao/mapping_multiple_elastic_ip_addresses_for/
----
-Is it possible to map multiple IP addresses to one EC2 server instance, for use as nameservers
-## [7][Fargate load balancing &amp; routing](https://www.reddit.com/r/aws/comments/eo2mwn/fargate_load_balancing_routing/)
-- url: https://www.reddit.com/r/aws/comments/eo2mwn/fargate_load_balancing_routing/
----
-Hello,
-
-I'm setting up my infra with Fargate (using AWS CDK scripting). As we have multiple applications running in the back-end, I'm currently investigating potential options for routing between applications. Below is an overview of the 3 options I currently have in mind. Do you have a strong opinion on which one I should go for, based on your experience ?
-
-&amp;#x200B;
-
-https://preview.redd.it/w2ya3o2l1ja41.png?width=911&amp;format=png&amp;auto=webp&amp;s=0bdcfdeff6ed45ca9751d8c1b8f2d1b1932be2f8
-
-Thanks a ton in advance for the help!
-
-Cheers
-## [8][Semantic segmentation](https://www.reddit.com/r/aws/comments/eo24t6/semantic_segmentation/)
-- url: https://www.reddit.com/r/aws/comments/eo24t6/semantic_segmentation/
----
-Hello, is it possible to use Sagemaker's semantic segmentation model locally?  Because the only deployment in example notebook is Amazon SageMaker hosted endpoint. Reference: [https://github.com/awslabs/amazon-sagemaker-examples/blob/master/introduction\_to\_amazon\_algorithms/semantic\_segmentation\_pascalvoc/semantic\_segmentation\_pascalvoc.ipynb](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/introduction_to_amazon_algorithms/semantic_segmentation_pascalvoc/semantic_segmentation_pascalvoc.ipynb). Thank you in advance!
-## [9][amplify custom domain name](https://www.reddit.com/r/aws/comments/enzlq4/amplify_custom_domain_name/)
-- url: https://www.reddit.com/r/aws/comments/enzlq4/amplify_custom_domain_name/
----
-Hi,
-
-I've started using amplify for an SPA with angular.
-
-I'm trying to add my custom domain name with no luck. The domain name was bought/registered through AWS with Route53.
-
-The error:
-
-One or more of the CNAMEs you provided are already associated with a different resource.
-
-What I've tried:
-
-* I've tried recreating the app
-* Checked cloudfront - it's empty
-* Checked cloudformation for any old deployments
-* Checked S3 for static websites
-* I've tried adding another domain but now it's stuck "activating"
-
-Any ideas?
-
-Are there a better alternative to hosting a single page app in AWS?
-
-Thank you!
-## [10][What exactly are Region and different types of Zones in AWS? Describing Region, Availability Zone, Local Zone and Wavelength Zone](https://www.reddit.com/r/aws/comments/eo0kzi/what_exactly_are_region_and_different_types_of/)
-- url: https://itnext.io/what-exactly-are-region-and-different-types-of-zones-in-aws-333d7e0ce373?source=friends_link&amp;sk=f2c81db6cd87ac0b63ccc3c99d615e2b
+## [2][Part 5 Building an Imgur clone with Vue.js and Serverless - Authentication between our Backend and Frontend - Now Live!](https://www.reddit.com/r/aws/comments/eoaxu0/part_5_building_an_imgur_clone_with_vuejs_and/)
+- url: https://tutorialedge.net/projects/building-imgur-clone-vuejs-nodejs/part-5-authentication/
 ---
 
+## [3][Introducing Pubby - DAZN's custom, high-scale WebSockets solution](https://www.reddit.com/r/aws/comments/eojr9r/introducing_pubby_dazns_custom_highscale/)
+- url: https://medium.com/dazn-tech/introducing-pubby-our-custom-websockets-solution-c5764e3a7dcb?source=friends_link&amp;sk=a206d4ba54317ed6eae3fce0521e03b2
+---
+
+## [4][Preferred architecture diagram software?](https://www.reddit.com/r/aws/comments/eodjob/preferred_architecture_diagram_software/)
+- url: https://www.reddit.com/r/aws/comments/eodjob/preferred_architecture_diagram_software/
+---
+
+Hi all,
+
+Wanted to hear what folks think is the 'best' architecture / flow diagram software.
+
+I personally was looking for something free, easy to use, could sync across devices, and natively had AWS icons. I ended up going to draw.io. 
+
+I made a video highlighting my rationale and why I chose draw.io here - https://youtu.be/i0pMpnxHN6g
+
+Curious to hear everyone's thoughts and what you use daily.
+## [5][Bundesliga Goes All-In on AWS](https://www.reddit.com/r/aws/comments/eo78u1/bundesliga_goes_allin_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/eo78u1/bundesliga_goes_allin_on_aws/
+---
+As an AWS user, German and football fan, I find this in multiple ways interesting.  
+
+[Bundesliga Goes All-In on AWS](https://press.aboutamazon.com/news-releases/news-release-details/bundesliga-goes-all-aws-revolutionize-football-viewing)
+
+Mainz 05 ftw!
+## [6][Getting software to run on two AWS accounts.](https://www.reddit.com/r/aws/comments/eokylt/getting_software_to_run_on_two_aws_accounts/)
+- url: https://www.reddit.com/r/aws/comments/eokylt/getting_software_to_run_on_two_aws_accounts/
+---
+I am trying to run software on two separate EC2 windows server and keep getting an error that the software is already running on another computer.
+
+I created a new AWS account with new account ID and fresh intsalled the software.
+
+How would the software know that I'm using it when it's a new instance, on a new account, with a new ID?
+
+Potentially it picks up on where I'm remote viewing from?
+
+Any ideas on how I can fix this?
+
+Thanks.
+## [7][Can AWS credit be applied towards support plans?](https://www.reddit.com/r/aws/comments/eoeeoi/can_aws_credit_be_applied_towards_support_plans/)
+- url: https://www.reddit.com/r/aws/comments/eoeeoi/can_aws_credit_be_applied_towards_support_plans/
+---
+We have some startup credit. If I select a support plan, will it be paid for with our unused credit?
+## [8][I am an idiot who needs help using the Glacier Vaults](https://www.reddit.com/r/aws/comments/eofcfe/i_am_an_idiot_who_needs_help_using_the_glacier/)
+- url: https://www.reddit.com/r/aws/comments/eofcfe/i_am_an_idiot_who_needs_help_using_the_glacier/
+---
+I want to use the Glacier Vault to store a few TB of video.  I set up an IAM use account. I created a vault.  Now, I cant figure out what I need to do to upload my video for long term storage. 
+
+I downloaded the AWS Command Line Interface Setup Wizard. Once it is installed it is not giving me any nice prompts on what to do next.  
+
+Oh, so very confused.
+## [9][CodeBuild+GitHub - How can I build a branch upon PULL_REQUEST_MERGED?](https://www.reddit.com/r/aws/comments/eok0hn/codebuildgithub_how_can_i_build_a_branch_upon/)
+- url: https://www.reddit.com/r/aws/comments/eok0hn/codebuildgithub_how_can_i_build_a_branch_upon/
+---
+**The need** \- when merging a pull-request to a branch, I want CodeBuild to build the latest branch's commit, **not** the pull-request.I'm using CloudFormation, here's the triggers snippet:
+
+     Triggers:
+       Webhook: true
+       FilterGroups:
+         - - Type: EVENT
+             Pattern: PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_REOPENED
+           - Type: BASE_REF
+             Pattern: !Sub "refs/heads/${GithubBranchName}$"
+             ExcludeMatchedPattern: false
+
+I've tried adding PULL\_REQUEST\_MERGED in the same CodeBuild project, but it builds the PR.
+
+I've also tried creating a new CodeBuild project with PULL\_REQUEST\_MERGED only, and I tweaked the BASE\_REF and HEAD\_REF, but still no luck, the pull-request is built, instead of the branch.
+
+Even though I'm using CloudFormation, feel free to reply with screenshots referring to AWS Console.
+
+Is it even possible?
+## [10][Maintanance Page when Target Group is down](https://www.reddit.com/r/aws/comments/eoi2x4/maintanance_page_when_target_group_is_down/)
+- url: https://www.reddit.com/r/aws/comments/eoi2x4/maintanance_page_when_target_group_is_down/
+---
+Hello everybody,  
+we have several development and staging system who are shut down every night with the ec2-scheduler. In the front we have a ALB and using target groups. This works very well.   
+But, what is the best practice to get a custom maintnance Page for this case? I want a Page with "This Enviroment is recently shut down" or something.  
+
+
+Any tipps?  
+
+
+Thanks for your help!

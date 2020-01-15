@@ -1,9 +1,103 @@
 # ruby
-## [1][Rails tutorial - Why you should use Sentry logger in your project and how to configure it](https://www.reddit.com/r/ruby/comments/eol6qd/rails_tutorial_why_you_should_use_sentry_logger/)
+## [1][Creating my first ruby gems](https://www.reddit.com/r/ruby/comments/ep0lhp/creating_my_first_ruby_gems/)
+- url: https://www.reddit.com/r/ruby/comments/ep0lhp/creating_my_first_ruby_gems/
+---
+Hello
+
+I've just made my first gem! It's a wrapper for an instant search engine API (MeiliSearch). It means indexes, documents, and search handling.  
+[https://github.com/meilisearch/meilisearch-ruby](https://github.com/meilisearch/meilisearch-ruby)
+
+I love ruby language, it's literally my favorite one, but I use it more with Rails than in this kind of situation.
+
+So, I need your feedback to correct and improve it!
+
+Thanks for your time.
+
+And for the curious ones, here is the repository of our search engine MeiliSearch. We are open-source and we really need your support! ⭐️ Each star and feedback are important for us 🙂[https://github.com/meilisearch/MeiliSearch](https://github.com/meilisearch/MeiliSearch)
+## [2][Developer with 10 years experience of Ruby / Rails (12 in programming) is looking for juniors/mids to teach/help/mentor - anyone interested?](https://www.reddit.com/r/ruby/comments/eolm8x/developer_with_10_years_experience_of_ruby_rails/)
+- url: https://www.reddit.com/r/ruby/comments/eolm8x/developer_with_10_years_experience_of_ruby_rails/
+---
+Hello everyone, I hope you are well. I'm not sure if it's the best place for such announcements but I was sharing with you my articles for the past 2 years so I decided to write here as I appreciate this community and the value it gives.
+
+I have just finished one of my projects and have more free time now. I thought that I may work with programmers that have fewer experience than me to help them improve the quality of their code or careers as Ruby developers. Does anyone need a consultation, code review or advice? It will be free, maybe in the future, I will think about some kind of compensation in case of a longer partnership but for now, I just wanted to check if there is anyone interested that I could share my knowledge and experience with and see what type of problems do you have.
+
+Short about me:
+
+Experience: 10 years with Ruby / Rails (12 in programming)
+
+Github: [https://github.com/pdabrowski6](https://github.com/pdabrowski6)
+
+Website: [https://pdabrowski.com/](https://pdabrowski.com/)
+
+Podcasts: 
+
+* [https://devchat.tv/ruby-rogues/rr-366-build-your-own-rspec-a-gentle-metaprogramming-intro-with-pawel-dabrowski/](https://devchat.tv/ruby-rogues/rr-366-build-your-own-rspec-a-gentle-metaprogramming-intro-with-pawel-dabrowski/)
+* https://devchat.tv/my-ruby-story/mrs-069-pawel-dabrowski/
+
+LinkedIn: [https://www.linkedin.com/in/pdabrowski6/](https://www.linkedin.com/in/pdabrowski6/)
+
+Feel free to contact me here or via Linkedin if you are interested in the partnership. I would love to help other developers and learn a lot by doing this. Have a nice day!
+## [3][BigDecimal Equality Strangeness](https://www.reddit.com/r/ruby/comments/eos2gf/bigdecimal_equality_strangeness/)
+- url: https://www.reddit.com/r/ruby/comments/eos2gf/bigdecimal_equality_strangeness/
+---
+I ran into a BigDecimal value which has confused the heck out of me.  This is on Ruby 2.6.3
+
+    2.6.3 :007 &gt; BigDecimal("0.08442931")
+     =&gt; 0.8442931e-1
+    2.6.3 :008 &gt; BigDecimal("0.08442931") - 0.8442931e-1
+     =&gt; 0.1e-16
+
+Take note I copied the value from the first line and pasted it to the second.  I otherwise get
+
+    2.6.3 :002 &gt;  BigDecimal("0.08442931") -  BigDecimal("0.08442931")
+     =&gt; 0.0
+
+What is going on here?  It doesn't happen often with other values, for example if I change the last digit
+
+    2.6.3 :004 &gt;  BigDecimal("0.08442932") - 0.8442932e-1
+     =&gt; 0.0
+
+Any idea what's happening?
+## [4][Building a Hangman Game in Ruby in 25 minutes](https://www.reddit.com/r/ruby/comments/eopvss/building_a_hangman_game_in_ruby_in_25_minutes/)
+- url: https://www.reddit.com/r/ruby/comments/eopvss/building_a_hangman_game_in_ruby_in_25_minutes/
+---
+Hey guys, I've launched a new Ruby build on YouTube. This is a pretty interesting one as it involves a lot of interaction with the user and handling the user's input from the Terminal. Guess the wrong letter too many times and it's game over. Was a lot of fun writing this code for the video, hopefully it's useful to anyone getting into Ruby.
+
+[https://www.youtube.com/watch?v=uBwGfswwRL4](https://www.youtube.com/watch?v=uBwGfswwRL4)
+
+As always, I'm planning to post some more Ruby content to my channel to promote the Ruby language, so would be open to suggestions about content ideas. Thanks :)
+## [5][A Migration Path to Bundler 2+](https://www.reddit.com/r/ruby/comments/eolrut/a_migration_path_to_bundler_2/)
+- url: http://eregon.me/blog/2020/01/13/a-migration-path-to-bundler2.html
+---
+
+## [6][Rails tutorial - Why you should use Sentry logger in your project and how to configure it](https://www.reddit.com/r/ruby/comments/eol6qd/rails_tutorial_why_you_should_use_sentry_logger/)
 - url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-sentry-logger-installation-and-configuration/
 ---
 
-## [2][www.viky.ai a Natural Language Processing platform (Ruby On Rails app + C NLP component)](https://www.reddit.com/r/ruby/comments/eojgtk/wwwvikyai_a_natural_language_processing_platform/)
+## [7][can someone explain the difference between rangeinclude and rangecover like I am 5 years old?](https://www.reddit.com/r/ruby/comments/eoor5w/can_someone_explain_the_difference_between/)
+- url: https://www.reddit.com/r/ruby/comments/eoor5w/can_someone_explain_the_difference_between/
+---
+I've search the same question but I still don't get why...
+## [8][How can you do proper async with ruby?](https://www.reddit.com/r/ruby/comments/eoo8sp/how_can_you_do_proper_async_with_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/eoo8sp/how_can_you_do_proper_async_with_ruby/
+---
+I want to be able to run an method, and while it runs run another method not waiting for the first to end/exit. It can easily be done in JS with stuff like promises but I couldn't figure out something similar for ruby.
+
+Something like:
+
+    def method
+        some_method_that_doesnt_end
+        other_method
+    end
+
+&amp;#x200B;
+
+While `some_method_that_doesnt_end` can run indefinitely, I want to run several of those at the same time.
+## [9][Faster Ruby APIs with Postgres](https://www.reddit.com/r/ruby/comments/eom0cc/faster_ruby_apis_with_postgres/)
+- url: https://goiabada.blog/faster-ruby-apis-with-postgres-238c2f4a272c
+---
+
+## [10][www.viky.ai a Natural Language Processing platform (Ruby On Rails app + C NLP component)](https://www.reddit.com/r/ruby/comments/eojgtk/wwwvikyai_a_natural_language_processing_platform/)
 - url: https://www.reddit.com/r/ruby/comments/eojgtk/wwwvikyai_a_natural_language_processing_platform/
 ---
 Hi,
@@ -15,76 +109,3 @@ The technical component *nlp*, written in C, allows the extraction of structured
 The second technical component webapp is a **Rails application** that allows you to work collaboratively to set up agents by offering dedicated interfaces. It also provides the interpret API in order to allow integration into a third-party system.
 
 **viky.ai** **is released under open-source license** (MIT), code is available on [Github](https://github.com/viky-ai/viky-ai).
-## [3][Use cases for ruby aside from web](https://www.reddit.com/r/ruby/comments/eoieg8/use_cases_for_ruby_aside_from_web/)
-- url: https://www.reddit.com/r/ruby/comments/eoieg8/use_cases_for_ruby_aside_from_web/
----
-So yesterday I had asked about some use cases for the ruby language in data science, and the general idea was that Ruby isn't good for data science &amp; engineering. Which led me to wonder , "aside from rails, where else does ruby shine?"
-## [4][Cache Crispies - Fast, Flexible Rails Serializer](https://www.reddit.com/r/ruby/comments/eoegih/cache_crispies_fast_flexible_rails_serializer/)
-- url: https://www.reddit.com/r/ruby/comments/eoegih/cache_crispies_fast_flexible_rails_serializer/
----
-Picking a method of doing JSON serialization in Rails has not been an easy decision as of late. Especially if you're not able to break your APIs by moving to a JSON API structure. And trying to mix in a caching strategy certainly doesn't help. That's the problem the new Cache Crispies gem was written to fix.  
-
-
-[https://codenoble.com/blog/introducing-cache-crispies/](https://codenoble.com/blog/introducing-cache-crispies/)  
-[https://github.com/codenoble/cache-crispies](https://github.com/codenoble/cache-crispies)
-## [5][Business software projects ?](https://www.reddit.com/r/ruby/comments/eol0b0/business_software_projects/)
-- url: https://www.reddit.com/r/ruby/comments/eol0b0/business_software_projects/
----
-Sometime this semester, I will have a project to build a system in an area of my choosing. Among other things, I want to see if I can hack building software with business applications. Does anyone on this sub have an idea on what I can build?
-## [6][Ruby for Data Science.](https://www.reddit.com/r/ruby/comments/eo6ox3/ruby_for_data_science/)
-- url: https://www.reddit.com/r/ruby/comments/eo6ox3/ruby_for_data_science/
----
-This semester I will be doing a scientific computing unit which I have come to learn is about data science (correct me if I'm wrong)  
-We will be using python, but I wanted to know if any experienced people on this sub have used Ruby for data science projects, and if so, would you mind sharing your experience with regards to the learning curve associated with it and any other relevant information?
-## [7][Problem with gems not bundling](https://www.reddit.com/r/ruby/comments/eo8je4/problem_with_gems_not_bundling/)
-- url: https://www.reddit.com/r/ruby/comments/eo8je4/problem_with_gems_not_bundling/
----
-Hey all, I’m brand new to software engineering. I’m in the process of building a CLI gem using Ruby. I’m running in to a snag getting a few gems to bundle, namely nokogiri and pry. I’m running macOS 10.15.2
-
-If anyone can help or point me in the right direction I’d greatly appreciate it!
-## [8][Trying to understand advantages of dry-monads](https://www.reddit.com/r/ruby/comments/eo4829/trying_to_understand_advantages_of_drymonads/)
-- url: https://www.reddit.com/r/ruby/comments/eo4829/trying_to_understand_advantages_of_drymonads/
----
-Hey there!
-
-Today i decided to try dry-monads for the first time but i don't really get if it's advantage is purely around visual aspects of the code or is there more to it? I'm basing my opinion on the only real-life examples i was able to find on the internet which was always about a following refactoring or similar:
-
-Original code:
-
-    if current_user &amp;&amp; current_user.info &amp;&amp; current_user.info.bio
-      return current_user.info.bio 
-    end
-
-Refactored code (i'm pretty sure that's not the actual dry-monads code, just a pseudo-code to visualize what i'm talking about:
-
-    return Maybe(current_user).map { |user| user.info }
-                              .map { |info| info.bio }
-                              .or_else { 'No bio set' }
-
-And that makes me think...what's the profit? Is that better than writing it as below?
-
-    return current_user&amp;.info&amp;.bio || 'No bio set'
-
-Pardon my ignorance, it's probably because i can't find any real-life examples of some more complex refactors using dry family. No matter what - i have a strong feeling i'm not getting something in here fully. Thanks in advance for any clues!
-## [9][Best guide/tutorial/course for Ruby?](https://www.reddit.com/r/ruby/comments/enyhnr/best_guidetutorialcourse_for_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/enyhnr/best_guidetutorialcourse_for_ruby/
----
-Hi, I'm a frontend developer, and this year I want to learn backend development, I choosed Ruby, with Ruby on Rails
-
-But for now I want to learn Ruby, can you please recommend the best Ruby guide/tutorial/course for you?
-
-Thanks.
-## [10][Reality Show on Ruby Programming](https://www.reddit.com/r/ruby/comments/enywfx/reality_show_on_ruby_programming/)
-- url: https://www.reddit.com/r/ruby/comments/enywfx/reality_show_on_ruby_programming/
----
-Hi
-
-I'm doing a video series on creating a web application using Ruby on Rails. It's not meant to be a tutorial but more of a reality TV show on how one would go about creating an application.
-
-I was just curious if any of you know anything similar (preferably in Ruby) or anyone doing the same thing (coding each step of the way w/ mistakes). 
-
-Playlist link here:
-
-[https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n\_JD82](https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
-
-Videos ongoing. Trying to do a video once a week or if I have time. For this one, I'm trying to build a book keeping system.

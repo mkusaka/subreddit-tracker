@@ -5,43 +5,43 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][FatFinger - a JavaScript library expanding JS to allow typos and misspellings as valid code. Why bother with clean, well-formatted JS when you can write this and FatFinger will guess at your intentions?](https://www.reddit.com/r/javascript/comments/eo9y8z/fatfinger_a_javascript_library_expanding_js_to/)
-- url: http://fatfingerjs.com/
+## [2][Storybook 5.3 just shipped – MDX support for design systems + integrations with your design tools](https://www.reddit.com/r/javascript/comments/eorx04/storybook_53_just_shipped_mdx_support_for_design/)
+- url: https://medium.com/storybookjs/storybook-5-3-83e114e8797c
 ---
 
-## [3][Styled components v5.0.0 released](https://www.reddit.com/r/javascript/comments/eo89eh/styled_components_v500_released/)
-- url: https://github.com/styled-components/styled-components/releases/tag/v5.0.0
+## [3][How to create snowfall animation using css and JavaScript](https://www.reddit.com/r/javascript/comments/ep1i2p/how_to_create_snowfall_animation_using_css_and/)
+- url: https://reactgo.com/css-snow-animation/
 ---
 
-## [4][Everything about React hooks: a list of awesome libraries, resources and tutorials](https://www.reddit.com/r/javascript/comments/eol3qf/everything_about_react_hooks_a_list_of_awesome/)
+## [4][Monitoring Node.js: Watch Your Event Loop Lag!](https://www.reddit.com/r/javascript/comments/eolrbs/monitoring_nodejs_watch_your_event_loop_lag/)
+- url: https://medium.com/comsystoreply/monitoring-node-js-watch-your-event-loop-lag-c5071bc10f02
+---
+
+## [5][WeakMaps in Javascript](https://www.reddit.com/r/javascript/comments/ep181e/weakmaps_in_javascript/)
+- url: https://medium.com/the-javascript-adventure/weakmaps-in-javascript-cbe3d3f6eb8e
+---
+
+## [6][virtual-module: Run code in sandbox with in-memory module resolution.](https://www.reddit.com/r/javascript/comments/eou024/virtualmodule_run_code_in_sandbox_with_inmemory/)
+- url: https://github.com/egoist/virtual-module
+---
+
+## [7][Adventures in Tiny Coding – My 2019 In Review](https://www.reddit.com/r/javascript/comments/eoutji/adventures_in_tiny_coding_my_2019_in_review/)
+- url: http://frankforce.com/?p=7342
+---
+
+## [8][Crowdfunding campaign for a new Static Code Analyzer - JS Inspection (EA Extended)](https://www.reddit.com/r/javascript/comments/eoyy61/crowdfunding_campaign_for_a_new_static_code/)
+- url: https://www.indiegogo.com/projects/js-inspections-ea-extended-a-static-code-analyzer/x/16148880#/
+---
+
+## [9][Lazy load components in Angular 9](https://www.reddit.com/r/javascript/comments/eoyxz3/lazy_load_components_in_angular_9/)
+- url: https://medium.com/angular-in-depth/lazy-load-components-in-angular-596357ab05d8
+---
+
+## [10][Everything about React hooks: a list of awesome libraries, resources and tutorials](https://www.reddit.com/r/javascript/comments/eol3qf/everything_about_react_hooks_a_list_of_awesome/)
 - url: https://github.com/rehooks/awesome-react-hooks
 ---
 
-## [5][JavaScript framework to dynamically generate a portfolio site from a JSON resume](https://www.reddit.com/r/javascript/comments/eo3srg/javascript_framework_to_dynamically_generate_a/)
-- url: https://github.com/navdeepsekhon/portfolio-generator?js1
----
-
-## [6][What Is the Average Front-End Developer Salary in the US, the UK and the EU?](https://www.reddit.com/r/javascript/comments/eokxws/what_is_the_average_frontend_developer_salary_in/)
-- url: https://www.daxx.com/blog/development-trends/front-end-developer-salary
----
-
-## [7][In 2001, Roy Fielding predicted JavaScript was going to succeed and the reasons why (see paragraph 6.5.4.3)](https://www.reddit.com/r/javascript/comments/eoaea5/in_2001_roy_fielding_predicted_javascript_was/)
-- url: https://www.ics.uci.edu/~fielding/pubs/dissertation/evaluation.htm#sec_6_5_4_3
----
-
-## [8][The Digital Harmonograph](https://www.reddit.com/r/javascript/comments/eoisal/the_digital_harmonograph/)
-- url: https://medium.com/javascript-in-plain-english/the-digital-harmonograph-b932fd3e6c2e
----
-
-## [9][Building Applications with Kotlin and TypeScript](https://www.reddit.com/r/javascript/comments/eois6g/building_applications_with_kotlin_and_typescript/)
-- url: https://medium.com/javascript-in-plain-english/building-applications-with-kotlin-and-typescript-8a165e76252c
----
-
-## [10][Vue GridMultiselect - A simple multi-select component with items displayed in a table like UI](https://www.reddit.com/r/javascript/comments/eoio8w/vue_gridmultiselect_a_simple_multiselect/)
-- url: https://github.com/ProticM/vue-gridmultiselect
----
-
-## [11][Puppeteer timing. Learn to Web Scrape - JavaScript Web Scraping Guy](https://www.reddit.com/r/javascript/comments/eobb3k/puppeteer_timing_learn_to_web_scrape_javascript/)
-- url: https://javascriptwebscrapingguy.com/puppeteer-timing-jordan-teaches-web-scraping/
+## [11][React Facade Best-Practices (RxJS + React Tutorial)](https://www.reddit.com/r/javascript/comments/eosemg/react_facade_bestpractices_rxjs_react_tutorial/)
+- url: https://medium.com/@thomasburlesonIA/react-facade-best-practices-1c8186d8495a
 ---
 

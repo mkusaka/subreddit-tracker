@@ -33,71 +33,106 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/eo6qjo/whats_everyone_working_on_this_week_32020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-3-2020/36867?u=llogiq)!
-## [3][Response from bjorn3 on "Cranelift backend for Rust"](https://www.reddit.com/r/rust/comments/eojzjr/response_from_bjorn3_on_cranelift_backend_for_rust/)
+## [3][Rust jokes needed!](https://www.reddit.com/r/rust/comments/eozzje/rust_jokes_needed/)
+- url: https://www.reddit.com/r/rust/comments/eozzje/rust_jokes_needed/
+---
+Hey everyone! 
+
+I'm looking for the best rust puns/jokes you can manage! My boyfriend loves rust, as well as a few other languages. Due to a couple different things he's having a rough time in life at the moment. I wanted to make something that would give him a laugh and hopefully help him feel a bit better. My plan is to find an amazing and terrible pun/joke and embroider it on a t-shirt for him! 
+
+I am of course not a programmer so I have no idea where else to turn for these. I've enlisted his friends for final approval and to make sure they actually make sense (because I have no idea!) Hopefully he doesn't follow this sub... 
+
+Thank you for your help!
+## [4][Announcing v0.2 of SQLx (the async, pure, safe Rust SQL crate featuring compile-time checked queries without a DSL), now with support for Tokio, TLS, and transactions](https://www.reddit.com/r/rust/comments/ep0mgf/announcing_v02_of_sqlx_the_async_pure_safe_rust/)
+- url: https://github.com/launchbadge/sqlx/blob/62e1df5ad9454696fc2c75b78c3190f801fcecde/CHANGELOG.md#020---2020-01-15
+---
+
+## [5][Announcing Dashmap v3 - Taking concurrent hashmaps to the next level.](https://www.reddit.com/r/rust/comments/eopxq5/announcing_dashmap_v3_taking_concurrent_hashmaps/)
+- url: https://www.reddit.com/r/rust/comments/eopxq5/announcing_dashmap_v3_taking_concurrent_hashmaps/
+---
+Today I am very happy to annouce v3 of my concurrent hashmap implementation [DashMap](https://github.com/xacrimon/dashmap). I did not make an announcement for v2 as it has some internal flaws that required API redesign.
+
+DashMap is a personal project created by my frustration caused by slowdowns due to
+the frequently used `RwLock&lt;HashMap&lt;K, V&gt;&gt;` which I see way to often.
+It tries to be close to a drop in replacement and expose a similar API.
+
+So, what changes have been made since I released v1?
+
+Most of the map has undergone redesign but here are the important bits.
+
+- Better iterator API
+
+- Entry API which tries to mimick `std::collections::HashMap`
+
+- Low level raw shard access support
+
+- Massively improved performance (see below)
+
+- Serde support
+
+- Common iterator traits implemented
+
+- Rustified and cleaner API
+
+- More relaxed trait bounds (v1 was much stricter than needed)
+
+So, what about performance you ask?
+
+Well to say that it is better than v1 is a mild understatement.
+I've been hard at work squeezing maximum performance. And it has paid off quite well.
+
+Below are some benchmarks I've ran on a i7-6700 with mild heat issues paired with 16 GiB of fancy Corsair memory.
+
+Keep in mind these benchmarks are far from perfect and I'd like more. This is something that I'm not super good at and any help is appreciated with open arms.
+
+https://raw.githubusercontent.com/xacrimon/dashmap/master/assets/bench-insert.svg?sanitize=true
+
+https://raw.githubusercontent.com/xacrimon/dashmap/master/assets/bench-get.svg?sanitize=true
+
+[Google Doc](https://docs.google.com/spreadsheets/d/1q2VR_rMZRzG7YO0ef6V0jMA6hAdkafh_wI8xvY_51fk/edit?usp=sharing)
+## [6][Tonic: 0.1 has arrived!](https://www.reddit.com/r/rust/comments/eomgrr/tonic_01_has_arrived/)
+- url: https://luciofran.co/tonic-0-1-release/
+---
+
+## [7][This Week in Veloren #50: Skeletons and Scrolling Combat Text](https://www.reddit.com/r/rust/comments/eowaxw/this_week_in_veloren_50_skeletons_and_scrolling/)
+- url: https://veloren.net/devblog-50/
+---
+
+## [8][PoC libs for embedded programming based on HAL, DHT sensors driver and 8segments LED driver for TM16xx MCU](https://www.reddit.com/r/rust/comments/eoza8a/poc_libs_for_embedded_programming_based_on_hal/)
+- url: https://www.reddit.com/r/rust/comments/eoza8a/poc_libs_for_embedded_programming_based_on_hal/
+---
+This one is for reading DHT11, DHT21, DHT22: [https://github.com/rustrum/dht-hal-drv](https://github.com/rustrum/dht-hal-drv)
+
+This one is to output something on 8 segment LED displays based on TM1637 or TM1638: [https://github.com/rustrum/tmledkey-hal-drv](https://github.com/rustrum/tmledkey-hal-drv)
+
+&amp;#x200B;
+
+You could combine these libraries together and create DIY thermometer/clocks on STM32, RaspberryPi or any other platform where is proper HAL implementation available.
+## [9][boxing-arena crate - Simple reuse of Box allocation](https://www.reddit.com/r/rust/comments/eozyq5/boxingarena_crate_simple_reuse_of_box_allocation/)
+- url: https://github.com/da-x/boxing-arena
+---
+
+## [10][How is ownership independent of heap vs stack?](https://www.reddit.com/r/rust/comments/ep0s60/how_is_ownership_independent_of_heap_vs_stack/)
+- url: https://www.reddit.com/r/rust/comments/ep0s60/how_is_ownership_independent_of_heap_vs_stack/
+---
+I came across this post [https://www.reddit.com/r/rust/comments/8kt5eq/ownership\_vs\_the\_stack\_and\_heap/](https://www.reddit.com/r/rust/comments/8kt5eq/ownership_vs_the_stack_and_heap/)
+
+In particular, there are at least two commenters saying "ownership is separate from stack/heap."
+
+&gt;The semantics of a language are generally *not* tied to implementation details such as Stack and Heap. Or otherwise said, the rules should apply whether or not a value is currently stored on the Stack, on the Heap, or maybe in Read-Only Memory.
+
+&amp;#x200B;
+
+&gt;Ownership and borrowing themselves are entirely separate from stack vs heap
+
+From what I gathered, an essential characteristic of ownership is that it "crosses off" everything created in the current scope from the stack whenever it exits that scope. How would you implement ownership with this cross-everything-off-on-scope-out feature if it wasn't relying on the stack architecture? How is ownership not tied to the concepts of stack/heap?
+
+Or maybe I misunderstood what they meant?
+## [11][bita 0.5.0 - New release of the low bandwidth file synchronization tool](https://www.reddit.com/r/rust/comments/eorgg0/bita_050_new_release_of_the_low_bandwidth_file/)
+- url: https://github.com/oll3/bita
+---
+
+## [12][Response from bjorn3 on "Cranelift backend for Rust"](https://www.reddit.com/r/rust/comments/eojzjr/response_from_bjorn3_on_cranelift_backend_for_rust/)
 - url: https://github.com/bjorn3/rustc_codegen_cranelift/issues/863
 ---
 
-## [4][The ASM Working Group has submitted their first draft of the RFC for stable inline assembly](https://www.reddit.com/r/rust/comments/eo9pks/the_asm_working_group_has_submitted_their_first/)
-- url: https://github.com/rust-lang/rfcs/pull/2850
----
-
-## [5][Can you recommend me a good rust crate for encoding mp3 from raw audio buffer?](https://www.reddit.com/r/rust/comments/eoje0v/can_you_recommend_me_a_good_rust_crate_for/)
-- url: https://www.reddit.com/r/rust/comments/eoje0v/can_you_recommend_me_a_good_rust_crate_for/
----
-I could only find decoding libraries. The final plan is to use it in the browser via WebAssembly and record from the microphone and get an mp3 from that.
-
-Thanks in advance!
-## [6][rust-analyzer changelog #7 (with binary releases!)](https://www.reddit.com/r/rust/comments/eo5bs2/rustanalyzer_changelog_7_with_binary_releases/)
-- url: https://rust-analyzer.github.io/thisweek/2020/01/13/changelog-7.html
----
-
-## [7][Animation in Rust?](https://www.reddit.com/r/rust/comments/eofqhy/animation_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/eofqhy/animation_in_rust/
----
-Recently a friend of mine advised me to learn Rust, and I did. It was the best thing ever, C++ with smarter compiler. However, I'm currently working on a project and I want to create animation videos like [3b1b](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw). He uses a python library and he is the creator of it, it's called [manim](https://github.com/3b1b/manim). And I don't really like python. So the question here: is there is any library could do that or something close, and if it's not, any ideas how could I implement something like that in Rust (Yeah, I would build it from scratch rather than using python)?  
-
-
-I hope it's the right subreddit, thanks in advance.
-## [8][What's New in Rust 1.40 [Rustacean Station Podcast]](https://www.reddit.com/r/rust/comments/eodj5d/whats_new_in_rust_140_rustacean_station_podcast/)
-- url: https://rustacean-station.org/episode/010-rust-1.40.0/
----
-
-## [9][Oxygengine gets JavaScript scripting interface to allow faster prototyping of games](https://www.reddit.com/r/rust/comments/eojr9d/oxygengine_gets_javascript_scripting_interface_to/)
-- url: https://i.redd.it/ohi0mtxu4qa41.png
----
-
-## [10][Mercurial's Journey to and Reflections on Python 3](https://www.reddit.com/r/rust/comments/eof2nx/mercurials_journey_to_and_reflections_on_python_3/)
-- url: https://gregoryszorc.com/blog/2020/01/13/mercurial%27s-journey-to-and-reflections-on-python-3/
----
-
-## [11][The Rust Programming Language on typeracer](https://www.reddit.com/r/rust/comments/eo5uxk/the_rust_programming_language_on_typeracer/)
-- url: https://i.redd.it/oa1v60eshka41.png
----
-
-## [12][Futures &amp; Pinning 101](https://www.reddit.com/r/rust/comments/eo7u4o/futures_pinning_101/)
-- url: https://www.reddit.com/r/rust/comments/eo7u4o/futures_pinning_101/
----
-A list of best practices from tomaka.
-
-I thought it would be useful to people outside of Parity, too.  
-He allowed me to post it here and share all the info with you.
-
----
-
-For people who are not super confident within Futures and pinning (which includes me), here's a 101 guide:
-
-- As a reminder, the way it works is: you create a `Future`, move it around if you want, then you pin it, then you start polling it. If a `Future` implements `Unpin` then you can pin it, poll it, unpin it, move it, pin it again, poll it, unpin it, move it, and so on. If a `Future` does not implement `Unpin`, then you need to pin it once and keep it pinned forever.
-
-- It almost never makes sense to use `Box&lt;dyn Future&gt;` rather than `Pin&lt;Box&lt;dyn Future&gt;&gt;`. Use `Box::pin(fut)` rather than `Box::new(fut)`.
-
-- Returning `-&gt; impl Future + Unpin` from a function is okay-ish, but means that for instance that you can't use `async`/`await` within the function unless you put `Box::pin` around your `async` block (which is an overhead). I think it's preferable for the caller (rather than the callee) to decide how the returned `Future` should be pinned. By enforcing that `Future` implement `Unpin`, I can totally imagine situations where we end up boxing a future multiple times because of misunderstandings.
-
-- If you're writing a struct that wraps around a `Future` (e.g. similar to the combinators that are in the `futures` crate), you can use the `pin-utils` crate to safely turn a `Pin&lt;&amp;mut MyStruct&gt;` into a `Pin&lt;&amp;mut FutureThatIsInsideMyStruct&gt;`. Don't try too hard though. Worst case scenario, just put a `Pin&lt;Box&lt;&gt;&gt;` around the culprit.
-
-- On that topic: pinning a `Future` doesn't mean you have to turn it into a `Pin&lt;Box&lt;dyn Future&gt;&gt;`. It can also be `Pin&lt;Box&lt;F&gt;&gt;` if you know what `F` is.
-
-- You can pin a `Future` to the stack using `futures::pin_mut!`. I've found that particularly useful in the context of `future::select` within `async` blocks. This function requires its parameters to be `Unpin`, and that can be solved by passing pinned versions of your futures.
-
-- Everything above is applicable to `Stream` and `Sink`. For `AsyncRead`/`AsyncWrite` it is a bit more debatable. Since you generally want to pass around references to `AsyncRead`/`AsyncWrite`-implementing objects so that functions can read/write a bit and then return, it makes sense to me to require `+ Unpin` on them. I'm very uncertain about this point.
-
-- If you write `struct Foo&lt;T&gt;`, the compiler automatically generates `impl&lt;T: Unpin&gt; Unpin for Foo&lt;T&gt;`. This means that you sometimes need to manually add `impl&lt;T&gt; Unpin for Foo&lt;T&gt; {}`. As long as you're not using `unsafe` code, it's never wrong to write this. (this problem is similar to when you're deriving `Clone` on a struct that contains an `Arc&lt;T&gt;`, and the compiler enforces `T: Clone` for no reason).

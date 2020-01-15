@@ -55,192 +55,359 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [stackblitz]: https://stackblitz.com/
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Hiring? [Jan 2020]](https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
+## [2][Who's Available? [Jan 2020]](https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 ---
-We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
+We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
+If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
 
-_I am sorry for the missing "Who's Available [Dec 2019]" 🙇‍♂️_
-
-Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
-
-⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
-
-**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
-
-examples:
-
-- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
-- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
-
-Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
-
-If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
-
-[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/e4pud0/whos_hiring_dec_2019/
-[available:most recent]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
-[format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Styled components v5.0.0 released](https://www.reddit.com/r/reactjs/comments/eo839o/styled_components_v500_released/)
-- url: https://github.com/styled-components/styled-components/releases/tag/v5.0.0
 ---
 
-## [4][React-spring visualizer, tweak your spring configuration](https://www.reddit.com/r/reactjs/comments/eo5qse/reactspring_visualizer_tweak_your_spring/)
-- url: https://react-spring-visualizer.com/
+Top Level comments must be Agencies and React Devs available for contract/permanent work.
+
+Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+
+## (Fulltime | Contract | USA | Remote)
+
+or
+
+## (Agency | Europe | Remote)
+
+Then we recommend adding a 2-3 sentence bio as well.
+
+Not required, but may help:
+
+- Link to Github/Portfolio
+- Notable [r/reactjs][r/reactjs] submissions
+- Preferred stack
+- Former companies or clients
+- Design or backend dev experience
+- anything else you consider relevant. Put on your best show!
+- Listing years of experience NOT required, it's a poor metric
+
+If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
+**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
+
+For more ideas on what to include, look at the [last Who's Available posts][available:last month].
+
+If you just want some portfolio feedback, check the stickied post below.
+
+Good luck! #WriteOnceApplyEverywhere
+
+[r/reactjs]: https://www.reddit.com/r/reactjs/
+[available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
+[hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
+## [3][My work on Enatega is coming to shape finally a food delivery solution if someone wants their own individual app. (More info and demo links in comments)](https://www.reddit.com/r/reactjs/comments/ep0ia9/my_work_on_enatega_is_coming_to_shape_finally_a/)
+- url: https://www.youtube.com/watch?v=5rAI8FoyG8k&amp;feature=youtu.be
 ---
 
-## [5][Railroad Solitaire: made with React, svg, material-ui](https://www.reddit.com/r/reactjs/comments/eohypz/railroad_solitaire_made_with_react_svg_materialui/)
-- url: https://www.reddit.com/r/reactjs/comments/eohypz/railroad_solitaire_made_with_react_svg_materialui/
+## [4][How do I push an array from a form on a post request?](https://www.reddit.com/r/reactjs/comments/ep01a0/how_do_i_push_an_array_from_a_form_on_a_post/)
+- url: https://www.reddit.com/r/reactjs/comments/ep01a0/how_do_i_push_an_array_from_a_form_on_a_post/
 ---
-I made recently as a Christmas present for a family member who enjoys this game. It is a variant called Russian Solitaire, give it a try!
+Hello!
 
-https://www.railroadsolitaire.com/
+I'm stuck, I do not know how to push an array with JavaScript / React, I'm stuck.
 
-Made with React, material-ui component library, and svg cards.
-## [6][Trouble with CSS Modules and modifying text color in Antd](https://www.reddit.com/r/reactjs/comments/eol3dg/trouble_with_css_modules_and_modifying_text_color/)
-- url: https://www.reddit.com/r/reactjs/comments/eol3dg/trouble_with_css_modules_and_modifying_text_color/
----
-    import React from 'react';
-    import { Typography, Icon } from 'antd';
-    import { Link } from "react-router-dom";
-    import styles from './Header.module.css';
-    
-    const { Title } = Typography;
-    
-    const Header = () =&gt; {
-        return (
-            &lt;div className={ styles.container }&gt;
-                &lt;div className={ styles.flexLinks }&gt;
-                    &lt;Link to="/home"&gt;
-                         &lt;Title className = {styles.link} level = {3}&gt;
-                           home
-                        &lt;/Title&gt;
-                    &lt;/Link&gt;
-                    &lt;Link to="/contact"&gt;
-                       &lt;Title className = {styles.link} level = {3}&gt;
-                         contact
-                      &lt;/Title&gt;
-                    &lt;/Link&gt;
-                &lt;/div&gt;
-                &lt;div style={ styles.mobileIcon }&gt;
-                    &lt;Icon style={ styles.menu } type="menu" /&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        );
+I have a server which accepts post requests. With Postman I can make new entries with
+
+```json
+{
+ "username" : "marios",
+ "name" : "John Doe",
+ "email": "johndoe@example.com",
+ "address": "Somewhere in the World",
+ "telephones": [
+  {
+   "telType": "Home",
+   "telNumber": 1234567891
+  },
+  {
+   "telType": "Mobile",
+   "telNumber": 2101111111
+  }
+  ]
+ }
+```
+
+And my Code in React is 
+```react
+import React, { Component } from 'react';
+import axios from 'axios';
+
+export default class AddContacts extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onChangeUsername   = this.onChangeUsername.bind(this);
+    this.onChangeName       = this.onChangeName.bind(this);
+    this.onChangeEmail      = this.onChangeEmail.bind(this);
+    this.onChangeAddress    = this.onChangeAddress.bind(this);
+    this.onChangeTelType    = this.onChangeTelType.bind(this);
+    this.onChangeTelNumber  = this.onChangeTelNumber.bind(this);
+    this.onSubmit           = this.onSubmit.bind(this);
+
+    this.state = {
+      users: [],
+      username: '',
+      name: '',
+      email: '',
+      address: '',
+      telephones: [ ]
     }
-    export default Header;
-    
-    //Header.module.css file
-    
-    .container {
-        background-image: url("../../images/dark-paths.png");
-        padding: 30px;
-        text-align: center;
-        display: block;
-    }
-    
-    .link {
-      color: white;
-    }
-    
-    .flexLinks {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
+  }
 
-The links inside Title are still black but should be white. The container styling works and if I use an inline style ie
+  componentDidMount() {
+    axios.get('http://localhost:5000/users/')
+      .then(response =&gt; {
+        if (response.data.length &gt; 0) {
+          this.setState({
+            users: response.data.map(user =&gt; user.username),
+            username: response.data[0].username
+          })
+        }
+      })
+      .catch((error) =&gt; {
+        console.log(error);
+      })
 
-    &lt;Title style = {{color: 'white'}} level = {3}&gt;
-         home
-    &lt;/Title&gt;
+  }
 
-it works fine. I don't want to do this just to make it more manageable overall and consistent. Btw appending !important after it also works but I'm just trying to find the cleanest solution for future reference.
+  onChangeUsername(e) {
+    this.setState({
+      username: e.target.value
+    })
+  }
 
-Thanks!
-## [7][(Help) Can't import function in a .test.js file](https://www.reddit.com/r/reactjs/comments/eokulm/help_cant_import_function_in_a_testjs_file/)
-- url: https://www.reddit.com/r/reactjs/comments/eokulm/help_cant_import_function_in_a_testjs_file/
----
-Hi,
+  onChangeName(e) {
+    this.setState({
+      name: e.target.value
+    })
+  }
 
-I have a basic create-react-app. I installed all Jest dependencies, and created two files:
+  onChangeEmail(e) {
+    this.setState({
+      email: e.target.value
+    })
+  }
 
-\- hello.js, which contains a "hello world" function
+  onChangeAddress(e) {
+    this.setState({
+      address: e.target.value
+    })
+  }
 
-\- hello.test.js which imports hello() and test it.
-
-I then run yarn jest. The test only works if the function is directly written in the test file. It crashes if I try to import it. Why?
-
-hello.test.js:
-
-    import { hello } from "./hello";
-    
-    describe("HELLO WORLD", () =&gt; {
-      it("returns hello world", () =&gt; {
-        expect(hello()).toEqual("hello world!");
-      });
-    });
-
-hello.js:
-
-    export const hello = () =&gt; "hello world!";
-
-Also, the Jest crashes because of App.js - which I have not even modified -:
-
-     SyntaxError: /Users/mynamee/Desktop/helloapp/src/App.test.js: Unexpected token (6:31)
-    
-          4 |
-          5 | test('renders learn react link', () =&gt; {
-        &gt; 6 |   const { getByText } = render(&lt;App /&gt;);
-            |                                ^
-          7 |   const linkElement = getByText(/learn react/i);
-          8 |   expect(linkElement).toBeInTheDocument();
-          9 | });
-
-Thanks for your help!
-## [8][Implementing Loading Placeholder with React Content Loader](https://www.reddit.com/r/reactjs/comments/eod92c/implementing_loading_placeholder_with_react/)
-- url: https://www.kohei.dev/posts/react-content-loader?hl=en-US
----
-
-## [9][Environment Settings for Build Once Deploy Everywhere Packages in React](https://www.reddit.com/r/reactjs/comments/eojsr9/environment_settings_for_build_once_deploy/)
-- url: https://www.daniellittle.dev/environment-settings-for-build-once-packages-in-react
----
-
-## [10][styled media helper v2](https://www.reddit.com/r/reactjs/comments/eojnsl/styled_media_helper_v2/)
-- url: https://www.reddit.com/r/reactjs/comments/eojnsl/styled_media_helper_v2/
----
-Easy media query usage for styled-components
-
-[https://github.com/dvpnt/styled-media-helper](https://github.com/dvpnt/styled-media-helper)
-## [11][Just launched the first stage of our side project - reserve your user ID now! ⚡️](https://www.reddit.com/r/reactjs/comments/eokh9q/just_launched_the_first_stage_of_our_side_project/)
-- url: https://www.reddit.com/r/reactjs/comments/eokh9q/just_launched_the_first_stage_of_our_side_project/
----
-Hey, redditors!
-
-I and my friend are working on a side project, that's similar to reddit in the core but will have different features built on top. It's focused around creating like-minded communities. [Everchat](https://everch.at/) will be a place where you can send encrypted text and voice messages, images, videos, files, and more, free from any regulation.
-
-Our mission is to secure, protect, and empower the Internet freedom, and the freedom of speech in general, and our vision is to build the most secure group messaging out there, but the time (and hopefully our future community) will tell.
-
-Right now, you can support us with subscribing to our [Product Hunt Ship page](https://www.producthunt.com/upcoming/everchat) if you have a Product Hunt account, or reserve your user ID directly at [Everchat](https://everch.at/).
-
-All feedback is welcome, and I'm hoping to open up some Internet freedom- or content regulation-related discussion here. 🙂
-## [12][Which is the better way to validate my title text?](https://www.reddit.com/r/reactjs/comments/eohqfj/which_is_the_better_way_to_validate_my_title_text/)
-- url: https://www.reddit.com/r/reactjs/comments/eohqfj/which_is_the_better_way_to_validate_my_title_text/
----
-    state = {
-        title: "Text",
-        error: null
-      };
-      changeTitle = e =&gt; {
-        this.setState({ title: e.target.value });
-        this.validateTitle();
-      };
-    
-      validateTitle() {
-        this.setState(state =&gt; {
-          return {
-            error: state.title.length === 0 ? "Title cant be blank" : null
-          };
-        });
+  onChangeTelType (e) {
+    this.setState({
+      telephones: {
+        telType: e.target.value
       }
+    })
+  }
 
-should I put `validateTitle` in the `componentDidUpdate?`
+  onChangeTelNumber (e) {
+    this.setState({
+      telephones: {
+        telNumber: e.target.value
+      }
+    })
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const contact = {
+      username: this.state.username,
+      name: this.state.name,
+      email: this.state.email,
+      address: this.state.address,
+      telephones: this.state.telephones
+    }
+
+    console.log(contact);
+
+    axios.post('http://localhost:5000/contacts/add', contact)
+      .then(res =&gt; console.log(res.data));
+
+  }
+
+  render() {
+    return (
+    &lt;div&gt;
+      &lt;h3&gt;Create New Contact&lt;/h3&gt;
+      &lt;form onSubmit={this.onSubmit}&gt;
+        &lt;div className="form-group"&gt; 
+          &lt;label&gt;Username: &lt;/label&gt;
+          &lt;select 
+            ref="userInput"
+            required
+            className="form-control"
+            value={this.state.username}
+            onChange={this.onChangeUsername}&gt;
+            {
+              this.state.users.map(function(user) {
+              return (
+                &lt;option 
+                  key={user}
+                  value={user}&gt;{user}
+                &lt;/option&gt;
+                )
+              })
+            }
+          &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div className="form-group"&gt; 
+          &lt;label&gt;Name: &lt;/label&gt;
+          &lt;input  
+              type="text"
+              required
+              className="form-control"
+              value={this.state.name}
+              onChange={this.onChangeName}
+          /&gt;
+        &lt;/div&gt;
+        &lt;div className="form-group"&gt;
+          &lt;label&gt;Email: &lt;/label&gt;
+          &lt;input 
+              type="text" 
+              className="form-control"
+              value={this.state.email}
+              onChange={this.onChangeEmail}
+          /&gt;
+        &lt;/div&gt;
+        &lt;div className="form-group"&gt;
+          &lt;label&gt;Address: &lt;/label&gt;
+          &lt;input 
+              type="text" 
+              className="form-control"
+              value={this.state.address}
+              onChange={this.onChangeAddress}
+          /&gt;
+        &lt;/div&gt;
+        &lt;div className="form-group"&gt;
+          &lt;label&gt;Telephones: &lt;/label&gt;
+          &lt;div className="container"&gt;
+            &lt;div className="row"&gt;
+              &lt;div className="col-4"&gt;
+                &lt;label&gt;Type: &lt;/label&gt;
+                &lt;select 
+                  required 
+                  className="form-control"
+                  value={this.state.telephones.telType}
+                  onChange={this.onChangeTelType}
+                &gt;
+                  &lt;option key="landline" value="landline"&gt;Landline&lt;/option&gt;
+                  &lt;option key="mobile" value="mobile"&gt;Mobile&lt;/option&gt;
+                  &lt;option key="bussiness" value="bussiness"&gt;Bussiness&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+              &lt;div className="col-4"&gt;
+                &lt;label&gt;Number: &lt;/label&gt;
+                &lt;input 
+                  type="string" 
+                  className="form-control"
+                  value=    {this.state.telephones.telNumber}
+                  onChange= {this.onChangeTelNumber}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; &lt;br /&gt;
+            &lt;button className="btn btn-success"&gt;Add new Number&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div className="form-group"&gt;
+          &lt;input 
+          type="submit" 
+          value="Add New Contact" 
+          className="btn btn-primary" /&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+    )
+  }
+}
+```
+
+Can somebody help? 
+Thanks for your time.
+## [5][How can my page react to being scrolled?](https://www.reddit.com/r/reactjs/comments/eozusm/how_can_my_page_react_to_being_scrolled/)
+- url: https://www.reddit.com/r/reactjs/comments/eozusm/how_can_my_page_react_to_being_scrolled/
+---
+How do I get the URL of a page (as displayed in the browser location bar) to change as I scroll down the page? For example, [like on this page](https://stripe.com/docs/api)?
+
+I'd guess it's using the history object behind the scenes, but it's specifically doing it in reaction to the scroll reaching a certain part of the page that I don't know how to do.
+
+(I don't know what keyword to search for. My searches for scrolling find pages about how to scroll from javascript, not how to react to the user scrolling.)
+
+(I'd like to know how to do this from react, but information about how to do it in pure javascript also welcome.)
+## [6][Storybook 5.3 release: stories &amp; docs in MDX, first-class React support, Declarative config, and Design tool integrations](https://www.reddit.com/r/reactjs/comments/eom889/storybook_53_release_stories_docs_in_mdx/)
+- url: https://medium.com/storybookjs/storybook-5-3-83e114e8797c
+---
+
+## [7][Storybook 5.3 video summary, features and changes](https://www.reddit.com/r/reactjs/comments/ep10qp/storybook_53_video_summary_features_and_changes/)
+- url: https://www.youtube.com/watch?v=Oy86bR1Enrs
+---
+
+## [8][Polymorphism in React and Javascript](https://www.reddit.com/r/reactjs/comments/ep0lg6/polymorphism_in_react_and_javascript/)
+- url: https://www.reddit.com/r/reactjs/comments/ep0lg6/polymorphism_in_react_and_javascript/
+---
+Hello. Currently I am writing my first react project, it is a quiz website and I stumbled upon a problem I could not find any elegant way to solve.
+
+I have several question types, and so I write a lot of switch cases in my code. I think this should be avoided, because adding new question type would require rewriting almost whole code instead of one file. I tried storing type as string, and storing questions in different arrays. Is there any correct or nicer way to handle this situation? I think about maybe storing functions inside my objects together with components
+## [9][How to call useEffect only on mount while satisfying EsLint missing dependencies warning?](https://www.reddit.com/r/reactjs/comments/ep1ez2/how_to_call_useeffect_only_on_mount_while/)
+- url: https://www.reddit.com/r/reactjs/comments/ep1ez2/how_to_call_useeffect_only_on_mount_while/
+---
+Hi All,
+
+Below is an example of a useEffect with an empty dependency list:
+
+      React.useEffect(() =&gt; {
+        console.log("useEffect called")
+        window.addEventListener('keydown', (e) =&gt; {
+          if (keyCodes[e.keyCode] === props.pad.key.toLowerCase()) {
+            playSound();
+          }
+        });
+      }, []);
+
+If I leave it as-is I seem to get the desired behaviour of useEffect only being called on mount, however, EsLint gives me a `react-hooks/exhaustive-deps` and wants me to add the following dependencies: `[playSound, props.pad.key])`.
+
+I've added these dependencies with `playSound` wrapped in useCallback (see below) but doing this causes the `useEffect` to get called every time `props` is updated.
+
+      const playSound = React.useCallback(() =&gt; {
+        props.setNowPlaying(props.pad.id)
+        const sound = document.getElementById(props.pad.key) 
+        sound.onended = () =&gt; {
+            props.setNowPlaying("")
+            setActive(false);
+          };
+        setActive(true);
+        sound.play();
+      }, [props])
+
+I can't inline the `playSound` function into the `useEffect as it's used elsewhere in the component. 
+
+Can anyone provide some guidance on how best to change this code so as to only add the event listeners on mount whilst satisfying the EsLint warnings?
+
+Please let me know if you need more information. Thank you for your time.
+## [10][Liquid Swipe (Hover) implementation for React](https://www.reddit.com/r/reactjs/comments/eorjzw/liquid_swipe_hover_implementation_for_react/)
+- url: https://www.reddit.com/r/reactjs/comments/eorjzw/liquid_swipe_hover_implementation_for_react/
+---
+I came across this really cool youtube tutorial for a liquid swipe implementation on React Native. I was wondering if anyone could point me to any tutorials or resources that could show me how to implement this using React for web, where the bezier curve follows the cursor. Thanks in advance!
+
+Video: [Liquid Swipe](https://www.youtube.com/watch?v=gLopy2MCAqM&amp;list=PL-lHSNZUNZvm6JkdhYdvSuL4Uq9f-PmnZ&amp;index=3&amp;t=0s)
+## [11][ReasonML / ReasonReact in 2020](https://www.reddit.com/r/reactjs/comments/eopmrp/reasonml_reasonreact_in_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/eopmrp/reasonml_reasonreact_in_2020/
+---
+Hi guys,
+
+I've been aware of ReasonML and ReasonReact for a while now, but only recently decided to do a deep dive. My impression after a few days using it in my spare time is that it's brilliant, it really makes sense when they say it's ES2030 JavaScript.
+
+My concern is that Facebook is going to let Reason die before it has a chance to really take off. Checking the ReasonML blog there wasn't a single update last year and there were only 3 updates on the ReasonReact blog.
+
+So my question is: is it worth learning Reason in 2020?
+
+As far as the tool itself goes, I would love to invest my time in learning how to use it. However the community seems small and there are next to no jobs advertising ReasonML (at least in London), so I'm a bit hesitant and was hoping someone in the know could shed some light on Reason and where it's heading this year.
+## [12][RxJS Facades in React: Push-Based Architecture with Less BS](https://www.reddit.com/r/reactjs/comments/eos4xu/rxjs_facades_in_react_pushbased_architecture_with/)
+- url: https://medium.com/@thomasburlesonIA/react-facade-best-practices-1c8186d8495a
+---
+

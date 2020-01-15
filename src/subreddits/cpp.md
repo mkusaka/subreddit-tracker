@@ -15,7 +15,7 @@ Rules For Employers
 
 * You must be hiring **directly**. No third-party recruiters.
 * **One** top-level comment per employer. If you have multiple job openings, that's great, but please consolidate their descriptions or mention them in replies to your own top-level comment.
-* **Don't** use URL shorteners. [reddiquette](https://www.reddit.com/wiki/reddiquette) forbids them because they're opaque to the spam filter.
+* **Don't** use URL shorteners. [reddiquette](https://www.reddithelp.com/en/categories/reddit-101/reddit-basics/reddiquette) forbids them because they're opaque to the spam filter.
 * Templates are awesome. Please **use** the following template. As the "formatting help" says, use \*\*two stars\*\* to **bold text**. Use empty lines to separate sections.
 * **Proofread** your comment after posting it, and edit any formatting mistakes.
 
@@ -57,98 +57,88 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Little text game I made in C++](https://www.reddit.com/r/cpp/comments/eokn4p/little_text_game_i_made_in_c/)
-- url: https://gamejolt.com/games/robotlife/434756
+## [2][How fast can you allocate a large block of memory in C++?](https://www.reddit.com/r/cpp/comments/eoq6ly/how_fast_can_you_allocate_a_large_block_of_memory/)
+- url: https://lemire.me/blog/2020/01/14/how-fast-can-you-allocate-a-large-block-of-memory-in-c/
 ---
 
-## [3][Speeding up C++ GitHub Actions using ccache](https://www.reddit.com/r/cpp/comments/eoctdc/speeding_up_c_github_actions_using_ccache/)
-- url: https://cristianadam.eu/20200113/speeding-up-c-plus-plus-github-actions-using-ccache/
+## [3][What is this communities opinion on c++11 as a first language?](https://www.reddit.com/r/cpp/comments/ep1s2i/what_is_this_communities_opinion_on_c11_as_a/)
+- url: https://www.reddit.com/r/cpp/comments/ep1s2i/what_is_this_communities_opinion_on_c11_as_a/
+---
+A bit of context, I have been teaching programming for about two years now and it’s all been through a c/c++ based curriculum that eventually also teaches web development via python later. As expected whenever I talk to other swe's the first question is often why not python. As I’m venturing into the new year and continuing I’m debating on the best route forward and would love to hear the thoughts of people in the community.
+## [4][naïve function call with named params in c++20 (designated init + macros)](https://www.reddit.com/r/cpp/comments/ep2dd5/naïve_function_call_with_named_params_in_c20/)
+- url: https://www.reddit.com/r/cpp/comments/ep2dd5/naïve_function_call_with_named_params_in_c20/
+---
+[https://godbolt.org/z/LY3oS8](https://godbolt.org/z/LY3oS8)
+
+shame I cannot find a way to make the syntax prettier.
+## [5][Discussion about an open-source graph database written in C++. Lots of comments and opinions.](https://www.reddit.com/r/cpp/comments/ep1z45/discussion_about_an_opensource_graph_database/)
+- url: https://news.ycombinator.com/item?id=22051271
 ---
 
-## [4][Why isn't there an RAII guard for 20's new semaphore types?](https://www.reddit.com/r/cpp/comments/eobqfh/why_isnt_there_an_raii_guard_for_20s_new/)
-- url: https://www.reddit.com/r/cpp/comments/eobqfh/why_isnt_there_an_raii_guard_for_20s_new/
----
-It doesn't seem like it would be too complex (following `std::lock_guard`) to have a type that does acquire/release. But cppreference has no mention of such a type. Was it considered for the standard?
-## [5][The New ConanCenter Improves Search and Discovery](https://www.reddit.com/r/cpp/comments/eo4ivz/the_new_conancenter_improves_search_and_discovery/)
-- url: https://blog.conan.io/2020/01/13/New-Conan-Center-Improves-Search-Discovery.html
+## [6][So... You wanna measure Branch Prediction Hit Rate with BPF and C++?](https://www.reddit.com/r/cpp/comments/eozm5j/so_you_wanna_measure_branch_prediction_hit_rate/)
+- url: http://www.mycpu.org/writing-bpf-c++/
 ---
 
-## [6][Influence of C++ on Swift](https://www.reddit.com/r/cpp/comments/eo10jo/influence_of_c_on_swift/)
-- url: https://www.quora.com/What-are-similarities-and-differences-between-C-and-Swift
+## [7][CppCast: OpenVDB](https://www.reddit.com/r/cpp/comments/ep1bhn/cppcast_openvdb/)
+- url: https://cppcast.com/ken-museth-openvdb/
 ---
 
-## [7][Better Algorithm Intuition - Conor Hoekstra - code::dive 2019](https://www.reddit.com/r/cpp/comments/eo2mtl/better_algorithm_intuition_conor_hoekstra/)
-- url: https://www.youtube.com/watch?v=0z-cv3gartw
+## [8][Structure of Programs and phase 2 of self teaching.](https://www.reddit.com/r/cpp/comments/eopm34/structure_of_programs_and_phase_2_of_self_teaching/)
+- url: https://www.reddit.com/r/cpp/comments/eopm34/structure_of_programs_and_phase_2_of_self_teaching/
 ---
+Hey guys, I just wanted to say up front that any answers that are provided are appreciated so much, and I am very grateful for your time. 
 
-## [8][abbreviated class templates?](https://www.reddit.com/r/cpp/comments/eoiscy/abbreviated_class_templates/)
-- url: https://www.reddit.com/r/cpp/comments/eoiscy/abbreviated_class_templates/
+  My first question concerns anyone who does System Programming in C++. I have been told by many people that because I am 33, and just now in my third year of a computer science degree, while working full time, that i should suck it up and just do something easier like web dev with Python and Javascript. The problem is, that I have despised every minute that I have spent working with any kind of front end web dev. I have looked at other types of app programming using GUI, and again, I find the UI design aspects very uninteresting. My favorite class in school so far has been Computer Architecture, and a related Operating Systems course. 
+
+   What would you recommend for getting started programming aspects of Operating systems, drivers, or even some embedded development? There seems to be this phase where there are a million people willing to show you how concepts work using foo() and do_something(), but much less on figuring out how to stop doing isolated coding challenges, and truly start building a project. Is it a good idea to just look through all the different C++ libraries to see what they offer, and try to make something with those libraries?
+
+   Last question is what is the best way to structure your code, when you don’t use OOP? I feel like it is hard for me to think about setting up multiple files, without using classes. Is it best to just group related functions in a file, just like classes but without the inheritance? I have read that it is also somewhat bad practice to overly use getters and setters. Is best practice to just make your member variables public, if you aren’t going to add any logic to restrict the way in which someone can access or Change it later?
+
+Sorry for the length, and thank you so much.
+## [9][Critique my project. Libclsp, a C++17 library](https://www.reddit.com/r/cpp/comments/eov5fh/critique_my_project_libclsp_a_c17_library/)
+- url: https://www.reddit.com/r/cpp/comments/eov5fh/critique_my_project_libclsp_a_c17_library/
 ---
-since we now have abbreviated function templates in c++20 (with concepts), I wonder if we could have something similar for structs/classes, concretely
+It's a library for language servers. (Autocompletion, documentation and that sort of things)
 
-&amp;#x200B;
-
-`struct test {`
-
-`auto x;`
-
-`auto y;`
-
-`test(auto _x, auto _y) : x{ _x }, y{ _y } {}`
-
-`};`
-
-`auto obj = test{ 1, "aaa"s };`
-
-`// _x deduced to int, _y deduced to std::string as function template deduction for the ctor.`
-
-`// obj.x then deduced to int since it is initialized by _x, and _x is int, likewise for obj.y`
-
-the whole thing should be equivalent to
-
-`template&lt;typename T1, typename T2&gt;`
-
-`struct test {`
-
-`T1 x;`
-
-`T2 y;`
-
-`template&lt;typename T3, typename T4&gt;`
-
-`test(T3 _x, T4 _y) : x{ _x }, y{ _y } {}`
-
-`};`
-
-`template&lt;typename...T&gt;`  
-`test(T...)-&gt;test&lt;T...&gt;;`
-## [9][Towards deprecating volatile: A Simplified volatile read and write implementation in C++](https://www.reddit.com/r/cpp/comments/eofdxu/towards_deprecating_volatile_a_simplified/)
-- url: https://www.reddit.com/r/cpp/comments/eofdxu/towards_deprecating_volatile_a_simplified/
+[https://github.com/otreblan/libclsp](https://github.com/otreblan/libclsp)
+## [10][Does an application using the boost libraries also requires it to be run after built?](https://www.reddit.com/r/cpp/comments/ep0wpe/does_an_application_using_the_boost_libraries/)
+- url: https://www.reddit.com/r/cpp/comments/ep0wpe/does_an_application_using_the_boost_libraries/
 ---
-I have implemented a simplified header-only library to help make performing volatile read and writes easier in C++ codebases.
-Really handy especially if you're into embedded systems.
-
-It's a few lines but well documented and won't have to repeat yourself nor use the volatile keyword irresponsibly again. 
-
-More documentation and justification on the repo. 
-
-Contributions and reviews are highly welcome too 😀
+Say I have an c++ application which uses the boost libraries (ex, boost::asio).  
+I built the application on one PC and move the executable to another PC with a fresh Linux installed.  
 
 
-https://github.com/lamarrr/volta
-## [10][C++ Profiling with Perf and Flamegraphs](https://www.reddit.com/r/cpp/comments/enxeew/c_profiling_with_perf_and_flamegraphs/)
-- url: http://www.mycpu.org/flamegraphs-on-c++/
+Will it work on the other Linux without installing anything?  
+If not, why and what should I install?
+## [11][Why `make_unique_default_init( std::size_t size )` ?](https://www.reddit.com/r/cpp/comments/eomwv2/why_make_unique_default_init_stdsize_t_size/)
+- url: https://www.reddit.com/r/cpp/comments/eomwv2/why_make_unique_default_init_stdsize_t_size/
 ---
+C++20 apparently introduces a `make_unique` for arrays with initialization
 
-## [11][latest c++ theory vs reality](https://www.reddit.com/r/cpp/comments/enuntq/latest_c_theory_vs_reality/)
-- url: https://www.reddit.com/r/cpp/comments/enuntq/latest_c_theory_vs_reality/
----
-Why is there a seemingly big discrepancy of existing and used c++ version? Despite good compiler support.
+    std::make_unique_default_init( std::size_t size )
 
-When I see the new features of current c++ currently (17 and even 20 has wide compiler support already) i am amazed.
+which does:
 
-But in reality:
-Open recent and active c++ project on github.
-It’s 98 or 11 in the best case
-Why on earth is every c++ code I (with my limited horizon) find in the wild uses such old standards?
-Also clang uses c++98 as default setting. Which is somewhat okay, because it can be easily adjusted. But it’s weird nonetheless.
+"5) Same as (2), except that the array is default-initialized."
+
+[https://en.cppreference.com/w/cpp/memory/unique\_ptr/make\_unique](https://en.cppreference.com/w/cpp/memory/unique_ptr/make_unique)
+
+I recently found myself wanting to allocate a large array on heap.
+
+(Before you object: It was an array of atomics and that's why c-style-array and not vector, but I have left the atomic part out of this example because it's a distraction. )
+
+So initially I wrote
+
+    auto arr = std::make_unique&lt;int[]&gt;(1'000'000);
+
+and i wondered if that would be zero initialized. I suspected it wouldn't be, so, not wanting to write a loop myself, I wrote:
+
+    std::unique_ptr&lt;int[]&gt; arr(new int[1'000'000] {});
+
+So then I got curious and [checked godbolt](https://godbolt.org/z/aB7eJr). It turns out, with the first construction, that msvc `memset`s it to zero. clang does the same (and even eliminates the whole program) and gcc uses `rep stosq` which is a `memset` as well?  The second formulation without `std::make_unique` and writing my own `new ... {}` with empty brace initlializer produces [almost the same code](https://godbolt.org/z/Cs_ENk).
+
+The standard doesn't seem to say "the array will be zero initialised"  (or does it?) but all 3 major compilers do this "extra work"? So my "verbose" version was just unnecessary?
+
+Or is this "ambiguity" exactly what C++20  is trying to address with `std::make_unique_default_init(` [`std::size_t`](http://en.cppreference.com/w/cpp/types/size_t) `size )`?
+
+Confused.  ;-)

@@ -31,126 +31,48 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I want to know, What is this Android Player SDK name? Which Player is this that the app is using to stream hls videos. Anyone have any idea?](https://www.reddit.com/r/androiddev/comments/eohn26/i_want_to_know_what_is_this_android_player_sdk/)
-- url: https://i.redd.it/kyjqzytjwoa41.jpg
+## [3][While a lot of apps are removed, this still goes on...](https://www.reddit.com/r/androiddev/comments/eormnn/while_a_lot_of_apps_are_removed_this_still_goes_on/)
+- url: https://i.imgur.com/9ft4mVR.png
 ---
 
-## [4][I need to implement something similar to Gmail's transition. I know the toolbar is a shared transition animation. I was wondering how can I implement the bottom half of the view (under the toolbar)? What kind of transition is it?](https://www.reddit.com/r/androiddev/comments/eokb8y/i_need_to_implement_something_similar_to_gmails/)
-- url: https://v.redd.it/3u7k8s40hqa41
+## [4][New AndroidX library for app initialization](https://www.reddit.com/r/androiddev/comments/eowckz/new_androidx_library_for_app_initialization/)
+- url: https://android-review.googlesource.com/c/platform/frameworks/support/+/1206056
 ---
 
-## [5][RxJava to coroutines: end-to-end feature migration](https://www.reddit.com/r/androiddev/comments/eo9c8i/rxjava_to_coroutines_endtoend_feature_migration/)
-- url: https://medium.com/transferwise-engineering/rxjava-to-coroutines-tw-96506fba5fb2
+## [5][Version r21 of the Android NDK has been released](https://www.reddit.com/r/androiddev/comments/ep0tj2/version_r21_of_the_android_ndk_has_been_released/)
+- url: https://github.com/android/ndk/wiki/Changelog-r21
 ---
 
-## [6][Storing User Pins in App](https://www.reddit.com/r/androiddev/comments/eogtkh/storing_user_pins_in_app/)
-- url: https://www.reddit.com/r/androiddev/comments/eogtkh/storing_user_pins_in_app/
+## [6][Github Android app is now in Beta](https://www.reddit.com/r/androiddev/comments/eopwt5/github_android_app_is_now_in_beta/)
+- url: https://www.reddit.com/r/androiddev/comments/eopwt5/github_android_app_is_now_in_beta/
 ---
-Hello. I am making a time sheet app and I would like to make it so that each employee had a pin they enter before they can modify a time record. So I have been researching how to store pins. I have come across 3 ways to store credentials in android. Shared Preferences, Account Manager and Server Authentication. I wont have a server, so cant do Server Authentication. Account manager seems inappropriate in this case. Considering the pin is not too important, I happy to just store a hash in shared preferences or my room database (along with other employee details). Is there a better way to store the pin and is there any difference in storing the hash in shared preferences vs a room database? 
-
-Apologies if this violates Rule 2. Thanks in advance.
-## [7][Help: ClashBasePedia app : Violation of Google Play policy - even if it complies with the Clash Of Clans fan-content-policy](https://www.reddit.com/r/androiddev/comments/eoiqae/help_clashbasepedia_app_violation_of_google_play/)
-- url: https://www.reddit.com/r/androiddev/comments/eoiqae/help_clashbasepedia_app_violation_of_google_play/
+https://github.com/mobile
+## [7][Finally used Compiler Design knowledge in Android and made a SpannableString Parser to easily add spans to your text.](https://www.reddit.com/r/androiddev/comments/ep1gd7/finally_used_compiler_design_knowledge_in_android/)
+- url: https://github.com/hitanshu-dhawan/SpannableStringParser
 ---
-Hello, my app  ClashBasepedia ([https://play.google.com/store/apps/details?id=com.clashbasepedia](https://play.google.com/store/apps/details?id=com.clashbasepedia)) is a guide app for 'Clash Of Clans' game community where player can upload their bases(layouts) and discuss attack and defense strategies for the game.
 
-The app is doing very well and its receiving very good feedback from the players and its even used by big content creators on YouTube. It's free and it currently has about 20.000 user per day. The app is about 7 months old and had no problems or rejections until I made an update a few days ago.
-
-After the update i received a mail from google support saying :
-
-`Publishing status: Rejected`
-
-`Issue: Violation of Google Play policy`
-
-`Google reserves the discretion to include or remove apps from Google Play. We may take action based on a number of factors including, but not limited to, a pattern of harmful behavior or high risk of abuse. We identify risk of abuse using various items such as previous violation history, user feedback, and use of popular brands, characters, and other assets.`
-
-I have made an appeal using the form at google where i said the following:
-
-\-----------------
-
-*Hello, immediately after an update release of our app we have receive a rejection notice.*
-
-*We are very careful with the Google Play policy but it may be something that we overlooked and we are not sure exactly what we did wrong and why our update was considered a violation.*
-
-*Here are the reasons presented in the email :*
-
-*- previous violation history*
-
-*We did not have any previous violations*
-
-*- user feedback*
-
-*We have a rating of 4.567 from more then 2000 ratings, with +90% positive feedback*
-
-*- use of popular brands, characters, and other assets*
-
-*We are an app to help the players of the 'Clash of clans' game. We only use the images/assets/rights provided by Supercell (owner of the Clash Of Clans game) via the Fan Kit Content Policy*
-
-[*https://supercell.com/en/fan-content-policy/*](https://supercell.com/en/fan-content-policy/)
-
-*- here, in the official forum post you can also find the official link to the assets provided by Supercell : :*
-
-[*https://forum.supercell.com/showthread.php/1818329*](https://forum.supercell.com/showthread.php/1818329)
-
-*Also at the end of our app description we specify a Disclaimer.*
-
-\------------------
-
-After a few days i have received a response : Status: Clash Base Pedia (with links) Pro 2020 (com.clashbasepedia) not available on Google Play.
-
-https://preview.redd.it/dur9hfluhpa41.png?width=1098&amp;format=png&amp;auto=webp&amp;s=3799afdcda31e00b95a30e5cf66e1e17fd84de30
-
-This replay clearly seems like its been auto-generated by a robot or Lewis (the name in signature) did not even bothered to read my mail or read the Supercell fan-content-policy.
-
-Supercell [fan-content-policy](https://supercell.com/en/fan-content-policy/) clearly specifies:
-
-`This Fan Content Policy governs your use of Supercell Oy's ("Supercell") copyrights and trademarks from Clash of Clans, Clash Royale, Hay Day, Brawl Stars and Boom Beach, including any related fan kits provided by us ("Supercell Assets") for Fan Content purposes.`
-
-`Permitted Fan Content normally includes for example non-commercial fan-generated online guides and guide apps, fan meetups, fan pages and gameplay videos as long as they follow this Policy.`
-
-Please help me because I'm not sure how to proceed next. I have worked on this app for more then one year and now I risk losing all even though i have done nothing wrong and tried to be very careful.
-## [8][Any local network automatic host name resolution in Android?](https://www.reddit.com/r/androiddev/comments/eokhem/any_local_network_automatic_host_name_resolution/)
-- url: https://www.reddit.com/r/androiddev/comments/eokhem/any_local_network_automatic_host_name_resolution/
+## [8][Does anyone succeeded in promoting an app with a lot of competitors](https://www.reddit.com/r/androiddev/comments/ep211t/does_anyone_succeeded_in_promoting_an_app_with_a/)
+- url: https://www.reddit.com/r/androiddev/comments/ep211t/does_anyone_succeeded_in_promoting_an_app_with_a/
 ---
-macOS has Bonjour, based on the mDNS protocol; Windows had netbios, then …(it had something else)…, and now also LLMNR (Link-Local Multicast Name Resolution); Linux has mDNS, LLMNR - with systemd and/or avahi, even netbios with samba/nmbd.
+I'm trying to promote my weather forecast app. I thought buying motivated installs will do the trick. At the start, it seems it was working (37th position in Weather category, though without perceptible organic downloads). But after a couple of days, the app disappeared from ratings :(. So now I'm at the end of my wits - in order to have more downloads, an app needs to be ranked (or at least to be visible) but to be visible an app needs to have lots of downloads. A closed circle :)
 
-Is there any local network name resolution supported in Android that works without a server?
+If someone has any experience or any ideas how it's possible to lift an app from the sheer depth of Android market rating to where it will be at least visible somewhere
 
-(ps. this was originally posted to /r/android - since it's a question about the platform, they felt it needs to go in androiddev)
-## [9][How often do you perform code reviews?](https://www.reddit.com/r/androiddev/comments/eol7h9/how_often_do_you_perform_code_reviews/)
-- url: https://www.reddit.com/r/androiddev/comments/eol7h9/how_often_do_you_perform_code_reviews/
+Thanks in advance
+## [9][Cannot run Genymotion with a VPN connection](https://www.reddit.com/r/androiddev/comments/ep1ox4/cannot_run_genymotion_with_a_vpn_connection/)
+- url: /r/Genymotion/comments/ep1kvn/cannot_run_genymotion_with_a_vpn_connection/
 ---
-I'm stuck trying to strike a balance between quickly/occasionally adding new features and ensuring I write quality code. How often do you perform code reviews for personal projects? I like to add new features during the week and perform code reviews during the weekend.
-## [10][Finding an app developer](https://www.reddit.com/r/androiddev/comments/eoknip/finding_an_app_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/eoknip/finding_an_app_developer/
+
+## [10][CodingWithMitch video tutorial - How to test ANY APP for PROCESS DEATH](https://www.reddit.com/r/androiddev/comments/eoqm8o/codingwithmitch_video_tutorial_how_to_test_any/)
+- url: https://www.youtube.com/watch?v=l4uD0swZVsM
 ---
-Sorry if this has been asked previously. How to find an app developer that builds cheap games? Android &amp; iOs
-I'm based in Australia.
-## [11][MIT App Inventor](https://www.reddit.com/r/androiddev/comments/eok9ov/mit_app_inventor/)
-- url: https://www.reddit.com/r/androiddev/comments/eok9ov/mit_app_inventor/
+
+## [11][What colors to use?](https://www.reddit.com/r/androiddev/comments/ep1730/what_colors_to_use/)
+- url: https://www.reddit.com/r/androiddev/comments/ep1730/what_colors_to_use/
 ---
-Hey, 
-
-Anyone who’s expert with MIT App Inventor? I need help with the blocks and connecting with PHP queries through URL, I already have the PHP script, but I’m running into problem when connecting with it. 
-
-Thanks 🙏
-## [12][View Binding docs updated with info on fragment usage](https://www.reddit.com/r/androiddev/comments/eo8rou/view_binding_docs_updated_with_info_on_fragment/)
-- url: https://www.reddit.com/r/androiddev/comments/eo8rou/view_binding_docs_updated_with_info_on_fragment/
+I love memes, thus I decided to make an Android app dedicated to the dankest memes. Here it is: https://play.google.com/store/apps/details?id=ether.paul.lt.dankmemesphrases
+However, I have received some negativity regarding colors of the app. What do you think, do I need to change colors and if yes, then which ones would be better?
+## [12][Best Practices to Identify Malicious Applications in Android](https://www.reddit.com/r/androiddev/comments/ep10wc/best_practices_to_identify_malicious_applications/)
+- url: https://www.cybrary.it/0p3n/best-practices-identify-malicious-apps-android/
 ---
-[https://developer.android.com/topic/libraries/view-binding#fragments](https://developer.android.com/topic/libraries/view-binding#fragments)
 
-&amp;#x200B;
-
-I don't understand two things.
-
-&amp;#x200B;
-
-1. What's with this pattern of \`\_binding\` and having another \`binding\` (without the leading \`\_\`). Why not just have \`binding\`? Is there something I'm missing here. Maybe this is because of the !!
-2. Why do we need to do this? In every fragment? Is there a way to make this less painful? I can almost guarantee that the 30 fragments I use in my app do not do this. What's the issue?
-
-&amp;#8203;
-
-    @Override
-    fun onDestroyView() {
-        _binding = null
-    }

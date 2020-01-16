@@ -1,180 +1,115 @@
 # golang
-## [1][A Pragmatic Introduction To Concurrency In Go](https://www.reddit.com/r/golang/comments/eoxctc/a_pragmatic_introduction_to_concurrency_in_go/)
-- url: https://seancarpenter.io/posts/concurrency_in_go/
+## [1][This belongs here](https://www.reddit.com/r/golang/comments/epbny1/this_belongs_here/)
+- url: https://gfycat.com/happygoluckyhelpfulgull
 ---
 
-## [2][Go jokes/puns request](https://www.reddit.com/r/golang/comments/eozg1g/go_jokespuns_request/)
-- url: https://www.reddit.com/r/golang/comments/eozg1g/go_jokespuns_request/
+## [2][Go gRPC server project structure.](https://www.reddit.com/r/golang/comments/epfryk/go_grpc_server_project_structure/)
+- url: https://www.reddit.com/r/golang/comments/epfryk/go_grpc_server_project_structure/
 ---
-Hey everyone!
-
-I have a bit of a strange request. At the moment my boyfriend (a programmer who loves Go) is having a pretty shit time generally. As sometime with literally no knowledge of programming or anything specific in this area I'm kind of lost as to how I can help specifically.
-
-Basically looking to make him something to help him feel better and because he 'hates' puns I figure this is a good place to start! Are there any Go language/command(?) Puns that are pretty funny and simple? The current plan is an embroidery project on the pocket area of one of his shirts. (He donated it for a previous project willingly that never happened lol) 
-
-I'm looking for top tier jokes, the really good ones, the ones you'd be willing to wear on a shirt!! Thank you for your help in advance!
-## [3][Distrubuted File System for big data, written in golang](https://www.reddit.com/r/golang/comments/eopoq0/distrubuted_file_system_for_big_data_written_in/)
-- url: https://www.reddit.com/r/golang/comments/eopoq0/distrubuted_file_system_for_big_data_written_in/
----
-Guys, I just want you to have a look at my open source distrubuted file system project on github. I’ll be pleased to have your comments about the readme files, code readability, understandability of the content and the like. Any input will be very helpful for me to create the project roadmap 🤗 
-
-[2020-dfs](https://github.com/freakmaxi/2020-dfs)
-## [4][Golang Developer - 6 Month Contract - Rotterdam - up to £800 a day (plus expenses)](https://www.reddit.com/r/golang/comments/ep28b7/golang_developer_6_month_contract_rotterdam_up_to/)
-- url: https://www.reddit.com/r/golang/comments/ep28b7/golang_developer_6_month_contract_rotterdam_up_to/
----
-Golang Developer - 6 Month Contract - Rotterdam - up to £800 a day (plus expenses)
-
-**Golang Developer - Contract**  
-Role is based 100% in Rotterdam  
-Up to £800/day (plus expenses)
-
-A globally respected FTSE-100 based in the heart of Rotterdam (Netherlands) is currently on the lookout for a Golang Developer to join their Digital Transformation team. This is an initial 6mth contract, but the programme of work is expected to last up to 2yrs. The team is small and cross-functional, aiming for rapid growth in the near future and the current team are in the process of building an MVP ready to trial their product.
-
-This will give you the opportunity to work within a forward-thinking and innovative team using the latest tech, working alongside like-minded experts.
-
-**About the Role:**
-
-* You will be in charge of developing data pipelines and APIs to serve their web apps and data science models
-* Get to know their customers and craft a product for their needs
-* Get to grips with the business case and work with the team to try and solve the underlying pains that plague their users
-
-**About you:**
-
-* An experienced Go Developer with a track record of taking complex products from an early prototype discovery phase to a scale-ready production product
-* Enjoy learning about the customer's pains and gains, and building products which solve real-world problems
-* Ability to work autonomously in a small cross-functional team and can communicate well with team members
-* Equally you are able to effectively contribute to the engineering and technical decisions across multiple teams
-
-**The tech stack being used:**
-
-They will use whatever tool is best for the job with the current team in mind, and are not afraid to move to something else if it helps them better achieve their goals. The tech stack should involve tools that allow you to develop and release quickly. Currently they are using:
-
-\- Go/Golang  
-\- CI/CD (Circle CI)  
-\- Cloud infrastructure (Google Cloud)  
-\- Infrastructure as Code (Terraform)  
-\- Data structures and modelling (Cloud Firestore)  
-\- Streaming data processing experience (Apache Beam)
-
-If this Golang Developer position is of interest please endeavour to get in contact immediately for urgent consideration.
-
-[Sean@fullstack.london](mailto:Sean@fullstack.london)
-## [5][Different Approaches to Pass Database Connection into Controllers in Golang](https://www.reddit.com/r/golang/comments/eoz3z6/different_approaches_to_pass_database_connection/)
-- url: https://techinscribed.com/different-approaches-to-pass-database-connection-into-controllers-in-golang/
+I have read the tutorial on the official gRPC site and seen videos on youtube about how to work with gRPC in Go. But in all those tutorials they put all the code in a single file and no pattern or guideline is followed regarding the project structure. How do we structure the project for better maintainability and scalability?
+## [3][Go library for Parsing Ansible inventory files](https://www.reddit.com/r/golang/comments/epg4d2/go_library_for_parsing_ansible_inventory_files/)
+- url: https://github.com/relex/aini
 ---
 
-## [6][cassowary - Modern cross-platform HTTP load-testing tool written in Go](https://www.reddit.com/r/golang/comments/eoq9rv/cassowary_modern_crossplatform_http_loadtesting/)
-- url: https://github.com/rogerwelin/cassowary
+## [4][gRPC Test Framework For Microservices](https://www.reddit.com/r/golang/comments/ep7eml/grpc_test_framework_for_microservices/)
+- url: https://github.com/smallinsky/mtf
 ---
 
-## [7][Go: How Does Go Stop the World?](https://www.reddit.com/r/golang/comments/ep1ge9/go_how_does_go_stop_the_world/)
-- url: https://medium.com/a-journey-with-go/go-how-does-go-stop-the-world-1ffab8bc8846
+## [5][[Question] Profiling/Benchmarking TCP server](https://www.reddit.com/r/golang/comments/epihgm/question_profilingbenchmarking_tcp_server/)
+- url: https://www.reddit.com/r/golang/comments/epihgm/question_profilingbenchmarking_tcp_server/
+---
+Hi, I'm trying to implement a [SSH Tarpit](https://nullprogram.com/blog/2019/03/22/). It's a really simple SSH Server which just writes some data to the client every few seconds. 
+
+    
+    package main
+    
+    import (
+    	"log"
+    	"net"
+    	"time"
+    )
+    
+    const (
+    	ADDRESS = ":2222"
+    	DELAY   = time.Second * 3
+    )
+    func main() {
+    	log.Println("Starting")
+    	ll, err := net.Listen("tcp", ADDRESS)
+    	defer close(ll)
+    	if err != nil {
+    		log.Println("err in opening socket: ", err)
+    	}
+    
+    	for {
+    		conn, err := ll.Accept()
+    		defer conn.Close()
+    		if err != nil {
+    			log.Println("err in accepting socket: ", err)
+    		}
+    		go handle(conn)
+    	}
+    }
+    func close(ll net.Listener) {
+    	if err := ll.Close(); err != nil {
+    		log.Println("err in closing socket: ", err)
+    	}
+    }
+    func handle(conn net.Conn) {
+    	log.Println("conn from: ", conn.LocalAddr().String())
+    	for {
+    		conn.Write([]byte{'a'})
+    		time.Sleep(DELAY)
+    	}
+    }
+I'm trying to figure out how memory grows as more clients connect to this. Is it possible to use the testing framework to view the memory of this application as the number of clients go? 
+
+The only way I can think of doing this is to create a separate application which just listens to a connection on a new goroutine and run a profiler on the server application.
+
+Any help is appreciated :)
+## [6][gojsonq: A simple Go package to Query over JSON/YAML/XML/CSV Data, Released v2.5.0](https://www.reddit.com/r/golang/comments/epfrvk/gojsonq_a_simple_go_package_to_query_over/)
+- url: https://github.com/thedevsaddam/gojsonq
 ---
 
-## [8][Go library to find module root path](https://www.reddit.com/r/golang/comments/ep0elp/go_library_to_find_module_root_path/)
-- url: https://www.reddit.com/r/golang/comments/ep0elp/go_library_to_find_module_root_path/
+## [7][Writing struct to a YAML file](https://www.reddit.com/r/golang/comments/epj1a6/writing_struct_to_a_yaml_file/)
+- url: https://www.reddit.com/r/golang/comments/epj1a6/writing_struct_to_a_yaml_file/
 ---
-In the latest days, I've been working on a small library which is able to determine current module root path, since I wasn't able to find a standard way (using a os method or system variable).
-
-https://github.com/c0m3tx/moduleroot
-
-Is recursively looking for a go.mod file a good idea?
-
-Any feedback is welcome!
-## [9][Concurrency problem when writing to stdout and stderr with a multiplexed writer](https://www.reddit.com/r/golang/comments/ep02yz/concurrency_problem_when_writing_to_stdout_and/)
-- url: https://www.reddit.com/r/golang/comments/ep02yz/concurrency_problem_when_writing_to_stdout_and/
+I'm really new to go and it has been less than a week. I want to write a struct into a YAML file and I've tried to follow the documentation. It still doesn't work. Can someone please help?
+## [8][Interceptors and middleware for database/sql](https://www.reddit.com/r/golang/comments/epiyig/interceptors_and_middleware_for_databasesql/)
+- url: https://github.com/ngrok/sqlmw
 ---
-Hey /r/golang community,
 
-at the moment I face a problem where I want to write the output of \`exec.Cmd\` commands to multiple writers. For this problem I created a struct, \`MultiplexedWriter\`, which holds all writers where it writes to.
-
-You can view a working example on my gist.github account:  
-[https://gist.github.com/SimonBaeumer/504e6c7f5747154872c88eb5eb827a48](https://gist.github.com/SimonBaeumer/504e6c7f5747154872c88eb5eb827a48)
-
-I asked this question on StackOverflow and would appreciate every help or hint!
-
-[https://stackoverflow.com/questions/59747920/writing-stderr-and-stdout-streams-to-multiple-writers-creates-inconsistent-resul](https://stackoverflow.com/questions/59747920/writing-stderr-and-stdout-streams-to-multiple-writers-creates-inconsistent-resul)
-
-My assumption is that the problem is in the implementation of the \`exec\` package itself but I am not quiet sure...
-
-Thanks in advance!
-## [10][Generating deltas (diffs/patches) for binary files to save storage space between file versions](https://www.reddit.com/r/golang/comments/ep02xo/generating_deltas_diffspatches_for_binary_files/)
-- url: https://www.reddit.com/r/golang/comments/ep02xo/generating_deltas_diffspatches_for_binary_files/
+## [9][series of articles: Micro in Action, part2](https://www.reddit.com/r/golang/comments/ephmho/series_of_articles_micro_in_action_part2/)
+- url: https://itnext.io/micro-in-action-part-2-71230f01d6fb
 ---
-I am wanting to create deltas of binary files using Go. I have done a reasonable amount of research into my options (that don't include me writing the algorithm from scratch). Perhaps this is a useful reference, but hopefully someone/people can help me succeed here. I will outline the options I have discovered, and my experiences.
-In terms of a scenario I am testing/researching for:
-* There are two versions of a file
-* You have both versions, however your colleague only has the original version
-* Instead of sending the whole new version, you can send the delta of the new version and they can patch it on to the original
 
-I am interested in an algorithm for images, binary files such as word docs, powerpoints, photoshop files, video files etc as opposed to text files or executables.
+## [10][How to do SQL properly and clean and tidy in Golang?](https://www.reddit.com/r/golang/comments/ep6q6d/how_to_do_sql_properly_and_clean_and_tidy_in/)
+- url: https://www.reddit.com/r/golang/comments/ep6q6d/how_to_do_sql_properly_and_clean_and_tidy_in/
+---
+Hi!
 
-0. Bsdiff.
-I started out with bsdiff however it has been optimised for binary file diffing and that results in it indexing the bytes for faster analysis, however causes it to be very memory intensive. I tried storing this index to disk but in some cases its 10x the size of the original files.
-My goal is an algorithm that can diff a binary and save significant space (obviously dependent on the amount of file that has differs).
+**TL;DR: Basically the title. This got a lot longer than I thought it would so feel free to ignore all of that and focus on the title! Thanks. it got so long because I really had a lot of problems with this the last time I tried Go for webdev and never found answers to a lot of questions I've had ever since.**
 
-For reference, my testing jpg is a 12MB image, and the second image is the same 12MB image with a blue square in the middle thats about 25% of the size of the whole image (in space, rather than bytes).
-1. github.com/monmohan/xferspdy
+So I'm starting a new pet project and for once have actual use for it even in the MVP stage and it might keep me busy and interested for a long time because it has a lot of potential (in terms of a platform for my personal interest. Not monetary).
 
-```
-	fingerprint := xferspdy.NewFingerprint("testdata/profile-shot.jpg", 1024)
-	diff := xferspdy.NewDiff("testdata/profile-shot-to.jpg", *fingerprint)
-	modifiedFile, _ := os.OpenFile("testdata/profile-shot-to-applied.jpg", os.O_CREATE|os.O_WRONLY, 0777)
-	xferspdy.PatchFile(diff, "testdata/profile-shot.jpg", modifiedFile)
-```
-* On provided (testdata) from the repository this seems to work. However I get stack overflow whenever I use my own data and it seems related to file size* 
+I really liked what I did so far in Golang but I really, really hated the SQL part of it. I thought about going for MongoDB for a while but had to admit to myself that I'm not looking for a reason to use MongoDB but for something that gives me an excuse to not do SQL in Go. So here we are back in SQL land.
 
-2. github.com/mdvan/fdelta
+I just have a really tough time seeing how to do SQL properly. I used sqlx last time and it helped a lot cutting down that boiler plate but then you start adding stuff like transactions and it felt like I'm defining my data twice (once for the DB and then I morph it into something that works for my GraphQL API. I might be able to do that on one struct but I'm not really sure if that works so easily).
 
-```
-  delta := fdelta.Create(originalBytes, newBytes)
-	appliedBytes, err := fdelta.Apply(originalBytes, deltaBytes)
-```
+Then I also write queries myself so I'm either formatting everything into the query to avoid typos or copying a lot. I got really good with multicursors in vscode just copying row definitions and then transforming them into whatever I need for my queries. I'm just missing some kind of pattern here that makes this easier to handle.
 
-* Works but the diff on testdata such as images is almost exactly the same size as the file that is being diff'd in the first place. THe diff is not smaller in anyway
+And then you have joins. What's the best way to handle queries over multiple tables? Do I need a struct for every query? What if tables have columns with the same name? It's not a problem with SQL since you can just do table.row or add an alias but the bit of documentation I found for sqlx suggests that this is actually not something structscan can handle properly.
 
-3. github.com/balacode/go-delta
+And transactions! It all feels dirty. I think most frameworks are doing one transaction per request. Easy to understand, for sure, but what's the best way to do that in Go? Some handler? Well I don't get a status code in my handler so I don't know if I threw an error and if I should rollback or commit. I can make everything panic but then the frontend doesn't get a proper error code. I've found some way to get the HTTP status in handlers but then I found out that the graphql library I was using actually doesn't throw a 400 status on error. Which is good because graphql is supposed to be detached from HTTP but bad because now I have to filter my response for any indication for an error. What I did found was some function magic that basically wraps the code that calls code for queries in a function and then does some things (I'm doing this from memory. Sorry) and it looked amazing... for a 10 liner in a block post. I don't want to do this in every gql mutation or query handler when we have middleware that is so easy to use and extend. What I ended up doing is passing a pointer to a bool in the context object and setting that manually to true at the end of every handler. Which is also super dirty.
 
-```
-	var d = delta.Make(sourceData, targetData)
-	d, _ := delta.Load(patchData)
-	var appliedData, err = d.Apply(sourceData)
-```
-* Same issue as 2. The delta is no smaller
+I know about Gorm but a colleague of mine was very much not impressed with performance and the ergonomics of the API. Since Gorm sees to be not that popular anyway I assumed it's not worth trying and I'm absolutely not uncomfortable with writing SQL. In fact I prefer it over everything but a really well thought out ORM. So I went for sqlx.
 
-4. github.com/jbreiding/rsync-go
+I don't know if I'm missing some very obvious pattern here that makes this easier or if I'm just doing something else wrong but it feels like the further you go away from documentation examples and blog post snippets things just start to get ugly.
 
-```
-  rs.CreateSignature(originalFileReader, writeSignature)
-	err := rs.CreateDelta(newFileReader, sig, writeOperation)
-	rs.ApplyDelta(newFileWriter, originalFileReader, opsOut)
-```
+However, as a little disclaimer, in my professional life I've only ever seen really bad and really good stuff concerning databases. Never something in between. 
 
-* It actually creates a patch that is larger than the original files, however I suspect it can be compressed effectively as the byte data _seems_ like it fits in the ASCii space. I may try.
+The really bad was a 15 years old Java application for internal enterprise only (so every user was paid to use the software and that of course shaped our priorities) that had 4 (!) ways to access the database. Static functions that would build certain objects defined by business logic, queries stuffed in Struts beans (basically data holders for the used framework), a tens of thousands of lines long property file with queries that would be stuffed into some fake DAO / ORM thingy (and I put a lot of reflection code on top of it because I'm not gonna fill 200 fields by hand thankyouverymuch. First thing I did after uni on a real job) and then finally some real ORM.
 
-6. github.com/snej/zdelta-go
+The really good was PHP and Python with Symfony and Django and developers that really knew how to work those frameworks to do what we want.
 
-```
-  delta, err := zdelta.CreateDelta(originalBytes, newBytes)
-	appliedBytes, err := zdelta.ApplyDelta(originalBytes, deltaBytes)
-```
-
-* Crashes as the library no longer adheres to the rules around pointers to pointers when using the C binding
-
-7. github.com/konsorten/go-xdelta
-
-```
-	options := xdelta.EncoderOptions{
-		FileID:    "TestFullRoundtrip",
-		FromFile:  fromFile,
-		ToFile:    toFile,
-		PatchFile: patchFile,
-	}
-
-	enc, err := xdelta.NewEncoder(options)
-	err = enc.Process(context.TODO())
-```
-* I had high hopes for this one, however the patch is again similar in size to the original files
-
-Can anyone point me in the direction of any more that may fulfil my needs?
-Thanks!
+But I have no experience with good solutions if I don't have a good ORM! Like, what do people do?

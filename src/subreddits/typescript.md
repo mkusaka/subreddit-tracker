@@ -20,7 +20,171 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How to group related interfaces?](https://www.reddit.com/r/typescript/comments/ep13fr/how_to_group_related_interfaces/)
+## [2][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/typescript/comments/eph9wx/announcing_typescript_38_beta/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/
+---
+
+## [3][Foal TS - January release (version 1.5) - LinkedIn and Github social support, customizable exception handler, higher CSRF protection](https://www.reddit.com/r/typescript/comments/ephuc9/foal_ts_january_release_version_15_linkedin_and/)
+- url: https://www.reddit.com/r/typescript/comments/ephuc9/foal_ts_january_release_version_15_linkedin_and/
+---
+Foal TS framework version 1.5 is officially released!
+
+LinkedIn and Github social support, customizable exception handler, higher CSRF protection, discover the new features of version 1.5 here: [https://github.com/FoalTS/foal/releases/tag/v1.5.0](https://github.com/FoalTS/foal/releases/tag/v1.5.0)
+
+&amp;#x200B;
+
+[Foal TS - January release \(version 1.5\)](https://preview.redd.it/jlt8b9k9g4b41.png?width=1054&amp;format=png&amp;auto=webp&amp;s=3b7b4c2bd0897a5e7ea14e6bfdd5a1bdce2d79b8)
+
+Foal, in a few words, it's a Node.js framework:
+
+* written in TypeScript
+* supplied with batteries included (Auth, OpenAPI, GraphQL, ORM, CLI, ...)
+* and with a simple and intuitive architecture (no over-engineering).
+
+And the must: it has more than 11,000 lines of documentation.
+
+[Example of error handling](https://preview.redd.it/mzo3jo2cg4b41.png?width=1804&amp;format=png&amp;auto=webp&amp;s=df1aff998feef849ea8a25eefe32adcc1c539ca9)
+
+[https://foalts.org](https://foalts.org/)
+
+[https://github.com/FoalTS/foal](https://github.com/FoalTS/foal)
+
+[https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
+
+\#TypeScript #NodeJS #javascript #LinkedIn #Github #webdevelopment
+## [4][[Help] ECMA6 + VScode](https://www.reddit.com/r/typescript/comments/epj6gh/help_ecma6_vscode/)
+- url: https://www.reddit.com/r/typescript/comments/epj6gh/help_ecma6_vscode/
+---
+I started to test my logic skills in CodeWars, but CodeWars don't accept latest version of ecma. There is a way to my eslint or typescript shows me a warning or error when I write a function or somethint that doesn't exist or is not accepted in ecma6?
+
+&amp;#x200B;
+
+To answer curiosity I'm using VSCODE.
+## [5][Is there a way to deconstruct params AND define the interface in a single call?](https://www.reddit.com/r/typescript/comments/epen4f/is_there_a_way_to_deconstruct_params_and_define/)
+- url: https://www.reddit.com/r/typescript/comments/epen4f/is_there_a_way_to_deconstruct_params_and_define/
+---
+No destructuring
+
+```
+
+function printName(param: {firstName: string, lastName: string}) {
+
+console.log(param.firstName + ' ' + param.lastName)
+
+}
+
+```
+
+&amp;#x200B;
+
+Define interface
+
+```interface Name {
+
+firstName: string,
+
+lastName: string
+
+}
+
+function printName(param: Name) {
+
+console.log(param.firstName + ' ' + param.lastName)
+
+}
+
+```
+
+&amp;#x200B;
+
+Destructuring + Inline Interface
+
+```
+
+function printName({ firstName, lastName }: { firstName: string; lastName: string }) {
+
+console.log(firstName + ' ' + lastName)
+
+}
+
+```
+
+&amp;#x200B;
+
+Now I'm wondering, is there a way to have destructuring so that I don't need to call param.&lt;something&gt;, but at the same time having it inline? Perhaps something like this:
+
+```
+
+function printName({ firstName: string; lastName: string }) {
+
+console.log(firstName + ' ' + lastName)
+
+}
+
+```
+
+Destructuring + Inline Interface is kinda annoying because you need to redeclare everything twice. Is there anything I can write that does destructuring but also defines the type at the same time?
+## [6][I created a Fitbit app using TypeScript](https://www.reddit.com/r/typescript/comments/ep2rye/i_created_a_fitbit_app_using_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/ep2rye/i_created_a_fitbit_app_using_typescript/
+---
+As the title says, I want to share [this small Fitbit app](https://github.com/Shpota/zeit) with you. I posted it in this sub when I initially created it, but since then I changed the app, applied improvements, released it to the store, and got feedback from users. 
+
+It is my pet project and I don't use TypeScript at work that's why I was glad that I could implement applications like this with TypeScript.
+
+I would love to get any kind of feedback
+
+https://github.com/Shpota/zeit
+## [7][One hidden benefit of TS I haven't seen discussed](https://www.reddit.com/r/typescript/comments/ep8h1v/one_hidden_benefit_of_ts_i_havent_seen_discussed/)
+- url: https://www.reddit.com/r/typescript/comments/ep8h1v/one_hidden_benefit_of_ts_i_havent_seen_discussed/
+---
+Example documentation:
+
+    get(options?: GetOptions): Promise&lt;DocumentSnapshot&lt;T&gt;&gt;
+
+In all the courses I took and all the toy projects I built my first 2 years, none of them ever explained what the above was. I sort of understood what something like `.set(path [, options])` after much time and frustration. But the above was another level.
+
+Once could guess the meaning of ? and probably pick up the type hinting after learning a 2nd language, but that final bit with the Promise and generic was always a source of pain and confusion.
+
+Feels like a large gap in the current educational landscape to be honest. TS fills it perfectly because by some magical coincidence it seems to match most complex documentation's syntax exactly.
+
+Finally, I can read!
+## [8][What is the correct way to do type checking here](https://www.reddit.com/r/typescript/comments/ep55ak/what_is_the_correct_way_to_do_type_checking_here/)
+- url: https://www.reddit.com/r/typescript/comments/ep55ak/what_is_the_correct_way_to_do_type_checking_here/
+---
+I thought I would know this, having worked with TS for 2 months now. But I'm running into issues:
+
+    export enum RuleTypes {global, inventory, product, blacklist}
+    
+    export interface GlobalRuleSchema {
+      storeId: string
+      , globalPercent : number
+    }
+    
+    // inside a class
+      verifySchemaIsCorrect(type: RuleTypes, recordData: unknown) {
+        let schemaMatches: boolean;
+        
+        switch (+type) { // + needed for number coercion as per SO
+          case type.global: // TS2339: Property 'global' does not exist on type 'RuleTypes'.
+            schemaMatches = typeof recordData === GlobalRuleSchema; // TS2693: 'GlobalRuleSchema' only refers to a type, but is being used as a value here
+            break;
+          default:
+            schemaMatches = false;
+        }    
+    
+        if (Boolean(schemaMatches)) {
+          return true;
+        }
+        
+        throw Error("recordData's shape is wrong against its schema");
+      }
+
+What is the correct way to ensure the interface on `recordData` matches the desired enum value on `type` ?
+## [9][Hopa - zero config CLI for runs JavaScript and TypeScript](https://www.reddit.com/r/typescript/comments/ep18kf/hopa_zero_config_cli_for_runs_javascript_and/)
+- url: https://krasimirtsonev.com/blog/article/hopa-javascript-typescript-runner
+---
+
+## [10][How to group related interfaces?](https://www.reddit.com/r/typescript/comments/ep13fr/how_to_group_related_interfaces/)
 - url: https://www.reddit.com/r/typescript/comments/ep13fr/how_to_group_related_interfaces/
 ---
 I'm creating some schemas for Cloud Firestore and was curious if there are best practices for grouping interfaces. 
@@ -30,204 +194,7 @@ I don't think they can be grouped inside a class so is there any other way to en
 Also, at the file level what do you guys do?
 
 I'm currently putting them in /shared/interfaces.ts. My project's scope is relatively small and has both the back and front end in other folders. I thought it would be good for both ends to share the interface file so that they adhere to the same type definitions.
-## [3][Hopa - zero config CLI for runs JavaScript and TypeScript](https://www.reddit.com/r/typescript/comments/ep18kf/hopa_zero_config_cli_for_runs_javascript_and/)
-- url: https://krasimirtsonev.com/blog/article/hopa-javascript-typescript-runner
+## [11][TypeScript Tip of the Week](https://www.reddit.com/r/typescript/comments/epb8ur/typescript_tip_of_the_week/)
+- url: https://medium.com/@sredmond/typescript-tip-of-the-week-using-classes-interfaces-6a0570f46750
 ---
 
-## [4][On Generic Type Argument Inference](https://www.reddit.com/r/typescript/comments/eopug0/on_generic_type_argument_inference/)
-- url: https://twitter.com/phry/status/1217161665827033089
----
-
-## [5][Nuxt(Vue) vs Next(React) for Typescript right now (not later this year)](https://www.reddit.com/r/typescript/comments/eostn6/nuxtvue_vs_nextreact_for_typescript_right_now_not/)
-- url: https://www.reddit.com/r/typescript/comments/eostn6/nuxtvue_vs_nextreact_for_typescript_right_now_not/
----
-Hey Fam!
-
-Intermediate JS developer here with a love of frameworks that help me build the products in my mind faster, without compromising too much on control. Naturally Next.js for React and Nuxt.js for Vue has fallen in taste quite quickly. 
-
-I recently worked on and published a side project with Vue and Nuxt and it was a great experience, however the error reporting tool Sentry showed me that in production I still had quite a few kinks to iron out. Many of which seemed easily avoidable had I adopted Typescript earlier.
-
-Have any of you any experience with Typescript in either framework? I hear Vue 3.0 (due to release at any moment) will have better support for it, however Nuxt will probably take a little while to adopt it, so I'm a bit hesitant to making the switch before that release. I've been wanting to try out the new and Typescript heavy Next.js 9 and get back into React, however reimplementing the whole project seems a bit far out, especially since I could use that time to make more features or do more marketing.
-
-Any insights welcome!
-## [6][Best resource to learn typescript](https://www.reddit.com/r/typescript/comments/eoccot/best_resource_to_learn_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/eoccot/best_resource_to_learn_typescript/
----
-Hello.
-I just learned JavaScript and now I need to learn typescript. I've seen subreddit usually have a resource they always give to this kind of question (like the subreddit for Javascript, I've seen a lot of people advising to read eloquent JavaScript.)
-Is there the same thing here? Is there a resource that is usually referred to learn ts?
-If not do you have any recommendations?
-## [7][How to structure a package exposing multiple (sub-)modules?](https://www.reddit.com/r/typescript/comments/eo75jv/how_to_structure_a_package_exposing_multiple/)
-- url: https://www.reddit.com/r/typescript/comments/eo75jv/how_to_structure_a_package_exposing_multiple/
----
-If I were to publish a library package that was essentially composed out of a handful of different sub-libraries, what would be the most common/standard way of structuring that? Specifically in terms of how it's exposed to consumers, and how to achieve convenient and obvious import paths.
-
-I ask because with a somewhat default TS package setup, it seems consumers have to use import paths like:
-
-    import * as moduleA from 'mypackage/dist/moduleA';
-
-And I find that "dist" (or I guess "lib" or whatever) in there kind of annoying. But perhaps this is pretty much standard practice?
-
-One alternative I came up with is to have the file that package.json's main points to be a file that exports the different submodules namespaced. Ie, something like:
-
-    import * as moduleA from './moduleA';
-    import * as moduleB from './moduleB';
-
-    export { moduleA, moduleB };
-
-Which turns consumer imports into:
-
-    import { moduleA } from 'mypackage';
-
-Which seems better to me. But I'm not sure if this would be surprising?
-
-Of course, I could also just glob export *everything* from "main", but that would result in an unstructured mess for any consumers.
-## [8][2d array type definition issue](https://www.reddit.com/r/typescript/comments/eobhbz/2d_array_type_definition_issue/)
-- url: https://www.reddit.com/r/typescript/comments/eobhbz/2d_array_type_definition_issue/
----
-I'm working on this method.
-
-    public async getSome(collection: string, whereClauses: object): Promise&lt;object&gt; {
-        // 1. write a base query in advance of appending additional where clauses to it
-        const baseQuery = db
-          .collection(collection)
-          .get()
-          .where("storeId", "==", this.shopDomain);
-        
-        // 2. put the input object into an array in preparation for iteration
-        const whereClause2dArray = Object.entries(whereClauses);
-        // shape should be now be [string, [string, string]][]     
-    
-        // 3. build the full query, with all .where() clauses appended to the end
-        const stitchedQuery = whereClause2dArray
-          .reduce((accumulatorQuery, [column, [operation, value]]: [string, [string, string]]) =&gt; {
-            return accumulatorQuery.where(column, operation, value);
-          }, baseQuery);
-        
-        // 4. invoke the query. Await its results from cloud Firestore, and return them.
-        return await stitchedQuery(); 
-        // TS2349: This expression is not callable.   
-        // Type '[string, any]' has no call signatures.
-      }
-
-I'm new to trying to extend method chains so there is likely to be a syntax error elsewhere. What I know now is that the way I defined the 2nd argument in .reduce() created the TSLint error on the final line. The error could be correct and indicate another problem. Or maybe I didn't define the 2d array correctly. Can you guys advise on which one it is?
-## [9][Typescript Error: onPress with Promise returned typing](https://www.reddit.com/r/typescript/comments/eo9kzp/typescript_error_onpress_with_promise_returned/)
-- url: https://www.reddit.com/r/typescript/comments/eo9kzp/typescript_error_onpress_with_promise_returned/
----
-I'm implementing typescript into my project for the first time and I have an error coming from `onPress`  
- which calls `toggleModal`. The error seems to be coming from the `newDate` function when the values `year, month, day` are passed. I have typed newDate as a Date with let newDate:Date.
-
-&amp;#x200B;
-
-According to the [React Native docs](https://facebook.github.io/react-native/docs/datepickerandroid), DatePickerAndroid.open() does the following:
-
-&gt;Returns a Promise which will be invoked an object containing action, year, month (0-11), day if the user picked a date. If the user dismissed the dialog, the Promise will still be resolved with action being DatePickerAndroid.dismissedAction and all the other keys being undefined.
-
-Can someone clarify if the error is coming from the following and how to fix it?
-
-* The promise DatePickerAndroid.open() since it the response may or may not be returned
-* Where I typed newDate:Date and since I'm passing it number values as year, month, day
-* Do I need to type onPress as a function with onPress: Function?
-
-**Error**
-
-    src/DatePicker.tsx:56:39 - error TS2345: Argument of type 'number | undefined' is not assignable to parameter of type 'number'.  Type 'undefined' is not assignable to type 'number'.
-              let newDate:Date = new Date(year, month, day);
-                                             ~~~~
-    src/DatePicker.tsx:109:25 - error TS2769: No overload matches this call.  Overload 1 of 2, '(props: Readonly&lt;TouchableOpacityProps&gt;): TouchableOpacity', gave the following error.    Type '(props: Props) =&gt; Promise&lt;void&gt;' is not assignable to type '(event: GestureResponderEvent) =&gt; void'.      Types of parameters 'props' and 'event' are incompatible.        Type 'GestureResponderEvent' is missing the following properties from type 'Props': title, onPress, onValueChange, mode  Overload 2 of 2, '(props: TouchableOpacityProps, context?: any): TouchableOpacity', gave the following error.
-        Type '(props: Props) =&gt; Promise&lt;void&gt;' is not assignable to type '(event: GestureResponderEvent) =&gt; void'.
-    
-    &lt;TouchableOpacity onPress={toggleModal} style={styles.fieldTextContainer}&gt;                            ~~~~~~~  node_modules/@types/react-native/index.d.ts:4836:5
-        onPress?: (event: GestureResponderEvent) =&gt; void; ~~~~~~~
-        The expected type comes from property 'onPress' which is declared here on type 'IntrinsicAttributes &amp; IntrinsicClassAttributes&lt;TouchableOpacity&gt; &amp; Readonly&lt;TouchableOpacityProps&gt; &amp; Readonly&lt;...&gt;'  node_modules/@types/react-native/index.d.ts:4836:5
-    
-    onPress?: (event: GestureResponderEvent) =&gt; void;             ~~~~~~~    The expected type comes from property 'onPress' which is declared here on type 'IntrinsicAttributes &amp; IntrinsicClassAttributes&lt;TouchableOpacity&gt; &amp; Readonly&lt;TouchableOpacityProps&gt; &amp; Readonly&lt;...&gt;'
-
-**Types**
-
-    // TypeScript: Types
-    interface Props {
-      title: string,
-      onPress: Function,
-      onValueChange: Function,
-      mode: 'calendar' | 'spinner' | 'default',
-      minDate?: Date | number;
-      maxDate?: Date | number;
-    }
-    
-    interface AndroidProps {
-      action: 'dateSetAction' | 'dismissedAction',
-      newDate?: Date;
-      year?: number;
-      month?: number;
-      day?: number;
-    }
-
-**toggleModal**
-
-      // Toggle Modal
-      const toggleModal = async (props: Props) =&gt; {
-        try {
-          // Check Platform (iOS)
-          if (Platform.OS === 'ios') {
-            // React Hook: Toggle Modal
-            toggle((modalVisible) =&gt; !modalVisible);
-          }
-    
-          // Check Platform (Android)
-          if (Platform.OS === 'android') {
-            const { action, year, month, day } : AndroidProps = await DatePickerAndroid.open({
-              date: date,
-              mode: props.mode,
-            });
-    
-            // Action: Date Set
-            if (action === DatePickerAndroid.dateSetAction) {
-              // New Date
-              let newDate:Date = new Date(year, month, day);
-    
-              // Select Date
-              selectDate(newDate);
-            }
-    
-            // Action: Dismissed
-            if (action === DatePickerAndroid.dismissedAction) {
-              // Do Nothing
-            }
-          };
-        }
-        catch (error) {
-          console.log(error);
-        }
-      };
-
-**DatePicker.tsx**
-
-          &lt;TouchableOpacity onPress={toggleModal} style={styles.fieldTextContainer}&gt;
-            &lt;Text style={styles.fieldText} numberOfLines={1}&gt;{date ? moment(date).format('MMM Do, YYYY') : 'Select'}&lt;/Text&gt;
-    
-            &lt;Icon name="ios-arrow-forward" size={22} style={styles.arrowForward}/&gt;
-          &lt;/TouchableOpacity&gt;
-## [10][Algebraic Structures: Things I wish someone had explained about functional programming](https://www.reddit.com/r/typescript/comments/enw3fi/algebraic_structures_things_i_wish_someone_had/)
-- url: https://jrsinclair.com/articles/2019/algebraic-structures-what-i-wish-someone-had-explained-about-functional-programming/
----
-
-## [11][TS2304 Can not find name "QuerySnapshot" (firebase-admin)](https://www.reddit.com/r/typescript/comments/eo416c/ts2304_can_not_find_name_querysnapshot/)
-- url: https://www.reddit.com/r/typescript/comments/eo416c/ts2304_can_not_find_name_querysnapshot/
----
-I'm importing firebase-admin and firebase-functions while working on some methods meant to interact with Firestore. 
-
-The following code lints the title error however. I'm referencing this page when setting the data type of response: [https://firebase.google.com/docs/reference/js/firebase.firestore.CollectionReference.html#get](https://firebase.google.com/docs/reference/js/firebase.firestore.CollectionReference.html#get)
-
-        try {
-          const response: Promise&lt;QuerySnapshot&lt;T&gt;&gt; = await db
-            .collection("globalRules")
-            .get();
-          const globalRules = response.map((record: any) =&gt; record.data());
-          
-        }
-        catch (e) {
-          console.log(e, `=====error=====`);
-        }
-
-The firebase SDK comes with its own type definitions so why is QuerySnapshot not found? Removing the &lt;T&gt; doesn't help. Or the Promise&lt;&gt; syntax.

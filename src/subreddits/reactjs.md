@@ -97,317 +97,67 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][My work on Enatega is coming to shape finally a food delivery solution if someone wants their own individual app. (More info and demo links in comments)](https://www.reddit.com/r/reactjs/comments/ep0ia9/my_work_on_enatega_is_coming_to_shape_finally_a/)
-- url: https://www.youtube.com/watch?v=5rAI8FoyG8k&amp;feature=youtu.be
+## [3][Next.js 9.2 released: Built-In CSS Imports and CSS Modules, Catch-All Dynamic Routes, Up to 70% Reduced Largest JavaScript Bundle, and Up to 87% Less JavaScript Loaded after Multiple Navigations](https://www.reddit.com/r/reactjs/comments/epascq/nextjs_92_released_builtin_css_imports_and_css/)
+- url: https://nextjs.org/blog/next-9-2
 ---
 
-## [4][How do I push an array from a form on a post request?](https://www.reddit.com/r/reactjs/comments/ep01a0/how_do_i_push_an_array_from_a_form_on_a_post/)
-- url: https://www.reddit.com/r/reactjs/comments/ep01a0/how_do_i_push_an_array_from_a_form_on_a_post/
----
-Hello!
-
-I'm stuck, I do not know how to push an array with JavaScript / React, I'm stuck.
-
-I have a server which accepts post requests. With Postman I can make new entries with
-
-```json
-{
- "username" : "marios",
- "name" : "John Doe",
- "email": "johndoe@example.com",
- "address": "Somewhere in the World",
- "telephones": [
-  {
-   "telType": "Home",
-   "telNumber": 1234567891
-  },
-  {
-   "telType": "Mobile",
-   "telNumber": 2101111111
-  }
-  ]
- }
-```
-
-And my Code in React is 
-```react
-import React, { Component } from 'react';
-import axios from 'axios';
-
-export default class AddContacts extends Component {
-  constructor(props) {
-    super(props);
-
-    this.onChangeUsername   = this.onChangeUsername.bind(this);
-    this.onChangeName       = this.onChangeName.bind(this);
-    this.onChangeEmail      = this.onChangeEmail.bind(this);
-    this.onChangeAddress    = this.onChangeAddress.bind(this);
-    this.onChangeTelType    = this.onChangeTelType.bind(this);
-    this.onChangeTelNumber  = this.onChangeTelNumber.bind(this);
-    this.onSubmit           = this.onSubmit.bind(this);
-
-    this.state = {
-      users: [],
-      username: '',
-      name: '',
-      email: '',
-      address: '',
-      telephones: [ ]
-    }
-  }
-
-  componentDidMount() {
-    axios.get('http://localhost:5000/users/')
-      .then(response =&gt; {
-        if (response.data.length &gt; 0) {
-          this.setState({
-            users: response.data.map(user =&gt; user.username),
-            username: response.data[0].username
-          })
-        }
-      })
-      .catch((error) =&gt; {
-        console.log(error);
-      })
-
-  }
-
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value
-    })
-  }
-
-  onChangeName(e) {
-    this.setState({
-      name: e.target.value
-    })
-  }
-
-  onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    })
-  }
-
-  onChangeAddress(e) {
-    this.setState({
-      address: e.target.value
-    })
-  }
-
-  onChangeTelType (e) {
-    this.setState({
-      telephones: {
-        telType: e.target.value
-      }
-    })
-  }
-
-  onChangeTelNumber (e) {
-    this.setState({
-      telephones: {
-        telNumber: e.target.value
-      }
-    })
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-
-    const contact = {
-      username: this.state.username,
-      name: this.state.name,
-      email: this.state.email,
-      address: this.state.address,
-      telephones: this.state.telephones
-    }
-
-    console.log(contact);
-
-    axios.post('http://localhost:5000/contacts/add', contact)
-      .then(res =&gt; console.log(res.data));
-
-  }
-
-  render() {
-    return (
-    &lt;div&gt;
-      &lt;h3&gt;Create New Contact&lt;/h3&gt;
-      &lt;form onSubmit={this.onSubmit}&gt;
-        &lt;div className="form-group"&gt; 
-          &lt;label&gt;Username: &lt;/label&gt;
-          &lt;select 
-            ref="userInput"
-            required
-            className="form-control"
-            value={this.state.username}
-            onChange={this.onChangeUsername}&gt;
-            {
-              this.state.users.map(function(user) {
-              return (
-                &lt;option 
-                  key={user}
-                  value={user}&gt;{user}
-                &lt;/option&gt;
-                )
-              })
-            }
-          &lt;/select&gt;
-        &lt;/div&gt;
-        &lt;div className="form-group"&gt; 
-          &lt;label&gt;Name: &lt;/label&gt;
-          &lt;input  
-              type="text"
-              required
-              className="form-control"
-              value={this.state.name}
-              onChange={this.onChangeName}
-          /&gt;
-        &lt;/div&gt;
-        &lt;div className="form-group"&gt;
-          &lt;label&gt;Email: &lt;/label&gt;
-          &lt;input 
-              type="text" 
-              className="form-control"
-              value={this.state.email}
-              onChange={this.onChangeEmail}
-          /&gt;
-        &lt;/div&gt;
-        &lt;div className="form-group"&gt;
-          &lt;label&gt;Address: &lt;/label&gt;
-          &lt;input 
-              type="text" 
-              className="form-control"
-              value={this.state.address}
-              onChange={this.onChangeAddress}
-          /&gt;
-        &lt;/div&gt;
-        &lt;div className="form-group"&gt;
-          &lt;label&gt;Telephones: &lt;/label&gt;
-          &lt;div className="container"&gt;
-            &lt;div className="row"&gt;
-              &lt;div className="col-4"&gt;
-                &lt;label&gt;Type: &lt;/label&gt;
-                &lt;select 
-                  required 
-                  className="form-control"
-                  value={this.state.telephones.telType}
-                  onChange={this.onChangeTelType}
-                &gt;
-                  &lt;option key="landline" value="landline"&gt;Landline&lt;/option&gt;
-                  &lt;option key="mobile" value="mobile"&gt;Mobile&lt;/option&gt;
-                  &lt;option key="bussiness" value="bussiness"&gt;Bussiness&lt;/option&gt;
-                &lt;/select&gt;
-              &lt;/div&gt;
-              &lt;div className="col-4"&gt;
-                &lt;label&gt;Number: &lt;/label&gt;
-                &lt;input 
-                  type="string" 
-                  className="form-control"
-                  value=    {this.state.telephones.telNumber}
-                  onChange= {this.onChangeTelNumber}
-                /&gt;
-              &lt;/div&gt;
-            &lt;/div&gt; &lt;br /&gt;
-            &lt;button className="btn btn-success"&gt;Add new Number&lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div className="form-group"&gt;
-          &lt;input 
-          type="submit" 
-          value="Add New Contact" 
-          className="btn btn-primary" /&gt;
-        &lt;/div&gt;
-      &lt;/form&gt;
-    &lt;/div&gt;
-    )
-  }
-}
-```
-
-Can somebody help? 
-Thanks for your time.
-## [5][How can my page react to being scrolled?](https://www.reddit.com/r/reactjs/comments/eozusm/how_can_my_page_react_to_being_scrolled/)
-- url: https://www.reddit.com/r/reactjs/comments/eozusm/how_can_my_page_react_to_being_scrolled/
----
-How do I get the URL of a page (as displayed in the browser location bar) to change as I scroll down the page? For example, [like on this page](https://stripe.com/docs/api)?
-
-I'd guess it's using the history object behind the scenes, but it's specifically doing it in reaction to the scroll reaching a certain part of the page that I don't know how to do.
-
-(I don't know what keyword to search for. My searches for scrolling find pages about how to scroll from javascript, not how to react to the user scrolling.)
-
-(I'd like to know how to do this from react, but information about how to do it in pure javascript also welcome.)
-## [6][Storybook 5.3 release: stories &amp; docs in MDX, first-class React support, Declarative config, and Design tool integrations](https://www.reddit.com/r/reactjs/comments/eom889/storybook_53_release_stories_docs_in_mdx/)
-- url: https://medium.com/storybookjs/storybook-5-3-83e114e8797c
+## [4][✨ Introducing "react-cool-onclickoutside": A React hook to listen for clicks outside of the component(s).](https://www.reddit.com/r/reactjs/comments/epcuv4/introducing_reactcoolonclickoutside_a_react_hook/)
+- url: https://github.com/wellyshen/react-cool-onclickoutside
 ---
 
-## [7][Storybook 5.3 video summary, features and changes](https://www.reddit.com/r/reactjs/comments/ep10qp/storybook_53_video_summary_features_and_changes/)
-- url: https://www.youtube.com/watch?v=Oy86bR1Enrs
+## [5][React DevTools now shows the names of Custom Hooks - Shu Ding on Twitter](https://www.reddit.com/r/reactjs/comments/ep40iq/react_devtools_now_shows_the_names_of_custom/)
+- url: https://twitter.com/shuding_/status/1217468469232324613?s=12
 ---
 
-## [8][Polymorphism in React and Javascript](https://www.reddit.com/r/reactjs/comments/ep0lg6/polymorphism_in_react_and_javascript/)
-- url: https://www.reddit.com/r/reactjs/comments/ep0lg6/polymorphism_in_react_and_javascript/
+## [6][Should i use gatsby](https://www.reddit.com/r/reactjs/comments/epi0ar/should_i_use_gatsby/)
+- url: https://www.reddit.com/r/reactjs/comments/epi0ar/should_i_use_gatsby/
 ---
-Hello. Currently I am writing my first react project, it is a quiz website and I stumbled upon a problem I could not find any elegant way to solve.
+Im currently in the process of searching for seo friendly technologies to use in a money transfer website like:
 
-I have several question types, and so I write a lot of switch cases in my code. I think this should be avoided, because adding new question type would require rewriting almost whole code instead of one file. I tried storing type as string, and storing questions in different arrays. Is there any correct or nicer way to handle this situation? I think about maybe storing functions inside my objects together with components
-## [9][How to call useEffect only on mount while satisfying EsLint missing dependencies warning?](https://www.reddit.com/r/reactjs/comments/ep1ez2/how_to_call_useeffect_only_on_mount_while/)
-- url: https://www.reddit.com/r/reactjs/comments/ep1ez2/how_to_call_useeffect_only_on_mount_while/
+https://www.monisnap.com
+
+And i came across gatsby because i want to use react since im familiar with it.
+
+Is it a good choice to use on this kind of website or should i use it for the landing page only.
+
+Thanks
+## [7][Introducing MockRequests, the first network-mocking library that's actually user-friendly!](https://www.reddit.com/r/reactjs/comments/epiv1c/introducing_mockrequests_the_first_networkmocking/)
+- url: https://www.reddit.com/r/reactjs/comments/epiv1c/introducing_mockrequests_the_first_networkmocking/
 ---
-Hi All,
+Unlike most other front-end network-mocking libraries, this small but powerful library provides a simple, user-friendly method for configuring mock responses for any URL. A quick rundown of the features this provides:
 
-Below is an example of a useEffect with an empty dependency list:
+* No changing source code! With this library, you don't need to replace either the URL called (e.g. replacing `https://real.url/api` with `localhost/mockApi`) or the fetch call (e.g. `fetch(url)` with `Promise.resolve(mock)`).
+* No painful configuration of complex node servers, proxies, or anything else! Simply install and go.
+* Full support for use along with third-party libraries, such as `Axios` and `jest`.
+* Dynamic response modifications to mimic back-end alterations of data.
+* Query parameter parsing to mock all URLs with the same pathname with the same dynamic response function.
+* Mock response resolution times for different URLs individually.
+* Easily split mock code from production code and/or activate mocks via terminal (e.g. `MOCK=true npm start`).
+* Configure all URLs you desire to mock within one single `MockRequests.configure()` function call.
+* Mix mock responses with real API calls by only configuring the URLs you need mocked.
 
-      React.useEffect(() =&gt; {
-        console.log("useEffect called")
-        window.addEventListener('keydown', (e) =&gt; {
-          if (keyCodes[e.keyCode] === props.pad.key.toLowerCase()) {
-            playSound();
-          }
-        });
-      }, []);
-
-If I leave it as-is I seem to get the desired behaviour of useEffect only being called on mount, however, EsLint gives me a `react-hooks/exhaustive-deps` and wants me to add the following dependencies: `[playSound, props.pad.key])`.
-
-I've added these dependencies with `playSound` wrapped in useCallback (see below) but doing this causes the `useEffect` to get called every time `props` is updated.
-
-      const playSound = React.useCallback(() =&gt; {
-        props.setNowPlaying(props.pad.id)
-        const sound = document.getElementById(props.pad.key) 
-        sound.onended = () =&gt; {
-            props.setNowPlaying("")
-            setActive(false);
-          };
-        setActive(true);
-        sound.play();
-      }, [props])
-
-I can't inline the `playSound` function into the `useEffect as it's used elsewhere in the component. 
-
-Can anyone provide some guidance on how best to change this code so as to only add the event listeners on mount whilst satisfying the EsLint warnings?
-
-Please let me know if you need more information. Thank you for your time.
-## [10][Liquid Swipe (Hover) implementation for React](https://www.reddit.com/r/reactjs/comments/eorjzw/liquid_swipe_hover_implementation_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/eorjzw/liquid_swipe_hover_implementation_for_react/
----
-I came across this really cool youtube tutorial for a liquid swipe implementation on React Native. I was wondering if anyone could point me to any tutorials or resources that could show me how to implement this using React for web, where the bezier curve follows the cursor. Thanks in advance!
-
-Video: [Liquid Swipe](https://www.youtube.com/watch?v=gLopy2MCAqM&amp;list=PL-lHSNZUNZvm6JkdhYdvSuL4Uq9f-PmnZ&amp;index=3&amp;t=0s)
-## [11][ReasonML / ReasonReact in 2020](https://www.reddit.com/r/reactjs/comments/eopmrp/reasonml_reasonreact_in_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/eopmrp/reasonml_reasonreact_in_2020/
----
-Hi guys,
-
-I've been aware of ReasonML and ReasonReact for a while now, but only recently decided to do a deep dive. My impression after a few days using it in my spare time is that it's brilliant, it really makes sense when they say it's ES2030 JavaScript.
-
-My concern is that Facebook is going to let Reason die before it has a chance to really take off. Checking the ReasonML blog there wasn't a single update last year and there were only 3 updates on the ReasonReact blog.
-
-So my question is: is it worth learning Reason in 2020?
-
-As far as the tool itself goes, I would love to invest my time in learning how to use it. However the community seems small and there are next to no jobs advertising ReasonML (at least in London), so I'm a bit hesitant and was hoping someone in the know could shed some light on Reason and where it's heading this year.
-## [12][RxJS Facades in React: Push-Based Architecture with Less BS](https://www.reddit.com/r/reactjs/comments/eos4xu/rxjs_facades_in_react_pushbased_architecture_with/)
-- url: https://medium.com/@thomasburlesonIA/react-facade-best-practices-1c8186d8495a
+Feel free to check out the in-depth ReadMe and install at [https://www.npmjs.com/package/mock-requests](https://www.npmjs.com/package/mock-requests), or check out the React demo at [https://d-pow.github.io/MockRequests/demo/](https://d-pow.github.io/MockRequests/demo/).
+## [8][GraphQL code gen for React on PH](https://www.reddit.com/r/reactjs/comments/epiox8/graphql_code_gen_for_react_on_ph/)
+- url: http://producthunt.com/posts/graphql-zeus
 ---
 
+## [9][Building a virtualized list from scratch](https://www.reddit.com/r/reactjs/comments/epiasa/building_a_virtualized_list_from_scratch/)
+- url: https://medium.com/ingeniouslysimple/building-a-virtualized-list-from-scratch-9225e8bec120
+---
+
+## [10][Next.js + Firebase Starter: styled, tested, typed, and authenticated](https://www.reddit.com/r/reactjs/comments/ep54pd/nextjs_firebase_starter_styled_tested_typed_and/)
+- url: https://github.com/rwieruch/nextjs-firebase-authentication
+---
+
+## [11][Next.js and Gatsby.js why do people use them?](https://www.reddit.com/r/reactjs/comments/epj6cu/nextjs_and_gatsbyjs_why_do_people_use_them/)
+- url: https://www.reddit.com/r/reactjs/comments/epj6cu/nextjs_and_gatsbyjs_why_do_people_use_them/
+---
+Next.js and Gatsby.js what are good uses for each of them, why do people use them, and what are the advantages?
+
+&amp;#x200B;
+
+Thanks in advance.
+## [12][Do we have any doc or tutorial that I can deploy Nextjs on github.io?](https://www.reddit.com/r/reactjs/comments/epiito/do_we_have_any_doc_or_tutorial_that_i_can_deploy/)
+- url: https://www.reddit.com/r/reactjs/comments/epiito/do_we_have_any_doc_or_tutorial_that_i_can_deploy/
+---
+I don't really know about the Reactjs router. But I used Nextjs before. Thus, I am thinking to deploy a GitHub blog using reactjs and nextjs on [github.io](https://github.io). Do anyone know how to do it?

@@ -1,5 +1,31 @@
 # ruby
-## [1][Creating my first ruby gems](https://www.reddit.com/r/ruby/comments/ep0lhp/creating_my_first_ruby_gems/)
+## [1][Testing signed and encrypted cookies in Rails](https://www.reddit.com/r/ruby/comments/epacmo/testing_signed_and_encrypted_cookies_in_rails/)
+- url: https://philna.sh/blog/2020/01/15/test-signed-cookies-in-rails/
+---
+
+## [2][Ruby-lang.org dns failed](https://www.reddit.com/r/ruby/comments/epdj81/rubylangorg_dns_failed/)
+- url: https://www.reddit.com/r/ruby/comments/epdj81/rubylangorg_dns_failed/
+---
+Can't access [ruby-lang.org](https://ruby-lang.org) due to failed dns lookup. This happening to anyone else.
+## [3][Pros and cons of using structure.sql in your Ruby on Rails application](https://www.reddit.com/r/ruby/comments/ep2n3d/pros_and_cons_of_using_structuresql_in_your_ruby/)
+- url: https://blog.appsignal.com/2020/01/15/the-pros-and-cons-of-using-structure-sql-in-your-ruby-on-rails-application.html
+---
+
+## [4][ri --server - not able to search Ruby documentation?](https://www.reddit.com/r/ruby/comments/epag4n/ri_server_not_able_to_search_ruby_documentation/)
+- url: https://www.reddit.com/r/ruby/comments/epag4n/ri_server_not_able_to_search_ruby_documentation/
+---
+Hi, I've been developing using Ruby, and I've (in the past) been able to search for base objects (String, Array etc.) using the server.
+
+However, recently, I've been unable to do so - e.g. searching for String doesn't give me any Ruby documentation links. Has anyone else had this problem? 
+
+I currently run Arch Linux, with Ruby 2.7.0.
+
+Edit: I should add - I _am_ able to see documentation links if using ri on the command-line.
+## [5][Rails Flaky Spec Solutions, example bad tests and how to solve them](https://www.reddit.com/r/ruby/comments/ep4key/rails_flaky_spec_solutions_example_bad_tests_and/)
+- url: https://www.mayerdan.com/ruby/2020/01/14/rails-flaky-specs-solutions
+---
+
+## [6][Creating my first ruby gems](https://www.reddit.com/r/ruby/comments/ep0lhp/creating_my_first_ruby_gems/)
 - url: https://www.reddit.com/r/ruby/comments/ep0lhp/creating_my_first_ruby_gems/
 ---
 Hello
@@ -14,7 +40,7 @@ So, I need your feedback to correct and improve it!
 Thanks for your time.
 
 And for the curious ones, here is the repository of our search engine MeiliSearch. We are open-source and we really need your support! ⭐️ Each star and feedback are important for us 🙂[https://github.com/meilisearch/MeiliSearch](https://github.com/meilisearch/MeiliSearch)
-## [2][Developer with 10 years experience of Ruby / Rails (12 in programming) is looking for juniors/mids to teach/help/mentor - anyone interested?](https://www.reddit.com/r/ruby/comments/eolm8x/developer_with_10_years_experience_of_ruby_rails/)
+## [7][Developer with 10 years experience of Ruby / Rails (12 in programming) is looking for juniors/mids to teach/help/mentor - anyone interested?](https://www.reddit.com/r/ruby/comments/eolm8x/developer_with_10_years_experience_of_ruby_rails/)
 - url: https://www.reddit.com/r/ruby/comments/eolm8x/developer_with_10_years_experience_of_ruby_rails/
 ---
 Hello everyone, I hope you are well. I'm not sure if it's the best place for such announcements but I was sharing with you my articles for the past 2 years so I decided to write here as I appreciate this community and the value it gives.
@@ -37,7 +63,7 @@ Podcasts:
 LinkedIn: [https://www.linkedin.com/in/pdabrowski6/](https://www.linkedin.com/in/pdabrowski6/)
 
 Feel free to contact me here or via Linkedin if you are interested in the partnership. I would love to help other developers and learn a lot by doing this. Have a nice day!
-## [3][BigDecimal Equality Strangeness](https://www.reddit.com/r/ruby/comments/eos2gf/bigdecimal_equality_strangeness/)
+## [8][BigDecimal Equality Strangeness](https://www.reddit.com/r/ruby/comments/eos2gf/bigdecimal_equality_strangeness/)
 - url: https://www.reddit.com/r/ruby/comments/eos2gf/bigdecimal_equality_strangeness/
 ---
 I ran into a BigDecimal value which has confused the heck out of me.  This is on Ruby 2.6.3
@@ -58,7 +84,7 @@ What is going on here?  It doesn't happen often with other values, for example i
      =&gt; 0.0
 
 Any idea what's happening?
-## [4][Building a Hangman Game in Ruby in 25 minutes](https://www.reddit.com/r/ruby/comments/eopvss/building_a_hangman_game_in_ruby_in_25_minutes/)
+## [9][Building a Hangman Game in Ruby in 25 minutes](https://www.reddit.com/r/ruby/comments/eopvss/building_a_hangman_game_in_ruby_in_25_minutes/)
 - url: https://www.reddit.com/r/ruby/comments/eopvss/building_a_hangman_game_in_ruby_in_25_minutes/
 ---
 Hey guys, I've launched a new Ruby build on YouTube. This is a pretty interesting one as it involves a lot of interaction with the user and handling the user's input from the Terminal. Guess the wrong letter too many times and it's game over. Was a lot of fun writing this code for the video, hopefully it's useful to anyone getting into Ruby.
@@ -66,46 +92,7 @@ Hey guys, I've launched a new Ruby build on YouTube. This is a pretty interestin
 [https://www.youtube.com/watch?v=uBwGfswwRL4](https://www.youtube.com/watch?v=uBwGfswwRL4)
 
 As always, I'm planning to post some more Ruby content to my channel to promote the Ruby language, so would be open to suggestions about content ideas. Thanks :)
-## [5][A Migration Path to Bundler 2+](https://www.reddit.com/r/ruby/comments/eolrut/a_migration_path_to_bundler_2/)
+## [10][A Migration Path to Bundler 2+](https://www.reddit.com/r/ruby/comments/eolrut/a_migration_path_to_bundler_2/)
 - url: http://eregon.me/blog/2020/01/13/a-migration-path-to-bundler2.html
 ---
 
-## [6][Rails tutorial - Why you should use Sentry logger in your project and how to configure it](https://www.reddit.com/r/ruby/comments/eol6qd/rails_tutorial_why_you_should_use_sentry_logger/)
-- url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-sentry-logger-installation-and-configuration/
----
-
-## [7][can someone explain the difference between rangeinclude and rangecover like I am 5 years old?](https://www.reddit.com/r/ruby/comments/eoor5w/can_someone_explain_the_difference_between/)
-- url: https://www.reddit.com/r/ruby/comments/eoor5w/can_someone_explain_the_difference_between/
----
-I've search the same question but I still don't get why...
-## [8][How can you do proper async with ruby?](https://www.reddit.com/r/ruby/comments/eoo8sp/how_can_you_do_proper_async_with_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/eoo8sp/how_can_you_do_proper_async_with_ruby/
----
-I want to be able to run an method, and while it runs run another method not waiting for the first to end/exit. It can easily be done in JS with stuff like promises but I couldn't figure out something similar for ruby.
-
-Something like:
-
-    def method
-        some_method_that_doesnt_end
-        other_method
-    end
-
-&amp;#x200B;
-
-While `some_method_that_doesnt_end` can run indefinitely, I want to run several of those at the same time.
-## [9][Faster Ruby APIs with Postgres](https://www.reddit.com/r/ruby/comments/eom0cc/faster_ruby_apis_with_postgres/)
-- url: https://goiabada.blog/faster-ruby-apis-with-postgres-238c2f4a272c
----
-
-## [10][www.viky.ai a Natural Language Processing platform (Ruby On Rails app + C NLP component)](https://www.reddit.com/r/ruby/comments/eojgtk/wwwvikyai_a_natural_language_processing_platform/)
-- url: https://www.reddit.com/r/ruby/comments/eojgtk/wwwvikyai_a_natural_language_processing_platform/
----
-Hi,
-
-[viky.ai](https://www.viky.ai/) is a **Natural Language Processing platform**. It allows you to **extract information from unstructured text contents**.
-
-The technical component *nlp*, written in C, allows the extraction of structured information, this extraction is defined within agents. The agents are multilingual assistants to find relevant data. The *nlp* component takes as input a set of agents in JSON format and unstructured textual content in order to provide a JSON stream of structured data as output.
-
-The second technical component webapp is a **Rails application** that allows you to work collaboratively to set up agents by offering dedicated interfaces. It also provides the interpret API in order to allow integration into a third-party system.
-
-**viky.ai** **is released under open-source license** (MIT), code is available on [Github](https://github.com/viky-ai/viky-ai).

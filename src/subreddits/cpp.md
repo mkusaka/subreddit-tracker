@@ -57,88 +57,92 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][How fast can you allocate a large block of memory in C++?](https://www.reddit.com/r/cpp/comments/eoq6ly/how_fast_can_you_allocate_a_large_block_of_memory/)
-- url: https://lemire.me/blog/2020/01/14/how-fast-can-you-allocate-a-large-block-of-memory-in-c/
+## [2][C++ Objects, their lifetimes and pointer to objects](https://www.reddit.com/r/cpp/comments/epgxj6/c_objects_their_lifetimes_and_pointer_to_objects/)
+- url: https://blog.panicsoftware.com/objects-their-lifetimes-and-pointers/
 ---
 
-## [3][What is this communities opinion on c++11 as a first language?](https://www.reddit.com/r/cpp/comments/ep1s2i/what_is_this_communities_opinion_on_c11_as_a/)
+## [3][I built a site to search C++ libraries based on the awesome C++ github list, with sort, filtering, and extra meta information for each library](https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/)
+- url: https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/
+---
+ [https://lucidindex.com/cpp](https://lucidindex.com/cpp)
+## [4][Preferred solution for making projects work on anyone's machine?](https://www.reddit.com/r/cpp/comments/epdgn7/preferred_solution_for_making_projects_work_on/)
+- url: https://www.reddit.com/r/cpp/comments/epdgn7/preferred_solution_for_making_projects_work_on/
+---
+This is more a CMake / build system question than a C++ one, but I just wanted to get some opinions.
+
+I'm working on a few side projects and I have them on my Github, but it's fairly hard for other people to build them. In particular, the flow looks something like this:
+
+&amp;#x200B;
+
+&gt;1) Checkout the git repo  
+&gt;  
+&gt;2) Install dependencies manually (from README)  
+&gt;  
+&gt;3) Edit the CMake module files (Find&lt;Lib&gt;.cmake) to point to installed dependency on their PC  
+&gt;  
+&gt;4) Run CMake
+
+What is the best way to skip step 3 (and preferably step 2)?
+
+Should I just write a build script, as there's no package manager? How would it work across OSes (I want to support Mac and Linux at the very least - and then you have the various distros).
+
+Thanks!
+## [5][2 Lines Of Code and 3 C++17 Features - The overload Pattern (updated with C++20 notes)](https://www.reddit.com/r/cpp/comments/ep7gjm/2_lines_of_code_and_3_c17_features_the_overload/)
+- url: https://www.bfilipek.com/2019/02/2lines3featuresoverload.html
+---
+
+## [6][What is this communities opinion on c++11 as a first language?](https://www.reddit.com/r/cpp/comments/ep1s2i/what_is_this_communities_opinion_on_c11_as_a/)
 - url: https://www.reddit.com/r/cpp/comments/ep1s2i/what_is_this_communities_opinion_on_c11_as_a/
 ---
 A bit of context, I have been teaching programming for about two years now and it’s all been through a c/c++ based curriculum that eventually also teaches web development via python later. As expected whenever I talk to other swe's the first question is often why not python. As I’m venturing into the new year and continuing I’m debating on the best route forward and would love to hear the thoughts of people in the community.
-## [4][naïve function call with named params in c++20 (designated init + macros)](https://www.reddit.com/r/cpp/comments/ep2dd5/naïve_function_call_with_named_params_in_c20/)
+## [7][cl /PH or #pragma file_hash](https://www.reddit.com/r/cpp/comments/ep77ey/cl_ph_or_pragma_file_hash/)
+- url: https://www.reddit.com/r/cpp/comments/ep77ey/cl_ph_or_pragma_file_hash/
+---
+Visual Studio 2019 Command Prompt:
+
+    cl /?
+    Microsoft (R) C/C++ Optimizing Compiler Version 19.24.28315 for x86
+    Copyright (C) Microsoft Corporation.  All rights reserved.
+    ...
+                                  -PREPROCESSOR-
+    ...
+    /PH generate #pragma file_hash when preprocessing
+
+I couldn't find anything about either `/PH` or `#pragma file_hash` online, but it seems that it calculates the file hash in one or more formats, MD5 by default:
+
+    cl 1.cpp /E /PH
+    1.cpp
+    #line 1 "1.cpp"
+    #pragma file_hash("1.cpp", MD5="ecaa88f7fa0bf610a5a26cf545dcd3aa")
+
+MSVC guys, what exactly does this option do? Can it be used to speed up our builds, something ccache-like? Or it's just some internal stuff, accidentally leaked into the help page?
+## [8][naïve function call with named params in c++20 (designated init + macros)](https://www.reddit.com/r/cpp/comments/ep2dd5/naïve_function_call_with_named_params_in_c20/)
 - url: https://www.reddit.com/r/cpp/comments/ep2dd5/naïve_function_call_with_named_params_in_c20/
 ---
 [https://godbolt.org/z/LY3oS8](https://godbolt.org/z/LY3oS8)
 
 shame I cannot find a way to make the syntax prettier.
-## [5][Discussion about an open-source graph database written in C++. Lots of comments and opinions.](https://www.reddit.com/r/cpp/comments/ep1z45/discussion_about_an_opensource_graph_database/)
-- url: https://news.ycombinator.com/item?id=22051271
+## [9][Great examples of C++ repos for learning?](https://www.reddit.com/r/cpp/comments/epeyzz/great_examples_of_c_repos_for_learning/)
+- url: https://www.reddit.com/r/cpp/comments/epeyzz/great_examples_of_c_repos_for_learning/
+---
+My Cpp skills are rusty, and I'm trying to brush up on the language as it is best used in 2020.
+
+Are there any github repos you could recommend?
+## [10][HPX 1.4.0 released](https://www.reddit.com/r/cpp/comments/ep3e47/hpx_140_released/)
+- url: https://stellar-group.org/2020/01/hpx-1-4-0-released/
 ---
 
-## [6][So... You wanna measure Branch Prediction Hit Rate with BPF and C++?](https://www.reddit.com/r/cpp/comments/eozm5j/so_you_wanna_measure_branch_prediction_hit_rate/)
-- url: http://www.mycpu.org/writing-bpf-c++/
+## [11][potential pitfall of abbreviated templates and generic lambdas on default arguments?](https://www.reddit.com/r/cpp/comments/ep3uep/potential_pitfall_of_abbreviated_templates_and/)
+- url: https://www.reddit.com/r/cpp/comments/ep3uep/potential_pitfall_of_abbreviated_templates_and/
 ---
+see: [https://godbolt.org/z/yGIypM](https://godbolt.org/z/yGIypM)
 
-## [7][CppCast: OpenVDB](https://www.reddit.com/r/cpp/comments/ep1bhn/cppcast_openvdb/)
-- url: https://cppcast.com/ken-museth-openvdb/
----
+I think we might want to change the wording for `auto` parameters when a default argument is provided in the next C++ version to fix this corner case.
 
-## [8][Structure of Programs and phase 2 of self teaching.](https://www.reddit.com/r/cpp/comments/eopm34/structure_of_programs_and_phase_2_of_self_teaching/)
-- url: https://www.reddit.com/r/cpp/comments/eopm34/structure_of_programs_and_phase_2_of_self_teaching/
----
-Hey guys, I just wanted to say up front that any answers that are provided are appreciated so much, and I am very grateful for your time. 
+&amp;#x200B;
 
-  My first question concerns anyone who does System Programming in C++. I have been told by many people that because I am 33, and just now in my third year of a computer science degree, while working full time, that i should suck it up and just do something easier like web dev with Python and Javascript. The problem is, that I have despised every minute that I have spent working with any kind of front end web dev. I have looked at other types of app programming using GUI, and again, I find the UI design aspects very uninteresting. My favorite class in school so far has been Computer Architecture, and a related Operating Systems course. 
+while some of you might wonder what's the use of `auto` parameters with default arguments, here I give you another less trivial example: [https://godbolt.org/z/5uoak4](https://godbolt.org/z/5uoak4)
 
-   What would you recommend for getting started programming aspects of Operating systems, drivers, or even some embedded development? There seems to be this phase where there are a million people willing to show you how concepts work using foo() and do_something(), but much less on figuring out how to stop doing isolated coding challenges, and truly start building a project. Is it a good idea to just look through all the different C++ libraries to see what they offer, and try to make something with those libraries?
+here we have a function `aggregate()` that takes a list of values and somehow merges them into one, by default it merges values by summation (operator+) which is very intuitive, but you can also specify your own merging function to calculate the product or the mathematical expectation of the values.
 
-   Last question is what is the best way to structure your code, when you don’t use OOP? I feel like it is hard for me to think about setting up multiple files, without using classes. Is it best to just group related functions in a file, just like classes but without the inheritance? I have read that it is also somewhat bad practice to overly use getters and setters. Is best practice to just make your member variables public, if you aren’t going to add any logic to restrict the way in which someone can access or Change it later?
-
-Sorry for the length, and thank you so much.
-## [9][Critique my project. Libclsp, a C++17 library](https://www.reddit.com/r/cpp/comments/eov5fh/critique_my_project_libclsp_a_c17_library/)
-- url: https://www.reddit.com/r/cpp/comments/eov5fh/critique_my_project_libclsp_a_c17_library/
----
-It's a library for language servers. (Autocompletion, documentation and that sort of things)
-
-[https://github.com/otreblan/libclsp](https://github.com/otreblan/libclsp)
-## [10][Does an application using the boost libraries also requires it to be run after built?](https://www.reddit.com/r/cpp/comments/ep0wpe/does_an_application_using_the_boost_libraries/)
-- url: https://www.reddit.com/r/cpp/comments/ep0wpe/does_an_application_using_the_boost_libraries/
----
-Say I have an c++ application which uses the boost libraries (ex, boost::asio).  
-I built the application on one PC and move the executable to another PC with a fresh Linux installed.  
-
-
-Will it work on the other Linux without installing anything?  
-If not, why and what should I install?
-## [11][Why `make_unique_default_init( std::size_t size )` ?](https://www.reddit.com/r/cpp/comments/eomwv2/why_make_unique_default_init_stdsize_t_size/)
-- url: https://www.reddit.com/r/cpp/comments/eomwv2/why_make_unique_default_init_stdsize_t_size/
----
-C++20 apparently introduces a `make_unique` for arrays with initialization
-
-    std::make_unique_default_init( std::size_t size )
-
-which does:
-
-"5) Same as (2), except that the array is default-initialized."
-
-[https://en.cppreference.com/w/cpp/memory/unique\_ptr/make\_unique](https://en.cppreference.com/w/cpp/memory/unique_ptr/make_unique)
-
-I recently found myself wanting to allocate a large array on heap.
-
-(Before you object: It was an array of atomics and that's why c-style-array and not vector, but I have left the atomic part out of this example because it's a distraction. )
-
-So initially I wrote
-
-    auto arr = std::make_unique&lt;int[]&gt;(1'000'000);
-
-and i wondered if that would be zero initialized. I suspected it wouldn't be, so, not wanting to write a loop myself, I wrote:
-
-    std::unique_ptr&lt;int[]&gt; arr(new int[1'000'000] {});
-
-So then I got curious and [checked godbolt](https://godbolt.org/z/aB7eJr). It turns out, with the first construction, that msvc `memset`s it to zero. clang does the same (and even eliminates the whole program) and gcc uses `rep stosq` which is a `memset` as well?  The second formulation without `std::make_unique` and writing my own `new ... {}` with empty brace initlializer produces [almost the same code](https://godbolt.org/z/Cs_ENk).
-
-The standard doesn't seem to say "the array will be zero initialised"  (or does it?) but all 3 major compilers do this "extra work"? So my "verbose" version was just unnecessary?
-
-Or is this "ambiguity" exactly what C++20  is trying to address with `std::make_unique_default_init(` [`std::size_t`](http://en.cppreference.com/w/cpp/types/size_t) `size )`?
-
-Confused.  ;-)
+since the type of the merging function is totally unknown, it could be anything callable, it might even be stateful like `dot` which we use to calculate the expectation, we simply declare the parameter as `auto`, however it should be addition by default unless the user specified a custom merging function, and here, we have an `auto` parameter, and it makes sense for it to have a default argument.

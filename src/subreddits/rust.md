@@ -33,9 +33,45 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/eo6qjo/whats_everyone_working_on_this_week_32020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-3-2020/36867?u=llogiq)!
-## [3][Rust jokes needed!](https://www.reddit.com/r/rust/comments/eozzje/rust_jokes_needed/)
+## [3][Mozilla lays off 70 people as non-search revenue fails to materialize](https://www.reddit.com/r/rust/comments/epe3pw/mozilla_lays_off_70_people_as_nonsearch_revenue/)
+- url: https://arstechnica.com/gadgets/2020/01/mozilla-lays-off-70-people-as-non-search-revenue-fails-to-materialize/
+---
+
+## [4][Exposing C and Rust APIs: some thoughts from librsvg](https://www.reddit.com/r/rust/comments/epg83p/exposing_c_and_rust_apis_some_thoughts_from/)
+- url: https://people.gnome.org/~federico/blog/exposing-c-and-rust-apis.html
+---
+
+## [5][Epoll, Kqueue and IOCP Explained with Rust](https://www.reddit.com/r/rust/comments/ephm4t/epoll_kqueue_and_iocp_explained_with_rust/)
+- url: https://cfsamsonbooks.gitbook.io/exploring-epoll-kqueue-and-iocp/
+---
+
+## [6][Programming Servo: three years, 100 commits.](https://www.reddit.com/r/rust/comments/epfji8/programming_servo_three_years_100_commits/)
+- url: https://www.reddit.com/r/rust/comments/epfji8/programming_servo_three_years_100_commits/
+---
+Some observations from a three years of contributions to Servo, on the following topics:
+
+\- Community works
+
+\- Incremental progress works
+
+\- The native thread is dead, long live the native thread!
+
+[https://medium.com/programming-servo/programming-servo-three-years-100-commits-a3cbfb06ff23](https://medium.com/programming-servo/programming-servo-three-years-100-commits-a3cbfb06ff23)
+## [7][This Week in Rust 321](https://www.reddit.com/r/rust/comments/epinfr/this_week_in_rust_321/)
+- url: https://this-week-in-rust.org/blog/2020/01/14/this-week-in-rust-321/
+---
+
+## [8][why String's trim returns &amp;str?](https://www.reddit.com/r/rust/comments/epibhn/why_strings_trim_returns_str/)
+- url: https://www.reddit.com/r/rust/comments/epibhn/why_strings_trim_returns_str/
+---
+Why doesn't it return the same String type?
+## [9][Rust jokes needed!](https://www.reddit.com/r/rust/comments/eozzje/rust_jokes_needed/)
 - url: https://www.reddit.com/r/rust/comments/eozzje/rust_jokes_needed/
 ---
+UPDATE: Well, because you all were so willing to help and comment this post popped up in his feed. The jig is up!! He's SUPPOSED TO BE STUDYING for exams so I thought I could fly under the radar! But so it goes, he really appreciated it and we both appreciate all the jokes and suggestions you guys provided! I honestly learned a ton, can't say I won't be back for some other help... (Also I have a little something else up my sleeve and I've made him promise not to go snooping) 
+
+If people are still interested I can post what I do make, though it probably won't be rust related! Thank you again for being so sweet and amazing and helping me so much!!!
+
 Hey everyone! 
 
 I'm looking for the best rust puns/jokes you can manage! My boyfriend loves rust, as well as a few other languages. Due to a couple different things he's having a rough time in life at the moment. I wanted to make something that would give him a laugh and hopefully help him feel a bit better. My plan is to find an amazing and terrible pun/joke and embroider it on a t-shirt for him! 
@@ -43,96 +79,30 @@ I'm looking for the best rust puns/jokes you can manage! My boyfriend loves rust
 I am of course not a programmer so I have no idea where else to turn for these. I've enlisted his friends for final approval and to make sure they actually make sense (because I have no idea!) Hopefully he doesn't follow this sub... 
 
 Thank you for your help!
-## [4][Announcing v0.2 of SQLx (the async, pure, safe Rust SQL crate featuring compile-time checked queries without a DSL), now with support for Tokio, TLS, and transactions](https://www.reddit.com/r/rust/comments/ep0mgf/announcing_v02_of_sqlx_the_async_pure_safe_rust/)
+## [10][Announcing v0.2 of SQLx (the async, pure, safe Rust SQL crate featuring compile-time checked queries without a DSL), now with support for Tokio, TLS, and transactions](https://www.reddit.com/r/rust/comments/ep0mgf/announcing_v02_of_sqlx_the_async_pure_safe_rust/)
 - url: https://github.com/launchbadge/sqlx/blob/62e1df5ad9454696fc2c75b78c3190f801fcecde/CHANGELOG.md#020---2020-01-15
 ---
 
-## [5][Announcing Dashmap v3 - Taking concurrent hashmaps to the next level.](https://www.reddit.com/r/rust/comments/eopxq5/announcing_dashmap_v3_taking_concurrent_hashmaps/)
-- url: https://www.reddit.com/r/rust/comments/eopxq5/announcing_dashmap_v3_taking_concurrent_hashmaps/
+## [11][Announcing caretaker - a simple and configurable file watcher](https://www.reddit.com/r/rust/comments/ep5co5/announcing_caretaker_a_simple_and_configurable/)
+- url: https://www.reddit.com/r/rust/comments/ep5co5/announcing_caretaker_a_simple_and_configurable/
 ---
-Today I am very happy to annouce v3 of my concurrent hashmap implementation [DashMap](https://github.com/xacrimon/dashmap). I did not make an announcement for v2 as it has some internal flaws that required API redesign.
+Hey, I'd like to announce my first crate :))) - caretaker. It watches for the changes in the filesystem and based on them executes the provided command. Can be use to automatically run unit tests, minify files or whatever.
+It is very simple to configure via a TOML file, such as:
 
-DashMap is a personal project created by my frustration caused by slowdowns due to
-the frequently used `RwLock&lt;HashMap&lt;K, V&gt;&gt;` which I see way to often.
-It tries to be close to a drop in replacement and expose a similar API.
+    [[watch]]
+    name = "print hello"
+    path = "src"
+    command = "echo \"hello world\""
 
-So, what changes have been made since I released v1?
+    [[watch]]
+    name = "compile sass"
+    path = "sass"
+    command = "sassc -t compressed sass/style.scss static/style.css"
 
-Most of the map has undergone redesign but here are the important bits.
-
-- Better iterator API
-
-- Entry API which tries to mimick `std::collections::HashMap`
-
-- Low level raw shard access support
-
-- Massively improved performance (see below)
-
-- Serde support
-
-- Common iterator traits implemented
-
-- Rustified and cleaner API
-
-- More relaxed trait bounds (v1 was much stricter than needed)
-
-So, what about performance you ask?
-
-Well to say that it is better than v1 is a mild understatement.
-I've been hard at work squeezing maximum performance. And it has paid off quite well.
-
-Below are some benchmarks I've ran on a i7-6700 with mild heat issues paired with 16 GiB of fancy Corsair memory.
-
-Keep in mind these benchmarks are far from perfect and I'd like more. This is something that I'm not super good at and any help is appreciated with open arms.
-
-https://raw.githubusercontent.com/xacrimon/dashmap/master/assets/bench-insert.svg?sanitize=true
-
-https://raw.githubusercontent.com/xacrimon/dashmap/master/assets/bench-get.svg?sanitize=true
-
-[Google Doc](https://docs.google.com/spreadsheets/d/1q2VR_rMZRzG7YO0ef6V0jMA6hAdkafh_wI8xvY_51fk/edit?usp=sharing)
-## [6][Tonic: 0.1 has arrived!](https://www.reddit.com/r/rust/comments/eomgrr/tonic_01_has_arrived/)
-- url: https://luciofran.co/tonic-0-1-release/
+[crates.io](https://crates.io/crates/caretaker) | [github] (https://github.com/grego/caretaker)
+## [12][Looking for a tool to detect orphaned .rs files](https://www.reddit.com/r/rust/comments/ep4u1o/looking_for_a_tool_to_detect_orphaned_rs_files/)
+- url: https://www.reddit.com/r/rust/comments/ep4u1o/looking_for_a_tool_to_detect_orphaned_rs_files/
 ---
+A couple of times recently, we've come across .rs files in our codebase, which are not actually used (ie. there is no corresponding \`mod\` declaration in the crate). It would be nice to catch these early, as it is nearly always a mistake.
 
-## [7][This Week in Veloren #50: Skeletons and Scrolling Combat Text](https://www.reddit.com/r/rust/comments/eowaxw/this_week_in_veloren_50_skeletons_and_scrolling/)
-- url: https://veloren.net/devblog-50/
----
-
-## [8][PoC libs for embedded programming based on HAL, DHT sensors driver and 8segments LED driver for TM16xx MCU](https://www.reddit.com/r/rust/comments/eoza8a/poc_libs_for_embedded_programming_based_on_hal/)
-- url: https://www.reddit.com/r/rust/comments/eoza8a/poc_libs_for_embedded_programming_based_on_hal/
----
-This one is for reading DHT11, DHT21, DHT22: [https://github.com/rustrum/dht-hal-drv](https://github.com/rustrum/dht-hal-drv)
-
-This one is to output something on 8 segment LED displays based on TM1637 or TM1638: [https://github.com/rustrum/tmledkey-hal-drv](https://github.com/rustrum/tmledkey-hal-drv)
-
-&amp;#x200B;
-
-You could combine these libraries together and create DIY thermometer/clocks on STM32, RaspberryPi or any other platform where is proper HAL implementation available.
-## [9][boxing-arena crate - Simple reuse of Box allocation](https://www.reddit.com/r/rust/comments/eozyq5/boxingarena_crate_simple_reuse_of_box_allocation/)
-- url: https://github.com/da-x/boxing-arena
----
-
-## [10][How is ownership independent of heap vs stack?](https://www.reddit.com/r/rust/comments/ep0s60/how_is_ownership_independent_of_heap_vs_stack/)
-- url: https://www.reddit.com/r/rust/comments/ep0s60/how_is_ownership_independent_of_heap_vs_stack/
----
-I came across this post [https://www.reddit.com/r/rust/comments/8kt5eq/ownership\_vs\_the\_stack\_and\_heap/](https://www.reddit.com/r/rust/comments/8kt5eq/ownership_vs_the_stack_and_heap/)
-
-In particular, there are at least two commenters saying "ownership is separate from stack/heap."
-
-&gt;The semantics of a language are generally *not* tied to implementation details such as Stack and Heap. Or otherwise said, the rules should apply whether or not a value is currently stored on the Stack, on the Heap, or maybe in Read-Only Memory.
-
-&amp;#x200B;
-
-&gt;Ownership and borrowing themselves are entirely separate from stack vs heap
-
-From what I gathered, an essential characteristic of ownership is that it "crosses off" everything created in the current scope from the stack whenever it exits that scope. How would you implement ownership with this cross-everything-off-on-scope-out feature if it wasn't relying on the stack architecture? How is ownership not tied to the concepts of stack/heap?
-
-Or maybe I misunderstood what they meant?
-## [11][bita 0.5.0 - New release of the low bandwidth file synchronization tool](https://www.reddit.com/r/rust/comments/eorgg0/bita_050_new_release_of_the_low_bandwidth_file/)
-- url: https://github.com/oll3/bita
----
-
-## [12][Response from bjorn3 on "Cranelift backend for Rust"](https://www.reddit.com/r/rust/comments/eojzjr/response_from_bjorn3_on_cranelift_backend_for_rust/)
-- url: https://github.com/bjorn3/rustc_codegen_cranelift/issues/863
----
-
+Before we look at writing a tool, does anything already exist like this?

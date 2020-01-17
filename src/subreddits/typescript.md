@@ -20,181 +20,141 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/typescript/comments/eph9wx/announcing_typescript_38_beta/)
+## [2][Recommended TypeScript game engines?](https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/)
+- url: https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/
+---
+I've been wanting to dabble into video game development so I'd figure it'd be easier for me to learn using something I'm the most familiar with which is TypeScript and JavaScript.
+
+Any recommendations from the sub for one?
+## [3][Angular + Web Components: a complete guide](https://www.reddit.com/r/typescript/comments/epx6k2/angular_web_components_a_complete_guide/)
+- url: https://medium.com/@Armandotrue/angular-web-components-a-complete-guide-5270e5b07e93
+---
+
+## [4][Non-undefined type guards by calling a function](https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/)
+- url: https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/
+---
+This non-undefined type guard works:
+
+    function f(x?: number) {
+      let y: number
+      if (x === undefined) throw 'undefined detected'
+      y = x // No compile error here
+    }
+
+Is there any way to get a type guard from calling a function?
+
+    function check(x?: number) {
+      if (x === undefined) throw 'undefined detected'
+    }
+    
+    function f(x?: number) {
+      let y: number
+      check(x)
+      y = x // Error: Type 'number | undefined' is not assignable to type 'number'.
+    }
+
+Is there any way to make this work? At the moment I'm using the non-null assertion operator `!` but I'm trying for a more elegant solution. Thanks.
+## [5][Function that reads the first line from a given file](https://www.reddit.com/r/typescript/comments/epzgr8/function_that_reads_the_first_line_from_a_given/)
+- url: https://www.reddit.com/r/typescript/comments/epzgr8/function_that_reads_the_first_line_from_a_given/
+---
+Hey everyone,
+
+In my TS project I needed a function that reads the first line from a file, so I took the JS example from [this SO post](https://stackoverflow.com/questions/28747719/what-is-the-most-efficient-way-to-read-only-the-first-line-of-a-file-in-node-js) and turned into a TS function, also adding support for handling multiple line endings. Please review my code and offer suggestions.
+
+    import fs from "fs";
+    
+    export const readFirstLine = (path: string) =&gt; new Promise&lt;string&gt;((resolve, reject) =&gt; {
+        const rs = fs.createReadStream(path, {encoding: "utf8"});
+    
+        let acc = "";
+        let pos = 0;
+    
+        rs
+            .on("data", chunk =&gt; {
+                acc += chunk;
+    
+                const indexCR = chunk.indexOf("\r");
+                const indexLF = chunk.indexOf("\n");
+    
+                if (indexCR === -1 &amp;&amp; indexLF === -1) {
+                    pos += chunk.length;
+                } else {
+                    pos += (indexCR !== -1 &amp;&amp; indexLF !== -1)
+                        ? Math.min(indexCR, indexLF) // [CRLF]
+                        : Math.max(indexCR, indexLF); // [CR] | [LF]
+    
+                    rs.close()
+                }
+            })
+            .on("close", () =&gt; resolve(acc.slice(0, pos)))
+            .on("error", e =&gt; reject(e))
+    });
+
+(It's a named arrow function out of personal preference (fewer blocks), but I'm open to suggestions if you prefer the classical `function` notation).
+
+**Update**: minor changes.
+## [6][Iterating over enums without waste writing duplicate code or](https://www.reddit.com/r/typescript/comments/epyjz6/iterating_over_enums_without_waste_writing/)
+- url: https://www.reddit.com/r/typescript/comments/epyjz6/iterating_over_enums_without_waste_writing/
+---
+Hi,  
+
+
+I'm new to TS and I'm working on a project with a lot of communication through binary data.  
+
+
+Oftentimes I get an integer value which is actually a bit field, and I have a list of it's possible values and I have to check which flags are stored in that field. This requires iterating over the possible flags.  
+
+
+So, in JS I have these objects with the lists of possible flags for a given field and their numeric value.  
+In TS I thought about migrating those objects to enums so that I can reference them in interfaces. However, I realized it's impossible to easily iterate over enums as TS automatically compiles those enums (them being numeric enums) to objects with a both a regular mapping of key to value and a reverse mapping of value to key.  
+This basically means I have to filter every object I iterate through and discard non-numeric values, which sounds very unidiomatic and inefficient, or I can write duplicate code where I basically write an interface for every possible object and it's implementation, so I use the object to iterate and I reference the interface for stuff like function parameters.  
+
+
+Is there anything obvious that I'm missing that I could use?  
+
+
+Thanks.
+## [7][Vscode keeps importing types with the new “import type ...” although I haven’t updated the project’s ts version to the beta yet](https://www.reddit.com/r/typescript/comments/epre4d/vscode_keeps_importing_types_with_the_new_import/)
+- url: https://www.reddit.com/r/typescript/comments/epre4d/vscode_keeps_importing_types_with_the_new_import/
+---
+Any ideas how to fix it?
+## [8][Can't get ahold of type definitions VS Code sees](https://www.reddit.com/r/typescript/comments/epp4z3/cant_get_ahold_of_type_definitions_vs_code_sees/)
+- url: https://www.reddit.com/r/typescript/comments/epp4z3/cant_get_ahold_of_type_definitions_vs_code_sees/
+---
+I have a newb question. I am using a third party npm package that has type definitions (if it matters, it's [aws-amplify](https://github.com/aws-amplify/amplify-js)). I know there are type definitions because VS Code complains when I assign a wrong type to a variable returned and expects a certain type. For instance:
+
+    import { Auth } from 'aws-amplify'
+    const session = Auth.getCurrentSession()
+    const idToken: string = session.getIdToken()  // Type 'CognitoIdToken' is not assignable to type 'string' ts(2322)
+
+
+However, how do I actually use those type definitions VS Code is seeing? Unfortunately for the above example, `CognitoIdToken` is not exported from 'aws-amplify', so I can't reference it in an `import` statement. Is there some manual way to get ahold the type definitions if they are not exported?
+
+Thank you.
+
+EDIT: formatting
+## [9][MikroORM 3: Knex.js, CLI, Schema Updates, Entity Generator and more…](https://www.reddit.com/r/typescript/comments/eppx0n/mikroorm_3_knexjs_cli_schema_updates_entity/)
+- url: https://medium.com/@b4nan/mikro-orm-3-knex-js-cli-schema-updates-entity-generator-and-more-e51ecbbc508c
+---
+
+## [10][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/typescript/comments/eph9wx/announcing_typescript_38_beta/)
 - url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/
 ---
 
-## [3][Foal TS - January release (version 1.5) - LinkedIn and Github social support, customizable exception handler, higher CSRF protection](https://www.reddit.com/r/typescript/comments/ephuc9/foal_ts_january_release_version_15_linkedin_and/)
-- url: https://www.reddit.com/r/typescript/comments/ephuc9/foal_ts_january_release_version_15_linkedin_and/
+## [11][[Help] How to access unknown properties of unknown object?](https://www.reddit.com/r/typescript/comments/eplsh0/help_how_to_access_unknown_properties_of_unknown/)
+- url: https://www.reddit.com/r/typescript/comments/eplsh0/help_how_to_access_unknown_properties_of_unknown/
 ---
-Foal TS framework version 1.5 is officially released!
 
-LinkedIn and Github social support, customizable exception handler, higher CSRF protection, discover the new features of version 1.5 here: [https://github.com/FoalTS/foal/releases/tag/v1.5.0](https://github.com/FoalTS/foal/releases/tag/v1.5.0)
-
-&amp;#x200B;
-
-[Foal TS - January release \(version 1.5\)](https://preview.redd.it/jlt8b9k9g4b41.png?width=1054&amp;format=png&amp;auto=webp&amp;s=3b7b4c2bd0897a5e7ea14e6bfdd5a1bdce2d79b8)
-
-Foal, in a few words, it's a Node.js framework:
-
-* written in TypeScript
-* supplied with batteries included (Auth, OpenAPI, GraphQL, ORM, CLI, ...)
-* and with a simple and intuitive architecture (no over-engineering).
-
-And the must: it has more than 11,000 lines of documentation.
-
-[Example of error handling](https://preview.redd.it/mzo3jo2cg4b41.png?width=1804&amp;format=png&amp;auto=webp&amp;s=df1aff998feef849ea8a25eefe32adcc1c539ca9)
-
-[https://foalts.org](https://foalts.org/)
-
-[https://github.com/FoalTS/foal](https://github.com/FoalTS/foal)
-
-[https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
-
-\#TypeScript #NodeJS #javascript #LinkedIn #Github #webdevelopment
-## [4][[Help] ECMA6 + VScode](https://www.reddit.com/r/typescript/comments/epj6gh/help_ecma6_vscode/)
-- url: https://www.reddit.com/r/typescript/comments/epj6gh/help_ecma6_vscode/
----
-I started to test my logic skills in CodeWars, but CodeWars don't accept latest version of ecma. There is a way to my eslint or typescript shows me a warning or error when I write a function or somethint that doesn't exist or is not accepted in ecma6?
-
-&amp;#x200B;
-
-To answer curiosity I'm using VSCODE.
-## [5][Is there a way to deconstruct params AND define the interface in a single call?](https://www.reddit.com/r/typescript/comments/epen4f/is_there_a_way_to_deconstruct_params_and_define/)
-- url: https://www.reddit.com/r/typescript/comments/epen4f/is_there_a_way_to_deconstruct_params_and_define/
----
-No destructuring
+I have a function that receives an `unknown` argument and tries to call a method of it.
 
 ```
-
-function printName(param: {firstName: string, lastName: string}) {
-
-console.log(param.firstName + ' ' + param.lastName)
-
+function toJS(obj?:unknown):object | null {
+  return obj != null
+  &amp;&amp; typeof obj === "object"
+  &amp;&amp; obj !== null &amp;&amp;
+  ( "toJS" in obj || obj.hasOwnProperty("toJS") ) &amp;&amp;
+  typeof obj.toJS === "function" ? obj.toJS() : null;
 }
-
 ```
 
-&amp;#x200B;
-
-Define interface
-
-```interface Name {
-
-firstName: string,
-
-lastName: string
-
-}
-
-function printName(param: Name) {
-
-console.log(param.firstName + ' ' + param.lastName)
-
-}
-
-```
-
-&amp;#x200B;
-
-Destructuring + Inline Interface
-
-```
-
-function printName({ firstName, lastName }: { firstName: string; lastName: string }) {
-
-console.log(firstName + ' ' + lastName)
-
-}
-
-```
-
-&amp;#x200B;
-
-Now I'm wondering, is there a way to have destructuring so that I don't need to call param.&lt;something&gt;, but at the same time having it inline? Perhaps something like this:
-
-```
-
-function printName({ firstName: string; lastName: string }) {
-
-console.log(firstName + ' ' + lastName)
-
-}
-
-```
-
-Destructuring + Inline Interface is kinda annoying because you need to redeclare everything twice. Is there anything I can write that does destructuring but also defines the type at the same time?
-## [6][I created a Fitbit app using TypeScript](https://www.reddit.com/r/typescript/comments/ep2rye/i_created_a_fitbit_app_using_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/ep2rye/i_created_a_fitbit_app_using_typescript/
----
-As the title says, I want to share [this small Fitbit app](https://github.com/Shpota/zeit) with you. I posted it in this sub when I initially created it, but since then I changed the app, applied improvements, released it to the store, and got feedback from users. 
-
-It is my pet project and I don't use TypeScript at work that's why I was glad that I could implement applications like this with TypeScript.
-
-I would love to get any kind of feedback
-
-https://github.com/Shpota/zeit
-## [7][One hidden benefit of TS I haven't seen discussed](https://www.reddit.com/r/typescript/comments/ep8h1v/one_hidden_benefit_of_ts_i_havent_seen_discussed/)
-- url: https://www.reddit.com/r/typescript/comments/ep8h1v/one_hidden_benefit_of_ts_i_havent_seen_discussed/
----
-Example documentation:
-
-    get(options?: GetOptions): Promise&lt;DocumentSnapshot&lt;T&gt;&gt;
-
-In all the courses I took and all the toy projects I built my first 2 years, none of them ever explained what the above was. I sort of understood what something like `.set(path [, options])` after much time and frustration. But the above was another level.
-
-Once could guess the meaning of ? and probably pick up the type hinting after learning a 2nd language, but that final bit with the Promise and generic was always a source of pain and confusion.
-
-Feels like a large gap in the current educational landscape to be honest. TS fills it perfectly because by some magical coincidence it seems to match most complex documentation's syntax exactly.
-
-Finally, I can read!
-## [8][What is the correct way to do type checking here](https://www.reddit.com/r/typescript/comments/ep55ak/what_is_the_correct_way_to_do_type_checking_here/)
-- url: https://www.reddit.com/r/typescript/comments/ep55ak/what_is_the_correct_way_to_do_type_checking_here/
----
-I thought I would know this, having worked with TS for 2 months now. But I'm running into issues:
-
-    export enum RuleTypes {global, inventory, product, blacklist}
-    
-    export interface GlobalRuleSchema {
-      storeId: string
-      , globalPercent : number
-    }
-    
-    // inside a class
-      verifySchemaIsCorrect(type: RuleTypes, recordData: unknown) {
-        let schemaMatches: boolean;
-        
-        switch (+type) { // + needed for number coercion as per SO
-          case type.global: // TS2339: Property 'global' does not exist on type 'RuleTypes'.
-            schemaMatches = typeof recordData === GlobalRuleSchema; // TS2693: 'GlobalRuleSchema' only refers to a type, but is being used as a value here
-            break;
-          default:
-            schemaMatches = false;
-        }    
-    
-        if (Boolean(schemaMatches)) {
-          return true;
-        }
-        
-        throw Error("recordData's shape is wrong against its schema");
-      }
-
-What is the correct way to ensure the interface on `recordData` matches the desired enum value on `type` ?
-## [9][Hopa - zero config CLI for runs JavaScript and TypeScript](https://www.reddit.com/r/typescript/comments/ep18kf/hopa_zero_config_cli_for_runs_javascript_and/)
-- url: https://krasimirtsonev.com/blog/article/hopa-javascript-typescript-runner
----
-
-## [10][How to group related interfaces?](https://www.reddit.com/r/typescript/comments/ep13fr/how_to_group_related_interfaces/)
-- url: https://www.reddit.com/r/typescript/comments/ep13fr/how_to_group_related_interfaces/
----
-I'm creating some schemas for Cloud Firestore and was curious if there are best practices for grouping interfaces. 
-
-I don't think they can be grouped inside a class so is there any other way to encapsulate them together? 
-
-Also, at the file level what do you guys do?
-
-I'm currently putting them in /shared/interfaces.ts. My project's scope is relatively small and has both the back and front end in other folders. I thought it would be good for both ends to share the interface file so that they adhere to the same type definitions.
-## [11][TypeScript Tip of the Week](https://www.reddit.com/r/typescript/comments/epb8ur/typescript_tip_of_the_week/)
-- url: https://medium.com/@sredmond/typescript-tip-of-the-week-using-classes-interfaces-6a0570f46750
----
-
+When I try to check if `toJS` exists using the `typeof` operator, I get `[tsserver 2339] [E] Property 'toJS' does not exist on type 'object'`. Is there any solution for this? How much should I check my argument to inspect its methods?

@@ -29,80 +29,94 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
 Also check out [last week's thread](https://reddit.com/r/rust/comments/ekpqp7/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (3/2020)?](https://www.reddit.com/r/rust/comments/eo6qjo/whats_everyone_working_on_this_week_32020/)
-- url: https://www.reddit.com/r/rust/comments/eo6qjo/whats_everyone_working_on_this_week_32020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-3-2020/36867?u=llogiq)!
-## [3][Mozilla lays off 70 people as non-search revenue fails to materialize](https://www.reddit.com/r/rust/comments/epe3pw/mozilla_lays_off_70_people_as_nonsearch_revenue/)
-- url: https://arstechnica.com/gadgets/2020/01/mozilla-lays-off-70-people-as-non-search-revenue-fails-to-materialize/
----
-
-## [4][Exposing C and Rust APIs: some thoughts from librsvg](https://www.reddit.com/r/rust/comments/epg83p/exposing_c_and_rust_apis_some_thoughts_from/)
-- url: https://people.gnome.org/~federico/blog/exposing-c-and-rust-apis.html
----
-
-## [5][Epoll, Kqueue and IOCP Explained with Rust](https://www.reddit.com/r/rust/comments/ephm4t/epoll_kqueue_and_iocp_explained_with_rust/)
-- url: https://cfsamsonbooks.gitbook.io/exploring-epoll-kqueue-and-iocp/
----
-
-## [6][Programming Servo: three years, 100 commits.](https://www.reddit.com/r/rust/comments/epfji8/programming_servo_three_years_100_commits/)
-- url: https://www.reddit.com/r/rust/comments/epfji8/programming_servo_three_years_100_commits/
----
-Some observations from a three years of contributions to Servo, on the following topics:
-
-\- Community works
-
-\- Incremental progress works
-
-\- The native thread is dead, long live the native thread!
-
-[https://medium.com/programming-servo/programming-servo-three-years-100-commits-a3cbfb06ff23](https://medium.com/programming-servo/programming-servo-three-years-100-commits-a3cbfb06ff23)
-## [7][This Week in Rust 321](https://www.reddit.com/r/rust/comments/epinfr/this_week_in_rust_321/)
+## [2][This Week in Rust 321](https://www.reddit.com/r/rust/comments/epinfr/this_week_in_rust_321/)
 - url: https://this-week-in-rust.org/blog/2020/01/14/this-week-in-rust-321/
 ---
 
-## [8][why String's trim returns &amp;str?](https://www.reddit.com/r/rust/comments/epibhn/why_strings_trim_returns_str/)
-- url: https://www.reddit.com/r/rust/comments/epibhn/why_strings_trim_returns_str/
+## [3][actix_web repository cleared by author who says he’s done with open source](https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/)
+- url: https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/
 ---
-Why doesn't it return the same String type?
-## [9][Rust jokes needed!](https://www.reddit.com/r/rust/comments/eozzje/rust_jokes_needed/)
-- url: https://www.reddit.com/r/rust/comments/eozzje/rust_jokes_needed/
+He tweeted [“I am done with open source.”](https://twitter.com/fafhrd91/status/1218135374339301378) and has moved `actix-web` and `actix-net` to his personal account with a postmortem left in the original repo: https://github.com/actix/actix-web. I’ll leave the quoted text here as well:
+
+&gt; ##Actix prject postmortem
+
+&gt; Another day, another "unsafe shitstorm”, I guess I get used to it.
+
+&gt; It is interesting how easy to move comment out of context and how hard to comment with very clear intention (especially if you are not native speaker) What was the patch? It was very strait forward, simple, uncreative change, intention was just to remove unsafe not to fix existing code. I believe software development is one of the most creative work we do, and creativity is part of why we love software development, why it is fun. Especially if you combine it with real world projects constraints. “creative constrains” could be source of very interesting solutions. Being on the edge of your abilities is super fun. So uncreative change felt boring (oh! And author gave up copyright claims for that patch (a bit irony and sarcasm)). I’ve never used unsafe unintentionally, I use it because I believe usage is safe. There was no any malicious intentions. I believed it held mutable aliasing invariant and I was very happy that someone found real problem. I wanted to solve the problem, just with a bit of creativity. And use RefCell solution only if it would be not possible to solve it with any other way. Btw, I like the solution I found, it is in master and solves the problem at least one from the issue. If you want to push boundaries you have to touch this boundaries and sometimes you push too hard.
+
+&gt; Be a maintainer of large open source project is not a fun task. You alway face with rude and hate, everyone knows better how to build software, nobody wants to do home work and read docs and think a bit and very few provide any help. Seems everyone believes there is large team behind actix with unlimited time and budget. (Btw thanks to everyone who provided prs and other help!) For example, async/await took three weeks 12 hours/day work stint, quite exhausting, and what happened after release, I started to receive complaints that docs are not updated and i have to go fix my shit. Encouraging. You could notice after each unsafe shitstorm, i started to spend less and less time with the community. You felt betrayed after you put so much effort and then to hear all this shit comments, even if you understand that that is usual internet behavior. Anyway, removing issue was a stupid idea. But I was pissed off with last two personal comments, especially while sitting and thinking how to solve the problem. I am sorry for doing that.
+
+&gt; It’s been three years since I started actix project (time flies). I learnt a lot, i meet new people, I found language that I really like and want to use it fulltime, I found fun job. But damage to the project's reputation is done and I don’t think it is possible to recover. Actix always will be “shit full of UB” and “benchmark cheater”. (Btw, with tfb benchmark I just wanted to push rust to the limits, I wanted it to be on the top, I didn’t want to push other rust frameworks down.) Everything started with actix, then actix-web and then actix-net. It took a lot of time to design api and architecture. Each of this projects was rewritten from scratch at least 4-5 time. I hope I expanded some boundaries and found few new patterns, I hope other developers will check source code and find inspiration to move even further. Nowadays supporting actix project is not fun, and be part of rust community is not fun as well.
+
+&gt; I am done with open source.
+
+&gt; P.S. I moved actix-net and actix-web project to my personal github account. I will make decision during next couple days what to do. I don’t want to see the project becomes ghost of what it was. Maintainers must understand how everything work, but don’t anyone who does and those who could are busy with other projects. At the moment I am planing to make repos private and then delete them (will remove benchmarks as well), unless others suggest better ideas.
+
+&gt; Everything has to come to the end. It was fun trip but now is time to move on. Life should be fun.
+## [4][I've smoke-tested Rust HTTP clients. Here's what I found](https://www.reddit.com/r/rust/comments/epoloy/ive_smoketested_rust_http_clients_heres_what_i/)
+- url: https://medium.com/@shnatsel/smoke-testing-rust-http-clients-b8f2ee5db4e6
 ---
-UPDATE: Well, because you all were so willing to help and comment this post popped up in his feed. The jig is up!! He's SUPPOSED TO BE STUDYING for exams so I thought I could fly under the radar! But so it goes, he really appreciated it and we both appreciate all the jokes and suggestions you guys provided! I honestly learned a ton, can't say I won't be back for some other help... (Also I have a little something else up my sleeve and I've made him promise not to go snooping) 
 
-If people are still interested I can post what I do make, though it probably won't be rust related! Thank you again for being so sweet and amazing and helping me so much!!!
-
-Hey everyone! 
-
-I'm looking for the best rust puns/jokes you can manage! My boyfriend loves rust, as well as a few other languages. Due to a couple different things he's having a rough time in life at the moment. I wanted to make something that would give him a laugh and hopefully help him feel a bit better. My plan is to find an amazing and terrible pun/joke and embroider it on a t-shirt for him! 
-
-I am of course not a programmer so I have no idea where else to turn for these. I've enlisted his friends for final approval and to make sure they actually make sense (because I have no idea!) Hopefully he doesn't follow this sub... 
-
-Thank you for your help!
-## [10][Announcing v0.2 of SQLx (the async, pure, safe Rust SQL crate featuring compile-time checked queries without a DSL), now with support for Tokio, TLS, and transactions](https://www.reddit.com/r/rust/comments/ep0mgf/announcing_v02_of_sqlx_the_async_pure_safe_rust/)
-- url: https://github.com/launchbadge/sqlx/blob/62e1df5ad9454696fc2c75b78c3190f801fcecde/CHANGELOG.md#020---2020-01-15
+## [5][The extreme async runtime crate, in its entirety](https://www.reddit.com/r/rust/comments/epzcxd/the_extreme_async_runtime_crate_in_its_entirety/)
+- url: https://i.redd.it/mylqj8e8ubb41.png
 ---
 
-## [11][Announcing caretaker - a simple and configurable file watcher](https://www.reddit.com/r/rust/comments/ep5co5/announcing_caretaker_a_simple_and_configurable/)
-- url: https://www.reddit.com/r/rust/comments/ep5co5/announcing_caretaker_a_simple_and_configurable/
+## [6][Actix-net unsoundness patch "is boring"](https://www.reddit.com/r/rust/comments/epszt7/actixnet_unsoundness_patch_is_boring/)
+- url: https://www.reddit.com/r/rust/comments/epszt7/actixnet_unsoundness_patch_is_boring/
 ---
-Hey, I'd like to announce my first crate :))) - caretaker. It watches for the changes in the filesystem and based on them executes the provided command. Can be use to automatically run unit tests, minify files or whatever.
-It is very simple to configure via a TOML file, such as:
+There's an [issue](https://github.com/actix/actix-net/issues/83) on Actix-net pointing out and presenting unsoundness. Yes, it's deleted, it still can be found on [web archive](http://web.archive.org/web/20200116231317/https://github.com/actix/actix-net/issues/83).
 
-    [[watch]]
-    name = "print hello"
-    path = "src"
-    command = "echo \"hello world\""
+Issue history summary:
 
-    [[watch]]
-    name = "compile sass"
-    path = "sass"
-    command = "sassc -t compressed sass/style.scss static/style.css"
+1. Found by Shnatsel
+2. Closed as harmless to users by fafhrd91
+3. Proven harmful to users by Nemo157 and reopened by JohnTitor
+5. Fixed and closed by fafhrd91
+6. Proven unfixed and proposed new patch by Nemo157
+7. New patch commented "this patch is boring" by fafhrd91
+8. Issue is deleted
+9. Fix is reversed by fafhrd91, issue still present
 
-[crates.io](https://crates.io/crates/caretaker) | [github] (https://github.com/grego/caretaker)
-## [12][Looking for a tool to detect orphaned .rs files](https://www.reddit.com/r/rust/comments/ep4u1o/looking_for_a_tool_to_detect_orphaned_rs_files/)
-- url: https://www.reddit.com/r/rust/comments/ep4u1o/looking_for_a_tool_to_detect_orphaned_rs_files/
+I hope it's an objective summary. Any thoughts?
+
+Edit: Now whole actix/actix-web is deleted. See fafhrd91's [postmortem](https://github.com/actix/actix-web). He kept  copy of Actix-web in personal repo [fafhrd91/actix-web](https://github.com/fafhrd91/actix-web).
+## [7][Microsoft's Rust inspired research language has been released](https://www.reddit.com/r/rust/comments/eq089q/microsofts_rust_inspired_research_language_has/)
+- url: https://github.com/microsoft/verona
 ---
-A couple of times recently, we've come across .rs files in our codebase, which are not actually used (ie. there is no corresponding \`mod\` declaration in the crate). It would be nice to catch these early, as it is nearly always a mistake.
 
-Before we look at writing a tool, does anything already exist like this?
+## [8][warp v0.2: the composable web server framework](https://www.reddit.com/r/rust/comments/epo5w3/warp_v02_the_composable_web_server_framework/)
+- url: https://seanmonstar.com/post/190293882502/warp-v02
+---
+
+## [9][More Actix drama?](https://www.reddit.com/r/rust/comments/epyyky/more_actix_drama/)
+- url: https://github.com/actix/actix-web/blob/7f39beecc3efb1bfdd6a79ffef166c09bf982fb0/README.md
+---
+
+## [10][What should I choose in post actix-web era for web server?](https://www.reddit.com/r/rust/comments/eq0375/what_should_i_choose_in_post_actixweb_era_for_web/)
+- url: https://www.reddit.com/r/rust/comments/eq0375/what_should_i_choose_in_post_actixweb_era_for_web/
+---
+Why change:
+- https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/
+- https://www.reddit.com/r/rust/comments/epszt7/actixnet_unsoundness_patch_is_boring/
+
+What looks more promising?
+- https://github.com/seanmonstar/warp
+- https://github.com/http-rs/tide
+- https://github.com/carllerche/tower-web
+
+More:
+- https://github.com/flosse/rust-web-framework-comparison
+- https://www.arewewebyet.org/topics/frameworks/
+
+EDIT: Looking at examples of those 3, warp has the most.
+- https://github.com/seanmonstar/warp/tree/master/examples
+- https://github.com/carllerche/tower-web/tree/master/examples
+- https://github.com/http-rs/tide/tree/master/examples
+## [11][specs future](https://www.reddit.com/r/rust/comments/epxq6e/specs_future/)
+- url: https://www.reddit.com/r/rust/comments/epxq6e/specs_future/
+---
+what is the status of the specs ecs ? i used it for a project, and with all the buzz around legion, i'm asking myself if it has a future...
+## [12][An Idea I Had On Shells](https://www.reddit.com/r/rust/comments/epxw2v/an_idea_i_had_on_shells/)
+- url: https://gist.github.com/arzg/d76c61041abafb71c02e2800bb762ed7
+---
+

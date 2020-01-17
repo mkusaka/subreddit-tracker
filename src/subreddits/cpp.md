@@ -57,92 +57,104 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][C++ Objects, their lifetimes and pointer to objects](https://www.reddit.com/r/cpp/comments/epgxj6/c_objects_their_lifetimes_and_pointer_to_objects/)
-- url: https://blog.panicsoftware.com/objects-their-lifetimes-and-pointers/
+## [2][How can I handle both structured exceptions and C++ exceptions potentially coming from the same source?](https://www.reddit.com/r/cpp/comments/epwpx3/how_can_i_handle_both_structured_exceptions_and_c/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200116-00/?p=103333
 ---
 
-## [3][I built a site to search C++ libraries based on the awesome C++ github list, with sort, filtering, and extra meta information for each library](https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/)
+## [3][Why were abbrev. lambdas rejected?](https://www.reddit.com/r/cpp/comments/epq4ui/why_were_abbrev_lambdas_rejected/)
+- url: https://brevzin.github.io/c++/2020/01/15/abbrev-lambdas/
+---
+
+## [4][New Accuracy Improvements for Remote Linux IntelliSense in both CMake and VS projects | C++ Team Blog](https://www.reddit.com/r/cpp/comments/epvue6/new_accuracy_improvements_for_remote_linux/)
+- url: https://devblogs.microsoft.com/cppblog/improvements-to-accuracy-and-performance-of-linux-intellisense/
+---
+
+## [5][CppCast: Conference Organizing](https://www.reddit.com/r/cpp/comments/epv9v3/cppcast_conference_organizing/)
+- url: https://cppcast.com/cpp-conference-organizing/
+---
+
+## [6][I built a site to search C++ libraries based on the awesome C++ github list, with sort, filtering, and extra meta information for each library](https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/)
 - url: https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/
 ---
  [https://lucidindex.com/cpp](https://lucidindex.com/cpp)
-## [4][Preferred solution for making projects work on anyone's machine?](https://www.reddit.com/r/cpp/comments/epdgn7/preferred_solution_for_making_projects_work_on/)
-- url: https://www.reddit.com/r/cpp/comments/epdgn7/preferred_solution_for_making_projects_work_on/
+## [7][Software Development Blog](https://www.reddit.com/r/cpp/comments/epyj39/software_development_blog/)
+- url: https://www.reddit.com/r/cpp/comments/epyj39/software_development_blog/
 ---
-This is more a CMake / build system question than a C++ one, but I just wanted to get some opinions.
+All, I have been working on my blog for over two years now. I switched to a C++ job little over a year ago and thus have been focusing on C++ a bit more.
 
-I'm working on a few side projects and I have them on my Github, but it's fairly hard for other people to build them. In particular, the flow looks something like this:
+If you are interested in reading some things. The topics are not very deep since I lack the proper knowledge about C++. There are also plenty of topic not related to C++.
 
-&amp;#x200B;
+Let me know what you think so I can grow.
 
-&gt;1) Checkout the git repo  
-&gt;  
-&gt;2) Install dependencies manually (from README)  
-&gt;  
-&gt;3) Edit the CMake module files (Find&lt;Lib&gt;.cmake) to point to installed dependency on their PC  
-&gt;  
-&gt;4) Run CMake
-
-What is the best way to skip step 3 (and preferably step 2)?
-
-Should I just write a build script, as there's no package manager? How would it work across OSes (I want to support Mac and Linux at the very least - and then you have the various distros).
-
-Thanks!
-## [5][2 Lines Of Code and 3 C++17 Features - The overload Pattern (updated with C++20 notes)](https://www.reddit.com/r/cpp/comments/ep7gjm/2_lines_of_code_and_3_c17_features_the_overload/)
-- url: https://www.bfilipek.com/2019/02/2lines3featuresoverload.html
+[https://cvesters.wordpress.com](https://cvesters.wordpress.com)
+## [8][Excel file to C++ mobile app??](https://www.reddit.com/r/cpp/comments/eq09k7/excel_file_to_c_mobile_app/)
+- url: https://www.reddit.com/r/cpp/comments/eq09k7/excel_file_to_c_mobile_app/
 ---
+Hi,
 
-## [6][What is this communities opinion on c++11 as a first language?](https://www.reddit.com/r/cpp/comments/ep1s2i/what_is_this_communities_opinion_on_c11_as_a/)
-- url: https://www.reddit.com/r/cpp/comments/ep1s2i/what_is_this_communities_opinion_on_c11_as_a/
----
-A bit of context, I have been teaching programming for about two years now and it’s all been through a c/c++ based curriculum that eventually also teaches web development via python later. As expected whenever I talk to other swe's the first question is often why not python. As I’m venturing into the new year and continuing I’m debating on the best route forward and would love to hear the thoughts of people in the community.
-## [7][cl /PH or #pragma file_hash](https://www.reddit.com/r/cpp/comments/ep77ey/cl_ph_or_pragma_file_hash/)
-- url: https://www.reddit.com/r/cpp/comments/ep77ey/cl_ph_or_pragma_file_hash/
----
-Visual Studio 2019 Command Prompt:
+I create a really good financial excel file that have a lot of potential and I would like to create a mobile app with it. I am a beginner with C++ and really not that good with programming. I was wondering if it's the good way to create it by using C++ and also if there was a easier way to create it by just convert my excel file into a C++ language?   
 
-    cl /?
-    Microsoft (R) C/C++ Optimizing Compiler Version 19.24.28315 for x86
-    Copyright (C) Microsoft Corporation.  All rights reserved.
-    ...
-                                  -PREPROCESSOR-
-    ...
-    /PH generate #pragma file_hash when preprocessing
 
-I couldn't find anything about either `/PH` or `#pragma file_hash` online, but it seems that it calculates the file hash in one or more formats, MD5 by default:
+If you guys have a good tutorial that I can follow or just give me good advice to start that project, it will help me a lot!   
 
-    cl 1.cpp /E /PH
-    1.cpp
-    #line 1 "1.cpp"
-    #pragma file_hash("1.cpp", MD5="ecaa88f7fa0bf610a5a26cf545dcd3aa")
 
-MSVC guys, what exactly does this option do? Can it be used to speed up our builds, something ccache-like? Or it's just some internal stuff, accidentally leaked into the help page?
-## [8][naïve function call with named params in c++20 (designated init + macros)](https://www.reddit.com/r/cpp/comments/ep2dd5/naïve_function_call_with_named_params_in_c20/)
-- url: https://www.reddit.com/r/cpp/comments/ep2dd5/naïve_function_call_with_named_params_in_c20/
----
-[https://godbolt.org/z/LY3oS8](https://godbolt.org/z/LY3oS8)
-
-shame I cannot find a way to make the syntax prettier.
-## [9][Great examples of C++ repos for learning?](https://www.reddit.com/r/cpp/comments/epeyzz/great_examples_of_c_repos_for_learning/)
-- url: https://www.reddit.com/r/cpp/comments/epeyzz/great_examples_of_c_repos_for_learning/
----
-My Cpp skills are rusty, and I'm trying to brush up on the language as it is best used in 2020.
-
-Are there any github repos you could recommend?
-## [10][HPX 1.4.0 released](https://www.reddit.com/r/cpp/comments/ep3e47/hpx_140_released/)
-- url: https://stellar-group.org/2020/01/hpx-1-4-0-released/
+Thank you!
+## [9][C++ 2020 News](https://www.reddit.com/r/cpp/comments/epzaw9/c_2020_news/)
+- url: https://cppcast.com/cpp-2020-news/
 ---
 
-## [11][potential pitfall of abbreviated templates and generic lambdas on default arguments?](https://www.reddit.com/r/cpp/comments/ep3uep/potential_pitfall_of_abbreviated_templates_and/)
-- url: https://www.reddit.com/r/cpp/comments/ep3uep/potential_pitfall_of_abbreviated_templates_and/
+## [10][POD Struct Serialisation Using Type Punning](https://www.reddit.com/r/cpp/comments/epz9ex/pod_struct_serialisation_using_type_punning/)
+- url: https://www.reddit.com/r/cpp/comments/epz9ex/pod_struct_serialisation_using_type_punning/
 ---
-see: [https://godbolt.org/z/yGIypM](https://godbolt.org/z/yGIypM)
+I wanted to figure out a way to serialise a POD struct into a vector of bytes. My application is to serialise some game state objects in my game so they can be saved to file, and at some point be retrieved again using the reverse process.
 
-I think we might want to change the wording for `auto` parameters when a default argument is provided in the next C++ version to fix this corner case.
+I'm using #pragma pack(1)to force alignment to 1 byte.
 
-&amp;#x200B;
+To do the serialisation, I'm simply casting the whole struct to void\*then to unsigned char\*and then using the resulting pointer to initialise the vector using make\_unique.
 
-while some of you might wonder what's the use of `auto` parameters with default arguments, here I give you another less trivial example: [https://godbolt.org/z/5uoak4](https://godbolt.org/z/5uoak4)
+I'm relatively new to c++, and I'm wondering if it is safe to do these kind of things. Here are a few of my burning questions:
 
-here we have a function `aggregate()` that takes a list of values and somehow merges them into one, by default it merges values by summation (operator+) which is very intuitive, but you can also specify your own merging function to calculate the product or the mathematical expectation of the values.
+1. Is the struct memory layout guaranteed?
+2. Is the struct size guaranteed given that I'm forcing packing to the nearest byte?
+3. How might I handle when more complex data is inside the struct, e.g. a vector or another struct? I guess I'd need to do some kind of recursive serialisation in that case.
+4. Any neat preprocessor tricks that might help me flip the endianness with little effort?
+5. Would it be safe to go in the opposite direction; deserialising by casting an unsigned char\[\]back to the struct type?
 
-since the type of the merging function is totally unknown, it could be anything callable, it might even be stateful like `dot` which we use to calculate the expectation, we simply declare the parameter as `auto`, however it should be addition by default unless the user specified a custom merging function, and here, we have an `auto` parameter, and it makes sense for it to have a default argument.
+Code below is an example of what I'm talking about. Runs in [Godbolt](https://godbolt.org/z/yoUxfZ). Clone of my question on [Stackoverflow](https://stackoverflow.com/questions/59786566/pod-struct-serialisation-using-type-punning).
+
+    #include &lt;iostream&gt;
+    #include &lt;memory&gt;
+    #include &lt;vector&gt;
+    
+    #pragma pack(1)
+    struct PODStruct {
+        unsigned char a;
+        unsigned int b;
+        unsigned int c;
+    
+        std::unique_ptr&lt;std::vector&lt;unsigned char&gt;&gt; serialise() const;
+    };
+    #pragma pack()
+    
+    std::unique_ptr&lt;std::vector&lt;unsigned char&gt;&gt; PODStruct::serialise() const {
+        auto rawChar = (unsigned char*)((void*)this);
+        auto serDataPtr = std::make_unique&lt;std::vector&lt;unsigned char&gt;&gt;(rawChar, rawChar + sizeof(PODStruct));
+        return serDataPtr;
+    }
+    
+    int main() {
+        PODStruct foo = {0x38, 0x34353637, 0x30313233};
+    
+        auto bar = foo.serialise();
+    
+        for (auto byte : *bar) {
+            std::cout &lt;&lt; byte &lt;&lt; std::endl; 
+        }
+    
+        std::cout &lt;&lt; "Size (bytes): " &lt;&lt; bar-&gt;size() &lt;&lt; std::endl;
+        return 0;
+    }
+## [11][C++ Objects, their lifetimes and pointer to objects](https://www.reddit.com/r/cpp/comments/epgxj6/c_objects_their_lifetimes_and_pointer_to_objects/)
+- url: https://blog.panicsoftware.com/objects-their-lifetimes-and-pointers/
+---
+

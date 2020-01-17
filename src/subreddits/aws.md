@@ -1,83 +1,115 @@
 # aws
-## [1][Anybody have a good (spark?) recipe for transferring from Aurora PostgreSQL 9.6 to Aurora PostgreSQL 10/11?](https://www.reddit.com/r/aws/comments/epdk3a/anybody_have_a_good_spark_recipe_for_transferring/)
-- url: https://www.reddit.com/r/aws/comments/epdk3a/anybody_have_a_good_spark_recipe_for_transferring/
+## [1][You’ve heard it before, outrageous bill on accident](https://www.reddit.com/r/aws/comments/eq08s9/youve_heard_it_before_outrageous_bill_on_accident/)
+- url: https://www.reddit.com/r/aws/comments/eq08s9/youve_heard_it_before_outrageous_bill_on_accident/
 ---
-DMS still does not properly support PostgreSQL and dies on some of my tables. Unfortunately the tables that don't work on DMS contain over 250 million rows and are not CSV friendly.
+I created a s3 event to compliment my lambda function with a object created event. What I didn’t think of was, my lambda creates s3 objects. So after testing my cool new event and seeing it worked I unknowingly tucked into bed and fell into a deep slumber. Upon waking in the morning I got a AWS free tier limit email. This got me thinking, logged into AWS and see the event is working too good. It’s been running my lambda non stop since last night. I finally got the event to stop after disabling didn’t work I deleted. Got it. As I head over to the billing console I notice a $900 bill. Oh shhhhh. 
 
-I've had some success with Apache Spark reading the source DB table in to a dataframe and then writing the DF to the target DB table. I have been using a single instance with Spark-Shell. Unfortunately, even on a machine with 64gb of RAM and 50gb committed to the Spark JVM, I am getting OOM errors. Unfortunately I haven had much success getting Spark to read+write in smaller batches or to find decent batch-load examples. I'm excited about Spark because you can do a diff of two tables and it seems like the perfect solution for my FB migration.
-
-How have you tackled the Aurora pg9 to Aurora pg10/11 migration?
-
-Do you have a Spark/EMR recipe that worked for you?
-## [2][Re:Invent 2019 DOP301 removed from YouTube](https://www.reddit.com/r/aws/comments/ep4s1u/reinvent_2019_dop301_removed_from_youtube/)
-- url: https://www.reddit.com/r/aws/comments/ep4s1u/reinvent_2019_dop301_removed_from_youtube/
+Can this be undone?
+## [2][Suggestion: AWS console browser notification](https://www.reddit.com/r/aws/comments/epu5i9/suggestion_aws_console_browser_notification/)
+- url: https://www.reddit.com/r/aws/comments/epu5i9/suggestion_aws_console_browser_notification/
 ---
-Andy Troutman's excellent talk on service teams DOP301 https://www.portal.reinvent.awsevents.com/connect/sessionDetail.ww?SESSION_ID=95548&amp;tclass=popup&amp;csrftkn=4ZQ1-JBFI-EYJ0-IRP0-3F31-5TZO-R93F-0SGJ was available on the AWS Events YouTube channel as of Monday, but is now marked as private. I was going to watch it again before a discussion at work on organizational structure but now I'll have to rely on memory. Does anyone have any idea why? Is it common for session recordings to be taken down?
+Not sure if this is the best place to post this
 
-UPDATE: Thanks to u/k8s_helm for posting an audio link for the talk at http://aws-reinvent-audio.s3-website.us-east-2.amazonaws.com/2019/DOP301-R1.m4a
-## [3][How to leverage Aws features for sending out invoices?](https://www.reddit.com/r/aws/comments/epeter/how_to_leverage_aws_features_for_sending_out/)
-- url: https://www.reddit.com/r/aws/comments/epeter/how_to_leverage_aws_features_for_sending_out/
+I think it would be nice if AWS console sends a browser notification when something completes, eg, when an ec2 instance is up and running, or when an ami image is created
+
+Like gmail notifications, it is up to the user to decide if they want it or not
+
+What do you think?
+## [3][How do set-up HTTP caching for client applications in aws Free tier?](https://www.reddit.com/r/aws/comments/eq0b8g/how_do_setup_http_caching_for_client_applications/)
+- url: https://www.reddit.com/r/aws/comments/eq0b8g/how_do_setup_http_caching_for_client_applications/
 ---
-So, I'm using dynamoDB for storage. It consists of payments, users and among other things. My intended task at hand is to send out an invoice to each user via email when they make a new payment or clear previous dues. 
+My web application is requesting server for all the pages. This in inefficient for lot of reasons.   
+I've set up my account in Free tier and currently no way I can move to paid version. 
 
-I know I should be using AWS SES for sending out emails. I want to know how and where should I be modelling invoice to make it look like an invoice and send to users.  Hope my intention is understood. Please kindly provide some inputs.
-## [4][Connecting to RDS from internet-connected Lambda](https://www.reddit.com/r/aws/comments/epe796/connecting_to_rds_from_internetconnected_lambda/)
-- url: https://www.reddit.com/r/aws/comments/epe796/connecting_to_rds_from_internetconnected_lambda/
+I want to have HTTP caching enabled for all the requests. [Link to what I'm ranting about.](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
+
+My current set-up :  Client --&gt; API Gateway --&gt; Lambdas --&gt; DynamoDB. 
+
+API Gateway has API caching setting which is for paid users only. 
+
+So, what can I do to enable the most important feature of applications in this case?
+## [4][How to get the IAM ARN of an assumed role with Terraform?](https://www.reddit.com/r/aws/comments/epz117/how_to_get_the_iam_arn_of_an_assumed_role_with/)
+- url: https://www.reddit.com/r/aws/comments/epz117/how_to_get_the_iam_arn_of_an_assumed_role_with/
 ---
-Hello all,
+Hi,
 
-I'm trying to connect to and query my PostgreSQL DB running in RDS from a Lambda API which does some external HTTP requests (so the lambda needs internet access). Can anyone suggest a solution?
+I'm trying to create IAM policies that limit access to just the current role creating them. This is a role assumed from another account. Using the data source `aws_caller_identity.current.arn` I get the ARN from STS, not the IAM one. Something like `arn:aws:sts::1111111111:assumed-role/my-role/111111111836523000` . Does anyone know how to properly create a policy with Terraform where either the principal is the role assumed by the current user or there is a condition that limits access to only this role?
 
-Thanks
-## [5][Cost Matters! The Serverless Edition - Cloud Journey IO](https://www.reddit.com/r/aws/comments/ep7osl/cost_matters_the_serverless_edition_cloud_journey/)
-- url: https://www.cloudjourney.io/articles/publiccloud/cost-matters-the-serverless-edition-ls/
----
+As an example, this is with I currently have that doesn't work.
 
-## [6][Part 6: Building an Imgur Clone in Vue.js and Serverless - Login/Registration Flow - Now Live!](https://www.reddit.com/r/aws/comments/ep23iv/part_6_building_an_imgur_clone_in_vuejs_and/)
-- url: https://tutorialedge.net/projects/building-imgur-clone-vuejs-nodejs/part-6-login-register-flow/
----
+    data "aws_iam_policy_document" "this" {
+      statement {
+        effect = "Allow"
+        principals {
+          type = "AWS"
+          identifiers = [
+            data.aws_caller_identity.current.arn
+          ]
+        }
+        resources = "*"
+        actions = ["secretsmanager:*"]
+      }
+    }
 
-## [7][AWS Quicksight - MySQL UNION from multiple databases](https://www.reddit.com/r/aws/comments/epeoho/aws_quicksight_mysql_union_from_multiple_databases/)
-- url: https://www.reddit.com/r/aws/comments/epeoho/aws_quicksight_mysql_union_from_multiple_databases/
----
-I'm using AWS Quicksight for an Analytics dashboard and I have multiple databases that have the same tables. I then set a Data Source for each database. Now, I've been trying to create a Data Set for a table, let's say "products" table, which should be a UNION of all the "products" tables of all the databases.
+Every time I run `terraform apply` with that I get the following change:
 
-So far, I've only been able to combine data from those databases using the UI to do a JOIN. However, for the Analysis I'm trying to create, I'll be needing to do a UNION. How do you do a UNION from multiple different databases in AWS Quicksight?
+    Principal = { 
+       ~ AWS = "arn:aws:sts::1111111111:assumed-role/my-role/111111111836523000" -&gt; "arn:aws:sts::11111111111:assumed-role/my-role/111111111119111810000"
+    }
+
+&amp;#x200B;
 
 Thanks.
-## [8][Choosing the right AWS services for a small business](https://www.reddit.com/r/aws/comments/ep9sor/choosing_the_right_aws_services_for_a_small/)
-- url: https://www.reddit.com/r/aws/comments/ep9sor/choosing_the_right_aws_services_for_a_small/
+## [5][EBS Snapshots: How incremental are they?](https://www.reddit.com/r/aws/comments/eps5hg/ebs_snapshots_how_incremental_are_they/)
+- url: https://www.reddit.com/r/aws/comments/eps5hg/ebs_snapshots_how_incremental_are_they/
 ---
-Hi, I am having trouble finding the right setup for my business. I would very much appreciate some advice. We currently run our applications in a number of Docker containers on a dedicated server. This setup seems outdated and not very cost-effective, which is why we are considering moving to AWS. All our applications are built from the ground up, and we're not very big, so there is enough room to change things around now. We have been online for less than half a year, but at peak times we already notice our website getting slower. 
+I'm trying to determine if a process of restoring volumes from snapshots and snapshotting the volume is going to save me money or cost me more.
 
-My business sells renders of 3D scenes in high-DPI format, for printing promotional materials and such. The setup is as follows: there is a static website which communicates with an API in order to send and receive relational business data (orders, products, accounts, etc.) from a Postgres database. Then there is a 'worker' process, which will periodically poll this database and check whether there are new orders that require rendering. Rendering is done via WebGL in a Docker container. The API, static web-server and worker are written in Go.
+Currently, we have an EBS volume that is inactive most of the time. Once a day, it backs up other data, and then gets snapshotted. In this case, it's fairly obvious to me that those snapshots are incremental as they all are created from the same volume.
 
-This leaves me with the following questions about which services to use:
+Because the volume is inactive most of the day, I was considering deleting the volume after the snapshot was done, and restoring a new volume from that snapshot. I'm wondering if snapshots are incremental in that case, as essentially it'd be a chain of snapshots and volumes: Volume A gets snapshotted to A' and then vol A deleted, A' gets restored to volume B, volume B gets snapshotted to B' and vol B gets deleted, B' gets restored to volume C, etc.
 
-1. API: This could be done in a Lightsail VPS with Docker, or I could rewrite each HTTP route as a Lambda function. I expect avg. 4 API calls per visitor to my website.
-2. Static website: This could be done via S3 if I pre-render the Go/HTML templates into static pages. Does this approach allow me to bring my own routes, rather than point to specific files?
-3. Database: AWS offers a managed database and a serverless database, or I could host my own on a Lightsail VPS. What considerations should I make?
-4. Rendering task: This could be a Lambda function or a Fargate task. Is there any inherent benefit to Lambda over Fargate for periodic tasks?
-5. Is AWS overall even worth considering if I am a small business (less than &lt;1000 serious visitors per day)? Maybe we're not the target market.
-
-Any further suggestions or resources are much appreciated!
-## [9][Authenticate logins to AWS VPN using Azure AD?](https://www.reddit.com/r/aws/comments/epcori/authenticate_logins_to_aws_vpn_using_azure_ad/)
-- url: https://www.reddit.com/r/aws/comments/epcori/authenticate_logins_to_aws_vpn_using_azure_ad/
+Is snapshot B' incremental off snapshot A', or is it a full volume snapshot because it's the first snapshot off volume B?
+## [6][What are you using Amazon Polly for?](https://www.reddit.com/r/aws/comments/epy2gp/what_are_you_using_amazon_polly_for/)
+- url: https://www.reddit.com/r/aws/comments/epy2gp/what_are_you_using_amazon_polly_for/
 ---
-Hey folks,
+I have a product that uses Polly to mainly create audio versions of articles but we are not seeing much engagement from users and therefore we are looking at other use cases that we can pivot to.
 
-Title kinda says it all.
-
-We have an Azure AD instance and AADFS.
-
-We have an AWS virtual private cloud.
-
-We want to set up [AWS client VPN](https://aws.amazon.com/vpn/) to allow remote users to VPN into the AWS instance, and have them authenticate against their Azure AD credentials.
-
-How can we make this work?
-
-Thanks!
-## [10][Modernizing a 3-Tier Application with Serverless on AWS - [IOD.tech.content]](https://www.reddit.com/r/aws/comments/ep4vju/modernizing_a_3tier_application_with_serverless/)
-- url: https://iamondemand.com/blog/modernizing-a-3-tier-application-with-serverless-on-aws/
+Are you or your industry using Amazon Polly? If so, I'd love to learn about the use case.
+## [7][Aws network security like ports, cidr scanner](https://www.reddit.com/r/aws/comments/epvebl/aws_network_security_like_ports_cidr_scanner/)
+- url: https://www.reddit.com/r/aws/comments/epvebl/aws_network_security_like_ports_cidr_scanner/
 ---
+Hi folks,
+Wondering if there is any scanning tool available for aws for network/vpc centric view. For example want to know of an ec2 in a subnet/vpc can talk to another one in different subnet/same vpc, which ports are open via which sgs etc.
 
+Thanks
+## [8][AWS Step Functions to trigger a windows CLI](https://www.reddit.com/r/aws/comments/eppbig/aws_step_functions_to_trigger_a_windows_cli/)
+- url: https://www.reddit.com/r/aws/comments/eppbig/aws_step_functions_to_trigger_a_windows_cli/
+---
+I am trying to trigger a windows CLI is it possible in AWS Lambda / Step Functions
+
+&amp;#x200B;
+
+the CLI is from Oculus and I could not locate their API
+
+[https://developer.oculus.com/distribute/latest/concepts/publish-reference-platform-command-line-utility/](https://developer.oculus.com/distribute/latest/concepts/publish-reference-platform-command-line-utility/)
+## [9][Django + worker: Beanstalk -&gt; ECS?](https://www.reddit.com/r/aws/comments/epul9r/django_worker_beanstalk_ecs/)
+- url: https://www.reddit.com/r/aws/comments/epul9r/django_worker_beanstalk_ecs/
+---
+Currently using Beanstalk to run a Django app with some async tasks which rely on the django codebase running on the worker tier, managed by the [eb\_sqs library](https://github.com/cuda-networks/django-eb-sqs). I have dockerized my Django app and have it running in ECS backed by Fargate. However, I'm a bit at a loss as to how to go forward with my task running. The options I have considered are:
+
+&amp;#x200B;
+
+1. Use ECS to run celery workers. However, I have read that it takes minutes to spin up new tasks with Fargate, so I'm worried about scaling. Maybe this is not a problem with good autoscaling rules.
+2. Use [zappa](https://github.com/Miserlou/Zappa) to run tasks in lambda. No tasks take over the time limit and it would be nice to not worry about scaling workers. However, I'd have to manage 2 deploys and is zappa prod ready?
+3. Keep worker tier beanstalk running with django still using that library. Would have 2 deploys, though.
+
+Is there an obvious choice here? Or a choice I'm missing? Thanks in advance :)
+## [10][What is the best approach to implement HTML to PDF lambda function?](https://www.reddit.com/r/aws/comments/epu7qx/what_is_the_best_approach_to_implement_html_to/)
+- url: https://www.reddit.com/r/aws/comments/epu7qx/what_is_the_best_approach_to_implement_html_to/
+---
+Currently using wkhtmltopdf and nodejs8.10. Apparently, AWS will no longer support nodejs8.10 and I am forced to use nodejs10.x but wkhtmltopdf doesn't support newer versions. 
+
+&amp;#x200B;
+
+I am now considering changing the language just for this specific function.

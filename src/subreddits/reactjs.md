@@ -97,7 +97,66 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Is redux really a good idea?](https://www.reddit.com/r/reactjs/comments/epxavs/is_redux_really_a_good_idea/)
+## [3][I made a simple RPG game as my first React.js project and wanted to share](https://www.reddit.com/r/reactjs/comments/eq5sjk/i_made_a_simple_rpg_game_as_my_first_reactjs/)
+- url: https://v.redd.it/6sitwhoqceb41
+---
+
+## [4][React/Node PWA Manga Reader – Aaaaaand we're back! | Part 9](https://www.reddit.com/r/reactjs/comments/eqf0ha/reactnode_pwa_manga_reader_aaaaaand_were_back/)
+- url: https://www.youtube.com/watch?v=_IJT1ZUoclY
+---
+
+## [5][React Hooks Tutorial | Build Yelp in React #13 | improve Yelp's sub-navigation bar](https://www.reddit.com/r/reactjs/comments/eqfvgu/react_hooks_tutorial_build_yelp_in_react_13/)
+- url: https://youtu.be/4RsfftD8l4c
+---
+
+## [6][Does react prevent XSS attacks for user input in “src”/“alt” attributes in &lt;img/&gt; tags?](https://www.reddit.com/r/reactjs/comments/eqfc78/does_react_prevent_xss_attacks_for_user_input_in/)
+- url: https://www.reddit.com/r/reactjs/comments/eqfc78/does_react_prevent_xss_attacks_for_user_input_in/
+---
+I know react naturally escapes anything put into JSX, but with &lt;a&gt; tags, someone could put a hazardous url with something like href=“javascript:alert(“xss attack here”)” and commit an xss attack. However, the user would have to click on the link. I’m wondering if any malicious code put into an src or alt attribute could ever actually be executed by the browser
+## [7][Is there a benefit to using tailwind together with styled components?](https://www.reddit.com/r/reactjs/comments/eqebfq/is_there_a_benefit_to_using_tailwind_together/)
+- url: https://www.reddit.com/r/reactjs/comments/eqebfq/is_there_a_benefit_to_using_tailwind_together/
+---
+I notice a lot of buzz around Tailwind these last couple of weeks.
+
+I’ve been using styled components for a while and so far I’m very happy with it but I was wondering if there was some benefit to maybe using them together? 
+
+Is there something that Tailwind brings to the table that can actually make a big impact?
+
+Cheers!
+## [8][Can someone give a more real-world example where the setState(updaterFunc) function is more useful than the setState(object)?](https://www.reddit.com/r/reactjs/comments/eqfvmd/can_someone_give_a_more_realworld_example_where/)
+- url: https://www.reddit.com/r/reactjs/comments/eqfvmd/can_someone_give_a_more_realworld_example_where/
+---
+ the react docs said that is better to use the setState(updaterFunc) rather than the setState(object) because it will have the latest state. I know setState is async, that's why we use the setState(updaterFunc) to have the latest state. But in the example below I just can't wrapped my head around why should I use the setState(updaterFunc) when I can do it in one go with just the setState(object)
+
+But I'm confused why should I do multiple setState calls rather than just doing it in one go.
+
+    this.setState((state) =&gt; ({ counter: state.counter + 1}));
+    this.setState((state) =&gt; ({ counter: state.counter + 1}));
+    this.setState((state) =&gt; ({ counter: state.counter + 1 }));
+
+why not do it just like this?
+
+    this.setState({counter: 3});
+## [9][Project feedbacks](https://www.reddit.com/r/reactjs/comments/eqflg2/project_feedbacks/)
+- url: https://www.reddit.com/r/reactjs/comments/eqflg2/project_feedbacks/
+---
+Hello All,
+
+I today I just set up a react-redux application using typescript, redux-thunk technology. In this project, I have used a container pattern. I am requesting to all, Could you review my code, Suggestions really appreciated and help my carrier. Here is a project GitHub link [https://github.com/devbinod/react-redux-typescript](https://github.com/devbinod/react-redux-typescript?fbclid=IwAR34tSFuyhGEWJ2Uzzg9fWrUaiYqvK-bvF1_JFMiDK8k3fJZyIzp45dnIl4).
+
+[\#reactjs](https://www.facebook.com/hashtag/reactjs?source=feed_text&amp;epa=HASHTAG) [\#typescript](https://www.facebook.com/hashtag/typescript?source=feed_text&amp;epa=HASHTAG) [\#container](https://www.facebook.com/hashtag/container?source=feed_text&amp;epa=HASHTAG)\-pattern [\#redux](https://www.facebook.com/hashtag/redux?source=feed_text&amp;epa=HASHTAG) \#redux-thunk #redux [\#motivation](https://www.facebook.com/hashtag/motivation?source=feed_text&amp;epa=HASHTAG) [\#coding](https://www.facebook.com/hashtag/coding?source=feed_text&amp;epa=HASHTAG).
+## [10][What is the best or preferred way of re-using the UI components across different apps.](https://www.reddit.com/r/reactjs/comments/eqf1i2/what_is_the_best_or_preferred_way_of_reusing_the/)
+- url: https://www.reddit.com/r/reactjs/comments/eqf1i2/what_is_the_best_or_preferred_way_of_reusing_the/
+---
+I have been working on react js for the past two years and constantly facing this issue, people who have implemented re-using components across different apps with minimum hassle, do share your aproaches as it would be nice and help others benift too.  
+
+
+I do know about [Bit](https://bit.dev/) but this has been somewhat a recent development, i wonder what other approaches can be used for large scale applications.
+## [11][DOM Mounting vs. Painting Clarification](https://www.reddit.com/r/reactjs/comments/eqerl9/dom_mounting_vs_painting_clarification/)
+- url: https://www.reddit.com/r/reactjs/comments/eqerl9/dom_mounting_vs_painting_clarification/
+---
+Is mounting when a new node is inserted into DOM tree, and painting when the browser translates the updated DOM +CSS tree (render tree) into its ui?
+## [12][Is redux really a good idea?](https://www.reddit.com/r/reactjs/comments/epxavs/is_redux_really_a_good_idea/)
 - url: https://www.reddit.com/r/reactjs/comments/epxavs/is_redux_really_a_good_idea/
 ---
 I was a redux fanboy and would defend everything about redux(when I was creating redux project). But now I'm maintaining several redux projects, I start to rethink and now posting this topic to ask for a discussion.
@@ -114,74 +173,3 @@ That said, still
 4. Before anyone say anything about useReducer and context, they are essentially the same thing, except now we can have multiple stores, all the problem above still persist.
 
 Ok enough about my rant. I'm just curious how do everyone mange their projects' state now in the 2020, and what are you general opinion about redux and other state management tools?
-## [4][How To Not Have A Mess with React Hooks &amp; Redux](https://www.reddit.com/r/reactjs/comments/epv832/how_to_not_have_a_mess_with_react_hooks_redux/)
-- url: https://www.reddit.com/r/reactjs/comments/epv832/how_to_not_have_a_mess_with_react_hooks_redux/
----
-some of my lessons learned and what worked out **for me** using **redux** and **hooks**:
-
-[https://orizens.com/blog/how-to-not-have-a-mess-with-react-hooks-and-redux/](https://orizens.com/blog/how-to-not-have-a-mess-with-react-hooks-and-redux/)
-## [5][D3.js dashboard tutorial with react and cube.js](https://www.reddit.com/r/reactjs/comments/epm3na/d3js_dashboard_tutorial_with_react_and_cubejs/)
-- url: https://d3-dashboard.cube.dev/
----
-
-## [6][Suggestions for ideas for someone giving their first talk?](https://www.reddit.com/r/reactjs/comments/epy8aq/suggestions_for_ideas_for_someone_giving_their/)
-- url: https://www.reddit.com/r/reactjs/comments/epy8aq/suggestions_for_ideas_for_someone_giving_their/
----
-I've been a developer for 7 years but cannot for the life of me think of what I want to present as my first talk, I was thinking what are some of the interesting topics to cover in the react world currently? I guess hooks etc is overdone at this stage but is an example of an idea.
-
-I know this is a bit vague but I have a solid understanding of most react things.
-
-Any suggestions would be hugely appreciated, thanks!
-## [7][Pros and cons of nesting Routes with react-router](https://www.reddit.com/r/reactjs/comments/epwrmq/pros_and_cons_of_nesting_routes_with_reactrouter/)
-- url: https://www.reddit.com/r/reactjs/comments/epwrmq/pros_and_cons_of_nesting_routes_with_reactrouter/
----
-For anyone that happens to use react-router or react-router-dom for routing with their projects, do you nest your routes? Why or why not?
-## [8][How to avoid prop drilling?](https://www.reddit.com/r/reactjs/comments/epz6f8/how_to_avoid_prop_drilling/)
-- url: https://www.reddit.com/r/reactjs/comments/epz6f8/how_to_avoid_prop_drilling/
----
-Anyone who has been using react for a while knows what a nightmare prop drilling can be.  My question is what is the best way to avoid it.  I know context api and redux are two possible solutions.  Does anyone know of any others?  Thanks for your help.
-## [9][Ryan Florence's preferred stack: Hasura + GraphQL + Cloudflare Workers + Webpack + React + Relay + React Router + Reach UI + Tailwind CSS](https://www.reddit.com/r/reactjs/comments/eposic/ryan_florences_preferred_stack_hasura_graphql/)
-- url: https://twitter.com/ryanflorence/status/1217875244674797569
----
-
-## [10][Conditional Rendering Methods in React](https://www.reddit.com/r/reactjs/comments/epvu5t/conditional_rendering_methods_in_react/)
-- url: https://blog.soshace.com/conditional-rendering-methods-in-react/
----
-
-## [11][How do you add an attribute that has no value to a DOM element from a component you're not allowed to modify?](https://www.reddit.com/r/reactjs/comments/epy6eb/how_do_you_add_an_attribute_that_has_no_value_to/)
-- url: https://www.reddit.com/r/reactjs/comments/epy6eb/how_do_you_add_an_attribute_that_has_no_value_to/
----
-&amp;#x200B;
-
-[https://codesandbox.io/s/react-16-t3jrr](https://codesandbox.io/s/react-16-t3jrr)
-
-How  do you add an attribute that has no value to a DOM element from a  component you're not allowed to differently modify? I am trying to do  this, but it seems because I am using functional components and they  don't get initialized the value of ref.current is undefined. Do I need  to modify the Wrapper? Is there a way to do this without modifying the  Wrapper? I rather not do that, but if there's no other way I don't mind  doing it. I need to add an attribute to the button inside FeatureRef.
-## [12][React JS to traverse a folder and subfolders for files with specific extension](https://www.reddit.com/r/reactjs/comments/epy5ff/react_js_to_traverse_a_folder_and_subfolders_for/)
-- url: https://www.reddit.com/r/reactjs/comments/epy5ff/react_js_to_traverse_a_folder_and_subfolders_for/
----
-I have a button that I can upload a file, which is handled by a function that the file path is stored in etc.. 
-
-upload button:
-
-            &lt;Button
-              className={classes.third}
-              variant="contained"
-              component="label"
-            &gt;
-              Upload File
-              &lt;input
-                type="file"
-                style={{ display: "none" }}
-                onChange={this.handleUpload}
-              /&gt;
-            &lt;/Button&gt;
-
-function:
-
-    handleUpload = e =&gt; {
-     this.setState({
-      [e.target.files]: e.target.files,
-    });
-    };
-
-Is there anyway to just choose a folder and a function to traverse the folder tree for specific extensions? and it is stored in an array. I have done this in python but I am trying to move towards a browser based app. I have been looking everywhere online for a library and examples but I havent found much with React. Could someone possibly point me in the right direction? Thanks!

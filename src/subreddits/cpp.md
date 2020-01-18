@@ -57,53 +57,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][How can I handle both structured exceptions and C++ exceptions potentially coming from the same source?](https://www.reddit.com/r/cpp/comments/epwpx3/how_can_i_handle_both_structured_exceptions_and_c/)
+## [2][C++ Standards Committee Papers: 2020-01 pre-Prague mailing](https://www.reddit.com/r/cpp/comments/eqc3kz/c_standards_committee_papers_202001_preprague/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-01
+---
+
+## [3][std::polymorphic_value + Duck Typing = Type Erasure](https://www.reddit.com/r/cpp/comments/eq4b0h/stdpolymorphic_value_duck_typing_type_erasure/)
+- url: https://foonathan.net/2020/01/type-erasure/
+---
+
+## [4][Performance Analysis of Deep Learning with Flamegraphs](https://www.reddit.com/r/cpp/comments/eqdu8j/performance_analysis_of_deep_learning_with/)
+- url: http://www.mycpu.org/debugging-deep-learning-flamegraph/
+---
+
+## [5][universal named parameter](https://www.reddit.com/r/cpp/comments/eqfdft/universal_named_parameter/)
+- url: https://godbolt.org/z/BAjCjz
+---
+
+## [6][How can I handle both structured exceptions and C++ exceptions potentially coming from the same source?](https://www.reddit.com/r/cpp/comments/epwpx3/how_can_i_handle_both_structured_exceptions_and_c/)
 - url: https://devblogs.microsoft.com/oldnewthing/20200116-00/?p=103333
 ---
 
-## [3][Why were abbrev. lambdas rejected?](https://www.reddit.com/r/cpp/comments/epq4ui/why_were_abbrev_lambdas_rejected/)
-- url: https://brevzin.github.io/c++/2020/01/15/abbrev-lambdas/
----
-
-## [4][New Accuracy Improvements for Remote Linux IntelliSense in both CMake and VS projects | C++ Team Blog](https://www.reddit.com/r/cpp/comments/epvue6/new_accuracy_improvements_for_remote_linux/)
+## [7][New Accuracy Improvements for Remote Linux IntelliSense in both CMake and VS projects | C++ Team Blog](https://www.reddit.com/r/cpp/comments/epvue6/new_accuracy_improvements_for_remote_linux/)
 - url: https://devblogs.microsoft.com/cppblog/improvements-to-accuracy-and-performance-of-linux-intellisense/
 ---
 
-## [5][CppCast: Conference Organizing](https://www.reddit.com/r/cpp/comments/epv9v3/cppcast_conference_organizing/)
+## [8][Why were abbrev. lambdas rejected?](https://www.reddit.com/r/cpp/comments/epq4ui/why_were_abbrev_lambdas_rejected/)
+- url: https://brevzin.github.io/c++/2020/01/15/abbrev-lambdas/
+---
+
+## [9][CppCast: Conference Organizing](https://www.reddit.com/r/cpp/comments/epv9v3/cppcast_conference_organizing/)
 - url: https://cppcast.com/cpp-conference-organizing/
 ---
 
-## [6][I built a site to search C++ libraries based on the awesome C++ github list, with sort, filtering, and extra meta information for each library](https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/)
+## [10][I built a site to search C++ libraries based on the awesome C++ github list, with sort, filtering, and extra meta information for each library](https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/)
 - url: https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/
 ---
  [https://lucidindex.com/cpp](https://lucidindex.com/cpp)
-## [7][Software Development Blog](https://www.reddit.com/r/cpp/comments/epyj39/software_development_blog/)
-- url: https://www.reddit.com/r/cpp/comments/epyj39/software_development_blog/
----
-All, I have been working on my blog for over two years now. I switched to a C++ job little over a year ago and thus have been focusing on C++ a bit more.
-
-If you are interested in reading some things. The topics are not very deep since I lack the proper knowledge about C++. There are also plenty of topic not related to C++.
-
-Let me know what you think so I can grow.
-
-[https://cvesters.wordpress.com](https://cvesters.wordpress.com)
-## [8][Excel file to C++ mobile app??](https://www.reddit.com/r/cpp/comments/eq09k7/excel_file_to_c_mobile_app/)
-- url: https://www.reddit.com/r/cpp/comments/eq09k7/excel_file_to_c_mobile_app/
----
-Hi,
-
-I create a really good financial excel file that have a lot of potential and I would like to create a mobile app with it. I am a beginner with C++ and really not that good with programming. I was wondering if it's the good way to create it by using C++ and also if there was a easier way to create it by just convert my excel file into a C++ language?   
-
-
-If you guys have a good tutorial that I can follow or just give me good advice to start that project, it will help me a lot!   
-
-
-Thank you!
-## [9][C++ 2020 News](https://www.reddit.com/r/cpp/comments/epzaw9/c_2020_news/)
-- url: https://cppcast.com/cpp-2020-news/
----
-
-## [10][POD Struct Serialisation Using Type Punning](https://www.reddit.com/r/cpp/comments/epz9ex/pod_struct_serialisation_using_type_punning/)
+## [11][POD Struct Serialisation Using Type Punning](https://www.reddit.com/r/cpp/comments/epz9ex/pod_struct_serialisation_using_type_punning/)
 - url: https://www.reddit.com/r/cpp/comments/epz9ex/pod_struct_serialisation_using_type_punning/
 ---
 I wanted to figure out a way to serialise a POD struct into a vector of bytes. My application is to serialise some game state objects in my game so they can be saved to file, and at some point be retrieved again using the reverse process.
@@ -154,7 +144,3 @@ Code below is an example of what I'm talking about. Runs in [Godbolt](https://go
         std::cout &lt;&lt; "Size (bytes): " &lt;&lt; bar-&gt;size() &lt;&lt; std::endl;
         return 0;
     }
-## [11][C++ Objects, their lifetimes and pointer to objects](https://www.reddit.com/r/cpp/comments/epgxj6/c_objects_their_lifetimes_and_pointer_to_objects/)
-- url: https://blog.panicsoftware.com/objects-their-lifetimes-and-pointers/
----
-

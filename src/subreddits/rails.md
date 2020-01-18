@@ -19,7 +19,88 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][How to build a live, face-to-face video chat app in Ruby on Rails 6.0.2.1 ​](https://www.reddit.com/r/rails/comments/eprjo9/how_to_build_a_live_facetoface_video_chat_app_in/)
+## [2][What are you using for deployment these days?](https://www.reddit.com/r/rails/comments/eq6yld/what_are_you_using_for_deployment_these_days/)
+- url: https://www.reddit.com/r/rails/comments/eq6yld/what_are_you_using_for_deployment_these_days/
+---
+I've been deploying Rails applications with some wrappers around Mina that I wrote a few years ago, but have been looking at more mature deployment workflows recently as those applications scale further and was wondering what everyone else have been doing recently?
+
+Ideally I'd love to be able to able to go from writing code to deploying as quickly as possible so containerizing the app seems like it would slow that down if you have to wait for an image build? As compared to just swapping out code on a VM and restarting Puma?
+
+What has been your experience with rolling deploys vs. blue/green? How about multi-region deploys?
+## [3][data is in database but when viewed in browser app only shows data older than 6 months](https://www.reddit.com/r/rails/comments/eq8k6o/data_is_in_database_but_when_viewed_in_browser/)
+- url: https://www.reddit.com/r/rails/comments/eq8k6o/data_is_in_database_but_when_viewed_in_browser/
+---
+Hey guys,
+
+We use redmine and bitbucket to manage our product. In an effort to integrate the two systems, I am following the steps shown [here](https://www.redmine.org/plugins/bitbucket_reference_redmine).
+
+After completing the steps beneath the heading "First, install the plugin in Redmine", I restarted Redmine and discovered an error trace to a file in the plugin directory: NoMethodError because the plugin was looking for config.secret_key_base but it wasn't configured.
+
+No big deal, I'll add it to the environment. Generated one with SecureRandom, fixed the error, Redmine working. Except what I see in Redmine is from 7 months ago. My work issues are old, and each note's timestamp said 7 months ago.
+
+I check the database and I find my current issues' records intact. I was at the point of backing up the database before executing `rake db:schema:load` to see if that would fix the issue (perhaps that alone, or perhaps after reloading the backed up data). Then my boss asked for an update and decided to have me revert redmine to what it was.
+
+So I removed the plugin using the rake task to roll back the migration. I also deleted .bundle/ and rebundled. Despite my best efforts, Redmine in the browser still shows the old data.
+
+I think this is probably related more to the fact that I added the secret key base rather than to the bitbucket plugin itself, but I don't know. I can load current records in MySQL as well as rails console, but Redmine in the browser is still time warped. I'm looking for clues within the Redmine source right now, as well as the source for the plugin.
+
+I was hoping to get some suggestions as far as where to look to fix this issue, or if anyone has ever experienced something similar. Thanks in advance!
+
+TL;DR: what could possibly cause me to be able to view current records in MySQL console and rails console, but when viewing the data in browser, the data is all &gt; 6 months old
+## [4][Accessing a rail app without internet? Newbie question](https://www.reddit.com/r/rails/comments/eq5n5d/accessing_a_rail_app_without_internet_newbie/)
+- url: https://www.reddit.com/r/rails/comments/eq5n5d/accessing_a_rail_app_without_internet_newbie/
+---
+Hi *!
+So I am super excited since I found my very first customer!🎉
+Long story short, he needs a dashboard type of app, where he can control various subjects (emailing, agenda, content of the project...).
+He also asked if he could access the dashboard without internet... Just to consult his projets, without the need to edit anything. 
+Not sure I use the correct wording but the idea is to have a local replicate of the latest version of his website. 
+I will be using rails 5.2. And... I have no idea how to do this simply! 😁
+May be a gem could help? 
+Thanks a lot in advance! 🙏
+## [5][Prevent app from caching in :development](https://www.reddit.com/r/rails/comments/eq5g0p/prevent_app_from_caching_in_development/)
+- url: https://www.reddit.com/r/rails/comments/eq5g0p/prevent_app_from_caching_in_development/
+---
+I recently upgraded from Rails 5.2.3 to 6.0.2.1, everything went supper smoothly, tests are passing, etc.
+
+However for some reason the app seems to now be cached in `:development` and changes to files (i.e. `.erb.html`) don't get picked up unless I restart the Rails server.
+This was obviously not the case before the upgrade.
+
+I'm only able to see changes to files in the `/assets` folder without restarting the server.
+
+For the record my `development.rb` is set to `config.cache_classes = false`
+In general, virtually all of the config files were left intact by the upgrade task (aside from some new additions in Rails 6).
+
+As I was trying to troubleshoot this I saw similar cases where people were "blaming" `Spring` for similar behavior. `config/spring.rb` was one of the few files that actually change during the upgrade process, from:
+```
+%w[
+  .ruby-version
+  .rbenv-vars
+  tmp/restart.txt
+  tmp/caching-dev.txt
+].each { |path| Spring.watch(path) }
+```
+to
+```
+Spring.watch(
+  ".ruby-version",
+  ".rbenv-vars",
+  "tmp/restart.txt",
+  "tmp/caching-dev.txt"
+)
+```
+
+I honestly don't know how Spring really works or how it gets executed (I'm assuming `rails s` initializes it?). I'm on the latest `v2.1.0`. Could this be the issue?
+
+What do you suggest I should look for/change to prevent this?
+Thanks!
+## [6][Signing cookies externally with the secret_key_base](https://www.reddit.com/r/rails/comments/eq7g6b/signing_cookies_externally_with_the_secret_key/)
+- url: https://www.reddit.com/r/rails/comments/eq7g6b/signing_cookies_externally_with_the_secret_key/
+---
+I'm performing a penetration test, and managed to get a hold of the secret\_key\_base. I know I can use this to perform session tampering, and perhaps even RCE, but I just can't figure out how to pull it off.
+
+I found [this script](https://gist.githubusercontent.com/cyberheartmi9/7fe85b61621f4126462d2125c4b19dfe/raw/cc39783a5a5bacda2762a7db6e163fffe91e8db9/Attacking%2520Ruby%2520on%2520Rails%2520Applications)  (see section 2.1), along with an explanation of the concept which will  do the same thing for Rails &lt;4.1.0, using Marshal - I just need to do  the same using JSON encoding, but cannot for the life of me figure it  out. I could very much use a hand from those of you who are more experienced in Rails!
+## [7][How to build a live, face-to-face video chat app in Ruby on Rails 6.0.2.1 ​](https://www.reddit.com/r/rails/comments/eprjo9/how_to_build_a_live_facetoface_video_chat_app_in/)
 - url: https://www.reddit.com/r/rails/comments/eprjo9/how_to_build_a_live_facetoface_video_chat_app_in/
 ---
 &amp;#x200B;
@@ -48,11 +129,11 @@ If you want to follow along with this tutorial, you are going to need a few thin
 * AWS credentials (access\_key\_id and secret\_access\_key)
 
 HAPPY CODING!!!
-## [3][Tips for writing readable system tests in Rails](https://www.reddit.com/r/rails/comments/epzag1/tips_for_writing_readable_system_tests_in_rails/)
+## [8][Tips for writing readable system tests in Rails](https://www.reddit.com/r/rails/comments/epzag1/tips_for_writing_readable_system_tests_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/epzag1/tips_for_writing_readable_system_tests_in_rails/
 ---
 Want to make system tests easy to main tain? We have selected some best practice tips to help achieve this. [https://jtway.co/best-tips-for-writing-integration-tests-in-rails-d1f56081f249](https://jtway.co/best-tips-for-writing-integration-tests-in-rails-d1f56081f249)
-## [4][How to you find help when you have problem ?](https://www.reddit.com/r/rails/comments/epy25w/how_to_you_find_help_when_you_have_problem/)
+## [9][How to you find help when you have problem ?](https://www.reddit.com/r/rails/comments/epy25w/how_to_you_find_help_when_you_have_problem/)
 - url: https://www.reddit.com/r/rails/comments/epy25w/how_to_you_find_help_when_you_have_problem/
 ---
 Hello everyone,
@@ -64,7 +145,7 @@ I first tried to solve it by myself so and finally got a bit of result. I know e
 I asked to a friend, and a slack, no result. I asked on [stackoverflow](https://stackoverflow.com/questions/59730179/devise-api-sign-in-doesnt-work-with-postman) I've got no answer, I put a bounty on my problem still no result.
 
 So here is my question. What do you do when you are struggling on something and you don't find any help for it ?
-## [5][I'm learning Docker and I'm trying to understand the logic behind its use](https://www.reddit.com/r/rails/comments/epopbc/im_learning_docker_and_im_trying_to_understand/)
+## [10][I'm learning Docker and I'm trying to understand the logic behind its use](https://www.reddit.com/r/rails/comments/epopbc/im_learning_docker_and_im_trying_to_understand/)
 - url: https://www.reddit.com/r/rails/comments/epopbc/im_learning_docker_and_im_trying_to_understand/
 ---
 I have experience of Rails for quite some time and I feel comfortable with it, but since a couple of days I've starting to learn and study Docker.
@@ -72,72 +153,7 @@ I have experience of Rails for quite some time and I feel comfortable with it, b
 As I understand it, with the Dockerfile you want to install all the necessary libraries and programs so that rails can be run, but if it uses services like `postgres`, `redis`, `mysql` we should define them at the `docker-compose.yml` file? Because  we could (in the same container) install postgres and RUN the commands needed to make it available there, can't we?, but I always see that the minimum commands for installing rails are executed with RUN.
 
 I think I'm a little confused about what the role of Dockerfile and Docker Compose is, what's the rule to know what sould be in docker-compose.yml and what should be in the Dockerfile.
-## [6][Remote work subreddit](https://www.reddit.com/r/rails/comments/epsib5/remote_work_subreddit/)
+## [11][Remote work subreddit](https://www.reddit.com/r/rails/comments/epsib5/remote_work_subreddit/)
 - url: https://www.reddit.com/r/rails/comments/epsib5/remote_work_subreddit/
 ---
 [https://www.reddit.com/r/remotetechjobs/](https://www.reddit.com/r/remotetechjobs/)
-## [7][Anybody use a page speed measurement tool that can be called from bash?](https://www.reddit.com/r/rails/comments/eplqt7/anybody_use_a_page_speed_measurement_tool_that/)
-- url: https://www.reddit.com/r/rails/comments/eplqt7/anybody_use_a_page_speed_measurement_tool_that/
----
-  
-how can i measure the "speed" of a given url?  
-What I have now is \`time curl [http://example.com/terms-of-service.html\`](http://example.com/terms-of-service.html`)  
-but looking for a more sophisticated (but cli friendly)  way -   
-for example:  
-  \- show me time taken from request initiation to LVC (last visual change)  
- \- breakdown of slowness - in the client side vs server side  
- \- breakdown of whether time was spent on ActiveRecord or ActionViewRendering
-## [8][Validation in rails 4.2.1](https://www.reddit.com/r/rails/comments/epmbpf/validation_in_rails_421/)
-- url: https://www.reddit.com/r/rails/comments/epmbpf/validation_in_rails_421/
----
-I'm writing validations for an API.  I have two attributes old\_attr and new\_attr.
-
-The validation rules are,
-
-1. either of them should be present during create
-2. during update both of them can be present or not but cannot be an empty array if present. 
-
-I'm finding it hard to write this logic 
-
-    validates :old_attr, required: { old_attr: true }, if: -&gt; { new_attr.blank? }
-validates :new_attr, required: { new_attr: true }, if: -&gt; { old_attr.blank? }
-
-This works well for the create part but in the update part one of them is still mandatory is also applied. 
-
-How do I include the validations in point 2 as well?
-## [9][How to uninstall the apartment gem?](https://www.reddit.com/r/rails/comments/eplmp7/how_to_uninstall_the_apartment_gem/)
-- url: https://www.reddit.com/r/rails/comments/eplmp7/how_to_uninstall_the_apartment_gem/
----
-I have an app where I installed the apartment gem for multi tenancy, but I no longer need it. 
-
-I deleted the apartment.rb initalizer and cleaned up the application.rb file. And I removed the apartment gem and ran bundle install.
-
-But when I try to run rake migrate I get the following error
-
-    LoadError: cannot load such file -- apartment/elevators/subdomain
-
-Any one know how I can remove the apartment gem completely? Thanks in advance.
-## [10][How y'all doing performance wise with Rails 6 (compared to 5.2)?](https://www.reddit.com/r/rails/comments/ep8odb/how_yall_doing_performance_wise_with_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/ep8odb/how_yall_doing_performance_wise_with_rails_6/
----
-We recently upgraded our monolith to Rails 6 and unfortunately there is a clear trend: https://i.imgur.com/6Ca3pT4.png  
-*edit/*  
-x-axis = time (this is like 4 days)  
-y-axis = response time (mean, 90th, 95th)  
-*/edit*
-
-We did a few things at once (updated several gems to new major versions, finally using cache versioning) but no real change in *our* code. We switched back to non-versioned caching for a while but that doesn't change anything in the timings.
-
-I don't want to exclude the possibility that it's not Rails but any of the gems we are using but before I do some more testing I thought I'd ask if any of you guys have some insights. Did your apps perform better or worse after Rails 5&gt;6 upgrade? Did you encounter anything particular while migrating?
-
-Thanks in advance :)
-## [11][Programmatically generate new email addresses?](https://www.reddit.com/r/rails/comments/epkzn9/programmatically_generate_new_email_addresses/)
-- url: https://www.reddit.com/r/rails/comments/epkzn9/programmatically_generate_new_email_addresses/
----
-Anyone know of a service that lets you programmatically generate email addresses to (essentially) act as forwarding addresses?  
-
-
-I want to be able to programmatically generate email addresses to act as "middlemen" between external services and a private, "master" email account I own.  I know next to nothing about how email "really" works beyond hooking up to a transactional email service like SendGrid.  
-
-
-I'd like to do this in Rails just because I prefer Ruby/Rails, but if another language/framework makes this easier to do, I'll definitely consider it.

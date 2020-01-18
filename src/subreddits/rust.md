@@ -33,7 +33,15 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/01/14/this-week-in-rust-321/
 ---
 
-## [3][actix_web repository cleared by author who says he’s done with open source](https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/)
+## [3][The Soundness Pledge](https://www.reddit.com/r/rust/comments/eqcefv/the_soundness_pledge/)
+- url: https://raphlinus.github.io/rust/2020/01/18/soundness-pledge.html
+---
+
+## [4][A sad day for Rust](https://www.reddit.com/r/rust/comments/eq11t3/a_sad_day_for_rust/)
+- url: https://words.steveklabnik.com/a-sad-day-for-rust
+---
+
+## [5][actix_web repository cleared by author who says he’s done with open source](https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/)
 - url: https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/
 ---
 He tweeted [“I am done with open source.”](https://twitter.com/fafhrd91/status/1218135374339301378) and has moved `actix-web` and `actix-net` to his personal account with a postmortem left in the original repo: https://github.com/actix/actix-web. I’ll leave the quoted text here as well:
@@ -53,70 +61,49 @@ He tweeted [“I am done with open source.”](https://twitter.com/fafhrd91/stat
 &gt; P.S. I moved actix-net and actix-web project to my personal github account. I will make decision during next couple days what to do. I don’t want to see the project becomes ghost of what it was. Maintainers must understand how everything work, but don’t anyone who does and those who could are busy with other projects. At the moment I am planing to make repos private and then delete them (will remove benchmarks as well), unless others suggest better ideas.
 
 &gt; Everything has to come to the end. It was fun trip but now is time to move on. Life should be fun.
-## [4][I've smoke-tested Rust HTTP clients. Here's what I found](https://www.reddit.com/r/rust/comments/epoloy/ive_smoketested_rust_http_clients_heres_what_i/)
-- url: https://medium.com/@shnatsel/smoke-testing-rust-http-clients-b8f2ee5db4e6
+## [6][Gauging interest in an actix-web (and siblings) fork.](https://www.reddit.com/r/rust/comments/eq4xsu/gauging_interest_in_an_actixweb_and_siblings_fork/)
+- url: https://www.reddit.com/r/rust/comments/eq4xsu/gauging_interest_in_an_actixweb_and_siblings_fork/
+---
+You’ve heard the news. You might even depend on the framework for a personal project. Maybe even a work project.
+
+It seems in my communication with Nikolay on Gitter that we won’t be seeing a return to the Actix org on GitHub. Maybe his concerns are valid. And maybe his reasons for exiling the code from @actix we’re warranted. It’s unfortunate, but we have an opportunity to take this amazing project onwards.
+
+A fork is not the most ideal approach in my opinion but I believe that this project doesn’t deserve to be abandoned and that some of us can do that.
+
+A few months ago myself and probably about 30 others joined the @actix/contributors team on GitHub. There are people willing to help. How about it?
+## [7][hyper on async-std proof-of-concept](https://www.reddit.com/r/rust/comments/eq8x17/hyper_on_asyncstd_proofofconcept/)
+- url: https://github.com/leo-lb/hyper-async-std
 ---
 
-## [5][The extreme async runtime crate, in its entirety](https://www.reddit.com/r/rust/comments/epzcxd/the_extreme_async_runtime_crate_in_its_entirety/)
-- url: https://i.redd.it/mylqj8e8ubb41.png
----
-
-## [6][Actix-net unsoundness patch "is boring"](https://www.reddit.com/r/rust/comments/epszt7/actixnet_unsoundness_patch_is_boring/)
-- url: https://www.reddit.com/r/rust/comments/epszt7/actixnet_unsoundness_patch_is_boring/
----
-There's an [issue](https://github.com/actix/actix-net/issues/83) on Actix-net pointing out and presenting unsoundness. Yes, it's deleted, it still can be found on [web archive](http://web.archive.org/web/20200116231317/https://github.com/actix/actix-net/issues/83).
-
-Issue history summary:
-
-1. Found by Shnatsel
-2. Closed as harmless to users by fafhrd91
-3. Proven harmful to users by Nemo157 and reopened by JohnTitor
-5. Fixed and closed by fafhrd91
-6. Proven unfixed and proposed new patch by Nemo157
-7. New patch commented "this patch is boring" by fafhrd91
-8. Issue is deleted
-9. Fix is reversed by fafhrd91, issue still present
-
-I hope it's an objective summary. Any thoughts?
-
-Edit: Now whole actix/actix-web is deleted. See fafhrd91's [postmortem](https://github.com/actix/actix-web). He kept  copy of Actix-web in personal repo [fafhrd91/actix-web](https://github.com/fafhrd91/actix-web).
-## [7][Microsoft's Rust inspired research language has been released](https://www.reddit.com/r/rust/comments/eq089q/microsofts_rust_inspired_research_language_has/)
+## [8][Microsoft's Rust inspired research language has been released](https://www.reddit.com/r/rust/comments/eq089q/microsofts_rust_inspired_research_language_has/)
 - url: https://github.com/microsoft/verona
 ---
 
-## [8][warp v0.2: the composable web server framework](https://www.reddit.com/r/rust/comments/epo5w3/warp_v02_the_composable_web_server_framework/)
-- url: https://seanmonstar.com/post/190293882502/warp-v02
+## [9][actix-support/letter](https://www.reddit.com/r/rust/comments/eq5l6s/actixsupportletter/)
+- url: https://github.com/actix-support/letter
 ---
 
-## [9][More Actix drama?](https://www.reddit.com/r/rust/comments/epyyky/more_actix_drama/)
-- url: https://github.com/actix/actix-web/blob/7f39beecc3efb1bfdd6a79ffef166c09bf982fb0/README.md
+## [10][Introducing sksg - The static site generation pipeline](https://www.reddit.com/r/rust/comments/eqcnp3/introducing_sksg_the_static_site_generation/)
+- url: https://www.reddit.com/r/rust/comments/eqcnp3/introducing_sksg_the_static_site_generation/
+---
+(So, I've been working on this since December, and for the tiny scope, it certainly took a long time to get it out. Even now it's still rough around the edges, so feedback is very much appreciated, especially regarding docs.)
+
+sksg is a static site generator that's inspired by the Unix philosophy of gluing smaller tools to do one large thing.
+
+The core of sksg will just locate your pages and create the appropriate "pipelines", while the actual page generation logic happens on the other tools, (which don't need to be designed for sksg specifically)
+
+One advantage of this is that you aren't locked into a specific language's ecosystem, as everything that supports stdin/stdout can be used as a pipeline step (including shell scripts)
+
+There are also some simple tools distributed alongside sksg to get people started. However, they might not be as polished or as "batteries included" as one might expect.
+
+If this sounds interesting to you, feel free to check it out [here](https://issizler.club/sksg/)
+## [11][How To Write Fast Rust Code](https://www.reddit.com/r/rust/comments/eq168d/how_to_write_fast_rust_code/)
+- url: http://likebike.com/posts/How_To_Write_Fast_Rust_Code.html
 ---
 
-## [10][What should I choose in post actix-web era for web server?](https://www.reddit.com/r/rust/comments/eq0375/what_should_i_choose_in_post_actixweb_era_for_web/)
-- url: https://www.reddit.com/r/rust/comments/eq0375/what_should_i_choose_in_post_actixweb_era_for_web/
+## [12][false ban](https://www.reddit.com/r/rust/comments/eqgd2d/false_ban/)
+- url: https://www.reddit.com/r/rust/comments/eqgd2d/false_ban/
 ---
-Why change:
-- https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/
-- https://www.reddit.com/r/rust/comments/epszt7/actixnet_unsoundness_patch_is_boring/
+i was banned from rustralasia.net au long my most successful server ever i had so much stuff and was having the most fun ive ever had and logged on im almost out of data so i was lagging really bad and getting teleported back i jumped off a roof and got banned for fly hacking
 
-What looks more promising?
-- https://github.com/seanmonstar/warp
-- https://github.com/http-rs/tide
-- https://github.com/carllerche/tower-web
-
-More:
-- https://github.com/flosse/rust-web-framework-comparison
-- https://www.arewewebyet.org/topics/frameworks/
-
-EDIT: Looking at examples of those 3, warp has the most.
-- https://github.com/seanmonstar/warp/tree/master/examples
-- https://github.com/carllerche/tower-web/tree/master/examples
-- https://github.com/http-rs/tide/tree/master/examples
-## [11][specs future](https://www.reddit.com/r/rust/comments/epxq6e/specs_future/)
-- url: https://www.reddit.com/r/rust/comments/epxq6e/specs_future/
----
-what is the status of the specs ecs ? i used it for a project, and with all the buzz around legion, i'm asking myself if it has a future...
-## [12][An Idea I Had On Shells](https://www.reddit.com/r/rust/comments/epxw2v/an_idea_i_had_on_shells/)
-- url: https://gist.github.com/arzg/d76c61041abafb71c02e2800bb762ed7
----
-
+my steam name is chocolatemilk if anybody can help

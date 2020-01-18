@@ -20,41 +20,60 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Recommended TypeScript game engines?](https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/)
-- url: https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/
+## [2][From flow to monorepo in Typescript](https://www.reddit.com/r/typescript/comments/eqg5w3/from_flow_to_monorepo_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/eqg5w3/from_flow_to_monorepo_in_typescript/
 ---
-I've been wanting to dabble into video game development so I'd figure it'd be easier for me to learn using something I'm the most familiar with which is TypeScript and JavaScript.
+Hello, I have recently moved my multiple repositories javascript packages to a single monorepo in typescript. It's my first-time complete Typescript project and would love it if you had some time to give me some feedback. 
+I had a lot of trouble finding some types of external libraries. Does anyone have experience with typing webpack and gulp plugin?
 
-Any recommendations from the sub for one?
-## [3][Angular + Web Components: a complete guide](https://www.reddit.com/r/typescript/comments/epx6k2/angular_web_components_a_complete_guide/)
-- url: https://medium.com/@Armandotrue/angular-web-components-a-complete-guide-5270e5b07e93
+[Repository](https://github.com/FullHuman/purgecss)
+## [3][Is it possible to Compile and Update the Browser at the same time?](https://www.reddit.com/r/typescript/comments/eqcv0e/is_it_possible_to_compile_and_update_the_browser/)
+- url: https://www.reddit.com/r/typescript/comments/eqcv0e/is_it_possible_to_compile_and_update_the_browser/
 ---
+Hello:  
+I am using **lite server** to watch and run my code.  
+However, each time I make a code change to a typescript file nothing happens, the only time the browser refreshes is when I make changes to the index.html file.
 
-## [4][Non-undefined type guards by calling a function](https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/)
-- url: https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/
+To see any updates I have to stop **lite server,**  compiled the code and then run the server again.
+
+I attempted watching the code with **tsc --watch** but I have to run the code on a server.  
+
+
+Are there solutions where you can run a server which compile on any code change and update the browser?
+## [4][TSC compiling .ts file dependencies below the folder holding the active package.json](https://www.reddit.com/r/typescript/comments/eq86sy/tsc_compiling_ts_file_dependencies_below_the/)
+- url: https://www.reddit.com/r/typescript/comments/eq86sy/tsc_compiling_ts_file_dependencies_below_the/
 ---
-This non-undefined type guard works:
+My 1st firebase project is kinda messy as inside `/functions` it installed another package.json file and tsconfig.json. I initially used it to output JS to `/functions/outDir`.
 
-    function f(x?: number) {
-      let y: number
-      if (x === undefined) throw 'undefined detected'
-      y = x // No compile error here
-    }
+Trouble is now I want to setup database.ts inside `/shared`. This is outside of /functions`,` in terms of heirarchy it's a sibling folder. `/shared/database.ts` will be imported into `/functions/src/index.ts`, and this file does compile to .js.
 
-Is there any way to get a type guard from calling a function?
+In this scenario, how will a TS file outside the watch of an active TSC instance be handled? 
 
-    function check(x?: number) {
-      if (x === undefined) throw 'undefined detected'
-    }
-    
-    function f(x?: number) {
-      let y: number
-      check(x)
-      y = x // Error: Type 'number | undefined' is not assignable to type 'number'.
-    }
+If the current setup results in `/shared/database.ts` not being read, is there a way to patch it with tsconfig.json or do I need to move everything (output JS and the package.json being used) down to the project root?
+## [5][How to ensure a value implements an interface without casting easily?](https://www.reddit.com/r/typescript/comments/eqcg6e/how_to_ensure_a_value_implements_an_interface/)
+- url: https://www.reddit.com/r/typescript/comments/eqcg6e/how_to_ensure_a_value_implements_an_interface/
+---
+For example, we have interface A:
 
-Is there any way to make this work? At the moment I'm using the non-null assertion operator `!` but I'm trying for a more elegant solution. Thanks.
-## [5][Function that reads the first line from a given file](https://www.reddit.com/r/typescript/comments/epzgr8/function_that_reads_the_first_line_from_a_given/)
+```typescript
+interface A { a: string }
+```
+
+and create an object implements A.
+
+```typescript
+const a = {
+  a: 'foo',
+  b: 'bar',
+};
+```
+
+Can I ensure the a implementing A?
+
+I want to keep the type of a as literal type, `{ a: string; b: string }`, but I want ensure that a is implementing A easily.
+
+Anyone have idea?
+## [6][Function that reads the first line from a given file](https://www.reddit.com/r/typescript/comments/epzgr8/function_that_reads_the_first_line_from_a_given/)
 - url: https://www.reddit.com/r/typescript/comments/epzgr8/function_that_reads_the_first_line_from_a_given/
 ---
 Hey everyone,
@@ -93,7 +112,41 @@ In my TS project I needed a function that reads the first line from a file, so I
 (It's a named arrow function out of personal preference (fewer blocks), but I'm open to suggestions if you prefer the classical `function` notation).
 
 **Update**: minor changes.
-## [6][Iterating over enums without waste writing duplicate code or](https://www.reddit.com/r/typescript/comments/epyjz6/iterating_over_enums_without_waste_writing/)
+## [7][Recommended TypeScript game engines?](https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/)
+- url: https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/
+---
+I've been wanting to dabble into video game development so I'd figure it'd be easier for me to learn using something I'm the most familiar with which is TypeScript and JavaScript.
+
+Any recommendations from the sub for one?
+## [8][Non-undefined type guards by calling a function](https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/)
+- url: https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/
+---
+This non-undefined type guard works:
+
+    function f(x?: number) {
+      let y: number
+      if (x === undefined) throw 'undefined detected'
+      y = x // No compile error here
+    }
+
+Is there any way to get a type guard from calling a function?
+
+    function check(x?: number) {
+      if (x === undefined) throw 'undefined detected'
+    }
+    
+    function f(x?: number) {
+      let y: number
+      check(x)
+      y = x // Error: Type 'number | undefined' is not assignable to type 'number'.
+    }
+
+Is there any way to make this work? At the moment I'm using the non-null assertion operator `!` but I'm trying for a more elegant solution. Thanks.
+## [9][Angular + Web Components: a complete guide](https://www.reddit.com/r/typescript/comments/epx6k2/angular_web_components_a_complete_guide/)
+- url: https://medium.com/@Armandotrue/angular-web-components-a-complete-guide-5270e5b07e93
+---
+
+## [10][Iterating over enums without waste writing duplicate code or](https://www.reddit.com/r/typescript/comments/epyjz6/iterating_over_enums_without_waste_writing/)
 - url: https://www.reddit.com/r/typescript/comments/epyjz6/iterating_over_enums_without_waste_writing/
 ---
 Hi,  
@@ -114,11 +167,7 @@ Is there anything obvious that I'm missing that I could use?
 
 
 Thanks.
-## [7][Vscode keeps importing types with the new “import type ...” although I haven’t updated the project’s ts version to the beta yet](https://www.reddit.com/r/typescript/comments/epre4d/vscode_keeps_importing_types_with_the_new_import/)
-- url: https://www.reddit.com/r/typescript/comments/epre4d/vscode_keeps_importing_types_with_the_new_import/
----
-Any ideas how to fix it?
-## [8][Can't get ahold of type definitions VS Code sees](https://www.reddit.com/r/typescript/comments/epp4z3/cant_get_ahold_of_type_definitions_vs_code_sees/)
+## [11][Can't get ahold of type definitions VS Code sees](https://www.reddit.com/r/typescript/comments/epp4z3/cant_get_ahold_of_type_definitions_vs_code_sees/)
 - url: https://www.reddit.com/r/typescript/comments/epp4z3/cant_get_ahold_of_type_definitions_vs_code_sees/
 ---
 I have a newb question. I am using a third party npm package that has type definitions (if it matters, it's [aws-amplify](https://github.com/aws-amplify/amplify-js)). I know there are type definitions because VS Code complains when I assign a wrong type to a variable returned and expects a certain type. For instance:
@@ -133,28 +182,3 @@ However, how do I actually use those type definitions VS Code is seeing? Unfortu
 Thank you.
 
 EDIT: formatting
-## [9][MikroORM 3: Knex.js, CLI, Schema Updates, Entity Generator and more…](https://www.reddit.com/r/typescript/comments/eppx0n/mikroorm_3_knexjs_cli_schema_updates_entity/)
-- url: https://medium.com/@b4nan/mikro-orm-3-knex-js-cli-schema-updates-entity-generator-and-more-e51ecbbc508c
----
-
-## [10][Announcing TypeScript 3.8 Beta](https://www.reddit.com/r/typescript/comments/eph9wx/announcing_typescript_38_beta/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/
----
-
-## [11][[Help] How to access unknown properties of unknown object?](https://www.reddit.com/r/typescript/comments/eplsh0/help_how_to_access_unknown_properties_of_unknown/)
-- url: https://www.reddit.com/r/typescript/comments/eplsh0/help_how_to_access_unknown_properties_of_unknown/
----
-
-I have a function that receives an `unknown` argument and tries to call a method of it.
-
-```
-function toJS(obj?:unknown):object | null {
-  return obj != null
-  &amp;&amp; typeof obj === "object"
-  &amp;&amp; obj !== null &amp;&amp;
-  ( "toJS" in obj || obj.hasOwnProperty("toJS") ) &amp;&amp;
-  typeof obj.toJS === "function" ? obj.toJS() : null;
-}
-```
-
-When I try to check if `toJS` exists using the `typeof` operator, I get `[tsserver 2339] [E] Property 'toJS' does not exist on type 'object'`. Is there any solution for this? How much should I check my argument to inspect its methods?

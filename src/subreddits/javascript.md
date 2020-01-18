@@ -7,43 +7,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][100 Days of Code for Frontend Development](https://www.reddit.com/r/javascript/comments/epsaoi/100_days_of_code_for_frontend_development/)
-- url: http://github.com/nas5w/100-days-of-code-frontend/blob/master/README.md
+## [2][Showoff Saturday (January 18, 2020)](https://www.reddit.com/r/javascript/comments/eqfhnm/showoff_saturday_january_18_2020/)
+- url: https://www.reddit.com/r/javascript/comments/eqfhnm/showoff_saturday_january_18_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][A continuously-evolving compendium of javascript tips based on common areas of confusion or misunderstanding](https://www.reddit.com/r/javascript/comments/eq7b0d/a_continuouslyevolving_compendium_of_javascript/)
+- url: https://github.com/nas5w/javascript-tips-and-tidbits
 ---
 
-## [3][My first free online game](https://www.reddit.com/r/javascript/comments/epygfh/my_first_free_online_game/)
-- url: https://paper-hangman.space/
+## [4][We added Deno support to Begin.com free tier (on AWS Lambda)](https://www.reddit.com/r/javascript/comments/eq6d9t/we_added_deno_support_to_begincom_free_tier_on/)
+- url: https://blog.begin.com/run-serverless-deno-in-aws-lambda-1014dc8696a2
 ---
 
-## [4][Should I build things on my own or rely on external tools/knowledge?](https://www.reddit.com/r/javascript/comments/epyl14/should_i_build_things_on_my_own_or_rely_on/)
-- url: https://medium.com/javascript-in-plain-english/should-i-build-things-on-my-own-or-rely-on-external-tools-knowledge-848c0a4a3354?source=friends_link&amp;sk=65dcb759fb1496da6ae184549e11dc40
----
-
-## [5][I have been underestimating JS](https://www.reddit.com/r/javascript/comments/epiylf/i_have_been_underestimating_js/)
-- url: https://adlrocha.substack.com/p/adlrocha-i-have-been-underestimating
----
-
-## [6][Nano ID got a comments for all hacks to build fastest (16% faster than UUID) and the most compact (137 bytes!) ID generator](https://www.reddit.com/r/javascript/comments/epp3s4/nano_id_got_a_comments_for_all_hacks_to_build/)
-- url: https://github.com/ai/nanoid/
----
-
-## [7][Angular + Web Components: a complete guide](https://www.reddit.com/r/javascript/comments/epx5sl/angular_web_components_a_complete_guide/)
-- url: https://medium.com/@Armandotrue/angular-web-components-a-complete-guide-5270e5b07e93
----
-
-## [8][New archive of documents about the development of ECMAScript during 1996–2015](https://www.reddit.com/r/javascript/comments/ept5af/new_archive_of_documents_about_the_development_of/)
-- url: https://www.ecma-international.org/archive/ecmascript/
----
-
-## [9][MikroORM 3: Knex.js, CLI, Schema Updates, Entity Generator and more…](https://www.reddit.com/r/javascript/comments/epxhgj/mikroorm_3_knexjs_cli_schema_updates_entity/)
-- url: https://medium.com/@b4nan/mikro-orm-3-knex-js-cli-schema-updates-entity-generator-and-more-e51ecbbc508c
----
-
-## [10][Javascript Promises Simplified](https://www.reddit.com/r/javascript/comments/eq0byp/javascript_promises_simplified/)
+## [5][Javascript Promises Simplified](https://www.reddit.com/r/javascript/comments/eq0byp/javascript_promises_simplified/)
 - url: https://thewebfor5.com/p/javascript/javascript-promises/
 ---
 
-## [11][D3.js dashboard tutorial with React and Cube.js](https://www.reddit.com/r/javascript/comments/epkx1q/d3js_dashboard_tutorial_with_react_and_cubejs/)
-- url: https://d3-dashboard.cube.dev/
+## [6][Reverse engineering pop-under library (Not my video, check out Liveoverflow on youtube)](https://www.reddit.com/r/javascript/comments/eqc437/reverse_engineering_popunder_library_not_my_video/)
+- url: https://www.youtube.com/watch?v=PPzRcZLNCPY
+---
+
+## [7][Svelte Status #23: unit tests for SvelteJS](https://www.reddit.com/r/javascript/comments/eqbjmk/svelte_status_23_unit_tests_for_sveltejs/)
+- url: https://www.sveltestatus.dev/post/23-unit-tests-for-svelte
+---
+
+## [8][Darken - Dark mode made easy](https://www.reddit.com/r/javascript/comments/eq3a0q/darken_dark_mode_made_easy/)
+- url: https://github.com/ColinEspinas/darken
+---
+
+## [9][Is it possible to deploy ant design app on github?](https://www.reddit.com/r/javascript/comments/eqcoem/is_it_possible_to_deploy_ant_design_app_on_github/)
+- url: /r/reactjs/comments/eqcaq0/is_it_possible_to_deploy_ant_design_app_on_github/
+---
+
+## [10][100 Days of Code for Frontend Development](https://www.reddit.com/r/javascript/comments/epsaoi/100_days_of_code_for_frontend_development/)
+- url: http://github.com/nas5w/100-days-of-code-frontend/blob/master/README.md
+---
+
+## [11][Hover: A very lightweight data store with action reducers and state change listeners (framework agnostic)](https://www.reddit.com/r/javascript/comments/eq4k1c/hover_a_very_lightweight_data_store_with_action/)
+- url: https://github.com/jesseskinner/hover
+---
+
+## [12][Just JavaScript by Dan Abramov](https://www.reddit.com/r/javascript/comments/eq61b1/just_javascript_by_dan_abramov/)
+- url: https://justjavascript.com
 ---
 

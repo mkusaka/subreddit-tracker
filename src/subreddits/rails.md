@@ -19,7 +19,24 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][What are you using for deployment these days?](https://www.reddit.com/r/rails/comments/eq6yld/what_are_you_using_for_deployment_these_days/)
+## [2][on: :create is not working with validate](https://www.reddit.com/r/rails/comments/eqip01/on_create_is_not_working_with_validate/)
+- url: https://www.reddit.com/r/rails/comments/eqip01/on_create_is_not_working_with_validate/
+---
+I have a code like
+
+    validate: :call_this_method, on: :create 
+
+And when I call the create method using a curl post command this method is not being invoked. If I remove the on: part it works fine. The same happens if I just put on: :update. I'm not sure why this is happening or how to debug this.
+
+The class that includes these both as well.
+
+    include ActiveModel::Validations
+    include ActiveModel::Validations::Callbacks
+
+Could someone please help me with this?
+
+Also if there is a way to find out if the validation is from create or update in the callback method would be great. Since it would solve this problem too.
+## [3][What are you using for deployment these days?](https://www.reddit.com/r/rails/comments/eq6yld/what_are_you_using_for_deployment_these_days/)
 - url: https://www.reddit.com/r/rails/comments/eq6yld/what_are_you_using_for_deployment_these_days/
 ---
 I've been deploying Rails applications with some wrappers around Mina that I wrote a few years ago, but have been looking at more mature deployment workflows recently as those applications scale further and was wondering what everyone else have been doing recently?
@@ -27,7 +44,7 @@ I've been deploying Rails applications with some wrappers around Mina that I wro
 Ideally I'd love to be able to able to go from writing code to deploying as quickly as possible so containerizing the app seems like it would slow that down if you have to wait for an image build? As compared to just swapping out code on a VM and restarting Puma?
 
 What has been your experience with rolling deploys vs. blue/green? How about multi-region deploys?
-## [3][data is in database but when viewed in browser app only shows data older than 6 months](https://www.reddit.com/r/rails/comments/eq8k6o/data_is_in_database_but_when_viewed_in_browser/)
+## [4][data is in database but when viewed in browser app only shows data older than 6 months](https://www.reddit.com/r/rails/comments/eq8k6o/data_is_in_database_but_when_viewed_in_browser/)
 - url: https://www.reddit.com/r/rails/comments/eq8k6o/data_is_in_database_but_when_viewed_in_browser/
 ---
 Hey guys,
@@ -47,7 +64,7 @@ I think this is probably related more to the fact that I added the secret key ba
 I was hoping to get some suggestions as far as where to look to fix this issue, or if anyone has ever experienced something similar. Thanks in advance!
 
 TL;DR: what could possibly cause me to be able to view current records in MySQL console and rails console, but when viewing the data in browser, the data is all &gt; 6 months old
-## [4][Accessing a rail app without internet? Newbie question](https://www.reddit.com/r/rails/comments/eq5n5d/accessing_a_rail_app_without_internet_newbie/)
+## [5][Accessing a rail app without internet? Newbie question](https://www.reddit.com/r/rails/comments/eq5n5d/accessing_a_rail_app_without_internet_newbie/)
 - url: https://www.reddit.com/r/rails/comments/eq5n5d/accessing_a_rail_app_without_internet_newbie/
 ---
 Hi *!
@@ -58,7 +75,7 @@ Not sure I use the correct wording but the idea is to have a local replicate of 
 I will be using rails 5.2. And... I have no idea how to do this simply! 😁
 May be a gem could help? 
 Thanks a lot in advance! 🙏
-## [5][Prevent app from caching in :development](https://www.reddit.com/r/rails/comments/eq5g0p/prevent_app_from_caching_in_development/)
+## [6][Prevent app from caching in :development](https://www.reddit.com/r/rails/comments/eq5g0p/prevent_app_from_caching_in_development/)
 - url: https://www.reddit.com/r/rails/comments/eq5g0p/prevent_app_from_caching_in_development/
 ---
 I recently upgraded from Rails 5.2.3 to 6.0.2.1, everything went supper smoothly, tests are passing, etc.
@@ -94,13 +111,13 @@ I honestly don't know how Spring really works or how it gets executed (I'm assum
 
 What do you suggest I should look for/change to prevent this?
 Thanks!
-## [6][Signing cookies externally with the secret_key_base](https://www.reddit.com/r/rails/comments/eq7g6b/signing_cookies_externally_with_the_secret_key/)
+## [7][Signing cookies externally with the secret_key_base](https://www.reddit.com/r/rails/comments/eq7g6b/signing_cookies_externally_with_the_secret_key/)
 - url: https://www.reddit.com/r/rails/comments/eq7g6b/signing_cookies_externally_with_the_secret_key/
 ---
 I'm performing a penetration test, and managed to get a hold of the secret\_key\_base. I know I can use this to perform session tampering, and perhaps even RCE, but I just can't figure out how to pull it off.
 
 I found [this script](https://gist.githubusercontent.com/cyberheartmi9/7fe85b61621f4126462d2125c4b19dfe/raw/cc39783a5a5bacda2762a7db6e163fffe91e8db9/Attacking%2520Ruby%2520on%2520Rails%2520Applications)  (see section 2.1), along with an explanation of the concept which will  do the same thing for Rails &lt;4.1.0, using Marshal - I just need to do  the same using JSON encoding, but cannot for the life of me figure it  out. I could very much use a hand from those of you who are more experienced in Rails!
-## [7][How to build a live, face-to-face video chat app in Ruby on Rails 6.0.2.1 ​](https://www.reddit.com/r/rails/comments/eprjo9/how_to_build_a_live_facetoface_video_chat_app_in/)
+## [8][How to build a live, face-to-face video chat app in Ruby on Rails 6.0.2.1 ​](https://www.reddit.com/r/rails/comments/eprjo9/how_to_build_a_live_facetoface_video_chat_app_in/)
 - url: https://www.reddit.com/r/rails/comments/eprjo9/how_to_build_a_live_facetoface_video_chat_app_in/
 ---
 &amp;#x200B;
@@ -129,11 +146,11 @@ If you want to follow along with this tutorial, you are going to need a few thin
 * AWS credentials (access\_key\_id and secret\_access\_key)
 
 HAPPY CODING!!!
-## [8][Tips for writing readable system tests in Rails](https://www.reddit.com/r/rails/comments/epzag1/tips_for_writing_readable_system_tests_in_rails/)
+## [9][Tips for writing readable system tests in Rails](https://www.reddit.com/r/rails/comments/epzag1/tips_for_writing_readable_system_tests_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/epzag1/tips_for_writing_readable_system_tests_in_rails/
 ---
 Want to make system tests easy to main tain? We have selected some best practice tips to help achieve this. [https://jtway.co/best-tips-for-writing-integration-tests-in-rails-d1f56081f249](https://jtway.co/best-tips-for-writing-integration-tests-in-rails-d1f56081f249)
-## [9][How to you find help when you have problem ?](https://www.reddit.com/r/rails/comments/epy25w/how_to_you_find_help_when_you_have_problem/)
+## [10][How to you find help when you have problem ?](https://www.reddit.com/r/rails/comments/epy25w/how_to_you_find_help_when_you_have_problem/)
 - url: https://www.reddit.com/r/rails/comments/epy25w/how_to_you_find_help_when_you_have_problem/
 ---
 Hello everyone,
@@ -145,7 +162,7 @@ I first tried to solve it by myself so and finally got a bit of result. I know e
 I asked to a friend, and a slack, no result. I asked on [stackoverflow](https://stackoverflow.com/questions/59730179/devise-api-sign-in-doesnt-work-with-postman) I've got no answer, I put a bounty on my problem still no result.
 
 So here is my question. What do you do when you are struggling on something and you don't find any help for it ?
-## [10][I'm learning Docker and I'm trying to understand the logic behind its use](https://www.reddit.com/r/rails/comments/epopbc/im_learning_docker_and_im_trying_to_understand/)
+## [11][I'm learning Docker and I'm trying to understand the logic behind its use](https://www.reddit.com/r/rails/comments/epopbc/im_learning_docker_and_im_trying_to_understand/)
 - url: https://www.reddit.com/r/rails/comments/epopbc/im_learning_docker_and_im_trying_to_understand/
 ---
 I have experience of Rails for quite some time and I feel comfortable with it, but since a couple of days I've starting to learn and study Docker.
@@ -153,7 +170,3 @@ I have experience of Rails for quite some time and I feel comfortable with it, b
 As I understand it, with the Dockerfile you want to install all the necessary libraries and programs so that rails can be run, but if it uses services like `postgres`, `redis`, `mysql` we should define them at the `docker-compose.yml` file? Because  we could (in the same container) install postgres and RUN the commands needed to make it available there, can't we?, but I always see that the minimum commands for installing rails are executed with RUN.
 
 I think I'm a little confused about what the role of Dockerfile and Docker Compose is, what's the rule to know what sould be in docker-compose.yml and what should be in the Dockerfile.
-## [11][Remote work subreddit](https://www.reddit.com/r/rails/comments/epsib5/remote_work_subreddit/)
-- url: https://www.reddit.com/r/rails/comments/epsib5/remote_work_subreddit/
----
-[https://www.reddit.com/r/remotetechjobs/](https://www.reddit.com/r/remotetechjobs/)

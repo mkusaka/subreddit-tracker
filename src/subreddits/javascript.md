@@ -13,43 +13,45 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][A continuously-evolving compendium of javascript tips based on common areas of confusion or misunderstanding](https://www.reddit.com/r/javascript/comments/eq7b0d/a_continuouslyevolving_compendium_of_javascript/)
+## [3][70+ challenging JavaScript quiz questions with explanation](https://www.reddit.com/r/javascript/comments/eqmuit/70_challenging_javascript_quiz_questions_with/)
+- url: http://quiz.typeofnan.dev/
+---
+
+## [4][Become a Better Software Architect](https://www.reddit.com/r/javascript/comments/eqif7r/become_a_better_software_architect/)
+- url: https://github.com/justinamiller/SoftwareArchitect
+---
+
+## [5][WebSockets vs Server-Sent Events](https://www.reddit.com/r/javascript/comments/eqsnrc/websockets_vs_serversent_events/)
+- url: https://www.ably.io/blog/websockets-vs-sse/
+---
+
+## [6][Anybody with npm packages that need TypeScript type declaration files?](https://www.reddit.com/r/javascript/comments/eqv7nl/anybody_with_npm_packages_that_need_typescript/)
+- url: /r/webdev/comments/equwxp/anybody_with_npm_packages_that_need_typescript/
+---
+
+## [7][Open-source web tool to convert images in bulk to different formats completely on the client using HTML5 canvas](https://www.reddit.com/r/javascript/comments/eqjjwq/opensource_web_tool_to_convert_images_in_bulk_to/)
+- url: https://github.com/Centipede5/imageconverter
+---
+
+## [8][I built a 3D Tic-Tac-Toe game for insane people (all code is in the source)](https://www.reddit.com/r/javascript/comments/eqo4zw/i_built_a_3d_tictactoe_game_for_insane_people_all/)
+- url: https://www.crazyhappyfuntime.com/tictactoeDev.php
+---
+
+## [9][A continuously-evolving compendium of javascript tips based on common areas of confusion or misunderstanding](https://www.reddit.com/r/javascript/comments/eq7b0d/a_continuouslyevolving_compendium_of_javascript/)
 - url: https://github.com/nas5w/javascript-tips-and-tidbits
 ---
 
-## [4][We added Deno support to Begin.com free tier (on AWS Lambda)](https://www.reddit.com/r/javascript/comments/eq6d9t/we_added_deno_support_to_begincom_free_tier_on/)
+## [10][We added Deno support to Begin.com free tier (on AWS Lambda)](https://www.reddit.com/r/javascript/comments/eq6d9t/we_added_deno_support_to_begincom_free_tier_on/)
 - url: https://blog.begin.com/run-serverless-deno-in-aws-lambda-1014dc8696a2
 ---
 
-## [5][Javascript Promises Simplified](https://www.reddit.com/r/javascript/comments/eq0byp/javascript_promises_simplified/)
-- url: https://thewebfor5.com/p/javascript/javascript-promises/
+## [11][[AskJS] How is this done?](https://www.reddit.com/r/javascript/comments/eqmuis/askjs_how_is_this_done/)
+- url: https://www.reddit.com/r/javascript/comments/eqmuis/askjs_how_is_this_done/
 ---
+Hi. I will hire someone in the future do a "lead quote calculator" for my website. The problem is i have no idea where to start, what to ask for, even how complex a feature like this is. 
 
-## [6][Reverse engineering pop-under library (Not my video, check out Liveoverflow on youtube)](https://www.reddit.com/r/javascript/comments/eqc437/reverse_engineering_popunder_library_not_my_video/)
+The thing i want is on this website - [https://www.sveasolar.se](https://www.sveasolar.se/) . First you write an adress, than you size your roof, choose rooftype, slope, panels you want and last you got a rough estimate and a contact us form. I am a beginner so i wonder are there stuff out there that can do this? should i hire or how do i go about to have a thing like this on my website?
+## [12][Reverse engineering pop-under library (Not my video, check out Liveoverflow on youtube)](https://www.reddit.com/r/javascript/comments/eqc437/reverse_engineering_popunder_library_not_my_video/)
 - url: https://www.youtube.com/watch?v=PPzRcZLNCPY
----
-
-## [7][Svelte Status #23: unit tests for SvelteJS](https://www.reddit.com/r/javascript/comments/eqbjmk/svelte_status_23_unit_tests_for_sveltejs/)
-- url: https://www.sveltestatus.dev/post/23-unit-tests-for-svelte
----
-
-## [8][Darken - Dark mode made easy](https://www.reddit.com/r/javascript/comments/eq3a0q/darken_dark_mode_made_easy/)
-- url: https://github.com/ColinEspinas/darken
----
-
-## [9][Is it possible to deploy ant design app on github?](https://www.reddit.com/r/javascript/comments/eqcoem/is_it_possible_to_deploy_ant_design_app_on_github/)
-- url: /r/reactjs/comments/eqcaq0/is_it_possible_to_deploy_ant_design_app_on_github/
----
-
-## [10][100 Days of Code for Frontend Development](https://www.reddit.com/r/javascript/comments/epsaoi/100_days_of_code_for_frontend_development/)
-- url: http://github.com/nas5w/100-days-of-code-frontend/blob/master/README.md
----
-
-## [11][Hover: A very lightweight data store with action reducers and state change listeners (framework agnostic)](https://www.reddit.com/r/javascript/comments/eq4k1c/hover_a_very_lightweight_data_store_with_action/)
-- url: https://github.com/jesseskinner/hover
----
-
-## [12][Just JavaScript by Dan Abramov](https://www.reddit.com/r/javascript/comments/eq61b1/just_javascript_by_dan_abramov/)
-- url: https://justjavascript.com
 ---
 

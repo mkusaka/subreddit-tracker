@@ -57,90 +57,78 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][C++ Standards Committee Papers: 2020-01 pre-Prague mailing](https://www.reddit.com/r/cpp/comments/eqc3kz/c_standards_committee_papers_202001_preprague/)
+## [2][GCC: C++ coroutines - Initial implementation pushed to master.](https://www.reddit.com/r/cpp/comments/eqrv1n/gcc_c_coroutines_initial_implementation_pushed_to/)
+- url: https://gcc.gnu.org/ml/gcc-patches/2020-01/msg01096.html
+---
+
+## [3][P2064: "Assumptions" by Herb Sutter](https://www.reddit.com/r/cpp/comments/eqv5i8/p2064_assumptions_by_herb_sutter/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2064r0.pdf
+---
+
+## [4][Account of search for a minimalistic bounded blocking MPMC queue](https://www.reddit.com/r/cpp/comments/equle2/account_of_search_for_a_minimalistic_bounded/)
+- url: https://morestina.net/blog/1400/minimalistic-blocking-bounded-queue-for-c
+---
+
+## [5][Survey about C++ IO library status. Are iostreams allowed in your project?](https://www.reddit.com/r/cpp/comments/eqtn2b/survey_about_c_io_library_status_are_iostreams/)
+- url: https://docs.google.com/forms/d/e/1FAIpQLSfruC_zT1d8VZsjcQNZ_nC_9NgY3OrfWcVWsSxKogVr2ifd6A/viewform
+---
+
+## [6][Prefetching - practical applications](https://www.reddit.com/r/cpp/comments/eqm4qc/prefetching_practical_applications/)
+- url: https://www.reddit.com/r/cpp/comments/eqm4qc/prefetching_practical_applications/
+---
+ [https://extensa.tech/blog/prefetching/](https://extensa.tech/blog/prefetching/) 
+
+Continuation of previous post:
+
+ [https://www.reddit.com/r/cpp/comments/e6fuu0/blogposts\_about\_various\_methods\_of\_packing/](https://www.reddit.com/r/cpp/comments/e6fuu0/blogposts_about_various_methods_of_packing/)
+## [7][Exploiting C++ string literal operator: GLSL vector swizzling in modern C++17](https://www.reddit.com/r/cpp/comments/eqoc0y/exploiting_c_string_literal_operator_glsl_vector/)
+- url: https://github.com/TheMaverickProgrammer/Compile-Time-Vector-Swizzling
+---
+
+## [8][C++ Standards Committee Papers: 2020-01 pre-Prague mailing](https://www.reddit.com/r/cpp/comments/eqc3kz/c_standards_committee_papers_202001_preprague/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-01
 ---
 
-## [3][std::polymorphic_value + Duck Typing = Type Erasure](https://www.reddit.com/r/cpp/comments/eq4b0h/stdpolymorphic_value_duck_typing_type_erasure/)
-- url: https://foonathan.net/2020/01/type-erasure/
+## [9][Ref target lifetime/ownership management?](https://www.reddit.com/r/cpp/comments/eqld7n/ref_target_lifetimeownership_management/)
+- url: https://www.reddit.com/r/cpp/comments/eqld7n/ref_target_lifetimeownership_management/
+---
+Is there a general principle that lets you easily reason about the lifetime and "proper" ownership of a ref's target?
+
+Despite being a relatively experienced C++ programmer, I still occasionally find myself fighting lifetime-management. Especially with refs. I very often want to write code that looks like this:
+
+```
+struct foo {
+  const string&amp; x;
+};
+foo create_foo() {
+  string y = get_string();
+  return foo{y};
+}
+```
+
+E.g. the ref is to a stack-allocated object that may go out of scope.
+
+In the above example I could obviously have `foo` own the string, but there are lots of cases where I really do just want a ref, and it's often hard at first to know exactly where to pin that ownership. Of course `shared_ptr` is also an option but I try to avoid sharing `shared_ptr` across types or instances.
+
+Experience helps, but usually I just have to sit and reason very carefully about it even though the compiler has all the information it needs to spot this bug in many cases. Usually the ownership becomes more obvious over time but only after being bit multiple times in debugging by "null" refs that cascaded from far-away-stacks.
+
+I only realized C++ was really missing this when I started poking more at Rust recently. This seems to be something that Rust gets right with its *lifetime is part of the signature* / borrow-checker and one thing that C++ gets "wrong" (doesn't capture directly) despite the common "use smart ptrs and you won't have memory issues" saying.
+## [10][DynamicArray: Yet Another C++ Array](https://www.reddit.com/r/cpp/comments/eqovjn/dynamicarray_yet_another_c_array/)
+- url: https://www.reddit.com/r/cpp/comments/eqovjn/dynamicarray_yet_another_c_array/
+---
+Github link:  [https://github.com/LeonineKing1199/sleip](https://github.com/LeonineKing1199/sleip)
+
+Have you ever needed a fixed-sized dynamic allocation? If so, `sleip::dynamic_array` is the class for you! `dynamic_array` is fully Allocator-aware and also supports array objects properly.
+
+Meaning the following is possible:
+
+    auto x = sleip::dynamic_array&lt;int[2][2](...);
+    auto y = x; // properly copied over
+
+The container requires C++17 as a minimum and is available via a custom vcpkg port repo in addition to supporting regular CMake.
+
+Make sure to read the docs [here](https://github.com/LeonineKing1199/sleip/blob/develop/doc/dynamic_array.adoc#dynamic_array--fixed-size-dynamic-array)
+## [11][Allocating large blocks of memory: bare-metal C++ speeds](https://www.reddit.com/r/cpp/comments/eqhckl/allocating_large_blocks_of_memory_baremetal_c/)
+- url: https://lemire.me/blog/2020/01/17/allocating-large-blocks-of-memory-bare-metal-c-speeds/
 ---
 
-## [4][Performance Analysis of Deep Learning with Flamegraphs](https://www.reddit.com/r/cpp/comments/eqdu8j/performance_analysis_of_deep_learning_with/)
-- url: http://www.mycpu.org/debugging-deep-learning-flamegraph/
----
-
-## [5][universal named parameter](https://www.reddit.com/r/cpp/comments/eqfdft/universal_named_parameter/)
-- url: https://godbolt.org/z/BAjCjz
----
-
-## [6][How can I handle both structured exceptions and C++ exceptions potentially coming from the same source?](https://www.reddit.com/r/cpp/comments/epwpx3/how_can_i_handle_both_structured_exceptions_and_c/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200116-00/?p=103333
----
-
-## [7][New Accuracy Improvements for Remote Linux IntelliSense in both CMake and VS projects | C++ Team Blog](https://www.reddit.com/r/cpp/comments/epvue6/new_accuracy_improvements_for_remote_linux/)
-- url: https://devblogs.microsoft.com/cppblog/improvements-to-accuracy-and-performance-of-linux-intellisense/
----
-
-## [8][Why were abbrev. lambdas rejected?](https://www.reddit.com/r/cpp/comments/epq4ui/why_were_abbrev_lambdas_rejected/)
-- url: https://brevzin.github.io/c++/2020/01/15/abbrev-lambdas/
----
-
-## [9][CppCast: Conference Organizing](https://www.reddit.com/r/cpp/comments/epv9v3/cppcast_conference_organizing/)
-- url: https://cppcast.com/cpp-conference-organizing/
----
-
-## [10][I built a site to search C++ libraries based on the awesome C++ github list, with sort, filtering, and extra meta information for each library](https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/)
-- url: https://www.reddit.com/r/cpp/comments/epikzx/i_built_a_site_to_search_c_libraries_based_on_the/
----
- [https://lucidindex.com/cpp](https://lucidindex.com/cpp)
-## [11][POD Struct Serialisation Using Type Punning](https://www.reddit.com/r/cpp/comments/epz9ex/pod_struct_serialisation_using_type_punning/)
-- url: https://www.reddit.com/r/cpp/comments/epz9ex/pod_struct_serialisation_using_type_punning/
----
-I wanted to figure out a way to serialise a POD struct into a vector of bytes. My application is to serialise some game state objects in my game so they can be saved to file, and at some point be retrieved again using the reverse process.
-
-I'm using #pragma pack(1)to force alignment to 1 byte.
-
-To do the serialisation, I'm simply casting the whole struct to void\*then to unsigned char\*and then using the resulting pointer to initialise the vector using make\_unique.
-
-I'm relatively new to c++, and I'm wondering if it is safe to do these kind of things. Here are a few of my burning questions:
-
-1. Is the struct memory layout guaranteed?
-2. Is the struct size guaranteed given that I'm forcing packing to the nearest byte?
-3. How might I handle when more complex data is inside the struct, e.g. a vector or another struct? I guess I'd need to do some kind of recursive serialisation in that case.
-4. Any neat preprocessor tricks that might help me flip the endianness with little effort?
-5. Would it be safe to go in the opposite direction; deserialising by casting an unsigned char\[\]back to the struct type?
-
-Code below is an example of what I'm talking about. Runs in [Godbolt](https://godbolt.org/z/yoUxfZ). Clone of my question on [Stackoverflow](https://stackoverflow.com/questions/59786566/pod-struct-serialisation-using-type-punning).
-
-    #include &lt;iostream&gt;
-    #include &lt;memory&gt;
-    #include &lt;vector&gt;
-    
-    #pragma pack(1)
-    struct PODStruct {
-        unsigned char a;
-        unsigned int b;
-        unsigned int c;
-    
-        std::unique_ptr&lt;std::vector&lt;unsigned char&gt;&gt; serialise() const;
-    };
-    #pragma pack()
-    
-    std::unique_ptr&lt;std::vector&lt;unsigned char&gt;&gt; PODStruct::serialise() const {
-        auto rawChar = (unsigned char*)((void*)this);
-        auto serDataPtr = std::make_unique&lt;std::vector&lt;unsigned char&gt;&gt;(rawChar, rawChar + sizeof(PODStruct));
-        return serDataPtr;
-    }
-    
-    int main() {
-        PODStruct foo = {0x38, 0x34353637, 0x30313233};
-    
-        auto bar = foo.serialise();
-    
-        for (auto byte : *bar) {
-            std::cout &lt;&lt; byte &lt;&lt; std::endl; 
-        }
-    
-        std::cout &lt;&lt; "Size (bytes): " &lt;&lt; bar-&gt;size() &lt;&lt; std::endl;
-        return 0;
-    }

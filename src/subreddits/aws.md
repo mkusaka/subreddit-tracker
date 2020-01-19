@@ -1,90 +1,94 @@
 # aws
-## [1][Amazon ECS Preview Support for EFS file systems Now Available](https://www.reddit.com/r/aws/comments/eq8hi6/amazon_ecs_preview_support_for_efs_file_systems/)
+## [1][Cognito is confusing...](https://www.reddit.com/r/aws/comments/eqsi1u/cognito_is_confusing/)
+- url: https://www.reddit.com/r/aws/comments/eqsi1u/cognito_is_confusing/
+---
+I had set-up my web-app to use cognito for user sign-in, sign-up, MFA and password management some time ago using  `amazon-cognito-identity-js` library. Import statement: 
+
+`import * as AmazonCognitoIdentity from "amazon-cognito-identity-js";`
+
+Now, after some time, I've come back to add few other implementations like fetching user attributes and others following resources like: 
+
+[https://aws.amazon.com/blogs/mobile/accessing-your-user-pools-using-the-amazon-cognito-identity-sdk-for-javascript/](https://aws.amazon.com/blogs/mobile/accessing-your-user-pools-using-the-amazon-cognito-identity-sdk-for-javascript/)
+
+As I was writing code, most of the things are not recognized by above imported library. Example: 
+
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({})  &lt;-- seems like these are not part of amazon-cognito-identity-js library.
+
+Another resource, from aws js docs: [https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CognitoIdentityServiceProvider.html#getUser-property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CognitoIdentityServiceProvider.html#getUser-property)
+
+    var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider(); &lt;-- same error.
+
+What am I missing here? Note that I've tried importing library as AWS.
+
+Edit: I don't want to use amplify sdk since most of my code is already written using js sdk.
+## [2][SQS : the specified queue does not exist for this wsdl version](https://www.reddit.com/r/aws/comments/equis1/sqs_the_specified_queue_does_not_exist_for_this/)
+- url: https://www.reddit.com/r/aws/comments/equis1/sqs_the_specified_queue_does_not_exist_for_this/
+---
+We have a microservice running in EKS which is throwing this error. We checked the obvious reason of region being incorrect. It is set correctly.
+
+Is there anything else that we're missing?
+## [3][IAM timeouts in us-east 1 with "Http request timed out enforced after 999ms"](https://www.reddit.com/r/aws/comments/eqiac7/iam_timeouts_in_useast_1_with_http_request_timed/)
+- url: https://www.reddit.com/r/aws/comments/eqiac7/iam_timeouts_in_useast_1_with_http_request_timed/
+---
+Seeing numerous timeouts and fails of IAM.  AWS CLI unable to locate new keys.  No info on status pages yet.
+
+UPDATE
+12:09PM UTC-5 new keys were recognized by AWS CLI.
+## [4][JSON Python Serialization Question](https://www.reddit.com/r/aws/comments/eqr5dn/json_python_serialization_question/)
+- url: https://www.reddit.com/r/aws/comments/eqr5dn/json_python_serialization_question/
+---
+Hi there, 
+
+I'm building a Reddit bot using AWS Lambda, SQS, EC2 and S3. 
+
+Essentially, the bot scans Reddit for a comment, verifies in the database that this comment hasn't been replied to, and replies. The main handler imports a Python file, which creates a class for the user and interacts with the SQL database from that class.
+
+It's telling me that I need to serialize the object in my module, but I'm at a loss to understand why. Why does AWS need a serialized JSON object to run a Python script? Does it need to be in JSON to transfer the information to my SQL database?
+
+Here is my error message:
+
+ "errorMessage": "Object of type module is not JSON serializable",
+
+  "errorType": "TypeError",
+
+  "stackTrace": \[
+
+"  File \\"/var/task/main.py\\", line 5, in handler\\n    encoder = json.JSONEncoder().encode({'output': Scrapey})\\n",
+
+"  File \\"/var/lang/lib/python3.7/json/encoder.py\\", line 199, in encode\\n    chunks = self.iterencode(o, \_one\_shot=True)\\n",
+
+"  File \\"/var/lang/lib/python3.7/json/encoder.py\\", line 257, in iterencode\\n    return \_iterencode(o, 0)\\n",
+
+"  File \\"/var/lang/lib/python3.7/json/encoder.py\\", line 179, in default\\n    raise TypeError(f'Object of type {o.\_\_class\_\_.\_\_name\_\_} '\\n"
+## [5][Get a list of instances running Windows](https://www.reddit.com/r/aws/comments/eqlwfq/get_a_list_of_instances_running_windows/)
+- url: https://www.reddit.com/r/aws/comments/eqlwfq/get_a_list_of_instances_running_windows/
+---
+Is there a way to get a list of instances running Windows and it’s version via the CLI or boto3?
+## [6][What data fields for images to CSV?](https://www.reddit.com/r/aws/comments/eqpf6x/what_data_fields_for_images_to_csv/)
+- url: https://www.reddit.com/r/aws/comments/eqpf6x/what_data_fields_for_images_to_csv/
+---
+i am creating a program to fetch images (AKIs, AMIs, ARIs) information (not the actual content) and store it in various formats as requested.  i intend to make this program freely available.  what i would like to know is what data fields people would like to have saved in CSV and TSV formats.  obvious fields would include the region name, object ID, name, and creation date/time.  what else?
+
+this is being written in Python.  so it should be fairly portable.
+
+it will have options to select regions and other aspects such as image type.
+## [7][Send RDS data to Elasticsearch](https://www.reddit.com/r/aws/comments/eqlxx0/send_rds_data_to_elasticsearch/)
+- url: https://www.reddit.com/r/aws/comments/eqlxx0/send_rds_data_to_elasticsearch/
+---
+I have a postgres db hosted on RDS and am having a hard time figuring out how to send my data over to Elasticsearch. I have tried setting it up with Kinesis data streams however the entire system is starting to look very complex.
+
+Surely I am not the only one that has tried to do this before, so I was wondering if anyone had experiences to share.
+## [8][How long does a quota increase generally take?](https://www.reddit.com/r/aws/comments/eqosye/how_long_does_a_quota_increase_generally_take/)
+- url: https://www.reddit.com/r/aws/comments/eqosye/how_long_does_a_quota_increase_generally_take/
+---
+I’m completely new to AWS, so sorry if this sounds impatient. Does it take more than a day to get a quota increase, or should I submit another support request?
+## [9][Amazon ECS Preview Support for EFS file systems Now Available](https://www.reddit.com/r/aws/comments/eq8hi6/amazon_ecs_preview_support_for_efs_file_systems/)
 - url: https://aws.amazon.com/about-aws/whats-new/2020/01/amazon-ecs-preview-support-for-efs-file-systems-now-available/
 ---
 
-## [2][How do you audit user actions when assuming roles?](https://www.reddit.com/r/aws/comments/eqaxsy/how_do_you_audit_user_actions_when_assuming_roles/)
-- url: https://www.reddit.com/r/aws/comments/eqaxsy/how_do_you_audit_user_actions_when_assuming_roles/
+## [10][What's the difference between the SDK and CDK?](https://www.reddit.com/r/aws/comments/eqmu73/whats_the_difference_between_the_sdk_and_cdk/)
+- url: https://www.reddit.com/r/aws/comments/eqmu73/whats_the_difference_between_the_sdk_and_cdk/
 ---
-Title. When IAM users just have permission to assume roles into other accounts that then do things, how do you use Cloud Trail to audit what specific users did and what specific user made some change?
-## [3][You’ve heard it before, outrageous bill on accident](https://www.reddit.com/r/aws/comments/eq08s9/youve_heard_it_before_outrageous_bill_on_accident/)
-- url: https://www.reddit.com/r/aws/comments/eq08s9/youve_heard_it_before_outrageous_bill_on_accident/
----
-I created a s3 event to compliment my lambda function with a object created event. What I didn’t think of was, my lambda creates s3 objects. So after testing my cool new event and seeing it worked I unknowingly tucked into bed and fell into a deep slumber. Upon waking in the morning I got a AWS free tier limit email. This got me thinking, logged into AWS and see the event is working too good. It’s been running my lambda non stop since last night. I finally got the event to stop after disabling didn’t work I deleted. Got it. As I head over to the billing console I notice a $900 bill. Oh shhhhh. 
+I made a tool to automate the creation and configuration of several resources (like pipelines and all associated resources) to solve repetitive tasks. I'm currently working on a feature that allows makes using git-flow easier and the code base is becoming almost too big for 1 person to work on (it's basically a CodeStar clone without the user management features and without using cloud formation).
 
-Can this be undone?
-
-Update 1: I was refunded $900 by AWS support to take care of the bill!
-
-Update 2: After the last call to my lambda function was this morning, and all of my AWS resources were deleted around 12pm with support of AWS. 5 hours later my bill jumped from $900 to $1500. Not sure what happened
-## [4][Today I was just voluntold that I'll be responsible for drafting guidelines and policy for how my team will be operating in AWS. I could use some wisdom.](https://www.reddit.com/r/aws/comments/eq9enk/today_i_was_just_voluntold_that_ill_be/)
-- url: https://www.reddit.com/r/aws/comments/eq9enk/today_i_was_just_voluntold_that_ill_be/
----
-Preface: I'm not technically deep into AWS.  Most of what we use it for is EC2 instances and RDS so there is a tremendous amount.  
-Recently we started growing our presence in AWS.  Prior to that, it was largely a dev/test playground for my developers with only two chiefs (one being myself).  Now it's looking like we're going to start putting more services in AWS.  This will involve me bringing the rest of my team (6-8 more admins) into the environment.  Most of them won't need to operate in AWS on a daily basis.  Some will have a more frequent need to do so than others.  The bulk of it is controlled by our corporate IT department and most of what we'll be doing is in the console.  
-
-
-From the beginning, I've had the feeling that if you don't get a handle on your AWS environment early and set some ground rules, things can get messy and out of control very quickly.   I feel as though the technical guidelines, things like encrypting volumes, discouraging the use of local user accounts,  principles of least privilege, complying with corporate security requirements, are pretty straight forward (though I wouldn't mind suggestions or lessons learned)  What I'm most curious about is how other folks set guidelines for how your team operates.  
-
-
-While my instincts tell me I should delegate specific tasks (creation, deletion, etc.) to just a few people  I'm looking for ideas, wisdom, lessons learned, or suggestions so I don't fuck this up too bad.  My ideal scenario would be to empower my guys to do what they need to without having to seek permission too often but make sure the boundaries are clear so things stay tidy and everyone is playing by the same rules.  Basically, no one should be asking "wtf is that and why is it running?"  I'm open to ideas and I'm sure there are things I'm not thinking about but my main goal is to lay out a policy that keeps things from becoming a shit show.  Thanks!
-## [5][Autoscale ECS - SQS workloads](https://www.reddit.com/r/aws/comments/eqbung/autoscale_ecs_sqs_workloads/)
-- url: https://www.reddit.com/r/aws/comments/eqbung/autoscale_ecs_sqs_workloads/
----
-Happy Friday!
-
-I have an ECS service with 1 desired task. It runs a python script that polls an SQS queue. We don't have autoscale set-up, rather unsure of the best way to do so.
-
-The workload is an ML job. The task processes one message at a time. CPU is fairly low, usually. We started doing a CW alarm that fires when #Mesaages &gt; 1, we scale up to as many tasks by using a lambda. The trick is knowing when to scale down. The #messagws visible becomes 0 immediately after they get picked up. so we wouldn't know when they get over. We could wait for N minutes and set desired to 0. We're over engineering already, adding a timed scaling worsens it. 
-
-Hoping to hear from the community about how to do this better, or even go upstream and change input from SQS to something else. Frankly, we'd love to use the sweet AWS autoscaling features instead of hacking around.
-## [6][Licensing Adobe CC on Amazon AppStream: Named-User Licensing or Shared Device Licensing](https://www.reddit.com/r/aws/comments/eq9ajv/licensing_adobe_cc_on_amazon_appstream_nameduser/)
-- url: https://www.reddit.com/r/aws/comments/eq9ajv/licensing_adobe_cc_on_amazon_appstream_nameduser/
----
-Hello,
-
-To the people that installed Adobe CC on AppStream, do you use Named-User Licensing or Shared Device Licensing?
-
-Thank you.
-## [7][Simple Email Service High Availability](https://www.reddit.com/r/aws/comments/eq7laf/simple_email_service_high_availability/)
-- url: https://www.reddit.com/r/aws/comments/eq7laf/simple_email_service_high_availability/
----
-I'm working on high availability architecture for a web app hosted AWS. I know I can host EC2 and RDS instances in multiple AZ's, but I can't seem to find high availability information on SES (Simple Email Service). My assumption is that it's hosted in multiple AZ's by default, but you know what they say about assumptions. 
-
-What do I need to know about SES high availability?
-## [8][CloudFormation: Move resources to another stack](https://www.reddit.com/r/aws/comments/eq720t/cloudformation_move_resources_to_another_stack/)
-- url: https://www.reddit.com/r/aws/comments/eq720t/cloudformation_move_resources_to_another_stack/
----
-Hello,
-
-I’ve set some Route53 resources with a DeletionPolicy of Retain. I’m now ready to delete them from the template so I can add them to another template (hit the arbitrary 200 resource record limit in a CF template managing DNS).
-
-The blog post shows using the CF console to move the resources to another template. Is there a way to do this via CloudFormation, by using an ARN or some other identifier? I know hosted zones have an identifier but haven’t found anything for CNAMEs, etc.
-
-Basically, trying to do it all through CF and not manually.
-
-Thanks!
-## [9][Route53: Create white label name servers via CloudFormation](https://www.reddit.com/r/aws/comments/eq4g46/route53_create_white_label_name_servers_via/)
-- url: https://www.reddit.com/r/aws/comments/eq4g46/route53_create_white_label_name_servers_via/
----
-Hello,
-
-I'm looking at this guide: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html
-
-In it, they list only three options to accomplish creating a reusable delegation set:
-
-* Route 53 API
-
-* AWS CLI
-
-* AWS SDKs
-
-I don't see any examples using CloudFormation, which is how I am creating the hosted zones and all of the relevant DNS entries.
-
-Does anyone have a working example of how one might do this? I'm in the process of migrating zones and records to Route 53 for 50+ domains and the randomized 4 name servers (each different) for each domain is killing me, little by little, with every domain.
-
-Thanks!
-## [10][Learning AWS for a complete noob](https://www.reddit.com/r/aws/comments/eq5zzr/learning_aws_for_a_complete_noob/)
-- url: https://www.reddit.com/r/aws/comments/eq5zzr/learning_aws_for_a_complete_noob/
----
-I'm a product manager who is completely new to AWS - is there a good resource online to learn about the whole thing at the 10,000 feet level? Thank you :)
+But, I just found out something about a CDK and I'm questioning my methods (as usual) on whether my methods of setting up resources and managing them are correct. As far as I understand it, CDK is a tool to make cloud formation (IAC) easier through languages like javascript and python. Does anyone have a solid idea of what the difference is between the SDK and CDK, and whether I should use the CDK instead of the SDK?

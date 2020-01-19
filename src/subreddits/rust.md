@@ -33,77 +33,177 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/01/14/this-week-in-rust-321/
 ---
 
-## [3][The Soundness Pledge](https://www.reddit.com/r/rust/comments/eqcefv/the_soundness_pledge/)
+## [3][Announcing feed-rs 0.2.0](https://www.reddit.com/r/rust/comments/eqsadx/announcing_feedrs_020/)
+- url: https://www.reddit.com/r/rust/comments/eqsadx/announcing_feedrs_020/
+---
+Kumamoto-san started feed-rs a while ago, but moved on to other things.
+
+He was kind enough to add me as a maintainer last year, but unfortunately I haven't had much time to learn Rust and keep working on feed-rs in the interim.
+
+I finally got around to publishing 0.2.0.
+
+Its my first "real" Rust project - I wanted something a little more than the exercism examples to learn some Rust, so its probably full of mistakes and poor code but clippy seems happy. Key changes:
+
+* 2018 edition
+* Align feed model around Atom spec
+* Switch to event-based parser (xml-rs) to reduce peak memory usage and use of clone()
+* Expanded test coverage
+* Documentation improvements
+
+I do plan on using this in a different project (a replacement for fever, a web+app based RSS/Atom reader that is no longer maintained), so I'm expecting to issue a few more releases to feed-rs to address bugs, handle more of the RSS spec etc.
+
+Happy to take feedback, bug reports, broken RSS/Atom feeds etc at the GitHub repo.
+
+Thanks!
+## [4][New Rust user questions about the `actix` situation](https://www.reddit.com/r/rust/comments/eqh3sy/new_rust_user_questions_about_the_actix_situation/)
+- url: https://www.reddit.com/r/rust/comments/eqh3sy/new_rust_user_questions_about_the_actix_situation/
+---
+I've been curious about rust for a couple years, but just last month I finally took the time to start my first full application. I am working with high-frequency tick data from stock exchanges, and naturally the tipping point for switching was the performance of `actix-web` in the TechEmpower benchmarks.
+
+
+With actix-web under fire, I don't see any other framework in rust that [even compares in performance on the benchmarks](https://www.techempower.com/benchmarks/#section=data-r18&amp;hw=ph&amp;test=fortune&amp;l=yyku7z-f). These were important to me not only to demonstrate speed, but the [benchmarks are open source](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/frameworks/Rust) and act as a nice Rosetta Stone for when I'm moving services to new languages/frameworks.
+
+
+My questions are:
+
+* Was actix-web inherently fast due to design, or will fixing the "unsafe" issues kill it's performance? (if that even happens)
+* Are there any comparable alternatives that aren't posted in TechEmpower? Excluding actix, rust isn't even beating out many Python frameworks for performance.
+
+
+I feel discouraged at continuing in rust after reading this situation. I know the benchmarks are somewhat arbitrary, but I find them to be incredibly helpful when learning new languages and hope that more rust packages will be added for reference purposes.
+## [5][Project Structure of a Web Application](https://www.reddit.com/r/rust/comments/eqw1o8/project_structure_of_a_web_application/)
+- url: https://www.reddit.com/r/rust/comments/eqw1o8/project_structure_of_a_web_application/
+---
+I am looking forward to use **warp** for making a backend server while using **ReactJs** on the client side. I will be using **MySql** as my primary database with a layer of caching using **memcached.**
+
+I have looked through few of the articles, but none of them were clear enough of the Project Structures they follow. 
+
+Should all the handlers go to a single folder and further dividing the folder according to the domain problem ? Where does the **View** file goes ? Is **DataAccessLayer** a different library project or just a separate folder should do ? 
+
+I am making a basic application, but in future I will be referencing this project. Therefore, I still want to keep it atleast moderately organized.
+
+&amp;#x200B;
+
+Thanks for the help in advance.
+## [6][The most stable (and ergonomic) Rust web framework](https://www.reddit.com/r/rust/comments/eqtf5v/the_most_stable_and_ergonomic_rust_web_framework/)
+- url: https://www.reddit.com/r/rust/comments/eqtf5v/the_most_stable_and_ergonomic_rust_web_framework/
+---
+With the whole actix debacle, I have been looking into different other web frameworks that exist and I have found some seemingly good ones such as Warp and Tower, and of course Rocket looks pretty neat too. 
+
+In comments about actix, as well as in the repo READMEs, I see performance always being mentioned almost as a main selling point. Also, benchmarks (for which I have learnt framework teams can and will gladly overoptimize). But since, in my opinion, most apps will not really benefit from performance because of other components such as the database inducing overhead, I’m quite surprised people obsess over performance of the web server. Surprisingly nobody really mentions “the safest web framework”. I’d rather use a safe and correct, but slower server, than something making the safety/speed trade-off in a way actix did...
+
+I’m a hobbyist though, so I don’t really know much. Thus I wanted to ask more experienced developers: what is, in your opinion, the most correct / stable / production-ready web framework suitable for production?
+## [7][Drop is not equivalent to the "toilet closure"](https://www.reddit.com/r/rust/comments/eqlx7z/drop_is_not_equivalent_to_the_toilet_closure/)
+- url: https://www.reddit.com/r/rust/comments/eqlx7z/drop_is_not_equivalent_to_the_toilet_closure/
+---
+You would think that the standard library's `fn drop&lt;T&gt;(_: T) {}` and the "toilet closure" `|_| {}` would be equivalent. But that's actually not the case.
+
+Consider this callback taking function:
+
+    fn foo(_: impl FnOnce(&amp;())) {}
+
+For [this function](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=63f661682d894d226519c9f06a624407), it is valid to call `foo(|_| {})` but not `foo(drop)`, which fails with
+
+    error[E0631]: type mismatch in function arguments
+    --&gt; src/main.rs:4:9
+    |
+    1 | fn foo(_: impl FnOnce(&amp;())) {}
+    |    ---         ----------- required by this bound in `foo`
+    ...
+    4 |     foo(drop);
+    |         ^^^^
+    |         |
+    |         expected signature of `for&lt;'r&gt; fn(&amp;'r ()) -&gt; _`
+    |         found signature of `fn(_) -&gt; _`
+    
+    error[E0271]: type mismatch resolving `for&lt;'r&gt; &lt;fn(_) {std::mem::drop::&lt;_&gt;} as std::ops::FnOnce&lt;(&amp;'r (),)&gt;&gt;::Output == ()`
+    --&gt; src/main.rs:4:5
+    |
+    1 | fn foo(_: impl FnOnce(&amp;())) {}
+    |    ---         ----------- required by this bound in `foo`
+    ...
+    4 |     foo(drop);
+    |     ^^^ expected bound lifetime parameter, found concrete lifetime
+## [8][How will the rust community change after the actix situation?](https://www.reddit.com/r/rust/comments/eqw8ub/how_will_the_rust_community_change_after_the/)
+- url: https://www.reddit.com/r/rust/comments/eqw8ub/how_will_the_rust_community_change_after_the/
+---
+Hello, 
+
+now that the dust is starting to settle(?) for the whole actix situation, how do you think this will change the rust community, if at all? Do you think companies might stray from rust because of this?
+## [9][Seeking assistance: Implement a function returning the local UTC offset (time crate, PRs accepted)](https://www.reddit.com/r/rust/comments/eqnti0/seeking_assistance_implement_a_function_returning/)
+- url: https://github.com/time-rs/time/issues/203
+---
+
+## [10][Community thoughts about introducing a breaking change (remove the implicit into()) to the typed builder crate](https://www.reddit.com/r/rust/comments/eqjktn/community_thoughts_about_introducing_a_breaking/)
+- url: https://www.reddit.com/r/rust/comments/eqjktn/community_thoughts_about_introducing_a_breaking/
+---
+I'm the author of the [typed-builder](https://crates.io/crates/typed-builder) crate. Following [some discussion in an pull request](https://github.com/idanarye/rust-typed-builder/pull/29), I'm considering making a breaking change, and would like to hear the community's opinion before I make a decision.
+
+Currently, the setter functions generated by the `TypedBuilder` derive macro use `into()` on the argument. So, if we have something like:
+
+    #[derive(TypedBuilder)]
+    pub struct Foo {
+        bar: String,
+    }
+    
+The generated setter will look like (simplified a bit - the actual implementation has lots of generics ceremony):
+
+    pub fn bar(self, bar: impl Into&lt;String&gt;) -&gt; SelfWithBar {
+        SelfWithBar {
+            bar: bar.into(),
+        }
+    }
+
+This improves ergonomics for `String` and `Option` fields, but messes up the type inference a bit. The author of the PR I linked to earlier, for example, complains that this prevents Rust from inferring the builded struct type when it has fields with generic types. And with my own usages, I've also encountered inference problems induced by this behavior. Consider this:
+
+    #[derive(typed_builder::TypedBuilder)]
+    struct Foo {
+        bar: usize,
+        baz: usize,
+    }
+
+    Foo::builder()
+        .bar(1usize) // will not compile without the literal suffix
+        .baz("2".parse::&lt;usize&gt;().unwrap()) // will not compile with the turbofish
+        .build();
+
+`.bar(1)` would not work, because Rust by default treats integer literals as signed, and signed literal cannot `into()` unsigned ones because you'd lose the sign. Without the automatic `into()` it would work, because the argument of `bar()` would be a `usize` so Rust will know to make the literal a `usize`.
+
+`.baz("2".parse().unwrap())` would not work, because Rust cannot determine what to parse the string as. It needs to parse it to something, and then convert that something to `usize`, but it has no way to determine the concrete type of that something.
+
+I'm also starting to have second thoughts about doing it for strings. Yes, it's convenient, but it hides heap allocation - and the Rust philosophy is to make expensive operations stand out. So removing it entirely will make the typed-builder crate more rusty.
+
+So, I'm thinking of removing the implicit `into()`, or maybe make it opt-in. This, of course, will be a breaking change - but I think it's worth it, because it'll force users to strap `.to_owned()` on the strings they pass to it, which makes the heap allocation explicit. But I want some community input before I do it - are you using typed-builder? What do you think about making this change?
+## [11][The Soundness Pledge](https://www.reddit.com/r/rust/comments/eqcefv/the_soundness_pledge/)
 - url: https://raphlinus.github.io/rust/2020/01/18/soundness-pledge.html
 ---
 
-## [4][A sad day for Rust](https://www.reddit.com/r/rust/comments/eq11t3/a_sad_day_for_rust/)
-- url: https://words.steveklabnik.com/a-sad-day-for-rust
+## [12][Rust Design Pattern: Sharing objects over async thread pool](https://www.reddit.com/r/rust/comments/eqraw2/rust_design_pattern_sharing_objects_over_async/)
+- url: https://www.reddit.com/r/rust/comments/eqraw2/rust_design_pattern_sharing_objects_over_async/
 ---
+I am new to Rust. I am writing an async HTTP/2 service with `hyper` `0.13`. I want to share a global configure object. Because the configuration can be modified at runtime. I protect it by wrapping it with a Mutex. 
 
-## [5][actix_web repository cleared by author who says he’s done with open source](https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/)
-- url: https://www.reddit.com/r/rust/comments/epzukc/actix_web_repository_cleared_by_author_who_says/
----
-He tweeted [“I am done with open source.”](https://twitter.com/fafhrd91/status/1218135374339301378) and has moved `actix-web` and `actix-net` to his personal account with a postmortem left in the original repo: https://github.com/actix/actix-web. I’ll leave the quoted text here as well:
+```
+pub struct Cluster {
+    ring: HashRing&lt;String&gt;,
+    nodes: HashMap&lt;String, NodeClient&gt;,
+}
 
-&gt; ##Actix prject postmortem
+impl Send for Cluster {}
 
-&gt; Another day, another "unsafe shitstorm”, I guess I get used to it.
+lazy_static! {
+    static ref CLUSTER: Mutex&lt;Cluster&gt; = Mutex::new(Cluster::new(Vec::new()));
+}
+```
 
-&gt; It is interesting how easy to move comment out of context and how hard to comment with very clear intention (especially if you are not native speaker) What was the patch? It was very strait forward, simple, uncreative change, intention was just to remove unsafe not to fix existing code. I believe software development is one of the most creative work we do, and creativity is part of why we love software development, why it is fun. Especially if you combine it with real world projects constraints. “creative constrains” could be source of very interesting solutions. Being on the edge of your abilities is super fun. So uncreative change felt boring (oh! And author gave up copyright claims for that patch (a bit irony and sarcasm)). I’ve never used unsafe unintentionally, I use it because I believe usage is safe. There was no any malicious intentions. I believed it held mutable aliasing invariant and I was very happy that someone found real problem. I wanted to solve the problem, just with a bit of creativity. And use RefCell solution only if it would be not possible to solve it with any other way. Btw, I like the solution I found, it is in master and solves the problem at least one from the issue. If you want to push boundaries you have to touch this boundaries and sometimes you push too hard.
+However, I am getting the following compile error. 
 
-&gt; Be a maintainer of large open source project is not a fun task. You alway face with rude and hate, everyone knows better how to build software, nobody wants to do home work and read docs and think a bit and very few provide any help. Seems everyone believes there is large team behind actix with unlimited time and budget. (Btw thanks to everyone who provided prs and other help!) For example, async/await took three weeks 12 hours/day work stint, quite exhausting, and what happened after release, I started to receive complaints that docs are not updated and i have to go fix my shit. Encouraging. You could notice after each unsafe shitstorm, i started to spend less and less time with the community. You felt betrayed after you put so much effort and then to hear all this shit comments, even if you understand that that is usual internet behavior. Anyway, removing issue was a stupid idea. But I was pissed off with last two personal comments, especially while sitting and thinking how to solve the problem. I am sorry for doing that.
-
-&gt; It’s been three years since I started actix project (time flies). I learnt a lot, i meet new people, I found language that I really like and want to use it fulltime, I found fun job. But damage to the project's reputation is done and I don’t think it is possible to recover. Actix always will be “shit full of UB” and “benchmark cheater”. (Btw, with tfb benchmark I just wanted to push rust to the limits, I wanted it to be on the top, I didn’t want to push other rust frameworks down.) Everything started with actix, then actix-web and then actix-net. It took a lot of time to design api and architecture. Each of this projects was rewritten from scratch at least 4-5 time. I hope I expanded some boundaries and found few new patterns, I hope other developers will check source code and find inspiration to move even further. Nowadays supporting actix project is not fun, and be part of rust community is not fun as well.
-
-&gt; I am done with open source.
-
-&gt; P.S. I moved actix-net and actix-web project to my personal github account. I will make decision during next couple days what to do. I don’t want to see the project becomes ghost of what it was. Maintainers must understand how everything work, but don’t anyone who does and those who could are busy with other projects. At the moment I am planing to make repos private and then delete them (will remove benchmarks as well), unless others suggest better ideas.
-
-&gt; Everything has to come to the end. It was fun trip but now is time to move on. Life should be fun.
-## [6][Gauging interest in an actix-web (and siblings) fork.](https://www.reddit.com/r/rust/comments/eq4xsu/gauging_interest_in_an_actixweb_and_siblings_fork/)
-- url: https://www.reddit.com/r/rust/comments/eq4xsu/gauging_interest_in_an_actixweb_and_siblings_fork/
----
-You’ve heard the news. You might even depend on the framework for a personal project. Maybe even a work project.
-
-It seems in my communication with Nikolay on Gitter that we won’t be seeing a return to the Actix org on GitHub. Maybe his concerns are valid. And maybe his reasons for exiling the code from @actix we’re warranted. It’s unfortunate, but we have an opportunity to take this amazing project onwards.
-
-A fork is not the most ideal approach in my opinion but I believe that this project doesn’t deserve to be abandoned and that some of us can do that.
-
-A few months ago myself and probably about 30 others joined the @actix/contributors team on GitHub. There are people willing to help. How about it?
-## [7][hyper on async-std proof-of-concept](https://www.reddit.com/r/rust/comments/eq8x17/hyper_on_asyncstd_proofofconcept/)
-- url: https://github.com/leo-lb/hyper-async-std
----
-
-## [8][Microsoft's Rust inspired research language has been released](https://www.reddit.com/r/rust/comments/eq089q/microsofts_rust_inspired_research_language_has/)
-- url: https://github.com/microsoft/verona
----
-
-## [9][actix-support/letter](https://www.reddit.com/r/rust/comments/eq5l6s/actixsupportletter/)
-- url: https://github.com/actix-support/letter
----
-
-## [10][Introducing sksg - The static site generation pipeline](https://www.reddit.com/r/rust/comments/eqcnp3/introducing_sksg_the_static_site_generation/)
-- url: https://www.reddit.com/r/rust/comments/eqcnp3/introducing_sksg_the_static_site_generation/
----
-(So, I've been working on this since December, and for the tiny scope, it certainly took a long time to get it out. Even now it's still rough around the edges, so feedback is very much appreciated, especially regarding docs.)
-
-sksg is a static site generator that's inspired by the Unix philosophy of gluing smaller tools to do one large thing.
-
-The core of sksg will just locate your pages and create the appropriate "pipelines", while the actual page generation logic happens on the other tools, (which don't need to be designed for sksg specifically)
-
-One advantage of this is that you aren't locked into a specific language's ecosystem, as everything that supports stdin/stdout can be used as a pipeline step (including shell scripts)
-
-There are also some simple tools distributed alongside sksg to get people started. However, they might not be as polished or as "batteries included" as one might expect.
-
-If this sounds interesting to you, feel free to check it out [here](https://issizler.club/sksg/)
-## [11][How To Write Fast Rust Code](https://www.reddit.com/r/rust/comments/eq168d/how_to_write_fast_rust_code/)
-- url: http://likebike.com/posts/How_To_Write_Fast_Rust_Code.html
----
-
-## [12][false ban](https://www.reddit.com/r/rust/comments/eqgd2d/false_ban/)
-- url: https://www.reddit.com/r/rust/comments/eqgd2d/false_ban/
----
-i was banned from rustralasia.net au long my most successful server ever i had so much stuff and was having the most fun ive ever had and logged on im almost out of data so i was lagging really bad and getting teleported back i jumped off a roof and got banned for fly hacking
-
-my steam name is chocolatemilk if anybody can help
+```
+error[E0277]: `std::sync::MutexGuard&lt;'_, cluster::Cluster&gt;` cannot be sent between threads safely
+  --&gt; src/server.rs:15:38
+   |
+15 |     let server = Server::bind(&amp;addr).serve(service);
+   |                                      ^^^^^ `std::sync::MutexGuard&lt;'_, cluster::Cluster&gt;` cannot be sent between threads safely
+   |
+```
+The `std::sync::MutexGuard` is can't be `Send` between threads. What would be the design pattern that is similar to global objects that can be used in the thread pool of an async application? Ordinary objects can only be used by one single thread. Cloning the object for each async call will be unnecessarily expensive. What is the ideal design pattern in Rust to share an object that can be modified at runtime across threads?

@@ -97,79 +97,92 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][I made a simple RPG game as my first React.js project and wanted to share](https://www.reddit.com/r/reactjs/comments/eq5sjk/i_made_a_simple_rpg_game_as_my_first_reactjs/)
-- url: https://v.redd.it/6sitwhoqceb41
+## [3][Turns out JavaScript compiling and injection in iframes is NOT as simple as HTML/CSS 😅 but I finally made some good progress 🙌🏻. Next steps are to make the iframe refresh after the user hasn’t typed for a while, improved formatting/auto completion, and generate downloadable/shareable code files](https://www.reddit.com/r/reactjs/comments/eqqmuw/turns_out_javascript_compiling_and_injection_in/)
+- url: https://v.redd.it/r03rl1meenb41
 ---
 
-## [4][React/Node PWA Manga Reader – Aaaaaand we're back! | Part 9](https://www.reddit.com/r/reactjs/comments/eqf0ha/reactnode_pwa_manga_reader_aaaaaand_were_back/)
-- url: https://www.youtube.com/watch?v=_IJT1ZUoclY
+## [4][I developed a Polling app with React and NextJs. Looking for feedback!](https://www.reddit.com/r/reactjs/comments/equqeq/i_developed_a_polling_app_with_react_and_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/equqeq/i_developed_a_polling_app_with_react_and_nextjs/
+---
+Hey guys I recently deployed my app on AWS for the first time. It is a poll making app which you can share, add a time limit, and even take a screenshot of the results.  It's more of a portfolio piece than anything so I'd really appreciate it if you guys could check it out and give me some feedback!
+
+[https://thatpoll.com/](https://thatpoll.com/)
+## [5][ReactJS Crash Course 2020 | React Functional Components, Hooks, and React Router [&lt;30 minutes]](https://www.reddit.com/r/reactjs/comments/eqgwds/reactjs_crash_course_2020_react_functional/)
+- url: https://youtu.be/KQOtXYC0We8
 ---
 
-## [5][React Hooks Tutorial | Build Yelp in React #13 | improve Yelp's sub-navigation bar](https://www.reddit.com/r/reactjs/comments/eqfvgu/react_hooks_tutorial_build_yelp_in_react_13/)
-- url: https://youtu.be/4RsfftD8l4c
+## [6][Should I focus on using React Hooks + Context in 2020?](https://www.reddit.com/r/reactjs/comments/eqrya3/should_i_focus_on_using_react_hooks_context_in/)
+- url: https://www.reddit.com/r/reactjs/comments/eqrya3/should_i_focus_on_using_react_hooks_context_in/
+---
+Good day. I'm new to ReactJS and torn between using Redux or Hooks + Context. I already used both. so I want to extend my knowledge. But I need your suggestion which should I choose between this two. I need to select only one.  Thanks
+## [7][React + App with api(s)](https://www.reddit.com/r/reactjs/comments/eqvowp/react_app_with_apis/)
+- url: https://www.reddit.com/r/reactjs/comments/eqvowp/react_app_with_apis/
+---
+I know there are a lot of tutorials, but I want to choose right from the beginning and know which way to go.
+
+I want to create a simple page that retrieves data from 4 different api and then processes that data on the page (in live time but not only).
+
+&amp;#x200B;
+
+Basically, how to approach it in the most optimal way?
+
+&amp;#x200B;
+
+Should I create my own REST API ? or Should I first save the api data using e.g. lamda every 30 minutes to update it or should I do it on the fly?
+
+&amp;#x200B;
+
+Which databases should I choose and do I need them ? Or maybe I can use graph ql ablo elasticsearch ?
+
+&amp;#x200B;
+
+I prefer to ask because I know that there are a lot of solutions and tools and I wonder what you think. Why do you do something wrong if you can do it well and efficiently ?
+
+&amp;#x200B;
+
+Or maybe I think completely wrong and do it differently?
+## [8][Any good tutorial for React that focuses on Hooks and Context from the start?](https://www.reddit.com/r/reactjs/comments/eqvm4k/any_good_tutorial_for_react_that_focuses_on_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/eqvm4k/any_good_tutorial_for_react_that_focuses_on_hooks/
+---
+I'm a bit familiar with React but want to do a refresher. I'm looking for a comprehensive course (Udemy or others, don't care about the platform) that's good an up to date. The thing is, I want it to be focused on Hooks and on Context instead of Redux from the start. I'm seeing a lot of course in where Hooks are only and add on in the end and that's it.  
+
+
+Which ones do you recommend?
+## [9][Is it normal to check for each DOM if it's available or not if I wanted to manipulated in someway ? can anyone tells me how to avoid this .. or maybe what does it called .. Sorry for bad English](https://www.reddit.com/r/reactjs/comments/eqv0cp/is_it_normal_to_check_for_each_dom_if_its/)
+- url: https://www.reddit.com/r/reactjs/comments/eqv0cp/is_it_normal_to_check_for_each_dom_if_its/
+---
+ 
+
+const inputFile = document.getElementById('file-upload');  
+ inputFile &amp;&amp;  inputFile.addEventListener('change',()=&gt;{
+
+...  
+}
+## [10][Web Developer 2020 Roadmap - Complete Guide (part 1)](https://www.reddit.com/r/reactjs/comments/eqot7f/web_developer_2020_roadmap_complete_guide_part_1/)
+- url: https://youtu.be/KgxOxgdQi7I
 ---
 
-## [6][Does react prevent XSS attacks for user input in “src”/“alt” attributes in &lt;img/&gt; tags?](https://www.reddit.com/r/reactjs/comments/eqfc78/does_react_prevent_xss_attacks_for_user_input_in/)
-- url: https://www.reddit.com/r/reactjs/comments/eqfc78/does_react_prevent_xss_attacks_for_user_input_in/
+## [11][Electron and React](https://www.reddit.com/r/reactjs/comments/equljj/electron_and_react/)
+- url: https://www.reddit.com/r/reactjs/comments/equljj/electron_and_react/
 ---
-I know react naturally escapes anything put into JSX, but with &lt;a&gt; tags, someone could put a hazardous url with something like href=“javascript:alert(“xss attack here”)” and commit an xss attack. However, the user would have to click on the link. I’m wondering if any malicious code put into an src or alt attribute could ever actually be executed by the browser
-## [7][Is there a benefit to using tailwind together with styled components?](https://www.reddit.com/r/reactjs/comments/eqebfq/is_there_a_benefit_to_using_tailwind_together/)
-- url: https://www.reddit.com/r/reactjs/comments/eqebfq/is_there_a_benefit_to_using_tailwind_together/
+I am about to start my first development position and I will be building desktop applications that will pull data from external api.
+
+I have absolute free will to choose the technologies that I want to use so I decided to use Electron plus React cause I have solid foundations in JavaScript and I enjoy learning React...
+
+Can you suggest some articles on how to combine these two? Maybe tutorial series? I know already how to fetch data from API and what I am looking for is more like development setup, process, building and publishing application built with React and Electron, sending updates to app etc...
+
+Any advice is greatly appreciated!
+## [12][Today I had just setup movie list application using React, Redux, Redux-thunk](https://www.reddit.com/r/reactjs/comments/equ69d/today_i_had_just_setup_movie_list_application/)
+- url: https://www.reddit.com/r/reactjs/comments/equ69d/today_i_had_just_setup_movie_list_application/
 ---
-I notice a lot of buzz around Tailwind these last couple of weeks.
+I had just setup movie list application using container pattern. I am using react with typescript, redux, redux-thunk. Anyone learn or want to contribute in my project as a opensouce heartly welcome.
 
-I’ve been using styled components for a while and so far I’m very happy with it but I was wondering if there was some benefit to maybe using them together? 
+Today I had deploy application in heroku [link](https://movie-app-react-typescript.herokuapp.com/). I want suggestion from other developer where I need to improve. 
 
-Is there something that Tailwind brings to the table that can actually make a big impact?
+&amp;#x200B;
 
-Cheers!
-## [8][Can someone give a more real-world example where the setState(updaterFunc) function is more useful than the setState(object)?](https://www.reddit.com/r/reactjs/comments/eqfvmd/can_someone_give_a_more_realworld_example_where/)
-- url: https://www.reddit.com/r/reactjs/comments/eqfvmd/can_someone_give_a_more_realworld_example_where/
----
- the react docs said that is better to use the setState(updaterFunc) rather than the setState(object) because it will have the latest state. I know setState is async, that's why we use the setState(updaterFunc) to have the latest state. But in the example below I just can't wrapped my head around why should I use the setState(updaterFunc) when I can do it in one go with just the setState(object)
+Here is a github link [github-repo-url](https://github.com/devbinod/movie-app). 
 
-But I'm confused why should I do multiple setState calls rather than just doing it in one go.
+&amp;#x200B;
 
-    this.setState((state) =&gt; ({ counter: state.counter + 1}));
-    this.setState((state) =&gt; ({ counter: state.counter + 1}));
-    this.setState((state) =&gt; ({ counter: state.counter + 1 }));
-
-why not do it just like this?
-
-    this.setState({counter: 3});
-## [9][Project feedbacks](https://www.reddit.com/r/reactjs/comments/eqflg2/project_feedbacks/)
-- url: https://www.reddit.com/r/reactjs/comments/eqflg2/project_feedbacks/
----
-Hello All,
-
-I today I just set up a react-redux application using typescript, redux-thunk technology. In this project, I have used a container pattern. I am requesting to all, Could you review my code, Suggestions really appreciated and help my carrier. Here is a project GitHub link [https://github.com/devbinod/react-redux-typescript](https://github.com/devbinod/react-redux-typescript?fbclid=IwAR34tSFuyhGEWJ2Uzzg9fWrUaiYqvK-bvF1_JFMiDK8k3fJZyIzp45dnIl4).
-
-[\#reactjs](https://www.facebook.com/hashtag/reactjs?source=feed_text&amp;epa=HASHTAG) [\#typescript](https://www.facebook.com/hashtag/typescript?source=feed_text&amp;epa=HASHTAG) [\#container](https://www.facebook.com/hashtag/container?source=feed_text&amp;epa=HASHTAG)\-pattern [\#redux](https://www.facebook.com/hashtag/redux?source=feed_text&amp;epa=HASHTAG) \#redux-thunk #redux [\#motivation](https://www.facebook.com/hashtag/motivation?source=feed_text&amp;epa=HASHTAG) [\#coding](https://www.facebook.com/hashtag/coding?source=feed_text&amp;epa=HASHTAG).
-## [10][What is the best or preferred way of re-using the UI components across different apps.](https://www.reddit.com/r/reactjs/comments/eqf1i2/what_is_the_best_or_preferred_way_of_reusing_the/)
-- url: https://www.reddit.com/r/reactjs/comments/eqf1i2/what_is_the_best_or_preferred_way_of_reusing_the/
----
-I have been working on react js for the past two years and constantly facing this issue, people who have implemented re-using components across different apps with minimum hassle, do share your aproaches as it would be nice and help others benift too.  
-
-
-I do know about [Bit](https://bit.dev/) but this has been somewhat a recent development, i wonder what other approaches can be used for large scale applications.
-## [11][DOM Mounting vs. Painting Clarification](https://www.reddit.com/r/reactjs/comments/eqerl9/dom_mounting_vs_painting_clarification/)
-- url: https://www.reddit.com/r/reactjs/comments/eqerl9/dom_mounting_vs_painting_clarification/
----
-Is mounting when a new node is inserted into DOM tree, and painting when the browser translates the updated DOM +CSS tree (render tree) into its ui?
-## [12][Is redux really a good idea?](https://www.reddit.com/r/reactjs/comments/epxavs/is_redux_really_a_good_idea/)
-- url: https://www.reddit.com/r/reactjs/comments/epxavs/is_redux_really_a_good_idea/
----
-I was a redux fanboy and would defend everything about redux(when I was creating redux project). But now I'm maintaining several redux projects, I start to rethink and now posting this topic to ask for a discussion.
-
-And when talking about redux, I'm referring to essentially all the state management tools on the market. Because other than maybe mobx-state-tree, everything is the same. Yeah, some might not ask for immutability and some may have a different way to write action object, but other than that everything propose the exact same structure of state management.
-
-It sure provides benefit. As managing state become automatic as you don't have to make any decision as where to put the state and how to fetch them. And with dev tools you can pretty much click around the app and know which user input result in what state changes.
-
-That said, still
-
-1. I don't think everything in a global store the best practice. It might be a pleasure to write at first, but will be a nightmare for others to maintain. Adding a little pop window will require you the knowledge of so many implantation detail as in file structure and also writing code snippets everywhere. And the main defect of this approach is most states are not really global, simply stripe it away from where we expect it to be (the component with related UI) and cluster them in a big store is a huge mental setback for the maintainer of the code. Think that we all agree to gather code by logic approximation rather than format(css/js/html) nowadays, but redux keep those code that should stay together far away.
-2. Having only some of the states in global store is also a headache. The problem is what could be the criteria for putting a state into the global store? How global should a state to be consider global? It might not be a problem for small project from a single developer but sure it can be hard to follow some vague rules collectively.
-3. The boilerplate of redux is one of the worst to write. Switch....case....payload... action.type.... **Basically action.type is function name and action.payload is function parameters and reducer is the function body.** Can't we have a better implementation so we don't have to write a function in 2 files and 3 places? To me this structure is just not ideal at all.
-4. Before anyone say anything about useReducer and context, they are essentially the same thing, except now we can have multiple stores, all the problem above still persist.
-
-Ok enough about my rant. I'm just curious how do everyone mange their projects' state now in the 2020, and what are you general opinion about redux and other state management tools?
+Thanks in advance.

@@ -40,79 +40,64 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][O(1) Android build time](https://www.reddit.com/r/androiddev/comments/eqbgow/o1_android_build_time/)
-- url: https://medium.com/@nlg.tuan.kiet/o-1-android-build-time-at-tiki-1a27a804bb6a
+## [3][Everything you need to know about Memory Leaks in Android.](https://www.reddit.com/r/androiddev/comments/equdx6/everything_you_need_to_know_about_memory_leaks_in/)
+- url: https://proandroiddev.com/everything-you-need-to-know-about-memory-leaks-in-android-d7a59faaf46a
 ---
 
-## [4][My thoughts about Google Play and policy support team after my App was suspended without any warnings](https://www.reddit.com/r/androiddev/comments/eq3npr/my_thoughts_about_google_play_and_policy_support/)
-- url: https://medium.com/@pr.saratov/my-thoughts-about-google-play-and-policy-support-team-after-my-app-was-suspended-e8bca807fff7
+## [4][Split layout into subfolder in Android Studio](https://www.reddit.com/r/androiddev/comments/eqtfwr/split_layout_into_subfolder_in_android_studio/)
+- url: https://proandroiddev.com/split-layout-into-subfolder-in-android-5bf76f805e90
 ---
 
-## [5][Help me understand espresso tests](https://www.reddit.com/r/androiddev/comments/eqfrno/help_me_understand_espresso_tests/)
-- url: https://www.reddit.com/r/androiddev/comments/eqfrno/help_me_understand_espresso_tests/
+## [5][Android Interview Topics](https://www.reddit.com/r/androiddev/comments/eqlda2/android_interview_topics/)
+- url: https://www.reddit.com/r/androiddev/comments/eqlda2/android_interview_topics/
 ---
-I'm an Android developer with about 2 years of experience. I have recently started writing tests for our app. I started with the Unit test for the Repository layer and the ViewModel layer, which I felt was very straight forward. However, when writing the Espresso test, I realized that our community lacks documentation and samples for writing Espresso test. I am finding it difficult to understand what is Espresso tests supposed to test.
+I created a gist with some notes about topics that might come up during an Android Interview. I hope this is useful to someone.  
 
-Eg: When we write a unit test, we test the view model or repository in isolation by mocking all the dependencies. But when Writing Espresso test, am I only supposed to test the UI layer (Fragments) by mocking view models? Or do I test the UI Layer (Fragments) and View Model by mocking the Repository layer? Or do I test the app as a whole by giving different inputs and validating the UI for the output?
-## [6][[Indie game dev] Dev/marketing a game is so much harder then tool app](https://www.reddit.com/r/androiddev/comments/eqgc1e/indie_game_dev_devmarketing_a_game_is_so_much/)
-- url: https://www.reddit.com/r/androiddev/comments/eqgc1e/indie_game_dev_devmarketing_a_game_is_so_much/
+
+[https://gist.github.com/lawloretienne/5bcef05ee9247021cbb43d6d0995772c](https://gist.github.com/lawloretienne/5bcef05ee9247021cbb43d6d0995772c)
+## [6][Policy violation won't allow me to submit updates](https://www.reddit.com/r/androiddev/comments/eqvxjn/policy_violation_wont_allow_me_to_submit_updates/)
+- url: https://www.reddit.com/r/androiddev/comments/eqvxjn/policy_violation_wont_allow_me_to_submit_updates/
 ---
-Hi dev community,
+Hi there, i have an app on PlayStore  called [Dokkan Cards](https://play.google.com/store/apps/details?id=com.dcv.spdesigns.dokkancards) which is a database of cards from a game called "Dragon Ball Z Dokkan Battle" on Google Play. 
 
-I create apps since Android 1.4 (HTC G1 was so cool back then :) ) and even had one success (it earned, with almost no marketing, around 15K$).
+After trying to submit a small  update that fixed some major crash issues, i was notified by Google Play that due to a Policy Violation my update had been rejected. This is the first time something like this has happened to me and i was so astonished by the lack of any information whatsoever on what i had done wrong. There was simply no info on what i did wrong in order to fix it. Long story short, after a couple of emails and a few days later they replied to me and informed me that my app implies an affiliation with the Dragon Ball franchise in its store listing.
 
-Now, for the first time, together with my friend, I've created a mobile game ([https://play.google.com/store/apps/details?id=com.grandegarbanzos.scratchme](https://play.google.com/store/apps/details?id=com.grandegarbanzos.scratchme))... and I have no idea how to let people know it exists :/.
+ That sounds like a logical issue since i did have the words "Dragon Ball" in my app's description (but no affiliation or anything of that sorts) and maybe the images were not suitable either(maybe because they were displaying images from the game within my app). Having removed those images and text and describing shortly in the app's description that i am in no way affiliated with third parties and any copyrighted content belongs to them as described in my app's copyright disclaimer, I submitted another update with those changes. 
 
-We  spend a week positioning it under a search term "scratch quiz" in  Google Play (it is now at first position) but as it turns our nobody  uses this search term (what in hindsight it's that surprising...).
+ No matter what changes i make, the store listing updates keep getting rejected. Does anybody have any idea what the issue could be? Could it be the name ? However, the word "Dokkan" is also used by many other applications and i don't think it's trademarked. I'd really appreciate some perspective on my app's store listing. Am i somehow implying an affiliation with anyone?
+## [7][Pokedex with Jetpack Compose](https://www.reddit.com/r/androiddev/comments/eqqhm9/pokedex_with_jetpack_compose/)
+- url: https://github.com/zsoltk/compose-pokedex
+---
 
-We plan to buy some mobile ads even if we're not convinced it brings "real" users to the game.
-
-Do  you have any advises for us? Regardless if it is about game marketing  or the game itself, any word of advice (positive or negative) will be  much appreciated.
-
-Cheers!
-
-p.s. Please accept my apologies if this is not a right place for such questions.
-
+## [8][SuperSU, phh's su, Koush's su, ChainsDD's su, and KingRoot are all no longer available on Play Store.](https://www.reddit.com/r/androiddev/comments/eqt4l2/supersu_phhs_su_koushs_su_chainsdds_su_and/)
+- url: https://www.reddit.com/r/androiddev/comments/eqt4l2/supersu_phhs_su_koushs_su_chainsdds_su_and/
+---
 &amp;#x200B;
 
-[Scratch Quiz \(https:\/\/play.google.com\/store\/search?q=scratch+quiz\)](https://preview.redd.it/gj31ll89gjb41.png?width=3726&amp;format=png&amp;auto=webp&amp;s=232347fed7c76680ff6af20e338476a4c573cf2c)
-## [7][Using MaterialDateRangePicker](https://www.reddit.com/r/androiddev/comments/eq2ae6/using_materialdaterangepicker/)
-- url: https://www.reddit.com/r/androiddev/comments/eq2ae6/using_materialdaterangepicker/
+https://preview.redd.it/hajtm1kuoob41.png?width=602&amp;format=png&amp;auto=webp&amp;s=f980d473143f1f2eba88e45d5252143e11052fa2
+## [9][Making money from Android app](https://www.reddit.com/r/androiddev/comments/eqvwkx/making_money_from_android_app/)
+- url: https://www.reddit.com/r/androiddev/comments/eqvwkx/making_money_from_android_app/
 ---
-Noticed a new addition to mdc-android , the MaterialDateRangePicker. I Wrote a short article that could be useful for android developers [https://hackernoon.com/how-to-use-new-material-date-picker-for-android-s7k32w0](https://hackernoon.com/how-to-use-new-material-date-picker-for-android-s7k32w0)
-## [8][Best practice for multiple screens app](https://www.reddit.com/r/androiddev/comments/eqf7xc/best_practice_for_multiple_screens_app/)
-- url: https://www.reddit.com/r/androiddev/comments/eqf7xc/best_practice_for_multiple_screens_app/
+Hi ,I'm planning to make an app but I'm not sure how I can make money from app. Is there any advise how to maximise ?
+## [10][As a noob indie developer, how do you deal with things outside of your area of expertise?](https://www.reddit.com/r/androiddev/comments/eqsxd0/as_a_noob_indie_developer_how_do_you_deal_with/)
+- url: https://www.reddit.com/r/androiddev/comments/eqsxd0/as_a_noob_indie_developer_how_do_you_deal_with/
 ---
-Hello guys,
+I'm planning to release another app, but as someone who is starting out, one thing I've definitely noticed is how 'insufficient' I am to release a good quality app.
 
-I'm developing an app to collect data from my job's vehicles refuel. The responsable for refuel the vehicles will input how much liters he refueled, the car ID, driver's name and some other information. The problem is: the app need to show only one input window per time, that contains an EditText for input, a "next" and a "previous" button, to navigate between the screens.
+I've just studied most about coding, but when it comes to an app, there's so much involved like design and marketing. When I released my first app, it was a bit of a struggle even trying to draw out my own app icon. It feels like I need to know and be good at everything if I want to release an app by myself.
 
-How is the best way to handle it? Create a new activity for each layout or change the layouts when the "next" and "previous" buttons are clicked?
+So how do other indie developers deal with this?
 
-Thanks in advance!
-## [9][Android Position with different screen sizes and DPI](https://www.reddit.com/r/androiddev/comments/eqf48x/android_position_with_different_screen_sizes_and/)
-- url: https://www.reddit.com/r/androiddev/comments/eqf48x/android_position_with_different_screen_sizes_and/
----
-Hello,  I'm trying to creae popup windows for Android using Kotlin, but it appears in diferent position on phones with different DPI. My phone is 480 DPI, virtual phone is 560 DPI.
+I know for design I could learn a bit from material design. But one big missing piece is me learning photo editing software and other things like inkscape.
 
-`val dm = DisplayMetrics()getWindowManager().getDefaultDisplay().getMetrics(dm)`
-
-`var screenAdjust:Float = (dm.densityDpi / 160f)`
-
-`var x:Int = (116f * screenAdjust).toInt()debugText.text=x.toString()window.showAtLocation(changeTextSize, Gravity.CENTER_HORIZONTAL or Gravity.BOTTOM, 0, x)`
-
-If both coordinates are the same it also works wrong.
-
-https://preview.redd.it/ga32mlm1rib41.png?width=846&amp;format=png&amp;auto=webp&amp;s=c559b9c613ec87a0f535722923f968253ab9f454
-## [10][Example of Apps that had scoped storage overhaul?](https://www.reddit.com/r/androiddev/comments/eqbvyc/example_of_apps_that_had_scoped_storage_overhaul/)
-- url: https://www.reddit.com/r/androiddev/comments/eqbvyc/example_of_apps_that_had_scoped_storage_overhaul/
----
-Any users seen some of the apps they use overhauled due to scoped storage yet? Just curious what they did before/after if you could share please
-## [11][Control Ads in android app.](https://www.reddit.com/r/androiddev/comments/eqel3t/control_ads_in_android_app/)
-- url: https://www.reddit.com/r/androiddev/comments/eqel3t/control_ads_in_android_app/
----
-Hello, is there any way to check which ADS are showing on My app ( from different publishers )?,  i have not developed the app one guy helped me and i paid him so i'm not sure that he added only my ads on the app, i think that there is a little diference at the Interstitial ads. Thanks you
-## [12][Is there any Indian's here? Which is the best bank to open account to purchase developer account. tried Syndicate and Federal bank, applied for an instant account in Axis 2 weeks ago still not activated, what to do?](https://www.reddit.com/r/androiddev/comments/eqe0po/is_there_any_indians_here_which_is_the_best_bank/)
-- url: https://www.reddit.com/r/androiddev/comments/eqe0po/is_there_any_indians_here_which_is_the_best_bank/
+Currently, I want to make an app to help you tie knots (for those going out there in the wilderness with possibly no internet connection) but it's so hard to find good royalty free instruction images that I should probably try to create some myself.
+## [11][This was the best place I could think to get help for this. What are these icons and how do I get rid of them? Been like that for weeks now.](https://www.reddit.com/r/androiddev/comments/eqw3yx/this_was_the_best_place_i_could_think_to_get_help/)
+- url: https://i.redd.it/eyjca8c6kqb41.png
 ---
 
+## [12][Question for webview](https://www.reddit.com/r/androiddev/comments/eqsfg5/question_for_webview/)
+- url: https://www.reddit.com/r/androiddev/comments/eqsfg5/question_for_webview/
+---
+Any alterantives to make articles looking on an android app withou using webview? I know you can use custom html file and pass javascript through the loadurl method , also i know the textview support some html tags to make paragraphs divs etc. does any body knows of any other alternatives. 
+
+Thank you

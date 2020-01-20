@@ -1,5 +1,101 @@
 # aws
-## [1][Cognito is confusing...](https://www.reddit.com/r/aws/comments/eqsi1u/cognito_is_confusing/)
+## [1][Osaka Local Region to be upgraded to a full region in early 2021](https://www.reddit.com/r/aws/comments/ercig3/osaka_local_region_to_be_upgraded_to_a_full/)
+- url: https://aws.amazon.com/blogs/aws/in-the-works-aws-osaka-local-region-expansion-to-full-region/
+---
+
+## [2][Building a virtual cloud engineer](https://www.reddit.com/r/aws/comments/ercuhe/building_a_virtual_cloud_engineer/)
+- url: https://www.totalcloud.io/create-your-own-virtual-cloud-engineer
+---
+
+## [3][Fargate price calculation check](https://www.reddit.com/r/aws/comments/er3sjw/fargate_price_calculation_check/)
+- url: https://www.reddit.com/r/aws/comments/er3sjw/fargate_price_calculation_check/
+---
+Hi all, sorry if I'm way off. I'm new and want some validation of my calculations and maybe learn something new.
+
+Aim is to host a container, 1 running instance, always on, using ECS Fargate.
+
+All prices below are in AUD for Syndey.
+
+2 vCPU and 4 GB of ram. I'm assuming 730 hours in a month. **This should cost $87/month**?
+
+I'll be hosting the docker image in ECR to spin-up the container instance. And I'm assuming I need to leave it there for Fargate to auto-recover in case the instance dies. Also I'm going with assumption that 10GB ECR storage and 10GB ECR data transfer per month will be used. This **should cost about $2/month**
+
+Fargate container instance itself with 1 free elastic IP, would probably use about 50GB of bandwidth, **which should cost about $6/month**?
+
+All in all: $95/month
+
+Have I have missed something?
+## [4][Fargate for analytics service?](https://www.reddit.com/r/aws/comments/er2n05/fargate_for_analytics_service/)
+- url: https://www.reddit.com/r/aws/comments/er2n05/fargate_for_analytics_service/
+---
+I am looking at hosting Matomo analytics on Fargate + RDS. I have never used Fargate before. This would be for very low-traffic websites (0 to 10 clicks per day). I estimate the smallest MySQL RDS will be about $10/month, and if I went with EC2 over Fargate, that would be another $10/month. I am planning to deploy the Matomo Docker image, so Fargate also looks easier to configure in that regard.
+
+&amp;#x200B;
+
+Is Fargate the right choice? Will it bootup fast enough? Could I end up spending more than EC2?
+## [5][Hosting a web game for 1.7 Million users](https://www.reddit.com/r/aws/comments/er62pp/hosting_a_web_game_for_17_million_users/)
+- url: https://www.reddit.com/r/aws/comments/er62pp/hosting_a_web_game_for_17_million_users/
+---
+Hi !   
+
+
+I'm considering to host a game on **S3**, the static files could weight between **20Mo and 50Mo**.   
+My client is excepting **14-28k connections a day** and around **1.7 Million connections over the course of 6 week.**  
+
+
+I end up with this calculation for the cost of the hosting :  
+0,02GB \* 1 700 000 \* 0,09$/GB = 3060$  
+0,05GB \* 1 700 000 \* 0,09$/GB = 7650$  
+
+
+Am i right that the cost could be between **3060$** and **7650$** ?  
+Is it worth it to host this kind of project in S3 ? Or I should consider to host it directly on a dedicated server (i imagine the cost could be much lower) ?
+
+On [https://calculator.s3.amazonaws.com/index.html](https://calculator.s3.amazonaws.com/index.html) i end up with **3823.45$** to **8799.85$.**  
+Is 0,09$/GB of data out is still relevant in my case ?
+
+Also do you have some tips for hosting this kind of project that are really demanding on data transfer ?
+
+Thanks for the help
+## [6][AWS Step Functions tasks limit](https://www.reddit.com/r/aws/comments/er0c9i/aws_step_functions_tasks_limit/)
+- url: https://www.reddit.com/r/aws/comments/er0c9i/aws_step_functions_tasks_limit/
+---
+0
+
+Does AWS Step Functions have a limit on the number of tasks or a limit on the number of state transitions per state machine? I have a use case where I to orchestrate workflows with hundreds maybe even a million of tasks and I can't find anywhere if Step Functions are suitable for my case.
+## [7][VPC Interface Endpoints - Subnet Association Clarification](https://www.reddit.com/r/aws/comments/er57sx/vpc_interface_endpoints_subnet_association/)
+- url: https://www.reddit.com/r/aws/comments/er57sx/vpc_interface_endpoints_subnet_association/
+---
+I need to get confirmation if I understood the limitation of the VPC Inteface endpoint according to the documentation here - [https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html)
+
+&amp;#x200B;
+
+It says in terms of subnet association
+
+&gt;For each interface endpoint, you can choose only one subnet per Availability Zone.
+
+So assume I create an SSM VPC endpoint, and I have 4 subnets
+
+* Subnet A in Zone 1
+* Subnet B in Zone 2
+* Subnet X in Zone 1
+* Subnet Y in Zone 2
+
+Does this mean that 
+
+* I can only associate ONE single subnet to the SSM VPC endpoint I created
+* OR can I associate multiple subnets to ONE SSM VPC endpoint as along as they are in diff AZ. Example I can associate Subnet A and Subnet B to the SSM VPC endpoint?
+## [8][RDS DMS Data migration and scrubbing.](https://www.reddit.com/r/aws/comments/er39q2/rds_dms_data_migration_and_scrubbing/)
+- url: https://www.reddit.com/r/aws/comments/er39q2/rds_dms_data_migration_and_scrubbing/
+---
+Hey all,
+
+Been wanting to use some data migration to scrub sensitive data off prod and push to dev.
+
+The database in question is just a mysql one.
+
+Does anyone know how to achieve this,
+## [9][Cognito is confusing...](https://www.reddit.com/r/aws/comments/eqsi1u/cognito_is_confusing/)
 - url: https://www.reddit.com/r/aws/comments/eqsi1u/cognito_is_confusing/
 ---
 I had set-up my web-app to use cognito for user sign-in, sign-up, MFA and password management some time ago using  `amazon-cognito-identity-js` library. Import statement: 
@@ -21,74 +117,48 @@ Another resource, from aws js docs: [https://docs.aws.amazon.com/AWSJavaScriptSD
 What am I missing here? Note that I've tried importing library as AWS.
 
 Edit: I don't want to use amplify sdk since most of my code is already written using js sdk.
-## [2][SQS : the specified queue does not exist for this wsdl version](https://www.reddit.com/r/aws/comments/equis1/sqs_the_specified_queue_does_not_exist_for_this/)
-- url: https://www.reddit.com/r/aws/comments/equis1/sqs_the_specified_queue_does_not_exist_for_this/
+## [10][What's the correct parameters to pass to AWS to set Glue Crawler to ignore changes?](https://www.reddit.com/r/aws/comments/eqzvw4/whats_the_correct_parameters_to_pass_to_aws_to/)
+- url: https://www.reddit.com/r/aws/comments/eqzvw4/whats_the_correct_parameters_to_pass_to_aws_to/
 ---
-We have a microservice running in EKS which is throwing this error. We checked the obvious reason of region being incorrect. It is set correctly.
+I am passing the following parameters to AWS using Terraform:
 
-Is there anything else that we're missing?
-## [3][IAM timeouts in us-east 1 with "Http request timed out enforced after 999ms"](https://www.reddit.com/r/aws/comments/eqiac7/iam_timeouts_in_useast_1_with_http_request_timed/)
-- url: https://www.reddit.com/r/aws/comments/eqiac7/iam_timeouts_in_useast_1_with_http_request_timed/
----
-Seeing numerous timeouts and fails of IAM.  AWS CLI unable to locate new keys.  No info on status pages yet.
+    resource "aws_glue_crawler" "my_crawler" {
+      database_name = var.catalogDb
+      name          = "my_crawler"
+      role          = var.crawlerRole
+    
+      schedule      = "cron(0 */6 * * ? *)"
+      table_prefix = "md_"
+    
+      s3_target {
+        path = "s3://my_crawler_data_test/"
+      }
+    
+      schema_change_policy {
+        delete_behavior = "LOG"
+      }
+    
+      configuration = &lt;&lt;EOF
+    {
+      "Version":1.0,
+      "CrawlerOutput": {
+         "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" },
+         "Tables": { "AddOrUpdateBehavior": "MergeNewColumns" }
+      },
+      "Grouping": {
+         "TableGroupingPolicy": "CombineCompatibleSchemas"
+      }
+    }
+    EOF
 
-UPDATE
-12:09PM UTC-5 new keys were recognized by AWS CLI.
-## [4][JSON Python Serialization Question](https://www.reddit.com/r/aws/comments/eqr5dn/json_python_serialization_question/)
-- url: https://www.reddit.com/r/aws/comments/eqr5dn/json_python_serialization_question/
----
-Hi there, 
+to generate a Glue/Crawler. On the UI I can see that my configuration generates:
 
-I'm building a Reddit bot using AWS Lambda, SQS, EC2 and S3. 
+[What I am currently getting with above Json configuration](https://preview.redd.it/bw66e3py0sb41.png?width=1328&amp;format=png&amp;auto=webp&amp;s=19522c2da40ba1b8882008b0345570fc5eb63c1d)
 
-Essentially, the bot scans Reddit for a comment, verifies in the database that this comment hasn't been replied to, and replies. The main handler imports a Python file, which creates a class for the user and interacts with the SQL database from that class.
+&amp;#x200B;
 
-It's telling me that I need to serialize the object in my module, but I'm at a loss to understand why. Why does AWS need a serialized JSON object to run a Python script? Does it need to be in JSON to transfer the information to my SQL database?
+but I would like to get this:
 
-Here is my error message:
+[What I would like to get](https://preview.redd.it/njezv2511sb41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=2a83a9e60ac115a4cf2b4743ee4053d781916f1f)
 
- "errorMessage": "Object of type module is not JSON serializable",
-
-  "errorType": "TypeError",
-
-  "stackTrace": \[
-
-"  File \\"/var/task/main.py\\", line 5, in handler\\n    encoder = json.JSONEncoder().encode({'output': Scrapey})\\n",
-
-"  File \\"/var/lang/lib/python3.7/json/encoder.py\\", line 199, in encode\\n    chunks = self.iterencode(o, \_one\_shot=True)\\n",
-
-"  File \\"/var/lang/lib/python3.7/json/encoder.py\\", line 257, in iterencode\\n    return \_iterencode(o, 0)\\n",
-
-"  File \\"/var/lang/lib/python3.7/json/encoder.py\\", line 179, in default\\n    raise TypeError(f'Object of type {o.\_\_class\_\_.\_\_name\_\_} '\\n"
-## [5][Get a list of instances running Windows](https://www.reddit.com/r/aws/comments/eqlwfq/get_a_list_of_instances_running_windows/)
-- url: https://www.reddit.com/r/aws/comments/eqlwfq/get_a_list_of_instances_running_windows/
----
-Is there a way to get a list of instances running Windows and it’s version via the CLI or boto3?
-## [6][What data fields for images to CSV?](https://www.reddit.com/r/aws/comments/eqpf6x/what_data_fields_for_images_to_csv/)
-- url: https://www.reddit.com/r/aws/comments/eqpf6x/what_data_fields_for_images_to_csv/
----
-i am creating a program to fetch images (AKIs, AMIs, ARIs) information (not the actual content) and store it in various formats as requested.  i intend to make this program freely available.  what i would like to know is what data fields people would like to have saved in CSV and TSV formats.  obvious fields would include the region name, object ID, name, and creation date/time.  what else?
-
-this is being written in Python.  so it should be fairly portable.
-
-it will have options to select regions and other aspects such as image type.
-## [7][Send RDS data to Elasticsearch](https://www.reddit.com/r/aws/comments/eqlxx0/send_rds_data_to_elasticsearch/)
-- url: https://www.reddit.com/r/aws/comments/eqlxx0/send_rds_data_to_elasticsearch/
----
-I have a postgres db hosted on RDS and am having a hard time figuring out how to send my data over to Elasticsearch. I have tried setting it up with Kinesis data streams however the entire system is starting to look very complex.
-
-Surely I am not the only one that has tried to do this before, so I was wondering if anyone had experiences to share.
-## [8][How long does a quota increase generally take?](https://www.reddit.com/r/aws/comments/eqosye/how_long_does_a_quota_increase_generally_take/)
-- url: https://www.reddit.com/r/aws/comments/eqosye/how_long_does_a_quota_increase_generally_take/
----
-I’m completely new to AWS, so sorry if this sounds impatient. Does it take more than a day to get a quota increase, or should I submit another support request?
-## [9][Amazon ECS Preview Support for EFS file systems Now Available](https://www.reddit.com/r/aws/comments/eq8hi6/amazon_ecs_preview_support_for_efs_file_systems/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/01/amazon-ecs-preview-support-for-efs-file-systems-now-available/
----
-
-## [10][What's the difference between the SDK and CDK?](https://www.reddit.com/r/aws/comments/eqmu73/whats_the_difference_between_the_sdk_and_cdk/)
-- url: https://www.reddit.com/r/aws/comments/eqmu73/whats_the_difference_between_the_sdk_and_cdk/
----
-I made a tool to automate the creation and configuration of several resources (like pipelines and all associated resources) to solve repetitive tasks. I'm currently working on a feature that allows makes using git-flow easier and the code base is becoming almost too big for 1 person to work on (it's basically a CodeStar clone without the user management features and without using cloud formation).
-
-But, I just found out something about a CDK and I'm questioning my methods (as usual) on whether my methods of setting up resources and managing them are correct. As far as I understand it, CDK is a tool to make cloud formation (IAC) easier through languages like javascript and python. Does anyone have a solid idea of what the difference is between the SDK and CDK, and whether I should use the CDK instead of the SDK?
+The only change is the option "Add new columns" to "Ignore...". I tried different options in my Json conf but nothing worked, and from the documentation it is not clear how to get that. Any idea?

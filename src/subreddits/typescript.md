@@ -20,13 +20,59 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Where to see basic docs for types](https://www.reddit.com/r/typescript/comments/eqs63d/where_to_see_basic_docs_for_types/)
+## [2][Question, considering learning Typescript](https://www.reddit.com/r/typescript/comments/er8fjv/question_considering_learning_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/er8fjv/question_considering_learning_typescript/
+---
+Hi everyone,
+
+I'm considering learning Typescript as I'm hearing lots of great things about it however my dilemma is that I'm half way through a React Native project, are there any downsides to using Typescript for only part of you code base instead of the entire project?
+
+I should mention that if I like typescript I would consider rewriting the code base overtime
+
+Thanks!
+## [3][Getter and Setter on String Array](https://www.reddit.com/r/typescript/comments/er9opl/getter_and_setter_on_string_array/)
+- url: https://www.reddit.com/r/typescript/comments/er9opl/getter_and_setter_on_string_array/
+---
+Hey guys!
+
+Okay, not sure about this:
+
+I am using a simple **getter** and **setter** as shown below:  
+If I use different names for the getting, then it works but if I use the same name, then it fails:
+
+`private _person: string[] = [];`  
+ `get person(){`  
+ `return this._person;`  
+  `}`  
+ `set person(value: string){`  
+ `this._person.push(name);`  
+  `}`  
+
+
+I get the following error:  
+ ***Type 'string\[\]' is not assignable to type 'string'.ts(2322)***
+## [4][Syntax checking with tide and emacspeak?](https://www.reddit.com/r/typescript/comments/er6345/syntax_checking_with_tide_and_emacspeak/)
+- url: https://www.reddit.com/r/typescript/comments/er6345/syntax_checking_with_tide_and_emacspeak/
+---
+When I use js2-mode and make a syntax error with js2-mode enabled emacspeak will say so, for example if I forget to close a bracket.
+This doesn't happen with tide though, I've tried enabling js2-minor-mode too along side tide but no luck.
+Does anyone know how to achieve this?
+I'm also happy to just use js2-mode but no matter what I do I can't get company-lsp to work properly even with a minimal configuration so I must stick with tide for now
+## [5][A Workerpool From Scratch in TypeScript and Node](https://www.reddit.com/r/typescript/comments/eqx58t/a_workerpool_from_scratch_in_typescript_and_node/)
+- url: https://medium.com//a-workerpool-from-scratch-in-typescript-and-node-c4352106ffde?source=friends_link&amp;sk=96f50c4fab122cf141287276af7e9ea8
+---
+
+## [6][Node.js tips and tricks to make your application more robust and secure. Please share your thoughts?](https://www.reddit.com/r/typescript/comments/eqzvrs/nodejs_tips_and_tricks_to_make_your_application/)
+- url: https://www.inkoop.io/blog/nodejs-tips-tricks-that-can-help-you-deliver-more-secure-and-robust-application?source=reddit
+---
+
+## [7][Where to see basic docs for types](https://www.reddit.com/r/typescript/comments/eqs63d/where_to_see_basic_docs_for_types/)
 - url: https://www.reddit.com/r/typescript/comments/eqs63d/where_to_see_basic_docs_for_types/
 ---
 Where are the docs for stuff like @types/express or @types/pg
 I know the JavaScript docs for the most part but not the names of the specific types.
 Is looking in the specific files in node_modules the only way to know?
-## [3][Trouble finding this return type](https://www.reddit.com/r/typescript/comments/eqtiha/trouble_finding_this_return_type/)
+## [8][Trouble finding this return type](https://www.reddit.com/r/typescript/comments/eqtiha/trouble_finding_this_return_type/)
 - url: https://www.reddit.com/r/typescript/comments/eqtiha/trouble_finding_this_return_type/
 ---
 There are 3 modules I'm working with: firebase, firebase-admin, and firebase-testing. admin handles authentication and has access to some classes and types. The core module does too.
@@ -67,18 +113,18 @@ When faced with tough typings do you guys just do the easy thing and mark it as 
 &amp;#x200B;
 
 PS: What I would really like is if the IDE could help me deduce the correct type. I hear VSCode outright tells you. I'm using Phpstorm. It seems to know the shape but 1) doesn't give the full member list 2) doesn't make any type suggestions even though Phpstorm scans all libraries deeply.
-## [4][Become a Better Software Architect](https://www.reddit.com/r/typescript/comments/eqinar/become_a_better_software_architect/)
+## [9][Become a Better Software Architect](https://www.reddit.com/r/typescript/comments/eqinar/become_a_better_software_architect/)
 - url: https://github.com/justinamiller/SoftwareArchitect
 ---
 
-## [5][From flow to monorepo in Typescript](https://www.reddit.com/r/typescript/comments/eqg5w3/from_flow_to_monorepo_in_typescript/)
+## [10][From flow to monorepo in Typescript](https://www.reddit.com/r/typescript/comments/eqg5w3/from_flow_to_monorepo_in_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/eqg5w3/from_flow_to_monorepo_in_typescript/
 ---
 Hello, I have recently moved my multiple repositories javascript packages to a single monorepo in typescript. It's my first-time complete Typescript project and would love it if you had some time to give me some feedback. 
 I had a lot of trouble finding some types of external libraries. Does anyone have experience with typing webpack and gulp plugin?
 
 [Repository](https://github.com/FullHuman/purgecss)
-## [6][Is it possible to Compile and Update the Browser at the same time?](https://www.reddit.com/r/typescript/comments/eqcv0e/is_it_possible_to_compile_and_update_the_browser/)
+## [11][Is it possible to Compile and Update the Browser at the same time?](https://www.reddit.com/r/typescript/comments/eqcv0e/is_it_possible_to_compile_and_update_the_browser/)
 - url: https://www.reddit.com/r/typescript/comments/eqcv0e/is_it_possible_to_compile_and_update_the_browser/
 ---
 Hello:  
@@ -91,105 +137,3 @@ I attempted watching the code with **tsc --watch** but I have to run the code on
 
 
 Are there solutions where you can run a server which compile on any code change and update the browser?
-## [7][How to ensure a value implements an interface without casting easily?](https://www.reddit.com/r/typescript/comments/eqcg6e/how_to_ensure_a_value_implements_an_interface/)
-- url: https://www.reddit.com/r/typescript/comments/eqcg6e/how_to_ensure_a_value_implements_an_interface/
----
-For example, we have interface A:
-
-```typescript
-interface A { a: string }
-```
-
-and create an object implements A.
-
-```typescript
-const a = {
-  a: 'foo',
-  b: 'bar',
-};
-```
-
-Can I ensure the a implementing A?
-
-I want to keep the type of a as literal type, `{ a: string; b: string }`, but I want ensure that a is implementing A easily.
-
-Anyone have idea?
-## [8][TSC compiling .ts file dependencies below the folder holding the active package.json](https://www.reddit.com/r/typescript/comments/eq86sy/tsc_compiling_ts_file_dependencies_below_the/)
-- url: https://www.reddit.com/r/typescript/comments/eq86sy/tsc_compiling_ts_file_dependencies_below_the/
----
-My 1st firebase project is kinda messy as inside `/functions` it installed another package.json file and tsconfig.json. I initially used it to output JS to `/functions/outDir`.
-
-Trouble is now I want to setup database.ts inside `/shared`. This is outside of /functions`,` in terms of heirarchy it's a sibling folder. `/shared/database.ts` will be imported into `/functions/src/index.ts`, and this file does compile to .js.
-
-In this scenario, how will a TS file outside the watch of an active TSC instance be handled? 
-
-If the current setup results in `/shared/database.ts` not being read, is there a way to patch it with tsconfig.json or do I need to move everything (output JS and the package.json being used) down to the project root?
-## [9][Function that reads the first line from a given file](https://www.reddit.com/r/typescript/comments/epzgr8/function_that_reads_the_first_line_from_a_given/)
-- url: https://www.reddit.com/r/typescript/comments/epzgr8/function_that_reads_the_first_line_from_a_given/
----
-Hey everyone,
-
-In my TS project I needed a function that reads the first line from a file, so I took the JS example from [this SO post](https://stackoverflow.com/questions/28747719/what-is-the-most-efficient-way-to-read-only-the-first-line-of-a-file-in-node-js) and turned into a TS function, also adding support for handling multiple line endings. Please review my code and offer suggestions.
-
-    import fs from "fs";
-    
-    export const readFirstLine = (path: string) =&gt; new Promise&lt;string&gt;((resolve, reject) =&gt; {
-        const rs = fs.createReadStream(path, {encoding: "utf8"});
-    
-        let acc = "";
-        let pos = 0;
-    
-        rs
-            .on("data", chunk =&gt; {
-                acc += chunk;
-    
-                const indexCR = chunk.indexOf("\r");
-                const indexLF = chunk.indexOf("\n");
-    
-                if (indexCR === -1 &amp;&amp; indexLF === -1) {
-                    pos += chunk.length;
-                } else {
-                    pos += (indexCR !== -1 &amp;&amp; indexLF !== -1)
-                        ? Math.min(indexCR, indexLF) // [CRLF]
-                        : Math.max(indexCR, indexLF); // [CR] | [LF]
-    
-                    rs.close()
-                }
-            })
-            .on("close", () =&gt; resolve(acc.slice(0, pos)))
-            .on("error", e =&gt; reject(e))
-    });
-
-(It's a named arrow function out of personal preference (fewer blocks), but I'm open to suggestions if you prefer the classical `function` notation).
-
-**Update**: minor changes.
-## [10][Recommended TypeScript game engines?](https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/)
-- url: https://www.reddit.com/r/typescript/comments/epxkpk/recommended_typescript_game_engines/
----
-I've been wanting to dabble into video game development so I'd figure it'd be easier for me to learn using something I'm the most familiar with which is TypeScript and JavaScript.
-
-Any recommendations from the sub for one?
-## [11][Non-undefined type guards by calling a function](https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/)
-- url: https://www.reddit.com/r/typescript/comments/epzo1g/nonundefined_type_guards_by_calling_a_function/
----
-This non-undefined type guard works:
-
-    function f(x?: number) {
-      let y: number
-      if (x === undefined) throw 'undefined detected'
-      y = x // No compile error here
-    }
-
-Is there any way to get a type guard from calling a function?
-
-    function check(x?: number) {
-      if (x === undefined) throw 'undefined detected'
-    }
-    
-    function f(x?: number) {
-      let y: number
-      check(x)
-      y = x // Error: Type 'number | undefined' is not assignable to type 'number'.
-    }
-
-Is there any way to make this work? At the moment I'm using the non-null assertion operator `!` but I'm trying for a more elegant solution. Thanks.

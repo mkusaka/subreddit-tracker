@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - January 18, 2020](https://www.reddit.com/r/androiddev/comments/eqfu1v/app_feedback_thread_january_18_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/eqfu1v/app_feedback_thread_january_18_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/ercqvf/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/ercqvf/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - January 13, 2020](https://www.reddit.com/r/androiddev/comments/eo2mla/weekly_questions_thread_january_13_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/eo2mla/weekly_questions_thread_january_13_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - January 20, 2020](https://www.reddit.com/r/androiddev/comments/erbsa6/weekly_questions_thread_january_20_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/erbsa6/weekly_questions_thread_january_20_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,64 +31,55 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Everything you need to know about Memory Leaks in Android.](https://www.reddit.com/r/androiddev/comments/equdx6/everything_you_need_to_know_about_memory_leaks_in/)
+## [3][Telegram-like theme switching with reveal animation explained (+tutorial)](https://www.reddit.com/r/androiddev/comments/er8d2d/telegramlike_theme_switching_with_reveal/)
+- url: https://proandroiddev.com/change-theme-dynamically-with-circular-reveal-animation-on-android-8cd574f5f0d8
+---
+
+## [4][The Power of Types for Errors](https://www.reddit.com/r/androiddev/comments/ercrgu/the_power_of_types_for_errors/)
+- url: https://developers.soundcloud.com/blog/power-of-types-for-errors
+---
+
+## [5][Can I get some pointers for a complete newbie](https://www.reddit.com/r/androiddev/comments/erd38v/can_i_get_some_pointers_for_a_complete_newbie/)
+- url: https://www.reddit.com/r/androiddev/comments/erd38v/can_i_get_some_pointers_for_a_complete_newbie/
+---
+I got a pretty nice idea for a survey app and I realy want to make it happen. I was always very interested in programming but with school and other things I never had enough time. Can you tell me what do I need to make this survey app?  Thanks :)
+## [6][Everything you need to know about Memory Leaks in Android.](https://www.reddit.com/r/androiddev/comments/equdx6/everything_you_need_to_know_about_memory_leaks_in/)
 - url: https://proandroiddev.com/everything-you-need-to-know-about-memory-leaks-in-android-d7a59faaf46a
 ---
 
-## [4][Split layout into subfolder in Android Studio](https://www.reddit.com/r/androiddev/comments/eqtfwr/split_layout_into_subfolder_in_android_studio/)
-- url: https://proandroiddev.com/split-layout-into-subfolder-in-android-5bf76f805e90
+## [7][Pinch to zoom](https://www.reddit.com/r/androiddev/comments/erb1o2/pinch_to_zoom/)
+- url: https://www.reddit.com/r/androiddev/comments/erb1o2/pinch_to_zoom/
 ---
-
-## [5][Android Interview Topics](https://www.reddit.com/r/androiddev/comments/eqlda2/android_interview_topics/)
-- url: https://www.reddit.com/r/androiddev/comments/eqlda2/android_interview_topics/
+I'm working on videoview where you can pinch to zoom.
+I achieved this by ,
+Doing 
+Float factor = scaleGestureDetector.getScaleFactor();
+But the problem is it only zooms into center no matter where i pinch . How to zoom into the center of pinch rather than center of screen
+## [8][Are there any apps which have taken layouts and animations to the next level?](https://www.reddit.com/r/androiddev/comments/eqzbvh/are_there_any_apps_which_have_taken_layouts_and/)
+- url: https://www.reddit.com/r/androiddev/comments/eqzbvh/are_there_any_apps_which_have_taken_layouts_and/
 ---
-I created a gist with some notes about topics that might come up during an Android Interview. I hope this is useful to someone.  
+When I visit sites like Dribbble, I see a lot of beautiful layouts and animations. But when I actually use the apps, I rarely see any animations/transitions. Are there any apps that made you go wow recently?
 
-
-[https://gist.github.com/lawloretienne/5bcef05ee9247021cbb43d6d0995772c](https://gist.github.com/lawloretienne/5bcef05ee9247021cbb43d6d0995772c)
-## [6][Policy violation won't allow me to submit updates](https://www.reddit.com/r/androiddev/comments/eqvxjn/policy_violation_wont_allow_me_to_submit_updates/)
-- url: https://www.reddit.com/r/androiddev/comments/eqvxjn/policy_violation_wont_allow_me_to_submit_updates/
+I really feel like there has been no innovation in terms of design quality in apps. I rarely/almost never see complex transitions being implemented in apps. I'd really like to see some apps which are really well made in design.
+## [9][Linking a activity to a fragment](https://www.reddit.com/r/androiddev/comments/eratk6/linking_a_activity_to_a_fragment/)
+- url: https://www.reddit.com/r/androiddev/comments/eratk6/linking_a_activity_to_a_fragment/
 ---
-Hi there, i have an app on PlayStore  called [Dokkan Cards](https://play.google.com/store/apps/details?id=com.dcv.spdesigns.dokkancards) which is a database of cards from a game called "Dragon Ball Z Dokkan Battle" on Google Play. 
-
-After trying to submit a small  update that fixed some major crash issues, i was notified by Google Play that due to a Policy Violation my update had been rejected. This is the first time something like this has happened to me and i was so astonished by the lack of any information whatsoever on what i had done wrong. There was simply no info on what i did wrong in order to fix it. Long story short, after a couple of emails and a few days later they replied to me and informed me that my app implies an affiliation with the Dragon Ball franchise in its store listing.
-
- That sounds like a logical issue since i did have the words "Dragon Ball" in my app's description (but no affiliation or anything of that sorts) and maybe the images were not suitable either(maybe because they were displaying images from the game within my app). Having removed those images and text and describing shortly in the app's description that i am in no way affiliated with third parties and any copyrighted content belongs to them as described in my app's copyright disclaimer, I submitted another update with those changes. 
-
- No matter what changes i make, the store listing updates keep getting rejected. Does anybody have any idea what the issue could be? Could it be the name ? However, the word "Dokkan" is also used by many other applications and i don't think it's trademarked. I'd really appreciate some perspective on my app's store listing. Am i somehow implying an affiliation with anyone?
-## [7][Pokedex with Jetpack Compose](https://www.reddit.com/r/androiddev/comments/eqqhm9/pokedex_with_jetpack_compose/)
-- url: https://github.com/zsoltk/compose-pokedex
+Hi! I'm currently developing an application. I have a tabbed activity, divided in 3 fragments. In one of them I have to access another activity ( think of WhatsApp and how you access a conversation) but I can't manage to link the activity to the fragment. If it helps, The object that links those 2 is a button.
+## [10][Complete Newbie Asking Questions](https://www.reddit.com/r/androiddev/comments/erars1/complete_newbie_asking_questions/)
+- url: https://www.reddit.com/r/androiddev/comments/erars1/complete_newbie_asking_questions/
 ---
+Hello Android Dev's!
 
-## [8][SuperSU, phh's su, Koush's su, ChainsDD's su, and KingRoot are all no longer available on Play Store.](https://www.reddit.com/r/androiddev/comments/eqt4l2/supersu_phhs_su_koushs_su_chainsdds_su_and/)
-- url: https://www.reddit.com/r/androiddev/comments/eqt4l2/supersu_phhs_su_koushs_su_chainsdds_su_and/
+I am hoping to develop a wireless wifi transfer application. What I'm hoping to do is use an approach somewhat similar to SHAREit. I want to make the application compatible with very old android versions and Windows (hopefully adding Linux and MacOS support eventually).
+
+Older Windows PC's are incompatible with android's file transferring system due to lack of system drivers and the removal of making Android appear as a USB drive didn't help either. I also noticed that applications also dropped support for Windows XP and Vista as their EOL came along. So, I am dreaming of making a wireless transfer application that can work with Windows 95 PC's and later. It frustrates me to see a Windows XP PC cannot directly transfer from a phone and is required to use an indirect method.
+
+If anyone here has experience with writing programs on older Windows and Android systems, please let me know! I'm currently a student in C++ and only know very basics so far.
+## [11][How to integrate Google OAuth in the android work profile?](https://www.reddit.com/r/androiddev/comments/erakh1/how_to_integrate_google_oauth_in_the_android_work/)
+- url: https://www.reddit.com/r/androiddev/comments/erakh1/how_to_integrate_google_oauth_in_the_android_work/
 ---
-&amp;#x200B;
-
-https://preview.redd.it/hajtm1kuoob41.png?width=602&amp;format=png&amp;auto=webp&amp;s=f980d473143f1f2eba88e45d5252143e11052fa2
-## [9][Making money from Android app](https://www.reddit.com/r/androiddev/comments/eqvwkx/making_money_from_android_app/)
-- url: https://www.reddit.com/r/androiddev/comments/eqvwkx/making_money_from_android_app/
+I am trying to build an application with has Google OAuth in it. I am able to build an application with OAuth for normal users but when running the application with the package name of my company and integrating OAuth in it. It does not work. Has anyone ever build something for android work profile? :(
+## [12][Keep ADB enabled after rebooting?](https://www.reddit.com/r/androiddev/comments/er5b6d/keep_adb_enabled_after_rebooting/)
+- url: https://www.reddit.com/r/androiddev/comments/er5b6d/keep_adb_enabled_after_rebooting/
 ---
-Hi ,I'm planning to make an app but I'm not sure how I can make money from app. Is there any advise how to maximise ?
-## [10][As a noob indie developer, how do you deal with things outside of your area of expertise?](https://www.reddit.com/r/androiddev/comments/eqsxd0/as_a_noob_indie_developer_how_do_you_deal_with/)
-- url: https://www.reddit.com/r/androiddev/comments/eqsxd0/as_a_noob_indie_developer_how_do_you_deal_with/
----
-I'm planning to release another app, but as someone who is starting out, one thing I've definitely noticed is how 'insufficient' I am to release a good quality app.
-
-I've just studied most about coding, but when it comes to an app, there's so much involved like design and marketing. When I released my first app, it was a bit of a struggle even trying to draw out my own app icon. It feels like I need to know and be good at everything if I want to release an app by myself.
-
-So how do other indie developers deal with this?
-
-I know for design I could learn a bit from material design. But one big missing piece is me learning photo editing software and other things like inkscape.
-
-Currently, I want to make an app to help you tie knots (for those going out there in the wilderness with possibly no internet connection) but it's so hard to find good royalty free instruction images that I should probably try to create some myself.
-## [11][This was the best place I could think to get help for this. What are these icons and how do I get rid of them? Been like that for weeks now.](https://www.reddit.com/r/androiddev/comments/eqw3yx/this_was_the_best_place_i_could_think_to_get_help/)
-- url: https://i.redd.it/eyjca8c6kqb41.png
----
-
-## [12][Question for webview](https://www.reddit.com/r/androiddev/comments/eqsfg5/question_for_webview/)
-- url: https://www.reddit.com/r/androiddev/comments/eqsfg5/question_for_webview/
----
-Any alterantives to make articles looking on an android app withou using webview? I know you can use custom html file and pass javascript through the loadurl method , also i know the textview support some html tags to make paragraphs divs etc. does any body knows of any other alternatives. 
-
-Thank you
+Since a security patch last year (May, I think), Android turns off ADB after rebooting. Is there any way to change this (with our without root)? If not, does anyone know where the AOSP commit that did it is?

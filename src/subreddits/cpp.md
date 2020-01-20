@@ -57,23 +57,48 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][GCC: C++ coroutines - Initial implementation pushed to master.](https://www.reddit.com/r/cpp/comments/eqrv1n/gcc_c_coroutines_initial_implementation_pushed_to/)
+## [2][Modern CMake is like inheritance](https://www.reddit.com/r/cpp/comments/erbkrk/modern_cmake_is_like_inheritance/)
+- url: https://kubasejdak.com/modern-cmake-is-like-inheritance
+---
+
+## [3][Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ? (C#, Java, JS etc)](https://www.reddit.com/r/cpp/comments/erajev/do_you_consider_senior_c_programmer_to_be_better/)
+- url: https://www.reddit.com/r/cpp/comments/erajev/do_you_consider_senior_c_programmer_to_be_better/
+---
+Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ?  (C#, Java, JS etc)
+## [4]["Use the Force, Luke"... or Modern C++ Tools](https://www.reddit.com/r/cpp/comments/erbm6n/use_the_force_luke_or_modern_c_tools/)
+- url: https://www.bfilipek.com/2020/01/modern-cpp-tools-check.html
+---
+
+## [5][How to use gradle with canon for CPP projects](https://www.reddit.com/r/cpp/comments/ercxs5/how_to_use_gradle_with_canon_for_cpp_projects/)
+- url: https://www.reddit.com/r/cpp/comments/ercxs5/how_to_use_gradle_with_canon_for_cpp_projects/
+---
+Hi,
+
+&amp;#x200B;
+
+Does Gradle work  with conan ? or if i use gradle then no need to conan ?
+## [6][C++ - Initialization of Static Variables](https://www.reddit.com/r/cpp/comments/ercp2o/c_initialization_of_static_variables/)
+- url: https://pabloariasal.github.io/2020/01/02/static-variable-initialization/
+---
+
+## [7][GCC: C++ coroutines - Initial implementation pushed to master.](https://www.reddit.com/r/cpp/comments/eqrv1n/gcc_c_coroutines_initial_implementation_pushed_to/)
 - url: https://gcc.gnu.org/ml/gcc-patches/2020-01/msg01096.html
 ---
 
-## [3][P2064: "Assumptions" by Herb Sutter](https://www.reddit.com/r/cpp/comments/eqv5i8/p2064_assumptions_by_herb_sutter/)
+## [8][P2064: "Assumptions" by Herb Sutter](https://www.reddit.com/r/cpp/comments/eqv5i8/p2064_assumptions_by_herb_sutter/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2064r0.pdf
 ---
 
-## [4][Account of search for a minimalistic bounded blocking MPMC queue](https://www.reddit.com/r/cpp/comments/equle2/account_of_search_for_a_minimalistic_bounded/)
+## [9][How are the C++/winrt projections on Windows?](https://www.reddit.com/r/cpp/comments/eqypqh/how_are_the_cwinrt_projections_on_windows/)
+- url: https://www.reddit.com/r/cpp/comments/eqypqh/how_are_the_cwinrt_projections_on_windows/
+---
+I am currently planning to write an app for Windows 10 and publish it to the store. I have been programming with mostly C++ (using Qt) for quite some time now. I know that Microsoft uses C# a lot and by running Visual Studio I can see that they have a lot of tooling around it. C# also seems like a nice language (I am somewhat familiar with it but I have mostly used C++).
+So I am undecided between using C++/winrt vs c# and Microsoft doesn't seem to provide any info on what should one choose. Does anyone have any experience or have developed using C++ (in. Net or UWP) on Windows 10? How did you find it?
+## [10][Account of search for a minimalistic bounded blocking MPMC queue](https://www.reddit.com/r/cpp/comments/equle2/account_of_search_for_a_minimalistic_bounded/)
 - url: https://morestina.net/blog/1400/minimalistic-blocking-bounded-queue-for-c
 ---
 
-## [5][Survey about C++ IO library status. Are iostreams allowed in your project?](https://www.reddit.com/r/cpp/comments/eqtn2b/survey_about_c_io_library_status_are_iostreams/)
-- url: https://docs.google.com/forms/d/e/1FAIpQLSfruC_zT1d8VZsjcQNZ_nC_9NgY3OrfWcVWsSxKogVr2ifd6A/viewform
----
-
-## [6][Prefetching - practical applications](https://www.reddit.com/r/cpp/comments/eqm4qc/prefetching_practical_applications/)
+## [11][Prefetching - practical applications](https://www.reddit.com/r/cpp/comments/eqm4qc/prefetching_practical_applications/)
 - url: https://www.reddit.com/r/cpp/comments/eqm4qc/prefetching_practical_applications/
 ---
  [https://extensa.tech/blog/prefetching/](https://extensa.tech/blog/prefetching/) 
@@ -81,54 +106,3 @@ Previous Post
 Continuation of previous post:
 
  [https://www.reddit.com/r/cpp/comments/e6fuu0/blogposts\_about\_various\_methods\_of\_packing/](https://www.reddit.com/r/cpp/comments/e6fuu0/blogposts_about_various_methods_of_packing/)
-## [7][Exploiting C++ string literal operator: GLSL vector swizzling in modern C++17](https://www.reddit.com/r/cpp/comments/eqoc0y/exploiting_c_string_literal_operator_glsl_vector/)
-- url: https://github.com/TheMaverickProgrammer/Compile-Time-Vector-Swizzling
----
-
-## [8][C++ Standards Committee Papers: 2020-01 pre-Prague mailing](https://www.reddit.com/r/cpp/comments/eqc3kz/c_standards_committee_papers_202001_preprague/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-01
----
-
-## [9][Ref target lifetime/ownership management?](https://www.reddit.com/r/cpp/comments/eqld7n/ref_target_lifetimeownership_management/)
-- url: https://www.reddit.com/r/cpp/comments/eqld7n/ref_target_lifetimeownership_management/
----
-Is there a general principle that lets you easily reason about the lifetime and "proper" ownership of a ref's target?
-
-Despite being a relatively experienced C++ programmer, I still occasionally find myself fighting lifetime-management. Especially with refs. I very often want to write code that looks like this:
-
-```
-struct foo {
-  const string&amp; x;
-};
-foo create_foo() {
-  string y = get_string();
-  return foo{y};
-}
-```
-
-E.g. the ref is to a stack-allocated object that may go out of scope.
-
-In the above example I could obviously have `foo` own the string, but there are lots of cases where I really do just want a ref, and it's often hard at first to know exactly where to pin that ownership. Of course `shared_ptr` is also an option but I try to avoid sharing `shared_ptr` across types or instances.
-
-Experience helps, but usually I just have to sit and reason very carefully about it even though the compiler has all the information it needs to spot this bug in many cases. Usually the ownership becomes more obvious over time but only after being bit multiple times in debugging by "null" refs that cascaded from far-away-stacks.
-
-I only realized C++ was really missing this when I started poking more at Rust recently. This seems to be something that Rust gets right with its *lifetime is part of the signature* / borrow-checker and one thing that C++ gets "wrong" (doesn't capture directly) despite the common "use smart ptrs and you won't have memory issues" saying.
-## [10][DynamicArray: Yet Another C++ Array](https://www.reddit.com/r/cpp/comments/eqovjn/dynamicarray_yet_another_c_array/)
-- url: https://www.reddit.com/r/cpp/comments/eqovjn/dynamicarray_yet_another_c_array/
----
-Github link:  [https://github.com/LeonineKing1199/sleip](https://github.com/LeonineKing1199/sleip)
-
-Have you ever needed a fixed-sized dynamic allocation? If so, `sleip::dynamic_array` is the class for you! `dynamic_array` is fully Allocator-aware and also supports array objects properly.
-
-Meaning the following is possible:
-
-    auto x = sleip::dynamic_array&lt;int[2][2](...);
-    auto y = x; // properly copied over
-
-The container requires C++17 as a minimum and is available via a custom vcpkg port repo in addition to supporting regular CMake.
-
-Make sure to read the docs [here](https://github.com/LeonineKing1199/sleip/blob/develop/doc/dynamic_array.adoc#dynamic_array--fixed-size-dynamic-array)
-## [11][Allocating large blocks of memory: bare-metal C++ speeds](https://www.reddit.com/r/cpp/comments/eqhckl/allocating_large_blocks_of_memory_baremetal_c/)
-- url: https://lemire.me/blog/2020/01/17/allocating-large-blocks-of-memory-bare-metal-c-speeds/
----
-

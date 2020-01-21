@@ -97,66 +97,136 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][React hook that helps developers use google spreadsheet as their data table (API endpoint)](https://www.reddit.com/r/reactjs/comments/era6xf/react_hook_that_helps_developers_use_google/)
-- url: https://github.com/idw111/use-google-spreadsheet
+## [3][Babel 7.8.0 Released: we can now use ECMAScript 2020 new features like.](https://www.reddit.com/r/reactjs/comments/erry3c/babel_780_released_we_can_now_use_ecmascript_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/erry3c/babel_780_released_we_can_now_use_ecmascript_2020/
 ---
+New features include:
 
-## [4][Proton Native V2 – Create Cross Platform Desktop Apps with React](https://www.reddit.com/r/reactjs/comments/erb38h/proton_native_v2_create_cross_platform_desktop/)
-- url: https://proton-native.js.org/#/v2_changes?
+* The nullish coalescing operator.
+
+`const name = person.fullName ?? "Anonymous";`  which reads "if person.fullName is `null` or `undefined`, then `name = "Anonymous"`.
+
+Same as `||`, but for nullish values, instead of falsy ones.
+
+&amp;#x200B;
+
+* Optional chaining
+
+`const city = person.address?.city; // person.address could be not defined`
+
+&amp;#x200B;
+
+* Dynamic `import()`
+
+`import getTargets from "@babel/helper-compilation-targets";`
+
+`getTargets({`
+
+`browsers: ["last 2 chrome versions"],node: 10`
+
+`}) == { chrome: "77.0.0", node: "10.0.0" }`
+
+&amp;#x200B;
+
+I was able to use them in my immediately Create React App application by upgrading `@babel/core` and `react-scripts`.
+## [4][To those who recommend beginners learn to build projects in Vanilla js...](https://www.reddit.com/r/reactjs/comments/erm07o/to_those_who_recommend_beginners_learn_to_build/)
+- url: https://www.reddit.com/r/reactjs/comments/erm07o/to_those_who_recommend_beginners_learn_to_build/
 ---
+THANK YOU. I’ve been trying to learn React on and off for a while and I recently did a 2-3,000 line project for a client where I had to manage state manually and work with a less than optimized file structure (my fault). 
 
-## [5][Introducing PrimeReact 3.4.0 with Expandable Row Groups, Removable Sorting and Accessibility Enhancements](https://www.reddit.com/r/reactjs/comments/erbefq/introducing_primereact_340_with_expandable_row/)
-- url: https://www.primefaces.org/primereact-3-4-0-released/
----
+Going from a project like that to React I really began to understand the problems that React solved, and that made my comprehension so much better. They weren’t just “concepts” anymore, but they were part of solutions to problems I had. 
 
-## [6][Best react course for react for total beginner](https://www.reddit.com/r/reactjs/comments/er0hn9/best_react_course_for_react_for_total_beginner/)
-- url: https://www.reddit.com/r/reactjs/comments/er0hn9/best_react_course_for_react_for_total_beginner/
----
-Hi anybody have some good course recommendation for react ? I been thinking about Brad Stephen or Maximilian ?
-## [7][How would you go about creating an interactive teaching/IDE environment like Scrimba in react?](https://www.reddit.com/r/reactjs/comments/erak3z/how_would_you_go_about_creating_an_interactive/)
-- url: https://www.reddit.com/r/reactjs/comments/erak3z/how_would_you_go_about_creating_an_interactive/
----
-Hi Guys, 
-
-I just came across Scrimba. I absolutely love the learning experience. It's not video, it's not text. It's guided IDE experience? I actually don't know how to describe it yet..
-
-Any ideas on how to approach that in React? 
-
-Example: [https://scrimba.com/p/pKkkVU3/c7zqgMca](https://scrimba.com/p/pKkkVU3/c7zqgMca)
-## [8][The Opinionated Guide to React - new book by Sara Viera - Folder Structure, CRA/Next/Gatsby, TypeScript, Routing, State Mgmt, Animation, Styling, Forms, Dates, GraphQL and UI Toolkits](https://www.reddit.com/r/reactjs/comments/erd5ox/the_opinionated_guide_to_react_new_book_by_sara/)
+Thank you!
+## [5][The Opinionated Guide to React - new book by Sara Viera - Folder Structure, CRA/Next/Gatsby, TypeScript, Routing, State Mgmt, Animation, Styling, Forms, Dates, GraphQL and UI Toolkits](https://www.reddit.com/r/reactjs/comments/erd5ox/the_opinionated_guide_to_react_new_book_by_sara/)
 - url: https://leanpub.com/opinionated-guide-to-react
 ---
 
-## [9][Unit testing vs Integration testing in React JS](https://www.reddit.com/r/reactjs/comments/er1xk5/unit_testing_vs_integration_testing_in_react_js/)
-- url: https://www.reddit.com/r/reactjs/comments/er1xk5/unit_testing_vs_integration_testing_in_react_js/
----
-I have a react based website. Sometimes, I get confused what should be categorized as unit test or integration test in case of UI. Eg. Let me give following scenarios and can someone tell me how you find out what should be part of integration test can what should be part of unit test?
-
-1. Testing a react component which has some button and onClick of which we make a call to backend and get data. We wanted to assert on this data. This entire simulation of steps should be unit test or integration test? 
-2. Testing a component which has a sub component which dispatches an event to the Parent component. What should it be?
-3. Testing a component without doing an click or anything. Just let it render and check if buttons are present, etc.?
-4. Testing the scenarios which spans through multiple react components? Eg. User logins and then user clicks on some link and submits a form.
-
-Please advise that how to differentiate between unit test and integration tests in above scenarios and in general.
-## [10][best practices for a heartbeat refresh](https://www.reddit.com/r/reactjs/comments/erbwyq/best_practices_for_a_heartbeat_refresh/)
-- url: https://www.reddit.com/r/reactjs/comments/erbwyq/best_practices_for_a_heartbeat_refresh/
----
-Hey all,
-
-I want my client to have an option for a regular heartbeat that contacts my server and refreshes the information on the page. Googling has some information about how to do this, but the main articles I find seem unsure if this is even a good approach.
-
-I can use the guides out there, or figure out my own solution, but I was wondering if there are best practices for this kind of thing with react. What's the best approach?
-## [11][Nginx for Front-end Developers - Cloudnweb](https://www.reddit.com/r/reactjs/comments/er9tmm/nginx_for_frontend_developers_cloudnweb/)
-- url: https://cloudnweb.dev/2019/05/nginx-for-front-end-developers/
+## [6][The impact of GatsbyJS on performance, accessibility and scalability of modern webapps](https://www.reddit.com/r/reactjs/comments/ereon7/the_impact_of_gatsbyjs_on_performance/)
+- url: https://youtu.be/p14g-Sep7HY?list=PLEx5khR4g7PKMVeAqZdIHRdOwTM1yktD8
 ---
 
-## [12][Anyone knows made.com and Theodo? The use of React/React Native to build cross platform apps](https://www.reddit.com/r/reactjs/comments/erbme5/anyone_knows_madecom_and_theodo_the_use_of/)
-- url: https://www.reddit.com/r/reactjs/comments/erbme5/anyone_knows_madecom_and_theodo_the_use_of/
+## [7][Progressive Server Rendering + Progressive Client Hydration with React concurrent mode](https://www.reddit.com/r/reactjs/comments/ero1a1/progressive_server_rendering_progressive_client/)
+- url: https://www.reddit.com/r/reactjs/comments/ero1a1/progressive_server_rendering_progressive_client/
 ---
-I have watched this video [Sharing Code Between React and React-Native: What Not to Share - Ben Ellerby](https://www.youtube.com/watch?v=QO7SkFqRd7s) and out of curiosity I want to know how well the website/apps are made (since I used to be a PHP developer that does Magento, and that Magento's functions are very complex to be 'cloned' at all)
+I've been experimenting with the idea of rendering content progressively from the server and streaming it to the client in chunks with React and came up with a workable demo.
 
-The website [https://www.made.com/](https://www.made.com/) is still using Magento and the app is still IOS, I am not sure whether it's because I am not the target country they made the website for, tried with VPN in US/Germany too. (Anyone can check for me?)
+https://twitter.com/flexdinesh/status/1217454346780069888?s=20
 
-The Case Study [https://www.theodo.co.uk/our-clients/made-omnichannel-react-migration](https://www.theodo.co.uk/our-clients/made-omnichannel-react-migration) actually says they delivered the mobile, web and kiosk applications already.
+Dan Abramov responded saying that it's possible to progressively hydrate the client side code now with the experimental concurrent mode and linked to his codesandbox example. I took concurrent mode for a spin and the results are promising. It still has a few gotchas here and there but now the idea of progressively sending HTML chunks from the server and progressively hydrating them in the client is realistic.
 
-Well, checking out Ben Ellerby linkedin, he has been promoted to VP of Engineering from Architect Developer, so I could be wrong about the website?
+Here's an elaborate tweet thread on the results of the demo —
+
+https://twitter.com/flexdinesh/status/1218824439237767168?s=20
+
+In short —
+
+- CSR is super slow to show content in slower networks 'cos of bundle download wait time. 
+- SSR can become a bottle neck if one of the api's takes a longer time to generate content. 
+- Progressive SSR generates and chunks HTML to the client as and when it is rendered in the server.
+- With React suspense and concurrent mode, each HTML chunk can be hydrated as and when it is received.
+- In slower networks, chunks will be received before bundle is downloaded. In such scenarios, you show the content to the user even before the bundle is downloaded. 
+
+I think this is pretty awesome and can open up a lot of perf cases.
+## [8][React hook that helps developers use google spreadsheet as their data table (API endpoint)](https://www.reddit.com/r/reactjs/comments/era6xf/react_hook_that_helps_developers_use_google/)
+- url: https://github.com/idw111/use-google-spreadsheet
+---
+
+## [9][Article Suggestions](https://www.reddit.com/r/reactjs/comments/erstpm/article_suggestions/)
+- url: https://www.reddit.com/r/reactjs/comments/erstpm/article_suggestions/
+---
+I'm passionate about simplifying web topics (which I know or can learn) as possible as I can.
+
+For example, you can check out how I simplified React Components Lifecyle in this article - https://dillionmegida.com/p/understanding-react-component-lifecycle/
+
+So I'm throwing out this question.
+
+Do you have any web topic (most especially React) which you find difficult to comprehend?
+
+If yes, state them in the comments and I'll do my best on them.
+
+I'm trying to use this means to learn and to also help out. Thanks.
+## [10][Here is a new tutorials series on #GraphQL tooling, this time generating #typescript definitions and #reactjs #hooks using @apollographql CLI and @UriGoldshtein codegen cli. In Feb Im planning state machines using @DavidKPiano ’s xstate and react.](https://www.reddit.com/r/reactjs/comments/eriugf/here_is_a_new_tutorials_series_on_graphql_tooling/)
+- url: https://m.youtube.com/playlist?list=PLI7l2IqBd0QuuUjnTxgt0Zb-vOXxv5g9S
+---
+
+## [11][swc-compiler with react and webpack](https://www.reddit.com/r/reactjs/comments/ersqwp/swccompiler_with_react_and_webpack/)
+- url: https://www.reddit.com/r/reactjs/comments/ersqwp/swccompiler_with_react_and_webpack/
+---
+swc is a typescript / javascript compiler. It consumes a javascript or typescript file which uses recently added features like async-await and emits javascript code which can be executed on old browsers.
+
+Example with React and Webpack(loader -&gt; swc-loader)
+
+https://github.com/playground-code/react-swc-compiler
+## [12][Code readability while using hooks](https://www.reddit.com/r/reactjs/comments/erse78/code_readability_while_using_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/erse78/code_readability_while_using_hooks/
+---
+On the previous project I worked on, which was using React 15, I formed some practices for keeping my code clean and easy to read. My main objective was keeping the `render()` method as small as possible. To that effect, I would move pieces of `jsx` into their own methods. For instance:
+
+    class SomeComponent extends React.Component {
+        render() {
+            return (
+                &lt;&gt;
+                    {this.renderSectionA()}
+                    {this.renderSectionB()}
+                    {this.renderSectionC()}
+                &lt;/&gt;
+            )
+        }
+    }
+
+Now, on my current project, I have the possibility of leveraging hooks, but I still want to keep the practice of separating pieces of `jsx` into separate functions. But, since I dont want my functions to be recreated at every rerender, would something like this make sense ?
+
+    function SomeComponent(props) {
+        return (
+            {renderSectionA(props)}
+            {renderSectionB(props)}
+        )
+    }
+    
+    function renderSectionA(props) {}
+    
+    function renderSectionB(props) {}
+        
+    
+
+My biggest concern are cases where I will need to send either state, event handlers or variables created in the component to the outer functions, thus having to pass a big number of paramaters.

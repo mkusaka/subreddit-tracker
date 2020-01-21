@@ -1,13 +1,49 @@
 # ruby
-## [1][URI.escape is obsolete. How to fix Ruby 2.7.0 warning? Percent-encoding your query string](https://www.reddit.com/r/ruby/comments/era3cq/uriescape_is_obsolete_how_to_fix_ruby_270_warning/)
+## [1][Only 15% of the Basecamp operations budget is spent on Ruby](https://www.reddit.com/r/ruby/comments/erj73x/only_15_of_the_basecamp_operations_budget_is/)
+- url: https://m.signalvnoise.com/only-15-of-the-basecamp-operations-budget-is-spent-on-ruby/
+---
+
+## [2][Rails alongside an API gateway + lambda API for a bursty/high-volume API](https://www.reddit.com/r/ruby/comments/erpito/rails_alongside_an_api_gateway_lambda_api_for_a/)
+- url: https://www.reddit.com/r/ruby/comments/erpito/rails_alongside_an_api_gateway_lambda_api_for_a/
+---
+Hey folks--I'm building a new product and I'm interested to get your thoughts on an architecture I had in mind. My requirements are the following:
+
+1. A high-throughput API called from the frontend and who-knows-where else (maybe 10-100 TPS. More if things go well.)
+2. Traditional website with CRUD. Would have users etc, but are infrequently accessed
+
+The data between the two would largely independent, but the views on the Rails site would call the API. The idea is as follows:
+
+1. A Lambda+DDB API behind APIGW using reserved concurrency
+2. Traditional rails app on Heroku or EBS for the website
+
+I've found some success using both rails and lambda in the past. Rails for traditional user-based apps and lambda for APIs. I like not having to tweak autoscaling policies on EC2 boxes for my API, plus, with the new reserved concurrency feature on lambda, I can now reach my latency goals with it. I'm wondering if I should try to combine the best of both works?
+
+Have you folks seen anything like this in the wild? 
+
+And, if you have, was with with EBS or Heroku? 
+
+Do you feel like the split locations for resources might be too confusing for newer devs?
+
+Give me your thoughts
+## [3][MIR: A lightweight JIT compiler project with CRuby](https://www.reddit.com/r/ruby/comments/ereh60/mir_a_lightweight_jit_compiler_project_with_cruby/)
+- url: https://developers.redhat.com/blog/2020/01/20/mir-a-lightweight-jit-compiler-project/
+---
+
+## [4][6 Advanced Ruby Loops](https://www.reddit.com/r/ruby/comments/erresb/6_advanced_ruby_loops/)
+- url: https://medium.com/better-programming/6-advanced-ruby-loops-13695c20d012
+---
+
+## [5][URI.escape is obsolete. How to fix Ruby 2.7.0 warning? Percent-encoding your query string](https://www.reddit.com/r/ruby/comments/era3cq/uriescape_is_obsolete_how_to_fix_ruby_270_warning/)
 - url: https://docs.knapsackpro.com/2020/uri-escape-is-obsolete-percent-encoding-your-query-string
 ---
 
-## [2][Be Suspicious of Join Tables](https://www.reddit.com/r/ruby/comments/er51td/be_suspicious_of_join_tables/)
-- url: https://andycroll.com/ruby/be-suspicious-of-join-tables/
+## [6][Dependency management and other good programming practices.](https://www.reddit.com/r/ruby/comments/erb471/dependency_management_and_other_good_programming/)
+- url: https://www.reddit.com/r/ruby/comments/erb471/dependency_management_and_other_good_programming/
 ---
+Today I was learning how to use Nokogiri from the book instant Nokogiri. Somewhere along the line, the author mentioned that dependency management is good as a programmer especially for ruby. And then went on ahead to explain how to create the gem file and include required gems on there for bundler later on. I am still learning about programming in ruby and I realised that there may be a lot more general practices that are good but I have no knowledge of. 
 
-## [3][GUI on Ruby based Web Application](https://www.reddit.com/r/ruby/comments/era5k0/gui_on_ruby_based_web_application/)
+What are some of the good practices you have seenor learned in your line of work that you think should be done by everyone ?
+## [7][GUI on Ruby based Web Application](https://www.reddit.com/r/ruby/comments/era5k0/gui_on_ruby_based_web_application/)
 - url: https://www.reddit.com/r/ruby/comments/era5k0/gui_on_ruby_based_web_application/
 ---
 Hello Guys, 
@@ -25,67 +61,15 @@ Regards
 &amp;#x200B;
 
 Joshi
-## [4][Dependency management and other good programming practices.](https://www.reddit.com/r/ruby/comments/erb471/dependency_management_and_other_good_programming/)
-- url: https://www.reddit.com/r/ruby/comments/erb471/dependency_management_and_other_good_programming/
----
-Today I was learning how to use Nokogiri from the book instant Nokogiri. Somewhere along the line, the author mentioned that dependency management is good as a programmer especially for ruby. And then went on ahead to explain how to create the gem file and include required gems on there for bundler later on. I am still learning about programming in ruby and I realised that there may be a lot more general practices that are good but I have no knowledge of. 
-
-What are some of the good practices you have seenor learned in your line of work that you think should be done by everyone ?
-## [5][Kafka vs Wisper &amp; Sidekiq](https://www.reddit.com/r/ruby/comments/er7vvj/kafka_vs_wisper_sidekiq/)
-- url: https://chadwilken.com/blog/sidekiq-to-kafka%E2%80%A6and-back/
+## [8][Be Suspicious of Join Tables](https://www.reddit.com/r/ruby/comments/er51td/be_suspicious_of_join_tables/)
+- url: https://andycroll.com/ruby/be-suspicious-of-join-tables/
 ---
 
-## [6][Yukihiro Matsumoto: "Ruby is designed for humans, not machines"](https://www.reddit.com/r/ruby/comments/equpgz/yukihiro_matsumoto_ruby_is_designed_for_humans/)
+## [9][Elixir Isn't Ruby](https://www.reddit.com/r/ruby/comments/ere6k4/elixir_isnt_ruby/)
+- url: https://blog.joshsoftware.com/2020/01/20/elixir-isnt-ruby/
+---
+
+## [10][Yukihiro Matsumoto: "Ruby is designed for humans, not machines"](https://www.reddit.com/r/ruby/comments/equpgz/yukihiro_matsumoto_ruby_is_designed_for_humans/)
 - url: https://evrone.com/yukihiro-matsumoto-interview
 ---
 
-## [7][What Everyone Should Know About Fibers in Ruby](https://www.reddit.com/r/ruby/comments/eqwegr/what_everyone_should_know_about_fibers_in_ruby/)
-- url: https://www.rubyguides.com/2019/11/what-are-fibers-in-ruby/
----
-
-## [8][Do you test multiple Microservice together?](https://www.reddit.com/r/ruby/comments/eqzm7u/do_you_test_multiple_microservice_together/)
-- url: https://www.reddit.com/r/ruby/comments/eqzm7u/do_you_test_multiple_microservice_together/
----
-Regardless of the existence of unit/integration/component tests that are focused on a single Microservice, are you also testing multiple Microservices together?   
-
-
-1. How exactly - everything, group of Microservice, which evn, from the front or backend only?
-2. Is this stable or flaky? In my experience these tests are failing quite often, trying to understand whether I should improve anything
-## [9][Pallets can now process workflows with Ruby 2.7](https://www.reddit.com/r/ruby/comments/eqx40u/pallets_can_now_process_workflows_with_ruby_27/)
-- url: https://github.com/linkyndy/pallets
----
-
-## [10][Is the IRB multiline paste issue universal?](https://www.reddit.com/r/ruby/comments/eqxxle/is_the_irb_multiline_paste_issue_universal/)
-- url: https://www.reddit.com/r/ruby/comments/eqxxle/is_the_irb_multiline_paste_issue_universal/
----
-Some rubyists (myself included) have noticed an issue pasting from the clipboard into latest version of IRB (Ruby 2.7)
-
-[https://github.com/ruby/irb/issues/43](https://github.com/ruby/irb/issues/43)
-
-Is this universal, or dependant on environment (OS / shell / dependencies / etc...)
-
-Does anyone NOT experience this issue?
-
-Paste the following into IRB. Slow or instantaneous?
-
-    my_hash = {
-      'id1' =&gt; { a: 'foo', b: 'bar' },
-      'id2' =&gt; { a: 'foo', b: 'bar' },
-      'id3' =&gt; { a: 'foo', b: 'bar' },
-      'id4' =&gt; { a: 'foo', b: 'bar' },
-      'id5' =&gt; { a: 'foo', b: 'bar' },
-      'id6' =&gt; { a: 'foo', b: 'bar' },
-      'id7' =&gt; { a: 'foo', b: 'bar' },
-      'id8' =&gt; { a: 'foo', b: 'bar' },
-      'id10' =&gt; { a: 'foo', b: 'bar' },
-      'id11' =&gt; { a: 'foo', b: 'bar' },
-      'id12' =&gt; { a: 'foo', b: 'bar' },
-      'id13' =&gt; { a: 'foo', b: 'bar' },
-      'id14' =&gt; { a: 'foo', b: 'bar' },
-      'id15' =&gt; { a: 'foo', b: 'bar' },
-      'id16' =&gt; { a: 'foo', b: 'bar' },
-      'id17' =&gt; { a: 'foo', b: 'bar' },
-      'id18' =&gt; { a: 'foo', b: 'bar' },
-      'id19' =&gt; { a: 'foo', b: 'bar' },
-      'id20' =&gt; { a: 'foo', b: 'bar' }
-    }

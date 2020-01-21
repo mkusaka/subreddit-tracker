@@ -19,17 +19,225 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Example project with Vue + Rails + SPA](https://www.reddit.com/r/rails/comments/erad9q/example_project_with_vue_rails_spa/)
-- url: https://www.reddit.com/r/rails/comments/erad9q/example_project_with_vue_rails_spa/
+## [2][Issue with Code Mirror and Heroku](https://www.reddit.com/r/rails/comments/erpm2k/issue_with_code_mirror_and_heroku/)
+- url: https://www.reddit.com/r/rails/comments/erpm2k/issue_with_code_mirror_and_heroku/
 ---
-Looking for a guide or a repo that has vuejs on a rails project, and it's an SPA. (will gold lol)
-## [3][Is Facebook lite a good portfolio project?](https://www.reddit.com/r/rails/comments/erajnl/is_facebook_lite_a_good_portfolio_project/)
+Hello Everyone,
+
+I recently added the code mirror editor to my rails (6.0.0) app. I was able to get it working just fine in my local environment (Ubuntu 18.04), however when I deploy it to heroku the editors actual input area is very badly offset and has random x's in it.
+
+Here is my application.js file:
+
+    require("@rails/ujs").start()
+    require("turbolinks").start()
+    require("@rails/activestorage").start()
+    require("channels")
+    require("jquery")
+    import { autocompleteExport } from '../custom/autocomplete';
+    import { initialize } from '../custom/editor';
+    import { formatToc } from '../custom/page_display';
+    
+    window.jQuery = $;
+    window.$ = $;
+    
+    $(document).on("turbolinks:load", autocompleteExport.categories)
+    $(document).on("turbolinks:load", autocompleteExport.search)
+    $(document).on("turbolinks:load", autocompleteExport.admins)
+    $(document).on("turbolinks:load", initialize)
+    $(document).on("turbolinks:load", formatToc)
+
+&amp;#x200B;
+
+The relevent editor.js:
+
+    import CodeMirror from 'codemirror/lib/codemirror.js'
+    import 'codemirror/lib/codemirror.css'
+    import 'codemirror/mode/markdown/markdown.js'
+    
+    function initialize(){
+        let textArea = document.getElementById('page_edit_content')
+        let editor = document.getElementById('content-editor')
+        
+        if(textArea &amp;&amp; !editor){
+            var contentEditor = CodeMirror.fromTextArea(textArea, {
+                                                        lineWrapping: true,
+                                                        mode: "markdown",
+                                                    });
+    
+            contentEditor.display.wrapper.id = "content-editor"
+        }
+    
+        textArea = null
+        editor = null
+    
+        textArea = document.getElementById('page_edit_summary')
+        editor = document.getElementById("summary-editor")
+    
+        if(textArea &amp;&amp; !editor){
+            var contentEditor = CodeMirror.fromTextArea(textArea, {
+                lineWrapping: true,
+                mode: "markdown",
+            });
+    
+            contentEditor.display.wrapper.id = "summary-editor"
+        }
+    
+        textArea = null
+        editor = null
+    
+        textArea = document.getElementById('page_content')
+        editor = document.getElementById("new-content-editor")
+    
+        if(textArea &amp;&amp; !editor){
+            var contentEditor = CodeMirror.fromTextArea(textArea, {
+                lineWrapping: true,
+                mode: "markdown",
+            });
+    
+            contentEditor.display.wrapper.id = "new-content-editor"
+        }
+    
+        textArea = null
+        editor = null
+    
+        textArea = document.getElementById('page_summary')
+        editor = document.getElementById("new-summary-editor")
+    
+        if(textArea &amp;&amp; !editor){
+            var contentEditor = CodeMirror.fromTextArea(textArea, {
+                lineWrapping: true,
+                mode: "markdown",
+            });
+    
+            contentEditor.display.wrapper.id = "new-summary-editor"
+        }
+    }
+    
+    export {initialize}
+
+and lastly one of the views that isn't working
+
+    &lt;% @page_title = "New Page" %&gt;
+    
+    &lt;div class="container form-container"&gt;
+      &lt;%= form_for @page, url: world_pages_path(params[:world_name]), html: {style: "width: 100%"} do |f| %&gt;
+        &lt;%= render 'shared/error_messages', errors: flash[:errors] %&gt; 
+        &lt;div class="form-group"&gt;
+          &lt;%= f.label :title %&gt;
+          &lt;%= f.text_field :title, autofocus: true, class: "form-control" %&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+          &lt;%= f.label :summary %&gt;
+          &lt;%= f.text_area :summary, class: "form-control" %&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+          &lt;%= f.label :content %&gt;
+          &lt;%= f.text_area :content, class: "form-control" %&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+          &lt;%= f.submit "Create!", class: "btn btn-primary" %&gt;
+        &lt;/div&gt;
+        &lt;% if params[:category] %&gt;     
+        &lt;%= hidden_field_tag :category, params[:category] %&gt;
+        &lt;% end %&gt;
+      &lt;% end %&gt;
+    &lt;/div&gt;
+
+&amp;#x200B;
+
+[Those x's at the top are actually part of the top editor, and the ones way at the bottom of the main editor you can see.](https://preview.redd.it/hp2q249g92c41.png?width=3354&amp;format=png&amp;auto=webp&amp;s=35ef6547cbf75ba627ad950b7f8538a2993e5596)
+## [3][How do you track or list online users sin rails?](https://www.reddit.com/r/rails/comments/erkddk/how_do_you_track_or_list_online_users_sin_rails/)
+- url: https://www.reddit.com/r/rails/comments/erkddk/how_do_you_track_or_list_online_users_sin_rails/
+---
+
+## [4][Trouble getting javascript to function!](https://www.reddit.com/r/rails/comments/erj6td/trouble_getting_javascript_to_function/)
+- url: https://www.reddit.com/r/rails/comments/erj6td/trouble_getting_javascript_to_function/
+---
+Hey guys, I have an in-process webapp deployed at [here](https://safe-mesa-78631.herokuapp.com/)
+
+Please forgive the awful stand-in copy I wrote. The issue is with the top nav bar, and in particular the "Galleries" drop-down. It seems like SOMETIMES the dropdown work, and sometimes (especially after clicking a dropped-down link) it doesn't. Whenever it doesn't work, I can hit the down-arrow on my keyboard to get it to drop down, but other than that I'm just not sure why it's not working.
+
+I'm using the bootstrap framework (obviously), if that matters.
+
+[Here](https://github.com/Chucksef/photo_app) is a link to the github which will show just about everything you might need, though of course I can answer any questions. I honestly just don't know why it would work sometimes and not others and it's driving me INSANE!!! So any help at all would be incredibly appreciated!
+## [5][`bundle install` commands not working, error not clear](https://www.reddit.com/r/rails/comments/erf1re/bundle_install_commands_not_working_error_not/)
+- url: https://www.reddit.com/r/rails/comments/erf1re/bundle_install_commands_not_working_error_not/
+---
+I did a `brew install imagemagick` for image manipulation, and went to update my gemfile with `image_processing` and `mini_magic` gems, and then did a `bundle install` and it errors out.
+
+I tried `brew update` and `brew upgrade`, and they ran but still getting an error on `bundle install`, see the below:
+
+
+    Mac-Users-Apple-Computer:sample_app_v6 z$ bundle
+    Traceback (most recent call last):
+      31: from /Users/z/.rbenv/versions/2.6.3/bin/bundle:23:in `&lt;main&gt;'
+      30: from /Users/z/.rbenv/versions/2.6.3/bin/bundle:23:in `load'
+      29: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/exe/bundle:34:in `&lt;top (required)&gt;'
+      28: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/friendly_errors.rb:123:in `with_friendly_errors'
+      27: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/exe/bundle:46:in `block in &lt;top (required)&gt;'
+      26: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:24:in `start'
+      25: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor/base.rb:476:in `start'
+      24: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:30:in `dispatch'
+      23: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor.rb:399:in `dispatch'
+      22: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+      21: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+      20: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:255:in `install'
+      19: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/settings.rb:124:in `temporary'
+      18: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:256:in `block in install'
+      17: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli/install.rb:66:in `run'
+      16: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      15: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      14: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/installer.rb:4:in `&lt;top (required)&gt;'
+      13: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      12: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      11: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/dependency_installer.rb:4:in `&lt;top (required)&gt;'
+      10: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      9: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      8: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/package.rb:44:in `&lt;top (required)&gt;'
+      7: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      6: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      5: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/security.rb:12:in `&lt;top (required)&gt;'
+      4: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      3: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+      2: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/openssl.rb:13:in `&lt;top (required)&gt;'
+      1: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+    /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require': dlopen(/Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/x86_64-darwin18/openssl.bundle, 9): Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib (LoadError)
+      Referenced from: /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/x86_64-darwin18/openssl.bundle
+      Reason: image not found - /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/x86_64-darwin18/openssl.bundle
+
+I've done some google searching but it isn't clear
+
+
+-----
+
+EDIT: I did see an SO answer saying to do the below (I'm on mac of course), `brew remove openssl; brew install openssl`, but get an error so am not sure if this is a safe route to try:
+
+https://stackoverflow.com/questions/39051887/image-not-found-in-openssl-bundle-when-install-cocoapods-on-mac?noredirect=1&amp;lq=1
+
+    Mac-Users-Apple-Computer:sample_app_v6 z$ brew remove openssl
+    Error: Refusing to uninstall /usr/local/Cellar/openssl@1.1/1.1.1d
+    because it is required by glib, httpie, imagemagick, krb5, libheif, mysql, postgresql, python, python@3.8, rbenv and shared-mime-info, which are currently installed.
+    You can override this and force removal with:
+      brew uninstall --ignore-dependencies openssl
+
+-----
+
+EDIT 2: RESOLVED
+
+moomaka had me uninstall and reinstall my particular version of ruby and eventually all is well.  Details in comments below.
+## [6][ActiveAdmin Scoped Collection Actions](https://www.reddit.com/r/rails/comments/ere9m2/activeadmin_scoped_collection_actions/)
+- url: https://www.reddit.com/r/rails/comments/ere9m2/activeadmin_scoped_collection_actions/
+---
+Hey,
+
+According to the gem authors: "...By default we don't allow perform actions on **all** the records. We want protect you from accidental deleting...". Well, I'd like to be able to bulk select a bunch of records (or even all records) using the selectable column in the index page of a particular resource and perform an action on those records via scoped AA collection actions...
+
+How can I override this disabled setting?
+
+Thanks.
+## [7][Is Facebook lite a good portfolio project?](https://www.reddit.com/r/rails/comments/erajnl/is_facebook_lite_a_good_portfolio_project/)
 - url: https://www.reddit.com/r/rails/comments/erajnl/is_facebook_lite_a_good_portfolio_project/
 ---
-Here is a good example
-
-[https://dev-communities.herokuapp.com/](https://dev-communities.herokuapp.com/)
-
 This is the last of many rails projects in the Odin project (an opensource curriculum that takes over a year to complete)
 
 [https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
@@ -37,7 +245,15 @@ This is the last of many rails projects in the Odin project (an opensource curri
 Is this actually going to impress any employers?
 
 A lot of you have told me in the past to contribute to Open source and that has been NOTED but how does this go for a portfolio project?
-## [4][Webpacker, how to include a JS library's image path?](https://www.reddit.com/r/rails/comments/erag0g/webpacker_how_to_include_a_js_librarys_image_path/)
+## [8][Example project with Vue + Rails + SPA](https://www.reddit.com/r/rails/comments/erad9q/example_project_with_vue_rails_spa/)
+- url: https://www.reddit.com/r/rails/comments/erad9q/example_project_with_vue_rails_spa/
+---
+Looking for a guide or a repo that has vuejs on a rails project, and it's an SPA. (will gold lol)
+## [9][Is it possible to use the GraphiQL Playground in a API-only Rails app?](https://www.reddit.com/r/rails/comments/er7o5h/is_it_possible_to_use_the_graphiql_playground_in/)
+- url: https://www.reddit.com/r/rails/comments/er7o5h/is_it_possible_to_use_the_graphiql_playground_in/
+---
+I have an API-only Rails app that I am adding GraphQL to. I am going through this GraphQL tutorial: [https://www.howtographql.com/graphql-ruby/2-queries/](https://www.howtographql.com/graphql-ruby/2-queries/) , and they recommend using GraphQL's built-in Playground interface, which looks awesome. However, because my Rails app is API-only, it can't be built, I think because it isn't setup to display templates. Does anyone know if there is a way to get around this?
+## [10][Webpacker, how to include a JS library's image path?](https://www.reddit.com/r/rails/comments/erag0g/webpacker_how_to_include_a_js_librarys_image_path/)
 - url: https://www.reddit.com/r/rails/comments/erag0g/webpacker_how_to_include_a_js_librarys_image_path/
 ---
 I've been on Sprockets until this current project where I don't have a choice. I'm trying to add Leaflet, which I install like this:
@@ -74,15 +290,7 @@ Because `leaflet.css` has its own references to images:
     }
 
 How to I let the leaflet library CSS and JS know about the images directory that’s now in `node_modules/`? Is there something I can do in the webpacker config to move the images as part of the packing?
-## [5][What IRC or other chat system has ongoing rails discussions?](https://www.reddit.com/r/rails/comments/er0vab/what_irc_or_other_chat_system_has_ongoing_rails/)
-- url: https://www.reddit.com/r/rails/comments/er0vab/what_irc_or_other_chat_system_has_ongoing_rails/
----
-I joined some IRC channels and though there were a lot of people, there were no active discussions. Where do I go for active rails channels?
-## [6][Is it possible to use the GraphiQL Playground in a API-only Rails app?](https://www.reddit.com/r/rails/comments/er7o5h/is_it_possible_to_use_the_graphiql_playground_in/)
-- url: https://www.reddit.com/r/rails/comments/er7o5h/is_it_possible_to_use_the_graphiql_playground_in/
----
-I have an API-only Rails app that I am adding GraphQL to. I am going through this GraphQL tutorial: [https://www.howtographql.com/graphql-ruby/2-queries/](https://www.howtographql.com/graphql-ruby/2-queries/) , and they recommend using GraphQL's built-in Playground interface, which looks awesome. However, because my Rails app is API-only, it can't be built, I think because it isn't setup to display templates. Does anyone know if there is a way to get around this?
-## [7][Rails + React issue with onChange callback](https://www.reddit.com/r/rails/comments/er8432/rails_react_issue_with_onchange_callback/)
+## [11][Rails + React issue with onChange callback](https://www.reddit.com/r/rails/comments/er8432/rails_react_issue_with_onchange_callback/)
 - url: https://www.reddit.com/r/rails/comments/er8432/rails_react_issue_with_onchange_callback/
 ---
 I'm making a todo application to help me better understand React. Everything works with one exception. If a user types too quickly within an input field, the data gets out of sync. For example, if a user were to quickly type "123456" into the `input`, the final value would be "6".
@@ -93,103 +301,3 @@ I'm almost certain it's because by the time the `put` request is made and the `s
 - [Application](https://rails-react-example.herokuapp.com/)
 - [Source Code](https://github.com/stevepolitodesign/rails-react-example)
     - [Component in question](https://github.com/stevepolitodesign/rails-react-example/blob/master/app/javascript/packs/components/TodoItem.jsx#L86)
-## [8][Best Rails CMS for multi-site/multi-tenant app?](https://www.reddit.com/r/rails/comments/er511o/best_rails_cms_for_multisitemultitenant_app/)
-- url: https://www.reddit.com/r/rails/comments/er511o/best_rails_cms_for_multisitemultitenant_app/
----
-I'm working with a client who wants to essentially white-label his current rental software site and offer it to similar businesses. I'm new to the CMS world (although I have 13 years of Rails experience) so I'm not sure what the best choice here is. What I don't want to do is have an install of this per business using it. I'd like to run them all on one app that can swap out assets/views/databases/etc based on URL. Seems like a multi-site with a multi-tenant database could be the right tool for the job. So:
-
-* Are my assumptions correct so far?
-* What's the best CMS for this?
-
-I checked out Refinery but the multi-site libraries for it were lacking to say the least. Sofa looks like it might be better but it doesn't seem to have as big of a community. Any help would be much appreciated!!
-## [9][I want to create an website like EngVid.com (website to watch videos from YouTube)](https://www.reddit.com/r/rails/comments/er8byw/i_want_to_create_an_website_like_engvidcom/)
-- url: https://www.reddit.com/r/rails/comments/er8byw/i_want_to_create_an_website_like_engvidcom/
----
-[Dont need to read these first paragraph ]
-
-engvid.com 
-
-
-Hi. I’m currently studying Ruby but I have read about Rails recently. This is my first attempt to learn how to built web application. I have done so far just a simple CRUDE application with MVC architecture nothing special in PHP without any framework. 
-
-I’m very unfamiliar with web application since I have just code crud with simple “strings” information, so is quite hard to grasp how to get done this new personal project. 
-
-First, I would like if know with is worth doing that with rails. You might say I even don’t need any of that to do a website like EngVid.com. but the thing is that I want to turn this project into a undergraduate thesis. I want to do basically the exactly same website to my country. Without doing that with any kind of plataform such as blogger or Wordpress. Build by myself all the pages the users can see. 
-
-
-
-—Probelms
-
-Is could bd difficult to implement these 3 features: commentaries to each page video, quiz system to each page video and tags system.
-
-
-
-The main issue I would like to ask is how could I implement the Quiz system which they have to every video. I can’t grasp how I could get something like this done in my case. 
-In the page of submitting a new video I could show to the Teacher User a series of fields to fill related to the Quiz. It would be something like 10 question, each one with 4 incorrect anwser and 1 correct.
-
-Capture these input values it not a mystery to my. But where is going and how to deal with them it is a mystery to me. 
-Display the capture value of inputs in a quiz-like format  is not the issue. It will be display with a title and radios input types. 
-My concern is how to do the validation of correct and incorrect question.
-## [10][Anyone successfully using Less (css) with a Rails 6 project?](https://www.reddit.com/r/rails/comments/er0t2a/anyone_successfully_using_less_css_with_a_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/er0t2a/anyone_successfully_using_less_css_with_a_rails_6/
----
-I have a Rails 5 app using the less-rails gem I want to migrate to Rails 6. When I try to use less in Rails 6 I get an error, "ActionView::Template::Error (undefined method \`pathname' " I think it is the same error as reported here: 
-
-[https://github.com/metaskills/less-rails/issues/152](https://github.com/metaskills/less-rails/issues/152)
-
-&amp;#x200B;
-
-Has anyone successfully used Less in a Rails 6 app? I was thinking it might be better to drop the less-rails gem and sprockets, and try to do it all with webpacker. I gave it a try but couldn't get it to work. I don't think I fully understand webpacker, and how the loader and enviornment files work. If anyone has a sample working config they could share, I'd appreciate it!
-## [11][Submitting](https://www.reddit.com/r/rails/comments/er0p4l/submitting/)
-- url: https://www.reddit.com/r/rails/comments/er0p4l/submitting/
----
-This might be too html/webdev for this sub, but overall I've been so happy to not be hate-shamed here that I'm going to try  r/rails first!
-
-Anyway, I have a form on a web app I'm working on to get comfortable with rails. The code for the edit page is below...
-
-    &lt;%= form_for @gallery do |f| %&gt;
-    
-    ...
-    
-    &lt;table class="table table-condensed table-bordered table-striped"&gt;
-                    &lt;tr&gt;
-                        &lt;th&gt;&lt;strong&gt;Thumbnail&lt;/strong&gt;&lt;/th&gt;
-                        &lt;th&gt;&lt;strong&gt;Filename&lt;/strong&gt;&lt;/th&gt;
-                        &lt;th&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/th&gt;
-                        &lt;th&gt;&lt;strong&gt;Move Image&lt;/strong&gt;&lt;/th&gt;
-                        &lt;th class="text-center"&gt;&lt;strong&gt;Delete&lt;/strong&gt;&lt;/th&gt;
-                    &lt;/tr&gt;
-                    &lt;% @gallery.images.each do |image| %&gt;
-                        &lt;tr&gt;
-                            &lt;td class="text-center"&gt;&lt;%= link_to( image_tag(image, alt: image.filename, class: "img-table"), image, target: "_blank") %&gt;&lt;/td&gt;
-                            &lt;td&gt;&lt;%= image.filename %&gt;&lt;/td&gt;
-                            &lt;td&gt;&lt;%= image.created_at %&gt;&lt;/td&gt;
-                            &lt;td&gt;
-                                &lt;div class="form-group"&gt;
-                                    &lt;%= f.collection_select("id", Gallery.all, :id, :name, {prompt: true}, {class: "form-control"} ) %&gt;
-                                &lt;/div&gt;
-                            &lt;/td&gt;
-                            &lt;td&gt;&lt;%= link_to "Delete", delete_image_attachment_gallery_path(image.signed_id, @gallery.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-block btn-sml btn-danger" %&gt;&lt;/td&gt;
-                        &lt;/tr&gt;
-                    &lt;% end %&gt;
-                &lt;/table&gt;
-    
-    ...
-    
-    &lt;% end %&gt;
-
-Anyway, the rendered page/form looks roughly like this...
-
-[Interface Screenshot](http://i.imgur.com/nNE4sX6.png)
-
-The Screenshot above is an example of an Gallery resource, which *has\_many\_attached: images* using the Active Storage gem and Amazon S3 (learning a TON about that stuff at the moment too!)
-
-My problem is—as can be seen in the interface screenshotted above—I included a column to let the user move an image from one gallery to another. In the pic, I have changed first image's gallery to "Fashion", and my hope is that it would be moved in the #update action in gallery\_controller.
-
-My general though process was that all of these select options would be submitted in an array I could loop through, and as I proceeded I could check the values against the current gallery name, and move each image as needed. I'm not sure yet how exactly to move them, but that's not important now. Anyway, I'm almost embarrassed to admit I have no idea where this hypothetical array of selectbox options lives. I checked in params\[\] and found only the following:
-
-    Parameters: {"utf8"=&gt;"✓", "authenticity_token"=&gt;"ZVNF4+pzodvyu4KY9jAXHdkMF9XOCweowaqBgc1+lHSpioNer9DcxbFWo3AHMjANAmaFqtE10c4NKcK2d/HEHA==", "gallery"=&gt;{"name"=&gt;"Weddings", "description"=&gt;"Weddings", "id"=&gt;"11", "visible"=&gt;"0"}, "button"=&gt;"", "id"=&gt;"11"}
-
-Anyway, as usual I'm sure I could figure it out, but I'm struggling to think of how to start my search! Any help at all would be profoundly appreciated!
-
-Also let me know if you'd like to see anything else!

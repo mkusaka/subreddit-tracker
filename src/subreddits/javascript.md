@@ -13,43 +13,57 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][The new Babel release gives support for ECMAscript 2020 features. We can now use the nullish operator, optional chaining and dynamic module import.](https://www.reddit.com/r/javascript/comments/er5hqm/the_new_babel_release_gives_support_for/)
-- url: https://babeljs.io/blog/2020/01/11/7.8.0
+## [3][Deno JavaScript Runtime for V8 Written in Rust](https://www.reddit.com/r/javascript/comments/ersxhw/deno_javascript_runtime_for_v8_written_in_rust/)
+- url: https://deno.land/std/manual.md
 ---
 
-## [4][JavaScript tree shaking, like a pro](https://www.reddit.com/r/javascript/comments/er3v8o/javascript_tree_shaking_like_a_pro/)
-- url: https://medium.com/@bluepnume/javascript-tree-shaking-like-a-pro-7bf96e139eb7
+## [4][GitHub - ryanmcdermott/clean-code-javascript: Clean Code concepts adapted for JavaScript](https://www.reddit.com/r/javascript/comments/erimed/github_ryanmcdermottcleancodejavascript_clean/)
+- url: https://github.com/ryanmcdermott/clean-code-javascript
 ---
 
-## [5][Promote your browser web extensions here: January 2020!](https://www.reddit.com/r/javascript/comments/er3krt/promote_your_browser_web_extensions_here_january/)
-- url: /r/WebExtensions/comments/ep3o28/promote_your_web_extensions_january_2020/
+## [5][Understanding Big O Notation via JavaScrip](https://www.reddit.com/r/javascript/comments/erszqs/understanding_big_o_notation_via_javascrip/)
+- url: https://alligator.io/js/big-o-notation/
 ---
 
-## [6][GitHub - ajbogh/nMotion: nMotion is a NodeJS security camera motion detection system.](https://www.reddit.com/r/javascript/comments/er9ipe/github_ajboghnmotion_nmotion_is_a_nodejs_security/)
-- url: https://github.com/ajbogh/nMotion
+## [6][The Best Way to build reactive sub-forms with Angular](https://www.reddit.com/r/javascript/comments/ersnp2/the_best_way_to_build_reactive_subforms_with/)
+- url: https://medium.com/@tomastrajan/angular-reactive-sub-forms-type-safe-without-duplication-dbd24225e1e8
 ---
 
-## [7][Those features are truly missing in TypeScript](https://www.reddit.com/r/javascript/comments/erc0an/those_features_are_truly_missing_in_typescript/)
-- url: https://medium.com/@moshesimantov/82d02f0c23fd
+## [7][We need channels! A gentle introduction to CSP.](https://www.reddit.com/r/javascript/comments/eruipj/we_need_channels_a_gentle_introduction_to_csp/)
+- url: https://krasimirtsonev.com/blog/article/we-need-channels-intro-to-csp
 ---
 
-## [8][Those core features are trully missing in TypeScript](https://www.reddit.com/r/javascript/comments/erbwdb/those_core_features_are_trully_missing_in/)
-- url: https://medium.com/@moshesimantov/strict-a-language-for-strict-functional-protocols-82d02f0c23fd
+## [8][[AskJS] Advice about new JS Library](https://www.reddit.com/r/javascript/comments/erudr4/askjs_advice_about_new_js_library/)
+- url: https://www.reddit.com/r/javascript/comments/erudr4/askjs_advice_about_new_js_library/
+---
+ I got an internship for summer and I am free for 4 months and as JavaScript is my favorite programming language, and it has a huge community, I want to develop some library that can be used with npm or standalone js applications..... Whatever I think of there is a library out there for it...can someone please tell me about some library which could be useful and not already present?
+## [9][[AskJS] how I could improve ChegoJS](https://www.reddit.com/r/javascript/comments/ertgh4/askjs_how_i_could_improve_chegojs/)
+- url: https://www.reddit.com/r/javascript/comments/ertgh4/askjs_how_i_could_improve_chegojs/
+---
+Hi people, some time ago I wrote this query builder thing ChegoJS. I would like to get back to it and improve. In my free time I focus on bug fixing etc. But do you have some ideas what would be nice to add?
+
+Links:
+
+https://github.com/chegojs https://www.npmjs.com/search?q=Chego
+## [10][[AskJS] Article Suggestions](https://www.reddit.com/r/javascript/comments/erstzr/askjs_article_suggestions/)
+- url: https://www.reddit.com/r/javascript/comments/erstzr/askjs_article_suggestions/
+---
+I'm passionate about simplifying web topics (which I know or can learn) as possible as I can.
+
+For example, you can check out how I simplified Javascript Promises in this article - https://thewebfor5.com/p/javascript/javascript-promises/
+
+So I'm throwing out this question.
+
+Do you have any web topic (most especially Javascript) which you find difficult to comprehend?
+
+If yes, state them in the comments and I'll do my best on them.
+
+I'm trying to use this means to learn and to also help out. Thanks.
+## [11][[Example Code / Tutorial] How content encoding works in Node.js HTTP servers and can speed up page loading time by a lot](https://www.reddit.com/r/javascript/comments/erd9hm/example_code_tutorial_how_content_encoding_works/)
+- url: https://github.com/Sv443/Node.js-HTTP-Encoding-Example
 ---
 
-## [9][Hand Tooled Flux — Creating a Tiny Flux Architecture in a Handful of Lines](https://www.reddit.com/r/javascript/comments/erb8u4/hand_tooled_flux_creating_a_tiny_flux/)
-- url: https://medium.com/@me_76676/hand-tooled-flux-creating-a-tiny-flux-architecture-in-a-handful-of-lines-d3ae27865e2e
----
-
-## [10][Anybody with npm packages that need TypeScript type declaration files?](https://www.reddit.com/r/javascript/comments/eqv7nl/anybody_with_npm_packages_that_need_typescript/)
-- url: /r/webdev/comments/equwxp/anybody_with_npm_packages_that_need_typescript/
----
-
-## [11][[AskJS] Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ? (C#, Java, JS etc)](https://www.reddit.com/r/javascript/comments/erancy/askjs_do_you_consider_senior_c_programmer_to_be/)
-- url: https://www.reddit.com/r/javascript/comments/erancy/askjs_do_you_consider_senior_c_programmer_to_be/
----
-Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ? (C#, Java, JS etc)
-## [12][Proton Native V2 - Create desktop apps with a React Native Syntax (now w/ flexbox, hot reloading, styling, same components as RN etc.)](https://www.reddit.com/r/javascript/comments/eqx9qp/proton_native_v2_create_desktop_apps_with_a_react/)
-- url: https://proton-native.js.org/#/v2_changes
+## [12][Rubiks Cube in JavaScript (HTML AND CSS)](https://www.reddit.com/r/javascript/comments/erlgxx/rubiks_cube_in_javascript_html_and_css/)
+- url: https://github.com/qbacuber/RubiksCubeJS
 ---
 

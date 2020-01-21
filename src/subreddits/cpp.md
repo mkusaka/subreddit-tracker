@@ -57,52 +57,71 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Modern CMake is like inheritance](https://www.reddit.com/r/cpp/comments/erbkrk/modern_cmake_is_like_inheritance/)
-- url: https://kubasejdak.com/modern-cmake-is-like-inheritance
+## [2][The Hunt for the Fastest Zero](https://www.reddit.com/r/cpp/comments/erialk/the_hunt_for_the_fastest_zero/)
+- url: https://travisdowns.github.io/blog/2020/01/20/zero.html
 ---
 
-## [3][Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ? (C#, Java, JS etc)](https://www.reddit.com/r/cpp/comments/erajev/do_you_consider_senior_c_programmer_to_be_better/)
-- url: https://www.reddit.com/r/cpp/comments/erajev/do_you_consider_senior_c_programmer_to_be_better/
+## [3][Do you have a project for undergraduate university students?](https://www.reddit.com/r/cpp/comments/eruocx/do_you_have_a_project_for_undergraduate/)
+- url: https://www.reddit.com/r/cpp/comments/eruocx/do_you_have_a_project_for_undergraduate/
 ---
-Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ?  (C#, Java, JS etc)
-## [4]["Use the Force, Luke"... or Modern C++ Tools](https://www.reddit.com/r/cpp/comments/erbm6n/use_the_force_luke_or_modern_c_tools/)
-- url: https://www.bfilipek.com/2020/01/modern-cpp-tools-check.html
----
+Hi all,
 
-## [5][How to use gradle with canon for CPP projects](https://www.reddit.com/r/cpp/comments/ercxs5/how_to_use_gradle_with_canon_for_cpp_projects/)
-- url: https://www.reddit.com/r/cpp/comments/ercxs5/how_to_use_gradle_with_canon_for_cpp_projects/
----
-Hi,
+I'm part of an undergraduate class that takes on a software engineering project for a team of 4-8 students. I'm looking to add a project in C++ to hone my skills. If you have anything that would take approximately the length of a semester, please send me a message.
 
 &amp;#x200B;
 
-Does Gradle work  with conan ? or if i use gradle then no need to conan ?
-## [6][C++ - Initialization of Static Variables](https://www.reddit.com/r/cpp/comments/ercp2o/c_initialization_of_static_variables/)
-- url: https://pabloariasal.github.io/2020/01/02/static-variable-initialization/
+The page for Clients: [cs.cornell.edu/courses/cs5150/2020sp/project-clients.html](https://cs.cornell.edu/courses/cs5150/2020sp/project-clients.html)
+
+Other example projects: [https://www.cs.cornell.edu/courses/cs5150/2020sp/project-clients.html](https://www.cs.cornell.edu/courses/cs5150/2020sp/project-clients.html)
+## [4][Conference Organizing](https://www.reddit.com/r/cpp/comments/eruecy/conference_organizing/)
+- url: https://cppcast.com/cpp-conference-organizing/
 ---
 
-## [7][GCC: C++ coroutines - Initial implementation pushed to master.](https://www.reddit.com/r/cpp/comments/eqrv1n/gcc_c_coroutines_initial_implementation_pushed_to/)
-- url: https://gcc.gnu.org/ml/gcc-patches/2020-01/msg01096.html
+## [5][Modern CMake is like inheritance](https://www.reddit.com/r/cpp/comments/erbkrk/modern_cmake_is_like_inheritance/)
+- url: https://kubasejdak.com/modern-cmake-is-like-inheritance
 ---
 
-## [8][P2064: "Assumptions" by Herb Sutter](https://www.reddit.com/r/cpp/comments/eqv5i8/p2064_assumptions_by_herb_sutter/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2064r0.pdf
+## [6][MegaMimes : A C Mime Type Library](https://www.reddit.com/r/cpp/comments/eru10s/megamimes_a_c_mime_type_library/)
+- url: https://www.reddit.com/r/cpp/comments/eru10s/megamimes_a_c_mime_type_library/
+---
+Determining the Mime Type of a file In C has not been easy.  Developers need an external table , which usually comes as an external file, which contains just a few mime types of various file extensions, Well I don't blame the developers, THERE IS NO ALGORITHM TO CHECK THE MIME TYPE OF A FILE. What if the FILE was deleted ? . That will be very awful for the program. Most people who do not want to use external files normally resort to using web services. This can unbearably slow, because of network problems. 
+
+Now this can be solved  problems of determining the MIME TYPE of a file from your C Code can be solved by [MegaMimes](https://github.com/trumpowen/MegaMimes). [MegaMimes](https://github.com/trumpowen/MegaMimes) is a C Library that is used to determine the MIME Type of a file, with just the few code. The MIME Type table comes embedded in the library and as a result, no need for external files, web services and any other technique.  The library works on all major Operating Systems ( Windows, Linux,, Mac OS X ) . The library can be extended by adding your own mime types, if they do not exist in the table. [MegaMimes](https://github.com/trumpowen/MegaMimes) has no dependencies, which makes it very easy to install!!!!
+
+Do not fail to check it out. If the library proves helpful to you, do not forget to give it a STAR. If you have any contributions, you can open a pull request and an issue. Thank You
+## [7][Real-time remote watching of variables](https://www.reddit.com/r/cpp/comments/ert8go/realtime_remote_watching_of_variables/)
+- url: https://www.reddit.com/r/cpp/comments/ert8go/realtime_remote_watching_of_variables/
+---
+We're implementing software for real-time control of a printing press.
+
+Currently we're using an IDE called CODESYS. This IDE enables us to connect remotely to the machine running the application and watch (and manipulate) variables in real-time.
+
+CODESYS is great for implementing control software (after all, that's what's its main purpose is...), but it doesn't scale up and out very well, and it's not very pleasant to work with.
+
+We're considering switching to C++ for developing the code, but we'll be missing this important feature of watching, tracing and visualizing the data.
+
+Are there any good frameworks out there for attaching to a running app and querying its internal variables? Visualization and tracing will be an added bonus.
+
+(Naturally, we can develop this framework ourselves, but this will prolong our first deployment, make debugging more difficult, and reduce the chances that management will OK this switch.)
+## [8][Using clang-tidy on windows for a visual studio project](https://www.reddit.com/r/cpp/comments/ers58p/using_clangtidy_on_windows_for_a_visual_studio/)
+- url: https://www.reddit.com/r/cpp/comments/ers58p/using_clangtidy_on_windows_for_a_visual_studio/
+---
+Hi,
+
+I am trying to clang-tidy for static code analysis on our project. We are not using CMake for generating our Xcode/Visual Studio projects. clang-tidy expects a *compile\_commands*.*json* for the list of files and compiler flags. I was able to generate this file on Mac by piping the output of xcodebuild to [xcpretty](https://github.com/xcpretty/xcpretty).
+
+Is there a tool that can generate this file for Visual Studio? And is clang-tidy able to understand Microsoft's C++ compiler flags?
+
+Note: I would like to run it from that command line, not from within Visual Studio.
+## [9][Error handling benchmarks (LEAF)](https://www.reddit.com/r/cpp/comments/erioge/error_handling_benchmarks_leaf/)
+- url: https://www.reddit.com/r/cpp/comments/erioge/error_handling_benchmarks_leaf/
+---
+When I announced [LEAF](https://github.com/zajo/leaf) some time ago people requested that I run a few benchmarks comparing it to other error handling libraries, since I make the claim that it is "lightweight". Here is a comparison to Outcome and `tl::expected`: [https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md](https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md).
+## [10][[PDF] P2020 - Locales, Encodings and Unicode](https://www.reddit.com/r/cpp/comments/erdbmx/pdf_p2020_locales_encodings_and_unicode/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2020r0.pdf
 ---
 
-## [9][How are the C++/winrt projections on Windows?](https://www.reddit.com/r/cpp/comments/eqypqh/how_are_the_cwinrt_projections_on_windows/)
-- url: https://www.reddit.com/r/cpp/comments/eqypqh/how_are_the_cwinrt_projections_on_windows/
----
-I am currently planning to write an app for Windows 10 and publish it to the store. I have been programming with mostly C++ (using Qt) for quite some time now. I know that Microsoft uses C# a lot and by running Visual Studio I can see that they have a lot of tooling around it. C# also seems like a nice language (I am somewhat familiar with it but I have mostly used C++).
-So I am undecided between using C++/winrt vs c# and Microsoft doesn't seem to provide any info on what should one choose. Does anyone have any experience or have developed using C++ (in. Net or UWP) on Windows 10? How did you find it?
-## [10][Account of search for a minimalistic bounded blocking MPMC queue](https://www.reddit.com/r/cpp/comments/equle2/account_of_search_for_a_minimalistic_bounded/)
-- url: https://morestina.net/blog/1400/minimalistic-blocking-bounded-queue-for-c
+## [11]["Use the Force, Luke"... or Modern C++ Tools](https://www.reddit.com/r/cpp/comments/erbm6n/use_the_force_luke_or_modern_c_tools/)
+- url: https://www.bfilipek.com/2020/01/modern-cpp-tools-check.html
 ---
 
-## [11][Prefetching - practical applications](https://www.reddit.com/r/cpp/comments/eqm4qc/prefetching_practical_applications/)
-- url: https://www.reddit.com/r/cpp/comments/eqm4qc/prefetching_practical_applications/
----
- [https://extensa.tech/blog/prefetching/](https://extensa.tech/blog/prefetching/) 
-
-Continuation of previous post:
-
- [https://www.reddit.com/r/cpp/comments/e6fuu0/blogposts\_about\_various\_methods\_of\_packing/](https://www.reddit.com/r/cpp/comments/e6fuu0/blogposts_about_various_methods_of_packing/)

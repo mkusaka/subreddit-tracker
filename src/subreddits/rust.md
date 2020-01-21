@@ -33,75 +33,152 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/eraop8/whats_everyone_working_on_this_week_42020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-4-2020/37181?u=llogiq)!
-## [3][My FOSS Story](https://www.reddit.com/r/rust/comments/er4qrn/my_foss_story/)
-- url: https://blog.burntsushi.net/foss/
+## [3][Deno JavaScript Runtime for V8 Written in Rust](https://www.reddit.com/r/rust/comments/erok5p/deno_javascript_runtime_for_v8_written_in_rust/)
+- url: https://deno.land/std/manual.md
 ---
 
-## [4][How refactoring a macro reduced my Rust project compilation time from 4 hours to 40 seconds](https://www.reddit.com/r/rust/comments/er1xkh/how_refactoring_a_macro_reduced_my_rust_project/)
-- url: https://users.rust-lang.org/t/5-hours-to-compile-macro-what-can-i-do/36508
+## [4][Actix-web is back in the main repo with a note from the Nikolay Kim](https://www.reddit.com/r/rust/comments/erdklb/actixweb_is_back_in_the_main_repo_with_a_note/)
+- url: https://github.com/actix/actix-web/issues/1289
 ---
 
-## [5][Rust on the ESP32 - SVD's, PAC's and USB flashing](https://www.reddit.com/r/rust/comments/era9uw/rust_on_the_esp32_svds_pacs_and_usb_flashing/)
-- url: https://mabez.dev/blog/posts/esp32-rust-svd-pac/
+## [5][Pushrod 0.4.26 - SDL2 + Textures = Happy Face!](https://www.reddit.com/r/rust/comments/erp1yh/pushrod_0426_sdl2_textures_happy_face/)
+- url: https://www.reddit.com/r/rust/comments/erp1yh/pushrod_0426_sdl2_textures_happy_face/
+---
+Hi all,
+
+Pushrod is a GUI library written in Rust using the SDL2 library. It is written to be simple, fast, efficient, and easy to understand.
+
+This release contains a huge number of changes to the rendering library.  I am now using `Texture`s via GPU instead of drawing directly to the `Canvas`, which makes for a much more modern, performant, and compact library.  I had been struggling trying to get Textures implemented for a couple of months, but managed to solve it.  Now, all on-screen components are `Texture`s!
+
+Now that I have `Texture`s in place, it's full steam ahead.  The next series of updates will include a menu bar system at the top of each window, a scrollable `Viewport`, tab navigation, and a few more features before a feature freeze and a 0.5.x branch.
+
+As always, [click here to see the project](https://www.github.com/KenSuenobu/rust-pushrod), and feel free to weigh-in, or provide a pull request if you see something that needs fixing, or just want to contribute.
+
+I look forward to any and all comments - good or bad!
+
+I also decided to get with the times and [created a blog.](https://kensuenobu.github.io/)
+## [6][rweb: Yet another web server framework](https://www.reddit.com/r/rust/comments/errbq9/rweb_yet_another_web_server_framework/)
+- url: https://www.reddit.com/r/rust/comments/errbq9/rweb_yet_another_web_server_framework/
+---
+**Note**: This is not a stable release.
+
+Add rweb to the dependencies section
+```toml
+[dependencies]
+rweb = "0.3.0-alpha.0"
+```
+and import as
+```rust
+use rweb::*;
+```
+
+
 ---
 
-## [6][Count cache misses in Rust](https://www.reddit.com/r/rust/comments/erbnz8/count_cache_misses_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/erbnz8/count_cache_misses_in_rust/
+
+rweb is a small http framework based on warp. It's fast, safe (thanks to warp and hyper), easy to use and extensible.
+
+```rust
+#[get("/")]
+fn index() -&gt; Result&lt;String, Error&gt; {
+    Ok(String::new())
+}
+
+#[get("/foo")]
+fn foo() -&gt; Result&lt;String, Error&gt; {
+    Ok(String::new())
+}
+
+// async works!
+#[get("/param/{v}")]
+async fn param_typed(v: u32) -&gt; Result&lt;String, Error&gt; {
+    Ok(v.to_string())
+}
+
+#[get("/param/{name}/{value}")]
+fn multiple_param(name: String, value: String) -&gt; Result&lt;String, Error&gt; {
+    Ok(format!("{}={}", name, value))
+}
+
+#[tokio::main]
+async fn main() {
+    rweb::serve(index().or(foo()).or(param_typed()).or(multiple_param())).run(([127, 0, 0, 1], 3030)).await;
+}
+
+```
+
+Note: There is a helper named #[router] to manage routes. I didn't use it for demonstrating purpose.
+
+
+Repository: https://github.com/kdy1/rweb
+
+See docs on docs.rs: https://docs.rs/rweb/0.3.0-alpha.0/rweb/
+## [7][The Thank You Thread](https://www.reddit.com/r/rust/comments/ereh5h/the_thank_you_thread/)
+- url: https://www.reddit.com/r/rust/comments/ereh5h/the_thank_you_thread/
 ---
-Hello! I'm doing some research using Rust and I've found a significant difference in execution time between two test cases. Both tests use the same algorithm but on different test data but one is about 10x slower than the other. I *think* this is due to the layout of the two tests in memory.
-
-Is there a tool I can use to estimate the number of cache misses?
-## [7][A friendly utility crate for DateTime (using chrono underneath). Inspired by Rails.](https://www.reddit.com/r/rust/comments/erbd8e/a_friendly_utility_crate_for_datetime_using/)
-- url: https://github.com/jk-gan/aion
----
-
-## [8][Porting Java's ConcurrentHashMap to Rust (part 3) [video]](https://www.reddit.com/r/rust/comments/eqwn0s/porting_javas_concurrenthashmap_to_rust_part_3/)
-- url: https://www.youtube.com/watch?v=_z4fZkmlvrs
----
-
-## [9][Announcing Stowaway: A library for packing data into pointers](https://www.reddit.com/r/rust/comments/er26op/announcing_stowaway_a_library_for_packing_data/)
-- url: https://www.reddit.com/r/rust/comments/er26op/announcing_stowaway_a_library_for_packing_data/
----
-While working on a toy async runtime and `RawWaker`, I found I was getting frustrated working with with vtables and `*mut ()` and ensuring the conversions to my inner context type were being performed correctly. At the same time, I didn't want to have to unconditionally store everything in a `Box` or `Arc` if unnecessary.
-
-This led me to make [stowaway](https://docs.rs/stowaway/0.1.1/stowaway/index.html): a library for a box-like container that packs its data directly into a `*mut ()` if it's small enough, and only allocates for data that is larger than a pointer. It is designed as a way to pass data into any API that expects a "context" pointer, which is a common pattern in C callback APIs, libraries like `boost::context`, and of course, `RawWaker`.
-
-The library is full documented and tested. I'd like to get to a 1.0 release as soon as possible, but first I wanted to ask /r/rust for some light review; as you can imagine, a library like this involves a lot of `unsafe`, and I wanted to make sure it was all being done correctly.
-
-Next steps planned for the library are miri and fuzz tests, to ensure my implementation is correct, and numerous additional trait implementations on `Stowaway`.
-## [10][Rust, WebAssembly, and the future of Serverless by Steve Klabnik](https://www.reddit.com/r/rust/comments/er21mr/rust_webassembly_and_the_future_of_serverless_by/)
-- url: https://www.youtube.com/watch?v=CMB6AlE1QuI
----
-
-## [11][Which one is better api?](https://www.reddit.com/r/rust/comments/era5pe/which_one_is_better_api/)
-- url: https://www.reddit.com/r/rust/comments/era5pe/which_one_is_better_api/
----
-I'm currently working on a new http framework. Whiling designing api, I have an issue with api, so I'm writing this post to hear the (potential) user's opinion.
-
-&amp;#x200B;
-
-Which one seems like a better api?
-
-&amp;#x200B;
-
-`/// One box is created per function which accepts Json&lt;T&gt;`
-
-`#[post("/typed")]`
-
-`pub fn typed(body: Json&lt;LoginForm&gt;) {}`
-
-&amp;#x200B;
-
-`/// Everything is statically dispatched`
-
-`#[post("/annotated")]`
-
-`pub fn annotated(#[json] body: LoginForm) {}`
-
-&amp;#x200B;
-
-Also, note that it's easy to support both.
-## [12][ttyplot-rs: Plot streaming data from stdin to a tty terminal](https://www.reddit.com/r/rust/comments/er5atl/ttyplotrs_plot_streaming_data_from_stdin_to_a_tty/)
-- url: https://github.com/mogenson/ttyplot-rs
+Drop a comment here to say Thank You to all the open source maintainers of crates that you use.
+## [8][Ready At Dawn Studios hiring contractors with preferred experience in Rust.](https://www.reddit.com/r/rust/comments/eribbz/ready_at_dawn_studios_hiring_contractors_with/)
+- url: https://twitter.com/AndreaPessino/status/1219341435238895616
 ---
 
+## [9][I'm looking for crates for a personal project](https://www.reddit.com/r/rust/comments/erq73f/im_looking_for_crates_for_a_personal_project/)
+- url: https://www.reddit.com/r/rust/comments/erq73f/im_looking_for_crates_for_a_personal_project/
+---
+As the title suggests, I'm thinking through a personal project, and I'm wondering about crates and libraries. So, I thought I'd ask around for opinions and advice.
+
+The project:
+
+Most of the time, I spend my free time on reading and video games, but I recently got an itch to scratch. I recently finished a Nintendo Switch JRPG called [Atelier Ryza](https://store.steampowered.com/app/1121560/Atelier_Ryza_Ever_Darkness__the_Secret_Hideout/). Being a game about alchemy, it has rather involved item crafting mechanics, detailed ingredients, and flexible recipes for items. I often found myself yak-shaving (i.e. this recipe needs a (fuel) ingredient with a fire-element value of 3; I *could* just use some Ashen Sand I gathered earlier, but if I synthesize some Zettel paper first, I'll get a better result; hmm the Zettel paper recipe needs a Red Supplement to be awesome though, and I just ran out...) 
+
+Yeah, I spend a lot of time in the crafting menu...
+
+Anyway, the project!
+
+So, there's a fair amount of details to the items and recipes to the game, with somewhat recursive relationships. There's (currently) no FAQ that really does this justice, in part because organizing and presenting the information as prose or individual tables only presents a slice of the whole picture.
+
+So the project is to make a Atelier Ryza crafting information app.
+
+Goals:
+
+* step outside of my comfy skill set (C# web development)
+* collect information about the items and recipes in the game
+* create a stand-alone deployable app, that can be cheaply hosted, the items and recipes need to be stored with the app (I'm guessing some kind of schema file format; I'm considering JSON as a fallback option if I can't find something better)
+* if the file format isn't conducive to manual creation, create a simple tool to help create the file
+* host a simple UI to explore the data, and perhaps a GraphQL interface to do some more involved queries
+
+Rough steps:
+
+* record item and recipe information (likely by hand, which will take some time)
+   * there's hundreds of items, and hundred of recipes--it'd likely only be a few megabytes in memory
+* create a schema for storing items and recipes (I haven't touched on all of the things associated with items and recipes, but it's... involved)
+* create the file to store the game data
+* create a web host, using GraphQL to interact with the data
+* create a UI that's not awful to look at (maybe play around with HSL-color design ideas  
+
+
+I'm also wondering if Node.js would be a better fit for this project, rather than Rust. I'm interested in learning something new, and I'd love to hear from people that worked with both.
+
+I'm also looking for libraries to help out. I'm not even sure what to do about a 'db-in-a-file'. I don't need a full sqlite solution, as there's only a few use cases.
+## [10][Oxidize 2020 - The Embedded Rust Conference](https://www.reddit.com/r/rust/comments/erhv6n/oxidize_2020_the_embedded_rust_conference/)
+- url: https://ferrous-systems.com/blog/oxidize-2020/
+---
+
+## [11][Writing an OS in Rust: Allocator Designs](https://www.reddit.com/r/rust/comments/erd5w1/writing_an_os_in_rust_allocator_designs/)
+- url: https://os.phil-opp.com/allocator-designs/
+---
+
+## [12][More idiomatic way of passing a mutable reference to a data structure and immutable references to parts of the same structure?](https://www.reddit.com/r/rust/comments/erucgq/more_idiomatic_way_of_passing_a_mutable_reference/)
+- url: https://www.reddit.com/r/rust/comments/erucgq/more_idiomatic_way_of_passing_a_mutable_reference/
+---
+Hi,
+
+I'm currently implementing a board game, and I'm dividing various parts of the combat logic into functions wich look like this:
+
+    fn apply_effect(board: &amp;mut Gameboard, effect: &amp;Effect, triggering_unit: &amp;Unit, unit_with_effect: &amp;Unit)
+    fn attack_target(board: &amp;mut Gameboard, attacker: Unit, target_index: usize)
+
+The typical way I'd use `apply_effect` is by passing in the board (since this function could create new units) with the other arguments being references to units from the board. For example, `&amp;board.army[0]`, which obviously violates the borrow rules.
+
+The workarounds I've found is to clone the unit and pass a reference to the clone to the `apply_effect` function, or to use indices like in the second.
+
+Am I doing something wrong here, or is there a more idiomatic way of structuring this code? Also, what exactly is the borrow checker trying to protect me from by insisting that I not do this? Because its pretty inconvenient right now unfortunately.

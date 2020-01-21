@@ -97,92 +97,66 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Turns out JavaScript compiling and injection in iframes is NOT as simple as HTML/CSS 😅 but I finally made some good progress 🙌🏻. Next steps are to make the iframe refresh after the user hasn’t typed for a while, improved formatting/auto completion, and generate downloadable/shareable code files](https://www.reddit.com/r/reactjs/comments/eqqmuw/turns_out_javascript_compiling_and_injection_in/)
-- url: https://v.redd.it/r03rl1meenb41
+## [3][React hook that helps developers use google spreadsheet as their data table (API endpoint)](https://www.reddit.com/r/reactjs/comments/era6xf/react_hook_that_helps_developers_use_google/)
+- url: https://github.com/idw111/use-google-spreadsheet
 ---
 
-## [4][I developed a Polling app with React and NextJs. Looking for feedback!](https://www.reddit.com/r/reactjs/comments/equqeq/i_developed_a_polling_app_with_react_and_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/equqeq/i_developed_a_polling_app_with_react_and_nextjs/
----
-Hey guys I recently deployed my app on AWS for the first time. It is a poll making app which you can share, add a time limit, and even take a screenshot of the results.  It's more of a portfolio piece than anything so I'd really appreciate it if you guys could check it out and give me some feedback!
-
-[https://thatpoll.com/](https://thatpoll.com/)
-## [5][ReactJS Crash Course 2020 | React Functional Components, Hooks, and React Router [&lt;30 minutes]](https://www.reddit.com/r/reactjs/comments/eqgwds/reactjs_crash_course_2020_react_functional/)
-- url: https://youtu.be/KQOtXYC0We8
+## [4][Proton Native V2 – Create Cross Platform Desktop Apps with React](https://www.reddit.com/r/reactjs/comments/erb38h/proton_native_v2_create_cross_platform_desktop/)
+- url: https://proton-native.js.org/#/v2_changes?
 ---
 
-## [6][Should I focus on using React Hooks + Context in 2020?](https://www.reddit.com/r/reactjs/comments/eqrya3/should_i_focus_on_using_react_hooks_context_in/)
-- url: https://www.reddit.com/r/reactjs/comments/eqrya3/should_i_focus_on_using_react_hooks_context_in/
----
-Good day. I'm new to ReactJS and torn between using Redux or Hooks + Context. I already used both. so I want to extend my knowledge. But I need your suggestion which should I choose between this two. I need to select only one.  Thanks
-## [7][React + App with api(s)](https://www.reddit.com/r/reactjs/comments/eqvowp/react_app_with_apis/)
-- url: https://www.reddit.com/r/reactjs/comments/eqvowp/react_app_with_apis/
----
-I know there are a lot of tutorials, but I want to choose right from the beginning and know which way to go.
-
-I want to create a simple page that retrieves data from 4 different api and then processes that data on the page (in live time but not only).
-
-&amp;#x200B;
-
-Basically, how to approach it in the most optimal way?
-
-&amp;#x200B;
-
-Should I create my own REST API ? or Should I first save the api data using e.g. lamda every 30 minutes to update it or should I do it on the fly?
-
-&amp;#x200B;
-
-Which databases should I choose and do I need them ? Or maybe I can use graph ql ablo elasticsearch ?
-
-&amp;#x200B;
-
-I prefer to ask because I know that there are a lot of solutions and tools and I wonder what you think. Why do you do something wrong if you can do it well and efficiently ?
-
-&amp;#x200B;
-
-Or maybe I think completely wrong and do it differently?
-## [8][Any good tutorial for React that focuses on Hooks and Context from the start?](https://www.reddit.com/r/reactjs/comments/eqvm4k/any_good_tutorial_for_react_that_focuses_on_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/eqvm4k/any_good_tutorial_for_react_that_focuses_on_hooks/
----
-I'm a bit familiar with React but want to do a refresher. I'm looking for a comprehensive course (Udemy or others, don't care about the platform) that's good an up to date. The thing is, I want it to be focused on Hooks and on Context instead of Redux from the start. I'm seeing a lot of course in where Hooks are only and add on in the end and that's it.  
-
-
-Which ones do you recommend?
-## [9][Is it normal to check for each DOM if it's available or not if I wanted to manipulated in someway ? can anyone tells me how to avoid this .. or maybe what does it called .. Sorry for bad English](https://www.reddit.com/r/reactjs/comments/eqv0cp/is_it_normal_to_check_for_each_dom_if_its/)
-- url: https://www.reddit.com/r/reactjs/comments/eqv0cp/is_it_normal_to_check_for_each_dom_if_its/
----
- 
-
-const inputFile = document.getElementById('file-upload');  
- inputFile &amp;&amp;  inputFile.addEventListener('change',()=&gt;{
-
-...  
-}
-## [10][Web Developer 2020 Roadmap - Complete Guide (part 1)](https://www.reddit.com/r/reactjs/comments/eqot7f/web_developer_2020_roadmap_complete_guide_part_1/)
-- url: https://youtu.be/KgxOxgdQi7I
+## [5][Introducing PrimeReact 3.4.0 with Expandable Row Groups, Removable Sorting and Accessibility Enhancements](https://www.reddit.com/r/reactjs/comments/erbefq/introducing_primereact_340_with_expandable_row/)
+- url: https://www.primefaces.org/primereact-3-4-0-released/
 ---
 
-## [11][Electron and React](https://www.reddit.com/r/reactjs/comments/equljj/electron_and_react/)
-- url: https://www.reddit.com/r/reactjs/comments/equljj/electron_and_react/
+## [6][Best react course for react for total beginner](https://www.reddit.com/r/reactjs/comments/er0hn9/best_react_course_for_react_for_total_beginner/)
+- url: https://www.reddit.com/r/reactjs/comments/er0hn9/best_react_course_for_react_for_total_beginner/
 ---
-I am about to start my first development position and I will be building desktop applications that will pull data from external api.
-
-I have absolute free will to choose the technologies that I want to use so I decided to use Electron plus React cause I have solid foundations in JavaScript and I enjoy learning React...
-
-Can you suggest some articles on how to combine these two? Maybe tutorial series? I know already how to fetch data from API and what I am looking for is more like development setup, process, building and publishing application built with React and Electron, sending updates to app etc...
-
-Any advice is greatly appreciated!
-## [12][Today I had just setup movie list application using React, Redux, Redux-thunk](https://www.reddit.com/r/reactjs/comments/equ69d/today_i_had_just_setup_movie_list_application/)
-- url: https://www.reddit.com/r/reactjs/comments/equ69d/today_i_had_just_setup_movie_list_application/
+Hi anybody have some good course recommendation for react ? I been thinking about Brad Stephen or Maximilian ?
+## [7][How would you go about creating an interactive teaching/IDE environment like Scrimba in react?](https://www.reddit.com/r/reactjs/comments/erak3z/how_would_you_go_about_creating_an_interactive/)
+- url: https://www.reddit.com/r/reactjs/comments/erak3z/how_would_you_go_about_creating_an_interactive/
 ---
-I had just setup movie list application using container pattern. I am using react with typescript, redux, redux-thunk. Anyone learn or want to contribute in my project as a opensouce heartly welcome.
+Hi Guys, 
 
-Today I had deploy application in heroku [link](https://movie-app-react-typescript.herokuapp.com/). I want suggestion from other developer where I need to improve. 
+I just came across Scrimba. I absolutely love the learning experience. It's not video, it's not text. It's guided IDE experience? I actually don't know how to describe it yet..
 
-&amp;#x200B;
+Any ideas on how to approach that in React? 
 
-Here is a github link [github-repo-url](https://github.com/devbinod/movie-app). 
+Example: [https://scrimba.com/p/pKkkVU3/c7zqgMca](https://scrimba.com/p/pKkkVU3/c7zqgMca)
+## [8][The Opinionated Guide to React - new book by Sara Viera - Folder Structure, CRA/Next/Gatsby, TypeScript, Routing, State Mgmt, Animation, Styling, Forms, Dates, GraphQL and UI Toolkits](https://www.reddit.com/r/reactjs/comments/erd5ox/the_opinionated_guide_to_react_new_book_by_sara/)
+- url: https://leanpub.com/opinionated-guide-to-react
+---
 
-&amp;#x200B;
+## [9][Unit testing vs Integration testing in React JS](https://www.reddit.com/r/reactjs/comments/er1xk5/unit_testing_vs_integration_testing_in_react_js/)
+- url: https://www.reddit.com/r/reactjs/comments/er1xk5/unit_testing_vs_integration_testing_in_react_js/
+---
+I have a react based website. Sometimes, I get confused what should be categorized as unit test or integration test in case of UI. Eg. Let me give following scenarios and can someone tell me how you find out what should be part of integration test can what should be part of unit test?
 
-Thanks in advance.
+1. Testing a react component which has some button and onClick of which we make a call to backend and get data. We wanted to assert on this data. This entire simulation of steps should be unit test or integration test? 
+2. Testing a component which has a sub component which dispatches an event to the Parent component. What should it be?
+3. Testing a component without doing an click or anything. Just let it render and check if buttons are present, etc.?
+4. Testing the scenarios which spans through multiple react components? Eg. User logins and then user clicks on some link and submits a form.
+
+Please advise that how to differentiate between unit test and integration tests in above scenarios and in general.
+## [10][best practices for a heartbeat refresh](https://www.reddit.com/r/reactjs/comments/erbwyq/best_practices_for_a_heartbeat_refresh/)
+- url: https://www.reddit.com/r/reactjs/comments/erbwyq/best_practices_for_a_heartbeat_refresh/
+---
+Hey all,
+
+I want my client to have an option for a regular heartbeat that contacts my server and refreshes the information on the page. Googling has some information about how to do this, but the main articles I find seem unsure if this is even a good approach.
+
+I can use the guides out there, or figure out my own solution, but I was wondering if there are best practices for this kind of thing with react. What's the best approach?
+## [11][Nginx for Front-end Developers - Cloudnweb](https://www.reddit.com/r/reactjs/comments/er9tmm/nginx_for_frontend_developers_cloudnweb/)
+- url: https://cloudnweb.dev/2019/05/nginx-for-front-end-developers/
+---
+
+## [12][Anyone knows made.com and Theodo? The use of React/React Native to build cross platform apps](https://www.reddit.com/r/reactjs/comments/erbme5/anyone_knows_madecom_and_theodo_the_use_of/)
+- url: https://www.reddit.com/r/reactjs/comments/erbme5/anyone_knows_madecom_and_theodo_the_use_of/
+---
+I have watched this video [Sharing Code Between React and React-Native: What Not to Share - Ben Ellerby](https://www.youtube.com/watch?v=QO7SkFqRd7s) and out of curiosity I want to know how well the website/apps are made (since I used to be a PHP developer that does Magento, and that Magento's functions are very complex to be 'cloned' at all)
+
+The website [https://www.made.com/](https://www.made.com/) is still using Magento and the app is still IOS, I am not sure whether it's because I am not the target country they made the website for, tried with VPN in US/Germany too. (Anyone can check for me?)
+
+The Case Study [https://www.theodo.co.uk/our-clients/made-omnichannel-react-migration](https://www.theodo.co.uk/our-clients/made-omnichannel-react-migration) actually says they delivered the mobile, web and kiosk applications already.
+
+Well, checking out Ben Ellerby linkedin, he has been promoted to VP of Engineering from Architect Developer, so I could be wrong about the website?

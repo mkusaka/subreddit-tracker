@@ -1,109 +1,130 @@
 # golang
-## [1][deep-copy is a tool for generating DeepCopy() functions for a given type.](https://www.reddit.com/r/golang/comments/eqtl7s/deepcopy_is_a_tool_for_generating_deepcopy/)
-- url: https://github.com/globusdigital/deep-copy
+## [1][/r/golang hit 100k subscribers yesterday](https://www.reddit.com/r/golang/comments/er8klk/rgolang_hit_100k_subscribers_yesterday/)
+- url: https://redditmetrics.com/r/golang
 ---
 
-## [2][Algorithms with Go (free)](https://www.reddit.com/r/golang/comments/eqvurh/algorithms_with_go_free/)
-- url: http://algorithmswithgo.com/
+## [2][giu - cross platform rapid GUI framework for golang based on imgui](https://www.reddit.com/r/golang/comments/er7js0/giu_cross_platform_rapid_gui_framework_for_golang/)
+- url: https://www.reddit.com/r/golang/comments/er7js0/giu_cross_platform_rapid_gui_framework_for_golang/
 ---
+[github.com/AllenDang/giu](https://github.com/AllenDang/giu)
 
-## [3][fig - a library I built for loading config files, with the ability to set defaults and mark fields as required](https://www.reddit.com/r/golang/comments/eqkl30/fig_a_library_i_built_for_loading_config_files/)
-- url: https://github.com/kkyr/fig
----
-
-## [4][How to organize your source code](https://www.reddit.com/r/golang/comments/eqve1m/how_to_organize_your_source_code/)
-- url: https://bartfokker.com/posts/scaling-source-code/
----
-
-## [5][PipeIt - a text transformation, conversion, cleansing and extraction tool created by pure go.](https://www.reddit.com/r/golang/comments/eqw0tl/pipeit_a_text_transformation_conversion_cleansing/)
-- url: https://www.reddit.com/r/golang/comments/eqw0tl/pipeit_a_text_transformation_conversion_cleansing/
----
-# PipeIt
-
-PipeIt is an open source text transformation, conversion, cleansing and extraction tool.
-
-Download it here at [https://github.com/AllenDang/PipeIt](https://github.com/AllenDang/PipeIt)
-
-https://preview.redd.it/3trs3egniqb41.png?width=712&amp;format=png&amp;auto=webp&amp;s=a31dd62e6230a00db25ece2e792e9fa408585f9f
+Cross platform rapid GUI framework for golang based on [imgui](https://github.com/ocornut/imgui) and the great golang binding [imgui-go](https://github.com/inkyblackness/imgui-go).
 
 # Features
 
-* Split - split text to text array by given separator.
-* RegexpSplit - split text to text array by given regexp expression.
-* Match - filter text array by regexp.
-* Replace - replace each element of a text array.
-* Surround - add prefix or suffix to each lement of a text array.
-* Join - join text array to single line of text by given separator.
-* Line - output text array line by line.
+Compare to other imgui golang bindings, giu has following features:
 
-And more pipes are comming...
+* Live-update during the resizing of OS window (implemented on GLFW 3.3 and OpenGL 3.2).
+* Redraw only when user event occurred. Costs only 0.5% CPU usage with 60FPS.
+* Declarative UI (see examples for more detail).
+* Drop in usage, no need to implement render and platform.
+* Freetype font rendering support.
+* OS clipboard support.
 
-(More important, tell me your case will help me to create more pipes which will actually useful.)
-
-# Usage
-
-## Extract image links from a html source.
-
-https://i.redd.it/o8a7l61piqb41.gif
-
-## Add single quotation mark to every words
-
-https://i.redd.it/urfvdnlqiqb41.gif
-
-## Replace the comma separated string to lines
-
-https://i.redd.it/rb6egukriqb41.gif
-
-# The reason for creating it
-
-First of all, to test the GUI framework created by me, [giu](https://github.com/AllenDang/giu), for a real project.
-
-It turns out giu is really useful for this kind of application. It just costs me 6 hours to build it from ground.
-
-And I have this idea for years, to create a text process pipeline, to ease my daily text processing pain.
-
-Hope it could be useful to you as well. :)
-## [6][Why does "go.mod" have it's own format? It could have been JSON or YAML for example, but nope, it was decided a new syntax. I would really like to know the decision behind that.](https://www.reddit.com/r/golang/comments/eqf3dm/why_does_gomod_have_its_own_format_it_could_have/)
-- url: https://www.reddit.com/r/golang/comments/eqf3dm/why_does_gomod_have_its_own_format_it_could_have/
+https://preview.redd.it/twjsquplvub41.png?width=1200&amp;format=png&amp;auto=webp&amp;s=2ed4bdf30b1f38bb85c7046b25c9f137577c9665
+## [3][TutorialEdge/Go: A list of Go Programming Tutorials, their write-ups, their source code and their current build status!](https://www.reddit.com/r/golang/comments/er3dsy/tutorialedgego_a_list_of_go_programming_tutorials/)
+- url: https://github.com/TutorialEdge/go
 ---
-Just wondering...
-## [7][Elitism in the Go community](https://www.reddit.com/r/golang/comments/eqptjt/elitism_in_the_go_community/)
-- url: https://www.reddit.com/r/golang/comments/eqptjt/elitism_in_the_go_community/
+
+## [4][Algorithms with Go (free)](https://www.reddit.com/r/golang/comments/eqvurh/algorithms_with_go_free/)
+- url: http://algorithmswithgo.com/
 ---
-Has anyone else encountered a level of elitism in the Go community? 
 
-At work most of our services are in Ruby or Python, and there's a few members of my team who are obsessed with Go and will complain about being assigned tasks (even really important ones) in these services that aren't written in Go. Despite these services being monoliths which support massive parts of our business. 
-
-There's a lot of elitism and snarky remarks in our weekly meetings about these other languages.
-
-I've also noticed that simple questions on the home page of this sub for example are downvoted, but I don't understand why. 
-
-I'm curious to hear others thoughts, because as much as I love Go, I don't subsribe to the idea that's it's this perfect language and feel the need to bash all others that came before it. Most of which are completely different and have a separate set of pros and cons.
-
-I'll be starting a new role soon that uses Go exclusively and am excited for it, but I've been a little put off by its community.
-## [8][Looking for a particular talk about the design process of making Go](https://www.reddit.com/r/golang/comments/eqoh4b/looking_for_a_particular_talk_about_the_design/)
-- url: https://www.reddit.com/r/golang/comments/eqoh4b/looking_for_a_particular_talk_about_the_design/
+## [5][What things are necessary before being able to work on Go in the Go Team.](https://www.reddit.com/r/golang/comments/erc3qy/what_things_are_necessary_before_being_able_to/)
+- url: https://www.reddit.com/r/golang/comments/erc3qy/what_things_are_necessary_before_being_able_to/
 ---
-It's a talk at a conference where they cover how europe went with pascal and america went with C and how that influenced the design, designing the CLI, the linter etc, and looking at what they will change in Go 2
-## [9][A slightly better version of Go Playground (maybe)](https://www.reddit.com/r/golang/comments/eqc3sa/a_slightly_better_version_of_go_playground_maybe/)
-- url: https://www.reddit.com/r/golang/comments/eqc3sa/a_slightly_better_version_of_go_playground_maybe/
+Currently I'm an undergraduate student in Computer Science and had gotten into Go and have loved it ever since. I was wondering, if later down the line I ever wanted to join the Go Team, what do you think would be the appropriate prerequisites/background to have? Are there any computer science/math areas that would be useful to know?
+## [6][S-expressions parser (play with LISP-like expressions!)](https://www.reddit.com/r/golang/comments/er8p8o/sexpressions_parser_play_with_lisplike_expressions/)
+- url: https://github.com/xiam/sexpr
 ---
-Hello folks.
 
-I often find myself thinking that I often encounter a situation when I need to do some small prototyping (playing with goroutines, etc) and Go's playground often is faster solution than a dedicated IDE window. Unfortunately [play.golang.org](https://play.golang.org) is very primitive ([goplay.space](https://goplay.space) is better but not much), so I've decided to try to create something a bit better.
+## [7][Slasher-write http servers that respond to slack slash commands](https://www.reddit.com/r/golang/comments/er6vpo/slasherwrite_http_servers_that_respond_to_slack/)
+- url: https://www.reddit.com/r/golang/comments/er6vpo/slasherwrite_http_servers_that_respond_to_slack/
+---
+## Slasher
 
-After two days without a sleep managed to create some prototype and I want to share it with you.This playground offers file save and upload feature and some basic code autocomplete (package and function level).
+[Slasher](https://github.com/autom8ter/slasher) makes it easy to write http servers that respond to slack slash commands. Please note, a custom slack app must be created within your target workspace. Visit the following link to learn how to setup a custom slack app: [https://api.slack.com/interactivity/slash-commands](https://api.slack.com/interactivity/slash-commands)
 
-Very interested in your opinion :)
+## Example
 
 &amp;#x200B;
 
-Demo: [http://goplay.x1unix.com/](http://goplay.x1unix.com/)
-
-Source: [https://github.com/x1unix/go-playground](https://github.com/x1unix/go-playground)
-## [10][go-pg better than sqlx?](https://www.reddit.com/r/golang/comments/eqqzv9/gopg_better_than_sqlx/)
-- url: https://www.reddit.com/r/golang/comments/eqqzv9/gopg_better_than_sqlx/
+    import (
+    	"fmt"
+    	"github.com/autom8ter/slasher"
+    	"github.com/nlopes/slack"
+    	"github.com/pkg/errors"
+    	"net/http"
+    	"os"
+    )
+    
+    
+    func helloWorld() slasher.HandlerFunc{
+    	return func(s *slasher.Slasher, client *slack.Client, command *slack.SlashCommand) (i interface{}, err error) {
+    		script := `echo "hello world!"`
+    		output, err := s.ShellScript(script)
+    		if err != nil {
+    			return nil,  errors.Wrapf(err, "failed to run script: %s", script)
+    		}
+    		return &amp;slack.Message{
+    			Msg: slack.Msg{
+    				Text: string(output),
+    			},
+    		}, nil
+    	}
+    }
+    
+    func main() {
+    	slash := slasher.NewSlasher(os.Getenv("SLACK_TOKEN"), []string{"autom8ter"})
+    	slash.AddHandler("/hello-world", helloWorld())
+    	mux := http.NewServeMux()
+    	mux.Handle("/slasher", slash.HandlerFunc())
+    	if err := http.ListenAndServe(":8080", mux); err != nil {
+    		fmt.Printf("failed to start server: %s", err.Error())
+    		os.Exit(1)
+    	}
+    }
+## [8][🔌 Fiber is an Expressjs inspired web framework build on 🚀 Fasthttp.](https://www.reddit.com/r/golang/comments/er8qjw/fiber_is_an_expressjs_inspired_web_framework/)
+- url: https://www.reddit.com/r/golang/comments/er8qjw/fiber_is_an_expressjs_inspired_web_framework/
 ---
-Just came across go-pg in another thread and piqued my curiosity. I am currently just using sqlx with the lib/pg (I believe that is the one) and it works. I have always liked the idea of ORM but disliked not knowing what was going on under the hood, but looking at some charts, go-pg looks to be more performant than sqlx. 
+[github.com/gofiber/fiber](https://github.com/gofiber/fiber)
 
-Just wondering.. the syntax looks pretty clean, not overly ORMish (from my Java/Spring/Hibernate days). What do others think? I didn't want GORM, little much, or Gorilla/Mux. I am using Chi for api/routing/middleware use. Just wondering if I could comfortably use go-pg without too much concern with it being an overly complicated or bloated framework that doesn't add much value.
+I've been developing micro web services in node for years, personally and professionally. In 2019 I faced some challenges regarding the performance for a high load micro service on a budget. This was the moment I had to seek for alternatives and porting the project to Go was the first thing that came in mind. Go always intrigued me since I saw Rob Pike gave [this](https://www.youtube.com/watch?v=PAAkCSZUG1c) talk, I recommend watching it if you didn't see it yet.
+
+After porting the node code to Go, I observed three things:
+
+* The community is awesome and so helpful!
+* Performance, performance, performance!
+* I fell in 💖 with Go and knew this was the beginning of a new chapter
+
+After debugging and bootstrapping my micro service, I decided to rewrite all my projects in Go.This took me some some months, but I thought it was a great way to learn more about the language.
+
+Most of my micro services are mostly build up out of API endpoints, and I always used [Expressjs](https://expressjs.com/) for fast prototyping and ease of use. [NGINX](https://www.nginx.com/) for load balancing and in most cases this made me able to deploy multiple services in a week. This worked seamlessly for me and the companies I worked for, time is 💸 money.
+
+* Was it perfect code?       **No**
+* Was it error proof?          **No**
+* Was it efficient?                **No**
+* Did it get the job done?  **Yes**
+
+All my current projects that I ported to Go are using [Fasthttp](https://github.com/valyala/fasthttp), an amazing package that has some great people that helped me to understand some fundamentals regarding the network part in Go.
+
+I tried to convince some of my co-workers to also switch to Go, some tried but had a hard time with the learning curve. This was my motivation to create a package for them that makes it easier porting [Expressjs](https://expressjs.com/) related projects to Go. In the hope that the performance gain in the end would made them fall in 💖 with Go too. Thats when [Fiber](https://github.com/gofiber/fiber) was born with some extended [Documentation](https://gofiber.github.io/fiber/#/) to help my colleagues out.
+
+It's basically an [Expressjs](https://expressjs.com/) styled router build on top of [Fasthttp](https://github.com/valyala/fasthttp), I made sure almost all express methods are include ([Context API)](https://gofiber.github.io/fiber/#/context). It worked, my colleagues ported some node projects within a day and fell in love on both the language and performance. More gophers, mission complete 💪.
+
+My plan this year is to deploy all our projects in production using Go. I think there is a lot of improvement to be made to this new library, that's one of the reasons I wanted to post it here. I would love to get some feedback, suggestions, pull requests or even criticism!
+
+I would like to take the opportunity to thank some people for helping and inspiring me: [@valyala](https://github.com/valyala)([Fasthttp](https://github.com/valyala/fasthttp/blob/master/LICENSE)) / [@julienschmidt](https://github.com/julienschmidt)([HttpRouter](https://github.com/julienschmidt/httprouter)) / [@savsgio](https://github.com/savsgio)([Atreugo](https://github.com/savsgio/atreugo/blob/master/LICENSE)) / [@vincentLiuxiang](https://github.com/vincentLiuxiang)([Lu](https://github.com/vincentLiuxiang/lu/blob/master/LICENSE)) / [@tj](https://github.com/tj)([Expressjs](https://github.com/expressjs/express)) / [@pillarjs](https://github.com/pillarjs)([Path-to-regexp](https://github.com/pillarjs/path-to-regexp/blob/master/LICENSE)) / [@techempower](https://github.com/TechEmpower)([FrameworkBenchmarks](https://github.com/TechEmpower/FrameworkBenchmarks)) / [@erikdubbelboer](https://github.com/erikdubbelboer)([Fasthttp](https://github.com/valyala/fasthttp/blob/master/LICENSE))
+
+Thanks all! 💖
+## [9][Starting Golang: Implementing GNU Tee](https://www.reddit.com/r/golang/comments/ercwcd/starting_golang_implementing_gnu_tee/)
+- url: https://medium.com/@sddkal/starting-golang-implementing-gnu-tee-49d33fd60028
+---
+
+## [10][Hey all , How to secure the data communicated over a websockets ?](https://www.reddit.com/r/golang/comments/ercja3/hey_all_how_to_secure_the_data_communicated_over/)
+- url: https://www.reddit.com/r/golang/comments/ercja3/hey_all_how_to_secure_the_data_communicated_over/
+---
+I'm planning to use a encryption method like AES or something . Could anyone please help me to follow a good approach ?   
+
+
+thanks

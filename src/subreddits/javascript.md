@@ -13,45 +13,43 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][70+ challenging JavaScript quiz questions with explanation](https://www.reddit.com/r/javascript/comments/eqmuit/70_challenging_javascript_quiz_questions_with/)
-- url: http://quiz.typeofnan.dev/
+## [3][The new Babel release gives support for ECMAscript 2020 features. We can now use the nullish operator, optional chaining and dynamic module import.](https://www.reddit.com/r/javascript/comments/er5hqm/the_new_babel_release_gives_support_for/)
+- url: https://babeljs.io/blog/2020/01/11/7.8.0
 ---
 
-## [4][Become a Better Software Architect](https://www.reddit.com/r/javascript/comments/eqif7r/become_a_better_software_architect/)
-- url: https://github.com/justinamiller/SoftwareArchitect
+## [4][JavaScript tree shaking, like a pro](https://www.reddit.com/r/javascript/comments/er3v8o/javascript_tree_shaking_like_a_pro/)
+- url: https://medium.com/@bluepnume/javascript-tree-shaking-like-a-pro-7bf96e139eb7
 ---
 
-## [5][WebSockets vs Server-Sent Events](https://www.reddit.com/r/javascript/comments/eqsnrc/websockets_vs_serversent_events/)
-- url: https://www.ably.io/blog/websockets-vs-sse/
+## [5][Promote your browser web extensions here: January 2020!](https://www.reddit.com/r/javascript/comments/er3krt/promote_your_browser_web_extensions_here_january/)
+- url: /r/WebExtensions/comments/ep3o28/promote_your_web_extensions_january_2020/
 ---
 
-## [6][Anybody with npm packages that need TypeScript type declaration files?](https://www.reddit.com/r/javascript/comments/eqv7nl/anybody_with_npm_packages_that_need_typescript/)
+## [6][GitHub - ajbogh/nMotion: nMotion is a NodeJS security camera motion detection system.](https://www.reddit.com/r/javascript/comments/er9ipe/github_ajboghnmotion_nmotion_is_a_nodejs_security/)
+- url: https://github.com/ajbogh/nMotion
+---
+
+## [7][Those features are truly missing in TypeScript](https://www.reddit.com/r/javascript/comments/erc0an/those_features_are_truly_missing_in_typescript/)
+- url: https://medium.com/@moshesimantov/82d02f0c23fd
+---
+
+## [8][Those core features are trully missing in TypeScript](https://www.reddit.com/r/javascript/comments/erbwdb/those_core_features_are_trully_missing_in/)
+- url: https://medium.com/@moshesimantov/strict-a-language-for-strict-functional-protocols-82d02f0c23fd
+---
+
+## [9][Hand Tooled Flux — Creating a Tiny Flux Architecture in a Handful of Lines](https://www.reddit.com/r/javascript/comments/erb8u4/hand_tooled_flux_creating_a_tiny_flux/)
+- url: https://medium.com/@me_76676/hand-tooled-flux-creating-a-tiny-flux-architecture-in-a-handful-of-lines-d3ae27865e2e
+---
+
+## [10][Anybody with npm packages that need TypeScript type declaration files?](https://www.reddit.com/r/javascript/comments/eqv7nl/anybody_with_npm_packages_that_need_typescript/)
 - url: /r/webdev/comments/equwxp/anybody_with_npm_packages_that_need_typescript/
 ---
 
-## [7][Open-source web tool to convert images in bulk to different formats completely on the client using HTML5 canvas](https://www.reddit.com/r/javascript/comments/eqjjwq/opensource_web_tool_to_convert_images_in_bulk_to/)
-- url: https://github.com/Centipede5/imageconverter
+## [11][[AskJS] Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ? (C#, Java, JS etc)](https://www.reddit.com/r/javascript/comments/erancy/askjs_do_you_consider_senior_c_programmer_to_be/)
+- url: https://www.reddit.com/r/javascript/comments/erancy/askjs_do_you_consider_senior_c_programmer_to_be/
 ---
-
-## [8][I built a 3D Tic-Tac-Toe game for insane people (all code is in the source)](https://www.reddit.com/r/javascript/comments/eqo4zw/i_built_a_3d_tictactoe_game_for_insane_people_all/)
-- url: https://www.crazyhappyfuntime.com/tictactoeDev.php
----
-
-## [9][A continuously-evolving compendium of javascript tips based on common areas of confusion or misunderstanding](https://www.reddit.com/r/javascript/comments/eq7b0d/a_continuouslyevolving_compendium_of_javascript/)
-- url: https://github.com/nas5w/javascript-tips-and-tidbits
----
-
-## [10][We added Deno support to Begin.com free tier (on AWS Lambda)](https://www.reddit.com/r/javascript/comments/eq6d9t/we_added_deno_support_to_begincom_free_tier_on/)
-- url: https://blog.begin.com/run-serverless-deno-in-aws-lambda-1014dc8696a2
----
-
-## [11][[AskJS] How is this done?](https://www.reddit.com/r/javascript/comments/eqmuis/askjs_how_is_this_done/)
-- url: https://www.reddit.com/r/javascript/comments/eqmuis/askjs_how_is_this_done/
----
-Hi. I will hire someone in the future do a "lead quote calculator" for my website. The problem is i have no idea where to start, what to ask for, even how complex a feature like this is. 
-
-The thing i want is on this website - [https://www.sveasolar.se](https://www.sveasolar.se/) . First you write an adress, than you size your roof, choose rooftype, slope, panels you want and last you got a rough estimate and a contact us form. I am a beginner so i wonder are there stuff out there that can do this? should i hire or how do i go about to have a thing like this on my website?
-## [12][Reverse engineering pop-under library (Not my video, check out Liveoverflow on youtube)](https://www.reddit.com/r/javascript/comments/eqc437/reverse_engineering_popunder_library_not_my_video/)
-- url: https://www.youtube.com/watch?v=PPzRcZLNCPY
+Do you consider senior C++ programmer to be "better" or more "knowledgeable" programmer compared to managed or webdev programmer ? (C#, Java, JS etc)
+## [12][Proton Native V2 - Create desktop apps with a React Native Syntax (now w/ flexbox, hot reloading, styling, same components as RN etc.)](https://www.reddit.com/r/javascript/comments/eqx9qp/proton_native_v2_create_desktop_apps_with_a_react/)
+- url: https://proton-native.js.org/#/v2_changes
 ---
 

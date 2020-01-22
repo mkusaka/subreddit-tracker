@@ -20,11 +20,47 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][JavaScript design patterns #5. The Observer pattern with TypeScript](https://www.reddit.com/r/typescript/comments/erel2u/javascript_design_patterns_5_the_observer_pattern/)
+## [2][Is there a easy way for us to extend the language of typescript](https://www.reddit.com/r/typescript/comments/es8hdh/is_there_a_easy_way_for_us_to_extend_the_language/)
+- url: https://www.reddit.com/r/typescript/comments/es8hdh/is_there_a_easy_way_for_us_to_extend_the_language/
+---
+Hi All
+
+Is there a easy way for us to extend the language of typescript?  adding my own syntax?
+
+thanks
+
+Peter
+## [3][Type vs Interface (React/React-native)](https://www.reddit.com/r/typescript/comments/es2e4c/type_vs_interface_reactreactnative/)
+- url: https://www.reddit.com/r/typescript/comments/es2e4c/type_vs_interface_reactreactnative/
+---
+Hey beautiful people!
+
+I just ported my project (react native) over to typescript but dont get the hang when to use **type and when to use interface**
+
+I looked at some examples, but just added to the confusion, because apparently both have their place but i cannot figure it out
+
+Could you tell me on a high level the difference between these two and if you have expereicne with React/React-Native where to use which?
+
+&amp;#x200B;
+
+Thanks a lot!
+## [4][Dev Diary: 5 Tips for Building Beautiful CLIs with Node.js, Yargs, &amp; Ink](https://www.reddit.com/r/typescript/comments/erzcbn/dev_diary_5_tips_for_building_beautiful_clis_with/)
+- url: https://medium.com/eximchain/dev-diary-5-tips-for-building-beautiful-clis-with-node-js-yargs-ink-16d184ea0d14
+---
+
+## [5][Thoughts on Map and Set in TypeScript](https://www.reddit.com/r/typescript/comments/es2fav/thoughts_on_map_and_set_in_typescript/)
+- url: https://medium.com/@wim.jongeneel1/thoughts-on-map-and-set-in-typescript-efd43c3bf2ad?source=friends_link&amp;sk=5863d3228b0d37f3d493bb1d001a2c13
+---
+
+## [6][on restricting Generic Arguments with `extends`](https://www.reddit.com/r/typescript/comments/es2zht/on_restricting_generic_arguments_with_extends/)
+- url: https://twitter.com/phry/status/1219701490530562049
+---
+
+## [7][JavaScript design patterns #5. The Observer pattern with TypeScript](https://www.reddit.com/r/typescript/comments/erel2u/javascript_design_patterns_5_the_observer_pattern/)
 - url: https://wanago.io/2020/01/20/javascript-design-patterns-observer-typescript/
 ---
 
-## [3][Lack of Private Access Interfaces](https://www.reddit.com/r/typescript/comments/erj669/lack_of_private_access_interfaces/)
+## [8][Lack of Private Access Interfaces](https://www.reddit.com/r/typescript/comments/erj669/lack_of_private_access_interfaces/)
 - url: https://www.reddit.com/r/typescript/comments/erj669/lack_of_private_access_interfaces/
 ---
 I understand that the focus of TypeScript interfaces is to create public contracts, so that objects within a running application inter-operate appropriately with one another. However, I think some would still find benefits if interfaces also specify the private side of a class. Private contracts ensure that the objects within a running application *intra-operate* appropriately with themselves. 
@@ -32,7 +68,7 @@ I understand that the focus of TypeScript interfaces is to create public contrac
 I understand this behavior is similar in other programming languages, namely C#. I've recently run into this issue when structuring my application with composition as opposed to inheritance. If my classes instead are defined in terms of what they do, TypeScript interfaces with their duck-typing become a powerful tool. Even if some of the characteristics of what a class does is private, I would like to specify this behavior with the usage of interfaces.
 
 What do you all think? Have there ever been cases where you wish that interfaces could provide type assurance for the private side of your classes? Am I trying to inappropriately overload the purpose of interfaces?
-## [4][typescript in a nodejs project starter](https://www.reddit.com/r/typescript/comments/erd5j9/typescript_in_a_nodejs_project_starter/)
+## [9][typescript in a nodejs project starter](https://www.reddit.com/r/typescript/comments/erd5j9/typescript_in_a_nodejs_project_starter/)
 - url: https://www.reddit.com/r/typescript/comments/erd5j9/typescript_in_a_nodejs_project_starter/
 ---
 Does anyone have a reference/instructions/template on how to setup a nodejs project initially with typescript. I have googled and followed links like below multiple times but get errors like "Cannot use import statement outside a module" or "Error: Cannot find module index.ts". All I am simply doing in my file to test is just a VERY basic file write and I cannot even do that.
@@ -48,7 +84,7 @@ I am running node v13.6.0
 [https://levelup.gitconnected.com/how-to-set-up-a-typescript-node-js-app-in-5-minutes-93ffee3b1768](https://levelup.gitconnected.com/how-to-set-up-a-typescript-node-js-app-in-5-minutes-93ffee3b1768)
 
 [https://dev.to/theghostyced/setting-up-a-node-typescript-project-in-under-4-minutes-4gk2](https://dev.to/theghostyced/setting-up-a-node-typescript-project-in-under-4-minutes-4gk2)
-## [5][Question, considering learning Typescript](https://www.reddit.com/r/typescript/comments/er8fjv/question_considering_learning_typescript/)
+## [10][Question, considering learning Typescript](https://www.reddit.com/r/typescript/comments/er8fjv/question_considering_learning_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/er8fjv/question_considering_learning_typescript/
 ---
 Hi everyone,
@@ -58,7 +94,7 @@ I'm considering learning Typescript as I'm hearing lots of great things about it
 I should mention that if I like typescript I would consider rewriting the code base overtime
 
 Thanks!
-## [6][Getter and Setter on String Array](https://www.reddit.com/r/typescript/comments/er9opl/getter_and_setter_on_string_array/)
+## [11][Getter and Setter on String Array](https://www.reddit.com/r/typescript/comments/er9opl/getter_and_setter_on_string_array/)
 - url: https://www.reddit.com/r/typescript/comments/er9opl/getter_and_setter_on_string_array/
 ---
 Hey guys!
@@ -79,65 +115,3 @@ If I use different names for the getting, then it works but if I use the same na
 
 I get the following error:  
  ***Type 'string\[\]' is not assignable to type 'string'.ts(2322)***
-## [7][Syntax checking with tide and emacspeak?](https://www.reddit.com/r/typescript/comments/er6345/syntax_checking_with_tide_and_emacspeak/)
-- url: https://www.reddit.com/r/typescript/comments/er6345/syntax_checking_with_tide_and_emacspeak/
----
-When I use js2-mode and make a syntax error with js2-mode enabled emacspeak will say so, for example if I forget to close a bracket.
-This doesn't happen with tide though, I've tried enabling js2-minor-mode too along side tide but no luck.
-Does anyone know how to achieve this?
-I'm also happy to just use js2-mode but no matter what I do I can't get company-lsp to work properly even with a minimal configuration so I must stick with tide for now
-## [8][A Workerpool From Scratch in TypeScript and Node](https://www.reddit.com/r/typescript/comments/eqx58t/a_workerpool_from_scratch_in_typescript_and_node/)
-- url: https://medium.com//a-workerpool-from-scratch-in-typescript-and-node-c4352106ffde?source=friends_link&amp;sk=96f50c4fab122cf141287276af7e9ea8
----
-
-## [9][Node.js tips and tricks to make your application more robust and secure. Please share your thoughts?](https://www.reddit.com/r/typescript/comments/eqzvrs/nodejs_tips_and_tricks_to_make_your_application/)
-- url: https://www.inkoop.io/blog/nodejs-tips-tricks-that-can-help-you-deliver-more-secure-and-robust-application?source=reddit
----
-
-## [10][Where to see basic docs for types](https://www.reddit.com/r/typescript/comments/eqs63d/where_to_see_basic_docs_for_types/)
-- url: https://www.reddit.com/r/typescript/comments/eqs63d/where_to_see_basic_docs_for_types/
----
-Where are the docs for stuff like @types/express or @types/pg
-I know the JavaScript docs for the most part but not the names of the specific types.
-Is looking in the specific files in node_modules the only way to know?
-## [11][Trouble finding this return type](https://www.reddit.com/r/typescript/comments/eqtiha/trouble_finding_this_return_type/)
-- url: https://www.reddit.com/r/typescript/comments/eqtiha/trouble_finding_this_return_type/
----
-There are 3 modules I'm working with: firebase, firebase-admin, and firebase-testing. admin handles authentication and has access to some classes and types. The core module does too.
-
-Testing is needed for testing but is making things extra complicated at the moment.
-
-Take this example:
-
-    import * as firebase from "firebase"; // also tried without * aliasing
-    import {firestore} from "firebase-admin";
-    import firebaseTesting from "@firebase/testing";
-    
-    // https://firebase.google.com/docs/reference/js/firebase.firestore.Firestore
-    // TS2740: Type '(credentials: any) =&gt; Firestore' is missing the following properties from type 'Firestore': settings, collection, doc, collectionGroup, and 4 more.
-    const createTestDatabase: firestore.Firestore = credentials =&gt; {
-      return firebaseTesting
-        .initializeTestApp({
-          projectId: 'testProject',
-          auth: credentials
-        })
-        .firestore();
-    };
-    
-    // Another try...
-    // https://firebase.google.com/docs/reference/js/firebase.html#initializeapp
-    // TS2740: Type '(credentials: any) =&gt; Firestore' is missing the following properties from type 'App': auth, database, delete, installations, and 8 more.
-    const createTestDatabase: firebase.app.App = credentials =&gt; {
-      return firebaseTesting
-        .initializeTestApp({
-          projectId: 'testProject',
-          auth: credentials
-        })
-        .firestore();
-    };
-
-When faced with tough typings do you guys just do the easy thing and mark it as "any" or is there a process you follow to find the right typing? I tried following the docs to find the right return type but the two above haven't worked.
-
-&amp;#x200B;
-
-PS: What I would really like is if the IDE could help me deduce the correct type. I hear VSCode outright tells you. I'm using Phpstorm. It seems to know the shape but 1) doesn't give the full member list 2) doesn't make any type suggestions even though Phpstorm scans all libraries deeply.

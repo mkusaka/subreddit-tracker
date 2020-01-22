@@ -97,7 +97,23 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Babel 7.8.0 Released: we can now use ECMAScript 2020 new features like.](https://www.reddit.com/r/reactjs/comments/erry3c/babel_780_released_we_can_now_use_ecmascript_2020/)
+## [3][Create simple POS with React, Node and MongoDB #2: Auth state, Logout, Update Profile](https://www.reddit.com/r/reactjs/comments/es8b3f/create_simple_pos_with_react_node_and_mongodb_2/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-2-auth-state-logout-update-profile/
+---
+
+## [4][React Nice Dates: A responsive, touch-friendly, and modular date picker library for React.](https://www.reddit.com/r/reactjs/comments/ery4pb/react_nice_dates_a_responsive_touchfriendly_and/)
+- url: https://reactnicedates.hernansartorio.com/
+---
+
+## [5][How to NOT render something in React](https://www.reddit.com/r/reactjs/comments/esapda/how_to_not_render_something_in_react/)
+- url: https://youtu.be/-6bNH0Ne9EU
+---
+
+## [6][What are things that trip up junior and intermediate React devs?](https://www.reddit.com/r/reactjs/comments/es5hbk/what_are_things_that_trip_up_junior_and/)
+- url: https://www.reddit.com/r/reactjs/comments/es5hbk/what_are_things_that_trip_up_junior_and/
+---
+I can only think of two things: forwardRef and hooks. Are there other things that trip up junior and intermediate React devs? Or things junior or intermediate React devs think they know, but don't?
+## [7][Babel 7.8.0 Released: we can now use ECMAScript 2020 new features like.](https://www.reddit.com/r/reactjs/comments/erry3c/babel_780_released_we_can_now_use_ecmascript_2020/)
 - url: https://www.reddit.com/r/reactjs/comments/erry3c/babel_780_released_we_can_now_use_ecmascript_2020/
 ---
 New features include:
@@ -129,104 +145,39 @@ Same as `||`, but for nullish values, instead of falsy ones.
 &amp;#x200B;
 
 I was able to use them in my immediately Create React App application by upgrading `@babel/core` and `react-scripts`.
-## [4][To those who recommend beginners learn to build projects in Vanilla js...](https://www.reddit.com/r/reactjs/comments/erm07o/to_those_who_recommend_beginners_learn_to_build/)
-- url: https://www.reddit.com/r/reactjs/comments/erm07o/to_those_who_recommend_beginners_learn_to_build/
----
-THANK YOU. I’ve been trying to learn React on and off for a while and I recently did a 2-3,000 line project for a client where I had to manage state manually and work with a less than optimized file structure (my fault). 
-
-Going from a project like that to React I really began to understand the problems that React solved, and that made my comprehension so much better. They weren’t just “concepts” anymore, but they were part of solutions to problems I had. 
-
-Thank you!
-## [5][The Opinionated Guide to React - new book by Sara Viera - Folder Structure, CRA/Next/Gatsby, TypeScript, Routing, State Mgmt, Animation, Styling, Forms, Dates, GraphQL and UI Toolkits](https://www.reddit.com/r/reactjs/comments/erd5ox/the_opinionated_guide_to_react_new_book_by_sara/)
-- url: https://leanpub.com/opinionated-guide-to-react
+## [8][React Router hook to navigate to a URL from inline event handler](https://www.reddit.com/r/reactjs/comments/esbb72/react_router_hook_to_navigate_to_a_url_from/)
+- url: https://gist.github.com/bjgrosse/48fd06fedf80cb2b745837a71f1e6634
 ---
 
-## [6][The impact of GatsbyJS on performance, accessibility and scalability of modern webapps](https://www.reddit.com/r/reactjs/comments/ereon7/the_impact_of_gatsbyjs_on_performance/)
-- url: https://youtu.be/p14g-Sep7HY?list=PLEx5khR4g7PKMVeAqZdIHRdOwTM1yktD8
+## [9][UI Editor - A tool for building components.](https://www.reddit.com/r/reactjs/comments/esanxp/ui_editor_a_tool_for_building_components/)
+- url: https://github.com/imvetri/ui-editor#ui-editor
 ---
 
-## [7][Progressive Server Rendering + Progressive Client Hydration with React concurrent mode](https://www.reddit.com/r/reactjs/comments/ero1a1/progressive_server_rendering_progressive_client/)
-- url: https://www.reddit.com/r/reactjs/comments/ero1a1/progressive_server_rendering_progressive_client/
----
-I've been experimenting with the idea of rendering content progressively from the server and streaming it to the client in chunks with React and came up with a workable demo.
-
-https://twitter.com/flexdinesh/status/1217454346780069888?s=20
-
-Dan Abramov responded saying that it's possible to progressively hydrate the client side code now with the experimental concurrent mode and linked to his codesandbox example. I took concurrent mode for a spin and the results are promising. It still has a few gotchas here and there but now the idea of progressively sending HTML chunks from the server and progressively hydrating them in the client is realistic.
-
-Here's an elaborate tweet thread on the results of the demo —
-
-https://twitter.com/flexdinesh/status/1218824439237767168?s=20
-
-In short —
-
-- CSR is super slow to show content in slower networks 'cos of bundle download wait time. 
-- SSR can become a bottle neck if one of the api's takes a longer time to generate content. 
-- Progressive SSR generates and chunks HTML to the client as and when it is rendered in the server.
-- With React suspense and concurrent mode, each HTML chunk can be hydrated as and when it is received.
-- In slower networks, chunks will be received before bundle is downloaded. In such scenarios, you show the content to the user even before the bundle is downloaded. 
-
-I think this is pretty awesome and can open up a lot of perf cases.
-## [8][React hook that helps developers use google spreadsheet as their data table (API endpoint)](https://www.reddit.com/r/reactjs/comments/era6xf/react_hook_that_helps_developers_use_google/)
-- url: https://github.com/idw111/use-google-spreadsheet
+## [10][Building an e-commerce site from scratch - Tech choices and lessons learned](https://www.reddit.com/r/reactjs/comments/ervuyq/building_an_ecommerce_site_from_scratch_tech/)
+- url: https://artinasec.com/tech/overview
 ---
 
-## [9][Article Suggestions](https://www.reddit.com/r/reactjs/comments/erstpm/article_suggestions/)
-- url: https://www.reddit.com/r/reactjs/comments/erstpm/article_suggestions/
+## [11][Please help, would like to improve my React but clueless what to do](https://www.reddit.com/r/reactjs/comments/es85yf/please_help_would_like_to_improve_my_react_but/)
+- url: https://www.reddit.com/r/reactjs/comments/es85yf/please_help_would_like_to_improve_my_react_but/
 ---
-I'm passionate about simplifying web topics (which I know or can learn) as possible as I can.
+Hi all
 
-For example, you can check out how I simplified React Components Lifecyle in this article - https://dillionmegida.com/p/understanding-react-component-lifecycle/
+I have understood the concepts of React. Components, Props, nesting, hooks, class/functional components and more. By themselves, I feel quite confident. Yet when I need to actually build something, I feel lost.....I am stuck and I feel that I understand the fundamentals of React well enough but when it comes to building something, I am so clueless.
 
-So I'm throwing out this question.
+What would you guys recommend? I am looking for simple beginner friendly projects that also give me their code, so that I can read and understand what is going on. All the projects I have googled are either too hard, or they are quite beginner friendly but do not give their source code.
 
-Do you have any web topic (most especially React) which you find difficult to comprehend?
-
-If yes, state them in the comments and I'll do my best on them.
-
-I'm trying to use this means to learn and to also help out. Thanks.
-## [10][Here is a new tutorials series on #GraphQL tooling, this time generating #typescript definitions and #reactjs #hooks using @apollographql CLI and @UriGoldshtein codegen cli. In Feb Im planning state machines using @DavidKPiano ’s xstate and react.](https://www.reddit.com/r/reactjs/comments/eriugf/here_is_a_new_tutorials_series_on_graphql_tooling/)
-- url: https://m.youtube.com/playlist?list=PLI7l2IqBd0QuuUjnTxgt0Zb-vOXxv5g9S
+Feeling sad and overwhelmed because I realize that I can't actually do anything with React....
+## [12][useEffect set initial state warning: missing dependency](https://www.reddit.com/r/reactjs/comments/es90g4/useeffect_set_initial_state_warning_missing/)
+- url: https://www.reddit.com/r/reactjs/comments/es90g4/useeffect_set_initial_state_warning_missing/
 ---
+I want to use useEffect as a componentDidMount replacement. So far I always have left the second array parameter empty and it was working fine. I have updated my create react app and now it tells me that 
 
-## [11][swc-compiler with react and webpack](https://www.reddit.com/r/reactjs/comments/ersqwp/swccompiler_with_react_and_webpack/)
-- url: https://www.reddit.com/r/reactjs/comments/ersqwp/swccompiler_with_react_and_webpack/
----
-swc is a typescript / javascript compiler. It consumes a javascript or typescript file which uses recently added features like async-await and emits javascript code which can be executed on old browsers.
+&gt;React Hook useEffect has a missing dependency
 
-Example with React and Webpack(loader -&gt; swc-loader)
+It wants me to put the state inside the array of the second argument of useEffect. When I do this useEffect is triggered indefinitely (because it is updated every time when I set the initial data in its effect). What am i supposed to do here?
 
-https://github.com/playground-code/react-swc-compiler
-## [12][Code readability while using hooks](https://www.reddit.com/r/reactjs/comments/erse78/code_readability_while_using_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/erse78/code_readability_while_using_hooks/
----
-On the previous project I worked on, which was using React 15, I formed some practices for keeping my code clean and easy to read. My main objective was keeping the `render()` method as small as possible. To that effect, I would move pieces of `jsx` into their own methods. For instance:
-
-    class SomeComponent extends React.Component {
-        render() {
-            return (
-                &lt;&gt;
-                    {this.renderSectionA()}
-                    {this.renderSectionB()}
-                    {this.renderSectionC()}
-                &lt;/&gt;
-            )
-        }
-    }
-
-Now, on my current project, I have the possibility of leveraging hooks, but I still want to keep the practice of separating pieces of `jsx` into separate functions. But, since I dont want my functions to be recreated at every rerender, would something like this make sense ?
-
-    function SomeComponent(props) {
-        return (
-            {renderSectionA(props)}
-            {renderSectionB(props)}
-        )
-    }
-    
-    function renderSectionA(props) {}
-    
-    function renderSectionB(props) {}
-        
-    
-
-My biggest concern are cases where I will need to send either state, event handlers or variables created in the component to the outer functions, thus having to pass a big number of paramaters.
+    useEffect(() =&gt; {
+      const response = fetchData...
+      const data = setData(response.data...)
+    }, []);
+    // [data] warning disappears but code breaks

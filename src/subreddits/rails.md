@@ -19,7 +19,316 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Issue with Code Mirror and Heroku](https://www.reddit.com/r/rails/comments/erpm2k/issue_with_code_mirror_and_heroku/)
+## [2][Build a Reddit Clone in Rails 6 [New Video Series]](https://www.reddit.com/r/rails/comments/es6m26/build_a_reddit_clone_in_rails_6_new_video_series/)
+- url: https://www.reddit.com/r/rails/comments/es6m26/build_a_reddit_clone_in_rails_6_new_video_series/
+---
+Hi guys, I'm back with a new Ruby on Rails build. This time we are building a lightweight Reddit clone. I've shared some previous Rails builds here and thought this might be on interest to anyone who enjoyed those past videos. Hope you guys enjoy the video.
+
+**Part 1:**
+
+In this video I cover the setup of a new rails app, installing the devise gem and creating user accounts. Add functionality for users to create a new community/subreddit. Add functionality to create new posts for a community (using nested routes).
+
+[https://www.youtube.com/watch?v=aD6JvHKNPPM](https://www.youtube.com/watch?v=aD6JvHKNPPM)
+
+**Part 2 (Coming soon):**
+
+Signed in users can subscribe to communities and create new posts within them. Add functionality to allow subscribers to upvote / downvote posts and order them in community based on popularity. Add comments to posts.
+
+&amp;#x200B;
+
+The build is part of a collection of MVP's that I have been building after working in the tech startup space for some time and assisting in building minimum viable products.
+
+I post new web app builds on YouTube using Ruby on Rails 6 so feel free to check out the channel and add some recommendations for upcoming builds.
+## [3][API + Frontend - Should I use webpack or isolate them?](https://www.reddit.com/r/rails/comments/esb7fx/api_frontend_should_i_use_webpack_or_isolate_them/)
+- url: https://www.reddit.com/r/rails/comments/esb7fx/api_frontend_should_i_use_webpack_or_isolate_them/
+---
+I usually build monolithic rails apps, often with a React or Vue SPA frontend.
+
+I am about to start developping a simple app with a RoR API. I would like to use React or Vue for the frontend, and I plan to develop a mobile app that will access the same API, but later, when I have more time to code.
+
+Also, since this is a personal project I want to build to showcase my dev skills, I intend to develop the API and the frontend with several frameworks/languages (React, Crystal, Elixir, React, Vue, Svelte, Webcomponents) and compare them.
+
+Would you advise me to create two separate projects/git repos (API + frontend) or should I go for webpack and bundle the frontend and the API together? Should I use git submodules?
+## [4][Authlogic::Session::Existence::SessionInvalidError](https://www.reddit.com/r/rails/comments/es30kk/authlogicsessionexistencesessioninvaliderror/)
+- url: https://www.reddit.com/r/rails/comments/es30kk/authlogicsessionexistencesessioninvaliderror/
+---
+I'm running minitests and I'm getting this random error 
+
+ Authlogic::Session::Existence::SessionInvalidError:  Authlogic::Session::Existence::SessionInvalidError: Your session is invalid and has the following errors: Activate &amp; Log in
+
+This doesn't appear for the say first 10 minitests and subsequently, all the later ones have this error. 
+
+I'm not sure where to look for since this error started to appear suddenly. Any help would be great
+## [5][Rails and Apache (Phusion Passenger): how does the Apacche vhost DocumentRoot fit into routing?](https://www.reddit.com/r/rails/comments/es3r9w/rails_and_apache_phusion_passenger_how_does_the/)
+- url: https://www.reddit.com/r/rails/comments/es3r9w/rails_and_apache_phusion_passenger_how_does_the/
+---
+I understand that I need to set up a virtualhost setting DocumentRoot to the Public/ directory at the same level as the app/ and other directories.  I'm trying to understand how the handover from Apache / httpd and rails is handled.
+
+Any links would be appreciated.  Does Apache handover connections to Passenger or what is going on?
+## [6][Creating a join table relation on create of has_many model?](https://www.reddit.com/r/rails/comments/es0ywu/creating_a_join_table_relation_on_create_of_has/)
+- url: https://www.reddit.com/r/rails/comments/es0ywu/creating_a_join_table_relation_on_create_of_has/
+---
+I'm trying to recall how to create a join table relationship on create or update. For example, I have 
+
+\`Outage\` has\_many \`services\` through \`service\_outages\` 
+
+&amp;#x200B;
+
+On create of an \`outage\`, I need to also create a join table relationship to \`services\` through \`service\_outages\`.
+
+&amp;#x200B;
+
+Here's the code: 
+
+&amp;#x200B;
+
+    class OutagesController &lt; ApplicationController
+        before_action :find_outage, only: [:show, :update, :destroy]
+    
+        def index
+            @outages = Outage.all
+            render :json =&gt; @outages, status: @ok 
+        end
+    
+        def show
+            render :json =&gt; @outage, status: @ok
+        end
+    
+        def create 
+            @outage = Outage.create!(outage_params)  
+            if @outage.save
+                render :json =&gt; @outage, status: @ok 
+            else         
+                render :json =&gt; { errors: @outage.errors.full_messages }, status: @unprocessible_entity
+            end
+        end
+    
+        def update 
+            @outage.update!(outage_params)
+            if @outage.save
+                render :json =&gt; @outage, status: @ok 
+            else         
+                render :json =&gt; { errors: @outage.errors.full_messages }, status: @unprocessible_entity
+            end
+        end
+    
+        def destroy 
+            @outage.delete
+            if @outage.delete
+                render :json =&gt; "Outage instance destroyed"
+            else
+                render :json =&gt; { errors: "Unable to delete" }
+            end
+        end
+    
+    
+        private 
+    
+        def find_outage
+            @outage = Outage.find(params[:id])
+        end
+    
+        def outage_params
+            byebug 
+            params.permit(:start_time, :end_time, :outage_type, :frequency, :reason)
+        end
+    end
+    
+
+I pass \`service.id\` in params from the front end on create. Do I create this in the \`create\` method here?
+## [7][Need some help with Model/Schema/Relationship for a Rails API](https://www.reddit.com/r/rails/comments/es6xrb/need_some_help_with_modelschemarelationship_for_a/)
+- url: https://www.reddit.com/r/rails/comments/es6xrb/need_some_help_with_modelschemarelationship_for_a/
+---
+Hi all,
+
+So im working on a personal project to increase my skills in React particularly. I know Rails decent enough (Enough to finish the "Facebook Clone" on TheOdinProject. So at least an intermediate level I guess?
+
+Anyways, for my personal project im going to be using a Rails backend to serve JSON back to my React frontend. My main concern right now is with one specific resource.
+
+Basically my app is going to display Sensor and Sensor Data (Sensors are being handled via some ESP8266 devices sending POST requests with Temperature/Humidity/etc... to the API).
+
+So I have 2 directions of data:  
+
+
+* Sensor devices sending Historical measurements (Temp/Humidity/etc.) to my API via POST
+* API sending Sensor data in JSON format to my frontend.
+
+I think setting up the API should be simple enough, but im trying to figure out the best way to model/schema it. So far I think it needs to look something like this:
+
+**SENSOR**: (Probably Contains a Name/ID/Device Image/Geographic Location (Eventually plan on having a map with geo coordinate). I may need a "Type" to differentiate? 
+
+**SENSOR** has\_many **MEASUREMENTS** (A measurement would be one instance of data recording, IE: Temp/Humidity/Light/etc...). If you can think of a better name let me know
+
+**SENSOR/MEASUREMENT** has\_one **TYPE** (Not sure if this is necessary It could help differentiate the measurements. So when I see "33" I know it's a humidity measurement and not a Temp measurement. Not sure if I necessarily need the "TYPE" for the Sensor though (Outside of maybe some sort of front-end categorization which may be helpful).
+
+That's all I can think of right now. Also I wonder if it would be better to do a join table. IE: **SENSOR\_MEASUREMENTS** or something like that. Seems like it may be easier? IE: **SENSOR** has\_many **MEASUREMENTS** through **SENSOR\_MEASUREMENTS**
+
+Let me know if anything seems obviously missing, or any suggestions. This is sort of a WIP project idea, and im def. no rails expert (Especially when it comes to architecting something myself.
+
+Thanks!
+## [8][How to access params hash in lib directory rails 6](https://www.reddit.com/r/rails/comments/es6bvy/how_to_access_params_hash_in_lib_directory_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/es6bvy/how_to_access_params_hash_in_lib_directory_rails_6/
+---
+In my rails app, I am using Kramdown to parse Markdown. I want to extend the functionality of the convert\_a method in the HTML converter. Part of this involves accessing the  database, but it is dependent on a parameter in the URL. Because I am  not directly calling the method that I am overriding I cannot simply  pass the method the params hash. Is there a way to access this hash, or even just get the current URL in a module in the libdirectory?
+
+to give a bit more context, the method call is in a helper method here:
+
+    # in app/helpers/myhelper.rb 
+    def to_html(text)     
+        Kramdown::Document.new(text, parse_block_html: true).to_custom_html 
+    end
+
+and here is the file in which I override the convert\_a:
+
+    # in lib/custom_html.rb 
+    class CustomHtml &lt; Kramdown::Converter::Html
+        def convert_a(el, indent) 
+            # use params[:foo] to make query         
+            format_as_span_html(el.type, el.attr, inner(el, indent)) 
+        end
+    end
+## [9][Understanding Apartment Gem Documentation](https://www.reddit.com/r/rails/comments/es0kvb/understanding_apartment_gem_documentation/)
+- url: https://www.reddit.com/r/rails/comments/es0kvb/understanding_apartment_gem_documentation/
+---
+Hey guys, I'm trying to understand how apartment gem works with postgres.
+
+I was Googling to understand certain methods at first, but then I decided to go through the docs which I thought would make my life easier.
+
+I was going through apartment gem documentation on [rubydoc](https://www.rubydoc.info/gems/apartment/2.2.1)
+
+To list all the methods that Apartment's classes provide, I clicked on Methods on the top left corner.
+
+&amp;#x200B;
+
+Here's what I don't understand:
+
+To check the current Tenant (got this from stackoverflow), you run:
+
+    Apartment::Tenant.current
+
+I don't see 'current' method under [Tenant class](https://www.rubydoc.info/gems/apartment/2.2.1/Apartment/Tenant) at all.
+
+&amp;#x200B;
+
+Assuming docs is the only way of understanding the methods available, here are my questions:
+
+1.	How am I supposed to know that Apartment::Tenant even has a method named 'current'?
+2.	I see that `switch` method is an instance method defined in [AbstractAdapter](https://www.rubydoc.info/gems/apartment/2.2.1/Apartment/Adapters/AbstractAdapter#switch-instance_method). How is that possible if I can call `Apartment::Tenant.switch()`? Shouldn't it be a class method defined under Tenant class?
+3.	I imagine Tenant class is extended from AbstractAdapter class, but where can I find the docs for it?
+
+&amp;#x200B;
+Any help is appreciated! Thank you
+## [10][readyException.js:6 Uncaught TypeError: Cannot read property 'mData' of undefined](https://www.reddit.com/r/rails/comments/erzo8h/readyexceptionjs6_uncaught_typeerror_cannot_read/)
+- url: https://www.reddit.com/r/rails/comments/erzo8h/readyexceptionjs6_uncaught_typeerror_cannot_read/
+---
+Hello guys I am having that error while loading my page when i added data tables, in a rails 6.0.0 app im working on. I used data tables CDN to download it and followed the official documentation. 
+
+this is my html table 
+
+`&lt;table id="example" class="title table index-table"&gt;`
+
+  `&lt;tr&gt;`
+
+`&lt;th&gt;Title&lt;/th&gt;`
+
+`&lt;% if u/user['role'] === 'admin'  or u/user['role'] === 'instructor' %&gt;`
+
+`&lt;th&gt;Tags&lt;/th&gt;`
+
+`&lt;% end %&gt;`
+
+  `&lt;/tr&gt;`
+
+  `&lt;% u/assignments.each do |hw| %&gt;`
+
+`&lt;tr&gt;`
+
+`&lt;% if u/user['role'] === 'admin'  or u/user['role'] === 'instructor' %&gt;`
+
+`&lt;td&gt;`
+
+`&lt;span class="hw-title"&gt;&lt;%= link_to hw.title, assignment_path(hw) %&gt;&lt;/span&gt;`
+
+`&lt;/td&gt;`
+
+`&lt;% else %&gt;`
+
+`&lt;td&gt;`
+
+`&lt;span class="hw-title"&gt;&lt;%= link_to hw.title, new_assignment_solution_path(hw) %&gt;&lt;/span&gt;`
+
+`&lt;/td&gt;`
+
+`&lt;% end %&gt;`
+
+`&lt;% if u/user['role'] === 'admin'  or u/user['role'] === 'instructor' %&gt;`
+
+`&lt;td&gt;`
+
+`&lt;% if hw.tags.empty? %&gt;`
+
+`&lt;em&gt;&lt;/em&gt;`
+
+`&lt;% else %&gt;`
+
+`&lt;% hw.tags.each do |tag| %&gt;`
+
+`&lt;% unless tag.name.include? ' ' %&gt;`
+
+`&lt;span class="hw-tag"&gt;#&lt;%=` [`tag.name`](https://tag.name) `%&gt;&lt;/span&gt;`
+
+`&lt;% else %&gt;`
+
+`&lt;% words = tag.name.split(' ') %&gt;`
+
+`&lt;% words.each do |word| %&gt;`
+
+`&lt;span&gt;`
+
+`#&lt;%= word.strip %&gt;`
+
+`&lt;/span&gt;`
+
+`&lt;% end %&gt;`
+
+`&lt;% end %&gt;`
+
+`&lt;% end %&gt;`
+
+`&lt;% end %&gt;`
+
+`&lt;/td&gt;`
+
+`&lt;% end %&gt;`
+
+`&lt;/tr&gt;`
+
+  `&lt;% end %&gt;`
+
+`&lt;/table&gt;`
+
+&amp;#x200B;
+
+  `&lt;script type="text/javascript"&gt;`
+
+`$(document).ready(function() {`
+
+`$('#example').DataTable();`
+
+`});`
+
+  `&lt;/script&gt;`
+
+&amp;#x200B;
+
+And i added the tags on the application html
+
+`&lt;link rel="stylesheet" type="text/css" href="`[`https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css`](https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css)`"&gt;`
+
+&amp;#x200B;
+
+`&lt;script type="text/javascript" charset="utf8" src="`[`https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js`](https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js)`"&gt;&lt;/script&gt;`
+## [11][Issue with Code Mirror and Heroku](https://www.reddit.com/r/rails/comments/erpm2k/issue_with_code_mirror_and_heroku/)
 - url: https://www.reddit.com/r/rails/comments/erpm2k/issue_with_code_mirror_and_heroku/
 ---
 Hello Everyone,
@@ -146,158 +455,3 @@ and lastly one of the views that isn't working
 &amp;#x200B;
 
 [Those x's at the top are actually part of the top editor, and the ones way at the bottom of the main editor you can see.](https://preview.redd.it/hp2q249g92c41.png?width=3354&amp;format=png&amp;auto=webp&amp;s=35ef6547cbf75ba627ad950b7f8538a2993e5596)
-## [3][How do you track or list online users sin rails?](https://www.reddit.com/r/rails/comments/erkddk/how_do_you_track_or_list_online_users_sin_rails/)
-- url: https://www.reddit.com/r/rails/comments/erkddk/how_do_you_track_or_list_online_users_sin_rails/
----
-
-## [4][Trouble getting javascript to function!](https://www.reddit.com/r/rails/comments/erj6td/trouble_getting_javascript_to_function/)
-- url: https://www.reddit.com/r/rails/comments/erj6td/trouble_getting_javascript_to_function/
----
-Hey guys, I have an in-process webapp deployed at [here](https://safe-mesa-78631.herokuapp.com/)
-
-Please forgive the awful stand-in copy I wrote. The issue is with the top nav bar, and in particular the "Galleries" drop-down. It seems like SOMETIMES the dropdown work, and sometimes (especially after clicking a dropped-down link) it doesn't. Whenever it doesn't work, I can hit the down-arrow on my keyboard to get it to drop down, but other than that I'm just not sure why it's not working.
-
-I'm using the bootstrap framework (obviously), if that matters.
-
-[Here](https://github.com/Chucksef/photo_app) is a link to the github which will show just about everything you might need, though of course I can answer any questions. I honestly just don't know why it would work sometimes and not others and it's driving me INSANE!!! So any help at all would be incredibly appreciated!
-## [5][`bundle install` commands not working, error not clear](https://www.reddit.com/r/rails/comments/erf1re/bundle_install_commands_not_working_error_not/)
-- url: https://www.reddit.com/r/rails/comments/erf1re/bundle_install_commands_not_working_error_not/
----
-I did a `brew install imagemagick` for image manipulation, and went to update my gemfile with `image_processing` and `mini_magic` gems, and then did a `bundle install` and it errors out.
-
-I tried `brew update` and `brew upgrade`, and they ran but still getting an error on `bundle install`, see the below:
-
-
-    Mac-Users-Apple-Computer:sample_app_v6 z$ bundle
-    Traceback (most recent call last):
-      31: from /Users/z/.rbenv/versions/2.6.3/bin/bundle:23:in `&lt;main&gt;'
-      30: from /Users/z/.rbenv/versions/2.6.3/bin/bundle:23:in `load'
-      29: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/exe/bundle:34:in `&lt;top (required)&gt;'
-      28: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/friendly_errors.rb:123:in `with_friendly_errors'
-      27: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/exe/bundle:46:in `block in &lt;top (required)&gt;'
-      26: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:24:in `start'
-      25: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor/base.rb:476:in `start'
-      24: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:30:in `dispatch'
-      23: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor.rb:399:in `dispatch'
-      22: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
-      21: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
-      20: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:255:in `install'
-      19: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/settings.rb:124:in `temporary'
-      18: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli.rb:256:in `block in install'
-      17: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/cli/install.rb:66:in `run'
-      16: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      15: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      14: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.1.4/lib/bundler/installer.rb:4:in `&lt;top (required)&gt;'
-      13: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      12: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      11: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/dependency_installer.rb:4:in `&lt;top (required)&gt;'
-      10: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      9: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      8: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/package.rb:44:in `&lt;top (required)&gt;'
-      7: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      6: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      5: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/security.rb:12:in `&lt;top (required)&gt;'
-      4: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      3: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-      2: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/openssl.rb:13:in `&lt;top (required)&gt;'
-      1: from /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-    /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require': dlopen(/Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/x86_64-darwin18/openssl.bundle, 9): Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib (LoadError)
-      Referenced from: /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/x86_64-darwin18/openssl.bundle
-      Reason: image not found - /Users/z/.rbenv/versions/2.6.3/lib/ruby/2.6.0/x86_64-darwin18/openssl.bundle
-
-I've done some google searching but it isn't clear
-
-
------
-
-EDIT: I did see an SO answer saying to do the below (I'm on mac of course), `brew remove openssl; brew install openssl`, but get an error so am not sure if this is a safe route to try:
-
-https://stackoverflow.com/questions/39051887/image-not-found-in-openssl-bundle-when-install-cocoapods-on-mac?noredirect=1&amp;lq=1
-
-    Mac-Users-Apple-Computer:sample_app_v6 z$ brew remove openssl
-    Error: Refusing to uninstall /usr/local/Cellar/openssl@1.1/1.1.1d
-    because it is required by glib, httpie, imagemagick, krb5, libheif, mysql, postgresql, python, python@3.8, rbenv and shared-mime-info, which are currently installed.
-    You can override this and force removal with:
-      brew uninstall --ignore-dependencies openssl
-
------
-
-EDIT 2: RESOLVED
-
-moomaka had me uninstall and reinstall my particular version of ruby and eventually all is well.  Details in comments below.
-## [6][ActiveAdmin Scoped Collection Actions](https://www.reddit.com/r/rails/comments/ere9m2/activeadmin_scoped_collection_actions/)
-- url: https://www.reddit.com/r/rails/comments/ere9m2/activeadmin_scoped_collection_actions/
----
-Hey,
-
-According to the gem authors: "...By default we don't allow perform actions on **all** the records. We want protect you from accidental deleting...". Well, I'd like to be able to bulk select a bunch of records (or even all records) using the selectable column in the index page of a particular resource and perform an action on those records via scoped AA collection actions...
-
-How can I override this disabled setting?
-
-Thanks.
-## [7][Is Facebook lite a good portfolio project?](https://www.reddit.com/r/rails/comments/erajnl/is_facebook_lite_a_good_portfolio_project/)
-- url: https://www.reddit.com/r/rails/comments/erajnl/is_facebook_lite_a_good_portfolio_project/
----
-This is the last of many rails projects in the Odin project (an opensource curriculum that takes over a year to complete)
-
-[https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
-
-Is this actually going to impress any employers?
-
-A lot of you have told me in the past to contribute to Open source and that has been NOTED but how does this go for a portfolio project?
-## [8][Example project with Vue + Rails + SPA](https://www.reddit.com/r/rails/comments/erad9q/example_project_with_vue_rails_spa/)
-- url: https://www.reddit.com/r/rails/comments/erad9q/example_project_with_vue_rails_spa/
----
-Looking for a guide or a repo that has vuejs on a rails project, and it's an SPA. (will gold lol)
-## [9][Is it possible to use the GraphiQL Playground in a API-only Rails app?](https://www.reddit.com/r/rails/comments/er7o5h/is_it_possible_to_use_the_graphiql_playground_in/)
-- url: https://www.reddit.com/r/rails/comments/er7o5h/is_it_possible_to_use_the_graphiql_playground_in/
----
-I have an API-only Rails app that I am adding GraphQL to. I am going through this GraphQL tutorial: [https://www.howtographql.com/graphql-ruby/2-queries/](https://www.howtographql.com/graphql-ruby/2-queries/) , and they recommend using GraphQL's built-in Playground interface, which looks awesome. However, because my Rails app is API-only, it can't be built, I think because it isn't setup to display templates. Does anyone know if there is a way to get around this?
-## [10][Webpacker, how to include a JS library's image path?](https://www.reddit.com/r/rails/comments/erag0g/webpacker_how_to_include_a_js_librarys_image_path/)
-- url: https://www.reddit.com/r/rails/comments/erag0g/webpacker_how_to_include_a_js_librarys_image_path/
----
-I've been on Sprockets until this current project where I don't have a choice. I'm trying to add Leaflet, which I install like this:
-
-    yarn add leaflet
-
-Which gives me this structure in `node_modules/`
-
-    leaflet
-      dist
-        images
-          layers.png
-          marker-icon.png
-          ...
-        leaflet.js
-        leaflet.css
-
-I've required in `application.js`
-
-    require("leaflet");
-
-And imported in `application.scss`
-
-    @import "leaflet/dist/leaflet";
-
-Which is loading everything fine, until I try to add a marker and I get this error in the web inspector, and obviously no marker image:
-
-    GET http://localhost:3000/assets/images/marker-icon.png 404 (Not Found)
-
-Because `leaflet.css` has its own references to images:
-
-    .leaflet-default-icon-path {
-      background-image: url(images/marker-icon.png);
-    }
-
-How to I let the leaflet library CSS and JS know about the images directory that’s now in `node_modules/`? Is there something I can do in the webpacker config to move the images as part of the packing?
-## [11][Rails + React issue with onChange callback](https://www.reddit.com/r/rails/comments/er8432/rails_react_issue_with_onchange_callback/)
-- url: https://www.reddit.com/r/rails/comments/er8432/rails_react_issue_with_onchange_callback/
----
-I'm making a todo application to help me better understand React. Everything works with one exception. If a user types too quickly within an input field, the data gets out of sync. For example, if a user were to quickly type "123456" into the `input`, the final value would be "6".
-
-I'm almost certain it's because by the time the `put` request is made and the `state` is updated, the user has already added more text to the `input`.
-
-- [Video demonstrating the problem](https://share.getcloudapp.com/YEudz01k)
-- [Application](https://rails-react-example.herokuapp.com/)
-- [Source Code](https://github.com/stevepolitodesign/rails-react-example)
-    - [Component in question](https://github.com/stevepolitodesign/rails-react-example/blob/master/app/javascript/packs/components/TodoItem.jsx#L86)

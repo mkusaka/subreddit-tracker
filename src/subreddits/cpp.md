@@ -57,71 +57,66 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][The Hunt for the Fastest Zero](https://www.reddit.com/r/cpp/comments/erialk/the_hunt_for_the_fastest_zero/)
-- url: https://travisdowns.github.io/blog/2020/01/20/zero.html
+## [2][Fantastic Bugs and Where to Find Them](https://www.reddit.com/r/cpp/comments/es9urc/fantastic_bugs_and_where_to_find_them/)
+- url: https://medium.com/tanker-blog/fantastic-bugs-and-where-to-find-them-3c95afe06357
 ---
 
-## [3][Do you have a project for undergraduate university students?](https://www.reddit.com/r/cpp/comments/eruocx/do_you_have_a_project_for_undergraduate/)
-- url: https://www.reddit.com/r/cpp/comments/eruocx/do_you_have_a_project_for_undergraduate/
+## [3][Concepts merged to clang trunk](https://www.reddit.com/r/cpp/comments/esamj3/concepts_merged_to_clang_trunk/)
+- url: https://www.reddit.com/r/cpp/comments/esamj3/concepts_merged_to_clang_trunk/
+---
+[https://twitter.com/saarraz1/status/1219809819781222401?s=20](https://twitter.com/saarraz1/status/1219809819781222401?s=20)
+
+I just saw this and got excited - I hope it’s legit as I think it’s from the person actually writing the code for Concepts in Clang.
+## [4][Can shrinking a std::string throw an exception?](https://www.reddit.com/r/cpp/comments/es0j63/can_shrinking_a_stdstring_throw_an_exception/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200120-00/?p=103349
+---
+
+## [5][Since std::wstring_convert is deprecated, what is the replacement?](https://www.reddit.com/r/cpp/comments/es9gt1/since_stdwstring_convert_is_deprecated_what_is/)
+- url: https://www.reddit.com/r/cpp/comments/es9gt1/since_stdwstring_convert_is_deprecated_what_is/
+---
+It seems rather odd to deprecate functionality before offering a suitable alternative, but I have not found one.
+## [6][A manual for the Meson build system is now available](https://www.reddit.com/r/cpp/comments/erxiw6/a_manual_for_the_meson_build_system_is_now/)
+- url: https://www.reddit.com/r/cpp/comments/erxiw6/a_manual_for_the_meson_build_system_is_now/
 ---
 Hi all,
 
-I'm part of an undergraduate class that takes on a software engineering project for a team of 4-8 students. I'm looking to add a project in C++ to hone my skills. If you have anything that would take approximately the length of a semester, please send me a message.
+I have just published a full-fledged manual for the Meson build system as an ebook (PDF only). The text is written specifically for C and C++ developers and contains lots of topical info, such as how to create a library that exports a plain C api but is implemented in C++ so that it works correctly on multiple platforms.
 
-&amp;#x200B;
+The book can be purchased from [this web site only](https://meson-manual.com/). The site contains further info including a full sample chapter on how compilation works. I have also written [a blog post](https://nibblestew.blogspot.com/2020/01/the-meson-manual-is-now-available-for.html) with further details and answers to frequently asked questions.
 
-The page for Clients: [cs.cornell.edu/courses/cs5150/2020sp/project-clients.html](https://cs.cornell.edu/courses/cs5150/2020sp/project-clients.html)
+As I'm the creator of both the book and Meson, feel free to AMA, I shall do my best to answer any questions you may have.
+## [7][Best Practice: External library dependencies on different machines?](https://www.reddit.com/r/cpp/comments/es9q2h/best_practice_external_library_dependencies_on/)
+- url: https://www.reddit.com/r/cpp/comments/es9q2h/best_practice_external_library_dependencies_on/
+---
+Hello, everybody,  
 
-Other example projects: [https://www.cs.cornell.edu/courses/cs5150/2020sp/project-clients.html](https://www.cs.cornell.edu/courses/cs5150/2020sp/project-clients.html)
-## [4][Conference Organizing](https://www.reddit.com/r/cpp/comments/eruecy/conference_organizing/)
-- url: https://cppcast.com/cpp-conference-organizing/
+in our software project we have different projects that depend on the always the same libraries (googletest, re2, rapidjson, etc.) Since different programs are deployed on different machines, these libraries are always rebuilt and linked.    
+
+My question would be: Is it possible to build these dynamic libraries, install them in a given directory and then put this directory into a git repository? Then, on the target machines, only this repository would be checked out and the build process would be bypassed.   
+
+How do dynamic libraries behave in C++ when linked on different Ubuntu distributions or with different compilers? Are there compatibility or performance issues? What are best practices on this topic? Are there any good sources I can refer to?
+
+Kind regards
+ 1Elch
+
+Translated with www.DeepL.com/Translator (free version)
+## [8][Profiling Deep Learning MXNet C++ Models with Built-In Profiler](https://www.reddit.com/r/cpp/comments/es7xqh/profiling_deep_learning_mxnet_c_models_with/)
+- url: http://www.mycpu.org/c++-mxnet-profiler/
 ---
 
-## [5][Modern CMake is like inheritance](https://www.reddit.com/r/cpp/comments/erbkrk/modern_cmake_is_like_inheritance/)
+## [9][The Hunt for the Fastest Zero](https://www.reddit.com/r/cpp/comments/erialk/the_hunt_for_the_fastest_zero/)
+- url: https://travisdowns.github.io/blog/2020/01/20/zero.html
+---
+
+## [10][Modern CMake is like inheritance](https://www.reddit.com/r/cpp/comments/erbkrk/modern_cmake_is_like_inheritance/)
 - url: https://kubasejdak.com/modern-cmake-is-like-inheritance
 ---
 
-## [6][MegaMimes : A C Mime Type Library](https://www.reddit.com/r/cpp/comments/eru10s/megamimes_a_c_mime_type_library/)
+## [11][MegaMimes : A C Mime Type Library](https://www.reddit.com/r/cpp/comments/eru10s/megamimes_a_c_mime_type_library/)
 - url: https://www.reddit.com/r/cpp/comments/eru10s/megamimes_a_c_mime_type_library/
 ---
-Determining the Mime Type of a file In C has not been easy.  Developers need an external table , which usually comes as an external file, which contains just a few mime types of various file extensions, Well I don't blame the developers, THERE IS NO ALGORITHM TO CHECK THE MIME TYPE OF A FILE. What if the FILE was deleted ? . That will be very awful for the program. Most people who do not want to use external files normally resort to using web services. This can unbearably slow, because of network problems. 
+Determining the Mime Type of a file In C has not been easy.  Developers need an external table , which usually comes as an external file, which contains just a few mime types of various file extensions, Well I don't blame the developers, THERE IS NO ALGORITHM TO CHECK THE MIME TYPE OF A FILE. What if the FILE was deleted ? . That will be very awful for the program. Most people who do not want to use external files normally resort to using web services. This can unbearably slow, because of network problems.
 
-Now this can be solved  problems of determining the MIME TYPE of a file from your C Code can be solved by [MegaMimes](https://github.com/trumpowen/MegaMimes). [MegaMimes](https://github.com/trumpowen/MegaMimes) is a C Library that is used to determine the MIME Type of a file, with just the few code. The MIME Type table comes embedded in the library and as a result, no need for external files, web services and any other technique.  The library works on all major Operating Systems ( Windows, Linux,, Mac OS X ) . The library can be extended by adding your own mime types, if they do not exist in the table. [MegaMimes](https://github.com/trumpowen/MegaMimes) has no dependencies, which makes it very easy to install!!!!
+Now these problems of determining the MIME TYPE of a file from your C Code can be solved by [MegaMimes](https://github.com/trumpowen/MegaMimes). [MegaMimes](https://github.com/trumpowen/MegaMimes) is a C Library that is used to determine the MIME Type of a file, with just a few code. The MIME Type table comes embedded in the library and as a result, no need for external files, web services and any other technique.  The library works on all major Operating Systems ( Windows, Linux,, Mac OS X ) . The library can be extended by adding your own mime types, if they do not exist in the table. [MegaMimes](https://github.com/trumpowen/MegaMimes) has no dependencies, which makes it very easy to install!!!!
 
 Do not fail to check it out. If the library proves helpful to you, do not forget to give it a STAR. If you have any contributions, you can open a pull request and an issue. Thank You
-## [7][Real-time remote watching of variables](https://www.reddit.com/r/cpp/comments/ert8go/realtime_remote_watching_of_variables/)
-- url: https://www.reddit.com/r/cpp/comments/ert8go/realtime_remote_watching_of_variables/
----
-We're implementing software for real-time control of a printing press.
-
-Currently we're using an IDE called CODESYS. This IDE enables us to connect remotely to the machine running the application and watch (and manipulate) variables in real-time.
-
-CODESYS is great for implementing control software (after all, that's what's its main purpose is...), but it doesn't scale up and out very well, and it's not very pleasant to work with.
-
-We're considering switching to C++ for developing the code, but we'll be missing this important feature of watching, tracing and visualizing the data.
-
-Are there any good frameworks out there for attaching to a running app and querying its internal variables? Visualization and tracing will be an added bonus.
-
-(Naturally, we can develop this framework ourselves, but this will prolong our first deployment, make debugging more difficult, and reduce the chances that management will OK this switch.)
-## [8][Using clang-tidy on windows for a visual studio project](https://www.reddit.com/r/cpp/comments/ers58p/using_clangtidy_on_windows_for_a_visual_studio/)
-- url: https://www.reddit.com/r/cpp/comments/ers58p/using_clangtidy_on_windows_for_a_visual_studio/
----
-Hi,
-
-I am trying to clang-tidy for static code analysis on our project. We are not using CMake for generating our Xcode/Visual Studio projects. clang-tidy expects a *compile\_commands*.*json* for the list of files and compiler flags. I was able to generate this file on Mac by piping the output of xcodebuild to [xcpretty](https://github.com/xcpretty/xcpretty).
-
-Is there a tool that can generate this file for Visual Studio? And is clang-tidy able to understand Microsoft's C++ compiler flags?
-
-Note: I would like to run it from that command line, not from within Visual Studio.
-## [9][Error handling benchmarks (LEAF)](https://www.reddit.com/r/cpp/comments/erioge/error_handling_benchmarks_leaf/)
-- url: https://www.reddit.com/r/cpp/comments/erioge/error_handling_benchmarks_leaf/
----
-When I announced [LEAF](https://github.com/zajo/leaf) some time ago people requested that I run a few benchmarks comparing it to other error handling libraries, since I make the claim that it is "lightweight". Here is a comparison to Outcome and `tl::expected`: [https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md](https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md).
-## [10][[PDF] P2020 - Locales, Encodings and Unicode](https://www.reddit.com/r/cpp/comments/erdbmx/pdf_p2020_locales_encodings_and_unicode/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2020r0.pdf
----
-
-## [11]["Use the Force, Luke"... or Modern C++ Tools](https://www.reddit.com/r/cpp/comments/erbm6n/use_the_force_luke_or_modern_c_tools/)
-- url: https://www.bfilipek.com/2020/01/modern-cpp-tools-check.html
----
-

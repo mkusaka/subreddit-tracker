@@ -33,152 +33,104 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/eraop8/whats_everyone_working_on_this_week_42020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-4-2020/37181?u=llogiq)!
-## [3][Deno JavaScript Runtime for V8 Written in Rust](https://www.reddit.com/r/rust/comments/erok5p/deno_javascript_runtime_for_v8_written_in_rust/)
-- url: https://deno.land/std/manual.md
+## [3][std.rs: go directly to stable rust docs!](https://www.reddit.com/r/rust/comments/es35u6/stdrs_go_directly_to_stable_rust_docs/)
+- url: https://www.reddit.com/r/rust/comments/es35u6/stdrs_go_directly_to_stable_rust_docs/
 ---
+I just purchased and set up [std.rs](https://std.rs) so you can type that into your URL bar and go straight to https://doc.rust-lang.org/stable/std/. I know, I know, there's already [docs.rs/std](https://docs.rs/std), so why bother with this? Well, it's like... four fewer characters to type in!
 
-## [4][Actix-web is back in the main repo with a note from the Nikolay Kim](https://www.reddit.com/r/rust/comments/erdklb/actixweb_is_back_in_the_main_repo_with_a_note/)
-- url: https://github.com/actix/actix-web/issues/1289
+^yes ^^I'm ^^^a ^^^^vim ^^^^^user
+## [4][[blog post] Why the stabilization of advanced slice patterns is a big deal to me](https://www.reddit.com/r/rust/comments/es1824/blog_post_why_the_stabilization_of_advanced_slice/)
+- url: https://www.reddit.com/r/rust/comments/es1824/blog_post_why_the_stabilization_of_advanced_slice/
 ---
+With the impending stabilization of advanced slice patterns (c'mon 1.42!), I wrote a little blog post summarizing what we're getting and why I think it's a big deal:
+https://thomashartmann.dev/blog/feature(slice_patterns)
+## [5][Saved hours (days?) of frustration and confusion thanks to Rust](https://www.reddit.com/r/rust/comments/es2wrf/saved_hours_days_of_frustration_and_confusion/)
+- url: https://www.reddit.com/r/rust/comments/es2wrf/saved_hours_days_of_frustration_and_confusion/
+---
+At work I work on a mostly C codebase. C was chosen for reasons that made sense in the past, but things have changed now so various other languages have been added, but the center is all still C.
 
-## [5][Pushrod 0.4.26 - SDL2 + Textures = Happy Face!](https://www.reddit.com/r/rust/comments/erp1yh/pushrod_0426_sdl2_textures_happy_face/)
-- url: https://www.reddit.com/r/rust/comments/erp1yh/pushrod_0426_sdl2_textures_happy_face/
+The C code currently uses PCRE2 purely for regex validation, but I wanted to use capture groups. I've never worked with the library before and it looks like a nightmare to use: [https://www.pcre.org/current/doc/html/](https://www.pcre.org/current/doc/html/).
+
+Half a year ago I added Rust with dynamic linking and FFI into the codebase, so I figured it's probably easier to use Rust and FFI with the regex crate. And I was right - it was super easy.
+
+Huge thanks to the Rust team and community for making my life in the C world so much easier :D
+## [6][Introducing Fourier: the fastest fast Fourier transform (FFT) in Rust ...and a request for help!](https://www.reddit.com/r/rust/comments/ervc99/introducing_fourier_the_fastest_fast_fourier/)
+- url: https://www.reddit.com/r/rust/comments/ervc99/introducing_fourier_the_fastest_fast_fourier/
 ---
 Hi all,
 
-Pushrod is a GUI library written in Rust using the SDL2 library. It is written to be simple, fast, efficient, and easy to understand.
+Today I released the initial version of Fourier, the fastest FFT written in pure Rust.
 
-This release contains a huge number of changes to the rendering library.  I am now using `Texture`s via GPU instead of drawing directly to the `Canvas`, which makes for a much more modern, performant, and compact library.  I had been struggling trying to get Textures implemented for a couple of months, but managed to solve it.  Now, all on-screen components are `Texture`s!
+[https://crates.io/crates/fourier](https://crates.io/crates/fourier)
 
-Now that I have `Texture`s in place, it's full steam ahead.  The next series of updates will include a menu bar system at the top of each window, a scrollable `Viewport`, tab navigation, and a few more features before a feature freeze and a 0.5.x branch.
+[https://github.com/calebzulawski/fourier](https://github.com/calebzulawski/fourier)
 
-As always, [click here to see the project](https://www.github.com/KenSuenobu/rust-pushrod), and feel free to weigh-in, or provide a pull request if you see something that needs fixing, or just want to contribute.
+My goal is to provide a competitor to FFTW with a *non-viral free license* (FFTW is GPL licensed, but offers a very expensive commercial license).
 
-I look forward to any and all comments - good or bad!
+This initial release is already very fast, however I'm looking for help from anyone who is interested in bringing it up to par with FFTW.  I would also appreciate help creating a WASM package.  I've opened a few issues in GitHub to get started--just send a PM or open a PR if you're interested!
 
-I also decided to get with the times and [created a blog.](https://kensuenobu.github.io/)
-## [6][rweb: Yet another web server framework](https://www.reddit.com/r/rust/comments/errbq9/rweb_yet_another_web_server_framework/)
-- url: https://www.reddit.com/r/rust/comments/errbq9/rweb_yet_another_web_server_framework/
----
-**Note**: This is not a stable release.
+# Benchmarks
 
-Add rweb to the dependencies section
-```toml
-[dependencies]
-rweb = "0.3.0-alpha.0"
-```
-and import as
-```rust
-use rweb::*;
-```
+The repository contains benchmarks you can run yourself, but here's the summary of how it performs on my machine (Intel CPU with AVX)
 
-
+* For `f32` powers of two, about 2x faster than RustFFT, but 3x slower than FFTW
+* For `f64` powers of two, about 1.5x faster than RustFFT, but 2x slower than FFTW
+* For large prime sizes, sometimes 10x+ (!) faster than RustFFT, but 1.5x slower than FFTW
+## [7][What is Rust and why is it so popular? - Stack Overflow Blog](https://www.reddit.com/r/rust/comments/erw561/what_is_rust_and_why_is_it_so_popular_stack/)
+- url: https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/
 ---
 
-
-rweb is a small http framework based on warp. It's fast, safe (thanks to warp and hyper), easy to use and extensible.
-
-```rust
-#[get("/")]
-fn index() -&gt; Result&lt;String, Error&gt; {
-    Ok(String::new())
-}
-
-#[get("/foo")]
-fn foo() -&gt; Result&lt;String, Error&gt; {
-    Ok(String::new())
-}
-
-// async works!
-#[get("/param/{v}")]
-async fn param_typed(v: u32) -&gt; Result&lt;String, Error&gt; {
-    Ok(v.to_string())
-}
-
-#[get("/param/{name}/{value}")]
-fn multiple_param(name: String, value: String) -&gt; Result&lt;String, Error&gt; {
-    Ok(format!("{}={}", name, value))
-}
-
-#[tokio::main]
-async fn main() {
-    rweb::serve(index().or(foo()).or(param_typed()).or(multiple_param())).run(([127, 0, 0, 1], 3030)).await;
-}
-
-```
-
-Note: There is a helper named #[router] to manage routes. I didn't use it for demonstrating purpose.
-
-
-Repository: https://github.com/kdy1/rweb
-
-See docs on docs.rs: https://docs.rs/rweb/0.3.0-alpha.0/rweb/
-## [7][The Thank You Thread](https://www.reddit.com/r/rust/comments/ereh5h/the_thank_you_thread/)
-- url: https://www.reddit.com/r/rust/comments/ereh5h/the_thank_you_thread/
+## [8][Finished my first Rust project - A website built with the async Rocket branch](https://www.reddit.com/r/rust/comments/es3ya9/finished_my_first_rust_project_a_website_built/)
+- url: https://www.reddit.com/r/rust/comments/es3ya9/finished_my_first_rust_project_a_website_built/
 ---
-Drop a comment here to say Thank You to all the open source maintainers of crates that you use.
-## [8][Ready At Dawn Studios hiring contractors with preferred experience in Rust.](https://www.reddit.com/r/rust/comments/eribbz/ready_at_dawn_studios_hiring_contractors_with/)
-- url: https://twitter.com/AndreaPessino/status/1219341435238895616
+Hi /r/rust. My friend told me about Rust a bit ago. I had always wanted to learn C++ as I've always had a big performance bias, but was always afraid of the complexity (and not being smart enough for it). So it sat on the backburner for a while, but then I kept seeing Rust posted on Hacker News (Baader Meinhof effect?) and it always being the #1 most loved language on the Stackoverflow Developer survey. The TechEmpower benchmarks pushed me over the edge, so then I devoured Steve and Carol's `The Rust Programming Language`.
+
+To solidify my knowledge I was looking for a project to make and was re-reading Paul Graham's essays at the same time and he mentioned to make something that you yourself would want. I then also remembered a desire I had a while back to be able to find likeminded people around me (for example, someone who also likes Rust!). So I decided to build that as my project.
+
+The core idea is that instead of swiping on people, you instead swipe on concepts and ideas (example: `hunting, vaccines, Christianity, cities, podcasts, etc.`) where swiping right means you like it / identify with it, and left is the converse.
+
+The further you swipe in either direction, the stronger your vote. It then uses the Manhattan distance formula to compute your similarity to others. You can also view statistics like how often a concept is liked or disliked (or neutral), how long on average it takes for people to decide, how that card correlates with other cards (for example, Military and Fracking are highly correlated with one another).
+
+You can then also view clusters of cards on profile pages. These are cards that are found to be clustered together in that their votes are highly correlated with one another. You can see how you and others align to these clusters. It's also a bit of a privacy feature as well as you cannot see how people vote on individual cards, only how they align to clusters. So their cluster alignment somewhat "masks" their individual card votes, or at least provides some plausible deniability. It's also just interesting to find out what groups of cards tend to cluster around each other.
+
+Currently the clustering algorithm is a bit ad-hoc as math is _definitely_ not my strong suit. There are around 250 cards at the moment and originally I wanted to have an exact algorithm for computing similarity that also took into account weights, but I couldn't quite figure out how to have that while also allowing people to sort by similarity quickly at scale.
+
+I found out that it's basically the K-Nearest-Neighbors problem with 250 dimensions and that is a bit tricky (for me at least). So instead I wrote a small algorithm ([which might be able to be replaced with this Rust crate?](https://old.reddit.com/r/rust/comments/dx2k2q/hilbert_curve_transformation_crate_for/)) to create clusters of cards, and then used the [Postgres CUBE data structure](https://www.postgresql.org/docs/9.5/cube.html) to be able to calculate and index someone's alignment in what is now 25-dimensional space (which is much more tractable than 250 dimensional space!)
+
+So, on to the tech stack!
+
+My only two frontend dependencies are React and axios (I'll probably refactor out axios soon). I'm a bit afraid of npm and I like limiting my dependencies. Also, small bundle sizes are great!
+
+The backend is more interesting. I'm using `rand`, `bcrypt`, `serde`, `rusoto`, `oauth2`, `reqwest`, `time`, `rocket` (async branch), `tokio`, `tokio-postgres`, `futures`, `deadpool`, `deunicode`, `pin-project-lite`, and `async-stream`.
+
+I'm then using nginx as a reverse proxy to my Rocket server, and have the server itself currently hosted on EC2 behind CloudFront, with assets on S3.
+
+When I had started the project, async await wasn't quite ready yet, and future combinators were killing me with borrowing errors. Eventually I found out about the async Rocket branch, and Jeb Rosen and Sergio were always _extremely_ accommodating and helpful with all of my newb questions. I also really liked the Rocket syntax so I decided to rewrite it in Rocket!
+
+I was able to get rid of so many clones and lines of code and started feeling really good about the code-base. It was just really clean and elegant. I'm also now confident about the code, which is great. There were so many times when the compiler would refuse to compile and then I'd go, "oh, right, yeah. good catch." I still have some residual PTSD from my last node server which would randomly crash with null reference exceptions due to me missing an edge case.
+
+The only issue was that database access was still synchronous, but recently /u/bikeshedder wrote the amazing `deadpool` library, which I was able to seamlessly integrate and immediately significantly improve my runtime performance. [I wrote about that here](https://old.reddit.com/r/rust/comments/e9n6mx/creating_and_using_a_postgres_database_pool_is/?st=k5ok81ng&amp;sh=440f06b6).
+
+Lastly, I'd just like to [re-emphasize](https://old.reddit.com/r/rust/comments/ereh5h/the_thank_you_thread/ff4f5z2/?st=k5okcaom&amp;sh=8b98f398) my thanking of the Rust community. I truly have not yet had a single bad interaction with anyone. The #beginners discord channel, everyone in IRC, Gitter, Riot, Reddit, etc. have all been extremely welcoming and helpful to a noob like me, and thanks to them I was able to finish this project.
+
+If you'd like to check it out, here's the site: https://www.kardius.com I tried to make as many features available as possible without logging in, so no pressure to create an account at all. You should be able to view the cards on the _Swipe_ and _Cards_ page. I doubt it's good enough yet, but hopefully I can make it better! If you have any suggestions or feedback I'd love to hear it. Thanks for reading!
+## [9][This Week in Rust 322](https://www.reddit.com/r/rust/comments/esbf8h/this_week_in_rust_322/)
+- url: https://this-week-in-rust.org/blog/2020/01/21/this-week-in-rust-322/
 ---
 
-## [9][I'm looking for crates for a personal project](https://www.reddit.com/r/rust/comments/erq73f/im_looking_for_crates_for_a_personal_project/)
-- url: https://www.reddit.com/r/rust/comments/erq73f/im_looking_for_crates_for_a_personal_project/
----
-As the title suggests, I'm thinking through a personal project, and I'm wondering about crates and libraries. So, I thought I'd ask around for opinions and advice.
-
-The project:
-
-Most of the time, I spend my free time on reading and video games, but I recently got an itch to scratch. I recently finished a Nintendo Switch JRPG called [Atelier Ryza](https://store.steampowered.com/app/1121560/Atelier_Ryza_Ever_Darkness__the_Secret_Hideout/). Being a game about alchemy, it has rather involved item crafting mechanics, detailed ingredients, and flexible recipes for items. I often found myself yak-shaving (i.e. this recipe needs a (fuel) ingredient with a fire-element value of 3; I *could* just use some Ashen Sand I gathered earlier, but if I synthesize some Zettel paper first, I'll get a better result; hmm the Zettel paper recipe needs a Red Supplement to be awesome though, and I just ran out...) 
-
-Yeah, I spend a lot of time in the crafting menu...
-
-Anyway, the project!
-
-So, there's a fair amount of details to the items and recipes to the game, with somewhat recursive relationships. There's (currently) no FAQ that really does this justice, in part because organizing and presenting the information as prose or individual tables only presents a slice of the whole picture.
-
-So the project is to make a Atelier Ryza crafting information app.
-
-Goals:
-
-* step outside of my comfy skill set (C# web development)
-* collect information about the items and recipes in the game
-* create a stand-alone deployable app, that can be cheaply hosted, the items and recipes need to be stored with the app (I'm guessing some kind of schema file format; I'm considering JSON as a fallback option if I can't find something better)
-* if the file format isn't conducive to manual creation, create a simple tool to help create the file
-* host a simple UI to explore the data, and perhaps a GraphQL interface to do some more involved queries
-
-Rough steps:
-
-* record item and recipe information (likely by hand, which will take some time)
-   * there's hundreds of items, and hundred of recipes--it'd likely only be a few megabytes in memory
-* create a schema for storing items and recipes (I haven't touched on all of the things associated with items and recipes, but it's... involved)
-* create the file to store the game data
-* create a web host, using GraphQL to interact with the data
-* create a UI that's not awful to look at (maybe play around with HSL-color design ideas  
-
-
-I'm also wondering if Node.js would be a better fit for this project, rather than Rust. I'm interested in learning something new, and I'd love to hear from people that worked with both.
-
-I'm also looking for libraries to help out. I'm not even sure what to do about a 'db-in-a-file'. I don't need a full sqlite solution, as there's only a few use cases.
-## [10][Oxidize 2020 - The Embedded Rust Conference](https://www.reddit.com/r/rust/comments/erhv6n/oxidize_2020_the_embedded_rust_conference/)
-- url: https://ferrous-systems.com/blog/oxidize-2020/
+## [10][Async Interview #5: Steven Fackler](https://www.reddit.com/r/rust/comments/es48d2/async_interview_5_steven_fackler/)
+- url: http://smallcultfollowing.com/babysteps/blog/2020/01/20/async-interview-5-steven-fackler/
 ---
 
-## [11][Writing an OS in Rust: Allocator Designs](https://www.reddit.com/r/rust/comments/erd5w1/writing_an_os_in_rust_allocator_designs/)
-- url: https://os.phil-opp.com/allocator-designs/
+## [11][C++ for Rust Programmers?](https://www.reddit.com/r/rust/comments/es7oq3/c_for_rust_programmers/)
+- url: https://www.reddit.com/r/rust/comments/es7oq3/c_for_rust_programmers/
+---
+I am in the unique position of knowing rust but not C++ and only kinda C. Are there any good resources for writing high quality C++ that doesn't explode as this subreddit leads me to believe? I have to learn it for $work :(
+
+My biggest issue so far is that there are just no quality resources like there are for rust. And due to rust I have a hard time trusting other languages.
+
+Is there any way to get a rust like experience in modern C++?
+## [12][ptable: A complete periodic table for rust](https://www.reddit.com/r/rust/comments/es18dd/ptable_a_complete_periodic_table_for_rust/)
+- url: https://crates.io/crates/ptable
 ---
 
-## [12][More idiomatic way of passing a mutable reference to a data structure and immutable references to parts of the same structure?](https://www.reddit.com/r/rust/comments/erucgq/more_idiomatic_way_of_passing_a_mutable_reference/)
-- url: https://www.reddit.com/r/rust/comments/erucgq/more_idiomatic_way_of_passing_a_mutable_reference/
----
-Hi,
-
-I'm currently implementing a board game, and I'm dividing various parts of the combat logic into functions wich look like this:
-
-    fn apply_effect(board: &amp;mut Gameboard, effect: &amp;Effect, triggering_unit: &amp;Unit, unit_with_effect: &amp;Unit)
-    fn attack_target(board: &amp;mut Gameboard, attacker: Unit, target_index: usize)
-
-The typical way I'd use `apply_effect` is by passing in the board (since this function could create new units) with the other arguments being references to units from the board. For example, `&amp;board.army[0]`, which obviously violates the borrow rules.
-
-The workarounds I've found is to clone the unit and pass a reference to the clone to the `apply_effect` function, or to use indices like in the second.
-
-Am I doing something wrong here, or is there a more idiomatic way of structuring this code? Also, what exactly is the borrow checker trying to protect me from by insisting that I not do this? Because its pretty inconvenient right now unfortunately.

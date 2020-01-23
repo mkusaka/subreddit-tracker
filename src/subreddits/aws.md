@@ -1,71 +1,113 @@
 # aws
-## [1][EKS price reduction](https://www.reddit.com/r/aws/comments/erz5l4/eks_price_reduction/)
-- url: https://aws.amazon.com/blogs/aws/eks-price-reduction/
+## [1][API error rates and latencies in Amazon Elastic Compute Cloud (Sydney)](https://www.reddit.com/r/aws/comments/eslenb/api_error_rates_and_latencies_in_amazon_elastic/)
+- url: https://www.reddit.com/r/aws/comments/eslenb/api_error_rates_and_latencies_in_amazon_elastic/
+---
+I was getting following error when doing CLI operation today morning
+
+&gt;An error occurred (InternalError) when calling the DescribeInstances operation (reached max retries: 4): An internal error has occurred
+
+Next checked the status page and found that there was API Error and Latency error for EC2 service in Sydney region. 
+
+&gt; 4:41 PM PST We are investigating increased API error rates and latencies in the AP-SOUTHEAST-2 Region. Connectivity to existing instances is not impacted.
+
+One of my College rebooted a workspace and its still rebooting from past 45 minutes, but does not effect currently running instance or workspace.
+## [2][Converting varbinary data and uploading to S3 produces corrupted xlsx file](https://www.reddit.com/r/aws/comments/ess8zd/converting_varbinary_data_and_uploading_to_s3/)
+- url: https://www.reddit.com/r/aws/comments/ess8zd/converting_varbinary_data_and_uploading_to_s3/
+---
+I have a database that was previously used to store files converted to varbinary data. I am currently in the process of moving the files to S3. I've been able to convert pdf, img, doc, xls and most other file types, but when I try to convert an xlsx file it is always corrupted. I'm currently using the code below
+
+*request.query(` select &lt;varbinarydata&gt; from &lt;table&gt; , (err, data) =&gt; {
+            if (err) {
+                mssql.close();
+                throw (err);
+            }
+            else {
+                var filename = &lt;DocumentNm&gt;
+                var varbdatan = new Buffer(data.recordset[0].&lt;varbinarydata&gt;);     
+                s3.putObject({
+                    Bucket: &lt;S3 Bucket&gt;
+                    Key: filename,
+                    Body: varbdatan
+                }, err =&gt; {
+                    if (err) {
+                        mssql.close();
+                        throw (err);
+                    }
+                    else {
+                        console.log('Data Successfully Inserted');
+                        mssql.close();
+                        callback(null, 1);
+                    }
+                });
+            }
+        });*
+## [3][RDS DB hacked, what should I do?](https://www.reddit.com/r/aws/comments/esccbr/rds_db_hacked_what_should_i_do/)
+- url: https://www.reddit.com/r/aws/comments/esccbr/rds_db_hacked_what_should_i_do/
+---
+My RDS database was hacked by bitcoin miners who left this message:
+
+"To recover your lost Database and avoid leaking it: Send us 0.06 Bitcoin (BTC) to our Bitcoin address 1Mo24VYuZfZrDHw7GaGr8B6iZTMe8JbWw8 and contact us by Email with your Server IP or Domain name and a Proof of Payment. If you are unsure if we have your data, contact us and we will send you a proof. Your Database is downloaded and backed up on our servers. Backups that we have right now: \*\*\*, \*\*\*\*\*\* . If we dont receive your payment in the next 10 Days, we will make your database public or use them otherwise."
+
+I already have a backup but I need to know how this happened and what to do to prevent it from happening again?
+
+also who's fault is that? mine or aws?
+## [4][Looks like Elastic Beanstalk has added support for Node 12](https://www.reddit.com/r/aws/comments/esl0ps/looks_like_elastic_beanstalk_has_added_support/)
+- url: https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2020-01-21-linux.html
 ---
 
-## [2][Difference between CDK, SAM and Serverless](https://www.reddit.com/r/aws/comments/es9yld/difference_between_cdk_sam_and_serverless/)
-- url: https://www.reddit.com/r/aws/comments/es9yld/difference_between_cdk_sam_and_serverless/
+## [5][Having issues querying IOT Core from a different account, thinking it's a policy issue](https://www.reddit.com/r/aws/comments/esqyxf/having_issues_querying_iot_core_from_a_different/)
+- url: https://www.reddit.com/r/aws/comments/esqyxf/having_issues_querying_iot_core_from_a_different/
 ---
-I am new to serverless and I'm trying to use a framework for my first production application.  I have used the "Serverless" framework for a few projects but then I came across SAM and CDK and now I can't really make out what does what.
-## [3][My Organization &amp; Created accounts problem](https://www.reddit.com/r/aws/comments/esbbae/my_organization_created_accounts_problem/)
-- url: https://www.reddit.com/r/aws/comments/esbbae/my_organization_created_accounts_problem/
----
-Hey guys, I have the following issue. We created an Organization in AWS, after which we created accounts for it, based on real email addresses, as outlined. 
+I am working on a platform migration currently that requires some services to be housed in two seperate accounts.   
+We have an IOT Core service in the first account that stores our IOT Devices and we are trying to programmatically grab the shadow of a given device from the second account but we are getting back "Forbidden Exception".
 
-Now, the problem is when I log into my account (the one that was created via My Organization) I can create IAM users, groups and policies - but none of the other accounts that got created via My Organization can see them.
+The workflow that should happen is as follows :-  
 
-What am I missing here - is the Master account supposed to create the IAM roles and users, or how do I share them with the rest of the accounts that got created through My Organization?
-## [4][Creating a static website with S3, with a custom domain name purchased from elsewhere.](https://www.reddit.com/r/aws/comments/esbad8/creating_a_static_website_with_s3_with_a_custom/)
-- url: https://www.reddit.com/r/aws/comments/esbad8/creating_a_static_website_with_s3_with_a_custom/
----
-I've figured out how to create a static web page with AWS S3, and now I'm looking to attach a custom domain name to it. All of the domains on route 53 are very expensive so I want to buy from elsewhere. I also don't want my S3 bucket to have to be the same name as my domain name, as this will limit my bucket name choice. 
 
-Is this possible? Does AWS allow you to attach go Daddy domains to it's resources?
+1. A Lambda Fn is called in the second account to confirm user ownership of IOT device with thingname
+2. If ownership is confirmed the Lambda then calls the following function attempting to access IOT Core in first account :-  
 
-U don't really know much about cloud front but I assume I could use it as part of my solution  My other thought was making a small EC2 instance and using it as a reverse proxy, so my bucket name doesn't have to match the domain name.
-## [5][Does anyone have a template/tutorial for how to setup HTTPS for EC2 instances with CloudFormation?](https://www.reddit.com/r/aws/comments/esa125/does_anyone_have_a_templatetutorial_for_how_to/)
-- url: https://www.reddit.com/r/aws/comments/esa125/does_anyone_have_a_templatetutorial_for_how_to/
----
-I have these links but I don't know how to interpret them. 
-
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html 
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html
-
-Unfortunately with my account type it will only work by using templates on CloudFormation.
-## [6][Only get existing resources with ResourceGroupTaggingAPI](https://www.reddit.com/r/aws/comments/es9kzw/only_get_existing_resources_with/)
-- url: https://www.reddit.com/r/aws/comments/es9kzw/only_get_existing_resources_with/
----
-Is there a way to only get the existing resources from the ResourceGroupTaggingAPI, instead of also including the previous resources, without actually checking? We're using the ResourceGroupTaggingAPI to find all RDS database instances which match a certain tag, but it's also returning all the deleted resources which means having to sanitize the list by checking whether the resources actually exist or not.
-
-Of course a workaround would be to establish a blacklist of database identifiers... But there has to be a more elegant solution?
-## [7][Manage source AMI with CodeDeploy](https://www.reddit.com/r/aws/comments/es9hni/manage_source_ami_with_codedeploy/)
-- url: https://www.reddit.com/r/aws/comments/es9hni/manage_source_ami_with_codedeploy/
----
-Hello, 
-
-We use an AMI as part of our launch configuration for our autoscaling group. I know we can update the auto-scaling servers using CodeDeploy, but can we update the source AMI too? Or is there a better tool for that? The code is in github, and managed by TFS.
-## [8][Advanced AWS CLI JMESPath Query Tricks](https://www.reddit.com/r/aws/comments/eruq96/advanced_aws_cli_jmespath_query_tricks/)
-- url: https://opensourceconnections.com/blog/2015/07/27/advanced-aws-cli-jmespath-query/
+3. What should happen is it returns the thingname but instead we are getting an error, "Forbidden Exception"
+```
+public static async iotTest(event) {
+        try {
+            const iotData = new AWS.IotData({endpoint: endPointFirstAccount});
+            const params = {
+                thingName: event.query.thingName
+            };
+            const data = await iotData.getThingShadow(params).promise();
+            return data ? JSON.parse(data.payload) : null;
+        } catch (error) {
+            console.error('Error: ', error);
+        }
+    }
+```
+I think this is a policies issue but I'm not sure where to start. If anyone can help I'd be very grateful, thanks.
+## [6][IAM Database Authentication For Amazon RDS In MySQL](https://www.reddit.com/r/aws/comments/esqipc/iam_database_authentication_for_amazon_rds_in/)
+- url: https://www.ibexlabs.com/iam-database-authentication-for-amazon-rds-in-mysql/
 ---
 
-## [9][How Do I Get a Task Definition Console?](https://www.reddit.com/r/aws/comments/es50c8/how_do_i_get_a_task_definition_console/)
-- url: https://www.reddit.com/r/aws/comments/es50c8/how_do_i_get_a_task_definition_console/
+## [7][AWS CLI credentials stored in plaintext? Anyone know a way to encrypt these or am I missing some aspect here?](https://www.reddit.com/r/aws/comments/esgq5u/aws_cli_credentials_stored_in_plaintext_anyone/)
+- url: https://www.reddit.com/r/aws/comments/esgq5u/aws_cli_credentials_stored_in_plaintext_anyone/
 ---
-I'm a beginner to AWS, so this might be a basic question, but I must not be Googling the right things to find my answer.
-
-I have a task definition running in a console, how would I ssh into that task definition or otherwise get connect to a console on the image? I have the aws cli setup, but can't find any commands in there related to connecting to a task.
-## [10][Need help with Cloudfront, S3 https redirection error 504](https://www.reddit.com/r/aws/comments/es7bw6/need_help_with_cloudfront_s3_https_redirection/)
-- url: https://www.reddit.com/r/aws/comments/es7bw6/need_help_with_cloudfront_s3_https_redirection/
+Like the title says. Anyone know a way to store these in an encrypted state? Just seems odd that they're in a file called "credentials".  Not sure if I'm missing anything here and they're secured in another way. I tend to be a little nervous about leaving creds in text files. Thanks.
+## [8][A nasty hack to enable using an API Gateway generated Javascript client SDK in Node.js](https://www.reddit.com/r/aws/comments/esmep0/a_nasty_hack_to_enable_using_an_api_gateway/)
+- url: https://github.com/dmh2000/ApiGenNodeHack
 ---
-Hello All,
 
-I am hoping that I could get some suggestions on how to go about fixing my issue with Cloudfront, S3 https redirection.  Background is I have followed the instructions provided here ([https://simonecarletti.com/blog/2016/08/redirect-domain-https-amazon-cloudfront/](https://simonecarletti.com/blog/2016/08/redirect-domain-https-amazon-cloudfront/)) to setup by https redirection.  When it came to verifying my changes, I got error 504 below.
+## [9][RDS Certificate Warning Emails - What Am I Supposed To Do Here?](https://www.reddit.com/r/aws/comments/esiakt/rds_certificate_warning_emails_what_am_i_supposed/)
+- url: https://www.reddit.com/r/aws/comments/esiakt/rds_certificate_warning_emails_what_am_i_supposed/
+---
+I keep getting these emails that start with: 
 
-[504 Error](https://preview.redd.it/js3nyh4cj9c41.png?width=1218&amp;format=png&amp;auto=webp&amp;s=cc07a7d21d948b63f5bb4c4ae99fcae24e090b55)
+&gt;We previously sent a communication in early October to update your RDS SSL/TLS certificates by October 31, 2019. We have extended the dates and now request that you act before February 5, 2020 to avoid interruption of your applications that use Secure Sockets Layer (SSL) or Transport Layer Security (TLS) to connect to your RDS and Aurora database instances. Note that this new date is only 4 weeks before the actual Certificate Authority (CA) expiration on March 5, 2020. Because our own deployments, testing, and scanning to validate all RDS instances are ready for the expiry must take place during the final 4 weeks, the February 5th date cannot be further extended.
+ 
+&gt;You are receiving this message because you have an Amazon RDS database instance(s) that requires action.
 
-* The certificate I used is AWS issued.
-* I tried opening the s3 website URL itself and I can get the redirection working fine.
+I have no idea what this means.  I am tempted to just go in, backup my db, delete the RDS instance, launch a new one, and go on with my life.  I do not independently manage any certs for db connectivity in my apps.
 
-I am hoping someone else has seen this error before and managed to fixed it.
-
-Thank you in advance.
+Would that solve it?
+## [10][How do you check which specific load balancer a Elastic Beanstalk app is using?](https://www.reddit.com/r/aws/comments/esk541/how_do_you_check_which_specific_load_balancer_a/)
+- url: https://www.reddit.com/r/aws/comments/esk541/how_do_you_check_which_specific_load_balancer_a/
+---
+I am trying to figure out how to check which specific load balancer a specific elastic beanstalk app is using, is there an easy way to do this?

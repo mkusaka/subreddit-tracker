@@ -97,87 +97,194 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Create simple POS with React, Node and MongoDB #2: Auth state, Logout, Update Profile](https://www.reddit.com/r/reactjs/comments/es8b3f/create_simple_pos_with_react_node_and_mongodb_2/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-2-auth-state-logout-update-profile/
+## [3][MyMovies Desktop app watch movies and TV series](https://www.reddit.com/r/reactjs/comments/esn8dg/mymovies_desktop_app_watch_movies_and_tv_series/)
+- url: https://youtu.be/XMcB3k4H_TE
 ---
 
-## [4][React Nice Dates: A responsive, touch-friendly, and modular date picker library for React.](https://www.reddit.com/r/reactjs/comments/ery4pb/react_nice_dates_a_responsive_touchfriendly_and/)
-- url: https://reactnicedates.hernansartorio.com/
+## [4][Help us create a community-curated list of React Libraries!](https://www.reddit.com/r/reactjs/comments/esfraa/help_us_create_a_communitycurated_list_of_react/)
+- url: http://reactlibraries.com
 ---
 
-## [5][How to NOT render something in React](https://www.reddit.com/r/reactjs/comments/esapda/how_to_not_render_something_in_react/)
-- url: https://youtu.be/-6bNH0Ne9EU
+## [5][Orta Therox on why the new TypeScript website uses Gatsby](https://www.reddit.com/r/reactjs/comments/esl96v/orta_therox_on_why_the_new_typescript_website/)
+- url: https://github.com/microsoft/TypeScript-Website/issues/130#issuecomment-577445454
 ---
 
-## [6][What are things that trip up junior and intermediate React devs?](https://www.reddit.com/r/reactjs/comments/es5hbk/what_are_things_that_trip_up_junior_and/)
-- url: https://www.reddit.com/r/reactjs/comments/es5hbk/what_are_things_that_trip_up_junior_and/
----
-I can only think of two things: forwardRef and hooks. Are there other things that trip up junior and intermediate React devs? Or things junior or intermediate React devs think they know, but don't?
-## [7][Babel 7.8.0 Released: we can now use ECMAScript 2020 new features like.](https://www.reddit.com/r/reactjs/comments/erry3c/babel_780_released_we_can_now_use_ecmascript_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/erry3c/babel_780_released_we_can_now_use_ecmascript_2020/
----
-New features include:
-
-* The nullish coalescing operator.
-
-`const name = person.fullName ?? "Anonymous";`  which reads "if person.fullName is `null` or `undefined`, then `name = "Anonymous"`.
-
-Same as `||`, but for nullish values, instead of falsy ones.
-
-&amp;#x200B;
-
-* Optional chaining
-
-`const city = person.address?.city; // person.address could be not defined`
-
-&amp;#x200B;
-
-* Dynamic `import()`
-
-`import getTargets from "@babel/helper-compilation-targets";`
-
-`getTargets({`
-
-`browsers: ["last 2 chrome versions"],node: 10`
-
-`}) == { chrome: "77.0.0", node: "10.0.0" }`
-
-&amp;#x200B;
-
-I was able to use them in my immediately Create React App application by upgrading `@babel/core` and `react-scripts`.
-## [8][React Router hook to navigate to a URL from inline event handler](https://www.reddit.com/r/reactjs/comments/esbb72/react_router_hook_to_navigate_to_a_url_from/)
-- url: https://gist.github.com/bjgrosse/48fd06fedf80cb2b745837a71f1e6634
+## [6][I created a way for you to add PWA badges to your README files to show off the fact that your project is a PWA! Built with GatbsyJS, and of course it is also a PWA ;)](https://www.reddit.com/r/reactjs/comments/esnxmy/i_created_a_way_for_you_to_add_pwa_badges_to_your/)
+- url: https://www.pwa-shields.com
 ---
 
-## [9][UI Editor - A tool for building components.](https://www.reddit.com/r/reactjs/comments/esanxp/ui_editor_a_tool_for_building_components/)
-- url: https://github.com/imvetri/ui-editor#ui-editor
+## [7][Popper 2 released! The popular positioning engine for tooltips and popovers, used by Material UI, Bootstrap, and more](https://www.reddit.com/r/reactjs/comments/esd3fe/popper_2_released_the_popular_positioning_engine/)
+- url: https://dev.to/fezvrasta/smarter-tooltips-and-popovers-with-popper-2-44bh
 ---
 
-## [10][Building an e-commerce site from scratch - Tech choices and lessons learned](https://www.reddit.com/r/reactjs/comments/ervuyq/building_an_ecommerce_site_from_scratch_tech/)
-- url: https://artinasec.com/tech/overview
+## [8][I just got google maps, via react-google-maps, to work with little too no lag while rendering over 150,000 data points in the form of Polylines and Markers.](https://www.reddit.com/r/reactjs/comments/esh3de/i_just_got_google_maps_via_reactgooglemaps_to/)
+- url: https://www.reddit.com/r/reactjs/comments/esh3de/i_just_got_google_maps_via_reactgooglemaps_to/
+---
+Title says it all. I felt it was pretty impressive and it was a problem that has kept me up for 3 nights now, so a real code high when it finally worked. I just wanted to tell someone who is actually in tech and doesn't look at me like "cool so what".
+## [9][Supporting &amp; detecting dark mode in the browser [Article] Hope it helps ;)](https://www.reddit.com/r/reactjs/comments/esra9e/supporting_detecting_dark_mode_in_the_browser/)
+- url: https://blog.nicco.io/2020/01/07/supporting-detecting-dark-mode-in-the-browser/
 ---
 
-## [11][Please help, would like to improve my React but clueless what to do](https://www.reddit.com/r/reactjs/comments/es85yf/please_help_would_like_to_improve_my_react_but/)
-- url: https://www.reddit.com/r/reactjs/comments/es85yf/please_help_would_like_to_improve_my_react_but/
+## [10][How can I trust/choose a package?](https://www.reddit.com/r/reactjs/comments/esq5gy/how_can_i_trustchoose_a_package/)
+- url: https://www.reddit.com/r/reactjs/comments/esq5gy/how_can_i_trustchoose_a_package/
 ---
-Hi all
+When looking for react packages I always struggle to decide for one because I am afraid that in a year or two the package will become obsolete, stop working or anything else happens. There are packages for everything but often enough I decided to implement something myself instead of browsing through all the packages available.
 
-I have understood the concepts of React. Components, Props, nesting, hooks, class/functional components and more. By themselves, I feel quite confident. Yet when I need to actually build something, I feel lost.....I am stuck and I feel that I understand the fundamentals of React well enough but when it comes to building something, I am so clueless.
-
-What would you guys recommend? I am looking for simple beginner friendly projects that also give me their code, so that I can read and understand what is going on. All the projects I have googled are either too hard, or they are quite beginner friendly but do not give their source code.
-
-Feeling sad and overwhelmed because I realize that I can't actually do anything with React....
-## [12][useEffect set initial state warning: missing dependency](https://www.reddit.com/r/reactjs/comments/es90g4/useeffect_set_initial_state_warning_missing/)
-- url: https://www.reddit.com/r/reactjs/comments/es90g4/useeffect_set_initial_state_warning_missing/
+What's the best practice/how do you decide if you choose this one package instead of implementing it yourself?
+## [11][Best Advanced react courses?](https://www.reddit.com/r/reactjs/comments/eshmzi/best_advanced_react_courses/)
+- url: https://www.reddit.com/r/reactjs/comments/eshmzi/best_advanced_react_courses/
 ---
-I want to use useEffect as a componentDidMount replacement. So far I always have left the second array parameter empty and it was working fine. I have updated my create react app and now it tells me that 
+Hi Guys, I’ve been developing with React a few months now and I’m feeling fairly comfortable working with it.
 
-&gt;React Hook useEffect has a missing dependency
+I originally learnt from  [Stephen Griders React course ](https://www.udemy.com/course/react-redux/) on Udemy and I thought it was excellent, it gave me a great understanding of the fundamentals and enough information to get me up and running. I then bought his [Advanced React](https://www.udemy.com/course/react-redux-tutorial/) course however I quickly found that testing element was out of date, and the subsequent categories relied on you having completed the first section so I refunded it.
 
-It wants me to put the state inside the array of the second argument of useEffect. When I do this useEffect is triggered indefinitely (because it is updated every time when I set the initial data in its effect). What am i supposed to do here?
+I’d be really interested in finding a course that has some more advanced features in React such as 
 
-    useEffect(() =&gt; {
-      const response = fetchData...
-      const data = setData(response.data...)
-    }, []);
-    // [data] warning disappears but code breaks
+- Custom hooks (does this replace HOC?)
+- Suspense (I know it’s not fully released yet)
+- Server side rendering
+- CSS in JS (styled components maybe)
+- Graph QL
+
+The list above is just a general outline and I’d be really interested in seeing recommendations from you guys 
+
+Thanks in advance!
+## [12][Data not rendering](https://www.reddit.com/r/reactjs/comments/essab1/data_not_rendering/)
+- url: https://www.reddit.com/r/reactjs/comments/essab1/data_not_rendering/
+---
+Hey guys , I build a weather app, and Is working "pretty well" but I have a problem I cant figure out so far, when I call the aPI I get the correct data Im looking for , and in the console "Elements" I can see how the data is render and place on is site when I call the API but I can not see the data on my browser, I mean, displayed on the screen and I dont really know why or how to solve it , here is the weather component: 
+
+    import React from 'react';
+    
+    
+    const Weather = (props) =&gt; {
+    
+      function minmaxTemp(min,max) {
+      return(
+          &lt;h3&gt;
+            &lt;span className="px-4"&gt;{min}&amp;deg;&lt;/span&gt;
+            &lt;span className="px-4"&gt;{max}&amp;deg;&lt;/span&gt;
+          &lt;/h3&gt;
+          );
+        }
+    
+      return(
+    
+        &lt;div className="container text-light"&gt;
+          &lt;div className="cards pt-4"&gt;
+          &lt;h1&gt;  {props.city}, {props.country} &lt;/h1&gt;
+          &lt;h5 className="py-4"&gt;
+    
+            &lt;i className={`wi ${props.weatherIcon} display-1`}&gt;&lt;/i&gt;
+    
+          &lt;/h5&gt;
+    
+          &lt;span className="py-2"&gt;{props.temp_celsius}&amp;deg;&lt;/span&gt;
+    
+          {/*  show min and max temp*/}
+    
+           {minmaxTemp(props.temp_min, props.temp_max)}
+    
+           &lt;h3 className="py-3"&gt; {props.description} &lt;/h3&gt;
+    
+          &lt;/div&gt;
+        &lt;/div&gt;
+        );
+    
+    }
+    
+    
+    export default Weather;
+     
+
+and here is the app component: I have check the console and Its working but the data is not display on the screen , for an unknown reason , all the help would be much appreciate. thanks in advance ! 
+
+    import 'bootstrap/dist/css/bootstrap.css';
+    import React ,{useState}from 'react';
+    import './App.css';
+    import Weather from './components/weather';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import "weather-icons/css/weather-icons.css";
+    import Form from './components/form';
+    
+    
+    function App (props) {
+    
+    const API_key = "5dca448e69234b2a6a26f52ed3883a47";
+    
+    const [fields, setFields] = useState({city: '', country: ''});
+    
+    const [icon, setIcon] = useState({
+          Thunderstorm: "wi-thunderstorm",
+          Drizzle: "wi-sleet",
+          Rain: "wi-storm-showers",
+          Snow: "wi-snow",
+          Atmosphere: "wi-fog",
+          Clear: "wi-day-sunny",
+          Clouds: "wi-day-fog"
+     });
+    
+      async function fetchData (e) {
+        e.preventDefault();
+        const city = e.target.elements.city.value;
+         const country = e.target.elements.country.value;
+    
+    
+        const weather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&amp;appid=${API_key}`);
+        const response = await weather.json();
+    
+        setFields({
+            city: `${response.name}, ${response.sys.country}`,
+            country: response.sys.country,
+            main: response.weather[0].main,
+            celsius: calCelsius(response.main.temp),
+            temp_max: calCelsius(response.main.temp_max),
+            temp_min: calCelsius(response.main.temp_min),
+            description: response.weather[0].description,
+    
+        })
+    
+    
+        console.log(response);
+    
+      }
+    
+    
+    // aqui esto no procede porque no estamos cargando data una vez el componentDidMount, aqui esperamos a realizar una accion para cargar los datos,
+    // no al principio cuando se ha montado el component
+    //useEffect(() =&gt; {
+      //fetchData();
+    
+    //},[]);
+    
+    
+    function calCelsius(temperatura){
+        let cell = Math.floor(temperatura - 273.15);
+        return cell;
+        }
+    
+    
+      return(
+      &lt;div className="App"&gt;
+          &lt;h1&gt;Weather app&lt;/h1&gt;
+    
+          &lt;Form loadweather={fetchData} /&gt;
+    
+          &lt;Weather
+          city={fields.city}
+          country={fields.country}
+          temp_celsius={fields.celsius}
+          temp_min={fields.temp_min}
+          temp_max={fields.temp_max}
+          description={fields.description}
+          weatherIcon={fields.icon}
+          /&gt;
+    
+    
+        &lt;/div&gt;
+        );
+    
+    }
+    
+    
+    export default App;

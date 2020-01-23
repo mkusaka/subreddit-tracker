@@ -1,145 +1,72 @@
 # golang
-## [1][Go's Tooling is an Undervalued Technology](https://www.reddit.com/r/golang/comments/es621w/gos_tooling_is_an_undervalued_technology/)
-- url: https://nullprogram.com/blog/2020/01/21/
+## [1][Release 0.1 (codename: F*ck it, ship it) of my Speedrun game with Go, Ebiten and resolv](https://www.reddit.com/r/golang/comments/ess860/release_01_codename_fck_it_ship_it_of_my_speedrun/)
+- url: https://github.com/mlesniak/speedrun
 ---
 
-## [2][Hiring Go Engineers at Coder](https://www.reddit.com/r/golang/comments/erz90i/hiring_go_engineers_at_coder/)
-- url: https://www.reddit.com/r/golang/comments/erz90i/hiring_go_engineers_at_coder/
----
-I'm a senior engineer at https://coder.com.
-
-We're a small startup in Austin, TX looking to scale our Go team with solid engineers. The positions involve developing and maintaining the Go microservices that serve our development platform on kubernetes. There are more details on precisely what the company does on the site.
-
-We want someone by our downtown Austin office but are open to remote for the first few months until we can get you relocated. If you’re really good, full time remote is also possible. US &amp; Canada preferred.
-
-We are big on open source. Check out some of our projects at https://github.com/cdr or mine at https://github.com/nhooyr.
-
-We want solid engineers and will pay accordingly (90k - 200k USD).
-
-The general hiring process looks like:
-
-1. Technical interview directly with me
-    - I won't quiz you on useless trivia
-    - Most of my questions will be about general programming, Go, docker, k8s etc.
-2. I'll give you a 2 hour take home for which you'll be compensated with a $200 amazon gift card.
-3. You have a interview with our CTO about your goals and a touch of tech
-4. You have a general call with a different senior engineer
-5. One last call to discuss your compensation and then the offer gets formally sent out
-
-You’ll get 3 weeks PTO standard (you can always take more unpaid) plus 10 company holidays yearly, solid work life balance (we don’t work more than 40 hours a week) and whatever desk setup you want. We have a very talented team full of Go lovers and I’m looking forward to seeing it grow.
-
-Please email me at [anmol@coder.com](mailto:anmol@coder.com) with your resume.
-## [3][Reduce debugging time while programming. Use static and stack-trace analysis to determine which func call causes the error.](https://www.reddit.com/r/golang/comments/esb2i4/reduce_debugging_time_while_programming_use/)
-- url: https://github.com/snwfdhmp/errlog
+## [2][termenv - Advanced ANSI style &amp; color support for your terminal applications](https://www.reddit.com/r/golang/comments/ess2vz/termenv_advanced_ansi_style_color_support_for/)
+- url: https://github.com/muesli/termenv
 ---
 
-## [4][Load balancing goroutines in Go](https://www.reddit.com/r/golang/comments/es9wuq/load_balancing_goroutines_in_go/)
-- url: https://medium.com/@addityasingh/load-balancing-goroutines-in-go-57e0896c7f86?source=friends_link&amp;sk=6e5b32bb42717b2b0577a78753bfa285
+## [3][Hiring Engineers at Shopee Singapore](https://www.reddit.com/r/golang/comments/esqgqi/hiring_engineers_at_shopee_singapore/)
+- url: https://www.reddit.com/r/golang/comments/esqgqi/hiring_engineers_at_shopee_singapore/
+---
+*Hiring GO Engineers at Shopee Singapore*
+
+Shopee is the leading e-commerce platform in Southeast Asia and Taiwan. Launched in 2015, it is a platform tailored for the region, providing customers with an easy, secure and fast online shopping experience through strong payment and fulfillment support. We believe online shopping should be accessible, easy and enjoyable. This is the vision Shopee aspires to deliver on the platform, every single day.
+
+We're hiring many positions. For backend, we're using Golang. If you're interested in please apply by the link below. Even you don't have Go knowledge, we provide the Golang training course after joining with us.
+
+**The salary range :5k-12k SGD/month + bonus 1-3 months + RSU** We also provide relocation package + visa sponsor to Singapor :)
+The general hiring process:
+
+* HR interview
+* Technical interview 1 (Coding interview)
+* Technical interview 2 (Coding interview)
+* Final technical interview and project experience interview
+
+You can use any programming language you like to code in coding interview :)
+
+PLEASE APPLY VIA THESE LINK so I can guide you through the recruitment process and you have higher chance of being selected for interview.
+
+* Server Engineer (Fresh grad): https://grnh.se/84f741b62
+* Server Engineer (Experienced): https://grnh.se/0f2646202
+
+For other positions, you can see at: https://grnh.se/5a1b27882
+
+Contact me: terminator.coder@gmail.com
+## [4][Inlined defers in Go 1.14](https://www.reddit.com/r/golang/comments/esf8hj/inlined_defers_in_go_114/)
+- url: https://rakyll.org/inlined-defers/
 ---
 
-## [5][golang systemd reload configuration instruction](https://www.reddit.com/r/golang/comments/es9lpn/golang_systemd_reload_configuration_instruction/)
-- url: https://www.reddit.com/r/golang/comments/es9lpn/golang_systemd_reload_configuration_instruction/
----
-Does anyone know how to catch a systemd "reload" instruction in a golang service? 
-
-I'm looking at the [go-systemd libraries](https://github.com/coreos/go-systemd) but I don't see a method of responding to a D-bus "Reload" instruction?
-## [6][gzip: An out-of-the-box, also customizable gzip middleware for Gin and net/http](https://www.reddit.com/r/golang/comments/es97qf/gzip_an_outofthebox_also_customizable_gzip/)
-- url: https://www.reddit.com/r/golang/comments/es97qf/gzip_an_outofthebox_also_customizable_gzip/
----
-https://github.com/nanmu42/gzip
-
-# Look and Feel
-
-## Gin
-
-```go
-import github.com/nanmu42/gzip
-
-func main() {
-	g := gin.Default()
-
-        // use default settings
-	g.Use(gzip.DefaultHandler().Gin)
-
-	g.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, map[string]interface{}{
-			"code": 0,
-			"msg":  "hello",
-			"data": fmt.Sprintf("l%sng!", strings.Repeat("o", 1000)),
-		})
-	})
-
-	log.Println(g.Run(fmt.Sprintf(":%d", 3000)))
-}
-```
-
-## net/http
-
-```go
-import github.com/nanmu42/gzip
-
-func main() {
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		writeString(w, fmt.Sprintf("This content is compressed: l%sng!", strings.Repeat("o", 1000)))
-	})
-
-    // wrap http.Handler using default settings
-	log.Println(http.ListenAndServe(fmt.Sprintf(":%d", 3001), gzip.DefaultHandler().WrapHandler(mux)))
-}
-
-func writeString(w http.ResponseWriter, payload string) {
-	w.Header().Set("Content-Type", "text/plain; charset=utf8")
-	_, _ = io.WriteString(w, payload+"\n")
-}
-```
-
-# Customizable Handler
-
-Handler can be customized during initialization:
-
-```go
-import github.com/nanmu42/gzip
-
-handler := gzip.NewHandler(gzip.Config{
-    // gzip compression level to use
-	CompressionLevel: 6,
-    // minimum content length to trigger gzip, the unit is in byte.
-	MinContentLength: 256,
-    // RequestFilter decide whether or not to compress response judging by request.
-    // Filters are applied in the sequence here.
-	RequestFilter: []RequestFilter{
-	    NewCommonRequestFilter(),
-	    DefaultExtensionFilter(),
-	},
-    // ResponseHeaderFilter decide whether or not to compress response
-    // judging by request
-	ResponseHeaderFilter: []ResponseHeaderFilter{
-		NewSkipCompressedFilter(),
-		DefaultContentTypeFilter(),
-	},
-})
-```
-
-`RequestFilter` and `ResponseHeaderFilter` are interfaces.
-You may define one that specially suits your need.
-## [7][Is there something like npmtrends.com for Go?](https://www.reddit.com/r/golang/comments/es91qy/is_there_something_like_npmtrendscom_for_go/)
-- url: https://www.reddit.com/r/golang/comments/es91qy/is_there_something_like_npmtrendscom_for_go/
----
-npmtrends is great to check traction, growth base of a node module. Is there anything similar in Go land?
-## [8][cabify/gotoprom: Type-safe Prometheus metrics builder library for golang](https://www.reddit.com/r/golang/comments/ers1df/cabifygotoprom_typesafe_prometheus_metrics/)
-- url: https://github.com/cabify/gotoprom
+## [5][Learning to Go: A Star Trek themed tutorial](https://www.reddit.com/r/golang/comments/esr86i/learning_to_go_a_star_trek_themed_tutorial/)
+- url: https://timberry.dev/posts/learning-to-go-part0/
 ---
 
-## [9][Interface in library instead of consumer](https://www.reddit.com/r/golang/comments/es615w/interface_in_library_instead_of_consumer/)
-- url: https://www.reddit.com/r/golang/comments/es615w/interface_in_library_instead_of_consumer/
----
-I was doing a code review for a package some of my fellow devs were making and found an interface that was defined in out that had every method from the package's main struct in it. I naturally commented that it's not being used by anything and so should be removed. They countered with it being for the consumers to easily mock and even included the mock in this package. We got into a debate and their argument was generally that it provides more by including a mock than it takes away - being less declarative in its usage elsewhere, and that generally for now all consumers will likely use all methods. So we went with leaning it in for now and monitoring changes.
-
-I know that the style guide says interfaces go in consumers but I couldn't really find _why_ that's the case.
-
-Anyone able to shed light on it?
-## [10][Building a global services network using Go, QUIC and Micro](https://www.reddit.com/r/golang/comments/ertnaa/building_a_global_services_network_using_go_quic/)
-- url: https://micro.mu/blog/2019/12/05/building-a-microservices-network.html
+## [6][HTTP request timeouts in Go for beginners](https://www.reddit.com/r/golang/comments/esqlcf/http_request_timeouts_in_go_for_beginners/)
+- url: https://medium.com//http-request-timeouts-in-go-for-beginners-fe6445137c90?source=friends_link&amp;sk=4ac6ed5cee09b68616b4990b38bfbfd8
 ---
 
+## [7][Has anyone implemented Authboss?](https://www.reddit.com/r/golang/comments/esn3n3/has_anyone_implemented_authboss/)
+- url: https://www.reddit.com/r/golang/comments/esn3n3/has_anyone_implemented_authboss/
+---
+I’m looking for an authentication/session system and having trouble finding repos that use https://github.com/volatiletech/authboss or https://github.com/qor/auth which seem to be the largest, full-featured auth systems for Go. (There are also OAuth2 specific ones like https://github.com/markbates/goth)
+
+Thanks to [sourcegraph](https://sourcegraph.com/github.com/volatiletech/authboss/-/blob/authboss.go#L30:21) I was able to find https://github.com/tryy3/webbforum. However, I can't seem to find any other projects using what appears to be the largest auth library: Authboss.
+
+What do we do for Auth in Go? Firebase? OAuth2? LDAP? Or is everything big custom session + cookie + role / ACL + authentication middleware?
+## [8][distri: 20x faster initramfs (initrd) from scratch](https://www.reddit.com/r/golang/comments/esgnvk/distri_20x_faster_initramfs_initrd_from_scratch/)
+- url: https://michael.stapelberg.ch/posts/2020-01-21-initramfs-from-scratch-golang/
+---
+
+## [9][LDAP ntSecurityDescriptor parsing/applying ACLs/ACEs](https://www.reddit.com/r/golang/comments/esrre1/ldap_ntsecuritydescriptor_parsingapplying_aclsaces/)
+- url: https://www.reddit.com/r/golang/comments/esrre1/ldap_ntsecuritydescriptor_parsingapplying_aclsaces/
+---
+Hey All,
+
+Just curious to see if anyone has been able to manage ACLs/ACEs via the golang ldap.v3 module? If so how did you achieve it
+
+Thanks
+## [10][[HELP] Any suggestions open source microservice ?](https://www.reddit.com/r/golang/comments/esstzz/help_any_suggestions_open_source_microservice/)
+- url: https://www.reddit.com/r/golang/comments/esstzz/help_any_suggestions_open_source_microservice/
+---
+I want to learn about microservice and its architecture and curious about how to implement a fully featured service. It would help me if you guys could share links to any open source microservice, so that I can learn on my own about microservice by reading their code.

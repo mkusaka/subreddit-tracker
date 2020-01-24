@@ -1,136 +1,192 @@
 # ruby
-## [1][Sharing an online tool to generate dry-structs from JSON / JSON Schema / GraphQL definitions](https://www.reddit.com/r/ruby/comments/esrvbr/sharing_an_online_tool_to_generate_drystructs/)
+## [1][16 New ML Gems for Ruby](https://www.reddit.com/r/ruby/comments/et2bvc/16_new_ml_gems_for_ruby/)
+- url: https://ankane.org/new-ml-gems
+---
+
+## [2][Ruby ML for Python Coders](https://www.reddit.com/r/ruby/comments/et2bbh/ruby_ml_for_python_coders/)
+- url: https://ankane.org/ruby-ml-for-python-coders
+---
+
+## [3][How to Have Heroku Automatically Run Database Migrations Before a Rails App is Deployed](https://www.reddit.com/r/ruby/comments/est6ks/how_to_have_heroku_automatically_run_database/)
+- url: https://scottbartell.com/2020/01/22/automating-rails-database-migrations-on-heroku/
+---
+
+## [4][Trying to learn Polymorphism/Duck Tying/Inheritance file structure](https://www.reddit.com/r/ruby/comments/et3izy/trying_to_learn_polymorphismduck_tyinginheritance/)
+- url: https://www.reddit.com/r/ruby/comments/et3izy/trying_to_learn_polymorphismduck_tyinginheritance/
+---
+Hello,
+
+I'm trying to learn more about Polymorphism in Ruby, and my main question is **what should the file structure look like?** Most examples online don't really include the file structure, they just list it all out.
+
+As of right now, I have all of my classes in a single file for this Polymorphism example. This file is in the **lib** directory.
+
+My nooby example:
+
+I have a base "generic class" which is called FoodType. This has a single method called get\_food which takes in a "food type" as an argument.
+
+I have multiple various "food types" that are different classes (Fruit, Vegetable, Dairy, Meat etc.) and these all have their own get\_food methods (which just gets some different strings with examples of the food).
+
+So essentially, when I call FoodType.get\_food( give it a food\_type class here) it ends up using the correct food type sub class and outputs the correct example. I have this working. This is duck typed.
+
+* But my question is HOW do I structure this in the lib directory?
+* I'm guessing I should first make a food\_type.rb, and this file should only contain my generic FoodType class. I should also make separate files for meat.rb, vegetable.rb, etc.
+* Do I make another directory in lib for these files? Do I also have to change the class of the subtypes to like FoodType::Meat ??
+* My code is working and it's duck typed, so I'm not using inheritance, so I'm not using this notation "&lt;" in the class names. But should I instead use inheritance?
+* I have no idea what the file structure/class name syntax is suppose to look like when I have to separate this into multiple files/directories. Please please please give me an example of how this would work.
+
+Thank you
+## [5][What are some important ruby topics to study before a Ruby Software Developer interview?](https://www.reddit.com/r/ruby/comments/esusjq/what_are_some_important_ruby_topics_to_study/)
+- url: https://www.reddit.com/r/ruby/comments/esusjq/what_are_some_important_ruby_topics_to_study/
+---
+If you are interviewing someone for the role of an experienced ruby developer, what topics would you want the candidate to know thoroughly in Ruby / Rails ?
+## [6][Help with running Jekyll - having trouble with gems and ruby set up - MAC OS](https://www.reddit.com/r/ruby/comments/et06vx/help_with_running_jekyll_having_trouble_with_gems/)
+- url: https://www.reddit.com/r/ruby/comments/et06vx/help_with_running_jekyll_having_trouble_with_gems/
+---
+Hello,
+
+I am a beginner to ruby and gems. I was trying to do `jekyll -v`  then it showed this error message:
+
+&gt;Ignoring eventmachine-1.2.7 because its extensions are not built. Try: gem pristine eventmachine --version 1.2.7  
+&gt;  
+&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1  
+&gt;  
+&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
+&gt;  
+&gt;Ignoring sassc-2.2.1 because its extensions are not built. Try: gem pristine sassc --version 2.2.1  
+&gt;  
+&gt;Traceback (most recent call last):  
+&gt;  
+&gt;21: from /Users/H.QIAN/gems/bin/jekyll:23:in \`&lt;main&gt;'  
+&gt;  
+&gt;20: from /Users/H.QIAN/gems/bin/jekyll:23:in \`load'  
+&gt;  
+&gt;19: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/exe/jekyll:8:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;18: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;17: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;16: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/lib/jekyll.rb:206:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;15: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;14: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;13: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll-sass-converter.rb:4:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;12: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;11: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;10: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll/converters/scss.rb:3:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;9: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;8: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;7: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;6: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`require\_relative'  
+&gt;  
+&gt;5: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc/native.rb:3:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;4: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;3: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;2: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:4:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;1: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;/Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require': cannot load such file -- 2.6/ffi\_c (LoadError)  
+&gt;  
+&gt;22: from /Users/H.QIAN/gems/bin/jekyll:23:in \`&lt;main&gt;'  
+&gt;  
+&gt;21: from /Users/H.QIAN/gems/bin/jekyll:23:in \`load'  
+&gt;  
+&gt;20: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/exe/jekyll:8:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;19: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;18: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;17: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/lib/jekyll.rb:206:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;16: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;15: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;14: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll-sass-converter.rb:4:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;13: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;12: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;11: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll/converters/scss.rb:3:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;10: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;9: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;8: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;7: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`require\_relative'  
+&gt;  
+&gt;6: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc/native.rb:3:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;5: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;4: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;3: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:3:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;2: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:6:in \`rescue in &lt;top (required)&gt;'  
+&gt;  
+&gt;1: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;/Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require': incompatible library version - /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi\_c.bundle (LoadError)
+
+then, I tried to do `gem install ffi` then it shows different message when I tried to run `jekyll -v`
+
+&amp;#x200B;
+
+ 
+
+&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
+&gt;  
+&gt;Ignoring sassc-2.2.1 because its extensions are not built. Try: gem pristine sassc --version 2.2.1  
+&gt;  
+&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1  
+&gt;  
+&gt;jekyll 4.0.0
+
+which actually shows me the version name but I am not sure what I should do with all the error messages I have received above. 
+
+&amp;#x200B;
+
+Can someone explain what is going on? And will it be possible to restart everything and start to install gems again and a new version of ruby too?
+
+&amp;#x200B;
+
+Thanks in advance for any help.
+## [7][Sharing an online tool to generate dry-structs from JSON / JSON Schema / GraphQL definitions](https://www.reddit.com/r/ruby/comments/esrvbr/sharing_an_online_tool_to_generate_drystructs/)
 - url: https://app.quicktype.io/
 ---
 
-## [2][Would sorting a sorting an array linearly using multi threading speed up it's sorting time?](https://www.reddit.com/r/ruby/comments/esrrwr/would_sorting_a_sorting_an_array_linearly_using/)
+## [8][Rails 6 adds touch option to has_one association](https://www.reddit.com/r/ruby/comments/esveb5/rails_6_adds_touch_option_to_has_one_association/)
+- url: https://www.abhaynikam.in/posts/rails-6-adds-touch-option-to-has-one-association/
+---
+
+## [9][I'm a Ruby developer looking to relocate (EUR or USA), please give me feedback on my CV](https://www.reddit.com/r/ruby/comments/esw7eb/im_a_ruby_developer_looking_to_relocate_eur_or/)
+- url: https://www.reddit.com/r/ruby/comments/esw7eb/im_a_ruby_developer_looking_to_relocate_eur_or/
+---
+[https://pablo-vizcay.tech/](https://pablo-vizcay.tech/)  
+
+
+Any feedback appreciated.. good, bad, suggestions.
+## [10][Would sorting a sorting an array linearly using multi threading speed up it's sorting time?](https://www.reddit.com/r/ruby/comments/esrrwr/would_sorting_a_sorting_an_array_linearly_using/)
 - url: https://www.reddit.com/r/ruby/comments/esrrwr/would_sorting_a_sorting_an_array_linearly_using/
 ---
 Say for instance, we have an array X. If we split X in half and then sort each of those halves concurrently using different threads and finally combine them, would the sorting time drop from O(n) to O(n/2)?
 
 Or is O(n/2) ideally just O(n) with ½ as the constant factor?
-## [3][Inside Bitcoin's Proof-of-Work / Waste 10-Minute Mining Lottery - The Ruby Edition by Example](https://www.reddit.com/r/ruby/comments/esgkpj/inside_bitcoins_proofofwork_waste_10minute_mining/)
-- url: https://github.com/openblockchains/awesome-blockchains/tree/master/bitcoin_proof_of_work.rb
----
-
-## [4][How would you learn ruby if you had access to all the programs of the startup you're interested in working for?](https://www.reddit.com/r/ruby/comments/eskqgv/how_would_you_learn_ruby_if_you_had_access_to_all/)
-- url: https://www.reddit.com/r/ruby/comments/eskqgv/how_would_you_learn_ruby_if_you_had_access_to_all/
----
-That might be a dumb question, but I have little experience. I've completed 3 levels of C++ courses in college, I've learned beginner programming from 'How to design programs' (scheme/dr racket), and I've read half a book on ruby.
-
-With that said...my wife is an intern for a start up (ACH transfer platform), in a few months she is going to start learning to code on the job. Since she isn't going to start for another few months, I was hoping to (with permission) borrow their code and learn to program hands on. I know enough that I can recognize what's going on when I read code in an unfamiliar language. I know enough to use stackoverflow as a crutch if I have to. I assume I'm being unrealistic to some extent, but if this is an opportunity to learn Ruby HANDS ON, how would you best learn Ruby in my shoes?
-## [5][Rails 6.1 adds query method missing to find orphan records](https://www.reddit.com/r/ruby/comments/esasfy/rails_61_adds_query_method_missing_to_find_orphan/)
-- url: https://blog.saeloun.com/2020/01/21/rails-6-1-adds-query-method-missing-to-find-orphan-records
----
-
-## [6][Implementing numbers in "pure" Ruby](https://www.reddit.com/r/ruby/comments/eser00/implementing_numbers_in_pure_ruby/)
-- url: https://medium.com/carwow-product-engineering/implementing-numbers-in-pure-ruby-1d35ee53ee70
----
-
-## [7][Rails is Fast: Optimize Your View Performance](https://www.reddit.com/r/ruby/comments/esbysh/rails_is_fast_optimize_your_view_performance/)
-- url: https://blog.appsignal.com/2020/01/22/rails-is-fast-optimize-your-view-performance.html
----
-
-## [8][I've made a new search bar for RubyGems with MeiliSearch](https://www.reddit.com/r/ruby/comments/ese6nz/ive_made_a_new_search_bar_for_rubygems_with/)
-- url: https://www.reddit.com/r/ruby/comments/ese6nz/ive_made_a_new_search_bar_for_rubygems_with/
----
-[https://rubygems.meilisearch.com/](https://rubygems.meilisearch.com/)
-
-As a ruby and rails lover, I often need to find the best gem to solve my issue.
-
-Unfortunately, the search bar in the rubygems web site is not really user-friendly. It is not instant, and despite the advanced search, it's not easy to search in and find the gem you want.
-
-So, as a side project, I wanted to provide a better search bar: you can search by name (as "devise") or by keywords (as "coverage", "cron job"  or "web dev"). It will find the most famous rubygem matching your request.
-
-I used MeiliSearch to implement this search bar. MeiliSearch provides a relevant and search-as-you-type engine. Plus, it's open-source.
-
-So, here is my open-source search bar solution for our favorite open-source language!
-
-Give me your feedback!
-
-&amp;#x200B;
-
-Don't hesitate to give a star to the MeiliSearch repository ⭐️[https://github.com/meilisearch/MeiliSearch](https://github.com/meilisearch/MeiliSearch)
-
-We need your support! All the MeiliSearch team thanks you!
-## [9][I made a small Ruby project with bundle gem command and rspec test framework, not sure how to require files inside lib folder in the tests](https://www.reddit.com/r/ruby/comments/esjdy7/i_made_a_small_ruby_project_with_bundle_gem/)
-- url: https://www.reddit.com/r/ruby/comments/esjdy7/i_made_a_small_ruby_project_with_bundle_gem/
----
-Hello, so inside the `lib` folder I have the following structure:
-
-```
-lib/
-  foo.rb
-  foo/
-    A.rb
-    B.rb
-    version.rb
-```
-
-* Inside `foo.rb` I have `require foo/version`, `require foo/A`, `require foo/version`
-* At the standard `gemspec` file there is a `spec.require_paths = ['lib']`
-* At the standard `spec_helper` file there is a `require 'foo'`
-
-Now I have a `spec/foo/A.rb` file which should test the functionality of `Foo::A`, but everytime I use `Foo::A` it says its an unknown constant...
-
-I'm using `require_relative` to require the specific `foo/A.rb`, but IMO it doesn't seems right to do that... What should I do?
-
-**EDIT**
-
-NVM, renaming `spec/foo/A.rb` to `spec/foo/A_spec.rb` solved the issue, I feel dumb.
-## [10][Rost me - I mean, what version of this code is the best for a job position (JR)?](https://www.reddit.com/r/ruby/comments/esf1fo/rost_me_i_mean_what_version_of_this_code_is_the/)
-- url: https://www.reddit.com/r/ruby/comments/esf1fo/rost_me_i_mean_what_version_of_this_code_is_the/
----
-So I am training for a Junior position as a Ruby Dev.
-
-I am sure there\`s something better then my awnsers. But what I would like to ask is wich of the three is more "professional like". I do preffer the human readbility of the number 3. But it seems people is aways trying to keep stuff in one line.
-
-In this particular example, number 3 is faster (I know I used an extra variable for it, and I hope ruby processor makes it worth :D). 
-
-What do you take in consideration if wanting someone for a position? Wich of the 3 would you like better (or dislike less).
-
-The software is suposed to receive an a-b range and test each number for its value powered to the position (left to right) and sum if it's equal to the original number, returning a list of this numbers. 
-
-Form 1:  838ms
-
-    def sum_dig_pow(a, b)
-    
-      (a..b).each.map { |x| x if x.to_s.split(//).each_with_index.map { |num, pos| num.to_i ** (pos.to_i + 1)}.sum == x }.compact
-      
-    end
-
-&amp;#x200B;
-
-Form 2:  863ms
-
-    
-    def sum_dig_pow(a, b)
-      (a..b).each.map do |x|
-        x if x.to_s.split(//).each_with_index.map { |num, pos| num.to_i ** (pos.to_i + 1)}.sum == x
-       end.compact
-    end
-
-&amp;#x200B;
-
-Form 3:  801ms
-
-    def sum_dig_pow(a, b)
-      awnser = []
-      (a..b).each do |x|
-        deva = x.to_s.split(//).each_with_index.map { |num, pos| num.to_i ** (pos.to_i + 1)}.sum
-        if deva == x
-          awnser.push(x)
-        end
-       end
-       awnser
-    end
-
-Possible awnsers:
-
-1.) Whathever, you\`re Junior, noone is giving you cpu and memory saving jobs
-
-2.) Type less!
-
-3.) Show you know the language using obscure non human readble stuff
-
-4.) It really depends of your boss personal taste

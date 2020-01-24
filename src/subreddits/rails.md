@@ -19,7 +19,159 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][AMP + IMG + RAILS](https://www.reddit.com/r/rails/comments/esqb14/amp_img_rails/)
+## [2][How do you work with '.erb' files in VS Code?](https://www.reddit.com/r/rails/comments/et71gs/how_do_you_work_with_erb_files_in_vs_code/)
+- url: https://www.reddit.com/r/rails/comments/et71gs/how_do_you_work_with_erb_files_in_vs_code/
+---
+Hey guys!
+
+I've come from IDE RubyMine, but I really want to simplify my experience and start using VS Code.
+
+Everything is more or less okay, or at least you can used to VS Code experience except '.erb' files. It can either thread them as 'html' which completely kill Ruby experience either like Ruby files, but it's even more mess.
+
+How do you usually work with '.erb' files?
+## [3][What happened to Devise ownership?](https://www.reddit.com/r/rails/comments/et4rd9/what_happened_to_devise_ownership/)
+- url: https://www.reddit.com/r/rails/comments/et4rd9/what_happened_to_devise_ownership/
+---
+It's very strange not to find any discussion anywhere regarding the move of the Devise repo. Am I missing it?
+
+Different Google/Reddit/DDG searches turn up nothing--I've never seen that before for something so widely used. No blog posts or issues discussions threads or other announcements that I can find, and kind of a random and empty new home for the repo.
+
+Commentary on the state of the Rails community? (Were it a Node module I'd think there'd be an explosion of posts.)
+## [4][Using Devise to show User's own creations](https://www.reddit.com/r/rails/comments/et92ft/using_devise_to_show_users_own_creations/)
+- url: https://www.reddit.com/r/rails/comments/et92ft/using_devise_to_show_users_own_creations/
+---
+I am currently working on a project and project has some scaffolds belonging to the user. It's ok and I've done these parts. Now, I have a question. 
+
+First, Imagine I have a scaffold called "expenses" and it is only accessible from registered users. 
+
+Second, I want a user to be able to see "only" her own expenses. 
+
+Is that possible? if yes, how? Thanks a lot. 
+
+P.S : Sorry for bad English, I'm not a native English speaker.
+## [5][Getting errors while checking for Jekyll version](https://www.reddit.com/r/rails/comments/et01rk/getting_errors_while_checking_for_jekyll_version/)
+- url: https://www.reddit.com/r/rails/comments/et01rk/getting_errors_while_checking_for_jekyll_version/
+---
+Hello,
+
+&amp;#x200B;
+
+I have installed `ffi` and when I tried to check the `jekyll -v` I have gotten this error message:
+
+ 
+
+&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
+&gt;  
+&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1
+
+It was previously showing the message below, before do `gem install ffi`
+
+&gt;Ignoring eventmachine-1.2.7 because its extensions are not built. Try: gem pristine eventmachine --version 1.2.7  
+&gt;  
+&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1  
+&gt;  
+&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
+&gt;  
+&gt;Ignoring sassc-2.2.1 because its extensions are not built. Try: gem pristine sassc --version 2.2.1  
+&gt;  
+&gt;Traceback (most recent call last):  
+&gt;  
+&gt;21: from /Users/H.QIAN/gems/bin/jekyll:23:in \`&lt;main&gt;'  
+&gt;  
+&gt;20: from /Users/H.QIAN/gems/bin/jekyll:23:in \`load'  
+&gt;  
+&gt;19: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/exe/jekyll:8:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;18: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;17: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;16: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/lib/jekyll.rb:206:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;15: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;14: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;13: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll-sass-converter.rb:4:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;12: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;11: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;10: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll/converters/scss.rb:3:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;9: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;8: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;7: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;6: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`require\_relative'  
+&gt;  
+&gt;5: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc/native.rb:3:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;4: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;3: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;2: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:4:in \`&lt;top (required)&gt;'  
+&gt;  
+&gt;1: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
+&gt;  
+&gt;/Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require': cannot load such file -- 2.6/ffi\_c (LoadError)
+
+Please help me out with any advice. Thanks
+## [6][E2E, Integration and Unit tests in Rails?](https://www.reddit.com/r/rails/comments/et0w9y/e2e_integration_and_unit_tests_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/et0w9y/e2e_integration_and_unit_tests_in_rails/
+---
+What would be the classification of these tests in Rails?
+
+* Unit tests would be testing models and services?
+* Integration tests would be testing controllers?
+* E2E would be testing the front-end behaviour with capybara?
+## [7][Is there a trick to using Rails 6/React/Redux?](https://www.reddit.com/r/rails/comments/esze1e/is_there_a_trick_to_using_rails_6reactredux/)
+- url: https://www.reddit.com/r/rails/comments/esze1e/is_there_a_trick_to_using_rails_6reactredux/
+---
+I'm building an app that uses Rails 6 and React. Everything works great and smooth. I decided to add Redux in the way that I know how with just React. I'm not able to get any data into the redux store and show up in console.log. Is there some step I need to take care of in order to work in Rails 6? 
+
+&amp;#x200B;
+
+Here's my \`App.js\`:
+
+&amp;#x200B;
+
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import Dashboard from './Dashboard';
+    import { Provider } from "react-redux";
+    import { createStore, applyMiddleware } from 'redux'; // we get our store from redux library and we need middleware to wire up Thunk
+    import thunk from 'redux-thunk';
+    import reducers from './reducers/rootReducer'; 
+    import "bootstrap/dist/css/bootstrap.css";
+    import "bootstrap/dist/css/bootstrap.min.css";
+    
+    const store = createStore(reducers, applyMiddleware(thunk));
+    
+    // this is how you hook up
+    store.subscribe(() =&gt; {
+        console.log('the new state is', store.getState()); 
+        consoel.log('----------');
+    });
+    
+    
+    document.addEventListener('DOMContentLoaded', () =&gt; {
+        ReactDOM.render(
+            &lt;Provider store={store}&gt;
+            &lt;Dashboard /&gt;
+            &lt;/Provider&gt;,
+            document.body.appendChild(document.createElement('div')),
+        )
+    });
+## [8][Renaming nested_attributes param](https://www.reddit.com/r/rails/comments/eswzgi/renaming_nested_attributes_param/)
+- url: https://www.reddit.com/r/rails/comments/eswzgi/renaming_nested_attributes_param/
+---
+So I'm writing an api and long story short I'm running into a few headaches when it comes to sending/receiving the param for my nested\_attributes without some sort of workaround on the front end. I was just wondering if I could renaming my permitted params for my `hours_attributes` to just `hours`?
+## [9][AMP + IMG + RAILS](https://www.reddit.com/r/rails/comments/esqb14/amp_img_rails/)
 - url: https://www.reddit.com/r/rails/comments/esqb14/amp_img_rails/
 ---
 Error about width and height (random?).
@@ -55,11 +207,11 @@ I don't undestad why but sometime those values are showed and sometime they miss
 What is wrong?
 
 p.s. the images have different sizes. They are uploaded by users.
-## [3][Is there a boilerplate repo that has authentication configured?](https://www.reddit.com/r/rails/comments/esgmnf/is_there_a_boilerplate_repo_that_has/)
+## [10][Is there a boilerplate repo that has authentication configured?](https://www.reddit.com/r/rails/comments/esgmnf/is_there_a_boilerplate_repo_that_has/)
 - url: https://www.reddit.com/r/rails/comments/esgmnf/is_there_a_boilerplate_repo_that_has/
 ---
 I'm building an app from scratch using Rails and React. Is there any boilerplate project out there that has a simple log in page and Devise (or other authentication gem) configured that I can work off of? The closest thing I can find is thoughtbot's https://github.com/thoughtbot/clearance
-## [4][asdf version manager and bundle exec question](https://www.reddit.com/r/rails/comments/esi2s7/asdf_version_manager_and_bundle_exec_question/)
+## [11][asdf version manager and bundle exec question](https://www.reddit.com/r/rails/comments/esi2s7/asdf_version_manager_and_bundle_exec_question/)
 - url: https://www.reddit.com/r/rails/comments/esi2s7/asdf_version_manager_and_bundle_exec_question/
 ---
 I'm hoping some asdf users here can shed some light on this for me:
@@ -73,109 +225,3 @@ i'm having to prepend bundle exec before executing gem commands like rspec, side
 my coworker does NOT have to prepend bundle exec for anything. we checked her zshrc file and she doesn't have any bundle exec aliases either.
 
 Why am i having to prepend bundle exec and she doesn't? Why is it specific to gems so far and not rake? Is it typical with asdf to have to prepend it without an alias?
-## [5][Reading ActiveRecord Callbacks guide, is there any difference between using a method vs a proc in these code examples?](https://www.reddit.com/r/rails/comments/escllx/reading_activerecord_callbacks_guide_is_there_any/)
-- url: https://www.reddit.com/r/rails/comments/escllx/reading_activerecord_callbacks_guide_is_there_any/
----
-I am reading the below in the callbacks guide, and am wondering, is there a difference/benefit between just using a private class method `Order#paid_with_card?` versus the second option of having a Proc used `Proc.new { paid_with_card? }`? 
-
--------
-
-https://guides.rubyonrails.org/active_record_callbacks.html#using-if-and-unless-with-a-symbol
-
-&gt;You can associate the :if and :unless options with a symbol corresponding to the name of a predicate method that will get called right before the callback. When using the :if option, the callback won't be executed if the predicate method returns false; when using the :unless option, the callback won't be executed if the predicate method returns true. This is the most common option. Using this form of registration it is also possible to register several different predicates that should be called to check if the callback should be executed.
-
-    class Order &lt; ApplicationRecord
-      before_save :normalize_card_number, if: :paid_with_card?
-    end
-
-https://guides.rubyonrails.org/active_record_callbacks.html#using-if-and-unless-with-a-proc
-
-&gt;It is possible to associate :if and :unless with a Proc object. This option is best suited when writing short validation methods, usually one-liners:
-
-    class Order &lt; ApplicationRecord
-      before_save :normalize_card_number, if: Proc.new { paid_with_card? }
-    end
-
------
-
-I think I need to review my Proc understanding, basics of it is just storing a block as a variable that can be called later with `.call` of course, according to the doc there is more nuances involved. Referred to this:
-
-https://ruby-doc.org/core-2.6/Proc.html
-## [6][On estimating, my response to a client who indicated his budget of $2k (#freelancing #rails )](https://www.reddit.com/r/rails/comments/esdtx4/on_estimating_my_response_to_a_client_who/)
-- url: https://www.reddit.com/r/rails/comments/esdtx4/on_estimating_my_response_to_a_client_who/
----
-Recently I had the lawn re-done for my front yard. And the first thing I did was ask for an estimate.Am I a hypocrite for shying away from estimates for my own clients?
-
-I'm not sure. There's two kinds of work.While collar work - mostly mental and very little repetition - i do that.Blue collar work - the steps to re sod the grass on 99% of homes is quite similar.
-
-Take for example, a rails application. My client at example.com uses coffeescript for the frontend.A hot technology some time ago, nowadays its quite rare to come across it, and  most devs (including me) have forgotten the syntax for coffeescript. You application might use ES5 script.The point is that, on a rails application, there's many ways of doing things, unlike a lawn.Thousands on "variables" in software, in a re-sod or a plumbing situation, not many.
-
-So someone comes and asks for an estimate. When it's the first thing I'm doing on a codebase, it's a foggy situation.
-
-Let's say you're standing in a thick fog, and you client wants to you walk to the shed. Then he says, oh before you start walking can you estimate it, because I'm trying to keep it under 2k steps.As the "walker in the fog", you can see seven feet ahead. If you walk 7 feet, you can see 7 feet further. This is how it is when working with a rails application, especially when you're new to someones application.So the walkers estimate is: I don't know how many feet away the shed is, but I'm pretty sure it's not within 7 feet -  I'd see the shed if that's the case.
-
-My answer is the same for the estimate. It's possible I might spent only 5 hours ($500)In the case that it costs over $2k, I won't know until I've spent $1.3k, because I can only see $7k/feet ahead.
-## [7][AppSignal users, have you implemented Deploy Markers?](https://www.reddit.com/r/rails/comments/ese2zr/appsignal_users_have_you_implemented_deploy/)
-- url: https://www.reddit.com/r/rails/comments/ese2zr/appsignal_users_have_you_implemented_deploy/
----
-We currently use AppSignal for our logging, and now we want to implement deploy markers. My impression is that I just need to create a file './config/initializers/appsignal.rb' and add a single line:
-```
-ENV['APP_VERSION'] = Rails.application.secrets.version
-```
-My concern is that I'm unsure of which happens first, initializers getting run versus when the AppSignal gem loads './config/appaignal.yml.' In addition, does AppSignal read the environment variable APP\_VERSION for each log, or only once upon startup?
-## [8][API + Frontend - Should I use webpack or isolate them?](https://www.reddit.com/r/rails/comments/esb7fx/api_frontend_should_i_use_webpack_or_isolate_them/)
-- url: https://www.reddit.com/r/rails/comments/esb7fx/api_frontend_should_i_use_webpack_or_isolate_them/
----
-I usually build monolithic rails apps, often with a React or Vue SPA frontend.
-
-I am about to start developping a simple app with a RoR API. I would like to use React or Vue for the frontend, and I plan to develop a mobile app that will access the same API, but later, when I have more time to code.
-
-Also, since this is a personal project I want to build to showcase my dev skills, I intend to develop the API and the frontend with several frameworks/languages (React, Crystal, Elixir, React, Vue, Svelte, Webcomponents) and compare them.
-
-Would you advise me to create two separate projects/git repos (API + frontend) or should I go for webpack and bundle the frontend and the API together? Should I use git submodules?
-## [9][Build a Reddit Clone in Rails 6 [New Video Series]](https://www.reddit.com/r/rails/comments/es6m26/build_a_reddit_clone_in_rails_6_new_video_series/)
-- url: https://www.reddit.com/r/rails/comments/es6m26/build_a_reddit_clone_in_rails_6_new_video_series/
----
-Hi guys, I'm back with a new Ruby on Rails build. This time we are building a lightweight Reddit clone. I've shared some previous Rails builds here and thought this might be on interest to anyone who enjoyed those past videos. Hope you guys enjoy the video.
-
-**Part 1:**
-
-In this video I cover the setup of a new rails app, installing the devise gem and creating user accounts. Add functionality for users to create a new community/subreddit. Add functionality to create new posts for a community (using nested routes).
-
-[https://www.youtube.com/watch?v=aD6JvHKNPPM](https://www.youtube.com/watch?v=aD6JvHKNPPM)
-
-**Part 2 (Coming soon):**
-
-Signed in users can subscribe to communities and create new posts within them. Add functionality to allow subscribers to upvote / downvote posts and order them in community based on popularity. Add comments to posts.
-
-&amp;#x200B;
-
-The build is part of a collection of MVP's that I have been building after working in the tech startup space for some time and assisting in building minimum viable products.
-
-I post new web app builds on YouTube using Ruby on Rails 6 so feel free to check out the channel and add some recommendations for upcoming builds.
-## [10][Can a rails response contain a measurement of its own slowness?](https://www.reddit.com/r/rails/comments/esder2/can_a_rails_response_contain_a_measurement_of_its/)
-- url: https://www.reddit.com/r/rails/comments/esder2/can_a_rails_response_contain_a_measurement_of_its/
----
-Can a rails response contain a measurement of how much time was spent on activerecord, and view rendering.So this statistic:
-
-![img](sph7dmx7kcc41 "
-")
-
-show here like this:   
-
-
-    &lt;html&gt; 
-    &lt;body&gt; 
-    &lt;!-- stats  Views: 0.3ms .  ActiveRecord: 4.4ms --&gt;  
-    &lt;/body&gt;  
-    &lt;/html&gt;
-## [11][Authlogic::Session::Existence::SessionInvalidError](https://www.reddit.com/r/rails/comments/es30kk/authlogicsessionexistencesessioninvaliderror/)
-- url: https://www.reddit.com/r/rails/comments/es30kk/authlogicsessionexistencesessioninvaliderror/
----
-I'm running minitests and I'm getting this random error 
-
- Authlogic::Session::Existence::SessionInvalidError:  Authlogic::Session::Existence::SessionInvalidError: Your session is invalid and has the following errors: Activate &amp; Log in
-
-This doesn't appear for the say first 10 minitests and subsequently, all the later ones have this error. 
-
-I'm not sure where to look for since this error started to appear suddenly. Any help would be great

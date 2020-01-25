@@ -1,113 +1,119 @@
 # aws
-## [1][API error rates and latencies in Amazon Elastic Compute Cloud (Sydney)](https://www.reddit.com/r/aws/comments/eslenb/api_error_rates_and_latencies_in_amazon_elastic/)
-- url: https://www.reddit.com/r/aws/comments/eslenb/api_error_rates_and_latencies_in_amazon_elastic/
+## [1][Original Snowball retirement, Snowball Edge only from 4th Feb](https://www.reddit.com/r/aws/comments/et8d99/original_snowball_retirement_snowball_edge_only/)
+- url: https://www.reddit.com/r/aws/comments/et8d99/original_snowball_retirement_snowball_edge_only/
 ---
-I was getting following error when doing CLI operation today morning
+Anyone know any more about the original Snowball retirement?  I haven't been able to find any announcement of it or any more details, but the following notification appears in the AWS console:
 
-&gt;An error occurred (InternalError) when calling the DescribeInstances operation (reached max retries: 4): An internal error has occurred
+&gt; On February 4th, 2020, the first-generation 48 TB and 80 TB Snowball devices will be retired from the Snowball Service. Devices ordered by February 3rd, 2020 will be fulfilled. These 48 TB and 80 TB devices will no longer be orderable on February 4th, 2020. The Snowball Edge Storage Optimized device replaces the first-generation Snowball device for data migration requirements.
 
-Next checked the status page and found that there was API Error and Latency error for EC2 service in Sydney region. 
-
-&gt; 4:41 PM PST We are investigating increased API error rates and latencies in the AP-SOUTHEAST-2 Region. Connectivity to existing instances is not impacted.
-
-One of my College rebooted a workspace and its still rebooting from past 45 minutes, but does not effect currently running instance or workspace.
-## [2][Converting varbinary data and uploading to S3 produces corrupted xlsx file](https://www.reddit.com/r/aws/comments/ess8zd/converting_varbinary_data_and_uploading_to_s3/)
-- url: https://www.reddit.com/r/aws/comments/ess8zd/converting_varbinary_data_and_uploading_to_s3/
+This is a bit frustrating for us, as we found the Edge to be more awkward to use in our specific workflows, and we're not geared up to start working with Edges again, certainly not with a week and a half notice.
+## [2][Export Aurora or RDS snapshots to Amazon S3](https://www.reddit.com/r/aws/comments/et3mxm/export_aurora_or_rds_snapshots_to_amazon_s3/)
+- url: https://www.reddit.com/r/aws/comments/et3mxm/export_aurora_or_rds_snapshots_to_amazon_s3/
 ---
-I have a database that was previously used to store files converted to varbinary data. I am currently in the process of moving the files to S3. I've been able to convert pdf, img, doc, xls and most other file types, but when I try to convert an xlsx file it is always corrupted. I'm currently using the code below
+You can now export Aurora or RDS snapshots to Amazon S3 for analytics or long term retention with just a few clicks on the Amazon RDS Management Console or using the AWS SDK or CLI. No need to write any code or provision any instances! 
 
-*request.query(` select &lt;varbinarydata&gt; from &lt;table&gt; , (err, data) =&gt; {
-            if (err) {
-                mssql.close();
-                throw (err);
-            }
-            else {
-                var filename = &lt;DocumentNm&gt;
-                var varbdatan = new Buffer(data.recordset[0].&lt;varbinarydata&gt;);     
-                s3.putObject({
-                    Bucket: &lt;S3 Bucket&gt;
-                    Key: filename,
-                    Body: varbdatan
-                }, err =&gt; {
-                    if (err) {
-                        mssql.close();
-                        throw (err);
-                    }
-                    else {
-                        console.log('Data Successfully Inserted');
-                        mssql.close();
-                        callback(null, 1);
-                    }
-                });
-            }
-        });*
-## [3][RDS DB hacked, what should I do?](https://www.reddit.com/r/aws/comments/esccbr/rds_db_hacked_what_should_i_do/)
-- url: https://www.reddit.com/r/aws/comments/esccbr/rds_db_hacked_what_should_i_do/
+https://aws.amazon.com/about-aws/whats-new/2020/01/announcing-amazon-relational-database-service-snapshot-export-to-s3/
+## [3][AWS engineer uploads customer keys, passwords to GitHub](https://www.reddit.com/r/aws/comments/et08r0/aws_engineer_uploads_customer_keys_passwords_to/)
+- url: https://www.reddit.com/r/aws/comments/et08r0/aws_engineer_uploads_customer_keys_passwords_to/
 ---
-My RDS database was hacked by bitcoin miners who left this message:
+https://www.theregister.co.uk/2020/01/23/aws_engineer_customer_credentials_github/
 
-"To recover your lost Database and avoid leaking it: Send us 0.06 Bitcoin (BTC) to our Bitcoin address 1Mo24VYuZfZrDHw7GaGr8B6iZTMe8JbWw8 and contact us by Email with your Server IP or Domain name and a Proof of Payment. If you are unsure if we have your data, contact us and we will send you a proof. Your Database is downloaded and backed up on our servers. Backups that we have right now: \*\*\*, \*\*\*\*\*\* . If we dont receive your payment in the next 10 Days, we will make your database public or use them otherwise."
+IAM secret key/secrets were available for five hours before being taken down.
 
-I already have a backup but I need to know how this happened and what to do to prevent it from happening again?
-
-also who's fault is that? mine or aws?
-## [4][Looks like Elastic Beanstalk has added support for Node 12](https://www.reddit.com/r/aws/comments/esl0ps/looks_like_elastic_beanstalk_has_added_support/)
-- url: https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2020-01-21-linux.html
+As a precaution we’ve rotated all our IAM keys , no word yet from AWS
+## [4][AwsApiChanges.info: Updated API methods which reflect recent AWS updates](https://www.reddit.com/r/aws/comments/esuw0d/awsapichangesinfo_updated_api_methods_which/)
+- url: https://awsapichanges.info
 ---
 
-## [5][Having issues querying IOT Core from a different account, thinking it's a policy issue](https://www.reddit.com/r/aws/comments/esqyxf/having_issues_querying_iot_core_from_a_different/)
-- url: https://www.reddit.com/r/aws/comments/esqyxf/having_issues_querying_iot_core_from_a_different/
+## [5][What's the difference between CloudFront and ELB?](https://www.reddit.com/r/aws/comments/eta7e3/whats_the_difference_between_cloudfront_and_elb/)
+- url: https://www.reddit.com/r/aws/comments/eta7e3/whats_the_difference_between_cloudfront_and_elb/
 ---
-I am working on a platform migration currently that requires some services to be housed in two seperate accounts.   
-We have an IOT Core service in the first account that stores our IOT Devices and we are trying to programmatically grab the shadow of a given device from the second account but we are getting back "Forbidden Exception".
+Both of them distribute the traffic based on geolocation. So what's the difference?
 
-The workflow that should happen is as follows :-  
+**Edit:** And how does S3 fit into this? Isn't it distributed also?
+## [6][Running a Lambda in response to updates to SSM parameters owned by Amazon?](https://www.reddit.com/r/aws/comments/et9tv9/running_a_lambda_in_response_to_updates_to_ssm/)
+- url: https://www.reddit.com/r/aws/comments/et9tv9/running_a_lambda_in_response_to_updates_to_ssm/
+---
+Hello - I run an ECS cluster and it's been incredibly annoying to have to update the ECS-optimized AMIs in my launch templates/configurations every time a new AMI is published. I wrote a Lambda to deal with changing out the AMI in my ASGs but I'd like to trigger the Lambda every time Amazon updates the recommended AMI in Parameter Store.   
 
 
-1. A Lambda Fn is called in the second account to confirm user ownership of IOT device with thingname
-2. If ownership is confirmed the Lambda then calls the following function attempting to access IOT Core in first account :-  
+Using the documentation on this provided by AWS ([https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html)), I set up a CloudWatch event rule that looks like this: 
 
-3. What should happen is it returns the thingname but instead we are getting an error, "Forbidden Exception"
-```
-public static async iotTest(event) {
-        try {
-            const iotData = new AWS.IotData({endpoint: endPointFirstAccount});
-            const params = {
-                thingName: event.query.thingName
-            };
-            const data = await iotData.getThingShadow(params).promise();
-            return data ? JSON.parse(data.payload) : null;
-        } catch (error) {
-            console.error('Error: ', error);
-        }
-    }
-```
-I think this is a policies issue but I'm not sure where to start. If anyone can help I'd be very grateful, thanks.
-## [6][IAM Database Authentication For Amazon RDS In MySQL](https://www.reddit.com/r/aws/comments/esqipc/iam_database_authentication_for_amazon_rds_in/)
-- url: https://www.ibexlabs.com/iam-database-authentication-for-amazon-rds-in-mysql/
+`{`
+
+  `"detail-type": [`
+
+`"Parameter Store Change"`
+
+  `],`
+
+  `"source": [`
+
+`"aws.ssm"`
+
+  `],`
+
+  `"detail": {`
+
+`"name": [`
+
+`"/aws/service/ecs/optimized-ami/amazon-linux/recommended"`
+
+`],`
+
+`"operation": [`
+
+`"Update"`
+
+`]`
+
+  `}`
+
+`}`
+
+However, I'm not sure this is going to work as intended. I'm skeptical because I assume the events for that parameter may not be in my event bus but would anyone know for sure if this is going to work?
+## [7][What language are you using to Develop in AWS CDK?](https://www.reddit.com/r/aws/comments/et8w84/what_language_are_you_using_to_develop_in_aws_cdk/)
+- url: /r/aws_cdk/comments/et8sig/what_language_are_you_using_to_develop_in_cdk/
 ---
 
-## [7][AWS CLI credentials stored in plaintext? Anyone know a way to encrypt these or am I missing some aspect here?](https://www.reddit.com/r/aws/comments/esgq5u/aws_cli_credentials_stored_in_plaintext_anyone/)
-- url: https://www.reddit.com/r/aws/comments/esgq5u/aws_cli_credentials_stored_in_plaintext_anyone/
----
-Like the title says. Anyone know a way to store these in an encrypted state? Just seems odd that they're in a file called "credentials".  Not sure if I'm missing anything here and they're secured in another way. I tend to be a little nervous about leaving creds in text files. Thanks.
-## [8][A nasty hack to enable using an API Gateway generated Javascript client SDK in Node.js](https://www.reddit.com/r/aws/comments/esmep0/a_nasty_hack_to_enable_using_an_api_gateway/)
-- url: https://github.com/dmh2000/ApiGenNodeHack
+## [8][Results of the 2019 AWS Container Security Survey](https://www.reddit.com/r/aws/comments/esv8f2/results_of_the_2019_aws_container_security_survey/)
+- url: https://aws.amazon.com/blogs/containers/results-of-the-2019-aws-container-security-survey/
 ---
 
-## [9][RDS Certificate Warning Emails - What Am I Supposed To Do Here?](https://www.reddit.com/r/aws/comments/esiakt/rds_certificate_warning_emails_what_am_i_supposed/)
-- url: https://www.reddit.com/r/aws/comments/esiakt/rds_certificate_warning_emails_what_am_i_supposed/
+## [9][[ECS] Detect and generate a cloudwatch Alarm when a Task is killed or restarted](https://www.reddit.com/r/aws/comments/et80n6/ecs_detect_and_generate_a_cloudwatch_alarm_when_a/)
+- url: https://www.reddit.com/r/aws/comments/et80n6/ecs_detect_and_generate_a_cloudwatch_alarm_when_a/
 ---
-I keep getting these emails that start with: 
+Hi,
 
-&gt;We previously sent a communication in early October to update your RDS SSL/TLS certificates by October 31, 2019. We have extended the dates and now request that you act before February 5, 2020 to avoid interruption of your applications that use Secure Sockets Layer (SSL) or Transport Layer Security (TLS) to connect to your RDS and Aurora database instances. Note that this new date is only 4 weeks before the actual Certificate Authority (CA) expiration on March 5, 2020. Because our own deployments, testing, and scanning to validate all RDS instances are ready for the expiry must take place during the final 4 weeks, the February 5th date cannot be further extended.
+I'm trying to set an Alarm using Cloudwatch to detect when a Task is killed in an ECS Cluster.
+
+I followed this  [https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#cw\_running\_task\_count](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#cw_running_task_count)  to set up a metric to track the number of tasks running by a service.
+
+This is my alarm : 
+
+**Namespace**        : AWS/ECS  
+**MetricName**      : CPUUtilization  
+**ServiceName**     : my\_service  
+**ClusterName**     : my\_cluster  
+**Statistic**               : Sample count  
+**Period**                  : 1minute  
+**Conditions** :   
+   **Threshold type** : Static  
+**Whenever CPUUtilization is**... : Lower Than 1  
  
-&gt;You are receiving this message because you have an Amazon RDS database instance(s) that requires action.
 
-I have no idea what this means.  I am tempted to just go in, backup my db, delete the RDS instance, launch a new one, and go on with my life.  I do not independently manage any certs for db connectivity in my apps.
+But it's not working and doesn't generate an Alarm as expected. I think that this is because if the task is killed, it's recreated again automatically and quickly under 1 minute (the period set in the Alarm).
 
-Would that solve it?
-## [10][How do you check which specific load balancer a Elastic Beanstalk app is using?](https://www.reddit.com/r/aws/comments/esk541/how_do_you_check_which_specific_load_balancer_a/)
-- url: https://www.reddit.com/r/aws/comments/esk541/how_do_you_check_which_specific_load_balancer_a/
+I tried to change the Period to less than a minute but AWS says ***Only a period greater than 60s is supported for metrics in the "AWS/" namespaces*** 
+
+ 
+
+So is there a way to detect if a task is killed ?
+
+Thanks
+## [10][Assign public IP range to the auto scalable containers in ECS?](https://www.reddit.com/r/aws/comments/et6i88/assign_public_ip_range_to_the_auto_scalable/)
+- url: https://www.reddit.com/r/aws/comments/et6i88/assign_public_ip_range_to_the_auto_scalable/
 ---
-I am trying to figure out how to check which specific load balancer a specific elastic beanstalk app is using, is there an easy way to do this?
+Hi, When i spin up an ECS cluster, it assigns public IP dynamically to all the containers it creates.
+
+Can we configure something so that the IP assigned are within a particular range? Something like public CIDR?

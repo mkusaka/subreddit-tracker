@@ -33,63 +33,91 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/01/21/this-week-in-rust-322/
 ---
 
-## [3][[ANN] Rust conference in Wrocław (Poland)](https://www.reddit.com/r/rust/comments/esqw30/ann_rust_conference_in_wrocław_poland/)
-- url: https://www.reddit.com/r/rust/comments/esqw30/ann_rust_conference_in_wrocław_poland/
+## [3][ANN: Handlebars 3.0 with performance boost](https://www.reddit.com/r/rust/comments/et4qrz/ann_handlebars_30_with_performance_boost/)
+- url: https://www.reddit.com/r/rust/comments/et4qrz/ann_handlebars_30_with_performance_boost/
 ---
-I am happy to announce, that we are planning the Rust conference in Wrocław, at the end of this year.   
+Handlebars was a general purpose template engine written in Rust. It serves [rust-lang.org](https://rust-lang.org), [docs.rs](https://docs.rs) and the Rust book via mdbook. 
 
+My latest 3.0.0 has been released to [crates.io](https://crates.io). I have been working on performance improvements in the last few weeks. The benchmark shows up to 4x boost on rendering large \`each\` block and nested ones. Some logic was moved to template parsing phase, so with 11% overhead on \`parse\_template\` we got big improvements on render phase, without losing features. 
 
-Visit our [website](https://rusty-days.org/), follow us on [Twitter](https://mobile.twitter.com/rdconf), and see you in Poland!  
+[benchmark](https://preview.redd.it/1gd7i12ecnc41.png?width=737&amp;format=png&amp;auto=webp&amp;s=bc89ce4083ae6f37326d8d6eef9f4883d8277f64)
 
+It is recommend to upgrade you application to use 3.0. If you are using handlebars directly you should not see API changes. Helper developers may need to upgrade your implementations if yours were using \`RenderContext\` deeply.
 
-We will provide more details soon :)
-## [4][[ANN] cargo-lock v4.0: list packages, show dependency trees, and translate formats for Cargo.lock files](https://www.reddit.com/r/rust/comments/esl6xu/ann_cargolock_v40_list_packages_show_dependency/)
-- url: https://www.reddit.com/r/rust/comments/esl6xu/ann_cargolock_v40_list_packages_show_dependency/
----
-The `cargo-lock` crate is a self-contained Cargo.lock parser/serializer based on `serde`. It's usable as a library, notably by the RustSec [cargo-audit](https://github.com/RustSec/cargo-audit) tool, but also as of this release supports a CLI as well.
-
-- GitHub: https://github.com/RustSec/cargo-lock
-- Docs.rs: https://docs.rs/cargo-lock/
-- Crates.io: https://crates.io/crates/cargo-lock
-
-Among other new features, the [`cargo lock translate` subcommand](https://docs.rs/cargo-lock/4.0.1/cargo_lock/#translate-convert-cargolock-files-between-the-v1-and-v2-formats) can be used to translate your existing Cargo.lock files to the [new merge-friendly V2 lockfile format](https://github.com/rust-lang/cargo/pull/7070).
-## [5][Rust 2020 roadmap](https://www.reddit.com/r/rust/comments/esj03j/rust_2020_roadmap/)
-- url: https://github.com/rust-lang/rfcs/pull/2857
+Feel free to report issue or ask for help on the github repo: [https://github.com/sunng87/handlebars-rust/](https://github.com/sunng87/handlebars-rust/)
+## [4][cargo-audit v0.11: Introducing the `fix` feature, yanked crate detection, and more](https://www.reddit.com/r/rust/comments/et04on/cargoaudit_v011_introducing_the_fix_feature/)
+- url: https://blog.rust-lang.org/inside-rust/2020/01/23/Introducing-cargo-audit-fix-and-more.html
 ---
 
-## [6][Introducing faux: A traitless mocking framework](https://www.reddit.com/r/rust/comments/ese4oa/introducing_faux_a_traitless_mocking_framework/)
-- url: https://nrxus.github.io/faux/
+## [5][TIL why the eh_personality language item is called that](https://www.reddit.com/r/rust/comments/estvau/til_why_the_eh_personality_language_item_is/)
+- url: https://www.reddit.com/r/rust/comments/estvau/til_why_the_eh_personality_language_item_is/
+---
+The name of the [language item `eh_personality`](https://doc.rust-lang.org/unstable-book/language-features/lang-items.html#more-about-the-language-items) probably sounds completely mundane to a seasoned systems programmer's ears. But my ears were primed by a degree in English and American Studies / Linguistics rather than CS, so when I first heard it, it sounded like a whimsical pun on Herman Melville's *Bartleby the Scrivener*: ["Ah Bartleby! Ah humanity!"](http://www.gutenberg.org/cache/epub/11231/pg11231.txt) :)
+
+Much to my dismay though, no such backstory for the name turned up when searching online. Actually, no backstory at all. This could only mean one thing -- the name must be perfectly ordinary and transparent in the eyes of the people who came up with it, so much so they didn't even realize it might require explanation for the uninitiated.¹
+
+I was stumped for a while, but I think I've finally managed to elucidate it thanks to [this answer](https://stackoverflow.com/a/329092/1826241) to a SO question about `__gxx_personality_v0`. So here goes, for any fellow Rustaceans with non-CS backgrounds:
+
+- `eh` is not an exclamation but probably an abbreviation of *exception handling*
+- `personality` because the corresponding function determines what type of exception handling to perform (and of course, ultimately because tradition: the name comes from C++ and can be traced back to the [Itanium C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/abi-eh.html#base-personality), as mentioned in [another answer](https://stackoverflow.com/a/329195/1826241) to that SO question)
+
+For anyone hearing about it for the first time: `eh_personality` comes up when implementing [freestanding Rust binaries](https://os.phil-opp.com/freestanding-rust-binary/#the-eh-personality-language-item).
+
+Ah Bartleby! Eh personality!
+
+¹ EDIT: Spoke too soon, thanks to /u/flying-sheep for pointing out [this *is* explained on the Rust side](https://doc.rust-lang.org/1.2.0/std/rt/unwind/index.html), my google-fu was apparently just too weak :)
+## [6][Novice question: Will it be a good idea if I approached the embedded programming zone with Rust?](https://www.reddit.com/r/rust/comments/et9jqc/novice_question_will_it_be_a_good_idea_if_i/)
+- url: https://www.reddit.com/r/rust/comments/et9jqc/novice_question_will_it_be_a_good_idea_if_i/
+---
+Heyo, an undergrad CS student here.
+
+
+I'm also a complete novice who's basically stuck in a capstone project regarding embedded stuff (because democracy is a wonderful concept). Though the coding experience is in Python, C#, and js, was interested in checking out Rust for a while and was wondering if it would be a good idea to approach our project with it :]
+
+
+If it is a good idea somehow, how would it be different if I initially approached everything with the usual toolchain regarding C? 
+Would really appreciate it if you could mention your experiences with rust in the embedded zone.
+Also, what kind of resources can an absolute rookie can use to dive into it? Is the Rust Embedded book enough? :[
+## [7][An implementation of the game snake for the stm32f3 discovery board!](https://www.reddit.com/r/rust/comments/et6y2e/an_implementation_of_the_game_snake_for_the/)
+- url: https://www.reddit.com/r/rust/comments/et6y2e/an_implementation_of_the_game_snake_for_the/
+---
+Using the stm32f3, an 8x8 LED display and an analog joystick, I implemented snake using Rust's real-time embedded framework for Cortex-M microcontrollers - Real Time For the Masses. For those of you interested, the [code is here.](https://github.com/arosspope/usnake)
+
+This project was primarily a learning exercise in understanding how Rust can be used to solve some of the challenges inherent in embedded application development. In a field where C is still king, It will be interesting to see if Rust can disrupt traditional embedded development practices. I for one greatly enjoyed using it for this project and would do so again in the future.
+## [8][Refacture my datastructure (no_std, no alloc)](https://www.reddit.com/r/rust/comments/et79yf/refacture_my_datastructure_no_std_no_alloc/)
+- url: https://www.reddit.com/r/rust/comments/et79yf/refacture_my_datastructure_no_std_no_alloc/
+---
+Hi Rustaceans!  
+
+
+Please enlighten me with the options of this awesome language, for a better data structure than i currently have (if any such thing).  
+
+
+Other optimization, comments and low hanging fruits are also more than welcome!  
+
+
+[https://github.com/BlackbirdHQ/at-rs/issues/9](https://github.com/BlackbirdHQ/at-rs/issues/9)
+## [9][Show /r/rust: ytop, a TUI system monitor and rust port of gotop](https://www.reddit.com/r/rust/comments/esvygl/show_rrust_ytop_a_tui_system_monitor_and_rust/)
+- url: https://www.reddit.com/r/rust/comments/esvygl/show_rrust_ytop_a_tui_system_monitor_and_rust/
+---
+Link: https://github.com/cjbassi/ytop
+
+I'm pleased to finally announce a MVP release of ytop! I've been working on this for a few months, and I've been planning it for even longer. A lot of my time has been spent working on [rust-psutil](https://github.com/borntyping/rust-psutil) which I am now a maintainer of, and which just got some preliminary Mac support. Mac support is still a little lacking, but good enough for people to start using ytop. Other than that, ytop has almost feature parity with gotop, but missing a few features and some polish, which I hope to get to in the next few weeks.
+
+I originally wrote gotop right after learning Go a couple of years ago as my first project in that language. It was a great learning experience, and I'm not sure I could have written it in Rust at the time, but after learning Rust, I much prefer writing in it and the library ecosystem is also amazing. Shout out to the structopt, tui, and crossterm crates in particular.
+## [10][Secret Scanning Tool: Rusty-Hog - Scan your source and cloud for passwords and API keys. Thanks to the blazingly fast Rust Regex engine I saw 40%+ speed improvements over the Python equivalent of this tool.](https://www.reddit.com/r/rust/comments/eswfmf/secret_scanning_tool_rustyhog_scan_your_source/)
+- url: https://crates.io/crates/rusty_hogs/1.0.1
 ---
 
-## [7][Rustacean Station Triple Feature: Rust for AAA Game Development; Async Foundations with `async-std`; and Powerful Concurrency Primitives with `crossbeam` [RustFest 2019 Interviews]](https://www.reddit.com/r/rust/comments/eslbuv/rustacean_station_triple_feature_rust_for_aaa/)
-- url: https://rustacean-station.org/episode/011-jake-yoshua-stjepan/
+## [11][If you’re in the East, please consider Rust!](https://www.reddit.com/r/rust/comments/et9wlh/if_youre_in_the_east_please_consider_rust/)
+- url: https://medium.com/@ly.lee/if-youre-in-the-east-please-consider-rust-23fa05873397?source=friends_link&amp;sk=df52d4b5da80006ff42fc036ef01e12c
 ---
 
-## [8][Lessons learnt updating a library to std::future](https://www.reddit.com/r/rust/comments/eslvk1/lessons_learnt_updating_a_library_to_stdfuture/)
-- url: https://cetra3.github.io/blog/mpart-async-0-3-0/
+## [12][What's a good first program for writing Rust?](https://www.reddit.com/r/rust/comments/et0loj/whats_a_good_first_program_for_writing_rust/)
+- url: https://www.reddit.com/r/rust/comments/et0loj/whats_a_good_first_program_for_writing_rust/
 ---
+I have taken a Rust class, taken Rustlings and read parts of The Book. I am very sold on the language, but I want to showcase its benefits vs. other languages for my colleagues.
 
-## [9][Post: byte-ordered streams](https://www.reddit.com/r/rust/comments/esk1z4/post_byteordered_streams/)
-- url: https://blog.yoshuawuyts.com/byte-ordered-stream-parsing/
----
+I was thinking about writing something in Rust that compares to something in C, but I am open to any idea.
 
-## [10][Debug Rust+Mynewt Firmware for PineTime on Raspberry Pi](https://www.reddit.com/r/rust/comments/esmf12/debug_rustmynewt_firmware_for_pinetime_on/)
-- url: https://medium.com/@ly.lee/debug-rust-mynewt-firmware-for-pinetime-on-raspberry-pi-4b9ac2d093a9?source=friends_link&amp;sk=edb508c31e43d3ec40ecd8554f3405f6
----
-
-## [11][If you see a rust crate you like, please donate if you can!](https://www.reddit.com/r/rust/comments/esg40v/if_you_see_a_rust_crate_you_like_please_donate_if/)
-- url: https://www.reddit.com/r/rust/comments/esg40v/if_you_see_a_rust_crate_you_like_please_donate_if/
----
-This obviously has the benefit of making you feel nice because you've just done a good deed, but it also supports open-source developers. Most of them are probably doing alright without your donation, but I can speak from experience that someone showing they appreciate your hard work by throwing a couple bucks your way makes the whole experience of open-source development feel 10x more fun, so even from a self-interested perspective if you donate to projects you like you're very likely to motivate those developers to dream big instead of abandoning them.
-
-There are a few weird hairy issues with donating to crate authors, like how you might miss out on donating to their dependencies, but I think we can all agree that some donating to show our appreciation is better than none at all!
-
-But crate authors, please make it easy for us to give you money! I wanted to donate to support [Warp](https://github.com/seanmonstar/warp), but the author doesn't have a sponsorship button set up on their github repo (You can put any link inside the sponsorship button, it doesn't have to be github sponsors). So I went to the author's github profile page, found the link to their website, clicked the "donate" button to get to [this page](https://seanmonstar.com/donate), and clicked the paypal button only to see that **I can't actually donate because their PayPal account has been closed**. Compare this to [Iced](https://github.com/hecrj/iced), where I just click the "Sponsor" button, go to their [Ko Fi page](https://ko-fi.com/), and I easily donate straight away! (which I did). Github Sponsors is free and they match everyone's donations up to $5k I think, so if you want to set up a monthly subscription thing that seems like a good option, and I think Ko-Fi and Patreon are also free as well (although they might take transaction fees, I'm not sure). The one thing I don't like about Github Sponsors is that everyone seems to go straight from the $1/month option straight to $100/month. I'd happily throw a bit more than $1 at [the maintainer of serde](https://github.com/sponsors/dtolnay) every month but $100 is a bit too much. Also, the [main serde repo](https://github.com/serde-rs/serde) also has the issue of there being no obvious way to donate to support its development! 
-
-I hope this inspires everyone who can afford it to think about throwing $5 or so at whichever crates they like the most, and crate authors to make it easy for us :). The Rust community is great partially because of its great libraries and motivated developers, lets support that!
-## [12][Trouble getting used to type inference](https://www.reddit.com/r/rust/comments/esp8se/trouble_getting_used_to_type_inference/)
-- url: https://www.reddit.com/r/rust/comments/esp8se/trouble_getting_used_to_type_inference/
----
-Does anyone else have trouble quickly reading rust code, specifically because type inference? I am coming from a heavy java background and have roughly 30 hours of experience reading/writing rust, so I might just need someone to tell me "don't worry, you'll get used to it." I think I am one of the very few people who really appreciates java verbosity (that's right, I said it).  And when I see non-explicitly declared variables, I get a similar uncomfortable feeling as when I have to read/write python code.
-
-r/rust seems like a very friendly place, so I guess I'm just wondering if anyone has similar experiences to share. Cheers!
+What do you think you is a good first program for writing Rust (primarily a Go dev with a CS background) that also showcases some of its strengths? Thanks!

@@ -97,194 +97,68 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][MyMovies Desktop app watch movies and TV series](https://www.reddit.com/r/reactjs/comments/esn8dg/mymovies_desktop_app_watch_movies_and_tv_series/)
-- url: https://youtu.be/XMcB3k4H_TE
+## [3][Set Up a Typescript React Redux Project](https://www.reddit.com/r/reactjs/comments/et36y2/set_up_a_typescript_react_redux_project/)
+- url: https://typeofnan.dev/setup-a-typescript-react-redux-project/
 ---
 
-## [4][Help us create a community-curated list of React Libraries!](https://www.reddit.com/r/reactjs/comments/esfraa/help_us_create_a_communitycurated_list_of_react/)
-- url: http://reactlibraries.com
+## [4][Unit testing in React. Practical examples and advice on what, how and why to test.](https://www.reddit.com/r/reactjs/comments/et9g7g/unit_testing_in_react_practical_examples_and/)
+- url: https://medium.com/@onoufriosm/how-to-unit-test-in-react-72e911e2b8d
 ---
 
-## [5][Orta Therox on why the new TypeScript website uses Gatsby](https://www.reddit.com/r/reactjs/comments/esl96v/orta_therox_on_why_the_new_typescript_website/)
-- url: https://github.com/microsoft/TypeScript-Website/issues/130#issuecomment-577445454
+## [5][Intro to React Router for Beginners (Multi-Page Apps)](https://www.reddit.com/r/reactjs/comments/etaaxt/intro_to_react_router_for_beginners_multipage_apps/)
+- url: https://youtu.be/hjR-ZveXBpQ
 ---
 
-## [6][I created a way for you to add PWA badges to your README files to show off the fact that your project is a PWA! Built with GatbsyJS, and of course it is also a PWA ;)](https://www.reddit.com/r/reactjs/comments/esnxmy/i_created_a_way_for_you_to_add_pwa_badges_to_your/)
-- url: https://www.pwa-shields.com
+## [6][How do companies work with components at scale?](https://www.reddit.com/r/reactjs/comments/esvr7w/how_do_companies_work_with_components_at_scale/)
+- url: https://www.reddit.com/r/reactjs/comments/esvr7w/how_do_companies_work_with_components_at_scale/
+---
+Hey all, I work for a relatively large company and we are in the process of moving an old java struts application over to react. There are many teams of developers who would work on multiple components and the fear of the monolith is real. The current release process is a nightmare! Ideally teams look after their own areas in their own repos.
+
+There is currently an implementation of SSR components which would mean that you could pull components in without having to make sure that you have the latest version, but it feels like it’s adding a whole lot of overhead and a bit of a weird dev experience. 
+
+What are some practices that you know of that get around this kind of issue? 
+
+Thanks for your help in advance!
+## [7][Render as you Fetch Pattern in React with SWR](https://www.reddit.com/r/reactjs/comments/et4gpz/render_as_you_fetch_pattern_in_react_with_swr/)
+- url: https://sergiodxa.com/articles/render-as-you-fetch/
 ---
 
-## [7][Popper 2 released! The popular positioning engine for tooltips and popovers, used by Material UI, Bootstrap, and more](https://www.reddit.com/r/reactjs/comments/esd3fe/popper_2_released_the_popular_positioning_engine/)
-- url: https://dev.to/fezvrasta/smarter-tooltips-and-popovers-with-popper-2-44bh
+## [8][Do you still need prettier?](https://www.reddit.com/r/reactjs/comments/eszod0/do_you_still_need_prettier/)
+- url: https://www.reddit.com/r/reactjs/comments/eszod0/do_you_still_need_prettier/
+---
+Hi guys,
+
+I'm currently working on a project and am trying to add coding rules and autoformating.
+
+For a while I've been using prettier, eslint and vscode.
+
+The current project is setup with CRA + TS.
+
+If I can \`editor.codeActionsOnSave\` with vscode and put formatting rules with eslint (airbnb rules). Do i still need Prettier for anything? 
+
+Could I just use Eslint rules and VScode to autoformat?
+## [9][FINDEAD, to find react dead components](https://www.reddit.com/r/reactjs/comments/eta01z/findead_to_find_react_dead_components/)
+- url: https://www.reddit.com/r/reactjs/comments/eta01z/findead_to_find_react_dead_components/
 ---
 
-## [8][I just got google maps, via react-google-maps, to work with little too no lag while rendering over 150,000 data points in the form of Polylines and Markers.](https://www.reddit.com/r/reactjs/comments/esh3de/i_just_got_google_maps_via_reactgooglemaps_to/)
-- url: https://www.reddit.com/r/reactjs/comments/esh3de/i_just_got_google_maps_via_reactgooglemaps_to/
+# Hi everyone,
+
+### Many times in large or even small projects, we forgot some components in code that we'll never use and we never take time to search one by one and remove.
+
+#### Recently I've launched npm package to find dead components in project.
+
+## FINDEAD
+
+#### To open issues, contribute, star, follow, see, test: [findead](https://github.com/narcello/findead)
+## [10][Emotion users, may I ask for your feedback?](https://www.reddit.com/r/reactjs/comments/et9k79/emotion_users_may_i_ask_for_your_feedback/)
+- url: https://github.com/kettanaito/atomic-layout/pull/262#issuecomment-577790669
 ---
-Title says it all. I felt it was pretty impressive and it was a problem that has kept me up for 3 nights now, so a real code high when it finally worked. I just wanted to tell someone who is actually in tech and doesn't look at me like "cool so what".
-## [9][Supporting &amp; detecting dark mode in the browser [Article] Hope it helps ;)](https://www.reddit.com/r/reactjs/comments/esra9e/supporting_detecting_dark_mode_in_the_browser/)
-- url: https://blog.nicco.io/2020/01/07/supporting-detecting-dark-mode-in-the-browser/
+
+## [11][React admin dashboard](https://www.reddit.com/r/reactjs/comments/eswz0s/react_admin_dashboard/)
+- url: https://github.com/uilibrary/matx-react
 ---
 
-## [10][How can I trust/choose a package?](https://www.reddit.com/r/reactjs/comments/esq5gy/how_can_i_trustchoose_a_package/)
-- url: https://www.reddit.com/r/reactjs/comments/esq5gy/how_can_i_trustchoose_a_package/
+## [12][JavaScript Promises vs. RxJS Observables](https://www.reddit.com/r/reactjs/comments/esyr13/javascript_promises_vs_rxjs_observables/)
+- url: https://auth0.com/blog/javascript-promises-vs-rxjs-observables/
 ---
-When looking for react packages I always struggle to decide for one because I am afraid that in a year or two the package will become obsolete, stop working or anything else happens. There are packages for everything but often enough I decided to implement something myself instead of browsing through all the packages available.
 
-What's the best practice/how do you decide if you choose this one package instead of implementing it yourself?
-## [11][Best Advanced react courses?](https://www.reddit.com/r/reactjs/comments/eshmzi/best_advanced_react_courses/)
-- url: https://www.reddit.com/r/reactjs/comments/eshmzi/best_advanced_react_courses/
----
-Hi Guys, I’ve been developing with React a few months now and I’m feeling fairly comfortable working with it.
-
-I originally learnt from  [Stephen Griders React course ](https://www.udemy.com/course/react-redux/) on Udemy and I thought it was excellent, it gave me a great understanding of the fundamentals and enough information to get me up and running. I then bought his [Advanced React](https://www.udemy.com/course/react-redux-tutorial/) course however I quickly found that testing element was out of date, and the subsequent categories relied on you having completed the first section so I refunded it.
-
-I’d be really interested in finding a course that has some more advanced features in React such as 
-
-- Custom hooks (does this replace HOC?)
-- Suspense (I know it’s not fully released yet)
-- Server side rendering
-- CSS in JS (styled components maybe)
-- Graph QL
-
-The list above is just a general outline and I’d be really interested in seeing recommendations from you guys 
-
-Thanks in advance!
-## [12][Data not rendering](https://www.reddit.com/r/reactjs/comments/essab1/data_not_rendering/)
-- url: https://www.reddit.com/r/reactjs/comments/essab1/data_not_rendering/
----
-Hey guys , I build a weather app, and Is working "pretty well" but I have a problem I cant figure out so far, when I call the aPI I get the correct data Im looking for , and in the console "Elements" I can see how the data is render and place on is site when I call the API but I can not see the data on my browser, I mean, displayed on the screen and I dont really know why or how to solve it , here is the weather component: 
-
-    import React from 'react';
-    
-    
-    const Weather = (props) =&gt; {
-    
-      function minmaxTemp(min,max) {
-      return(
-          &lt;h3&gt;
-            &lt;span className="px-4"&gt;{min}&amp;deg;&lt;/span&gt;
-            &lt;span className="px-4"&gt;{max}&amp;deg;&lt;/span&gt;
-          &lt;/h3&gt;
-          );
-        }
-    
-      return(
-    
-        &lt;div className="container text-light"&gt;
-          &lt;div className="cards pt-4"&gt;
-          &lt;h1&gt;  {props.city}, {props.country} &lt;/h1&gt;
-          &lt;h5 className="py-4"&gt;
-    
-            &lt;i className={`wi ${props.weatherIcon} display-1`}&gt;&lt;/i&gt;
-    
-          &lt;/h5&gt;
-    
-          &lt;span className="py-2"&gt;{props.temp_celsius}&amp;deg;&lt;/span&gt;
-    
-          {/*  show min and max temp*/}
-    
-           {minmaxTemp(props.temp_min, props.temp_max)}
-    
-           &lt;h3 className="py-3"&gt; {props.description} &lt;/h3&gt;
-    
-          &lt;/div&gt;
-        &lt;/div&gt;
-        );
-    
-    }
-    
-    
-    export default Weather;
-     
-
-and here is the app component: I have check the console and Its working but the data is not display on the screen , for an unknown reason , all the help would be much appreciate. thanks in advance ! 
-
-    import 'bootstrap/dist/css/bootstrap.css';
-    import React ,{useState}from 'react';
-    import './App.css';
-    import Weather from './components/weather';
-    import 'bootstrap/dist/css/bootstrap.min.css';
-    import "weather-icons/css/weather-icons.css";
-    import Form from './components/form';
-    
-    
-    function App (props) {
-    
-    const API_key = "5dca448e69234b2a6a26f52ed3883a47";
-    
-    const [fields, setFields] = useState({city: '', country: ''});
-    
-    const [icon, setIcon] = useState({
-          Thunderstorm: "wi-thunderstorm",
-          Drizzle: "wi-sleet",
-          Rain: "wi-storm-showers",
-          Snow: "wi-snow",
-          Atmosphere: "wi-fog",
-          Clear: "wi-day-sunny",
-          Clouds: "wi-day-fog"
-     });
-    
-      async function fetchData (e) {
-        e.preventDefault();
-        const city = e.target.elements.city.value;
-         const country = e.target.elements.country.value;
-    
-    
-        const weather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&amp;appid=${API_key}`);
-        const response = await weather.json();
-    
-        setFields({
-            city: `${response.name}, ${response.sys.country}`,
-            country: response.sys.country,
-            main: response.weather[0].main,
-            celsius: calCelsius(response.main.temp),
-            temp_max: calCelsius(response.main.temp_max),
-            temp_min: calCelsius(response.main.temp_min),
-            description: response.weather[0].description,
-    
-        })
-    
-    
-        console.log(response);
-    
-      }
-    
-    
-    // aqui esto no procede porque no estamos cargando data una vez el componentDidMount, aqui esperamos a realizar una accion para cargar los datos,
-    // no al principio cuando se ha montado el component
-    //useEffect(() =&gt; {
-      //fetchData();
-    
-    //},[]);
-    
-    
-    function calCelsius(temperatura){
-        let cell = Math.floor(temperatura - 273.15);
-        return cell;
-        }
-    
-    
-      return(
-      &lt;div className="App"&gt;
-          &lt;h1&gt;Weather app&lt;/h1&gt;
-    
-          &lt;Form loadweather={fetchData} /&gt;
-    
-          &lt;Weather
-          city={fields.city}
-          country={fields.country}
-          temp_celsius={fields.celsius}
-          temp_min={fields.temp_min}
-          temp_max={fields.temp_max}
-          description={fields.description}
-          weatherIcon={fields.icon}
-          /&gt;
-    
-    
-        &lt;/div&gt;
-        );
-    
-    }
-    
-    
-    export default App;

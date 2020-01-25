@@ -33,91 +33,105 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/01/21/this-week-in-rust-322/
 ---
 
-## [3][ANN: Handlebars 3.0 with performance boost](https://www.reddit.com/r/rust/comments/et4qrz/ann_handlebars_30_with_performance_boost/)
-- url: https://www.reddit.com/r/rust/comments/et4qrz/ann_handlebars_30_with_performance_boost/
----
-Handlebars was a general purpose template engine written in Rust. It serves [rust-lang.org](https://rust-lang.org), [docs.rs](https://docs.rs) and the Rust book via mdbook. 
-
-My latest 3.0.0 has been released to [crates.io](https://crates.io). I have been working on performance improvements in the last few weeks. The benchmark shows up to 4x boost on rendering large \`each\` block and nested ones. Some logic was moved to template parsing phase, so with 11% overhead on \`parse\_template\` we got big improvements on render phase, without losing features. 
-
-[benchmark](https://preview.redd.it/1gd7i12ecnc41.png?width=737&amp;format=png&amp;auto=webp&amp;s=bc89ce4083ae6f37326d8d6eef9f4883d8277f64)
-
-It is recommend to upgrade you application to use 3.0. If you are using handlebars directly you should not see API changes. Helper developers may need to upgrade your implementations if yours were using \`RenderContext\` deeply.
-
-Feel free to report issue or ask for help on the github repo: [https://github.com/sunng87/handlebars-rust/](https://github.com/sunng87/handlebars-rust/)
-## [4][cargo-audit v0.11: Introducing the `fix` feature, yanked crate detection, and more](https://www.reddit.com/r/rust/comments/et04on/cargoaudit_v011_introducing_the_fix_feature/)
-- url: https://blog.rust-lang.org/inside-rust/2020/01/23/Introducing-cargo-audit-fix-and-more.html
+## [3][TIL that format! macro has a bunch of features](https://www.reddit.com/r/rust/comments/etgq74/til_that_format_macro_has_a_bunch_of_features/)
+- url: https://doc.rust-lang.org/std/fmt/#usage
 ---
 
-## [5][TIL why the eh_personality language item is called that](https://www.reddit.com/r/rust/comments/estvau/til_why_the_eh_personality_language_item_is/)
-- url: https://www.reddit.com/r/rust/comments/estvau/til_why_the_eh_personality_language_item_is/
----
-The name of the [language item `eh_personality`](https://doc.rust-lang.org/unstable-book/language-features/lang-items.html#more-about-the-language-items) probably sounds completely mundane to a seasoned systems programmer's ears. But my ears were primed by a degree in English and American Studies / Linguistics rather than CS, so when I first heard it, it sounded like a whimsical pun on Herman Melville's *Bartleby the Scrivener*: ["Ah Bartleby! Ah humanity!"](http://www.gutenberg.org/cache/epub/11231/pg11231.txt) :)
-
-Much to my dismay though, no such backstory for the name turned up when searching online. Actually, no backstory at all. This could only mean one thing -- the name must be perfectly ordinary and transparent in the eyes of the people who came up with it, so much so they didn't even realize it might require explanation for the uninitiated.¹
-
-I was stumped for a while, but I think I've finally managed to elucidate it thanks to [this answer](https://stackoverflow.com/a/329092/1826241) to a SO question about `__gxx_personality_v0`. So here goes, for any fellow Rustaceans with non-CS backgrounds:
-
-- `eh` is not an exclamation but probably an abbreviation of *exception handling*
-- `personality` because the corresponding function determines what type of exception handling to perform (and of course, ultimately because tradition: the name comes from C++ and can be traced back to the [Itanium C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/abi-eh.html#base-personality), as mentioned in [another answer](https://stackoverflow.com/a/329195/1826241) to that SO question)
-
-For anyone hearing about it for the first time: `eh_personality` comes up when implementing [freestanding Rust binaries](https://os.phil-opp.com/freestanding-rust-binary/#the-eh-personality-language-item).
-
-Ah Bartleby! Eh personality!
-
-¹ EDIT: Spoke too soon, thanks to /u/flying-sheep for pointing out [this *is* explained on the Rust side](https://doc.rust-lang.org/1.2.0/std/rt/unwind/index.html), my google-fu was apparently just too weak :)
-## [6][Novice question: Will it be a good idea if I approached the embedded programming zone with Rust?](https://www.reddit.com/r/rust/comments/et9jqc/novice_question_will_it_be_a_good_idea_if_i/)
-- url: https://www.reddit.com/r/rust/comments/et9jqc/novice_question_will_it_be_a_good_idea_if_i/
----
-Heyo, an undergrad CS student here.
-
-
-I'm also a complete novice who's basically stuck in a capstone project regarding embedded stuff (because democracy is a wonderful concept). Though the coding experience is in Python, C#, and js, was interested in checking out Rust for a while and was wondering if it would be a good idea to approach our project with it :]
-
-
-If it is a good idea somehow, how would it be different if I initially approached everything with the usual toolchain regarding C? 
-Would really appreciate it if you could mention your experiences with rust in the embedded zone.
-Also, what kind of resources can an absolute rookie can use to dive into it? Is the Rust Embedded book enough? :[
-## [7][An implementation of the game snake for the stm32f3 discovery board!](https://www.reddit.com/r/rust/comments/et6y2e/an_implementation_of_the_game_snake_for_the/)
-- url: https://www.reddit.com/r/rust/comments/et6y2e/an_implementation_of_the_game_snake_for_the/
----
-Using the stm32f3, an 8x8 LED display and an analog joystick, I implemented snake using Rust's real-time embedded framework for Cortex-M microcontrollers - Real Time For the Masses. For those of you interested, the [code is here.](https://github.com/arosspope/usnake)
-
-This project was primarily a learning exercise in understanding how Rust can be used to solve some of the challenges inherent in embedded application development. In a field where C is still king, It will be interesting to see if Rust can disrupt traditional embedded development practices. I for one greatly enjoyed using it for this project and would do so again in the future.
-## [8][Refacture my datastructure (no_std, no alloc)](https://www.reddit.com/r/rust/comments/et79yf/refacture_my_datastructure_no_std_no_alloc/)
-- url: https://www.reddit.com/r/rust/comments/et79yf/refacture_my_datastructure_no_std_no_alloc/
----
-Hi Rustaceans!  
-
-
-Please enlighten me with the options of this awesome language, for a better data structure than i currently have (if any such thing).  
-
-
-Other optimization, comments and low hanging fruits are also more than welcome!  
-
-
-[https://github.com/BlackbirdHQ/at-rs/issues/9](https://github.com/BlackbirdHQ/at-rs/issues/9)
-## [9][Show /r/rust: ytop, a TUI system monitor and rust port of gotop](https://www.reddit.com/r/rust/comments/esvygl/show_rrust_ytop_a_tui_system_monitor_and_rust/)
-- url: https://www.reddit.com/r/rust/comments/esvygl/show_rrust_ytop_a_tui_system_monitor_and_rust/
----
-Link: https://github.com/cjbassi/ytop
-
-I'm pleased to finally announce a MVP release of ytop! I've been working on this for a few months, and I've been planning it for even longer. A lot of my time has been spent working on [rust-psutil](https://github.com/borntyping/rust-psutil) which I am now a maintainer of, and which just got some preliminary Mac support. Mac support is still a little lacking, but good enough for people to start using ytop. Other than that, ytop has almost feature parity with gotop, but missing a few features and some polish, which I hope to get to in the next few weeks.
-
-I originally wrote gotop right after learning Go a couple of years ago as my first project in that language. It was a great learning experience, and I'm not sure I could have written it in Rust at the time, but after learning Rust, I much prefer writing in it and the library ecosystem is also amazing. Shout out to the structopt, tui, and crossterm crates in particular.
-## [10][Secret Scanning Tool: Rusty-Hog - Scan your source and cloud for passwords and API keys. Thanks to the blazingly fast Rust Regex engine I saw 40%+ speed improvements over the Python equivalent of this tool.](https://www.reddit.com/r/rust/comments/eswfmf/secret_scanning_tool_rustyhog_scan_your_source/)
-- url: https://crates.io/crates/rusty_hogs/1.0.1
+## [4][Build your own block_on()](https://www.reddit.com/r/rust/comments/etivdh/build_your_own_block_on/)
+- url: https://stjepang.github.io/2020/01/25/build-your-own-block-on.html
 ---
 
-## [11][If you’re in the East, please consider Rust!](https://www.reddit.com/r/rust/comments/et9wlh/if_youre_in_the_east_please_consider_rust/)
-- url: https://medium.com/@ly.lee/if-youre-in-the-east-please-consider-rust-23fa05873397?source=friends_link&amp;sk=df52d4b5da80006ff42fc036ef01e12c
+## [5][To learn rust I wrote my own HTTP server and JSON parser from scratch. Looking for feedback on how to make it more idiomatic](https://www.reddit.com/r/rust/comments/ethobw/to_learn_rust_i_wrote_my_own_http_server_and_json/)
+- url: https://www.reddit.com/r/rust/comments/ethobw/to_learn_rust_i_wrote_my_own_http_server_and_json/
+---
+Hi everyone ! Long time reddit lurker. I've been wanting to learn rust for a while now, and finally got around to actually writing some code. In hacker fashion, I wrote this project to scratch an itch: I accidentally used up all of the bandwidth on my cellphone for the month and no longer had the means of finding out when the next bus would pass by a stop. Public transport in my city have a website that shows this in real time. I used this as an excuse to code something that reads the schedules from their unofficial REST API and send me the info via SMS using my VoIP's REST API. 
+
+Code can be found here: https://github.com/gelendir/rtcsms
+
+It's not perfect, but i'm pretty glad I got it working for real. Since this the first time i've done any rust i'd appreciate any feedback on how to make the code more idiomatic, or some answers to the following questions:
+
+* I was surprised by how much boilerplate I had to write for creating and wrapping custom errors. I imagine this might be easier with the use of a crate, but would there be a simpler approach to my error handling ?
+
+* I'd like to reduce the friction caused by using `String` and `&amp;str` everywhere.  I've mainly used `String`s because it seemed easier for fixing compiler errors, but because of that i've had to sprinkle a lot of `.to_string()`. I haven't taken the time yet to go over the chapter about lifetimes in the rust book , would that help ?
+
+* Since i'm parsing HTTP requests myself i'm splitting strings and having to use `.next().ok_or(...)?` a lot. An easier way of dealing with that ? Maybe i'm just to used to the ease of `foo.split(" ")[1]` in python
+
+* Still not sure I completely understand why I need to `Box&lt;dyn ReadWrite&gt;` to use a tcp or tls socket interchangeably. Is there a way of using those traits without the `Box` ?
+
+Thanks in advance for any feedback. It took a bit of time before I actually got anything working, but once I got past that it was a pretty interesting experience. Surprisingly, writing the JSON parser wasn't as hard as I expected and once I got all the compiler errors fixed it worked on the first try !
+## [6][rweb: generate openapi spec file automatically from rust source code](https://www.reddit.com/r/rust/comments/etcev1/rweb_generate_openapi_spec_file_automatically/)
+- url: https://www.reddit.com/r/rust/comments/etcev1/rweb_generate_openapi_spec_file_automatically/
+---
+I created a web framework for rust called [rweb][].
+It gets a feature to generate openapi specification file automatically.
+
+The link below contains examples of using [rweb][].
+
+https://docs.rs/rweb/0.3.0-alpha.1/rweb/openapi/index.html
+
+Repo: https://github.com/kdy1/rweb
+
+
+[rweb]:https://github.com/kdy1/rweb
+## [7][Announcing version 0.5.0 of typed-builder](https://www.reddit.com/r/rust/comments/etk5ka/announcing_version_050_of_typedbuilder/)
+- url: https://www.reddit.com/r/rust/comments/etk5ka/announcing_version_050_of_typedbuilder/
+---
+Crate: https://crates.io/crates/typed-builder  
+Changelog: https://github.com/idanarye/rust-typed-builder/blob/master/CHANGELOG.md#050---2020-01-25
+
+I've just released version 0.5.0 of the typed builder proc-macro crate. This release has many breaking changes, so I figured I'd make a post to make them more visible:
+
+* I've moved setter-specific fields to a sub-attribute - `#[builder(setter(...))]` - following the example of [derive_builder](https://crates.io/crates/derive_builder).
+* The setter methods no longer automatically convert their argument type to the field's type with `into()`. If you want them to do that, you need to use `#[builder(setter(into))]`.
+* I've removed the `#[builder(default_code = "...")]` setting. It was an hack for when Rust's user attributes were more limited and did not support arbitrary expressions. Now this hack is no longer needed, as one could just use `#[builder(default = ...)]`. This was the case for quite a while, but since this is a breaking release I figured now is a good time to remove it.
+
+Thanks to all the contributes that helped with pull requests, opening issues, or even just using this crate and giving feedback!
+## [8][Are there any video trackers in Rust?](https://www.reddit.com/r/rust/comments/etouk8/are_there_any_video_trackers_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/etouk8/are_there_any_video_trackers_in_rust/
 ---
 
-## [12][What's a good first program for writing Rust?](https://www.reddit.com/r/rust/comments/et0loj/whats_a_good_first_program_for_writing_rust/)
-- url: https://www.reddit.com/r/rust/comments/et0loj/whats_a_good_first_program_for_writing_rust/
+## [9][Rust lang in a nutshell - 1 - introduction](https://www.reddit.com/r/rust/comments/etdyie/rust_lang_in_a_nutshell_1_introduction/)
+- url: https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/
 ---
-I have taken a Rust class, taken Rustlings and read parts of The Book. I am very sold on the language, but I want to showcase its benefits vs. other languages for my colleagues.
 
-I was thinking about writing something in Rust that compares to something in C, but I am open to any idea.
+## [10][Compiling rust+c++ with x86_64-unknown-linux-musl](https://www.reddit.com/r/rust/comments/etlakb/compiling_rustc_with_x86_64unknownlinuxmusl/)
+- url: https://www.reddit.com/r/rust/comments/etlakb/compiling_rustc_with_x86_64unknownlinuxmusl/
+---
+When compiling deno (rust + v8) with x86\_64-unknown-linux-musl  
+is there some trick (RUST\_FLAGS or CFLAGS ?) to link in static-libgcc (is that the issue?)  
+[https://gist.github.com/hayd/ae5cbe81117863fff98c2f0c877f2b34](https://gist.github.com/hayd/ae5cbe81117863fff98c2f0c877f2b34)
 
-What do you think you is a good first program for writing Rust (primarily a Go dev with a CS background) that also showcases some of its strengths? Thanks!
+What are some things I should try to compile to avoid the error:  
+hidden symbol \`\_\_dso\_handle' isn't defined.
+
+Note: It gets to the very last step in compilation (all the dependencies compile it's creating the bin which fails)...
+
+I'm using [https://github.com/emk/rust-musl-builder](https://github.com/emk/rust-musl-builder) as a docker image base.
+## [11][Which free/open licence is common for rust crates?](https://www.reddit.com/r/rust/comments/etmxxp/which_freeopen_licence_is_common_for_rust_crates/)
+- url: https://www.reddit.com/r/rust/comments/etmxxp/which_freeopen_licence_is_common_for_rust_crates/
+---
+Which free/open licence is usual for rust crates? I am thinking of releasing several crates that I am working on. 
+
+Myself, I would prefer LGPL3, but arguably I should use the same licence as everyone else to make it easier to manage. 
+
+Let us know your preference.
+## [12][Help me create an executor for my nano-coroutines but in Rust!](https://www.reddit.com/r/rust/comments/etcpin/help_me_create_an_executor_for_my_nanocoroutines/)
+- url: https://www.reddit.com/r/rust/comments/etcpin/help_me_create_an_executor_for_my_nanocoroutines/
+---
+I am interrested in porting in Rust the optimized memory accesses algorithms driven by coroutines and experimented by Gor Nishanov presented at the CppCon 2018.
+
+﻿﻿﻿https://youtu.be/j9tlJAqMV7U?t=732
+
+To make it easier to understand, Gor as made experiments in using experimental C++ coroutines to interleave memory accesses. For every memory lookup the CPU need to fetch the data located at the specified pointer, this lookup can be slow (60ns) but not enough to allow the CPU to context switch to another thread, so Gor tried to make multiple memory prefetches and read all of those refetch location at one time.
+
+This is like doing multitasking on the hardware directly, asking the memory BUS to fetch data in parallel, and make the CPU wait the least amount of time, mind blowing!
+
+[I have made half of the work](https://github.com/Kerollmops/cml/blob/8752abc4c20941321a00d94c297b27337e6df46d/src/main.rs#L41-L62), I have an async function (I tried with Generators too) that can binary search and await (like for an I/O) the memory lookup I ordered.
+
+Now I ask for your help to assist me to create a good executor, one that can execute multiple tasks in parallel with the least amount of overhead possible (multithreading is unecessary). I am a little bit lost with all those `Waker`, `RawWaker` and `parking`. I would like to reproduce something like the [Gor Nishanov scheduler](https://github.com/GorNishanov/await/blob/5dc5d0a7f92a49bd84ef7ca746827c8b94d5402c/2018_CppCon/src/coro_infra.h#L8-L32) and [throttler](https://github.com/GorNishanov/await/blob/5dc5d0a7f92a49bd84ef7ca746827c8b94d5402c/2018_CppCon/src/coro_infra.h#L105-L167).
+
+I am currently using [the little executor SpaceJam talked about on Twitter](https://twitter.com/sadisticsystems/status/1219331853666193408?s=20), and that's not really good in terms of performances.
+
+I would like to create a library that would be able to take a given amount of binary searches to do and execute all those at one time. Eventually using it in [MeiliSearch](https://github.com/meilisearch/MeiliSearch) if possible :)
+
+EDIT: I have finally made it work with generator and [performances are good](https://github.com/Kerollmops/cml/blob/master/README.md)!

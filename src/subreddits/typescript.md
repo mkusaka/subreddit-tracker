@@ -20,30 +20,105 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/et3gev/set_up_a_typescript_react_redux_project/)
+## [2][TypeScript: X doesn't not exist on type Y](https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/)
+- url: https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/
+---
+ 
+
+I Tried to use nodemon for auto restart server on changes but  Typescript throws the following error even though extended the type.  Please find the code attached below.
+
+Typings work fine with VS Code but the errors while compiling by nodemon. Error attached below code. 
+
+index.ts
+
+    import * as fastify from 'fastify'; 
+    import { Server, IncomingMessage, ServerResponse } from "http"; 
+    const server: FastifyInstance&lt;Server, IncomingMessage, ServerResponse&gt; = fastify(); server.ready(err =&gt; { if (err) throw err;     server.swagger(); }); 
+    const start = async () =&gt; { 
+        try { 
+            await server.listen(3000, "0.0.0.0");         
+            server.log.info("Server running on 3000");         
+            console.log("Server running on 3000"); 
+        } catch (error) {         
+            server.log.error(error); 
+        } 
+    }  
+    start();
+
+src/typings/fastify.d.ts
+
+    import * as fastify from 'fastify'; 
+    import * as http from "http";  
+    declare module 'fastify' { 
+        export interface FastifyInstance&lt; HttpServer = http.Server, HttpRequest = http.IncomingMessage, HttpResponse = http.ServerResponse &gt; {         
+        swagger(): void 
+        } 
+    }
+
+tsconfig.json
+
+    { 
+        "compileOnSave": false, 
+        "compilerOptions": { 
+            "baseUrl": ".", 
+            "lib": [ "es2016" ], 
+            "paths": { "*": [ "src/*" ] }, 
+            "allowJs": true, 
+            "target": "es2016", 
+            "module": "commonjs", 
+            "moduleResolution": "node", 
+            "sourceMap": true, 
+            "outDir": "./dist", 
+            "typeRoots": [ "src/typings", "node_modules/@types" ] 
+        }, 
+        "include": [ "./src/**/*.ts" ], 
+        "exclude": [ "node_modules" ], 
+        "rules": {} 
+    } 
+
+[Error Thrown while compiling with NodeMon](https://i.stack.imgur.com/o71Xn.png)
+## [3][Question: React onPress function type](https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/)
+- url: https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/
+---
+Hey!
+
+I just ported my react-native project to typescript and have a question about functions as props
+
+im passing:
+
+`&lt;DisplayCardsWithLikesdata={testData}likes={500}`**onPress={() =&gt; this.props.navigation.navigate("CardDetailScreen")}**`/&gt;`
+
+&amp;#x200B;
+
+to
+
+`type Props = {onPress: Function}`
+
+&amp;#x200B;
+
+`const FloatingActionButtonSimple = (props:Props) =&gt; {const {onPress} = propsreturn (&lt;View style={styles.containerFab}&gt;&lt;TouchableOpacity style={styles.fab} onPress={onPress}&gt;&lt;Icon name="plus" size={16} color={"white"} /&gt;&lt;/TouchableOpacity&gt;&lt;/View&gt;);};`
+
+&amp;#x200B;
+
+So nothing crazy, but if i define onPress as a function it doesn't work. Does anybody of you have an idea on how to define onPress?
+
+Thanks a lot!
+## [4][Proper syntax for having a numeric variable in a string](https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/)
+- url: https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/
+---
+So I have variables declared and everything, and I want to add it to a printed string. I want to have something like "Your X plants have been watered", and X is a variable rather than a string. I know I would have print("Your X plants have been watered") if I wanted it to say X, but how do I make it so its a numeric variable?
+## [5][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/et3gev/set_up_a_typescript_react_redux_project/)
 - url: https://typeofnan.dev/setup-a-typescript-react-redux-project/
 ---
 
-## [3][Is schemats, still maintained](https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/)
+## [6][Is schemats, still maintained](https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/)
 - url: https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/
 ---
 On the GitHub the last commit was almost 2 years ago, does it work well?
 Also does it work fine with both pg and pg-promise?
 
 https://github.com/SweetIQ/schemats
-## [4][Question about Loops/Output not printing](https://www.reddit.com/r/typescript/comments/eszchn/question_about_loopsoutput_not_printing/)
-- url: https://www.reddit.com/r/typescript/comments/eszchn/question_about_loopsoutput_not_printing/
----
-So I'm trying to have a counter that's like Day: n for how many times the loop runs. So it would be like starting at day 0 and every time it goes through the loop just add one day. I've declared and initialized all my variables I'm dealing with. The code for my loop is: 
-
-while (isHarvestTime === false &amp;&amp; alive === true) {  
- print("Day: " + day);  
-}
-
-&amp;#x200B;
-
-All I'm getting as output is a blank screen so I'm not really sure how to get the day counter to print.
-## [5][I finally understand how to infer types!](https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/)
+## [7][I finally understand how to infer types!](https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/)
 - url: https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/
 ---
 &amp;#x200B;
@@ -57,7 +132,19 @@ Type inference has always stumped me, forcing me to use explicit types / generic
 [The dropdown includes values that are all fields in the \`data\` array passed to \`useSearchItems\`.](https://preview.redd.it/hoc218ubslc41.png?width=760&amp;format=png&amp;auto=webp&amp;s=ba41378ccf7732168eadb5b97e2294e9a71b57fe)
 
 If there are any experts on how typescript's \`infer\` keyword works, I think it could make for a super useful Medium article.
-## [6][Drash - A microframework for deno](https://www.reddit.com/r/typescript/comments/esnv1t/drash_a_microframework_for_deno/)
+## [8][Question about Loops/Output not printing](https://www.reddit.com/r/typescript/comments/eszchn/question_about_loopsoutput_not_printing/)
+- url: https://www.reddit.com/r/typescript/comments/eszchn/question_about_loopsoutput_not_printing/
+---
+So I'm trying to have a counter that's like Day: n for how many times the loop runs. So it would be like starting at day 0 and every time it goes through the loop just add one day. I've declared and initialized all my variables I'm dealing with. The code for my loop is: 
+
+while (isHarvestTime === false &amp;&amp; alive === true) {  
+ print("Day: " + day);  
+}
+
+&amp;#x200B;
+
+All I'm getting as output is a blank screen so I'm not really sure how to get the day counter to print.
+## [9][Drash - A microframework for deno](https://www.reddit.com/r/typescript/comments/esnv1t/drash_a_microframework_for_deno/)
 - url: https://www.reddit.com/r/typescript/comments/esnv1t/drash_a_microframework_for_deno/
 ---
 Would love to get feedback on this:
@@ -65,105 +152,80 @@ Would love to get feedback on this:
 [https://www.reddit.com/r/Deno/comments/esazl4/drash\_a\_microframework\_for\_deno/](https://www.reddit.com/r/Deno/comments/esazl4/drash_a_microframework_for_deno/)
 
 Thanks!
-## [7][Unexpected Lessons from 100% Test Coverage](https://www.reddit.com/r/typescript/comments/eso0pv/unexpected_lessons_from_100_test_coverage/)
+## [10][Unexpected Lessons from 100% Test Coverage](https://www.reddit.com/r/typescript/comments/eso0pv/unexpected_lessons_from_100_test_coverage/)
 - url: https://medium.com/@EyasSH/unexpected-lessons-from-100-test-coverage-eebeee211b7a
 ---
 
-## [8][TypeScript generic higher order functions](https://www.reddit.com/r/typescript/comments/esf793/typescript_generic_higher_order_functions/)
-- url: https://www.reddit.com/r/typescript/comments/esf793/typescript_generic_higher_order_functions/
+## [11][Issues Converting .NET Cryptography to Typescript (3DES)](https://www.reddit.com/r/typescript/comments/esqigt/issues_converting_net_cryptography_to_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/esqigt/issues_converting_net_cryptography_to_typescript/
 ---
-I was wondering if anyone happens to know if what I am trying to achieve is even possible.
+Hi r/typescript
 
-What I have in regular Javascript is the following:
+I'm really stuck with converting a code to integrate with a .NET legacy code. I've tried a lot of libraries, such as crypto-js, crypto-es, but could not make this work.
 
-    let functions = {
-        add: (state, x, y) =&gt; state + x + y,
-        subtract: (state, x) =&gt; state - x,
-        decrement: (state) =&gt; state - 1,
-        increment: (state) =&gt; state + 1,
-    };
+The original code that I need to integrate with is the following, and the tries I've made are in the bottom. If anyone have any idea of what mistakes I'm doing, could give me some insights?
+
     
-    function wrapper(func) {
-        return (...args) =&gt; func(5, ...args);
+    string passPhrase = "test0001";
+    
+    // get the md5 hash of passPhrase as byte array
+    byte[] md5PassPhraseHash = null;
+    MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+    md5PassPhraseHash = md5.ComputeHash(Encoding.UTF8.GetBytes(passPhrase));
+    byte[] decodedSecret = Convert.FromBase64String(secretAsBase64);
+    
+    TripleDESCryptoServiceProvider tdes_dec = new TripleDESCryptoServiceProvider();
+    tdes_dec.Key = md5PassPhraseHash;
+    byte[] cIV_dec = new byte[8];
+    Array.Copy(md5PassPhraseHash, cIV_dec, 8);
+    tdes_dec.IV = cIV_dec;
+    
+    MemoryStream memstream_dec = new MemoryStream();
+    CryptoStream cs_dec = new CryptoStream(memstream_dec, tdes_dec.CreateDecryptor(), CryptoStreamMode.Write);
+    cs_dec.Write(decodedSecret, 0, decodedSecret.Length);
+    cs_dec.FlushFinalBlock();
+    cs_dec.Close();
+    byte[] decryptedSecret = memstream_dec.ToArray();
+    Int64 secret = Convert.ToInt64(Encoding.UTF8.GetString(decryptedSecret));
+    // increment secret
+    secret = secret + 1;
+    byte[] encodedSecret = Encoding.UTF8.GetBytes(Convert.ToString(secret));
+    
+    TripleDESCryptoServiceProvider tdes_enc = new TripleDESCryptoServiceProvider();
+    tdes_enc.Key = md5PassPhraseHash;
+    byte[] cIV_enc = new byte[8];
+    Array.Copy(md5PassPhraseHash, cIV_enc, 8);
+    tdes_enc.IV = cIV_enc;
+    
+    MemoryStream memstream = new MemoryStream();
+    CryptoStream cs = new CryptoStream(memstream, tdes_enc.CreateEncryptor(), CryptoStreamMode.Write);
+    cs.Write(encodedSecret, 0, encodedSecret.Length);
+    cs.FlushFinalBlock();
+    cs.Close();
+    byte[] encryptedSecret = memstream.ToArray();
+    string secret_encrypted = Convert.ToBase64String(encryptedSecret);
+    
+
+I've tried a lot of libraries and the native "crypto" package, but could not make it work. Can someone help me? Either I get invalid key length or even iv length issues.
+
+&amp;#x200B;
+
+Here's one of the tries:
+
+    static decrypt(passPhrase: string, secret: string): string {
+        const md5PassPhraseHash = crypto
+          .createHash('md5')
+          .update(passPhrase)
+          .digest();
+    
+        const decodedSecret = Buffer.from(secret, 'base64').toString();
+        const iv = Buffer.from(md5PassPhraseHash.slice(0, 8));
+    
+        const decipher = crypto.createDecipheriv('des-ede3-cbc', md5PassPhraseHash, iv);
+        decipher.update(decodedSecret, 'base64', 'utf8');
+    
+        const result = decipher.final('utf-8');
+        console.log({ result });
+    
+        return result.toString();
     }
-    
-    function wrapObject(obj) {
-        const newFunctions = {};
-        Object.keys(obj).map(key =&gt; {
-            newFunctions[key] = wrapper(obj[key]);
-        });
-        return newFunctions;
-    }
-    
-    const newFunctions = wrapObject(functions);
-    
-    newFunctions.add()
-
-The idea is simple. You have an object with functions that all have state as the first argument. I want to create a new object where I return the same functions except where the state is injected. In the above example it's just the number 5 that's always injected but that's beside the point. I achieve this by simply looping over the keys and returning an object with those keys and the values wrapped in a wrapper function.
-
-The problem with this code is that the editor doesn't know what parameters the function add (or any of them) takes. I would like to keep this intact so I figured I would use typescript.
-
-I came up with the following:
-
-    type Dictionary = { [key: string]: (state: number, ...args: any[]) =&gt; any }
-    type StateFunction = (state: any, ...args: any[]) =&gt; any
-    type OmitFirstParam&lt;T&gt; = T extends (state: number, ...args: infer P) =&gt; any ? P : never;
-    type NewFunction&lt;T&gt; = T extends (state: number, ...args: infer P) =&gt; any ? (...args: P) =&gt; void :  never;
-    type NewDictionary&lt;T&gt; = T extends { [key: string]: infer F } ? { [key: string]:  NewFunction&lt;F&gt;  } : never;
-    
-    
-    let functions = {
-        add: (state: number, x: number, y: number) =&gt; state + x + y,
-        subtract: (state: number, x: number) =&gt; state - x,
-        decrement: (state: number) =&gt; state - 1,
-        increment: (state: number) =&gt; state + 1,
-    };
-    
-    
-    function wrapper&lt;T extends StateFunction&gt;(func: T): (...funcArgs: OmitFirstParam&lt;T&gt;) =&gt; void {
-        return (...args) =&gt; func(5, ...args);
-    }
-    
-    
-    function wrapObject&lt;T extends { [key: string]: (state: number, ...args: any[]) =&gt; any }&gt;(obj: T): NewDictionary&lt;T&gt; {
-        const newFunctions: any = {};
-        Object.keys(obj).map(key =&gt; {
-            newFunctions[key] = wrapper(obj[key])
-        });
-        return newFunctions;
-    }
-    
-    
-    const newFunctions = wrapObject(functions);
-    
-    newFunctions.increment();
-
-the code in [typescriptlang playground](https://www.typescriptlang.org/play/?ssl=32&amp;ssc=26&amp;pln=1&amp;pc=1#code/C4TwDgpgBAIglgY2HA9gOwIYCcRQLxQDeUA2gNYQgBcUAzsFnGgOYC6NAFPRsBDWgFcAtgCMIWADRQAdLOzNaNDGhAlWASnwA+KMtwBfALAAoUJCgBlYDwgAxAWiSo0+KF2u8lKqbOnzFuipqmng6eiZm0ADyQnDAtnBY9AAK2BhCADwAKjoEWVAQAB68aAAmtG7cnlCCouI+clgKNEwAZuJQySFhKlAA-J1Q-BAAbuIA3BHg0AByEADu9o7I6Nm5UPlFJeWVHnw1wmKSMo3NUG0dXdqBuAMcvv40V6FQIyhwpUNQNaMTU+ZzebwJzobAgNauTbFCBlCrEciUGj0RgsdjnNDtLBQWxQfT9IikCjUOgMJhsGhQQFLEFoDK2HS4r5oX5YSbGEwmAA2EGAUFaDhpFQIhBM32+GFKpU4VX2tSOUkK-EO9SgxLl4m6JJsUAA1FBCrrVRJRWLaAIRAwMEhpXslXVjoqDvbNTKoABafXG4xiqClCAILAQIQw4A2mx2o4uvbuqAARi9PqYAaDIbD1XVWCj2r18ZM+jZHOM-OWzig8ywGDAkCw2QK0Nhlj21JWaC0HGLCBoWXUnF8HYAgk0AjE4gkksBUhXMjlNW8PkQTd9A8ABFgXPdTrRNR2OABWBp+IfqNlGdlnjstssVsBREQAK39wFrWxhO3hRKRpNRadlyuODyHLxVA0a49FxNsUHvLse0pBZgRbMEIRFb0xQQdB6B+RYBRbAIwOFfNFygW8HyQaQiVoDhILvdRpCESsOCJa5kJ9H1mSwkt0IREBWFcctK2rSj7y4jRCP0Y9COXVcXDY5tnFoE9CxMNC0AwmTsLk3jr2Ix923U9DxLPNSOJU6Qk0DYM0GADhjyAA)
-
-It almost works. It correctly realizes that the state parameter is not needed anymore but it thinks that every function takes the same arguments namely x and y. What I think is going wrong is that typescript has to pick one function for the type `key: string]: (state: number, ...args: any[]) =&gt; any` and uses that to build the Dictionary type that I created.
-
-I have a feeling it's not possible.
-
-EDIT: 
-
-Thanks to /u/Erelde I got something that works [link](https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=38&amp;pc=19#code/C4TwDgpgBAysCGwIDECuA7AxsAlge3SgF4oAKAZwSQC4p50QAaKAOjfgCcBzc2+kANoBdAJTEAfHQYBuALAAoUJCgB5ALY5gyHB0oBBbgB5kkksigQAHknQATcmUqIIfBszYtOPWjnQAzCA4oAAUxIkl+KAB+Mg8vXhCwyQA3PBxbKFp0CGTAuUVwaABZeDBIW0MAFQtrCDsHACUITDwOCsoOXy5mOGc0LFwCcVMoAG8oAQBrKF8oSYgQPD8oSqFadU1tXWADLiqpoUkAX3yFABsIYCg-DGx8dAcSUYUoV7pbW1oKKhcodFQ1AAjQLMSxZAHAjjMEDgoGBJJQJxIKAAaigllRUCYLze5FQgOAHHg2C+SN+-zhUPRsMhCLJUAAtOjGDjXrZmhwIGo6sBST8afCJIifoyoABGFnyN4zLCc7noXmOfl-CGC8LC5yYiUKE4KPXyG4De5QADuRLKgSqNRs9ig-TuQ1IhswtEqYmeUrenOAqA4hFIcW4CX4wgRztIAFZ3OwgyJ8kd9QpnYNCGbSipAQArZrAK1WG0OcZTBa0DpdNawH72lNQI7iUh4LOukS0EoWiqVSQe6UtB5XbIm6v3YMMYhjXWe14Z7PYFjzEDkBtZkQsNSlUjzoXd6VvAdDgjkYsgIRjtMWjhLzNH0Ss2tx2-e32EPe3FPkeP63uUP4QQev4enua045k6-4Hve8jnJcUDJPAZyoNAJAvkaB4sL4mByjypAiAoX54BcLBnHgXCkLB8EQDhkHyGRCFjshDoPCw7IYVyWGUXhBFESRNEUfqPF0b++6MXiBJEtgpAAMzsQe+EQIRxGkXBCGUQo-FIYJYGMfAHySYwABM0kPLJ8ncUpFFAA)
-## [9][How to add fixed properties to an object](https://www.reddit.com/r/typescript/comments/esdo91/how_to_add_fixed_properties_to_an_object/)
-- url: https://www.reddit.com/r/typescript/comments/esdo91/how_to_add_fixed_properties_to_an_object/
----
-For example
-
-    interface iObj1 { x:string }
-    interface iObj2 extends iObj1 { y:number }
-    const someObj : iObj1 = {x:'hello'};
-    someObj.y = 1
-    someFunc (someObj as iObj2);
-
-I could just be doing something stupid but this doesn't seem to work
-## [10][TypeScript Tip of the Week — Nullish Coalescing vs Logical OR Operator](https://www.reddit.com/r/typescript/comments/eskcbq/typescript_tip_of_the_week_nullish_coalescing_vs/)
-- url: https://medium.com/@sredmond/typescript-tip-of-the-week-nullish-coalescing-vs-logical-or-operator-72779807051
----
-
-## [11][Does someone have a simple bash script to include non .ts files in /dist after running tsc?](https://www.reddit.com/r/typescript/comments/esie55/does_someone_have_a_simple_bash_script_to_include/)
-- url: https://www.reddit.com/r/typescript/comments/esie55/does_someone_have_a_simple_bash_script_to_include/
----
-

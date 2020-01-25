@@ -19,7 +19,100 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][How do you work with '.erb' files in VS Code?](https://www.reddit.com/r/rails/comments/et71gs/how_do_you_work_with_erb_files_in_vs_code/)
+## [2][How to handle large data imports with validations?](https://www.reddit.com/r/rails/comments/etptuq/how_to_handle_large_data_imports_with_validations/)
+- url: https://www.reddit.com/r/rails/comments/etptuq/how_to_handle_large_data_imports_with_validations/
+---
+I have a database that has around a million records and growing. We have started importing records from an external system for reporting purposes and we are adding anywhere from 5k to 100k records per table. 
+
+The tables with 100k records being imported takes hours to finish uploading. We are trying to speed up the process because during the upload window the system cannot be used, since the reports might be wrong with incomplete data.
+
+We tried pgcopy and it is really fast and finishes in seconds, so one option is to go down that route, but it is just a data dump and we do it manually which is painful. The other problem is we have validations on the system and checks across tables that we do in rails. We also update records in case a duplicate is found. Which is again done in rails, using a first_or_initialize.
+
+So I was wondering if anyone knew a faster way to import large data while keeping the rails validations and duplicate updates in rails. Or is the only option to go with a raw SQL to import the data?
+## [3][Recording Building a Rails Based Accounting System](https://www.reddit.com/r/rails/comments/etk8a9/recording_building_a_rails_based_accounting_system/)
+- url: https://www.reddit.com/r/rails/comments/etk8a9/recording_building_a_rails_based_accounting_system/
+---
+Hi guys
+
+Recently added a video to the "reality tv" type of series I'm vlogging in youtube. It's not really a tutorial but rather a commentary / recording of how one would go about learning and building an application from scratch; in this case, an accounting system. It includes all mistakes / researching work / opinions etc. 
+
+Warning: It may be a bit boring since I don't cut out anything to capture literally everything. 
+
+Looking for suggestions or corrections or comments as to how I might go about a certain topic or even the video format itself.
+
+Thanks.
+
+Playlist here:
+
+[https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n\_JD82](https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
+## [4][I'm struggling to get a rails app running locally - any help would be much appreciated! It seems to freeze/hang during assets:precompile.](https://www.reddit.com/r/rails/comments/etpe2l/im_struggling_to_get_a_rails_app_running_locally/)
+- url: https://www.reddit.com/r/rails/comments/etpe2l/im_struggling_to_get_a_rails_app_running_locally/
+---
+I've cloned the repo of a Rails 5.2 app that I will be working on and I am trying to get it working in development but having some issues. When I run  `rails s` it seems to start fine but when I go to localhost:3000 I just hangs/freezes and won't load the page. The server logs show this:
+
+    =&gt; Booting Thin
+    =&gt; Rails 5.2.2.1 application starting in development on http://0.0.0.0:3000
+    =&gt; Run `rails server -h` for more startup options
+    Both Evidence and its :state machine have defined a different default for "state". Use only one or the other for defining defaults to avoid unexpected behaviors.
+    Thin web server (v1.7.2 codename Bachmanity)
+    Maximum connections set to 1024
+    Listening on 0.0.0.0:3000, CTRL+C to stop
+    Started GET "/login" for 127.0.0.1 at 2020-01-25 11:23:04 +0100
+    Processing by Users::SessionsController#new as HTML
+       (1.8ms)  SET NAMES utf8,  @@SESSION.sql_mode = 'TRADITIONAL',  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+      Rendering users/sessions/new.html.haml within layouts/sessions
+      Rendered users/sessions/new.html.haml within layouts/sessions (50.5ms)
+
+I also ran  `rails assets:precompile --trace` to try and see what's happening and it hangs/freezes at the point where it gets to  `** Execute assets:precompile` . Here's the full output:  
+
+
+    ** Invoke assets:precompile (first_time) 
+    ** Invoke assets:environment (first_time) 
+    ** Execute assets:environment 
+    ** Invoke environment (first_time) 
+    ** Execute environment 
+    ** Invoke bower:before_precompile (first_time) 
+    ** Execute bower:before_precompile 
+    ** Invoke yarn:install (first_time) 
+    ** Execute yarn:install 
+    ** Execute assets:precompile
+
+What could be causing this and how might  it be fixed?  I'm using Ubuntu 18.04, Rails 5.2 and Ruby 2.5.3.  Are there any other logs/files/settings that I could post here to give a better idea? Thanks in advance for any help or tips!
+## [5][Please critcize my personal site CV - ROR / Ruby developer looking to relocate to EUR or USA](https://www.reddit.com/r/rails/comments/etc6yk/please_critcize_my_personal_site_cv_ror_ruby/)
+- url: https://www.reddit.com/r/rails/comments/etc6yk/please_critcize_my_personal_site_cv_ror_ruby/
+---
+[https://pablo-vizcay.tech/](https://pablo-vizcay.tech/)
+
+Any feedback appreciated.. good, bad, suggestions. Especially if you are related or have exprience with the hiring process of software engineers.
+## [6][Need help with sending information to user](https://www.reddit.com/r/rails/comments/etihgu/need_help_with_sending_information_to_user/)
+- url: https://www.reddit.com/r/rails/comments/etihgu/need_help_with_sending_information_to_user/
+---
+Hi. I want to create an app that is automatically sending an email/sms to a user after a payment is made. The email sent contains a username and password that are stored in a database. The payers are not required to generate login information in order to make a payment. The website looks more simple than craigslist. My question is how do I do this? :) What are the marks/checkpoints I have to code my way to? Are there specific gems that might help speed up the building of the app? I am a complete n00b :) 10x
+## [7][Problem with Resque-Scheduler! Loading Schedule, Schedule Empty](https://www.reddit.com/r/rails/comments/etbxpn/problem_with_resquescheduler_loading_schedule/)
+- url: https://www.reddit.com/r/rails/comments/etbxpn/problem_with_resquescheduler_loading_schedule/
+---
+Hello! Well, I had a problem while I were doing the installation of pageflow [https://github.com/codevise/pageflow](https://github.com/codevise/pageflow)
+
+But, in the moment that I execute the foreman start, I receive a  warning and I cannot connect to the localhost. This is the warning:
+
+    resque-scheduler: [INFO] 2020-01-22T14:39:17+00+00: Loading Schedule 
+    resque-scheduler: [INFO] 2020-01-22T14:39:17+00+00: Schedule empty! Set Resque.schedule 
+    resque-scheduler: [INFO] 2020-01-22T14:39:17+00+00: Schedules Loaded  
+    
+    Passing 'info' command to redis as is; administrative commands cannot be effectively namespaced and should be called on the redis connection directly; passthrought has been deprecated and will be removed in redis-namespace 2.0 (at /var/lib/gems/2.5.0/gems/resque-1.27.4/lib/resque/data_store.rb:59:in `method_missing') 
+    
+    Passing 'script' command to redis as is; administrative commands cannot be effectively namespaced and should be called on the redis connection directly; passthrought has been deprecated and will be removed in redis-namespace 2.0 (at /var/lib/gems/2.5.0/gems/resque-1.27.4/lib/resque/data_store.rb:59:in `method_missing') 
+
+And I don't know why this is happening, I tried to look for a  question or solve this problem, but nothing. Now I'm stucked in this  point and I don't know how to go forward or what to do. Any help would be appreciated!
+
+Thanks!
+## [8][How to deal with legacy code (audio)](https://www.reddit.com/r/rails/comments/etfmvh/how_to_deal_with_legacy_code_audio/)
+- url: https://www.reddit.com/r/rails/comments/etfmvh/how_to_deal_with_legacy_code_audio/
+---
+Saw the interesting podcast on legacy code and thought it might be useful: 
+
+ [http://5by5.tv/rubyonrails/304](http://5by5.tv/rubyonrails/304)
+## [9][How do you work with '.erb' files in VS Code?](https://www.reddit.com/r/rails/comments/et71gs/how_do_you_work_with_erb_files_in_vs_code/)
 - url: https://www.reddit.com/r/rails/comments/et71gs/how_do_you_work_with_erb_files_in_vs_code/
 ---
 Hey guys!
@@ -29,7 +122,19 @@ I've come from IDE RubyMine, but I really want to simplify my experience and sta
 Everything is more or less okay, or at least you can used to VS Code experience except '.erb' files. It can either thread them as 'html' which completely kill Ruby experience either like Ruby files, but it's even more mess.
 
 How do you usually work with '.erb' files?
-## [3][What happened to Devise ownership?](https://www.reddit.com/r/rails/comments/et4rd9/what_happened_to_devise_ownership/)
+## [10][uninitialized constant RegistrationsController](https://www.reddit.com/r/rails/comments/etb9hx/uninitialized_constant_registrationscontroller/)
+- url: https://www.reddit.com/r/rails/comments/etb9hx/uninitialized_constant_registrationscontroller/
+---
+I used this tutorial to add ReCaptcha to my project :
+
+[https://github.com/heartcombo/devise/wiki/How-To:-Use-Recaptcha-with-Devise](https://github.com/heartcombo/devise/wiki/How-To:-Use-Recaptcha-with-Devise)
+
+and I did everything it says for "registration" controller, and when I want to sign up a new user, the error "uninitialized constant RegistrationsController " appears on the screen.
+
+Does it have something to do with file location? or views?
+
+UPDATE : It has been fixed by changing registrations to users/registrations to routes.rb. But, it doesn't check CAPTCHA. What should I do now?
+## [11][What happened to Devise ownership?](https://www.reddit.com/r/rails/comments/et4rd9/what_happened_to_devise_ownership/)
 - url: https://www.reddit.com/r/rails/comments/et4rd9/what_happened_to_devise_ownership/
 ---
 It's very strange not to find any discussion anywhere regarding the move of the Devise repo. Am I missing it?
@@ -37,191 +142,3 @@ It's very strange not to find any discussion anywhere regarding the move of the 
 Different Google/Reddit/DDG searches turn up nothing--I've never seen that before for something so widely used. No blog posts or issues discussions threads or other announcements that I can find, and kind of a random and empty new home for the repo.
 
 Commentary on the state of the Rails community? (Were it a Node module I'd think there'd be an explosion of posts.)
-## [4][Using Devise to show User's own creations](https://www.reddit.com/r/rails/comments/et92ft/using_devise_to_show_users_own_creations/)
-- url: https://www.reddit.com/r/rails/comments/et92ft/using_devise_to_show_users_own_creations/
----
-I am currently working on a project and project has some scaffolds belonging to the user. It's ok and I've done these parts. Now, I have a question. 
-
-First, Imagine I have a scaffold called "expenses" and it is only accessible from registered users. 
-
-Second, I want a user to be able to see "only" her own expenses. 
-
-Is that possible? if yes, how? Thanks a lot. 
-
-P.S : Sorry for bad English, I'm not a native English speaker.
-## [5][Getting errors while checking for Jekyll version](https://www.reddit.com/r/rails/comments/et01rk/getting_errors_while_checking_for_jekyll_version/)
-- url: https://www.reddit.com/r/rails/comments/et01rk/getting_errors_while_checking_for_jekyll_version/
----
-Hello,
-
-&amp;#x200B;
-
-I have installed `ffi` and when I tried to check the `jekyll -v` I have gotten this error message:
-
- 
-
-&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
-&gt;  
-&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1
-
-It was previously showing the message below, before do `gem install ffi`
-
-&gt;Ignoring eventmachine-1.2.7 because its extensions are not built. Try: gem pristine eventmachine --version 1.2.7  
-&gt;  
-&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1  
-&gt;  
-&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
-&gt;  
-&gt;Ignoring sassc-2.2.1 because its extensions are not built. Try: gem pristine sassc --version 2.2.1  
-&gt;  
-&gt;Traceback (most recent call last):  
-&gt;  
-&gt;21: from /Users/H.QIAN/gems/bin/jekyll:23:in \`&lt;main&gt;'  
-&gt;  
-&gt;20: from /Users/H.QIAN/gems/bin/jekyll:23:in \`load'  
-&gt;  
-&gt;19: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/exe/jekyll:8:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;18: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;17: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;16: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/lib/jekyll.rb:206:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;15: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;14: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;13: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll-sass-converter.rb:4:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;12: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;11: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;10: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll/converters/scss.rb:3:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;9: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;8: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;7: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;6: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`require\_relative'  
-&gt;  
-&gt;5: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc/native.rb:3:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;4: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;3: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;2: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:4:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;1: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;/Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require': cannot load such file -- 2.6/ffi\_c (LoadError)
-
-Please help me out with any advice. Thanks
-## [6][E2E, Integration and Unit tests in Rails?](https://www.reddit.com/r/rails/comments/et0w9y/e2e_integration_and_unit_tests_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/et0w9y/e2e_integration_and_unit_tests_in_rails/
----
-What would be the classification of these tests in Rails?
-
-* Unit tests would be testing models and services?
-* Integration tests would be testing controllers?
-* E2E would be testing the front-end behaviour with capybara?
-## [7][Is there a trick to using Rails 6/React/Redux?](https://www.reddit.com/r/rails/comments/esze1e/is_there_a_trick_to_using_rails_6reactredux/)
-- url: https://www.reddit.com/r/rails/comments/esze1e/is_there_a_trick_to_using_rails_6reactredux/
----
-I'm building an app that uses Rails 6 and React. Everything works great and smooth. I decided to add Redux in the way that I know how with just React. I'm not able to get any data into the redux store and show up in console.log. Is there some step I need to take care of in order to work in Rails 6? 
-
-&amp;#x200B;
-
-Here's my \`App.js\`:
-
-&amp;#x200B;
-
-    import React from 'react';
-    import ReactDOM from 'react-dom';
-    import Dashboard from './Dashboard';
-    import { Provider } from "react-redux";
-    import { createStore, applyMiddleware } from 'redux'; // we get our store from redux library and we need middleware to wire up Thunk
-    import thunk from 'redux-thunk';
-    import reducers from './reducers/rootReducer'; 
-    import "bootstrap/dist/css/bootstrap.css";
-    import "bootstrap/dist/css/bootstrap.min.css";
-    
-    const store = createStore(reducers, applyMiddleware(thunk));
-    
-    // this is how you hook up
-    store.subscribe(() =&gt; {
-        console.log('the new state is', store.getState()); 
-        consoel.log('----------');
-    });
-    
-    
-    document.addEventListener('DOMContentLoaded', () =&gt; {
-        ReactDOM.render(
-            &lt;Provider store={store}&gt;
-            &lt;Dashboard /&gt;
-            &lt;/Provider&gt;,
-            document.body.appendChild(document.createElement('div')),
-        )
-    });
-## [8][Renaming nested_attributes param](https://www.reddit.com/r/rails/comments/eswzgi/renaming_nested_attributes_param/)
-- url: https://www.reddit.com/r/rails/comments/eswzgi/renaming_nested_attributes_param/
----
-So I'm writing an api and long story short I'm running into a few headaches when it comes to sending/receiving the param for my nested\_attributes without some sort of workaround on the front end. I was just wondering if I could renaming my permitted params for my `hours_attributes` to just `hours`?
-## [9][AMP + IMG + RAILS](https://www.reddit.com/r/rails/comments/esqb14/amp_img_rails/)
-- url: https://www.reddit.com/r/rails/comments/esqb14/amp_img_rails/
----
-Error about width and height (random?).
-
-I created the AMP pages on my website. To add the &lt;amp-img&gt; we usted this system:
-
-in helpers/application\_helper.rb there is this:
-
-      def amp_image_tag(url, options = {})
-        options[:width], options[:height] = *safely_extract_image_size(url) unless options[:width]
-        content_tag('amp-img', nil, options.merge(src: asset_url(url)))
-      end
-    
-      def safely_extract_image_size(url)
-        FastImage.size(asset_url(url))
-      rescue StandardError =&gt; e
-        Rails.env.development? ? raise(e) : Rails.logger.warn(e)
-        [640, 480]
-      end
-
-and in the view page, we just made this:
-
-      &lt;% @movie.screens.each do |screen| %&gt;
-      &lt;div&gt;
-        &lt;%= amp_image_tag(screen.file.url(:medium), alt: @movie.title, layout: 'responsive') %&gt;
-      &lt;/div&gt;
-    &lt;% end %&gt;
-
-In amp-img tag, the width and height values are obligatory.
-
-I don't undestad why but sometime those values are showed and sometime they miss.
-
-What is wrong?
-
-p.s. the images have different sizes. They are uploaded by users.
-## [10][Is there a boilerplate repo that has authentication configured?](https://www.reddit.com/r/rails/comments/esgmnf/is_there_a_boilerplate_repo_that_has/)
-- url: https://www.reddit.com/r/rails/comments/esgmnf/is_there_a_boilerplate_repo_that_has/
----
-I'm building an app from scratch using Rails and React. Is there any boilerplate project out there that has a simple log in page and Devise (or other authentication gem) configured that I can work off of? The closest thing I can find is thoughtbot's https://github.com/thoughtbot/clearance
-## [11][asdf version manager and bundle exec question](https://www.reddit.com/r/rails/comments/esi2s7/asdf_version_manager_and_bundle_exec_question/)
-- url: https://www.reddit.com/r/rails/comments/esi2s7/asdf_version_manager_and_bundle_exec_question/
----
-I'm hoping some asdf users here can shed some light on this for me:
-
-I recently set up a new machine and used thoughtbot's laptop script to speed up the process. one of the things it setups for it asdf as your version manager. i come from using rvm, but i was interested in giving asdf a try anyway.
-
-a new coworker of mine also set her machine up similarly and is also using asdf as her version manager.
-
-i'm having to prepend bundle exec before executing gem commands like rspec, sidekiq or rails, but NOT before running rake tasks
-
-my coworker does NOT have to prepend bundle exec for anything. we checked her zshrc file and she doesn't have any bundle exec aliases either.
-
-Why am i having to prepend bundle exec and she doesn't? Why is it specific to gems so far and not rake? Is it typical with asdf to have to prepend it without an alias?

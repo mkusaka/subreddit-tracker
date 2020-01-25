@@ -1,5 +1,53 @@
 # aws
-## [1][Original Snowball retirement, Snowball Edge only from 4th Feb](https://www.reddit.com/r/aws/comments/et8d99/original_snowball_retirement_snowball_edge_only/)
+## [1][Announcing Amazon Relational Database Service (RDS) Snapshot Export to S3](https://www.reddit.com/r/aws/comments/etepdt/announcing_amazon_relational_database_service_rds/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/01/announcing-amazon-relational-database-service-snapshot-export-to-s3/
+---
+
+## [2][R53 service health issue](https://www.reddit.com/r/aws/comments/etgoet/r53_service_health_issue/)
+- url: https://www.reddit.com/r/aws/comments/etgoet/r53_service_health_issue/
+---
+The service health statement is vague. I am seeing problems across many of our apps that utilize EC2, ECS, RDS, R53, along with vendor sites I know run on AWS. Waiting to chat with support. [https://status.aws.amazon.com](https://status.aws.amazon.com/)
+
+EDIT: Problems cleared up for my RDS Aurora Mysql cluster connection timeouts when AWS posted that they found the root cause of R53 issue at 6:08pm ET. Frustrating they never include all affected services.
+## [3][Questions on setup of online shopping website with aws.](https://www.reddit.com/r/aws/comments/etl3k4/questions_on_setup_of_online_shopping_website/)
+- url: https://www.reddit.com/r/aws/comments/etl3k4/questions_on_setup_of_online_shopping_website/
+---
+I'm creating a shopping website, using angular for the frontend and java for the backend, and am a little overwhelmed with the following.
+
+Basically I'm stuck on where should the java application live? 
+
+- Should I put it in a docker container and run it on EC2? 
+
+- Should I just run it on EC2 without docker? 
+
+- Is there any benefit in me thinking about fargate or something along those lines?
+
+- Should I forget about the EC2 option and just go with lambda?
+## [4][Best practice to back up existing dedicated server data to S3](https://www.reddit.com/r/aws/comments/etmlp1/best_practice_to_back_up_existing_dedicated/)
+- url: https://www.reddit.com/r/aws/comments/etmlp1/best_practice_to_back_up_existing_dedicated/
+---
+Hoping for advice from someone here who has experience (or at least an idea for) copying data from a dedicated server environment to S3.
+
+We have a website with alot of video content currently managed via cPanel on our dedicated server. We would like to back up everything in the public\_html directory to an AWS S3 bucket, retaining the directory structure.
+
+This would just be a backup - we would manage everything backed up on S3 via normal AWS tools (no cPanel) once the data is moved across.
+
+Would appreciate any advice on the best way transfer/back up this data securely and directly without intermediate storage.
+
+Thanks
+## [5][AWS Transcribe Sensitivity](https://www.reddit.com/r/aws/comments/etm3ff/aws_transcribe_sensitivity/)
+- url: https://www.reddit.com/r/aws/comments/etm3ff/aws_transcribe_sensitivity/
+---
+I want to make sure the transcription only works if the person speaks clearly and pronounces their words correctly. Is there a way to tell AWS Transcribe to turn up/down the sensitivity of how well it picks up words?
+## [6][T3 Instances on Dedicated Single-Tenant Hardware](https://www.reddit.com/r/aws/comments/etd5rz/t3_instances_on_dedicated_singletenant_hardware/)
+- url: https://aws.amazon.com/blogs/aws/new-t3-instances-on-dedicated-single-tenant-hardware/
+---
+
+## [7][AWS DataSync Update – Support for Amazon FSx for Windows File Server](https://www.reddit.com/r/aws/comments/etgt1k/aws_datasync_update_support_for_amazon_fsx_for/)
+- url: https://aws.amazon.com/blogs/aws/aws-datasync-update-support-for-amazon-fsx-for-windows-file-server/
+---
+
+## [8][Original Snowball retirement, Snowball Edge only from 4th Feb](https://www.reddit.com/r/aws/comments/et8d99/original_snowball_retirement_snowball_edge_only/)
 - url: https://www.reddit.com/r/aws/comments/et8d99/original_snowball_retirement_snowball_edge_only/
 ---
 Anyone know any more about the original Snowball retirement?  I haven't been able to find any announcement of it or any more details, but the following notification appears in the AWS console:
@@ -7,113 +55,17 @@ Anyone know any more about the original Snowball retirement?  I haven't been abl
 &gt; On February 4th, 2020, the first-generation 48 TB and 80 TB Snowball devices will be retired from the Snowball Service. Devices ordered by February 3rd, 2020 will be fulfilled. These 48 TB and 80 TB devices will no longer be orderable on February 4th, 2020. The Snowball Edge Storage Optimized device replaces the first-generation Snowball device for data migration requirements.
 
 This is a bit frustrating for us, as we found the Edge to be more awkward to use in our specific workflows, and we're not geared up to start working with Edges again, certainly not with a week and a half notice.
-## [2][Export Aurora or RDS snapshots to Amazon S3](https://www.reddit.com/r/aws/comments/et3mxm/export_aurora_or_rds_snapshots_to_amazon_s3/)
-- url: https://www.reddit.com/r/aws/comments/et3mxm/export_aurora_or_rds_snapshots_to_amazon_s3/
+## [9][VPC private IP address change](https://www.reddit.com/r/aws/comments/etka4i/vpc_private_ip_address_change/)
+- url: https://www.reddit.com/r/aws/comments/etka4i/vpc_private_ip_address_change/
 ---
-You can now export Aurora or RDS snapshots to Amazon S3 for analytics or long term retention with just a few clicks on the Amazon RDS Management Console or using the AWS SDK or CLI. No need to write any code or provision any instances! 
-
-https://aws.amazon.com/about-aws/whats-new/2020/01/announcing-amazon-relational-database-service-snapshot-export-to-s3/
-## [3][AWS engineer uploads customer keys, passwords to GitHub](https://www.reddit.com/r/aws/comments/et08r0/aws_engineer_uploads_customer_keys_passwords_to/)
-- url: https://www.reddit.com/r/aws/comments/et08r0/aws_engineer_uploads_customer_keys_passwords_to/
+i would like to change the private IP (IPv4) address of a VPC but *not* change the IPv6 address.  is there a way to do this?
+## [10][AWS Transfer for SFTP or set up a local Linux SFTP EC2 Instance](https://www.reddit.com/r/aws/comments/etiila/aws_transfer_for_sftp_or_set_up_a_local_linux/)
+- url: https://www.reddit.com/r/aws/comments/etiila/aws_transfer_for_sftp_or_set_up_a_local_linux/
 ---
-https://www.theregister.co.uk/2020/01/23/aws_engineer_customer_credentials_github/
+Hi Everyone,
 
-IAM secret key/secrets were available for five hours before being taken down.
+I have been given the task of setting up a SFTP server.    To be honest, I would rather setup an SFTP  Server myself on an EC2 Instance.
 
-As a precaution we’ve rotated all our IAM keys , no word yet from AWS
-## [4][AwsApiChanges.info: Updated API methods which reflect recent AWS updates](https://www.reddit.com/r/aws/comments/esuw0d/awsapichangesinfo_updated_api_methods_which/)
-- url: https://awsapichanges.info
----
-
-## [5][What's the difference between CloudFront and ELB?](https://www.reddit.com/r/aws/comments/eta7e3/whats_the_difference_between_cloudfront_and_elb/)
-- url: https://www.reddit.com/r/aws/comments/eta7e3/whats_the_difference_between_cloudfront_and_elb/
----
-Both of them distribute the traffic based on geolocation. So what's the difference?
-
-**Edit:** And how does S3 fit into this? Isn't it distributed also?
-## [6][Running a Lambda in response to updates to SSM parameters owned by Amazon?](https://www.reddit.com/r/aws/comments/et9tv9/running_a_lambda_in_response_to_updates_to_ssm/)
-- url: https://www.reddit.com/r/aws/comments/et9tv9/running_a_lambda_in_response_to_updates_to_ssm/
----
-Hello - I run an ECS cluster and it's been incredibly annoying to have to update the ECS-optimized AMIs in my launch templates/configurations every time a new AMI is published. I wrote a Lambda to deal with changing out the AMI in my ASGs but I'd like to trigger the Lambda every time Amazon updates the recommended AMI in Parameter Store.   
-
-
-Using the documentation on this provided by AWS ([https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html)), I set up a CloudWatch event rule that looks like this: 
-
-`{`
-
-  `"detail-type": [`
-
-`"Parameter Store Change"`
-
-  `],`
-
-  `"source": [`
-
-`"aws.ssm"`
-
-  `],`
-
-  `"detail": {`
-
-`"name": [`
-
-`"/aws/service/ecs/optimized-ami/amazon-linux/recommended"`
-
-`],`
-
-`"operation": [`
-
-`"Update"`
-
-`]`
-
-  `}`
-
-`}`
-
-However, I'm not sure this is going to work as intended. I'm skeptical because I assume the events for that parameter may not be in my event bus but would anyone know for sure if this is going to work?
-## [7][What language are you using to Develop in AWS CDK?](https://www.reddit.com/r/aws/comments/et8w84/what_language_are_you_using_to_develop_in_aws_cdk/)
-- url: /r/aws_cdk/comments/et8sig/what_language_are_you_using_to_develop_in_cdk/
----
-
-## [8][Results of the 2019 AWS Container Security Survey](https://www.reddit.com/r/aws/comments/esv8f2/results_of_the_2019_aws_container_security_survey/)
-- url: https://aws.amazon.com/blogs/containers/results-of-the-2019-aws-container-security-survey/
----
-
-## [9][[ECS] Detect and generate a cloudwatch Alarm when a Task is killed or restarted](https://www.reddit.com/r/aws/comments/et80n6/ecs_detect_and_generate_a_cloudwatch_alarm_when_a/)
-- url: https://www.reddit.com/r/aws/comments/et80n6/ecs_detect_and_generate_a_cloudwatch_alarm_when_a/
----
-Hi,
-
-I'm trying to set an Alarm using Cloudwatch to detect when a Task is killed in an ECS Cluster.
-
-I followed this  [https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#cw\_running\_task\_count](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#cw_running_task_count)  to set up a metric to track the number of tasks running by a service.
-
-This is my alarm : 
-
-**Namespace**        : AWS/ECS  
-**MetricName**      : CPUUtilization  
-**ServiceName**     : my\_service  
-**ClusterName**     : my\_cluster  
-**Statistic**               : Sample count  
-**Period**                  : 1minute  
-**Conditions** :   
-   **Threshold type** : Static  
-**Whenever CPUUtilization is**... : Lower Than 1  
- 
-
-But it's not working and doesn't generate an Alarm as expected. I think that this is because if the task is killed, it's recreated again automatically and quickly under 1 minute (the period set in the Alarm).
-
-I tried to change the Period to less than a minute but AWS says ***Only a period greater than 60s is supported for metrics in the "AWS/" namespaces*** 
-
- 
-
-So is there a way to detect if a task is killed ?
+My Question is to inquire if anyone has ever made use of the SFTP service that AWS offers? What would be the pros and cons of it to against setting up ground up?
 
 Thanks
-## [10][Assign public IP range to the auto scalable containers in ECS?](https://www.reddit.com/r/aws/comments/et6i88/assign_public_ip_range_to_the_auto_scalable/)
-- url: https://www.reddit.com/r/aws/comments/et6i88/assign_public_ip_range_to_the_auto_scalable/
----
-Hi, When i spin up an ECS cluster, it assigns public IP dynamically to all the containers it creates.
-
-Can we configure something so that the IP assigned are within a particular range? Something like public CIDR?

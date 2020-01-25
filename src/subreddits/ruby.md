@@ -1,192 +1,71 @@
 # ruby
-## [1][16 New ML Gems for Ruby](https://www.reddit.com/r/ruby/comments/et2bvc/16_new_ml_gems_for_ruby/)
+## [1][Ruby Quiz - Challenge #16 - Build the Manuscripts Book Manifest for Documents in Markdown](https://www.reddit.com/r/ruby/comments/etehqg/ruby_quiz_challenge_16_build_the_manuscripts_book/)
+- url: https://github.com/planetruby/quiz/tree/master/016
+---
+
+## [2][Cannot install pg bind Raspbian](https://www.reddit.com/r/ruby/comments/etgml5/cannot_install_pg_bind_raspbian/)
+- url: https://www.reddit.com/r/ruby/comments/etgml5/cannot_install_pg_bind_raspbian/
+---
+I have installed Ruby 2.7.0 from snap, when I try to `gem install pg`, gem gives me this:
+```
+ERROR:  While executing gem ... (ArgumentError)
+    "@\x01\x00\x00@\x01" is not an octal string
+```
+
+What cloud it be?
+
+I dont even know the existence of ArgumentError until now
+
+
+Edit:
+Added `gem "pg"` to a gem file, even thought that didn't installed the bind, the command that bundler give me (`gem install pg -v '1.2.2' --source 'https://rubygems.org/`) didn't raised that exception anymore but still it cant build native extensions
+## [3][uninitialized constant RegistrationsController](https://www.reddit.com/r/ruby/comments/etdgqa/uninitialized_constant_registrationscontroller/)
+- url: /r/rails/comments/etb9hx/uninitialized_constant_registrationscontroller/
+---
+
+## [4][Is it wise decision to implement oop basics from Ruby into java?](https://www.reddit.com/r/ruby/comments/etfenb/is_it_wise_decision_to_implement_oop_basics_from/)
+- url: https://www.reddit.com/r/ruby/comments/etfenb/is_it_wise_decision_to_implement_oop_basics_from/
+---
+It is difficult for me to get understandings of OOP, as it could give big opportunities in learning programming language especially java/C#. I sought many books and courses and unfortunately failed in it, I know java's basic syntax. Yesterday I found book on amazon "Practical Object Oriented Programming on Ruby" it has many good recommendations, especially about explaining OOD concenpts. So the Ruby is pretty eassy language I'm planning to learn its syntax, so it would be easier to understand whole thing. What do you think about that? Is there anyone Who switched from Ruby to c#/java was it worth that?
+## [5][Can someone please help me with an upcoming assignment in college? It’s pretty basic...](https://www.reddit.com/r/ruby/comments/etoark/can_someone_please_help_me_with_an_upcoming/)
+- url: https://www.reddit.com/r/ruby/comments/etoark/can_someone_please_help_me_with_an_upcoming/
+---
+I just need to use a hash in a small app. Basically I should just show a hash, a function that uses the hash, then show the output in terminal.  
+  
+Separately, I need to do the same for arrays too, and for searching data. And also I need to show the output, and code, of a program sorting some data.  
+   
+This isn’t exactly a competence issue, it’s more of an imagination issue as I don’t even know what problem I’m solving here.  
+  
+In short, I need to write like 4 small programs, of only a few lines of code each and just run them in terminal. Any little nudges in the right direction would be greatly appreciated.
+## [6][16 New ML Gems for Ruby](https://www.reddit.com/r/ruby/comments/et2bvc/16_new_ml_gems_for_ruby/)
 - url: https://ankane.org/new-ml-gems
 ---
 
-## [2][Ruby ML for Python Coders](https://www.reddit.com/r/ruby/comments/et2bbh/ruby_ml_for_python_coders/)
+## [7][Is Ruby that slow? And why?](https://www.reddit.com/r/ruby/comments/etfjkh/is_ruby_that_slow_and_why/)
+- url: https://www.reddit.com/r/ruby/comments/etfjkh/is_ruby_that_slow_and_why/
+---
+I read everywhere on the Internet that Ruby is kinda slow compared to others "similar" languages (Python?)
+
+Since Ruby is written is C, what makes it so slow?
+## [8][[Question] Cannot Run Ruby Commands or IRB through Command Prompt](https://www.reddit.com/r/ruby/comments/etcgwy/question_cannot_run_ruby_commands_or_irb_through/)
+- url: https://www.reddit.com/r/ruby/comments/etcgwy/question_cannot_run_ruby_commands_or_irb_through/
+---
+Hi so I have installed a fresh copy of ruby 2.4.5 32-bit on Windows Server 2016. Ruby did previously work on this machine but I had 2.6.5 and I needed to downgrade to 2.4.5. When I got to the point of the installer when it was time to run ridk install I saw my command prompt flash and close. I cannot run ANY ruby commands or use the IRB through the command prompt. Strangely enough I have RubyMine installed and I can run scripts through that. Still no commands like IRB or bundle install.
+
+&amp;#x200B;
+
+Matter of fact even if I try to output ruby -v from the command prompt I get nothing.
+
+[No Output](https://preview.redd.it/srv805174rc41.png?width=256&amp;format=png&amp;auto=webp&amp;s=fce31c01d620cb6b6a70a39319c65b8d7c1beed1)
+
+&amp;#x200B;
+
+I tried to ask on StackOverflow ( [https://stackoverflow.com/questions/59848729/all-ruby-commands-immediately-close](https://stackoverflow.com/questions/59848729/all-ruby-commands-immediately-close) ) but didn't really get anywhere. It's kind of frustrating that even a re-install of ruby did not fix the issue. Not too sure what else to try.
+## [9][Ruby ML for Python Coders](https://www.reddit.com/r/ruby/comments/et2bbh/ruby_ml_for_python_coders/)
 - url: https://ankane.org/ruby-ml-for-python-coders
 ---
 
-## [3][How to Have Heroku Automatically Run Database Migrations Before a Rails App is Deployed](https://www.reddit.com/r/ruby/comments/est6ks/how_to_have_heroku_automatically_run_database/)
+## [10][How to Have Heroku Automatically Run Database Migrations Before a Rails App is Deployed](https://www.reddit.com/r/ruby/comments/est6ks/how_to_have_heroku_automatically_run_database/)
 - url: https://scottbartell.com/2020/01/22/automating-rails-database-migrations-on-heroku/
 ---
 
-## [4][Trying to learn Polymorphism/Duck Tying/Inheritance file structure](https://www.reddit.com/r/ruby/comments/et3izy/trying_to_learn_polymorphismduck_tyinginheritance/)
-- url: https://www.reddit.com/r/ruby/comments/et3izy/trying_to_learn_polymorphismduck_tyinginheritance/
----
-Hello,
-
-I'm trying to learn more about Polymorphism in Ruby, and my main question is **what should the file structure look like?** Most examples online don't really include the file structure, they just list it all out.
-
-As of right now, I have all of my classes in a single file for this Polymorphism example. This file is in the **lib** directory.
-
-My nooby example:
-
-I have a base "generic class" which is called FoodType. This has a single method called get\_food which takes in a "food type" as an argument.
-
-I have multiple various "food types" that are different classes (Fruit, Vegetable, Dairy, Meat etc.) and these all have their own get\_food methods (which just gets some different strings with examples of the food).
-
-So essentially, when I call FoodType.get\_food( give it a food\_type class here) it ends up using the correct food type sub class and outputs the correct example. I have this working. This is duck typed.
-
-* But my question is HOW do I structure this in the lib directory?
-* I'm guessing I should first make a food\_type.rb, and this file should only contain my generic FoodType class. I should also make separate files for meat.rb, vegetable.rb, etc.
-* Do I make another directory in lib for these files? Do I also have to change the class of the subtypes to like FoodType::Meat ??
-* My code is working and it's duck typed, so I'm not using inheritance, so I'm not using this notation "&lt;" in the class names. But should I instead use inheritance?
-* I have no idea what the file structure/class name syntax is suppose to look like when I have to separate this into multiple files/directories. Please please please give me an example of how this would work.
-
-Thank you
-## [5][What are some important ruby topics to study before a Ruby Software Developer interview?](https://www.reddit.com/r/ruby/comments/esusjq/what_are_some_important_ruby_topics_to_study/)
-- url: https://www.reddit.com/r/ruby/comments/esusjq/what_are_some_important_ruby_topics_to_study/
----
-If you are interviewing someone for the role of an experienced ruby developer, what topics would you want the candidate to know thoroughly in Ruby / Rails ?
-## [6][Help with running Jekyll - having trouble with gems and ruby set up - MAC OS](https://www.reddit.com/r/ruby/comments/et06vx/help_with_running_jekyll_having_trouble_with_gems/)
-- url: https://www.reddit.com/r/ruby/comments/et06vx/help_with_running_jekyll_having_trouble_with_gems/
----
-Hello,
-
-I am a beginner to ruby and gems. I was trying to do `jekyll -v`  then it showed this error message:
-
-&gt;Ignoring eventmachine-1.2.7 because its extensions are not built. Try: gem pristine eventmachine --version 1.2.7  
-&gt;  
-&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1  
-&gt;  
-&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
-&gt;  
-&gt;Ignoring sassc-2.2.1 because its extensions are not built. Try: gem pristine sassc --version 2.2.1  
-&gt;  
-&gt;Traceback (most recent call last):  
-&gt;  
-&gt;21: from /Users/H.QIAN/gems/bin/jekyll:23:in \`&lt;main&gt;'  
-&gt;  
-&gt;20: from /Users/H.QIAN/gems/bin/jekyll:23:in \`load'  
-&gt;  
-&gt;19: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/exe/jekyll:8:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;18: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;17: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;16: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/lib/jekyll.rb:206:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;15: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;14: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;13: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll-sass-converter.rb:4:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;12: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;11: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;10: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll/converters/scss.rb:3:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;9: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;8: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;7: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;6: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`require\_relative'  
-&gt;  
-&gt;5: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc/native.rb:3:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;4: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;3: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;2: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:4:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;1: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;/Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require': cannot load such file -- 2.6/ffi\_c (LoadError)  
-&gt;  
-&gt;22: from /Users/H.QIAN/gems/bin/jekyll:23:in \`&lt;main&gt;'  
-&gt;  
-&gt;21: from /Users/H.QIAN/gems/bin/jekyll:23:in \`load'  
-&gt;  
-&gt;20: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/exe/jekyll:8:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;19: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;18: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;17: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-4.0.0/lib/jekyll.rb:206:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;16: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;15: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;14: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll-sass-converter.rb:4:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;13: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;12: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;11: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/jekyll-sass-converter-2.0.1/lib/jekyll/converters/scss.rb:3:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;10: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;9: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;8: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;7: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc.rb:31:in \`require\_relative'  
-&gt;  
-&gt;6: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/sassc-2.2.1/lib/sassc/native.rb:3:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;5: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;4: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;3: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:3:in \`&lt;top (required)&gt;'  
-&gt;  
-&gt;2: from /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi.rb:6:in \`rescue in &lt;top (required)&gt;'  
-&gt;  
-&gt;1: from /Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require'  
-&gt;  
-&gt;/Users/H.QIAN/.rbenv/versions/2.6.2/lib/ruby/2.6.0/rubygems/core\_ext/kernel\_require.rb:54:in \`require': incompatible library version - /Users/H.QIAN/.gem/ruby/2.6.0/gems/ffi-1.11.1/lib/ffi\_c.bundle (LoadError)
-
-then, I tried to do `gem install ffi` then it shows different message when I tried to run `jekyll -v`
-
-&amp;#x200B;
-
- 
-
-&gt;Ignoring http\_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http\_parser.rb --version 0.6.0  
-&gt;  
-&gt;Ignoring sassc-2.2.1 because its extensions are not built. Try: gem pristine sassc --version 2.2.1  
-&gt;  
-&gt;Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1  
-&gt;  
-&gt;jekyll 4.0.0
-
-which actually shows me the version name but I am not sure what I should do with all the error messages I have received above. 
-
-&amp;#x200B;
-
-Can someone explain what is going on? And will it be possible to restart everything and start to install gems again and a new version of ruby too?
-
-&amp;#x200B;
-
-Thanks in advance for any help.
-## [7][Sharing an online tool to generate dry-structs from JSON / JSON Schema / GraphQL definitions](https://www.reddit.com/r/ruby/comments/esrvbr/sharing_an_online_tool_to_generate_drystructs/)
-- url: https://app.quicktype.io/
----
-
-## [8][Rails 6 adds touch option to has_one association](https://www.reddit.com/r/ruby/comments/esveb5/rails_6_adds_touch_option_to_has_one_association/)
-- url: https://www.abhaynikam.in/posts/rails-6-adds-touch-option-to-has-one-association/
----
-
-## [9][I'm a Ruby developer looking to relocate (EUR or USA), please give me feedback on my CV](https://www.reddit.com/r/ruby/comments/esw7eb/im_a_ruby_developer_looking_to_relocate_eur_or/)
-- url: https://www.reddit.com/r/ruby/comments/esw7eb/im_a_ruby_developer_looking_to_relocate_eur_or/
----
-[https://pablo-vizcay.tech/](https://pablo-vizcay.tech/)  
-
-
-Any feedback appreciated.. good, bad, suggestions.
-## [10][Would sorting a sorting an array linearly using multi threading speed up it's sorting time?](https://www.reddit.com/r/ruby/comments/esrrwr/would_sorting_a_sorting_an_array_linearly_using/)
-- url: https://www.reddit.com/r/ruby/comments/esrrwr/would_sorting_a_sorting_an_array_linearly_using/
----
-Say for instance, we have an array X. If we split X in half and then sort each of those halves concurrently using different threads and finally combine them, would the sorting time drop from O(n) to O(n/2)?
-
-Or is O(n/2) ideally just O(n) with ½ as the constant factor?

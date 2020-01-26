@@ -97,192 +97,77 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Is there any tutorial that shows someone fixing up a badly written React app?](https://www.reddit.com/r/reactjs/comments/etl7m0/is_there_any_tutorial_that_shows_someone_fixing/)
-- url: https://www.reddit.com/r/reactjs/comments/etl7m0/is_there_any_tutorial_that_shows_someone_fixing/
----
-I feel you can learn more by watching someone fix up an application rather than building it from the ground up. Is there any tutorial like that?
-## [4][Setup third-party applications API without backend](https://www.reddit.com/r/reactjs/comments/eto5pn/setup_thirdparty_applications_api_without_backend/)
-- url: https://www.reddit.com/r/reactjs/comments/eto5pn/setup_thirdparty_applications_api_without_backend/
----
-Hey,
-
-I'm React developer and I build something called [NoCodeAPI](https://nocodeapi.com/) tool to build third-party applications without any code. So, I can focus on my front-end and will use these NoCodeAPI.
-
-Like you can make Google Sheet, Airtable, Google Analytics, Cloudinary, Contentful, Slack, Telegram Hook, Link Preview, Twitter, XML-JSON, Medium, Ghost.
-
-**What problem I'm solving with NoCodeAPI?**
-
-To set up any service you need some basic things like a Server, Basic Knowledge to code backend for this, keep tracking of APIs logs, Time to do all these things. So, why not solve these problems to make development quick.
-
-**Time-Saving** \- with NoCodeAPI you can build any third party application in less than 10 seconds. Just add key values that are required to access your services.
-
-**Simple &amp; Easy Documentation** \- we have minimal and easy documentation to quickly start using and access the required data.
-
-**Securing Keys** \- With NoCodeAPI you are securing your tokens like access\_token, client id, secret id, and your inputs. You can see NoCodeAPI endpoint without exposing any of these.
-
-**Bypass Rate Limit** \- All services public APIs have request limit to not get the system abused. So, with NoCodeAPI you can solve this big problem. Like Airtable has 5 requests per second.
-
-**API Logs** \- You can track your NoCodeAPI logs into the browser if its success or error. This type of logs view is not provided by lots of services. This is a win-win situation.
-
-**Fast** \- NoCodeAPI using caching technology to improve the performance of the APIs. So, use these NoCode API to empower your project.
-
-Website: [https://nocodeapi.com](https://nocodeapi.com/)
-
-Just give a try with free and let me know what you think about this.
-
-Thanks :)
-## [5][React &amp; Wordpress REST API](https://www.reddit.com/r/reactjs/comments/etnr5q/react_wordpress_rest_api/)
-- url: https://www.reddit.com/r/reactjs/comments/etnr5q/react_wordpress_rest_api/
----
-I already posted this project before here and got a positive feedback. It really made me happy. I then proceeded to add a Dark Theme toggle support and preconfigured Wordpress backend. I also improved the documentation a bit. 
-
-I used Wordpress REST API as my backend and CRA as my frontend. I'm using Typescript &amp; React Redux hooks.  I hope you enjoy the APP!
-
-Source code: [https://github.com/loq24/wp-react-typescript/](https://github.com/loq24/wp-react-typescript/)
-
-Live demo: [https://wp-react-ts.lougiequisel.com/signin](https://wp-react-ts.lougiequisel.com/signin)
-## [6][Light Emoji Picker (lighter than emojimart)](https://www.reddit.com/r/reactjs/comments/etpw1x/light_emoji_picker_lighter_than_emojimart/)
-- url: https://www.reddit.com/r/reactjs/comments/etpw1x/light_emoji_picker_lighter_than_emojimart/
----
-Hi, is there any minimal solution to add an emoji picker to a text input (I'm using react), I managed to use emojimart but the bundle size is too big, or should I implement mine and that's it or is there any efforts done by the community(I believe there is cause it's a pretty known use case)
-## [7][Unit testing in React. Practical examples and advice on what, how and why to test.](https://www.reddit.com/r/reactjs/comments/et9g7g/unit_testing_in_react_practical_examples_and/)
-- url: https://medium.com/@onoufriosm/how-to-unit-test-in-react-72e911e2b8d
+## [3][I made a game with React this morning and think it turned out pretty ok. Let know what you think. Link in the comments.](https://www.reddit.com/r/reactjs/comments/etyxdb/i_made_a_game_with_react_this_morning_and_think/)
+- url: https://v.redd.it/h8xjksj3k0d41
 ---
 
-## [8][React render patterns (children, props, component injection...)](https://www.reddit.com/r/reactjs/comments/etpcyv/react_render_patterns_children_props_component/)
-- url: https://www.reddit.com/r/reactjs/comments/etpcyv/react_render_patterns_children_props_component/
----
-I would like to conduct a little survey. Let's say you have to create a `Tag` component that can have: an icon in the left, in the right, both sides and no icon. Something like [this](https://imgur.com/a/XcNP6dq).
-
-And you already have an `Icon` component that looks something like this
-
-    const Icon = ({ color, name }) =&gt; { ... }
-
-Now, which one of these options for the API of `Tag` you think is best and why:
-
-## Option 1
-
-Supply different props and use children (or another prop) for the text.
-
-    &lt;Tag
-      iconLeft="add"
-      iconRight="close"
-      onClickLeft={...}
-      onClickRight={...}
-    &gt;
-      Hello // Or as a prop
-    &lt;/Tag&gt;
-
-## Option 2
-
-Group icon props by sides and use an object.
-
-    &lt;Tag
-      iconLeft={{
-        name: "add",
-        onClick={...},
-      }}
-      iconRight={{
-        name: "close",
-        onClick={...}
-      }}
-    &gt;
-      Hello
-    &lt;/Tag&gt;
-
-## Option 3
-
-In last examples the `Icon` component was used under the hood by doing something like this:
-
-    const Tag = ({ iconLeft, iconRight }) =&gt; {
-      return (
-        &lt;div&gt;
-           // Notice that color is not supplied since you don't want it to change.
-           &lt;Icon name={iconLeft.name} color="dark" /&gt; 
-           ...
-        &lt;/div&gt;
-      )
-    }
-
-So instead of doing this you directly use children and original icon component like this.
-
-    &lt;Tag&gt;
-      &lt;Icon name="add" onClick={...} /&gt;
-      Hello
-      &lt;Icon name="close" onClick={...} /&gt;
-    &lt;/Tag&gt;
-
-The problem with this approach is that the user may incorrectly set the color. You could use something like `React.cloneElement` and overriding that prop, but it seems hacky. Also, the children can be put in incorrect order. But assume you are using Typescript so you can prevent that last one.
-
-## Option 4
-
-Create a custom `TagIcon` component for solving the above problems.
-
-    &lt;Tag&gt;
-      &lt;TagIcon name="add" onClick={...} /&gt;
-      Hello
-      &lt;TagIcon name="close" onClick={...}  /&gt;
-    &lt;/Tag&gt;
-
-Maybe you can stretch a little further and do something like:
-
-    &lt;Tag&gt;
-      &lt;TagIcon name="add" onClick={...} /&gt;
-      &lt;TagText&gt;Hello&lt;/TagText&gt;
-      &lt;TagIcon name="close" onClick={...} /&gt;
-    &lt;/Tag&gt;
-
-The first options are fine, but I have to admit that the last ones are more readable and even extensible. Of course that may be a bad thing. Specially with bigger components (imagine a dropdown group) the children pattern may be better.
-
-Also, you could inject the component as a prop, but I think you get what I'm after.
-
-What do you think? Do you have any other suggestions?
-## [9][Advice needed, React file getting very big](https://www.reddit.com/r/reactjs/comments/etniui/advice_needed_react_file_getting_very_big/)
-- url: https://www.reddit.com/r/reactjs/comments/etniui/advice_needed_react_file_getting_very_big/
----
-Hi all,
-
-I am starting to notice a potential problem with the way I am structuring my React application.
-
-I like to architect my components by having one file that acts as a container and multiple stateless components that get passed data and event emitters via props  
-. This container will contain all the state, API Calls, and event handlers. This container will render child components that are stateless.
-
-Here is an example of a structure I use:
-
-    - folder   
-      - index.js &lt;-- container file
-      - childComponent1.js
-      - childComponent2.js
-      - childComponent3.js
-      - childComponent4.js
-      ...
-
-The size of the container file and the number of child components depend on how big a feature is. The problem I had recently was that there was a very big feature that I had to implement, and while I like to use this structure, I started to realize that my container file got very big, like almost 1000 lines of code big. Now, I'm not sure if this is an issue, but seeing 1000 lines of code in one file concerns me. There is just a lot of state to keep track as well as event handlers to read/set new state.
-
-I'm wondering if there is any workaround for this. I don't use global state management like Redux as I feel that my application doesn't have a lot of global states that are widely used throughout the application. 
-
-And I guess a question I have is.. is this considered 'okay'? 
-
-Any answers or tips are welcomed!
-
-Thank you all!
-## [10][My first React.js Medium Post - Styled Components with React props](https://www.reddit.com/r/reactjs/comments/etp9q6/my_first_reactjs_medium_post_styled_components/)
-- url: https://www.reddit.com/r/reactjs/comments/etp9q6/my_first_reactjs_medium_post_styled_components/
----
-Please leave me your feedback, many thanks in advance :) 
-
-[https://medium.com/@louispetrik/how-to-use-react-js-props-with-styled-components-db11fc83f5c9](https://medium.com/@louispetrik/how-to-use-react-js-props-with-styled-components-db11fc83f5c9)
-## [11][Question about state management while going all in functional components](https://www.reddit.com/r/reactjs/comments/etp5do/question_about_state_management_while_going_all/)
-- url: https://www.reddit.com/r/reactjs/comments/etp5do/question_about_state_management_while_going_all/
----
-Hi, I understand concept of functional components but want to make full transition.
-
-So far I am using useState with functional components if I need internal state. 
-
-My main App was class but I will also change to function with useState. Alongside I am using Context to manage global state for things like authentification, themes, etc and pass local state from App to children components.
-
-With this settings, isn't it better to just put everything in Context provider and don't bother with useState in main App function? Or is it better for performance and re-render reasons to separate global state from Context provider from local useState from main App function?
-## [12][Intro to React Router for Beginners (Multi-Page Apps)](https://www.reddit.com/r/reactjs/comments/etaaxt/intro_to_react_router_for_beginners_multipage_apps/)
-- url: https://youtu.be/hjR-ZveXBpQ
+## [4][Scan to Listen: React Native app for scanning CDs and vinyls to find album on Spotify and books to find audiobook on Audible](https://www.reddit.com/r/reactjs/comments/eu416p/scan_to_listen_react_native_app_for_scanning_cds/)
+- url: https://v.redd.it/laq5e4ndy2d41
 ---
 
+## [5][Speed up your workflow by learning about Optional Chaining &amp; Nullish Coalescing Operators (New in JS 2020)](https://www.reddit.com/r/reactjs/comments/ettd3x/speed_up_your_workflow_by_learning_about_optional/)
+- url: https://youtu.be/7jegF5jD4cU
+---
+
+## [6][Intelli - The future of interactive videos, today.](https://www.reddit.com/r/reactjs/comments/eu4pk5/intelli_the_future_of_interactive_videos_today/)
+- url: https://www.reddit.com/r/reactjs/comments/eu4pk5/intelli_the_future_of_interactive_videos_today/
+---
+In 2020 it’s time to take videos to the next level! Me and a friend have spent the last year developing this tool which could be of great addition to everyone's web dev  and creativity toolkit. Any feedback deeply appreciated! Thoughts on UI, UX, features and capabilities are all welcome. Here's the URL: [Intelli](https://intelli.tv) 
+
+It was built using React. Ask me anything about it!
+
+Cheers :)
+## [7][Is there an event for clicking OFF an input field?](https://www.reddit.com/r/reactjs/comments/eu5b5q/is_there_an_event_for_clicking_off_an_input_field/)
+- url: https://www.reddit.com/r/reactjs/comments/eu5b5q/is_there_an_event_for_clicking_off_an_input_field/
+---
+Apologies if this is the wrong sub, but I can't find precisely what I'm looking for in the documentation. Input fields have an onChange event, which is great - What I'm looking for is an event that fires when a user has finished typing in an input field. Is there any such event in React?
+## [8][Is there a help group or discord for material-ui?](https://www.reddit.com/r/reactjs/comments/eu52lm/is_there_a_help_group_or_discord_for_materialui/)
+- url: https://www.reddit.com/r/reactjs/comments/eu52lm/is_there_a_help_group_or_discord_for_materialui/
+---
+I know of reactiflux on discord but it doesn't appear to have a material-ui channel.  Is there one out there?
+## [9][React seems to be a nightmare for me](https://www.reddit.com/r/reactjs/comments/eu4s5n/react_seems_to_be_a_nightmare_for_me/)
+- url: https://www.reddit.com/r/reactjs/comments/eu4s5n/react_seems_to_be_a_nightmare_for_me/
+---
+Sup, Reddit!
+
+I'm learning react for maybe 2 months, but feeling myself not really motivated, cos I'm feeling that I'm using it wrong. For example, how do you handle data from GET queries? I'm reading it window.url and it works like a charm. But I don't think that it's correct.
+
+Like, I'm experienced in django with jinja2 templates, and it's seems easy and straightforward to me. But when talking about react... Webpacks/Babel/redux/etc. I really don't get how to deal with this.
+
+Maybe there is someone interested in free slave? Like, I'm interested to see how the react development looks like. I can do boring stuff or whatever. 
+
+Or maybe someone interested in pair programming? I have an idea for a web application which will be useful for newbies in programming. I can do/teach backend in express/django. 
+
+Or maybe experience exchange? I can guide how to build bots relying on image processing or bots using browser emulator.
+
+Or even maybe there is a tutorial like djangogirls for react? Almost every tutorial I saw leads to finished project which can be running on local machine or custom using 3rd party service, but how do you deal with this in real production workflow?
+
+I'm using next.js and converting it to static html, but how do you handle this without next.js? Running additional server with react on board for frontend?
+
+Please, don't be shy to reply here or in DM.
+## [10][cra-template-typekit: Opinionated Create React App template with typescript, redux-toolkit, react-testing-library](https://www.reddit.com/r/reactjs/comments/ets28l/cratemplatetypekit_opinionated_create_react_app/)
+- url: https://github.com/rrebase/cra-template-typekit
+---
+
+## [11][Creating a React Project using Gatsby.](https://www.reddit.com/r/reactjs/comments/eu2nwh/creating_a_react_project_using_gatsby/)
+- url: https://www.reddit.com/r/reactjs/comments/eu2nwh/creating_a_react_project_using_gatsby/
+---
+Come hang out and learn some react with me. I'm using Gatsby too. I usually learn a bunch during my streams so maybe you could help or learn with me.. [JamieNichols](https://twitch.tv/jamie_337_nichols)
+## [12][Web Portfolio (need some feedback)](https://www.reddit.com/r/reactjs/comments/eu2d48/web_portfolio_need_some_feedback/)
+- url: https://www.reddit.com/r/reactjs/comments/eu2d48/web_portfolio_need_some_feedback/
+---
+Fresh out of college, took a good 1 month holiday after graduation and now trying to land a job in the coming months (hopefully by March).
+
+Decided to impress future employer by creating my own web portfolio. 
+
+Here's the link to it [radziramli.com](https://radziramli.com)
+
+Not fully done yet,
+- Resume not done yet
+- Contact Section unfinished
+
+Need some feedback to it especially for larger screen ie 1440p/4k. I would say I've fully optimized it for mobile and 1080p view. 
+
+Also, for those senior dev, would you hire me just based on the website alone? If not, do give me some tips on the things I could improve on. Thank you!
+
+Made with : Nextjs, Ant Design.

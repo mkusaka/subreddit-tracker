@@ -20,7 +20,104 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TypeScript: X doesn't not exist on type Y](https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/)
+## [2][Fast Pipelines with Generators in TypeScript](https://www.reddit.com/r/typescript/comments/etqvgz/fast_pipelines_with_generators_in_typescript/)
+- url: https://medium.com/@wim.jongeneel1/fast-pipelines-with-generators-in-typescript-85d285ae6f51
+---
+
+## [3][Tool to detect unused class methods?](https://www.reddit.com/r/typescript/comments/etvbdz/tool_to_detect_unused_class_methods/)
+- url: https://www.reddit.com/r/typescript/comments/etvbdz/tool_to_detect_unused_class_methods/
+---
+Hi,I recently discovered `ts-prune`, a tool which detects a subset of deadcode by highlighting any exports that are not used anywhere in the project. This information was a slightly useful to me on my current project, but unfortunately this tool did not highlight unused class methods.
+
+Example:
+```
+    // src/Foo.ts
+    export default class Foo{
+        counter: number = 0;
+        public incrCounter(){
+            this.counter++
+        }
+        public printCounter(){
+            //dead code
+            console.log(`The counter is ${counter}`)    
+        }
+    }
+    export function alsoDead(){
+        //also dead code
+        console.log("Fish")
+    }
+```
+```
+    // src/index.ts
+    import Foo from './Foo'
+    const foo = new Foo();
+    foo.incrCounter();
+    console.log(foo.counter)
+```
+
+In this case `ts-prune` would detect that the exported function `alsoDead` is not used anywhere in the project. However, it would not detect that the method printCounter is never used.
+
+I am vaguely aware that using OOP-flavoured programming with typescript is not fully recommended (?), so I wouldn't be entirely surprised if there was no existing tool that helped solve this problem. 
+
+And if worst comes to worst, I suppose I can resort to deleting each class member in turn and seeing if it fails to compile!!
+## [4][Why isn't union type in object field extracted to out of the object?](https://www.reddit.com/r/typescript/comments/etrhcs/why_isnt_union_type_in_object_field_extracted_to/)
+- url: https://www.reddit.com/r/typescript/comments/etrhcs/why_isnt_union_type_in_object_field_extracted_to/
+---
+I think these type should be equal:
+
+    { a: string | undefined }
+    { a: string } | { a: undefined }
+
+These mean same set of values. And if these are equals, the following works:
+
+    Exclude&lt;{ a: string | undefined }, { a: string }&gt;   // =&gt; { a: undefined }
+
+But it don't work as I expected. Because `{ a: string | undefined }` is not `{ a: string } | { a: undefined }`.
+
+If it works, Exclude&lt;A, B&gt; could be considered as subtraction of set in mathematical context. I think there is big deals if these types are equals. Why not? And please tell me related GitHub issues if you know. Thanks!
+## [5][Why does TS consider this code valid?](https://www.reddit.com/r/typescript/comments/etrrh9/why_does_ts_consider_this_code_valid/)
+- url: https://www.reddit.com/r/typescript/comments/etrrh9/why_does_ts_consider_this_code_valid/
+---
+Hi all,
+
+&amp;#x200B;
+
+I'm a little confused as to why the compiler is letting me get away with the following code. I would normally be expecting a noImplicitAny error inside of the catch param. Please note, this is also happening for the 'then' block - I have just chosen to manually type it.
+
+&amp;#x200B;
+
+I understand on a basic level that's it to do with the return type of request, and that typescript is doing some inference under the covers, but could someone explain why in this case you wouldn't be forced to explicitly type it? Could you explain on a deeper level what is happening? How do I fix this? What other scenarios does this happen in?
+
+&amp;#x200B;
+
+I'm using the axios types inside of their index.d.ts module, so there doesn't appear to be a nice way to get around this. This is obviously a problem in a shared codebase. As you can see in the 'catch' block, I can basically do anything I want at compile time. Obviously at runtime, the response.couldLiterallyHaveAnything here obviously won't exist - and IMO should be something I can pick up at compile time (if you were forced to type it).
+
+&amp;#x200B;
+
+Code sandbox: [https://codesandbox.io/s/typescript-playground-export-lrwfn?fontsize=14&amp;hidenavigation=1&amp;theme=dark](https://codesandbox.io/s/typescript-playground-export-lrwfn?fontsize=14&amp;hidenavigation=1&amp;theme=dark)
+
+&amp;#x200B;
+
+Code snippet:
+
+    import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+    
+    export const APIService = {
+      getAll: async () =&gt; {
+        const requestConfig: AxiosRequestConfig = {
+          method: 'get',
+          url: `someUrl`,
+        };
+    
+        //Why is the compiler letting me have untyped/implicit anys as shown in catch block
+    
+        return axios
+          .request(requestConfig)
+          .catch((response) =&gt; Promise.reject(response.couldLiterallyHaveAnythingHere))
+          .then((response: AxiosResponse) =&gt; response.data.result);
+      },
+    };
+## [6][TypeScript: X doesn't not exist on type Y](https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/)
 - url: https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/
 ---
  
@@ -77,7 +174,7 @@ tsconfig.json
     } 
 
 [Error Thrown while compiling with NodeMon](https://i.stack.imgur.com/o71Xn.png)
-## [3][Question: React onPress function type](https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/)
+## [7][Question: React onPress function type](https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/)
 - url: https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/
 ---
 Hey!
@@ -103,22 +200,22 @@ to
 So nothing crazy, but if i define onPress as a function it doesn't work. Does anybody of you have an idea on how to define onPress?
 
 Thanks a lot!
-## [4][Proper syntax for having a numeric variable in a string](https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/)
+## [8][Proper syntax for having a numeric variable in a string](https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/)
 - url: https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/
 ---
 So I have variables declared and everything, and I want to add it to a printed string. I want to have something like "Your X plants have been watered", and X is a variable rather than a string. I know I would have print("Your X plants have been watered") if I wanted it to say X, but how do I make it so its a numeric variable?
-## [5][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/et3gev/set_up_a_typescript_react_redux_project/)
+## [9][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/et3gev/set_up_a_typescript_react_redux_project/)
 - url: https://typeofnan.dev/setup-a-typescript-react-redux-project/
 ---
 
-## [6][Is schemats, still maintained](https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/)
+## [10][Is schemats, still maintained](https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/)
 - url: https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/
 ---
 On the GitHub the last commit was almost 2 years ago, does it work well?
 Also does it work fine with both pg and pg-promise?
 
 https://github.com/SweetIQ/schemats
-## [7][I finally understand how to infer types!](https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/)
+## [11][I finally understand how to infer types!](https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/)
 - url: https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/
 ---
 &amp;#x200B;
@@ -132,100 +229,3 @@ Type inference has always stumped me, forcing me to use explicit types / generic
 [The dropdown includes values that are all fields in the \`data\` array passed to \`useSearchItems\`.](https://preview.redd.it/hoc218ubslc41.png?width=760&amp;format=png&amp;auto=webp&amp;s=ba41378ccf7732168eadb5b97e2294e9a71b57fe)
 
 If there are any experts on how typescript's \`infer\` keyword works, I think it could make for a super useful Medium article.
-## [8][Question about Loops/Output not printing](https://www.reddit.com/r/typescript/comments/eszchn/question_about_loopsoutput_not_printing/)
-- url: https://www.reddit.com/r/typescript/comments/eszchn/question_about_loopsoutput_not_printing/
----
-So I'm trying to have a counter that's like Day: n for how many times the loop runs. So it would be like starting at day 0 and every time it goes through the loop just add one day. I've declared and initialized all my variables I'm dealing with. The code for my loop is: 
-
-while (isHarvestTime === false &amp;&amp; alive === true) {  
- print("Day: " + day);  
-}
-
-&amp;#x200B;
-
-All I'm getting as output is a blank screen so I'm not really sure how to get the day counter to print.
-## [9][Drash - A microframework for deno](https://www.reddit.com/r/typescript/comments/esnv1t/drash_a_microframework_for_deno/)
-- url: https://www.reddit.com/r/typescript/comments/esnv1t/drash_a_microframework_for_deno/
----
-Would love to get feedback on this:
-
-[https://www.reddit.com/r/Deno/comments/esazl4/drash\_a\_microframework\_for\_deno/](https://www.reddit.com/r/Deno/comments/esazl4/drash_a_microframework_for_deno/)
-
-Thanks!
-## [10][Unexpected Lessons from 100% Test Coverage](https://www.reddit.com/r/typescript/comments/eso0pv/unexpected_lessons_from_100_test_coverage/)
-- url: https://medium.com/@EyasSH/unexpected-lessons-from-100-test-coverage-eebeee211b7a
----
-
-## [11][Issues Converting .NET Cryptography to Typescript (3DES)](https://www.reddit.com/r/typescript/comments/esqigt/issues_converting_net_cryptography_to_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/esqigt/issues_converting_net_cryptography_to_typescript/
----
-Hi r/typescript
-
-I'm really stuck with converting a code to integrate with a .NET legacy code. I've tried a lot of libraries, such as crypto-js, crypto-es, but could not make this work.
-
-The original code that I need to integrate with is the following, and the tries I've made are in the bottom. If anyone have any idea of what mistakes I'm doing, could give me some insights?
-
-    
-    string passPhrase = "test0001";
-    
-    // get the md5 hash of passPhrase as byte array
-    byte[] md5PassPhraseHash = null;
-    MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-    md5PassPhraseHash = md5.ComputeHash(Encoding.UTF8.GetBytes(passPhrase));
-    byte[] decodedSecret = Convert.FromBase64String(secretAsBase64);
-    
-    TripleDESCryptoServiceProvider tdes_dec = new TripleDESCryptoServiceProvider();
-    tdes_dec.Key = md5PassPhraseHash;
-    byte[] cIV_dec = new byte[8];
-    Array.Copy(md5PassPhraseHash, cIV_dec, 8);
-    tdes_dec.IV = cIV_dec;
-    
-    MemoryStream memstream_dec = new MemoryStream();
-    CryptoStream cs_dec = new CryptoStream(memstream_dec, tdes_dec.CreateDecryptor(), CryptoStreamMode.Write);
-    cs_dec.Write(decodedSecret, 0, decodedSecret.Length);
-    cs_dec.FlushFinalBlock();
-    cs_dec.Close();
-    byte[] decryptedSecret = memstream_dec.ToArray();
-    Int64 secret = Convert.ToInt64(Encoding.UTF8.GetString(decryptedSecret));
-    // increment secret
-    secret = secret + 1;
-    byte[] encodedSecret = Encoding.UTF8.GetBytes(Convert.ToString(secret));
-    
-    TripleDESCryptoServiceProvider tdes_enc = new TripleDESCryptoServiceProvider();
-    tdes_enc.Key = md5PassPhraseHash;
-    byte[] cIV_enc = new byte[8];
-    Array.Copy(md5PassPhraseHash, cIV_enc, 8);
-    tdes_enc.IV = cIV_enc;
-    
-    MemoryStream memstream = new MemoryStream();
-    CryptoStream cs = new CryptoStream(memstream, tdes_enc.CreateEncryptor(), CryptoStreamMode.Write);
-    cs.Write(encodedSecret, 0, encodedSecret.Length);
-    cs.FlushFinalBlock();
-    cs.Close();
-    byte[] encryptedSecret = memstream.ToArray();
-    string secret_encrypted = Convert.ToBase64String(encryptedSecret);
-    
-
-I've tried a lot of libraries and the native "crypto" package, but could not make it work. Can someone help me? Either I get invalid key length or even iv length issues.
-
-&amp;#x200B;
-
-Here's one of the tries:
-
-    static decrypt(passPhrase: string, secret: string): string {
-        const md5PassPhraseHash = crypto
-          .createHash('md5')
-          .update(passPhrase)
-          .digest();
-    
-        const decodedSecret = Buffer.from(secret, 'base64').toString();
-        const iv = Buffer.from(md5PassPhraseHash.slice(0, 8));
-    
-        const decipher = crypto.createDecipheriv('des-ede3-cbc', md5PassPhraseHash, iv);
-        decipher.update(decodedSecret, 'base64', 'utf8');
-    
-        const result = decipher.final('utf-8');
-        console.log({ result });
-    
-        return result.toString();
-    }

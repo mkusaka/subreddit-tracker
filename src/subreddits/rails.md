@@ -19,7 +19,37 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][How to handle large data imports with validations?](https://www.reddit.com/r/rails/comments/etptuq/how_to_handle_large_data_imports_with_validations/)
+## [2][ActiveInteractor v1.0.0 Release](https://www.reddit.com/r/rails/comments/eu4z1b/activeinteractor_v100_release/)
+- url: https://www.reddit.com/r/rails/comments/eu4z1b/activeinteractor_v100_release/
+---
+Hey ruby friends! 
+
+Over the weekend I released v1.0.0 of ActiveInteractor, an implementation of the Command Pattern for Ruby with ActiveModel::Validations based on the interactors gem. It comes with rich support for attributes, callbacks, and validations, and thread safe performance methods. 
+
+This update has some major improvements to organizers as well as rails QOL improvements and a lot more.  Please check it out, let me know what you think!   
+
+https://github.com/aaronmallen/activeinteractor 
+
+[https://rubygems.org/gems/activeinteractor](https://rubygems.org/gems/activeinteractor)
+
+[https://www.rubydoc.info/gems/activeinteractor](https://www.rubydoc.info/gems/activeinteractor/)
+## [3][Best tools/database for a text-based search](https://www.reddit.com/r/rails/comments/etsj6z/best_toolsdatabase_for_a_textbased_search/)
+- url: https://www.reddit.com/r/rails/comments/etsj6z/best_toolsdatabase_for_a_textbased_search/
+---
+I need to build a full-text search page in a rails application. I brainstormed with my team to choose which tools we could use, especially the database. We stand between Elasticsearch and Postgres. But we are not sure which would be the best choice. 
+
+Today we have few records, but the expectation is that this solution will support a large scale.
+
+Any tips for a search based on full-text? Database, tools, articles?
+## [4][Checking user logged in or not (Devise)](https://www.reddit.com/r/rails/comments/etxy78/checking_user_logged_in_or_not_devise/)
+- url: https://www.reddit.com/r/rails/comments/etxy78/checking_user_logged_in_or_not_devise/
+---
+I planned for adding a front-page (not static) to my app. And now, I actually want it to be like this : 
+
+If user not logged in, shows a message like "Please login to your account" with a link to login page. And If user is logged in, shows something belongs to the user. I actually could do the same with help of you guys, but it was in scaffolds and not a view/controller different from that scaffold. 
+
+Thanks!
+## [5][How to handle large data imports with validations?](https://www.reddit.com/r/rails/comments/etptuq/how_to_handle_large_data_imports_with_validations/)
 - url: https://www.reddit.com/r/rails/comments/etptuq/how_to_handle_large_data_imports_with_validations/
 ---
 I have a database that has around a million records and growing. We have started importing records from an external system for reporting purposes and we are adding anywhere from 5k to 100k records per table. 
@@ -29,7 +59,16 @@ The tables with 100k records being imported takes hours to finish uploading. We 
 We tried pgcopy and it is really fast and finishes in seconds, so one option is to go down that route, but it is just a data dump and we do it manually which is painful. The other problem is we have validations on the system and checks across tables that we do in rails. We also update records in case a duplicate is found. Which is again done in rails, using a first_or_initialize.
 
 So I was wondering if anyone knew a faster way to import large data while keeping the rails validations and duplicate updates in rails. Or is the only option to go with a raw SQL to import the data?
-## [3][Recording Building a Rails Based Accounting System](https://www.reddit.com/r/rails/comments/etk8a9/recording_building_a_rails_based_accounting_system/)
+## [6][Can someone help me in chat to deploy one GitHub Project on my hosting?](https://www.reddit.com/r/rails/comments/etw4in/can_someone_help_me_in_chat_to_deploy_one_github/)
+- url: https://www.reddit.com/r/rails/comments/etw4in/can_someone_help_me_in_chat_to_deploy_one_github/
+---
+I have found one project and I would like to host it on my hosting.
+But I really dont know how.
+I know that hosting support rails but I am getting some errors like page not found and etc. Maybe I'm doing something wrong XD
+Thanks
+
+Hosting: HawkHost.com
+## [7][Recording Building a Rails Based Accounting System](https://www.reddit.com/r/rails/comments/etk8a9/recording_building_a_rails_based_accounting_system/)
 - url: https://www.reddit.com/r/rails/comments/etk8a9/recording_building_a_rails_based_accounting_system/
 ---
 Hi guys
@@ -45,7 +84,7 @@ Thanks.
 Playlist here:
 
 [https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n\_JD82](https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
-## [4][I'm struggling to get a rails app running locally - any help would be much appreciated! It seems to freeze/hang during assets:precompile.](https://www.reddit.com/r/rails/comments/etpe2l/im_struggling_to_get_a_rails_app_running_locally/)
+## [8][I'm struggling to get a rails app running locally - any help would be much appreciated! It seems to freeze/hang during assets:precompile.](https://www.reddit.com/r/rails/comments/etpe2l/im_struggling_to_get_a_rails_app_running_locally/)
 - url: https://www.reddit.com/r/rails/comments/etpe2l/im_struggling_to_get_a_rails_app_running_locally/
 ---
 I've cloned the repo of a Rails 5.2 app that I will be working on and I am trying to get it working in development but having some issues. When I run  `rails s` it seems to start fine but when I go to localhost:3000 I just hangs/freezes and won't load the page. The server logs show this:
@@ -63,8 +102,7 @@ I've cloned the repo of a Rails 5.2 app that I will be working on and I am tryin
       Rendering users/sessions/new.html.haml within layouts/sessions
       Rendered users/sessions/new.html.haml within layouts/sessions (50.5ms)
 
-I also ran  `rails assets:precompile --trace` to try and see what's happening and it hangs/freezes at the point where it gets to  `** Execute assets:precompile` . Here's the full output:  
-
+I also ran  `rails assets:precompile --trace` to try and see what's happening and it hangs/freezes at the point where it gets to  `** Execute assets:precompile` . Here's the full output:
 
     ** Invoke assets:precompile (first_time) 
     ** Invoke assets:environment (first_time) 
@@ -78,17 +116,25 @@ I also ran  `rails assets:precompile --trace` to try and see what's happening an
     ** Execute assets:precompile
 
 What could be causing this and how might  it be fixed?  I'm using Ubuntu 18.04, Rails 5.2 and Ruby 2.5.3.  Are there any other logs/files/settings that I could post here to give a better idea? Thanks in advance for any help or tips!
-## [5][Please critcize my personal site CV - ROR / Ruby developer looking to relocate to EUR or USA](https://www.reddit.com/r/rails/comments/etc6yk/please_critcize_my_personal_site_cv_ror_ruby/)
+
+&amp;#x200B;
+
+UPDATE: Installed and ran rbspy and the seems to hang/freeze on this: `fetch -` `/home/me/.rvm/gems/ruby-2.5.3/gems/sprockets-4.0.0.beta8/lib/sprockets/cache.rb`
+## [9][Please critcize my personal site CV - ROR / Ruby developer looking to relocate to EUR or USA](https://www.reddit.com/r/rails/comments/etc6yk/please_critcize_my_personal_site_cv_ror_ruby/)
 - url: https://www.reddit.com/r/rails/comments/etc6yk/please_critcize_my_personal_site_cv_ror_ruby/
 ---
 [https://pablo-vizcay.tech/](https://pablo-vizcay.tech/)
 
-Any feedback appreciated.. good, bad, suggestions. Especially if you are related or have exprience with the hiring process of software engineers.
-## [6][Need help with sending information to user](https://www.reddit.com/r/rails/comments/etihgu/need_help_with_sending_information_to_user/)
+Any feedback appreciated.. good, bad, suggestions. Especially if you are related or have exprience with the hiring process of software engineers.  
+
+
+======= EDIT 01/25 =======  
+Thanks everyone for your suggeestions, I've updated the CV online with a lot of them.
+## [10][Need help with sending information to user](https://www.reddit.com/r/rails/comments/etihgu/need_help_with_sending_information_to_user/)
 - url: https://www.reddit.com/r/rails/comments/etihgu/need_help_with_sending_information_to_user/
 ---
 Hi. I want to create an app that is automatically sending an email/sms to a user after a payment is made. The email sent contains a username and password that are stored in a database. The payers are not required to generate login information in order to make a payment. The website looks more simple than craigslist. My question is how do I do this? :) What are the marks/checkpoints I have to code my way to? Are there specific gems that might help speed up the building of the app? I am a complete n00b :) 10x
-## [7][Problem with Resque-Scheduler! Loading Schedule, Schedule Empty](https://www.reddit.com/r/rails/comments/etbxpn/problem_with_resquescheduler_loading_schedule/)
+## [11][Problem with Resque-Scheduler! Loading Schedule, Schedule Empty](https://www.reddit.com/r/rails/comments/etbxpn/problem_with_resquescheduler_loading_schedule/)
 - url: https://www.reddit.com/r/rails/comments/etbxpn/problem_with_resquescheduler_loading_schedule/
 ---
 Hello! Well, I had a problem while I were doing the installation of pageflow [https://github.com/codevise/pageflow](https://github.com/codevise/pageflow)
@@ -106,39 +152,3 @@ But, in the moment that I execute the foreman start, I receive a  warning and I 
 And I don't know why this is happening, I tried to look for a  question or solve this problem, but nothing. Now I'm stucked in this  point and I don't know how to go forward or what to do. Any help would be appreciated!
 
 Thanks!
-## [8][How to deal with legacy code (audio)](https://www.reddit.com/r/rails/comments/etfmvh/how_to_deal_with_legacy_code_audio/)
-- url: https://www.reddit.com/r/rails/comments/etfmvh/how_to_deal_with_legacy_code_audio/
----
-Saw the interesting podcast on legacy code and thought it might be useful: 
-
- [http://5by5.tv/rubyonrails/304](http://5by5.tv/rubyonrails/304)
-## [9][How do you work with '.erb' files in VS Code?](https://www.reddit.com/r/rails/comments/et71gs/how_do_you_work_with_erb_files_in_vs_code/)
-- url: https://www.reddit.com/r/rails/comments/et71gs/how_do_you_work_with_erb_files_in_vs_code/
----
-Hey guys!
-
-I've come from IDE RubyMine, but I really want to simplify my experience and start using VS Code.
-
-Everything is more or less okay, or at least you can used to VS Code experience except '.erb' files. It can either thread them as 'html' which completely kill Ruby experience either like Ruby files, but it's even more mess.
-
-How do you usually work with '.erb' files?
-## [10][uninitialized constant RegistrationsController](https://www.reddit.com/r/rails/comments/etb9hx/uninitialized_constant_registrationscontroller/)
-- url: https://www.reddit.com/r/rails/comments/etb9hx/uninitialized_constant_registrationscontroller/
----
-I used this tutorial to add ReCaptcha to my project :
-
-[https://github.com/heartcombo/devise/wiki/How-To:-Use-Recaptcha-with-Devise](https://github.com/heartcombo/devise/wiki/How-To:-Use-Recaptcha-with-Devise)
-
-and I did everything it says for "registration" controller, and when I want to sign up a new user, the error "uninitialized constant RegistrationsController " appears on the screen.
-
-Does it have something to do with file location? or views?
-
-UPDATE : It has been fixed by changing registrations to users/registrations to routes.rb. But, it doesn't check CAPTCHA. What should I do now?
-## [11][What happened to Devise ownership?](https://www.reddit.com/r/rails/comments/et4rd9/what_happened_to_devise_ownership/)
-- url: https://www.reddit.com/r/rails/comments/et4rd9/what_happened_to_devise_ownership/
----
-It's very strange not to find any discussion anywhere regarding the move of the Devise repo. Am I missing it?
-
-Different Google/Reddit/DDG searches turn up nothing--I've never seen that before for something so widely used. No blog posts or issues discussions threads or other announcements that I can find, and kind of a random and empty new home for the repo.
-
-Commentary on the state of the Rails community? (Were it a Node module I'd think there'd be an explosion of posts.)

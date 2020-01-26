@@ -13,47 +13,84 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Introducing Yarn 2](https://www.reddit.com/r/javascript/comments/etdrfj/introducing_yarn_2/)
+## [3][Microsoft launches a Node-based browser automation project called Playwright](https://www.reddit.com/r/javascript/comments/etxv8h/microsoft_launches_a_nodebased_browser_automation/)
+- url: https://css-tricks.com/playwright/
+---
+
+## [4][Today, the Trident Era Ends](https://www.reddit.com/r/javascript/comments/eu4e4e/today_the_trident_era_ends/)
+- url: https://schepp.dev/posts/today-the-trident-era-ends/
+---
+
+## [5][2048 Game in JS](https://www.reddit.com/r/javascript/comments/etu34p/2048_game_in_js/)
+- url: https://github.com/qbacuber/2048GAME-in-JS
+---
+
+## [6][Plot any equation with a few lines of JavaScript](https://www.reddit.com/r/javascript/comments/etyocv/plot_any_equation_with_a_few_lines_of_javascript/)
+- url: https://github.com/victorqribeiro/plot
+---
+
+## [7][[AskJS] Intermediate/Advanced JavaScript book recommendations in 2020?](https://www.reddit.com/r/javascript/comments/etyhrr/askjs_intermediateadvanced_javascript_book/)
+- url: https://www.reddit.com/r/javascript/comments/etyhrr/askjs_intermediateadvanced_javascript_book/
+---
+Hey, I have a long flight coming up and wanted to take that chance to level up my JS knowledge. Do you guys have any books you recommend that cover intermediate/advanced JS concepts well?
+## [8][[AskJS] How do map div&lt;-&gt;textarea to make a text editor?](https://www.reddit.com/r/javascript/comments/etzzv6/askjs_how_do_map_divtextarea_to_make_a_text_editor/)
+- url: https://www.reddit.com/r/javascript/comments/etzzv6/askjs_how_do_map_divtextarea_to_make_a_text_editor/
+---
+I need a custom text editor. From my understanding usually it's done by making a hidden textarea which accepts keypresses and paste.
+
+The two things I can't figure out (easily) is 1) When a user clicks on a letter on the div how do I figure out in javascript where in the textarea he's trying to click? (or where in it's internal state). 2) How do I properly display letter presses? Do I need to track keydown+press+up? Cause using one of them alone doesn't seem to be enough
+## [9][confetti simulator 2020](https://www.reddit.com/r/javascript/comments/etucqr/confetti_simulator_2020/)
+- url: http://kirjava.xyz/confetti
+---
+
+## [10][Introducing Yarn 2](https://www.reddit.com/r/javascript/comments/etdrfj/introducing_yarn_2/)
 - url: https://dev.to/arcanis/introducing-yarn-2-4eh1?q=1
 ---
 
-## [4][Template Literals: What You Probably Didn't Know](https://www.reddit.com/r/javascript/comments/etpwiy/template_literals_what_you_probably_didnt_know/)
-- url: https://dillionmegida.com/p/in-depth-of-template-literals/
----
-
-## [5][You Don’t Need Lodash/Underscore](https://www.reddit.com/r/javascript/comments/etn0y3/you_dont_need_lodashunderscore/)
+## [11][You Don’t Need Lodash/Underscore](https://www.reddit.com/r/javascript/comments/etn0y3/you_dont_need_lodashunderscore/)
 - url: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
 ---
 
-## [6][ESLint configuration and best practices](https://www.reddit.com/r/javascript/comments/etaj6h/eslint_configuration_and_best_practices/)
-- url: https://blog.geographer.fr/eslint-guide
+## [12][[AskJS] jstream: Implemented a library with short-circuited 'stream' of array similar to Java stream.](https://www.reddit.com/r/javascript/comments/etvrhf/askjs_jstream_implemented_a_library_with/)
+- url: https://www.reddit.com/r/javascript/comments/etvrhf/askjs_jstream_implemented_a_library_with/
 ---
+Looking for feedback on a library I have implemented. [https://github.com/rakeshyeka/jstream/](https://github.com/rakeshyeka/jstream/). I am looking for suggestions as to why this can be a good idea or a really bad one. Something in the lines of scenarios where it makes more sense in Java but makes the least sense in Javascript world. I implemented it as a practice project.
 
-## [7][You May Not Need JavaScript](https://www.reddit.com/r/javascript/comments/etpk1u/you_may_not_need_javascript/)
-- url: https://github.com/you-dont-need/You-Dont-Need-JavaScript
----
+Short summary - In Java, streaming methods like filter and map are short-circuited when chained with methods like findFirst, allMatch ([JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html#StreamOps)).  This provides efficient and optimized runs, by running each item through chained actions, instead of running each action through all items. This is not supported in javascript array actions like map, filter, reduce, every.map() especially can be very expensive operations and need not be executed when chained with actions like 'every' when at least one element does not obey the chained 'every' condition.
 
-## [8][Dangerous practises in JavaScript. Anything to add?](https://www.reddit.com/r/javascript/comments/etp6rj/dangerous_practises_in_javascript_anything_to_add/)
-- url: https://medium.com/@louispetrik/javascript-4-weird-things-to-be-aware-of-18b8528b8ef7
----
+Example :
 
-## [9][Mirage JS: An API mocking library that runs in the browser](https://www.reddit.com/r/javascript/comments/etevsb/mirage_js_an_api_mocking_library_that_runs_in_the/)
-- url: https://miragejs.com
----
+**java**
 
-## [10][Accessing AngularJS from regular Javascript](https://www.reddit.com/r/javascript/comments/etktd8/accessing_angularjs_from_regular_javascript/)
-- url: https://leftfold.blogspot.com/2020/01/accessing-angularjs-from-regular.html
----
+    ArrayList&lt;int&gt; arr = Arrays.asList(1,2,3,4,5,6); 
 
-## [11][Which are you; Programmer or Coder](https://www.reddit.com/r/javascript/comments/etp8np/which_are_you_programmer_or_coder/)
-- url: https://medium.com/swlh/which-are-you-programmer-or-coder-b24ca679febb
----
+arr.stream() .map(item -&gt; { System.out.println("Processing : " + item); return 2\*item;    }) .findFirst();
 
-## [12][[AskJS] Maintainability and updates on React over Angular (freelance single developer)](https://www.reddit.com/r/javascript/comments/eth3m4/askjs_maintainability_and_updates_on_react_over/)
-- url: https://www.reddit.com/r/javascript/comments/eth3m4/askjs_maintainability_and_updates_on_react_over/
----
-Considering freelance projects as the only developer, do you think React and his lib ecosystem is better on the maintainability side in the long term ?
+Output: Processing : 1
 
-Can you confirm that more regular updates is a better approach (less gap) on a smaller lib than on a monolith framework which is more likely to break ? Get back on a previous project should be less painfull for fixing stuff and adding features ?
+**javascript**
 
-I'm asking those questions only considering solo dev in a freelance context as i said. Thanks.
+    let arr = [1,2,3,4,5,6];
+    arr.map(item =&gt; { console.log('Processing : ',item);  return 2*item;})
+    .find(item =&gt; true);
+
+Output:
+
+    Processing : 1
+    Processing : 2
+    Processing : 3
+    Processing : 4
+    Processing : 5
+    Processing : 6
+
+**jstream**
+
+    let streamArr = new stream([1,2,3,4,5,6]);
+    streamArr.map(item =&gt; {console.log('Processing : ', item); return 2*item;})
+    .find(item =&gt; true);
+
+Output:
+
+    Processing : 1
+
+Also, added an async await capable stream functionality in the project.Thoughts ?

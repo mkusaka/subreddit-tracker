@@ -20,11 +20,35 @@ Commenters: please don't reply to job posts to complain about something. It's of
 Readers: please only email if you are personally interested in the job. 
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Fast Pipelines with Generators in TypeScript](https://www.reddit.com/r/typescript/comments/etqvgz/fast_pipelines_with_generators_in_typescript/)
+## [2][TS2741: Property 'limitToLast' is missing in type 'FirebaseFirestore.Query' but required in type 'firebase.firestore.Query'.](https://www.reddit.com/r/typescript/comments/eua5yw/ts2741_property_limittolast_is_missing_in_type/)
+- url: https://www.reddit.com/r/typescript/comments/eua5yw/ts2741_property_limittolast_is_missing_in_type/
+---
+    // https://firebase.google.com/docs/reference/js/firebase.firestore.CollectionReference.html#where
+    where
+    where(fieldPath: string | FieldPath, opStr: WhereFilterOp, value: any): Query&lt;T&gt;
+    
+    // https://firebase.google.com/docs/reference/js/firebase.firestore.Query.html
+    firebase. firestore. Query &lt; T &gt;
+    A Query refers to a Query which you can read or listen to. You can also construct refined Query objects by adding filters and ordering.
+
+I think .where() should return firebase.firestore.Query based on the above. Can someone tell me why this is not the case or what else may be causing the type error below?
+
+    import {DocumentTarget, RecordTypes, WhereDefinition} from "../../../shared";
+    import admin, {firestore} from "firebase-admin";
+    import firebase from "firebase";
+    
+    export default class FirestoreConnection {
+      public async getSome(collection: string, whereClauses: WhereDefinition[], limit: number, orderBy: string, offset: number): Promise&lt;object|boolean&gt; {
+    // TS2741: Property 'limitToLast' is missing in type 'FirebaseFirestore.Query' but required in type 'firebase.firestore.Query'.  index.d.ts(8156, 5): 'limitToLast' is declared here.
+    
+        const baseQuery: firebase.firestore.Query = this.database
+          .collection(collection)
+          .where("storeId", "==", this.shopDomain);
+## [3][Fast Pipelines with Generators in TypeScript](https://www.reddit.com/r/typescript/comments/etqvgz/fast_pipelines_with_generators_in_typescript/)
 - url: https://medium.com/@wim.jongeneel1/fast-pipelines-with-generators-in-typescript-85d285ae6f51
 ---
 
-## [3][Tool to detect unused class methods?](https://www.reddit.com/r/typescript/comments/etvbdz/tool_to_detect_unused_class_methods/)
+## [4][Tool to detect unused class methods?](https://www.reddit.com/r/typescript/comments/etvbdz/tool_to_detect_unused_class_methods/)
 - url: https://www.reddit.com/r/typescript/comments/etvbdz/tool_to_detect_unused_class_methods/
 ---
 Hi,I recently discovered `ts-prune`, a tool which detects a subset of deadcode by highlighting any exports that are not used anywhere in the project. This information was a slightly useful to me on my current project, but unfortunately this tool did not highlight unused class methods.
@@ -60,7 +84,7 @@ In this case `ts-prune` would detect that the exported function `alsoDead` is no
 I am vaguely aware that using OOP-flavoured programming with typescript is not fully recommended (?), so I wouldn't be entirely surprised if there was no existing tool that helped solve this problem. 
 
 And if worst comes to worst, I suppose I can resort to deleting each class member in turn and seeing if it fails to compile!!
-## [4][Why isn't union type in object field extracted to out of the object?](https://www.reddit.com/r/typescript/comments/etrhcs/why_isnt_union_type_in_object_field_extracted_to/)
+## [5][Why isn't union type in object field extracted to out of the object?](https://www.reddit.com/r/typescript/comments/etrhcs/why_isnt_union_type_in_object_field_extracted_to/)
 - url: https://www.reddit.com/r/typescript/comments/etrhcs/why_isnt_union_type_in_object_field_extracted_to/
 ---
 I think these type should be equal:
@@ -75,7 +99,7 @@ These mean same set of values. And if these are equals, the following works:
 But it don't work as I expected. Because `{ a: string | undefined }` is not `{ a: string } | { a: undefined }`.
 
 If it works, Exclude&lt;A, B&gt; could be considered as subtraction of set in mathematical context. I think there is big deals if these types are equals. Why not? And please tell me related GitHub issues if you know. Thanks!
-## [5][Why does TS consider this code valid?](https://www.reddit.com/r/typescript/comments/etrrh9/why_does_ts_consider_this_code_valid/)
+## [6][Why does TS consider this code valid?](https://www.reddit.com/r/typescript/comments/etrrh9/why_does_ts_consider_this_code_valid/)
 - url: https://www.reddit.com/r/typescript/comments/etrrh9/why_does_ts_consider_this_code_valid/
 ---
 Hi all,
@@ -117,7 +141,7 @@ Code snippet:
           .then((response: AxiosResponse) =&gt; response.data.result);
       },
     };
-## [6][TypeScript: X doesn't not exist on type Y](https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/)
+## [7][TypeScript: X doesn't not exist on type Y](https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/)
 - url: https://www.reddit.com/r/typescript/comments/etmblc/typescript_x_doesnt_not_exist_on_type_y/
 ---
  
@@ -174,7 +198,7 @@ tsconfig.json
     } 
 
 [Error Thrown while compiling with NodeMon](https://i.stack.imgur.com/o71Xn.png)
-## [7][Question: React onPress function type](https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/)
+## [8][Question: React onPress function type](https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/)
 - url: https://www.reddit.com/r/typescript/comments/etdhan/question_react_onpress_function_type/
 ---
 Hey!
@@ -200,32 +224,18 @@ to
 So nothing crazy, but if i define onPress as a function it doesn't work. Does anybody of you have an idea on how to define onPress?
 
 Thanks a lot!
-## [8][Proper syntax for having a numeric variable in a string](https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/)
+## [9][Proper syntax for having a numeric variable in a string](https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/)
 - url: https://www.reddit.com/r/typescript/comments/etb08f/proper_syntax_for_having_a_numeric_variable_in_a/
 ---
 So I have variables declared and everything, and I want to add it to a printed string. I want to have something like "Your X plants have been watered", and X is a variable rather than a string. I know I would have print("Your X plants have been watered") if I wanted it to say X, but how do I make it so its a numeric variable?
-## [9][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/et3gev/set_up_a_typescript_react_redux_project/)
+## [10][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/et3gev/set_up_a_typescript_react_redux_project/)
 - url: https://typeofnan.dev/setup-a-typescript-react-redux-project/
 ---
 
-## [10][Is schemats, still maintained](https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/)
+## [11][Is schemats, still maintained](https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/)
 - url: https://www.reddit.com/r/typescript/comments/et56d4/is_schemats_still_maintained/
 ---
 On the GitHub the last commit was almost 2 years ago, does it work well?
 Also does it work fine with both pg and pg-promise?
 
 https://github.com/SweetIQ/schemats
-## [11][I finally understand how to infer types!](https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/)
-- url: https://www.reddit.com/r/typescript/comments/et0irh/i_finally_understand_how_to_infer_types/
----
-&amp;#x200B;
-
-https://preview.redd.it/6xjpi8f6slc41.png?width=913&amp;format=png&amp;auto=webp&amp;s=65540e7469a6f7abe5ed0facb700e0ade505db77
-
-Type inference has always stumped me, forcing me to use explicit types / generics. I finally figured it out!
-
-&amp;#x200B;
-
-[The dropdown includes values that are all fields in the \`data\` array passed to \`useSearchItems\`.](https://preview.redd.it/hoc218ubslc41.png?width=760&amp;format=png&amp;auto=webp&amp;s=ba41378ccf7732168eadb5b97e2294e9a71b57fe)
-
-If there are any experts on how typescript's \`infer\` keyword works, I think it could make for a super useful Medium article.

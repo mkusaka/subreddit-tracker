@@ -13,84 +13,43 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Microsoft launches a Node-based browser automation project called Playwright](https://www.reddit.com/r/javascript/comments/etxv8h/microsoft_launches_a_nodebased_browser_automation/)
-- url: https://css-tricks.com/playwright/
+## [3][Advanced Node.Js: A Hands on Guide to Event Loop, Child Process and Worker Threads in Node.Js](https://www.reddit.com/r/javascript/comments/euigv5/advanced_nodejs_a_hands_on_guide_to_event_loop/)
+- url: https://blog.soshace.com/advanced-node-js-a-hands-on-guide-to-event-loop-child-process-and-worker-threads-in-node-js/
 ---
 
-## [4][Today, the Trident Era Ends](https://www.reddit.com/r/javascript/comments/eu4e4e/today_the_trident_era_ends/)
+## [4][CoreJS (used by Babel, Angular) author posted a comment on their repo 16 days ago saying "after some days I'll be in prison", then stops committing to the repo 13 days ago - claims financial problems](https://www.reddit.com/r/javascript/comments/eul7lg/corejs_used_by_babel_angular_author_posted_a/)
+- url: https://github.com/zloirock/core-js/issues/747#issuecomment-573318269
+---
+
+## [5][Firefox Dev Tools Architecture, and How to Start Contributing to Firefox](https://www.reddit.com/r/javascript/comments/eumgoj/firefox_dev_tools_architecture_and_how_to_start/)
+- url: https://www.valentinog.com/blog/firefox/
+---
+
+## [6][/r/javascript hit 800k subscribers yesterday](https://www.reddit.com/r/javascript/comments/eujd9t/rjavascript_hit_800k_subscribers_yesterday/)
+- url: https://redditmetrics.com/r/javascript
+---
+
+## [7][[AskJS] When and how do I apply Let, Const and var?](https://www.reddit.com/r/javascript/comments/eubi2z/askjs_when_and_how_do_i_apply_let_const_and_var/)
+- url: https://www.reddit.com/r/javascript/comments/eubi2z/askjs_when_and_how_do_i_apply_let_const_and_var/
+---
+What are their differences? I don't fully get it. Bare in mind I just started learing JS a few days ago.
+## [8][Today, the Trident Era Ends](https://www.reddit.com/r/javascript/comments/eu4e4e/today_the_trident_era_ends/)
 - url: https://schepp.dev/posts/today-the-trident-era-ends/
 ---
 
-## [5][2048 Game in JS](https://www.reddit.com/r/javascript/comments/etu34p/2048_game_in_js/)
-- url: https://github.com/qbacuber/2048GAME-in-JS
+## [9][A class-based enum pattern for JavaScript](https://www.reddit.com/r/javascript/comments/eudadg/a_classbased_enum_pattern_for_javascript/)
+- url: https://2ality.com/2020/01/enum-pattern.html
 ---
 
-## [6][Plot any equation with a few lines of JavaScript](https://www.reddit.com/r/javascript/comments/etyocv/plot_any_equation_with_a_few_lines_of_javascript/)
-- url: https://github.com/victorqribeiro/plot
+## [10][Learning lit-html part 3: Event listeners!](https://www.reddit.com/r/javascript/comments/eug0t1/learning_lithtml_part_3_event_listeners/)
+- url: https://terodox.tech/lit-html-part-3/
 ---
 
-## [7][[AskJS] Intermediate/Advanced JavaScript book recommendations in 2020?](https://www.reddit.com/r/javascript/comments/etyhrr/askjs_intermediateadvanced_javascript_book/)
-- url: https://www.reddit.com/r/javascript/comments/etyhrr/askjs_intermediateadvanced_javascript_book/
----
-Hey, I have a long flight coming up and wanted to take that chance to level up my JS knowledge. Do you guys have any books you recommend that cover intermediate/advanced JS concepts well?
-## [8][[AskJS] How do map div&lt;-&gt;textarea to make a text editor?](https://www.reddit.com/r/javascript/comments/etzzv6/askjs_how_do_map_divtextarea_to_make_a_text_editor/)
-- url: https://www.reddit.com/r/javascript/comments/etzzv6/askjs_how_do_map_divtextarea_to_make_a_text_editor/
----
-I need a custom text editor. From my understanding usually it's done by making a hidden textarea which accepts keypresses and paste.
-
-The two things I can't figure out (easily) is 1) When a user clicks on a letter on the div how do I figure out in javascript where in the textarea he's trying to click? (or where in it's internal state). 2) How do I properly display letter presses? Do I need to track keydown+press+up? Cause using one of them alone doesn't seem to be enough
-## [9][confetti simulator 2020](https://www.reddit.com/r/javascript/comments/etucqr/confetti_simulator_2020/)
-- url: http://kirjava.xyz/confetti
+## [11][Rollup v1.30.0 (next-generation ES module bundler)](https://www.reddit.com/r/javascript/comments/eulfhl/rollup_v1300_nextgeneration_es_module_bundler/)
+- url: https://github.com/rollup/rollup/releases/tag/v1.30.0
 ---
 
-## [10][Introducing Yarn 2](https://www.reddit.com/r/javascript/comments/etdrfj/introducing_yarn_2/)
-- url: https://dev.to/arcanis/introducing-yarn-2-4eh1?q=1
+## [12][Inversion of Control](https://www.reddit.com/r/javascript/comments/eul5b7/inversion_of_control/)
+- url: https://kentcdodds.com/blog/inversion-of-control
 ---
 
-## [11][You Don’t Need Lodash/Underscore](https://www.reddit.com/r/javascript/comments/etn0y3/you_dont_need_lodashunderscore/)
-- url: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
----
-
-## [12][[AskJS] jstream: Implemented a library with short-circuited 'stream' of array similar to Java stream.](https://www.reddit.com/r/javascript/comments/etvrhf/askjs_jstream_implemented_a_library_with/)
-- url: https://www.reddit.com/r/javascript/comments/etvrhf/askjs_jstream_implemented_a_library_with/
----
-Looking for feedback on a library I have implemented. [https://github.com/rakeshyeka/jstream/](https://github.com/rakeshyeka/jstream/). I am looking for suggestions as to why this can be a good idea or a really bad one. Something in the lines of scenarios where it makes more sense in Java but makes the least sense in Javascript world. I implemented it as a practice project.
-
-Short summary - In Java, streaming methods like filter and map are short-circuited when chained with methods like findFirst, allMatch ([JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html#StreamOps)).  This provides efficient and optimized runs, by running each item through chained actions, instead of running each action through all items. This is not supported in javascript array actions like map, filter, reduce, every.map() especially can be very expensive operations and need not be executed when chained with actions like 'every' when at least one element does not obey the chained 'every' condition.
-
-Example :
-
-**java**
-
-    ArrayList&lt;int&gt; arr = Arrays.asList(1,2,3,4,5,6); 
-
-arr.stream() .map(item -&gt; { System.out.println("Processing : " + item); return 2\*item;    }) .findFirst();
-
-Output: Processing : 1
-
-**javascript**
-
-    let arr = [1,2,3,4,5,6];
-    arr.map(item =&gt; { console.log('Processing : ',item);  return 2*item;})
-    .find(item =&gt; true);
-
-Output:
-
-    Processing : 1
-    Processing : 2
-    Processing : 3
-    Processing : 4
-    Processing : 5
-    Processing : 6
-
-**jstream**
-
-    let streamArr = new stream([1,2,3,4,5,6]);
-    streamArr.map(item =&gt; {console.log('Processing : ', item); return 2*item;})
-    .find(item =&gt; true);
-
-Output:
-
-    Processing : 1
-
-Also, added an async await capable stream functionality in the project.Thoughts ?

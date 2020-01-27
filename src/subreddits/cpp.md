@@ -57,11 +57,77 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Performance of Handling Asynchronous Requests using Futures](https://www.reddit.com/r/cpp/comments/eu5jsi/performance_of_handling_asynchronous_requests/)
+## [2][STL header token parsing benchmarks for VS2017 and VS2019](https://www.reddit.com/r/cpp/comments/eumou7/stl_header_token_parsing_benchmarks_for_vs2017/)
+- url: https://www.reddit.com/r/cpp/comments/eumou7/stl_header_token_parsing_benchmarks_for_vs2017/
+---
+One of the MSVC devs poked me to update the results from [https://www.reddit.com/r/cpp/comments/860hya/stl\_header\_token\_parsing\_benchmarks\_for\_vs2008/](https://www.reddit.com/r/cpp/comments/860hya/stl_header_token_parsing_benchmarks_for_vs2008/) for VS2019:
+
+Graph of VS2019: [https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-2019.png](https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-2019.png)
+
+Comparative graph: [https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-history.png](https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-history.png)
+
+Detailed notes: [https://github.com/ned14/stl-header-heft/blob/master/Readme.msvs.md](https://github.com/ned14/stl-header-heft/blob/master/Readme.msvs.md)
+
+Project github: [https://github.com/ned14/stl-header-heft](https://github.com/ned14/stl-header-heft)
+
+There is a lot of good news in this benchmark: overall VS2019 has 12% lower token processing times than VS2017 did. **That makes VS2019 as quick as VS2008 used to be!**
+
+The single biggest surprise is surely now `&lt;array&gt;`, which is by far the biggest impact STL container now that Microsoft have greatly improved `&lt;string&gt;` and especially `&lt;vector&gt;` and `&lt;forward_list&gt;`.
+
+I'll try to produce updated benchmarks for libstdc++ during this coming week.
+
+I'd like to take this opportunity to thank the Visual C++ team for such outstanding work on slimming down their STL implementation, yet simultaneously implementing a large proportion of C++ 20! Great work guys, wish more STLs were like yours!
+## [3][Hacking on Clang is surprisingly easy](https://www.reddit.com/r/cpp/comments/eumv9p/hacking_on_clang_is_surprisingly_easy/)
+- url: https://mort.coffee/home/clang-compiler-hacking/
+---
+
+## [4][Jonas Minnberg: Tricks, Tips, and a couple of war stories](https://www.reddit.com/r/cpp/comments/eummvc/jonas_minnberg_tricks_tips_and_a_couple_of_war/)
+- url: https://youtu.be/CJ5_a4JjbTw
+---
+
+## [5][neoGFX -- a new C++ game engine and app creation framework -- coming soon. A Qt killer?](https://www.reddit.com/r/cpp/comments/eunk89/neogfx_a_new_c_game_engine_and_app_creation/)
+- url: https://neogfx.org
+---
+
+## [6][How do you explain NOT to write high performance code?](https://www.reddit.com/r/cpp/comments/eunny1/how_do_you_explain_not_to_write_high_performance/)
+- url: https://www.reddit.com/r/cpp/comments/eunny1/how_do_you_explain_not_to_write_high_performance/
+---
+Apologize for using a throwaway account, but I don't want my current colleagues to be aware of this post because they are a good bunch of people and I like being here, but technical issues are hard to ignore.
+
+
+I'm sort of a performance junkie myself, though I'm not on the level of expertise as people working in the HPC industry, but I feel confident enough to know when and how to optimize, but also when not to optimize. When I'm not sure, I do a minimal research to figure out what's the right path to go.
+
+
+I have a problem at my current employer that I'm sure some others must have experienced as well. It's also visible in some public discussions as well. Performance is good and writing high performance code is good. But it seems like there's a bandwagon of i-must-always-write-most-performant-code people who don't understand most of the low level details to accomplish this. My colleagues are like this.
+
+
+The codebase is a mess. While it's partially not their fault due to deadlines in the past, it also partially is due to their decisions. Something's slow? Oh, that's simple to fix, let's split that into multiple threads. We don't even know why it's slow, but if we parallelize it, we've optimized it. End result? A billion mutexes on a billion internal variables and noone understand logical relationship between them. Now there's some issue, let's run thread sanitizer. Nice, we found the problem! Let's fix it: randomly add shared and unique locks. If thread sanitizer does not complain with shared lock, shared lock it is, even though we don't really understand anymore what should be exclusive access or if shared lock introduces a sort of logic-race-condition that thread sanitizer will obviously not pick up.
+
+
+Cache friendly optimizations. During the interview, I felt like everyone knows what it is about simply based on the fact that it was mentioned a couple of times. Well, the truth is they don't really understand it, just heard somewhere that the code needs to be cache friendly and are implementing stuff that makes literally no sense. Truth: most of the code does not need to care about such low level details.
+
+
+As mentioned in the last paragraph, the most important thing is that most of the code really does not need to be high performance code. That does not stop people from doing micro optimizations that complicate the code even further just so they avoid a vector from being returned (the optimization often ends up complicating the code significantly). Then a few lines below you see a hundred string concatenations which are ugly, but are not an issue performance wise because it does not matter if this method takes 100us or 1ms to execute. Needless to say, they don't even know that it's "slow".
+
+
+I could go on and on, but I think you get the point. Have you ever found yourself in a position where you need to explain to people in a _KIND_ way that they should stop attempting to do micro optimizations because they don't have basic understanding of most fundamental things required to perform them? If yes, how did you do it? How did you stop your co-workers from performing micro optimizations everywhere? Especially if they don't understand them.
+## [7][C++ DataFrame (like Pandas, R) new release](https://www.reddit.com/r/cpp/comments/eunk7f/c_dataframe_like_pandas_r_new_release/)
+- url: https://www.reddit.com/r/cpp/comments/eunk7f/c_dataframe_like_pandas_r_new_release/
+---
+[https://github.com/hosseinmoein/DataFrame](https://github.com/hosseinmoein/DataFrame)
+
+Please see release notes
+
+Your feedback is greatly appreciated
+## [8][Performance of Handling Asynchronous Requests using Futures](https://www.reddit.com/r/cpp/comments/eu5jsi/performance_of_handling_asynchronous_requests/)
 - url: http://www.mycpu.org/c++-threads-async-deferred/
 ---
 
-## [3][Tell me about your worst cpp interview](https://www.reddit.com/r/cpp/comments/ette1a/tell_me_about_your_worst_cpp_interview/)
+## [9][The Gallows an open-source educational TUI video game in Monochrome Green.](https://www.reddit.com/r/cpp/comments/eu8m6i/the_gallows_an_opensource_educational_tui_video/)
+- url: https://github.com/Notfromthisworld/TheGallows
+---
+
+## [10][Tell me about your worst cpp interview](https://www.reddit.com/r/cpp/comments/ette1a/tell_me_about_your_worst_cpp_interview/)
 - url: https://www.reddit.com/r/cpp/comments/ette1a/tell_me_about_your_worst_cpp_interview/
 ---
 Can anyone describe their worst interview experience as a cpp developer? When I say worst interview, I am mainly wondering about this from the standpoint of, “man I really just sucked on this particular day.” 
@@ -71,13 +137,7 @@ If the person interviewing you was bad, this is ok too, but my primary motivatio
 What, if any, feedback was given to you by the interviewer? Was there a certain way that you prepared, or practice projects that you focused on to regain your confidence, and completely rebound the next time around? Finally, what would you say is the number 1 thing that is specific to cpp interviews that you dread?
 
 Thank you to anyone who feels like answering, I love hearing about, and learning from other people’s experience. It is a great resource to be able to have a community of experienced engineers to learn from, and I am grateful for everyone’s time.
-## [4][Optional References: Assign-Through vs. Rebinding: The 3rd option nobody talks about](https://www.reddit.com/r/cpp/comments/eu5j1s/optional_references_assignthrough_vs_rebinding/)
-- url: https://www.reddit.com/r/cpp/comments/eu5j1s/optional_references_assignthrough_vs_rebinding/
----
-A lot has been said about optional references, and I also wanted to say some things. This is my first C++ blog post, would love any feedback including writing style, contents, etc.
-
- https://medium.com/@drewallyngross/assign-through-vs-rebinding-the-3rd-option-nobody-talks-about-74b436268b4c
-## [5][When creating a side project, why choose C++?](https://www.reddit.com/r/cpp/comments/etuvu4/when_creating_a_side_project_why_choose_c/)
+## [11][When creating a side project, why choose C++?](https://www.reddit.com/r/cpp/comments/etuvu4/when_creating_a_side_project_why_choose_c/)
 - url: https://www.reddit.com/r/cpp/comments/etuvu4/when_creating_a_side_project_why_choose_c/
 ---
 First of all, I realize that there are a ton of cool things you can make in C++. This [site](https://github.com/danistefanovic/build-your-own-x) lists a bunch; for example, you can create a game engine, a game, a database, a compiler, or a web server. However, you can make these things in lots of other languages as well; I'm guessing most people aren't implementing their web servers in C++, and many use a game engine like Unity or GameMaker Studio for games (not a completely fair comparison, since these aren't languages). 
@@ -85,560 +145,3 @@ First of all, I realize that there are a ton of cool things you can make in C++.
 My question is: why do you choose to work on side projects *specifically in C++*? The main reason I can think of, which is the primary reason to work on most side projects, is to learn. I think that's a great reason! It's enough justification to work on any side project in any language. However, for many other languages, there are often secondary reasons.  For example, if I wanted to create a game, Python or Javascript (not to mention actual game frameworks) would let me iterate much more quickly than C++. If I wanted to create a command line tool, I would consider Rust over C++ because of the safety guarantees.
 
 Overall, the idea I'm trying to get across is that C++ isn't a particularly practical language to use for side projects. Using it for the sake of learning is a great reason, but I can't think of any compelling secondary reasons. This doesn't hold true for many other languages, where a secondary reason might be development speed, safety, or abundance of frameworks (e.g. Node for JS).
-## [6][Any good guides on numerical C++ libraries?](https://www.reddit.com/r/cpp/comments/etvz82/any_good_guides_on_numerical_c_libraries/)
-- url: https://www.reddit.com/r/cpp/comments/etvz82/any_good_guides_on_numerical_c_libraries/
----
-I’ve gotten pretty good at Python+Numpy but I think that I’ve pushed the language about as far as I can.  I want to learn more about C++ to get my code a bit faster. (I’ve been working on some  simulation software for my thesis in physics.)
-
-Are there any good guides out there for transitioning from Numpy to C++? 
-
-I’ve heard of BLAS/LAPACK and Armadillo, but I don’t even know where to start...
-## [7][Cost of call: Virtual Method Call vs Non Virtual Method Call (C++)](https://www.reddit.com/r/cpp/comments/etpz7r/cost_of_call_virtual_method_call_vs_non_virtual/)
-- url: https://www.reddit.com/r/cpp/comments/etpz7r/cost_of_call_virtual_method_call_vs_non_virtual/
----
-Because I write program heavy dependent on interfaces, I was wondering, how much virtual method  call is slower than regular method call.
-
-So I wrote program to check that.
-
-Conclusion: Difference of call time between virtual methods and regular method is negligible in my opinion.
-
-Why?
-
-Is
-
-    mov	ecx, DWORD PTR [esp+4]
-    mov	eax, DWORD PTR [ecx]
-
-combined by processor in one command/opcode?
-
-Is time of receiving address of function in
-
-    jmp	__ZN1X6MethodEv
-
-the same (or almost) as in
-
-    jmp	[DWORD PTR [eax+8]]
-
-?
-
-Or all this costs are so marginal that make them negligible?
-
-I think it is the last one.
-
-\##########################################################################
-
-Measurement:
-
-To prevent some optimizations, method calls are wrapped in to callers.
-
-Glossary:
-
-method - member function
-
-Processor: AMD FX-8320 (8-Core 3.50GHz)
-
-\##########################################################################
-
-number of calls of each Call{...} function: 100 000 000
-
-    1
-    CallIdle:           0.163166s
-    CallMethod:         0.220805s
-    CallVirtualMethod:  0.213770s
-    2
-    CallIdle:           0.162361s
-    CallMethod:         0.216204s
-    CallVirtualMethod:  0.216748s
-    3
-    CallIdle:           0.164374s
-    CallMethod:         0.215015s
-    CallVirtualMethod:  0.215973s
-    4
-    CallIdle:           0.163159s
-    CallMethod:         0.216749s
-    CallVirtualMethod:  0.219072s
-    5
-    CallIdle:           0.162431s
-    CallMethod:         0.215293s
-    CallVirtualMethod:  0.215578s
-
-Compiler:
-
-GCC 8.1.0 (MinGW\_64)
-
-Command
-
-g++ -std=c++17 -Wall -Werror -pedantic -O3 -o prog.exe C.cpp main.cpp X.cpp
-
-Command ASM:
-
-g++ -std=c++17 -Wall -Werror -pedantic -O3 -S -masm=intel C.cpp main.cpp X.cpp
-
-C.cpp
-
-    #include "C.h"
-    
-    void CallIdle(X* x) {
-        
-    }
-    void CallMethod(X* x) {
-        x-&gt;Method();
-    }
-    void CallVirtualMethod(X* x) {
-        x-&gt;VirtualMethod();
-    }
-
-C.s (single call of method)
-
-    __Z8CallIdleP1X:
-    LFB7:
-        ret
-    LFE7:
-    __Z10CallMethodP1X:
-    LFB8:
-        mov	ecx, DWORD PTR [esp+4]
-        jmp	__ZN1X6MethodEv
-    LFE8:
-    __Z17CallVirtualMethodP1X:
-    LFB9:
-        mov	ecx, DWORD PTR [esp+4]
-        mov	eax, DWORD PTR [ecx]
-        jmp	[DWORD PTR [eax+8]]     ; receiving address of virtual method from virtual table
-    LFE9:
-
-\##########################################################################
-
-Added second call of method inside Call{...} function to force using 'call' instead of 'jump'.
-
-number of calls of each Call{...} function: 100 000 000
-
-    1
-    CallIdle:           0.163293s
-    CallMethod:         0.351328s
-    CallVirtualMethod:  0.351897s
-    2
-    CallIdle:           0.166338s
-    CallMethod:         0.355633s
-    CallVirtualMethod:  0.352889s
-    3
-    CallIdle:           0.161744s
-    CallMethod:         0.355947s
-    CallVirtualMethod:  0.354000s
-    4
-    CallIdle:           0.163226s
-    CallMethod:         0.355849s
-    CallVirtualMethod:  0.354166s
-    5
-    CallIdle:           0.162738s
-    CallMethod:         0.352778s
-    CallVirtualMethod:  0.357627s
-
-Compiler:
-
-GCC 8.1.0 (MinGW\_64)
-
-Command:
-
-g++ -std=c++17 -Wall -Werror -pedantic -O3 -o prog.exe C.cpp main.cpp X.cpp
-
-Command ASM:
-
-g++ -std=c++17 -Wall -Werror -pedantic -O3 -S -masm=intel C.cpp main.cpp X.cpp
-
-C.cpp
-
-    #include "C.h"
-    
-    void CallIdle(X* x) {
-        
-    }
-    void CallMethod(X* x) {
-        x-&gt;Method();
-        x-&gt;Method();
-    }
-    void CallVirtualMethod(X* x) {
-        x-&gt;VirtualMethod();
-        x-&gt;VirtualMethod();
-    }
-
-C.s (double call of method, forces using 'call' instead of 'jump')
-
-    __Z8CallIdleP1X:
-    LFB7:
-        ret
-    LFE7:
-    __Z10CallMethodP1X:
-    LFB8:
-        push	ebx
-        sub	esp, 8
-        mov	ebx, DWORD PTR [esp+16]
-        mov	ecx, ebx
-        call	__ZN1X6MethodEv
-        add	esp, 8
-        mov	ecx, ebx
-        pop	ebx
-        jmp	__ZN1X6MethodEv
-    LFE8:
-    __Z17CallVirtualMethodP1X:
-    LFB9:
-        push	ebx
-        sub	esp, 8
-        mov	ebx, DWORD PTR [esp+16]
-        mov	eax, DWORD PTR [ebx]
-        mov	ecx, ebx
-        call	[DWORD PTR [eax+8]]
-        mov	eax, DWORD PTR [ebx]
-        mov	ecx, ebx
-        mov	eax, DWORD PTR [eax+8]
-        add	esp, 8
-        pop	ebx
-        jmp	eax
-    LFE9:
-
-\##########################################################################
-
-number of calls of each Call{...} function: 100 000 000
-
-    1
-    CallIdle:           0.162881s
-    CallMethod:         0.214449s
-    CallVirtualMethod:  0.238884s
-    2
-    CallIdle:           0.159846s
-    CallMethod:         0.217064s
-    CallVirtualMethod:  0.246562s
-    3
-    CallIdle:           0.159290s
-    CallMethod:         0.214154s
-    CallVirtualMethod:  0.240654s
-    4
-    CallIdle:           0.161967s
-    CallMethod:         0.215867s
-    CallVirtualMethod:  0.241240s
-    5
-    CallIdle:           0.158927s
-    CallMethod:         0.212364s
-    CallVirtualMethod:  0.241170s
-
-Compiler:
-
-MSVC 2013
-
-Command:
-
-cl /nologo /D\_USING\_V110\_SDK71\_=1 C.cpp main.cpp X.cpp /EHs /GR /O2 /MD /MP /Fomsvc\_make\_temp\\ /Fdmsvc\_make\_temp\\ /link /out:prog.exe
-
-Command ASM:
-
-cl /nologo /D\_USING\_V110\_SDK71\_=1 C.cpp main.cpp X.cpp /FAs /EHs /GR /O2 /MD /MP
-
-C.asm (single call of method)
-
-    ; Listing generated by Microsoft (R) Optimizing Compiler Version 18.00.40629.0 
-    
-        TITLE	G:\work\code\RandomMinGW\examples\example_093_virtual_vs_non_virtual\C.cpp
-        .686P
-        .XMM
-        include listing.inc
-        .model	flat
-    
-    INCLUDELIB MSVCRT
-    INCLUDELIB OLDNAMES
-    
-    PUBLIC	?CallIdle@@YAXPAVX@@@Z				; CallIdle
-    PUBLIC	?CallMethod@@YAXPAVX@@@Z			; CallMethod
-    PUBLIC	?CallVirtualMethod@@YAXPAVX@@@Z			; CallVirtualMethod
-    EXTRN	?Method@X@@QAEXXZ:PROC				; X::Method
-    ; Function compile flags: /Ogtpy
-    ; File g:\work\code\randommingw\examples\example_093_virtual_vs_non_virtual\c.cpp
-    ;	COMDAT ?CallVirtualMethod@@YAXPAVX@@@Z
-    _TEXT	SEGMENT
-    _x$ = 8							; size = 4
-    ?CallVirtualMethod@@YAXPAVX@@@Z PROC			; CallVirtualMethod, COMDAT
-    
-    ; 11   :     x-&gt;VirtualMethod();
-    
-        mov	ecx, DWORD PTR _x$[esp-4]
-        mov	eax, DWORD PTR [ecx]
-        jmp	DWORD PTR [eax+4]
-    ?CallVirtualMethod@@YAXPAVX@@@Z ENDP			; CallVirtualMethod
-    _TEXT	ENDS
-    ; Function compile flags: /Ogtpy
-    ; File g:\work\code\randommingw\examples\example_093_virtual_vs_non_virtual\c.cpp
-    ;	COMDAT ?CallMethod@@YAXPAVX@@@Z
-    _TEXT	SEGMENT
-    _x$ = 8							; size = 4
-    ?CallMethod@@YAXPAVX@@@Z PROC				; CallMethod, COMDAT
-    
-    ; 7    :     x-&gt;Method();
-    
-        mov	ecx, DWORD PTR _x$[esp-4]
-        jmp	?Method@X@@QAEXXZ			; X::Method
-    ?CallMethod@@YAXPAVX@@@Z ENDP				; CallMethod
-    _TEXT	ENDS
-    ; Function compile flags: /Ogtpy
-    ; File g:\work\code\randommingw\examples\example_093_virtual_vs_non_virtual\c.cpp
-    ;	COMDAT ?CallIdle@@YAXPAVX@@@Z
-    _TEXT	SEGMENT
-    _x$ = 8							; size = 4
-    ?CallIdle@@YAXPAVX@@@Z PROC				; CallIdle, COMDAT
-
-\##########################################################################
-
-Added second call of method inside Call{...} function to force using 'call' insted of 'jump'.
-
-number of calls of each Call{...} function: 100 000 000
-
-    1
-    CallIdle:           0.162718s
-    CallMethod:         0.321905s
-    CallVirtualMethod:  0.346607s
-    2
-    CallIdle:           0.165081s
-    CallMethod:         0.326066s
-    CallVirtualMethod:  0.350423s
-    3
-    CallIdle:           0.160939s
-    CallMethod:         0.323516s
-    CallVirtualMethod:  0.346217s
-    4
-    CallIdle:           0.159470s
-    CallMethod:         0.321954s
-    CallVirtualMethod:  0.350222s
-    5
-    CallIdle:           0.159132s
-    CallMethod:         0.320411s
-    CallVirtualMethod:  0.350353s
-
-C.asm (double call of method, forces using 'call' instead of 'jump')
-
-    ; Listing generated by Microsoft (R) Optimizing Compiler Version 18.00.40629.0 
-    
-        TITLE	G:\work\code\RandomMinGW\examples\example_093_virtual_vs_non_virtual\C.cpp
-        .686P
-        .XMM
-        include listing.inc
-        .model	flat
-    
-    INCLUDELIB MSVCRT
-    INCLUDELIB OLDNAMES
-    
-    PUBLIC	?CallIdle@@YAXPAVX@@@Z				; CallIdle
-    PUBLIC	?CallMethod@@YAXPAVX@@@Z			; CallMethod
-    PUBLIC	?CallVirtualMethod@@YAXPAVX@@@Z			; CallVirtualMethod
-    EXTRN	?Method@X@@QAEXXZ:PROC				; X::Method
-    ; Function compile flags: /Ogtpy
-    ; File g:\work\code\randommingw\examples\example_093_virtual_vs_non_virtual\c.cpp
-    ;	COMDAT ?CallVirtualMethod@@YAXPAVX@@@Z
-    _TEXT	SEGMENT
-    _x$ = 8							; size = 4
-    ?CallVirtualMethod@@YAXPAVX@@@Z PROC			; CallVirtualMethod, COMDAT
-    
-    ; 10   : void CallVirtualMethod(X* x) {
-    
-        push	esi
-    
-    ; 11   :     x-&gt;VirtualMethod();
-    
-        mov	esi, DWORD PTR _x$[esp]
-        mov	ecx, esi
-        mov	eax, DWORD PTR [esi]
-        call	DWORD PTR [eax+4]
-    
-    ; 12   :     x-&gt;VirtualMethod();
-    
-        mov	eax, DWORD PTR [esi]
-        mov	ecx, esi
-        pop	esi
-        jmp	DWORD PTR [eax+4]
-    ?CallVirtualMethod@@YAXPAVX@@@Z ENDP			; CallVirtualMethod
-    _TEXT	ENDS
-    ; Function compile flags: /Ogtpy
-    ; File g:\work\code\randommingw\examples\example_093_virtual_vs_non_virtual\c.cpp
-    ;	COMDAT ?CallMethod@@YAXPAVX@@@Z
-    _TEXT	SEGMENT
-    _x$ = 8							; size = 4
-    ?CallMethod@@YAXPAVX@@@Z PROC				; CallMethod, COMDAT
-    
-    ; 7    :     x-&gt;Method();
-    
-        mov	ecx, DWORD PTR _x$[esp-4]
-        call	?Method@X@@QAEXXZ			; X::Method
-    
-    ; 8    :     x-&gt;Method();
-    
-        mov	ecx, DWORD PTR _x$[esp-4]
-        jmp	?Method@X@@QAEXXZ			; X::Method
-    ?CallMethod@@YAXPAVX@@@Z ENDP				; CallMethod
-    _TEXT	ENDS
-    ; Function compile flags: /Ogtpy
-    ; File g:\work\code\randommingw\examples\example_093_virtual_vs_non_virtual\c.cpp
-    ;	COMDAT ?CallIdle@@YAXPAVX@@@Z
-    _TEXT	SEGMENT
-    _x$ = 8							; size = 4
-    ?CallIdle@@YAXPAVX@@@Z PROC				; CallIdle, COMDAT
-    
-    ; 4    :     
-    ; 5    : }
-    
-        ret	0
-    ?CallIdle@@YAXPAVX@@@Z ENDP				; CallIdle
-    _TEXT	ENDS
-    END
-
-\##########################################################################
-
-Whole code:
-
-main.cpp
-
-    #include &lt;windows.h&gt;
-    #include &lt;stdio.h&gt;
-    #include "C.h"
-    
-    #define for_ix(number) for (unsigned ix = 0; ix &lt; unsigned(number); ++ix)
-        
-    //------------------------------------------------------------------------------
-        
-    namespace {
-    LARGE_INTEGER s_freq;   // time in performance ticks
-    LARGE_INTEGER s_start;  // time in performance ticks
-    LARGE_INTEGER s_stop;   // time in performance ticks
-    double s_diff;          // time in seconds
-    } // namespace
-    
-    void Initialize();
-    void Start();
-    void Stop();
-    double Get(); // time in seconds
-    
-    //------------------------------------------------------------------------------
-    
-    int main() {
-        Initialize();
-        
-        X* x = new X();
-        
-        enum { TIMES = 100000000 };
-        
-        Start();
-        for_ix (TIMES) {
-            CallIdle(x);
-        }
-        Stop();
-        printf("CallIdle:           %fs\n", Get());
-        
-        Start();
-        for_ix (TIMES) {
-            CallMethod(x);
-        }
-        Stop();
-        printf("CallMethod:         %fs\n", Get());
-        
-        Start();
-        for_ix (TIMES) {
-            CallVirtualMethod(x);
-        }
-        Stop();
-        printf("CallVirtualMethod:  %fs\n", Get());
-        
-        delete x;
-        
-        return 0;
-    }
-    
-    //------------------------------------------------------------------------------
-    
-    inline void Initialize() {
-        QueryPerformanceFrequency(&amp;s_freq);
-    }
-    
-    inline void Start() {
-        QueryPerformanceCounter(&amp;s_start);
-    }
-    
-    inline void Stop() {
-        QueryPerformanceCounter(&amp;s_stop);
-        s_diff = double(s_stop.QuadPart - s_start.QuadPart) / s_freq.QuadPart;
-    }
-    
-    inline double Get() { 
-        return s_diff; 
-    } 
-
-X.h
-
-    #ifndef X_H_
-    #define X_H_
-    
-    class X {
-    public:
-        X() {}
-        virtual ~X() {}
-        
-        void Method();
-        virtual void VirtualMethod();
-    };
-    
-    #endif // X_H_
-
-X.cpp
-
-    #include "X.h"
-    #include &lt;stdio.h&gt;
-    
-    void X::Method() {
-        //puts("1");
-    }
-    
-    void X::VirtualMethod() {
-        //puts("2");
-    }
-
-C.h
-
-    #ifndef C_H_
-    #define C_H_
-    
-    #include "X.h"
-    
-    void CallIdle(X* x);
-    void CallMethod(X* x);
-    void CallVirtualMethod(X* x);
-    
-    #endif // C_H_
-
-C.cpp
-
-    #include "C.h"
-    
-    void CallIdle(X* x) {
-        
-    }
-    void CallMethod(X* x) {
-        x-&gt;Method();
-        x-&gt;Method();
-    }
-    void CallVirtualMethod(X* x) {
-        x-&gt;VirtualMethod();
-        x-&gt;VirtualMethod();
-    }
-    
-
-EDIT: Minor fixes to description.
-## [8][The C++ Lifetime Profile: How It Plans to Make C++ Code Safer](https://www.reddit.com/r/cpp/comments/eta01f/the_c_lifetime_profile_how_it_plans_to_make_c/)
-- url: https://pspdfkit.com/blog/2020/the-cpp-lifetime-profile/
----
-
-## [9][To Bind and Loose a Reference](https://www.reddit.com/r/cpp/comments/et6eht/to_bind_and_loose_a_reference/)
-- url: https://thephd.github.io/to-bind-and-loose-a-reference-optional
----
-
-## [10][Hidden reinterpret_casts](https://www.reddit.com/r/cpp/comments/esz058/hidden_reinterpret_casts/)
-- url: https://quuxplusone.github.io/blog/2020/01/22/expression-list-in-functional-cast/
----
-
-## [11][CppCast: Circle](https://www.reddit.com/r/cpp/comments/et4dxp/cppcast_circle/)
-- url: https://cppcast.com/circle-language/
----
-

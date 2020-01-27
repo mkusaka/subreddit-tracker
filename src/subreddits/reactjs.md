@@ -97,77 +97,51 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][I made a game with React this morning and think it turned out pretty ok. Let know what you think. Link in the comments.](https://www.reddit.com/r/reactjs/comments/etyxdb/i_made_a_game_with_react_this_morning_and_think/)
-- url: https://v.redd.it/h8xjksj3k0d41
+## [3][Jira clone built with modern react. This is a great repository to learn from if you’ve already built smaller react apps and would like to see what a larger, real-world codebase looks like.](https://www.reddit.com/r/reactjs/comments/eu86q9/jira_clone_built_with_modern_react_this_is_a/)
+- url: https://github.com/oldboyxx/jira_clone
 ---
 
 ## [4][Scan to Listen: React Native app for scanning CDs and vinyls to find album on Spotify and books to find audiobook on Audible](https://www.reddit.com/r/reactjs/comments/eu416p/scan_to_listen_react_native_app_for_scanning_cds/)
 - url: https://v.redd.it/laq5e4ndy2d41
 ---
 
-## [5][Speed up your workflow by learning about Optional Chaining &amp; Nullish Coalescing Operators (New in JS 2020)](https://www.reddit.com/r/reactjs/comments/ettd3x/speed_up_your_workflow_by_learning_about_optional/)
-- url: https://youtu.be/7jegF5jD4cU
+## [5][React Native Tutorial: Firebase Email Login Example](https://www.reddit.com/r/reactjs/comments/eunql8/react_native_tutorial_firebase_email_login_example/)
+- url: https://www.djamware.com/post/5e2e58471f326fbce9412226/react-native-tutorial-firebase-email-login-example
 ---
 
-## [6][Intelli - The future of interactive videos, today.](https://www.reddit.com/r/reactjs/comments/eu4pk5/intelli_the_future_of_interactive_videos_today/)
-- url: https://www.reddit.com/r/reactjs/comments/eu4pk5/intelli_the_future_of_interactive_videos_today/
----
-In 2020 it’s time to take videos to the next level! Me and a friend have spent the last year developing this tool which could be of great addition to everyone's web dev  and creativity toolkit. Any feedback deeply appreciated! Thoughts on UI, UX, features and capabilities are all welcome. Here's the URL: [Intelli](https://intelli.tv) 
-
-It was built using React. Ask me anything about it!
-
-Cheers :)
-## [7][Is there an event for clicking OFF an input field?](https://www.reddit.com/r/reactjs/comments/eu5b5q/is_there_an_event_for_clicking_off_an_input_field/)
-- url: https://www.reddit.com/r/reactjs/comments/eu5b5q/is_there_an_event_for_clicking_off_an_input_field/
----
-Apologies if this is the wrong sub, but I can't find precisely what I'm looking for in the documentation. Input fields have an onChange event, which is great - What I'm looking for is an event that fires when a user has finished typing in an input field. Is there any such event in React?
-## [8][Is there a help group or discord for material-ui?](https://www.reddit.com/r/reactjs/comments/eu52lm/is_there_a_help_group_or_discord_for_materialui/)
-- url: https://www.reddit.com/r/reactjs/comments/eu52lm/is_there_a_help_group_or_discord_for_materialui/
----
-I know of reactiflux on discord but it doesn't appear to have a material-ui channel.  Is there one out there?
-## [9][React seems to be a nightmare for me](https://www.reddit.com/r/reactjs/comments/eu4s5n/react_seems_to_be_a_nightmare_for_me/)
-- url: https://www.reddit.com/r/reactjs/comments/eu4s5n/react_seems_to_be_a_nightmare_for_me/
----
-Sup, Reddit!
-
-I'm learning react for maybe 2 months, but feeling myself not really motivated, cos I'm feeling that I'm using it wrong. For example, how do you handle data from GET queries? I'm reading it window.url and it works like a charm. But I don't think that it's correct.
-
-Like, I'm experienced in django with jinja2 templates, and it's seems easy and straightforward to me. But when talking about react... Webpacks/Babel/redux/etc. I really don't get how to deal with this.
-
-Maybe there is someone interested in free slave? Like, I'm interested to see how the react development looks like. I can do boring stuff or whatever. 
-
-Or maybe someone interested in pair programming? I have an idea for a web application which will be useful for newbies in programming. I can do/teach backend in express/django. 
-
-Or maybe experience exchange? I can guide how to build bots relying on image processing or bots using browser emulator.
-
-Or even maybe there is a tutorial like djangogirls for react? Almost every tutorial I saw leads to finished project which can be running on local machine or custom using 3rd party service, but how do you deal with this in real production workflow?
-
-I'm using next.js and converting it to static html, but how do you handle this without next.js? Running additional server with react on board for frontend?
-
-Please, don't be shy to reply here or in DM.
-## [10][cra-template-typekit: Opinionated Create React App template with typescript, redux-toolkit, react-testing-library](https://www.reddit.com/r/reactjs/comments/ets28l/cratemplatetypekit_opinionated_create_react_app/)
-- url: https://github.com/rrebase/cra-template-typekit
+## [6][A Beginner’s Guide to Loops in React JSX](https://www.reddit.com/r/reactjs/comments/eunksu/a_beginners_guide_to_loops_in_react_jsx/)
+- url: https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx
 ---
 
-## [11][Creating a React Project using Gatsby.](https://www.reddit.com/r/reactjs/comments/eu2nwh/creating_a_react_project_using_gatsby/)
-- url: https://www.reddit.com/r/reactjs/comments/eu2nwh/creating_a_react_project_using_gatsby/
+## [7][How to start using Styled Components in React](https://www.reddit.com/r/reactjs/comments/euny9j/how_to_start_using_styled_components_in_react/)
+- url: https://www.youtube.com/watch?v=eQkkoUEVY-Q
 ---
-Come hang out and learn some react with me. I'm using Gatsby too. I usually learn a bunch during my streams so maybe you could help or learn with me.. [JamieNichols](https://twitch.tv/jamie_337_nichols)
-## [12][Web Portfolio (need some feedback)](https://www.reddit.com/r/reactjs/comments/eu2d48/web_portfolio_need_some_feedback/)
-- url: https://www.reddit.com/r/reactjs/comments/eu2d48/web_portfolio_need_some_feedback/
+
+## [8][What are most important things in the official documentation that everyone should read?](https://www.reddit.com/r/reactjs/comments/eunv1l/what_are_most_important_things_in_the_official/)
+- url: https://www.reddit.com/r/reactjs/comments/eunv1l/what_are_most_important_things_in_the_official/
 ---
-Fresh out of college, took a good 1 month holiday after graduation and now trying to land a job in the coming months (hopefully by March).
+What are most important things in the official documentation that everyone should read? To be honest, I didn't read the official documentation at all, and chose instead to learn it by reading blogs and tinkering with other people's applications, so I am wondering if i missed out anything important.
+## [9][Request for code review](https://www.reddit.com/r/reactjs/comments/eunizd/request_for_code_review/)
+- url: https://www.reddit.com/r/reactjs/comments/eunizd/request_for_code_review/
+---
+Hi everyone.
 
-Decided to impress future employer by creating my own web portfolio. 
+I built a small contact list app based on the [Random User API](https://randomuser.me/) and it's available [here](https://codesandbox.io/s/react-contact-list-usbbb). I was wondering if any of you good people would care to comment on the quality of the code and what you would do differently. It would be a great learning experience for me.
 
-Here's the link to it [radziramli.com](https://radziramli.com)
+Thanks for your time.
+## [10][React component library example with TypeScript and CSS Modules, exported as ESM and fully tree-shakable](https://www.reddit.com/r/reactjs/comments/eucwt6/react_component_library_example_with_typescript/)
+- url: https://github.com/LukeChannings/component-library-example
+---
 
-Not fully done yet,
-- Resume not done yet
-- Contact Section unfinished
+## [11][Learning Advanced JS by Learning React](https://www.reddit.com/r/reactjs/comments/euj4f0/learning_advanced_js_by_learning_react/)
+- url: https://www.reddit.com/r/reactjs/comments/euj4f0/learning_advanced_js_by_learning_react/
+---
+Has anyone else had the experience of picking up advanced JS concepts more easily while learning React?
 
-Need some feedback to it especially for larger screen ie 1440p/4k. I would say I've fully optimized it for mobile and 1080p view. 
+I still don't have as deep an understanding of JS as I'd like and have struggled for awhile with really getting comfortable working my way around the language and being able to create elegant solutions to problems, but I feel like I'm picking things up through learning React that I haven't been able to so far working with other lessons.
 
-Also, for those senior dev, would you hire me just based on the website alone? If not, do give me some tips on the things I could improve on. Thank you!
+I guess it helps that React's documentation is pretty fantastic too!
+## [12][I made a game with React this morning and think it turned out pretty ok. Let know what you think. Link in the comments.](https://www.reddit.com/r/reactjs/comments/etyxdb/i_made_a_game_with_react_this_morning_and_think/)
+- url: https://v.redd.it/h8xjksj3k0d41
+---
 
-Made with : Nextjs, Ant Design.

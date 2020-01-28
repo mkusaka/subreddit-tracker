@@ -97,51 +97,67 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Jira clone built with modern react. This is a great repository to learn from if you’ve already built smaller react apps and would like to see what a larger, real-world codebase looks like.](https://www.reddit.com/r/reactjs/comments/eu86q9/jira_clone_built_with_modern_react_this_is_a/)
-- url: https://github.com/oldboyxx/jira_clone
+## [3][Found this Full Stack Tutorial on React + Web API. Must Watch for Beginners - 2 Hr Duration](https://www.reddit.com/r/reactjs/comments/ev0cp7/found_this_full_stack_tutorial_on_react_web_api/)
+- url: https://www.youtube.com/watch?v=NemyDIUcC64
 ---
 
-## [4][Scan to Listen: React Native app for scanning CDs and vinyls to find album on Spotify and books to find audiobook on Audible](https://www.reddit.com/r/reactjs/comments/eu416p/scan_to_listen_react_native_app_for_scanning_cds/)
-- url: https://v.redd.it/laq5e4ndy2d41
+## [4][Mastering SEO in React and Next.js](https://www.reddit.com/r/reactjs/comments/euszet/mastering_seo_in_react_and_nextjs/)
+- url: https://youtu.be/GfsqFaiaK3A
 ---
 
-## [5][React Native Tutorial: Firebase Email Login Example](https://www.reddit.com/r/reactjs/comments/eunql8/react_native_tutorial_firebase_email_login_example/)
-- url: https://www.djamware.com/post/5e2e58471f326fbce9412226/react-native-tutorial-firebase-email-login-example
+## [5][After a year, react-helmet is finally getting updated. v6 coming soon.](https://www.reddit.com/r/reactjs/comments/euuwba/after_a_year_reacthelmet_is_finally_getting/)
+- url: https://www.reddit.com/r/reactjs/comments/euuwba/after_a_year_reacthelmet_is_finally_getting/
+---
+6.0.0-beta.2 was released today and [6.0.0 is coming soon](https://github.com/nfl/react-helmet/pull/472#issuecomment-578600310) 
+
+Update to 6.0.0-beta.2 and you will no longer have the following warning in your console.
+
+    Please update the following components: SideEffect(NullComponent)
+## [6][Styled Components: Getting Started](https://www.reddit.com/r/reactjs/comments/euo0um/styled_components_getting_started/)
+- url: https://www.youtube.com/watch?v=eQkkoUEVY-Q?t=0
 ---
 
-## [6][A Beginner’s Guide to Loops in React JSX](https://www.reddit.com/r/reactjs/comments/eunksu/a_beginners_guide_to_loops_in_react_jsx/)
-- url: https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx
+## [7][Why Did You Render v4 Released!](https://www.reddit.com/r/reactjs/comments/euqfjn/why_did_you_render_v4_released/)
+- url: https://medium.com/welldone-software/why-did-you-render-v4-released-48e0f0b99d4c?source=friends_link&amp;sk=9302be1033bd924e28b004631b8b0315
 ---
 
-## [7][How to start using Styled Components in React](https://www.reddit.com/r/reactjs/comments/euny9j/how_to_start_using_styled_components_in_react/)
-- url: https://www.youtube.com/watch?v=eQkkoUEVY-Q
+## [8][Create simple POS with React, Node and MongoDB #3: setup E-mail pipeline with add activate on SignUp](https://www.reddit.com/r/reactjs/comments/ev0rqe/create_simple_pos_with_react_node_and_mongodb_3/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-3-setup-e-mail-pipeline-with-add-activate-on-signup/
 ---
 
-## [8][What are most important things in the official documentation that everyone should read?](https://www.reddit.com/r/reactjs/comments/eunv1l/what_are_most_important_things_in_the_official/)
-- url: https://www.reddit.com/r/reactjs/comments/eunv1l/what_are_most_important_things_in_the_official/
----
-What are most important things in the official documentation that everyone should read? To be honest, I didn't read the official documentation at all, and chose instead to learn it by reading blogs and tinkering with other people's applications, so I am wondering if i missed out anything important.
-## [9][Request for code review](https://www.reddit.com/r/reactjs/comments/eunizd/request_for_code_review/)
-- url: https://www.reddit.com/r/reactjs/comments/eunizd/request_for_code_review/
----
-Hi everyone.
-
-I built a small contact list app based on the [Random User API](https://randomuser.me/) and it's available [here](https://codesandbox.io/s/react-contact-list-usbbb). I was wondering if any of you good people would care to comment on the quality of the code and what you would do differently. It would be a great learning experience for me.
-
-Thanks for your time.
-## [10][React component library example with TypeScript and CSS Modules, exported as ESM and fully tree-shakable](https://www.reddit.com/r/reactjs/comments/eucwt6/react_component_library_example_with_typescript/)
-- url: https://github.com/LukeChannings/component-library-example
+## [9][Writing testable React components with hooks.](https://www.reddit.com/r/reactjs/comments/eut8hc/writing_testable_react_components_with_hooks/)
+- url: https://medium.com/@Charles_Stover/writing-testable-react-components-with-hooks-23441ee582d5
 ---
 
-## [11][Learning Advanced JS by Learning React](https://www.reddit.com/r/reactjs/comments/euj4f0/learning_advanced_js_by_learning_react/)
-- url: https://www.reddit.com/r/reactjs/comments/euj4f0/learning_advanced_js_by_learning_react/
+## [10][Firebase alternative?](https://www.reddit.com/r/reactjs/comments/ev3pw1/firebase_alternative/)
+- url: https://www.reddit.com/r/reactjs/comments/ev3pw1/firebase_alternative/
 ---
-Has anyone else had the experience of picking up advanced JS concepts more easily while learning React?
+So I'm creating a website in Reactjs which is kind of like a phonebook. There is an option to filter people by different parameters like age, city, country and many other parameters, and also to order by ascending order or descending order.
 
-I still don't have as deep an understanding of JS as I'd like and have struggled for awhile with really getting comfortable working my way around the language and being able to create elegant solutions to problems, but I feel like I'm picking things up through learning React that I haven't been able to so far working with other lessons.
+Recently I added the option to create very complex compound queries, for example: 
 
-I guess it helps that React's documentation is pretty fantastic too!
-## [12][I made a game with React this morning and think it turned out pretty ok. Let know what you think. Link in the comments.](https://www.reddit.com/r/reactjs/comments/etyxdb/i_made_a_game_with_react_this_morning_and_think/)
-- url: https://v.redd.it/h8xjksj3k0d41
+    collection.where("Country","==","USA").where("City","==","Boston").where("Age","==","42").where(...).where(...)......
+
+But it seems like firestore requires an index to be created manually for every different permutation. Since I plan on having over 10 filters, it seems like I'd have to create over 3 billion different indices? From what I read, firestore is not meant for such queries.
+
+Is there a platform that allows such complex compound queries, and that is as simple to implement as firebase? 
+
+Thanks!
+## [11][Having issues with menu on Reactjs.org official site](https://www.reddit.com/r/reactjs/comments/ev2fol/having_issues_with_menu_on_reactjsorg_official/)
+- url: https://www.reddit.com/r/reactjs/comments/ev2fol/having_issues_with_menu_on_reactjsorg_official/
 ---
+Dear developers,
 
+On [reactjs.org](https://reactjs.org) doc page, for some reason on Chrome, I cannot use the menu on the side. It just won't respond to my clicks. Whilst if I try the same page on Firefox, it works. But Chrome is my main browser.
+
+Extensions running: ScriptBlock and Adblock.  
+On ScriptBlock, I've already set [reactjs.org](https://reactjs.org) domain to Allow and have disabled Adblock. This didn't change the result to my issue.
+
+I tried Chrome without add-ons, it still won't work. The menu items won't expand/collapse. For example, when going to  [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)  and I try to click on Main Concept, it does nothing.  
+
+
+Why is this happening?
+## [12][Programming my first Graphql Server and React app!!](https://www.reddit.com/r/reactjs/comments/ev4zm1/programming_my_first_graphql_server_and_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/ev4zm1/programming_my_first_graphql_server_and_react_app/
+---
+I'm building my own Graphql Server for Movies and Tv shows. I want to be able to get all the data from imdb aswell as torrent data as well as free sources. I't would also be cool to include bloopers and movie clips. I'm streaming live so come help me out or tear me down either way come chill with me  [LIVE](https://twitch.tv/jamie_337_nichols)

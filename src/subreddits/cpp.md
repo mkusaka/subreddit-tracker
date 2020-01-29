@@ -57,15 +57,65 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Light and Powerful modern web-framework for C++](https://www.reddit.com/r/cpp/comments/ev2obp/light_and_powerful_modern_webframework_for_c/)
+## [2][MSVC Backend Updates in Visual Studio 2019 Versions 16.3 and 16.4 | C++ Team Blog](https://www.reddit.com/r/cpp/comments/evh16n/msvc_backend_updates_in_visual_studio_2019/)
+- url: https://devblogs.microsoft.com/cppblog/msvc-backend-updates-in-visual-studio-2019-versions-16-3-and-16-4/
+---
+
+## [3][Requires-expression | Andrzej's C++ blog](https://www.reddit.com/r/cpp/comments/evfbaa/requiresexpression_andrzejs_c_blog/)
+- url: https://akrzemi1.wordpress.com/2020/01/29/requires-expression/
+---
+
+## [4][About "Qt Offering Changes 2020"](https://www.reddit.com/r/cpp/comments/evb5v1/about_qt_offering_changes_2020/)
+- url: https://valdyas.org/fading/software/about-qt-offering-changes-2020/
+---
+
+## [5][Light and Powerful modern web-framework for C++](https://www.reddit.com/r/cpp/comments/ev2obp/light_and_powerful_modern_webframework_for_c/)
 - url: https://oatpp.io/
 ---
 
-## [3][Ninja v1.10.0 released!](https://www.reddit.com/r/cpp/comments/ev2zng/ninja_v1100_released/)
-- url: https://github.com/ninja-build/ninja/releases
+## [6][single source as header &amp; source](https://www.reddit.com/r/cpp/comments/evhzqb/single_source_as_header_source/)
+- url: https://www.reddit.com/r/cpp/comments/evhzqb/single_source_as_header_source/
+---
+I was thinking about that for header only you sometimes need to do tricks when having a compilation unit would make it easier. Maybe next level is header &amp; source combined. I went over to [documentation of gcc](https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html) and found \_\_INCLUDE\_LEVEL\_\_.
+
+&amp;#x200B;
+
+base.cpp
+
+    #if __INCLUDE_LEVEL__
+    
+    int function();
+    #else
+    
+    int function() {
+        return 42;
+    }
+    #endif
+    
+
+main.cpp
+
+    #include "base.cpp"
+    
+    #include &lt;iostream&gt;
+    
+    int main() {
+        std::cout &lt;&lt; function() &lt;&lt; "\n";
+    }
+
+CMakeLists.txt
+
+    cmake_minimum_required(VERSION 3.5)
+    
+    project(Combined VERSION 1.0.0 LANGUAGES CXX)
+    add_executable(main base.cpp main.cpp)
+
+I have compiled and successfully linked this. I think it's interesting that this is possible, and also interesting that this hasn't caught on. Whether it's a good idea or not I don't know as I haven't done this in practice. But after trying this proof of concept, I'm more tempted to do this. [Clang](https://clang.llvm.org/docs/LanguageExtensions.html) seems to support it too, but can't find anything similar to [MSVC](https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=vs-2019). What's nice is no extra parameters needed to be invented. Obviously the downside that if implementation changes then its parents need to be compiled too. But for distributing something like a header only library. and if you only support Clang and gcc, then this works kind of nicely. Maybe something like this can have a new extension something like `.cpph`.
+## [7][stdgpu 1.2.0 released!](https://www.reddit.com/r/cpp/comments/ev5ctx/stdgpu_120_released/)
+- url: https://github.com/stotko/stdgpu/releases/tag/1.2.0
 ---
 
-## [4][STL header token parsing benchmarks for libstdc++ 7, 8 and 9](https://www.reddit.com/r/cpp/comments/ev4e7g/stl_header_token_parsing_benchmarks_for_libstdc_7/)
+## [8][STL header token parsing benchmarks for libstdc++ 7, 8 and 9](https://www.reddit.com/r/cpp/comments/ev4e7g/stl_header_token_parsing_benchmarks_for_libstdc_7/)
 - url: https://www.reddit.com/r/cpp/comments/ev4e7g/stl_header_token_parsing_benchmarks_for_libstdc_7/
 ---
 To match [the results for VS2019 posted yesterday](https://www.reddit.com/r/cpp/comments/eumou7/stl_header_token_parsing_benchmarks_for_vs2017/) where we found that the VS2019 STL has become 9% lighter in preprocessor parsing time than the VS2017 STL, here are the same for libstdc++ 7, 8 and 9:
@@ -85,47 +135,46 @@ There is good news here though. Whilst the average and median has become much wo
 If there was any one area where I think libstdc++ is particularly deficient, it is that any of its threading headers basically drag in the exact same stuff, most of which isn't actually needed by the individual header. MSVC's STL proves that this isn't necessary, `&lt;thread&gt;` is much lighter weight than any of the other threading headers on MSVC, but is the heaviest weight threading header on libstdc++, for example.
 
 All that said, libstdc++ has *far* more very light weight headers than the MSVC STL e.g. `&lt;type_traits&gt;` on libstdc++ really is a class leader compared to the hefty `&lt;type_traits&gt;` on MSVC. MSVC *could* do much better here, a huge include for MSVC is `&lt;sal.h&gt;` which absolutely everything drags in, and is very low hanging fruit to prune in my opinion.
-## [5][stdgpu 1.2.0 released!](https://www.reddit.com/r/cpp/comments/ev5ctx/stdgpu_120_released/)
-- url: https://github.com/stotko/stdgpu/releases/tag/1.2.0
+## [9][Ninja v1.10.0 released!](https://www.reddit.com/r/cpp/comments/ev2zng/ninja_v1100_released/)
+- url: https://github.com/ninja-build/ninja/releases
 ---
 
-## [6][Qt restricts the LTS releases to commercial customers, :(](https://www.reddit.com/r/cpp/comments/eupd06/qt_restricts_the_lts_releases_to_commercial/)
-- url: https://www.qt.io/blog/qt-offering-changes-2020
----
-
-## [7][C++ Modules conformance improvements with MSVC in Visual Studio 2019 16.5](https://www.reddit.com/r/cpp/comments/eus3j6/c_modules_conformance_improvements_with_msvc_in/)
-- url: https://devblogs.microsoft.com/cppblog/c-modules-conformance-improvements-with-msvc-in-visual-studio-2019-16-5/
----
-
-## [8][Difference between string and stringstream](https://www.reddit.com/r/cpp/comments/ev4ttw/difference_between_string_and_stringstream/)
-- url: https://www.reddit.com/r/cpp/comments/ev4ttw/difference_between_string_and_stringstream/
----
-Hi! I'm taking a course on C++ so I'm still on the basics. I couldn't grasp the difference between a stringstream and a string. Would anyone care to explain? Thank you!
-## [9][Hacking on Clang is surprisingly easy](https://www.reddit.com/r/cpp/comments/eumv9p/hacking_on_clang_is_surprisingly_easy/)
-- url: https://mort.coffee/home/clang-compiler-hacking/
----
-
-## [10][STL header token parsing benchmarks for VS2017 and VS2019](https://www.reddit.com/r/cpp/comments/eumou7/stl_header_token_parsing_benchmarks_for_vs2017/)
-- url: https://www.reddit.com/r/cpp/comments/eumou7/stl_header_token_parsing_benchmarks_for_vs2017/
----
-One of the MSVC devs poked me to update the results from [https://www.reddit.com/r/cpp/comments/860hya/stl\_header\_token\_parsing\_benchmarks\_for\_vs2008/](https://www.reddit.com/r/cpp/comments/860hya/stl_header_token_parsing_benchmarks_for_vs2008/) for VS2019:
-
-Graph of VS2019: [https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-2019.png](https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-2019.png)
-
-Comparative graph: [https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-history.png](https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/msvs-history.png)
-
-Detailed notes: [https://github.com/ned14/stl-header-heft/blob/master/Readme.msvs.md](https://github.com/ned14/stl-header-heft/blob/master/Readme.msvs.md)
-
-Project github: [https://github.com/ned14/stl-header-heft](https://github.com/ned14/stl-header-heft)
-
-There is a lot of good news in this benchmark: overall VS2019 has 9% lower token processing times than VS2017 did. **That makes VS2019 almost as quick as VS2008 used to be!**
-
-The single biggest surprise is surely now `&lt;array&gt;`, which is by far the biggest impact STL container now that Microsoft have greatly improved `&lt;string&gt;` and especially `&lt;vector&gt;` and `&lt;forward_list&gt;`.
-
-I'll try to produce updated benchmarks for libstdc++ during this coming week.
-
-I'd like to take this opportunity to thank the Visual C++ team for such outstanding work on slimming down their STL implementation, yet simultaneously implementing a large proportion of C++ 20! Great work guys, wish more STLs were like yours!
-## [11][OpenSSL client and server from scratch, part 3](https://www.reddit.com/r/cpp/comments/ev3vbq/openssl_client_and_server_from_scratch_part_3/)
+## [10][OpenSSL client and server from scratch, part 3](https://www.reddit.com/r/cpp/comments/ev3vbq/openssl_client_and_server_from_scratch_part_3/)
 - url: https://quuxplusone.github.io/blog/2020/01/26/openssl-part-3/
 ---
 
+## [11][Type trait I made wont work in MSVC](https://www.reddit.com/r/cpp/comments/ev7r87/type_trait_i_made_wont_work_in_msvc/)
+- url: https://www.reddit.com/r/cpp/comments/ev7r87/type_trait_i_made_wont_work_in_msvc/
+---
+So I made a type trait as a learning exercise that is supposed to check if the first type of the template parameters is the same as any of the other types in the template parameter pack.
+
+    //Checks if type T is any of the types provided as ARGS...
+    //I could have done this using a much simpler function template but I wanted the interface to be similar to stl type traits
+    namespace TRAIT_TYPE_HELPERS
+    {
+    	template &lt;typename T, typename = void, typename ... ARGS&gt;
+    	struct is_one_of_helper : std::false_type {};
+    
+    	template &lt;typename T, typename ... ARGS&gt;
+    	struct is_one_of_helper &lt;T, std::enable_if_t&lt;(std::is_same_v&lt;T, ARGS&gt; || ...)&gt;, ARGS...&gt; : std::true_type {};
+    }
+    
+    //Main type trait
+    template &lt;typename T, typename ... ARGS&gt;
+    using is_one_of = TRAIT_TYPE_HELPERS::is_one_of_helper&lt;T, void, ARGS...&gt;;
+    
+    //convenience template
+    template &lt;typename T, typename ... ARGS&gt;
+    constexpr bool is_one_of_v = is_one_of&lt;T, ARGS...&gt;::value;
+    
+    int main()
+    {
+    	std::cout &lt;&lt; is_one_of&lt;int, char, float, double, int&gt;::value;
+    }
+
+The above test code prints out zero in MSVC (Visual Studio 16.4.3) but it prints out 1 in GCC 7.4.0.
+When I change the SFINAE line from std::is_same_v&lt;T, ARGS&gt; to std::is_same&lt;T, ARGS&gt;::value, it prints out 1 on both platforms.
+
+I was just wondering if this is a bug in MSVC or maybe them not implementing the standard fully yet or just me incorrectly making assumptions on what should work and what shouldn't.
+
+Discussion is appreciated.

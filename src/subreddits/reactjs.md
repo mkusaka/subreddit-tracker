@@ -97,67 +97,92 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Found this Full Stack Tutorial on React + Web API. Must Watch for Beginners - 2 Hr Duration](https://www.reddit.com/r/reactjs/comments/ev0cp7/found_this_full_stack_tutorial_on_react_web_api/)
-- url: https://www.youtube.com/watch?v=NemyDIUcC64
+## [3][My portfolio website using next.js](https://www.reddit.com/r/reactjs/comments/evi5da/my_portfolio_website_using_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/evi5da/my_portfolio_website_using_nextjs/
 ---
+Hey everyone! I just made my personal website using next js. I'd be very happy if you guys could take a look at it and provide feedback. 
 
-## [4][Mastering SEO in React and Next.js](https://www.reddit.com/r/reactjs/comments/euszet/mastering_seo_in_react_and_nextjs/)
-- url: https://youtu.be/GfsqFaiaK3A
----
-
-## [5][After a year, react-helmet is finally getting updated. v6 coming soon.](https://www.reddit.com/r/reactjs/comments/euuwba/after_a_year_reacthelmet_is_finally_getting/)
-- url: https://www.reddit.com/r/reactjs/comments/euuwba/after_a_year_reacthelmet_is_finally_getting/
----
-6.0.0-beta.2 was released today and [6.0.0 is coming soon](https://github.com/nfl/react-helmet/pull/472#issuecomment-578600310) 
-
-Update to 6.0.0-beta.2 and you will no longer have the following warning in your console.
-
-    Please update the following components: SideEffect(NullComponent)
-## [6][Styled Components: Getting Started](https://www.reddit.com/r/reactjs/comments/euo0um/styled_components_getting_started/)
-- url: https://www.youtube.com/watch?v=eQkkoUEVY-Q?t=0
----
-
-## [7][Why Did You Render v4 Released!](https://www.reddit.com/r/reactjs/comments/euqfjn/why_did_you_render_v4_released/)
-- url: https://medium.com/welldone-software/why-did-you-render-v4-released-48e0f0b99d4c?source=friends_link&amp;sk=9302be1033bd924e28b004631b8b0315
----
-
-## [8][Create simple POS with React, Node and MongoDB #3: setup E-mail pipeline with add activate on SignUp](https://www.reddit.com/r/reactjs/comments/ev0rqe/create_simple_pos_with_react_node_and_mongodb_3/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-3-setup-e-mail-pipeline-with-add-activate-on-signup/
----
-
-## [9][Writing testable React components with hooks.](https://www.reddit.com/r/reactjs/comments/eut8hc/writing_testable_react_components_with_hooks/)
-- url: https://medium.com/@Charles_Stover/writing-testable-react-components-with-hooks-23441ee582d5
----
-
-## [10][Firebase alternative?](https://www.reddit.com/r/reactjs/comments/ev3pw1/firebase_alternative/)
-- url: https://www.reddit.com/r/reactjs/comments/ev3pw1/firebase_alternative/
----
-So I'm creating a website in Reactjs which is kind of like a phonebook. There is an option to filter people by different parameters like age, city, country and many other parameters, and also to order by ascending order or descending order.
-
-Recently I added the option to create very complex compound queries, for example: 
-
-    collection.where("Country","==","USA").where("City","==","Boston").where("Age","==","42").where(...).where(...)......
-
-But it seems like firestore requires an index to be created manually for every different permutation. Since I plan on having over 10 filters, it seems like I'd have to create over 3 billion different indices? From what I read, firestore is not meant for such queries.
-
-Is there a platform that allows such complex compound queries, and that is as simple to implement as firebase? 
+https://iabhishek.dev.
 
 Thanks!
-## [11][Having issues with menu on Reactjs.org official site](https://www.reddit.com/r/reactjs/comments/ev2fol/having_issues_with_menu_on_reactjsorg_official/)
-- url: https://www.reddit.com/r/reactjs/comments/ev2fol/having_issues_with_menu_on_reactjsorg_official/
+## [4][Personal website I built](https://www.reddit.com/r/reactjs/comments/evkfz5/personal_website_i_built/)
+- url: https://www.reddit.com/r/reactjs/comments/evkfz5/personal_website_i_built/
 ---
-Dear developers,
+Hi, I recently just finished building my portfolio and would love some feedback! 
 
-On [reactjs.org](https://reactjs.org) doc page, for some reason on Chrome, I cannot use the menu on the side. It just won't respond to my clicks. Whilst if I try the same page on Firefox, it works. But Chrome is my main browser.
+[https://alexteshome.com](https://alexteshome.com)
 
-Extensions running: ScriptBlock and Adblock.  
-On ScriptBlock, I've already set [reactjs.org](https://reactjs.org) domain to Allow and have disabled Adblock. This didn't change the result to my issue.
+I drew inspiration from various few other portfolios linked here before. 
 
-I tried Chrome without add-ons, it still won't work. The menu items won't expand/collapse. For example, when going to  [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)  and I try to click on Main Concept, it does nothing.  
+I built it with Next.js, with API to deal with the contact form. Also some libraries for some of the scrolling functionality (did not know of an easier way to deal with that, if anyone knows a simpler way?). There might be a few bugs on mobile as well.
 
-
-Why is this happening?
-## [12][Programming my first Graphql Server and React app!!](https://www.reddit.com/r/reactjs/comments/ev4zm1/programming_my_first_graphql_server_and_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/ev4zm1/programming_my_first_graphql_server_and_react_app/
+Thanks in advance!
+## [5][Repos for Beginners to Learn From](https://www.reddit.com/r/reactjs/comments/ev7jnb/repos_for_beginners_to_learn_from/)
+- url: https://www.reddit.com/r/reactjs/comments/ev7jnb/repos_for_beginners_to_learn_from/
 ---
-I'm building my own Graphql Server for Movies and Tv shows. I want to be able to get all the data from imdb aswell as torrent data as well as free sources. I't would also be cool to include bloopers and movie clips. I'm streaming live so come help me out or tear me down either way come chill with me  [LIVE](https://twitch.tv/jamie_337_nichols)
+Recently I came across a post about [Jira Clone](https://github.com/oldboyxx/jira_clone). I found the project helpful and gave me ideas on how real-world apps are structured and how I should go about my future projects. I just wanted to know about other such repos that would be helpful for people to learn from. Any suggestions?
+## [6][Using redux-saga with Typescipt [x-post /r/typescript]](https://www.reddit.com/r/reactjs/comments/evgbyv/using_reduxsaga_with_typescipt_xpost_rtypescript/)
+- url: https://www.reddit.com/r/reactjs/comments/evgbyv/using_reduxsaga_with_typescipt_xpost_rtypescript/
+---
+I've been using `redux-thunk` for quite a while on a project of mine, but I've recently outgrown it and have turned to other libraries to handle async actions (mostly network requests). Of the options out there, I've found `redux-saga` and `redux-observable` to be the most promising options. After some research, I found that `redux-saga` seemed the best for my use-case. 
+
+I then installed saga and the accompanying types, but I quickly found that saga's integration with TypeScript was less than ideal. For example, using a selector returns an `any` type as opposed to the proper type which corresponds to the output of the selector.
+
+I did some follow-up research on this topic, and from what I can see, saga doesn't support this kind of type safety -- something that `redux-observables` does support. Is there some kind of work-around or alternate `@types` library which allows saga to support real type safety with TypeScript? 
+
+I was excited to use saga, but if proper type checks do not properly work, I will be forced to use `redux-observable`.
+## [7][How to structure styled component files?](https://www.reddit.com/r/reactjs/comments/evm4m9/how_to_structure_styled_component_files/)
+- url: https://www.reddit.com/r/reactjs/comments/evm4m9/how_to_structure_styled_component_files/
+---
+Hello huys,
+
+can anyone give me suggestions on how to structure styled components I specifically have in mind the CSS part. I was thinking about how to keep the styling objects separately from the components in a way that its not an overkill. Any tips?
+## [8][3 custom React effect hooks for your toolbox](https://www.reddit.com/r/reactjs/comments/evjd3l/3_custom_react_effect_hooks_for_your_toolbox/)
+- url: https://medium.com/@faboulaws/3-custom-react-effect-hooks-for-your-toolbox-96d659d2ca9d
+---
+
+## [9][Is debouncing the update of a context a good practice?](https://www.reddit.com/r/reactjs/comments/evmwtb/is_debouncing_the_update_of_a_context_a_good/)
+- url: https://www.reddit.com/r/reactjs/comments/evmwtb/is_debouncing_the_update_of_a_context_a_good/
+---
+So, I'm working on an App that only uses functional components and hooks.  
+
+
+I've decided to start without using Redux. I started using only local state, but when the callback drilling started getting out of hand I've created a context for my state and I update it using a reducer (to kind of "emulate" Redux).  
+
+
+The problem is that whenever I update this context, all the components that are inside the provider get re-rendered. For most of the updates this is fine and doesn't affect UX. However I have a slider component that gets jumpy and slow because for every change, it re-renders every thing, the UX isn't smooth at all for this slider.  
+
+
+I reckon this problem is the one described here  [https://frontarm.com/james-k-nelson/react-context-performance/](https://frontarm.com/james-k-nelson/react-context-performance/) . But I didn't quite understand the solution proposed.  
+
+
+For now, my solution was to use local state for rendering the slider with the proper value and debouncing my Context update by half a second. I wonder if is this an ok practice or if there's any reason for me to avoid doing it?   
+The context doesn't really need to be up to date right away, it only needs to be up to date when the user submits the form and the user will definitely take more than half a second between this input and the form submit.
+
+  
+My other options would be to finally start using Redux, memoize lots of stuff to prevent them from re-rendering when not necessary, try to understand better the solution proposed in the arcticle I linked and implement it.
+## [10][Any good small basic repositories we can use as a sandbox?](https://www.reddit.com/r/reactjs/comments/evmsjf/any_good_small_basic_repositories_we_can_use_as_a/)
+- url: https://www.reddit.com/r/reactjs/comments/evmsjf/any_good_small_basic_repositories_we_can_use_as_a/
+---
+I like to clone random repositories and use them as a sandbox to test out various new features and try to understand why a bug might be happening. However, all of the ones i have found are todos applications, and I am trying to find some other non-trivial applications I can use. Do you have any suggestion?
+## [11][looking for react courses](https://www.reddit.com/r/reactjs/comments/evmquz/looking_for_react_courses/)
+- url: https://www.reddit.com/r/reactjs/comments/evmquz/looking_for_react_courses/
+---
+Hi! 
+
+I am looking for some kind of open source react course repository, which has tasks, (from beginning to mid level, or something similar) which has the task description, and some *provided testcases* that can evaluate the task itself. 
+
+
+Are you aware of existence anything similar? 
+
+thank you,
+## [12][Wizard/Multistep Form - What are you using?](https://www.reddit.com/r/reactjs/comments/eve9h7/wizardmultistep_form_what_are_you_using/)
+- url: https://www.reddit.com/r/reactjs/comments/eve9h7/wizardmultistep_form_what_are_you_using/
+---
+My team about to start a feature that needs a multi-step form in a modal. We have used [React-Stepzilla](https://www.npmjs.com/package/react-stepzilla) in the past and I didn't strongly dislike it, but we haven't re-assessed in a while either. 
+
+I'm just curious what others are using, especially if you love it or hate it. 
+
+We do not use Redux. We are on React v16.10. We don't have any form tool (probably to our detriment).
+
+Thanks for your time!

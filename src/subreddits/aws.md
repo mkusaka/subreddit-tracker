@@ -1,113 +1,74 @@
 # aws
-## [1][New: AWS Security Documentation by category for different services](https://www.reddit.com/r/aws/comments/eupx5l/new_aws_security_documentation_by_category_for/)
-- url: https://docs.aws.amazon.com/security/
+## [1][Policy Sentry: IAM Least Privilege Policy Generator, auditor, and analysis database](https://www.reddit.com/r/aws/comments/evbx18/policy_sentry_iam_least_privilege_policy/)
+- url: https://github.com/salesforce/policy_sentry/
 ---
 
-## [2][An Open Source Alternative to AWS SageMaker](https://www.reddit.com/r/aws/comments/euuy4u/an_open_source_alternative_to_aws_sagemaker/)
-- url: https://www.datanami.com/2020/01/27/an-open-source-alternative-to-aws-sagemaker/
+## [2][What exactly are Region and different types of Zones in AWS?](https://www.reddit.com/r/aws/comments/evm4kv/what_exactly_are_region_and_different_types_of/)
+- url: https://medium.com/@zarinfam/what-exactly-are-region-and-different-types-of-zones-in-aws-333d7e0ce373?source=friends_link&amp;sk=f2c81db6cd87ac0b63ccc3c99d615e2b
 ---
 
-## [3][Is anyone here using AWS Batch for their projects?](https://www.reddit.com/r/aws/comments/ev51fa/is_anyone_here_using_aws_batch_for_their_projects/)
+## [3][AWS Lambda maximum bandwidth 0.5 gbps](https://www.reddit.com/r/aws/comments/ev9u8f/aws_lambda_maximum_bandwidth_05_gbps/)
+- url: https://www.reddit.com/r/aws/comments/ev9u8f/aws_lambda_maximum_bandwidth_05_gbps/
+---
+With 3008mb memory allocated for the Lambda function the maximum bandwidth is 0.5 gbps (or read or write at \~75megabytes/second) to S3.  Have you all encountered this same limit?
+
+It does not appear to be documented at:
+
+[https://docs.aws.amazon.com/lambda/latest/dg/limits.html](https://docs.aws.amazon.com/lambda/latest/dg/limits.html)
+## [4][[HELP] New EC2 bootup. how to enable PasswordAuthentication in sshd_config after booting up?](https://www.reddit.com/r/aws/comments/evl052/help_new_ec2_bootup_how_to_enable/)
+- url: https://www.reddit.com/r/aws/comments/evl052/help_new_ec2_bootup_how_to_enable/
+---
+im setting up a auto scaling group from an AMI template. i tried putting the commands during AS setup.. didnt work, i also put a @reboot cron but it didnt work.
+
+the template already has PasswordAuthentication yes but for some reason the AMI image went back to 'no'
+
+i just need this to be run:    
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config &amp;&amp; service sshd restart
+
+EDIT: was solved by u/jamsan920 . please consider this closed. thanks
+## [5][Multiple Interfaces causing asymmetric routing on ec2 instance](https://www.reddit.com/r/aws/comments/evjrzn/multiple_interfaces_causing_asymmetric_routing_on/)
+- url: https://www.reddit.com/r/aws/comments/evjrzn/multiple_interfaces_causing_asymmetric_routing_on/
+---
+Hi,
+
+I am having two interfaces attached to ec2 ubuntu instance where one interface having public ip and other interface only having private ip and i could see its causing routing loops.Can some one guide me on this one ?
+## [6][Elastic beanstalk instances can't be placed in private subnets (without NAT gateway) ?](https://www.reddit.com/r/aws/comments/evhbwx/elastic_beanstalk_instances_cant_be_placed_in/)
+- url: https://www.reddit.com/r/aws/comments/evhbwx/elastic_beanstalk_instances_cant_be_placed_in/
+---
+I spent the entire an day trying to deploy my flask based API engine on elastic beanstalk and figured that if I deploy it in a custom vpc where I keep the load balancer in public subnet (with internet gateway) and the compute instances in the private subnet (without Nat gateway) the deployment fails with the message - "The EC2 instances failed to communicate with AWS Elastic Beanstalk, either because of configuration problems with the VPC or a failed EC2 instance. Check your VPC configuration and try launching the environment again."
+But then I deployed everything in a public subnet and it worked. 
+
+So, I just wanted to confirm the behavior.
+
+Is it that the requests coming to the API engines are routed through the load balancer but the actual instances behind the load balancer respond to individual requests (which they received) themselves ? 
+(this should be the only reason they need internet connectivity as far as I can tell).
+## [7][Is anyone here using AWS Batch for their projects?](https://www.reddit.com/r/aws/comments/ev51fa/is_anyone_here_using_aws_batch_for_their_projects/)
 - url: https://www.reddit.com/r/aws/comments/ev51fa/is_anyone_here_using_aws_batch_for_their_projects/
 ---
 Please share your experience with it so far if you're using it. Like Pros, Cons, etc. Thanks
-## [4][Lambda Layer Database - A crowd-sourced database of Useful Hosted lambda layers &amp; layer zips for your serverless projects](https://www.reddit.com/r/aws/comments/euzmf6/lambda_layer_database_a_crowdsourced_database_of/)
-- url: https://refinery.io/lambda-layers-database/#/
+## [8][Feedback request - getting started experience with AWS products](https://www.reddit.com/r/aws/comments/ev8yea/feedback_request_getting_started_experience_with/)
+- url: https://www.reddit.com/r/aws/comments/ev8yea/feedback_request_getting_started_experience_with/
 ---
+Hi r/aws!
 
-## [5][Handling Lambda Function Throttling](https://www.reddit.com/r/aws/comments/euvqt9/handling_lambda_function_throttling/)
-- url: https://www.reddit.com/r/aws/comments/euvqt9/handling_lambda_function_throttling/
+u/amazonwebservices here. We are exploring  ways to improve the experience of getting started with AWS products.
+
+Several approaches to lay out this content are in consideration, including learning pathways based on personas (e.g., full stack, DevOps, mobile) and / or product categories (e.g., serverless, containers).
+
+* When you want to learn how to do something on AWS, is it typically in the lens of a specific use case you already have in mind or to generally go deeper on a particular product category? Or is there a different motivation altogether?
+* How would you want to consume this information (e.g., hands-on tutorials, code snippets, videos)?
+* What would make it easier and more engaging to get started with AWS?
+
+Share your feedback below and help inform what the new getting started experience could look like!
+## [9][Has anyone gotten CORS working with the new API Gateway V2 (HTTP API)?](https://www.reddit.com/r/aws/comments/evj9i5/has_anyone_gotten_cors_working_with_the_new_api/)
+- url: https://www.reddit.com/r/aws/comments/evj9i5/has_anyone_gotten_cors_working_with_the_new_api/
 ---
-Hey folks, wanted to share a youtube channel that I've been working on dedicated to providing simple and easy to digest tutorials on various AWS services.
+According to here [https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html) "If you configure CORS for an API, API Gateway automatically sends a response to preflight OPTIONS requests, even if there isn't an OPTIONS route configured for your API."
 
-My newest video discusses the implications of Lambda Throttling and how to mitigate its potential impacts to your serverless application.
+However when I configure CORS the preflight responses just gives a 204 response with none of the necessary response headers (Access-Control-Allow-Origin) to get web browsers to accept it. I know something is happening when I configure CORS as without it I get 404 responses, but it's not giving the headers that I thought it would
 
-The video is available here: https://youtu.be/2tmsyweB3k4
-
-Thank you!
-## [6][Does AWS AI Services Accuracy Improve over time?](https://www.reddit.com/r/aws/comments/ev3e89/does_aws_ai_services_accuracy_improve_over_time/)
-- url: https://www.reddit.com/r/aws/comments/ev3e89/does_aws_ai_services_accuracy_improve_over_time/
+Has anyone else gotten CORS working with the new HTTP API?
+## [10][Multi Region and subnet schemes](https://www.reddit.com/r/aws/comments/evir6r/multi_region_and_subnet_schemes/)
+- url: https://www.reddit.com/r/aws/comments/evir6r/multi_region_and_subnet_schemes/
 ---
-Hi Guys,
-
-I'm currently performing some audio to text market analysis to compare high-level AI services from AWS, GCP and Azure. An ideally wonderful part of the research is to include how the transcription services improved over the past years.
-
-Based on experience, how do you find AWS high level AI services?
-
-Regards,
-
-Allan
-## [7][Any suggestions for my AWS Data Architecture? [Part 2]](https://www.reddit.com/r/aws/comments/ev2itw/any_suggestions_for_my_aws_data_architecture_part/)
-- url: https://www.reddit.com/r/aws/comments/ev2itw/any_suggestions_for_my_aws_data_architecture_part/
----
-Hi everyone, first of all, thanks for helping me with my [first post](https://www.reddit.com/r/aws/comments/elwt84/any_suggestion_to_my_aws_data_architecture/). 
-
-As you advised, I ditched Airflow and Postgres. 
-
-&amp;#x200B;
-
-DATA FLOW OUTLINE (no precise tech stuff here)
-
-Most of the news publishers have RSS/Atom feeds (something similar to an API if you do not know what it is) to give programmatic access to the latest published news.
-
-By checking each RSS once in a while you can see new records (here's [the one of the NY Times](https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml)). Therefore, by collecting all the endpoints for all the news providers' feeds that I need, I will be able to collect my data.
-
-Each article itself (to simplify) is a title, published date, author, description, etc.
-
-Let's say I have the place where I store all the articles. After that, I would have to query that with my API.
-
-I plan to store only up to 7-30 days of recent data in the Elasticsearch.
-
-&amp;#x200B;
-
-SOLUTION ARCHITECTURE \[REVISED\]
-
-&amp;#x200B;
-
-https://preview.redd.it/rd4xyzaf0hd41.png?width=3840&amp;format=png&amp;auto=webp&amp;s=5c77c9d3c2715092c9c21db9cd7e22e4d811afb8
-
-1. CloudWatch event triggers the "orchestration lambda"
-2. "orchestration lambda" gets the RSS feeds URLs from DynamoDB
-3. "orchestration lambda" sends all those RSS URLs to SQS
-4. each RSS URL from SQS is picked-up by Lambda that reads and normalizes the feed. 
-5. Title+description is md5'ed so we use it as an ID for DynamoDB record. Using `attribute_not_exists` of DDB, only items with unseen ID are promoted, so it solves the deduping problem
-6. DDB streams collect up to 100 newly inserted records and send it to Lambda
-7. Lambda insert records into Elasticsearch cluster
-
-&amp;#x200B;
-
-My main questions are:
-
-1) The laziest way to monitor it?
-
-2) What if 7. fails? 
-
-3) Any other suggestions?
-
-&amp;#x200B;
-
-Thanks!
-## [8][Is it possible to do web automations like Selenium on AWS Lambda?](https://www.reddit.com/r/aws/comments/eunlh5/is_it_possible_to_do_web_automations_like/)
-- url: https://www.reddit.com/r/aws/comments/eunlh5/is_it_possible_to_do_web_automations_like/
----
-I need to do web automations for a site with no API or web hooks. I can't use selenium because it happens at arbitrary times so I need something on the cloud.
-## [9][(NLB) How does health checks works for target group?](https://www.reddit.com/r/aws/comments/eutpbm/nlb_how_does_health_checks_works_for_target_group/)
-- url: https://www.reddit.com/r/aws/comments/eutpbm/nlb_how_does_health_checks_works_for_target_group/
----
-I am struggling to understand why my targets are unhealthy in the target group.
-
-I have an NLB (Network Load Balancer) listens to port 6443 and forwards the request to targets in the target group. There are 3 EC2 instances attached to the target group. And the target group uses TCP to send a request to each registered target to check its health status.
-
-I am allowing any incoming traffic to port 6443 in the security group. I don't see anything unusual in the Network ACL. NLB and the EC2 instances are all under the same subnet. I don't know what else am I missing here...
-
-I have the Terraform code [here](https://github.com/shoukoo/kubernetes/blob/master/kubernetes-the-hard-way-aws/terraform/main.tf)
-## [10][How to permanently delete EC2 instance?](https://www.reddit.com/r/aws/comments/ev1ta5/how_to_permanently_delete_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/ev1ta5/how_to_permanently_delete_ec2_instance/
----
-Hi. I created an AWS account a month and a half ago to test some of its features.
-
-To this point I had only used S3 buckets, CloudWatch and CloudFront, I thought I was going light with their limits, however today I got an email from them telling me that I was at 85% of my free tier limit, so I checked and it looks like I had an EC2 instance running. I didn't recall creating it but maybe I did by accident so I deleted it, however after a while I checked again and there was a new one, and each time I delete it another one appears.
-
-I googled my issue but could only find a forum post from a few years ago where they mention Beanstalk, which I already verified I had not started.
-
-I do not want to get charged and would not like to end up deleting my account, does anyone have a clue on what might be happening?
+Let's say I wanted to build out a second region for HA purposes. would it make sense to use a different cidr block? I don't foresee peering the VPCs but you never know. Does it hurt to use the same ip range if we don't peer.

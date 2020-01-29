@@ -5,70 +5,43 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][JavaScript libraries are almost never updated once installed](https://www.reddit.com/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/)
+## [2][JavaScript component-level CPU costs](https://www.reddit.com/r/javascript/comments/evl2ej/javascript_componentlevel_cpu_costs/)
+- url: https://calendar.perfplanet.com/2019/javascript-component-level-cpu-costs/
+---
+
+## [3][A GraphQL-based Web App written with JavaScript, React and Go](https://www.reddit.com/r/javascript/comments/ev5zzz/a_graphqlbased_web_app_written_with_javascript/)
+- url: https://github.com/Shpota/skmz
+---
+
+## [4][Destructure an object to remove a property](https://www.reddit.com/r/javascript/comments/ev89pn/destructure_an_object_to_remove_a_property/)
+- url: https://timdeschryver.dev/snippets/destructure-an-object-to-remove-a-property
+---
+
+## [5][Offshore Developer Rates Guide to Choose Offshore Development Country](https://www.reddit.com/r/javascript/comments/evl7qs/offshore_developer_rates_guide_to_choose_offshore/)
+- url: https://www.daxx.com/blog/development-trends/average-rates-offshore-developers
+---
+
+## [6][Why do we have Dependency Injection in web development](https://www.reddit.com/r/javascript/comments/ev9yth/why_do_we_have_dependency_injection_in_web/)
+- url: https://indepth.dev/why-do-we-have-dependency-injection-in-web-development/
+---
+
+## [7][A Posture Corrector PWA](https://www.reddit.com/r/javascript/comments/ev8pop/a_posture_corrector_pwa/)
+- url: http://posturecorrector.app
+---
+
+## [8][JavaScript libraries are almost never updated once installed](https://www.reddit.com/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/)
 - url: https://blog.cloudflare.com/javascript-libraries-are-almost-never-updated/
 ---
 
-## [3][CoreJS (used by Babel, Angular) author posted a comment on their repo 16 days ago saying "after some days I'll be in prison", then stops committing to the repo 13 days ago - claims financial problems](https://www.reddit.com/r/javascript/comments/eul7lg/corejs_used_by_babel_angular_author_posted_a/)
+## [9][CoreJS (used by Babel, Angular) author posted a comment on their repo 16 days ago saying "after some days I'll be in prison", then stops committing to the repo 13 days ago - claims financial problems](https://www.reddit.com/r/javascript/comments/eul7lg/corejs_used_by_babel_angular_author_posted_a/)
 - url: https://github.com/zloirock/core-js/issues/747#issuecomment-573318269
 ---
 
-## [4][EdgeDB 1.0 Alpha 2 with a new JS driver](https://www.reddit.com/r/javascript/comments/euwwt2/edgedb_10_alpha_2_with_a_new_js_driver/)
+## [10][EdgeDB 1.0 Alpha 2 with a new JS driver](https://www.reddit.com/r/javascript/comments/euwwt2/edgedb_10_alpha_2_with_a_new_js_driver/)
 - url: https://edgedb.com/blog/edgedb-1-0-alpha-2/
 ---
 
-## [5][Understanding Recursion &amp; Memoization via JavaScript](https://www.reddit.com/r/javascript/comments/eusuhu/understanding_recursion_memoization_via_javascript/)
+## [11][Understanding Recursion &amp; Memoization via JavaScript](https://www.reddit.com/r/javascript/comments/eusuhu/understanding_recursion_memoization_via_javascript/)
 - url: https://alligator.io/js/understanding-recursion/
----
-
-## [6][Advanced Node.Js: A Hands on Guide to Event Loop, Child Process and Worker Threads in Node.Js](https://www.reddit.com/r/javascript/comments/euigv5/advanced_nodejs_a_hands_on_guide_to_event_loop/)
-- url: https://blog.soshace.com/advanced-node-js-a-hands-on-guide-to-event-loop-child-process-and-worker-threads-in-node-js/
----
-
-## [7][[AskJS] best practice for resolving Promises externally](https://www.reddit.com/r/javascript/comments/ev1p51/askjs_best_practice_for_resolving_promises/)
-- url: https://www.reddit.com/r/javascript/comments/ev1p51/askjs_best_practice_for_resolving_promises/
----
-We've run a few times into problems where we need to resolve/reject a Promise externally.  A common case where this happens is waiting for an external event, say a process to respond to a request of which there might be a few outstanding. I wanted to share a pattern we've been using and see if there are more elegant ways of dealing with this
-
-    let callbacks = {};
-    let reqId = 0;
-    
-    function makeRequest(reqArgs) {
-        return new Promise((resolve, reject) =&gt; {
-            let myReqId = reqId++;
-            callbacks[myReqId] = {resolve, reject, myReqId};
-            sendRequest(reqArgs);
-        })
-    }
-    
-    // this function is called some time later to process a response
-    function processResponse(resp) {
-        const reqId = resp.reqId;
-        const cb = callbacks[reqId];
-        delete callbacks[reqId];  // resolve/reject only once
-        if(resp.success) cb.resolve();
-        else             cb.reject(resp);
-    }
-    
-    function sendRequest(reqArgs) {
-        /// make the request
-    }
-    
-    /// usage 
-    makeRequest(someArgs).then(...).catch(...)
-## [8][Using JavaScript to Rapidly Process Large JSON and CSV Files on the Command-Line](https://www.reddit.com/r/javascript/comments/eutujz/using_javascript_to_rapidly_process_large_json/)
-- url: https://medium.com/@philipp.y.wille/processing-large-data-files-with-pixie-329b92d29a0b
----
-
-## [9][JavaScript obfuscator](https://www.reddit.com/r/javascript/comments/euuqzy/javascript_obfuscator/)
-- url: https://obfuscator.io/
----
-
-## [10][Simple Online JavaScript Beautifier Tool](https://www.reddit.com/r/javascript/comments/ev1a5x/simple_online_javascript_beautifier_tool/)
-- url: https://jsbeautifier.online/
----
-
-## [11][Google Remarketing: Learn To Retarget Your Customers[FREE EDUONIX COURSE]](https://www.reddit.com/r/javascript/comments/ev3gwp/google_remarketing_learn_to_retarget_your/)
-- url: https://www.freetechcourse.xyz/2020/01/google-remarketing-learn-to-retarget.html
 ---
 

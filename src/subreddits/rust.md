@@ -33,127 +33,106 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/eupbbn/whats_everyone_working_on_this_week_52020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-5-2020/37515?u=llogiq)!
-## [3][Bitfields Forever: Why we need a C-compatible Rust Crate](https://www.reddit.com/r/rust/comments/euxy49/bitfields_forever_why_we_need_a_ccompatible_rust/)
-- url: https://immunant.com/blog/2020/01/bitfields/
+## [3][Jonathan Blow on Rust](https://www.reddit.com/r/rust/comments/evgl81/jonathan_blow_on_rust/)
+- url: https://www.reddit.com/r/rust/comments/evgl81/jonathan_blow_on_rust/
+---
+Podcast link: https://oxide.computer/blog/on-the-metal-9-jonathan-blow/
+
+Submission statement: Bryan Cantrill (of the ["Is It Time to Rewrite the Operating System in Rust?" presentation](https://www.infoq.com/presentations/os-rust/)) interviewed Jonathan Blow, developer of [Braid](https://en.wikipedia.org/wiki/Braid_\(video_game\)) and the Jai compiler on a podcast called On The Metal. The whole thing is engrossing, but there's a quote in there regarding Rust I wanted to get opinions on from the /r/rust crowd at around 1:40:50:
+
+&gt; Blow: And so Rust has a good set of ingredients there. **The problem that I have with it is when I'm working on really hard stuff, I don't exactly know what I'm doing for a long time. And so if the cost of experimentation is driven too high, it actually impairs my ability to get work done.**
+&gt; 
+&gt; Blow: And so my approach that we're doing in the language that we're working on is different. It's like, you have very very very extensive metaprogramming facilities and you can use those to build your own correctness checking for your program that you traditionally would have needed to make a compiler extension to do, which is pretty far away from what people do day to day and they don't end up doing it even if they could have. So what happens is your metaprogram gets information that normally would only be internal to the compiler.
+
+He goes on to describe a use of that at 1:45:34:
+
+&gt; Blow: So in games the way that's traditionally handled is there's a very natural barrier which is the end of the frame, right? So we do a bunch of stuff over and over 60 times per second or 200 times per second, whatever. And at the end of the frame, we pretty much know it's all... 
+&gt; 
+&gt; Cantrill: -garbage now.
+&gt; 
+&gt; Blow: Well, we're not really hanging on to anything. So it's very clean cut you could say. So, well, it's a very reasonable thing to say it's fine to do that stuff as long as you don't hold an entity pointer across a frame boundary, okay? Now that's not a very generalizable rule. Because what's an entity pointer versus a pointer to something else? Your compiler doesn't know that right? But you know that. And so when the new guy shows up or the summer intern shows up and writes some code where he puts that entity pointer into a data structure that...
+&gt; 
+&gt; Cantrill: -*is* surviving-
+&gt; 
+&gt; Blow: ...some hash table that's sitting around, that's going to be a problem, right? And that's a very practical, real kind of problem, it's not an academic, made up problem. You actually can solve that - your metaprogram can say well, you put an entity pointer in this data structure and that data strucutre is not in this whitelist that I have over here and so, error, don't compile, right? And so you can start solving the very specific problems that you have without introducing general friction. Now, is that better than the Rust approach? I don't know, I think it will be but I certainly offer you no proof of that statement.
+## [4][We wrote about our first embedded Rust project (for a real client!). It is about piano technology.](https://www.reddit.com/r/rust/comments/evkkaf/we_wrote_about_our_first_embedded_rust_project/)
+- url: https://jitter.company/blog/2020/01/28/measuring-space-time-behaviours-of-piano-keys-with-rust/
 ---
 
-## [4][rust-analyzer Changelog #9](https://www.reddit.com/r/rust/comments/eus0cj/rustanalyzer_changelog_9/)
-- url: https://rust-analyzer.github.io/thisweek/2020/01/27/changelog-9.html
+## [5][Nushell 0.9.0 - lots of improvements, new commands, and the return of shelling out.](https://www.reddit.com/r/rust/comments/evhzcn/nushell_090_lots_of_improvements_new_commands_and/)
+- url: https://www.nushell.sh/blog/2020/01/28/nushell-0_9_0.html
 ---
 
-## [5][Security by design: an introduction to the Rust programming language](https://www.reddit.com/r/rust/comments/ev1zqf/security_by_design_an_introduction_to_the_rust/)
-- url: https://medium.com/tadaweb/security-by-design-a-brief-introduction-to-rust-378060e45038
+## [6][thirtyfour - A new selenium library for Rust, for automated website testing](https://www.reddit.com/r/rust/comments/evlc49/thirtyfour_a_new_selenium_library_for_rust_for/)
+- url: https://www.reddit.com/r/rust/comments/evlc49/thirtyfour_a_new_selenium_library_for_rust_for/
+---
+Last year I decided to build a selenium library for Rust. I've been working with the python one for several years and I thought it would be an interesting challenge to build a similar library for Rust. I learned a lot about selenium in the process, and I'm pretty happy with how it has turned out.
+
+Github: [https://github.com/stevepryde/thirtyfour](https://github.com/stevepryde/thirtyfour)
+
+Crate: [https://crates.io/crates/thirtyfour](https://crates.io/crates/thirtyfour)
+
+  
+I've aimed to implement the full feature set of the W3C WebDriver spec, but no doubt there are a few bits missing around the edges.
+
+Here's the feature list: 
+
+* Async / await support
+* Synchronous support
+* Create new browser session via Selenium Standalone or Grid
+* Automatically close browser session on drop
+* All W3C WebDriver and WebElement methods supported
+* Find elements (via all common selectors)
+* Send keys to elements, including key-combinations
+* Execute Javascript (needs more testing)
+* Action Chains
+* Cookies
+* Switch to frame/window/element/alert
+* Alert support
+* Capture / Save screenshot of browser or individual element
+
+Up to this point it has been a personal project so my time is limited but I'd be happy to fix any bugs if you run into any (raise issues on github please). One point of note is that this library does not aim to be a full-featured automation suite. Just like the python library, the goal is to provide the base functionality on which larger high-level frameworks can be built.
+
+I hope you find it useful.
+## [7][How Zebra used Tower to replace Zcash's legacy Bitcoin C++ networking code with modern, async Rust](https://www.reddit.com/r/rust/comments/evc3ug/how_zebra_used_tower_to_replace_zcashs_legacy/)
+- url: https://www.zfnd.org/blog/a-new-network-stack-for-zcash/
 ---
 
-## [6][Can you send me snippets of code where you *needed* higher kinded lifetimes? I wish to identify as many cases as possible to categorize them and make rustc understand them and guide you in their direction.](https://www.reddit.com/r/rust/comments/euv4mq/can_you_send_me_snippets_of_code_where_you_needed/)
-- url: https://www.reddit.com/r/rust/comments/euv4mq/can_you_send_me_snippets_of_code_where_you_needed/
+## [8][My Rust sticker finally arrived!](https://www.reddit.com/r/rust/comments/evhcp6/my_rust_sticker_finally_arrived/)
+- url: https://i.redd.it/fqxanfnc4nd41.png
 ---
-[I asked Twitter this question already](https://twitter.com/ekuber/status/1221515971610832897), but I wish to have as big a corpus as possible. Can you send me snippets of code where you **needed** higher kinded lifetimes? I wish to identify as many cases as possible to categorize them and make `rustc` understand them and guide you in their direction.
 
-To give you an idea of what I'm looking for, the following snippet
+## [9][Use ? operator on a vec that returns result?](https://www.reddit.com/r/rust/comments/evmel0/use_operator_on_a_vec_that_returns_result/)
+- url: https://www.reddit.com/r/rust/comments/evmel0/use_operator_on_a_vec_that_returns_result/
+---
+Below is some pseudo code. I am looping through a vec. Within the loop, I am transforming the type to another type. However, an error can occur. When that happens, I want to return as early as possible, so if an element fails to transform, I want to return a custom error. I can not get it to work, an I doubt if I can use the ? operator inside a closure.
 
-    trait Trait&lt;T&gt; {
-        fn do_something(&amp;self, value: T);
-    }
+&amp;#x200B;
+
+This is my non compiling code. If this code would compile, it would still complete the loop before returning an error, even if the first element can not be parsed. An alternative would be initializing a mutable vec, but I hope I can do it in a functional way.
+
+    struct MyErr;
     
-    fn foo(b: Box&lt;Trait&lt;&amp;usize&gt;&gt;) {
-        let x: usize = 10;
-        b.do_something(&amp;x);
+    fn transform(v: Vec&lt;String&gt;) -&gt; Result&lt;Vec&lt;i32&gt;, MyErr&gt; { 
+        let my_vec_i32 = v.into_iter().map(|s| s.parse().map_err(|_| MyErr)).collect()?;
+        // Work with my_vec...
+        return Ok(my_vec_i32) 
     }
-
-produces the following error
-
-    error[E0597]: `x` does not live long enough
-     --&gt; file.rs:7:20
-      |
-    5 | fn foo(b: Box&lt;Trait&lt;&amp;usize&gt;&gt;) {
-      |        - has type `std::boxed::Box&lt;dyn Trait&lt;&amp;'1 usize&gt;&gt;`
-    6 |     let x: usize = 10;
-    7 |     b.do_something(&amp;x);
-      |     ---------------^^-
-      |     |              |
-      |     |              borrowed value does not live long enough
-      |     argument requires that `x` is borrowed for `'1`
-    8 | }
-      | - `x` dropped here while still borrowed
-
-but if you change it to use Higher-Ranked lifetimes
-
-    trait Trait&lt;T&gt; {
-        fn do_something(&amp;self, value: T);
-    }
-    
-    fn foo(b: Box&lt;for&lt;'a&gt; Trait&lt;&amp;'a usize&gt;&gt;) {
-        let x: usize = 10;
-        b.do_something(&amp;x);
-    }
-
-The code actually compiles. Ideally, `rustc` should detect this case and help you get to working code faster.
-## [7][Tokio v0.2.11 released, includes new `select!` and `join!` macros.](https://www.reddit.com/r/rust/comments/eushwv/tokio_v0211_released_includes_new_select_and_join/)
-- url: https://github.com/tokio-rs/tokio/releases/tag/tokio-0.2.11
+## [10][Mapping the power of Mozilla’s Rebel Alliance – The Mozilla Blog](https://www.reddit.com/r/rust/comments/evah7y/mapping_the_power_of_mozillas_rebel_alliance_the/)
+- url: https://blog.mozilla.org/blog/2020/01/27/mapping-the-power-of-mozillas-rebel-alliance/
 ---
 
-## [8][Units of Measure in Rust with Refinement Types](https://www.reddit.com/r/rust/comments/eun51n/units_of_measure_in_rust_with_refinement_types/)
-- url: https://yoric.github.io/post/uom.rs/
+## [11][Pokemon Gen 8 dataset](https://www.reddit.com/r/rust/comments/eve09h/pokemon_gen_8_dataset/)
+- url: https://www.reddit.com/r/rust/comments/eve09h/pokemon_gen_8_dataset/
+---
+[https://github.com/blargg/pokemon](https://github.com/blargg/pokemon)
+
+Posting here in case anyone might find this useful, or just wanted to play around with it. It's provided as is.
+
+This is a data set for the Gen 8 pokemon and moves, available as basic rust types. It should have all their game stats available, but there may be some mistakes.
+
+Personally, I've been using this to help build teams. This allows searches like "get all the pokemon that can learn this move set, and sort them by base stats". I haven't been able to find another program that allows for that much specificity, so I wrote this for fun.
+## [12][Way Cooler postmortem, a tiling window manager for Wayland written in Rust](https://www.reddit.com/r/rust/comments/evmp27/way_cooler_postmortem_a_tiling_window_manager_for/)
+- url: http://way-cooler.org/blog/2020/01/09/way-cooler-post-mortem.html
 ---
 
-## [9][Drue = Drums + Hue Lights](https://www.reddit.com/r/rust/comments/euxkzr/drue_drums_hue_lights/)
-- url: https://www.reddit.com/r/rust/comments/euxkzr/drue_drums_hue_lights/
----
-# Drue = Hue + Drums
-[https://github.com/finnkauski/drue](https://github.com/finnkauski/drue)
-
-Had posted about this before. Here's something worth showing off as far as a workable codebase goes.
-
-First proper hobby project in Rust. To be honest it went from procedural to more struct based to functional and back again once I realised I know nothing about lifetimes. I rewrote it tons of times, learned how to do `macros` in order to avoid the issues I've had. I basically had the best and the *worst* times with the compiler and I'm starting to get it now.
-## [10][actix-web or warp?](https://www.reddit.com/r/rust/comments/euyfr2/actixweb_or_warp/)
-- url: https://www.reddit.com/r/rust/comments/euyfr2/actixweb_or_warp/
----
-I've been wanting to make a web application in Rust. Well, an API/panel that controls something on the server. So I looked into frameworks with built-in websocket support, and came across [actix-web](https://actix.rs/) and [warp](https://github.com/seanmonstar/warp). They both appear to have their ups and downs (warp has much less `unsafe` and is simpler, while actix seems much more mature and fleshed out).
-
-I want to know other developers' experiences with these frameworks, and their opinions too, so I can make an informed decision.
-## [11][nd-triangulation brings you arbitrary dimensional Triangulations from cgal (c++) to rust](https://www.reddit.com/r/rust/comments/euspgo/ndtriangulation_brings_you_arbitrary_dimensional/)
-- url: https://www.reddit.com/r/rust/comments/euspgo/ndtriangulation_brings_you_arbitrary_dimensional/
----
-Hello Everyone,
-
-I have build a very small [crate](https://github.com/Lesstat/nd-triangulation) that brings triangulations in arbitrary dimensions to rust. It uses the fantastic and exceptional [cpp](https://github.com/mystor/rust-cpp) crate to build an API to a few [cgal triangulation classes](https://doc.cgal.org/latest/Triangulation/index.html) and functionalities. 
-
-Right now it is rather limited in various ways :). That is because it's tailored to my specific research, but if any of you guys has ideas/use cases I would be happy to try to implement them.
-
-Also, I would very much appreciate feedback and ideas, as this is my first time publishing a crate. I guess there are some very general things I missed. But to have a very concrete question: I think the crate right now builds only on some linux distros as I do not know how to make a build script that more cleverly detects where the dependencies are located. Any input on that would help me a lot.
-
-I want to give a huge thank you to the rust community. You all have built a community where it is easy to contribute and made it feel worthwhile enough for me to put the extra effort in to publish this :)!
-## [12][Kondo 🧹 my first Rust crate.](https://www.reddit.com/r/rust/comments/euinys/kondo_my_first_rust_crate/)
-- url: https://www.reddit.com/r/rust/comments/euinys/kondo_my_first_rust_crate/
----
-[**Kondo**](https://github.com/tbillington/kondo) is a command line tool for removing things from your drive that don't bring you joy.
-
-It identifies projects on your drive that are using a lot of space that could be saved! Examples include *target* in Cargo projects and *node_modules* in Node projects.
-
-This is especially useful for:
-
-* if you're about to zip up a bunch of projects to move them/back them up
-* if you're running low on disk space and just want to free some up
-* if you're a serial hoarder and want to keep all those things you cloned from github 1 time without the disk cost...
-
-I've been using Rust on and off for a few years now. Inspired by tools like [ripgrep](https://github.com/BurntSushi/ripgrep) I made a [basic command line tool for helping me at work](https://github.com/tbillington/pj) a while back and was quite happy with how it turned out and was motivated me to make more!
-
-I wanted to make this tool because I've done this manually way too many times to count. It doesn't currently delete anything because I'm paranoid that I'll `rm -rf /` somehow but I do plan to add the feature at some point, perhaps behind a prompt/flag.
-
-You should just be able to run `cargo install kondo` and be on your way!
-
-Sample output:
-
-    $ kondo ~
-    Scanning "C:/Users/Trent"
-    1000 projects found
-    Calculating savings per project
-      (redacted 1000~ lines)
-      385.6MB UnityTestApp (Unity) C:\Users\Trent\code\UnityTestApp
-      458.7MB tokio (Cargo) C:\Users\Trent\code\tokio
-        1.5GB ui-testing (Node) C:\Users\Trent\code\ui-testing
-        4.0GB rust-analyzer (Cargo) C:\Users\Trent\code\rust-analyzer
-    9.5GB possible savings
-
-Any code feedback is greatly appreciated :)

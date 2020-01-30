@@ -57,23 +57,100 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][MSVC Backend Updates in Visual Studio 2019 Versions 16.3 and 16.4 | C++ Team Blog](https://www.reddit.com/r/cpp/comments/evh16n/msvc_backend_updates_in_visual_studio_2019/)
+## [2][Tobias Hieta: Compiling C++ is slow - let's go faster](https://www.reddit.com/r/cpp/comments/evrbmv/tobias_hieta_compiling_c_is_slow_lets_go_faster/)
+- url: https://youtu.be/X4pyOtawqjg
+---
+
+## [3][C++20 Reference Card + examples!](https://www.reddit.com/r/cpp/comments/evobp3/c20_reference_card_examples/)
+- url: https://www.bfilipek.com/2020/01/cpp20refcard.html
+---
+
+## [4][Any thoughts on/experience with modules?](https://www.reddit.com/r/cpp/comments/evqluj/any_thoughts_onexperience_with_modules/)
+- url: https://www.reddit.com/r/cpp/comments/evqluj/any_thoughts_onexperience_with_modules/
+---
+I would like to know peoples thoughts on modules, whether you think it solves the issues with headers and if they met your expectations. 
+
+I'm very intrigued and my expectations are things like:
+* Isolation of concerns. Only export what you want to export, but "globals" defined within a module are not accessible outside of it. As such, globals, defines, classes and functions with the same name in different modules shouldn't cause issues, unless they are both exported. I'm not yet sure if that's the case, but this is kind of a huge advantage of the way modules work in ES6. 
+* Resolving the mess that are header imports and import order. Ideally, import order shouldn't matter because every module that needs something, should import that thing itself.
+## [5][MSVC Backend Updates in Visual Studio 2019 Versions 16.3 and 16.4 | C++ Team Blog](https://www.reddit.com/r/cpp/comments/evh16n/msvc_backend_updates_in_visual_studio_2019/)
 - url: https://devblogs.microsoft.com/cppblog/msvc-backend-updates-in-visual-studio-2019-versions-16-3-and-16-4/
 ---
 
-## [3][Requires-expression | Andrzej's C++ blog](https://www.reddit.com/r/cpp/comments/evfbaa/requiresexpression_andrzejs_c_blog/)
+## [6][Bitsery- binary serialization library v5.0.3 released](https://www.reddit.com/r/cpp/comments/evni9z/bitsery_binary_serialization_library_v503_released/)
+- url: https://www.reddit.com/r/cpp/comments/evni9z/bitsery_binary_serialization_library_v503_released/
+---
+There are several key features that distinguish [bitsery](https://github.com/fraillt/bitsery) from all the other binary serialization libraries:
+
+* is very fast
+* serialized data is very small
+* by default is safe when deserializing untrusted data
+* provides A LOT of customization options via so-called "extensions" and bitsery config, few examples include:
+   * fine-grained bit-level serialization control.
+   * forward/backward compatibility for your types.
+   * smart and raw pointers with allocators support and customizable runtime polymorphism.
+
+I would like to provide you with an example of what bitsery can do for you.
+
+Out of the box, bitsery is already very fast, but you can provide a non-resizable buffer for serialization, you can disable error checking during deserialization if input buffer is trusted, you can use bit-packing "extensions" to compress the data. What you get is at least +2x size and +2x speed (+4x with GCC) improvements compared to cereal!
+
+More interesting results can be found [here](https://github.com/fraillt/cpp_serializers_benchmark).
+The battle between GCC and Clang is very interesting.
+GCC can do amazing things with bitsery :)
+## [7][Organizing modules in C++20: ideas for conventions for module names, namespaces and module evolution.](https://www.reddit.com/r/cpp/comments/evp7kf/organizing_modules_in_c20_ideas_for_conventions/)
+- url: https://www.reddit.com/r/cpp/comments/evp7kf/organizing_modules_in_c20_ideas_for_conventions/
+---
+Hello everyone,
+
+I am trying to figure out how to organize a program with C++20 modules and settle on something that will make sense. My priorities would be:
+
+    - Be reasonably ABI-Stable when evolving the code
+    - Do not clash with others
+       - But do::not::use::many::nested::namespaces. 2 levels of namespacing enough.
+    
+So here is my first try, tell me what you think:
+
+Module-interface unit:
+```
+export module mycompany.domain.product:
+export module mycompany.domain.product:model;
+export module mycompany.domain.product:view;
+...
+``` 
+
+Module partitions:
+
+``` 
+export module mycomany.domain.product:model;
+
+namespace product::model {
+
+export class MyModel {
+...
+};
+
+}
+```
+
+I did not code this idea yet, since this is existing software and will need to take more things into account, but what I am wondering is how:
+
+1. If the module grows a lot, let us say, I want to move mycompany.domain.product:models to its own module mycompany.domain.product.models, what happens to the ABI for external symbols? I guess it will be broken?
+2. What happens if someone chooses the same namespace as mine from an outside module? I guess that the overload sets are merged, as usual.
+
+These questions matter from an organizational point of view, since I have a monorepo that maybe later could be split in additional modularized repos.
+## [8][Requires-expression | Andrzej's C++ blog](https://www.reddit.com/r/cpp/comments/evfbaa/requiresexpression_andrzejs_c_blog/)
 - url: https://akrzemi1.wordpress.com/2020/01/29/requires-expression/
 ---
 
-## [4][About "Qt Offering Changes 2020"](https://www.reddit.com/r/cpp/comments/evb5v1/about_qt_offering_changes_2020/)
+## [9][About "Qt Offering Changes 2020"](https://www.reddit.com/r/cpp/comments/evb5v1/about_qt_offering_changes_2020/)
 - url: https://valdyas.org/fading/software/about-qt-offering-changes-2020/
 ---
 
-## [5][Light and Powerful modern web-framework for C++](https://www.reddit.com/r/cpp/comments/ev2obp/light_and_powerful_modern_webframework_for_c/)
+## [10][Light and Powerful modern web-framework for C++](https://www.reddit.com/r/cpp/comments/ev2obp/light_and_powerful_modern_webframework_for_c/)
 - url: https://oatpp.io/
 ---
 
-## [6][single source as header &amp; source](https://www.reddit.com/r/cpp/comments/evhzqb/single_source_as_header_source/)
+## [11][single source as header &amp; source](https://www.reddit.com/r/cpp/comments/evhzqb/single_source_as_header_source/)
 - url: https://www.reddit.com/r/cpp/comments/evhzqb/single_source_as_header_source/
 ---
 I was thinking about that for header only you sometimes need to do tricks when having a compilation unit would make it easier. Maybe next level is header &amp; source combined. I went over to [documentation of gcc](https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html) and found \_\_INCLUDE\_LEVEL\_\_.
@@ -111,70 +188,3 @@ CMakeLists.txt
     add_executable(main base.cpp main.cpp)
 
 I have compiled and successfully linked this. I think it's interesting that this is possible, and also interesting that this hasn't caught on. Whether it's a good idea or not I don't know as I haven't done this in practice. But after trying this proof of concept, I'm more tempted to do this. [Clang](https://clang.llvm.org/docs/LanguageExtensions.html) seems to support it too, but can't find anything similar to [MSVC](https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=vs-2019). What's nice is no extra parameters needed to be invented. Obviously the downside that if implementation changes then its parents need to be compiled too. But for distributing something like a header only library. and if you only support Clang and gcc, then this works kind of nicely. Maybe something like this can have a new extension something like `.cpph`.
-## [7][stdgpu 1.2.0 released!](https://www.reddit.com/r/cpp/comments/ev5ctx/stdgpu_120_released/)
-- url: https://github.com/stotko/stdgpu/releases/tag/1.2.0
----
-
-## [8][STL header token parsing benchmarks for libstdc++ 7, 8 and 9](https://www.reddit.com/r/cpp/comments/ev4e7g/stl_header_token_parsing_benchmarks_for_libstdc_7/)
-- url: https://www.reddit.com/r/cpp/comments/ev4e7g/stl_header_token_parsing_benchmarks_for_libstdc_7/
----
-To match [the results for VS2019 posted yesterday](https://www.reddit.com/r/cpp/comments/eumou7/stl_header_token_parsing_benchmarks_for_vs2017/) where we found that the VS2019 STL has become 9% lighter in preprocessor parsing time than the VS2017 STL, here are the same for libstdc++ 7, 8 and 9:
-
-Graph of libstdc++-9: https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/libstdc++-9.png
-
-Comparative graph: https://raw.githubusercontent.com/ned14/stl-header-heft/master/graphs/libstdc++-history.png
-
-Detailed notes: https://github.com/ned14/stl-header-heft/blob/master/Readme.libstdc++.md
-
-Project github: https://github.com/ned14/stl-header-heft
-
-You may remember from [the last test performed two years ago](https://www.reddit.com/r/cpp/comments/83rf8o/stl_header_token_parsing_benchmarks_for_libstdc_5/?st=jf0t6mob&amp;sh=817e7a37) that libstdc++ had engorged itself between libstdc++-5 and libstdc+-7 by **+25.7%**. I can report that libstdc++-9 has further engorged itself over libstdc++-7 by **+16%**. That's almost linear with time, which I find fascinating.
-
-There is good news here though. Whilst the average and median has become much worse, all of the pathological individual headers in libstdc++-9 have been fixed e.g. `array` and `iterator` were dragging in lots of unneeded stuff which they no longer do. In this sense, both the libstdc++ and VS STLs have greatly improved in the past two years by not sub-including unnecessary headers. My congratulations to the libstdc++ authors and maintainers for this work!
-
-If there was any one area where I think libstdc++ is particularly deficient, it is that any of its threading headers basically drag in the exact same stuff, most of which isn't actually needed by the individual header. MSVC's STL proves that this isn't necessary, `&lt;thread&gt;` is much lighter weight than any of the other threading headers on MSVC, but is the heaviest weight threading header on libstdc++, for example.
-
-All that said, libstdc++ has *far* more very light weight headers than the MSVC STL e.g. `&lt;type_traits&gt;` on libstdc++ really is a class leader compared to the hefty `&lt;type_traits&gt;` on MSVC. MSVC *could* do much better here, a huge include for MSVC is `&lt;sal.h&gt;` which absolutely everything drags in, and is very low hanging fruit to prune in my opinion.
-## [9][Ninja v1.10.0 released!](https://www.reddit.com/r/cpp/comments/ev2zng/ninja_v1100_released/)
-- url: https://github.com/ninja-build/ninja/releases
----
-
-## [10][OpenSSL client and server from scratch, part 3](https://www.reddit.com/r/cpp/comments/ev3vbq/openssl_client_and_server_from_scratch_part_3/)
-- url: https://quuxplusone.github.io/blog/2020/01/26/openssl-part-3/
----
-
-## [11][Type trait I made wont work in MSVC](https://www.reddit.com/r/cpp/comments/ev7r87/type_trait_i_made_wont_work_in_msvc/)
-- url: https://www.reddit.com/r/cpp/comments/ev7r87/type_trait_i_made_wont_work_in_msvc/
----
-So I made a type trait as a learning exercise that is supposed to check if the first type of the template parameters is the same as any of the other types in the template parameter pack.
-
-    //Checks if type T is any of the types provided as ARGS...
-    //I could have done this using a much simpler function template but I wanted the interface to be similar to stl type traits
-    namespace TRAIT_TYPE_HELPERS
-    {
-    	template &lt;typename T, typename = void, typename ... ARGS&gt;
-    	struct is_one_of_helper : std::false_type {};
-    
-    	template &lt;typename T, typename ... ARGS&gt;
-    	struct is_one_of_helper &lt;T, std::enable_if_t&lt;(std::is_same_v&lt;T, ARGS&gt; || ...)&gt;, ARGS...&gt; : std::true_type {};
-    }
-    
-    //Main type trait
-    template &lt;typename T, typename ... ARGS&gt;
-    using is_one_of = TRAIT_TYPE_HELPERS::is_one_of_helper&lt;T, void, ARGS...&gt;;
-    
-    //convenience template
-    template &lt;typename T, typename ... ARGS&gt;
-    constexpr bool is_one_of_v = is_one_of&lt;T, ARGS...&gt;::value;
-    
-    int main()
-    {
-    	std::cout &lt;&lt; is_one_of&lt;int, char, float, double, int&gt;::value;
-    }
-
-The above test code prints out zero in MSVC (Visual Studio 16.4.3) but it prints out 1 in GCC 7.4.0.
-When I change the SFINAE line from std::is_same_v&lt;T, ARGS&gt; to std::is_same&lt;T, ARGS&gt;::value, it prints out 1 on both platforms.
-
-I was just wondering if this is a bug in MSVC or maybe them not implementing the standard fully yet or just me incorrectly making assumptions on what should work and what shouldn't.
-
-Discussion is appreciated.

@@ -1,9 +1,77 @@
 # Kotlin
-## [1][KotlinConf 2020 will be September 9-11 in Montreal, Canada](https://www.reddit.com/r/Kotlin/comments/ev5gac/kotlinconf_2020_will_be_september_911_in_montreal/)
+## [1][GitHub - VMadalin/kotlin-sample-app: 📚 Android Sample App using modular, clean, scalable, testable Architecture written in Kotlin following the best practices with Jetpack.](https://www.reddit.com/r/Kotlin/comments/ew30x4/github_vmadalinkotlinsampleapp_android_sample_app/)
+- url: https://github.com/VMadalin/kotlin-sample-app
+---
+
+## [2][Ktor 1.3 Release](https://www.reddit.com/r/Kotlin/comments/evp3qa/ktor_13_release/)
+- url: https://blog.jetbrains.com/kotlin/2020/01/ktor-1-3-release/
+---
+
+## [3][Is there any way define protected constant without using object in kotlin?](https://www.reddit.com/r/Kotlin/comments/ew2jyk/is_there_any_way_define_protected_constant/)
+- url: https://www.reddit.com/r/Kotlin/comments/ew2jyk/is_there_any_way_define_protected_constant/
+---
+Hi,
+
+i want to define protected constant with Kotlin but i am stuck. Using of companion object and object seems like over kill to me. Unnecessary object creation , getter and setter. I know I can use const or @ JvmField for get rid of getter and setter but Object creation still is there.
+
+When I put constant value to top level, I can"t use protected visibility and Kotlin generate another public final class for just one constant. So how can i define protected constant? Is there any optimization for companion object when i use with  const or @ JvmField because when i inspect bytecode just see unused companion object. Will the jit optimize companion object?
+
+    public final class Something {
+       private static final String constantValue = "BLABLA";
+       public static final Something.Companion Companion = new Something.Companion((DefaultConstructorMarker)null);
+    
+       @Metadata(
+          mv = {1, 1, 16},
+          bv = {1, 0, 3},
+          k = 1,
+          d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0005"},
+          d2 = {"Lcom/imobilecode/ekotaksi/Something$Companion;", "", "()V", "constantValue", "", "app"}
+       )
+       public static final class Companion {
+          private Companion() {
+          }
+    
+          // $FF: synthetic method
+          public Companion(DefaultConstructorMarker $constructor_marker) {
+             this();
+          }
+       }
+    }
+## [4][Deep copy data classes](https://www.reddit.com/r/Kotlin/comments/evnmdx/deep_copy_data_classes/)
+- url: https://www.reddit.com/r/Kotlin/comments/evnmdx/deep_copy_data_classes/
+---
+Is there a way where we can override `copy()` method to copy members which are not declared in constructor.
+
+for eg. 
+
+`data class Dummy(val a: Int , val b: Int) {`
+
+`var list = mutableListOf&lt;String&gt;()`
+
+`}`
+## [5][Android Programming vs. Backend Programming with Kotlin](https://www.reddit.com/r/Kotlin/comments/evo7hw/android_programming_vs_backend_programming_with/)
+- url: https://www.reddit.com/r/Kotlin/comments/evo7hw/android_programming_vs_backend_programming_with/
+---
+I only have experiences doing backend programming with Kotlin (API's, Kafka Streams, etc.).
+
+For those of you on both sides, how do they compare and contrast? For example, how is it dealing with UI related code in Kotlin? Does it have some CSS like thing similar to CSS in JS?
+
+&amp;#x200B;
+
+If you've made a transition from one to the other, how did that go? What were the challenges?
+## [6][Fragments Tutorial With Example In Android Studio](https://www.reddit.com/r/Kotlin/comments/evnuk4/fragments_tutorial_with_example_in_android_studio/)
+- url: https://www.reddit.com/r/Kotlin/comments/evnuk4/fragments_tutorial_with_example_in_android_studio/
+---
+Learn about the Fragments and how to reuse your fragments in a different layout using Kotlin.
+
+.
+
+[Medium Tutorial Link](https://medium.com/@martinbaraya/fragments-tutorial-with-example-in-android-studio-6f92f53ad8cd?source=friends_link&amp;sk=9f18662fa8b00e746bf2a7beb899dc07)
+## [7][KotlinConf 2020 will be September 9-11 in Montreal, Canada](https://www.reddit.com/r/Kotlin/comments/ev5gac/kotlinconf_2020_will_be_september_911_in_montreal/)
 - url: https://twitter.com/kotlinconf/status/1222142913280385024?s=20
 ---
 
-## [2][Arbitrarily ordered parameters](https://www.reddit.com/r/Kotlin/comments/evisnc/arbitrarily_ordered_parameters/)
+## [8][Arbitrarily ordered parameters](https://www.reddit.com/r/Kotlin/comments/evisnc/arbitrarily_ordered_parameters/)
 - url: https://www.reddit.com/r/Kotlin/comments/evisnc/arbitrarily_ordered_parameters/
 ---
 In a recent code review I came across a snippet that bothered me, to the effect of
@@ -27,10 +95,10 @@ The small change was very satisfying for me, and I think it makes the code easie
 The solution can also be scaled up to functions with `n` parameters, but will require `nPn - 1` function declarations, ie `(A, B, C) -&gt; D` would require 5 functions, while `(A, B, C, D) -&gt; E` would require 23 functions.
 
 Anyway, I thought this was a neat snippet, so I thought I'd share.
-## [3][Help Removing Recursive Generics for Kotlin Compatibility](https://www.reddit.com/r/Kotlin/comments/evi8h2/help_removing_recursive_generics_for_kotlin/)
+## [9][Help Removing Recursive Generics for Kotlin Compatibility](https://www.reddit.com/r/Kotlin/comments/evi8h2/help_removing_recursive_generics_for_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/evi8h2/help_removing_recursive_generics_for_kotlin/
 ---
-In a previous discussion the topic of how Kotlin doesn't support recursive generics came up. My computer vision library uses them in the image class as a way to keep strong typing when working with generics. Below is minimalist example showing the problem. Any ideas on how to do this without recursive generics?
+In a previous discussion the topic of how Kotlin doesn't support recursive generics came up. I'm working on adding better Kotlin support for my Java computer vision library. A significant pain point is that It uses recursive Generics in the image class as a way to keep strong typing. Below is minimalist example showing the problem. Any ideas on how to do this without recursive generics?
 
 Example of the real code on [Github](https://github.com/lessthanoptimal/BoofCV/blob/SNAPSHOT/main/boofcv-types/src/main/java/boofcv/struct/image/GrayU8.java)
 
@@ -60,42 +128,7 @@ Example of the real code on [Github](https://github.com/lessthanoptimal/BoofCV/b
     public static &lt;T extends BaseB&gt; T functionB( T a ) {
         return (T)a.newInstance();
     }
-## [4][Smart casting doesn't work when non-nullability is given indirectly](https://www.reddit.com/r/Kotlin/comments/ev3cl2/smart_casting_doesnt_work_when_nonnullability_is/)
+## [10][Smart casting doesn't work when non-nullability is given indirectly](https://www.reddit.com/r/Kotlin/comments/ev3cl2/smart_casting_doesnt_work_when_nonnullability_is/)
 - url: https://i.redd.it/s5s73a28mhd41.png
----
-
-## [5][Java Streams vs. Kotlin Sequences](https://www.reddit.com/r/Kotlin/comments/ev5aqx/java_streams_vs_kotlin_sequences/)
-- url: https://www.reddit.com/r/Kotlin/comments/ev5aqx/java_streams_vs_kotlin_sequences/
----
-This article explores the pros and cons of Streams vs. Sequences since this has been a common question among Kotlin developers:  
-
-[https://proandroiddev.com/java-streams-vs-kotlin-sequences-c9ae080abfdc](https://proandroiddev.com/java-streams-vs-kotlin-sequences-c9ae080abfdc) 
-
-I also included a few surprises so I hope you find it interesting.
-## [6][What do i need to learn if i want to start developing android apps in kotlin rather than java ?](https://www.reddit.com/r/Kotlin/comments/evdpa2/what_do_i_need_to_learn_if_i_want_to_start/)
-- url: https://www.reddit.com/r/Kotlin/comments/evdpa2/what_do_i_need_to_learn_if_i_want_to_start/
----
-I have basic knowledge of the syntax (i know swift).
-I have very good knowledge of java.
-## [7][Underrated blog post explaining -Xjvm-default](https://www.reddit.com/r/Kotlin/comments/ev5wzr/underrated_blog_post_explaining_xjvmdefault/)
-- url: https://www.realjenius.com/2018/06/29/jvm-default/
----
-
-## [8][I've created a Kotlin JWT (Json Web Token) library specifically designed for APN (Apple Push Notifications) and Sign in with Apple - feedback appreciated! 👍](https://www.reddit.com/r/Kotlin/comments/ev5rgy/ive_created_a_kotlin_jwt_json_web_token_library/)
-- url: https://github.com/PhilJay/JWT
----
-
-## [9][Extending default spring data repository methods](https://www.reddit.com/r/Kotlin/comments/ev4ogw/extending_default_spring_data_repository_methods/)
-- url: https://www.reddit.com/r/Kotlin/comments/ev4ogw/extending_default_spring_data_repository_methods/
----
-Hey guys,
-
-I recently published a medium related to how can you extend your reactive default spring data repository methods. I hope it helps you not to face the same problem that I did. I was struggling a lot to figure out how can I achieve this and finally; I found it. Here is the link:
-
-[https://medium.com/@ghahremani/extending-default-spring-data-repository-methods-patch-example-a23c07c35bf9](https://medium.com/@ghahremani/extending-default-spring-data-repository-methods-patch-example-a23c07c35bf9)
-
-Let me know your thoughts.
-## [10][When to use inline functions](https://www.reddit.com/r/Kotlin/comments/euoxfb/when_to_use_inline_functions/)
-- url: https://www.atomiccommits.io/inline-functions/
 ---
 

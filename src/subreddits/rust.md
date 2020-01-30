@@ -33,106 +33,105 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/eupbbn/whats_everyone_working_on_this_week_52020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-5-2020/37515?u=llogiq)!
-## [3][Jonathan Blow on Rust](https://www.reddit.com/r/rust/comments/evgl81/jonathan_blow_on_rust/)
-- url: https://www.reddit.com/r/rust/comments/evgl81/jonathan_blow_on_rust/
+## [3][In the last year or so, r/rust gained about as many subscribers as it gained in the preceding six years.](https://www.reddit.com/r/rust/comments/ew1i8w/in_the_last_year_or_so_rrust_gained_about_as_many/)
+- url: https://www.reddit.com/r/rust/comments/ew1i8w/in_the_last_year_or_so_rrust_gained_about_as_many/
 ---
-Podcast link: https://oxide.computer/blog/on-the-metal-9-jonathan-blow/
+From my occasional visits to this subreddit, it seems like there is more "average programming subreddit shenanigans" lately, like hostility toward competing languages, and "fights" in the comments. I don't have much experience with community building, but I hope the mods and citizens can manage to keep Rust's early community spirit alive :)
 
-Submission statement: Bryan Cantrill (of the ["Is It Time to Rewrite the Operating System in Rust?" presentation](https://www.infoq.com/presentations/os-rust/)) interviewed Jonathan Blow, developer of [Braid](https://en.wikipedia.org/wiki/Braid_\(video_game\)) and the Jai compiler on a podcast called On The Metal. The whole thing is engrossing, but there's a quote in there regarding Rust I wanted to get opinions on from the /r/rust crowd at around 1:40:50:
-
-&gt; Blow: And so Rust has a good set of ingredients there. **The problem that I have with it is when I'm working on really hard stuff, I don't exactly know what I'm doing for a long time. And so if the cost of experimentation is driven too high, it actually impairs my ability to get work done.**
-&gt; 
-&gt; Blow: And so my approach that we're doing in the language that we're working on is different. It's like, you have very very very extensive metaprogramming facilities and you can use those to build your own correctness checking for your program that you traditionally would have needed to make a compiler extension to do, which is pretty far away from what people do day to day and they don't end up doing it even if they could have. So what happens is your metaprogram gets information that normally would only be internal to the compiler.
-
-He goes on to describe a use of that at 1:45:34:
-
-&gt; Blow: So in games the way that's traditionally handled is there's a very natural barrier which is the end of the frame, right? So we do a bunch of stuff over and over 60 times per second or 200 times per second, whatever. And at the end of the frame, we pretty much know it's all... 
-&gt; 
-&gt; Cantrill: -garbage now.
-&gt; 
-&gt; Blow: Well, we're not really hanging on to anything. So it's very clean cut you could say. So, well, it's a very reasonable thing to say it's fine to do that stuff as long as you don't hold an entity pointer across a frame boundary, okay? Now that's not a very generalizable rule. Because what's an entity pointer versus a pointer to something else? Your compiler doesn't know that right? But you know that. And so when the new guy shows up or the summer intern shows up and writes some code where he puts that entity pointer into a data structure that...
-&gt; 
-&gt; Cantrill: -*is* surviving-
-&gt; 
-&gt; Blow: ...some hash table that's sitting around, that's going to be a problem, right? And that's a very practical, real kind of problem, it's not an academic, made up problem. You actually can solve that - your metaprogram can say well, you put an entity pointer in this data structure and that data strucutre is not in this whitelist that I have over here and so, error, don't compile, right? And so you can start solving the very specific problems that you have without introducing general friction. Now, is that better than the Rust approach? I don't know, I think it will be but I certainly offer you no proof of that statement.
-## [4][We wrote about our first embedded Rust project (for a real client!). It is about piano technology.](https://www.reddit.com/r/rust/comments/evkkaf/we_wrote_about_our_first_embedded_rust_project/)
-- url: https://jitter.company/blog/2020/01/28/measuring-space-time-behaviours-of-piano-keys-with-rust/
+Data source: [https://subredditstats.com/r/rust](https://subredditstats.com/r/rust)
+## [4][GitHub - oreboot/oreboot: oreboot is a fork of coreboot, with C removed, written in Rust.](https://www.reddit.com/r/rust/comments/ew1nje/github_orebootoreboot_oreboot_is_a_fork_of/)
+- url: https://github.com/oreboot/oreboot
 ---
 
-## [5][Nushell 0.9.0 - lots of improvements, new commands, and the return of shelling out.](https://www.reddit.com/r/rust/comments/evhzcn/nushell_090_lots_of_improvements_new_commands_and/)
-- url: https://www.nushell.sh/blog/2020/01/28/nushell-0_9_0.html
+## [5][Lewton 0.10.0 release](https://www.reddit.com/r/rust/comments/ew0pah/lewton_0100_release/)
+- url: https://www.reddit.com/r/rust/comments/ew0pah/lewton_0100_release/
+---
+I'm pleased to announce the release of [lewton](https://github.com/RustAudio/lewton) 0.10.0 - the pure Rust vorbis decoder.
+
+The main changes since the last [reddit-announced release 0.9.1](https://www.reddit.com/r/rust/comments/9i3hu0/lewton_091_released/) of about a year ago ([link to full changelog](https://github.com/RustAudio/lewton/blob/master/CHANGELOG.md#release-0100---january-30-2020)):
+
+* Fix of wrongfully decoded files ([#24](https://github.com/RustAudio/lewton/issues/24), [#26](https://github.com/RustAudio/lewton/issues/26))
+* Fixes of bugs on fuzzed inputs, thanks to /u/shnatsel who's [bug reports](https://github.com/RustAudio/lewton/issues?q=is%3Aissue+author%3AShnatsel) were an awesome contribution to lewton (as are their bug reports to the greater rust ecosystem)
+* Ability to specify floats as output format. Lewton uses floats internally but used to convert them to i16 unconditionally for the output. Now you can choose to get the floats directly without having to convert anything. See the `read_dec_packet_generic` and `read_audio_packet_generic` functions.
+* Addition of a C API. This allows easier inclusion into C/C++ projects. Thanks to /u/lu_zero for their help.
+* Increase of the MSRV from 1.20.0 to 1.36.0
+
+Lewton has been getting lots of PRs in the last year. I want to thank the contributors to lewton since the 0.9.1 release:
+
+* [@Luni-4](https://github.com/Luni-4)
+* [@lu-zero](https://github.com/lu-zero)
+* [@AnthonyMikh](https://github.com/AnthonyMikh)
+* [@repi](https://github.com/repi)
+* [@lovesegfault](https://github.com/lovesegfault)
+* [@BenSandeen](https://github.com/BenSandeen)
+* [@Shnatsel](https://github.com/Shnatsel)
+## [6][self_update: Self updates for rust executables](https://www.reddit.com/r/rust/comments/ew3f78/self_update_self_updates_for_rust_executables/)
+- url: https://github.com/jaemk/self_update
 ---
 
-## [6][thirtyfour - A new selenium library for Rust, for automated website testing](https://www.reddit.com/r/rust/comments/evlc49/thirtyfour_a_new_selenium_library_for_rust_for/)
-- url: https://www.reddit.com/r/rust/comments/evlc49/thirtyfour_a_new_selenium_library_for_rust_for/
----
-Last year I decided to build a selenium library for Rust. I've been working with the python one for several years and I thought it would be an interesting challenge to build a similar library for Rust. I learned a lot about selenium in the process, and I'm pretty happy with how it has turned out.
-
-Github: [https://github.com/stevepryde/thirtyfour](https://github.com/stevepryde/thirtyfour)
-
-Crate: [https://crates.io/crates/thirtyfour](https://crates.io/crates/thirtyfour)
-
-  
-I've aimed to implement the full feature set of the W3C WebDriver spec, but no doubt there are a few bits missing around the edges.
-
-Here's the feature list: 
-
-* Async / await support
-* Synchronous support
-* Create new browser session via Selenium Standalone or Grid
-* Automatically close browser session on drop
-* All W3C WebDriver and WebElement methods supported
-* Find elements (via all common selectors)
-* Send keys to elements, including key-combinations
-* Execute Javascript (needs more testing)
-* Action Chains
-* Cookies
-* Switch to frame/window/element/alert
-* Alert support
-* Capture / Save screenshot of browser or individual element
-
-Up to this point it has been a personal project so my time is limited but I'd be happy to fix any bugs if you run into any (raise issues on github please). One point of note is that this library does not aim to be a full-featured automation suite. Just like the python library, the goal is to provide the base functionality on which larger high-level frameworks can be built.
-
-I hope you find it useful.
-## [7][How Zebra used Tower to replace Zcash's legacy Bitcoin C++ networking code with modern, async Rust](https://www.reddit.com/r/rust/comments/evc3ug/how_zebra_used_tower_to_replace_zcashs_legacy/)
-- url: https://www.zfnd.org/blog/a-new-network-stack-for-zcash/
+## [7][This Week in Rust 323](https://www.reddit.com/r/rust/comments/ew3gri/this_week_in_rust_323/)
+- url: https://this-week-in-rust.org/blog/2020/01/28/this-week-in-rust-323/
 ---
 
-## [8][My Rust sticker finally arrived!](https://www.reddit.com/r/rust/comments/evhcp6/my_rust_sticker_finally_arrived/)
-- url: https://i.redd.it/fqxanfnc4nd41.png
+## [8][A new useful crate for chemistry](https://www.reddit.com/r/rust/comments/evzfem/a_new_useful_crate_for_chemistry/)
+- url: https://www.reddit.com/r/rust/comments/evzfem/a_new_useful_crate_for_chemistry/
+---
+Hi everyone. Almost a week ago I published a periodic table here, that was my first crate.
+
+And now I have a crate more called [chembasics](https://crates.io/crates/chembasics) which provides other basic things for chemistry such as some constants, support for empirical and molecular formulas in addition to a SMILES interpreter (chiralide is lack for now, I plan to implement it but pull requests are welcome).
+
+For now it is only that although I plan to implement the ability to graph structures in both 3d and 2d (and a raytracer as an optional feature).
+
+Contributions are welcome and I would also like to receive some suggestions on how to handle the isotopes (I need it for the SMILES interpreter) so far I have not decided on how I should integrate them since I do not want to have to be writing something like Isotope::new(Element::Carbon, 12) every time I want to create a carbon atom.
+## [9][Ferrugo: a JVM implementation written in Rust](https://www.reddit.com/r/rust/comments/evnv8z/ferrugo_a_jvm_implementation_written_in_rust/)
+- url: https://github.com/maekawatoshiki/ferrugo
 ---
 
-## [9][Use ? operator on a vec that returns result?](https://www.reddit.com/r/rust/comments/evmel0/use_operator_on_a_vec_that_returns_result/)
-- url: https://www.reddit.com/r/rust/comments/evmel0/use_operator_on_a_vec_that_returns_result/
+## [10][Hypothetically, if someone creates a tracing GC pointer, how would it affect implementing traditional Graph-shaped objects?](https://www.reddit.com/r/rust/comments/ew3zvb/hypothetically_if_someone_creates_a_tracing_gc/)
+- url: https://www.reddit.com/r/rust/comments/ew3zvb/hypothetically_if_someone_creates_a_tracing_gc/
 ---
-Below is some pseudo code. I am looping through a vec. Within the loop, I am transforming the type to another type. However, an error can occur. When that happens, I want to return as early as possible, so if an element fails to transform, I want to return a custom error. I can not get it to work, an I doubt if I can use the ? operator inside a closure.
+Lifetime, single-ownership and RAII based memory management are what Rust so unique from all the mainstream programming languages. There is no doubt that it helps reduce a big number of potential bugs in compile-time.
 
-&amp;#x200B;
+However, for general purpose programming, perhaps you do not require real-time performance. There are people who would like to use Rust not as a real-time systems language --some may want to use Rust for a CLI tool, or a GUI backend. Many people love Rust not only for the safety-plus-performance-in-compilitime aspect of Rust. 
 
-This is my non compiling code. If this code would compile, it would still complete the loop before returning an error, even if the first element can not be parsed. An alternative would be initializing a mutable vec, but I hope I can do it in a functional way.
+My question is, how pragmatic would it be to adopt a pluggable GC from the third party -- e.g., a third party GC pointer. Is there one already?
+## [11][evcxr/evcxr_jupyter: Jupyter kernel for rust](https://www.reddit.com/r/rust/comments/evrexn/evcxrevcxr_jupyter_jupyter_kernel_for_rust/)
+- url: https://github.com/google/evcxr/tree/master/evcxr_jupyter
+---
 
-    struct MyErr;
-    
-    fn transform(v: Vec&lt;String&gt;) -&gt; Result&lt;Vec&lt;i32&gt;, MyErr&gt; { 
-        let my_vec_i32 = v.into_iter().map(|s| s.parse().map_err(|_| MyErr)).collect()?;
-        // Work with my_vec...
-        return Ok(my_vec_i32) 
+## [12][Generic types as type parameters](https://www.reddit.com/r/rust/comments/ew023l/generic_types_as_type_parameters/)
+- url: https://www.reddit.com/r/rust/comments/ew023l/generic_types_as_type_parameters/
+---
+I am trying to solve an issue similar to [this one](https://www.reddit.com/r/rust/comments/9oa394/passing_generic_type_as_type_parameters/) where OP was trying to have something like:
+
+    struct MyStruct&lt;K, V, M&gt; { map: M&lt;K,V&gt;; }
+
+Now it _is_ possible to write
+
+    struct MyStruct&lt;K, V, M&gt; where M: Something&lt;K, V&gt; {
+        map: M&lt;K, V&gt;,
+        _k: PhantomData&lt;K&gt;,
+        _v: PhantomData&lt;V&gt;,
+        ...
     }
-## [10][Mapping the power of Mozilla’s Rebel Alliance – The Mozilla Blog](https://www.reddit.com/r/rust/comments/evah7y/mapping_the_power_of_mozillas_rebel_alliance_the/)
-- url: https://blog.mozilla.org/blog/2020/01/27/mapping-the-power-of-mozillas-rebel-alliance/
----
 
-## [11][Pokemon Gen 8 dataset](https://www.reddit.com/r/rust/comments/eve09h/pokemon_gen_8_dataset/)
-- url: https://www.reddit.com/r/rust/comments/eve09h/pokemon_gen_8_dataset/
----
-[https://github.com/blargg/pokemon](https://github.com/blargg/pokemon)
+but that leads to repetitive type signatures like `MyStruct&lt;i32, f32, Map&lt;i32, f32&gt;&gt;`. I came up with the following trick involving associated types and dummy structs:
 
-Posting here in case anyone might find this useful, or just wanted to play around with it. It's provided as is.
+    trait MapType {
+        type Key;
+        type Value;
+        type Map;
+    }
 
-This is a data set for the Gen 8 pokemon and moves, available as basic rust types. It should have all their game stats available, but there may be some mistakes.
+    struct MyMapType();
+    impl MapType for MyMapType {
+        type Key = i32;
+        type Value = f32;
+        type Map = HashMap&lt;Self::Key, Self::Value&gt;;
+    }
 
-Personally, I've been using this to help build teams. This allows searches like "get all the pokemon that can learn this move set, and sort them by base stats". I haven't been able to find another program that allows for that much specificity, so I wrote this for fun.
-## [12][Way Cooler postmortem, a tiling window manager for Wayland written in Rust](https://www.reddit.com/r/rust/comments/evmp27/way_cooler_postmortem_a_tiling_window_manager_for/)
-- url: http://way-cooler.org/blog/2020/01/09/way-cooler-post-mortem.html
----
+    struct MyStruct&lt;MT&gt; where MT: MapType {
+        map: MT::Map
+    }
 
+and then I can just write `MyStruct&lt;MyMapType&gt;`. Considering that in my case the same signature would be all over the place, it's even a win for readability. Still, I wonder if this is a good idea, and if so, whether it already has a name.

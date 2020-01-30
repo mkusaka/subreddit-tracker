@@ -97,15 +97,35 @@ Good luck! #WriteOnceApplyEverywhere
 [r/reactjs]: https://www.reddit.com/r/reactjs/
 [available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][My portfolio website using next.js](https://www.reddit.com/r/reactjs/comments/evi5da/my_portfolio_website_using_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/evi5da/my_portfolio_website_using_nextjs/
+## [3][My current portfolio as a Jr. Front End Dev](https://www.reddit.com/r/reactjs/comments/evqusn/my_current_portfolio_as_a_jr_front_end_dev/)
+- url: https://www.reddit.com/r/reactjs/comments/evqusn/my_current_portfolio_as_a_jr_front_end_dev/
 ---
-Hey everyone! I just made my personal website using next js. I'd be very happy if you guys could take a look at it and provide feedback. 
+Hey guys, I’m a student in Web Dev and enjoy creating designs as well. This is the first portfolio page I’ve made that I’ve really been proud of. 
 
-https://iabhishek.dev.
+[juliacodes.com](http://juliacodes.com)
 
-Thanks!
-## [4][Personal website I built](https://www.reddit.com/r/reactjs/comments/evkfz5/personal_website_i_built/)
+I’m looking for some reviews as well as helpful comments regarding the style and application. I wanted the focus of the site to be on the projects, so I chose to remove any linking to internal pages (about, contact, etc) and just included individual project pages that describe the process of each one.
+
+I’d love to hear any comments on the usability of the site and whether this is a good layout for job seeking and showing off my skills!
+## [4][How to Build a Kickass Blazing-Fast 💫 Portfolio with GatsbyJS , React and Netlify](https://www.reddit.com/r/reactjs/comments/ew2m5w/how_to_build_a_kickass_blazingfast_portfolio_with/)
+- url: https://medium.com/@ahmedbesbes/how-to-build-a-kickass-blazing-fast-portfolio-with-gatsbyjs-and-netlify-d1a06cb66712
+---
+
+## [5][n00b question alert - Having trouble linking vanillaJS scripts](https://www.reddit.com/r/reactjs/comments/ew560t/n00b_question_alert_having_trouble_linking/)
+- url: https://www.reddit.com/r/reactjs/comments/ew560t/n00b_question_alert_having_trouble_linking/
+---
+So I'm just trying to link these two scripts into my React app (Gatsby), but I can't figure out where/ or how to do this. It keeps throwing syntax errors. Any help would be greatly appreciated!
+
+`&lt;script src="`[`https://js.adsrvr.org/up_loader.1.1.0.js`](https://js.adsrvr.org/up_loader.1.1.0.js)`" type="text/javascript"&gt;&lt;/script&gt;`  
+`&lt;script type="text/javascript"&gt;`  
+  `ttd_dom_ready( function() {`  
+`if (typeof TTDUniversalPixelApi === 'function') {`  
+`var universalPixelApi = new TTDUniversalPixelApi();`  
+`universalPixelApi.init("w2aii4f", ["pla67r3"], "`[`https://insight.adsrvr.org/track/up"`](https://insight.adsrvr.org/track/up%22)`);`  
+`}`  
+  `});`  
+`&lt;/script&gt;`
+## [6][Personal website I built](https://www.reddit.com/r/reactjs/comments/evkfz5/personal_website_i_built/)
 - url: https://www.reddit.com/r/reactjs/comments/evkfz5/personal_website_i_built/
 ---
 Hi, I recently just finished building my portfolio and would love some feedback! 
@@ -117,72 +137,82 @@ I drew inspiration from various few other portfolios linked here before.
 I built it with Next.js, with API to deal with the contact form. Also some libraries for some of the scrolling functionality (did not know of an easier way to deal with that, if anyone knows a simpler way?). There might be a few bugs on mobile as well.
 
 Thanks in advance!
-## [5][Repos for Beginners to Learn From](https://www.reddit.com/r/reactjs/comments/ev7jnb/repos_for_beginners_to_learn_from/)
-- url: https://www.reddit.com/r/reactjs/comments/ev7jnb/repos_for_beginners_to_learn_from/
+## [7][How can I make an effect hook trigger before other functions?](https://www.reddit.com/r/reactjs/comments/ew4suu/how_can_i_make_an_effect_hook_trigger_before/)
+- url: https://www.reddit.com/r/reactjs/comments/ew4suu/how_can_i_make_an_effect_hook_trigger_before/
 ---
-Recently I came across a post about [Jira Clone](https://github.com/oldboyxx/jira_clone). I found the project helpful and gave me ideas on how real-world apps are structured and how I should go about my future projects. I just wanted to know about other such repos that would be helpful for people to learn from. Any suggestions?
-## [6][Using redux-saga with Typescipt [x-post /r/typescript]](https://www.reddit.com/r/reactjs/comments/evgbyv/using_reduxsaga_with_typescipt_xpost_rtypescript/)
-- url: https://www.reddit.com/r/reactjs/comments/evgbyv/using_reduxsaga_with_typescipt_xpost_rtypescript/
+So I am working on a simple demo app which pulls some data from a public API and shows profile cards with some info. I put some buttons to navigate through profiles, and I did so by simply using a counter state hook and accessing profiles with 
+```object[count]``` notation. 
+
+Well it does work, but problems arise when I exceed the array size when navigating through profiles. I tried fixing it by making it loop back to the first profile if it hits the last profile and tries to navigate forward again, and vice versa like so:
+
+    useEffect(() =&gt; {
+            if (count &gt;= userCount){
+                setCount(0);
+            } else if (count &lt; 0) {
+                setCount(userCount);
+            }
+        }, [count]);
+
+I thought this would do the trick but effect hook triggers AFTER incrementing the counter, thus navigating forward to a null profile, resulting in errors. 
+
+Is my approach wrong? What would be the best solution?
+## [8][React Native is the future of mobile at Shopify](https://www.reddit.com/r/reactjs/comments/evoui6/react_native_is_the_future_of_mobile_at_shopify/)
+- url: https://engineering.shopify.com/blogs/engineering/react-native-future-mobile-shopify
 ---
-I've been using `redux-thunk` for quite a while on a project of mine, but I've recently outgrown it and have turned to other libraries to handle async actions (mostly network requests). Of the options out there, I've found `redux-saga` and `redux-observable` to be the most promising options. After some research, I found that `redux-saga` seemed the best for my use-case. 
 
-I then installed saga and the accompanying types, but I quickly found that saga's integration with TypeScript was less than ideal. For example, using a selector returns an `any` type as opposed to the proper type which corresponds to the output of the selector.
-
-I did some follow-up research on this topic, and from what I can see, saga doesn't support this kind of type safety -- something that `redux-observables` does support. Is there some kind of work-around or alternate `@types` library which allows saga to support real type safety with TypeScript? 
-
-I was excited to use saga, but if proper type checks do not properly work, I will be forced to use `redux-observable`.
-## [7][How to structure styled component files?](https://www.reddit.com/r/reactjs/comments/evm4m9/how_to_structure_styled_component_files/)
-- url: https://www.reddit.com/r/reactjs/comments/evm4m9/how_to_structure_styled_component_files/
----
-Hello huys,
-
-can anyone give me suggestions on how to structure styled components I specifically have in mind the CSS part. I was thinking about how to keep the styling objects separately from the components in a way that its not an overkill. Any tips?
-## [8][3 custom React effect hooks for your toolbox](https://www.reddit.com/r/reactjs/comments/evjd3l/3_custom_react_effect_hooks_for_your_toolbox/)
-- url: https://medium.com/@faboulaws/3-custom-react-effect-hooks-for-your-toolbox-96d659d2ca9d
+## [9][What’s easy, what’s not and why](https://www.reddit.com/r/reactjs/comments/ew3v3l/whats_easy_whats_not_and_why/)
+- url: https://medium.com/javascript-in-plain-english/comparing-objects-in-javascript-ce2dc1f3de7f
 ---
 
-## [9][Is debouncing the update of a context a good practice?](https://www.reddit.com/r/reactjs/comments/evmwtb/is_debouncing_the_update_of_a_context_a_good/)
-- url: https://www.reddit.com/r/reactjs/comments/evmwtb/is_debouncing_the_update_of_a_context_a_good/
+## [10][Best option for landing page use case with some dynamic functionality?](https://www.reddit.com/r/reactjs/comments/ew1q17/best_option_for_landing_page_use_case_with_some/)
+- url: https://www.reddit.com/r/reactjs/comments/ew1q17/best_option_for_landing_page_use_case_with_some/
 ---
-So, I'm working on an App that only uses functional components and hooks.  
+I did quite a bit of research before posting this question. First my question, then what I already learned, and what I am still confused about:
 
+&amp;#x200B;
 
-I've decided to start without using Redux. I started using only local state, but when the callback drilling started getting out of hand I've created a context for my state and I update it using a reducer (to kind of "emulate" Redux).  
+I am building a landing page with an email list sign up form and a referral program. For ex: someone lands on the page, they enter their email and they're put in a queue. They're then given a unique URL: [https://landing.com/?ref=xxxxx](https://landing.com/xxxxx).
 
+&amp;#x200B;
 
-The problem is that whenever I update this context, all the components that are inside the provider get re-rendered. For most of the updates this is fine and doesn't affect UX. However I have a slider component that gets jumpy and slow because for every change, it re-renders every thing, the UX isn't smooth at all for this slider.  
+They can then share this URL and if other people sign up for the list, the referrers spot in the queue goes up. Pretty simple logic here too. Just look at query parameter when submitting email into list.
 
+&amp;#x200B;
 
-I reckon this problem is the one described here  [https://frontarm.com/james-k-nelson/react-context-performance/](https://frontarm.com/james-k-nelson/react-context-performance/) . But I didn't quite understand the solution proposed.  
+My question is though, out of create-react-app, next.js, and Gatsby, what is the best option to use? The site is completely static, except for sending a POST request for the email sign up. If email already on list, show them their spot in line, otherwise, add email to list and show them ways to move up in line. Mostly trying to figure out between Next.js and Gatsby. I was leaning towards Gatsby since site is so static but I'm wondering if the email referral will make it hard, so kind of confused now. I'd also like a good CI/CD workflow through Github if possible. (doesn't have to be static / hosted on Github. I don't mind hosting on GCP or something).
 
+&amp;#x200B;
 
-For now, my solution was to use local state for rendering the slider with the proper value and debouncing my Context update by half a second. I wonder if is this an ok practice or if there's any reason for me to avoid doing it?   
-The context doesn't really need to be up to date right away, it only needs to be up to date when the user submits the form and the user will definitely take more than half a second between this input and the form submit.
+The site will also have a couple other pages like "About," "Contact," etc.
 
-  
-My other options would be to finally start using Redux, memoize lots of stuff to prevent them from re-rendering when not necessary, try to understand better the solution proposed in the arcticle I linked and implement it.
-## [10][Any good small basic repositories we can use as a sandbox?](https://www.reddit.com/r/reactjs/comments/evmsjf/any_good_small_basic_repositories_we_can_use_as_a/)
-- url: https://www.reddit.com/r/reactjs/comments/evmsjf/any_good_small_basic_repositories_we_can_use_as_a/
+&amp;#x200B;
+
+What would you recommend?
+## [11][Need help with ReactTouchEvents](https://www.reddit.com/r/reactjs/comments/ew2g52/need_help_with_reacttouchevents/)
+- url: https://www.reddit.com/r/reactjs/comments/ew2g52/need_help_with_reacttouchevents/
 ---
-I like to clone random repositories and use them as a sandbox to test out various new features and try to understand why a bug might be happening. However, all of the ones i have found are todos applications, and I am trying to find some other non-trivial applications I can use. Do you have any suggestion?
-## [11][looking for react courses](https://www.reddit.com/r/reactjs/comments/evmquz/looking_for_react_courses/)
-- url: https://www.reddit.com/r/reactjs/comments/evmquz/looking_for_react_courses/
+Hey guys,  I have been googling for a couple days now but haven’t gotten much help so time to come to the place of all places Reddit
+
+I’m working on a ReatJs project where it is mobile friendly and there are videos Id like the user to click the video when they are on their phone
+
+I installed react-touch-events 
+created it as a function and wrapped ReactTouchEvents in my video section 
+
+The only issue i’m having is the functionality on the handle 
+
+I know that it is not supposed to be like handlePause or Play event so I was wondering How I could make it work? 
+
+I can send my code over or just copy the piece of what I have 
+
+const HandleTap = e =&gt; {
+console.log() —- (I need help with functionality in this space)
+}
+
+Thank you guys so much
+## [12][What does React docs use to highlight multiple lines in their code snippets?](https://www.reddit.com/r/reactjs/comments/ew02gc/what_does_react_docs_use_to_highlight_multiple/)
+- url: https://www.reddit.com/r/reactjs/comments/ew02gc/what_does_react_docs_use_to_highlight_multiple/
 ---
-Hi! 
-
-I am looking for some kind of open source react course repository, which has tasks, (from beginning to mid level, or something similar) which has the task description, and some *provided testcases* that can evaluate the task itself. 
+Example—
 
 
-Are you aware of existence anything similar? 
-
-thank you,
-## [12][Wizard/Multistep Form - What are you using?](https://www.reddit.com/r/reactjs/comments/eve9h7/wizardmultistep_form_what_are_you_using/)
-- url: https://www.reddit.com/r/reactjs/comments/eve9h7/wizardmultistep_form_what_are_you_using/
----
-My team about to start a feature that needs a multi-step form in a modal. We have used [React-Stepzilla](https://www.npmjs.com/package/react-stepzilla) in the past and I didn't strongly dislike it, but we haven't re-assessed in a while either. 
-
-I'm just curious what others are using, especially if you love it or hate it. 
-
-We do not use Redux. We are on React v16.10. We don't have any form tool (probably to our detriment).
-
-Thanks for your time!
+https://imgur.com/IQC5Zkd

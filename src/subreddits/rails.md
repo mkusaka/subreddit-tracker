@@ -39,7 +39,63 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Build a Reddit Clone in Rails 6 [PART 2]](https://www.reddit.com/r/rails/comments/evg45k/build_a_reddit_clone_in_rails_6_part_2/)
+## [3][Best ways to do RESTful authentication](https://www.reddit.com/r/rails/comments/ew3pwo/best_ways_to_do_restful_authentication/)
+- url: https://www.reddit.com/r/rails/comments/ew3pwo/best_ways_to_do_restful_authentication/
+---
+I have finished my project and it's ready for being deployed. I used different technologies and tools such as MySQL and Devise. And of course, I asked a lot of questions (I can say at least 5 of them were in this sub :D) to learn more. 
+
+Now, I have a bunch of questions and ambiguities. I have plans of having an android app for our app. I even talked to an android developer and she said she needs an API (which is not surprising) and these came to my mind : 
+
+* For login, I can't simply send a string as password. I need a token authentication. But I couldn't find any clear explanation on how to do that. I found libraries and gems, but most of them had no clear documentation. I used devise for managing my users, so I of course need a way to do token authentication with devise. 
+* As the project will be launched in a day or two, and the app takes time to be published, I have another ambiguity. How can force previous users to get a token? 
+* And what about sign-ups? Isn't it unsafe to send information as plain text to the server? or sign-ups can have a token too? 
+
+These were what came into my mind. I'll be thankful of your answers and discussions.
+## [4][New gem for slack sign-ins for Rails](https://www.reddit.com/r/rails/comments/evmyyu/new_gem_for_slack_signins_for_rails/)
+- url: https://www.reddit.com/r/rails/comments/evmyyu/new_gem_for_slack_signins_for_rails/
+---
+Hi there!
+
+Over the past year, my team has built a number of Slack applications for internal tools, demos, and for fun. We found ourselves writing the same [OmniAuth](https://github.com/omniauth/omniauth) code over and over again, so we decided to try and make it a bit easier for ourselves, and hopefully others too!
+
+Inspired by Basecamp's [`google_sign_in`](https://github.com/basecamp/google_sign_in) gem, our goal was to make something that would let us integrate "Sign in with Slack" into our Rails apps:
+
+* with minimal configuration
+* as quickly as possible
+* without sacrificing on long-term stability and maintainability
+
+We recently open-sourced this [on GitHub](https://github.com/TEECOM/slack_sign_in) as a gem, and I also made a short [getting started video](https://vimeo.com/387819353) (my first one! :D). I'd love to hear what people think! :D
+## [5][Automate Building Docker Base Images for Ruby and Rails applications](https://www.reddit.com/r/rails/comments/ew26qs/automate_building_docker_base_images_for_ruby_and/)
+- url: https://www.reddit.com/r/rails/comments/ew26qs/automate_building_docker_base_images_for_ruby_and/
+---
+Automate Building Docker Base Images for Ruby and Rails applications 
+
+[https://medium.com/faun/build-docker-base-images-for-rails-2258ea2f11dc](https://medium.com/faun/build-docker-base-images-for-rails-2258ea2f11dc)
+## [6][Using Zurb Foundation with Rails 6 &amp; Webpack](https://www.reddit.com/r/rails/comments/evtjxs/using_zurb_foundation_with_rails_6_webpack/)
+- url: https://www.reddit.com/r/rails/comments/evtjxs/using_zurb_foundation_with_rails_6_webpack/
+---
+Hello,
+
+I'm trying to use Zurb Foundation in a new project with Rails 6. As it's my first project with this new version, i'm a bit confused with the webpack system. Usually, i use the foundation-rails gem and everything works fine.
+
+I've got the SCSS working, but i'm stuck with the JS (that is needed for some components). I've added jquery with yarn,added it to environment.js as stated on internet. Then, i try to import foundation and initialize it with the 
+
+    $(document).ready(function(){
+        $(document).foundation();
+    });
+
+And i'm getting the "foundation is not a function error". I've tried with foundation, foundation-sites, importing the JS file separately, but couldn't get it to work.
+
+Does anyone have some ideas ?
+## [7][redirection after sign up? (Devise)](https://www.reddit.com/r/rails/comments/evplr3/redirection_after_sign_up_devise/)
+- url: https://www.reddit.com/r/rails/comments/evplr3/redirection_after_sign_up_devise/
+---
+Hey guys! 
+
+I implemented the confirmation email system on my app and that was successful. Now, I have just one problem to solve. When a new user signs up, it returns to the front page. I want it to redirect to a page telling people "please confirm your email using the link we sent you". 
+
+What should I do now? I have a registration controller for my users, which is in charge for recaptcha. Should I add anything else to that?
+## [8][Build a Reddit Clone in Rails 6 [PART 2]](https://www.reddit.com/r/rails/comments/evg45k/build_a_reddit_clone_in_rails_6_part_2/)
 - url: https://www.reddit.com/r/rails/comments/evg45k/build_a_reddit_clone_in_rails_6_part_2/
 ---
 Hi guys, I've released part 2 of the new Reddit clone build in Ruby on Rails. I posted the first part of the build here about 1 week ago and it got some interest so this latest release might be helpful to anyone who enjoyed the previous video.
@@ -64,17 +120,17 @@ Add ability to upvote / downvote posts and order them in their community based o
 The build is part of a collection of MVP's that I have been building after working in the tech startup space for some time and assisting in building minimum viable products.
 
 I post new web app builds on YouTube using Ruby on Rails 6 so feel free to check out the channel and add some recommendations for upcoming builds.
-## [4][Rails Version Used In Jobs 🤔](https://www.reddit.com/r/rails/comments/evj708/rails_version_used_in_jobs/)
+## [9][Rails Version Used In Jobs 🤔](https://www.reddit.com/r/rails/comments/evj708/rails_version_used_in_jobs/)
 - url: https://www.reddit.com/r/rails/comments/evj708/rails_version_used_in_jobs/
 ---
 Was thinking about hopping back to rails, was wondering what version is being used lately on the job market, if anyone has any insight would be appreciated ^^
 Last version I picked up was 5.2
-## [5][Routes For Portfolio Project](https://www.reddit.com/r/rails/comments/evmkco/routes_for_portfolio_project/)
+## [10][Routes For Portfolio Project](https://www.reddit.com/r/rails/comments/evmkco/routes_for_portfolio_project/)
 - url: https://www.reddit.com/r/rails/comments/evmkco/routes_for_portfolio_project/
 ---
 I was thinking here if I should use resources routes or make custom one for my portfolio projects 🤔🤔 
 any insights ?
-## [6][Weird Devise error when new users signup](https://www.reddit.com/r/rails/comments/evfoq0/weird_devise_error_when_new_users_signup/)
+## [11][Weird Devise error when new users signup](https://www.reddit.com/r/rails/comments/evfoq0/weird_devise_error_when_new_users_signup/)
 - url: https://www.reddit.com/r/rails/comments/evfoq0/weird_devise_error_when_new_users_signup/
 ---
 OK, so I setup Devise on a Rails 6 app that I've created. Additionally, I followed the [email only signup](https://github.com/heartcombo/devise/wiki/How-To:-Email-only-sign-up) instructions.
@@ -104,45 +160,7 @@ Any ideas on what might be causing this?
 13:52:22: /newsletters/9
 
 In case it's helpful, the site is [Pew Pew Training](https://pewpewtraining.com).
-## [7][Solopreneur owner of 20k/month Rails app wants to give inside view](https://www.reddit.com/r/rails/comments/ev2s0n/solopreneur_owner_of_20kmonth_rails_app_wants_to/)
-- url: https://www.reddit.com/r/rails/comments/ev2s0n/solopreneur_owner_of_20kmonth_rails_app_wants_to/
----
-Ten years ago I built a niche marketplace and have been living from the revenue ever since. It was designed to be a lifestyle business from the get-go so I spent a ton of time initially optimizing and automating everything.
-
-I want to create a stream that gives a behind-the-scenes, nothing-hidden, look at what I've built and how I work, but I've no idea which topics are most interesting. If I learned one thing in creating my business, it's that it's all too easy to create something that no-one wants.
-
-So what topics would you like to be covered?
-
-Some ideas I had were
-
-**Coding**
-
-1. generating a maximally enjoyable development environment (e.g. seeding data, simulating cron, mirroring production as much as possible etc.)
-2. removing brittleness from integration tests that run on circleci
-3. dealing with the shitshow that is sales tax accounting across multiple currencies
-4. detecting and recovering from production bugs asap
-5. dealing with the real-world mess that is imperfect user input (e.g. when they type emails with a leading space or inconsistent capitalization; when they create a tag that is almost the same as a previous one — like E Guitar vs. Electric Guitar—and now your data is split across two areas)
-6. discussing the 8+ year consequences of certain architectural/software design issues
-7. streamlining massive amounts of config
-8. multi-redundant systems of backup to prevent disaster
-9. designing error messages and a logging strategy that speeds up recovery from errors
-10. a tour of the most evil, insidious bugs I dealt with over the years (I keep a diary for them)
-11. payment systems in-depth (refunds, errors etc.)
-12. caching systems for performance
-
-**Business/marketing**
-
-1. how I use data to decide to add/remove a feature
-2. AB testing a web app
-3. technical SEO (microdata, site structure for internal links, google's tools, sitemaps, etc.) — I get 85% of my traffic (and therefore revenue) from SEO, so I know a thing or two
-4. how I use JS and integration tests on all tracking code (critical to get right in my business)
-5. auto-email systems to previous customers for extra sales
-6. Adwords workflow to drive revenue
-7. Analytics workflow to figure out what content working
-8. Writing copy that gets sales (what worked for me vs. didn't)
-
-\_If there's something you're interested in but don't see mentioned above, please do share.\_
-## [8][How do you guys store constants that are model-specific and to be used for testing and validations?](https://www.reddit.com/r/rails/comments/evgsdl/how_do_you_guys_store_constants_that_are/)
+## [12][How do you guys store constants that are model-specific and to be used for testing and validations?](https://www.reddit.com/r/rails/comments/evgsdl/how_do_you_guys_store_constants_that_are/)
 - url: https://www.reddit.com/r/rails/comments/evgsdl/how_do_you_guys_store_constants_that_are/
 ---
 Example: Customers can either be a "Person" or "Company", nothing else.
@@ -162,75 +180,3 @@ Alternatively I can store it as a constant in config/initializers, but this isn'
 Edit: Also, how do you guys store global constants that are NOT model-specific?
 
 Thoughts?
-## [9][Has anyone recently setup a heroku with a custom subdomain with namecheap?](https://www.reddit.com/r/rails/comments/evjbde/has_anyone_recently_setup_a_heroku_with_a_custom/)
-- url: https://www.reddit.com/r/rails/comments/evjbde/has_anyone_recently_setup_a_heroku_with_a_custom/
----
-It has been a while since I setup a custom domain on heroku. The things I have done so far.
-
-1. I added the custom domain to heroku using heroku domains:add test.example.com
-2. Added a cname record on namecheap that points to the heroku app. I got the URL from the heroku domains:add command 
-
-The DNS has propagated. But when I go to test.example.com in Chrome I get the following error
-
-    This site can’t provide a secure connection
-    test.example.com sent an invalid response.
-    ERR_SSL_PROTOCOL_ERROR
-
-Anyone know why this is happening? Do I have to setup SSL in the app? Or is it something else?
-## [10][Editing form properties in Rails?](https://www.reddit.com/r/rails/comments/evfkwq/editing_form_properties_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/evfkwq/editing_form_properties_in_rails/
----
-I have a form view, which is like this : 
-
-    &lt;%= form_with(model: post, local: true) do |form| %&gt;
-      &lt;% if post.errors.any? %&gt;
-        &lt;div id="error_explanation"&gt;
-          &lt;h2&gt;&lt;%= pluralize(post.errors.count, "error") %&gt; prohibited this post from being saved:&lt;/h2&gt;
-    
-          &lt;ul&gt;
-            &lt;% post.errors.full_messages.each do |message| %&gt;
-              &lt;li&gt;&lt;%= message %&gt;&lt;/li&gt;
-            &lt;% end %&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;% end %&gt;
-    
-      &lt;div class="field"&gt;
-        &lt;%= form.label :title %&gt;
-        &lt;%= form.text_field :title %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="field"&gt;
-        &lt;%= form.label :text %&gt;
-        &lt;%= form.text_area :text %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="field"&gt;
-        &lt;%= form.label :date %&gt;
-        &lt;%= form.datetime_select :date %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="actions"&gt;
-        &lt;%= form.submit %&gt;
-      &lt;/div&gt;
-    &lt;% end %&gt;
-
-And as in our country, we have a different calendar than the gregorian (and our calendar has a gem!) I got curious, how can I edit that "form.datetime\_select" to be in our calendar's format.
-## [11][it's tdd tuesday where I'm at - how do i write a test for this?](https://www.reddit.com/r/rails/comments/evewi4/its_tdd_tuesday_where_im_at_how_do_i_write_a_test/)
-- url: https://www.reddit.com/r/rails/comments/evewi4/its_tdd_tuesday_where_im_at_how_do_i_write_a_test/
----
-  
-suppose you'r working on a newish rails application, and you're tasked with adding bootstrap css to rails 6.  
-in TDD style, how do you write a test first?   
-
-
-can you write a test for this visual broken'ness (screenshot.png) ?  
-
-
-https://preview.redd.it/364uuzcg6md41.png?width=800&amp;format=png&amp;auto=webp&amp;s=574c90db0119334d51b80d8e734a022ddf4bc3cc
-## [12][RSpec allow to receive and return or raise an exception](https://www.reddit.com/r/rails/comments/evbw0h/rspec_allow_to_receive_and_return_or_raise_an/)
-- url: https://www.reddit.com/r/rails/comments/evbw0h/rspec_allow_to_receive_and_return_or_raise_an/
----
-I know you can mock an object's method and tell it to return different values depending if it was called by the first time, second time, etc., with `allow(object).to receive(:foo).and_return('a', 'b' ...)` and you can also tell it to raise an exception replacing `and_return` with `and_raise ...`
-
-But is there a way to tell it to raise an exception at the first call and then to return a value at the second call?

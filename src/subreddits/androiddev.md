@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/eunf8c/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/eunf8c/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/ewnwms/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/ewnwms/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - January 27, 2020](https://www.reddit.com/r/androiddev/comments/eumgji/weekly_questions_thread_january_27_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/eumgji/weekly_questions_thread_january_27_2020/
 ---
@@ -31,75 +25,68 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][GitHub - abeade/fcm-push-plugin: IntelliJ IDEA plugin to send pushes using Firebase Cloud Messaging (FCM)](https://www.reddit.com/r/androiddev/comments/ew29b0/github_abeadefcmpushplugin_intellij_idea_plugin/)
-- url: https://github.com/abeade/fcm-push-plugin
+## [3][GitHub - mohammadima3oud/Complete-Google-Map-API-Tutorial: Learn How to use Google Map API for Android from Basic to Advance with complete examples.](https://www.reddit.com/r/androiddev/comments/ewkycl/github/)
+- url: https://github.com/mohammadima3oud/Complete-Google-Map-API-Tutorial
 ---
 
-## [4][Jetpack Compose dev04](https://www.reddit.com/r/androiddev/comments/evspa0/jetpack_compose_dev04/)
-- url: https://www.reddit.com/r/androiddev/comments/evspa0/jetpack_compose_dev04/
+## [4][Is the compression performed on an app bundle guaranteed to be lossless?](https://www.reddit.com/r/androiddev/comments/ewn0ag/is_the_compression_performed_on_an_app_bundle/)
+- url: https://www.reddit.com/r/androiddev/comments/ewn0ag/is_the_compression_performed_on_an_app_bundle/
 ---
-The Jetpack Compose team is happy to announce that the Jetpack Compose dev04 drop has just been released! You can get it on Google’s Maven Repository or by upgrading your version in the latest Android Studio canary.
-
-Compose is developed in the open, so the latest changes were always available, but we are moving to a continuous release model for binaries to make it easier to test the latest API changes.
-
-Release notes are linked at [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose). Thank you for your continued feedback, and please continue logging issues at [https://issuetracker.google.com/issues/new?component=612128](https://issuetracker.google.com/issues/new?component=612128).
-
-You can also join the #compose channel on the [kotlinlang Slack](http://slack.kotlinlang.org/) to discuss with the team.
-## [5][Bottom Nav Bar with multiple back stacks: 2020 plans](https://www.reddit.com/r/androiddev/comments/ew1hkd/bottom_nav_bar_with_multiple_back_stacks_2020/)
-- url: https://issuetracker.google.com/issues/80029773#comment77
+I just did an update and users are getting errors that could only make sense if lossy compression was being applied to my asset files.
+## [5][Play Store finally doesn't cut text on weird places of the "what's new" section](https://www.reddit.com/r/androiddev/comments/ewo8rx/play_store_finally_doesnt_cut_text_on_weird/)
+- url: https://www.reddit.com/r/androiddev/comments/ewo8rx/play_store_finally_doesnt_cut_text_on_weird/
 ---
+Remember this:
 
-## [6][App just got removed because description had a hashtag.](https://www.reddit.com/r/androiddev/comments/ew3k07/app_just_got_removed_because_description_had_a/)
-- url: https://www.reddit.com/r/androiddev/comments/ew3k07/app_just_got_removed_because_description_had_a/
----
-What I did wrong: I put the main keyword as a hashtag at the bottom of the description.
+ [https://www.reddit.com/r/androiddev/comments/dhuecz/play\_store\_now\_concats\_the\_start\_and\_end\_of\_your/](https://www.reddit.com/r/androiddev/comments/dhuecz/play_store_now_concats_the_start_and_end_of_your/) 
 
-Don't do that.
-## [7][Doing animations with Jetpack Compose](https://www.reddit.com/r/androiddev/comments/evp8g2/doing_animations_with_jetpack_compose/)
-- url: https://proandroiddev.com/rotating-pokeball-animation-with-jetpack-compose-e3e839782cba
+?  
+
+
+I've noticed that now it doesn't occur anymore and is [officially fixed by Google](https://issuetracker.google.com/issues/142859268#comment3). I've tried on multiple apps on the Play Store. 
+
+So, you don't have to worry about this anymore :)
+## [6][Dagger Android 2.26 now uses AndroidX](https://www.reddit.com/r/androiddev/comments/ew7ti3/dagger_android_226_now_uses_androidx/)
+- url: https://github.com/google/dagger/releases/tag/dagger-2.26
 ---
 
-## [8][Freelance Android developer vs cross-platform developer in 2020](https://www.reddit.com/r/androiddev/comments/ew541f/freelance_android_developer_vs_crossplatform/)
-- url: https://www.reddit.com/r/androiddev/comments/ew541f/freelance_android_developer_vs_crossplatform/
----
-Hey guys,I just wanted to ask for your take on this, I got into Android dev and I really like it. I contacted 2 small companies already but unfortunately  they're looking for a solution of having the app run on both android and ios.  I was afraid of this trend, and anyhow I don't have money to buy a Mac so I cannot go that route anyway.
-
-What I wanted to ask you, do you guys find it  easy enough to get freelance gigs in native Android development? Do you think today it's suffice to stick to solely native dev?  
-
-
-I know that there is always work in bigger companies, but freelancing might be a better option for me as I'm constantly changing my location.
-
-Thanks in advance!
-## [9][Engineering blogs you follow](https://www.reddit.com/r/androiddev/comments/evngb9/engineering_blogs_you_follow/)
-- url: https://www.reddit.com/r/androiddev/comments/evngb9/engineering_blogs_you_follow/
----
-Any engineering blogs you follow? Right now I'm following Netflix's engineering blogs on Medium.
-## [10][React Native is the Future of Mobile at Shopify – Shopify Engineering](https://www.reddit.com/r/androiddev/comments/ew35x1/react_native_is_the_future_of_mobile_at_shopify/)
-- url: https://engineering.shopify.com/blogs/engineering/react-native-future-mobile-shopify
+## [7][Now in Android: The podcast](https://www.reddit.com/r/androiddev/comments/ewbpad/now_in_android_the_podcast/)
+- url: http://nowinandroid.googledevelopers.libsynpro.com/
 ---
 
-## [11][Is there any popular open-source app written using FRP principles?](https://www.reddit.com/r/androiddev/comments/ew32f3/is_there_any_popular_opensource_app_written_using/)
-- url: https://www.reddit.com/r/androiddev/comments/ew32f3/is_there_any_popular_opensource_app_written_using/
+## [8][Alternate android stores](https://www.reddit.com/r/androiddev/comments/ewm0kr/alternate_android_stores/)
+- url: https://www.reddit.com/r/androiddev/comments/ewm0kr/alternate_android_stores/
 ---
-I like the plain old OOP way of developing android apps. The way we carefully decide what objects speak to what other objects, keeping data and behavior stuck together, etc. While it's arguably easier, it \*is\* familiar and simple. 
+This has been asked many times before but much of the material that could be found was more than 5 years old so wanted to get latest update on how is the experience publishing on SlideMe and Samsung Stores in particular? Issues of payment and refund, apk integrity (read Amazon changes dev's apk on their own so...), does it affect your publisher status on other stores or any other specific issues.
 
-But I'd like to explore the FRP way of utilizing streams and functional programming constructs to build an app. While there are many tons of blogs and libraries for doing it, I wasn't able to find a good source code repository to learn from.   
+Also if anybody can relate a positive experience with any other store or make any recommendations they are most welcome.
 
-
-Is there any reasonably decent repository of an android app written using Streams &amp; generally with reactive principles in mind?
-## [12][Dual-core Mac mini for development?](https://www.reddit.com/r/androiddev/comments/evvith/dualcore_mac_mini_for_development/)
-- url: https://www.reddit.com/r/androiddev/comments/evvith/dualcore_mac_mini_for_development/
+Thanks in advance.
+## [9][Need help with implementing Design library](https://www.reddit.com/r/androiddev/comments/ewo679/need_help_with_implementing_design_library/)
+- url: https://www.reddit.com/r/androiddev/comments/ewo679/need_help_with_implementing_design_library/
 ---
-Hi guys,
+I'm kinda new to the world of android development. I need help with implementing design library, that would look something like this: 
 
-I am currently learning flutter and am therefore considering an apple device to test builds on ios. Since android development in Android Studio is as demanding as Flutter, I thought I would ask the nice community here for some advice. 
+ implementation '[com.android.support](https://com.android.support):design:28.0.0'. 
 
-I have found a used Mac mini (late 2012) for a great price.
+this is showing an error. I'm running android studio version 3.5.3.
+## [10][Bottom Nav or Tabs](https://www.reddit.com/r/androiddev/comments/ewo64b/bottom_nav_or_tabs/)
+- url: https://www.reddit.com/r/androiddev/comments/ewo64b/bottom_nav_or_tabs/
+---
+Do you guys and girls prefer bottom nav or tabs? They're both ergonomic forms of navigation, but bottom nav(for Android at least) doesn't look right because it's stacked on the system navigation. I personally prefer tabs, but so many popular apps use bottom nav. Thoughts?
+## [11][Good resourcesLearning Java for app development(i already know C++)](https://www.reddit.com/r/androiddev/comments/ewnpm4/good_resourceslearning_java_for_app_developmenti/)
+- url: https://www.reddit.com/r/androiddev/comments/ewnpm4/good_resourceslearning_java_for_app_developmenti/
+---
+Can someone please tell me where can I learn java when I already know C++?
+## [12][Add 'Play in VR' option to an image](https://www.reddit.com/r/androiddev/comments/ewk44t/add_play_in_vr_option_to_an_image/)
+- url: https://www.reddit.com/r/androiddev/comments/ewk44t/add_play_in_vr_option_to_an_image/
+---
+Hey devs, I'm developing a Museum Gallery app which will play videos and images in VR. These are the problems I'm facing:
 
-Problem is, the CPU is a bit dated (i5-3210M)
+1) There are no online tutorial on how to open a images in VR in Android Studio (like if I click on a VR icon, one specific image will open in standard VR mode). How to do this? 
 
-Would it suffice?
+2) I can ask a user to import images. Is it possible to arrange those images in 3D space which can be played in VR? 
 
-The machine has 16 gigs of RAM and 250 GB SSD (compared to 8 GB and 5400RPM HDD on my current machine lol) , so it is otherwise great.
+I'll be grateful to the dev who will help me.
 
-Hopefully I'm not breaking any rules :)
+Thanks for the help.

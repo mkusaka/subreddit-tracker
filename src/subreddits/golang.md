@@ -1,66 +1,70 @@
 # golang
-## [1][crunchy v0.3 - Finds common flaws in passwords, now also supports optional hash checks against haveibeenpwned's database](https://www.reddit.com/r/golang/comments/evyn7d/crunchy_v03_finds_common_flaws_in_passwords_now/)
-- url: https://github.com/muesli/crunchy
+## [1][How to optimize PDFs using Go](https://www.reddit.com/r/golang/comments/ewmauy/how_to_optimize_pdfs_using_go/)
+- url: https://www.reddit.com/r/golang/comments/ewmauy/how_to_optimize_pdfs_using_go/
+---
+You can optimize PDFs using Go language. 
+
+The linked article explains how you can compress PDFs using a library based on Go. You can even create new PDFs or edit old ones but you may need to have a basic understanding of the PDF structure to get it working efficiently. 
+
+  
+ [https://unidoc.io/news/compressing-and-optimizing-pdfs-golang](https://unidoc.io/news/compressing-and-optimizing-pdfs-golang)
+## [2][Noise v1.1.2: Fearless, decentralized p2p networking in Go.](https://www.reddit.com/r/golang/comments/ewm9wd/noise_v112_fearless_decentralized_p2p_networking/)
+- url: https://medium.com/perlin-network/noise-v1-1-2-fearless-decentralized-p2p-networking-in-go-bf3afdd77230
 ---
 
-## [2][Vim teaching terminal game, written in Go](https://www.reddit.com/r/golang/comments/evoev5/vim_teaching_terminal_game_written_in_go/)
-- url: https://www.reddit.com/r/golang/comments/evoev5/vim_teaching_terminal_game_written_in_go/
----
-2 years ago i started working on a project, to help people learn Vim in an entertaining way. The game has its own small game engine that handles the input events and draws the entities on the terminal using [termbox-go](https://github.com/nsf/termbox-go).
-
-The project came to a point where it's useful, but not complete. Lots of new levels could be added to teach more features of Vim. I'm wondering if anybody would like involve in such a project and contribute, or just give some motivation!
-
-[https://github.com/ozankasikci/vim-man](https://github.com/ozankasikci/vim-man)
-## [3][Question about HTTPS/TLS](https://www.reddit.com/r/golang/comments/ew4844/question_about_httpstls/)
-- url: https://www.reddit.com/r/golang/comments/ew4844/question_about_httpstls/
----
-I've been kinda wondering, is serving secure HTTPS connection in Go as simple as using `http.ListenAndServeTLS()` with a valid certificate or am I missing something? And if I am then what do you need to do?
-## [4][Grpcdump - tool for capture and decode grpc messages from packets on a network interface](https://www.reddit.com/r/golang/comments/evrdac/grpcdump_tool_for_capture_and_decode_grpc/)
-- url: https://www.reddit.com/r/golang/comments/evrdac/grpcdump_tool_for_capture_and_decode_grpc/
----
-[https://github.com/rmedvedev/grpcdump](https://github.com/rmedvedev/grpcdump)
-
-This tool helps to capture and look decoded grpc messages between client and server.
-## [5][I have made a little Github Action to refresh the repository report card](https://www.reddit.com/r/golang/comments/evu2z2/i_have_made_a_little_github_action_to_refresh_the/)
-- url: https://www.reddit.com/r/golang/comments/evu2z2/i_have_made_a_little_github_action_to_refresh_the/
----
-Hello everyone ! 
-
-I have made a little Github Action to refresh the repository go report card ([https://goreportcard.com/](https://goreportcard.com/))
-
-Github Action is available here: [https://github.com/creekorful/goreportcard-action](https://github.com/creekorful/goreportcard-action)
-
-&amp;#x200B;
-
-Feedback is welcomed ! :D
-## [6][Error handling in rest APIs](https://www.reddit.com/r/golang/comments/ew2ig6/error_handling_in_rest_apis/)
-- url: https://www.reddit.com/r/golang/comments/ew2ig6/error_handling_in_rest_apis/
----
-We have a bunch of microservices and in each microservice we have a db layer and a service layer. We write our endpoints in service layer. We handle our errors in db layer and map it to some error code so that in service layer we can return a response code corresponding to the error code encountered in db layer (we maintain a map of error codes to response codes). Is it a good practice? I would love to know what approaches do you guys use? Thank you.
-## [7][10 Top Places to Learn Go Programming](https://www.reddit.com/r/golang/comments/evm28e/10_top_places_to_learn_go_programming/)
-- url: https://www.agiratech.com/learn-go-programming-tutorials/
+## [3][A list of Go GUI projects](https://www.reddit.com/r/golang/comments/ew7odi/a_list_of_go_gui_projects/)
+- url: https://github.com/go-graphics/go-gui-projects
 ---
 
-## [8][Hey. We are developing a product to help with API development to golang community](https://www.reddit.com/r/golang/comments/ew239u/hey_we_are_developing_a_product_to_help_with_api/)
-- url: https://www.reddit.com/r/golang/comments/ew239u/hey_we_are_developing_a_product_to_help_with_api/
----
-Hey! I am Alex and I wanna find who would like to use and need a product.
-We are developing the product that will help you with maintaining API doc and tracking API changes. The product comes up with next benefits:
-
-1. Simple workflow around API development by union your tools. JIRA, git, OpenAPI/graphql schemas
-2. Tracking API changes.
-3. Notifying stakeholders about API changes.
-4. Improving team communication.
-5. Keeping backward capability for API.
-6. Making clean API doc
-7. Having integrations with CI to make your workflow more faster.
-
-If you like this benefits and would like to be an early adopter, please leave your email and feedback at google forms: https://forms.gle/vNewYzrEMrcfde6q6
-## [9][Building Go Web Applications and Microservices Using Gin](https://www.reddit.com/r/golang/comments/evpmr1/building_go_web_applications_and_microservices/)
-- url: https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin
+## [4][Micro v2.0.0 (gRPC by default)](https://www.reddit.com/r/golang/comments/ewmpz9/micro_v200_grpc_by_default/)
+- url: https://micro.mu/blog/2020/01/30/micro-v2.html
 ---
 
-## [10][Go vs Java. A side-by-side comparison of code snippets that showcase syntax differences.](https://www.reddit.com/r/golang/comments/evsetn/go_vs_java_a_sidebyside_comparison_of_code/)
-- url: https://javavsgolang.amarszalek.net/
+## [5][vim-go v1.22](https://www.reddit.com/r/golang/comments/ew975j/vimgo_v122/)
+- url: https://github.com/fatih/vim-go/releases/tag/v1.22
 ---
 
+## [6][What are some decent feature tools compatible with Go?](https://www.reddit.com/r/golang/comments/ewo7y9/what_are_some_decent_feature_tools_compatible/)
+- url: https://www.reddit.com/r/golang/comments/ewo7y9/what_are_some_decent_feature_tools_compatible/
+---
+
+
+   Hello.  I'm trying to introduce feature flags to my team, as I've pitched a pretty large migration and my strategy is to make some use of feature flags in this migration.  Without getting too specific we currently have an event driven architecture with listeners, a service layer (for APIs), a message bus and some workers/adapters.  I'm dealing with an extremely young team so many of the engineers on my staff do not know what feature flags are.  
+
+   I'm looking for a feature flag library that probably isn't going to cost much (though money isn't an issue).   That's very lightweight and easy to maintain.   I've looked at this
+
+https://github.com/vsco/dcdr
+
+And it looks promising.  But it doesn't appear to be actively maintained.   I would love for some of you to weigh in
+## [7][go-mod-upgrade - Update outdated Go dependencies interactively](https://www.reddit.com/r/golang/comments/ewnzwo/gomodupgrade_update_outdated_go_dependencies/)
+- url: https://www.reddit.com/r/golang/comments/ewnzwo/gomodupgrade_update_outdated_go_dependencies/
+---
+Hi,
+
+I created a small tool to update outdated Go dependencies interactively.
+
+You can find the source code as well as instructions on how to install and use it here:
+
+[https://github.com/oligot/go-mod-upgrade](https://github.com/oligot/go-mod-upgrade)
+## [8][[Code Review] Omdb api wrapper](https://www.reddit.com/r/golang/comments/ewnfge/code_review_omdb_api_wrapper/)
+- url: https://www.reddit.com/r/golang/comments/ewnfge/code_review_omdb_api_wrapper/
+---
+Hi,
+
+Can someone give some feedback about my OMDB api wrapper. 
+
+[https://github.com/matad2k/GOmdb/tree/master/goomdb](https://github.com/matad2k/GOmdb/tree/master/goomdb)
+## [9][dynamic REST routing in Go real world examples](https://www.reddit.com/r/golang/comments/ewn3yq/dynamic_rest_routing_in_go_real_world_examples/)
+- url: https://www.reddit.com/r/golang/comments/ewn3yq/dynamic_rest_routing_in_go_real_world_examples/
+---
+Hey folks,
+
+do you know any nice real world examples for dynamic rest routing done in Go? I'm reading through blogs n stuff, but its always that basic examples of a product shop or something that might not cover problems real applications are facing.
+## [10][Can Two TestMain run in parallel?](https://www.reddit.com/r/golang/comments/ewn09l/can_two_testmain_run_in_parallel/)
+- url: https://www.reddit.com/r/golang/comments/ewn09l/can_two_testmain_run_in_parallel/
+---
+I have written two integration tests, one for db layer and other for service layer and I have two TestMain to do the db setup and tear down. Also, I am using the same db (mongo) in both the tests. My tests run fine locally but fails during the pipeline run with the error:
+
+`\`error[(DatabaseDropPending) Cannot create collection 5ca5a2c479358e67a64f927b_testdb.users - database is in the process of being dropped.]\``
+
+I believe the two TestMain are running in parallel and while one of them is dropping the db, the other one is trying to create indexes on that db. Can anyone please help?

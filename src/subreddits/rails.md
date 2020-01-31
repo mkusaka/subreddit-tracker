@@ -39,7 +39,143 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Best ways to do RESTful authentication](https://www.reddit.com/r/rails/comments/ew3pwo/best_ways_to_do_restful_authentication/)
+## [3][ActionCable (Redis) -&gt; reconnect on redis connection error](https://www.reddit.com/r/rails/comments/ewn1e4/actioncable_redis_reconnect_on_redis_connection/)
+- url: https://www.reddit.com/r/rails/comments/ewn1e4/actioncable_redis_reconnect_on_redis_connection/
+---
+Hello! 
+
+I work on an application which has ActionCable implemented with Redis.
+
+I would like to know whether it is possible to reset the entire ActionCable setup in case the Redis throws Connection error.
+
+I would like to connect to a different Redis url when the connection error occurs. The infrastructure of this Redis service is that there are two Redis databases mirrored, and there are frequent planned maintanance on the service which can cause the shut down of one of the databases. Unfortunately the switch is not solved by the service itself, however it provides us 2 connection urls. These are the ones I would like to switch between automatically.
+
+Is it possible to do with ActionCable.
+
+I know it is possible with ActiveRecord database connection
+## [4][What is everyone using as wrapper for hybrid app?](https://www.reddit.com/r/rails/comments/ewlmre/what_is_everyone_using_as_wrapper_for_hybrid_app/)
+- url: https://www.reddit.com/r/rails/comments/ewlmre/what_is_everyone_using_as_wrapper_for_hybrid_app/
+---
+I've got a working PWA built with Rails and Turbolinks.  It has notifications too (only working on Android).
+
+But now a requirement has arisen that we need to be able to use Bluetooth (both on Android and iOS) so I'm afraid a PWA will no longer suffice.
+
+My first thought was to use the Turbolinks wrappers:
+https://github.com/turbolinks/turbolinks-android and https://github.com/turbolinks/turbolinks-ios but the one for Android has been deprecated for a long time and there don't seem to come any updates.
+
+What would be good alternatives?  Has anyone tried Cordova in combination with Rails (and Turbolinks)?  Any other suggestions.  Mind you: it's not a single page app, it's a normal Rails app, that currently also works as a PWA.
+
+Curious to hear what others are using.
+## [5][What is everyone doing for caching images served by ActiveStorage? I see the pull-request 34477 has not been merged](https://www.reddit.com/r/rails/comments/ewe9fw/what_is_everyone_doing_for_caching_images_served/)
+- url: https://www.reddit.com/r/rails/comments/ewe9fw/what_is_everyone_doing_for_caching_images_served/
+---
+[https://github.com/rails/rails/pull/34477/files](https://github.com/rails/rails/pull/34477/files)
+
+&amp;#x200B;
+
+looks like a great solution. Has anyone turned this into a GEM that needs a signal boost or what?!?!
+## [6][Tests and CI/Cd - How to start from almost nothing?](https://www.reddit.com/r/rails/comments/ewa9ah/tests_and_cicd_how_to_start_from_almost_nothing/)
+- url: https://www.reddit.com/r/rails/comments/ewa9ah/tests_and_cicd_how_to_start_from_almost_nothing/
+---
+Our codebase is a mess. It's a huge app and for the longest time we managed to survive without tests. Now we have a bit of time to do some tests. Aside from making sure that new code must have tests, how can we slowly improve our test coverage? Do you have tips? We have more than 15 people pushing code to the app's repo every day.
+## [7][installed bootstrap 4.4 on rails 6](https://www.reddit.com/r/rails/comments/ewfyqt/installed_bootstrap_44_on_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/ewfyqt/installed_bootstrap_44_on_rails_6/
+---
+I installed bootstrap 4.4 on rails 6 by following this gist: [https://gist.github.com/bazzel/2c64e2e5804077f9a61938a93ed54823](https://gist.github.com/bazzel/2c64e2e5804077f9a61938a93ed54823)
+
+What I'm not sure of is:
+
+is this line
+
+    &lt;%= stylesheet_pack_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
+
+supposed to replace this pre-existing line:
+
+    &lt;%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
+
+or added next to it.
+## [8][Create a rest SSL request](https://www.reddit.com/r/rails/comments/ewfca1/create_a_rest_ssl_request/)
+- url: https://www.reddit.com/r/rails/comments/ewfca1/create_a_rest_ssl_request/
+---
+Hello guys I have a problem, I'm trying to create a connection with a external server with ssl credentials but I get errors with the authentication the members from the service told me that I need to add a pem file in my keystore but it's from java and Im not sure about how do it in rails I try with this code but I can't connect with the server, if anyone can help me I will be very grateful
+
+&amp;#x200B;
+
+RestClient::Request.execute(
+
+method: "PUT",
+
+url: "#{ENV\['STP\_HOST'\]}/ordenPago/registra",
+
+payload: json\_stp\_registra,
+
+headers: {
+
+"Content-Type" =&gt; "application/json",
+
+accept: "application/json"
+
+}).body
+## [9][How do you write request specs for APIs?](https://www.reddit.com/r/rails/comments/ew8tyr/how_do_you_write_request_specs_for_apis/)
+- url: https://www.reddit.com/r/rails/comments/ew8tyr/how_do_you_write_request_specs_for_apis/
+---
+Hi all,
+
+I've been trying to push myself deeper into thinking about effective and elegant testing strategies and I'm struggling to come up with a flow for writing request specs for my JSON API. Right now, I feel like I'm just randomly coming up with things to test and the code comes out really repetitive. Do you guys have any tools/blogs/resources to help me figure out where to start here?
+## [10][Runtime error](https://www.reddit.com/r/rails/comments/ew9oy3/runtime_error/)
+- url: https://www.reddit.com/r/rails/comments/ew9oy3/runtime_error/
+---
+ 
+
+I tried doing Rails s and was prompted with this error Webpacker configuration file not found /home/user1/Mycollect/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ rb\_sysopen - /home/user1/Mycollect/config/webpacker.yml (RuntimeError) 
+
+W​hen I then try to run the command rails webpacker:install it gives me this error,   
+
+
+rails aborted!  
+ArgumentError: Malformed version number string 0.32+git  
+/home/user1/Mycollect/vendor/cache/gems/webpacker-4.2.2/lib/tasks/webpacker/check\_yarn.rake:12:in \`block (2 levels) in &lt;main&gt;'  
+/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/commands/rake/rake\_command.rb:23:in \`block in perform'  
+/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/commands/rake/rake\_command.rb:20:in \`perform'  
+/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/command.rb:48:in \`invoke'  
+/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/commands.rb:18:in \`&lt;main&gt;'  
+/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:22:in \`require'  
+/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:22:in \`block in require\_with\_bootsnap\_lfi'  
+/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/loaded\_features\_index.rb:92:in \`register'  
+/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:21:in \`require\_with\_bootsnap\_lfi'  
+/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:30:in \`require'  
+/home/user1/Mycollect/vendor/cache/gems/activesupport-6.0.2.1/lib/active\_support/dependencies.rb:325:in \`block in require'  
+/home/user1/Mycollect/vendor/cache/gems/activesupport-6.0.2.1/lib/active\_support/dependencies.rb:291:in \`load\_dependency'  
+/home/user1/Mycollect/vendor/cache/gems/activesupport-6.0.2.1/lib/active\_support/dependencies.rb:325:in \`require'  
+/home/user1/Mycollect/bin/rails:9:in \`&lt;top (required)&gt;'  
+/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`load'  
+/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`call'  
+/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client/command.rb:7:in \`call'  
+/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client.rb:30:in \`run'  
+/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/bin/spring:49:in \`&lt;top (required)&gt;'  
+/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`load'  
+/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`&lt;top (required)&gt;'  
+/home/user1/Mycollect/bin/spring:15:in \`&lt;top (required)&gt;'  
+bin/rails:3:in \`load'  
+bin/rails:3:in \`&lt;main&gt;'  
+Tasks: TOP =&gt; webpacker:install =&gt; webpacker:check\_yarn  
+(See full trace by running task with --trace)  
+Wondering if anyone knows a quick fix?
+## [11][Handy cheat sheet comparing all the different ways to set attributes with ActiveRecord on Rails 6](https://www.reddit.com/r/rails/comments/ewb0fv/handy_cheat_sheet_comparing_all_the_different/)
+- url: https://www.reddit.com/r/rails/comments/ewb0fv/handy_cheat_sheet_comparing_all_the_different/
+---
+I put together a handy cheat sheet for quickly comparing all the different ways you can set attributes on an Active Record object in Rails 6. At a glance the cheat sheet shows you which methods save to the database, run validations, run callbacks, update timestamps, etc.
+
+[https://scottbartell.com/2020/01/30/set-attributes-in-active-record-rails-6/](https://scottbartell.com/2020/01/30/set-attributes-in-active-record-rails-6/)
+
+&amp;#x200B;
+
+A bit of context... a few years ago I came across a similar cheat sheet created by [David Verhasselt for Rails 4](https://davidverhasselt.com/set-attributes-in-activerecord/) and I found it to be such a useful reference that I eventually made my own for [Rails 5](https://scottbartell.com/2019/07/15/set-attributes-in-active-record-rails-5/). The Rails 5 guide has continued to be useful in my day-to-day so I made this new one for [Rails 6](https://scottbartell.com/2020/01/30/set-attributes-in-active-record-rails-6/)!
+
+&amp;#x200B;
+
+I'm very open to feedback / suggestions to make this an even more valuable resource -- please share your thoughts!
+## [12][Best ways to do RESTful authentication](https://www.reddit.com/r/rails/comments/ew3pwo/best_ways_to_do_restful_authentication/)
 - url: https://www.reddit.com/r/rails/comments/ew3pwo/best_ways_to_do_restful_authentication/
 ---
 I have finished my project and it's ready for being deployed. I used different technologies and tools such as MySQL and Devise. And of course, I asked a lot of questions (I can say at least 5 of them were in this sub :D) to learn more. 
@@ -51,132 +187,3 @@ Now, I have a bunch of questions and ambiguities. I have plans of having an andr
 * And what about sign-ups? Isn't it unsafe to send information as plain text to the server? or sign-ups can have a token too? 
 
 These were what came into my mind. I'll be thankful of your answers and discussions.
-## [4][New gem for slack sign-ins for Rails](https://www.reddit.com/r/rails/comments/evmyyu/new_gem_for_slack_signins_for_rails/)
-- url: https://www.reddit.com/r/rails/comments/evmyyu/new_gem_for_slack_signins_for_rails/
----
-Hi there!
-
-Over the past year, my team has built a number of Slack applications for internal tools, demos, and for fun. We found ourselves writing the same [OmniAuth](https://github.com/omniauth/omniauth) code over and over again, so we decided to try and make it a bit easier for ourselves, and hopefully others too!
-
-Inspired by Basecamp's [`google_sign_in`](https://github.com/basecamp/google_sign_in) gem, our goal was to make something that would let us integrate "Sign in with Slack" into our Rails apps:
-
-* with minimal configuration
-* as quickly as possible
-* without sacrificing on long-term stability and maintainability
-
-We recently open-sourced this [on GitHub](https://github.com/TEECOM/slack_sign_in) as a gem, and I also made a short [getting started video](https://vimeo.com/387819353) (my first one! :D). I'd love to hear what people think! :D
-## [5][Automate Building Docker Base Images for Ruby and Rails applications](https://www.reddit.com/r/rails/comments/ew26qs/automate_building_docker_base_images_for_ruby_and/)
-- url: https://www.reddit.com/r/rails/comments/ew26qs/automate_building_docker_base_images_for_ruby_and/
----
-Automate Building Docker Base Images for Ruby and Rails applications 
-
-[https://medium.com/faun/build-docker-base-images-for-rails-2258ea2f11dc](https://medium.com/faun/build-docker-base-images-for-rails-2258ea2f11dc)
-## [6][Using Zurb Foundation with Rails 6 &amp; Webpack](https://www.reddit.com/r/rails/comments/evtjxs/using_zurb_foundation_with_rails_6_webpack/)
-- url: https://www.reddit.com/r/rails/comments/evtjxs/using_zurb_foundation_with_rails_6_webpack/
----
-Hello,
-
-I'm trying to use Zurb Foundation in a new project with Rails 6. As it's my first project with this new version, i'm a bit confused with the webpack system. Usually, i use the foundation-rails gem and everything works fine.
-
-I've got the SCSS working, but i'm stuck with the JS (that is needed for some components). I've added jquery with yarn,added it to environment.js as stated on internet. Then, i try to import foundation and initialize it with the 
-
-    $(document).ready(function(){
-        $(document).foundation();
-    });
-
-And i'm getting the "foundation is not a function error". I've tried with foundation, foundation-sites, importing the JS file separately, but couldn't get it to work.
-
-Does anyone have some ideas ?
-## [7][redirection after sign up? (Devise)](https://www.reddit.com/r/rails/comments/evplr3/redirection_after_sign_up_devise/)
-- url: https://www.reddit.com/r/rails/comments/evplr3/redirection_after_sign_up_devise/
----
-Hey guys! 
-
-I implemented the confirmation email system on my app and that was successful. Now, I have just one problem to solve. When a new user signs up, it returns to the front page. I want it to redirect to a page telling people "please confirm your email using the link we sent you". 
-
-What should I do now? I have a registration controller for my users, which is in charge for recaptcha. Should I add anything else to that?
-## [8][Build a Reddit Clone in Rails 6 [PART 2]](https://www.reddit.com/r/rails/comments/evg45k/build_a_reddit_clone_in_rails_6_part_2/)
-- url: https://www.reddit.com/r/rails/comments/evg45k/build_a_reddit_clone_in_rails_6_part_2/
----
-Hi guys, I've released part 2 of the new Reddit clone build in Ruby on Rails. I posted the first part of the build here about 1 week ago and it got some interest so this latest release might be helpful to anyone who enjoyed the previous video.
-
-**Part 1:**
-
-In this video I cover the setup of a new rails app, installing the devise gem and creating user accounts. Add functionality for users to create a new community/subreddit. Add functionality to create new posts for a community (using nested routes).
-
-[https://www.youtube.com/watch?v=aD6JvHKNPPM](https://www.youtube.com/watch?v=aD6JvHKNPPM)
-
-**Part 2:**
-
-Add dropdown nav menu allowing users to view their profile, edit account settings and sign out. Extend devise to add first name, last name and username. Signed in users can subscribe to communities and create new posts within them. Add profile for users which shows some basic details and their recent posts. Add new comments table and allow subscribers to add comments to posts. Improve layout and design of our app frontend.
-
-[https://www.youtube.com/watch?v=kSj3pCT3r6Y](https://www.youtube.com/watch?v=kSj3pCT3r6Y)
-
-**Part 3 (to be confirmed):**
-
-Add ability to upvote / downvote posts and order them in their community based on popularity. Add user karma based on number of upvotes received on posts.  
-
-
-The build is part of a collection of MVP's that I have been building after working in the tech startup space for some time and assisting in building minimum viable products.
-
-I post new web app builds on YouTube using Ruby on Rails 6 so feel free to check out the channel and add some recommendations for upcoming builds.
-## [9][Rails Version Used In Jobs 🤔](https://www.reddit.com/r/rails/comments/evj708/rails_version_used_in_jobs/)
-- url: https://www.reddit.com/r/rails/comments/evj708/rails_version_used_in_jobs/
----
-Was thinking about hopping back to rails, was wondering what version is being used lately on the job market, if anyone has any insight would be appreciated ^^
-Last version I picked up was 5.2
-## [10][Routes For Portfolio Project](https://www.reddit.com/r/rails/comments/evmkco/routes_for_portfolio_project/)
-- url: https://www.reddit.com/r/rails/comments/evmkco/routes_for_portfolio_project/
----
-I was thinking here if I should use resources routes or make custom one for my portfolio projects 🤔🤔 
-any insights ?
-## [11][Weird Devise error when new users signup](https://www.reddit.com/r/rails/comments/evfoq0/weird_devise_error_when_new_users_signup/)
-- url: https://www.reddit.com/r/rails/comments/evfoq0/weird_devise_error_when_new_users_signup/
----
-OK, so I setup Devise on a Rails 6 app that I've created. Additionally, I followed the [email only signup](https://github.com/heartcombo/devise/wiki/How-To:-Email-only-sign-up) instructions.
-
-In general, everything seems ok *except* that a bunch of the users appear to be getting logged out during the signup process which causes them to click the reset password link. An anonymized version of the production log is below.
-
-Any ideas on what might be causing this? 
-
-&amp;#x200B;
-
-&gt;*From rotated app log* production.log  
-13:52:05: new user  
-13:52:07: signup  
-13:52:08: /almost\_finished loads  
-13:52:09: /newsletters loads? (can't say it's the same user for sure)  
-13:52:13: email event received  
-13:52:14: goes to /users/edit (involves users/registrations/edit.html.erb around this time)  
-**13:52:15 signout happens (same user's IP from signup) -** "(No route matches \[GET\] "/users/sign\_out"):"  
-13:52:15 starting /users/confirmation/new  
-13:52:16 new post /users/confirmations with commit "**Send confirmation again**"  
-13:52:16 mail event  
-13:52:17 /users/sign\_in  
-13:52:18 /newsletters redirect  
-13:52:21 another "Send confirmation again"  
-13:52:22 get /users/sign\_in  
-13:52:22 /newsletters redirect  
-13:52:22: /newsletters/9
-
-In case it's helpful, the site is [Pew Pew Training](https://pewpewtraining.com).
-## [12][How do you guys store constants that are model-specific and to be used for testing and validations?](https://www.reddit.com/r/rails/comments/evgsdl/how_do_you_guys_store_constants_that_are/)
-- url: https://www.reddit.com/r/rails/comments/evgsdl/how_do_you_guys_store_constants_that_are/
----
-Example: Customers can either be a "Person" or "Company", nothing else.
-
-Right now I'm thinking of making a method in Customer.rb:
-
-&gt;def self.types  
-&gt;  
-&gt;\["Person","Company"\]  
-&gt;  
-&gt;end
-
-Then I refer to it as Customer.types in my validations and Rspec files. I'm doing this as an attempt to be DRY, and to make it easier to add to this array in the future if needed.
-
-Alternatively I can store it as a constant in config/initializers, but this isn't truly a global constant since it is model-specific.
-
-Edit: Also, how do you guys store global constants that are NOT model-specific?
-
-Thoughts?

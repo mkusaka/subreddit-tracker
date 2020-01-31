@@ -1,112 +1,144 @@
 # aws
-## [1][AWS SES US-West-2 Blacklisted](https://www.reddit.com/r/aws/comments/evr5v0/aws_ses_uswest2_blacklisted/)
-- url: https://www.reddit.com/r/aws/comments/evr5v0/aws_ses_uswest2_blacklisted/
+## [1][Which is better for S3 uploads from client side - HTTP POST form or using a Cognito identity](https://www.reddit.com/r/aws/comments/ewjyqa/which_is_better_for_s3_uploads_from_client_side/)
+- url: https://www.reddit.com/r/aws/comments/ewjyqa/which_is_better_for_s3_uploads_from_client_side/
 ---
-FYI I've been troubleshooting emails getting bounced from our SES account and I noticed that all US-West-2 IPs in SES now appear to be blacklisted [according to mxtoolbox](https://imgur.com/a/Cgzk33A).  I've opened an incident with AWS support on this to investigate.
-## [2][What cheap relational-like DB can I use serverless for a simple web app?](https://www.reddit.com/r/aws/comments/evp5mn/what_cheap_relationallike_db_can_i_use_serverless/)
-- url: https://www.reddit.com/r/aws/comments/evp5mn/what_cheap_relationallike_db_can_i_use_serverless/
+Originally posted on stackoverflow: [https://stackoverflow.com/questions/59967346/which-is-better-for-s3-uploads-from-client-side-http-post-form-or-using-a-cogn](https://stackoverflow.com/questions/59967346/which-is-better-for-s3-uploads-from-client-side-http-post-form-or-using-a-cogn)
+
+&gt;I want to upload a file to S3 directly from client browser. I don't want that file to go through my server.    
+&gt;  
+&gt;After doing some research I am seeing two ways to do this:   
+&gt;  
+&gt;  
+&gt;  
+&gt; 1. \[Cognito Identity\]\[1\]  
+&gt;  
+&gt; 2. \[Upload using HTTP POST form\]\[2\]    
+&gt;  
+&gt;  
+&gt;  
+&gt;  
+&gt;  
+&gt;Issue with Cognito Identity is that we are not using a user pool. We are authenticating using our database without AWS Cognito User Pool. And without that we only have 'IdentityPoolId', which according to me, anyone can copy from our website's JS code and upload objects to our S3 bucket. Correct me if I am wrong with this assumption.    
+&gt;  
+&gt;  
+&gt;  
+&gt;Using HTTP POST form seems OK to me but while researching I am seeing that Cognito is the new way to do this and I'm afraid that I'm missing something.  
+&gt;  
+&gt;  
+&gt;  
+&gt;  
+&gt;  
+&gt;  \[1\]: [https://aws.amazon.com/blogs/mobile/building-fine-grained-authorization-using-amazon-cognito-user-pools-groups/](https://aws.amazon.com/blogs/mobile/building-fine-grained-authorization-using-amazon-cognito-user-pools-groups/)  
+&gt;  
+&gt;  \[2\]: [https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-authentication-HTTPPOST.html](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-authentication-HTTPPOST.html)
+## [2][Setup Kibana with Fargate](https://www.reddit.com/r/aws/comments/ewo5sz/setup_kibana_with_fargate/)
+- url: https://www.reddit.com/r/aws/comments/ewo5sz/setup_kibana_with_fargate/
 ---
-Hello!
+I'm trying to get Kibana set up correctly with Fargate. I have followed this simple guide: [https://aws.amazon.com/blogs/compute/building-deploying-and-operating-containerized-applications-with-aws-fargate/](https://aws.amazon.com/blogs/compute/building-deploying-and-operating-containerized-applications-with-aws-fargate/)
 
-I have a small web app where family members track their daily expenses. They are divided into categories, and there is also "budgets" feature where users can set for themselves a recommended monthly limits for a combination of categories. 
+The Fargate Task Definition is set up to run a Kibana docker image, based on this Dockerfile [https://github.com/docker-library/kibana/blob/4eef267ab6d1e6a655f4e44dabe9aef7915e4b99/7/Dockerfile](https://github.com/docker-library/kibana/blob/4eef267ab6d1e6a655f4e44dabe9aef7915e4b99/7/Dockerfile)  
 
-Currently I am self-hosting it, but I would like to migrate it to AWS.
 
-Frontend is simple JS that will live in S3/CloudFront. Login will probably be Cognito. Backend will be Lambda/API Gateway. I am not sure what should I use for storing data.
+Since Kibana demands incoming traffic on port 5601, I have opend this port in my awsvpc.
 
-Currently I am using MySQL with a few tables - expense categories, expense amounts entries and budget limits. 
+The reponse I get is **502 Bad Gateway**, when I go to the DNS name for the loadbalancer (port 5601).  
 
-Volume-wise, currently it is about 10k records (&lt;10MB) total. It doesn't grow a lot.
 
-Usage-wise, we are speaking about single write operations per day and a little more reading operations. Dashboard displays latest N expenses, and there is filtering by category and date. There is also on-demand "generate report" feature that can read really a lot of data (all of it), but this is used maybe once per a few months/year.
-
-Money-wise, I am targeting a solution that will cost me &lt;$5 per month. All the mentioned above services should fall in sub-$1 expense and what is troubling me is the DB I can't decide on:
-
-From what I know about AWS I have the following options:
-
-1. DynamoDB - not relational. Will have to break my brain to adjust filtering to it, but let's say I can do it. I will need maybe 3 tables (categories, budgets, actual expense items) and I am not sure how to do capacity. Auto scale, or provisioned? 1 WCU should be enough, but I am not sure about RCU. Lowest case scenario (1WCU/1RCU) is about $.60 per table or $2 for 3 tables. Could grow more if I need GSI for filtering per category/date. 
-
-2. Aurora Serverless - it looks like drop-in replacement for my current MySQL implementation. Haven't used it before and I expect there will be surprises, though. What scares me is the cold start everyone complains about. Waiting 20+ seconds to awaken the DB is way too much for a comfortable user experience. 
-
-3. Aurora/RDS always-on - the smallest possible instance db.t3.micro costs $0.017 per hour =~ $11 per month. Way above limits.
-
-4. Data files in S3 and custom read-write operations on them - not really a fan of this approach... It will be cheapest, but brings in a number of additional problems.
-
-5. Non-AWS solution - what? 
-
-What are your recommendations? (Price checks are for EU regions)
-## [3][Deployed website, but can't tell where it is managed.](https://www.reddit.com/r/aws/comments/evqtag/deployed_website_but_cant_tell_where_it_is_managed/)
-- url: https://www.reddit.com/r/aws/comments/evqtag/deployed_website_but_cant_tell_where_it_is_managed/
----
-So, a while back, I a deployed a website, static no database, and it is up and running. I can see the record in route53, points to cloudfront, but there doesn't seem to be a distribution. 
-
-I remember just adding a repository and it autodeployed on changes. I was thinking it was Lightsail, but there is nothing there either.
-
-Anyone have an idea where it might be? There are a million services, and I must be skipping over the one I need or not know how to correctly check billing to work from there.
-## [4][I'm new, which services do I want to use for this?](https://www.reddit.com/r/aws/comments/ew4pgw/im_new_which_services_do_i_want_to_use_for_this/)
-- url: https://www.reddit.com/r/aws/comments/ew4pgw/im_new_which_services_do_i_want_to_use_for_this/
----
-I'm making a simple blog site for a group of us (5 people). The site has a login, someone writes text, hits post and that's all there is to it. Maybe I'll allow images.
-
-What services do I want to use? 1) I want page loads to be &lt;200 milliseconds. 2) I have already used up all 12 month of free tier discounts on previous projects. There's a few ways I can think of doing this one
-
-1. Have the site entirely run statically on s3 except for when I do login and a http POST, which I use lambda to handle
-2. Use DynamoDB for static HTML pages since they change daily and may shorten my lambda function runtime
-3. Use EC2 instead of lambda
-4. Use EBS instead of DynamoDB for the static HTML files
-5. Other combinations
-
-For logging in and creating a post I don't mind the page being slow. But for all visitors I'd like the html, css, js and images to all load in &lt;200.
-
-\-Edit- I suspect my app needs &lt;128mb to execute but I'm not 100% sure. It's written in C#. Might need 256 but I doubt anything more. I also not sure how EC2 is billed. If I use on average 10% of my CPU and I want an always up CPU to run my site, do I pay 24hrs or would it be 2.4ish hours?
-## [5][CentOS 7.7 custom AMI with ENA driver installed but can't ping](https://www.reddit.com/r/aws/comments/evxbhs/centos_77_custom_ami_with_ena_driver_installed/)
-- url: https://www.reddit.com/r/aws/comments/evxbhs/centos_77_custom_ami_with_ena_driver_installed/
----
-I created a custom AMI using a OVA image I uploaded. The image works fine with T2 instance types but when I switch to T3 it could not get a network. After looking into it, it appears I needed to install the ENA driver. I followed the guide provided here:  [https://aws.amazon.com/premiumsupport/knowledge-center/install-ena-driver-rhel-ec2/](https://aws.amazon.com/premiumsupport/knowledge-center/install-ena-driver-rhel-ec2/)  and installed driver 2.2.2. However, shutting the instance down and changing it to T3 still powers up without network connectivity. What am I missing here?
-## [6][Installing the CloudWatch Agent incur in additional charges?](https://www.reddit.com/r/aws/comments/evv5s1/installing_the_cloudwatch_agent_incur_in/)
-- url: https://www.reddit.com/r/aws/comments/evv5s1/installing_the_cloudwatch_agent_incur_in/
----
-I only  want the mem\_\* metrics, are they contabilized as basic metrics?
-## [7][Improving AWS Performance for the Future](https://www.reddit.com/r/aws/comments/ew36qk/improving_aws_performance_for_the_future/)
-- url: https://www.ibexlabs.com/improving-aws-performance-for-the-future/
----
-
-## [8][AWS Budget per user](https://www.reddit.com/r/aws/comments/evt4yj/aws_budget_per_user/)
-- url: https://www.reddit.com/r/aws/comments/evt4yj/aws_budget_per_user/
----
-Can you use AWS Budget per user of an account? I have been trying to google this, but all documentation on AWS Budget seems to be about per account budgeting, not per user.
-
-Use case: Corporations may want to create a separate account for development. To prevent their developers from running expensive services, you can set a limit *per developer*, say $100, that once they exceed that limit, they cannot use any service anymore.
-## [9][Use CloudFront SSL with React website on S3](https://www.reddit.com/r/aws/comments/ew0av4/use_cloudfront_ssl_with_react_website_on_s3/)
-- url: https://www.reddit.com/r/aws/comments/ew0av4/use_cloudfront_ssl_with_react_website_on_s3/
----
-I have a react site on S3, an SSL certificate on CloudFront and a domain name on GoDaddy.  The certificate is active and deployed.
-
-But when I got to [https://example.com](https://example.com) nothing is reached.  How do I connect the SSL to the website for https?
-## [10][Serverless framework unable to setup lambda trigger](https://www.reddit.com/r/aws/comments/evwgmt/serverless_framework_unable_to_setup_lambda/)
-- url: https://www.reddit.com/r/aws/comments/evwgmt/serverless_framework_unable_to_setup_lambda/
----
-I am using the serverless framework with Node.js to create and deploy my Lambdas. It works great except now after recreating my Lambda (new account) I am unable to set up a trigger using the serverless.yml file
+What can the problem be? I think maybe it has something to do with the fargate task and the docker image, that has problem routing the traffic to the correct port or have trouble making the port 5601 container port available for incoming traffic.
 
 &amp;#x200B;
 
-Here is part of my serverless.yml file which shoud be enough to setup the trigger.
+When I run the dockerimage on my local computer, it is possible to add parameters to define portmapping. Is this possible for fargate-task aswell?  
 
-&amp;#x200B;
 
-    functions:
-      email:
-        handler: handler.email
-        memorySize: 128 # in MB
-        events:
-          - sqs: 
-            arn: arn:aws:sqs:us-east-1:&lt;account number&gt;:email_queue_${opt:stage}
-            batchSize: 1
+See attached image, for how the container is set up for fargate task:  
 
-I've checked and currently there is 1 message in the queue and the queue arn matches
 
-&amp;#x200B;
+https://preview.redd.it/ay1bzjiz34e41.png?width=1033&amp;format=png&amp;auto=webp&amp;s=c8234dc8eb0cfd0f4bc35396e1799aa30acf6ea9
+## [3][RDS Useage Question](https://www.reddit.com/r/aws/comments/ewmfui/rds_useage_question/)
+- url: https://www.reddit.com/r/aws/comments/ewmfui/rds_useage_question/
+---
+For two months, I've been using the free tier of RDS to use MySQL with a CRUD webapp for my CV. 
 
-Here is the documentation on it
+It gives you 750 hours a month and if you exceed that you have to pay, without an option to disable the service once the limit has been reached.
 
-[https://serverless.com/framework/docs/providers/aws/events/sqs/](https://serverless.com/framework/docs/providers/aws/events/sqs/)
+So far it has come slightly below the 750 hours, so I have not had to pay. The thing is, I don't know what would factors contribute towards the hours used. So far it has only been me using the webapp. I read on documentation that it has to do with instances used. Does that mean that it is affected by different IPs checking out the webapp, like when I show it to prospective employers?
+
+I am concerned because if it is coming to just under the 750 hours with just me using it, if employers start having a look, I will have to pay a lot of money.
+## [4][Understanding VPCs?](https://www.reddit.com/r/aws/comments/ewbhvb/understanding_vpcs/)
+- url: https://www.reddit.com/r/aws/comments/ewbhvb/understanding_vpcs/
+---
+Trying to learn VPC, see below garbage pic for reference:
+
+https://preview.redd.it/8eu28rb23zd41.png?width=626&amp;format=png&amp;auto=webp&amp;s=d6eccea0d5a0137c73fe71f92204a4169bac1507
+
+VPC questions:
+
+* I (generally) want my databases in private subnets?
+   * If for some reason they need internet I'd do a NAT GW in (another) public subnet?
+* I (generally) want my EC2 instances in private subnets?
+   * If for some reason they need internet I'd do a NAT GW in (another) public subnet?
+* I generally want my ELB in a public subnet?
+* Does the ASG for the EC2s go in a public or private subnet? 
+   * Or is this not really a thing that has a "location"?
+* I only need 1 internet gateway per VPC?
+* In what scenario would 1 single VPC need NAT GWs in 2 separate (public) subnets.
+* What makes a subnet private vs public?
+   * Is this just weather or not it's routed to an IG?
+* Is the only difference between a NAT gateway and an internet gateway that a NAT gateway is outbound only?
+## [5][Cost of Nested Queries on AWS Athena](https://www.reddit.com/r/aws/comments/ewgdw2/cost_of_nested_queries_on_aws_athena/)
+- url: https://www.reddit.com/r/aws/comments/ewgdw2/cost_of_nested_queries_on_aws_athena/
+---
+Hi folks, 
+
+Something at work is requiring me to use Athena to query something like 2 TB of data from a client S3 bucket.
+
+I was wondering about the pricing structure of this. I designed my query based off of a very small testing file with the same shape as the client data, so I designed the process using something like 5 queries that produced interim tables, 3 of which add columns, 1 which splits the data and re-unions, and one which groups the data by a set of columns. 
+
+I have the option of consolidating these queries into one nested query.
+
+So according to what AWS says on their website about Athena pricing, this single nested query should cost around $10 ($5/TB * 2 TB), while running the process using interim tables described above would incur about $50 of costs. Does anyone know if this is actually the case? Are you charged based on the number of SELECT statements are contained within your query, or can you actually save money by consolidating SELECTs into a nested query?
+
+Thanks for the help everyone!
+## [6][ELI5: NLB vs ALB](https://www.reddit.com/r/aws/comments/ewby6y/eli5_nlb_vs_alb/)
+- url: https://www.reddit.com/r/aws/comments/ewby6y/eli5_nlb_vs_alb/
+---
+I've read through the AWS documentation on ELB vs ALB and still don't have a good idea on when to use one vs the other - https://aws.amazon.com/elasticloadbalancing/features/
+
+From reading the documentation
+
+ALB allows for layer 7 routing based on HTTP headers 
+
+Whereas
+
+NLB allows for layer 4 routing which is strictly UDP/TCP - network layer.
+
+They share commonalities - high availability, security features, health checks etc
+
+It's not as simple as if you don't require routing based off HTTP headers, use NLB?
+
+I've read that NLB can scale better but I don't understand why it can scale better. Is it because it doesn't have to do any processing of any layers above layer 4 - network?
+## [7][Why cloudwatch keeps charging me and refund credits every month?](https://www.reddit.com/r/aws/comments/ewljot/why_cloudwatch_keeps_charging_me_and_refund/)
+- url: https://i.redd.it/na32f0i3v2e41.jpg
+---
+
+## [8][AWS ElasticSearch Node](https://www.reddit.com/r/aws/comments/ewlbs9/aws_elasticsearch_node/)
+- url: https://i.imgur.com/WsjmsO0.png
+---
+
+## [9][What is "AWS Security Scanner" in my server logs?](https://www.reddit.com/r/aws/comments/ew5lzt/what_is_aws_security_scanner_in_my_server_logs/)
+- url: https://www.reddit.com/r/aws/comments/ew5lzt/what_is_aws_security_scanner_in_my_server_logs/
+---
+I am getting these in my ec2 nginxn logs:
+
+"GET /latest/dynamic/instance-identity/document HTTP/1.1" 400 264 "-" "AWS Security Scanner
+
+Is this just a bot trying to do smt shady or a AWS internal "scanner" ?
+## [10][Step Functions Express Workflows](https://www.reddit.com/r/aws/comments/ewkv5q/step_functions_express_workflows/)
+- url: https://www.reddit.com/r/aws/comments/ewkv5q/step_functions_express_workflows/
+---
+
+Step Functions, which were launched in November 2016, are a valuable resource for the orchestration of both simple and complex processes in AWS. 
+Restricted to 2,000 execution starts per second, you may ask, how can we manage workflows for greater volumes of data? This blog post explores AWS' answer to this problem: express workflows:
+
+https://medium.com/@trrhodes/step-functions-express-workflows-cb8436259af6?source=friends_link&amp;sk=a26219e52771af6da7068ec1fc05d629

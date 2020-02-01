@@ -39,7 +39,52 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][ActionCable (Redis) -&gt; reconnect on redis connection error](https://www.reddit.com/r/rails/comments/ewn1e4/actioncable_redis_reconnect_on_redis_connection/)
+## [3][One authentication system to cover all modern methods?](https://www.reddit.com/r/rails/comments/ewt1nd/one_authentication_system_to_cover_all_modern/)
+- url: https://www.reddit.com/r/rails/comments/ewt1nd/one_authentication_system_to_cover_all_modern/
+---
+I have a react app with rails backend which needs to support the following:
+
+1. all the devise stuff like sign up, sign in, sign out, confirmation via email, forget password
+2. Need a way to authenticate\_user! based on JWT Tokens
+3. Support for refresh\_token so that we can keep the user logged in
+4. External authentication systems like Login via Google and Facebook
+
+As I understand these 4 requirements are pretty standard for a modern web app. I was surprised to see the lack of a single out of the box solution for it. Here's what I know.
+
+* Devise is necessary. We need something that extends it to do the rest.
+* Omniauth plugin for devise covers 4
+* devise-jwt covers 2 but not 3
+* doorkeeper covers 2 and 3, but struggles with 4 and steps on devise's shoes in places.
+
+Does anyone have any suggestions to consider?
+## [4][Is it possible to use Rails 6 with SQL Server (MSSQL)?](https://www.reddit.com/r/rails/comments/ewx2q2/is_it_possible_to_use_rails_6_with_sql_server/)
+- url: https://www.reddit.com/r/rails/comments/ewx2q2/is_it_possible_to_use_rails_6_with_sql_server/
+---
+We were hoping to jump to the latest version of rails to rectify a bunch of identified vulnerabilities.  This Rails code is heavily hand edited, so if necessary, switching from tiny_tds would not be unthinkable, but the data we are fetching is, and will always be in an MS SQL database.  Must we use rails 5.x?
+## [5][perform the follower or follower function](https://www.reddit.com/r/rails/comments/ex1mjg/perform_the_follower_or_follower_function/)
+- url: https://www.reddit.com/r/rails/comments/ex1mjg/perform_the_follower_or_follower_function/
+---
+Good afternoon a question how can I perform the follower or follower function for my project, a tutorial or documentation
+
+Thank you
+## [6][Fonts haven't been changed.](https://www.reddit.com/r/rails/comments/ewshzl/fonts_havent_been_changed/)
+- url: https://www.reddit.com/r/rails/comments/ewshzl/fonts_havent_been_changed/
+---
+A long time ago, I made a font-api, and I wanted to use that in my current rails project. So, I tested two scenarios and non of them worked. 
+
+1. Font API :   
+my API works like this, you add this to your html file and then call fonts in CSS stylings.   
+&lt;link rel="stylesheet" type="text/css" href="[http://api.azadqalam.ir/fonts?font=FONTNAME](http://api.azadqalam.ir/fonts?font=FONTNAME) /&gt; 
+2. This : [https://gist.github.com/anotheruiguy/7379570](https://gist.github.com/anotheruiguy/7379570)   
+
+
+I did both of them and I performed : 
+
+    rake assets:precompile
+    
+
+But I still see system's default font in the project!
+## [7][ActionCable (Redis) -&gt; reconnect on redis connection error](https://www.reddit.com/r/rails/comments/ewn1e4/actioncable_redis_reconnect_on_redis_connection/)
 - url: https://www.reddit.com/r/rails/comments/ewn1e4/actioncable_redis_reconnect_on_redis_connection/
 ---
 Hello! 
@@ -53,7 +98,88 @@ I would like to connect to a different Redis url when the connection error occur
 Is it possible to do with ActionCable.
 
 I know it is possible with ActiveRecord database connection
-## [4][What is everyone using as wrapper for hybrid app?](https://www.reddit.com/r/rails/comments/ewlmre/what_is_everyone_using_as_wrapper_for_hybrid_app/)
+## [8][How can I convert this polymorphic association and what is the difference in the 2 methods?](https://www.reddit.com/r/rails/comments/ewpf9f/how_can_i_convert_this_polymorphic_association/)
+- url: https://www.reddit.com/r/rails/comments/ewpf9f/how_can_i_convert_this_polymorphic_association/
+---
+Hello, I'm trying to convert a polymorphic association that is written as (for example):
+
+    # models
+    class Exam
+      has_many :questions, -&gt; { Question.where(question_type: "graded") }, foreign_key: :question_type_id, dependent: :destroy
+    end
+    
+    class Survey
+      has_many :questions, -&gt; { Question.where(question_type: "accumulated") }, foreign_key: :question_type_id, dependent: destroy
+    end
+    
+    class Question
+      has_many :choices, dependent: :destroy
+    end
+
+I'd like to convert this using Rails' polymorphic association, so it'd look probably like:
+
+    # models
+    class Exam
+      has_many :questions, as: :question_able  
+    end
+    
+    class Survey
+      has_many :questions, as: :question_able
+    end
+    
+    class Question
+      belongs_to :question_able, polymorphic: true   ## not sure how to name it..
+      has_many :choices, dependent: :destroy
+    end
+
+My questions are..
+
+1. How would I go about making the proper migration to make this change? I'm confused how I can make the existing fields \`question\_type\` and \`question\_type\_id\`  convert to the rails polymorphic association. I guess in this example, it would then have to change to \`question\_able\_id\` and \`question\_able\_type\`.
+2. My models before passed a scope by \`question\_type\` where it could be either "accumulated" or "graded". How can  \`question\_type\` be scoped in the rails polymorphic association?
+3. What is the difference between both ways?
+4. How do you name the polymorphic association when the class name is sort of vague in terms of what it is? In my app, I have classes that are named following a given industries lingo, so simply adding the suffix "-able" as the polymorphic association name makes it seem weird.
+## [9][Never worked directly with Redis, anything I could be doing better in this code?](https://www.reddit.com/r/rails/comments/ewsfgh/never_worked_directly_with_redis_anything_i_could/)
+- url: https://www.reddit.com/r/rails/comments/ewsfgh/never_worked_directly_with_redis_anything_i_could/
+---
+I wrote a throttler in Redis and it seems to work out okay for the most part, but the connections to the Redis server seem to shoot up randomly until it is exceeded and starts throwing errors. I'm wondering if there is a mistake in the way I've written this little library.
+
+    module Throttle
+        MAX_WAIT = 20
+        INCREMENT = 1
+    
+        class &lt;&lt; self
+            def limit(user, &amp;block)
+                wait_for_credit(user)
+    
+                yield
+            end
+    
+            def wait_for_credit(user)
+                redis = Redis.new
+    
+                key = "rate-limit-#{user.username}"
+                current = redis.get(key).to_i
+                time_waited = 0
+                
+                while current != nil &amp;&amp; current &gt;= 2
+                    raise StandardError, "Could not get credit in time" and return if time_waited &gt; MAX_WAIT
+        
+                    time_waited = time_waited + 1
+                    sleep(INCREMENT)
+    
+                    current = redis.get(key).to_i
+                end
+    
+                redis.multi do
+                    redis.incr(key)
+                    redis.expire(key, 1)
+                end
+            end
+        end
+    end
+
+Does this generally look okay, or am I making some dumb mistake somewhere in this code?
+## [10][What is everyone using as wrapper for hybrid app?](https://www.reddit.com/r/rails/comments/ewlmre/what_is_everyone_using_as_wrapper_for_hybrid_app/)
 - url: https://www.reddit.com/r/rails/comments/ewlmre/what_is_everyone_using_as_wrapper_for_hybrid_app/
 ---
 I've got a working PWA built with Rails and Turbolinks.  It has notifications too (only working on Android).
@@ -66,124 +192,11 @@ https://github.com/turbolinks/turbolinks-android and https://github.com/turbolin
 What would be good alternatives?  Has anyone tried Cordova in combination with Rails (and Turbolinks)?  Any other suggestions.  Mind you: it's not a single page app, it's a normal Rails app, that currently also works as a PWA.
 
 Curious to hear what others are using.
-## [5][What is everyone doing for caching images served by ActiveStorage? I see the pull-request 34477 has not been merged](https://www.reddit.com/r/rails/comments/ewe9fw/what_is_everyone_doing_for_caching_images_served/)
-- url: https://www.reddit.com/r/rails/comments/ewe9fw/what_is_everyone_doing_for_caching_images_served/
+## [11][How to do a rest consult for api with a keystore](https://www.reddit.com/r/rails/comments/ewq8c1/how_to_do_a_rest_consult_for_api_with_a_keystore/)
+- url: https://www.reddit.com/r/rails/comments/ewq8c1/how_to_do_a_rest_consult_for_api_with_a_keystore/
 ---
-[https://github.com/rails/rails/pull/34477/files](https://github.com/rails/rails/pull/34477/files)
-
-&amp;#x200B;
-
-looks like a great solution. Has anyone turned this into a GEM that needs a signal boost or what?!?!
-## [6][Tests and CI/Cd - How to start from almost nothing?](https://www.reddit.com/r/rails/comments/ewa9ah/tests_and_cicd_how_to_start_from_almost_nothing/)
-- url: https://www.reddit.com/r/rails/comments/ewa9ah/tests_and_cicd_how_to_start_from_almost_nothing/
+Hello guys Im trying to do a connection with a key but i'm not sure how to use the keystore in ruby, can you help me to understand their use, one example with rest and keystore can be very good for me, thanks
+## [12][Server failed to process the image](https://www.reddit.com/r/rails/comments/ewtd7w/server_failed_to_process_the_image/)
+- url: https://www.reddit.com/r/rails/comments/ewtd7w/server_failed_to_process_the_image/
 ---
-Our codebase is a mess. It's a huge app and for the longest time we managed to survive without tests. Now we have a bit of time to do some tests. Aside from making sure that new code must have tests, how can we slowly improve our test coverage? Do you have tips? We have more than 15 people pushing code to the app's repo every day.
-## [7][installed bootstrap 4.4 on rails 6](https://www.reddit.com/r/rails/comments/ewfyqt/installed_bootstrap_44_on_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/ewfyqt/installed_bootstrap_44_on_rails_6/
----
-I installed bootstrap 4.4 on rails 6 by following this gist: [https://gist.github.com/bazzel/2c64e2e5804077f9a61938a93ed54823](https://gist.github.com/bazzel/2c64e2e5804077f9a61938a93ed54823)
-
-What I'm not sure of is:
-
-is this line
-
-    &lt;%= stylesheet_pack_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
-
-supposed to replace this pre-existing line:
-
-    &lt;%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
-
-or added next to it.
-## [8][Create a rest SSL request](https://www.reddit.com/r/rails/comments/ewfca1/create_a_rest_ssl_request/)
-- url: https://www.reddit.com/r/rails/comments/ewfca1/create_a_rest_ssl_request/
----
-Hello guys I have a problem, I'm trying to create a connection with a external server with ssl credentials but I get errors with the authentication the members from the service told me that I need to add a pem file in my keystore but it's from java and Im not sure about how do it in rails I try with this code but I can't connect with the server, if anyone can help me I will be very grateful
-
-&amp;#x200B;
-
-RestClient::Request.execute(
-
-method: "PUT",
-
-url: "#{ENV\['STP\_HOST'\]}/ordenPago/registra",
-
-payload: json\_stp\_registra,
-
-headers: {
-
-"Content-Type" =&gt; "application/json",
-
-accept: "application/json"
-
-}).body
-## [9][How do you write request specs for APIs?](https://www.reddit.com/r/rails/comments/ew8tyr/how_do_you_write_request_specs_for_apis/)
-- url: https://www.reddit.com/r/rails/comments/ew8tyr/how_do_you_write_request_specs_for_apis/
----
-Hi all,
-
-I've been trying to push myself deeper into thinking about effective and elegant testing strategies and I'm struggling to come up with a flow for writing request specs for my JSON API. Right now, I feel like I'm just randomly coming up with things to test and the code comes out really repetitive. Do you guys have any tools/blogs/resources to help me figure out where to start here?
-## [10][Runtime error](https://www.reddit.com/r/rails/comments/ew9oy3/runtime_error/)
-- url: https://www.reddit.com/r/rails/comments/ew9oy3/runtime_error/
----
- 
-
-I tried doing Rails s and was prompted with this error Webpacker configuration file not found /home/user1/Mycollect/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ rb\_sysopen - /home/user1/Mycollect/config/webpacker.yml (RuntimeError) 
-
-W​hen I then try to run the command rails webpacker:install it gives me this error,   
-
-
-rails aborted!  
-ArgumentError: Malformed version number string 0.32+git  
-/home/user1/Mycollect/vendor/cache/gems/webpacker-4.2.2/lib/tasks/webpacker/check\_yarn.rake:12:in \`block (2 levels) in &lt;main&gt;'  
-/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/commands/rake/rake\_command.rb:23:in \`block in perform'  
-/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/commands/rake/rake\_command.rb:20:in \`perform'  
-/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/command.rb:48:in \`invoke'  
-/home/user1/Mycollect/vendor/cache/gems/railties-6.0.2.1/lib/rails/commands.rb:18:in \`&lt;main&gt;'  
-/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:22:in \`require'  
-/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:22:in \`block in require\_with\_bootsnap\_lfi'  
-/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/loaded\_features\_index.rb:92:in \`register'  
-/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:21:in \`require\_with\_bootsnap\_lfi'  
-/home/user1/Mycollect/vendor/cache/gems/bootsnap-1.4.5/lib/bootsnap/load\_path\_cache/core\_ext/kernel\_require.rb:30:in \`require'  
-/home/user1/Mycollect/vendor/cache/gems/activesupport-6.0.2.1/lib/active\_support/dependencies.rb:325:in \`block in require'  
-/home/user1/Mycollect/vendor/cache/gems/activesupport-6.0.2.1/lib/active\_support/dependencies.rb:291:in \`load\_dependency'  
-/home/user1/Mycollect/vendor/cache/gems/activesupport-6.0.2.1/lib/active\_support/dependencies.rb:325:in \`require'  
-/home/user1/Mycollect/bin/rails:9:in \`&lt;top (required)&gt;'  
-/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`load'  
-/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`call'  
-/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client/command.rb:7:in \`call'  
-/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/client.rb:30:in \`run'  
-/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/bin/spring:49:in \`&lt;top (required)&gt;'  
-/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`load'  
-/home/user1/Mycollect/vendor/cache/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`&lt;top (required)&gt;'  
-/home/user1/Mycollect/bin/spring:15:in \`&lt;top (required)&gt;'  
-bin/rails:3:in \`load'  
-bin/rails:3:in \`&lt;main&gt;'  
-Tasks: TOP =&gt; webpacker:install =&gt; webpacker:check\_yarn  
-(See full trace by running task with --trace)  
-Wondering if anyone knows a quick fix?
-## [11][Handy cheat sheet comparing all the different ways to set attributes with ActiveRecord on Rails 6](https://www.reddit.com/r/rails/comments/ewb0fv/handy_cheat_sheet_comparing_all_the_different/)
-- url: https://www.reddit.com/r/rails/comments/ewb0fv/handy_cheat_sheet_comparing_all_the_different/
----
-I put together a handy cheat sheet for quickly comparing all the different ways you can set attributes on an Active Record object in Rails 6. At a glance the cheat sheet shows you which methods save to the database, run validations, run callbacks, update timestamps, etc.
-
-[https://scottbartell.com/2020/01/30/set-attributes-in-active-record-rails-6/](https://scottbartell.com/2020/01/30/set-attributes-in-active-record-rails-6/)
-
-&amp;#x200B;
-
-A bit of context... a few years ago I came across a similar cheat sheet created by [David Verhasselt for Rails 4](https://davidverhasselt.com/set-attributes-in-activerecord/) and I found it to be such a useful reference that I eventually made my own for [Rails 5](https://scottbartell.com/2019/07/15/set-attributes-in-active-record-rails-5/). The Rails 5 guide has continued to be useful in my day-to-day so I made this new one for [Rails 6](https://scottbartell.com/2020/01/30/set-attributes-in-active-record-rails-6/)!
-
-&amp;#x200B;
-
-I'm very open to feedback / suggestions to make this an even more valuable resource -- please share your thoughts!
-## [12][Best ways to do RESTful authentication](https://www.reddit.com/r/rails/comments/ew3pwo/best_ways_to_do_restful_authentication/)
-- url: https://www.reddit.com/r/rails/comments/ew3pwo/best_ways_to_do_restful_authentication/
----
-I have finished my project and it's ready for being deployed. I used different technologies and tools such as MySQL and Devise. And of course, I asked a lot of questions (I can say at least 5 of them were in this sub :D) to learn more. 
-
-Now, I have a bunch of questions and ambiguities. I have plans of having an android app for our app. I even talked to an android developer and she said she needs an API (which is not surprising) and these came to my mind : 
-
-* For login, I can't simply send a string as password. I need a token authentication. But I couldn't find any clear explanation on how to do that. I found libraries and gems, but most of them had no clear documentation. I used devise for managing my users, so I of course need a way to do token authentication with devise. 
-* As the project will be launched in a day or two, and the app takes time to be published, I have another ambiguity. How can force previous users to get a token? 
-* And what about sign-ups? Isn't it unsafe to send information as plain text to the server? or sign-ups can have a token too? 
-
-These were what came into my mind. I'll be thankful of your answers and discussions.
+I was trying to upload an image for a product using solidus and I keep getting the same error which is: " Server failed to process the image". Does anyone know how to fix this?

@@ -33,63 +33,65 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/01/28/this-week-in-rust-323/
 ---
 
-## [3][Current state of asynchronous programming in Rust](https://www.reddit.com/r/rust/comments/ewm7gp/current_state_of_asynchronous_programming_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/ewm7gp/current_state_of_asynchronous_programming_in_rust/
----
-I've read a few chapters from the incomplete [async-book](https://rust-lang.github.io/async-book/) and found that the async ecosystem is quite confusing at the moment. For a new Rustacean (like me), is now the right time to start learning asynchronous programming in Rust? Or come back later when the ecosystem is more mature?
-
-Another question is where (which library) should we start from, here's my understanding and please correct me if I'm wrong: The std `Future` trait and `async/await` syntax were stabilized in Rust 1.39, but most existing libraries were build on the [rust-lang/futures-rs](https://github.com/rust-lang/futures-rs) crate, then eventually the futures-rs crate will be deprecated and the whole ecosystem will migrate to std?
-## [4][Pueue: Manage your shell commands. Now rewritten in Rust.](https://www.reddit.com/r/rust/comments/ewklg5/pueue_manage_your_shell_commands_now_rewritten_in/)
-- url: https://github.com/nukesor/pueue
+## [3][Maybe a dumb question, but the page says "150 of 381 crates". How do I find the rest of them? There's no next page link.](https://www.reddit.com/r/rust/comments/ex0t6b/maybe_a_dumb_question_but_the_page_says_150_of/)
+- url: https://lib.rs/game-engines
 ---
 
-## [5][Announcing Rust 1.41.0 | Rust Blog](https://www.reddit.com/r/rust/comments/ew8htz/announcing_rust_1410_rust_blog/)
-- url: https://blog.rust-lang.org/2020/01/30/Rust-1.41.0.html
+## [4][Difference among Deref, Borrow, and AsRef](https://www.reddit.com/r/rust/comments/ex50zg/difference_among_deref_borrow_and_asref/)
+- url: https://www.reddit.com/r/rust/comments/ex50zg/difference_among_deref_borrow_and_asref/
+---
+My impression is that `Borrow&lt;T&gt;` has the same semantics as `Deref&lt;Target=T&gt;` except for the operator overloading part, and `AsRef&lt;T&gt;` has no special semantic requirement.
+## [5][Today the Veloren team is proud to announce version 0.5 of the open-source voxel RPG, featuring many new features and dozens of improvements, big and small.](https://www.reddit.com/r/rust/comments/ewt0md/today_the_veloren_team_is_proud_to_announce/)
+- url: https://veloren.net/
 ---
 
-## [6][Performance comparison of swc and babel](https://www.reddit.com/r/rust/comments/ewkd01/performance_comparison_of_swc_and_babel/)
-- url: https://www.reddit.com/r/rust/comments/ewkd01/performance_comparison_of_swc_and_babel/
----
-https://swc-project.github.io/blog/2020/01/31/perf-swc-vs-babel
-
-`swc` is a typescript / javascript compiler, which takes next-generation javascript input and emits javascript codes which work on the old browsers.
-
-swc is written in rust, and babel is written in js.
-
-
-TL;DR;
-
-Even when swc does more work than babel, 
- - swc is 20x faster than babel on a single-core benchmark.
- - swc is 68x faster than babel on a multicore benchmark. (4 physical core, HT enabled)
-
-
-[swc repository](https://github.com/swc-project/swc)
-## [7][Say hello to OpenSK: a fully open-source security key implementation](https://www.reddit.com/r/rust/comments/ewb4y8/say_hello_to_opensk_a_fully_opensource_security/)
-- url: https://security.googleblog.com/2020/01/say-hello-to-opensk-fully-open-source.html
+## [6][Nestur: NES emulator in Rust](https://www.reddit.com/r/rust/comments/ewqiuh/nestur_nes_emulator_in_rust/)
+- url: https://github.com/spieglt/nestur
 ---
 
-## [8][First (0.1.0) release of new provenanced YAML library](https://www.reddit.com/r/rust/comments/ewn80v/first_010_release_of_new_provenanced_yaml_library/)
-- url: https://www.reddit.com/r/rust/comments/ewn80v/first_010_release_of_new_provenanced_yaml_library/
+## [7][Implemented From&lt;SomeT&gt; for MyT. Do I have to implement &amp;SomeT, &amp;mut SomeT manually?](https://www.reddit.com/r/rust/comments/ex3yzw/implemented_fromsomet_for_myt_do_i_have_to/)
+- url: https://www.reddit.com/r/rust/comments/ex3yzw/implemented_fromsomet_for_myt_do_i_have_to/
 ---
-Today I released 0.1.0 of my [`marked-yaml`](https://crates.io/crates/marked-yaml) library ([Github](https://github.com/kinnison/marked-yaml), [docs.rs](https://docs.rs/marked-yaml)).
+Hey guys,
 
-In brief, it's meant for parsing YAML into a data structure where all the values are marked with provenance of where they're from in the input string.  This lets you read YAML and then give feedback to users when there are issues of where those issues came from in the input they provided.
+I implemented the `From` trait for my `Session` type like this:
 
-It's early days and I might change the API dramatically, but I hope this might be of interest/use to others.  I am using it for providing better error messages than I could before in a project I'm working on with a friend.
-## [9][My first month of Rust](https://www.reddit.com/r/rust/comments/ewmmt4/my_first_month_of_rust/)
-- url: https://engineering.telia.no/blog/my-first-month-of-rust
+    impl From&lt;Connection&gt; for Session {
+        fn from(con: &amp;Connection) -&gt; Result&lt;Self, Error&gt; {
+            Session::restore(&amp;con.hostname, &amp;con.session_id)
+        }
+    }
+
+Creating a `Session` from a `Connection` works as expected but when I try to create a `Session` from a `&amp;mut Connection` I get the message, that the `From` trait is not implemented.
+
+Of course I can just implement `From&lt;&amp;mut Connection&gt; for Session` manually to work around this but I guess there is a method to automatically implement `From` for `&amp;T` and `&amp;mut T` when I implement From for `T`
+
+Thank you in advance :)
+## [8][Chunked Http post request with reqwest?](https://www.reddit.com/r/rust/comments/ex4sdl/chunked_http_post_request_with_reqwest/)
+- url: https://www.reddit.com/r/rust/comments/ex4sdl/chunked_http_post_request_with_reqwest/
+---
+I've been looking to send an audio via http in a chunked way with reqwest (mostly because I'm sending something recorded on the moment and I want it to be sent ASAP), so far I haven't seen any way, anyone knows how to do this?
+## [9][Writing an OS in Rust: Updates in January 2020](https://www.reddit.com/r/rust/comments/ex654n/writing_an_os_in_rust_updates_in_january_2020/)
+- url: https://os.phil-opp.com/status-update/2020-02-01/
 ---
 
-## [10][Build your own executor](https://www.reddit.com/r/rust/comments/ewodxc/build_your_own_executor/)
+## [10][Better way to map a result to non-result? Like a question mark operator for non results?](https://www.reddit.com/r/rust/comments/ex0yn8/better_way_to_map_a_result_to_nonresult_like_a/)
+- url: https://www.reddit.com/r/rust/comments/ex0yn8/better_way_to_map_a_result_to_nonresult_like_a/
+---
+Hey all, I have a pattern a lot that results in some ugly code. You can see an example of it in this rust playground:
+
+https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=f4b9a9b1429a6acdef65dbfe035ddd4d
+
+Basically, when you have fn's that return errors, and inside your function you call functions that have errors, the `?` operator is the best thing ever. But what if that outer function does NOT return an error? Is there a way to map the error to a value and return that if there was an error? Thanks!
+## [11][Build your own executor](https://www.reddit.com/r/rust/comments/ewodxc/build_your_own_executor/)
 - url: https://stjepang.github.io/2020/01/31/build-your-own-executor.html
 ---
 
-## [11][The 2020 Rust Event Lineup](https://www.reddit.com/r/rust/comments/ewmb99/the_2020_rust_event_lineup/)
-- url: https://blog.rust-lang.org/2020/01/31/conf-lineup.html
+## [12][How to perform square root of a generic type](https://www.reddit.com/r/rust/comments/ewy548/how_to_perform_square_root_of_a_generic_type/)
+- url: https://www.reddit.com/r/rust/comments/ewy548/how_to_perform_square_root_of_a_generic_type/
 ---
+Hello,  im currently making a vector crate (for learning purposes) and I came across a problem. I'm using generics for the type that the vector holds,
 
-## [12][Bastion 0.3.4: Start of the New Era](https://www.reddit.com/r/rust/comments/ewby1r/bastion_034_start_of_the_new_era/)
-- url: https://blog.bastion.rs/2020/01/30/new-age-of-bastion.html
----
+`pub struct Evec2&lt;T&gt;{pub x: T, pub y: T}`
 
+ and it makes it impossible to perform the square root of the vector's components, because the square root is not a trait defined like other operators (std :: ops). can someone tell me some trick to work around this

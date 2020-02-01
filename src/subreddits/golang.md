@@ -1,70 +1,85 @@
 # golang
-## [1][How to optimize PDFs using Go](https://www.reddit.com/r/golang/comments/ewmauy/how_to_optimize_pdfs_using_go/)
-- url: https://www.reddit.com/r/golang/comments/ewmauy/how_to_optimize_pdfs_using_go/
+## [1][Python (Flask) web developer interested in learning more about GoLang!](https://www.reddit.com/r/golang/comments/ex40nx/python_flask_web_developer_interested_in_learning/)
+- url: https://www.reddit.com/r/golang/comments/ex40nx/python_flask_web_developer_interested_in_learning/
 ---
-You can optimize PDFs using Go language. 
+Hey GoLangeers! :)
+I am interested in learning about web development in Go, I already know the basics of Go and want to learn more about building web apps.
+What resources do y'all recommend?
+## [2][Why use go at small scale when you have the convenience of rails and flask/django?](https://www.reddit.com/r/golang/comments/ex18cx/why_use_go_at_small_scale_when_you_have_the/)
+- url: https://www.reddit.com/r/golang/comments/ex18cx/why_use_go_at_small_scale_when_you_have_the/
+---
+Sorry if this post is inappropriate for the sub, but I've really been struggling to digest the reasoning by the verbosity of go web development (mainly in HTTP template rendering/value insertion and static content rendering). Is there a reason why one would recommend go at a smaller scale over an MVC framework/scripting language? Thanks again.
+## [3][Thoughts about real time communication from SPA to and from Go client over websocket](https://www.reddit.com/r/golang/comments/ewzkc1/thoughts_about_real_time_communication_from_spa/)
+- url: https://www.reddit.com/r/golang/comments/ewzkc1/thoughts_about_real_time_communication_from_spa/
+---
+I've been working for about 1 1/2 years on and off on a multi-forum application  that is written in Angular on the client side and Go on the server side.
 
-The linked article explains how you can compress PDFs using a library based on Go. You can even create new PDFs or edit old ones but you may need to have a basic understanding of the PDF structure to get it working efficiently. 
+In Angular it uses ngrx/data which requires a simple data structure and RESTful communication.
 
-  
- [https://unidoc.io/news/compressing-and-optimizing-pdfs-golang](https://unidoc.io/news/compressing-and-optimizing-pdfs-golang)
-## [2][Noise v1.1.2: Fearless, decentralized p2p networking in Go.](https://www.reddit.com/r/golang/comments/ewm9wd/noise_v112_fearless_decentralized_p2p_networking/)
-- url: https://medium.com/perlin-network/noise-v1-1-2-fearless-decentralized-p2p-networking-in-go-bf3afdd77230
+On the Go side it's postgres for the time being. It doesn't use NOTIFY/LISTEN because of the 8MB limit but my own little invention that is essentially a channel that sends updates via websocket to the clients.
+
+The message is simple
+```JSON
+{
+"table": "table-name",
+"action:" ["UPDATE","INSERT","DELETE"],
+"data": {"id":"entity_id", "the":"payload"}
+}
+```
+
+This way the client is always up to date. The sent message gets filtered on the client and the appropriate cached entities are updated, inserted or deleted.
+
+On initial application load (client side) the client requests all data from the server. At some point I'll have to limit this to let's say the last 2 years and the rest should then be lazily loaded on demand.
+
+The problem: imagine 10000 communities with 10 categories each with 100 forums each with 1000s of threads and 1000000s of posts in them and all emitting changes.
+What happens in community A when I'm in community B isn't relevant for me right now.
+Only when I enter community A should changes in community A and its related entities be transmitted. 
+I could send location updates every time I navigate to a new community, and that works, however I have to go through a non-trivial navigation through the entity hierarchy, yes I could attach the communityID to every entity but that seems non-elegant.
+
+There has to be a better way. A better pattern.
+
+I read about MQTT, pubsub etc.
+
+If I would use MQTT or some other kind of pubsub protocol or "technology", since messages are stored on the broker and the clients are receiving messages depending on last time active, that could also be a "bad way to go"TM.
+
+If I switch to purely SSR (server side rendered, with Go) I lose the real time feature and make myself vulnerable to spambots, which currently doesn't seem to be able to deal with SPA.
+
+How does, for instance, firebase handle this problem? Or is there an already established path, I'm sure I can't be the only one with that issue.
+## [4][Go: How Are Loops Translated to Assembly?](https://www.reddit.com/r/golang/comments/ex5z4o/go_how_are_loops_translated_to_assembly/)
+- url: https://medium.com/a-journey-with-go/go-how-are-loops-translated-to-assembly-835b985309b3
 ---
 
-## [3][A list of Go GUI projects](https://www.reddit.com/r/golang/comments/ew7odi/a_list_of_go_gui_projects/)
-- url: https://github.com/go-graphics/go-gui-projects
+## [5][0 to Go, building a CLI for Postwoman](https://www.reddit.com/r/golang/comments/ex5sl9/0_to_go_building_a_cli_for_postwoman/)
+- url: https://www.reddit.com/r/golang/comments/ex5sl9/0_to_go_building_a_cli_for_postwoman/
+---
+Wrote a blog post on Building a CLI
+
+https://blog.athulcyriac.co/pwcli
+## [6][Framework for automatic firmware reverse-engineering written in golang](https://www.reddit.com/r/golang/comments/ex4wfv/framework_for_automatic_firmware/)
+- url: https://github.com/9elements/autorev
 ---
 
-## [4][Micro v2.0.0 (gRPC by default)](https://www.reddit.com/r/golang/comments/ewmpz9/micro_v200_grpc_by_default/)
-- url: https://micro.mu/blog/2020/01/30/micro-v2.html
+## [7][GoWest Conference tickets](https://www.reddit.com/r/golang/comments/ewx8ke/gowest_conference_tickets/)
+- url: https://www.reddit.com/r/golang/comments/ewx8ke/gowest_conference_tickets/
+---
+We are happy to announce that tickets for the first ever GoWest Conference are officially on sale. This one day conference will be held on May 8th in Sandy, Utah. We are also offering 2 pre-conference workshops the day before the conference on May 7th. The workshop tickets are sold separately. Check out the link to purchase your tickets now. We have a limited number of early bird tickets so hurry up and get yours! The site with additional information about speakers and content will be up shortly. [https://ti.to/go-west-conf/2020](https://ti.to/go-west-conf/2020)
+## [8][Next steps for pkg.go.dev](https://www.reddit.com/r/golang/comments/ewpw5e/next_steps_for_pkggodev/)
+- url: https://blog.golang.org/pkg.go.dev-2020
 ---
 
-## [5][vim-go v1.22](https://www.reddit.com/r/golang/comments/ew975j/vimgo_v122/)
-- url: https://github.com/fatih/vim-go/releases/tag/v1.22
+## [9][GitHub - el10savio/goCircularRingBuffer: A bounded circular ring buffer queue implemented in Go](https://www.reddit.com/r/golang/comments/ex58hb/github_el10saviogocircularringbuffer_a_bounded/)
+- url: https://github.com/el10savio/goCircularRingBuffer
 ---
 
-## [6][What are some decent feature tools compatible with Go?](https://www.reddit.com/r/golang/comments/ewo7y9/what_are_some_decent_feature_tools_compatible/)
-- url: https://www.reddit.com/r/golang/comments/ewo7y9/what_are_some_decent_feature_tools_compatible/
+## [10][what is the good thing that makes my minimal web site?](https://www.reddit.com/r/golang/comments/ex4twt/what_is_the_good_thing_that_makes_my_minimal_web/)
+- url: https://www.reddit.com/r/golang/comments/ex4twt/what_is_the_good_thing_that_makes_my_minimal_web/
 ---
+At first, this is my first post at reddit. and i'm not good at english so you are hard to understant my word☺️.
 
+in short, i want to make my blog(will upload my pet 'bori's photo, and some text). so i studied wordpress. but some days ago, i knew if i use go framework, i can make blog like WP. some docu said go use effective memory, and if i use that my page will be fast than WP. plus, i don't need to concern about WP version &amp; it's plugins version. 
 
-   Hello.  I'm trying to introduce feature flags to my team, as I've pitched a pretty large migration and my strategy is to make some use of feature flags in this migration.  Without getting too specific we currently have an event driven architecture with listeners, a service layer (for APIs), a message bus and some workers/adapters.  I'm dealing with an extremely young team so many of the engineers on my staff do not know what feature flags are.  
+Anyway So i want to use Go language. i don't know well about Go. how can i make system structure(framework, db, and something...).
 
-   I'm looking for a feature flag library that probably isn't going to cost much (though money isn't an issue).   That's very lightweight and easy to maintain.   I've looked at this
+now i read Go guide, but if you have some advise please reply without hesitation.
 
-https://github.com/vsco/dcdr
-
-And it looks promising.  But it doesn't appear to be actively maintained.   I would love for some of you to weigh in
-## [7][go-mod-upgrade - Update outdated Go dependencies interactively](https://www.reddit.com/r/golang/comments/ewnzwo/gomodupgrade_update_outdated_go_dependencies/)
-- url: https://www.reddit.com/r/golang/comments/ewnzwo/gomodupgrade_update_outdated_go_dependencies/
----
-Hi,
-
-I created a small tool to update outdated Go dependencies interactively.
-
-You can find the source code as well as instructions on how to install and use it here:
-
-[https://github.com/oligot/go-mod-upgrade](https://github.com/oligot/go-mod-upgrade)
-## [8][[Code Review] Omdb api wrapper](https://www.reddit.com/r/golang/comments/ewnfge/code_review_omdb_api_wrapper/)
-- url: https://www.reddit.com/r/golang/comments/ewnfge/code_review_omdb_api_wrapper/
----
-Hi,
-
-Can someone give some feedback about my OMDB api wrapper. 
-
-[https://github.com/matad2k/GOmdb/tree/master/goomdb](https://github.com/matad2k/GOmdb/tree/master/goomdb)
-## [9][dynamic REST routing in Go real world examples](https://www.reddit.com/r/golang/comments/ewn3yq/dynamic_rest_routing_in_go_real_world_examples/)
-- url: https://www.reddit.com/r/golang/comments/ewn3yq/dynamic_rest_routing_in_go_real_world_examples/
----
-Hey folks,
-
-do you know any nice real world examples for dynamic rest routing done in Go? I'm reading through blogs n stuff, but its always that basic examples of a product shop or something that might not cover problems real applications are facing.
-## [10][Can Two TestMain run in parallel?](https://www.reddit.com/r/golang/comments/ewn09l/can_two_testmain_run_in_parallel/)
-- url: https://www.reddit.com/r/golang/comments/ewn09l/can_two_testmain_run_in_parallel/
----
-I have written two integration tests, one for db layer and other for service layer and I have two TestMain to do the db setup and tear down. Also, I am using the same db (mongo) in both the tests. My tests run fine locally but fails during the pipeline run with the error:
-
-`\`error[(DatabaseDropPending) Cannot create collection 5ca5a2c479358e67a64f927b_testdb.users - database is in the process of being dropped.]\``
-
-I believe the two TestMain are running in parallel and while one of them is dropping the db, the other one is trying to create indexes on that db. Can anyone please help?
+thanks~

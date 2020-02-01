@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/ewnwms/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/ewnwms/weekly_anything_goes_thread/
+## [1][App Feedback Thread - February 01, 2020](https://www.reddit.com/r/androiddev/comments/ex5gnu/app_feedback_thread_february_01_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/ex5gnu/app_feedback_thread_february_01_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - January 27, 2020](https://www.reddit.com/r/androiddev/comments/eumgji/weekly_questions_thread_january_27_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/eumgji/weekly_questions_thread_january_27_2020/
 ---
@@ -25,68 +40,64 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][GitHub - mohammadima3oud/Complete-Google-Map-API-Tutorial: Learn How to use Google Map API for Android from Basic to Advance with complete examples.](https://www.reddit.com/r/androiddev/comments/ewkycl/github/)
-- url: https://github.com/mohammadima3oud/Complete-Google-Map-API-Tutorial
+## [3][I'm in a Scoped Storage Holding Pattern](https://www.reddit.com/r/androiddev/comments/ewy86x/im_in_a_scoped_storage_holding_pattern/)
+- url: https://www.reddit.com/r/androiddev/comments/ewy86x/im_in_a_scoped_storage_holding_pattern/
 ---
-
-## [4][Is the compression performed on an app bundle guaranteed to be lossless?](https://www.reddit.com/r/androiddev/comments/ewn0ag/is_the_compression_performed_on_an_app_bundle/)
-- url: https://www.reddit.com/r/androiddev/comments/ewn0ag/is_the_compression_performed_on_an_app_bundle/
+I am waiting for Android R Beta release in a month or two so I can see what direction they took with the scoped storage.  So I am not targetting Android Q yet and haven't implemented any of those scoped storage changes.  I wonder how many other apps are doing the same
+## [4][Is the AMD Hypervisor better than Windows Hypervisor?](https://www.reddit.com/r/androiddev/comments/ex4981/is_the_amd_hypervisor_better_than_windows/)
+- url: https://www.reddit.com/r/androiddev/comments/ex4981/is_the_amd_hypervisor_better_than_windows/
 ---
-I just did an update and users are getting errors that could only make sense if lossy compression was being applied to my asset files.
-## [5][Play Store finally doesn't cut text on weird places of the "what's new" section](https://www.reddit.com/r/androiddev/comments/ewo8rx/play_store_finally_doesnt_cut_text_on_weird/)
-- url: https://www.reddit.com/r/androiddev/comments/ewo8rx/play_store_finally_doesnt_cut_text_on_weird/
+I'm using Windows Subsystem for Linux 2 (WSL 2) and it uses Hyper-V. The AMD Hypervisor is not able to work at the same time with it, but the WHPX can.
+## [5][Localizing my app to Brazilian Portuguese &amp; German](https://www.reddit.com/r/androiddev/comments/ex3u9h/localizing_my_app_to_brazilian_portuguese_german/)
+- url: https://www.reddit.com/r/androiddev/comments/ex3u9h/localizing_my_app_to_brazilian_portuguese_german/
 ---
-Remember this:
-
- [https://www.reddit.com/r/androiddev/comments/dhuecz/play\_store\_now\_concats\_the\_start\_and\_end\_of\_your/](https://www.reddit.com/r/androiddev/comments/dhuecz/play_store_now_concats_the_start_and_end_of_your/) 
-
-?  
-
-
-I've noticed that now it doesn't occur anymore and is [officially fixed by Google](https://issuetracker.google.com/issues/142859268#comment3). I've tried on multiple apps on the Play Store. 
-
-So, you don't have to worry about this anymore :)
-## [6][Dagger Android 2.26 now uses AndroidX](https://www.reddit.com/r/androiddev/comments/ew7ti3/dagger_android_226_now_uses_androidx/)
-- url: https://github.com/google/dagger/releases/tag/dagger-2.26
----
-
-## [7][Now in Android: The podcast](https://www.reddit.com/r/androiddev/comments/ewbpad/now_in_android_the_podcast/)
-- url: http://nowinandroid.googledevelopers.libsynpro.com/
----
-
-## [8][Alternate android stores](https://www.reddit.com/r/androiddev/comments/ewm0kr/alternate_android_stores/)
-- url: https://www.reddit.com/r/androiddev/comments/ewm0kr/alternate_android_stores/
----
-This has been asked many times before but much of the material that could be found was more than 5 years old so wanted to get latest update on how is the experience publishing on SlideMe and Samsung Stores in particular? Issues of payment and refund, apk integrity (read Amazon changes dev's apk on their own so...), does it affect your publisher status on other stores or any other specific issues.
-
-Also if anybody can relate a positive experience with any other store or make any recommendations they are most welcome.
-
+My app has a fair share of user base from Brazil &amp; Germany. I'm considering translating my app to Brazilian Portuguese &amp; German. Right now the app is available in English only.
+Is it worth doing the translation? How popular is English in these countries? What is the primary language in their mobile phones in these countries?
+Anybody from these countries can chime in? 
 Thanks in advance.
-## [9][Need help with implementing Design library](https://www.reddit.com/r/androiddev/comments/ewo679/need_help_with_implementing_design_library/)
-- url: https://www.reddit.com/r/androiddev/comments/ewo679/need_help_with_implementing_design_library/
+## [6][Tired of asking about specific method signature during job interview](https://www.reddit.com/r/androiddev/comments/ex4mlp/tired_of_asking_about_specific_method_signature/)
+- url: https://www.reddit.com/r/androiddev/comments/ex4mlp/tired_of_asking_about_specific_method_signature/
 ---
-I'm kinda new to the world of android development. I need help with implementing design library, that would look something like this: 
+Android job interview became truly ridiculous there days!
 
- implementation '[com.android.support](https://com.android.support):design:28.0.0'. 
+Android SDK is so huge and is getting bigger, add old school Java (one day I stepped upon a vipers nest "job opportunity" - the very 1st question was "what are all methods of java.lang.Object.java" and I immediately run away from those freaks), new school Kotlin maddness, add Android BLE quirks, backward compatibility here, forward compatiblity there and you get insane.
 
-this is showing an error. I'm running android studio version 3.5.3.
-## [10][Bottom Nav or Tabs](https://www.reddit.com/r/androiddev/comments/ewo64b/bottom_nav_or_tabs/)
-- url: https://www.reddit.com/r/androiddev/comments/ewo64b/bottom_nav_or_tabs/
+Next time I get the feeling that the person I'm talking with is trying to be a smart-ass I want to tell him "listen, Android SDK is X milions of lines of code and you're trying to ask me about one of it, are you feeling ok?"
+
+Can you people tell me what is X?
+## [7][What is an Android Dev related hill you are willing to die on?](https://www.reddit.com/r/androiddev/comments/ewrw3q/what_is_an_android_dev_related_hill_you_are/)
+- url: https://www.reddit.com/r/androiddev/comments/ewrw3q/what_is_an_android_dev_related_hill_you_are/
 ---
-Do you guys and girls prefer bottom nav or tabs? They're both ergonomic forms of navigation, but bottom nav(for Android at least) doesn't look right because it's stacked on the system navigation. I personally prefer tabs, but so many popular apps use bottom nav. Thoughts?
-## [11][Good resourcesLearning Java for app development(i already know C++)](https://www.reddit.com/r/androiddev/comments/ewnpm4/good_resourceslearning_java_for_app_developmenti/)
-- url: https://www.reddit.com/r/androiddev/comments/ewnpm4/good_resourceslearning_java_for_app_developmenti/
+Most people have at least one opinion they will fight tooth and nail to defend, what's yours?
+## [8][Is there any cloud service supporting the SAF's ACTION_OPEN_DOCUMENT_TREE ?](https://www.reddit.com/r/androiddev/comments/ex4i1f/is_there_any_cloud_service_supporting_the_safs/)
+- url: https://www.reddit.com/r/androiddev/comments/ex4i1f/is_there_any_cloud_service_supporting_the_safs/
 ---
-Can someone please tell me where can I learn java when I already know C++?
-## [12][Add 'Play in VR' option to an image](https://www.reddit.com/r/androiddev/comments/ewk44t/add_play_in_vr_option_to_an_image/)
-- url: https://www.reddit.com/r/androiddev/comments/ewk44t/add_play_in_vr_option_to_an_image/
+In particular, and to my dismay, Google Drive does not support `ACTION_OPEN_DOCUMENT_TREE`, thus you cannot pick a folder on Google Drive (for example for saving a file in it). That's incomprehensible since you can open a file with Google Drive with the SAF using `ACTION_OPEN_DOCUMENT`. 
+So you cannot save a file to Google Drive with the SAF (unless I missed something) but you can open files from it. Makes total sense...
+Is there any cloud provider (or anything else than local storage) that has implemented `ACTION_OPEN_DOCUMENT_TREE` ?
+## [9][Takeaways comparing Flutter to Jetpack Compose](https://www.reddit.com/r/androiddev/comments/ewq88p/takeaways_comparing_flutter_to_jetpack_compose/)
+- url: https://medium.com/@jolanda.verhoef/take-aways-comparing-flutter-to-jetpack-compose-a26775617e38
 ---
-Hey devs, I'm developing a Museum Gallery app which will play videos and images in VR. These are the problems I'm facing:
 
-1) There are no online tutorial on how to open a images in VR in Android Studio (like if I click on a VR icon, one specific image will open in standard VR mode). How to do this? 
+## [10][App not listed in App drawer after installing using USB and Android Studio](https://www.reddit.com/r/androiddev/comments/ex60bg/app_not_listed_in_app_drawer_after_installing/)
+- url: https://www.reddit.com/r/androiddev/comments/ex60bg/app_not_listed_in_app_drawer_after_installing/
+---
+Hello everyone,
 
-2) I can ask a user to import images. Is it possible to arrange those images in 3D space which can be played in VR? 
+I test and debug an app I currently work on, on my mobile phone. To install it, I connected it with an USB cable with the PC, enabled the USB debugging settings on my phone and installed it using Android Studio.
 
-I'll be grateful to the dev who will help me.
+However, for some reason, it does get installed, works and runs completely fine, but doesn't appear in the App drawer where all Apps are usually listed. Any idea why this is the case?
 
-Thanks for the help.
+If you need any technical information, like settings on my mobile phone or source code, tell me! :) Thanks for any help!
+## [11][android hangouts](https://www.reddit.com/r/androiddev/comments/ex5k1s/android_hangouts/)
+- url: https://www.reddit.com/r/androiddev/comments/ex5k1s/android_hangouts/
+---
+Dear friends, 
+
+Can you give some advices/ideas about how&amp;where to get fast response for easy questions or to hangout for those of us that are learning android by themselves, that are not in school anymore or doesn't have programmers colleagues.
+
+I'm trying to learn Kotlin for android by myself and I'll like to join some real-time chat communities like irc or something like that.
+## [12][How would someone create kernel sources for a device if they aren't released?](https://www.reddit.com/r/androiddev/comments/ex4my6/how_would_someone_create_kernel_sources_for_a/)
+- url: https://www.reddit.com/r/androiddev/comments/ex4my6/how_would_someone_create_kernel_sources_for_a/
+---
+

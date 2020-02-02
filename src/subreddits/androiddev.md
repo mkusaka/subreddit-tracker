@@ -40,22 +40,60 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I'm in a Scoped Storage Holding Pattern](https://www.reddit.com/r/androiddev/comments/ewy86x/im_in_a_scoped_storage_holding_pattern/)
-- url: https://www.reddit.com/r/androiddev/comments/ewy86x/im_in_a_scoped_storage_holding_pattern/
+## [3][LocallyDynamic: Dynamic Delivery without Google Play - download and install your split APK:s on any device without having to upload app bundles to Google Play](https://www.reddit.com/r/androiddev/comments/exn19l/locallydynamic_dynamic_delivery_without_google/)
+- url: https://github.com/jeppeman/LocallyDynamic
 ---
-I am waiting for Android R Beta release in a month or two so I can see what direction they took with the scoped storage.  So I am not targetting Android Q yet and haven't implemented any of those scoped storage changes.  I wonder how many other apps are doing the same
-## [4][Is the AMD Hypervisor better than Windows Hypervisor?](https://www.reddit.com/r/androiddev/comments/ex4981/is_the_amd_hypervisor_better_than_windows/)
-- url: https://www.reddit.com/r/androiddev/comments/ex4981/is_the_amd_hypervisor_better_than_windows/
+
+## [4][square/cycler: The Square Cycler API allows you to easily configure an Android RecyclerView declaratively in a succinct way.](https://www.reddit.com/r/androiddev/comments/exbfzl/squarecycler_the_square_cycler_api_allows_you_to/)
+- url: https://github.com/square/cycler
 ---
-I'm using Windows Subsystem for Linux 2 (WSL 2) and it uses Hyper-V. The AMD Hypervisor is not able to work at the same time with it, but the WHPX can.
-## [5][Localizing my app to Brazilian Portuguese &amp; German](https://www.reddit.com/r/androiddev/comments/ex3u9h/localizing_my_app_to_brazilian_portuguese_german/)
-- url: https://www.reddit.com/r/androiddev/comments/ex3u9h/localizing_my_app_to_brazilian_portuguese_german/
+
+## [5][Facebook used DMCA to takedown many Instagram private API projects on Github](https://www.reddit.com/r/androiddev/comments/exhm2h/facebook_used_dmca_to_takedown_many_instagram/)
+- url: https://www.reddit.com/r/androiddev/comments/exhm2h/facebook_used_dmca_to_takedown_many_instagram/
 ---
-My app has a fair share of user base from Brazil &amp; Germany. I'm considering translating my app to Brazilian Portuguese &amp; German. Right now the app is available in English only.
-Is it worth doing the translation? How popular is English in these countries? What is the primary language in their mobile phones in these countries?
-Anybody from these countries can chime in? 
-Thanks in advance.
-## [6][Tired of asking about specific method signature during job interview](https://www.reddit.com/r/androiddev/comments/ex4mlp/tired_of_asking_about_specific_method_signature/)
+I saw it when checking news. Facebook takedown many Instagram private API projects on GitHub 
+
+[https://github.com/github/dmca/blob/master/2020/01/2020-01-22-facebook.md](https://github.com/github/dmca/blob/master/2020/01/2020-01-22-facebook.md)
+
+I think Play store should do the same, they need to takedown apps like Downloader/Saver for Instagram, Facebook or Twitter... to protect user's copyright. But revenue from apps can't make Play store doesn't do this.
+## [6][Hello everyone. I am an iOS dev. I need to make the android counterpart in kotlin or something similar. Need help on what to choose.](https://www.reddit.com/r/androiddev/comments/exobd6/hello_everyone_i_am_an_ios_dev_i_need_to_make_the/)
+- url: https://www.reddit.com/r/androiddev/comments/exobd6/hello_everyone_i_am_an_ios_dev_i_need_to_make_the/
+---
+
+I have implemented stripe, video, gesture finger movements, JSON api calls in my iOS app. 
+Where do I start? What is the best environment that will help achieve my android app
+
+I consider contracting someone if I cannot succeed
+ (may be the best route but I consider a frugal budget – therefore at this moment there is no much income)
+
+Thanks
+## [7][Where I can find in-depth tutorial about Lottie Animations](https://www.reddit.com/r/androiddev/comments/exnceb/where_i_can_find_indepth_tutorial_about_lottie/)
+- url: https://www.reddit.com/r/androiddev/comments/exnceb/where_i_can_find_indepth_tutorial_about_lottie/
+---
+I've been using Lottie this couple weeks and it works great for project I've been working so far. But as a hobby-ist, I'm insecure about things I've done and improvement that could be made.
+
+I've been searching for lottie tutorial but can't seem to find things that I want to do. I can do it myself but I think there's another way it could be done, better.
+
+Things that I want to achieve:
+
+- Use 1 animation/json file for multiple animation state. Ex: Play 1-15 frames at start of activity, play frame 16-30 as loops while the activity is in play. and play the next 31-45 frame when a method is being executed.
+- fluidly tie animation to button state.
+- better workflow to create animation that can be modified programatically
+
+Is there any tutorial out there that can teach "best-practices" for these? I've been self taught so far and often felt like my way of coding is not the best.
+## [8][Android Studio Project Copy and Rename](https://www.reddit.com/r/androiddev/comments/exl8e8/android_studio_project_copy_and_rename/)
+- url: https://www.reddit.com/r/androiddev/comments/exl8e8/android_studio_project_copy_and_rename/
+---
+I've built a game from a YouTube tutorial. Now I'd like to make a copy of my project and start tinkering with it. I've found instructions online  [https://www.youtube.com/watch?v=dMK-RBVLeIY](https://www.youtube.com/watch?v=dMK-RBVLeIY)  . However, I notice that within Gradle Scripts, build.gradle(Project:ORIGINALNAME) appears rather than build.gradle(Project:NEWNAME). Is there a way to change this, or is the project name permanently stamped on the gradle scripts? Thanks in advance!
+
+https://preview.redd.it/f8zcu8d4wge41.png?width=1919&amp;format=png&amp;auto=webp&amp;s=117fd6498ba16ff62bb04e81ca375afe70742fbe
+## [9][Do custom ROMs also update underlying android kernel version?](https://www.reddit.com/r/androiddev/comments/exlunb/do_custom_roms_also_update_underlying_android/)
+- url: https://www.reddit.com/r/androiddev/comments/exlunb/do_custom_roms_also_update_underlying_android/
+---
+Stock ROMs forever stuck with the Linux kernel version which the device was initially shipped with. Most of the time OEMs keep the same kernel version even when updating android to next version to maintain stability and decrease extra effort to update stock kernel to upstream android kernel version.
+
+Lot of devices get custom ROM support with latest android version. Do these ROM also update stock kernel to the upstream android kernel or do they run with stock kernel in boot.img device already have?
+## [10][Tired of asking about specific method signature during job interview](https://www.reddit.com/r/androiddev/comments/ex4mlp/tired_of_asking_about_specific_method_signature/)
 - url: https://www.reddit.com/r/androiddev/comments/ex4mlp/tired_of_asking_about_specific_method_signature/
 ---
 Android job interview became truly ridiculous there days!
@@ -65,39 +103,17 @@ Android SDK is so huge and is getting bigger, add old school Java (one day I ste
 Next time I get the feeling that the person I'm talking with is trying to be a smart-ass I want to tell him "listen, Android SDK is X milions of lines of code and you're trying to ask me about one of it, are you feeling ok?"
 
 Can you people tell me what is X?
-## [7][What is an Android Dev related hill you are willing to die on?](https://www.reddit.com/r/androiddev/comments/ewrw3q/what_is_an_android_dev_related_hill_you_are/)
-- url: https://www.reddit.com/r/androiddev/comments/ewrw3q/what_is_an_android_dev_related_hill_you_are/
+## [11][Survey for school research](https://www.reddit.com/r/androiddev/comments/exks2w/survey_for_school_research/)
+- url: https://www.reddit.com/r/androiddev/comments/exks2w/survey_for_school_research/
 ---
-Most people have at least one opinion they will fight tooth and nail to defend, what's yours?
-## [8][Is there any cloud service supporting the SAF's ACTION_OPEN_DOCUMENT_TREE ?](https://www.reddit.com/r/androiddev/comments/ex4i1f/is_there_any_cloud_service_supporting_the_safs/)
-- url: https://www.reddit.com/r/androiddev/comments/ex4i1f/is_there_any_cloud_service_supporting_the_safs/
----
-In particular, and to my dismay, Google Drive does not support `ACTION_OPEN_DOCUMENT_TREE`, thus you cannot pick a folder on Google Drive (for example for saving a file in it). That's incomprehensible since you can open a file with Google Drive with the SAF using `ACTION_OPEN_DOCUMENT`. 
-So you cannot save a file to Google Drive with the SAF (unless I missed something) but you can open files from it. Makes total sense...
-Is there any cloud provider (or anything else than local storage) that has implemented `ACTION_OPEN_DOCUMENT_TREE` ?
-## [9][Takeaways comparing Flutter to Jetpack Compose](https://www.reddit.com/r/androiddev/comments/ewq88p/takeaways_comparing_flutter_to_jetpack_compose/)
-- url: https://medium.com/@jolanda.verhoef/take-aways-comparing-flutter-to-jetpack-compose-a26775617e38
----
+ 
 
-## [10][App not listed in App drawer after installing using USB and Android Studio](https://www.reddit.com/r/androiddev/comments/ex60bg/app_not_listed_in_app_drawer_after_installing/)
-- url: https://www.reddit.com/r/androiddev/comments/ex60bg/app_not_listed_in_app_drawer_after_installing/
----
-Hello everyone,
+Good day! We are conducting an online survey about creating parental control applications for our school project. May we ask you programmers to partake in our survey. ***\[It is*** not ***necessarily required to have experience in developing a parental-control application\]***
 
-I test and debug an app I currently work on, on my mobile phone. To install it, I connected it with an USB cable with the PC, enabled the USB debugging settings on my phone and installed it using Android Studio.
+[Google forms link](https://docs.google.com/forms/d/e/1FAIpQLSfE3jtp6bvM5WXT0pDkFyx8cuNrqDu2u2SCISHO62jZoP95aA/viewform?usp=sf_link)
 
-However, for some reason, it does get installed, works and runs completely fine, but doesn't appear in the App drawer where all Apps are usually listed. Any idea why this is the case?
-
-If you need any technical information, like settings on my mobile phone or source code, tell me! :) Thanks for any help!
-## [11][android hangouts](https://www.reddit.com/r/androiddev/comments/ex5k1s/android_hangouts/)
-- url: https://www.reddit.com/r/androiddev/comments/ex5k1s/android_hangouts/
----
-Dear friends, 
-
-Can you give some advices/ideas about how&amp;where to get fast response for easy questions or to hangout for those of us that are learning android by themselves, that are not in school anymore or doesn't have programmers colleagues.
-
-I'm trying to learn Kotlin for android by myself and I'll like to join some real-time chat communities like irc or something like that.
-## [12][How would someone create kernel sources for a device if they aren't released?](https://www.reddit.com/r/androiddev/comments/ex4my6/how_would_someone_create_kernel_sources_for_a/)
-- url: https://www.reddit.com/r/androiddev/comments/ex4my6/how_would_someone_create_kernel_sources_for_a/
+Please follow this link to the survey website and we humbly ask for your cooperation, thank you :)
+## [12][What are Android devlopment news websites you follow?](https://www.reddit.com/r/androiddev/comments/exg2ds/what_are_android_devlopment_news_websites_you/)
+- url: https://www.reddit.com/r/androiddev/comments/exg2ds/what_are_android_devlopment_news_websites_you/
 ---
 

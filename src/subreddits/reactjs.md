@@ -1,6 +1,31 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (Jan 2020)](https://www.reddit.com/r/reactjs/comments/eictui/beginners_thread_easy_questions_jan_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/eictui/beginners_thread_easy_questions_jan_2020/
+## [1][Who's Hiring? [Feb 2020]](https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
+---
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
+
+_I am sorry for the missing "Who's Available [Dec 2019]" 🙇‍♂️_
+
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
+
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
+
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
+
+examples:
+
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
+
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
+
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
+
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
+[format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
+## [2][Beginner's Thread / Easy Questions (Feb 2020)](https://www.reddit.com/r/reactjs/comments/exf7nq/beginners_thread_easy_questions_feb_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/exf7nq/beginners_thread_easy_questions_feb_2020/
 ---
 [Previous threads][wiki previous threads] can be found in the Wiki.
 
@@ -17,7 +42,6 @@ No question is too simple. 🙂
   - Describe what you want it to do, and things you've tried. Don't just post big blocks of code!
   - **[Formatting Code][wiki formatting code]** wiki shows how to format code in this thread.
 - **Pay it forward!** Answer questions even if there is already an answer - multiple perspectives can be very helpful to beginners. Also there's no quicker way to learn than [being wrong on the Internet][being wrong on the internet].
-- **[Learn by teaching][learn by teaching]** &amp; **[Learn in public][learn in public]** - It not only helps the asker but also the answerer.
 
 ---
 
@@ -27,15 +51,14 @@ No question is too simple. 🙂
 
 🆓 Here are great, **free** resources! 🆓
 
+- [Create React App][create react app]
 - [Read the **official** Getting Started page][official getting started page] on the docs.
-- [Microsoft Frontend Bootcamp](https://www.reddit.com/r/reactjs/comments/auu02f/microsoft_has_open_sourced_their_frontend/)
+- [Get started with Redux][get started with redux] by [/u/acemarke][/u/acemarke] (Redux Maintainer).
+- [Kent Dodd's Egghead.io course][kent dodd's egghead.io course]
+- [Tyler McGinnis' 2018 Guide][tyler mcginnis' 2018 guide]
 - [Codecademy's React courses][codecademy's react courses]
 - [Scrimba's React Course][scrimba's react course]
 - [Robin Wieruch's Road to React][robin wieruch's road to react]
-- [FreeCodeCamp's React course](https://www.freecodecamp.org/news/learn-react-course/)
-- [Flavio Copes' React handbook](https://reacthandbook.com/)
-- New to Hooks? Check Amelia Wattenberger's [Thinking in React Hooks](https://wattenberger.com/blog/react-hooks)
-- What other updated resources do you suggest?
 
 Any ideas/suggestions to improve this thread - feel free to comment here!
 
@@ -43,8 +66,12 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 
 ---
 
+[create react app]: https://facebook.github.io/create-react-app/
 [official getting started page]: https://reactjs.org/docs/getting-started.html
+[/u/acemarke]: https://www.reddit.com/u/acemarke
 [suggested resources for learning react]: http://blog.isquaredsoftware.com/2017/12/blogged-answers-learn-react/
+[kent dodd's egghead.io course]: http://kcd.im/beginner-react
+[tyler mcginnis' 2018 guide]: https://medium.freecodecamp.org/a-comprehensive-guide-to-react-js-in-2018-ba8bb6975597
 [codecademy's react courses]: https://www.codecademy.com/catalog/language/javascript
 [scrimba's react course]: https://scrimba.com/g/glearnreact
 [robin wieruch's road to react]: https://roadtoreact.com/
@@ -53,303 +80,79 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [code sandbox]: https://codesandbox.io/s/new
 [jsfiddle]: https://jsfiddle.net/Luktwrdm/
 [stackblitz]: https://stackblitz.com/
+[being wrong on the internet]: https://xkcd.com/386/
+[tweet organization]: https://twitter.com/dan_abramov/status/1027245759232651270?lang=en
+[get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Available? [Jan 2020]](https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
----
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
-
+## [3][My Gatsby Theme is Available for Use and Modification (Check Source Code on GitHub)](https://www.reddit.com/r/reactjs/comments/exhpdy/my_gatsby_theme_is_available_for_use_and/)
+- url: https://v.redd.it/ztu9x0ejcfe41
 ---
 
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
-
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
-
-## (Fulltime | Contract | USA | Remote)
-
-or
-
-## (Agency | Europe | Remote)
-
-Then we recommend adding a 2-3 sentence bio as well.
-
-Not required, but may help:
-
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
-
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-If you just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/dxxqdn/whos_available_nov_2019/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
-## [3][Lets update Official React's Tic Tac Toe Tutorial with Hooks and Typescript! (Video Tutorial)](https://www.reddit.com/r/reactjs/comments/ewu3jm/lets_update_official_reacts_tic_tac_toe_tutorial/)
-- url: https://youtu.be/Fuz8GTctT5o
+## [4][React Router v6.0.0-alpha.0 released, with relative and nested routes, suspense-based navigations](https://www.reddit.com/r/reactjs/comments/ex7ieb/react_router_v600alpha0_released_with_relative/)
+- url: https://github.com/ReactTraining/react-router/releases/tag/v6.0.0-alpha.0
 ---
 
-## [4][Authenticating React App with Firebase - CodeSource.io](https://www.reddit.com/r/reactjs/comments/ex5s5w/authenticating_react_app_with_firebase/)
-- url: https://codesource.io/authenticating-react-app-with-firebase/
+## [5][I'm currently working on my personal website . Could you give me some feedback ? Be as critical as you need to.](https://www.reddit.com/r/reactjs/comments/exblxo/im_currently_working_on_my_personal_website_could/)
+- url: https://kayna.space/
 ---
 
-## [5][Platform to maintain, track and have simple workflow around web API](https://www.reddit.com/r/reactjs/comments/ex474y/platform_to_maintain_track_and_have_simple/)
-- url: https://www.reddit.com/r/reactjs/comments/ex474y/platform_to_maintain_track_and_have_simple/
----
-Hello!  
-I am Alex and I want to describe what we develop and how we want to improve workflow around API.
-
-We are developing a product that will help you with maintaining API doc, having simple workflow around API and tracking API changes.  
-What benefits we want to give you:
-
-1. Simple workflow around API development by integrating your tools technologies such as JIRA, git, OpenAPI/graphql schemas
-2. Tracking API changes.
-3. Notifying stakeholders about API changes.
-4. Improving team communication.
-5. Keeping backward capability for API.
-6. Making clean API doc
-7. Having integrations with CI to make your workflow more faster.  
- 
-
-We need your feedback, please leave here to help us in providing the product!
-
-[https://forms.gle/3yzr8SMWKAgW8ks18](https://forms.gle/3yzr8SMWKAgW8ks18)
-
-&amp;#x200B;
-
-Thanks!
-## [6][Creating a Stacked Bar Chart – Using React (Hooks) with D3](https://www.reddit.com/r/reactjs/comments/ex5wzh/creating_a_stacked_bar_chart_using_react_hooks/)
-- url: https://www.youtube.com/watch?v=bXN9anQN_kQ
+## [6][GitHub - garrylachman/another-redux-reducer-registry: A simple registery for redux reducers, just register the reducer and the library will connect the reducers to the store.](https://www.reddit.com/r/reactjs/comments/exniym/github_garrylachmananotherreduxreducerregistry_a/)
+- url: https://github.com/garrylachman/another-redux-reducer-registry
 ---
 
-## [7][Opinions on using Apollo client with rest API with apollo link rest](https://www.reddit.com/r/reactjs/comments/ex5msg/opinions_on_using_apollo_client_with_rest_api/)
-- url: https://www.reddit.com/r/reactjs/comments/ex5msg/opinions_on_using_apollo_client_with_rest_api/
+## [7][My personal website](https://www.reddit.com/r/reactjs/comments/exn8re/my_personal_website/)
+- url: https://www.reddit.com/r/reactjs/comments/exn8re/my_personal_website/
 ---
-I want to communicate with a standard rest API. What are the advantages of using apollo vs redux (specifically for JWT authentication, storing in local storage).
-## [8][React functional components &amp; 'this' - questions + codesandbox](https://www.reddit.com/r/reactjs/comments/ex37lh/react_functional_components_this_questions/)
-- url: https://www.reddit.com/r/reactjs/comments/ex37lh/react_functional_components_this_questions/
+It's still a work in progress but I would love to get some feedback on it. Thank you!
+
+https://filipahfelt.se/
+
+I drew inspiration from various posts on this subreddit, in particular [this guy](https://justinchi.me/) and his terminal.
+## [8][What are the most exhaustive and up-to-date video tutorials?](https://www.reddit.com/r/reactjs/comments/exogfx/what_are_the_most_exhaustive_and_uptodate_video/)
+- url: https://www.reddit.com/r/reactjs/comments/exogfx/what_are_the_most_exhaustive_and_uptodate_video/
 ---
-Why don't react components have a 'this' context, even when using bind? ( \*answered\*: I was using arrow functions which don't allow rebinding).
-
-Updated Q:
-
-Why does an arrow function in global scope return undefined as it's this value?
-
-* Is it something to do with the arrow function looking to the module function for a this val, and the module function does not have a this val?
-* Or is it something to do with modules being declarative environment records (not object environment records)?
-
-
-Updated test Code:
-
-[https://codesandbox.io/s/pedantic-dew-ilj9h](https://codesandbox.io/s/pedantic-dew-ilj9h)
-## [9][Help with Router or Parcel links?](https://www.reddit.com/r/reactjs/comments/ex5e1p/help_with_router_or_parcel_links/)
-- url: https://www.reddit.com/r/reactjs/comments/ex5e1p/help_with_router_or_parcel_links/
----
-Can someone explain to an idiot like me on how can i configure **Router** or maybe it's a **Parcel** bundler thing so when clicking on the links it won't change the address bar to root of my website.
-
-So i have menu item with links (Home Page/1stPage/2ndPage) when clicking one of them i would expect address bar to be like this: [https://www.marius.dev/projects/test2/1stPage](https://www.marius.dev/projects/test2/1stPage)
-
-But instead I'm getting this: [https://www.marius.dev/1stPage](https://www.marius.dev/1stPage) , so it goes into the root of my website. This would not be an issue if my projects sits in the root, but i want to have multiple projects on my website.
-
-Full code:
-
-    import React from 'react'
-    import { BrowserRouter, Switch, Route } from 'react-router-dom'
-    import { NavLink } from 'react-router-dom'
-    
-    export default function App() {
-      return (
-        &lt;BrowserRouter&gt;
-          &lt;NavLink to="/" className="nav-link"&gt;
-            Home Page
-          &lt;/NavLink&gt;
-    
-          &lt;NavLink to="/1stPage" className="nav-link"&gt;
-            1st Page
-          &lt;/NavLink&gt;
-    
-          &lt;NavLink to="/2ndPage" className="nav-link"&gt;
-            2nd Page
-          &lt;/NavLink&gt;
-    
-          &lt;Switch&gt;
-            &lt;Route exact path="/"&gt;
-              &lt;div&gt;Home Page&lt;/div&gt;
-            &lt;/Route&gt;
-    
-            &lt;Route exact path="/1stPage"&gt;
-              &lt;div&gt;1st Page&lt;/div&gt;
-            &lt;/Route&gt;
-    
-            &lt;Route exact path="/2ndPage"&gt;
-              &lt;div&gt;2nd Page&lt;/div&gt;
-            &lt;/Route&gt;
-          &lt;/Switch&gt;
-        &lt;/BrowserRouter&gt;
-      )
-    }
-## [10][What are the most used life cycle methods in React?](https://www.reddit.com/r/reactjs/comments/ex40h7/what_are_the_most_used_life_cycle_methods_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ex40h7/what_are_the_most_used_life_cycle_methods_in_react/
----
-I just started learning Ract.js and its pretty straight forward except for the life cycle methods, some of them are deprecated and it's really confusing on which of the should I learn. What are the life cycle methods that are not deprecated and the most useful / used? and what are their purpose (w/ example please). componentDidMount() is called when the component is added to the virtual dom, so why not just use the constructor instead? thank you.
-## [11][Adding TailwindCSS to ReactJS App](https://www.reddit.com/r/reactjs/comments/ewrzsf/adding_tailwindcss_to_reactjs_app/)
-- url: https://youtu.be/7V8idlEkwgY
+What are the most exhaustive and up-to-date video tutorials? A lot of tutorials aren't exhaustive and covers only a part of what you can do with React, or are not up-to-date.
+## [9][In React, the Wrong Abstraction Kills Efficiency (my semi-rant after a challenging week)](https://www.reddit.com/r/reactjs/comments/exo8ar/in_react_the_wrong_abstraction_kills_efficiency/)
+- url: https://jesseduffield.com/in-react-the-wrong-abstraction-kills-efficiency/
 ---
 
-## [12][Would anyone care to sanity check this simple api call using hooks](https://www.reddit.com/r/reactjs/comments/ewz1c8/would_anyone_care_to_sanity_check_this_simple_api/)
-- url: https://www.reddit.com/r/reactjs/comments/ewz1c8/would_anyone_care_to_sanity_check_this_simple_api/
+## [10][Problem with managing states of multiple radio buttons which should change the context of a JSON](https://www.reddit.com/r/reactjs/comments/exnpsk/problem_with_managing_states_of_multiple_radio/)
+- url: https://www.reddit.com/r/reactjs/comments/exnpsk/problem_with_managing_states_of_multiple_radio/
 ---
-I just wanted to make sure that I've got this straight in my head before continuing. This is as close as I can get to a minimal example of a single search form component that fetches data when submitted. 
+Hi folks, 
 
-Would love to get any feedback on whether this looks okay or if there are any improvements before I start looking at making a custom hook from it.
+first of all, here is the link to [Stackblitz.com](https://stackblitz.com/edit/react-dr5ouj?embed=1&amp;file=UpdateState.js) with my code atm. I'm super new to the frontend stuff. So I try my best to understand the React Hooks but I'm not there yet.
 
- [https://codesandbox.io/s/react-hooks-simple-button-initiated-api-call-xupdi](https://codesandbox.io/s/react-hooks-simple-button-initiated-api-call-xupdi) 
+I do have a problem managing the state of radio buttons while changing my context accordingly. The context consists of a json (which will come from a backend). I'd like to ask some questions and obviously I want to have some answers. They should change the context (json-array). At the end I would like to send the context back to my backend. 
 
-    import React, { useState, useEffect, useRef } from "react";
-    import "./styles.css";
-    
-    // Sleep function
-    const sleep = ms =&gt; new Promise(resolve =&gt; setTimeout(resolve, ms));
-    
-    // Mock axios get call to return some results after 2 seconds
-    const axios = {
-      get: async () =&gt; {
-        await sleep(2000);
-        return {
-          data: [
-            { id: 1, name: "Alan" },
-            { id: 2, name: "Bob" },
-            { id: 3, name: "Charlie" },
-            { id: 4, name: "David" }
-          ]
-        };
-      }
-    };
-    
-    const App = () =&gt; {
-      // Handle the search state, not actually used but here for completeness
-      const [search, setSearch] = useState("");
-    
-      // Result data and status info stored in single state object
-      const [results, setResults] = useState({
-        list: [],
-        loading: false,
-        error: false,
-        errorMsg: ""
-      });
-    
-      // arbitary state variable that useEffect can watch for form submit
-      const [trigger, setTrigger] = useState(false);
-    
-      // Used to prevent useEffect running on mount
-      // Also prevents state from updating after component unmounted
-      const isMounted = useRef(false);
-    
-      // Destructured for neatness
-      const { list, loading, error, errorMsg } = results;
-    
-      useEffect(() =&gt; {
-        // useEffect runs on mount, isMount is set to true at the bottom
-        // of this function so this prevents the fetch on first run.
-        // Also checks the action was trigger initiated to prevent it
-        // running if something else caused a re-render
-        if (isMounted.current &amp;&amp; trigger) {
-          // useEffect cannot be an async function so we need to create
-          // an internal async function that we can call
-          const fetchData = async () =&gt; {
-            // set results status to indicate loading / clear errors
-            setResults(prev =&gt; ({
-              ...prev,
-              loading: true,
-              error: false,
-              errorMsg: ""
-            }));
-            try {
-              // Make our async data call
-              const { data } = await axios.get("/api/search");
-    
-              // Check to make sure our component is still mounted
-              // before updating results with data
-              if (isMounted.current) {
-                setResults({
-                  loading: false,
-                  list: data
-                });
-              }
-            } catch (error) {
-              // Check to make sure our component is still mounted
-              // before updating results with error details
-              if (isMounted.current) {
-                setResults(prev =&gt; ({
-                  ...prev,
-                  loading: false,
-                  error: true,
-                  errorMsg: error.message
-                }));
-              }
-            } finally {
-              // Check to make sure our component is still mounted
-              // before resetting trigger
-              if (isMounted.current) {
-                setTrigger(false);
-              }
-            }
-          };
-    
-          // Call our async fetch function
-          fetchData();
-    
-          // Have component set isMounted to false on cleanup
-          return () =&gt; {
-            isMounted.current = false;
-          };
-        }
-    
-        // Mark isMounted as true after first run
-        isMounted.current = true;
-    
-        // Set this effect to run when the value of trigger changes
-      }, [trigger]);
-    
-      return (
-        &lt;div&gt;
-          &lt;h3&gt;Search&lt;/h3&gt;
-          &lt;hr /&gt;
-          Search for
-          &lt;input
-            onChange={e =&gt; setSearch(e.target.value)}
-            type="text"
-            value={search}
-          /&gt;
-          {/* Set trigger to true when submit button is clicked */}
-          &lt;button onClick={() =&gt; setTrigger(true)} type="submit"&gt;
-            Submit
-          &lt;/button&gt;
-          &lt;div&gt;
-            {loading &amp;&amp; "Loading..."}
-            {error &amp;&amp; errorMsg}
-            {!loading &amp;&amp;
-              (list.length === 0
-                ? "No results found"
-                : JSON.stringify(results, null, 4))}
-          &lt;/div&gt;
-        &lt;/div&gt;
-      );
-    };
-    
-    export default App;
-    
+1. The state of my buttons is correct. But the updateState function seems to be triggered first, so it picks up always the **last value** instead of the current one. How do I handle this async problem? (I saw this by using the chrome addon "React Developer Tools"
+2. At line 12, I do update my json context. How can I manage to update a specific property of a specific object in my json-array. Imagine I want to change a property of json object 50 within an array which consists out of 100 json objects. How can I access the index/key there?
 
-Cheers in advance of any replies.
+Any hints and tips are appreciated. 
+
+Kind regards from Berlin!
+## [11][my gatsby theme](https://www.reddit.com/r/reactjs/comments/exnmf1/my_gatsby_theme/)
+- url: https://www.reddit.com/r/reactjs/comments/exnmf1/my_gatsby_theme/
+---
+Hey, 
+
+I made a website on top of `gatsbyjs`, and thought i'll share it with the open source community. 
+
+Demo: 
+
+https://react-landnig-page.netlify.com/
+
+code: 
+
+https://github.com/zilahir/react-landing-page
+
+I had some rough design ideas, based on very different inspirations i came across in the last years. 
+
+Happily welcoming PRs. :) 
+
+Enjoy.
+## [12][REACT APP](https://www.reddit.com/r/reactjs/comments/exmi0q/react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/exmi0q/react_app/
+---
+What are the best practices in creating a react app?

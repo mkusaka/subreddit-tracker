@@ -57,29 +57,233 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][A syntax-based overview of C++20 Concepts](https://www.reddit.com/r/cpp/comments/ex4lm5/a_syntaxbased_overview_of_c20_concepts/)
+## [2][Branch Prediction - Fundamentals Every Programmer Need Not Know](https://www.reddit.com/r/cpp/comments/exm0vl/branch_prediction_fundamentals_every_programmer/)
+- url: http://www.mycpu.org/branch-prediction-basics/
+---
+
+## [3][Looking for review: yet another RPC library](https://www.reddit.com/r/cpp/comments/exjf8i/looking_for_review_yet_another_rpc_library/)
+- url: https://www.reddit.com/r/cpp/comments/exjf8i/looking_for_review_yet_another_rpc_library/
+---
+I would like to present [packio](https://github.com/qchateau/packio), an asynchronous library based on Boost.asio that lets you write msgpack-RPC clients and servers. 
+
+You could say it's just another RPC library, and yes it is just another one, so let me explain what my goals were and what features you will find:
+
+1. The library is async-oriented, implementing synchronous calls on top of it is simple but it's up to you.
+2. The library heavily uses Boost.asio, meaning io\_context, sockets and connections are handled with asio. For thoses used to using asio, you don't have yet another API to learn, and the integration of packio inside of asio-based code feels more natural.
+3. The server procedures can be either synchronous or asynchronous. This allows a server to process multiple RPC calls concurrently on a single thread. This can be useful if the server procedure requires IO.
+4. The library requires boost &gt;=1.70 and C++17, and is available on conan for ease of use.
+
+The library is currently in version 0.8.0 as I finished defining its identity and API not long ago. Although I did not release a 1.0.0 version yet, I believe the API and philosophy won't change too much from now on. I've been using the library for my own need for over a month now and I'm satisfied with the results. 
+
+This is the reason I'm posting today: I would really appreciate any review or feedback as it is always difficult to have a proper view on its own work. I'd like this library to fit other people's need, not just my own.
+
+The library is available under MPL-2, so feel free to use it !
+## [4][AVX2 Vectorized Multithreaded Mandelbrot renderer](https://www.reddit.com/r/cpp/comments/exbc1c/avx2_vectorized_multithreaded_mandelbrot_renderer/)
+- url: https://www.reddit.com/r/cpp/comments/exbc1c/avx2_vectorized_multithreaded_mandelbrot_renderer/
+---
+Hi all! I am an electrical engineering student and for fun have written a vectorized mandelbrot renderer. It uses AVX2 and multiple threads to compute 8 pixels in parallel per thread. Any advice on code and performance is welcome!
+
+[https://github.com/voldemoriarty/Qbrot](https://github.com/voldemoriarty/Qbrot)
+
+&amp;#x200B;
+
+EDIT:
+
+Thanks you guys/gals for the awesome tips! Following the points you gave allowed me to cut down the render time for 1080p 256 iterations from 41ms to 19ms (more than 50%). More importantly I learned some new stuff. Thanks for taking the time and reviewing the code. Stay blessed
+
+&amp;#x200B;
+
+Special Thanks:
+
+u/TheDeviloper
+
+u/xurxoham
+
+u/anders987 
+
+u/corysama
+## [5][After std::ranges we need std::containers](https://www.reddit.com/r/cpp/comments/exd81l/after_stdranges_we_need_stdcontainers/)
+- url: https://www.reddit.com/r/cpp/comments/exd81l/after_stdranges_we_need_stdcontainers/
+---
+I'm working on [a Unicode proposal based on strong types](https://github.com/Lyberta/cpp-unicode) which introduces new containers and views and I couldn't avoid the issue that current containers are specified in terms of `Cpp17NamedRequirements` and not Concepts which is Very Wrong™.
+
+Now that we have redone iterators and algorithms using concepts and ranges, we need to do the same to containers.
+
+In particular, in my rough translation of old requirements I got the following concepts that we need to have:
+
+* `std::allocator` (oops, name taken)
+* `std::default_insertable_into`
+* `std::move_insertable_into`
+* `std::copy_insertable_into`
+* `std::emplace_constructible_into`
+* `std::erasable_from`
+* `std::container`
+* `std::reversible_container`
+* `std::allocator_aware_container`
+* `std::sequence_container`
+* `std::associative_container`
+* `std::unordered_associative_container`
+
+This is just rough mechanical translation so far and will require refinement. I thought the logical site would be to put new containers in `std2` namespace but then it hit me that they should be in `std::containers` namespace because then we can have `std::containers::vector` and `std::math::vector` (to a great pleasure of Guy Davidson and others).
+
+I don't have enough experience with concepts and ranges yet so I can't write a paper at this time but I wanted to share my observations trying to write my own container in C++20.
+
+EDIT: And to argue my point better, here's how the API of `std::containers::vector` may look like. This is the "diff view" which only shows changed API:
+
+	template &lt;typename T, std::allocator_concept&lt;T&gt; A = std::allocator&lt;T&gt;&gt;
+	class vector
+	{
+	public:
+		vector() noexcept(noexcept(A{}))
+		requires std::default_constructible&lt;A&gt;;
+		
+		explicit vector(size_type amount, const A&amp; allocator = A{})
+		requires std::default_insertable_into&lt;T, vector&gt;;
+		
+		vector(size_type amount, const T&amp; value, const A&amp; allocator = A{})
+		requires std::copy_insertable_into&lt;T, vector&gt;;
+		
+		template &lt;typename I, std::sentinel_for&lt;I&gt; S&gt;
+		requires std::input_iterator&lt;I&gt; &amp;&amp;
+			std::emplace_constructible_into&lt;T, vector, std::iter_reference_t&lt;I&gt;&gt;
+		vector(I first, S last, const A&amp; allocator = A{});
+		
+		template &lt;typename R&gt;
+		requires std::ranges::input_range&lt;R&gt; &amp;&amp; /*TODO*/
+		Vector(R&amp;&amp; r, const A&amp; allocator = A{});
+		
+		vector(const vector&amp; other)
+		requires std::copy_insertable_into&lt;T, vector&gt;;
+		
+		vector(const vector&amp; other, const A&amp; allocator)
+		requires std::copy_insertable_into&lt;T, vector&gt;;
+		
+		vector(vector&amp;&amp; other, const A&amp; new_allocator)
+		requires std::move_insertable_into&lt;T, vector&gt;;
+		
+		vector&amp; operator=(const vector&amp; other)
+		requires std::copy_insertable_into&lt;T, vector&gt; &amp;&amp; std::copyable&lt;T&gt;;
+		
+		vector&amp; operator=(vector&amp;&amp; other) noexcept(
+			std::allocator_traits&lt;A&gt;::
+			propagate_on_container_move_assignment::value ||
+			std::allocator_traits&lt;A&gt;::is_always_equal::value)
+		requires (std::allocator_traits&lt;A&gt;::propagate_on_container_move_assignment::
+			value == true) || (std::move_insertable_into&lt;T, vector&gt; &amp;&amp;
+			std::movable&lt;T&gt;);
+		
+		template &lt;typename I, std::sentinel_for&lt;I&gt; S&gt;
+		requires std::input_iterator&lt;I&gt; &amp;&amp;
+			std::assignable_from&lt;T, std::iter_reference_t&lt;I&gt;&gt;
+		void assign(I first, S last)
+		requires std::emplace_constructible_into&lt;T, vector&gt; &amp;&amp;
+			std::move_insertable_into&lt;T, vector&gt;;
+		
+		template &lt;typename R&gt;
+		requires std::ranges::input_range&lt;R&gt; &amp;&amp; /*TODO*/
+		void assign(R&amp;&amp; r);
+		
+		void assign(size_type amount, const T&amp; value)
+		requires std::copy_insertable_into&lt;T, vector&gt; &amp;&amp; std::copyable&lt;T&gt;;
+		
+		void resize(size_type new_size)
+		requires std::move_insertable_into&lt;T, vector&gt; &amp;&amp;
+			std::default_insertable_into&lt;T, vector&gt;;
+		
+		void resize(size_type new_size, const T&amp; value)
+		requires std::copy_insertable_into&lt;T, vector&gt;;
+		
+		void reserve(size_type new_capacity)
+		requires std::move_insertable_into&lt;T, vector&gt;;
+		
+		void shrink_to_fit()
+		requires std::move_insertable_into&lt;T, vector&gt;;
+		
+		template &lt;typename... Args&gt;
+		reference emplace_back(Args&amp;&amp;... args)
+		requires std::emplace_constructible_into&lt;T, vector, Args...&gt; &amp;&amp;
+			std::move_insertable_into&lt;T, vector&gt;;
+		
+		void push_back(const T&amp; value)
+		requires std::copy_insertable_into&lt;T, vector&gt;;
+		
+		void push_back(T&amp;&amp; value)
+		requires std::move_insertable_into&lt;T, vector&gt;;
+		
+		template &lt;typename... Args&gt;
+		iterator emplace(const_iterator position, Args&amp;&amp;... args)
+		requires std::emplace_constructible_into&lt;T, vector, Args...&gt; &amp;&amp;
+			std::move_insertable_into&lt;T, vector&gt; &amp;&amp; std::movable&lt;T&gt;;
+		
+		iterator insert(const_iterator position, const T&amp; value)
+		requires std::copy_insertable_into&lt;T, vector&gt; &amp;&amp; std::copyable&lt;T&gt;;
+		
+		iterator insert(const_iterator position, T&amp;&amp; value)
+		requires std::move_insertable_into&lt;T, vector&gt; &amp;&amp; std::movable&lt;T&gt;;
+		
+		iterator insert(const_iterator position, size_type amount, const T&amp; value)
+		requires std::copy_insertable_into&lt;T, vector&gt; &amp;&amp; std::copyable&lt;T&gt;;
+		
+		template &lt;typename I, std::sentinel_for&lt;I&gt; S&gt;
+		requires std::input_iterator&lt;I&gt; &amp;&amp; /*TODO*/
+		iterator insert(const_iterator position, I first, S last)
+		requires std::emplace_constructible_into&lt;T, vector&gt; &amp;&amp;
+			std::move_insertable_into&lt;T, vector&gt; &amp;&amp; std::movable&lt;T&gt; &amp;&amp;
+			std::swappable&lt;T&gt;;
+		
+		template &lt;typename R&gt;
+		requires std::ranges::input_range&lt;R&gt; &amp;&amp; /*TODO*/
+		iterator insert(const_iterator position, R&amp;&amp; r);
+		
+		iterator erase(const_iterator position)
+		requires std::movable&lt;T&gt;;
+		
+		iterator erase(const_iterator first, const_iterator last)
+		requires std::movable&lt;T&gt;;
+	};
+
+As you can see, old API required a lot of changes to be in the spirit of C++20.
+## [6][A syntax-based overview of C++20 Concepts](https://www.reddit.com/r/cpp/comments/ex4lm5/a_syntaxbased_overview_of_c20_concepts/)
 - url: https://omnigoat.github.io/2020/01/19/cpp20-concepts/
 ---
 
-## [3][A freestyle rap from the British comedian Chris Turner dedicated to the ISO C++ standards committee meeting in Prague](https://www.reddit.com/r/cpp/comments/ewsgg4/a_freestyle_rap_from_the_british_comedian_chris/)
+## [7][Runtime Compiled C++ Dear ImGui and DirectX11 Tutorial](https://www.reddit.com/r/cpp/comments/exoaip/runtime_compiled_c_dear_imgui_and_directx11/)
+- url: https://www.enkisoftware.com/devlogpost-20200202-1-Runtime-Compiled-C++-Dear-ImGui-and-DirectX11-Tutorial
+---
+
+## [8][Why should I care about the New Cool Thing(TM)?](https://www.reddit.com/r/cpp/comments/exnfa1/why_should_i_care_about_the_new_cool_thingtm/)
+- url: https://www.reddit.com/r/cpp/comments/exnfa1/why_should_i_care_about_the_new_cool_thingtm/
+---
+This may very well be a divisive topic, so I want to make it clear I'm not trolling or trying to start an endless argument.
+
+Why should I care about C++20?
+
+I'm a Windows dev (no choice) using MSVS.
+
+For years now I've been forced to "upgrade" from VS2008/C++07 to VS2010/C++11, then VS2012/C++11 again, etc.. to VS2017 as of current.
+
+Through all these updates I've not done anything new or different, but I have needed to contend with bugs either in the compiler or in the development environment itself.
+
+The bottom line is I've updated for seemingly zero benefit, but only because someone higher up the chain thinks "latest is greatest".
+
+It also appears to me that recent C++ updates have just been to add more functionality in some vague attempt to guess at what future software or features some program might require, and write a bunch of libraries to handle these things.
+
+Why???
+
+I haven't seen anything really useful appear in the language in some time, nor am I aware of any great improvements that affect existing code.
+
+I haven't even seen any real  arguments over performance gains - merely the Next Cool Thing(TM) having some mystical power that I must use it in my code.
+
+So... why should I "upgrade", and why should I care?
+## [9][A freestyle rap from the British comedian Chris Turner dedicated to the ISO C++ standards committee meeting in Prague](https://www.reddit.com/r/cpp/comments/ewsgg4/a_freestyle_rap_from_the_british_comedian_chris/)
 - url: https://www.cameo.com/v/TXgs6dWbN
 ---
 
-## [4][A Universal I/O Abstraction for C++](https://www.reddit.com/r/cpp/comments/ewr18m/a_universal_io_abstraction_for_c/)
+## [10][A Universal I/O Abstraction for C++](https://www.reddit.com/r/cpp/comments/ewr18m/a_universal_io_abstraction_for_c/)
 - url: https://cor3ntin.github.io/posts/iouring/
 ---
 
-## [5][Trying to understand C++20 modules](https://www.reddit.com/r/cpp/comments/ewpmzi/trying_to_understand_c20_modules/)
-- url: https://www.reddit.com/r/cpp/comments/ewpmzi/trying_to_understand_c20_modules/
----
-So I've been reading and watching videos, but don't feel that I've really understood how modules work. Or rather, I get the gist of it, and I'm all for having better modularisation, but I am troubled by how they are to be implemented. For example, I've seen examples where the module names do not match the files in which they reside. How would the compiler located an imported module in that case?
-
-Many years ago, I wrote Delphi for a living, and recall being very impressed with Pascal units. A "unit" has the same name as its file, so the lookup is simple. The unit has distinct named "interface" and "implementation" sections. A unit can import the interface sections of other units with "uses". I may be misremembering, but that was more or less it. I can imagine how to implement this so that units are imported from a binary intermediate, and that the binary intermediate is created in a one-time on-demand compilation of the unit's interface section. There would seem to be no barrier to parallel compilation of the implementation sections of the units in a project. I'm probably over-simplifying. I do however recall that compiling Delphi projects was incredibly fast compared to C++ projects. 
-
-I've read a number of concerns about how to find modules and how to parallelise compilation in C++20, but have no idea if those concerns are overstated, have been addressed already, are just plain wrong, or what. I'd be grateful for more information. 
-
-Thanks.
-## [6][DS323I RTC HAL Driver Written in C++](https://www.reddit.com/r/cpp/comments/ex4kzu/ds323i_rtc_hal_driver_written_in_c/)
+## [11][DS323I RTC HAL Driver Written in C++](https://www.reddit.com/r/cpp/comments/ex4kzu/ds323i_rtc_hal_driver_written_in_c/)
 - url: https://www.reddit.com/r/cpp/comments/ex4kzu/ds323i_rtc_hal_driver_written_in_c/
 ---
 Hey, guys! 
@@ -92,43 +296,3 @@ I'm really excited about C++ 20's concepts and I feel it'd be highly useful in t
 Contributions are welcome!
 
 https://github.com/lamarrr/DS3231
-## [7][How 'granular' should a CMake target be?](https://www.reddit.com/r/cpp/comments/ewyw9h/how_granular_should_a_cmake_target_be/)
-- url: https://www.reddit.com/r/cpp/comments/ewyw9h/how_granular_should_a_cmake_target_be/
----
-In John Lakos' [talk](https://youtu.be/K_fTl_hIEGY?t=1398) about physical designs of C++ projects, he showed an example of such an idea with four classes and three files. My question is how should this reflect in CMake? Should each logical component be a CMake library target for ease of testing or do they belong in a larger CMake library (maybe geometry in this case)? Doing the former seems to be clearer but it introduces lots of small targets that depend on each other and also requires lots of boilerplate CMake (specifying the files, compiler warnings, include directory for users, library dependencies, etc) which might slow down complication. Doing the latter might be difficult in cases when you just need to have some functionality but you're not sure if it actually belongs in such a library. For a personal executable project where nothing is exported, files are sometimes just a collection of code that are incapable of forming a cohesive library. 
-
-&amp;#x200B;
-
-Am I missing something completely or is the best practise a mixture of the two?
-## [8][HPX Community Survey -- STE||AR Group](https://www.reddit.com/r/cpp/comments/ewo4tq/hpx_community_survey_stear_group/)
-- url: http://stellar-group.org/2020/01/2020-hpx-community-survey
----
-
-## [9][The Battle for C++ Knowledge Supremacy](https://www.reddit.com/r/cpp/comments/ewv9v6/the_battle_for_c_knowledge_supremacy/)
-- url: https://cppbattle.net/battle/early-quelea-20-63f6
----
-
-## [10][Relaunch your career in C++ at 39](https://www.reddit.com/r/cpp/comments/ewug2t/relaunch_your_career_in_c_at_39/)
-- url: https://www.reddit.com/r/cpp/comments/ewug2t/relaunch_your_career_in_c_at_39/
----
-Hello everyone,
-
-this is not a motivational post, rather it's a call for motivational answers. Let me explain. I've been on the worst project of my entire life for almost 2 years now, and I need to stop this growing sensation of failure in life. My question is flatly simple: can I relaunch myself in a C++ career at 39?
-
-I officially had experience in custom business software, but at least doing a lot of backend and system integration allowed me to cultivate strong C#/.Net skill. Now as I said, I don't know how, but I fell in this trap of fu\*\*ing project, which is basically read idiotic incidents on service-now and solve the problem, clean up corrupt data, and whatever. Coding is just one line a week at best (maintaining one of the worst C# code bases I ever seen in my life).
-
-For anyone wondering why I am posting this on /r/cpp, it is because I am not new to the language, and looking back at my \~20y career, I now see that I felt satisfaction only when I was developing useful APIs in C, C with classes (more often), C++ (very few times), and when doing systems programming (if you can call it such).
-
-I have a few notable examples of satisfying projects:
-
-* It was the early 2000s, every enterprise reporting solution was fast in showing its limits (Crystal Reports 8 anyone?) so I had to build this "graphics engine" for text formatting and print previewing to meet customer's needs.
-* Drive a call recording server, I developed the project with STL, and the job was to consume a proprietary Java-style C++ library and expose my API with COM (yes I know a lot of win32 and COM).
-* 4 years ago, I developed in C# a CTI server software. It was structured to be PBX vendor independent, and the purpose was to manage call distribution to the users of another company product. Anyway it didn't end well, the PM had obsolete ideas about the project and removed me in favor of more obeying colleagues.
-
-You see the problem is I have little to nothing of curricular experience with C++. So what chances do you think I may have to restart my career? Also I see that in the last years developing on Linux has become so easy that even a Windows developer could do it. I am based in Italy, which nation you think could be the best for me?
-
-Thanks
-## [11][Status of exception specification removal?](https://www.reddit.com/r/cpp/comments/ewwir3/status_of_exception_specification_removal/)
-- url: https://www.reddit.com/r/cpp/comments/ewwir3/status_of_exception_specification_removal/
----
-C++ exception specifications were deprecated in C++11. The latest update to Alisdair's [proposal](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0003r4.html) to remove them just says "Retargeted for C++Next-after-17." Is this onboard for C++20? Has it been punted to 23+?

@@ -33,65 +33,51 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/01/28/this-week-in-rust-323/
 ---
 
-## [3][Maybe a dumb question, but the page says "150 of 381 crates". How do I find the rest of them? There's no next page link.](https://www.reddit.com/r/rust/comments/ex0t6b/maybe_a_dumb_question_but_the_page_says_150_of/)
-- url: https://lib.rs/game-engines
+## [3][Riven 1.0.0: My Rust lib for the Riot Games / League of Legends API](https://www.reddit.com/r/rust/comments/exj48k/riven_100_my_rust_lib_for_the_riot_games_league/)
+- url: https://github.com/MingweiSamuel/Riven
 ---
 
-## [4][Difference among Deref, Borrow, and AsRef](https://www.reddit.com/r/rust/comments/ex50zg/difference_among_deref_borrow_and_asref/)
-- url: https://www.reddit.com/r/rust/comments/ex50zg/difference_among_deref_borrow_and_asref/
----
-My impression is that `Borrow&lt;T&gt;` has the same semantics as `Deref&lt;Target=T&gt;` except for the operator overloading part, and `AsRef&lt;T&gt;` has no special semantic requirement.
-## [5][Today the Veloren team is proud to announce version 0.5 of the open-source voxel RPG, featuring many new features and dozens of improvements, big and small.](https://www.reddit.com/r/rust/comments/ewt0md/today_the_veloren_team_is_proud_to_announce/)
-- url: https://veloren.net/
+## [4][Argh is Google's opinionated Derive-based argument parser optimized for code size](https://www.reddit.com/r/rust/comments/exbbes/argh_is_googles_opinionated_derivebased_argument/)
+- url: https://github.com/google/argh/blob/master/README.md
 ---
 
-## [6][Nestur: NES emulator in Rust](https://www.reddit.com/r/rust/comments/ewqiuh/nestur_nes_emulator_in_rust/)
-- url: https://github.com/spieglt/nestur
+## [5][Example of a great rust program?](https://www.reddit.com/r/rust/comments/exhtov/example_of_a_great_rust_program/)
+- url: https://www.reddit.com/r/rust/comments/exhtov/example_of_a_great_rust_program/
+---
+I'm a heavy C programmer, but from the sound of it, Rust has quite a lot to offer due to it's novel design principles. Does anyone have an example of an exceptionally well-written Rust program that demonstrates the features and philosophy of the language? 
+
+You know, one you could point to and say, "this is what it means to write in Rust". Ideally around a few thousand lines so that a single person could reasonably come to understand? 
+
+Thanks in advance : )
+## [6][Generating icosahedrons and hexspheres in Rust](https://www.reddit.com/r/rust/comments/exgm90/generating_icosahedrons_and_hexspheres_in_rust/)
+- url: https://www.hallada.net/2020/02/01/generating-icosahedrons-and-hexspheres-in-rust.html
 ---
 
-## [7][Implemented From&lt;SomeT&gt; for MyT. Do I have to implement &amp;SomeT, &amp;mut SomeT manually?](https://www.reddit.com/r/rust/comments/ex3yzw/implemented_fromsomet_for_myt_do_i_have_to/)
-- url: https://www.reddit.com/r/rust/comments/ex3yzw/implemented_fromsomet_for_myt_do_i_have_to/
----
-Hey guys,
-
-I implemented the `From` trait for my `Session` type like this:
-
-    impl From&lt;Connection&gt; for Session {
-        fn from(con: &amp;Connection) -&gt; Result&lt;Self, Error&gt; {
-            Session::restore(&amp;con.hostname, &amp;con.session_id)
-        }
-    }
-
-Creating a `Session` from a `Connection` works as expected but when I try to create a `Session` from a `&amp;mut Connection` I get the message, that the `From` trait is not implemented.
-
-Of course I can just implement `From&lt;&amp;mut Connection&gt; for Session` manually to work around this but I guess there is a method to automatically implement `From` for `&amp;T` and `&amp;mut T` when I implement From for `T`
-
-Thank you in advance :)
-## [8][Chunked Http post request with reqwest?](https://www.reddit.com/r/rust/comments/ex4sdl/chunked_http_post_request_with_reqwest/)
-- url: https://www.reddit.com/r/rust/comments/ex4sdl/chunked_http_post_request_with_reqwest/
----
-I've been looking to send an audio via http in a chunked way with reqwest (mostly because I'm sending something recorded on the moment and I want it to be sent ASAP), so far I haven't seen any way, anyone knows how to do this?
-## [9][Writing an OS in Rust: Updates in January 2020](https://www.reddit.com/r/rust/comments/ex654n/writing_an_os_in_rust_updates_in_january_2020/)
+## [7][Writing an OS in Rust: Updates in January 2020](https://www.reddit.com/r/rust/comments/ex654n/writing_an_os_in_rust_updates_in_january_2020/)
 - url: https://os.phil-opp.com/status-update/2020-02-01/
 ---
 
-## [10][Better way to map a result to non-result? Like a question mark operator for non results?](https://www.reddit.com/r/rust/comments/ex0yn8/better_way_to_map_a_result_to_nonresult_like_a/)
-- url: https://www.reddit.com/r/rust/comments/ex0yn8/better_way_to_map_a_result_to_nonresult_like_a/
----
-Hey all, I have a pattern a lot that results in some ugly code. You can see an example of it in this rust playground:
-
-https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=f4b9a9b1429a6acdef65dbfe035ddd4d
-
-Basically, when you have fn's that return errors, and inside your function you call functions that have errors, the `?` operator is the best thing ever. But what if that outer function does NOT return an error? Is there a way to map the error to a value and return that if there was an error? Thanks!
-## [11][Build your own executor](https://www.reddit.com/r/rust/comments/ewodxc/build_your_own_executor/)
-- url: https://stjepang.github.io/2020/01/31/build-your-own-executor.html
+## [8][Experimental Rust Implementation of the Clio Compiler](https://www.reddit.com/r/rust/comments/exnr79/experimental_rust_implementation_of_the_clio/)
+- url: https://github.com/clio-lang/rio
 ---
 
-## [12][How to perform square root of a generic type](https://www.reddit.com/r/rust/comments/ewy548/how_to_perform_square_root_of_a_generic_type/)
-- url: https://www.reddit.com/r/rust/comments/ewy548/how_to_perform_square_root_of_a_generic_type/
+## [9][What are some good tutorials on implementing ActivityPub in Rust?](https://www.reddit.com/r/rust/comments/exl16j/what_are_some_good_tutorials_on_implementing/)
+- url: https://www.reddit.com/r/rust/comments/exl16j/what_are_some_good_tutorials_on_implementing/
 ---
-Hello,  im currently making a vector crate (for learning purposes) and I came across a problem. I'm using generics for the type that the vector holds,
+I want to help make a project called Lemmy federated using ActivityPub, but I have no experience with ActivityPub. Are there any good tutorials on the topic that you'd recommend? Particularly tutorials or documentation relevant to programming it in Rust, since it's what the Lemmy backend is written in.
+## [10][serde_cbor crate is looking for maintainers](https://www.reddit.com/r/rust/comments/ex7ls8/serde_cbor_crate_is_looking_for_maintainers/)
+- url: https://github.com/pyfisch/cbor/issues/179
+---
 
-`pub struct Evec2&lt;T&gt;{pub x: T, pub y: T}`
+## [11][How long does your project take to recompile after a small change?](https://www.reddit.com/r/rust/comments/exlawm/how_long_does_your_project_take_to_recompile/)
+- url: https://www.reddit.com/r/rust/comments/exlawm/how_long_does_your_project_take_to_recompile/
+---
+I've read that Rust compile times are slower compared to C++ compile times. Compile times were ok with my multiple source files hello world projects even with multiple external crates \`use\`d. But then I wanted to know how fast is Rust project recompilation after small change on a little bit larger than hello world projects, I took amethyst game engine.
 
- and it makes it impossible to perform the square root of the vector's components, because the square root is not a trait defined like other operators (std :: ops). can someone tell me some trick to work around this
+Initial compilation of amethyst examples took some time, but it's ok for initial build. Then I tried to add and remove \`println!()\` things randomly in those examples' [main.rs](https://main.rs), and god it takes 20-22 secs for \`cargo build\` to process single tiny change even without --release flag.
+
+So do large Rust projects get slower to recompile over growth of project size? Is it amethyst's fault that it takes so much time for single line change recompilation or is it common/acceptable in Rust?
+## [12][Writing AWS Lambda Functions with Bastion](https://www.reddit.com/r/rust/comments/ex7ye3/writing_aws_lambda_functions_with_bastion/)
+- url: https://blog.bastion.rs/2020/02/01/writing-aws-lambda-functions-with-bastion.html
+---
+

@@ -13,55 +13,62 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][I launched iHateRegex.io - A Regex cheatsheet for the haters](https://www.reddit.com/r/javascript/comments/ewsc5y/i_launched_ihateregexio_a_regex_cheatsheet_for/)
+## [3][[AskJS] Is this a good explanation of token-based authentication? :-)](https://www.reddit.com/r/javascript/comments/exm8g0/askjs_is_this_a_good_explanation_of_tokenbased/)
+- url: https://www.reddit.com/r/javascript/comments/exm8g0/askjs_is_this_a_good_explanation_of_tokenbased/
+---
+I'm in the process of writing a blog post about JWTs, and I tried writing a fun little story to describe the concept of token-based authentication. I want to know if it even makes sense and if I'm missing something important.
+
+Your feedback is greatly appreciated!
+
+**Token Teahose**
+
+You are the proud owner of a very popular teahouse, Token Teahouse. It has thousands upon thousands of members and new people join all the time.
+A new face appears at the door, her name is Alice, she want to be a part of Token Teahouse.
+You welcome her, and ask for a password, so you can verify her membership at a later time if needed.
+After writing down the details in a very very long list of members, you fabricate a special piece of paper for her. It states that Alice is a level 1 tea-sipper and has access to two cups of green tea. The paper is signed by you, so you will know it's authentic.
+
+The following day, Alice is at the door again. A thousand people have already visited since she joined, so you don't recognize her.
+Alice claims that she is a level 1 tea-sipper and she shows you the paper to prove it. Sure enough, that's your signature, so you let her in. That only took a few seconds. This is the secret to the success of your amazing teahouse.
+Not spending too much time verifying you customers membership, is the key to scale any great teahouse.
+
+Another person, vaguely familiar appears at the door. He claims to be Bob, level 7 tea-downer, but he has no paper to prove it.
+Unfortunately Bob forgot to take the paper out of his trousers when washing them. Bob looks a bit ashamed, but you cheer him up: "No biggy Bob! This is why I keep a list of all my members. It will take a while, but we will sort it out". Bob gives you his password, and you start going through the members list to verify if this really is Bobs password.
+
+After a few minutes, you find Bob in the list and sure enough, Bob destroyed the paper but he remembered his password.
+You fabricate a new piece of paper for Bob, and let him in.
+## [4][Javascript &amp; CSS — Toggle dark/light theme based on your user's preferred scheme](https://www.reddit.com/r/javascript/comments/ex7tp9/javascript_css_toggle_darklight_theme_based_on/)
+- url: https://gosink.in/javascript-css-toggle-dark-light-theme-based-on-your-users-preferred-scheme/
+---
+
+## [5][Breaking Chains with Pipelines in Modern JavaScript](https://www.reddit.com/r/javascript/comments/exl521/breaking_chains_with_pipelines_in_modern/)
+- url: https://www.wix.engineering/post/breaking-chains-with-pipelines-in-modern-javascript
+---
+
+## [6][Error propagation patterns in API backends](https://www.reddit.com/r/javascript/comments/exh2lc/error_propagation_patterns_in_api_backends/)
+- url: https://www.fourzerofour.pw/posts/error-propagation/
+---
+
+## [7][Implementing 2D Physics in JavaScript](https://www.reddit.com/r/javascript/comments/ex6ydc/implementing_2d_physics_in_javascript/)
+- url: https://towardsdatascience.com/implementing-2d-physics-in-javascript-860a7b152785
+---
+
+## [8][Converting Angular components into Web Components when doing code migration](https://www.reddit.com/r/javascript/comments/exo5o6/converting_angular_components_into_web_components/)
+- url: https://blog.piotrnalepa.pl/2020/02/02/how-to-convert-angular-component-into-reusable-web-component/
+---
+
+## [9][I launched iHateRegex.io - A Regex cheatsheet for the haters](https://www.reddit.com/r/javascript/comments/ewsc5y/i_launched_ihateregexio_a_regex_cheatsheet_for/)
 - url: https://ihateregex.io/
 ---
 
-## [4][ESlint plugin for sorting requires](https://www.reddit.com/r/javascript/comments/ewof5c/eslint_plugin_for_sorting_requires/)
-- url: https://github.com/zcuric/eslint-plugin-require-sort
+## [10][Making Tetris "in the dark"](https://www.reddit.com/r/javascript/comments/exalx8/making_tetris_in_the_dark/)
+- url: https://medium.com/@js_tut/tetris-turns-35-cfcf04c4f2bb?source=friends_link&amp;sk=f08589cc1c5387c29145cd8b80964112
 ---
 
-## [5][The top comment currently on an /r/NoStupidQuestions/ post about Javascript says your browser will warn you if your mouse movement is being tracked](https://www.reddit.com/r/javascript/comments/ewyn3e/the_top_comment_currently_on_an/)
-- url: https://www.reddit.com/r/NoStupidQuestions/comments/ewrx0r/what_stops_a_bot_from_clicking_the_im_not_a_robot/fg4qjxt/
+## [11][I am building a Design System](https://www.reddit.com/r/javascript/comments/exis33/i_am_building_a_design_system/)
+- url: https://www.kor-ui.com
 ---
 
-## [6][Which web grid is best? We put them to the test, and here are the results -- see how your favorite stacks up!](https://www.reddit.com/r/javascript/comments/ewu8ie/which_web_grid_is_best_we_put_them_to_the_test/)
-- url: https://www.crankuptheamps.com/blog/posts/2020/01/23/grid-comparison-2/
+## [12][[AskJS] which es6 course to choose ?](https://www.reddit.com/r/javascript/comments/exgxdd/askjs_which_es6_course_to_choose/)
+- url: https://www.reddit.com/r/javascript/comments/exgxdd/askjs_which_es6_course_to_choose/
 ---
-
-## [7][I need help to make this burger menu work better](https://www.reddit.com/r/javascript/comments/ex1gn9/i_need_help_to_make_this_burger_menu_work_better/)
-- url: https://drive.google.com/open?id=1dQ5KXrMqQn0non0bkDKN73Raa7ciyvnB
----
-
-## [8][Tetris game ! I am a newbie and this is my first javascript project !](https://www.reddit.com/r/javascript/comments/ewzsub/tetris_game_i_am_a_newbie_and_this_is_my_first/)
-- url: https://github.com/BWbwchen/Tetris
----
-
-## [9][UI Admin Dashboard Build by using JavaScript &amp; Bootstrap 4](https://www.reddit.com/r/javascript/comments/ewoeib/ui_admin_dashboard_build_by_using_javascript/)
-- url: https://www.htmlhints.com/article/60/ui-dashboard-free-bootstrap-4-admin-template
----
-
-## [10][[AskJS] Online Web Development Mentoring Program](https://www.reddit.com/r/javascript/comments/ewrnm9/askjs_online_web_development_mentoring_program/)
-- url: https://www.reddit.com/r/javascript/comments/ewrnm9/askjs_online_web_development_mentoring_program/
----
- Hey guys!
-
-A friend and I are starting a web development program - the gist is to basically develop web apps from scratch using the latest tech frameworks. All will be done online and free :)
-
-For the first web app, we've chosen VueJS, Tailwind CSS, and Firebase.
-
-If interested, you can find out more below
-
-[https://webdevofficehours.com/#freementorship](https://webdevofficehours.com/#freementorship)
-
-We are gonna cap this to 20-30 people - so subscribe! It's first come, first serve.
-
-Paul
-## [11][Must have Gatsby plugins for a great blog](https://www.reddit.com/r/javascript/comments/ewnu59/must_have_gatsby_plugins_for_a_great_blog/)
-- url: https://www.inkoop.io/blog/must-have-gatsby-plugins-for-a-great-blog/
----
-
-## [12][My friend had a problem with scaling up his WebSocket servers. This is what he came up with](https://www.reddit.com/r/javascript/comments/ew6yjb/my_friend_had_a_problem_with_scaling_up_his/)
-- url: https://tsh.io/blog/how-to-scale-websocket/
----
-
+Hi I have a small problem. I am stuck between 3 courses. Maximilian, Stephen grinder or Brad traversy any recommendations?

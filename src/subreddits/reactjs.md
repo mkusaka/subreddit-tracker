@@ -85,74 +85,81 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][My Gatsby Theme is Available for Use and Modification (Check Source Code on GitHub)](https://www.reddit.com/r/reactjs/comments/exhpdy/my_gatsby_theme_is_available_for_use_and/)
-- url: https://v.redd.it/ztu9x0ejcfe41
+## [3][CoronaWatch - Built a website for monitoring the corona virus.](https://www.reddit.com/r/reactjs/comments/exsoaq/coronawatch_built_a_website_for_monitoring_the/)
+- url: https://www.reddit.com/r/reactjs/comments/exsoaq/coronawatch_built_a_website_for_monitoring_the/
+---
+Over a span of about 12 hours, i built  [https://coronawatch.now.sh/](https://coronawatch.now.sh/)  . I built it with the following:
+
+1. Reactjs
+2. Nextjs
+3. ApexCharts
+4. Zeit.co
+## [4][Full-stack web app in React + TypeScript + GraphQL + PostgreSQL](https://www.reddit.com/r/reactjs/comments/ey282l/fullstack_web_app_in_react_typescript_graphql/)
+- url: https://www.reddit.com/r/reactjs/comments/ey282l/fullstack_web_app_in_react_typescript_graphql/
+---
+Hi there!
+
+Probably some of you know about [Codeforces](https://codeforces.com). It is the website built for competitive programmers to let them practice their problem-solving skills.
+
+I have built an app [Laddy](https://laddy.app) that shows problems for your Codeforces rating so you can solve them and improve throughout the time. This app is inspired by [A2OJ](https://www.a2oj.com/) which is retired by now.
+
+Even though if you are not into competitive programming, you will be probably interested in the source code of Laddy which you can find on [GitHub](https://github.com/ironsoul0/laddy). It uses some cool technologies under the hood like TypeGraphQL, TypeORM, React + Typescript, Lerna for managing the monorepo, etc.
+
+Any suggestions for code improvement are more than welcome!
+## [5][How do you approach design of your apps?](https://www.reddit.com/r/reactjs/comments/ey6f6w/how_do_you_approach_design_of_your_apps/)
+- url: https://www.reddit.com/r/reactjs/comments/ey6f6w/how_do_you_approach_design_of_your_apps/
+---
+I was curious how you approach the design of your react applications? I really don’t enjoy design and, while I know enough CSS to get the job done, it’s not something I want to spend a ton of time on. There is a part of me that is thinking “hey, it would be great to just purchase a template or hire a front-end dev to do the heavy lifting’.  So, for others like me, those who don’t really focus on design, how do you do it?
+## [6][I built an idle version of Tibia with React.js (github link there)](https://www.reddit.com/r/reactjs/comments/ey4i6y/i_built_an_idle_version_of_tibia_with_reactjs/)
+- url: https://tibia-react.herokuapp.com/
 ---
 
-## [4][React Router v6.0.0-alpha.0 released, with relative and nested routes, suspense-based navigations](https://www.reddit.com/r/reactjs/comments/ex7ieb/react_router_v600alpha0_released_with_relative/)
-- url: https://github.com/ReactTraining/react-router/releases/tag/v6.0.0-alpha.0
+## [7][Who make the most interesting project video tutorials?](https://www.reddit.com/r/reactjs/comments/ey759k/who_make_the_most_interesting_project_video/)
+- url: https://www.reddit.com/r/reactjs/comments/ey759k/who_make_the_most_interesting_project_video/
+---
+Some instructors are amazing when it comes to covering the theoretical part of React, but they don't come up with the most interesting projects. Instead, they teach you how to build a bare-bone project. I am wondering who you would recommend if you want to make interesting projects.
+## [8][How to check if a boolean is true and then push it to the nested array](https://www.reddit.com/r/reactjs/comments/ey6zbj/how_to_check_if_a_boolean_is_true_and_then_push/)
+- url: https://www.reddit.com/r/reactjs/comments/ey6zbj/how_to_check_if_a_boolean_is_true_and_then_push/
+---
+At this moment the comments will be pushed inside the array, but then I click on a placed comment, and put some text in the input field and click on add...it should be pushed into the nested array. Looking at the comments, it should check if enableReply is set on true, if that is the case then new added comment should be pushed into this index in a nested array. So my question is, how should I do that. Another possible option is to first check if enableReplyComment is set on true before it go deeper to the comments array and check the enableReply if this was being set on true.
+
+&amp;#x200B;
+
+[https://stackoverflow.com/questions/60026969/how-to-check-if-a-boolean-is-true-and-then-push-it-to-the-nested-array](https://stackoverflow.com/questions/60026969/how-to-check-if-a-boolean-is-true-and-then-push-it-to-the-nested-array)
+## [9][React Movie App for movies info](https://www.reddit.com/r/reactjs/comments/ey6p9n/react_movie_app_for_movies_info/)
+- url: https://www.reddit.com/r/reactjs/comments/ey6p9n/react_movie_app_for_movies_info/
+---
+I am learning react to build some awesome websites and here is my first project using the well known 
+
+TMDB API. 
+
+ [https://intense-garden-05447.herokuapp.com/](https://intense-garden-05447.herokuapp.com/) 
+
+(Looks much better on a large screen).
+
+&amp;#x200B;
+
+ I know it's a bit outdated idea for a project but it's just a beginning.
+## [10][I built an API-driven personal dashboard with React (Unsplash, YouTube, Google Analytics APIs)](https://www.reddit.com/r/reactjs/comments/exxhsk/i_built_an_apidriven_personal_dashboard_with/)
+- url: https://leerob.io/dashboard
 ---
 
-## [5][I'm currently working on my personal website . Could you give me some feedback ? Be as critical as you need to.](https://www.reddit.com/r/reactjs/comments/exblxo/im_currently_working_on_my_personal_website_could/)
-- url: https://kayna.space/
+## [11][New Frontity Theme Powered by Chakra UI React Component Library](https://www.reddit.com/r/reactjs/comments/ey67ym/new_frontity_theme_powered_by_chakra_ui_react/)
+- url: https://blog.frontity.org/introducing-frontity-chakra-theme/?utm_source=reddit&amp;utm_medium=frontity-chakra-theme-post&amp;utm_campaign=frontity-chakra-theme-release
 ---
 
-## [6][GitHub - garrylachman/another-redux-reducer-registry: A simple registery for redux reducers, just register the reducer and the library will connect the reducers to the store.](https://www.reddit.com/r/reactjs/comments/exniym/github_garrylachmananotherreduxreducerregistry_a/)
-- url: https://github.com/garrylachman/another-redux-reducer-registry
+## [12][How to properly update react-scripts dependency?](https://www.reddit.com/r/reactjs/comments/ey65hb/how_to_properly_update_reactscripts_dependency/)
+- url: https://www.reddit.com/r/reactjs/comments/ey65hb/how_to_properly_update_reactscripts_dependency/
 ---
+Hi all.  Several months ago I created my first React app, using [create React app](https://reactjs.org/docs/create-a-new-react-app.html).  I haven't updated any dependencies since then, and just had a look at `npm outdated`.  It reports that react-scripts is outdated.  But its wanted version does not match its latest version ([screenshot](https://i.imgur.com/xMEK7Kz.png)).  I guess that is expected, since my package.json lists it without a carat:
 
-## [7][My personal website](https://www.reddit.com/r/reactjs/comments/exn8re/my_personal_website/)
-- url: https://www.reddit.com/r/reactjs/comments/exn8re/my_personal_website/
----
-It's still a work in progress but I would love to get some feedback on it. Thank you!
+      "dependencies": {
+        "react": "^16.8.5",
+        "react-dom": "^16.8.5",
+        "react-scripts": "2.1.8",
+        "react-transition-group": "^4.2.0"
+      },
 
-https://filipahfelt.se/
+But does anyone know why this dependency doesn't have a carat?  Should I add one?
 
-I drew inspiration from various posts on this subreddit, in particular [this guy](https://justinchi.me/) and his terminal.
-## [8][What are the most exhaustive and up-to-date video tutorials?](https://www.reddit.com/r/reactjs/comments/exogfx/what_are_the_most_exhaustive_and_uptodate_video/)
-- url: https://www.reddit.com/r/reactjs/comments/exogfx/what_are_the_most_exhaustive_and_uptodate_video/
----
-What are the most exhaustive and up-to-date video tutorials? A lot of tutorials aren't exhaustive and covers only a part of what you can do with React, or are not up-to-date.
-## [9][In React, the Wrong Abstraction Kills Efficiency (my semi-rant after a challenging week)](https://www.reddit.com/r/reactjs/comments/exo8ar/in_react_the_wrong_abstraction_kills_efficiency/)
-- url: https://jesseduffield.com/in-react-the-wrong-abstraction-kills-efficiency/
----
-
-## [10][Problem with managing states of multiple radio buttons which should change the context of a JSON](https://www.reddit.com/r/reactjs/comments/exnpsk/problem_with_managing_states_of_multiple_radio/)
-- url: https://www.reddit.com/r/reactjs/comments/exnpsk/problem_with_managing_states_of_multiple_radio/
----
-Hi folks, 
-
-first of all, here is the link to [Stackblitz.com](https://stackblitz.com/edit/react-dr5ouj?embed=1&amp;file=UpdateState.js) with my code atm. I'm super new to the frontend stuff. So I try my best to understand the React Hooks but I'm not there yet.
-
-I do have a problem managing the state of radio buttons while changing my context accordingly. The context consists of a json (which will come from a backend). I'd like to ask some questions and obviously I want to have some answers. They should change the context (json-array). At the end I would like to send the context back to my backend. 
-
-1. The state of my buttons is correct. But the updateState function seems to be triggered first, so it picks up always the **last value** instead of the current one. How do I handle this async problem? (I saw this by using the chrome addon "React Developer Tools"
-2. At line 12, I do update my json context. How can I manage to update a specific property of a specific object in my json-array. Imagine I want to change a property of json object 50 within an array which consists out of 100 json objects. How can I access the index/key there?
-
-Any hints and tips are appreciated. 
-
-Kind regards from Berlin!
-## [11][my gatsby theme](https://www.reddit.com/r/reactjs/comments/exnmf1/my_gatsby_theme/)
-- url: https://www.reddit.com/r/reactjs/comments/exnmf1/my_gatsby_theme/
----
-Hey, 
-
-I made a website on top of `gatsbyjs`, and thought i'll share it with the open source community. 
-
-Demo: 
-
-https://react-landnig-page.netlify.com/
-
-code: 
-
-https://github.com/zilahir/react-landing-page
-
-I had some rough design ideas, based on very different inspirations i came across in the last years. 
-
-Happily welcoming PRs. :) 
-
-Enjoy.
-## [12][REACT APP](https://www.reddit.com/r/reactjs/comments/exmi0q/react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/exmi0q/react_app/
----
-What are the best practices in creating a react app?
+Thanks in advance.

@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - February 01, 2020](https://www.reddit.com/r/androiddev/comments/ex5gnu/app_feedback_thread_february_01_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/ex5gnu/app_feedback_thread_february_01_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/ey6mqi/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/ey6mqi/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - January 27, 2020](https://www.reddit.com/r/androiddev/comments/eumgji/weekly_questions_thread_january_27_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/eumgji/weekly_questions_thread_january_27_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - February 03, 2020](https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,80 +31,90 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][LocallyDynamic: Dynamic Delivery without Google Play - download and install your split APK:s on any device without having to upload app bundles to Google Play](https://www.reddit.com/r/androiddev/comments/exn19l/locallydynamic_dynamic_delivery_without_google/)
+## [3][Complex UI/Animations on Android — featuring MotionLayout](https://www.reddit.com/r/androiddev/comments/ey5lu3/complex_uianimations_on_android_featuring/)
+- url: https://medium.com/@nikhilpanju22/complex-ui-animations-on-android-featuring-motionlayout-aa82d83b8660?source=friends_link&amp;sk=5b924ea26bc2ae4735483760f3c62409
+---
+
+## [4][Understand your players better with affinity learnings](https://www.reddit.com/r/androiddev/comments/ey49pz/understand_your_players_better_with_affinity/)
+- url: https://medium.com/googleplaydev/understand-your-players-better-with-affinity-learnings-55a49532d163
+---
+
+## [5][Android 10: open file in Download folder (received via Nearby Connections API)](https://www.reddit.com/r/androiddev/comments/ey3zkf/android_10_open_file_in_download_folder_received/)
+- url: https://www.reddit.com/r/androiddev/comments/ey3zkf/android_10_open_file_in_download_folder_received/
+---
+Hi.
+
+I have several Android 10 devices with my app targeting api 29 and I want to capture an image from one or more devices and send it to a 'master' device which will then open the images and upload to a server, and I figured Nearby Connections API would be the perfect fit - or so I thought.
+
+I am following [this guide](https://developers.google.com/nearby/connections/android/exchange-data) and the connection and transferring of the image file works just fine. Trouble is the file is placed in a 'Neaby' folder in 'Downloads'. I figured I should use `MediaStore.Downloads` and I would then be able to access files created by my app, but I don't get any results when doing the following:
+
+```
+requireActivity().applicationContext.contentResolver.query(
+            MediaStore.Downloads.EXTERNAL_CONTENT_URI,
+            arrayOf(MediaStore.Downloads.DISPLAY_NAME),
+            null,
+            null,
+            null
+        ).use { cursor -&gt;
+           while (cursor.moveToNext()) {
+              //Not reaching this point :/
+           }
+        }
+```
+
+I use `"com.google.android.gms:play-services-nearby:17.0.0"`.
+
+Lowering target api or setting `android:requestLegacyExternalStorage="true"` are not options ;)
+
+Am I doing something wrong or is my goal simply not possible with the current state of `play-services-nearby`?
+## [6][20 Best Android Development Books of 2020](https://www.reddit.com/r/androiddev/comments/ey5sk3/20_best_android_development_books_of_2020/)
+- url: https://booksawesome.com/20-best-android-development-books-of-2020/
+---
+
+## [7][Can you check the activity stack if it contains a certain activity?](https://www.reddit.com/r/androiddev/comments/ey3sru/can_you_check_the_activity_stack_if_it_contains_a/)
+- url: https://www.reddit.com/r/androiddev/comments/ey3sru/can_you_check_the_activity_stack_if_it_contains_a/
+---
+Hello!   
+
+
+I'm wondering if it is possible to check if the activity stack contains a certain activity  to know if this activity has already been launched before? Is it possible to distinguish between activities already launched and activities that have not been launched yet? 
+
+Thank you.
+## [8][Have the guidelines for back vs. up navigation changed?](https://www.reddit.com/r/androiddev/comments/ey5ebr/have_the_guidelines_for_back_vs_up_navigation/)
+- url: https://www.reddit.com/r/androiddev/comments/ey5ebr/have_the_guidelines_for_back_vs_up_navigation/
+---
+The guidelines for back and up navigation used to look[ like this. (Internet Archive)] (https://web.archive.org/web/20190204225959/https://developer.android.com/training/design-navigation/ancestral-temporal)
+
+However, that same page now redirects to a new page:
+https://developer.android.com/training/design-navigation/ancestral-temporal
+
+There is also this new page:
+
+https://developer.android.com/guide/navigation/navigation-principles#up_and_back_are_identical_within_your_apps_task
+
+
+Previously, it was recommended that the back button and the up button should not always have the same behaviour. However, the new advice is:
+&gt; Within your app's task, the Up and Back buttons behave identically.
+
+This seems like a change for the better, but I can't find any announcement for it, which seems strange for such a big change.
+## [9][LocallyDynamic: Dynamic Delivery without Google Play - download and install your split APK:s on any device without having to upload app bundles to Google Play](https://www.reddit.com/r/androiddev/comments/exn19l/locallydynamic_dynamic_delivery_without_google/)
 - url: https://github.com/jeppeman/LocallyDynamic
 ---
 
-## [4][square/cycler: The Square Cycler API allows you to easily configure an Android RecyclerView declaratively in a succinct way.](https://www.reddit.com/r/androiddev/comments/exbfzl/squarecycler_the_square_cycler_api_allows_you_to/)
-- url: https://github.com/square/cycler
+## [10][App development (IOS + Android)](https://www.reddit.com/r/androiddev/comments/exzy7f/app_development_ios_android/)
+- url: https://www.reddit.com/r/androiddev/comments/exzy7f/app_development_ios_android/
 ---
 
-## [5][Facebook used DMCA to takedown many Instagram private API projects on Github](https://www.reddit.com/r/androiddev/comments/exhm2h/facebook_used_dmca_to_takedown_many_instagram/)
-- url: https://www.reddit.com/r/androiddev/comments/exhm2h/facebook_used_dmca_to_takedown_many_instagram/
+I am new to programming. I want to build an app for both IOS and Android for business purposes. I know there are platforms like flutter where you can build apps for both ios and android. But, my concern is how sustainable would be using platforms like flutter instead developing same app for ios and Android separately. I appreciate your feedback
+## [11][Best way to manage data in Firestore as an admin ?](https://www.reddit.com/r/androiddev/comments/ey554f/best_way_to_manage_data_in_firestore_as_an_admin/)
+- url: https://www.reddit.com/r/androiddev/comments/ey554f/best_way_to_manage_data_in_firestore_as_an_admin/
 ---
-I saw it when checking news. Facebook takedown many Instagram private API projects on GitHub 
-
-[https://github.com/github/dmca/blob/master/2020/01/2020-01-22-facebook.md](https://github.com/github/dmca/blob/master/2020/01/2020-01-22-facebook.md)
-
-I think Play store should do the same, they need to takedown apps like Downloader/Saver for Instagram, Facebook or Twitter... to protect user's copyright. But revenue from apps can't make Play store doesn't do this.
-## [6][Hello everyone. I am an iOS dev. I need to make the android counterpart in kotlin or something similar. Need help on what to choose.](https://www.reddit.com/r/androiddev/comments/exobd6/hello_everyone_i_am_an_ios_dev_i_need_to_make_the/)
-- url: https://www.reddit.com/r/androiddev/comments/exobd6/hello_everyone_i_am_an_ios_dev_i_need_to_make_the/
+Say I have an app all is setup I just want to filter some data before it goes into the main set manually. Should one make an admin version of the app or use a script on a PC or use cloud functions but then where comes the human decision in functions. Any insight would be appreciated.
+## [12][Is Picasso Library abandoned?](https://www.reddit.com/r/androiddev/comments/expyvb/is_picasso_library_abandoned/)
+- url: https://www.reddit.com/r/androiddev/comments/expyvb/is_picasso_library_abandoned/
 ---
+The last Picasso library release is about [two years old](https://github.com/square/picasso/releases)
 
-I have implemented stripe, video, gesture finger movements, JSON api calls in my iOS app. 
-Where do I start? What is the best environment that will help achieve my android app
+A long period considering Square updates its libraries very often
 
-I consider contracting someone if I cannot succeed
- (may be the best route but I consider a frugal budget – therefore at this moment there is no much income)
-
-Thanks
-## [7][Where I can find in-depth tutorial about Lottie Animations](https://www.reddit.com/r/androiddev/comments/exnceb/where_i_can_find_indepth_tutorial_about_lottie/)
-- url: https://www.reddit.com/r/androiddev/comments/exnceb/where_i_can_find_indepth_tutorial_about_lottie/
----
-I've been using Lottie this couple weeks and it works great for project I've been working so far. But as a hobby-ist, I'm insecure about things I've done and improvement that could be made.
-
-I've been searching for lottie tutorial but can't seem to find things that I want to do. I can do it myself but I think there's another way it could be done, better.
-
-Things that I want to achieve:
-
-- Use 1 animation/json file for multiple animation state. Ex: Play 1-15 frames at start of activity, play frame 16-30 as loops while the activity is in play. and play the next 31-45 frame when a method is being executed.
-- fluidly tie animation to button state.
-- better workflow to create animation that can be modified programatically
-
-Is there any tutorial out there that can teach "best-practices" for these? I've been self taught so far and often felt like my way of coding is not the best.
-## [8][Android Studio Project Copy and Rename](https://www.reddit.com/r/androiddev/comments/exl8e8/android_studio_project_copy_and_rename/)
-- url: https://www.reddit.com/r/androiddev/comments/exl8e8/android_studio_project_copy_and_rename/
----
-I've built a game from a YouTube tutorial. Now I'd like to make a copy of my project and start tinkering with it. I've found instructions online  [https://www.youtube.com/watch?v=dMK-RBVLeIY](https://www.youtube.com/watch?v=dMK-RBVLeIY)  . However, I notice that within Gradle Scripts, build.gradle(Project:ORIGINALNAME) appears rather than build.gradle(Project:NEWNAME). Is there a way to change this, or is the project name permanently stamped on the gradle scripts? Thanks in advance!
-
-https://preview.redd.it/f8zcu8d4wge41.png?width=1919&amp;format=png&amp;auto=webp&amp;s=117fd6498ba16ff62bb04e81ca375afe70742fbe
-## [9][Do custom ROMs also update underlying android kernel version?](https://www.reddit.com/r/androiddev/comments/exlunb/do_custom_roms_also_update_underlying_android/)
-- url: https://www.reddit.com/r/androiddev/comments/exlunb/do_custom_roms_also_update_underlying_android/
----
-Stock ROMs forever stuck with the Linux kernel version which the device was initially shipped with. Most of the time OEMs keep the same kernel version even when updating android to next version to maintain stability and decrease extra effort to update stock kernel to upstream android kernel version.
-
-Lot of devices get custom ROM support with latest android version. Do these ROM also update stock kernel to the upstream android kernel or do they run with stock kernel in boot.img device already have?
-## [10][Tired of asking about specific method signature during job interview](https://www.reddit.com/r/androiddev/comments/ex4mlp/tired_of_asking_about_specific_method_signature/)
-- url: https://www.reddit.com/r/androiddev/comments/ex4mlp/tired_of_asking_about_specific_method_signature/
----
-Android job interview became truly ridiculous there days!
-
-Android SDK is so huge and is getting bigger, add old school Java (one day I stepped upon a vipers nest "job opportunity" - the very 1st question was "what are all methods of java.lang.Object.java" and I immediately run away from those freaks), new school Kotlin maddness, add Android BLE quirks, backward compatibility here, forward compatiblity there and you get insane.
-
-Next time I get the feeling that the person I'm talking with is trying to be a smart-ass I want to tell him "listen, Android SDK is X milions of lines of code and you're trying to ask me about one of it, are you feeling ok?"
-
-Can you people tell me what is X?
-## [11][Survey for school research](https://www.reddit.com/r/androiddev/comments/exks2w/survey_for_school_research/)
-- url: https://www.reddit.com/r/androiddev/comments/exks2w/survey_for_school_research/
----
- 
-
-Good day! We are conducting an online survey about creating parental control applications for our school project. May we ask you programmers to partake in our survey. ***\[It is*** not ***necessarily required to have experience in developing a parental-control application\]***
-
-[Google forms link](https://docs.google.com/forms/d/e/1FAIpQLSfE3jtp6bvM5WXT0pDkFyx8cuNrqDu2u2SCISHO62jZoP95aA/viewform?usp=sf_link)
-
-Please follow this link to the survey website and we humbly ask for your cooperation, thank you :)
-## [12][What are Android devlopment news websites you follow?](https://www.reddit.com/r/androiddev/comments/exg2ds/what_are_android_devlopment_news_websites_you/)
-- url: https://www.reddit.com/r/androiddev/comments/exg2ds/what_are_android_devlopment_news_websites_you/
----
-
+I'm considering to use Coil in new projects (migrating the older projects is not necessary because Picasso works very fine for me)

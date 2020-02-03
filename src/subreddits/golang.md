@@ -1,58 +1,47 @@
 # golang
-## [1][TinyGo is now officially a Google sponsored project](https://www.reddit.com/r/golang/comments/exn69u/tinygo_is_now_officially_a_google_sponsored/)
+## [1][termshark v2.1: a terminal UI for tshark, written in Go - now with conversations and packet colors](https://www.reddit.com/r/golang/comments/ey0m9z/termshark_v21_a_terminal_ui_for_tshark_written_in/)
+- url: https://www.reddit.com/r/golang/comments/ey0m9z/termshark_v21_a_terminal_ui_for_tshark_written_in/
+---
+Hi everyone - termshark v2.1 is out now on github. Termshark is a terminal UI for tshark that tries to imitate Wireshark. It's written 100% in Go and because of that, termshark is only a single binary on each supported platform. New with this release are conversations by protocol, packet colors and capture file info. A shout-out to the terrific tcell (https://github.com/gdamore/tcell), a library for handling terminals, upon which termshark is constructed. Here's the website - https://termshark.io. I hope you find it useful!
+## [2][TinyGo is now officially a Google sponsored project](https://www.reddit.com/r/golang/comments/exn69u/tinygo_is_now_officially_a_google_sponsored/)
 - url: https://twitter.com/TinyGolang/status/1223887654158307328
 ---
 
-## [2][Building Web Server with Go - Part 1](https://www.reddit.com/r/golang/comments/exgxvh/building_web_server_with_go_part_1/)
-- url: https://www.gophersumit.com/series/web-1/
+## [3][gopls v0.3.0 released, now loads in the context of an entire workspace - greatly improves features like "find all references"](https://www.reddit.com/r/golang/comments/exw44o/gopls_v030_released_now_loads_in_the_context_of/)
+- url: https://github.com/golang/go/issues/33030#issuecomment-580827997
 ---
 
-## [3][Where do you find Go(lang) freelance work?](https://www.reddit.com/r/golang/comments/exlrbp/where_do_you_find_golang_freelance_work/)
-- url: https://www.reddit.com/r/golang/comments/exlrbp/where_do_you_find_golang_freelance_work/
+## [4][Terminal based ASCII fluid simulation controlled by your webcam using the Pigo face detection library.](https://www.reddit.com/r/golang/comments/ey6c3t/terminal_based_ascii_fluid_simulation_controlled/)
+- url: https://github.com/esimov/ascii-fluid
 ---
-I'm looking to do some Golang freelance work and i'm currently in the proces of figuring out the best way to find work. I could ask my network or look at the dozens of recruiter emails I have in my inbox but I would rather find a source of work that is a bit more flexible/scalable. 
 
-Ofcourse there is Upwork but maybe there are also smaller platform you would recommend? I would prefer smaller temporary projects instead of large ones but any tips are welcome! Thank you.
-## [4][Gaze - a tool that helps you focus on writing code](https://www.reddit.com/r/golang/comments/exnr4j/gaze_a_tool_that_helps_you_focus_on_writing_code/)
-- url: https://www.reddit.com/r/golang/comments/exnr4j/gaze_a_tool_that_helps_you_focus_on_writing_code/
+## [5][libp2p-lora-transport : enabling low-bandwidth LibP2P IoT communication over LoRa](https://www.reddit.com/r/golang/comments/exwqtk/libp2ploratransport_enabling_lowbandwidth_libp2p/)
+- url: /r/ipfs/comments/exwpuw/libp2ploratransport_enabling_lowbandwidth_libp2p/
 ---
-Hello, I developed a tool called Gaze in Go.
 
-Gaze runs a command, right after you save a file.
-It greatly helps you focus on writing code!
+## [6][Library to fit data structures to their underlying types.](https://www.reddit.com/r/golang/comments/ey4r5m/library_to_fit_data_structures_to_their/)
+- url: https://github.com/spatialcurrent/go-fit
+---
 
-https://github.com/wtetsu/gaze
+## [7][How to make video streaming with grpc and go](https://www.reddit.com/r/golang/comments/ey31vx/how_to_make_video_streaming_with_grpc_and_go/)
+- url: https://www.reddit.com/r/golang/comments/ey31vx/how_to_make_video_streaming_with_grpc_and_go/
+---
+Does anyone know any good tutorial/article on how to make a video streaming service like Netflix with gRPC and Go ?
+## [8][Large struct SQL query](https://www.reddit.com/r/golang/comments/ey2up3/large_struct_sql_query/)
+- url: https://www.reddit.com/r/golang/comments/ey2up3/large_struct_sql_query/
+---
+I'm new to golang and am loving all the features so far, but I've run into a bit of a problem. I'm using the sqlx package to assist with querying a MySql database, and I'm trying to execute a query:
 
-Go's greate libraries, cross-platform features and goroutine were quite useful for developing this tool!
+`var t MyStruct`
 
-Any comments will be appreciated, both for about the source code and the tool.
-## [5][The State of Go 2020: changes since Go 1.12](https://www.reddit.com/r/golang/comments/exlm0i/the_state_of_go_2020_changes_since_go_112/)
+`_, err = s.db.NamedExec("REPLACE INTO mytable VALUES (:id, :date, ....)", t)`
+
+I've added `db:` tags to the struct but the issue is that MyStruct is extremely long, about 50 fields and it seems ridiculous that I'll have to list off each of the tags in the values section of any such named query, is there a better way to do this?
+## [9][go hack on module dependencies workflow](https://www.reddit.com/r/golang/comments/ey1mgk/go_hack_on_module_dependencies_workflow/)
+- url: https://youtu.be/4ErQbNQzx64
+---
+
+## [10][The State of Go 2020: changes since Go 1.12](https://www.reddit.com/r/golang/comments/exlm0i/the_state_of_go_2020_changes_since_go_112/)
 - url: https://speakerdeck.com/campoy/the-state-of-go-2020
 ---
 
-## [6][Just went on a profiling adventure, and thought I'd do a writeup of it](https://www.reddit.com/r/golang/comments/exmac5/just_went_on_a_profiling_adventure_and_thought_id/)
-- url: https://jesseduffield.com/adventures-in-profiling-with-go/
----
-
-## [7][Go: How Are Loops Translated to Assembly?](https://www.reddit.com/r/golang/comments/ex5z4o/go_how_are_loops_translated_to_assembly/)
-- url: https://medium.com/a-journey-with-go/go-how-are-loops-translated-to-assembly-835b985309b3
----
-
-## [8][Can I get your thoughts on this simple feature flagging package I wrote?](https://www.reddit.com/r/golang/comments/exgu2m/can_i_get_your_thoughts_on_this_simple_feature/)
-- url: https://www.reddit.com/r/golang/comments/exgu2m/can_i_get_your_thoughts_on_this_simple_feature/
----
-This package is based on similar functionality that Etsy.com uses to enable or disable various aspects of their application for user testing or rolling out new features. The goal was to make a super simple replica with consistent bucketing. 
-
-I'd love to hear your thoughts. https://github.com/jimdoescode/feature
-## [9][Open Source Identity and Access Management](https://www.reddit.com/r/golang/comments/exl6s8/open_source_identity_and_access_management/)
-- url: https://www.reddit.com/r/golang/comments/exl6s8/open_source_identity_and_access_management/
----
-Hi all 
-
-Does it exists Open Source Identity and Access Management written in Golang? 
-
-Thanks
-## [10][Golang gorm preload with last](https://www.reddit.com/r/golang/comments/exmwos/golang_gorm_preload_with_last/)
-- url: https://www.reddit.com/r/golang/comments/exmwos/golang_gorm_preload_with_last/
----
-I need help how to use gorm preload to add only last record for example db.Preload("Posts").Last().Find(&amp;allUser)

@@ -39,12 +39,66 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Deploying rails app using Nginx](https://www.reddit.com/r/rails/comments/exnchp/deploying_rails_app_using_nginx/)
+## [3][Receive payments for Side Project](https://www.reddit.com/r/rails/comments/ey5q90/receive_payments_for_side_project/)
+- url: https://www.reddit.com/r/rails/comments/ey5q90/receive_payments_for_side_project/
+---
+What would you use in order to receive small payments ($3-$30)  for a side project ?
+
+There are not different types of subscriptions and no complicated pricing schemas. Only pay by month ($3)  or pay annual price ($30).  
+
+Stripe? Paypal? Braintree?  Any other suggestions?
+
+Please keep in mind this is a low maintenance project that I may abandon after one month (If it fails to generate earnings) and I also want to find a way to accept payments quickly in case I build another and another and another project.
+## [4][devise_ldap_authenticatable &amp; react_native](https://www.reddit.com/r/rails/comments/exqdrq/devise_ldap_authenticatable_react_native/)
+- url: https://www.reddit.com/r/rails/comments/exqdrq/devise_ldap_authenticatable_react_native/
+---
+I'm adding a React Native App to my monolith rails app. I was wondering, what would be the best approach to dealing with user authorization?  I check the user based on their username/active directory group. How do I handle authenticating users through devise\_ldap\_authenticatable with React Native?
+## [5][Nginx + Puma, shows nothing but the root page](https://www.reddit.com/r/rails/comments/expomw/nginx_puma_shows_nothing_but_the_root_page/)
+- url: https://www.reddit.com/r/rails/comments/expomw/nginx_puma_shows_nothing_but_the_root_page/
+---
+First, I followed this :
+
+[https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04)
+
+and my nginx configuration and puma.rb matches this (I actually modified them a bit, but important parts are just like this)
+
+and now, when I go to the domain, it:
+
+1. doesn't load the assets (and I wrote a lot of css to fix RTL)
+2. doesn't load any route except root.
+
+in both cases, it gives me error 404.
+
+as an update, it only happens on https. http is ok :|
+## [6][How to handle CRUD on join table in backend/frontend?](https://www.reddit.com/r/rails/comments/exph1s/how_to_handle_crud_on_join_table_in/)
+- url: https://www.reddit.com/r/rails/comments/exph1s/how_to_handle_crud_on_join_table_in/
+---
+I'm trying to understand how to handle a many\_to\_many relationship on CRUD using Rails/React. 
+
+On CRUD of the has\_many model, do I handle CRUD of the belongs\_to join table in the backend controller? Or do I route the join table to the frontend and handle the CRUD ops there with \`fetch\`?
+
+In the backend, would the controller look something like this on create? 
+
+&amp;#x200B;
+
+    def create
+        @table = Table.create(table_params)
+        if @table.save
+            JoinTable.create(table_id: params.permit!(:table_id), other_table_id: 
+        params.permit!(:other_table_id))
+          render :json =&gt; @table, status: @ok
+        else  
+           render :json =&gt; { errors: @table.erros }
+        end
+    end
+
+or would I handle this in the frontend and treat the join table like the other tables.
+## [7][Deploying rails app using Nginx](https://www.reddit.com/r/rails/comments/exnchp/deploying_rails_app_using_nginx/)
 - url: https://www.reddit.com/r/rails/comments/exnchp/deploying_rails_app_using_nginx/
 ---
 I just put my project on a server, then I ran its production env.
 
-Now, I configured nginx like this : 
+Now, I configured nginx like this :
 
            root /home/prp-e/dakhlokharj/public;
     
@@ -64,8 +118,17 @@ Now, I configured nginx like this :
 
 But when I go to the domain, it still shows me the old static index.
 
+UPDATE: 
+
+It's okay now, but doesn't load assets (I added another location for assets) and also doesn't load other routes, only root! It gave me 404.
+
 P.S : Ruby installed using RVM.
-## [4][Scoped query generating duplicate conditions](https://www.reddit.com/r/rails/comments/ex9tyi/scoped_query_generating_duplicate_conditions/)
+## [8][How to find working gem?](https://www.reddit.com/r/rails/comments/exg1ek/how_to_find_working_gem/)
+- url: https://www.reddit.com/r/rails/comments/exg1ek/how_to_find_working_gem/
+---
+Been in ruby for a month now!  
+How do you guys find gem? i am looking for a gem for appointment scheduling, but everything i see is at least 2 years old. How to gauge if it still works. Do you perform unit test for each case?
+## [9][Scoped query generating duplicate conditions](https://www.reddit.com/r/rails/comments/ex9tyi/scoped_query_generating_duplicate_conditions/)
 - url: https://www.reddit.com/r/rails/comments/ex9tyi/scoped_query_generating_duplicate_conditions/
 ---
 I have a scope which is defined as below in the associations file of the Account model
@@ -87,12 +150,7 @@ I'm not sure why there is multiple conditions being generated which might have a
 I'm using rails 4.2.1
 
 Could you please tell me how I can debug this or find out how this query generation works?
-## [5][How to find working gem?](https://www.reddit.com/r/rails/comments/exg1ek/how_to_find_working_gem/)
-- url: https://www.reddit.com/r/rails/comments/exg1ek/how_to_find_working_gem/
----
-Been in ruby for a month now!  
-How do you guys find gem? i am looking for a gem for appointment scheduling, but everything i see is at least 2 years old. How to gauge if it still works. Do you perform unit test for each case?
-## [6][Unable to get rubocop to autoformat on save to work with VSCode](https://www.reddit.com/r/rails/comments/ex9yca/unable_to_get_rubocop_to_autoformat_on_save_to/)
+## [10][Unable to get rubocop to autoformat on save to work with VSCode](https://www.reddit.com/r/rails/comments/ex9yca/unable_to_get_rubocop_to_autoformat_on_save_to/)
 - url: https://www.reddit.com/r/rails/comments/ex9yca/unable_to_get_rubocop_to_autoformat_on_save_to/
 ---
 I'm trying to use the rubocop Code extension to format code on saving but I get the famous "An error occured during autocorrection"
@@ -101,7 +159,7 @@ This is the settings.json file related to what I have. Yet I keep getting this e
 
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true, 
-    "editor.formatOnSaveTimeout": 0, 
+    "editor.formatOnSaveTimeout": 5000, 
     "diffEditor.renderSideBySide": true,
     "ruby.format": "rubocop", 
     "ruby.rubocop.executePath": "pathto//bin/rubocop/", 
@@ -115,10 +173,10 @@ The path to rubocop is correct in the actual settings.json file.
 
 I followed every instruction from [https://stackoverflow.com/questions/48030698/vscode-vscode-ruby-rubocop-how-to-auto-correct-on-save](https://stackoverflow.com/questions/48030698/vscode-vscode-ruby-rubocop-how-to-auto-correct-on-save)
 
-When I try to run it fro command line the rubocop comand works just fine. This looks like more of a VS Code error.
+When I try to run it from the command line the rubocop command works just fine. This looks like more of a VS Code error.
 
 Could you please help me resolve this?
-## [7][rails 6: place to put a custom.scss file](https://www.reddit.com/r/rails/comments/ex7qic/rails_6_place_to_put_a_customscss_file/)
+## [11][rails 6: place to put a custom.scss file](https://www.reddit.com/r/rails/comments/ex7qic/rails_6_place_to_put_a_customscss_file/)
 - url: https://www.reddit.com/r/rails/comments/ex7qic/rails_6_place_to_put_a_customscss_file/
 ---
 
@@ -127,62 +185,7 @@ where do you place it in a rails 6 / bootstrap 4
 application?
 
 sidenote: I used [this gist](https://gist.github.com/bazzel/2c64e2e5804077f9a61938a93ed54823) when setting up the bootstrap on rails.
-## [8][Is it possible to use Rails 6 with SQL Server (MSSQL)?](https://www.reddit.com/r/rails/comments/ewx2q2/is_it_possible_to_use_rails_6_with_sql_server/)
+## [12][Is it possible to use Rails 6 with SQL Server (MSSQL)?](https://www.reddit.com/r/rails/comments/ewx2q2/is_it_possible_to_use_rails_6_with_sql_server/)
 - url: https://www.reddit.com/r/rails/comments/ewx2q2/is_it_possible_to_use_rails_6_with_sql_server/
 ---
 We were hoping to jump to the latest version of rails to rectify a bunch of identified vulnerabilities.  This Rails code is heavily hand edited, so if necessary, switching from tiny_tds would not be unthinkable, but the data we are fetching is, and will always be in an MS SQL database.  Must we use rails 5.x?
-## [9][One authentication system to cover all modern methods?](https://www.reddit.com/r/rails/comments/ewt1nd/one_authentication_system_to_cover_all_modern/)
-- url: https://www.reddit.com/r/rails/comments/ewt1nd/one_authentication_system_to_cover_all_modern/
----
-I have a react app with rails backend which needs to support the following:
-
-1. all the devise stuff like sign up, sign in, sign out, confirmation via email, forget password
-2. Need a way to authenticate\_user! based on JWT Tokens
-3. Support for refresh\_token so that we can keep the user logged in
-4. External authentication systems like Login via Google and Facebook
-
-As I understand these 4 requirements are pretty standard for a modern web app. I was surprised to see the lack of a single out of the box solution for it. Here's what I know.
-
-* Devise is necessary. We need something that extends it to do the rest.
-* Omniauth plugin for devise covers 4
-* devise-jwt covers 2 but not 3
-* doorkeeper covers 2 and 3, but struggles with 4 and steps on devise's shoes in places.
-
-Does anyone have any suggestions to consider?
-## [10][perform the follower or follower function](https://www.reddit.com/r/rails/comments/ex1mjg/perform_the_follower_or_follower_function/)
-- url: https://www.reddit.com/r/rails/comments/ex1mjg/perform_the_follower_or_follower_function/
----
-Good afternoon a question how can I perform the follower or follower function for my project, a tutorial or documentation
-
-Thank you
-## [11][Fonts haven't been changed.](https://www.reddit.com/r/rails/comments/ewshzl/fonts_havent_been_changed/)
-- url: https://www.reddit.com/r/rails/comments/ewshzl/fonts_havent_been_changed/
----
-A long time ago, I made a font-api, and I wanted to use that in my current rails project. So, I tested two scenarios and non of them worked. 
-
-1. Font API :   
-my API works like this, you add this to your html file and then call fonts in CSS stylings.   
-&lt;link rel="stylesheet" type="text/css" href="[http://api.azadqalam.ir/fonts?font=FONTNAME](http://api.azadqalam.ir/fonts?font=FONTNAME) /&gt; 
-2. This : [https://gist.github.com/anotheruiguy/7379570](https://gist.github.com/anotheruiguy/7379570)   
-
-
-I did both of them and I performed : 
-
-    rake assets:precompile
-    
-
-But I still see system's default font in the project!
-## [12][ActionCable (Redis) -&gt; reconnect on redis connection error](https://www.reddit.com/r/rails/comments/ewn1e4/actioncable_redis_reconnect_on_redis_connection/)
-- url: https://www.reddit.com/r/rails/comments/ewn1e4/actioncable_redis_reconnect_on_redis_connection/
----
-Hello! 
-
-I work on an application which has ActionCable implemented with Redis.
-
-I would like to know whether it is possible to reset the entire ActionCable setup in case the Redis throws Connection error.
-
-I would like to connect to a different Redis url when the connection error occurs. The infrastructure of this Redis service is that there are two Redis databases mirrored, and there are frequent planned maintanance on the service which can cause the shut down of one of the databases. Unfortunately the switch is not solved by the service itself, however it provides us 2 connection urls. These are the ones I would like to switch between automatically.
-
-Is it possible to do with ActionCable.
-
-I know it is possible with ActiveRecord database connection

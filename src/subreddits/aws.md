@@ -1,93 +1,67 @@
 # aws
-## [1][`puppet apply` in EC2 User Data?](https://www.reddit.com/r/aws/comments/exl9fy/puppet_apply_in_ec2_user_data/)
-- url: https://www.reddit.com/r/aws/comments/exl9fy/puppet_apply_in_ec2_user_data/
+## [1][AWS: Your complete guide to Amazon Web Services &amp; features](https://www.reddit.com/r/aws/comments/ey19oe/aws_your_complete_guide_to_amazon_web_services/)
+- url: https://www.techradar.com/news/aws
+---
+
+## [2][Simple Cognito example to demonstrate sign-up, login and access S3](https://www.reddit.com/r/aws/comments/ey30il/simple_cognito_example_to_demonstrate_signup/)
+- url: https://github.com/franzwong/cognito-s3-cloudformation-example
+---
+
+## [3][Understanding billing question](https://www.reddit.com/r/aws/comments/exya4z/understanding_billing_question/)
+- url: https://www.reddit.com/r/aws/comments/exya4z/understanding_billing_question/
+---
+I've had a ~350 GB in IA storage for a few years. In early December, I moved it all over to Glacier Deep Archive. The data is all just offsite backup of a file server, and I hope to never have to access it.
+
+The December bill was higher, which I expected since I paid for all the class transfers.
+
+I just got my January bill, and it lists charges for about 350 GB in *each* of IA and 
+Glacier Deep Archive. I can't figure out why. I logged into CloudWatch Management and it shows that I suddenly had 350 GB in Deep Archive starting in early December, and the amount of data in IA never went down.
+
+Can anyone clue me in to what's going on?
+## [4][Native Lambda](https://www.reddit.com/r/aws/comments/ey4c0m/native_lambda/)
+- url: https://www.reddit.com/r/aws/comments/ey4c0m/native_lambda/
+---
+Gotta share this :)
+
+Just deployed a native Linux binary function written in Java, using Micronaut and compiled with GraalVM to Lambda. This has a call latency of ~60ms :)
+
+Is there anoyone else using Micronaut and Graal?
+## [5][Is there a point in using crawlers on AWS Glue if I only use Python Shell and not PySpark?](https://www.reddit.com/r/aws/comments/ey264b/is_there_a_point_in_using_crawlers_on_aws_glue_if/)
+- url: https://www.reddit.com/r/aws/comments/ey264b/is_there_a_point_in_using_crawlers_on_aws_glue_if/
+---
+Long story short, my company decided to use Python Shell instead of PySpark on Glue due to cost/benefit reasons. My understanding is that I'd be using boto3 to retrieve data directly from s3 client, instead of going through the trouble of setting up glue context and DynamicFrame. 
+
+Is there any reason to use a Glue crawler/classifier when I can just define everything in my Python Shell job? If there is, are there any examples of how to utilize Glue catalog using Python Shell? I can't find examples, and [the documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html) doesn't give me a picture on why should and how could I use it.
+## [6][The Lambda Layer Inspector (L2I)](https://www.reddit.com/r/aws/comments/ey5k1q/the_lambda_layer_inspector_l2i/)
+- url: https://github.com/mhausenblas/l2i
+---
+
+## [7][New to AWS need some help](https://www.reddit.com/r/aws/comments/ey4izj/new_to_aws_need_some_help/)
+- url: https://www.reddit.com/r/aws/comments/ey4izj/new_to_aws_need_some_help/
+---
+A friend of mine who uses AWS asked me a technical question regarding a particular feature which I have mentioned below. But I'm only familiar with CLI (I use AWS as a means to run some simulations) and this is related to DynamoDb. hope some of you whom are more experienced in  deploying DB can help me out in this regard.
+
+"How to use AWS lambda to connect an app to a database server(say AWS DynamoDb) through API gateway without making it publicly accessible"
+## [8][What's the difference between SSD and NVMe?](https://www.reddit.com/r/aws/comments/expdmc/whats_the_difference_between_ssd_and_nvme/)
+- url: https://www.reddit.com/r/aws/comments/expdmc/whats_the_difference_between_ssd_and_nvme/
+---
+I am probably not making the comparison correctly, but my thinking is that SSD EBS is the same as an SSD drive we'd have on our own computer.  If I'm correct, then what exactly is NVMe?  Just faster SSD?  Or maybe it's directly mounted to the instance and so it's exponentially faster?
+## [9][Postgres on Rds - horrible checkpoint behaviour](https://www.reddit.com/r/aws/comments/exsy3i/postgres_on_rds_horrible_checkpoint_behaviour/)
+- url: https://www.reddit.com/r/aws/comments/exsy3i/postgres_on_rds_horrible_checkpoint_behaviour/
 ---
 Hi,
 
-I have taken over the maintenance of a relatively old CloudFormation project. In the User Data script of EC2 instances (i.e. launch configurations), there's a call to `puppet apply` to create/initialize file system, users/groups, directories, download files from S3, etc.
+Were bulk loading into a postgres db on rds and getting horrible behaviour where checkpoints take AGES and occur repeatedly.
 
-A few questions:
+Our data isn't even that big. Just a few dozen tables some with up to 20million rows. 
 
-1. Are there any good reasons to do this instead of using a shell script?
-2. I haven't used Puppet in the past but I have 2 years of experience using Ansible.
-    1. Back when I was using Ansible, it was mainly inside my Jenkins pipelines, not in my CloudFormation User Data scripts.
-3. Does it make any sense to use Ansible/Puppet in User Data at all? I always thought these tools are for remote provisioning of servers, not tools to be used inside User Data scripts.
-    1. Now that [ppuppet apply](https://puppet.com/docs/puppet/6.10/architecture.html) has become obsoleted, would you suggest converting my User Data to plain shell scripts or migrating the puppet script to Ansible (in User Data)?
+We played with the wal size but it just moves the problem rather than fixing it.
 
-N.B: My only options are open source, free versions of Puppet and Ansible.
-## [2][Best way to build a "wish list" notification system?](https://www.reddit.com/r/aws/comments/exdsob/best_way_to_build_a_wish_list_notification_system/)
-- url: https://www.reddit.com/r/aws/comments/exdsob/best_way_to_build_a_wish_list_notification_system/
----
-I'm playing around with some new stuff and building a little application as part of a learning experience. The app basically has two services at the moment, products and users. Users can sell or buy items, or they can add an item to their wish list. When an item on the wish list drops below a certain price or is back in stock, I want to notify those users that have the item on their wish list.
+Never seen this in pg before so is there something out of whack in the default rds config?
 
-My data is stored in DynamoDB and I'm trying to make use of only serverless technologies. How can I go about building a solution like this? I want to build it in a "best practice" kind of way, so one of the things that's important is scalability. Therefore, it doesn't really make sense to create an SNS topic for each item being sold, nor does it make sense to go through every single user's wish list each time a product's price/availability changes.
-## [3][Visibility of lambda deployment size](https://www.reddit.com/r/aws/comments/exnn8d/visibility_of_lambda_deployment_size/)
-- url: https://www.reddit.com/r/aws/comments/exnn8d/visibility_of_lambda_deployment_size/
----
-I'm deploying a lambda that uses a number of libraries via layers, and I'm running close to/into the 250Mb deployment limit on Lambda.
-
-As I understand, this is the unzipped size of the layers I'm using, plus the code I deploy directly to the lambda.
-
-I'd like to know if there's any visibility of the deployment size in AWS. At the moment, I get a message when I exceed it, but to work out what's taking the size I'm effectively going to have to unzip all the layers manually on my local PC and add up the various sizes.
-## [4][Hosting Spring and a SPA on AWS](https://www.reddit.com/r/aws/comments/exn2k0/hosting_spring_and_a_spa_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/exn2k0/hosting_spring_and_a_spa_on_aws/
----
-So for the past few days I've been killing myself with hosting my first actual app.. Today, I finally got it fully working and I am so happy. But very soon, I noticed that there's a big problem..
-
-In my React app I am using a BrowserRouter to route around the app. I have my homepage, my about page, and an adminpage. When I tried to access my about page with a direct URL, I got a nice little 404. After googling for a few minutes, it was pretty clear what was wrong.. Since ReactJS is a SPA, routing around the page isn't actually routing around the page, it just unmounts the old and mounts the new Component.. I tried fixing this with the following code in Spring:
-
-    @Controller
-    public class Controller {
-    	@GetMapping(value = {"/","/about"})
-    	public String allIndex(){
-    		return "index.html";
-    	}
-    	@GetMapping("/adminpage")
-    	public String getIndex(){
-    		return "index.html";
-    	}
-    }
-
-It... *works*.. But for some reason /adminpage still doesn't want to work, but at least the pages that I want the user to see work, so I'm fine with that for now..
-
-Now I am wondering, would it be better to host the React app on S3 by itself, and host the Spring app on beanstalk? Currently they're both ran from a single .jar and they're run on my beanstalk instance. Would splitting them up like that fix this? How do you deal with this issue? I'm sure the same thing happens with Angular, and all the other SPAs, right? I know React has the HashRouter, but I really don't want to deal with those ugly URLs with the hashtag.
-
-But nonetheless, I probably won't bother fixing this app right now, because I am very happy with it, even if my admin panel doesn't work. So I am wondering how to prevent this from happening in the future. Thank you for any help.
-## [5][Scoring A+ for SSL Labs on My Cloudfront-Hosted Static Website](https://www.reddit.com/r/aws/comments/exmsg5/scoring_a_for_ssl_labs_on_my_cloudfronthosted/)
+Thanks!
+Dan
+## [10][Scoring A+ for SSL Labs on My Cloudfront-Hosted Static Website](https://www.reddit.com/r/aws/comments/exmsg5/scoring_a_for_ssl_labs_on_my_cloudfronthosted/)
 - url: https://adamj.eu/tech/2020/02/02/scoring-a+-for-ssl-labs-on-my-cloudfront-hosted-static-site/
----
-
-## [6][Cloud Predictions 2020: IOD Experts Make Their Calls - [IOD tech Content]](https://www.reddit.com/r/aws/comments/exl7r8/cloud_predictions_2020_iod_experts_make_their/)
-- url: https://iamondemand.com/blog/cloud-predictions-2020-iod-experts-make-their-calls/
----
-
-## [7][Beanstalk can't connect to RDS](https://www.reddit.com/r/aws/comments/ex6fht/beanstalk_cant_connect_to_rds/)
-- url: https://www.reddit.com/r/aws/comments/ex6fht/beanstalk_cant_connect_to_rds/
----
-Hello I have a EC2 instance with a RDS instance and a beanstalk that is hosting my Spring Boot application. When I deployed it, I got a 502 bad gateway.. I went to check the logs and I found that my Spring Boot application can't connect to the DB
-
-    org.postgresql.util.PSQLException: The connection attempt failed.
-
-I haven't configured any security groups or vpc or anything so I'm guessing that might be the issue, but I'm not sure what needs to be changed.. Any help? Thanks
-
-Also when I open my EC2 console, and click on "Running Instances" I only see 1 instance, the beanstalk env, is that normal? I thought that I would find the RDS instance here too..
-
-EDIT: I found the issue.. I connected to the database directly using pgAdmin. As soon as I connected to it, I knew what was wrong.. For some reason, the created database name was just postgresql, instead of the name that I gave it on RDS. After I changed the name of the database everything seems to run perfectly fine.
-## [8][How can i automate the process of creating an account with cross-account roles for Terraform?](https://www.reddit.com/r/aws/comments/exez9t/how_can_i_automate_the_process_of_creating_an/)
-- url: https://www.reddit.com/r/aws/comments/exez9t/how_can_i_automate_the_process_of_creating_an/
----
-I'm trying out AWS's Control Tower service, and it looks like what we need. 
-
-However, i need to have an easy way of adding new 'environment' accounts, that i can access with a cross account role. 
-
-Essentially, in a few clicks, i need to be able to provision a new environment account for a set of infrastructure to live (VPC, ec2, etc) &amp; the roles/policies that allow another account to assume access through a role. It'd be even better if i could do this from the cli, but i need to at least be able to easily do this from the web console. 
-
-I was hoping i could modify Account Factory to do this in all one step, but i have no idea how or where to start.
-## [9][EC2 outage in us-east-1?](https://www.reddit.com/r/aws/comments/exh854/ec2_outage_in_useast1/)
-- url: https://www.reddit.com/r/aws/comments/exh854/ec2_outage_in_useast1/
----
-Curious if anyone else had some major outages at around 1900 EST in us-east-1? I can't find any pattern behind it, it isn't like an entire AZ went out, but simultaneously in multiple VPCs I had instances report failures in status checks, and 2 hours later the ASGs are still struggling to get back to capacity.
-## [10][Terraform Vs Ansible - Friends Or Foes? Which Should I Choose?](https://www.reddit.com/r/aws/comments/exmbql/terraform_vs_ansible_friends_or_foes_which_should/)
-- url: http://orocke.xyz
 ---
 

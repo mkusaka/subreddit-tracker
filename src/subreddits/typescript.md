@@ -22,15 +22,257 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][What is the VScode plugin Anders Hejlsberg is using to get the types underlined?](https://www.reddit.com/r/typescript/comments/exkh20/what_is_the_vscode_plugin_anders_hejlsberg_is/)
+## [2][Marshal.ts serializer got a JIT engine + ORM abstraction. It's now up to 300x faster than class-transformer. Time to switch guys](https://www.reddit.com/r/typescript/comments/exzdsd/marshalts_serializer_got_a_jit_engine_orm/)
+- url: https://github.com/marcj/marshal.ts#marshalts
+---
+
+## [3][Question about Typescript objects assign](https://www.reddit.com/r/typescript/comments/ey4vbb/question_about_typescript_objects_assign/)
+- url: https://www.reddit.com/r/typescript/comments/ey4vbb/question_about_typescript_objects_assign/
+---
+Hi. I'm having trouble with TypeScript objects assign. For example:
+
+    class A {
+        x: number;
+        y: number;
+    };
+    class B {
+        x: number;
+        y: number;
+        z: number;
+    };
+    const b: B = {
+        x: 0,
+        y: 1,
+        z: 2,
+    };
+    const a: A = b;
+    console.log(a);
+
+I expect the result to be:
+
+    { x: 0, y: 1 }
+
+But I get:
+
+    { x: 0, y: 1, z: 2 }
+
+Is there any way to get the first result?
+## [4][What's been your experience using TypeScript with React Hooks?](https://www.reddit.com/r/typescript/comments/exwqq2/whats_been_your_experience_using_typescript_with/)
+- url: https://www.reddit.com/r/typescript/comments/exwqq2/whats_been_your_experience_using_typescript_with/
+---
+I've been working on a project involving both React and TypeScript. I've decided to start moving the project in the direction of hooks. What I didn't realize when starting this process was that React hooks provide a way to work in React without having to use classes. This kind of bummed me out since I've been learning a lot about TypeScript's added class features like modifying class properties to be private / public / protected, etc.
+
+This got me thinking about using React and TypeScript together, and about how Facebook has also made Flow, which is kind of Facebook's analog to TypeScript (at least in terms of type declarations). 
+
+Are React and TypeScript at odds with each other? Do you think these two technologies are moving away from each other? Would you recommend using them together? Why/why not?
+## [5][Could I get a quick code review on these three simple functions?](https://www.reddit.com/r/typescript/comments/exzdjn/could_i_get_a_quick_code_review_on_these_three/)
+- url: https://www.reddit.com/r/typescript/comments/exzdjn/could_i_get_a_quick_code_review_on_these_three/
+---
+I'm just wondering if you think these three functions could be written any better. Their purpose is to attach/inject a hook into the invocation lifecycle of a target function.
+
+Thanks.
+
+```
+export enum HookType {
+    BEFORE,
+    AFTER
+};
+
+export type TargetContext = { [key: string]: any };
+export type AnyFunction = (...args: any[]) =&gt; any;
+
+export const isTypeFunction = (candidate: any): candidate is AnyFunction =&gt; {
+    return (typeof candidate === 'function');
+}
+
+/**
+ * Attaches a hook function of a specific type to fire for a target function invocation.
+ * @param hookType   The type of hook to apply to the target function.
+ * @param context    The context that the target function exists within.
+ * @param targetName The name of the target function.
+ * @param hook       The hook function execute.
+ */
+export type ReplaceTarget = &lt;T extends TargetContext, K extends keyof T&gt;(
+    hookType: HookType, 
+    context: T,
+    targetName: K,
+    hook: AnyFunction
+) =&gt; void;
+
+export const replaceTarget: ReplaceTarget = &lt;T extends TargetContext, K extends keyof T&gt;(
+    hookType: HookType, 
+    context: T,
+    targetName: K,
+    hook: AnyFunction
+): void =&gt; {
+    const originalFunc = context[targetName];
+    
+    if (!isTypeFunction(originalFunc))
+        throw new Error(`TypeError: context[${targetName}] is not a function.`);
+
+    const callOriginal = (...args: any[]) =&gt; originalFunc.apply(context, args);
+    const callHook = (...args: any[]) =&gt; hook.apply(context, args);
+
+    let originalReturnValue;
+
+    context[targetName] = ((...args: any[]): typeof originalFunc =&gt; {
+        switch (hookType) {
+            case HookType.BEFORE:
+                callHook(...args);
+                originalReturnValue = callOriginal(...args);
+                break;
+            case HookType.AFTER:
+                originalReturnValue = callOriginal(...args);
+                callHook(...args);
+                break;
+            default:
+                throw new Error(`HookError: The provided HookType is invalid.`);
+        }
+
+        return originalReturnValue;
+    }) as T[K];
+};
+
+export const backupTargets = &lt;T extends TargetContext, K extends keyof T&gt;(
+    context: T, 
+    targetNames: K[]
+): T =&gt; {
+    const targetContextBackup: T = {} as T;
+
+    Object.getOwnPropertyNames(context).forEach(propName =&gt; {
+        if (targetNames.indexOf(propName as K) &gt; -1) {
+            targetContextBackup[propName as K] = context[propName];
+        }
+    });
+
+    return targetContextBackup;
+};
+
+export const restoreTargets = &lt;
+    T extends TargetContext, 
+    K extends keyof T,
+&gt;(
+    contextToRestore: TargetContext,
+    backupContext: T,
+    targetNames: K[]
+): void =&gt; {
+    Object.getOwnPropertyNames(contextToRestore).forEach(propName =&gt; {
+        if (targetNames.indexOf(propName as K) &gt; -1) {
+            contextToRestore[propName] = backupContext[propName];
+        }
+    });
+}
+```
+I'm not sure if that type casting I'm doing is a best practice, for example.
+
+Thank you.
+## [6][What is the VScode plugin Anders Hejlsberg is using to get the types underlined?](https://www.reddit.com/r/typescript/comments/exkh20/what_is_the_vscode_plugin_anders_hejlsberg_is/)
 - url: https://i.redd.it/o780xxzgige41.png
 ---
 
-## [3][Railroad Programming in TypeScript](https://www.reddit.com/r/typescript/comments/exoctl/railroad_programming_in_typescript/)
+## [7][Inversify based dependency injection in React - create-react-app-inversify](https://www.reddit.com/r/typescript/comments/exqmz8/inversify_based_dependency_injection_in_react/)
+- url: https://www.reddit.com/r/typescript/comments/exqmz8/inversify_based_dependency_injection_in_react/
+---
+ Hi All
+
+I've created a few packages to help with constructor (or function) based dependency injection using inversify in React. Feedback or comments would be welcome.
+
+I understand that this isn't really the way that react apps are usually written so I don't expect many react developers to use or even to like this!! I am an angular developer but want to build some react apps. I don't want to give up the ease of testing that you get with constructor based dependency injection so I created this.
+
+As I said comments and constructive feedback welcome.
+
+npm package:
+
+[https://www.npmjs.com/package/inversify-constructor-injection](https://www.npmjs.com/package/inversify-constructor-injection)
+
+to create a new app:
+
+`npx create-react-app-inversify my-app`
+## [8][How can I reference a string literal in an object created using 'as const' in a callback?](https://www.reddit.com/r/typescript/comments/exs8kq/how_can_i_reference_a_string_literal_in_an_object/)
+- url: https://www.reddit.com/r/typescript/comments/exs8kq/how_can_i_reference_a_string_literal_in_an_object/
+---
+I have an object, here is a sample of it. I use `as const`, and now the keys and values are no longer type `string`, but the string literal:
+```
+readonly additional: readonly ["no-console"];
+```
+```
+export const rules = {
+  add: {},
+  remove: {
+    additional: ['no-console', 'another-rule']
+  }
+} as const;
+```
+In my function I can no longer type the array contents as `string` as it is now a tuple, so how do i  type them as the correct reference to the object rules... `rules` is not an interface, how do i get at the types in this context?
+```
+import { rules } from './rules.ts';
+
+interface EslintRules {
+  [key: string]: any[];
+}
+
+export const conditions = (key: string, val: any[]): boolean =&gt;
+  !!(
+    !rules.remove.basicPrettierConflicts.includes(key) &amp;&amp; // &lt;&lt; key is not a string, it needs to refer to the actual string literal
+  );
+
+export function ruleFilter(
+  esLintRules: EslintRules,
+  conditionToAccept: { (key: string, val: any[]): boolean }
+): [EslintRules, string[]] {
+  const removedRules = [];
+  return [
+    Object.fromEntries(
+      Object.entries(esLintRules).filter(([key, val]) =&gt; {
+        if (conditionToAccept(key, val)) {
+          return true;
+        }
+        removedRules.push(key);
+        return false;
+      })
+    ),
+    removedRules
+  ];
+}
+```
+## [9][Railroad Programming in TypeScript](https://www.reddit.com/r/typescript/comments/exoctl/railroad_programming_in_typescript/)
 - url: https://medium.com//railroad-programming-in-typescript-21d69f486f6e?source=friends_link&amp;sk=07669f7de4932860744c4eb267bad179
 ---
 
-## [4][Using paths property of tsconfig to specify a specific file?](https://www.reddit.com/r/typescript/comments/exjk6d/using_paths_property_of_tsconfig_to_specify_a/)
+## [10][How to map variable length tuple argument to a second variable length tuple argument with different item types?](https://www.reddit.com/r/typescript/comments/exru7o/how_to_map_variable_length_tuple_argument_to_a/)
+- url: https://www.reddit.com/r/typescript/comments/exru7o/how_to_map_variable_length_tuple_argument_to_a/
+---
+I want to write a function 'foo' that meets these requirements:
+
+    interface idToDataType {
+      'id1': string,
+      'id2': number,
+      'id3': boolean,
+    }
+    
+    // Compiles
+    foo(['id2', 'id1', 'id3'], [6, 'happy', true]);
+    foo(['id1', 'id2'], ['happy', 6]);
+    foo(['id2', 'id2'], [6, 7]);
+    
+    // Should not compile!
+    foo(['id1', 'id2'], ['sad']); // Data too short!
+    foo(['id1', 'id2'], ['sad', 'sad']); // wrong mapped tuple type!
+    foo(['id1', 'id2'], ['sad', 6, 'sad']); // Data too long
+
+So far the closest I've gotten is here:  
+[http://www.typescriptlang.org/play/#code/FDAuE8AcFMAIAUBOB7GiIBUpwLywNbTjIBmCKaEAagIYA2ArtFjALI2QDcY25q06cLUbNs7SLDwBvYLFgByAJYATAIzyAXLADOoRIoB2AcwA0shSoBMm2AYYBbAEYCzcpcoDMNx8mR1oNAZmAL4gEDCwAJLKGMgAIjSgNAA8AIKw0AAeoNAGytqwqYiINODJSPyCLNAAfDWSsDJyANqRsIYERKSFALpaqa09Gdm5+XyU4NWwAPzjAtT0TNXizQORPUMa5nI7u3v7B4dHBtAAbgLcocDK0ADGdDSIcCQMBregisgGsDm6yRjDHJ5AoVCbVZo9GoACm2sGUiRoWmisQSSX+NRMsAAdDiVNotBgAJRaU7IFTcYAAekpsAAwsh7JBFP5tGBoLooc0AGyY+QACw4kHA8kxeiYPV5VhFFjU0vcXkJ3F+oE5-MFwsxXIlMvUkuU1kVbI53MxAHZte5rHqDRTqbAAMp85AMOjKWzIUCwW4Mpn+ACERpVzXk2hoynkFpUuplNtgdtRNB+vh0TvQAeVqtD4d5WYjeujlvkirjNIA7ihjLB7ILoG7QAxIP4fth0+ygyGw9KeQpc5HZdai5wS7AE0nkLA6F8jCAqTSKo5-PYCqXFKA+T8+YoCoKUDRbnytnbVFiRwjYIE3dFt092t813By1PYMhEDdEH7T0kU87XV6GXBtDuL5lBPDA+TgGgfHOdoCjoRRCFgYh4R+eh8C0IwnlyDc4AwmhtAKLdMRQBgjHXe9n1uAJvkQBwF3ZWdYEsUDwPaMYBWg0BxwYQCFCeXR5HPfBExxLFMRfDI6B48jwnZc8b1eT4TjdC9sNgF43g+L5YGcb17Fkzjx38AxFFyUAsSAA](http://www.typescriptlang.org/play/#code/FDAuE8AcFMAIAUBOB7GiIBUpwLywNbTjIBmCKaEAagIYA2ArtFjALI2QDcY25q06cLUbNs7SLDwBvYLFgByAJYATAIzyAXLADOoRIoB2AcwA0shSoBMm2AYYBbAEYCzcpcoDMNx8mR1oNAZmAL4gEDCwAJLKGMgAIjSgNAA8AIKw0AAeoNAGytqwqYiINODJSPyCLNAAfDWSsDJyANqRsIYERKSFALpaqa09Gdm5+XyU4NWwAPzjAtT0TNXizQORPUMa5nI7u3v7B4dHBtAAbgLcocDK0ADGdDSIcCQMBregisgGsDm6yRjDHJ5AoVCbVZo9GoACm2sGUiRoWmisQSSX+NRMsAAdDiVNotBgAJRaU7IFTcYAAekpsAAwsh7JBFP5tGBoLooc0AGyY+QACw4kHA8kxeiYPV5VhFFjU0vcXkJ3F+oE5-MFwsxXIlMvUkuU1kVbI53MxAHZte5rHqDRTqbAAMp85AMOjKWzIUCwW4Mpn+ACERpVzXk2hoynkFpUuplNtgdtRNB+vh0TvQAeVqtD4d5WYjeujlvkirjNIA7ihjLB7ILoG7QAxIP4fth0+ygyGw9KeQpc5HZdai5wS7AE0nkLA6F8jCAqTSKo5-PYCqXFKA+T8+YoCoKUDRbnytnbVFiRwjYIE3dFt092t813By1PYMhEDdEH7T0kU87XV6GXBtDuL5lBPDA+TgGgfHOdoCjoRRCFgYh4R+eh8C0IwnlyDc4AwmhtAKLdMRQBgjHXe9n1uAJvkQBwF3ZWdYEsUDwPaMYBWg0BxwYQCFCeXR5HPfBExxLFMRfDI6B48jwnZc8b1eT4TjdC9sNgF43g+L5YGcb17Fkzjx38AxFFyUAsSAA)
+
+I've also listed the problems with the approach in the playground link.
+
+&amp;#x200B;
+
+Does anyone have any better ideas? I'd really appreciate the help, as I have already spent hours learning about index types, mapped types, tuples, etc and now I'm stuck with this working-but-subpar approach.
+
+And yes, I do want this function. I do indeed need a pair of tuple args, and I do not want an array of tuple pairs, or a map. This function is interfacing with a very high performance piece of software that operates on a Structure of Arrays rather than an Array of Structures, and passing in a pair of arrays is much faster than passing in an array of pairs. In my testing, it was between 2x (Small arrays) to 30x faster (large arrays).
+
+Thanks in advance!
+## [11][Using paths property of tsconfig to specify a specific file?](https://www.reddit.com/r/typescript/comments/exjk6d/using_paths_property_of_tsconfig_to_specify_a/)
 - url: https://www.reddit.com/r/typescript/comments/exjk6d/using_paths_property_of_tsconfig_to_specify_a/
 ---
 Basically i want to be able to do something like this:
@@ -54,88 +296,3 @@ I also know i can do something like this:
     import { FOO } from '@app/constants'
 
 However this makes Webstorm go completely dumb, as it will ignore all other paths, and instead focus solely upon that single path entry and ignore the rest. Guessing it is because it considers all files now under that path instead of caring about any of the others.
-## [5][Typescript I love you but this documentation is ironic](https://www.reddit.com/r/typescript/comments/ewjhiy/typescript_i_love_you_but_this_documentation_is/)
-- url: https://i.redd.it/0xaegxrcu1e41.jpg
----
-
-## [6][Is there a way to filter objects in an array using string from an array?](https://www.reddit.com/r/typescript/comments/ewxjlh/is_there_a_way_to_filter_objects_in_an_array/)
-- url: https://www.reddit.com/r/typescript/comments/ewxjlh/is_there_a_way_to_filter_objects_in_an_array/
----
-I don’t init is that makes sense so I’m going to try and explain it further;
-
-I have an array of lectures and an array of lecture IDs.
-
-I want to filter a list of all lectures down to an array of only the ones that match the IDs of the ones in the array of IDs.
-## [7][Is letting .js files generate side by side with .ts a bad practice?](https://www.reddit.com/r/typescript/comments/ewsi3a/is_letting_js_files_generate_side_by_side_with_ts/)
-- url: https://www.reddit.com/r/typescript/comments/ewsi3a/is_letting_js_files_generate_side_by_side_with_ts/
----
-It's the simplest pattern but also doubles the file volume per folder. What do you guys think about leaving projects that way vs specifying an output directory? What would guide your decision to move to the later or some other convention?
-## [8][Need help with dynamic properties](https://www.reddit.com/r/typescript/comments/eworn8/need_help_with_dynamic_properties/)
-- url: https://www.reddit.com/r/typescript/comments/eworn8/need_help_with_dynamic_properties/
----
-Hi. I have a type A with several properties which can be of different keys: strings, numbers, types B, irrelevant. I want to copy over certain fields from object a1 being type A to object a2, that is also of type A, but I do not know in advance which fields i want to copy over. The fields that I want to copy over I get in an array of string literals which tell me which field i want to copy.   
-I do not understand how to "type" this correctly..
-
-Example on codesandbox: [https://codesandbox.io/s/typescript-playground-export-fjol9](https://codesandbox.io/s/typescript-playground-export-fjol9)  
-
-
-https://preview.redd.it/sk2k3apwc4e41.png?width=738&amp;format=png&amp;auto=webp&amp;s=9dd30a17952037ccb437a9a0b4887fe080029d30
-## [9][Adding type safety to a HTTP API client both compile-time and runtime](https://www.reddit.com/r/typescript/comments/ewbx66/adding_type_safety_to_a_http_api_client_both/)
-- url: https://medium.com/smartly-io/oats-how-we-learned-to-stop-worrying-and-love-types-aa0041aaa9cc
----
-
-## [10][TS1005 error on unary assignment, what is the error here?](https://www.reddit.com/r/typescript/comments/ew9p6b/ts1005_error_on_unary_assignment_what_is_the/)
-- url: https://www.reddit.com/r/typescript/comments/ew9p6b/ts1005_error_on_unary_assignment_what_is_the/
----
-    let port: number = 8080;
-    
-    // TS1005: ';' expected.
-    process.env.PORT &amp;&amp; port = parseInt(process.env.PORT!);
-
-Typescript couldn't detect that it only runs if POST is defined, so the ! was needed. But the error above still lints on the assignment ( = ) operator. What is the issue exactly and how should I fix this?
-## [11][Access values in a string array class property through an import](https://www.reddit.com/r/typescript/comments/ewceyp/access_values_in_a_string_array_class_property/)
-- url: https://www.reddit.com/r/typescript/comments/ewceyp/access_values_in_a_string_array_class_property/
----
-    // I need to access the value in: new Nouns().getNouns()[0];
-    export class Nouns {
-        constructor(){
-        }
-    
-       getNouns():string[] {
-          return this.nouns;
-        }
-    
-        public nouns:string[] = [
-        "Armour",
-        "Barrymore",
-        "Cabot",
-        "Catholicism",
-        "Chihuahua",
-        ........
-        ]
-
-Here is my attempt :   
-
-
-    import { Nouns } from "./nouns";
-    import { Adjectives } from "./adjectives";
-    
-     constructor() { 
-        this.myName = this.generateName();
-        console.log(`A new Turtle ${this.myName} was born !`); 
-        console.log(Nouns);
-      } // The result : A new Turtle undefined undefined was born !
-    
-    
-      generateName(): string {
-        let nameArray:string[] = new Nouns().getNouns();
-        let adjectiveArray:string[] = new Adjectives().getAdjectives();
-        let randomSeed:number = Math.random()*adjectiveArray.length;
-        let randomSeed2:number = Math.random()*nameArray.length;
-    
-        return `${adjectiveArray[randomSeed]} ${nameArray[randomSeed2]}`;
-      }
-    
-    
-
-What am I doing wrong here ?

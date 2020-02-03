@@ -1,9 +1,101 @@
 # Kotlin
-## [1][JSON to Kotlin data class](https://www.reddit.com/r/Kotlin/comments/exmp2s/json_to_kotlin_data_class/)
+## [1][Any suggestions for Kotlin certification?](https://www.reddit.com/r/Kotlin/comments/ey5pla/any_suggestions_for_kotlin_certification/)
+- url: https://www.reddit.com/r/Kotlin/comments/ey5pla/any_suggestions_for_kotlin_certification/
+---
+Hello,
+
+I’m a junior dev and I’m working on the server side with kotlin. I don’t have a car degree and I wanted a certification to establish myself as a dev. I’m based in the UK and everything that I found (47degrees and jetBrains) is located in the states. 
+
+Is there any certification that I could read for/take classes and then take an exam? 
+
+Thank you
+## [2][Why everything has to return something in Kotlin?](https://www.reddit.com/r/Kotlin/comments/ey5i2s/why_everything_has_to_return_something_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/ey5i2s/why_everything_has_to_return_something_in_kotlin/
+---
+When doing the codelabs from the Kotlin Bootcamp for Programmers, I stumbled across the topic in lesson 3 where they talk about how everything in Kotlin returns something. 
+
+I tested it and in fact you can nest the println() statements in Kotlin whereas JAVA just doesn't let you do that. However the output is a bit confusing to interpret for me. 
+
+I ran this code : 
+
+`println({print(print("This!"))})`
+
+and got this as output : 
+
+`() -&gt; kotlin.Unit`
+
+and for statement :
+
+`println(print(print("This!")))`
+
+I got this as output : 
+
+`This!kotlin.Unitkotlin.Unit`
+
+I am trying to dig deeper to interpret the output (just started learning Kotlin).
+
+I am curious as to if there are hazards, if any, to this approach, or is it just that Kotlin realized what JAVA missed out on.
+## [3][Loading and caching images into ImageViews using one annotation](https://www.reddit.com/r/Kotlin/comments/ey6idr/loading_and_caching_images_into_imageviews_using/)
+- url: https://www.reddit.com/r/Kotlin/comments/ey6idr/loading_and_caching_images_into_imageviews_using/
+---
+I created an annotation which will load image from a URL directly into an ImageView (caching it for future use) . It can also be used to show a placeholder image and animation until the image is downloaded into the device.
+
+Usage :-
+
+&gt;"@LoadImage(  
+R.id.*image\_1*,  
+ "https://images.unsplash.com/photo-1549740425-5e9ed4d8cd34?ixlib=rb-1.2.1&amp;w=1000&amp;q=80",  
+ placeHolder = R.drawable.*loading*, enableLoadingAnimation = true  
+)  
+lateinit var imageWithAnimation: ImageView"
+
+Check out the post for more details :-  [https://medium.com/@crypticmindscom\_5258/caching-made-easy-on-android-with-kotlin-part-4-18e7b066e9c2](https://medium.com/@crypticmindscom_5258/caching-made-easy-on-android-with-kotlin-part-4-18e7b066e9c2) 
+
+Library :-  [https://github.com/crypticminds/ColdStorage](https://github.com/crypticminds/ColdStorage)
+## [4][Getting started with web development (Tips &amp; Recommendations?)](https://www.reddit.com/r/Kotlin/comments/ey6du2/getting_started_with_web_development_tips/)
+- url: https://www.reddit.com/r/Kotlin/comments/ey6du2/getting_started_with_web_development_tips/
+---
+Hey there,
+
+I'm looking into building a system in Kotlin in which I have a server containing some user-bound data (sent from a mobile client that can be omitted from this discussion), and a web client to retrieve and visualize said data. In upcoming iterations I want users of the web client to be able to add information to the server as well.
+
+So far I've build a [server according to this example](https://github.com/gimlet2/kottpd), and added GSON for parsing JSON-Objects. So far, things work as expected: the server receives JSON-Objects and parses them to Koktlin objects (and vice versa). The server can display a very basic website containt a simple form to input a User ID, and upon submitting said form displays the chosen user data in text form.
+
+I'm now looking for ways to get started with proper development of my web frontent. Unfortunately, while having some theoretical understand of the subject, I have little to no practical experience in this (other than working with JSPs, Servelts and JavaBeans once 6 years ago). So I'm looking for some guidance on what I need to get started.
+
+I'm specifically trying to avoid build tools such as Maven, Gradle, etc., so I would ask you to kindly respect that.  
+I'm also trying to keep the use of libraries to a minimum. I understand that I can hardly go without them, but I'm generally trying to keep as independant of third party software as possible.
+## [5][Best resource for learning Kotlin for android dev.](https://www.reddit.com/r/Kotlin/comments/exvxwl/best_resource_for_learning_kotlin_for_android_dev/)
+- url: https://www.reddit.com/r/Kotlin/comments/exvxwl/best_resource_for_learning_kotlin_for_android_dev/
+---
+Hello, I want to build an android app and this is why I choose to learn kotlin.
+
+It has been some time with kotlin now and I think in order to develop my skills I should just straight into trying to build some apps in android studio.
+
+Ideally I would like to follow some online tutorial as reference to get me started.
+
+There doesn't seem to be much content online especially tutorials that actually walk you through a whole build, it seems to just be one off tutorials for very specific parts.
+
+Can anyone suggest something that will help guide me on this journey?
+
+Thank you
+## [6][Choosing the right scope function](https://www.reddit.com/r/Kotlin/comments/ey5u7i/choosing_the_right_scope_function/)
+- url: https://www.atomiccommits.io/scope-functions/
+---
+
+## [7][React in Kotlin/JS: What I learned (long but useful read)](https://www.reddit.com/r/Kotlin/comments/exslpk/react_in_kotlinjs_what_i_learned_long_but_useful/)
+- url: https://discuss.kotlinlang.org/t/react-in-kotlin-js-what-i-learned-long-but-useful-read/16168
+---
+
+## [8][What have been the main objections against Kotlin transition from Java amongst your colleagues?](https://www.reddit.com/r/Kotlin/comments/exuo7x/what_have_been_the_main_objections_against_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/exuo7x/what_have_been_the_main_objections_against_kotlin/
+---
+
+## [9][JSON to Kotlin data class](https://www.reddit.com/r/Kotlin/comments/exmp2s/json_to_kotlin_data_class/)
 - url: https://www.rockandnull.com/json-to-kotlin-data-class/
 ---
 
-## [2][How to read (Kotlin) documentation properly?](https://www.reddit.com/r/Kotlin/comments/ex8uz4/how_to_read_kotlin_documentation_properly/)
+## [10][How to read (Kotlin) documentation properly?](https://www.reddit.com/r/Kotlin/comments/ex8uz4/how_to_read_kotlin_documentation_properly/)
 - url: https://www.reddit.com/r/Kotlin/comments/ex8uz4/how_to_read_kotlin_documentation_properly/
 ---
 Hi I need some help on how to understand the kotlin documentation, although I guess this is a problem for me in other languages also. 
@@ -49,96 +141,3 @@ I feel this is a common problem for me with documentation, I only can understand
 Could somebody, explain in detail how to understand something like this and how I should approach the documentation in order to get the best comprehension?
 
 Thank you,
-## [3][Why does this Kotlin code not work?](https://www.reddit.com/r/Kotlin/comments/excfmc/why_does_this_kotlin_code_not_work/)
-- url: https://www.reddit.com/r/Kotlin/comments/excfmc/why_does_this_kotlin_code_not_work/
----
-Okay so I am new to Kotlin, I knew some java in the past so I am trying to understand why this does not work.
-
-    fun main() {
-    var country = Country() country.name = "USA" println(country.name)
-    }
-    
-    class Country{
-    var name: String = ""
-    set(value) { this.name = value println("country name was made to $value") } }
-
-I get a stackoverflowerror.
-
-However this does work
-
-    fun main() {
-    var country = Country() country.name = "USA" println(country.name)
-    }
-    
-    class Country{
-    var name: String = ""
-    set(value) { field = value println("country name was made to $value") } }
-
-can anyone explain to me in simple terms why `field = value` works but [`this.name`](https://this.name) `= value` does not.
-
-I feel I am missing some important information in my mind and want to clear up the misunderstanding.
-
-I think that when I say [`this.name`](https://this.name) `= value`  I am just telling the computer look we have a country object that has a name associated with it. Make that objects name equal to the value I give you, in this case that is the string USA.
-
-I feel this is also the same with field as well. I am telling the computer a value and then telling it to assign that value to the field that it is setting.
-
-In my mind these are utterly equivalent just a different syntax, CLEARLY this is fundamentally wrong so I need to get this cleared up asap.
-
-I did some research on fields, properties, backing fields but to be honest it just confused me more.
-
-If anyone could explain:
-
-1. what the difference between the two codes are and why the first doesn't work.
-2. When to use the "this" keyword in Kotlin. (In java I always just used this to refer to variables associated with classes such as [this.name](https://this.name), this.age etc.)
-
-&amp;#x200B;
-
-I would be super happy.
-
-&amp;#x200B;
-
-Thanks
-## [4][Any, Unit, Nothing and all their friends](https://www.reddit.com/r/Kotlin/comments/ewx2dk/any_unit_nothing_and_all_their_friends/)
-- url: https://medium.com/@patxi/any-unit-nothing-and-all-their-friends-e39613b48235?source=friends_link&amp;sk=443131324919c34a4bc8d5eb8c1b2a7c
----
-
-## [5][lunch picker android](https://www.reddit.com/r/Kotlin/comments/ex7vqm/lunch_picker_android/)
-- url: https://github.com/yeukfei02/lunchPickerAndroid
----
-
-## [6][Just verifying something Kotlin cannot do](https://www.reddit.com/r/Kotlin/comments/ewzvlq/just_verifying_something_kotlin_cannot_do/)
-- url: https://www.reddit.com/r/Kotlin/comments/ewzvlq/just_verifying_something_kotlin_cannot_do/
----
-In C++, template (generic) parameters can be integer values instead of types. For example, I could declare:
-
-MyType&lt;1,2,3&gt; objA;
-MyType&lt;4,5,6&gt; objB;
-
-And those parameters can be added, subtracted, multiplied, etc. at compile time (for example, when overloading + operator) to produce new types:
-
-MyType&lt;5,7,9&gt; result = objA + objB;
-
-
-Why not just store those values as attributes? Because you can have the compiler report an error if somebody does something like:
-
-MyType&lt;1,1,1&gt; result = objA + objB; // compiler error if you want it.
-
-After some investigation, it appears Kotlin doesn't support this sort of thing. Am I wrong?
-## [7][Regex matcher using TCR with Jordan Stewart](https://www.reddit.com/r/Kotlin/comments/ewo85o/regex_matcher_using_tcr_with_jordan_stewart/)
-- url: https://www.youtube.com/watch?v=QEd2anW86YQ
----
-
-## [8][What is the future of Kotlin?](https://www.reddit.com/r/Kotlin/comments/ewacns/what_is_the_future_of_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/ewacns/what_is_the_future_of_kotlin/
----
-We know it's the first language in Android development. What do you think is the future in mobile and backend development? Is it possible to be a developer sought in business areas with Kotlin?
-## [9][GitHub - VMadalin/kotlin-sample-app: 📚 Android Sample App using modular, clean, scalable, testable Architecture written in Kotlin following the best practices with Jetpack.](https://www.reddit.com/r/Kotlin/comments/ew30x4/github_vmadalinkotlinsampleapp_android_sample_app/)
-- url: https://github.com/VMadalin/kotlin-sample-app
----
-
-## [10][As a JavaScript developer should I learn Java before Kotlin?](https://www.reddit.com/r/Kotlin/comments/ewc6k5/as_a_javascript_developer_should_i_learn_java/)
-- url: https://www.reddit.com/r/Kotlin/comments/ewc6k5/as_a_javascript_developer_should_i_learn_java/
----
-Im already familiar with JavaScript but I'm looking for a way to properly learn OOP. I'm not doing this to get a new job or for any particular project, I just want to improve my understanding of programming in general. 
-
-Some people tell me I should learn Java but others say it's too verbose and Kotlin is better. I have limited time outside of my job so this could be a selling point. Is Kotlin easier to learn? Would I miss out on any fundamentals of OOP if I skipped Java?

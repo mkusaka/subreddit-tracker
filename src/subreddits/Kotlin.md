@@ -1,15 +1,78 @@
 # Kotlin
-## [1][Any suggestions for Kotlin certification?](https://www.reddit.com/r/Kotlin/comments/ey5pla/any_suggestions_for_kotlin_certification/)
-- url: https://www.reddit.com/r/Kotlin/comments/ey5pla/any_suggestions_for_kotlin_certification/
+## [1][Kotlin Coroutines: What happens to the caller thread when context changes?](https://www.reddit.com/r/Kotlin/comments/eyjfz7/kotlin_coroutines_what_happens_to_the_caller/)
+- url: https://www.reddit.com/r/Kotlin/comments/eyjfz7/kotlin_coroutines_what_happens_to_the_caller/
 ---
-Hello,
+I have a doubt that even after a long time of studying coroutines, I never managed to understand it in a simple way. The doubt is about the difference between suspending and blocking code and how suspending functions relate to threads and coroutines.
 
-I’m a junior dev and I’m working on the server side with kotlin. I don’t have a car degree and I wanted a certification to establish myself as a dev. I’m based in the UK and everything that I found (47degrees and jetBrains) is located in the states. 
+If we define a function like this
 
-Is there any certification that I could read for/take classes and then take an exam? 
+    suspend fun wait() { // some suspending code here }
 
-Thank you
-## [2][Why everything has to return something in Kotlin?](https://www.reddit.com/r/Kotlin/comments/ey5i2s/why_everything_has_to_return_something_in_kotlin/)
+From what I understand, this function definition does not create new threads, nor coroutines. It's only meant to signal to the compiler that this function might suspend, so it should only be called from a suspendable context.
+
+But if we declare it like this instead:
+
+    suspend fun waitOnContext() = withContext(Dispatchers.IO) {
+        // some suspending code here
+    }
+
+I believe (and correct if I'm wrong) that three things happens when a function defined like this is called:
+
+1. Since the function is suspending (not blocking), the caller thread is free to do whaterver else it needs to do.
+2. The sequential execution flow stops, meaning that the code after the function will only run after it completes, like a callback.
+3. A new thread is created so that the code runs in the background.
+
+How do the environment (I don't know which name to use here) decides what to do next with the caller thread? Does it uses an event loop, OS scheduling facilities or maybe the compiler organizes the code in such a way so that other things can be done while the new thread is running on the background.
+
+One simple example is the Android main thread: How does the environment knows that it needs to run view rendering and gesture handling code after the new thread is created? And how does it knows to come back to the rest of the coroutine once the background thread finishes?
+
+Another doubt that I have is if `CoroutineScope` is meant to group related coroutines so that they doesn't leak or if it's just meant to represent parent-child relationships so that when `Job` is cancelled, all of the children coroutines are cancelled as well.
+
+One thing that made me confused was [this example](https://kotlinlang.org/docs/reference/coroutines/basics.html#scope-builder) from the Kotlin documentation. In it one `coroutineScope` is defined that suspends while waiting for a child coroutines to finish. Does this happen because the `CoroutineScope` needs to wait for all children coroutines to finish so it can be finished as well?
+
+Am I correct in assuming that a `CoroutineScope` works similarly to a function scope in the sense that while a function needs to clear its local variables once it finishes, a `CoroutineScope` needs to clear it's children coroutines by waiting for them?
+
+Another similarity is that when an exception happens inside a function, it has to clear all its local variables (stack unwinding), while a `CoroutineScope` needs to clear all it's coroutines by canceling them. Am I correct in using this analogy?
+## [2][Kotlin Multiplatform header files (iOS)](https://www.reddit.com/r/Kotlin/comments/eyp9ue/kotlin_multiplatform_header_files_ios/)
+- url: https://www.reddit.com/r/Kotlin/comments/eyp9ue/kotlin_multiplatform_header_files_ios/
+---
+So, I am working on a kotlin multiplatform project and I need to use some objective C classes for iOS part. I would like to know if there is a way to import and use Header (.h) files in kotlin MPP?
+## [3][Kotlin for crossplatform iOS/Android/Web](https://www.reddit.com/r/Kotlin/comments/eynl35/kotlin_for_crossplatform_iosandroidweb/)
+- url: https://www.reddit.com/r/Kotlin/comments/eynl35/kotlin_for_crossplatform_iosandroidweb/
+---
+I am currently developing alone a project available on iOS Android and Web, each project is coded natively in Java, swift and HTML and its very time consuming to maintain obviously
+I heard about Kotlin Native but I can’t find big existing projects which run on these 3 platform
+
+Is Kotlin reliable enough to recode all my project from scratch on all platforms ? I don’t use a lot of physical features, mostly graphics with REST API.
+
+Do you know good tutorials for starting crossplatform development ?
+
+Thanks
+## [4][2020 Java Technology Report](https://www.reddit.com/r/Kotlin/comments/eynj9b/2020_java_technology_report/)
+- url: https://www.jrebel.com/blog/2020-java-technology-report
+---
+
+## [5][Why is asSequence() not reporting the expected result?](https://www.reddit.com/r/Kotlin/comments/eyflvs/why_is_assequence_not_reporting_the_expected/)
+- url: https://www.reddit.com/r/Kotlin/comments/eyflvs/why_is_assequence_not_reporting_the_expected/
+---
+
+    fun main(args: Array&lt;String&gt;) {
+        val animals = listOf( "Cow", "Dog", "Cat", "Chicken", "Frog")
+        val animal = animals.asSequence()
+            .filter { it.startsWith("C" ) }
+            .map { "Animal: $it" }
+            .also { println("Intermediary result: ${it.count()}") }
+            .take(1)
+
+        println("Result: ${animal.count()}")
+    }
+
+This code results in outputting the line:
+
+    Intermediary result: 3
+
+I would expect (from my reading of asSequence()) that only one item from the list of *animals* should be processed at a time.
+## [6][Why everything has to return something in Kotlin?](https://www.reddit.com/r/Kotlin/comments/ey5i2s/why_everything_has_to_return_something_in_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/ey5i2s/why_everything_has_to_return_something_in_kotlin/
 ---
 When doing the codelabs from the Kotlin Bootcamp for Programmers, I stumbled across the topic in lesson 3 where they talk about how everything in Kotlin returns something. 
@@ -35,7 +98,17 @@ I got this as output :
 I am trying to dig deeper to interpret the output (just started learning Kotlin).
 
 I am curious as to if there are hazards, if any, to this approach, or is it just that Kotlin realized what JAVA missed out on.
-## [3][Loading and caching images into ImageViews using one annotation](https://www.reddit.com/r/Kotlin/comments/ey6idr/loading_and_caching_images_into_imageviews_using/)
+## [7][Any suggestions for Kotlin certification?](https://www.reddit.com/r/Kotlin/comments/ey5pla/any_suggestions_for_kotlin_certification/)
+- url: https://www.reddit.com/r/Kotlin/comments/ey5pla/any_suggestions_for_kotlin_certification/
+---
+Hello,
+
+I’m a junior dev and I’m working on the server side with kotlin. I don’t have a CS degree and I wanted a certification to establish myself as a dev. I’m based in the UK and everything that I found (47degrees and jetBrains) is located in the USA. 
+
+Is there any certification that I could read for/take classes and then take an exam? 
+
+Thank you
+## [8][Loading and caching images into ImageViews using one annotation](https://www.reddit.com/r/Kotlin/comments/ey6idr/loading_and_caching_images_into_imageviews_using/)
 - url: https://www.reddit.com/r/Kotlin/comments/ey6idr/loading_and_caching_images_into_imageviews_using/
 ---
 I created an annotation which will load image from a URL directly into an ImageView (caching it for future use) . It can also be used to show a placeholder image and animation until the image is downloaded into the device.
@@ -52,7 +125,7 @@ lateinit var imageWithAnimation: ImageView"
 Check out the post for more details :-  [https://medium.com/@crypticmindscom\_5258/caching-made-easy-on-android-with-kotlin-part-4-18e7b066e9c2](https://medium.com/@crypticmindscom_5258/caching-made-easy-on-android-with-kotlin-part-4-18e7b066e9c2) 
 
 Library :-  [https://github.com/crypticminds/ColdStorage](https://github.com/crypticminds/ColdStorage)
-## [4][Getting started with web development (Tips &amp; Recommendations?)](https://www.reddit.com/r/Kotlin/comments/ey6du2/getting_started_with_web_development_tips/)
+## [9][Getting started with web development (Tips &amp; Recommendations?)](https://www.reddit.com/r/Kotlin/comments/ey6du2/getting_started_with_web_development_tips/)
 - url: https://www.reddit.com/r/Kotlin/comments/ey6du2/getting_started_with_web_development_tips/
 ---
 Hey there,
@@ -65,79 +138,7 @@ I'm now looking for ways to get started with proper development of my web fronte
 
 I'm specifically trying to avoid build tools such as Maven, Gradle, etc., so I would ask you to kindly respect that.  
 I'm also trying to keep the use of libraries to a minimum. I understand that I can hardly go without them, but I'm generally trying to keep as independant of third party software as possible.
-## [5][Best resource for learning Kotlin for android dev.](https://www.reddit.com/r/Kotlin/comments/exvxwl/best_resource_for_learning_kotlin_for_android_dev/)
-- url: https://www.reddit.com/r/Kotlin/comments/exvxwl/best_resource_for_learning_kotlin_for_android_dev/
----
-Hello, I want to build an android app and this is why I choose to learn kotlin.
-
-It has been some time with kotlin now and I think in order to develop my skills I should just straight into trying to build some apps in android studio.
-
-Ideally I would like to follow some online tutorial as reference to get me started.
-
-There doesn't seem to be much content online especially tutorials that actually walk you through a whole build, it seems to just be one off tutorials for very specific parts.
-
-Can anyone suggest something that will help guide me on this journey?
-
-Thank you
-## [6][Choosing the right scope function](https://www.reddit.com/r/Kotlin/comments/ey5u7i/choosing_the_right_scope_function/)
+## [10][Choosing the right scope function](https://www.reddit.com/r/Kotlin/comments/ey5u7i/choosing_the_right_scope_function/)
 - url: https://www.atomiccommits.io/scope-functions/
 ---
 
-## [7][React in Kotlin/JS: What I learned (long but useful read)](https://www.reddit.com/r/Kotlin/comments/exslpk/react_in_kotlinjs_what_i_learned_long_but_useful/)
-- url: https://discuss.kotlinlang.org/t/react-in-kotlin-js-what-i-learned-long-but-useful-read/16168
----
-
-## [8][What have been the main objections against Kotlin transition from Java amongst your colleagues?](https://www.reddit.com/r/Kotlin/comments/exuo7x/what_have_been_the_main_objections_against_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/exuo7x/what_have_been_the_main_objections_against_kotlin/
----
-
-## [9][JSON to Kotlin data class](https://www.reddit.com/r/Kotlin/comments/exmp2s/json_to_kotlin_data_class/)
-- url: https://www.rockandnull.com/json-to-kotlin-data-class/
----
-
-## [10][How to read (Kotlin) documentation properly?](https://www.reddit.com/r/Kotlin/comments/ex8uz4/how_to_read_kotlin_documentation_properly/)
-- url: https://www.reddit.com/r/Kotlin/comments/ex8uz4/how_to_read_kotlin_documentation_properly/
----
-Hi I need some help on how to understand the kotlin documentation, although I guess this is a problem for me in other languages also. 
-
-Say I want to learn about lambdas, I go here: 
-
- [https://kotlinlang.org/docs/reference/lambdas.html](https://kotlinlang.org/docs/reference/lambdas.html) 
-
-and begin reading.
-
-I don't really understand but read up until I reach the code:
-
-`fun &lt;T, R&gt; Collection&lt;T&gt;.fold(`
-
-`initial: R,` 
-
-`combine: (acc: R, nextElement: T) -&gt; R`
-
-`): R {`
-
-`var accumulator: R = initial`
-
-`for (element: T in this) {`
-
-`accumulator = combine(accumulator, element)`
-
-`}`
-
-`return accumulator`
-
-`}`
-
-&amp;#x200B;
-
-Now I am really lost.
-
-I don't know what these mean &lt;&gt;, they normally come with something inside, I have seen ArrayList&lt;String&gt; for example in java so maybe it means type?
-
-I don't know what &lt;T,R&gt; means, I don't know what Collection&lt;T&gt;.fold is and so on.
-
-I feel this is a common problem for me with documentation, I only can understand the documentation when I understand the subject it is talking about, hence rendering the documentation a lot less useful.
-
-Could somebody, explain in detail how to understand something like this and how I should approach the documentation in order to get the best comprehension?
-
-Thank you,

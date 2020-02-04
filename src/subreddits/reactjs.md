@@ -85,16 +85,63 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][CoronaWatch - Built a website for monitoring the corona virus.](https://www.reddit.com/r/reactjs/comments/exsoaq/coronawatch_built_a_website_for_monitoring_the/)
-- url: https://www.reddit.com/r/reactjs/comments/exsoaq/coronawatch_built_a_website_for_monitoring_the/
+## [3][useEffect(fn, []) is not the new componentDidMount()](https://www.reddit.com/r/reactjs/comments/eyajhv/useeffectfn_is_not_the_new_componentdidmount/)
+- url: https://reacttraining.com/blog/useEffect-is-not-the-new-componentDidMount/
 ---
-Over a span of about 12 hours, i built  [https://coronawatch.now.sh/](https://coronawatch.now.sh/)  . I built it with the following:
 
-1. Reactjs
-2. Nextjs
-3. ApexCharts
-4. Zeit.co
-## [4][Full-stack web app in React + TypeScript + GraphQL + PostgreSQL](https://www.reddit.com/r/reactjs/comments/ey282l/fullstack_web_app_in_react_typescript_graphql/)
+## [4][Build a CRUD Application Using Laravel and React - CodeSource.io](https://www.reddit.com/r/reactjs/comments/eyn4dc/build_a_crud_application_using_laravel_and_react/)
+- url: https://codesource.io/build-a-crud-application-using-laravel-and-react/
+---
+
+## [5][React.js Portfolio | Applying for jobs](https://www.reddit.com/r/reactjs/comments/eylvaq/reactjs_portfolio_applying_for_jobs/)
+- url: https://www.reddit.com/r/reactjs/comments/eylvaq/reactjs_portfolio_applying_for_jobs/
+---
+I recently redid my portfolio -  [http://www.jaykch.com/](http://www.jaykch.com/) 
+
+Please let me know what you guys think, I will really appreciate it.
+
+I also have following questions - 
+
+* Based on my new portfolio should I apply for junior react.js positions or mid-level positions?
+* Any other projects or type of projects I should have before applying for new jobs?
+* I got offered a backend node.js positions, I don't want to have a career as a backend developer but I am open to being a full-stack developer, basically I love react so I don't want to get a career as a backend dev, but I am thinking of accepting because I am a student and leaving when I have graduated. Should I accept?
+
+Hope you all are having a nice day!
+## [6][Is it possible to create a non-Redux middleware?](https://www.reddit.com/r/reactjs/comments/eyq20x/is_it_possible_to_create_a_nonredux_middleware/)
+- url: https://www.reddit.com/r/reactjs/comments/eyq20x/is_it_possible_to_create_a_nonredux_middleware/
+---
+It seems most middlewares in React applications are Redux middlewares. I am wondering why it's the case and if there's any reason and any way to create a non-Redux middleware. I personally haven't seen a non-Redux middleware before in a React application, so I am curious to know if there's anything like that.
+## [7][Progressive Web App (PWA): GraphQL + TypeScript + NextJS + ReactJS hooks + Server Side Rendering (SSR) + Mobile Optimization (Standalone app mode)](https://www.reddit.com/r/reactjs/comments/eyfu8r/progressive_web_app_pwa_graphql_typescript_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/eyfu8r/progressive_web_app_pwa_graphql_typescript_nextjs/
+---
+I just launched [https://talksub.com](https://talksub.com/)
+
+Stack: TypeScript, Apollo GraphQL, NextJS, ReactJS Hooks 
+
+Supports: Server Side Rendering (SSR), Progressive Web App (Standalone app mode on mobile devices)
+
+I completely migrated a few hundreds React components to hooks, and I love it.
+
+I mobile optimized really hard for the past 2 months so check it out on your mobile as well and let me know if you find any issues.
+
+I am using Styled Components for CSS, but not 100% satisfied with it. I want to migrate to PostCSS modules built-in supported by NextJS. However, there is SSR problem with it, so waiting for them to fix it.
+
+Ask me any questions!
+## [8][/u/mstoiber joining Gatsby](https://www.reddit.com/r/reactjs/comments/ey8sxv/umstoiber_joining_gatsby/)
+- url: https://mxstbr.com/thoughts/gatsby
+---
+
+## [9][Redux thunk PENDING, SUCCESS, FAILURE pattern for CRUD and boilerplate](https://www.reddit.com/r/reactjs/comments/eyhadh/redux_thunk_pending_success_failure_pattern_for/)
+- url: https://www.reddit.com/r/reactjs/comments/eyhadh/redux_thunk_pending_success_failure_pattern_for/
+---
+I just started using Thunk, and it's great, but I don't know how to cut down on boilerplate. For example, the tutorials I have followed all suggest a similar pattern of a Thunk action that is async and dispatches three other actions (pending, success, failure). That is a total of four functions for one operation. Let's say that this is used to get a list of items for the database, this could be four functions to achieve this. Also, four more for updating an item in the database, and the same for the rest of the CRUD operations. How could you implement this to not end up with 20 functions for CRUD operations on one entity? (four functions for each CRUD operation: get all, get one, post, put / patch, delete)
+
+Thanks!
+## [10][Optional chaining with React and TypeScript](https://www.reddit.com/r/reactjs/comments/eykcxp/optional_chaining_with_react_and_typescript/)
+- url: https://www.carlrippon.com/optional-chaining-with-react-and-typescript/
+---
+
+## [11][Full-stack web app in React + TypeScript + GraphQL + PostgreSQL](https://www.reddit.com/r/reactjs/comments/ey282l/fullstack_web_app_in_react_typescript_graphql/)
 - url: https://www.reddit.com/r/reactjs/comments/ey282l/fullstack_web_app_in_react_typescript_graphql/
 ---
 Hi there!
@@ -106,60 +153,9 @@ I have built an app [Laddy](https://laddy.app) that shows problems for your Code
 Even though if you are not into competitive programming, you will be probably interested in the source code of Laddy which you can find on [GitHub](https://github.com/ironsoul0/laddy). It uses some cool technologies under the hood like TypeGraphQL, TypeORM, React + Typescript, Lerna for managing the monorepo, etc.
 
 Any suggestions for code improvement are more than welcome!
-## [5][How do you approach design of your apps?](https://www.reddit.com/r/reactjs/comments/ey6f6w/how_do_you_approach_design_of_your_apps/)
-- url: https://www.reddit.com/r/reactjs/comments/ey6f6w/how_do_you_approach_design_of_your_apps/
+
+If you want to register but do not have a Codeforces handle, just copy-paste mine - **ironsoul** (just for testing). 
+## [12][Display Error at the Top of the Form using Formik and yup](https://www.reddit.com/r/reactjs/comments/eymdps/display_error_at_the_top_of_the_form_using_formik/)
+- url: https://www.reddit.com/r/reactjs/comments/eymdps/display_error_at_the_top_of_the_form_using_formik/
 ---
-I was curious how you approach the design of your react applications? I really don’t enjoy design and, while I know enough CSS to get the job done, it’s not something I want to spend a ton of time on. There is a part of me that is thinking “hey, it would be great to just purchase a template or hire a front-end dev to do the heavy lifting’.  So, for others like me, those who don’t really focus on design, how do you do it?
-## [6][I built an idle version of Tibia with React.js (github link there)](https://www.reddit.com/r/reactjs/comments/ey4i6y/i_built_an_idle_version_of_tibia_with_reactjs/)
-- url: https://tibia-react.herokuapp.com/
----
-
-## [7][Who make the most interesting project video tutorials?](https://www.reddit.com/r/reactjs/comments/ey759k/who_make_the_most_interesting_project_video/)
-- url: https://www.reddit.com/r/reactjs/comments/ey759k/who_make_the_most_interesting_project_video/
----
-Some instructors are amazing when it comes to covering the theoretical part of React, but they don't come up with the most interesting projects. Instead, they teach you how to build a bare-bone project. I am wondering who you would recommend if you want to make interesting projects.
-## [8][How to check if a boolean is true and then push it to the nested array](https://www.reddit.com/r/reactjs/comments/ey6zbj/how_to_check_if_a_boolean_is_true_and_then_push/)
-- url: https://www.reddit.com/r/reactjs/comments/ey6zbj/how_to_check_if_a_boolean_is_true_and_then_push/
----
-At this moment the comments will be pushed inside the array, but then I click on a placed comment, and put some text in the input field and click on add...it should be pushed into the nested array. Looking at the comments, it should check if enableReply is set on true, if that is the case then new added comment should be pushed into this index in a nested array. So my question is, how should I do that. Another possible option is to first check if enableReplyComment is set on true before it go deeper to the comments array and check the enableReply if this was being set on true.
-
-&amp;#x200B;
-
-[https://stackoverflow.com/questions/60026969/how-to-check-if-a-boolean-is-true-and-then-push-it-to-the-nested-array](https://stackoverflow.com/questions/60026969/how-to-check-if-a-boolean-is-true-and-then-push-it-to-the-nested-array)
-## [9][React Movie App for movies info](https://www.reddit.com/r/reactjs/comments/ey6p9n/react_movie_app_for_movies_info/)
-- url: https://www.reddit.com/r/reactjs/comments/ey6p9n/react_movie_app_for_movies_info/
----
-I am learning react to build some awesome websites and here is my first project using the well known 
-
-TMDB API. 
-
- [https://intense-garden-05447.herokuapp.com/](https://intense-garden-05447.herokuapp.com/) 
-
-(Looks much better on a large screen).
-
-&amp;#x200B;
-
- I know it's a bit outdated idea for a project but it's just a beginning.
-## [10][I built an API-driven personal dashboard with React (Unsplash, YouTube, Google Analytics APIs)](https://www.reddit.com/r/reactjs/comments/exxhsk/i_built_an_apidriven_personal_dashboard_with/)
-- url: https://leerob.io/dashboard
----
-
-## [11][New Frontity Theme Powered by Chakra UI React Component Library](https://www.reddit.com/r/reactjs/comments/ey67ym/new_frontity_theme_powered_by_chakra_ui_react/)
-- url: https://blog.frontity.org/introducing-frontity-chakra-theme/?utm_source=reddit&amp;utm_medium=frontity-chakra-theme-post&amp;utm_campaign=frontity-chakra-theme-release
----
-
-## [12][How to properly update react-scripts dependency?](https://www.reddit.com/r/reactjs/comments/ey65hb/how_to_properly_update_reactscripts_dependency/)
-- url: https://www.reddit.com/r/reactjs/comments/ey65hb/how_to_properly_update_reactscripts_dependency/
----
-Hi all.  Several months ago I created my first React app, using [create React app](https://reactjs.org/docs/create-a-new-react-app.html).  I haven't updated any dependencies since then, and just had a look at `npm outdated`.  It reports that react-scripts is outdated.  But its wanted version does not match its latest version ([screenshot](https://i.imgur.com/xMEK7Kz.png)).  I guess that is expected, since my package.json lists it without a carat:
-
-      "dependencies": {
-        "react": "^16.8.5",
-        "react-dom": "^16.8.5",
-        "react-scripts": "2.1.8",
-        "react-transition-group": "^4.2.0"
-      },
-
-But does anyone know why this dependency doesn't have a carat?  Should I add one?
-
-Thanks in advance.
+Hi, I am using Formik and yup for forms in react. I am dealing with the use case where I need to display the required field errors on top of the form instead of displaying an error for each field. I am trying to loop through the errors object thrown by Formik, but ending up with an infinite loop.

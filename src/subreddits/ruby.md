@@ -1,98 +1,57 @@
 # ruby
-## [1]["relations" using Mongoid.](https://www.reddit.com/r/ruby/comments/ey5pkp/relations_using_mongoid/)
-- url: https://www.reddit.com/r/ruby/comments/ey5pkp/relations_using_mongoid/
+## [1][Ruby by the Bay](https://www.reddit.com/r/ruby/comments/eyisk4/ruby_by_the_bay/)
+- url: https://www.reddit.com/r/ruby/comments/eyisk4/ruby_by_the_bay/
 ---
-First, I should say I know mongodb is not a relational database. 
+Hi all,
 
-Second, I want to make a program which helps me classify my books and my music collection a bit more accessible, so I have a set of authors, and each author has a bunch of books. In classic SQL, there's a definition of Foreign Key, but here ... I'm confused! I only know how I can make a connection to mongodb-server with mongoid and don't really know how can make these relations between tables.
-## [2][Emojis from Scratch](https://www.reddit.com/r/ruby/comments/ey6nhh/emojis_from_scratch/)
+I wanted to let everyone know about [Ruby by the Bay](https://rubybythebay.org/), the west coast version of Ruby for Good that will be happening in the SF area April 3 - April 6. Put simply, we gather a bunch of rubyists and javascripters (along with anyone else interested in doing good) and we get together for a long weekend (Fri - Mon) of using our awesome skills to build apps for social and civic good organizations. Last year we built applications for diaper banks, Refuge Restrooms, animal shelters, and many other great places. We're focusing on projects this year that affect our environment -- organizations that cater to those doing the important work of saving our planet.
+
+The event is all inclusive, meaning that we stay in dorms, all the food is provided and we have pretty decent internet too. Our days are filled with hacking and our evenings are full of excellent camaraderie -- playing boardgames, video games, karaoke, werewolf, cards and lots of excellent socializing!
+
+We are excited to announce that we're going to be holding the event at [Naturebridge](https://naturebridge.org/locations/golden-gate) in Marin County.
+
+You can find more information about this years' event here: [https://rubybythebay.org/attend](https://rubybythebay.org/attend) Here is a list of the most frequently asked questions here: [https://rubybythebay.org/faq](https://rubybythebay.org/faq)
+
+I'd be delighted to answer any questions.
+
+Happiness,
+
+Sean (and the rest of the Ruby by the Bay team)
+
+PS - We'd love any sponsorship if anyone knows of anyone who may be interested sponsoring our event this year!
+## [2][David Heinemeier Hansson, Software Contrarian](https://www.reddit.com/r/ruby/comments/eymhxa/david_heinemeier_hansson_software_contrarian/)
+- url: https://corecursive.com/david-heinemeier-hansson-software-contrarian-transcript/
+---
+
+## [3][What kinds of Rails tests I write and what kinds I don't](https://www.reddit.com/r/ruby/comments/eybz1h/what_kinds_of_rails_tests_i_write_and_what_kinds/)
+- url: https://www.codewithjason.com/kinds-rails-tests-write-kinds-dont/
+---
+
+## [4][rom-rb and dry-rb showcase](https://www.reddit.com/r/ruby/comments/ey9ggb/romrb_and_dryrb_showcase/)
+- url: https://ryanbigg.com/2020/02/rom-and-dry-showcase-part-1
+---
+
+## [5][HELP! I am stuck on this little error about Ruby arrays/loops](https://www.reddit.com/r/ruby/comments/eyges9/help_i_am_stuck_on_this_little_error_about_ruby/)
+- url: https://stackoverflow.com/q/60048612/12080646
+---
+
+## [6][SleepIQ gem published, feedback? thought?](https://www.reddit.com/r/ruby/comments/eyfe3t/sleepiq_gem_published_feedback_thought/)
+- url: https://rubygems.org/gems/sleepiq
+---
+
+## [7][Rails 6.1 adds support for multiple storage services to Active Storage](https://www.reddit.com/r/ruby/comments/ey8f8a/rails_61_adds_support_for_multiple_storage/)
+- url: https://blog.saeloun.com/2020/02/03/rails-allows-configure-service-for-attachments-to-activestorage
+---
+
+## [8][Dockerizing a Ruby on Rails Application](https://www.reddit.com/r/ruby/comments/ey85d2/dockerizing_a_ruby_on_rails_application/)
+- url: https://semaphoreci.com/community/tutorials/dockerizing-a-ruby-on-rails-application
+---
+
+## [9][The unicode-emoji gem now supports the 117 new emojis included in the new Emoji 13.0 standard](https://www.reddit.com/r/ruby/comments/ey7f8e/the_unicodeemoji_gem_now_supports_the_117_new/)
+- url: https://github.com/janlelis/unicode-emoji#unicodeemoji---
+---
+
+## [10][Emojis from Scratch](https://www.reddit.com/r/ruby/comments/ey6nhh/emojis_from_scratch/)
 - url: https://www.driftingruby.com/episodes/emojis-from-scratch
 ---
 
-## [3][Error handling with Monads in Ruby](https://www.reddit.com/r/ruby/comments/exv4sw/error_handling_with_monads_in_ruby/)
-- url: http://nywkap.com/programming/either-monads-ruby.html
----
-
-## [4][How to speed up Ruby and JavaScript tests with static and dynamic split using CI parallelisation](https://www.reddit.com/r/ruby/comments/ey3opt/how_to_speed_up_ruby_and_javascript_tests_with/)
-- url: https://docs.knapsackpro.com/2020/how-to-speed-up-ruby-and-javascript-tests-with-ci-parallelisation
----
-
-## [5][Biggest number in Ruby?](https://www.reddit.com/r/ruby/comments/exso3l/biggest_number_in_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/exso3l/biggest_number_in_ruby/
----
-I just fed Ruby a 163,072 digits long number to test the Collatz conjecture, which is insane. Like I'm pretty sure there are less atoms in the universe than a number that big. What's the biggest number it will accept honestly?
-## [6][Finally built my first basic ruby project and I need your input](https://www.reddit.com/r/ruby/comments/exp1ng/finally_built_my_first_basic_ruby_project_and_i/)
-- url: https://www.reddit.com/r/ruby/comments/exp1ng/finally_built_my_first_basic_ruby_project_and_i/
----
-[https://www.reddit.com/r/ruby/comments/en9f8o/planning\_to\_build\_a\_simple\_twitter\_bot/?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/ruby/comments/en9f8o/planning_to_build_a_simple_twitter_bot/?utm_source=share&amp;utm_medium=web2x) I mentioned I would be building a bot a while back. So I learned how to use  the twitter gem to build a bot that liked and retweeted stuff about mental health. I called it HudumaBot (Huduma \[hoo-doo-ma\] is swahili for assistance/help)
-
-So I wrote the first script this weekend, and posted it on my github linked below. 
-
-[https://github.com/W3NDO/HudumaBot](https://github.com/W3NDO/HudumaBot)
-
-It's not much, but its honest work. I have some ideas on how to make it better. Planning to add in webscrapping functionality with Nokogiri so it can post threads gathered from mental health websites. 
-
-Lmk what you think and how I can make it better. Cheers
-## [7][Need help understanding code](https://www.reddit.com/r/ruby/comments/extoqd/need_help_understanding_code/)
-- url: https://www.reddit.com/r/ruby/comments/extoqd/need_help_understanding_code/
----
-(Ruby 2.6.5) Code:
-
-\`\`\`f=-&gt;n{n&lt;2?0:1+f\[n\*3/(6-5\*w=n%2)+w\]}\`\`\`
-
-Found it on a code-golf post about coding the collatz conjecture. What I mainly don't understand is why it is typed as f\[...\] and what w is. I am trying to convert it into python but this uses many ruby concepts that I don't understand. What really is going on when this function is called?
-## [8][Convert STDIN to human reable error?](https://www.reddit.com/r/ruby/comments/exj2g4/convert_stdin_to_human_reable_error/)
-- url: https://www.reddit.com/r/ruby/comments/exj2g4/convert_stdin_to_human_reable_error/
----
-I have a command line program that provides a prompt. I'm adding 'begin' - 'rescue' code as a means of error control. Not sure if that's a good way to do it or not, but I'm learning. When an error occurs, I'd like to print that error in plain english rather than the hexodecimal (?) output that I'm currently getting. Ex. Insted of #&lt;IO:0x0000000002abd540&gt; print "Error here"
-
-I know the below just prints the error twice, but I was experimenting. I also the the recent TTY-exit post, I'm looking at that now also, but want to know how to do it without first. 
-
-What I have (snip):
-
-    def execute(stdin, stdout)
-    begin
-       [spawn(*@args, 0 =&gt; stdin, 1 =&gt; stdout) ]
-          rescue
-              spawn = STDIN
-              puts ("#{spawn}#{STDIN}").to_s
-              main
-        end
-      end
-    end
-## [9][tty-exit - Terminal exit codes for humans and machines.](https://www.reddit.com/r/ruby/comments/ex6872/ttyexit_terminal_exit_codes_for_humans_and/)
-- url: https://github.com/piotrmurach/tty-exit
----
-
-## [10][When do I need to make a call to the database?](https://www.reddit.com/r/ruby/comments/ex272d/when_do_i_need_to_make_a_call_to_the_database/)
-- url: https://www.reddit.com/r/ruby/comments/ex272d/when_do_i_need_to_make_a_call_to_the_database/
----
-I'm writing tests but running into a weird case. The test fails when the 2nd student call is commented out however passes when it's commented in. 
-
-      student = create(:user)
-      instructor_1 = create(:user, :instructor)
-      instructor_2 = create(:user, :instructor)
-
-      course_1 = create(:course, instructor: instructor_1)
-      course_2 = create(:course, instructor: instructor_2)
-
-      enrollment_1 = create(:enrollment, course: course_1, student: student)
-      enrollment_2 = create(:enrollment, course: course_2, student: student)
-
-      expect(student.active_instructors.size).to eq(2)
-      expect(enrollment_2.update(status: "inactive")).to be(true)
-
-      # student = User.find(student.id)
-      expect(student.active_instructors.size).to eq(1)    
-
-I'm not really sure why this happens since at the time `student` is created the first time, it has no associations so each call to `student.active_instructors.size` must make a database call. Is it because `student.active_instructors` is already loaded that updating enrollment doesn't change anything and so I must update `student`?
-
--
-    # Associations
-    user has_many enrollments
-    enrollment belongs_to course
-    enrollment belongs_to user
-
-    enrollment can either be active or inactive
--
-Thank you!

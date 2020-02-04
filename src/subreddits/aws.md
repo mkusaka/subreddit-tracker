@@ -1,67 +1,76 @@
 # aws
-## [1][AWS: Your complete guide to Amazon Web Services &amp; features](https://www.reddit.com/r/aws/comments/ey19oe/aws_your_complete_guide_to_amazon_web_services/)
-- url: https://www.techradar.com/news/aws
+## [1][Password-less Amazon Cognito Registration and Authentication (through email or SMS)](https://www.reddit.com/r/aws/comments/eyhj2m/passwordless_amazon_cognito_registration_and/)
+- url: https://aws.amazon.com/blogs/mobile/implementing-passwordless-email-authentication-with-amazon-cognito/
 ---
 
-## [2][Simple Cognito example to demonstrate sign-up, login and access S3](https://www.reddit.com/r/aws/comments/ey30il/simple_cognito_example_to_demonstrate_signup/)
-- url: https://github.com/franzwong/cognito-s3-cloudformation-example
+## [2][Getting Started with CloudWatch Synthetics - Canary testing on AWS](https://www.reddit.com/r/aws/comments/eyopgb/getting_started_with_cloudwatch_synthetics_canary/)
+- url: https://zoph.me/posts/2020-02-02-cloudwatch-synthetics/
 ---
 
-## [3][Understanding billing question](https://www.reddit.com/r/aws/comments/exya4z/understanding_billing_question/)
-- url: https://www.reddit.com/r/aws/comments/exya4z/understanding_billing_question/
+## [3][EC2 Auto scaling group seems to ignore weights](https://www.reddit.com/r/aws/comments/eyorjx/ec2_auto_scaling_group_seems_to_ignore_weights/)
+- url: https://www.reddit.com/r/aws/comments/eyorjx/ec2_auto_scaling_group_seems_to_ignore_weights/
 ---
-I've had a ~350 GB in IA storage for a few years. In early December, I moved it all over to Glacier Deep Archive. The data is all just offsite backup of a file server, and I hope to never have to access it.
+I'm attempting to use the new weighting option in ASG -  [https://aws.amazon.com/about-aws/whats-new/2019/11/amazon-ec2-auto-scaling-supports-instance-weighting/](https://aws.amazon.com/about-aws/whats-new/2019/11/amazon-ec2-auto-scaling-supports-instance-weighting/) 
 
-The December bill was higher, which I expected since I paid for all the class transfers.
+I've assigned weights to the server options I added to the ASG, but they seem to be ignored.
 
-I just got my January bill, and it lists charges for about 350 GB in *each* of IA and 
-Glacier Deep Archive. I can't figure out why. I logged into CloudWatch Management and it shows that I suddenly had 350 GB in Deep Archive starting in early December, and the amount of data in IA never went down.
+I set the t3a.small weight to 2 and t3a.medium to 6 and when I set desired capacity to 1or 2 it always starts a t3a.medium. I would have expected it to start a small which would fulfill the capacity requirement.
 
-Can anyone clue me in to what's going on?
-## [4][Native Lambda](https://www.reddit.com/r/aws/comments/ey4c0m/native_lambda/)
-- url: https://www.reddit.com/r/aws/comments/ey4c0m/native_lambda/
+I've tried adding t2 and t3 types too as well as adding large types and trying to get it to start smaller instances than the largest ones based on desired capacity, but no joy.
+
+Any ideas how to use capacity to get ASG to launcher smaller instances?
+## [4][Configuring Federation LAB for AWS SSO using AD and ADFS](https://www.reddit.com/r/aws/comments/eyo2qp/configuring_federation_lab_for_aws_sso_using_ad/)
+- url: https://www.reddit.com/r/aws/comments/eyo2qp/configuring_federation_lab_for_aws_sso_using_ad/
 ---
-Gotta share this :)
+Hey guys, I have a bare metal server which can connect to the internet. I can browse to AWS website and can login using an IAM user.
 
-Just deployed a native Linux binary function written in Java, using Micronaut and compiled with GraalVM to Lambda. This has a call latency of ~60ms :)
+Recently I thought of trying to configure a lab on it with Active Directory and ADFS so I can create some users on premises and practice SSO.
 
-Is there anoyone else using Micronaut and Graal?
-## [5][Is there a point in using crawlers on AWS Glue if I only use Python Shell and not PySpark?](https://www.reddit.com/r/aws/comments/ey264b/is_there_a_point_in_using_crawlers_on_aws_glue_if/)
-- url: https://www.reddit.com/r/aws/comments/ey264b/is_there_a_point_in_using_crawlers_on_aws_glue_if/
----
-Long story short, my company decided to use Python Shell instead of PySpark on Glue due to cost/benefit reasons. My understanding is that I'd be using boto3 to retrieve data directly from s3 client, instead of going through the trouble of setting up glue context and DynamicFrame. 
+So I configured a local AD environment on a Windows 2012 R2 server, "[mydomain.com](https://mydomain.com)" and I followed the instructions outlined in the article below. I can get to the Sign-In page but when I try to sign-in, I get a 400 bad request.
 
-Is there any reason to use a Glue crawler/classifier when I can just define everything in my Python Shell job? If there is, are there any examples of how to utilize Glue catalog using Python Shell? I can't find examples, and [the documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html) doesn't give me a picture on why should and how could I use it.
-## [6][The Lambda Layer Inspector (L2I)](https://www.reddit.com/r/aws/comments/ey5k1q/the_lambda_layer_inspector_l2i/)
-- url: https://github.com/mhausenblas/l2i
+[https://aws.amazon.com/blogs/security/enabling-federation-to-aws-using-windows-active-directory-adfs-and-saml-2-0/](https://aws.amazon.com/blogs/security/enabling-federation-to-aws-using-windows-active-directory-adfs-and-saml-2-0/)
+
+Do I have to forward some port on my AD server? I don't think there's anything else wrong with it as I can browse to the sites but I am not sure if I have to forward/open port on the server??? Has anyone tried this before.
+## [5][awscredx: AWS role assumption made simple](https://www.reddit.com/r/aws/comments/eyo2lb/awscredx_aws_role_assumption_made_simple/)
+- url: https://github.com/sam701/awscredx
 ---
 
-## [7][New to AWS need some help](https://www.reddit.com/r/aws/comments/ey4izj/new_to_aws_need_some_help/)
-- url: https://www.reddit.com/r/aws/comments/ey4izj/new_to_aws_need_some_help/
+## [6][Node.js AWS SDK for creating AWS EC2/ECS Instance](https://www.reddit.com/r/aws/comments/eyn4ih/nodejs_aws_sdk_for_creating_aws_ec2ecs_instance/)
+- url: https://www.reddit.com/r/aws/comments/eyn4ih/nodejs_aws_sdk_for_creating_aws_ec2ecs_instance/
 ---
-A friend of mine who uses AWS asked me a technical question regarding a particular feature which I have mentioned below. But I'm only familiar with CLI (I use AWS as a means to run some simulations) and this is related to DynamoDb. hope some of you whom are more experienced in  deploying DB can help me out in this regard.
+Does anyone here knows how to start a EC2/ECS instance using aws sdk on node.js? Is it possible to use a docker run command as well when running a docker image/container? Any working sample codes will be a lot of help. Thanks in advance!
+## [7][Find cleartext passwords stored in Lambda Functions](https://www.reddit.com/r/aws/comments/eyg293/find_cleartext_passwords_stored_in_lambda/)
+- url: https://www.reddit.com/r/aws/comments/eyg293/find_cleartext_passwords_stored_in_lambda/
+---
+Hello! Is anyone aware of a tool (preferably open source) I can use to periodically scan the code of all of the functions in an AWS account and determine if there are any passwords/high-entropy strings stored in the code of the function?
 
-"How to use AWS lambda to connect an app to a database server(say AWS DynamoDb) through API gateway without making it publicly accessible"
-## [8][What's the difference between SSD and NVMe?](https://www.reddit.com/r/aws/comments/expdmc/whats_the_difference_between_ssd_and_nvme/)
-- url: https://www.reddit.com/r/aws/comments/expdmc/whats_the_difference_between_ssd_and_nvme/
+Eventually I would like to also run this as part of the CI/CD process, but for now I need to get an idea of the different risks we have in our current environment. I have looked at LambdaGuard, but it seems to be lacking this functionality. I also looked at integrating SonarQube with LambdaGuard which worked well, but still doesn't provide this level of information.
+
+I am thinking of just writing something that does this, but want to make sure I'm not missing out on something that is already available for this purpose.
+
+Thanks!
+## [8][Has anyone hit the maximum limit of 50 tags?](https://www.reddit.com/r/aws/comments/eyly1i/has_anyone_hit_the_maximum_limit_of_50_tags/)
+- url: https://www.reddit.com/r/aws/comments/eyly1i/has_anyone_hit_the_maximum_limit_of_50_tags/
 ---
-I am probably not making the comparison correctly, but my thinking is that SSD EBS is the same as an SSD drive we'd have on our own computer.  If I'm correct, then what exactly is NVMe?  Just faster SSD?  Or maybe it's directly mounted to the instance and so it's exponentially faster?
-## [9][Postgres on Rds - horrible checkpoint behaviour](https://www.reddit.com/r/aws/comments/exsy3i/postgres_on_rds_horrible_checkpoint_behaviour/)
-- url: https://www.reddit.com/r/aws/comments/exsy3i/postgres_on_rds_horrible_checkpoint_behaviour/
+We all rejoiced when the limit was increased from 10 to 50 (at least I did), but it makes me wonder, is anyone getting any closer to the upper limit?  What's the most you're using in your environment, and why?  30? 40? 45? 48?  
+
+Have you hit the ceiling yet? :)
+## [9][Increasing web delivery speeds across regions.](https://www.reddit.com/r/aws/comments/eylwg8/increasing_web_delivery_speeds_across_regions/)
+- url: https://www.reddit.com/r/aws/comments/eylwg8/increasing_web_delivery_speeds_across_regions/
 ---
 Hi,
 
-Were bulk loading into a postgres db on rds and getting horrible behaviour where checkpoints take AGES and occur repeatedly.
 
-Our data isn't even that big. Just a few dozen tables some with up to 20million rows. 
+I have an instance r4.4xLarge of SAP BI Platform running in Oregon US-WEST-2 serving a web-app (Lumira 2.3). The web-app is quite heavy and takes 40 seconds to load to a client in Taiwan, Asia. Are there any AwS network boosting options to reduce the latency and increase load times?
 
-We played with the wal size but it just moves the problem rather than fixing it.
 
-Never seen this in pg before so is there something out of whack in the default rds config?
 
-Thanks!
-Dan
-## [10][Scoring A+ for SSL Labs on My Cloudfront-Hosted Static Website](https://www.reddit.com/r/aws/comments/exmsg5/scoring_a_for_ssl_labs_on_my_cloudfronthosted/)
-- url: https://adamj.eu/tech/2020/02/02/scoring-a+-for-ssl-labs-on-my-cloudfront-hosted-static-site/
+Thanks.
+## [10][CDK CI/CD](https://www.reddit.com/r/aws/comments/eylswc/cdk_cicd/)
+- url: https://www.reddit.com/r/aws/comments/eylswc/cdk_cicd/
 ---
+Starting to use CDK a little more and wondering if others have implemented a CI/CD pipeline with CDK?
 
+Would be nice to have CDK code build, test and deploy and integrate with some other workflows if possible. 
+
+Thanks.

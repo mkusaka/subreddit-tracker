@@ -33,96 +33,119 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ey2xrr/whats_everyone_working_on_this_week_62020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-6-2020/37776?u=llogiq)!
-## [3][Update on rawloader rustc benchmarks from 1.20 to 1.41 and current beta/nightly](https://www.reddit.com/r/rust/comments/ey4thl/update_on_rawloader_rustc_benchmarks_from_120_to/)
-- url: https://www.reddit.com/r/rust/comments/ey4thl/update_on_rawloader_rustc_benchmarks_from_120_to/
+## [3][Announcing rust-search-extension v0.7! Search std docs, crates, error codes, and attributes in your address bar instantly!](https://www.reddit.com/r/rust/comments/eymfxu/announcing_rustsearchextension_v07_search_std/)
+- url: https://www.reddit.com/r/rust/comments/eymfxu/announcing_rustsearchextension_v07_search_std/
 ---
-I've been running this benchmark to try and catch regressions in either my code or rustc versions. The latest version is always here:
+Hi all! About three months ago, **rust-search-extension** got a pretty good first impression in [this reddit post](https://www.reddit.com/r/rust/comments/dp1ru6/i_published_a_handy_chromefirefox_extension_to/). Now, I bring a brand-new version of **rust-search-extension** to all of you!
 
-http://chimper.org/rawloader-rustc-benchmarks/
+Here are the major features:
 
-The general trend is quite good. Over these two and a half years of rust versions the improvements are:
+## Supports search std docs
 
-- 31% faster compile time
-- 23% smaller binary size
-- 9% faster runtime
+Offline mode is supported.
 
-Great work by the rust team, thanks!
+https://preview.redd.it/sl9pzlp8zue41.png?width=1802&amp;format=png&amp;auto=webp&amp;s=e791a5d7fc74f52a3e3bc4a57798f83ddc6b7ba8
 
-There have also been a few regressions over time and recently I've noticed three:
+## Supports search top 10K crates
 
-- The current beta has a 14% increase in compile time which seems mostly fixed in nightly. Something similar happened in 1.31 and 1.32 with a 11% increase followed by a 15% decrease that more than made up for it.
-- 1.36 introduced a 29% increase in binary size that was never recovered.
-- There is one specific file that has had a ~5-15% runtime regression ever since 1.21 for which I should probably try and isolate a test case.
+We build top 10K crates (35+k in total on crates.io) index hourly to help you search crates instantly. You can open the popup page to sync the latest crates index automatically.
 
-I'm particularly curious if anyone knows what the binary size increase was due to.
-## [4][std.rs 2.0: Electric Boogaloo](https://www.reddit.com/r/rust/comments/exus04/stdrs_20_electric_boogaloo/)
-- url: https://www.reddit.com/r/rust/comments/exus04/stdrs_20_electric_boogaloo/
----
-Hey, everyone! I just published a new version of std.rs which has built-in search now (the top rated request from the last thread). That means you can now do all of the following redirects:
+What more, you can prefix an **!** (exclamation mark) before the keyword to search crates exclusively! 
 
-| From                       | To                                                      |
-| -------------------------- | ------------------------------------------------------- |
-| `https://std.rs`           | `https://doc.rust-lang.org/stable/std/`                 |
-| `https://n.std.rs`         | `https://doc.rust-lang.org/nightly/std/`                |
-| `https://std.rs/n`         | `https://doc.rust-lang.org/nightly/std/`                |
-| `https://std.rs/println`   | `https://doc.rust-lang.org/stable/std/?search=println`  |
-| `https://n.std.rs/println` | `https://doc.rust-lang.org/nightly/std/?search=println` |
-| `https://std.rs/n/println` | `https://doc.rust-lang.org/nightly/std/?search=println` |
+https://preview.redd.it/ntx23kmazue41.png?width=1800&amp;format=png&amp;auto=webp&amp;s=64c691ceaa09238e2cb71847e40652770e1d3e6a
 
-This new version is built on CloudFlare workers, so if there are any other redirects which may be helpful, feel free to open a pull request or issue! The source code is available here: https://github.com/knpwrs/std.rs
+## Supports search doc with type mode
 
-Original post: https://www.reddit.com/r/rust/comments/es35u6/stdrs_go_directly_to_stable_rust_docs/
-## [5][Did anyone else catch the Upwork commercial that name-dropped Rust?](https://www.reddit.com/r/rust/comments/ey0sk3/did_anyone_else_catch_the_upwork_commercial_that/)
-- url: https://www.reddit.com/r/rust/comments/ey0sk3/did_anyone_else_catch_the_upwork_commercial_that/
----
-Did a double take at first: https://www.ispot.tv/ad/ZCUI/upwork-upwork-is-how-developer
+You can prefix a type to get the exclusive search result. Those type keywords including:
 
-(Hopefully this isn’t too off topic)
-## [6][FOSDEM rust devroom videos](https://www.reddit.com/r/rust/comments/ey6m5x/fosdem_rust_devroom_videos/)
-- url: https://video.fosdem.org/2020/K.3.401/
----
+* mod
+* struct
+* enum
+* fn
+* trait
+* type
+* static
+* macro
+* const For example, `fn:asref` to search function or `trait:iterator` to search trait. 
 
-## [7][Rust: Built to Last](https://www.reddit.com/r/rust/comments/ey12r0/rust_built_to_last/)
-- url: https://www.welcometothejungle.com/en/articles/btc-rust-programming-language
----
+https://preview.redd.it/jx6ysliczue41.png?width=1796&amp;format=png&amp;auto=webp&amp;s=e4cdbdf1f1ee72fd4652efbd536acbf6afb49320
 
-## [8][Synchrony: A distributed job execution &amp; scheduling engine](https://www.reddit.com/r/rust/comments/ey16qg/synchrony_a_distributed_job_execution_scheduling/)
-- url: https://www.reddit.com/r/rust/comments/ey16qg/synchrony_a_distributed_job_execution_scheduling/
----
-[Synchrony](https://github.com/Protryon/synchrony) is a project I threw together over the weekend that is designed to be a partial drop-in replacement for Sidekiq (a similar ruby project), and a general job execution/scheduler tool that scales horizontally.
+## Supports search builtin attributes
 
-It uses Redis by default, but is designed to be able to use different store types. It has a fully implemented &amp; tested HTTP API powered by Iron.
+Search builtin attributes (such as `derive`, `non_exhaustive`) are also supported, by default, the result is mixed with other related docs or crates though.
 
-This is my first large-ish Rust project, so any feedback &amp; criticism is appreciated!
-## [9][My newest and most absurd Rust project](https://www.reddit.com/r/rust/comments/exrqdl/my_newest_and_most_absurd_rust_project/)
-- url: https://github.com/adam-mcdaniel/free
----
+If you prefer to search attribute exclusively, prefix a **#** (pound sign) before the keyword to narrow the result. 
 
-## [10][WASM and Native Gameboy Emulator written in Rust](https://www.reddit.com/r/rust/comments/expoza/wasm_and_native_gameboy_emulator_written_in_rust/)
-- url: https://github.com/benkonz/gameboy_emulator
+https://preview.redd.it/lxtntewdzue41.png?width=1802&amp;format=png&amp;auto=webp&amp;s=21e7c86aa5c134524eb1b3066b47995db7e4eeda
+
+## Supports search error codes
+
+https://preview.redd.it/y1ca793fzue41.png?width=1800&amp;format=png&amp;auto=webp&amp;s=8cd08be25f7feb6d103a29bbbde45ae1432844bf
+
+## Brand-new official website
+
+[https://rust-search-extension.now.sh](https://rust-search-extension.now.sh)
+
+## Github
+
+**rust-search-extension** is open-sourced on Github ([https://github.com/Folyd/rust-search-extension](https://github.com/Folyd/rust-search-extension)), welcome to submit issue or PR!
+
+# Installation
+
+\- [Chrome Web Store](https://chrome.google.com/webstore/detail/rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh)
+
+\- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/rust-search-extension/)
+## [4][C++ ABI: Now or Never](https://www.reddit.com/r/rust/comments/eydy51/c_abi_now_or_never/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1863r1.pdf
 ---
 
-## [11][Rust HTTP Testing with Mockito](https://www.reddit.com/r/rust/comments/ey51i4/rust_http_testing_with_mockito/)
-- url: https://zupzup.org/rust-http-testing/
+## [5][highlight-stderr: Run a command and highlight its stderr, preserving the order of stdout and stderr](https://www.reddit.com/r/rust/comments/eyj15s/highlightstderr_run_a_command_and_highlight_its/)
+- url: https://github.com/joshtriplett/highlight-stderr
 ---
 
-## [12][I had a crack at an example GraphQL Webserver in Rust!](https://www.reddit.com/r/rust/comments/ey501c/i_had_a_crack_at_an_example_graphql_webserver_in/)
-- url: https://www.reddit.com/r/rust/comments/ey501c/i_had_a_crack_at_an_example_graphql_webserver_in/
+## [6][My first crate: const-buffer, a fixed-capacity memory buffer allocated on the stack using const generics](https://www.reddit.com/r/rust/comments/eyjoqk/my_first_crate_constbuffer_a_fixedcapacity_memory/)
+- url: https://www.reddit.com/r/rust/comments/eyjoqk/my_first_crate_constbuffer_a_fixedcapacity_memory/
 ---
-For any interested, it uses:
+[crates.io](https://crates.io/crates/const-buffer)
 
-\- actix-web
+[docs.rs](https://docs.rs/const-buffer/0.1.0/const_buffer/)
 
-\- juniper
+[GitHub](https://github.com/timvermeulen/const-buffer)
 
-\- dataloader-rs
+`ConstBuffer&lt;T, N&gt;` is a block of memory `N` times the size of `T` that you can read from and write to arbitrarily. It's essentially a glorified wrapper around `[MaybeUninit&lt;T&gt;; N]`.
 
-&amp;#x200B;
+Most const generics `Vec`\-like types that have been going around store either a `MaybeUninit&lt;[T; N]&gt;` or `[MaybeUninit&lt;T&gt;; N]` and use lots of pointer arithmetic in order to do reads and writes. This crate is an attempt to make it easier and less error-prone to write such data structures (it's very appropriate for ring buffers, too). The source code is very simple, but it improves readability significantly. The [docs.rs](https://docs.rs/const-buffer/0.1.0/const_buffer/) page has a very basic example of what using it is like.
 
-Would love any feedback, and happy to discuss :)
+I would appreciate any feedback you might have, and please don't hesitate to open issues or submit PRs.
+## [7][Rust Analyzer Changelog #10](https://www.reddit.com/r/rust/comments/ey8twg/rust_analyzer_changelog_10/)
+- url: https://rust-analyzer.github.io/thisweek/2020/02/03/changelog-10.html
+---
 
-[https://github.com/jayy-lmao/rust-graphql-docker](https://github.com/jayy-lmao/rust-graphql-docker)
+## [8][Announcing async-std v1.5.0](https://www.reddit.com/r/rust/comments/ey98zw/announcing_asyncstd_v150/)
+- url: https://github.com/async-rs/async-std/releases/tag/v1.5.0
+---
 
-&amp;#x200B;
+## [9][dprint - JS, Typescript and JSONC formatter written in Rust](https://www.reddit.com/r/rust/comments/eyncld/dprint_js_typescript_and_jsonc_formatter_written/)
+- url: https://www.reddit.com/r/rust/comments/eyncld/dprint_js_typescript_and_jsonc_formatter_written/
+---
+https://github.com/dsherret/dprint
 
-Edit: Oooh and it uses a minimal docker container, see references for details ;)
+Recently, [Deno replaced](https://github.com/denoland/deno/pull/3820) the prettier plugin for its built-in formatter with dprint.
+## [10][win-win: semi-opinionated for window creation in Windows](https://www.reddit.com/r/rust/comments/eyco38/winwin_semiopinionated_for_window_creation_in/)
+- url: https://www.reddit.com/r/rust/comments/eyco38/winwin_semiopinionated_for_window_creation_in/
+---
+I've been exploring soundness issues in window creation on Windows, and have found a bunch. A particularly common one (it might exist in all existing code) is use-after-free when `DestroyWindow` is called inside a window procedure, causing a drop in the reentrant call.
+
+Partly to document this, and partly to make a good basis for experimentation and partly to explore whether there's appetite for cross-ecosystem low level infrastructure, I've created the [win-win](https://crates.io/crates/win-win) crate.
+
+In my experience, UI code tends to play especially fast and loose with soundness, with lots of lifetime and thread safety issues. Also, the lower levels were done in a time predating our modern understanding of safety. I believe it's possible to do better, to build stuff on a sound foundation, then use the safety properties of Rust at the higher levels.
+## [11][Export Rust functions to Java using JNI (WebAssembly comparison)](https://www.reddit.com/r/rust/comments/eyppst/export_rust_functions_to_java_using_jni/)
+- url: https://www.reddit.com/r/rust/comments/eyppst/export_rust_functions_to_java_using_jni/
+---
+I wrote a blog post last week on importing Rust WebAssembly functions inside a JavaFX project. I have investigated this week how to use the Java Native Interface directly on a Rust dylib and compared the two approaches in convenience and speed.
+
+[http://vegapit.com/article/export-rust-java-jni-webassembly-comparison](http://vegapit.com/article/export-rust-java-jni-webassembly-comparison)
+## [12][Learning Rust: Memory, Ownership and Borrowing](https://www.reddit.com/r/rust/comments/eyepht/learning_rust_memory_ownership_and_borrowing/)
+- url: https://www.youtube.com/watch?v=8M0QfLUDaaA
+---
+

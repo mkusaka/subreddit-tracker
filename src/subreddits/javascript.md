@@ -1,96 +1,133 @@
 # javascript
-## [1][WTF Wednesday (January 29, 2020)](https://www.reddit.com/r/javascript/comments/evot3q/wtf_wednesday_january_29_2020/)
-- url: https://www.reddit.com/r/javascript/comments/evot3q/wtf_wednesday_january_29_2020/
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/ey9xwq/your_weekly_rjavascript_recap/)
+- url: https://www.reddit.com/r/javascript/comments/ey9xwq/your_weekly_rjavascript_recap/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+**Monday, January 27 - Sunday, February 02**
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Showoff Saturday (February 01, 2020)](https://www.reddit.com/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/)
-- url: https://www.reddit.com/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/
+###Top Posts
+
+score | comments | title &amp; link | 
+--|--|--
+840  | [116 comments](https://www.reddit.com/r/javascript/comments/ewsc5y/i_launched_ihateregexio_a_regex_cheatsheet_for/) | [I launched iHateRegex.io - A Regex cheatsheet for the haters](https://ihateregex.io/)
+370  | [21 comments](https://www.reddit.com/r/javascript/comments/evshne/cesiumjs_an_open_source_javascript_library_for/) | [CesiumJS - an open source JavaScript library for creating world-class 3D globes and maps with the best possible performance, precision, visual quality, and ease of use](https://cesium.com/cesiumjs/)
+253  | [80 comments](https://www.reddit.com/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/) | [JavaScript libraries are almost never updated once installed](https://blog.cloudflare.com/javascript-libraries-are-almost-never-updated/)
+217  | [27 comments](https://www.reddit.com/r/javascript/comments/ex7tp9/javascript_css_toggle_darklight_theme_based_on/) | [Javascript &amp;amp; CSS — Toggle dark/light theme based on your user's preferred scheme](https://gosink.in/javascript-css-toggle-dark-light-theme-based-on-your-users-preferred-scheme/)
+212  | [22 comments](https://www.reddit.com/r/javascript/comments/ew6yjb/my_friend_had_a_problem_with_scaling_up_his/) | [My friend had a problem with scaling up his WebSocket servers. This is what he came up with](https://tsh.io/blog/how-to-scale-websocket/)
+202  | [89 comments](https://www.reddit.com/r/javascript/comments/eul7lg/corejs_used_by_babel_angular_author_posted_a/) | [CoreJS &amp;#40;used by Babel, Angular&amp;#41; author posted a comment on their repo 16 days ago saying "after some days I'll be in prison", then stops committing to the repo 13 days ago - claims financial problems](https://github.com/zloirock/core-js/issues/747#issuecomment-573318269)
+177  | [21 comments](https://www.reddit.com/r/javascript/comments/ev5zzz/a_graphqlbased_web_app_written_with_javascript/) | [A GraphQL-based Web App written with JavaScript, React and Go](https://github.com/Shpota/skmz)
+154  | [31 comments](https://www.reddit.com/r/javascript/comments/exxg9l/the_mustread_javascript_book_of_2020_is_free/) | [The Must-Read Javascript Book of 2020 is Free](https://booksoncode.com/articles/ydkjs-get-started)
+86  | [27 comments](https://www.reddit.com/r/javascript/comments/exm8g0/askjs_is_this_a_good_explanation_of_tokenbased/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Is this a good explanation of token-based authentication? :-&amp;#41;
+85  | [14 comments](https://www.reddit.com/r/javascript/comments/evl2ej/javascript_componentlevel_cpu_costs/) | [JavaScript component-level CPU costs](https://calendar.perfplanet.com/2019/javascript-component-level-cpu-costs/)
+
+
+
+
+&amp;nbsp;
+
+###Top Discussions
+
+score | comments | title &amp; link | 
+--|--|--
+75  | [57 comments](https://www.reddit.com/r/javascript/comments/ew3z3s/functional_programming_in_javascript/) | [Functional programming in JavaScript](https://softwarebrothers.co/blog/functional-programming-in-javascript/)
+33  | [31 comments](https://www.reddit.com/r/javascript/comments/ev89pn/destructure_an_object_to_remove_a_property/) | [Destructure an object to remove a property](https://timdeschryver.dev/snippets/destructure-an-object-to-remove-a-property)
+4  | [29 comments](https://www.reddit.com/r/javascript/comments/ev9yth/why_do_we_have_dependency_injection_in_web/) | [Why do we have Dependency Injection in web development](https://indepth.dev/why-do-we-have-dependency-injection-in-web-development/)
+72  | [28 comments](https://www.reddit.com/r/javascript/comments/ewof5c/eslint_plugin_for_sorting_requires/) | [ESlint plugin for sorting requires](https://github.com/zcuric/eslint-plugin-require-sort)
+4  | [18 comments](https://www.reddit.com/r/javascript/comments/ey1qre/the_javascript_community_has_a_cultural_problem/) | [The JavaScript Community Has A Cultural Problem And What The Heck Is A Class](https://motts42.blogspot.com/2020/02/what-heck-is-class.html)
+
+
+
+
+&amp;nbsp;
+
+###Top Ask JS
+
+score | comments | title &amp; link | 
+--|--|--
+16  | [11 comments](https://www.reddit.com/r/javascript/comments/evqc0c/askjs_is_there_a_better_alternative_to_hammerjs/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Is there a better alternative to HammerJS for detecting touch gestures?
+10  | [7 comments](https://www.reddit.com/r/javascript/comments/exu3is/askjs_best_ways_to_create_and_embed_3d_models_to/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Best ways to create and embed 3d models to website?
+7  | [8 comments](https://www.reddit.com/r/javascript/comments/extnl7/askjs_working_on_a_new_javascript/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Working on a new JavaScript reference/tutorial site and would love feedback!
+
+
+
+
+&amp;nbsp;
+
+###Top Showoffs
+
+score  |  comment  | 
+--|--
+5  |  /u/mynamesleon said [My accessible autocomplete module &amp;#40;with multi-selection, and supporting IE9+&amp;#41; finally feels complete: https://mynamesleon.github.io/aria-autocomplete/  My accessible tablists module &amp;#40;also ...](/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/fg68adu/?context=5)
+3  |  /u/troymius said [I shared this hobby project of mine before. Last week I finally published and updated version with sounds: &amp;#91;simcar.io&amp;#93;&amp;#40;https://simcar.io&amp;#41;](/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/fg7a13u/?context=5)
+3  |  /u/yboris said [Released **Video Hub App 2.1.0 🎉** this week:  Web: &amp;#91;https://videohubapp.com/&amp;#93;&amp;#40;https://videohubapp.com/&amp;#41;   GitHub:  &amp;#91;https://github.com/whyboris/Video-Hub-App&amp;#93;&amp;#40;https://gith...](/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/fg6l7vr/?context=5)
+
+
+
+
+&amp;nbsp;
+
+###Top Comments
+
+score  |  comment  | 
+--|--
+208  |  /u/our_best_friend said [Say what you want about the JS community - nobody in tech does drama like we do](/r/javascript/comments/eul7lg/corejs_used_by_babel_angular_author_posted_a/ffq1ee8/?context=5)
+123  |  /u/MangoManBad said [Imagine leaving critical dependency issues in your production software like a baboon.  &amp;amp;#x200B;  Oh, wait...](/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/ffr5htn/?context=5)
+117  |  /u/ronchalant said [I don't see anything for parsing html?  *ducks*](/r/javascript/comments/ewsc5y/i_launched_ihateregexio_a_regex_cheatsheet_for/fg4428d/?context=5)
+81  |  /u/acemarke said [I've been using Cesium since early 2013, when it was still in beta, and built a couple long-running internal apps with it.  One of those had originally been built with the old Google Earth Browser Plu...](/r/javascript/comments/evshne/cesiumjs_an_open_source_javascript_library_for/ffxsrg1/?context=5)
+74  |  /u/Hotgeart said [Oh nice javascript librairies - 56 dependencies  3 month later time to update my little app - ERROR - ERROR- ERROR](/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/ffrd5mp/?context=5)
+
+
+
+
+&amp;nbsp;
+## [2][Owl: class based components with hooks, reactive state and concurrent mode](https://www.reddit.com/r/javascript/comments/eyo0zt/owl_class_based_components_with_hooks_reactive/)
+- url: https://github.com/odoo/owl
 ---
-Did you find or create something cool this week in javascript? 
 
-Show us here!
-## [3][The Must-Read Javascript Book of 2020 is Free](https://www.reddit.com/r/javascript/comments/exxg9l/the_mustread_javascript_book_of_2020_is_free/)
-- url: https://booksoncode.com/articles/ydkjs-get-started
+## [3][GLTFJSX 1.0 released, a tool that brings 3D content to the web as re-usable React components](https://www.reddit.com/r/javascript/comments/eybwr5/gltfjsx_10_released_a_tool_that_brings_3d_content/)
+- url: https://github.com/react-spring/gltfjsx/blob/master/whatsnew.md
 ---
 
-## [4][Tracking DOM element visibility](https://www.reddit.com/r/javascript/comments/exvcr9/tracking_dom_element_visibility/)
-- url: https://h3manth.com/new/blog/2020/tracking-dom-element-visibility/
+## [4][Editing CSS variables with JS](https://www.reddit.com/r/javascript/comments/eymyki/editing_css_variables_with_js/)
+- url: https://wunnle.com/edit-css-variables-with-js
 ---
 
-## [5][The JavaScript Community Has A Cultural Problem And What The Heck Is A Class](https://www.reddit.com/r/javascript/comments/ey1qre/the_javascript_community_has_a_cultural_problem/)
-- url: https://motts42.blogspot.com/2020/02/what-heck-is-class.html
+## [5][[AskJS] Please help us choose the default color scheme for our open source Vuestic Admin](https://www.reddit.com/r/javascript/comments/eypuq0/askjs_please_help_us_choose_the_default_color/)
+- url: https://www.reddit.com/r/javascript/comments/eypuq0/askjs_please_help_us_choose_the_default_color/
+---
+Hi redditors and JavaScript lovers!  
+
+
+We've been developing our Vuestic Admin for 3 years already, it started from a small admin template and now evolving into our own components framework.  
+
+
+Our 2019 redesign separated Vuestic users. Majority really loved it's fresh look, but for some people it seemed to be too 'acid'. So we decided to craft an alternative and finally launched corporate white theme today.  
+
+
+Right now we're puzzled: we love the original look but new white color scheme looks somehow calmer and neater. We're thinking of making white color scheme default both for Vuestic Admin and Vuestic UI (our own components framework which is currently under development) but not sure completely.  
+
+
+Your opinions and feedback would really help us. Here's the link for you to check [https://github.com/epicmaxco/vuestic-admin](https://github.com/epicmaxco/vuestic-admin), thank you!
+## [6][Simple Text Modifier tools built using Javascript](https://www.reddit.com/r/javascript/comments/eyp4ud/simple_text_modifier_tools_built_using_javascript/)
+- url: https://simplestweb.in/tools/text-modifier
 ---
 
-## [6][[AskJS] Is this a good explanation of token-based authentication? :-)](https://www.reddit.com/r/javascript/comments/exm8g0/askjs_is_this_a_good_explanation_of_tokenbased/)
-- url: https://www.reddit.com/r/javascript/comments/exm8g0/askjs_is_this_a_good_explanation_of_tokenbased/
----
-I'm in the process of writing a blog post about JWTs, and I tried writing a fun little story to describe the concept of token-based authentication. I want to know if it even makes sense and if I'm missing something important.
-
-Your feedback is greatly appreciated!
-
-**Token Teahose**
-
-You are the proud owner of a very popular teahouse, Token Teahouse. It has thousands upon thousands of members and new people join all the time.
-A new face appears at the door, her name is Alice, she want to be a part of Token Teahouse.
-You welcome her, and ask for a password, so you can verify her membership at a later time if needed.
-After writing down the details in a very very long list of members, you fabricate a special piece of paper for her. It states that Alice is a level 1 tea-sipper and has access to two cups of green tea. The paper is signed by you, so you will know it's authentic.
-
-The following day, Alice is at the door again. A thousand people have already visited since she joined, so you don't recognize her.
-Alice claims that she is a level 1 tea-sipper and she shows you the paper to prove it. Sure enough, that's your signature, so you let her in. That only took a few seconds. This is the secret to the success of your amazing teahouse.
-Not spending too much time verifying you customers membership, is the key to scale any great teahouse.
-
-Another person, vaguely familiar appears at the door. He claims to be Bob, level 7 tea-downer, but he has no paper to prove it.
-Unfortunately Bob forgot to take the paper out of his trousers when washing them. Bob looks a bit ashamed, but you cheer him up: "No biggy Bob! This is why I keep a list of all my members. It will take a while, but we will sort it out". Bob gives you his password, and you start going through the members list to verify if this really is Bobs password.
-
-After a few minutes, you find Bob in the list and sure enough, Bob destroyed the paper but he remembered his password.
-You fabricate a new piece of paper for Bob, and let him in.
-## [7][Interview with TC39 co-chair.](https://www.reddit.com/r/javascript/comments/exvdf5/interview_with_tc39_cochair/)
-- url: https://www.tc39er.us/episode-1-aki/
+## [7][new Date(year, month, o) returning minus one year](https://www.reddit.com/r/javascript/comments/eyp43c/new_dateyear_month_o_returning_minus_one_year/)
+- url: /r/learnjavascript/comments/eyohas/new_dateyear_month_o_returning_minus_one_year/
 ---
 
-## [8][[AskJS] Best ways to create and embed 3d models to website?](https://www.reddit.com/r/javascript/comments/exu3is/askjs_best_ways_to_create_and_embed_3d_models_to/)
-- url: https://www.reddit.com/r/javascript/comments/exu3is/askjs_best_ways_to_create_and_embed_3d_models_to/
----
-Say I want to make a 3d image of a house, where if you click on the door, the side frame of website would say "Door" and then some details. How could I do this? I want to know how to make 3d models, and how to embed them and interact with them. Links, videos, or ideas are all appreciated.
-## [9][Creating a Microfrontend Platform with Mashroom Portal on Kubernetes](https://www.reddit.com/r/javascript/comments/ey3vz9/creating_a_microfrontend_platform_with_mashroom/)
-- url: https://medium.com/mashroom-server/creating-a-microfrontend-platform-with-mashroom-portal-on-kubernetes-4bf4c9d60940
+## [8][Understanding the ECMAScript spec, part 1](https://www.reddit.com/r/javascript/comments/eyb4bk/understanding_the_ecmascript_spec_part_1/)
+- url: https://v8.dev/blog/understanding-ecmascript-part-1
 ---
 
-## [10][[AskJS] Can a website admin see that I'm running a local js on firefox](https://www.reddit.com/r/javascript/comments/ey3bnk/askjs_can_a_website_admin_see_that_im_running_a/)
-- url: https://www.reddit.com/r/javascript/comments/ey3bnk/askjs_can_a_website_admin_see_that_im_running_a/
----
-When  we are picking classes for the semester (college) we need to manually  enter CRN codes (ID codes for the course) to designated text input  boxes. There's a student plan helper app which exports a js code to  quickly enter CRN's to their boxes and the school said "the usage of  that script is illegal and will get you into trouble"
-
-My question is, if I use the code anyways, can they detect that I've run a local js code?
-
-Here's a sample js code for two lectures.
-
-`javascript:var crn=[14305,10984];for(var i=0;i&lt;crn.length;i++){var d=document.getElementById("crn_id"+(i+1));d.value=crn[i];}void(0);`
-
-&amp;#x200B;
-
-Here's a simulated add drop page to test the code.
-
-[https://web.itu.edu.tr/durgunor/crn.html](https://web.itu.edu.tr/durgunor/crn.html)
-
-&amp;#x200B;
-
-Thanks.
-## [11][Minimal UI component library based on Vue](https://www.reddit.com/r/javascript/comments/ey5f8z/minimal_ui_component_library_based_on_vue/)
-- url: https://github.com/mevinoth/slim-ui
+## [9][Javascript utility library with automated benchmarks](https://www.reddit.com/r/javascript/comments/eymgwt/javascript_utility_library_with_automated/)
+- url: https://github.com/Acanguven/rapidash?v=1
 ---
 
-## [12][[AskJS] Working on a new JavaScript reference/tutorial site and would love feedback!](https://www.reddit.com/r/javascript/comments/extnl7/askjs_working_on_a_new_javascript/)
-- url: https://www.reddit.com/r/javascript/comments/extnl7/askjs_working_on_a_new_javascript/
+## [10][Two Lessons I Learned From Making React Components](https://www.reddit.com/r/javascript/comments/eyoiiw/two_lessons_i_learned_from_making_react_components/)
+- url: https://css-tricks.com/two-lessons-i-learned-from-making-react-components/
 ---
-So I've been working on this new site for a few days, but I have had the idea for months. Essentially, it's aimed at a line-by-line approach to teaching JavaScript targeted to folks who might find things like the MDN docs to be a bit too dense.
 
-The following is a proof-of-concept, I'm not necessarily looking for criticism about the current content, but rather the usefulness of the idea as a whole. Thank you in advance!
+## [11][Practical Functional Programming with Javascript](https://www.reddit.com/r/javascript/comments/eye8ul/practical_functional_programming_with_javascript/)
+- url: https://medium.com/nmc-techblog/practical-functional-programming-with-javascript-c1a9d2d0c6df
+---
 
-[https://typeofnan-tutorials.netlify.com/](https://typeofnan-tutorials.netlify.com/)
-
-**Edit:** So I'm already sensing I need to be clearer in the app itself that the app provides *examples* and, at the end of a section, it can provide a link to MDN or something similar to give more details. I'm definitely going to at least add an "introduction" to each page to set up the example and clarify that it's not an "exhaustive" use of the specified method.

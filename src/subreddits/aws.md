@@ -1,76 +1,162 @@
 # aws
-## [1][Password-less Amazon Cognito Registration and Authentication (through email or SMS)](https://www.reddit.com/r/aws/comments/eyhj2m/passwordless_amazon_cognito_registration_and/)
-- url: https://aws.amazon.com/blogs/mobile/implementing-passwordless-email-authentication-with-amazon-cognito/
+## [1][Converting existing API Gateway REST API into AWS Amplify + AppSync](https://www.reddit.com/r/aws/comments/ez7x6k/converting_existing_api_gateway_rest_api_into_aws/)
+- url: https://www.reddit.com/r/aws/comments/ez7x6k/converting_existing_api_gateway_rest_api_into_aws/
+---
+I haven't been able to find any information about anyone doing this online: I'm trying to make a react-native app using AWS Amplify. My team has built a full REST and Websocket API through API Gateway, which works perfectly with our react web app, however there doesn't seem to be any tools to convert this into an API that could be used with a mobile application. Some issues I've encountered are that:
+
+1. AWS Amplify is really pushing for the usage of GraphQL through AppSync - and there are seemingly no tools for me to convert the many REST/Websocket endpoints I have into GraphQL
+2. Amplify doesn't have any documentation about how to integrate an existing API (whether it be GraphQL or REST), only the creation of a new one. Based on the configuration files that are generated when I create a new API it seems like I could possibly modify these to access my previous API Gateway
+
+
+I'm curious as to whether anyone has gone through this process before? Based on my research there are no alternative to using AWS Amplify for the creation of a mobile application on AWS (as it has absorbed AWS Mobile Hub)
+## [2][AWS Shield Feedback!](https://www.reddit.com/r/aws/comments/ez213c/aws_shield_feedback/)
+- url: https://www.reddit.com/r/aws/comments/ez213c/aws_shield_feedback/
+---
+Hi all! Looking for some feedback/thoughts/experiences with AWS and DDoS attacks/mitigation! 
+
+Thx!
+## [3][Show your Tool: Parliament](https://www.reddit.com/r/aws/comments/ez6rfe/show_your_tool_parliament/)
+- url: https://cloudonaut.io/show-your-tool-parliament/
 ---
 
-## [2][Getting Started with CloudWatch Synthetics - Canary testing on AWS](https://www.reddit.com/r/aws/comments/eyopgb/getting_started_with_cloudwatch_synthetics_canary/)
-- url: https://zoph.me/posts/2020-02-02-cloudwatch-synthetics/
+## [4][Opinion: ECS (Perhaps Fargate) vs Docker on EC2](https://www.reddit.com/r/aws/comments/ez19h4/opinion_ecs_perhaps_fargate_vs_docker_on_ec2/)
+- url: https://www.reddit.com/r/aws/comments/ez19h4/opinion_ecs_perhaps_fargate_vs_docker_on_ec2/
 ---
-
-## [3][EC2 Auto scaling group seems to ignore weights](https://www.reddit.com/r/aws/comments/eyorjx/ec2_auto_scaling_group_seems_to_ignore_weights/)
-- url: https://www.reddit.com/r/aws/comments/eyorjx/ec2_auto_scaling_group_seems_to_ignore_weights/
----
-I'm attempting to use the new weighting option in ASG -  [https://aws.amazon.com/about-aws/whats-new/2019/11/amazon-ec2-auto-scaling-supports-instance-weighting/](https://aws.amazon.com/about-aws/whats-new/2019/11/amazon-ec2-auto-scaling-supports-instance-weighting/) 
-
-I've assigned weights to the server options I added to the ASG, but they seem to be ignored.
-
-I set the t3a.small weight to 2 and t3a.medium to 6 and when I set desired capacity to 1or 2 it always starts a t3a.medium. I would have expected it to start a small which would fulfill the capacity requirement.
-
-I've tried adding t2 and t3 types too as well as adding large types and trying to get it to start smaller instances than the largest ones based on desired capacity, but no joy.
-
-Any ideas how to use capacity to get ASG to launcher smaller instances?
-## [4][Configuring Federation LAB for AWS SSO using AD and ADFS](https://www.reddit.com/r/aws/comments/eyo2qp/configuring_federation_lab_for_aws_sso_using_ad/)
-- url: https://www.reddit.com/r/aws/comments/eyo2qp/configuring_federation_lab_for_aws_sso_using_ad/
----
-Hey guys, I have a bare metal server which can connect to the internet. I can browse to AWS website and can login using an IAM user.
-
-Recently I thought of trying to configure a lab on it with Active Directory and ADFS so I can create some users on premises and practice SSO.
-
-So I configured a local AD environment on a Windows 2012 R2 server, "[mydomain.com](https://mydomain.com)" and I followed the instructions outlined in the article below. I can get to the Sign-In page but when I try to sign-in, I get a 400 bad request.
-
-[https://aws.amazon.com/blogs/security/enabling-federation-to-aws-using-windows-active-directory-adfs-and-saml-2-0/](https://aws.amazon.com/blogs/security/enabling-federation-to-aws-using-windows-active-directory-adfs-and-saml-2-0/)
-
-Do I have to forward some port on my AD server? I don't think there's anything else wrong with it as I can browse to the sites but I am not sure if I have to forward/open port on the server??? Has anyone tried this before.
-## [5][awscredx: AWS role assumption made simple](https://www.reddit.com/r/aws/comments/eyo2lb/awscredx_aws_role_assumption_made_simple/)
-- url: https://github.com/sam701/awscredx
----
-
-## [6][Node.js AWS SDK for creating AWS EC2/ECS Instance](https://www.reddit.com/r/aws/comments/eyn4ih/nodejs_aws_sdk_for_creating_aws_ec2ecs_instance/)
-- url: https://www.reddit.com/r/aws/comments/eyn4ih/nodejs_aws_sdk_for_creating_aws_ec2ecs_instance/
----
-Does anyone here knows how to start a EC2/ECS instance using aws sdk on node.js? Is it possible to use a docker run command as well when running a docker image/container? Any working sample codes will be a lot of help. Thanks in advance!
-## [7][Find cleartext passwords stored in Lambda Functions](https://www.reddit.com/r/aws/comments/eyg293/find_cleartext_passwords_stored_in_lambda/)
-- url: https://www.reddit.com/r/aws/comments/eyg293/find_cleartext_passwords_stored_in_lambda/
----
-Hello! Is anyone aware of a tool (preferably open source) I can use to periodically scan the code of all of the functions in an AWS account and determine if there are any passwords/high-entropy strings stored in the code of the function?
-
-Eventually I would like to also run this as part of the CI/CD process, but for now I need to get an idea of the different risks we have in our current environment. I have looked at LambdaGuard, but it seems to be lacking this functionality. I also looked at integrating SonarQube with LambdaGuard which worked well, but still doesn't provide this level of information.
-
-I am thinking of just writing something that does this, but want to make sure I'm not missing out on something that is already available for this purpose.
-
-Thanks!
-## [8][Has anyone hit the maximum limit of 50 tags?](https://www.reddit.com/r/aws/comments/eyly1i/has_anyone_hit_the_maximum_limit_of_50_tags/)
-- url: https://www.reddit.com/r/aws/comments/eyly1i/has_anyone_hit_the_maximum_limit_of_50_tags/
----
-We all rejoiced when the limit was increased from 10 to 50 (at least I did), but it makes me wonder, is anyone getting any closer to the upper limit?  What's the most you're using in your environment, and why?  30? 40? 45? 48?  
-
-Have you hit the ceiling yet? :)
-## [9][Increasing web delivery speeds across regions.](https://www.reddit.com/r/aws/comments/eylwg8/increasing_web_delivery_speeds_across_regions/)
-- url: https://www.reddit.com/r/aws/comments/eylwg8/increasing_web_delivery_speeds_across_regions/
+We have grown rather organically as most startups, and it turns out we are running 90+% of our apps in containers on EC2, sometimes multiple containers per instance.  I have heard from an friend/co-worker that ECS was kind of hard to get into/PITA 3+ years ago, but wondering about thoughts now. The best way to form my own opinion is going to be build a cluster (or two), add all containers and deploy, with our restrictions on how we can load balance and from where (external only)  .  I'm not very interested in jumping into EKS at the moment, so please stick to ECS.  This is more a question about the ecosystem of ECS, possible blue/green, ease of use, security etc.  As a side question, does Fargate mitigate some peoples concerns about serverless docker?
+## [5][Is the "Billing &amp; Cost Management Dashboard" the ultimate place to see how much AWS costs me?](https://www.reddit.com/r/aws/comments/eyugiv/is_the_billing_cost_management_dashboard_the/)
+- url: https://www.reddit.com/r/aws/comments/eyugiv/is_the_billing_cost_management_dashboard_the/
 ---
 Hi,
 
+&amp;#x200B;
 
-I have an instance r4.4xLarge of SAP BI Platform running in Oregon US-WEST-2 serving a web-app (Lumira 2.3). The web-app is quite heavy and takes 40 seconds to load to a client in Taiwan, Asia. Are there any AwS network boosting options to reduce the latency and increase load times?
+I am a paranoid person by nature, so I just want to be very sure that though the "Billing &amp; Cost Management Dashboard"  I can see how much AWS will charge me?
 
+&amp;#x200B;
 
+Let's imagine someone hacks me and starts a EC2 Instance. Will the second the EC2 instance start to cost money (after the Free tier thing), will the "Billing &amp; Cost Management Dashboard" show me that cost?
 
-Thanks.
-## [10][CDK CI/CD](https://www.reddit.com/r/aws/comments/eylswc/cdk_cicd/)
-- url: https://www.reddit.com/r/aws/comments/eylswc/cdk_cicd/
+So, if I keep an eye on the "Spend Summary" in the "Billing &amp; Cost Management Dashboard" will I know how much they will charge me?
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+I am talking about this part of AWS in the picture below.
+
+[https://i.imgur.com/MKYdF7q.png](https://i.imgur.com/MKYdF7q.png)
+
+&amp;#x200B;
+
+I also set up a budget and MFA with my phone
+
+Thank you
+## [6][How to setup RDS Aurora with aws-cli. Documentation and error messages are not aligned. At least I can't find the connection.](https://www.reddit.com/r/aws/comments/ez81ro/how_to_setup_rds_aurora_with_awscli_documentation/)
+- url: https://www.reddit.com/r/aws/comments/ez81ro/how_to_setup_rds_aurora_with_awscli_documentation/
 ---
-Starting to use CDK a little more and wondering if others have implemented a CI/CD pipeline with CDK?
+aws-cli version `aws-cli/2.0.0dev2 Python/3.7.3 Linux/4.15.0-47-generic botocore/2.0.0dev1`
 
-Would be nice to have CDK code build, test and deploy and integrate with some other workflows if possible. 
+`aws rds create-db-instance \`
 
-Thanks.
+`--db-name database \`
+
+`--db-instance-identifier databaseid \`
+
+`--db-instance-class db.t3.small \`
+
+`--db-subnet-group-name subnet-0f7471222887cd5c4 \`
+
+`--engine aurora-mysql \`
+
+`--engine-version 5.7.23 \`
+
+`--master-username username \`
+
+`--master-user-password 123password \`
+
+`--profile profile`
+
+The error I get is `The parameter AllocatedStorage must be provided and must not be null.`
+
+But in the doc the parameter is not applicable to Aurora: `Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.`
+
+How can I create Aurora Mysql DB with CLI?
+## [7][Sagemaker not using GPU even though it is deployed in GPU instance.](https://www.reddit.com/r/aws/comments/ez7ysj/sagemaker_not_using_gpu_even_though_it_is/)
+- url: https://www.reddit.com/r/aws/comments/ez7ysj/sagemaker_not_using_gpu_even_though_it_is/
+---
+I was able to successfully deploy my object detection model into Sagemaker and get predictions from it but it turns out the GPU is not being utilized when the prediction is to be done. (In short terms, the inference is not using GPU)
+
+I deployed my custom model using the code:
+
+```
+predictor = model.deploy(initial_instance_count=1, instance_type='ml.p2.xlarge') 
+```
+
+Then, I get predictions by:
+
+```
+results = predictor.predict(imageData)
+```
+
+This process takes around ~15+ seconds and when I check the utilization graph in the endpoint dashboard I get peaks in GPU memory but not on the process usage.
+
+The question is also present here. 
+
+https://stackoverflow.com/questions/59421569/sagemaker-not-using-gpu-even-though-it-is-deployed-in-gpu-instance
+## [8][Security Windows Server](https://www.reddit.com/r/aws/comments/ez7tfx/security_windows_server/)
+- url: https://www.reddit.com/r/aws/comments/ez7tfx/security_windows_server/
+---
+Hello,
+
+  
+I'm newbie on AWS and I would like create a new server windows with SQL &amp; IIS.
+
+How secure access to this server ? Create a VM with firewall ? Or a firewall is included on AWS ?
+
+Thanks a lot for your help .
+## [9][CloudEndure failed machine conversion](https://www.reddit.com/r/aws/comments/ez6krg/cloudendure_failed_machine_conversion/)
+- url: https://www.reddit.com/r/aws/comments/ez6krg/cloudendure_failed_machine_conversion/
+---
+Hi !
+
+At work today, we tried to migrate a VM from VmWare to AWS. It is a Windows 2016.
+
+Agent is installed, Data replication seems ok, everything seems fine. 
+
+Logs do not bring us much information :
+
+ 
+
+`04/02/2020 à 17:12:25 Job started`
+
+`04/02/2020 à 17:12:25 Started waiting for latest snapshot`
+
+`04/02/2020 à 17:17:27 The latest state of the machine 4209275b-9c0f-xxxx-xxxx-804389039078 could not have been fetched. Creating replica that is up-to-date to 2020-02-04 16:10:26.178717UTC instead.`
+
+`04/02/2020 à 17:17:27 Finished waiting for latest snapshot`
+
+`04/02/2020 à 17:17:35 Started machine conversions`
+
+`04/02/2020 à 17:32:37 Failed machine conversions`
+
+`04/02/2020 à 17:32:38 Failed creating a replica for volume vol-4209275b-9c0f-xxxx-xxxx-804389039078:e:0: No snapshot for volume cloning, probably a failed conversion.`
+
+`04/02/2020 à 17:32:38 Failed creating a replica for volume vol-4209275b-9c0f-xxxx-xxxx-804389039078:c:0: No snapshot for volume cloning, probably a failed conversion.`
+
+`04/02/2020 à 17:32:38 Failed creating a replica for volume vol-4209275b-9c0f-xxxx-xxxx-804389039078:f:0: No snapshot for volume cloning, probably a failed conversion.`
+
+`04/02/2020 à 17:32:38 Job finished`
+
+For information :
+
+We have to shut down source for network reason when replication process have begin. 
+
+We do not understand what is going on because everything should, thechnicaly, work well. 
+
+Do you guys have any suggestion ? Already tried to reinstall from 0 the agent and create a new porject. Data replication seems fine, only the snapshots seems causing trouble.
+## [10][Trying to find the status of my table in dynamoDB using Python.](https://www.reddit.com/r/aws/comments/ez53ow/trying_to_find_the_status_of_my_table_in_dynamodb/)
+- url: https://www.reddit.com/r/aws/comments/ez53ow/trying_to_find_the_status_of_my_table_in_dynamodb/
+---
+Lets say I add a new item to my table: I want my python script to recognize that change. Is there any way I can do that? Thank you!

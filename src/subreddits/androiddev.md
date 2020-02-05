@@ -31,87 +31,66 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Karumi Android 2020 development stack](https://www.reddit.com/r/androiddev/comments/eypany/karumi_android_2020_development_stack/)
-- url: https://blog.karumi.com/our-android-2020-development-stack/
+## [3][X-post: Google has paid Android developers about half of what Apple has - r/apple](https://www.reddit.com/r/androiddev/comments/ez5ybu/xpost_google_has_paid_android_developers_about/)
+- url: https://www.reddit.com/r/apple/comments/eyp4jg/_/
 ---
 
-## [4][Material Components 1.1.0 stable version released](https://www.reddit.com/r/androiddev/comments/eyb7qp/material_components_110_stable_version_released/)
-- url: https://github.com/material-components/material-components-android/releases/tag/1.1.0
+## [4][Android Styling: Themes vs Styles](https://www.reddit.com/r/androiddev/comments/eyxwau/android_styling_themes_vs_styles/)
+- url: https://medium.com/androiddevelopers/android-styling-themes-vs-styles-ebe05f917578
 ---
 
-## [5][2020 Java Technology Report](https://www.reddit.com/r/androiddev/comments/eynjf3/2020_java_technology_report/)
-- url: https://www.jrebel.com/blog/2020-java-technology-report
+## [5][Activity onCreate not called until screen is unlocked?](https://www.reddit.com/r/androiddev/comments/ez8n2n/activity_oncreate_not_called_until_screen_is/)
+- url: https://www.reddit.com/r/androiddev/comments/ez8n2n/activity_oncreate_not_called_until_screen_is/
 ---
+I have a Service running in my app that starts an activity whenever a condition is met, however if this condition is met when the screen is locked, the onCreate callback doesn't fire until I unlock the device.
 
-## [6][Examples for multi-module apps with one module per feature](https://www.reddit.com/r/androiddev/comments/eynjkq/examples_for_multimodule_apps_with_one_module_per/)
-- url: https://www.reddit.com/r/androiddev/comments/eynjkq/examples_for_multimodule_apps_with_one_module_per/
+I have added the following to the activity in my manifest
+
+*android:showOnLockScreen*="true"  
+*android:turnScreenOn*="true"
+
+I've also tried adding the relevant flags to the Window of the activity in onCreate, however since onCreate never fires while the device is locked this doesn't make a difference.
+
+How can I get the activity's onCreate to fire when the screen is locked and in turn, turn the screen on and show over the lock screen of my phone?
+## [6][Developers have earned over $80 billion in total from the Google Play Store](https://www.reddit.com/r/androiddev/comments/eyrc0z/developers_have_earned_over_80_billion_in_total/)
+- url: https://www.reddit.com/r/androiddev/comments/eyrc0z/developers_have_earned_over_80_billion_in_total/
 ---
-Recently, I have [often](https://engineering.tiki.vn/o-1-android-build-time-at-tiki-1a27a804bb6a) [read](https://github.com/jeziellago/FlowNav) [about apps](https://medium.com/@vlastobrecka/dagger-in-a-multi-module-project-without-dagger-android-5d9cc5ae981c) with multiple modules. Often in the context of decreasing build times but also when it came to better collaboration and clean(er) code.
-
-What are examples of apps that incorporate this multi-module structure, preferrably open source? I’d like to learn more about how to do that on scale.
-## [7][Is it possible to implement Multiple gestures or tranistions on a same view in MotionScene of a MotionLayout?](https://www.reddit.com/r/androiddev/comments/eymgdy/is_it_possible_to_implement_multiple_gestures_or/)
-- url: https://www.reddit.com/r/androiddev/comments/eymgdy/is_it_possible_to_implement_multiple_gestures_or/
----
-Here is the thing that I'm trying to do:
-
-https://stackoverflow.com/questions/60040018/android-motionlayout-how-to-handle-both-click-and-swipe-events-on-same-view-v
-
-I need this for my app, can someone please tell me if it's possible to do it with motion layout, or should I find alternative solution? If so can you give me suggestions.
-## [8][GC overhead limit exceeded](https://www.reddit.com/r/androiddev/comments/eypy3x/gc_overhead_limit_exceeded/)
-- url: https://www.reddit.com/r/androiddev/comments/eypy3x/gc_overhead_limit_exceeded/
----
-Recently I have assigned to a project that is already started and published on the playstore and from time to time while working on it an exception arise when I build the application: 
-
-**e: java.lang.OutOfMemoryError: GC overhead limit exceeded**
-
-before saying google it, I have already googled it and fixed it. But now I want to know why this happens for this project specifically?
-## [9][How can i make an APP like this?](https://www.reddit.com/r/androiddev/comments/eypw2u/how_can_i_make_an_app_like_this/)
-- url: https://www.reddit.com/r/androiddev/comments/eypw2u/how_can_i_make_an_app_like_this/
----
- Hello guys, first of all sorry my bad English.
-
-My coding knowledge is very limited and i need your help.
-
-I  would like to make an iOS / Android app that allows to the customer  choose and buy a Service Plan,then allow them to send me private  coordinates with Google Maps to go personally (physically) and offer the  service,**there's any company that offers a app maker with this purchase system?**
-
-Thanks in advance guys!
-## [10][Do you usually construct ViewModelProvider by using Activity or Fragment?](https://www.reddit.com/r/androiddev/comments/eypkgn/do_you_usually_construct_viewmodelprovider_by/)
-- url: https://www.reddit.com/r/androiddev/comments/eypkgn/do_you_usually_construct_viewmodelprovider_by/
----
-It is common to have a (or multiple) Fragment(s) within single Activity.
-
-I was wondering, usually, when you construct ViewModelProvider within a Fragment, do you pass in Activity, or Fragment into ViewModelProvider's constructor?
+&gt;Hiroshi Lockheimer, SVP at Google, has confirmed on Twitter that to date,  developers have earned over $80 billion in total from the Google Play  Store globally, excluding the Chinese market  
+&gt;  
+&gt;[https://www.xda-developers.com/developers-earned-over-80-billion-total-play-store/](https://www.xda-developers.com/developers-earned-over-80-billion-total-play-store/)
 
 &amp;#x200B;
 
-I was wondering, for the following 2 code snippets, which is the recommended way?
+This means that Google made $34 billion in the same period. Considering that the earnings are proportional in these 12 years, Google has earned almost 2.9 billion dollars every year from developers' applications.
 
-## Use Fragment when constructing ViewModelProvider
+This proves that they have the operating margin to have a sufficient number of people, with experience and good skills, to manage account bans. They have no excuse when they leave most of the ban management to bots and only intervene when a case becomes of public interest.
+## [7][Violation of Impersonation policy, looking for advice](https://www.reddit.com/r/androiddev/comments/ez7155/violation_of_impersonation_policy_looking_for/)
+- url: https://www.reddit.com/r/androiddev/comments/ez7155/violation_of_impersonation_policy_looking_for/
+---
+Today I got my app removed because it contains a copyrighted word in the name. The email explains that I should rename it to something like [app name] for [copyrighted word] and that's what I'm going to do. However, I have some concerns about the package name. It looks like this: com.[my name].[copyrightedword][app name]. Is it safe to keep it the same or should I change it as well just in case and submit a new app?
+## [8][Do I need to use third party Recycler View library?](https://www.reddit.com/r/androiddev/comments/ez4ude/do_i_need_to_use_third_party_recycler_view_library/)
+- url: https://www.reddit.com/r/androiddev/comments/ez4ude/do_i_need_to_use_third_party_recycler_view_library/
+---
+If I do what are your recommendations?
 
-    public class MyFragment extends Fragment {     
-        @Override     
-        public void onCreate(Bundle savedInstanceState) {         
-        super.onCreate(savedInstanceState);          
-           final ViewModelProvider viewModelProvider = new ViewModelProvider(this);         
-        tabInfoViewModel = viewModelProvider.get(TabInfoViewModel.class);     
-        } 
 
-## Use Activity when constructing ViewModelProvider
-
-    public class MyFragment extends Fragment {     
-        @Override     
-        public void onCreate(Bundle savedInstanceState) {         
-        super.onCreate(savedInstanceState);          
-           final ViewModelProvider viewModelProvider = new ViewModelProvider(getActivity());         
-        tabInfoViewModel = viewModelProvider.get(TabInfoViewModel.class);     
-        } 
-
-Both code are workable. But, which is the "more correct" way?
-## [11][What android studio plugins do you use to help coding a bit faster?](https://www.reddit.com/r/androiddev/comments/eypcxl/what_android_studio_plugins_do_you_use_to_help/)
-- url: https://www.reddit.com/r/androiddev/comments/eypcxl/what_android_studio_plugins_do_you_use_to_help/
+Thanks in advance!
+## [9][Streaming data from a home cinema device using RXJava on Android](https://www.reddit.com/r/androiddev/comments/ez7r5h/streaming_data_from_a_home_cinema_device_using/)
+- url: https://levelup.gitconnected.com/streaming-data-from-a-home-cinema-device-using-rxjava-on-android-44de8f5a29a0
 ---
 
-## [12][Complex UI/Animations on Android — featuring MotionLayout](https://www.reddit.com/r/androiddev/comments/ey5lu3/complex_uianimations_on_android_featuring/)
-- url: https://medium.com/@nikhilpanju22/complex-ui-animations-on-android-featuring-motionlayout-aa82d83b8660?source=friends_link&amp;sk=5b924ea26bc2ae4735483760f3c62409
+## [10][After a long time learning how to code (around 1 year) I finally finished my first game and you can be the first to try it.](https://www.reddit.com/r/androiddev/comments/ez9d7g/after_a_long_time_learning_how_to_code_around_1/)
+- url: https://v.redd.it/z060uv0ju3f41
+---
+
+## [11][Will Android 11 kill legacy apps?](https://www.reddit.com/r/androiddev/comments/eywipp/will_android_11_kill_legacy_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/eywipp/will_android_11_kill_legacy_apps/
+---
+My concern is regarding the storage issue.
+As far as I know, even apps targeting older API level and using File based methods for storing data on internal storage will also not work.
+
+So, seeing the total number of applications that still use this technique to store data, does in mean that Android 11 will render many apps useless? Will there be any backlash from the users?
+## [12][Karumi Android 2020 development stack](https://www.reddit.com/r/androiddev/comments/eypany/karumi_android_2020_development_stack/)
+- url: https://blog.karumi.com/our-android-2020-development-stack/
 ---
 

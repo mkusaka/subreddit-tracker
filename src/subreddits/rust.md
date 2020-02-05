@@ -33,119 +33,113 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ey2xrr/whats_everyone_working_on_this_week_62020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-6-2020/37776?u=llogiq)!
-## [3][Announcing rust-search-extension v0.7! Search std docs, crates, error codes, and attributes in your address bar instantly!](https://www.reddit.com/r/rust/comments/eymfxu/announcing_rustsearchextension_v07_search_std/)
-- url: https://www.reddit.com/r/rust/comments/eymfxu/announcing_rustsearchextension_v07_search_std/
----
-Hi all! About three months ago, **rust-search-extension** got a pretty good first impression in [this reddit post](https://www.reddit.com/r/rust/comments/dp1ru6/i_published_a_handy_chromefirefox_extension_to/). Now, I bring a brand-new version of **rust-search-extension** to all of you!
-
-Here are the major features:
-
-## Supports search std docs
-
-Offline mode is supported.
-
-https://preview.redd.it/sl9pzlp8zue41.png?width=1802&amp;format=png&amp;auto=webp&amp;s=e791a5d7fc74f52a3e3bc4a57798f83ddc6b7ba8
-
-## Supports search top 10K crates
-
-We build top 10K crates (35+k in total on crates.io) index hourly to help you search crates instantly. You can open the popup page to sync the latest crates index automatically.
-
-What more, you can prefix an **!** (exclamation mark) before the keyword to search crates exclusively! 
-
-https://preview.redd.it/ntx23kmazue41.png?width=1800&amp;format=png&amp;auto=webp&amp;s=64c691ceaa09238e2cb71847e40652770e1d3e6a
-
-## Supports search doc with type mode
-
-You can prefix a type to get the exclusive search result. Those type keywords including:
-
-* mod
-* struct
-* enum
-* fn
-* trait
-* type
-* static
-* macro
-* const For example, `fn:asref` to search function or `trait:iterator` to search trait. 
-
-https://preview.redd.it/jx6ysliczue41.png?width=1796&amp;format=png&amp;auto=webp&amp;s=e4cdbdf1f1ee72fd4652efbd536acbf6afb49320
-
-## Supports search builtin attributes
-
-Search builtin attributes (such as `derive`, `non_exhaustive`) are also supported, by default, the result is mixed with other related docs or crates though.
-
-If you prefer to search attribute exclusively, prefix a **#** (pound sign) before the keyword to narrow the result. 
-
-https://preview.redd.it/lxtntewdzue41.png?width=1802&amp;format=png&amp;auto=webp&amp;s=21e7c86aa5c134524eb1b3066b47995db7e4eeda
-
-## Supports search error codes
-
-https://preview.redd.it/y1ca793fzue41.png?width=1800&amp;format=png&amp;auto=webp&amp;s=8cd08be25f7feb6d103a29bbbde45ae1432844bf
-
-## Brand-new official website
-
-[https://rust-search-extension.now.sh](https://rust-search-extension.now.sh)
-
-## Github
-
-**rust-search-extension** is open-sourced on Github ([https://github.com/Folyd/rust-search-extension](https://github.com/Folyd/rust-search-extension)), welcome to submit issue or PR!
-
-# Installation
-
-\- [Chrome Web Store](https://chrome.google.com/webstore/detail/rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh)
-
-\- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/rust-search-extension/)
-## [4][C++ ABI: Now or Never](https://www.reddit.com/r/rust/comments/eydy51/c_abi_now_or_never/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1863r1.pdf
+## [3][ZZ is a modern formally provable dialect of C](https://www.reddit.com/r/rust/comments/ez73pi/zz_is_a_modern_formally_provable_dialect_of_c/)
+- url: https://github.com/aep/zz
 ---
 
-## [5][highlight-stderr: Run a command and highlight its stderr, preserving the order of stdout and stderr](https://www.reddit.com/r/rust/comments/eyj15s/highlightstderr_run_a_command_and_highlight_its/)
-- url: https://github.com/joshtriplett/highlight-stderr
+## [4][Why Discord is switching from Go to Rust](https://www.reddit.com/r/rust/comments/eytyug/why_discord_is_switching_from_go_to_rust/)
+- url: https://blog.discordapp.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f
 ---
 
-## [6][My first crate: const-buffer, a fixed-capacity memory buffer allocated on the stack using const generics](https://www.reddit.com/r/rust/comments/eyjoqk/my_first_crate_constbuffer_a_fixedcapacity_memory/)
-- url: https://www.reddit.com/r/rust/comments/eyjoqk/my_first_crate_constbuffer_a_fixedcapacity_memory/
+## [5][Fontfor: CLI tool for render fonts preview in your terminal](https://www.reddit.com/r/rust/comments/ez6poz/fontfor_cli_tool_for_render_fonts_preview_in_your/)
+- url: https://www.reddit.com/r/rust/comments/ez6poz/fontfor_cli_tool_for_render_fonts_preview_in_your/
 ---
-[crates.io](https://crates.io/crates/const-buffer)
+Just added tui and font render feature for my tiny project https://github.com/7sDream/fontfor.
 
-[docs.rs](https://docs.rs/const-buffer/0.1.0/const_buffer/)
+It was originally just a script to find fonts for uncommon characters, but now can be used as a simple font viewer!
 
-[GitHub](https://github.com/timvermeulen/const-buffer)
+Some screenshot: [Canvas Render](https://rikka.7sdre.am/files/c7a7a685-3966-4fb4-8e9e-0cc53636e406.png), [Moon Emoji Render](https://rikka.7sdre.am/files/8128a291-27a7-42bd-813e-1136f971cdb3.png).
 
-`ConstBuffer&lt;T, N&gt;` is a block of memory `N` times the size of `T` that you can read from and write to arbitrarily. It's essentially a glorified wrapper around `[MaybeUninit&lt;T&gt;; N]`.
+More screenshot and usage please refer to my [tweet](https://twitter.com/7sDream/status/1224703380871942146) or README.md of the [project](https://github.com/7sDream/fontfor). 
 
-Most const generics `Vec`\-like types that have been going around store either a `MaybeUninit&lt;[T; N]&gt;` or `[MaybeUninit&lt;T&gt;; N]` and use lots of pointer arithmetic in order to do reads and writes. This crate is an attempt to make it easier and less error-prone to write such data structures (it's very appropriate for ring buffers, too). The source code is very simple, but it improves readability significantly. The [docs.rs](https://docs.rs/const-buffer/0.1.0/const_buffer/) page has a very basic example of what using it is like.
+Only tested in macOS and Arch Linux, but feel free to try it and report any issues!
 
-I would appreciate any feedback you might have, and please don't hesitate to open issues or submit PRs.
-## [7][Rust Analyzer Changelog #10](https://www.reddit.com/r/rust/comments/ey8twg/rust_analyzer_changelog_10/)
-- url: https://rust-analyzer.github.io/thisweek/2020/02/03/changelog-10.html
 ---
 
-## [8][Announcing async-std v1.5.0](https://www.reddit.com/r/rust/comments/ey98zw/announcing_asyncstd_v150/)
-- url: https://github.com/async-rs/async-std/releases/tag/v1.5.0
+Yeah, I  suddenly remember I can show the Moon Emoji Render just use text.
+
+This is render result for character "א", Unicode U+05D0.
+
+🌑🌕🌑🌑🌑🌑🌑🌔🌘🌑🌑🌑
+
+🌓🌕🌘🌑🌑🌑🌑🌕🌕🌕🌗🌑
+
+🌔🌕🌕🌑🌑🌑🌑🌕🌕🌕🌕🌖
+
+🌒🌕🌕🌕🌑🌑🌑🌔🌕🌕🌕🌕
+
+🌑🌔🌕🌕🌕🌑🌑🌑🌔🌕🌕🌖
+
+🌑🌑🌕🌕🌕🌖🌑🌑🌓🌕🌑🌑
+
+🌑🌑🌒🌕🌕🌕🌖🌑🌕🌘🌑🌑
+
+🌑🌒🌕🌔🌕🌕🌕🌖🌕🌑🌑🌑
+
+🌑🌕🌖🌑🌒🌕🌕🌕🌕🌑🌑🌑
+
+🌓🌕🌗🌑🌑🌓🌕🌕🌕🌘🌑🌑
+
+🌔🌕🌕🌑🌑🌑🌔🌕🌕🌕🌑🌑
+
+🌓🌕🌕🌗🌑🌑🌑🌔🌕🌕🌖🌑
+
+🌒🌕🌕🌕🌘🌑🌑🌑🌕🌕🌕🌗
+
+🌑🌕🌕🌕🌖🌑🌑🌑🌑🌕🌕🌕
+
+🌑🌔🌕🌕🌕🌑🌑🌑🌑🌒🌕🌕
+
+🌒🌕🌕🌕🌖🌑🌑🌑🌑🌑🌔🌘
+## [6][Why &amp;s[pos..] is slower than s.split_at(pos).1?](https://www.reddit.com/r/rust/comments/ez64g2/why_spos_is_slower_than_ssplit_atpos1/)
+- url: https://godbolt.org/z/TBhkjy
 ---
 
-## [9][dprint - JS, Typescript and JSONC formatter written in Rust](https://www.reddit.com/r/rust/comments/eyncld/dprint_js_typescript_and_jsonc_formatter_written/)
-- url: https://www.reddit.com/r/rust/comments/eyncld/dprint_js_typescript_and_jsonc_formatter_written/
+## [7][Couchbase Rust SDK 1.0.0-alpha.3 Released](https://www.reddit.com/r/rust/comments/ez6hh4/couchbase_rust_sdk_100alpha3_released/)
+- url: https://www.reddit.com/r/rust/comments/ez6hh4/couchbase_rust_sdk_100alpha3_released/
 ---
-https://github.com/dsherret/dprint
+After lots of rewriting and figuring what approach might be the best one, I've finally managed to get a new alpha out: alpha.3. See [https://github.com/couchbaselabs/couchbase-rs](https://github.com/couchbaselabs/couchbase-rs) if you are interested.
 
-Recently, [Deno replaced](https://github.com/denoland/deno/pull/3820) the prettier plugin for its built-in formatter with dprint.
-## [10][win-win: semi-opinionated for window creation in Windows](https://www.reddit.com/r/rust/comments/eyco38/winwin_semiopinionated_for_window_creation_in/)
-- url: https://www.reddit.com/r/rust/comments/eyco38/winwin_semiopinionated_for_window_creation_in/
----
-I've been exploring soundness issues in window creation on Windows, and have found a bunch. A particularly common one (it might exist in all existing code) is use-after-free when `DestroyWindow` is called inside a window procedure, causing a drop in the reentrant call.
+It supports async/await out of the box and you can use it in runtimes like tokio although it has no hard dependency on it. It uses the C-based libcouchbase backend ([https://github.com/couchbase/libcouchbase/](https://github.com/couchbase/libcouchbase/)) so you'll find unsafe code - but only in the place where we need to call the binding. 
 
-Partly to document this, and partly to make a good basis for experimentation and partly to explore whether there's appetite for cross-ecosystem low level infrastructure, I've created the [win-win](https://crates.io/crates/win-win) crate.
+Once the lcb-based version is complete we want to start working on a full rust native backend (without changing the API), but this is much more work since lcb does a lot of work in the distributed system context.
 
-In my experience, UI code tends to play especially fast and loose with soundness, with lots of lifetime and thread safety issues. Also, the lower levels were done in a time predating our modern understanding of safety. I believe it's possible to do better, to build stuff on a sound foundation, then use the safety properties of Rust at the higher levels.
-## [11][Export Rust functions to Java using JNI (WebAssembly comparison)](https://www.reddit.com/r/rust/comments/eyppst/export_rust_functions_to_java_using_jni/)
-- url: https://www.reddit.com/r/rust/comments/eyppst/export_rust_functions_to_java_using_jni/
----
-I wrote a blog post last week on importing Rust WebAssembly functions inside a JavaFX project. I have investigated this week how to use the Java Native Interface directly on a Rust dylib and compared the two approaches in convenience and speed.
-
-[http://vegapit.com/article/export-rust-java-jni-webassembly-comparison](http://vegapit.com/article/export-rust-java-jni-webassembly-comparison)
-## [12][Learning Rust: Memory, Ownership and Borrowing](https://www.reddit.com/r/rust/comments/eyepht/learning_rust_memory_ownership_and_borrowing/)
-- url: https://www.youtube.com/watch?v=8M0QfLUDaaA
+We are still extending the API and polishing current ones, but this should be the first release that it is quite close API-wise to a beta/GA one. If you have feedback I'd love to hear it! Oh yeah and we are working on docs as well ;-)
+## [8][Exploring some Rust basics with actix-web](https://www.reddit.com/r/rust/comments/ez566b/exploring_some_rust_basics_with_actixweb/)
+- url: http://blog.levinotik.com/2020/02/05/exploring-some-rust-basics-with-actix-web/
 ---
 
+## [9][Rust companies in production list - feel free to add companies you know](https://www.reddit.com/r/rust/comments/ez7m4u/rust_companies_in_production_list_feel_free_to/)
+- url: https://github.com/omarabid/rust-companies
+---
+
+## [10][Hello, is there any async thread pool?](https://www.reddit.com/r/rust/comments/ez9ag6/hello_is_there_any_async_thread_pool/)
+- url: https://www.reddit.com/r/rust/comments/ez9ag6/hello_is_there_any_async_thread_pool/
+---
+I want pool for diesels `mysqlconnection` and i want it to be async, is there any library for it?
+## [11][Cross Compiling Rust on Linux for the Raspberry Pi](https://www.reddit.com/r/rust/comments/eyssub/cross_compiling_rust_on_linux_for_the_raspberry_pi/)
+- url: https://chacin.dev/blog/cross-compiling-rust-for-the-raspberry-pi
+---
+
+## [12][savefile 0.5.0](https://www.reddit.com/r/rust/comments/eyxoao/savefile_050/)
+- url: https://www.reddit.com/r/rust/comments/eyxoao/savefile_050/
+---
+[https://docs.rs/savefile/0.5.0/savefile/](https://docs.rs/savefile/0.5.0/savefile/)
+
+[https://crates.io/crates/savefile](https://crates.io/crates/savefile)
+
+[https://github.com/avl/savefile](https://github.com//Avl/savefile)
+
+I've been working on a serialization / deserialization crate for rust.
+
+It is made specifically for saving state in complex computer games. It uses a compact binary format, but makes old saves readable by newer versions of the program. This is achieved by a system where structs and enums are annotated with attributes describing the versioning, and using a proc\_macro to generate deserializers for all supported versions.
+
+The reason I'm not just using Serde is because when I started the project, Serde didn't seem to have much support for supporting old file formats when deserializing binary protocols. I haven't followed the story for this with Serde, it may well have improved to the point of doing what savefile does much better :-) .
+
+Even though the file format is fast and efficient, it does (by default) include a schema (at the top of the file, checked once at start of deserialization),  so any mismatch in on-disk format and in-memory format will be detected safely.
+
+There is an auto test suite, and miri does not detect any unsoundness. Of course there may still  be bugs.
+
+One version each of IndexMap, SmallVec, parking\_lot::Mutex, and a few other containers I happened to need are supported out of the box. The story here would probably need to improve to facilitate a broader user base.
+
+Anyway, posting it here since maybe someone might find it interesting, and/or useful!

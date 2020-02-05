@@ -22,19 +22,81 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Demystifying a TypeScript quirk](https://www.reddit.com/r/typescript/comments/eyothb/demystifying_a_typescript_quirk/)
+## [2][Question about code reuse and inheritance](https://www.reddit.com/r/typescript/comments/ez7sfn/question_about_code_reuse_and_inheritance/)
+- url: https://www.reddit.com/r/typescript/comments/ez7sfn/question_about_code_reuse_and_inheritance/
+---
+I have a question regarding the best way to structure code for reuse with inheritance in cases, where some methods in the base class does not make sense in the inheriting class.
+
+I think this is a general OOP issue and not only peculair to TypeScript...
+
+So basically, in some form of pseudo code, the issue is similar to this:
+
+`class BaseClassmakesSenseForAmakesSsenseForA....doesnotMakeSenseForAdoesnotMakeSenseForA....`
+
+How then to have a `Class A` inherit BaseClass. Just direct inheritance means that `Class A`  would have member methods that does not really make sense.
+
+Not using inheritance means the things that code would be duplicated in both `BaseClass` and `Class A`
+
+Moving  the `makesSenseForA` methods to an external class and have both `BaseClass` and it's children class depend on this extracted class (ie using composition) does not work in this particular scenario, because the extracted class should actually be seen as A `BaseClass.`
+
+How really is the best way to handle this kind of OOP modeling situation?
+
+EDIT: example
+
+For lack of better example, it is like trying to model \`Human\` and \`Cyborg\` - this two would share a ton loads of similar implementation and hence first thought might be to have \`Cyborg\` extends \`Human\`...
+
+&amp;#x200B;
+
+But also there would be a ton of implementation that \`Human\` has that \`Cyborg\` should not have.
+
+&amp;#x200B;
+
+Doing away with inheritance means those similar functionality would have to be duplicated in \`Human\` and Cyborg\`.
+
+&amp;#x200B;
+
+And composition also does not work, because if you extract those implementation that are similar into a separate object, that object, and it's method would constitute human like characteristics, and hence should be seen as a \`Human\` in our modelling.
+## [3][Learn how to make a TypeScript Playground Plugin](https://www.reddit.com/r/typescript/comments/eywcn8/learn_how_to_make_a_typescript_playground_plugin/)
+- url: https://www.typescriptlang.org/v2/dev/playground-plugins/
+---
+
+## [4][Demystifying a TypeScript quirk](https://www.reddit.com/r/typescript/comments/eyothb/demystifying_a_typescript_quirk/)
 - url: https://matthewmiller.dev/blog/demystifying-typescript-quirk/
 ---
 
-## [3][Applying SOLID principles to your TypeScript code](https://www.reddit.com/r/typescript/comments/ey8ilv/applying_solid_principles_to_your_typescript_code/)
+## [5][How to deal with leftover compiled outputs after pulling changes or switching branches?](https://www.reddit.com/r/typescript/comments/eyt2vb/how_to_deal_with_leftover_compiled_outputs_after/)
+- url: https://www.reddit.com/r/typescript/comments/eyt2vb/how_to_deal_with_leftover_compiled_outputs_after/
+---
+I've been running into an issue that's kind of a pain and I was hoping someone has an idea on how to deal with it.
+
+We have a typescript (v3.7) project in Visual Studio and we're using Git. Compiled outputs (.js, .d.ts, etc.) are in a .gitignore file so they aren't being tracked.
+
+My problem is that if I delete/rename a few .ts files and commit the changes, and another developer pulls that change, the old compiled outputs are still in their file structure and the compiler (Visual Studio, in this case) will start throwing errors as it reads the .d.ts files and tries to resolve references.
+
+**What doesn't work:**
+
+The "clean" or "rebuild" project actions in Visual Studio. VS will only clean outputs for *existing* .ts files, but since I've deleted the .ts file it will no longer clean the now-orphaned outputs.
+
+**Options I've considered:**
+
+1. **"git clean -xf &lt;project_directory&gt;"** -- this works to clean up those orphaned outputs, but I'd rather not have to make people run this every time something changes.
+
+1. **Using the .tsconfig "include" or "files" properties so I'm only trying to compile files that I know exist.** This seems super unwieldy and hard to maintain -- directory-level inclusions wouldn't be good enough (what if a directory contains multiple files but only one gets deleted?) and there are too many files to list each one individually.
+
+1. **Using "outDir" to move all outputs to a completely separate directory, which will also automatically exclude them from the compiler.** I'm not sure of all the pros/cons of this option, honestly. It might require updating our packaging stuff to use the new location.
+
+Is what I'm saying making sense? And is there some easier way to manage this that I'm not thinking of?
+
+**EDIT:** I'm going with my option #3 based on the responses. It does seem pretty simple now that I look at it more closely. Thank you!
+## [6][Applying SOLID principles to your TypeScript code](https://www.reddit.com/r/typescript/comments/ey8ilv/applying_solid_principles_to_your_typescript_code/)
 - url: https://wanago.io/2020/02/03/applying-solid-principles-to-your-typescript-code/
 ---
 
-## [4][Typing objects in TypeScript – 2ality](https://www.reddit.com/r/typescript/comments/eyen40/typing_objects_in_typescript_2ality/)
+## [7][Typing objects in TypeScript – 2ality](https://www.reddit.com/r/typescript/comments/eyen40/typing_objects_in_typescript_2ality/)
 - url: https://2ality.com/2020/01/typing-objects-typescript.html
 ---
 
-## [5][Playground that runs on Android](https://www.reddit.com/r/typescript/comments/eygewa/playground_that_runs_on_android/)
+## [8][Playground that runs on Android](https://www.reddit.com/r/typescript/comments/eygewa/playground_that_runs_on_android/)
 - url: https://www.reddit.com/r/typescript/comments/eygewa/playground_that_runs_on_android/
 ---
 Hi,
@@ -44,15 +106,15 @@ Very often I would like to try out some ideas in TypeScript but I don't have acc
 Unfortunately the official TypeScript playground doesn't support mobile browsers.
 
 Do you know about anything else?
-## [6][A hasOwnProperty helper function/types to check for existing properties in objects](https://www.reddit.com/r/typescript/comments/ey99th/a_hasownproperty_helper_functiontypes_to_check/)
+## [9][A hasOwnProperty helper function/types to check for existing properties in objects](https://www.reddit.com/r/typescript/comments/ey99th/a_hasownproperty_helper_functiontypes_to_check/)
 - url: https://fettblog.eu/typescript-hasownproperty/
 ---
 
-## [7][Marshal.ts serializer got a JIT engine + ORM abstraction. It's now up to 300x faster than class-transformer. Time to switch guys](https://www.reddit.com/r/typescript/comments/exzdsd/marshalts_serializer_got_a_jit_engine_orm/)
+## [10][Marshal.ts serializer got a JIT engine + ORM abstraction. It's now up to 300x faster than class-transformer. Time to switch guys](https://www.reddit.com/r/typescript/comments/exzdsd/marshalts_serializer_got_a_jit_engine_orm/)
 - url: https://github.com/marcj/marshal.ts#marshalts
 ---
 
-## [8][Question about Typescript objects assign](https://www.reddit.com/r/typescript/comments/ey4vbb/question_about_typescript_objects_assign/)
+## [11][Question about Typescript objects assign](https://www.reddit.com/r/typescript/comments/ey4vbb/question_about_typescript_objects_assign/)
 - url: https://www.reddit.com/r/typescript/comments/ey4vbb/question_about_typescript_objects_assign/
 ---
 Hi. I'm having trouble with TypeScript objects assign. For example:
@@ -83,118 +145,3 @@ But I get:
     { x: 0, y: 1, z: 2 }
 
 Is there any way to get the first result?
-## [9][What's been your experience using TypeScript with React Hooks?](https://www.reddit.com/r/typescript/comments/exwqq2/whats_been_your_experience_using_typescript_with/)
-- url: https://www.reddit.com/r/typescript/comments/exwqq2/whats_been_your_experience_using_typescript_with/
----
-I've been working on a project involving both React and TypeScript. I've decided to start moving the project in the direction of hooks. What I didn't realize when starting this process was that React hooks provide a way to work in React without having to use classes. This kind of bummed me out since I've been learning a lot about TypeScript's added class features like modifying class properties to be private / public / protected, etc.
-
-This got me thinking about using React and TypeScript together, and about how Facebook has also made Flow, which is kind of Facebook's analog to TypeScript (at least in terms of type declarations). 
-
-Are React and TypeScript at odds with each other? Do you think these two technologies are moving away from each other? Would you recommend using them together? Why/why not?
-## [10][Could I get a quick code review on these three simple functions?](https://www.reddit.com/r/typescript/comments/exzdjn/could_i_get_a_quick_code_review_on_these_three/)
-- url: https://www.reddit.com/r/typescript/comments/exzdjn/could_i_get_a_quick_code_review_on_these_three/
----
-I'm just wondering if you think these three functions could be written any better. Their purpose is to attach/inject a hook into the invocation lifecycle of a target function.
-
-Thanks.
-
-```
-export enum HookType {
-    BEFORE,
-    AFTER
-};
-
-export type TargetContext = { [key: string]: any };
-export type AnyFunction = (...args: any[]) =&gt; any;
-
-export const isTypeFunction = (candidate: any): candidate is AnyFunction =&gt; {
-    return (typeof candidate === 'function');
-}
-
-/**
- * Attaches a hook function of a specific type to fire for a target function invocation.
- * @param hookType   The type of hook to apply to the target function.
- * @param context    The context that the target function exists within.
- * @param targetName The name of the target function.
- * @param hook       The hook function execute.
- */
-export type ReplaceTarget = &lt;T extends TargetContext, K extends keyof T&gt;(
-    hookType: HookType, 
-    context: T,
-    targetName: K,
-    hook: AnyFunction
-) =&gt; void;
-
-export const replaceTarget: ReplaceTarget = &lt;T extends TargetContext, K extends keyof T&gt;(
-    hookType: HookType, 
-    context: T,
-    targetName: K,
-    hook: AnyFunction
-): void =&gt; {
-    const originalFunc = context[targetName];
-    
-    if (!isTypeFunction(originalFunc))
-        throw new Error(`TypeError: context[${targetName}] is not a function.`);
-
-    const callOriginal = (...args: any[]) =&gt; originalFunc.apply(context, args);
-    const callHook = (...args: any[]) =&gt; hook.apply(context, args);
-
-    let originalReturnValue;
-
-    context[targetName] = ((...args: any[]): typeof originalFunc =&gt; {
-        switch (hookType) {
-            case HookType.BEFORE:
-                callHook(...args);
-                originalReturnValue = callOriginal(...args);
-                break;
-            case HookType.AFTER:
-                originalReturnValue = callOriginal(...args);
-                callHook(...args);
-                break;
-            default:
-                throw new Error(`HookError: The provided HookType is invalid.`);
-        }
-
-        return originalReturnValue;
-    }) as T[K];
-};
-
-export const backupTargets = &lt;T extends TargetContext, K extends keyof T&gt;(
-    context: T, 
-    targetNames: K[]
-): T =&gt; {
-    const targetContextBackup: T = {} as T;
-
-    Object.getOwnPropertyNames(context).forEach(propName =&gt; {
-        if (targetNames.indexOf(propName as K) &gt; -1) {
-            targetContextBackup[propName as K] = context[propName];
-        }
-    });
-
-    return targetContextBackup;
-};
-
-export const restoreTargets = &lt;
-    T extends TargetContext, 
-    K extends keyof T,
-&gt;(
-    contextToRestore: TargetContext,
-    backupContext: T,
-    targetNames: K[]
-): void =&gt; {
-    Object.getOwnPropertyNames(contextToRestore).forEach(propName =&gt; {
-        if (targetNames.indexOf(propName as K) &gt; -1) {
-            contextToRestore[propName] = backupContext[propName];
-        }
-    });
-}
-```
-I'm not sure if that type casting I'm doing is a best practice, for example.
-
-**EDIT:** It was reported that the code is not formatted probably here. Here is a picture of the snippet: https://imgur.com/a/dVP5Tho
-
-Thank you.
-## [11][What is the VScode plugin Anders Hejlsberg is using to get the types underlined?](https://www.reddit.com/r/typescript/comments/exkh20/what_is_the_vscode_plugin_anders_hejlsberg_is/)
-- url: https://i.redd.it/o780xxzgige41.png
----
-

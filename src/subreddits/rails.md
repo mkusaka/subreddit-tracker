@@ -39,160 +39,291 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Debugging story: Mysteriously truncated timestamps with ActiveRecord](https://www.reddit.com/r/rails/comments/eypj02/debugging_story_mysteriously_truncated_timestamps/)
+## [3][Persisting URL Parameters when Form Validation Errors are encountered](https://www.reddit.com/r/rails/comments/ez86ra/persisting_url_parameters_when_form_validation/)
+- url: https://www.reddit.com/r/rails/comments/ez86ra/persisting_url_parameters_when_form_validation/
+---
+Hello, 
+
+I have a link in which I pass a URL param when routing to the Create Form.  On the form I have a hidden field where I am storing the URL param.  If validation errors are raised, the form redirects to /stash\_entries instead of /stash\_entries/new and loses the URL param.  I am missing something here but not sure what, any ideas?
+
+Link_to:
+```
+            &lt;%= link_to new_account_stash_stash_entry_path(stash_id: stash.id, stash_action: 'add'), class: "button is-small is-success" do %&gt;
+              &lt;span class="icon"&gt;
+                &lt;i class="fa fa-lg fa-plus"&gt;&lt;/i&gt;
+              &lt;/span&gt;
+            &lt;% end %&gt;
+```
+
+Form:
+```
+&lt;%= form_for([@stash_entry.stash.account, @stash_entry.stash, @stash_entry]) do |f| %&gt;
+  &lt;% if @stash_entry.errors.any? %&gt;
+    &lt;article id="error explanation" class="message is-danger"&gt;
+      &lt;div class="message-header"&gt;
+        Something went wrong!
+      &lt;/div&gt;
+      &lt;div class="message-body content"&gt;
+        Please correct the following &lt;span class="has-text-weight-bold"&gt;&lt;%= pluralize(@stash_entry.errors.count, "error") %&gt;&lt;/span&gt;:
+        &lt;ul&gt;
+          &lt;% @stash_entry.errors.full_messages.each do |msg | %&gt;
+            &lt;li&gt;
+              &lt;%= msg %&gt;
+            &lt;/li&gt;
+          &lt;% end %&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;% end %&gt;
+
+  &lt;div class="columns"&gt;
+    
+    &lt;!-- Fields --&gt;
+    &lt;div class="column"&gt;
+
+      &lt;!-- Action --&gt;
+      &lt;div class="field"&gt;
+          &lt;%= f.hidden_field :stash_action, value: params[:stash_action] %&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Amount --&gt;
+      &lt;div class="field"&gt;
+        &lt;label class="label has-text-grey"&gt;Amount&lt;/label&gt;
+        &lt;div class="control has-icons-left"&gt;
+          &lt;%= f.text_field :amount, class: "input is-primary",
+                                         placeholder: "Name" %&gt;
+          &lt;span class="icon is-small is-left has-text-primary"&gt;
+            &lt;i class="fa fa-file-text"&gt;&lt;/i&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt; &lt;!-- /column --&gt;
+
+  &lt;/div&gt; &lt;!-- /columns --&gt;
+
+  &lt;div class="field is-grouped"&gt;
+    &lt;div class="control"&gt;
+      &lt;%= link_to "Cancel", account_stashes_path, class: "button is-link is-outlined" %&gt;
+    &lt;/div&gt;
+    &lt;div class="control"&gt;
+      &lt;%= f.button :stash_action,
+          type: 'submit',
+          class: "button is-link" %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;% end %&gt;
+```
+
+Controller:
+```
+  # GET /stashes/new
+  def new
+    @stash = @account.stashes.build.decorate
+  end
+
+  # GET /stashes/1/edit
+  def edit
+  end
+
+  # POST /stashes
+  def create
+    @stash = @account.stashes.build(stash_params).decorate
+
+    if @stash.save
+      redirect_to account_stashes_path, notice: 'Stash was successfully created.'
+    else
+      render :new
+    end
+  end
+```
+
+Routes:
+```
+  resources :accounts do
+    resources :transactions
+    resources :stashes do
+      scope except: %i[index show edit update destroy] do
+        resources :stash_entries
+      end
+    end
+
+    member do
+      get :deactivate
+      get :activate
+    end
+  end
+```
+
+Thanks!
+## [4][My first rails app deployed! (So excited, lol)](https://www.reddit.com/r/rails/comments/eyyffw/my_first_rails_app_deployed_so_excited_lol/)
+- url: https://www.reddit.com/r/rails/comments/eyyffw/my_first_rails_app_deployed_so_excited_lol/
+---
+Omg i am so excited (dont hate me for this one)
+
+I started with rails 2 monts ago  (did some javascript before and hate it now so much) and decided that i wanted to learn rails.
+
+After one udemy course (dissecting ruby) by jordan (forgot his lastname) i decided to build something. This whole thing took me 4 days to build.
+
+Functions:
+User can signup and upload a video (for now it is a image, bc of heavy video resources)  and other users can comment on his form. It can be used for personal trainers to check out of their client is doing the excerice in the right form.
+
+I created this webapp in 4 days, i know i know it is just a extended crud app.
+
+- Users can comment on all posts
+- User can only edit or delete own posts
+- Only Admin can remove or edit all posts
+- User can update bio, username, email
+- User sees in his account all his own posts
+
+Started out with sqlite and changed to postgress to be able to deploy to heroku
+
+Check it out!
+
+https://vormcheck.herokuapp.com
+
+(Site is not mobile friendly)
+
+Github https://github.com/sljmn/vormcheck
+
+————
+- Now i want to learn how to use helpers 
+- How to use has_many through
+- How to add more interactivity. This app is just a crud app. But i want to learn how to let users follow each other or like each others post
+- How to consume an api and display it in the rails app
+
+If you know a source, it would be appriciated
+## [5][To move 500 terabytes from S3 to Glacier, is Multipart Upload or ZIP better?](https://www.reddit.com/r/rails/comments/ez1czb/to_move_500_terabytes_from_s3_to_glacier_is/)
+- url: https://www.reddit.com/r/rails/comments/ez1czb/to_move_500_terabytes_from_s3_to_glacier_is/
+---
+Hey Rubyists and RailsHeads,
+
+We are going to save FIVE THOUSAND DOLLARS A MONTH by moving these 500 terabytes from S3 to Glacier. However, it seems kind of dumb for me to put all of the photos and videos in their own archives on glacier, because that means both more requests to archive them, and because you'd want the files to be logically grouped by user. I work for an unpopular social media site.
+
+So, is it smarter to take all of the user's photos and video's and zip them before putting them on the archive? Seems like it would add a significant amount of time/computing power for the process of archiving the files.
+
+Or is it better to use the multipart upload method in the aws ruby sdk v3, and dump them all into the a single archive? Seems... Just kind of complicated and annoying with the checksum and those kinds of uploads are unfamiliar to me.
+
+The potential savings for grouping the S3 files in either of the above ways is... Like $300 for moving the files initially due to fewer requests, but I'm not sure if it will pay for itself in developer time or happiness lol. Also will make putting the files back on S3 a lot harder.
+## [6][Rails Deployment Tutorial updated for Ubuntu 18.04 LTS / Debian 10.2](https://www.reddit.com/r/rails/comments/eyxc25/rails_deployment_tutorial_updated_for_ubuntu_1804/)
+- url: https://www.reddit.com/r/rails/comments/eyxc25/rails_deployment_tutorial_updated_for_ubuntu_1804/
+---
+I just updated the Rails Deployment Tutorial for *Ubuntu 18.04 LTS* and *Debian 10.2:*
+
+[https://www.ralfebert.de/tutorials/rails-deployment/](https://www.ralfebert.de/tutorials/rails-deployment/)
+
+Have fun deploying your apps :)
+
+If you encounter any issues using these steps, please let me know...
+## [7][Rails has_many through association: query or scope condition on join table?](https://www.reddit.com/r/rails/comments/eyywgz/rails_has_many_through_association_query_or_scope/)
+- url: https://www.reddit.com/r/rails/comments/eyywgz/rails_has_many_through_association_query_or_scope/
+---
+I have three tables using a has\_many through set up like: User--&gt;Membership&lt;--Group, so users can be in many groups, and groups can have many users.
+
+In the membership join table I've added a "type" column that will hold static membership types like "owner", "admin", "standard" for example. What I would like to do is set up associations or scopes so that I could get all group.standard\_members and it would return all users in the group that have membership type == "standard". Then I would also like to be able to use group.owner to return the one user in the group with membership type == "owner, as well as a number of related queries from the user model side of things.
+
+Basically it's set up just like the example in the rails guides for a has\_many through association if that makes is easier to provide an example for: [https://guides.rubyonrails.org/association\_basics.html#the-has-many-through-association](https://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
+
+Note the "appointment\_date" field in the join table "appointments", that is very similar to my "type" field in my "memberships" join table.
+
+So, if using the rails guide example how could I set up a scope or model association so that I could return all patients with an appointment\_date that is today(where appointment\_date: [Time.new](https://Time.new) kind of thing) using active record like \`@physician.todays\_patients\`, also I would like to be able to do the reverse, where I could get a list of all physicians a patient is seeing today using something like \`@patient.todays\_physicians\`.
+
+I'm not concerned about the query conditions so much, as I'm really trying to figure out how to setup scopes or associations that query related records(in a has\_many through association) but make the association by setting conditions on the join tables data.
+
+Does that make sense? Any help or just a push in the right direction would be much appreciated as my searches aren't turning up much relevant info.
+
+Here's my three models, and my latest feeble attempt at one of the associations I was trying to make work \`@group.owner\` and \`@user.owned\_groups\` :
+
+    class User &lt; ApplicationRecord
+      # Include default devise modules. Others available are:
+      # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+      devise :database_authenticatable, :registerable,
+             :recoverable, :rememberable, :validatable
+    
+      # user can be a member of many groups through memberships
+      has_many :memberships
+      has_many :groups, through: :memberships
+      
+      # User can have many owned groups
+      # has_many :owned_groups, class_name: "Group", -&gt; { joins(:memberships).where( membership: { type: "owner" } ) }
+    
+    ...
+    end
+    
+    ###############
+    
+    class Membership &lt; ApplicationRecord
+      belongs_to :user, inverse_of: :memberships
+      belongs_to :group, inverse_of: :memberships
+    end
+    
+    ###############
+    
+    class Group &lt; ApplicationRecord
+      
+      # Group can have many members, through memberships for when extra membership data is needed
+      has_many :memberships 
+      has_many :members, through: :memberships, source: :user # instead of group.users use group.members
+        
+      # Group will only have ONE owner
+      # belongs_to :owner, -&gt; { joins(:memberships).where( {memberships: {type: "owner} } ) }
+      
+    ...
+    end
+## [8][How to get the batch iteration number with find_each?](https://www.reddit.com/r/rails/comments/eyusso/how_to_get_the_batch_iteration_number_with_find/)
+- url: https://www.reddit.com/r/rails/comments/eyusso/how_to_get_the_batch_iteration_number_with_find/
+---
+I'm using [find\_each](https://api.rubyonrails.org/classes/ActiveRecord/Batches.html#method-i-find_each) to do a batch request. I want to sleep for some time for each batch iteration (the size of the batch is 500 so every 500 record iterations). Any idea how to get the current batch iteration number?
+
+`Author.find_each(batch_size: 500).with_index do |author, index|`  
+ `# sleep for each batch iteration`  
+ `end`
+## [9][Installing Apartment gem on an existing app - migrating existing data to a new schema](https://www.reddit.com/r/rails/comments/ez02aa/installing_apartment_gem_on_an_existing_app/)
+- url: https://www.reddit.com/r/rails/comments/ez02aa/installing_apartment_gem_on_an_existing_app/
+---
+Hello!
+I'm a group guitar teacher and I created this app that (in short) allows me to track peoples sessions (if they've paid up front, how many sessions they have left)
+
+I've been using it for a while, and I showed it to a friend who asked if they could try it out for their classes.
+
+When I originally made it, I made it only for me without any intention of sharing it, and now allowing people to have their own students and sessions seems like a great little project.
+
+I've never used Apartment before, and I've been messing around with it for a week, and I feel like I'm close, I just can't quite get what I want to work. 
+
+**Problem:** My existing data. There are about 6 tables or so with quite a bit of data and they are all on the 'public' schema. I want to create a new schema 'seshna' for me (seshna.myapp.com), make all of those tables a part of that schema, except for the 'users' table, which I've excluded so that it can be accessed from all apartments.
+
+How do I move that existing data from those tables to a new schema? I'll keep trying different approaches, if I figure it out I'll share it, but some help would really be appreciated!
+## [10][Update on Building an Accounting (Suggestions)](https://www.reddit.com/r/rails/comments/ez1jhz/update_on_building_an_accounting_suggestions/)
+- url: https://www.reddit.com/r/rails/comments/ez1jhz/update_on_building_an_accounting_suggestions/
+---
+Hi
+
+I recently posted here with regards to a video series in developing a Rails based application from scratch (an accounting system). It's not a tutorial type series as it is more of a reality show where I attempt to capture everything from mistakes to looking up stuff on the web in case I get stuck so it's really quite boring unless you want to see how developers suffer when running into a problem (there's even a video session where I play Eve Online while trying to work out some css lol). But in any case, I already got as far as creating a Trial Balance report and looking into doing another report, probably General Ledger. Looking for comments and recommendations for what else I can put in. From the top of my head, thinking of doing things in the domain of:
+
+* Multi-company segregation of data
+* Materalized Views
+* ActionCable
+* ActiveStorage (where applicable in accouting)
+
+For those interested:
+
+[Video Playlist] (https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
+
+[Source Code] (https://github.com/ralampay/bookkeeper)
+
+Regards and happy coding!
+## [11][Debugging story: Mysteriously truncated timestamps with ActiveRecord](https://www.reddit.com/r/rails/comments/eypj02/debugging_story_mysteriously_truncated_timestamps/)
 - url: https://www.reddit.com/r/rails/comments/eypj02/debugging_story_mysteriously_truncated_timestamps/
 ---
 Saving [\#Ruby](https://www.linkedin.com/feed/hashtag/?highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6628670995878289408&amp;keywords=%23Ruby&amp;originTrackingId=FZCWQu%2BAcSd9sZ%2F%2BpT1cog%3D%3D) objects in [\#PostgreSQL](https://www.linkedin.com/feed/hashtag/?highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6628670995878289408&amp;keywords=%23PostgreSQL&amp;originTrackingId=FZCWQu%2BAcSd9sZ%2F%2BpT1cog%3D%3D)  is not a rocket science, and there is little that could surprise me. Have you ever thought that? Well, we had too until we tried to debug a flaky test.     
 
 
 Read the whole story: [https://www.toptal.com/ruby-on-rails/timestamp-truncation-rails-activerecord-tale](https://www.toptal.com/ruby-on-rails/timestamp-truncation-rails-activerecord-tale) to learn why saving timestamps may cause headache :)
-## [4][ActiveAdmin + WYSIWIG editor + Image uploads...How would you handle this?](https://www.reddit.com/r/rails/comments/ey7sou/activeadmin_wysiwig_editor_image_uploadshow_would/)
-- url: https://www.reddit.com/r/rails/comments/ey7sou/activeadmin_wysiwig_editor_image_uploadshow_would/
+## [12][How would you go about using insert_all while ensuring params are white-listed?](https://www.reddit.com/r/rails/comments/eyrrxs/how_would_you_go_about_using_insert_all_while/)
+- url: https://www.reddit.com/r/rails/comments/eyrrxs/how_would_you_go_about_using_insert_all_while/
 ---
-Hello guys,
+I want to save multiple new objects in one call. I recently came across the class method [insert\_all](https://apidock.com/rails/v6.0.0/ActiveRecord/Persistence/ClassMethods/insert_all) that seems to accomplishes this:
 
-Am using activeadmin on a blog app to be used internally in our company. I have a post model (with fields: featured image, title, body and extra\_images) configured with image uploading using active storage. The ideal situation is for every post to have a featured image and extra 3 other images in between the wall of text that results from the text-body. So far am able to upload and show the featured image but am experiencing some difficulties with how to use the image uploader on the text editor am using (Trumbowyg editor for activeadmin) - how do I configure it to upload using active storage?
+    result = Article.insert_all([{...}, {...}])
 
-Thanks.
-## [5][Help pls](https://www.reddit.com/r/rails/comments/eyg56r/help_pls/)
-- url: https://www.reddit.com/r/rails/comments/eyg56r/help_pls/
----
-Hello!
-
-I have 4 models: company, user(created by devise), building, issue
-
-Issue looks this way:
-
-class CreateIssues &lt; ActiveRecord::Migration\[6.0\]def change    create\_table :issues do |t|      t.string :title      t.text :desc      t.references :user, null: false, foreign\_key: true      t.references :building, null: false, foreign\_key: true      t.references :company, null: false, foreign\_key: true      t.date :date      t.date :deadline      t.text :report      t.string :status      t.timestampsendendend
-
-So here there is 3 foreign keys. I also have a form where user input name of building and company.
-
-In controller I have to get an ID of database record with inputed values. Here is my problem. How can we get an id of a record?
-
-I tried to do this way but it doesn t work:
-
-def create\\@issue = Issue.new(issue\_params)\\@issue.user\_id = current\_user\\@issue.building = Building.find\_by(name: params\[:building\_name\])\\@issue.company = Company.find\_by(name: params\[:company\_name\])if \\@issue.save      redirect\_to \\@issueelse      render 'new'endend
-## [6][Object inheritance and structuring some objects.](https://www.reddit.com/r/rails/comments/eyfua2/object_inheritance_and_structuring_some_objects/)
-- url: https://www.reddit.com/r/rails/comments/eyfua2/object_inheritance_and_structuring_some_objects/
----
-Ok, so I was JUST ABOUT to try implementing something and I thought I'd do a search for it before I jump in and I'm thinking I'm glad I did so at this point.
-
-#Where I'm At
-I'm a little over a month into my rails journey and I'm having a very frustrating/amazing time so far! 
-
-#What I Want To Do
-I am building a site for me to display my own portfolio of... well almost anything:
-
-* Graphic Design shit
-* Retouching Samples
-* Webdesign stuff
-* Etc...
-
-My vision is to to build a dynamic website in a sort of squarespace-y sort of way that lets me add pages in-browser rather than forcing myself to go back into development and add another page 'manually'. I know it's not hard to do, but I like the idea of being able to just add stuff as I feel called.
-
-Anyway, I figured I could define a table of Site_Items with name:string, title:string, hidden:boolean, and order:integer properties, since all page types would need those basics. Then I could have other objects inherit that basic structure and go from there. I kind of sketched it out below...
-
-Site_Item |  |  | | &lt; ApplicationRecord
----|---|----|----|----
-\^------------ | Group| | | &lt; Site_Item
-\^------------ | Page | | | &lt; Site_Item
- | \^------ | TEMPLATE_1 | | &lt; Page
- | \^------ | TEMPLATE_2 | | &lt; Page
- | \^------ | ...etc | | &lt; Page
-
-I don't know what's obvious and what isn't, so essentially I want to be able to call @site_items = Site_Item.all, and since all Groups, Pages, and Templates are ultimately based on Site_Items, I'll just be able to iterate over this collection.
-
-However, having searched the internet and stumbling across STIs, MTIs, Polymorphic Associations, and a [VOCAL DEBATE](https://www.reddit.com/r/rails/comments/8cr6u9/i_am_wondering_whether_i_should_use_sti_or_mti/) about how to use each, I wanted to ask here about my specific intended goal and how best to pursue it.
-
-Moreover (and I'm about to betray my ignorance here...) I'm struggling to conceptualize which thing should be doing the inheriting. Should it be a controller? model? migration? I'm just not clear on that stuff I guess!
-
-Any ideas or guidance would be incredibly helpful!
-## [7][Receive payments for Side Project](https://www.reddit.com/r/rails/comments/ey5q90/receive_payments_for_side_project/)
-- url: https://www.reddit.com/r/rails/comments/ey5q90/receive_payments_for_side_project/
----
-What would you use in order to receive small payments ($3-$30)  for a side project ?
-
-There are not different types of subscriptions and no complicated pricing schemas. Only pay by month ($3)  or pay annual price ($30).  
-
-Stripe? Paypal? Braintree?  Any other suggestions?
-
-Please keep in mind this is a low maintenance project that I may abandon after one month (If it fails to generate earnings) and I also want to find a way to accept payments quickly in case I build another and another and another project.
-## [8][devise_ldap_authenticatable &amp; react_native](https://www.reddit.com/r/rails/comments/exqdrq/devise_ldap_authenticatable_react_native/)
-- url: https://www.reddit.com/r/rails/comments/exqdrq/devise_ldap_authenticatable_react_native/
----
-I'm adding a React Native App to my monolith rails app. I was wondering, what would be the best approach to dealing with user authorization?  I check the user based on their username/active directory group. How do I handle authenticating users through devise\_ldap\_authenticatable with React Native?
-## [9][Nginx + Puma, shows nothing but the root page](https://www.reddit.com/r/rails/comments/expomw/nginx_puma_shows_nothing_but_the_root_page/)
-- url: https://www.reddit.com/r/rails/comments/expomw/nginx_puma_shows_nothing_but_the_root_page/
----
-First, I followed this :
-
-[https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04)
-
-and my nginx configuration and puma.rb matches this (I actually modified them a bit, but important parts are just like this)
-
-and now, when I go to the domain, it:
-
-1. doesn't load the assets (and I wrote a lot of css to fix RTL)
-2. doesn't load any route except root.
-
-in both cases, it gives me error 404.
-
-as an update, it only happens on https. http is ok :|
-## [10][How to handle CRUD on join table in backend/frontend?](https://www.reddit.com/r/rails/comments/exph1s/how_to_handle_crud_on_join_table_in/)
-- url: https://www.reddit.com/r/rails/comments/exph1s/how_to_handle_crud_on_join_table_in/
----
-I'm trying to understand how to handle a many\_to\_many relationship on CRUD using Rails/React. 
-
-On CRUD of the has\_many model, do I handle CRUD of the belongs\_to join table in the backend controller? Or do I route the join table to the frontend and handle the CRUD ops there with \`fetch\`?
-
-In the backend, would the controller look something like this on create? 
-
-&amp;#x200B;
-
-    def create
-        @table = Table.create(table_params)
-        if @table.save
-            JoinTable.create(table_id: params.permit!(:table_id), other_table_id: 
-        params.permit!(:other_table_id))
-          render :json =&gt; @table, status: @ok
-        else  
-           render :json =&gt; { errors: @table.erros }
-        end
-    end
-
-or would I handle this in the frontend and treat the join table like the other tables.
-## [11][Deploying rails app using Nginx](https://www.reddit.com/r/rails/comments/exnchp/deploying_rails_app_using_nginx/)
-- url: https://www.reddit.com/r/rails/comments/exnchp/deploying_rails_app_using_nginx/
----
-I just put my project on a server, then I ran its production env.
-
-Now, I configured nginx like this :
-
-           root /home/prp-e/dakhlokharj/public;
-    
-            # Add index.php to the list if you are using PHP
-            index index.html index.htm index.nginx-debian.html;
-    
-            server_name _;
-    
-            location / {
-                    # First attempt to serve request as file, then
-                    # as directory, then fall back to displaying a 404.
-                    #try_files $uri $uri/ =404;
-                    proxy_pass       https://localhost:3000;
-                    proxy_set_header Host      $host;
-                    proxy_set_header X-Real-IP $remote_addr;
-            }
-
-But when I go to the domain, it still shows me the old static index.
-
-UPDATE: 
-
-It's okay now, but doesn't load assets (I added another location for assets) and also doesn't load other routes, only root! It gave me 404.
-
-P.S : Ruby installed using RVM.
-## [12][How to find working gem?](https://www.reddit.com/r/rails/comments/exg1ek/how_to_find_working_gem/)
-- url: https://www.reddit.com/r/rails/comments/exg1ek/how_to_find_working_gem/
----
-Been in ruby for a month now!  
-How do you guys find gem? i am looking for a gem for appointment scheduling, but everything i see is at least 2 years old. How to gauge if it still works. Do you perform unit test for each case?
+I was wondering if there was a way to white-list the possible params in the same way you'd do a single save?

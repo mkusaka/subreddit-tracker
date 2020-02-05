@@ -79,55 +79,43 @@ score  |  comment  |
 
 
 &amp;nbsp;
-## [2][Owl: class based components with hooks, reactive state and concurrent mode](https://www.reddit.com/r/javascript/comments/eyo0zt/owl_class_based_components_with_hooks_reactive/)
-- url: https://github.com/odoo/owl
+## [2][Interviewing at Facebook — On-Site JavaScript Technical Interview Questions](https://www.reddit.com/r/javascript/comments/ez4pv2/interviewing_at_facebook_onsite_javascript/)
+- url: https://medium.com/javascript-in-plain-english/facebook-on-site-technical-interview-1264cacad263
 ---
 
-## [3][GLTFJSX 1.0 released, a tool that brings 3D content to the web as re-usable React components](https://www.reddit.com/r/javascript/comments/eybwr5/gltfjsx_10_released_a_tool_that_brings_3d_content/)
-- url: https://github.com/react-spring/gltfjsx/blob/master/whatsnew.md
+## [3][Rock paper scissors game all assets have been created by me. Please feel free to fork or feedback](https://www.reddit.com/r/javascript/comments/eyuvoe/rock_paper_scissors_game_all_assets_have_been/)
+- url: https://www.pixel-tones.com/rpsgame/
 ---
 
-## [4][Editing CSS variables with JS](https://www.reddit.com/r/javascript/comments/eymyki/editing_css_variables_with_js/)
-- url: https://wunnle.com/edit-css-variables-with-js
+## [4][Console API Functions](https://www.reddit.com/r/javascript/comments/ez8btr/console_api_functions/)
+- url: https://overflowjs.com/posts/8-Console-API-Functions-Other-Than-Consolelog.html
 ---
 
-## [5][[AskJS] Please help us choose the default color scheme for our open source Vuestic Admin](https://www.reddit.com/r/javascript/comments/eypuq0/askjs_please_help_us_choose_the_default_color/)
-- url: https://www.reddit.com/r/javascript/comments/eypuq0/askjs_please_help_us_choose_the_default_color/
----
-Hi redditors and JavaScript lovers!  
-
-
-We've been developing our Vuestic Admin for 3 years already, it started from a small admin template and now evolving into our own components framework.  
-
-
-Our 2019 redesign separated Vuestic users. Majority really loved it's fresh look, but for some people it seemed to be too 'acid'. So we decided to craft an alternative and finally launched corporate white theme today.  
-
-
-Right now we're puzzled: we love the original look but new white color scheme looks somehow calmer and neater. We're thinking of making white color scheme default both for Vuestic Admin and Vuestic UI (our own components framework which is currently under development) but not sure completely.  
-
-
-Your opinions and feedback would really help us. Here's the link for you to check [https://github.com/epicmaxco/vuestic-admin](https://github.com/epicmaxco/vuestic-admin), thank you!
-## [6][Simple Text Modifier tools built using Javascript](https://www.reddit.com/r/javascript/comments/eyp4ud/simple_text_modifier_tools_built_using_javascript/)
-- url: https://simplestweb.in/tools/text-modifier
+## [5][Vendure: An open source Magento alternative](https://www.reddit.com/r/javascript/comments/ez9bex/vendure_an_open_source_magento_alternative/)
+- url: https://github.com/vendure-ecommerce/vendure
 ---
 
-## [7][new Date(year, month, o) returning minus one year](https://www.reddit.com/r/javascript/comments/eyp43c/new_dateyear_month_o_returning_minus_one_year/)
-- url: /r/learnjavascript/comments/eyohas/new_dateyear_month_o_returning_minus_one_year/
+## [6][Decimal to stage 1, per 2020.02.04 TC39 · tc39/proposals@45e3f3b · GitHub](https://www.reddit.com/r/javascript/comments/ez8z6x/decimal_to_stage_1_per_20200204_tc39/)
+- url: https://github.com/tc39/proposals/commit/45e3f3b43ba69ab86590ca3fbf9a4712d3ce32cb
 ---
 
-## [8][Understanding the ECMAScript spec, part 1](https://www.reddit.com/r/javascript/comments/eyb4bk/understanding_the_ecmascript_spec_part_1/)
-- url: https://v8.dev/blog/understanding-ecmascript-part-1
+## [7][Babel Proposal - F# pipeline operator](https://www.reddit.com/r/javascript/comments/ez700w/babel_proposal_f_pipeline_operator/)
+- url: http://codereform.com/blog/post/babel-fsharp-pipeline-operator/
 ---
 
-## [9][Javascript utility library with automated benchmarks](https://www.reddit.com/r/javascript/comments/eymgwt/javascript_utility_library_with_automated/)
-- url: https://github.com/Acanguven/rapidash?v=1
+## [8][Accent guessing game I created to get back into learning JavaScript. Would really love feedback](https://www.reddit.com/r/javascript/comments/ez7pi1/accent_guessing_game_i_created_to_get_back_into/)
+- url: http://accentsurvive-gg.stackstaging.com/#starterScreen
 ---
 
-## [10][Two Lessons I Learned From Making React Components](https://www.reddit.com/r/javascript/comments/eyoiiw/two_lessons_i_learned_from_making_react_components/)
-- url: https://css-tricks.com/two-lessons-i-learned-from-making-react-components/
+## [9][Recursion can be a simpler, more efficient, and in my case a necessary alternative to the iterative approach. I used recursion to dynamically render nested data with JavaScript. Read more about it in my post, Recursive Render in JavaScript.](https://www.reddit.com/r/javascript/comments/ez8wxt/recursion_can_be_a_simpler_more_efficient_and_in/)
+- url: https://medium.com/better-programming/recursive-render-in-javascript-25269594bad
 ---
 
-## [11][Practical Functional Programming with Javascript](https://www.reddit.com/r/javascript/comments/eye8ul/practical_functional_programming_with_javascript/)
-- url: https://medium.com/nmc-techblog/practical-functional-programming-with-javascript-c1a9d2d0c6df
+## [10][simpleParallax.js](https://www.reddit.com/r/javascript/comments/ez5zl2/simpleparallaxjs/)
+- url: https://simpleparallax.com/
+---
+
+## [11][Publish reusable Vue.js components to NPM!](https://www.reddit.com/r/javascript/comments/ez6zeb/publish_reusable_vuejs_components_to_npm/)
+- url: http://parseobjects.com/publish-vue-js-components-npm/
 ---
 

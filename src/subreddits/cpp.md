@@ -57,55 +57,89 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][C++ Weekly - Understanding C++ Lambdas Through Lambdas (online Course) - YouTube Playlist](https://www.reddit.com/r/cpp/comments/eyitr7/c_weekly_understanding_c_lambdas_through_lambdas/)
+## [2][Debugging with LLVM: A quick introduction to LLDB and LLVM sanitizers](https://www.reddit.com/r/cpp/comments/eyzj4k/debugging_with_llvm_a_quick_introduction_to_lldb/)
+- url: https://fosdem.org/2020/schedule/event/debugging_with_llvm/
+---
+
+## [3][Effective Memory Reclamation for Lock-Free Data Structures in C++](https://www.reddit.com/r/cpp/comments/ez7jlv/effective_memory_reclamation_for_lockfree_data/)
+- url: http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2582190?originalFilename=true
+---
+
+## [4][Idea: Instead of implementing Visitor Pattern, define a conversion to a std::variant](https://www.reddit.com/r/cpp/comments/eyqxgp/idea_instead_of_implementing_visitor_pattern/)
+- url: https://www.reddit.com/r/cpp/comments/eyqxgp/idea_instead_of_implementing_visitor_pattern/
+---
+Manually implementing the Visitor Pattern (visit and accept) requires a lot of repeated code.  Attempting to use template programming to ease this boilerplate is complicated.
+
+So why not just define a virtual user defined cast operator to a std::variant?  Then you can use std::visit with your OOP class hierarchy.
+
+By combining this with a trick of forward declaring a user class which turns out to derive from the class in std::, we can even hide the implementation (type list) of the variant.
+
+This is something that is easier to just give the code, so here's a complete example:
+
+[https://godbolt.org/z/TSCITM](https://godbolt.org/z/TSCITM)
+
+But in case you don't want to read it all, here's the gist of it:
+
+    // forward declared; variant typelist hidden.
+    class FruitVariant;
+    
+    class Fruit 
+    { 
+    public:
+    	// User-defined cast to a forward declared variant.
+    	virtual operator FruitVariant() = 0;
+    };
+    
+    class FruitVariant : public std::variant&lt;Apple*, Orange*&gt; {}
+    
+    Apple::operator FruitVariant() { return this; }
+    Orange::operator FruitVariant() { return this; }
+    
+    void eat(Fruit&amp; fruit)
+    {
+    	// Fruit is convertible to std::variant via an operator
+    	// (Unfortunately can't pass raw fruit directly to std::visit.)
+    	std::variant&lt;Apple*, Orange*&gt; const&amp; fruit_var = fruit;
+    		
+    	std::visit(
+    		overload {
+    			[](Apple* ){ std::cout &lt;&lt; "Just bite in\n"; },
+    			[](Orange*){ std::cout &lt;&lt; "Peel first\n;"; }
+    		},
+    		fruit_var
+    	);
+    }
+## [5][Developer Ecosystem Survey 2020](https://www.reddit.com/r/cpp/comments/eytlnl/developer_ecosystem_survey_2020/)
+- url: https://surveys.jetbrains.com/s3/a18-developer-ecosystem-survey-2020
+---
+
+## [6][C++ Weekly - Understanding C++ Lambdas Through Lambdas (online Course) - YouTube Playlist](https://www.reddit.com/r/cpp/comments/eyitr7/c_weekly_understanding_c_lambdas_through_lambdas/)
 - url: https://www.youtube.com/watch?v=3hGSlUGEXtA&amp;list=PLs3KjaCtOwSY_Awyliwm-fRjEOa-SRbs-
 ---
 
-## [3][KDevelop 5.5 released](https://www.reddit.com/r/cpp/comments/eye3r1/kdevelop_55_released/)
+## [7][KDevelop 5.5 released](https://www.reddit.com/r/cpp/comments/eye3r1/kdevelop_55_released/)
 - url: https://www.kdevelop.org/news/kdevelop-550-released
 ---
 
-## [4][ABI - Now or Never](https://www.reddit.com/r/cpp/comments/ey8y8j/abi_now_or_never/)
+## [8][Portable string SSO Challenge](https://www.reddit.com/r/cpp/comments/eyul4u/portable_string_sso_challenge/)
+- url: https://www.reddit.com/r/cpp/comments/eyul4u/portable_string_sso_challenge/
+---
+Inspired by the post about libc++ std::string SSO
+
+[https://www.reddit.com/r/cpp/comments/ey464c/libcs\_implementation\_of\_stdstring/](https://www.reddit.com/r/cpp/comments/ey464c/libcs_implementation_of_stdstring/)
+
+&amp;#x200B;
+
+Write and post a link to your implementation of a string with SSO. The caveat is that there has to be no undefined behavior (ie no union type punning, etc). You can assume a 64bit system and 24 byte string objects (8 bytes each for capacity, begin, end). Factors to consider will be the size of the short string that can be represented as well as "elegance".
+## [9][ABI - Now or Never](https://www.reddit.com/r/cpp/comments/ey8y8j/abi_now_or_never/)
 - url: https://wg21.link/P1863
 ---
 
-## [5][Recursion](https://www.reddit.com/r/cpp/comments/eyppmh/recursion/)
-- url: https://www.reddit.com/r/cpp/comments/eyppmh/recursion/
----
-If I create a recursion function, does it means for each call am I creating new function or overloading the values in called function?
-## [6][What is ABI, and What Should WG21 Do About It?](https://www.reddit.com/r/cpp/comments/eyaee0/what_is_abi_and_what_should_wg21_do_about_it/)
+## [10][What is ABI, and What Should WG21 Do About It?](https://www.reddit.com/r/cpp/comments/eyaee0/what_is_abi_and_what_should_wg21_do_about_it/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2028r0.pdf
 ---
 
-## [7][Libc++’s implementation of std::string](https://www.reddit.com/r/cpp/comments/ey464c/libcs_implementation_of_stdstring/)
+## [11][Libc++’s implementation of std::string](https://www.reddit.com/r/cpp/comments/ey464c/libcs_implementation_of_stdstring/)
 - url: https://joellaity.com/2020/01/31/string.html
 ---
 
-## [8][Activity Indicators - Example of a Modern C++ Library](https://www.reddit.com/r/cpp/comments/ey4c0g/activity_indicators_example_of_a_modern_c_library/)
-- url: https://www.bfilipek.com/2020/02/inidicators.html
----
-
-## [9][What kind of static code analyser tools do you use?](https://www.reddit.com/r/cpp/comments/ey508p/what_kind_of_static_code_analyser_tools_do_you_use/)
-- url: https://www.reddit.com/r/cpp/comments/ey508p/what_kind_of_static_code_analyser_tools_do_you_use/
----
-Hi,
-
-I would like to use a static code analyser tool in my team but there are several options to choose from, so I would like to ask you, what static code analyser tool do you use, and how do you like it?
-
-I am more interested in these: Gimpel's PC-Lint, SonarQube, and Coverity.
-
-Thanks
-## [10][How to report news for my lib](https://www.reddit.com/r/cpp/comments/ey7ddp/how_to_report_news_for_my_lib/)
-- url: https://www.reddit.com/r/cpp/comments/ey7ddp/how_to_report_news_for_my_lib/
----
-Hello everyone. I develop an ORM library for SQLite3 
-
-[https://github.com/fnc12/sqlite\_orm](https://github.com/fnc12/sqlite_orm)
-
-and I'd like to report news some way for the community. What is the best way for you? I make it with twitter account but I'd like to know if there is some better way. How do you like to know news about your favorite libraries?
-
-[https://twitter.com/sqlite\_orm](https://twitter.com/sqlite_orm)
-## [11][Which C++ IDE do you use?](https://www.reddit.com/r/cpp/comments/ey9do7/which_c_ide_do_you_use/)
-- url: https://www.reddit.com/r/cpp/comments/ey9do7/which_c_ide_do_you_use/
----
-Hi, I am standing in front of C++ IDE selection, I mostly use Windows. At the moment I am using Visual Studio Code, but thought about Eclipse. Which do you like the most? And which would you recommend?

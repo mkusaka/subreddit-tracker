@@ -22,7 +22,83 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Question about code reuse and inheritance](https://www.reddit.com/r/typescript/comments/ez7sfn/question_about_code_reuse_and_inheritance/)
+## [2][TypeScript assertion signatures for Object.defineProperty](https://www.reddit.com/r/typescript/comments/ezpya1/typescript_assertion_signatures_for/)
+- url: https://fettblog.eu/typescript-assertion-signatures/
+---
+
+## [3][How to execute TS code in Visual Studio (full IDE)?](https://www.reddit.com/r/typescript/comments/ezprmb/how_to_execute_ts_code_in_visual_studio_full_ide/)
+- url: https://www.reddit.com/r/typescript/comments/ezprmb/how_to_execute_ts_code_in_visual_studio_full_ide/
+---
+I have a junior developer who sometimes needs examples how to use typescript properly. I'm a full .NET developer and I love my Visual Studio. I can create a new TS file with code highlighting and even proper intellisense to demonstrate code snippets. It would be perfect if I could interactively execute these snippets too without setting out the whole webpage or switching IDE. I mean, it runs the whole npm / ts engine when I open up the file, it must be possible to execute it somehow? 
+
+What I'm looking for are C#-, F#- and Python-like interactive windows.
+
+Has anyone got it working under full Visual Studio IDE?
+## [4][Algebraic graphs implementation in TypeScript](https://www.reddit.com/r/typescript/comments/ezs5x0/algebraic_graphs_implementation_in_typescript/)
+- url: https://github.com/algebraic-graphs/typescript
+---
+
+## [5][Verifying and inferring type](https://www.reddit.com/r/typescript/comments/ezpfk2/verifying_and_inferring_type/)
+- url: https://www.reddit.com/r/typescript/comments/ezpfk2/verifying_and_inferring_type/
+---
+I'm working on a web app in a Node-ish environment (Next.js API routes) where the input for `POST` data comes in a `req.body` object. I've come up with the following (elegant, I think) way of both checking that the `POST` variables have the valid type at runtime while also inferring their type in the code:
+
+    const {shouldBeString} = extract(req.body, {
+        shouldBeString: isString,
+        shouldBeNumber: isNumber
+    });
+    
+    // hover here to see that the right type is inferred
+    type ShouldAlsoBeString = typeof shouldBeString;
+
+`extract` is the function that does the extraction by taking `req.body` as a parameter and a definition object that maps field names to type narrowing functions (such as the commonplace `isString` -- also found in the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/advanced-types.html#typeof-type-guards), but can be any custom type narrowing function);
+
+The code that makes this happen is the following:
+
+    type Narrower&lt;T&gt; = (v: unknown) =&gt; v is T;
+    type Definition = { [k: string]: Narrower&lt;unknown&gt; };
+
+    type Narrowed&lt;T&gt; = T extends Narrower&lt;infer X&gt; ? X : never;
+    type Extracted&lt;T&gt; = { [P in keyof T]: Narrowed&lt;T[P]&gt; }
+
+    type PostData = { [k: string]: unknown };
+    
+    const extract = &lt;D extends Definition&gt;(post: PostData, def: D): Extracted&lt;D&gt; =&gt;
+        Object.entries(def).reduce((result, [field, isRightType]) =&gt; {
+            const value = post[field];
+            if (!isRightType(value)) {
+                throw Error(`Invalid value for field ${field}`);
+            }
+            return ({...result, [field]: value});
+        }, {} as Extracted&lt;D&gt;);
+    
+    // hover here to see that the right type is inferred
+    type ShouldBeString = Narrowed&lt;typeof isString&gt;;
+
+What do you think? Any suggestions as to naming? Code style? Anything else?
+
+(This is minimalist by design, it doesn't support optional inputs or fields having more than one value per field. Might work on that if the use case arises.)
+
+Thanks!
+## [6][How do I setup a Typescript project?](https://www.reddit.com/r/typescript/comments/ezr6hg/how_do_i_setup_a_typescript_project/)
+- url: https://www.reddit.com/r/typescript/comments/ezr6hg/how_do_i_setup_a_typescript_project/
+---
+I want to try using typescript within a browser context but I haven't really found what is the best way to set-up such a project. I'm mainly having trouble with what I should do with npm downloaded packages, I'm using PHPStorm so the typescript compiling itself is handled.
+
+I'm looking to use systemjs as a loader as well.
+## [7][TS server detects error in IDE, ts-jest passes the test without raising the type error.](https://www.reddit.com/r/typescript/comments/ezqp3i/ts_server_detects_error_in_ide_tsjest_passes_the/)
+- url: https://i.redd.it/jmywutwy9af41.gif
+---
+
+## [8][Create single ES6 module?](https://www.reddit.com/r/typescript/comments/ezqnp4/create_single_es6_module/)
+- url: https://www.reddit.com/r/typescript/comments/ezqnp4/create_single_es6_module/
+---
+I'm just getting started with typescript and what I'd like to achieve is to export/build a single ES6 module from all files with just typescript. It seems like typescript can do that for AMD or system but I didn't find a way to do it with ES6. Is this not possible? Tbh, that would be a dealbreaker for me. I want to avoid webpack and rollup because they add unnecessary overhead. As the AMD option shows, tsc should already be capable of doing single file builds.
+## [9][Can you create a subset of a const enum?](https://www.reddit.com/r/typescript/comments/ezdawh/can_you_create_a_subset_of_a_const_enum/)
+- url: https://www.reddit.com/r/typescript/comments/ezdawh/can_you_create_a_subset_of_a_const_enum/
+---
+I'm trying to create a  subset of a const enum, but it's [not working](https://www.typescriptlang.org/play/#code/MYewdgzgLgBApmArgWxgQQDYYHIoEZwBOMA3gFAyUwDyYcMAvDAEThzMA0FVAKgO4hGLKAM7dKPABaE49JsyjTZzMgF8yZUJFgIUNACb7cyAsXJUadIZhz4iAOlpwuFqTLnosx0-beyu6mQAZohgwFAAluAwERDUht5EABQAHgBcMNCEEWAA5gCUGSkxEAZGdmbimXwRUMCSMKn5pFUWwACGEPTx5SYOTmmtVB1dZYmEvkpwgxazVDJQiIRgMFCEiHAA3EOU+nBB7YgYUDNzswtLKwcYXdsW6qpAA) as I'd expect. Is something like this possible, or would you recommend another approach?
+## [10][Question about code reuse and inheritance](https://www.reddit.com/r/typescript/comments/ez7sfn/question_about_code_reuse_and_inheritance/)
 - url: https://www.reddit.com/r/typescript/comments/ez7sfn/question_about_code_reuse_and_inheritance/
 ---
 I have a question regarding the best way to structure code for reuse with inheritance in cases, where some methods in the base class does not make sense in the inheriting class.
@@ -56,92 +132,7 @@ Doing away with inheritance means those similar functionality would have to be d
 &amp;#x200B;
 
 And composition also does not work, because if you extract those implementation that are similar into a separate object, that object, and it's method would constitute human like characteristics, and hence should be seen as a \`Human\` in our modelling.
-## [3][Learn how to make a TypeScript Playground Plugin](https://www.reddit.com/r/typescript/comments/eywcn8/learn_how_to_make_a_typescript_playground_plugin/)
-- url: https://www.typescriptlang.org/v2/dev/playground-plugins/
+## [11][Tip: type npx typescript-react , to bootstrap a starter application](https://www.reddit.com/r/typescript/comments/ezgfpe/tip_type_npx_typescriptreact_to_bootstrap_a/)
+- url: https://www.reddit.com/r/typescript/comments/ezgfpe/tip_type_npx_typescriptreact_to_bootstrap_a/
 ---
 
-## [4][Demystifying a TypeScript quirk](https://www.reddit.com/r/typescript/comments/eyothb/demystifying_a_typescript_quirk/)
-- url: https://matthewmiller.dev/blog/demystifying-typescript-quirk/
----
-
-## [5][How to deal with leftover compiled outputs after pulling changes or switching branches?](https://www.reddit.com/r/typescript/comments/eyt2vb/how_to_deal_with_leftover_compiled_outputs_after/)
-- url: https://www.reddit.com/r/typescript/comments/eyt2vb/how_to_deal_with_leftover_compiled_outputs_after/
----
-I've been running into an issue that's kind of a pain and I was hoping someone has an idea on how to deal with it.
-
-We have a typescript (v3.7) project in Visual Studio and we're using Git. Compiled outputs (.js, .d.ts, etc.) are in a .gitignore file so they aren't being tracked.
-
-My problem is that if I delete/rename a few .ts files and commit the changes, and another developer pulls that change, the old compiled outputs are still in their file structure and the compiler (Visual Studio, in this case) will start throwing errors as it reads the .d.ts files and tries to resolve references.
-
-**What doesn't work:**
-
-The "clean" or "rebuild" project actions in Visual Studio. VS will only clean outputs for *existing* .ts files, but since I've deleted the .ts file it will no longer clean the now-orphaned outputs.
-
-**Options I've considered:**
-
-1. **"git clean -xf &lt;project_directory&gt;"** -- this works to clean up those orphaned outputs, but I'd rather not have to make people run this every time something changes.
-
-1. **Using the .tsconfig "include" or "files" properties so I'm only trying to compile files that I know exist.** This seems super unwieldy and hard to maintain -- directory-level inclusions wouldn't be good enough (what if a directory contains multiple files but only one gets deleted?) and there are too many files to list each one individually.
-
-1. **Using "outDir" to move all outputs to a completely separate directory, which will also automatically exclude them from the compiler.** I'm not sure of all the pros/cons of this option, honestly. It might require updating our packaging stuff to use the new location.
-
-Is what I'm saying making sense? And is there some easier way to manage this that I'm not thinking of?
-
-**EDIT:** I'm going with my option #3 based on the responses. It does seem pretty simple now that I look at it more closely. Thank you!
-## [6][Applying SOLID principles to your TypeScript code](https://www.reddit.com/r/typescript/comments/ey8ilv/applying_solid_principles_to_your_typescript_code/)
-- url: https://wanago.io/2020/02/03/applying-solid-principles-to-your-typescript-code/
----
-
-## [7][Typing objects in TypeScript – 2ality](https://www.reddit.com/r/typescript/comments/eyen40/typing_objects_in_typescript_2ality/)
-- url: https://2ality.com/2020/01/typing-objects-typescript.html
----
-
-## [8][Playground that runs on Android](https://www.reddit.com/r/typescript/comments/eygewa/playground_that_runs_on_android/)
-- url: https://www.reddit.com/r/typescript/comments/eygewa/playground_that_runs_on_android/
----
-Hi,
-
-Very often I would like to try out some ideas in TypeScript but I don't have access to a computer for various reasons, but I do have my phone.
-
-Unfortunately the official TypeScript playground doesn't support mobile browsers.
-
-Do you know about anything else?
-## [9][A hasOwnProperty helper function/types to check for existing properties in objects](https://www.reddit.com/r/typescript/comments/ey99th/a_hasownproperty_helper_functiontypes_to_check/)
-- url: https://fettblog.eu/typescript-hasownproperty/
----
-
-## [10][Marshal.ts serializer got a JIT engine + ORM abstraction. It's now up to 300x faster than class-transformer. Time to switch guys](https://www.reddit.com/r/typescript/comments/exzdsd/marshalts_serializer_got_a_jit_engine_orm/)
-- url: https://github.com/marcj/marshal.ts#marshalts
----
-
-## [11][Question about Typescript objects assign](https://www.reddit.com/r/typescript/comments/ey4vbb/question_about_typescript_objects_assign/)
-- url: https://www.reddit.com/r/typescript/comments/ey4vbb/question_about_typescript_objects_assign/
----
-Hi. I'm having trouble with TypeScript objects assign. For example:
-
-    class A {
-        x: number;
-        y: number;
-    };
-    class B {
-        x: number;
-        y: number;
-        z: number;
-    };
-    const b: B = {
-        x: 0,
-        y: 1,
-        z: 2,
-    };
-    const a: A = b;
-    console.log(a);
-
-I expect the result to be:
-
-    { x: 0, y: 1 }
-
-But I get:
-
-    { x: 0, y: 1, z: 2 }
-
-Is there any way to get the first result?

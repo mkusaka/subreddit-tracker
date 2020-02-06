@@ -57,89 +57,78 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Debugging with LLVM: A quick introduction to LLDB and LLVM sanitizers](https://www.reddit.com/r/cpp/comments/eyzj4k/debugging_with_llvm_a_quick_introduction_to_lldb/)
-- url: https://fosdem.org/2020/schedule/event/debugging_with_llvm/
+## [2][Which checks do you use for clang-tidy?](https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/)
+- url: https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/
+---
+Do you guys throw the whole kitchen sink in? Do you disable specific checks if you don't agree with them/if they don't fit? Or do you only pick certain groups of checks from the beginning? Curious about what may be standard.
+## [3][gsl-lite v0.36 released](https://www.reddit.com/r/cpp/comments/ezqvuf/gsllite_v036_released/)
+- url: https://www.reddit.com/r/cpp/comments/ezqvuf/gsllite_v036_released/
+---
+https://github.com/gsl-lite/gsl-lite  
+https://github.com/gsl-lite/gsl-lite/releases/tag/v0.36.0
+
+[*gsl-lite*](https://github.com/gsl-lite/gsl-lite) is an implementation of the [C++ Core Guidelines Support Library](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-gsl) originally based on [Microsoft GSL](https://github.com/microsoft/gsl).
+## [4][[++itCon] Call for Papers! Submit your paper for the Italian C++ Conference 2020 in Rome](https://www.reddit.com/r/cpp/comments/ezrxiy/itcon_call_for_papers_submit_your_paper_for_the/)
+- url: https://www.italiancpp.org/event/itcppcon20/
 ---
 
-## [3][Effective Memory Reclamation for Lock-Free Data Structures in C++](https://www.reddit.com/r/cpp/comments/ez7jlv/effective_memory_reclamation_for_lockfree_data/)
+## [5][C++ compile time counters, revisited](https://www.reddit.com/r/cpp/comments/eze9yb/c_compile_time_counters_revisited/)
+- url: https://stackoverflow.com/questions/60082260/c-compile-time-counters-revisited
+---
+
+## [6][Latest interesting lectures for programmers who aren't necessarily C++ programmers?](https://www.reddit.com/r/cpp/comments/ezpwxj/latest_interesting_lectures_for_programmers_who/)
+- url: https://www.reddit.com/r/cpp/comments/ezpwxj/latest_interesting_lectures_for_programmers_who/
+---
+As far as I'm concerned the world of C++ has the top minds in programming/computer science.
+
+I'll watch anything with Bjarne in it. And I've consumed hours and hours of CPPCon videos.
+
+Any recent such videos where I can learn about programming philosophy, rather than just the technical specs of an aspect inherent to C++?
+
+I think i've exhausted all of CPPCON 2019  
+
+
+If it's 'grill the commitee' type stuff, I'm good with that too!
+
+Many thanks
+## [7][Effective Memory Reclamation for Lock-Free Data Structures in C++](https://www.reddit.com/r/cpp/comments/ez7jlv/effective_memory_reclamation_for_lockfree_data/)
 - url: http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2582190?originalFilename=true
 ---
 
-## [4][Idea: Instead of implementing Visitor Pattern, define a conversion to a std::variant](https://www.reddit.com/r/cpp/comments/eyqxgp/idea_instead_of_implementing_visitor_pattern/)
-- url: https://www.reddit.com/r/cpp/comments/eyqxgp/idea_instead_of_implementing_visitor_pattern/
----
-Manually implementing the Visitor Pattern (visit and accept) requires a lot of repeated code.  Attempting to use template programming to ease this boilerplate is complicated.
-
-So why not just define a virtual user defined cast operator to a std::variant?  Then you can use std::visit with your OOP class hierarchy.
-
-By combining this with a trick of forward declaring a user class which turns out to derive from the class in std::, we can even hide the implementation (type list) of the variant.
-
-This is something that is easier to just give the code, so here's a complete example:
-
-[https://godbolt.org/z/TSCITM](https://godbolt.org/z/TSCITM)
-
-But in case you don't want to read it all, here's the gist of it:
-
-    // forward declared; variant typelist hidden.
-    class FruitVariant;
-    
-    class Fruit 
-    { 
-    public:
-    	// User-defined cast to a forward declared variant.
-    	virtual operator FruitVariant() = 0;
-    };
-    
-    class FruitVariant : public std::variant&lt;Apple*, Orange*&gt; {}
-    
-    Apple::operator FruitVariant() { return this; }
-    Orange::operator FruitVariant() { return this; }
-    
-    void eat(Fruit&amp; fruit)
-    {
-    	// Fruit is convertible to std::variant via an operator
-    	// (Unfortunately can't pass raw fruit directly to std::visit.)
-    	std::variant&lt;Apple*, Orange*&gt; const&amp; fruit_var = fruit;
-    		
-    	std::visit(
-    		overload {
-    			[](Apple* ){ std::cout &lt;&lt; "Just bite in\n"; },
-    			[](Orange*){ std::cout &lt;&lt; "Peel first\n;"; }
-    		},
-    		fruit_var
-    	);
-    }
-## [5][Developer Ecosystem Survey 2020](https://www.reddit.com/r/cpp/comments/eytlnl/developer_ecosystem_survey_2020/)
-- url: https://surveys.jetbrains.com/s3/a18-developer-ecosystem-survey-2020
+## [8][Encoding MIPS Instructions with C++17](https://www.reddit.com/r/cpp/comments/ez9vlv/encoding_mips_instructions_with_c17/)
+- url: https://medium.com/@kevin_hartman/encoding-mips-instructions-with-c-17-59f9c2170faa
 ---
 
-## [6][C++ Weekly - Understanding C++ Lambdas Through Lambdas (online Course) - YouTube Playlist](https://www.reddit.com/r/cpp/comments/eyitr7/c_weekly_understanding_c_lambdas_through_lambdas/)
-- url: https://www.youtube.com/watch?v=3hGSlUGEXtA&amp;list=PLs3KjaCtOwSY_Awyliwm-fRjEOa-SRbs-
+## [9][Compiling Trouble Shooting: Segmentation Fault and GCC Illegal Instruction](https://www.reddit.com/r/cpp/comments/ezl9wz/compiling_trouble_shooting_segmentation_fault_and/)
+- url: https://medium.com/nebula-graph/compiling-trouble-shooting-segmentation-fault-and-gcc-illegal-instruction-64e29d090be4
 ---
 
-## [7][KDevelop 5.5 released](https://www.reddit.com/r/cpp/comments/eye3r1/kdevelop_55_released/)
-- url: https://www.kdevelop.org/news/kdevelop-550-released
+## [10][Fall through on switch case - warnings?](https://www.reddit.com/r/cpp/comments/ezi4ik/fall_through_on_switch_case_warnings/)
+- url: https://www.reddit.com/r/cpp/comments/ezi4ik/fall_through_on_switch_case_warnings/
 ---
+So, for years, in both c and c++, I've used a technique where a `case:` does a bunch of stuff, call it `X`, and the `case:` above it needs to do exactly that, plus `Y` stuff, so I put the `Y` in the upper `case:` and let it fall through to the `X` case. It's always worked great, never had a problem.
 
-## [8][Portable string SSO Challenge](https://www.reddit.com/r/cpp/comments/eyul4u/portable_string_sso_challenge/)
-- url: https://www.reddit.com/r/cpp/comments/eyul4u/portable_string_sso_challenge/
+So I went to port a relatively large app \([this one](http://ourtimelines.com/itdoc/intro.html)\) from OSX, where I developed it, to Windows. Installed Qt, built it, the qt install picked a compiler \(mingw\), etc., and off I went to cross-compile.
+
+The new compiler, predictably, went at things a little differently, and TBH, it caught a few things I was glad to have caught. So far so good.
+
+But it also pushed warnings about my fall-through `case:` statements, and looking at them, they were doing just what I had intended. I hadn't yet found a way to switch the warnings off \(laptop is off getting more RAM and an SSD, so I can't even look at it today\) but probably there's a way.
+
+So what I'm asking, though, is what folks think of this technique. Apparently, the compiler authors think I shouldn't be doing this. Anyone agree? Disagree? Other? If I can turn this off, should I? Yes? No? Other?
+
+TIA.
+
+\[**EDIT:** End goal is zero errors, zero warnings, always. I can just code this differently, two cases plus an if inside the case, for instance... it just seems inelegant.\]
+## [11][Looking for cross platform socket library](https://www.reddit.com/r/cpp/comments/ezhomq/looking_for_cross_platform_socket_library/)
+- url: https://www.reddit.com/r/cpp/comments/ezhomq/looking_for_cross_platform_socket_library/
 ---
-Inspired by the post about libc++ std::string SSO
+Hello,
 
-[https://www.reddit.com/r/cpp/comments/ey464c/libcs\_implementation\_of\_stdstring/](https://www.reddit.com/r/cpp/comments/ey464c/libcs_implementation_of_stdstring/)
+Can you suggest me some library with the following constraints?
 
-&amp;#x200B;
+* Cross platform (windows, Linux, Android )
+* Light
+* Socket
+* Usable in closed source projects
 
-Write and post a link to your implementation of a string with SSO. The caveat is that there has to be no undefined behavior (ie no union type punning, etc). You can assume a 64bit system and 24 byte string objects (8 bytes each for capacity, begin, end). Factors to consider will be the size of the short string that can be represented as well as "elegance".
-## [9][ABI - Now or Never](https://www.reddit.com/r/cpp/comments/ey8y8j/abi_now_or_never/)
-- url: https://wg21.link/P1863
----
-
-## [10][What is ABI, and What Should WG21 Do About It?](https://www.reddit.com/r/cpp/comments/eyaee0/what_is_abi_and_what_should_wg21_do_about_it/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2028r0.pdf
----
-
-## [11][Libc++’s implementation of std::string](https://www.reddit.com/r/cpp/comments/ey464c/libcs_implementation_of_stdstring/)
-- url: https://joellaity.com/2020/01/31/string.html
----
-
+Thanks!

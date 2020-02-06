@@ -79,43 +79,51 @@ score  |  comment  |
 
 
 &amp;nbsp;
-## [2][Interviewing at Facebook — On-Site JavaScript Technical Interview Questions](https://www.reddit.com/r/javascript/comments/ez4pv2/interviewing_at_facebook_onsite_javascript/)
-- url: https://medium.com/javascript-in-plain-english/facebook-on-site-technical-interview-1264cacad263
+## [2][WTF Wednesday (February 05, 2020)](https://www.reddit.com/r/javascript/comments/ezbpi0/wtf_wednesday_february_05_2020/)
+- url: https://www.reddit.com/r/javascript/comments/ezbpi0/wtf_wednesday_february_05_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][DarkModeJS – move your website to the dark side](https://www.reddit.com/r/javascript/comments/ezhkea/darkmodejs_move_your_website_to_the_dark_side/)
+- url: https://github.com/nickdeny/darkmode-js
 ---
 
-## [3][Rock paper scissors game all assets have been created by me. Please feel free to fork or feedback](https://www.reddit.com/r/javascript/comments/eyuvoe/rock_paper_scissors_game_all_assets_have_been/)
-- url: https://www.pixel-tones.com/rpsgame/
+## [4][canihazusername - simple &amp; customisable username generator. types included :)](https://www.reddit.com/r/javascript/comments/ezq0r7/canihazusername_simple_customisable_username/)
+- url: https://cupcakearmy.github.io/canihazusername/
 ---
 
-## [4][Console API Functions](https://www.reddit.com/r/javascript/comments/ez8btr/console_api_functions/)
-- url: https://overflowjs.com/posts/8-Console-API-Functions-Other-Than-Consolelog.html
+## [5][Handle JavaScript Exception(like a pro)](https://www.reddit.com/r/javascript/comments/ezqyqz/handle_javascript_exceptionlike_a_pro/)
+- url: https://overflowjs.com/posts/Exception-handling-in-JavaScript.html
 ---
 
-## [5][Vendure: An open source Magento alternative](https://www.reddit.com/r/javascript/comments/ez9bex/vendure_an_open_source_magento_alternative/)
+## [6][Advanced Functional Programming concepts made easy](https://www.reddit.com/r/javascript/comments/ezp7zd/advanced_functional_programming_concepts_made_easy/)
+- url: https://medium.com/nmc-techblog/advanced-functional-programming-concepts-made-easy-2108d227b5ab
+---
+
+## [7][8-Ball Pool game using JavaScript and Canvas](https://www.reddit.com/r/javascript/comments/ezrgfj/8ball_pool_game_using_javascript_and_canvas/)
+- url: https://www.htmlhints.com/article/63/8-ball-pool-game-using-javascript-and-canvas
+---
+
+## [8][Vendure: An open source Magento alternative](https://www.reddit.com/r/javascript/comments/ez9bex/vendure_an_open_source_magento_alternative/)
 - url: https://github.com/vendure-ecommerce/vendure
 ---
 
-## [6][Decimal to stage 1, per 2020.02.04 TC39 · tc39/proposals@45e3f3b · GitHub](https://www.reddit.com/r/javascript/comments/ez8z6x/decimal_to_stage_1_per_20200204_tc39/)
-- url: https://github.com/tc39/proposals/commit/45e3f3b43ba69ab86590ca3fbf9a4712d3ce32cb
+## [9][Octomments - using GitHub as a comment plugin](https://www.reddit.com/r/javascript/comments/ezcr7q/octomments_using_github_as_a_comment_plugin/)
+- url: https://ocs.now.sh/
 ---
 
-## [7][Babel Proposal - F# pipeline operator](https://www.reddit.com/r/javascript/comments/ez700w/babel_proposal_f_pipeline_operator/)
-- url: http://codereform.com/blog/post/babel-fsharp-pipeline-operator/
+## [10][Interviewing at Facebook — On-Site JavaScript Technical Interview Questions](https://www.reddit.com/r/javascript/comments/ez4pv2/interviewing_at_facebook_onsite_javascript/)
+- url: https://medium.com/javascript-in-plain-english/facebook-on-site-technical-interview-1264cacad263
 ---
 
-## [8][Accent guessing game I created to get back into learning JavaScript. Would really love feedback](https://www.reddit.com/r/javascript/comments/ez7pi1/accent_guessing_game_i_created_to_get_back_into/)
-- url: http://accentsurvive-gg.stackstaging.com/#starterScreen
+## [11][Get Ready for Chrome User-Agent String Phase Out](https://www.reddit.com/r/javascript/comments/ezhtvj/get_ready_for_chrome_useragent_string_phase_out/)
+- url: https://medium.com/@galmeiri/get-ready-for-chrome-user-agent-string-phase-out-c6840da1c31e
 ---
 
-## [9][Recursion can be a simpler, more efficient, and in my case a necessary alternative to the iterative approach. I used recursion to dynamically render nested data with JavaScript. Read more about it in my post, Recursive Render in JavaScript.](https://www.reddit.com/r/javascript/comments/ez8wxt/recursion_can_be_a_simpler_more_efficient_and_in/)
-- url: https://medium.com/better-programming/recursive-render-in-javascript-25269594bad
----
-
-## [10][simpleParallax.js](https://www.reddit.com/r/javascript/comments/ez5zl2/simpleparallaxjs/)
-- url: https://simpleparallax.com/
----
-
-## [11][Publish reusable Vue.js components to NPM!](https://www.reddit.com/r/javascript/comments/ez6zeb/publish_reusable_vuejs_components_to_npm/)
-- url: http://parseobjects.com/publish-vue-js-components-npm/
+## [12][simple-message-router](https://www.reddit.com/r/javascript/comments/ezp77x/simplemessagerouter/)
+- url: https://github.com/s1n7ax/simple-message-router
 ---
 

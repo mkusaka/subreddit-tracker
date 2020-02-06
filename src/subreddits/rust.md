@@ -29,117 +29,116 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
 Also check out [last week's thread](https://reddit.com/r/rust/comments/eransa/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (6/2020)?](https://www.reddit.com/r/rust/comments/ey2xrr/whats_everyone_working_on_this_week_62020/)
-- url: https://www.reddit.com/r/rust/comments/ey2xrr/whats_everyone_working_on_this_week_62020/
+## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.41]](https://www.reddit.com/r/rust/comments/eyw94s/official_rrust_whos_hiring_thread_for_jobseekers/)
+- url: https://www.reddit.com/r/rust/comments/eyw94s/official_rrust_whos_hiring_thread_for_jobseekers/
 ---
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-6-2020/37776?u=llogiq)!
-## [3][ZZ is a modern formally provable dialect of C](https://www.reddit.com/r/rust/comments/ez73pi/zz_is_a_modern_formally_provable_dialect_of_c/)
+Welcome once again to the official /r/rust Who's Hiring thread!
+
+Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/ecxd62/official_rrust_whos_hiring_thread_for_jobseekers/).
+
+This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+
+Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
+
+#### Rules for individuals:
+
+* Don't create top-level comments; those are for employers.
+* Feel free to reply to top-level comments with on-topic questions.
+* I will create a stickied top-level comment for individuals looking for work.
+* I will create an additional top-level comment for meta discussion.
+
+#### Rules for employers:
+
+* To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
+* To make a top-level comment you must be hiring directly; no third-party recruiters.
+* One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
+* Proofread your comment after posting it and edit it if necessary to correct mistakes.
+* Please base your comment on the following template:
+
+COMPANY: *[Company name; please link to your company's website or careers page.]*
+
+TYPE: *[Full time, part time, internship, contract, etc.]*
+
+DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+
+LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+
+REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+
+VISA: *[Does your company sponsor visas?]*
+
+CONTACT: *[How can someone get in touch with you?]*
+## [3][This Week in Rust 324](https://www.reddit.com/r/rust/comments/ezqkbg/this_week_in_rust_324/)
+- url: https://this-week-in-rust.org/blog/2020/02/04/this-week-in-rust-324/
+---
+
+## [4][RustBelt Meets Relaxed Memory (POPL'20)](https://www.reddit.com/r/rust/comments/ezp06r/rustbelt_meets_relaxed_memory_popl20/)
+- url: https://www.youtube.com/watch?v=QqPo6nT8vVw
+---
+
+## [5][[FOSDEM] Building WebGPU with RUST](https://www.reddit.com/r/rust/comments/ezqezb/fosdem_building_webgpu_with_rust/)
+- url: https://fosdem.org/2020/schedule/event/rust_webgpu/
+---
+
+## [6][Rust Game Development - Ecosystem Survey](https://www.reddit.com/r/rust/comments/ezrk0y/rust_game_development_ecosystem_survey/)
+- url: https://rust-gamedev.github.io/posts/survey-01/
+---
+
+## [7][io-mux and highlight-stderr now work on all UNIX platforms; thanks, /r/rust!](https://www.reddit.com/r/rust/comments/ezhcfd/iomux_and_highlightstderr_now_work_on_all_unix/)
+- url: https://www.reddit.com/r/rust/comments/ezhcfd/iomux_and_highlightstderr_now_work_on_all_unix/
+---
+Yesterday, I [posted](https://www.reddit.com/r/rust/comments/eyj15s/highlightstderr_run_a_command_and_highlight_its/) highlight-stderr, to highlight the stderr of a process while preserving the order of stdout and stderr.
+
+Among the wonderful feedback I received, /u/Freeky provided a PR to port the underlying [io-mux library](https://crates.io/crates/io-mux) to other UNIX platforms. I've released new versions of io-mux and highlight-stderr with those and other changes, and the new versions have now been confirmed to work on macOS and FreeBSD in addition to Linux!
+
+I love the Rust community. Thanks to everyone who responded.
+## [8][Rust and GTK from a React perspective](https://www.reddit.com/r/rust/comments/ezrt1y/rust_and_gtk_from_a_react_perspective/)
+- url: https://savanni.luminescent-dreams.com/2020/01/15/rust-react-gtk/
+---
+
+## [9][Svgbob has now added ability to style the generated diagrams from ascii.](https://www.reddit.com/r/rust/comments/ezmd0i/svgbob_has_now_added_ability_to_style_the/)
+- url: https://github.com/ivanceras/svgbob/issues/11
+---
+
+## [10][ZZ is a modern formally provable dialect of C](https://www.reddit.com/r/rust/comments/ez73pi/zz_is_a_modern_formally_provable_dialect_of_c/)
 - url: https://github.com/aep/zz
 ---
 
-## [4][Why Discord is switching from Go to Rust](https://www.reddit.com/r/rust/comments/eytyug/why_discord_is_switching_from_go_to_rust/)
-- url: https://blog.discordapp.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f
+## [11][Terminal Prompt](https://www.reddit.com/r/rust/comments/ezmrzs/terminal_prompt/)
+- url: https://www.reddit.com/r/rust/comments/ezmrzs/terminal_prompt/
 ---
+Hi, I'm new.
 
-## [5][Fontfor: CLI tool for render fonts preview in your terminal](https://www.reddit.com/r/rust/comments/ez6poz/fontfor_cli_tool_for_render_fonts_preview_in_your/)
-- url: https://www.reddit.com/r/rust/comments/ez6poz/fontfor_cli_tool_for_render_fonts_preview_in_your/
+Can anyone share examples of how you might make a terminal app with it's own prompt?
+
+Like while you are in the app it has it's own prompt and you type help or something and it displays a list of commands the app has that they can use.
+## [12][rustfmt with single-line if else expression](https://www.reddit.com/r/rust/comments/ezqeg3/rustfmt_with_singleline_if_else_expression/)
+- url: https://www.reddit.com/r/rust/comments/ezqeg3/rustfmt_with_singleline_if_else_expression/
 ---
-Just added tui and font render feature for my tiny project https://github.com/7sDream/fontfor.
+I am having difficulty getting formatting with rustfmt using a single-line if else expression within a match statement. This works fine with rustfmt (rustfmt doesn't change it):
 
-It was originally just a script to find fonts for uncommon characters, but now can be used as a simple font viewer!
+    let y = if x &gt; 0 { x } else { 0 }; 
 
-Some screenshot: [Canvas Render](https://rikka.7sdre.am/files/c7a7a685-3966-4fb4-8e9e-0cc53636e406.png), [Moon Emoji Render](https://rikka.7sdre.am/files/8128a291-27a7-42bd-813e-1136f971cdb3.png).
+but if I put it in a match statement:
 
-More screenshot and usage please refer to my [tweet](https://twitter.com/7sDream/status/1224703380871942146) or README.md of the [project](https://github.com/7sDream/fontfor). 
+    let y = match list.iter().max() {
+        Some(&amp;value) =&gt;  if value &gt; 0 { value } else { 0 },
+        None =&gt; 0,
+    }
 
-Only tested in macOS and Arch Linux, but feel free to try it and report any issues!
+then it gets formatted over like 5 lines (as rustfmt adds in an extra set of curly braces) and (in my opinion) makes it a bit more difficult to follow the logic of the match statement:
 
----
+    let y = match list.iter().max() {
+        Some(&amp;value) =&gt; {
+            if value &gt; 0 {
+                value
+            } else {
+                0
+            }
+        }
+        None =&gt; 0,
+    };
 
-Yeah, I  suddenly remember I can show the Moon Emoji Render just use text.
+Is there a good way to turn this off or an option to do single-line if else expressions in a match statement?
 
-This is render result for character "א", Unicode U+05D0.
-
-🌑🌕🌑🌑🌑🌑🌑🌔🌘🌑🌑🌑
-
-🌓🌕🌘🌑🌑🌑🌑🌕🌕🌕🌗🌑
-
-🌔🌕🌕🌑🌑🌑🌑🌕🌕🌕🌕🌖
-
-🌒🌕🌕🌕🌑🌑🌑🌔🌕🌕🌕🌕
-
-🌑🌔🌕🌕🌕🌑🌑🌑🌔🌕🌕🌖
-
-🌑🌑🌕🌕🌕🌖🌑🌑🌓🌕🌑🌑
-
-🌑🌑🌒🌕🌕🌕🌖🌑🌕🌘🌑🌑
-
-🌑🌒🌕🌔🌕🌕🌕🌖🌕🌑🌑🌑
-
-🌑🌕🌖🌑🌒🌕🌕🌕🌕🌑🌑🌑
-
-🌓🌕🌗🌑🌑🌓🌕🌕🌕🌘🌑🌑
-
-🌔🌕🌕🌑🌑🌑🌔🌕🌕🌕🌑🌑
-
-🌓🌕🌕🌗🌑🌑🌑🌔🌕🌕🌖🌑
-
-🌒🌕🌕🌕🌘🌑🌑🌑🌕🌕🌕🌗
-
-🌑🌕🌕🌕🌖🌑🌑🌑🌑🌕🌕🌕
-
-🌑🌔🌕🌕🌕🌑🌑🌑🌑🌒🌕🌕
-
-🌒🌕🌕🌕🌖🌑🌑🌑🌑🌑🌔🌘
-## [6][Why &amp;s[pos..] is slower than s.split_at(pos).1?](https://www.reddit.com/r/rust/comments/ez64g2/why_spos_is_slower_than_ssplit_atpos1/)
-- url: https://godbolt.org/z/TBhkjy
----
-
-## [7][Couchbase Rust SDK 1.0.0-alpha.3 Released](https://www.reddit.com/r/rust/comments/ez6hh4/couchbase_rust_sdk_100alpha3_released/)
-- url: https://www.reddit.com/r/rust/comments/ez6hh4/couchbase_rust_sdk_100alpha3_released/
----
-After lots of rewriting and figuring what approach might be the best one, I've finally managed to get a new alpha out: alpha.3. See [https://github.com/couchbaselabs/couchbase-rs](https://github.com/couchbaselabs/couchbase-rs) if you are interested.
-
-It supports async/await out of the box and you can use it in runtimes like tokio although it has no hard dependency on it. It uses the C-based libcouchbase backend ([https://github.com/couchbase/libcouchbase/](https://github.com/couchbase/libcouchbase/)) so you'll find unsafe code - but only in the place where we need to call the binding. 
-
-Once the lcb-based version is complete we want to start working on a full rust native backend (without changing the API), but this is much more work since lcb does a lot of work in the distributed system context.
-
-We are still extending the API and polishing current ones, but this should be the first release that it is quite close API-wise to a beta/GA one. If you have feedback I'd love to hear it! Oh yeah and we are working on docs as well ;-)
-## [8][Exploring some Rust basics with actix-web](https://www.reddit.com/r/rust/comments/ez566b/exploring_some_rust_basics_with_actixweb/)
-- url: http://blog.levinotik.com/2020/02/05/exploring-some-rust-basics-with-actix-web/
----
-
-## [9][Rust companies in production list - feel free to add companies you know](https://www.reddit.com/r/rust/comments/ez7m4u/rust_companies_in_production_list_feel_free_to/)
-- url: https://github.com/omarabid/rust-companies
----
-
-## [10][Hello, is there any async thread pool?](https://www.reddit.com/r/rust/comments/ez9ag6/hello_is_there_any_async_thread_pool/)
-- url: https://www.reddit.com/r/rust/comments/ez9ag6/hello_is_there_any_async_thread_pool/
----
-I want pool for diesels `mysqlconnection` and i want it to be async, is there any library for it?
-## [11][Cross Compiling Rust on Linux for the Raspberry Pi](https://www.reddit.com/r/rust/comments/eyssub/cross_compiling_rust_on_linux_for_the_raspberry_pi/)
-- url: https://chacin.dev/blog/cross-compiling-rust-for-the-raspberry-pi
----
-
-## [12][savefile 0.5.0](https://www.reddit.com/r/rust/comments/eyxoao/savefile_050/)
-- url: https://www.reddit.com/r/rust/comments/eyxoao/savefile_050/
----
-[https://docs.rs/savefile/0.5.0/savefile/](https://docs.rs/savefile/0.5.0/savefile/)
-
-[https://crates.io/crates/savefile](https://crates.io/crates/savefile)
-
-[https://github.com/avl/savefile](https://github.com//Avl/savefile)
-
-I've been working on a serialization / deserialization crate for rust.
-
-It is made specifically for saving state in complex computer games. It uses a compact binary format, but makes old saves readable by newer versions of the program. This is achieved by a system where structs and enums are annotated with attributes describing the versioning, and using a proc\_macro to generate deserializers for all supported versions.
-
-The reason I'm not just using Serde is because when I started the project, Serde didn't seem to have much support for supporting old file formats when deserializing binary protocols. I haven't followed the story for this with Serde, it may well have improved to the point of doing what savefile does much better :-) .
-
-Even though the file format is fast and efficient, it does (by default) include a schema (at the top of the file, checked once at start of deserialization),  so any mismatch in on-disk format and in-memory format will be detected safely.
-
-There is an auto test suite, and miri does not detect any unsoundness. Of course there may still  be bugs.
-
-One version each of IndexMap, SmallVec, parking\_lot::Mutex, and a few other containers I happened to need are supported out of the box. The story here would probably need to improve to facilitate a broader user base.
-
-Anyway, posting it here since maybe someone might find it interesting, and/or useful!
+Edit: or if there's a better way of matching / doing a match statement with this kind of conditional assignment then I'd be happy to learn!

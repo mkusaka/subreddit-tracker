@@ -31,66 +31,79 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][X-post: Google has paid Android developers about half of what Apple has - r/apple](https://www.reddit.com/r/androiddev/comments/ez5ybu/xpost_google_has_paid_android_developers_about/)
-- url: https://www.reddit.com/r/apple/comments/eyp4jg/_/
+## [3][Whats the point of "Developer Support" when you can't tell me what i need to fix to deploy an update? Directing me to the Developer Program Policies does NOT help - especially when the app has been live with no major changes.](https://www.reddit.com/r/androiddev/comments/ezk7lu/whats_the_point_of_developer_support_when_you/)
+- url: https://i.redd.it/91106ggxe7f41.png
 ---
 
-## [4][Android Styling: Themes vs Styles](https://www.reddit.com/r/androiddev/comments/eyxwau/android_styling_themes_vs_styles/)
-- url: https://medium.com/androiddevelopers/android-styling-themes-vs-styles-ebe05f917578
+## [4][AndroidX security](https://www.reddit.com/r/androiddev/comments/ezs8ro/androidx_security/)
+- url: https://www.netguru.com/codestories/androidx-security
 ---
 
-## [5][Activity onCreate not called until screen is unlocked?](https://www.reddit.com/r/androiddev/comments/ez8n2n/activity_oncreate_not_called_until_screen_is/)
-- url: https://www.reddit.com/r/androiddev/comments/ez8n2n/activity_oncreate_not_called_until_screen_is/
----
-I have a Service running in my app that starts an activity whenever a condition is met, however if this condition is met when the screen is locked, the onCreate callback doesn't fire until I unlock the device.
-
-I have added the following to the activity in my manifest
-
-*android:showOnLockScreen*="true"  
-*android:turnScreenOn*="true"
-
-I've also tried adding the relevant flags to the Window of the activity in onCreate, however since onCreate never fires while the device is locked this doesn't make a difference.
-
-How can I get the activity's onCreate to fire when the screen is locked and in turn, turn the screen on and show over the lock screen of my phone?
-## [6][Developers have earned over $80 billion in total from the Google Play Store](https://www.reddit.com/r/androiddev/comments/eyrc0z/developers_have_earned_over_80_billion_in_total/)
-- url: https://www.reddit.com/r/androiddev/comments/eyrc0z/developers_have_earned_over_80_billion_in_total/
----
-&gt;Hiroshi Lockheimer, SVP at Google, has confirmed on Twitter that to date,  developers have earned over $80 billion in total from the Google Play  Store globally, excluding the Chinese market  
-&gt;  
-&gt;[https://www.xda-developers.com/developers-earned-over-80-billion-total-play-store/](https://www.xda-developers.com/developers-earned-over-80-billion-total-play-store/)
-
-&amp;#x200B;
-
-This means that Google made $34 billion in the same period. Considering that the earnings are proportional in these 12 years, Google has earned almost 2.9 billion dollars every year from developers' applications.
-
-This proves that they have the operating margin to have a sufficient number of people, with experience and good skills, to manage account bans. They have no excuse when they leave most of the ban management to bots and only intervene when a case becomes of public interest.
-## [7][Violation of Impersonation policy, looking for advice](https://www.reddit.com/r/androiddev/comments/ez7155/violation_of_impersonation_policy_looking_for/)
-- url: https://www.reddit.com/r/androiddev/comments/ez7155/violation_of_impersonation_policy_looking_for/
----
-Today I got my app removed because it contains a copyrighted word in the name. The email explains that I should rename it to something like [app name] for [copyrighted word] and that's what I'm going to do. However, I have some concerns about the package name. It looks like this: com.[my name].[copyrightedword][app name]. Is it safe to keep it the same or should I change it as well just in case and submit a new app?
-## [8][Do I need to use third party Recycler View library?](https://www.reddit.com/r/androiddev/comments/ez4ude/do_i_need_to_use_third_party_recycler_view_library/)
-- url: https://www.reddit.com/r/androiddev/comments/ez4ude/do_i_need_to_use_third_party_recycler_view_library/
----
-If I do what are your recommendations?
-
-
-Thanks in advance!
-## [9][Streaming data from a home cinema device using RXJava on Android](https://www.reddit.com/r/androiddev/comments/ez7r5h/streaming_data_from_a_home_cinema_device_using/)
-- url: https://levelup.gitconnected.com/streaming-data-from-a-home-cinema-device-using-rxjava-on-android-44de8f5a29a0
+## [5][Android Dark Theme](https://www.reddit.com/r/androiddev/comments/ezs5bk/android_dark_theme/)
+- url: https://www.netguru.com/codestories/android-dark-theme
 ---
 
-## [10][After a long time learning how to code (around 1 year) I finally finished my first game and you can be the first to try it.](https://www.reddit.com/r/androiddev/comments/ez9d7g/after_a_long_time_learning_how_to_code_around_1/)
-- url: https://v.redd.it/z060uv0ju3f41
+## [6][Motion Pattern (Gesture) Recognition AI: MiVRy](https://www.reddit.com/r/androiddev/comments/eznvek/motion_pattern_gesture_recognition_ai_mivry/)
+- url: https://v.redd.it/ar8wr1tst8f41
 ---
 
-## [11][Will Android 11 kill legacy apps?](https://www.reddit.com/r/androiddev/comments/eywipp/will_android_11_kill_legacy_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/eywipp/will_android_11_kill_legacy_apps/
----
-My concern is regarding the storage issue.
-As far as I know, even apps targeting older API level and using File based methods for storing data on internal storage will also not work.
-
-So, seeing the total number of applications that still use this technique to store data, does in mean that Android 11 will render many apps useless? Will there be any backlash from the users?
-## [12][Karumi Android 2020 development stack](https://www.reddit.com/r/androiddev/comments/eypany/karumi_android_2020_development_stack/)
-- url: https://blog.karumi.com/our-android-2020-development-stack/
+## [7][How can I fix this type of crashes which are apparently not exactly related to my code?](https://www.reddit.com/r/androiddev/comments/ezqd15/how_can_i_fix_this_type_of_crashes_which_are/)
+- url: https://i.redd.it/68nr826h3af41.png
 ---
 
+## [8][Live Data + Sealed Classes are an easy way to lose a reference to data. How can I go around this?](https://www.reddit.com/r/androiddev/comments/ezqbgb/live_data_sealed_classes_are_an_easy_way_to_lose/)
+- url: https://www.reddit.com/r/androiddev/comments/ezqbgb/live_data_sealed_classes_are_an_easy_way_to_lose/
+---
+It's becoming very popular to use sealed classes as a way to handle errors when observing LiveData. One common example would be to have a sealed class named Result with two Data Classes: Success and Failure.
+
+Success holds a reference to our data and Failure holds a reference to Exception.
+
+If we have a very simple data flow where we request some data *once* and wait for it to be read, this works very well. Our observable will either give us the Success state, after which we retrieve our value and draw UI - or it'll give us a Failure state, after which we handle the error gracefully and deem that we were unable to get the data for whatever reason.
+
+Now here are two relatively common cases from the top of my head when things can go wrong and I'm not sure how to handle them:
+
+1. We read some data and pass it to UI. User decides to refresh the view, but this time the network request fails for whatever reason. Now our LiveData&lt;Result&gt; turns from Success (which holds a reference to our previous data) to Failure (which only holds a reference to our Exception). We can decide to ignore the error in this case, since our UI is already drawn and we can tell the user that the refresh failed some other way (e.g. Toast) but we don't have a reference to our data any more.
+2. Our Repository read the data from both a local cache and a network request. We don't have a single point of truth implemented (we don't read all data from a database because we only cache data rarely) so the way it works is we read data from SharedPreferences and pass it to LiveData as a Result.Success. Observable is fired and UI is drawn. Now because the network request failed, just like last time, this Result.Success turns into Result.Failure again. The UI is already drawn, we don't really care that the request failed because we'd rather display outdated data than an error message. But again we lost the reference to our data because Result.Success was overwritten by Result.Failure.
+
+How should this be handled? I don't see how Sealed Classes are so popular and they seemed to have completely replaced callbacks when it's so easy to lose a reference to your data. Error states will simply overwrite any other states.
+## [9][Which course to pick in 2020 for learning android development?](https://www.reddit.com/r/androiddev/comments/ezqhe0/which_course_to_pick_in_2020_for_learning_android/)
+- url: https://www.reddit.com/r/androiddev/comments/ezqhe0/which_course_to_pick_in_2020_for_learning_android/
+---
+I am totally a beginner and I know some java basics. While searching yesterday, I find out that people suggest Udemy course: The Complete Android Oreo Developer Course - Build 23 Apps!   
+OR   
+Android basics on Udacity. On the other hand, people say these courses are outdated and contain some topics or functions which are legacy.  
+
+
+I am confused, I don't know what to do. I have to work on the university project and I still have 6 months. I will be spending 6 hrs each day for learning, but I really need to know that even if these courses are 4 years old, are they worth to start now in 2020? I hope I am not wasting my time on learning outdated courses since time is really short for the project.
+## [10][How to become a better android programmer?](https://www.reddit.com/r/androiddev/comments/ezb4y6/how_to_become_a_better_android_programmer/)
+- url: https://www.reddit.com/r/androiddev/comments/ezb4y6/how_to_become_a_better_android_programmer/
+---
+Hi all,
+
+I'm a junior android developer and I want to improve. I would like to know, which in your opinion are the best libraries,frameworks,design patterns, etc... to focus on.
+
+For example I've read about Dagger and Retrofit (I'm using Volley) and about MVVM, even RxAndroid seems cool. I want to start to implement unit tests and I'm also learning Kotlin. 
+
+There are a lot of things, but which are the things that are worth to learn for real?
+## [11][Easily create beautiful app screenshots for the Play Store](https://www.reddit.com/r/androiddev/comments/ezf8hz/easily_create_beautiful_app_screenshots_for_the/)
+- url: https://www.reddit.com/r/androiddev/comments/ezf8hz/easily_create_beautiful_app_screenshots_for_the/
+---
+Hey folks! Have you ever dreaded uploading screenshots when listing your app on the Play Store because they were annoying to make? I've had the same experience, so I decided to build a super easy-to-use tool to streamline making beautiful looking screenshots.
+
+It has support for the latest phones, like the Pixel 4 and Pixel 4 XL, Samsung Galaxy S10 and S10+, as well as smaller phone sizes like the Nexus 6P and 5X. You can customize a lot of aspects of the screenshot, such as font family, font size, background color, background images, etc. You can also save your screenshots directly in the tool, access them on any device, and edit them easily at any point in the future!
+
+It has a generous free tier and I'm continually adding new features based on users' feedback. Check it out at [https://screenshotcreator.com](https://screenshotcreator.com/), and let me know what you think!
+
+Here's a preview of some of the screenshots that you could make:
+
+https://preview.redd.it/b4x7r5lcs5f41.png?width=3726&amp;format=png&amp;auto=webp&amp;s=073d68d6750cc3b57fee8cd412665e8822f5d4f6
+## [12][Why is my Android virtual device so slow on Ubuntu 18?](https://www.reddit.com/r/androiddev/comments/ezrkpl/why_is_my_android_virtual_device_so_slow_on/)
+- url: https://www.reddit.com/r/androiddev/comments/ezrkpl/why_is_my_android_virtual_device_so_slow_on/
+---
+I've been developing an app for Android using the Pixel 3a Oreo virtual device. Every time I start up the device, my computer completely tanks, to the point of not being able to move my mouse for 30 seconds at a time. It only runs slightly better once set up, and practically freezes my computer for 5 minutes when shutting down.
+
+I followed [these](https://developer.android.com/studio/run/emulator-acceleration) [tutorials](https://help.ubuntu.com/community/KVM/Installation) on VM acceleration fully and they don't appear to have helped.
+
+This isn't the case for my friends on Windows, and I'm sure it isn't the case for most people on Ubuntu, so do you know how I can make the device run better?
+
+I will gladly provide any information needed in solving this problem.

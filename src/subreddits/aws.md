@@ -1,162 +1,86 @@
 # aws
-## [1][Converting existing API Gateway REST API into AWS Amplify + AppSync](https://www.reddit.com/r/aws/comments/ez7x6k/converting_existing_api_gateway_rest_api_into_aws/)
-- url: https://www.reddit.com/r/aws/comments/ez7x6k/converting_existing_api_gateway_rest_api_into_aws/
----
-I haven't been able to find any information about anyone doing this online: I'm trying to make a react-native app using AWS Amplify. My team has built a full REST and Websocket API through API Gateway, which works perfectly with our react web app, however there doesn't seem to be any tools to convert this into an API that could be used with a mobile application. Some issues I've encountered are that:
-
-1. AWS Amplify is really pushing for the usage of GraphQL through AppSync - and there are seemingly no tools for me to convert the many REST/Websocket endpoints I have into GraphQL
-2. Amplify doesn't have any documentation about how to integrate an existing API (whether it be GraphQL or REST), only the creation of a new one. Based on the configuration files that are generated when I create a new API it seems like I could possibly modify these to access my previous API Gateway
-
-
-I'm curious as to whether anyone has gone through this process before? Based on my research there are no alternative to using AWS Amplify for the creation of a mobile application on AWS (as it has absorbed AWS Mobile Hub)
-## [2][AWS Shield Feedback!](https://www.reddit.com/r/aws/comments/ez213c/aws_shield_feedback/)
-- url: https://www.reddit.com/r/aws/comments/ez213c/aws_shield_feedback/
----
-Hi all! Looking for some feedback/thoughts/experiences with AWS and DDoS attacks/mitigation! 
-
-Thx!
-## [3][Show your Tool: Parliament](https://www.reddit.com/r/aws/comments/ez6rfe/show_your_tool_parliament/)
-- url: https://cloudonaut.io/show-your-tool-parliament/
+## [1][AWS VPC for Software Engineers](https://www.reddit.com/r/aws/comments/ezru46/aws_vpc_for_software_engineers/)
+- url: https://blog.deleu.dev/aws-vpc-for-software-engineers/
 ---
 
-## [4][Opinion: ECS (Perhaps Fargate) vs Docker on EC2](https://www.reddit.com/r/aws/comments/ez19h4/opinion_ecs_perhaps_fargate_vs_docker_on_ec2/)
-- url: https://www.reddit.com/r/aws/comments/ez19h4/opinion_ecs_perhaps_fargate_vs_docker_on_ec2/
+## [2][I built a Google assistant integration to tell you about the latest AWS product announcements](https://www.reddit.com/r/aws/comments/ezl1qq/i_built_a_google_assistant_integration_to_tell/)
+- url: https://www.reddit.com/r/aws/comments/ezl1qq/i_built_a_google_assistant_integration_to_tell/
 ---
-We have grown rather organically as most startups, and it turns out we are running 90+% of our apps in containers on EC2, sometimes multiple containers per instance.  I have heard from an friend/co-worker that ECS was kind of hard to get into/PITA 3+ years ago, but wondering about thoughts now. The best way to form my own opinion is going to be build a cluster (or two), add all containers and deploy, with our restrictions on how we can load balance and from where (external only)  .  I'm not very interested in jumping into EKS at the moment, so please stick to ECS.  This is more a question about the ecosystem of ECS, possible blue/green, ease of use, security etc.  As a side question, does Fargate mitigate some peoples concerns about serverless docker?
-## [5][Is the "Billing &amp; Cost Management Dashboard" the ultimate place to see how much AWS costs me?](https://www.reddit.com/r/aws/comments/eyugiv/is_the_billing_cost_management_dashboard_the/)
-- url: https://www.reddit.com/r/aws/comments/eyugiv/is_the_billing_cost_management_dashboard_the/
+Simply say "OK Google, talk to cloud computing news"
+
+Should work on both iOS and Android.
+
+It will give you an itemized list with hyperlinks about the latest product enhancements from AWS.
+
+App details:
+https://assistant.google.com/services/a/uid/0000006c6dc51de5
+
+Source code:
+https://github.com/circa10a/google-home-aws-news
+## [3][Understanding Modern Cloud Architecture on AWS: A Concepts Series](https://www.reddit.com/r/aws/comments/ezcu39/understanding_modern_cloud_architecture_on_aws_a/)
+- url: https://start.jcolemorrison.com/understanding-modern-cloud-architecture-on-aws-a-concepts-series/
 ---
-Hi,
 
-&amp;#x200B;
-
-I am a paranoid person by nature, so I just want to be very sure that though the "Billing &amp; Cost Management Dashboard"  I can see how much AWS will charge me?
-
-&amp;#x200B;
-
-Let's imagine someone hacks me and starts a EC2 Instance. Will the second the EC2 instance start to cost money (after the Free tier thing), will the "Billing &amp; Cost Management Dashboard" show me that cost?
-
-So, if I keep an eye on the "Spend Summary" in the "Billing &amp; Cost Management Dashboard" will I know how much they will charge me?
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-I am talking about this part of AWS in the picture below.
-
-[https://i.imgur.com/MKYdF7q.png](https://i.imgur.com/MKYdF7q.png)
-
-&amp;#x200B;
-
-I also set up a budget and MFA with my phone
-
-Thank you
-## [6][How to setup RDS Aurora with aws-cli. Documentation and error messages are not aligned. At least I can't find the connection.](https://www.reddit.com/r/aws/comments/ez81ro/how_to_setup_rds_aurora_with_awscli_documentation/)
-- url: https://www.reddit.com/r/aws/comments/ez81ro/how_to_setup_rds_aurora_with_awscli_documentation/
+## [4][Event registration webpage](https://www.reddit.com/r/aws/comments/ezseqy/event_registration_webpage/)
+- url: https://www.reddit.com/r/aws/comments/ezseqy/event_registration_webpage/
 ---
-aws-cli version `aws-cli/2.0.0dev2 Python/3.7.3 Linux/4.15.0-47-generic botocore/2.0.0dev1`
-
-`aws rds create-db-instance \`
-
-`--db-name database \`
-
-`--db-instance-identifier databaseid \`
-
-`--db-instance-class db.t3.small \`
-
-`--db-subnet-group-name subnet-0f7471222887cd5c4 \`
-
-`--engine aurora-mysql \`
-
-`--engine-version 5.7.23 \`
-
-`--master-username username \`
-
-`--master-user-password 123password \`
-
-`--profile profile`
-
-The error I get is `The parameter AllocatedStorage must be provided and must not be null.`
-
-But in the doc the parameter is not applicable to Aurora: `Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.`
-
-How can I create Aurora Mysql DB with CLI?
-## [7][Sagemaker not using GPU even though it is deployed in GPU instance.](https://www.reddit.com/r/aws/comments/ez7ysj/sagemaker_not_using_gpu_even_though_it_is/)
-- url: https://www.reddit.com/r/aws/comments/ez7ysj/sagemaker_not_using_gpu_even_though_it_is/
+Hey all.  I’m just starting my path into the world of cloud computing.  I volunteer for a nonprofit and every year we have a big sports weekend and we utilize jotforms that dumps all the info into a spreadsheet then once they submit it redirects to PayPal to pay for said event.  I want to transform this and utilize a public facing site that dumps into an sql dB and then can redirect for payments.  Does anyone have any resource or anything where I can get started?
+## [5][For a Lambda function, is it possible to send a message to a connected client if they're connected via boto3?](https://www.reddit.com/r/aws/comments/ezrf3c/for_a_lambda_function_is_it_possible_to_send_a/)
+- url: https://www.reddit.com/r/aws/comments/ezrf3c/for_a_lambda_function_is_it_possible_to_send_a/
 ---
-I was able to successfully deploy my object detection model into Sagemaker and get predictions from it but it turns out the GPU is not being utilized when the prediction is to be done. (In short terms, the inference is not using GPU)
+Usually how I deal with sending data back to a connected client is I just use this function:
 
-I deployed my custom model using the code:
+    def _send_to_connection(connection_id, data, event, domain_name, stage):
+        gatewayapi = boto3.client(
+            "apigatewaymanagementapi", endpoint_url="https://" + domain_name + "/" + stage
+        )
+        return gatewayapi.post_to_connection(
+            ConnectionId=connection_id, Data=json.dumps(data).encode("utf-8")
+        )
 
-```
-predictor = model.deploy(initial_instance_count=1, instance_type='ml.p2.xlarge') 
-```
+This works great for websocket connections, but how am I supposed to do this with a client that connects via something like this?:
 
-Then, I get predictions by:
-
-```
-results = predictor.predict(imageData)
-```
-
-This process takes around ~15+ seconds and when I check the utilization graph in the endpoint dashboard I get peaks in GPU memory but not on the process usage.
-
-The question is also present here. 
-
-https://stackoverflow.com/questions/59421569/sagemaker-not-using-gpu-even-though-it-is-deployed-in-gpu-instance
-## [8][Security Windows Server](https://www.reddit.com/r/aws/comments/ez7tfx/security_windows_server/)
-- url: https://www.reddit.com/r/aws/comments/ez7tfx/security_windows_server/
+    session = boto3.Session(profile_name="default-manager")
+    lambda_client = session.client("lambda")
+    
+    context = json.dumps({"action": "handleMessage", "message": "Contents of the message"})
+    
+    response = lambda_client.invoke(
+        FunctionName="my-function-manager-dev-handleCreation",
+        InvocationType='RequestResponse',
+        LogType='Tail',
+        ClientContext=base64.b64encode(context.encode()).decode("utf8"),
+        Payload=json.dumps({"statement": "my nose will now grow"}),
+    )
+## [6][Is anyone else having problems with the new redshift console UI?](https://www.reddit.com/r/aws/comments/ezrbg2/is_anyone_else_having_problems_with_the_new/)
+- url: https://www.reddit.com/r/aws/comments/ezrbg2/is_anyone_else_having_problems_with_the_new/
 ---
-Hello,
-
-  
-I'm newbie on AWS and I would like create a new server windows with SQL &amp; IIS.
-
-How secure access to this server ? Create a VM with firewall ? Or a firewall is included on AWS ?
-
-Thanks a lot for your help .
-## [9][CloudEndure failed machine conversion](https://www.reddit.com/r/aws/comments/ez6krg/cloudendure_failed_machine_conversion/)
-- url: https://www.reddit.com/r/aws/comments/ez6krg/cloudendure_failed_machine_conversion/
+The new Redshift console UI keeps freezing and locking up for me - in different browsers and on different machines. Is anyone else finding this?
+## [7][Building an Alexa skill that reads the output of a bash script/runs a bash script](https://www.reddit.com/r/aws/comments/ezrb5e/building_an_alexa_skill_that_reads_the_output_of/)
+- url: https://www.reddit.com/r/aws/comments/ezrb5e/building_an_alexa_skill_that_reads_the_output_of/
 ---
-Hi !
+I'm new to AWS and I'm not sure how to integrate a simple bash script to read the temperature of my server into a voice feedback from Alexa.  
 
-At work today, we tried to migrate a VM from VmWare to AWS. It is a Windows 2016.
 
-Agent is installed, Data replication seems ok, everything seems fine. 
+A friend of mine had done this before, I recall him using Ngrok to set a web server that Alexa could use to run the script and pipe the output? I'd like to do that too, or simply just to run a script based on on Alexa command.  
 
-Logs do not bring us much information :
 
- 
-
-`04/02/2020 à 17:12:25 Job started`
-
-`04/02/2020 à 17:12:25 Started waiting for latest snapshot`
-
-`04/02/2020 à 17:17:27 The latest state of the machine 4209275b-9c0f-xxxx-xxxx-804389039078 could not have been fetched. Creating replica that is up-to-date to 2020-02-04 16:10:26.178717UTC instead.`
-
-`04/02/2020 à 17:17:27 Finished waiting for latest snapshot`
-
-`04/02/2020 à 17:17:35 Started machine conversions`
-
-`04/02/2020 à 17:32:37 Failed machine conversions`
-
-`04/02/2020 à 17:32:38 Failed creating a replica for volume vol-4209275b-9c0f-xxxx-xxxx-804389039078:e:0: No snapshot for volume cloning, probably a failed conversion.`
-
-`04/02/2020 à 17:32:38 Failed creating a replica for volume vol-4209275b-9c0f-xxxx-xxxx-804389039078:c:0: No snapshot for volume cloning, probably a failed conversion.`
-
-`04/02/2020 à 17:32:38 Failed creating a replica for volume vol-4209275b-9c0f-xxxx-xxxx-804389039078:f:0: No snapshot for volume cloning, probably a failed conversion.`
-
-`04/02/2020 à 17:32:38 Job finished`
-
-For information :
-
-We have to shut down source for network reason when replication process have begin. 
-
-We do not understand what is going on because everything should, thechnicaly, work well. 
-
-Do you guys have any suggestion ? Already tried to reinstall from 0 the agent and create a new porject. Data replication seems fine, only the snapshots seems causing trouble.
-## [10][Trying to find the status of my table in dynamoDB using Python.](https://www.reddit.com/r/aws/comments/ez53ow/trying_to_find_the_status_of_my_table_in_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/ez53ow/trying_to_find_the_status_of_my_table_in_dynamodb/
+Are there any working examples or guides to setting up AWS Alexa Skills to start this? I didn't have much luck researching on my own.
+## [8][Querying AWS Service Logs Using Amazon Athena](https://www.reddit.com/r/aws/comments/ezr759/querying_aws_service_logs_using_amazon_athena/)
+- url: https://www.ibexlabs.com/querying-aws-service-logs-using-amazon-athena/
 ---
-Lets say I add a new item to my table: I want my python script to recognize that change. Is there any way I can do that? Thank you!
+
+## [9][Should I be using signed urls for image hosting? [aws/S3]](https://www.reddit.com/r/aws/comments/ezqrs4/should_i_be_using_signed_urls_for_image_hosting/)
+- url: /r/node/comments/ezqpiw/should_i_be_using_signed_urls_for_image_hosting/
+---
+
+## [10][Update PHP 7.3 to latest](https://www.reddit.com/r/aws/comments/ezqd0y/update_php_73_to_latest/)
+- url: https://www.reddit.com/r/aws/comments/ezqd0y/update_php_73_to_latest/
+---
+i have an a1 instance and installed php7.3 via yum.
+
+i can see that the latest version is 7.3.14 but when i tried to `yum update php` it doesnt update to the latest one so its stuck to 7.3.11
+
+I know there's a remi repo but that repo doesnt have ARM packages.
+
+so is there a way to update php to latest?

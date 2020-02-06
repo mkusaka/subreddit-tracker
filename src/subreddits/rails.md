@@ -1,45 +1,169 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/ep2dw9/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/ep2dw9/personal_projects_show_off_your_own_project_andor/
+## [1][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/ezrfed/gimme_gems_thursdays_found_an_awesome_new_gem/)
+- url: https://www.reddit.com/r/rails/comments/ezrfed/gimme_gems_thursdays_found_an_awesome_new_gem/
 ---
-In this thread you can showcase your personal pet project to other redditors.
+Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
 
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/evmx0w/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/evmx0w/personal_projects_show_off_your_own_project_andor/
+Please include a **description** and a **link** to the gem's homepage in your comment.
+## [2][Do you add IDs to association tables?](https://www.reddit.com/r/rails/comments/ezo6rc/do_you_add_ids_to_association_tables/)
+- url: https://www.reddit.com/r/rails/comments/ezo6rc/do_you_add_ids_to_association_tables/
 ---
-In this thread you can showcase your personal pet project to other redditors.
+The way I was taught database normalization, association tables do not need a primary key ID column. Their job is to point to the associated records, and may contain additional data related to the association.
 
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+In my case, a user
 
-A suggested format to get you started:
+    has_many :memberships
+    has_many :organizations, through: :memberships
 
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
+and 
 
- 
+    create_table "memberships", id: false, force: :cascade do |t|
+      t.bigint "user_id", null: false
+      t.bigint "organization_id", null: false
+      t.jsonb "profile"
 
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Persisting URL Parameters when Form Validation Errors are encountered](https://www.reddit.com/r/rails/comments/ez86ra/persisting_url_parameters_when_form_validation/)
+In Rails however, this understandably confuses AR
+
+    o = Organization.first
+    u = User.first
+    m = u.memberships.where(organization: o).first
+
+    m.profile["favorite_color"] = "green"
+    m.save
+
+    # =&gt; ActiveRecord::UnknownPrimaryKey: Unknown primary key for table memberships in model Membership.
+    # Cannot validate uniqueness for persisted record without primary key.
+
+Of course I can still do
+
+    updated_profile = m.profile.merge({"favorite_color" =&gt; "green"})
+    Memberships.where(organization: o, user: u).update_attributes(profile: updated_profile)
+
+but it feels considerably less Rails-y. Although it feels cleaner given the schema and its intentions.
+
+So, what do you do in your apps and *why*? Any downside in adding primary keys? 
+
+I started without them, because I wanted a clean schema, and now am considering adding primary keys to make life easier but am a bit torn.
+
+Edit: clarity
+## [3][Implementing STI. Routing forms is going absolutely crazy. Way out of my depth. Send help.](https://www.reddit.com/r/rails/comments/ezjy6h/implementing_sti_routing_forms_is_going/)
+- url: https://www.reddit.com/r/rails/comments/ezjy6h/implementing_sti_routing_forms_is_going/
+---
+##Edit
+For anyone with a similarly dumb problem in the future, /u/colonel_weasel pointed out to check my routes and make 100% sure I was referencing them correctly. I had site_item_tmp_group_path (singular) instead of site_item_tmp_groups_path (plural). "The Magic of using Raaaaaaaaaaiiiiils"
+
+___
+
+##Original Post
+
+Hey all,
+
+As the title says, I'm way out of my depth here and hoping someone can point out the... 3 or 4 or 20 things I'm doing wrong.
+
+So I'm messing around with Single Table Inheritance and.. actually it's not going horribly! Yay! Right now I've got a few models, some of which inherit from others:
+
+    class SiteItem &lt; ApplicationRecord
+    belongs_to :site
+    
+    scope :tmp_groups, -&gt; { where(type: "TmpGroup") }
+    scope :tmp_articles, -&gt; { where(type: "TmpArticle") }
+    scope :tmp_galleries, -&gt; { where(type: "TmpGallery") }
+    scope :tmp_cards, -&gt; { where(type: "TmpCard") }
+
+As you can see, all items belong_to a single Site object, which acts as the owner of all the elements of my future website. The idea is to dynamically add, edit, and remove pages as I feel like it without having to re-code, re-commit, and re-deploy.
+
+Two subclasses inherit from the **SiteItem** model: **Group** and **Page**, and several templates inherit from Page:
+
+* tmp_gallery
+* tmp_article
+* tmp_card
+* tmp_group
+
+Most of these are just slightly different configurations of similar data. For instance, **TmpArticle** and **TmpCard** are nearly identical in the information they store, but are obviously displayed quite differently. TmpGallery is for displaying image galleries with little more than just that, and TmpGroup is used to group assortments of pages together.
+
+Here is what my routes.rb looks like for this stuff btw...
+
+    #SiteItems in Routes.rb
+	resources :site_items do
+		resources :tmp_groups, controller: :site_items, type: "TmpGroup"
+		resources :tmp_articles, controller: :site_items, type: "TmpArticle"
+		resources :tmp_galleries, controller: :site_items, type: "TmpGallery"
+		resources :tmp_cards, controller: :site_items, type: "TmpCard"
+	end
+
+I have SUCCESSFULLY (yay) set things up so that site_items_controller#show and site_items_controller#index both work as expected (I added some test objects to my db in the console). However, creating a new item is giving me a massive headache! Mostly I'm getting a bunch of routing errors that I'm not experienced to figure out yet. They're caused by my trying to create a form for adding any new SiteItems. 
+
+For instance, here's is my form for creating a new TmpGroup:
+
+    &lt;%= form_for(:tmp_group, url: new_site_item_tmp_group_path) do |f| %&gt;
+    ...
+    &lt;% end %&gt;
+
+This form renders as expected, but filling it out gives me the following:
+
+#No route matches [POST] "/site_items/2/tmp_groups/new"
+
+So my lizard brain just thinks.. Ok, I need to post to **site_item_tmp_group_path**, right? So I'll just remove the **new_** from my form url. But now when I go to load the create new group form page, rails throws a new error:
+
+#ActionController::UrlGenerationError in SiteItems#new
+##No route matches {:action=&gt;"show", :controller=&gt;"site_items", :site_item_id=&gt;"2", :type=&gt;"TmpGroup"}, missing required keys: [:id]
+
+Anyway, if you made it this far you can probably tell I don't know what I'm doing. The good news is I badly want to, and would love some help getting there! Thanks for even reading!
+## [4][Affordable transactional email sending options with high deliverability for a heroku hosted app?](https://www.reddit.com/r/rails/comments/eze069/affordable_transactional_email_sending_options/)
+- url: https://www.reddit.com/r/rails/comments/eze069/affordable_transactional_email_sending_options/
+---
+Asking this because just had to bump my Sendgrid plan to include a dedicated IP. Without it, deliverability was not acceptable -- lots of blacklisted IPs a lot of the time. 
+
+The dedicated IP plan is $90/month and that's a lot for a tiny operation running a beta MVP heavily relying on email messaging. 
+
+Any suggestions for a more affordable but still reliable transactional email provider offering a dedicated IP and ideally offering inbound parsing webhooks (but also without that feature as it's a distant milestone)?
+
+Ease of implementation also matters. I looked at Amazon SES but as a single dev I just can't prioritize going through that maze. If you have a good set of instructions for that, it would be helpful, too.
+
+Apart from the host name, please include any other transactional email-related tips. 
+
+Thank you!
+
+Edit: based on feedback here, I'll go with Postmark at the end of the month. Thank you for your help.
+## [5][How to make a relationship with Spree::User?](https://www.reddit.com/r/rails/comments/ezh6gv/how_to_make_a_relationship_with_spreeuser/)
+- url: https://www.reddit.com/r/rails/comments/ezh6gv/how_to_make_a_relationship_with_spreeuser/
+---
+  am trying to build a friends feature on top of the Solidus framework but am having trouble establishing a many-many relationship with Spree::Users. I tried making a user\_decorator.rb file (in models/spree) but keep encountering the error: "expected user\_decorator.rb to define Spree::UserDecorator, but didn't". 
+
+&amp;#x200B;
+
+https://preview.redd.it/on1teif2f6f41.png?width=609&amp;format=png&amp;auto=webp&amp;s=2d612000b3f2e3190a9b887329b2d127fe52cf47
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+https://preview.redd.it/qasjwd64f6f41.png?width=739&amp;format=png&amp;auto=webp&amp;s=0dabff7e3c0852d1be94b4b4fa098ad75f9ca517
+
+ 
+
+Error:
+
+[https://i.stack.imgur.com/QOpEU.png](https://i.stack.imgur.com/QOpEU.png)
+## [6][undefined method `friends_id' for #&lt;Spree::User:0x00007f46c89d1bb8&gt;](https://www.reddit.com/r/rails/comments/ezcg1h/undefined_method_friends_id_for/)
+- url: https://www.reddit.com/r/rails/comments/ezcg1h/undefined_method_friends_id_for/
+---
+I am trying to implement a friends feature on top of the Solidus framework, but the ".friends" is not working on rails server, however it is working on rails console. Does anyone know how to fix this?
+
+&amp;#x200B;
+
+[spree\_users\_controller.rb code](https://preview.redd.it/1cxghj7gx4f41.png?width=706&amp;format=png&amp;auto=webp&amp;s=9a34af2f9fb9b1a02ce891a78eeedd61d8016b99)
+
+&amp;#x200B;
+
+[friendship.rb code](https://preview.redd.it/70xm4k4jx4f41.png?width=540&amp;format=png&amp;auto=webp&amp;s=5ce85ec8ec8903f5cfb3c1cd28f2950b2062c18c)
+
+&amp;#x200B;
+
+[spree\_user.rb code](https://preview.redd.it/05yl5xlox4f41.png?width=414&amp;format=png&amp;auto=webp&amp;s=047d3a3a1f7503fb06a4c7aafd7790ea3a7f5d72)
+## [7][Persisting URL Parameters when Form Validation Errors are encountered](https://www.reddit.com/r/rails/comments/ez86ra/persisting_url_parameters_when_form_validation/)
 - url: https://www.reddit.com/r/rails/comments/ez86ra/persisting_url_parameters_when_form_validation/
 ---
 Hello, 
@@ -156,7 +280,7 @@ Routes:
 ```
 
 Thanks!
-## [4][My first rails app deployed! (So excited, lol)](https://www.reddit.com/r/rails/comments/eyyffw/my_first_rails_app_deployed_so_excited_lol/)
+## [8][My first rails app deployed! (So excited, lol)](https://www.reddit.com/r/rails/comments/eyyffw/my_first_rails_app_deployed_so_excited_lol/)
 - url: https://www.reddit.com/r/rails/comments/eyyffw/my_first_rails_app_deployed_so_excited_lol/
 ---
 Omg i am so excited (dont hate me for this one)
@@ -193,7 +317,25 @@ Github https://github.com/sljmn/vormcheck
 - How to consume an api and display it in the rails app
 
 If you know a source, it would be appriciated
-## [5][To move 500 terabytes from S3 to Glacier, is Multipart Upload or ZIP better?](https://www.reddit.com/r/rails/comments/ez1czb/to_move_500_terabytes_from_s3_to_glacier_is/)
+## [9][Early access program for Ruby on Rails + DevOps training](https://www.reddit.com/r/rails/comments/ezcpzr/early_access_program_for_ruby_on_rails_devops/)
+- url: https://www.reddit.com/r/rails/comments/ezcpzr/early_access_program_for_ruby_on_rails_devops/
+---
+Hi,
+
+we are a very early stage startup working towards making learning more feasible and integrated for working professionals who wants to keep up with the changing pace of technology and stand out among their peers. 
+
+We believe that learning should be based on **practical relevance** at work, **emerging skill trends** in your field, **access to all the online resources** that are out there and much more. 
+
+While we are working on a digital product that offers such a learning experience, we want to provide the same experience offline, personally. This is because we want to build a very user-centric product with the best user experience. To build such a digital product, we need understand the users’ needs and pain points a lot better and we want to gain that experience through you. We are offering this training for free so that you gain the skills you require and give us feedback during the process for us to improve.
+
+With that said, we want to offer personalised training for you to advance your career in Ruby on Rails along with DevOps expertise. 
+
+We will be in direct communication with you and provide you the resources that you will need to learn the skills you need to excel in these fields! You will have an expert available for your questions and a community of fellow learners to discuss on the topics. You will cover topics like Meta-programming, Redis, Money-patching, AWS, Terraform, CI/CD, Nginx, Kibana, SSL certificate management and much more.
+
+Take a look at the offering and join us if you think you would benefit from these. 
+
+[https://www.eduup.de/en/program?utm\_campaign=referral-reddit-dev&amp;utm\_source=referral&amp;utm\_content=dev&amp;utm\_medium=reddit](https://www.eduup.de/en/program?utm_campaign=referral-reddit-dev&amp;utm_source=referral&amp;utm_content=dev&amp;utm_medium=reddit)
+## [10][To move 500 terabytes from S3 to Glacier, is Multipart Upload or ZIP better?](https://www.reddit.com/r/rails/comments/ez1czb/to_move_500_terabytes_from_s3_to_glacier_is/)
 - url: https://www.reddit.com/r/rails/comments/ez1czb/to_move_500_terabytes_from_s3_to_glacier_is/
 ---
 Hey Rubyists and RailsHeads,
@@ -205,7 +347,7 @@ So, is it smarter to take all of the user's photos and video's and zip them befo
 Or is it better to use the multipart upload method in the aws ruby sdk v3, and dump them all into the a single archive? Seems... Just kind of complicated and annoying with the checksum and those kinds of uploads are unfamiliar to me.
 
 The potential savings for grouping the S3 files in either of the above ways is... Like $300 for moving the files initially due to fewer requests, but I'm not sure if it will pay for itself in developer time or happiness lol. Also will make putting the files back on S3 a lot harder.
-## [6][Rails Deployment Tutorial updated for Ubuntu 18.04 LTS / Debian 10.2](https://www.reddit.com/r/rails/comments/eyxc25/rails_deployment_tutorial_updated_for_ubuntu_1804/)
+## [11][Rails Deployment Tutorial updated for Ubuntu 18.04 LTS / Debian 10.2](https://www.reddit.com/r/rails/comments/eyxc25/rails_deployment_tutorial_updated_for_ubuntu_1804/)
 - url: https://www.reddit.com/r/rails/comments/eyxc25/rails_deployment_tutorial_updated_for_ubuntu_1804/
 ---
 I just updated the Rails Deployment Tutorial for *Ubuntu 18.04 LTS* and *Debian 10.2:*
@@ -215,115 +357,3 @@ I just updated the Rails Deployment Tutorial for *Ubuntu 18.04 LTS* and *Debian 
 Have fun deploying your apps :)
 
 If you encounter any issues using these steps, please let me know...
-## [7][Rails has_many through association: query or scope condition on join table?](https://www.reddit.com/r/rails/comments/eyywgz/rails_has_many_through_association_query_or_scope/)
-- url: https://www.reddit.com/r/rails/comments/eyywgz/rails_has_many_through_association_query_or_scope/
----
-I have three tables using a has\_many through set up like: User--&gt;Membership&lt;--Group, so users can be in many groups, and groups can have many users.
-
-In the membership join table I've added a "type" column that will hold static membership types like "owner", "admin", "standard" for example. What I would like to do is set up associations or scopes so that I could get all group.standard\_members and it would return all users in the group that have membership type == "standard". Then I would also like to be able to use group.owner to return the one user in the group with membership type == "owner, as well as a number of related queries from the user model side of things.
-
-Basically it's set up just like the example in the rails guides for a has\_many through association if that makes is easier to provide an example for: [https://guides.rubyonrails.org/association\_basics.html#the-has-many-through-association](https://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
-
-Note the "appointment\_date" field in the join table "appointments", that is very similar to my "type" field in my "memberships" join table.
-
-So, if using the rails guide example how could I set up a scope or model association so that I could return all patients with an appointment\_date that is today(where appointment\_date: [Time.new](https://Time.new) kind of thing) using active record like \`@physician.todays\_patients\`, also I would like to be able to do the reverse, where I could get a list of all physicians a patient is seeing today using something like \`@patient.todays\_physicians\`.
-
-I'm not concerned about the query conditions so much, as I'm really trying to figure out how to setup scopes or associations that query related records(in a has\_many through association) but make the association by setting conditions on the join tables data.
-
-Does that make sense? Any help or just a push in the right direction would be much appreciated as my searches aren't turning up much relevant info.
-
-Here's my three models, and my latest feeble attempt at one of the associations I was trying to make work \`@group.owner\` and \`@user.owned\_groups\` :
-
-    class User &lt; ApplicationRecord
-      # Include default devise modules. Others available are:
-      # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-      devise :database_authenticatable, :registerable,
-             :recoverable, :rememberable, :validatable
-    
-      # user can be a member of many groups through memberships
-      has_many :memberships
-      has_many :groups, through: :memberships
-      
-      # User can have many owned groups
-      # has_many :owned_groups, class_name: "Group", -&gt; { joins(:memberships).where( membership: { type: "owner" } ) }
-    
-    ...
-    end
-    
-    ###############
-    
-    class Membership &lt; ApplicationRecord
-      belongs_to :user, inverse_of: :memberships
-      belongs_to :group, inverse_of: :memberships
-    end
-    
-    ###############
-    
-    class Group &lt; ApplicationRecord
-      
-      # Group can have many members, through memberships for when extra membership data is needed
-      has_many :memberships 
-      has_many :members, through: :memberships, source: :user # instead of group.users use group.members
-        
-      # Group will only have ONE owner
-      # belongs_to :owner, -&gt; { joins(:memberships).where( {memberships: {type: "owner} } ) }
-      
-    ...
-    end
-## [8][How to get the batch iteration number with find_each?](https://www.reddit.com/r/rails/comments/eyusso/how_to_get_the_batch_iteration_number_with_find/)
-- url: https://www.reddit.com/r/rails/comments/eyusso/how_to_get_the_batch_iteration_number_with_find/
----
-I'm using [find\_each](https://api.rubyonrails.org/classes/ActiveRecord/Batches.html#method-i-find_each) to do a batch request. I want to sleep for some time for each batch iteration (the size of the batch is 500 so every 500 record iterations). Any idea how to get the current batch iteration number?
-
-`Author.find_each(batch_size: 500).with_index do |author, index|`  
- `# sleep for each batch iteration`  
- `end`
-## [9][Installing Apartment gem on an existing app - migrating existing data to a new schema](https://www.reddit.com/r/rails/comments/ez02aa/installing_apartment_gem_on_an_existing_app/)
-- url: https://www.reddit.com/r/rails/comments/ez02aa/installing_apartment_gem_on_an_existing_app/
----
-Hello!
-I'm a group guitar teacher and I created this app that (in short) allows me to track peoples sessions (if they've paid up front, how many sessions they have left)
-
-I've been using it for a while, and I showed it to a friend who asked if they could try it out for their classes.
-
-When I originally made it, I made it only for me without any intention of sharing it, and now allowing people to have their own students and sessions seems like a great little project.
-
-I've never used Apartment before, and I've been messing around with it for a week, and I feel like I'm close, I just can't quite get what I want to work. 
-
-**Problem:** My existing data. There are about 6 tables or so with quite a bit of data and they are all on the 'public' schema. I want to create a new schema 'seshna' for me (seshna.myapp.com), make all of those tables a part of that schema, except for the 'users' table, which I've excluded so that it can be accessed from all apartments.
-
-How do I move that existing data from those tables to a new schema? I'll keep trying different approaches, if I figure it out I'll share it, but some help would really be appreciated!
-## [10][Update on Building an Accounting (Suggestions)](https://www.reddit.com/r/rails/comments/ez1jhz/update_on_building_an_accounting_suggestions/)
-- url: https://www.reddit.com/r/rails/comments/ez1jhz/update_on_building_an_accounting_suggestions/
----
-Hi
-
-I recently posted here with regards to a video series in developing a Rails based application from scratch (an accounting system). It's not a tutorial type series as it is more of a reality show where I attempt to capture everything from mistakes to looking up stuff on the web in case I get stuck so it's really quite boring unless you want to see how developers suffer when running into a problem (there's even a video session where I play Eve Online while trying to work out some css lol). But in any case, I already got as far as creating a Trial Balance report and looking into doing another report, probably General Ledger. Looking for comments and recommendations for what else I can put in. From the top of my head, thinking of doing things in the domain of:
-
-* Multi-company segregation of data
-* Materalized Views
-* ActionCable
-* ActiveStorage (where applicable in accouting)
-
-For those interested:
-
-[Video Playlist] (https://www.youtube.com/playlist?list=PL2-7U6BzddIZ35bJdCFx6RZ-QR8n_JD82)
-
-[Source Code] (https://github.com/ralampay/bookkeeper)
-
-Regards and happy coding!
-## [11][Debugging story: Mysteriously truncated timestamps with ActiveRecord](https://www.reddit.com/r/rails/comments/eypj02/debugging_story_mysteriously_truncated_timestamps/)
-- url: https://www.reddit.com/r/rails/comments/eypj02/debugging_story_mysteriously_truncated_timestamps/
----
-Saving [\#Ruby](https://www.linkedin.com/feed/hashtag/?highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6628670995878289408&amp;keywords=%23Ruby&amp;originTrackingId=FZCWQu%2BAcSd9sZ%2F%2BpT1cog%3D%3D) objects in [\#PostgreSQL](https://www.linkedin.com/feed/hashtag/?highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6628670995878289408&amp;keywords=%23PostgreSQL&amp;originTrackingId=FZCWQu%2BAcSd9sZ%2F%2BpT1cog%3D%3D)  is not a rocket science, and there is little that could surprise me. Have you ever thought that? Well, we had too until we tried to debug a flaky test.     
-
-
-Read the whole story: [https://www.toptal.com/ruby-on-rails/timestamp-truncation-rails-activerecord-tale](https://www.toptal.com/ruby-on-rails/timestamp-truncation-rails-activerecord-tale) to learn why saving timestamps may cause headache :)
-## [12][How would you go about using insert_all while ensuring params are white-listed?](https://www.reddit.com/r/rails/comments/eyrrxs/how_would_you_go_about_using_insert_all_while/)
-- url: https://www.reddit.com/r/rails/comments/eyrrxs/how_would_you_go_about_using_insert_all_while/
----
-I want to save multiple new objects in one call. I recently came across the class method [insert\_all](https://apidock.com/rails/v6.0.0/ActiveRecord/Persistence/ClassMethods/insert_all) that seems to accomplishes this:
-
-    result = Article.insert_all([{...}, {...}])
-
-I was wondering if there was a way to white-list the possible params in the same way you'd do a single save?

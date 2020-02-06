@@ -85,133 +85,100 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][After almost a year of learning React Native, here is my first full project, Ledger - a workout logging and analytics app](https://www.reddit.com/r/reactjs/comments/eyr4kf/after_almost_a_year_of_learning_react_native_here/)
-- url: https://v.redd.it/63y5wi887xe41
+## [3][Iowa Caucus React Native App Bundle](https://www.reddit.com/r/reactjs/comments/ezm1r9/iowa_caucus_react_native_app_bundle/)
+- url: https://gist.github.com/jimthedev/3f946b3729afa6d1081a1483c3bc0b18
 ---
 
-## [4][Klondike Solitaire with React and React DnD](https://www.reddit.com/r/reactjs/comments/ez6krv/klondike_solitaire_with_react_and_react_dnd/)
-- url: https://www.reddit.com/r/reactjs/comments/ez6krv/klondike_solitaire_with_react_and_react_dnd/
+## [4][How easy is it to convert React app to PWA?](https://www.reddit.com/r/reactjs/comments/ezbq6c/how_easy_is_it_to_convert_react_app_to_pwa/)
+- url: https://www.reddit.com/r/reactjs/comments/ezbq6c/how_easy_is_it_to_convert_react_app_to_pwa/
 ---
-I decided to see if i could make a working klondike with React and React DnD. I hadn't tried DnD in anything before this and just started hacking away :)
+I'm gonna be completely honest with you - I'm asking because i'm terrible with finishing projects and straight out lazy.
 
-I used maybe  \~12-14 hours in total during 1 month period. Some of the decisions made are not the best for sure but i am overall happy with it.
+I feel like I have a strong motivation to do current project and would want to make it PWA, but I also know myself that if the basics are done and I start to struggle/get annoyed with \*NEW\_THING\_THAT\_I\_WANT\_TO\_TRY\* i drop the project.
 
-Any comments would be apprecited there's some things mentiond that I need to improve in the repo.
+I suppose solution would be completing the project AND THEN making it into PWA, because "hey, it's almost finished, might as well go the extra mile, push myself and just do it".
 
-[https://github.com/mikkovor/solitaire](https://github.com/mikkovor/solitaire)
-
-&amp;#x200B;
-
-Cheers
-## [5][React / Cypress -- Amazing; slow, but cool!](https://www.reddit.com/r/reactjs/comments/ez96md/react_cypress_amazing_slow_but_cool/)
-- url: https://www.reddit.com/r/reactjs/comments/ez96md/react_cypress_amazing_slow_but_cool/
+So how easy/hard/time consumig would that be? Does that require a lot of code refactoring?
+## [5][Wondering about a good structure of Redux state in a workout tracking app](https://www.reddit.com/r/reactjs/comments/ezqked/wondering_about_a_good_structure_of_redux_state/)
+- url: https://www.reddit.com/r/reactjs/comments/ezqked/wondering_about_a_good_structure_of_redux_state/
 ---
-I've been using Jest/Jasmine for a long while; frustrating but front-end-testing is just hard.  Cypress DRAMATICALLY improves testing and a PLEASURE to use.  It is a bit different...very "browser" oriented and 'speed' feels like a user is really typing/waiting, but the philosophy is cool. Why? Because they know what and how you need to test so async basically goes-away (absorbed by their api/wait/try) and debugging is a breeze.  If anyone needs any tips/tricks, contact me!  Also,  I know it wont test non-DOM (React Native) but I'm hopeful if 90% of my project is pure-react, the benefit carries forward. Love to hear thoughts on that.
-## [6][Why are my components not rendering?](https://www.reddit.com/r/reactjs/comments/ez6pa1/why_are_my_components_not_rendering/)
-- url: https://www.reddit.com/r/reactjs/comments/ez6pa1/why_are_my_components_not_rendering/
+Hi!
+
+I am currently starting to build a TypeScript React Redux app designed to track workouts. User should be able to choose a day (from a menu) and see workout routine for this day. Workout routine consists of multiple exercises. Exercise consists of name (user can input his own name), number of repetitions and weight used. Everything will be saved and synced with localStorage.
+
+I am wondering about a good structure of Redux state in this app. I think it should look something like:
+
+State:
+
+    day: number // currently chosen day
+    
+    Exercise: { // collection of exercises 
+        id: number;
+        name: string;
+    }
+    
+    ExerciseResult: {
+        exerciseId: number;
+        repCount: number;
+        repWeight: number;
+    }
+    
+    WorkoutRoutine: {
+        id: number;
+        day: number;
+        results: ExerciseResult[]; // array of ExerciseResult
+    }
+
+My idea is that user switches the day (state variable *day* changes), components get reloaded and fetch new WorkoutRoutine with correct *day* variable and then correct data is shown.
+
+Is this a good design? Any ideas or criticisms? And in general, are there any resources which would guide me on how to design state, or is it just something that comes with experience?
+
+Thanks!
+## [6][How do you use the animation library from microsoft UI Fabric](https://www.reddit.com/r/reactjs/comments/ezk2kf/how_do_you_use_the_animation_library_from/)
+- url: https://www.reddit.com/r/reactjs/comments/ezk2kf/how_do_you_use_the_animation_library_from/
 ---
-I am creating a custom newsfeed which retrieves articles from RSS feeds and stores them in different collections based on category in MongoDB.
+I've got a little CRUD app and I've decided to use microsoft UI Fabric instead of bootstrap. The layouts are done, react components and everything is working fine, but, because of the data fetching from the server I want to animate some components when they're loaded.
 
-I am able to display only one category in my front end. The one which I am defining last is the one that gets rendered. The rest don't really show. I want it to display in three flex containers that have scroll but the scroll isn't working either. It's only showing a set number of articles and I need to zoom out. (This is probably a frontend/css question that I will ask)
+'ms-ui-fabric' has a [page](https://developer.microsoft.com/en-us/fabric#/styles/web/motion) dedicated to the animation/motion section but it's just the overview, no code samples. I've been looking online and happen to find a fabric UI package "[@fabricui/fluent-theme](https://github.com/OfficeDev/office-ui-fabric-react/tree/master/packages/fluent-theme)" that allows you to animate, but still the documentation doesn't tell you how.
 
-But yeah I'd like to know why my remaining components aren't rendering.
+Has anyone used fabric UI or knows how to animate components using fabricUI?
+## [7][Can you rate my work ?](https://www.reddit.com/r/reactjs/comments/ezlp5a/can_you_rate_my_work/)
+- url: https://www.reddit.com/r/reactjs/comments/ezlp5a/can_you_rate_my_work/
+---
+I am new to frontend, I remade instagram homepage, with react and redux, what do you think ? 
 
-[https://codesandbox.io/embed/priceless-frog-2iy48?fontsize=14&amp;hidenavigation=1&amp;theme=dark](https://codesandbox.io/embed/priceless-frog-2iy48?fontsize=14&amp;hidenavigation=1&amp;theme=dark)
-## [7][Terraform Vs Ansible - Friends Or Foes? Which Should I Choose?](https://www.reddit.com/r/reactjs/comments/ez8li4/terraform_vs_ansible_friends_or_foes_which_should/)
-- url: http://orocke.xyz
+instagramreduxreact.info
+## [8][Building a Piano with React Hooks - Cloudnweb](https://www.reddit.com/r/reactjs/comments/ezeari/building_a_piano_with_react_hooks_cloudnweb/)
+- url: https://cloudnweb.dev/2020/02/building-a-piano-with-react-hooks/
 ---
 
-## [8][Console API](https://www.reddit.com/r/reactjs/comments/ez8krh/console_api/)
-- url: https://overflowjs.com/posts/8-Console-API-Functions-Other-Than-Consolelog.html
+## [9][Multistep forms in React shouldn’t be hard. So we made it easy :)](https://www.reddit.com/r/reactjs/comments/ezebso/multistep_forms_in_react_shouldnt_be_hard_so_we/)
+- url: https://joepuzzo.github.io/informed/?path=/story/multistep-forms--basic-multistep
 ---
 
-## [9][Is there a library for circular gauges?](https://www.reddit.com/r/reactjs/comments/ez2c1x/is_there_a_library_for_circular_gauges/)
-- url: https://www.reddit.com/r/reactjs/comments/ez2c1x/is_there_a_library_for_circular_gauges/
+## [10][Full page transitions React Package with React Router](https://www.reddit.com/r/reactjs/comments/ezrlbc/full_page_transitions_react_package_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ezrlbc/full_page_transitions_react_package_with_react/
 ---
-I want a guage like this:  [https://imgur.com/32Froe0](https://imgur.com/32Froe0). 
+I would like to know your opinion on [react-tiger-transition](https://github.com/pedrobern/react-tiger-transition).
 
-In addition it would be great if the color gets changed (ex: darker or brighter) the more full or empty it is. So far I haven't found one capable of doing that. Does anyone know of any like that? Or is there an easy to build something like that from scratch?
-## [10][useState with Suspense causes rerender loop?](https://www.reddit.com/r/reactjs/comments/ez7oaq/usestate_with_suspense_causes_rerender_loop/)
-- url: https://www.reddit.com/r/reactjs/comments/ez7oaq/usestate_with_suspense_causes_rerender_loop/
+This package provides full page transitions with react-router and react-transition-group.
+
+Here is the [demo/documentation](https://pedrobern.github.io/react-tiger-transition/) site.
+
+I'm the package author and would like to know what can be improved and what is missing. Everybody is invited to make it better by contributing.
+## [11][Handle JavaScript Exception(like a pro)](https://www.reddit.com/r/reactjs/comments/ezqyrp/handle_javascript_exceptionlike_a_pro/)
+- url: https://overflowjs.com/posts/Exception-handling-in-JavaScript.html
 ---
-Hello, I am working with Suspense and want to be able to generate a new random number when a button is pressed. I have an issues though where `useState` keeps invoking the initial function passed into it, therefore rerendering the component. I have no idea why this is occurring and have been banging my head against the wall. The only thing that has worked so far is to pass in the promise as a prop but that means that the button to generate a new promise needs to be extracted to this component's parent. I am trying to keep all of the logic encapsulated.
 
-Any help would be greatly appreciated!
-
-    import React, { useState, useEffect } from 'react';
-
-    const SuspenseWrapper = (promise) =&gt; {
-	    let status = 'pending';
-	    let result = '';
-	    let suspender = promise.then(
-	    	    (r) =&gt; {
-	    		    status = 'success';
-	    		    result = r;
-	    	    },
-		    (e) =&gt; {
-			    status = 'error';
-			    result = e;
-		    }
-	    );
-
-	    return {
-		    read: () =&gt; {
-			    if (status === 'pending') {
-				    throw suspender;
-			    } else if (status === 'error') {
-				    throw result;
-			    } else {
-				    return result;
-			    }
-		    }
-	    };
-    };
-
-    const getNumber = async () =&gt; {
-	    return await new Promise((resolve, reject) =&gt; {
-		    setTimeout(() =&gt; {
-			    const randomNumber = Math.random();
-
-			    if (randomNumber &gt;= 0) {
-				    resolve(randomNumber);
-			    }
-			    reject({ message: 'Number is less than 0.5' });
-		    }, 2000);
-	    });
-    };
-
-    export default () =&gt; {
-	    const [ wrappedPromise, setWrappedPromise ] = useState(SuspenseWrapper(getNumber()));
-	    const number = wrappedPromise.read();
-
-	    return (
-		    &lt;React.Fragment&gt;
-			    &lt;div&gt;{number}&lt;/div&gt;
-			    &lt;button onClick={() =&gt; setWrappedPromise(SuspenseWrapper(getNumber()))}&gt;Generate New     Number&lt;/button&gt;
-		    &lt;/React.Fragment&gt;
-	    );
-    };
-## [11][Hilo Game using React](https://www.reddit.com/r/reactjs/comments/ez71u8/hilo_game_using_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ez71u8/hilo_game_using_react/
+## [12][Gatsby vs Next.js for large (300k+ page) site w/ SEO as primary traffic driver. Opinions?](https://www.reddit.com/r/reactjs/comments/ezi00n/gatsby_vs_nextjs_for_large_300k_page_site_w_seo/)
+- url: https://www.reddit.com/r/reactjs/comments/ezi00n/gatsby_vs_nextjs_for_large_300k_page_site_w_seo/
 ---
-Hey,
+I know, I know. Yet another one of these comparisons! Bear with me. I'm pulling data from a variety of APIs and structuring the data in my own postgres database, and I have a couple of options:
 
-I made a Hilo game using React and thought i'll share it with you guys.
+\- Use Gatsby and go "all static", which has the advantage of low production costs, vibrant plug-in ecosystem, but doesn't support AMP as first-party, which is really important for what I'm doing. So it'd be hacky. Plus, build times would likely take a very long-time, which isn't a deal-breaker.
 
-Demo :  [https://makasanas.github.io/hilo/](https://makasanas.github.io/hilo/) 
+\- Use Next.js to create the pages uses SSR, which has first class support for AMP, but since it is SSR it's inherently slower than static AND, I assume, production costs would be quite a bit more expensive (having a large, hosted postgres database always on and tapped into). On the other the hand, I don't have to worry about lengthy build processes--and truthfully I have no idea how long it would take to build several hundred thousand static pages, though the content would be minimal and it would only need to be done every day or so.
 
-Code :  [https://github.com/makasanas/hilo](https://github.com/makasanas/hilo) 
+Out of curiosity, is the expense calculation correct? Would it cost quite a bit more to serve via Next.js and SRR instead of a simple (but large) set of static pages?
 
-Feedback is Appreciated.
-
-Thanks.
-## [12][Voting web app made with React.](https://www.reddit.com/r/reactjs/comments/ez6hj3/voting_web_app_made_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ez6hj3/voting_web_app_made_with_react/
----
-Hey, I made a voting web app while learning react. Im not a professional web dev but someday hope to be. Took me a long time, but this is currently a side hobby, as I work full time. Let me know what you think. If you sign up, look for the verification email in your spam, and mark as not spam. 
-
-I used MERN stack with redux. Deployed on digitalocean.  It is only yes or no voting, and you can make public or private votes. Private votes send a text message and email (again check your spam) with unique link to that vote to each voter.
-
-The app is at:   https://yessno.tk
-
-I really loved learning react and am currently building a portfolio app with react as well. Any feedback would be great.
+Any advice would be appreciated!

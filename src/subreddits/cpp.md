@@ -57,78 +57,57 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Which checks do you use for clang-tidy?](https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/)
-- url: https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/
+## [2][Interactive command line time tracker](https://www.reddit.com/r/cpp/comments/f06nkz/interactive_command_line_time_tracker/)
+- url: https://www.reddit.com/r/cpp/comments/f06nkz/interactive_command_line_time_tracker/
 ---
-Do you guys throw the whole kitchen sink in? Do you disable specific checks if you don't agree with them/if they don't fit? Or do you only pick certain groups of checks from the beginning? Curious about what may be standard.
-## [3][gsl-lite v0.36 released](https://www.reddit.com/r/cpp/comments/ezqvuf/gsllite_v036_released/)
+I created my first little project with C++.  
+It is just a simple time tracker with an interactive command line.
+
+Click here to check it out:  
+[https://github.com/thomasschwarz96/ts-timetracker](https://github.com/thomasschwarz96/ts-timetracker)
+## [3][When to use a reference type versus a pointer?](https://www.reddit.com/r/cpp/comments/ezwij0/when_to_use_a_reference_type_versus_a_pointer/)
+- url: https://www.reddit.com/r/cpp/comments/ezwij0/when_to_use_a_reference_type_versus_a_pointer/
+---
+I've been digging back into C++ recently and while I do have a good understanding of pointers, reference types are new to me.  I've found plenty of documentation about what reference types are and how they work, but very little advice on **when** to use them in practice.
+
+Any thoughts?
+
+Links:  
+
+[Reference versus Pointer, Stack Overflow](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in)
+## [4][OpenSSL client and server from scratch series](https://www.reddit.com/r/cpp/comments/f099li/openssl_client_and_server_from_scratch_series/)
+- url: https://quuxplusone.github.io/blog/2020/01/24/openssl-part-1/
+---
+
+## [5][CppCast: Large Scale C++](https://www.reddit.com/r/cpp/comments/f0489s/cppcast_large_scale_c/)
+- url: https://cppcast.com/john-lakos-large-scale-cpp/
+---
+
+## [6][CopperSpice, opinions ?](https://www.reddit.com/r/cpp/comments/f076dx/copperspice_opinions/)
+- url: https://www.reddit.com/r/cpp/comments/f076dx/copperspice_opinions/
+---
+Just listened to the recent cpp.chat episode (67) about CopperSpice (CS). No mentioning of Qt, doxygen. I'm a bit concerned, that CS is just a rip-off of these  frameworks, tools. Any opinions/experience with CS?
+## [7][gsl-lite v0.36 released](https://www.reddit.com/r/cpp/comments/ezqvuf/gsllite_v036_released/)
 - url: https://www.reddit.com/r/cpp/comments/ezqvuf/gsllite_v036_released/
 ---
 https://github.com/gsl-lite/gsl-lite  
 https://github.com/gsl-lite/gsl-lite/releases/tag/v0.36.0
 
 [*gsl-lite*](https://github.com/gsl-lite/gsl-lite) is an implementation of the [C++ Core Guidelines Support Library](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-gsl) originally based on [Microsoft GSL](https://github.com/microsoft/gsl).
-## [4][[++itCon] Call for Papers! Submit your paper for the Italian C++ Conference 2020 in Rome](https://www.reddit.com/r/cpp/comments/ezrxiy/itcon_call_for_papers_submit_your_paper_for_the/)
+## [8][[++itCon] Call for Papers! Submit your paper for the Italian C++ Conference 2020 in Rome](https://www.reddit.com/r/cpp/comments/ezrxiy/itcon_call_for_papers_submit_your_paper_for_the/)
 - url: https://www.italiancpp.org/event/itcppcon20/
 ---
 
-## [5][C++ compile time counters, revisited](https://www.reddit.com/r/cpp/comments/eze9yb/c_compile_time_counters_revisited/)
-- url: https://stackoverflow.com/questions/60082260/c-compile-time-counters-revisited
+## [9][SFINAE special members or support incomplete types: Pick at most one](https://www.reddit.com/r/cpp/comments/ezvg8b/sfinae_special_members_or_support_incomplete/)
+- url: https://quuxplusone.github.io/blog/2020/02/05/vector-is-copyable-except-when-its-not/
 ---
 
-## [6][Latest interesting lectures for programmers who aren't necessarily C++ programmers?](https://www.reddit.com/r/cpp/comments/ezpwxj/latest_interesting_lectures_for_programmers_who/)
-- url: https://www.reddit.com/r/cpp/comments/ezpwxj/latest_interesting_lectures_for_programmers_who/
+## [10][Which checks do you use for clang-tidy?](https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/)
+- url: https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/
 ---
-As far as I'm concerned the world of C++ has the top minds in programming/computer science.
-
-I'll watch anything with Bjarne in it. And I've consumed hours and hours of CPPCon videos.
-
-Any recent such videos where I can learn about programming philosophy, rather than just the technical specs of an aspect inherent to C++?
-
-I think i've exhausted all of CPPCON 2019  
-
-
-If it's 'grill the commitee' type stuff, I'm good with that too!
-
-Many thanks
-## [7][Effective Memory Reclamation for Lock-Free Data Structures in C++](https://www.reddit.com/r/cpp/comments/ez7jlv/effective_memory_reclamation_for_lockfree_data/)
-- url: http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2582190?originalFilename=true
+Do you guys throw the whole kitchen sink in? Do you disable specific checks if you don't agree with them/if they don't fit? Or do you only pick certain groups of checks from the beginning? Curious about what may be standard.
+## [11][Dumb shower thought](https://www.reddit.com/r/cpp/comments/f07xvy/dumb_shower_thought/)
+- url: https://www.reddit.com/r/cpp/comments/f07xvy/dumb_shower_thought/
 ---
-
-## [8][Encoding MIPS Instructions with C++17](https://www.reddit.com/r/cpp/comments/ez9vlv/encoding_mips_instructions_with_c17/)
-- url: https://medium.com/@kevin_hartman/encoding-mips-instructions-with-c-17-59f9c2170faa
----
-
-## [9][Compiling Trouble Shooting: Segmentation Fault and GCC Illegal Instruction](https://www.reddit.com/r/cpp/comments/ezl9wz/compiling_trouble_shooting_segmentation_fault_and/)
-- url: https://medium.com/nebula-graph/compiling-trouble-shooting-segmentation-fault-and-gcc-illegal-instruction-64e29d090be4
----
-
-## [10][Fall through on switch case - warnings?](https://www.reddit.com/r/cpp/comments/ezi4ik/fall_through_on_switch_case_warnings/)
-- url: https://www.reddit.com/r/cpp/comments/ezi4ik/fall_through_on_switch_case_warnings/
----
-So, for years, in both c and c++, I've used a technique where a `case:` does a bunch of stuff, call it `X`, and the `case:` above it needs to do exactly that, plus `Y` stuff, so I put the `Y` in the upper `case:` and let it fall through to the `X` case. It's always worked great, never had a problem.
-
-So I went to port a relatively large app \([this one](http://ourtimelines.com/itdoc/intro.html)\) from OSX, where I developed it, to Windows. Installed Qt, built it, the qt install picked a compiler \(mingw\), etc., and off I went to cross-compile.
-
-The new compiler, predictably, went at things a little differently, and TBH, it caught a few things I was glad to have caught. So far so good.
-
-But it also pushed warnings about my fall-through `case:` statements, and looking at them, they were doing just what I had intended. I hadn't yet found a way to switch the warnings off \(laptop is off getting more RAM and an SSD, so I can't even look at it today\) but probably there's a way.
-
-So what I'm asking, though, is what folks think of this technique. Apparently, the compiler authors think I shouldn't be doing this. Anyone agree? Disagree? Other? If I can turn this off, should I? Yes? No? Other?
-
-TIA.
-
-\[**EDIT:** End goal is zero errors, zero warnings, always. I can just code this differently, two cases plus an if inside the case, for instance... it just seems inelegant.\]
-## [11][Looking for cross platform socket library](https://www.reddit.com/r/cpp/comments/ezhomq/looking_for_cross_platform_socket_library/)
-- url: https://www.reddit.com/r/cpp/comments/ezhomq/looking_for_cross_platform_socket_library/
----
-Hello,
-
-Can you suggest me some library with the following constraints?
-
-* Cross platform (windows, Linux, Android )
-* Light
-* Socket
-* Usable in closed source projects
-
-Thanks!
+Since a lot of programmers come to C++ for performance reasons, why don't some of the bigger games come bundled with their own super performant OS that you boot into when you want to play such game? As long as driver support is maintained, I can't imagine there's much more work to be done. All the OS needs to do is boot into the game, not provide a full desktop experience.  
+Is that what SteamOS is? I don't know, I totally missed the boat on the whole Steam revolution in gaming, honestly, all I know it's just an online shop where you can download games.

@@ -1,5 +1,49 @@
 # reduxjs
-## [1][How to structure the state](https://www.reddit.com/r/reduxjs/comments/ez8t79/how_to_structure_the_state/)
+## [1][Conditional update in reducer based on other state. Best Practices?](https://www.reddit.com/r/reduxjs/comments/f05rab/conditional_update_in_reducer_based_on_other/)
+- url: https://www.reddit.com/r/reduxjs/comments/f05rab/conditional_update_in_reducer_based_on_other/
+---
+So currently I have an event called ITEM\_DELETED.
+
+When this happens, I update the items part of the state to filter out the item that was deleted.
+
+But I also want to reset a variable (in **another** part of the state) to 0, IF the item that was deleted is currently selected
+
+What's the best practice to do this when I'm using **combineReducers** and the state is separated out, so the reducer doesn't necessarily know if the item was originally selected.
+
+I'm currently thinking:
+
+1. Probably best, the action creator puts a boolean in the payload if the item deleted was selected, that way the reducers can still respond to the same action type.
+2. I can update the action creator to use thunk and dispatch two actions, the second with a different type and only being if the item was currently selected
+3. Something else? Make the state combined so one reducer can handle the action?
+
+Thanks!
+## [2][Which is more performant for useSelector hook with multiple values?](https://www.reddit.com/r/reduxjs/comments/ezsw20/which_is_more_performant_for_useselector_hook/)
+- url: https://www.reddit.com/r/reduxjs/comments/ezsw20/which_is_more_performant_for_useselector_hook/
+---
+As you know, you can use object destructuring for an object to extract values with the same name:
+
+    const values = { 'name': 'John', 'age': 20, 'country': 'USA' }
+    const { name, age } = values
+
+But when using Redux's useSelector hook, is it better to have them in their own calls or use the same logic?
+
+For example, let's look at the initial state which is part of a reducer that will eventually be called userInfo in a combineReducers call:
+
+    const initialState = { 'name': '', 'age': 0, 'country': '' }
+
+If I am in a component, is it better to do
+
+    const { name, age } = useSelector(state =&gt; state.userInfo)
+
+or
+
+    const name = useSelector(state =&gt; state.name)
+    const age = useSelector(state =&gt; state.age)
+    
+The reason I ask is that the first example is one call but may initially bring in all the values for that userInfo state while the second example is more direct, but then also calls useSelector an additional time.
+
+To be more performant and cut down on re-renders on data change, which one is the better method?
+## [3][How to structure the state](https://www.reddit.com/r/reduxjs/comments/ez8t79/how_to_structure_the_state/)
 - url: https://www.reddit.com/r/reduxjs/comments/ez8t79/how_to_structure_the_state/
 ---
 Hi!
@@ -41,7 +85,7 @@ Am I thinking this the right way ? Is this the right use case of redux ?
 
 
 Thanks in advance for the feedbacks
-## [2][Modular Redux — a Design Pattern for Mastering Scalable, Shared State](https://www.reddit.com/r/reduxjs/comments/eyuwgv/modular_redux_a_design_pattern_for_mastering/)
+## [4][Modular Redux — a Design Pattern for Mastering Scalable, Shared State](https://www.reddit.com/r/reduxjs/comments/eyuwgv/modular_redux_a_design_pattern_for_mastering/)
 - url: https://www.reddit.com/r/reduxjs/comments/eyuwgv/modular_redux_a_design_pattern_for_mastering/
 ---
 I have a bit of a love/hate relationship with Redux. I love the atomic state updates, persistable, replayable global state, and awesome middleware. However, like many others, I hate writing Redux - at least with the recommended design patterns. I experimented with various ways to write better Redux, but it took me a while to figure out the core problem...
@@ -55,17 +99,17 @@ I'd love your feedback!
 Modular Redux: [https://medium.com/@shanebdavis/modular-redux-a-design-pattern-for-mastering-scalable-shared-state-82d4abc0d7b3](https://medium.com/@shanebdavis/modular-redux-a-design-pattern-for-mastering-scalable-shared-state-82d4abc0d7b3)
 
 ([cross-posted](https://www.reddit.com/r/reactjs/comments/eyuu7i/modular_redux_a_design_pattern_for_mastering/) on /r/reactjs)
-## [3][React Ninjas Newsletter #89: React Navigation v5 + React Native Paper = ❤️](https://www.reddit.com/r/reduxjs/comments/ez2ngi/react_ninjas_newsletter_89_react_navigation_v5/)
+## [5][React Ninjas Newsletter #89: React Navigation v5 + React Native Paper = ❤️](https://www.reddit.com/r/reduxjs/comments/ez2ngi/react_ninjas_newsletter_89_react_navigation_v5/)
 - url: https://reactninjs.com/post/89-react-navigation-v5-react-native-paper
 ---
 
-## [4][Please advice example project or course (React, Redux, JWT, REST)](https://www.reddit.com/r/reduxjs/comments/eys7wk/please_advice_example_project_or_course_react/)
+## [6][Please advice example project or course (React, Redux, JWT, REST)](https://www.reddit.com/r/reduxjs/comments/eys7wk/please_advice_example_project_or_course_react/)
 - url: https://www.reddit.com/r/reduxjs/comments/eys7wk/please_advice_example_project_or_course_react/
 ---
 I have a REST API with JWT authentication backend.
 
 I would like to find an example project or course, which could be used as a reference implementation for my React/Redux frontend (with router + pagination) for that API.
-## [5][Confusion on how to immediately change props in DOM from Redux state](https://www.reddit.com/r/reduxjs/comments/ev9prm/confusion_on_how_to_immediately_change_props_in/)
+## [7][Confusion on how to immediately change props in DOM from Redux state](https://www.reddit.com/r/reduxjs/comments/ev9prm/confusion_on_how_to_immediately_change_props_in/)
 - url: https://www.reddit.com/r/reduxjs/comments/ev9prm/confusion_on_how_to_immediately_change_props_in/
 ---
 Using React, I was taught to pass an array down to a container from a parent component where I iterate an array. This then gets passed down to a lower component to display the attributes. Using Redux in my app to manage state, I'm not able to immediately reflect an update in attribute in the DOM when I update the instance in the Reducer. Here's my code:
@@ -279,7 +323,7 @@ The reducer:
     }
 
 Right now, the \`futureOutage\` update takes place and works in the \`action\` (not pictured here). It just doesn't immediately change in the DOM.
-## [6][Redux/React | ¿How can I export a constant within a class? (Unexpected token error)](https://www.reddit.com/r/reduxjs/comments/et11m8/reduxreact_how_can_i_export_a_constant_within_a/)
+## [8][Redux/React | ¿How can I export a constant within a class? (Unexpected token error)](https://www.reddit.com/r/reduxjs/comments/et11m8/reduxreact_how_can_i_export_a_constant_within_a/)
 - url: https://www.reddit.com/r/reduxjs/comments/et11m8/reduxreact_how_can_i_export_a_constant_within_a/
 ---
 Greetings!
@@ -293,7 +337,7 @@ The problem is that I have to combine the way the form is made with redux-form, 
 i show the code and details in stackoverflow, can i get help in this please?
 
 [StackOverFlow Post](https://stackoverflow.com/q/59888130/11019195)
-## [7][Do anyone know an example to get action button, to reveal / hide password in a password input with action and reducer?](https://www.reddit.com/r/reduxjs/comments/es08m7/do_anyone_know_an_example_to_get_action_button_to/)
+## [9][Do anyone know an example to get action button, to reveal / hide password in a password input with action and reducer?](https://www.reddit.com/r/reduxjs/comments/es08m7/do_anyone_know_an_example_to_get_action_button_to/)
 - url: https://www.reddit.com/r/reduxjs/comments/es08m7/do_anyone_know_an_example_to_get_action_button_to/
 ---
 hi everyone,
@@ -301,7 +345,7 @@ hi everyone,
 i have a code, where i render a password input with redux-form, but inside this input, i want to get a buttom to hide/reveal the password, i am trying to do it with action and reducer to keep this function globally, so i can use it in anothers passwords inputs too.
 
 Do you know any example to do this? i am new using react and redux, i would like to find an example that would be usefull for me as a guide.
-## [8][How to access redux store from across components??](https://www.reddit.com/r/reduxjs/comments/er8db0/how_to_access_redux_store_from_across_components/)
+## [10][How to access redux store from across components??](https://www.reddit.com/r/reduxjs/comments/er8db0/how_to_access_redux_store_from_across_components/)
 - url: https://www.reddit.com/r/reduxjs/comments/er8db0/how_to_access_redux_store_from_across_components/
 ---
 So I have an online store project. 
@@ -312,13 +356,3 @@ What I want is to have a buttons on homepage for each book that when clicked wil
 The cart is a separate page I have using reactRouter. 
 
 I'm so fkn lost and have tried everything, I tried doing  mapDispatchToProps but its quite mind boggling for me how I can make the button on the homepage to send the data from the store to the cart page. I'm lost and want to die because its been 3 weeks working on this shit and I'm not getting ANYWHERE. pls help me pls
-## [9][redux-devtools-extension as a webpage component](https://www.reddit.com/r/reduxjs/comments/epyvml/reduxdevtoolsextension_as_a_webpage_component/)
-- url: https://www.reddit.com/r/reduxjs/comments/epyvml/reduxdevtoolsextension_as_a_webpage_component/
----
-Is redux-devtools-extension able to be used as a component on the page so that a user can see the state, actions, diff, etc? Or a library that allow you to do this?
-## [10][Can I see an example of redux-thunk callback hell?](https://www.reddit.com/r/reduxjs/comments/ep8oc5/can_i_see_an_example_of_reduxthunk_callback_hell/)
-- url: https://www.reddit.com/r/reduxjs/comments/ep8oc5/can_i_see_an_example_of_reduxthunk_callback_hell/
----
-I am looking into using redux in a real enterprise app for the first time. In my team we have been discussing using either redux-thunk or redux-saga for side effect management.
-
-I have read that you might end up in "callback hell" with redux-thunk. Is there an example of this or can I get an explanation? Having not seen it makes it difficult to judge how big of an issue it is.

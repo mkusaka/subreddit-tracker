@@ -87,43 +87,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][DarkModeJS – move your website to the dark side](https://www.reddit.com/r/javascript/comments/ezhkea/darkmodejs_move_your_website_to_the_dark_side/)
-- url: https://github.com/nickdeny/darkmode-js
+## [3][Visual Studio Code January 2020](https://www.reddit.com/r/javascript/comments/ezz6z9/visual_studio_code_january_2020/)
+- url: https://code.visualstudio.com/updates/v1_42
 ---
 
-## [4][canihazusername - simple &amp; customisable username generator. types included :)](https://www.reddit.com/r/javascript/comments/ezq0r7/canihazusername_simple_customisable_username/)
-- url: https://cupcakearmy.github.io/canihazusername/
+## [4][Announcing TypeScript 3.8 RC](https://www.reddit.com/r/javascript/comments/f01v1u/announcing_typescript_38_rc/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/
 ---
 
-## [5][Handle JavaScript Exception(like a pro)](https://www.reddit.com/r/javascript/comments/ezqyqz/handle_javascript_exceptionlike_a_pro/)
-- url: https://overflowjs.com/posts/Exception-handling-in-JavaScript.html
+## [5][Baretest — A minimalistic alternative to Jest](https://www.reddit.com/r/javascript/comments/f05adx/baretest_a_minimalistic_alternative_to_jest/)
+- url: https://volument.com/baretest?b1
 ---
 
-## [6][Advanced Functional Programming concepts made easy](https://www.reddit.com/r/javascript/comments/ezp7zd/advanced_functional_programming_concepts_made_easy/)
-- url: https://medium.com/nmc-techblog/advanced-functional-programming-concepts-made-easy-2108d227b5ab
+## [6][Formatting dates in JavaScript with Intl.DateTimeFormat](https://www.reddit.com/r/javascript/comments/f084yt/formatting_dates_in_javascript_with/)
+- url: https://www.valentinog.com/blog/datetime/
 ---
 
-## [7][8-Ball Pool game using JavaScript and Canvas](https://www.reddit.com/r/javascript/comments/ezrgfj/8ball_pool_game_using_javascript_and_canvas/)
+## [7][What's new in ECMAScript 2020 (ES2020)](https://www.reddit.com/r/javascript/comments/ezttcv/whats_new_in_ecmascript_2020_es2020/)
+- url: https://alligator.io/js/es2020/
+---
+
+## [8][[AskJS] what after the course ? Es5 and es6](https://www.reddit.com/r/javascript/comments/f0a1lu/askjs_what_after_the_course_es5_and_es6/)
+- url: https://www.reddit.com/r/javascript/comments/f0a1lu/askjs_what_after_the_course_es5_and_es6/
+---
+Hi so yesterday I just finished Max accelerated es6 course I learned quite alot of basics but I don't know really how to use them I wonder is it worth to take another course ? Like modern js course from brad traversy ? Or maybe buy he's 20 vanilla js projects and get idea how to put my theory to actual projects ?
+## [9][How I improve my Javascript Coding Skill every day](https://www.reddit.com/r/javascript/comments/f08mgy/how_i_improve_my_javascript_coding_skill_every_day/)
+- url: https://medium.com/javascript-in-plain-english/how-i-improve-my-javascript-coding-skill-every-day-37ccf2feacf4
+---
+
+## [10][Top Javascript Machine Learning Development Frameworks &amp; Libraries](https://www.reddit.com/r/javascript/comments/f08d1o/top_javascript_machine_learning_development/)
+- url: https://medium.com/@Oodles_ai/top-javascript-machine-learning-development-frameworks-libraries-2b31db591202
+---
+
+## [11][8-Ball Pool game using JavaScript and Canvas](https://www.reddit.com/r/javascript/comments/ezrgfj/8ball_pool_game_using_javascript_and_canvas/)
 - url: https://www.htmlhints.com/article/63/8-ball-pool-game-using-javascript-and-canvas
 ---
 
-## [8][Vendure: An open source Magento alternative](https://www.reddit.com/r/javascript/comments/ez9bex/vendure_an_open_source_magento_alternative/)
-- url: https://github.com/vendure-ecommerce/vendure
----
-
-## [9][Octomments - using GitHub as a comment plugin](https://www.reddit.com/r/javascript/comments/ezcr7q/octomments_using_github_as_a_comment_plugin/)
-- url: https://ocs.now.sh/
----
-
-## [10][Interviewing at Facebook — On-Site JavaScript Technical Interview Questions](https://www.reddit.com/r/javascript/comments/ez4pv2/interviewing_at_facebook_onsite_javascript/)
-- url: https://medium.com/javascript-in-plain-english/facebook-on-site-technical-interview-1264cacad263
----
-
-## [11][Get Ready for Chrome User-Agent String Phase Out](https://www.reddit.com/r/javascript/comments/ezhtvj/get_ready_for_chrome_useragent_string_phase_out/)
-- url: https://medium.com/@galmeiri/get-ready-for-chrome-user-agent-string-phase-out-c6840da1c31e
----
-
-## [12][simple-message-router](https://www.reddit.com/r/javascript/comments/ezp77x/simplemessagerouter/)
-- url: https://github.com/s1n7ax/simple-message-router
+## [12][The Economics of Technical Debt](https://www.reddit.com/r/javascript/comments/f09q3u/the_economics_of_technical_debt/)
+- url: https://alexkondov.com/the-economics-of-technical-debt/
 ---
 

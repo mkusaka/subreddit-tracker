@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/ey6mqi/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/ey6mqi/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/f09xxs/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/f09xxs/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - February 03, 2020](https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/
 ---
@@ -31,79 +25,65 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Whats the point of "Developer Support" when you can't tell me what i need to fix to deploy an update? Directing me to the Developer Program Policies does NOT help - especially when the app has been live with no major changes.](https://www.reddit.com/r/androiddev/comments/ezk7lu/whats_the_point_of_developer_support_when_you/)
-- url: https://i.redd.it/91106ggxe7f41.png
+## [3][Android 11 will add a new App Compatibility feature to ease testing](https://www.reddit.com/r/androiddev/comments/f081sw/android_11_will_add_a_new_app_compatibility/)
+- url: https://www.developer-tech.com/news/2020/jan/22/android-11-new-app-compatibility-feature-testing/
 ---
 
-## [4][AndroidX security](https://www.reddit.com/r/androiddev/comments/ezs8ro/androidx_security/)
-- url: https://www.netguru.com/codestories/androidx-security
+## [4][All-in-One — Android TabLayout and TabItem](https://www.reddit.com/r/androiddev/comments/f09nss/allinone_android_tablayout_and_tabitem/)
+- url: https://medium.com/@myrickchow32/android-tablayout-and-tabitem-268ac06ba966?source=friends_link&amp;sk=65ae680fe463e95d0c7301fc64cc057d
 ---
 
-## [5][Android Dark Theme](https://www.reddit.com/r/androiddev/comments/ezs5bk/android_dark_theme/)
-- url: https://www.netguru.com/codestories/android-dark-theme
+## [5][Huawei, Xiaomi, Oppo and Vivo creating a Google Play Store alternative](https://www.reddit.com/r/androiddev/comments/ezufny/huawei_xiaomi_oppo_and_vivo_creating_a_google/)
+- url: https://www.theverge.com/2020/2/6/21126118/huawei-xiaomi-vivo-oppo-app-store-platform-google-play-dominance-worldwide
 ---
 
-## [6][Motion Pattern (Gesture) Recognition AI: MiVRy](https://www.reddit.com/r/androiddev/comments/eznvek/motion_pattern_gesture_recognition_ai_mivry/)
-- url: https://v.redd.it/ar8wr1tst8f41
+## [6][Changing minSdkVersion from 21 to 23?](https://www.reddit.com/r/androiddev/comments/f09jni/changing_minsdkversion_from_21_to_23/)
+- url: https://www.reddit.com/r/androiddev/comments/f09jni/changing_minsdkversion_from_21_to_23/
+---
+What is your minSdkVersion? Right now in our apps it's mostly API 21, but we are considering to move to API 23, no specific reason except some code optimization and possibly APK size reduction.   
+
+
+According to analytics 13% of our users are on API level 21, but here is the catch, 69% of them are from India and Mexico and those countries tend to have very low eCPM and are not very profitable.   
+What are your thoughts?  
+What is your minSdkVersion?
+## [7][Implementing Scoped Storage in Android 10](https://www.reddit.com/r/androiddev/comments/f05rzn/implementing_scoped_storage_in_android_10/)
+- url: https://heartbeat.fritz.ai/implementing-scoped-storage-in-android-10-4b657280c066
 ---
 
-## [7][How can I fix this type of crashes which are apparently not exactly related to my code?](https://www.reddit.com/r/androiddev/comments/ezqd15/how_can_i_fix_this_type_of_crashes_which_are/)
-- url: https://i.redd.it/68nr826h3af41.png
+## [8][Android UI Testing with Azure DevOps](https://www.reddit.com/r/androiddev/comments/f0a47i/android_ui_testing_with_azure_devops/)
+- url: https://www.reddit.com/r/androiddev/comments/f0a47i/android_ui_testing_with_azure_devops/
+---
+I recently published an article, for those of you who need to configure a pipeline for Android Instrumented Tests within Azure DevOps! :)
+
+[https://medium.com/genetec-tech/android-ui-testing-in-azure-devops-81bbe7cea9fd](https://medium.com/genetec-tech/android-ui-testing-in-azure-devops-81bbe7cea9fd)
+## [9][Tips to land first job as Jr](https://www.reddit.com/r/androiddev/comments/f09owu/tips_to_land_first_job_as_jr/)
+- url: https://www.reddit.com/r/androiddev/comments/f09owu/tips_to_land_first_job_as_jr/
+---
+What you guys recommend doing to land a first job as a Jr Android Dev without college and professional experience?
+
+I live in Spain (if that matters), and I thought it would be easier, I know a lot of tools the industry uses and have more than 2 years of experience with Android.
+
+My only plan is to 1) Get the Google certificate, as it would validate my knowledge without going to college. 2) Build some open source projects to have a portfolio to show. 3) Maybe lie about professional experience, as I have seen people saying that they only put that requirement to weed people out. But I really don't like lying..
+
+Do you guys have any tips? Any thing I am missing out? How did you get your first job?
+## [10][Is it okay to play video at app first launch?](https://www.reddit.com/r/androiddev/comments/f08tud/is_it_okay_to_play_video_at_app_first_launch/)
+- url: https://www.reddit.com/r/androiddev/comments/f08tud/is_it_okay_to_play_video_at_app_first_launch/
+---
+My company planning to show a video on app first launch. I just wondering if it's violate google play policy or something?
+## [11][[Help] Query regarding Android Keystore system.](https://www.reddit.com/r/androiddev/comments/f05fg6/help_query_regarding_android_keystore_system/)
+- url: https://www.reddit.com/r/androiddev/comments/f05fg6/help_query_regarding_android_keystore_system/
+---
+Hello everyone,I want to send a file, say "secret.txt", from my server to my client app. But I want this to be completely secured to the degree in which even on a rooted phone user can't see what's inside secret.txt. It will be a simple file in fs but encrypted. I don't know how Android keystore system works to achieve this.
+
+I want my app to access this data pragmatically in such a way that the app won't know what the key is before the server sends the file.
+
+I've figured out some approaches but all of them are flawed:
+
+1. Storing decryption key in code in the apk. (Can be easily extracted?)
+2. Sending random key from client to server, so I can send the data encrypted with that key. (Random key can be seen using apps such as Fiddler/Wireshark/[Canary](https://play.google.com/store/apps/details?id=com.guoshi.httpcanary).)
+
+Can anybody please help me solving this problem?
+## [12][Game over for Android?](https://www.reddit.com/r/androiddev/comments/f0aags/game_over_for_android/)
+- url: https://bgr.com/2020/02/04/android-vs-iphone-google-earnings-show-android-needs-to-die/
 ---
 
-## [8][Live Data + Sealed Classes are an easy way to lose a reference to data. How can I go around this?](https://www.reddit.com/r/androiddev/comments/ezqbgb/live_data_sealed_classes_are_an_easy_way_to_lose/)
-- url: https://www.reddit.com/r/androiddev/comments/ezqbgb/live_data_sealed_classes_are_an_easy_way_to_lose/
----
-It's becoming very popular to use sealed classes as a way to handle errors when observing LiveData. One common example would be to have a sealed class named Result with two Data Classes: Success and Failure.
-
-Success holds a reference to our data and Failure holds a reference to Exception.
-
-If we have a very simple data flow where we request some data *once* and wait for it to be read, this works very well. Our observable will either give us the Success state, after which we retrieve our value and draw UI - or it'll give us a Failure state, after which we handle the error gracefully and deem that we were unable to get the data for whatever reason.
-
-Now here are two relatively common cases from the top of my head when things can go wrong and I'm not sure how to handle them:
-
-1. We read some data and pass it to UI. User decides to refresh the view, but this time the network request fails for whatever reason. Now our LiveData&lt;Result&gt; turns from Success (which holds a reference to our previous data) to Failure (which only holds a reference to our Exception). We can decide to ignore the error in this case, since our UI is already drawn and we can tell the user that the refresh failed some other way (e.g. Toast) but we don't have a reference to our data any more.
-2. Our Repository read the data from both a local cache and a network request. We don't have a single point of truth implemented (we don't read all data from a database because we only cache data rarely) so the way it works is we read data from SharedPreferences and pass it to LiveData as a Result.Success. Observable is fired and UI is drawn. Now because the network request failed, just like last time, this Result.Success turns into Result.Failure again. The UI is already drawn, we don't really care that the request failed because we'd rather display outdated data than an error message. But again we lost the reference to our data because Result.Success was overwritten by Result.Failure.
-
-How should this be handled? I don't see how Sealed Classes are so popular and they seemed to have completely replaced callbacks when it's so easy to lose a reference to your data. Error states will simply overwrite any other states.
-## [9][Which course to pick in 2020 for learning android development?](https://www.reddit.com/r/androiddev/comments/ezqhe0/which_course_to_pick_in_2020_for_learning_android/)
-- url: https://www.reddit.com/r/androiddev/comments/ezqhe0/which_course_to_pick_in_2020_for_learning_android/
----
-I am totally a beginner and I know some java basics. While searching yesterday, I find out that people suggest Udemy course: The Complete Android Oreo Developer Course - Build 23 Apps!   
-OR   
-Android basics on Udacity. On the other hand, people say these courses are outdated and contain some topics or functions which are legacy.  
-
-
-I am confused, I don't know what to do. I have to work on the university project and I still have 6 months. I will be spending 6 hrs each day for learning, but I really need to know that even if these courses are 4 years old, are they worth to start now in 2020? I hope I am not wasting my time on learning outdated courses since time is really short for the project.
-## [10][How to become a better android programmer?](https://www.reddit.com/r/androiddev/comments/ezb4y6/how_to_become_a_better_android_programmer/)
-- url: https://www.reddit.com/r/androiddev/comments/ezb4y6/how_to_become_a_better_android_programmer/
----
-Hi all,
-
-I'm a junior android developer and I want to improve. I would like to know, which in your opinion are the best libraries,frameworks,design patterns, etc... to focus on.
-
-For example I've read about Dagger and Retrofit (I'm using Volley) and about MVVM, even RxAndroid seems cool. I want to start to implement unit tests and I'm also learning Kotlin. 
-
-There are a lot of things, but which are the things that are worth to learn for real?
-## [11][Easily create beautiful app screenshots for the Play Store](https://www.reddit.com/r/androiddev/comments/ezf8hz/easily_create_beautiful_app_screenshots_for_the/)
-- url: https://www.reddit.com/r/androiddev/comments/ezf8hz/easily_create_beautiful_app_screenshots_for_the/
----
-Hey folks! Have you ever dreaded uploading screenshots when listing your app on the Play Store because they were annoying to make? I've had the same experience, so I decided to build a super easy-to-use tool to streamline making beautiful looking screenshots.
-
-It has support for the latest phones, like the Pixel 4 and Pixel 4 XL, Samsung Galaxy S10 and S10+, as well as smaller phone sizes like the Nexus 6P and 5X. You can customize a lot of aspects of the screenshot, such as font family, font size, background color, background images, etc. You can also save your screenshots directly in the tool, access them on any device, and edit them easily at any point in the future!
-
-It has a generous free tier and I'm continually adding new features based on users' feedback. Check it out at [https://screenshotcreator.com](https://screenshotcreator.com/), and let me know what you think!
-
-Here's a preview of some of the screenshots that you could make:
-
-https://preview.redd.it/b4x7r5lcs5f41.png?width=3726&amp;format=png&amp;auto=webp&amp;s=073d68d6750cc3b57fee8cd412665e8822f5d4f6
-## [12][Why is my Android virtual device so slow on Ubuntu 18?](https://www.reddit.com/r/androiddev/comments/ezrkpl/why_is_my_android_virtual_device_so_slow_on/)
-- url: https://www.reddit.com/r/androiddev/comments/ezrkpl/why_is_my_android_virtual_device_so_slow_on/
----
-I've been developing an app for Android using the Pixel 3a Oreo virtual device. Every time I start up the device, my computer completely tanks, to the point of not being able to move my mouse for 30 seconds at a time. It only runs slightly better once set up, and practically freezes my computer for 5 minutes when shutting down.
-
-I followed [these](https://developer.android.com/studio/run/emulator-acceleration) [tutorials](https://help.ubuntu.com/community/KVM/Installation) on VM acceleration fully and they don't appear to have helped.
-
-This isn't the case for my friends on Windows, and I'm sure it isn't the case for most people on Ubuntu, so do you know how I can make the device run better?
-
-I will gladly provide any information needed in solving this problem.

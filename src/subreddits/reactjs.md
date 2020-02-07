@@ -85,100 +85,92 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Iowa Caucus React Native App Bundle](https://www.reddit.com/r/reactjs/comments/ezm1r9/iowa_caucus_react_native_app_bundle/)
-- url: https://gist.github.com/jimthedev/3f946b3729afa6d1081a1483c3bc0b18
+## [3][Last week I posted about trading design mentorship for react mentorship. I received a ton of DMs which got me thinking...is there an opportunity for a community here?](https://www.reddit.com/r/reactjs/comments/f06uh5/last_week_i_posted_about_trading_design/)
+- url: https://www.reddit.com/r/reactjs/comments/f06uh5/last_week_i_posted_about_trading_design/
+---
+Basically....are there other areas of expertise that you would like to grow in that you would trade your time for? This might be a crazy example, but would you trade time for someone who wanted to learn singing? What about illustration? Or video editing? Or maybe a specific tool like Figma or Lightroom?
+
+Basically...it got me thinking about the idea of trading mentorship. Maybe there’s enough people out there who would want to trade their time mentoring in exchange for someone else helping them grow in an area they are curious about...
+## [4][The React Cheatsheet for 2020 (+ real-world examples)](https://www.reddit.com/r/reactjs/comments/f089js/the_react_cheatsheet_for_2020_realworld_examples/)
+- url: https://www.freecodecamp.org/news/the-react-cheatsheet-for-2020/amp/?__twitter_impression=true
 ---
 
-## [4][How easy is it to convert React app to PWA?](https://www.reddit.com/r/reactjs/comments/ezbq6c/how_easy_is_it_to_convert_react_app_to_pwa/)
-- url: https://www.reddit.com/r/reactjs/comments/ezbq6c/how_easy_is_it_to_convert_react_app_to_pwa/
+## [5][I created a package that can generate Typescript React Hooks from your GraphQL api endpoint](https://www.reddit.com/r/reactjs/comments/f08rt4/i_created_a_package_that_can_generate_typescript/)
+- url: https://www.reddit.com/r/reactjs/comments/f08rt4/i_created_a_package_that_can_generate_typescript/
 ---
-I'm gonna be completely honest with you - I'm asking because i'm terrible with finishing projects and straight out lazy.
+Hi all!
 
-I feel like I have a strong motivation to do current project and would want to make it PWA, but I also know myself that if the basics are done and I start to struggle/get annoyed with \*NEW\_THING\_THAT\_I\_WANT\_TO\_TRY\* i drop the project.
+I just published a new version of my library [simple-graphql-to-typescript](https://sgts.netlify.com/)
 
-I suppose solution would be completing the project AND THEN making it into PWA, because "hey, it's almost finished, might as well go the extra mile, push myself and just do it".
+The goal is to avoid you from writing GraphQL queries by hand and accelerate development of your front-end apps.
 
-So how easy/hard/time consumig would that be? Does that require a lot of code refactoring?
-## [5][Wondering about a good structure of Redux state in a workout tracking app](https://www.reddit.com/r/reactjs/comments/ezqked/wondering_about_a_good_structure_of_redux_state/)
-- url: https://www.reddit.com/r/reactjs/comments/ezqked/wondering_about_a_good_structure_of_redux_state/
----
-Hi!
+Here is an exemple with the free GraphQL Api \`json-placeholder\`:
 
-I am currently starting to build a TypeScript React Redux app designed to track workouts. User should be able to choose a day (from a menu) and see workout routine for this day. Workout routine consists of multiple exercises. Exercise consists of name (user can input his own name), number of repetitions and weight used. Everything will be saved and synced with localStorage.
+```bash
+sgts --endpoint https://json-placeholder-graphql.herokuapp.com/graphql --codegen-react-hooks --output ./generated.ts
+```
 
-I am wondering about a good structure of Redux state in this app. I think it should look something like:
+And how to use in your code (Taken from docs):
 
-State:
+```ts
+import { usePost } from '~/generated.ts'; 
 
-    day: number // currently chosen day
-    
-    Exercise: { // collection of exercises 
-        id: number;
-        name: string;
-    }
-    
-    ExerciseResult: {
-        exerciseId: number;
-        repCount: number;
-        repWeight: number;
-    }
-    
-    WorkoutRoutine: {
-        id: number;
-        day: number;
-        results: ExerciseResult[]; // array of ExerciseResult
-    }
+const Hello = () =&gt; { 
+   const { loading, error, data } = usePost(`id title`, { id: 5 }); 
+   if (loading) return &lt;p&gt;Loading ...&lt;/p&gt;; 
+   return &lt;h1&gt;Hello {data.posts.title}!&lt;/h1&gt;; 
+};
+```
 
-My idea is that user switches the day (state variable *day* changes), components get reloaded and fetch new WorkoutRoutine with correct *day* variable and then correct data is shown.
+This package also generate all your types, enums and queries args types.
+It's now very mature, and all devs are using it in my agency.
 
-Is this a good design? Any ideas or criticisms? And in general, are there any resources which would guide me on how to design state, or is it just something that comes with experience?
+Don't hesitate to give me feedback! :) 
 
-Thanks!
-## [6][How do you use the animation library from microsoft UI Fabric](https://www.reddit.com/r/reactjs/comments/ezk2kf/how_do_you_use_the_animation_library_from/)
-- url: https://www.reddit.com/r/reactjs/comments/ezk2kf/how_do_you_use_the_animation_library_from/
----
-I've got a little CRUD app and I've decided to use microsoft UI Fabric instead of bootstrap. The layouts are done, react components and everything is working fine, but, because of the data fetching from the server I want to animate some components when they're loaded.
-
-'ms-ui-fabric' has a [page](https://developer.microsoft.com/en-us/fabric#/styles/web/motion) dedicated to the animation/motion section but it's just the overview, no code samples. I've been looking online and happen to find a fabric UI package "[@fabricui/fluent-theme](https://github.com/OfficeDev/office-ui-fabric-react/tree/master/packages/fluent-theme)" that allows you to animate, but still the documentation doesn't tell you how.
-
-Has anyone used fabric UI or knows how to animate components using fabricUI?
-## [7][Can you rate my work ?](https://www.reddit.com/r/reactjs/comments/ezlp5a/can_you_rate_my_work/)
-- url: https://www.reddit.com/r/reactjs/comments/ezlp5a/can_you_rate_my_work/
----
-I am new to frontend, I remade instagram homepage, with react and redux, what do you think ? 
-
-instagramreduxreact.info
-## [8][Building a Piano with React Hooks - Cloudnweb](https://www.reddit.com/r/reactjs/comments/ezeari/building_a_piano_with_react_hooks_cloudnweb/)
-- url: https://cloudnweb.dev/2020/02/building-a-piano-with-react-hooks/
+[Documentation site](https://sgts.netlify.com/)
+[Github](https://github.com/victorgarciaesgi/simple-graphql-to-typescript)
+## [6][Meet the new Axios website (Next.js, TypeScript, GraphQL, Cloudflare Workers)](https://www.reddit.com/r/reactjs/comments/ezu3tv/meet_the_new_axios_website_nextjs_typescript/)
+- url: https://www.axios.com/new-axios-website-google-amp-563e62ba-8708-4965-8f5e-3216bd268383.html
 ---
 
-## [9][Multistep forms in React shouldn’t be hard. So we made it easy :)](https://www.reddit.com/r/reactjs/comments/ezebso/multistep_forms_in_react_shouldnt_be_hard_so_we/)
-- url: https://joepuzzo.github.io/informed/?path=/story/multistep-forms--basic-multistep
+## [7][What do you think About BEM methodology?](https://www.reddit.com/r/reactjs/comments/f09rqk/what_do_you_think_about_bem_methodology/)
+- url: https://www.reddit.com/r/reactjs/comments/f09rqk/what_do_you_think_about_bem_methodology/
+---
+Here yo have more information [https://en.bem.info/methodology/](https://en.bem.info/methodology/)
+## [8][How to deploy your React App with AWS S3 (HTTPS, Custom Domain, a CDN and continuous deployment)](https://www.reddit.com/r/reactjs/comments/f09fn9/how_to_deploy_your_react_app_with_aws_s3_https/)
+- url: https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081
 ---
 
-## [10][Full page transitions React Package with React Router](https://www.reddit.com/r/reactjs/comments/ezrlbc/full_page_transitions_react_package_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ezrlbc/full_page_transitions_react_package_with_react/
+## [9][I made NSFW swiper webapp.](https://www.reddit.com/r/reactjs/comments/f08yvk/i_made_nsfw_swiper_webapp/)
+- url: https://www.reddit.com/r/reactjs/comments/f08yvk/i_made_nsfw_swiper_webapp/
 ---
-I would like to know your opinion on [react-tiger-transition](https://github.com/pedrobern/react-tiger-transition).
+** [NSFW, PORN WARNING]
+HI I made a  mobile friendly porn site. 
+http://getenjoyable.com (Refresh if error page appears )
 
-This package provides full page transitions with react-router and react-transition-group.
+React, nodejs, swiperjs, material ui are used.
+I tried hard to make it neat.
 
-Here is the [demo/documentation](https://pedrobern.github.io/react-tiger-transition/) site.
+it is quite a different from existing porn sites.
+How do you think?
+Is it good to use?
+## [10][Is returning a custom hook's update function fine? or a bad pattern?](https://www.reddit.com/r/reactjs/comments/f0ador/is_returning_a_custom_hooks_update_function_fine/)
+- url: https://www.reddit.com/r/reactjs/comments/f0ador/is_returning_a_custom_hooks_update_function_fine/
+---
+Right now I'm trying to make a useFetchData, but I need it to rerun the the axios api call inside it everytime my parameter(filter/sort stuff) changes. 🤹‍♂️
+## [11][Quickest way to get a React app + Api (CRUD) running](https://www.reddit.com/r/reactjs/comments/f0a4so/quickest_way_to_get_a_react_app_api_crud_running/)
+- url: https://www.reddit.com/r/reactjs/comments/f0a4so/quickest_way_to_get_a_react_app_api_crud_running/
+---
+Hello, I'm trying to get up to date with all the new techs in 2020, and I was wonder:
 
-I'm the package author and would like to know what can be improved and what is missing. Everybody is invited to make it better by contributing.
-## [11][Handle JavaScript Exception(like a pro)](https://www.reddit.com/r/reactjs/comments/ezqyrp/handle_javascript_exceptionlike_a_pro/)
-- url: https://overflowjs.com/posts/Exception-handling-in-JavaScript.html
+**Which it will be the "quickest way" of making an full React app + API with the typical CRUD actions** with the tools and the scaffolding we have nowadays.
+
+The options I found it's using  [https://github.com/marmelab/react-admin](https://github.com/marmelab/react-admin) for front and Firebase/AirTable or Loopback as data providers (It's just for CRUD actions).
+
+Or maybe using something like  [https://scaffoldhub.io/](https://scaffoldhub.io/) and build the API from scratch in Node.js or Swagger or .NetCore.
+
+So what do you think it will be the quickest way to get from the Model to a full app with persistent data in server ?
+## [12][Deploy Next.js Apps using Github Actions](https://www.reddit.com/r/reactjs/comments/f09z9m/deploy_nextjs_apps_using_github_actions/)
+- url: https://medium.com/@eshwaren/deploy-next-js-apps-using-github-actions-6322261757bc?source=friends_link&amp;sk=7d4edf907daf914d476aefa3547e36e2
 ---
 
-## [12][Gatsby vs Next.js for large (300k+ page) site w/ SEO as primary traffic driver. Opinions?](https://www.reddit.com/r/reactjs/comments/ezi00n/gatsby_vs_nextjs_for_large_300k_page_site_w_seo/)
-- url: https://www.reddit.com/r/reactjs/comments/ezi00n/gatsby_vs_nextjs_for_large_300k_page_site_w_seo/
----
-I know, I know. Yet another one of these comparisons! Bear with me. I'm pulling data from a variety of APIs and structuring the data in my own postgres database, and I have a couple of options:
-
-\- Use Gatsby and go "all static", which has the advantage of low production costs, vibrant plug-in ecosystem, but doesn't support AMP as first-party, which is really important for what I'm doing. So it'd be hacky. Plus, build times would likely take a very long-time, which isn't a deal-breaker.
-
-\- Use Next.js to create the pages uses SSR, which has first class support for AMP, but since it is SSR it's inherently slower than static AND, I assume, production costs would be quite a bit more expensive (having a large, hosted postgres database always on and tapped into). On the other the hand, I don't have to worry about lengthy build processes--and truthfully I have no idea how long it would take to build several hundred thousand static pages, though the content would be minimal and it would only need to be done every day or so.
-
-Out of curiosity, is the expense calculation correct? Would it cost quite a bit more to serve via Next.js and SRR instead of a simple (but large) set of static pages?
-
-Any advice would be appreciated!

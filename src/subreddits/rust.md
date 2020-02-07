@@ -68,77 +68,260 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][This Week in Rust 324](https://www.reddit.com/r/rust/comments/ezqkbg/this_week_in_rust_324/)
-- url: https://this-week-in-rust.org/blog/2020/02/04/this-week-in-rust-324/
+## [3][[FOSDEM] sled and rio: modern database engineering with io_uring](https://www.reddit.com/r/rust/comments/f06y7m/fosdem_sled_and_rio_modern_database_engineering/)
+- url: https://fosdem.org/2020/schedule/event/rust_techniques_sled/
 ---
 
-## [4][RustBelt Meets Relaxed Memory (POPL'20)](https://www.reddit.com/r/rust/comments/ezp06r/rustbelt_meets_relaxed_memory_popl20/)
-- url: https://www.youtube.com/watch?v=QqPo6nT8vVw
+## [4][Announcing Cooked Wakers!](https://www.reddit.com/r/rust/comments/f05qiy/announcing_cooked_wakers/)
+- url: https://www.reddit.com/r/rust/comments/f05qiy/announcing_cooked_wakers/
+---
+After finding that consuming `RawWaker`s and `RawWakerVTable`s was bad for my health, I created [cooked-waker](https://docs.rs/cooked-waker). `cooked-waker` is a safe library with *minimal* abstraction cost that allows you to create a `Waker` out of purely safe rust traits. It aims to be exactly what you "would have" written if you were implementing a `Waker` by hand; in particular, it aims to minimize boxing and other kinds of indirection whenever possible.
+
+It works be providing the `Wake` and `WakeRef` traits, which correspond to the `wake` and `wake_by_ref` methods on `std::task::Waker`. Once you have a *concrete* type that implements these traits, you can derive `IntoWaker` on it, which will generate all of the boilerplate code necessary to create a working `Waker` struct.
+
+Under the hood it leverages [`stowaway`](https://docs.rs/stowaway/1.1.1/stowaway/)¹ to pack your waker struct into the pointer in an `std::task::Waker`. Stowaway prevents extra boxing by packing your struct directly into the bytes of a pointer if it will fit; the most common case is that your struct simply contains a single pointer, like an `Arc&lt;Handle&gt;`.
+
+¹ I wrote this crate as well
+
+# Example:
+
+    use cooked_waker::{Wake, WakeRef, IntoWaker};
+    use std::sync::atomic::{AtomicUsize, Ordering};
+    use std::sync::Arc;
+    use std::task::Waker;
+
+    /// A simple struct that counts the number of times it is awoken. Can't
+    /// be awoken by value (because that would discard the counter), so we
+    /// must instead wrap it in an Arc (see CounterHandle)
+    #[derive(Debug, Default)]
+    struct Counter {
+        // We use atomic usize because we need Send + Sync and also interior
+        // mutability
+        count: AtomicUsize,
+    }
+
+    impl Counter {
+        fn get(&amp;self) -&gt; usize {
+            self.count.load(Ordering::SeqCst)
+        }
+    }
+
+    impl WakeRef for Counter {
+        fn wake_by_ref(&amp;self) {
+            let _prev = self.count.fetch_add(1, Ordering::SeqCst);
+        }
+    }
+
+    /// A shared handle to a Counter.
+    ///
+    /// We can derive Wake and WakeRef because the inner field implements
+    /// them, and we can derive IntoWaker because this is a concrete type
+    /// with Wake + Clone + Send + Sync. Note that *any* concrete type can have
+    /// IntoWaker implemented for it; it doesn't have to be "pointer-sized"
+    #[derive(Debug, Clone, Default, WakeRef, Wake, IntoWaker)]
+    struct CounterHandle {
+        counter: Arc&lt;Counter&gt;,
+    }
+
+    impl CounterHandle {
+        fn get(&amp;self) -&gt; usize {
+            self.counter.get()
+        }
+    }
+
+    let counter = CounterHandle::default();
+
+    // Create an std::task::Waker
+    let waker: Waker = counter.clone().into_waker();
+
+    waker.wake_by_ref();
+    waker.wake_by_ref();
+
+    let waker2 = waker.clone();
+    waker2.wake_by_ref();
+
+    // This calls Counter::wake_by_ref because the Arc doesn't have exclusive
+    // ownership of the underlying Counter
+    waker2.wake();
+
+    assert_eq!(counter.get(), 4);
+## [5][Announcing the Cleanup Crew ICE-breaker group | Inside Rust Blog](https://www.reddit.com/r/rust/comments/ezxmu4/announcing_the_cleanup_crew_icebreaker_group/)
+- url: https://blog.rust-lang.org/inside-rust/2020/02/06/Cleanup-Crew-ICE-breakers.html
 ---
 
-## [5][[FOSDEM] Building WebGPU with RUST](https://www.reddit.com/r/rust/comments/ezqezb/fosdem_building_webgpu_with_rust/)
-- url: https://fosdem.org/2020/schedule/event/rust_webgpu/
+## [6][Is actix still the choice to make?](https://www.reddit.com/r/rust/comments/f07n4b/is_actix_still_the_choice_to_make/)
+- url: https://www.reddit.com/r/rust/comments/f07n4b/is_actix_still_the_choice_to_make/
+---
+I'm starting a new project, I wanted to use rust and I was wondering if, after what happened recently, actix-* was still a good option?
+## [7][Wrapper types for beginners](https://www.reddit.com/r/rust/comments/f00vtt/wrapper_types_for_beginners/)
+- url: https://manishearth.github.io/blog/2015/05/27/wrapper-types-in-rust-choosing-your-guarantees/
 ---
 
-## [6][Rust Game Development - Ecosystem Survey](https://www.reddit.com/r/rust/comments/ezrk0y/rust_game_development_ecosystem_survey/)
+## [8][Idiomatic rust](https://www.reddit.com/r/rust/comments/f08231/idiomatic_rust/)
+- url: https://www.reddit.com/r/rust/comments/f08231/idiomatic_rust/
+---
+Hi there.
+
+In order to teach myself some *Rust* using examples, I imagined it'd be nice to do what I did with *Haskell* : go as far as possible in the [99 questions](https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems).
+
+The [seventh question](https://wiki.haskell.org/99_questions/1_to_10#Problem_7) is about flattening a nested list structure :
+
+```rust
+pub enum NestedListEnum&lt;T&gt; {
+    Elem(T),
+    List(Vec&lt;NestedListEnum&lt;T&gt;&gt;),
+}
+```
+
+So, my `enum` might not conform *Rust*'s best practices but my question is more about the `flatten` implementation. Here are two :
+
+```rust
+pub fn flatten_0&lt;T: Copy&gt;(nested_list: &amp;[NestedListEnum&lt;T&gt;]) -&gt; Vec&lt;T&gt; {
+    nested_list.split_first().map_or(vec![], |(head, tail)| {
+        [
+            match head {
+                NestedListEnum::Elem(e) =&gt; vec![*e],
+                NestedListEnum::List(l) =&gt; flatten(l),
+            },
+            flatten(tail),
+        ]
+        .concat()
+    })
+```
+
+and
+
+```rust
+pub fn flatten_1&lt;T: Copy&gt;(nested_list: &amp;[NestedListEnum&lt;T&gt;]) -&gt; Vec&lt;T&gt; {
+    nested_list.split_first().map_or(vec![], |(head, tail)| {
+        let mut output = match head {
+            NestedListEnum::Elem(e) =&gt; vec![*e],
+            NestedListEnum::List(l) =&gt; flatten(l),
+        };
+        output.extend(flatten(tail));
+        output
+    })
+}
+```
+
+So, my question is, given *Rust*'s internals and or best practice, which one is best?
+
+Also, I'm not against other feedback if you're at it.
+
+Many thanks in advance!
+
+EDIT : u/po8 and u/wishthane pointed out that `Clone` might be better than `Copy` so the code could well be as follow :
+
+```rust
+pub fn flatten&lt;T: Clone&gt;(nested_list: &amp;[NestedListEnum&lt;T&gt;]) -&gt; Vec&lt;T&gt; {
+    nested_list.split_first().map_or(vec![], |(head, tail)| {
+        [
+            match head {
+                NestedListEnum::Elem(e) =&gt; vec![e.clone()],
+                NestedListEnum::List(l) =&gt; flatten(l),
+            },
+            flatten(tail),
+        ]
+        .concat()
+    })
+}
+```
+
+Also, thanks to u/wishthane, in two times to reduce allocations :
+
+```rustd
+pub fn flatten&lt;T: Clone&gt;(nested_list: &amp;[NestedListEnum&lt;T&gt;]) -&gt; Vec&lt;T&gt; {
+    let mut output = vec![];
+    flatten_util(&amp;nested_list, &amp;mut output);
+    output
+}
+
+fn flatten_util&lt;T: Clone&gt;(nested_list: &amp;[NestedListEnum&lt;T&gt;], output: &amp;mut Vec&lt;T&gt;) {
+    for nl in nested_list {
+        match nl {
+            NestedListEnum::Elem(e) =&gt; output.push(e.clone()),
+            NestedListEnum::List(l) =&gt; flatten_util(l, output),
+        }
+    }
+}
+
+```
+## [9][Rust Game Development - Ecosystem Survey](https://www.reddit.com/r/rust/comments/ezrk0y/rust_game_development_ecosystem_survey/)
 - url: https://rust-gamedev.github.io/posts/survey-01/
 ---
 
-## [7][io-mux and highlight-stderr now work on all UNIX platforms; thanks, /r/rust!](https://www.reddit.com/r/rust/comments/ezhcfd/iomux_and_highlightstderr_now_work_on_all_unix/)
-- url: https://www.reddit.com/r/rust/comments/ezhcfd/iomux_and_highlightstderr_now_work_on_all_unix/
+## [10][Find random long/lat for a given long/lat within a radius](https://www.reddit.com/r/rust/comments/f08lqu/find_random_longlat_for_a_given_longlat_within_a/)
+- url: https://www.reddit.com/r/rust/comments/f08lqu/find_random_longlat_for_a_given_longlat_within_a/
 ---
-Yesterday, I [posted](https://www.reddit.com/r/rust/comments/eyj15s/highlightstderr_run_a_command_and_highlight_its/) highlight-stderr, to highlight the stderr of a process while preserving the order of stdout and stderr.
+I have a location (longitude and latitude). I am wondering if it is possible to get a random location for a given radius, so e.g.: give me a random longitude and latitude within X meters of longitude Y and latitude Z.
 
-Among the wonderful feedback I received, /u/Freeky provided a PR to port the underlying [io-mux library](https://crates.io/crates/io-mux) to other UNIX platforms. I've released new versions of io-mux and highlight-stderr with those and other changes, and the new versions have now been confirmed to work on macOS and FreeBSD in addition to Linux!
-
-I love the Rust community. Thanks to everyone who responded.
-## [8][Rust and GTK from a React perspective](https://www.reddit.com/r/rust/comments/ezrt1y/rust_and_gtk_from_a_react_perspective/)
-- url: https://savanni.luminescent-dreams.com/2020/01/15/rust-react-gtk/
+I had a look in the examples of crate  [https://github.com/georust/geo/tree/master/geo/examples](https://github.com/georust/geo/tree/master/geo/examples), but I did not saw a method that can do this.
+## [11][rust web benchmark](https://www.reddit.com/r/rust/comments/f06zzq/rust_web_benchmark/)
+- url: https://www.reddit.com/r/rust/comments/f06zzq/rust_web_benchmark/
 ---
+Hi,
 
-## [9][Svgbob has now added ability to style the generated diagrams from ascii.](https://www.reddit.com/r/rust/comments/ezmd0i/svgbob_has_now_added_ability_to_style_the/)
-- url: https://github.com/ivanceras/svgbob/issues/11
----
+I need to benchmark the impact of some kuberbetes addon at work. We mostly use http services for whatever is deployed there coded in a few languages.
 
-## [10][ZZ is a modern formally provable dialect of C](https://www.reddit.com/r/rust/comments/ez73pi/zz_is_a_modern_formally_provable_dialect_of_c/)
-- url: https://github.com/aep/zz
----
+I took the opportunity to testout hello world http servers in different languages:
 
-## [11][Terminal Prompt](https://www.reddit.com/r/rust/comments/ezmrzs/terminal_prompt/)
-- url: https://www.reddit.com/r/rust/comments/ezmrzs/terminal_prompt/
----
-Hi, I'm new.
+go, java and of course, rust.
 
-Can anyone share examples of how you might make a terminal app with it's own prompt?
+For each language, the logic is the same, create a http handler and make it wait 26ms before writing hello in the http response.What I do is use 6 replicas of the pods, and simulate 50k reqs with 500 concurrent workers.
 
-Like while you are in the app it has it's own prompt and you type help or something and it displays a list of commands the app has that they can use.
-## [12][rustfmt with single-line if else expression](https://www.reddit.com/r/rust/comments/ezqeg3/rustfmt_with_singleline_if_else_expression/)
-- url: https://www.reddit.com/r/rust/comments/ezqeg3/rustfmt_with_singleline_if_else_expression/
----
-I am having difficulty getting formatting with rustfmt using a single-line if else expression within a match statement. This works fine with rustfmt (rustfmt doesn't change it):
+the code for rust is the following (and I tried different servers before)
 
-    let y = if x &gt; 0 { x } else { 0 }; 
-
-but if I put it in a match statement:
-
-    let y = match list.iter().max() {
-        Some(&amp;value) =&gt;  if value &gt; 0 { value } else { 0 },
-        None =&gt; 0,
+    use actix_web::{web, App, HttpRequest, HttpServer};
+    use std::{thread, time};
+    
+    async fn index(_req: HttpRequest) -&gt; &amp;'static str {
+        thread::sleep(time::Duration::from_millis(26));
+        "hi rust!"
+    }
+    
+    #[actix_rt::main]
+    async fn main() -&gt; std::io::Result&lt;()&gt; {
+        HttpServer::new(|| App::new().service(web::resource("/*").to(index)))
+            .bind("0.0.0.0:8080")?
+            .run()
+            .await
     }
 
-then it gets formatted over like 5 lines (as rustfmt adds in an extra set of curly braces) and (in my opinion) makes it a bit more difficult to follow the logic of the match statement:
+Results are kind of expected:
 
-    let y = match list.iter().max() {
-        Some(&amp;value) =&gt; {
-            if value &gt; 0 {
-                value
-            } else {
-                0
-            }
-        }
-        None =&gt; 0,
-    };
+rust uses 10x less cpu and 30x less memory than java, 3x less cpu than go.
 
-Is there a good way to turn this off or an option to do single-line if else expressions in a match statement?
+**BUT**
 
-Edit: or if there's a better way of matching / doing a match statement with this kind of conditional assignment then I'd be happy to learn!
+1. There are a few request errors
+2. The number of reqs/s is half of what both java and go can handle (for the same number f replicas)
+
+Of course, if I add more rust replicas, it scales up and can come on par with go and java, but why is my rust web server isn't better at managing concurrent requests? Is it the way I thread sleep? Is it a config issue?
+
+Help me use this opportunity to introduce rust in my company!
+
+**EDIT**
+
+Indeed, the blocking thread was the killer here. Now rust has 4x more requests handled!thanks [K900\_](https://www.reddit.com/user/K900_/) and [pbspbsingh](https://www.reddit.com/user/pbspbsingh/)!
+## [12][Announcing shaku, a dependency injection library](https://www.reddit.com/r/rust/comments/ezv5zf/announcing_shaku_a_dependency_injection_library/)
+- url: https://www.reddit.com/r/rust/comments/ezv5zf/announcing_shaku_a_dependency_injection_library/
+---
+[crate], [docs], [repo], [rocket integration]
+
+I've been working on this crate for the past few months, and now I think it's ready to see what others think of it. Shaku is a [dependency injection] library which, unlike most other Rust DI libraries, allows you to have both long living and temporary services, and checks dependencies at application startup.
+
+For example, a database connection pool lives for the application lifetime, but the connections it provides may only live for the lifetime of a request (temporary service). If a service is registered that requires a connection, but no registered service provides a connection, then an error will be thrown on startup (when building the DI container).
+
+Most of the work is taken care of by a (optional) derive macro, so there is minimal boilerplate. See the [getting started guide] on the [docs] for a walkthrough!
+
+I'm really interested in what you think of the API, usability, documentation, etc, so please open issues! I plan on continuing development of the crate and getting it to 1.0 (and beyond), so your thoughts would be greatly appreciated.
+
+[users.rust-lang.org thread]
+
+[crate]: https://crates.io/crates/shaku
+[docs]: https://docs.rs/shaku/0.1.0/shaku/
+[repo]: https://github.com/Mcat12/shaku
+[rocket integration]: https://crates.io/crates/shaku_rocket
+[dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection
+[getting started guide]: https://docs.rs/shaku/0.1.0/shaku/#getting-started
+[users.rust-lang.org thread]: https://users.rust-lang.org/t/announcing-shaku-a-dependency-injection-library/37924

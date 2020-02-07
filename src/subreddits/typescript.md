@@ -22,117 +22,73 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TypeScript assertion signatures for Object.defineProperty](https://www.reddit.com/r/typescript/comments/ezpya1/typescript_assertion_signatures_for/)
+## [2][Announcing TypeScript 3.8 RC](https://www.reddit.com/r/typescript/comments/f01vnf/announcing_typescript_38_rc/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/
+---
+
+## [3][Progress so far on my web browser for language-learning, LinguaBrowse, written in TypeScript using React Native](https://www.reddit.com/r/typescript/comments/f01it4/progress_so_far_on_my_web_browser_for/)
+- url: https://twitter.com/LinguaBrowse/status/1225562067819749376?s=20
+---
+
+## [4][Could use a little help](https://www.reddit.com/r/typescript/comments/f09c0m/could_use_a_little_help/)
+- url: https://www.reddit.com/r/typescript/comments/f09c0m/could_use_a_little_help/
+---
+Hi, everyone I'm somewhat kinda new to typescript but not oblivious to JavaScript, What I'm wanting to do (if possible) is wanting to combine my 3+ .ts files when it transpiles / compiles I would like for it to be in one .js file using the modular pattern.
+
+similar to what sass kinda does with with multiply partials.
+
+I saw a comment in the TSConfig file for "outfile" and I couldn't get it to work, I kept getting an error about lack of persmissions or something.
+## [5][TypeScript Beta for using Optional Chaining](https://www.reddit.com/r/typescript/comments/ezy7ti/typescript_beta_for_using_optional_chaining/)
+- url: https://www.reddit.com/r/typescript/comments/ezy7ti/typescript_beta_for_using_optional_chaining/
+---
+Hi there, i'd really like to use the cool new features like optional chaining..
+
+I followed the npm i instructions from the blog
+
+ [https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/) 
+
+however after it downloaded, tsc -- version still says i'm on Version 3.6.4
+
+And the compiler still complains about optional chaining... do you know how to fix this?
+
+Thanks much!
+## [6][Is is possible to combine multiple NestJS Swagger decorators?](https://www.reddit.com/r/typescript/comments/f03w6o/is_is_possible_to_combine_multiple_nestjs_swagger/)
+- url: https://www.reddit.com/r/typescript/comments/f03w6o/is_is_possible_to_combine_multiple_nestjs_swagger/
+---
+Hi. I'm using NestJS and Swagger. Before each GET router which returns result as a list, i add these decorators:
+
+    @Get()
+    @ApiQuery({ name: "page", required: false })
+    @ApiQuery({ name: "limit", required: false })
+    @ApiQuery({ name: "sort", required: false })
+    @ApiQuery({ name: "order", required: false })
+
+Is there any chance that i could combine those into one custom decorator, such as `@GetListOptions()`?
+## [7][TypeScript assertion signatures for Object.defineProperty](https://www.reddit.com/r/typescript/comments/ezpya1/typescript_assertion_signatures_for/)
 - url: https://fettblog.eu/typescript-assertion-signatures/
 ---
 
-## [3][How to execute TS code in Visual Studio (full IDE)?](https://www.reddit.com/r/typescript/comments/ezprmb/how_to_execute_ts_code_in_visual_studio_full_ide/)
-- url: https://www.reddit.com/r/typescript/comments/ezprmb/how_to_execute_ts_code_in_visual_studio_full_ide/
+## [8][Is it possible to write a class that overrides every method in a given object?](https://www.reddit.com/r/typescript/comments/f03gg9/is_it_possible_to_write_a_class_that_overrides/)
+- url: https://www.reddit.com/r/typescript/comments/f03gg9/is_it_possible_to_write_a_class_that_overrides/
 ---
-I have a junior developer who sometimes needs examples how to use typescript properly. I'm a full .NET developer and I love my Visual Studio. I can create a new TS file with code highlighting and even proper intellisense to demonstrate code snippets. It would be perfect if I could interactively execute these snippets too without setting out the whole webpage or switching IDE. I mean, it runs the whole npm / ts engine when I open up the file, it must be possible to execute it somehow? 
+Let’s say I construct said class with an instance of Array&lt;?&gt;, is it possible to have this class implement all the methods that belong to array?
 
-What I'm looking for are C#-, F#- and Python-like interactive windows.
+Like 
+`(new Foo(arr)).filter(...).map(...).reduce(...)` 
+for example, but all those methods would be mapped to exactly one overriding method in the Foo class?
 
-Has anyone got it working under full Visual Studio IDE?
-## [4][Algebraic graphs implementation in TypeScript](https://www.reddit.com/r/typescript/comments/ezs5x0/algebraic_graphs_implementation_in_typescript/)
+Sorry if this isn’t clear enough.
+## [9][Use discriminated union to make switch and if blocks typesafe](https://www.reddit.com/r/typescript/comments/ezxp1y/use_discriminated_union_to_make_switch_and_if/)
+- url: https://www.reddit.com/r/typescript/comments/ezxp1y/use_discriminated_union_to_make_switch_and_if/
+---
+Is there a way to use a discriminated union to have the compiler infer the return type of a specific switch case or if block and throw an error if you're not returning the correct type?
+
+I'd like to use this over a union of classes. I know how to set up the discriminated union but I can still return a totally wrong class.
+## [10][Algebraic graphs implementation in TypeScript](https://www.reddit.com/r/typescript/comments/ezs5x0/algebraic_graphs_implementation_in_typescript/)
 - url: https://github.com/algebraic-graphs/typescript
 ---
 
-## [5][Verifying and inferring type](https://www.reddit.com/r/typescript/comments/ezpfk2/verifying_and_inferring_type/)
-- url: https://www.reddit.com/r/typescript/comments/ezpfk2/verifying_and_inferring_type/
----
-I'm working on a web app in a Node-ish environment (Next.js API routes) where the input for `POST` data comes in a `req.body` object. I've come up with the following (elegant, I think) way of both checking that the `POST` variables have the valid type at runtime while also inferring their type in the code:
-
-    const {shouldBeString} = extract(req.body, {
-        shouldBeString: isString,
-        shouldBeNumber: isNumber
-    });
-    
-    // hover here to see that the right type is inferred
-    type ShouldAlsoBeString = typeof shouldBeString;
-
-`extract` is the function that does the extraction by taking `req.body` as a parameter and a definition object that maps field names to type narrowing functions (such as the commonplace `isString` -- also found in the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/advanced-types.html#typeof-type-guards), but can be any custom type narrowing function);
-
-The code that makes this happen is the following:
-
-    type Narrower&lt;T&gt; = (v: unknown) =&gt; v is T;
-    type Definition = { [k: string]: Narrower&lt;unknown&gt; };
-
-    type Narrowed&lt;T&gt; = T extends Narrower&lt;infer X&gt; ? X : never;
-    type Extracted&lt;T&gt; = { [P in keyof T]: Narrowed&lt;T[P]&gt; }
-
-    type PostData = { [k: string]: unknown };
-    
-    const extract = &lt;D extends Definition&gt;(post: PostData, def: D): Extracted&lt;D&gt; =&gt;
-        Object.entries(def).reduce((result, [field, isRightType]) =&gt; {
-            const value = post[field];
-            if (!isRightType(value)) {
-                throw Error(`Invalid value for field ${field}`);
-            }
-            return ({...result, [field]: value});
-        }, {} as Extracted&lt;D&gt;);
-    
-    // hover here to see that the right type is inferred
-    type ShouldBeString = Narrowed&lt;typeof isString&gt;;
-
-What do you think? Any suggestions as to naming? Code style? Anything else?
-
-(This is minimalist by design, it doesn't support optional inputs or fields having more than one value per field. Might work on that if the use case arises.)
-
-Thanks!
-## [6][How do I setup a Typescript project?](https://www.reddit.com/r/typescript/comments/ezr6hg/how_do_i_setup_a_typescript_project/)
-- url: https://www.reddit.com/r/typescript/comments/ezr6hg/how_do_i_setup_a_typescript_project/
----
-I want to try using typescript within a browser context but I haven't really found what is the best way to set-up such a project. I'm mainly having trouble with what I should do with npm downloaded packages, I'm using PHPStorm so the typescript compiling itself is handled.
-
-I'm looking to use systemjs as a loader as well.
-## [7][TS server detects error in IDE, ts-jest passes the test without raising the type error.](https://www.reddit.com/r/typescript/comments/ezqp3i/ts_server_detects_error_in_ide_tsjest_passes_the/)
-- url: https://i.redd.it/jmywutwy9af41.gif
----
-
-## [8][Create single ES6 module?](https://www.reddit.com/r/typescript/comments/ezqnp4/create_single_es6_module/)
-- url: https://www.reddit.com/r/typescript/comments/ezqnp4/create_single_es6_module/
----
-I'm just getting started with typescript and what I'd like to achieve is to export/build a single ES6 module from all files with just typescript. It seems like typescript can do that for AMD or system but I didn't find a way to do it with ES6. Is this not possible? Tbh, that would be a dealbreaker for me. I want to avoid webpack and rollup because they add unnecessary overhead. As the AMD option shows, tsc should already be capable of doing single file builds.
-## [9][Can you create a subset of a const enum?](https://www.reddit.com/r/typescript/comments/ezdawh/can_you_create_a_subset_of_a_const_enum/)
-- url: https://www.reddit.com/r/typescript/comments/ezdawh/can_you_create_a_subset_of_a_const_enum/
----
-I'm trying to create a  subset of a const enum, but it's [not working](https://www.typescriptlang.org/play/#code/MYewdgzgLgBApmArgWxgQQDYYHIoEZwBOMA3gFAyUwDyYcMAvDAEThzMA0FVAKgO4hGLKAM7dKPABaE49JsyjTZzMgF8yZUJFgIUNACb7cyAsXJUadIZhz4iAOlpwuFqTLnosx0-beyu6mQAZohgwFAAluAwERDUht5EABQAHgBcMNCEEWAA5gCUGSkxEAZGdmbimXwRUMCSMKn5pFUWwACGEPTx5SYOTmmtVB1dZYmEvkpwgxazVDJQiIRgMFCEiHAA3EOU+nBB7YgYUDNzswtLKwcYXdsW6qpAA) as I'd expect. Is something like this possible, or would you recommend another approach?
-## [10][Question about code reuse and inheritance](https://www.reddit.com/r/typescript/comments/ez7sfn/question_about_code_reuse_and_inheritance/)
-- url: https://www.reddit.com/r/typescript/comments/ez7sfn/question_about_code_reuse_and_inheritance/
----
-I have a question regarding the best way to structure code for reuse with inheritance in cases, where some methods in the base class does not make sense in the inheriting class.
-
-I think this is a general OOP issue and not only peculair to TypeScript...
-
-So basically, in some form of pseudo code, the issue is similar to this:
-
-`class BaseClassmakesSenseForAmakesSsenseForA....doesnotMakeSenseForAdoesnotMakeSenseForA....`
-
-How then to have a `Class A` inherit BaseClass. Just direct inheritance means that `Class A`  would have member methods that does not really make sense.
-
-Not using inheritance means the things that code would be duplicated in both `BaseClass` and `Class A`
-
-Moving  the `makesSenseForA` methods to an external class and have both `BaseClass` and it's children class depend on this extracted class (ie using composition) does not work in this particular scenario, because the extracted class should actually be seen as A `BaseClass.`
-
-How really is the best way to handle this kind of OOP modeling situation?
-
-EDIT: example
-
-For lack of better example, it is like trying to model \`Human\` and \`Cyborg\` - this two would share a ton loads of similar implementation and hence first thought might be to have \`Cyborg\` extends \`Human\`...
-
-&amp;#x200B;
-
-But also there would be a ton of implementation that \`Human\` has that \`Cyborg\` should not have.
-
-&amp;#x200B;
-
-Doing away with inheritance means those similar functionality would have to be duplicated in \`Human\` and Cyborg\`.
-
-&amp;#x200B;
-
-And composition also does not work, because if you extract those implementation that are similar into a separate object, that object, and it's method would constitute human like characteristics, and hence should be seen as a \`Human\` in our modelling.
-## [11][Tip: type npx typescript-react , to bootstrap a starter application](https://www.reddit.com/r/typescript/comments/ezgfpe/tip_type_npx_typescriptreact_to_bootstrap_a/)
-- url: https://www.reddit.com/r/typescript/comments/ezgfpe/tip_type_npx_typescriptreact_to_bootstrap_a/
+## [11][TypeScript Tip of the Week — Optional Chaining](https://www.reddit.com/r/typescript/comments/eztozo/typescript_tip_of_the_week_optional_chaining/)
+- url: https://medium.com/@sredmond/typescript-tip-of-the-week-optional-chaining-fafc49113dbf?source=friends_link&amp;sk=56d488eb35b93d1c9ce284d282a6b823
 ---
 

@@ -1,5 +1,53 @@
 # aws
-## [1][Automatic Capacity Reservations](https://www.reddit.com/r/aws/comments/f099cu/automatic_capacity_reservations/)
+## [1][Worst AWS consultant experiences?](https://www.reddit.com/r/aws/comments/f0f2yx/worst_aws_consultant_experiences/)
+- url: https://www.reddit.com/r/aws/comments/f0f2yx/worst_aws_consultant_experiences/
+---
+People that have engaged third party AWS consultants, what did they do badly? What surprised you most?
+## [2][Is there a way to avoid duplicates in Dynamodb?](https://www.reddit.com/r/aws/comments/f0q036/is_there_a_way_to_avoid_duplicates_in_dynamodb/)
+- url: https://www.reddit.com/r/aws/comments/f0q036/is_there_a_way_to_avoid_duplicates_in_dynamodb/
+---
+I'm adding records with auto-generated primary keys. So, is there a way to avoid duplicate records in Dynamodb?
+## [3][Why would I use Node.js in Lambda? Node main feature is handling concurrent many requests. If each request to lambda will spawn a new Node instance, whats the point?](https://www.reddit.com/r/aws/comments/f0dsq3/why_would_i_use_nodejs_in_lambda_node_main/)
+- url: https://www.reddit.com/r/aws/comments/f0dsq3/why_would_i_use_nodejs_in_lambda_node_main/
+---
+Maybe I'm missing something here, from an architectural point of view, I can't wrap my head on using node inside a lambda. Let's say I receive 3 requests, a single node instance would be able to handle this with ease, but if I use lambda, 3 lambdas with Node inside would be spawned, each would be idle while waiting for the callback.
+
+Edit: Many very good answers. I will for sure discuss this with the team next week. Very happy with this community. Thanks and please keep them coming!
+## [4][What tools are useful for testing api response speeds.?](https://www.reddit.com/r/aws/comments/f0rfkr/what_tools_are_useful_for_testing_api_response/)
+- url: https://www.reddit.com/r/aws/comments/f0rfkr/what_tools_are_useful_for_testing_api_response/
+---
+I've setup few apis in api gateway and connected to lambda and Dynamodb. After deploying these apis. I want to be able to test them in rapid succession to measure the response time and latency and data transfered.
+## [5][Database in RDS keeps disappearing. Please Help](https://www.reddit.com/r/aws/comments/f0n5ua/database_in_rds_keeps_disappearing_please_help/)
+- url: https://www.reddit.com/r/aws/comments/f0n5ua/database_in_rds_keeps_disappearing_please_help/
+---
+I have an amazon student AWS account and for my project I am using the RDS with MSQL (basic config). I keep finding my database missing every 2-3 days and I have to keep building up. The instance still remains active, but it is the database that keeps disappearing. Any idea what might be causing it and how to solve it .
+## [6][Question about the most simple and secure way to deploy a React Website and a Django Framework](https://www.reddit.com/r/aws/comments/f0r04p/question_about_the_most_simple_and_secure_way_to/)
+- url: https://www.reddit.com/r/aws/comments/f0r04p/question_about_the_most_simple_and_secure_way_to/
+---
+Hello everyone,
+
+I've developed a React JS where the users can retrieve data from my Django REST backend to query data etc.  Optinally: I want to create a login functionality.My initial thought was to create a Kubernetes cluster and deploy there the services but I now think that it might be an overkill.
+
+I did some research and found the AWS API Gateway.
+
+My new idea is to create an API Gateway and connect this to my Website that I host on S3. Then I route the GET request from the website through the API Gateway to my Django REST Service and return there the data. I want to use the Django Backend because I think about to implement a Sign up and Login functionality to my website. Otherwise I also could use Lambdas.
+
+The architecture might look like this:
+
+Client &lt;----&gt; Website (public) &lt;----&gt; GET &lt;----&gt; API Gateway (public) &lt;------&gt; Django REST service (inside private vpc) &lt;-----&gt; AWS RDS (also in the private vpc, contains my MySQL db).
+
+The REST services is hosted on an EC2 instance and retrieve data from a MySQL db that are both in a private vpc. So the only public visible address would be the API Gateway.
+
+What do you think about this approach?
+
+Edit: For me it seems to be way too much overhead to have the API Gateway and also a Django REST service.
+## [7][ELI5: What is capacity units?](https://www.reddit.com/r/aws/comments/f0qblg/eli5_what_is_capacity_units/)
+- url: https://www.reddit.com/r/aws/comments/f0qblg/eli5_what_is_capacity_units/
+---
+What is read and write capacity units? I've been using DynamoDB and this concept has eluded me the most. 
+
+Is this related to concurrency? Like, if Read and Write is set to 1 unit, does this mean only one lambda/ one request can be reading and writing to the DB?
+## [8][Automatic Capacity Reservations](https://www.reddit.com/r/aws/comments/f099cu/automatic_capacity_reservations/)
 - url: https://www.reddit.com/r/aws/comments/f099cu/automatic_capacity_reservations/
 ---
 Hi all 👋,
@@ -11,83 +59,19 @@ This tool would be helpful for those that maintain a fleet of instances that are
 It's available as a deployable CloudFormation stack at: [https://github.com/iann0036/auto-capacity-reservations](https://github.com/iann0036/auto-capacity-reservations)
 
 Comments, suggestions and general discussion welcomed!
-## [2][Inherit aws resources from other cloudformaiton stack?](https://www.reddit.com/r/aws/comments/f08c0k/inherit_aws_resources_from_other_cloudformaiton/)
-- url: https://www.reddit.com/r/aws/comments/f08c0k/inherit_aws_resources_from_other_cloudformaiton/
----
-I write a cloudformation file -- a stack that contain ALL generate/static parts of aws resources (except iam, aws certs ..etc)
-
-&amp;#x200B;
-
-I want to add others stacks that would use directly resources that declared from above static stack as native instead of import them. Is there a way to achieve this?
-## [3][ELI5: When should one use ElasticSearch as opposed to SQL/NoSql?](https://www.reddit.com/r/aws/comments/f00t52/eli5_when_should_one_use_elasticsearch_as_opposed/)
-- url: https://www.reddit.com/r/aws/comments/f00t52/eli5_when_should_one_use_elasticsearch_as_opposed/
----
-This is from AWS documentation on ElasticSearch
-
-'Amazon Elasticsearch Service is a managed service that makes it easy to deploy, operate, and scale Elasticsearch in the AWS Cloud. Elasticsearch is a popular open-source search and analytics engine for use cases such as log analytics, real-time application monitoring, and click stream analytics'
-
-I'am familiar with querying data with SQL(joining tables when you need data from multiple tables) and from NoSql by primary key
-
-There's also indexes to speedup the lookup of both.
-
-From my understanding, ElasticSearch is a search querying search on top of the data-store.
-
-My question is when should you use ElastiSearch as opposed to just SQL and NoSQL with indexes? Can someone give an ELI5 example of this?
-
-What value does ElasticSearch bring that the previously mentioned database solutions don't provide? With ElasticSearch, comes maintaining additional infrastructure(cluster) and complexity/costs as well
-## [4][Dockerization of NodeJS Applications on Amazon Elastic Containers](https://www.reddit.com/r/aws/comments/f05s5b/dockerization_of_nodejs_applications_on_amazon/)
+## [9][Dockerization of NodeJS Applications on Amazon Elastic Containers](https://www.reddit.com/r/aws/comments/f0ie1a/dockerization_of_nodejs_applications_on_amazon/)
 - url: https://blog.soshace.com/dockerization-of-node-js-applications-on-amazon-elastic-containers/
 ---
 
-## [5][Running a bastion host / jumpbox on Fargate](https://www.reddit.com/r/aws/comments/f07wsu/running_a_bastion_host_jumpbox_on_fargate/)
-- url: https://blog.deleu.dev/running-a-bastion-host-on-fargate/
+## [10][What to look out for when moving from EC2 to RDS for Postgres?](https://www.reddit.com/r/aws/comments/f0iz0f/what_to_look_out_for_when_moving_from_ec2_to_rds/)
+- url: https://www.reddit.com/r/aws/comments/f0iz0f/what_to_look_out_for_when_moving_from_ec2_to_rds/
 ---
+Hi Everyone,
 
-## [6][Transitioning small objects to Glacier or Glacier Deep Archive will increase costs.](https://www.reddit.com/r/aws/comments/f09pzm/transitioning_small_objects_to_glacier_or_glacier/)
-- url: https://www.reddit.com/r/aws/comments/f09pzm/transitioning_small_objects_to_glacier_or_glacier/
----
-&gt; Before creating a lifecycle rule that transitions small objects to Glacier or Glacier Deep Archive, consider how many objects will be transitioned and how long you plan to keep the objects. Lifecycle request charges for these objects will increase your costs. 
+I'm seeking out some first hand knowledge from anyone that has migrated from running your own Postgres instances on EC2 to RDS. We're excited by a number of features that will allow us to free up DBA time to tuning vs. configuration management, as well as the new RDS Proxy functionality coming out in the near future that will support Postgres. We're currently running a fairly large instance type to support the increasing number of connections hitting our instance, but I'm hoping we can scale that back when we eventually implement RDS Proxy, which should hopefully offset the cost of moving to RDS. I know we could use something like pgpool for that area specifically, but I'm a big fan of managed services where available.
 
+In years past, we were looking to make the move from our EC2 MS SQL Server instances to RDS, but there were too many specific use cases that prevented us from doing that properly. Is anyone aware of limitations or "gotchas" when migrating from EC2 to Postgres RDS specifically? They have a great section on their MS SQL Server docs (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html) in the SQL Server Security section, but I can't seem to find anything comparable for postgres.
 
-I'm looking to backup my Synology NAS to the cloud. Between 100 GB and 200 GB. I'm thinking of doing backups every 3 to 6 months and keep these in Glacier for safe keeping. 
+I'm the farthest thing from a Postgres DBA, so all of this information will be gathered and reviewed collectively with our actual DBAs, but they're not too familiar with the AWS side of things (yet).
 
-I started by trying to setup my Synology NAS to backup directly to the S3 Vault I configured. Apparently it's not possible. I can only backup to an S3 Bucket. I should then set this up in a way that it archives my backup to S3 Glacier's vault. Fine. However, like many times before, I got stuck. This time on the message in the title. 
-
-From what I can see, Synology's Hyper Backup backs up my files in its own proprietary format, made up of many 50 MB files. I'm wondering what impact this will have on the costs of backing up my NAS this way. I know there is a link to the costs information page, but I get lost in that.
-
-Can anyone offer some guidance? I had a really hard time getting this far, because I have 0 experience with online backup services, much less Amazon's. There's so much information! In short:
-
-Am I doing this the right way? Can I configure my NAS to backup directly into Glacier? Can I set it up in a way that it doesn't divide the files into 50MB pieces? Can I upload these to an S3 bucket and then archive into glacier?
-How can I restore from Glacier, if I can only access the bucket via Synology Hyper Backup?
-
-Bonus question: how to minimize the time my data spends in the S3 bucket? I don't care much about versioning, but I find myself having to fiddle with that, as if it's impossible to avoid setting up...
-
-I'm left with many other questions, but I believe that if I can take a few steps forward, I can figure those out. How does restore work, for example? Can I restore a single file or do I need to download the whole backup? I guess this will depend on Synology's Hyper Backup more than S3 bucket... How often can I, or should I backup to S3 - this one is for me to decide, but I need to make sense of the costs information first. etc, etc....
-
-Thanks for shedding some light into this!
-## [7][AWS VPC for Software Engineers](https://www.reddit.com/r/aws/comments/ezru46/aws_vpc_for_software_engineers/)
-- url: https://blog.deleu.dev/aws-vpc-for-software-engineers/
----
-
-## [8][Professional Services Consultant](https://www.reddit.com/r/aws/comments/f05fls/professional_services_consultant/)
-- url: https://www.reddit.com/r/aws/comments/f05fls/professional_services_consultant/
----
-Hey everyone,
-
-I just wanted to know what a professional services consultant does at AWS. What does your day to day look like? Is it a technical role? Is it kind of a sales role? It would also be helpful to know what a proserv intern does.
-## [9][Moving data from S3 to an on-premise data warehouse](https://www.reddit.com/r/aws/comments/f09jlc/moving_data_from_s3_to_an_onpremise_data_warehouse/)
-- url: https://www.reddit.com/r/aws/comments/f09jlc/moving_data_from_s3_to_an_onpremise_data_warehouse/
----
-The startup I work at has resources for an on-premise data warehouse. They are not willing to spend on Redshift due to the fact that they don't want it online 24/7. 
-
-They want to see if setting up a data lake would be an efficient way of doing things. Basically, all data would reside in S3 on the lake, and the required data would be offloaded onto the warehouse. They also want to keep a backup of all data on S3. 
-
-An alternative here would be to directly query the data on S3 using Athena but I want to explore other alternatives. 
-
-This basic lake would just use just S3 and Glue (for conversion to Parquet). My question is what is an efficient way to transfer data from S3 to the on-premise warehouse? This would be done on a daily basis. 
-
-Also wondering if the idea presented here is a step in the right direction, in terms of efficiency and cost-effectiveness. Thanks.
-## [10][Beginner need help with AWS CLI](https://www.reddit.com/r/aws/comments/f08de9/beginner_need_help_with_aws_cli/)
-- url: https://www.reddit.com/r/aws/comments/f08de9/beginner_need_help_with_aws_cli/
----
-Hello. So I started preparing for AWS SAA exam and I'm at a point where I have to learn AWS CLI setup and basic operations. Problem is, after installing the program and checking the version, when I try to open the .exe file, it closes really quickly. Like, I have no time to do anything. What am I doing wrong?
+Thanks!

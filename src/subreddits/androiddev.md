@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/f09xxs/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/f09xxs/weekly_anything_goes_thread/
+## [1][App Feedback Thread - February 08, 2020](https://www.reddit.com/r/androiddev/comments/f0qz4w/app_feedback_thread_february_08_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/f0qz4w/app_feedback_thread_february_08_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - February 03, 2020](https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/
 ---
@@ -25,19 +40,84 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android 11 will add a new App Compatibility feature to ease testing](https://www.reddit.com/r/androiddev/comments/f081sw/android_11_will_add_a_new_app_compatibility/)
+## [3][HTML Admin CMS for Firebase?](https://www.reddit.com/r/androiddev/comments/f0q9kr/html_admin_cms_for_firebase/)
+- url: https://www.reddit.com/r/androiddev/comments/f0q9kr/html_admin_cms_for_firebase/
+---
+Firebase's own admin layout is pretty much useless and wastes a lot of time so is there any other HTML based admin sites/projects that I can connect my database with and do changes in Firestore? Most data on my Firestore is input from me and it's very hard to create individual nodes again and again since there is a lot of data that I enter.
+## [4][This is my fault. Somehow.](https://www.reddit.com/r/androiddev/comments/f0bvgu/this_is_my_fault_somehow/)
+- url: https://www.reddit.com/r/androiddev/comments/f0bvgu/this_is_my_fault_somehow/
+---
+https://imgur.com/a/AFQcVvK
+
+Edit: so yeah, I requested a removal and the bots just told me to eat the review, it's staying.
+Thanks Google Dev support!
+## [5][Android TV, and interstitial ads.](https://www.reddit.com/r/androiddev/comments/f0rlcv/android_tv_and_interstitial_ads/)
+- url: https://www.reddit.com/r/androiddev/comments/f0rlcv/android_tv_and_interstitial_ads/
+---
+I developed a small app for a client, the app contains AdMob interstitial ads.  
+
+
+the client asked me to develop the same kind of app but for Android TV. from research online I found that AdMob is not officially supported on Android TV yet.   
+
+
+is there an alternative ad network that will work with Android TV? does anyone here have any experience with such an issue?
+## [6][I just published an article about ViewBinding on medium. Please check it out.](https://www.reddit.com/r/androiddev/comments/f0rk0e/i_just_published_an_article_about_viewbinding_on/)
+- url: https://www.reddit.com/r/androiddev/comments/f0rk0e/i_just_published_an_article_about_viewbinding_on/
+---
+“Exploring ViewBinding in depth” by Somesh Kumar https://link.medium.com/Jprz4AjpU3
+## [7][Help me with my Kotlin Flow hangups](https://www.reddit.com/r/androiddev/comments/f0iddv/help_me_with_my_kotlin_flow_hangups/)
+- url: https://www.reddit.com/r/androiddev/comments/f0iddv/help_me_with_my_kotlin_flow_hangups/
+---
+Or more precisely (but less catchy as a title) my Cold vs Hot sequence hangups.
+
+First of all, it seems like 3 rather distinct concepts are associated with Hot vs. Cold, maybe because they're not as distinct as I think they are:
+
+1. Whether the Observable is generating items when no subscriber is listening (Hot), or whether it waits until there is a subscriber before generating items (Cold)
+2. Whether the Observable can be back-pressured (Cold) or not (Hot)
+3. Whether the Observable broadcasts its events to all subscribers (Hot) or whether an Observable generates new items for each subscriber (Cold) -- i.e. whether the Observable is shared.
+
+I can definitely see how they are related. Perhaps these concepts go together because they just make sense together. Anyway, that's not my question.
+
+It seems that A LOT of events in mobile app dev (user input, data updates pushed from the back end, etc.) are inherently Hot. You don't have any control over when they happen. You generally want to broadcast/share them. You could try to adopt a back-pressure strategy (e.g. buffer) but you can't back-pressure the event itself.
+
+Notable exception of course is I/O, e.g. unary network calls, or file I/O. These can be "Single-like" in nature, or maybe you have a paginated network API or you're reading individual lines from a file, which would involve multiple events and is "Flowable-like" in nature. These seem Cold to me.
+
+I could also imagine having a Presenter in which you've subscribed to Flowable&lt;ViewState&gt; and you request 1 item at a time because there's no sense in processing multiple ViewStates each frame.
+
+So I see a use for both, but the Kotlin language designers don't seem to be feeling the love for Hot channels. Channels are still experimental, and many of their (seemingly useful!) operators are being deprecated (with instructions to use Flow instead). I definitely understand [their limitations](https://medium.com/@elizarov/cold-flows-hot-channels-d74769805f9), but they seem necessary.
+
+So my question is, should we be minimizing the use of Hot sequences? Should we be converting them to Cold sequences with some sort of Back-Pressure Strategy as immediately as possible? Should the frame timing of our UI generally be the tick rate at which we calculate new app state, with "Hot" events buffered somehow until the next tick?
+## [8][I need help, google play leaderboard won't record scores](https://www.reddit.com/r/androiddev/comments/f0p1ma/i_need_help_google_play_leaderboard_wont_record/)
+- url: https://www.reddit.com/r/androiddev/comments/f0p1ma/i_need_help_google_play_leaderboard_wont_record/
+---
+In my game I am able to log into google play and even have the leaderboard pop open, but i can't record scores into the leaderboard. I used this code I found in a tutorial, and it seems to be the only method I can find anywhere:
+
+ 
+
+public static void AddScoreToLeaderboard(string leaderboardId, long score)
+
+{
+
+Social.ReportScore(score, leaderboardId, success =&gt; { });
+
+}
+
+&amp;#x200B;
+
+But it does nothing. It used to work for me a year ago, but since google now requires games to be in 64bit, i had to update everything, and now this code doesn't work for me. I'm guessing maybe google changed it in an update, but I can't find any other code to record to leaderboards. Plz help. Thanks.
+## [9][Critical Bluetooth Vulnerability in Android (CVE-2020-0022)](https://www.reddit.com/r/androiddev/comments/f0dflc/critical_bluetooth_vulnerability_in_android/)
+- url: https://insinuator.net/2020/02/critical-bluetooth-vulnerability-in-android-cve-2020-0022/
+---
+
+## [10][Android 11 will add a new App Compatibility feature to ease testing](https://www.reddit.com/r/androiddev/comments/f081sw/android_11_will_add_a_new_app_compatibility/)
 - url: https://www.developer-tech.com/news/2020/jan/22/android-11-new-app-compatibility-feature-testing/
 ---
 
-## [4][All-in-One — Android TabLayout and TabItem](https://www.reddit.com/r/androiddev/comments/f09nss/allinone_android_tablayout_and_tabitem/)
-- url: https://medium.com/@myrickchow32/android-tablayout-and-tabitem-268ac06ba966?source=friends_link&amp;sk=65ae680fe463e95d0c7301fc64cc057d
+## [11][View Binding: Merge](https://www.reddit.com/r/androiddev/comments/f0corf/view_binding_merge/)
+- url: https://blog.stylingandroid.com/view-binding-merge/
 ---
 
-## [5][Huawei, Xiaomi, Oppo and Vivo creating a Google Play Store alternative](https://www.reddit.com/r/androiddev/comments/ezufny/huawei_xiaomi_oppo_and_vivo_creating_a_google/)
-- url: https://www.theverge.com/2020/2/6/21126118/huawei-xiaomi-vivo-oppo-app-store-platform-google-play-dominance-worldwide
----
-
-## [6][Changing minSdkVersion from 21 to 23?](https://www.reddit.com/r/androiddev/comments/f09jni/changing_minsdkversion_from_21_to_23/)
+## [12][Changing minSdkVersion from 21 to 23?](https://www.reddit.com/r/androiddev/comments/f09jni/changing_minsdkversion_from_21_to_23/)
 - url: https://www.reddit.com/r/androiddev/comments/f09jni/changing_minsdkversion_from_21_to_23/
 ---
 What is your minSdkVersion? Right now in our apps it's mostly API 21, but we are considering to move to API 23, no specific reason except some code optimization and possibly APK size reduction.   
@@ -46,44 +126,3 @@ What is your minSdkVersion? Right now in our apps it's mostly API 21, but we are
 According to analytics 13% of our users are on API level 21, but here is the catch, 69% of them are from India and Mexico and those countries tend to have very low eCPM and are not very profitable.   
 What are your thoughts?  
 What is your minSdkVersion?
-## [7][Implementing Scoped Storage in Android 10](https://www.reddit.com/r/androiddev/comments/f05rzn/implementing_scoped_storage_in_android_10/)
-- url: https://heartbeat.fritz.ai/implementing-scoped-storage-in-android-10-4b657280c066
----
-
-## [8][Android UI Testing with Azure DevOps](https://www.reddit.com/r/androiddev/comments/f0a47i/android_ui_testing_with_azure_devops/)
-- url: https://www.reddit.com/r/androiddev/comments/f0a47i/android_ui_testing_with_azure_devops/
----
-I recently published an article, for those of you who need to configure a pipeline for Android Instrumented Tests within Azure DevOps! :)
-
-[https://medium.com/genetec-tech/android-ui-testing-in-azure-devops-81bbe7cea9fd](https://medium.com/genetec-tech/android-ui-testing-in-azure-devops-81bbe7cea9fd)
-## [9][Tips to land first job as Jr](https://www.reddit.com/r/androiddev/comments/f09owu/tips_to_land_first_job_as_jr/)
-- url: https://www.reddit.com/r/androiddev/comments/f09owu/tips_to_land_first_job_as_jr/
----
-What you guys recommend doing to land a first job as a Jr Android Dev without college and professional experience?
-
-I live in Spain (if that matters), and I thought it would be easier, I know a lot of tools the industry uses and have more than 2 years of experience with Android.
-
-My only plan is to 1) Get the Google certificate, as it would validate my knowledge without going to college. 2) Build some open source projects to have a portfolio to show. 3) Maybe lie about professional experience, as I have seen people saying that they only put that requirement to weed people out. But I really don't like lying..
-
-Do you guys have any tips? Any thing I am missing out? How did you get your first job?
-## [10][Is it okay to play video at app first launch?](https://www.reddit.com/r/androiddev/comments/f08tud/is_it_okay_to_play_video_at_app_first_launch/)
-- url: https://www.reddit.com/r/androiddev/comments/f08tud/is_it_okay_to_play_video_at_app_first_launch/
----
-My company planning to show a video on app first launch. I just wondering if it's violate google play policy or something?
-## [11][[Help] Query regarding Android Keystore system.](https://www.reddit.com/r/androiddev/comments/f05fg6/help_query_regarding_android_keystore_system/)
-- url: https://www.reddit.com/r/androiddev/comments/f05fg6/help_query_regarding_android_keystore_system/
----
-Hello everyone,I want to send a file, say "secret.txt", from my server to my client app. But I want this to be completely secured to the degree in which even on a rooted phone user can't see what's inside secret.txt. It will be a simple file in fs but encrypted. I don't know how Android keystore system works to achieve this.
-
-I want my app to access this data pragmatically in such a way that the app won't know what the key is before the server sends the file.
-
-I've figured out some approaches but all of them are flawed:
-
-1. Storing decryption key in code in the apk. (Can be easily extracted?)
-2. Sending random key from client to server, so I can send the data encrypted with that key. (Random key can be seen using apps such as Fiddler/Wireshark/[Canary](https://play.google.com/store/apps/details?id=com.guoshi.httpcanary).)
-
-Can anybody please help me solving this problem?
-## [12][Game over for Android?](https://www.reddit.com/r/androiddev/comments/f0aags/game_over_for_android/)
-- url: https://bgr.com/2020/02/04/android-vs-iphone-google-earnings-show-android-needs-to-die/
----
-

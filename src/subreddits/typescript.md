@@ -22,15 +22,37 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Announcing TypeScript 3.8 RC](https://www.reddit.com/r/typescript/comments/f01vnf/announcing_typescript_38_rc/)
+## [2][Typescript to C#?](https://www.reddit.com/r/typescript/comments/f0ho8j/typescript_to_c/)
+- url: https://www.reddit.com/r/typescript/comments/f0ho8j/typescript_to_c/
+---
+I've tried searching, and I find various generators and such that will generate Typescript files from C#, but is there anything that does it the other way around? I.e. something that can generate C# types from Typescript? 🤔
+## [3][Announcing TypeScript 3.8 RC](https://www.reddit.com/r/typescript/comments/f01vnf/announcing_typescript_38_rc/)
 - url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/
 ---
 
-## [3][Progress so far on my web browser for language-learning, LinguaBrowse, written in TypeScript using React Native](https://www.reddit.com/r/typescript/comments/f01it4/progress_so_far_on_my_web_browser_for/)
+## [4][Advice on Transformation Utility library](https://www.reddit.com/r/typescript/comments/f0d3sm/advice_on_transformation_utility_library/)
+- url: https://www.reddit.com/r/typescript/comments/f0d3sm/advice_on_transformation_utility_library/
+---
+Hello Everyone,
+
+I have created a small library that is designed to transform data using a deduction map, this map contains an array of deductions, each deduction will use one or more values from the source and apply a list of transforms before storing it in the output at the given path.
+
+&amp;#x200B;
+
+Really interested in feedback and suggestions on how to improve the idea.
+
+Thanks
+
+&amp;#x200B;
+
+Link: [https://github.com/robertpitt/deducer](https://github.com/robertpitt/deducer)
+
+Example: [https://github.com/robertpitt/deducer/blob/master/test/index.test.ts#L94](https://github.com/robertpitt/deducer/blob/master/test/index.test.ts#L94)
+## [5][Progress so far on my web browser for language-learning, LinguaBrowse, written in TypeScript using React Native](https://www.reddit.com/r/typescript/comments/f01it4/progress_so_far_on_my_web_browser_for/)
 - url: https://twitter.com/LinguaBrowse/status/1225562067819749376?s=20
 ---
 
-## [4][Could use a little help](https://www.reddit.com/r/typescript/comments/f09c0m/could_use_a_little_help/)
+## [6][Could use a little help](https://www.reddit.com/r/typescript/comments/f09c0m/could_use_a_little_help/)
 - url: https://www.reddit.com/r/typescript/comments/f09c0m/could_use_a_little_help/
 ---
 Hi, everyone I'm somewhat kinda new to typescript but not oblivious to JavaScript, What I'm wanting to do (if possible) is wanting to combine my 3+ .ts files when it transpiles / compiles I would like for it to be in one .js file using the modular pattern.
@@ -38,7 +60,7 @@ Hi, everyone I'm somewhat kinda new to typescript but not oblivious to JavaScrip
 similar to what sass kinda does with with multiply partials.
 
 I saw a comment in the TSConfig file for "outfile" and I couldn't get it to work, I kept getting an error about lack of persmissions or something.
-## [5][TypeScript Beta for using Optional Chaining](https://www.reddit.com/r/typescript/comments/ezy7ti/typescript_beta_for_using_optional_chaining/)
+## [7][TypeScript Beta for using Optional Chaining](https://www.reddit.com/r/typescript/comments/ezy7ti/typescript_beta_for_using_optional_chaining/)
 - url: https://www.reddit.com/r/typescript/comments/ezy7ti/typescript_beta_for_using_optional_chaining/
 ---
 Hi there, i'd really like to use the cool new features like optional chaining..
@@ -52,7 +74,7 @@ however after it downloaded, tsc -- version still says i'm on Version 3.6.4
 And the compiler still complains about optional chaining... do you know how to fix this?
 
 Thanks much!
-## [6][Is is possible to combine multiple NestJS Swagger decorators?](https://www.reddit.com/r/typescript/comments/f03w6o/is_is_possible_to_combine_multiple_nestjs_swagger/)
+## [8][Is is possible to combine multiple NestJS Swagger decorators?](https://www.reddit.com/r/typescript/comments/f03w6o/is_is_possible_to_combine_multiple_nestjs_swagger/)
 - url: https://www.reddit.com/r/typescript/comments/f03w6o/is_is_possible_to_combine_multiple_nestjs_swagger/
 ---
 Hi. I'm using NestJS and Swagger. Before each GET router which returns result as a list, i add these decorators:
@@ -64,11 +86,11 @@ Hi. I'm using NestJS and Swagger. Before each GET router which returns result as
     @ApiQuery({ name: "order", required: false })
 
 Is there any chance that i could combine those into one custom decorator, such as `@GetListOptions()`?
-## [7][TypeScript assertion signatures for Object.defineProperty](https://www.reddit.com/r/typescript/comments/ezpya1/typescript_assertion_signatures_for/)
+## [9][TypeScript assertion signatures for Object.defineProperty](https://www.reddit.com/r/typescript/comments/ezpya1/typescript_assertion_signatures_for/)
 - url: https://fettblog.eu/typescript-assertion-signatures/
 ---
 
-## [8][Is it possible to write a class that overrides every method in a given object?](https://www.reddit.com/r/typescript/comments/f03gg9/is_it_possible_to_write_a_class_that_overrides/)
+## [10][Is it possible to write a class that overrides every method in a given object?](https://www.reddit.com/r/typescript/comments/f03gg9/is_it_possible_to_write_a_class_that_overrides/)
 - url: https://www.reddit.com/r/typescript/comments/f03gg9/is_it_possible_to_write_a_class_that_overrides/
 ---
 Let’s say I construct said class with an instance of Array&lt;?&gt;, is it possible to have this class implement all the methods that belong to array?
@@ -78,17 +100,9 @@ Like
 for example, but all those methods would be mapped to exactly one overriding method in the Foo class?
 
 Sorry if this isn’t clear enough.
-## [9][Use discriminated union to make switch and if blocks typesafe](https://www.reddit.com/r/typescript/comments/ezxp1y/use_discriminated_union_to_make_switch_and_if/)
+## [11][Use discriminated union to make switch and if blocks typesafe](https://www.reddit.com/r/typescript/comments/ezxp1y/use_discriminated_union_to_make_switch_and_if/)
 - url: https://www.reddit.com/r/typescript/comments/ezxp1y/use_discriminated_union_to_make_switch_and_if/
 ---
 Is there a way to use a discriminated union to have the compiler infer the return type of a specific switch case or if block and throw an error if you're not returning the correct type?
 
 I'd like to use this over a union of classes. I know how to set up the discriminated union but I can still return a totally wrong class.
-## [10][Algebraic graphs implementation in TypeScript](https://www.reddit.com/r/typescript/comments/ezs5x0/algebraic_graphs_implementation_in_typescript/)
-- url: https://github.com/algebraic-graphs/typescript
----
-
-## [11][TypeScript Tip of the Week — Optional Chaining](https://www.reddit.com/r/typescript/comments/eztozo/typescript_tip_of_the_week_optional_chaining/)
-- url: https://medium.com/@sredmond/typescript-tip-of-the-week-optional-chaining-fafc49113dbf?source=friends_link&amp;sk=56d488eb35b93d1c9ce284d282a6b823
----
-

@@ -79,51 +79,59 @@ score  |  comment  |
 
 
 &amp;nbsp;
-## [2][WTF Wednesday (February 05, 2020)](https://www.reddit.com/r/javascript/comments/ezbpi0/wtf_wednesday_february_05_2020/)
-- url: https://www.reddit.com/r/javascript/comments/ezbpi0/wtf_wednesday_february_05_2020/
+## [2][Showoff Saturday (February 08, 2020)](https://www.reddit.com/r/javascript/comments/f0qlnx/showoff_saturday_february_08_2020/)
+- url: https://www.reddit.com/r/javascript/comments/f0qlnx/showoff_saturday_february_08_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Visual Studio Code January 2020](https://www.reddit.com/r/javascript/comments/ezz6z9/visual_studio_code_january_2020/)
-- url: https://code.visualstudio.com/updates/v1_42
+Show us here!
+## [3][Realtime socket.io server with typing indicators and file upload/downloads](https://www.reddit.com/r/javascript/comments/f0n30z/realtime_socketio_server_with_typing_indicators/)
+- url: https://iabhishek.dev/post/building-a-multimedia-chat-app-using-express-socketio-redis-and-docker-part-2
 ---
 
-## [4][Announcing TypeScript 3.8 RC](https://www.reddit.com/r/javascript/comments/f01v1u/announcing_typescript_38_rc/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/
+## [4][JavaScript Dot Matrix](https://www.reddit.com/r/javascript/comments/f0lyoo/javascript_dot_matrix/)
+- url: https://drive.google.com/file/d/1y_YvXXZZqTNNoBgqXqEycJbsaHDoch2B/view
 ---
 
-## [5][Baretest — A minimalistic alternative to Jest](https://www.reddit.com/r/javascript/comments/f05adx/baretest_a_minimalistic_alternative_to_jest/)
-- url: https://volument.com/baretest?b1
+## [5][Svelte Status #24: creating responsive, JavaScript-free charts](https://www.reddit.com/r/javascript/comments/f0lsg5/svelte_status_24_creating_responsive/)
+- url: https://sveltestatus.dev/post/24-creating-responsive-javascript-free-charts
 ---
 
-## [6][Formatting dates in JavaScript with Intl.DateTimeFormat](https://www.reddit.com/r/javascript/comments/f084yt/formatting_dates_in_javascript_with/)
+## [6][[AskJS] Personal Site, Feedback?](https://www.reddit.com/r/javascript/comments/f0i2rd/askjs_personal_site_feedback/)
+- url: https://www.reddit.com/r/javascript/comments/f0i2rd/askjs_personal_site_feedback/
+---
+Hi guys, I’ve recently decided to create a little portfolio style website, just a basic single page site with links to my Github / LinkedIn. Would really appreciate any thoughts / feedback
+
+[https://Hedgecox.dev](https://hedgecox.dev)
+## [7][aykir.io: Multiplayer Cards Against Humanity clone powered by WebGL](https://www.reddit.com/r/javascript/comments/f0qv1w/aykirio_multiplayer_cards_against_humanity_clone/)
+- url: https://aykir.io
+---
+
+## [8][[AskJS] Fastlist.exe was flagged as a malware by my AV in some of my NPM packages. Should I be worried?](https://www.reddit.com/r/javascript/comments/f0kmqd/askjs_fastlistexe_was_flagged_as_a_malware_by_my/)
+- url: https://www.reddit.com/r/javascript/comments/f0kmqd/askjs_fastlistexe_was_flagged_as_a_malware_by_my/
+---
+
+## [9][[AskJS] is ExpressJS with PassportJS an antiquated model?](https://www.reddit.com/r/javascript/comments/f0fqmp/askjs_is_expressjs_with_passportjs_an_antiquated/)
+- url: https://www.reddit.com/r/javascript/comments/f0fqmp/askjs_is_expressjs_with_passportjs_an_antiquated/
+---
+I'm starting up a project and last I worked in node for web I used Express and Passport. Are these old now? 
+
+What about feathersjs? Hapi? Koa?
+
+What is a modern stack?
+
+I keep reading about MERN stack.
+## [10][Other Articles on Observables are Dumb.](https://www.reddit.com/r/javascript/comments/f0fu9b/other_articles_on_observables_are_dumb/)
+- url: https://gist.github.com/RobertAKARobin/47c4777de4d208587b11c63da320b2c0
+---
+
+## [11][[AskJS] Is it a good idea to update all package dependencies to latest major version in one step?](https://www.reddit.com/r/javascript/comments/f0ffqy/askjs_is_it_a_good_idea_to_update_all_package/)
+- url: https://www.reddit.com/r/javascript/comments/f0ffqy/askjs_is_it_a_good_idea_to_update_all_package/
+---
+Did you ever run into trouble doing this? What is a good process?
+
+For minor versions, it's simple, I just run `npm update`. Going beyond that, I see `npm-check-updates` updates everything, but I'm worried about things breaking in our medium-sized project.
+## [12][Formatting dates in JavaScript with Intl.DateTimeFormat](https://www.reddit.com/r/javascript/comments/f084yt/formatting_dates_in_javascript_with/)
 - url: https://www.valentinog.com/blog/datetime/
----
-
-## [7][What's new in ECMAScript 2020 (ES2020)](https://www.reddit.com/r/javascript/comments/ezttcv/whats_new_in_ecmascript_2020_es2020/)
-- url: https://alligator.io/js/es2020/
----
-
-## [8][[AskJS] what after the course ? Es5 and es6](https://www.reddit.com/r/javascript/comments/f0a1lu/askjs_what_after_the_course_es5_and_es6/)
-- url: https://www.reddit.com/r/javascript/comments/f0a1lu/askjs_what_after_the_course_es5_and_es6/
----
-Hi so yesterday I just finished Max accelerated es6 course I learned quite alot of basics but I don't know really how to use them I wonder is it worth to take another course ? Like modern js course from brad traversy ? Or maybe buy he's 20 vanilla js projects and get idea how to put my theory to actual projects ?
-## [9][How I improve my Javascript Coding Skill every day](https://www.reddit.com/r/javascript/comments/f08mgy/how_i_improve_my_javascript_coding_skill_every_day/)
-- url: https://medium.com/javascript-in-plain-english/how-i-improve-my-javascript-coding-skill-every-day-37ccf2feacf4
----
-
-## [10][Top Javascript Machine Learning Development Frameworks &amp; Libraries](https://www.reddit.com/r/javascript/comments/f08d1o/top_javascript_machine_learning_development/)
-- url: https://medium.com/@Oodles_ai/top-javascript-machine-learning-development-frameworks-libraries-2b31db591202
----
-
-## [11][8-Ball Pool game using JavaScript and Canvas](https://www.reddit.com/r/javascript/comments/ezrgfj/8ball_pool_game_using_javascript_and_canvas/)
-- url: https://www.htmlhints.com/article/63/8-ball-pool-game-using-javascript-and-canvas
----
-
-## [12][The Economics of Technical Debt](https://www.reddit.com/r/javascript/comments/f09q3u/the_economics_of_technical_debt/)
-- url: https://alexkondov.com/the-economics-of-technical-debt/
 ---
 

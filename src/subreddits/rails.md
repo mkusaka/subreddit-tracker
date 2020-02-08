@@ -7,7 +7,165 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Ruby on Rails advanced courses?](https://www.reddit.com/r/rails/comments/f00t14/ruby_on_rails_advanced_courses/)
+## [2][What datepicker do you use in your projects?](https://www.reddit.com/r/rails/comments/f0nxkp/what_datepicker_do_you_use_in_your_projects/)
+- url: https://www.reddit.com/r/rails/comments/f0nxkp/what_datepicker_do_you_use_in_your_projects/
+---
+
+## [3][rails_admin and cancancan - Handle Unauthorized Access](https://www.reddit.com/r/rails/comments/f0l9a2/rails_admin_and_cancancan_handle_unauthorized/)
+- url: https://www.reddit.com/r/rails/comments/f0l9a2/rails_admin_and_cancancan_handle_unauthorized/
+---
+Hello guys! got a new problem. I am using Rails [6.0.2.1](https://6.0.2.1).
+
+In my project I use rails\_admin with cancancan. Naturally I need to handle access errors from cancan.
+
+[https://github.com/sferik/rails\_admin/wiki/Cancancan](https://github.com/sferik/rails_admin/wiki/Cancancan) Here there is a solution:
+
+" Also make sure RailsAdmin is inheriting from ApplicationController:
+
+    # in config/initializers/rails_admin.rb
+    
+    config.parent_controller = 'ApplicationController'
+
+"
+
+I done it. In case of denied access to /admin I get this error:
+
+## No route matches {:action=&gt;"index", :controller=&gt;"welcome"}
+
+    class ApplicationController &lt; ActionController::Base
+      protect_from_forgery with: :exception
+    
+      before_action :authenticate_user!
+    
+      rescue_from CanCan::AccessDenied do |exception|
+        respond_to do |format|
+          format.json { head :forbidden }
+          format.html { redirect_to welcome_index_path, alert: exception.message }
+        end
+      end
+    end
+
+Here `routes.rb`
+
+    Rails.application.routes.draw do
+      mount RailsAdmin::Engine =&gt; '/admin', as: 'rails_admin'
+      devise_for :users
+      root to: 'home#index'
+      get 'welcome/index'
+      resources :companies
+      resources :issues
+      resources :buildings
+      resources :confirmations
+    end
+## [4][Rails n00b, questions about authorization + URL schemes](https://www.reddit.com/r/rails/comments/f0fvsg/rails_n00b_questions_about_authorization_url/)
+- url: https://www.reddit.com/r/rails/comments/f0fvsg/rails_n00b_questions_about_authorization_url/
+---
+Hello everyone,
+
+I'm working on a Rails backend for a mobile app for event management, where mutiple different clients will be creating shows, events, etc, and accessing event data through Rails to the database. I want to make sure each client sees only their own data. Once the client authenticates, I can then query for events, then filter based on their client ID.
+
+I'm thinking about a couple different url schemes:
+
+`/event/18489202`
+
+or
+
+`/client/1/event/1`
+
+In the first example, an event id is global across the application. In the second, an event is specific to the client. Or, I could have even this
+
+`/event/1`
+
+Out of the box, it would seem the first option is easiest to set up using a `resources` entry in `routes.rb`  . However I'm wondering if it would be more convenient, or aesthetically pleasing for clients, to use smaller client-specific numbers in the URL and then parse that on the backend for the actual database ID value. Plus I am a Rails noob so plenty of technical considerations maybe you all can help me with.
+
+I'd be interested to hear your opinions. Thanks !
+## [5][Noob question about work with references](https://www.reddit.com/r/rails/comments/f0jfmw/noob_question_about_work_with_references/)
+- url: https://www.reddit.com/r/rails/comments/f0jfmw/noob_question_about_work_with_references/
+---
+I have model `building` with migration:
+
+    class CreateBuildings &lt; ActiveRecord::Migration[6.0]
+      def change
+        create_table :buildings do |t|
+          t.string :name
+          
+          t.timestamps
+        end
+      end
+    end
+
+And model `issue` with migration:
+
+    class CreateIssues &lt; ActiveRecord::Migration[6.0]
+      def change
+        create_table :issues do |t|
+          t.string :title
+          t.text :desc
+          t.references :user, null: false, foreign_key: true
+          t.references :building, null: false, foreign_key: true
+          t.references :company, null: false, foreign_key: true
+          t.date :date, default: Time.zone.today
+          t.date :deadline
+          t.text :report, default: '--put here your answer report--'
+          t.string :status, default: '--waiting for response--'
+    
+          t.timestamps
+        end
+      end
+    end
+
+I need to get building's name by using foreign key in form `show.html.erb` coresponding to `issues controller`.
+
+here is a  `IssuesController` method `show`:
+
+      def show
+        @issue = Issue.find(params[:id])
+      end
+
+* I tried to do this way:
+
+&amp;#8203;
+
+    &lt;p&gt;
+      &lt;strong&gt;Building:&lt;/strong&gt;
+      &lt;%= @issue.building_id.name %&gt;
+    &lt;/p&gt;
+
+But rails told that `name` is undefined method.
+
+* In other way I trried to write a rails query:
+
+&amp;#8203;
+
+    &lt;p&gt;
+      &lt;strong&gt;Building:&lt;/strong&gt;
+      &lt;%= Building.select(:name).where("id == @issue.building_id") %&gt;
+    &lt;/p&gt;
+
+The result was:  #&lt;Building::ActiveRecord\_Relation:0x000000000e47e588&gt; 
+
+change 
+
+    &lt;%= Building.select(:name).where("id == u/issue.building_id") %&gt;
+
+by
+
+    &lt;%= Building.select(:name).where("id == @issue.building_id").reload %&gt;
+
+trigger this exception:  
+
+    SQLite3::SQLException: near ".": syntax error
+## [6][Communication between scaffolds](https://www.reddit.com/r/rails/comments/f0iq7h/communication_between_scaffolds/)
+- url: https://www.reddit.com/r/rails/comments/f0iq7h/communication_between_scaffolds/
+---
+I was thinking of some sort of "favorites", "wish list" or "cart" in a commerce website (btw, "favorites" can happen in a link sharing website as well :P). I mean we have two entities which actually define an online shopping website : Products and Users.
+
+My question is, if we implement those two things, we need something else, a cart. I'm not going to dive deep into what actually should happen in a shop. Just wondering what happens when something enters to the cart. 
+
+In cart, we have the product and its features and its quantity. For example, I'm going to amazon right now, and I choose a hair dryer. My mother may want one too. So, I increase the quantity. 
+
+It means I need two scaffolds, right? I need one for product and one for the cart. But how can I make a communication between them?
+## [7][Ruby on Rails advanced courses?](https://www.reddit.com/r/rails/comments/f00t14/ruby_on_rails_advanced_courses/)
 - url: https://www.reddit.com/r/rails/comments/f00t14/ruby_on_rails_advanced_courses/
 ---
 Hello, I consider I have experience in Rails, but I want to go to the next level, for this I want to know if there's an advanced course on Rails which has some or most of the following topics:
@@ -19,7 +177,48 @@ Hello, I consider I have experience in Rails, but I want to go to the next level
 * Make performant tests (build or build_stubbed instead of create, parallel tests, etc.)
 
 Or even building your own gems, metaprogramming, etc. (I know this is ruby, but to be an advanced Rails developer you have to be an advanced Ruby developer too IMO)
-## [3][There are two Ruby version manager RVM vs RBENV. what's your choice? and why?](https://www.reddit.com/r/rails/comments/f009mb/there_are_two_ruby_version_manager_rvm_vs_rbenv/)
+## [8][Issues with Stripe Connect... API saying customer + plan doesn't exist](https://www.reddit.com/r/rails/comments/f0b01n/issues_with_stripe_connect_api_saying_customer/)
+- url: https://www.reddit.com/r/rails/comments/f0b01n/issues_with_stripe_connect_api_saying_customer/
+---
+I'm attempting to create a rails application with stripe connect to essentially act as middleman for services. With my current controller and JS, I have no problem charging a customer for a subscription for my platform. The issue becomes when I attempt to charge on behalf of a connected account as I'll typically get an error saying the customer doesn't exist (and when I update the connected account with customer object) it says the plan doesn't exist. I may have a misunderstanding of how connect works, but does the customer\_id and plan\_id also need to exist within the connected stripe accounts along with the application/platform's account? Attached a snippet of my controller below for reference. Problematic line is where subscription object is created.
+
+ 
+
+`def create`  
+ `#Make sure we change this to production when the time comes`  
+ `Stripe.api_key = Rails.application.credentials.development[:stripe_api_key]`  
+ `#Make sure that the credentials file has the appropriate plan_ids`  
+`plan_id = params[:plan_id]`  
+`plan = Stripe::Plan.retrieve(plan_id)`  
+ `# flash[:warning] = plan`  
+`token = params[:stripeToken]`  
+ `# flash[:warning] = Stripe.api_key`  
+ `#Let's add subscription value to the Library.`  
+`subscription_plans = PlanType.all`  
+ `#calling private function find_plan`  
+`plan_type = find_plan(plan, subscription_plans)`  
+`customer = if current_user.stripe_id.present?`  
+ `Stripe::Customer.retrieve(current_user.stripe_id)`  
+ `# flash[:danger] = "User already has a stripe ID!"`  
+ `else`  
+ `Stripe::Customer.create({`  
+`email: current_user.email,`   
+`source:token,`  
+`}, {stripe_account: plan_type.stripe_id})`  
+ `# Stripe::Customer.create(description: 'Test Customer')`  
+ `#Save the stripe id to the database`  
+ `end`  
+ `#Update the subscription creation with stripe connected account param &amp; application_fee_percent params. Sent via connect`  
+ `#transfer_data{amount_percent: 95, destination: plan_type.stripe_id }`  
+`subscription = customer.subscriptions.create({plan: plan.id, application_fee_percent: 10,}, stripe_account: plan_type.stripe_id)`  
+ `#Update the hash`  
+`current_user.stripe_subscription_id[plan.nickname.downcase] = subscription.id`  
+`options = {`  
+`stripe_id: customer.id,`  
+`subscribed: true`  
+`}`  
+`current_user.plan_subscription_library_additions &lt;&lt; plan_type`
+## [9][There are two Ruby version manager RVM vs RBENV. what's your choice? and why?](https://www.reddit.com/r/rails/comments/f009mb/there_are_two_ruby_version_manager_rvm_vs_rbenv/)
 - url: https://www.reddit.com/r/rails/comments/f009mb/there_are_two_ruby_version_manager_rvm_vs_rbenv/
 ---
 I was at work, I installed ruby and rails using RBENV. 
@@ -29,7 +228,7 @@ My senior colleague made me install RVM and uninstalled RBENV. Insists that RVM 
 What's your thought on this? 
 
 What is the industrial standard?
-## [4][Yet another Arel Cheatsheet, but on Steroids](https://www.reddit.com/r/rails/comments/ezuuup/yet_another_arel_cheatsheet_but_on_steroids/)
+## [10][Yet another Arel Cheatsheet, but on Steroids](https://www.reddit.com/r/rails/comments/ezuuup/yet_another_arel_cheatsheet_but_on_steroids/)
 - url: https://www.reddit.com/r/rails/comments/ezuuup/yet_another_arel_cheatsheet_but_on_steroids/
 ---
 Hi guys,
@@ -37,7 +236,7 @@ Hi guys,
 I've created a cheatsheet of Arel that collects my personal experience with it. I've decided to share it since Arel is pretty much undocumented, but I think it's a really powerful tool.
 
 [https://gist.github.com/ProGM/c6df08da14708dcc28b5ca325df37ceb](https://gist.github.com/ProGM/c6df08da14708dcc28b5ca325df37ceb)
-## [5][Multiple database connections?](https://www.reddit.com/r/rails/comments/f02fxm/multiple_database_connections/)
+## [11][Multiple database connections?](https://www.reddit.com/r/rails/comments/f02fxm/multiple_database_connections/)
 - url: https://www.reddit.com/r/rails/comments/f02fxm/multiple_database_connections/
 ---
 Hi. I have an ongoing project which asks for many DB connections (9 total) in:
@@ -52,113 +251,3 @@ I never did something like this before, so i might ask for some advices or ideas
 I'm using Rails 6.
 
 In resume, it's a data warehouse. I must delevelop an ETL module which process all the data from these 9 databases and puts into only one DB (which is PostgreSQL). I'd like to read your experiences, advices or something like this.
-## [6][How to transition data in a JSONB column into separate columns for millions of rows in Rails/Postgres?](https://www.reddit.com/r/rails/comments/ezy875/how_to_transition_data_in_a_jsonb_column_into/)
-- url: https://www.reddit.com/r/rails/comments/ezy875/how_to_transition_data_in_a_jsonb_column_into/
----
-I've got a JSONB column in Postgres and I need to split out the JSONB data into individual columns. I've got all the new columns set up, but now I've got about 3 million records whose JSONB data needs to get split out into individual columns.
-
-What's the most performant way to basically run an UPDATE on every single row?
-
-Right now I'm doing this inside a Rails rake task:
-
-```ruby
-Track.all.find_each do |track|
-  track.update_attributes(
-    key: track.audio_features['key'],
-    mode: track.audio_features['mode'],
-    tempo: track.audio_features['tempo'],
-    energy: track.audio_features['energy'],
-    valence: track.audio_features['valence'],
-    liveness: track.audio_features['liveness'],
-    loudness: track.audio_features['loudness'],
-    speechiness: track.audio_features['speechiness'],
-    acousticness: track.audio_features['acousticness'],
-    danceability: track.audio_features['danceability'],
-    time_signature: track.audio_features['time_signature'],
-    instrumentalness: track.audio_features['instrumentalness'],
-  )
-end
-```
-
-That...will take a while for 3 million rows. Is there a faster way to do that?
-## [7][How to attach raw SQL to an existing Rails ActiveRecord chain?](https://www.reddit.com/r/rails/comments/ezwltk/how_to_attach_raw_sql_to_an_existing_rails/)
-- url: https://www.reddit.com/r/rails/comments/ezwltk/how_to_attach_raw_sql_to_an_existing_rails/
----
-I have a rule builder that ultimately builds up ActiveRecord queries by chaining multiple `where` calls, like so:
-
-```rails
-Track.where("tracks.popularity &lt; ?", 1).where("(audio_features -&gt;&gt; 'valence')::numeric between ? and ?", 2, 5)
-```
-
-Then, if someone wants to sort the results randomly, it would append `order("random()")`.
-
-However, given the table size, `random()` is extremely inefficient for ordering, so I need to use Postgres TABLESAMPLE-ing. 
-
-In a raw SQL query, that looks like this:
-
-```sql
-SELECT * FROM "tracks" TABLESAMPLE SYSTEM(0.1) LIMIT 250;
-```
-
-Is there some way to add that `TABLESAMPLE SYSTEM(0.1)` to the existing chain of ActiveRecord calls? Putting it inside a `where()` or `order()` doesn't work since it's not a WHERE or ORDER BY function.
-## [8][Best way to bulk create objects?](https://www.reddit.com/r/rails/comments/ezw57a/best_way_to_bulk_create_objects/)
-- url: https://www.reddit.com/r/rails/comments/ezw57a/best_way_to_bulk_create_objects/
----
-I have an array of objects I want to send to my rails backend through the form of a param: `dish_section`:
-
-    [{dish_id: 1, section_id: 1}, {dish_id: 2, section_id: 1}]
-
-I've looked into a gem called [bulk\_insert](https://github.com/jamis/bulk_insert) but for the life of me I can't translate my para an array without getting some type of ActionControllerParameter error. I wanted to check here to see what's usually the best pattern to handle bulk inserts coming from a JSON API. I'm currently on Rails 5 for this project so `insert_all` unfortunately an option isn't an option.
-## [9][Does Rails generate a JSON or HTML in tmp folder?](https://www.reddit.com/r/rails/comments/eztvim/does_rails_generate_a_json_or_html_in_tmp_folder/)
-- url: https://www.reddit.com/r/rails/comments/eztvim/does_rails_generate_a_json_or_html_in_tmp_folder/
----
-I'm curious as to whether Rails actually generates a Html or json temporarily when you call the "render" method in Controller
-## [10][What are the implications of creating methods in model rather than in controller](https://www.reddit.com/r/rails/comments/eztu5y/what_are_the_implications_of_creating_methods_in/)
-- url: https://www.reddit.com/r/rails/comments/eztu5y/what_are_the_implications_of_creating_methods_in/
----
-Hi, I am following omniauth + devise integration.  
-[https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview](https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview)  
-In the above url the guide recommends to create method in User model whereas I can do User.where and User.create in controller  
-I am trying to understand in what scenarios one has to create method in model and controller  
-Thanks in Advance
-## [11][Do you add IDs to association tables?](https://www.reddit.com/r/rails/comments/ezo6rc/do_you_add_ids_to_association_tables/)
-- url: https://www.reddit.com/r/rails/comments/ezo6rc/do_you_add_ids_to_association_tables/
----
-The way I was taught database normalization, association tables do not need a primary key ID column. Their job is to point to the associated records, and may contain additional data related to the association.
-
-In my case, a user
-
-    has_many :memberships
-    has_many :organizations, through: :memberships
-
-and 
-
-    create_table "memberships", id: false, force: :cascade do |t|
-      t.bigint "user_id", null: false
-      t.bigint "organization_id", null: false
-      t.jsonb "profile"
-
-In Rails however, this understandably confuses AR
-
-    o = Organization.first
-    u = User.first
-    m = u.memberships.where(organization: o).first
-
-    m.profile["favorite_color"] = "green"
-    m.save
-
-    # =&gt; ActiveRecord::UnknownPrimaryKey: Unknown primary key for table memberships in model Membership.
-    # Cannot validate uniqueness for persisted record without primary key.
-
-Of course I can still do
-
-    updated_profile = m.profile.merge({"favorite_color" =&gt; "green"})
-    Memberships.where(organization: o, user: u).update_attributes(profile: updated_profile)
-
-but it feels considerably less Rails-y. Although it feels cleaner given the schema and its intentions.
-
-So, what do you do in your apps and *why*? Any downside in adding primary keys? 
-
-I started without them, because I wanted a clean schema, and now am considering adding primary keys to make life easier but am a bit torn.
-
-Edit: clarity

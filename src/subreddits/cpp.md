@@ -57,57 +57,69 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Interactive command line time tracker](https://www.reddit.com/r/cpp/comments/f06nkz/interactive_command_line_time_tracker/)
-- url: https://www.reddit.com/r/cpp/comments/f06nkz/interactive_command_line_time_tracker/
+## [2][fpm: a header-only fixed-point math library with trigonometry, etc](https://www.reddit.com/r/cpp/comments/f0ph40/fpm_a_headeronly_fixedpoint_math_library_with/)
+- url: https://github.com/MikeLankamp/fpm
 ---
-I created my first little project with C++.  
-It is just a simple time tracker with an interactive command line.
 
-Click here to check it out:  
-[https://github.com/thomasschwarz96/ts-timetracker](https://github.com/thomasschwarz96/ts-timetracker)
-## [3][When to use a reference type versus a pointer?](https://www.reddit.com/r/cpp/comments/ezwij0/when_to_use_a_reference_type_versus_a_pointer/)
-- url: https://www.reddit.com/r/cpp/comments/ezwij0/when_to_use_a_reference_type_versus_a_pointer/
+## [3][GitHub actions for vcpkg, CMake and Ninja](https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/)
+- url: https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/
 ---
-I've been digging back into C++ recently and while I do have a good understanding of pointers, reference types are new to me.  I've found plenty of documentation about what reference types are and how they work, but very little advice on **when** to use them in practice.
+These are two GitHub actions that streamline building C++ sources with CMake, vcpkg, Ninja:
 
-Any thoughts?
+* [run-vcpkg](https://github.com/marketplace/actions/run-vcpkg)  
+* [run-cmake](https://github.com/marketplace/actions/run-cmake)
 
-Links:  
+Enjoy!
+## [4][C++ Memory (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fx1x/c_memory_chrome_university_2019/)
+- url: https://www.youtube.com/watch?v=UNJrgsQXvCA
+---
 
-[Reference versus Pointer, Stack Overflow](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in)
-## [4][OpenSSL client and server from scratch series](https://www.reddit.com/r/cpp/comments/f099li/openssl_client_and_server_from_scratch_series/)
+## [5][A fast work-stealing queue template library in modern C++](https://www.reddit.com/r/cpp/comments/f0nu69/a_fast_workstealing_queue_template_library_in/)
+- url: https://github.com/tsung-wei-huang/work-stealing-queue
+---
+
+## [6][C++ as a second language (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fxcq/c_as_a_second_language_chrome_university_2019/)
+- url: https://www.youtube.com/watch?v=cN9c_JyvL1A
+---
+
+## [7][reproc v11.0.0 released!](https://www.reddit.com/r/cpp/comments/f0h238/reproc_v1100_released/)
+- url: https://www.reddit.com/r/cpp/comments/f0h238/reproc_v1100_released/
+---
+I've just released [reproc](https://github.com/DaanDeMeyer/reproc) v11.0.0. reproc is a cross-platform process handling library for C and C++.
+
+The big addition this release is that `reproc_poll` can now be used to poll more than one child process. This allows users to manage multiple processes from a single thread which is very useful to implement build systems (make, ninja, ...) that need to manage multiple child compiler processes from a single-threaded parent process.
+
+While this was mostly trivial to implement on POSIX systems, Windows turned to be a lot harder due to the lack of a poll equivalent. I tried using I/O completion ports but they're extremely hard to adapt to the model of poll. I finally got lucky when I found out that child process standard streams can be redirected to sockets on Windows and Windows provides `WSAPoll` for use on sockets which has the same semantics as `poll` on POSIX. 
+
+Unfortunately, Windows doesn't provide `socketpair` so instead we set up a TCP connection over localhost. I'm not 100% sure, but it seems TCP connections over localhost are somewhat optimized by Windows itself to avoid much of the overhead of the networking stack.
+
+With access to `poll` on both platforms, it became doable to implement a `poll` for processes on top of it. To monitor child process exit, we have each child process inherit an extra socket which will be closed when the child process exits. This way, waiting for child process exit can be done as part of the main call to `poll`.
+
+I'm hoping this can help developers with monitoring multiple child processes without having to pull in heavier dependencies such as boost process (along with boost asio) or libuv or be forced to start up a separate thread to monitor each separate child process. Of course, as soon as you have to poll more than just child processes, libuv or boost asio combined with boost process make a lot more sense than reproc.
+
+I also added a bunch of extra options and a higher level `run` function which is on the same level as `system` but a lot safer.
+    
+    std::array&lt;std::string, 2&gt; args = { "echo", "Hello, World!" };
+    auto [status, ec] = reproc::run(args);
+
+I also tried to add support for pseudo-ttys using `openpty` on POSIX and the new ConPTY API on Windows but it seemed I'm the first one to try and use ConPTY with sockets on Windows which led to some [issues](https://github.com/microsoft/terminal/issues/4359).
+
+I also made a (single-line) [contribution](https://github.com/microsoft/STL/pull/406) to the MSVC STL to fix a bug I found while working on reproc. It's amazing to be able to contribute to something as widely used as the MSVC STL. The experience was great so props to the developers at Microsoft that made this happen.
+
+As always, any feedback is highly appreciated and if you have any questions about reproc, feel free to ask.
+## [8][OpenSSL client and server from scratch series](https://www.reddit.com/r/cpp/comments/f099li/openssl_client_and_server_from_scratch_series/)
 - url: https://quuxplusone.github.io/blog/2020/01/24/openssl-part-1/
 ---
 
-## [5][CppCast: Large Scale C++](https://www.reddit.com/r/cpp/comments/f0489s/cppcast_large_scale_c/)
+## [9][Anti-Cheats - Taking an inside look at Razer's Synapse driver](https://www.reddit.com/r/cpp/comments/f0bmz0/anticheats_taking_an_inside_look_at_razers/)
+- url: https://niemand.com.ar/2020/02/07/bypassing-anti-cheats-part-1-exploiting-razer-synapse-driver/
+---
+
+## [10][Quick Snake: A fast-faced snake-like game for the terminal in C++17](https://www.reddit.com/r/cpp/comments/f0f2fo/quick_snake_a_fastfaced_snakelike_game_for_the/)
+- url: https://github.com/gregstula/quick-snake
+---
+
+## [11][CppCast: Large Scale C++](https://www.reddit.com/r/cpp/comments/f0489s/cppcast_large_scale_c/)
 - url: https://cppcast.com/john-lakos-large-scale-cpp/
 ---
 
-## [6][CopperSpice, opinions ?](https://www.reddit.com/r/cpp/comments/f076dx/copperspice_opinions/)
-- url: https://www.reddit.com/r/cpp/comments/f076dx/copperspice_opinions/
----
-Just listened to the recent cpp.chat episode (67) about CopperSpice (CS). No mentioning of Qt, doxygen. I'm a bit concerned, that CS is just a rip-off of these  frameworks, tools. Any opinions/experience with CS?
-## [7][gsl-lite v0.36 released](https://www.reddit.com/r/cpp/comments/ezqvuf/gsllite_v036_released/)
-- url: https://www.reddit.com/r/cpp/comments/ezqvuf/gsllite_v036_released/
----
-https://github.com/gsl-lite/gsl-lite  
-https://github.com/gsl-lite/gsl-lite/releases/tag/v0.36.0
-
-[*gsl-lite*](https://github.com/gsl-lite/gsl-lite) is an implementation of the [C++ Core Guidelines Support Library](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-gsl) originally based on [Microsoft GSL](https://github.com/microsoft/gsl).
-## [8][[++itCon] Call for Papers! Submit your paper for the Italian C++ Conference 2020 in Rome](https://www.reddit.com/r/cpp/comments/ezrxiy/itcon_call_for_papers_submit_your_paper_for_the/)
-- url: https://www.italiancpp.org/event/itcppcon20/
----
-
-## [9][SFINAE special members or support incomplete types: Pick at most one](https://www.reddit.com/r/cpp/comments/ezvg8b/sfinae_special_members_or_support_incomplete/)
-- url: https://quuxplusone.github.io/blog/2020/02/05/vector-is-copyable-except-when-its-not/
----
-
-## [10][Which checks do you use for clang-tidy?](https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/)
-- url: https://www.reddit.com/r/cpp/comments/ezn21f/which_checks_do_you_use_for_clangtidy/
----
-Do you guys throw the whole kitchen sink in? Do you disable specific checks if you don't agree with them/if they don't fit? Or do you only pick certain groups of checks from the beginning? Curious about what may be standard.
-## [11][Dumb shower thought](https://www.reddit.com/r/cpp/comments/f07xvy/dumb_shower_thought/)
-- url: https://www.reddit.com/r/cpp/comments/f07xvy/dumb_shower_thought/
----
-Since a lot of programmers come to C++ for performance reasons, why don't some of the bigger games come bundled with their own super performant OS that you boot into when you want to play such game? As long as driver support is maintained, I can't imagine there's much more work to be done. All the OS needs to do is boot into the game, not provide a full desktop experience.  
-Is that what SteamOS is? I don't know, I totally missed the boat on the whole Steam revolution in gaming, honestly, all I know it's just an online shop where you can download games.

@@ -85,103 +85,103 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Using React and node, I have created a website that allows everyone to share files between their devices without having to use long URLs or store the file on someone's servers.](https://www.reddit.com/r/reactjs/comments/f0aymc/using_react_and_node_i_have_created_a_website/)
-- url: https://drop.lol
+## [3][React Lessons. Lesson 8. Deep Dive into React Redux](https://www.reddit.com/r/reactjs/comments/f15cdg/react_lessons_lesson_8_deep_dive_into_react_redux/)
+- url: https://blog.soshace.com/react-lesson-8/
 ---
 
-## [4][Can you completely replace Redux with the Context API and the Reducer Hook?](https://www.reddit.com/r/reactjs/comments/f0jnyb/can_you_completely_replace_redux_with_the_context/)
-- url: https://www.reddit.com/r/reactjs/comments/f0jnyb/can_you_completely_replace_redux_with_the_context/
+## [4][Building React from scratch](https://www.reddit.com/r/reactjs/comments/f0ym6a/building_react_from_scratch/)
+- url: https://www.reddit.com/r/reactjs/comments/f0ym6a/building_react_from_scratch/
 ---
-I am wondering if I can do that and if the Context API and the Reducer Hook are better than Redux.
-## [5][Where can I find more frontend challenges?](https://www.reddit.com/r/reactjs/comments/f0qvh6/where_can_i_find_more_frontend_challenges/)
-- url: https://www.reddit.com/r/reactjs/comments/f0qvh6/where_can_i_find_more_frontend_challenges/
+I'm a daily React developer but I've never taken the time to really get into the internals of how things actually work. I'm a long-time generalist who sticks with the 20% of knowledge that amounts to 80% of the results. However, I've (arbitrarily) decided that 2020 is the year that I will try to become a specialist in *something,* so why not React?
+
+To this end, I'm trying to build my own (simple) version of React from scratch. There are some really great resources out there of how to do it on your own, but I'm purposefully trying it ignore them and go from my memory and high level understanding of how React works.  I'm writing about my learning experiences and my latest post is at [https://vedranb.com/blog/building-react-hooks/](https://vedranb.com/blog/building-react-hooks/) 
+
+Although this is one approach to learning, I want to ask those who consider themselves to be advanced React developers a few questions:
+
+1. What helped you evolve from beginner/intermediate to advanced with React?
+2. Was the time spent to get to that stage worth it?
+3. What do you think are the biggest differences between an intermediate and advanced React developer?
+
+Thanks!
+## [5][🎹react-synth 🎹](https://www.reddit.com/r/reactjs/comments/f0rtbv/reactsynth/)
+- url: https://www.reddit.com/r/reactjs/comments/f0rtbv/reactsynth/
 ---
-Hello there, I'm junior frontend dev(almost 2 years experience) are there more challenging front-end challenges out there similar to  [this](https://github.com/felipefialho/frontend-challenges)  list?
-## [6][React, GraphQL, Gatsby Portfolio Review](https://www.reddit.com/r/reactjs/comments/f0omq6/react_graphql_gatsby_portfolio_review/)
-- url: https://www.reddit.com/r/reactjs/comments/f0omq6/react_graphql_gatsby_portfolio_review/
----
-I made a portfolio with React, GraphQL, and Gatsby. Let me know what y'all think.
+wrote a small synthesiser out of boredom. maybe someone will find it enjoyable!  
 
-[dabramson.io](https://dabramson.io)
-## [7][Looking for advice on building a web app with aws amplify + react](https://www.reddit.com/r/reactjs/comments/f0nbds/looking_for_advice_on_building_a_web_app_with_aws/)
-- url: https://www.reddit.com/r/reactjs/comments/f0nbds/looking_for_advice_on_building_a_web_app_with_aws/
----
-Hey all — I just started learning Amplify and it's been great, however there is a lot of information to digest, tools to review and documentation to go through. So I was looking to reddit for some advice on an application I am trying to build and what tools you think would work best. In addition I'm pretty strictly a frontend dev, but trying to learn more backend stuff.
 
-Requirements for my web app:
+code: [https://github.com/borzecki/react-synth](https://github.com/borzecki/react-synth) 
 
-1. User login/signup + social auth **(Currently using Amplify Auth to do this)**
-2. Add users to a group in which they would share a dashboard — potentially different permissions **(Thinking I could store this in Cognito — or would I need to store in a DB)**
-3. A way for the user who initially created the group to invite others to the group via email
-4. User forms and a place to store the data
-5. Basic user polls like ([doodle](https://doodle.com/) or [survey monkey](https://www.surveymonkey.com/)) that is only available to the group
-6. Fetch data from other sites (like a wish list type of deal), in which I'll gather the images/data to show in a list — like [wish list](https://www.wishlist.com/) does.
-
-Currently Using:
-
-1. AWS Amplify with auth and API(which I'm not using yet)
-2. React
-3. Material UI
-
-My main questions:
-
-1. Should I use a graphql or REST API?
-2. Should I use DynamoDB?
-3. What does it mean when you add **hosting** to amplify? I don't really understand what that will add.
-## [8][SubFeeds for Reddit - an ad free, read only web client for subreddit collections](https://www.reddit.com/r/reactjs/comments/f0prlu/subfeeds_for_reddit_an_ad_free_read_only_web/)
-- url: https://www.reddit.com/r/reactjs/comments/f0prlu/subfeeds_for_reddit_an_ad_free_read_only_web/
----
-I originally created a basic version of this app to scratch my own itch and keep track of web dev subreddits at work without the ads and other distractions on Reddit.
-
-The site has recently gone through a big change to help user engagement and use of the site.
-
-When you land on the site you will have the r/all subs in your feed, you can then add and remove subs as you want and this updates the feed.
-
-I have worked on making a very basic version of this and then requesting features, suggestions and things to add to help remove some pain points people may have with the web version of Reddit.
-
-I welcome your feedback and happy to answer any questions.
-
-https://subfeeds.com
-## [9][Publishing react components: use webpack or Babel or none of it?](https://www.reddit.com/r/reactjs/comments/f0pjly/publishing_react_components_use_webpack_or_babel/)
-- url: https://www.reddit.com/r/reactjs/comments/f0pjly/publishing_react_components_use_webpack_or_babel/
----
-I want to reuse a react component (with jsx) in another npm package. I'm wondering how this is best done:
-1. Don't do any transformations in the source package and reference the jsx directly. Transpile the referenced jsx in the consuming package. (This won't work if the Babel loader excludes everything in node_modules directory.)
-2. Transpile and package the jsx files with webpack. One entry per jsx file. Reference the resulting files, which now include all the needed dependencies. The consuming package now only sees es5 code, and can use webpack to bundle everything, including the (now plain vanilla js) react component.
-3. Transpile the jsx files with Babel to a separate directory. The consuming package now only sees es5 code but without dependencies, and can use webpack to bundle everything, including the (now plain vanilla js) react component.
-
-I think (2) or (3) is the way to go. I've tried (1), but doesn't seem a good idea to make the consuming package responsible to transpile the react components (it might not even use react itself). (3) seems the cleanest (haven't got it working though), but I've seen most people do (2).
-
-What are the the pros and cons of each option? Are there other alternatives? How do you make this work?
-## [10][An overview on how React libraries have been switching to hooks](https://www.reddit.com/r/reactjs/comments/f0hx5f/an_overview_on_how_react_libraries_have_been/)
-- url: https://www.reddit.com/r/reactjs/comments/f0hx5f/an_overview_on_how_react_libraries_have_been/
----
-Have you wondered since hooks were introduced, the way we write React changed considerably. Here, give an overview of how React libraries have been switching to React hooks resulting in a cleaner and better code on our applications: [https://www.herodev.io/blog/react-libraries-switching-to-hooks](https://www.herodev.io/blog/react-libraries-switching-to-hooks)  
-Check it out and let me know what are your thoughts.
-## [11][Anyone grow up listening to Car Talk radio? Here is a small sample of code, can anyone tell me why the second to last function makes everything work correctly and the last function causes components to rerender incorrectly?](https://www.reddit.com/r/reactjs/comments/f0m4hf/anyone_grow_up_listening_to_car_talk_radio_here/)
-- url: https://github.com/pinkMoneyKing/car_talk_reddit/blob/master/reddit_code.tst
+demo: [https://borzecki.github.io/react-synth/](https://borzecki.github.io/react-synth/)
+## [6][React-Three-Fiber: Build 3D for the Web With React and WebGL Easily - I loved using A-FRAME but ThreeJS directly merged with react is much better!](https://www.reddit.com/r/reactjs/comments/f18168/reactthreefiber_build_3d_for_the_web_with_react/)
+- url: https://medium.com/better-programming/react-three-fiber-build-3d-for-the-web-with-react-and-webgl-easily-c0df8801292?source=friends_link&amp;sk=fc04915b7b39b18a108d3f4534641905
 ---
 
-## [12][React Hooks - state variables in DOM elements](https://www.reddit.com/r/reactjs/comments/f0obq2/react_hooks_state_variables_in_dom_elements/)
-- url: https://www.reddit.com/r/reactjs/comments/f0obq2/react_hooks_state_variables_in_dom_elements/
+## [7][[Showoff Sunday] - Made a small typing game :)](https://www.reddit.com/r/reactjs/comments/f167e3/showoff_sunday_made_a_small_typing_game/)
+- url: https://www.reddit.com/r/reactjs/comments/f167e3/showoff_sunday_made_a_small_typing_game/
 ---
-Hello,
+Was bored yesterday and quickly made this small game :) 
 
-I have started to play with React hooks. I found that when I map over an array of objects and use the count variable it is localized to each individual DOM element. I am curious why this is. I was assuming the variable would be the same across all DOM elements.
+Code: https://github.com/nikola1970/typing-game
 
-&amp;#x200B;
+Demo: https://nikola1970.github.io/typing-game/
 
-function Dropdown() {  
- const \[count, setCount\] = useState(0);  
- return(  
- &lt;DropdownContainer&gt;
+Made with hooks and typescript, hope you like it :P (not mobile friendly)
+## [8][Best practice for making API calls](https://www.reddit.com/r/reactjs/comments/f15si7/best_practice_for_making_api_calls/)
+- url: https://www.reddit.com/r/reactjs/comments/f15si7/best_practice_for_making_api_calls/
+---
+ What is the best practice to call the API on a page? Let say I have a product page where products need to be displayed through an API call from redux Action. Should I call that action in every componentWillMount() or only when I don't have data inside the Redux store?
+## [9][Reactsweeper - a React/Typescript minesweeper clone!](https://www.reddit.com/r/reactjs/comments/f12hoq/reactsweeper_a_reacttypescript_minesweeper_clone/)
+- url: https://codesandbox.io/s/reactsweeper-pfcsd
+---
 
-{data.map((item) =&gt; (  
-&lt;DropdownItem *onClick*={() =&gt; setCount(prevCount =&gt; prevCount + 1)}&gt;
+## [10][🎉 Introducing use-places-autocomplete: A React hook for Google Maps Places Autocomplete.](https://www.reddit.com/r/reactjs/comments/f18dau/introducing_useplacesautocomplete_a_react_hook/)
+- url: https://www.reddit.com/r/reactjs/comments/f18dau/introducing_useplacesautocomplete_a_react_hook/
+---
+Hey guys, I spent a lot of time to make this hook. With it, you can create your own places autocomplete UI with 10 minutes, no kidding 😉  
 
-{item.text} {count}   
-&lt;/DropdownItem&gt;  
-))}  
- &lt;/DropdownContainer&gt;  
-)  
-}
+
+⚡️Live demo: [https://use-places-autocomplete.netlify.com](https://use-places-autocomplete.netlify.com/)  
+👉🏻Check it out: [https://github.com/wellyshen/use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete)
+## [11][Having trouble using Google API with React.](https://www.reddit.com/r/reactjs/comments/f178ku/having_trouble_using_google_api_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/f178ku/having_trouble_using_google_api_with_react/
+---
+I have searched a lot and found multiple people having this problem, but only answers that don't apply to my situation or did not fix my problem. I copied the Quickstart code and ran it locally, which work perfectly. but as soon as I implement my own code it fails.
+
+Ik want my users to be able to select files from their Google Drive storage. I've read multiple of Google's official tutorials/quickstarts and I just can't get it working. In my index.html I put the script tag `&lt;script src="https://apis.google.com/js/api.js" async defer&gt;&lt;/script&gt;.`  
+
+
+I have a component that shows a signin button when not signed in and an show files button when signed in. My `componentDidMount` looks as following:
+
+    componentDidMount()
+    {
+        gapi.load('client:auth2', ()=&gt;
+        {
+            const {api_key, client_id} = Credentials.web;
+            const scope = "https://www.googleapis.com/auth/drive.file";
+            const discoveryDocs = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+            gapi.client.init({apiKey: api_key, clientId: client_id, discoveryDocs: discoveryDocs, scope: scope})
+            .then(()=&gt;
+            {
+                const auth = gapi.auth2.getAuthInstance();
+                auth.isSignedIn.listen(this._updateStatus);
+                this._updateStatus(auth.isSignedIn.get());
+                this._authInstance = auth;
+            }, this.props.onError);
+        });   
+    }
+
+This works as expected, no errors , everything seems fine. Then when the sign in button is clicked, I perform the following code:
+
+    this._authInstance.signIn().then(()=&gt; this.props.onLoad(false), error=&gt; {this.props.onLoad(false); this.props.onError(error)});
+
+This opens a new blank window  to Google that says connecting... but never loads anything. When I go back to my own page, there is an error with `popup_blocked_by_browser.`  
+
+
+I copied the Quickstart code and ran it locally, which, of course, works perfectly. I also tried to move everything outside react, having the code the same as in the Quickstart script(have all functions in script tags inside the index.html) but this gives me the same result as having the code in my componentDidMount.   
+
+
+Any ideas?
+## [12][[Showoff Saturday] Stereo - Create radio station using songs from Youtube, SoundCloud, etc.](https://www.reddit.com/r/reactjs/comments/f14jnw/showoff_saturday_stereo_create_radio_station/)
+- url: https://www.withstereo.com/
+---
+

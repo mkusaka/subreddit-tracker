@@ -85,53 +85,62 @@ score  |  comment  |
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Realtime socket.io server with typing indicators and file upload/downloads](https://www.reddit.com/r/javascript/comments/f0n30z/realtime_socketio_server_with_typing_indicators/)
+## [3][Bouncing balls simulation using plain JavaScript (demo link and detailed description in the README)](https://www.reddit.com/r/javascript/comments/f0znep/bouncing_balls_simulation_using_plain_javascript/)
+- url: https://github.com/MTrajK/bouncing-balls
+---
+
+## [4][[AskJS] What is a good course to learn Vanilla JS when you already know the fundamentals of programming and have some experience with React?](https://www.reddit.com/r/javascript/comments/f15f4n/askjs_what_is_a_good_course_to_learn_vanilla_js/)
+- url: https://www.reddit.com/r/javascript/comments/f15f4n/askjs_what_is_a_good_course_to_learn_vanilla_js/
+---
+Im not a pro at react by any means but I finished the codecademy course and made some simple apps in react and react native but it feel like I still don't know core Javascript and don't really want to do codecademy again because their courses are really verbose and not that helpful. I already know Java so I don't want a course that goes over things like loops, conditionals, arrays, etc.
+## [5][Use JavaScript Array Methods Efficiently](https://www.reddit.com/r/javascript/comments/f12cj2/use_javascript_array_methods_efficiently/)
+- url: https://medium.com/@emreloper/use-javascript-array-methods-efficiently-e993528ef4bc
+---
+
+## [6][My first JavaScript plugin (in those days for jquery). Was my entry into the JS world. What was your first JS „project“](https://www.reddit.com/r/javascript/comments/f15p6j/my_first_javascript_plugin_in_those_days_for/)
+- url: https://github.com/AICDEV/jointerJS
+---
+
+## [7][The ultimate guide to create desktop apps for javascript entrepreneurs](https://www.reddit.com/r/javascript/comments/f0u1l0/the_ultimate_guide_to_create_desktop_apps_for/)
+- url: https://medium.com/@merunasgrincalaitis/the-ultimate-guide-to-create-desktop-apps-for-javascript-entrepreneurs-4b2e1da0fe9c
+---
+
+## [8][FullStack webscraper for ML](https://www.reddit.com/r/javascript/comments/f17tfc/fullstack_webscraper_for_ml/)
+- url: https://github.com/gautam1858/FullStack-webscraper-for-ML
+---
+
+## [9][Realtime socket.io server with typing indicators and file upload/downloads](https://www.reddit.com/r/javascript/comments/f0n30z/realtime_socketio_server_with_typing_indicators/)
 - url: https://iabhishek.dev/post/building-a-multimedia-chat-app-using-express-socketio-redis-and-docker-part-2
 ---
 
-## [4][JavaScript Dot Matrix](https://www.reddit.com/r/javascript/comments/f0lyoo/javascript_dot_matrix/)
-- url: https://drive.google.com/file/d/1y_YvXXZZqTNNoBgqXqEycJbsaHDoch2B/view
+## [10][Painted Logo Animation using Javascript](https://www.reddit.com/r/javascript/comments/f0wtda/painted_logo_animation_using_javascript/)
+- url: https://www.htmlhints.com/article/7/painted-logo-animation-using-javascript
 ---
 
-## [5][Svelte Status #24: creating responsive, JavaScript-free charts](https://www.reddit.com/r/javascript/comments/f0lsg5/svelte_status_24_creating_responsive/)
-- url: https://sveltestatus.dev/post/24-creating-responsive-javascript-free-charts
+## [11][[AskJS] Unusual code flow - Return statement not being hit - Async- Await](https://www.reddit.com/r/javascript/comments/f11yev/askjs_unusual_code_flow_return_statement_not/)
+- url: https://www.reddit.com/r/javascript/comments/f11yev/askjs_unusual_code_flow_return_statement_not/
 ---
+In the following code:
 
-## [6][[AskJS] Personal Site, Feedback?](https://www.reddit.com/r/javascript/comments/f0i2rd/askjs_personal_site_feedback/)
-- url: https://www.reddit.com/r/javascript/comments/f0i2rd/askjs_personal_site_feedback/
----
-Hi guys, I’ve recently decided to create a little portfolio style website, just a basic single page site with links to my Github / LinkedIn. Would really appreciate any thoughts / feedback
+    const getAll = async () =&gt; {
+         const retrievedData = await axios.get('http://localhost:3001/anecdotes');  [2nd line of execution]   
+         return retrievedData.data; // - [Not executed]
+    };
+    
+    const test =  () =&gt; {
+         let anecdotes =  getAll();       [1st line of execution]         
+     console.log(anecdotes);          [3rd line of execution] 
+     props.initAnecdotes(anecdotes);  [4th line of execution] 
+    };
+    
+    test();
 
-[https://Hedgecox.dev](https://hedgecox.dev)
-## [7][aykir.io: Multiplayer Cards Against Humanity clone powered by WebGL](https://www.reddit.com/r/javascript/comments/f0qv1w/aykirio_multiplayer_cards_against_humanity_clone/)
-- url: https://aykir.io
----
+**Why is the return statement not being executed?**
 
-## [8][[AskJS] Fastlist.exe was flagged as a malware by my AV in some of my NPM packages. Should I be worried?](https://www.reddit.com/r/javascript/comments/f0kmqd/askjs_fastlistexe_was_flagged_as_a_malware_by_my/)
-- url: https://www.reddit.com/r/javascript/comments/f0kmqd/askjs_fastlistexe_was_flagged_as_a_malware_by_my/
----
+**Also, why isn't the await not pausing until axios get request data is retrieved?**
 
-## [9][[AskJS] is ExpressJS with PassportJS an antiquated model?](https://www.reddit.com/r/javascript/comments/f0fqmp/askjs_is_expressjs_with_passportjs_an_antiquated/)
-- url: https://www.reddit.com/r/javascript/comments/f0fqmp/askjs_is_expressjs_with_passportjs_an_antiquated/
----
-I'm starting up a project and last I worked in node for web I used Express and Passport. Are these old now? 
-
-What about feathersjs? Hapi? Koa?
-
-What is a modern stack?
-
-I keep reading about MERN stack.
-## [10][Other Articles on Observables are Dumb.](https://www.reddit.com/r/javascript/comments/f0fu9b/other_articles_on_observables_are_dumb/)
-- url: https://gist.github.com/RobertAKARobin/47c4777de4d208587b11c63da320b2c0
----
-
-## [11][[AskJS] Is it a good idea to update all package dependencies to latest major version in one step?](https://www.reddit.com/r/javascript/comments/f0ffqy/askjs_is_it_a_good_idea_to_update_all_package/)
-- url: https://www.reddit.com/r/javascript/comments/f0ffqy/askjs_is_it_a_good_idea_to_update_all_package/
----
-Did you ever run into trouble doing this? What is a good process?
-
-For minor versions, it's simple, I just run `npm update`. Going beyond that, I see `npm-check-updates` updates everything, but I'm worried about things breaking in our medium-sized project.
-## [12][Formatting dates in JavaScript with Intl.DateTimeFormat](https://www.reddit.com/r/javascript/comments/f084yt/formatting_dates_in_javascript_with/)
-- url: https://www.valentinog.com/blog/datetime/
+Thanks
+## [12][Answer the “Anagram Interview Question” with ES6 [Medium Post]](https://www.reddit.com/r/javascript/comments/f0ynd3/answer_the_anagram_interview_question_with_es6/)
+- url: https://blog.anthonycomito.com/answer-the-anagram-interview-question-with-es6-c7621e43596d
 ---
 

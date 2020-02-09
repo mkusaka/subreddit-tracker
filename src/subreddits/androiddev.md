@@ -40,89 +40,123 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][HTML Admin CMS for Firebase?](https://www.reddit.com/r/androiddev/comments/f0q9kr/html_admin_cms_for_firebase/)
-- url: https://www.reddit.com/r/androiddev/comments/f0q9kr/html_admin_cms_for_firebase/
+## [3][A simple DIY library to generate your own custom Calendar View using RecyclerView, written in Kotlin](https://www.reddit.com/r/androiddev/comments/f165ul/a_simple_diy_library_to_generate_your_own_custom/)
+- url: https://github.com/tejpratap46/RecyclerCalendarAndroid
 ---
-Firebase's own admin layout is pretty much useless and wastes a lot of time so is there any other HTML based admin sites/projects that I can connect my database with and do changes in Firestore? Most data on my Firestore is input from me and it's very hard to create individual nodes again and again since there is a lot of data that I enter.
-## [4][This is my fault. Somehow.](https://www.reddit.com/r/androiddev/comments/f0bvgu/this_is_my_fault_somehow/)
-- url: https://www.reddit.com/r/androiddev/comments/f0bvgu/this_is_my_fault_somehow/
+
+## [4][Anyone done white-boarding in Kotlin?](https://www.reddit.com/r/androiddev/comments/f133r5/anyone_done_whiteboarding_in_kotlin/)
+- url: https://www.reddit.com/r/androiddev/comments/f133r5/anyone_done_whiteboarding_in_kotlin/
 ---
-https://imgur.com/a/AFQcVvK
+I have an interview at Facebook and a few other companies coming up and I am working through the Cracking the Coding Interview book. Has anyone done white boarding at any company in Kotlin? Did you use some of the built in Kotlin utility functions (reverse, sorted, filter, map, flatmap, toCharArray()...) and if so what did you for Big O for them? Memorize them, best guess, or just implement yourself?
 
-Edit: so yeah, I requested a removal and the bots just told me to eat the review, it's staying.
-Thanks Google Dev support!
-## [5][Android TV, and interstitial ads.](https://www.reddit.com/r/androiddev/comments/f0rlcv/android_tv_and_interstitial_ads/)
-- url: https://www.reddit.com/r/androiddev/comments/f0rlcv/android_tv_and_interstitial_ads/
+Also thoughts on using ArrayDeque for both Stacks and Queue questions? 
+
+Do you use coroutines, or just do single threaded solutions unless asked? 
+
+And any other things to consider for Kotlin vs Java white boarding? One thing I have noticed is that white board questions seem to often have inputs/outputs as Arrays rather than Lists/MutableLists which I generally use when coding in Kotlin.
+## [5][Google Play NOT indexing new apps again.](https://www.reddit.com/r/androiddev/comments/f16cq6/google_play_not_indexing_new_apps_again/)
+- url: https://www.reddit.com/r/androiddev/comments/f16cq6/google_play_not_indexing_new_apps_again/
 ---
-I developed a small app for a client, the app contains AdMob interstitial ads.  
-
-
-the client asked me to develop the same kind of app but for Android TV. from research online I found that AdMob is not officially supported on Android TV yet.   
-
-
-is there an alternative ad network that will work with Android TV? does anyone here have any experience with such an issue?
-## [6][I just published an article about ViewBinding on medium. Please check it out.](https://www.reddit.com/r/androiddev/comments/f0rk0e/i_just_published_an_article_about_viewbinding_on/)
-- url: https://www.reddit.com/r/androiddev/comments/f0rk0e/i_just_published_an_article_about_viewbinding_on/
+It seems the problem from November is back. Apps published from \~Jan 27 does not appear in search results. You can find them only by removing spaces in the title or changing them to underscore.
+## [6][KitKat and TLSv1.2](https://www.reddit.com/r/androiddev/comments/f17h6v/kitkat_and_tlsv12/)
+- url: https://publicobject.com/2020/02/09/kitkat-and-tlsv1-2/
 ---
-“Exploring ViewBinding in depth” by Somesh Kumar https://link.medium.com/Jprz4AjpU3
-## [7][Help me with my Kotlin Flow hangups](https://www.reddit.com/r/androiddev/comments/f0iddv/help_me_with_my_kotlin_flow_hangups/)
-- url: https://www.reddit.com/r/androiddev/comments/f0iddv/help_me_with_my_kotlin_flow_hangups/
+
+## [7][Google and Dark Mode](https://www.reddit.com/r/androiddev/comments/f17r1w/google_and_dark_mode/)
+- url: https://www.reddit.com/r/androiddev/comments/f17r1w/google_and_dark_mode/
 ---
-Or more precisely (but less catchy as a title) my Cold vs Hot sequence hangups.
+Has anybody noticed that most apps by Google e.g Keep, Play Store, Calendar, etc when switched to dark mode use colors which are way too light compared to those suggested by [the Material Design page on Dark Mode](https://material.io/design/color/dark-theme.html#usage)
 
-First of all, it seems like 3 rather distinct concepts are associated with Hot vs. Cold, maybe because they're not as distinct as I think they are:
-
-1. Whether the Observable is generating items when no subscriber is listening (Hot), or whether it waits until there is a subscriber before generating items (Cold)
-2. Whether the Observable can be back-pressured (Cold) or not (Hot)
-3. Whether the Observable broadcasts its events to all subscribers (Hot) or whether an Observable generates new items for each subscriber (Cold) -- i.e. whether the Observable is shared.
-
-I can definitely see how they are related. Perhaps these concepts go together because they just make sense together. Anyway, that's not my question.
-
-It seems that A LOT of events in mobile app dev (user input, data updates pushed from the back end, etc.) are inherently Hot. You don't have any control over when they happen. You generally want to broadcast/share them. You could try to adopt a back-pressure strategy (e.g. buffer) but you can't back-pressure the event itself.
-
-Notable exception of course is I/O, e.g. unary network calls, or file I/O. These can be "Single-like" in nature, or maybe you have a paginated network API or you're reading individual lines from a file, which would involve multiple events and is "Flowable-like" in nature. These seem Cold to me.
-
-I could also imagine having a Presenter in which you've subscribed to Flowable&lt;ViewState&gt; and you request 1 item at a time because there's no sense in processing multiple ViewStates each frame.
-
-So I see a use for both, but the Kotlin language designers don't seem to be feeling the love for Hot channels. Channels are still experimental, and many of their (seemingly useful!) operators are being deprecated (with instructions to use Flow instead). I definitely understand [their limitations](https://medium.com/@elizarov/cold-flows-hot-channels-d74769805f9), but they seem necessary.
-
-So my question is, should we be minimizing the use of Hot sequences? Should we be converting them to Cold sequences with some sort of Back-Pressure Strategy as immediately as possible? Should the frame timing of our UI generally be the tick rate at which we calculate new app state, with "Hot" events buffered somehow until the next tick?
-## [8][I need help, google play leaderboard won't record scores](https://www.reddit.com/r/androiddev/comments/f0p1ma/i_need_help_google_play_leaderboard_wont_record/)
-- url: https://www.reddit.com/r/androiddev/comments/f0p1ma/i_need_help_google_play_leaderboard_wont_record/
+Does anyone know why this is the case?
+## [8][How to host app-ads.txt on Github Pages?](https://www.reddit.com/r/androiddev/comments/f15zty/how_to_host_appadstxt_on_github_pages/)
+- url: https://www.reddit.com/r/androiddev/comments/f15zty/how_to_host_appadstxt_on_github_pages/
 ---
-In my game I am able to log into google play and even have the leaderboard pop open, but i can't record scores into the leaderboard. I used this code I found in a tutorial, and it seems to be the only method I can find anywhere:
+I uploaded app-ads.txt to my Github Page: [https://gmikhail.github.io/app-ads.txt](https://gmikhail.github.io/app-ads.txt)
 
- 
+I set my website [https://gmikhail.github.io/](https://gmikhail.github.io/) in Google Dev Console (Main page with apps list -&gt; Settings -&gt; Developer account -&gt; Account details -&gt; Website).
 
-public static void AddScoreToLeaderboard(string leaderboardId, long score)
+I also tried to set the website on the app page (App control panel -&gt; App page -&gt; App description -&gt; Website).
 
-{
+But so far (three days have already passed) on [https://apps.admob.com/v2/apps/appadstxt](https://apps.admob.com/v2/apps/appadstxt) instead of urls are dashes is displayed.
 
-Social.ReportScore(score, leaderboardId, success =&gt; { });
+What am I doing wrong? Is it even possible to host app-ads.txt on Github Pages?
+## [9][Firestore alternatives? Is there an 'industry standard'?](https://www.reddit.com/r/androiddev/comments/f16u8x/firestore_alternatives_is_there_an_industry/)
+- url: https://www.reddit.com/r/androiddev/comments/f16u8x/firestore_alternatives_is_there_an_industry/
+---
+Not familiar with databases at all, other than firebase. But I'm developing an app that would require store of data and login authentication.
 
-}
+Let's the app records workouts and sorts them into subcategories. 
+
+Using firestore, I would do something like have a document of all the login auth encrypted, each login and has a subdocument of each workout year, which has subdocument of each workout month, which holds an instance of the workout class. The workout class has various attributes, like total time, sets time of each exercise etc.
+
+I've made a similar app in this way for practicing development, which is why I've described it that way. While this work implement fine, I feel like this isn't the 'proper' way. Login auth seems sketchy, and firestore implementation does give alot of headaches. 
+
+What would be the best way/service to use to go about this?
+## [10][Learning iOS as an Android developer](https://www.reddit.com/r/androiddev/comments/f18lc9/learning_ios_as_an_android_developer/)
+- url: https://www.reddit.com/r/androiddev/comments/f18lc9/learning_ios_as_an_android_developer/
+---
+I have been developing for Android for the past 3 years and would like to dive into the iOS market.   
+
+
+I know that there's a lot of Swift and iOS tutorials on the internet, but what I'm looking for are those with comparisons to Android development. For example a tutorial saying the equivalent for Android stuff  : "A view in android is \_\_\_ in iOS"  
+
+
+Anyone know of a good one?
+## [11][How to capture screenshots in AndroidStudio without, capturing bottom soft buttons?](https://www.reddit.com/r/androiddev/comments/f177ob/how_to_capture_screenshots_in_androidstudio/)
+- url: https://www.reddit.com/r/androiddev/comments/f177ob/how_to_capture_screenshots_in_androidstudio/
+---
+All the while, I was able to capture screenshots in AndroidStudio + Emulator, without capturing the bottom soft buttons (Back, Home, Recent)
 
 &amp;#x200B;
 
-But it does nothing. It used to work for me a year ago, but since google now requires games to be in 64bit, i had to update everything, and now this code doesn't work for me. I'm guessing maybe google changed it in an update, but I can't find any other code to record to leaderboards. Plz help. Thanks.
-## [9][Critical Bluetooth Vulnerability in Android (CVE-2020-0022)](https://www.reddit.com/r/androiddev/comments/f0dflc/critical_bluetooth_vulnerability_in_android/)
-- url: https://insinuator.net/2020/02/critical-bluetooth-vulnerability-in-android-cve-2020-0022/
+I was using the bottom left camera icon button to capture screenshot - [https://i.imgur.com/BrpQB03.png](https://i.imgur.com/BrpQB03.png)
+
+&amp;#x200B;
+
+However, I'm not sure what I have done, which causes the bottom soft buttons (Back, Home, Recent) always be capture. For instance, this is one of the capture screenshot. I do not want the bottom soft buttons bar - [https://i.imgur.com/fRGyTpI.png](https://i.imgur.com/fRGyTpI.png)
+
+&amp;#x200B;
+
+This is my AVD manager - [https://i.imgur.com/emqPv5n.png](https://i.imgur.com/emqPv5n.png)
+
+&amp;#x200B;
+
+Any idea how I can avoid from capturing bottom soft buttons, when I was capturing screenshots using AndroidStudio + Emulator?
+
+&amp;#x200B;
+
+Thanks.
+## [12][Setting Window background to @null in XML doesn't work after night mode is toggled](https://www.reddit.com/r/androiddev/comments/f16usx/setting_window_background_to_null_in_xml_doesnt/)
+- url: https://www.reddit.com/r/androiddev/comments/f16usx/setting_window_background_to_null_in_xml_doesnt/
 ---
+I'm using DayNight theme.
 
-## [10][Android 11 will add a new App Compatibility feature to ease testing](https://www.reddit.com/r/androiddev/comments/f081sw/android_11_will_add_a_new_app_compatibility/)
-- url: https://www.developer-tech.com/news/2020/jan/22/android-11-new-app-compatibility-feature-testing/
----
+I set the window background like this
+```
+&lt;item name="android:windowBackground"&gt;@color/window_bg&lt;/item&gt;
+```
 
-## [11][View Binding: Merge](https://www.reddit.com/r/androiddev/comments/f0corf/view_binding_merge/)
-- url: https://blog.stylingandroid.com/view-binding-merge/
----
+and set the colors like this
+in colors.xml (default)
+```
+&lt;color name="window_bg"&gt;@null&lt;/color&gt;
+```
+in colors.xml (night)
+```
+&lt;color name="window_bg"&gt;@andoid:color/black&lt;/color&gt;
+```
 
-## [12][Changing minSdkVersion from 21 to 23?](https://www.reddit.com/r/androiddev/comments/f09jni/changing_minsdkversion_from_21_to_23/)
-- url: https://www.reddit.com/r/androiddev/comments/f09jni/changing_minsdkversion_from_21_to_23/
----
-What is your minSdkVersion? Right now in our apps it's mostly API 21, but we are considering to move to API 23, no specific reason except some code optimization and possibly APK size reduction.   
+Also, I have this thing in my Main Activity's onCreate()
+```
+AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+```
 
+And the activity declaration in the manifest is just this
+```
+&lt;activity
+    android:name=".MainActivity"
+    android:configChanges="orientation|keyboardHidden"
+    android:screenOrientation="portrait"&gt;
+```
 
-According to analytics 13% of our users are on API level 21, but here is the catch, 69% of them are from India and Mexico and those countries tend to have very low eCPM and are not very profitable.   
-What are your thoughts?  
-What is your minSdkVersion?
+So, when I toggle the night mode (from quick setting tiles) from dark to light, only the window background color doesn't change. I expected the color to be white but it was black.

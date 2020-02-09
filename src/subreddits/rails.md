@@ -7,11 +7,130 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][What datepicker do you use in your projects?](https://www.reddit.com/r/rails/comments/f0nxkp/what_datepicker_do_you_use_in_your_projects/)
+## [2][what is the rails way to use library that need instance?](https://www.reddit.com/r/rails/comments/f1633k/what_is_the_rails_way_to_use_library_that_need/)
+- url: https://www.reddit.com/r/rails/comments/f1633k/what_is_the_rails_way_to_use_library_that_need/
+---
+hello all I'm trying to use this fcm library 
+
+https://github.com/spacialdb/fcm
+
+problem is to use this library I need to create a instance of it
+
+    require 'fcm'
+
+    fcm = FCM.new("my_server_key")
+    # you can set option parameters in here
+    #  - all options are pass to HTTParty method arguments
+    #  - ref: https://github.com/jnunemaker/httparty/blob/master/lib/httparty.rb#L29-L60
+    #  fcm = FCM.new("my_server_key", timeout: 3)
+
+    registration_ids= ["12", "13"] # an array of one or more client registration tokens
+
+    # See https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages for all available options.
+    options = { "notification": {
+                  "title": "Portugal vs. Denmark",
+                  "body": "5 to 1"
+              }
+    }
+    response = fcm.send(registration_ids, options)
+
+
+so whenever I need to use the `fcm.send` I redo all the initiate code and I thought it as not a rails way,
+
+because I should have 1 fcm object instead 1 on each of class
+
+
+what is the rails way to use this gem?
+
+
+I've read about module but not really sure how to execute it
+## [3][Google Calendar API authorization help](https://www.reddit.com/r/rails/comments/f14fxe/google_calendar_api_authorization_help/)
+- url: https://www.reddit.com/r/rails/comments/f14fxe/google_calendar_api_authorization_help/
+---
+So, I'm able to use omniauth to authenticate a user with rails. I've also gotten to this point where I want to start using the google calendar service. However, I think this code is a bit outdated. 
+
+I have the \`@token\`  of the user, but I'm not sure how to use it to authorize the service.
+
+    #What data comes back from OmniAuth?     
+        @auth = request.env["omniauth.auth"]
+        #Use the token from the data to request a list of calendars
+        @token = @auth["credentials"]["token"]
+        client = Google::APIClient.new
+        client.authorization.access_token = @token
+        service = client.discovered_api('calendar', 'v3')
+        @result = client.execute(
+          :api_method =&gt; service.calendar_list.list,
+          :parameters =&gt; {},
+          :headers =&gt; {'Content-Type' =&gt; 'application/json'})
+
+Any ideas? Or do any of you know the more updated code for this? 
+
+Thanks so much!
+## [4][How can i completely uninstall Ruby and Ruby on Rails completely from Windows to do a new installation](https://www.reddit.com/r/rails/comments/f18i86/how_can_i_completely_uninstall_ruby_and_ruby_on/)
+- url: https://www.reddit.com/r/rails/comments/f18i86/how_can_i_completely_uninstall_ruby_and_ruby_on/
+---
+How can i completely uninstall Ruby and Ruby on Rails completely from Windows to do a new installation, there may be some issues of my previous installation.
+## [5][Build a Reddit Clone in Rails 6 [PART 3 - BUILD COMPLETE]](https://www.reddit.com/r/rails/comments/f0uq9t/build_a_reddit_clone_in_rails_6_part_3_build/)
+- url: https://www.reddit.com/r/rails/comments/f0uq9t/build_a_reddit_clone_in_rails_6_part_3_build/
+---
+Hi guys, I've recently released part 3 of the new Reddit clone build in Ruby on Rails. I shared part 1 and 2 here over the past 2 weeks for the community to check out. Those first 2 videos got some interest, so this latest release might be useful to anyone who has enjoyed the series so far.
+
+**Part 1:**
+
+In this video I cover the setup of a new rails app, installing the devise gem and creating user accounts. Add functionality for users to create a new community/subreddit. Add functionality to create new posts for a community (using nested routes).
+
+[https://www.youtube.com/watch?v=aD6JvHKNPPM](https://www.youtube.com/watch?v=aD6JvHKNPPM)
+
+**Part 2:**
+
+Add dropdown nav menu allowing users to view their profile, edit account settings and sign out. Extend devise to add first name, last name and username. Signed in users can subscribe to communities and create new posts within them. Add profile for users which shows some basic details and their recent posts. Add new comments table and allow subscribers to add comments to posts. Improve layout and design of our app frontend.
+
+[https://www.youtube.com/watch?v=kSj3pCT3r6Y](https://www.youtube.com/watch?v=kSj3pCT3r6Y)
+
+**Part 3:**
+
+Add ability to upvote / downvote posts and order them in their community based on popularity. Add user karma based on number of upvotes received on posts.
+
+[https://www.youtube.com/watch?v=Rsqj34unV1c](https://www.youtube.com/watch?v=Rsqj34unV1c)
+
+The build is part of a collection of MVP's that I have been building after working in the tech startup space for some time and assisting in building minimum viable products.
+
+I post new web app builds on YouTube using Ruby on Rails 6 so feel free to check out the channel and add some recommendations for upcoming builds.
+## [6][How can I document my API with swagger? Please help!](https://www.reddit.com/r/rails/comments/f126cn/how_can_i_document_my_api_with_swagger_please_help/)
+- url: https://www.reddit.com/r/rails/comments/f126cn/how_can_i_document_my_api_with_swagger_please_help/
+---
+Hello everyone. I'm currently doing my engineer internships in a small company. However, as a project I was assigned to document the whole API using swagger in order to test its methods. I found [this](https://medium.com/@sushildamdhere/how-to-document-rest-apis-with-swagger-and-ruby-on-rails-ae4e13177f5d) tutorial, and also [this](https://medium.com/wolox-driving-innovation/lets-forget-painful-api-documentation-f5d0f5d0d06d). But I didn't have luck making it to work. I don't have too much experience with Ruby, so Rails is somehow foreign to me, and I feel lost and frustrated. There's any other alternative to swagger? If anyone is willing to help me, I would truly appreciate it!
+## [7][Having trouble with bundle install](https://www.reddit.com/r/rails/comments/f16d3h/having_trouble_with_bundle_install/)
+- url: https://www.reddit.com/r/rails/comments/f16d3h/having_trouble_with_bundle_install/
+---
+It's telling me I can't install kgio... But doesn't work?? This is code I pulled from github. They tell me to do a rake install, which errors and tells me to do a "bundle install" which is where this error is calming from.
+## [8][Question about Google Client API OAuth](https://www.reddit.com/r/rails/comments/f11qol/question_about_google_client_api_oauth/)
+- url: https://www.reddit.com/r/rails/comments/f11qol/question_about_google_client_api_oauth/
+---
+So, I used this page to incorporate the calendar api into my rails app:
+
+https://developers.google.com/calendar/quickstart/ruby
+
+But they put all the code into one file, so I wanted to break it up
+
+I basically created a GoogleApi service module, and placed the `authorize` method into it.
+
+And I created a `google_controller.rb` controller, and an action in it called `authenticate`, which will run that `authorize` method for the service module, and then try the rest of the code in the file provided by the link.
+
+I don't get an error, but my entire server stops and gives me a link to click on that will take me to the accounts log in page. Which is great!
+
+However, because my server hangs, there's no way to send that link to the front end (this is an api only rails app) and also, no one else can send http requests to the api because the server is hung.
+
+It's a pretty funny situation, but a confusing one. Any ideas?
+
+I've tried running the authenticate code in a separate thread so that it wouldn't run in the main thread and stop my server, however, doing so made me exceed the daily limit for google api requests, so that didn't work.
+
+I really appreciate any help. If you need me to include any files, I'd be super happy to. I haven't included any code because I don't think this is a code issue so much as a "where should I put the code" kind of issue.
+## [9][What datepicker do you use in your projects?](https://www.reddit.com/r/rails/comments/f0nxkp/what_datepicker_do_you_use_in_your_projects/)
 - url: https://www.reddit.com/r/rails/comments/f0nxkp/what_datepicker_do_you_use_in_your_projects/
 ---
 
-## [3][rails_admin and cancancan - Handle Unauthorized Access](https://www.reddit.com/r/rails/comments/f0l9a2/rails_admin_and_cancancan_handle_unauthorized/)
+## [10][rails_admin and cancancan - Handle Unauthorized Access](https://www.reddit.com/r/rails/comments/f0l9a2/rails_admin_and_cancancan_handle_unauthorized/)
 - url: https://www.reddit.com/r/rails/comments/f0l9a2/rails_admin_and_cancancan_handle_unauthorized/
 ---
 Hello guys! got a new problem. I am using Rails [6.0.2.1](https://6.0.2.1).
@@ -57,29 +176,7 @@ Here `routes.rb`
       resources :buildings
       resources :confirmations
     end
-## [4][Rails n00b, questions about authorization + URL schemes](https://www.reddit.com/r/rails/comments/f0fvsg/rails_n00b_questions_about_authorization_url/)
-- url: https://www.reddit.com/r/rails/comments/f0fvsg/rails_n00b_questions_about_authorization_url/
----
-Hello everyone,
-
-I'm working on a Rails backend for a mobile app for event management, where mutiple different clients will be creating shows, events, etc, and accessing event data through Rails to the database. I want to make sure each client sees only their own data. Once the client authenticates, I can then query for events, then filter based on their client ID.
-
-I'm thinking about a couple different url schemes:
-
-`/event/18489202`
-
-or
-
-`/client/1/event/1`
-
-In the first example, an event id is global across the application. In the second, an event is specific to the client. Or, I could have even this
-
-`/event/1`
-
-Out of the box, it would seem the first option is easiest to set up using a `resources` entry in `routes.rb`  . However I'm wondering if it would be more convenient, or aesthetically pleasing for clients, to use smaller client-specific numbers in the URL and then parse that on the backend for the actual database ID value. Plus I am a Rails noob so plenty of technical considerations maybe you all can help me with.
-
-I'd be interested to hear your opinions. Thanks !
-## [5][Noob question about work with references](https://www.reddit.com/r/rails/comments/f0jfmw/noob_question_about_work_with_references/)
+## [11][Noob question about work with references](https://www.reddit.com/r/rails/comments/f0jfmw/noob_question_about_work_with_references/)
 - url: https://www.reddit.com/r/rails/comments/f0jfmw/noob_question_about_work_with_references/
 ---
 I have model `building` with migration:
@@ -155,99 +252,3 @@ by
 trigger this exception:  
 
     SQLite3::SQLException: near ".": syntax error
-## [6][Communication between scaffolds](https://www.reddit.com/r/rails/comments/f0iq7h/communication_between_scaffolds/)
-- url: https://www.reddit.com/r/rails/comments/f0iq7h/communication_between_scaffolds/
----
-I was thinking of some sort of "favorites", "wish list" or "cart" in a commerce website (btw, "favorites" can happen in a link sharing website as well :P). I mean we have two entities which actually define an online shopping website : Products and Users.
-
-My question is, if we implement those two things, we need something else, a cart. I'm not going to dive deep into what actually should happen in a shop. Just wondering what happens when something enters to the cart. 
-
-In cart, we have the product and its features and its quantity. For example, I'm going to amazon right now, and I choose a hair dryer. My mother may want one too. So, I increase the quantity. 
-
-It means I need two scaffolds, right? I need one for product and one for the cart. But how can I make a communication between them?
-## [7][Ruby on Rails advanced courses?](https://www.reddit.com/r/rails/comments/f00t14/ruby_on_rails_advanced_courses/)
-- url: https://www.reddit.com/r/rails/comments/f00t14/ruby_on_rails_advanced_courses/
----
-Hello, I consider I have experience in Rails, but I want to go to the next level, for this I want to know if there's an advanced course on Rails which has some or most of the following topics:
-
-* Examples of good use of rails conventions (service objects, query object, null objects, creating concerns to DRY your controllers/models, etc.).
-* Make performant apps (performant queries, performant ruby code, fix n+1 queries, etc.).
-* Examples of good use of design patterns (observable, chain of responsibility, factory, strategy pattern, etc.).
-* Serializing data (blueprinter, fast json api, etc.)
-* Make performant tests (build or build_stubbed instead of create, parallel tests, etc.)
-
-Or even building your own gems, metaprogramming, etc. (I know this is ruby, but to be an advanced Rails developer you have to be an advanced Ruby developer too IMO)
-## [8][Issues with Stripe Connect... API saying customer + plan doesn't exist](https://www.reddit.com/r/rails/comments/f0b01n/issues_with_stripe_connect_api_saying_customer/)
-- url: https://www.reddit.com/r/rails/comments/f0b01n/issues_with_stripe_connect_api_saying_customer/
----
-I'm attempting to create a rails application with stripe connect to essentially act as middleman for services. With my current controller and JS, I have no problem charging a customer for a subscription for my platform. The issue becomes when I attempt to charge on behalf of a connected account as I'll typically get an error saying the customer doesn't exist (and when I update the connected account with customer object) it says the plan doesn't exist. I may have a misunderstanding of how connect works, but does the customer\_id and plan\_id also need to exist within the connected stripe accounts along with the application/platform's account? Attached a snippet of my controller below for reference. Problematic line is where subscription object is created.
-
- 
-
-`def create`  
- `#Make sure we change this to production when the time comes`  
- `Stripe.api_key = Rails.application.credentials.development[:stripe_api_key]`  
- `#Make sure that the credentials file has the appropriate plan_ids`  
-`plan_id = params[:plan_id]`  
-`plan = Stripe::Plan.retrieve(plan_id)`  
- `# flash[:warning] = plan`  
-`token = params[:stripeToken]`  
- `# flash[:warning] = Stripe.api_key`  
- `#Let's add subscription value to the Library.`  
-`subscription_plans = PlanType.all`  
- `#calling private function find_plan`  
-`plan_type = find_plan(plan, subscription_plans)`  
-`customer = if current_user.stripe_id.present?`  
- `Stripe::Customer.retrieve(current_user.stripe_id)`  
- `# flash[:danger] = "User already has a stripe ID!"`  
- `else`  
- `Stripe::Customer.create({`  
-`email: current_user.email,`   
-`source:token,`  
-`}, {stripe_account: plan_type.stripe_id})`  
- `# Stripe::Customer.create(description: 'Test Customer')`  
- `#Save the stripe id to the database`  
- `end`  
- `#Update the subscription creation with stripe connected account param &amp; application_fee_percent params. Sent via connect`  
- `#transfer_data{amount_percent: 95, destination: plan_type.stripe_id }`  
-`subscription = customer.subscriptions.create({plan: plan.id, application_fee_percent: 10,}, stripe_account: plan_type.stripe_id)`  
- `#Update the hash`  
-`current_user.stripe_subscription_id[plan.nickname.downcase] = subscription.id`  
-`options = {`  
-`stripe_id: customer.id,`  
-`subscribed: true`  
-`}`  
-`current_user.plan_subscription_library_additions &lt;&lt; plan_type`
-## [9][There are two Ruby version manager RVM vs RBENV. what's your choice? and why?](https://www.reddit.com/r/rails/comments/f009mb/there_are_two_ruby_version_manager_rvm_vs_rbenv/)
-- url: https://www.reddit.com/r/rails/comments/f009mb/there_are_two_ruby_version_manager_rvm_vs_rbenv/
----
-I was at work, I installed ruby and rails using RBENV. 
-
-My senior colleague made me install RVM and uninstalled RBENV. Insists that RVM handles better somehow. 
-
-What's your thought on this? 
-
-What is the industrial standard?
-## [10][Yet another Arel Cheatsheet, but on Steroids](https://www.reddit.com/r/rails/comments/ezuuup/yet_another_arel_cheatsheet_but_on_steroids/)
-- url: https://www.reddit.com/r/rails/comments/ezuuup/yet_another_arel_cheatsheet_but_on_steroids/
----
-Hi guys,
-
-I've created a cheatsheet of Arel that collects my personal experience with it. I've decided to share it since Arel is pretty much undocumented, but I think it's a really powerful tool.
-
-[https://gist.github.com/ProGM/c6df08da14708dcc28b5ca325df37ceb](https://gist.github.com/ProGM/c6df08da14708dcc28b5ca325df37ceb)
-## [11][Multiple database connections?](https://www.reddit.com/r/rails/comments/f02fxm/multiple_database_connections/)
-- url: https://www.reddit.com/r/rails/comments/f02fxm/multiple_database_connections/
----
-Hi. I have an ongoing project which asks for many DB connections (9 total) in:
-
--SQL Server
--MySQL
--Oracle SQL
--PostgreSQL
-
-I never did something like this before, so i might ask for some advices or ideas.
-
-I'm using Rails 6.
-
-In resume, it's a data warehouse. I must delevelop an ETL module which process all the data from these 9 databases and puts into only one DB (which is PostgreSQL). I'd like to read your experiences, advices or something like this.

@@ -57,11 +57,17 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][fpm: a header-only fixed-point math library with trigonometry, etc](https://www.reddit.com/r/cpp/comments/f0ph40/fpm_a_headeronly_fixedpoint_math_library_with/)
+## [2][Is "C++ Template Metaprogramming" by Abrahams and Gurtovoy still relevant in the C++17/20 times?](https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/)
+- url: https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/
+---
+I'm considering buying it, but am not sure whether it's still relevant or most of it outdated / implementing what's now already available in the language or std.  
+
+Also feel free to name (better) alternatives if there are any. Thanks :)
+## [3][fpm: a header-only fixed-point math library with trigonometry, etc](https://www.reddit.com/r/cpp/comments/f0ph40/fpm_a_headeronly_fixedpoint_math_library_with/)
 - url: https://github.com/MikeLankamp/fpm
 ---
 
-## [3][GitHub actions for vcpkg, CMake and Ninja](https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/)
+## [4][GitHub actions for vcpkg, CMake and Ninja](https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/)
 - url: https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/
 ---
 These are two GitHub actions that streamline building C++ sources with CMake, vcpkg, Ninja:
@@ -70,19 +76,19 @@ These are two GitHub actions that streamline building C++ sources with CMake, vc
 * [run-cmake](https://github.com/marketplace/actions/run-cmake)
 
 Enjoy!
-## [4][C++ Memory (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fx1x/c_memory_chrome_university_2019/)
+## [5][C++ Memory (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fx1x/c_memory_chrome_university_2019/)
 - url: https://www.youtube.com/watch?v=UNJrgsQXvCA
 ---
 
-## [5][A fast work-stealing queue template library in modern C++](https://www.reddit.com/r/cpp/comments/f0nu69/a_fast_workstealing_queue_template_library_in/)
+## [6][A fast work-stealing queue template library in modern C++](https://www.reddit.com/r/cpp/comments/f0nu69/a_fast_workstealing_queue_template_library_in/)
 - url: https://github.com/tsung-wei-huang/work-stealing-queue
 ---
 
-## [6][C++ as a second language (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fxcq/c_as_a_second_language_chrome_university_2019/)
+## [7][C++ as a second language (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fxcq/c_as_a_second_language_chrome_university_2019/)
 - url: https://www.youtube.com/watch?v=cN9c_JyvL1A
 ---
 
-## [7][reproc v11.0.0 released!](https://www.reddit.com/r/cpp/comments/f0h238/reproc_v1100_released/)
+## [8][reproc v11.0.0 released!](https://www.reddit.com/r/cpp/comments/f0h238/reproc_v1100_released/)
 - url: https://www.reddit.com/r/cpp/comments/f0h238/reproc_v1100_released/
 ---
 I've just released [reproc](https://github.com/DaanDeMeyer/reproc) v11.0.0. reproc is a cross-platform process handling library for C and C++.
@@ -107,19 +113,15 @@ I also tried to add support for pseudo-ttys using `openpty` on POSIX and the new
 I also made a (single-line) [contribution](https://github.com/microsoft/STL/pull/406) to the MSVC STL to fix a bug I found while working on reproc. It's amazing to be able to contribute to something as widely used as the MSVC STL. The experience was great so props to the developers at Microsoft that made this happen.
 
 As always, any feedback is highly appreciated and if you have any questions about reproc, feel free to ask.
-## [8][OpenSSL client and server from scratch series](https://www.reddit.com/r/cpp/comments/f099li/openssl_client_and_server_from_scratch_series/)
+## [9][OpenSSL client and server from scratch series](https://www.reddit.com/r/cpp/comments/f099li/openssl_client_and_server_from_scratch_series/)
 - url: https://quuxplusone.github.io/blog/2020/01/24/openssl-part-1/
 ---
 
-## [9][Anti-Cheats - Taking an inside look at Razer's Synapse driver](https://www.reddit.com/r/cpp/comments/f0bmz0/anticheats_taking_an_inside_look_at_razers/)
+## [10][Anti-Cheats - Taking an inside look at Razer's Synapse driver](https://www.reddit.com/r/cpp/comments/f0bmz0/anticheats_taking_an_inside_look_at_razers/)
 - url: https://niemand.com.ar/2020/02/07/bypassing-anti-cheats-part-1-exploiting-razer-synapse-driver/
 ---
 
-## [10][Quick Snake: A fast-faced snake-like game for the terminal in C++17](https://www.reddit.com/r/cpp/comments/f0f2fo/quick_snake_a_fastfaced_snakelike_game_for_the/)
+## [11][Quick Snake: A fast-faced snake-like game for the terminal in C++17](https://www.reddit.com/r/cpp/comments/f0f2fo/quick_snake_a_fastfaced_snakelike_game_for_the/)
 - url: https://github.com/gregstula/quick-snake
----
-
-## [11][CppCast: Large Scale C++](https://www.reddit.com/r/cpp/comments/f0489s/cppcast_large_scale_c/)
-- url: https://cppcast.com/john-lakos-large-scale-cpp/
 ---
 

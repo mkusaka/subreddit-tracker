@@ -68,60 +68,71 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Glad to see that Programming Rust will soon have a Second Edition](https://www.reddit.com/r/rust/comments/f0fjv1/glad_to_see_that_programming_rust_will_soon_have/)
-- url: https://i.redd.it/wqa8y53m0kf41.jpg
+## [3][Got redox booted on a t520](https://www.reddit.com/r/rust/comments/f12plt/got_redox_booted_on_a_t520/)
+- url: https://i.imgur.com/ZmbruXh.jpg
 ---
 
-## [4][[Advice] Is Rust suitable for business needs?](https://www.reddit.com/r/rust/comments/f0p05u/advice_is_rust_suitable_for_business_needs/)
-- url: https://www.reddit.com/r/rust/comments/f0p05u/advice_is_rust_suitable_for_business_needs/
----
-Hello Rustaceans. I will try to keep it short and clean:
-
-* Senior Javascript developer, web front-end
-* Soon we will start a new project with my team, possibly in WebAssembly
-* For a team with many **juniors** and mid-seniors developers, Javascript starts to be a **mess** over time.
-* Despite that, I think Javascript is somehow a good fit for **business logic** (no memory worries, get things done quickly), but for example: dynamic typing doesn't really help keep function definitions as solid as they should be, over time.
-* I took a short look over the Rust book, and the language looks amazingly well designed, however as a noob it's not clean to me if it suits well for (non memory related) business logic stuff.
-
-So, excluding Rust's ownership principles and other memory related features, what Rust will give us more over Javascript or Typescript (which is another available choice) in the **long term**?
-
-Thank you!
-## [5][Bringing async/await to embedded Rust](https://www.reddit.com/r/rust/comments/f0ckiv/bringing_asyncawait_to_embedded_rust/)
-- url: https://ferrous-systems.com/blog/embedded-async-await/
+## [4][Zero-cost abstractions](https://www.reddit.com/r/rust/comments/f17wff/zerocost_abstractions/)
+- url: https://carette.xyz/posts/zero_cost_abstraction/
 ---
 
-## [6][Yet another crate that work with order of bytes (endianness)](https://www.reddit.com/r/rust/comments/f0qr9x/yet_another_crate_that_work_with_order_of_bytes/)
-- url: https://www.reddit.com/r/rust/comments/f0qr9x/yet_another_crate_that_work_with_order_of_bytes/
----
-Hi, was working with embedded system that communicate via packed struct sent as little-endian bytes. I didn't found any crate that easy allow byteorder-encoding/decoding structs with multiple fields so tried to create own. This crate has **no-dependencies** and can be used in **no-std** environments.   
-
-
-This is also my first derive crate - It would be nice to hear some constructive criticism or get know it was useful for somebody.   
-
-
-github: [https://github.com/xoac/endian\_codec](https://github.com/xoac/endian_codec)  
-crates-io: [https://crates.io/crates/endian\_codec](https://crates.io/crates/endian_codec)
-## [7][Zero cost abstractions in action](https://www.reddit.com/r/rust/comments/f0cjw7/zero_cost_abstractions_in_action/)
-- url: https://idursun.com/posts/rust_zero_cost_abstractions_in_action/
+## [5][Trying out actix by creating a simple TODO service. Part 2](https://www.reddit.com/r/rust/comments/f189ev/trying_out_actix_by_creating_a_simple_todo/)
+- url: https://youtu.be/e37NbhSm56o
 ---
 
-## [8][Rustacean Station Triple Feature: Rust Release Engineering; Developing Rust's Developer Tools; Rust in Latin America [RustFest 2019 Interviews]](https://www.reddit.com/r/rust/comments/f0kpsx/rustacean_station_triple_feature_rust_release/)
-- url: https://rustacean-station.org/episode/012-pietro-pascal-santiago/
+## [6][The std::future::Future of Rusoto](https://www.reddit.com/r/rust/comments/f0udal/the_stdfuturefuture_of_rusoto/)
+- url: https://linuxwit.ch/blog/2020/02/the-future-of-rusoto/
 ---
 
-## [9][JetBrains is doing their 2020 survey](https://www.reddit.com/r/rust/comments/f0cprf/jetbrains_is_doing_their_2020_survey/)
-- url: https://surveys.jetbrains.com/s3/a18-developer-ecosystem-survey-2020
+## [7][Announcing image crate v0.23](https://www.reddit.com/r/rust/comments/f0vrj3/announcing_image_crate_v023/)
+- url: https://blog.image-rs.org/2020/02/07/release-0.23.0.html
 ---
 
-## [10][2020-02-06 Compiler Team Triage Meeting | Inside Rust Blog](https://www.reddit.com/r/rust/comments/f0fye6/20200206_compiler_team_triage_meeting_inside_rust/)
-- url: https://blog.rust-lang.org/inside-rust/2020/02/07/compiler-team-meeting.html
+## [8][Does anyone know what exactly Microsoft is using rust for?](https://www.reddit.com/r/rust/comments/f0yle7/does_anyone_know_what_exactly_microsoft_is_using/)
+- url: https://www.reddit.com/r/rust/comments/f0yle7/does_anyone_know_what_exactly_microsoft_is_using/
+---
+I know that Microsoft has been porting some of [iotedge](https://github.com/azure/iotedge) over to rust, although it is still predominantly C#. I have seen a few blog posts which have been talking about porting parts of the windows kernel over to rust, but I have seen no specifics. I also saw in the [Microsoft GitHub](https://github.com/microsoft?utf8=%E2%9C%93&amp;q=Rust&amp;type=&amp;language=rust) a few projects using rust, but I wanted to know if there was anything else.
+## [9][Raqote 0.7.11 - A pure Rust 2D software graphics library](https://www.reddit.com/r/rust/comments/f0wq8m/raqote_0711_a_pure_rust_2d_software_graphics/)
+- url: https://github.com/jrmuizel/raqote
 ---
 
-## [11][[FOSDEM] cargo deny - Fearlessly update your dependencies](https://www.reddit.com/r/rust/comments/f0br52/fosdem_cargo_deny_fearlessly_update_your/)
-- url: https://fosdem.org/2020/schedule/event/rust_cargo_deny/
+## [10][`dig` replacement in rust](https://www.reddit.com/r/rust/comments/f0x3yo/dig_replacement_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/f0x3yo/dig_replacement_in_rust/
 ---
+I'm a new rustacean.   In the tradition of \`bat\`, \`rg\`, etc I'm working on a dig replacement written in rust.   So far it does the basics: you can get pretty-printed DNS replies for most of the common RRtypes.  I'd love feedback or pull requests or other help on my hobby project:
 
-## [12][Release Notes for rs-pbrt v0.8.0 (Rust implementation of Physical Based Rendering)](https://www.reddit.com/r/rust/comments/f0gscr/release_notes_for_rspbrt_v080_rust_implementation/)
-- url: https://www.rs-pbrt.org/blog/v0-8-0-release-notes
+[https://github.com/jcrowgey/lud](https://github.com/jcrowgey/lud)
+
+&amp;#x200B;
+
+Cheers!
+## [11][Stacked Borrows talk @ POPL2020](https://www.reddit.com/r/rust/comments/f0vlqv/stacked_borrows_talk_popl2020/)
+- url: https://www.reddit.com/r/rust/comments/f0vlqv/stacked_borrows_talk_popl2020/
 ---
+The recording of my Stacked Borrows talk is available online now: https://www.youtube.com/watch?v=h9Fh4jRDGLo
 
+If you want to know more about this work, see https://plv.mpi-sws.org/rustbelt/stacked-borrows/ and https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md.
+## [12][Confusion with Rust's async architecture and how tokio fits in](https://www.reddit.com/r/rust/comments/f10tcq/confusion_with_rusts_async_architecture_and_how/)
+- url: https://www.reddit.com/r/rust/comments/f10tcq/confusion_with_rusts_async_architecture_and_how/
+---
+I'm really psyched about rust. It seems to be a perfect too to add to a performance-concious dev's toolkit. I come from a strong C# background and have basically eaten .NET's async/await funtionality for breakfast lunch and dinner for the past few years.
+
+So I'm reading about rust and how a very similar async/await functionality is available, only with some important differences. I'm hoping someone can clear up some questions:
+
+1
+
+Rust boasts not having a runtime. While looking into getting async IO going I came accross tokio. Seems cool. A little strange that a library is needed to expose async APIs on STD objects but whatevs. So I'm reading about tokio and I come across this: 
+
+&gt;A runtime for writing reliable, asynchronous, and slim applications.
+
+Wha? A runtime? But... I thought...
+
+Why is a runtime required for functionality that is baked into the language. I know I can use async/await without *any* libraries, tokio just provides the APIs for stuff like sockets.
+
+2
+
+If I write a library using tokio, I'm not going to include a #\[tokio::main\]. Soooo.... Where does the runtime get started if someone uses my library in their project, but doesn't use the tokio main?
+
+3
+
+I'm sure someone will come up with a solution to #2, and I'll have my runtime running without #\[tokio::main\] but then that begs the question: What if the person using my library has some *other* async runtime they are using. Does that mean both tokio and runtime\_x are going to be running? That seems ridiculous!

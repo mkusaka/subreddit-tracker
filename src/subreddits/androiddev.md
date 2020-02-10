@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - February 08, 2020](https://www.reddit.com/r/androiddev/comments/f0qz4w/app_feedback_thread_february_08_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/f0qz4w/app_feedback_thread_february_08_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/f1psjk/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/f1psjk/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - February 03, 2020](https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/ey5han/weekly_questions_thread_february_03_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - February 10, 2020](https://www.reddit.com/r/androiddev/comments/f1opq1/weekly_questions_thread_february_10_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/f1opq1/weekly_questions_thread_february_10_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,123 +31,210 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][A simple DIY library to generate your own custom Calendar View using RecyclerView, written in Kotlin](https://www.reddit.com/r/androiddev/comments/f165ul/a_simple_diy_library_to_generate_your_own_custom/)
-- url: https://github.com/tejpratap46/RecyclerCalendarAndroid
+## [3][Me: So what's wrong? Google: Yes.](https://www.reddit.com/r/androiddev/comments/f1hopo/me_so_whats_wrong_google_yes/)
+- url: https://i.redd.it/qoc8cf9mmzf41.png
 ---
 
-## [4][Anyone done white-boarding in Kotlin?](https://www.reddit.com/r/androiddev/comments/f133r5/anyone_done_whiteboarding_in_kotlin/)
-- url: https://www.reddit.com/r/androiddev/comments/f133r5/anyone_done_whiteboarding_in_kotlin/
+## [4][Better ways of using Room Database](https://www.reddit.com/r/androiddev/comments/f1mz6w/better_ways_of_using_room_database/)
+- url: https://www.reddit.com/r/androiddev/comments/f1mz6w/better_ways_of_using_room_database/
 ---
-I have an interview at Facebook and a few other companies coming up and I am working through the Cracking the Coding Interview book. Has anyone done white boarding at any company in Kotlin? Did you use some of the built in Kotlin utility functions (reverse, sorted, filter, map, flatmap, toCharArray()...) and if so what did you for Big O for them? Memorize them, best guess, or just implement yourself?
-
-Also thoughts on using ArrayDeque for both Stacks and Queue questions? 
-
-Do you use coroutines, or just do single threaded solutions unless asked? 
-
-And any other things to consider for Kotlin vs Java white boarding? One thing I have noticed is that white board questions seem to often have inputs/outputs as Arrays rather than Lists/MutableLists which I generally use when coding in Kotlin.
-## [5][Google Play NOT indexing new apps again.](https://www.reddit.com/r/androiddev/comments/f16cq6/google_play_not_indexing_new_apps_again/)
-- url: https://www.reddit.com/r/androiddev/comments/f16cq6/google_play_not_indexing_new_apps_again/
----
-It seems the problem from November is back. Apps published from \~Jan 27 does not appear in search results. You can find them only by removing spaces in the title or changing them to underscore.
-## [6][KitKat and TLSv1.2](https://www.reddit.com/r/androiddev/comments/f17h6v/kitkat_and_tlsv12/)
-- url: https://publicobject.com/2020/02/09/kitkat-and-tlsv1-2/
+[https://jakubpchmiel.com/better-ways-of-using-room/](https://jakubpchmiel.com/better-ways-of-using-room/)
+## [5][New ViewBinding sample in the Architecture Components Samples github repo](https://www.reddit.com/r/androiddev/comments/f1i5ps/new_viewbinding_sample_in_the_architecture/)
+- url: https://github.com/android/architecture-components-samples/tree/9f021451fd64362c7c227802bacf8cfe476af0be/ViewBindingSample
 ---
 
-## [7][Google and Dark Mode](https://www.reddit.com/r/androiddev/comments/f17r1w/google_and_dark_mode/)
-- url: https://www.reddit.com/r/androiddev/comments/f17r1w/google_and_dark_mode/
+## [6][How can I fix this?](https://www.reddit.com/r/androiddev/comments/f1o5bq/how_can_i_fix_this/)
+- url: https://i.redd.it/dz4hlmx9j2g41.jpg
 ---
-Has anybody noticed that most apps by Google e.g Keep, Play Store, Calendar, etc when switched to dark mode use colors which are way too light compared to those suggested by [the Material Design page on Dark Mode](https://material.io/design/color/dark-theme.html#usage)
 
-Does anyone know why this is the case?
-## [8][How to host app-ads.txt on Github Pages?](https://www.reddit.com/r/androiddev/comments/f15zty/how_to_host_appadstxt_on_github_pages/)
-- url: https://www.reddit.com/r/androiddev/comments/f15zty/how_to_host_appadstxt_on_github_pages/
+## [7][Need help with app removed from Play Store](https://www.reddit.com/r/androiddev/comments/f1pgip/need_help_with_app_removed_from_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/f1pgip/need_help_with_app_removed_from_play_store/
 ---
-I uploaded app-ads.txt to my Github Page: [https://gmikhail.github.io/app-ads.txt](https://gmikhail.github.io/app-ads.txt)
+My app was removed from Play Store , for not filling out Target Audience and Content form ,
 
-I set my website [https://gmikhail.github.io/](https://gmikhail.github.io/) in Google Dev Console (Main page with apps list -&gt; Settings -&gt; Developer account -&gt; Account details -&gt; Website).
+Now my app is an informative app , so it has not particular age group that it specifically targets , So generally it is an app for Adults and Children , So while filling Target Audience form , I am selecting all age groups , but I am serving ads in my app via Facebook Ads network , and I have found that Google requires to use only Google Certified Ad network for serving ads to children , now I cant see Facebook Ads network as Google Certified
 
-I also tried to set the website on the app page (App control panel -&gt; App page -&gt; App description -&gt; Website).
+I have removed Facebook Ads (Right Now , I don't show any ads at all) and made fixes to comply with Google Play Policies , but I cant release my app to rollout or even resubmit my app since first I have to fill Target Audience and Content Form.
 
-But so far (three days have already passed) on [https://apps.admob.com/v2/apps/appadstxt](https://apps.admob.com/v2/apps/appadstxt) instead of urls are dashes is displayed.
+So , my question is what should I do while filling Target Audience and Content form , because If I select all age groups (Adults and Children ) , and If I submit my app then I will be violating ads via Facebook Ads Network 
 
-What am I doing wrong? Is it even possible to host app-ads.txt on Github Pages?
-## [9][Firestore alternatives? Is there an 'industry standard'?](https://www.reddit.com/r/androiddev/comments/f16u8x/firestore_alternatives_is_there_an_industry/)
-- url: https://www.reddit.com/r/androiddev/comments/f16u8x/firestore_alternatives_is_there_an_industry/
+Please help !
+## [8][Is there any image morphing transition library available that i can use in android studio?](https://www.reddit.com/r/androiddev/comments/f1pfdt/is_there_any_image_morphing_transition_library/)
+- url: https://www.reddit.com/r/androiddev/comments/f1pfdt/is_there_any_image_morphing_transition_library/
 ---
-Not familiar with databases at all, other than firebase. But I'm developing an app that would require store of data and login authentication.
-
-Let's the app records workouts and sorts them into subcategories. 
-
-Using firestore, I would do something like have a document of all the login auth encrypted, each login and has a subdocument of each workout year, which has subdocument of each workout month, which holds an instance of the workout class. The workout class has various attributes, like total time, sets time of each exercise etc.
-
-I've made a similar app in this way for practicing development, which is why I've described it that way. While this work implement fine, I feel like this isn't the 'proper' way. Login auth seems sketchy, and firestore implementation does give alot of headaches. 
-
-What would be the best way/service to use to go about this?
-## [10][Learning iOS as an Android developer](https://www.reddit.com/r/androiddev/comments/f18lc9/learning_ios_as_an_android_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/f18lc9/learning_ios_as_an_android_developer/
+So when i switch from one image to another, the picture should morph itself to the next image by keeping the constant features of the image unchanged and rest of the image just warping to the new one. The two images are pretty much similar to one another (i.e they have mostly have same background or 80% remains same). If it's not available then what's the best way to achieve this?
+## [9][Android sensors don't gather data when phone is idle](https://www.reddit.com/r/androiddev/comments/f1p0pe/android_sensors_dont_gather_data_when_phone_is/)
+- url: https://www.reddit.com/r/androiddev/comments/f1p0pe/android_sensors_dont_gather_data_when_phone_is/
 ---
-I have been developing for Android for the past 3 years and would like to dive into the iOS market.   
+I’m trying to develop an app for Android in which I pick up data from several sensors (if available on the device) and write it down to a file which will later be analyzed for certain uses.
 
-
-I know that there's a lot of Swift and iOS tutorials on the internet, but what I'm looking for are those with comparisons to Android development. For example a tutorial saying the equivalent for Android stuff  : "A view in android is \_\_\_ in iOS"  
-
-
-Anyone know of a good one?
-## [11][How to capture screenshots in AndroidStudio without, capturing bottom soft buttons?](https://www.reddit.com/r/androiddev/comments/f177ob/how_to_capture_screenshots_in_androidstudio/)
-- url: https://www.reddit.com/r/androiddev/comments/f177ob/how_to_capture_screenshots_in_androidstudio/
----
-All the while, I was able to capture screenshots in AndroidStudio + Emulator, without capturing the bottom soft buttons (Back, Home, Recent)
+I’m facing several problems, a minor one which I can kind of ignore and a major one that I haven’t been able to solve and makes the app not work properly.
 
 &amp;#x200B;
 
-I was using the bottom left camera icon button to capture screenshot - [https://i.imgur.com/BrpQB03.png](https://i.imgur.com/BrpQB03.png)
+**- Minor problem**
 
 &amp;#x200B;
 
-However, I'm not sure what I have done, which causes the bottom soft buttons (Back, Home, Recent) always be capture. For instance, this is one of the capture screenshot. I do not want the bottom soft buttons bar - [https://i.imgur.com/fRGyTpI.png](https://i.imgur.com/fRGyTpI.png)
+I’m gathering data from: Accelerometer, Linear Accelerometer, Gyroscope and Magnetometer and also from the GPS but that works quite differently and can only be sampled at much lower frequencies, so I’ll ignore it for now.
+
+I gather the data by implementing a listener for each sensor:
 
 &amp;#x200B;
 
-This is my AVD manager - [https://i.imgur.com/emqPv5n.png](https://i.imgur.com/emqPv5n.png)
+    public class AccelerometerWatcher implements SensorEventListener
+    {
+        private SensorManager sm;
+        private Sensor accelerometer;
+        AccelerometerWatcher(Context context) {
+            sm = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
+            assert sm != null;
+            if (sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
+                accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+            }
+        }
+    }
 
 &amp;#x200B;
 
-Any idea how I can avoid from capturing bottom soft buttons, when I was capturing screenshots using AndroidStudio + Emulator?
+And I’m setting the frequency to \~50Hz by using:
 
 &amp;#x200B;
 
-Thanks.
-## [12][Setting Window background to @null in XML doesn't work after night mode is toggled](https://www.reddit.com/r/androiddev/comments/f16usx/setting_window_background_to_null_in_xml_doesnt/)
-- url: https://www.reddit.com/r/androiddev/comments/f16usx/setting_window_background_to_null_in_xml_doesnt/
+    sm.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
+
+&amp;#x200B;
+
+When gathering data, I understand the frequency can’t be 100% stable, but the weird thing is it stays more or less stable on every sensor (at around 50Hz) except on the Accelerometer, where most of the time it samples at 100Hz and sometimes drops down to 50Hz.
+
+&amp;#x200B;
+
+Is there something I might be doing wrong or any way to control this? So far it’s happened in every device I tried, although they don’t all behave in exactly the same way.
+
+&amp;#x200B;
+
+**- Major problem**
+
+&amp;#x200B;
+
+I’m writing down the info to a file by first writing everything I pick up from the sensors to a string and then every X seconds, writing what’s on the string to a file and clearing it so the sensor listeners can keep on writing on it but it doesn’t become infinitely long.
+
+&amp;#x200B;
+
+I write on the string like this:
+
+&amp;#x200B;
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() != Sensor.TYPE_ACCELEROMETER)
+        return;
+        if(initTime == -1)
+            initTime = event.timestamp;
+        MyConfig.SENSOR_ACCEL_READINGS += ((event.timestamp - initTime) / 1000000L) +     MyConfig.DELIMITER + event.values[0] + MyConfig.DELIMITER + event.values[1] + MyConfig.DELIMITER + event.values[2] + "\n";
+    }
+
+&amp;#x200B;
+
+And then save it to a file using this:
+
+&amp;#x200B;
+
+    public class Utils {
+    private static Timer timer;
+    private static TimerTask timerTask;
+    public static void startRecording() {
+        timer = new Timer();
+        timerTask = new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                // THIS CODE RUNS EVERY x SECONDS
+                writeDataToFile();
+            }
+        };
+        timer.scheduleAtFixedRate(timerTask, 0, MyConfig.SAVE_TIMER_PERIOD);
+    }
+    public static void stopRecording()
+    {
+        if(timer != null)
+            timer.cancel();
+        if(timerTask != null)
+            timerTask.cancel();
+        writeDataToFile();
+    }
+    private static void writeDataToFile()
+    {
+        String temp_accel =     String.copyValueOf(MyConfig.SENSOR_ACCEL_READINGS.toCharArray());
+        WriteData.write(MyConfig.RECORDING_FOLDER, MyConfig.FILENAME_ACCEL, temp_accel);
+        MyConfig.SENSOR_ACCEL_READINGS =     MyConfig.SENSOR_ACCEL_READINGS.replaceFirst(temp_accel, "");
+    }
+
+&amp;#x200B;
+
+In the listener, every time I stop listening, I set “initTime” to -1 so the samples always start at 0 and go up to the duration of the listening period in miliseconds. (Ignore the DELIMITER it’s just a matter of formatting).
+
+&amp;#x200B;
+
+**My main app-breaking problem, is the following:**
+
+&amp;#x200B;
+
+In most phones (a few lucky ones work flawlessly) 1 or 2 things fail.
+
+&amp;#x200B;
+
+In some, after being idle for a while (locked and in your pocket for example) the sensors stop recording data so the app just writes blank values until I wake the phone up again.
+
+&amp;#x200B;
+
+In others, it’s even worse, not only do the sensors stop recording data, but the timer / writing to file, seems to stop working too, and when the phone wakes up again, it tries to write what it should’ve written while it wasn’t working and messes up all the timestamps, writing the same samples at different points “in the past” until it catches up to the current time. (If you visualize it as a graph, it basically looks as if the data gathering travelled back in time).
+
+&amp;#x200B;
+
+**Is there any way in which I can make sure that the app keeps on working no matter what, whether the phone is locked, dozing, the app is minimized, on the background, foreground, etc.?**
+
+&amp;#x200B;
+
+I tried a method I googled that consists of setting and alarm to "wake up the process" every X seconds (no matter what time I set to it, it only worked max once per minute).
+
+I saw how for a few miliseconds every time the alarm went off, it captured samples again but then went to sleep right away, it didn't keep the phone "awake" for a longer period of time.
+
+It solved nothing and even for the brief period it forced the sensors to gather data, it only helped wake up the sensors, the problem with the timer / writing to file still persisted.
+
+&amp;#x200B;
+
+Hope someone can shed some light on how to keep the phone gathering data no matter what, I've been trying everything I could think of and I'm not getting anywhere. Sorry for the brick of text, but I didn't really know how to explain it in a shorter way.
+
+&amp;#x200B;
+
+P.S: I saw that having the Battery Saver ON made it even worse, even on the phones where it usually worked properly, it started messing things up. So another question would be... How can I stop it from interfering?
+## [10][How do I hook the physical buttons of a phone with the camera?](https://www.reddit.com/r/androiddev/comments/f1n1ne/how_do_i_hook_the_physical_buttons_of_a_phone/)
+- url: https://www.reddit.com/r/androiddev/comments/f1n1ne/how_do_i_hook_the_physical_buttons_of_a_phone/
 ---
-I'm using DayNight theme.
+I'm learning android app programming and I want to learn how to hook the physical buttons, for e.g., the volume up/down buttons, with the camera, and, whenever I press a combination of the physical button, the camera should start.
 
-I set the window background like this
-```
-&lt;item name="android:windowBackground"&gt;@color/window_bg&lt;/item&gt;
-```
+Can anyone please tell me how do I go about doing that?
+## [11][What's the difference between button.findViewById() &amp; button= findViewById()](https://www.reddit.com/r/androiddev/comments/f1ol3i/whats_the_difference_between_buttonfindviewbyid/)
+- url: https://www.reddit.com/r/androiddev/comments/f1ol3i/whats_the_difference_between_buttonfindviewbyid/
+---
+I was working on a small app for my own and i faced crashes i didn't know from what later on i realized it was because i was using   button.findViewById() instead off  button = findViewById() so what are the deference between those two, i searched for it but couldn't find answers.
+## [12][How many downloads / users did you get when you launched your app (stories please).](https://www.reddit.com/r/androiddev/comments/f1d0bu/how_many_downloads_users_did_you_get_when_you/)
+- url: https://www.reddit.com/r/androiddev/comments/f1d0bu/how_many_downloads_users_did_you_get_when_you/
+---
+I'm trying to decide how we should prioritize shipping our app in the Android app store.  
 
-and set the colors like this
-in colors.xml (default)
-```
-&lt;color name="window_bg"&gt;@null&lt;/color&gt;
-```
-in colors.xml (night)
-```
-&lt;color name="window_bg"&gt;@andoid:color/black&lt;/color&gt;
-```
+I think part of the challenge is that some apps explode, but other apps sort of don't really get much distribution.
 
-Also, I have this thing in my Main Activity's onCreate()
-```
-AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-```
+I'd like to figure out WHY some apps explode and others don't.
 
-And the activity declaration in the manifest is just this
-```
-&lt;activity
-    android:name=".MainActivity"
-    android:configChanges="orientation|keyboardHidden"
-    android:screenOrientation="portrait"&gt;
-```
+I have some theories:
 
-So, when I toggle the night mode (from quick setting tiles) from dark to light, only the window background color doesn't change. I expected the color to be white but it was black.
+- some apps leverage trends (either deliberately or accidentally) and then they show up #1 for some key search terms.
+
+- some apps already have a large user base, just not an app, so when they email their users they get a HUGE explosion of initial downloads.
+
+- some people just PPC their app to the top and then they end up showing up in the trending section.  I think this would work but probably costs a fair amount of $$... just not sure how much.
+
+Would love to hear some real world stories of how you got your app to take off.

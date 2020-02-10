@@ -68,71 +68,153 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Got redox booted on a t520](https://www.reddit.com/r/rust/comments/f12plt/got_redox_booted_on_a_t520/)
-- url: https://i.imgur.com/ZmbruXh.jpg
+## [3][Lib.rs - crates.io on steroids](https://www.reddit.com/r/rust/comments/f1mr4h/librs_cratesio_on_steroids/)
+- url: https://lib.rs/
 ---
 
-## [4][Zero-cost abstractions](https://www.reddit.com/r/rust/comments/f17wff/zerocost_abstractions/)
-- url: https://carette.xyz/posts/zero_cost_abstraction/
+## [4][Announcing Seed v0.6](https://www.reddit.com/r/rust/comments/f1nwkr/announcing_seed_v06/)
+- url: https://www.reddit.com/r/rust/comments/f1nwkr/announcing_seed_v06/
+---
+Hi! I'm happy to announce Seed v0.6 release.
+
+ Seed is a Rust framework for creating fast and reliable web apps.
+
+Seed uses an unconventional approach to describe how to display DOM elements. It uses neither completely natural (i.e. macro-free) Rust code, nor an HTML-like abstraction (e.g. JSX or templates). Our intent is to make the code close to natural Rust, while streamlining the syntax in a way suited for creating a visual layout with minimal repetition. The macros used are thin wrappers for constructors, and don't conceal much.
+
+This release focuses mostly on internal refactoring. See [https://seed-rs.org/guide/changelog](https://seed-rs.org/guide/changelog)
+
+We have plenty of examples as well as several starter kits and a welcoming discord chat and forum!
+
+Please visit [https://seed-rs.org/](https://seed-rs.org/) to learn more about building web projects in Rust &amp; WASM!
+
+Cheers,  
+Seed core members
+## [5][We are now more than 90k Rustaceans on this subreddit](https://www.reddit.com/r/rust/comments/f1nglg/we_are_now_more_than_90k_rustaceans_on_this/)
+- url: https://subredditstats.com/r/rust
 ---
 
-## [5][Trying out actix by creating a simple TODO service. Part 2](https://www.reddit.com/r/rust/comments/f189ev/trying_out_actix_by_creating_a_simple_todo/)
-- url: https://youtu.be/e37NbhSm56o
+## [6][Pointer-utils: a collection of crates, providing simple custom DSTs, pointer unions, borrowed reference counts, and more!](https://www.reddit.com/r/rust/comments/f1iixm/pointerutils_a_collection_of_crates_providing/)
+- url: https://github.com/CAD97/pointer-utils/blob/master/blog/Announcement.md
 ---
 
-## [6][The std::future::Future of Rusoto](https://www.reddit.com/r/rust/comments/f0udal/the_stdfuturefuture_of_rusoto/)
-- url: https://linuxwit.ch/blog/2020/02/the-future-of-rusoto/
+## [7][win32job: a crate for using Windows' Job Objects](https://www.reddit.com/r/rust/comments/f1ob3a/win32job_a_crate_for_using_windows_job_objects/)
+- url: https://www.reddit.com/r/rust/comments/f1ob3a/win32job_a_crate_for_using_windows_job_objects/
 ---
+I created the `win32job` [crate](https://github.com/ohadravid/win32job-rs), a small library which exposes a safe API for Windows' Job Objects.
 
-## [7][Announcing image crate v0.23](https://www.reddit.com/r/rust/comments/f0vrj3/announcing_image_crate_v023/)
-- url: https://blog.image-rs.org/2020/02/07/release-0.23.0.html
----
+The TL;DR is that this allows a process to force all sort of limits on itself and processes it creates, like limiting the amount of memory used, or forcing all "child" processes to terminate when the "parent" terminates (this relationship is different on Windows compared to Linux/macOS).
 
-## [8][Does anyone know what exactly Microsoft is using rust for?](https://www.reddit.com/r/rust/comments/f0yle7/does_anyone_know_what_exactly_microsoft_is_using/)
-- url: https://www.reddit.com/r/rust/comments/f0yle7/does_anyone_know_what_exactly_microsoft_is_using/
----
-I know that Microsoft has been porting some of [iotedge](https://github.com/azure/iotedge) over to rust, although it is still predominantly C#. I have seen a few blog posts which have been talking about porting parts of the windows kernel over to rust, but I have seen no specifics. I also saw in the [Microsoft GitHub](https://github.com/microsoft?utf8=%E2%9C%93&amp;q=Rust&amp;type=&amp;language=rust) a few projects using rust, but I wanted to know if there was anything else.
-## [9][Raqote 0.7.11 - A pure Rust 2D software graphics library](https://www.reddit.com/r/rust/comments/f0wq8m/raqote_0711_a_pure_rust_2d_software_graphics/)
-- url: https://github.com/jrmuizel/raqote
----
+This example show how to force any created sub processes to exit when the main process exits:
 
-## [10][`dig` replacement in rust](https://www.reddit.com/r/rust/comments/f0x3yo/dig_replacement_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/f0x3yo/dig_replacement_in_rust/
----
-I'm a new rustacean.   In the tradition of \`bat\`, \`rg\`, etc I'm working on a dig replacement written in rust.   So far it does the basics: you can get pretty-printed DNS replies for most of the common RRtypes.  I'd love feedback or pull requests or other help on my hobby project:
+    use win32job::Job;
+    use std::process::Command;
+    
+    fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt;  {
+        let job = Job::create()?;
+        
+        let mut info = job.query_extended_limit_info()?;
+    
+        info.limit_kill_on_job_close();
+    
+        job.set_extended_limit_info(&amp;mut info)?;
+        
+        job.assign_current_process()?;
+    
+        Command::new("cmd.exe")
+                .arg("/C")
+                .arg("ping -n 9999 127.0.0.1")
+                .spawn()?;
+    
+        // The cmd will be killed once we exit, or `job` is dropped.
+        
+        Ok(())
+    }
 
-[https://github.com/jcrowgey/lud](https://github.com/jcrowgey/lud)
+The API tries to stay close to the original Windows API (hence the long-ish function names).
+
+There a number of existing places using this functionality, all with their own custom impls, so I think this is something worthy of a dedicated crate:
+
+[rustjob](https://github.com/alexcrichton/rustjob/blob/master/src/main.rs#L139) (Wrapper script for buildbots)
+
+[rust-gha](https://github.com/rust-lang/rust-gha/blob/master/src/bootstrap/job.rs) (GitHub Actions tests for rust-lang/rust)
+
+[rustup](https://github.com/rust-lang/rustup/blob/master/src/cli/job.rs) and [cargo](https://github.com/rust-lang/cargo/blob/dc83ead224d8622f748f507574e1448a28d8dcc7/src/cargo/util/job.rs) (You know what this is!)
 
 &amp;#x200B;
 
-Cheers!
-## [11][Stacked Borrows talk @ POPL2020](https://www.reddit.com/r/rust/comments/f0vlqv/stacked_borrows_talk_popl2020/)
-- url: https://www.reddit.com/r/rust/comments/f0vlqv/stacked_borrows_talk_popl2020/
+&amp;#x200B;
+
+As a little side note, I wanted a better way to test the `README`, and while `skeptic` and `little-skeptic` exists they require a bunch of deps, so I found a [little trick](https://github.com/ohadravid/win32job-rs/blob/aa627a24150681cb712315c7f8663e34fcd3f7f7/src/lib.rs#L87) somewhere in the GitHub comments for various Rust issues and ended up with this:
+
+    #[cfg(debug_assertions)]
+    mod test_readme {
+        macro_rules! calculated_doc {
+            ($doc:expr, $id:ident) =&gt; {
+                #[doc = $doc]
+                enum $id {}
+            }
+        }
+    
+        calculated_doc!(include_str!("../README.md"), _DoctestReadme);
+    }
+
+Which will run the `README` as part of the doctests!
+## [8][Rust Programming for IOT (Internet of Things)](https://www.reddit.com/r/rust/comments/f1mnf0/rust_programming_for_iot_internet_of_things/)
+- url: https://www.youtube.com/watch?v=ro-G5gu5fMk&amp;feature=share
 ---
-The recording of my Stacked Borrows talk is available online now: https://www.youtube.com/watch?v=h9Fh4jRDGLo
 
-If you want to know more about this work, see https://plv.mpi-sws.org/rustbelt/stacked-borrows/ and https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md.
-## [12][Confusion with Rust's async architecture and how tokio fits in](https://www.reddit.com/r/rust/comments/f10tcq/confusion_with_rusts_async_architecture_and_how/)
-- url: https://www.reddit.com/r/rust/comments/f10tcq/confusion_with_rusts_async_architecture_and_how/
+## [9][A Rustacean change of heart](https://www.reddit.com/r/rust/comments/f1c3v6/a_rustacean_change_of_heart/)
+- url: https://www.reddit.com/r/rust/comments/f1c3v6/a_rustacean_change_of_heart/
 ---
-I'm really psyched about rust. It seems to be a perfect too to add to a performance-concious dev's toolkit. I come from a strong C# background and have basically eaten .NET's async/await funtionality for breakfast lunch and dinner for the past few years.
+ 
 
-So I'm reading about rust and how a very similar async/await functionality is available, only with some important differences. I'm hoping someone can clear up some questions:
+Hi all,
 
-1
+I decided about 2 weeks ago to put my efforts into being a Rustacean after spending six months learning Haskell. I came from 4 years of professional Scala development. Things were going great with Haskell however the tooling(IDE in particular) is generally not up to task with what I would like to ultimately achieve .
 
-Rust boasts not having a runtime. While looking into getting async IO going I came accross tokio. Seems cool. A little strange that a library is needed to expose async APIs on STD objects but whatevs. So I'm reading about tokio and I come across this: 
+This year I will be building a few information system MVP products using Rust , in my spare time after work, and  I see Rust as a language that can help me towards that end. Of course many other languages are also up to the task, but I purposefully wanted a non mainstream language so that I can punt it as a recruitment tool to attract people who are more inclined towards learning. It just so happened that Rust comes with all these other goodies that satisfy my FP inclinations and the memory safety features, which I am eager to start sparring with
 
-&gt;A runtime for writing reliable, asynchronous, and slim applications.
+So what advice would anyone give towards learning Rust, what frameworks can you guys recommend for basic CRUD operations. And finally what can I do or help out with in the community.
+## [10][Partially derive default?](https://www.reddit.com/r/rust/comments/f1nydq/partially_derive_default/)
+- url: https://www.reddit.com/r/rust/comments/f1nydq/partially_derive_default/
+---
+Suppose I have a struct, most of its fields except one can derive default:
 
-Wha? A runtime? But... I thought...
+    struct MyStruct {
+        body: Body, // Body does not have default
+        a: u32,
+        b: Option&lt;Foo&gt;,
+        c: Vec&lt;Bar&gt;,
+        // ...
+    }
 
-Why is a runtime required for functionality that is baked into the language. I know I can use async/await without *any* libraries, tokio just provides the APIs for stuff like sockets.
+Can I easily derive partial default, so I can easily write something like the following:
 
-2
+    impl MyStruct {
+        fn new(body: Body) -&gt; Self {
+            // Error, because Self does not implement Default
+            Self { body, ..Self::default() }
+        }
+    }
+## [11][Using use keyword inside a function](https://www.reddit.com/r/rust/comments/f1lhp1/using_use_keyword_inside_a_function/)
+- url: https://www.reddit.com/r/rust/comments/f1lhp1/using_use_keyword_inside_a_function/
+---
+Hey there, I'm very new to rust and recently I've been diving into the deep end trying to learn how to use audio API's, my current choice is CPAL and on the [documentation here](https://docs.rs/cpal/0.11.0/cpal/) a number of times the code shows a totally unexplained use of the "use" keyword which I initially thought was just for importing libraries and modules. What is the purpose of writing these "use"s right before these other lines? Do I need to be writing them in the order they appear? Or can I just combine them all at the top of my code?
+## [12][Pushrod 0.2.27: SDL2-based GUI for Rust - Call for Help!](https://www.reddit.com/r/rust/comments/f1fcya/pushrod_0227_sdl2based_gui_for_rust_call_for_help/)
+- url: https://www.reddit.com/r/rust/comments/f1fcya/pushrod_0227_sdl2based_gui_for_rust_call_for_help/
+---
+Hi all!
 
-If I write a library using tokio, I'm not going to include a #\[tokio::main\]. Soooo.... Where does the runtime get started if someone uses my library in their project, but doesn't use the tokio main?
+I've been working on [rust-pushrod](https://www.github.com/KenSuenobu/rust-pushrod/) for a little over a year now, and I'm pretty happy with the progress; but there's only so much progress one person can do on the project.
 
-3
+So far, I've had a lot of interest in the project, but would like to see if anyone else is interested in helping out with the project and some of the issues that remain before a 0.5.x release can be achieved.
 
-I'm sure someone will come up with a solution to #2, and I'll have my runtime running without #\[tokio::main\] but then that begs the question: What if the person using my library has some *other* async runtime they are using. Does that mean both tokio and runtime\_x are going to be running? That seems ridiculous!
+I have big plans for the 0.5.x release - one of which is to start designing a GUI so that applications can be written easier with a WYSIWYG style of drag-drop designer application.
+
+The latest release of Pushrod includes screenshots for each `Widget` that is currently in the system, a `Tile` widget that can be used as a tile in a group box, and a `TabBarWidget` that displays simple tabs that can be used to navigate pages in an application.
+
+If anyone is interested in helping out - either [monitarily](https://patreon.com/KenSuenobu) or through the [issues navigator](https://www.github.com/KenSuenobu/rust-pushrod/issues/), I would be forever grateful.  I am hoping for adoption of this library, and I have a passion for writing good GUI APIs.
+
+Please feel free to leave feedback - good or bad.  You can [also visit my blog here](https://kensuenobu.github.io/)
+
+Thank you, fellow Rustaceans!

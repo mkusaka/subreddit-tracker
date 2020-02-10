@@ -1,5 +1,69 @@
 # aws
-## [1][RDS and KMS Access - A follow up](https://www.reddit.com/r/aws/comments/f17a25/rds_and_kms_access_a_follow_up/)
+## [1][Launch virtual machine from aws console mobile app?](https://www.reddit.com/r/aws/comments/f1o6de/launch_virtual_machine_from_aws_console_mobile_app/)
+- url: https://www.reddit.com/r/aws/comments/f1o6de/launch_virtual_machine_from_aws_console_mobile_app/
+---
+I installed the console app on my phone and thought I would be able to start an ec-2 instance. But afaict it is not possible? If I sign in with the same iam in a browser it seems possible.
+
+Is the app only for monitoring? Looks like I can create security groups in the app.. but when I press instances there is no option for creating a new?
+
+Thanks
+## [2][Triggering AWS Lambda on a csv file upload](https://www.reddit.com/r/aws/comments/f1k3v3/triggering_aws_lambda_on_a_csv_file_upload/)
+- url: https://www.reddit.com/r/aws/comments/f1k3v3/triggering_aws_lambda_on_a_csv_file_upload/
+---
+Hello,
+
+I have some automation code that I want to move to aws lambda, the code uses a csv file to read the data and then execute routines based on them.
+
+I am a bit new to whole AWS ecosystem, I was wondering if there exists some prebuilt stuff that can be useful for me?
+
+What I need is a place where I can upload the csv file (drag and drop ideally, even non tech savvy should be able to do) something like google drive? Maybe
+
+And then my lambda should be executed on upload. It should also be able to read the contents of the file.
+
+The running should be done evertime I update the csv file or upload new one 🤔
+
+Is there any simple way to achieve such functionality?
+
+Thanks!
+## [3][CI/CD tool for ECS on AWS](https://www.reddit.com/r/aws/comments/f1ozgx/cicd_tool_for_ecs_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/f1ozgx/cicd_tool_for_ecs_on_aws/
+---
+Hi, I'm looking for tool that could build our ECS container images and deploy them to ECS. I'd like to be able to move the same image from Dev to Prod environments. What are the tools that could help me(excluding jenkins)
+## [4][MediaConvert and Teletext](https://www.reddit.com/r/aws/comments/f1p0kq/mediaconvert_and_teletext/)
+- url: https://www.reddit.com/r/aws/comments/f1p0kq/mediaconvert_and_teletext/
+---
+Wondering if anyone has had any experience with using an STL file as an input then inserting this as a teletext captions output?
+## [5][SSH agent forwarding vs SSM for shell access](https://www.reddit.com/r/aws/comments/f1efjf/ssh_agent_forwarding_vs_ssm_for_shell_access/)
+- url: https://www.reddit.com/r/aws/comments/f1efjf/ssh_agent_forwarding_vs_ssm_for_shell_access/
+---
+What is the more secure method for accessing an EC2 instance in a private subnet?
+## [6][Dissociate AWS account from Amazon (consumer) ?](https://www.reddit.com/r/aws/comments/f1fbuw/dissociate_aws_account_from_amazon_consumer/)
+- url: https://www.reddit.com/r/aws/comments/f1fbuw/dissociate_aws_account_from_amazon_consumer/
+---
+Hello,
+
+A few years ago, I've sign up on AWS using the same email / account that I use for Amazon.
+
+I'm planning to use AWS more and wanted to dissociate both account.
+
+- if I close my AWS account, will it close my Amazon account as well?  
+
+In fact, I searched the forum and it wasn't possible in the past... Did it changes?  Does my only solution is to open a new AWS account with a different email?
+
+Thanks
+## [7][End-of-life announcement for CoreOS Container Linux](https://www.reddit.com/r/aws/comments/f1aq1y/endoflife_announcement_for_coreos_container_linux/)
+- url: https://coreos.com/os/eol/
+---
+
+## [8][Send mongdb logs to cloudwatch's loggroup?](https://www.reddit.com/r/aws/comments/f1n8u1/send_mongdb_logs_to_cloudwatchs_loggroup/)
+- url: https://www.reddit.com/r/aws/comments/f1n8u1/send_mongdb_logs_to_cloudwatchs_loggroup/
+---
+I have some mongodb instances in a primary/secondary model, how to push mongdb logs (like in /var/logs/mongodb/mongd.log) to a loggroup of cloudwatch?
+## [9][AWS Tutoring/Advising](https://www.reddit.com/r/aws/comments/f1kbsw/aws_tutoringadvising/)
+- url: https://www.reddit.com/r/aws/comments/f1kbsw/aws_tutoringadvising/
+---
+Hey, I’m a software engineer at a large Silicon Valley company, but I’m trying to learn some AWS concepts on the side for my own personal projects. I’m working on a server less REST API with I’m mostly just struggling with configuration and deployment with Cloudformation. I mostly just want an hour or two to talk to someone about best practices and to actually learn some of these concepts, and how to better manage resources, stacks, and my template. Would be paid time.
+## [10][RDS and KMS Access - A follow up](https://www.reddit.com/r/aws/comments/f17a25/rds_and_kms_access_a_follow_up/)
 - url: https://www.reddit.com/r/aws/comments/f17a25/rds_and_kms_access_a_follow_up/
 ---
 I was recently struggling to understand why RDS had access to a CMK I created in KMS and came across [an old post on this sub](https://www.reddit.com/r/aws/comments/b8nrar/rds_and_kms_im_doing_something_wrong/) of someone asking the same question. 
@@ -15,57 +79,3 @@ is not true. From the [documentation](https://docs.aws.amazon.com/kms/latest/dev
 For my Aurora Serverless RDS, it was gaining access to the key from a grant. If you run `aws kms list-grants --key-id yourkey` you should see the grant which contains an encryption context with your DB instance ID. You should also see a CreateGrant entry in CloudTrail. The grant is created by the entity who creates the database.
 
 I'm making this post in the hopes it saves someone from hours of head scratching in the future!
-## [2][Should I encrypt, hash or encode?](https://www.reddit.com/r/aws/comments/f0tewr/should_i_encrypt_hash_or_encode/)
-- url: https://blog.deleu.dev/should-i-encrypt-hash-or-encode/
----
-
-## [3][Issues with AWS Educate and using Elastic Beanstalk](https://www.reddit.com/r/aws/comments/f13vun/issues_with_aws_educate_and_using_elastic/)
-- url: https://www.reddit.com/r/aws/comments/f13vun/issues_with_aws_educate_and_using_elastic/
----
-I've been following this [guide](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/nodejs-dynamodb-tutorial.html) for creating a node.js web application. I got as far as creating an EC2 instance running Amazon Linux, and I successfully connected to it using an SSH client called PuTTY. I did that just to run the commands in the tutorial. When I actually got the part about launching an Elastic Beanstalk environment, I followed this [link to Elastic Beanstalk](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&amp;environmentType=LoadBalanced) provided by the guide. When I clicked "Get started" to launch a sample application, I flickered to a loading screen, and then back to the Elastic Beanstalk home. It refuses to allow me to launch the sample application. I did a search on this subreddit to see if anyone else had this issue, and apparently AWS Educate users aren't allowed to use this feature. I was wondering how I could get permissions to launch this, or if I should use another approach entirely. For context, I am trying to create a website which includes some features like messaging and a whiteboard to draw on. I am new to aws, servers, and environments, and the like, so I'm sorry if I left out any important details. Thank you for reading.
-## [4][What retailers block access from AWS IP blocks?](https://www.reddit.com/r/aws/comments/f0xxxb/what_retailers_block_access_from_aws_ip_blocks/)
-- url: https://www.reddit.com/r/aws/comments/f0xxxb/what_retailers_block_access_from_aws_ip_blocks/
----
-I just recently moved a shopping application for a customer from Rackspace to AWS and we noticed that all connections to [lowes.com](https://lowes.com) from AWS are denied/blocked. I find this interesting/frustrating. Why would [lowes.com](https://lowes.com) as a whole block all access from AWS? It seems the blacklist connections from any/all AWS regions. Do other retailers do this as well?
-## [5][Part 8 - Deploying a Vue.js and Serverless Imgur Clone with Travis-CI - Now Live!](https://www.reddit.com/r/aws/comments/f17pnb/part_8_deploying_a_vuejs_and_serverless_imgur/)
-- url: https://tutorialedge.net/projects/building-imgur-clone-vuejs-nodejs/part-8-deploying-our-app/
----
-
-## [6][Downside only enabling AWS "Business" support as-needed?](https://www.reddit.com/r/aws/comments/f0wfzf/downside_only_enabling_aws_business_support/)
-- url: https://www.reddit.com/r/aws/comments/f0wfzf/downside_only_enabling_aws_business_support/
----
-We currently pay monthly for AWS "Business" support. We use it \~6x/year. In December when we prepaid a bunch of costs, the % hit was significant.
-
-I saw an AWS savings tip that recommended keeping support off, because you could always enable it as-needed.
-
-Are there downsides to this approach I'm not considering? Does anyone here do this? This is for a business, so if we encountered an emergency we need to contact someone in &lt;1 hour. But would that timeframe work within this approach?
-## [7][Do you experience many outrages on AWS?](https://www.reddit.com/r/aws/comments/f0udvx/do_you_experience_many_outrages_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/f0udvx/do_you_experience_many_outrages_on_aws/
----
-I have some production servers (file, database, web, and backups) for my business hosted on Linode.com.  So far, I'm pretty happy with the support and they have great documentation.  My only complaint is that I'll receive an email once every other week or so telling me there's an issue on the physical box and that they need to do emergency maintenance and that my server will be down anywhere from 30 to 60 minutes.
-
-Usually my business website is down anywhere from a couple of minutes to an hour, much to the dismay of my customers.  I'm wondering, how frequently do you experience outages with your AWS virtual machines?  I'm really tired of this and am thinking of switching.  Thanks!
-## [8][How do engineers/developers use custom domain names?](https://www.reddit.com/r/aws/comments/f13rz1/how_do_engineersdevelopers_use_custom_domain_names/)
-- url: https://www.reddit.com/r/aws/comments/f13rz1/how_do_engineersdevelopers_use_custom_domain_names/
----
-So, If you're building something with amazon web services and instead of having apis coded with lengthy amazon-id and other stuff, how do you replace this with domain names? 
-
-Do all devs keep a registered domain name? 
-
-And if only the product being built is for gauging the users before going fully functional, are there options I'm unaware for using domain names ?
-## [9][Program that will sync AWS S3 files from local computer?](https://www.reddit.com/r/aws/comments/f1722v/program_that_will_sync_aws_s3_files_from_local/)
-- url: https://www.reddit.com/r/aws/comments/f1722v/program_that_will_sync_aws_s3_files_from_local/
----
-Hi so I keep updating files in my S3 bucket. I want a program (for Mac) that will sync only changed files from my computer to the s3 bucket. 
-
-I know Forklift is available for this. Any other program for the mac? Thanks!
-## [10][Image processing lambda](https://www.reddit.com/r/aws/comments/f13mxs/image_processing_lambda/)
-- url: https://www.reddit.com/r/aws/comments/f13mxs/image_processing_lambda/
----
-Im looking to replace a memory hogging image processing call in my .Net API with a nice fast lambda that does the same things.  I need resize, yes, but also some effects like Mono, BW, contrast, sharpness, transparency, posterization and a couple of others.
-
-I can see plenty of examples using 'sharp' but Im not sure if this will do everything I need.
-
-Any suggestions? Would prefer node, but can cope with python if I HAVE TO :)
-
-Thanks

@@ -85,62 +85,43 @@ score  |  comment  |
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Bouncing balls simulation using plain JavaScript (demo link and detailed description in the README)](https://www.reddit.com/r/javascript/comments/f0znep/bouncing_balls_simulation_using_plain_javascript/)
-- url: https://github.com/MTrajK/bouncing-balls
+## [3][6 things I wished I knew about state management when I started writing React apps](https://www.reddit.com/r/javascript/comments/f1jop9/6_things_i_wished_i_knew_about_state_management/)
+- url: https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb
 ---
 
-## [4][[AskJS] What is a good course to learn Vanilla JS when you already know the fundamentals of programming and have some experience with React?](https://www.reddit.com/r/javascript/comments/f15f4n/askjs_what_is_a_good_course_to_learn_vanilla_js/)
-- url: https://www.reddit.com/r/javascript/comments/f15f4n/askjs_what_is_a_good_course_to_learn_vanilla_js/
----
-Im not a pro at react by any means but I finished the codecademy course and made some simple apps in react and react native but it feel like I still don't know core Javascript and don't really want to do codecademy again because their courses are really verbose and not that helpful. I already know Java so I don't want a course that goes over things like loops, conditionals, arrays, etc.
-## [5][Use JavaScript Array Methods Efficiently](https://www.reddit.com/r/javascript/comments/f12cj2/use_javascript_array_methods_efficiently/)
-- url: https://medium.com/@emreloper/use-javascript-array-methods-efficiently-e993528ef4bc
+## [4][Steps Developers Should Take To Use npm Securely](https://www.reddit.com/r/javascript/comments/f1myf9/steps_developers_should_take_to_use_npm_securely/)
+- url: https://resources.whitesourcesoftware.com/blog-whitesource/npm-security/#
 ---
 
-## [6][My first JavaScript plugin (in those days for jquery). Was my entry into the JS world. What was your first JS „project“](https://www.reddit.com/r/javascript/comments/f15p6j/my_first_javascript_plugin_in_those_days_for/)
-- url: https://github.com/AICDEV/jointerJS
+## [5][Real time chat application built by Node, Express, React, Socket.io &amp; Javascript With source code](https://www.reddit.com/r/javascript/comments/f1axnl/real_time_chat_application_built_by_node_express/)
+- url: https://www.htmlhints.com/article/66/real-time-chat-application-based-on-express-react-socketio
 ---
 
-## [7][The ultimate guide to create desktop apps for javascript entrepreneurs](https://www.reddit.com/r/javascript/comments/f0u1l0/the_ultimate_guide_to_create_desktop_apps_for/)
-- url: https://medium.com/@merunasgrincalaitis/the-ultimate-guide-to-create-desktop-apps-for-javascript-entrepreneurs-4b2e1da0fe9c
+## [6][My lightning effect experiment with vanilla JS and canvas. Demo available in the readme file.](https://www.reddit.com/r/javascript/comments/f1b8uq/my_lightning_effect_experiment_with_vanilla_js/)
+- url: https://github.com/diwsi/Javascript-Lightning-Effect
 ---
 
-## [8][FullStack webscraper for ML](https://www.reddit.com/r/javascript/comments/f17tfc/fullstack_webscraper_for_ml/)
-- url: https://github.com/gautam1858/FullStack-webscraper-for-ML
+## [7][Comprehensively Understand the "this" keyword in JavaScript | Learn To Code Together](https://www.reddit.com/r/javascript/comments/f1brxw/comprehensively_understand_the_this_keyword_in/)
+- url: https://learntocodetogether.com/comprehensively-understand-the-this-keyword-in-javascript/#.XkBAgnMAKJM.reddit
 ---
 
-## [9][Realtime socket.io server with typing indicators and file upload/downloads](https://www.reddit.com/r/javascript/comments/f0n30z/realtime_socketio_server_with_typing_indicators/)
-- url: https://iabhishek.dev/post/building-a-multimedia-chat-app-using-express-socketio-redis-and-docker-part-2
+## [8][JavaScript Dot Matrix](https://www.reddit.com/r/javascript/comments/f1fssq/javascript_dot_matrix/)
+- url: https://mmason33.github.io/dot-matrix/
 ---
 
-## [10][Painted Logo Animation using Javascript](https://www.reddit.com/r/javascript/comments/f0wtda/painted_logo_animation_using_javascript/)
-- url: https://www.htmlhints.com/article/7/painted-logo-animation-using-javascript
+## [9][🚀 Visualizing memory management in V8 Engine (JavaScript, NodeJS, Deno, WebAssembly)](https://www.reddit.com/r/javascript/comments/f1nhpx/visualizing_memory_management_in_v8_engine/)
+- url: https://deepu.tech/memory-management-in-v8/
 ---
 
-## [11][[AskJS] Unusual code flow - Return statement not being hit - Async- Await](https://www.reddit.com/r/javascript/comments/f11yev/askjs_unusual_code_flow_return_statement_not/)
-- url: https://www.reddit.com/r/javascript/comments/f11yev/askjs_unusual_code_flow_return_statement_not/
+## [10][Aborting a fetch request 🚀](https://www.reddit.com/r/javascript/comments/f1p587/aborting_a_fetch_request/)
+- url: https://meetguns.com/blog/aborting-a-fetch-request/
 ---
-In the following code:
 
-    const getAll = async () =&gt; {
-         const retrievedData = await axios.get('http://localhost:3001/anecdotes');  [2nd line of execution]   
-         return retrievedData.data; // - [Not executed]
-    };
-    
-    const test =  () =&gt; {
-         let anecdotes =  getAll();       [1st line of execution]         
-     console.log(anecdotes);          [3rd line of execution] 
-     props.initAnecdotes(anecdotes);  [4th line of execution] 
-    };
-    
-    test();
+## [11][How to make your website work offline](https://www.reddit.com/r/javascript/comments/f1oadl/how_to_make_your_website_work_offline/)
+- url: https://medium.com/@dannymoerkerke/how-to-make-your-website-work-offline-b5be47b92adc?source=friends_link&amp;sk=e7ac5aa87e5f4cbba6ad3b1a2196af99
+---
 
-**Why is the return statement not being executed?**
-
-**Also, why isn't the await not pausing until axios get request data is retrieved?**
-
-Thanks
-## [12][Answer the “Anagram Interview Question” with ES6 [Medium Post]](https://www.reddit.com/r/javascript/comments/f0ynd3/answer_the_anagram_interview_question_with_es6/)
-- url: https://blog.anthonycomito.com/answer-the-anagram-interview-question-with-es6-c7621e43596d
+## [12][ECMAScript® 2020 Language Specification](https://www.reddit.com/r/javascript/comments/f1o5u4/ecmascript_2020_language_specification/)
+- url: https://tc39.es/ecma262/
 ---
 

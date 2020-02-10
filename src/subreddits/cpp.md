@@ -57,17 +57,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Is "C++ Template Metaprogramming" by Abrahams and Gurtovoy still relevant in the C++17/20 times?](https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/)
+## [2][Five Awesome C++ Papers for the Prague ISO Meeting and C++20 Status](https://www.reddit.com/r/cpp/comments/f1njuc/five_awesome_c_papers_for_the_prague_iso_meeting/)
+- url: https://www.bfilipek.com/2020/02/prague.html
+---
+
+## [3][GitHub - google/marl: A hybrid thread / fiber task scheduler written in C++ 11](https://www.reddit.com/r/cpp/comments/f1gwa3/github_googlemarl_a_hybrid_thread_fiber_task/)
+- url: https://github.com/google/marl
+---
+
+## [4][Memory Bandwidth Napkin Math](https://www.reddit.com/r/cpp/comments/f1f7eq/memory_bandwidth_napkin_math/)
+- url: https://www.forrestthewoods.com/blog/memory-bandwidth-napkin-math/
+---
+
+## [5][Core C++ 2020 Announces Bjarne Stroustrup as Opening Keynote Speaker](https://www.reddit.com/r/cpp/comments/f1gljc/core_c_2020_announces_bjarne_stroustrup_as/)
+- url: http://corecpp.org
+---
+
+## [6][Is "C++ Template Metaprogramming" by Abrahams and Gurtovoy still relevant in the C++17/20 times?](https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/)
 - url: https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/
 ---
-I'm considering buying it, but am not sure whether it's still relevant or most of it outdated / implementing what's now already available in the language or std.  
+I'm considering buying it, but am not sure whether it's still relevant or most of it outdated / implementing what's now already available in the language or std.
 
-Also feel free to name (better) alternatives if there are any. Thanks :)
-## [3][fpm: a header-only fixed-point math library with trigonometry, etc](https://www.reddit.com/r/cpp/comments/f0ph40/fpm_a_headeronly_fixedpoint_math_library_with/)
+Also feel free to name (better) alternatives if there are any. Thanks :)  
+
+EDIT: Thanks everyone for the responses so far
+## [7][KDE Frameworks 5.67.0](https://www.reddit.com/r/cpp/comments/f19ogw/kde_frameworks_5670/)
+- url: https://kde.org/announcements/kde-frameworks-5.67.0.php
+---
+
+## [8][fpm: a header-only fixed-point math library with trigonometry, etc](https://www.reddit.com/r/cpp/comments/f0ph40/fpm_a_headeronly_fixedpoint_math_library_with/)
 - url: https://github.com/MikeLankamp/fpm
 ---
 
-## [4][GitHub actions for vcpkg, CMake and Ninja](https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/)
+## [9][Introducing the LY++ language: The universal `block oriented` programming language that supports the most common iterative, functional and object oriented languages like C++, C#, C, Java, Haskell, Python and many more! [Concept]](https://www.reddit.com/r/cpp/comments/f1d371/introducing_the_ly_language_the_universal_block/)
+- url: https://github.com/BabyYod4/lypp
+---
+
+## [10][GitHub actions for vcpkg, CMake and Ninja](https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/)
 - url: https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/
 ---
 These are two GitHub actions that streamline building C++ sources with CMake, vcpkg, Ninja:
@@ -76,52 +102,7 @@ These are two GitHub actions that streamline building C++ sources with CMake, vc
 * [run-cmake](https://github.com/marketplace/actions/run-cmake)
 
 Enjoy!
-## [5][C++ Memory (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fx1x/c_memory_chrome_university_2019/)
+## [11][C++ Memory (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fx1x/c_memory_chrome_university_2019/)
 - url: https://www.youtube.com/watch?v=UNJrgsQXvCA
----
-
-## [6][A fast work-stealing queue template library in modern C++](https://www.reddit.com/r/cpp/comments/f0nu69/a_fast_workstealing_queue_template_library_in/)
-- url: https://github.com/tsung-wei-huang/work-stealing-queue
----
-
-## [7][C++ as a second language (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fxcq/c_as_a_second_language_chrome_university_2019/)
-- url: https://www.youtube.com/watch?v=cN9c_JyvL1A
----
-
-## [8][reproc v11.0.0 released!](https://www.reddit.com/r/cpp/comments/f0h238/reproc_v1100_released/)
-- url: https://www.reddit.com/r/cpp/comments/f0h238/reproc_v1100_released/
----
-I've just released [reproc](https://github.com/DaanDeMeyer/reproc) v11.0.0. reproc is a cross-platform process handling library for C and C++.
-
-The big addition this release is that `reproc_poll` can now be used to poll more than one child process. This allows users to manage multiple processes from a single thread which is very useful to implement build systems (make, ninja, ...) that need to manage multiple child compiler processes from a single-threaded parent process.
-
-While this was mostly trivial to implement on POSIX systems, Windows turned to be a lot harder due to the lack of a poll equivalent. I tried using I/O completion ports but they're extremely hard to adapt to the model of poll. I finally got lucky when I found out that child process standard streams can be redirected to sockets on Windows and Windows provides `WSAPoll` for use on sockets which has the same semantics as `poll` on POSIX. 
-
-Unfortunately, Windows doesn't provide `socketpair` so instead we set up a TCP connection over localhost. I'm not 100% sure, but it seems TCP connections over localhost are somewhat optimized by Windows itself to avoid much of the overhead of the networking stack.
-
-With access to `poll` on both platforms, it became doable to implement a `poll` for processes on top of it. To monitor child process exit, we have each child process inherit an extra socket which will be closed when the child process exits. This way, waiting for child process exit can be done as part of the main call to `poll`.
-
-I'm hoping this can help developers with monitoring multiple child processes without having to pull in heavier dependencies such as boost process (along with boost asio) or libuv or be forced to start up a separate thread to monitor each separate child process. Of course, as soon as you have to poll more than just child processes, libuv or boost asio combined with boost process make a lot more sense than reproc.
-
-I also added a bunch of extra options and a higher level `run` function which is on the same level as `system` but a lot safer.
-    
-    std::array&lt;std::string, 2&gt; args = { "echo", "Hello, World!" };
-    auto [status, ec] = reproc::run(args);
-
-I also tried to add support for pseudo-ttys using `openpty` on POSIX and the new ConPTY API on Windows but it seemed I'm the first one to try and use ConPTY with sockets on Windows which led to some [issues](https://github.com/microsoft/terminal/issues/4359).
-
-I also made a (single-line) [contribution](https://github.com/microsoft/STL/pull/406) to the MSVC STL to fix a bug I found while working on reproc. It's amazing to be able to contribute to something as widely used as the MSVC STL. The experience was great so props to the developers at Microsoft that made this happen.
-
-As always, any feedback is highly appreciated and if you have any questions about reproc, feel free to ask.
-## [9][OpenSSL client and server from scratch series](https://www.reddit.com/r/cpp/comments/f099li/openssl_client_and_server_from_scratch_series/)
-- url: https://quuxplusone.github.io/blog/2020/01/24/openssl-part-1/
----
-
-## [10][Anti-Cheats - Taking an inside look at Razer's Synapse driver](https://www.reddit.com/r/cpp/comments/f0bmz0/anticheats_taking_an_inside_look_at_razers/)
-- url: https://niemand.com.ar/2020/02/07/bypassing-anti-cheats-part-1-exploiting-razer-synapse-driver/
----
-
-## [11][Quick Snake: A fast-faced snake-like game for the terminal in C++17](https://www.reddit.com/r/cpp/comments/f0f2fo/quick_snake_a_fastfaced_snakelike_game_for_the/)
-- url: https://github.com/gregstula/quick-snake
 ---
 

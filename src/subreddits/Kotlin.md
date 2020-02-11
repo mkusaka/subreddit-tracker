@@ -1,17 +1,30 @@
 # Kotlin
-## [1][Accelerate Your Kotlin Multiplatform Evaluation with KaMP Kit](https://www.reddit.com/r/Kotlin/comments/f1p6nq/accelerate_your_kotlin_multiplatform_evaluation/)
-- url: https://blog.jetbrains.com/kotlin/2020/02/accelerate-your-kotlin-multiplatform-evaluation-with-kamp-kit/
+## [1][The state of Kotlin for microservices](https://www.reddit.com/r/Kotlin/comments/f26a7w/the_state_of_kotlin_for_microservices/)
+- url: https://www.reddit.com/r/Kotlin/comments/f26a7w/the_state_of_kotlin_for_microservices/
+---
+Hi all 
+
+I need your advices and would like to know, if it is the right choice to do microservices in Kotlin.
+Of course, Golang would be the better choice, but I do not like it because of boilerplate codes.
+Rust seems to be interesting, but libraries are not stable yet.
+One point, that I concern about it, is the big image size of JVM. But I think with GraalVM is good to go.
+
+The question is, should I use Kotlin to build my microservices or Kotlin is only suitable for frontend programming? What is your opinion? 
+
+Thanks
+## [2][Getting Started with Kotlin on iOS, Part 1](https://www.reddit.com/r/Kotlin/comments/f1uhwh/getting_started_with_kotlin_on_ios_part_1/)
+- url: https://benasher.co/kotlin-ios-getting-started/
 ---
 
-## [2][does anyone know if kotlin/native already support curses/ncurses on linux?](https://www.reddit.com/r/Kotlin/comments/f1pmwt/does_anyone_know_if_kotlinnative_already_support/)
+## [3][does anyone know if kotlin/native already support curses/ncurses on linux?](https://www.reddit.com/r/Kotlin/comments/f1pmwt/does_anyone_know_if_kotlinnative_already_support/)
 - url: https://www.reddit.com/r/Kotlin/comments/f1pmwt/does_anyone_know_if_kotlinnative_already_support/
 ---
 
-## [3][Kotlin in the list of the best programming languages to keep an eye on](https://www.reddit.com/r/Kotlin/comments/f1cwn8/kotlin_in_the_list_of_the_best_programming/)
-- url: https://learnworthy.net/5-programming-languages-to-keep-an-eye-on
+## [4][Accelerate Your Kotlin Multiplatform Evaluation with KaMP Kit](https://www.reddit.com/r/Kotlin/comments/f1p6nq/accelerate_your_kotlin_multiplatform_evaluation/)
+- url: https://blog.jetbrains.com/kotlin/2020/02/accelerate-your-kotlin-multiplatform-evaluation-with-kamp-kit/
 ---
 
-## [4][Run code with "delay" in a browser](https://www.reddit.com/r/Kotlin/comments/f1c31k/run_code_with_delay_in_a_browser/)
+## [5][Run code with "delay" in a browser](https://www.reddit.com/r/Kotlin/comments/f1c31k/run_code_with_delay_in_a_browser/)
 - url: https://www.reddit.com/r/Kotlin/comments/f1c31k/run_code_with_delay_in_a_browser/
 ---
 Hi everyone! I was looking at code examples here [https://kotlinlang.org/docs/tutorials/coroutines/coroutines-basic-jvm.html](https://kotlinlang.org/docs/tutorials/coroutines/coroutines-basic-jvm.html)
@@ -21,7 +34,7 @@ and you can notice that if we'll run this code we won't see delays between print
 https://preview.redd.it/581tl4k9pxf41.png?width=752&amp;format=png&amp;auto=webp&amp;s=5a517c804ff7bfe810ad57b905ca16651148c4f2
 
 Is it possible to execute such codes somehow so we'll be able to see delays? (For example, after pushing Run button there appears a window just like on the screen, but "Start", "Hello" and "Stop" appear with the 1 and 2 seconds intervals) Maybe we can convert kotlin to JavaScript and run it in the browser? I'm only studying and not a professional so I'm not even sure if it's possible. I tried to google this problem but didn't succeed. It would be great if you can give me advice or suggestion about how this problem can possibly be solved or where to find the information.
-## [5][abstract fun](https://www.reddit.com/r/Kotlin/comments/f1cait/abstract_fun/)
+## [6][abstract fun](https://www.reddit.com/r/Kotlin/comments/f1cait/abstract_fun/)
 - url: https://www.reddit.com/r/Kotlin/comments/f1cait/abstract_fun/
 ---
 What is the difference between using this:
@@ -33,7 +46,7 @@ vs using this:
 `abstract fun chapterDao(): ChapterDao`
 
 Cant I in both cases as the methods inside the DAO interface?
-## [6][[Discussion] Thoughts on making keywords like "data" in "data class" definable?](https://www.reddit.com/r/Kotlin/comments/f1el4x/discussion_thoughts_on_making_keywords_like_data/)
+## [7][[Discussion] Thoughts on making keywords like "data" in "data class" definable?](https://www.reddit.com/r/Kotlin/comments/f1el4x/discussion_thoughts_on_making_keywords_like_data/)
 - url: https://www.reddit.com/r/Kotlin/comments/f1el4x/discussion_thoughts_on_making_keywords_like_data/
 ---
 I recently thought about this, the benefit would be that classes that for example are used by libraries can be defined in a way that (often) doesn't require annotations.  
@@ -100,7 +113,7 @@ So yeah, the thing I'm proposing is not having a special case for the data keywo
 
 
 Tell me what you think
-## [7][Trying to proxy data class using ModelMapper](https://www.reddit.com/r/Kotlin/comments/f183zk/trying_to_proxy_data_class_using_modelmapper/)
+## [8][Trying to proxy data class using ModelMapper](https://www.reddit.com/r/Kotlin/comments/f183zk/trying_to_proxy_data_class_using_modelmapper/)
 - url: https://www.reddit.com/r/Kotlin/comments/f183zk/trying_to_proxy_data_class_using_modelmapper/
 ---
 So I'm using ModelMapper to convert between DTO and DB objects. I've got a scenario where my DB object has a few fields that I do not want to expose via the API. So I'm running an update operation, and I'm trying to use ModelMapper to overwrite the DB entity with data from the DTO. See below:
@@ -121,15 +134,11 @@ My problem is that I have nested entities in the VideoFile object. The DTO has D
 The solution, I would think, is to create a ModelMapper TypeMap for my classes. That way I could provide more explicit instructions. However, my VideoFilePayload and VideoFile entity objects are both data classes, and ModelMapper throws an error about how it needs to be able to proxy the classes for a TypeMap, and it can't do that with data classes.
 
 So, I'm hoping there is some workaround here where I can proxy my data classes and create the necessary TypeMap. Thanks.
-## [8][From Java to Kotlin: life without static](https://www.reddit.com/r/Kotlin/comments/f0t306/from_java_to_kotlin_life_without_static/)
+## [9][From Java to Kotlin: life without static](https://www.reddit.com/r/Kotlin/comments/f0t306/from_java_to_kotlin_life_without_static/)
 - url: https://jelmini.dev/post/from-java-to-kotlin-life-without-static/
 ---
 
-## [9][Migrating Java to kotlin (4 minute video)](https://www.reddit.com/r/Kotlin/comments/f0trz5/migrating_java_to_kotlin_4_minute_video/)
+## [10][Migrating Java to kotlin (4 minute video)](https://www.reddit.com/r/Kotlin/comments/f0trz5/migrating_java_to_kotlin_4_minute_video/)
 - url: https://www.youtube.com/watch?v=w9WE0c6fjRQ
----
-
-## [10][Added programmatic test builder API by Fleshgrinder · Pull Request #2177 · junit-team/junit5 · GitHub](https://www.reddit.com/r/Kotlin/comments/f0vra5/added_programmatic_test_builder_api_by/)
-- url: https://github.com/junit-team/junit5/pull/2177
 ---
 

@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (6/2020)!](https://www.reddit.com/r/rust/comments/ey2wte/hey_rustaceans_got_an_easy_question_ask_here_62020/)
-- url: https://www.reddit.com/r/rust/comments/ey2wte/hey_rustaceans_got_an_easy_question_ask_here_62020/
+## [1][Hey Rustaceans! Got an easy question? Ask here (7/2020)!](https://www.reddit.com/r/rust/comments/f1ucwh/hey_rustaceans_got_an_easy_question_ask_here_72020/)
+- url: https://www.reddit.com/r/rust/comments/f1ucwh/hey_rustaceans_got_an_easy_question_ask_here_72020/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -26,195 +26,88 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
  - [#rust-webdev](https://chat.mibbit.com/?server=irc.mozilla.org%3A%2B6697&amp;amp;channel=%23rust-webdev) (web development)
  - [#rust-networking](https://chat.mibbit.com/?server=irc.mozilla.org%3A%2B6697&amp;amp;channel=%23rust-networking) (computer networking, and see also [/r/rust_networking](https://www.reddit.com/r/rust_networking))
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/eransa/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/ey2wte/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.41]](https://www.reddit.com/r/rust/comments/eyw94s/official_rrust_whos_hiring_thread_for_jobseekers/)
-- url: https://www.reddit.com/r/rust/comments/eyw94s/official_rrust_whos_hiring_thread_for_jobseekers/
+## [2][What's everyone working on this week (7/2020)?](https://www.reddit.com/r/rust/comments/f1uej1/whats_everyone_working_on_this_week_72020/)
+- url: https://www.reddit.com/r/rust/comments/f1uej1/whats_everyone_working_on_this_week_72020/
 ---
-Welcome once again to the official /r/rust Who's Hiring thread!
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-7-2020/38078?u=llogiq)!
+## [3][Scaling back my involvement in Rust](https://www.reddit.com/r/rust/comments/f268p6/scaling_back_my_involvement_in_rust/)
+- url: https://internals.rust-lang.org/t/scaling-back-my-involvement-in-rust/11754
+---
 
-Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/ecxd62/official_rrust_whos_hiring_thread_for_jobseekers/).
+## [4][Let's Be Real About Dependencies](https://www.reddit.com/r/rust/comments/f1xiub/lets_be_real_about_dependencies/)
+- url: https://wiki.alopex.li/LetsBeRealAboutDependencies
+---
 
-This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+## [5][Announcing: jlrs. Call arbitrary Julia code from Rust and share data between the two languages](https://www.reddit.com/r/rust/comments/f1v00r/announcing_jlrs_call_arbitrary_julia_code_from/)
+- url: https://www.reddit.com/r/rust/comments/f1v00r/announcing_jlrs_call_arbitrary_julia_code_from/
+---
+After quite some effort I'm finally ready to release first version of `jlrs`, the [Julia](https://julialang.org) bindings I've been working on for the past few weeks. 
 
-Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
+This first version brings many nice features. For example:
 
-#### Rules for individuals:
+- Primitive data and strings can be copied from Rust to Julia.
 
-* Don't create top-level comments; those are for employers.
-* Feel free to reply to top-level comments with on-topic questions.
-* I will create a stickied top-level comment for individuals looking for work.
-* I will create an additional top-level comment for meta discussion.
+- N-dimensional arrays containing primitive data can be created; their contents can either be completely managed by Julia, take ownership of data from Rust, or mutably borrow data from Rust.
 
-#### Rules for employers:
+- All of these can be copied back from Julia to Rust.
 
-* To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
-* To make a top-level comment you must be hiring directly; no third-party recruiters.
-* One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
-* Proofread your comment after posting it and edit it if necessary to correct mistakes.
-* Please base your comment on the following template:
+- You can acquire handles to arbitrary modules, globals and functions, and call the latter.
 
-COMPANY: *[Company name; please link to your company's website or careers page.]*
+- You can include and call your own Julia code.
 
-TYPE: *[Full time, part time, internship, contract, etc.]*
+- If a Julia function returns another function, you can call it.
 
-DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+- You can only use Julia data that is guaranteed to be protected from garbage collection.
 
-LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+Of course, not everything is great yet. Some of it is due to limitations of Julia itself: access to the runtime is single-threaded, for example, and that thread will block when it's calling Julia code; you can't simply "pause" a long-running computation to quickly do some smaller amounts of work. Thread support in Julia itself is still in an experimental phase. Most annoyingly, the documentation is not available on docs.rs at this time because the bindings can't be compiled. If anyone could help me fix that or point me in the right direction, your help would be greatly appreciated (and yes, my failed attempts to fix it are the reason several version have been released already... sorry about that).
 
-REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+Luckily, the readme in the Github repository should provide enough details to build this crate, `cargo doc` will work if you're able to build it.
 
-VISA: *[Does your company sponsor visas?]*
+You probably shouldn't use this crate to do many one-off or short-and-simple computations; in the first case, the fact that Julia code is JIT-compiled will bite you, in the latter the overhead of this crate will. Rather, you should use it to call sufficiently complex functions that you will call regularly, or to use functionality that's not available in Rust yet. 
 
-CONTACT: *[How can someone get in touch with you?]*
-## [3][Lib.rs - crates.io on steroids](https://www.reddit.com/r/rust/comments/f1mr4h/librs_cratesio_on_steroids/)
+Another possible use case is one that actually motivated me to keep writing this. I work as (mostly) a software engineer in vision and robotics, a recurring task is to convert some specific algorithm written in Python to C++ for both performance reasons and so we can integrate it into the software that actually powers the products we sell. This is an error-prone process (rewriting software always is), takes a lot of time, and you now have two versions of some code to maintain. If I were able to just call the "original" code with great performance, we'd be rid of the split codebase and save a lot of time and money in the process.
+
+[crates.io](https://crates.io/crates/jlrs)
+
+[Github](https://github.com/Taaitaaiger/jlrs)
+## [6][rust-analyzer Changelog #11](https://www.reddit.com/r/rust/comments/f1tnem/rustanalyzer_changelog_11/)
+- url: https://rust-analyzer.github.io/thisweek/2020/02/10/changelog-11.html
+---
+
+## [7][A primer to Rust Async](https://www.reddit.com/r/rust/comments/f1y410/a_primer_to_rust_async/)
+- url: https://omarabid.com/async-rust
+---
+
+## [8][Quantitative data on the safety of Rust](https://www.reddit.com/r/rust/comments/f1ynel/quantitative_data_on_the_safety_of_rust/)
+- url: https://www.reddit.com/r/rust/comments/f1ynel/quantitative_data_on_the_safety_of_rust/
+---
+While the safety benefits of Rust make a lot of sense intuitively, the presence of `unsafe` makes that intuition less clear-cut. As far as I'm aware there is little hard data on how real-world Rust code performs in terms of security compared to other languages. I've realized that I might just contribute a quantitative data point.
+
+[Fuzzing](https://en.wikipedia.org/wiki/Fuzzing) is quite common in the Rust ecosystem nowadays, largely thanks to the [best-of-breed tooling](https://github.com/rust-fuzz/cargo-fuzz) we have at our disposal. There is also a [trophy case](https://github.com/rust-fuzz/trophy-case) of real-world bugs found in Rust code via fuzzing. It lists ~200 bugs as of commit [17982a8](https://github.com/rust-fuzz/trophy-case/commit/17982a86c7d4696aecfa96e2c271dbdc28318d30), out of which only 5 are security vulnerabilities - or 2.5%. Contrast this with the results from Google's [OSS-fuzz](https://github.com/google/oss-fuzz), which fuzzes high-profile C and C++ libraries: out of [15807](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=proj&amp;colspec=ID%20Type%20Component%20Status%20Proj%20Reported%20Owner%20Summary&amp;num=100&amp;q=-status%3AWontFix%2CDuplicate%20-Infra%20type%3Abug&amp;can=1)  bugs discovered [3600](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=proj&amp;colspec=ID%20Type%20Component%20Status%20Proj%20Reported%20Owner%20Summary&amp;num=100&amp;q=-status%3AWontFix%2CDuplicate%20-Infra%20type%3Abug-security&amp;can=1) are security issues. That's a whopping 22%!
+
+OSS-fuzz and Rust ecosystem use the exact same fuzzing backends (afl, libfuzzer, honggfuzz) so these results should be directly comparable. I'm not sure how representative a sample size of 200 is, so I'd appreciate statistical analysis on this data.
+
+Note that this approach only counts the bugs that actually made it into a compiled binary, so it does **not** account for bugs prevented statically. For example, iterators make out-of-bounds accesses impossible, `Option&lt;T&gt;` and `&amp;T` make null pointer dereferences impossible and lifetime analysis makes use-after-frees impossible. All of these bugs were eliminated before the fuzzer could even get to them, so I expect the security defect rate for Rust code to be even lower than these numbers suggest.
+
+**TL;DR:** out of bugs found by the exact same tooling in C/C++ 22% of them pose a security issue while in Rust it's 2.5%. That is about an order of magnitude difference. Actual memory safety defect rates in Rust should be even lower because some bugs are prevented statically and don't make it into this statistic.
+
+This only applies to memory safety bugs, which account for about 70% of all security bugs [according to Microsoft](https://www.zdnet.com/article/microsoft-70-percent-of-all-security-bugs-are-memory-safety-issues/). Mozilla had also [independently arrived to the same estimate](https://hacks.mozilla.org/2019/02/rewriting-a-browser-component-in-rust/).
+## [9][Copyright implications of brute forcing all 12-tone major melodies in approximately 2.5 TB.](https://www.reddit.com/r/rust/comments/f1ukv0/copyright_implications_of_brute_forcing_all/)
+- url: https://youtu.be/sfXn_ecH5Rw
+---
+
+## [10][Debugging Rust in VSCode in 2020](https://www.reddit.com/r/rust/comments/f1qsx9/debugging_rust_in_vscode_in_2020/)
+- url: https://jason-williams.co.uk/debugging-rust-in-vscode
+---
+
+## [11][Redelete: delete your reddit comments/submissions with optional filters to skip certain ones. Fun project for me to learn async/await, rust, oauth, and testing.](https://www.reddit.com/r/rust/comments/f1zcu4/redelete_delete_your_reddit_commentssubmissions/)
+- url: https://github.com/ardeaf/redelete
+---
+
+## [12][Lib.rs - crates.io on steroids](https://www.reddit.com/r/rust/comments/f1mr4h/librs_cratesio_on_steroids/)
 - url: https://lib.rs/
 ---
 
-## [4][Announcing Seed v0.6](https://www.reddit.com/r/rust/comments/f1nwkr/announcing_seed_v06/)
-- url: https://www.reddit.com/r/rust/comments/f1nwkr/announcing_seed_v06/
----
-Hi! I'm happy to announce Seed v0.6 release.
-
- Seed is a Rust framework for creating fast and reliable web apps.
-
-Seed uses an unconventional approach to describe how to display DOM elements. It uses neither completely natural (i.e. macro-free) Rust code, nor an HTML-like abstraction (e.g. JSX or templates). Our intent is to make the code close to natural Rust, while streamlining the syntax in a way suited for creating a visual layout with minimal repetition. The macros used are thin wrappers for constructors, and don't conceal much.
-
-This release focuses mostly on internal refactoring. See [https://seed-rs.org/guide/changelog](https://seed-rs.org/guide/changelog)
-
-We have plenty of examples as well as several starter kits and a welcoming discord chat and forum!
-
-Please visit [https://seed-rs.org/](https://seed-rs.org/) to learn more about building web projects in Rust &amp; WASM!
-
-Cheers,  
-Seed core members
-## [5][We are now more than 90k Rustaceans on this subreddit](https://www.reddit.com/r/rust/comments/f1nglg/we_are_now_more_than_90k_rustaceans_on_this/)
-- url: https://subredditstats.com/r/rust
----
-
-## [6][Pointer-utils: a collection of crates, providing simple custom DSTs, pointer unions, borrowed reference counts, and more!](https://www.reddit.com/r/rust/comments/f1iixm/pointerutils_a_collection_of_crates_providing/)
-- url: https://github.com/CAD97/pointer-utils/blob/master/blog/Announcement.md
----
-
-## [7][win32job: a crate for using Windows' Job Objects](https://www.reddit.com/r/rust/comments/f1ob3a/win32job_a_crate_for_using_windows_job_objects/)
-- url: https://www.reddit.com/r/rust/comments/f1ob3a/win32job_a_crate_for_using_windows_job_objects/
----
-I created the `win32job` [crate](https://github.com/ohadravid/win32job-rs), a small library which exposes a safe API for Windows' Job Objects.
-
-The TL;DR is that this allows a process to force all sort of limits on itself and processes it creates, like limiting the amount of memory used, or forcing all "child" processes to terminate when the "parent" terminates (this relationship is different on Windows compared to Linux/macOS).
-
-This example show how to force any created sub processes to exit when the main process exits:
-
-    use win32job::Job;
-    use std::process::Command;
-    
-    fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt;  {
-        let job = Job::create()?;
-        
-        let mut info = job.query_extended_limit_info()?;
-    
-        info.limit_kill_on_job_close();
-    
-        job.set_extended_limit_info(&amp;mut info)?;
-        
-        job.assign_current_process()?;
-    
-        Command::new("cmd.exe")
-                .arg("/C")
-                .arg("ping -n 9999 127.0.0.1")
-                .spawn()?;
-    
-        // The cmd will be killed once we exit, or `job` is dropped.
-        
-        Ok(())
-    }
-
-The API tries to stay close to the original Windows API (hence the long-ish function names).
-
-There a number of existing places using this functionality, all with their own custom impls, so I think this is something worthy of a dedicated crate:
-
-[rustjob](https://github.com/alexcrichton/rustjob/blob/master/src/main.rs#L139) (Wrapper script for buildbots)
-
-[rust-gha](https://github.com/rust-lang/rust-gha/blob/master/src/bootstrap/job.rs) (GitHub Actions tests for rust-lang/rust)
-
-[rustup](https://github.com/rust-lang/rustup/blob/master/src/cli/job.rs) and [cargo](https://github.com/rust-lang/cargo/blob/dc83ead224d8622f748f507574e1448a28d8dcc7/src/cargo/util/job.rs) (You know what this is!)
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-As a little side note, I wanted a better way to test the `README`, and while `skeptic` and `little-skeptic` exists they require a bunch of deps, so I found a [little trick](https://github.com/ohadravid/win32job-rs/blob/aa627a24150681cb712315c7f8663e34fcd3f7f7/src/lib.rs#L87) somewhere in the GitHub comments for various Rust issues and ended up with this:
-
-    #[cfg(debug_assertions)]
-    mod test_readme {
-        macro_rules! calculated_doc {
-            ($doc:expr, $id:ident) =&gt; {
-                #[doc = $doc]
-                enum $id {}
-            }
-        }
-    
-        calculated_doc!(include_str!("../README.md"), _DoctestReadme);
-    }
-
-Which will run the `README` as part of the doctests!
-## [8][Rust Programming for IOT (Internet of Things)](https://www.reddit.com/r/rust/comments/f1mnf0/rust_programming_for_iot_internet_of_things/)
-- url: https://www.youtube.com/watch?v=ro-G5gu5fMk&amp;feature=share
----
-
-## [9][A Rustacean change of heart](https://www.reddit.com/r/rust/comments/f1c3v6/a_rustacean_change_of_heart/)
-- url: https://www.reddit.com/r/rust/comments/f1c3v6/a_rustacean_change_of_heart/
----
- 
-
-Hi all,
-
-I decided about 2 weeks ago to put my efforts into being a Rustacean after spending six months learning Haskell. I came from 4 years of professional Scala development. Things were going great with Haskell however the tooling(IDE in particular) is generally not up to task with what I would like to ultimately achieve .
-
-This year I will be building a few information system MVP products using Rust , in my spare time after work, and  I see Rust as a language that can help me towards that end. Of course many other languages are also up to the task, but I purposefully wanted a non mainstream language so that I can punt it as a recruitment tool to attract people who are more inclined towards learning. It just so happened that Rust comes with all these other goodies that satisfy my FP inclinations and the memory safety features, which I am eager to start sparring with
-
-So what advice would anyone give towards learning Rust, what frameworks can you guys recommend for basic CRUD operations. And finally what can I do or help out with in the community.
-## [10][Partially derive default?](https://www.reddit.com/r/rust/comments/f1nydq/partially_derive_default/)
-- url: https://www.reddit.com/r/rust/comments/f1nydq/partially_derive_default/
----
-Suppose I have a struct, most of its fields except one can derive default:
-
-    struct MyStruct {
-        body: Body, // Body does not have default
-        a: u32,
-        b: Option&lt;Foo&gt;,
-        c: Vec&lt;Bar&gt;,
-        // ...
-    }
-
-Can I easily derive partial default, so I can easily write something like the following:
-
-    impl MyStruct {
-        fn new(body: Body) -&gt; Self {
-            // Error, because Self does not implement Default
-            Self { body, ..Self::default() }
-        }
-    }
-## [11][Using use keyword inside a function](https://www.reddit.com/r/rust/comments/f1lhp1/using_use_keyword_inside_a_function/)
-- url: https://www.reddit.com/r/rust/comments/f1lhp1/using_use_keyword_inside_a_function/
----
-Hey there, I'm very new to rust and recently I've been diving into the deep end trying to learn how to use audio API's, my current choice is CPAL and on the [documentation here](https://docs.rs/cpal/0.11.0/cpal/) a number of times the code shows a totally unexplained use of the "use" keyword which I initially thought was just for importing libraries and modules. What is the purpose of writing these "use"s right before these other lines? Do I need to be writing them in the order they appear? Or can I just combine them all at the top of my code?
-## [12][Pushrod 0.2.27: SDL2-based GUI for Rust - Call for Help!](https://www.reddit.com/r/rust/comments/f1fcya/pushrod_0227_sdl2based_gui_for_rust_call_for_help/)
-- url: https://www.reddit.com/r/rust/comments/f1fcya/pushrod_0227_sdl2based_gui_for_rust_call_for_help/
----
-Hi all!
-
-I've been working on [rust-pushrod](https://www.github.com/KenSuenobu/rust-pushrod/) for a little over a year now, and I'm pretty happy with the progress; but there's only so much progress one person can do on the project.
-
-So far, I've had a lot of interest in the project, but would like to see if anyone else is interested in helping out with the project and some of the issues that remain before a 0.5.x release can be achieved.
-
-I have big plans for the 0.5.x release - one of which is to start designing a GUI so that applications can be written easier with a WYSIWYG style of drag-drop designer application.
-
-The latest release of Pushrod includes screenshots for each `Widget` that is currently in the system, a `Tile` widget that can be used as a tile in a group box, and a `TabBarWidget` that displays simple tabs that can be used to navigate pages in an application.
-
-If anyone is interested in helping out - either [monitarily](https://patreon.com/KenSuenobu) or through the [issues navigator](https://www.github.com/KenSuenobu/rust-pushrod/issues/), I would be forever grateful.  I am hoping for adoption of this library, and I have a passion for writing good GUI APIs.
-
-Please feel free to leave feedback - good or bad.  You can [also visit my blog here](https://kensuenobu.github.io/)
-
-Thank you, fellow Rustaceans!

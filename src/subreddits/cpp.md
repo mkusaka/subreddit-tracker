@@ -57,23 +57,53 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Five Awesome C++ Papers for the Prague ISO Meeting and C++20 Status](https://www.reddit.com/r/cpp/comments/f1njuc/five_awesome_c_papers_for_the_prague_iso_meeting/)
+## [2][Avast C++ Meetup with Bjarne Stroustrup, Tony van Eerd, and Herb Sutter (Stream on 11th February 2020 6pm CET, 5pm UTC, 9am PCT, 12pm EST)](https://www.reddit.com/r/cpp/comments/f2409z/avast_c_meetup_with_bjarne_stroustrup_tony_van/)
+- url: https://www.youtube.com/watch?v=o2V544cHNKE
+---
+
+## [3][Five Awesome C++ Papers for the Prague ISO Meeting and C++20 Status](https://www.reddit.com/r/cpp/comments/f1njuc/five_awesome_c_papers_for_the_prague_iso_meeting/)
 - url: https://www.bfilipek.com/2020/02/prague.html
 ---
 
-## [3][GitHub - google/marl: A hybrid thread / fiber task scheduler written in C++ 11](https://www.reddit.com/r/cpp/comments/f1gwa3/github_googlemarl_a_hybrid_thread_fiber_task/)
+## [4][Thought/question on library malfunction because of mismatched version](https://www.reddit.com/r/cpp/comments/f24t3i/thoughtquestion_on_library_malfunction_because_of/)
+- url: https://www.reddit.com/r/cpp/comments/f24t3i/thoughtquestion_on_library_malfunction_because_of/
+---
+Today our software malfunction and the cause found was because someone updated the 3rd party library (cryptoPP) binary compiled from the latest source code and added the binary to our project WITHOUT updating the include headers. 
+
+It compiles, links with no crash, warning, or anything. The hash function always returns empty. 
+
+Normally when this happens, it either cause linker error during linking or runtime crash. But this is one of two times that happen to us. And the first time took us very long time to figure out.
+
+I understand that if we don’t actually use anything that is different from the header than in the library binary, it will still compile and link. But this certainly isn’t the case.
+
+But the question is how to better handle and spot this problem? Besides remembering updating the headers.
+## [5][metastring mini library](https://www.reddit.com/r/cpp/comments/f1tyg9/metastring_mini_library/)
+- url: https://www.reddit.com/r/cpp/comments/f1tyg9/metastring_mini_library/
+---
+https://github.com/ConorWilliams/metastring/tree/master
+
+I've been playing around with compile time strings for another project and have put together a mini library to make things like this easy:
+ 
+    using type_string = meta::stom_t&lt;"abcd"&gt;;
+    
+    //--$ type_string = meta::string&lt;'a', 'b', 'c', 'd'&gt;
+## [6][GitHub - google/marl: A hybrid thread / fiber task scheduler written in C++ 11](https://www.reddit.com/r/cpp/comments/f1gwa3/github_googlemarl_a_hybrid_thread_fiber_task/)
 - url: https://github.com/google/marl
 ---
 
-## [4][Memory Bandwidth Napkin Math](https://www.reddit.com/r/cpp/comments/f1f7eq/memory_bandwidth_napkin_math/)
+## [7][Memory Bandwidth Napkin Math](https://www.reddit.com/r/cpp/comments/f1f7eq/memory_bandwidth_napkin_math/)
 - url: https://www.forrestthewoods.com/blog/memory-bandwidth-napkin-math/
 ---
 
-## [5][Core C++ 2020 Announces Bjarne Stroustrup as Opening Keynote Speaker](https://www.reddit.com/r/cpp/comments/f1gljc/core_c_2020_announces_bjarne_stroustrup_as/)
+## [8][revdoor: A single-file C++ library for visiting revolving door combinations.](https://www.reddit.com/r/cpp/comments/f1t7d6/revdoor_a_singlefile_c_library_for_visiting/)
+- url: https://github.com/dstein64/revdoor
+---
+
+## [9][Core C++ 2020 Announces Bjarne Stroustrup as Opening Keynote Speaker](https://www.reddit.com/r/cpp/comments/f1gljc/core_c_2020_announces_bjarne_stroustrup_as/)
 - url: http://corecpp.org
 ---
 
-## [6][Is "C++ Template Metaprogramming" by Abrahams and Gurtovoy still relevant in the C++17/20 times?](https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/)
+## [10][Is "C++ Template Metaprogramming" by Abrahams and Gurtovoy still relevant in the C++17/20 times?](https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/)
 - url: https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/
 ---
 I'm considering buying it, but am not sure whether it's still relevant or most of it outdated / implementing what's now already available in the language or std.
@@ -81,28 +111,7 @@ I'm considering buying it, but am not sure whether it's still relevant or most o
 Also feel free to name (better) alternatives if there are any. Thanks :)  
 
 EDIT: Thanks everyone for the responses so far
-## [7][KDE Frameworks 5.67.0](https://www.reddit.com/r/cpp/comments/f19ogw/kde_frameworks_5670/)
-- url: https://kde.org/announcements/kde-frameworks-5.67.0.php
----
-
-## [8][fpm: a header-only fixed-point math library with trigonometry, etc](https://www.reddit.com/r/cpp/comments/f0ph40/fpm_a_headeronly_fixedpoint_math_library_with/)
-- url: https://github.com/MikeLankamp/fpm
----
-
-## [9][Introducing the LY++ language: The universal `block oriented` programming language that supports the most common iterative, functional and object oriented languages like C++, C#, C, Java, Haskell, Python and many more! [Concept]](https://www.reddit.com/r/cpp/comments/f1d371/introducing_the_ly_language_the_universal_block/)
-- url: https://github.com/BabyYod4/lypp
----
-
-## [10][GitHub actions for vcpkg, CMake and Ninja](https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/)
-- url: https://www.reddit.com/r/cpp/comments/f0oc24/github_actions_for_vcpkg_cmake_and_ninja/
----
-These are two GitHub actions that streamline building C++ sources with CMake, vcpkg, Ninja:
-
-* [run-vcpkg](https://github.com/marketplace/actions/run-vcpkg)  
-* [run-cmake](https://github.com/marketplace/actions/run-cmake)
-
-Enjoy!
-## [11][C++ Memory (Chrome University 2019)](https://www.reddit.com/r/cpp/comments/f0fx1x/c_memory_chrome_university_2019/)
-- url: https://www.youtube.com/watch?v=UNJrgsQXvCA
+## [11][LinqPlus:Single header C++ syntax implementing some of C#'s Linq core functions](https://www.reddit.com/r/cpp/comments/f1u3ah/linqplussingle_header_c_syntax_implementing_some/)
+- url: https://github.com/PontiacGTX/LinqPlus
 ---
 

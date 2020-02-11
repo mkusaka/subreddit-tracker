@@ -1,132 +1,158 @@
 # golang
-## [1][The Evolution of a Go Programmer](https://www.reddit.com/r/golang/comments/f1hy9a/the_evolution_of_a_go_programmer/)
-- url: https://github.com/SuperPaintman/the-evolution-of-a-go-programmer
+## [1][Micro In Action, part3: Calling a Service](https://www.reddit.com/r/golang/comments/f26gdr/micro_in_action_part3_calling_a_service/)
+- url: https://medium.com/@dche423/micro-in-action-part-3-calling-a-service-55d865928f11
 ---
 
-## [2][Excelize 2.1.0 is Released – Go lib for reading and writing Excel (XLSX) files](https://www.reddit.com/r/golang/comments/f1azwz/excelize_210_is_released_go_lib_for_reading_and/)
-- url: https://github.com/360EntSecGroup-Skylar/excelize/releases/tag/v2.1.0
+## [2][CurlyQ - Simple, efficient, and reliable task queue for Go](https://www.reddit.com/r/golang/comments/f1wy28/curlyq_simple_efficient_and_reliable_task_queue/)
+- url: https://www.reddit.com/r/golang/comments/f1wy28/curlyq_simple_efficient_and_reliable_task_queue/
+---
+[CurlyQ](https://github.com/mcmathja/curlyq) provides a simple, easy-to-use interface for performing background processing in Go. It supports scheduled jobs, job deduplication, and configurable concurrent execution out of the box.
+
+I started writing CurlyQ after experimenting with other Redis-backed task queues and finding that none of them had quite what I was looking for in terms of API design and feature mix. CurlyQ aims to be as straightforward as possible for common use cases while exposing a variety of options for fine-tuning and advanced configuration.
+
+I'm nearing a 1.0 release and would love feedback and contributions before locking in the current behavior. Thanks all!
+## [3][Go modules proxy](https://www.reddit.com/r/golang/comments/f243lc/go_modules_proxy/)
+- url: https://www.reddit.com/r/golang/comments/f243lc/go_modules_proxy/
+---
+Hey , 
+
+I want to host my own proxy server for go modules. 
+
+I've seen several projects that acts as a proxy/cache server and have some questions-
+
+1. When using GOPROXY environment variable to set a proxy , and the module is not in the proxy , will it go get it from a VCS? 
+
+I've tried to set it up, but it's seems to not work like that and just got an error. There is any extra setup need to be done? 
+
+2. How can I "fill" my proxy cache with popular modules so I'll have it "ready" . 
+
+3. How does the proxy differs from the cache found locally on GOPATH/pkg/mod ? 
+
+Except the fact it can be accessed by multiple people on the network
+
+Thanks!
+## [4][Agente - Distributed simple and robust release management and monitoring system.](https://www.reddit.com/r/golang/comments/f2639c/agente_distributed_simple_and_robust_release/)
+- url: https://www.reddit.com/r/golang/comments/f2639c/agente_distributed_simple_and_robust_release/
+---
+Distributed simple and robust release management and monitoring system.
+
+\*\**This project on going work.*
+
+### 
+
+[Agente](https://preview.redd.it/1mzjievfl9g41.png?width=512&amp;format=png&amp;auto=webp&amp;s=5ee0e2e48cca5b2e05d81d2aca83c9ba748248e3)
+
+### Road map
+
+* Core system
+* First worker agent
+* Management dashboard
+* Jenkins vs CI tool extensions
+* Management dashboard
+* First master agent
+* All relevant third-party system integrations (version control, CI, database, queuing etc.)
+
+## Requirements
+
+* Go &gt; 1.11
+* Redis or RabbitMQ
+* PostgreSQL
+
+## Docker Environment
+
+For PostgreSQL
+
+`docker run --name agente_PostgreSQL -e POSTGRES_PASSWORD=123456 -e POSTGRES_USER=agente -p 5432:5432 -d postgres  docker exec agente_PostgreSQL psql --username=agente -c 'create database agente_dev;'`
+
+For RabbitMQ
+
+`docker run --hostname my-rabbit --name agente_RabbitMQ -e RABBITMQ_DEFAULT_USER=local -e RABBITMQ_DEFAULT_PASS=local -p 5672:5672 -d rabbitmq:3-management`
+
+Development
+
+`git clone -b develop` [`https://github.com/streetbyters/agente`](https://github.com/streetbyters/agente)
+
+`go mod vendor`  
+
+`# Development Mode`
+
+ `go run ./cmd -mode dev -migrate -reset` 
+
+`go run ./cmd -mode dev`  
+
+`# Test Mode` 
+
+`go run ./cmd -mode test -migrate -reset` 
+
+`go run ./cmd -mode test`
+
+## Build
+
+We will release firstly Agente for Linux environment.  
+ [See detail](https://github.com/streetbyters/agente/blob/master/docs/build.md)
+
+&amp;#x200B;
+
+GitHub : [https://github.com/streetbyters/agente](https://github.com/streetbyters/agente)
+## [5][Can $GOROOT be a totally different directory than $GOPATH?](https://www.reddit.com/r/golang/comments/f26of5/can_goroot_be_a_totally_different_directory_than/)
+- url: https://www.reddit.com/r/golang/comments/f26of5/can_goroot_be_a_totally_different_directory_than/
+---
+Hello there,
+
+In my first baby steps with golang I kept the any new project in the /src directory of my $GOPATH. It was all set inside the directory of the go source code, as i had first downloaded it. Just like most blogposts recommend.
+
+No  I am setting up a new workstation and I thught that maybe I could use different directories for my $GOROOT to keep the source code of the language and another $GOPATH for my projects. I thought that maybe this would help me keep it all clean and nitty, and maybe ease possible back ups in the future ( besides having it all on a git repo). I also added the $GOBIN environmental variable, but I came up with permission errors.
+
+Anyway, do you think that it even worth the mess? Is what I'm doing a good practice or is it totally misguiding? Should I just follow the default practice?
+## [6][Just released a library - goptr](https://www.reddit.com/r/golang/comments/f28726/just_released_a_library_goptr/)
+- url: https://www.reddit.com/r/golang/comments/f28726/just_released_a_library_goptr/
+---
+I have a project with some boilerplates related to handling pointers so I've decided to make them into a library named [goptr](https://github.com/noamt/goptr) with the purpose of becoming a utility library.
+
+The first feature is a collection of methods for resolving pointers of primitives or falling back to a default value. For example:
+
+    import "github.com/noamt/goptr"
+    
+    goptr.String(nil) // Returns an empty string
+    goptr.String("foo") // Returns "foo" 
+    goptr.StringOrDefault(nil, "foo") // Returns "foo" 
+    
+    s := "bar"
+    goptr.StringOrDefault(&amp;s, "foo") // Returns "bar"
+## [7][Micro In Action, Part 3：Calling a Service](https://www.reddit.com/r/golang/comments/f27zd9/micro_in_action_part_3calling_a_service/)
+- url: https://medium.com//micro-in-action-part-3-calling-a-service-55d865928f11?source=friends_link&amp;sk=b763ed6cc10dd14132da4191387fcaa4
 ---
 
-## [3][Looking for Practical Goroutine / Channels Exercises](https://www.reddit.com/r/golang/comments/f1bi58/looking_for_practical_goroutine_channels_exercises/)
-- url: https://www.reddit.com/r/golang/comments/f1bi58/looking_for_practical_goroutine_channels_exercises/
----
-Looking for practical exercises related to goroutines and channels. Most of the things I found online are tutorials and would love to get some more exercises. Then these exercises would cover different sub-topics (eg. waiting). It would be nice if these exercises have solution sets too.
-## [4][[Rob Pike][2012] Less is exponentially more](https://www.reddit.com/r/golang/comments/f1nj16/rob_pike2012_less_is_exponentially_more/)
-- url: https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html
+## [8][Build a simple GraphQL API in Golang with MySQL and GORM using Gqlgen](https://www.reddit.com/r/golang/comments/f20nfw/build_a_simple_graphql_api_in_golang_with_mysql/)
+- url: https://www.soberkoder.com/go-graphql-api-mysql-gorm/
 ---
 
-## [5][8chipgo - Chip 8 implemented in Go with pixel library](https://www.reddit.com/r/golang/comments/f1dhgv/8chipgo_chip_8_implemented_in_go_with_pixel/)
-- url: https://i.imgur.com/6C46vtD.gif
+## [9][Show which docker containers are attached to which veth interfaces CLI](https://www.reddit.com/r/golang/comments/f27gqn/show_which_docker_containers_are_attached_to/)
+- url: https://www.reddit.com/r/golang/comments/f27gqn/show_which_docker_containers_are_attached_to/
 ---
+Hi everyone :)
 
-## [6][Bosun - Kibana Automatic Index Pattern Discovery and Other Curating Tasks with Go](https://www.reddit.com/r/golang/comments/f1p7h7/bosun_kibana_automatic_index_pattern_discovery/)
-- url: https://github.com/sherifabdlnaby/bosun
----
+I developed a CLI tool that can show which docker containers are attached to which veth interfaces.
 
-## [7][Go: Inlining Strategy &amp; Limitation](https://www.reddit.com/r/golang/comments/f18oi1/go_inlining_strategy_limitation/)
-- url: https://medium.com/a-journey-with-go/go-inlining-strategy-limitation-6b6d7fc3b1be
----
+It can be used in combination with other commands.  
+e.g. Capture any container's packets with termshark.
 
-## [8][Channels, structs, etc](https://www.reddit.com/r/golang/comments/f1kdem/channels_structs_etc/)
-- url: https://www.reddit.com/r/golang/comments/f1kdem/channels_structs_etc/
----
-Hey all,
-
-Little frustrated as I can't quite put it together in my head on how to handle a scenario I have recently found myself in...
-
-Basically I am sending an API request (in go) to a server.. in a go func, the response of which could be a large number of records. Now, in the go func, I am passed a channel which expects the record type I get back in the API response. What I am not sure of is if the channel should be designed to take an array of struct.. and pass it all back in one call.... or if per the nature of channels.. a stream.. should I do a loop through the records I get back, sending each one through the channel and requiring the receiver to then put them together as an array before doing something with them.
-
-In this particular situation, the receiver end is itself part of an API req/resp.. so it would essentially be waiting for ALL the individual channel structs.. building up an array of the struct, to then return it as a single JSON response.
-
-I think the right way to do this is the channel is set to stream one record at a time, and the receiver builds up the array of that struct, then marshalls the whole shabang in one JSON response.
-## [9][Paste - a web app to keep encrypted text snippets, easily deployable to Heroku](https://www.reddit.com/r/golang/comments/f1ooo8/paste_a_web_app_to_keep_encrypted_text_snippets/)
-- url: https://gitlab.com/opennota/paste
----
-
-## [10][New JSON parser/interpreter](https://www.reddit.com/r/golang/comments/f1k1mt/new_json_parserinterpreter/)
-- url: https://www.reddit.com/r/golang/comments/f1k1mt/new_json_parserinterpreter/
----
-Hi gophers and other fellow life forms.
-
-About 6 months ago we have started a new project that font-end side with `JS`/`Node.js`/`React` and back-end side  with `Golang`. I was working for the back-end side everything was O.K. But the project grows the `'encoding/json'` package get inefficient. For example we are not able to change a 'key' or change any value with something else. Thats because we switch to some custom packages for manipulating JSON. 
-
-At this point. I figure out 'How about I wrote a packege for JSON manipulating'
-
-And than I start working on it. But dealing with such a project was not easy.
-
-First I had to find a way to validate my result. Manually writing unit tests was impossible for large data. Thats because I started to integrate Node.js to this project for test-case creation and validation. And it worked perfectly.
-
-I use a continius integration platform for test automation. And wrote a detailed documentation on __[GoDoc](https://godoc.org/github.com/ecoshub/jin)__.
-
-And It has a cool gopher logo you should see :)
-
-Well today its finally ready for public release. 
-
-Name of this package is __[JIN](https://github.com/ecoshub/jin)__
-
-It is super easy to use and much more important its super fast.
-I just want to share with this to you guys.
-
-Let's look at with an example.
-
-```go
-	// this is the JSON we will work on
-	data := []byte(`{"repo":{"name":"ecoshub/jin"},"others":["jin","dev.to"]}`)
+```sh
+sudo termshark -i $(dockerveth -p | fzf | awk "{print \$2}")
 ```
-we are going to try to access the 'dev.to' string in 'others' array.
 
-```go
-	// In order to Unmarshal a JSON.
-	// first we have to define those structs properly.
-	type Repository struct {
-		Name string 		`json:"name"`
-	}
+[https://github.com/skanehira/go-dockerveth](https://github.com/skanehira/go-dockerveth)
+## [10][Having trouble understanding the concept of a "package" in Go](https://www.reddit.com/r/golang/comments/f1xwrs/having_trouble_understanding_the_concept_of_a/)
+- url: https://www.reddit.com/r/golang/comments/f1xwrs/having_trouble_understanding_the_concept_of_a/
+---
+I come from the world of Ruby and Rails and I'm trying to build some things in Go. 
 
-	type Data struct {
-		Repo   Repository 	`json:"repo"`
-		Others []string 	`json:"others"`
-	}
-	// an empty data struct
-	var newData Data
+It seems like packages are a way of grouping functional code in Go? But I'm trying to wrap my head around 
 
-	// finally Unmarshaling.
-	err := json.Unmarshal(data, &amp;newData)
+- how and when to include files in a package? Are all files in a package accessible to each other? 
+- Is my package always called `main`? Is that just a convention?
+- When to break code into multiple packages? If I'm building a CLI tool, would each main subcommand in the CLI get it's own package and subfolder grouping? 
 
-	// standard error implementation.
-	if err != nil {
-		fmt.Println("error:", err)
-	}
-	fmt.Prinln(newData.Others[1])
+I've taken a look at the usual getting started docs but I just feel like I'm stumbling here for some reason. Hoping that someone can explain it better.
 
-```
-Or you can use this. with no struct defination.
-
-```go
-	// just one line of code.
-	value, err := jin.Get(data, "others", "1")
-
-	// standard error implementation.
-	if err != nil {
-		fmt.Println("error:", err)
-	}
-	fmt.Println(string(value))
-```
-
-Do not miss-understand me I am not the first person who figure out this simple and elegant definition. I am just trying to expand and improve JSON manipulation.
-
-This package has over __90__ functions/methods for ease JSON manipulation, build and formating needs. Some useful functions that i like to mention.
- 
--`Add()`, `AddKeyValue()`, `Set()`, `SetKey()` `Delete()`, `Insert()`, `IterateArray()`, `IterateKeyValue()` `Tree()`. 
-
-There is a very detailed explanations and lots of examples in __[GoDoc](https://godoc.org/github.com/ecoshub/jin)__ .
-
-Also I think you have to  check out benchmark results :)
-
-This is the link of repository:
-https://github.com/ecoshub/jin
-
-Please do not hesitate to fork/clone pull-request.
-
-Thank you so much for your time.
-
-Have a good day.
+Thanks!

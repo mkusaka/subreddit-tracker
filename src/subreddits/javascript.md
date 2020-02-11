@@ -85,43 +85,59 @@ score  |  comment  |
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][6 things I wished I knew about state management when I started writing React apps](https://www.reddit.com/r/javascript/comments/f1jop9/6_things_i_wished_i_knew_about_state_management/)
-- url: https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb
+## [3][4 Methods to Search Through Arrays in JavaScript](https://www.reddit.com/r/javascript/comments/f26f47/4_methods_to_search_through_arrays_in_javascript/)
+- url: https://alligator.io/js/array-search-methods/
 ---
 
-## [4][Steps Developers Should Take To Use npm Securely](https://www.reddit.com/r/javascript/comments/f1myf9/steps_developers_should_take_to_use_npm_securely/)
-- url: https://resources.whitesourcesoftware.com/blog-whitesource/npm-security/#
+## [4][How I built Heimdall, an open-source personal email guardian (Typescript, Serverless, AWS)](https://www.reddit.com/r/javascript/comments/f20l6n/how_i_built_heimdall_an_opensource_personal_email/)
+- url: https://medium.com/@fabianterh/how-i-built-heimdall-an-open-source-personal-email-guardian-68e306d172d1
 ---
 
-## [5][Real time chat application built by Node, Express, React, Socket.io &amp; Javascript With source code](https://www.reddit.com/r/javascript/comments/f1axnl/real_time_chat_application_built_by_node_express/)
-- url: https://www.htmlhints.com/article/66/real-time-chat-application-based-on-express-react-socketio
+## [5][I created a template for an SaaS/Admin application using React and Material-UI](https://www.reddit.com/r/javascript/comments/f2708i/i_created_a_template_for_an_saasadmin_application/)
+- url: https://github.com/dunky11/react-saas-template
 ---
 
-## [6][My lightning effect experiment with vanilla JS and canvas. Demo available in the readme file.](https://www.reddit.com/r/javascript/comments/f1b8uq/my_lightning_effect_experiment_with_vanilla_js/)
-- url: https://github.com/diwsi/Javascript-Lightning-Effect
+## [6][I this madness supposed to be all the things you need to know as a JavaScript Developer today?](https://www.reddit.com/r/javascript/comments/f1r3pr/i_this_madness_supposed_to_be_all_the_things_you/)
+- url: https://roadmap.sh/frontend
 ---
 
-## [7][Comprehensively Understand the "this" keyword in JavaScript | Learn To Code Together](https://www.reddit.com/r/javascript/comments/f1brxw/comprehensively_understand_the_this_keyword_in/)
-- url: https://learntocodetogether.com/comprehensively-understand-the-this-keyword-in-javascript/#.XkBAgnMAKJM.reddit
+## [7][Compiling Haskell to JavaScript, not in the way you'd expect](https://www.reddit.com/r/javascript/comments/f220ml/compiling_haskell_to_javascript_not_in_the_way/)
+- url: http://oleg.fi/gists/posts/2020-02-09-compiling-haskell-to-javascript.html
 ---
 
-## [8][JavaScript Dot Matrix](https://www.reddit.com/r/javascript/comments/f1fssq/javascript_dot_matrix/)
-- url: https://mmason33.github.io/dot-matrix/
+## [8][Axios Decorators: HTTP client library with Axios and JavaScript decorators](https://www.reddit.com/r/javascript/comments/f1vesb/axios_decorators_http_client_library_with_axios/)
+- url: https://github.com/FriendsOfReact/axios-decorators
 ---
 
-## [9][🚀 Visualizing memory management in V8 Engine (JavaScript, NodeJS, Deno, WebAssembly)](https://www.reddit.com/r/javascript/comments/f1nhpx/visualizing_memory_management_in_v8_engine/)
-- url: https://deepu.tech/memory-management-in-v8/
+## [9][The simple Math every developer should know](https://www.reddit.com/r/javascript/comments/f1rsmg/the_simple_math_every_developer_should_know/)
+- url: https://medium.com/@boltmick1/the-simple-math-every-developer-should-know-3f9b25446550
 ---
 
-## [10][Aborting a fetch request 🚀](https://www.reddit.com/r/javascript/comments/f1p587/aborting_a_fetch_request/)
-- url: https://meetguns.com/blog/aborting-a-fetch-request/
+## [10][[AskJS] Get Element value from Ajax response](https://www.reddit.com/r/javascript/comments/f27wqc/askjs_get_element_value_from_ajax_response/)
+- url: https://www.reddit.com/r/javascript/comments/f27wqc/askjs_get_element_value_from_ajax_response/
+---
+I've been trying to get values from an ajax response -- without any success, the closest I got was getting an array of undignified.
+
+`$.each(JSON.parse(response,function(i,value){console.log(value[1].schools);}));`
+
+Here is a screenshot of my ajax response
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+[json response](https://preview.redd.it/yatsndxokag41.png?width=943&amp;format=png&amp;auto=webp&amp;s=d83834a4e53f7f5e2d61aa1a107527d50d4a2a45)
+
+&amp;#x200B;
+
+I need to store name + success:false + column + message to a variable
+
+Thanks for your help!
+## [11][Learn and use some core JavaScript by Building The Game of Life](https://www.reddit.com/r/javascript/comments/f27s5n/learn_and_use_some_core_javascript_by_building/)
+- url: https://medium.com/javascript-in-plain-english/the-game-of-life-using-javascript-fc1aaec8274f
 ---
 
-## [11][How to make your website work offline](https://www.reddit.com/r/javascript/comments/f1oadl/how_to_make_your_website_work_offline/)
-- url: https://medium.com/@dannymoerkerke/how-to-make-your-website-work-offline-b5be47b92adc?source=friends_link&amp;sk=e7ac5aa87e5f4cbba6ad3b1a2196af99
----
-
-## [12][ECMAScript® 2020 Language Specification](https://www.reddit.com/r/javascript/comments/f1o5u4/ecmascript_2020_language_specification/)
-- url: https://tc39.es/ecma262/
+## [12][List of OSS project funding opportunities](https://www.reddit.com/r/javascript/comments/f239pi/list_of_oss_project_funding_opportunities/)
+- url: https://www.reddit.com/r/opensource/comments/f1ojht/monetizeyourcode_list_of_oss_project_funding/
 ---
 

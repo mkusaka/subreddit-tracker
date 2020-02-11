@@ -22,90 +22,142 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TSConf:EU - Europe's TypeScript Conference](https://www.reddit.com/r/typescript/comments/f1msjk/tsconfeu_europes_typescript_conference/)
+## [2][What's the most advanced thing you know within TypeScript?](https://www.reddit.com/r/typescript/comments/f25ux0/whats_the_most_advanced_thing_you_know_within/)
+- url: https://www.reddit.com/r/typescript/comments/f25ux0/whats_the_most_advanced_thing_you_know_within/
+---
+Hey,
+
+I'm planning to give a presentation to provide insights about TypeScript at work soon and I was wondering what's the most advanced thing you can do with TypeScript?
+
+So this is about TS itself and not an advanced project/app using it. A search on Google or the official docs gave me some examples but I was wondering if someone knows some handy things :) Or maybe some solution for a problem you would have needed a bigger workaround without TypeScript, etc.
+## [3][Visual Debugging in VS Code](https://www.reddit.com/r/typescript/comments/f1shn6/visual_debugging_in_vs_code/)
+- url: https://i.redd.it/pdi1ucn2f4g41.gif
+---
+
+## [4][Is there any ORM that has dynamically typed query results?](https://www.reddit.com/r/typescript/comments/f1zky5/is_there_any_orm_that_has_dynamically_typed_query/)
+- url: https://www.reddit.com/r/typescript/comments/f1zky5/is_there_any_orm_that_has_dynamically_typed_query/
+---
+Is there any ORM (or query builder) that provides dynamic typing for the result of a query? For example, if I call `findOne` in TypeORM like this:
+
+```
+const user = await connection.getRepository(User).findOne({ select: ['firstName'] })
+```
+
+it would be nice if the `user` variable was typed to include only the `firstName` field and not all fields associated with the model. Ditto for eagerly loaded associations. However, that doesn't appear to be the case. Are the any libraries that do in fact do that?
+## [5][utility type that equals a specific key within an interface given the type which that key is mapped to](https://www.reddit.com/r/typescript/comments/f23wx8/utility_type_that_equals_a_specific_key_within_an/)
+- url: https://www.reddit.com/r/typescript/comments/f23wx8/utility_type_that_equals_a_specific_key_within_an/
+---
+I'm trying to find or write a utility type which would have the behavior of the hypothetical `ReverseLookup` type in this example:
+
+```
+interface User {
+  name: string
+}
+
+interface Article {
+  title: string
+}
+
+interface Shapes {
+  author: User,
+  editor: User,
+  article: Article,
+}
+
+// these would compile
+const a: ReverseLookup&lt;Shapes, User&gt; = 'author'; // ✓
+const b: ReverseLookup&lt;Shapes, User&gt; = 'editor'; // ✓
+
+// these would cause an error
+const c: ReverseLookup&lt;Shapes, User&gt; = 'article'; // ✗ ts error
+const d: ReverseLookup&lt;Shapes, Article&gt; = 'editor'; // ✗ ts error
+```
+
+Where `ReverseLookup` equals a specific key within an interface given the type which that key is mapped to. So given `Shapes` and `User`, `ReverseLookup` is any key within `Shapes` which is mapped to type `User` .
+## [6][Conditional types for a dynamic React component in Typescript?](https://www.reddit.com/r/typescript/comments/f1x8gp/conditional_types_for_a_dynamic_react_component/)
+- url: https://www.reddit.com/r/typescript/comments/f1x8gp/conditional_types_for_a_dynamic_react_component/
+---
+Hello typscript community! I have a question. Is there anyway for typescript to conditionally match types? I have the following dynamic react component, and I want **parameters** to be set based on the **type** property in the **SidebarProps** interface. Currently I can only escape an error by passing **any** to parameters which is obviously not ideal.
+
+```typescript
+
+type T = keyof typeof components;
+
+type propertiesMap = {
+  default: any;
+  job: AddEditJobsProps;
+  customer: AddEditCustomersProps;
+};
+
+interface SidebarProps {
+  type: keyof typeof components,     
+  parameters: propertiesMap[T] | any; 
+} 
+
+const components = {
+  default: Loading,   
+  job: AddEditJobs,   
+  customer: AddEditCustomers 
+}; 
+
+export default function Sidebar(props: SidebarProps) { 
+  const { open, toggle } = useToggle(); 
+  const SelectComponent = components[props.type]; 
+
+  return ( 
+    &lt;RightSidebar open={open} toggleDrawer={toggle}&gt; 
+      &lt;SelectComponent {...props.props} /&gt; 
+    &lt;/RightSidebar&gt; 
+  ); 
+}
+```
+## [7][TypeScript Express tutorial #13. Using Mongoose virtuals to populate documents](https://www.reddit.com/r/typescript/comments/f1r5sg/typescript_express_tutorial_13_using_mongoose/)
+- url: https://wanago.io/2020/02/10/typescript-express-tutorial-13-using-mongoose-virtuals-to-populate-documents/
+---
+
+## [8][TSConf:EU - Europe's TypeScript Conference](https://www.reddit.com/r/typescript/comments/f1msjk/tsconfeu_europes_typescript_conference/)
 - url: https://tsconf.eu/
 ---
 
-## [3][Weekend project: GraphQL-like queries and resolvers written in TypeScript](https://www.reddit.com/r/typescript/comments/f1fyar/weekend_project_graphqllike_queries_and_resolvers/)
+## [9][sql-lint - A command line SQL linter written in my favourite language &lt;3](https://www.reddit.com/r/typescript/comments/f1t1sr/sqllint_a_command_line_sql_linter_written_in_my/)
+- url: https://github.com/joereynolds/sql-lint
+---
+
+## [10][trouble building typescript project on heroku (not the normal problem!)](https://www.reddit.com/r/typescript/comments/f1u20o/trouble_building_typescript_project_on_heroku_not/)
+- url: https://www.reddit.com/r/typescript/comments/f1u20o/trouble_building_typescript_project_on_heroku_not/
+---
+Hey all, 
+
+I am still getting used to typescript and am running into a rather strange issue...
+
+&amp;#x200B;
+
+When I run \`tsc\` in the project locally, I my project builds with no errors. However, when the Heroku deploy process runs \`tsc\`. I am getting build errors. It is only 3 or 4 errors for a medium sized project. It almost looks like some sort of config on the Heroku side is just a bit... off.
+
+&amp;#x200B;
+
+Has anyone experienced something similar to this? I am have these two scripts in my \`package.json\`:
+
+&amp;#x200B;
+
+"postinstall": "npm run compile",
+
+"heroku-prebuild": "npm install --only=dev",
+
+&amp;#x200B;
+
+I have also already tried setting \`NPM\_CONFIG\_PRODUCTION=false\` as a heroku environment variable.
+
+&amp;#x200B;
+
+Anyone have any advice?
+
+&amp;#x200B;
+
+Many thanks for any input!
+## [11][Weekend project: GraphQL-like queries and resolvers written in TypeScript](https://www.reddit.com/r/typescript/comments/f1fyar/weekend_project_graphqllike_queries_and_resolvers/)
 - url: https://www.reddit.com/r/typescript/comments/f1fyar/weekend_project_graphqllike_queries_and_resolvers/
 ---
 Hey folks, a month or two ago I asked myself, "what would it look like if I wanted to get GraphQL-like queries and resolvers in pure TypeScript?" I started hacking away and today I published the proof of concept under the title TypedQL. It allows you to define a graph query API and write queries against it. The real hero here is TypeScript Language Services, as seen in this [gif](https://imgur.com/fcUrI58).
 
 Check it out [here](https://github.com/gregoryfabry/TypedQL); the README has some examples that show what the library can do. This is very much a proof of concept and there's definitely some black magic in the typings, but it can be downloaded and experimented with. I would love to hear your feedback, as I definitely think the concept has value and might be worth pursuing further.
-## [4][typescript-eslint no implicit any rule?](https://www.reddit.com/r/typescript/comments/f1hayp/typescripteslint_no_implicit_any_rule/)
-- url: https://www.reddit.com/r/typescript/comments/f1hayp/typescripteslint_no_implicit_any_rule/
----
-Hi does anyone know of an [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) rule to disallow implicit any?
-
-I know there is a rule to disallow *explicit* any, but I am wondering if there is a rule for disallowing implicit any?
-
-Example:
-
-    // instead of this:
-    let s;
-    
-    // I want to force the use of a type here.. like this:
-    let s: string;
-    
-    // disallowing explicit any solves this:
-    let s: any;
-    
-    // but not this:
-    let s;
-
-Thank you!!
-## [5][A React Router From Scratch in TypeScript](https://www.reddit.com/r/typescript/comments/f18o3l/a_react_router_from_scratch_in_typescript/)
-- url: https://medium.com/@wim.jongeneel1/a-react-router-from-scratch-in-typescript-f0eec6ccb293?source=friends_link&amp;sk=4028f57135472edeb541ac13800055cb
----
-
-## [6][Trouble groking infer](https://www.reddit.com/r/typescript/comments/f0roge/trouble_groking_infer/)
-- url: https://www.reddit.com/r/typescript/comments/f0roge/trouble_groking_infer/
----
-So I come from the Java world and I'm having some difficulty with Typescript's `infer` keyword. I'm playing around trying to infer the generic types of a nested data structure, but I can't seem to make the types line up, and I was hoping someone could show me the error of my ways. 
-
-     type Tuple&lt;T&gt; = [Foo&lt;T&gt;, Bar&lt;T&gt;]
-     type Tuples&lt;...&gt; = ReadonlyArray&lt;Tuple&lt;?&gt;&gt;
-
-     const tuples = [ // inferred as Tuples&lt;string | number&gt; 
-       ['one', 'two'], // inferred Tuple&lt;string&gt;
-       [3, 4] // inferred Tuple&lt;number&gt;
-     ]
-
-This works fine if i specify the types explicitly, but I'm sure there's got to be a way to infer them.
-
-edit: Adding a more detailed use case: 
-edit2: [playground](https://www.typescriptlang.org/play/#code/C4TwDgpgBAYg9nAPAFQHxQLxQN5QG4CGANgFxTJQC+AUKJFAEIEBOK6WucwAFhM2RRrUA9MNgIoBAHYATRiyhSIEOT2gBnAgFtoAcwhLmASwDGUOtDAttEYH2rnw0ZAFcwRCG0xQA2vCRoADTyrGgAug4W5G4e6l5YAEoQBDJwUkQgAILMzAQgKDGeaKjU1CZp6sBQqQDKcDo8RlK63mwAFABmCGT+bMEARixkTKGoAJRkeHBGchjo2A5QS+VS6nAeAHREcLptFnAdUF1wG4REY4vLFesQWzt7TgdQg8wbXLzMF1SlUCuV5m53BAABLSGQeZitNBtDaw4CFdQCBFsMaYeaXLqQtp-Ko+Y4DFhhKBPeFA9SohZLKm1eq2bhNXb454sL5LGjfByiapwCDqKQAciq5S0YCMHk5YiiUhcWn6fCgRnUii4knU6iMuikBH6HnMcBCiEqxmaJV+FSqgwAXt5SUDQbIIW1Lj5cGcyPy0hB+VRgpw1PwoIKAO5wb2UMLBLlNDp8ZgqaJAw3AY26U1LF34YhkADMPpwxP9ZAALFQiVzEABaCvc3kCoX1UW6ghK-aHK0KpWuMlJlOmi4S8z0pUh5gAa3UDhxUAAji4AB42wEee3gviIaWy+UAHygRoZUFQTqpGbdgc9Yd9BY+7uAIbDEagztdWagucol-efGLpYcYyAA)
-## [7][Typescript to C#?](https://www.reddit.com/r/typescript/comments/f0ho8j/typescript_to_c/)
-- url: https://www.reddit.com/r/typescript/comments/f0ho8j/typescript_to_c/
----
-I've tried searching, and I find various generators and such that will generate Typescript files from C#, but is there anything that does it the other way around? I.e. something that can generate C# types from Typescript? 🤔
-## [8][The ultimate guide to create desktop apps for javascript entrepreneurs](https://www.reddit.com/r/typescript/comments/f0tbqf/the_ultimate_guide_to_create_desktop_apps_for/)
-- url: https://medium.com/@merunasgrincalaitis/the-ultimate-guide-to-create-desktop-apps-for-javascript-entrepreneurs-4b2e1da0fe9c
----
-
-## [9][Announcing TypeScript 3.8 RC](https://www.reddit.com/r/typescript/comments/f01vnf/announcing_typescript_38_rc/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/
----
-
-## [10][Advice on Transformation Utility library](https://www.reddit.com/r/typescript/comments/f0d3sm/advice_on_transformation_utility_library/)
-- url: https://www.reddit.com/r/typescript/comments/f0d3sm/advice_on_transformation_utility_library/
----
-Hello Everyone,
-
-I have created a small library that is designed to transform data using a deduction map, this map contains an array of deductions, each deduction will use one or more values from the source and apply a list of transforms before storing it in the output at the given path.
-
-&amp;#x200B;
-
-Really interested in feedback and suggestions on how to improve the idea.
-
-Thanks
-
-&amp;#x200B;
-
-Link: [https://github.com/robertpitt/deducer](https://github.com/robertpitt/deducer)
-
-Example: [https://github.com/robertpitt/deducer/blob/master/test/index.test.ts#L94](https://github.com/robertpitt/deducer/blob/master/test/index.test.ts#L94)
-## [11][Progress so far on my web browser for language-learning, LinguaBrowse, written in TypeScript using React Native](https://www.reddit.com/r/typescript/comments/f01it4/progress_so_far_on_my_web_browser_for/)
-- url: https://twitter.com/LinguaBrowse/status/1225562067819749376?s=20
----
-

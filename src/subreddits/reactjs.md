@@ -24,110 +24,118 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/eidci5/whos_hiring_jan_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [2][Required Flairs for r/Reactjs](https://www.reddit.com/r/reactjs/comments/f1fd6o/required_flairs_for_rreactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/f1fd6o/required_flairs_for_rreactjs/
+## [2][Beginner's Thread / Easy Questions (Feb 2020)](https://www.reddit.com/r/reactjs/comments/exf7nq/beginners_thread_easy_questions_feb_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/exf7nq/beginners_thread_easy_questions_feb_2020/
 ---
-As the sub grows we want to keep the experience great for everyone. One of the best ways to do this is to allow people to filter for and filter out the exact types of content they are looking for. So we are now requiring flairs for every new post.
+[Previous threads][wiki previous threads] can be found in the Wiki.
 
-Here are the current set of flairs ([inspired by /r/Python](https://www.reddit.com/r/Python/comments/euprlf/changes_to_rpython/)):
+Got questions about React or anything else in its ecosystem? Stuck making progress on your app?  
+Ask away! We’re a friendly bunch.
 
-- Show /r/reactjs: for libraries and apps you made and want to show off
-- Needs Help: For people who need help. We may refer you to /r/LearnReactjs or the monthly Beginner's Thread.
-- Resource: if you find a cool library to use, awesome book to read, etc. Posting your own blogpost is allowed and ENCOURAGED - just don't spam low quality clickbait.
-- News: for news about React and major React ecosystem libraries.
-- Discussion: for discussing React events, tooling, job market, project architecture, UI libraries, etc.
-- Code Review Request: requests for constructive code review
-- Meta: for posts about /r/reactjs itself
+No question is too simple. 🙂
 
-There are some mod-only flairs, which we assign to highlight and manually curate for posterity.
-
-For instructions on filtering flairs on your various Reddit apps, check out the /r/Python wiki: https://www.reddit.com/r/Python/wiki/filters#wiki_desktop
-
-This is a new policy and we welcome feedback as we adjust based on real usage. You are also welcome to message me if you are confused about what to flair things and I can help you manually.
-## [3][What should I be comfortable with in React before applying to Jr dev positions?](https://www.reddit.com/r/reactjs/comments/f1js4s/what_should_i_be_comfortable_with_in_react_before/)
-- url: https://www.reddit.com/r/reactjs/comments/f1js4s/what_should_i_be_comfortable_with_in_react_before/
----
-I’m two or three months into learning React and I’m getting pretty comfortable with some aspects of it. I can set up Redux and invent reducers without referencing documentation. Same for the Router. Now I’m wondering, what else should I be comfortable with before I can say I’ve covered all the “standard” parts of React?
-
-I’m thinking the Context API should be in there, as well as hooks. But I’m new so maybe I don’t know what is standard use for a React developer. 
-
-Thoughts, fellow React lovers?
-## [4][6 things I wished I knew about state management when I started writing React](https://www.reddit.com/r/reactjs/comments/f1ivff/6_things_i_wished_i_knew_about_state_management/)
-- url: https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb
 ---
 
-## [5][Aborting a fetch request 🚀](https://www.reddit.com/r/reactjs/comments/f1p58y/aborting_a_fetch_request/)
-- url: https://meetguns.com/blog/aborting-a-fetch-request/
+## 🆘 Want Help with your Code? 🆘
+
+- **Improve your chances** by putting a minimal example to either [JSFiddle][jsfiddle], [Code Sandbox][code sandbox] or [StackBlitz][stackblitz].
+  - Describe what you want it to do, and things you've tried. Don't just post big blocks of code!
+  - **[Formatting Code][wiki formatting code]** wiki shows how to format code in this thread.
+- **Pay it forward!** Answer questions even if there is already an answer - multiple perspectives can be very helpful to beginners. Also there's no quicker way to learn than [being wrong on the Internet][being wrong on the internet].
+
 ---
 
-## [6][🎉 Introducing use-places-autocomplete: A React hook for Google Maps Places Autocomplete.](https://www.reddit.com/r/reactjs/comments/f18dau/introducing_useplacesautocomplete_a_react_hook/)
-- url: https://www.reddit.com/r/reactjs/comments/f18dau/introducing_useplacesautocomplete_a_react_hook/
----
-Hey Guys, with [use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete) you can build your own places autocomplete UI within 10 minutes, no kidding 😉
+## New to React?
 
-[Demo](https://reddit.com/link/f18dau/video/5a7kbqopuwf41/player)
+### Check out the sub's sidebar!
 
-👉🏻Check it out: [https://github.com/wellyshen/use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete)
-## [7][Functional Component vs Class component](https://www.reddit.com/r/reactjs/comments/f1pp2o/functional_component_vs_class_component/)
-- url: https://www.reddit.com/r/reactjs/comments/f1pp2o/functional_component_vs_class_component/
----
-Hi,
+🆓 Here are great, **free** resources! 🆓
 
-I just started to learn Reactjs and after taking few lessons now in my head theres a big mess. I think I read alot of outdated contents and videos. Now im basically struggling where to go and how to continue. Even the react itself includes tutorials with class components but in some point they ve mention about why they introduced hooks and things. I just looked at the class components and there are lot to cover like lifecycle etc etc. 
+- [Create React App][create react app]
+- [Read the **official** Getting Started page][official getting started page] on the docs.
+- [Get started with Redux][get started with redux] by [/u/acemarke][/u/acemarke] (Redux Maintainer).
+- [Kent Dodd's Egghead.io course][kent dodd's egghead.io course]
+- [Tyler McGinnis' 2018 Guide][tyler mcginnis' 2018 guide]
+- [Codecademy's React courses][codecademy's react courses]
+- [Scrimba's React Course][scrimba's react course]
+- [Robin Wieruch's Road to React][robin wieruch's road to react]
 
-So my main problem is as a new learner do i need to study about class component anymore like lifecycle and all those stuffs or should I skip class component and continue with functional components since it now supports the features that were in class components? I asked from a friend and his opinion was we still need class components and its the only way to perform few things but I wasnt happy with that answer bcz of introducing hooks they says anything can now perform with functional components as well.
+Any ideas/suggestions to improve this thread - feel free to comment here!
 
-How can I practice these things or where can I cover these things properly in a line? How to avoid those outdated content? If i HAVE to study class components as well plz tell me a proper way of covering topics like u should learn this and then this etc etc. 
+_Finally, thank you to all who post questions and those who answer them. We're a growing community and [helping each other][learn by teaching] only [strengthens it!][learn in public]_
 
-&amp;#x200B;
-
-Thank you :) Sorry about my english as itsnt my native language
-## [8][( Informed ) Added support for Yup + Field level Yup validation](https://www.reddit.com/r/reactjs/comments/f1qafz/informed_added_support_for_yup_field_level_yup/)
-- url: https://joepuzzo.github.io/informed/?path=/story/validation--field-level-yup-validation
 ---
 
-## [9][Forms that don't suck | How to ensure great user experience on forms](https://www.reddit.com/r/reactjs/comments/f1q5ag/forms_that_dont_suck_how_to_ensure_great_user/)
-- url: https://www.inkoop.io/blog/how-to-ensure-great-user-experience-on-forms/
+[create react app]: https://facebook.github.io/create-react-app/
+[official getting started page]: https://reactjs.org/docs/getting-started.html
+[/u/acemarke]: https://www.reddit.com/u/acemarke
+[suggested resources for learning react]: http://blog.isquaredsoftware.com/2017/12/blogged-answers-learn-react/
+[kent dodd's egghead.io course]: http://kcd.im/beginner-react
+[tyler mcginnis' 2018 guide]: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
+[codecademy's react courses]: https://www.codecademy.com/catalog/language/javascript
+[scrimba's react course]: https://scrimba.com/g/glearnreact
+[robin wieruch's road to react]: https://roadtoreact.com/
+[wiki formatting code]: https://www.reddit.com/r/reactjs/wiki/index#wiki_formatting_code
+[wiki previous threads]: https://www.reddit.com/r/reactjs/wiki/index#wiki_previous_threads
+[code sandbox]: https://codesandbox.io/s/new
+[jsfiddle]: https://jsfiddle.net/Luktwrdm/
+[stackblitz]: https://stackblitz.com/
+[being wrong on the internet]: https://xkcd.com/386/
+[tweet organization]: https://twitter.com/dan_abramov/status/1027245759232651270?lang=en
+[get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
+[learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
+[learn in public]: https://www.swyx.io/writing/learn-in-public/
+## [3][JavaScript frameworks are pushing each other to improve accessibility](https://www.reddit.com/r/reactjs/comments/f1s64i/javascript_frameworks_are_pushing_each_other_to/)
+- url: https://www.reddit.com/r/reactjs/comments/f1s64i/javascript_frameworks_are_pushing_each_other_to/
+---
+This is an example of the power of open-source, working together or building off of one another to  improve user experience for everyone: 
+
+Marcy Sutton of Gatsby produced original research on  -  [client-side routing and accessibility](https://www.gatsbyjs.org/blog/2019-07-11-user-testing-accessible-client-routing/) 
+
+Madalyn Parker took that research and [turned it into improvements in Gatsby](https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/)
+
+Marcus Herrmann wrote about [improved accessible routing in Vue](https://marcus.io/blog/improved-accessible-routing-vuejs) and namechecked Marcy's research
+
+And svelte has been inspired to [change their routing](https://github.com/EmilTholin/svelte-routing/issues/25#issuecomment-576513320) based on Madalyn's work.
+## [4][Free React Admin Dashboard Template built with Bootstrap](https://www.reddit.com/r/reactjs/comments/f255t5/free_react_admin_dashboard_template_built_with/)
+- url: https://demo.uifort.com/bamburgh-react-admin-dashboard-reactstrap-free-demo/LandingPage
 ---
 
-## [10][Simple data-driven way for building React forms](https://www.reddit.com/r/reactjs/comments/f1ptag/simple_datadriven_way_for_building_react_forms/)
-- url: https://medium.com/javascript-in-plain-english/data-driven-approach-to-forms-with-react-c69fd4ea7923
+## [5][Wrote my first reusable component but it's not working quite right. Any ideas?](https://www.reddit.com/r/reactjs/comments/f25nws/wrote_my_first_reusable_component_but_its_not/)
+- url: https://www.reddit.com/r/reactjs/comments/f25nws/wrote_my_first_reusable_component_but_its_not/
+---
+Hi all! So I created a component that "highlights" an element by darkening the whole page except for a circle around the given element. However, I can't seem to get the circle to be exactly centered on the element for some reason. Here's what I have:
+
+https://jscomplete.com/playground/s397512
+
+Does anybody have any recommendations for how I can make sure the circle is positioned correctly? Thanks.
+## [6][80+ Application Ideas for Developers](https://www.reddit.com/r/reactjs/comments/f1rzgn/80_application_ideas_for_developers/)
+- url: https://www.youtube.com/watch?v=TNzCfgwIDCY&amp;feature=share
 ---
 
-## [11][[Q] useState](https://www.reddit.com/r/reactjs/comments/f1pnor/q_usestate/)
-- url: https://www.reddit.com/r/reactjs/comments/f1pnor/q_usestate/
+## [7][Nullish coalescing with React and TypeScript](https://www.reddit.com/r/reactjs/comments/f23fqr/nullish_coalescing_with_react_and_typescript/)
+- url: https://www.carlrippon.com/nullish-coalescing-with-react-and-typescript/
 ---
-I’m new to react and would like to ask how do I use the updated state of a value and pass it down to another function with an equation? 
 
-e.g 
-
-const [mass,setMass] = useState(0)
-const [vol,setVol] = useState(0)
-function Sum(mass, vol) {
-     return mass + vol }
-
-return(
-  &amp;lt;div class and=“App”&amp;gt;
-       &amp;lt;input onChange={e =&amp;gt; setMass(e.target.value)} /&amp;gt;
-  &amp;lt;p&amp;gt; Mass: {mass} &amp;lt;/p&amp;gt;
-
-  &amp;lt;div class and=“App”&amp;gt;
-       &amp;lt;input onChange={e =&amp;gt; setVol(e.target.value)} /&amp;gt;
-  &amp;lt;p&amp;gt; Volume: {vol} &amp;lt;/p&amp;gt;
-
-  &amp;lt;p&amp;gt; Sum: {sum} &amp;lt;/p&amp;gt;
-)
-
-May i know ask how do I create an onSubmit button to store the updated states of setMass and setVol and what am i doing wrong here?
-## [12][Sending data to react](https://www.reddit.com/r/reactjs/comments/f1pfgi/sending_data_to_react/)
-- url: https://www.reddit.com/r/reactjs/comments/f1pfgi/sending_data_to_react/
+## [8][is this useContext &amp; useReducer Pattern good?](https://www.reddit.com/r/reactjs/comments/f2510a/is_this_usecontext_usereducer_pattern_good/)
+- url: https://www.reddit.com/r/reactjs/comments/f2510a/is_this_usecontext_usereducer_pattern_good/
 ---
-I have a small application where I can send some data to a node.js server. The server then uses that data to run a command to get some values in return. How can I then use those values in react?
+this is code demo 
 
-To better understand:
+[https://codesandbox.io/s/sparkling-wood-1bx8s](https://codesandbox.io/s/sparkling-wood-1bx8s)
+## [9][Context and Global functions](https://www.reddit.com/r/reactjs/comments/f283pd/context_and_global_functions/)
+- url: /r/reactnative/comments/f2839l/context_and_global_functions/
+---
 
-application uses http GET (opens a browser window) like:  localhost:3000/info?hostName=XXXXX
+## [10][React Dashboard with built in ElasticSearch Support](https://www.reddit.com/r/reactjs/comments/f27xke/react_dashboard_with_built_in_elasticsearch/)
+- url: https://medium.appbase.io/using-elasticsearch-to-create-a-react-based-dashboard-afe064716f20
+---
 
-Node.js server gets the hostname and runs a powershell-command using the hostname.
+## [11][I wrote this article to share all the VS Code extensions that have made my life easier as a web developer. I hope it helps, and let me know if I missed anything!](https://www.reddit.com/r/reactjs/comments/f1t6pq/i_wrote_this_article_to_share_all_the_vs_code/)
+- url: https://dev.to/zaklaughton/every-vs-code-extension-a-javascript-web-developer-should-have-in-2020-with-gifs-2b6n
+---
 
-How can I display the info from the node.js server in the opened windows using react?
+## [12][I created a template for an SaaS/Admin web application using React and Material-UI](https://www.reddit.com/r/reactjs/comments/f271ex/i_created_a_template_for_an_saasadmin_web/)
+- url: https://github.com/dunky11/react-saas-template
+---
+

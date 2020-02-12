@@ -85,59 +85,79 @@ score  |  comment  |
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][4 Methods to Search Through Arrays in JavaScript](https://www.reddit.com/r/javascript/comments/f26f47/4_methods_to_search_through_arrays_in_javascript/)
+## [3][Hey r/javascript! We're a small team that just launched a new product called Autocode that lets you automatically generate Node.js API code for connecting apps together. Would love feedback! (x-post r/node)](https://www.reddit.com/r/javascript/comments/f2ocr2/hey_rjavascript_were_a_small_team_that_just/)
+- url: https://autocode.com/
+---
+
+## [4][A GraphQL-based Web App written with React, Go and MongoDB. Could serve as an example for those who are learning these technologies. The repo includes a detailed description on how to setup dev environmwnt and how to work with the project.](https://www.reddit.com/r/javascript/comments/f2an2t/a_graphqlbased_web_app_written_with_react_go_and/)
+- url: https://github.com/Shpota/skmz/
+---
+
+## [5][4 Methods to Search Through Arrays in JavaScript](https://www.reddit.com/r/javascript/comments/f26f47/4_methods_to_search_through_arrays_in_javascript/)
 - url: https://alligator.io/js/array-search-methods/
 ---
 
-## [4][How I built Heimdall, an open-source personal email guardian (Typescript, Serverless, AWS)](https://www.reddit.com/r/javascript/comments/f20l6n/how_i_built_heimdall_an_opensource_personal_email/)
-- url: https://medium.com/@fabianterh/how-i-built-heimdall-an-open-source-personal-email-guardian-68e306d172d1
+## [6][Create A React Custom Hooks For Your Web Components](https://www.reddit.com/r/javascript/comments/f2qs0v/create_a_react_custom_hooks_for_your_web/)
+- url: https://medium.com/@david.dalbusco/create-a-react-custom-hooks-for-your-web-components-f4319bb4bc35
 ---
 
-## [5][I created a template for an SaaS/Admin application using React and Material-UI](https://www.reddit.com/r/javascript/comments/f2708i/i_created_a_template_for_an_saasadmin_application/)
-- url: https://github.com/dunky11/react-saas-template
+## [7][Realtime chat app with like/dislike of messages and audio messages](https://www.reddit.com/r/javascript/comments/f2n6ez/realtime_chat_app_with_likedislike_of_messages/)
+- url: https://iabhishek.dev/post/building-a-multimedia-chat-app-using-express-socketio-redis-and-docker-part-3
 ---
 
-## [6][I this madness supposed to be all the things you need to know as a JavaScript Developer today?](https://www.reddit.com/r/javascript/comments/f1r3pr/i_this_madness_supposed_to_be_all_the_things_you/)
-- url: https://roadmap.sh/frontend
+## [8][[AskJS] How to filter success: false and success: true in an object](https://www.reddit.com/r/javascript/comments/f2qafd/askjs_how_to_filter_success_false_and_success/)
+- url: https://www.reddit.com/r/javascript/comments/f2qafd/askjs_how_to_filter_success_false_and_success/
 ---
+ 
 
-## [7][Compiling Haskell to JavaScript, not in the way you'd expect](https://www.reddit.com/r/javascript/comments/f220ml/compiling_haskell_to_javascript_not_in_the_way/)
-- url: http://oleg.fi/gists/posts/2020-02-09-compiling-haskell-to-javascript.html
----
+I have an Ajax response, within the object I have
 
-## [8][Axios Decorators: HTTP client library with Axios and JavaScript decorators](https://www.reddit.com/r/javascript/comments/f1vesb/axios_decorators_http_client_library_with_axios/)
-- url: https://github.com/FriendsOfReact/axios-decorators
----
+`success: false and success: "" (true)`
 
-## [9][The simple Math every developer should know](https://www.reddit.com/r/javascript/comments/f1rsmg/the_simple_math_every_developer_should_know/)
-- url: https://medium.com/@boltmick1/the-simple-math-every-developer-should-know-3f9b25446550
----
-
-## [10][[AskJS] Get Element value from Ajax response](https://www.reddit.com/r/javascript/comments/f27wqc/askjs_get_element_value_from_ajax_response/)
-- url: https://www.reddit.com/r/javascript/comments/f27wqc/askjs_get_element_value_from_ajax_response/
----
-I've been trying to get values from an ajax response -- without any success, the closest I got was getting an array of undignified.
-
-`$.each(JSON.parse(response,function(i,value){console.log(value[1].schools);}));`
-
-Here is a screenshot of my ajax response
+How do I separate or call only json with a success: false ? or success: true ?
 
 &amp;#x200B;
 
-&amp;#x200B;
+[screenshot](https://preview.redd.it/m1ypra9phhg41.png?width=897&amp;format=png&amp;auto=webp&amp;s=5fcbb233863341e59f37436b8e92f33620d6f05b)
 
-[json response](https://preview.redd.it/yatsndxokag41.png?width=943&amp;format=png&amp;auto=webp&amp;s=d83834a4e53f7f5e2d61aa1a107527d50d4a2a45)
+screenshot
 
-&amp;#x200B;
+So when I get my result like I can filter by success: true or success:false
 
-I need to store name + success:false + column + message to a variable
+`//Return all success: true`
 
-Thanks for your help!
-## [11][Learn and use some core JavaScript by Building The Game of Life](https://www.reddit.com/r/javascript/comments/f27s5n/learn_and_use_some_core_javascript_by_building/)
-- url: https://medium.com/javascript-in-plain-english/the-game-of-life-using-javascript-fc1aaec8274f
+`var result_true = json.data.map(function(d) {`  
+`return {`  
+   `name:` [`d.request.name`](https://d.request.name)`,`  
+`success: d.success, //currently returning blank`  
+   `column: d.column,`  
+   `message: d.message`  
+`}})`
+
+\-------------------------------------------------------------
+
+`//Return all success: false`
+
+`var result_false = json.data.map(function(d) {`  
+`return {`  
+`name:` [`d.request.name`](https://d.request.name)`,`  
+`success: d.success, //currently returning blank`  
+`column: d.column,`  
+`message: d.message`  
+`}})`
+## [9][Writing dependency-free JavaScript](https://www.reddit.com/r/javascript/comments/f2pb98/writing_dependencyfree_javascript/)
+- url: https://magnushoff.com/blog/dependency-free-javascript/
 ---
 
-## [12][List of OSS project funding opportunities](https://www.reddit.com/r/javascript/comments/f239pi/list_of_oss_project_funding_opportunities/)
-- url: https://www.reddit.com/r/opensource/comments/f1ojht/monetizeyourcode_list_of_oss_project_funding/
+## [10][I've been working with the AWS CDK a lot recently, and wanted to share some learning!](https://www.reddit.com/r/javascript/comments/f2iqy2/ive_been_working_with_the_aws_cdk_a_lot_recently/)
+- url: https://terodox.tech/aws-cdk/
+---
+
+## [11][Speech to text in the browser with the Web Speech API](https://www.reddit.com/r/javascript/comments/f2mlbc/speech_to_text_in_the_browser_with_the_web_speech/)
+- url: https://www.twilio.com/blog/speech-recognition-browser-web-speech-api
+---
+
+## [12][Thinking With Autotracking: What Makes a Good Reactive System?](https://www.reddit.com/r/javascript/comments/f2m8e9/thinking_with_autotracking_what_makes_a_good/)
+- url: https://www.pzuraq.com/thinking-with-autotracking-what-makes-a-good-reactive-system/
 ---
 

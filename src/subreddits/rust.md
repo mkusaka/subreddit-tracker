@@ -33,81 +33,257 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/f1uej1/whats_everyone_working_on_this_week_72020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-7-2020/38078?u=llogiq)!
-## [3][Scaling back my involvement in Rust](https://www.reddit.com/r/rust/comments/f268p6/scaling_back_my_involvement_in_rust/)
+## [3][A handwired unsplitted ergo keyboard with a firmware written in Rust](https://www.reddit.com/r/rust/comments/f2o9y8/a_handwired_unsplitted_ergo_keyboard_with_a/)
+- url: https://raw.githubusercontent.com/TeXitoi/keyberon-f4/master/images/keyberon-56.jpg
+---
+
+## [4][Async Interview #6: Eliza Weisman](https://www.reddit.com/r/rust/comments/f2ib1c/async_interview_6_eliza_weisman/)
+- url: https://smallcultfollowing.com/babysteps/blog/2020/02/11/async-interview-6-eliza-weisman/
+---
+
+## [5][Speed of Development](https://www.reddit.com/r/rust/comments/f2ksja/speed_of_development/)
+- url: https://www.reddit.com/r/rust/comments/f2ksja/speed_of_development/
+---
+One of the criticisms I see most often of Rust is that it takes a long time to write code in Rust. Usually I then see it compared to C, as in C is faster to develop with. This is interesting to me because Python was made partially because using C for certain software was time-consuming. I understand Rust takes a little more time simply because one cannot write ridiculously unsafe code.
+
+ As Rust matures has there been a noticeable increase in development speed? Or is it the opposite? I'm interested in the communities' opinions on this.
+## [6][Scaling back my involvement in Rust](https://www.reddit.com/r/rust/comments/f268p6/scaling_back_my_involvement_in_rust/)
 - url: https://internals.rust-lang.org/t/scaling-back-my-involvement-in-rust/11754
 ---
 
-## [4][Let's Be Real About Dependencies](https://www.reddit.com/r/rust/comments/f1xiub/lets_be_real_about_dependencies/)
-- url: https://wiki.alopex.li/LetsBeRealAboutDependencies
+## [7][Wrote a tool in rust for managing multiple git repositories](https://www.reddit.com/r/rust/comments/f2quld/wrote_a_tool_in_rust_for_managing_multiple_git/)
+- url: https://www.reddit.com/r/rust/comments/f2quld/wrote_a_tool_in_rust_for_managing_multiple_git/
 ---
-
-## [5][Announcing: jlrs. Call arbitrary Julia code from Rust and share data between the two languages](https://www.reddit.com/r/rust/comments/f1v00r/announcing_jlrs_call_arbitrary_julia_code_from/)
-- url: https://www.reddit.com/r/rust/comments/f1v00r/announcing_jlrs_call_arbitrary_julia_code_from/
+u/leoOrion and myself wrote this [https://github.com/thecasualcoder/gg](https://github.com/thecasualcoder/gg). It written with very minimal knowledge of rust(just 10 chapters of the  book). Would love if y'all had a try with it. Any thoughts towards  improving it codewise and feature wise would be very useful for us. Hope  a few of you might find it useful. It currently can clone, fetch, show  status and create repositories.
+## [8][Iterating through vectors and borrowing hell- What am I doing wrong?](https://www.reddit.com/r/rust/comments/f2ppc0/iterating_through_vectors_and_borrowing_hell_what/)
+- url: https://www.reddit.com/r/rust/comments/f2ppc0/iterating_through_vectors_and_borrowing_hell_what/
 ---
-After quite some effort I'm finally ready to release first version of `jlrs`, the [Julia](https://julialang.org) bindings I've been working on for the past few weeks. 
+im new to rust, and so I've got this struct `mesh`, this vector, and this loop. 
 
-This first version brings many nice features. For example:
+The struct `Mesh` has the property `tris` that is a vector full of `Triangle` objects.
 
-- Primitive data and strings can be copied from Rust to Julia.
+This is my loop:
 
-- N-dimensional arrays containing primitive data can be created; their contents can either be completely managed by Julia, take ownership of data from Rust, or mutably borrow data from Rust.
+`fn render_pixel(u:f32, v:f32,c:&amp;Camera,meshes:Vec&lt;Mesh&gt;) -&gt; image::Rgba&lt;u8&gt; {`  
+ `//takes f32 u and v as arguments. Returns a color in RGBA.`  
+ `//creates a ray based on camera and UV position, and gets the color under that ray.`  
+ `let r = Ray::new(c.origin,Vector3::new(v,u,0.0));`  
+ `for mesh in meshes.iter(){`  
+ `for tri in mesh.tris.iter(){`  
+ `if tri.hits_ray(r).0{`  
+ `return image::Rgba([(u*255.0) as u8,(v*255.0) as u8,0,255]); //if hit return UV for test.`  
+`}`  
+`}`  
+`}`  
+ `return image::Rgba([0,0,0,255]); //if nothing hit return black.`  
+`}`
 
-- All of these can be copied back from Julia to Rust.
+meshes is passed to function call `render_pixel(u, v,&amp;cam,world_meshes)`.
 
-- You can acquire handles to arbitrary modules, globals and functions, and call the latter.
+`world_meshes` is a vector full of `Mesh` structs defined like so:
 
-- You can include and call your own Julia code.
+`plane = Mesh {arguments blah blah}`
 
-- If a Julia function returns another function, you can call it.
+`let mut world_meshes = Vec::new();`  
+`world_meshes.push(plane);`
 
-- You can only use Julia data that is guaranteed to be protected from garbage collection.
+When I run this, I get the errors
 
-Of course, not everything is great yet. Some of it is due to limitations of Julia itself: access to the runtime is single-threaded, for example, and that thread will block when it's calling Julia code; you can't simply "pause" a long-running computation to quickly do some smaller amounts of work. Thread support in Julia itself is still in an experimental phase. Most annoyingly, the documentation is not available on docs.rs at this time because the bindings can't be compiled. If anyone could help me fix that or point me in the right direction, your help would be greatly appreciated (and yes, my failed attempts to fix it are the reason several version have been released already... sorry about that).
+`error[E0507]: cannot move out of \`*tri\` which is behind a shared reference`
 
-Luckily, the readme in the Github repository should provide enough details to build this crate, `cargo doc` will work if you're able to build it.
+  `--&gt; src/main.rs:97:16`
 
-You probably shouldn't use this crate to do many one-off or short-and-simple computations; in the first case, the fact that Julia code is JIT-compiled will bite you, in the latter the overhead of this crate will. Rather, you should use it to call sufficiently complex functions that you will call regularly, or to use functionality that's not available in Rust yet. 
+   `|`
 
-Another possible use case is one that actually motivated me to keep writing this. I work as (mostly) a software engineer in vision and robotics, a recurring task is to convert some specific algorithm written in Python to C++ for both performance reasons and so we can integrate it into the software that actually powers the products we sell. This is an error-prone process (rewriting software always is), takes a lot of time, and you now have two versions of some code to maintain. If I were able to just call the "original" code with great performance, we'd be rid of the split codebase and save a lot of time and money in the process.
+`97 |             if tri.hits_ray(r).0{`
 
-[crates.io](https://crates.io/crates/jlrs)
+   `|                ^^^ move occurs because \`*tri\` has type \`Triangle\`, which does not implement the \`Copy\` trait`
 
-[Github](https://github.com/Taaitaaiger/jlrs)
-## [6][rust-analyzer Changelog #11](https://www.reddit.com/r/rust/comments/f1tnem/rustanalyzer_changelog_11/)
-- url: https://rust-analyzer.github.io/thisweek/2020/02/10/changelog-11.html
+&amp;#x200B;
+
+`error[E0382]: use of moved value: \`r\``
+
+  `--&gt; src/main.rs:97:29`
+
+   `|`
+
+`94 |     let r = Ray::new(c.origin,Vector3::new(v,u,0.0));`
+
+   `|         - move occurs because \`r\` has type \`bvh::ray::Ray\`, which does not implement the \`Copy\` trait`
+
+`...`
+
+`97 |             if tri.hits_ray(r).0{`
+
+   `|                             ^ value moved here, in previous iteration of loop`
+
+What am I doing wrong and how do I fix it? I know I have to borrow something, but I can't figure out what!
+## [9][Building a packet capturing/network proxy with ssl capabilities](https://www.reddit.com/r/rust/comments/f2pbhz/building_a_packet_capturingnetwork_proxy_with_ssl/)
+- url: https://www.reddit.com/r/rust/comments/f2pbhz/building_a_packet_capturingnetwork_proxy_with_ssl/
 ---
+Hi I’ve been looking for an interesting project to force myself to really learn rust and I’ve decided that building a network traffic interceptor would be something sufficiently large and within my interests. 
 
-## [7][A primer to Rust Async](https://www.reddit.com/r/rust/comments/f1y410/a_primer_to_rust_async/)
-- url: https://omarabid.com/async-rust
+I’ve done some novel web assembly / rust work and dove into Phil opperman’s build an OS course a bit but it feels like I’m just dabbling. 
+
+I’ve been using Charles lately for work to reverse engineer API calls to better understand the operation of some black boxed binaries I need to use and would like to create something similar. 
+
+Should I mostly be looking at the standard library or are there other useful networking libraries I should look at? 
+
+Also are there any other rust based projects like this that you are aware of? 
+
+Any other advice?
+
+Thank you!
+## [10][Selective inheritance/inheritance by composition](https://www.reddit.com/r/rust/comments/f2n5m9/selective_inheritanceinheritance_by_composition/)
+- url: https://www.reddit.com/r/rust/comments/f2n5m9/selective_inheritanceinheritance_by_composition/
 ---
+I know that the rust community isn't too fond of inheritance, but hear me out.
 
-## [8][Quantitative data on the safety of Rust](https://www.reddit.com/r/rust/comments/f1ynel/quantitative_data_on_the_safety_of_rust/)
-- url: https://www.reddit.com/r/rust/comments/f1ynel/quantitative_data_on_the_safety_of_rust/
+First of all, if this were to be implemented, it'd have to be opt in by trait creators, making it really useless, but then again, it's not like this is going to become a language feature ever, so really I just want thoughts as to how to solve this issue in particular.
+
+Rust prefers composition over inheritance, but sometimes that can be annoying. I ran into this problem in Java while coding a tree node, of which there are multiple types of different capabilities but build on top of each other. A classic use case for inheritance.
+
+Here's my idea for how to "add inheritance" to the language.
+
+    trait Thing {
+        fn a() -&gt; u32 {}
+    }
+    struct A {
+        value: u32
+    }
+    impl Thing for A {
+        fn a(&amp;self) -&gt; u32 {
+            self.a
+        }
+    }
+    
+    #[inherit(Thing(inner))]
+    struct B {
+        inner: A
+    }
+    
+    fn main() {
+        let test = B{inner: A{value: 24}};    
+        println!("{}", test.a());
+    }
+
+The idea is that we still use composition, but we can "inherit" certain traits from objects we compose from. The idea is that we'll be able to override anything we don't want to directly compose, but other than that, all those trait methods are passed down to the variable we specify.
+
+Another theoretical syntax is:
+
+    inherit Thing for B.inner {
+        // put stuff here you wanna override
+    }
+    
+    fn main() {
+        let test = B{inner: A{value: 24}};    
+        println!("{}", test.a());
+    }
+
+All this obviously isn't real inheritance, but it is less complicated and more rusty. What do y'all think? How would we tackle a problem like the one above in Rust today? What are some strengths/weaknesses of this theoretical language feature?
+
+There is one thing that this is lacking, and that's layering with generics. Here's an example: 
+
+    trait Base {
+        fn base() -&gt; u32 {}
+    }
+    trait Thing1 {
+        fn a() -&gt; u32 {}
+    }
+    trait Thing2 {
+        fn b() -&gt; u32 {}
+    }
+    
+    #[inherit(Base(inner))]
+    struct A&lt;T: Base&gt; {
+        inner: T
+        a: u32
+    }
+    impl&lt;T&gt; Thing1 for A&lt;T&gt; {
+        fn a(&amp;self) -&gt; u32 {
+            self.a * self.base()
+        }
+    }
+    
+    #[inherit(Base(inner))]
+    struct B&lt;T: Base&gt; {
+        inner: T
+        b: u32
+    }
+    impl&lt;T&gt; Thing2 for B&lt;T&gt; {
+        fn b(&amp;self) -&gt; u32 {
+            self.b + self.base()
+        }
+    }
+    
+    struct C {
+        value: u32
+    }
+    impl Base for C {
+        fn base(&amp;self) -&gt; u32 {
+            self.value
+        }
+    }
+    
+    // this type doesn't implement both Thing1 and Thing2 like normal inheritance would have it
+    type DoesntHasBoth = A&lt;B&lt;C&gt;&gt;;
+## [11][QUAD MAX HAPIS SERVER](https://www.reddit.com/r/rust/comments/f2r9k4/quad_max_hapis_server/)
+- url: https://www.reddit.com/r/rust/comments/f2r9k4/quad_max_hapis_server/
 ---
-While the safety benefits of Rust make a lot of sense intuitively, the presence of `unsafe` makes that intuition less clear-cut. As far as I'm aware there is little hard data on how real-world Rust code performs in terms of security compared to other languages. I've realized that I might just contribute a quantitative data point.
+ HapiFest Vanilla \[4 Man Max\] Bi-Weekly
 
-[Fuzzing](https://en.wikipedia.org/wiki/Fuzzing) is quite common in the Rust ecosystem nowadays, largely thanks to the [best-of-breed tooling](https://github.com/rust-fuzz/cargo-fuzz) we have at our disposal. There is also a [trophy case](https://github.com/rust-fuzz/trophy-case) of real-world bugs found in Rust code via fuzzing. It lists ~200 bugs as of commit [17982a8](https://github.com/rust-fuzz/trophy-case/commit/17982a86c7d4696aecfa96e2c271dbdc28318d30), out of which only 5 are security vulnerabilities - or 2.5%. Contrast this with the results from Google's [OSS-fuzz](https://github.com/google/oss-fuzz), which fuzzes high-profile C and C++ libraries: out of [15807](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=proj&amp;colspec=ID%20Type%20Component%20Status%20Proj%20Reported%20Owner%20Summary&amp;num=100&amp;q=-status%3AWontFix%2CDuplicate%20-Infra%20type%3Abug&amp;can=1)  bugs discovered [3600](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=proj&amp;colspec=ID%20Type%20Component%20Status%20Proj%20Reported%20Owner%20Summary&amp;num=100&amp;q=-status%3AWontFix%2CDuplicate%20-Infra%20type%3Abug-security&amp;can=1) are security issues. That's a whopping 22%!
+ Have you had enough of zergs on hapis? then look no further.  HapiFest is the new 4 man max hapis server with active none playing admins with an around the clock support service in the HapiFest public discord linked below. 
 
-OSS-fuzz and Rust ecosystem use the exact same fuzzing backends (afl, libfuzzer, honggfuzz) so these results should be directly comparable. I'm not sure how representative a sample size of 200 is, so I'd appreciate statistical analysis on this data.
+ Features of the server 
 
-Note that this approach only counts the bugs that actually made it into a compiled binary, so it does **not** account for bugs prevented statically. For example, iterators make out-of-bounds accesses impossible, `Option&lt;T&gt;` and `&amp;T` make null pointer dereferences impossible and lifetime analysis makes use-after-frees impossible. All of these bugs were eliminated before the fuzzer could even get to them, so I expect the security defect rate for Rust code to be even lower than these numbers suggest.
+ \-Bi-weekly map wipes 
 
-**TL;DR:** out of bugs found by the exact same tooling in C/C++ 22% of them pose a security issue while in Rust it's 2.5%. That is about an order of magnitude difference. Actual memory safety defect rates in Rust should be even lower because some bugs are prevented statically and don't make it into this statistic.
+ \-Monthly BP wipes 
 
-This only applies to memory safety bugs, which account for about 70% of all security bugs [according to Microsoft](https://www.zdnet.com/article/microsoft-70-percent-of-all-security-bugs-are-memory-safety-issues/). Mozilla had also [independently arrived to the same estimate](https://hacks.mozilla.org/2019/02/rewriting-a-browser-component-in-rust/).
-## [9][Copyright implications of brute forcing all 12-tone major melodies in approximately 2.5 TB.](https://www.reddit.com/r/rust/comments/f1ukv0/copyright_implications_of_brute_forcing_all/)
-- url: https://youtu.be/sfXn_ecH5Rw
+ \-Active Non-playing Admins 
+
+ \-Solo/Duo/Trio/Quad  
+
+\-Fully Vanilla Hapis 
+
+&amp;#x200B;
+
+ Connection to the server
+
+ Go to f1 console the copy the information below Client.connect 94.130.71.233:28221 
+
+ 
+
+Discord 
+
+Our public discord is linked below where you can give us feedback and suggestions or even find new teammates also our discord is there so you can report players or even if you just want to talk.  [https://discord.gg/wswJM5w](https://discord.gg/wswJM5w)  
+
+Sincerely Team-HapiFest
+## [12][can program depend on the same create twice, but with different features?](https://www.reddit.com/r/rust/comments/f2fsi8/can_program_depend_on_the_same_create_twice_but/)
+- url: https://www.reddit.com/r/rust/comments/f2fsi8/can_program_depend_on_the_same_create_twice_but/
 ---
+Hello,
 
-## [10][Debugging Rust in VSCode in 2020](https://www.reddit.com/r/rust/comments/f1qsx9/debugging_rust_in_vscode_in_2020/)
-- url: https://jason-williams.co.uk/debugging-rust-in-vscode
----
+Is it possible to add to the program dependencies the same create twice (with the same version and location, but different futures)?
 
-## [11][Redelete: delete your reddit comments/submissions with optional filters to skip certain ones. Fun project for me to learn async/await, rust, oauth, and testing.](https://www.reddit.com/r/rust/comments/f1zcu4/redelete_delete_your_reddit_commentssubmissions/)
-- url: https://github.com/ardeaf/redelete
----
+I have in Cargo.toml of my program:
 
-## [12][Lib.rs - crates.io on steroids](https://www.reddit.com/r/rust/comments/f1mr4h/librs_cratesio_on_steroids/)
-- url: https://lib.rs/
----
+    [dependencies]
+    a = { path = "../x", package = "x" }
+    b = { path = "../x", package = "x", features = ["custom"] }
 
+which cause error:
+
+    error: the crate `...` depends on crate `x v0.1.0 (...)` multiple times with different names
+
+I have also tried adding to the beginning of Cargo.toml:
+
+    cargo-features = ["rename-dependency"]
+
+but the error was the same and additionally I got the warning:
+
+    the cargo feature `rename-dependency` is now stable and is no longer necessary to be listed in the manifest
+
+Thanks for any advise!
+
+Best regards, Piotr.

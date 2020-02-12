@@ -1,110 +1,108 @@
 # aws
-## [1][Ansible over AWS Systems Manager Sessions – a perfect solution for high security environments](https://www.reddit.com/r/aws/comments/f25bxn/ansible_over_aws_systems_manager_sessions_a/)
-- url: https://luktom.net/en/e1693-ansible-over-aws-systems-manager-sessions-a-perfect-solution-for-high-security-environments
+## [1][Calling AWS Architects: How common is the request to implement ipv6?](https://www.reddit.com/r/aws/comments/f2ffha/calling_aws_architects_how_common_is_the_request/)
+- url: https://www.reddit.com/r/aws/comments/f2ffha/calling_aws_architects_how_common_is_the_request/
 ---
+Any Architects here? 
 
-## [2][SQL vs NoSQL](https://www.reddit.com/r/aws/comments/f1x0qk/sql_vs_nosql/)
-- url: https://www.reddit.com/r/aws/comments/f1x0qk/sql_vs_nosql/
+How common is the client request to implement IpV6? When the question is raised, is the client future-proofing, migrating a existing ipv6 service, or just wants to have it because its fancy? Natting pretty much solves ipv4 problems, so whats the big deal?
+
+I did some lite research and found this thread: 
+
+[https://www.reddit.com/r/aws/comments/af4sj3/when\_do\_i\_need\_to\_care\_about\_ipv6/](https://www.reddit.com/r/aws/comments/af4sj3/when_do_i_need_to_care_about_ipv6/) 
+
+That basically said - Hey cloudfront is neat when it's ipv6. Linkedin uses ipv6 for mobile traffic. It's simple enough to implement and subnet but my question is:
+
+What are the common scenarios in which a client wants ipv6 implemented? Does supporting both add any significant management overhead or make anything easier to deal with?
+## [2][Billing through AWS consulting partner?](https://www.reddit.com/r/aws/comments/f2oq5r/billing_through_aws_consulting_partner/)
+- url: https://www.reddit.com/r/aws/comments/f2oq5r/billing_through_aws_consulting_partner/
 ---
-Hey folks, wanted to share a youtube channel that I've been working on dedicated to providing simple and easy to digest tutorials on various AWS services.
+Hi, we were approached by AWS consulting Partner. They offered us to transfer billing to them mentioning that the price will be the same but we will have help from their architects. That's sounds quite good but I'm not sure is there any drawbacks/ security risks about that?
 
-My newest video discusses the difference between SQL and NoSQL in the AWS context.
-
-The video is available here: https://youtu.be/ruz-vK8IesE
-
-Thank you!
-## [3][Help: RCS &lt;-&gt; EC2 latency? Has anyone seen this issue before?](https://www.reddit.com/r/aws/comments/f277nl/help_rcs_ec2_latency_has_anyone_seen_this_issue/)
-- url: https://www.reddit.com/r/aws/comments/f277nl/help_rcs_ec2_latency_has_anyone_seen_this_issue/
+Thanks
+## [3][Kinesis with enabled encryption - no data coming in Firehose and S3](https://www.reddit.com/r/aws/comments/f2r1of/kinesis_with_enabled_encryption_no_data_coming_in/)
+- url: https://www.reddit.com/r/aws/comments/f2r1of/kinesis_with_enabled_encryption_no_data_coming_in/
 ---
-Hi! I'm a front-end / design guy currently trying to help an AWS customer resolve their database issues (so way out of my depth here!).
+Hi /r/aws,
 
-They have outsourced their development to an external third-party development company and that company doesn't seem to be able to solve their issue, so I'm calling on Reddit to help!
+I have CloudWatch log groups with subscription filters to Kinesis data streams and then Firehose with that Datastream as a source configured to dump data in S3.
+Everything is working just fine until I turn on encryption on Kinesis Data Streams.
 
-* They have a MySQL database running on RDS and an Express server running on EC2
-* RDS is t2.medium right now
-* one of the queries is taking 8sec\~ to respond with data from RDS to EC2
-   * the query is very fast (sub 10ms I believe) but the payload is 18MB uncompressed.
-   * the third party company is claiming that that 18MB is a huge payload and that the issue is coming from network speed?
-      * I've not personally built anything in MySQL in many years so I'm unsure whether this is normally an issue?
-      * Surely 18MB would normally transfer very quickly from EC2&lt;-&gt;RDS?
+I can't find much about it and only link out there is this:
+https://docs.aws.amazon.com/firehose/latest/dev/encryption.html
 
-What possible solutions should they be looking at here? Right now we're trying to see if upgrading from **t2.large** to **t3.medium** will fix the problem (the developer company says that this will resolve rate limiting issues, but they've led us down this black hole for months now with nothing fruitful in sight).
+When you send data from your data producers to your data stream, Kinesis Data Streams encrypts your data using an AWS Key Management Service (AWS KMS) key before storing the data at rest. When your Kinesis Data Firehose delivery stream reads the data from your data stream, Kinesis Data Streams first decrypts the data and then sends it to Kinesis Data Firehose. Kinesis Data Firehose buffers the data in memory based on the buffering hints that you specify. It then delivers it to your destinations without storing the unencrypted data at rest.
 
-My gut instinct is that there's something more sinister at play here?
-## [4][502 Bad Gateway only when accessing event body in Lambda](https://www.reddit.com/r/aws/comments/f23yok/502_bad_gateway_only_when_accessing_event_body_in/)
-- url: https://www.reddit.com/r/aws/comments/f23yok/502_bad_gateway_only_when_accessing_event_body_in/
+
+If I'm reading this well, seems like Firehose doesn't need access to KMS key? Looks like Data Streams would take care of decryption before sending data to Firehose?
+
+I have tried multiple things, different policies and permissions and nothing, just can't get anything to Firehose as long as I have Encryption enabled.
+
+Any hints or ideas? Thanks!
+## [4][HOW to REMOVE NON_EXISTING TARGET_GROUP from AUTO-SCALING](https://www.reddit.com/r/aws/comments/f2o7jr/how_to_remove_non_existing_target_group_from/)
+- url: https://www.reddit.com/r/aws/comments/f2o7jr/how_to_remove_non_existing_target_group_from/
 ---
-I have been trying to troubleshoot this issue for hours. I have a nodejs function running in aws lambda hooked up to an api gateway rest api. I am trying to get an id out of the body to use as a parameter in my query to RDS, however if i access the variable, i get a 502 internal server error. I've been using JSONparse to get the body into the code as the proxy integration brings it in as string by default. What is really weird is that i can just return that same body through JSON.stringify(body) and it shows that the id is indeed being passed all the way through the entire process. However if I try using the variable in my code by accessing it from the [body.id](https://body.id) after doing JSONparse, it returns the error. I am lost!
-## [5][Some of my node lambdas have errors in their metric - but nothing in their CloudWatch logs](https://www.reddit.com/r/aws/comments/f26an4/some_of_my_node_lambdas_have_errors_in_their/)
-- url: https://www.reddit.com/r/aws/comments/f26an4/some_of_my_node_lambdas_have_errors_in_their/
----
-We have quite a few lambdas, and roughly half are experiencing this problem. We see logs from all of them, so its unlikely that this is a problem with permissions writing to CloudWatch.
+I am facing a problem explained below:
 
-The symptoms are as follows:
+I deleted a target group after removing the respective rules from the Application Load Balancer, I forgot to detach the target group from auto-scaling due to which auto-scaling giving error while launching new instances.
 
-We have alarms set up in DataDog to raise an alarm if the aws.lambda.errors metric goes above 1 in a 30 minute window. These alarms have started to be triggered - but we can find no corresponding error in the logs for the lambda -or indeed any lambda.
+*Error: Status Reason: One or more target groups not found. Validating load balancer configuration failed.*
 
-My questions:
+I don't have CLI access for my AWS IAM (account).
 
-* Why do we not see an error in the log? 
-* How would you go about debugging this?
+What should I do to resolve the issue ... Reporting it to the higher authority may bring problem to me.....
 
 &amp;#x200B;
 
-Thanks in advance for any tips!
-## [6][Boto3 Instance Filter?](https://www.reddit.com/r/aws/comments/f27nxg/boto3_instance_filter/)
-- url: https://www.reddit.com/r/aws/comments/f27nxg/boto3_instance_filter/
+Thanks
+## [5][My Amazon Elastic Compute Cloud usage is growing with no EC2 instances running](https://www.reddit.com/r/aws/comments/f2q8qi/my_amazon_elastic_compute_cloud_usage_is_growing/)
+- url: https://www.reddit.com/r/aws/comments/f2q8qi/my_amazon_elastic_compute_cloud_usage_is_growing/
 ---
-Hey Everyone,
+So I am using my 750 hours of free EC2 instance, and I recently shut down all my databases and all my EC2 instances, but my "Current Usage" hours keep growing with no EC2 instances or anything.. What else causes usage of the elastic compute cloud?
+## [6][Powershell and Private ECS/S3 Object Store](https://www.reddit.com/r/aws/comments/f2px5y/powershell_and_private_ecss3_object_store/)
+- url: https://www.reddit.com/r/aws/comments/f2px5y/powershell_and_private_ecss3_object_store/
+---
+My organisation has deployed a DellEMC ECS Object store with compatibility for the S3 API and I am trying to use the AWSPowershell.Netcore module to connect to it.
 
-I'm over here failing at python and would like some help :) I'm trying to print the instance name into cloudwatch, as we leverage that through our Active Directory and recognize systems based on name.  Here's my guess as to the filter, but it's not working - 
+I have googled for days and cannot see any method for telling the session/cmdlets that I want to talk to my own environment and not AWS in the cloud.
+
+Is this even possible?
+## [7][[ECS] CPU utilization in Cloudwatch is different from docker stats](https://www.reddit.com/r/aws/comments/f2phop/ecs_cpu_utilization_in_cloudwatch_is_different/)
+- url: https://www.reddit.com/r/aws/comments/f2phop/ecs_cpu_utilization_in_cloudwatch_is_different/
+---
+Hi,
+
+I noticed today that the cloudwatch metric  **AWS/ECS "CPUUtilization"** is reporting values different from what i have when i do **docker stat** command in the container instance.
+
+For example today in Cloudwatch, the CPU utilization is between 0 and 10% while when i executed docker stat on the container i saw multiple time CPU 100% for the same period.
+
+Why this difference ? 
+
+BTW, i'm using a t3.2xlarge instance type.
+
+Thanks.
+## [8][Wafv2 &amp; CloudFormation](https://www.reddit.com/r/aws/comments/f2p5us/wafv2_cloudformation/)
+- url: https://www.reddit.com/r/aws/comments/f2p5us/wafv2_cloudformation/
+---
+Has anyone had any experience with creating WAFv2 ACLs/Rules with CloudFormation?
+
+I am currently struggling to get WAFv2 resources (specifically Rate Based rules for Cloudfront resources) to create successfully in CloudFormation.
+
+For example, when creating an ACL and rules and setting the scope as CLOUDFRONT I get the following error returned:
+
+    The scope is not valid., field: SCOPE_VALUE, parameter: CLOUDFRONT (Service: Wafv2, Status Code: 400...
+
+I'm hoping I'm doing something wrong but having exhausted the CF documentation for WAFv2 I'm starting to think that there is something up with WAFv2 and CloudFormed resources.
+## [9][AWS console logout timeout](https://www.reddit.com/r/aws/comments/f2oxah/aws_console_logout_timeout/)
+- url: https://www.reddit.com/r/aws/comments/f2oxah/aws_console_logout_timeout/
+---
+Hi,
+
+I don't know if this is the right place to ask this but when I log in to my organization's aws console, it logs me out after 10 minutes. Is there any way to increase this time?
+## [10][[CodeBuild] Deploy artifacts to different S3 directories based on Git branches](https://www.reddit.com/r/aws/comments/f2lruy/codebuild_deploy_artifacts_to_different_s3/)
+- url: https://www.reddit.com/r/aws/comments/f2lruy/codebuild_deploy_artifacts_to_different_s3/
+---
+I'm working on CodeBuild pipeline for a project. The pipeline builds a single artifact from a GitHub repo which is then uploaded to an S3 bucket, which is then accessed at a URL using CloudFront. All of that works fine. What I would like to do is have non-master branches or tag names (i.e., the `CODEBUILD_SOURCE_VERSION` buildspec variable, be denominated by sub-directories. For example, if building from the dev branch build to `/dev/artifact` and `/artifact` for the master branch. I can't seem to get it to work, as putting slashes in the artifact name causes the build to fail.
 
 &amp;#x200B;
 
-            instances = ec2.instances.filter(
-                Filters=[
-                        {'Name' : 'instance-state-name','Values' : ['stopped']},
-                        {'Name' : 'Key', 'Values': ['Name']}
-                ])
-## [7][SES: Tons of abuse messages coming from Yahoo?](https://www.reddit.com/r/aws/comments/f21pc6/ses_tons_of_abuse_messages_coming_from_yahoo/)
-- url: https://www.reddit.com/r/aws/comments/f21pc6/ses_tons_of_abuse_messages_coming_from_yahoo/
----
-Whenever I send out a newsletter to confirmed opted in customers I get a lot of these messages back.  
-
-I am being told yahoo uses an older authentication method, but I don't have a clue on how to resolve these.
-
-Does anyone have an answer?
-
-Thank you!
-
-`Feedback-Type: abuse`  
-`User-Agent: Yahoo!-Mail-Feedback/2.0`  
-`Version: 0.1`  
-`Original-Mail-From: xxxx`  
-`Original-Rcpt-To:` `x``xxx`  
-`Received-Date: Wed, 22 Jan 2020 03:38:34 +0000`  
-`Reported-Domain: amazonses.com`  
-`Authentication-Results: authentication result string is not available`
-## [8][Is creating throwaway AWS accounts against terms of use?](https://www.reddit.com/r/aws/comments/f2605h/is_creating_throwaway_aws_accounts_against_terms/)
-- url: https://www.reddit.com/r/aws/comments/f2605h/is_creating_throwaway_aws_accounts_against_terms/
----
-At work, I'm getting an error in an account that doesn't have a default VPC. At home I want to create a throwaway account and try to reproduce the problem. Is this against the terms of use?
-## [9][Feasibility of using fargate spot containers for sessionless services?](https://www.reddit.com/r/aws/comments/f1uplv/feasibility_of_using_fargate_spot_containers_for/)
-- url: https://www.reddit.com/r/aws/comments/f1uplv/feasibility_of_using_fargate_spot_containers_for/
----
-I'm considering using only fargate spot instances to host a service for my website.  Here are my concerns:
-
-1. Are there periods where no spot containers are available?  If so, the whole premise fails.  I am hoping that there is a constant supply of spot containers, but each instance may only be available for a few minutes.
-2. A SIGTERM is issued to the docker container 2 minutes prior to termination.  Does AWS also automatically change the state to draining?  I don't want my ALB to keep sending requests to a container that is going to be terminated
-## [10][GuardDuty Functionality](https://www.reddit.com/r/aws/comments/f201l7/guardduty_functionality/)
-- url: https://www.reddit.com/r/aws/comments/f201l7/guardduty_functionality/
----
-I'm trying to learn GuardDuty, but I can't get it to report on some of the findings.
-
-In my first test account, I setup GuardDuty and immediately tried to get it to produce findings. I've got some for VPC/DNS findings, but non for the user related findings. Since, I've seen that GuardDuty has a 14 day learning period for the non-DNS/VPC related findings. That GuardDuty would learn all that bad behaviour and my attack attempts as regular user behaviour. Woops. 
-
-I've set up a new account, I've created a handful of users, I've waited 14 days (every so often using the users to login and create an S3 bucket, then delete it, etc). And I still can't make some of the findings pop. 
-
-For example, I tried to make this finding happen:  [https://docs.aws.amazon.com/guardduty/latest/ug/guardduty\_unauthorized.html#unauthorized4](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_unauthorized.html#unauthorized4) . I tried to login to the same user account from a machine in France, Australia and Indonesia... All within 5 minutes. No luck. 
-
-Any ideas on what I'm doing wrong? Does anyone have documentation on this learning mode?
+Any suggestions as to what to do? Right now I'm considering a Lambda function to move/rewrite the object in S3, but I'd like to know if there's a simpler way.

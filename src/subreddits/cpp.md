@@ -57,61 +57,65 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Avast C++ Meetup with Bjarne Stroustrup, Tony van Eerd, and Herb Sutter (Stream on 11th February 2020 6pm CET, 5pm UTC, 9am PCT, 12pm EST)](https://www.reddit.com/r/cpp/comments/f2409z/avast_c_meetup_with_bjarne_stroustrup_tony_van/)
+## [2][Investigating the Performance Overhead of C++ Exceptions](https://www.reddit.com/r/cpp/comments/f2e8l3/investigating_the_performance_overhead_of_c/)
+- url: https://pspdfkit.com/blog/2020/performance-overhead-of-exceptions-in-cpp/
+---
+
+## [3][What's the most annoying bug you've come across?](https://www.reddit.com/r/cpp/comments/f2m9vm/whats_the_most_annoying_bug_youve_come_across/)
+- url: https://www.reddit.com/r/cpp/comments/f2m9vm/whats_the_most_annoying_bug_youve_come_across/
+---
+
+## [4][tser - Tiny Serialization for C++](https://www.reddit.com/r/cpp/comments/f2b0eo/tser_tiny_serialization_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/f2b0eo/tser_tiny_serialization_for_c/
+---
+[https://github.com/KonanM/tser](https://github.com/KonanM/tser)
+
+I thought some of you might find this library useful - I developed this library for solving challenges on [codingame.com](https://codingame.com) . For the challenges there you have a 100KB size limit for all the code, so I needed a tiny serialization/pretty printing library and wanted to develop something under 20KB. That's how I came up with tser. 
+
+**What does tser solve?**
+
+* serialization of nearly all of the STL containers and types, c-arrays and raw pointer
+* base64 encoding support for printing serialized objects to std::cout
+* pretty printing of objects with member names
+* automatically implement comparison operators
+* all in a single header with \~350 lines of code
+
+As stated in the readme of this library - there are much better non intrusive, macro free libraries out there. Pick tser only if you need something small and placing a macro into the classes you need to serialize is acceptable.
+
+What would be interesting for me is to get some feedback if I should make the library even smaller (or if there is a crucial feature missing?)... for example I personally didn't need the pointer or c-array support yet, so I'm not sure if I should drop support for them.  I could also see dropping support for custom save/load methods (e.g. when you really need a compact storage for that big vector&lt;bool&gt;).
+## [5][Combining ZeroMQ &amp; POSIX signals: Use ppoll to handle EINTR once and for all](https://www.reddit.com/r/cpp/comments/f2r1i6/combining_zeromq_posix_signals_use_ppoll_to/)
+- url: https://blog.esciencecenter.nl/combining-zeromq-posix-signals-b754f6f29cd6
+---
+
+## [6][Avast C++ Meetup with Bjarne Stroustrup, Tony van Eerd, and Herb Sutter (Stream on 11th February 2020 6pm CET, 5pm UTC, 9am PCT, 12pm EST)](https://www.reddit.com/r/cpp/comments/f2409z/avast_c_meetup_with_bjarne_stroustrup_tony_van/)
 - url: https://www.youtube.com/watch?v=o2V544cHNKE
 ---
 
-## [3][Five Awesome C++ Papers for the Prague ISO Meeting and C++20 Status](https://www.reddit.com/r/cpp/comments/f1njuc/five_awesome_c_papers_for_the_prague_iso_meeting/)
+## [7][Question about good OOP object usage technique.](https://www.reddit.com/r/cpp/comments/f2hnpl/question_about_good_oop_object_usage_technique/)
+- url: https://www.reddit.com/r/cpp/comments/f2hnpl/question_about_good_oop_object_usage_technique/
+---
+Hello there. I am semi-new to C++ OOP. There are several things i still can't wrap my head around. For example i have class "Engine", which has an object 'player' of a class "Player". The "Engine" class controls input and thus updates player's position based on this input. However, my second class called "World" is used for rendering stuff, in which i would like player to be also rendered. How should i handle situation like this? Pass the reference to the player object using constructor of "World" class (But that would look messy imho). Any suggestion, tips and good advices are welcome.
+## [8][What they should improve about C++ ?](https://www.reddit.com/r/cpp/comments/f2ifpt/what_they_should_improve_about_c/)
+- url: https://www.reddit.com/r/cpp/comments/f2ifpt/what_they_should_improve_about_c/
+---
+What they should improve about C++ that you find in higher level managed language like C#, JAVA, Javascript etc or is there things you would change or do differently if it was up to you ? I mean anything like a better STL ? better thread ? string manipulation like managed language ? less fragmentations in the new standard features ? For example do you love the way the standard evolve C++ or you would prefer a direction like Microsoft do with C# a corporation who decide on the roadmap ?
+## [9][Is there any Github repo that shows you every trick you need to know in order to manage the memory of any C++ application?](https://www.reddit.com/r/cpp/comments/f2kpk6/is_there_any_github_repo_that_shows_you_every/)
+- url: https://www.reddit.com/r/cpp/comments/f2kpk6/is_there_any_github_repo_that_shows_you_every/
+---
+I think the best way to learn something is to find the simplest example that encompasses everything you need to know. That's why I am wondering if there's any good repository on Github with a C++ project that use every tool in the toolkit for memory management.
+## [10][Cpp Image Processing Library](https://www.reddit.com/r/cpp/comments/f29b08/cpp_image_processing_library/)
+- url: https://www.reddit.com/r/cpp/comments/f29b08/cpp_image_processing_library/
+---
+Hey so a couple of months ago i started developing a simple library for image processing and developing for c++ ,i got tired of including many additional dependencies  to my project as i had to do with opencv and other existing API , as for now the project is still under development but already it provides the users with a vast amount of tools , if you are looking for a simple library which only requires of you to include some header files and start working i really think my library can give you the tools needed , beside that i would be happy to get some requests and reviews on what should improve and so on , 
+
+&amp;#x200B;
+
+[https://github.com/MuteJester/Cpp\_Simple\_Image\_Processing\_Library](https://github.com/MuteJester/Cpp_Simple_Image_Processing_Library)
+
+&amp;#x200B;
+
+in the projects wiki tab you can find all instructions for working with the library .
+## [11][Five Awesome C++ Papers for the Prague ISO Meeting and C++20 Status](https://www.reddit.com/r/cpp/comments/f1njuc/five_awesome_c_papers_for_the_prague_iso_meeting/)
 - url: https://www.bfilipek.com/2020/02/prague.html
----
-
-## [4][Thought/question on library malfunction because of mismatched version](https://www.reddit.com/r/cpp/comments/f24t3i/thoughtquestion_on_library_malfunction_because_of/)
-- url: https://www.reddit.com/r/cpp/comments/f24t3i/thoughtquestion_on_library_malfunction_because_of/
----
-Today our software malfunction and the cause found was because someone updated the 3rd party library (cryptoPP) binary compiled from the latest source code and added the binary to our project WITHOUT updating the include headers. 
-
-It compiles, links with no crash, warning, or anything. The hash function always returns empty. 
-
-Normally when this happens, it either cause linker error during linking or runtime crash. But this is one of two times that happen to us. And the first time took us very long time to figure out.
-
-I understand that if we don’t actually use anything that is different from the header than in the library binary, it will still compile and link. But this certainly isn’t the case.
-
-But the question is how to better handle and spot this problem? Besides remembering updating the headers.
-## [5][metastring mini library](https://www.reddit.com/r/cpp/comments/f1tyg9/metastring_mini_library/)
-- url: https://www.reddit.com/r/cpp/comments/f1tyg9/metastring_mini_library/
----
-https://github.com/ConorWilliams/metastring/tree/master
-
-I've been playing around with compile time strings for another project and have put together a mini library to make things like this easy:
- 
-    using type_string = meta::stom_t&lt;"abcd"&gt;;
-    
-    //--$ type_string = meta::string&lt;'a', 'b', 'c', 'd'&gt;
-## [6][GitHub - google/marl: A hybrid thread / fiber task scheduler written in C++ 11](https://www.reddit.com/r/cpp/comments/f1gwa3/github_googlemarl_a_hybrid_thread_fiber_task/)
-- url: https://github.com/google/marl
----
-
-## [7][Memory Bandwidth Napkin Math](https://www.reddit.com/r/cpp/comments/f1f7eq/memory_bandwidth_napkin_math/)
-- url: https://www.forrestthewoods.com/blog/memory-bandwidth-napkin-math/
----
-
-## [8][revdoor: A single-file C++ library for visiting revolving door combinations.](https://www.reddit.com/r/cpp/comments/f1t7d6/revdoor_a_singlefile_c_library_for_visiting/)
-- url: https://github.com/dstein64/revdoor
----
-
-## [9][Core C++ 2020 Announces Bjarne Stroustrup as Opening Keynote Speaker](https://www.reddit.com/r/cpp/comments/f1gljc/core_c_2020_announces_bjarne_stroustrup_as/)
-- url: http://corecpp.org
----
-
-## [10][Is "C++ Template Metaprogramming" by Abrahams and Gurtovoy still relevant in the C++17/20 times?](https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/)
-- url: https://www.reddit.com/r/cpp/comments/f16e9o/is_c_template_metaprogramming_by_abrahams_and/
----
-I'm considering buying it, but am not sure whether it's still relevant or most of it outdated / implementing what's now already available in the language or std.
-
-Also feel free to name (better) alternatives if there are any. Thanks :)  
-
-EDIT: Thanks everyone for the responses so far
-## [11][LinqPlus:Single header C++ syntax implementing some of C#'s Linq core functions](https://www.reddit.com/r/cpp/comments/f1u3ah/linqplussingle_header_c_syntax_implementing_some/)
-- url: https://github.com/PontiacGTX/LinqPlus
 ---
 

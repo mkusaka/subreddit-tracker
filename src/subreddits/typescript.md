@@ -22,7 +22,37 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][What's the most advanced thing you know within TypeScript?](https://www.reddit.com/r/typescript/comments/f25ux0/whats_the_most_advanced_thing_you_know_within/)
+## [2][Typeclasses in Typescript with fp-ts](https://www.reddit.com/r/typescript/comments/f2kokc/typeclasses_in_typescript_with_fpts/)
+- url: https://paulgray.net/typeclasses-in-typescript/
+---
+
+## [3][PeerTube v2.1 released! (PeerTube is an Open Source &amp; Decentralized YouTube Alternative)](https://www.reddit.com/r/typescript/comments/f2a539/peertube_v21_released_peertube_is_an_open_source/)
+- url: https://github.com/Chocobozzz/PeerTube/releases/tag/v2.1.0
+---
+
+## [4][Immutable objects in TypeScript](https://www.reddit.com/r/typescript/comments/f2nr76/immutable_objects_in_typescript/)
+- url: https://nehalist.io/immutable-objects-in-typescript/
+---
+
+## [5][Issue understanding Generics in Typescript](https://www.reddit.com/r/typescript/comments/f2muhz/issue_understanding_generics_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/f2muhz/issue_understanding_generics_in_typescript/
+---
+I'm trying to understand generics in typescript using the example here, but am having issues:  [https://pastebin.com/Pekq7RC6](https://pastebin.com/Pekq7RC6)   
+
+
+The generic gets created like this:  const miniMaxSum = &lt;arrType&gt;( ) but when I try to assign it to my variables and parameters inside the function, i get TS errors.
+
+&amp;#x200B;
+```
+let maxSum : arrType = 0; // Error -&gt; '0' is assignable to the constraint of type 'arrType', but 'arrType' could be instantiated with a different subtype of constraint 'number'.
+let minSum : arrType = 0;
+```
+
+```
+maxSum = maxSum + item; // Type 'number' is not assignable to type 'arrType'. 'number' is assignable to the constraint of type 'arrType', but 'arrType' could be instantiated with a different subtype of constraint 'number'.
+```
+There is also a similar error why trying to add integers to the maxSum and minSum variables. I cant seem to understand why its happening,
+## [6][What's the most advanced thing you know within TypeScript?](https://www.reddit.com/r/typescript/comments/f25ux0/whats_the_most_advanced_thing_you_know_within/)
 - url: https://www.reddit.com/r/typescript/comments/f25ux0/whats_the_most_advanced_thing_you_know_within/
 ---
 Hey,
@@ -30,11 +60,51 @@ Hey,
 I'm planning to give a presentation to provide insights about TypeScript at work soon and I was wondering what's the most advanced thing you can do with TypeScript?
 
 So this is about TS itself and not an advanced project/app using it. A search on Google or the official docs gave me some examples but I was wondering if someone knows some handy things :) Or maybe some solution for a problem you would have needed a bigger workaround without TypeScript, etc.
-## [3][Visual Debugging in VS Code](https://www.reddit.com/r/typescript/comments/f1shn6/visual_debugging_in_vs_code/)
+## [7][Infer type from argument](https://www.reddit.com/r/typescript/comments/f2dcxh/infer_type_from_argument/)
+- url: https://www.reddit.com/r/typescript/comments/f2dcxh/infer_type_from_argument/
+---
+ Hi,
+
+I love TypeScript, but let's say you're writing plain JS, without any of that pseudo TypeScript with the comments (params i think they're called?)
+
+  
+(I'm using VS Code by the way)
+
+let's say i have a simple function ...
+
+`let returnTypeOfArgument = input =&gt; {`  
+ `return typeof input;`  
+`};`  
+`console.log(returnTypeOfArgument("abcdefghij"));`
+
+Is there a way that we can infer type from argument that the function is being called with?
+
+So, here i immediately call the function with a string, can the function body infer input to be type string because that's what it's being called with outside the body, and therefore i can get some basic type checking, without any use of TypeScript features?
+
+Thank you
+## [8][Why does my type guard not work?](https://www.reddit.com/r/typescript/comments/f2bk53/why_does_my_type_guard_not_work/)
+- url: https://www.reddit.com/r/typescript/comments/f2bk53/why_does_my_type_guard_not_work/
+---
+EDIT: ignore, stupid error, solved now!
+
+Hi, I am getting the error:
+```
+Argument of type '{} | "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function"' is not assignable to parameter of type 'string'.
+  Type '{}' is not assignable to type 'string'.(2345)
+```
+
+but TS should know it is a string, I am checking just before with `typeof`.
+
+I want the callback function to see if the value of the key `fileContents` is an object, then it assumes it is JSON and uses `JSON.stringify`, or if it is a string to just write a string.
+
+https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=36&amp;pc=1#code/LAKAxg9gdgzgLgAjgTwA4FMDKYBOBLVOAFXQFtUAbAQznQC4EBvUBBAMzwvQDkrT6E8fFADmAbhbtO6AMLRaUODAaMAvggA+guMPGhVAbQC6CALwIDk1sxCs7Urr34MA5By4BGFwBord97Ly6IrKTH72ACboMLgEcHjQrugAHnyU6D7hCKp+qr62dowOPHwCbtIATD7FcorBSkmp5FwIVdmSRhIgoKAA9ABU-Sz9ZqZj4xOTU9Mzs3Pzs8MIAOr4tEgQCBF4MADWSwuHR8cnU8O9oFQwyFBg7ACut-HQCADua+hEEAAiO7sAFAEnAIhHhRN4tjQqAxQaIAJQMAAKOAgpB26AAPAA3CB4CIAPjC3RAOWJKAw2HwhBIzRo6AAdGwIDgAKJUMAAC3+tFp61MhJsrDwbAQ3LIlDpjOktQUSlG5hcEAARgArdBgOAuOFE+zvPC0L6-Pb-LI8iW0KWOUr5eysABSmAA8tx6bCRMLkGLeQyAjL6jAIVB7hQKBCKnC-HCuqx1OgKDB0AhhaKzdQLb6giF5Ug0OgICKXG6tTq7HqDT8-l7zT7pMCIanJRm6iEo5JSapW8SgA
+
+Is there a better way to type this, or a way to solve the error? If I use `as string` it compiles and runs.
+## [9][Visual Debugging in VS Code](https://www.reddit.com/r/typescript/comments/f1shn6/visual_debugging_in_vs_code/)
 - url: https://i.redd.it/pdi1ucn2f4g41.gif
 ---
 
-## [4][Is there any ORM that has dynamically typed query results?](https://www.reddit.com/r/typescript/comments/f1zky5/is_there_any_orm_that_has_dynamically_typed_query/)
+## [10][Is there any ORM that has dynamically typed query results?](https://www.reddit.com/r/typescript/comments/f1zky5/is_there_any_orm_that_has_dynamically_typed_query/)
 - url: https://www.reddit.com/r/typescript/comments/f1zky5/is_there_any_orm_that_has_dynamically_typed_query/
 ---
 Is there any ORM (or query builder) that provides dynamic typing for the result of a query? For example, if I call `findOne` in TypeORM like this:
@@ -44,7 +114,7 @@ const user = await connection.getRepository(User).findOne({ select: ['firstName'
 ```
 
 it would be nice if the `user` variable was typed to include only the `firstName` field and not all fields associated with the model. Ditto for eagerly loaded associations. However, that doesn't appear to be the case. Are the any libraries that do in fact do that?
-## [5][utility type that equals a specific key within an interface given the type which that key is mapped to](https://www.reddit.com/r/typescript/comments/f23wx8/utility_type_that_equals_a_specific_key_within_an/)
+## [11][utility type that equals a specific key within an interface given the type which that key is mapped to](https://www.reddit.com/r/typescript/comments/f23wx8/utility_type_that_equals_a_specific_key_within_an/)
 - url: https://www.reddit.com/r/typescript/comments/f23wx8/utility_type_that_equals_a_specific_key_within_an/
 ---
 I'm trying to find or write a utility type which would have the behavior of the hypothetical `ReverseLookup` type in this example:
@@ -74,90 +144,3 @@ const d: ReverseLookup&lt;Shapes, Article&gt; = 'editor'; // ✗ ts error
 ```
 
 Where `ReverseLookup` equals a specific key within an interface given the type which that key is mapped to. So given `Shapes` and `User`, `ReverseLookup` is any key within `Shapes` which is mapped to type `User` .
-## [6][Conditional types for a dynamic React component in Typescript?](https://www.reddit.com/r/typescript/comments/f1x8gp/conditional_types_for_a_dynamic_react_component/)
-- url: https://www.reddit.com/r/typescript/comments/f1x8gp/conditional_types_for_a_dynamic_react_component/
----
-Hello typscript community! I have a question. Is there anyway for typescript to conditionally match types? I have the following dynamic react component, and I want **parameters** to be set based on the **type** property in the **SidebarProps** interface. Currently I can only escape an error by passing **any** to parameters which is obviously not ideal.
-
-```typescript
-
-type T = keyof typeof components;
-
-type propertiesMap = {
-  default: any;
-  job: AddEditJobsProps;
-  customer: AddEditCustomersProps;
-};
-
-interface SidebarProps {
-  type: keyof typeof components,     
-  parameters: propertiesMap[T] | any; 
-} 
-
-const components = {
-  default: Loading,   
-  job: AddEditJobs,   
-  customer: AddEditCustomers 
-}; 
-
-export default function Sidebar(props: SidebarProps) { 
-  const { open, toggle } = useToggle(); 
-  const SelectComponent = components[props.type]; 
-
-  return ( 
-    &lt;RightSidebar open={open} toggleDrawer={toggle}&gt; 
-      &lt;SelectComponent {...props.props} /&gt; 
-    &lt;/RightSidebar&gt; 
-  ); 
-}
-```
-## [7][TypeScript Express tutorial #13. Using Mongoose virtuals to populate documents](https://www.reddit.com/r/typescript/comments/f1r5sg/typescript_express_tutorial_13_using_mongoose/)
-- url: https://wanago.io/2020/02/10/typescript-express-tutorial-13-using-mongoose-virtuals-to-populate-documents/
----
-
-## [8][TSConf:EU - Europe's TypeScript Conference](https://www.reddit.com/r/typescript/comments/f1msjk/tsconfeu_europes_typescript_conference/)
-- url: https://tsconf.eu/
----
-
-## [9][sql-lint - A command line SQL linter written in my favourite language &lt;3](https://www.reddit.com/r/typescript/comments/f1t1sr/sqllint_a_command_line_sql_linter_written_in_my/)
-- url: https://github.com/joereynolds/sql-lint
----
-
-## [10][trouble building typescript project on heroku (not the normal problem!)](https://www.reddit.com/r/typescript/comments/f1u20o/trouble_building_typescript_project_on_heroku_not/)
-- url: https://www.reddit.com/r/typescript/comments/f1u20o/trouble_building_typescript_project_on_heroku_not/
----
-Hey all, 
-
-I am still getting used to typescript and am running into a rather strange issue...
-
-&amp;#x200B;
-
-When I run \`tsc\` in the project locally, I my project builds with no errors. However, when the Heroku deploy process runs \`tsc\`. I am getting build errors. It is only 3 or 4 errors for a medium sized project. It almost looks like some sort of config on the Heroku side is just a bit... off.
-
-&amp;#x200B;
-
-Has anyone experienced something similar to this? I am have these two scripts in my \`package.json\`:
-
-&amp;#x200B;
-
-"postinstall": "npm run compile",
-
-"heroku-prebuild": "npm install --only=dev",
-
-&amp;#x200B;
-
-I have also already tried setting \`NPM\_CONFIG\_PRODUCTION=false\` as a heroku environment variable.
-
-&amp;#x200B;
-
-Anyone have any advice?
-
-&amp;#x200B;
-
-Many thanks for any input!
-## [11][Weekend project: GraphQL-like queries and resolvers written in TypeScript](https://www.reddit.com/r/typescript/comments/f1fyar/weekend_project_graphqllike_queries_and_resolvers/)
-- url: https://www.reddit.com/r/typescript/comments/f1fyar/weekend_project_graphqllike_queries_and_resolvers/
----
-Hey folks, a month or two ago I asked myself, "what would it look like if I wanted to get GraphQL-like queries and resolvers in pure TypeScript?" I started hacking away and today I published the proof of concept under the title TypedQL. It allows you to define a graph query API and write queries against it. The real hero here is TypeScript Language Services, as seen in this [gif](https://imgur.com/fcUrI58).
-
-Check it out [here](https://github.com/gregoryfabry/TypedQL); the README has some examples that show what the library can do. This is very much a proof of concept and there's definitely some black magic in the typings, but it can be downloaded and experimented with. I would love to hear your feedback, as I definitely think the concept has value and might be worth pursuing further.

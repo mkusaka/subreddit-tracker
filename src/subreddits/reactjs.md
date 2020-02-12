@@ -85,57 +85,110 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][JavaScript frameworks are pushing each other to improve accessibility](https://www.reddit.com/r/reactjs/comments/f1s64i/javascript_frameworks_are_pushing_each_other_to/)
-- url: https://www.reddit.com/r/reactjs/comments/f1s64i/javascript_frameworks_are_pushing_each_other_to/
----
-This is an example of the power of open-source, working together or building off of one another to  improve user experience for everyone: 
-
-Marcy Sutton of Gatsby produced original research on  -  [client-side routing and accessibility](https://www.gatsbyjs.org/blog/2019-07-11-user-testing-accessible-client-routing/) 
-
-Madalyn Parker took that research and [turned it into improvements in Gatsby](https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/)
-
-Marcus Herrmann wrote about [improved accessible routing in Vue](https://marcus.io/blog/improved-accessible-routing-vuejs) and namechecked Marcy's research
-
-And svelte has been inspired to [change their routing](https://github.com/EmilTholin/svelte-routing/issues/25#issuecomment-576513320) based on Madalyn's work.
-## [4][Free React Admin Dashboard Template built with Bootstrap](https://www.reddit.com/r/reactjs/comments/f255t5/free_react_admin_dashboard_template_built_with/)
-- url: https://demo.uifort.com/bamburgh-react-admin-dashboard-reactstrap-free-demo/LandingPage
+## [3][Full page transitions](https://www.reddit.com/r/reactjs/comments/f28oll/full_page_transitions/)
+- url: https://v.redd.it/hhfbjmi5wag41
 ---
 
-## [5][Wrote my first reusable component but it's not working quite right. Any ideas?](https://www.reddit.com/r/reactjs/comments/f25nws/wrote_my_first_reusable_component_but_its_not/)
-- url: https://www.reddit.com/r/reactjs/comments/f25nws/wrote_my_first_reusable_component_but_its_not/
----
-Hi all! So I created a component that "highlights" an element by darkening the whole page except for a circle around the given element. However, I can't seem to get the circle to be exactly centered on the element for some reason. Here's what I have:
-
-https://jscomplete.com/playground/s397512
-
-Does anybody have any recommendations for how I can make sure the circle is positioned correctly? Thanks.
-## [6][80+ Application Ideas for Developers](https://www.reddit.com/r/reactjs/comments/f1rzgn/80_application_ideas_for_developers/)
-- url: https://www.youtube.com/watch?v=TNzCfgwIDCY&amp;feature=share
+## [4][OpenChakra.app - Visual editor for Chakra UI](https://www.reddit.com/r/reactjs/comments/f2ouue/openchakraapp_visual_editor_for_chakra_ui/)
+- url: https://openchakra.app/
 ---
 
-## [7][Nullish coalescing with React and TypeScript](https://www.reddit.com/r/reactjs/comments/f23fqr/nullish_coalescing_with_react_and_typescript/)
-- url: https://www.carlrippon.com/nullish-coalescing-with-react-and-typescript/
+## [5][What exactly is NextJS ? What is the use of it, how is it different from create-react-app and npx](https://www.reddit.com/r/reactjs/comments/f2oywo/what_exactly_is_nextjs_what_is_the_use_of_it_how/)
+- url: https://www.reddit.com/r/reactjs/comments/f2oywo/what_exactly_is_nextjs_what_is_the_use_of_it_how/
+---
+I just started react JS. I made few demo projects using npx create react app. I am doing a course in which the guy is using NextJs? So i am little confused that, what exactly is NextJs , what is the difference and which one is better to use ?
+## [6][I created my portfolio with React.js](https://www.reddit.com/r/reactjs/comments/f2ntvv/i_created_my_portfolio_with_reactjs/)
+- url: https://himanshuvarshney.works/
 ---
 
-## [8][is this useContext &amp; useReducer Pattern good?](https://www.reddit.com/r/reactjs/comments/f2510a/is_this_usecontext_usereducer_pattern_good/)
-- url: https://www.reddit.com/r/reactjs/comments/f2510a/is_this_usecontext_usereducer_pattern_good/
+## [7][Dynamic images from URL](https://www.reddit.com/r/reactjs/comments/f2ore3/dynamic_images_from_url/)
+- url: https://www.reddit.com/r/reactjs/comments/f2ore3/dynamic_images_from_url/
 ---
-this is code demo 
+Hi guys
 
-[https://codesandbox.io/s/sparkling-wood-1bx8s](https://codesandbox.io/s/sparkling-wood-1bx8s)
-## [9][Context and Global functions](https://www.reddit.com/r/reactjs/comments/f283pd/context_and_global_functions/)
-- url: /r/reactnative/comments/f2839l/context_and_global_functions/
+I recently logged the following question in Stack Overflow:  [https://stackoverflow.com/questions/60164789/display-image-stored-as-a-path-string-in-the-database-in-react](https://stackoverflow.com/questions/60164789/display-image-stored-as-a-path-string-in-the-database-in-react) 
+
+I have come seeking help here because I think the issue is that my question is not being understood. 
+
+I have  a DB in that DB I have a users table with a profile picture column that only stores a varchar(50) which has a file path string that looks like this '../images/profilepic1.jpg'. I can successfully make an API call and get this value from React, so this is not the issue, this value is then saved into a state and a normal global variable. So the API backend and the axios call both work correctly. My issue is that when I declare an &lt;img&gt; tag and set the src={profilepic} I cannot see the image in my browser. I cannot use src={require(${profilepic}} or any variation of it as this produces an obvious error message.
+
+If I explicitly set the src={require('../images/profilepic1.jpg')} I can see the image in browser. So my question is a 2 part question: Has anyone else been able to display an image using a file path in react that is taken from a variable? Would it rather be better to store the images in my database as BLOBS and bring them into React as full standalone images?
+
+Please note that I cannot use an import statement to import the image file from a path as the path is not known to me and is only fetched from the database when the fetch statement is run. Any tutorial would help where local images are saved on a database and are fetched and displayed by React. If you suggest saving the images to the public folder how would I then access them and what should the file path look like?
+## [8][What's the best guide to become a full stack developer?](https://www.reddit.com/r/reactjs/comments/f2hexu/whats_the_best_guide_to_become_a_full_stack/)
+- url: https://www.reddit.com/r/reactjs/comments/f2hexu/whats_the_best_guide_to_become_a_full_stack/
+---
+I understand that depending on the project, different technologies are required. From what I've seen what React can do, I am growing fond of React. 
+
+&amp;#x200B;
+
+Is there a general guide or starting guide as far as what frameworks/libraries/database etc..to use for front end/back end? 
+
+How to choose with technologies to use when deciding a project?
+
+&amp;#x200B;
+
+For example:  React + Node + MongoDB
+## [9][Design Systems in Storybook](https://www.reddit.com/r/reactjs/comments/f2jkrd/design_systems_in_storybook/)
+- url: https://medium.com/storybookjs/how-design-systems-use-storybook-2ed735ad07a9
 ---
 
-## [10][React Dashboard with built in ElasticSearch Support](https://www.reddit.com/r/reactjs/comments/f27xke/react_dashboard_with_built_in_elasticsearch/)
-- url: https://medium.appbase.io/using-elasticsearch-to-create-a-react-based-dashboard-afe064716f20
+## [10][Handling very fast updates](https://www.reddit.com/r/reactjs/comments/f2q5ey/handling_very_fast_updates/)
+- url: https://www.reddit.com/r/reactjs/comments/f2q5ey/handling_very_fast_updates/
 ---
+Hi all,
 
-## [11][I wrote this article to share all the VS Code extensions that have made my life easier as a web developer. I hope it helps, and let me know if I missed anything!](https://www.reddit.com/r/reactjs/comments/f1t6pq/i_wrote_this_article_to_share_all_the_vs_code/)
-- url: https://dev.to/zaklaughton/every-vs-code-extension-a-javascript-web-developer-should-have-in-2020-with-gifs-2b6n
+&amp;#x200B;
+
+Novice React developer here.
+
+I am trying to build a real time app with [websocket.io](https://websocket.io) but I'm struggling with handling very fast updates coming from it.
+
+When a piece of data comes in, I need to check if I received it before, so I store it in a list. Making this list a state doesn't work because states are not updated quickly enough.
+
+I tried to use the useRef hook instead of states, but it still ends up not working properly.
+
+&amp;#x200B;
+
+What should I look at for this use case?
+
+Thanks for your help!
+
+&amp;#x200B;
+
+Edit: I added a very stripped down version of what I'm trying to do. Unfortunately, I can't share anything extremely specific but I think this should paint a decent enough picture.
+
+Edit2: it looks bad as text here, so I will leave it as a paste below:
+
+[https://pastebin.com/GWNfqZpU](https://pastebin.com/GWNfqZpU)
+
+This is me trying to use "useRef" instead of "useState". 
+## [11][Where can I chat with someone for React/Redux help?](https://www.reddit.com/r/reactjs/comments/f2mcbv/where_can_i_chat_with_someone_for_reactredux_help/)
+- url: https://www.reddit.com/r/reactjs/comments/f2mcbv/where_can_i_chat_with_someone_for_reactredux_help/
 ---
+I'm an experienced backend developer but very new to React. I've thrown together some barely working spaghetti code but have a ton of questions.
 
-## [12][I created a template for an SaaS/Admin web application using React and Material-UI](https://www.reddit.com/r/reactjs/comments/f271ex/i_created_a_template_for_an_saasadmin_web/)
-- url: https://github.com/dunky11/react-saas-template
+I'm so new that some of the concepts I'm trying to ask about on stackoverflow aren't correctly being explained, so I'd love to chat with someone and get one on one help, probably for about 30 mins to an hour.
+
+  
+Is there any service that offers this? I'm happy to pay for the time, similar to a tutor. Please let me know where I can look to get further help :)
+## [12][Deploying app to subfolder server, components 404 not found (yet homepage loads)](https://www.reddit.com/r/reactjs/comments/f2puut/deploying_app_to_subfolder_server_components_404/)
+- url: https://www.reddit.com/r/reactjs/comments/f2puut/deploying_app_to_subfolder_server_components_404/
 ---
+Dear Peoples, I have been trying to figure out the problem for a while. Hoping maybe someone can steer me in the right direction
 
+The app works fine in localhost, (it is a headless wordpress CMS with React). However, when I upload it to server the links are 404 (even if the URLs seem correct.)
+
+App: [http://lead.bourim.com/ClientApp/build/](http://lead.bourim.com/ClientApp/build/)
+
+What I have done:
+
+1. Updated Packages.json: "homepage": "[http://lead.bourim.com/ClientApp/build/](http://lead.bourim.com/ClientApp/build/)",
+2. Fixed: &lt;BrowserRouter basename={"/ClientApp/build/"}&gt;
+3. Changed every Route to (i.e.) : &lt;Route exact path={\`${process.env.PUBLIC\_URL}/AllResults\`}&gt;
+4. Updated every Link to (i.e.) : &lt;Link  
+ to={\`${process.env.PUBLIC\_URL}/post/${[post.id](https://post.id)}\`}&gt;
+
+I have searched but cannot figure out where the mistake is. The images load, the links work fine on Localhost. 
+
+Any help, super appreciated.

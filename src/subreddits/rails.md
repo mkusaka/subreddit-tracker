@@ -7,11 +7,106 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Migrating from Rails 5 to Rails 6](https://www.reddit.com/r/rails/comments/f26c6v/migrating_from_rails_5_to_rails_6/)
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/f2r9mk/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/f2r9mk/personal_projects_show_off_your_own_project_andor/
+---
+In this thread you can showcase your personal pet project to other redditors.
+
+Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+
+A suggested format to get you started:
+
+1. **Name of your project**
+2. **A short description**
+3. **Application stack**
+4. **Link to Live app**
+5. **Link to GitHub**
+6. **You experience level**
+7. **Other information or areas that you would like advice on**
+
+ 
+
+^(Many thanks to Kritnc for getting the ball rolling.)
+## [3][Ruby blockchain client](https://www.reddit.com/r/rails/comments/f2oe24/ruby_blockchain_client/)
+- url: https://www.reddit.com/r/rails/comments/f2oe24/ruby_blockchain_client/
+---
+Hello, I'm looking for an api that would allow me to sign documents on a bitcoin or ethereum blockchain like [https://chainpoint.org/](https://chainpoint.org/) for example but would provide a ruby gem to use their services.
+
+My application allows my customers to manage and centralize all kinds of documents, I would like to offer them the possibility to be able to sign and authenticate a set of documents whenever they want.
+
+Thank you for your answers
+## [4][First Rails Interview](https://www.reddit.com/r/rails/comments/f2q3bl/first_rails_interview/)
+- url: https://www.reddit.com/r/rails/comments/f2q3bl/first_rails_interview/
+---
+Hey all!
+New to this subreddit and just have a question about interviews. 
+
+I have my first technical interview as a backend engineer. I’m going to have a technical interview on rails and active record. 
+
+I’m just wondering what I should look out for and if anyone has any insights. It would be greatly appreciated. 
+
+Thank you! :)
+## [5][Approach for saving lots of data in rails database](https://www.reddit.com/r/rails/comments/f2r5l1/approach_for_saving_lots_of_data_in_rails_database/)
+- url: https://www.reddit.com/r/rails/comments/f2r5l1/approach_for_saving_lots_of_data_in_rails_database/
+---
+Hi! Im creating this scraper and would like to store the following data. I want to achieve something like this: Every time the scraper runs, save data in a new table and display it on the product page
+
+I was thinking to go with this approach:
+
+Create a controller/ model; `IntervalChecks inventory_qty:string product_price:string product:references`
+
+And then i can display the related inventory data and the prices on the product show page.
+
+Is this a good approach (with speed in mind?)
+
+Or would you advice to store it as a key value pair in Json as hash (in that case I would need to read more about how that stuff works :)
+## [6][How can I convince my company to send me to RailsConf?](https://www.reddit.com/r/rails/comments/f2c87e/how_can_i_convince_my_company_to_send_me_to/)
+- url: https://www.reddit.com/r/rails/comments/f2c87e/how_can_i_convince_my_company_to_send_me_to/
+---
+Hi all
+
+I've never been to any big conference really; mainly meetups. I wanted to go to RubyConf last year, but was saving up PTO hours to go on another vacation.
+
+I work for a Mortgage banking company, so tech isn't exactly the main focus here but it is a very important part of the company; we're actually sponsoring an upcoming Linux expo.
+
+There's a budget in my department to potentially send me and maybe a few other teammates to a conference, and I really want to go to RailsConf. My team (and several others in the company) use Rails; although my team uses it rather unconventionally (we use [Netzke](https://netzke.org/) and ExtJS, which means we don't have a bunch of controllers everywhere).
+
+I've watched several talks from RailsConf and different conferences and I love learning new information; it makes me feel valuable and gives me ideas to push the company/my team forward. If I went to RailsConf, I could pick those speakers' brains and thank them personally after every talk.
+
+But alas, my manager and his manager are not huge fans of conferences; their perspective is that you can watch all the talks online anyway, and that conferences are mostly for networking and job hunting.
+
+&amp;#x200B;
+
+Since I've never been to a conference before and don't know all the little details, I wanted to ask who here has gone to conferences (particularly RailsConf) and has used the information to really bring meaningful changes to their organization?
+
+Would appreciate any insight. Thank y'all!
+## [7][Rails and Sharepoint API Calendar](https://www.reddit.com/r/rails/comments/f2cq5o/rails_and_sharepoint_api_calendar/)
+- url: https://www.reddit.com/r/rails/comments/f2cq5o/rails_and_sharepoint_api_calendar/
+---
+Google calendar has failed me for the last time, and I need to transition my apps public facing calendar to Sharepoint. My umbrella company does not allow public facing Sharepoint calendars so I have to pull the data via the API and post it into a calendar face that I program. I am looking for the best way to approach this for both a basic calendar layout to pull the data into and the best way to pull the data via the API. I have not every worked with API's and I am not sure where to start. Thanks for any and all help!!
+## [8][Migrating from Rails 5 to Rails 6](https://www.reddit.com/r/rails/comments/f26c6v/migrating_from_rails_5_to_rails_6/)
 - url: https://www.reddit.com/r/rails/comments/f26c6v/migrating_from_rails_5_to_rails_6/
 ---
 I have a long running Rails 5 application with "a lot" of javascript files. It currently has webpack as well but not the default configuration used by Rails 6. Anyone who could recommend an article / tutorial / best way to migrate from sprockets asset pipeline Rails 5 to webpack based Rails 6?
-## [3][Manage Redis by Ruby On Rails](https://www.reddit.com/r/rails/comments/f1x280/manage_redis_by_ruby_on_rails/)
+## [9][Managing dependencies in a Gem that will be part of a Rails application](https://www.reddit.com/r/rails/comments/f28qg5/managing_dependencies_in_a_gem_that_will_be_part/)
+- url: https://www.reddit.com/r/rails/comments/f28qg5/managing_dependencies_in_a_gem_that_will_be_part/
+---
+Hi all,
+
+I am breaking out some functionality from a Rails app into separate gems so that they can be used in other Rails projects. We expect that these gems will always be used in a Rails environment.  In fact, some of the code in these gems depends on various Rails components.  For example, we use `#camelize` and other methods from ActiveSupport.  There are utility methods that apply a certain sort order to collections and they call `#reorder` which assumes ActiveRecord.
+
+So I'm wondering how I should manage the dependencies these gems have on those Rails modules.  I don't want to include all of Rails in this gem.  So I assume that there's no "magic" here and the best practice is to simply determine which Rails gems I need, reference those gems directly in my Gemfile/gemspec and require the specific modules I need in my gems' source.  Correct?
+## [10][Completely new to rails](https://www.reddit.com/r/rails/comments/f2bdgp/completely_new_to_rails/)
+- url: https://www.reddit.com/r/rails/comments/f2bdgp/completely_new_to_rails/
+---
+Hello all,
+
+As the title says, I'm completely new to rails and I'm currently trying to figure out what I need to do/download for my computer to be able to read/run files. I currently have a file hosted online I'm trying to read and edit for work. I've tried google and haven't had much luck yet. Any sort of help would be appreciated!
+## [11][Problems with rails server](https://www.reddit.com/r/rails/comments/f2a1j5/problems_with_rails_server/)
+- url: https://www.reddit.com/r/rails/comments/f2a1j5/problems_with_rails_server/
+---
+Hey. I'm a rails newbie so i'll try to explain the best i can.                                         When i start up a rails server in cloud9, everything goes well, but when i try to preview the running application, it tells me "Blocked host: (host) To allow requests to (host), add the following to your environment configuration: config.hosts &lt;&lt; (host)". I tried to do what it told me but it didn't work. Anyone know how to fix this?
+## [12][Manage Redis by Ruby On Rails](https://www.reddit.com/r/rails/comments/f1x280/manage_redis_by_ruby_on_rails/)
 - url: https://www.reddit.com/r/rails/comments/f1x280/manage_redis_by_ruby_on_rails/
 ---
 I come to present a tool that I have developed with 2 others developers [https://github.com/OpenGems/redis\_web\_manager](https://github.com/OpenGems/redis_web_manager)
@@ -19,93 +114,3 @@ I come to present a tool that I have developed with 2 others developers [https:/
 This tool allows you to manage Redis, thanks to a web interface you  can easily manage your Redis instance (see your keys, the memory used,  clients connected, etc …).
 
 Enjoy !
-## [4][How to speed up Ruby and JavaScript tests with CI parallelisation](https://www.reddit.com/r/rails/comments/f263lr/how_to_speed_up_ruby_and_javascript_tests_with_ci/)
-- url: https://www.reddit.com/r/rails/comments/f263lr/how_to_speed_up_ruby_and_javascript_tests_with_ci/
----
-Want to know how to do split tests on parallel continuous integration servers — static and dynamic? Follow the link below to the article: https://medium.com/arturtrzop/how-to-speed-up-ruby-and-javascript-tests-with-ci-parallelisation-a2324a62022a?source=friends_link&amp;sk=05c8bc7d416797aafe2d92fda90d6495
-## [5][How to Efficiently Understand/Debug Rails Code for someone new to ORMs](https://www.reddit.com/r/rails/comments/f1yaam/how_to_efficiently_understanddebug_rails_code_for/)
-- url: https://www.reddit.com/r/rails/comments/f1yaam/how_to_efficiently_understanddebug_rails_code_for/
----
-Hello, all.
-
-Semi-recently, I transitioned into a job that uses Ruby on Rails, and I'm really digging it so far!
-
-I'd never used anything professionally that involved an ORM, so I find myself a little lost sometimes. Not that the ORM is hard to learn (it's awesome!), but the abstraction makes it harder for me to understand the code - my old tricks for debugging code no longer work. 
-
-In my last job, I was working with Java Spring and JDBC query templates. We had dedicated files for housing our query templates, and it was very easy to find where queries were used. So whenever I needed to find where and when a specific thing would happen (or if it could happen) in the code, I would build a vague understanding of the data model and search for a query that selected/updated/deleted the relevant data. Now, since DB interactions are all abstracted away into the ORM, I feel a bit sluggish when it comes to debugging or figuring out our code. Currently, I try to search for what I need through model usages and whatnot, but that can be tough since the ORM is pretty flexible in how you use the model. For example, you could do 
-
-    model.update(somekey: "someValue")
-
- OR 
-
-    model.someKey = "someValue"
-
-followed by a 
-
-    model.save
-
-, not to mention that the name 
-
-    model
-
-could vary, as you could be aliasing it in lots of different ways, especially if it's being accessed through *another* model as a nested attribute, or through a model association, or whatever else rails is capable of. Also, the key I'm looking for could be fairly ambiguous (i.e., the key "approved" could be used across multiple models). And of course, you can always update multiple attributes in any order, like 
-
-    model.update(some_other_key: "blah", the_key_i_want: "blahhh")
-
-, so this has eliminated a lot of go-to options for me. I always have to try to search multiple things and mentally union all of the results I've found. Because of all of this, I've been finding it hard to confidently (and quickly) track down *every* instance of the model being used in the way I'm looking for, which produced plenty of cortisol when the lead is AFK and someone posts in our team chat with a question or issue. I'm trying not to resort to regex every time I do a global search 😕  
-
-
-I think I might be stuck in my old way of thinking, and I just need a way to break out of it... Any tricks or tips? What can I be doing differently?
-## [6][puts_debuggerer (debugger-less debugging FTW)](https://www.reddit.com/r/rails/comments/f1tb3w/puts_debuggerer_debuggerless_debugging_ftw/)
-- url: https://www.reddit.com/r/rails/comments/f1tb3w/puts_debuggerer_debuggerless_debugging_ftw/
----
-[https://github.com/AndyObtiva/puts\_debuggerer](https://github.com/AndyObtiva/puts_debuggerer)
-## [7][Rails 6, Webpacker and adding a simple JS library](https://www.reddit.com/r/rails/comments/f1zvs3/rails_6_webpacker_and_adding_a_simple_js_library/)
-- url: https://www.reddit.com/r/rails/comments/f1zvs3/rails_6_webpacker_and_adding_a_simple_js_library/
----
-Seems to be a lot of confusion in the Rails community nowadays about best Webpacker practices. Tons of questions but with very few answers. I hope this changes soon.
-
-Anyway, would anybody here mind having a look?
-
-[https://gist.github.com/ratahtatah/7c2e5a2ea8eb9a77b8f9eb4a259f8828](https://gist.github.com/ratahtatah/7c2e5a2ea8eb9a77b8f9eb4a259f8828)
-
-Thanks!
-## [8][Strategic - Painless Strategy Pattern in Ruby and Rails](https://www.reddit.com/r/rails/comments/f1t8sf/strategic_painless_strategy_pattern_in_ruby_and/)
-- url: https://www.reddit.com/r/rails/comments/f1t8sf/strategic_painless_strategy_pattern_in_ruby_and/
----
-[http://andymaleh.blogspot.com/2020/01/strategic-v080-painless-strategy.html?m=1](http://andymaleh.blogspot.com/2020/01/strategic-v080-painless-strategy.html?m=1)
-## [9][React on Rails question for the community- Incorporating a Map API.](https://www.reddit.com/r/rails/comments/f1txc8/react_on_rails_question_for_the_community/)
-- url: https://www.reddit.com/r/rails/comments/f1txc8/react_on_rails_question_for_the_community/
----
-Hey I'm a junior dev working on a group project. We have been trying to use leaflets map API within our website and can't seem to figure it out how to get it working! If anyone has some good resources or advice for us it would be greatly appreciated.
-## [10][Rails 6 multiple databases &amp; test parallelisation](https://www.reddit.com/r/rails/comments/f1qz8e/rails_6_multiple_databases_test_parallelisation/)
-- url: https://www.reddit.com/r/rails/comments/f1qz8e/rails_6_multiple_databases_test_parallelisation/
----
-Hi all!
-
-Having some issues with implementing multiple databases, specifically a write and a replica. I've been following the [rails guide](https://guides.rubyonrails.org/active_record_multiple_databases.html) and am not setting up automatic connection switching because I believe that we still make some writes for GET connections and I'm wanting to go with the smallest possible changes to start with. I'm mainly interested in switching two heavier operations over to the read server to relieve pressure from the write DB and so am using manual connection switching e.g.
-
-&amp;#x200B;
-
-    ActiveRecord::Base.connected_to(role: :reading) do
-        # larger read to the replica
-    end
-
-&amp;#x200B;
-
-I'm running into two problems with my tests:
-
-1. Database connections default to the writing role, but after the above manual connection switch, the database connection continues to use the replica which causes issues when I want to write after the block. I've been debugging this by checking the configuration through  
-`ApplicationRecord.connection.instance_variable_get(:@config)`  
-I was under the impression that the DB connection should only swap for the duration of the block?
-2. Another issue I get is that the database used is different between the read and write roles. I can see this because the database suffix is different (e.g. `database-3` for the write vs `database` for the read).
-
-Unless I'm missing some article on the rails site, I can't see much info for multiple databases and testing so hoping for some tips.
-
-&amp;#x200B;
-
-Thanks!
-## [11][Good resources for learning about ports and proxies with Rails?](https://www.reddit.com/r/rails/comments/f1tbde/good_resources_for_learning_about_ports_and/)
-- url: https://www.reddit.com/r/rails/comments/f1tbde/good_resources_for_learning_about_ports_and/
----
-Do you know any good resources for learning about ports and proxies with regards to Ruby on Rails? Thanks

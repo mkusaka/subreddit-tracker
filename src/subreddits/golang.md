@@ -1,110 +1,67 @@
 # golang
-## [1][simdjson-go: Parsing gigabyes of JSON per second in Go](https://www.reddit.com/r/golang/comments/f2cxza/simdjsongo_parsing_gigabyes_of_json_per_second_in/)
-- url: https://blog.min.io/simdjson-go-parsing-gigabyes-of-json-per-second-in-go/
+## [1][Gitea 1.11.0 is released](https://www.reddit.com/r/golang/comments/f33vjz/gitea_1110_is_released/)
+- url: https://blog.gitea.io/2020/02/gitea-1.11.0-is-released/
 ---
 
-## [2][Experience report on a large Python-to-Go translation](https://www.reddit.com/r/golang/comments/f2hbzv/experience_report_on_a_large_pythontogo/)
-- url: https://gitlab.com/esr/reposurgeon/blob/master/GoNotes.adoc
+## [2][Grammarly knows about good programming languages](https://www.reddit.com/r/golang/comments/f2tq9p/grammarly_knows_about_good_programming_languages/)
+- url: https://i.redd.it/v3pqtvknrig41.png
 ---
 
-## [3][New to server side](https://www.reddit.com/r/golang/comments/f2pnh6/new_to_server_side/)
-- url: https://www.reddit.com/r/golang/comments/f2pnh6/new_to_server_side/
----
-Hey guys I was wondering if any one could provide resources for a new back end Engineer I am currently coming from a front end background. I am very green when it comes to back end so any tutorials that teach both golang and the concepts around server side would be highly appreciated.
-## [4][Is this the correct way to encrypt/decrypt a file?](https://www.reddit.com/r/golang/comments/f2pk2x/is_this_the_correct_way_to_encryptdecrypt_a_file/)
-- url: https://www.reddit.com/r/golang/comments/f2pk2x/is_this_the_correct_way_to_encryptdecrypt_a_file/
----
-I'm learning Go and wanted to write a program for encrypting/decrypting a file by password. You can find my project [here](https://github.com/EgidioCaprino/Broccoli). I have a couple of question.
-
-1. Is AES safe enough?
-2. Am I using the AES cipher correctly?
-
-Any other advice is welcome ☺
-## [5][Birthday reminder with Golang](https://www.reddit.com/r/golang/comments/f2p0b0/birthday_reminder_with_golang/)
-- url: https://github.com/fallais/gobirthday
+## [3][Building Microservices with Go - YouTube (Nic Jackson)](https://www.reddit.com/r/golang/comments/f33n7z/building_microservices_with_go_youtube_nic_jackson/)
+- url: https://www.youtube.com/playlist?list=PLmD8u-IFdreyh6EUfevBcbiuCKzFk0EW_
 ---
 
-## [6][How to download output PDF file from generator into client](https://www.reddit.com/r/golang/comments/f2ooxm/how_to_download_output_pdf_file_from_generator/)
-- url: https://www.reddit.com/r/golang/comments/f2ooxm/how_to_download_output_pdf_file_from_generator/
+## [4][How big is your final build?](https://www.reddit.com/r/golang/comments/f38pcg/how_big_is_your_final_build/)
+- url: https://www.reddit.com/r/golang/comments/f38pcg/how_big_is_your_final_build/
 ---
-i create a service to generate pdf file with \`go-wkhtmltopdf\`
+Mine is over 10MB. Is it a lot? Or is it not?
 
-this is the function
-
-    func Pdf() func(c *gin.Context) {
-    	return func(c *gin.Context) {
-    		// download wkhtmltopdf and set that wkhtmltopdf on below
-    		wkhtmltopdf.SetPath("/usr/local/bin/wkhtmltopdf")
-    		type ReqHtml struct {
-    			Html string `json:"html"`
-    		}
-    		var html ReqHtml
-    		_ = c.BindJSON(&amp;html)
-    
-    		pdfg, err := wkhtmltopdf.NewPDFGenerator()
-    		if err != nil {
-    			log.Fatal(err)
-    		}
-    
-    		page := wkhtmltopdf.NewPageReader(strings.NewReader(html.Html))
-    		pdfg.Orientation.Set(wkhtmltopdf.OrientationPortrait)
-    		page.FooterRight.Set("[page]")
-    		page.FooterFontSize.Set(10)
-    
-    		pdfg.AddPage(page)
-    
-    		err = pdfg.Create()
-    		if err != nil {
-    			log.Println(err)
-    		}
-    		err = pdfg.WriteFile("./myPdf.pdf")
-    		if err != nil {
-    			log.Fatal(err)
-    		}
-    
-    	}
-    }
-
-that Writefile writes file into my root folder server, how to make the client download it?
-
-let say i have &lt;button&gt; download file &lt;/button&gt;
-
-should I give a response to the client with the buffer of that result? or what?
-## [7][I created a body parser for database models](https://www.reddit.com/r/golang/comments/f2b6uf/i_created_a_body_parser_for_database_models/)
-- url: https://www.reddit.com/r/golang/comments/f2b6uf/i_created_a_body_parser_for_database_models/
----
-Hi,
-
-This is my first package and wanted to know your opinion especially on the benchmark. I wanted your opinion if the hit in performance is worth it.
-
-Look at the README for the motivation.
-
-[https://github.com/eduarhasanaj/bop](https://github.com/eduarhasanaj/bop)
-## [8][Pipeline builder package](https://www.reddit.com/r/golang/comments/f2hhw1/pipeline_builder_package/)
-- url: https://www.reddit.com/r/golang/comments/f2hhw1/pipeline_builder_package/
----
-Hi goers (or golanders?), this is my first package built on Go and I wanted to share it. Any feedback is greatly appreciated :)
-
-The main reason of it is to build/execute (and visualize!) workflows/pipelines, thus executing complex workflows while keeping the responsibilities as decoupled as possible.
-
-Maybe there’s something already implemented out there, the ones I found where not that developed
-
-https://github.com/saantiaguilera/go-pipeline
-
-Thanks!
-## [9][What's New In Go 1.14: Test Cleanup](https://www.reddit.com/r/golang/comments/f2d2vp/whats_new_in_go_114_test_cleanup/)
-- url: https://www.gopherguides.com/articles/test-cleanup-in-go-1-14/?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=golang-testing-cleanup-114
+How big is your build? What type of server stuff or website is it doing?
+## [5][Go 1.13.8 and Go 1.12.17 are released](https://www.reddit.com/r/golang/comments/f357oj/go_1138_and_go_11217_are_released/)
+- url: https://groups.google.com/forum/m/#!topic/golang-announce/pYiaiBU6kvs/discussion
 ---
 
-## [10][Web Framework Question](https://www.reddit.com/r/golang/comments/f2e0wj/web_framework_question/)
-- url: https://www.reddit.com/r/golang/comments/f2e0wj/web_framework_question/
+## [6][can i use GOMODULES with GOPATH ??](https://www.reddit.com/r/golang/comments/f38mdu/can_i_use_gomodules_with_gopath/)
+- url: https://www.reddit.com/r/golang/comments/f38mdu/can_i_use_gomodules_with_gopath/
 ---
-Hey! :) 
+so can i access non downloadable packages (go get) with go modules 
 
-For the coming semester I need to build a REST API in Go and, coming from python, I was looking for a webframework similar to Django or Flask.
+for example make a folder with some go files 
 
-I've googled and it seems that 1-2 years ago most ppl were recommending to not use any framework at all, but the standard library. Others were recommending echo, some blog posts or articles recommended Gin or Beego.
+and then access it from go modules 
 
-Now, with my goal in mind, and since I'm fairly new to Go and hope I could get pointers from more experienced folks, what framework would be the best choice? Or should I go without a framework completely still? 
+if no : 
 
-I appreciate any advice! :)
+can i access a module from another module ?   
+ty
+## [7][Is a lot of exported interfaces from a package a bad thing for API clarity? How can it be mitigated?](https://www.reddit.com/r/golang/comments/f380ys/is_a_lot_of_exported_interfaces_from_a_package_a/)
+- url: https://www.reddit.com/r/golang/comments/f380ys/is_a_lot_of_exported_interfaces_from_a_package_a/
+---
+When I'm writing a package, I've been using lots of interfaces in my structs and functions to make my code less fragile. 
+
+The problem is, when I come to export my nice new code which uses these interfaces, I'm always debating how many of these interfaces I should also export.
+
+My worry is that my package's API having a number of small interfaces exported obfuscates the useful, concrete code behind a layer of abstraction.
+
+What's good practice for balancing using interfaces and keeping a clean package API? I've been hunting for some good advice on this from community articles, and the advice seems very contradictory.
+## [8][Is there a way to authenticate via ldap on a web application](https://www.reddit.com/r/golang/comments/f380na/is_there_a_way_to_authenticate_via_ldap_on_a_web/)
+- url: https://www.reddit.com/r/golang/comments/f380na/is_there_a_way_to_authenticate_via_ldap_on_a_web/
+---
+Hi Guys
+
+I'm currently developing a web application on go. However only some specific users should be able to access the application. The need to be in a specific Active Directory group.
+
+I know that they are a ton of ldap packages available but I'm not quiet sure how to implement this.
+
+Does anybode has some experience?
+## [9][Go for Cloud](https://www.reddit.com/r/golang/comments/f2w0to/go_for_cloud/)
+- url: https://rakyll.org/go-cloud/
+---
+
+## [10][Is unsafe ...unsafe?](https://www.reddit.com/r/golang/comments/f37xal/is_unsafe_unsafe/)
+- url: https://www.reddit.com/r/golang/comments/f37xal/is_unsafe_unsafe/
+---
+Part 1: [https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-1/](https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-1/)
+
+Part 2: [https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-2/](https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-2/)  
+Medium: [https://medium.com/@dnahurnyi/is-unsafe-unsafe-pt-1-6b27c2286bb8](https://medium.com/@dnahurnyi/is-unsafe-unsafe-pt-1-6b27c2286bb8)

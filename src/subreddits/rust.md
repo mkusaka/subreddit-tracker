@@ -33,257 +33,136 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/f1uej1/whats_everyone_working_on_this_week_72020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-7-2020/38078?u=llogiq)!
-## [3][A handwired unsplitted ergo keyboard with a firmware written in Rust](https://www.reddit.com/r/rust/comments/f2o9y8/a_handwired_unsplitted_ergo_keyboard_with_a/)
+## [3][How nnethercote optimized the heck out of LEB128 code](https://www.reddit.com/r/rust/comments/f36j05/how_nnethercote_optimized_the_heck_out_of_leb128/)
+- url: https://github.com/rust-lang/rust/pull/69050#issuecomment-585508353
+---
+
+## [4][Why can't I convert Option&lt;T&gt; to Option&lt;U&gt; if U implements From&lt;T&gt;](https://www.reddit.com/r/rust/comments/f32jcv/why_cant_i_convert_optiont_to_optionu_if_u/)
+- url: https://www.reddit.com/r/rust/comments/f32jcv/why_cant_i_convert_optiont_to_optionu_if_u/
+---
+I just came upon this because I assumed it was a thing.  
+
+Why is it that 
+
+    impl&lt;T,U&gt; From&lt;Option&lt;T&gt;&gt; for Option&lt;U&gt; where U: From&lt;T&gt;
+
+is not implemented.  It seems like a fairly obvious use case to me.  Is there a particular reason they couldn't?
+
+A similar question goes for Result
+## [5][Relay Compiler being ported into Rust](https://www.reddit.com/r/rust/comments/f36rcq/relay_compiler_being_ported_into_rust/)
+- url: https://www.reddit.com/r/rust/comments/f36rcq/relay_compiler_being_ported_into_rust/
+---
+[https://twitter.com/en\_JS/status/1227773312346075136](https://twitter.com/en_JS/status/1227773312346075136)
+
+&gt;I’m excited to  share that we’re experimenting w porting Relay Compiler into [rustlang](https://twitter.com/hashtag/rustlang?src=hash&amp;ref_src=twsrc%5Etfw"&gt;#rustlang).  Our early results are promising: w a bit of structure it’s easy to pick  up, and we can move fast and ship high quality, efficient  code.
+
+[https://github.com/facebook/relay/tree/master/compiler](https://github.com/facebook/relay/tree/master/compiler)
+## [6][I just published crow 0.3, a pixel perfect 2D rendering engine.](https://www.reddit.com/r/rust/comments/f2wuwc/i_just_published_crow_03_a_pixel_perfect_2d/)
+- url: https://www.reddit.com/r/rust/comments/f2wuwc/i_just_published_crow_03_a_pixel_perfect_2d/
+---
+[`crow`](https://crates.io/crates/crow) is a 2D rendering engine based on OpenGL.
+I want this crate to be easy to use while still
+allowing for nearly everything one might want while using pixel art.
+
+A WIP showcase game can be found on https://github.com/lcnr/akari
+
+Please tell me if there is anything you would want in a 2D game and don't know
+how you could implement it using `crow`.
+## [7][Wait on spawned child with inherited stdin](https://www.reddit.com/r/rust/comments/f38hnh/wait_on_spawned_child_with_inherited_stdin/)
+- url: https://www.reddit.com/r/rust/comments/f38hnh/wait_on_spawned_child_with_inherited_stdin/
+---
+I've got a wrapper whose sole purpose is to run another arbitrary program, delegate the original stdio to it and wait for it to finish. All's good and easy but Child.wait() specifically closes the inherited stdin. Is there a way not to close stdin, yet wait for the child to exit? The child should exit on stdin EOF or a stdin command.
+## [8][A handwired unsplitted ergo keyboard with a firmware written in Rust](https://www.reddit.com/r/rust/comments/f2o9y8/a_handwired_unsplitted_ergo_keyboard_with_a/)
 - url: https://raw.githubusercontent.com/TeXitoi/keyberon-f4/master/images/keyberon-56.jpg
 ---
 
-## [4][Async Interview #6: Eliza Weisman](https://www.reddit.com/r/rust/comments/f2ib1c/async_interview_6_eliza_weisman/)
-- url: https://smallcultfollowing.com/babysteps/blog/2020/02/11/async-interview-6-eliza-weisman/
+## [9][how to use reqwest without async?](https://www.reddit.com/r/rust/comments/f39ueb/how_to_use_reqwest_without_async/)
+- url: https://www.reddit.com/r/rust/comments/f39ueb/how_to_use_reqwest_without_async/
 ---
-
-## [5][Speed of Development](https://www.reddit.com/r/rust/comments/f2ksja/speed_of_development/)
-- url: https://www.reddit.com/r/rust/comments/f2ksja/speed_of_development/
----
-One of the criticisms I see most often of Rust is that it takes a long time to write code in Rust. Usually I then see it compared to C, as in C is faster to develop with. This is interesting to me because Python was made partially because using C for certain software was time-consuming. I understand Rust takes a little more time simply because one cannot write ridiculously unsafe code.
-
- As Rust matures has there been a noticeable increase in development speed? Or is it the opposite? I'm interested in the communities' opinions on this.
-## [6][Scaling back my involvement in Rust](https://www.reddit.com/r/rust/comments/f268p6/scaling_back_my_involvement_in_rust/)
-- url: https://internals.rust-lang.org/t/scaling-back-my-involvement-in-rust/11754
----
-
-## [7][Wrote a tool in rust for managing multiple git repositories](https://www.reddit.com/r/rust/comments/f2quld/wrote_a_tool_in_rust_for_managing_multiple_git/)
-- url: https://www.reddit.com/r/rust/comments/f2quld/wrote_a_tool_in_rust_for_managing_multiple_git/
----
-u/leoOrion and myself wrote this [https://github.com/thecasualcoder/gg](https://github.com/thecasualcoder/gg). It written with very minimal knowledge of rust(just 10 chapters of the  book). Would love if y'all had a try with it. Any thoughts towards  improving it codewise and feature wise would be very useful for us. Hope  a few of you might find it useful. It currently can clone, fetch, show  status and create repositories.
-## [8][Iterating through vectors and borrowing hell- What am I doing wrong?](https://www.reddit.com/r/rust/comments/f2ppc0/iterating_through_vectors_and_borrowing_hell_what/)
-- url: https://www.reddit.com/r/rust/comments/f2ppc0/iterating_through_vectors_and_borrowing_hell_what/
----
-im new to rust, and so I've got this struct `mesh`, this vector, and this loop. 
-
-The struct `Mesh` has the property `tris` that is a vector full of `Triangle` objects.
-
-This is my loop:
-
-`fn render_pixel(u:f32, v:f32,c:&amp;Camera,meshes:Vec&lt;Mesh&gt;) -&gt; image::Rgba&lt;u8&gt; {`  
- `//takes f32 u and v as arguments. Returns a color in RGBA.`  
- `//creates a ray based on camera and UV position, and gets the color under that ray.`  
- `let r = Ray::new(c.origin,Vector3::new(v,u,0.0));`  
- `for mesh in meshes.iter(){`  
- `for tri in mesh.tris.iter(){`  
- `if tri.hits_ray(r).0{`  
- `return image::Rgba([(u*255.0) as u8,(v*255.0) as u8,0,255]); //if hit return UV for test.`  
-`}`  
-`}`  
-`}`  
- `return image::Rgba([0,0,0,255]); //if nothing hit return black.`  
-`}`
-
-meshes is passed to function call `render_pixel(u, v,&amp;cam,world_meshes)`.
-
-`world_meshes` is a vector full of `Mesh` structs defined like so:
-
-`plane = Mesh {arguments blah blah}`
-
-`let mut world_meshes = Vec::new();`  
-`world_meshes.push(plane);`
-
-When I run this, I get the errors
-
-`error[E0507]: cannot move out of \`*tri\` which is behind a shared reference`
-
-  `--&gt; src/main.rs:97:16`
-
-   `|`
-
-`97 |             if tri.hits_ray(r).0{`
-
-   `|                ^^^ move occurs because \`*tri\` has type \`Triangle\`, which does not implement the \`Copy\` trait`
+hi,
 
 &amp;#x200B;
 
-`error[E0382]: use of moved value: \`r\``
-
-  `--&gt; src/main.rs:97:29`
-
-   `|`
-
-`94 |     let r = Ray::new(c.origin,Vector3::new(v,u,0.0));`
-
-   `|         - move occurs because \`r\` has type \`bvh::ray::Ray\`, which does not implement the \`Copy\` trait`
-
-`...`
-
-`97 |             if tri.hits_ray(r).0{`
-
-   `|                             ^ value moved here, in previous iteration of loop`
-
-What am I doing wrong and how do I fix it? I know I have to borrow something, but I can't figure out what!
-## [9][Building a packet capturing/network proxy with ssl capabilities](https://www.reddit.com/r/rust/comments/f2pbhz/building_a_packet_capturingnetwork_proxy_with_ssl/)
-- url: https://www.reddit.com/r/rust/comments/f2pbhz/building_a_packet_capturingnetwork_proxy_with_ssl/
+is there any way to use reqwest without async, i cant simply figure out how this thing works at all.
+## [10][GitHub - drbh/hotpot-db: 🌶 hottest way to store data on the web. If you like JSON, and dealing with things later.](https://www.reddit.com/r/rust/comments/f2vbji/github_drbhhotpotdb_hottest_way_to_store_data_on/)
+- url: https://www.reddit.com/r/rust/comments/f2vbji/github_drbhhotpotdb_hottest_way_to_store_data_on/
 ---
-Hi I’ve been looking for an interesting project to force myself to really learn rust and I’ve decided that building a network traffic interceptor would be something sufficiently large and within my interests. 
+Hey Rustaceans 👋,
 
-I’ve done some novel web assembly / rust work and dove into Phil opperman’s build an OS course a bit but it feels like I’m just dabbling. 
+I'd like to share and get feedback on a small crate called hotpot-db! It is essentially an API around SQLite's JSON extension, which allows you to store data in a NoSQL dare I say, DynamoDB like way. 
 
-I’ve been using Charles lately for work to reverse engineer API calls to better understand the operation of some black boxed binaries I need to use and would like to create something similar. 
+Any struct that can be Serialized to JSON can be stored and efficiently queried. 
 
-Should I mostly be looking at the standard library or are there other useful networking libraries I should look at? 
+## Flavor Palette
 
-Also are there any other rust based projects like this that you are aware of? 
+1. schemaless
+2. reliable (uses SQLite3)
+3. embeddable
+4. fast (&lt;200ms to search through +500K objects)
+5. JSON store
+6. queryable JSON schemas 
 
-Any other advice?
+## Full Example
+```rust
+use hotpot_db::*;
+use serde::{Deserialize, Serialize};
 
-Thank you!
-## [10][Selective inheritance/inheritance by composition](https://www.reddit.com/r/rust/comments/f2n5m9/selective_inheritanceinheritance_by_composition/)
-- url: https://www.reddit.com/r/rust/comments/f2n5m9/selective_inheritanceinheritance_by_composition/
+#[derive(Debug, Serialize, Deserialize)]
+struct Person {
+    name: String,
+    age: u8,
+}
+
+fn main() -&gt; Result&lt;(), hotpot_db::Error&gt; {
+    let mut pot = HotPot::new();
+
+    // lets make a new collection
+    pot.create_collection("address_book")?;
+
+    // well make a new item we want to store
+    let person = Person {
+        name: String::from("david holtz"),
+        age: 26,
+    };
+
+    // we insert the object into the collection!
+    pot.insert::&lt;Person&gt;("address_book", &amp;person)?;
+
+    // finally we can query
+    let query = QueryBuilder::new()
+        .collection("address_book")
+        .kind(QueryKind::Object)
+        .key("name")
+        .comparison("=")
+        .string("david holtz")
+        .finish();
+
+    let results = pot.execute(query);
+    println!("{:#?}", results);
+
+    Ok(())
+}
+```
+
+[https://github.com/drbh/hotpot-db](https://github.com/drbh/hotpot-db)
+
+This was my first attempt at using the Builder pattern (for queries) and generics (for insert). hotpot-db has already been super helpful for me in the development process where my DB schema is in flux. hotpot-db lets me deal with schemas later and still have solid query performance.
+
+
+Any feedback on the project/code and idea is greatly appreciated! 😊
+## [11][Media Processing](https://www.reddit.com/r/rust/comments/f37ymd/media_processing/)
+- url: https://www.reddit.com/r/rust/comments/f37ymd/media_processing/
 ---
-I know that the rust community isn't too fond of inheritance, but hear me out.
+I’m considering Rust for a new project, which requires processing media streams for a wide array of formats. My alternative is C or C++, using FFmpeg. 
 
-First of all, if this were to be implemented, it'd have to be opt in by trait creators, making it really useless, but then again, it's not like this is going to become a language feature ever, so really I just want thoughts as to how to solve this issue in particular.
-
-Rust prefers composition over inheritance, but sometimes that can be annoying. I ran into this problem in Java while coding a tree node, of which there are multiple types of different capabilities but build on top of each other. A classic use case for inheritance.
-
-Here's my idea for how to "add inheritance" to the language.
-
-    trait Thing {
-        fn a() -&gt; u32 {}
-    }
-    struct A {
-        value: u32
-    }
-    impl Thing for A {
-        fn a(&amp;self) -&gt; u32 {
-            self.a
-        }
-    }
-    
-    #[inherit(Thing(inner))]
-    struct B {
-        inner: A
-    }
-    
-    fn main() {
-        let test = B{inner: A{value: 24}};    
-        println!("{}", test.a());
-    }
-
-The idea is that we still use composition, but we can "inherit" certain traits from objects we compose from. The idea is that we'll be able to override anything we don't want to directly compose, but other than that, all those trait methods are passed down to the variable we specify.
-
-Another theoretical syntax is:
-
-    inherit Thing for B.inner {
-        // put stuff here you wanna override
-    }
-    
-    fn main() {
-        let test = B{inner: A{value: 24}};    
-        println!("{}", test.a());
-    }
-
-All this obviously isn't real inheritance, but it is less complicated and more rusty. What do y'all think? How would we tackle a problem like the one above in Rust today? What are some strengths/weaknesses of this theoretical language feature?
-
-There is one thing that this is lacking, and that's layering with generics. Here's an example: 
-
-    trait Base {
-        fn base() -&gt; u32 {}
-    }
-    trait Thing1 {
-        fn a() -&gt; u32 {}
-    }
-    trait Thing2 {
-        fn b() -&gt; u32 {}
-    }
-    
-    #[inherit(Base(inner))]
-    struct A&lt;T: Base&gt; {
-        inner: T
-        a: u32
-    }
-    impl&lt;T&gt; Thing1 for A&lt;T&gt; {
-        fn a(&amp;self) -&gt; u32 {
-            self.a * self.base()
-        }
-    }
-    
-    #[inherit(Base(inner))]
-    struct B&lt;T: Base&gt; {
-        inner: T
-        b: u32
-    }
-    impl&lt;T&gt; Thing2 for B&lt;T&gt; {
-        fn b(&amp;self) -&gt; u32 {
-            self.b + self.base()
-        }
-    }
-    
-    struct C {
-        value: u32
-    }
-    impl Base for C {
-        fn base(&amp;self) -&gt; u32 {
-            self.value
-        }
-    }
-    
-    // this type doesn't implement both Thing1 and Thing2 like normal inheritance would have it
-    type DoesntHasBoth = A&lt;B&lt;C&gt;&gt;;
-## [11][QUAD MAX HAPIS SERVER](https://www.reddit.com/r/rust/comments/f2r9k4/quad_max_hapis_server/)
-- url: https://www.reddit.com/r/rust/comments/f2r9k4/quad_max_hapis_server/
+Is there an effective/up to date Rust binding for FFmpeg or other crate that people are using for this purpose? Would be great to get a quick overview of the Rust media ecosystem for a Rust noob.
+## [12][Mimalloc Rust version 0.1.14 has just been released!](https://www.reddit.com/r/rust/comments/f2vb4z/mimalloc_rust_version_0114_has_just_been_released/)
+- url: https://www.reddit.com/r/rust/comments/f2vb4z/mimalloc_rust_version_0114_has_just_been_released/
 ---
- HapiFest Vanilla \[4 Man Max\] Bi-Weekly
+The Rust [mimalloc wrapper](https://github.com/purpleprotocol/mimalloc_rust) crate has just had a new version released!
 
- Have you had enough of zergs on hapis? then look no further.  HapiFest is the new 4 man max hapis server with active none playing admins with an around the clock support service in the HapiFest public discord linked below. 
+### Changes
 
- Features of the server 
+* Updated [mimalloc source](https://github.com/microsoft/mimalloc) to version 1.6.0.
 
- \-Bi-weekly map wipes 
-
- \-Monthly BP wipes 
-
- \-Active Non-playing Admins 
-
- \-Solo/Duo/Trio/Quad  
-
-\-Fully Vanilla Hapis 
-
-&amp;#x200B;
-
- Connection to the server
-
- Go to f1 console the copy the information below Client.connect 94.130.71.233:28221 
-
- 
-
-Discord 
-
-Our public discord is linked below where you can give us feedback and suggestions or even find new teammates also our discord is there so you can report players or even if you just want to talk.  [https://discord.gg/wswJM5w](https://discord.gg/wswJM5w)  
-
-Sincerely Team-HapiFest
-## [12][can program depend on the same create twice, but with different features?](https://www.reddit.com/r/rust/comments/f2fsi8/can_program_depend_on_the_same_create_twice_but/)
-- url: https://www.reddit.com/r/rust/comments/f2fsi8/can_program_depend_on_the_same_create_twice_but/
----
-Hello,
-
-Is it possible to add to the program dependencies the same create twice (with the same version and location, but different futures)?
-
-I have in Cargo.toml of my program:
-
-    [dependencies]
-    a = { path = "../x", package = "x" }
-    b = { path = "../x", package = "x", features = ["custom"] }
-
-which cause error:
-
-    error: the crate `...` depends on crate `x v0.1.0 (...)` multiple times with different names
-
-I have also tried adding to the beginning of Cargo.toml:
-
-    cargo-features = ["rename-dependency"]
-
-but the error was the same and additionally I got the warning:
-
-    the cargo feature `rename-dependency` is now stable and is no longer necessary to be listed in the manifest
-
-Thanks for any advise!
-
-Best regards, Piotr.
+* Removes [libc](https://crates.io/crates/libc) from dependencies, adding support for targets targets which do not depend on it such as wasm.

@@ -57,65 +57,82 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Investigating the Performance Overhead of C++ Exceptions](https://www.reddit.com/r/cpp/comments/f2e8l3/investigating_the_performance_overhead_of_c/)
-- url: https://pspdfkit.com/blog/2020/performance-overhead-of-exceptions-in-cpp/
+## [2][Herb Sutter: Quantifying Accidental Complexity: An Empirical Look at Teaching and Using C++](https://www.reddit.com/r/cpp/comments/f2xq0l/herb_sutter_quantifying_accidental_complexity_an/)
+- url: https://www.youtube.com/watch?v=qx22oxlQmKc
 ---
 
-## [3][What's the most annoying bug you've come across?](https://www.reddit.com/r/cpp/comments/f2m9vm/whats_the_most_annoying_bug_youve_come_across/)
-- url: https://www.reddit.com/r/cpp/comments/f2m9vm/whats_the_most_annoying_bug_youve_come_across/
+## [3][Modern C++ and Qt are ❤️](https://www.reddit.com/r/cpp/comments/f2wu98/modern_c_and_qt_are/)
+- url: https://www.reddit.com/r/cpp/comments/f2wu98/modern_c_and_qt_are/
+---
+Just wanted to thank everybody who made this simplicity possible:
+
+```cpp
+
+std::optional&lt;QSize&gt; mudlet::getImageSize(const QString &amp;imageLocation)
+{
+    QImage image(imageLocation);
+
+    if (image.isNull()) {
+        return {};
+    }
+
+    return {image.size()};
+}
+
+// ...
+
+if (auto size = mudlet::self()-&gt;getImageSize(imageLocation); size) {
+    lua_pushnumber(L, size-&gt;width());
+    lua_pushnumber(L, size-&gt;height());
+    return 2;
+} else {
+    lua_pushnil(L);
+    lua_pushfstring(L, "couldn't retrieve image size. Is the location '%s' correct?", imageLocation.toUtf8().constData());
+    return 2;
+}
+```
+
+This is amazing!
+## [4][Improving Compilation Time of C/C++ Projects](https://www.reddit.com/r/cpp/comments/f2wsl4/improving_compilation_time_of_cc_projects/)
+- url: https://interrupt.memfault.com/blog/improving-compilation-times-c-cpp-projects
 ---
 
-## [4][tser - Tiny Serialization for C++](https://www.reddit.com/r/cpp/comments/f2b0eo/tser_tiny_serialization_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/f2b0eo/tser_tiny_serialization_for_c/
+## [5][My approach to compile-time reflection in C++](https://www.reddit.com/r/cpp/comments/f2xa28/my_approach_to_compiletime_reflection_in_c/)
+- url: http://bluescreenofdoom.com/post/code/Reflection/
 ---
-[https://github.com/KonanM/tser](https://github.com/KonanM/tser)
 
-I thought some of you might find this library useful - I developed this library for solving challenges on [codingame.com](https://codingame.com) . For the challenges there you have a 100KB size limit for all the code, so I needed a tiny serialization/pretty printing library and wanted to develop something under 20KB. That's how I came up with tser. 
+## [6][How to replace __FILE__ with source_location in a logging macro](https://www.reddit.com/r/cpp/comments/f2x461/how_to_replace_file_with_source_location_in_a/)
+- url: https://quuxplusone.github.io/blog/2020/02/12/source-location/
+---
 
-**What does tser solve?**
+## [7][Announcing TCMalloc](https://www.reddit.com/r/cpp/comments/f2yk94/announcing_tcmalloc/)
+- url: https://abseil.io/blog/20200212-tcmalloc
+---
 
-* serialization of nearly all of the STL containers and types, c-arrays and raw pointer
-* base64 encoding support for printing serialized objects to std::cout
-* pretty printing of objects with member names
-* automatically implement comparison operators
-* all in a single header with \~350 lines of code
+## [8][Qt World Summit 2019 talk videos are online - KDAB](https://www.reddit.com/r/cpp/comments/f37t96/qt_world_summit_2019_talk_videos_are_online_kdab/)
+- url: https://www.kdab.com/qt-world-summit-2019-talk-videos-are-online/
+---
 
-As stated in the readme of this library - there are much better non intrusive, macro free libraries out there. Pick tser only if you need something small and placing a macro into the classes you need to serialize is acceptable.
+## [9][What's the best workflow for forking and iterating on external packages in vcpkg?](https://www.reddit.com/r/cpp/comments/f3317k/whats_the_best_workflow_for_forking_and_iterating/)
+- url: https://www.reddit.com/r/cpp/comments/f3317k/whats_the_best_workflow_for_forking_and_iterating/
+---
+Let's say I have a program that depends on some commonly available 3rd party package that's available in vcpkg. Let's say I've configured the cmake build for my program to use the vcpkg cmake build system for finding everything.
 
-What would be interesting for me is to get some feedback if I should make the library even smaller (or if there is a crucial feature missing?)... for example I personally didn't need the pointer or c-array support yet, so I'm not sure if I should drop support for them.  I could also see dropping support for custom save/load methods (e.g. when you really need a compact storage for that big vector&lt;bool&gt;).
-## [5][Combining ZeroMQ &amp; POSIX signals: Use ppoll to handle EINTR once and for all](https://www.reddit.com/r/cpp/comments/f2r1i6/combining_zeromq_posix_signals_use_ppoll_to/)
+Let's say I discover that I have a need to iterate on the code of an external package. The loop i want is:
+
+* Compile and link my program, which links the vcpkg-provided locally-built external dependency. (No, it's not header-only.)
+* Run it. Set and hit a breakpoint in the external dependency. Realize something needs to change.
+* Edit the external source file?   (This is probably a great time to fork a separate version...what workflow?)
+* ...ideally one button from here builds the external dependency (and anything else it depends on) incrementally, and my program also. 
+
+Is such a thing possible? 
+
+How do you do this with your local forks of external libraries?
+## [10][Literal Classes as Non-type Template Parameters in C++20](https://www.reddit.com/r/cpp/comments/f2s4ut/literal_classes_as_nontype_template_parameters_in/)
+- url: https://blog.keha.dev/posts/cpp20-class-as-non-type-template-param/
+---
+
+## [11][Combining ZeroMQ &amp; POSIX signals: Use ppoll to handle EINTR once and for all](https://www.reddit.com/r/cpp/comments/f2r1i6/combining_zeromq_posix_signals_use_ppoll_to/)
 - url: https://blog.esciencecenter.nl/combining-zeromq-posix-signals-b754f6f29cd6
----
-
-## [6][Avast C++ Meetup with Bjarne Stroustrup, Tony van Eerd, and Herb Sutter (Stream on 11th February 2020 6pm CET, 5pm UTC, 9am PCT, 12pm EST)](https://www.reddit.com/r/cpp/comments/f2409z/avast_c_meetup_with_bjarne_stroustrup_tony_van/)
-- url: https://www.youtube.com/watch?v=o2V544cHNKE
----
-
-## [7][Question about good OOP object usage technique.](https://www.reddit.com/r/cpp/comments/f2hnpl/question_about_good_oop_object_usage_technique/)
-- url: https://www.reddit.com/r/cpp/comments/f2hnpl/question_about_good_oop_object_usage_technique/
----
-Hello there. I am semi-new to C++ OOP. There are several things i still can't wrap my head around. For example i have class "Engine", which has an object 'player' of a class "Player". The "Engine" class controls input and thus updates player's position based on this input. However, my second class called "World" is used for rendering stuff, in which i would like player to be also rendered. How should i handle situation like this? Pass the reference to the player object using constructor of "World" class (But that would look messy imho). Any suggestion, tips and good advices are welcome.
-## [8][What they should improve about C++ ?](https://www.reddit.com/r/cpp/comments/f2ifpt/what_they_should_improve_about_c/)
-- url: https://www.reddit.com/r/cpp/comments/f2ifpt/what_they_should_improve_about_c/
----
-What they should improve about C++ that you find in higher level managed language like C#, JAVA, Javascript etc or is there things you would change or do differently if it was up to you ? I mean anything like a better STL ? better thread ? string manipulation like managed language ? less fragmentations in the new standard features ? For example do you love the way the standard evolve C++ or you would prefer a direction like Microsoft do with C# a corporation who decide on the roadmap ?
-## [9][Is there any Github repo that shows you every trick you need to know in order to manage the memory of any C++ application?](https://www.reddit.com/r/cpp/comments/f2kpk6/is_there_any_github_repo_that_shows_you_every/)
-- url: https://www.reddit.com/r/cpp/comments/f2kpk6/is_there_any_github_repo_that_shows_you_every/
----
-I think the best way to learn something is to find the simplest example that encompasses everything you need to know. That's why I am wondering if there's any good repository on Github with a C++ project that use every tool in the toolkit for memory management.
-## [10][Cpp Image Processing Library](https://www.reddit.com/r/cpp/comments/f29b08/cpp_image_processing_library/)
-- url: https://www.reddit.com/r/cpp/comments/f29b08/cpp_image_processing_library/
----
-Hey so a couple of months ago i started developing a simple library for image processing and developing for c++ ,i got tired of including many additional dependencies  to my project as i had to do with opencv and other existing API , as for now the project is still under development but already it provides the users with a vast amount of tools , if you are looking for a simple library which only requires of you to include some header files and start working i really think my library can give you the tools needed , beside that i would be happy to get some requests and reviews on what should improve and so on , 
-
-&amp;#x200B;
-
-[https://github.com/MuteJester/Cpp\_Simple\_Image\_Processing\_Library](https://github.com/MuteJester/Cpp_Simple_Image_Processing_Library)
-
-&amp;#x200B;
-
-in the projects wiki tab you can find all instructions for working with the library .
-## [11][Five Awesome C++ Papers for the Prague ISO Meeting and C++20 Status](https://www.reddit.com/r/cpp/comments/f1njuc/five_awesome_c_papers_for_the_prague_iso_meeting/)
-- url: https://www.bfilipek.com/2020/02/prague.html
 ---
 

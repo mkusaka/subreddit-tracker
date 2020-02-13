@@ -22,19 +22,165 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Typeclasses in Typescript with fp-ts](https://www.reddit.com/r/typescript/comments/f2kokc/typeclasses_in_typescript_with_fpts/)
+## [2][Just blogged: TypeScript types cheat sheet](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/)
+- url: https://medium.com/@maximzhukov_dev/typescript-types-cheat-sheet-5da7c6ee083d
+---
+
+## [3][Unit tests for d.ts files in JS project](https://www.reddit.com/r/typescript/comments/f2wbaf/unit_tests_for_dts_files_in_js_project/)
+- url: https://github.com/ai/check-dts
+---
+
+## [4][Angular 9: What’s New?](https://www.reddit.com/r/typescript/comments/f2tsre/angular_9_whats_new/)
+- url: https://auth0.com/blog/angular-9-whats-new/?utm_source=twitter&amp;utm_medium=sc&amp;utm_campaign=angular_9
+---
+
+## [5][an attribute type which knows the type of another attribute within the same interface](https://www.reddit.com/r/typescript/comments/f2xt9o/an_attribute_type_which_knows_the_type_of_another/)
+- url: https://www.reddit.com/r/typescript/comments/f2xt9o/an_attribute_type_which_knows_the_type_of_another/
+---
+I have a type:
+
+    type Schema &lt;M extends Record&lt;string, {}&gt;&gt; = {
+      [E in keyof M]: {
+        [L in keyof Partial&lt;M[E]&gt;]: {
+          entity: keyof M,
+          reciprocal: string,
+        }
+      }
+    }
+
+... whose usage would look like:
+
+    interface M extends Record&lt;string, object&gt; {
+      user: { articleIds: string[] },
+      article: { authorId: string, editorId: string },
+    }
+    
+    const mySchema: Schema&lt;M&gt; = {
+      user: {
+        articleIds: {
+          entity: 'article',
+          reciprocal: 'authorId'
+        }
+      },
+      article: {
+        authorId: {
+          entity: 'user',
+          reciprocal: 'articleIds'
+        }
+      }
+    };
+
+The schema's purpose is to define data relationships through their attributes.
+
+An `entity` must be any key of type `M`. I am trying to constrain `reciprocal` to only keys within the value of that given key of type `M`. To illustrate this problem:
+
+    user: {
+      articleIds: {
+        entity: 'article',
+        reciprocal: 'this value can as any string' // how to constrain to 'authorId'|'editorId' ?  
+      }
+    },
+
+Looking back at type `Schema`, the type of `reciprocal` would have to know concretely what `keyof M` is:
+
+    type Schema &lt;M extends Record&lt;string, {}&gt;&gt; = {
+      [E in keyof M]: {
+        [L in keyof Partial&lt;M[E]&gt;]: {
+          entity: keyof M,
+          reciprocal: string, // how to reference the concrete value of `entity`?
+        }
+      }
+    }
+
+Is there a way to do this?
+## [6][Typeclasses in Typescript with fp-ts](https://www.reddit.com/r/typescript/comments/f2kokc/typeclasses_in_typescript_with_fpts/)
 - url: https://paulgray.net/typeclasses-in-typescript/
 ---
 
-## [3][PeerTube v2.1 released! (PeerTube is an Open Source &amp; Decentralized YouTube Alternative)](https://www.reddit.com/r/typescript/comments/f2a539/peertube_v21_released_peertube_is_an_open_source/)
+## [7][Axios requests to custom API in TS](https://www.reddit.com/r/typescript/comments/f2tbcb/axios_requests_to_custom_api_in_ts/)
+- url: https://www.reddit.com/r/typescript/comments/f2tbcb/axios_requests_to_custom_api_in_ts/
+---
+Hey guys,
+
+I've created my own API in TS (fairly new into this ngl)  and I'd like to know how to pass data over requests with axios. Assuming I have a form which takes 1 email and 1 password, when I press a button, it sends this request :
+
+```
+const login = async (user: any) =&gt; {
+  const data = {
+    email: user.email,
+    password: user.password
+  }
+  const res = await axios.get('/users/login', { data })
+
+  console.log(res)
+
+  return res;
+}
+```
+
+User is basically an object containing two fields, email and password
+
+Everything is working well with cURL requests but I have some issues with requests from my app. My API gets the data from request body.
+My API login function is :
+
+```
+public async standardLogin(req: Request, res: Response): Promise&lt;Response&gt; {
+    try {
+      const { email, password } = req.body
+
+      if (!email || !password)
+        return super.sendMissingFieldsError(res)
+
+      const user = await auth.signInWithEmailAndPassword(email, password)
+
+      return super.sendSuccessMessage(res, 'Success')
+    } catch (e) {
+      return super.sendErrorMessage(res, e)
+    }
+  }
+```
+
+
+Anyone can help me through this? Thanks :D
+## [8][Foal TS - February release (version 1.6) - Local and Cloud file storage (AWS S3), enhanced dependency injection, cleaner builds](https://www.reddit.com/r/typescript/comments/f2ubou/foal_ts_february_release_version_16_local_and/)
+- url: https://www.reddit.com/r/typescript/comments/f2ubou/foal_ts_february_release_version_16_local_and/
+---
+Foal TS framework version 1.6 is officially released!
+
+Local and Cloud file storage (AWS S3), enhanced dependency injection, cleaner builds, bug fixes, you can discover the features of this version here: [https://github.com/FoalTS/foal/releases/tag/v1.6.0](https://github.com/FoalTS/foal/releases/tag/v1.6.0)
+
+The big of feature of this release is FoalTS new file system which allows you to easily choose different storage for each of your environments. For example, when coding the application locally, you can use the file system of your operating system. Then, when deploying the application to staging or production, you can change the configuration to use AWS S3. Regardless of the storage chosen in the background, the code remains the same. Only the configuration changes.
+
+More documentation here: [https://foalts.gitbook.io/docs/topic-guides/file-system/local-and-cloud-storage](https://foalts.gitbook.io/docs/topic-guides/file-system/local-and-cloud-storage)
+
+&amp;#x200B;
+
+[Foal TS - February release \(version 1.6\)](https://preview.redd.it/8lp1wb3dyig41.png?width=1122&amp;format=png&amp;auto=webp&amp;s=60c15ac855b175b99e7bc0307a7f4a77ad72850b)
+
+Foal, in a few words, it's a Node.js framework:
+
+* written in TypeScript
+* provided with batteries included (Auth, OpenAPI, GraphQL, ORM, CLI, scripts, file storage)
+* and with a simple and intuitive architecture (no magic, no over-engineering).
+
+And the must: it has more than 11,000 lines of documentation.
+
+[https://foalts.org](https://foalts.org/)
+
+[https://github.com/FoalTS/foal](https://github.com/FoalTS/foal)
+
+[https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
+
+# TypeScript #JavaScript #NodeJS #FoalTS #AWS #S3
+## [9][PeerTube v2.1 released! (PeerTube is an Open Source &amp; Decentralized YouTube Alternative)](https://www.reddit.com/r/typescript/comments/f2a539/peertube_v21_released_peertube_is_an_open_source/)
 - url: https://github.com/Chocobozzz/PeerTube/releases/tag/v2.1.0
 ---
 
-## [4][Immutable objects in TypeScript](https://www.reddit.com/r/typescript/comments/f2nr76/immutable_objects_in_typescript/)
+## [10][Immutable objects in TypeScript](https://www.reddit.com/r/typescript/comments/f2nr76/immutable_objects_in_typescript/)
 - url: https://nehalist.io/immutable-objects-in-typescript/
 ---
 
-## [5][Issue understanding Generics in Typescript](https://www.reddit.com/r/typescript/comments/f2muhz/issue_understanding_generics_in_typescript/)
+## [11][Issue understanding Generics in Typescript](https://www.reddit.com/r/typescript/comments/f2muhz/issue_understanding_generics_in_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/f2muhz/issue_understanding_generics_in_typescript/
 ---
 I'm trying to understand generics in typescript using the example here, but am having issues:  [https://pastebin.com/Pekq7RC6](https://pastebin.com/Pekq7RC6)   
@@ -52,95 +198,3 @@ let minSum : arrType = 0;
 maxSum = maxSum + item; // Type 'number' is not assignable to type 'arrType'. 'number' is assignable to the constraint of type 'arrType', but 'arrType' could be instantiated with a different subtype of constraint 'number'.
 ```
 There is also a similar error why trying to add integers to the maxSum and minSum variables. I cant seem to understand why its happening,
-## [6][What's the most advanced thing you know within TypeScript?](https://www.reddit.com/r/typescript/comments/f25ux0/whats_the_most_advanced_thing_you_know_within/)
-- url: https://www.reddit.com/r/typescript/comments/f25ux0/whats_the_most_advanced_thing_you_know_within/
----
-Hey,
-
-I'm planning to give a presentation to provide insights about TypeScript at work soon and I was wondering what's the most advanced thing you can do with TypeScript?
-
-So this is about TS itself and not an advanced project/app using it. A search on Google or the official docs gave me some examples but I was wondering if someone knows some handy things :) Or maybe some solution for a problem you would have needed a bigger workaround without TypeScript, etc.
-## [7][Infer type from argument](https://www.reddit.com/r/typescript/comments/f2dcxh/infer_type_from_argument/)
-- url: https://www.reddit.com/r/typescript/comments/f2dcxh/infer_type_from_argument/
----
- Hi,
-
-I love TypeScript, but let's say you're writing plain JS, without any of that pseudo TypeScript with the comments (params i think they're called?)
-
-  
-(I'm using VS Code by the way)
-
-let's say i have a simple function ...
-
-`let returnTypeOfArgument = input =&gt; {`  
- `return typeof input;`  
-`};`  
-`console.log(returnTypeOfArgument("abcdefghij"));`
-
-Is there a way that we can infer type from argument that the function is being called with?
-
-So, here i immediately call the function with a string, can the function body infer input to be type string because that's what it's being called with outside the body, and therefore i can get some basic type checking, without any use of TypeScript features?
-
-Thank you
-## [8][Why does my type guard not work?](https://www.reddit.com/r/typescript/comments/f2bk53/why_does_my_type_guard_not_work/)
-- url: https://www.reddit.com/r/typescript/comments/f2bk53/why_does_my_type_guard_not_work/
----
-EDIT: ignore, stupid error, solved now!
-
-Hi, I am getting the error:
-```
-Argument of type '{} | "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function"' is not assignable to parameter of type 'string'.
-  Type '{}' is not assignable to type 'string'.(2345)
-```
-
-but TS should know it is a string, I am checking just before with `typeof`.
-
-I want the callback function to see if the value of the key `fileContents` is an object, then it assumes it is JSON and uses `JSON.stringify`, or if it is a string to just write a string.
-
-https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=36&amp;pc=1#code/LAKAxg9gdgzgLgAjgTwA4FMDKYBOBLVOAFXQFtUAbAQznQC4EBvUBBAMzwvQDkrT6E8fFADmAbhbtO6AMLRaUODAaMAvggA+guMPGhVAbQC6CALwIDk1sxCs7Urr34MA5By4BGFwBord97Ly6IrKTH72ACboMLgEcHjQrugAHnyU6D7hCKp+qr62dowOPHwCbtIATD7FcorBSkmp5FwIVdmSRhIgoKAA9ABU-Sz9ZqZj4xOTU9Mzs3Pzs8MIAOr4tEgQCBF4MADWSwuHR8cnU8O9oFQwyFBg7ACut-HQCADua+hEEAAiO7sAFAEnAIhHhRN4tjQqAxQaIAJQMAAKOAgpB26AAPAA3CB4CIAPjC3RAOWJKAw2HwhBIzRo6AAdGwIDgAKJUMAAC3+tFp61MhJsrDwbAQ3LIlDpjOktQUSlG5hcEAARgArdBgOAuOFE+zvPC0L6-Pb-LI8iW0KWOUr5eysABSmAA8tx6bCRMLkGLeQyAjL6jAIVB7hQKBCKnC-HCuqx1OgKDB0AhhaKzdQLb6giF5Ug0OgICKXG6tTq7HqDT8-l7zT7pMCIanJRm6iEo5JSapW8SgA
-
-Is there a better way to type this, or a way to solve the error? If I use `as string` it compiles and runs.
-## [9][Visual Debugging in VS Code](https://www.reddit.com/r/typescript/comments/f1shn6/visual_debugging_in_vs_code/)
-- url: https://i.redd.it/pdi1ucn2f4g41.gif
----
-
-## [10][Is there any ORM that has dynamically typed query results?](https://www.reddit.com/r/typescript/comments/f1zky5/is_there_any_orm_that_has_dynamically_typed_query/)
-- url: https://www.reddit.com/r/typescript/comments/f1zky5/is_there_any_orm_that_has_dynamically_typed_query/
----
-Is there any ORM (or query builder) that provides dynamic typing for the result of a query? For example, if I call `findOne` in TypeORM like this:
-
-```
-const user = await connection.getRepository(User).findOne({ select: ['firstName'] })
-```
-
-it would be nice if the `user` variable was typed to include only the `firstName` field and not all fields associated with the model. Ditto for eagerly loaded associations. However, that doesn't appear to be the case. Are the any libraries that do in fact do that?
-## [11][utility type that equals a specific key within an interface given the type which that key is mapped to](https://www.reddit.com/r/typescript/comments/f23wx8/utility_type_that_equals_a_specific_key_within_an/)
-- url: https://www.reddit.com/r/typescript/comments/f23wx8/utility_type_that_equals_a_specific_key_within_an/
----
-I'm trying to find or write a utility type which would have the behavior of the hypothetical `ReverseLookup` type in this example:
-
-```
-interface User {
-  name: string
-}
-
-interface Article {
-  title: string
-}
-
-interface Shapes {
-  author: User,
-  editor: User,
-  article: Article,
-}
-
-// these would compile
-const a: ReverseLookup&lt;Shapes, User&gt; = 'author'; // ✓
-const b: ReverseLookup&lt;Shapes, User&gt; = 'editor'; // ✓
-
-// these would cause an error
-const c: ReverseLookup&lt;Shapes, User&gt; = 'article'; // ✗ ts error
-const d: ReverseLookup&lt;Shapes, Article&gt; = 'editor'; // ✗ ts error
-```
-
-Where `ReverseLookup` equals a specific key within an interface given the type which that key is mapped to. So given `Shapes` and `User`, `ReverseLookup` is any key within `Shapes` which is mapped to type `User` .

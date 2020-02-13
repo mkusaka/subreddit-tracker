@@ -1,23 +1,31 @@
 # javascript
-## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/ey9xwq/your_weekly_rjavascript_recap/)
-- url: https://www.reddit.com/r/javascript/comments/ey9xwq/your_weekly_rjavascript_recap/
+## [1][WTF Wednesday (February 12, 2020)](https://www.reddit.com/r/javascript/comments/f2tdys/wtf_wednesday_february_12_2020/)
+- url: https://www.reddit.com/r/javascript/comments/f2tdys/wtf_wednesday_february_12_2020/
 ---
-**Monday, January 27 - Sunday, February 02**
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/f1rgpl/your_weekly_rjavascript_recap/)
+- url: https://www.reddit.com/r/javascript/comments/f1rgpl/your_weekly_rjavascript_recap/
+---
+**Monday, February 03 - Sunday, February 09**
 
 ###Top Posts
 
 score | comments | title &amp; link | 
 --|--|--
-840  | [116 comments](https://www.reddit.com/r/javascript/comments/ewsc5y/i_launched_ihateregexio_a_regex_cheatsheet_for/) | [I launched iHateRegex.io - A Regex cheatsheet for the haters](https://ihateregex.io/)
-370  | [21 comments](https://www.reddit.com/r/javascript/comments/evshne/cesiumjs_an_open_source_javascript_library_for/) | [CesiumJS - an open source JavaScript library for creating world-class 3D globes and maps with the best possible performance, precision, visual quality, and ease of use](https://cesium.com/cesiumjs/)
-253  | [80 comments](https://www.reddit.com/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/) | [JavaScript libraries are almost never updated once installed](https://blog.cloudflare.com/javascript-libraries-are-almost-never-updated/)
-217  | [27 comments](https://www.reddit.com/r/javascript/comments/ex7tp9/javascript_css_toggle_darklight_theme_based_on/) | [Javascript &amp;amp; CSS — Toggle dark/light theme based on your user's preferred scheme](https://gosink.in/javascript-css-toggle-dark-light-theme-based-on-your-users-preferred-scheme/)
-212  | [22 comments](https://www.reddit.com/r/javascript/comments/ew6yjb/my_friend_had_a_problem_with_scaling_up_his/) | [My friend had a problem with scaling up his WebSocket servers. This is what he came up with](https://tsh.io/blog/how-to-scale-websocket/)
-202  | [89 comments](https://www.reddit.com/r/javascript/comments/eul7lg/corejs_used_by_babel_angular_author_posted_a/) | [CoreJS &amp;#40;used by Babel, Angular&amp;#41; author posted a comment on their repo 16 days ago saying "after some days I'll be in prison", then stops committing to the repo 13 days ago - claims financial problems](https://github.com/zloirock/core-js/issues/747#issuecomment-573318269)
-177  | [21 comments](https://www.reddit.com/r/javascript/comments/ev5zzz/a_graphqlbased_web_app_written_with_javascript/) | [A GraphQL-based Web App written with JavaScript, React and Go](https://github.com/Shpota/skmz)
-154  | [31 comments](https://www.reddit.com/r/javascript/comments/exxg9l/the_mustread_javascript_book_of_2020_is_free/) | [The Must-Read Javascript Book of 2020 is Free](https://booksoncode.com/articles/ydkjs-get-started)
-86  | [27 comments](https://www.reddit.com/r/javascript/comments/exm8g0/askjs_is_this_a_good_explanation_of_tokenbased/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Is this a good explanation of token-based authentication? :-&amp;#41;
-85  | [14 comments](https://www.reddit.com/r/javascript/comments/evl2ej/javascript_componentlevel_cpu_costs/) | [JavaScript component-level CPU costs](https://calendar.perfplanet.com/2019/javascript-component-level-cpu-costs/)
+220  | [39 comments](https://www.reddit.com/r/javascript/comments/ezz6z9/visual_studio_code_january_2020/) | [Visual Studio Code January 2020](https://code.visualstudio.com/updates/v1_42)
+206  | [79 comments](https://www.reddit.com/r/javascript/comments/ez4pv2/interviewing_at_facebook_onsite_javascript/) | [Interviewing at Facebook — On-Site JavaScript Technical Interview Questions](https://medium.com/javascript-in-plain-english/facebook-on-site-technical-interview-1264cacad263)
+192  | [37 comments](https://www.reddit.com/r/javascript/comments/ezhkea/darkmodejs_move_your_website_to_the_dark_side/) | [DarkModeJS – move your website to the dark side](https://github.com/nickdeny/darkmode-js)
+164  | [20 comments](https://www.reddit.com/r/javascript/comments/f1axnl/real_time_chat_application_built_by_node_express/) | [Real time chat application built by Node, Express, React, Socket.io &amp;amp; Javascript With source code](https://www.htmlhints.com/article/66/real-time-chat-application-based-on-express-react-socketio)
+160  | [39 comments](https://www.reddit.com/r/javascript/comments/eyuvoe/rock_paper_scissors_game_all_assets_have_been/) | [Rock paper scissors game all assets have been created by me. Please feel free to fork or feedback](https://www.pixel-tones.com/rpsgame/)
+145  | [22 comments](https://www.reddit.com/r/javascript/comments/eybwr5/gltfjsx_10_released_a_tool_that_brings_3d_content/) | [GLTFJSX 1.0 released, a tool that brings 3D content to the web as re-usable React components](https://github.com/react-spring/gltfjsx/blob/master/whatsnew.md)
+141  | [29 comments](https://www.reddit.com/r/javascript/comments/f0znep/bouncing_balls_simulation_using_plain_javascript/) | [Bouncing balls simulation using plain JavaScript &amp;#40;demo link and detailed description in the README&amp;#41;](https://github.com/MTrajK/bouncing-balls)
+139  | [25 comments](https://www.reddit.com/r/javascript/comments/f1jop9/6_things_i_wished_i_knew_about_state_management/) | [6 things I wished I knew about state management when I started writing React apps](https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb)
+129  | [11 comments](https://www.reddit.com/r/javascript/comments/f1b8uq/my_lightning_effect_experiment_with_vanilla_js/) | [My lightning effect experiment with vanilla JS and canvas. Demo available in the readme file.](https://github.com/diwsi/Javascript-Lightning-Effect)
+119  | [12 comments](https://www.reddit.com/r/javascript/comments/f01v1u/announcing_typescript_38_rc/) | [Announcing TypeScript 3.8 RC](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/)
 
 
 
@@ -28,11 +36,11 @@ score | comments | title &amp; link |
 
 score | comments | title &amp; link | 
 --|--|--
-75  | [57 comments](https://www.reddit.com/r/javascript/comments/ew3z3s/functional_programming_in_javascript/) | [Functional programming in JavaScript](https://softwarebrothers.co/blog/functional-programming-in-javascript/)
-33  | [31 comments](https://www.reddit.com/r/javascript/comments/ev89pn/destructure_an_object_to_remove_a_property/) | [Destructure an object to remove a property](https://timdeschryver.dev/snippets/destructure-an-object-to-remove-a-property)
-4  | [29 comments](https://www.reddit.com/r/javascript/comments/ev9yth/why_do_we_have_dependency_injection_in_web/) | [Why do we have Dependency Injection in web development](https://indepth.dev/why-do-we-have-dependency-injection-in-web-development/)
-72  | [28 comments](https://www.reddit.com/r/javascript/comments/ewof5c/eslint_plugin_for_sorting_requires/) | [ESlint plugin for sorting requires](https://github.com/zcuric/eslint-plugin-require-sort)
-4  | [18 comments](https://www.reddit.com/r/javascript/comments/ey1qre/the_javascript_community_has_a_cultural_problem/) | [The JavaScript Community Has A Cultural Problem And What The Heck Is A Class](https://motts42.blogspot.com/2020/02/what-heck-is-class.html)
+52  | [76 comments](https://www.reddit.com/r/javascript/comments/eyo0zt/owl_class_based_components_with_hooks_reactive/) | [Owl: class based components with hooks, reactive state and concurrent mode](https://github.com/odoo/owl)
+0  | [55 comments](https://www.reddit.com/r/javascript/comments/ey9uwh/askjs_is_there_any_language_that_can_kill/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Is there any language that can kill JavaScript?
+11  | [51 comments](https://www.reddit.com/r/javascript/comments/f0n28c/askjs_do_you_prefer_react_or_angular/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Do you prefer React or Angular ?
+12  | [42 comments](https://www.reddit.com/r/javascript/comments/ez9w54/askjs_jquery_is_it_still_worth_learning/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; jQuery is it still worth learning?
+118  | [39 comments](https://www.reddit.com/r/javascript/comments/ezttcv/whats_new_in_ecmascript_2020_es2020/) | [What's new in ECMAScript 2020 &amp;#40;ES2020&amp;#41;](https://alligator.io/js/es2020/)
 
 
 
@@ -43,9 +51,9 @@ score | comments | title &amp; link |
 
 score | comments | title &amp; link | 
 --|--|--
-16  | [11 comments](https://www.reddit.com/r/javascript/comments/evqc0c/askjs_is_there_a_better_alternative_to_hammerjs/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Is there a better alternative to HammerJS for detecting touch gestures?
-10  | [7 comments](https://www.reddit.com/r/javascript/comments/exu3is/askjs_best_ways_to_create_and_embed_3d_models_to/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Best ways to create and embed 3d models to website?
-7  | [8 comments](https://www.reddit.com/r/javascript/comments/extnl7/askjs_working_on_a_new_javascript/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Working on a new JavaScript reference/tutorial site and would love feedback!
+63  | [34 comments](https://www.reddit.com/r/javascript/comments/eypuq0/askjs_please_help_us_choose_the_default_color/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Please help us choose the default color scheme for our open source Vuestic Admin
+26  | [21 comments](https://www.reddit.com/r/javascript/comments/f0i2rd/askjs_personal_site_feedback/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Personal Site, Feedback?
+12  | [15 comments](https://www.reddit.com/r/javascript/comments/f1c4s6/askjs_how_often_do_you_guys_find_yourself_hacking/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; How often do you guys find yourself 'hacking' your code to get things to work?
 
 
 
@@ -56,9 +64,9 @@ score | comments | title &amp; link |
 
 score  |  comment  | 
 --|--
-5  |  /u/mynamesleon said [My accessible autocomplete module &amp;#40;with multi-selection, and supporting IE9+&amp;#41; finally feels complete: https://mynamesleon.github.io/aria-autocomplete/  My accessible tablists module &amp;#40;also ...](/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/fg68adu/?context=5)
-3  |  /u/troymius said [I shared this hobby project of mine before. Last week I finally published and updated version with sounds: &amp;#91;simcar.io&amp;#93;&amp;#40;https://simcar.io&amp;#41;](/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/fg7a13u/?context=5)
-3  |  /u/yboris said [Released **Video Hub App 2.1.0 🎉** this week:  Web: &amp;#91;https://videohubapp.com/&amp;#93;&amp;#40;https://videohubapp.com/&amp;#41;   GitHub:  &amp;#91;https://github.com/whyboris/Video-Hub-App&amp;#93;&amp;#40;https://gith...](/r/javascript/comments/ex51il/showoff_saturday_february_01_2020/fg6l7vr/?context=5)
+5  |  /u/mjswensen said [I created a new color set for themer &amp;#40;a tool for generating development environment themes&amp;#41;, called *Right in the Teals*.  &amp;#91;npm package with screenshots&amp;#93;&amp;#40;https://www.npmjs.com/pack...](/r/javascript/comments/f0qlnx/showoff_saturday_february_08_2020/fgxadi1/?context=5)
+5  |  /u/jeffelhefe said [I made a data visualization showing how the National Institutes of Health funds biomedical research across institutions in the US. It is all React, Victory.js and D3 and Bulma.  Any feedback is welcom...](/r/javascript/comments/f0qlnx/showoff_saturday_february_08_2020/fgwy4wu/?context=5)
+5  |  /u/CodeDromeBlog said [Interactive Periodic Table in JavaScript  &amp;#91;Post&amp;#93;&amp;#40;https://www.codedrome.com/interactive-periodic-table-in-javascript/&amp;#41;  &amp;#91;Online version&amp;#93;&amp;#40;http://online.codedrome.com/periodic...](/r/javascript/comments/f0qlnx/showoff_saturday_february_08_2020/fgwqws0/?context=5)
 
 
 
@@ -69,95 +77,93 @@ score  |  comment  |
 
 score  |  comment  | 
 --|--
-208  |  /u/our_best_friend said [Say what you want about the JS community - nobody in tech does drama like we do](/r/javascript/comments/eul7lg/corejs_used_by_babel_angular_author_posted_a/ffq1ee8/?context=5)
-123  |  /u/MangoManBad said [Imagine leaving critical dependency issues in your production software like a baboon.  &amp;amp;#x200B;  Oh, wait...](/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/ffr5htn/?context=5)
-117  |  /u/ronchalant said [I don't see anything for parsing html?  *ducks*](/r/javascript/comments/ewsc5y/i_launched_ihateregexio_a_regex_cheatsheet_for/fg4428d/?context=5)
-81  |  /u/acemarke said [I've been using Cesium since early 2013, when it was still in beta, and built a couple long-running internal apps with it.  One of those had originally been built with the old Google Earth Browser Plu...](/r/javascript/comments/evshne/cesiumjs_an_open_source_javascript_library_for/ffxsrg1/?context=5)
-74  |  /u/Hotgeart said [Oh nice javascript librairies - 56 dependencies  3 month later time to update my little app - ERROR - ERROR- ERROR](/r/javascript/comments/eus6a0/javascript_libraries_are_almost_never_updated/ffrd5mp/?context=5)
+122  |  /u/arendjr said [Here's my favorite:  &amp;gt; VS Code allows extensions to change a file's contents when saving files to disk. Features like **Format on Save** and **Fix on Save** are examples. However, saving is a criti...](/r/javascript/comments/ezz6z9/visual_studio_code_january_2020/fgqlbdb/?context=5)
+71  |  /u/JayV30 said [While I respect the engineers who work at facebook, why would anyone want to work there?](/r/javascript/comments/ez4pv2/interviewing_at_facebook_onsite_javascript/fglofr2/?context=5)
+51  |  /u/Qwakeworld said [**Practically Understand the "this" keyword in Javascript**  * Use `this` inside classes like you would in other languages * Otherwise, don't use `this`](/r/javascript/comments/f1brxw/comprehensively_understand_the_this_keyword_in/fh3ya9m/?context=5)
+46  |  /u/chrisplusplus said [I hope magento is burned to the ground](/r/javascript/comments/ez9bex/vendure_an_open_source_magento_alternative/fgltia7/?context=5)
+41  |  /u/disengagement_mulder said [The term "JavaScript Entrepreneur" is quite dumb.](/r/javascript/comments/f0u1l0/the_ultimate_guide_to_create_desktop_apps_for/fh0to7b/?context=5)
 
 
 
 
 &amp;nbsp;
-## [2][Showoff Saturday (February 08, 2020)](https://www.reddit.com/r/javascript/comments/f0qlnx/showoff_saturday_february_08_2020/)
-- url: https://www.reddit.com/r/javascript/comments/f0qlnx/showoff_saturday_february_08_2020/
+## [3][[AskJS] I want to create a YouTube channel showing the nitty-gritty of programming and maintaining a web-app for 10+ years (scale: 40k monthly uniques, $20k/monthly). What topics are of interest to r/javascript?](https://www.reddit.com/r/javascript/comments/f35k31/askjs_i_want_to_create_a_youtube_channel_showing/)
+- url: https://www.reddit.com/r/javascript/comments/f35k31/askjs_i_want_to_create_a_youtube_channel_showing/
 ---
-Did you find or create something cool this week in javascript? 
+As part of my new year's resolutions I want to get a little less camera shy and I thought I have a somewhat interesting story to share about being the solopreneur owner of a web app. This opens up the possibility to show all the code/analytics etc. without repercussions from any other stake-holders.
 
-Show us here!
-## [3][Hey r/javascript! We're a small team that just launched a new product called Autocode that lets you automatically generate Node.js API code for connecting apps together. Would love feedback! (x-post r/node)](https://www.reddit.com/r/javascript/comments/f2ocr2/hey_rjavascript_were_a_small_team_that_just/)
+In terms of priorities, I wanted to ask you all what topics would you like to see covered? Here are some initial ideas I had. Feel free to add anything you don't see here.
+
+(FYI: The site is a two-sided marketplace selling Word documents )
+
+**Coding Topic Ideas**
+
+1. generating a maximally enjoyable development environment (e.g. seeding data, simulating cron, mirroring production as much as possible etc.)
+2. removing brittleness from integration tests that run on circleci
+3. dealing with the shitshow that is sales tax accounting across multiple currencies
+4. detecting and recovering from production bugs asap
+5. dealing with the real-world mess that is imperfect user input (e.g. when they type emails with a leading space or inconsistent capitalization; when they create a tag that is almost the same as a previous one — like E Guitar vs. Electric Guitar—and now your data is split across two areas)
+6. discussing the 8+ year consequences of certain architectural/software design issues
+7. streamlining massive amounts of config
+8. multi-redundant systems of backup to prevent disaster
+9. designing error messages and a logging strategy that speeds up recovery from errors
+10. a tour of the most evil, insidious bugs I dealt with over the years (I keep a diary for them)
+11. payment systems in-depth (refunds, errors etc.)
+12. caching systems for performance
+13. Javascript frameworks — why I decided to tear mine out and stick with simple, modular JS.
+14. Choosing dependencies that don't come back and bite you in the ass (think about how the JSscape has changed in the last ten years...)
+
+**Marketing/Business Topics Ideas**
+
+1. how I use data to decide to add/remove a feature
+2. AB testing a web app
+3. technical SEO (microdata, site structure for internal links, google's tools, sitemaps, etc.) — I get 85% of my traffic (and therefore revenue) from SEO, so I know a thing or two
+4. how I use JS and integration tests on all tracking code (critical to get right in my business)
+5. auto-email systems to previous customers for extra sales
+6. Adwords workflow to drive revenue
+7. Analytics workflow to figure out what content working
+8. Writing copy that gets sales (what worked for me vs. didn't)
+## [4][[AskJS] We are developing a declarative DSL for building full-stack web apps - we would love to hear what you think!](https://www.reddit.com/r/javascript/comments/f38h1t/askjs_we_are_developing_a_declarative_dsl_for/)
+- url: https://www.reddit.com/r/javascript/comments/f38h1t/askjs_we_are_developing_a_declarative_dsl_for/
+---
+Hi all,  
+my brother and I had this (crazy?) idea and started working on it a year ago, just finished first prototype (not yet runnable on your machine, but you can check out demo on our page).
+
+Although we are still very early and there is a lot of work to be done to get it to something complete, we are excited about it :D and would love to hear whether you think this makes sense as a concept, can you see yourself using this, what do you think would be the most important thing to change / focus on / drop in the future, and similar - any feedback helps really!
+
+Our webpage: [https://wasp-lang.dev](https://wasp-lang.dev) .  
+
+
+Thanks a lot!
+## [5][How I ported a US counties map made in D3 to the GPU using Three.js [OC]](https://www.reddit.com/r/javascript/comments/f2tme8/how_i_ported_a_us_counties_map_made_in_d3_to_the/)
+- url: https://tips4devs.com/articles/make-a-webgl-powered-us-counties-map-with-d3-and-three-js.html
+---
+
+## [6][Lift Up Your Skills with 13 Simple Yet Powerful JavaScript Tricks | Learn To Code Together](https://www.reddit.com/r/javascript/comments/f37u06/lift_up_your_skills_with_13_simple_yet_powerful/)
+- url: https://learntocodetogether.com/powerful-javascript-tricks/#.XkUfJueAybU.reddit
+---
+
+## [7][Regular Expressions made easy: a declarative approach](https://www.reddit.com/r/javascript/comments/f3a0dg/regular_expressions_made_easy_a_declarative/)
+- url: https://www.hackdoor.io/articles/lMN5kwQ1/regular-expressions-made-easy-a-declarative-approach
+---
+
+## [8][Building a Simple Node.js OAuth Server with JWT](https://www.reddit.com/r/javascript/comments/f339wg/building_a_simple_nodejs_oauth_server_with_jwt/)
+- url: https://www.grizzlypeaksoftware.com/articles?id=6G3prVhXnUeSYUEqEoCqq2
+---
+
+## [9][Hey r/javascript! We're a small team that just launched a new product called Autocode that lets you automatically generate Node.js API code for connecting apps together. Would love feedback! (x-post r/node)](https://www.reddit.com/r/javascript/comments/f2ocr2/hey_rjavascript_were_a_small_team_that_just/)
 - url: https://autocode.com/
 ---
 
-## [4][A GraphQL-based Web App written with React, Go and MongoDB. Could serve as an example for those who are learning these technologies. The repo includes a detailed description on how to setup dev environmwnt and how to work with the project.](https://www.reddit.com/r/javascript/comments/f2an2t/a_graphqlbased_web_app_written_with_react_go_and/)
-- url: https://github.com/Shpota/skmz/
+## [10][Moving 3d Car Game Using Javascript Library Three.Js](https://www.reddit.com/r/javascript/comments/f2x9ws/moving_3d_car_game_using_javascript_library/)
+- url: http://htmlhints.com/article/69/moving-3d-car-game-using-threejs
 ---
 
-## [5][4 Methods to Search Through Arrays in JavaScript](https://www.reddit.com/r/javascript/comments/f26f47/4_methods_to_search_through_arrays_in_javascript/)
-- url: https://alligator.io/js/array-search-methods/
+## [11][[AskJS] What they should improve about Javascript ?](https://www.reddit.com/r/javascript/comments/f36dy2/askjs_what_they_should_improve_about_javascript/)
+- url: https://www.reddit.com/r/javascript/comments/f36dy2/askjs_what_they_should_improve_about_javascript/
 ---
-
-## [6][Create A React Custom Hooks For Your Web Components](https://www.reddit.com/r/javascript/comments/f2qs0v/create_a_react_custom_hooks_for_your_web/)
-- url: https://medium.com/@david.dalbusco/create-a-react-custom-hooks-for-your-web-components-f4319bb4bc35
----
-
-## [7][Realtime chat app with like/dislike of messages and audio messages](https://www.reddit.com/r/javascript/comments/f2n6ez/realtime_chat_app_with_likedislike_of_messages/)
-- url: https://iabhishek.dev/post/building-a-multimedia-chat-app-using-express-socketio-redis-and-docker-part-3
----
-
-## [8][[AskJS] How to filter success: false and success: true in an object](https://www.reddit.com/r/javascript/comments/f2qafd/askjs_how_to_filter_success_false_and_success/)
-- url: https://www.reddit.com/r/javascript/comments/f2qafd/askjs_how_to_filter_success_false_and_success/
----
- 
-
-I have an Ajax response, within the object I have
-
-`success: false and success: "" (true)`
-
-How do I separate or call only json with a success: false ? or success: true ?
-
-&amp;#x200B;
-
-[screenshot](https://preview.redd.it/m1ypra9phhg41.png?width=897&amp;format=png&amp;auto=webp&amp;s=5fcbb233863341e59f37436b8e92f33620d6f05b)
-
-screenshot
-
-So when I get my result like I can filter by success: true or success:false
-
-`//Return all success: true`
-
-`var result_true = json.data.map(function(d) {`  
-`return {`  
-   `name:` [`d.request.name`](https://d.request.name)`,`  
-`success: d.success, //currently returning blank`  
-   `column: d.column,`  
-   `message: d.message`  
-`}})`
-
-\-------------------------------------------------------------
-
-`//Return all success: false`
-
-`var result_false = json.data.map(function(d) {`  
-`return {`  
-`name:` [`d.request.name`](https://d.request.name)`,`  
-`success: d.success, //currently returning blank`  
-`column: d.column,`  
-`message: d.message`  
-`}})`
-## [9][Writing dependency-free JavaScript](https://www.reddit.com/r/javascript/comments/f2pb98/writing_dependencyfree_javascript/)
-- url: https://magnushoff.com/blog/dependency-free-javascript/
----
-
-## [10][I've been working with the AWS CDK a lot recently, and wanted to share some learning!](https://www.reddit.com/r/javascript/comments/f2iqy2/ive_been_working_with_the_aws_cdk_a_lot_recently/)
-- url: https://terodox.tech/aws-cdk/
----
-
-## [11][Speech to text in the browser with the Web Speech API](https://www.reddit.com/r/javascript/comments/f2mlbc/speech_to_text_in_the_browser_with_the_web_speech/)
-- url: https://www.twilio.com/blog/speech-recognition-browser-web-speech-api
----
-
-## [12][Thinking With Autotracking: What Makes a Good Reactive System?](https://www.reddit.com/r/javascript/comments/f2m8e9/thinking_with_autotracking_what_makes_a_good/)
-- url: https://www.pzuraq.com/thinking-with-autotracking-what-makes-a-good-reactive-system/
+What they should improve about Javascript that you find in others programming language like C#, JAVA, C++, PHP, RUBY etc or is there things you would change or do differently if it was up to you ? I mean anything like toolings, syntax, frameworks, npm ecosystem, node, vanilla js syntax compared to the latest features etc. Do you agree with the way JS evolve and the way it's run or you would prefer a big corporation like Microsoft or a c++ standard committee running it ?
+## [12][Angular Weekly #90: RxJS &amp; typing zipWith, demystifying a TypeScript quirk](https://www.reddit.com/r/javascript/comments/f335bx/angular_weekly_90_rxjs_typing_zipwith/)
+- url: https://www.angularweekly.dev/post/90-release-of-angular-9
 ---
 

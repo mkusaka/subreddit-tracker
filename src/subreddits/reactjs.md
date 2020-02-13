@@ -85,110 +85,71 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Full page transitions](https://www.reddit.com/r/reactjs/comments/f28oll/full_page_transitions/)
-- url: https://v.redd.it/hhfbjmi5wag41
+## [3][To Understand Concurrent React, Look Outside React: 3 Talks from Outside React](https://www.reddit.com/r/reactjs/comments/f34x0f/to_understand_concurrent_react_look_outside_react/)
+- url: https://www.swyx.io/writing/react-outside/
 ---
 
-## [4][OpenChakra.app - Visual editor for Chakra UI](https://www.reddit.com/r/reactjs/comments/f2ouue/openchakraapp_visual_editor_for_chakra_ui/)
-- url: https://openchakra.app/
+## [4][Redux Toolkit v.1.3.0-alpha.0: add `createEntityAdapter` and `createAsyncThunk`](https://www.reddit.com/r/reactjs/comments/f2wdk7/redux_toolkit_v130alpha0_add_createentityadapter/)
+- url: https://github.com/reduxjs/redux-toolkit/releases/tag/v1.3.0-alpha.0
 ---
 
-## [5][What exactly is NextJS ? What is the use of it, how is it different from create-react-app and npx](https://www.reddit.com/r/reactjs/comments/f2oywo/what_exactly_is_nextjs_what_is_the_use_of_it_how/)
-- url: https://www.reddit.com/r/reactjs/comments/f2oywo/what_exactly_is_nextjs_what_is_the_use_of_it_how/
+## [5][React Project Structure and tools](https://www.reddit.com/r/reactjs/comments/f38n4i/react_project_structure_and_tools/)
+- url: https://www.reddit.com/r/reactjs/comments/f38n4i/react_project_structure_and_tools/
 ---
-I just started react JS. I made few demo projects using npx create react app. I am doing a course in which the guy is using NextJs? So i am little confused that, what exactly is NextJs , what is the difference and which one is better to use ?
-## [6][I created my portfolio with React.js](https://www.reddit.com/r/reactjs/comments/f2ntvv/i_created_my_portfolio_with_reactjs/)
-- url: https://himanshuvarshney.works/
+Hey guys, this is my first post.
+
+Ive been doing react for couple of months now, self learn.  I was wondering how does the common corporate or startup or even yourself Structure your react project? 
+
+Like how do you decide this certain thing should be a component and where would you write all your functions? 
+
+ And what kind of tools do you use to help with your development (Redux, MobX, Jest, and so on)?
+
+Appreciate it thanks
+## [6][What are not popular but great React tricks?](https://www.reddit.com/r/reactjs/comments/f37x69/what_are_not_popular_but_great_react_tricks/)
+- url: https://www.reddit.com/r/reactjs/comments/f37x69/what_are_not_popular_but_great_react_tricks/
+---
+I just wonder what are most impressive tips and tricks for React which most people do not know.
+## [7][Write PIXI apps the elegant way](https://www.reddit.com/r/reactjs/comments/f2zujd/write_pixi_apps_the_elegant_way/)
+- url: https://reactpixi.org
 ---
 
-## [7][Dynamic images from URL](https://www.reddit.com/r/reactjs/comments/f2ore3/dynamic_images_from_url/)
-- url: https://www.reddit.com/r/reactjs/comments/f2ore3/dynamic_images_from_url/
+## [8][Steps to use livereload in your Electron Project](https://www.reddit.com/r/reactjs/comments/f39ivv/steps_to_use_livereload_in_your_electron_project/)
+- url: https://www.sparxtechnolabs.com/blog/easy-steps-to-use-livereload-in-your-electron-project.html
 ---
-Hi guys
 
-I recently logged the following question in Stack Overflow:  [https://stackoverflow.com/questions/60164789/display-image-stored-as-a-path-string-in-the-database-in-react](https://stackoverflow.com/questions/60164789/display-image-stored-as-a-path-string-in-the-database-in-react) 
-
-I have come seeking help here because I think the issue is that my question is not being understood. 
-
-I have  a DB in that DB I have a users table with a profile picture column that only stores a varchar(50) which has a file path string that looks like this '../images/profilepic1.jpg'. I can successfully make an API call and get this value from React, so this is not the issue, this value is then saved into a state and a normal global variable. So the API backend and the axios call both work correctly. My issue is that when I declare an &lt;img&gt; tag and set the src={profilepic} I cannot see the image in my browser. I cannot use src={require(${profilepic}} or any variation of it as this produces an obvious error message.
-
-If I explicitly set the src={require('../images/profilepic1.jpg')} I can see the image in browser. So my question is a 2 part question: Has anyone else been able to display an image using a file path in react that is taken from a variable? Would it rather be better to store the images in my database as BLOBS and bring them into React as full standalone images?
-
-Please note that I cannot use an import statement to import the image file from a path as the path is not known to me and is only fetched from the database when the fetch statement is run. Any tutorial would help where local images are saved on a database and are fetched and displayed by React. If you suggest saving the images to the public folder how would I then access them and what should the file path look like?
-## [8][What's the best guide to become a full stack developer?](https://www.reddit.com/r/reactjs/comments/f2hexu/whats_the_best_guide_to_become_a_full_stack/)
-- url: https://www.reddit.com/r/reactjs/comments/f2hexu/whats_the_best_guide_to_become_a_full_stack/
+## [9][Need Suggestion/Advice related to a project I am working on.](https://www.reddit.com/r/reactjs/comments/f39at4/need_suggestionadvice_related_to_a_project_i_am/)
+- url: https://www.reddit.com/r/reactjs/comments/f39at4/need_suggestionadvice_related_to_a_project_i_am/
 ---
-I understand that depending on the project, different technologies are required. From what I've seen what React can do, I am growing fond of React. 
+So I am developing a website in which a user can post any data in any Indian Language like Hindi, English, Bengali, Tamil etc
+
+I have 3 queries related to it.
+
+First is which kind of rendering should i go with, server side or client side. The user interaction which changes the state of site are normal stuff like, comments, review, rating, voting . when user posts something, it will create a message saying that it is sent to moderation. Comments/review and votes are to be added on stop. Otherwise other stuff on the site is static in nature, so for this scenario , which is better , and should proceed with, i am still not clear about CSR  and SSR. 
 
 &amp;#x200B;
 
-Is there a general guide or starting guide as far as what frameworks/libraries/database etc..to use for front end/back end? 
-
-How to choose with technologies to use when deciding a project?
+2nd query is that I am planning to use MERN stack. So how can i make an editor which will allow the user to type in the Indian language, and how can i port this to  mobile site. What APIs can i use , and what options do i have.
 
 &amp;#x200B;
 
-For example:  React + Node + MongoDB
-## [9][Design Systems in Storybook](https://www.reddit.com/r/reactjs/comments/f2jkrd/design_systems_in_storybook/)
-- url: https://medium.com/storybookjs/how-design-systems-use-storybook-2ed735ad07a9
----
+3rd-When user is selecting a particular language, i am thinking of redirecting different sub domain.
 
-## [10][Handling very fast updates](https://www.reddit.com/r/reactjs/comments/f2q5ey/handling_very_fast_updates/)
-- url: https://www.reddit.com/r/reactjs/comments/f2q5ey/handling_very_fast_updates/
----
-Hi all,
+Like if he selects Marathi, then i will redirect to mr.abc.com something , what changes do i have to make for routing and database base. Does the user needs to register on every domain separately or just registration works
 
 &amp;#x200B;
 
-Novice React developer here.
-
-I am trying to build a real time app with [websocket.io](https://websocket.io) but I'm struggling with handling very fast updates coming from it.
-
-When a piece of data comes in, I need to check if I received it before, so I store it in a list. Making this list a state doesn't work because states are not updated quickly enough.
-
-I tried to use the useRef hook instead of states, but it still ends up not working properly.
-
-&amp;#x200B;
-
-What should I look at for this use case?
-
-Thanks for your help!
-
-&amp;#x200B;
-
-Edit: I added a very stripped down version of what I'm trying to do. Unfortunately, I can't share anything extremely specific but I think this should paint a decent enough picture.
-
-Edit2: it looks bad as text here, so I will leave it as a paste below:
-
-[https://pastebin.com/GWNfqZpU](https://pastebin.com/GWNfqZpU)
-
-This is me trying to use "useRef" instead of "useState". 
-## [11][Where can I chat with someone for React/Redux help?](https://www.reddit.com/r/reactjs/comments/f2mcbv/where_can_i_chat_with_someone_for_reactredux_help/)
-- url: https://www.reddit.com/r/reactjs/comments/f2mcbv/where_can_i_chat_with_someone_for_reactredux_help/
+Could really use your advice.
+## [10][How can I load specific themes accordingly to subdomain?](https://www.reddit.com/r/reactjs/comments/f38zy4/how_can_i_load_specific_themes_accordingly_to/)
+- url: https://www.reddit.com/r/reactjs/comments/f38zy4/how_can_i_load_specific_themes_accordingly_to/
 ---
-I'm an experienced backend developer but very new to React. I've thrown together some barely working spaghetti code but have a ton of questions.
+Let's say I have an application that each user have their own subdomain and theme. How can I select the page theme accordingly to the subdomain with react since the react router doesn't deal with subdomains?
 
-I'm so new that some of the concepts I'm trying to ask about on stackoverflow aren't correctly being explained, so I'd love to chat with someone and get one on one help, probably for about 30 mins to an hour.
-
-  
-Is there any service that offers this? I'm happy to pay for the time, similar to a tutor. Please let me know where I can look to get further help :)
-## [12][Deploying app to subfolder server, components 404 not found (yet homepage loads)](https://www.reddit.com/r/reactjs/comments/f2puut/deploying_app_to_subfolder_server_components_404/)
-- url: https://www.reddit.com/r/reactjs/comments/f2puut/deploying_app_to_subfolder_server_components_404/
+Thanks!
+## [11][GitHub - jamstack-cms/jamstack-ecommerce: A starter project for building performant ECommerce applications with Gatsby and React](https://www.reddit.com/r/reactjs/comments/f2s2f3/github_jamstackcmsjamstackecommerce_a_starter/)
+- url: https://github.com/jamstack-cms/jamstack-ecommerce
 ---
-Dear Peoples, I have been trying to figure out the problem for a while. Hoping maybe someone can steer me in the right direction
 
-The app works fine in localhost, (it is a headless wordpress CMS with React). However, when I upload it to server the links are 404 (even if the URLs seem correct.)
-
-App: [http://lead.bourim.com/ClientApp/build/](http://lead.bourim.com/ClientApp/build/)
-
-What I have done:
-
-1. Updated Packages.json: "homepage": "[http://lead.bourim.com/ClientApp/build/](http://lead.bourim.com/ClientApp/build/)",
-2. Fixed: &lt;BrowserRouter basename={"/ClientApp/build/"}&gt;
-3. Changed every Route to (i.e.) : &lt;Route exact path={\`${process.env.PUBLIC\_URL}/AllResults\`}&gt;
-4. Updated every Link to (i.e.) : &lt;Link  
- to={\`${process.env.PUBLIC\_URL}/post/${[post.id](https://post.id)}\`}&gt;
-
-I have searched but cannot figure out where the mistake is. The images load, the links work fine on Localhost. 
-
-Any help, super appreciated.
+## [12][What libraries can I use to create realtime charts in React?](https://www.reddit.com/r/reactjs/comments/f3880o/what_libraries_can_i_use_to_create_realtime/)
+- url: https://www.reddit.com/r/reactjs/comments/f3880o/what_libraries_can_i_use_to_create_realtime/
+---
+We are creating an IOT device that will send air quality data in realtime. My task is to create visualization using those data. What are the things I can do and what libraries do you suggest?

@@ -1,108 +1,76 @@
 # aws
-## [1][Calling AWS Architects: How common is the request to implement ipv6?](https://www.reddit.com/r/aws/comments/f2ffha/calling_aws_architects_how_common_is_the_request/)
-- url: https://www.reddit.com/r/aws/comments/f2ffha/calling_aws_architects_how_common_is_the_request/
+## [1][How are you guys performing cost optimisation?](https://www.reddit.com/r/aws/comments/f37s6n/how_are_you_guys_performing_cost_optimisation/)
+- url: https://www.reddit.com/r/aws/comments/f37s6n/how_are_you_guys_performing_cost_optimisation/
 ---
-Any Architects here? 
+We are using scheduling policies for ASG and lambda functions to stop RDSs during weekends. I was wondering what other approach can be taken to reduce the costs. Specifically around changing instance type if it's more than enough to perform the task.
 
-How common is the client request to implement IpV6? When the question is raised, is the client future-proofing, migrating a existing ipv6 service, or just wants to have it because its fancy? Natting pretty much solves ipv4 problems, so whats the big deal?
-
-I did some lite research and found this thread: 
-
-[https://www.reddit.com/r/aws/comments/af4sj3/when\_do\_i\_need\_to\_care\_about\_ipv6/](https://www.reddit.com/r/aws/comments/af4sj3/when_do_i_need_to_care_about_ipv6/) 
-
-That basically said - Hey cloudfront is neat when it's ipv6. Linkedin uses ipv6 for mobile traffic. It's simple enough to implement and subnet but my question is:
-
-What are the common scenarios in which a client wants ipv6 implemented? Does supporting both add any significant management overhead or make anything easier to deal with?
-## [2][Billing through AWS consulting partner?](https://www.reddit.com/r/aws/comments/f2oq5r/billing_through_aws_consulting_partner/)
-- url: https://www.reddit.com/r/aws/comments/f2oq5r/billing_through_aws_consulting_partner/
+Any thoughts?
+## [2][Use CloudFormation StackSets for Multiple Accounts in an AWS Organization](https://www.reddit.com/r/aws/comments/f2vp8f/use_cloudformation_stacksets_for_multiple/)
+- url: https://aws.amazon.com/blogs/aws/new-use-aws-cloudformation-stacksets-for-multiple-accounts-in-an-aws-organization/
 ---
-Hi, we were approached by AWS consulting Partner. They offered us to transfer billing to them mentioning that the price will be the same but we will have help from their architects. That's sounds quite good but I'm not sure is there any drawbacks/ security risks about that?
 
-Thanks
-## [3][Kinesis with enabled encryption - no data coming in Firehose and S3](https://www.reddit.com/r/aws/comments/f2r1of/kinesis_with_enabled_encryption_no_data_coming_in/)
-- url: https://www.reddit.com/r/aws/comments/f2r1of/kinesis_with_enabled_encryption_no_data_coming_in/
+## [3][How do you manage contact forms with static sites?](https://www.reddit.com/r/aws/comments/f38oke/how_do_you_manage_contact_forms_with_static_sites/)
+- url: https://www.reddit.com/r/aws/comments/f38oke/how_do_you_manage_contact_forms_with_static_sites/
 ---
-Hi /r/aws,
-
-I have CloudWatch log groups with subscription filters to Kinesis data streams and then Firehose with that Datastream as a source configured to dump data in S3.
-Everything is working just fine until I turn on encryption on Kinesis Data Streams.
-
-I can't find much about it and only link out there is this:
-https://docs.aws.amazon.com/firehose/latest/dev/encryption.html
-
-When you send data from your data producers to your data stream, Kinesis Data Streams encrypts your data using an AWS Key Management Service (AWS KMS) key before storing the data at rest. When your Kinesis Data Firehose delivery stream reads the data from your data stream, Kinesis Data Streams first decrypts the data and then sends it to Kinesis Data Firehose. Kinesis Data Firehose buffers the data in memory based on the buffering hints that you specify. It then delivers it to your destinations without storing the unencrypted data at rest.
-
-
-If I'm reading this well, seems like Firehose doesn't need access to KMS key? Looks like Data Streams would take care of decryption before sending data to Firehose?
-
-I have tried multiple things, different policies and permissions and nothing, just can't get anything to Firehose as long as I have Encryption enabled.
-
-Any hints or ideas? Thanks!
-## [4][HOW to REMOVE NON_EXISTING TARGET_GROUP from AUTO-SCALING](https://www.reddit.com/r/aws/comments/f2o7jr/how_to_remove_non_existing_target_group_from/)
-- url: https://www.reddit.com/r/aws/comments/f2o7jr/how_to_remove_non_existing_target_group_from/
+I've got a static site that needs a contact page and I've tried tonnes of CloudFormation templates but they are either too old or not designed for the SES sandbox. It's driving me nuts and I'm tempted to just use a 3rd party form but I like the idea of messing around with things like SES, SNS, and DynamoDB etc.. Thanks
+## [4][How long from keys in github to a compromised account?](https://www.reddit.com/r/aws/comments/f39jna/how_long_from_keys_in_github_to_a_compromised/)
+- url: https://www.reddit.com/r/aws/comments/f39jna/how_long_from_keys_in_github_to_a_compromised/
 ---
-I am facing a problem explained below:
+I'm trying to teach people a security lesson and wondered if anyone had any stats to back up my ideas.
 
-I deleted a target group after removing the respective rules from the Application Load Balancer, I forgot to detach the target group from auto-scaling due to which auto-scaling giving error while launching new instances.
+If an AWS key/secret were posted to Github (or other popular public service), how quickly are you likely to see attempts to use the keys?
 
-*Error: Status Reason: One or more target groups not found. Validating load balancer configuration failed.*
+I say Github, because there are people out there scanning it for just such leaks. I could post them to twitter and there is a much wider audience, but I don't really expect anyone to be watching twitter for AWS\_....=AKIA....
 
-I don't have CLI access for my AWS IAM (account).
+Obviously you don't need to confess to leaking the keys yourself! :-) "Someone I know put their key in github and within x minutes there were attempted logins" ?
 
-What should I do to resolve the issue ... Reporting it to the higher authority may bring problem to me.....
-
-&amp;#x200B;
-
-Thanks
-## [5][My Amazon Elastic Compute Cloud usage is growing with no EC2 instances running](https://www.reddit.com/r/aws/comments/f2q8qi/my_amazon_elastic_compute_cloud_usage_is_growing/)
-- url: https://www.reddit.com/r/aws/comments/f2q8qi/my_amazon_elastic_compute_cloud_usage_is_growing/
+(I will follow up with the "Code Spaces" story)
+## [5][Best Practice For Configuration Management](https://www.reddit.com/r/aws/comments/f39jc9/best_practice_for_configuration_management/)
+- url: https://www.reddit.com/r/aws/comments/f39jc9/best_practice_for_configuration_management/
 ---
-So I am using my 750 hours of free EC2 instance, and I recently shut down all my databases and all my EC2 instances, but my "Current Usage" hours keep growing with no EC2 instances or anything.. What else causes usage of the elastic compute cloud?
-## [6][Powershell and Private ECS/S3 Object Store](https://www.reddit.com/r/aws/comments/f2px5y/powershell_and_private_ecss3_object_store/)
-- url: https://www.reddit.com/r/aws/comments/f2px5y/powershell_and_private_ecss3_object_store/
+At the moment, we're using Cloudformation with gitlab runners to do our build and deployments. We're ramping up with new customers quite quickly, and my template mappings are blowing out in size with all the new variables I've had to pull out. 
+
+I thought about moving them all to parameters, but it feels very haphazard to have such a huge deploy command that's difficult to untangle. Does anyone here have some suggestions? I'm thinking about looking into either a custom resource to pull in my variables, or using something like Chef or Ansible to do my deployments instead
+## [6][AWS Client VPN seems like a rip off, no?](https://www.reddit.com/r/aws/comments/f2t9ds/aws_client_vpn_seems_like_a_rip_off_no/)
+- url: https://www.reddit.com/r/aws/comments/f2t9ds/aws_client_vpn_seems_like_a_rip_off_no/
 ---
-My organisation has deployed a DellEMC ECS Object store with compatibility for the S3 API and I am trying to use the AWSPowershell.Netcore module to connect to it.
+Is it just me being a cheap bastard and used to buying OpenVPN AS licenses for my BYOL OpenVPN AS instances or is AWS Client VPN ridiculously over priced?
 
-I have googled for days and cannot see any method for telling the session/cmdlets that I want to talk to my own environment and not AWS in the cloud.
+10 VPN users connected for 1 hour is $0.60 with AWS Client VPN. 
 
-Is this even possible?
-## [7][[ECS] CPU utilization in Cloudwatch is different from docker stats](https://www.reddit.com/r/aws/comments/f2phop/ecs_cpu_utilization_in_cloudwatch_is_different/)
-- url: https://www.reddit.com/r/aws/comments/f2phop/ecs_cpu_utilization_in_cloudwatch_is_different/
+Also I don’t think it goes across accounts with VPC peering. Meaning normally I do 1 AWS account per environment with a central core services (Admin) VPC/Account and have the accounts peer into that one. Usually I only need a single OpenVPN AS box in that Admin VPC/Account and I’m good.
+
+Thoughts? Can we expect this new service offering to come down in price any time soon? Even if it does I think it’s hard to compete with a $150 one time license for 10 users and whatever monthly run cost for the box.
+## [7][Converting my CloudFront Lambda@Edge Function from JavaScript to Python](https://www.reddit.com/r/aws/comments/f37qx0/converting_my_cloudfront_lambdaedge_function_from/)
+- url: https://adamj.eu/tech/2020/02/13/converting-my-cloudfront-lambda-at-edge-function-from-javascript-to-python/
 ---
-Hi,
 
-I noticed today that the cloudwatch metric  **AWS/ECS "CPUUtilization"** is reporting values different from what i have when i do **docker stat** command in the container instance.
-
-For example today in Cloudwatch, the CPU utilization is between 0 and 10% while when i executed docker stat on the container i saw multiple time CPU 100% for the same period.
-
-Why this difference ? 
-
-BTW, i'm using a t3.2xlarge instance type.
-
-Thanks.
-## [8][Wafv2 &amp; CloudFormation](https://www.reddit.com/r/aws/comments/f2p5us/wafv2_cloudformation/)
-- url: https://www.reddit.com/r/aws/comments/f2p5us/wafv2_cloudformation/
+## [8][AWS Storage Gateway for software development company](https://www.reddit.com/r/aws/comments/f35i3e/aws_storage_gateway_for_software_development/)
+- url: https://www.reddit.com/r/aws/comments/f35i3e/aws_storage_gateway_for_software_development/
 ---
-Has anyone had any experience with creating WAFv2 ACLs/Rules with CloudFormation?
-
-I am currently struggling to get WAFv2 resources (specifically Rate Based rules for Cloudfront resources) to create successfully in CloudFormation.
-
-For example, when creating an ACL and rules and setting the scope as CLOUDFRONT I get the following error returned:
-
-    The scope is not valid., field: SCOPE_VALUE, parameter: CLOUDFRONT (Service: Wafv2, Status Code: 400...
-
-I'm hoping I'm doing something wrong but having exhausted the CF documentation for WAFv2 I'm starting to think that there is something up with WAFv2 and CloudFormed resources.
-## [9][AWS console logout timeout](https://www.reddit.com/r/aws/comments/f2oxah/aws_console_logout_timeout/)
-- url: https://www.reddit.com/r/aws/comments/f2oxah/aws_console_logout_timeout/
+Hey. I run a 40+ developer software development agency and use AWS EC2 for dev/staging instances of our customers. During local project setups, the download of the database and files of the project usually takes around 30 minutes at \~7/8 MB/s. I was thinking if Storage Gateway would have a big impact with local project setups. Have anyone here done or seen something similar? Would you recommend Storage Gateway for this kind of problem? Or do you think it is better to just keep downloading from AWS EC2 instances at a quite-okay speed?
+## [9][Amazon hyperledger fabric](https://www.reddit.com/r/aws/comments/f34zly/amazon_hyperledger_fabric/)
+- url: https://www.reddit.com/r/aws/comments/f34zly/amazon_hyperledger_fabric/
 ---
-Hi,
+Amazon Managed Blockchain
 
-I don't know if this is the right place to ask this but when I log in to my organization's aws console, it logs me out after 10 minutes. Is there any way to increase this time?
-## [10][[CodeBuild] Deploy artifacts to different S3 directories based on Git branches](https://www.reddit.com/r/aws/comments/f2lruy/codebuild_deploy_artifacts_to_different_s3/)
-- url: https://www.reddit.com/r/aws/comments/f2lruy/codebuild_deploy_artifacts_to_different_s3/
+When using amazon managed blockchain's hyperledger fabric, I am wondering if each peer node can run a dockerized web application.  Or would I need to run an application on a separately hosted container that has logic built in for connecting to the VPC for submitting transactions to the hyperledger fabric? 
+
+
+In my case I have specific GPU and OS requirements for my container to run properly before data can be submitted and the transaction recorded. If this is possible on the amazon managed blockchain nodes via the VPC, can I specify the hardware requirements and OS for each node to host this application? Or is it wasteful to request such significant resources for each blockchain node if the end goal is simply to record a transaction? Would it be better to run the computationally costly application on a separate kubernetes instance then write transaction to ledger? This is for labeling and then uploading imaging data to a longterm storage location. I am using hyperledger fabric to record each time data is submitted and retrieved from long term storage.
+## [10][Network Load Balancer Target Group Health Check TCP Expected Response](https://www.reddit.com/r/aws/comments/f349wh/network_load_balancer_target_group_health_check/)
+- url: https://www.reddit.com/r/aws/comments/f349wh/network_load_balancer_target_group_health_check/
 ---
-I'm working on CodeBuild pipeline for a project. The pipeline builds a single artifact from a GitHub repo which is then uploaded to an S3 bucket, which is then accessed at a URL using CloudFront. All of that works fine. What I would like to do is have non-master branches or tag names (i.e., the `CODEBUILD_SOURCE_VERSION` buildspec variable, be denominated by sub-directories. For example, if building from the dev branch build to `/dev/artifact` and `/artifact` for the master branch. I can't seem to get it to work, as putting slashes in the artifact name causes the build to fail.
+Been scouring the documentation site for hours now, can anyone point me to the page on what the target group expects as a healthy response on a TCP health check?
 
-&amp;#x200B;
+I have a port open that just replies with OK like so
 
-Any suggestions as to what to do? Right now I'm considering a Lambda function to move/rewrite the object in S3, but I'd like to know if there's a simpler way.
+`TcpClient client = server.AcceptTcpClient();NetworkStream ns = client.GetStream();byte[] hello = Encoding.Default.GetBytes("OK");ns.Write(hello, 0, hello.Length);`
+
+and have done a nc on a separate ec2 and it all works
+
+`root@ip-10-200-10-93:/home/ubuntu# nc -vz` [`10.200.31.240`](https://10.200.31.240) `4416Connection to` [`10.200.31.240`](https://10.200.31.240) `4416 port [tcp/*] succeeded!`
+
+But somehow, target group health checks still return unhealthy. I read somewhere it just needs a TCP connection, then I read another where it needs an HTTP reply? Really need someone to point me to the right direction. Thanks
+
+This is for Network Load Balancer TCP

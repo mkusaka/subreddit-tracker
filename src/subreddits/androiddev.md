@@ -31,76 +31,128 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Using Gesture Recognition AI (MiVRy) to detect drawing characters in the space.](https://www.reddit.com/r/androiddev/comments/f2mi56/using_gesture_recognition_ai_mivry_to_detect/)
-- url: https://v.redd.it/bwpfmwaolfg41
+## [3][How do you test updating of third party libraries?](https://www.reddit.com/r/androiddev/comments/f36soc/how_do_you_test_updating_of_third_party_libraries/)
+- url: https://www.reddit.com/r/androiddev/comments/f36soc/how_do_you_test_updating_of_third_party_libraries/
+---
+Imagine that you have to update some third party libraries in your project. How will you check that nothing has been broken? Manual testing? Automated UI-tests? Maybe some other approach (like isolated tests for a certain library)?
+## [4][Using dagger in multi-module apps](https://www.reddit.com/r/androiddev/comments/f2z9xb/using_dagger_in_multimodule_apps/)
+- url: https://developer.android.com/training/dependency-injection/dagger-multi-module
 ---
 
-## [4][Currently developing a community Android ad network and looking to partner up with other app developers](https://www.reddit.com/r/androiddev/comments/f2engl/currently_developing_a_community_android_ad/)
-- url: https://www.reddit.com/r/androiddev/comments/f2engl/currently_developing_a_community_android_ad/
+## [5][For people using Appodeal, what does your "prominent disclosure" look like?](https://www.reddit.com/r/androiddev/comments/f390m3/for_people_using_appodeal_what_does_your/)
+- url: https://www.reddit.com/r/androiddev/comments/f390m3/for_people_using_appodeal_what_does_your/
 ---
-Evening all,
+My app was removed with this as the reason:
 
-I've been working on a community ad network for Android. The basic gist is that you show banner ads for other apps in the network in exchange for being shown in other apps.
+&gt;Your app is using the Appodeal SDK, which is uploading user’s phone number, social accounts and installed packages information without a prominent disclosure. Prior to the collection and transmission, it must prominently highlight how the user data will be used, describe the type of data being collected and have the user provide affirmative consent for such use.
 
-I'm trying to solve the exposure on a zero budget issue and also show something when other ads fail to fill.
+I handwrote a crappy privacy policy that def deserved to get taken down, so I'm curious what a good Appodeal disclosure looks like before trying to make a new one and potentially getting another strike. I understand there are generators out there but it would be great to see what one looks like that is actually in a live app that's acceptable by Google.
 
-Currently I have a [very simple SDK](https://github.com/laurencedawson/AdColliderSdk) live that's showing ads in Sync for reddit. 
+Edit: also just read Appodeal recommends linking [their privacy policy](https://www.appodeal.com/home/privacy-policy/) in yours, so that must be a part of it.
+## [6][Are interstitial ads on back button allowed?](https://www.reddit.com/r/androiddev/comments/f38fae/are_interstitial_ads_on_back_button_allowed/)
+- url: https://www.reddit.com/r/androiddev/comments/f38fae/are_interstitial_ads_on_back_button_allowed/
+---
+Is it allowed to use Admob's interstitial ads when Back Button is pressed on a specific activity? Can't find a recent legit answer.
+## [7][Long press for minor shakes](https://www.reddit.com/r/androiddev/comments/f31kp4/long_press_for_minor_shakes/)
+- url: https://www.reddit.com/r/androiddev/comments/f31kp4/long_press_for_minor_shakes/
+---
+Getting old got a little bit of the shakes and when I try to do a long press sometimes I hold it to the icon but it interprets it as a short press or a click.
 
-Would really love to work with other developers on this.
+  
 
-Cheers,
 
-Laurence
-## [5][Why Rewarded Ads CTR is so Low? Is this Normal?](https://www.reddit.com/r/androiddev/comments/f2nx15/why_rewarded_ads_ctr_is_so_low_is_this_normal/)
-- url: https://i.redd.it/jib1jqeg9gg41.png
+Is there anything out there that will help me?
+
+  
+
+
+  
+
+
+TIA
+## [8][Fragments overlapping](https://www.reddit.com/r/androiddev/comments/f39qxc/fragments_overlapping/)
+- url: https://www.reddit.com/r/androiddev/comments/f39qxc/fragments_overlapping/
+---
+Hello, I've been searching everywhere and the only solution I found was to add a background and clickable to true in the fragment...
+
+Any other tip ir solution besides that?
+## [9][How to test Android Intent's Bundle using Mockk?](https://www.reddit.com/r/androiddev/comments/f3967y/how_to_test_android_intents_bundle_using_mockk/)
+- url: https://www.reddit.com/r/androiddev/comments/f3967y/how_to_test_android_intents_bundle_using_mockk/
+---
+I would like to test a custom handler class which is starting a new Activity. I would like to test the Intent's Bundle if contains the pre defined parameters.
+
+**The test class**:
+
+    @MockK
+    lateinit var activity: ActivityCalendar
+    
+    @Before
+    fun setUp() {
+        MockKAnnotations.init(this)
+    }
+    
+    @Test
+    fun testActivityBundles() {
+        val book = mockk&lt;Book&gt;()
+    
+        every { book.releaseDate } returns GregorianCalendar().apply { this.timeInMillis = 1423825586000 }
+        every { activity.startActivity(any()) } just Runs
+    
+        val handler = ActivityHandler(activity)
+        handler.startRequiredActivity(book)
+    
+        verify { activity.startActivity(
+                withArg { intent -&gt;
+                    val bundle = intent.extras!!
+                    val releaseDateTimeMillis = bundle.getLong("release_date", 0L)
+    
+                    Assert.assertEquals(1423825586000, releaseDateTimeMillis)
+                }
+        ) }
+    }
+
+The code above is crashing at line: **val bundle = intent.extras!!** but it shouldn't.
+
+**The class that I want to test**:
+
+    class ActivityHandler(val activity: Activity) {
+        fun startRequiredActivity(book: Book) {
+            val intent = buildIntent(book)
+    
+            activity.startActivity(intent)
+        }
+    
+        private fun buildIntent(book: Book): Intent {
+            val extras = Bundle().apply {
+                this.putLong("release_Date", book.releaseDate.timeInMillis)
+            }
+    
+            return Intent(activity, ActivityBookDetails::class.java).apply {
+                putExtras(extras)
+            }
+        }
+    }
+    
+    data class Book(
+            val releaseDate: GregorianCalendar
+    )
+
+I debugged the code and I found out that function **private fun buildIntent(book: Book): Intent** is returning an "null" object (string "null" and not Java NULL).
+## [10][Integrating PayPal with NativeScript (Android only)](https://www.reddit.com/r/androiddev/comments/f39250/integrating_paypal_with_nativescript_android_only/)
+- url: https://www.reddit.com/r/androiddev/comments/f39250/integrating_paypal_with_nativescript_android_only/
+---
+I'm just trying to get PayPal to work on Android right now. Many of the solutions online recommend using the PayPal sdk in the Gradle compile, but as far as I know the sdk has moved from the native to a CDN. Therefore, I'm stuck in a standoff.
+
+1. Implement PayPal with WebView and just had a bridge.
+2. Implement PayPal on the serverside since nodejs seems to have more support.
+3. Implement PayPal on Android, which is the most confusing at this point.
+
+Any help with this would be awesome and so would any resources to help me out.
+## [11][How to use nfc in flutter](https://www.reddit.com/r/androiddev/comments/f38qqo/how_to_use_nfc_in_flutter/)
+- url: https://www.reddit.com/r/androiddev/comments/f38qqo/how_to_use_nfc_in_flutter/
+---
+Hello I'm a beginner in flutter and I have to use NFC in my project but I don't have any clue how and where to start ...can anyone please help me how can I use NFC in my application. It would help me to get Internship
+## [12][Android Styling: Common Theme Attributes](https://www.reddit.com/r/androiddev/comments/f2rlr8/android_styling_common_theme_attributes/)
+- url: https://medium.com/androiddevelopers/android-styling-common-theme-attributes-8f7c50c9eaba
 ---
 
-## [6][Guide to host app-ads.txt on Github Pages (fast and free)](https://www.reddit.com/r/androiddev/comments/f2nji4/guide_to_host_appadstxt_on_github_pages_fast_and/)
-- url: https://www.reddit.com/r/androiddev/comments/f2nji4/guide_to_host_appadstxt_on_github_pages_fast_and/
----
-// NOTE: Because the [old guide](https://www.reddit.com/r/androiddev/comments/cp5n2m/the_developerfriendly_guide_to_appsadstxt_admobs/) says nothing about the Github Pages I decided to make my guide. Based on my [previous post](https://www.reddit.com/r/androiddev/comments/f15zty/how_to_host_appadstxt_on_github_pages/).
-
-1. Register your personal page on Github Pages: [https://pages.github.com/](https://pages.github.com/) (TL;DR - just create a repository with name "your-github-username.github.io" and push everything only into the master branch)
-2. Create your app-ads.txt.  
-Long official version: [https://support.google.com/admob/answer/9363762](https://support.google.com/admob/answer/9363762)  
-Short: [https://apps.admob.com/v2/apps/appadstxt](https://apps.admob.com/v2/apps/appadstxt) (press the "How to set up app-ads.txt" button at the top right)
-3. Put app-ads.txt in the root of your Github website repository into master branch.Check availability by link [https://your-github-username.github.io/app-ads.txt](https://your-github-username.github.io/app-ads.txt) (update may take a couple of minutes).  
-NOTE: Your repository should be public. If you switched it to private and revert back - try to push any commit. There is such a bug on Github Pages right now: [Github pages isn't working after switching from public to private and then back to public](https://github.community/t5/GitHub-Pages/Github-pages-isn-t-working-after-switching-from-public-to/td-p/16979) (please write to Github team about it, maybe then they will fix it faster)
-4. Set your website url ([https://your-github-username.github.io/](https://your-github-username.github.io/)) on the page of each app page (App control panel -&gt; App page -&gt; App description -&gt; Website).  
-NOTE: The website specified in the main settings in Google Dev Console (Main page with apps list -&gt; Settings -&gt; Developer account -&gt; Account details -&gt; Website) is not used for app-ads.txt detection.  
-NOTE: Make sure you set your website url with https.
-5. \[Optional\] Recheck the specified website. After you receive a notification about updating the app page go to the page of your app in Google Play ([https://play.google.com/store/apps/details?id=your.app.id](https://play.google.com/store/apps/details?id=your.app.id)) and view the html code. You should see the meta tag with name "appstore:developer\_url" and "content" with url of your site. These specifications are described in [https://iabtechlab.com/wp-content/uploads/2019/03/app-ads.txt-v1.0-final-.pdf](https://iabtechlab.com/wp-content/uploads/2019/03/app-ads.txt-v1.0-final-.pdf) the link to which is indicated in the official help [https://support.google.com/admob/answer/9363762](https://support.google.com/admob/answer/9363762)
-6. After a few days (five in my case) you should see a successful status in [https://apps.admob.com/v2/apps/appadstxt](https://apps.admob.com/v2/apps/appadstxt)
-
-You are breathtaking!
-## [7][2 suspended apps, what to do next?](https://www.reddit.com/r/androiddev/comments/f2plwj/2_suspended_apps_what_to_do_next/)
-- url: https://www.reddit.com/r/androiddev/comments/f2plwj/2_suspended_apps_what_to_do_next/
----
-I have a google developer account with 2 suspended apps (got both suspensions in my first month (and same day) \~2015..), so i assume that a third suspension means my account termination.  
-I plan to upload some real games, but I'm afraid making a mistake leading to my third suspension and hence banned for life.. is it possible to make a second account (with same admob and same credit card?) and upload some new apps? or the strikes count will be counted as a "3rd strike" and ban my accounts?
-## [8][How we fought bad apps and malicious developers in 2019](https://www.reddit.com/r/androiddev/comments/f2m9xh/how_we_fought_bad_apps_and_malicious_developers/)
-- url: https://android-developers.googleblog.com/2020/02/how-we-fought-bad-apps-and-malicious.html
----
-
-## [9][Is there a way to test the Google Play Install Referrer?](https://www.reddit.com/r/androiddev/comments/f2p48s/is_there_a_way_to_test_the_google_play_install/)
-- url: https://www.reddit.com/r/androiddev/comments/f2p48s/is_there_a_way_to_test_the_google_play_install/
----
-I recently was trying out the "Play Install Referrer Library" (the latest one), but i couldn't find a way to test my code if it works or not, any known way to test this library?
-
-For reference https://developer.android.com/google/play/installreferrer/library.html
-## [10][EventBus 3.2 release: AndroidX and incremental annotation processing](https://www.reddit.com/r/androiddev/comments/f2r3x6/eventbus_32_release_androidx_and_incremental/)
-- url: https://greenrobot.org/release/eventbus-3-2/
----
-
-## [11][Mutli-Selection Recycler View](https://www.reddit.com/r/androiddev/comments/f2oa45/mutliselection_recycler_view/)
-- url: https://www.reddit.com/r/androiddev/comments/f2oa45/mutliselection_recycler_view/
----
-What are the best common ways to select multiple items in a Recycler View, I tried the androidx selection library. But I'd like to hear from you guys, cause I found there are many ways to do it and I don't know which way to go or should I just implement my own version and what works best for my app?
-
-&amp;#x200B;
-
-Edit - Typo
-## [12][getting into android](https://www.reddit.com/r/androiddev/comments/f2q7zt/getting_into_android/)
-- url: https://www.reddit.com/r/androiddev/comments/f2q7zt/getting_into_android/
----
-hi, im a comp sci grad with some experience in programming, just wondering how long it would take to self teach myself android development, to an industry standard, also if someone can reference some things to help will be great!

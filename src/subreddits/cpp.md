@@ -57,82 +57,76 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Herb Sutter: Quantifying Accidental Complexity: An Empirical Look at Teaching and Using C++](https://www.reddit.com/r/cpp/comments/f2xq0l/herb_sutter_quantifying_accidental_complexity_an/)
+## [2][The abstraction penalty for wide integer math on x86-64 ("Down with Boost.Multiprecision"?)](https://www.reddit.com/r/cpp/comments/f3mgun/the_abstraction_penalty_for_wide_integer_math_on/)
+- url: https://quuxplusone.github.io/blog/2020/02/13/wide-integer-proof-of-concept/
+---
+
+## [3][Even Better C++ Performance and Productivity: Enhancing Clang to Support Just-in-Time Compilation of Templates](https://www.reddit.com/r/cpp/comments/f3jpuw/even_better_c_performance_and_productivity/)
+- url: https://www.youtube.com/watch?v=pDagqR0jAvQ
+---
+
+## [4][A Fast Bitboard-Based Chess Move Generator](https://www.reddit.com/r/cpp/comments/f3pzfu/a_fast_bitboardbased_chess_move_generator/)
+- url: https://www.reddit.com/r/cpp/comments/f3pzfu/a_fast_bitboardbased_chess_move_generator/
+---
+Over the past few months, I've been developing a fast purely legal chess move generator as my first major project in C++. It uses:
+
+* Magic Bitboard sliding attacks
+* Make-Unmake Position class (inspired by Stockfish)
+* A completely original legal move generation function
+* 16-bit move representation
+
+The best part is that perft(6) and perft(7) from the starting position clock in at an impressive \~200,000,000 million NPS on my system (about the same as the leading C generator)
+
+I am planning to incorporate this in a fully functional chess engine. I'd love it if you guys could check it out at [https://github.com/DiehardTheTryhard/surge](https://github.com/DiehardTheTryhard/surge). Thanks :)
+
+^((sorry for the lack of comments))
+## [5][I created a library that will make your C++ tests pass when run on CI](https://www.reddit.com/r/cpp/comments/f3bzof/i_created_a_library_that_will_make_your_c_tests/)
+- url: https://github.com/elnormous/volkswagencpp
+---
+
+## [6][What is the exact status of ABI compatibility in modern GCC-based (including Clang) C++?](https://www.reddit.com/r/cpp/comments/f3my1u/what_is_the_exact_status_of_abi_compatibility_in/)
+- url: https://www.reddit.com/r/cpp/comments/f3my1u/what_is_the_exact_status_of_abi_compatibility_in/
+---
+I have read in many places that C++ and its compilers make no guarantees about a stable ABI between versions of the compiler (or across platforms, even similar ones like across Linux distributions). Yet, in Linux, it is extreamly common to download C++ libraries in the package manager as binaries, and yet I don't get every library on the system updating every time my compiler updates while the new compiler keeps on linking to the existing libraries correctly. Additionally, I have read conflicting information saying that modern GCC and clang both have a standard ABI (how standard? How does it work across OS's on the same CPU architeture? how modern is modern?). What is going on here? Is there some definitive reference that will shed some light on this, in detail?
+
+EDIT: "GCC-based" includes mingw too, but not MSVC.
+## [7][New videos from C++ Russia 2019 Piter](https://www.reddit.com/r/cpp/comments/f3s12v/new_videos_from_c_russia_2019_piter/)
+- url: https://www.youtube.com/playlist?list=PLZN9ZGiWZoZp8_XKK1WMcAt2Dr9-QkfU6
+---
+
+## [8][Zero, one, two, Freddy's coming for you](https://www.reddit.com/r/cpp/comments/f3ro02/zero_one_two_freddys_coming_for_you/)
+- url: https://isocpp.org/blog/2020/02/zero-one-two-freddys-coming-for-you
+---
+
+## [9][As many keywords in a function definition as possible](https://www.reddit.com/r/cpp/comments/f3h21j/as_many_keywords_in_a_function_definition_as/)
+- url: https://www.reddit.com/r/cpp/comments/f3h21j/as_many_keywords_in_a_function_definition_as/
+---
+Please note: this is just for fun.
+
+I would like to create a function definition with as many keywords or modifiers as possible, while ignoring the actual body, and this is the best I can come up with:
+
+    virtual inline operator const volatile unsigned long long int &amp;&amp; () const &amp;&amp; noexcept final override try {} catch (...) {}
+
+Could I still add something without resorting to infinite `decltype` loops and while still having each keyword bring meaning to the definition?
+
+&amp;#x200B;
+
+EDIT: This is the new longest one when not counting infinite loops:
+
+    explicit virtual inline operator const volatile unsigned long long int* const volatile &amp;&amp; () const volatile &amp;&amp; noexcept final override try {} catch (...) {}
+
+Also this still ignores conditional `noexcept` as that could also be considered an infinite loop
+
+&amp;#x200B;
+
+EDIT 2: The longest one without any technically redundant keywords or infinite loops:
+
+    explicit inline operator const volatile unsigned long long* const volatile &amp;&amp; () const volatile &amp;&amp; noexcept final try {} catch (...) {}
+## [10][CppCast: C++ on a Watch](https://www.reddit.com/r/cpp/comments/f3n15h/cppcast_c_on_a_watch/)
+- url: https://cppcast.com/brad-larson-cpp-watch/
+---
+
+## [11][Herb Sutter: Quantifying Accidental Complexity: An Empirical Look at Teaching and Using C++](https://www.reddit.com/r/cpp/comments/f2xq0l/herb_sutter_quantifying_accidental_complexity_an/)
 - url: https://www.youtube.com/watch?v=qx22oxlQmKc
----
-
-## [3][Modern C++ and Qt are ❤️](https://www.reddit.com/r/cpp/comments/f2wu98/modern_c_and_qt_are/)
-- url: https://www.reddit.com/r/cpp/comments/f2wu98/modern_c_and_qt_are/
----
-Just wanted to thank everybody who made this simplicity possible:
-
-```cpp
-
-std::optional&lt;QSize&gt; mudlet::getImageSize(const QString &amp;imageLocation)
-{
-    QImage image(imageLocation);
-
-    if (image.isNull()) {
-        return {};
-    }
-
-    return {image.size()};
-}
-
-// ...
-
-if (auto size = mudlet::self()-&gt;getImageSize(imageLocation); size) {
-    lua_pushnumber(L, size-&gt;width());
-    lua_pushnumber(L, size-&gt;height());
-    return 2;
-} else {
-    lua_pushnil(L);
-    lua_pushfstring(L, "couldn't retrieve image size. Is the location '%s' correct?", imageLocation.toUtf8().constData());
-    return 2;
-}
-```
-
-This is amazing!
-## [4][Improving Compilation Time of C/C++ Projects](https://www.reddit.com/r/cpp/comments/f2wsl4/improving_compilation_time_of_cc_projects/)
-- url: https://interrupt.memfault.com/blog/improving-compilation-times-c-cpp-projects
----
-
-## [5][My approach to compile-time reflection in C++](https://www.reddit.com/r/cpp/comments/f2xa28/my_approach_to_compiletime_reflection_in_c/)
-- url: http://bluescreenofdoom.com/post/code/Reflection/
----
-
-## [6][How to replace __FILE__ with source_location in a logging macro](https://www.reddit.com/r/cpp/comments/f2x461/how_to_replace_file_with_source_location_in_a/)
-- url: https://quuxplusone.github.io/blog/2020/02/12/source-location/
----
-
-## [7][Announcing TCMalloc](https://www.reddit.com/r/cpp/comments/f2yk94/announcing_tcmalloc/)
-- url: https://abseil.io/blog/20200212-tcmalloc
----
-
-## [8][Qt World Summit 2019 talk videos are online - KDAB](https://www.reddit.com/r/cpp/comments/f37t96/qt_world_summit_2019_talk_videos_are_online_kdab/)
-- url: https://www.kdab.com/qt-world-summit-2019-talk-videos-are-online/
----
-
-## [9][What's the best workflow for forking and iterating on external packages in vcpkg?](https://www.reddit.com/r/cpp/comments/f3317k/whats_the_best_workflow_for_forking_and_iterating/)
-- url: https://www.reddit.com/r/cpp/comments/f3317k/whats_the_best_workflow_for_forking_and_iterating/
----
-Let's say I have a program that depends on some commonly available 3rd party package that's available in vcpkg. Let's say I've configured the cmake build for my program to use the vcpkg cmake build system for finding everything.
-
-Let's say I discover that I have a need to iterate on the code of an external package. The loop i want is:
-
-* Compile and link my program, which links the vcpkg-provided locally-built external dependency. (No, it's not header-only.)
-* Run it. Set and hit a breakpoint in the external dependency. Realize something needs to change.
-* Edit the external source file?   (This is probably a great time to fork a separate version...what workflow?)
-* ...ideally one button from here builds the external dependency (and anything else it depends on) incrementally, and my program also. 
-
-Is such a thing possible? 
-
-How do you do this with your local forks of external libraries?
-## [10][Literal Classes as Non-type Template Parameters in C++20](https://www.reddit.com/r/cpp/comments/f2s4ut/literal_classes_as_nontype_template_parameters_in/)
-- url: https://blog.keha.dev/posts/cpp20-class-as-non-type-template-param/
----
-
-## [11][Combining ZeroMQ &amp; POSIX signals: Use ppoll to handle EINTR once and for all](https://www.reddit.com/r/cpp/comments/f2r1i6/combining_zeromq_posix_signals_use_ppoll_to/)
-- url: https://blog.esciencecenter.nl/combining-zeromq-posix-signals-b754f6f29cd6
 ---
 

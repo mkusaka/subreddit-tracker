@@ -1,76 +1,91 @@
 # aws
-## [1][How are you guys performing cost optimisation?](https://www.reddit.com/r/aws/comments/f37s6n/how_are_you_guys_performing_cost_optimisation/)
-- url: https://www.reddit.com/r/aws/comments/f37s6n/how_are_you_guys_performing_cost_optimisation/
+## [1][Protect S3 Images with own IAM Concept](https://www.reddit.com/r/aws/comments/f3r7vh/protect_s3_images_with_own_iam_concept/)
+- url: https://www.reddit.com/r/aws/comments/f3r7vh/protect_s3_images_with_own_iam_concept/
 ---
-We are using scheduling policies for ASG and lambda functions to stop RDSs during weekends. I was wondering what other approach can be taken to reduce the costs. Specifically around changing instance type if it's more than enough to perform the task.
+I have an App that should store and retrieve images from S3. Currently, upload happens via my own application server endpoint to S3 (image on app-&gt;application server-&gt;store in S3).
 
-Any thoughts?
-## [2][Use CloudFormation StackSets for Multiple Accounts in an AWS Organization](https://www.reddit.com/r/aws/comments/f2vp8f/use_cloudformation_stacksets_for_multiple/)
-- url: https://aws.amazon.com/blogs/aws/new-use-aws-cloudformation-stacksets-for-multiple-accounts-in-an-aws-organization/
----
+However, whats the best way to protect image access then, without giving every single user some IAM role on S3 nor share a direct S3 link?
 
-## [3][How do you manage contact forms with static sites?](https://www.reddit.com/r/aws/comments/f38oke/how_do_you_manage_contact_forms_with_static_sites/)
-- url: https://www.reddit.com/r/aws/comments/f38oke/how_do_you_manage_contact_forms_with_static_sites/
----
-I've got a static site that needs a contact page and I've tried tonnes of CloudFormation templates but they are either too old or not designed for the SES sandbox. It's driving me nuts and I'm tempted to just use a 3rd party form but I like the idea of messing around with things like SES, SNS, and DynamoDB etc.. Thanks
-## [4][How long from keys in github to a compromised account?](https://www.reddit.com/r/aws/comments/f39jna/how_long_from_keys_in_github_to_a_compromised/)
-- url: https://www.reddit.com/r/aws/comments/f39jna/how_long_from_keys_in_github_to_a_compromised/
----
-I'm trying to teach people a security lesson and wondered if anyone had any stats to back up my ideas.
+My only solution would be that my application servers retrieve the image, and then forward them to the client. This causes two HTTP roundtrips though (S3-&gt;Application Server-&gt;App). This is massive for huge pictures.
 
-If an AWS key/secret were posted to Github (or other popular public service), how quickly are you likely to see attempts to use the keys?
-
-I say Github, because there are people out there scanning it for just such leaks. I could post them to twitter and there is a much wider audience, but I don't really expect anyone to be watching twitter for AWS\_....=AKIA....
-
-Obviously you don't need to confess to leaking the keys yourself! :-) "Someone I know put their key in github and within x minutes there were attempted logins" ?
-
-(I will follow up with the "Code Spaces" story)
-## [5][Best Practice For Configuration Management](https://www.reddit.com/r/aws/comments/f39jc9/best_practice_for_configuration_management/)
-- url: https://www.reddit.com/r/aws/comments/f39jc9/best_practice_for_configuration_management/
----
-At the moment, we're using Cloudformation with gitlab runners to do our build and deployments. We're ramping up with new customers quite quickly, and my template mappings are blowing out in size with all the new variables I've had to pull out. 
-
-I thought about moving them all to parameters, but it feels very haphazard to have such a huge deploy command that's difficult to untangle. Does anyone here have some suggestions? I'm thinking about looking into either a custom resource to pull in my variables, or using something like Chef or Ansible to do my deployments instead
-## [6][AWS Client VPN seems like a rip off, no?](https://www.reddit.com/r/aws/comments/f2t9ds/aws_client_vpn_seems_like_a_rip_off_no/)
-- url: https://www.reddit.com/r/aws/comments/f2t9ds/aws_client_vpn_seems_like_a_rip_off_no/
----
-Is it just me being a cheap bastard and used to buying OpenVPN AS licenses for my BYOL OpenVPN AS instances or is AWS Client VPN ridiculously over priced?
-
-10 VPN users connected for 1 hour is $0.60 with AWS Client VPN. 
-
-Also I don’t think it goes across accounts with VPC peering. Meaning normally I do 1 AWS account per environment with a central core services (Admin) VPC/Account and have the accounts peer into that one. Usually I only need a single OpenVPN AS box in that Admin VPC/Account and I’m good.
-
-Thoughts? Can we expect this new service offering to come down in price any time soon? Even if it does I think it’s hard to compete with a $150 one time license for 10 users and whatever monthly run cost for the box.
-## [7][Converting my CloudFront Lambda@Edge Function from JavaScript to Python](https://www.reddit.com/r/aws/comments/f37qx0/converting_my_cloudfront_lambdaedge_function_from/)
-- url: https://adamj.eu/tech/2020/02/13/converting-my-cloudfront-lambda-at-edge-function-from-javascript-to-python/
+Any other ideas?
+## [2][In which I figure out to run Docker Compose successfully on ECS :-)](https://www.reddit.com/r/aws/comments/f3pp0q/in_which_i_figure_out_to_run_docker_compose/)
+- url: https://rmoff.net/2020/02/13/adventures-in-the-cloud-part-94-ecs/
 ---
 
-## [8][AWS Storage Gateway for software development company](https://www.reddit.com/r/aws/comments/f35i3e/aws_storage_gateway_for_software_development/)
-- url: https://www.reddit.com/r/aws/comments/f35i3e/aws_storage_gateway_for_software_development/
+## [3][Hello AWS Session Manager; Farewell SSH](https://www.reddit.com/r/aws/comments/f3buy3/hello_aws_session_manager_farewell_ssh/)
+- url: https://medium.com/@dnorth98/hello-aws-session-manager-farewell-ssh-7fdfa4134696
 ---
-Hey. I run a 40+ developer software development agency and use AWS EC2 for dev/staging instances of our customers. During local project setups, the download of the database and files of the project usually takes around 30 minutes at \~7/8 MB/s. I was thinking if Storage Gateway would have a big impact with local project setups. Have anyone here done or seen something similar? Would you recommend Storage Gateway for this kind of problem? Or do you think it is better to just keep downloading from AWS EC2 instances at a quite-okay speed?
-## [9][Amazon hyperledger fabric](https://www.reddit.com/r/aws/comments/f34zly/amazon_hyperledger_fabric/)
-- url: https://www.reddit.com/r/aws/comments/f34zly/amazon_hyperledger_fabric/
+
+## [4][Amazon S3 - Price for huge files/data retrieval ?](https://www.reddit.com/r/aws/comments/f3quyv/amazon_s3_price_for_huge_filesdata_retrieval/)
+- url: https://www.reddit.com/r/aws/comments/f3quyv/amazon_s3_price_for_huge_filesdata_retrieval/
 ---
-Amazon Managed Blockchain
+Hi everyone,
 
-When using amazon managed blockchain's hyperledger fabric, I am wondering if each peer node can run a dockerized web application.  Or would I need to run an application on a separately hosted container that has logic built in for connecting to the VPC for submitting transactions to the hyperledger fabric? 
-
-
-In my case I have specific GPU and OS requirements for my container to run properly before data can be submitted and the transaction recorded. If this is possible on the amazon managed blockchain nodes via the VPC, can I specify the hardware requirements and OS for each node to host this application? Or is it wasteful to request such significant resources for each blockchain node if the end goal is simply to record a transaction? Would it be better to run the computationally costly application on a separate kubernetes instance then write transaction to ledger? This is for labeling and then uploading imaging data to a longterm storage location. I am using hyperledger fabric to record each time data is submitted and retrieved from long term storage.
-## [10][Network Load Balancer Target Group Health Check TCP Expected Response](https://www.reddit.com/r/aws/comments/f349wh/network_load_balancer_target_group_health_check/)
-- url: https://www.reddit.com/r/aws/comments/f349wh/network_load_balancer_target_group_health_check/
+I'm creating a file hosting website. Currently, the goal is for users to share files to a lot of people, and files will be deleted after a time of inactivity. I've been looking over Google Cloud, AWS and Azure, and something strikes me.   
+In GC/AWS, the biggest cost is clearly data retrieval (90$/Tb approximately). But in Azure Storage, retrieval of data is absolutely free. Is there something i'm missing? Because in that case, Azure Storage would be far better than AWS S3 or GC Storage.
+## [5][A 7KB AWS lambda Node.js library with zero runtime dependencies](https://www.reddit.com/r/aws/comments/f3rse9/a_7kb_aws_lambda_nodejs_library_with_zero_runtime/)
+- url: https://www.npmjs.com/package/micro-aws-lambda
 ---
-Been scouring the documentation site for hours now, can anyone point me to the page on what the target group expects as a healthy response on a TCP health check?
 
-I have a port open that just replies with OK like so
+## [6][Can a lambda in child account(Trusting account) change/update the Org wide tag policies in the master account(Trusted account) via sts:AssumeRole?](https://www.reddit.com/r/aws/comments/f3rhsz/can_a_lambda_in_child_accounttrusting_account/)
+- url: https://www.reddit.com/r/aws/comments/f3rhsz/can_a_lambda_in_child_accounttrusting_account/
+---
+I was reading up on Assume Role and how it works and it got me thinking will the lambda which is in my child account(Trusting account), be able to modify or update the Organization-wide Tag Policies in the master account(Trusted account)?
 
-`TcpClient client = server.AcceptTcpClient();NetworkStream ns = client.GetStream();byte[] hello = Encoding.Default.GetBytes("OK");ns.Write(hello, 0, hello.Length);`
+I haven't tried this till now, as I don't have access to the Master account. 
 
-and have done a nc on a separate ec2 and it all works
+My main concern is: As the tag policies and the control policies will be only accessible from master account, will the assume role method actually work in this case?
+## [7][Getting the current shadow state for a thing on IoTCore](https://www.reddit.com/r/aws/comments/f3rhln/getting_the_current_shadow_state_for_a_thing_on/)
+- url: https://www.reddit.com/r/aws/comments/f3rhln/getting_the_current_shadow_state_for_a_thing_on/
+---
+Hey,
 
-`root@ip-10-200-10-93:/home/ubuntu# nc -vz` [`10.200.31.240`](https://10.200.31.240) `4416Connection to` [`10.200.31.240`](https://10.200.31.240) `4416 port [tcp/*] succeeded!`
+I'm trying to find a way to retrieve the current shadow state for a device I have on IoTCore using Python SDK but no luck. What am I missing? what easy programmable way do I have for getting the shadow state of a device?
 
-But somehow, target group health checks still return unhealthy. I read somewhere it just needs a TCP connection, then I read another where it needs an HTTP reply? Really need someone to point me to the right direction. Thanks
+&amp;#x200B;
 
-This is for Network Load Balancer TCP
+    c.connect()
+    MQTTClient = c.getMQTTConnection()
+    MQTTClient.configureOfflinePublishQueueing(100)
+    
+    def callback(payload, responseStatus, token):
+        print("inside the callback")
+        print("--", payload)
+        print("--", responseStatus)
+        print("--", token)
+    
+    handler = c.createShadowHandlerWithName("0f231d3c-31d3-bb25-a571-9cbb25ec2724", True)
+    print(handler.shadowGet(callback, 5))
+
+I only get the Token that is returned from the callback, and it prints nothing to the screen.
+
+Thanks!
+## [8][Cannot get video calling working with the new WorkSpace Streaming Protocol](https://www.reddit.com/r/aws/comments/f3qw2y/cannot_get_video_calling_working_with_the_new/)
+- url: https://www.reddit.com/r/aws/comments/f3qw2y/cannot_get_video_calling_working_with_the_new/
+---
+Hey All, 
+
+Testing the new WorkSpace Streaming Protocol which is replacing PCoIP 
+
+https://aws.amazon.com/workspaces/wsp/
+
+One of the big new features for us is bi-directional video so we can now use it for video calling. 
+
+Spun up new WorkSpaces in a new Directory and logged in using the new WorkSpace client but its still not detecting my webcam. 
+
+Is there anything  additional I need to do get video calling working? 
+
+Thanks.
+## [9][AWS Exam - Passed/Failed on screen message](https://www.reddit.com/r/aws/comments/f3qgxm/aws_exam_passedfailed_on_screen_message/)
+- url: https://www.reddit.com/r/aws/comments/f3qgxm/aws_exam_passedfailed_on_screen_message/
+---
+I know this has been brought up before, but does anyone know what the final "on screen message" is for the AWS exam is if you pass or fail??
+
+*Like many, I quickly read the message expecting the final email would contain the results (which it doesn't)... now i'm second guessing if I actually passed... frustrating waiting for the final results.*
+
+From memory, it went something like "....passed....", then a blur of somewhat relief. just hoping the failed message doesn't start with "you have NOT passed". Would love any input :)
+## [10][EKS pricing question](https://www.reddit.com/r/aws/comments/f3ogx5/eks_pricing_question/)
+- url: https://www.reddit.com/r/aws/comments/f3ogx5/eks_pricing_question/
+---
+How do I calculate the cost of running an 8-node cluster for 100 hours a month in EKS - the Simple Monthly Calculator doesn't contain that service at all to work out an estimate?! I read somewhere that you have to pay for the master plane on top too....

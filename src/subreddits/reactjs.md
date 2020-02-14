@@ -85,71 +85,125 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][To Understand Concurrent React, Look Outside React: 3 Talks from Outside React](https://www.reddit.com/r/reactjs/comments/f34x0f/to_understand_concurrent_react_look_outside_react/)
-- url: https://www.swyx.io/writing/react-outside/
+## [3][In the past 30 days, I made an open source design system: Looking for feedback!](https://www.reddit.com/r/reactjs/comments/f3pb73/in_the_past_30_days_i_made_an_open_source_design/)
+- url: https://www.reddit.com/r/reactjs/comments/f3pb73/in_the_past_30_days_i_made_an_open_source_design/
+---
+TL;DR: 👉 [hacker-ui.com](https://hacker-ui.com/)
+
+About a month ago from today, I started working on a design system for my own personal projects. I wanted to create my own design language because the rest of them just felt too complex, too outdated, or too branded (for example Bootstrap is too old, Material UI is too Google-y).
+
+I wanted a design system that wasn’t too complicated or special but just something that’s unbranded and aesthetically pleasing.
+
+Anyway 30 days from realizing that, I have a design system I’m ready to share!
+
+It’s called “Hacker UI” and I’m currently pitching it as “the hacker’s go-to design system” (similar to how Bootstrap was a go-to).
+
+Features:
+
+- 25+ components
+- 25+ codesandbox examples
+- New CSS-in-JS solution
+- Composable styles by default 
+- Full Typescript support
+
+There’s still a lot to be done with this library (optimizations, SSR support, CI and testing, animations etc) but I’m still super excited to share.
+
+Please let me know what you think!
+
+[docs at hacker-ui.com](https://hacker-ui.com/)
+[github repo](https://github.com/ricokahler/hacker-ui)
+## [4][Animated React Sign Up &amp; Login Form](https://www.reddit.com/r/reactjs/comments/f3crcs/animated_react_sign_up_login_form/)
+- url: https://www.htmlhints.com/article/47/animated-react-sign-up-login-form
 ---
 
-## [4][Redux Toolkit v.1.3.0-alpha.0: add `createEntityAdapter` and `createAsyncThunk`](https://www.reddit.com/r/reactjs/comments/f2wdk7/redux_toolkit_v130alpha0_add_createentityadapter/)
-- url: https://github.com/reduxjs/redux-toolkit/releases/tag/v1.3.0-alpha.0
+## [5][useMutableSource RFC](https://www.reddit.com/r/reactjs/comments/f3lvus/usemutablesource_rfc/)
+- url: https://github.com/reactjs/rfcs/pull/147
 ---
 
-## [5][React Project Structure and tools](https://www.reddit.com/r/reactjs/comments/f38n4i/react_project_structure_and_tools/)
-- url: https://www.reddit.com/r/reactjs/comments/f38n4i/react_project_structure_and_tools/
+## [6][Ideas tip implement this with react](https://www.reddit.com/r/reactjs/comments/f3rqnw/ideas_tip_implement_this_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/f3rqnw/ideas_tip_implement_this_with_react/
 ---
-Hey guys, this is my first post.
+I would like to implement this animation into a react app, I am not sure on best react approach using hooks, struggling to figure out the mental model.
 
-Ive been doing react for couple of months now, self learn.  I was wondering how does the common corporate or startup or even yourself Structure your react project? 
+GSAP TweenLite library is not a requirement, I am open to animation libraries (maybe react-spring) to achieve this.
 
-Like how do you decide this certain thing should be a component and where would you write all your functions? 
+[Codepen](https://codepen.io/bartonsweb/pen/ExjPRJP)
 
- And what kind of tools do you use to help with your development (Redux, MobX, Jest, and so on)?
-
-Appreciate it thanks
-## [6][What are not popular but great React tricks?](https://www.reddit.com/r/reactjs/comments/f37x69/what_are_not_popular_but_great_react_tricks/)
-- url: https://www.reddit.com/r/reactjs/comments/f37x69/what_are_not_popular_but_great_react_tricks/
+edit: Title derp lol
+## [7][What do y'all use for data fetching?](https://www.reddit.com/r/reactjs/comments/f3knj5/what_do_yall_use_for_data_fetching/)
+- url: https://www.reddit.com/r/reactjs/comments/f3knj5/what_do_yall_use_for_data_fetching/
 ---
-I just wonder what are most impressive tips and tricks for React which most people do not know.
-## [7][Write PIXI apps the elegant way](https://www.reddit.com/r/reactjs/comments/f2zujd/write_pixi_apps_the_elegant_way/)
-- url: https://reactpixi.org
+We have a REST backend built with Java/Springboot and the team is not willing to add a GraphQL service, so using an auto-generated client and in general "fancy tech" like Apollo, Hasura, Prisma isn't really an option for me. Also every generator I tried that builds an API service based on Swagger/OpenAPI specs had some issues, so not sure if that's a good way forward.  
+(still interested in your opinions and recommendations on these two fronts, though!)
+
+Having said that, what solution are you currently using to handle data fetching – and are you happy with it?
+
+For now I'm using a couple basic "API functions" that essentially wrap Axios, and then calling them with a small self-written hook, which can be used like this:
+
+    const token = useSelect(tokenSelector);
+    const { state, data, error } = useAsyncData(
+      () =&gt; api.getPosts(token, pagination),
+      [token, pagination],
+    );
+
+But I see that as more of a stop-gap solution, the hook doesn't support manual re-fetching, probably has bugs, I still need to manually select and pass the token, and generally some more robust and tried-and-tested solution would be appreciated. Also not sure whether it makes sense to bundle and ship Axios.
+
+My wishlist would be:
+
+*  API can be used (conveniently) in functional &amp; class components as well as outside components (i.e. Redux thunks)
+* I don't need to specify the endpoint every time I use the API
+* I don't need to manually pass a token every time I use the API
+* Support for typed responses so I can have autocomplete
+* Allows manual re-fetching
+* Some short-term caching (cached while browsing paginated data, may devalidate on route change)
+* Codesplitting – services only used in lazy-loaded components should be part of the split chunk
+
+Right now, the best option I see is to stick with some simple API functions (based on Axios?), consuming them through [`zeit/swr`](https://github.com/zeit/swr), and then either integrating an Axios interceptor to sync with the token in Redux, or wrapping `useSWR()` in another hook that gets the token from Redux and adds it to the request.  
+
+
+What are your approaches and libraries of choice?  
+And more specifically, has anyone here used [`zeit/swr`](https://github.com/zeit/swr) for a large-scale application yet and can recommend it?
+## [8][2019 /r/ReactJS Survey Results: Lessons from the Front Page of React](https://www.reddit.com/r/reactjs/comments/f3ncvw/2019_rreactjs_survey_results_lessons_from_the/)
+- url: https://www.swyx.io/writing/react-survey-2019/
 ---
 
-## [8][Steps to use livereload in your Electron Project](https://www.reddit.com/r/reactjs/comments/f39ivv/steps_to_use_livereload_in_your_electron_project/)
-- url: https://www.sparxtechnolabs.com/blog/easy-steps-to-use-livereload-in-your-electron-project.html
+## [9][GraphQL Pagination with Cursors in Apollo React](https://www.reddit.com/r/reactjs/comments/f3rm8m/graphql_pagination_with_cursors_in_apollo_react/)
+- url: https://youtu.be/lNtQbn7qN-8
 ---
 
-## [9][Need Suggestion/Advice related to a project I am working on.](https://www.reddit.com/r/reactjs/comments/f39at4/need_suggestionadvice_related_to_a_project_i_am/)
-- url: https://www.reddit.com/r/reactjs/comments/f39at4/need_suggestionadvice_related_to_a_project_i_am/
+## [10][First project for a real client, need some advice!!](https://www.reddit.com/r/reactjs/comments/f3rczi/first_project_for_a_real_client_need_some_advice/)
+- url: https://www.reddit.com/r/reactjs/comments/f3rczi/first_project_for_a_real_client_need_some_advice/
 ---
-So I am developing a website in which a user can post any data in any Indian Language like Hindi, English, Bengali, Tamil etc
+Hi all,
 
-I have 3 queries related to it.
-
-First is which kind of rendering should i go with, server side or client side. The user interaction which changes the state of site are normal stuff like, comments, review, rating, voting . when user posts something, it will create a message saying that it is sent to moderation. Comments/review and votes are to be added on stop. Otherwise other stuff on the site is static in nature, so for this scenario , which is better , and should proceed with, i am still not clear about CSR  and SSR. 
+Background: my personal trainer mentioned that he is looking to create an online presence and said that he was looking for someone to build him a simple enough website (pretty much only a contact form and some extra plugins e.g. calendly) and i offered to do it. Ive been building personal react projects, so im confident in my ability to deliver a high quality product. Im just a little unsure about the business side of things. 
 
 &amp;#x200B;
 
-2nd query is that I am planning to use MERN stack. So how can i make an editor which will allow the user to type in the Indian language, and how can i port this to  mobile site. What APIs can i use , and what options do i have.
+My question is, how do i deliver the product? by this i mean, I build the web app, then find somewhere to host it (probably AWS since i work here). He already has a domain, so do i just send him the folder containing the project and get him to upload it or would i create a brand new AWS account (or alternative) and give him the details etc after finishing? 
 
-&amp;#x200B;
-
-3rd-When user is selecting a particular language, i am thinking of redirecting different sub domain.
-
-Like if he selects Marathi, then i will redirect to mr.abc.com something , what changes do i have to make for routing and database base. Does the user needs to register on every domain separately or just registration works
-
-&amp;#x200B;
-
-Could really use your advice.
-## [10][How can I load specific themes accordingly to subdomain?](https://www.reddit.com/r/reactjs/comments/f38zy4/how_can_i_load_specific_themes_accordingly_to/)
-- url: https://www.reddit.com/r/reactjs/comments/f38zy4/how_can_i_load_specific_themes_accordingly_to/
+Any advice on this would be much appreciated. Thank you so much for your time!
+## [11][What changes would you make to the React Hooks API?](https://www.reddit.com/r/reactjs/comments/f3q66u/what_changes_would_you_make_to_the_react_hooks_api/)
+- url: https://www.reddit.com/r/reactjs/comments/f3q66u/what_changes_would_you_make_to_the_react_hooks_api/
 ---
-Let's say I have an application that each user have their own subdomain and theme. How can I select the page theme accordingly to the subdomain with react since the react router doesn't deal with subdomains?
+I've heard a lot of people complaining about how they don't like the Hooks API, but I don't know what other API one would use, other than perhaps Vue's states based on observables, or perhaps some sort of "getter" function.
 
-Thanks!
-## [11][GitHub - jamstack-cms/jamstack-ecommerce: A starter project for building performant ECommerce applications with Gatsby and React](https://www.reddit.com/r/reactjs/comments/f2s2f3/github_jamstackcmsjamstackecommerce_a_starter/)
-- url: https://github.com/jamstack-cms/jamstack-ecommerce
+But I feel *pretty confident* that I understand hooks well enough to create a new API for it - if, of course, people can tell me what they want from it?
+## [12][The Next Chop- a recipe sharing application with Next.js, GraphQL and Auth0](https://www.reddit.com/r/reactjs/comments/f3c67x/the_next_chop_a_recipe_sharing_application_with/)
+- url: https://www.reddit.com/r/reactjs/comments/f3c67x/the_next_chop_a_recipe_sharing_application_with/
 ---
+ Hey everyone!
 
-## [12][What libraries can I use to create realtime charts in React?](https://www.reddit.com/r/reactjs/comments/f3880o/what_libraries_can_i_use_to_create_realtime/)
-- url: https://www.reddit.com/r/reactjs/comments/f3880o/what_libraries_can_i_use_to_create_realtime/
----
-We are creating an IOT device that will send air quality data in realtime. My task is to create visualization using those data. What are the things I can do and what libraries do you suggest?
+I created a course that teaches how to build a react and graphQL based serverless recipe sharing application with Next.js, Auth0 and GraphCMS. I’m posing the source code that we build over the 10 hour course because I thought that y’all would enjoy it:
+
+[https://github.com/CaptainChemist/next-chop](https://github.com/CaptainChemist/next-chop)
+
+We start with a Next.js base typescript application that we style with the Ant Design component library. We then layer in Apollo using Hooks which connects to this really nice GraphCMS backend that makes it easy to upload images and data while we are still bootstrapping our site. We use GraphQLCodeGen for autogenerated graphQL model types which makes it really nice for creating hooks backed data fetching within our react components. We then use Auth0 for user login and a Next.js api function as a proxy to authorize all of the function calls that the user is making against the GraphCMS backend server.
+
+If you like the code base, I created a 10+ hour course that shows how to do this step by step over at. I just launched it this week so I’d love any feedback:
+
+[https://courses.codemochi.com/frontend-serverless-with-react-and-graphql/](https://courses.codemochi.com/frontend-serverless-with-react-and-graphql/)
+
+Cheers!
+
+Stephen

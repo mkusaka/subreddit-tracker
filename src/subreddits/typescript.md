@@ -22,19 +22,49 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Just blogged: TypeScript types cheat sheet](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/)
+## [2][Doorbot.ts – Let me in the building, with Typescript](https://www.reddit.com/r/typescript/comments/f3hggg/doorbotts_let_me_in_the_building_with_typescript/)
+- url: http://www.wumpus-cave.net/2020/02/13/doorbot-ts-let-me-in-the-building-with-typescript/
+---
+
+## [3][extract discriminants into type](https://www.reddit.com/r/typescript/comments/f3awxt/extract_discriminants_into_type/)
+- url: https://www.reddit.com/r/typescript/comments/f3awxt/extract_discriminants_into_type/
+---
+Hi, i need a new type that is a union of all the disciminants in a discriminated uniton.
+
+    interface Square {
+        kind: "square";
+        size: number;
+    }
+    
+    interface Rectangle {
+        kind: "rectangle";
+        width: number;
+        height: number;
+    }
+    
+    interface Circle {
+        kind: "circle";
+        radius: number;
+    }
+    
+    type Shape = Square | Rectangle | Circle;
+    
+    type KindList = SomeMagic&lt;Shape&gt; // "square" | "rectangle" | "circle"
+
+can someone help me?
+## [4][Just blogged: TypeScript types cheat sheet](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/)
 - url: https://medium.com/@maximzhukov_dev/typescript-types-cheat-sheet-5da7c6ee083d
 ---
 
-## [3][Unit tests for d.ts files in JS project](https://www.reddit.com/r/typescript/comments/f2wbaf/unit_tests_for_dts_files_in_js_project/)
+## [5][Unit tests for d.ts files in JS project](https://www.reddit.com/r/typescript/comments/f2wbaf/unit_tests_for_dts_files_in_js_project/)
 - url: https://github.com/ai/check-dts
 ---
 
-## [4][Angular 9: What’s New?](https://www.reddit.com/r/typescript/comments/f2tsre/angular_9_whats_new/)
+## [6][Angular 9: What’s New?](https://www.reddit.com/r/typescript/comments/f2tsre/angular_9_whats_new/)
 - url: https://auth0.com/blog/angular-9-whats-new/?utm_source=twitter&amp;utm_medium=sc&amp;utm_campaign=angular_9
 ---
 
-## [5][an attribute type which knows the type of another attribute within the same interface](https://www.reddit.com/r/typescript/comments/f2xt9o/an_attribute_type_which_knows_the_type_of_another/)
+## [7][an attribute type which knows the type of another attribute within the same interface](https://www.reddit.com/r/typescript/comments/f2xt9o/an_attribute_type_which_knows_the_type_of_another/)
 - url: https://www.reddit.com/r/typescript/comments/f2xt9o/an_attribute_type_which_knows_the_type_of_another/
 ---
 I have a type:
@@ -93,11 +123,11 @@ Looking back at type `Schema`, the type of `reciprocal` would have to know concr
     }
 
 Is there a way to do this?
-## [6][Typeclasses in Typescript with fp-ts](https://www.reddit.com/r/typescript/comments/f2kokc/typeclasses_in_typescript_with_fpts/)
+## [8][Typeclasses in Typescript with fp-ts](https://www.reddit.com/r/typescript/comments/f2kokc/typeclasses_in_typescript_with_fpts/)
 - url: https://paulgray.net/typeclasses-in-typescript/
 ---
 
-## [7][Axios requests to custom API in TS](https://www.reddit.com/r/typescript/comments/f2tbcb/axios_requests_to_custom_api_in_ts/)
+## [9][Axios requests to custom API in TS](https://www.reddit.com/r/typescript/comments/f2tbcb/axios_requests_to_custom_api_in_ts/)
 - url: https://www.reddit.com/r/typescript/comments/f2tbcb/axios_requests_to_custom_api_in_ts/
 ---
 Hey guys,
@@ -142,7 +172,7 @@ public async standardLogin(req: Request, res: Response): Promise&lt;Response&gt;
 
 
 Anyone can help me through this? Thanks :D
-## [8][Foal TS - February release (version 1.6) - Local and Cloud file storage (AWS S3), enhanced dependency injection, cleaner builds](https://www.reddit.com/r/typescript/comments/f2ubou/foal_ts_february_release_version_16_local_and/)
+## [10][Foal TS - February release (version 1.6) - Local and Cloud file storage (AWS S3), enhanced dependency injection, cleaner builds](https://www.reddit.com/r/typescript/comments/f2ubou/foal_ts_february_release_version_16_local_and/)
 - url: https://www.reddit.com/r/typescript/comments/f2ubou/foal_ts_february_release_version_16_local_and/
 ---
 Foal TS framework version 1.6 is officially released!
@@ -172,29 +202,7 @@ And the must: it has more than 11,000 lines of documentation.
 [https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
 
 # TypeScript #JavaScript #NodeJS #FoalTS #AWS #S3
-## [9][PeerTube v2.1 released! (PeerTube is an Open Source &amp; Decentralized YouTube Alternative)](https://www.reddit.com/r/typescript/comments/f2a539/peertube_v21_released_peertube_is_an_open_source/)
+## [11][PeerTube v2.1 released! (PeerTube is an Open Source &amp; Decentralized YouTube Alternative)](https://www.reddit.com/r/typescript/comments/f2a539/peertube_v21_released_peertube_is_an_open_source/)
 - url: https://github.com/Chocobozzz/PeerTube/releases/tag/v2.1.0
 ---
 
-## [10][Immutable objects in TypeScript](https://www.reddit.com/r/typescript/comments/f2nr76/immutable_objects_in_typescript/)
-- url: https://nehalist.io/immutable-objects-in-typescript/
----
-
-## [11][Issue understanding Generics in Typescript](https://www.reddit.com/r/typescript/comments/f2muhz/issue_understanding_generics_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/f2muhz/issue_understanding_generics_in_typescript/
----
-I'm trying to understand generics in typescript using the example here, but am having issues:  [https://pastebin.com/Pekq7RC6](https://pastebin.com/Pekq7RC6)   
-
-
-The generic gets created like this:  const miniMaxSum = &lt;arrType&gt;( ) but when I try to assign it to my variables and parameters inside the function, i get TS errors.
-
-&amp;#x200B;
-```
-let maxSum : arrType = 0; // Error -&gt; '0' is assignable to the constraint of type 'arrType', but 'arrType' could be instantiated with a different subtype of constraint 'number'.
-let minSum : arrType = 0;
-```
-
-```
-maxSum = maxSum + item; // Type 'number' is not assignable to type 'arrType'. 'number' is assignable to the constraint of type 'arrType', but 'arrType' could be instantiated with a different subtype of constraint 'number'.
-```
-There is also a similar error why trying to add integers to the maxSum and minSum variables. I cant seem to understand why its happening,

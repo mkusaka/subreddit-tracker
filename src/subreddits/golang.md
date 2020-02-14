@@ -1,67 +1,98 @@
 # golang
-## [1][Gitea 1.11.0 is released](https://www.reddit.com/r/golang/comments/f33vjz/gitea_1110_is_released/)
-- url: https://blog.gitea.io/2020/02/gitea-1.11.0-is-released/
+## [1][Golang file manager for Linux with GTK-GUI](https://www.reddit.com/r/golang/comments/f3dny8/golang_file_manager_for_linux_with_gtkgui/)
+- url: https://www.reddit.com/r/golang/comments/f3dny8/golang_file_manager_for_linux_with_gtkgui/
+---
+Hi. I created for myself some app by golang. I use it. Hope maybe you will like it too.
+
+Or you can just add some stars on github.
+
+[github - GopherFileManager](https://github.com/SilentGopherLnx/GopherFileManager)
+## [2][cview - Terminal-based user interface toolkit](https://www.reddit.com/r/golang/comments/f3jky4/cview_terminalbased_user_interface_toolkit/)
+- url: https://gitlab.com/tslocum/cview
 ---
 
-## [2][Grammarly knows about good programming languages](https://www.reddit.com/r/golang/comments/f2tq9p/grammarly_knows_about_good_programming_languages/)
-- url: https://i.redd.it/v3pqtvknrig41.png
+## [3][Micro In Action, Part4：Pub/Sub](https://www.reddit.com/r/golang/comments/f3rqzv/micro_in_action_part4pubsub/)
+- url: https://medium.com//micro-in-action-part4-pub-sub-564f3b054ecd?source=friends_link&amp;sk=45892c07676feae7086dae696fbf9a46
 ---
 
-## [3][Building Microservices with Go - YouTube (Nic Jackson)](https://www.reddit.com/r/golang/comments/f33n7z/building_microservices_with_go_youtube_nic_jackson/)
-- url: https://www.youtube.com/playlist?list=PLmD8u-IFdreyh6EUfevBcbiuCKzFk0EW_
+## [4][Structuring Web Applications in Go](https://www.reddit.com/r/golang/comments/f3rqbu/structuring_web_applications_in_go/)
+- url: https://www.calhoun.io/structuring-web-applications-in-go
 ---
 
-## [4][How big is your final build?](https://www.reddit.com/r/golang/comments/f38pcg/how_big_is_your_final_build/)
-- url: https://www.reddit.com/r/golang/comments/f38pcg/how_big_is_your_final_build/
----
-Mine is over 10MB. Is it a lot? Or is it not?
-
-How big is your build? What type of server stuff or website is it doing?
-## [5][Go 1.13.8 and Go 1.12.17 are released](https://www.reddit.com/r/golang/comments/f357oj/go_1138_and_go_11217_are_released/)
-- url: https://groups.google.com/forum/m/#!topic/golang-announce/pYiaiBU6kvs/discussion
+## [5][Joker - A commandline tool helps to check your dev environment](https://www.reddit.com/r/golang/comments/f3pl3u/joker_a_commandline_tool_helps_to_check_your_dev/)
+- url: https://github.com/gingerhot/joker
 ---
 
-## [6][can i use GOMODULES with GOPATH ??](https://www.reddit.com/r/golang/comments/f38mdu/can_i_use_gomodules_with_gopath/)
-- url: https://www.reddit.com/r/golang/comments/f38mdu/can_i_use_gomodules_with_gopath/
+## [6][Building Web Server with Go - Part 7](https://www.reddit.com/r/golang/comments/f3mpqm/building_web_server_with_go_part_7/)
+- url: https://www.reddit.com/r/golang/comments/f3mpqm/building_web_server_with_go_part_7/
 ---
-so can i access non downloadable packages (go get) with go modules 
-
-for example make a folder with some go files 
-
-and then access it from go modules 
-
-if no : 
-
-can i access a module from another module ?   
-ty
-## [7][Is a lot of exported interfaces from a package a bad thing for API clarity? How can it be mitigated?](https://www.reddit.com/r/golang/comments/f380ys/is_a_lot_of_exported_interfaces_from_a_package_a/)
-- url: https://www.reddit.com/r/golang/comments/f380ys/is_a_lot_of_exported_interfaces_from_a_package_a/
----
-When I'm writing a package, I've been using lots of interfaces in my structs and functions to make my code less fragile. 
-
-The problem is, when I come to export my nice new code which uses these interfaces, I'm always debating how many of these interfaces I should also export.
-
-My worry is that my package's API having a number of small interfaces exported obfuscates the useful, concrete code behind a layer of abstraction.
-
-What's good practice for balancing using interfaces and keeping a clean package API? I've been hunting for some good advice on this from community articles, and the advice seems very contradictory.
-## [8][Is there a way to authenticate via ldap on a web application](https://www.reddit.com/r/golang/comments/f380na/is_there_a_way_to_authenticate_via_ldap_on_a_web/)
-- url: https://www.reddit.com/r/golang/comments/f380na/is_there_a_way_to_authenticate_via_ldap_on_a_web/
----
-Hi Guys
-
-I'm currently developing a web application on go. However only some specific users should be able to access the application. The need to be in a specific Active Directory group.
-
-I know that they are a ton of ldap packages available but I'm not quiet sure how to implement this.
-
-Does anybode has some experience?
-## [9][Go for Cloud](https://www.reddit.com/r/golang/comments/f2w0to/go_for_cloud/)
-- url: https://rakyll.org/go-cloud/
+https://www.gophersumit.com/series/web-7/
+## [7][Micro In Action, Part4：Pub/Sub](https://www.reddit.com/r/golang/comments/f3qx3g/micro_in_action_part4pubsub/)
+- url: https://medium.com/@dche423/micro-in-action-part4-pub-sub-564f3b054ecd
 ---
 
-## [10][Is unsafe ...unsafe?](https://www.reddit.com/r/golang/comments/f37xal/is_unsafe_unsafe/)
-- url: https://www.reddit.com/r/golang/comments/f37xal/is_unsafe_unsafe/
+## [8][XML implementation overhead and alternatives](https://www.reddit.com/r/golang/comments/f3q0lu/xml_implementation_overhead_and_alternatives/)
+- url: https://www.reddit.com/r/golang/comments/f3q0lu/xml_implementation_overhead_and_alternatives/
 ---
-Part 1: [https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-1/](https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-1/)
+Hi,
+currently I'm using XML to allow the data exchange between two applications (no services just two separate applications that should be run one after another). There are some now cases where I want to store a map in XML, so I have to dynamically write and read the data for each component. Right now this seems like a lot of boilerplate code, but I'm arguing with myself that this also allows me to validate the fields during parsing. Should I generally never use XML if map-like structures are involved? TOML is not really an alternative, because I also store multiline base64 encoded data. Apart from that I also store XML output from an internal application, which is also why I started using XML in the first place (as wrapper).
+## [9][How complicated is local network peer to peer in golang?](https://www.reddit.com/r/golang/comments/f3pkxo/how_complicated_is_local_network_peer_to_peer_in/)
+- url: https://www.reddit.com/r/golang/comments/f3pkxo/how_complicated_is_local_network_peer_to_peer_in/
+---
 
-Part 2: [https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-2/](https://www.dnahurnyi.com/is-unsafe-...unsafe-pt.-2/)  
-Medium: [https://medium.com/@dnahurnyi/is-unsafe-unsafe-pt-1-6b27c2286bb8](https://medium.com/@dnahurnyi/is-unsafe-unsafe-pt-1-6b27c2286bb8)
+## [10][returning exception in postgres and get the exception message in go](https://www.reddit.com/r/golang/comments/f3p0ua/returning_exception_in_postgres_and_get_the/)
+- url: https://www.reddit.com/r/golang/comments/f3p0ua/returning_exception_in_postgres_and_get_the/
+---
+hi, im trying to access the exception message in go, but without any success so far...
+
+what ive got so far in Postgres: 
+
+&gt;CREATE OR REPLACE FUNCTION data.insert\_data(num integer)  
+&gt;  
+&gt;  RETURNS text AS  
+&gt;  
+&gt;$BODY$  
+&gt;  
+&gt;  DECLARE errorMsg TEXT;  
+&gt;  
+&gt;BEGIN  
+&gt;  
+&gt;SET search\_path TO Data;  
+&gt;  
+&gt;COPY tbl FROM 'path' DELIMITER '	' CSV HEADER;  
+&gt;  
+&gt;errorMsg = 'im\_a\_return\_var';  
+&gt;  
+&gt;RETURN errorMsg;  
+&gt;  
+&gt;EXCEPTION  
+&gt;  
+&gt;   WHEN others THEN  
+&gt;  
+&gt;RAISE EXCEPTION  
+&gt;  
+&gt;USING ERRCODE = sqlstate  
+&gt;  
+&gt;,MESSAGE = 'Error: ' || sqlstate || '/ ' || sqlerrm;  
+&gt;  
+&gt;errorMsg = sqlstate  
+&gt;  
+&gt;,MESSAGE = 'Error: ' || sqlstate || '/ ' || sqlerrm  
+&gt;  
+&gt;RETURN errorMsg;  
+&gt;  
+&gt;END  
+&gt;  
+&gt;$BODY$  
+&gt;  
+&gt;  LANGUAGE plpgsql VOLATILE
+
+on error i get, like i want it the errormessage and the sqlstate.
+
+GoCode accessing the function: 
+
+&gt;db.QueryRow("SELECT data.insert\_data(" + "10" + ")").Scan(&amp;errorMsg)
+
+on success i get im\_a\_return\_var in go, but on error i just get no value at all.
+
+Would anyone have a hint for me? Thanks!

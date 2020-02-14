@@ -1,13 +1,17 @@
 # reduxjs
-## [1][React — state management without libraries (with hooks) PART 2](https://www.reddit.com/r/reduxjs/comments/f2ofaw/react_state_management_without_libraries_with/)
+## [1][Implementing Undo-Redo with NgRx or Redux](https://www.reddit.com/r/reduxjs/comments/f3q1rp/implementing_undoredo_with_ngrx_or_redux/)
+- url: https://nils-mehlhorn.de/posts/angular-undo-redo-ngrx-redux
+---
+
+## [2][React — state management without libraries (with hooks) PART 2](https://www.reddit.com/r/reduxjs/comments/f2ofaw/react_state_management_without_libraries_with/)
 - url: https://medium.com//react-state-management-without-libraries-with-hooks-part-2-d087278185a9?source=friends_link&amp;sk=a184f029f305821c4c57d2c249d0042b
 ---
 
-## [2][Redux Controllers -&gt; Less verbose Redux for people who love typescript - State Observables | State Subscriptions | State Watchers | Async Actions | Inbuilt Caching | React | Angular | Node | Redux Effects | Provided States](https://www.reddit.com/r/reduxjs/comments/f2cesn/redux_controllers_less_verbose_redux_for_people/)
+## [3][Redux Controllers -&gt; Less verbose Redux for people who love typescript - State Observables | State Subscriptions | State Watchers | Async Actions | Inbuilt Caching | React | Angular | Node | Redux Effects | Provided States](https://www.reddit.com/r/reduxjs/comments/f2cesn/redux_controllers_less_verbose_redux_for_people/)
 - url: https://www.npmjs.com/package/redux-controllers
 ---
 
-## [3][Do I need a Store?](https://www.reddit.com/r/reduxjs/comments/f1061x/do_i_need_a_store/)
+## [4][Do I need a Store?](https://www.reddit.com/r/reduxjs/comments/f1061x/do_i_need_a_store/)
 - url: https://www.reddit.com/r/reduxjs/comments/f1061x/do_i_need_a_store/
 ---
 I am watching a tutorial atm, and he said you can set up a Store if you like.
@@ -15,13 +19,13 @@ I am watching a tutorial atm, and he said you can set up a Store if you like.
 But he appears to be putting, what would be the Store, in the index.js file (in the client side).
 
 Is this common practice? Has anyone seen this 'style' of organization before?
-## [4][Redux - useSelector empty array equality](https://www.reddit.com/r/reduxjs/comments/f0m1l4/redux_useselector_empty_array_equality/)
+## [5][Redux - useSelector empty array equality](https://www.reddit.com/r/reduxjs/comments/f0m1l4/redux_useselector_empty_array_equality/)
 - url: https://www.reddit.com/r/reduxjs/comments/f0m1l4/redux_useselector_empty_array_equality/
 ---
 Would this be a sane way to ensure that for \[\] each time is true on reference equality. E.g. if that state.items remain undefined each time I use a fallback \[\] would fail reference equality - is useRef the right approach here? (rather not use shallowEquality)
 
     const items = useSelector((state) =&gt; state.items || useRef([]).current);
-## [5][Conditional update in reducer based on other state. Best Practices?](https://www.reddit.com/r/reduxjs/comments/f05rab/conditional_update_in_reducer_based_on_other/)
+## [6][Conditional update in reducer based on other state. Best Practices?](https://www.reddit.com/r/reduxjs/comments/f05rab/conditional_update_in_reducer_based_on_other/)
 - url: https://www.reddit.com/r/reduxjs/comments/f05rab/conditional_update_in_reducer_based_on_other/
 ---
 So currently I have an event called ITEM\_DELETED.
@@ -39,7 +43,7 @@ I'm currently thinking:
 3. Something else? Make the state combined so one reducer can handle the action?
 
 Thanks!
-## [6][Which is more performant for useSelector hook with multiple values?](https://www.reddit.com/r/reduxjs/comments/ezsw20/which_is_more_performant_for_useselector_hook/)
+## [7][Which is more performant for useSelector hook with multiple values?](https://www.reddit.com/r/reduxjs/comments/ezsw20/which_is_more_performant_for_useselector_hook/)
 - url: https://www.reddit.com/r/reduxjs/comments/ezsw20/which_is_more_performant_for_useselector_hook/
 ---
 As you know, you can use object destructuring for an object to extract values with the same name:
@@ -65,7 +69,7 @@ or
 The reason I ask is that the first example is one call but may initially bring in all the values for that userInfo state while the second example is more direct, but then also calls useSelector an additional time.
 
 To be more performant and cut down on re-renders on data change, which one is the better method?
-## [7][How to structure the state](https://www.reddit.com/r/reduxjs/comments/ez8t79/how_to_structure_the_state/)
+## [8][How to structure the state](https://www.reddit.com/r/reduxjs/comments/ez8t79/how_to_structure_the_state/)
 - url: https://www.reddit.com/r/reduxjs/comments/ez8t79/how_to_structure_the_state/
 ---
 Hi!
@@ -107,7 +111,7 @@ Am I thinking this the right way ? Is this the right use case of redux ?
 
 
 Thanks in advance for the feedbacks
-## [8][Modular Redux — a Design Pattern for Mastering Scalable, Shared State](https://www.reddit.com/r/reduxjs/comments/eyuwgv/modular_redux_a_design_pattern_for_mastering/)
+## [9][Modular Redux — a Design Pattern for Mastering Scalable, Shared State](https://www.reddit.com/r/reduxjs/comments/eyuwgv/modular_redux_a_design_pattern_for_mastering/)
 - url: https://www.reddit.com/r/reduxjs/comments/eyuwgv/modular_redux_a_design_pattern_for_mastering/
 ---
 I have a bit of a love/hate relationship with Redux. I love the atomic state updates, persistable, replayable global state, and awesome middleware. However, like many others, I hate writing Redux - at least with the recommended design patterns. I experimented with various ways to write better Redux, but it took me a while to figure out the core problem...
@@ -121,13 +125,7 @@ I'd love your feedback!
 Modular Redux: [https://medium.com/@shanebdavis/modular-redux-a-design-pattern-for-mastering-scalable-shared-state-82d4abc0d7b3](https://medium.com/@shanebdavis/modular-redux-a-design-pattern-for-mastering-scalable-shared-state-82d4abc0d7b3)
 
 ([cross-posted](https://www.reddit.com/r/reactjs/comments/eyuu7i/modular_redux_a_design_pattern_for_mastering/) on /r/reactjs)
-## [9][React Ninjas Newsletter #89: React Navigation v5 + React Native Paper = ❤️](https://www.reddit.com/r/reduxjs/comments/ez2ngi/react_ninjas_newsletter_89_react_navigation_v5/)
+## [10][React Ninjas Newsletter #89: React Navigation v5 + React Native Paper = ❤️](https://www.reddit.com/r/reduxjs/comments/ez2ngi/react_ninjas_newsletter_89_react_navigation_v5/)
 - url: https://reactninjs.com/post/89-react-navigation-v5-react-native-paper
 ---
 
-## [10][Please advice example project or course (React, Redux, JWT, REST)](https://www.reddit.com/r/reduxjs/comments/eys7wk/please_advice_example_project_or_course_react/)
-- url: https://www.reddit.com/r/reduxjs/comments/eys7wk/please_advice_example_project_or_course_react/
----
-I have a REST API with JWT authentication backend.
-
-I would like to find an example project or course, which could be used as a reference implementation for my React/Redux frontend (with router + pagination) for that API.

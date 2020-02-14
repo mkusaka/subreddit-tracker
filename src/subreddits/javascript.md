@@ -87,7 +87,23 @@ score  |  comment  |
 
 
 &amp;nbsp;
-## [3][[AskJS] I want to create a YouTube channel showing the nitty-gritty of programming and maintaining a web-app for 10+ years (scale: 40k monthly uniques, $20k/monthly). What topics are of interest to r/javascript?](https://www.reddit.com/r/javascript/comments/f35k31/askjs_i_want_to_create_a_youtube_channel_showing/)
+## [3][Listen to your web pages render with DOM Mutation Observer and Web Audio API](https://www.reddit.com/r/javascript/comments/f3s04f/listen_to_your_web_pages_render_with_dom_mutation/)
+- url: https://gist.github.com/tomhicks/6cb5e827723c4eaef638bf9f7686d2d8
+---
+
+## [4][Chrome 79+ no longer shows preflight CORS requests](https://www.reddit.com/r/javascript/comments/f3clz5/chrome_79_no_longer_shows_preflight_cors_requests/)
+- url: https://httptoolkit.tech/blog/chrome-79-doesnt-show-cors-preflight/
+---
+
+## [5][How Javascript Implements Class-Based Object Oriented Programming](https://www.reddit.com/r/javascript/comments/f3s3nz/how_javascript_implements_classbased_object/)
+- url: https://www.freecodecamp.org/news/how-javascript-implements-oop/amp/?url=https%3A%2F%2Fwww.freecodecamp.org%2Fnews%2Fhow-javascript-implements-oop%2F&amp;__twitter_impression=true
+---
+
+## [6][Detect dark mode](https://www.reddit.com/r/javascript/comments/f3o50v/detect_dark_mode/)
+- url: https://h3manth.com/new/blog/2020/detect-dark-mode/
+---
+
+## [7][[AskJS] I want to create a YouTube channel showing the nitty-gritty of programming and maintaining a web-app for 10+ years (scale: 40k monthly uniques, $20k/monthly). What topics are of interest to r/javascript?](https://www.reddit.com/r/javascript/comments/f35k31/askjs_i_want_to_create_a_youtube_channel_showing/)
 - url: https://www.reddit.com/r/javascript/comments/f35k31/askjs_i_want_to_create_a_youtube_channel_showing/
 ---
 As part of my new year's resolutions I want to get a little less camera shy and I thought I have a somewhat interesting story to share about being the solopreneur owner of a web app. This opens up the possibility to show all the code/analytics etc. without repercussions from any other stake-holders.
@@ -123,47 +139,24 @@ In terms of priorities, I wanted to ask you all what topics would you like to se
 6. Adwords workflow to drive revenue
 7. Analytics workflow to figure out what content working
 8. Writing copy that gets sales (what worked for me vs. didn't)
-## [4][[AskJS] We are developing a declarative DSL for building full-stack web apps - we would love to hear what you think!](https://www.reddit.com/r/javascript/comments/f38h1t/askjs_we_are_developing_a_declarative_dsl_for/)
-- url: https://www.reddit.com/r/javascript/comments/f38h1t/askjs_we_are_developing_a_declarative_dsl_for/
+## [8][Visual Debugging in VS Code](https://www.reddit.com/r/javascript/comments/f3dm3u/visual_debugging_in_vs_code/)
+- url: https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer
 ---
-Hi all,  
-my brother and I had this (crazy?) idea and started working on it a year ago, just finished first prototype (not yet runnable on your machine, but you can check out demo on our page).
 
-Although we are still very early and there is a lot of work to be done to get it to something complete, we are excited about it :D and would love to hear whether you think this makes sense as a concept, can you see yourself using this, what do you think would be the most important thing to change / focus on / drop in the future, and similar - any feedback helps really!
+## [9][Article on javascript loops](https://www.reddit.com/r/javascript/comments/f3or5m/article_on_javascript_loops/)
+- url: https://www.shettyashwin.com/types-of-loop-in-javascript/
+---
 
-Our webpage: [https://wasp-lang.dev](https://wasp-lang.dev) .  
+## [10][Strudel – a front-end framework for the back-end powered web](https://www.reddit.com/r/javascript/comments/f3d8zx/strudel_a_frontend_framework_for_the_backend/)
+- url: https://strudeljs.org/
+---
 
-
-Thanks a lot!
-## [5][How I ported a US counties map made in D3 to the GPU using Three.js [OC]](https://www.reddit.com/r/javascript/comments/f2tme8/how_i_ported_a_us_counties_map_made_in_d3_to_the/)
+## [11][[AskJS] why is css-in-js so popular when css modules is a thing?](https://www.reddit.com/r/javascript/comments/f3cpdl/askjs_why_is_cssinjs_so_popular_when_css_modules/)
+- url: https://www.reddit.com/r/javascript/comments/f3cpdl/askjs_why_is_cssinjs_so_popular_when_css_modules/
+---
+It seems to me that css-in-js takes some extra parsing which to my understanding happens @ initial load time, which we usually try to minimize. At some point when styling conflicts were resolved by discipline using namespacing like BEM avoiding conflicts was a hassle and imo unenjoyable busy work, but css modules solves that problem. 
+Now I’m assuming that the large part of the web community that decided to use css-in-js aren’t idiots, but I don’t get it. Am I missing some major benefits?
+## [12][How I ported a US counties map made in D3 to the GPU using Three.js [OC]](https://www.reddit.com/r/javascript/comments/f2tme8/how_i_ported_a_us_counties_map_made_in_d3_to_the/)
 - url: https://tips4devs.com/articles/make-a-webgl-powered-us-counties-map-with-d3-and-three-js.html
----
-
-## [6][Lift Up Your Skills with 13 Simple Yet Powerful JavaScript Tricks | Learn To Code Together](https://www.reddit.com/r/javascript/comments/f37u06/lift_up_your_skills_with_13_simple_yet_powerful/)
-- url: https://learntocodetogether.com/powerful-javascript-tricks/#.XkUfJueAybU.reddit
----
-
-## [7][Regular Expressions made easy: a declarative approach](https://www.reddit.com/r/javascript/comments/f3a0dg/regular_expressions_made_easy_a_declarative/)
-- url: https://www.hackdoor.io/articles/lMN5kwQ1/regular-expressions-made-easy-a-declarative-approach
----
-
-## [8][Building a Simple Node.js OAuth Server with JWT](https://www.reddit.com/r/javascript/comments/f339wg/building_a_simple_nodejs_oauth_server_with_jwt/)
-- url: https://www.grizzlypeaksoftware.com/articles?id=6G3prVhXnUeSYUEqEoCqq2
----
-
-## [9][Hey r/javascript! We're a small team that just launched a new product called Autocode that lets you automatically generate Node.js API code for connecting apps together. Would love feedback! (x-post r/node)](https://www.reddit.com/r/javascript/comments/f2ocr2/hey_rjavascript_were_a_small_team_that_just/)
-- url: https://autocode.com/
----
-
-## [10][Moving 3d Car Game Using Javascript Library Three.Js](https://www.reddit.com/r/javascript/comments/f2x9ws/moving_3d_car_game_using_javascript_library/)
-- url: http://htmlhints.com/article/69/moving-3d-car-game-using-threejs
----
-
-## [11][[AskJS] What they should improve about Javascript ?](https://www.reddit.com/r/javascript/comments/f36dy2/askjs_what_they_should_improve_about_javascript/)
-- url: https://www.reddit.com/r/javascript/comments/f36dy2/askjs_what_they_should_improve_about_javascript/
----
-What they should improve about Javascript that you find in others programming language like C#, JAVA, C++, PHP, RUBY etc or is there things you would change or do differently if it was up to you ? I mean anything like toolings, syntax, frameworks, npm ecosystem, node, vanilla js syntax compared to the latest features etc. Do you agree with the way JS evolve and the way it's run or you would prefer a big corporation like Microsoft or a c++ standard committee running it ?
-## [12][Angular Weekly #90: RxJS &amp; typing zipWith, demystifying a TypeScript quirk](https://www.reddit.com/r/javascript/comments/f335bx/angular_weekly_90_rxjs_typing_zipwith/)
-- url: https://www.angularweekly.dev/post/90-release-of-angular-9
 ---
 

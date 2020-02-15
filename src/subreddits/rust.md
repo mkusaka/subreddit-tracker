@@ -33,83 +33,66 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/02/11/this-week-in-rust-325/
 ---
 
-## [3][All chapters from Rust in Action, book published by Manning, are now available](https://www.reddit.com/r/rust/comments/f3pq12/all_chapters_from_rust_in_action_book_published/)
+## [3][Blog Post: Why is Rust the Most Loved Programming Language](https://www.reddit.com/r/rust/comments/f41ynd/blog_post_why_is_rust_the_most_loved_programming/)
+- url: https://matklad.github.io/2020/02/14/why-rust-is-loved.html
+---
+
+## [4][Roa: an async web framework inspired by koajs, lightweight but powerful](https://www.reddit.com/r/rust/comments/f45bck/roa_an_async_web_framework_inspired_by_koajs/)
+- url: https://github.com/Hexilee/roa
+---
+
+## [5][Nimble: Async friendly binary encoding/decoding](https://www.reddit.com/r/rust/comments/f483xm/nimble_async_friendly_binary_encodingdecoding/)
+- url: https://www.reddit.com/r/rust/comments/f483xm/nimble_async_friendly_binary_encodingdecoding/
+---
+I've just created a crate for binary encoding/decoding of Rust types with support for directly writing values to any type implementing `AsyncWrite` and reading values from any type implementing `AsyncRead`. All of this with `async`/`await` syntax!
+
+- Crates.io: https://crates.io/crates/nimble
+- Documentation: https://docs.rs/nimble/0.1.0/nimble/
+- Repository: https://github.com/devashishdxt/nimble
+## [6][Why doesn't this compile? - value still mutably borrowed after downcast to immutable](https://www.reddit.com/r/rust/comments/f44p9v/why_doesnt_this_compile_value_still_mutably/)
+- url: https://www.reddit.com/r/rust/comments/f44p9v/why_doesnt_this_compile_value_still_mutably/
+---
+[https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=b6b1bcb90a0a904ce4f6853eed5ec2c9](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=b6b1bcb90a0a904ce4f6853eed5ec2c9)
+
+I think I know the answer. It's because the compiler keeps track of what is still borrowed in the return value of a function or expression, but it assumes anything that was mutably borrowed to begin with is still mutably borrowed afterwards.
+
+It seems like having the compiler track when a mutable borrow has been transformed into an immutable one would be reasonably easy, but maybe I'm overlooking something. Is there a reason this isn't a feature?
+## [7][All chapters from Rust in Action, book published by Manning, are now available](https://www.reddit.com/r/rust/comments/f3pq12/all_chapters_from_rust_in_action_book_published/)
 - url: https://www.manning.com/books/rust-in-action?a_aid=rust&amp;a_bid=0367c58f&amp;chan=reddit
 ---
 
-## [4][tk - a colorful version of hexdump](https://www.reddit.com/r/rust/comments/f3r9dc/tk_a_colorful_version_of_hexdump/)
-- url: https://www.reddit.com/r/rust/comments/f3r9dc/tk_a_colorful_version_of_hexdump/
+## [8][Reverse Question: What do you miss about other languages when working in Rust?](https://www.reddit.com/r/rust/comments/f3ur65/reverse_question_what_do_you_miss_about_other/)
+- url: https://www.reddit.com/r/rust/comments/f3ur65/reverse_question_what_do_you_miss_about_other/
 ---
-Hey all rustys! Just released my first "serious" rust tool, `tk`:
-
-[https://github.com/MrYakobo/tk](https://github.com/MrYakobo/tk)
-
-It was created out of the fact that `hexdump -C`  don't provide enough insight in the patterns of a given file. This new tool makes file "analysis" a breeze. The image below is generated from `tk &lt; /usr/bin/vim`:
-
-&amp;#x200B;
-
-https://preview.redd.it/oz6p65jyrvg41.png?width=784&amp;format=png&amp;auto=webp&amp;s=d1a837fa1c86cb2ecd8938cae9a226f2ffdec258
-
-The header on elf-binaries are totally visible, which I think is cool. [Here](https://github.com/MrYakobo/tk#the-gallery) are some more file types that I tested the tool on.
-
-I initially implemented this in Golang, but I felt lazy doing that and not really empowered to fix the bugs that arose. With rust, I felt sharp all the time, really. This is probably going to be my next go-to language in the future :)
-## [5][Sealed Rust Update: The Plan for Safety Critical Rust](https://www.reddit.com/r/rust/comments/f3alfk/sealed_rust_update_the_plan_for_safety_critical/)
-- url: https://ferrous-systems.com/blog/sealed-rust-the-plan/
+And what don't you miss?
+## [9][Pokérust: a Rust wrapper library for PokéAPI (my first crate)](https://www.reddit.com/r/rust/comments/f3zttk/pokérust_a_rust_wrapper_library_for_pokéapi_my/)
+- url: https://www.reddit.com/r/rust/comments/f3zttk/pokérust_a_rust_wrapper_library_for_pokéapi_my/
 ---
+Hello /r\/ustaceans, I recently published my first crate: [Pokérust](https://crates.io/crates/pokerust). Pokérust is a Rust wrapper library for the [PokéAPI](https://pokeapi.co/), which provides "All the Pokémon data you'll ever need in one place,
+easily accessible through a modern RESTful API".
 
-## [6][Svgbob 0.5.0-alpha is 3rd architecture rewrite of svgbob to support styling of shapes in the diagrams](https://www.reddit.com/r/rust/comments/f3qwup/svgbob_050alpha_is_3rd_architecture_rewrite_of/)
-- url: https://ivanceras.github.io/svgbob-editor/
+Every endpoint and API object should be supported, and API responses are automatically cached in memory (no support for an on-disk cache yet).
+
+Let me know if you have any feedback!
+## [10][Question: How to run tokio main loop with dynamically configured server address?](https://www.reddit.com/r/rust/comments/f48mok/question_how_to_run_tokio_main_loop_with/)
+- url: https://www.reddit.com/r/rust/comments/f48mok/question_how_to_run_tokio_main_loop_with/
 ---
+Hi.
 
-## [7][My first rust crate: Embedded-hal SPI driver for the ADXL355 accelerometer](https://www.reddit.com/r/rust/comments/f3runn/my_first_rust_crate_embeddedhal_spi_driver_for/)
-- url: https://jitter.company/blog/2020/02/14/adxl355-embedded-hal-driver-crate/
+I want to write a server with tokio with dynamically configured tokio server address.
+
+Problem
+
+* event/command/socket based starting and stopping the tokio server
+* multiple tokio server inside application
+* main loop for event handling
+
+Can I do it with tokio or must I stay with mio?
+## [11][What do you miss about Rust when working in other languages?](https://www.reddit.com/r/rust/comments/f3tx37/what_do_you_miss_about_rust_when_working_in_other/)
+- url: https://www.reddit.com/r/rust/comments/f3tx37/what_do_you_miss_about_rust_when_working_in_other/
 ---
-
-## [8][Rust lang in a nutshell - Part 2 Mini-series - Enums, pattern matching, Options](https://www.reddit.com/r/rust/comments/f3r27g/rust_lang_in_a_nutshell_part_2_miniseries_enums/)
-- url: https://www.softax.pl/blog/rust-lang-in-a-nutshell-2-enums-pattern-matching-options/
----
-
-## [9][Odd Missed Optimization](https://www.reddit.com/r/rust/comments/f3fuwv/odd_missed_optimization/)
-- url: https://www.reddit.com/r/rust/comments/f3fuwv/odd_missed_optimization/
----
-I was optimizing one of my projects (an emulator) and while looking at rustc's assembly output I noticed some very suspicious bounds checks. The original offending code is gone at this point but I recreated it in this example:
-
-    pub fn llvm_test(mut region: u32) -&gt; u32 {
-        region &gt;&gt;= 1;
-        if region &gt;= 0x08 &amp;&amp; region &lt;= 0x0D {
-            if region - 0x08 &gt; 1000 {
-                return 0xFFFFFFFF;
-            }
-            return 66;
-        } else {
-            return 45;
-        }
-    }
-
-godbolt: https://rust.godbolt.org/z/t7JTAR
-
-Even at `opt-level=3` the output will always do the `region - 0x08 &gt; 1000` check despite region being in the range [0x08, 0x0D]. I think this might just be an issue with LLVM because clang seems to do the same thing with the equivalent C code (https://rust.godbolt.org/z/6bNPwo). GCC doesn't have this issue and eliminates the check. Is this something I should just ignore? I was concerned because code like this was causing the compiler spit out asm for panics in many places where I knew panics couldn't occur.
-
-EDIT:
-
-If I change the return into a panic instead, the compiler still generates all of the extra panic code but only if I do a right shift. It eliminates the check if I do anything else (https://rust.godbolt.org/z/67YgdC).
-## [10][ustr 0.4 - Fast, FFI-Friendly String Interning](https://www.reddit.com/r/rust/comments/f3h2vw/ustr_04_fast_ffifriendly_string_interning/)
-- url: https://www.reddit.com/r/rust/comments/f3h2vw/ustr_04_fast_ffifriendly_string_interning/
----
-Repo with lots more info in the readme: [https://github.com/anderslanglands/ustr](https://github.com/anderslanglands/ustr)
-
-I've published a new version of my ustr crate to [crates.io](https://crates.io).
-
-Since the first version I posted here I've tried to document the unsafe invariants better, and use checked\_add() to guard against potential overflow. I've also added Miri to the CI as an extra guard.
-
-I've tweaked the hasher and binning to get it even faster, as well as adding serde support. 
-
-I've been using this heavily in another project of mine for a while now and it's working great. I'll probably aim for a 1.0 version soon.
-## [11][Some Nuances of Undefined Behavior in Rust](https://www.reddit.com/r/rust/comments/f3ekb8/some_nuances_of_undefined_behavior_in_rust/)
-- url: https://typr124.github.io/UB1
----
-
-## [12][How nnethercote optimized the heck out of LEB128 code](https://www.reddit.com/r/rust/comments/f36j05/how_nnethercote_optimized_the_heck_out_of_leb128/)
-- url: https://github.com/rust-lang/rust/pull/69050#issuecomment-585508353
+And what do you not miss?
+## [12][Upcoming compiler-team design meetings | Inside Rust Blog](https://www.reddit.com/r/rust/comments/f3w4qb/upcoming_compilerteam_design_meetings_inside_rust/)
+- url: https://blog.rust-lang.org/inside-rust/2020/02/14/upcoming-compiler-team-design-meetings.html
 ---
 

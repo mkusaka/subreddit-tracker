@@ -1,98 +1,109 @@
 # golang
-## [1][Golang file manager for Linux with GTK-GUI](https://www.reddit.com/r/golang/comments/f3dny8/golang_file_manager_for_linux_with_gtkgui/)
-- url: https://www.reddit.com/r/golang/comments/f3dny8/golang_file_manager_for_linux_with_gtkgui/
----
-Hi. I created for myself some app by golang. I use it. Hope maybe you will like it too.
-
-Or you can just add some stars on github.
-
-[github - GopherFileManager](https://github.com/SilentGopherLnx/GopherFileManager)
-## [2][cview - Terminal-based user interface toolkit](https://www.reddit.com/r/golang/comments/f3jky4/cview_terminalbased_user_interface_toolkit/)
-- url: https://gitlab.com/tslocum/cview
+## [1][A Go Roguelike](https://www.reddit.com/r/golang/comments/f41b1v/a_go_roguelike/)
+- url: https://github.com/hunterloftis/notes/blob/master/2020-02-14-golang-roguelike.md
 ---
 
-## [3][Micro In Action, Part4：Pub/Sub](https://www.reddit.com/r/golang/comments/f3rqzv/micro_in_action_part4pubsub/)
+## [2][What are some of the must-know topics for Backend Developer interviews (Go specific)?](https://www.reddit.com/r/golang/comments/f3trbd/what_are_some_of_the_mustknow_topics_for_backend/)
+- url: https://www.reddit.com/r/golang/comments/f3trbd/what_are_some_of_the_mustknow_topics_for_backend/
+---
+I have 2 years of experience working in Go and 6 years in total of Backend development. I am based in London.  
+I'm thinking of jumping back into the job hunting market after a long time.
+
+What are some of the things I should brush up on?  
+What would get me rejected?
+## [3][Moving Towards DDD in Go](https://www.reddit.com/r/golang/comments/f480oe/moving_towards_ddd_in_go/)
+- url: https://www.calhoun.io/moving-towards-domain-driven-design-in-go/
+---
+
+## [4][Best practices or tips writing a CLI tool with golang.](https://www.reddit.com/r/golang/comments/f454o4/best_practices_or_tips_writing_a_cli_tool_with/)
+- url: https://www.reddit.com/r/golang/comments/f454o4/best_practices_or_tips_writing_a_cli_tool_with/
+---
+Hi, what patterns do you recommend to write a good CLI application in golang? 
+Next week in our local community we are going to do the exercise, as we are a small group will be nice to have some external feedback. Thanks
+## [5][Micro In Action, Part4：Pub/Sub](https://www.reddit.com/r/golang/comments/f3rqzv/micro_in_action_part4pubsub/)
 - url: https://medium.com//micro-in-action-part4-pub-sub-564f3b054ecd?source=friends_link&amp;sk=45892c07676feae7086dae696fbf9a46
 ---
 
-## [4][Structuring Web Applications in Go](https://www.reddit.com/r/golang/comments/f3rqbu/structuring_web_applications_in_go/)
+## [6][Structuring Web Applications in Go](https://www.reddit.com/r/golang/comments/f3rqbu/structuring_web_applications_in_go/)
 - url: https://www.calhoun.io/structuring-web-applications-in-go
 ---
 
-## [5][Joker - A commandline tool helps to check your dev environment](https://www.reddit.com/r/golang/comments/f3pl3u/joker_a_commandline_tool_helps_to_check_your_dev/)
-- url: https://github.com/gingerhot/joker
+## [7][Problem when implementing reverse proxy](https://www.reddit.com/r/golang/comments/f43fp7/problem_when_implementing_reverse_proxy/)
+- url: https://www.reddit.com/r/golang/comments/f43fp7/problem_when_implementing_reverse_proxy/
 ---
+Hi all,
 
-## [6][Building Web Server with Go - Part 7](https://www.reddit.com/r/golang/comments/f3mpqm/building_web_server_with_go_part_7/)
-- url: https://www.reddit.com/r/golang/comments/f3mpqm/building_web_server_with_go_part_7/
+When I try to implement a reverse proxy in Go, using the bellow code:
+
+    package main
+    
+    import (
+    	"net/http"
+    	"net/http/httputil"
+    	url2 "net/url"
+    )
+    
+    func redirect(target string, res http.ResponseWriter, req *http.Request) {
+    	targetUrl,_ := url2.Parse(target)
+    
+    	proxy := httputil.NewSingleHostReverseProxy(targetUrl)
+    
+    	req.URL.Host = targetUrl.Host
+    	req.URL.Scheme = targetUrl.Scheme
+    	req.Header.Set("X-Forwarded-Host",req.Header.Get("Host"))
+    	req.Host = targetUrl.Host
+    	req.URL.Path = targetUrl.Path
+    	proxy.ServeHTTP(res,req)
+    }
+    
+    func handleAndRedirect(res http.ResponseWriter, req *http.Request)  {
+    	url := "http://localhost:5111/about"
+    	redirect(url, res, req)
+    }
+    
+    func main() {
+    	http.HandleFunc("/", handleAndRedirect)
+    	if err := http.ListenAndServe(":5106",nil); err != nil {
+    		panic(err)
+    	}
+    }
+
+Expected: When I enter localhost:5106 on browser, it returns the result from l**ocalhost:5111/about**
+
+Actual: When I enter localhost:5106 on browser, it returns the result from **localhost:5111**
+
+Is it possible to implement what I expect? If yes, what did I miss?Thanks.
+## [8][What do you miss about Go when working in other languages?](https://www.reddit.com/r/golang/comments/f3u3cl/what_do_you_miss_about_go_when_working_in_other/)
+- url: https://www.reddit.com/r/golang/comments/f3u3cl/what_do_you_miss_about_go_when_working_in_other/
 ---
-https://www.gophersumit.com/series/web-7/
-## [7][Micro In Action, Part4：Pub/Sub](https://www.reddit.com/r/golang/comments/f3qx3g/micro_in_action_part4pubsub/)
-- url: https://medium.com/@dche423/micro-in-action-part4-pub-sub-564f3b054ecd
+And what do you not miss?
+## [9][Any Golang Based E2E Frameworks for Testing ?](https://www.reddit.com/r/golang/comments/f3x2sm/any_golang_based_e2e_frameworks_for_testing/)
+- url: https://www.reddit.com/r/golang/comments/f3x2sm/any_golang_based_e2e_frameworks_for_testing/
 ---
+I am fairly new to Golang , Looking for options for an e2e testframework .
 
-## [8][XML implementation overhead and alternatives](https://www.reddit.com/r/golang/comments/f3q0lu/xml_implementation_overhead_and_alternatives/)
-- url: https://www.reddit.com/r/golang/comments/f3q0lu/xml_implementation_overhead_and_alternatives/
+I am looking for something which has following features :
+
+\+ Deploy Bunch of Servers and DUT's \[ it would be great if it can talk to git\]
+
+\+ Run Tests on DUT's 
+
+\+ Collect Logs from DUT and Test Reports .
+
+\+ Pretty Display reports ,have a common place to collect them . 
+
+If one framework cannot do this ,please suggest what's best open source software out there that can help me ?
+## [10][What are good feature flag tools/libraries that support Go](https://www.reddit.com/r/golang/comments/f41vrl/what_are_good_feature_flag_toolslibraries_that/)
+- url: https://www.reddit.com/r/golang/comments/f41vrl/what_are_good_feature_flag_toolslibraries_that/
 ---
-Hi,
-currently I'm using XML to allow the data exchange between two applications (no services just two separate applications that should be run one after another). There are some now cases where I want to store a map in XML, so I have to dynamically write and read the data for each component. Right now this seems like a lot of boilerplate code, but I'm arguing with myself that this also allows me to validate the fields during parsing. Should I generally never use XML if map-like structures are involved? TOML is not really an alternative, because I also store multiline base64 encoded data. Apart from that I also store XML output from an internal application, which is also why I started using XML in the first place (as wrapper).
-## [9][How complicated is local network peer to peer in golang?](https://www.reddit.com/r/golang/comments/f3pkxo/how_complicated_is_local_network_peer_to_peer_in/)
-- url: https://www.reddit.com/r/golang/comments/f3pkxo/how_complicated_is_local_network_peer_to_peer_in/
----
+&amp;#x200B;
 
-## [10][returning exception in postgres and get the exception message in go](https://www.reddit.com/r/golang/comments/f3p0ua/returning_exception_in_postgres_and_get_the/)
-- url: https://www.reddit.com/r/golang/comments/f3p0ua/returning_exception_in_postgres_and_get_the/
----
-hi, im trying to access the exception message in go, but without any success so far...
+   Hello, I'm currently working as a senior developer/architect.  I plan on doing a pretty massive code migration in the next few months, and I decided to center my strategy around feature flags.  I've been doing some research for a few months, and I've come across list
 
-what ive got so far in Postgres: 
+&amp;#x200B;
 
-&gt;CREATE OR REPLACE FUNCTION data.insert\_data(num integer)  
-&gt;  
-&gt;  RETURNS text AS  
-&gt;  
-&gt;$BODY$  
-&gt;  
-&gt;  DECLARE errorMsg TEXT;  
-&gt;  
-&gt;BEGIN  
-&gt;  
-&gt;SET search\_path TO Data;  
-&gt;  
-&gt;COPY tbl FROM 'path' DELIMITER '	' CSV HEADER;  
-&gt;  
-&gt;errorMsg = 'im\_a\_return\_var';  
-&gt;  
-&gt;RETURN errorMsg;  
-&gt;  
-&gt;EXCEPTION  
-&gt;  
-&gt;   WHEN others THEN  
-&gt;  
-&gt;RAISE EXCEPTION  
-&gt;  
-&gt;USING ERRCODE = sqlstate  
-&gt;  
-&gt;,MESSAGE = 'Error: ' || sqlstate || '/ ' || sqlerrm;  
-&gt;  
-&gt;errorMsg = sqlstate  
-&gt;  
-&gt;,MESSAGE = 'Error: ' || sqlstate || '/ ' || sqlerrm  
-&gt;  
-&gt;RETURN errorMsg;  
-&gt;  
-&gt;END  
-&gt;  
-&gt;$BODY$  
-&gt;  
-&gt;  LANGUAGE plpgsql VOLATILE
+[https://featureflags.io/go-feature-flags/](https://featureflags.io/go-feature-flags/)
 
-on error i get, like i want it the errormessage and the sqlstate.
+&amp;#x200B;
 
-GoCode accessing the function: 
-
-&gt;db.QueryRow("SELECT data.insert\_data(" + "10" + ")").Scan(&amp;errorMsg)
-
-on success i get im\_a\_return\_var in go, but on error i just get no value at all.
-
-Would anyone have a hint for me? Thanks!
+   For the record, I work in an event driven architectures with pollers and streams.  I have found many feature flag libraries to be very oriented towards web based solutions, but I don't interact with the client side at all.  This a purely backend system.   I do plan on trying a few on the list, but I wanted to reach out to the community and get some ideas about your personal accounts and experiences with feature flag tools?

@@ -27,7 +27,120 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Is there a complete overview about rails conventions?](https://www.reddit.com/r/rails/comments/f3iqbr/is_there_a_complete_overview_about_rails/)
+## [3][How do you include the lib folder in your spec ?](https://www.reddit.com/r/rails/comments/f44p47/how_do_you_include_the_lib_folder_in_your_spec/)
+- url: https://www.reddit.com/r/rails/comments/f44p47/how_do_you_include_the_lib_folder_in_your_spec/
+---
+I have some custom PORO in the lib/ folder. I am using Rails 5 and Rspec. I would like to include files from lib in the spec. I found answers [1](https://stackoverflow.com/questions/4073856/rails-3-autoload), [2](https://stackoverflow.com/questions/16954989/how-to-include-lib-directory-in-rspec-tests) which is too old. So I am seeking some advices majority of rails community follows.
+## [4][First project finished, but badly in need of criticism!!](https://www.reddit.com/r/rails/comments/f3z6zt/first_project_finished_but_badly_in_need_of/)
+- url: https://www.reddit.com/r/rails/comments/f3z6zt/first_project_finished_but_badly_in_need_of/
+---
+##Hey there you wonderfully helpful subreddit, you!
+
+Thanks to so much help from you guys over the last month+ I've finished and deployed my first webapp. [You can check it out here](https://www.chucksef.com) but it really won't be terribly interesting since none of you are admins (and hopefully there's no way for you to sneak your way in!)
+
+[Here's a link to the repo on github](https://github.com/Chucksef/photo_app) if you're interested in looking at the code.
+
+If you didn't read the title, I **very badly want criticism**! I'm very new to rails (just started learning Jan 3rd) so I'm sure there are an overwhelming number of things that I've done 100% wrong, and I'd like to know about them!
+
+#Website concept: 
+Squarespace-y platform I built myself to allow me to dynamically build my own portfolio without having to go back into my development environment and re-code pages as I finish more projects to show off!
+
+Right now, however, I've filled it with some generic photo-studio stuff.
+
+However, here are a few categories where I'm NOT looking for criticism:
+
+* Webpage is very generic looking bootstrap bullshit - I know. That's not the point of this project!
+* I didn't use ANY testing tools while building this. Oh man do I really regret glossing over this stuff. Now that I'm finished every time I make a change I cringe at not knowing if something else broke! I WILL be learning this in the near future.
+* Website copy is all bad - I'm not trying to become a copywriter.
+
+Anything else is fair game! So come on and help me become better by destroying my month+ of studying and hard work!
+## [5][Highcharts in Ruby syntax for Rails app / Also, trying to get two series of data to display on a single highchart and it's not taking](https://www.reddit.com/r/rails/comments/f3ybw0/highcharts_in_ruby_syntax_for_rails_app_also/)
+- url: https://www.reddit.com/r/rails/comments/f3ybw0/highcharts_in_ruby_syntax_for_rails_app_also/
+---
+Does anyone know of any good docs for highcharts in rails?  Seems sparse if much at all.  I don't have a JS background yet to translate much from JS to Ruby, if that is useful (I notice lots of demos in JS fiddle).
+
+Additionally, Im trying to get two series of data to load on a highchart in rails.  One column type and one scatter type, each with nested arrays like `[[x1, y1], [x2, y2], [x3, y3],  ...]` and so on
+
+I'm making accessibly charts, and I've tried `chart.series( { &lt; chart 1&gt; }, { &lt;chart 2&gt; })`, I've tried making separate `chart.series`, I've tried making two separate Accessible charts.  One chart is working but can't get to seem to get the other one going, trying to add the second plot in various was as mentioned above.  Page won't load properly when I try to get a second one in
+## [6][How nested_attributes works?](https://www.reddit.com/r/rails/comments/f3ui2c/how_nested_attributes_works/)
+- url: https://www.reddit.com/r/rails/comments/f3ui2c/how_nested_attributes_works/
+---
+Hi guys, I was wondering how Rails create &amp; update nested attributes.
+
+I had a problem where I was creating 2 associated models at the same time. For that, I was using the rails callbacks :after\_create/update, and while I was doing that, I knowledge that Rails pushes the code to the Stack (execute asynchronous), hence, inside the method called by the callback, we only have access to database's data. Also, apparently, we can't pass arguments (I tried and didn't work) to those triggers.
+
+For this problem, the only way I was able to pass data from one model to another was creating database attributes to the first model and passing them to the second model. I did try to pass attr\_acessor first, but that didn't work for the reason I described above.
+
+Besides using nested\_attributes to this problem, there was something that I'm missing? I guess that Rails has more privileges to pass arguments to these triggers or maybe the arguments should be feasible of serialization - similar to how works Sidekiq's Workers.
+
+I hope this example can clarify my explanation
+
+    # inside First::Model.rb
+    
+    attr_accessor :second_model_attr_4
+    
+    after_create :create_solicitation
+    
+    def create_solicitation
+        puts second_model_attr_4 # returns nothing
+     
+        Second::Model.create!(
+          first_model_id: self.id,
+          second_model_attr_1: self.second_model_attr_1 
+          second_model_attr_2: self.second_model_attr_2
+          second_model_attr_3: Second::Model::Status.find(
+            self.second_model_attr_3
+         ),
+          # this attr_accessor won't be seem by the function  
+          second_model_attr_4: self.second_model_attr_4 
+        )
+    end
+    
+    # P.s second_model_attr_1 to 3 were added as database attributes to the First::Model (did I migration and add these methods to First::Model)
+
+P.s It's callbacks, not triggers - sorry.
+## [7][bundle exec foreman start fails](https://www.reddit.com/r/rails/comments/f436wc/bundle_exec_foreman_start_fails/)
+- url: https://www.reddit.com/r/rails/comments/f436wc/bundle_exec_foreman_start_fails/
+---
+&gt; \`parse\_numeric': Expected numeric value for '--port'; got "${PORT-3000}" (Thor::MalformattedArgumentError)  
+
+
+All I am doing is creating the environment for an open source project.  
+ [https://github.com/huginn/huginn](https://github.com/huginn/huginn)   
+
+
+Gemfile:  
+ [https://github.com/huginn/huginn/blob/master/Gemfile](https://github.com/huginn/huginn/blob/master/Gemfile)   
+
+
+Gemfile.lock  
+ [https://github.com/huginn/huginn/blob/master/Gemfile.lock](https://github.com/huginn/huginn/blob/master/Gemfile.lock)   
+
+
+I don't really know why I am getting this.  
+
+
+From online sources they told me to try downgrading thor from 0.19.4 to 0.19.1, didn't work, another told me to try doing 0.20.0, but didn't work.  
+
+
+I'm running this on Windows 10.
+## [8][Should ActiveRecord be used for already existing files?](https://www.reddit.com/r/rails/comments/f3yvdp/should_activerecord_be_used_for_already_existing/)
+- url: https://www.reddit.com/r/rails/comments/f3yvdp/should_activerecord_be_used_for_already_existing/
+---
+Hey,
+
+I was reading a lot about ActiveStorage in the past days and I'm still not sure if it's the right solution for my problem or if it's more aimed at simple user file uploads.
+
+I have an Image model which has an "external_url" field which contains a random direct URL to an image scraped from the internet. It's linked to another model called "Show". I don't want to store that image blob as soon as I insert a new Image as it would be too many (in my case).
+
+What I want is that as soon as someone requests that image by visiting a show page like: http://localhost:3000/show/example-show it'll download it from the "external_url", then upload it to S3 and create a variant of it. Just like ActiveStorage usually does, just with the difference that it has to download it first and then do it's usual thing.
+
+Is that an unusual approach and should I just use an external image server like https://github.com/willnorris/imageproxy instead?
+
+Any pointers into the right direction or usual approaches are appreciated!
+
+Thanks!
+## [9][Is there a complete overview about rails conventions?](https://www.reddit.com/r/rails/comments/f3iqbr/is_there_a_complete_overview_about_rails/)
 - url: https://www.reddit.com/r/rails/comments/f3iqbr/is_there_a_complete_overview_about_rails/
 ---
 Hey there,
@@ -37,7 +150,11 @@ I'm looking for a complete overview about all rails conventions. There is one on
 This overview has many points but not all. Recently I found a rails tutorial that mentioned that when we use render \`@users\` rails look for the partial \_user.erb that is rendered for every user in that collection. Pretty useful to know. And I bet there are many more conventions like this beside the overview above mentioned.
 
 What else useful rails conventions do you know?
-## [4][Scaling DB schema changes: How do you do these things?](https://www.reddit.com/r/rails/comments/f3esci/scaling_db_schema_changes_how_do_you_do_these/)
+## [10][Just curious. How many req/s does you app handle?](https://www.reddit.com/r/rails/comments/f3i1pt/just_curious_how_many_reqs_does_you_app_handle/)
+- url: https://www.reddit.com/r/rails/comments/f3i1pt/just_curious_how_many_reqs_does_you_app_handle/
+---
+Aldo how many instances of the app, how many servers etc? Like I said I'm just curious about the scale at which your apps operate. Thanks!
+## [11][Scaling DB schema changes: How do you do these things?](https://www.reddit.com/r/rails/comments/f3esci/scaling_db_schema_changes_how_do_you_do_these/)
 - url: https://www.reddit.com/r/rails/comments/f3esci/scaling_db_schema_changes_how_do_you_do_these/
 ---
 
@@ -55,11 +172,7 @@ A more complex might be changing from an Entity-Attribute-Value system (i.e., pr
 This is a very loose and hand-waving kind of question, but it's hard to find information on this kind of topic as I don't quite know how to phrase questions. Hope I'm being clear!
 
 * edit 1: in the case of slowly changing schemas, do you just try and backwards-port the data where possible, throw in switch statements (or differing classes) to handle various versions, etc?
-## [5][Just curious. How many req/s does you app handle?](https://www.reddit.com/r/rails/comments/f3i1pt/just_curious_how_many_reqs_does_you_app_handle/)
-- url: https://www.reddit.com/r/rails/comments/f3i1pt/just_curious_how_many_reqs_does_you_app_handle/
----
-Aldo how many instances of the app, how many servers etc? Like I said I'm just curious about the scale at which your apps operate. Thanks!
-## [6][Bad conventions at my new job, what to do?](https://www.reddit.com/r/rails/comments/f31lal/bad_conventions_at_my_new_job_what_to_do/)
+## [12][Bad conventions at my new job, what to do?](https://www.reddit.com/r/rails/comments/f31lal/bad_conventions_at_my_new_job_what_to_do/)
 - url: https://www.reddit.com/r/rails/comments/f31lal/bad_conventions_at_my_new_job_what_to_do/
 ---
 Hi, I'm from Peru and I wanted to ask something, at my new job there are a lot of bad conventions, just to name a few:
@@ -72,84 +185,3 @@ Hi, I'm from Peru and I wanted to ask something, at my new job there are a lot o
 * I think `rubocop` killed himself.
 
 This is not a technical question, but a more human one, what should I do? Say fuck off and don't trouble myself trying to bring this project to a decent level and only do the requirements they want me to do? I feel I can't tell them to do the things right since I'm the new guy or I can, but just a few, not all of them or they will think badly of me.
-## [7][Deploy staging and production environments to single server using Capistrano — Rails](https://www.reddit.com/r/rails/comments/f3791t/deploy_staging_and_production_environments_to/)
-- url: https://www.reddit.com/r/rails/comments/f3791t/deploy_staging_and_production_environments_to/
----
-The author shows you several different configuration options to deploy different environments a single server. 
-
-Link: https://medium.com/lalusaud_84531/deploy-staging-and-production-applications-to-single-server-using-capistrano-rails-1d5ab558d44f?source=friends_link&amp;sk=a686b1a3d16b7bb644be697136e9c5f3
-## [8][Handling abandoned records](https://www.reddit.com/r/rails/comments/f2x1o5/handling_abandoned_records/)
-- url: https://www.reddit.com/r/rails/comments/f2x1o5/handling_abandoned_records/
----
-I'll describe a similar model to mine. I'm going to use an oversimplified music library.
-
-Models:
-
-`Album`
-
-`has_many songs`
-
-&amp;#x200B;
-
-`Track`
-
-`belongs_to album`
-
-&amp;#x200B;
-
-`AlbumTrack`
-
-`references album`
-
-`references song`
-
-In this example, a user would enter an album, then while viewing the album have the option to add tracks (via the AlbumTracks table). This would allow an indefinite number of tracks to be added to each album.
-
-It's possible a user would create the album, then never add any tracks. It's also possible the user would return at a later time and create a new album intended to contain the data for the previously abandoned album. In any case, there is now 1 or more albums without tracks.
-
-Is there a conventional Rails way to approach preventing an ever growing list of unpopulated albums?
-
-One approach I'm considering is running a check when a user attempts to add a new Album that first checks if there is an abandoned record, and if so, presents that record instead of a new record. (One possible problem is that if 2 users are using the app, they might both attempt to create a new record at the same time, and both be presented with the abandoned record.)
-
-Edit: I'm also currently looking at the Orphanage gem ([https://rubygems.org/gems/orphanage/versions/0.3.0](https://rubygems.org/gems/orphanage/versions/0.3.0)) which might work for me. In this case, I imagine I could show forms for both Album and AlbumTrack on the same view, and use Orphanage to create each AlbumTrack and reassign them to Album once the Album is saved. Not sure how this would handle a scenario where the abandonment occurs right before the save (but the individual tracks are already created).
-## [9][Can I savely use ActiveRecord transactions or do they have any negative impact?](https://www.reddit.com/r/rails/comments/f2tu58/can_i_savely_use_activerecord_transactions_or_do/)
-- url: https://www.reddit.com/r/rails/comments/f2tu58/can_i_savely_use_activerecord_transactions_or_do/
----
-I'm currently developing a feature where I need to create a bunch of records (between 5-10) all at once. The important part here is, that either all are created or none at all. Now this to me sounds like a perfect use-case for an `ActiveRecord::Transaction` but I don't have a lot of experience with using them and from all I've read it sounds like they are "blocking" the database until the transaction is done. To me this sounds pretty bad, because if I need to create for example 10 records and maybe even do a little bit of business logic all in one transaction then this could take quite some time in which the entire database would be locked. However, I also don't see a different way of achieving my desired result.
-
-So before I go and use a transaction for this task I wanted to ask the following: Is my current picture of how a transaction works and the downsides that it has correct? Should I try and avoid transactions when possible or can I savely use them whenever I need to make sure that a task happens fully or not at all? And if I'm correct in asuming that they "lock" the database, then how do transaction scale? Because I could imagine that when there are multiple users/second which are all locking the database that this wouldn't be ideal.
-
-Edit: I forgot to mention that the feature I'm currently developing will not be used a lot. Every user will probably only use it once per session.
-## [10][Approach for saving lots of data in rails database](https://www.reddit.com/r/rails/comments/f2r5l1/approach_for_saving_lots_of_data_in_rails_database/)
-- url: https://www.reddit.com/r/rails/comments/f2r5l1/approach_for_saving_lots_of_data_in_rails_database/
----
-Hi! Im creating this scraper and would like to store the following data. I want to achieve something like this: Every time the scraper runs, save data in a new table and display it on the product page
-
-I was thinking to go with this approach:
-
-Create a controller/ model; `IntervalChecks inventory_qty:string product_price:string product:references`
-
-And then i can display the related inventory data and the prices on the product show page.
-
-Is this a good approach (with speed in mind?)
-
-Or would you advice to store it as a key value pair in Json as hash (in that case I would need to read more about how that stuff works :)
-## [11][First Rails Interview](https://www.reddit.com/r/rails/comments/f2q3bl/first_rails_interview/)
-- url: https://www.reddit.com/r/rails/comments/f2q3bl/first_rails_interview/
----
-Hey all!
-New to this subreddit and just have a question about interviews. 
-
-I have my first technical interview as a backend engineer. I’m going to have a technical interview on rails and active record. 
-
-I’m just wondering what I should look out for and if anyone has any insights. It would be greatly appreciated. 
-
-Thank you! :)
-## [12][Ruby blockchain client](https://www.reddit.com/r/rails/comments/f2oe24/ruby_blockchain_client/)
-- url: https://www.reddit.com/r/rails/comments/f2oe24/ruby_blockchain_client/
----
-Hello, I'm looking for an api that would allow me to sign documents on a bitcoin or ethereum blockchain like [https://chainpoint.org/](https://chainpoint.org/) for example but would provide a ruby gem to use their services.
-
-My application allows my customers to manage and centralize all kinds of documents, I would like to offer them the possibility to be able to sign and authenticate a set of documents whenever they want.
-
-Thank you for your answers

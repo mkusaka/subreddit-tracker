@@ -1,5 +1,23 @@
 # aws
-## [1][Protect S3 Images with own IAM Concept](https://www.reddit.com/r/aws/comments/f3r7vh/protect_s3_images_with_own_iam_concept/)
+## [1][Multi-Attach for Provisioned IOPS (io1) EBS Volumes](https://www.reddit.com/r/aws/comments/f41kb2/multiattach_for_provisioned_iops_io1_ebs_volumes/)
+- url: https://aws.amazon.com/blogs/aws/new-multi-attach-for-provisioned-iops-io1-amazon-ebs-volumes/
+---
+
+## [2][Infra.app - Desktop app for managing Kubernetes](https://www.reddit.com/r/aws/comments/f3u06h/infraapp_desktop_app_for_managing_kubernetes/)
+- url: https://infra.app
+---
+
+## [3][rds rss to cloudformation](https://www.reddit.com/r/aws/comments/f40o0f/rds_rss_to_cloudformation/)
+- url: https://www.reddit.com/r/aws/comments/f40o0f/rds_rss_to_cloudformation/
+---
+Hi all,
+
+I'm new to aws and cloudformation.  I'm looking to convert one of my auroradb rds rss that I created in the website/gui into a cloudformation template.  I have gone to the cloudformation page, click create stack ==&gt; with existing resources (import resources) and it is asking for S3 bucket or upload a template, which I don't have.  Any useful article I can use to accomplish this?
+
+&amp;#x200B;
+
+Thanks,
+## [4][Protect S3 Images with own IAM Concept](https://www.reddit.com/r/aws/comments/f3r7vh/protect_s3_images_with_own_iam_concept/)
 - url: https://www.reddit.com/r/aws/comments/f3r7vh/protect_s3_images_with_own_iam_concept/
 ---
 I have an App that should store and retrieve images from S3. Currently, upload happens via my own application server endpoint to S3 (image on app-&gt;application server-&gt;store in S3).
@@ -9,83 +27,54 @@ However, whats the best way to protect image access then, without giving every s
 My only solution would be that my application servers retrieve the image, and then forward them to the client. This causes two HTTP roundtrips though (S3-&gt;Application Server-&gt;App). This is massive for huge pictures.
 
 Any other ideas?
-## [2][In which I figure out to run Docker Compose successfully on ECS :-)](https://www.reddit.com/r/aws/comments/f3pp0q/in_which_i_figure_out_to_run_docker_compose/)
-- url: https://rmoff.net/2020/02/13/adventures-in-the-cloud-part-94-ecs/
+## [5][AWS central authentication advises.](https://www.reddit.com/r/aws/comments/f44gne/aws_central_authentication_advises/)
+- url: https://www.reddit.com/r/aws/comments/f44gne/aws_central_authentication_advises/
 ---
+What is best way to build central authentication for people to access to AWS resources, like EC2? I am looking into Microsoft Active Directory, FreeIPA, AWS Directory Service. MS AD require license and support, FreeIPA is open source and can purchase 3rd party support, AWS Directory Service is more integrated with the rest of the services.
 
-## [3][Hello AWS Session Manager; Farewell SSH](https://www.reddit.com/r/aws/comments/f3buy3/hello_aws_session_manager_farewell_ssh/)
-- url: https://medium.com/@dnorth98/hello-aws-session-manager-farewell-ssh-7fdfa4134696
+Also, I am researching on what is the best option for client base VPN. This is for people to connect to the VPN and then ssh or rdp EC2 resources. I know AWS has a client VPN service offering under the VPC. Is this difficult to setup? Or should I look into virtual firewall, like PfSense or Palo Alto?
+
+My Goal is to setup an VPN for users to login, and then they can login to a bastion server or some AWS resources
+## [6][DynamboDb and Databricks](https://www.reddit.com/r/aws/comments/f41es1/dynambodb_and_databricks/)
+- url: https://www.reddit.com/r/aws/comments/f41es1/dynambodb_and_databricks/
 ---
+Any clear explanation on how I can connect DynamoDB with databricks? I want to be able to send one data of row to dynamoDB from databricks.
 
-## [4][Amazon S3 - Price for huge files/data retrieval ?](https://www.reddit.com/r/aws/comments/f3quyv/amazon_s3_price_for_huge_filesdata_retrieval/)
-- url: https://www.reddit.com/r/aws/comments/f3quyv/amazon_s3_price_for_huge_filesdata_retrieval/
+If my question isn’t clear please let me know I will try my best to reword it.
+
+Thanks
+## [7][CloudFormation custom resource repository?](https://www.reddit.com/r/aws/comments/f3ws17/cloudformation_custom_resource_repository/)
+- url: https://www.reddit.com/r/aws/comments/f3ws17/cloudformation_custom_resource_repository/
 ---
-Hi everyone,
+Hello,
 
-I'm creating a file hosting website. Currently, the goal is for users to share files to a lot of people, and files will be deleted after a time of inactivity. I've been looking over Google Cloud, AWS and Azure, and something strikes me.   
-In GC/AWS, the biggest cost is clearly data retrieval (90$/Tb approximately). But in Azure Storage, retrieval of data is absolutely free. Is there something i'm missing? Because in that case, Azure Storage would be far better than AWS S3 or GC Storage.
-## [5][A 7KB AWS lambda Node.js library with zero runtime dependencies](https://www.reddit.com/r/aws/comments/f3rse9/a_7kb_aws_lambda_nodejs_library_with_zero_runtime/)
-- url: https://www.npmjs.com/package/micro-aws-lambda
----
+Is there a CloudFormation custom resource repository, that supplements missing CFN support?
 
-## [6][Can a lambda in child account(Trusting account) change/update the Org wide tag policies in the master account(Trusted account) via sts:AssumeRole?](https://www.reddit.com/r/aws/comments/f3rhsz/can_a_lambda_in_child_accounttrusting_account/)
-- url: https://www.reddit.com/r/aws/comments/f3rhsz/can_a_lambda_in_child_accounttrusting_account/
----
-I was reading up on Assume Role and how it works and it got me thinking will the lambda which is in my child account(Trusting account), be able to modify or update the Organization-wide Tag Policies in the master account(Trusted account)?
-
-I haven't tried this till now, as I don't have access to the Master account. 
-
-My main concern is: As the tag policies and the control policies will be only accessible from master account, will the assume role method actually work in this case?
-## [7][Getting the current shadow state for a thing on IoTCore](https://www.reddit.com/r/aws/comments/f3rhln/getting_the_current_shadow_state_for_a_thing_on/)
-- url: https://www.reddit.com/r/aws/comments/f3rhln/getting_the_current_shadow_state_for_a_thing_on/
----
-Hey,
-
-I'm trying to find a way to retrieve the current shadow state for a device I have on IoTCore using Python SDK but no luck. What am I missing? what easy programmable way do I have for getting the shadow state of a device?
-
-&amp;#x200B;
-
-    c.connect()
-    MQTTClient = c.getMQTTConnection()
-    MQTTClient.configureOfflinePublishQueueing(100)
-    
-    def callback(payload, responseStatus, token):
-        print("inside the callback")
-        print("--", payload)
-        print("--", responseStatus)
-        print("--", token)
-    
-    handler = c.createShadowHandlerWithName("0f231d3c-31d3-bb25-a571-9cbb25ec2724", True)
-    print(handler.shadowGet(callback, 5))
-
-I only get the Token that is returned from the callback, and it prints nothing to the screen.
+Specifically, I am looking for a way to create and assign Route53 reusable delegation sets. I can do this via the aws cli with one command, so hoping I could "quickly" spin up a Lambda function that would run the command to do the creation and another function to do the assignment.
 
 Thanks!
-## [8][Cannot get video calling working with the new WorkSpace Streaming Protocol](https://www.reddit.com/r/aws/comments/f3qw2y/cannot_get_video_calling_working_with_the_new/)
-- url: https://www.reddit.com/r/aws/comments/f3qw2y/cannot_get_video_calling_working_with_the_new/
+## [8][Review: Amazon Connect – A Programmable Telephone System](https://www.reddit.com/r/aws/comments/f3xbeg/review_amazon_connect_a_programmable_telephone/)
+- url: https://cloudonaut.io/review-amazon-connect-programmable-telephone-system/
 ---
-Hey All, 
 
-Testing the new WorkSpace Streaming Protocol which is replacing PCoIP 
-
-https://aws.amazon.com/workspaces/wsp/
-
-One of the big new features for us is bi-directional video so we can now use it for video calling. 
-
-Spun up new WorkSpaces in a new Directory and logged in using the new WorkSpace client but its still not detecting my webcam. 
-
-Is there anything  additional I need to do get video calling working? 
-
-Thanks.
-## [9][AWS Exam - Passed/Failed on screen message](https://www.reddit.com/r/aws/comments/f3qgxm/aws_exam_passedfailed_on_screen_message/)
-- url: https://www.reddit.com/r/aws/comments/f3qgxm/aws_exam_passedfailed_on_screen_message/
+## [9][Matlab on AWS Lambda](https://www.reddit.com/r/aws/comments/f433tj/matlab_on_aws_lambda/)
+- url: https://www.reddit.com/r/aws/comments/f433tj/matlab_on_aws_lambda/
 ---
-I know this has been brought up before, but does anyone know what the final "on screen message" is for the AWS exam is if you pass or fail??
-
-*Like many, I quickly read the message expecting the final email would contain the results (which it doesn't)... now i'm second guessing if I actually passed... frustrating waiting for the final results.*
-
-From memory, it went something like "....passed....", then a blur of somewhat relief. just hoping the failed message doesn't start with "you have NOT passed". Would love any input :)
-## [10][EKS pricing question](https://www.reddit.com/r/aws/comments/f3ogx5/eks_pricing_question/)
-- url: https://www.reddit.com/r/aws/comments/f3ogx5/eks_pricing_question/
+A new startup marrying Matlab and AWS Lambda :  
+[http://www.matlambda.com/](http://www.matlambda.com/)
+## [10][Moving from On Premise to AWS Aurora Serverless](https://www.reddit.com/r/aws/comments/f3xrtx/moving_from_on_premise_to_aws_aurora_serverless/)
+- url: https://www.reddit.com/r/aws/comments/f3xrtx/moving_from_on_premise_to_aws_aurora_serverless/
 ---
-How do I calculate the cost of running an 8-node cluster for 100 hours a month in EKS - the Simple Monthly Calculator doesn't contain that service at all to work out an estimate?! I read somewhere that you have to pay for the master plane on top too....
+Moving from on-premise to AWS Aurora Serverless
+
+Hi devops,
+
+We are currently maintaining a MySQL database on bare metal, which handles all of our production load. It has served us well, but in the past months, it has started to become too small for our load during peak times. We have a very inconsistent load on our production, where during the days it is very low, but peaks during evenings and weekends. While idle, we have somewhere around 100k hits/hr, while during peak it could go as high as 5M/hr or sometimes even 15M/hr. These spikes happens about every second to every third day, so not so frequently.
+
+I have looked into different options on how to tackle this issue, and to find a long term solution that would suit our needs and take the issue off of our hands. Naturally, since we are in the AWS echo system with a lot of our services, we looked into what they could offer and found out about Aurora Serverless. It has got some limitations when it comes to functionality, but it all seems fine to us and should not bother us in any way as of how we are using MySQL right now.
+
+Searching for experience on maintaining production workload on Aurora Serverless is quite small, at least according to my Google-fu. Most users seem to use it for test environments and staging since it is able to scale down to 0 ECU's, and therefore keeping the cost down.
+
+Our main take is that it would suit our needs based on the spiky loads, and therefore not having to set up an instance able to handle those large loads while staying idle most of the time, at least if it works as good as AWS states that it does, and thereby keep the costs down.
+
+Does anyone have actual experience with Aurora Serverless in production environments? Are there better solutions for scaling things like this, when it comes to AWS and MySQL?

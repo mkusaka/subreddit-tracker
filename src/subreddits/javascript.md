@@ -13,45 +13,63 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Listen to your web pages render with DOM Mutation Observer and Web Audio API](https://www.reddit.com/r/javascript/comments/f3s04f/listen_to_your_web_pages_render_with_dom_mutation/)
-- url: https://gist.github.com/tomhicks/6cb5e827723c4eaef638bf9f7686d2d8
+## [3][Angular for beginners.](https://www.reddit.com/r/javascript/comments/f4ph5f/angular_for_beginners/)
+- url: https://medium.com/javascript-in-plain-english/understanding-angular-and-creating-your-first-application-4b81b666f7b4
 ---
 
-## [4][You don't (may not) need Moment.js](https://www.reddit.com/r/javascript/comments/f40hz1/you_dont_may_not_need_momentjs/)
-- url: https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md#you-dont-may-not-need-momentjs
----
-
-## [5][Free Open-Source Endpoint Testing App for HTTP2/WS/GraphQl/SSE/gRPC](https://www.reddit.com/r/javascript/comments/f3x95x/free_opensource_endpoint_testing_app_for/)
-- url: http://getSwell.io
----
-
-## [6][My first MERN Stack app: Day Planner(Advanced ToDoApp)](https://www.reddit.com/r/javascript/comments/f49g3b/my_first_mern_stack_app_day_planneradvanced/)
+## [4][My first MERN Stack app: Day Planner(Advanced ToDoApp)](https://www.reddit.com/r/javascript/comments/f49g3b/my_first_mern_stack_app_day_planneradvanced/)
 - url: https://github.com/ahmetbcakici/DayPlanner
 ---
 
-## [7][How to Transform FormData into a Query String](https://www.reddit.com/r/javascript/comments/f48cew/how_to_transform_formdata_into_a_query_string/)
-- url: https://ultimatecourses.com/blog/transform-formdata-into-query-string
+## [5][[AskJS] Issue with JXA click](https://www.reddit.com/r/javascript/comments/f4gelq/askjs_issue_with_jxa_click/)
+- url: https://www.reddit.com/r/javascript/comments/f4gelq/askjs_issue_with_jxa_click/
+---
+Hello, I know this isn't the sub's forte, but I can't find a solution to a problem I'm having.
+
+So on AppleScript, I am trying to use javascript to click a ui element. For example, it will click "post" or something like that. I can't figure out how to simulate a mouse click though. I've tried using
+
+appName.click({
+
+at: [564, 466]
+
+})
+
+to click on the app's UI element, but it doesn't work. I have already given it
+
+var appName = sys_events.processes['appInFinder']; //gets app process
+
+but this still doesn't work. I have also tried https://apple.stackexchange.com/a/355256's solution, but that just crashes AppleScript. If anyone can help me, I'd be in your debt. Thanks.
+
+I also already have a sys_events var from Application('System Events'). I should also mention that it's supposed to be for roblox. I tried to click in Safari, and it works there, but why does it not work in the roblox app?
+## [6][[AskJS] Experiences with Web Components in a business setting?](https://www.reddit.com/r/javascript/comments/f4bmn6/askjs_experiences_with_web_components_in_a/)
+- url: https://www.reddit.com/r/javascript/comments/f4bmn6/askjs_experiences_with_web_components_in_a/
+---
+Hi everyone, I'm a final-year student studying Web-Design and Development.
+
+I'm working on my thesis where I am comparing the viability of projects built with Web Components compared to those built purely with JavaScript Frameworks like Vue.js, React, etc...I was wondering if some people have work experiences with Web Components they could share. Especially curious to hear from people working in companies that considered switching or switched to Web Components for their projects.
+
+If this is not appropriate for this subreddit, my apologies.
+## [7][Javascript Gradient Parser](https://www.reddit.com/r/javascript/comments/f4qjql/javascript_gradient_parser/)
+- url: https://www.npmjs.com/package/webskit-gradient-parser?sha=da39a3ee5e6b4b0d3255bfef95601890afd80709
 ---
 
-## [8][High order functions (pipe, compose, reduce, filter) implementaion in native JS](https://www.reddit.com/r/javascript/comments/f4888f/high_order_functions_pipe_compose_reduce_filter/)
-- url: https://github.com/n0ruSh/the-art-of-reading/blob/master/articles/High%20order%20functions%20(pipe%2C%20compose%2C%20%20reduce%2C%20filter)%20implementaion%20in%20native%20JS.md
+## [8][Deploying your front end websites to s3 with cloudfront for fun and profit](https://www.reddit.com/r/javascript/comments/f4f9wn/deploying_your_front_end_websites_to_s3_with/)
+- url: https://ilhicas.com/2020/02/15/Serving-Javascript-S3.html
 ---
 
-## [9][JavaScript Internationalization in 2020](https://www.reddit.com/r/javascript/comments/f40zcr/javascript_internationalization_in_2020/)
-- url: https://diary.braniecki.net/2020/02/14/js-intl-in-2020
+## [9][Sleep function in Javascript](https://www.reddit.com/r/javascript/comments/f4p0xr/sleep_function_in_javascript/)
+- url: https://itsopensource.com/sleep-function-in-javascript/
 ---
 
-## [10][Path related APIs](https://www.reddit.com/r/javascript/comments/f46oq8/path_related_apis/)
-- url: https://github.com/n0ruSh/blogs/blob/master/articles/Path%20related%20APIs.md
+## [10][Top 4 Best Books To Learn JavaScript Deeply for JavaScript lovers | Learn To Code Together](https://www.reddit.com/r/javascript/comments/f4b0bo/top_4_best_books_to_learn_javascript_deeply_for/)
+- url: https://learntocodetogether.com/best-books-to-learn-javascript/#.XkgQwIHBFGE.reddit
 ---
 
-## [11][[AskJS] high school education..](https://www.reddit.com/r/javascript/comments/f3zdwg/askjs_high_school_education/)
-- url: https://www.reddit.com/r/javascript/comments/f3zdwg/askjs_high_school_education/
+## [11][You don't (may not) need Moment.js](https://www.reddit.com/r/javascript/comments/f40hz1/you_dont_may_not_need_momentjs/)
+- url: https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md#you-dont-may-not-need-momentjs
 ---
-Hi everybody so I am studying currently front end for 6 months and I just realized should I do higher education ? I have done only high school and I am 22y old and I really regret it I didn't go further but I had to go work when I been 16 because of my situation.. anyway I am thinking should I do a college at least ? How do you guys would react if you would see somebody in CV he finished only high school..?  I am proper embarrassed of that and when the day will gonna come when I will have to write CV should I just leave the education blank ? Or just be honest and out high school there ? Or maybe not do CV at all and just email companies and just send them my portfolio website ?
-The problem is I have 2 kids and I don't know if will be worth to go to that collage at least for 2 years or I will be fine with high school?
-Sorry for long post and my English but I will appreciate any answer ..
-## [12][How Javascript Implements Class-Based Object Oriented Programming](https://www.reddit.com/r/javascript/comments/f3s3nz/how_javascript_implements_classbased_object/)
-- url: https://www.freecodecamp.org/news/how-javascript-implements-oop/amp/?url=https%3A%2F%2Fwww.freecodecamp.org%2Fnews%2Fhow-javascript-implements-oop%2F&amp;__twitter_impression=true
+
+## [12][Listen to your web pages render with DOM Mutation Observer and Web Audio API](https://www.reddit.com/r/javascript/comments/f3s04f/listen_to_your_web_pages_render_with_dom_mutation/)
+- url: https://gist.github.com/tomhicks/6cb5e827723c4eaef638bf9f7686d2d8
 ---
 

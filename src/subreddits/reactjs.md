@@ -108,114 +108,142 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I made my first real React App: a site to help people learn songs on the flute. I would love any and all feedback and constructive criticism!](https://www.reddit.com/r/reactjs/comments/f3y5cy/i_made_my_first_real_react_app_a_site_to_help/)
-- url: https://www.reddit.com/r/reactjs/comments/f3y5cy/i_made_my_first_real_react_app_a_site_to_help/
----
-Site: https://dbolesta.github.io/flute-cards/
-
-Gif demo: https://i.imgur.com/1ZSE6w5.mp4
-
-This is my first real/useful React App. I play the flute casually, and I got the idea for this app when I was frustrated hunting down the notes I wanted to play on a [flute fingering chart](https://i.imgur.com/meGU6Jx.jpg), especially when I wanted to play a whole melody. I thought it would be so convenient if I could just have those charts displaying the exact line of music I was learning, so I figured I would build it myself.
-
-On my app, you can arrange notes in whatever order you'd like on a series of Rows. Each note is represented as a [Card](https://i.imgur.com/tAqcvyx.png) that displays the notes letter, position on a music staff, and the flute fingering diagram that shows you how to play that note on the flute.
-
-Some handy features I was able to fit in:
-
- - Select a note from a Keyboard, a Music Staff, or a flute Register (low, mid, or high).
- - Hovering over any note will highlight that same note on every Selector.
- - Drag and drop Cards within a Row, between Rows, or the Rows themselves.
- - Play MIDI audio of any Row of notes to make sure the notes you constructed are the ones you want.
- - Save and Load as many "Decks" of Cards as you want, so you can come back to a song later.
- - A couple of sample "Decks" so you can see how songs can be constructed.
-
-I still have some todos to get to, but I think it's at the point where it's functional and can be shown and used as intended.
-
-I would love any feedback you have on this, but some specific things I would love to know are:
-
- - Does it perform well?
- - Do you understand how it works? Are you able to use the app easily?
- - Are there any glaring issues or bugs?
- - Are there any obvious features you think should be included?
- - Do you notice any specific React / technical improvements that could be made?
-
-[GitHub link](https://github.com/dbolesta/flute-cards)
-## [4][When to use useEffect or useLayoutEffect](https://www.reddit.com/r/reactjs/comments/f46gu9/when_to_use_useeffect_or_uselayouteffect/)
-- url: https://aganglada.com/blog/useeffect-and-uselayouteffect/
+## [3][The unseen performance costs of modern CSS-in-JS libraries in React apps || Web Performance Calendar](https://www.reddit.com/r/reactjs/comments/f4m4dh/the_unseen_performance_costs_of_modern_cssinjs/)
+- url: https://calendar.perfplanet.com/2019/the-unseen-performance-costs-of-css-in-js-in-react-apps/
 ---
 
-## [5][Interview code challenge](https://www.reddit.com/r/reactjs/comments/f40x71/interview_code_challenge/)
-- url: https://www.reddit.com/r/reactjs/comments/f40x71/interview_code_challenge/
+## [4][React Best Practices?](https://www.reddit.com/r/reactjs/comments/f4dkaj/react_best_practices/)
+- url: https://www.reddit.com/r/reactjs/comments/f4dkaj/react_best_practices/
 ---
-Recently, I was invited in for a code challenge prerequisite to an interview. Upon arrival I was given a laptop with what seemed to be a basic scaffold of a React app, keep in mind this is for a React dev position. I opened the laptop and read the Readme with all of the instructions. There was also a basic node app with a get all todos, get todo by id, and a post for a todo and a few other endpoints. I was told I had 1 hour to do as much as I could. There was a mockup that seemed to have some pretty complex CSS involved. Including redux for todos was also a requirement.
+Hey guys. Just wondering if anyone has some good resources / books / materials that helps beginners understand the best practices in React.
 
-The requirements for functionality included, display all todos, create a todo, delete a todo, and edit a todo amd to style these components appropriately. 
+One thing I struggle with is knowing when something should be a component. 
 
-My question to you all is, is 1 hour enough to complete an entire project of this stature? Really just wanna gauge how I compare to the react community! Thanks guys!
+For example, when I'm making forms, should each field input be a component? If so, what's the benefit of doing that?
+## [5][Testing useEffect Hook in jest and enzyme!](https://www.reddit.com/r/reactjs/comments/f4lf8u/testing_useeffect_hook_in_jest_and_enzyme/)
+- url: https://www.reddit.com/r/reactjs/comments/f4lf8u/testing_useeffect_hook_in_jest_and_enzyme/
+---
+I have a functional component which makes an async call inside useEffect. I am trying to test two scenarios, once when the fetching is happening and the other one where the value is received.I am able to test whether the async function is called or not! but it seems the state change is not happening properly.
 
-EDIT: I felt this was a good test of my skills if not the best test I've taken in a while, just wish I'd had more time to complete/make it pretty.
-## [6][20+ React Native Admin templates for 2019](https://www.reddit.com/r/reactjs/comments/f45ix1/20_react_native_admin_templates_for_2019/)
-- url: https://bootstraplib.com/react-admin-templates/
+    //My FuncComponent
+    import React, { useState } from 'react'; import { dataFetcher } from '../helper/datafetcher';
+    const FuncComponent = (props) =&gt; {
+    
+      const [isFetching, setFetchingState] = useState(false);
+    
+      const dataFetching = async () =&gt; {
+        try {
+          setFetchingState(true);
+          console.log(isFetching);
+          const res = await dataFetcher();
+          setFetchingState(false);
+          console.log(res, isFetching);
+        } catch (error) {
+          console.log(error);
+        }    
+      };
+    
+      React.useEffect(() =&gt; {
+        dataFetching();
+    
+        return () =&gt; {
+          setFetchingState(false);
+        };
+      }, []);
+      
+      return(
+        &lt;div&gt;
+          {isFetching ? (&lt;div&gt;Loading..&lt;/div&gt;) : (&lt;div&gt;Someshit!&lt;/div&gt;)}
+        &lt;/div&gt;
+      );
+    }
+    
+    export default FuncComponent;
+
+My unit test file
+
+    //FuncComponent.test.jsx
+    import React from 'react';
+    import FuncComponent from './FuncComponent';
+    import * as datafetcher from '../helper/datafetcher';
+    import { mount, configure, shallow } from 'enzyme';
+    import Adapter from 'enzyme-adapter-react-16';
+    import { act } from '@testing-library/react';
+    configure({ adapter: new Adapter() });
+    
+    datafetcher.dataFetcher = jest.fn(() =&gt; Promise.resolve({data: "something",}));
+    let component;
+    
+    describe('component renders', () =&gt; {
+    
+        test('async function called', () =&gt; {
+            // component = shallow(&lt;FuncComponent /&gt;);
+            component = mount(&lt;FuncComponent /&gt;);
+            expect(datafetcher.dataFetcher).toHaveBeenCalledTimes(1);
+            console.log(component.debug());
+        }) 
+    }); 
+
+The above test is running successfully, able to track the function call. But the state change is not happening, still showing "Loading..." text even after the Promise is resolved.
+## [6][Help/discuss: choosing between CSS architectures for my React app (styled-components vs. css-modules, etc.)](https://www.reddit.com/r/reactjs/comments/f4idcc/helpdiscuss_choosing_between_css_architectures/)
+- url: https://www.reddit.com/r/reactjs/comments/f4idcc/helpdiscuss_choosing_between_css_architectures/
+---
+I am building my first complex desktop app with a react frontend. I am now reviewing CSS architectures and selecting one, and have comments and questions regarding what's available.
+
+Vanilla CSS has known issues such as its default inheritance model and monolithic nature which can become convoluted with a web app that has many moving parts. A solution is to create modular CSS that can be arbitrarily composed and reused.
+
+It seems that JS-in-CSS libraries allow for **CSS** composition, BUT this CSS is coupled to JS components, reducing its composability. Obviously CSS being in the JS files furthers this coupling. From the HTML standpoint, this also seems to reduce flexibility since classes are replaced with concretized styled "component-HTML-elements" (in the case of the [styled-components](https://styled-components.com/) library, which is my primary point of reference). This seems to violate the semantic integrity of traditional HTML structuring and the implied pattern where HTML defines structure, classes define function/purpose/context, and the styles define appearance and stylistic behavior, hooking into HTML via selectors. This pattern allows for a degree separation of concerns that is desirable to me, but seems compromised in CSS-in-JS.
+
+One great thing I see about CSS-in-JS is JS injection into template literals, but I don't know if the tradeoff is worthwhile given the above concerns.
+
+The alternative to CSS-in-JS is [css-modules](https://github.com/css-modules/css-modules), which seems to respect the structure-representation distinction while maintaining scope and composability via the "composes" keyword - but many developers say that it is inferior to styled-components in ways that don't seem justify its usage such as "less boilerplate code" or "I like having everything in my JS files" (is this always a good thing?).
+
+I have not used these technologies in practice, so it is hard to conclusively judge them. Perhaps I am missing something, or their utility would be clearer upon usage? I would like to hear from devs more experienced with them, particularly clarifying why and when one should use styled-components or css-modules in your projects (or neither). Hopefully I can become more informed towards choosing an architecture to move forward with.
+## [7][Learn how to read ReactJS code by creating the virtual DOM yourself (redux included)](https://www.reddit.com/r/reactjs/comments/f4e6bn/learn_how_to_read_reactjs_code_by_creating_the/)
+- url: https://wakata.io/learn/info/react-simdom
 ---
 
-## [7][IT IS WORKING! | React/Node/GraphQL PWA Manga Reader | Part 10 | Pair Programming](https://www.reddit.com/r/reactjs/comments/f47g9x/it_is_working_reactnodegraphql_pwa_manga_reader/)
-- url: https://www.youtube.com/watch?v=YISWT2Q6NHo
+## [8][Constate v2.0.0: Turn any React custom hook into React Context with ease](https://www.reddit.com/r/reactjs/comments/f4ggd0/constate_v200_turn_any_react_custom_hook_into/)
+- url: https://github.com/diegohaz/constate
 ---
 
-## [8][My first MERN stack app: Day Planner](https://www.reddit.com/r/reactjs/comments/f49for/my_first_mern_stack_app_day_planner/)
-- url: https://github.com/ahmetbcakici/DayPlanner
+## [9][Another year on top for React - Hacker News Hiring Trends (December 2019)](https://www.reddit.com/r/reactjs/comments/f4kr7h/another_year_on_top_for_react_hacker_news_hiring/)
+- url: https://www.hntrends.com/2019/dec-another-year-on-top-for-react.html
 ---
 
-## [9][How to clone div content in react js](https://www.reddit.com/r/reactjs/comments/f461db/how_to_clone_div_content_in_react_js/)
-- url: https://www.reddit.com/r/reactjs/comments/f461db/how_to_clone_div_content_in_react_js/
+## [10][confused by all these fragment demands](https://www.reddit.com/r/reactjs/comments/f4n5hl/confused_by_all_these_fragment_demands/)
+- url: https://www.reddit.com/r/reactjs/comments/f4n5hl/confused_by_all_these_fragment_demands/
 ---
-Helloooo..! At deep dive in reactjs. I've some trouble make some events most of the i got solution but in some cases i didn't get.   
-Problem : How to clone div content   
-I want to clone some div content :like duplicate. is that possible in reactjs.
+Hello!
 
-Quick response is highly appreciated.  
-Thanks
-## [10][The future of React Native for Web · Issue #1538 · necolas/react-native-web · GitHub](https://www.reddit.com/r/reactjs/comments/f3y73w/the_future_of_react_native_for_web_issue_1538/)
-- url: https://github.com/necolas/react-native-web/issues/1538
----
+I am very new to react and though I understand the concepts (in theory) I just cant seem to make sense of all of these fragment demands. I'm hoping for a nudge in the right direction.
 
-## [11][In the past 30 days, I made an open source design system: Looking for feedback!](https://www.reddit.com/r/reactjs/comments/f3pb73/in_the_past_30_days_i_made_an_open_source_design/)
-- url: https://www.reddit.com/r/reactjs/comments/f3pb73/in_the_past_30_days_i_made_an_open_source_design/
----
-TL;DR: 👉 [hacker-ui.com](https://hacker-ui.com/)
+In my App.js I have set out the state to be an array. I then want to call it in my component and use .map() to iterate through the array. Everything seems simple and smooth until I pop in my .map function. I understand that adjacent elements needs to be wrapped, but that doesn't seem to help me...
 
-About a month ago from today, I started working on a design system for my own personal projects. I wanted to create my own design language because the rest of them just felt too complex, too outdated, or too branded (for example Bootstrap is too old, Material UI is too Google-y).
+here is a codepen, but since I am using VScode, I am not sure if the layout is clear enought
 
-I wanted a design system that wasn’t too complicated or special but just something that’s unbranded and aesthetically pleasing.
+[https://codepen.io/reactn00/pen/abONpyp](https://codepen.io/reactn00/pen/abONpyp)
 
-Anyway 30 days from realizing that, I have a design system I’m ready to share!
+otherwise, here are screenshots
 
-It’s called “Hacker UI” and I’m currently pitching it as “the hacker’s go-to design system” (similar to how Bootstrap was a go-to).
-
-Features:
-
-- 25+ components
-- 25+ codesandbox examples
-- New CSS-in-JS solution
-- Composable styles by default 
-- Full Typescript support
-
-**Be warned, the project is still young!**
-
-There’s still a lot to be done with this library (mobile-friendly docs, optimizations, SSR support, a11y audits, CI and testing, animations etc) but I’m still super excited to share. I'm more posting to gauge interest for possible contributors at this time.
-
-Please let me know what you think!
-
-- [docs at hacker-ui.com](https://hacker-ui.com/)
-- [github repo](https://github.com/ricokahler/hacker-ui)
-
----
-
-Edit: Thanks for all the feedback and support. I've created [an issue on the GitHub for a rough idea of a roadmap/timeline for a stable 1.0 release](https://github.com/ricokahler/hacker-ui/issues/6). Check it out if you're curious!
-## [12][Which frameworks and setup?!?!](https://www.reddit.com/r/reactjs/comments/f48pod/which_frameworks_and_setup/)
-- url: https://www.reddit.com/r/reactjs/comments/f48pod/which_frameworks_and_setup/
----
-I know you guys must get this a lot, but here we go. I am just starting to learn react after using pure HTML CSS and JS, i prefer a minimal architecture where i know exactly what everything does with minimal boilerplate. I have tried NextJS and Create React App, but there is just a lot going on that seems a bit extra. i read this article  [https://hackernoon.com/move-over-next-js-and-webpack-ba367f07545](https://hackernoon.com/move-over-next-js-and-webpack-ba367f07545) about creating your own toolchain with parcel instead of webpack, is this worth it? i would want to use JSX with my site too, so the script tags on an HTML page may not work.
+[https://imgur.com/a/LwXULwS](https://imgur.com/a/LwXULwS)
 
 &amp;#x200B;
 
-Many thanks, if you need more info i will reply, but am feeling very indecisive as there are lots of options!
+MANY THANKS TO ALL WHO HELP THIS LOST BOY.
+
+cheers.
+## [11][When to use useEffect or useLayoutEffect](https://www.reddit.com/r/reactjs/comments/f46gu9/when_to_use_useeffect_or_uselayouteffect/)
+- url: https://aganglada.com/blog/useeffect-and-uselayouteffect/
+---
+
+## [12][react-suspense-cache - React library for creating Suspense resources](https://www.reddit.com/r/reactjs/comments/f4mpct/reactsuspensecache_react_library_for_creating/)
+- url: https://www.reddit.com/r/reactjs/comments/f4mpct/reactsuspensecache_react_library_for_creating/
+---
+I created this simple React library for creating Suspense resources much like the react-cache package, as a form of studying and experimenting the new React feature.
+
+Resources created with this library can have caching strategies, and can also be reactive, meaning that Suspense-ful components can re-render automatically whenever the cache gets validated again.
+
+Try it out!
+
+https://github.com/LXSMNSYC/react-suspense-cache

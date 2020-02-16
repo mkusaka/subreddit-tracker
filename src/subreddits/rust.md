@@ -33,66 +33,103 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/02/11/this-week-in-rust-325/
 ---
 
-## [3][Blog Post: Why is Rust the Most Loved Programming Language](https://www.reddit.com/r/rust/comments/f41ynd/blog_post_why_is_rust_the_most_loved_programming/)
-- url: https://matklad.github.io/2020/02/14/why-rust-is-loved.html
+## [3][Specs entity component system v0.16.0](https://www.reddit.com/r/rust/comments/f4obel/specs_entity_component_system_v0160/)
+- url: https://github.com/amethyst/specs/releases/tag/0.16.0
 ---
 
-## [4][Roa: an async web framework inspired by koajs, lightweight but powerful](https://www.reddit.com/r/rust/comments/f45bck/roa_an_async_web_framework_inspired_by_koajs/)
-- url: https://github.com/Hexilee/roa
+## [4][Why is swc fast?](https://www.reddit.com/r/rust/comments/f4nddx/why_is_swc_fast/)
+- url: https://swc-project.github.io/blog/2020/02/16/why-is-swc-fast
 ---
 
-## [5][Nimble: Async friendly binary encoding/decoding](https://www.reddit.com/r/rust/comments/f483xm/nimble_async_friendly_binary_encodingdecoding/)
-- url: https://www.reddit.com/r/rust/comments/f483xm/nimble_async_friendly_binary_encodingdecoding/
+## [5][How does Rust handle multiple template instantiations?](https://www.reddit.com/r/rust/comments/f4p5qq/how_does_rust_handle_multiple_template/)
+- url: https://www.reddit.com/r/rust/comments/f4p5qq/how_does_rust_handle_multiple_template/
 ---
-I've just created a crate for binary encoding/decoding of Rust types with support for directly writing values to any type implementing `AsyncWrite` and reading values from any type implementing `AsyncRead`. All of this with `async`/`await` syntax!
-
-- Crates.io: https://crates.io/crates/nimble
-- Documentation: https://docs.rs/nimble/0.1.0/nimble/
-- Repository: https://github.com/devashishdxt/nimble
-## [6][Why doesn't this compile? - value still mutably borrowed after downcast to immutable](https://www.reddit.com/r/rust/comments/f44p9v/why_doesnt_this_compile_value_still_mutably/)
-- url: https://www.reddit.com/r/rust/comments/f44p9v/why_doesnt_this_compile_value_still_mutably/
----
-[https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=b6b1bcb90a0a904ce4f6853eed5ec2c9](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=b6b1bcb90a0a904ce4f6853eed5ec2c9)
-
-I think I know the answer. It's because the compiler keeps track of what is still borrowed in the return value of a function or expression, but it assumes anything that was mutably borrowed to begin with is still mutably borrowed afterwards.
-
-It seems like having the compiler track when a mutable borrow has been transformed into an immutable one would be reasonably easy, but maybe I'm overlooking something. Is there a reason this isn't a feature?
-## [7][All chapters from Rust in Action, book published by Manning, are now available](https://www.reddit.com/r/rust/comments/f3pq12/all_chapters_from_rust_in_action_book_published/)
-- url: https://www.manning.com/books/rust-in-action?a_aid=rust&amp;a_bid=0367c58f&amp;chan=reddit
+C++ has `extern template` which can be used to avoid the instantiation of the same template in every compilation unit. How does Rust handle this issue?
+## [6][The Battle for Rust Knowledge Supremacy](https://www.reddit.com/r/rust/comments/f4gouu/the_battle_for_rust_knowledge_supremacy/)
+- url: https://rustbattle.net/battle/straight-finch-8-e4f4
 ---
 
-## [8][Reverse Question: What do you miss about other languages when working in Rust?](https://www.reddit.com/r/rust/comments/f3ur65/reverse_question_what_do_you_miss_about_other/)
-- url: https://www.reddit.com/r/rust/comments/f3ur65/reverse_question_what_do_you_miss_about_other/
+## [7][muso: music sorter](https://www.reddit.com/r/rust/comments/f4k6qc/muso_music_sorter/)
+- url: https://github.com/quebin31/muso
 ---
-And what don't you miss?
-## [9][Pokérust: a Rust wrapper library for PokéAPI (my first crate)](https://www.reddit.com/r/rust/comments/f3zttk/pokérust_a_rust_wrapper_library_for_pokéapi_my/)
-- url: https://www.reddit.com/r/rust/comments/f3zttk/pokérust_a_rust_wrapper_library_for_pokéapi_my/
+
+## [8][Rust @ embedded world 2020?](https://www.reddit.com/r/rust/comments/f4oui2/rust_embedded_world_2020/)
+- url: https://www.reddit.com/r/rust/comments/f4oui2/rust_embedded_world_2020/
 ---
-Hello /r\/ustaceans, I recently published my first crate: [Pokérust](https://crates.io/crates/pokerust). Pokérust is a Rust wrapper library for the [PokéAPI](https://pokeapi.co/), which provides "All the Pokémon data you'll ever need in one place,
-easily accessible through a modern RESTful API".
-
-Every endpoint and API object should be supported, and API responses are automatically cached in memory (no support for an on-disk cache yet).
-
-Let me know if you have any feedback!
-## [10][Question: How to run tokio main loop with dynamically configured server address?](https://www.reddit.com/r/rust/comments/f48mok/question_how_to_run_tokio_main_loop_with/)
-- url: https://www.reddit.com/r/rust/comments/f48mok/question_how_to_run_tokio_main_loop_with/
+Last time I went to the embedded world in 2018, there was a small but nice Rust presence. This time I cannot find any entry in the exhibitors list, FWIW. Is anybody coming?
+## [9][Why Rust, Or: A Trip Report from my Satori with Rust and Functional Programming](https://www.reddit.com/r/rust/comments/f4gmzm/why_rust_or_a_trip_report_from_my_satori_with/)
+- url: https://christine.website/blog/why-rust-2020-02-15
 ---
-Hi.
 
-I want to write a server with tokio with dynamically configured tokio server address.
-
-Problem
-
-* event/command/socket based starting and stopping the tokio server
-* multiple tokio server inside application
-* main loop for event handling
-
-Can I do it with tokio or must I stay with mio?
-## [11][What do you miss about Rust when working in other languages?](https://www.reddit.com/r/rust/comments/f3tx37/what_do_you_miss_about_rust_when_working_in_other/)
-- url: https://www.reddit.com/r/rust/comments/f3tx37/what_do_you_miss_about_rust_when_working_in_other/
+## [10][Help required to write correct Rust program](https://www.reddit.com/r/rust/comments/f4ojsz/help_required_to_write_correct_rust_program/)
+- url: https://www.reddit.com/r/rust/comments/f4ojsz/help_required_to_write_correct_rust_program/
 ---
-And what do you not miss?
-## [12][Upcoming compiler-team design meetings | Inside Rust Blog](https://www.reddit.com/r/rust/comments/f3w4qb/upcoming_compilerteam_design_meetings_inside_rust/)
-- url: https://blog.rust-lang.org/inside-rust/2020/02/14/upcoming-compiler-team-design-meetings.html
+Hello RustDevs,
+
+Sorry for asking such bad question but even after reading [https://rust-unofficial.github.io/too-many-lists](https://rust-unofficial.github.io/too-many-lists) I am not able to build a correct mental model for programming in Rust :(  I tried writing code logically but I am not able to get pass from borrow checker. That is very demotivating.
+
+Can someone please help me complete my small code? also please explain the reasons for steps.
+
+if my layout is incorrect for what I am trying to achieve with this code please explain that too.
+
+    use std::collections::hash_map::DefaultHasher;
+    use std::hash::{Hash, Hasher};
+    
+    type Link&lt;T&gt; = Option&lt;Box&lt;Node&lt;T&gt;&gt;&gt;;
+    
+    struct Node&lt;T&gt; {
+        item: T,
+        key: u64,
+        next: Link&lt;T&gt;,
+    }
+    
+    struct CoarseList&lt;T&gt; {
+        head: Link&lt;T&gt;,
+    }
+    
+    impl&lt;T: std::hash::Hash&gt; CoarseList&lt;T&gt; {
+        pub fn new() -&gt; Self {
+            CoarseList { head: None}
+        }
+    
+        pub fn add(&amp;mut self, item: T) -&gt; bool {
+            let mut hasher = DefaultHasher::new();
+            item.hash(&amp;mut hasher);
+            let key =  hasher.finish();
+    		
+            let mut new_node = Box::new(Node {
+                item: item,
+                key: key,
+                next: None,
+            });
+    		
+            if self.head.is_none() {
+                self.head = Some(new_node);
+            } else {
+    			// iterate over list while node.key &lt; key (newly created key)
+    			// if key is already inserted in list return false i.e can't not insert duplicate
+    			// else once found correct sorted position add new_node and update cur, prev etc properly.
+            }
+            true
+        }
+    }
+
+Thanks in advance!
+## [11][Bad performance for certain applications of scoped threads](https://www.reddit.com/r/rust/comments/f4i1m6/bad_performance_for_certain_applications_of/)
+- url: https://www.reddit.com/r/rust/comments/f4i1m6/bad_performance_for_certain_applications_of/
+---
+I've been investigating a performance issue in my computer game project.
+
+What I learnt prompted me to write up the following blog post:
+
+[https://github.com/avl/multi\_iterate\_mut/blob/master/README.md](https://github.com/avl/multi_iterate_mut/blob/master/README.md)
+
+TLDR is that scoped threads (using rayon- or scoped\_threadpool-crates) used wrong can cause huge performance problems if the working set fits in cache but data is artificially ping-ponged between OS-threads because task-scheduling to worker threads is non-deterministic.
+
+In my example running multi-threaded using rayon::scope caused a 3X slowdown over single-threaded.
+
+But with a new, experimental, scoped-thread implementation a 5x speedup could be achieved instead.
+## [12][Can there be memory leaks in pure Rust? If yes, how?](https://www.reddit.com/r/rust/comments/f4m4sw/can_there_be_memory_leaks_in_pure_rust_if_yes_how/)
+- url: https://www.reddit.com/r/rust/comments/f4m4sw/can_there_be_memory_leaks_in_pure_rust_if_yes_how/
 ---
 

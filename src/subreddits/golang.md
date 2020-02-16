@@ -1,109 +1,82 @@
 # golang
-## [1][A Go Roguelike](https://www.reddit.com/r/golang/comments/f41b1v/a_go_roguelike/)
-- url: https://github.com/hunterloftis/notes/blob/master/2020-02-14-golang-roguelike.md
+## [1][A friend asked me how to write a resilient service worker in Go . I figured I should share it to anyone interested.](https://www.reddit.com/r/golang/comments/f4ov4d/a_friend_asked_me_how_to_write_a_resilient/)
+- url: https://gist.github.com/System-Glitch/301e95975a2645b8ea57c47b0c7cfef4
 ---
 
-## [2][What are some of the must-know topics for Backend Developer interviews (Go specific)?](https://www.reddit.com/r/golang/comments/f3trbd/what_are_some_of_the_mustknow_topics_for_backend/)
-- url: https://www.reddit.com/r/golang/comments/f3trbd/what_are_some_of_the_mustknow_topics_for_backend/
+## [2][esbuild - JavaScript bundler and minifier](https://www.reddit.com/r/golang/comments/f4hnt9/esbuild_javascript_bundler_and_minifier/)
+- url: https://github.com/evanw/esbuild/
 ---
-I have 2 years of experience working in Go and 6 years in total of Backend development. I am based in London.  
-I'm thinking of jumping back into the job hunting market after a long time.
 
-What are some of the things I should brush up on?  
-What would get me rejected?
-## [3][Moving Towards DDD in Go](https://www.reddit.com/r/golang/comments/f480oe/moving_towards_ddd_in_go/)
+## [3][Encrypting data inside a png image file](https://www.reddit.com/r/golang/comments/f4gh02/encrypting_data_inside_a_png_image_file/)
+- url: https://github.com/Trivernis/cryptpng/
+---
+
+## [4][GORM v2 is ongoing, suggestions welcome ~](https://www.reddit.com/r/golang/comments/f4jv2i/gorm_v2_is_ongoing_suggestions_welcome/)
+- url: https://github.com/jinzhu/gorm/issues/2886
+---
+
+## [5][Total 2 years of backend experience, new to Go, but want to make a switch in Go. What is expected?](https://www.reddit.com/r/golang/comments/f4d428/total_2_years_of_backend_experience_new_to_go_but/)
+- url: https://www.reddit.com/r/golang/comments/f4d428/total_2_years_of_backend_experience_new_to_go_but/
+---
+Hey there!
+
+I have a total of 2 years of backend experience and am pretty new to Go. What is expected by an "experienced newbie"? 
+
+A little background on me,
+
+The organization I work for has a pretty great development framework written on top of .net, due to which we mostly had to configure the software and write minimal code. To be honest, I wrote very less code in the past two years, which is something that I would like to change.
+
+Apart from my work, I have worked on a few hobby projects though, all written in go, namely,
+
+1. Web Scrapper
+2. APIs for Expense Tracker
+3. TCP Server using the net package
+4. Adaptive Video Streaming Server
+
+Keeping this in mind, what else I should know about backend and development in general.
+
+Any advice would be helpful. 
+
+Thanks in Advance!
+## [6][How I structure cloud functions in Go](https://www.reddit.com/r/golang/comments/f4q025/how_i_structure_cloud_functions_in_go/)
+- url: https://www.reddit.com/r/golang/comments/f4q025/how_i_structure_cloud_functions_in_go/
+---
+[https://medium.com/@rizwaniqbal/how-i-structure-cloud-functions-in-go-61e151b278ac](https://medium.com/@rizwaniqbal/how-i-structure-cloud-functions-in-go-61e151b278ac)
+## [7][zeebo/blake3: Pure Go implementation of BLAKE3 with AVX2 and SSE4.1 acceleration](https://www.reddit.com/r/golang/comments/f4pgok/zeeboblake3_pure_go_implementation_of_blake3_with/)
+- url: https://github.com/zeebo/blake3
+---
+
+## [8][Learn How to use JSON in Golang - CodeSource.io](https://www.reddit.com/r/golang/comments/f4pav0/learn_how_to_use_json_in_golang_codesourceio/)
+- url: https://codesource.io/learn-how-to-use-json-in-golang/
+---
+
+## [9][What is the right way to connect to a database?](https://www.reddit.com/r/golang/comments/f4k7y8/what_is_the_right_way_to_connect_to_a_database/)
+- url: https://www.reddit.com/r/golang/comments/f4k7y8/what_is_the_right_way_to_connect_to_a_database/
+---
+Hey everyone,
+
+I am new to Go, and I keep seeing people connect to databases by writing a file that contains some code similar to this:
+
+    func ConnectSQL() *sql.DB {
+    	db, err := sql.Open("mysql", "")
+    	if err != nil {
+    		fmt.Print(err)
+    	}
+    	return db
+    }
+
+then through out their models they will do something like this:
+
+    var db * sql.DB
+    
+    func init() {
+    	db = api.ConnectSQL()
+    } 
+
+is this the correct way or a bad way to connect to a database? It just seems strange to me while learning this language. Any advice here would be helpful!
+
+this would open a DB connection on every API call and that seems strange too me.
+## [10][Moving Towards DDD in Go](https://www.reddit.com/r/golang/comments/f480oe/moving_towards_ddd_in_go/)
 - url: https://www.calhoun.io/moving-towards-domain-driven-design-in-go/
 ---
 
-## [4][Best practices or tips writing a CLI tool with golang.](https://www.reddit.com/r/golang/comments/f454o4/best_practices_or_tips_writing_a_cli_tool_with/)
-- url: https://www.reddit.com/r/golang/comments/f454o4/best_practices_or_tips_writing_a_cli_tool_with/
----
-Hi, what patterns do you recommend to write a good CLI application in golang? 
-Next week in our local community we are going to do the exercise, as we are a small group will be nice to have some external feedback. Thanks
-## [5][Micro In Action, Part4：Pub/Sub](https://www.reddit.com/r/golang/comments/f3rqzv/micro_in_action_part4pubsub/)
-- url: https://medium.com//micro-in-action-part4-pub-sub-564f3b054ecd?source=friends_link&amp;sk=45892c07676feae7086dae696fbf9a46
----
-
-## [6][Structuring Web Applications in Go](https://www.reddit.com/r/golang/comments/f3rqbu/structuring_web_applications_in_go/)
-- url: https://www.calhoun.io/structuring-web-applications-in-go
----
-
-## [7][Problem when implementing reverse proxy](https://www.reddit.com/r/golang/comments/f43fp7/problem_when_implementing_reverse_proxy/)
-- url: https://www.reddit.com/r/golang/comments/f43fp7/problem_when_implementing_reverse_proxy/
----
-Hi all,
-
-When I try to implement a reverse proxy in Go, using the bellow code:
-
-    package main
-    
-    import (
-    	"net/http"
-    	"net/http/httputil"
-    	url2 "net/url"
-    )
-    
-    func redirect(target string, res http.ResponseWriter, req *http.Request) {
-    	targetUrl,_ := url2.Parse(target)
-    
-    	proxy := httputil.NewSingleHostReverseProxy(targetUrl)
-    
-    	req.URL.Host = targetUrl.Host
-    	req.URL.Scheme = targetUrl.Scheme
-    	req.Header.Set("X-Forwarded-Host",req.Header.Get("Host"))
-    	req.Host = targetUrl.Host
-    	req.URL.Path = targetUrl.Path
-    	proxy.ServeHTTP(res,req)
-    }
-    
-    func handleAndRedirect(res http.ResponseWriter, req *http.Request)  {
-    	url := "http://localhost:5111/about"
-    	redirect(url, res, req)
-    }
-    
-    func main() {
-    	http.HandleFunc("/", handleAndRedirect)
-    	if err := http.ListenAndServe(":5106",nil); err != nil {
-    		panic(err)
-    	}
-    }
-
-Expected: When I enter localhost:5106 on browser, it returns the result from l**ocalhost:5111/about**
-
-Actual: When I enter localhost:5106 on browser, it returns the result from **localhost:5111**
-
-Is it possible to implement what I expect? If yes, what did I miss?Thanks.
-## [8][What do you miss about Go when working in other languages?](https://www.reddit.com/r/golang/comments/f3u3cl/what_do_you_miss_about_go_when_working_in_other/)
-- url: https://www.reddit.com/r/golang/comments/f3u3cl/what_do_you_miss_about_go_when_working_in_other/
----
-And what do you not miss?
-## [9][Any Golang Based E2E Frameworks for Testing ?](https://www.reddit.com/r/golang/comments/f3x2sm/any_golang_based_e2e_frameworks_for_testing/)
-- url: https://www.reddit.com/r/golang/comments/f3x2sm/any_golang_based_e2e_frameworks_for_testing/
----
-I am fairly new to Golang , Looking for options for an e2e testframework .
-
-I am looking for something which has following features :
-
-\+ Deploy Bunch of Servers and DUT's \[ it would be great if it can talk to git\]
-
-\+ Run Tests on DUT's 
-
-\+ Collect Logs from DUT and Test Reports .
-
-\+ Pretty Display reports ,have a common place to collect them . 
-
-If one framework cannot do this ,please suggest what's best open source software out there that can help me ?
-## [10][What are good feature flag tools/libraries that support Go](https://www.reddit.com/r/golang/comments/f41vrl/what_are_good_feature_flag_toolslibraries_that/)
-- url: https://www.reddit.com/r/golang/comments/f41vrl/what_are_good_feature_flag_toolslibraries_that/
----
-&amp;#x200B;
-
-   Hello, I'm currently working as a senior developer/architect.  I plan on doing a pretty massive code migration in the next few months, and I decided to center my strategy around feature flags.  I've been doing some research for a few months, and I've come across list
-
-&amp;#x200B;
-
-[https://featureflags.io/go-feature-flags/](https://featureflags.io/go-feature-flags/)
-
-&amp;#x200B;
-
-   For the record, I work in an event driven architectures with pollers and streams.  I have found many feature flag libraries to be very oriented towards web based solutions, but I don't interact with the client side at all.  This a purely backend system.   I do plan on trying a few on the list, but I wanted to reach out to the community and get some ideas about your personal accounts and experiences with feature flag tools?

@@ -57,7 +57,11 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][2020-02 Prague ISO C++ Committee Trip Report — 🎉 C++20 is Done! 🎉](https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/)
+## [2][Herb Sutter's Trip Winter ISO C++ Standards Meeting (Prague) Trip Report](https://www.reddit.com/r/cpp/comments/f4p2nn/herb_sutters_trip_winter_iso_c_standards_meeting/)
+- url: https://herbsutter.com/2020/02/15/trip-report-winter-iso-c-standards-meeting-prague/
+---
+
+## [3][2020-02 Prague ISO C++ Committee Trip Report — 🎉 C++20 is Done! 🎉](https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/)
 - url: https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/
 ---
 **C++20, the most impactful revision of C++ in a decade, is done!** 🎉🎊🥳
@@ -267,7 +271,7 @@ We’ve also decided to [deprecate `std::string`’s assignment operator taking 
 
 *****
 
-### Library Wording Group (LWG) Progress
+### Library Working Group (LWG) Progress
 
 *****
 
@@ -500,7 +504,7 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 
 &amp;nbsp;
 
-[**Last Meeting's Reddit Trip Report.**](https://www.reddit.com/r/cpp/comments/cfk9de/201907_cologne_iso_c_committee_trip_report_the/)
+[**Last Meeting's Reddit Trip Report.**](https://www.eddit.com/r/cpp/comments/dtuov8/201911_belfast_iso_c_committee_trip_report/)
 
 &amp;nbsp;
 
@@ -561,54 +565,158 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [3][C Pointer Visualization (GDBFrontend v0.0.16-alpha)](https://www.reddit.com/r/cpp/comments/f3xemg/c_pointer_visualization_gdbfrontend_v0016alpha/)
-- url: https://www.youtube.com/watch?v=6LNR8u19x6Y
+## [4][Declarative support in CMakeSL](https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/)
+- url: https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/
 ---
-
-## [4][Detecting C and C++ memory corruption bugs on Android with HWASan](https://www.reddit.com/r/cpp/comments/f3vhoc/detecting_c_and_c_memory_corruption_bugs_on/)
-- url: https://android-developers.googleblog.com/2020/02/detecting-memory-corruption-bugs-with-hwasan.html
----
-
-## [5][New videos from C++ Russia 2019 Piter](https://www.reddit.com/r/cpp/comments/f3s12v/new_videos_from_c_russia_2019_piter/)
-- url: https://www.youtube.com/playlist?list=PLZN9ZGiWZoZp8_XKK1WMcAt2Dr9-QkfU6
----
-
-## [6][A Fast Bitboard-Based Chess Move Generator](https://www.reddit.com/r/cpp/comments/f3pzfu/a_fast_bitboardbased_chess_move_generator/)
-- url: https://www.reddit.com/r/cpp/comments/f3pzfu/a_fast_bitboardbased_chess_move_generator/
----
-Over the past few months, I've been developing a fast purely legal chess move generator as my first major project in C++. It uses:
-
-* Magic Bitboard sliding attacks
-* Make-Unmake Position class (inspired by Stockfish)
-* A completely original legal move generation function
-* 16-bit move representation
-
-The best part is that perft(6) and perft(7) from the starting position clock in at an impressive \~200,000,000 million NPS on my system (about the same as the leading C generator)
-
-I am planning to incorporate this in a fully functional chess engine. I'd love it if you guys could check it out at [https://github.com/DiehardTheTryhard/surge](https://github.com/DiehardTheTryhard/surge). Please feel free to make raise any issues and whatnot. Thanks :)
+Hi, I just wanted to share an article about declarative format that I'm working on in CMakeSL. Here's a teaser:
 
 &amp;#x200B;
 
-EDIT: Added Comments! Wahey!
-## [7][The abstraction penalty for wide integer math on x86-64 ("Down with Boost.Multiprecision"?)](https://www.reddit.com/r/cpp/comments/f3mgun/the_abstraction_penalty_for_wide_integer_math_on/)
-- url: https://quuxplusone.github.io/blog/2020/02/13/wide-integer-proof-of-concept/
+https://reddit.com/link/f4ge4k/video/ull8d9f3s5h41/player
+
+And the art: [https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515](https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515)
+
+Let me know what do you think about all this (:
+## [5][Improving C++ compile time: precompiling generic code](https://www.reddit.com/r/cpp/comments/f4pt34/improving_c_compile_time_precompiling_generic_code/)
+- url: https://www.reddit.com/r/cpp/comments/f4pt34/improving_c_compile_time_precompiling_generic_code/
+---
+I appologize if this is not well thought out/has already been proposed and for poor english.
+
+#Precompiling generic code
+
+
+With C++20 concepts, and with upcoming reflections/metaclasses, C++ is encouraging even more generic programming. 
+However, generic programming is already bottlenecked by compile time. Adding more feature to generic programming
+will only make it worse as more people uses it (and convenient features might encourage costly operations for the compiler). 
+
+The main reason for that is that you cannot precompile generic code, and I think we can improve that.
+
+##Templates as a compiler function:
+
+A templated function
+ 
+    f&lt;type A,type B&gt;(A a, B b) -&gt; C
+
+can be reinterpreted as 
+
+    f: &lt;type A, type B&gt; -&gt; fAB = ( (A a,B b) -&gt; C )
+
+where fAB is non templated function. This was described in a paper which I cannot remember, I appologize for that.
+
+During compilation, the function `f` will be constructued from the code, then evaluated for some types A and B, and a  function fAB will be generated by the compiler.
+All this is essentialy working as an *interpreter* with all the associated costs.
+
+Now imagine that this function `f` was hardcoded in the compiler. Given some internal representation for type A and type B, it would generate a function fAB.
+This would go much faster, since this hardcoded function `f` would not require to parse any AST, and more importantly, it would be *compiled*! 
+We can expect such function to perform much faster than it's interpreted counterpart.
+
+A natural question is what should be the target language for fAB? should it be some internal representation for the compiler (llvm IR)? or assembly?
+The first leaves out time consuming optimisation, but should be much easier to implement.
+
+##Precompiling generic code: a dynamic library for the compiler
+In what was said above, we assumed there was a hardcoded function f in the compiler. This is obviously not realistic.
+However, such function could be loaded dynamically as a Plugin by the compiler, and the execute the function f from that plugin.
+Essentially, a precompiled generic library would be targeting the compiler instead of the executable.
+
+The previous example was demonstrated with a function, but it should also work with templated data type generation.   
+
+  
+&amp;nbsp;  
+
+What do you all think?
+## [6][So, modules. Opinions? Usability? Just tried to make one in Visual Studio. Fascinating concept. Almost makes me want to convert all my classes to modules. Why WOULDN'T you use them over headers? (Also, poor support so far in VS19.)](https://www.reddit.com/r/cpp/comments/f4f514/so_modules_opinions_usability_just_tried_to_make/)
+- url: https://www.reddit.com/r/cpp/comments/f4f514/so_modules_opinions_usability_just_tried_to_make/
+---
+Mostly title.
+
+I had to add a new class after first learning about modules. I figured hey, let's try this new-fangled thing and see if it's worth it. Maybe down the road I can refactor all existing classes in this project to use modules! It takes a while to compile this thing because practically every class needs to know about every other class and I honestly don't think it's worth my time to finely tune the header access; there's just a giant "include everything!" header. (There are a few finely-tuned ones.)
+
+The concept (pun not intended) is neat. Do away with header files and all the dependency problems that brings, along with the non-linear compilation time.
+
+My only problem right now is Visual Studio seems to have super sketchy support. Intellisense is non-existent in "ixx" files. And then I ran into a big oopsie after doing a complete rebuild. Since Visual Studio tries to handle build order for you, it did not, in fact, try to build the module first, which almost all other classes now depend on.
+
+\[Edit\]
+
+Removed references to the new module stuff. Let the compilation finish. It compiled the module at about 200 out of 220 files. Compile success, but without any module import. Put the references back in all files, include the one "include everything" header, which forces a rebuild of most files, and then it worked fine with the module import. Forced a "rebuild all" and it died again. At least we know the dependency map is working correctly.
+
+/s
+## [7][Would C++ benefit from simplified lambda syntax?](https://www.reddit.com/r/cpp/comments/f4e53s/would_c_benefit_from_simplified_lambda_syntax/)
+- url: https://www.reddit.com/r/cpp/comments/f4e53s/would_c_benefit_from_simplified_lambda_syntax/
+---
+While playing with ranges, it struck me how big part of the code take simple lambdas. 
+
+Even in cppreference.com example they are not inlined, cause it would make it look messy (added using namespace std::views):
+```
+    std::vector&lt;int&gt; ints{0,1,2,3,4,5};
+    auto even = [](int i){ return 0 == i % 2; };
+    auto square = [](int i) { return i * i; };
+    
+    using namespace std::views;
+    for (int i : ints | filter(even) | transform(square)) {
+        std::cout &lt;&lt; i &lt;&lt; ' ';
+    }
+```
+
+vs. with inlined lambdas:
+```
+    std::vector&lt;int&gt; ints{0,1,2,3,4,5};
+
+    using namespace std::views;
+    for (int i : ints
+                 | filter([](int i){ return 0 == i % 2; })
+                 | transform([](int i) { return i * i; })) {
+        std::cout &lt;&lt; i &lt;&lt; ' ';
+    }
+```
+
+When I showed it to my friend, that doesn't work with C++ regularly, he thought it just looks ugly. It's just a personal opinion, but we still are relatively far behind nice look of C# lambdas
+
+I believe we could greatly benefit from simplified syntax, in terms of code readability. 
+
+Main idea is for these two code snippets to be equivalent:
+
+```
+    auto f = [](Type arg) =&gt; expression;
+```
+```
+    auto f = [](Type arg) { return expression; };
+```
+
+With this, the first example could be rewritten as follows:
+```
+    std::vector&lt;int&gt; ints{0,1,2,3,4,5};
+
+    using namespace std::views;
+    for (int i : ints
+                 | filter([](int i) =&gt; 0 == i % 2)
+                 | transform([](int i) =&gt; i * i)) {
+        std::cout &lt;&lt; i &lt;&lt; ' ';
+    }
+```
+
+It has a couple of technical problems (what with coma operator?), but nothing that seems impossible to overcome at first glance. 
+
+Is it proposal worthy? Would it be useful?
+And I know, it removes just 7 characters from each lambda. Is it worth it?
+## [8][API documentation for C++ SDK in OpenAPI style](https://www.reddit.com/r/cpp/comments/f4dj9j/api_documentation_for_c_sdk_in_openapi_style/)
+- url: https://www.reddit.com/r/cpp/comments/f4dj9j/api_documentation_for_c_sdk_in_openapi_style/
+---
+Hello,
+
+we are currently developing a SDK that will be used in Android, iOS and Windows Applications. Others need to use our SDK from Java/Swift/C++ and other programming languages. Our API ist JSON based, so only Strings in JSON format are transmitted for the communication between the application and our sdk.
+
+Is there a OpenAPI/YAML like toolchain or api documentation style that we could use? We love the editors and generators of OpenAPI.
+
+Thank you :)
+## [9][C Pointer Visualization (GDBFrontend v0.0.16-alpha)](https://www.reddit.com/r/cpp/comments/f3xemg/c_pointer_visualization_gdbfrontend_v0016alpha/)
+- url: https://www.youtube.com/watch?v=6LNR8u19x6Y
 ---
 
-## [8][Even Better C++ Performance and Productivity: Enhancing Clang to Support Just-in-Time Compilation of Templates](https://www.reddit.com/r/cpp/comments/f3jpuw/even_better_c_performance_and_productivity/)
-- url: https://www.youtube.com/watch?v=pDagqR0jAvQ
+## [10][Top 10 Bugs Found in C++ Projects in 2019 (PVS-Studio blog)](https://www.reddit.com/r/cpp/comments/f47gxw/top_10_bugs_found_in_c_projects_in_2019_pvsstudio/)
+- url: https://www.viva64.com/en/b/0700/
 ---
 
-## [9][What is the exact status of ABI compatibility in modern GCC-based (including Clang) C++?](https://www.reddit.com/r/cpp/comments/f3my1u/what_is_the_exact_status_of_abi_compatibility_in/)
-- url: https://www.reddit.com/r/cpp/comments/f3my1u/what_is_the_exact_status_of_abi_compatibility_in/
----
-I have read in many places that C++ and its compilers make no guarantees about a stable ABI between versions of the compiler (or across platforms, even similar ones like across Linux distributions). Yet, in Linux, it is extreamly common to download C++ libraries in the package manager as binaries, and yet I don't get every library on the system updating every time my compiler updates while the new compiler keeps on linking to the existing libraries correctly. Additionally, I have read conflicting information saying that modern GCC and clang both have a standard ABI (how standard? How does it work across OS's on the same CPU architeture? how modern is modern?). What is going on here? Is there some definitive reference that will shed some light on this, in detail?
-
-EDIT: "GCC-based" includes mingw too, but not MSVC.
-## [10][I created a library that will make your C++ tests pass when run on CI](https://www.reddit.com/r/cpp/comments/f3bzof/i_created_a_library_that_will_make_your_c_tests/)
-- url: https://github.com/elnormous/volkswagencpp
----
-
-## [11][Things I learned from the static analyzer - Bart Verhagen - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f3x5qq/things_i_learned_from_the_static_analyzer_bart/)
-- url: https://www.youtube.com/watch?v=__Wz2DG1t24
+## [11][Detecting C and C++ memory corruption bugs on Android with HWASan](https://www.reddit.com/r/cpp/comments/f3vhoc/detecting_c_and_c_memory_corruption_bugs_on/)
+- url: https://android-developers.googleblog.com/2020/02/detecting-memory-corruption-bugs-with-hwasan.html
 ---
 

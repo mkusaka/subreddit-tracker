@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - February 15, 2020](https://www.reddit.com/r/androiddev/comments/f48scg/app_feedback_thread_february_15_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/f48scg/app_feedback_thread_february_15_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/f588f0/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/f588f0/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - February 10, 2020](https://www.reddit.com/r/androiddev/comments/f1opq1/weekly_questions_thread_february_10_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/f1opq1/weekly_questions_thread_february_10_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - February 17, 2020](https://www.reddit.com/r/androiddev/comments/f574wo/weekly_questions_thread_february_17_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/f574wo/weekly_questions_thread_february_17_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,74 +31,91 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Properly manage FragmentTransaction backstack](https://www.reddit.com/r/androiddev/comments/f4nvgt/properly_manage_fragmenttransaction_backstack/)
-- url: https://www.reddit.com/r/androiddev/comments/f4nvgt/properly_manage_fragmenttransaction_backstack/
+## [3][Looking to grab onto something when creating your first app? Here is a free source code!](https://www.reddit.com/r/androiddev/comments/f560nv/looking_to_grab_onto_something_when_creating_your/)
+- url: https://www.reddit.com/r/androiddev/comments/f560nv/looking_to_grab_onto_something_when_creating_your/
 ---
-If I have a host activity \`MainActivity\` and I first set up a \`MainMenuFragment\` then when i click the play button it opens up the \`GameFragment\` . If I click a back button i want it to take me back to the \`MainMenuFragment\` .  I don't want to do a \`FragmentTransaction.replace()\` when I go back to the \`MainMenuFragment\` because I don't want it to reload the \`MainMenuFragment\` , i want it to preserve the state of the \`MainMenuFragment\`
+Like most developers, I use my own projects as a sandbox for exploring new stuff.I would like to open source my app, which has more than 50.000 downloads.It does use generic abstractions of architecture components, Room, Koin, LiveData, Fragments, Kotlin Coroutines, AndroidX and more. Hopefully it might be a helpful material for new devs. Source code can be found here: [https://github.com/edgar-zigis/Paleontologas](https://github.com/edgar-zigis/Paleontologas)
 
-&amp;#x200B;
-
-So i tried to set this all up with calls to \`addToBackStack()\` and \`popBackStack()\` but that doesnt work because I can see that \`FragmentTransaction.backStackEntryCount\` keeps incrementing as I navigate from the \`MainMenuFragment\` to the \`GameFragment\` and back and forth.
-
-&amp;#x200B;
-
-Is there a straightforward approach to this?
-## [4][Accidentally Released App to All Users, how to revert to closed Alpha?](https://www.reddit.com/r/androiddev/comments/f4mrmq/accidentally_released_app_to_all_users_how_to/)
-- url: https://www.reddit.com/r/androiddev/comments/f4mrmq/accidentally_released_app_to_all_users_how_to/
----
-yes, title.
-
-Stupid me did this when I tried to update my alpha apk, I updated it the right way but there was this HUGE blue button saying "Release Production" so I thought I had to click it to update the apk.
-
-Silly me it got into play Store and now I had to force unpublish it.
-
-But now I am not sure if my alpha opt-in link is working or it is even able to update as the app says it's unpublished.
-
-* How do I remove this Production track? I think this is what makes the APP appear on the play store
-
-&amp;#x200B;
-
-https://preview.redd.it/7jivlidvb8h41.png?width=975&amp;format=png&amp;auto=webp&amp;s=d006f2b81fa15b4f90cabb7535c68159f51bccf3
-
-edit: I updated alpha app and it seems it did update and appears on play store (only for users who have installed the alpha version before) but I wonder how I am going to share the app for new users without publishing... any help is appreciated.
-## [5][why google play games (for 2048 ) leader board always hacked/broken? Do developers not able to solve security issue or bug these cheater implement.](https://www.reddit.com/r/androiddev/comments/f4bdpa/why_google_play_games_for_2048_leader_board/)
-- url: https://i.redd.it/wqdrfhgp24h41.jpg
+**(Say thanks by starring repository :)))**
+## [4][Flutter Might Be Your Technology of Choice for Mobile in 2020 – Here Is Why](https://www.reddit.com/r/androiddev/comments/f58df1/flutter_might_be_your_technology_of_choice_for/)
+- url: https://infinum.com/the-capsized-eight/flutter-might-be-your-technology-of-choice-for-mobile-in-2020?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=flutter_technology_2020
 ---
 
-## [6][Recyclerview parent content](https://www.reddit.com/r/androiddev/comments/f4mtkj/recyclerview_parent_content/)
-- url: https://www.reddit.com/r/androiddev/comments/f4mtkj/recyclerview_parent_content/
+## [5][How would I go about supporting admin features in my app?](https://www.reddit.com/r/androiddev/comments/f56nyi/how_would_i_go_about_supporting_admin_features_in/)
+- url: https://www.reddit.com/r/androiddev/comments/f56nyi/how_would_i_go_about_supporting_admin_features_in/
 ---
-Hello guys,
+So I have an app that I want to make available for users but that also needs to be able to give admin privileges to some users, maybe only me.
 
-need some help with recyclerview. I have an object "Order" which has a Date property and a list of products for that order. The current behaviour I have is that recyclerview shows a list of products and if you tap on one of them it opens another list which shows a list of products for that order. I would like to get rid of that second screen which shows recyclerview of products. Instead, I would like to use just one recyclerview which shows a list of products. Each card shows a date of order and bellows it would output the products of that order. Any suggestions on how can I achieve that?
-## [7][I've created an example (experiment?) using vanilla Dagger, @Subcomponents with Application -&gt; Activity -&gt; Fragment scoping, and ViewModel injection with SavedStateHandle using AutoFactory (to survive process death and config changes properly even with `@Inject lateinit var viewModel: MyViewModel`)](https://www.reddit.com/r/androiddev/comments/f4f8sh/ive_created_an_example_experiment_using_vanilla/)
-- url: https://github.com/Zhuinden/DaggerViewModelExperiment/blob/master/app/src/main/java/com/zhuinden/daggerviewmodelexperiment/features/first/FirstFragment.kt#L20-L58
+I know that in web dev you could just have an account with Admin privileges show a custom dashboard, so would something similar to that work in Android? Maybe It'd be better to create 2 apps for the purpose (one for users and one for admins)? Or would back-end dashboards(WordPress/Azure/Firebase Console) management be the best way? 
+
+What would be the most proper way to accomplish this as per best practices and flexibility in Android? I am using Kotlin, AAC and MVVM.
+## [6][Session - A Signal protocol fork with decentralized servers and no need for a phone number](https://www.reddit.com/r/androiddev/comments/f4z4tu/session_a_signal_protocol_fork_with_decentralized/)
+- url: https://www.reddit.com/r/androiddev/comments/f4z4tu/session_a_signal_protocol_fork_with_decentralized/
+---
+ r/androidapps suggest I cross-post this...
+
+Session is a cross-platform, anonymous and decentralized messaging application. You don't need a phone number or email address to make an account.
+
+Session uses the Loki Service Node network to route the data, for which the nodes are rewarded with $LOKI. The Loki Network itself is made up of some \~1000 community operated Service Nodes where 44% of the supply is held in the SNs - about US$7.5 million at the moment.
+
+I love Signal, but I don't love the attached phone numbers or central servers, but I know there's a challenge in allowing an altruistic intention over a financial incentive for the node operators - Sybil resistance. By using Loki's Service Node network, the crypto-economics is designed in a way that a bad actor would drive the price exponentially up while trying to accumulate enough Loki to be able to perform any traffic analysis on the routed data.
+
+Think of it as a Signal fork meets a Monero fork meets an incentivized TOR network.
+
+Web: [getsession.org](https://getsession.org/)
+
+Whitepaper: [https://getsession.org/wp-content/uploads/2020/02/Session-Whitepaper.pdf](https://getsession.org/wp-content/uploads/2020/02/Session-Whitepaper.pdf)
+## [7][I'm designing an app for a school project. The assignment says it has to be culturally friendly/divers. Besides multiple languages options, what can there be done ?](https://www.reddit.com/r/androiddev/comments/f56eok/im_designing_an_app_for_a_school_project_the/)
+- url: https://www.reddit.com/r/androiddev/comments/f56eok/im_designing_an_app_for_a_school_project_the/
 ---
 
-## [8][Help random ads keep popping in screen over any app. Deleted most recent app and they still ain't go away.](https://www.reddit.com/r/androiddev/comments/f4qcm6/help_random_ads_keep_popping_in_screen_over_any/)
-- url: https://i.redd.it/x4mycfbkaah41.jpg
+## [8][GitHub - akexorcist/Android-Localization: Let's make language swithching in your app with easy way](https://www.reddit.com/r/androiddev/comments/f4slmj/github_akexorcistandroidlocalization_lets_make/)
+- url: https://github.com/akexorcist/Android-Localization
 ---
 
-## [9][Commonsware Blog: Scoped Storage Stories: The Undocumented Documents](https://www.reddit.com/r/androiddev/comments/f4el3e/commonsware_blog_scoped_storage_stories_the/)
-- url: https://commonsware.com/blog/2020/02/15/scoped-storage-stories-undocumented-documents.html
+## [9][Now in Android: January 23, 2020](https://www.reddit.com/r/androiddev/comments/f57b38/now_in_android_january_23_2020/)
+- url: https://medium.com/androiddevelopers/now-in-android-january-23-2020-587378171ae3
 ---
 
-## [10][How is it possible for AutoCompleteTextView's item selection listener to return the wrong item when user selects an item?](https://www.reddit.com/r/androiddev/comments/f4phy4/how_is_it_possible_for_autocompletetextviews_item/)
-- url: https://www.reddit.com/r/androiddev/comments/f4phy4/how_is_it_possible_for_autocompletetextviews_item/
+## [10][Can we use the S20/Ultra depth sensors with ARCore?](https://www.reddit.com/r/androiddev/comments/f55a8z/can_we_use_the_s20ultra_depth_sensors_with_arcore/)
+- url: https://www.reddit.com/r/androiddev/comments/f55a8z/can_we_use_the_s20ultra_depth_sensors_with_arcore/
 ---
-Hello! I was wondering if that's ever happened to you?
-## [11][I want to show images uploaded on firebase storage in google drive in custom tab. Is it even possible?](https://www.reddit.com/r/androiddev/comments/f4p72z/i_want_to_show_images_uploaded_on_firebase/)
-- url: https://www.reddit.com/r/androiddev/comments/f4p72z/i_want_to_show_images_uploaded_on_firebase/
+Just saw that the S20+ and S20Ultra will have a dedicated depth sensors. Would love to develop utilizing this.
+## [11][What's your AdMob fill rate ?](https://www.reddit.com/r/androiddev/comments/f54ydn/whats_your_admob_fill_rate/)
+- url: https://www.reddit.com/r/androiddev/comments/f54ydn/whats_your_admob_fill_rate/
 ---
-I am working on an app, in which, i am uploading images to firebase  in jpg. Then when user request for preview of that image. so it should  be shown in customTab of google drive as it provide interface to display  images and stuff. I want know, is this even possible or i have to  upload images to google drive directly? Any suggestion will be helpful.
-
-Thanks in advance.
-## [12][What's the difference between ApkBuilder, apkzlib and zipflinger/signflinger?](https://www.reddit.com/r/androiddev/comments/f4ozil/whats_the_difference_between_apkbuilder_apkzlib/)
-- url: https://www.reddit.com/r/androiddev/comments/f4ozil/whats_the_difference_between_apkbuilder_apkzlib/
+I am making a survey to benchmark my fill rate. I'm with my banners close to 100 percent, but with my interstitials around 70-80 percent. Seems there is a lot of unused potential for monetization.
+## [12][How to properly handle this IOException](https://www.reddit.com/r/androiddev/comments/f4v2mq/how_to_properly_handle_this_ioexception/)
+- url: https://www.reddit.com/r/androiddev/comments/f4v2mq/how_to_properly_handle_this_ioexception/
 ---
-App Inventor currently uses ApkBuilder to add dex files and native libs to the APK file. However, as ApkBuilder is officially removed last year and in the process of upgrading the build tools that App Inventor uses to compile APK files, I am looking for replacement for ApkBuilder.
+I am trying to follow an online tutorial to see how okhttp works for requests in android studio using kotlin.
 
-I also asked this a year ago to no avail
-https://www.reddit.com/r/androiddev/comments/a9cj2z/what_is_the_alternative_to_apkbuilder/
+I have managed to implement it successfully for when the request is good.
 
-Is Zipflinger more efficient and faster than the former two?
+However when the request is unsuccessful (invalid search by the user, api not working properly, too many requests etc.) My app just crashes and closes down.
+
+How can I edit my code so the error is handled properly and the app doesn't have to shut down.
+
+example:
+
+The user enters a key that is not valid so the api request fails.
+
+I don't want the app to close but a toast to pop up saying "check your input is valid".
+
+How can I do this?
+
+    val url = "www.google.com"
+    
+            val request = Request.Builder().url(url).build()
+            val client = OkHttpClient()
+    
+            client.newCall(request).enqueue(object : Callback {
+                override fun onResponse(call: Call, response: Response) {
+                   //code if request is successful.
+    
+                }
+    
+                override fun onFailure(call: Call, e: IOException) {
+                    //code if request was unsuccessful
+                }
+            })

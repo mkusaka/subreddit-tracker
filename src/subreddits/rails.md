@@ -27,7 +27,36 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Storing attachment file type when using active storage](https://www.reddit.com/r/rails/comments/f4plor/storing_attachment_file_type_when_using_active/)
+## [3][Multi-tenant with Apartment](https://www.reddit.com/r/rails/comments/f546p9/multitenant_with_apartment/)
+- url: https://www.reddit.com/r/rails/comments/f546p9/multitenant_with_apartment/
+---
+I've started to play with the Apartment gem hoping to modify an existing app to go this route for multi-tenant.
+
+I'm familiar with Devise so I'm able to get the user to login and redirected to their subdomain and create records in their own schema.
+
+How do I prevent the user from changing the subdomain and seeing other users data or just trying see what subdomains are available ? I tried adding a before\_hook to the ApplicationController but seems that won't catch it and the page just failed.
+
+Would I need to add a Generic elevator with the \`Subdomain\` elevator in the \`initializers/apartment.rb\` file?
+
+    # initializers/apartment.rb
+    Rails.application.config.middleware.insert_after Warden::Manager, Apartment::Elevators::Generic, -&gt; (request) {
+       # code to check whether user is going to correct subdomain
+    }
+
+Thanks and any help/suggestions appreciated.
+## [4][Dynamically upload images to active storage inside client](https://www.reddit.com/r/rails/comments/f57u6d/dynamically_upload_images_to_active_storage/)
+- url: https://www.reddit.com/r/rails/comments/f57u6d/dynamically_upload_images_to_active_storage/
+---
+I am trying to setup Active Storage so that users can upload images to their posts. I can get it to work but I want to enhance it a bit:
+- when a user adds images to the post form, they should automatically be added to his post body
+- This means I need to upload the post images from the client side as they are added to the form
+
+Do you know if this is possible?
+## [5][When should we use inverse_of?](https://www.reddit.com/r/rails/comments/f4qt9g/when_should_we_use_inverse_of/)
+- url: https://www.reddit.com/r/rails/comments/f4qt9g/when_should_we_use_inverse_of/
+---
+I've seen articles like [this one](https://www.viget.com/articles/exploring-the-inverse-of-option-on-rails-model-associations) where they say `inverse_of` is useful to optimize memory when fetching associated records. But do we have to use it for each association in our models? Rails don't do this automatically in some cases?
+## [6][Storing attachment file type when using active storage](https://www.reddit.com/r/rails/comments/f4plor/storing_attachment_file_type_when_using_active/)
 - url: https://www.reddit.com/r/rails/comments/f4plor/storing_attachment_file_type_when_using_active/
 ---
 Hey,
@@ -37,7 +66,12 @@ I was wondering if there’s a way to store, in the database, the attachment fil
 I was thinking of making a monkey patch Active Storage Blob Model that adds this functionality based on MIME types but I’m assuming there must be a better way around it.
 
 Thanks!
-## [4][A beginners guide on how to implement Pagination &amp; Search via JSON into a Select2 drop-down on Rails 6](https://www.reddit.com/r/rails/comments/f4h609/a_beginners_guide_on_how_to_implement_pagination/)
+## [7][Paying for help with ruby on rails I'm on a project that is driving me nuts.](https://www.reddit.com/r/rails/comments/f4ydjz/paying_for_help_with_ruby_on_rails_im_on_a/)
+- url: https://www.reddit.com/r/rails/comments/f4ydjz/paying_for_help_with_ruby_on_rails_im_on_a/
+---
+Hop on a zoom call tonight will pay $40 an hour. 
+I need help asap will explain on call.
+## [8][A beginners guide on how to implement Pagination &amp; Search via JSON into a Select2 drop-down on Rails 6](https://www.reddit.com/r/rails/comments/f4h609/a_beginners_guide_on_how_to_implement_pagination/)
 - url: https://www.reddit.com/r/rails/comments/f4h609/a_beginners_guide_on_how_to_implement_pagination/
 ---
 Caveat:  I still consider myself a newbie, and I hope there's no glaring errors in the code below.  I'm open to any suggestions if something looks off, but for my case, everything worked fine.  I'm writing this up in hopes that it'll help somebody else out down the line that may be searching for a similar solution to speed up their apps.
@@ -221,7 +255,7 @@ One curiousity that I'd like to figure out and got stumped on;  For all of my no
     &lt;%= f.select :addressable_id, "", {selected: f.object.addressable_id}, {class: "form-control addressSupplierSearch"} %&gt;
 
 But since the dropdown options in this case are generated dynamically, it no longer works and the field remains blank on Edit, and I don't know how to automatically populate it if there's already a value there.  If anybody has any ideas on how to fix this, I'd appreciate it.
-## [5][Tips and suggestions for managing multiple crawlers?](https://www.reddit.com/r/rails/comments/f4avxv/tips_and_suggestions_for_managing_multiple/)
+## [9][Tips and suggestions for managing multiple crawlers?](https://www.reddit.com/r/rails/comments/f4avxv/tips_and_suggestions_for_managing_multiple/)
 - url: https://www.reddit.com/r/rails/comments/f4avxv/tips_and_suggestions_for_managing_multiple/
 ---
 I’m working on a side project that aggregates training courses from various instructors. Some of those instructors publish Google calendars, others list their courses on Shopify, some just list them on their website... you get the idea. 
@@ -235,18 +269,18 @@ So, my questions:
 3. Has anyone successfully brought on a developer via Upwork or similar to write these sort of crawlers?
 
 I’m getting ~50 new signups a day now and, as a one man team, I’m really starting to think about how I can free up the majority of my time to ramp up user acquisition channels...
-## [6][How to find new entries in two XML files](https://www.reddit.com/r/rails/comments/f4cq8a/how_to_find_new_entries_in_two_xml_files/)
+## [10][How to find new entries in two XML files](https://www.reddit.com/r/rails/comments/f4cq8a/how_to_find_new_entries_in_two_xml_files/)
 - url: https://www.reddit.com/r/rails/comments/f4cq8a/how_to_find_new_entries_in_two_xml_files/
 ---
 I need to find new entries in a XML sitemap compared to its last version in a rails app. I wonder how to tackle this challenge. I could parse the XML sitemap and check each line to see if it was already in the previous version but the process will be quite slow and memory-intensive.  
 
 
 Any suggestion about how I could do that? Thanks.
-## [7][How do you include the lib folder in your spec ?](https://www.reddit.com/r/rails/comments/f44p47/how_do_you_include_the_lib_folder_in_your_spec/)
+## [11][How do you include the lib folder in your spec ?](https://www.reddit.com/r/rails/comments/f44p47/how_do_you_include_the_lib_folder_in_your_spec/)
 - url: https://www.reddit.com/r/rails/comments/f44p47/how_do_you_include_the_lib_folder_in_your_spec/
 ---
 I have some custom PORO in the lib/ folder. I am using Rails 5 and Rspec. I would like to include files from lib in the spec. I found answers [1](https://stackoverflow.com/questions/4073856/rails-3-autoload), [2](https://stackoverflow.com/questions/16954989/how-to-include-lib-directory-in-rspec-tests) which is too old. So I am seeking some advices majority of rails community follows.
-## [8][First project finished, but badly in need of criticism!!](https://www.reddit.com/r/rails/comments/f3z6zt/first_project_finished_but_badly_in_need_of/)
+## [12][First project finished, but badly in need of criticism!!](https://www.reddit.com/r/rails/comments/f3z6zt/first_project_finished_but_badly_in_need_of/)
 - url: https://www.reddit.com/r/rails/comments/f3z6zt/first_project_finished_but_badly_in_need_of/
 ---
 ##Hey there you wonderfully helpful subreddit, you!
@@ -269,89 +303,3 @@ However, here are a few categories where I'm NOT looking for criticism:
 * Website copy is all bad - I'm not trying to become a copywriter.
 
 Anything else is fair game! So come on and help me become better by destroying my month+ of studying and hard work!
-## [9][Highcharts in Ruby syntax for Rails app / Also, trying to get two series of data to display on a single highchart and it's not taking](https://www.reddit.com/r/rails/comments/f3ybw0/highcharts_in_ruby_syntax_for_rails_app_also/)
-- url: https://www.reddit.com/r/rails/comments/f3ybw0/highcharts_in_ruby_syntax_for_rails_app_also/
----
-Does anyone know of any good docs for highcharts in rails?  Seems sparse if much at all.  I don't have a JS background yet to translate much from JS to Ruby, if that is useful (I notice lots of demos in JS fiddle).
-
-Additionally, Im trying to get two series of data to load on a highchart in rails.  One column type and one scatter type, each with nested arrays like `[[x1, y1], [x2, y2], [x3, y3],  ...]` and so on
-
-I'm making accessibly charts, and I've tried `chart.series( { &lt; chart 1&gt; }, { &lt;chart 2&gt; })`, I've tried making separate `chart.series`, I've tried making two separate Accessible charts.  One chart is working but can't get to seem to get the other one going, trying to add the second plot in various was as mentioned above.  Page won't load properly when I try to get a second one in
-## [10][How nested_attributes works?](https://www.reddit.com/r/rails/comments/f3ui2c/how_nested_attributes_works/)
-- url: https://www.reddit.com/r/rails/comments/f3ui2c/how_nested_attributes_works/
----
-Hi guys, I was wondering how Rails create &amp; update nested attributes.
-
-I had a problem where I was creating 2 associated models at the same time. For that, I was using the rails callbacks :after\_create/update, and while I was doing that, I knowledge that Rails pushes the code to the Stack (execute asynchronous), hence, inside the method called by the callback, we only have access to database's data. Also, apparently, we can't pass arguments (I tried and didn't work) to those triggers.
-
-For this problem, the only way I was able to pass data from one model to another was creating database attributes to the first model and passing them to the second model. I did try to pass attr\_acessor first, but that didn't work for the reason I described above.
-
-Besides using nested\_attributes to this problem, there was something that I'm missing? I guess that Rails has more privileges to pass arguments to these triggers or maybe the arguments should be feasible of serialization - similar to how works Sidekiq's Workers.
-
-I hope this example can clarify my explanation
-
-    # inside First::Model.rb
-    
-    attr_accessor :second_model_attr_4
-    
-    after_create :create_solicitation
-    
-    def create_solicitation
-        puts second_model_attr_4 # returns nothing
-     
-        Second::Model.create!(
-          first_model_id: self.id,
-          second_model_attr_1: self.second_model_attr_1 
-          second_model_attr_2: self.second_model_attr_2
-          second_model_attr_3: Second::Model::Status.find(
-            self.second_model_attr_3
-         ),
-          # this attr_accessor won't be seem by the function  
-          second_model_attr_4: self.second_model_attr_4 
-        )
-    end
-    
-    # P.s second_model_attr_1 to 3 were added as database attributes to the First::Model (did I migration and add these methods to First::Model)
-
-P.s It's callbacks, not triggers - sorry.
-## [11][bundle exec foreman start fails](https://www.reddit.com/r/rails/comments/f436wc/bundle_exec_foreman_start_fails/)
-- url: https://www.reddit.com/r/rails/comments/f436wc/bundle_exec_foreman_start_fails/
----
-&gt; \`parse\_numeric': Expected numeric value for '--port'; got "${PORT-3000}" (Thor::MalformattedArgumentError)  
-
-
-All I am doing is creating the environment for an open source project.  
- [https://github.com/huginn/huginn](https://github.com/huginn/huginn)   
-
-
-Gemfile:  
- [https://github.com/huginn/huginn/blob/master/Gemfile](https://github.com/huginn/huginn/blob/master/Gemfile)   
-
-
-Gemfile.lock  
- [https://github.com/huginn/huginn/blob/master/Gemfile.lock](https://github.com/huginn/huginn/blob/master/Gemfile.lock)   
-
-
-I don't really know why I am getting this.  
-
-
-From online sources they told me to try downgrading thor from 0.19.4 to 0.19.1, didn't work, another told me to try doing 0.20.0, but didn't work.  
-
-
-I'm running this on Windows 10.
-## [12][Should ActiveRecord be used for already existing files?](https://www.reddit.com/r/rails/comments/f3yvdp/should_activerecord_be_used_for_already_existing/)
-- url: https://www.reddit.com/r/rails/comments/f3yvdp/should_activerecord_be_used_for_already_existing/
----
-Hey,
-
-I was reading a lot about ActiveStorage in the past days and I'm still not sure if it's the right solution for my problem or if it's more aimed at simple user file uploads.
-
-I have an Image model which has an "external_url" field which contains a random direct URL to an image scraped from the internet. It's linked to another model called "Show". I don't want to store that image blob as soon as I insert a new Image as it would be too many (in my case).
-
-What I want is that as soon as someone requests that image by visiting a show page like: http://localhost:3000/show/example-show it'll download it from the "external_url", then upload it to S3 and create a variant of it. Just like ActiveStorage usually does, just with the difference that it has to download it first and then do it's usual thing.
-
-Is that an unusual approach and should I just use an external image server like https://github.com/willnorris/imageproxy instead?
-
-Any pointers into the right direction or usual approaches are appreciated!
-
-Thanks!

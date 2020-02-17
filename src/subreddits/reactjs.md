@@ -108,142 +108,61 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][The unseen performance costs of modern CSS-in-JS libraries in React apps || Web Performance Calendar](https://www.reddit.com/r/reactjs/comments/f4m4dh/the_unseen_performance_costs_of_modern_cssinjs/)
-- url: https://calendar.perfplanet.com/2019/the-unseen-performance-costs-of-css-in-js-in-react-apps/
+## [3][React Router v6 will be 2.9kb - 70% smaller because of Hooks and other factors](https://www.reddit.com/r/reactjs/comments/f543xl/react_router_v6_will_be_29kb_70_smaller_because/)
+- url: https://twitter.com/mjackson/status/1229156979714605056?s=20
 ---
 
-## [4][React Best Practices?](https://www.reddit.com/r/reactjs/comments/f4dkaj/react_best_practices/)
-- url: https://www.reddit.com/r/reactjs/comments/f4dkaj/react_best_practices/
+## [4][What visual studio code extensions should I install as a React developer?](https://www.reddit.com/r/reactjs/comments/f51cbs/what_visual_studio_code_extensions_should_i/)
+- url: https://www.reddit.com/r/reactjs/comments/f51cbs/what_visual_studio_code_extensions_should_i/
 ---
-Hey guys. Just wondering if anyone has some good resources / books / materials that helps beginners understand the best practices in React.
-
-One thing I struggle with is knowing when something should be a component. 
-
-For example, when I'm making forms, should each field input be a component? If so, what's the benefit of doing that?
-## [5][Testing useEffect Hook in jest and enzyme!](https://www.reddit.com/r/reactjs/comments/f4lf8u/testing_useeffect_hook_in_jest_and_enzyme/)
-- url: https://www.reddit.com/r/reactjs/comments/f4lf8u/testing_useeffect_hook_in_jest_and_enzyme/
----
-I have a functional component which makes an async call inside useEffect. I am trying to test two scenarios, once when the fetching is happening and the other one where the value is received.I am able to test whether the async function is called or not! but it seems the state change is not happening properly.
-
-    //My FuncComponent
-    import React, { useState } from 'react'; import { dataFetcher } from '../helper/datafetcher';
-    const FuncComponent = (props) =&gt; {
-    
-      const [isFetching, setFetchingState] = useState(false);
-    
-      const dataFetching = async () =&gt; {
-        try {
-          setFetchingState(true);
-          console.log(isFetching);
-          const res = await dataFetcher();
-          setFetchingState(false);
-          console.log(res, isFetching);
-        } catch (error) {
-          console.log(error);
-        }    
-      };
-    
-      React.useEffect(() =&gt; {
-        dataFetching();
-    
-        return () =&gt; {
-          setFetchingState(false);
-        };
-      }, []);
-      
-      return(
-        &lt;div&gt;
-          {isFetching ? (&lt;div&gt;Loading..&lt;/div&gt;) : (&lt;div&gt;Someshit!&lt;/div&gt;)}
-        &lt;/div&gt;
-      );
-    }
-    
-    export default FuncComponent;
-
-My unit test file
-
-    //FuncComponent.test.jsx
-    import React from 'react';
-    import FuncComponent from './FuncComponent';
-    import * as datafetcher from '../helper/datafetcher';
-    import { mount, configure, shallow } from 'enzyme';
-    import Adapter from 'enzyme-adapter-react-16';
-    import { act } from '@testing-library/react';
-    configure({ adapter: new Adapter() });
-    
-    datafetcher.dataFetcher = jest.fn(() =&gt; Promise.resolve({data: "something",}));
-    let component;
-    
-    describe('component renders', () =&gt; {
-    
-        test('async function called', () =&gt; {
-            // component = shallow(&lt;FuncComponent /&gt;);
-            component = mount(&lt;FuncComponent /&gt;);
-            expect(datafetcher.dataFetcher).toHaveBeenCalledTimes(1);
-            console.log(component.debug());
-        }) 
-    }); 
-
-The above test is running successfully, able to track the function call. But the state change is not happening, still showing "Loading..." text even after the Promise is resolved.
-## [6][Help/discuss: choosing between CSS architectures for my React app (styled-components vs. css-modules, etc.)](https://www.reddit.com/r/reactjs/comments/f4idcc/helpdiscuss_choosing_between_css_architectures/)
-- url: https://www.reddit.com/r/reactjs/comments/f4idcc/helpdiscuss_choosing_between_css_architectures/
----
-I am building my first complex desktop app with a react frontend. I am now reviewing CSS architectures and selecting one, and have comments and questions regarding what's available.
-
-Vanilla CSS has known issues such as its default inheritance model and monolithic nature which can become convoluted with a web app that has many moving parts. A solution is to create modular CSS that can be arbitrarily composed and reused.
-
-It seems that JS-in-CSS libraries allow for **CSS** composition, BUT this CSS is coupled to JS components, reducing its composability. Obviously CSS being in the JS files furthers this coupling. From the HTML standpoint, this also seems to reduce flexibility since classes are replaced with concretized styled "component-HTML-elements" (in the case of the [styled-components](https://styled-components.com/) library, which is my primary point of reference). This seems to violate the semantic integrity of traditional HTML structuring and the implied pattern where HTML defines structure, classes define function/purpose/context, and the styles define appearance and stylistic behavior, hooking into HTML via selectors. This pattern allows for a degree separation of concerns that is desirable to me, but seems compromised in CSS-in-JS.
-
-One great thing I see about CSS-in-JS is JS injection into template literals, but I don't know if the tradeoff is worthwhile given the above concerns.
-
-The alternative to CSS-in-JS is [css-modules](https://github.com/css-modules/css-modules), which seems to respect the structure-representation distinction while maintaining scope and composability via the "composes" keyword - but many developers say that it is inferior to styled-components in ways that don't seem justify its usage such as "less boilerplate code" or "I like having everything in my JS files" (is this always a good thing?).
-
-I have not used these technologies in practice, so it is hard to conclusively judge them. Perhaps I am missing something, or their utility would be clearer upon usage? I would like to hear from devs more experienced with them, particularly clarifying why and when one should use styled-components or css-modules in your projects (or neither). Hopefully I can become more informed towards choosing an architecture to move forward with.
-## [7][Learn how to read ReactJS code by creating the virtual DOM yourself (redux included)](https://www.reddit.com/r/reactjs/comments/f4e6bn/learn_how_to_read_reactjs_code_by_creating_the/)
-- url: https://wakata.io/learn/info/react-simdom
+What visual studio code extensions should I install as a React developer?
+## [5][That React Component Right Under Your Context Provider Should Probably Use `React.memo`: Sophie Alpert on Twitter](https://www.reddit.com/r/reactjs/comments/f53ff7/that_react_component_right_under_your_context/)
+- url: https://twitter.com/sophiebits/status/1228942768543686656?s=20
 ---
 
-## [8][Constate v2.0.0: Turn any React custom hook into React Context with ease](https://www.reddit.com/r/reactjs/comments/f4ggd0/constate_v200_turn_any_react_custom_hook_into/)
-- url: https://github.com/diegohaz/constate
+## [6][Trying to create a streaming app with React and AWS. Could someone point me in the right direction?](https://www.reddit.com/r/reactjs/comments/f4uepc/trying_to_create_a_streaming_app_with_react_and/)
+- url: https://www.reddit.com/r/reactjs/comments/f4uepc/trying_to_create_a_streaming_app_with_react_and/
+---
+I'm experimenting with live streaming right now, and what I want to do is create a simple react app that takes a webcam stream, broadcasts it to AWS medialive for ingest. Then, I want AWS to bounce the stream back to the react app, which displays it.
+
+Is it possible? Could I leverage any existing web technologies to do it? 
+
+So far, I've managed to create a MediaStream object client side, but I'm unsure as to what library to use to broadcast it properly. Would anyone have any advice for me, or be able to point me in the right direction?
+## [7][Full page transitions example](https://www.reddit.com/r/reactjs/comments/f57s4b/full_page_transitions_example/)
+- url: https://v.redd.it/iw4w3luw4hh41
 ---
 
-## [9][Another year on top for React - Hacker News Hiring Trends (December 2019)](https://www.reddit.com/r/reactjs/comments/f4kr7h/another_year_on_top_for_react_hacker_news_hiring/)
-- url: https://www.hntrends.com/2019/dec-another-year-on-top-for-react.html
+## [8][Best file structure practice for Node + React projects?](https://www.reddit.com/r/reactjs/comments/f58pzy/best_file_structure_practice_for_node_react/)
+- url: https://www.reddit.com/r/reactjs/comments/f58pzy/best_file_structure_practice_for_node_react/
+---
+I am working on my first full-stack project ATM and so far, I have only created project folder few times with CRA then immediately discarded everything because I can't decide on how to structure the project folder. 
+
+I checked few boilerplates and projects, it seems there are different approaches. Some people keep server and client in two completely different project folders with their own package.json files and some people create server and client folders directly under the src folder, so everything is managed within the same repo. I do not want to start from scratch once and refactor everything once I start writing some code so I want to know for sure what the best practice is before diving into it.
+
+I'd like to go with the "one client, one server folder under src" approach but, to be honest, I could not configure react-scripts to look into src/client instead of src ☺
+
+Are there any guides or articles you people can send me?
+## [9][Create Simple POS With React, Node and MongoDB #4: Optimize App and Setup Deployment Workflow](https://www.reddit.com/r/reactjs/comments/f53my6/create_simple_pos_with_react_node_and_mongodb_4/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-4-optimize-app-and-setup-deployment-workflow/
 ---
 
-## [10][confused by all these fragment demands](https://www.reddit.com/r/reactjs/comments/f4n5hl/confused_by_all_these_fragment_demands/)
-- url: https://www.reddit.com/r/reactjs/comments/f4n5hl/confused_by_all_these_fragment_demands/
+## [10][Any resource for Advanced React tutorial/concepts?](https://www.reddit.com/r/reactjs/comments/f58166/any_resource_for_advanced_react_tutorialconcepts/)
+- url: https://www.reddit.com/r/reactjs/comments/f58166/any_resource_for_advanced_react_tutorialconcepts/
 ---
-Hello!
-
-I am very new to react and though I understand the concepts (in theory) I just cant seem to make sense of all of these fragment demands. I'm hoping for a nudge in the right direction.
-
-In my App.js I have set out the state to be an array. I then want to call it in my component and use .map() to iterate through the array. Everything seems simple and smooth until I pop in my .map function. I understand that adjacent elements needs to be wrapped, but that doesn't seem to help me...
-
-here is a codepen, but since I am using VScode, I am not sure if the layout is clear enought
-
-[https://codepen.io/reactn00/pen/abONpyp](https://codepen.io/reactn00/pen/abONpyp)
-
-otherwise, here are screenshots
-
-[https://imgur.com/a/LwXULwS](https://imgur.com/a/LwXULwS)
+Hello,
 
 &amp;#x200B;
 
-MANY THANKS TO ALL WHO HELP THIS LOST BOY.
+I have been working with ReactJS with a year or so. I learned mostly through Youtube and Udemy courses. Hence I wanted to get my hands on advanced react concepts but could not find any. There are no such udemy courses or youtube for intermediate to advance developers.
 
-cheers.
-## [11][When to use useEffect or useLayoutEffect](https://www.reddit.com/r/reactjs/comments/f46gu9/when_to_use_useeffect_or_uselayouteffect/)
-- url: https://aganglada.com/blog/useeffect-and-uselayouteffect/
+&amp;#x200B;
+
+How should I proceed?
+## [11][Should I use SSR? What about Rehydration? Where should we implement logic and rendering in our applications?](https://www.reddit.com/r/reactjs/comments/f57dkd/should_i_use_ssr_what_about_rehydration_where/)
+- url: https://twitter.com/_developit/status/1093223382223605762
 ---
 
-## [12][react-suspense-cache - React library for creating Suspense resources](https://www.reddit.com/r/reactjs/comments/f4mpct/reactsuspensecache_react_library_for_creating/)
-- url: https://www.reddit.com/r/reactjs/comments/f4mpct/reactsuspensecache_react_library_for_creating/
+## [12][Fast and maintainable patterns for fetching from a database](https://www.reddit.com/r/reactjs/comments/f576y8/fast_and_maintainable_patterns_for_fetching_from/)
+- url: https://sophiebits.com/2020/01/01/fast-maintainable-db-patterns.html
 ---
-I created this simple React library for creating Suspense resources much like the react-cache package, as a form of studying and experimenting the new React feature.
 
-Resources created with this library can have caching strategies, and can also be reactive, meaning that Suspense-ful components can re-render automatically whenever the cache gets validated again.
-
-Try it out!
-
-https://github.com/LXSMNSYC/react-suspense-cache

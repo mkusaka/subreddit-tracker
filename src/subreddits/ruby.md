@@ -1,13 +1,61 @@
 # ruby
-## [1][date-formatter gem - date formatter by example; auto-builds the strftime format string from an example date](https://www.reddit.com/r/ruby/comments/f4pcn5/dateformatter_gem_date_formatter_by_example/)
+## [1][Creating a rota scheduler + is Ruby the right language?](https://www.reddit.com/r/ruby/comments/f56wc0/creating_a_rota_scheduler_is_ruby_the_right/)
+- url: https://www.reddit.com/r/ruby/comments/f56wc0/creating_a_rota_scheduler_is_ruby_the_right/
+---
+My brother is looking to get in to programming and has a work problem he wants to use as his first project. I’ve agreed to work on it with him so we can learn together.
+
+The problem is that at his work, making the rota for the week can take over half a day, as everyone’s needs must be aligned in a way that works for each employee. The idea would be to automate this process with a (hopefully) simple program. As the company is small and shift based this doesn’t seem overly complicated.
+
+The plan would be to: 
+1) implement it in a way that all data is collected and input in to a script that spits out a rota option that is then manually put in to a rota 
+
+2) as my brother has an interest in app development, eventually he wants to create an app that can be used by an employee to send in their availability remotely. Once everyone has done this, the rota could then be created and sent out automatically.
+
+I have a decent beginner-intermediate understanding of both Ruby and Python and feel one of these would be most suitable to the first stage  of the problem. I also use Ruby for my job and am doing a Udemy course on it as part of my day to day work. I am leaning more towards approaching the problem with Ruby for this reason as I’ve heard learning multiple languages at once before one is known well can be confusing.
+
+My main concerns are:
+- is Ruby the right language to be approaching the problem? Would python (or a different language) be more suitable?
+- will Ruby be a good tool for my brother to continue on with future projects related to app development?
+## [2][Writing a small web service with Ruby, Rack and functional programming](https://www.reddit.com/r/ruby/comments/f4wcxi/writing_a_small_web_service_with_ruby_rack_and/)
+- url: https://medium.com/@nondv/writing-a-small-web-service-with-ruby-rack-and-functional-programming-a16f802a19c0
+---
+
+## [3][RSpec Tutorial: Test-Drive Your Ruby Code](https://www.reddit.com/r/ruby/comments/f58ijj/rspec_tutorial_testdrive_your_ruby_code/)
+- url: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
+---
+
+## [4][Rails 6.1 adds at option to perform_enqueued_jobs test helper](https://www.reddit.com/r/ruby/comments/f58cta/rails_61_adds_at_option_to_perform_enqueued_jobs/)
+- url: https://blog.saeloun.com/2020/02/17/rails-6-1-adds-at-option-to-perform_enqueued_jobs-test-helper
+---
+
+## [5][Planning to learn Ruby and then Rails framework in a year, need some advice.](https://www.reddit.com/r/ruby/comments/f4rqnt/planning_to_learn_ruby_and_then_rails_framework/)
+- url: https://www.reddit.com/r/ruby/comments/f4rqnt/planning_to_learn_ruby_and_then_rails_framework/
+---
+Hello good people, so Im interested in a remote work. Main reason is that now Im quite old and I have a kid, and I want/need to be at home more :)   
+So I raised this goal for myself - to build some new skill in a year and after that start working on building my freelancer career based on that skill.   
+Currently Im considering PHP and Laravel, Ruby and Ruby on Rails, Python and Django. What I want from this community is to share how job market is, is my goal actually achievable? Is Rails a good choice now, especially when so many people say that Ruby is dying language...   
+My background is a sys admin. And I think I can consider myself a coder, but not a real programmer yet. And I really want to become a proper programmer. And Ruby looks like a really interesting, different language to learn.
+## [6][Ruby lambda, proc, block](https://www.reddit.com/r/ruby/comments/f4t1po/ruby_lambda_proc_block/)
+- url: https://medium.com/@igor04/ruby-lambda-proc-block-a13d13883b9b
+---
+
+## [7][date-formatter gem - date formatter by example; auto-builds the strftime format string from an example date](https://www.reddit.com/r/ruby/comments/f4pcn5/dateformatter_gem_date_formatter_by_example/)
 - url: https://github.com/feedreader/pluto/tree/master/date-formatter
 ---
 
-## [2][Linking a Webcam Directly to Rails' ActiveStorage](https://www.reddit.com/r/ruby/comments/f4ds3v/linking_a_webcam_directly_to_rails_activestorage/)
+## [8][Ruby2d slow to open files](https://www.reddit.com/r/ruby/comments/f4qxk1/ruby2d_slow_to_open_files/)
+- url: https://www.reddit.com/r/ruby/comments/f4qxk1/ruby2d_slow_to_open_files/
+---
+I just started using Ruby2d, and for the first couple of times that i started the file with vscode, it was around 0.300 seconds. I modified some code, and now suddenly it takes 104.646 seconds to start the program. I reversed the changes i did and now it still takes so long. Any reason for this or fixes?
+
+&amp;#x200B;
+
+Restarting works but it happens again couple of minutes after restarting and really no one is up to restart their pc every 5 minutes
+## [9][Linking a Webcam Directly to Rails' ActiveStorage](https://www.reddit.com/r/ruby/comments/f4ds3v/linking_a_webcam_directly_to_rails_activestorage/)
 - url: https://emmanuelhayford.com/linking-a-webcam-directly-to-rails-activestorage/
 ---
 
-## [3][What are the benefits and strengths of using Ruby in 2020?](https://www.reddit.com/r/ruby/comments/f3yuwz/what_are_the_benefits_and_strengths_of_using_ruby/)
+## [10][What are the benefits and strengths of using Ruby in 2020?](https://www.reddit.com/r/ruby/comments/f3yuwz/what_are_the_benefits_and_strengths_of_using_ruby/)
 - url: https://www.reddit.com/r/ruby/comments/f3yuwz/what_are_the_benefits_and_strengths_of_using_ruby/
 ---
 Hello /r/ruby,
@@ -21,91 +69,3 @@ I hope this doesn't come across as adversarial or aggressive, I like the languag
 Thank you
 
 Edit: Thank you for all the responses. It sounds like ruby is definitely worth learning. I bet you'll be seeing me around here relatively soon. :)
-## [4][Rails adds ActiveRecord API for switching multiple database connections](https://www.reddit.com/r/ruby/comments/f3s13y/rails_adds_activerecord_api_for_switching/)
-- url: https://blog.saeloun.com/2020/02/14/rails-6-multiple-database-support
----
-
-## [5][Help with handling with rest-client exception](https://www.reddit.com/r/ruby/comments/f3wnvq/help_with_handling_with_restclient_exception/)
-- url: https://www.reddit.com/r/ruby/comments/f3wnvq/help_with_handling_with_restclient_exception/
----
-I need to scrape 10k urls from this website and someone of the urls are out of service (I think...its an error that does not return the json I'm looking for, so rest-client returns 500 Internal Server error in my program)
-
-Error syntax: \`exception\_with\_response': 500 Internal Server Error (RestClient::InternalServerError)
-
-To loop for the urls I'm using a range (1..30).each do |id|. I catenate the url with the current iteration of this range.
-
-response = RestClient.get(url+id)
-
-The problem is some times the url I'm storing in the response variable does not exist/the webpage return some error.
-
-How could I protect my code so I can just pass through this problematic url and keep the scrapping?
-
-Heres my current code:
-
-(I put every code of the loop in a begin/rescue block, but I do not know how do write the code to do such thing)
-
-    require 'nokogiri'
-    require 'csv'
-    require 'rest-client'
-    require 'json'
-    link = "https://webfec.org.br/Utils/GetCentrobyId?cod="
-    CSV.open('data2.csv', 'ab') do |csv|
-    csv &lt;&lt; ['Name', 'Street', 'Info', 'E-mail', 'Site']
-        (1..30).each do |id|
-            begin
-            response = RestClient.get(link+id.to_s)
-            json = JSON.parse(response)
-            html = json["Data"]
-            doc = Nokogiri::HTML.parse(html)
-            name = doc.xpath("/html/body/table/tbody/tr[1]").text
-            street = doc.xpath("/html/body/table/tbody/tr[2]").text.gsub(Regexp.union(REMOVER), " ")
-            info = doc.xpath("/html/body/table/tbody/tr[3]").text.gsub(Regexp.union(REMOVER), " ")
-            email = doc.xpath("/html/body/table/tbody/tr[4]").text.gsub(Regexp.union(REMOVER), " ")
-            site = doc.xpath("/html/body/table/tbody/tr[5]").text.gsub(Regexp.union(REMOVER), " ")
-            csv &lt;&lt; [nome, endereco, complemento, email, site]
-            rescue
-            end
-       end
-    end 
-
-&amp;#x200B;
-## [6][Nest.js for Ruby](https://www.reddit.com/r/ruby/comments/f3z470/nestjs_for_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/f3z470/nestjs_for_ruby/
----
-Hi all,
-
-Lately I've been using typescript and node.js at work and what i thought would be a nasty experience became a pleasant suprise. I've been reading nest.js documentation ( [https://docs.nestjs.com/](https://docs.nestjs.com/) which is more than great AFAIK) and it makes a lot of sense to me.
-
-I mostly use ruby for my pet projects. I wonder if there's a book\\tutorial\\proper documentation that uses similar thoughts as these of nest.js or even .net core but applied to ruby ?  DI, AOP, modularity etc..
-## [7][Ruby Memory Model](https://www.reddit.com/r/ruby/comments/f3r46i/ruby_memory_model/)
-- url: https://www.reddit.com/r/ruby/comments/f3r46i/ruby_memory_model/
----
-I found it interesting and good documentation on the ruby memory model, by concurrent ruby.  
-Sharing for those who forgot to visit.  
-[https://docs.google.com/document/d/1pVzU8w\_QF44YzUCCab990Q\_WZOdhpKolCIHaiXG-sPw/](https://docs.google.com/document/d/1pVzU8w_QF44YzUCCab990Q_WZOdhpKolCIHaiXG-sPw/edit#)
-## [8][Can't open .rb file on IRB using the ruby command. Getting errors!](https://www.reddit.com/r/ruby/comments/f3o5lx/cant_open_rb_file_on_irb_using_the_ruby_command/)
-- url: https://www.reddit.com/r/ruby/comments/f3o5lx/cant_open_rb_file_on_irb_using_the_ruby_command/
----
-I've been trying to open files on IRB by using the ruby command (entering something like ruby text.rb to the terminal) but it only gives me errors. I'm trying it with a really basic new file (just one puts "hello") to be sure there are no typos, errors, or hidden characters, but it still doesn't work. I get this error:
-
-ruby text.rb
-
-SyntaxError: (irb):2: syntax error, unexpected tIDENTIFIER, expecting keyword\_do or '{' or '('
-
-ruby text.rb
-
-\^
-
-from /usr/bin/irb:11:in \`&lt;main&gt;'
-
-I made sure to cd into the location where the .rb file is at. No code errors in the file. I have no idea what's going on. It used to work fine months ago, but not anymore. I can load files using the load command, but I'm following some courses that require me to open files using the ruby command to be able to enter command line arguments. 
-
-Does anyone know what's going on?
-## [9][New ruby user here with questions about loops](https://www.reddit.com/r/ruby/comments/f3o6l7/new_ruby_user_here_with_questions_about_loops/)
-- url: https://www.reddit.com/r/ruby/comments/f3o6l7/new_ruby_user_here_with_questions_about_loops/
----
-I was wondering if someone can tutor me a bit on loops in ruby through private messages.
-## [10][Sandi Metz Talk in Toronto - Sat Feb 22/2020](https://www.reddit.com/r/ruby/comments/f3c2x0/sandi_metz_talk_in_toronto_sat_feb_222020/)
-- url: https://www.eventbrite.com/e/cover-presents-an-evening-with-sandi-metz-registration-94178429217
----
-

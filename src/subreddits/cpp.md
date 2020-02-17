@@ -57,11 +57,7 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Herb Sutter's Trip Winter ISO C++ Standards Meeting (Prague) Trip Report](https://www.reddit.com/r/cpp/comments/f4p2nn/herb_sutters_trip_winter_iso_c_standards_meeting/)
-- url: https://herbsutter.com/2020/02/15/trip-report-winter-iso-c-standards-meeting-prague/
----
-
-## [3][2020-02 Prague ISO C++ Committee Trip Report — 🎉 C++20 is Done! 🎉](https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/)
+## [2][2020-02 Prague ISO C++ Committee Trip Report — 🎉 C++20 is Done! 🎉](https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/)
 - url: https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/
 ---
 **C++20, the most impactful revision of C++ in a decade, is done!** 🎉🎊🥳
@@ -565,19 +561,191 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [4][Declarative support in CMakeSL](https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/)
-- url: https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/
+## [3][My Favorite Unknown C++20 Feature](https://www.reddit.com/r/cpp/comments/f50ag6/my_favorite_unknown_c20_feature/)
+- url: https://www.reddit.com/r/cpp/comments/f50ag6/my_favorite_unknown_c20_feature/
 ---
-Hi, I just wanted to share an article about declarative format that I'm working on in CMakeSL. Here's a teaser:
+### My Favorite Unknown C++20 Feature
 
-&amp;#x200B;
+*by Nathan Myers*
 
-https://reddit.com/link/f4ge4k/video/ull8d9f3s5h41/player
+C++2020 was voted out yesterday, its final stamp of technical
+approval before it goes to ISO for legal certification.
+This is a big, big release, comparable to C++2011 a decade
+ago, that will change, again, how we write, and think about,
+our programs.
+The big features--Concepts, Coroutines, Modules--will get
+plenty of coverage elsewhere in the days ahead, but the 
+myriad smaller features, taken together, may make as great
+a difference in the code that most of us will write. 
 
-And the art: [https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515](https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515)
+Here I will call your attention to one small feature that, 
+nonetheless, represents a change to the very foundations of
+the language.
+It is usually called, cryptically, the "unified comma operator",
+a name that belies it importance.
+It represents only the *second* time, since the ISO Standard C++
+effort began in 1990, that the language grammar has ever been
+simplified.
+(The first was eliminating "implicit int", the fix for a wart
+inherited from C, a fix that C has since also adopted.)
 
-Let me know what do you think about all this (:
-## [5][Improving C++ compile time: precompiling generic code](https://www.reddit.com/r/cpp/comments/f4pt34/improving_c_compile_time_precompiling_generic_code/)
+On its face, comma unification is simple enough.
+Up through C++17, the comma has had several different meanings
+in expression contexts, each with its own place in the formal
+language grammar.
+The most frequent use separates function actual arguments.
+Similar uses appear in aggregate initializers--between elements 
+being initialized in curly brackets--and in initializer-lists,
+likewise.
+Finally, it is a sequence operator, which may also be overloaded
+by user code for, usually, expression-template libraries.
+
+There was no motivation to unify these meanings before we got 
+another important language feature: parameter packs.
+Parameter packs were introduced in C++11 with very restricted
+capabilities, only just enough to support integrating variadic
+argument lists into the type system.
+Those restrictions have been progressively relaxed in each
+subsequent Standard, with new syntax greatly amplifying their
+value.  We have lately dropped "parameter" from the name, because
+of their expanding usefulness, and just call them "packs".
+
+Packs have come increasingly to resemble a language-native, 
+first-class version of the library feature `std::tuple&lt;&gt;`.
+Comma-operator unification takes the next step toward this future.
+The comma has now become, effectively, the pack construction operator.
+Appearing in a function-call argument context, it constructs an
+argument pack.
+(Every function, now, takes just a single actual, pack, argument.)
+Appearing in an aggregate initialization, the pack it constructs
+conforms to the shape of the target aggregate.
+
+C++ has a long history, and a complicated inheritance.
+C++20 inherits not only from C, but also C++98, C++03, C++11,
+C++14, and C++17.
+Nothing new in C++ can be as simple as it might be if we could
+start from a clean slate.
+The comma already means things.
+What it means, for observable effects of existing code, mustn't
+change, if backward compatibility is to be preserved.
+
+So, when constructing an argument pack, the values have to be
+converted to match formal arguments of the selected function
+overload, and the initial type and number of the pack elements
+drive the choice of that overload.
+In an aggregate initializer, similarly, the pack's values must
+be made to conform to the aggregate they initialize.
+Aggregate initialization still needs to be disambiguated from
+a uniform initializer-list.
+In a scalar expression, all but the last element of the pack must
+be computed and then discarded--except where they need to become
+arguments to an overloaded comma-operator call, instead.
+
+When totting up new features in C++20, comma unification is often
+neglected, because it it doesn't yet change what programs can be
+written, or how.
+But you will hear more about it as each new feature it enables
+surfaces.
+Comma unification is all about what will come to be.
+First-class packs, in C++23 and moreso in C++26, will enable
+coding in C++ to feel more like using newer scripting and 
+functional languages, and enable writing more powerful libraries
+with cleaner, simpler, safer interfaces.
+
+Sometimes it's not the marquee features that have the biggest impact, in the longer term.
+## [4][An Extraterrestrial Guide to C++20 Text Formatting](https://www.reddit.com/r/cpp/comments/f56u0v/an_extraterrestrial_guide_to_c20_text_formatting/)
+- url: https://www.bfilipek.com/2020/02/extra-format-cpp20.html
+---
+
+## [5][C++ conference in Madrid](https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/)
+- url: https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/
+---
+We have opened today the registrations for the C++ conference using std::cpp 2020 to be held in Madrid on April 16th.
+
+The complete program is still to be announced but some talks are already confirmed.
+
+And the best of all registration is FREE.
+
+https://eventos.uc3m.es/go/usingstdcpp2020
+
+Come to Spain for a  one day conference 100% devoted to C++.
+## [6][Qt car game with genetic algorithm](https://www.reddit.com/r/cpp/comments/f53w80/qt_car_game_with_genetic_algorithm/)
+- url: https://www.reddit.com/r/cpp/comments/f53w80/qt_car_game_with_genetic_algorithm/
+---
+I just created Qt car game, where you can compete with a genetic algorithm, or just see how it evolves. Let me know your thoughts.
+https://github.com/swordey/2DCarGameWithGA
+## [7][Herb Sutter's Trip Winter ISO C++ Standards Meeting (Prague) Trip Report](https://www.reddit.com/r/cpp/comments/f4p2nn/herb_sutters_trip_winter_iso_c_standards_meeting/)
+- url: https://herbsutter.com/2020/02/15/trip-report-winter-iso-c-standards-meeting-prague/
+---
+
+## [8][an efficient immutable vector](https://www.reddit.com/r/cpp/comments/f4szkn/an_efficient_immutable_vector/)
+- url: https://www.reddit.com/r/cpp/comments/f4szkn/an_efficient_immutable_vector/
+---
+I recently had an idea for an efficient immutable vector.  
+It is basically a copy-on-write array behind a shared pointer. The array grows exponentially and the `push_back` operation reuses the array if possible (if there is still space left and  if it is the first `push_back` for a given array and size).
+The result is a vector with an O(1) copy operation and `push_back` (also `pop_back`) operations with an amortized O(1) best case complexity. The worst case complexity for `push_back` is O(n) but only happens if you create a copy of a given vector and then push_back to both the original vector and the copy, in which case it is no worse than the standard vector since the standard vector has an O(n) complexity for copying. All other operations should have the same complexity as the standard vector: O(1) lookup, O(n) insert and erase.
+
+You can find a prototype implementation of this data structure here: https://gist.github.com/eyelash/87a3fe849b31a37c58eca4ef398a71dc
+
+I believe that from a (somewhat theoretical) big-O perspective this vector is strictly better than the standard vector, since there is no sequence of operations that has a worse complexity. (Is this actually correct?)
+
+I'm surely not the first to come up with this data structure. Is there a name for it? Is there somewhere I can find more information or a more robust implementation? I'm aware of a few implementations of immutable vectors (e.g. [immer](https://github.com/arximboldi/immer)) but they all use trees internally. What is the reason for that?
+
+**Edit**: Thinking about it some more I realize the big difference is in updating a single element which can be done in O(log n) in a tree and will be O(n) for an array-based immutable vector.
+## [9][Choose optimization in C++? (Preferally clang)](https://www.reddit.com/r/cpp/comments/f50etd/choose_optimization_in_c_preferally_clang/)
+- url: https://www.reddit.com/r/cpp/comments/f50etd/choose_optimization_in_c_preferally_clang/
+---
+-Edit- Learn programming linked me to a stackoverflow answer that gave me enough information to figure it out https://www.reddit.com/r/learnprogramming/comments/f50dvb/choose_optimization_in_c/ https://stackoverflow.com/questions/15548023/clang-optimization-levels Basically I need -inline to get all the data into a single function then -sroa to reduce the struct into allocs which eliminates the struct. So it appears that optimizers can get rid of structs outright but may not reduce the members in it (at least I don't see any passes for that)
+
+I  want to double check if an optimization works in a very specific situation. The optimization doesn't happen if I use -O1 but the compiler optimizes out pretty much the  entire app if I do -O2 (so I can't completely confirm if it does a thing without another thing). Is there a way to specify which passes I want? I  see a list of passes here but I have no idea how to specify it [https://llvm.org/docs/Passes.html](https://llvm.org/docs/Passes.html)
+
+I prefer the solution to be in clang
+
+-Edit- What I'd like to check is if the optimizer will reduce the size of the struct. If I copy b.c into a.c the optimizer will remove the struct completely. If they're in seperate files the struct is the full size. I tried to use undefined behavior to see if it might trigger but clang knows I'm passing the struct and leaves it intact
+
+----
+
+
+    //a.c
+    #include &lt;stdio.h&gt;
+
+    struct Dummy
+    {
+        int a, b, c, d, e, f;
+    };
+
+    static void test3(struct Dummy*p)
+    {
+        printf("%d %d\n", p-&gt;e, sizeof(struct Dummy));
+    }
+
+    //void test2(void *p, void (*f)(void *));
+    void test2(long int z, void (*f)(void *));
+    static void test(int c)
+    {
+        struct Dummy z;
+        z.e = c*2;
+        test2((long int)&amp;z, test3);
+    }
+
+    int main(int argc, char *argv[])
+    {
+        test(argc);
+        return 0;
+    }
+
+    //b.c
+    void test2(long int z, void (*f)(void*))
+    {
+        f((void*)z);
+    }
+## [10][One problem that C++ surprisingly doesn't seem to have](https://www.reddit.com/r/cpp/comments/f4x7fc/one_problem_that_c_surprisingly_doesnt_seem_to/)
+- url: https://www.reddit.com/r/cpp/comments/f4x7fc/one_problem_that_c_surprisingly_doesnt_seem_to/
+---
+For all of its complexity, bad design decisions, and interactions between features that weren't explicitly considered, it all somehow *works*. The compilers and standard library implementations aren't riddled with bugs. Everything works as designed, even if that design sometimes has flaws. The compilers generate correct code and the standard library functions don't crash.
+
+How do they do it?
+## [11][Improving C++ compile time: precompiling generic code](https://www.reddit.com/r/cpp/comments/f4pt34/improving_c_compile_time_precompiling_generic_code/)
 - url: https://www.reddit.com/r/cpp/comments/f4pt34/improving_c_compile_time_precompiling_generic_code/
 ---
 I appologize if this is not well thought out/has already been proposed and for poor english.
@@ -624,99 +792,32 @@ The previous example was demonstrated with a function, but it should also work w
 &amp;nbsp;  
 
 What do you all think?
-## [6][So, modules. Opinions? Usability? Just tried to make one in Visual Studio. Fascinating concept. Almost makes me want to convert all my classes to modules. Why WOULDN'T you use them over headers? (Also, poor support so far in VS19.)](https://www.reddit.com/r/cpp/comments/f4f514/so_modules_opinions_usability_just_tried_to_make/)
-- url: https://www.reddit.com/r/cpp/comments/f4f514/so_modules_opinions_usability_just_tried_to_make/
+
+Edit: added in a comment bellow:
+
+If we look at what module brings, we have from to https://vector-of-bool.github.io/2019/01/27/modules-doa.html:
+
+
+1. Tokenization caching - Because of TU isolation, tokenizing a TU can be cached when the module is later imported into another TU.
+2. Parse-tree caching - Same as above. Tokenization and parsing are some of the most expensive operations in compiling C++. In my own tests, parsing can consume up to 30% of compilation time for files with a large preprocessed output.
+3. Lazy re-generation - If foo imports bar, and we later make changes to the implementation of bar, we may be able to omit recompilation of foo. Only changes to the interface of bar necessitate recompilation of foo.
+4. Template specialization memoization - This one is a bit more subtle and may take more work to implement, but the potential speedups are enormous. In short: A specialization of a class or function template appearing in the module interface unit can be cached and loaded from disk later.
+5. Inline function codegen caching - Codegen results for inline functions (including function templates and member functions of class templates) can be cached and later re-loaded by the 6. Inline function codegen elision - extern template allows the compiler to omit performing codegen for function and class templates. This is hugely beneficial for the linker when it performs de-dup. Modules may allow the compiler to perform more extern template-style optimizations implicitly.
+
+4 and 5 are pretty independant from what I'm proposing. 
+
+What about 1,2 and 3? Well my proposal would essentially be seen as a possible implementation of those points! 
+
+However, this approach has an important other benefit: using a template function/type from a library should be **almost as fast as having this function/type hard coded in the compiler!**
+## [12][Declarative support in CMakeSL](https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/)
+- url: https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/
 ---
-Mostly title.
+Hi, I just wanted to share an article about declarative format that I'm working on in CMakeSL. Here's a teaser:
 
-I had to add a new class after first learning about modules. I figured hey, let's try this new-fangled thing and see if it's worth it. Maybe down the road I can refactor all existing classes in this project to use modules! It takes a while to compile this thing because practically every class needs to know about every other class and I honestly don't think it's worth my time to finely tune the header access; there's just a giant "include everything!" header. (There are a few finely-tuned ones.)
+&amp;#x200B;
 
-The concept (pun not intended) is neat. Do away with header files and all the dependency problems that brings, along with the non-linear compilation time.
+https://reddit.com/link/f4ge4k/video/ull8d9f3s5h41/player
 
-My only problem right now is Visual Studio seems to have super sketchy support. Intellisense is non-existent in "ixx" files. And then I ran into a big oopsie after doing a complete rebuild. Since Visual Studio tries to handle build order for you, it did not, in fact, try to build the module first, which almost all other classes now depend on.
+And the art: [https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515](https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515)
 
-\[Edit\]
-
-Removed references to the new module stuff. Let the compilation finish. It compiled the module at about 200 out of 220 files. Compile success, but without any module import. Put the references back in all files, include the one "include everything" header, which forces a rebuild of most files, and then it worked fine with the module import. Forced a "rebuild all" and it died again. At least we know the dependency map is working correctly.
-
-/s
-## [7][Would C++ benefit from simplified lambda syntax?](https://www.reddit.com/r/cpp/comments/f4e53s/would_c_benefit_from_simplified_lambda_syntax/)
-- url: https://www.reddit.com/r/cpp/comments/f4e53s/would_c_benefit_from_simplified_lambda_syntax/
----
-While playing with ranges, it struck me how big part of the code take simple lambdas. 
-
-Even in cppreference.com example they are not inlined, cause it would make it look messy (added using namespace std::views):
-```
-    std::vector&lt;int&gt; ints{0,1,2,3,4,5};
-    auto even = [](int i){ return 0 == i % 2; };
-    auto square = [](int i) { return i * i; };
-    
-    using namespace std::views;
-    for (int i : ints | filter(even) | transform(square)) {
-        std::cout &lt;&lt; i &lt;&lt; ' ';
-    }
-```
-
-vs. with inlined lambdas:
-```
-    std::vector&lt;int&gt; ints{0,1,2,3,4,5};
-
-    using namespace std::views;
-    for (int i : ints
-                 | filter([](int i){ return 0 == i % 2; })
-                 | transform([](int i) { return i * i; })) {
-        std::cout &lt;&lt; i &lt;&lt; ' ';
-    }
-```
-
-When I showed it to my friend, that doesn't work with C++ regularly, he thought it just looks ugly. It's just a personal opinion, but we still are relatively far behind nice look of C# lambdas
-
-I believe we could greatly benefit from simplified syntax, in terms of code readability. 
-
-Main idea is for these two code snippets to be equivalent:
-
-```
-    auto f = [](Type arg) =&gt; expression;
-```
-```
-    auto f = [](Type arg) { return expression; };
-```
-
-With this, the first example could be rewritten as follows:
-```
-    std::vector&lt;int&gt; ints{0,1,2,3,4,5};
-
-    using namespace std::views;
-    for (int i : ints
-                 | filter([](int i) =&gt; 0 == i % 2)
-                 | transform([](int i) =&gt; i * i)) {
-        std::cout &lt;&lt; i &lt;&lt; ' ';
-    }
-```
-
-It has a couple of technical problems (what with coma operator?), but nothing that seems impossible to overcome at first glance. 
-
-Is it proposal worthy? Would it be useful?
-And I know, it removes just 7 characters from each lambda. Is it worth it?
-## [8][API documentation for C++ SDK in OpenAPI style](https://www.reddit.com/r/cpp/comments/f4dj9j/api_documentation_for_c_sdk_in_openapi_style/)
-- url: https://www.reddit.com/r/cpp/comments/f4dj9j/api_documentation_for_c_sdk_in_openapi_style/
----
-Hello,
-
-we are currently developing a SDK that will be used in Android, iOS and Windows Applications. Others need to use our SDK from Java/Swift/C++ and other programming languages. Our API ist JSON based, so only Strings in JSON format are transmitted for the communication between the application and our sdk.
-
-Is there a OpenAPI/YAML like toolchain or api documentation style that we could use? We love the editors and generators of OpenAPI.
-
-Thank you :)
-## [9][C Pointer Visualization (GDBFrontend v0.0.16-alpha)](https://www.reddit.com/r/cpp/comments/f3xemg/c_pointer_visualization_gdbfrontend_v0016alpha/)
-- url: https://www.youtube.com/watch?v=6LNR8u19x6Y
----
-
-## [10][Top 10 Bugs Found in C++ Projects in 2019 (PVS-Studio blog)](https://www.reddit.com/r/cpp/comments/f47gxw/top_10_bugs_found_in_c_projects_in_2019_pvsstudio/)
-- url: https://www.viva64.com/en/b/0700/
----
-
-## [11][Detecting C and C++ memory corruption bugs on Android with HWASan](https://www.reddit.com/r/cpp/comments/f3vhoc/detecting_c_and_c_memory_corruption_bugs_on/)
-- url: https://android-developers.googleblog.com/2020/02/detecting-memory-corruption-bugs-with-hwasan.html
----
-
+Let me know what do you think about all this (:

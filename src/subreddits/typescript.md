@@ -22,163 +22,100 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][swc is a typescript / javascript compiler. It's 20x faster than babel.](https://www.reddit.com/r/typescript/comments/f53z29/swc_is_a_typescript_javascript_compiler_its_20x/)
+## [2][How does your typescript code sound? The app creates a melody from the JS or TS code you enter](https://www.reddit.com/r/typescript/comments/f5q86v/how_does_your_typescript_code_sound_the_app/)
+- url: https://soundcode.now.sh/
+---
+
+## [3][Any strategies to make typescript launch faster?](https://www.reddit.com/r/typescript/comments/f5oacn/any_strategies_to_make_typescript_launch_faster/)
+- url: https://www.reddit.com/r/typescript/comments/f5oacn/any_strategies_to_make_typescript_launch_faster/
+---
+I'm using ts-node and jest. Launching a test takes forever. Typescript takes about 1-10 seconds more to launch than simple node. There doesn't seem to be any feature to tell me which files are taking the longest so there's no way to optimize. My project is rather large, hundreds of files, 100k lines+. Some files are required dynamically, which might cause a problem but no way to really know how much of a problem it is.
+## [4][I still don't entirely understand decorators in TypeScript?](https://www.reddit.com/r/typescript/comments/f5e59h/i_still_dont_entirely_understand_decorators_in/)
+- url: https://www.reddit.com/r/typescript/comments/f5e59h/i_still_dont_entirely_understand_decorators_in/
+---
+That's really my question, I just don't understand what they are exactly. That doesn't mean I can't use them, but don't understand what function they serve in my code?   Thanks in advance.
+## [5][proxy-watcher - A function that recursively watches an object for mutations via Proxies and tells you which paths changed](https://www.reddit.com/r/typescript/comments/f5he2l/proxywatcher_a_function_that_recursively_watches/)
+- url: https://github.com/fabiospampinato/proxy-watcher
+---
+
+## [6][decoupling a complex set of generic interfaces from its much simpler TypeScript code](https://www.reddit.com/r/typescript/comments/f5of1v/decoupling_a_complex_set_of_generic_interfaces/)
+- url: https://www.reddit.com/r/typescript/comments/f5of1v/decoupling_a_complex_set_of_generic_interfaces/
+---
+I am writing a TypeScript library, and I am trying to add generics to the public-facing functions in order to the strengthen their type checking and improve IDE autosuggestions. The problem is that the generics end up needing to be passed all throughout the codebase because some of the public-facing functions are also used internally. And the generic types are also a bit complex, with multiple parameters, ternary logic, lookups, and references to other custom generic types. I don't want to rewrite every function with these new types. The public-facing functions need them, the internals do not.
+
+I want to write the generic types so that they behave as the library's interface but do not affect any of the existing internal code. Like a layer that just sits in front, completely decoupled, much like how type declaration files are for JS files. Can a TypeScript library have its own declaration files? How would you suggest I solve this?
+## [7][Is a generic deep flatten function possible in TS?](https://www.reddit.com/r/typescript/comments/f5d1ud/is_a_generic_deep_flatten_function_possible_in_ts/)
+- url: https://www.reddit.com/r/typescript/comments/f5d1ud/is_a_generic_deep_flatten_function_possible_in_ts/
+---
+Is it possible to write a generic TS function for recursively flattening an arbitrarily nested array?
+
+For example:
+
+    const input = [1,[2,[3,[4,[5],6],7],8],9];
+    const output = flattenDeep(input); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+This is pretty simple to write in JS
+
+    function flattenDeep(array) {
+      const result = [];
+      for(const value of array) {
+        if(Array.isArray(value)) {
+          result.push(...flattenDeep(value));
+        } else {
+          result.push(value);
+        }
+      }
+      return result;
+    }
+
+But is there a way to add generic types to this, so it will infer the input/output types in the example above?
+## [8][No compile check for generics?](https://www.reddit.com/r/typescript/comments/f5cu8o/no_compile_check_for_generics/)
+- url: https://www.reddit.com/r/typescript/comments/f5cu8o/no_compile_check_for_generics/
+---
+Given the following code:
+
+&gt;interface Contract&lt;T&gt; {  
+}  
+class Deal&lt;D&gt; implements Contract&lt;D&gt; {  
+}  
+class Agreement&lt;A&gt; implements Contract&lt;A&gt; {  
+}  
+
+
+I would have expected this not to compile:
+
+&amp;#x200B;
+
+&gt;let deal:Contract&lt;number&gt; = new Deal&lt;number&gt;()  
+let agreement:Contract&lt;string&gt; = new Agreement&lt;string&gt;()  
+&gt;  
+&gt;  
+// expects this to not compile  
+agreement = deal;
+
+or this
+
+&gt;let deal:Deal&lt;number&gt; = new Deal&lt;number&gt;()  
+let agreement:Agreement&lt;string&gt; = new Agreement&lt;string&gt;()  
+&gt;  
+&gt;  
+// expects this to not compile  
+agreement = deal;
+
+But they both compile!
+
+Here is a playground link [https://www.typescriptlang.org/play/index.html?ssl=17&amp;ssc=18&amp;pln=17&amp;pc=26#code/JYOwLgpgTgZghgYwgAgMIHtxUWAPAFQD5kBvAKAF8yyEAbOAZweQBEI5bcXjgBbAB1oReEcMwxYcXYuSo16TZAEEA5lAjDReJTwFCRYtJjDYE2mZWpCwyACbtaALgkmpIAK68ARtGIBeZBAIAHdWB1wPb18ACgBKMmtkODUNAzBnY1M8BhNQFX9AkOUUzXBcHKg8wjjqAHpa5AgAD34IM2YwAAtgDvRA9BsEdAFgITJk9VKbAPsOAG46hsTZpzYOCM8fKAKg0LXOSK3q+PrkRInUrUdVSbTy3JB85ADd4tute8rH48XkU+bWu1kF0esC+uBkEMRmNThcps87A45kA](https://www.typescriptlang.org/play/index.html?ssl=17&amp;ssc=18&amp;pln=17&amp;pc=26#code/JYOwLgpgTgZghgYwgAgMIHtxUWAPAFQD5kBvAKAF8yyEAbOAZweQBEI5bcXjgBbAB1oReEcMwxYcXYuSo16TZAEEA5lAjDReJTwFCRYtJjDYE2mZWpCwyACbtaALgkmpIAK68ARtGIBeZBAIAHdWB1wPb18ACgBKMmtkODUNAzBnY1M8BhNQFX9AkOUUzXBcHKg8wjjqAHpa5AgAD34IM2YwAAtgDvRA9BsEdAFgITJk9VKbAPsOAG46hsTZpzYOCM8fKAKg0LXOSK3q+PrkRInUrUdVSbTy3JB85ADd4tute8rH48XkU+bWu1kF0esC+uBkEMRmNThcps87A45kA)
+
+I would have expected that a Generic&lt;A&gt; is not the same as Generic&lt;B&gt; and the compiler should not allow assigning one to the other. What am I missing here?
+## [9][swc is a typescript / javascript compiler. It's 20x faster than babel.](https://www.reddit.com/r/typescript/comments/f53z29/swc_is_a_typescript_javascript_compiler_its_20x/)
 - url: https://swc-project.github.io/
 ---
 
-## [3][TypeScript Generics. Discussing naming conventions](https://www.reddit.com/r/typescript/comments/f58ox4/typescript_generics_discussing_naming_conventions/)
+## [10][TypeScript Generics. Discussing naming conventions](https://www.reddit.com/r/typescript/comments/f58ox4/typescript_generics_discussing_naming_conventions/)
 - url: https://wanago.io/2020/02/17/typescript-generics-discussing-naming-conventions/
 ---
 
-## [4][Am I doing it right?](https://www.reddit.com/r/typescript/comments/f560e3/am_i_doing_it_right/)
-- url: https://www.reddit.com/r/typescript/comments/f560e3/am_i_doing_it_right/
+## [11][Typescript Namespace Tricks](https://www.reddit.com/r/typescript/comments/f5g906/typescript_namespace_tricks/)
+- url: https://www.reddit.com/r/typescript/comments/f5g906/typescript_namespace_tricks/
 ---
-I'm working on a Firefox extension with TypeScript, and I have `webpack` set up with `ts-loader` to produce several `.js` files, each corresponding to its own entry point within the FF extension.
-
-I'm using `webpack` in watch mode (with `yarn webpack-cli`), so the files get recompiled whenever there's a change.
-
-The `webpack` config for each file has this part:
-
-    module: {rules: [{use: 'ts-loader', exclude: /node_modules/,},],},
-    resolve: {extensions: ['.tsx', '.ts'],},
-
-My question is, am I doing something standard or am I over-complicating things? My suspicion that I'm over-complicating things is due to the fact that I had to install three different things (`webpack`, `ts-loader`, `webpack-cli`) to do just one thing. I know TypeScript itself can also produce a single transpiled `.js` file. Is that preferred? Or do both work? Thanks.
-## [5][Typescript Generics - why doesn't this throw an error?](https://www.reddit.com/r/typescript/comments/f4v69j/typescript_generics_why_doesnt_this_throw_an_error/)
-- url: https://www.reddit.com/r/typescript/comments/f4v69j/typescript_generics_why_doesnt_this_throw_an_error/
----
-I'm playing around with typescript just on the command line and am confused as to why the following compiles without any type errors.  If I deliberately type my mapper to use the same generic for input and output but then make use of it with an input and output of *different* types, shouldn't it fail to compile? (Note: formatting with backticks got messed up, assume the makeString function is valid syntax)
-
-`function map&lt;T&gt;(array: T[], f: (item: T) =&gt; T): T[] {`
-
-  `let result = []`  
-  `for (let i = 0; i &lt; array.length; i++) {`  
-`result[i] = f(array[i])`  
-`}`   
-  `return result`
-
-`}`
-
-`const arrayOfInts = [1,2,3]`
-
-`function makeString(item) {return \`${item}\`}\`
-
-`let mapped = map(arrayOfInts, makeString);`
-
-`console.log(mapped)`
-
-It's only when I add typing to \`makeString\` indicating that it will accept one type T and return a string that this will fail to compile.
-## [6][Frontend build tools and typescript](https://www.reddit.com/r/typescript/comments/f4rc5f/frontend_build_tools_and_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/f4rc5f/frontend_build_tools_and_typescript/
----
-Hello! So figured i was going to try and learn typescript by doing a frontend project in react and typescript. As i was setting up dev dependencies it hit me that, as far as i understand, the typescript compiler both transpiles and bundles your code. My question is: what role does tools like Babel and Webpack play when you are developing frontend with typescript?
-## [7][Why are namespaces regarded as deprecated?](https://www.reddit.com/r/typescript/comments/f4x6co/why_are_namespaces_regarded_as_deprecated/)
-- url: https://www.reddit.com/r/typescript/comments/f4x6co/why_are_namespaces_regarded_as_deprecated/
----
-When asked what features he regretted integrating into the language Anders Hejlsberg mentioned ``namespace`` invoking the fact that it was made deprecated by the ECMAScript module system.
-
-This came as a shock to me as I am making extensive use of ``namespace``.
-I do not see how ECMAScript module can replace namespace, using module imply splitting the code into different files.
-
-
-Consider this example:
-```typescript
-export type Person = Person.Student | Person.Teacher;
-
-export namespace Person {
-
-    export type Common_ = {
-        name: string;
-        age: number;
-    };
-
-    export type Student = Common_ &amp; {
-        type: "STUDENT";
-        grades: {
-            maths: number;
-            compSci: number;
-        };
-    };
-
-    export namespace Student {
-
-        export const match = (person: Person): person is Student =&gt;
-            person.type === "STUDENT";
-
-        export const getAverageScore = (student: Student) =&gt;
-            (student.grades.compSci + student.grades.maths) / 2;
-
-    }
-
-    export type Teacher = Common_ &amp; {
-        type: "TEACHER";
-        subject: "MATH" | "COMP-SCI";
-    };
-
-    export namespace Teacher {
-
-        export const match = (person: Person): person is Teacher =&gt;
-            person.type === "TEACHER";
-
-    }
-
-}
-
-{
-
-    const logPerson = (person: Person) =&gt;
-        console.log([
-            person.name,
-            Person.Student.match(person) ?
-            `is a student, averageScore is: ${Person.Student.getAverageScore(person)}` :
-            `is a ${person.subject} teacher`
-       ].join(" "))
-       ;
-
-
-    const teacher: Person.Teacher = {
-        "type": "TEACHER",
-        "age": 53,
-        "name": "Bob",
-        "subject": "MATH"
-    };
-
-    //Prints: "Bob is a MATH teacher"
-    logPerson(teacher);
-
-}
-```
-
-I see many advantages to structuring the code types definition this way.  
-First I can just import { Person } and get all the type hierarchy.  
-
-If I do not put ``Student`` and ``Teacher`` in the ``Person``'s namespace nothing tells me that they are a subset of ``Person``.  
-
-When I need a function that I know to be tightly coupled with a type I can easily find it and it doesn't matter if I don't remember exactly its name, IntelliSense will guide me to ``Person.Student.getAverageScrore(student)`` but if I define ``getStudentAverageScore(student)`` I will have to remember in which file I have defined it and Intellisense won't be of any help to find it.  
-
-At last, when I am browsing to my code if I don't care about the type ``Person`` and everything that is related to it I can simply fold its namespace.  
-
-
-Maybe my approach is not sound there is an obviously better design pattern?
-What do you guys think about namespaces?
-## [8][I just made my first NodeJS oriented package. Nodehawk - A development watcher for your Node servers.](https://www.reddit.com/r/typescript/comments/f4rkrx/i_just_made_my_first_nodejs_oriented_package/)
-- url: https://github.com/samrith-s/nodehawk
----
-
-## [9][debog - A simple drop-in decorator to track timing of class methods](https://www.reddit.com/r/typescript/comments/f4j7i2/debog_a_simple_dropin_decorator_to_track_timing/)
-- url: https://github.com/UnicornHeartClub/debog
----
-
-## [10][Quick Yet NOT dirty — lazy form of the Observer Pattern](https://www.reddit.com/r/typescript/comments/f4he51/quick_yet_not_dirty_lazy_form_of_the_observer/)
-- url: https://medium.com/@lironhazan/quick-yet-not-dirty-lazy-form-of-the-observer-pattern-6d2672ead884?source=friends_link&amp;sk=b6c300d0f210375c201c5828c538bdbc
----
-
-## [11][How to refactor this code using Optional Chaining?](https://www.reddit.com/r/typescript/comments/f48m23/how_to_refactor_this_code_using_optional_chaining/)
-- url: https://www.reddit.com/r/typescript/comments/f48m23/how_to_refactor_this_code_using_optional_chaining/
----
-`res.data.items ? res.data.items[0].id : undefined`
-
-I've tried this but didn't work
-
-`res.data.items[0]?.id`
-
-`res.data.items?[0].id`
+Hello! I wanted to share a blog post I wrote, [Typescript Namespace Tricks](https://www.gatlin.io/blog/post/typescript-namespace-tricks?utm_source=reddit&amp;utm_medium=link&amp;utm_campaign=1-blog-post), about ways to use Typescript Namespaces that I wish I knew back when I first started writing Typescript. I hope you enjoy :D

@@ -1,9 +1,58 @@
 # Kotlin
-## [1][Should I use 'and' and 'or' instead of &amp;&amp; and ||?](https://www.reddit.com/r/Kotlin/comments/f55bup/should_i_use_and_and_or_instead_of_and/)
+## [1][Is it a best practice to directly use the property to assign value now?](https://www.reddit.com/r/Kotlin/comments/f5p3fg/is_it_a_best_practice_to_directly_use_the/)
+- url: https://www.reddit.com/r/Kotlin/comments/f5p3fg/is_it_a_best_practice_to_directly_use_the/
+---
+For example, View has setVisibility.
+
+In Java, I always use view.setVisibility(...), but Android Studio gives me warning of "Use of setter method instead of property access syntax" in Kotlin, while if I use view.visibility directly, the warning is gone.
+## [2][Kotlin User Group Mumbai](https://www.reddit.com/r/Kotlin/comments/f5r5f1/kotlin_user_group_mumbai/)
+- url: https://www.reddit.com/r/Kotlin/comments/f5r5f1/kotlin_user_group_mumbai/
+---
+Hello Everyone if you are an Android Developer living in Mumbai,India we have a community called Kotlin User Group Mumbai so if you are interested and want Explore the world of Kotlin join us here
+
+ [https://www.meetup.com/Kotlin-User-Group-Mumbai/](https://www.meetup.com/Kotlin-User-Group-Mumbai/)
+## [3][Need some guidance.](https://www.reddit.com/r/Kotlin/comments/f5n8ws/need_some_guidance/)
+- url: https://www.reddit.com/r/Kotlin/comments/f5n8ws/need_some_guidance/
+---
+I need to create an app that is basically a floor-by-floor guide of a hospital. People have a hard time finding the room that they want to go to, and I just thought it would rather be helpful to make an app for it. So obviously, what I need is to first make the sketch of every floor, and that a user can search for a specific room. I thought this would be a good enough beginner project.
+
+I have taken the basics tutorial, but I still am pretty new. I cannot understand how I can structure everything, and how to implement everything. Any help would be greatly appreciated. Thanks.
+## [4][@kotlin tweet about ability to override `val` with `var` got negative reactions. What are your thoughts?](https://www.reddit.com/r/Kotlin/comments/f596wz/kotlin_tweet_about_ability_to_override_val_with/)
+- url: https://www.reddit.com/r/Kotlin/comments/f596wz/kotlin_tweet_about_ability_to_override_val_with/
+---
+Tweet: [https://twitter.com/kotlin/status/1227993505332682753](https://twitter.com/kotlin/status/1227993505332682753)
+
+Apparently, people didn't like this "feature", but also no one wrote arguments in favor of/against it. What are your thoughts? Should var/val be part of the contract or considered an implementation detail, and why?
+## [5][Generate Kotlin Docs using Dokka](https://www.reddit.com/r/Kotlin/comments/f59tpx/generate_kotlin_docs_using_dokka/)
+- url: https://www.coroutinedispatcher.com/2020/02/generate-kotlin-docs-using-dokka.html
+---
+
+## [6][Should I use 'and' and 'or' instead of &amp;&amp; and ||?](https://www.reddit.com/r/Kotlin/comments/f55bup/should_i_use_and_and_or_instead_of_and/)
 - url: https://www.reddit.com/r/Kotlin/comments/f55bup/should_i_use_and_and_or_instead_of_and/
 ---
 
-## [2][understanding coroutines / channels](https://www.reddit.com/r/Kotlin/comments/f4sakk/understanding_coroutines_channels/)
+## [7][What you think about this Kotlin migration video?](https://www.reddit.com/r/Kotlin/comments/f5bxc7/what_you_think_about_this_kotlin_migration_video/)
+- url: https://www.youtube.com/watch?v=bAsHE7IA4Xc&amp;t=25s
+---
+
+## [8][Simple Kotlin Exponential backoff library](https://www.reddit.com/r/Kotlin/comments/f5h8ri/simple_kotlin_exponential_backoff_library/)
+- url: https://github.com/reugn/kotlin-backoff
+---
+
+## [9][Implementing topics for users for an e-learning app](https://www.reddit.com/r/Kotlin/comments/f5baq1/implementing_topics_for_users_for_an_elearning_app/)
+- url: https://www.reddit.com/r/Kotlin/comments/f5baq1/implementing_topics_for_users_for_an_elearning_app/
+---
+This is for a project of mine for my class. Right now I have designed and coded the login, register, and the homepage. But what I want is upon the user making the account. I want the next page to be where the user selects one topic they wish to learn. (Sort of like how twitter when you create an account, it shows you a list of famous twitter accounts to follow)
+
+ Once they tick the one they wish to learn and submit, in the next page (homepage) it will be displayed in the homepage feed, with articles, research papers and so on. My question is, how would I implement these topics? I want to have 4-5 topics for the user to pick from. How would I store/implement these topics so that they will be displayed uniquely depending on what the user has previously picked. And then next time you login, all that is presented on the home screen. 
+
+
+This is my flowchart ; https://prnt.sc/r3n33t
+
+I'm using firebase for the storage and right now my storage is just for the users. 
+
+Any help would be greatly appreciated. I'm new to this.
+## [10][understanding coroutines / channels](https://www.reddit.com/r/Kotlin/comments/f4sakk/understanding_coroutines_channels/)
 - url: https://www.reddit.com/r/Kotlin/comments/f4sakk/understanding_coroutines_channels/
 ---
 Hi,
@@ -60,114 +109,3 @@ with the Output
     5 consumed
 
 So why are there two downloads running at a time. I thought with the context of 5 Threads it would start all 5 downloads.
-## [3][Stream processing for computing approximations](https://www.reddit.com/r/Kotlin/comments/f4udv4/stream_processing_for_computing_approximations/)
-- url: https://blog.frankel.ch/stream-processing/2/
----
-
-## [4][Kotlin scoped functions](https://www.reddit.com/r/Kotlin/comments/f4ec6n/kotlin_scoped_functions/)
-- url: https://www.rockandnull.com/kotlin-let/
----
-
-## [5][Hyderabad Kotlin User Group (Hyderabad, India)](https://www.reddit.com/r/Kotlin/comments/f4jncs/hyderabad_kotlin_user_group_hyderabad_india/)
-- url: https://www.reddit.com/r/Kotlin/comments/f4jncs/hyderabad_kotlin_user_group_hyderabad_india/
----
-Hi,
-
-If you are living in are around  Hyderabad or Secendrabad, Telanganam India. Feel free to join us in our Kotlin User Group. We are just started so be connected to monthly meetings and other events. 
-
-URL https://www.meetup.com/Hyderabad-Kotlin-User-Group/
-
-Feel free to share with your colleagues and friends
-## [6][Hyderabad Kotlin User Group (Hyderabad, India)](https://www.reddit.com/r/Kotlin/comments/f4jnvq/hyderabad_kotlin_user_group_hyderabad_india/)
-- url: https://www.meetup.com/Hyderabad-Kotlin-User-Group/
----
-
-## [7][Setter annotation inheritance](https://www.reddit.com/r/Kotlin/comments/f4i72w/setter_annotation_inheritance/)
-- url: https://www.reddit.com/r/Kotlin/comments/f4i72w/setter_annotation_inheritance/
----
-Hi
-
-I have these classes.
-
-    @Target(AnnotationTarget.FUNCTION,AnnotationTarget.VALUE_PARAMETER,AnnotationTarget.CLASS,AnnotationTarget.FIELD,AnnotationTarget.PROPERTY_SETTER) u/Inherited annotation class Name(val name:String,val valueName:String=""){}
-    
-    @Target(AnnotationTarget.CLASS)
-    @Inherited
-    annotation class Context(val name:String){}
-    
-    @Target(AnnotationTarget.FUNCTION,AnnotationTarget.PROPERTY_SETTER)
-    @Inherited
-    annotation class ArgumentSetter {
-    }
-    
-    @Name("test")
-    @Context("test")
-    internal interface ParentWithAnnotations {
-        var test: String
-            @Name("field", valueName = "value") @ArgumentSetter set
-    }
-    
-    internal class AnnotatedParent : ParentWithAnnotations {
-        override var test: String = ""
-    }
-    
-    assertEquals(1,data::test::setter.annotations.stream().peek({println(it)}).filter { it == ArgumentSetter::class.java }.count())
-
-I want to make it so I can read the setter annotations of the interface property from the implementation class. Is this possible?
-## [8][Is there a way to make a data class open?](https://www.reddit.com/r/Kotlin/comments/f48mnz/is_there_a_way_to_make_a_data_class_open/)
-- url: https://www.reddit.com/r/Kotlin/comments/f48mnz/is_there_a_way_to_make_a_data_class_open/
----
-I'm trying to use the ModelMapper library with data classes. To build an explicit type map it needs to proxy my class, and data classes cannot be extended and therefore cannot be proxied. Is there a way around this? Some compiler setting? I've tried all-open but I can't seem to get it to work.
-
-Thanks.
-## [9][Why are parameters passed into a function always val?](https://www.reddit.com/r/Kotlin/comments/f4fdvw/why_are_parameters_passed_into_a_function_always/)
-- url: https://www.reddit.com/r/Kotlin/comments/f4fdvw/why_are_parameters_passed_into_a_function_always/
----
-Title. And how can I make a parameter mutable?
-
-e.g. 
-
-&amp;#x200B;
-
-    fun testFunction(a: String)
-    {
-        a = a + "yelp"
-    }
-    
-    fun main() {
-        var a: String = "Help, "
-        testFunction(a)
-    }
-## [10][how do you even print a 2d array in kotlin??](https://www.reddit.com/r/Kotlin/comments/f4avak/how_do_you_even_print_a_2d_array_in_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/f4avak/how_do_you_even_print_a_2d_array_in_kotlin/
----
-Hi, I am new to kotlin, I have been using Java for a while, and I still have to get used to Kotlin.
-
-The main thing is that Kotlin's for loop is quite different (I'm pretty sure that's similar to python's ones).
-
-&amp;#x200B;
-
-If for example I have to print this 2d array:
-
-&amp;#x200B;
-
-    var 2dArray = arrayOf(
-        arrayOf(1, 2, 3, 4, 5),
-        arrayOf(6, 7, 8, 9, 10)
-    )
-
-how do you do that in kotlin?
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-I tried with:
-
-    for (i in 2dArray) {
-            for (j in 2dArray) {
-                print("$j")
-            }
-        }
-
-&amp;#x200B;

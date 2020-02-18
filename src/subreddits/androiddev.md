@@ -31,91 +31,91 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Looking to grab onto something when creating your first app? Here is a free source code!](https://www.reddit.com/r/androiddev/comments/f560nv/looking_to_grab_onto_something_when_creating_your/)
-- url: https://www.reddit.com/r/androiddev/comments/f560nv/looking_to_grab_onto_something_when_creating_your/
----
-Like most developers, I use my own projects as a sandbox for exploring new stuff.I would like to open source my app, which has more than 50.000 downloads.It does use generic abstractions of architecture components, Room, Koin, LiveData, Fragments, Kotlin Coroutines, AndroidX and more. Hopefully it might be a helpful material for new devs. Source code can be found here: [https://github.com/edgar-zigis/Paleontologas](https://github.com/edgar-zigis/Paleontologas)
-
-**(Say thanks by starring repository :)))**
-## [4][Flutter Might Be Your Technology of Choice for Mobile in 2020 – Here Is Why](https://www.reddit.com/r/androiddev/comments/f58df1/flutter_might_be_your_technology_of_choice_for/)
-- url: https://infinum.com/the-capsized-eight/flutter-might-be-your-technology-of-choice-for-mobile-in-2020?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=flutter_technology_2020
+## [3][Coding Exercises Should Not Be Used to Rank Candidates](https://www.reddit.com/r/androiddev/comments/f5q8mv/coding_exercises_should_not_be_used_to_rank/)
+- url: https://medium.com/better-programming/coding-exercises-should-not-be-used-to-rank-candidates-7b0fbde86fe6
 ---
 
-## [5][How would I go about supporting admin features in my app?](https://www.reddit.com/r/androiddev/comments/f56nyi/how_would_i_go_about_supporting_admin_features_in/)
-- url: https://www.reddit.com/r/androiddev/comments/f56nyi/how_would_i_go_about_supporting_admin_features_in/
----
-So I have an app that I want to make available for users but that also needs to be able to give admin privileges to some users, maybe only me.
-
-I know that in web dev you could just have an account with Admin privileges show a custom dashboard, so would something similar to that work in Android? Maybe It'd be better to create 2 apps for the purpose (one for users and one for admins)? Or would back-end dashboards(WordPress/Azure/Firebase Console) management be the best way? 
-
-What would be the most proper way to accomplish this as per best practices and flexibility in Android? I am using Kotlin, AAC and MVVM.
-## [6][Session - A Signal protocol fork with decentralized servers and no need for a phone number](https://www.reddit.com/r/androiddev/comments/f4z4tu/session_a_signal_protocol_fork_with_decentralized/)
-- url: https://www.reddit.com/r/androiddev/comments/f4z4tu/session_a_signal_protocol_fork_with_decentralized/
----
- r/androidapps suggest I cross-post this...
-
-Session is a cross-platform, anonymous and decentralized messaging application. You don't need a phone number or email address to make an account.
-
-Session uses the Loki Service Node network to route the data, for which the nodes are rewarded with $LOKI. The Loki Network itself is made up of some \~1000 community operated Service Nodes where 44% of the supply is held in the SNs - about US$7.5 million at the moment.
-
-I love Signal, but I don't love the attached phone numbers or central servers, but I know there's a challenge in allowing an altruistic intention over a financial incentive for the node operators - Sybil resistance. By using Loki's Service Node network, the crypto-economics is designed in a way that a bad actor would drive the price exponentially up while trying to accumulate enough Loki to be able to perform any traffic analysis on the routed data.
-
-Think of it as a Signal fork meets a Monero fork meets an incentivized TOR network.
-
-Web: [getsession.org](https://getsession.org/)
-
-Whitepaper: [https://getsession.org/wp-content/uploads/2020/02/Session-Whitepaper.pdf](https://getsession.org/wp-content/uploads/2020/02/Session-Whitepaper.pdf)
-## [7][I'm designing an app for a school project. The assignment says it has to be culturally friendly/divers. Besides multiple languages options, what can there be done ?](https://www.reddit.com/r/androiddev/comments/f56eok/im_designing_an_app_for_a_school_project_the/)
-- url: https://www.reddit.com/r/androiddev/comments/f56eok/im_designing_an_app_for_a_school_project_the/
+## [4][GitHub - JakeWharton/shimo: Shimo is an adapter for Moshi which randomizes the order of keys when serializing and deserializing](https://www.reddit.com/r/androiddev/comments/f5efzj/github_jakewhartonshimo_shimo_is_an_adapter_for/)
+- url: https://github.com/JakeWharton/shimo/
 ---
 
-## [8][GitHub - akexorcist/Android-Localization: Let's make language swithching in your app with easy way](https://www.reddit.com/r/androiddev/comments/f4slmj/github_akexorcistandroidlocalization_lets_make/)
-- url: https://github.com/akexorcist/Android-Localization
+## [5][Is it really impossible to secure an API key in an Android app?](https://www.reddit.com/r/androiddev/comments/f5rrt4/is_it_really_impossible_to_secure_an_api_key_in/)
+- url: https://www.reddit.com/r/androiddev/comments/f5rrt4/is_it_really_impossible_to_secure_an_api_key_in/
+---
+So I need to make sure that a request to my API really comes from my app. My solution is to use an API key. But putting an API key in the app isn't safe from reverse engineering. Here are some solutions I found online:
+
+**Solution 1: Hide it using NDK**
+
+I can hide the API key inside a native code or do the entire API call there. But an attacker can still extract my .so file and use it to access my API.
+
+**Solution 2: Save it in the server**
+
+I can save the key in the server and my app will download the key everytime it needs to access the API. Or download once, encrypt it using Android Keystore, then save the encrypted key in the shared preferences. But an attacker can look for the code to download the key and do it manually without my app. Or he/she can sniff the downloading process easily using Fiddler, Charles, or Wireshark.
+
+Is it really impossible to secure an API from unauthorized access?
+## [6][How to test Android apps in Virtual machine (from Android studio)](https://www.reddit.com/r/androiddev/comments/f5qmsg/how_to_test_android_apps_in_virtual_machine_from/)
+- url: https://www.reddit.com/r/androiddev/comments/f5qmsg/how_to_test_android_apps_in_virtual_machine_from/
+---
+I am running Android studio inside VMware virtual machine. When I tried to launch Android emulator, Android studio says that it can't run inside vm. (Although x86 version of Android emulator can be run, it is very very slow) Genymotion is also failing to run on vm.
+Is there any way to run android apps inside vm?
+## [7][Marketing a game as a spare time developer with a small-ish budget](https://www.reddit.com/r/androiddev/comments/f5lamj/marketing_a_game_as_a_spare_time_developer_with_a/)
+- url: https://www.reddit.com/r/androiddev/comments/f5lamj/marketing_a_game_as_a_spare_time_developer_with_a/
+---
+Hi all,
+
+I've spent the last few years creating Android games with some varying success in my spare time, a game a released last year is called 'Tennis Superstars' I was really happy with how the game turned out but have had a very limited success in the app store. The feedback I've had has been great (avg 4.6 reviews [https://play.google.com/store/apps/details?id=com.moz.tennis](https://play.google.com/store/apps/details?id=com.moz.tennis&amp;hl=en_US)) but I think there is a visibility problem with the game, I'm way down in the Play Store when I search for 'Tennis games'.
+
+I am more than willing to invest some money into promoting this game, but I don't know what would be effective with a budget in the range of $100's of dollars, is anything achievable? In the past I have spent $100+ overall in Facebook advertising app installs with little success, I don't feel like this is the right way. I've also done a whole bunch of app giveaways and free advertising on sites such as reddit (/r/Tennis for example) which seemed to work better than the Facebook adverts.
+
+Is it possible to submit my app to receive a paid review from either a website or a social media influencer? Is there a reliable company that can manage this process on a small scale? I thought paid reviews could be submitted to [www.androidpolice.com](https://www.androidpolice.com) but I can't see where? I've also seen a lot of scammy looking websites offering to market games that obviously I don't want to get involved in. Maybe it would be a good idea to get a paid review from an Android gaming YouTuber?
+
+I imagine a lot of spare time developers are in this situation, I'm not expecting something from nothing, I want to invest money in my marketing - I just want to do it in a sensible way.
+## [8][Desktop Entry for Stable And Preview version of Android Studio](https://www.reddit.com/r/androiddev/comments/f5r3ek/desktop_entry_for_stable_and_preview_version_of/)
+- url: https://www.reddit.com/r/androiddev/comments/f5r3ek/desktop_entry_for_stable_and_preview_version_of/
+---
+Android Studio allow to create desktop entry from "Tools-&gt;Create Desktop Entry", but if you try to do it with two versions of IDE (Stable, Preview) at the same time, desktop entry will be overridden
+
+And i'd like to share solution and make two versions available from desktop:
+
+For Stable version you can use  "Tools-&gt;Create Desktop Entry"
+
+For Preview version you can use this files: [gist](https://gist.github.com/lndmflngs/7edfee54adf378f5db1886e08eadbe66)
+
+Edit files with your properties, put them at one folder and run `sudo ./create_desktop_entry.sh`  
+
+Result:  
+
+
+https://preview.redd.it/pu3ctv69foh41.png?width=498&amp;format=png&amp;auto=webp&amp;s=c0e1eef62da3e1344081a8dccdbbf01cf0c3ee2f
+## [9][Hypercube. How to provide developers with phones for testing without losing any](https://www.reddit.com/r/androiddev/comments/f5r1nz/hypercube_how_to_provide_developers_with_phones/)
+- url: https://habr.com/en/company/yandex/blog/487722/
 ---
 
-## [9][Now in Android: January 23, 2020](https://www.reddit.com/r/androiddev/comments/f57b38/now_in_android_january_23_2020/)
-- url: https://medium.com/androiddevelopers/now-in-android-january-23-2020-587378171ae3
+## [10][[Kotlin] Store ArrayList persistent](https://www.reddit.com/r/androiddev/comments/f5qzyu/kotlin_store_arraylist_persistent/)
+- url: https://www.reddit.com/r/androiddev/comments/f5qzyu/kotlin_store_arraylist_persistent/
 ---
 
-## [10][Can we use the S20/Ultra depth sensors with ARCore?](https://www.reddit.com/r/androiddev/comments/f55a8z/can_we_use_the_s20ultra_depth_sensors_with_arcore/)
-- url: https://www.reddit.com/r/androiddev/comments/f55a8z/can_we_use_the_s20ultra_depth_sensors_with_arcore/
+
+My app is displaying a list of various categories (herbs, side dishes, ..) in a RecyclerView. Depending on the category you clicked on, a new Activity with a new RecylcerView opens containing all the ingredients.
+
+Right now I have an ArrayList which gets filled with the ingredients via ".add" depending on the choosen category.
+
+The problem im facing right now is, that I want to implement an option for the user to add own Ingredients. I tried storing the ArrayList containing the ingredients in SharedPreferences by using Gson, but I couldn't manage to add elements, since it always overwrote the current list.
+
+What would be the best way to store the ingredients? A room, sqlite, ..? Without further explanation, the ingredient list will only contain about 70 items max.
+
+Thanks in advance.
+## [11][Google Play Issue with Apps](https://www.reddit.com/r/androiddev/comments/f5oqqm/google_play_issue_with_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/f5oqqm/google_play_issue_with_apps/
 ---
-Just saw that the S20+ and S20Ultra will have a dedicated depth sensors. Would love to develop utilizing this.
-## [11][What's your AdMob fill rate ?](https://www.reddit.com/r/androiddev/comments/f54ydn/whats_your_admob_fill_rate/)
-- url: https://www.reddit.com/r/androiddev/comments/f54ydn/whats_your_admob_fill_rate/
+ I'm pretty new to developing android apps. I have published my first 2 apps on Google Play and the issue is that I can't have them both installed at the same time. I had the first one on my phone, but when I wanted to install my second one I couldn't do it unless I uninstalled the first app.
+
+Anyone had this issue before?
+
+The only thing the apps have in common is probably the .jks key used to generate the .aab bundle, but that shouldn't be a problem.
+
+And no, the apps don't have the same package name.
+## [12][Draw Path along stars with fingers in Canvas .](https://www.reddit.com/r/androiddev/comments/f5qxml/draw_path_along_stars_with_fingers_in_canvas/)
+- url: https://www.reddit.com/r/androiddev/comments/f5qxml/draw_path_along_stars_with_fingers_in_canvas/
 ---
-I am making a survey to benchmark my fill rate. I'm with my banners close to 100 percent, but with my interstitials around 70-80 percent. Seems there is a lot of unused potential for monetization.
-## [12][How to properly handle this IOException](https://www.reddit.com/r/androiddev/comments/f4v2mq/how_to_properly_handle_this_ioexception/)
-- url: https://www.reddit.com/r/androiddev/comments/f4v2mq/how_to_properly_handle_this_ioexception/
----
-I am trying to follow an online tutorial to see how okhttp works for requests in android studio using kotlin.
-
-I have managed to implement it successfully for when the request is good.
-
-However when the request is unsuccessful (invalid search by the user, api not working properly, too many requests etc.) My app just crashes and closes down.
-
-How can I edit my code so the error is handled properly and the app doesn't have to shut down.
-
-example:
-
-The user enters a key that is not valid so the api request fails.
-
-I don't want the app to close but a toast to pop up saying "check your input is valid".
-
-How can I do this?
-
-    val url = "www.google.com"
-    
-            val request = Request.Builder().url(url).build()
-            val client = OkHttpClient()
-    
-            client.newCall(request).enqueue(object : Callback {
-                override fun onResponse(call: Call, response: Response) {
-                   //code if request is successful.
-    
-                }
-    
-                override fun onFailure(call: Call, e: IOException) {
-                    //code if request was unsuccessful
-                }
-            })
+Hi there .I am able to draw line in canvas using path when user finger moves changing paint line colors and all ,  But my need is i need to draw stars along the line .Any hint please ...

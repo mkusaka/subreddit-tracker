@@ -561,7 +561,111 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [3][My Favorite Unknown C++20 Feature](https://www.reddit.com/r/cpp/comments/f50ag6/my_favorite_unknown_c20_feature/)
+## [3][This is why we can('t) have nice things - Timu van der Kuil - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f5pdvu/this_is_why_we_cant_have_nice_things_timu_van_der/)
+- url: https://www.youtube.com/watch?v=sawtgibAlvg
+---
+
+## [4][Freestanding in Prague](https://www.reddit.com/r/cpp/comments/f5hgqm/freestanding_in_prague/)
+- url: https://www.reddit.com/r/cpp/comments/f5hgqm/freestanding_in_prague/
+---
+# Freestanding in Prague
+
+The C++ standards committee met in Prague, Czech Republic between Feb 10 and Feb 15. The standard is wording complete, and the only thing between here and getting it published is ISO process.  As is typical for me at these meetings, I spent a lot of time doing freestanding things, Library Incubator (LEWGI) things, and minuting along the way (15-ish sessions/papers!).
+
+# Freestanding
+
+I had three freestanding papers coming into this meeting:
+
+* [P1641](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1641r2.html): Freestanding Library: Rewording the Status Quo
+* [P1642](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1642r2.html): Freestanding Library: Easy `[utilities]`, `[ranges]`, and `[iterators]`
+* [P2013](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2013r0.html): Freestanding Language: Optional `::operator new`
+
+The first two papers are pieces of my former "[P0829](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0829r4.html): Freestanding Proposal" paper, and had been seen by the Feature Test study group in [Belfast](https://www.reddit.com/r/cpp/comments/dvh72f/trip_report_freestanding_errors_in_belfast/).  During this meeting, I got to run them by the Library Incubator for some design feedback.  The papers were received well, though some potential danger points still exist.  Library Evolution can look at the papers as soon as they have time.
+
+P2013 is the first smaller piece taken out of "[P1105](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1105r1.html): Leaving no room for a lower-level language: A C++ Subset".  Exceptions are probably the most important thing in P1105, but there's so much activity going on in this area that it is hard for me to make good recommendations.  The next highest priority was `new` and `delete`, hence P2013 being born.  I also felt that P2013 was a good test paper to see if the committee was willing to make any language based change for freestanding.
+
+I had presented P2013 in a prior Low Latency / SG14 telecon, and received unanimous approval (no neutral, no against votes).  I was able to present it in the Evolution Incubator, and received no against votes.  Then, in a surprisingly quick turnaround, I was able to present to Evolution, and again received no against votes.  So now I just need to come up with wording that accomplishes my goals, without breaking constant evaluated `new`.
+
+# Errors and ABI
+
+On Monday, we held a join session between Evolution and Library Evolution to talk about one of the C++ boogeymen, ABI.  [P1836](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1863r1.pdf) and [P2028](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2028r0.pdf) have good background reading if you are not familiar with the topic.  The usual arguments were raised, including that we are losing out on performance by preserving ABI, and that breaking ABI would mean abandoning some software that cannot be rebuilt today.  We took some polls, and I fear that each person will interpret the polls differently.  The way I interpreted the polls is that we won't do a "big" ABI break anytime soon, but we will be more willing to consider compiler heroics in order to do ABI breaks in the library.
+
+One ABI area that is frequently overlooked is the situation that I am in.  I can rebuild all of my source code, but even despite that I still care about ABI because I don't ship all of it together.  I build a library with a plugin architecture, and breaking ABI would mean updating all the plugins on customer systems simultaneously... which is no easy task.  I also ship binaries on Linux systems.  We would prefer to be able to use new C++ features, despite targeting the various "LTS" distributions.  ABI stability is a big part of that.  I am hoping to make another post to r/cpp with my thoughts in the next few months, tentatively titled "ABI Breaks: Not just about rebuilding".
+
+On Tuesday, LEWG discussed "[P1656](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1656r0.html): 'Throws: Nothing' should be `noexcept`".  This is a substantial change to the policy laid out in [N3279](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3279.pdf), authored by Alisdair Meredith.  That's why it is informally called the "Lakos" rule.  We discussed the trade-offs involved, including how adding `noexcept` can constrain future changes, how `noexcept` can make precondition tests more difficult, and how this will change little in practice, because implementers already mark most "Throws: Nothing" calls as `noexcept`.  Arguments about performance, code bloat, and standards guaranteed portability won out though.  This paper was "only" a policy change, so a follow-on paper will need to be authored by someone in order to actually do the `noexcept` marking.
+
+Wednesday night we had a social event celebrating the impending C++20 release.  The event was held in the [Prague Crossroads](http://www.praguecrossroads.com/), built in 927 A.D..  The large tables let us have conversations with people we may not have really bumped into during the rest of the meeting.  I started talking exceptions with a few of the other people at the table, and one of the had some particularly in depth knowledge about the topic.  As it turns out, I was sitting at the same table as James Renwick of [Low-cost Deterministic C++ Exceptions for Embedded Systems](https://www.research.ed.ac.uk/portal/files/78829292/low_cost_deterministic_C_exceptions_for_embedded_systems.pdf) fame.  I ended up talking his ear off over the course of the night.
+
+Thursday in LEWG, we talked about Niall Douglas's "[P1028](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1028r3.pdf): SG14 status\_code and standard error object".  This is the class that may one day be thrown by [P0709](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0709r4.pdf) "Static" exceptions.  Coincidentally, the most contentious parts were issues involving ABI.  In several of the `virtual` interfaces in the standard, we've wanted to add things later, but haven't been able to do so.
+
+Friday, James Renwick was able to present his paper, and the room was very receptive of it.  One of my concerns going in to the presentation was that the committee would be unwilling to change anything in the standard related to today's exceptions.  After the presentation and discussion, I'm less concerned about that.  There was definitely a willingness to make some changes... but one of the big challenges is a question of whether we change default behavior in some cases, or change language ABI, even for C.
+
+# Other papers
+
+## [P1385: "High level" Linear Algebra](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1385r5.pdf)
+
+This one is the "high level" linear algebra paper.  There's a different, "lower level" linear algebra paper ([P1673](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1673r2.pdf)) that covers BLAS use cases.  P1385 is intended to be something that can sit on top of P1673, if I understand correctly.
+
+For being a math paper, there was surprisingly little math discussion in Library Incubator.  We were generally discussing general interface issues like object ownership, concept requirements, and how to spell various operations, particularly inner product and outer product.
+
+## [P1935: Physical Units](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1935r2.html)
+
+We are still in the philosophy and goals stage of this paper.  We got to discuss the finer points of the distinctions between "kilogram" and "1 kilogram"; the difference between a unit, a dimension, and a quantity; and the difference between systems and models.
+
+This paper is challenging in that there is significant prior art, as well as strong opinions about "the right way" to do things.  This gets to one of the trickier parts of standards meetings... driving consensus.  The interested parties have been requested to (preferably) work together outside of the three meetings a year, or failing that, to write a paper that gives some outline of what a solution should look like.
+
+This paper also has an absurdly awesome / terrifying metaprogramming trick in it.  A base class uses a `friend` declaration to declare (but not define) a function with an `auto` return type and no trailing return value.  The derived class then declares and defines the function (again via friend) and lets the definition of the function determine the auto return type.  This lets the base class use `decltype` to pull type information out of the derived class without explicitly passing that information down in a template argument (sorcery!).  The main caveat with this trick is that it only works with exactly one derived class, as otherwise you end up with multiple conflicting definitions of the same function.
+
+## Concurrent Queues, [P0260](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0260r3.html) and [P1958](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1958r0.html)
+
+It's amazing what a minor paper reorg will do for productivity.  This pair of papers used to be a single paper in the San Diego time frame, and we had a difficult time understanding how the pieces worked together.  With the paper split as it is now, we have a small, concrete piece to review, which we were then able to see how it fit in to the interfaces and concepts of the larger paper.  We got to dig in to some corner case traps with exception safety, move semantics, and race conditions.  There were implementers in the room that could say what their implementation did, and I feel that the room was able to give good feedback to the authors.
+
+## [P1944: constexpr &lt;cstring&gt; and &lt;cwchar&gt;](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1944r0.pdf)
+
+Antony Polukhin is secretly my accidental nemesis (well, not so secret anymore).  Over the course of C++20, he sprinkled `constexpr` on many of the things.  As it turns out, there is a large (but not 100%) overlap of `constexpr` and freestanding.  Each thing that went `constexpr` turned into a merge conflict that I got to resolve in my papers.
+
+And he's still at it!
+
+In this case, 100% of the things that were `constexpr`'d were also things that I have previously identified as being potentially freestanding.  So that's a positive.  There were concerns about implementability though, as sometimes, the C library and the C++ library come from different vendors, and having forwarding wrappers is far from trivial.
+
+# A minute about minuting
+
+For the wg21 readers out there, if you think you are bad at taking minutes, that just means you need more practice :) .  If you find yourself in a room that is about to review a paper that you are not heavily invested in, volunteer to take minutes.  That way you can make a valuable contribution, even for an area where you don't have domain expertise.
+
+As a bonus, you get to follow the minuter's code (something I just made up) about spelling other people's names.  As the person taking minutes, you have license to change up to three letters in someone's name, so long as it isn't used maliciously.  You can freely take any double letter in a name and convert it to a single letter (e.g. Connor -&gt; Conor), turn a single letter to a double letter (David -&gt; Davvid), or completely rearrange any consecutive series of vowels.  And people will thank you for it!  You are also given free license to interrupt people in order to ask them who they are.  Give it a try!
+
+# Closing
+
+I've got a bunch of papers to write for the next mailing, and I won't even be in Varna.  So if you're interested in championing some freestanding papers, let me know, and I can coach you on the topics.
+## [5][Move, simply – Sutter’s Mill](https://www.reddit.com/r/cpp/comments/f5co9g/move_simply_sutters_mill/)
+- url: https://herbsutter.com/2020/02/17/move-simply/
+---
+
+## [6][An Extraterrestrial Guide to C++20 Text Formatting](https://www.reddit.com/r/cpp/comments/f56u0v/an_extraterrestrial_guide_to_c20_text_formatting/)
+- url: https://www.bfilipek.com/2020/02/extra-format-cpp20.html
+---
+
+## [7][Core C++ 2020 CfS Submission Deadline Extended until Feb. 20](https://www.reddit.com/r/cpp/comments/f5moof/core_c_2020_cfs_submission_deadline_extended/)
+- url: https://www.reddit.com/r/cpp/comments/f5moof/core_c_2020_cfs_submission_deadline_extended/
+---
+C++20 is done after a grueling week of diligent work at the meeting last week! Multiple committee members have reached out and asked to extend the Core C++ 2020 Call-for-Speakers deadline to allow them to submit talk and workshop proposals.
+
+Submissions will remain open to all until Feb.20!
+
+https://cfs.corecpp.org
+## [8][C++ conference in Madrid](https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/)
+- url: https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/
+---
+We have opened today the registrations for the C++ conference using std::cpp 2020 to be held in Madrid on April 16th.
+
+The complete program is still to be announced but some talks are already confirmed.
+
+And the best of all registration is FREE.
+
+https://eventos.uc3m.es/go/usingstdcpp2020
+
+Come to Spain for a  one day conference 100% devoted to C++.
+## [9][My Favorite Unknown C++20 Feature](https://www.reddit.com/r/cpp/comments/f50ag6/my_favorite_unknown_c20_feature/)
 - url: https://www.reddit.com/r/cpp/comments/f50ag6/my_favorite_unknown_c20_feature/
 ---
 ### My Favorite Unknown C++20 Feature
@@ -653,32 +757,13 @@ functional languages, and enable writing more powerful libraries
 with cleaner, simpler, safer interfaces.
 
 Sometimes it's not the marquee features that have the biggest impact, in the longer term.
-## [4][An Extraterrestrial Guide to C++20 Text Formatting](https://www.reddit.com/r/cpp/comments/f56u0v/an_extraterrestrial_guide_to_c20_text_formatting/)
-- url: https://www.bfilipek.com/2020/02/extra-format-cpp20.html
----
 
-## [5][C++ conference in Madrid](https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/)
-- url: https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/
----
-We have opened today the registrations for the C++ conference using std::cpp 2020 to be held in Madrid on April 16th.
-
-The complete program is still to be announced but some talks are already confirmed.
-
-And the best of all registration is FREE.
-
-https://eventos.uc3m.es/go/usingstdcpp2020
-
-Come to Spain for a  one day conference 100% devoted to C++.
-## [6][Qt car game with genetic algorithm](https://www.reddit.com/r/cpp/comments/f53w80/qt_car_game_with_genetic_algorithm/)
-- url: https://www.reddit.com/r/cpp/comments/f53w80/qt_car_game_with_genetic_algorithm/
----
-I just created Qt car game, where you can compete with a genetic algorithm, or just see how it evolves. Let me know your thoughts.
-https://github.com/swordey/2DCarGameWithGA
-## [7][Herb Sutter's Trip Winter ISO C++ Standards Meeting (Prague) Trip Report](https://www.reddit.com/r/cpp/comments/f4p2nn/herb_sutters_trip_winter_iso_c_standards_meeting/)
+EDIT: For more on the general topic, see &lt;http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1858r1.html&gt;
+## [10][Herb Sutter's Trip Winter ISO C++ Standards Meeting (Prague) Trip Report](https://www.reddit.com/r/cpp/comments/f4p2nn/herb_sutters_trip_winter_iso_c_standards_meeting/)
 - url: https://herbsutter.com/2020/02/15/trip-report-winter-iso-c-standards-meeting-prague/
 ---
 
-## [8][an efficient immutable vector](https://www.reddit.com/r/cpp/comments/f4szkn/an_efficient_immutable_vector/)
+## [11][an efficient immutable vector](https://www.reddit.com/r/cpp/comments/f4szkn/an_efficient_immutable_vector/)
 - url: https://www.reddit.com/r/cpp/comments/f4szkn/an_efficient_immutable_vector/
 ---
 I recently had an idea for an efficient immutable vector.  
@@ -692,7 +777,7 @@ I believe that from a (somewhat theoretical) big-O perspective this vector is st
 I'm surely not the first to come up with this data structure. Is there a name for it? Is there somewhere I can find more information or a more robust implementation? I'm aware of a few implementations of immutable vectors (e.g. [immer](https://github.com/arximboldi/immer)) but they all use trees internally. What is the reason for that?
 
 **Edit**: Thinking about it some more I realize the big difference is in updating a single element which can be done in O(log n) in a tree and will be O(n) for an array-based immutable vector.
-## [9][Choose optimization in C++? (Preferally clang)](https://www.reddit.com/r/cpp/comments/f50etd/choose_optimization_in_c_preferally_clang/)
+## [12][Choose optimization in C++? (Preferally clang)](https://www.reddit.com/r/cpp/comments/f50etd/choose_optimization_in_c_preferally_clang/)
 - url: https://www.reddit.com/r/cpp/comments/f50etd/choose_optimization_in_c_preferally_clang/
 ---
 -Edit- Learn programming linked me to a stackoverflow answer that gave me enough information to figure it out https://www.reddit.com/r/learnprogramming/comments/f50dvb/choose_optimization_in_c/ https://stackoverflow.com/questions/15548023/clang-optimization-levels Basically I need -inline to get all the data into a single function then -sroa to reduce the struct into allocs which eliminates the struct. So it appears that optimizers can get rid of structs outright but may not reduce the members in it (at least I don't see any passes for that)
@@ -739,85 +824,3 @@ I prefer the solution to be in clang
     {
         f((void*)z);
     }
-## [10][One problem that C++ surprisingly doesn't seem to have](https://www.reddit.com/r/cpp/comments/f4x7fc/one_problem_that_c_surprisingly_doesnt_seem_to/)
-- url: https://www.reddit.com/r/cpp/comments/f4x7fc/one_problem_that_c_surprisingly_doesnt_seem_to/
----
-For all of its complexity, bad design decisions, and interactions between features that weren't explicitly considered, it all somehow *works*. The compilers and standard library implementations aren't riddled with bugs. Everything works as designed, even if that design sometimes has flaws. The compilers generate correct code and the standard library functions don't crash.
-
-How do they do it?
-## [11][Improving C++ compile time: precompiling generic code](https://www.reddit.com/r/cpp/comments/f4pt34/improving_c_compile_time_precompiling_generic_code/)
-- url: https://www.reddit.com/r/cpp/comments/f4pt34/improving_c_compile_time_precompiling_generic_code/
----
-I appologize if this is not well thought out/has already been proposed and for poor english.
-
-#Precompiling generic code
-
-
-With C++20 concepts, and with upcoming reflections/metaclasses, C++ is encouraging even more generic programming. 
-However, generic programming is already bottlenecked by compile time. Adding more feature to generic programming
-will only make it worse as more people uses it (and convenient features might encourage costly operations for the compiler). 
-
-The main reason for that is that you cannot precompile generic code, and I think we can improve that.
-
-##Templates as a compiler function:
-
-A templated function
- 
-    f&lt;type A,type B&gt;(A a, B b) -&gt; C
-
-can be reinterpreted as 
-
-    f: &lt;type A, type B&gt; -&gt; fAB = ( (A a,B b) -&gt; C )
-
-where fAB is non templated function. This was described in a paper which I cannot remember, I appologize for that.
-
-During compilation, the function `f` will be constructued from the code, then evaluated for some types A and B, and a  function fAB will be generated by the compiler.
-All this is essentialy working as an *interpreter* with all the associated costs.
-
-Now imagine that this function `f` was hardcoded in the compiler. Given some internal representation for type A and type B, it would generate a function fAB.
-This would go much faster, since this hardcoded function `f` would not require to parse any AST, and more importantly, it would be *compiled*! 
-We can expect such function to perform much faster than it's interpreted counterpart.
-
-A natural question is what should be the target language for fAB? should it be some internal representation for the compiler (llvm IR)? or assembly?
-The first leaves out time consuming optimisation, but should be much easier to implement.
-
-##Precompiling generic code: a dynamic library for the compiler
-In what was said above, we assumed there was a hardcoded function f in the compiler. This is obviously not realistic.
-However, such function could be loaded dynamically as a Plugin by the compiler, and the execute the function f from that plugin.
-Essentially, a precompiled generic library would be targeting the compiler instead of the executable.
-
-The previous example was demonstrated with a function, but it should also work with templated data type generation.   
-
-  
-&amp;nbsp;  
-
-What do you all think?
-
-Edit: added in a comment bellow:
-
-If we look at what module brings, we have from to https://vector-of-bool.github.io/2019/01/27/modules-doa.html:
-
-
-1. Tokenization caching - Because of TU isolation, tokenizing a TU can be cached when the module is later imported into another TU.
-2. Parse-tree caching - Same as above. Tokenization and parsing are some of the most expensive operations in compiling C++. In my own tests, parsing can consume up to 30% of compilation time for files with a large preprocessed output.
-3. Lazy re-generation - If foo imports bar, and we later make changes to the implementation of bar, we may be able to omit recompilation of foo. Only changes to the interface of bar necessitate recompilation of foo.
-4. Template specialization memoization - This one is a bit more subtle and may take more work to implement, but the potential speedups are enormous. In short: A specialization of a class or function template appearing in the module interface unit can be cached and loaded from disk later.
-5. Inline function codegen caching - Codegen results for inline functions (including function templates and member functions of class templates) can be cached and later re-loaded by the 6. Inline function codegen elision - extern template allows the compiler to omit performing codegen for function and class templates. This is hugely beneficial for the linker when it performs de-dup. Modules may allow the compiler to perform more extern template-style optimizations implicitly.
-
-4 and 5 are pretty independant from what I'm proposing. 
-
-What about 1,2 and 3? Well my proposal would essentially be seen as a possible implementation of those points! 
-
-However, this approach has an important other benefit: using a template function/type from a library should be **almost as fast as having this function/type hard coded in the compiler!**
-## [12][Declarative support in CMakeSL](https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/)
-- url: https://www.reddit.com/r/cpp/comments/f4ge4k/declarative_support_in_cmakesl/
----
-Hi, I just wanted to share an article about declarative format that I'm working on in CMakeSL. Here's a teaser:
-
-&amp;#x200B;
-
-https://reddit.com/link/f4ge4k/video/ull8d9f3s5h41/player
-
-And the art: [https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515](https://gist.github.com/stryku/4c69aa510711c9da6705fa4df4545515)
-
-Let me know what do you think about all this (:

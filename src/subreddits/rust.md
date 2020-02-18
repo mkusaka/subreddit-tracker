@@ -33,7 +33,81 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/f541u0/whats_everyone_working_on_this_week_82020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-8-2020/38329?u=llogiq)!
-## [3][Weird memory unsafety problem in safe Rust](https://www.reddit.com/r/rust/comments/f51fem/weird_memory_unsafety_problem_in_safe_rust/)
+## [3][Why does Rust infer `()` when the generic type cannot be really inferred?](https://www.reddit.com/r/rust/comments/f5nw1o/why_does_rust_infer_when_the_generic_type_cannot/)
+- url: https://www.reddit.com/r/rust/comments/f5nw1o/why_does_rust_infer_when_the_generic_type_cannot/
+---
+     #![feature(type_name_of_val)]
+    
+    fn foo&lt;T: Default&gt;() -&gt; Result&lt;T, String&gt; {
+        Ok(Default::default())
+    }
+    
+    fn bar() -&gt; Result&lt;String, String&gt; {
+        let baz = foo()?; // WTF is type of baz?
+        println!("baz: {:?}", std::any::type_name_of_val(&amp;baz));
+        Ok(String::default())
+    }
+    
+    fn main() {
+      let _ = bar();
+    }
+
+[https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=fee0ee95cba86cc77ba001f7a16fcf7f](https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=fee0ee95cba86cc77ba001f7a16fcf7f)
+
+I would expect the above to cause compile error but surprisingly, it compiles and the type of baz is `()`. Is there any rule that allows the compiler to do so or it is a bug?
+## [4][Source code for all examples from Rust in Action, book published by Manning](https://www.reddit.com/r/rust/comments/f5g7gq/source_code_for_all_examples_from_rust_in_action/)
+- url: https://github.com/rust-in-action/code/
+---
+
+## [5][Rust support for openapi/swagger](https://www.reddit.com/r/rust/comments/f5m80w/rust_support_for_openapiswagger/)
+- url: https://www.reddit.com/r/rust/comments/f5m80w/rust_support_for_openapiswagger/
+---
+Hey guys, 
+As I continue to learn rust here I keep wanting to see what’s in the eco system of like packages I’ve been able to use in languages like go. 
+
+Was wonder what’s in rust that support openapi/swagger 3.0? Be great if there is a contract drive approach where the spec is defined first and some level of codegen then happens. Anyway love to know the best way to get swagger support for a future public api’s I’m sure to build. 
+Thanks
+## [6][UniverCity open source release (university management sim in Rust)](https://www.reddit.com/r/rust/comments/f5fiii/univercity_open_source_release_university/)
+- url: https://github.com/Thinkofname/UniverCity
+---
+
+## [7][rust-analyzer Changelog #12](https://www.reddit.com/r/rust/comments/f5a0ku/rustanalyzer_changelog_12/)
+- url: https://rust-analyzer.github.io/thisweek/2020/02/17/changelog-12.html
+---
+
+## [8][Create a SVG donut chart in Rust WebAssembly (rustwasm)](https://www.reddit.com/r/rust/comments/f5ibv4/create_a_svg_donut_chart_in_rust_webassembly/)
+- url: https://www.webassemblyman.com/rustwasm/rustwasm_svg_donut_chart_webcomponent.html
+---
+
+## [9][Rust's runtime removes CLI quotes?](https://www.reddit.com/r/rust/comments/f5r7ld/rusts_runtime_removes_cli_quotes/)
+- url: https://www.reddit.com/r/rust/comments/f5r7ld/rusts_runtime_removes_cli_quotes/
+---
+I've got this simple program:
+
+    fn main() {
+        std::env::args().enumerate().for_each(|(num, arg)| {
+            println!("arg {} is `{}`", num, arg);
+        });
+    }
+
+When I run it (**not** via `cmd.exe`) with the args `'See one coronation' "and you've seen them all"` (confirmed with ProcessExplorer that the double quotes are indeed passed to the program), it will print
+
+    arg 0 is `&lt;skipped&gt;.exe`
+    arg 1 is `'See`
+    arg 2 is `one`
+    arg 3 is `coronation'`
+    arg 4 is `and you've seen them all`
+
+Is it Rust removing the double quotes and treating the contents as a single arg, or is that Windows runtime?
+
+I really just need to pass and interpret all and any symbols in CLI args as is.
+
+PS. Somebody told me it's possible to get the as-is CLI args in Windows via `GetCommandLineW`, so I guess it must be Rust's stdlib? Would it be possible without too much pain to access the same info from Rust?
+## [10][A Pragmatic Approach To Global State](https://www.reddit.com/r/rust/comments/f5a2ld/a_pragmatic_approach_to_global_state/)
+- url: http://adventures.michaelfbryan.com/posts/pragmatic-global-state/?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=pragmatic-global-state
+---
+
+## [11][Weird memory unsafety problem in safe Rust](https://www.reddit.com/r/rust/comments/f51fem/weird_memory_unsafety_problem_in_safe_rust/)
 - url: https://www.reddit.com/r/rust/comments/f51fem/weird_memory_unsafety_problem_in_safe_rust/
 ---
 Recently, I updated Rust to the latest stable version (1.41.0) on my macOS system and noticed that the tests of my [pet project](https://github.com/dfyz/osm-renderer) started crashing with `capacity overflow` errors coming from `alloc::raw_vec::capacity_overflow()`. My gut reaction was that I must have been bitten by UB in my unsafe code, but surprisingly this doesn't seem to be the case here.
@@ -73,189 +147,9 @@ I can't reproduce the problem:
 My best guess so far is `-C opt-level=3` enables a problematic optimization pass in LLVM, which results in miscompilation. This is corroborated by the fact that MIR (`--emit mir`) and LLVM IR before optimizations (`--emit llvm-ir -C no-prepopulate-passes`) is the same for both `-C opt-level=2` and `-C opt-level=3`.
 
 If this indeed is LLVM acting up, I guess I should follow [this guide](https://github.com/rust-lang/rustc-guide/blob/master/src/codegen/debugging.md). This seems doable but time-consuming, given that the problem only appears with multiple codegen units. So, is there a chance that I stumbled upon a known issue? I searched through the GitHub issues, but failed to find anything similar.
-## [4][I audited 3 different implementation of async RwLock.](https://www.reddit.com/r/rust/comments/f4zldz/i_audited_3_different_implementation_of_async/)
-- url: https://www.reddit.com/r/rust/comments/f4zldz/i_audited_3_different_implementation_of_async/
+## [12][What rustfmt extension are you using with rust-analyser?](https://www.reddit.com/r/rust/comments/f5c8lc/what_rustfmt_extension_are_you_using_with/)
+- url: https://www.reddit.com/r/rust/comments/f5c8lc/what_rustfmt_extension_are_you_using_with/
 ---
-"Audit" is probably a strong word. Also, take this with a grain of salt. I am by no means an expert with task scheduling. I am, however, interested in using an async `RwLock` in a production environment.
+I'm loving rust-analyser, but using its extension doesn't seem to give me auto-format with rustfmt.
 
-What I was really interested in is answering the question: If I have a ton of readers acquiring and releasing the lock at all times, do the writers get a chance to acquire the lock, too?
-
-To start with, I first looked at blocking implementations. If you check the docs for [`std::sync::RwLock`](https://doc.rust-lang.org/stable/std/sync/struct.RwLock.html), you'll clearly find that answering this question is entirely left up to the kernel implementation:
-
-&gt;The priority policy of the lock is dependent on the underlying operating system's implementation, and this type does not guarantee that any particular policy will be used.
-
-So what *actually* happens on various platforms?
-
-* Windows: Readers and writers are fairly queued
-* Linux: Readers will starve the writers
-* macOS: Readers and writers are fairly queued
-
-By "fairly queued" I mean that interleaved read/write locks will be queued in the order they attempt to acquire. With the bonus that all readers will acquire the lock in groups. This means that readers will have to wait behind any writers, and writers will have to wait behind any readers. But importantly, neither will be the dominant workload.
-
-I first wrote a small test (on macOS), and was surprised to see the behavior that *I wanted* out of an `RwLock`. But then I ran the same code on Linux and was dismayed that it prioritizes readers. The lock on Windows behaves roughly the same as on macOS.
-
-    #[cfg(test)]
-    mod test {
-        use std::sync::{Arc, RwLock};
-        use std::thread::{self, JoinHandle};
-        use std::time::Duration;
-    
-        fn create_reader(name: i32, lock: Arc&lt;RwLock&lt;u32&gt;&gt;) -&gt; JoinHandle&lt;()&gt; {
-            thread::spawn(move || {
-                println!("reader {}: acquiring read lock...", name);
-                let guard = lock.read().unwrap();
-    
-                println!("reader {}: sleeping...", name);
-                thread::sleep(Duration::from_secs(3));
-    
-                println!("reader {}: end: {}", name, *guard);
-            })
-        }
-    
-        fn create_writer(name: i32, lock: Arc&lt;RwLock&lt;u32&gt;&gt;) -&gt; JoinHandle&lt;()&gt; {
-            thread::spawn(move || {
-                println!("writer {}: acquiring write lock...", name);
-                let guard = lock.write().unwrap();
-    
-                println!("writer {}: sleeping...", name);
-                thread::sleep(Duration::from_secs(3));
-    
-                println!("writer {}: end: {}", name, *guard);
-            })
-        }
-    
-        #[test]
-        fn test_rwlock() {
-            let mut threads = Vec::new();
-            let shared_lock = Arc::new(RwLock::new(0));
-    
-            // Start two reader threads
-            let lock = Arc::clone(&amp;shared_lock);
-            threads.push(create_reader(1, lock));
-    
-            let lock = Arc::clone(&amp;shared_lock);
-            threads.push(create_reader(2, lock));
-    
-            // Wait for threads to sleep
-            thread::sleep(Duration::from_millis(100));
-    
-            // Start a writer thread
-            let lock = Arc::clone(&amp;shared_lock);
-            threads.push(create_writer(1, lock));
-    
-            // Wait for threads to sleep
-            thread::sleep(Duration::from_millis(100));
-    
-            // Start another two reader threads
-            let lock = Arc::clone(&amp;shared_lock);
-            threads.push(create_reader(3, lock));
-    
-            let lock = Arc::clone(&amp;shared_lock);
-            threads.push(create_reader(4, lock));
-    
-            // Wait for threads to sleep
-            thread::sleep(Duration::from_millis(100));
-    
-            // Start another writer thread
-            let lock = Arc::clone(&amp;shared_lock);
-            threads.push(create_writer(2, lock));
-    
-            // Wait for all threads to exit
-            for t in threads {
-                t.join().unwrap();
-            }
-        }
-    }
-
-Expected results from this test: the "sleeping..." message for readers and writers should be interleaved, with reader 1 &amp; 2 sleeping first, followed by writer 1. After this point is kind of a mixed bag, depending on the OS scheduler. Windows behavior is pretty wild! macOS seems to be very consistent. And Linux is the worst; it allows *all readers* to sleep right away, even though writer 1 wants to acquire before readers 3 &amp; 4.
-
-The `RwLock` implementation in `parking_lot` does not have this inconsistency problem. In fact, it implements task-fair locking on all platforms: [https://docs.rs/parking\_lot/0.10.0/parking\_lot/type.RwLock.html](https://docs.rs/parking_lot/0.10.0/parking_lot/type.RwLock.html) I used this specific implementation as a benchmark for evaluating async `RwLock` implementations.
-
-## The contestants
-
-* [`futures_locks::RwLock`](https://docs.rs/futures-locks/0.5.0/futures_locks/struct.RwLock.html)
-* [`async_std::sync::RwLock`](https://docs.rs/async-std/1.5.0/async_std/sync/struct.RwLock.html)
-* [`futures_util::lock::RwLock` (currently open PR)](https://github.com/rust-lang/futures-rs/pull/2082)
-* [`tokio::sync::RwLock`](https://docs.rs/tokio/0.2.11/tokio/sync/struct.RwLock.html)
-
-edit: Tokio was added after the initial post.
-
-In the case of `futures_locks::RwLock`, readers and writers are queued independently. There is no way for the scheduler to interleave lock acquisitions with this model. An async version of the test shows the expected readers-starve-writers behavior.
-
-`async_std::sync::RwLock` does not queue tasks explicitly but instead relies on a bi-state counter, which can either be "locked for writing" or "locked by *n* readers". The trouble with this implementation is that the bi-state counter can remain in the read state forever. The only requirement for acquiring the read lock is that the lock is not held by a writer. This allows readers to starve writers.
-
-`futures_util::lock::RwLock` has a very similar implementation that we see in `async-std`. Because this is an open (and active!) PR, the author is responsive to my report. And I suspect this implementation will address the starvation problem before it is reviewed.
-
-Finally, `tokio::sync::RwLock` uses a waiter queue where readers acquire 1 permit from a semaphore, and writers acquire all permits. The waiter queue interleaves read and write lock acquisitions in FIFO order, so it does provide a task-fair locking policy! Hooray!
-
-## The results
-
-If you want to use `RwLock` in an async context, be aware that of the implementations I looked at, only Tokio will fairly queue the locks across tasks. A non-fair locking policy is fine in use cases where the lock is held infrequently. But with read-heavy workloads, the writer tasks will be starved.
-
-On the flip-side, crate authors have been receptive! And I'm hopeful that raising awareness on these issues will help everyone.
-## [5][WASM Vector Graphics](https://www.reddit.com/r/rust/comments/f574bg/wasm_vector_graphics/)
-- url: https://crates.io/crates/wasm_svg_graphics
----
-
-## [6][Introducing Prodash - a terminal dashboard for visualising the progress of concurrent tasks](https://www.reddit.com/r/rust/comments/f4qyvn/introducing_prodash_a_terminal_dashboard_for/)
-- url: https://asciinema.org/a/301838
----
-
-## [7][FromStr vs From&lt;&amp;str&gt; vs From&lt;String&gt; Which should I use and when ?](https://www.reddit.com/r/rust/comments/f55ur9/fromstr_vs_fromstr_vs_fromstring_which_should_i/)
-- url: https://www.reddit.com/r/rust/comments/f55ur9/fromstr_vs_fromstr_vs_fromstring_which_should_i/
----
-Hi,
-
-I have a feeling that FromStr trait overlaps with the more generic From&lt;T&gt; trait. Basically I am a bit confused, when I should choose to implement FromStr and when From&lt;&amp;str&gt;. On top of that, if I choose to implement a From&lt;&amp;str&gt; trait, is there any reason why I should NOT implement the From&lt;String&gt; trait ? And if I implement a From&lt;&amp;str&gt; or a From&lt;String&gt;, is there a reason why I should NOT implement the Into&lt;&amp;str&gt; or Into&lt;String&gt; ?
-
-Edit: For instance the Rust uuid library implements only the FromStr and if you want to convert the UUID to String, you need to use the \`to\_string\` method. Why they chose FromStr, instead of the more generic From&lt;&amp;str&gt; and why they don't provide an Into&lt;String&gt; as well instead of the fixed \`to\_string\` method? There must be a reason, but I just don't see it.
-## [8][cow-utils: copy-on-write string utilities for Rust](https://www.reddit.com/r/rust/comments/f4zc5z/cowutils_copyonwrite_string_utilities_for_rust/)
-- url: https://github.com/RReverser/cow-utils-rs
----
-
-## [9][Awaiting Closures With Warp](https://www.reddit.com/r/rust/comments/f53rgu/awaiting_closures_with_warp/)
-- url: https://www.reddit.com/r/rust/comments/f53rgu/awaiting_closures_with_warp/
----
-Hello all.
-
-I am making a web server using warp, and I need to await a function call inside of the .map() call for a path.
-
-I have a minimal example of what I am trying to get working here:
-
-    #![feature(async_closure)]
-    
-    #[tokio::main]
-    async fn main() {
-        let path = warp::post()
-            .and(warp::path("path"))
-            .and(warp::body::json())
-            .map(async move |instance: CustomStruct| {
-                let output: serde_json::Value = function_that_returns_value().await.unwrap();
-                
-                warp::reply::json(&amp;output)
-            });
-    
-        warp::serve(path).run(([127, 0, 0, 1], 3030)).await
-    }
-
-This does not work because `^^^^^^^ the trait \`warp::reply::Reply\` is not implemented for \`impl core::future::future::Future\``
-
-That is fine, because I really want to use the stable compiler.
-
-The only thought I had to remedy the situation, would be to get the `output` variable stored somehow with a `collect()` call, and then make the `function_that_returns_value()` and `warp::reply::json()` calls outside of the map.
-
-Any help is appreciated.
-
-Cheers :)
-## [10][Krabs: x86 bootloader that can boot vmlinux.](https://www.reddit.com/r/rust/comments/f51eao/krabs_x86_bootloader_that_can_boot_vmlinux/)
-- url: https://github.com/ellbrid/krabs
----
-
-## [11][Trying out Actix by creating a simple TODO service. Part 3](https://www.reddit.com/r/rust/comments/f50ut2/trying_out_actix_by_creating_a_simple_todo/)
-- url: https://youtu.be/3vMxuM7ezEk
----
-
-## [12][This Month in Rust GameDev #6 - January 2020](https://www.reddit.com/r/rust/comments/f4r368/this_month_in_rust_gamedev_6_january_2020/)
-- url: https://rust-gamedev.github.io/posts/newsletter-006
----
-
+Is it likely I have something set up incorrectly, or is there a stand alone vscode extension folks are using to get that feature?

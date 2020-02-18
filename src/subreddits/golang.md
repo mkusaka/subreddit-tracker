@@ -1,80 +1,58 @@
 # golang
-## [1][Harmony - A free and open source alternative to Discord made in Go [VERY WIP]](https://www.reddit.com/r/golang/comments/f52p6a/harmony_a_free_and_open_source_alternative_to/)
-- url: https://github.com/harmony-development/harmony-server
+## [1][Gontainer: a simple and rudimental container for Linux written in GO](https://www.reddit.com/r/golang/comments/f5pda3/gontainer_a_simple_and_rudimental_container_for/)
+- url: https://www.reddit.com/r/golang/comments/f5pda3/gontainer_a_simple_and_rudimental_container_for/
+---
+[https://github.com/alegrey91/Gontainer](https://github.com/alegrey91/Gontainer)
+## [2][Golang in DevOps world](https://www.reddit.com/r/golang/comments/f5p1jc/golang_in_devops_world/)
+- url: https://www.reddit.com/r/golang/comments/f5p1jc/golang_in_devops_world/
+---
+Hello again,
+
+For couple of weeks ago I’ve stated that I will be ditching Python in favor for Go and try to use it where I can. I’m system engineer and my primary field is to keep our hybrid environment up and running and automate all the things but not only that because I also work as backend dev. I’ve always used Python for small backend services and glue things together. Then in 2019 I’ve came across Golang. It seemed nice but was little bit afraid of static typing and not “OOP” design but because Golang was created with concurrency in mind and thought to give a shoot. After spending couple of months with it I can say that it is the pleasure to have something like Golang. I know that some guys said that Python is mainly the DevOps language and automation standard and I should still use python to such things but I like to challenge myself so I decided to try and I can’t complain at all! CLI tools? No problem! One binary file, push it and done. Backend? Like Python async is messy but with Golang is so simple because language it self was intended to be used across multiple CPUs. Now I’m again very excited about programming like the first time I met Python. I know that Golang may or not be the best language for automation like many says but I can’t see why. The Golang libs is growing massively right now and most of cloud automation tools are written in Golang so when you know Golang, it is so fun to just see source code and that you can understand what’s doing under the hood. I know that there’s few people right now who’s using Golang for automation etc. but it was the same thing for many years ago with Python. We need to start somewhere I would with pleasure recommend Golang to other devops guys because it’s very flexible language so now I think, after spending some time with Golang that this is what I’ve looked for. Besides with Golang you will understand many things better that with Python about how programming works in real. I think. 
+
+It’s just my 5 cents and I may be wrong about my statements so what’s your thoughts about Golang in devops world? Would like to hear your opinion.
+
+And last but not least - great community!
+## [3][Self Signed HTTPS Servers for Go](https://www.reddit.com/r/golang/comments/f5kyek/self_signed_https_servers_for_go/)
+- url: https://medium.com/@rocketlaunchr.cloud/self-signed-https-servers-for-go-ab32bb848a8a
 ---
 
-## [2][🚀 Visualizing memory management in Golang](https://www.reddit.com/r/golang/comments/f55qml/visualizing_memory_management_in_golang/)
-- url: https://deepu.tech/memory-management-in-golang/
+## [4][GoTorWeb - automatically expose your docker containers to the tor web](https://www.reddit.com/r/golang/comments/f5q6wj/gotorweb_automatically_expose_your_docker/)
+- url: https://github.com/EduardoOliveira/GoTorWeb
 ---
 
-## [3][pkg.go.dev will be open-sourced](https://www.reddit.com/r/golang/comments/f56ua9/pkggodev_will_be_opensourced/)
+## [5][Python Collections Parody in Go](https://www.reddit.com/r/golang/comments/f5lj0c/python_collections_parody_in_go/)
+- url: https://www.reddit.com/r/golang/comments/f5lj0c/python_collections_parody_in_go/
+---
+[https://github.com/marcsantiago/collections](https://github.com/marcsantiago/collections)  
+This has been purely for fun. It started off with doing problems in hacker rank and I would solve each problem in Python and Go. Very quickly, pythons std lib allowed me to answers questions with less coding than Go. I love Go and use it in my professional life.. so for fun I decided to recreate "some" of pythons collections package (also through in a set implementation), which uses as little reflection as possible and instead relies on interfaces.
+## [6][Go container tutorial resources](https://www.reddit.com/r/golang/comments/f5ps7r/go_container_tutorial_resources/)
+- url: https://www.reddit.com/r/golang/comments/f5ps7r/go_container_tutorial_resources/
+---
+I have recently setup a moosefs docker cluster and now I want to run my go application in the dockers. What will be the best place to find a good learning tutorial to install and run a go application inside the docker container?
+## [7][Leprechaun: Stable version with remote code execution is released](https://www.reddit.com/r/golang/comments/f5prji/leprechaun_stable_version_with_remote_code/)
+- url: https://github.com/kilgaloon/leprechaun/releases/tag/1.5.0
+---
+
+## [8][gocat, a 21st-century multi-purpose relay from source to destination](https://www.reddit.com/r/golang/comments/f5phsk/gocat_a_21stcentury_multipurpose_relay_from/)
+- url: https://medium.com/@syndbg/gocat-a-21st-century-multi-purpose-relay-from-source-to-destination-5d9026f6cdb
+---
+
+## [9][Bot Framework SDK for Go - Announced](https://www.reddit.com/r/golang/comments/f5phjm/bot_framework_sdk_for_go_announced/)
+- url: https://www.reddit.com/r/golang/comments/f5phjm/bot_framework_sdk_for_go_announced/
+---
+Consequent to a great feedback to [BotKube](https://www.botkube.io/), an application for messengers like Slack and Mattermost to monitor and debug Kubernetes deployments, we have got interests from Microsoft Teams users for an integration. An integration, which would help them monitor their Kubernetes cluster from a Teams client. Since BotKube is architecturally designed to work independently of a messaging platform, it seemed a viable thing to integrate it with Teams.
+
+Microsoft Teams uses the [Microsoft Bot Framework](https://dev.botframework.com/) to allow users to write bot applications. The Bot Framework is a set of tools, SDKs, templates and services to build conversational bot applications. The official SDKs are available for Python, C#.NET, Java and Javascript. Since BotKube is built in Go, there was a need of an interface to the Bot Framework services in Go, for a seamless integration of BotKube to Teams. This encouraged us to write a Go SDK that wraps the services of the Bot Framework.
+
+Today, we are excited to announce the first release of the [Bot Framework SDK for Go](https://github.com/infracloudio/msbotbuilder-go); an SDK written in Go that enables users to build bot applications over the Bot Framework in Golang. The SDK enables application developers to build conversational bots for Microsoft Teams.
+
+A bot application built using this SDK can send text, interactive cards and attachments in a conversation with a user. Apart from a receive-reply conversation, developers can build bot applications to push messages in a conversation to Teams client.
+
+&amp;#x200B;
+
+Read the full blog here:  [https://www.infracloud.io/microsoft-bot-framwework-sdk-for-go/](https://www.infracloud.io/microsoft-bot-framwework-sdk-for-go/)
+## [10][pkg.go.dev will be open-sourced](https://www.reddit.com/r/golang/comments/f56ua9/pkggodev_will_be_opensourced/)
 - url: https://groups.google.com/d/msg/golang-dev/mfiPCtJ1BGU/OZ9cU3SgBgAJ
 ---
 
-## [4][Had written web service in Go, got no users, so decided to open the code (web server + background worker)](https://www.reddit.com/r/golang/comments/f56m6p/had_written_web_service_in_go_got_no_users_so/)
-- url: https://www.reddit.com/r/golang/comments/f56m6p/had_written_web_service_in_go_got_no_users_so/
----
-Hi, I've written an MVP web service in Go [link](https://noiseremover.net). It's a web service that cleans audio files from background noise. It uses simple smoothing algorithm for that so nothing fancy.
-
-Apparently people are not interested in this type of service (at least in the current form). So I decided to open the code here [github.com/normie7/nore](https://github.com/normie7/nore)
-
-Any feedback is appreciated.
-## [5][sqlc - Generate your Go database code with ease](https://www.reddit.com/r/golang/comments/f4suu3/sqlc_generate_your_go_database_code_with_ease/)
-- url: https://www.youtube.com/watch?v=uBPXNREhZZw
----
-
-## [6][Hazelcast / Open Source Distributed Caching for Go](https://www.reddit.com/r/golang/comments/f5875o/hazelcast_open_source_distributed_caching_for_go/)
-- url: https://www.reddit.com/r/golang/comments/f5875o/hazelcast_open_source_distributed_caching_for_go/
----
-Hi all,
-
-Hazelcast is a distributed in-memory object store and compute, supporting a wide variety of data structures such as Map, Set, List, MultiMap, RingBuffer, HyperLogLog. It is cloud &amp; Kubernetes friendly.
-
-I wanted to let you know that we have prepared a Code Reference Card for Hazelcast Go client: [https://hazelcast.com/resources/go-client-ref-card/](https://hazelcast.com/resources/go-client-ref-card/)
-
-You can visit the Github repo for [code samples and API documentation](https://github.com/hazelcast/hazelcast-go-client).
-
-Here is the command to install the Hazelcast Go client:
-
-    go get github.com/hazelcast/hazelcast-go-client
-
-Currently, we are working very hard on the next major release, i.e v4.0. We'd be really happy to hear your feedback :)
-
-Disclaimer: I'm working at Hazelcast as part of the Clients Team. If you have any feature requests or any feedback, please let me know!
-
-All the best, Burak.
-## [7][Micro In Action, Part 5: Message Broker](https://www.reddit.com/r/golang/comments/f57kj2/micro_in_action_part_5_message_broker/)
-- url: https://itnext.io/micro-in-action-part-5-message-broker-a3decf07f26a
----
-
-## [8][Any specific reason why the Golang source code uses variable names like "i", "j", "r", "w" instead of explicit alternatives like "index" "request", "writer"?](https://www.reddit.com/r/golang/comments/f5574h/any_specific_reason_why_the_golang_source_code/)
-- url: https://www.reddit.com/r/golang/comments/f5574h/any_specific_reason_why_the_golang_source_code/
----
-A good example is:
-
-`http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {`   
-`fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))`
-
-`})`
-
-But I see it throughout go packages and the golang source code iteself. Isn't it cleaner (naming wise) to use more explicit variables like "responseWriter" instead of "r" the function above could be
-
-`http.HandleFunc("/bar", func(responseWriter http.ResponseWriter, request *http.Request) {`   
-`fmt.Fprintf(responseWriter, "Hello, %q", html.EscapeString(request.URL.Path))`   
-`})`
-
-Or am I missing something?
-## [9][A friend asked me how to write a resilient service worker in Go . I figured I should share it to anyone interested.](https://www.reddit.com/r/golang/comments/f4ov4d/a_friend_asked_me_how_to_write_a_resilient/)
-- url: https://gist.github.com/System-Glitch/301e95975a2645b8ea57c47b0c7cfef4
----
-
-## [10][Verify XML with XSD in Golang ? ( windows )](https://www.reddit.com/r/golang/comments/f585pi/verify_xml_with_xsd_in_golang_windows/)
-- url: https://www.reddit.com/r/golang/comments/f585pi/verify_xml_with_xsd_in_golang_windows/
----
-I am trying to get a verification process going of checking a XML against its XSD file.
-
-Been googling abit and can see different Golang libraries that appears to do that - but none of them seems to be able to compile in windows due to pkg-config returning a 9 digit error code.
-
-Trying to get pkg-config to work on windows been to no avail simply dont have enough info on how to anywhere.
-
-But wondering if anyone sucessfully had verification done on an XML towards a XSD in Golang ( preferable a proof working example ).

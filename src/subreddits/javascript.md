@@ -85,50 +85,43 @@ score  |  comment  |
 
 
 &amp;nbsp;
-## [3][Don't touch my clipboard](https://www.reddit.com/r/javascript/comments/f5ooyt/dont_touch_my_clipboard/)
+## [3][Most common JavaScript vulnerabilities and how to fix them](https://www.reddit.com/r/javascript/comments/f67doq/most_common_javascript_vulnerabilities_and_how_to/)
+- url: https://medium.com/@AntonLawrence/javascript-vulnerabilities-e5391a746c90
+---
+
+## [4][All the coolest React features collected in one places and explained. Job interview tips as bonus.](https://www.reddit.com/r/javascript/comments/f5y2e9/all_the_coolest_react_features_collected_in_one/)
+- url: https://blog.piotrnalepa.pl/2020/02/18/what-to-answer-when-questions-about-react-appear-at-job-interview/
+---
+
+## [5][Paged.js - a free and open source JavaScript library that paginates content in the browser to create PDF output from any HTML content. This means you can design works for print (eg. books) using HTML and CSS](https://www.reddit.com/r/javascript/comments/f5syqi/pagedjs_a_free_and_open_source_javascript_library/)
+- url: https://www.pagedjs.org/
+---
+
+## [6][Pitsby: The declarative way of documenting components.](https://www.reddit.com/r/javascript/comments/f69l5v/pitsby_the_declarative_way_of_documenting/)
+- url: https://pitsby.com/
+---
+
+## [7][Some tips for the web VR beginners](https://www.reddit.com/r/javascript/comments/f68svh/some_tips_for_the_web_vr_beginners/)
+- url: https://medium.com/naver-fe-platform/some-tips-for-the-web-vr-beginners-ee12002f36bf
+---
+
+## [8][[AskJS] Why do most developers pronounce JSON as "JaySawn" instead of "JaySin(Jason)"?](https://www.reddit.com/r/javascript/comments/f6aile/askjs_why_do_most_developers_pronounce_json_as/)
+- url: https://www.reddit.com/r/javascript/comments/f6aile/askjs_why_do_most_developers_pronounce_json_as/
+---
+
+## [9][Don't touch my clipboard](https://www.reddit.com/r/javascript/comments/f5ooyt/dont_touch_my_clipboard/)
 - url: https://alexanderell.is/posts/taking-over-my-clipboard/
 ---
 
-## [4][Build a full-featured Tinder-like Carousel in vanilla JavaScript](https://www.reddit.com/r/javascript/comments/f5p8cz/build_a_fullfeatured_tinderlike_carousel_in/)
-- url: https://www.hackdoor.io/articles/8MNPqDpV/build-a-full-featured-tinder-like-carousel-in-vanilla-javascript
+## [10][Module federation and code sharing between bundles. Huge changes coming to frontend with webpack@5](https://www.reddit.com/r/javascript/comments/f5xf5u/module_federation_and_code_sharing_between/)
+- url: https://github.com/webpack/webpack/issues/10352
 ---
 
-## [5][Goxygen: A generator of full stack web projects with React and Go](https://www.reddit.com/r/javascript/comments/f5poim/goxygen_a_generator_of_full_stack_web_projects/)
-- url: https://github.com/Shpota/goxygen
+## [11][Deno React Server (A wannabe Next.js for Deno)](https://www.reddit.com/r/javascript/comments/f65z5d/deno_react_server_a_wannabe_nextjs_for_deno/)
+- url: https://github.com/imaginamundo/deno-react-server
 ---
 
-## [6][Liquidfun.js (Wasm/Box2D), Three.js and the water sliding penguins [tutorial]](https://www.reddit.com/r/javascript/comments/f5fb37/liquidfunjs_wasmbox2d_threejs_and_the_water/)
-- url: https://tips4devs.com/articles/create-a-liquidfun-box2d-via-web-assembly-waterslide-with-three-js.html
+## [12][Handling the try/catch and if/else hell](https://www.reddit.com/r/javascript/comments/f67yda/handling_the_trycatch_and_ifelse_hell/)
+- url: https://www.hackdoor.io/articles/E1N4qpVP/handling-the-trycatch-and-ifelse-hell
 ---
 
-## [7][[AskJS] Generating PDF on the front-end vs back-end](https://www.reddit.com/r/javascript/comments/f5r772/askjs_generating_pdf_on_the_frontend_vs_backend/)
-- url: https://www.reddit.com/r/javascript/comments/f5r772/askjs_generating_pdf_on_the_frontend_vs_backend/
----
-I'm working on a web app where users will be able to export and download a pdf of some data in tables and charts. The BE developers are saying we should do it on FE. At first, I was against, thinking that BE must have better tooling for this. After some googling, it seems to be pretty standard to do it on the client-side via some sort of HTML to PDF conversion. What are the cons and pros of either? What are your experiences?
-## [8][proxy-watcher - A function that recursively watches an object for mutations via Proxies and tells you which paths changed](https://www.reddit.com/r/javascript/comments/f5heie/proxywatcher_a_function_that_recursively_watches/)
-- url: https://github.com/fabiospampinato/proxy-watcher
----
-
-## [9][dual-publish: Convert and publish your project as dual ES modules and CommonJS package to npm](https://www.reddit.com/r/javascript/comments/f5rq5y/dualpublish_convert_and_publish_your_project_as/)
-- url: https://github.com/ai/dual-publish/
----
-
-## [10][parcel-github-pages-boilerplate: A Parcel boilerplate to automatically deploy on Github Pages using Github Actions.](https://www.reddit.com/r/javascript/comments/f5qkvf/parcelgithubpagesboilerplate_a_parcel_boilerplate/)
-- url: https://github.com/nicolas-van/parcel-github-pages-boilerplate
----
-
-## [11][Tech Preview of our new AI bots | Transloadit](https://www.reddit.com/r/javascript/comments/f5b8a7/tech_preview_of_our_new_ai_bots_transloadit/)
-- url: https://transloadit.com/blog/2020/02/tech-preview-of-cloudai-bots/
----
-
-## [12][[AskJS] The JavaScript Way book is looking for contributors](https://www.reddit.com/r/javascript/comments/f56tpd/askjs_the_javascript_way_book_is_looking_for/)
-- url: https://www.reddit.com/r/javascript/comments/f56tpd/askjs_the_javascript_way_book_is_looking_for/
----
-Hi all,
-
-I'm the main author of [The JavaScript Way](https://github.com/thejsway/thejsway), an open source book about JS written in 2017. It was pretty well received upon publication and gathered almost 7k GitHub stars since.
-
-Unfortunately, I am no longer able to maintain it properly.
-That's why I'm looking for help to keep this book up-to-date and relevant. Ideally, I'd like to step down and leave room for a new maintainer, or a team thereof.
-
-Feel free to get in touch with me for more details. Thanks in advance!

@@ -1,69 +1,64 @@
 # ruby
-## [1][Image classification in ruby](https://www.reddit.com/r/ruby/comments/f5rbkt/image_classification_in_ruby/)
+## [1][JRuby 9.2.10.0 released!](https://www.reddit.com/r/ruby/comments/f605sa/jruby_92100_released/)
+- url: https://www.jruby.org/2020/02/18/jruby-9-2-10-0.html
+---
+
+## [2][ROM + Dry Showcase: Part 3 - Testing](https://www.reddit.com/r/ruby/comments/f67vk3/rom_dry_showcase_part_3_testing/)
+- url: https://ryanbigg.com/2020/02/rom-and-dry-showcase-part-3
+---
+
+## [3][Python(ish) to Ruby. Any suggested books/resources?](https://www.reddit.com/r/ruby/comments/f66yjc/pythonish_to_ruby_any_suggested_booksresources/)
+- url: https://www.reddit.com/r/ruby/comments/f66yjc/pythonish_to_ruby_any_suggested_booksresources/
+---
+Hello everyone! I have made it a professional goal to learn Ruby this year. I have a short background in data management with a little bit of dabbling in python. I have been suggested \_why's poignant guide from two coworkers, both of which mentioned it is outdated but still very good for learning. In addition, it's what they both used when learning Ruby.  
+
+I'm not completely new to programming: I've written a few object-oriented python scripts and whatnot. I'm just curious what you folks used when you first started and what sort of resources/underlying concepts on which I should focus. My main goals are to transpose my Python scripts into Ruby. They include API calls and web scraping. 
+
+Thanks and if I have broken a rule by posting this then please send this post to oblivion (also I apologize).
+## [4][How I MITM'd rubygems.org ... Kinda](https://www.reddit.com/r/ruby/comments/f64rav/how_i_mitmd_rubygemsorg_kinda/)
+- url: http://gavinmiller.io/2020/how-i-mitmd-rubygems-org-kinda/
+---
+
+## [5][Migrating user passwords from Django to Ruby](https://www.reddit.com/r/ruby/comments/f66teg/migrating_user_passwords_from_django_to_ruby/)
+- url: http://jetrockets.pro/blog/migrating-user-passwords-from-django-to-ruby
+---
+
+## [6][Decoupling Ruby: Delegation vs Dependency Injection](https://www.reddit.com/r/ruby/comments/f5ysjs/decoupling_ruby_delegation_vs_dependency_injection/)
+- url: https://www.reddit.com/r/ruby/comments/f5ysjs/decoupling_ruby_delegation_vs_dependency_injection/
+---
+We've all worked with tightly-coupled code. If a butterfly flaps its wings in China, the unit tests break. Maintaining a system like this is...unpleasant. In this article, Jonathan Miles dives into the origins of tight-coupling. He demonstrates how you can use dependency injection (DI) to decouple code. Then he introduces a novel decoupling technique based on delegation that can be useful when DI is not an option. [https://www.honeybadger.io/blog/decoupling-ruby-delegation-dependency-injection/](https://www.honeybadger.io/blog/decoupling-ruby-delegation-dependency-injection/)
+## [7][awesome-stimulusjs: List of modestly-awesome StimulusJS stuff](https://www.reddit.com/r/ruby/comments/f5r2re/awesomestimulusjs_list_of_modestlyawesome/)
+- url: https://github.com/skatkov/awesome-stimulusjs
+---
+
+## [8][Ruby 2.7 removes taint checking mechanism](https://www.reddit.com/r/ruby/comments/f67vj6/ruby_27_removes_taint_checking_mechanism/)
+- url: https://blog.saeloun.com/2020/02/18/ruby-2-7-access-and-setting-of-safe-warned-will-become-global-variable
+---
+
+## [9][Image classification in ruby](https://www.reddit.com/r/ruby/comments/f5rbkt/image_classification_in_ruby/)
 - url: https://www.reddit.com/r/ruby/comments/f5rbkt/image_classification_in_ruby/
 ---
 Anyone have any experience with image classification in ruby?
 
 I want to add it Image classification to an existing rails app but i’m not sure if i should just make a micro service in a different language or is there a good solution in ruby?
-## [2][Build a WhatsApp chatbot with Ruby, Sinatra and Twilio](https://www.reddit.com/r/ruby/comments/f5h6ne/build_a_whatsapp_chatbot_with_ruby_sinatra_and/)
-- url: https://www.twilio.com/blog/whatsapp-chatbot-ruby-sinatra-twilio
+## [10][Approach for associated model searching with Elasticsearch [Ruby, ActiveRecord, elasticsearch-model]](https://www.reddit.com/r/ruby/comments/f5zmxu/approach_for_associated_model_searching_with/)
+- url: https://www.reddit.com/r/ruby/comments/f5zmxu/approach_for_associated_model_searching_with/
 ---
+Hi community, I have a question about choosing the best approach in case of searching.
 
-## [3][awesome-stimulusjs: List of modestly-awesome StimulusJS stuff](https://www.reddit.com/r/ruby/comments/f5r2re/awesomestimulusjs_list_of_modestlyawesome/)
-- url: https://github.com/skatkov/awesome-stimulusjs
----
+I have Ruby off Rails API, with `ActiveRecord`, together with `Elasticsearch` ( `elasticsearch-model` gem).
 
-## [4][How to find out what slows a Rails app?](https://www.reddit.com/r/ruby/comments/f5o37f/how_to_find_out_what_slows_a_rails_app/)
-- url: https://www.reddit.com/r/ruby/comments/f5o37f/how_to_find_out_what_slows_a_rails_app/
----
-I'm working on a 4 years old app that is pretty slow.  
-The sql queries are not the issue, I have identified the lack of eager loading and an old gem as the main issues, but is there a way to detect what else slows the app?
-## [5][Anyone interested in startup, team with a fellow dev](https://www.reddit.com/r/ruby/comments/f5p20p/anyone_interested_in_startup_team_with_a_fellow/)
-- url: https://www.reddit.com/r/ruby/comments/f5p20p/anyone_interested_in_startup_team_with_a_fellow/
----
-do you love ruby.
+It's a simple API which returns `projects` (Project AR model), where I set up indexes:
 
+`mapping dynamic: false do`  
+`indexes :created_at, type: 'date'`  
+ `end`
 
-i am half tech/dev and half sales/marketing, looking to team with another dev. please send me a pm if interested to discuss more. 
+Then I simply make a search on `Elasticsearch` and return `AR` relations directly from the controller. It's working perfectly.
 
-NB, this is an "after work hours" side hustle (At least initially).
+Now I am trying to add categories to projects, as `categories has_many projects`, and projects belongs\_to categories. I am wondering about two things:
 
-its for those that have entrepreneurial spirit, or want to team with others, and a focus on financial freedom. there are no paved roads, but risk and rewards go together. 
+1. How now should I make a query to get projects from specific categories, should I reimplement it to return `result = Category.search(...)` and return result.jobs, or still seeking by `projects`, but searching by `category_id`?
+2. How to combine Category and Project in Elasticsearch to make possible to search for projects from a specific category, and from various multiple categories? Merge mappings?
 
-i will crosspost to r/startup later if appropriate.
-## [6][Rails 6.1 adds at option to perform_enqueued_jobs test helper](https://www.reddit.com/r/ruby/comments/f58cta/rails_61_adds_at_option_to_perform_enqueued_jobs/)
-- url: https://blog.saeloun.com/2020/02/17/rails-6-1-adds-at-option-to-perform_enqueued_jobs-test-helper
----
-
-## [7][RSpec Tutorial: Test-Drive Your Ruby Code](https://www.reddit.com/r/ruby/comments/f58ijj/rspec_tutorial_testdrive_your_ruby_code/)
-- url: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
----
-
-## [8][Creating a rota scheduler + is Ruby the right language?](https://www.reddit.com/r/ruby/comments/f56wc0/creating_a_rota_scheduler_is_ruby_the_right/)
-- url: https://www.reddit.com/r/ruby/comments/f56wc0/creating_a_rota_scheduler_is_ruby_the_right/
----
-My brother is looking to get in to programming and has a work problem he wants to use as his first project. I’ve agreed to work on it with him so we can learn together.
-
-The problem is that at his work, making the rota for the week can take over half a day, as everyone’s needs must be aligned in a way that works for each employee. The idea would be to automate this process with a (hopefully) simple program. As the company is small and shift based this doesn’t seem overly complicated.
-
-The plan would be to: 
-1) implement it in a way that all data is collected and input in to a script that spits out a rota option that is then manually put in to a rota 
-
-2) as my brother has an interest in app development, eventually he wants to create an app that can be used by an employee to send in their availability remotely. Once everyone has done this, the rota could then be created and sent out automatically.
-
-I have a decent beginner-intermediate understanding of both Ruby and Python and feel one of these would be most suitable to the first stage  of the problem. I also use Ruby for my job and am doing a Udemy course on it as part of my day to day work. I am leaning more towards approaching the problem with Ruby for this reason as I’ve heard learning multiple languages at once before one is known well can be confusing.
-
-My main concerns are:
-- is Ruby the right language to be approaching the problem? Would python (or a different language) be more suitable?
-- will Ruby be a good tool for my brother to continue on with future projects related to app development?
-## [9][Writing a small web service with Ruby, Rack and functional programming](https://www.reddit.com/r/ruby/comments/f4wcxi/writing_a_small_web_service_with_ruby_rack_and/)
-- url: https://medium.com/@nondv/writing-a-small-web-service-with-ruby-rack-and-functional-programming-a16f802a19c0
----
-
-## [10][Planning to learn Ruby and then Rails framework in a year, need some advice.](https://www.reddit.com/r/ruby/comments/f4rqnt/planning_to_learn_ruby_and_then_rails_framework/)
-- url: https://www.reddit.com/r/ruby/comments/f4rqnt/planning_to_learn_ruby_and_then_rails_framework/
----
-Hello good people, so Im interested in a remote work. Main reason is that now Im quite old and I have a kid, and I want/need to be at home more :)   
-So I raised this goal for myself - to build some new skill in a year and after that start working on building my freelancer career based on that skill.   
-Currently Im considering PHP and Laravel, Ruby and Ruby on Rails, Python and Django. What I want from this community is to share how job market is, is my goal actually achievable? Is Rails a good choice now, especially when so many people say that Ruby is dying language...   
-My background is a sys admin. And I think I can consider myself a coder, but not a real programmer yet. And I really want to become a proper programmer. And Ruby looks like a really interesting, different language to learn.
+Thanks in advance!

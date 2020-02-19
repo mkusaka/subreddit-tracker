@@ -1,58 +1,153 @@
 # golang
-## [1][Gontainer: a simple and rudimental container for Linux written in GO](https://www.reddit.com/r/golang/comments/f5pda3/gontainer_a_simple_and_rudimental_container_for/)
-- url: https://www.reddit.com/r/golang/comments/f5pda3/gontainer_a_simple_and_rudimental_container_for/
+## [1][Build complex APIs in GO without writing code.](https://www.reddit.com/r/golang/comments/f67vrz/build_complex_apis_in_go_without_writing_code/)
+- url: https://www.reddit.com/r/golang/comments/f67vrz/build_complex_apis_in_go_without_writing_code/
 ---
-[https://github.com/alegrey91/Gontainer](https://github.com/alegrey91/Gontainer)
-## [2][Golang in DevOps world](https://www.reddit.com/r/golang/comments/f5p1jc/golang_in_devops_world/)
-- url: https://www.reddit.com/r/golang/comments/f5p1jc/golang_in_devops_world/
+Super Graph is a GraphQL to SQL compiler that offers features like nested queries, nested inserts and updates, cursor pagination, full-text search, and a lot more right out of the box. It works with Postgres and highly scalable Yugabyte DB.
+
+Say you had to fetch the current user, his info, the top 20 threads along with a cursor to fetch more, the votes related to each thread and all the posts on each thread also sorted along with another cursor to paginate the posts and the author of each post. 
+
+This is a heavy request and will need a lot of code in any language or framework. With Super Graph the below GraphQL will be converted into a single efficient SQL query (1 query only) without you writing a line of code. 
+
+It's a pet project, open source and entirely in GO and not a startup it's taken me a lot of time and effort to get it to where it is today I'd love to have more people use it and contribute. It's well documented even got an internals doc for those who want to contribute code. 
+
+FYI Super Graph literally saved me many hundreds of man hours on projects I only focus on the React or Mobile UI while Super Graph is the entire backend.
+
+[https://github.com/dosco/super-graph](https://github.com/dosco/super-graph)
+
+```graphql
+query { 
+ user : me {
+   slug 
+   firstName : first_name 
+   lastName : last_name 
+   pictureURL : picture_url 
+   bio
+  }
+  thread(first: 20, after: $cursor, order_by: { cached_votes_total: desc }) {
+    slug
+    title
+    published
+    createdAt : created_at
+    totalVotes : cached_votes_total
+    totalPosts : cached_posts_total
+    vote : thread_vote(where: { user_id: { eq: $user_id } }) {
+      created_at
+    }
+    topics {
+      slug
+      name
+    }
+    author : me {
+      slug
+    }
+    posts(first: 20, order_by: { cached_votes_total: desc }) {
+      slug
+      body
+      published
+      createdAt : created_at
+      totalVotes : cached_votes_total
+      vote : post_vote(where: { user_id: { eq: $user_id } }) {
+        created_at
+      }
+      author : user {
+        slug 
+        firstName : first_name
+        lastName : last_name
+      }
+    }
+  }
+}
+```
+## [2][Testing in Go: Clean Tests Using t.Cleanup](https://www.reddit.com/r/golang/comments/f61egk/testing_in_go_clean_tests_using_tcleanup/)
+- url: https://ieftimov.com/post/testing-in-go-clean-tests-using-t-cleanup/
 ---
-Hello again,
 
-For couple of weeks ago I’ve stated that I will be ditching Python in favor for Go and try to use it where I can. I’m system engineer and my primary field is to keep our hybrid environment up and running and automate all the things but not only that because I also work as backend dev. I’ve always used Python for small backend services and glue things together. Then in 2019 I’ve came across Golang. It seemed nice but was little bit afraid of static typing and not “OOP” design but because Golang was created with concurrency in mind and thought to give a shoot. After spending couple of months with it I can say that it is the pleasure to have something like Golang. I know that some guys said that Python is mainly the DevOps language and automation standard and I should still use python to such things but I like to challenge myself so I decided to try and I can’t complain at all! CLI tools? No problem! One binary file, push it and done. Backend? Like Python async is messy but with Golang is so simple because language it self was intended to be used across multiple CPUs. Now I’m again very excited about programming like the first time I met Python. I know that Golang may or not be the best language for automation like many says but I can’t see why. The Golang libs is growing massively right now and most of cloud automation tools are written in Golang so when you know Golang, it is so fun to just see source code and that you can understand what’s doing under the hood. I know that there’s few people right now who’s using Golang for automation etc. but it was the same thing for many years ago with Python. We need to start somewhere I would with pleasure recommend Golang to other devops guys because it’s very flexible language so now I think, after spending some time with Golang that this is what I’ve looked for. Besides with Golang you will understand many things better that with Python about how programming works in real. I think. 
-
-It’s just my 5 cents and I may be wrong about my statements so what’s your thoughts about Golang in devops world? Would like to hear your opinion.
-
-And last but not least - great community!
-## [3][Self Signed HTTPS Servers for Go](https://www.reddit.com/r/golang/comments/f5kyek/self_signed_https_servers_for_go/)
-- url: https://medium.com/@rocketlaunchr.cloud/self-signed-https-servers-for-go-ab32bb848a8a
+## [3][go-cov-rollup - roll up concatenated go coverage reports (like from go-acc)](https://www.reddit.com/r/golang/comments/f68ff2/gocovrollup_roll_up_concatenated_go_coverage/)
+- url: https://www.reddit.com/r/golang/comments/f68ff2/gocovrollup_roll_up_concatenated_go_coverage/
 ---
+[https://github.com/redstarnv/go-cov-rollup](https://github.com/redstarnv/go-cov-rollup)
 
-## [4][GoTorWeb - automatically expose your docker containers to the tor web](https://www.reddit.com/r/golang/comments/f5q6wj/gotorweb_automatically_expose_your_docker/)
-- url: https://github.com/EduardoOliveira/GoTorWeb
+The other day we ran into a problem with go modules coverage and Code Climate. We use `go-acc` to get an accurate coverage report for a project split into multiple modules that has integration tests covering more than one module. It works well for local coverage reports via `go tool cover`, but once we tried uploading it to Code Climate - the coverage numbers were off there.
+
+After looking into it a but further, it turned out that as concatenated report produced by `go-acc` contains multiple entries for the same statement with different hit counts – e.g. one for every time it was touched by a test – Code Climate doesn't correctly roll those up, and reports only the first hit, which is wrong.
+
+To work around it, I wrote a quick tool that takes coverage report(s) from stdin, rolls up hit counts and outputs summarised report to stdout. This can be easily plugged into CI pipelines before the final report is sent off to an external service like Code Climate.
+
+Hope someone else finds it useful, too.
+## [4][The Goyave framework replaces gorilla/mux with his own router, which is twice as fast and uses 3 times less memory](https://www.reddit.com/r/golang/comments/f6aktu/the_goyave_framework_replaces_gorillamux_with_his/)
+- url: https://www.reddit.com/r/golang/comments/f6aktu/the_goyave_framework_replaces_gorillamux_with_his/
 ---
-
-## [5][Python Collections Parody in Go](https://www.reddit.com/r/golang/comments/f5lj0c/python_collections_parody_in_go/)
-- url: https://www.reddit.com/r/golang/comments/f5lj0c/python_collections_parody_in_go/
----
-[https://github.com/marcsantiago/collections](https://github.com/marcsantiago/collections)  
-This has been purely for fun. It started off with doing problems in hacker rank and I would solve each problem in Python and Go. Very quickly, pythons std lib allowed me to answers questions with less coding than Go. I love Go and use it in my professional life.. so for fun I decided to recreate "some" of pythons collections package (also through in a set implementation), which uses as little reflection as possible and instead relies on interfaces.
-## [6][Go container tutorial resources](https://www.reddit.com/r/golang/comments/f5ps7r/go_container_tutorial_resources/)
-- url: https://www.reddit.com/r/golang/comments/f5ps7r/go_container_tutorial_resources/
----
-I have recently setup a moosefs docker cluster and now I want to run my go application in the dockers. What will be the best place to find a good learning tutorial to install and run a go application inside the docker container?
-## [7][Leprechaun: Stable version with remote code execution is released](https://www.reddit.com/r/golang/comments/f5prji/leprechaun_stable_version_with_remote_code/)
-- url: https://github.com/kilgaloon/leprechaun/releases/tag/1.5.0
----
-
-## [8][gocat, a 21st-century multi-purpose relay from source to destination](https://www.reddit.com/r/golang/comments/f5phsk/gocat_a_21stcentury_multipurpose_relay_from/)
-- url: https://medium.com/@syndbg/gocat-a-21st-century-multi-purpose-relay-from-source-to-destination-5d9026f6cdb
----
-
-## [9][Bot Framework SDK for Go - Announced](https://www.reddit.com/r/golang/comments/f5phjm/bot_framework_sdk_for_go_announced/)
-- url: https://www.reddit.com/r/golang/comments/f5phjm/bot_framework_sdk_for_go_announced/
----
-Consequent to a great feedback to [BotKube](https://www.botkube.io/), an application for messengers like Slack and Mattermost to monitor and debug Kubernetes deployments, we have got interests from Microsoft Teams users for an integration. An integration, which would help them monitor their Kubernetes cluster from a Teams client. Since BotKube is architecturally designed to work independently of a messaging platform, it seemed a viable thing to integrate it with Teams.
-
-Microsoft Teams uses the [Microsoft Bot Framework](https://dev.botframework.com/) to allow users to write bot applications. The Bot Framework is a set of tools, SDKs, templates and services to build conversational bot applications. The official SDKs are available for Python, C#.NET, Java and Javascript. Since BotKube is built in Go, there was a need of an interface to the Bot Framework services in Go, for a seamless integration of BotKube to Teams. This encouraged us to write a Go SDK that wraps the services of the Bot Framework.
-
-Today, we are excited to announce the first release of the [Bot Framework SDK for Go](https://github.com/infracloudio/msbotbuilder-go); an SDK written in Go that enables users to build bot applications over the Bot Framework in Golang. The SDK enables application developers to build conversational bots for Microsoft Teams.
-
-A bot application built using this SDK can send text, interactive cards and attachments in a conversation with a user. Apart from a receive-reply conversation, developers can build bot applications to push messages in a conversation to Teams client.
+Hello ! The v2.6.0 release is out today. The focus was on routing optimization. This is why I got rid of gorilla/mux for routing and implemented my own router. This release doesn't break backwards compatibility and opens new possibilities for the framework. Also, the performance greatly increased: the new router is twice as fast and uses about 3 times less memory.
 
 &amp;#x200B;
 
-Read the full blog here:  [https://www.infracloud.io/microsoft-bot-framwework-sdk-for-go/](https://www.infracloud.io/microsoft-bot-framwework-sdk-for-go/)
-## [10][pkg.go.dev will be open-sourced](https://www.reddit.com/r/golang/comments/f56ua9/pkggodev_will_be_opensourced/)
-- url: https://groups.google.com/d/msg/golang-dev/mfiPCtJ1BGU/OZ9cU3SgBgAJ
+**Benchmark:**
+
+OS: Ubuntu 19.10
+
+Arch: amd64
+
+CPU: Intel Core i7-6700HQ @ 8x 3.5GHz (Laptop)
+
+RAM: 16GiB
+
+**Before** (gorilla/mux)**:**
+
+    BenchmarkRouteRegistration-8               12631             92962 ns/op           60023 B/op        814 allocs/op
+    BenchmarkRootLevelNotFound-8            10202770               121 ns/op              48 B/op          1 allocs/op
+    BenchmarkRootLevelMatch-8                2993304               392 ns/op             112 B/op          3 allocs/op
+    BenchmarkRootLevelPostMatch-8            2586350               462 ns/op             112 B/op          3 allocs/op
+    BenchmarkRootLevelPostParamMatch-8       1252915               973 ns/op             416 B/op          4 allocs/op
+    BenchmarkSubrouterMatch-8                 912388              1302 ns/op             112 B/op          3 allocs/op
+    BenchmarkSubrouterPostMatch-8             897088              1314 ns/op             112 B/op          3 allocs/op
+    BenchmarkSubrouterNotFound-8              662738              1746 ns/op             113 B/op          3 allocs/op
+    BenchmarkParamMatch-8                     678423              1650 ns/op             436 B/op          5 allocs/op
+    BenchmarkParamPutMatch-8                  564192              2016 ns/op             436 B/op          5 allocs/op
+    BenchmarkParamDeleteMatch-8               445140              2267 ns/op             436 B/op          5 allocs/op
+    BenchmarkMatchAll-8                        90562             12947 ns/op            2347 B/op         35 allocs/op
+
+**After** (new router):
+
+    BenchmarkRouteRegistration-8               43315             27346 ns/op           21765 B/op        278 allocs/op
+    BenchmarkRootLevelNotFound-8            18301303                59.4 ns/op             0 B/op          0 allocs/op
+    BenchmarkRootLevelMatch-8                7645866               151 ns/op              16 B/op          1 allocs/op
+    BenchmarkRootLevelPostMatch-8            5557107               216 ns/op              16 B/op          1 allocs/op
+    BenchmarkRootLevelPostParamMatch-8       1538215               765 ns/op             368 B/op          3 allocs/op
+    BenchmarkSubrouterMatch-8                3730909               312 ns/op              32 B/op          2 allocs/op
+    BenchmarkSubrouterPostMatch-8            2679608               460 ns/op              48 B/op          3 allocs/op
+    BenchmarkSubrouterNotFound-8             1290444               910 ns/op              48 B/op          2 allocs/op
+    BenchmarkParamMatch-8                    1306718               878 ns/op             388 B/op          4 allocs/op
+    BenchmarkParamPutMatch-8                 1056933              1147 ns/op             421 B/op          5 allocs/op
+    BenchmarkParamDeleteMatch-8               825115              1328 ns/op             453 B/op          6 allocs/op
+    BenchmarkMatchAll-8                       173403              6490 ns/op            1798 B/op         27 allocs/op
+
+You can run the benchmark yourself, it's available on the [Goyave repository.](https://github.com/System-Glitch/goyave) I suspect the performance improvements to be even more significant on large applications with many more routes. I am open to any suggestion (and contribution) for improvements on the benchmark and the router implementation.
+## [5][Bloom effect using Go](https://www.reddit.com/r/golang/comments/f5tvng/bloom_effect_using_go/)
+- url: https://remy.io/blog/bloom-effect-in-go
 ---
 
+## [6][API made with Go - is a systemd service the best route to provide uptime, automatic restarts etc?](https://www.reddit.com/r/golang/comments/f6aini/api_made_with_go_is_a_systemd_service_the_best/)
+- url: https://www.reddit.com/r/golang/comments/f6aini/api_made_with_go_is_a_systemd_service_the_best/
+---
+I've develop a small API for the sake of learning the workflow, it works just fine when executed directly in the shell but now I'd like to learn how to make the binary "persistent" across reboots or crashes.
+
+For what it's worth in working under Ubuntu server 18.04 and from my understanding a systemd service is the way to go (opinion due to mostly digital ocean tutorials).
+
+1. Am I pursuing the right path?
+1. Most importantly If I coded in the program to read some values from a config.yml in the same folder of the binary, how this should be handled with a service?
+## [7][gorilla/mux v1.7.4](https://www.reddit.com/r/golang/comments/f6ahmi/gorillamux_v174/)
+- url: https://github.com/gorilla/mux/releases/tag/v1.7.4
+---
+
+## [8][Is concurrent read okay in go maps? Just reading no writing](https://www.reddit.com/r/golang/comments/f6af6h/is_concurrent_read_okay_in_go_maps_just_reading/)
+- url: https://www.reddit.com/r/golang/comments/f6af6h/is_concurrent_read_okay_in_go_maps_just_reading/
+---
+
+## [9][Testing for SSL related outages with Go](https://www.reddit.com/r/golang/comments/f67w1d/testing_for_ssl_related_outages_with_go/)
+- url: https://medium.com/@noamt/simulating-ssl-outages-with-go-8f14e5ef0621
+---
+
+## [10][Gontainer: a simple and rudimental container for Linux written in GO](https://www.reddit.com/r/golang/comments/f5pda3/gontainer_a_simple_and_rudimental_container_for/)
+- url: https://www.reddit.com/r/golang/comments/f5pda3/gontainer_a_simple_and_rudimental_container_for/
+---
+[https://github.com/alegrey91/Gontainer](https://github.com/alegrey91/Gontainer)

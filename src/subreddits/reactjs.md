@@ -108,77 +108,57 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][The official Redux template for Create-React-App is now available](https://www.reddit.com/r/reactjs/comments/f5pjvg/the_official_redux_template_for_createreactapp_is/)
+## [3][React Routing Interactive Tutorial](https://www.reddit.com/r/reactjs/comments/f65xvm/react_routing_interactive_tutorial/)
+- url: https://blog.soshace.com/this-is-how-i-created-a-simple-app-using-react-routing/
+---
+
+## [4][fake-tweet • Tweet React component](https://www.reddit.com/r/reactjs/comments/f6ahdj/faketweet_tweet_react_component/)
+- url: https://github.com/lluiscamino/fake-tweet
+---
+
+## [5][Module federation and code sharing between bundles. Huge changes coming to frontend with webpack@5](https://www.reddit.com/r/reactjs/comments/f5xhas/module_federation_and_code_sharing_between/)
+- url: https://github.com/webpack/webpack/issues/10352
+---
+
+## [6][The official Redux template for Create-React-App is now available](https://www.reddit.com/r/reactjs/comments/f5pjvg/the_official_redux_template_for_createreactapp_is/)
 - url: https://github.com/reduxjs/cra-template-redux/releases/tag/v1.0.0
 ---
 
-## [4][I has fun making this little dark mode toggle!](https://www.reddit.com/r/reactjs/comments/f5i7zc/i_has_fun_making_this_little_dark_mode_toggle/)
-- url: https://github.com/cawfree/react-dark-mode-toggle
+## [7][React + Flask, how to use Auth0?](https://www.reddit.com/r/reactjs/comments/f65nag/react_flask_how_to_use_auth0/)
+- url: https://www.reddit.com/r/reactjs/comments/f65nag/react_flask_how_to_use_auth0/
+---
+Noob here. I have a React + Flask stack going on and want to use the Auth0 service to add authentication.  Flask is just exposing an API and handles all the database changes. Going through the Auth0 docs I am getting confused as to what parts are relevant to Flask vs. React?
+
+Do I use Auth0's "Single Page Application" setup? That seems to focus only on React. Or do I use the "Web App" setup, but that seems to focus only on Flask API.
+
+If I set this up with React interfacing with Auth0, do I pass tokens recieved onto my Flask backend so my server knows what business logic to show for this authenticated user?
+
+Anyone else deal with this stack? Would love to know of potential resources I could take a look at.
+## [8][React-Redux 7.2.0: bug fixes and bundle size improvements](https://www.reddit.com/r/reactjs/comments/f5vitq/reactredux_720_bug_fixes_and_bundle_size/)
+- url: https://github.com/reduxjs/react-redux/releases/tag/v7.2.0
 ---
 
-## [5][🌊vaporwave generator 🌊](https://www.reddit.com/r/reactjs/comments/f5q1gr/vaporwave_generator/)
-- url: https://www.reddit.com/r/reactjs/comments/f5q1gr/vaporwave_generator/
+## [9][Do you want to learn Next.js (React server-side rendering)?](https://www.reddit.com/r/reactjs/comments/f6ajwq/do_you_want_to_learn_nextjs_react_serverside/)
+- url: https://www.reddit.com/r/reactjs/comments/f6ajwq/do_you_want_to_learn_nextjs_react_serverside/
 ---
-Do you enjoy endless waves of vaporwave aesthetics? Check out my thing! [https://borzecki.github.io/wave/](https://t.co/u4vN3YC3aV?amp=1)
+I launched the first video of a series on my youtube channel.
 
-More seriously, I used perlin noise and three.js to mash together a little demo. Layers of noise can be stacked together with different parameters.
+In this first video, you'll learn about the Next.js Router.
 
-Source code: [https://github.com/borzecki/wave](https://github.com/borzecki/wave)
+This is a good video for beginners and intermediate developers - step by step.
 
-feedback welcome :)
-## [6][React Router v6 will be 2.9kb - 70% smaller because of Hooks and other factors](https://www.reddit.com/r/reactjs/comments/f543xl/react_router_v6_will_be_29kb_70_smaller_because/)
-- url: https://twitter.com/mjackson/status/1229156979714605056?s=20
+I hope it's helpful and you enjoy it! :)
+
+[https://www.youtube.com/watch?v=7J4iL1HDshQ&amp;feature=share](https://www.youtube.com/watch?v=7J4iL1HDshQ&amp;feature=share)
+## [10][What are some of the common misconceptions among React developers?](https://www.reddit.com/r/reactjs/comments/f6agy8/what_are_some_of_the_common_misconceptions_among/)
+- url: https://www.reddit.com/r/reactjs/comments/f6agy8/what_are_some_of_the_common_misconceptions_among/
+---
+What are some of the common misconceptions among React developers? I find that learning some of the misconceptions beforehand can prevent you from making a huge design mistake.
+## [11][Deno React Server (A wannabe Next.js for Deno)](https://www.reddit.com/r/reactjs/comments/f65z94/deno_react_server_a_wannabe_nextjs_for_deno/)
+- url: https://github.com/imaginamundo/deno-react-server
 ---
 
-## [7][Full page transitions example](https://www.reddit.com/r/reactjs/comments/f57s4b/full_page_transitions_example/)
-- url: https://v.redd.it/iw4w3luw4hh41
----
-
-## [8][Realworld example (medium clone) without state management library](https://www.reddit.com/r/reactjs/comments/f5pqzw/realworld_example_medium_clone_without_state/)
-- url: https://www.reddit.com/r/reactjs/comments/f5pqzw/realworld_example_medium_clone_without_state/
----
-&amp;#x200B;
-
-[https:\/\/next-realworld-example-app.now.sh](https://reddit.com/link/f5pqzw/video/95gjxx6hrnh41/player)
-
-Next.js + SWR codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
-
-It was much easier to implement this realworld project than when using Redux or Mobx.
-
-You can view a live demo and source code on my github below 😄
-
-* Demo: [https://next-realworld-example-app.now.sh](https://next-realworld-example-app.now.sh)
-* Repo: [https://github.com/reck1ess/next-realworld-example-app](https://github.com/reck1ess/next-realworld-example-app)
-
-I hope you guys enjoy frontend development with Next.js and SWR.
-## [9][React: Sorting Visualizer - Items in array not being sorted properly](https://www.reddit.com/r/reactjs/comments/f5ri30/react_sorting_visualizer_items_in_array_not_being/)
-- url: https://www.reddit.com/r/reactjs/comments/f5ri30/react_sorting_visualizer_items_in_array_not_being/
----
-I'm making a sorting visualizer in React and have the option of generating a random array or letting the user enter their own 'dataset' to sort. The randomly generated array gets sorted just fine however if the user was to sort their own 'dataset' they input, it never gets sorted properly (largest item in array always seems to get placed somehwere in the middle).
-
-Code:  [https://github.com/kevinniland97/Applied-Project-and-Minor-Dissertation/blob/master/src/components/MainPage.js](https://github.com/kevinniland97/Applied-Project-and-Minor-Dissertation/blob/master/src/components/MainPage.js)
-## [10][Building 8000+ React files using Bazel and a remote build cache](https://www.reddit.com/r/reactjs/comments/f5i89p/building_8000_react_files_using_bazel_and_a/)
-- url: https://www.reddit.com/r/reactjs/comments/f5i89p/building_8000_react_files_using_bazel_and_a/
----
-Check out this example if you are interested in Bazel and large React apps, aided by remote caching.
-
-[https://github.com/thelgevold/react-bazel-example/tree/remote](https://github.com/thelgevold/react-bazel-example/tree/remote)
-## [11][React app is hosted on GitHub pages. Default branch in GitHub repo is now ‘gh-pages.’ Can I safely change default branch to ‘master?’](https://www.reddit.com/r/reactjs/comments/f5qt6j/react_app_is_hosted_on_github_pages_default/)
-- url: https://www.reddit.com/r/reactjs/comments/f5qt6j/react_app_is_hosted_on_github_pages_default/
----
-Hi all.  I've created a simple local React app, using Create React App.  I have pushed it to GitHub pages, using `npm run deploy`.  As expected, the GitHub repo for this project now has two branches:
-
-    master
-    gh-pages
-
-In this GitHub repo, the default branch is `gh-pages`.  Can I safely change it to `master` ([screenshot](https://imgur.com/a/MoV1v5l)), without anything being affected?  Specifically, I still want to be able to push my local app to GitHub pages.^1
-
-The reason I’d like to change the default branch to `master` is because the `master` branch is the branch that actually displays the code I wrote, as well as the README file for the GitHub repo.  So I'd like to share a link to this repo with collaborators/potential employers, and have my code/README file displayed by default.
-
-Thanks in advance.
-___
-^1 Whether I continue to do that with `npm run deploy` or some other command.
-## [12][Introducing Blitz ⚡️, a Ruby on Rails equivalent for monolithic fullstack React apps!](https://www.reddit.com/r/reactjs/comments/f5bx5a/introducing_blitz_a_ruby_on_rails_equivalent_for/)
-- url: https://twitter.com/flybayer/status/1229425878481793024?s=20
+## [12][Make your own DevTools | Kent C Dodds](https://www.reddit.com/r/reactjs/comments/f5za6w/make_your_own_devtools_kent_c_dodds/)
+- url: https://kentcdodds.com/blog/make-your-own-dev-tools/
 ---
 

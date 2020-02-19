@@ -60,9 +60,13 @@ Previous Post
 ## [2][2020-02 Prague ISO C++ Committee Trip Report — 🎉 C++20 is Done! 🎉](https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/)
 - url: https://www.reddit.com/r/cpp/comments/f47x4o/202002_prague_iso_c_committee_trip_report_c20_is/
 ---
+**[A very special video report from Prague.](https://youtu.be/AvPiGstxV_g)**
+
+&amp;nbsp;
+
 **C++20, the most impactful revision of C++ in a decade, is done!** 🎉🎊🥳
 
-At the ISO C++ Committee meeting in Prague 🇨🇿, hosted by [Avast](https://www.avast.com/), we completed the C++20 Committee Draft and voted to send the Draft International Standard (DIS) out for final approval and publication. Procedurally, it's possible that the DIS could be rejected, but due to our procedures and process, it's very unlikely to happen. This means that C++20 is complete, and in a few months the standard will be published.
+At the ISO C++ Committee meeting in Prague, hosted by [Avast](https://www.avast.com/), we completed the C++20 Committee Draft and voted to send the Draft International Standard (DIS) out for final approval and publication. Procedurally, it's possible that the DIS could be rejected, but due to our procedures and process, it's very unlikely to happen. This means that C++20 is complete, and in a few months the standard will be published.
 
 During this meeting, we also [adopted a plan for C++23](https://wg21.link/P0592), which includes prioritizing a modular standard library, library support for coroutines, executors, and networking.
 
@@ -143,7 +147,6 @@ Several papers received a lot of feedback and will return to the Incubator, hope
 - [Partially mutable lambda captures](https://wg21.link/p2034)
 - [C++ should support just-in-time compilation](https://wg21.link/p1609)
 - [`move = bitcopies`](https://wg21.link/P1029)
-- [Partially mutable lambda captures](https://wg21.link/P2034)
 
 Notably, [the proposed epochs language facility](https://wg21.link/p1881) received no consensus to proceed. One significant problem pointed out was that in a concepts and modules world, we really cannot make any language changes that may change the satisfaction of a concept for a set of types. If one TU thinks `C&lt;T&gt;` is true, but another TU in a later epoch thinks `C&lt;T&gt;` is false, that easily leads to ODR violations. Many of the suggested changes in the paper run afoul of this problem. However, we’re interested in solving the problem, so welcome an alternative approach.
 
@@ -196,9 +199,9 @@ The top priority of CWG was finishing processing national body comments for C++2
 
 We finished reviewing four papers that fine-tune the semantics of modules:
 
-- We [clarified the meaning of `static`](https://wg21.link/p1815r2) (and unnamed namespaces) in module interfaces: such entities are now kept internal and cannot be exposed in the interface / ABI of the module. In non-modules compilations, we deprecated cases where internal-linkage entities are used from external-linkage entities. (These cases typically lead to violations of the One Definition Rule.)
+- We [clarified the meaning of `static`](https://wg21.link/p1815) (and unnamed namespaces) in module interfaces: such entities are now kept internal and cannot be exposed in the interface / ABI of the module. In non-modules compilations, we deprecated cases where internal-linkage entities are used from external-linkage entities. (These cases typically lead to violations of the One Definition Rule.)
 
-- We [clarified the meaning of `inline`](https://wg21.link/p1779r3) in module interfaces: the intent is that bodies of functions that are not explicitly declared `inline` are not part of the ABI of a module, even if those function bodies appear in the module interface. In order to give module authors more control over their ABI, member functions defined in class bodies in module interfaces are no longer implicitly `inline`.
+- We [clarified the meaning of `inline`](https://wg21.link/p1779) in module interfaces: the intent is that bodies of functions that are not explicitly declared `inline` are not part of the ABI of a module, even if those function bodies appear in the module interface. In order to give module authors more control over their ABI, member functions defined in class bodies in module interfaces are no longer implicitly `inline`.
 
 - We tweaked the context-sensitive recognition of the `module` and `import` keyword in order to avoid changing the meaning of more existing code that uses these identifiers, and to make it more straightforward for a scanning tool to recognize these declarations without full preprocessing.
 
@@ -206,7 +209,7 @@ We finished reviewing four papers that fine-tune the semantics of modules:
 
 - We finalized some subtle rules for concepts: a [syntax gotcha](https://wg21.link/p2092r0) in `requires` expressions was fixed, and we allowed [caching of concept values](https://wg21.link/p2104r0), which has been shown to dramatically improve performance in some cases.
 
-- We agreed to (retroactively, via the defect report process) [treat initialization of a `bool` from a pointer as narrowing](https://wg21.link/p2104r0), improving language safety.
+- We agreed to (retroactively, via the defect report process) [treat initialization of a `bool` from a pointer as narrowing](https://wg21.link/p1957r2), improving language safety.
 
 - We added permission for a comparison function to be defaulted outside its class, so long as the comparison function is a member or friend of the class, for consistency and to allow a defaulted comparison function to be non-inline.
 
@@ -239,7 +242,7 @@ LEWGI looked at the following proposals, among others:
 - Random Numbers
   - [Improving std::random_device](https://wg21.link/P2058).
   - [Portable Distributions](https://wg21.link/P2059).
-  - [Improving Engine Seeding](https://wg21.link/P2059).
+  - [Improving Engine Seeding](https://wg21.link/P2060).
 
 &amp;nbsp;
 
@@ -257,7 +260,7 @@ The biggest C++23 news: LEWG spent an entire day with the concurrency experts of
 
 Other C++23 proposals reviewed include
 
-- [a new `status_code` facility](https://wg21.link/P1208)
+- [a new `status_code` facility](https://wg21.link/P1028)
 - [an ability for containers and allocators to communicate about the actual allocation size](https://wg21.link/P0401)
 - [iterator range constructors for `std::stack` and `std::queue`](https://wg21.link/P1425)
 
@@ -365,6 +368,8 @@ Finally, we worked through the use cases in [Audio I/O Software Use Cases](http:
 
 &amp;nbsp;
 
+
+
 *****
 
 ### Tooling Study Group (SG15) Progress
@@ -380,6 +385,20 @@ The Tooling study group met this week to continue work on the Module Ecosystem T
 This draft will give us a shared vehicle to start hammering out the details of the Technical Report, and a target for people to write papers against.
 
 We also discussed two proposals, about [debugging C++ coroutines](https://wg21.link/P2073) and [asynchronous call stacks](https://wg21.link/P2074).
+
+&amp;nbsp;
+
+*****
+
+### Machine Learning Study Group (SG19) Progress
+
+*****
+
+SG14 met in Prague in a joint session with SG19 (Machine Learning).
+
+The freestanding library took a few steps forward, with some interesting proposals, including [Freestanding Language: Optional `::operator new`](https://wg21.link/P2013R0)
+
+One of the biggest decisions was on [Low-Cost Deterministic C++ Exceptions for Embedded Systems](https://www.research.ed.ac.uk/portal/files/78829292/low_cost_deterministic_C_exceptions_for_embedded_systems.pdf) which got great reactions. We will probably hear more about it!
 
 &amp;nbsp;
 
@@ -416,10 +435,6 @@ The [graph library](http://wg21.link/P1709) paper had a great reaction, was also
 
 Also, support for differentiable programming in C++, important for well-integrated support for ML back-propagation, was discussed in the context of [differentiable programming for C++](https://wg21.link/P2072).
 
-The freestanding library took a few steps forward, with some interesting proposals, including [Freestanding Language: Optional `::operator new`](https://wg21.link/P2013R0)
-
-One of the biggest decisions was on [Low-Cost Deterministic C++ Exceptions for Embedded Systems](https://www.research.ed.ac.uk/portal/files/78829292/low_cost_deterministic_C_exceptions_for_embedded_systems.pdf) which got great reactions. We will probably hear more about it!
-
 &amp;nbsp;
 
 *****
@@ -450,20 +465,20 @@ In a half-day session, we discussed one of the major points of contention from p
 
 Meeting | Location | Objective
 -|-|-
-~~2018 Summer LWG Meeting~~ | ~~Chicago 🇺🇸~~ | ~~Work on wording for C++20 features.~~
-~~2018 Fall EWG Modules Meeting~~ | ~~Seattle 🇺🇸~~ | ~~Design modules for C++20.~~
-~~2018 Fall LEWG/SG1 Executors Meeting~~ | ~~Seattle 🇺🇸~~ | ~~Design executors for C++20.~~
-~~2018 Fall Meeting~~ | ~~San Diego 🇺🇸~~ | ~~C++20 major language feature freeze.~~
-~~2019 Spring Meeting~~ | ~~Kona 🇺🇸~~ | ~~C++20 feature freeze. C++20 design is feature-complete.~~
-~~2019 Summer Meeting~~ | ~~Cologne 🇩🇪~~ | ~~Complete C++20 CD wording. Start C++20 CD balloting ("beta testing").~~
-~~2019 Fall Meeting~~ | ~~Belfast 🇬🇧~~ | ~~C++20 CD ballot comment resolution ("bug fixes").~~
-**2020 Spring Meeting** | **Prague 🇨🇿** | **C++20 CD ballot comment resolution ("bug fixes"), C++20 completed.**
-2020 Summer Meeting | Varna 🇧🇬 | First meeting of C++23.
-2020 Fall Meeting | New York 🇺🇸 | Design major C++23 features.
-2021 Winter Meeting | Kona 🇺🇸 | Design major C++23 features.
-2021 Summer Meeting | Montréal 🇨🇦 ⚜️ | Design major C++23 features.
+~~2018 Summer LWG Meeting~~ | ~~Chicago~~ | ~~Work on wording for C++20 features.~~
+~~2018 Fall EWG Modules Meeting~~ | ~~Seattle~~ | ~~Design modules for C++20.~~
+~~2018 Fall LEWG/SG1 Executors Meeting~~ | ~~Seattle~~ | ~~Design executors for C++20.~~
+~~2018 Fall Meeting~~ | ~~San Diego~~ | ~~C++20 major language feature freeze.~~
+~~2019 Spring Meeting~~ | ~~Kona~~ | ~~C++20 feature freeze. C++20 design is feature-complete.~~
+~~2019 Summer Meeting~~ | ~~Cologne~~ | ~~Complete C++20 CD wording. Start C++20 CD balloting ("beta testing").~~
+~~2019 Fall Meeting~~ | ~~Belfast~~ | ~~C++20 CD ballot comment resolution ("bug fixes").~~
+**2020 Spring Meeting** | **Prague** | **C++20 CD ballot comment resolution ("bug fixes"), C++20 completed.**
+2020 Summer Meeting | Varna | First meeting of C++23.
+2020 Fall Meeting | New York | Design major C++23 features.
+2021 Winter Meeting | Kona | Design major C++23 features.
+2021 Summer Meeting | Montréal | Design major C++23 features.
 2021 Fall Meeting | 🗺️ | C++23 major language feature freeze.
-2022 Spring Meeting | Portland 🇺🇸 | C++23 feature freeze. C++23 design is feature-complete.
+2022 Spring Meeting | Portland | C++23 feature freeze. C++23 design is feature-complete.
 2022 Summer Meeting | 🗺️ | Complete C++23 CD wording. Start C++23 CD balloting ("beta testing").
 2022 Fall Meeting | 🗺️ | C++23 CD ballot comment resolution ("bug fixes").
 2023 Spring Meeting | 🗺️ | C++23 CD ballot comment resolution ("bug fixes"), C++23 completed.
@@ -505,6 +520,8 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 &amp;nbsp;
 
 **If you have any questions, ask them in this thread!**
+
+**Report issues by replying to the top-level stickied comment for issue reporting.**
 
 &amp;nbsp;
 
@@ -561,266 +578,80 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [3][This is why we can('t) have nice things - Timu van der Kuil - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f5pdvu/this_is_why_we_cant_have_nice_things_timu_van_der/)
+## [3][C++20 is here!](https://www.reddit.com/r/cpp/comments/f5t17a/c20_is_here/)
+- url: https://youtu.be/AvPiGstxV_g
+---
+
+## [4][Are you excited about C++ 20 ?](https://www.reddit.com/r/cpp/comments/f62nyr/are_you_excited_about_c_20/)
+- url: https://www.reddit.com/r/cpp/comments/f62nyr/are_you_excited_about_c_20/
+---
+Are you excited about C++ 20 ? or you feel the language should have stayed the same like pre98 or 2003 etc (e.g old pointers and all that) ? Do you think they should break with backward compatibility for good or its a necessary evil ? Is there anything else that bother you or some syntax sugar you would love to have in C++ like in C# ?
+## [5][Zero, one, two, Freddy's coming for you](https://www.reddit.com/r/cpp/comments/f6a8vz/zero_one_two_freddys_coming_for_you/)
+- url: https://habr.com/en/company/pvs-studio/blog/488328/
+---
+
+## [6][C Android Native App | Visual Studio 2019](https://www.reddit.com/r/cpp/comments/f68tlm/c_android_native_app_visual_studio_2019/)
+- url: https://www.youtube.com/watch?v=7U9q1RfLeso&amp;feature=share
+---
+
+## [7][Type-level lambda expressions for template metaprogramming in C++20](https://www.reddit.com/r/cpp/comments/f61quh/typelevel_lambda_expressions_for_template/)
+- url: https://www.reddit.com/r/cpp/comments/f61quh/typelevel_lambda_expressions_for_template/
+---
+Since around C++98 the standard has described that "a template-declaration can appear only as a namespace scope or class scope declaration" (as of the time of writing this is at section 13.1.4 in n4849). Interestingly, C++14 generic lambdas seem to circumvent that issue by allowing a template function to be generated wherever a lambda can be defined, since the operator() implementation needs to accept any type. But C++20 makes this even more interesting with the triple combination of default-constructible lambdas, explicitly-templated lambdas. and lambdas being legal in an unevaluated context.
+
+with these three things, something to the effect of
+
+    template &lt;class F&gt; struct adapter {
+	    template &lt;class... Ts&gt;
+	    using f = decltype(F().template operator()&lt;Ts...&gt;());
+    };
+
+    using as_tuple = adapter&lt;decltype([]&lt;class... Ts&gt;{ return std::tuple&lt;Ts...&gt;(); })&gt;;
+
+becomes a quick, legal way of defining a template metafunction without the need to explicitly create a using-declaration or a templated struct. With a bit of macro magic to clean up the generation of those lambda expressions, this could be represented as
+
+    using as_tuple = METALAMBDA(class... Ts)(std::tuple&lt;Ts...&gt;);
+
+by just filling in the blanks. I've put together a PoC at [https://godbolt.org/z/nQ3SLc](https://godbolt.org/z/nQ3SLc) showing some interesting examples of how they can clean up metaprograms.
+## [8][This is why we can('t) have nice things - Timu van der Kuil - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f5pdvu/this_is_why_we_cant_have_nice_things_timu_van_der/)
 - url: https://www.youtube.com/watch?v=sawtgibAlvg
 ---
 
-## [4][Freestanding in Prague](https://www.reddit.com/r/cpp/comments/f5hgqm/freestanding_in_prague/)
-- url: https://www.reddit.com/r/cpp/comments/f5hgqm/freestanding_in_prague/
----
-# Freestanding in Prague
-
-The C++ standards committee met in Prague, Czech Republic between Feb 10 and Feb 15. The standard is wording complete, and the only thing between here and getting it published is ISO process.  As is typical for me at these meetings, I spent a lot of time doing freestanding things, Library Incubator (LEWGI) things, and minuting along the way (15-ish sessions/papers!).
-
-# Freestanding
-
-I had three freestanding papers coming into this meeting:
-
-* [P1641](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1641r2.html): Freestanding Library: Rewording the Status Quo
-* [P1642](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1642r2.html): Freestanding Library: Easy `[utilities]`, `[ranges]`, and `[iterators]`
-* [P2013](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2013r0.html): Freestanding Language: Optional `::operator new`
-
-The first two papers are pieces of my former "[P0829](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0829r4.html): Freestanding Proposal" paper, and had been seen by the Feature Test study group in [Belfast](https://www.reddit.com/r/cpp/comments/dvh72f/trip_report_freestanding_errors_in_belfast/).  During this meeting, I got to run them by the Library Incubator for some design feedback.  The papers were received well, though some potential danger points still exist.  Library Evolution can look at the papers as soon as they have time.
-
-P2013 is the first smaller piece taken out of "[P1105](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1105r1.html): Leaving no room for a lower-level language: A C++ Subset".  Exceptions are probably the most important thing in P1105, but there's so much activity going on in this area that it is hard for me to make good recommendations.  The next highest priority was `new` and `delete`, hence P2013 being born.  I also felt that P2013 was a good test paper to see if the committee was willing to make any language based change for freestanding.
-
-I had presented P2013 in a prior Low Latency / SG14 telecon, and received unanimous approval (no neutral, no against votes).  I was able to present it in the Evolution Incubator, and received no against votes.  Then, in a surprisingly quick turnaround, I was able to present to Evolution, and again received no against votes.  So now I just need to come up with wording that accomplishes my goals, without breaking constant evaluated `new`.
-
-# Errors and ABI
-
-On Monday, we held a join session between Evolution and Library Evolution to talk about one of the C++ boogeymen, ABI.  [P1836](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1863r1.pdf) and [P2028](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2028r0.pdf) have good background reading if you are not familiar with the topic.  The usual arguments were raised, including that we are losing out on performance by preserving ABI, and that breaking ABI would mean abandoning some software that cannot be rebuilt today.  We took some polls, and I fear that each person will interpret the polls differently.  The way I interpreted the polls is that we won't do a "big" ABI break anytime soon, but we will be more willing to consider compiler heroics in order to do ABI breaks in the library.
-
-One ABI area that is frequently overlooked is the situation that I am in.  I can rebuild all of my source code, but even despite that I still care about ABI because I don't ship all of it together.  I build a library with a plugin architecture, and breaking ABI would mean updating all the plugins on customer systems simultaneously... which is no easy task.  I also ship binaries on Linux systems.  We would prefer to be able to use new C++ features, despite targeting the various "LTS" distributions.  ABI stability is a big part of that.  I am hoping to make another post to r/cpp with my thoughts in the next few months, tentatively titled "ABI Breaks: Not just about rebuilding".
-
-On Tuesday, LEWG discussed "[P1656](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1656r0.html): 'Throws: Nothing' should be `noexcept`".  This is a substantial change to the policy laid out in [N3279](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3279.pdf), authored by Alisdair Meredith.  That's why it is informally called the "Lakos" rule.  We discussed the trade-offs involved, including how adding `noexcept` can constrain future changes, how `noexcept` can make precondition tests more difficult, and how this will change little in practice, because implementers already mark most "Throws: Nothing" calls as `noexcept`.  Arguments about performance, code bloat, and standards guaranteed portability won out though.  This paper was "only" a policy change, so a follow-on paper will need to be authored by someone in order to actually do the `noexcept` marking.
-
-Wednesday night we had a social event celebrating the impending C++20 release.  The event was held in the [Prague Crossroads](http://www.praguecrossroads.com/), built in 927 A.D..  The large tables let us have conversations with people we may not have really bumped into during the rest of the meeting.  I started talking exceptions with a few of the other people at the table, and one of the had some particularly in depth knowledge about the topic.  As it turns out, I was sitting at the same table as James Renwick of [Low-cost Deterministic C++ Exceptions for Embedded Systems](https://www.research.ed.ac.uk/portal/files/78829292/low_cost_deterministic_C_exceptions_for_embedded_systems.pdf) fame.  I ended up talking his ear off over the course of the night.
-
-Thursday in LEWG, we talked about Niall Douglas's "[P1028](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1028r3.pdf): SG14 status\_code and standard error object".  This is the class that may one day be thrown by [P0709](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0709r4.pdf) "Static" exceptions.  Coincidentally, the most contentious parts were issues involving ABI.  In several of the `virtual` interfaces in the standard, we've wanted to add things later, but haven't been able to do so.
-
-Friday, James Renwick was able to present his paper, and the room was very receptive of it.  One of my concerns going in to the presentation was that the committee would be unwilling to change anything in the standard related to today's exceptions.  After the presentation and discussion, I'm less concerned about that.  There was definitely a willingness to make some changes... but one of the big challenges is a question of whether we change default behavior in some cases, or change language ABI, even for C.
-
-# Other papers
-
-## [P1385: "High level" Linear Algebra](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1385r5.pdf)
-
-This one is the "high level" linear algebra paper.  There's a different, "lower level" linear algebra paper ([P1673](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1673r2.pdf)) that covers BLAS use cases.  P1385 is intended to be something that can sit on top of P1673, if I understand correctly.
-
-For being a math paper, there was surprisingly little math discussion in Library Incubator.  We were generally discussing general interface issues like object ownership, concept requirements, and how to spell various operations, particularly inner product and outer product.
-
-## [P1935: Physical Units](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1935r2.html)
-
-We are still in the philosophy and goals stage of this paper.  We got to discuss the finer points of the distinctions between "kilogram" and "1 kilogram"; the difference between a unit, a dimension, and a quantity; and the difference between systems and models.
-
-This paper is challenging in that there is significant prior art, as well as strong opinions about "the right way" to do things.  This gets to one of the trickier parts of standards meetings... driving consensus.  The interested parties have been requested to (preferably) work together outside of the three meetings a year, or failing that, to write a paper that gives some outline of what a solution should look like.
-
-This paper also has an absurdly awesome / terrifying metaprogramming trick in it.  A base class uses a `friend` declaration to declare (but not define) a function with an `auto` return type and no trailing return value.  The derived class then declares and defines the function (again via friend) and lets the definition of the function determine the auto return type.  This lets the base class use `decltype` to pull type information out of the derived class without explicitly passing that information down in a template argument (sorcery!).  The main caveat with this trick is that it only works with exactly one derived class, as otherwise you end up with multiple conflicting definitions of the same function.
-
-## Concurrent Queues, [P0260](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0260r3.html) and [P1958](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1958r0.html)
-
-It's amazing what a minor paper reorg will do for productivity.  This pair of papers used to be a single paper in the San Diego time frame, and we had a difficult time understanding how the pieces worked together.  With the paper split as it is now, we have a small, concrete piece to review, which we were then able to see how it fit in to the interfaces and concepts of the larger paper.  We got to dig in to some corner case traps with exception safety, move semantics, and race conditions.  There were implementers in the room that could say what their implementation did, and I feel that the room was able to give good feedback to the authors.
-
-## [P1944: constexpr &lt;cstring&gt; and &lt;cwchar&gt;](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1944r0.pdf)
-
-Antony Polukhin is secretly my accidental nemesis (well, not so secret anymore).  Over the course of C++20, he sprinkled `constexpr` on many of the things.  As it turns out, there is a large (but not 100%) overlap of `constexpr` and freestanding.  Each thing that went `constexpr` turned into a merge conflict that I got to resolve in my papers.
-
-And he's still at it!
-
-In this case, 100% of the things that were `constexpr`'d were also things that I have previously identified as being potentially freestanding.  So that's a positive.  There were concerns about implementability though, as sometimes, the C library and the C++ library come from different vendors, and having forwarding wrappers is far from trivial.
-
-# A minute about minuting
-
-For the wg21 readers out there, if you think you are bad at taking minutes, that just means you need more practice :) .  If you find yourself in a room that is about to review a paper that you are not heavily invested in, volunteer to take minutes.  That way you can make a valuable contribution, even for an area where you don't have domain expertise.
-
-As a bonus, you get to follow the minuter's code (something I just made up) about spelling other people's names.  As the person taking minutes, you have license to change up to three letters in someone's name, so long as it isn't used maliciously.  You can freely take any double letter in a name and convert it to a single letter (e.g. Connor -&gt; Conor), turn a single letter to a double letter (David -&gt; Davvid), or completely rearrange any consecutive series of vowels.  And people will thank you for it!  You are also given free license to interrupt people in order to ask them who they are.  Give it a try!
-
-# Closing
-
-I've got a bunch of papers to write for the next mailing, and I won't even be in Varna.  So if you're interested in championing some freestanding papers, let me know, and I can coach you on the topics.
-## [5][Move, simply – Sutter’s Mill](https://www.reddit.com/r/cpp/comments/f5co9g/move_simply_sutters_mill/)
-- url: https://herbsutter.com/2020/02/17/move-simply/
+## [9][move, even more simply](https://www.reddit.com/r/cpp/comments/f5ufsa/move_even_more_simply/)
+- url: https://cor3ntin.github.io/posts/move/
 ---
 
-## [6][An Extraterrestrial Guide to C++20 Text Formatting](https://www.reddit.com/r/cpp/comments/f56u0v/an_extraterrestrial_guide_to_c20_text_formatting/)
-- url: https://www.bfilipek.com/2020/02/extra-format-cpp20.html
+## [10][switch break (...) {...}](https://www.reddit.com/r/cpp/comments/f64zdg/switch_break/)
+- url: https://www.reddit.com/r/cpp/comments/f64zdg/switch_break/
 ---
+It would be nice if C++ allowed a new syntax for switches:
 
-## [7][Core C++ 2020 CfS Submission Deadline Extended until Feb. 20](https://www.reddit.com/r/cpp/comments/f5moof/core_c_2020_cfs_submission_deadline_extended/)
-- url: https://www.reddit.com/r/cpp/comments/f5moof/core_c_2020_cfs_submission_deadline_extended/
----
-C++20 is done after a grueling week of diligent work at the meeting last week! Multiple committee members have reached out and asked to extend the Core C++ 2020 Call-for-Speakers deadline to allow them to submit talk and workshop proposals.
-
-Submissions will remain open to all until Feb.20!
-
-https://cfs.corecpp.org
-## [8][C++ conference in Madrid](https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/)
-- url: https://www.reddit.com/r/cpp/comments/f57egn/c_conference_in_madrid/
----
-We have opened today the registrations for the C++ conference using std::cpp 2020 to be held in Madrid on April 16th.
-
-The complete program is still to be announced but some talks are already confirmed.
-
-And the best of all registration is FREE.
-
-https://eventos.uc3m.es/go/usingstdcpp2020
-
-Come to Spain for a  one day conference 100% devoted to C++.
-## [9][My Favorite Unknown C++20 Feature](https://www.reddit.com/r/cpp/comments/f50ag6/my_favorite_unknown_c20_feature/)
-- url: https://www.reddit.com/r/cpp/comments/f50ag6/my_favorite_unknown_c20_feature/
----
-### My Favorite Unknown C++20 Feature
-
-*by Nathan Myers*
-
-C++2020 was voted out yesterday, its final stamp of technical
-approval before it goes to ISO for legal certification.
-This is a big, big release, comparable to C++2011 a decade
-ago, that will change, again, how we write, and think about,
-our programs.
-The big features--Concepts, Coroutines, Modules--will get
-plenty of coverage elsewhere in the days ahead, but the 
-myriad smaller features, taken together, may make as great
-a difference in the code that most of us will write. 
-
-Here I will call your attention to one small feature that, 
-nonetheless, represents a change to the very foundations of
-the language.
-It is usually called, cryptically, the "unified comma operator",
-a name that belies it importance.
-It represents only the *second* time, since the ISO Standard C++
-effort began in 1990, that the language grammar has ever been
-simplified.
-(The first was eliminating "implicit int", the fix for a wart
-inherited from C, a fix that C has since also adopted.)
-
-On its face, comma unification is simple enough.
-Up through C++17, the comma has had several different meanings
-in expression contexts, each with its own place in the formal
-language grammar.
-The most frequent use separates function actual arguments.
-Similar uses appear in aggregate initializers--between elements 
-being initialized in curly brackets--and in initializer-lists,
-likewise.
-Finally, it is a sequence operator, which may also be overloaded
-by user code for, usually, expression-template libraries.
-
-There was no motivation to unify these meanings before we got 
-another important language feature: parameter packs.
-Parameter packs were introduced in C++11 with very restricted
-capabilities, only just enough to support integrating variadic
-argument lists into the type system.
-Those restrictions have been progressively relaxed in each
-subsequent Standard, with new syntax greatly amplifying their
-value.  We have lately dropped "parameter" from the name, because
-of their expanding usefulness, and just call them "packs".
-
-Packs have come increasingly to resemble a language-native, 
-first-class version of the library feature `std::tuple&lt;&gt;`.
-Comma-operator unification takes the next step toward this future.
-The comma has now become, effectively, the pack construction operator.
-Appearing in a function-call argument context, it constructs an
-argument pack.
-(Every function, now, takes just a single actual, pack, argument.)
-Appearing in an aggregate initialization, the pack it constructs
-conforms to the shape of the target aggregate.
-
-C++ has a long history, and a complicated inheritance.
-C++20 inherits not only from C, but also C++98, C++03, C++11,
-C++14, and C++17.
-Nothing new in C++ can be as simple as it might be if we could
-start from a clean slate.
-The comma already means things.
-What it means, for observable effects of existing code, mustn't
-change, if backward compatibility is to be preserved.
-
-So, when constructing an argument pack, the values have to be
-converted to match formal arguments of the selected function
-overload, and the initial type and number of the pack elements
-drive the choice of that overload.
-In an aggregate initializer, similarly, the pack's values must
-be made to conform to the aggregate they initialize.
-Aggregate initialization still needs to be disambiguated from
-a uniform initializer-list.
-In a scalar expression, all but the last element of the pack must
-be computed and then discarded--except where they need to become
-arguments to an overloaded comma-operator call, instead.
-
-When totting up new features in C++20, comma unification is often
-neglected, because it it doesn't yet change what programs can be
-written, or how.
-But you will hear more about it as each new feature it enables
-surfaces.
-Comma unification is all about what will come to be.
-First-class packs, in C++23 and moreso in C++26, will enable
-coding in C++ to feel more like using newer scripting and 
-functional languages, and enable writing more powerful libraries
-with cleaner, simpler, safer interfaces.
-
-Sometimes it's not the marquee features that have the biggest impact, in the longer term.
-
-EDIT: For more on the general topic, see &lt;http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1858r1.html&gt;
-## [10][Herb Sutter's Trip Winter ISO C++ Standards Meeting (Prague) Trip Report](https://www.reddit.com/r/cpp/comments/f4p2nn/herb_sutters_trip_winter_iso_c_standards_meeting/)
-- url: https://herbsutter.com/2020/02/15/trip-report-winter-iso-c-standards-meeting-prague/
----
-
-## [11][an efficient immutable vector](https://www.reddit.com/r/cpp/comments/f4szkn/an_efficient_immutable_vector/)
-- url: https://www.reddit.com/r/cpp/comments/f4szkn/an_efficient_immutable_vector/
----
-I recently had an idea for an efficient immutable vector.  
-It is basically a copy-on-write array behind a shared pointer. The array grows exponentially and the `push_back` operation reuses the array if possible (if there is still space left and  if it is the first `push_back` for a given array and size).
-The result is a vector with an O(1) copy operation and `push_back` (also `pop_back`) operations with an amortized O(1) best case complexity. The worst case complexity for `push_back` is O(n) but only happens if you create a copy of a given vector and then push_back to both the original vector and the copy, in which case it is no worse than the standard vector since the standard vector has an O(n) complexity for copying. All other operations should have the same complexity as the standard vector: O(1) lookup, O(n) insert and erase.
-
-You can find a prototype implementation of this data structure here: https://gist.github.com/eyelash/87a3fe849b31a37c58eca4ef398a71dc
-
-I believe that from a (somewhat theoretical) big-O perspective this vector is strictly better than the standard vector, since there is no sequence of operations that has a worse complexity. (Is this actually correct?)
-
-I'm surely not the first to come up with this data structure. Is there a name for it? Is there somewhere I can find more information or a more robust implementation? I'm aware of a few implementations of immutable vectors (e.g. [immer](https://github.com/arximboldi/immer)) but they all use trees internally. What is the reason for that?
-
-**Edit**: Thinking about it some more I realize the big difference is in updating a single element which can be done in O(log n) in a tree and will be O(n) for an array-based immutable vector.
-## [12][Choose optimization in C++? (Preferally clang)](https://www.reddit.com/r/cpp/comments/f50etd/choose_optimization_in_c_preferally_clang/)
-- url: https://www.reddit.com/r/cpp/comments/f50etd/choose_optimization_in_c_preferally_clang/
----
--Edit- Learn programming linked me to a stackoverflow answer that gave me enough information to figure it out https://www.reddit.com/r/learnprogramming/comments/f50dvb/choose_optimization_in_c/ https://stackoverflow.com/questions/15548023/clang-optimization-levels Basically I need -inline to get all the data into a single function then -sroa to reduce the struct into allocs which eliminates the struct. So it appears that optimizers can get rid of structs outright but may not reduce the members in it (at least I don't see any passes for that)
-
-I  want to double check if an optimization works in a very specific situation. The optimization doesn't happen if I use -O1 but the compiler optimizes out pretty much the  entire app if I do -O2 (so I can't completely confirm if it does a thing without another thing). Is there a way to specify which passes I want? I  see a list of passes here but I have no idea how to specify it [https://llvm.org/docs/Passes.html](https://llvm.org/docs/Passes.html)
-
-I prefer the solution to be in clang
-
--Edit- What I'd like to check is if the optimizer will reduce the size of the struct. If I copy b.c into a.c the optimizer will remove the struct completely. If they're in seperate files the struct is the full size. I tried to use undefined behavior to see if it might trigger but clang knows I'm passing the struct and leaves it intact
-
-----
-
-
-    //a.c
-    #include &lt;stdio.h&gt;
-
-    struct Dummy
-    {
-        int a, b, c, d, e, f;
-    };
-
-    static void test3(struct Dummy*p)
-    {
-        printf("%d %d\n", p-&gt;e, sizeof(struct Dummy));
+    switch break (cond) {
+        case a: ...
+        case n: ...
+        default: ...
     }
 
-    //void test2(void *p, void (*f)(void *));
-    void test2(long int z, void (*f)(void *));
-    static void test(int c)
-    {
-        struct Dummy z;
-        z.e = c*2;
-        test2((long int)&amp;z, test3);
-    }
+Which would make every case statement break at the end, without needing break keyword. So, there's no fall-through, but you can still 'goto' into some label, which could be another case statement. And, you could still use break within the case, if you want to escape the case before the end.
 
-    int main(int argc, char *argv[])
-    {
-        test(argc);
-        return 0;
-    }
+I wonder why such a things hasn't been done, already. I'm sure many have thought about this.
 
-    //b.c
-    void test2(long int z, void (*f)(void*))
-    {
-        f((void*)z);
-    }
+No, I'm not going to write a proposal for it. Just want to write this show-thought on the internet, in case some soul that can do something about does something about it.
+
+&amp;#x200B;
+
+Transmission complete
+## [11][C++ and its Standards – from history to C++20 – readings, talks, trip reports](https://www.reddit.com/r/cpp/comments/f5tn76/c_and_its_standards_from_history_to_c20_readings/)
+- url: https://github.com/MattPD/cpplinks/blob/master/std.md
+---
+
+## [12][Does anyone know what it means to have No Toolchain found for Target Local?](https://www.reddit.com/r/cpp/comments/f698xg/does_anyone_know_what_it_means_to_have_no/)
+- url: https://www.reddit.com/r/cpp/comments/f698xg/does_anyone_know_what_it_means_to_have_no/
+---
+ So I'm new to Eclipse and I'm making a C++ project through New C++ Project -&gt; CMake Project.
+
+This loads the default hello world program and when I go to Build -&gt; Build Project I get the error No Toolchain found for Target Local.
+
+I have JDK 8 properly installed with system variables, I have Eclipse 2019-12 and Windows 10 if that's any help.
+
+**Comment**

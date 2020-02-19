@@ -31,15 +31,67 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Coding Exercises Should Not Be Used to Rank Candidates](https://www.reddit.com/r/androiddev/comments/f5q8mv/coding_exercises_should_not_be_used_to_rank/)
-- url: https://medium.com/better-programming/coding-exercises-should-not-be-used-to-rank-candidates-7b0fbde86fe6
+## [3][Emulator 30.0.0 stable](https://www.reddit.com/r/androiddev/comments/f686nn/emulator_3000_stable/)
+- url: https://www.reddit.com/r/androiddev/comments/f686nn/emulator_3000_stable/
+---
+I was just prompted to update the emulator to 30.0.0 stable this morning, but no release notes that I could find yet…
+
+&amp;#x200B;
+
+https://preview.redd.it/rtiepwumiuh41.png?width=587&amp;format=png&amp;auto=webp&amp;s=6be20adbe6bf79d64c7ad105c0495f491067b42d
+## [4][Google's Incremental FS lets you play big games before fully downloading](https://www.reddit.com/r/androiddev/comments/f5znt3/googles_incremental_fs_lets_you_play_big_games/)
+- url: https://www.xda-developers.com/google-incremental-file-system-android-big-games/
 ---
 
-## [4][GitHub - JakeWharton/shimo: Shimo is an adapter for Moshi which randomizes the order of keys when serializing and deserializing](https://www.reddit.com/r/androiddev/comments/f5efzj/github_jakewhartonshimo_shimo_is_an_adapter_for/)
-- url: https://github.com/JakeWharton/shimo/
+## [5][Build your own soundboard application](https://www.reddit.com/r/androiddev/comments/f69b0c/build_your_own_soundboard_application/)
+- url: https://www.reddit.com/r/androiddev/comments/f69b0c/build_your_own_soundboard_application/
+---
+Hello, I am new to Android development but have an idea for an app I would like to create (yes I'm aware it already exists). I would like to create a "build your own soundboard" app that will allow the user to create sound buttons with imported or recorded sounds. I am developing in android studio.
+
+The problem I am having is I am unsure of how to give the user ability to create a button. I am struggling to find resources online due to the massive amount of soundboard tutorials. I would like for there to be a + button that when clicked brings a popup and then results in a new button being available to click. Any guidance would be welcome and appreciated! Thanks!
+## [6][Personalization techniques in design - How to boost your design strategy](https://www.reddit.com/r/androiddev/comments/f68pg9/personalization_techniques_in_design_how_to_boost/)
+- url: http://blog.ionixxtech.com/personalization-techniques-in-design-how-to-boost-your-design-strategy/
 ---
 
-## [5][Is it really impossible to secure an API key in an Android app?](https://www.reddit.com/r/androiddev/comments/f5rrt4/is_it_really_impossible_to_secure_an_api_key_in/)
+## [7][Is Firebase a solution for building an API for my portfolio sample Android app?](https://www.reddit.com/r/androiddev/comments/f63l48/is_firebase_a_solution_for_building_an_api_for_my/)
+- url: https://www.reddit.com/r/androiddev/comments/f63l48/is_firebase_a_solution_for_building_an_api_for_my/
+---
+I have pretty much completed coding my sample app which I intend to use as my portfolio to apply for entry-level Android development jobs, going down the self-learned route since I don't have a degree in computer science. 
+
+I have completed everything except storing information in a repository. I could just make the repository offline and included directly in the app, but I don't want to make the app to be too basic. I want to make my app a little more advanced to impress employers, and so I plan on having the repository placed in a server on the Internet for the app to then fetch the information from it through the use of APIs. 
+
+I am still googling for solutions at the moment. One possible solution I see is to create a whole web application using Ktor  - since it's a Kotlin-based framework that I can code using Intellij IDEA, but I remembered something about Firebase. 
+
+Sorry if this is a noob question, but would Firebase be the solution if all I want is to put a database there, set up an API, and get a API key for my Android app to use?
+## [8][Android devs of reddit, have your ever developed a deeply specific app/tweak just for yourself?](https://www.reddit.com/r/androiddev/comments/f66gzh/android_devs_of_reddit_have_your_ever_developed_a/)
+- url: https://www.reddit.com/r/androiddev/comments/f66gzh/android_devs_of_reddit_have_your_ever_developed_a/
+---
+And what was the story behind it?
+## [9][Android Styling: Prefer Theme Attributes](https://www.reddit.com/r/androiddev/comments/f5sdex/android_styling_prefer_theme_attributes/)
+- url: https://medium.com/androiddevelopers/android-styling-prefer-theme-attributes-412caa748774
+---
+
+## [10][creating custom layout overlaps in android](https://www.reddit.com/r/androiddev/comments/f69n3m/creating_custom_layout_overlaps_in_android/)
+- url: https://www.reddit.com/r/androiddev/comments/f69n3m/creating_custom_layout_overlaps_in_android/
+---
+I wanted to create a Navigation bar like drawer that held some custom resources and custom widgets which would allow me to put them using constraint layout but this is not provided by android.
+
+How do people create their custom libraries to do that? For example consider [this navigation bar](https://youtu.be/cRSmmCE3urQ)(check time code 1:15), it consists of a custom transformation for it's layout, manages layout overlaps and stuff like that. [He gives a source for that here](https://github.com/shrikanth7698/Custom-Navigation-Drawer/blob/master/customnavigationdrawer2/src/main/java/com/shrikanthravi/customnavigationdrawer2/widget/SNavigationDrawer.java).
+
+Please give me a pointer how is this acheived or what knowledge is required to be able to do this. I'm willing to do my bit of research but I don't know where to start or what is used in achieving this. Is it done using OpenGL ES? Canvas drawings? ANY HELP AT ALL would be \*greatly\* appreciated.
+
+&amp;#x200B;
+## [11][What is currently the best ad provider for games besides admob or UnityAds ?](https://www.reddit.com/r/androiddev/comments/f662e5/what_is_currently_the_best_ad_provider_for_games/)
+- url: https://www.reddit.com/r/androiddev/comments/f662e5/what_is_currently_the_best_ad_provider_for_games/
+---
+I have been using unity ads since December, and the revenue was extremely inconsistent (one day alone I got 13$ for few impressions and other days I get almost nothing for 10 times higher impressions for the same countries)and overall performing low. I even notice unity ads isn’t even registering a lot of the completed rewarded video ads or impression.
+
+I have the game both for iOS and Android, and I have players from various types of countries (from western countries like USA,France and Canada to developing asian countries like the Brazil,Phillipines). 
+
+The unityAds team aren’t providing a satisfactory reply and keeps saying i need larger impressions to let their algorithms work better for the game. Even when there are multiple Americans and Canadians watching a complete rewarded ad per day, my total revenue per day is an abysmal 0.2$. I use both Interstitial and Rewarded ads.
+
+I’m looking into changing ad networks at this point. Admob isn’t an option. Is Facebook Audience Network any good ?
+## [12][Is it really impossible to secure an API key in an Android app?](https://www.reddit.com/r/androiddev/comments/f5rrt4/is_it_really_impossible_to_secure_an_api_key_in/)
 - url: https://www.reddit.com/r/androiddev/comments/f5rrt4/is_it_really_impossible_to_secure_an_api_key_in/
 ---
 So I need to make sure that a request to my API really comes from my app. My solution is to use an API key. But putting an API key in the app isn't safe from reverse engineering. Here are some solutions I found online:
@@ -53,69 +105,10 @@ I can hide the API key inside a native code or do the entire API call there. But
 I can save the key in the server and my app will download the key everytime it needs to access the API. Or download once, encrypt it using Android Keystore, then save the encrypted key in the shared preferences. But an attacker can look for the code to download the key and do it manually without my app. Or he/she can sniff the downloading process easily using Fiddler, Charles, or Wireshark.
 
 Is it really impossible to secure an API from unauthorized access?
-## [6][How to test Android apps in Virtual machine (from Android studio)](https://www.reddit.com/r/androiddev/comments/f5qmsg/how_to_test_android_apps_in_virtual_machine_from/)
-- url: https://www.reddit.com/r/androiddev/comments/f5qmsg/how_to_test_android_apps_in_virtual_machine_from/
----
-I am running Android studio inside VMware virtual machine. When I tried to launch Android emulator, Android studio says that it can't run inside vm. (Although x86 version of Android emulator can be run, it is very very slow) Genymotion is also failing to run on vm.
-Is there any way to run android apps inside vm?
-## [7][Marketing a game as a spare time developer with a small-ish budget](https://www.reddit.com/r/androiddev/comments/f5lamj/marketing_a_game_as_a_spare_time_developer_with_a/)
-- url: https://www.reddit.com/r/androiddev/comments/f5lamj/marketing_a_game_as_a_spare_time_developer_with_a/
----
-Hi all,
 
-I've spent the last few years creating Android games with some varying success in my spare time, a game a released last year is called 'Tennis Superstars' I was really happy with how the game turned out but have had a very limited success in the app store. The feedback I've had has been great (avg 4.6 reviews [https://play.google.com/store/apps/details?id=com.moz.tennis](https://play.google.com/store/apps/details?id=com.moz.tennis&amp;hl=en_US)) but I think there is a visibility problem with the game, I'm way down in the Play Store when I search for 'Tennis games'.
+EDIT:
 
-I am more than willing to invest some money into promoting this game, but I don't know what would be effective with a budget in the range of $100's of dollars, is anything achievable? In the past I have spent $100+ overall in Facebook advertising app installs with little success, I don't feel like this is the right way. I've also done a whole bunch of app giveaways and free advertising on sites such as reddit (/r/Tennis for example) which seemed to work better than the Facebook adverts.
+Best solutions I found so far:
 
-Is it possible to submit my app to receive a paid review from either a website or a social media influencer? Is there a reliable company that can manage this process on a small scale? I thought paid reviews could be submitted to [www.androidpolice.com](https://www.androidpolice.com) but I can't see where? I've also seen a lot of scammy looking websites offering to market games that obviously I don't want to get involved in. Maybe it would be a good idea to get a paid review from an Android gaming YouTuber?
-
-I imagine a lot of spare time developers are in this situation, I'm not expecting something from nothing, I want to invest money in my marketing - I just want to do it in a sensible way.
-## [8][Desktop Entry for Stable And Preview version of Android Studio](https://www.reddit.com/r/androiddev/comments/f5r3ek/desktop_entry_for_stable_and_preview_version_of/)
-- url: https://www.reddit.com/r/androiddev/comments/f5r3ek/desktop_entry_for_stable_and_preview_version_of/
----
-Android Studio allow to create desktop entry from "Tools-&gt;Create Desktop Entry", but if you try to do it with two versions of IDE (Stable, Preview) at the same time, desktop entry will be overridden
-
-And i'd like to share solution and make two versions available from desktop:
-
-For Stable version you can use  "Tools-&gt;Create Desktop Entry"
-
-For Preview version you can use this files: [gist](https://gist.github.com/lndmflngs/7edfee54adf378f5db1886e08eadbe66)
-
-Edit files with your properties, put them at one folder and run `sudo ./create_desktop_entry.sh`  
-
-Result:  
-
-
-https://preview.redd.it/pu3ctv69foh41.png?width=498&amp;format=png&amp;auto=webp&amp;s=c0e1eef62da3e1344081a8dccdbbf01cf0c3ee2f
-## [9][Hypercube. How to provide developers with phones for testing without losing any](https://www.reddit.com/r/androiddev/comments/f5r1nz/hypercube_how_to_provide_developers_with_phones/)
-- url: https://habr.com/en/company/yandex/blog/487722/
----
-
-## [10][[Kotlin] Store ArrayList persistent](https://www.reddit.com/r/androiddev/comments/f5qzyu/kotlin_store_arraylist_persistent/)
-- url: https://www.reddit.com/r/androiddev/comments/f5qzyu/kotlin_store_arraylist_persistent/
----
-
-
-My app is displaying a list of various categories (herbs, side dishes, ..) in a RecyclerView. Depending on the category you clicked on, a new Activity with a new RecylcerView opens containing all the ingredients.
-
-Right now I have an ArrayList which gets filled with the ingredients via ".add" depending on the choosen category.
-
-The problem im facing right now is, that I want to implement an option for the user to add own Ingredients. I tried storing the ArrayList containing the ingredients in SharedPreferences by using Gson, but I couldn't manage to add elements, since it always overwrote the current list.
-
-What would be the best way to store the ingredients? A room, sqlite, ..? Without further explanation, the ingredient list will only contain about 70 items max.
-
-Thanks in advance.
-## [11][Google Play Issue with Apps](https://www.reddit.com/r/androiddev/comments/f5oqqm/google_play_issue_with_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/f5oqqm/google_play_issue_with_apps/
----
- I'm pretty new to developing android apps. I have published my first 2 apps on Google Play and the issue is that I can't have them both installed at the same time. I had the first one on my phone, but when I wanted to install my second one I couldn't do it unless I uninstalled the first app.
-
-Anyone had this issue before?
-
-The only thing the apps have in common is probably the .jks key used to generate the .aab bundle, but that shouldn't be a problem.
-
-And no, the apps don't have the same package name.
-## [12][Draw Path along stars with fingers in Canvas .](https://www.reddit.com/r/androiddev/comments/f5qxml/draw_path_along_stars_with_fingers_in_canvas/)
-- url: https://www.reddit.com/r/androiddev/comments/f5qxml/draw_path_along_stars_with_fingers_in_canvas/
----
-Hi there .I am able to draw line in canvas using path when user finger moves changing paint line colors and all ,  But my need is i need to draw stars along the line .Any hint please ...
+* [Comment 1](https://www.reddit.com/r/androiddev/comments/f5rrt4/is_it_really_impossible_to_secure_an_api_key_in/fi235li)
+* [Comment 2](https://www.reddit.com/r/androiddev/comments/f5rrt4/is_it_really_impossible_to_secure_an_api_key_in/fi0omj6)

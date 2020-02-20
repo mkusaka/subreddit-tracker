@@ -33,56 +33,71 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/f541u0/whats_everyone_working_on_this_week_82020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-8-2020/38329?u=llogiq)!
-## [3][Learning OpenGL with Rust](https://www.reddit.com/r/rust/comments/f693wh/learning_opengl_with_rust/)
-- url: https://www.reddit.com/r/rust/comments/f693wh/learning_opengl_with_rust/
----
-Hi, i'm new to Rust but not new to programming. I have recently wanted to start learning OpenGL but at the same time I want to learn Rust. Should i stick it out and do it this way or would it be better for me to learn OpenGL with another language that i'm a bit better with?
-
-The best outcome for me here is that I use Rust.
-
-If anyone has any tutorials or advice, it would be much appreciated.
-
-I program on a Mac btw...
-## [4][Rust ghost, signing off](https://www.reddit.com/r/rust/comments/f5ufc1/rust_ghost_signing_off/)
-- url: https://quietmisdreavus.net/self/2020/02/17/rust-ghost-signing-off/
+## [3][Working with strings in Rust](https://www.reddit.com/r/rust/comments/f6mk4a/working_with_strings_in_rust/)
+- url: https://fasterthanli.me/blog/2020/working-with-strings-in-rust/
 ---
 
-## [5][PSA: `deny(warnings)` is actively harmful](https://www.reddit.com/r/rust/comments/f5xpib/psa_denywarnings_is_actively_harmful/)
-- url: https://www.reddit.com/r/rust/comments/f5xpib/psa_denywarnings_is_actively_harmful/
----
-Some crates like to use `#![deny(warnings)]` or `#![cfg_attr(test, deny(warnings)]` as a way of enforcing clean code. This is a lot like GCC's `-Werror` option, and a quick [search](https://duckduckgo.com/?q=don't+use+"-Werror") can show a lot of reasons why that is harmful. It may be OK while you're actively maintaining your code, but once you're not paying attention, small signs of bit-rot like using deprecated APIs will turn into outright errors.
-
-When used as a crate dependency, Cargo will mask this with `--cap-lints allow`/`warn`, so it's usually not the end of the world. However, when the Rust teams want to test the impact of a potentially breaking change, they run mass builds with Crater. If your crate is already failing due to `deny(warnings)`, then any future changes that really do break you won't be seen as a regression.
-
-Case in point, [rust-mac#15](https://github.com/reem/rust-mac/issues/15), their `if_cfg!` macro is broken by the [changes to the `meta` matcher](https://github.com/rust-lang/rust/pull/63674) in Rust 1.40. However, the crater run for that change showed 0 regressions, because `mac`'s tests were already broken by the simple deprecation of `...` in pattern matches.
-
-I don't want to make a mountain out of a molehill, and I certainly don't mean to blame/shame anyone involved in that example. I just want to show this as a concrete way that `deny(warnings)` is actively harmful to the maintenance of the Rust ecosystem. For that matter, any wide net like `deny(deprecated)` would be just as bad. Please don't open yourself to build failures from stuff that should just be a warning!
-## [6][Introducing kibi, a text editor in ≤1024 lines of Rust with syntax highlighting, incremental search, UTF-8 support, and more. Contributions welcome!](https://www.reddit.com/r/rust/comments/f5vpco/introducing_kibi_a_text_editor_in_1024_lines_of/)
-- url: https://github.com/ilai-deutel/kibi
+## [4][A new Vim syntax plugin for Rust](https://www.reddit.com/r/rust/comments/f6r785/a_new_vim_syntax_plugin_for_rust/)
+- url: https://github.com/arzg/vim-rust-syntax-ext
 ---
 
-## [7][Announcing Nushell 0.10.0 - now with initial scripting support](https://www.reddit.com/r/rust/comments/f5wdh5/announcing_nushell_0100_now_with_initial/)
-- url: https://www.nushell.sh/blog/2020/02/18/nushell-0_10_0.html
+## [5][📮 teloxide: An elegant Telegram bots framework for Rust](https://www.reddit.com/r/rust/comments/f6e2lu/teloxide_an_elegant_telegram_bots_framework_for/)
+- url: https://github.com/teloxide/teloxide
 ---
 
-## [8][Materialize: the streaming data warehouse, written in Rust](https://www.reddit.com/r/rust/comments/f5y0bz/materialize_the_streaming_data_warehouse_written/)
-- url: https://materialize.io/blog-introduction/
+## [6][RFC for the Rust 2020 roadmap was merged](https://www.reddit.com/r/rust/comments/f6sq2f/rfc_for_the_rust_2020_roadmap_was_merged/)
+- url: https://github.com/rust-lang/rfcs/pull/2857
 ---
 
-## [9][R we web yet?](https://www.reddit.com/r/rust/comments/f67e99/r_we_web_yet/)
-- url: https://www.reddit.com/r/rust/comments/f67e99/r_we_web_yet/
+## [7][Huggingface, a well-known NLP library, releases tokenizers in Rust for order of magnitude speed improvement](https://www.reddit.com/r/rust/comments/f6hhuk/huggingface_a_wellknown_nlp_library_releases/)
+- url: https://github.com/huggingface/tokenizers
 ---
-R we web yet?
-Is Rust good for backend?
-Like APIs, etc.
-Can someone recommend me something?
-## [10][tantivy v0.12 released](https://www.reddit.com/r/rust/comments/f6aig1/tantivy_v012_released/)
+
+## [8][rust-analyzer failed to load workspace: Failed to find sysroot for Cargo.toml file](https://www.reddit.com/r/rust/comments/f6rxyj/rustanalyzer_failed_to_load_workspace_failed_to/)
+- url: https://www.reddit.com/r/rust/comments/f6rxyj/rustanalyzer_failed_to_load_workspace_failed_to/
+---
+I'm using Windows 10 and VSCode with rust-analyzer plugin from the marketplace. I also made a fresh install of the rust tools via rustup. After opening a rust project, the following message comes up:
+
+rust-analyzer failed to load workspace: Failed to find sysroot for Cargo.toml file c:\\Users\\xyz\\Desktop\\xyz\\Cargo.toml 
+
+The plugin worked before. I uninstalled the stable toolchain once and reinstalled it again. After this it didn't work anymore and reinstalling everything wasn't successfull. How to proceed?
+## [9][What do you guys think of this book?](https://www.reddit.com/r/rust/comments/f6swfg/what_do_you_guys_think_of_this_book/)
+- url: https://www.reddit.com/r/rust/comments/f6swfg/what_do_you_guys_think_of_this_book/
+---
+I'm a web dev who usually uses javascript for front/back-end but have been meaning to get better acquainted with a systems language. End goal would be to use it for either services and also to experiment with webassembly.
+
+&amp;#x200B;
+
+I'm aware of the original rust book(which I'm planning on running through as well), however I also recently saw [this book](https://www.newline.co/fullstack-rust) and it got me interested.
+
+&amp;#x200B;
+
+Just wondering, what do you guys as experienced Rustaceans think of the above? Is it just fluff or a does it seem like a decent resource?
+## [10][Possible ways how to create vector combining other vectors/iterators and new elements](https://www.reddit.com/r/rust/comments/f6ql1j/possible_ways_how_to_create_vector_combining/)
+- url: https://www.reddit.com/r/rust/comments/f6ql1j/possible_ways_how_to_create_vector_combining/
+---
+Hi everyone,
+
+I was wondering what is the best way how to create vector combing other vectors/iterators and other elements. In Javascript you can use array destructuring to achieve this e.g.:
+
+`[1, ...prev_row, 1]`
+
+To achieve the same in rust you can do something like this:
+
+`vec![1].into_iter().chain(prev_row_iter).chain(vec![1].into_iter()).collect()`
+
+The code in this particular example is pretty simple but it can get more complex if you want to combine more vectors and more elements. I was wondering if there is an easier way how to do this.
+## [11][What's New in Rust 1.41 [Rustacean Station Podcast]](https://www.reddit.com/r/rust/comments/f6ghut/whats_new_in_rust_141_rustacean_station_podcast/)
+- url: https://rustacean-station.org/episode/013-rust-1.41.0/
+---
+
+## [12][tantivy v0.12 released](https://www.reddit.com/r/rust/comments/f6aig1/tantivy_v012_released/)
 - url: https://www.reddit.com/r/rust/comments/f6aig1/tantivy_v012_released/
 ---
 For those who are not familiar with tantivy, it is a search engine library  for rust inspired by Lucene.
 
-* [github]([https://github.com/tantivy-search/tantivy/](https://github.com/tantivy-search/tantivy/))
-* [crates.io]([https://crates.io/crates/tantivy](https://crates.io/crates/tantivy))
+* [github](https://github.com/tantivy-search/tantivy/)
+* [crates.io](https://crates.io/crates/tantivy)
 
 &amp;#x200B;
 
@@ -97,11 +112,3 @@ For those who are not familiar with tantivy, it is a search engine library  for 
 
 
 Thanks to all contributors and all of patreon/github sponsors! (hntd187, mosuka, Colin, Florian, Fredrik, Nate, Sanghyeon, Zak and Zane)
-## [11][IntelliJ Rust Changelog #116](https://www.reddit.com/r/rust/comments/f5sgs0/intellij_rust_changelog_116/)
-- url: https://intellij-rust.github.io/2020/02/18/changelog-116.html
----
-
-## [12][Crosspost: r/learnrust - Rust tutorials and recipes on YouTube](https://www.reddit.com/r/rust/comments/f64dn4/crosspost_rlearnrust_rust_tutorials_and_recipes/)
-- url: /r/learnrust/comments/f639yg/a_list_of_some_youtube_videos_free_that_you_can/
----
-

@@ -27,240 +27,148 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Ruby 2.7 removes taint checking mechanism](https://www.reddit.com/r/rails/comments/f67vxa/ruby_27_removes_taint_checking_mechanism/)
+## [3][How can I clean up this code adding a CSS background: url() dynamically from model?](https://www.reddit.com/r/rails/comments/f6rmwn/how_can_i_clean_up_this_code_adding_a_css/)
+- url: https://www.reddit.com/r/rails/comments/f6rmwn/how_can_i_clean_up_this_code_adding_a_css/
+---
+Hi everyone,  
+
+
+I have a a model `coffee_shops` which `has_many` "`review_photos`".  
+
+
+I want to display the `review_photo` with a gradient, using the following CSS:  
+
+
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)), url('www.mydynamicurl.com') center / cover;
+
+Now, I can't send the image URL to the CSS as far as I'm aware. So I assume I have to do this in HTML. I have done this like so:  
+
+
+    &lt;section class="hero is-medium is-bold" style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)), url('http://my-url-prefix/&lt;%= @coffee_shop.review_photos.first[:photo] %&gt;') center / cover;"&gt;
+
+This works visually, but there's 2 problems.  
+
+
+1) This seems kind of ugly and hacky.  
+2) I might want to use this gradient on other pages. Putting it in the HTML like this means that I have to copy it each time, and if I make a change to the gradient then I have to find all instances of it and change it on each.  
+
+
+What's the best way of doing this, (bearing in mind that the image has to be assigned in CSS and can't be a HTML &lt;img&gt; element.  
+
+
+Thanks.
+## [4][What do you do to stay sharp?](https://www.reddit.com/r/rails/comments/f6l733/what_do_you_do_to_stay_sharp/)
+- url: https://www.reddit.com/r/rails/comments/f6l733/what_do_you_do_to_stay_sharp/
+---
+It's something everyone agrees is absolutely crucial to maintain relevancy as a programmer, constant learning and self development.
+
+What are some of the things you do to stay up to date on trends and constantly learn and develop some skills? What are some things you're working on in that regard? What are things that have helped you in the past?
+
+This is something I've struggled with especially recently. It's easy to settle into a comfortable rhythm at work and go months without adding any new meaningful knowledge or skills.
+## [5][Active Storage File Upload Behind The Scenes](https://www.reddit.com/r/rails/comments/f6t0fs/active_storage_file_upload_behind_the_scenes/)
+- url: https://www.reddit.com/r/rails/comments/f6t0fs/active_storage_file_upload_behind_the_scenes/
+---
+[Active Storage](https://github.com/rails/rails/tree/master/activestorage)   is a framework in Ruby that makes it a breeze to upload files and   reference them in the cloud (or a local disk). It’s built into [Ruby On Rails 6](https://weblog.rubyonrails.org/2019/8/15/Rails-6-0-final-release/), but it’s also got a [JavaScript library](https://github.com/rails/rails/tree/master/activestorage/app/javascript/activestorage). In fact, that’s what I like most about Rails. It’s got your back. It delivers *complete* packages out of the box. Packages that work well *together*. Client to server — it’s got everything you need! And it’s got beautiful code. Making it a pleasure to work with.
+
+In this post, you will **see how Active Storage really works from the inside**.   We will track the main flow of the program, and see how it processes a   file uploaded by the user through the browser with JavaScript. And  then,  how the file is uploaded to a local disk with Ruby. *Let’s get started.*
+
+[Continue reading on Medium...](https://medium.com/rubyinside/active-storage-file-upload-behind-the-scenes-59a660c43781)
+## [6][Invite Links with Devise](https://www.reddit.com/r/rails/comments/f6qfrq/invite_links_with_devise/)
+- url: https://www.reddit.com/r/rails/comments/f6qfrq/invite_links_with_devise/
+---
+I want to build an invite system where each registered user has a unique invite link. And when their friends use that link to sign up they both get benefits. You should also be able to send the link through social media or email.
+
+An example of what I mean is airbnb's invite system:
+
+https://preview.redd.it/13i9orrbo1i41.png?width=3354&amp;format=png&amp;auto=webp&amp;s=f9b4d59c39a1219548dfb8223fa5f277a485a439
+
+I have tried using devise invitable but it seems to work differently. It seems to register an user with an email first and then signs them up if they accept the invite. This does not allow for social media sharing.
+
+So, how do I go about building such an invite system and how do I integrate it with devise?
+## [7][Should I start rails or something else?](https://www.reddit.com/r/rails/comments/f6q582/should_i_start_rails_or_something_else/)
+- url: https://www.reddit.com/r/rails/comments/f6q582/should_i_start_rails_or_something_else/
+---
+Hey How are you all guys?? I hope you all doing fine.. I have a question.. I have a hard time deciding which language to study.. I just wanna get into software development.. I really like ruby and its framework rails.. But the problem is there are not enough jobs in rails.. So my question is Shoud I..  
+1) start rails and go with my interest  
+2) start with something else.. lets say laravel or react.. because there are tons of jobs in both of these..  
+
+
+So I want advice from you people.. can I pursue my career in freelancing in rails world.. what are the prerequisite.. I mean how much your skill is must to start freelancing and get success.. because if there are not enough jobs in my area .. freelancing is the way to go..
+## [8][What Ruby gems would you recommend for Rails API development](https://www.reddit.com/r/rails/comments/f6di8l/what_ruby_gems_would_you_recommend_for_rails_api/)
+- url: https://www.reddit.com/r/rails/comments/f6di8l/what_ruby_gems_would_you_recommend_for_rails_api/
+---
+I am looking into making API only Rails app and I wanted to make a post here to ask you guys whether you know any good gems that would make my life easier for developing API only Rails apps. Maybe something for authentication, responses, etc. Thanks!
+## [9][Rails migration for belongs_to with custom table name](https://www.reddit.com/r/rails/comments/f6hunj/rails_migration_for_belongs_to_with_custom_table/)
+- url: https://www.reddit.com/r/rails/comments/f6hunj/rails_migration_for_belongs_to_with_custom_table/
+---
+Check out my recent [post](https://railsguides.net/foreign-key-for-custom-table-name/) describes how to specify a belongs to association in Rails migration with a foreign key to custom table name. Spoiler: as the result it has improved Rails docs!
+## [10][I wrote a post about how geared pagination works behind-the-scenes —&gt;](https://www.reddit.com/r/rails/comments/f6jhza/i_wrote_a_post_about_how_geared_pagination_works/)
+- url: https://www.reddit.com/r/rails/comments/f6jhza/i_wrote_a_post_about_how_geared_pagination_works/
+---
+There’s  a better, more user-friendly-driven approach to writing pagination for  your application. The idea is simple: Load more records every time the user is asking to see more.
+
+[Continue reading on Medium...](https://medium.com/@liroy/geared-pagination-in-rails-behind-the-scenes-61d9e227540e)
+## [11][Ruby 2.7 removes taint checking mechanism](https://www.reddit.com/r/rails/comments/f67vxa/ruby_27_removes_taint_checking_mechanism/)
 - url: https://blog.saeloun.com/2020/02/18/ruby-2-7-access-and-setting-of-safe-warned-will-become-global-variable
 ---
 
-## [4][Installing ActiveAdmin (and sassc) breaks Bootstrap asset compilation](https://www.reddit.com/r/rails/comments/f69bw7/installing_activeadmin_and_sassc_breaks_bootstrap/)
-- url: https://www.reddit.com/r/rails/comments/f69bw7/installing_activeadmin_and_sassc_breaks_bootstrap/
+## [12][[Help] Optimize model validations](https://www.reddit.com/r/rails/comments/f6bf1b/help_optimize_model_validations/)
+- url: https://www.reddit.com/r/rails/comments/f6bf1b/help_optimize_model_validations/
 ---
-Hello!
-
-I've been struggling for a few days to get to the root of this problem but I finally have a clearer idea:  
-\- I have a simple app that using Bootstrap, installed through webpacker but I still use the asset pipeline for CSS. (I need to compile Boostrap myself because i'm overriding a lot of the sass variables.)  
-\- I installed the ActiveAdmin gem, setup my admin, no problem in dev but \`assets:precompile\` fails in production env with a vague sass compilation error:
-
-    &gt;&gt; c/svg%3e") #FEFEFE no-repeat center right 3.25rem/add(0.675em, 1rem) add(0.6
-    /Users/oiorain/.rvm/gems/ruby-2.6.5/gems/sassc-2.2.1/lib/sassc/engine.rb:49:in `render'
-
-The error is somewhere in the bootstrap SASS which hasn't changed. Very weird...
-
-It took me a while to pin this down but turns out ActiveAdmin adds the \`sassc-rails\` gem which is now used to compile the assets. The bootstrap-sass gem has been updated to be compatible with sassc but it seems like the yarn package is not?
-
-I don't know where to go from here.   
-Logically, It seems I should be moving towards having both CSS and JS handled by webpacker but it seems impossible to have activeadmin and the bootstrap yarn package.   
-I'm kind of failing to understand why rails-sassc wouldnt be able to compile something that the regular rails sass compiler can. There are subtleties that escape me here. Would any be able to suggest a way forward? Does anyone has had this kind of struggle between gems and webpacker libs?
-## [5][want to build an app that primarily communicates via sms](https://www.reddit.com/r/rails/comments/f61v06/want_to_build_an_app_that_primarily_communicates/)
-- url: https://www.reddit.com/r/rails/comments/f61v06/want_to_build_an_app_that_primarily_communicates/
----
-can someone point me in the right direction on creating a rails app that users would sign up with a phone number and then the app would engage with users solely via sms?
-## [6][Rails: How to group by nested association?](https://www.reddit.com/r/rails/comments/f60w5t/rails_how_to_group_by_nested_association/)
-- url: https://www.reddit.com/r/rails/comments/f60w5t/rails_how_to_group_by_nested_association/
----
-I have a Follow model with `user_id` and `track_id`. The Track model has an `artist_id` field.
-
-What I want to do is count which artists have the most followers, but since users follow "tracks" and not "artists", I need to figure out how to do a count through the tracks.
-
-So, what I was thinking was to do some sort of group by on a nested association. i.e. Group the Follow records by "track -&gt; artist_id", somehow.
-
-Then I could count the number of users for each.
-
-Is that even possible? Is there more info that would be useful here?
-## [7][Help Authoring Tool (HAT) Software Market 2020-2026 Report Analysis of Major Players:MadCap, Help+Manual, Adobe RoboHelp, HelpSmith, ClickHelp, Dr.Explain](https://www.reddit.com/r/rails/comments/f69g3l/help_authoring_tool_hat_software_market_20202026/)
-- url: https://www.reddit.com/r/rails/comments/f69g3l/help_authoring_tool_hat_software_market_20202026/
----
-ReportsandMarkets.com adds “**Global Help Authoring Tool (HAT) Software Market 2019 by Company, Regions, Type and Application, Forecast to 2026**” new reports to its research database. The report spread across 100 to 140 pages with tables and figures in it.
-
-This report studies the Help Authoring Tool (HAT) Software Market with many aspects of the industry like the market size, market status, market trends and forecast, the report also provides brief information of the competitors and the specific growth opportunities with key market drivers. Find the complete Help Authoring Tool (HAT) Software Market analysis segmented by companies, region, type and applications in the report.
-
-**Market Segment by Companies, this report covers: –** MadCap, Help+Manual, Adobe RoboHelp, HelpSmith, ClickHelp, Dr.Explain, HelpNDoc, HelpStudio, WebWorks ePublisher, Daux.io, Document360, GenHelp, HelpScribble, and WinCHM 
-
-**COMPLETE REPORT Help Authoring Tool (HAT) Software @** [**https://www.reportsandmarkets.com/reports/global-help-authoring-tool-hat-software-market-report-2020?utm\_source=reddit&amp;utm\_medium=47**](https://www.reportsandmarkets.com/reports/global-help-authoring-tool-hat-software-market-report-2020?utm_source=reddit&amp;utm_medium=47) 
-
-**Help Authoring Tool (HAT) Software Market** continues to evolve and expand in terms of the number of companies, products, and applications that illustrates the growth perspectives. The report also covers the list of Product range and Applications with SWOT analysis, CAGR value, further adding the essential business analytics. Help Authoring Tool (HAT) Software Market research analysis identifies the latest trends and primary factors responsible for market growth enabling the Organizations to flourish with much exposure to the markets.
-
-**Market Segment by Regions, regional analysis covers**
-
-Asia-Pacific
-
-North America
-
-Europe
-
-South America
-
-Middle East &amp; Africa
-
-**Research objectives****:**   
-
-To study and analyze the global Help Authoring Tool (HAT) Software market size by key regions/countries, product type and application, history data from 2015 to 2019, and forecast to 2026.
-
-To understand the structure of Help Authoring Tool (HAT) Software market by identifying its various sub segments.
-
-Focuses on the key global Help Authoring Tool (HAT) Software players, to define, describe and analyze the value, market share, market competition landscape, SWOT analysis and development plans in next few years.
-
-To analyze the Help Authoring Tool (HAT) Software  with respect to individual growth trends, future prospects, and their contribution to the total market.
-
-To share detailed information about the key factors influencing the growth of the market (growth potential, opportunities, drivers, industry-specific challenges and risks).
-
-To project the size of Help Authoring Tool (HAT) Software submarkets, with respect to key regions (along with their respective key countries).
-
-To analyze competitive developments such as expansions, agreements, new product launches and acquisitions in the market.
-
-To strategically profile the key players and comprehensively analyze their growth strategies.
-
-**REQUEST EXCLUSIVE FREE SAMPLE OF THIS REPORT @** [**https://www.reportsandmarkets.com/sample-request/global-help-authoring-tool-hat-software-market-report-2020?utm\_source=reddit&amp;utm\_medium=47**](https://www.reportsandmarkets.com/sample-request/global-help-authoring-tool-hat-software-market-report-2020?utm_source=reddit&amp;utm_medium=47) 
-
-**Key Developments in the Help Authoring Tool (HAT) Software** **Market**
-
-To describe Help Authoring Tool (HAT) Software Introduction, product type and application, market overview, market analysis by countries, market opportunities, market risk, market driving force;
-
-To analyze the manufacturers of Help Authoring Tool (HAT) Software,with profile, main business, news, sales, price, revenue and market share in 2019 and 2020;
-
-To display the competitive situation among the top manufacturers in Global, with sales, revenue and market share in 2019 and 2020;
-
-To show the market by type and application, with sales, price, revenue, market share and growth rate by type and application, from 2015 to 2020;
-
-To analyze the key countries by manufacturers, Type and Application, covering North America, Europe, Asia Pacific, Middle-East and South America, with sales, revenue and market share by manufacturers, types and applications;
-
-Help Authoring Tool (HAT) Software market forecast, by countries, type and application, with sales, price, revenue and growth rate forecast, from 2020 to 2026;
-
-To analyze the manufacturing cost, key raw materials and manufacturing process etc.
-
-To analyze the industrial chain,sourcing strategy and downstream end users (buyers);
-
-To describe Help Authoring Tool (HAT) Software sales channel, distributors, traders, dealers etc.
-
-To describe Help Authoring Tool (HAT) Software Research Findings and Conclusion, Appendix, methodology and data source
-
-The Help Authoring Tool (HAT) Software Market research report completely covers the vital statistics of the capacity, production, value, cost/profit, supply/demand import/export, further divided by company and country, and by application/type for best possible updated data representation in the figures, tables, pie chart, and graphs. These data representations provide predictive data regarding the future estimations for convincing market growth. The detailed and comprehensive knowledge about our publishers makes us out of the box in case of market analysis.
-
-**FOR MORE ENQUIRY OF Help Authoring Tool (HAT) Software @** [**https://www.reportsandmarkets.com/enquiry/global-help-authoring-tool-hat-software-market-report-2020?utm\_source=reddit&amp;utm\_medium=47**](https://www.reportsandmarkets.com/enquiry/global-help-authoring-tool-hat-software-market-report-2020?utm_source=reddit&amp;utm_medium=47)
-
-In this study, the years considered to estimate the market size of Help Authoring Tool (HAT) Software are as follows:
-
-History Year: 2015-2019
-
-Base Year: 2019
-
-Estimated Year: 2020
-
-Forecast Year 2020 to 2026
-
-This report includes the estimation of market size for value (million USD) and volume (M Units). Both top-down and bottom-up approaches have been used to estimate and validate the market size of Help Authoring Tool (HAT) Software market, to estimate the size of various other dependent submarkets in the overall market. Key players in the market have been identified through secondary research, and their market shares have been determined through primary and secondary research. All percentage shares, splits, and breakdowns have been determined using secondary sources and verified primary sources.
-
-**Table of Contents**
-
-Chapter 1 Overview of Help Authoring Tool (HAT) Software 
-
-Chapter 2 Global Market Status and Forecast by Regions
-
-Chapter 3 Global Market Status and Forecast by Types
-
-Chapter 4 Global Market Status and Forecast by Downstream Industry
-
-Chapter 5 Market Driving Factor Analysis of Help Authoring Tool (HAT) Software
-
-Chapter 6 Help Authoring Tool (HAT) Software Market Competition Status by Major Manufacturers
-
-Chapter 7 Help Authoring Tool (HAT) Software Major Manufacturers Introduction and Market Data
-
-Chapter 8 Upstream and Downstream Market Analysis of Help Authoring Tool (HAT) Software 
-
-Chapter 9 Cost and Gross Margin Analysis of Help Authoring Tool (HAT) Software 
-
-Chapter 10 Marketing Status Analysis of Help Authoring Tool (HAT) Software 
-
-Chapter 11 Report Conclusion
-
-Chapter 12 Research Methodology and Reference
-
-**About Us****:**
-
-Reports and Markets is not just another company in this domain but is a part of a veteran group called Algoro Research Consultants Pvt. Ltd. It offers premium progressive statistical surveying, market research reports, analysis &amp; forecast data for a wide range of sectors both for the government and private agencies all across the world. The database of the company is updated on a daily basis. Our database contains a variety of industry verticals that include: Food Beverage, Automotive, Chemicals and Energy, IT &amp; Telecom, Consumer, Healthcare, and many more. Each and every report goes through the appropriate research methodology, Checked from the professionals and analysts.
-
-**Contact Us****:**
-
-Sanjay Jain
-
-Manager – Partner Relations &amp; International Marketing
-
-[www.reportsandmarkets.com](http://www.reportsandmarkets.com/)
-
-[info@reportsandmarkets.com](mailto:info@reportsandmarkets.com)
-
-Ph: +1-352-353-0818 (US)
-## [8][Confused on how to run a Rails 6 app using Webpack in production mode](https://www.reddit.com/r/rails/comments/f5tibt/confused_on_how_to_run_a_rails_6_app_using/)
-- url: https://www.reddit.com/r/rails/comments/f5tibt/confused_on_how_to_run_a_rails_6_app_using/
----
-I've built an app in Rails 6 with a frontend using React via webpack. During development, it was as simple as \`rails s\` and \`bin/webpack-dev-server\`. After getting this app to deploy to Heroku, I immediately started having problems with React components working properly and getting errors like: 
-
-    react-dom.production.min.js:4638 TypeError: Cannot convert undefined or null to object
-        at hasOwnProperty (&lt;anonymous&gt;)
-        at Modal.js:21
-        at Array.forEach (&lt;anonymous&gt;)
-        at Modal.js:20
-        at t.n.render (Modal.js:302)
-        at Qi (react-dom.production.min.js:4243)
-        at Ji (react-dom.production.min.js:4234)
-        at wc (react-dom.production.min.js:6676)
-        at yu (react-dom.production.min.js:5650)
-        at Mu (react-dom.production.min.js:5639)
-    pc @ react-dom.production.min.js:4638
-    react-dom.production.min.js:2837 Uncaught TypeError: Cannot convert undefined or null to object
-        at hasOwnProperty (&lt;anonymous&gt;)
-        at Modal.js:21
-        at Array.forEach (&lt;anonymous&gt;)
-        at Modal.js:20
-        at t.n.render (Modal.js:302)
-        at Qi (react-dom.production.min.js:4243)
-        at Ji (react-dom.production.min.js:4234)
-        at wc (react-dom.production.min.js:6676)
-        at yu (react-dom.production.min.js:5650)
-        at Mu (react-dom.production.min.js:5639) 
-
-Someone told me to make sure the app works in production mode locally before deploying to Heroku. I know how to run \`rails s -p production\` but how do I start \`bin/webpack-dev-server\` and I'm not quite sure how to configure my app for production in general.
-## [9][Fortunately, finished Hartl's Rails tutorial. Feel weak on DB/SQL side, virtually no JS work except a small book, and there is Capstone Rails Tutorials(free). Any suggestion what/where to study next?](https://www.reddit.com/r/rails/comments/f65j6p/fortunately_finished_hartls_rails_tutorial_feel/)
-- url: https://www.reddit.com/r/rails/comments/f65j6p/fortunately_finished_hartls_rails_tutorial_feel/
----
-I do feel a bit weak on the DB/SQL side.
-
-I was going to continue as a basic primer on to Learn Enough's JS tutorial, and perhaps move on from there to other resources (You Don't Know JS Yet, Odin Project JS course, etc)
-
-There is also Capstone Rails Tutorials(free at https://tutorials.railsapps.org/), for getting better at Rails I would of course presume. 
-
-Any suggestion one what course of study to go next based on the above, and/or where?
-## [10][A way for a Rails application to interact with a CardDAV service?](https://www.reddit.com/r/rails/comments/f5ta1k/a_way_for_a_rails_application_to_interact_with_a/)
-- url: https://www.reddit.com/r/rails/comments/f5ta1k/a_way_for_a_rails_application_to_interact_with_a/
----
-I am updating this legacy application to Rails 6 and would like to add a way to export users' contact info (names, e-mail, phone) to administrators smartphones. 
-
-This will enable administrators to see caller IDs and make their work with call center and messaging applications a lot easier as right now they have to go to a control panel and look up users by their phone numbers.
-
-I've seen some hacks for this, eg admins would dock their phone and run an app that syncs over an API or some sort of contact import process and would rather not go this way, admins are not always very computer-savvy or simply don't have enough time, so I'd prefer have their smartphones import contacts the same way they do with Gmail accounts for instance.
-
-Does anyone know a way to get this done? Any pointers will be much appreciated.
-
-Thank you very much!
-## [11][Question About Railties, rails repo and rails gems](https://www.reddit.com/r/rails/comments/f5i1am/question_about_railties_rails_repo_and_rails_gems/)
-- url: https://www.reddit.com/r/rails/comments/f5i1am/question_about_railties_rails_repo_and_rails_gems/
----
-I am having a hard time understanding the rails repo. Active record, railties and all others(action view, etc) are in a monorepo. rails/rails. 
-
-They are all separate gems as well? Can someone explain this to me? Each action/active is a gem &amp; available on rubygems. 
-
-Or is the rails repo /activerecord boilerplate to connect to the actual gem? 
-
-Tldr: what's the difference between activerecord gem and the folder that sits in rails repo titled "activerecord"? 
-
-Thanks!
-
-Edit: it looks like the individual gems (activerecord) is not on rubygems. Now I am more confused. When I run "bundler list" it treats each one as a separate gem. Why is this?
-## [12][How do you remove a user's personally identifiable information but retain user activity?](https://www.reddit.com/r/rails/comments/f5lafp/how_do_you_remove_a_users_personally_identifiable/)
-- url: https://www.reddit.com/r/rails/comments/f5lafp/how_do_you_remove_a_users_personally_identifiable/
----
-I'd like to remove Jane Doe's email and full name from the system but retain Jane D.'s activity -- all comments, tasks etc., similar to how Basecamp functions.
-
-Has any of you solved this problem and how did you do it?
-
-Thank you!
+Hi guys, I have the following model and I looking to optimize it...
+
+    # some_model.rb
+    
+    belongs_to :some_association
+    
+    validates :some_association_id, presence: true
+    
+    validate :check_status_1
+    validate :check_status_2
+    
+    
+    def check_status_1
+      if self.some_association_id.present?
+        begin
+          some_association = Some::Association.find(self.some_association_id)
+          # check status_1... else raise error validation
+        
+          rescue ActiveRecord::RecordNotFound =&gt; e
+            # case treated by model validation - so nothing goes here
+          end  
+        end
+      end
+    end
+    
+    
+    def check_status_2
+      if self.some_association_id.present?
+        begin
+          some_association = Some::Association.find(self.some_association_id)
+          # check status_2... else raise error validation
+        
+          rescue ActiveRecord::RecordNotFound =&gt; e
+            # case treated by model validation - so nothing goes here
+          end  
+        end
+      end
+    end
+
+Because I see a lot of hits on database for the same query (Some::Association.find(...)  and belongs\_to validation), and I not sure if Rails reuse them from the memory, I was thinking if it would be possible to reduce this hits on db.
+
+Any tip to improvement is well accepted.
+
+My suggestion to solve the 2 queries Some::Association.find(...) problem is: an instance variable, something like this:
+
+    def check_status_1/2
+      if @some_association.present? &amp;&amp; self.some_association_id.present?
+        begin
+          @some_association = Some::Association.find(self.some_association_id)
+          ...
+        end
+      end
+    end
+
+Another way to solve the query problem would be put them together in one method (check\_status for status\_1 &amp; status\_2), but that would make hard to test each situation.
+
+About belongs\_to validation hitting the database for the same query that check\_status does, I'm not sure how to solve it in a pleasant way.

@@ -22,7 +22,121 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TypeScript Groovy Console Logger](https://www.reddit.com/r/typescript/comments/f65ist/typescript_groovy_console_logger/)
+## [2][GitHub - twitchtv/twirp: A simple RPC framework with protobuf service definitions](https://www.reddit.com/r/typescript/comments/f6rqis/github_twitchtvtwirp_a_simple_rpc_framework_with/)
+- url: https://github.com/twitchtv/twirp
+---
+
+## [3][Building an application with Vue and TypeScript. Best practices, thoughts and recommendations.](https://www.reddit.com/r/typescript/comments/f6ghfx/building_an_application_with_vue_and_typescript/)
+- url: https://stefan-bauer.online/building-an-application-with-vue-and-type-script-best-practices-thoughts-and-recommendations/
+---
+
+## [4][I programmed in TypeScript like in Haskell (Lazy Evaluation)](https://www.reddit.com/r/typescript/comments/f6t3hj/i_programmed_in_typescript_like_in_haskell_lazy/)
+- url: https://www.youtube.com/watch?v=E5yAoMaVCp0&amp;feature=share
+---
+
+## [5][AdminBro v2 beta is out!!!](https://www.reddit.com/r/typescript/comments/f6szkd/adminbro_v2_beta_is_out/)
+- url: https://www.reddit.com/r/typescript/comments/f6szkd/adminbro_v2_beta_is_out/
+---
+AdminBro is an automated admin interface for Node.js apps based on React, written in TypeScript = Django admin for node on steroids !!!
+
+Now, we almost finish the entire scope for v2.0 and we released it along with the demo version: 
+
+Demo page can be found here:
+
+[https://admin-bro-example-app-staging.herokuapp.com/admin](https://admin-bro-example-app-staging.herokuapp.com/admin)
+
+Github repo is here: [https://github.com/SoftwareBrothers/admin-bro](https://github.com/SoftwareBrothers/admin-bro)
+
+and you can install it using: 
+
+```
+yarn add admin-bro@2.0.0-beta.26
+```
+
+In this version: 
+
+* there is an entire Design System written specially for AdminBro
+* i18n support
+* hooks support
+* the entire UI change to Drawer'like exploring resources
+
+Now we are working on the documentation which (WiP) can be fond here:
+
+[https://softwarebrothers.github.io/admin-bro-dev/v2/](https://softwarebrothers.github.io/admin-bro-dev/v2/)
+
+Let me know what do you think - and star the repo if you like the idea :)
+## [6][Typesafe replacement for node's EventEmitter embracing functional programming](https://www.reddit.com/r/typescript/comments/f6d6r7/typesafe_replacement_for_nodes_eventemitter/)
+- url: https://github.com/garronej/ts-evt
+---
+
+## [7][How do I disable ESLint typescript for JS files?](https://www.reddit.com/r/typescript/comments/f6p73o/how_do_i_disable_eslint_typescript_for_js_files/)
+- url: https://www.reddit.com/r/typescript/comments/f6p73o/how_do_i_disable_eslint_typescript_for_js_files/
+---
+Hello all,
+
+I am starting with Typescript and I would like to disable ESLint for JS files, my .eslintrc.json contains the following:
+
+```
+    "parser":  "@typescript-eslint/parser",
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react",
+        "plugin:jsx-a11y/recommended",
+        "plugin:jest/recommended"
+        // "plugin:@typescript-eslint/recommended"
+    ],
+    "overrides": [
+      {
+        "files": ["*.js", "*.jsx"],
+        "rules": {
+            "@typescript-eslint/...": "off"
+        }
+      }
+    ],
+
+```
+
+But I continue getting eslint messages due to "plugin:@typescript-eslint/recommended". Any help with this please?
+
+Thank you in advance and regards.
+## [8][Trying to set type for single, dynamic property of indexed type](https://www.reddit.com/r/typescript/comments/f6gudt/trying_to_set_type_for_single_dynamic_property_of/)
+- url: https://www.reddit.com/r/typescript/comments/f6gudt/trying_to_set_type_for_single_dynamic_property_of/
+---
+I have a variety of records that look like this:
+```typescript
+{
+   id: string;
+   fields: number[];
+   field1: Record&lt;string, unknown&gt;;
+}
+
+{
+   other_id: string;
+   more_fields: number[];
+   field2: number
+}
+```
+
+I'm trying to set the typing on a function where you pass the property name of the `number[]` field to the function so it knows where to grab the numbers from.
+
+Something like:
+```typescript
+function sum_fields&lt;T, K extends keyof T &amp; number[]&gt;(obj: T, field: K): number {
+  let sum = 0;
+  obj[field].forEach((i: number) =&gt; {
+      sum += i;
+  });
+  return sum;
+}
+```
+
+How can I tell typescript that the property name I'm passing in has the type number[], and/or can I get typescript complain if the type of field is *not* number[]?
+## [9][Module federation and code sharing between bundles. Huge changes coming to frontend with webpack@5](https://www.reddit.com/r/typescript/comments/f68284/module_federation_and_code_sharing_between/)
+- url: https://github.com/webpack/webpack/issues/10352
+---
+
+## [10][TypeScript Groovy Console Logger](https://www.reddit.com/r/typescript/comments/f65ist/typescript_groovy_console_logger/)
 - url: https://www.reddit.com/r/typescript/comments/f65ist/typescript_groovy_console_logger/
 ---
 I wanted to create a class that allowed me to pass lots of information for debugging purposes. Based on the Type of Debug message, different sections of the resulting Console message will have different colors.
@@ -35,85 +149,7 @@ Comments, questions, suggestions all welcome
 I'm new to github as well so please let me know if that link doesn't work.
 
 Thanks!
-## [3][Module federation and code sharing between bundles. Huge changes coming to frontend with webpack@5](https://www.reddit.com/r/typescript/comments/f68284/module_federation_and_code_sharing_between/)
-- url: https://github.com/webpack/webpack/issues/10352
----
-
-## [4][Implementing an opaque type in typescript](https://www.reddit.com/r/typescript/comments/f5wny3/implementing_an_opaque_type_in_typescript/)
+## [11][Implementing an opaque type in typescript](https://www.reddit.com/r/typescript/comments/f5wny3/implementing_an_opaque_type_in_typescript/)
 - url: https://evertpot.com/opaque-ts-types/
 ---
 
-## [5][Discriminating union in function args](https://www.reddit.com/r/typescript/comments/f66ysc/discriminating_union_in_function_args/)
-- url: https://www.reddit.com/r/typescript/comments/f66ysc/discriminating_union_in_function_args/
----
-Hi all, just curious how one goes about discriminating a union as arguments to a function, so I can implement a factory method.
-
-I essentially want something like:
-```
-type PUSH_TYPE = 'ONE' | 'TWO'
-
-type ActionOne = {
-  type: 'ONE'
-  payload: { thing: string }
-}
-
-type ActionTwo = {
-  type: 'TWO'
-  payload: { differentThing: string }
-}
-
-type Action&lt;PUSH_TYPE&gt; = ActionOne | ActionTwo
-
-const discriminate = &lt;R = PUSH_TYPE&gt;(
-  type: R,
-  payload: Action&lt;R&gt;['payload'],
-): Action&lt;R&gt; =&gt; {}
-```
-Basically, I want the type system / autocomplete to know which payload must be specified once the type is provided. Is this possible? Appreciate the help!
-## [6][How does your typescript code sound? The app creates a melody from the JS or TS code you enter](https://www.reddit.com/r/typescript/comments/f5q86v/how_does_your_typescript_code_sound_the_app/)
-- url: https://soundcode.now.sh/
----
-
-## [7][Any strategies to make typescript launch faster?](https://www.reddit.com/r/typescript/comments/f5oacn/any_strategies_to_make_typescript_launch_faster/)
-- url: https://www.reddit.com/r/typescript/comments/f5oacn/any_strategies_to_make_typescript_launch_faster/
----
-I'm using ts-node and jest. Launching a test takes forever. Typescript takes about 1-10 seconds more to launch than simple node. There doesn't seem to be any feature to tell me which files are taking the longest so there's no way to optimize. My project is rather large, hundreds of files, 100k lines+. Some files are required dynamically, which might cause a problem but no way to really know how much of a problem it is.
-## [8][I still don't entirely understand decorators in TypeScript?](https://www.reddit.com/r/typescript/comments/f5e59h/i_still_dont_entirely_understand_decorators_in/)
-- url: https://www.reddit.com/r/typescript/comments/f5e59h/i_still_dont_entirely_understand_decorators_in/
----
-That's really my question, I just don't understand what they are exactly. That doesn't mean I can't use them, but don't understand what function they serve in my code?   Thanks in advance.
-## [9][proxy-watcher - A function that recursively watches an object for mutations via Proxies and tells you which paths changed](https://www.reddit.com/r/typescript/comments/f5he2l/proxywatcher_a_function_that_recursively_watches/)
-- url: https://github.com/fabiospampinato/proxy-watcher
----
-
-## [10][decoupling a complex set of generic interfaces from its much simpler TypeScript code](https://www.reddit.com/r/typescript/comments/f5of1v/decoupling_a_complex_set_of_generic_interfaces/)
-- url: https://www.reddit.com/r/typescript/comments/f5of1v/decoupling_a_complex_set_of_generic_interfaces/
----
-I am writing a TypeScript library, and I am trying to add generics to the public-facing functions in order to the strengthen their type checking and improve IDE autosuggestions. The problem is that the generics end up needing to be passed all throughout the codebase because some of the public-facing functions are also used internally. And the generic types are also a bit complex, with multiple parameters, ternary logic, lookups, and references to other custom generic types. I don't want to rewrite every function with these new types. The public-facing functions need them, the internals do not.
-
-I want to write the generic types so that they behave as the library's interface but do not affect any of the existing internal code. Like a layer that just sits in front, completely decoupled, much like how type declaration files are for JS files. Can a TypeScript library have its own declaration files? How would you suggest I solve this?
-## [11][Is a generic deep flatten function possible in TS?](https://www.reddit.com/r/typescript/comments/f5d1ud/is_a_generic_deep_flatten_function_possible_in_ts/)
-- url: https://www.reddit.com/r/typescript/comments/f5d1ud/is_a_generic_deep_flatten_function_possible_in_ts/
----
-Is it possible to write a generic TS function for recursively flattening an arbitrarily nested array?
-
-For example:
-
-    const input = [1,[2,[3,[4,[5],6],7],8],9];
-    const output = flattenDeep(input); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-This is pretty simple to write in JS
-
-    function flattenDeep(array) {
-      const result = [];
-      for(const value of array) {
-        if(Array.isArray(value)) {
-          result.push(...flattenDeep(value));
-        } else {
-          result.push(value);
-        }
-      }
-      return result;
-    }
-
-But is there a way to add generic types to this, so it will infer the input/output types in the example above?

@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (February 15, 2020)](https://www.reddit.com/r/javascript/comments/f48ek5/showoff_saturday_february_15_2020/)
-- url: https://www.reddit.com/r/javascript/comments/f48ek5/showoff_saturday_february_15_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/f56mem/your_weekly_rjavascript_recap/)
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/f56mem/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/f56mem/your_weekly_rjavascript_recap/
 ---
 **Monday, February 10 - Sunday, February 16**
@@ -85,43 +79,51 @@ score  |  comment  |
 
 
 &amp;nbsp;
-## [3][Most common JavaScript vulnerabilities and how to fix them](https://www.reddit.com/r/javascript/comments/f67doq/most_common_javascript_vulnerabilities_and_how_to/)
+## [2][WTF Wednesday (February 19, 2020)](https://www.reddit.com/r/javascript/comments/f6cris/wtf_wednesday_february_19_2020/)
+- url: https://www.reddit.com/r/javascript/comments/f6cris/wtf_wednesday_february_19_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Creational Patterns in ES6+ using Game of Thrones](https://www.reddit.com/r/javascript/comments/f6rqjn/creational_patterns_in_es6_using_game_of_thrones/)
+- url: https://www.hackdoor.io/articles/9YJbK2Nn/creational-patterns-in-es6-using-game-of-thrones
+---
+
+## [4][Fixing memory leaks in web applications](https://www.reddit.com/r/javascript/comments/f6dz1e/fixing_memory_leaks_in_web_applications/)
+- url: https://nolanlawson.com/2020/02/19/fixing-memory-leaks-in-web-applications/
+---
+
+## [5][How to mock REST-API in 30 seconds with NodeJS](https://www.reddit.com/r/javascript/comments/f6rmkq/how_to_mock_restapi_in_30_seconds_with_nodejs/)
+- url: https://medium.com/@stefanoTLDR/how-to-mock-rest-api-in-30-seconds-with-nodejs-6068aabd6630
+---
+
+## [6][Emotion detection with JavaScript neural networks](https://www.reddit.com/r/javascript/comments/f6rcnd/emotion_detection_with_javascript_neural_networks/)
+- url: https://www.hackdoor.io/articles/WjpmYpPD/emotion-detection-with-javascript-neural-networks
+---
+
+## [7][@clusterws/cws: fast C++ WebSocket implementation for Node.js (uWebSockets v0.14 fork). Runs on Node 8+.](https://www.reddit.com/r/javascript/comments/f6mx7t/clusterwscws_fast_c_websocket_implementation_for/)
+- url: https://github.com/ClusterWS/cWS
+---
+
+## [8][How to Send and Receive SMS Messages with Nuxt.js and the Nexmo SMS API](https://www.reddit.com/r/javascript/comments/f6hj5e/how_to_send_and_receive_sms_messages_with_nuxtjs/)
+- url: https://www.nexmo.com/blog/2020/02/19/how-send-receive-sms-messages-with-nuxt-js-dr?utm_source=reddit&amp;utm_medium=javascript&amp;utm_campaign=laka
+---
+
+## [9][Official Redux template for Create-React-App](https://www.reddit.com/r/javascript/comments/f6s4iy/official_redux_template_for_createreactapp/)
+- url: https://github.com/reduxjs/cra-template-redux/releases/tag/v1.0.0
+---
+
+## [10][Most common JavaScript vulnerabilities and how to fix them](https://www.reddit.com/r/javascript/comments/f67doq/most_common_javascript_vulnerabilities_and_how_to/)
 - url: https://medium.com/@AntonLawrence/javascript-vulnerabilities-e5391a746c90
 ---
 
-## [4][All the coolest React features collected in one places and explained. Job interview tips as bonus.](https://www.reddit.com/r/javascript/comments/f5y2e9/all_the_coolest_react_features_collected_in_one/)
-- url: https://blog.piotrnalepa.pl/2020/02/18/what-to-answer-when-questions-about-react-appear-at-job-interview/
+## [11][Building an application with Vue and TypeScript. Best practices, thoughts and recommendations.](https://www.reddit.com/r/javascript/comments/f6ovy1/building_an_application_with_vue_and_typescript/)
+- url: https://stefan-bauer.online/building-an-application-with-vue-and-type-script-best-practices-thoughts-and-recommendations/
 ---
 
-## [5][Paged.js - a free and open source JavaScript library that paginates content in the browser to create PDF output from any HTML content. This means you can design works for print (eg. books) using HTML and CSS](https://www.reddit.com/r/javascript/comments/f5syqi/pagedjs_a_free_and_open_source_javascript_library/)
-- url: https://www.pagedjs.org/
----
-
-## [6][Pitsby: The declarative way of documenting components.](https://www.reddit.com/r/javascript/comments/f69l5v/pitsby_the_declarative_way_of_documenting/)
-- url: https://pitsby.com/
----
-
-## [7][Some tips for the web VR beginners](https://www.reddit.com/r/javascript/comments/f68svh/some_tips_for_the_web_vr_beginners/)
-- url: https://medium.com/naver-fe-platform/some-tips-for-the-web-vr-beginners-ee12002f36bf
----
-
-## [8][[AskJS] Why do most developers pronounce JSON as "JaySawn" instead of "JaySin(Jason)"?](https://www.reddit.com/r/javascript/comments/f6aile/askjs_why_do_most_developers_pronounce_json_as/)
-- url: https://www.reddit.com/r/javascript/comments/f6aile/askjs_why_do_most_developers_pronounce_json_as/
----
-
-## [9][Don't touch my clipboard](https://www.reddit.com/r/javascript/comments/f5ooyt/dont_touch_my_clipboard/)
-- url: https://alexanderell.is/posts/taking-over-my-clipboard/
----
-
-## [10][Module federation and code sharing between bundles. Huge changes coming to frontend with webpack@5](https://www.reddit.com/r/javascript/comments/f5xf5u/module_federation_and_code_sharing_between/)
-- url: https://github.com/webpack/webpack/issues/10352
----
-
-## [11][Deno React Server (A wannabe Next.js for Deno)](https://www.reddit.com/r/javascript/comments/f65z5d/deno_react_server_a_wannabe_nextjs_for_deno/)
-- url: https://github.com/imaginamundo/deno-react-server
----
-
-## [12][Handling the try/catch and if/else hell](https://www.reddit.com/r/javascript/comments/f67yda/handling_the_trycatch_and_ifelse_hell/)
-- url: https://www.hackdoor.io/articles/E1N4qpVP/handling-the-trycatch-and-ifelse-hell
+## [12][Scheduling Website Content With JavaScript &amp; AWS CloudWatch](https://www.reddit.com/r/javascript/comments/f6jbgl/scheduling_website_content_with_javascript_aws/)
+- url: https://www.alexdaro.com/writing/scheduling-website-content-with-javascript-and-aws-cloudwatch
 ---
 

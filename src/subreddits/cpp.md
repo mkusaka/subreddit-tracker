@@ -578,16 +578,16 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [3][C++20 is here!](https://www.reddit.com/r/cpp/comments/f5t17a/c20_is_here/)
-- url: https://youtu.be/AvPiGstxV_g
+## [3][An in Depth Review for Deleaker (A Software Used to Catch Memory Leaks)](https://www.reddit.com/r/cpp/comments/f6gn3b/an_in_depth_review_for_deleaker_a_software_used/)
+- url: https://grahambest.xyz/an-in-depth-review-for-deleaker/
 ---
 
 ## [4][Are you excited about C++ 20 ?](https://www.reddit.com/r/cpp/comments/f62nyr/are_you_excited_about_c_20/)
 - url: https://www.reddit.com/r/cpp/comments/f62nyr/are_you_excited_about_c_20/
 ---
 Are you excited about C++ 20 ? or you feel the language should have stayed the same like pre98 or 2003 etc (e.g old pointers and all that) ? Do you think they should break with backward compatibility for good or its a necessary evil ? Is there anything else that bother you or some syntax sugar you would love to have in C++ like in C# ?
-## [5][Zero, one, two, Freddy's coming for you](https://www.reddit.com/r/cpp/comments/f6a8vz/zero_one_two_freddys_coming_for_you/)
-- url: https://habr.com/en/company/pvs-studio/blog/488328/
+## [5][C++20 is here!](https://www.reddit.com/r/cpp/comments/f5t17a/c20_is_here/)
+- url: https://youtu.be/AvPiGstxV_g
 ---
 
 ## [6][C Android Native App | Visual Studio 2019](https://www.reddit.com/r/cpp/comments/f68tlm/c_android_native_app_visual_studio_2019/)
@@ -621,37 +621,17 @@ by just filling in the blanks. I've put together a PoC at [https://godbolt.org/z
 - url: https://cor3ntin.github.io/posts/move/
 ---
 
-## [10][switch break (...) {...}](https://www.reddit.com/r/cpp/comments/f64zdg/switch_break/)
-- url: https://www.reddit.com/r/cpp/comments/f64zdg/switch_break/
----
-It would be nice if C++ allowed a new syntax for switches:
-
-    switch break (cond) {
-        case a: ...
-        case n: ...
-        default: ...
-    }
-
-Which would make every case statement break at the end, without needing break keyword. So, there's no fall-through, but you can still 'goto' into some label, which could be another case statement. And, you could still use break within the case, if you want to escape the case before the end.
-
-I wonder why such a things hasn't been done, already. I'm sure many have thought about this.
-
-No, I'm not going to write a proposal for it. Just want to write this show-thought on the internet, in case some soul that can do something about does something about it.
-
-&amp;#x200B;
-
-Transmission complete
-## [11][C++ and its Standards – from history to C++20 – readings, talks, trip reports](https://www.reddit.com/r/cpp/comments/f5tn76/c_and_its_standards_from_history_to_c20_readings/)
+## [10][C++ and its Standards – from history to C++20 – readings, talks, trip reports](https://www.reddit.com/r/cpp/comments/f5tn76/c_and_its_standards_from_history_to_c20_readings/)
 - url: https://github.com/MattPD/cpplinks/blob/master/std.md
 ---
 
-## [12][Does anyone know what it means to have No Toolchain found for Target Local?](https://www.reddit.com/r/cpp/comments/f698xg/does_anyone_know_what_it_means_to_have_no/)
-- url: https://www.reddit.com/r/cpp/comments/f698xg/does_anyone_know_what_it_means_to_have_no/
+## [11][Zero, one, two, Freddy's coming for you](https://www.reddit.com/r/cpp/comments/f6a8vz/zero_one_two_freddys_coming_for_you/)
+- url: https://habr.com/en/company/pvs-studio/blog/488328/
 ---
- So I'm new to Eclipse and I'm making a C++ project through New C++ Project -&gt; CMake Project.
 
-This loads the default hello world program and when I go to Build -&gt; Build Project I get the error No Toolchain found for Target Local.
+## [12][What are jobs that allow usage of modern C++?](https://www.reddit.com/r/cpp/comments/f668cm/what_are_jobs_that_allow_usage_of_modern_c/)
+- url: https://www.reddit.com/r/cpp/comments/f668cm/what_are_jobs_that_allow_usage_of_modern_c/
+---
+What kind of jobs don't impose working with legacy code or old versions like C++98, or at least don't still refer to C++11 as "modern"?
 
-I have JDK 8 properly installed with system variables, I have Eclipse 2019-12 and Windows 10 if that's any help.
-
-**Comment**
+Are you working with C++17 in your job? Are there already plans or allowances to work with C++20? What kind of professional frameworks allow staying up to date with the language and not inevitably lagging behind out of fear of big rewrites?

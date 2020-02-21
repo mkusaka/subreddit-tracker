@@ -22,19 +22,23 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][GitHub - twitchtv/twirp: A simple RPC framework with protobuf service definitions](https://www.reddit.com/r/typescript/comments/f6rqis/github_twitchtvtwirp_a_simple_rpc_framework_with/)
+## [2][Announcing TypeScript 3.8](https://www.reddit.com/r/typescript/comments/f71hpa/announcing_typescript_38/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/
+---
+
+## [3][Typing the Technical Interview in TypeScript: solve an interview with no runtime code!](https://www.reddit.com/r/typescript/comments/f6v4np/typing_the_technical_interview_in_typescript/)
+- url: https://gal.hagever.com/posts/typing-the-technical-interview-in-typescript/
+---
+
+## [4][GitHub - twitchtv/twirp: A simple RPC framework with protobuf service definitions](https://www.reddit.com/r/typescript/comments/f6rqis/github_twitchtvtwirp_a_simple_rpc_framework_with/)
 - url: https://github.com/twitchtv/twirp
 ---
 
-## [3][Building an application with Vue and TypeScript. Best practices, thoughts and recommendations.](https://www.reddit.com/r/typescript/comments/f6ghfx/building_an_application_with_vue_and_typescript/)
-- url: https://stefan-bauer.online/building-an-application-with-vue-and-type-script-best-practices-thoughts-and-recommendations/
----
-
-## [4][I programmed in TypeScript like in Haskell (Lazy Evaluation)](https://www.reddit.com/r/typescript/comments/f6t3hj/i_programmed_in_typescript_like_in_haskell_lazy/)
+## [5][I programmed in TypeScript like in Haskell (Lazy Evaluation)](https://www.reddit.com/r/typescript/comments/f6t3hj/i_programmed_in_typescript_like_in_haskell_lazy/)
 - url: https://www.youtube.com/watch?v=E5yAoMaVCp0&amp;feature=share
 ---
 
-## [5][AdminBro v2 beta is out!!!](https://www.reddit.com/r/typescript/comments/f6szkd/adminbro_v2_beta_is_out/)
+## [6][AdminBro v2 beta is out!!!](https://www.reddit.com/r/typescript/comments/f6szkd/adminbro_v2_beta_is_out/)
 - url: https://www.reddit.com/r/typescript/comments/f6szkd/adminbro_v2_beta_is_out/
 ---
 AdminBro is an automated admin interface for Node.js apps based on React, written in TypeScript = Django admin for node on steroids !!!
@@ -65,16 +69,51 @@ Now we are working on the documentation which (WiP) can be fond here:
 [https://softwarebrothers.github.io/admin-bro-dev/v2/](https://softwarebrothers.github.io/admin-bro-dev/v2/)
 
 Let me know what do you think - and star the repo if you like the idea :)
-## [6][Typesafe replacement for node's EventEmitter embracing functional programming](https://www.reddit.com/r/typescript/comments/f6d6r7/typesafe_replacement_for_nodes_eventemitter/)
+## [7][Fun with Functors in TypeScript](https://www.reddit.com/r/typescript/comments/f6t6mr/fun_with_functors_in_typescript/)
+- url: https://medium.com/@wim.jongeneel1/fun-with-functors-in-typescript-2c3268853d69?source=friends_link&amp;sk=722004cc2e378b41a5a211f47a882432
+---
+
+## [8][OpenAPI Generator now supports Angular 9](https://www.reddit.com/r/typescript/comments/f6u6jr/openapi_generator_now_supports_angular_9/)
+- url: https://www.reddit.com/r/typescript/comments/f6u6jr/openapi_generator_now_supports_angular_9/
+---
+Thanks for the enhancement by [topce](https://github.com/topce)
+
+Here are 3 simple steps to generate TypeScript Angular 9 client given an OpenAPI spec (e.g. [Petstore API](https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml)):
+
+1. Download the Java JAR (Snapshot) ([https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.3.0-SNAPSHOT/openapi-generator-cli-4.3.0-20200220.141445-113.jar](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.3.0-SNAPSHOT/openapi-generator-cli-4.3.0-20200220.141445-113.jar))
+2. Rename the JAR as "openapi-generator-cli.jar"
+3. Run the following command to generate a TypeScript Angular 9 client for the Petstore API ([https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml](https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml)):
+
+Mac/Linux:
+
+\- java -jar openapi-generator-cli.jar generate -g typescript-angular -i [https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2\_0/petstore.yaml](https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml) \-o /var/tmp/typescript-angular/
+
+Windows:
+
+\- java -jar openapi-generator-cli.jar generate -g typescript-angular -i [https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2\_0/petstore.yaml](https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml) \-o C:\\tmp\\typescript-angular
+
+To generate an older version of TypeScript Angular client, use `ngVersion`. For example, to generate Angular 8 client:
+
+\- java -jar openapi-generator-cli.jar generate -g typescript-angular -i [https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2\_0/petstore.yaml](https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml) \-o /var/tmp/typescript-angular/ --additional-properties ngVersion=8
+
+
+For any questions/feedback, please let us know via [https://github.com/OpenAPITools/openapi-generator/issues/new](https://github.com/OpenAPITools/openapi-generator/issues/new)
+
+Ref: https://github.com/OpenAPITools/openapi-generator/pull/5370
+## [9][Building an application with Vue and TypeScript. Best practices, thoughts and recommendations.](https://www.reddit.com/r/typescript/comments/f6ghfx/building_an_application_with_vue_and_typescript/)
+- url: https://stefan-bauer.online/building-an-application-with-vue-and-type-script-best-practices-thoughts-and-recommendations/
+---
+
+## [10][Typesafe replacement for node's EventEmitter embracing functional programming](https://www.reddit.com/r/typescript/comments/f6d6r7/typesafe_replacement_for_nodes_eventemitter/)
 - url: https://github.com/garronej/ts-evt
 ---
 
-## [7][How do I disable ESLint typescript for JS files?](https://www.reddit.com/r/typescript/comments/f6p73o/how_do_i_disable_eslint_typescript_for_js_files/)
+## [11][How do I disable ESLint typescript for JS files?](https://www.reddit.com/r/typescript/comments/f6p73o/how_do_i_disable_eslint_typescript_for_js_files/)
 - url: https://www.reddit.com/r/typescript/comments/f6p73o/how_do_i_disable_eslint_typescript_for_js_files/
 ---
 Hello all,
 
-I am starting with Typescript and I would like to disable ESLint for JS files, my .eslintrc.json contains the following:
+I am starting with Typescript and I would like to disable ESLint errors related to Typescript for JS files, my .eslintrc.json contains the following:
 
 ```
     "parser":  "@typescript-eslint/parser",
@@ -83,8 +122,8 @@ I am starting with Typescript and I would like to disable ESLint for JS files, m
         "prettier",
         "prettier/react",
         "plugin:jsx-a11y/recommended",
-        "plugin:jest/recommended"
-        // "plugin:@typescript-eslint/recommended"
+        "plugin:jest/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "overrides": [
       {
@@ -100,56 +139,3 @@ I am starting with Typescript and I would like to disable ESLint for JS files, m
 But I continue getting eslint messages due to "plugin:@typescript-eslint/recommended". Any help with this please?
 
 Thank you in advance and regards.
-## [8][Trying to set type for single, dynamic property of indexed type](https://www.reddit.com/r/typescript/comments/f6gudt/trying_to_set_type_for_single_dynamic_property_of/)
-- url: https://www.reddit.com/r/typescript/comments/f6gudt/trying_to_set_type_for_single_dynamic_property_of/
----
-I have a variety of records that look like this:
-```typescript
-{
-   id: string;
-   fields: number[];
-   field1: Record&lt;string, unknown&gt;;
-}
-
-{
-   other_id: string;
-   more_fields: number[];
-   field2: number
-}
-```
-
-I'm trying to set the typing on a function where you pass the property name of the `number[]` field to the function so it knows where to grab the numbers from.
-
-Something like:
-```typescript
-function sum_fields&lt;T, K extends keyof T &amp; number[]&gt;(obj: T, field: K): number {
-  let sum = 0;
-  obj[field].forEach((i: number) =&gt; {
-      sum += i;
-  });
-  return sum;
-}
-```
-
-How can I tell typescript that the property name I'm passing in has the type number[], and/or can I get typescript complain if the type of field is *not* number[]?
-## [9][Module federation and code sharing between bundles. Huge changes coming to frontend with webpack@5](https://www.reddit.com/r/typescript/comments/f68284/module_federation_and_code_sharing_between/)
-- url: https://github.com/webpack/webpack/issues/10352
----
-
-## [10][TypeScript Groovy Console Logger](https://www.reddit.com/r/typescript/comments/f65ist/typescript_groovy_console_logger/)
-- url: https://www.reddit.com/r/typescript/comments/f65ist/typescript_groovy_console_logger/
----
-I wanted to create a class that allowed me to pass lots of information for debugging purposes. Based on the Type of Debug message, different sections of the resulting Console message will have different colors.
-
-I would like to get feedback from you guys.
-Comments, questions, suggestions all welcome
-
-[Github Groovy Logger!](https://github.com/RecursiveCTE/Visual_Studio_Code_Samples)
-
-I'm new to github as well so please let me know if that link doesn't work.
-
-Thanks!
-## [11][Implementing an opaque type in typescript](https://www.reddit.com/r/typescript/comments/f5wny3/implementing_an_opaque_type_in_typescript/)
-- url: https://evertpot.com/opaque-ts-types/
----
-

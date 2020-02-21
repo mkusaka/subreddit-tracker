@@ -27,148 +27,301 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][How can I clean up this code adding a CSS background: url() dynamically from model?](https://www.reddit.com/r/rails/comments/f6rmwn/how_can_i_clean_up_this_code_adding_a_css/)
-- url: https://www.reddit.com/r/rails/comments/f6rmwn/how_can_i_clean_up_this_code_adding_a_css/
+## [3][I created a step-by-step tutorial demonstrating how to integrate React with Ruby on Rails](https://www.reddit.com/r/rails/comments/f7a0v8/i_created_a_stepbystep_tutorial_demonstrating_how/)
+- url: https://www.reddit.com/r/rails/comments/f7a0v8/i_created_a_stepbystep_tutorial_demonstrating_how/
 ---
-Hi everyone,  
+- [Live Demo](https://rails-react-example.herokuapp.com/)
+- [Tutorial](https://stevepolito.design/blog/rails-react-tutorial/)
 
+I really wanted to learn React and API development, so I went head first into building a simple application, and documented my experience. I think what sets this apart from other Rails and React tutorials is that I cover...
 
-I have a a model `coffee_shops` which `has_many` "`review_photos`".  
-
-
-I want to display the `review_photo` with a gradient, using the following CSS:  
-
-
-    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)), url('www.mydynamicurl.com') center / cover;
-
-Now, I can't send the image URL to the CSS as far as I'm aware. So I assume I have to do this in HTML. I have done this like so:  
-
-
-    &lt;section class="hero is-medium is-bold" style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)), url('http://my-url-prefix/&lt;%= @coffee_shop.review_photos.first[:photo] %&gt;') center / cover;"&gt;
-
-This works visually, but there's 2 problems.  
-
-
-1) This seems kind of ugly and hacky.  
-2) I might want to use this gradient on other pages. Putting it in the HTML like this means that I have to copy it each time, and if I make a change to the gradient then I have to find all instances of it and change it on each.  
-
-
-What's the best way of doing this, (bearing in mind that the image has to be assigned in CSS and can't be a HTML &lt;img&gt; element.  
-
-
-Thanks.
-## [4][What do you do to stay sharp?](https://www.reddit.com/r/rails/comments/f6l733/what_do_you_do_to_stay_sharp/)
-- url: https://www.reddit.com/r/rails/comments/f6l733/what_do_you_do_to_stay_sharp/
+- API authorization
+- API versioning
+- Setting HTTP status codes
+- Form validation on the front-end
+- Handling errors
+- Debouncing requests
+- CSRF Countermeasures
+## [4][Write test for data migrations](https://www.reddit.com/r/rails/comments/f717t9/write_test_for_data_migrations/)
+- url: https://www.reddit.com/r/rails/comments/f717t9/write_test_for_data_migrations/
 ---
-It's something everyone agrees is absolutely crucial to maintain relevancy as a programmer, constant learning and self development.
-
-What are some of the things you do to stay up to date on trends and constantly learn and develop some skills? What are some things you're working on in that regard? What are things that have helped you in the past?
-
-This is something I've struggled with especially recently. It's easy to settle into a comfortable rhythm at work and go months without adding any new meaningful knowledge or skills.
-## [5][Active Storage File Upload Behind The Scenes](https://www.reddit.com/r/rails/comments/f6t0fs/active_storage_file_upload_behind_the_scenes/)
-- url: https://www.reddit.com/r/rails/comments/f6t0fs/active_storage_file_upload_behind_the_scenes/
+Today I heard a funny story at a local Ruby meetup. A guy corrupted data in production by a data migration. Don’t repeat his mistake, use this [gem](https://github.com/ka8725/migration_data). It’s not super popular, but has been tested over time. Surprisingly, people still use it and seem satisfied. Any contribution is welcomed!
+## [5][What book/resources do you recommend for intermediate Rails developer?](https://www.reddit.com/r/rails/comments/f744ae/what_bookresources_do_you_recommend_for/)
+- url: https://www.reddit.com/r/rails/comments/f744ae/what_bookresources_do_you_recommend_for/
 ---
-[Active Storage](https://github.com/rails/rails/tree/master/activestorage)   is a framework in Ruby that makes it a breeze to upload files and   reference them in the cloud (or a local disk). It’s built into [Ruby On Rails 6](https://weblog.rubyonrails.org/2019/8/15/Rails-6-0-final-release/), but it’s also got a [JavaScript library](https://github.com/rails/rails/tree/master/activestorage/app/javascript/activestorage). In fact, that’s what I like most about Rails. It’s got your back. It delivers *complete* packages out of the box. Packages that work well *together*. Client to server — it’s got everything you need! And it’s got beautiful code. Making it a pleasure to work with.
-
-In this post, you will **see how Active Storage really works from the inside**.   We will track the main flow of the program, and see how it processes a   file uploaded by the user through the browser with JavaScript. And  then,  how the file is uploaded to a local disk with Ruby. *Let’s get started.*
-
-[Continue reading on Medium...](https://medium.com/rubyinside/active-storage-file-upload-behind-the-scenes-59a660c43781)
-## [6][Invite Links with Devise](https://www.reddit.com/r/rails/comments/f6qfrq/invite_links_with_devise/)
-- url: https://www.reddit.com/r/rails/comments/f6qfrq/invite_links_with_devise/
+I’ve been developing in Rails for about a year now and feel I’m ready to learn intermediate stuff. I have read Michael Hartl’s book, and did a couple of tutorials on udemy as well. What resources/books would you recommend? Thanks!
+## [6][Making a desktop and mobile app from an existing rails app.](https://www.reddit.com/r/rails/comments/f76oug/making_a_desktop_and_mobile_app_from_an_existing/)
+- url: https://www.reddit.com/r/rails/comments/f76oug/making_a_desktop_and_mobile_app_from_an_existing/
 ---
-I want to build an invite system where each registered user has a unique invite link. And when their friends use that link to sign up they both get benefits. You should also be able to send the link through social media or email.
-
-An example of what I mean is airbnb's invite system:
-
-https://preview.redd.it/13i9orrbo1i41.png?width=3354&amp;format=png&amp;auto=webp&amp;s=f9b4d59c39a1219548dfb8223fa5f277a485a439
-
-I have tried using devise invitable but it seems to work differently. It seems to register an user with an email first and then signs them up if they accept the invite. This does not allow for social media sharing.
-
-So, how do I go about building such an invite system and how do I integrate it with devise?
-## [7][Should I start rails or something else?](https://www.reddit.com/r/rails/comments/f6q582/should_i_start_rails_or_something_else/)
-- url: https://www.reddit.com/r/rails/comments/f6q582/should_i_start_rails_or_something_else/
+I have an existing Rails app I want to make a desktop app(using electron) and a mobile app. So I'm thinking of making a REST API. I want to ask if there is a better way then converting the Rails app to an API. Also, what is the best way to make Rails API out of an already built app?
+## [7][What are some smaller Open source rails projects That are less intimidating to contribute to?](https://www.reddit.com/r/rails/comments/f713e8/what_are_some_smaller_open_source_rails_projects/)
+- url: https://www.reddit.com/r/rails/comments/f713e8/what_are_some_smaller_open_source_rails_projects/
 ---
-Hey How are you all guys?? I hope you all doing fine.. I have a question.. I have a hard time deciding which language to study.. I just wanna get into software development.. I really like ruby and its framework rails.. But the problem is there are not enough jobs in rails.. So my question is Shoud I..  
-1) start rails and go with my interest  
-2) start with something else.. lets say laravel or react.. because there are tons of jobs in both of these..  
+The current list (Will Update as People Comment)
+
+[https://github.com/focallocal](https://github.com/focallocal)
+
+[https://github.com/TheOdinProject/theodinproject](https://github.com/TheOdinProject/theodinproject)
+
+[http://www.opensourcerails.com](http://www.opensourcerails.com/)
+
+I am looking to share this list with my local user group to help other beginners like me.
+## [8][Rails server on cloud9 not working?](https://www.reddit.com/r/rails/comments/f71fd6/rails_server_on_cloud9_not_working/)
+- url: https://www.reddit.com/r/rails/comments/f71fd6/rails_server_on_cloud9_not_working/
+---
+As the title suggets, when i start up the rails server, it acts as if it wasn't even on. Any way to fix this?
+## [9][Trying to use Simple Form and Enumerize gems to set a default value of an input. Help needed!](https://www.reddit.com/r/rails/comments/f737p3/trying_to_use_simple_form_and_enumerize_gems_to/)
+- url: https://www.reddit.com/r/rails/comments/f737p3/trying_to_use_simple_form_and_enumerize_gems_to/
+---
+Hi all,  
 
 
-So I want advice from you people.. can I pursue my career in freelancing in rails world.. what are the prerequisite.. I mean how much your skill is must to start freelancing and get success.. because if there are not enough jobs in my area .. freelancing is the way to go..
-## [8][What Ruby gems would you recommend for Rails API development](https://www.reddit.com/r/rails/comments/f6di8l/what_ruby_gems_would_you_recommend_for_rails_api/)
-- url: https://www.reddit.com/r/rails/comments/f6di8l/what_ruby_gems_would_you_recommend_for_rails_api/
----
-I am looking into making API only Rails app and I wanted to make a post here to ask you guys whether you know any good gems that would make my life easier for developing API only Rails apps. Maybe something for authentication, responses, etc. Thanks!
-## [9][Rails migration for belongs_to with custom table name](https://www.reddit.com/r/rails/comments/f6hunj/rails_migration_for_belongs_to_with_custom_table/)
-- url: https://www.reddit.com/r/rails/comments/f6hunj/rails_migration_for_belongs_to_with_custom_table/
----
-Check out my recent [post](https://railsguides.net/foreign-key-for-custom-table-name/) describes how to specify a belongs to association in Rails migration with a foreign key to custom table name. Spoiler: as the result it has improved Rails docs!
-## [10][I wrote a post about how geared pagination works behind-the-scenes —&gt;](https://www.reddit.com/r/rails/comments/f6jhza/i_wrote_a_post_about_how_geared_pagination_works/)
-- url: https://www.reddit.com/r/rails/comments/f6jhza/i_wrote_a_post_about_how_geared_pagination_works/
----
-There’s  a better, more user-friendly-driven approach to writing pagination for  your application. The idea is simple: Load more records every time the user is asking to see more.
+I'm working with someone else's code and trying to work out how to set the value of an input as a default using simple form. Probably easier to explain with some code...
 
-[Continue reading on Medium...](https://medium.com/@liroy/geared-pagination-in-rails-behind-the-scenes-61d9e227540e)
-## [11][Ruby 2.7 removes taint checking mechanism](https://www.reddit.com/r/rails/comments/f67vxa/ruby_27_removes_taint_checking_mechanism/)
-- url: https://blog.saeloun.com/2020/02/18/ruby-2-7-access-and-setting-of-safe-warned-will-become-global-variable
----
+In the view I have this haml code that currently allows users to chose between two options from the payments attribute, which is enumerated in the model.  
 
-## [12][[Help] Optimize model validations](https://www.reddit.com/r/rails/comments/f6bf1b/help_optimize_model_validations/)
-- url: https://www.reddit.com/r/rails/comments/f6bf1b/help_optimize_model_validations/
----
-Hi guys, I have the following model and I looking to optimize it...
 
-    # some_model.rb
+view:
+
+    = simple_form_for(@checkout, html: { class: 'edit-form edit_item' }, wrapper: :edit_form) do |f|
+      %fieldset.large-2-col
+        .fields-block
+          = f.input :payments, as: :check_boxes
+...
+
+The payments attribute is enumerated in the model :
+
+    enumerize :payments, in: [:cash, :card], default: :card, multiple: true
+
+What I would like is for a user to only be offered the options of `:cash` and `:card` if they have those options set on their account. Currently if a user only has an account registered with card they can still select the cash radio button. In very crude terms it should do something like this:  
+
+
+    - if current_account.cash_accounts.any?  == false
+      default simple form input for card and don't show options
+    - elsif current_account.card_accounts.any? == false
+      default simple form input for cash and don't show options
+    - else
+  = f.input :payments, as: :check_boxes
+
+I don't know how to just get one of :card or :cash from the enumerated attribute (depending on the user's account) and I don't know how to use simple form to have a default value selected whilst not showing anything in the view. Any help would be greatly appreciated :)
+## [10][Best gem to limit zip codes at checkout?](https://www.reddit.com/r/rails/comments/f6wbfa/best_gem_to_limit_zip_codes_at_checkout/)
+- url: https://www.reddit.com/r/rails/comments/f6wbfa/best_gem_to_limit_zip_codes_at_checkout/
+---
+Hi,
+
+I'm building an ecommerce app, but I want to limit the geographic locations where orders can be shipped to. Wondering if there is a gem that's best recommended for this that I can incorporate into a function that won't allow customers to check out unless they have entered a zip code in the allowed range(s). Thanks in advance!
+## [11][Rails 6/Webpacker/React/Bootstrap users....PLEASE HELP!!](https://www.reddit.com/r/rails/comments/f6yizg/rails_6webpackerreactbootstrap_usersplease_help/)
+- url: https://www.reddit.com/r/rails/comments/f6yizg/rails_6webpackerreactbootstrap_usersplease_help/
+---
+I am completely stumped as to why a react-bootstrap Modal component throws an error in \`production\` but not \`development\`. In my app, if I run \`rails s\` and \`bin/webpack-dev-server\`, a 'create\` action that opens a modal with a form using react-bootstrap works fine. When I try it in \`production\` with \`RAILS\_ENV=production rake assets:precompile\` and \`rails s -e production\`, the create action that opens the bootstrap modal fails. The error:
+
+&amp;#x200B;
+
+    backend.js:6 TypeError: Cannot convert undefined or null to object
+        at hasOwnProperty (&lt;anonymous&gt;)
+        at Modal.js:21
+        at Array.forEach (&lt;anonymous&gt;)
+        at Modal.js:20
+        at t.n.render (Modal.js:302)
+        at Qi (react-dom.production.min.js:4243)
+        at Ji (react-dom.production.min.js:4234)
+        at wc (react-dom.production.min.js:6676)
+        at yu (react-dom.production.min.js:5650)
+        at Mu (react-dom.production.min.js:5639)
+    r @ backend.js:6
+    pc @ react-dom.production.min.js:4638
+    n.callback @ react-dom.production.min.js:5083
+    La @ react-dom.production.min.js:3061
+    va @ react-dom.production.min.js:3049
+    vu @ react-dom.production.min.js:6347
+    t.unstable_runWithPriority @ scheduler.production.min.js:272
+    Vo @ react-dom.production.min.js:2796
+    gu @ react-dom.production.min.js:6107
+    cu @ react-dom.production.min.js:5410
+    (anonymous) @ react-dom.production.min.js:2831
+    t.unstable_runWithPriority @ scheduler.production.min.js:272
+    Vo @ react-dom.production.min.js:2796
+    Qo @ react-dom.production.min.js:2826
+    Jo @ react-dom.production.min.js:2816
+    ue @ react-dom.production.min.js:7246
+    kn @ react-dom.production.min.js:1712
+    Modal.js:21 Uncaught TypeError: Cannot convert undefined or null to object
+        at hasOwnProperty (&lt;anonymous&gt;)
+        at Modal.js:21
+        at Array.forEach (&lt;anonymous&gt;)
+        at Modal.js:20
+        at t.n.render (Modal.js:302)
+        at Qi (react-dom.production.min.js:4243)
+        at Ji (react-dom.production.min.js:4234)
+        at wc (react-dom.production.min.js:6676)
+        at yu (react-dom.production.min.js:5650)
+        at Mu (react-dom.production.min.js:5639)
+    (anonymous) @ Modal.js:21
+    (anonymous) @ Modal.js:20
+    n.render @ Modal.js:302
+    Qi @ react-dom.production.min.js:4243
+    Ji @ react-dom.production.min.js:4234
+    wc @ react-dom.production.min.js:6676
+    yu @ react-dom.production.min.js:5650
+    Mu @ react-dom.production.min.js:5639
+    cu @ react-dom.production.min.js:5395
+    (anonymous) @ react-dom.production.min.js:2831
+    t.unstable_runWithPriority @ scheduler.production.min.js:272
+    Vo @ react-dom.production.min.js:2796
+    Qo @ react-dom.production.min.js:2826
+    Jo @ react-dom.production.min.js:2816
+    ue @ react-dom.production.min.js:7246
+    kn @ react-dom.production.min.js:1712
+
+I'm not sure what in the production compile causes this to fail. This is all running from a local server and was discovered when trying to deploy to Heroku. 
+
+&amp;#x200B;
+
+Here is how my directory tree is laid out: 
+
+&amp;#x200B;
+
+    ├── assets
+    │   ├── config
+    │   ├── images
+    │   └── stylesheets
+    ├── channels
+    │   └── application_cable
+    ├── controllers
+    │   └── concerns
+    ├── helpers
+    ├── javascript
+    │   ├── channels
+    │   ├── css
+    │   └── packs
+    │       ├── actions
+    │       ├── components
+    │       ├── containers
+    │       ├── middleware
+    │       ├── public
+    │       └── reducers
+    ├── jobs
+    ├── mailers
+    ├── models
+    │   └── concerns
+    ├── serializers
+    └── views
+        ├── current_outages
+        ├── dashboard
+        ├── future_outages
+        ├── layouts
+        ├── recurring_outages
+        └── services
+
+and the webpacker.yml file: 
+
+&amp;#x200B;
+
+    # Note: You must restart bin/webpack-dev-server for changes to take effect
     
-    belongs_to :some_association
+    default: &amp;default
+      source_path: app/javascript
+      source_entry_path: packs
+      public_root_path: public
+      public_output_path: packs
+      cache_path: tmp/cache/webpacker
+      check_yarn_integrity: false    
+      webpack_compile_output: true
     
-    validates :some_association_id, presence: true
+      # Additional paths webpack should lookup modules
+      # ['app/assets', 'engine/foo/app/assets']
+      resolved_paths: ['app/javascript/css']
     
-    validate :check_status_1
-    validate :check_status_2
+      # Reload manifest.json on all requests so we reload latest compiled packs
+      cache_manifest: false
+    
+      # Extract and emit a css file
+      extract_css: false
+    
+      static_assets_extensions:
+        - .jpg
+        - .jpeg
+        - .png
+        - .gif
+        - .tiff
+        - .ico
+        - .svg
+        - .eot
+        - .otf
+        - .ttf
+        - .woff
+        - .woff2
+    
+      extensions:
+        - .jsx
+        - .mjs
+        - .js
+        - .sass
+        - .scss
+        - .css
+        - .module.sass
+        - .module.scss
+        - .module.css
+        - .png
+        - .svg
+        - .gif
+        - .jpeg
+        - .jpg
+    
+    development:
+      &lt;&lt;: *default
+      compile: true
+    
+      # Verifies that correct packages and versions are installed by inspecting package.json, yarn.lock, and node_modules
+      check_yarn_integrity: false
+    
+      # Reference: https://webpack.js.org/configuration/dev-server/
+      dev_server:
+        https: false
+        host: localhost
+        port: 3035
+        public: localhost:3035
+        hmr: false
+        # Inline should be set to true if using HMR
+        inline: true
+        overlay: true
+        compress: true
+        disable_host_check: true
+        use_local_ip: false
+        quiet: false
+        pretty: false
+        headers:
+          'Access-Control-Allow-Origin': '*'
+        watch_options:
+          ignored: '**/node_modules/**'
     
     
-    def check_status_1
-      if self.some_association_id.present?
-        begin
-          some_association = Some::Association.find(self.some_association_id)
-          # check status_1... else raise error validation
-        
-          rescue ActiveRecord::RecordNotFound =&gt; e
-            # case treated by model validation - so nothing goes here
-          end  
-        end
-      end
-    end
+    test:
+      &lt;&lt;: *default
+      compile: true
     
+      # Compile test packs to a separate directory
+      public_output_path: packs-test
     
-    def check_status_2
-      if self.some_association_id.present?
-        begin
-          some_association = Some::Association.find(self.some_association_id)
-          # check status_2... else raise error validation
-        
-          rescue ActiveRecord::RecordNotFound =&gt; e
-            # case treated by model validation - so nothing goes here
-          end  
-        end
-      end
-    end
+    production:
+      &lt;&lt;: *default
+    
+      # Production depends on precompilation of packs prior to booting for performance.
+      compile: false 
+    
+      # Extract and emit a css file
+      extract_css: true
+    
+      # Cache manifest.json for performance
+      cache_manifest: true
+    
 
-Because I see a lot of hits on database for the same query (Some::Association.find(...)  and belongs\_to validation), and I not sure if Rails reuse them from the memory, I was thinking if it would be possible to reduce this hits on db.
+PLEASE HELP! Been on this for 3 days now.
+## [12][Stripe: Tiered pricing for one time purchase?](https://www.reddit.com/r/rails/comments/f6uixy/stripe_tiered_pricing_for_one_time_purchase/)
+- url: https://www.reddit.com/r/rails/comments/f6uixy/stripe_tiered_pricing_for_one_time_purchase/
+---
+I am working on a project where I need to capture one time payments from an account. For a bit of background: The account has many users, where users are part of teams as team\_members. I have another model we can call projects where teams are affixed to the project. It is on these individual projects that I would like to have a checkout button. The price for this one time payment should be calculated based on the number of individuals in a team, that are part of this project.
 
-Any tip to improvement is well accepted.
+My issue is that I am not 100% sure how to achieve this for one time payments in stripe. Should I set this up alike that if I were to sell an individual item? Product (with name, description and price) and an Order to affix to the user? 
 
-My suggestion to solve the 2 queries Some::Association.find(...) problem is: an instance variable, something like this:
-
-    def check_status_1/2
-      if @some_association.present? &amp;&amp; self.some_association_id.present?
-        begin
-          @some_association = Some::Association.find(self.some_association_id)
-          ...
-        end
-      end
-    end
-
-Another way to solve the query problem would be put them together in one method (check\_status for status\_1 &amp; status\_2), but that would make hard to test each situation.
-
-About belongs\_to validation hitting the database for the same query that check\_status does, I'm not sure how to solve it in a pleasant way.
+I've built subscriptions plans in Stripe before, but have never really used one time payments. Any guidance on setup here would be really great.

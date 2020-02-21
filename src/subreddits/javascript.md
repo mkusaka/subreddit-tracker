@@ -87,43 +87,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Creational Patterns in ES6+ using Game of Thrones](https://www.reddit.com/r/javascript/comments/f6rqjn/creational_patterns_in_es6_using_game_of_thrones/)
-- url: https://www.hackdoor.io/articles/9YJbK2Nn/creational-patterns-in-es6-using-game-of-thrones
+## [3][Announcing TypeScript 3.8](https://www.reddit.com/r/javascript/comments/f71h9i/announcing_typescript_38/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/
 ---
 
-## [4][Fixing memory leaks in web applications](https://www.reddit.com/r/javascript/comments/f6dz1e/fixing_memory_leaks_in_web_applications/)
-- url: https://nolanlawson.com/2020/02/19/fixing-memory-leaks-in-web-applications/
+## [4][GitHub - beautifulinteractions/beautiful-react-hooks: 🔥A collection of beautiful and (hopefully) useful React hooks to speed-up your components and hooks development 🔥](https://www.reddit.com/r/javascript/comments/f7adgc/github_beautifulinteractionsbeautifulreacthooks_a/)
+- url: https://github.com/beautifulinteractions/beautiful-react-hooks
 ---
 
-## [5][How to mock REST-API in 30 seconds with NodeJS](https://www.reddit.com/r/javascript/comments/f6rmkq/how_to_mock_restapi_in_30_seconds_with_nodejs/)
+## [5][React vs Vue - Developer experience](https://www.reddit.com/r/javascript/comments/f6wl4q/react_vs_vue_developer_experience/)
+- url: https://medium.com/@nickbarth_277/vue-vs-react-4fd0baf093f
+---
+
+## [6][Difference between stateful and stateless state in react js](https://www.reddit.com/r/javascript/comments/f7amzm/difference_between_stateful_and_stateless_state/)
+- url: https://www.bloggerdrive.com/stateful-and-statless/
+---
+
+## [7][Hue Jumper is now open source! - A low fi endless runner that fits in a 2 kilobyte zip](https://www.reddit.com/r/javascript/comments/f77952/hue_jumper_is_now_open_source_a_low_fi_endless/)
+- url: https://github.com/KilledByAPixel/HueJumper2k
+---
+
+## [8][Grab that DOM by the](https://www.reddit.com/r/javascript/comments/f795mq/grab_that_dom_by_the/)
+- url: https://medium.com/javascript-in-plain-english/what-is-the-javascript-nodeiterator-api-c4443b79b492
+---
+
+## [9][Node v13.9.0 (Current) | Node.js](https://www.reddit.com/r/javascript/comments/f78jhf/node_v1390_current_nodejs/)
+- url: https://nodejs.org/en/blog/release/v13.9.0/
+---
+
+## [10][How to mock REST-API in 30 seconds with NodeJS](https://www.reddit.com/r/javascript/comments/f6rmkq/how_to_mock_restapi_in_30_seconds_with_nodejs/)
 - url: https://medium.com/@stefanoTLDR/how-to-mock-rest-api-in-30-seconds-with-nodejs-6068aabd6630
 ---
 
-## [6][Emotion detection with JavaScript neural networks](https://www.reddit.com/r/javascript/comments/f6rcnd/emotion_detection_with_javascript_neural_networks/)
-- url: https://www.hackdoor.io/articles/WjpmYpPD/emotion-detection-with-javascript-neural-networks
+## [11][Creational Patterns in ES6+ using Game of Thrones](https://www.reddit.com/r/javascript/comments/f6rqjn/creational_patterns_in_es6_using_game_of_thrones/)
+- url: https://www.hackdoor.io/articles/9YJbK2Nn/creational-patterns-in-es6-using-game-of-thrones
 ---
 
-## [7][@clusterws/cws: fast C++ WebSocket implementation for Node.js (uWebSockets v0.14 fork). Runs on Node 8+.](https://www.reddit.com/r/javascript/comments/f6mx7t/clusterwscws_fast_c_websocket_implementation_for/)
-- url: https://github.com/ClusterWS/cWS
----
-
-## [8][How to Send and Receive SMS Messages with Nuxt.js and the Nexmo SMS API](https://www.reddit.com/r/javascript/comments/f6hj5e/how_to_send_and_receive_sms_messages_with_nuxtjs/)
-- url: https://www.nexmo.com/blog/2020/02/19/how-send-receive-sms-messages-with-nuxt-js-dr?utm_source=reddit&amp;utm_medium=javascript&amp;utm_campaign=laka
----
-
-## [9][Official Redux template for Create-React-App](https://www.reddit.com/r/javascript/comments/f6s4iy/official_redux_template_for_createreactapp/)
+## [12][Official Redux template for Create-React-App](https://www.reddit.com/r/javascript/comments/f6s4iy/official_redux_template_for_createreactapp/)
 - url: https://github.com/reduxjs/cra-template-redux/releases/tag/v1.0.0
----
-
-## [10][Most common JavaScript vulnerabilities and how to fix them](https://www.reddit.com/r/javascript/comments/f67doq/most_common_javascript_vulnerabilities_and_how_to/)
-- url: https://medium.com/@AntonLawrence/javascript-vulnerabilities-e5391a746c90
----
-
-## [11][Building an application with Vue and TypeScript. Best practices, thoughts and recommendations.](https://www.reddit.com/r/javascript/comments/f6ovy1/building_an_application_with_vue_and_typescript/)
-- url: https://stefan-bauer.online/building-an-application-with-vue-and-type-script-best-practices-thoughts-and-recommendations/
----
-
-## [12][Scheduling Website Content With JavaScript &amp; AWS CloudWatch](https://www.reddit.com/r/javascript/comments/f6jbgl/scheduling_website_content_with_javascript_aws/)
-- url: https://www.alexdaro.com/writing/scheduling-website-content-with-javascript-and-aws-cloudwatch
 ---
 

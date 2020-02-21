@@ -108,100 +108,99 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][my first react published app](https://www.reddit.com/r/reactjs/comments/f6s6wc/my_first_react_published_app/)
+## [3][GitHub - react-figma/react-figma: Render React components to Figma](https://www.reddit.com/r/reactjs/comments/f780hj/github_reactfigmareactfigma_render_react/)
+- url: https://github.com/react-figma/react-figma
+---
+
+## [4][my first react published app](https://www.reddit.com/r/reactjs/comments/f6s6wc/my_first_react_published_app/)
 - url: https://v.redd.it/8jo5vnacl2i41
 ---
 
-## [4][A functional component with state is oxymoronic and no different from an object](https://www.reddit.com/r/reactjs/comments/f6pkce/a_functional_component_with_state_is_oxymoronic/)
-- url: https://www.reddit.com/r/reactjs/comments/f6pkce/a_functional_component_with_state_is_oxymoronic/
+## [5][Could someone help me with this react application?](https://www.reddit.com/r/reactjs/comments/f7ahmi/could_someone_help_me_with_this_react_application/)
+- url: https://www.reddit.com/r/reactjs/comments/f7ahmi/could_someone_help_me_with_this_react_application/
 ---
-Something with an internal state is an object.
+Hello! There is someone who’s able to create this app and show me the code? I’m havig a lot of issues and i want to see the correct version..
 
-Something which is functional has no internal state.
+A web application, on a single page, based on React framework, shows informations about lasts crimes committed in the UK, based on data provided by British police.
 
-Therefore a component cannot both be functional and still have an internal state.
+This application need to have a bar containing a navigation menu and a larger area in which specific contents are presented.
 
-It may look like a function, it may be labelled as a a functional component, it may use something called "hooks", but conceptually, it has an internal state, and that makes it an object.
+the menu allows you to load the map and examine the distribution of crimes that occurred in the area of interest, switch to the statistical display or start a new query.
 
-Why does React call it a functional component when it behaves like an object?
-## [5][fake-tweet • Tweet React component](https://www.reddit.com/r/reactjs/comments/f6ahdj/faketweet_tweet_react_component/)
-- url: https://github.com/lluiscamino/fake-tweet
----
+\- to make a query, a map of the united kingdom (using react leaflet) is displayed on the screen and it is possible to select a point of interest by clicking with the mouse. In the face of this action, the URL is queried: https://data.police.uk/api/crimes-street/all-crime/**lat**=&lt;lat&gt;&amp;**lng**=&lt;lng&gt; which returns a list of crimes committed nearby of the indicated point, which are shown in the form of markers superimposed on the map. making another click on a single point, a new query is made centered on the new points, the results of which replace the previous markers.
 
-## [6][MongoDB adds GraphQL future?](https://www.reddit.com/r/reactjs/comments/f6j1h4/mongodb_adds_graphql_future/)
-- url: https://www.reddit.com/r/reactjs/comments/f6j1h4/mongodb_adds_graphql_future/
----
-A few days ago MongoDB anounced that they added GraphQL out of the box in MongoDB, because I think it has a lot to do with how we maybe build React apps in the future I wanted to ask here what you all think about it.
-For me it is amzing when I think about it I have my Client Side CRA connected direct to MongoDB's GraphQL service, this removes the need of having a server between writing middlewares and maintaing it, I personally like the idea and will try it tommorow how about everyone else do you think a new trend is coming where this hosted cloud database providers give you direct out of the box api for your database? Here the article, https://www.mongodb.com/blog/post/introducing-graphql-support-in-mongodb-atlas-with-stitch
-## [7][questions on useEffect and initial state](https://www.reddit.com/r/reactjs/comments/f6mxks/questions_on_useeffect_and_initial_state/)
-- url: https://www.reddit.com/r/reactjs/comments/f6mxks/questions_on_useeffect_and_initial_state/
----
-Been playing around with hooks recently. Lots to like, once you get past some of the unusual function call order restriction.
+&amp;#x200B;
 
-But one major question pops up with useEffect. Unless I'm missing something, the primary example does not cover a specific edge case, see here:
+* clicking the single marker you access the second page, which shows the details of the crime (for a detailed description of the individual fields, see the document published on the URL: [https://data.police.uk/docs/method/crime-street/](https://data.police.uk/docs/method/crime-street/))
 
-https://reactjs.org/docs/hooks-effect.html#example-using-hooks-1
-
-Assume that like most subscriptions, `ChatAPI.subscribeToFriendStatus` doesn't fire retroactively. That is, it will only fire for *future* event changes. If that's the case, isOnline will remain null until a friend comes online. That doesn't seem like the best UX. Contrived example: a workplace where a user might come online at 9 am and stay online all day.
-
-In this hypothetical scenario, another user that logs in at 9:05 am would see their friend as "null" or "loading" for the full day.
-
-So, what's the idiomatic React way of fixing it? I can't find it explicitly documented anywhere. The two closest options I see are:
-
-1. Replace the initial state. Instead of null, pass in something like `ChatAPI.getFriendStatus(props.friend.id)`
-2. If the above is expensive, replace it with a lazy function as documented here: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state and inside that function, call `ChatAPI.getFriendStatus(props.friend.id)`
-
-**Is there something far more obvious I'm missing?**
-
-My immediate move, and definitely what *not* to do, is adding a manual call to handleStatusChange() with the imaginary `ChatAPI.getFriendStatus(props.friend.id)` as an argument. Doing this inside the effect, to populate the first status, causes a loop between state updating and the effect triggering, unless you use the useEffect optimization.
-
-Hope this makes sense! Have others faced this issue?
-## [8][React Hooks Tutorial | Build Yelp in React #17 | start displaying search results](https://www.reddit.com/r/reactjs/comments/f6t0rj/react_hooks_tutorial_build_yelp_in_react_17_start/)
-- url: https://youtu.be/iSN72HOsrBs
+\- going to the statistical view, one or more graphs will be shown that can summarize the types of crimes returned by the last query (if any). the list of crimes can be found at the URL: https://data.police.uk/api/crime-categories
+## [6][Understanding Firebase Realtime Database using React](https://www.reddit.com/r/reactjs/comments/f78asl/understanding_firebase_realtime_database_using/)
+- url: https://codesource.io/understanding-firebase-realtime-database-using-react/
 ---
 
-## [9][AdminBro v2 beta is out!!!](https://www.reddit.com/r/reactjs/comments/f6szb4/adminbro_v2_beta_is_out/)
-- url: https://www.reddit.com/r/reactjs/comments/f6szb4/adminbro_v2_beta_is_out/
+## [7][React performance tricks](https://www.reddit.com/r/reactjs/comments/f78w6m/react_performance_tricks/)
+- url: https://www.reddit.com/r/reactjs/comments/f78w6m/react_performance_tricks/
 ---
-AdminBro is an automated admin interface for Node.js apps based on React, written in TypeScript = Django admin for node on steroids !!!
+This post requires a basic knowledge about Shapes and Inline Cache. If you didn’t read V8 function optimization, it might be difficult to follow this one.
 
-Now, we almost finish the entire scope for v2.0 and we released it along with the demo version: 
-
-Demo page can be found here:
-
-[https://admin-bro-example-app-staging.herokuapp.com/admin](https://admin-bro-example-app-staging.herokuapp.com/admin)
-
-Github repo is here: [https://github.com/SoftwareBrothers/admin-bro](https://github.com/SoftwareBrothers/admin-bro)
-
-and you can install it using: 
-
-```
-yarn add admin-bro@2.0.0-beta.26
-```
-
-In this version: 
-
-* there is an entire Design System written specially for AdminBro
-* i18n support
-* hooks support
-* the entire UI change to Drawer'like exploring resources
-
-Now we are working on the documentation which (WiP) can be fond here:
-
-[https://softwarebrothers.github.io/admin-bro-dev/v2/](https://softwarebrothers.github.io/admin-bro-dev/v2/)
-
-Let me know what do you think - and star the repo if you like the idea :)
-## [10][User Notifications](https://www.reddit.com/r/reactjs/comments/f6nuzq/user_notifications/)
-- url: https://www.reddit.com/r/reactjs/comments/f6nuzq/user_notifications/
+[https://medium.com/@kemalpiro/react-performance-tricks-why-is-it-so-fast-6ece8ade9762?source=friends\_link&amp;sk=df075e3364e05b9dde92c1af5b0465ab](https://medium.com/@kemalpiro/react-performance-tricks-why-is-it-so-fast-6ece8ade9762?source=friends_link&amp;sk=df075e3364e05b9dde92c1af5b0465ab)
+## [8][looking for a react 'stages of a process' component](https://www.reddit.com/r/reactjs/comments/f78qmk/looking_for_a_react_stages_of_a_process_component/)
+- url: https://www.reddit.com/r/reactjs/comments/f78qmk/looking_for_a_react_stages_of_a_process_component/
 ---
-Hi, I'm new to react development, please help me with notifications functionality, let's say a user is doing his/her work on the page, and got message from a friend, this message is received by a backend service (spring-boot), now how can I send this notification (event) to the user. When I look for event listeners, most of the answers talk about button or some sort of internal action event listeners, how do I make the app listen for external notifications, like something sent by backend services. Thanks.
-## [11][use-cancelable-thunk-reducer](https://www.reddit.com/r/reactjs/comments/f6azpu/usecancelablethunkreducer/)
-- url: https://v.redd.it/8k45d6y00wh41
----
+Im looking for a react component that looks similar to https://imgur.com/a/Tbjj4xZ I havn't been able to successfully google something that looks similar, though I know I've seen them around before. 
 
-## [12][Ideas for projects](https://www.reddit.com/r/reactjs/comments/f6rdoj/ideas_for_projects/)
-- url: https://www.reddit.com/r/reactjs/comments/f6rdoj/ideas_for_projects/
+Can anyone help me find something like this?  Thanks!
+## [9][Changing url hash without page refresh](https://www.reddit.com/r/reactjs/comments/f78mzn/changing_url_hash_without_page_refresh/)
+- url: https://www.reddit.com/r/reactjs/comments/f78mzn/changing_url_hash_without_page_refresh/
 ---
-I would like to improve my skills and make some cool projects that i can add to my resume, what things you would recommend me to do, what types of projects?
+Guess this is more JS related question than a React specific problem, but asking in case there might be a solution with react router.
+
+I am using `location.hash = "test"` to add hash parameter to the url. However, this causes a page refresh. Is there any possibility to do that without refreshing the page? Through react-router api or with vanilla JS?
+## [10][csstox - Easily convert CSS snippets to React Native / JSS stylesheet objects](https://www.reddit.com/r/reactjs/comments/f785is/csstox_easily_convert_css_snippets_to_react/)
+- url: https://www.reddit.com/r/reactjs/comments/f785is/csstox_easily_convert_css_snippets_to_react/
+---
+Try it out here: [https://csstox.surge.sh/](https://csstox.surge.sh/)
+
+This is the repo: [https://github.com/jamesgeorge007/csstox](https://github.com/jamesgeorge007/csstox)
+
+Guys please share your thoughts.
+## [11][Can anyone explain how shouldComponentUpdate method in parent component affects child component re-rendering in React?](https://www.reddit.com/r/reactjs/comments/f73uhb/can_anyone_explain_how_shouldcomponentupdate/)
+- url: https://www.reddit.com/r/reactjs/comments/f73uhb/can_anyone_explain_how_shouldcomponentupdate/
+---
+I am new to React. React document says that returning false does not prevent child components from re-rendering when *their* state changes.  Can anyone give an example that best describes this scenario.
+
+Sorry if this question seems to be basic. But I really want to know how it works. 
 
 Thanks in advance.
+## [12][When is it unnecessary to make a copy of state?](https://www.reddit.com/r/reactjs/comments/f739j7/when_is_it_unnecessary_to_make_a_copy_of_state/)
+- url: https://www.reddit.com/r/reactjs/comments/f739j7/when_is_it_unnecessary_to_make_a_copy_of_state/
+---
+I've been under the impression that you always need to make a copy of state so you don't mutate the original state. **In what scenarios is it ok to modify state without making a copy?**
+
+Still a noob and I've basically been making copies of state every time. Here's an example I'm unsure of:
+
+     const [fill, setFill] = useState([
+        { fill: 0 },
+        { fill: 0 },
+        { fill: 0 },
+        { fill: 0 }
+      ]);
+     &lt;TouchableOpacity
+                style={styles.listContainer}
+                onPress={() =&gt; {
+                  setFill(prevState =&gt; {
+                    let stateCopy = [...prevState];
+                    stateCopy[index].fill = stateCopy[index].fill + 100;
+                    return stateCopy;
+                  });
+                }}
+              &gt;
+    &lt;AnimatedCircularProgress
+                    key={`circular${index}`}
+                    size={60}
+                    width={10}
+                    fill={fill[index].fill}
+                    tintColor="yellow"
+                    backgroundColor="#3d5875"
+                  /&gt;
+    &lt;/TouchableOpacity&gt;

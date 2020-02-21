@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/f588f0/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/f588f0/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/f7ajic/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/f7ajic/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - February 17, 2020](https://www.reddit.com/r/androiddev/comments/f574wo/weekly_questions_thread_february_17_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/f574wo/weekly_questions_thread_february_17_2020/
 ---
@@ -31,53 +25,47 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][It finally happend. AsyncTask is now deprecated.](https://www.reddit.com/r/androiddev/comments/f6kpbj/it_finally_happend_asynctask_is_now_deprecated/)
-- url: https://developer.android.com/reference/android/os/AsyncTask.html
+## [3][Finally, Android R has API to check if keyboard is visible or not.](https://www.reddit.com/r/androiddev/comments/f6zs5b/finally_android_r_has_api_to_check_if_keyboard_is/)
+- url: https://twitter.com/chrisbanes/status/1230598177511788545
 ---
 
-## [4][Android R Preview just showed up in the SDK Manager](https://www.reddit.com/r/androiddev/comments/f6du8t/android_r_preview_just_showed_up_in_the_sdk/)
-- url: https://i.redd.it/oz3s3bdqywh41.png
+## [4][Gradle-less Project Template w/ AndroidX](https://www.reddit.com/r/androiddev/comments/f78qb1/gradleless_project_template_w_androidx/)
+- url: https://github.com/jbendtsen/tiny-android-template
 ---
 
-## [5][Jetpack Compose's latest version: dev-05 is here](https://www.reddit.com/r/androiddev/comments/f6opja/jetpack_composes_latest_version_dev05_is_here/)
-- url: https://developer.android.com/jetpack/androidx/releases/ui
+## [5][Can you have a paid app on Google Play Store, and have the same app for free on F-Droid and Github?](https://www.reddit.com/r/androiddev/comments/f7am5y/can_you_have_a_paid_app_on_google_play_store_and/)
+- url: https://www.reddit.com/r/androiddev/comments/f7am5y/can_you_have_a_paid_app_on_google_play_store_and/
+---
+Can you have a paid app on Google Play Store, and have the same app for free on F-Droid and Github. Will this go against Google TOS, Google Play Store TOS, or not be legal for licensing or something.
+## [6][New MediaStore Trash API in Android R](https://www.reddit.com/r/androiddev/comments/f78dsy/new_mediastore_trash_api_in_android_r/)
+- url: https://medium.com/@sdex/new-mediastore-trash-api-in-android-r-9a7000c4037
 ---
 
-## [6][Q: what does Google learn about activities in non-Google apps?](https://www.reddit.com/r/androiddev/comments/f6s0y1/q_what_does_google_learn_about_activities_in/)
-- url: https://www.reddit.com/r/androiddev/comments/f6s0y1/q_what_does_google_learn_about_activities_in/
----
-Following Brexit, Google are moving their UK users data or of the EU and into US servers, losing is the protections of GDPR. Can anyone tell me how to understand what information Google collects from an Android device, other than information which directly goes through their servers (like Gmail)? For example, can they see what users type in WhatsApp, or their browsing history in Opera, or their activities on Reddit?
-## [7][Android 11 Developer Preview now available](https://www.reddit.com/r/androiddev/comments/f6edd1/android_11_developer_preview_now_available/)
-- url: https://developer.android.com/preview
----
-
-## [8][Background Location access is moving to Form model just like Call and SMS as per upcoming Play Policy update.](https://www.reddit.com/r/androiddev/comments/f6fr4k/background_location_access_is_moving_to_form/)
-- url: https://android-developers.googleblog.com/2020/02/safer-location-access.html
----
-
-## [9][Android studio: 32gb RAM vs 64gb RAM?](https://www.reddit.com/r/androiddev/comments/f6szgk/android_studio_32gb_ram_vs_64gb_ram/)
-- url: https://www.reddit.com/r/androiddev/comments/f6szgk/android_studio_32gb_ram_vs_64gb_ram/
----
-I'm getting a new computer and have the option of getting 32gb RAM or 64gb RAM. Has anyone done a comparison between the two, or optimized Android Studio to take advantage of a 64gb RAM computer?
-
-My current 16gb RAM setup (2016 Macbook Pro, 16GB Ram, all specs maxed) takes about 15mins to do a clean build in Android Studio and memory is a clear bottleneck (constantly near 0% free if I run Android Studio and have a few tabs open in Chrome). My iMac has 24gb RAM and builds much faster because it doesn't bottleneck on memory.
-## [10][How to convert translated text from excel file to xml strings?](https://www.reddit.com/r/androiddev/comments/f6snln/how_to_convert_translated_text_from_excel_file_to/)
-- url: https://www.reddit.com/r/androiddev/comments/f6snln/how_to_convert_translated_text_from_excel_file_to/
----
-My user sent to me an Excel translated file like image above.
-
-&amp;#x200B;
-
-https://preview.redd.it/ft8ujc0ms2i41.png?width=1496&amp;format=png&amp;auto=webp&amp;s=dbf462fdf9a3fa1252ea786941948088607154e9
-
-I would like to convert these texts to Android XML strings. Is there a way to do this? 
-
-Thanks.
-## [11][In light of Samsung's '1' goof up, let us not forget the OG '1'](https://www.reddit.com/r/androiddev/comments/f6sf6e/in_light_of_samsungs_1_goof_up_let_us_not_forget/)
+## [7][In light of Samsung's '1' goof up, let us not forget the OG '1'](https://www.reddit.com/r/androiddev/comments/f6sf6e/in_light_of_samsungs_1_goof_up_let_us_not_forget/)
 - url: https://i.redd.it/f8i17v7dp2i41.jpg
 ---
 
-## [12][I need a little help...](https://www.reddit.com/r/androiddev/comments/f6sd4n/i_need_a_little_help/)
-- url: https://www.reddit.com/r/androiddev/comments/f6sd4n/i_need_a_little_help/
+## [8][Is it possible to create floating window to invert colors on screen? (Vision Accessibility)](https://www.reddit.com/r/androiddev/comments/f797hl/is_it_possible_to_create_floating_window_to/)
+- url: https://www.reddit.com/r/androiddev/comments/f797hl/is_it_possible_to_create_floating_window_to/
 ---
-can anybody help me?  I wanted to play a game that I recently played on my computer, but my computer broke down and I can't play it anymore.  It is a 2D pixelated platform game.  I just want someone to turn this .EXE game into an .APK to run on Android, the entire community of this game has always wanted an android version.  (Moderators are nice I'm just a desperate guy), if in this community it is not possible to make requests, tell me which subreddit I can make that request. Send me a private message if you're insterested on helping me and the android gaming community.
+ I wanted to know that is it possible to create a vision accessibility app which is a floating window that inverts color on screen? Example, zoom accessibility feature? If yes, where should I look for?
+
+LG Vision accessibility, Window zoom
+
+https://preview.redd.it/tegzwtrz69i41.png?width=286&amp;format=png&amp;auto=webp&amp;s=93d86965a02356970afafe94af5f11561e03ee33
+## [9][Gradle 6.2 Released](https://www.reddit.com/r/androiddev/comments/f71e73/gradle_62_released/)
+- url: https://docs.gradle.org/6.2/release-notes.html
+---
+
+## [10][How can I change expanding icons back to arrows ?](https://www.reddit.com/r/androiddev/comments/f7ax9w/how_can_i_change_expanding_icons_back_to_arrows/)
+- url: https://i.redd.it/ck3905ij1ai41.png
+---
+
+## [11][Pattern Lock App Dev](https://www.reddit.com/r/androiddev/comments/f7akm3/pattern_lock_app_dev/)
+- url: https://www.reddit.com/r/androiddev/comments/f7akm3/pattern_lock_app_dev/
+---
+Hi All! I have limited experience with Android Dev and want some guidance on how to make a responsive pattern lock UI that draws pattern on the screen. Please tell me approach on how I should begin so that I will try it out. My current idea is to use a Grid layout and set an Adapter to it to determine if a dot is touched and use MotionEvent to connect the dots as long as the user is touching the screen. Is there any api that lets us handle when the user releases finger from the screen?
+## [12][Struggling a lot](https://www.reddit.com/r/androiddev/comments/f7ajzj/struggling_a_lot/)
+- url: https://www.reddit.com/r/androiddev/comments/f7ajzj/struggling_a_lot/
+---
+As I am new to Android development I am struggling a lot because I don't know anything about java so I just took a simple project in which i just have to show weather of 3-4 cities . Believe me its getting harder than ever. Please help and motivate me😟

@@ -29,86 +29,135 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
 Also check out [last week's thread](https://reddit.com/r/rust/comments/f1ucwh/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (8/2020)?](https://www.reddit.com/r/rust/comments/f541u0/whats_everyone_working_on_this_week_82020/)
-- url: https://www.reddit.com/r/rust/comments/f541u0/whats_everyone_working_on_this_week_82020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-8-2020/38329?u=llogiq)!
-## [3][Working with strings in Rust](https://www.reddit.com/r/rust/comments/f6mk4a/working_with_strings_in_rust/)
-- url: https://fasterthanli.me/blog/2020/working-with-strings-in-rust/
+## [2][This Week in Rust 326](https://www.reddit.com/r/rust/comments/f6sy2s/this_week_in_rust_326/)
+- url: https://this-week-in-rust.org/blog/2020/02/18/this-week-in-rust-326/
 ---
 
-## [4][A new Vim syntax plugin for Rust](https://www.reddit.com/r/rust/comments/f6r785/a_new_vim_syntax_plugin_for_rust/)
-- url: https://github.com/arzg/vim-rust-syntax-ext
+## [3][Made a rusty rust wallpaper. The other image was larger than 20 MB (24 Mb) and I don't know how to compress PNG images in photoshop.](https://www.reddit.com/r/rust/comments/f796ds/made_a_rusty_rust_wallpaper_the_other_image_was/)
+- url: https://i.redd.it/9t12lnng69i41.png
 ---
 
-## [5][📮 teloxide: An elegant Telegram bots framework for Rust](https://www.reddit.com/r/rust/comments/f6e2lu/teloxide_an_elegant_telegram_bots_framework_for/)
-- url: https://github.com/teloxide/teloxide
+## [4][Update about rustbus, (one of the) pure rust dbus libraries](https://www.reddit.com/r/rust/comments/f7a5qc/update_about_rustbus_one_of_the_pure_rust_dbus/)
+- url: https://www.reddit.com/r/rust/comments/f7a5qc/update_about_rustbus_one_of_the_pure_rust_dbus/
+---
+Heya r/rust!
+
+I had posted a while ago about my dbus library [Repo link](https://github.com/KillingSpark/rustbus). 
+
+I have since, with the help of PRs (mostly by [okeri](https://github.com/okeri)), fixed hopefully all bugs and would love some feedback on the API. Maybe there is a better way to convert the rust types into the type enums I use for the dbus marshalling that I missed?
+
+This lib is somewhat similar to libdbus in that it gives the user pretty lowlevel access to the connection and the messages sent. The next natural step would be to build a generic proxy-library on top of this for convenient RPC.
+
+
+There are currently some other efforts in this direction [as collected by the dbus-rs crate maintainer](https://github.com/diwic/dbus-rs/issues/100#issuecomment-580411226):
+
+* https://gitlab.freedesktop.org/zeenix/zbus/
+* https://github.com/Arnavion/dbus-pure
+* https://github.com/srwalter/dbus-bytestream
+
+I have not yet done a comparison in features/speed/correctness but I might do that in the future.
+## [5][Using Google Analytics from a Rust Wasm Front-End Web App](https://www.reddit.com/r/rust/comments/f7563j/using_google_analytics_from_a_rust_wasm_frontend/)
+- url: https://medium.com/@matt_78276/using-google-analytics-from-a-rust-wasm-front-end-web-app-12840c420dad
 ---
 
-## [6][RFC for the Rust 2020 roadmap was merged](https://www.reddit.com/r/rust/comments/f6sq2f/rfc_for_the_rust_2020_roadmap_was_merged/)
-- url: https://github.com/rust-lang/rfcs/pull/2857
+## [6][Passthrough field access in unions like in C?](https://www.reddit.com/r/rust/comments/f7ae2j/passthrough_field_access_in_unions_like_in_c/)
+- url: https://www.reddit.com/r/rust/comments/f7ae2j/passthrough_field_access_in_unions_like_in_c/
+---
+Let's say I am writing an emulator and I have two 8 bit registers
+(a and f) which can also be interpreted as one 16 bit register.
+
+In C, this could be modeled as
+
+
+    struct register {
+        union {
+            struct {
+                unsigned char f;
+                unsigned char a;
+            };
+            unsigned short af;
+        };
+    };
+
+
+which is convenient since you can just use `.f` or `.a` to access or set the 8 bit registers
+or `.af` to access or set the 16 bit register.
+
+In Rust (which I am quite new to), I guess I can do something like:
+
+
+    #[derive(Copy, Clone)]
+    struct FA {
+        f: u8,
+        a: u8,
+    }
+
+
+    union Register {
+        _fa: FA,
+        fa: u16,
+    }
+
+
+but the syntax to access the `f` and `a` registers are here much more awkward since
+I can't pass through the `.f` access to the `FA` struct. I can, of course, just store the
+`a` and `f` registers as is and then write the methods `get_af(&amp;self)` and `set_af(&amp;mut self, v: u16)` that does the bit
+shifts needed but it doesn't feel really clean (need to write getter and setters).
+
+Is there any nice way to do this or should I just implement the bit shift methods?
+## [7][Hank Green explains the Rust programming language](https://www.reddit.com/r/rust/comments/f6tpig/hank_green_explains_the_rust_programming_language/)
+- url: https://www.reddit.com/r/rust/comments/f6tpig/hank_green_explains_the_rust_programming_language/
+---
+Maybe we will see a "Crash Course Rust?"
+
+[https://www.youtube.com/watch?v=IwjlCxwcuIc](https://www.youtube.com/watch?v=IwjlCxwcuIc)
+## [8][PKCS11 Engine for Rust TLS](https://www.reddit.com/r/rust/comments/f77eqk/pkcs11_engine_for_rust_tls/)
+- url: https://www.reddit.com/r/rust/comments/f77eqk/pkcs11_engine_for_rust_tls/
+---
+Hi folks,
+
+I have a SHM(Secure Hardware Module) which houses my certs and does the signing. I was wondering has anyone here ever worked with a PKCS11 Engine using Rust. The Rust-TLS library doesn't support it, and I was wondering about integrating PKCS11 engine with our TLS library. Has anyone done anything similar here so that I might have some context? Currently I am going through RUST-TLS code and have identified the traits that I would need to implement(Thanks to the author of that crate).
+## [9][Is it possible to get rid of those lines? I am using the rust-analyzer VSCode plugin and I find those extra lines to be more distracting than helpful :/](https://www.reddit.com/r/rust/comments/f6yuql/is_it_possible_to_get_rid_of_those_lines_i_am/)
+- url: https://i.redd.it/gk2wwhj2y4i41.png
 ---
 
-## [7][Huggingface, a well-known NLP library, releases tokenizers in Rust for order of magnitude speed improvement](https://www.reddit.com/r/rust/comments/f6hhuk/huggingface_a_wellknown_nlp_library_releases/)
-- url: https://github.com/huggingface/tokenizers
+## [10][[ANN] I wrote a tool in sauron to convert html to sauron view syntax](https://www.reddit.com/r/rust/comments/f79nf9/ann_i_wrote_a_tool_in_sauron_to_convert_html_to/)
+- url: https://www.reddit.com/r/rust/comments/f79nf9/ann_i_wrote_a_tool_in_sauron_to_convert_html_to/
 ---
+[tool site](https://ivanceras.github.io/html2sauron/)
 
-## [8][rust-analyzer failed to load workspace: Failed to find sysroot for Cargo.toml file](https://www.reddit.com/r/rust/comments/f6rxyj/rustanalyzer_failed_to_load_workspace_failed_to/)
-- url: https://www.reddit.com/r/rust/comments/f6rxyj/rustanalyzer_failed_to_load_workspace_failed_to/
+[repo](https://github.com/ivanceras/html2sauron)
+
+This is a WIP, there will be bugs.
+## [11][Experience with Rust In Action?](https://www.reddit.com/r/rust/comments/f74mga/experience_with_rust_in_action/)
+- url: https://www.reddit.com/r/rust/comments/f74mga/experience_with_rust_in_action/
 ---
-I'm using Windows 10 and VSCode with rust-analyzer plugin from the marketplace. I also made a fresh install of the rust tools via rustup. After opening a rust project, the following message comes up:
-
-rust-analyzer failed to load workspace: Failed to find sysroot for Cargo.toml file c:\\Users\\xyz\\Desktop\\xyz\\Cargo.toml 
-
-The plugin worked before. I uninstalled the stable toolchain once and reinstalled it again. After this it didn't work anymore and reinstalling everything wasn't successfull. How to proceed?
-## [9][What do you guys think of this book?](https://www.reddit.com/r/rust/comments/f6swfg/what_do_you_guys_think_of_this_book/)
-- url: https://www.reddit.com/r/rust/comments/f6swfg/what_do_you_guys_think_of_this_book/
+I was just wondering if anyone has experience with [Rust In Action](https://www.manning.com/books/rust-in-action?query=rust)? Is it worth it, or would I be better off just with the [Rust book](https://doc.rust-lang.org/stable/book/).
+## [12][STM32F0](https://www.reddit.com/r/rust/comments/f784wq/stm32f0/)
+- url: https://www.reddit.com/r/rust/comments/f784wq/stm32f0/
 ---
-I'm a web dev who usually uses javascript for front/back-end but have been meaning to get better acquainted with a systems language. End goal would be to use it for either services and also to experiment with webassembly.
+Fellow no-std Rustaceans! :)
+
+I'm pretty new at both #rustlang and embedded, so I must be asking some obvious questions, but please help me here.
+
+My application at this point is just supposed to continuously update a counter and show it on an SSD1306 display. The update must be triggered every second by a timer. I understand more or less how it works:  [https://github.com/nebelgrau77/STM32F0\_blinky\_IRQ](https://github.com/nebelgrau77/STM32F0_blinky_IRQ)  \- this is based on an example from the STM32F0xx-HAL crate.
 
 &amp;#x200B;
 
-I'm aware of the original rust book(which I'm planning on running through as well), however I also recently saw [this book](https://www.newline.co/fullstack-rust) and it got me interested.
+Here's my currently not working code:  [https://github.com/nebelgrau77/STM32F0-SSD1306-IRQ\_DRAFT](https://github.com/nebelgrau77/STM32F0-SSD1306-IRQ_DRAFT)
+
+The problem is the following: in order to be able to display my constantly updated value, the display must be in a loop outside of the critical section, but it also has to be available out there (lines 100 - 112), so it somehow has to be made global. I would assume this has to be done with static/Mutex/RefCell, just like the LEDs are global in the other example:
+
+`type LEDPIN = gpioa::PA4&lt;Output&lt;PushPull&gt;&gt;;` 
+
+`static GLED: Mutex&lt;RefCell&lt;Option&lt;LEDPIN&gt;&gt;&gt; = Mutex::new(RefCell::new(None));`
+
+I don't understand how to do it, though: should everything be made global, e.g. RCC and SDA/SCL pins, to set I2C and the display outside of the CS? Or just the display instance, but in that case how do I put it in the Mutex?
 
 &amp;#x200B;
 
-Just wondering, what do you guys as experienced Rustaceans think of the above? Is it just fluff or a does it seem like a decent resource?
-## [10][Possible ways how to create vector combining other vectors/iterators and new elements](https://www.reddit.com/r/rust/comments/f6ql1j/possible_ways_how_to_create_vector_combining/)
-- url: https://www.reddit.com/r/rust/comments/f6ql1j/possible_ways_how_to_create_vector_combining/
----
-Hi everyone,
-
-I was wondering what is the best way how to create vector combing other vectors/iterators and other elements. In Javascript you can use array destructuring to achieve this e.g.:
-
-`[1, ...prev_row, 1]`
-
-To achieve the same in rust you can do something like this:
-
-`vec![1].into_iter().chain(prev_row_iter).chain(vec![1].into_iter()).collect()`
-
-The code in this particular example is pretty simple but it can get more complex if you want to combine more vectors and more elements. I was wondering if there is an easier way how to do this.
-## [11][What's New in Rust 1.41 [Rustacean Station Podcast]](https://www.reddit.com/r/rust/comments/f6ghut/whats_new_in_rust_141_rustacean_station_podcast/)
-- url: https://rustacean-station.org/episode/013-rust-1.41.0/
----
-
-## [12][tantivy v0.12 released](https://www.reddit.com/r/rust/comments/f6aig1/tantivy_v012_released/)
-- url: https://www.reddit.com/r/rust/comments/f6aig1/tantivy_v012_released/
----
-For those who are not familiar with tantivy, it is a search engine library  for rust inspired by Lucene.
-
-* [github](https://github.com/tantivy-search/tantivy/)
-* [crates.io](https://crates.io/crates/tantivy)
+Thanks for any help on this!!!
 
 &amp;#x200B;
 
-**Changelog**
-
-* Removing static dispatch in tokenizers for simplicity. (#762)
-* Added backward iteration for `TermDictionary` stream. (@halvorboe)
-* Fixed a performance issue when searching for the posting lists of a missing term (@audunhalland)
-* Added a configurable maximum number of docs (10M by default) for a segment to be considered for merge (@hntd187, landed by @halvorboe #713)
-* Important Bugfix #777, causing tantivy to retain memory mapping. (diagnosed by @poljar)
-* Added support for field boosting. (#547, u/fulmicoton)
-
-
-Thanks to all contributors and all of patreon/github sponsors! (hntd187, mosuka, Colin, Florian, Fredrik, Nate, Sanghyeon, Zak and Zane)
+*ps. contrary to some other crates, e.g. F1 or F4, the F0xx crate specifically requires the Critical Section for setting up the pins, therefore I cannot take the whole display setup out.*

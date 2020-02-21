@@ -578,60 +578,106 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [3][An in Depth Review for Deleaker (A Software Used to Catch Memory Leaks)](https://www.reddit.com/r/cpp/comments/f6gn3b/an_in_depth_review_for_deleaker_a_software_used/)
+## [3][using std::cpp 2020 conference program](https://www.reddit.com/r/cpp/comments/f79u9r/using_stdcpp_2020_conference_program/)
+- url: https://eventos.uc3m.es/40350/programme/using-std_cpp-2020.html
+---
+
+## [4][If you’re not keeping the parameter, then you still want to have separate T const&amp; and T&amp;&amp; overloads](https://www.reddit.com/r/cpp/comments/f73g4a/if_youre_not_keeping_the_parameter_then_you_still/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200220-00/?p=103463
+---
+
+## [5][What are/were your favourite "You can do that?! Neat!" C++ moments?](https://www.reddit.com/r/cpp/comments/f6wlbm/what_arewere_your_favourite_you_can_do_that_neat/)
+- url: https://www.reddit.com/r/cpp/comments/f6wlbm/what_arewere_your_favourite_you_can_do_that_neat/
+---
+Bit of a backstory - I am a student in my last year of bachelor's degree. On my university we don't have much C++ but, given my dedication to the language, I was offered a position of a TA (teaching assistant) in C++ laboratories. Basically, due to the subject's structure - I have a completely free will of what I will cover with my students. I've not developed *much* C++ profesionally, but I believe I do have some good insight. 
+
+I've spent hours researching, reading and watching various learning sources regarding C++ - for my own entertainment. I simply love the language. I've had the "*whoa, that's super useful*" moments. First encounter with `template`s (how they differ from Java's generics - come on, why wouldn't I be able to create a variable of a type `T`? C++'s way was just more intuitive for me), operator overloading, lambdas (generic ones too!), destructors, move semantics, value semantics, overall efficiency...
+
+I've been spending majority of my free time (for the last \~3 years) analysing various learning sources. Their pros and cons, how they engage the viewer (looking at your talks, Scott Meyers, Andrei Alexandrescu and Kate Gregory!), how they provide an enourmous amount of pretty complicated information in a very understandable manner (Arthur O'Dwyer's lambdas content), how they match relevant information to real-world use cases without omitting the technical details (Jonathan Boccara's `&lt;algorithm&gt;` talks) and how they can teach through laughter, which empowers the positive experience (Timur Doumler's "*Can I has grammar?*" - seriously, I don't believe I would've otherwise remembered that adding `struct` before user-defined types also forward-declares them or that `int` is a type-specifier, not a type-name).
+
+And now, since I became one of those people who want (and have an opportunity to) share their knowledge and teach, I not only want to pass on the information - I want it to be enjoyable. I want students to not only know *how*, but also *why* and *when*.
+
+I belive I have a good general idea on how to achieve that, but the more ideas and more brainstorming in such a broad topic, the better. So essentially the question is: what do you consider to be the *neat* and *practical* parts of the language? What made **you** raise your eyebrows and think "geez, I will be using this from now on"?
+
+I believe a good example would be *operator overloading*. Someone wants to compare user-defined types? No reason to require them to differentiate between the ways of doing this regarding primitives and user-defined types - `operator ==` should work for all of them. Want to multiply matrices? Use the standard `*`, rather than some `multiply()` function. It's *intuitive*. It's *easy* (at least in the general case). It's *useful*. All of that since the first impression.
+
+For the completeness, I also have a free will of what IDE they should use (though I don't plan to enforce it. If they want to use MSVS, CLion or Vim + manual building, that's their preference) and which standard they will be using (highly unlikely that I will choose something different than C++17 though).
+## [6][toml++: A TOML parser and serializer for C++17](https://www.reddit.com/r/cpp/comments/f70io2/toml_a_toml_parser_and_serializer_for_c17/)
+- url: https://www.reddit.com/r/cpp/comments/f70io2/toml_a_toml_parser_and_serializer_for_c17/
+---
+Hello all,
+
+I've recently been working on [toml++](https://marzer.github.io/tomlplusplus/), a parsing and serializing library for working with [TOML](https://github.com/toml-lang/toml) config files in C++17, and now it's reached a point where I feel comfortable sharing it.
+
+Homepage: [https://marzer.github.io/tomlplusplus/](https://marzer.github.io/tomlplusplus/)    
+
+Repository: [https://github.com/marzer/tomlplusplus/](https://github.com/marzer/tomlplusplus/)
+
+Features:
+
+* C++17 with some C++20 features where supported (e.g. char8\_t string support)
+* Proper UTF-8 handling (incl. BOM)
+* Works with or without exceptions
+* Doesn't require RTTI
+* First-class support for serializing to JSON
+* Fully [TOML v0.5.0](https://github.com/toml-lang/toml/blob/master/versions/en/toml-v0.5.0.md)\-compliant
+* Supports a number of 'unreleased' TOML features (optional; these can be disabled)
+* There's [a single-header version](https://raw.githubusercontent.com/marzer/tomlplusplus/master/toml.hpp) for those that way inclined
+
+Hope someone finds this useful! This is the first time I've released anything 'properly' (i.e. with the intention of others using it, and not just using github as cloud storage), so I appreciate any and all feedback.
+## [7][Retiring the Singleton Pattern - Peter Muldoon - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f6vwna/retiring_the_singleton_pattern_peter_muldoon/)
+- url: https://www.youtube.com/watch?v=f46jmm7r8Yg
+---
+
+## [8][Will C++20 modules allow you to use the STL in your dynamic libraries?](https://www.reddit.com/r/cpp/comments/f761hf/will_c20_modules_allow_you_to_use_the_stl_in_your/)
+- url: https://www.reddit.com/r/cpp/comments/f761hf/will_c20_modules_allow_you_to_use_the_stl_in_your/
+---
+I've always wanted to use the STL in my API that is exported to a dynamic library but before I was always told this is wrong. (Don't pass STL between dll boundary because there isn't a standard ABI)
+
+So my question is pretty much does C++20 modules improve the ABI and can I now use the STL in my dynamic library?   
+
+
+Thanks - Novice programmer
+## [9][Cpp youtubers](https://www.reddit.com/r/cpp/comments/f79ws0/cpp_youtubers/)
+- url: https://www.reddit.com/r/cpp/comments/f79ws0/cpp_youtubers/
+---
+Hi, I’m looking for some cpp YouTube channels such as bisqwit , if any of you have any suggestions then please write it down in the comments
+## [10][How I long for a "static_cast_from_member"](https://www.reddit.com/r/cpp/comments/f73w8i/how_i_long_for_a_static_cast_from_member/)
+- url: https://www.reddit.com/r/cpp/comments/f73w8i/how_i_long_for_a_static_cast_from_member/
+---
+Composition is often recommended over inheritance, and when you're using nested class to implement a few finer details it's all but required.
+
+The thing that breaks me though, is that moment that you realise you need to be able to refer to the containing object. You just can't get out, even if you know through templating exactly how you got to where you are.
+
+Solutions involve placing "owner" pointers within each embedded class - even though you know they'll always be at the same offsets of the parent class! And of course these won't survive a copy constructor on their own, so you have to workaround that too.
+
+And if you don't want to waste the memory bloating your objects that way, you're stuck passing "owner" as an explicit parameter of every call that might need it to subclasses. Not fun, as now you have [colored functions](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/) and these members can no longer do much useful on their own.
+
+I was so sure there must be a way to do the obvious - get the containing struct from a member, only to be so disheartened when I learnt that it's only possible on the simplest of structs. `Boost` in particular relies on UB out of the wazoo for their intrusive lists (at least those employing `list_member_hook&lt;&gt;`), going so far as to detect the compiler to figure out what magic bit of underdefined behaviour to use. Horrifying!
+
+So how about a:
+
+    // a class with members
+    BigObj o;
+
+    // a member of that class
+    SmlObj &amp;s = o.sml;
+
+    // and a pointer that we can use to recover the owing object at a later point
+    SmlObj BigObj::*pSml = &amp;BigObj::sml;
+
+    // a way to actually recover the class!
+    BigObj &amp;yay = static_cast_from_member&lt;BigObj&gt;(s, pSml);
+
+    // or in one line:
+    BigObj &amp;gd = static_cast_from_member&lt;BigObj&gt;(o.sml, &amp;BigObj::sml);
+
+Surely I'm not alone here.
+## [11][C DirectX in Visual Studio 2019 | Getting Started](https://www.reddit.com/r/cpp/comments/f78svi/c_directx_in_visual_studio_2019_getting_started/)
+- url: https://www.youtube.com/watch?v=7N3Ii37qYqI&amp;feature=share
+---
+
+## [12][An in Depth Review for Deleaker (A Software Used to Catch Memory Leaks)](https://www.reddit.com/r/cpp/comments/f6gn3b/an_in_depth_review_for_deleaker_a_software_used/)
 - url: https://grahambest.xyz/an-in-depth-review-for-deleaker/
 ---
 
-## [4][Are you excited about C++ 20 ?](https://www.reddit.com/r/cpp/comments/f62nyr/are_you_excited_about_c_20/)
-- url: https://www.reddit.com/r/cpp/comments/f62nyr/are_you_excited_about_c_20/
----
-Are you excited about C++ 20 ? or you feel the language should have stayed the same like pre98 or 2003 etc (e.g old pointers and all that) ? Do you think they should break with backward compatibility for good or its a necessary evil ? Is there anything else that bother you or some syntax sugar you would love to have in C++ like in C# ?
-## [5][C++20 is here!](https://www.reddit.com/r/cpp/comments/f5t17a/c20_is_here/)
-- url: https://youtu.be/AvPiGstxV_g
----
-
-## [6][C Android Native App | Visual Studio 2019](https://www.reddit.com/r/cpp/comments/f68tlm/c_android_native_app_visual_studio_2019/)
-- url: https://www.youtube.com/watch?v=7U9q1RfLeso&amp;feature=share
----
-
-## [7][Type-level lambda expressions for template metaprogramming in C++20](https://www.reddit.com/r/cpp/comments/f61quh/typelevel_lambda_expressions_for_template/)
-- url: https://www.reddit.com/r/cpp/comments/f61quh/typelevel_lambda_expressions_for_template/
----
-Since around C++98 the standard has described that "a template-declaration can appear only as a namespace scope or class scope declaration" (as of the time of writing this is at section 13.1.4 in n4849). Interestingly, C++14 generic lambdas seem to circumvent that issue by allowing a template function to be generated wherever a lambda can be defined, since the operator() implementation needs to accept any type. But C++20 makes this even more interesting with the triple combination of default-constructible lambdas, explicitly-templated lambdas. and lambdas being legal in an unevaluated context.
-
-with these three things, something to the effect of
-
-    template &lt;class F&gt; struct adapter {
-	    template &lt;class... Ts&gt;
-	    using f = decltype(F().template operator()&lt;Ts...&gt;());
-    };
-
-    using as_tuple = adapter&lt;decltype([]&lt;class... Ts&gt;{ return std::tuple&lt;Ts...&gt;(); })&gt;;
-
-becomes a quick, legal way of defining a template metafunction without the need to explicitly create a using-declaration or a templated struct. With a bit of macro magic to clean up the generation of those lambda expressions, this could be represented as
-
-    using as_tuple = METALAMBDA(class... Ts)(std::tuple&lt;Ts...&gt;);
-
-by just filling in the blanks. I've put together a PoC at [https://godbolt.org/z/nQ3SLc](https://godbolt.org/z/nQ3SLc) showing some interesting examples of how they can clean up metaprograms.
-## [8][This is why we can('t) have nice things - Timu van der Kuil - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f5pdvu/this_is_why_we_cant_have_nice_things_timu_van_der/)
-- url: https://www.youtube.com/watch?v=sawtgibAlvg
----
-
-## [9][move, even more simply](https://www.reddit.com/r/cpp/comments/f5ufsa/move_even_more_simply/)
-- url: https://cor3ntin.github.io/posts/move/
----
-
-## [10][C++ and its Standards – from history to C++20 – readings, talks, trip reports](https://www.reddit.com/r/cpp/comments/f5tn76/c_and_its_standards_from_history_to_c20_readings/)
-- url: https://github.com/MattPD/cpplinks/blob/master/std.md
----
-
-## [11][Zero, one, two, Freddy's coming for you](https://www.reddit.com/r/cpp/comments/f6a8vz/zero_one_two_freddys_coming_for_you/)
-- url: https://habr.com/en/company/pvs-studio/blog/488328/
----
-
-## [12][What are jobs that allow usage of modern C++?](https://www.reddit.com/r/cpp/comments/f668cm/what_are_jobs_that_allow_usage_of_modern_c/)
-- url: https://www.reddit.com/r/cpp/comments/f668cm/what_are_jobs_that_allow_usage_of_modern_c/
----
-What kind of jobs don't impose working with legacy code or old versions like C++98, or at least don't still refer to C++11 as "modern"?
-
-Are you working with C++17 in your job? Are there already plans or allowances to work with C++20? What kind of professional frameworks allow staying up to date with the language and not inevitably lagging behind out of fear of big rewrites?

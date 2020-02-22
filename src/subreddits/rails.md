@@ -27,7 +27,33 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][I created a step-by-step tutorial demonstrating how to integrate React with Ruby on Rails](https://www.reddit.com/r/rails/comments/f7a0v8/i_created_a_stepbystep_tutorial_demonstrating_how/)
+## [3][How can I use &amp; instead of try! in this case?](https://www.reddit.com/r/rails/comments/f7ngfi/how_can_i_use_instead_of_try_in_this_case/)
+- url: https://www.reddit.com/r/rails/comments/f7ngfi/how_can_i_use_instead_of_try_in_this_case/
+---
+In a the view I show the first 120 letters of the description of some posts, but I have to safe navigate these since `post.description` can be `nil`, for now I'm using `post.description.try!(:[], 0..120)`.
+
+Is there a way to do the same with `&amp;` syntax?
+## [4][SQL queries in rails application](https://www.reddit.com/r/rails/comments/f7jg3l/sql_queries_in_rails_application/)
+- url: https://www.reddit.com/r/rails/comments/f7jg3l/sql_queries_in_rails_application/
+---
+Hello!
+
+New to this subreddit.
+
+I just have a quick question when writing sql queries in a rails application.
+
+Where and how do we write the queries? Where should the queries go? In the Models or Controllers?
+
+\--EDIT--
+
+So in an interview setting, with rails and SQL. How do you think they will make me write sql queries in rails?
+
+I know a little bit of sql but I don't know how I will be tested when creating a rails application and using sql.
+
+I appreciate all the help!
+
+Thank you so much!
+## [5][I created a step-by-step tutorial demonstrating how to integrate React with Ruby on Rails](https://www.reddit.com/r/rails/comments/f7a0v8/i_created_a_stepbystep_tutorial_demonstrating_how/)
 - url: https://www.reddit.com/r/rails/comments/f7a0v8/i_created_a_stepbystep_tutorial_demonstrating_how/
 ---
 - [Live Demo](https://rails-react-example.herokuapp.com/)
@@ -42,286 +68,122 @@ I really wanted to learn React and API development, so I went head first into bu
 - Handling errors
 - Debouncing requests
 - CSRF Countermeasures
-## [4][Write test for data migrations](https://www.reddit.com/r/rails/comments/f717t9/write_test_for_data_migrations/)
-- url: https://www.reddit.com/r/rails/comments/f717t9/write_test_for_data_migrations/
+## [6][Help with Active Record query](https://www.reddit.com/r/rails/comments/f7khml/help_with_active_record_query/)
+- url: https://www.reddit.com/r/rails/comments/f7khml/help_with_active_record_query/
 ---
-Today I heard a funny story at a local Ruby meetup. A guy corrupted data in production by a data migration. Don’t repeat his mistake, use this [gem](https://github.com/ka8725/migration_data). It’s not super popular, but has been tested over time. Surprisingly, people still use it and seem satisfied. Any contribution is welcomed!
-## [5][What book/resources do you recommend for intermediate Rails developer?](https://www.reddit.com/r/rails/comments/f744ae/what_bookresources_do_you_recommend_for/)
-- url: https://www.reddit.com/r/rails/comments/f744ae/what_bookresources_do_you_recommend_for/
+I'm working on an application and struggling with creating an Active Record query.
+
+I'm working on a reservation system that allows the owner to blackout certain dates on certain properties. So, to generate availability across all properties for a specific date, I need to first see if there are any  property\_blackout\_dates on that date.
+
+    class PropertyBlackoutDate &lt; ApplicationRecord
+      belongs_to :property
+    end 
+    
+    class Property &lt; ApplicationRecord
+      has_many :property_blackout_dates
+    end 
+
+Since I want all the Properties without a property\_blackout\_date for a specific date, I tried doing this:
+
+    date = "2020-02-22"
+    Property.includes(:property_blackout_dates).where.not(property_blackout_dates: {date: date}).references(:property_blackout_dates)
+
+It just returns an empty association, but
+
+    date = "2020-02-22"
+    PropertyBlackoutDate.where(date: date)
+
+does return an object, so I don't think it's an issue with the date parameter being wrong.
+
+What am I doing wrong?
+## [7][How do I validate foreign keys?](https://www.reddit.com/r/rails/comments/f7jr23/how_do_i_validate_foreign_keys/)
+- url: https://www.reddit.com/r/rails/comments/f7jr23/how_do_i_validate_foreign_keys/
 ---
-I’ve been developing in Rails for about a year now and feel I’m ready to learn intermediate stuff. I have read Michael Hartl’s book, and did a couple of tutorials on udemy as well. What resources/books would you recommend? Thanks!
-## [6][Making a desktop and mobile app from an existing rails app.](https://www.reddit.com/r/rails/comments/f76oug/making_a_desktop_and_mobile_app_from_an_existing/)
-- url: https://www.reddit.com/r/rails/comments/f76oug/making_a_desktop_and_mobile_app_from_an_existing/
+Let's say I have three models:
+
+class Brand  &lt; ***ApplicationRecord***
+
+has\_many :cars
+
+has\_many :dealer\_brands
+
+has\_many :dealers,  through: :dealer\_brands
+
+end
+
+class Dealer &lt; ***ApplicationRecord***
+
+has\_many :cars
+
+has\_many : dealer\_brands # Bridge table that states all the brands that the dealer carries.
+
+has\_many :brands,  through: :dealer\_brands
+
+end
+
+class Car  &lt; ***ApplicationRecord***
+
+belongs\_to :dealer
+
+belongs\_to :brand
+
+end
+
+When I create a car, how do I validate and make sure that the dealer carries a particular brand before saving the car entry? Do I just use a validation in the car model to make sure that the dealer carries the brand before saving the record into the database or is there a better way?
+## [8][Different assets for different route namespaces](https://www.reddit.com/r/rails/comments/f7lcj2/different_assets_for_different_route_namespaces/)
+- url: https://www.reddit.com/r/rails/comments/f7lcj2/different_assets_for_different_route_namespaces/
 ---
-I have an existing Rails app I want to make a desktop app(using electron) and a mobile app. So I'm thinking of making a REST API. I want to ask if there is a better way then converting the Rails app to an API. Also, what is the best way to make Rails API out of an already built app?
-## [7][What are some smaller Open source rails projects That are less intimidating to contribute to?](https://www.reddit.com/r/rails/comments/f713e8/what_are_some_smaller_open_source_rails_projects/)
-- url: https://www.reddit.com/r/rails/comments/f713e8/what_are_some_smaller_open_source_rails_projects/
+Hello, I wanted to ask how r/rails would implement this. 
+
+I have a rails app that has 2 distinct sections. A frontend/customer facing side &amp; a backend/vendor side. I have 2 bootstrap themes that I like. However, they obviously have css name conflicts on card or some other basic names. 
+
+My idea is to do a before_action in the application controller. If the controller namespace is admin, set '@namespace' to 'admin', else, 'frontend'. Then in the application.html do `javascript_pack_tag @namespace`. 
+
+Another idea is to make the vendor area a separate rails application connected to the main DB but I would like to keep everything in the same repo.
+
+Tbh, I'm not really feeling this idea. Is there a better way to implement this?
+## [9][Why I don't use React with Rails](https://www.reddit.com/r/rails/comments/f7rzxg/why_i_dont_use_react_with_rails/)
+- url: https://www.reddit.com/r/rails/comments/f7rzxg/why_i_dont_use_react_with_rails/
 ---
-The current list (Will Update as People Comment)
+I'd like to share the top reasons why I don't use React:
 
-[https://github.com/focallocal](https://github.com/focallocal)
+* React is meant for large teams as it was built for Facebook which is a large company.
+* React forces you to build and run \*two\* applications just for the browser: micro-service for the back-end, and a \*separate\* UI front-end.
+* Designers pay a complexity tax when working with JSX.
+* Developers pay a complexity tax when working with JSX.
+* You can't use the keyword "class" in your HTML.
 
-[https://github.com/TheOdinProject/theodinproject](https://github.com/TheOdinProject/theodinproject)
+To me, React literally defeats the largest principle in Rails which is being one \*monolith\* application.
 
-[http://www.opensourcerails.com](http://www.opensourcerails.com/)
+I'd like to have a high-quality discussion about this important topic. So please share your thoughts if you don't agree.
 
-I am looking to share this list with my local user group to help other beginners like me.
-## [8][Rails server on cloud9 not working?](https://www.reddit.com/r/rails/comments/f71fd6/rails_server_on_cloud9_not_working/)
-- url: https://www.reddit.com/r/rails/comments/f71fd6/rails_server_on_cloud9_not_working/
+Down-voting without commenting on \*why\* you don't agree is a disservice for the community.  JavaScript is a huge part of our Rails applications, and the way we choose to go about it is fundamental.
+## [10][Converted Date object to integer for purposes of a graph, struggling to get that integer back to the original date](https://www.reddit.com/r/rails/comments/f7hvzs/converted_date_object_to_integer_for_purposes_of/)
+- url: https://www.reddit.com/r/rails/comments/f7hvzs/converted_date_object_to_integer_for_purposes_of/
 ---
-As the title suggets, when i start up the rails server, it acts as if it wasn't even on. Any way to fix this?
-## [9][Trying to use Simple Form and Enumerize gems to set a default value of an input. Help needed!](https://www.reddit.com/r/rails/comments/f737p3/trying_to_use_simple_form_and_enumerize_gems_to/)
-- url: https://www.reddit.com/r/rails/comments/f737p3/trying_to_use_simple_form_and_enumerize_gems_to/
+So I'm working with highcharts, and for storage of plot point data, I converted a Date object to an integer to get it to display properly in highcharts.  But in the `tooltip` `pointFormat`, I am trying to interpolate a data xaxis data point, `point.x` for example into that popup when you hover over the datapoint(which I guess is what `pointFormat` and `tooltip` are for).  It needs to be a string it appears, so for that purpose, I need to get back _from_ the integer date stored in the data points data, to the original date object, or perhaps as a string date.
+
+**TLDR**
+
+I have a date object, such as `Mon, 31 Dec 2018`, and I converted it to an integer for the highchart datapoint plot, via
+
+    my_date_object.strftime('%Q')
+
+which leads to `"1545214400000"`.
+
+When I try to go back to a date object (or perhaps I need a string, I just need to plain interpolate into a string) with month, day, year, I found and tried this, but I get some whacky year when trying to convert back(and I don't want the time appended at the end either to boot):
+
+    Time.at(1545214400000).to_formatted_s(:long)
+    =&gt; "August 01, 50967 19:00"
+
+The above is way different than my original `Mon, 31 Dec 2018` date object, that went through conversion to an integer originally.
+
+Any help appreciated, thanks!
+## [11][Would it be Ethical to ask people to pitch in?](https://www.reddit.com/r/rails/comments/f7fzbr/would_it_be_ethical_to_ask_people_to_pitch_in/)
+- url: https://www.reddit.com/r/rails/comments/f7fzbr/would_it_be_ethical_to_ask_people_to_pitch_in/
 ---
-Hi all,  
-
-
-I'm working with someone else's code and trying to work out how to set the value of an input as a default using simple form. Probably easier to explain with some code...
-
-In the view I have this haml code that currently allows users to chose between two options from the payments attribute, which is enumerated in the model.  
-
-
-view:
-
-    = simple_form_for(@checkout, html: { class: 'edit-form edit_item' }, wrapper: :edit_form) do |f|
-      %fieldset.large-2-col
-        .fields-block
-          = f.input :payments, as: :check_boxes
-...
-
-The payments attribute is enumerated in the model :
-
-    enumerize :payments, in: [:cash, :card], default: :card, multiple: true
-
-What I would like is for a user to only be offered the options of `:cash` and `:card` if they have those options set on their account. Currently if a user only has an account registered with card they can still select the cash radio button. In very crude terms it should do something like this:  
-
-
-    - if current_account.cash_accounts.any?  == false
-      default simple form input for card and don't show options
-    - elsif current_account.card_accounts.any? == false
-      default simple form input for cash and don't show options
-    - else
-  = f.input :payments, as: :check_boxes
-
-I don't know how to just get one of :card or :cash from the enumerated attribute (depending on the user's account) and I don't know how to use simple form to have a default value selected whilst not showing anything in the view. Any help would be greatly appreciated :)
-## [10][Best gem to limit zip codes at checkout?](https://www.reddit.com/r/rails/comments/f6wbfa/best_gem_to_limit_zip_codes_at_checkout/)
-- url: https://www.reddit.com/r/rails/comments/f6wbfa/best_gem_to_limit_zip_codes_at_checkout/
+I am developing this pet project of mine, which I would think be useful to many. I already envision it to be free for all, but you got to pay small monthly sub (a couple of euros) if you want to see your "Reports", an advanced feature. Would it be Ethical for me to put it out on Kickstarter and ask people for donations towards the final product? I am unemployed now, just working on some stuff to make companies hire me :) But I still want to eat meanwhile.
+## [12][Feature flag gems](https://www.reddit.com/r/rails/comments/f7f1w6/feature_flag_gems/)
+- url: https://www.reddit.com/r/rails/comments/f7f1w6/feature_flag_gems/
 ---
-Hi,
-
-I'm building an ecommerce app, but I want to limit the geographic locations where orders can be shipped to. Wondering if there is a gem that's best recommended for this that I can incorporate into a function that won't allow customers to check out unless they have entered a zip code in the allowed range(s). Thanks in advance!
-## [11][Rails 6/Webpacker/React/Bootstrap users....PLEASE HELP!!](https://www.reddit.com/r/rails/comments/f6yizg/rails_6webpackerreactbootstrap_usersplease_help/)
-- url: https://www.reddit.com/r/rails/comments/f6yizg/rails_6webpackerreactbootstrap_usersplease_help/
----
-I am completely stumped as to why a react-bootstrap Modal component throws an error in \`production\` but not \`development\`. In my app, if I run \`rails s\` and \`bin/webpack-dev-server\`, a 'create\` action that opens a modal with a form using react-bootstrap works fine. When I try it in \`production\` with \`RAILS\_ENV=production rake assets:precompile\` and \`rails s -e production\`, the create action that opens the bootstrap modal fails. The error:
-
-&amp;#x200B;
-
-    backend.js:6 TypeError: Cannot convert undefined or null to object
-        at hasOwnProperty (&lt;anonymous&gt;)
-        at Modal.js:21
-        at Array.forEach (&lt;anonymous&gt;)
-        at Modal.js:20
-        at t.n.render (Modal.js:302)
-        at Qi (react-dom.production.min.js:4243)
-        at Ji (react-dom.production.min.js:4234)
-        at wc (react-dom.production.min.js:6676)
-        at yu (react-dom.production.min.js:5650)
-        at Mu (react-dom.production.min.js:5639)
-    r @ backend.js:6
-    pc @ react-dom.production.min.js:4638
-    n.callback @ react-dom.production.min.js:5083
-    La @ react-dom.production.min.js:3061
-    va @ react-dom.production.min.js:3049
-    vu @ react-dom.production.min.js:6347
-    t.unstable_runWithPriority @ scheduler.production.min.js:272
-    Vo @ react-dom.production.min.js:2796
-    gu @ react-dom.production.min.js:6107
-    cu @ react-dom.production.min.js:5410
-    (anonymous) @ react-dom.production.min.js:2831
-    t.unstable_runWithPriority @ scheduler.production.min.js:272
-    Vo @ react-dom.production.min.js:2796
-    Qo @ react-dom.production.min.js:2826
-    Jo @ react-dom.production.min.js:2816
-    ue @ react-dom.production.min.js:7246
-    kn @ react-dom.production.min.js:1712
-    Modal.js:21 Uncaught TypeError: Cannot convert undefined or null to object
-        at hasOwnProperty (&lt;anonymous&gt;)
-        at Modal.js:21
-        at Array.forEach (&lt;anonymous&gt;)
-        at Modal.js:20
-        at t.n.render (Modal.js:302)
-        at Qi (react-dom.production.min.js:4243)
-        at Ji (react-dom.production.min.js:4234)
-        at wc (react-dom.production.min.js:6676)
-        at yu (react-dom.production.min.js:5650)
-        at Mu (react-dom.production.min.js:5639)
-    (anonymous) @ Modal.js:21
-    (anonymous) @ Modal.js:20
-    n.render @ Modal.js:302
-    Qi @ react-dom.production.min.js:4243
-    Ji @ react-dom.production.min.js:4234
-    wc @ react-dom.production.min.js:6676
-    yu @ react-dom.production.min.js:5650
-    Mu @ react-dom.production.min.js:5639
-    cu @ react-dom.production.min.js:5395
-    (anonymous) @ react-dom.production.min.js:2831
-    t.unstable_runWithPriority @ scheduler.production.min.js:272
-    Vo @ react-dom.production.min.js:2796
-    Qo @ react-dom.production.min.js:2826
-    Jo @ react-dom.production.min.js:2816
-    ue @ react-dom.production.min.js:7246
-    kn @ react-dom.production.min.js:1712
-
-I'm not sure what in the production compile causes this to fail. This is all running from a local server and was discovered when trying to deploy to Heroku. 
-
-&amp;#x200B;
-
-Here is how my directory tree is laid out: 
-
-&amp;#x200B;
-
-    ├── assets
-    │   ├── config
-    │   ├── images
-    │   └── stylesheets
-    ├── channels
-    │   └── application_cable
-    ├── controllers
-    │   └── concerns
-    ├── helpers
-    ├── javascript
-    │   ├── channels
-    │   ├── css
-    │   └── packs
-    │       ├── actions
-    │       ├── components
-    │       ├── containers
-    │       ├── middleware
-    │       ├── public
-    │       └── reducers
-    ├── jobs
-    ├── mailers
-    ├── models
-    │   └── concerns
-    ├── serializers
-    └── views
-        ├── current_outages
-        ├── dashboard
-        ├── future_outages
-        ├── layouts
-        ├── recurring_outages
-        └── services
-
-and the webpacker.yml file: 
-
-&amp;#x200B;
-
-    # Note: You must restart bin/webpack-dev-server for changes to take effect
-    
-    default: &amp;default
-      source_path: app/javascript
-      source_entry_path: packs
-      public_root_path: public
-      public_output_path: packs
-      cache_path: tmp/cache/webpacker
-      check_yarn_integrity: false    
-      webpack_compile_output: true
-    
-      # Additional paths webpack should lookup modules
-      # ['app/assets', 'engine/foo/app/assets']
-      resolved_paths: ['app/javascript/css']
-    
-      # Reload manifest.json on all requests so we reload latest compiled packs
-      cache_manifest: false
-    
-      # Extract and emit a css file
-      extract_css: false
-    
-      static_assets_extensions:
-        - .jpg
-        - .jpeg
-        - .png
-        - .gif
-        - .tiff
-        - .ico
-        - .svg
-        - .eot
-        - .otf
-        - .ttf
-        - .woff
-        - .woff2
-    
-      extensions:
-        - .jsx
-        - .mjs
-        - .js
-        - .sass
-        - .scss
-        - .css
-        - .module.sass
-        - .module.scss
-        - .module.css
-        - .png
-        - .svg
-        - .gif
-        - .jpeg
-        - .jpg
-    
-    development:
-      &lt;&lt;: *default
-      compile: true
-    
-      # Verifies that correct packages and versions are installed by inspecting package.json, yarn.lock, and node_modules
-      check_yarn_integrity: false
-    
-      # Reference: https://webpack.js.org/configuration/dev-server/
-      dev_server:
-        https: false
-        host: localhost
-        port: 3035
-        public: localhost:3035
-        hmr: false
-        # Inline should be set to true if using HMR
-        inline: true
-        overlay: true
-        compress: true
-        disable_host_check: true
-        use_local_ip: false
-        quiet: false
-        pretty: false
-        headers:
-          'Access-Control-Allow-Origin': '*'
-        watch_options:
-          ignored: '**/node_modules/**'
-    
-    
-    test:
-      &lt;&lt;: *default
-      compile: true
-    
-      # Compile test packs to a separate directory
-      public_output_path: packs-test
-    
-    production:
-      &lt;&lt;: *default
-    
-      # Production depends on precompilation of packs prior to booting for performance.
-      compile: false 
-    
-      # Extract and emit a css file
-      extract_css: true
-    
-      # Cache manifest.json for performance
-      cache_manifest: true
-    
-
-PLEASE HELP! Been on this for 3 days now.
-## [12][Stripe: Tiered pricing for one time purchase?](https://www.reddit.com/r/rails/comments/f6uixy/stripe_tiered_pricing_for_one_time_purchase/)
-- url: https://www.reddit.com/r/rails/comments/f6uixy/stripe_tiered_pricing_for_one_time_purchase/
----
-I am working on a project where I need to capture one time payments from an account. For a bit of background: The account has many users, where users are part of teams as team\_members. I have another model we can call projects where teams are affixed to the project. It is on these individual projects that I would like to have a checkout button. The price for this one time payment should be calculated based on the number of individuals in a team, that are part of this project.
-
-My issue is that I am not 100% sure how to achieve this for one time payments in stripe. Should I set this up alike that if I were to sell an individual item? Product (with name, description and price) and an Order to affix to the user? 
-
-I've built subscriptions plans in Stripe before, but have never really used one time payments. Any guidance on setup here would be really great.
+We're thinking about implementing feature flags for control of UI gated features.  There looks like a handful of them out there (Flipper, Flipflop, rollout etc).  Anyone used these before?  Which gems are good?  What are any of the gotchas you've encountered?

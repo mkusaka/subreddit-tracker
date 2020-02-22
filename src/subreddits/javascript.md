@@ -1,129 +1,54 @@
 # javascript
-## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/f56mem/your_weekly_rjavascript_recap/)
-- url: https://www.reddit.com/r/javascript/comments/f56mem/your_weekly_rjavascript_recap/
+## [1][Showoff Saturday (February 22, 2020)](https://www.reddit.com/r/javascript/comments/f7rkeq/showoff_saturday_february_22_2020/)
+- url: https://www.reddit.com/r/javascript/comments/f7rkeq/showoff_saturday_february_22_2020/
 ---
-**Monday, February 10 - Sunday, February 16**
+Did you find or create something cool this week in javascript? 
 
-###Top Posts
-
-score | comments | title &amp; link | 
---|--|--
-461  | [96 comments](https://www.reddit.com/r/javascript/comments/f35k31/askjs_i_want_to_create_a_youtube_channel_showing/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; I want to create a YouTube channel showing the nitty-gritty of programming and maintaining a web-app for 10+ years &amp;#40;scale: 40k monthly uniques, $20k/monthly&amp;#41;. What topics are of interest to r/javascript?
-299  | [29 comments](https://www.reddit.com/r/javascript/comments/f3s04f/listen_to_your_web_pages_render_with_dom_mutation/) | [Listen to your web pages render with DOM Mutation Observer and Web Audio API](https://gist.github.com/tomhicks/6cb5e827723c4eaef638bf9f7686d2d8)
-228  | [135 comments](https://www.reddit.com/r/javascript/comments/f1r3pr/i_this_madness_supposed_to_be_all_the_things_you/) | [I this madness supposed to be all the things you need to know as a JavaScript Developer today?](https://roadmap.sh/frontend)
-188  | [41 comments](https://www.reddit.com/r/javascript/comments/f3clz5/chrome_79_no_longer_shows_preflight_cors_requests/) | [Chrome 79+ no longer shows preflight CORS requests](https://httptoolkit.tech/blog/chrome-79-doesnt-show-cors-preflight/)
-184  | [35 comments](https://www.reddit.com/r/javascript/comments/f2an2t/a_graphqlbased_web_app_written_with_react_go_and/) | [A GraphQL-based Web App written with React, Go and MongoDB. Could serve as an example for those who are learning these technologies. The repo includes a detailed description on how to setup dev environmwnt and how to work with the project.](https://github.com/Shpota/skmz/)
-166  | [30 comments](https://www.reddit.com/r/javascript/comments/f2ocr2/hey_rjavascript_were_a_small_team_that_just/) | [Hey r/javascript! We're a small team that just launched a new product called Autocode that lets you automatically generate Node.js API code for connecting apps together. Would love feedback! &amp;#40;x-post r/node&amp;#41;](https://autocode.com/)
-145  | [51 comments](https://www.reddit.com/r/javascript/comments/f26f47/4_methods_to_search_through_arrays_in_javascript/) | [4 Methods to Search Through Arrays in JavaScript](https://alligator.io/js/array-search-methods/)
-129  | [14 comments](https://www.reddit.com/r/javascript/comments/f4wn1l/math_keeps_changing/) | [Math keeps changing](https://macwright.org/2020/02/14/math-keeps-changing.html)
-115  | [14 comments](https://www.reddit.com/r/javascript/comments/f2tme8/how_i_ported_a_us_counties_map_made_in_d3_to_the/) | [How I ported a US counties map made in D3 to the GPU using Three.js &amp;#91;OC&amp;#93;](https://tips4devs.com/articles/make-a-webgl-powered-us-counties-map-with-d3-and-three-js.html)
-98  | [23 comments](https://www.reddit.com/r/javascript/comments/f49g3b/my_first_mern_stack_app_day_planneradvanced/) | [My first MERN Stack app: Day Planner&amp;#40;Advanced ToDoApp&amp;#41;](https://github.com/ahmetbcakici/DayPlanner)
-
-
-
-
-&amp;nbsp;
-
-###Top Discussions
-
-score | comments | title &amp; link | 
---|--|--
-8  | [61 comments](https://www.reddit.com/r/javascript/comments/f4ph5f/angular_for_beginners/) | [Angular for beginners.](https://medium.com/javascript-in-plain-english/understanding-angular-and-creating-your-first-application-4b81b666f7b4)
-60  | [48 comments](https://www.reddit.com/r/javascript/comments/f40hz1/you_dont_may_not_need_momentjs/) | [You don't &amp;#40;may not&amp;#41; need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md#you-dont-may-not-need-momentjs)
-74  | [45 comments](https://www.reddit.com/r/javascript/comments/f4r213/askjs_is_someone_using_yarn_v2_in_business/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Is someone using Yarn v2 in business?
-19  | [42 comments](https://www.reddit.com/r/javascript/comments/f3s3nz/how_javascript_implements_classbased_object/) | [How Javascript Implements Class-Based Object Oriented Programming](https://www.freecodecamp.org/news/how-javascript-implements-oop/amp/?url=https%3A%2F%2Fwww.freecodecamp.org%2Fnews%2Fhow-javascript-implements-oop%2F&amp;amp;__twitter_impression=true)
-0  | [32 comments](https://www.reddit.com/r/javascript/comments/f2bfwd/askjs_angular_node_or_react/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Angular, Node or React?
-
-
-
-
-&amp;nbsp;
-
-###Top Ask JS
-
-score | comments | title &amp; link | 
---|--|--
-56  | [30 comments](https://www.reddit.com/r/javascript/comments/f4bmn6/askjs_experiences_with_web_components_in_a/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Experiences with Web Components in a business setting?
-19  | [4 comments](https://www.reddit.com/r/javascript/comments/f4gelq/askjs_issue_with_jxa_click/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; Issue with JXA click
-9  | [12 comments](https://www.reddit.com/r/javascript/comments/f3zdwg/askjs_high_school_education/)  |  `[AskJS]` &amp;#91;AskJS&amp;#93; high school education..
-
-
-
-
-&amp;nbsp;
-
-###Top Showoffs
-
-score  |  comment  | 
---|--
-5  |  /u/TedW said [I learned a new-to-me way to create a new object by picking keys from an existing object:  `&amp;gt; const foo = { a: 1, b: 2, c: 3 }`   `&amp;gt; &amp;#40;&amp;#40;{a, b}&amp;#41;=&amp;gt;&amp;#40;{a, b}&amp;#41;&amp;#41;&amp;#40;foo&amp;#41;`...](/r/javascript/comments/f48ek5/showoff_saturday_february_15_2020/fhpgdfb/?context=5)
-5  |  /u/nullvoxpopuli said [I made a wrapper around jsQR for scanning QR codes with a camera: https://nullvoxpopuli.github.io/ember-jsqr/](/r/javascript/comments/f48ek5/showoff_saturday_february_15_2020/fhoosb1/?context=5)
-3  |  /u/archerx said [https://machine.style/fractals  I made this in javascript and use web workers to multi thread it. It will use ALL your cores at 100%. Your CPU fans will start spinning lol.  You can randomly generate ...](/r/javascript/comments/f48ek5/showoff_saturday_february_15_2020/fhphfmh/?context=5)
-
-
-
-
-&amp;nbsp;
-
-###Top Comments
-
-score  |  comment  | 
---|--
-188  |  /u/bassta said [Real world web security. Too many half-ass tutorials on too simple authentication/authorization to be used in production. Problems with cookies, local storage , when to use JWTs and when not. Proper u...](/r/javascript/comments/f35k31/askjs_i_want_to_create_a_youtube_channel_showing/fhgvch8/?context=5)
-138  |  /u/TheRedGerund said [That's all fine and well until you're trying to implement CORS support and need to verify the sent and returned headers](/r/javascript/comments/f3clz5/chrome_79_no_longer_shows_preflight_cors_requests/fhizr5c/?context=5)
-92  |  /u/GBcrazy said [...this sounds bad, I need to know what is happening when implementing CORS, can't they just make this toggleable? Jesus Chrome, you are better than that](/r/javascript/comments/f3clz5/chrome_79_no_longer_shows_preflight_cors_requests/fhjevf9/?context=5)
-87  |  /u/geewizwow said [My pages sound like they're screaming out in pain, ty](/r/javascript/comments/f3s04f/listen_to_your_web_pages_render_with_dom_mutation/fhks38o/?context=5)
-69  |  /u/GuerrillaRobot said [Where are you in your career, and what are your goals? You don’t need to know all of those things to get started or to get a job, but if you are working as a front end developer for a few years you wi...](/r/javascript/comments/f1r3pr/i_this_madness_supposed_to_be_all_the_things_you/fh7w307/?context=5)
-
-
-
-
-&amp;nbsp;
-## [2][WTF Wednesday (February 19, 2020)](https://www.reddit.com/r/javascript/comments/f6cris/wtf_wednesday_february_19_2020/)
-- url: https://www.reddit.com/r/javascript/comments/f6cris/wtf_wednesday_february_19_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Announcing TypeScript 3.8](https://www.reddit.com/r/javascript/comments/f71h9i/announcing_typescript_38/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/
+Show us here!
+## [2][Streams for Reactive Programming](https://www.reddit.com/r/javascript/comments/f7mi3t/streams_for_reactive_programming/)
+- url: https://dassur.ma/things/streams-for-reactive-programming/
 ---
 
-## [4][GitHub - beautifulinteractions/beautiful-react-hooks: 🔥A collection of beautiful and (hopefully) useful React hooks to speed-up your components and hooks development 🔥](https://www.reddit.com/r/javascript/comments/f7adgc/github_beautifulinteractionsbeautifulreacthooks_a/)
-- url: https://github.com/beautifulinteractions/beautiful-react-hooks
+## [3][OkCupid Presents "Glow-Up: Bringing a Teenaged Website into the Modern World of SPA"](https://www.reddit.com/r/javascript/comments/f7bj30/okcupid_presents_glowup_bringing_a_teenaged/)
+- url: https://tech.okcupid.com/glow-up-bringing-a-teenaged-website-into-the-modern-world-of-spa/
 ---
 
-## [5][React vs Vue - Developer experience](https://www.reddit.com/r/javascript/comments/f6wl4q/react_vs_vue_developer_experience/)
-- url: https://medium.com/@nickbarth_277/vue-vs-react-4fd0baf093f
+## [4][TypeScript 3.8 finally fixes private fields](https://www.reddit.com/r/javascript/comments/f7nmds/typescript_38_finally_fixes_private_fields/)
+- url: https://medium.com/young-coder/private-fields-in-typescript-3-8-true-privacy-at-last-fb4f194305d9?source=friends_link&amp;sk=173cc0270960737577f1caa3c5d26b2d
 ---
 
-## [6][Difference between stateful and stateless state in react js](https://www.reddit.com/r/javascript/comments/f7amzm/difference_between_stateful_and_stateless_state/)
-- url: https://www.bloggerdrive.com/stateful-and-statless/
+## [5][JavaScript Interview Questions: Common Gotchas](https://www.reddit.com/r/javascript/comments/f7sa7x/javascript_interview_questions_common_gotchas/)
+- url: https://alligator.io/js/gotchas/
 ---
 
-## [7][Hue Jumper is now open source! - A low fi endless runner that fits in a 2 kilobyte zip](https://www.reddit.com/r/javascript/comments/f77952/hue_jumper_is_now_open_source_a_low_fi_endless/)
-- url: https://github.com/KilledByAPixel/HueJumper2k
+## [6][How to communicate with Service Workers - MessageChannel, Broadcast API and Client API compared](https://www.reddit.com/r/javascript/comments/f7qxfs/how_to_communicate_with_service_workers/)
+- url: https://felixgerschau.com/2020/02/22/communicate-with-service-workers.html
 ---
 
-## [8][Grab that DOM by the](https://www.reddit.com/r/javascript/comments/f795mq/grab_that_dom_by_the/)
-- url: https://medium.com/javascript-in-plain-english/what-is-the-javascript-nodeiterator-api-c4443b79b492
+## [7][A naive approach to functional programming using TypeScript](https://www.reddit.com/r/javascript/comments/f7pr7x/a_naive_approach_to_functional_programming_using/)
+- url: https://github.com/alohawav/naive_functional_programming
 ---
 
-## [9][Node v13.9.0 (Current) | Node.js](https://www.reddit.com/r/javascript/comments/f78jhf/node_v1390_current_nodejs/)
-- url: https://nodejs.org/en/blog/release/v13.9.0/
+## [8][[AskJS] Image not loading](https://www.reddit.com/r/javascript/comments/f7qu98/askjs_image_not_loading/)
+- url: https://www.reddit.com/r/javascript/comments/f7qu98/askjs_image_not_loading/
+---
+I was making an electron app with react for fun, and it worked fine while I was building it as i was loading `localhost:1234`  
+ instead of an html file.
+
+But when I react files and then ran electron from the html file, the images wouldn't load properly.
+
+How would I fix this?
+
+[This is the github link](https://github.com/Lutetium-Vanadium/Music)
+## [9][What's coming in ESLint v7.0.0](https://www.reddit.com/r/javascript/comments/f7dvn2/whats_coming_in_eslint_v700/)
+- url: https://eslint.org/blog/2020/02/whats-coming-in-eslint-7.0.0
 ---
 
-## [10][How to mock REST-API in 30 seconds with NodeJS](https://www.reddit.com/r/javascript/comments/f6rmkq/how_to_mock_restapi_in_30_seconds_with_nodejs/)
-- url: https://medium.com/@stefanoTLDR/how-to-mock-rest-api-in-30-seconds-with-nodejs-6068aabd6630
+## [10][Let's talk about JSON.stringify()](https://www.reddit.com/r/javascript/comments/f7qy05/lets_talk_about_jsonstringify/)
+- url: https://www.pixelstech.net/article/1582362508-Let-s-talk-about-JSON-stringify()
 ---
 
-## [11][Creational Patterns in ES6+ using Game of Thrones](https://www.reddit.com/r/javascript/comments/f6rqjn/creational_patterns_in_es6_using_game_of_thrones/)
-- url: https://www.hackdoor.io/articles/9YJbK2Nn/creational-patterns-in-es6-using-game-of-thrones
----
-
-## [12][Official Redux template for Create-React-App](https://www.reddit.com/r/javascript/comments/f6s4iy/official_redux_template_for_createreactapp/)
-- url: https://github.com/reduxjs/cra-template-redux/releases/tag/v1.0.0
+## [11][React is the shit… (a funny poem I wrote)](https://www.reddit.com/r/javascript/comments/f7p3aj/react_is_the_shit_a_funny_poem_i_wrote/)
+- url: https://medium.com/@arbershabani97/react-is-the-shit-180585965503?source=friends_link&amp;sk=047ce821ed15a30979ccd499bf6a1670
 ---
 

@@ -1,5 +1,52 @@
 # Kotlin
-## [1][New Zircon Release is out: 2020.1.0-RELEASE](https://www.reddit.com/r/Kotlin/comments/f7jknj/new_zircon_release_is_out_202010release/)
+## [1][What else can I use kotlin for](https://www.reddit.com/r/Kotlin/comments/f81tag/what_else_can_i_use_kotlin_for/)
+- url: https://www.reddit.com/r/Kotlin/comments/f81tag/what_else_can_i_use_kotlin_for/
+---
+Apart from android development which is the reason I started to learn kotlin what else can I use the language for?
+## [2][Any suggestion about how to make my code a bit pretty?](https://www.reddit.com/r/Kotlin/comments/f84989/any_suggestion_about_how_to_make_my_code_a_bit/)
+- url: https://www.reddit.com/r/Kotlin/comments/f84989/any_suggestion_about_how_to_make_my_code_a_bit/
+---
+On the server side I use Micronaut to return a LocalDateTime object and sometimes it's returned without the nano second. Therefor my deserializer contains a, not so pretty, if statement.
+
+        val localDateTimeDeserializer = JsonDeserializer { json, _, _ -&gt;
+            if (json.asJsonArray.size() == 7) {
+                LocalDateTime.of(
+                    json.asJsonArray[0].asInt, // Year
+                    json.asJsonArray[1].asInt, // Month
+                    json.asJsonArray[2].asInt, // Day of month
+                    json.asJsonArray[3].asInt, // Hour
+                    json.asJsonArray[4].asInt, // Minute
+                    json.asJsonArray[5].asInt, // Second
+                    json.asJsonArray[6].asInt // Nano of second
+                )
+            } else {
+                LocalDateTime.of(
+                    json.asJsonArray[0].asInt, // Year
+                    json.asJsonArray[1].asInt, // Month
+                    json.asJsonArray[2].asInt, // Day of month
+                    json.asJsonArray[3].asInt, // Hour
+                    json.asJsonArray[4].asInt, // Minute
+                    json.asJsonArray[5].asInt // Second
+                )
+            }
+        }
+## [3][How to make a telnet app with kotlin](https://www.reddit.com/r/Kotlin/comments/f82n6j/how_to_make_a_telnet_app_with_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/f82n6j/how_to_make_a_telnet_app_with_kotlin/
+---
+What's the best way to make a telnet app with kotlin?
+
+&amp;#x200B;
+
+I'm a newb in kotlin...
+
+&amp;#x200B;
+
+Thanks :)
+## [4][Trying to unit test my app. Rx, Coroutines, Mockk, Junit5. Cannot solve it on my own and no luck on slack nor discord...](https://www.reddit.com/r/Kotlin/comments/f7rqv1/trying_to_unit_test_my_app_rx_coroutines_mockk/)
+- url: https://stackoverflow.com/questions/60288406/android-kotlin-unit-test-failing-with-io-mockk-mockkexception-no-answer-found-f
+---
+
+## [5][New Zircon Release is out: 2020.1.0-RELEASE](https://www.reddit.com/r/Kotlin/comments/f7jknj/new_zircon_release_is_out_202010release/)
 - url: https://www.reddit.com/r/Kotlin/comments/f7jknj/new_zircon_release_is_out_202010release/
 ---
 
@@ -153,15 +200,11 @@ Thank you for all of you out there who helped with this release! **Special thank
 ## Contribute
 
 &gt; If you think that you can contribute or just have an idea feel free to join the discussion on our [Discord](https://discordapp.com/invite/vSNgvBh) server.
-## [2][Trying to unit test my app. Rx, Coroutines, Mockk, Junit5. Cannot solve it on my own and no luck on slack nor discord...](https://www.reddit.com/r/Kotlin/comments/f7rqv1/trying_to_unit_test_my_app_rx_coroutines_mockk/)
-- url: https://stackoverflow.com/questions/60288406/android-kotlin-unit-test-failing-with-io-mockk-mockkexception-no-answer-found-f
----
-
-## [3][Migrating to Kotlin—what to look out for](https://www.reddit.com/r/Kotlin/comments/f7ea4k/migrating_to_kotlinwhat_to_look_out_for/)
+## [6][Migrating to Kotlin—what to look out for](https://www.reddit.com/r/Kotlin/comments/f7ea4k/migrating_to_kotlinwhat_to_look_out_for/)
 - url: https://engineering.autotrader.co.uk/2020/02/21/migrating-to-kotlin-what-to-look-out-for.html
 ---
 
-## [4][Impact of including Kotlin in existing Android Java project](https://www.reddit.com/r/Kotlin/comments/f7pl5z/impact_of_including_kotlin_in_existing_android/)
+## [7][Impact of including Kotlin in existing Android Java project](https://www.reddit.com/r/Kotlin/comments/f7pl5z/impact_of_including_kotlin_in_existing_android/)
 - url: https://www.reddit.com/r/Kotlin/comments/f7pl5z/impact_of_including_kotlin_in_existing_android/
 ---
 I am working on an Android Java project developing libraries to be distributed to the clients. I want to include Kotlin into this existing project. This project contains one Sample app module where we test the libraries. I have few questions.
@@ -170,7 +213,7 @@ I am working on an Android Java project developing libraries to be distributed t
 2. If I start writing part of library modules in Kotlin, what will be the impact on the size of the library codes?
 
 Note: When I calculated the change in apk size after including Kotlin in my application, it increased the size by 700+ KB.
-## [5][How to create socket connection for client side.](https://www.reddit.com/r/Kotlin/comments/f7e6cf/how_to_create_socket_connection_for_client_side/)
+## [8][How to create socket connection for client side.](https://www.reddit.com/r/Kotlin/comments/f7e6cf/how_to_create_socket_connection_for_client_side/)
 - url: https://www.reddit.com/r/Kotlin/comments/f7e6cf/how_to_create_socket_connection_for_client_side/
 ---
 Hi there,
@@ -186,23 +229,11 @@ In that application I need to check if it's connected, and receive/send messages
 &amp;#x200B;
 
 Sorry for my bad english. I hope that you can help me.
-## [6][Using GSON with Kotlin's Non-Null Types](https://www.reddit.com/r/Kotlin/comments/f7fpo1/using_gson_with_kotlins_nonnull_types/)
+## [9][Using GSON with Kotlin's Non-Null Types](https://www.reddit.com/r/Kotlin/comments/f7fpo1/using_gson_with_kotlins_nonnull_types/)
 - url: https://medium.com/@clay07g/using-gson-with-kotlins-non-null-types-468b1c66bd8b
 ---
 
-## [7][Kotlin GDNative](https://www.reddit.com/r/Kotlin/comments/f717nb/kotlin_gdnative/)
+## [10][Kotlin GDNative](https://www.reddit.com/r/Kotlin/comments/f717nb/kotlin_gdnative/)
 - url: https://www.reddit.com/r/godot/comments/f07564/kotlin_gdnative/?utm_source=share&amp;utm_medium=web2x
----
-
-## [8][How to create simple Instagram-like Android-app in Kotlin](https://www.reddit.com/r/Kotlin/comments/f7iqnh/how_to_create_simple_instagramlike_androidapp_in/)
-- url: https://www.education-ecosystem.com/asitaka/2w9nx-how-to-create-simple-instagram-like-android-app-in-kotlin/dDzy1-instagram-like-android-app-in-kotlin-with-rxkotlin/
----
-
-## [9][Testing my apps](https://www.reddit.com/r/Kotlin/comments/f7ak7c/testing_my_apps/)
-- url: https://www.reddit.com/r/Kotlin/comments/f7ak7c/testing_my_apps/
----
-Hi.Do i need a high end android phone to test my mobile apps?Or any minimum android version?
-## [10][Encrypted shared preferences](https://www.reddit.com/r/Kotlin/comments/f6xzub/encrypted_shared_preferences/)
-- url: https://www.rockandnull.com/encrypted-shared-preferences/
 ---
 

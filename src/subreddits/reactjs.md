@@ -108,73 +108,181 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Introducing Firefox and Edge Support in Cypress 4.0](https://www.reddit.com/r/reactjs/comments/f7l0u3/introducing_firefox_and_edge_support_in_cypress_40/)
-- url: https://cypress.io/blog/2020/02/06/introducing-firefox-and-edge-support-in-cypress-4-0/
+## [3][Getting started with the official Redux Template for create-react-app (Video)](https://www.reddit.com/r/reactjs/comments/f7ue0y/getting_started_with_the_official_redux_template/)
+- url: https://youtu.be/xbgwyhHmCyU
 ---
 
-## [4][New official stripe React lib - React Stripe.js](https://www.reddit.com/r/reactjs/comments/f7bqg8/new_official_stripe_react_lib_react_stripejs/)
-- url: https://github.com/stripe/react-stripe-js
+## [4][Offline tutorial / reactjs training during flight](https://www.reddit.com/r/reactjs/comments/f86lxw/offline_tutorial_reactjs_training_during_flight/)
+- url: https://www.reddit.com/r/reactjs/comments/f86lxw/offline_tutorial_reactjs_training_during_flight/
 ---
+Hi, I will be flying two long haul flights and would love to continue learning Reactjs while I'm offline and in air (in total ~22 hours). Do you have any recommendations for me to crank through during this flight?
 
-## [5][Typescript Tutorial](https://www.reddit.com/r/reactjs/comments/f7sfqa/typescript_tutorial/)
-- url: https://www.reddit.com/r/reactjs/comments/f7sfqa/typescript_tutorial/
+I was going through an Udemy course and just completed Reactjs basics. But I see that the project the tutorial will be working on next uses Firebase so I can't do that while I'm offline.
+## [5][Beginner requesting a code review and advice](https://www.reddit.com/r/reactjs/comments/f86l9f/beginner_requesting_a_code_review_and_advice/)
+- url: https://www.reddit.com/r/reactjs/comments/f86l9f/beginner_requesting_a_code_review_and_advice/
 ---
-Is there a specific typescript tutorial any of you would recommend that has a strong focus on using Typescript with React? My search so far resulted in mutliple options with all having a different approach as to how Typescript should be ideally used with React. Something beginner friendly would be amazing - similar to the Redux doc.
-## [6][Design a Q&amp;A app using React. I almost completed my react app but this point is done. Can somebody help me here please? After last question, display all the submitted answers. (I'm stuck on this point. )](https://www.reddit.com/r/reactjs/comments/f7sd83/design_a_qa_app_using_react_i_almost_completed_my/)
-- url: https://www.reddit.com/r/reactjs/comments/f7sd83/design_a_qa_app_using_react_i_almost_completed_my/
+I am trying to build my first React app which is your standard weather app that gets data from OpenWeatherMap API. I have not styled the application at all because I wanted to make sure that I have the functionality down first. I want to be sure that I understand the basics of React and fix all the issues before they become more ingrained in my head and make me struggle with more advanced React concepts. Please highlight everything you see wrong with my code even if it is something minor. To get directed to the Github repo please [CLICK HERE](https://github.com/rimeikis/weatherapp-reactjs) .
+
+The thing I struggle the most is the component hierarchy and one way data flow. I want to know if I have used variable and function props accordingly. Also, I am unsure about my component for fetching API data also being responsible for rendering the other 2 components.
+
+Finally, I have a problem with conditional rendering. My data object contains an image id which is used in an &lt;img&gt; tag. If the data is not loaded then it is hidden apart from the image. Instead, it shows a broken image with the "alt" text next to it. I want to make it so if the data object has not been loaded then there should not be even an alt tag with the broken image icon on the screen. This is what logic I use for my conditional rendering:`{ error ? "There has been an error!" : ( loading ? "Loading data..." : data ) }`
+
+Thanks!
+
+
+Edit: just wanted to again thank everyone who took some of their precious time to help a random person on reddit by reviewing some code. I appreciate all of your comments!
+## [6][Is React one of the best tech stack to develop both web and mobile applications ? or you feel that C# and Java can compete in the Frontend space ?](https://www.reddit.com/r/reactjs/comments/f89fcr/is_react_one_of_the_best_tech_stack_to_develop/)
+- url: https://www.reddit.com/r/reactjs/comments/f89fcr/is_react_one_of_the_best_tech_stack_to_develop/
+---
+**1)** Is React one of the best tech stack to develop both web and mobile applications ? or you feel that C# and Java can compete in the Frontend space ?
+
+**2)** Why so many Java and C# programer dislike JS ? Is it because they prefer OO programming and their old concept from the 80's over functionnal programming with JS or the modern stuffs ? They talk about Blazor, Web Assembly and Java servlet with the first 2 doesn't seem ready for production ?
+## [7][Unhandled Rejection (TypeError): Cannot read property 'setState' of undefined](https://www.reddit.com/r/reactjs/comments/f896hb/unhandled_rejection_typeerror_cannot_read/)
+- url: https://www.reddit.com/r/reactjs/comments/f896hb/unhandled_rejection_typeerror_cannot_read/
+---
+Hey, I have the following code. It works for most of the part when I try to setState in axios it gives me this error. WHY?
+
+      constructor(props) {
+            super(props);
+            this.state = {
+                loading: false,
+                otpSent: false
+    
+            }
+        }
+     -----------------------
+      axios({
+                        url: 'http://localhost:8080/okcustomer/api/user/signup',
+                        method: 'post',
+                        data: values
+                    })
+                        .then(function (response) {
+                            console.log(response);
+                            message.success('Success');
+                            this.setState({
+                                otpSent: true
+                            })
+                        })
+                        .catch(function (error) {
+                            if (error.response !== undefined) {
+                                let fail = error.response.data.message;
+                                console.log(fail)
+                                message.error(fail)
+                                this.setState({
+                                    otpSent: true
+                                })
+    
+                            }
+                            else {
+                                message.error("Something went wrong")
+                            }
+    
+    
+                        });
+    
+
+Error message - 
+
+    Unhandled Rejection (TypeError): Cannot read property 'setState' of undefined 
+    let fail = error.response.data.message;
+      55 | console.log(fail)
+      56 | message.error(fail)
+    &gt; 57 | this.setState({
+         | ^  58 |     otpSent: true
+      59 | })
+## [8][How can we store only unique data/value in the empty array? I defined one empty array in the state, and then I'm storing values in that empty array using setState method. But Can someone tell me how I can store only unique values. Right now duplicates are also coming in the array.](https://www.reddit.com/r/reactjs/comments/f894ci/how_can_we_store_only_unique_datavalue_in_the/)
+- url: https://www.reddit.com/r/reactjs/comments/f894ci/how_can_we_store_only_unique_datavalue_in_the/
+---
+ This is what I'm doing :
+
+checkAnswer = answer =&gt; {  
+ this.setState(prevState =&gt; {  
+ return {  
+ myAnswer: answer,  
+ disabled: false,  
+ choices: \[...prevState.choices, answer\]  
+      };  
+    });  
+  };
+
+  
+ Please tell me what should I do so that only unique values stored in the array.
+## [9][Animations for loading and redirecting to other links](https://www.reddit.com/r/reactjs/comments/f88c9f/animations_for_loading_and_redirecting_to_other/)
+- url: https://www.reddit.com/r/reactjs/comments/f88c9f/animations_for_loading_and_redirecting_to_other/
+---
+Hey I am building a webshop app in React and I have a couple of question on how to handle the loading of images and redirecting to other sites.. So right now when I click some &lt;Link /&gt; on my site, it takes me to the other site, but without any animation or anything, it just appears in front of you. The problem I think with that is that it looks kinda boring and uninteresting. Also, if I have a couple of &lt;img /&gt; tags on that site, you can see them loading in.. I am wondering how do you handle things like that? Do you put animations on loading new sites? Or do you put some sort of loading icon? How do I know when a &lt;img /&gt; tag is loaded and I can show the page to the user? Should I maybe put a loading tag instead of each img? Thanks for any help
+## [10][please help me resolve this "TypeError: Cannot read property 'map' of undefined "](https://www.reddit.com/r/reactjs/comments/f886oq/please_help_me_resolve_this_typeerror_cannot_read/)
+- url: https://www.reddit.com/r/reactjs/comments/f886oq/please_help_me_resolve_this_typeerror_cannot_read/
 ---
  
 
-Design a Q&amp;A app using React.
+*import* React *from* 'react';  
+*import* './Listitems.css';  
 
-● Set of minimum 3 questions with Next and Previous Button
 
-● Clicking on Next should take the user to the next question
-
-● User should not go to the next question without answering the current question
-
-● Clicking on Previous should take to previous question
-
-● After last question, display all the submitted answers. (I'm stuck on this point. Can somebody help me with this?)
-
-● The app should work on page refresh.
-## [7][Interviewing someone for JS (specifically react.js) role for small startup, but have limited JS/react experience. Tips?](https://www.reddit.com/r/reactjs/comments/f7n0bk/interviewing_someone_for_js_specifically_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/f7n0bk/interviewing_someone_for_js_specifically_reactjs/
+function ListItems(props){  
+ const items = props.items;  
+ const listItems = items.map(item =&gt;  
+   {  
+   
+ *return* &lt;div className="list" key="item.key"&gt;  
+        &lt;p&gt;{item.text}&lt;/p&gt;  
+ &lt;/div&gt;  
+   })  
+ *return*(  
+ &lt;div&gt;{listItems}&lt;/div&gt;  
+    )  
+  }  
+ *export* *default* ListItems;
+## [11][[code review] - I created a small todoist clone to learn react. please critique my code if you can](https://www.reddit.com/r/reactjs/comments/f8814d/code_review_i_created_a_small_todoist_clone_to/)
+- url: https://codesandbox.io/s/todo-app-rt1om
 ---
-My background is more data science/ML related, so I'm more comfortable with python and SQL. I was just wondering, for people who've either hired front-end developers or been hired, what are good coding challenge formats/exercises to test someone's coding ability? I've looked at a few websites that advertise "50 Best Javascript Interview Questions", but was wondering if there's more to them?
-## [8][ReactJS component for musical and MIDI applications](https://www.reddit.com/r/reactjs/comments/f7pcic/reactjs_component_for_musical_and_midi/)
-- url: https://www.npmjs.com/package/midi-sounds-react
+
+## [12][Is there any way to center the scrollbar position before rendering ?](https://www.reddit.com/r/reactjs/comments/f87tee/is_there_any_way_to_center_the_scrollbar_position/)
+- url: https://www.reddit.com/r/reactjs/comments/f87tee/is_there_any_way_to_center_the_scrollbar_position/
 ---
+Hello.
 
-## [9][Suggestions](https://www.reddit.com/r/reactjs/comments/f7r6xi/suggestions/)
-- url: https://www.reddit.com/r/reactjs/comments/f7r6xi/suggestions/
----
-Hello people ! so i am creating a website for my university "INSAT" which will be for **online administration** but i can't find a cool &amp; catchy name for it. It's my personal project, i can't call it "INSAT", so any suggestions please?
+&amp;#x200B;
 
-*Thank you in advance* :)
-## [10][Generating custom mocked data with a unique endpoint with testing and showcasing](https://www.reddit.com/r/reactjs/comments/f7r2d5/generating_custom_mocked_data_with_a_unique/)
-- url: https://www.reddit.com/r/reactjs/comments/f7r2d5/generating_custom_mocked_data_with_a_unique/
----
-Hello,  as a frontend dev i've faced issues with data, i had to mock data  manually everytime, that why i made this little webapp that generate an  endpoint with your custom data in json format, you can try it at :
+'m trying to do a mobile display with a vertical list of articles. And I want each of these articles to be scrollable horizontally with an item on both sides of the article that will display if I scroll/swipe horizontally. For that I need the main articles to be centered.
 
-[fetchjson.com](https://fetchjson.com/)
+&amp;#x200B;
 
-I'm open for any suggestion, and i will work more on adding some features to it.
-## [11][Image not loading](https://www.reddit.com/r/reactjs/comments/f7qlcp/image_not_loading/)
-- url: https://www.reddit.com/r/reactjs/comments/f7qlcp/image_not_loading/
----
-I was making an electron app with react for fun, and it worked fine while I was building it as i was loading `localhost:1234` instead of an html file.
+How can u achieve that ? 
 
-But when I react files and then ran electron from the html file, the images wouldn't load properly.
+&amp;#x200B;
 
-How would I fix this?
+Would look like this:
 
-[This is the github link](https://github.com/Lutetium-Vanadium/Music)
-## [12][How to render google maps "navigation beam"](https://www.reddit.com/r/reactjs/comments/f7qgio/how_to_render_google_maps_navigation_beam/)
-- url: https://www.reddit.com/r/reactjs/comments/f7qgio/how_to_render_google_maps_navigation_beam/
----
-Hello, I'm working on a project with a map component where you can track objects moving around a map. I want each object to display  a directional component like the blue dot on the google maps app, to show which direction it is heading. Something like this: [https://gyazo.com/bc3a590e0f508fd800deec44c8c190a0](https://gyazo.com/bc3a590e0f508fd800deec44c8c190a0) 
+&amp;#x200B;
 
-Is there a proper name for this effect? I feel like it's surely already implemented out there, but I can't seem to find anything on it.
+    &lt;ul&gt;
+        &lt;li&gt;
+           &lt;LeftItem /&gt;
+           &lt;CenteredItem /&gt;
+           &lt;RightItem /&gt;
+        &lt;li/&gt;
+    
+        &lt;li&gt;
+           &lt;LeftItem /&gt;
+           &lt;CenteredItem /&gt;
+           &lt;RightItem /&gt;
+        &lt;li/&gt;
+    
+        &lt;li&gt;
+           &lt;LeftItem /&gt;
+           &lt;CenteredItem /&gt;
+           &lt;RightItem /&gt;
+        &lt;li/&gt;
+    &lt;/ul&gt;
 
-Thanks!
+LeftItem and RightItem are supposed to be hidden on page launch. Then swipe CenteredItem to right or left to display the according Item.
+
+&amp;#x200B;
+
+I hope I managed to explain what I'm trying to do.
+
+&amp;#x200B;
+
+Thanks

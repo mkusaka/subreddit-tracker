@@ -27,163 +27,131 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][How can I use &amp; instead of try! in this case?](https://www.reddit.com/r/rails/comments/f7ngfi/how_can_i_use_instead_of_try_in_this_case/)
+## [3][Exchanging sensitive data between two Rails apps](https://www.reddit.com/r/rails/comments/f8897p/exchanging_sensitive_data_between_two_rails_apps/)
+- url: https://www.reddit.com/r/rails/comments/f8897p/exchanging_sensitive_data_between_two_rails_apps/
+---
+I have two Rails apps and they both use SSL/HTTPS. They have a REST api to exchange data between each other. I assume this data is encrypted because both apps are SSL/HTTPS? And if so, is this secure enough to exchange sensitive data like passwords?
+## [4][Markdown redcarpet and mentions(link)](https://www.reddit.com/r/rails/comments/f88tu4/markdown_redcarpet_and_mentionslink/)
+- url: https://www.reddit.com/r/rails/comments/f88tu4/markdown_redcarpet_and_mentionslink/
+---
+Following this tip [https://stackoverflow.com/questions/12381230/how-to-extend-redcarpet-to-support-auto-linking-user-mentions](https://stackoverflow.com/questions/12381230/how-to-extend-redcarpet-to-support-auto-linking-user-mentions)
+
+... I edited my MarkdownRenderer in this way:
+
+&amp;#x200B;
+
+    class MarkdownRenderer &lt; Redcarpet::Render::HTML
+    
+      def preprocess(text)
+        wrap_mentions(text)
+      end
+    
+      def wrap_mentions(text)
+        text.gsub! /(^|\s)(@\w+)/ do
+          "#{$1}&lt;a href='/user/#{$2}'&gt;#{$2}&lt;/a&gt;"
+        end
+        text
+      end
+
+But then if I write u/marcus, it show me &lt;a href='/user/marcus'&gt;marcus&lt;/a&gt; **as a text and now as a link.** It blocks the html. How to solve?
+## [5][Is the code for the GitHub web app on Github?](https://www.reddit.com/r/rails/comments/f88rba/is_the_code_for_the_github_web_app_on_github/)
+- url: https://www.reddit.com/r/rails/comments/f88rba/is_the_code_for_the_github_web_app_on_github/
+---
+Hello, This might be a noob question but I"m wondering if the code for GitHub web application rails app is hosted on GitHub as an open-source project?
+
+I'm asking this because I"m interested in how their roles and scopes are stored in the database and how it is being validated for each user. I want to draw inspiration from their implementation as I'm working on a rails app myself.
+## [6][Help getting set up - can't find gem railties error](https://www.reddit.com/r/rails/comments/f82shv/help_getting_set_up_cant_find_gem_railties_error/)
+- url: https://www.reddit.com/r/rails/comments/f82shv/help_getting_set_up_cant_find_gem_railties_error/
+---
+I've been trying to get rails set up and I keep running into problem - all of which I'm sure are just user error. I'm using Windows 10 and Ruby 2.7.
+
+When I run rails -v, I get an error saying it can't find gem railties.
+
+&gt;C:/Ruby27-x64/lib/ruby/2.7.0/rubygems.rb:275:in \`find\_spec\_for\_exe': can't find gem railties (&gt;= 0.a) with executable rails (Gem::GemNotFoundException)  
+&gt;  
+&gt;from C:/Ruby27x64/lib/ruby/2.7.0/rubygems.rb:252:in \`bin\_path  
+&gt;  
+&gt;from C:/RailsInstaller/Ruby2.3.3/bin/rails:22:in \`&lt;main&gt;'
+
+Is it trying to get the wrong version of Ruby? I'm really stuck and would love some help! I ran into similar problem earlier but what I tried didn't help, I attempted to delete everything and start over, and here I am. 
+
+I'd be happy to provide in additional files that could help!
+## [7][Rails 6 Webpacker assets not compiling in production.](https://www.reddit.com/r/rails/comments/f80ffl/rails_6_webpacker_assets_not_compiling_in/)
+- url: https://www.reddit.com/r/rails/comments/f80ffl/rails_6_webpacker_assets_not_compiling_in/
+---
+I have a website live in production that was working 10 minutes ago. Then I tried deploying a tiny little update (it was only in an erb file) and now the website is running without css or javascript.
+
+Usually this would happen on every deployment. However, I would work around this by ssh-ing into my server and running `bin/webpack` and that would compile all the assets and everything would look great again. However, this time, it took forever to compile and I got this message:
+
+&amp;#x200B;
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+
+This can impact web performance.
+
+&amp;#x200B;
+
+What's weird is that I never changed any javasript or css when I made the update. All i changed was html.
+
+This website is hosted on a digital ocean droplet. I have multiple sites on this one droplet. And, i've noticed that i've started getting this same problem for the other sites as well. However, the website i'm working on right now is super important and I need to get it working again soon.
+
+I appreciate any help
+
+&amp;#x200B;
+
+I'm temporarily compiling the packs manually and deploying that. It's working now, but it's a horrible work around. 
+## [8][How to step up?](https://www.reddit.com/r/rails/comments/f80e2j/how_to_step_up/)
+- url: https://www.reddit.com/r/rails/comments/f80e2j/how_to_step_up/
+---
+Hello,  
+i have been working with ROR since the start of my career but i have no idea now how can i step up.  
+I work with ROR in my daily job  60 % and 40 % is for front end stuff like vue.  
+How can i step up my level?  
+Thanks.
+## [9][[Help] Performance/Improvements on model](https://www.reddit.com/r/rails/comments/f7xe78/help_performanceimprovements_on_model/)
+- url: https://www.reddit.com/r/rails/comments/f7xe78/help_performanceimprovements_on_model/
+---
+I have a model, model\_A, and it has a *belongs\_to* association with another model - model\_B. Model\_B represents the possibles types of model\_A (e.g cars &amp; brands). Because model\_B is not suppose to change, I was think if is worth to reduce database costs of searching and joining Model\_B and Model\_A. I was thinking in something like that:
+
+    # model_A
+    
+    belongs_to :model_b
+    
+    before/after_save :update_model_b_name
+    
+    def update_model_b_name
+      if model_b.present? &amp;&amp; model_b_changed?
+        self.model_b_name = self.model_b.name
+      end 
+    end
+    
+    validates :model_b_id, presence: true
+    validates :model_b_name, presence: true # may create conflict here with new entity
+
+I'm considering that because usually my problem query a list of model\_A, then I have the cost of join with model\_B. Using this way may lost a little of consistence between the models - e.g let say model\_B is updated, but the update won't reflects direct on model\_A -, but that wouldn't be a problem. Also, as I already said, model\_B shouldn't be edit frequently (almost never), just added new values.
+
+What do you guys think about it? Do you guys think it's worthy to do something like that in therms of database cost? Is it a common practice?
+
+\#Another Solution
+
+Another possibility for this problem would be create an array attribute on model\_A to holds model\_B's data, hence excluding model\_B. I never did that, so a need some opinion too. Right now, I have model\_B just for the convince of editing &amp; creating new data, instead of consistence or searching purposes.
+
+&amp;#x200B;
+## [10][Approach to authorisation when using GraphQL relay node interface](https://www.reddit.com/r/rails/comments/f7vdrr/approach_to_authorisation_when_using_graphql/)
+- url: https://www.reddit.com/r/rails/comments/f7vdrr/approach_to_authorisation_when_using_graphql/
+---
+As the title says, I’m wondering what’s the best approach to authenticated GraphQL queries on the “node” field, making sure one user or a malicious client can’t access the nodes that belong to a user.
+
+I was thinking of creating the node field resolved myself and calling Pundit.authorize depending on the class type of the node, in like some massive switch statement.
+
+I feel like there’s a better, cleaner more idiomatic approach but I can’t think of one so if you have one to share thag would be great
+## [11][Trix Editor Extension](https://www.reddit.com/r/rails/comments/f7t1xc/trix_editor_extension/)
+- url: https://www.reddit.com/r/rails/comments/f7t1xc/trix_editor_extension/
+---
+I’m wanting to add a checkbox-style input to the Trix editor / action text. Anyone have any ideas on how to implement this?
+## [12][How can I use &amp; instead of try! in this case?](https://www.reddit.com/r/rails/comments/f7ngfi/how_can_i_use_instead_of_try_in_this_case/)
 - url: https://www.reddit.com/r/rails/comments/f7ngfi/how_can_i_use_instead_of_try_in_this_case/
 ---
 In a the view I show the first 120 letters of the description of some posts, but I have to safe navigate these since `post.description` can be `nil`, for now I'm using `post.description.try!(:[], 0..120)`.
 
 Is there a way to do the same with `&amp;` syntax?
-## [4][SQL queries in rails application](https://www.reddit.com/r/rails/comments/f7jg3l/sql_queries_in_rails_application/)
-- url: https://www.reddit.com/r/rails/comments/f7jg3l/sql_queries_in_rails_application/
----
-Hello!
-
-New to this subreddit.
-
-I just have a quick question when writing sql queries in a rails application.
-
-Where and how do we write the queries? Where should the queries go? In the Models or Controllers?
-
-\--EDIT--
-
-So in an interview setting, with rails and SQL. How do you think they will make me write sql queries in rails?
-
-I know a little bit of sql but I don't know how I will be tested when creating a rails application and using sql.
-
-I appreciate all the help!
-
-Thank you so much!
-## [5][I created a step-by-step tutorial demonstrating how to integrate React with Ruby on Rails](https://www.reddit.com/r/rails/comments/f7a0v8/i_created_a_stepbystep_tutorial_demonstrating_how/)
-- url: https://www.reddit.com/r/rails/comments/f7a0v8/i_created_a_stepbystep_tutorial_demonstrating_how/
----
-- [Live Demo](https://rails-react-example.herokuapp.com/)
-- [Tutorial](https://stevepolito.design/blog/rails-react-tutorial/)
-
-I really wanted to learn React and API development, so I went head first into building a simple application, and documented my experience. I think what sets this apart from other Rails and React tutorials is that I cover...
-
-- API authorization
-- API versioning
-- Setting HTTP status codes
-- Form validation on the front-end
-- Handling errors
-- Debouncing requests
-- CSRF Countermeasures
-## [6][Help with Active Record query](https://www.reddit.com/r/rails/comments/f7khml/help_with_active_record_query/)
-- url: https://www.reddit.com/r/rails/comments/f7khml/help_with_active_record_query/
----
-I'm working on an application and struggling with creating an Active Record query.
-
-I'm working on a reservation system that allows the owner to blackout certain dates on certain properties. So, to generate availability across all properties for a specific date, I need to first see if there are any  property\_blackout\_dates on that date.
-
-    class PropertyBlackoutDate &lt; ApplicationRecord
-      belongs_to :property
-    end 
-    
-    class Property &lt; ApplicationRecord
-      has_many :property_blackout_dates
-    end 
-
-Since I want all the Properties without a property\_blackout\_date for a specific date, I tried doing this:
-
-    date = "2020-02-22"
-    Property.includes(:property_blackout_dates).where.not(property_blackout_dates: {date: date}).references(:property_blackout_dates)
-
-It just returns an empty association, but
-
-    date = "2020-02-22"
-    PropertyBlackoutDate.where(date: date)
-
-does return an object, so I don't think it's an issue with the date parameter being wrong.
-
-What am I doing wrong?
-## [7][How do I validate foreign keys?](https://www.reddit.com/r/rails/comments/f7jr23/how_do_i_validate_foreign_keys/)
-- url: https://www.reddit.com/r/rails/comments/f7jr23/how_do_i_validate_foreign_keys/
----
-Let's say I have three models:
-
-class Brand  &lt; ***ApplicationRecord***
-
-has\_many :cars
-
-has\_many :dealer\_brands
-
-has\_many :dealers,  through: :dealer\_brands
-
-end
-
-class Dealer &lt; ***ApplicationRecord***
-
-has\_many :cars
-
-has\_many : dealer\_brands # Bridge table that states all the brands that the dealer carries.
-
-has\_many :brands,  through: :dealer\_brands
-
-end
-
-class Car  &lt; ***ApplicationRecord***
-
-belongs\_to :dealer
-
-belongs\_to :brand
-
-end
-
-When I create a car, how do I validate and make sure that the dealer carries a particular brand before saving the car entry? Do I just use a validation in the car model to make sure that the dealer carries the brand before saving the record into the database or is there a better way?
-## [8][Different assets for different route namespaces](https://www.reddit.com/r/rails/comments/f7lcj2/different_assets_for_different_route_namespaces/)
-- url: https://www.reddit.com/r/rails/comments/f7lcj2/different_assets_for_different_route_namespaces/
----
-Hello, I wanted to ask how r/rails would implement this. 
-
-I have a rails app that has 2 distinct sections. A frontend/customer facing side &amp; a backend/vendor side. I have 2 bootstrap themes that I like. However, they obviously have css name conflicts on card or some other basic names. 
-
-My idea is to do a before_action in the application controller. If the controller namespace is admin, set '@namespace' to 'admin', else, 'frontend'. Then in the application.html do `javascript_pack_tag @namespace`. 
-
-Another idea is to make the vendor area a separate rails application connected to the main DB but I would like to keep everything in the same repo.
-
-Tbh, I'm not really feeling this idea. Is there a better way to implement this?
-## [9][Why I don't use React with Rails](https://www.reddit.com/r/rails/comments/f7rzxg/why_i_dont_use_react_with_rails/)
-- url: https://www.reddit.com/r/rails/comments/f7rzxg/why_i_dont_use_react_with_rails/
----
-I'd like to share the top reasons why I don't use React:
-
-* React is meant for large teams as it was built for Facebook which is a large company.
-* React forces you to build and run \*two\* applications just for the browser: micro-service for the back-end, and a \*separate\* UI front-end.
-* Designers pay a complexity tax when working with JSX.
-* Developers pay a complexity tax when working with JSX.
-* You can't use the keyword "class" in your HTML.
-
-To me, React literally defeats the largest principle in Rails which is being one \*monolith\* application.
-
-I'd like to have a high-quality discussion about this important topic. So please share your thoughts if you don't agree.
-
-Down-voting without commenting on \*why\* you don't agree is a disservice for the community.  JavaScript is a huge part of our Rails applications, and the way we choose to go about it is fundamental.
-## [10][Converted Date object to integer for purposes of a graph, struggling to get that integer back to the original date](https://www.reddit.com/r/rails/comments/f7hvzs/converted_date_object_to_integer_for_purposes_of/)
-- url: https://www.reddit.com/r/rails/comments/f7hvzs/converted_date_object_to_integer_for_purposes_of/
----
-So I'm working with highcharts, and for storage of plot point data, I converted a Date object to an integer to get it to display properly in highcharts.  But in the `tooltip` `pointFormat`, I am trying to interpolate a data xaxis data point, `point.x` for example into that popup when you hover over the datapoint(which I guess is what `pointFormat` and `tooltip` are for).  It needs to be a string it appears, so for that purpose, I need to get back _from_ the integer date stored in the data points data, to the original date object, or perhaps as a string date.
-
-**TLDR**
-
-I have a date object, such as `Mon, 31 Dec 2018`, and I converted it to an integer for the highchart datapoint plot, via
-
-    my_date_object.strftime('%Q')
-
-which leads to `"1545214400000"`.
-
-When I try to go back to a date object (or perhaps I need a string, I just need to plain interpolate into a string) with month, day, year, I found and tried this, but I get some whacky year when trying to convert back(and I don't want the time appended at the end either to boot):
-
-    Time.at(1545214400000).to_formatted_s(:long)
-    =&gt; "August 01, 50967 19:00"
-
-The above is way different than my original `Mon, 31 Dec 2018` date object, that went through conversion to an integer originally.
-
-Any help appreciated, thanks!
-## [11][Would it be Ethical to ask people to pitch in?](https://www.reddit.com/r/rails/comments/f7fzbr/would_it_be_ethical_to_ask_people_to_pitch_in/)
-- url: https://www.reddit.com/r/rails/comments/f7fzbr/would_it_be_ethical_to_ask_people_to_pitch_in/
----
-I am developing this pet project of mine, which I would think be useful to many. I already envision it to be free for all, but you got to pay small monthly sub (a couple of euros) if you want to see your "Reports", an advanced feature. Would it be Ethical for me to put it out on Kickstarter and ask people for donations towards the final product? I am unemployed now, just working on some stuff to make companies hire me :) But I still want to eat meanwhile.
-## [12][Feature flag gems](https://www.reddit.com/r/rails/comments/f7f1w6/feature_flag_gems/)
-- url: https://www.reddit.com/r/rails/comments/f7f1w6/feature_flag_gems/
----
-We're thinking about implementing feature flags for control of UI gated features.  There looks like a handful of them out there (Flipper, Flipflop, rollout etc).  Anyone used these before?  Which gems are good?  What are any of the gotchas you've encountered?

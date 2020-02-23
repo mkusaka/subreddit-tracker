@@ -5,50 +5,43 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][Streams for Reactive Programming](https://www.reddit.com/r/javascript/comments/f7mi3t/streams_for_reactive_programming/)
-- url: https://dassur.ma/things/streams-for-reactive-programming/
+## [2][Top Free Programming Books for Front-End Developers](https://www.reddit.com/r/javascript/comments/f807cu/top_free_programming_books_for_frontend_developers/)
+- url: https://booksoncode.com/articles/free-programming-books-for-front-end-developers
 ---
 
-## [3][OkCupid Presents "Glow-Up: Bringing a Teenaged Website into the Modern World of SPA"](https://www.reddit.com/r/javascript/comments/f7bj30/okcupid_presents_glowup_bringing_a_teenaged/)
-- url: https://tech.okcupid.com/glow-up-bringing-a-teenaged-website-into-the-modern-world-of-spa/
+## [3][JavaScript Performance Benchmarks: Looping with `for` and `yield`](https://www.reddit.com/r/javascript/comments/f88kjt/javascript_performance_benchmarks_looping_with/)
+- url: https://gist.github.com/loveencounterflow/ef69e7201f093c6a437d2feb0581be3d
 ---
 
-## [4][TypeScript 3.8 finally fixes private fields](https://www.reddit.com/r/javascript/comments/f7nmds/typescript_38_finally_fixes_private_fields/)
-- url: https://medium.com/young-coder/private-fields-in-typescript-3-8-true-privacy-at-last-fb4f194305d9?source=friends_link&amp;sk=173cc0270960737577f1caa3c5d26b2d
+## [4][Easily mocked Rest API with your custom model without setting up any server](https://www.reddit.com/r/javascript/comments/f88aa9/easily_mocked_rest_api_with_your_custom_model/)
+- url: https://fetchjson.com
 ---
 
-## [5][JavaScript Interview Questions: Common Gotchas](https://www.reddit.com/r/javascript/comments/f7sa7x/javascript_interview_questions_common_gotchas/)
+## [5][I made a website using Reactjs and Particlejs for my microprocessor lab at my university, I am completely new to web development, so would like to hear constructive criticisms about my site or any suggestions on how i could make it better](https://www.reddit.com/r/javascript/comments/f88y8n/i_made_a_website_using_reactjs_and_particlejs_for/)
+- url: https://thesyncoder.github.io/micro
+---
+
+## [6][JavaScript Interview Questions: Common Gotchas](https://www.reddit.com/r/javascript/comments/f7sa7x/javascript_interview_questions_common_gotchas/)
 - url: https://alligator.io/js/gotchas/
 ---
 
-## [6][How to communicate with Service Workers - MessageChannel, Broadcast API and Client API compared](https://www.reddit.com/r/javascript/comments/f7qxfs/how_to_communicate_with_service_workers/)
-- url: https://felixgerschau.com/2020/02/22/communicate-with-service-workers.html
+## [7][A 10 year old stop-motion animation artist teamed up with me to create a mini-game to practice single digit multiplication or addition. We would love to hear your feedback!](https://www.reddit.com/r/javascript/comments/f7sri2/a_10_year_old_stopmotion_animation_artist_teamed/)
+- url: https://slicker.me/game.htm
 ---
 
-## [7][A naive approach to functional programming using TypeScript](https://www.reddit.com/r/javascript/comments/f7pr7x/a_naive_approach_to_functional_programming_using/)
-- url: https://github.com/alohawav/naive_functional_programming
+## [8][Introducing GitFaker. Create custom contribution history messages](https://www.reddit.com/r/javascript/comments/f8310i/introducing_gitfaker_create_custom_contribution/)
+- url: https://github.com/ericellb/gitfaker
 ---
 
-## [8][[AskJS] Image not loading](https://www.reddit.com/r/javascript/comments/f7qu98/askjs_image_not_loading/)
-- url: https://www.reddit.com/r/javascript/comments/f7qu98/askjs_image_not_loading/
----
-I was making an electron app with react for fun, and it worked fine while I was building it as i was loading `localhost:1234`  
- instead of an html file.
-
-But when I react files and then ran electron from the html file, the images wouldn't load properly.
-
-How would I fix this?
-
-[This is the github link](https://github.com/Lutetium-Vanadium/Music)
-## [9][What's coming in ESLint v7.0.0](https://www.reddit.com/r/javascript/comments/f7dvn2/whats_coming_in_eslint_v700/)
-- url: https://eslint.org/blog/2020/02/whats-coming-in-eslint-7.0.0
+## [9][Build Javascript Web App and deploy to cloud](https://www.reddit.com/r/javascript/comments/f85j2d/build_javascript_web_app_and_deploy_to_cloud/)
+- url: https://rupeshtiwari.com/build-javascript-web-application-from-scratch/
 ---
 
-## [10][Let's talk about JSON.stringify()](https://www.reddit.com/r/javascript/comments/f7qy05/lets_talk_about_jsonstringify/)
-- url: https://www.pixelstech.net/article/1582362508-Let-s-talk-about-JSON-stringify()
+## [10][WebGL demo inspired by Valve's Ricochet (powered by ROYGBIV engine)](https://www.reddit.com/r/javascript/comments/f817ka/webgl_demo_inspired_by_valves_ricochet_powered_by/)
+- url: https://oguzeroglu.github.io/ROYGBIV/demo/jumpPads/application.html
 ---
 
-## [11][React is the shit… (a funny poem I wrote)](https://www.reddit.com/r/javascript/comments/f7p3aj/react_is_the_shit_a_funny_poem_i_wrote/)
-- url: https://medium.com/@arbershabani97/react-is-the-shit-180585965503?source=friends_link&amp;sk=047ce821ed15a30979ccd499bf6a1670
+## [11][Streams for Reactive Programming](https://www.reddit.com/r/javascript/comments/f7mi3t/streams_for_reactive_programming/)
+- url: https://dassur.ma/things/streams-for-reactive-programming/
 ---
 

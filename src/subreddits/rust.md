@@ -33,147 +33,123 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/02/18/this-week-in-rust-326/
 ---
 
-## [3][Discord is not an acceptable choice for Rust](https://www.reddit.com/r/rust/comments/f7qjpb/discord_is_not_an_acceptable_choice_for_rust/)
+## [3][Rust/WinRT coming soon](https://www.reddit.com/r/rust/comments/f85cp7/rustwinrt_coming_soon/)
+- url: https://kennykerr.ca/2020/02/22/rust-winrt-coming-soon/
+---
+
+## [4][Programming Language Warts](https://www.reddit.com/r/rust/comments/f7vimo/programming_language_warts/)
+- url: https://www.reddit.com/r/rust/comments/f7vimo/programming_language_warts/
+---
+What are some rust warts ("A small, crocky feature that sticks out of an otherwise clean design.") that you've encountered (Either because they annoyed you in a practical setting or just realized they were there)?
+
+&amp;#x200B;
+
+Bonus points for not well known things. What I have in mind is mostly things that are already in stable rust, that either cannot be fixed without a new edition because of compatibility issues, or that are so core so what makes rust rust that they won't ever be "fixed".
+
+&amp;#x200B;
+
+I'll start with these two:
+
+Arrays do not implement IntoIterator ([https://github.com/rust-lang/rust/issues/25725](https://github.com/rust-lang/rust/issues/25725)). And, currently, calling into\_iter on an array will actually call it on a slice of the array, which gives you references (And can be confusing, specially for beginners).
+
+&amp;#x200B;
+
+There is no good way to sort a &amp;mut VecDeque&lt;T&gt; in std ([https://github.com/rust-lang/rust/issues/27322](https://github.com/rust-lang/rust/issues/27322)). Because std sort operates on slices (Which must be contiguous and from the indices must be in order), you cannot use it to sort some things that are sortable and provide good random access. You can currently collect into a Vec, sort that, and then turn that into a VecDeque (But that is less than optimal), or you can move the VecDeque using From to make a Vec, sort it, and go back to VecDeque, which according to docs will not reallocate, but it involves some additional initial moving of data and also requires ownership of the VecDeque (So it cannot be used on &amp;mut VecDeque&lt;T&gt;)
+## [5][Why isn't there a compilation cache in ~/.cache?](https://www.reddit.com/r/rust/comments/f8289h/why_isnt_there_a_compilation_cache_in_cache/)
+- url: https://www.reddit.com/r/rust/comments/f8289h/why_isnt_there_a_compilation_cache_in_cache/
+---
+I've been getting into Rust, and the big thing that stands out to me is that `cargo` likes to build all my dependencies, and all their dependencies, and so on from source. Even though I have an Intel i7-7500U, this takes a significant amount of time.
+
+Even worse, it doesn't cache the final binaries between projects. So if I build 2 different projects that have similar dependencies, it actually rebuilds all their dependencies from source twice, which _really_ hurts in compilation times.
+
+Why doesn't Rust cache final compiled binaries in `~/.cache/rustc` or something? It would also be quite trivial I would guess to implement a least-recently-used (LRU) cache or something to keep the cache directory under a certain size too.
+
+Rust is great, but compilation times hurt badly (I assume that every effort is being made to optimise the Rust compiler's speed).
+## [6][Dynamic symbol resolution (Making our own executable packer: Part 7)](https://www.reddit.com/r/rust/comments/f88wl2/dynamic_symbol_resolution_making_our_own/)
+- url: https://fasterthanli.me/blog/2020/dynamic-symbol-resolution/
+---
+
+## [7][Have you tried to introduce Rust in the workplace? How was your experience?](https://www.reddit.com/r/rust/comments/f83dhr/have_you_tried_to_introduce_rust_in_the_workplace/)
+- url: https://www.reddit.com/r/rust/comments/f83dhr/have_you_tried_to_introduce_rust_in_the_workplace/
+---
+&amp;#x200B;
+
+   For the record, I don't plan to introduce Rust to my workplace.  As I can honestly say I'm not good with Rust (though I hope to greatly improve on that).  However in my journey learning Rust, it reminds me a lot of my journey when I was trying to learn Go around 6 years ago.  And I remember around 4 years ago introducing it my job at the time instead of bootstapping another Java or Python app which is all we did at the time.   Rust isn't a big industry language right now, but that could change in a few years.    I remember there were hardly any Go jobs 4 years ago.  
+
+So I present the following question
+
+Have you been successful in introducing Rust to your workplace?  
+
+If so, any resistance? (PMs, Manager, other co-workers, devs entranced in other languages/technologies)
+
+&amp;#x200B;
+
+If you were able to migrate a project, or bootstrap a new project in Rust, were the results satisfactory?  Did you see benefits in the move?
+
+&amp;#x200B;
+
+If you've thought about introducing Rust to your job, what is the primary driver?  What languages or platforms are most used in your current work/project?
+## [8][Discord is not an acceptable choice for Rust](https://www.reddit.com/r/rust/comments/f7qjpb/discord_is_not_an_acceptable_choice_for_rust/)
 - url: https://sneak.berlin/20200220/discord-is-not-an-acceptable-choice-for-free-software-projects/
 ---
 
-## [4][When you learned Rust, what was your “aha!” moment?](https://www.reddit.com/r/rust/comments/f7l84m/when_you_learned_rust_what_was_your_aha_moment/)
-- url: https://www.reddit.com/r/rust/comments/f7l84m/when_you_learned_rust_what_was_your_aha_moment/
+## [9][Giron: A javascript parser that outputs estree](https://www.reddit.com/r/rust/comments/f830am/giron_a_javascript_parser_that_outputs_estree/)
+- url: https://www.reddit.com/r/rust/comments/f830am/giron_a_javascript_parser_that_outputs_estree/
 ---
-Interested to know. Rust has a lot of concepts that are not found in other popular languages, or are unique to Rust. I’m wondering what your aha moment was, what did you learn / realise?
+[https://github.com/BlueBlazin/giron](https://github.com/BlueBlazin/giron)
 
-One of mine was that the value of a variable is moved on assignment to another variable, aka ownership. I had read about it, I kind of understood it. But then I had a moment where I’m like “I get this”. The implication was profound and I saw that this feature is one reason that makes Rust a safe to program in.
-## [5][Rust "The Book"-style syntax highlighting for LaTeX](https://www.reddit.com/r/rust/comments/f7ocdx/rust_the_bookstyle_syntax_highlighting_for_latex/)
-- url: https://www.reddit.com/r/rust/comments/f7ocdx/rust_the_bookstyle_syntax_highlighting_for_latex/
+**TL;DR: My first open source project. Lots to improve, hoping for contributions!**
+
+Hi fellow rustaceans,
+
+Giron is an ECMAScript (javascript) parser that outputs JSON in the [ESTree](https://github.com/estree/estree/) format. This is the most popular AST spec for open source JS parsers.
+
+After reading the book I wanted to build something non trivial in rust. So I settled on an ECMAScript parser since I knew Rust compiled very well to WebAssembly.
+
+Anyways, several months later I finally have something that can be put on a public github repo. Currently there is still a lot to be done. So contributions are very welcome!
+
+I should mention that this is my first time working on any open source project. Go easy on me please, lol.
+
+I still have to do lots of testing for correctness, and becoming compliant with the ES2020 spec. Once that is done, we can focus on adding JSX support and optimizations. The wasm module works but I also need to publish it on npm.
+
+Any feedback is welcome. Thank you!
+## [10][Code review request: ruut](https://www.reddit.com/r/rust/comments/f84q5e/code_review_request_ruut/)
+- url: https://www.reddit.com/r/rust/comments/f84q5e/code_review_request_ruut/
 ---
-I was writing some rust documentation in LaTeX and discovered this [previous post](https://www.reddit.com/r/rust/comments/5259oo/rust_syntax_highlighting_for_latex/), but didn't like the requirement to use `-shell-escape` to use the minted package to format rust code blocks.
+Hi!
 
-Instead, I wrote a new language definition (see code below) which formats the code in a similar style to the rust book and wanted to share it here.  Here is what it looks like:
+I recently made my first (non-tutorial led) program in Rust and was wondering if I could
+get some feedback?
 
-https://preview.redd.it/dctmps0hxei41.png?width=1400&amp;format=png&amp;auto=webp&amp;s=c19e0b23b968ed48abebef5832923443d24b4e3b
+It’s a CLI utility to easily print `tree(1)`-like diagrams for tree-like structures that are easy to type or easily extracted from elsewhere.
 
-Add this to your .tex file:
+I think the README might do a better job of explaining...
 
-    \usepackage{listings}
-    \definecolor{GrayCodeBlock}{RGB}{241,241,241}
-    \definecolor{BlackText}{RGB}{110,107,94}
-    \definecolor{RedTypename}{RGB}{182,86,17}
-    \definecolor{GreenString}{RGB}{96,172,57}
-    \definecolor{PurpleKeyword}{RGB}{184,84,212}
-    \definecolor{GrayComment}{RGB}{170,170,170}
-    \definecolor{GoldDocumentation}{RGB}{180,165,45}
-    \lstdefinelanguage{rust}
-    {
-        columns=fullflexible,
-        keepspaces=true,
-        frame=single,
-        framesep=0pt,
-        framerule=0pt,
-        framexleftmargin=4pt,
-        framexrightmargin=4pt,
-        framextopmargin=5pt,
-        framexbottommargin=3pt,
-        xleftmargin=4pt,
-        xrightmargin=4pt,
-        backgroundcolor=\color{GrayCodeBlock},
-        basicstyle=\ttfamily\color{BlackText},
-        keywords={
-            true,false,
-            unsafe,async,await,move,
-            use,pub,crate,super,self,mod,
-            struct,enum,fn,const,static,let,mut,ref,type,impl,dyn,trait,where,as,
-            break,continue,if,else,while,for,loop,match,return,yield
-        },
-        keywordstyle=\color{PurpleKeyword},
-        ndkeywords={
-            bool,u8,u16,u32,u64,u128,i8,i16,i32,i64,i128,char,str,
-            Self,Option,Some,None,Result,Ok,Err,String,Box,Vec,Rc,Arc,Cell,RefCell,HashMap,BTreeMap,
-            macro_rules
-        },
-        ndkeywordstyle=\color{RedTypename},
-        comment=[l][\color{GrayComment}\slshape]{//},
-        morecomment=[s][\color{GrayComment}\slshape]{/*}{*/},
-        morecomment=[l][\color{GoldDocumentation}\slshape]{///},
-        morecomment=[s][\color{GoldDocumentation}\slshape]{/*!}{*/},
-        morecomment=[l][\color{GoldDocumentation}\slshape]{//!},
-        morecomment=[s][\color{RedTypename}]{\#![}{]},
-        morecomment=[s][\color{RedTypename}]{\#[}{]},
-        stringstyle=\color{GreenString},
-        string=[b]",
-        morestring=[b]'
-    }
-## [6][Is Rust taught in universities yet?](https://www.reddit.com/r/rust/comments/f7qb4x/is_rust_taught_in_universities_yet/)
-- url: https://www.reddit.com/r/rust/comments/f7qb4x/is_rust_taught_in_universities_yet/
+https://github.com/HarrisonB/ruut
+## [11][Is working on a wrapper for a C library a good first time project?](https://www.reddit.com/r/rust/comments/f8961n/is_working_on_a_wrapper_for_a_c_library_a_good/)
+- url: https://www.reddit.com/r/rust/comments/f8961n/is_working_on_a_wrapper_for_a_c_library_a_good/
 ---
-I personally think it'd be a great way to teach low-level functional programming, memory management and multithreading. Does anyone know of any university undergrad computer science courses use Rust as as a teaching language? Should they?
-## [7][Effort estimation to convert my project to rust](https://www.reddit.com/r/rust/comments/f7jzxu/effort_estimation_to_convert_my_project_to_rust/)
-- url: https://www.reddit.com/r/rust/comments/f7jzxu/effort_estimation_to_convert_my_project_to_rust/
+I just finished reading The book, and looking to build something small as my first project.
+
+I know of a C library, which has a Python wrapper that we use at work. Now I am thinking that writing a Rust wrapper might be a good first project for me to take on...
+
+but I would want to know if this is a good idea for a beginners project? I would like the opinion of more experienced Rust developers...
+
+I mean, would the fact that I am interfacing with a C library bring about it's own unique challenge that won't really help ground my knowledge of Rust? Or would it be accurate to say the skills gained from interfacing with Rust is best left at intermediate level and not as a first project? 
+
+Or you think I should just go for it and the learning experience would be worth it?
+## [12][Building a Terminal-Based Finder](https://www.reddit.com/r/rust/comments/f801fo/building_a_terminalbased_finder/)
+- url: https://www.reddit.com/r/rust/comments/f801fo/building_a_terminalbased_finder/
 ---
-Hi r/rust,
+https://preview.redd.it/9ggco03pxji41.png?width=2628&amp;format=png&amp;auto=webp&amp;s=39710807bea2a3aed848073785a0dd67577df14f
 
-Author of file manager [`nnn`](https://github.com/jarun/nnn) here. I need some suggestion from you guys to plan my next summer.
+I had an idea to sort of replicate the macOS Finder inside of the shell.  The goal is to make it work across all platforms (though I've only tested on macOS currently).  I'm only 2 weeks into the project and all of my work so far has been laying the foundation down.  It is not yet interactive, but I will be working on that later after finishing a handful of GH Issues.  For now, it simply prints a structure that is similar to that of the Finder.  There are a handful of options that can be set to change the behavior of certain things: different modes for truncating file names (no truncation, truncation based on a constant value, truncation based on statistically measurements such as average and by outlier), the characters used to print the DirectoryContainers can be customized, the vertical and horizontal padding between DirectoryContainers is customizable, and other items as well.  There is color coding based on the type of item (directory, file, symlink), the currently selected item, and the directories in the current path (these colors will be customizable later).
 
-I'm a C dev for more than a decade. Learnt Python on the go to to write some of my other projects.
+In the end, I want it to be able to do a few things:
 
-Recently I heard some great things about Rust from a long-term dev friend and got interested in the language. So far I have some basic understanding of how the language works from _The Rust Programming Language_ ebook.
+1. Be able to launch applications based on the currently selected file, this can be terminal applications or UI applications.
+2. Be able to return the currently selected path back to the shell after the application is exited, in the case that someone was just using it to explore files and found an item they want to interact with in the shell outside of TermiFind.
 
-I am planning to start writing a rust version of `nnn` during the next summer vacation. The duration is around a month.
+I mainly started this to get back into Rust after a long hiatus, but I could find myself using it.  There is tons of work to be done, but I was wanting to see what others think of it and just get some opinions, received constructive criticism, get advice on some of the GH Issues, or possibly even collect a star or two!
 
-The intention of this post is to understand how much time it may take to convert a project like `nnn` to rust based on your experience. For a single dev at a beginner's level with rust. It would be great if you guys can skim through the source (it's one big file... please don't complain about it as we have kept it that way intentionally so far) or at least the list of current features and share your insights.
-
-Many thanks in advance!
-## [8][Learning Rust, but don't know what to write](https://www.reddit.com/r/rust/comments/f7lfvg/learning_rust_but_dont_know_what_to_write/)
-- url: https://www.reddit.com/r/rust/comments/f7lfvg/learning_rust_but_dont_know_what_to_write/
----
-  Hello.    I'm a long time Go developer and I work with Go professionally.   I've been learning Rust on and off for about a year now and I'm ready to jump into a project to get my feet wet.  Particularly a project that's not too crazy or involved.  Maybe 1k to 2k lines of code.  I'm struggling to find project ideas.  If you don't mind, what are some good project ideas I can work on to get more use to the language?  I really am not interested in web apps, as I basically do backend micro services development for a living, and want to do something a little different.  Thanks in advance for your recommendation and suggestions.
-## [9][Just used `dua` on my Macbook with a 250GB hard drive to clean up some space](https://www.reddit.com/r/rust/comments/f7d786/just_used_dua_on_my_macbook_with_a_250gb_hard/)
-- url: https://www.reddit.com/r/rust/comments/f7d786/just_used_dua_on_my_macbook_with_a_250gb_hard/
----
-Man what an impressive terminal app! 
-
-[https://crates.io/crates/dua-cli](https://crates.io/crates/dua-cli)
-
-Here's what I liked:
-
-\- Blazingly fast
-
-\- Using \`tui\` so it looks nice, much better experience than 90% of terminal applications
-
-\- Found files that the "hard drive" cleanup stuff builtin to MacOS couldn't find
-
-\- The percentage-based approach dua uses to show what files are taking up the most space is super intuitive, makes it really clear what's hogging all of the space
-
-In total, I was able to find well over 100GB of data that I didn't need to be storing, (docker was hogging 60GB) that I didn't even know was there! dua also deleted that data way faster than MacOS can.
-## [10][Made a rusty rust wallpaper. The other image was larger than 20 MB (24 Mb) and I don't know how to compress PNG images in photoshop.](https://www.reddit.com/r/rust/comments/f796ds/made_a_rusty_rust_wallpaper_the_other_image_was/)
-- url: https://i.redd.it/9t12lnng69i41.png
----
-
-## [11][cargo install, /tmp directory, and noexec](https://www.reddit.com/r/rust/comments/f7pqe3/cargo_install_tmp_directory_and_noexec/)
-- url: https://www.reddit.com/r/rust/comments/f7pqe3/cargo_install_tmp_directory_and_noexec/
----
-If one has, as I had, this 👇 in one's /etc/fstab :
-
-`tmpfs /tmp tmpfs defaults,nosuid,nodev,`**no**`exec,mode=1777 0 0`
-
-... every build is going to fail - always.
-
-I solved it by removing "no" from "noexec". There are probably some workaround to solve this, but it's better to build in RAM (which I have plenty of, \~ 12 GB)  than hammering one's /home SSD with an unhealthy amount of writes.
-## [12][Best way to shrink the lifetime of references explicitly on method calls?](https://www.reddit.com/r/rust/comments/f7s14c/best_way_to_shrink_the_lifetime_of_references/)
-- url: https://www.reddit.com/r/rust/comments/f7s14c/best_way_to_shrink_the_lifetime_of_references/
----
-I'd love to have something like:
-
-    let mut value = MyValue::new();
-    let mut obj = MyObj::new();
-    obj.do_something::&lt;'a&gt;(&amp;'a mut value);  // like this
-    obj.do_other_things();
-
-More specifically, I want to make sure *without looking for the method definition* that the reference passed to `do_something` method won't be used outside of its scope, e.g., not in `do_other_things` method. I found this is possible with a dummy binding after the method call:
-
-    let mut value = MyValue::new();
-    let mut obj = MyObj::new();
-    obj.do_something(&amp;mut value);
-    let _ = &amp;value  // here
-    obj.do_other_things();
-
-but this is no good because the original intension is unclear. Is there better way to achieve this? Thanks in advance.
+[https://github.com/JosephTLyons/termifind](https://github.com/JosephTLyons/termifind)

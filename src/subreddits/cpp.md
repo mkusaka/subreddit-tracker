@@ -578,15 +578,82 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [3][Bjarne Stroustrup on C++20's significance](https://www.reddit.com/r/cpp/comments/f7h6xn/bjarne_stroustrup_on_c20s_significance/)
+## [3][C++ is NOT a superset of C: tentative definitions, implicit conversions, implicit declarations &amp;more](https://www.reddit.com/r/cpp/comments/f86rdq/c_is_not_a_superset_of_c_tentative_definitions/)
+- url: https://www.youtube.com/watch?v=s3Cv0-U5bXc
+---
+
+## [4][Created my First Space Invaders Game with Raylib. Feedback would be appreciated.](https://www.reddit.com/r/cpp/comments/f87lm1/created_my_first_space_invaders_game_with_raylib/)
+- url: /r/gamedev/comments/f87les/created_my_first_space_invaders_game_with_raylib/
+---
+
+## [5][EnTT v3.3.0 is out: Gaming meets Modern C++](https://www.reddit.com/r/cpp/comments/f7tzbd/entt_v330_is_out_gaming_meets_modern_c/)
+- url: https://www.reddit.com/r/cpp/comments/f7tzbd/entt_v330_is_out_gaming_meets_modern_c/
+---
+# What's EnTT
+
+[`EnTT`](https://github.com/skypjack/entt) is a header-only library written in **modern C++**.
+
+It's mainly known for its innovative and very performing [entity-component-system](https://en.wikipedia.org/wiki/Entity_component_system) (ECS) model. However, it offers also [many other things](https://github.com/skypjack/entt#introduction) useful for development, from flexible tools for managing signals to an integrated reflection system and so on. That's not all: some new modules are under development and will soon become part of the library (or at least I hope so).
+
+`EnTT` is also a production-ready, fully documented and battle-tested library with a 100% coverage. [Among others](https://github.com/skypjack/entt/wiki/EnTT-in-Action), It's currently used in **Minecraft** by Mojang and the **ArcGIS Runtime SDK** by Esri.
+
+# Why it's important for you
+
+You should care because the **best feedback** I've ever received is perhaps when someone told me that this library was a great source for studying modern C++. Maybe he was right, maybe not. It's not for me to say, but it may still interest you.
+
+In any case, I hope I've given other material to those interested in it in this sense and I'm open to any feedback, because ours is a language in which you never stop learning. So, go for it!
+
+# What else
+
+In my free time I'm running the [ECS back and forth](https://skypjack.github.io/tags/#ecs) series (along with [other posts](https://skypjack.github.io/)). I'd like to start something new about the internals of this library and the development of a software with `EnTT`. The latter should serve as a step by step guide to using all the feature offered by the library. I cannot really set a deadline for this but I'd like to know if there is interest in such a series before to start, so any feedback is appreciated!
+
+If you are using `EnTT` and want to tell me *hello* or which of your products relies on it, do not hesitate to [contact me](https://github.com/skypjack)! For everyone else interested in the library, the [wiki](https://github.com/skypjack/entt/wiki) contains more than what I've said here and the [gitter](https://gitter.im/skypjack/entt) channel is a great place to come and ask your first question!
+
+I'm looking forward to hearing from you. :)
+## [6][How much could we gain by completely breaking ABI?](https://www.reddit.com/r/cpp/comments/f7zls8/how_much_could_we_gain_by_completely_breaking_abi/)
+- url: https://www.reddit.com/r/cpp/comments/f7zls8/how_much_could_we_gain_by_completely_breaking_abi/
+---
+Quoting from 2020-02 Prague Meeting report:
+&gt; Although there was strong interest in exploring how to evolve ABI in the future, we are not pursuing making C++23 a clean ABI breaking release at this time.
+
+Is there any big list of things that could be improved, if it was decided for C++23 to be an ABI-breaking release?
+
+I found a good paper mentioning some:
+http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2028r0.pdf
+
+But it only listed a few, and gave just vague estimates on what would be real gains.
+
+Is there a bigger list, listing more of existing problems, with measured possible speed-ups or memory gains?
+
+I encountered one myself, that is not widely known: 
+- `sizeof(std::random_device)` on GCC is enormous, cause it is a union with Mersenne Twister. It was MT on Windows until it got implemented as indeterminate recently.
+
+And I'm sure there are many many more.
+
+I'd love to know more about it. Understand, where along the way there were made some small mistakes, and how big is the technical debt we are dragging behind us.
+
+How much are we losing, and for how long can we afford not to break ABI? Are these changes big enough, that we can expect someone to fork the language just for performance reasons?
+## [7][C UWP APP in Visual Studio 2019 (Getting Started)](https://www.reddit.com/r/cpp/comments/f883k3/c_uwp_app_in_visual_studio_2019_getting_started/)
+- url: https://www.youtube.com/watch?v=mE9nVXWgIMo&amp;feature=share
+---
+
+## [8][Counting Nanoseconds: Microbenchmarking C++ Code - David Gross - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f7swf9/counting_nanoseconds_microbenchmarking_c_code/)
+- url: https://www.youtube.com/watch?v=Czr5dBfs72U
+---
+
+## [9][Experimental Binary Package Support for vcpkg](https://www.reddit.com/r/cpp/comments/f7unlb/experimental_binary_package_support_for_vcpkg/)
+- url: https://github.com/rkitover/vcpkg-binpkg-prototype
+---
+
+## [10][Bjarne Stroustrup on C++20's significance](https://www.reddit.com/r/cpp/comments/f7h6xn/bjarne_stroustrup_on_c20s_significance/)
 - url: https://isocpp.org//blog/2020/02/bjarne-stroustrup-on-cpp20s-significance
 ---
 
-## [4][Those that started c++ before 11 : How do you keep in touch with new features?](https://www.reddit.com/r/cpp/comments/f7dz9s/those_that_started_c_before_11_how_do_you_keep_in/)
+## [11][Those that started c++ before 11 : How do you keep in touch with new features?](https://www.reddit.com/r/cpp/comments/f7dz9s/those_that_started_c_before_11_how_do_you_keep_in/)
 - url: https://www.reddit.com/r/cpp/comments/f7dz9s/those_that_started_c_before_11_how_do_you_keep_in/
 ---
 I have been coding "old C++" for a while now and started C++17 about a couple of years ago. How do you learn about use the latest features? For instance, I realized I haven't used any lambda captures lately. Now, most code I've written in the last 2 months hasn't really needed them, but I realized that I'm only using trivial features of modern C++. How do you "remember" to do stuff in the modern ways?
-## [5][How to design exceptions for a (midsize desktop) application?](https://www.reddit.com/r/cpp/comments/f7oznb/how_to_design_exceptions_for_a_midsize_desktop/)
+## [12][How to design exceptions for a (midsize desktop) application?](https://www.reddit.com/r/cpp/comments/f7oznb/how_to_design_exceptions_for_a_midsize_desktop/)
 - url: https://www.reddit.com/r/cpp/comments/f7oznb/how_to_design_exceptions_for_a_midsize_desktop/
 ---
 I'm looking for a book chapter/presentation/blog post/article describing how to design exceptions architecture for a (midsize desktop) application (like [https://github.com/dvorka/mindforger](https://github.com/dvorka/mindforger)). Can you please suggest a good resource?
@@ -596,31 +663,3 @@ I know how to declare, implement, throw/catch exception.
 I would like to learn **best practices** for how to design exceptions (class) hierarchy, throw/catch strategy, patterns, when to use built-in and when custom exceptions, how to design application-wide error handling/debugging strategy or tips for handy exception fields to declare.
 
 If there is any(/your :) open source project whose exceptions architecture/handling you like, can you please share it?
-## [6][The art of keeping your project from falling apart - Martin Šmarda - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f7cj3w/the_art_of_keeping_your_project_from_falling/)
-- url: https://www.youtube.com/watch?v=u6CmfFQxNtU
----
-
-## [7][Qt to support Visual Studio Linux projects | C++ Team Blog](https://www.reddit.com/r/cpp/comments/f7bzjg/qt_to_support_visual_studio_linux_projects_c_team/)
-- url: https://devblogs.microsoft.com/cppblog/qt-to-support-visual-studio-linux-projects/?WT.mc_id=social-reddit-marouill
----
-
-## [8][using std::cpp 2020 conference program](https://www.reddit.com/r/cpp/comments/f79u9r/using_stdcpp_2020_conference_program/)
-- url: https://eventos.uc3m.es/40350/programme/using-std_cpp-2020.html
----
-
-## [9][More Spectre Mitigations in MSVC | C++ Team Blog](https://www.reddit.com/r/cpp/comments/f7ca4p/more_spectre_mitigations_in_msvc_c_team_blog/)
-- url: https://devblogs.microsoft.com/cppblog/more-spectre-mitigations-in-msvc/?WT.mc_id=social-reddit-marouill
----
-
-## [10][CppCast: Prague Trip Report](https://www.reddit.com/r/cpp/comments/f7c1oa/cppcast_prague_trip_report/)
-- url: https://cppcast.com/hana-dusikova-prague-trip-report/
----
-
-## [11][If you’re not keeping the parameter, then you still want to have separate T const&amp; and T&amp;&amp; overloads](https://www.reddit.com/r/cpp/comments/f73g4a/if_youre_not_keeping_the_parameter_then_you_still/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200220-00/?p=103463
----
-
-## [12][20 usd for the first one who writes few very very simple programs](https://www.reddit.com/r/cpp/comments/f7rlid/20_usd_for_the_first_one_who_writes_few_very_very/)
-- url: https://www.reddit.com/r/cpp/comments/f7rlid/20_usd_for_the_first_one_who_writes_few_very_very/
----
-It’s basically free money, I actually have done myself most of these programs but I’ve lost my pc and my files with it. Dm me

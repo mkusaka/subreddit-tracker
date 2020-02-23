@@ -33,131 +33,147 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/02/18/this-week-in-rust-326/
 ---
 
-## [3][Made a rusty rust wallpaper. The other image was larger than 20 MB (24 Mb) and I don't know how to compress PNG images in photoshop.](https://www.reddit.com/r/rust/comments/f796ds/made_a_rusty_rust_wallpaper_the_other_image_was/)
+## [3][Discord is not an acceptable choice for Rust](https://www.reddit.com/r/rust/comments/f7qjpb/discord_is_not_an_acceptable_choice_for_rust/)
+- url: https://sneak.berlin/20200220/discord-is-not-an-acceptable-choice-for-free-software-projects/
+---
+
+## [4][When you learned Rust, what was your “aha!” moment?](https://www.reddit.com/r/rust/comments/f7l84m/when_you_learned_rust_what_was_your_aha_moment/)
+- url: https://www.reddit.com/r/rust/comments/f7l84m/when_you_learned_rust_what_was_your_aha_moment/
+---
+Interested to know. Rust has a lot of concepts that are not found in other popular languages, or are unique to Rust. I’m wondering what your aha moment was, what did you learn / realise?
+
+One of mine was that the value of a variable is moved on assignment to another variable, aka ownership. I had read about it, I kind of understood it. But then I had a moment where I’m like “I get this”. The implication was profound and I saw that this feature is one reason that makes Rust a safe to program in.
+## [5][Rust "The Book"-style syntax highlighting for LaTeX](https://www.reddit.com/r/rust/comments/f7ocdx/rust_the_bookstyle_syntax_highlighting_for_latex/)
+- url: https://www.reddit.com/r/rust/comments/f7ocdx/rust_the_bookstyle_syntax_highlighting_for_latex/
+---
+I was writing some rust documentation in LaTeX and discovered this [previous post](https://www.reddit.com/r/rust/comments/5259oo/rust_syntax_highlighting_for_latex/), but didn't like the requirement to use `-shell-escape` to use the minted package to format rust code blocks.
+
+Instead, I wrote a new language definition (see code below) which formats the code in a similar style to the rust book and wanted to share it here.  Here is what it looks like:
+
+https://preview.redd.it/dctmps0hxei41.png?width=1400&amp;format=png&amp;auto=webp&amp;s=c19e0b23b968ed48abebef5832923443d24b4e3b
+
+Add this to your .tex file:
+
+    \usepackage{listings}
+    \definecolor{GrayCodeBlock}{RGB}{241,241,241}
+    \definecolor{BlackText}{RGB}{110,107,94}
+    \definecolor{RedTypename}{RGB}{182,86,17}
+    \definecolor{GreenString}{RGB}{96,172,57}
+    \definecolor{PurpleKeyword}{RGB}{184,84,212}
+    \definecolor{GrayComment}{RGB}{170,170,170}
+    \definecolor{GoldDocumentation}{RGB}{180,165,45}
+    \lstdefinelanguage{rust}
+    {
+        columns=fullflexible,
+        keepspaces=true,
+        frame=single,
+        framesep=0pt,
+        framerule=0pt,
+        framexleftmargin=4pt,
+        framexrightmargin=4pt,
+        framextopmargin=5pt,
+        framexbottommargin=3pt,
+        xleftmargin=4pt,
+        xrightmargin=4pt,
+        backgroundcolor=\color{GrayCodeBlock},
+        basicstyle=\ttfamily\color{BlackText},
+        keywords={
+            true,false,
+            unsafe,async,await,move,
+            use,pub,crate,super,self,mod,
+            struct,enum,fn,const,static,let,mut,ref,type,impl,dyn,trait,where,as,
+            break,continue,if,else,while,for,loop,match,return,yield
+        },
+        keywordstyle=\color{PurpleKeyword},
+        ndkeywords={
+            bool,u8,u16,u32,u64,u128,i8,i16,i32,i64,i128,char,str,
+            Self,Option,Some,None,Result,Ok,Err,String,Box,Vec,Rc,Arc,Cell,RefCell,HashMap,BTreeMap,
+            macro_rules
+        },
+        ndkeywordstyle=\color{RedTypename},
+        comment=[l][\color{GrayComment}\slshape]{//},
+        morecomment=[s][\color{GrayComment}\slshape]{/*}{*/},
+        morecomment=[l][\color{GoldDocumentation}\slshape]{///},
+        morecomment=[s][\color{GoldDocumentation}\slshape]{/*!}{*/},
+        morecomment=[l][\color{GoldDocumentation}\slshape]{//!},
+        morecomment=[s][\color{RedTypename}]{\#![}{]},
+        morecomment=[s][\color{RedTypename}]{\#[}{]},
+        stringstyle=\color{GreenString},
+        string=[b]",
+        morestring=[b]'
+    }
+## [6][Is Rust taught in universities yet?](https://www.reddit.com/r/rust/comments/f7qb4x/is_rust_taught_in_universities_yet/)
+- url: https://www.reddit.com/r/rust/comments/f7qb4x/is_rust_taught_in_universities_yet/
+---
+I personally think it'd be a great way to teach low-level functional programming, memory management and multithreading. Does anyone know of any university undergrad computer science courses use Rust as as a teaching language? Should they?
+## [7][Effort estimation to convert my project to rust](https://www.reddit.com/r/rust/comments/f7jzxu/effort_estimation_to_convert_my_project_to_rust/)
+- url: https://www.reddit.com/r/rust/comments/f7jzxu/effort_estimation_to_convert_my_project_to_rust/
+---
+Hi r/rust,
+
+Author of file manager [`nnn`](https://github.com/jarun/nnn) here. I need some suggestion from you guys to plan my next summer.
+
+I'm a C dev for more than a decade. Learnt Python on the go to to write some of my other projects.
+
+Recently I heard some great things about Rust from a long-term dev friend and got interested in the language. So far I have some basic understanding of how the language works from _The Rust Programming Language_ ebook.
+
+I am planning to start writing a rust version of `nnn` during the next summer vacation. The duration is around a month.
+
+The intention of this post is to understand how much time it may take to convert a project like `nnn` to rust based on your experience. For a single dev at a beginner's level with rust. It would be great if you guys can skim through the source (it's one big file... please don't complain about it as we have kept it that way intentionally so far) or at least the list of current features and share your insights.
+
+Many thanks in advance!
+## [8][Learning Rust, but don't know what to write](https://www.reddit.com/r/rust/comments/f7lfvg/learning_rust_but_dont_know_what_to_write/)
+- url: https://www.reddit.com/r/rust/comments/f7lfvg/learning_rust_but_dont_know_what_to_write/
+---
+  Hello.    I'm a long time Go developer and I work with Go professionally.   I've been learning Rust on and off for about a year now and I'm ready to jump into a project to get my feet wet.  Particularly a project that's not too crazy or involved.  Maybe 1k to 2k lines of code.  I'm struggling to find project ideas.  If you don't mind, what are some good project ideas I can work on to get more use to the language?  I really am not interested in web apps, as I basically do backend micro services development for a living, and want to do something a little different.  Thanks in advance for your recommendation and suggestions.
+## [9][Just used `dua` on my Macbook with a 250GB hard drive to clean up some space](https://www.reddit.com/r/rust/comments/f7d786/just_used_dua_on_my_macbook_with_a_250gb_hard/)
+- url: https://www.reddit.com/r/rust/comments/f7d786/just_used_dua_on_my_macbook_with_a_250gb_hard/
+---
+Man what an impressive terminal app! 
+
+[https://crates.io/crates/dua-cli](https://crates.io/crates/dua-cli)
+
+Here's what I liked:
+
+\- Blazingly fast
+
+\- Using \`tui\` so it looks nice, much better experience than 90% of terminal applications
+
+\- Found files that the "hard drive" cleanup stuff builtin to MacOS couldn't find
+
+\- The percentage-based approach dua uses to show what files are taking up the most space is super intuitive, makes it really clear what's hogging all of the space
+
+In total, I was able to find well over 100GB of data that I didn't need to be storing, (docker was hogging 60GB) that I didn't even know was there! dua also deleted that data way faster than MacOS can.
+## [10][Made a rusty rust wallpaper. The other image was larger than 20 MB (24 Mb) and I don't know how to compress PNG images in photoshop.](https://www.reddit.com/r/rust/comments/f796ds/made_a_rusty_rust_wallpaper_the_other_image_was/)
 - url: https://i.redd.it/9t12lnng69i41.png
 ---
 
-## [4][Update about rustbus, (one of the) pure rust dbus libraries](https://www.reddit.com/r/rust/comments/f7a5qc/update_about_rustbus_one_of_the_pure_rust_dbus/)
-- url: https://www.reddit.com/r/rust/comments/f7a5qc/update_about_rustbus_one_of_the_pure_rust_dbus/
+## [11][cargo install, /tmp directory, and noexec](https://www.reddit.com/r/rust/comments/f7pqe3/cargo_install_tmp_directory_and_noexec/)
+- url: https://www.reddit.com/r/rust/comments/f7pqe3/cargo_install_tmp_directory_and_noexec/
 ---
-Heya r/rust!
+If one has, as I had, this 👇 in one's /etc/fstab :
 
-I had posted a while ago about my dbus library [Repo link](https://github.com/KillingSpark/rustbus). 
+`tmpfs /tmp tmpfs defaults,nosuid,nodev,`**no**`exec,mode=1777 0 0`
 
-I have since, with the help of PRs (mostly by [okeri](https://github.com/okeri)), fixed hopefully all bugs and would love some feedback on the API. Maybe there is a better way to convert the rust types into the type enums I use for the dbus marshalling that I missed?
+... every build is going to fail - always.
 
-This lib is somewhat similar to libdbus in that it gives the user pretty lowlevel access to the connection and the messages sent. The next natural step would be to build a generic proxy-library on top of this for convenient RPC.
-
-
-There are currently some other efforts in this direction [as collected by the dbus-rs crate maintainer](https://github.com/diwic/dbus-rs/issues/100#issuecomment-580411226):
-
-* https://gitlab.freedesktop.org/zeenix/zbus/
-* https://github.com/Arnavion/dbus-pure
-* https://github.com/srwalter/dbus-bytestream
-
-I have not yet done a comparison in features/speed/correctness but I might do that in the future.
-## [5][Using Google Analytics from a Rust Wasm Front-End Web App](https://www.reddit.com/r/rust/comments/f7563j/using_google_analytics_from_a_rust_wasm_frontend/)
-- url: https://medium.com/@matt_78276/using-google-analytics-from-a-rust-wasm-front-end-web-app-12840c420dad
+I solved it by removing "no" from "noexec". There are probably some workaround to solve this, but it's better to build in RAM (which I have plenty of, \~ 12 GB)  than hammering one's /home SSD with an unhealthy amount of writes.
+## [12][Best way to shrink the lifetime of references explicitly on method calls?](https://www.reddit.com/r/rust/comments/f7s14c/best_way_to_shrink_the_lifetime_of_references/)
+- url: https://www.reddit.com/r/rust/comments/f7s14c/best_way_to_shrink_the_lifetime_of_references/
 ---
+I'd love to have something like:
 
-## [6][Passthrough field access in unions like in C?](https://www.reddit.com/r/rust/comments/f7ae2j/passthrough_field_access_in_unions_like_in_c/)
-- url: https://www.reddit.com/r/rust/comments/f7ae2j/passthrough_field_access_in_unions_like_in_c/
----
-Let's say I am writing an emulator and I have two 8 bit registers
-(a and f) which can also be interpreted as one 16 bit register.
+    let mut value = MyValue::new();
+    let mut obj = MyObj::new();
+    obj.do_something::&lt;'a&gt;(&amp;'a mut value);  // like this
+    obj.do_other_things();
 
-In C, this could be modeled as
+More specifically, I want to make sure *without looking for the method definition* that the reference passed to `do_something` method won't be used outside of its scope, e.g., not in `do_other_things` method. I found this is possible with a dummy binding after the method call:
 
+    let mut value = MyValue::new();
+    let mut obj = MyObj::new();
+    obj.do_something(&amp;mut value);
+    let _ = &amp;value  // here
+    obj.do_other_things();
 
-    struct register {
-        union {
-            struct {
-                unsigned char f;
-                unsigned char a;
-            };
-            unsigned short af;
-        };
-    };
-
-
-which is convenient since you can just use `.f` or `.a` to access or set the 8 bit registers
-or `.af` to access or set the 16 bit register.
-
-In Rust (which I am quite new to), I guess I can do something like:
-
-
-    #[derive(Copy, Clone)]
-    struct FA {
-        f: u8,
-        a: u8,
-    }
-
-
-    union Register {
-        _fa: FA,
-        fa: u16,
-    }
-
-
-but the syntax to access the `f` and `a` registers are here much more awkward since
-I can't pass through the `.f` access to the `FA` struct. I can, of course, just store the
-`a` and `f` registers as is and then write the methods `get_af(&amp;self)` and `set_af(&amp;mut self, v: u16)` that does the bit
-shifts needed but it doesn't feel really clean (need to write getter and setters).
-
-Is there any nice way to do this or should I just implement the bit shift methods?
-## [7][Hank Green explains the Rust programming language](https://www.reddit.com/r/rust/comments/f6tpig/hank_green_explains_the_rust_programming_language/)
-- url: https://www.reddit.com/r/rust/comments/f6tpig/hank_green_explains_the_rust_programming_language/
----
-Maybe we will see a "Crash Course Rust?"
-
-[https://www.youtube.com/watch?v=IwjlCxwcuIc](https://www.youtube.com/watch?v=IwjlCxwcuIc)
-## [8][PKCS11 Engine for Rust TLS](https://www.reddit.com/r/rust/comments/f77eqk/pkcs11_engine_for_rust_tls/)
-- url: https://www.reddit.com/r/rust/comments/f77eqk/pkcs11_engine_for_rust_tls/
----
-Hi folks,
-
-I have a SHM(Secure Hardware Module) which houses my certs and does the signing. I was wondering has anyone here ever worked with a PKCS11 Engine using Rust. The Rust-TLS library doesn't support it, and I was wondering about integrating PKCS11 engine with our TLS library. Has anyone done anything similar here so that I might have some context? Currently I am going through RUST-TLS code and have identified the traits that I would need to implement(Thanks to the author of that crate).
-## [9][Is it possible to get rid of those lines? I am using the rust-analyzer VSCode plugin and I find those extra lines to be more distracting than helpful :/](https://www.reddit.com/r/rust/comments/f6yuql/is_it_possible_to_get_rid_of_those_lines_i_am/)
-- url: https://i.redd.it/gk2wwhj2y4i41.png
----
-
-## [10][[ANN] I wrote a tool in sauron to convert html to sauron view syntax](https://www.reddit.com/r/rust/comments/f79nf9/ann_i_wrote_a_tool_in_sauron_to_convert_html_to/)
-- url: https://www.reddit.com/r/rust/comments/f79nf9/ann_i_wrote_a_tool_in_sauron_to_convert_html_to/
----
-[tool site](https://ivanceras.github.io/html2sauron/)
-
-[repo](https://github.com/ivanceras/html2sauron)
-
-This is a WIP, there will be bugs.
-## [11][Experience with Rust In Action?](https://www.reddit.com/r/rust/comments/f74mga/experience_with_rust_in_action/)
-- url: https://www.reddit.com/r/rust/comments/f74mga/experience_with_rust_in_action/
----
-I was just wondering if anyone has experience with [Rust In Action](https://www.manning.com/books/rust-in-action?query=rust)? Is it worth it, or would I be better off just with the [Rust book](https://doc.rust-lang.org/stable/book/).
-## [12][STM32F0](https://www.reddit.com/r/rust/comments/f784wq/stm32f0/)
-- url: https://www.reddit.com/r/rust/comments/f784wq/stm32f0/
----
-Fellow no-std Rustaceans! :)
-
-I'm pretty new at both #rustlang and embedded, so I must be asking some obvious questions, but please help me here.
-
-My application at this point is just supposed to continuously update a counter and show it on an SSD1306 display. The update must be triggered every second by a timer. I understand more or less how it works:  [https://github.com/nebelgrau77/STM32F0\_blinky\_IRQ](https://github.com/nebelgrau77/STM32F0_blinky_IRQ)  \- this is based on an example from the STM32F0xx-HAL crate.
-
-&amp;#x200B;
-
-Here's my currently not working code:  [https://github.com/nebelgrau77/STM32F0-SSD1306-IRQ\_DRAFT](https://github.com/nebelgrau77/STM32F0-SSD1306-IRQ_DRAFT)
-
-The problem is the following: in order to be able to display my constantly updated value, the display must be in a loop outside of the critical section, but it also has to be available out there (lines 100 - 112), so it somehow has to be made global. I would assume this has to be done with static/Mutex/RefCell, just like the LEDs are global in the other example:
-
-`type LEDPIN = gpioa::PA4&lt;Output&lt;PushPull&gt;&gt;;` 
-
-`static GLED: Mutex&lt;RefCell&lt;Option&lt;LEDPIN&gt;&gt;&gt; = Mutex::new(RefCell::new(None));`
-
-I don't understand how to do it, though: should everything be made global, e.g. RCC and SDA/SCL pins, to set I2C and the display outside of the CS? Or just the display instance, but in that case how do I put it in the Mutex?
-
-&amp;#x200B;
-
-Thanks for any help on this!!!
-
-&amp;#x200B;
-
-*ps. contrary to some other crates, e.g. F1 or F4, the F0xx crate specifically requires the Critical Section for setting up the pins, therefore I cannot take the whole display setup out.*
+but this is no good because the original intension is unclear. Is there better way to achieve this? Thanks in advance.

@@ -578,106 +578,49 @@ Feature | Status | Depends On | Current Target (Conservative Estimate) | Current
 */u/zygoloid, C++ Project Editor*
 
 *⋯ and others ⋯*
-## [3][using std::cpp 2020 conference program](https://www.reddit.com/r/cpp/comments/f79u9r/using_stdcpp_2020_conference_program/)
+## [3][Bjarne Stroustrup on C++20's significance](https://www.reddit.com/r/cpp/comments/f7h6xn/bjarne_stroustrup_on_c20s_significance/)
+- url: https://isocpp.org//blog/2020/02/bjarne-stroustrup-on-cpp20s-significance
+---
+
+## [4][Those that started c++ before 11 : How do you keep in touch with new features?](https://www.reddit.com/r/cpp/comments/f7dz9s/those_that_started_c_before_11_how_do_you_keep_in/)
+- url: https://www.reddit.com/r/cpp/comments/f7dz9s/those_that_started_c_before_11_how_do_you_keep_in/
+---
+I have been coding "old C++" for a while now and started C++17 about a couple of years ago. How do you learn about use the latest features? For instance, I realized I haven't used any lambda captures lately. Now, most code I've written in the last 2 months hasn't really needed them, but I realized that I'm only using trivial features of modern C++. How do you "remember" to do stuff in the modern ways?
+## [5][How to design exceptions for a (midsize desktop) application?](https://www.reddit.com/r/cpp/comments/f7oznb/how_to_design_exceptions_for_a_midsize_desktop/)
+- url: https://www.reddit.com/r/cpp/comments/f7oznb/how_to_design_exceptions_for_a_midsize_desktop/
+---
+I'm looking for a book chapter/presentation/blog post/article describing how to design exceptions architecture for a (midsize desktop) application (like [https://github.com/dvorka/mindforger](https://github.com/dvorka/mindforger)). Can you please suggest a good resource?
+
+I know how to declare, implement, throw/catch exception.
+
+I would like to learn **best practices** for how to design exceptions (class) hierarchy, throw/catch strategy, patterns, when to use built-in and when custom exceptions, how to design application-wide error handling/debugging strategy or tips for handy exception fields to declare.
+
+If there is any(/your :) open source project whose exceptions architecture/handling you like, can you please share it?
+## [6][The art of keeping your project from falling apart - Martin Šmarda - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f7cj3w/the_art_of_keeping_your_project_from_falling/)
+- url: https://www.youtube.com/watch?v=u6CmfFQxNtU
+---
+
+## [7][Qt to support Visual Studio Linux projects | C++ Team Blog](https://www.reddit.com/r/cpp/comments/f7bzjg/qt_to_support_visual_studio_linux_projects_c_team/)
+- url: https://devblogs.microsoft.com/cppblog/qt-to-support-visual-studio-linux-projects/?WT.mc_id=social-reddit-marouill
+---
+
+## [8][using std::cpp 2020 conference program](https://www.reddit.com/r/cpp/comments/f79u9r/using_stdcpp_2020_conference_program/)
 - url: https://eventos.uc3m.es/40350/programme/using-std_cpp-2020.html
 ---
 
-## [4][If you’re not keeping the parameter, then you still want to have separate T const&amp; and T&amp;&amp; overloads](https://www.reddit.com/r/cpp/comments/f73g4a/if_youre_not_keeping_the_parameter_then_you_still/)
+## [9][More Spectre Mitigations in MSVC | C++ Team Blog](https://www.reddit.com/r/cpp/comments/f7ca4p/more_spectre_mitigations_in_msvc_c_team_blog/)
+- url: https://devblogs.microsoft.com/cppblog/more-spectre-mitigations-in-msvc/?WT.mc_id=social-reddit-marouill
+---
+
+## [10][CppCast: Prague Trip Report](https://www.reddit.com/r/cpp/comments/f7c1oa/cppcast_prague_trip_report/)
+- url: https://cppcast.com/hana-dusikova-prague-trip-report/
+---
+
+## [11][If you’re not keeping the parameter, then you still want to have separate T const&amp; and T&amp;&amp; overloads](https://www.reddit.com/r/cpp/comments/f73g4a/if_youre_not_keeping_the_parameter_then_you_still/)
 - url: https://devblogs.microsoft.com/oldnewthing/20200220-00/?p=103463
 ---
 
-## [5][What are/were your favourite "You can do that?! Neat!" C++ moments?](https://www.reddit.com/r/cpp/comments/f6wlbm/what_arewere_your_favourite_you_can_do_that_neat/)
-- url: https://www.reddit.com/r/cpp/comments/f6wlbm/what_arewere_your_favourite_you_can_do_that_neat/
+## [12][20 usd for the first one who writes few very very simple programs](https://www.reddit.com/r/cpp/comments/f7rlid/20_usd_for_the_first_one_who_writes_few_very_very/)
+- url: https://www.reddit.com/r/cpp/comments/f7rlid/20_usd_for_the_first_one_who_writes_few_very_very/
 ---
-Bit of a backstory - I am a student in my last year of bachelor's degree. On my university we don't have much C++ but, given my dedication to the language, I was offered a position of a TA (teaching assistant) in C++ laboratories. Basically, due to the subject's structure - I have a completely free will of what I will cover with my students. I've not developed *much* C++ profesionally, but I believe I do have some good insight. 
-
-I've spent hours researching, reading and watching various learning sources regarding C++ - for my own entertainment. I simply love the language. I've had the "*whoa, that's super useful*" moments. First encounter with `template`s (how they differ from Java's generics - come on, why wouldn't I be able to create a variable of a type `T`? C++'s way was just more intuitive for me), operator overloading, lambdas (generic ones too!), destructors, move semantics, value semantics, overall efficiency...
-
-I've been spending majority of my free time (for the last \~3 years) analysing various learning sources. Their pros and cons, how they engage the viewer (looking at your talks, Scott Meyers, Andrei Alexandrescu and Kate Gregory!), how they provide an enourmous amount of pretty complicated information in a very understandable manner (Arthur O'Dwyer's lambdas content), how they match relevant information to real-world use cases without omitting the technical details (Jonathan Boccara's `&lt;algorithm&gt;` talks) and how they can teach through laughter, which empowers the positive experience (Timur Doumler's "*Can I has grammar?*" - seriously, I don't believe I would've otherwise remembered that adding `struct` before user-defined types also forward-declares them or that `int` is a type-specifier, not a type-name).
-
-And now, since I became one of those people who want (and have an opportunity to) share their knowledge and teach, I not only want to pass on the information - I want it to be enjoyable. I want students to not only know *how*, but also *why* and *when*.
-
-I belive I have a good general idea on how to achieve that, but the more ideas and more brainstorming in such a broad topic, the better. So essentially the question is: what do you consider to be the *neat* and *practical* parts of the language? What made **you** raise your eyebrows and think "geez, I will be using this from now on"?
-
-I believe a good example would be *operator overloading*. Someone wants to compare user-defined types? No reason to require them to differentiate between the ways of doing this regarding primitives and user-defined types - `operator ==` should work for all of them. Want to multiply matrices? Use the standard `*`, rather than some `multiply()` function. It's *intuitive*. It's *easy* (at least in the general case). It's *useful*. All of that since the first impression.
-
-For the completeness, I also have a free will of what IDE they should use (though I don't plan to enforce it. If they want to use MSVS, CLion or Vim + manual building, that's their preference) and which standard they will be using (highly unlikely that I will choose something different than C++17 though).
-## [6][toml++: A TOML parser and serializer for C++17](https://www.reddit.com/r/cpp/comments/f70io2/toml_a_toml_parser_and_serializer_for_c17/)
-- url: https://www.reddit.com/r/cpp/comments/f70io2/toml_a_toml_parser_and_serializer_for_c17/
----
-Hello all,
-
-I've recently been working on [toml++](https://marzer.github.io/tomlplusplus/), a parsing and serializing library for working with [TOML](https://github.com/toml-lang/toml) config files in C++17, and now it's reached a point where I feel comfortable sharing it.
-
-Homepage: [https://marzer.github.io/tomlplusplus/](https://marzer.github.io/tomlplusplus/)    
-
-Repository: [https://github.com/marzer/tomlplusplus/](https://github.com/marzer/tomlplusplus/)
-
-Features:
-
-* C++17 with some C++20 features where supported (e.g. char8\_t string support)
-* Proper UTF-8 handling (incl. BOM)
-* Works with or without exceptions
-* Doesn't require RTTI
-* First-class support for serializing to JSON
-* Fully [TOML v0.5.0](https://github.com/toml-lang/toml/blob/master/versions/en/toml-v0.5.0.md)\-compliant
-* Supports a number of 'unreleased' TOML features (optional; these can be disabled)
-* There's [a single-header version](https://raw.githubusercontent.com/marzer/tomlplusplus/master/toml.hpp) for those that way inclined
-
-Hope someone finds this useful! This is the first time I've released anything 'properly' (i.e. with the intention of others using it, and not just using github as cloud storage), so I appreciate any and all feedback.
-## [7][Retiring the Singleton Pattern - Peter Muldoon - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/f6vwna/retiring_the_singleton_pattern_peter_muldoon/)
-- url: https://www.youtube.com/watch?v=f46jmm7r8Yg
----
-
-## [8][Will C++20 modules allow you to use the STL in your dynamic libraries?](https://www.reddit.com/r/cpp/comments/f761hf/will_c20_modules_allow_you_to_use_the_stl_in_your/)
-- url: https://www.reddit.com/r/cpp/comments/f761hf/will_c20_modules_allow_you_to_use_the_stl_in_your/
----
-I've always wanted to use the STL in my API that is exported to a dynamic library but before I was always told this is wrong. (Don't pass STL between dll boundary because there isn't a standard ABI)
-
-So my question is pretty much does C++20 modules improve the ABI and can I now use the STL in my dynamic library?   
-
-
-Thanks - Novice programmer
-## [9][Cpp youtubers](https://www.reddit.com/r/cpp/comments/f79ws0/cpp_youtubers/)
-- url: https://www.reddit.com/r/cpp/comments/f79ws0/cpp_youtubers/
----
-Hi, I’m looking for some cpp YouTube channels such as bisqwit , if any of you have any suggestions then please write it down in the comments
-## [10][How I long for a "static_cast_from_member"](https://www.reddit.com/r/cpp/comments/f73w8i/how_i_long_for_a_static_cast_from_member/)
-- url: https://www.reddit.com/r/cpp/comments/f73w8i/how_i_long_for_a_static_cast_from_member/
----
-Composition is often recommended over inheritance, and when you're using nested class to implement a few finer details it's all but required.
-
-The thing that breaks me though, is that moment that you realise you need to be able to refer to the containing object. You just can't get out, even if you know through templating exactly how you got to where you are.
-
-Solutions involve placing "owner" pointers within each embedded class - even though you know they'll always be at the same offsets of the parent class! And of course these won't survive a copy constructor on their own, so you have to workaround that too.
-
-And if you don't want to waste the memory bloating your objects that way, you're stuck passing "owner" as an explicit parameter of every call that might need it to subclasses. Not fun, as now you have [colored functions](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/) and these members can no longer do much useful on their own.
-
-I was so sure there must be a way to do the obvious - get the containing struct from a member, only to be so disheartened when I learnt that it's only possible on the simplest of structs. `Boost` in particular relies on UB out of the wazoo for their intrusive lists (at least those employing `list_member_hook&lt;&gt;`), going so far as to detect the compiler to figure out what magic bit of underdefined behaviour to use. Horrifying!
-
-So how about a:
-
-    // a class with members
-    BigObj o;
-
-    // a member of that class
-    SmlObj &amp;s = o.sml;
-
-    // and a pointer that we can use to recover the owing object at a later point
-    SmlObj BigObj::*pSml = &amp;BigObj::sml;
-
-    // a way to actually recover the class!
-    BigObj &amp;yay = static_cast_from_member&lt;BigObj&gt;(s, pSml);
-
-    // or in one line:
-    BigObj &amp;gd = static_cast_from_member&lt;BigObj&gt;(o.sml, &amp;BigObj::sml);
-
-Surely I'm not alone here.
-## [11][C DirectX in Visual Studio 2019 | Getting Started](https://www.reddit.com/r/cpp/comments/f78svi/c_directx_in_visual_studio_2019_getting_started/)
-- url: https://www.youtube.com/watch?v=7N3Ii37qYqI&amp;feature=share
----
-
-## [12][An in Depth Review for Deleaker (A Software Used to Catch Memory Leaks)](https://www.reddit.com/r/cpp/comments/f6gn3b/an_in_depth_review_for_deleaker_a_software_used/)
-- url: https://grahambest.xyz/an-in-depth-review-for-deleaker/
----
-
+It’s basically free money, I actually have done myself most of these programs but I’ve lost my pc and my files with it. Dm me

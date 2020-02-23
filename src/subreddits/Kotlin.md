@@ -1,102 +1,208 @@
 # Kotlin
-## [1][Kotlin GDNative](https://www.reddit.com/r/Kotlin/comments/f717nb/kotlin_gdnative/)
+## [1][New Zircon Release is out: 2020.1.0-RELEASE](https://www.reddit.com/r/Kotlin/comments/f7jknj/new_zircon_release_is_out_202010release/)
+- url: https://www.reddit.com/r/Kotlin/comments/f7jknj/new_zircon_release_is_out_202010release/
+---
+
+&gt; Zircon is an extensible, multiplatform and user-friendly tile engine.
+&gt;
+&gt; If you are not yet familiar with the project take a look at our
+&gt; [Project Page](https://hexworks.org/projects/zircon/).
+&gt;
+&gt; You can grab this release from Maven Central. More on how to add *Zircon* as a dependency to your project can be found [here](https://hexworks.org/posts/news/2020/02/19/zircon/docs/2019-01-11-release-process-and-versioning-scheme).
+
+## Highlights of this release
+
+With the tutorial project [Caves of Zircon](https://hexworks.org/posts/tutorials/2018/12/04/how-to-make-a-roguelike.html) finished we had a lot of time to work on new features since the last major release and we've also improved the documentation and the examples.
+
+The [Documentation Page](https://hexworks.org/zircon/docs/) was overhauled and retrofitted with the recent changes in *Zircon* so now you can all enjoy the new content. What was missing for quite some time is a thorough explanation of the *Component System* which is now detailed [here](https://hexworks.org/zircon/docs/2018-11-15-the-component-system).
+
+We also worked on the [examples](https://github.com/Hexworks/zircon/tree/master/zircon.jvm.examples/src/main) which now encompass all features of *Zircon*. Component examples now also have a tileset/color theme selector. You can take a look [here](https://cdn.discordapp.com/attachments/363754040103796737/679310297424724006/components.gif).
+
+The internals of *Zircon* were refactored to use [persistent data structures](https://en.wikipedia.org/wiki/Persistent_data_structure) so we now have stable snapshots for rendering. In practice this means that there are no more flickering or visual artifacts when you use *Zircon*.
+
+All `Component`s in *Zircon* were retrofitted with *data binding* features. What this means is that properties like the disabled state of a component or
+their colors can be bound to each other with a single line of code. [This](https://cdn.discordapp.com/attachments/603285896829206548/603300249485705246/zircon_component_databinding.gif) example showcases some `Label`s and `Button`s being bound to another `Label`s textual content.
+
+`Group` was added which is not a component itself but it takes advantage of the new *data binding* features of *Zircon* to synchronize components with each other even if they are not in a parent/child relationship. `Group` has its own `ColorTheme` for example which when updated will update all components in it. The `RadioButtonGroup` was also retrofitted to use this abstraction so now you no longer have to put `RadioButton`s in the same container.
+
+We also implemented a bunch of new components:
+
+- `HBox` and `VBox` were requested by a lot of our uses so we implemented them. They automatically align their child components either horizontally or vertically. They can also be nested into each other to create complex UIs and layouts. [This](https://cdn.discordapp.com/attachments/603285896829206548/603303497362047006/zircon_component_table.png) is an example for a combination of the two, [this](https://cdn.discordapp.com/attachments/603285896829206548/603303713964032011/zircon_component_vbox.gif) is a `VBox` with some interactions.
+- [Number inputs](https://cdn.discordapp.com/attachments/363754040103796737/603996935740850176/numberInputwithButtons.gif) can be used to input only numbers.
+- [Scroll bar](https://cdn.discordapp.com/attachments/363754040103796737/610073006437302282/scrollbars.gif)s enable you to scroll content in a component.
+- With [Sliders](https://cdn.discordapp.com/attachments/363754040103796737/603996924282011669/newSliders.gif) you can easily pick values from a range.
+- [Toggle buttons](https://cdn.discordapp.com/attachments/603285896829206548/678717722355433492/toggle.gif) were retrofitted to look more intuitive and visually appealing.
+- With [Progress bars](https://cdn.discordapp.com/attachments/363754040103796737/680048998337609747/progress_bar.gif) you can display the progress of a process.
+- Component decorations were retrofitted to have an `INTERACTIVE`/`NON_INTERACTIVE` mode to better align with specific needs. Example [here](https://cdn.discordapp.com/attachments/363754040103796737/680025017869795367/rendering_modes.gif).
+- We also implemented a post-rendering feature for `Component`s.
+
+A new feature was added to `TileColor` for color interpolation. This can be handy if you want to create [color gradients](https://cdn.discordapp.com/attachments/363754040103796737/680074649207701509/interpolation.gif).
+
+*Zircon* now also supports *event bubbling*. This topic is detailed in the [docs](https://hexworks.org/zircon/docs/2018-11-21-input-handling).
+
+We also have an image -&gt; ASCII converter in the works: [click](https://cdn.discordapp.com/attachments/603285896829206548/603304759859871768/zircon_ascii_by_mr_pancake.png).
+
+Here is a full list of issues we finished for this release:
+
+## New Features
+
+- [#144](https://github.com/Hexworks/zircon/issues/144): Add slider widget. 
+- [#123](https://github.com/Hexworks/zircon/issues/123): Implement the `Group` component. 
+- [#123](https://github.com/Hexworks/zircon/issues/123): Implement the `NumberInput` component. 
+- [#257](https://github.com/Hexworks/zircon/issues/257): Add the transform function from TileImage to TileGraphics and Layer. 
+- [#181](https://github.com/Hexworks/zircon/issues/181): Feature: H/V Boxes. 
+- [#126](https://github.com/Hexworks/zircon/issues/126): Introduce event bubbling for `Input` events. 
+- [#190](https://github.com/Hexworks/zircon/issues/190): Simple Progress Bar. 
+- [#193](https://github.com/Hexworks/zircon/issues/193): Implement FadeIn/Out modifiers. 
+- [#291](https://github.com/Hexworks/zircon/issues/291): Implement the NumberInput component. 
+- [#292](https://github.com/Hexworks/zircon/issues/292): New Component: ScrollBar. 
+- [#95](https://github.com/Hexworks/zircon/issues/95): Add option for post-component rendering decorations. 
+- [#288](https://github.com/Hexworks/zircon/issues/288): Add interactive and non-interactive rendering mode for decorations. 
+- [#289](https://github.com/Hexworks/zircon/issues/289): Add a way to interpolate between colors.
+
+## Enhancements
+
+- [#286](https://github.com/Hexworks/zircon/issues/286): Refurbish documentation on the website.
+- [#253](https://github.com/Hexworks/zircon/issues/253): Improve the visual appearance of component states .
+- [#282](https://github.com/Hexworks/zircon/issues/282): Make the ToggleButton have better UX .
+- [#245](https://github.com/Hexworks/zircon/issues/245): A component shall have a property hasFocus. 
+- [#283](https://github.com/Hexworks/zircon/issues/283): Add copy functions to TileColor. 
+- [#161](https://github.com/Hexworks/zircon/issues/161): Move requestFocus to its own interface: FocusableComponent. 
+- [#219](https://github.com/Hexworks/zircon/issues/219): Deploy to Maven Central.
+- [#261](https://github.com/Hexworks/zircon/issues/261): Refactor RadioButtonGroup to be a logical Group instead of a Component. 
+- [#264](https://github.com/Hexworks/zircon/issues/264): Enable all Components to be Disablable, Hideable, Themeable and have TilesetOverride. 
+- [#94](https://github.com/Hexworks/zircon/issues/94): Check API for concurrency issues. 
+- [#263](https://github.com/Hexworks/zircon/issues/263): Make ColorTheme a property of Component. 
+- [#251](https://github.com/Hexworks/zircon/issues/251): Make components inherit properties.
+- [#110](https://github.com/Hexworks/zircon/issues/110): GameComponent should be a container. 
+- [#258](https://github.com/Hexworks/zircon/issues/258): Only modify a TileGraphics if the operation would lead to a change. 
+- [#256](https://github.com/Hexworks/zircon/issues/256): Add the option to hide/show Layers. 
+- [#255](https://github.com/Hexworks/zircon/issues/255): Properly implement the disabled state for CheckBox and Button. 
+- [#254](https://github.com/Hexworks/zircon/issues/254): Modify Component bounds check to be only relaxed in debug mode. 
+- [#242](https://github.com/Hexworks/zircon/issues/242): Migrate gradle build scripts to use Kotlin DSL + buildSrc. 
+- [#202](https://github.com/Hexworks/zircon/issues/202): Make Blocks mutable. 
+- [#200](https://github.com/Hexworks/zircon/issues/200): Use databinding for mutable component states (selected, checked, text, etc).
+- [#196](https://github.com/Hexworks/zircon/issues/196): Allow Icons to use any Tile. 
+- [#199](https://github.com/Hexworks/zircon/issues/199): Allow editing the items in a RadioButtonGroup. 
+- [#203](https://github.com/Hexworks/zircon/issues/203):  Add support for Focus and Activation events to Components.
+- [#210](https://github.com/Hexworks/zircon/issues/210): Component: Visibilty Property. 
+
+## Bug fixes
+
+- [#287](https://github.com/Hexworks/zircon/issues/287): HBox and VBox won't accept a Component which would fill up the space completely.
+- [#278](https://github.com/Hexworks/zircon/issues/278): StaticEffectMarkovChainExample is not working. 
+- [#276](https://github.com/Hexworks/zircon/issues/276): GlitchEffectMarkovChainExample is not working. 
+- [#284](https://github.com/Hexworks/zircon/issues/284): Adding a disabled Component to a container will re-enable it. 
+- [#222](https://github.com/Hexworks/zircon/issues/222): LibGDXApplications is not swappable for SwingApplications. 
+- [#50](https://github.com/Hexworks/zircon/issues/50): Input does not catch keystroke &lt;CTRL&gt;+Z on Windows 10 and Ubuntu 17.10. 
+- [#231](https://github.com/Hexworks/zircon/issues/231): Fullscreen doesn't work if all the tiles can't fit on screen. 
+- [#218](https://github.com/Hexworks/zircon/issues/218): LogArea does not scroll to last line when line is wordwrapped. 
+- [#247](https://github.com/Hexworks/zircon/issues/247): Event RequestCursorAt does not work as expected in a text area. 
+- [#139](https://github.com/Hexworks/zircon/issues/139): If text area is enabled and receives the focus programatically, it does not receive the first key event. 
+- [#246](https://github.com/Hexworks/zircon/issues/246): Keycode TAB is always propagated to the default handler. 
+- [#160](https://github.com/Hexworks/zircon/issues/160): Multiple screens handling Input regardless of which one is active. 
+- [#209](https://github.com/Hexworks/zircon/issues/209): Panel: changes of TitleProperty get not reflected. 
+- [#119](https://github.com/Hexworks/zircon/issues/119): Screen.setCursorVisibility(true) does not work. 
+- [#274](https://github.com/Hexworks/zircon/issues/274): Activating a component doesn't always use the correct style. 
+- [#221](https://github.com/Hexworks/zircon/issues/221): Log Area text appears in other panels for a single frame. 
+- [#252](https://github.com/Hexworks/zircon/issues/252): Transparent background is not working when using TileTransformModifier. 
+- [#281](https://github.com/Hexworks/zircon/issues/281): Pressing Tab repeatedly doesn't keep traversing the focus. 
+- [#280](https://github.com/Hexworks/zircon/issues/280): Removing a focused component will sometimes isolate the previous and next components. 
+- [#279](https://github.com/Hexworks/zircon/issues/279): Adding or removing a focusable component doesn't retain focus of currently focused component. 
+- [#275](https://github.com/Hexworks/zircon/issues/275): Visual style applied by focus is taken away when component is hovered. 
+- [#272](https://github.com/Hexworks/zircon/issues/272): GameComponent doesn't use decorations. 
+- [#233](https://github.com/Hexworks/zircon/issues/233): Pressing shift while editing a TextArea moves the cursor. 
+- [#227](https://github.com/Hexworks/zircon/issues/227): Buttons within modals can be misaligned. 
+- [#92](https://github.com/Hexworks/zircon/issues/92): Implement the snapshot function in DrawSurface properly. 
+- [#232](https://github.com/Hexworks/zircon/issues/232): Border decoration renderer is not working for Components. 
+- [#175](https://github.com/Hexworks/zircon/issues/175): Black bar appears in LibgdxApplication. 
+- [#194](https://github.com/Hexworks/zircon/issues/194): Libgdx renderer prints a warning on macOS and doesn't display tiles. 
+- [#201 ](https://github.com/Hexworks/zircon/issues/201): Fix CircleCI parallelism problem. 
+- [#198](https://github.com/Hexworks/zircon/issues/198): TextArea accepts huge sizes which leads to memory leaks. 
+- [#197](https://github.com/Hexworks/zircon/issues/197): Fix TextBox division by zero problem when creating a TextBox. 
+- [#195](https://github.com/Hexworks/zircon/issues/195): Fix LogArea positioning when it has wrappers. 
+- [#180](https://github.com/Hexworks/zircon/issues/180): Window titles don't work. 
+- [#151](https://github.com/Hexworks/zircon/issues/151): Drawable.drawOnto(DrawSurface) implementation in DefaultLayer does not seem to work. 
+- [#187](https://github.com/Hexworks/zircon/issues/187): ToggleButtonBuilder ignores the isSelected(Boolean) function. 
+- [#186](https://github.com/Hexworks/zircon/issues/186): TextArea blows up on forward delete if there's no character after the cursor. 
+
+## Road Map
+  
+We've covered a lot of ground in this release, but there are still things to do:
+
+- [Scrollable Components](https://github.com/Hexworks/zircon/issues/25)
+- [Floating Components](https://github.com/Hexworks/zircon/issues/23)
+- [Drag'n Drop Support](https://github.com/Hexworks/zircon/issues/22)
+- [Custom Layout Support](https://github.com/Hexworks/zircon/issues/28)
+- [Component Themes](https://github.com/Hexworks/zircon/issues/29)
+- [Custom Component Support](https://github.com/Hexworks/zircon/issues/26)
+- [Menus](https://github.com/Hexworks/zircon/issues/135)
+- [Tree Component](https://github.com/Hexworks/zircon/issues/184)
+- [Table Component](https://github.com/Hexworks/zircon/issues/185)
+- [Accordion Component](https://github.com/Hexworks/zircon/issues/27)
+- [Combo Box Component](https://github.com/Hexworks/zircon/issues/262)
+- [IntelliJ Plugin](https://github.com/Hexworks/zircon/issues/191)
+- [Javadoc-style Documentation](https://github.com/Hexworks/zircon/issues/146)
+- [Console for Zircon](https://github.com/Hexworks/zircon/issues/183)
+- [Grid / Screen Filters](https://github.com/Hexworks/zircon/issues/271)
+
+## Credits
+
+Thank you for all of you out there who helped with this release! **Special thanks** to [Baret](https://github.com/Baret), [Bergin](https://www.reddit.com/user/Jordanbergin), [Coldwarrl](https://github.com/coldwarrl), [Luke](https://github.com/LukeLetourneau) and [Seveen](https://www.reddit.com/user/Seeveen) for their contributions!
+
+## Contribute
+
+&gt; If you think that you can contribute or just have an idea feel free to join the discussion on our [Discord](https://discordapp.com/invite/vSNgvBh) server.
+## [2][Trying to unit test my app. Rx, Coroutines, Mockk, Junit5. Cannot solve it on my own and no luck on slack nor discord...](https://www.reddit.com/r/Kotlin/comments/f7rqv1/trying_to_unit_test_my_app_rx_coroutines_mockk/)
+- url: https://stackoverflow.com/questions/60288406/android-kotlin-unit-test-failing-with-io-mockk-mockkexception-no-answer-found-f
+---
+
+## [3][Migrating to Kotlin—what to look out for](https://www.reddit.com/r/Kotlin/comments/f7ea4k/migrating_to_kotlinwhat_to_look_out_for/)
+- url: https://engineering.autotrader.co.uk/2020/02/21/migrating-to-kotlin-what-to-look-out-for.html
+---
+
+## [4][Impact of including Kotlin in existing Android Java project](https://www.reddit.com/r/Kotlin/comments/f7pl5z/impact_of_including_kotlin_in_existing_android/)
+- url: https://www.reddit.com/r/Kotlin/comments/f7pl5z/impact_of_including_kotlin_in_existing_android/
+---
+I am working on an Android Java project developing libraries to be distributed to the clients. I want to include Kotlin into this existing project. This project contains one Sample app module where we test the libraries. I have few questions.
+
+1. If I include Kotlin just in sample app module, will it impact the size of my libraries?
+2. If I start writing part of library modules in Kotlin, what will be the impact on the size of the library codes?
+
+Note: When I calculated the change in apk size after including Kotlin in my application, it increased the size by 700+ KB.
+## [5][How to create socket connection for client side.](https://www.reddit.com/r/Kotlin/comments/f7e6cf/how_to_create_socket_connection_for_client_side/)
+- url: https://www.reddit.com/r/Kotlin/comments/f7e6cf/how_to_create_socket_connection_for_client_side/
+---
+Hi there,
+
+&amp;#x200B;
+
+I'm making an application for android and I need to make a connection to a server using sockets, but I do not know how to start.
+
+&amp;#x200B;
+
+In that application I need to check if it's connected, and receive/send messages from/to the server.
+
+&amp;#x200B;
+
+Sorry for my bad english. I hope that you can help me.
+## [6][Using GSON with Kotlin's Non-Null Types](https://www.reddit.com/r/Kotlin/comments/f7fpo1/using_gson_with_kotlins_nonnull_types/)
+- url: https://medium.com/@clay07g/using-gson-with-kotlins-non-null-types-468b1c66bd8b
+---
+
+## [7][Kotlin GDNative](https://www.reddit.com/r/Kotlin/comments/f717nb/kotlin_gdnative/)
 - url: https://www.reddit.com/r/godot/comments/f07564/kotlin_gdnative/?utm_source=share&amp;utm_medium=web2x
 ---
 
-## [2][Testing my apps](https://www.reddit.com/r/Kotlin/comments/f7ak7c/testing_my_apps/)
+## [8][How to create simple Instagram-like Android-app in Kotlin](https://www.reddit.com/r/Kotlin/comments/f7iqnh/how_to_create_simple_instagramlike_androidapp_in/)
+- url: https://www.education-ecosystem.com/asitaka/2w9nx-how-to-create-simple-instagram-like-android-app-in-kotlin/dDzy1-instagram-like-android-app-in-kotlin-with-rxkotlin/
+---
+
+## [9][Testing my apps](https://www.reddit.com/r/Kotlin/comments/f7ak7c/testing_my_apps/)
 - url: https://www.reddit.com/r/Kotlin/comments/f7ak7c/testing_my_apps/
 ---
 Hi.Do i need a high end android phone to test my mobile apps?Or any minimum android version?
-## [3][Encrypted shared preferences](https://www.reddit.com/r/Kotlin/comments/f6xzub/encrypted_shared_preferences/)
+## [10][Encrypted shared preferences](https://www.reddit.com/r/Kotlin/comments/f6xzub/encrypted_shared_preferences/)
 - url: https://www.rockandnull.com/encrypted-shared-preferences/
----
-
-## [4][Kotlin class cant reach Java Class fields](https://www.reddit.com/r/Kotlin/comments/f6t1h2/kotlin_class_cant_reach_java_class_fields/)
-- url: https://www.reddit.com/r/Kotlin/comments/f6t1h2/kotlin_class_cant_reach_java_class_fields/
----
-Im making a Spring Project basically in Java but for some classes I want to use Kotlin practice. I have a Pojo Java Class named Item with 2 private fields(email and URL) and with the @Data annotation so it should have getters and setters.
-In my Kotlin class I want to use those fields and when i write item.email as I should in Kotlin the IntelliJ lets me but on compile it says that those are private and I cant reach them.
-
-I had searched for this problem but didnt found anything usefull.
-## [5][Java lazy](https://www.reddit.com/r/Kotlin/comments/f6ynz9/java_lazy/)
-- url: https://www.reddit.com/r/Kotlin/comments/f6ynz9/java_lazy/
----
-Would you use the class below, such as
-
-    private Lazy&lt;TextView&gt; text = Lazy.of(() -&gt; findViewById(R.id.text));
-
-?
-
-
-    public class Lazy&lt;Data&gt; {
-        public static &lt;Data&gt; Lazy&lt;Data&gt; of(Provider&lt;Data&gt; provider) {
-            return new Lazy&lt;&gt;(provider);
-        }
-
-        private final Provider&lt;Data&gt; provider;
-        private Data field;
-        private boolean instantiated;
-
-        private Lazy(Provider&lt;Data&gt; provider) {
-            this.provider = provider;
-        }
-
-        public Data get() {
-            if (!instantiated) {
-                field = provider.provide();
-                instantiated = true;
-            }
-            return field;
-        }
-
-        public void reset(Data newData) {
-            field = newData;
-        }
-
-        public interface Provider&lt;Data&gt; {
-            Data provide();
-        }
-    }
-## [6][Kotlin: Fun with “in”](https://www.reddit.com/r/Kotlin/comments/f6aq8r/kotlin_fun_with_in/)
-- url: https://proandroiddev.com/kotlin-fun-with-in-8a425704b635
----
-
-## [7][swagger-gradle-codegen v1.4.0 just got released with support for moshi-codegen and a lot of bugfixes/improvements.](https://www.reddit.com/r/Kotlin/comments/f6h990/swaggergradlecodegen_v140_just_got_released_with/)
-- url: https://github.com/Yelp/swagger-gradle-codegen/releases/tag/1.4.0
----
-
-## [8][LiveStream-kt - Library to emit &amp; observe data from any module of the application.](https://www.reddit.com/r/Kotlin/comments/f6lx2c/livestreamkt_library_to_emit_observe_data_from/)
-- url: https://github.com/PatilShreyas/LiveStream-kt
----
-
-## [9][Can't figure out how to put this into a function to make the code D.R.Y.](https://www.reddit.com/r/Kotlin/comments/f6h24j/cant_figure_out_how_to_put_this_into_a_function/)
-- url: https://www.reddit.com/r/Kotlin/comments/f6h24j/cant_figure_out_how_to_put_this_into_a_function/
----
-&amp;#x200B;
-
-Hi, so I was trying to make this code more dry (code here: [https://codeshare.io/214R8z](https://codeshare.io/214R8z), and this is editable). The part I was trying to change is in the placePiece() function. It's just too repetitive.
-
-(It's a tictactoe cli game)
-
-So I made this function:
-
-    fun checkPlacePiece(pos: Int,input: Int, gameBoard: Array&lt;Array&lt;Char&gt;&gt;, player: Char, row: Int, col: Int, playerHasToBeSwitched: Boolean) {
-        var playerHasToBeSwitched = playerHasToBeSwitched
-        if (pos == input) {
-            if (gameBoard[row][col] != 'X' &amp;&amp; gameBoard[row][col] != 'O') {
-                gameBoard[row][col] = player
-            } else if (gameBoard[row][col] == 'X' || gameBoard[row][col] == 'O') {
-                println("This place is already taken!")
-    
-              
-                playerHasToBeSwitched = true
-            }
-        }
-    }
-    
-        But that doesn't work as expected 
-    Can anyone help me, I am struggling so much
-## [10][Can I download Kotlin on a Chromebook?](https://www.reddit.com/r/Kotlin/comments/f6fl69/can_i_download_kotlin_on_a_chromebook/)
-- url: https://www.reddit.com/r/Kotlin/comments/f6fl69/can_i_download_kotlin_on_a_chromebook/
 ---
 

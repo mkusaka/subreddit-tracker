@@ -1,85 +1,117 @@
 # aws
-## [1][Cognito + Lambda + ?? = userID](https://www.reddit.com/r/aws/comments/f861hq/cognito_lambda_userid/)
-- url: https://www.reddit.com/r/aws/comments/f861hq/cognito_lambda_userid/
+## [1][Architecting a Successful SaaS](https://www.reddit.com/r/aws/comments/f8ok5z/architecting_a_successful_saas/)
+- url: https://www.reddit.com/r/aws/comments/f8ok5z/architecting_a_successful_saas/
 ---
-I want to have a unique userID as a Cognito custom attribute that will also live in RDS.
+This series explores how to properly plan and architect a SaaS product offering, designed for hosting on the public cloud. This part answers basic questions, such as, what is a SaaS, what are the alternatives to SaaS for software distribution, and what are the most common SaaS product models:
 
-So I need a Lambda function that picks an ID, saves it as a custom attribute to Cognito, and saves it in RDS. Pretty straight forward. (Hopefully.)
-
-But then I stick that function to the .... Sign Up button? But what happens if the user enters a password that's too short, or whatever? Then the endpoint will fire multiple times, right? And I'll just have a bunch of IDs with no activity.
-
-Am I on the right track? What am I missing?
-
-Also, the Cognito UI runs smoothly out of the box. So besides this, I don't need any new Lambda/API Gateway functions, right?
-
-Thanks.
-## [2][Scaling up DynamoDB](https://www.reddit.com/r/aws/comments/f86dir/scaling_up_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/f86dir/scaling_up_dynamodb/
+https://medium.com/@GaryStafford/architecting-a-successful-saas-eaa24c5ad6d7?source=friends_link&amp;sk=4f53d1d8ea0ac87cbb30491e49861c89
+## [2][Knowing when a solution is a good fit](https://www.reddit.com/r/aws/comments/f8idur/knowing_when_a_solution_is_a_good_fit/)
+- url: https://www.reddit.com/r/aws/comments/f8idur/knowing_when_a_solution_is_a_good_fit/
 ---
-My company started using DynamoDB when we were pretty small. We used it more as a dump, keeping useful information in Postgres, and keeping the rest in DynamoDB. As the business grew, we kept changing the Postgres meeting the immediate requirements.
-Now, I am sitting on motherlode of data, but can’t monetise it as querying in DynamoDB costs a lot. We are in fact planning on moving away from it. 
-What are your experiences with scaling DynamoDB, pitfalls, and suggestions?
-## [3][Need help to move from MongoDB+mongoose to DynamoDB.](https://www.reddit.com/r/aws/comments/f88gv4/need_help_to_move_from_mongodbmongoose_to_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/f88gv4/need_help_to_move_from_mongodbmongoose_to_dynamodb/
+Disclaimer, been only working with aws full time since September.
+
+I joined the cloud team and come to realize that only recently we reached a tipping point at which we can explore new approaches and services.
+
+However, almost daily I find new services that make me question my recent architecture choices for, numer one, a static website and, number two, a fullstack nodejs app (connected to a google service).
+
+For example, I could run the web app using an EC2, elastic beanstalk, amplify and probably one or two additional ways. It's funny at first, but it becomes annoying when you start questioning yourself with almost every announcement.
+
+So I'm wondering what others would do for a) a static website, quarterly updated with a zip upload and b) an all-in-one demo application that uses server side rendered views and only needs to show off a chatbot service from google
+## [3][ECS task in internal subnet cannot connect to the internet](https://www.reddit.com/r/aws/comments/f8oiy6/ecs_task_in_internal_subnet_cannot_connect_to_the/)
+- url: https://www.reddit.com/r/aws/comments/f8oiy6/ecs_task_in_internal_subnet_cannot_connect_to_the/
 ---
-Hi everyone,
+Configured ECS service to have only internal subnets as allowed subnets because this service cannot be accessed from the internet but is should be able to access internet.
 
-lately, I've started developing Alexa voice apps. My current stack is Jovo (a nodejs framework for voice app), nodejs, typescript, and MongoDB with mongoose.
+However, the issue is that the service cannot access internet anymore but it can access other services in the same VPC.
 
-All my backend logic at the moment is hosted on a digital ocean server.
+Here is the terraform configuration for the VPC and ECS service - https://gist.github.com/genert/7ae99dbff9c7c1ba64edc08694fe460c
 
-I would like to fully switch to AWS + DynamoDB but to do that I should replace my current MongoDB+mongoose logic.
+As you can see, the route table configuration should make this work but it does not.
 
-Could you suggest me some library/guide that could allow me to do this process? I would like to find something like mongoose to using on top of row DynamoDB and that would speed up my development and help me with modelling data.
+Any ideas what the issue could be?
 
-If it support TypeScript it would be a huge plus.
-## [4]["MySQL server has gone away" errors during scale down events in Aurora DB Serverless](https://www.reddit.com/r/aws/comments/f85tcw/mysql_server_has_gone_away_errors_during_scale/)
-- url: https://www.reddit.com/r/aws/comments/f85tcw/mysql_server_has_gone_away_errors_during_scale/
+I would also point out that the instance itself where the ECS task is running on is in an external subnet and the other tasks that do not have "subnet allowed" configured can access internet without any problems so security groups are fine.
+## [4][Any update on AWS South Africa region general availability?](https://www.reddit.com/r/aws/comments/f8p47z/any_update_on_aws_south_africa_region_general/)
+- url: https://www.reddit.com/r/aws/comments/f8p47z/any_update_on_aws_south_africa_region_general/
 ---
-I've just migrated an ElasticBeanstalk app last week. Lately, I've noticed some errors and when I investigated the logs, the timestamps correspond to scale down events in Aurora DB. The web app is written in PHP. It's still weekend and I don't have the SSH key to read the code, so I want to gather ideas for Monday.
+Hi Team,
 
-Question: what are the usual reasons for PHP apps to get MySQL errors during scale downs? Does the PHP app have a persistent connection to Aurora? To my understanding, Aurora waits until there are no connections before it scales down; otherwise, it forces a disconnection, and hence a "MySQL server has gone away" error. 
+Does anyone know when South Africa region is going online for general availability?  We're doing some things that having a POP doing in south Africa would help with.
 
-UPDATE: I forgot that I can just download the code without the need for SSH keys. The connection is just a standard call to mysqli().
-## [5][What are you folks building using AWS Lambda?](https://www.reddit.com/r/aws/comments/f7u598/what_are_you_folks_building_using_aws_lambda/)
-- url: https://www.reddit.com/r/aws/comments/f7u598/what_are_you_folks_building_using_aws_lambda/
+Thanks,
+Warren
+## [5][Datasync and KMS?](https://www.reddit.com/r/aws/comments/f8p5zs/datasync_and_kms/)
+- url: https://www.reddit.com/r/aws/comments/f8p5zs/datasync_and_kms/
 ---
-I see the use of AWS Lambda but I'm not really sure what the right use-cases are?  
+Hi,
+
+I'm currently reading up on DataSync for some future transfers to our AWS environment. One thing I find a bit contradictory are the following statements in the docs:
+
+* DataSync supports using default encryption for S3 buckets using Amazon S3-Managed Encryption Keys (SSE-S3)
+* DataSync has integrations with AWS KMS
+
+So, what is it? Can you use buckets encrypted with your own KMS keys, or is only the SSE-S3 key supported?
+## [6][AWS Secrets Manager Issue](https://www.reddit.com/r/aws/comments/f8bqou/aws_secrets_manager_issue/)
+- url: https://www.reddit.com/r/aws/comments/f8bqou/aws_secrets_manager_issue/
+---
+I've created a secret in Secrets Manager and a custom lambda to rotate a bearer token I need to call some APIs.   
 
 
-If there's any open source Lambda based projects someone's got, I'd love to take a look!
-## [6][Announce list using SNS, by creating a form to subscribe by email](https://www.reddit.com/r/aws/comments/f814in/announce_list_using_sns_by_creating_a_form_to/)
-- url: https://github.com/kaihendry/sns-subscribe
+My issue is that sometimes... The rotation doesn't kick off at all. I have the rotation rules to automatically kick off every day (value set to 1). Am I missing something? Why would the rotation just not kick off some days?   
+
+
+The lambda it invokes is within a VPC but I don't think that has anything to do with this but thought it might be worth mentioning. Whenever I kick off the rotation via the console everything works fine.  
+
+
+I'm considering creating a cloudwatch event which will kick off the rotation (reinventing the wheel here) so I don't have to worry about this flaky behavior.
+
+ 
+Response from AWS support (I'll continue to update the post as I hear from them): 
+
+Thank you for contacting AWS Support, my name is Michael and I will be assisting you with this request.
+
+I have gone through your CloudTrail Logs and can see the secret rotation triggered automatically on the 20th(01:07), 21st(08:08), 22nd(01:08) UTC time. On the 23rd I can see no automatic rotation and at 16:27 that day I can see that you manually triggered Rotate Secret from the Secrets Manager Console. I have attached the CloudTrail for each of these events.
+I have also gone through the Lambda Function CloudTrail related API calls and could see no errors hinting at what could have caused Secrets Manager not to trigger the Lambda Rotation Function. Additionally, I could see no permission errors when the Lambda function was run. When invoked, the Lambda function was able to successfully rotate your secret.
+
+To help me investigate further I have opened an Internal Ticket with the Secrets Manager Service Team to investigate why the Auto Rotation is not being triggered. While we wait for a response from the service team I will move this case into Pending Amazon Action and will update you as soon as the Service Team responds.
+In the meantime, if you have additional questions please let me know.
+## [7][Should EKS cluster be in the same subnet as other resources?](https://www.reddit.com/r/aws/comments/f8lvwf/should_eks_cluster_be_in_the_same_subnet_as_other/)
+- url: https://www.reddit.com/r/aws/comments/f8lvwf/should_eks_cluster_be_in_the_same_subnet_as_other/
+---
+**EDIT:** Title should say same VPC
+
+I used [eksctl](https://eksctl.io/) to create an EKS cluster. By default, it put the cluster into its own VPC and configured the subnets.
+
+&amp;#x200B;
+
+I have other resources in the same region on a different VPC that I would like my EKS cluster to have access to (Aurora, Redis, EFS, etc), but this is harder when they are not in the same VPC.
+
+Is the correct way to handle this to put the EKS cluster in the existing VPC? The [documentation](https://eksctl.io/usage/vpc-networking/#use-existing-vpc-any-custom-configuration) for eksctl mentions that you can use an existing VPC, but then you need to create your own subnets and make sure they are configured correctly, which I think seems error prone (I wasn't even sure how to fill in the IPv4 CIDR blocks, let alone any tagging). Is there a better way to solve this, or maybe a reliable guide on how to create the subnets for the EKS cluster?
+## [8][Using AWS services with OVH Object Storage](https://www.reddit.com/r/aws/comments/f8o61r/using_aws_services_with_ovh_object_storage/)
+- url: https://www.reddit.com/r/aws/comments/f8o61r/using_aws_services_with_ovh_object_storage/
+---
+Hello !
+
+For my current project, I need to use OVH Object Storage for their cheap bandwidth. However, I'd like to use AWS Amplify for the integrated mobile experience.  
+
+
+My needs are :
+
+* Users should be able to upload files only if they are connected (authentication is handled by AWS Cognito)
+* They should be able to share files to other users, in a secure way
+
+How am I supposed to handle the authentication flow? I looked through OVH and AWS documentation, but I didn't find any clue on how to do that. Is that even possible?
+## [9][AWS + Kotlin : DynamoDB with superpowers](https://www.reddit.com/r/aws/comments/f8my8h/aws_kotlin_dynamodb_with_superpowers/)
+- url: https://blog.yudiz.com/aws-kotlin-dynamodb-with-superpowers/
 ---
 
-## [7][Getting the right filter for ec2 Instance](https://www.reddit.com/r/aws/comments/f8568x/getting_the_right_filter_for_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/f8568x/getting_the_right_filter_for_ec2_instance/
+## [10][Anyone successfully deploying Rails 6 apps on Elastic Beanstalk?](https://www.reddit.com/r/aws/comments/f8j8v4/anyone_successfully_deploying_rails_6_apps_on/)
+- url: https://www.reddit.com/r/aws/comments/f8j8v4/anyone_successfully_deploying_rails_6_apps_on/
 ---
-Hey All, 
+I've been using Beanstalk for a side project for a few months and, to be honest, overlooking the fact that something isn't working quite right.
 
-I'm trying to get the right filter I should use to get the 'AvailabilityZone', or Region of the Instance. Can you all help me with this?
+In my case, once the deploy is complete, the Puma logs show that /var/app/current/log/production.log isn't accessible. When I look at that directory, I can see the logfile... but it's set to root:root ownership. Doing a simple 'chown' to webapp:webapp makes it all work just fine.
 
-    import boto3
-    ec2 = boto3.resource('ec2')
-    for instance in ec2.instances.all():
-        print (instance.id , instance.state)
+So... here's my question: why isn't a standard Rails app deploy working right out of the box?
 
-\^ That is supposed to give me my instance id, and state. 
-
-Is there a way to get the region of the instance?
-
-Thanks in advance!
-## [8][Marketplace side hustle?](https://www.reddit.com/r/aws/comments/f7whn3/marketplace_side_hustle/)
-- url: https://www.reddit.com/r/aws/comments/f7whn3/marketplace_side_hustle/
----
-Any freelancers out there making any income with things in the marketplace?
-## [9][S3 as a personal remote FS](https://www.reddit.com/r/aws/comments/f7yqd6/s3_as_a_personal_remote_fs/)
-- url: https://www.reddit.com/r/aws/comments/f7yqd6/s3_as_a_personal_remote_fs/
----
-Is it worth it to create and use a S3 account as a personal backup File System for long term storage like STL files, documents , etc?
-## [10][S3 Service requests from US East (N. Virginia) region even though there are no buckets or no one there to access it](https://www.reddit.com/r/aws/comments/f84lni/s3_service_requests_from_us_east_n_virginia/)
-- url: https://www.reddit.com/r/aws/comments/f84lni/s3_service_requests_from_us_east_n_virginia/
----
-I have few private buckets in ap-southeast-1 region. These are new buckets, so there isn't much traffic to it either. When looking through the bill for last month, I notice that there are a number of Tier 1 and Tier 2 requests coming from US East region, which should not be. It does not incur any charge as the number is in only in hundreds, but I am curious what is the reason for it. Is it something that is done by AWS themselves ? 
-
-I have few other accounts, and I checked them too, also to find that they all receive services requests in US East region. Does anyone know the reason for these requests ? (Bucket logging is not enabled, so cannot check them)
+I can see where the symlinks are supposed to be set (via '/opt/elasticbeanstalk/hooks/appdeploy/post/01\_rails\_support.sh') but I'm not quite sure how to debug this...

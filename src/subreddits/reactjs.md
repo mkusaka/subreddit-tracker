@@ -108,181 +108,133 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Getting started with the official Redux Template for create-react-app (Video)](https://www.reddit.com/r/reactjs/comments/f7ue0y/getting_started_with_the_official_redux_template/)
-- url: https://youtu.be/xbgwyhHmCyU
+## [3][Learn the basics of React-Dnd. easily add Drag and Drop interactions to your apps!](https://www.reddit.com/r/reactjs/comments/f8p669/learn_the_basics_of_reactdnd_easily_add_drag_and/)
+- url: https://www.youtube.com/watch?v=NW8erkUgqus
 ---
 
-## [4][Offline tutorial / reactjs training during flight](https://www.reddit.com/r/reactjs/comments/f86lxw/offline_tutorial_reactjs_training_during_flight/)
-- url: https://www.reddit.com/r/reactjs/comments/f86lxw/offline_tutorial_reactjs_training_during_flight/
+## [4][My very first React+GatsbyJS powered live website](https://www.reddit.com/r/reactjs/comments/f8e0q7/my_very_first_reactgatsbyjs_powered_live_website/)
+- url: https://www.reddit.com/r/reactjs/comments/f8e0q7/my_very_first_reactgatsbyjs_powered_live_website/
 ---
-Hi, I will be flying two long haul flights and would love to continue learning Reactjs while I'm offline and in air (in total ~22 hours). Do you have any recommendations for me to crank through during this flight?
+Really excited share one of my recent Gatsby site. This is a big site in-terms of size and complexity. Mobile and Desktop version is different.
 
-I was going through an Udemy course and just completed Reactjs basics. But I see that the project the tutorial will be working on next uses Firebase so I can't do that while I'm offline.
-## [5][Beginner requesting a code review and advice](https://www.reddit.com/r/reactjs/comments/f86l9f/beginner_requesting_a_code_review_and_advice/)
-- url: https://www.reddit.com/r/reactjs/comments/f86l9f/beginner_requesting_a_code_review_and_advice/
+Check it out : [https://southbreezebd.com/](https://southbreezebd.com/)
+
+Client wants Apple website like animation on their About page and we did it too [https://southbreezebd.com/about-us](https://southbreezebd.com/about-us)
+## [5][What is the price for SSR?](https://www.reddit.com/r/reactjs/comments/f8poov/what_is_the_price_for_ssr/)
+- url: /r/webdev/comments/f8p6ri/what_is_the_price_for_ssr/
 ---
-I am trying to build my first React app which is your standard weather app that gets data from OpenWeatherMap API. I have not styled the application at all because I wanted to make sure that I have the functionality down first. I want to be sure that I understand the basics of React and fix all the issues before they become more ingrained in my head and make me struggle with more advanced React concepts. Please highlight everything you see wrong with my code even if it is something minor. To get directed to the Github repo please [CLICK HERE](https://github.com/rimeikis/weatherapp-reactjs) .
 
-The thing I struggle the most is the component hierarchy and one way data flow. I want to know if I have used variable and function props accordingly. Also, I am unsure about my component for fetching API data also being responsible for rendering the other 2 components.
-
-Finally, I have a problem with conditional rendering. My data object contains an image id which is used in an &lt;img&gt; tag. If the data is not loaded then it is hidden apart from the image. Instead, it shows a broken image with the "alt" text next to it. I want to make it so if the data object has not been loaded then there should not be even an alt tag with the broken image icon on the screen. This is what logic I use for my conditional rendering:`{ error ? "There has been an error!" : ( loading ? "Loading data..." : data ) }`
-
-Thanks!
-
-
-Edit: just wanted to again thank everyone who took some of their precious time to help a random person on reddit by reviewing some code. I appreciate all of your comments!
-## [6][Is React one of the best tech stack to develop both web and mobile applications ? or you feel that C# and Java can compete in the Frontend space ?](https://www.reddit.com/r/reactjs/comments/f89fcr/is_react_one_of_the_best_tech_stack_to_develop/)
-- url: https://www.reddit.com/r/reactjs/comments/f89fcr/is_react_one_of_the_best_tech_stack_to_develop/
+## [6][Got 1 day to prepare for a front-end position interview, what to do?](https://www.reddit.com/r/reactjs/comments/f8ml79/got_1_day_to_prepare_for_a_frontend_position/)
+- url: https://www.reddit.com/r/reactjs/comments/f8ml79/got_1_day_to_prepare_for_a_frontend_position/
 ---
-**1)** Is React one of the best tech stack to develop both web and mobile applications ? or you feel that C# and Java can compete in the Frontend space ?
-
-**2)** Why so many Java and C# programer dislike JS ? Is it because they prefer OO programming and their old concept from the 80's over functionnal programming with JS or the modern stuffs ? They talk about Blazor, Web Assembly and Java servlet with the first 2 doesn't seem ready for production ?
-## [7][Unhandled Rejection (TypeError): Cannot read property 'setState' of undefined](https://www.reddit.com/r/reactjs/comments/f896hb/unhandled_rejection_typeerror_cannot_read/)
-- url: https://www.reddit.com/r/reactjs/comments/f896hb/unhandled_rejection_typeerror_cannot_read/
+It's my first interview ever, for an internship. And there are a lot of material online, but I don't know what worth checking out in 1 day preparation that will cover all aspects of an interview.
+## [7][React developers share your experiences as a beginner](https://www.reddit.com/r/reactjs/comments/f8p86x/react_developers_share_your_experiences_as_a/)
+- url: https://www.reddit.com/r/reactjs/comments/f8p86x/react_developers_share_your_experiences_as_a/
 ---
-Hey, I have the following code. It works for most of the part when I try to setState in axios it gives me this error. WHY?
+beginning reactjs, seeing how massive it is ,need some motivation starting it. 
 
-      constructor(props) {
-            super(props);
-            this.state = {
-                loading: false,
-                otpSent: false
+thanks!!
+## [8][What are some of the React or JavaScript blogs you follow?](https://www.reddit.com/r/reactjs/comments/f8nx19/what_are_some_of_the_react_or_javascript_blogs/)
+- url: https://www.reddit.com/r/reactjs/comments/f8nx19/what_are_some_of_the_react_or_javascript_blogs/
+---
+I currently have these on my list. Looking for more interesting resources
+
+1. [Dave Ceddia](https://daveceddia.com/archives/)
+2. [Dan Abramov](https://overreacted.io/)
+3. [Dr. Axel Rauschmayer](http://www.2ality.com/)
+4. [Jared Palmer](https://jaredpalmer.com/blog)
+5. [Kent C Dodds](https://kentcdodds.com/blog/)
+6. [Sophie Alpert](https://sophiebits.com/)
+7. [Tyler Mcginnis](https://tylermcginnis.com/blog)
+## [9][if you work for yourself but want a code review...](https://www.reddit.com/r/reactjs/comments/f8moow/if_you_work_for_yourself_but_want_a_code_review/)
+- url: https://www.reddit.com/r/reactjs/comments/f8moow/if_you_work_for_yourself_but_want_a_code_review/
+---
+Where to find experienced front-end developers (code review) who could appreciate my work? Maybe there are paid services that are time-tested?
+## [10][react-admin: display &lt;SelectInput&gt; inside &lt;Datagrid&gt;](https://www.reddit.com/r/reactjs/comments/f8pnqj/reactadmin_display_selectinput_inside_datagrid/)
+- url: https://www.reddit.com/r/reactjs/comments/f8pnqj/reactadmin_display_selectinput_inside_datagrid/
+---
+After fetching the data I'm displaying it within a `&lt;Datagrid&gt;` as `&lt;TextFields&gt;`. I'm trying to display one of the columns as a `&lt;SelectInput&gt;` with the values coming from the API. Code example should make more sense than my explanation:
+
+An example of the record from the db:
+
+        {
+          "id": 1,
+          "name": "foo",
+          "status": "active"
+        },
+
+In the above, `status` can have two values: `active` or `passive`. As for my (not working) code:
+
+    export const ProjectList = props =&gt; (
+      &lt;List {...props}&gt;
+        &lt;Datagrid&gt;
+          &lt;TextField source="id" /&gt;
+          &lt;TextField source="name" /&gt;
+          &lt;ReferenceInput label="Status" source="status" reference="status"&gt;
+            &lt;SelectField optionText="status" /&gt;
+          &lt;/ReferenceInput&gt;
+          &lt;EditButton /&gt;
+        &lt;/Datagrid&gt;
+      &lt;/List&gt;
+    );
+
+The idea is to display the "Status" column as a select element, allowing to change its value directly from the `&lt;Datagrid&gt;`.
+
+Any idea what am I missing here?
+## [11][Create a Custom Toast Component with React](https://www.reddit.com/r/reactjs/comments/f8plxf/create_a_custom_toast_component_with_react/)
+- url: https://www.youtube.com/watch?v=Zh8qBhnVAWI&amp;feature=share
+---
+
+## [12][What's the recommended way to render SVG's in a component?](https://www.reddit.com/r/reactjs/comments/f8ietg/whats_the_recommended_way_to_render_svgs_in_a/)
+- url: https://www.reddit.com/r/reactjs/comments/f8ietg/whats_the_recommended_way_to_render_svgs_in_a/
+---
+I'm coming from a pure HTML + CSS world where I would normally do this with the following
+
+    &lt;svg&gt;
+        &lt;use xlink:href="./pathToSVGFile#svg_name&gt; &lt;/use&gt;
+    &lt;/svg&gt;
+
+I've tried do this in React using the styled-components library but it's been unsuccessful:
+
+    const styledSVG = styled.svg`
+        /* some styling */
+    `;
     
-            }
-        }
-     -----------------------
-      axios({
-                        url: 'http://localhost:8080/okcustomer/api/user/signup',
-                        method: 'post',
-                        data: values
-                    })
-                        .then(function (response) {
-                            console.log(response);
-                            message.success('Success');
-                            this.setState({
-                                otpSent: true
-                            })
-                        })
-                        .catch(function (error) {
-                            if (error.response !== undefined) {
-                                let fail = error.response.data.message;
-                                console.log(fail)
-                                message.error(fail)
-                                this.setState({
-                                    otpSent: true
-                                })
+    const Icon = () =&gt; {
+        return (
+            &lt;styledSVG&gt;
+                &lt;use xlinkHref={icon}&gt; &lt;/use&gt;
+            &lt;/styledSVG&gt;
+        );
+    }
     
-                            }
-                            else {
-                                message.error("Something went wrong")
-                            }
-    
-    
-                        });
-    
+    export default Icon;
 
-Error message - 
-
-    Unhandled Rejection (TypeError): Cannot read property 'setState' of undefined 
-    let fail = error.response.data.message;
-      55 | console.log(fail)
-      56 | message.error(fail)
-    &gt; 57 | this.setState({
-         | ^  58 |     otpSent: true
-      59 | })
-## [8][How can we store only unique data/value in the empty array? I defined one empty array in the state, and then I'm storing values in that empty array using setState method. But Can someone tell me how I can store only unique values. Right now duplicates are also coming in the array.](https://www.reddit.com/r/reactjs/comments/f894ci/how_can_we_store_only_unique_datavalue_in_the/)
-- url: https://www.reddit.com/r/reactjs/comments/f894ci/how_can_we_store_only_unique_datavalue_in_the/
----
- This is what I'm doing :
-
-checkAnswer = answer =&gt; {  
- this.setState(prevState =&gt; {  
- return {  
- myAnswer: answer,  
- disabled: false,  
- choices: \[...prevState.choices, answer\]  
-      };  
-    });  
-  };
-
-  
- Please tell me what should I do so that only unique values stored in the array.
-## [9][Animations for loading and redirecting to other links](https://www.reddit.com/r/reactjs/comments/f88c9f/animations_for_loading_and_redirecting_to_other/)
-- url: https://www.reddit.com/r/reactjs/comments/f88c9f/animations_for_loading_and_redirecting_to_other/
----
-Hey I am building a webshop app in React and I have a couple of question on how to handle the loading of images and redirecting to other sites.. So right now when I click some &lt;Link /&gt; on my site, it takes me to the other site, but without any animation or anything, it just appears in front of you. The problem I think with that is that it looks kinda boring and uninteresting. Also, if I have a couple of &lt;img /&gt; tags on that site, you can see them loading in.. I am wondering how do you handle things like that? Do you put animations on loading new sites? Or do you put some sort of loading icon? How do I know when a &lt;img /&gt; tag is loaded and I can show the page to the user? Should I maybe put a loading tag instead of each img? Thanks for any help
-## [10][please help me resolve this "TypeError: Cannot read property 'map' of undefined "](https://www.reddit.com/r/reactjs/comments/f886oq/please_help_me_resolve_this_typeerror_cannot_read/)
-- url: https://www.reddit.com/r/reactjs/comments/f886oq/please_help_me_resolve_this_typeerror_cannot_read/
----
- 
-
-*import* React *from* 'react';  
-*import* './Listitems.css';  
-
-
-function ListItems(props){  
- const items = props.items;  
- const listItems = items.map(item =&gt;  
-   {  
-   
- *return* &lt;div className="list" key="item.key"&gt;  
-        &lt;p&gt;{item.text}&lt;/p&gt;  
- &lt;/div&gt;  
-   })  
- *return*(  
- &lt;div&gt;{listItems}&lt;/div&gt;  
-    )  
-  }  
- *export* *default* ListItems;
-## [11][[code review] - I created a small todoist clone to learn react. please critique my code if you can](https://www.reddit.com/r/reactjs/comments/f8814d/code_review_i_created_a_small_todoist_clone_to/)
-- url: https://codesandbox.io/s/todo-app-rt1om
----
-
-## [12][Is there any way to center the scrollbar position before rendering ?](https://www.reddit.com/r/reactjs/comments/f87tee/is_there_any_way_to_center_the_scrollbar_position/)
-- url: https://www.reddit.com/r/reactjs/comments/f87tee/is_there_any_way_to_center_the_scrollbar_position/
----
-Hello.
+Whether I import the value of "icon" before passing it to xlinkHref or if I just pass a string version of the path itself, the svg is not rendered on screen. If I change the styled-component to be an &lt;img&gt; instead of a &lt;svg&gt; then I can display the svg by passing it in with the src attribute. However, using this approach I believe I lose out being able to style the icon through the CSS 'fill' property. Anyone have any suggestions?
 
 &amp;#x200B;
 
-'m trying to do a mobile display with a vertical list of articles. And I want each of these articles to be scrollable horizontally with an item on both sides of the article that will display if I scroll/swipe horizontally. For that I need the main articles to be centered.
+Edit: 
 
-&amp;#x200B;
+Thanks all. I ended up going with /u/bakedleaf 's solution since I'm already using CRA. In case someone in the future is looking at this for reference here's the [docs link](https://create-react-app.dev/docs/adding-images-fonts-and-files/#adding-svgs).
 
-How can u achieve that ? 
+Here's how I ended up using it to apply the same style to different SVG's. Keep in mind this is all done using the styled-components library.
 
-&amp;#x200B;
-
-Would look like this:
-
-&amp;#x200B;
-
-    &lt;ul&gt;
-        &lt;li&gt;
-           &lt;LeftItem /&gt;
-           &lt;CenteredItem /&gt;
-           &lt;RightItem /&gt;
-        &lt;li/&gt;
+    // Import svg's as React Components
+    import { ReactComponent as BookmarkIcon } from './pathToSVG';
+    import { ReactComponent as ChatIcon } from './pathToSVG';
     
-        &lt;li&gt;
-           &lt;LeftItem /&gt;
-           &lt;CenteredItem /&gt;
-           &lt;RightItem /&gt;
-        &lt;li/&gt;
+    import styled from 'styled-components'
     
-        &lt;li&gt;
-           &lt;LeftItem /&gt;
-           &lt;CenteredItem /&gt;
-           &lt;RightItem /&gt;
-        &lt;li/&gt;
-    &lt;/ul&gt;
-
-LeftItem and RightItem are supposed to be hidden on page launch. Then swipe CenteredItem to right or left to display the according Item.
-
-&amp;#x200B;
-
-I hope I managed to explain what I'm trying to do.
+    const StyledIcon = styled.svg`
+        /* Styling that all icons will receive*/
+    `;
+    
+    
+    // assuming we want to render a styledIcon somewhere, you can call it like this.
+    &lt;StyledIcon as={BookmarkIcon}/&gt; 
+    
+    // The 'as' attribute will render the given content with the styles applied by 
+    // the current styled-component
 
 &amp;#x200B;
-
-Thanks

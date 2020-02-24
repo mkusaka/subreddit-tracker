@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (8/2020)!](https://www.reddit.com/r/rust/comments/f5413m/hey_rustaceans_got_an_easy_question_ask_here_82020/)
-- url: https://www.reddit.com/r/rust/comments/f5413m/hey_rustaceans_got_an_easy_question_ask_here_82020/
+## [1][Hey Rustaceans! Got an easy question? Ask here (9/2020)!](https://www.reddit.com/r/rust/comments/f8ney8/hey_rustaceans_got_an_easy_question_ask_here_92020/)
+- url: https://www.reddit.com/r/rust/comments/f8ney8/hey_rustaceans_got_an_easy_question_ask_here_92020/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -26,130 +26,173 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
  - [#rust-webdev](https://chat.mibbit.com/?server=irc.mozilla.org%3A%2B6697&amp;amp;channel=%23rust-webdev) (web development)
  - [#rust-networking](https://chat.mibbit.com/?server=irc.mozilla.org%3A%2B6697&amp;amp;channel=%23rust-networking) (computer networking, and see also [/r/rust_networking](https://www.reddit.com/r/rust_networking))
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/f1ucwh/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/f5413m/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 326](https://www.reddit.com/r/rust/comments/f6sy2s/this_week_in_rust_326/)
-- url: https://this-week-in-rust.org/blog/2020/02/18/this-week-in-rust-326/
+## [2][What's everyone working on this week (9/2020)?](https://www.reddit.com/r/rust/comments/f8ng5w/whats_everyone_working_on_this_week_92020/)
+- url: https://www.reddit.com/r/rust/comments/f8ng5w/whats_everyone_working_on_this_week_92020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-9-2020/38638?u=llogiq)!
+## [3][Very well written article about actix, diesel and how to make rest API](https://www.reddit.com/r/rust/comments/f8n59x/very_well_written_article_about_actix_diesel_and/)
+- url: https://cloudmaker.dev/how-to-create-a-rest-api-in-rust/
 ---
 
-## [3][Rust/WinRT coming soon](https://www.reddit.com/r/rust/comments/f85cp7/rustwinrt_coming_soon/)
-- url: https://kennykerr.ca/2020/02/22/rust-winrt-coming-soon/
+## [4][Plotly for Rust](https://www.reddit.com/r/rust/comments/f8ero2/plotly_for_rust/)
+- url: https://github.com/igiagkiozis/plotly/tree/master
 ---
 
-## [4][Programming Language Warts](https://www.reddit.com/r/rust/comments/f7vimo/programming_language_warts/)
-- url: https://www.reddit.com/r/rust/comments/f7vimo/programming_language_warts/
+## [5][What is a cross-platform way of checking if an OsString is a substring of another OsString?](https://www.reddit.com/r/rust/comments/f8mt4y/what_is_a_crossplatform_way_of_checking_if_an/)
+- url: https://www.reddit.com/r/rust/comments/f8mt4y/what_is_a_crossplatform_way_of_checking_if_an/
 ---
-What are some rust warts ("A small, crocky feature that sticks out of an otherwise clean design.") that you've encountered (Either because they annoyed you in a practical setting or just realized they were there)?
+I want something like [`.contains()`](https://doc.rust-lang.org/std/string/struct.String.html#method.contains), but for  `OsString`. I'm reluctant to convert it to a regular \`String\` and then do the check, since it is a potentially lossy operation on Windows systems, where strings are not encoded as UTF-8.
+
+Is there a reliable way to do this that works across platforms?
+## [6][Stack Overflow Developer Survey 2020 is open](https://www.reddit.com/r/rust/comments/f8f2vf/stack_overflow_developer_survey_2020_is_open/)
+- url: https://www.reddit.com/r/rust/comments/f8f2vf/stack_overflow_developer_survey_2020_is_open/
+---
+It looks like the [Stack Overflow Developer Survey 2020](https://stackoverflow.blog/2020/02/19/new-decade-new-survey-goals-reminder-to-take-the-survey-before-it-closes-next-week/) opened last week, but I didn't see it mentioned here yet.
+## [7][Question] How to handle to POST body datas?](https://www.reddit.com/r/rust/comments/f8ogw5/question_how_to_handle_to_post_body_datas/)
+- url: https://www.reddit.com/r/rust/comments/f8ogw5/question_how_to_handle_to_post_body_datas/
+---
+I started new project using rust lang.
+
+simply upload some videos and auto convert several resolutions from AWS Media Converter and Lamdba.
+
+I made Lamdba script and coded Web side.
+
+I choose \`actix\` and follow is my code gist
+
+[https://gist.github.com/ggomagundan/69d53635a5c6ed1cc108b6552c227181](https://gist.github.com/ggomagundan/69d53635a5c6ed1cc108b6552c227181)
 
 &amp;#x200B;
 
-Bonus points for not well known things. What I have in mind is mostly things that are already in stable rust, that either cannot be fixed without a new edition because of compatibility issues, or that are so core so what makes rust rust that they won't ever be "fixed".
+    use actix_multipart::Field;
+    use std::io::Write;
+    
+    #[macro_use]
+    extern crate dotenv_codegen;
+    
+    use actix_multipart::Multipart;
+    use actix_web::{web, App, Error, HttpResponse, HttpServer, Responder};
+    use listenfd::ListenFd;
+    use futures::StreamExt;
+    use std::collections::HashMap;
+    
+    static PORT: &amp;str = dotenv!("SERVER_PORT");
+    
+    async fn  index(mut payload: Multipart) -&gt; Result&lt;HttpResponse, Error&gt; {
+      let mut form_data: HashMap&lt;String, String&gt; = HashMap::new();
+    
+      while let Some(item) = payload.next().await {
+          let mut field: Field = item?;
+          let content_type = field.content_disposition().unwrap();
+          let name = content_type.get_name().unwrap();
+          // I don't want listing all of text body params
+          if name == "user_id" || name == "user_name" {
+            let data = field.next().await;
+            let wrapped_data = &amp;data.unwrap().unwrap();
+            let parsed_data = std::str::from_utf8(&amp;wrapped_data).unwrap();
+            form_data.insert(name.to_string(), format!("{}", parsed_data.clone()));
+          } else {
+              match content_type.get_filename() {
+                  Some(filename) =&gt; {
+                    let filepath = format!("./tmp/{}", filename);
+                    // File::create is blocking operation, use threadpool
+                    let mut f = web::block(|| std::fs::File::create(filepath))
+                        .await
+                        .unwrap();
+                    // Field in turn is stream of *Bytes* objectv
+                    while let Some(chunk) = field.next().await {
+                        let data = chunk.unwrap();
+                        // filesystem operations are blocking, we have to use threadpool
+                        f = web::block(move || f.write_all(&amp;data).map(|_| f)).await?;
+                    }
+                  }
+                  None =&gt; {
+                      println!("file none");
+                  }
+              }
+          }
+      }
+    
+      println!("data: {:?}", form_data);
+    
+     Ok(HttpResponse::Ok().into())
+    }
+    
+    #[actix_rt::main]
+    async fn main() -&gt; std::io::Result&lt;()&gt; {
+    
+      println!("Server Running on {:} Port", PORT);
+      std::fs::create_dir_all("./tmp").unwrap();
+      let mut listenfd = ListenFd::from_env();
+      let mut server = HttpServer::new(|| App::new()
+        .route("/videos", web::post().to(index))
+      );
+    
+      server = if let Some(l) = listenfd.take_tcp_listener(0).unwrap() {
+          server.listen(l)?
+      } else {
+          server.bind(format!("127.0.0.1:{:}", PORT))?
+      };
+    
+      server.run().await
+    
+      // systemfd --no-pid -s http::8787 -- cargo watch -x run
+    }
+    b
+    c
+
+I got some body data manually
 
 &amp;#x200B;
 
-I'll start with these two:
-
-Arrays do not implement IntoIterator ([https://github.com/rust-lang/rust/issues/25725](https://github.com/rust-lang/rust/issues/25725)). And, currently, calling into\_iter on an array will actually call it on a slice of the array, which gives you references (And can be confusing, specially for beginners).
+I know actix can parsing body data.
 
 &amp;#x200B;
 
-There is no good way to sort a &amp;mut VecDeque&lt;T&gt; in std ([https://github.com/rust-lang/rust/issues/27322](https://github.com/rust-lang/rust/issues/27322)). Because std sort operates on slices (Which must be contiguous and from the indices must be in order), you cannot use it to sort some things that are sortable and provide good random access. You can currently collect into a Vec, sort that, and then turn that into a VecDeque (But that is less than optimal), or you can move the VecDeque using From to make a Vec, sort it, and go back to VecDeque, which according to docs will not reallocate, but it involves some additional initial moving of data and also requires ownership of the VecDeque (So it cannot be used on &amp;mut VecDeque&lt;T&gt;)
-## [5][Why isn't there a compilation cache in ~/.cache?](https://www.reddit.com/r/rust/comments/f8289h/why_isnt_there_a_compilation_cache_in_cache/)
-- url: https://www.reddit.com/r/rust/comments/f8289h/why_isnt_there_a_compilation_cache_in_cache/
----
-I've been getting into Rust, and the big thing that stands out to me is that `cargo` likes to build all my dependencies, and all their dependencies, and so on from source. Even though I have an Intel i7-7500U, this takes a significant amount of time.
-
-Even worse, it doesn't cache the final binaries between projects. So if I build 2 different projects that have similar dependencies, it actually rebuilds all their dependencies from source twice, which _really_ hurts in compilation times.
-
-Why doesn't Rust cache final compiled binaries in `~/.cache/rustc` or something? It would also be quite trivial I would guess to implement a least-recently-used (LRU) cache or something to keep the cache directory under a certain size too.
-
-Rust is great, but compilation times hurt badly (I assume that every effort is being made to optimise the Rust compiler's speed).
-## [6][Dynamic symbol resolution (Making our own executable packer: Part 7)](https://www.reddit.com/r/rust/comments/f88wl2/dynamic_symbol_resolution_making_our_own/)
-- url: https://fasterthanli.me/blog/2020/dynamic-symbol-resolution/
----
-
-## [7][Have you tried to introduce Rust in the workplace? How was your experience?](https://www.reddit.com/r/rust/comments/f83dhr/have_you_tried_to_introduce_rust_in_the_workplace/)
-- url: https://www.reddit.com/r/rust/comments/f83dhr/have_you_tried_to_introduce_rust_in_the_workplace/
----
-&amp;#x200B;
-
-   For the record, I don't plan to introduce Rust to my workplace.  As I can honestly say I'm not good with Rust (though I hope to greatly improve on that).  However in my journey learning Rust, it reminds me a lot of my journey when I was trying to learn Go around 6 years ago.  And I remember around 4 years ago introducing it my job at the time instead of bootstapping another Java or Python app which is all we did at the time.   Rust isn't a big industry language right now, but that could change in a few years.    I remember there were hardly any Go jobs 4 years ago.  
-
-So I present the following question
-
-Have you been successful in introducing Rust to your workplace?  
-
-If so, any resistance? (PMs, Manager, other co-workers, devs entranced in other languages/technologies)
+But I can't find best practice, how to handle all of BODY data
 
 &amp;#x200B;
 
-If you were able to migrate a project, or bootstrap a new project in Rust, were the results satisfactory?  Did you see benefits in the move?
+This is my POST data structure
+
+    struct upload_data { 
+      user_id: i64,
+      user_name: String,
+      video: multi-part (this is issues)
+    }
+
+How to handle these post data  simply?
 
 &amp;#x200B;
 
-If you've thought about introducing Rust to your job, what is the primary driver?  What languages or platforms are most used in your current work/project?
-## [8][Discord is not an acceptable choice for Rust](https://www.reddit.com/r/rust/comments/f7qjpb/discord_is_not_an_acceptable_choice_for_rust/)
-- url: https://sneak.berlin/20200220/discord-is-not-an-acceptable-choice-for-free-software-projects/
+Could you give me some advices?
+## [8][Line Simplification with Ramer-Douglas-Peucker](https://www.reddit.com/r/rust/comments/f89yj8/line_simplification_with_ramerdouglaspeucker/)
+- url: http://adventures.michaelfbryan.com/posts/line-simplification/?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=line-simplification
 ---
 
-## [9][Giron: A javascript parser that outputs estree](https://www.reddit.com/r/rust/comments/f830am/giron_a_javascript_parser_that_outputs_estree/)
-- url: https://www.reddit.com/r/rust/comments/f830am/giron_a_javascript_parser_that_outputs_estree/
+## [9][Drives me nuts how changing RUSTFLAGS always causes a complete recompile](https://www.reddit.com/r/rust/comments/f8ln1x/drives_me_nuts_how_changing_rustflags_always/)
+- url: https://www.reddit.com/r/rust/comments/f8ln1x/drives_me_nuts_how_changing_rustflags_always/
 ---
-[https://github.com/BlueBlazin/giron](https://github.com/BlueBlazin/giron)
-
-**TL;DR: My first open source project. Lots to improve, hoping for contributions!**
-
-Hi fellow rustaceans,
-
-Giron is an ECMAScript (javascript) parser that outputs JSON in the [ESTree](https://github.com/estree/estree/) format. This is the most popular AST spec for open source JS parsers.
-
-After reading the book I wanted to build something non trivial in rust. So I settled on an ECMAScript parser since I knew Rust compiled very well to WebAssembly.
-
-Anyways, several months later I finally have something that can be put on a public github repo. Currently there is still a lot to be done. So contributions are very welcome!
-
-I should mention that this is my first time working on any open source project. Go easy on me please, lol.
-
-I still have to do lots of testing for correctness, and becoming compliant with the ES2020 spec. Once that is done, we can focus on adding JSX support and optimizations. The wasm module works but I also need to publish it on npm.
-
-Any feedback is welcome. Thank you!
-## [10][Code review request: ruut](https://www.reddit.com/r/rust/comments/f84q5e/code_review_request_ruut/)
-- url: https://www.reddit.com/r/rust/comments/f84q5e/code_review_request_ruut/
+Sometimes I'll be hacking and want to ignore warnings temporarily, and will use `RUSTFLAGS=-Awarnings`. If I go back and forth between using this and not using it, it is constantly recompiling all of my dependencies. I can see why other compiler flags might require that, but a flag that simply filters the output should not have to. I wish rustc was smart enough to just give errors if they exist, and only give warnings if there are 0 errors. Or it could at least expose this as an option. :(
+## [10][Another tetris clone in rust](https://www.reddit.com/r/rust/comments/f8gg5g/another_tetris_clone_in_rust/)
+- url: https://github.com/Avokadoen/tetris_wasm
 ---
-Hi!
 
-I recently made my first (non-tutorial led) program in Rust and was wondering if I could
-get some feedback?
-
-It’s a CLI utility to easily print `tree(1)`-like diagrams for tree-like structures that are easy to type or easily extracted from elsewhere.
-
-I think the README might do a better job of explaining...
-
-https://github.com/HarrisonB/ruut
-## [11][Is working on a wrapper for a C library a good first time project?](https://www.reddit.com/r/rust/comments/f8961n/is_working_on_a_wrapper_for_a_c_library_a_good/)
-- url: https://www.reddit.com/r/rust/comments/f8961n/is_working_on_a_wrapper_for_a_c_library_a_good/
+## [11][Debugging async code?](https://www.reddit.com/r/rust/comments/f8r32r/debugging_async_code/)
+- url: https://www.reddit.com/r/rust/comments/f8r32r/debugging_async_code/
 ---
-I just finished reading The book, and looking to build something small as my first project.
+I'm at my wits end trying to get conherent output from LLDB or GDB in async code. Does anyone have recommendations for techniques, Rust libraries, or extensions to GDB or LLDB that would make it easier to, e.g., see which futures are running when, avoid stepping through executor code, and/or observe the state of various futures (e.g. woken, waiting, etc).
 
-I know of a C library, which has a Python wrapper that we use at work. Now I am thinking that writing a Rust wrapper might be a good first project for me to take on...
-
-but I would want to know if this is a good idea for a beginners project? I would like the opinion of more experienced Rust developers...
-
-I mean, would the fact that I am interfacing with a C library bring about it's own unique challenge that won't really help ground my knowledge of Rust? Or would it be accurate to say the skills gained from interfacing with Rust is best left at intermediate level and not as a first project? 
-
-Or you think I should just go for it and the learning experience would be worth it?
-## [12][Building a Terminal-Based Finder](https://www.reddit.com/r/rust/comments/f801fo/building_a_terminalbased_finder/)
-- url: https://www.reddit.com/r/rust/comments/f801fo/building_a_terminalbased_finder/
+The specific problem I was trying to debug was why one of the futures I had created wasn't being polled when I expected. With a lot of `println!()` instrumentation, it became clear that this was because I wasn't waking it correctly, but it would be really nice if I could use a real debugger to work on problems like this in the future.
+## [12][Bastion floating on Tide - Part 1](https://www.reddit.com/r/rust/comments/f8fwry/bastion_floating_on_tide_part_1/)
+- url: https://www.reddit.com/r/rust/comments/f8fwry/bastion_floating_on_tide_part_1/
 ---
-https://preview.redd.it/9ggco03pxji41.png?width=2628&amp;format=png&amp;auto=webp&amp;s=39710807bea2a3aed848073785a0dd67577df14f
+We are starting a series of blog posts on how to integrate Tide with Bastion.
 
-I had an idea to sort of replicate the macOS Finder inside of the shell.  The goal is to make it work across all platforms (though I've only tested on macOS currently).  I'm only 2 weeks into the project and all of my work so far has been laying the foundation down.  It is not yet interactive, but I will be working on that later after finishing a handful of GH Issues.  For now, it simply prints a structure that is similar to that of the Finder.  There are a handful of options that can be set to change the behavior of certain things: different modes for truncating file names (no truncation, truncation based on a constant value, truncation based on statistically measurements such as average and by outlier), the characters used to print the DirectoryContainers can be customized, the vertical and horizontal padding between DirectoryContainers is customizable, and other items as well.  There is color coding based on the type of item (directory, file, symlink), the currently selected item, and the directories in the current path (these colors will be customizable later).
+This one is the first part, focusing on Tide, assembling a simple GET route to generate prime numbers.
 
-In the end, I want it to be able to do a few things:
+Hope you enjoy it! :)
 
-1. Be able to launch applications based on the currently selected file, this can be terminal applications or UI applications.
-2. Be able to return the currently selected path back to the shell after the application is exited, in the case that someone was just using it to explore files and found an item they want to interact with in the shell outside of TermiFind.
-
-I mainly started this to get back into Rust after a long hiatus, but I could find myself using it.  There is tons of work to be done, but I was wanting to see what others think of it and just get some opinions, received constructive criticism, get advice on some of the GH Issues, or possibly even collect a star or two!
-
-[https://github.com/JosephTLyons/termifind](https://github.com/JosephTLyons/termifind)
+[Bastion floating on Tide - Part 1: Setting up Tide](https://blog.bastion.rs/2020/02/23/bastion-floating-on-tide-part-1.html)

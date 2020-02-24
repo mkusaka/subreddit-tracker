@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - February 22, 2020](https://www.reddit.com/r/androiddev/comments/f7rxif/app_feedback_thread_february_22_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/f7rxif/app_feedback_thread_february_22_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/f8qpbi/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/f8qpbi/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - February 17, 2020](https://www.reddit.com/r/androiddev/comments/f574wo/weekly_questions_thread_february_17_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/f574wo/weekly_questions_thread_february_17_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - February 24, 2020](https://www.reddit.com/r/androiddev/comments/f8pltv/weekly_questions_thread_february_24_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/f8pltv/weekly_questions_thread_february_24_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,130 +31,146 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][C/C++ dependencies are now supported in Android studio 4.0](https://www.reddit.com/r/androiddev/comments/f7vo56/cc_dependencies_are_now_supported_in_android/)
-- url: https://twitter.com/AndroidDev/status/1230975484818870274?s=19
+## [3][Justifying the Google punishment ladder - on the utility of keeping the escalation ladder from app bans to account perma-bans a secret from developers - can a "policy" be a secret policy? - and whether Google Play management employs this tactic as a defence mechanism to hide incompetence](https://www.reddit.com/r/androiddev/comments/f8loc7/justifying_the_google_punishment_ladder_on_the/)
+- url: https://www.reddit.com/r/androiddev/comments/f8loc7/justifying_the_google_punishment_ladder_on_the/
 ---
+We all know the general way that app bans work, and how they escalate to account perma-bans, and then "associated account bans".
 
-## [4][I made a tool to get your Google Play app reviews in Slack and would love your feedback!](https://www.reddit.com/r/androiddev/comments/f82ad0/i_made_a_tool_to_get_your_google_play_app_reviews/)
-- url: https://appreviewbot.com
+The bigger question is, what is the utility of perma-banning developers with a policy that is inspired by the archaic **"three strikes and you are out" thinking of the Reagan era?**
+
+Even though now we know 3 app bans does not always lead to perma-ban, and sometimes 1 app ban for a new dev leads to perma-ban, **what is the logic and motivation for such arbitrariness?**
+
+Since a number of app bans are caused by dev unawareness or sloppiness, **how does an escalating punishment regime ensure better compliance?** Which sadist at Google though up this scheme?
+
+&amp;nbsp;
+
+
+**Unpredictable "policies"**
+
+The current app ban to perma-ban escalation ladder is completely arbitrary and unpredictable from the developer point of view!
+
+So how does it function as "policy", or as deterrent, if it is completely opaque to the developer?
+
+The perception it creates is of arbitrary cruelty, under an unpredictable and temperamental boss.
+
+&amp;nbsp;
+
+
+**Who thought up this regime at Google?**
+
+Which creative (but out of touch with reality) mind at Google thought all this up?
+
+And which misanthrope then extended it to the **notoriously unfair "associated account ban"**, where a wife can be banned for the behavior of her husband, and the employer and friends can be banned without explanation out of the blue?
+
+&amp;nbsp;
+
+
+**Google's infinite memory**
+
+As the understood behavior stands, there is an accumulation of ill will that a developer can accumulate, which leads to a tipping point where Google finally perma-bans a developer.
+
+However if a developer has accumulated 3 app bans some time ago, due to mistakes, stupidity and even bad behavior, does Google start forgiving them after some time?  What is the motivation for infinite memory of developer sins - so an 18 year old's infractions are remembered well into his 20s?
+
+Under what motivation should such a developer proceed to develop for Google?
+
+If they have accumulated 3 app bans already, yet not been banned yet, should they continue developing for Google, or are they on the brink of an account perma-ban?
+
+If there is no more margin of error - should they embark on a new project ?
+
+Now it may be that Google erases the bad-will over time, so after some time, the dev is again given leeway to make mistakes.  Even if Google does have such an internal policy/algorithm, that is not known by the devs.
+
+**It seems Google doesn't want you to have any visibility into your status at Google.**  Evidently it sees this as some sort of a leg up - a strategic advantage Google has, but devs don't have.
+
+The end result if this opaqueness is, that a dev who has accumulated a few app bans may be better off making apps for a newer platform that telegraphs policies better to it's devs.
+
+&amp;nbsp;
+
+
+**Developer perceptions**
+
+It is no wonder that a perception exists that Google Play sees **app developers as a nuisance**.  Or as some devs report, how their contacts within Google dry up at a hint of criticism.
+
+This suggests there is a problem within Google Play management, where they have allowed, or possibly even **cultivated a culture of loathing towards app developers** - which is a sign of exasperation, and possibly incompetence within those corporate ranks - where **insularity is chosen as a defence** mechanism over openness (with openness, outsiders get a better handle to challenge management misbehavior).
+## [4][Fabric is deprecated and will shut down after March 31, 2020](https://www.reddit.com/r/androiddev/comments/f8oh3s/fabric_is_deprecated_and_will_shut_down_after/)
+- url: https://www.reddit.com/r/androiddev/comments/f8oh3s/fabric_is_deprecated_and_will_shut_down_after/
 ---
-
-## [5][Am I making my app too complex ?](https://www.reddit.com/r/androiddev/comments/f8451x/am_i_making_my_app_too_complex/)
-- url: https://www.reddit.com/r/androiddev/comments/f8451x/am_i_making_my_app_too_complex/
+Fabric is deprecated and will shut down after March 31, 2020, and is being integrated into Firebase. Fabric's Beta will be replaced by Firebase App Distribution and Crashlytics will be replaced by Firebase App Distribution. I found a simple and concise article on how to setup Firebase App Distribution with fastlane. Check it out at   
+[https://medium.com/@clementozemoya/automated-android-deployments-with-fastlane-and-firebase-app-distribution-b1d1905a4fe6](https://medium.com/@clementozemoya/automated-android-deployments-with-fastlane-and-firebase-app-distribution-b1d1905a4fe6)
+## [5][How do you prevent fragment recreation with Android Navigation Component?](https://www.reddit.com/r/androiddev/comments/f8opw0/how_do_you_prevent_fragment_recreation_with/)
+- url: https://www.reddit.com/r/androiddev/comments/f8opw0/how_do_you_prevent_fragment_recreation_with/
 ---
-Hi guys!,
-
-&amp;#x200B;
-
-So I'm making an app that uses location iq's forward geocoding... but I really fear that some competitor will use my API keys to shot down my app (which is not really that complex...  but people say It's a good idea)
-
-&amp;#x200B;
-
-so what is my solution ? make a RESTful api server that can act as a middle man so I can register every user from my installed aplications and track their request... the only downside of this solution is the cost of maintaining a server running? Idk
-
-&amp;#x200B;
-
-Would it be too expensive to pay a REST server API? Keep in mind that these app is just using locationIQ forward geocoding and it has like 5 adMob banners
+I have seen people try to save ViewModel, create custom Navigator, etc. What do you guys use and prefer and why?
 ## [6][A simple Disney app using the material transformation motion system.](https://www.reddit.com/r/androiddev/comments/f899oq/a_simple_disney_app_using_the_material/)
 - url: https://github.com/skydoves/DisneyMotions
 ---
 
-## [7][The boring Android show](https://www.reddit.com/r/androiddev/comments/f7w76o/the_boring_android_show/)
-- url: https://www.reddit.com/r/androiddev/comments/f7w76o/the_boring_android_show/
+## [7][Android 11 funny things: android.R.string.yes and and android.R.string.no deprecated](https://www.reddit.com/r/androiddev/comments/f8aj0f/android_11_funny_things_androidrstringyes_and_and/)
+- url: https://www.reddit.com/r/androiddev/comments/f8aj0f/android_11_funny_things_androidrstringyes_and_and/
 ---
-Hello friends.
-
-I would like to know if there's something like "The boring flutter show" for Android development. If you don't know how is it, take a look at: https://youtu.be/yr8F2S3Amas
-
-in short, it's 2 seniors devs doing a pair programming, without edition, so when they're fucked of, the video show up they searching on Google, doing some Work around when they didn't know how to solve the problem...
-## [8][Hiding a notification icon but keep the sound?](https://www.reddit.com/r/androiddev/comments/f87khl/hiding_a_notification_icon_but_keep_the_sound/)
-- url: https://www.reddit.com/r/androiddev/comments/f87khl/hiding_a_notification_icon_but_keep_the_sound/
+`android.R.string.yes` and `android.R.string.no` are finally deprecated because they incorrectly match `android.R.string.ok` and `android.R.string.cancel`
+## [8][Adobe Xd Design to Real Android/iOS App | Design Weekly](https://www.reddit.com/r/androiddev/comments/f8r88o/adobe_xd_design_to_real_androidios_app_design/)
+- url: https://youtu.be/DWkFLlV_Q-Q
 ---
-Hi,
 
-I'm wondering if there's a solution for this? I want to be notified when I receive a message from a certain app but I don't want to see the app icon on my notification bar, is that possible❔
-
-I'm curious about the possibilities.
-## [9][Can I open logcat viewer from Android Studio without using the entire program?](https://www.reddit.com/r/androiddev/comments/f86zyk/can_i_open_logcat_viewer_from_android_studio/)
-- url: https://www.reddit.com/r/androiddev/comments/f86zyk/can_i_open_logcat_viewer_from_android_studio/
+## [9][Suggestion: Make scoped storage better for devs](https://www.reddit.com/r/androiddev/comments/f8qook/suggestion_make_scoped_storage_better_for_devs/)
+- url: https://www.reddit.com/r/Android/comments/f8qg4u/suggestion_make_scoped_storage_better_for_devs/
 ---
-Hi. I find the logcat viewer is very useful and much interactive than command line version. 
-Can I somehow run just the logcat viewer? I don't want to load a project and stuff.
-## [10][Using AndroidX Snapshot Builds](https://www.reddit.com/r/androiddev/comments/f7wd6d/using_androidx_snapshot_builds/)
-- url: https://www.reddit.com/r/androiddev/comments/f7wd6d/using_androidx_snapshot_builds/
+
+## [10][ItemDecoration doesn't work inside NestedScrollView](https://www.reddit.com/r/androiddev/comments/f8qlc5/itemdecoration_doesnt_work_inside_nestedscrollview/)
+- url: https://www.reddit.com/r/androiddev/comments/f8qlc5/itemdecoration_doesnt_work_inside_nestedscrollview/
 ---
-I wrote a blog-post about what AndroidX snapshot builds are and how to use them. 
+I have implemented RecyclerView with sticky headers and I did it through [ItemDecoration](https://stackoverflow.com/questions/32949971/how-can-i-make-sticky-headers-in-recyclerview-without-external-lib). It works as expected in the case of stand-alone RecyclerView. But I have two RecyclerViews, and I need to use NestedScrollView
 
-Here is the link:
+    &lt;androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"&gt;
+        &lt;LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"&gt;
+            &lt;androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menuNewsList"
+                android:layout_width="match_parent"
+                android:layout_height="170dp" /&gt;
+            &lt;androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" /&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/androidx.core.widget.NestedScrollView&gt;
 
-[http://rahulrav.com/blog/using_snapshot_builds.html](http://rahulrav.com/blog/using_snapshot_builds.html)
+Code initialization: 
 
-Hope you find this useful.
-## [11][Random Musings on the R Developer Preview 1 [CommonsWare]](https://www.reddit.com/r/androiddev/comments/f7pz5n/random_musings_on_the_r_developer_preview_1/)
-- url: https://www.reddit.com/r/androiddev/comments/f7pz5n/random_musings_on_the_r_developer_preview_1/
----
-&gt;**What Will Piss Off Users**  
-&gt;  
-&gt;The phrasing around the [file and directory access restrictions](https://developer.android.com/preview/privacy/storage#file-directory-restrictions) puts the blame on developers. How *dare* we ask for the Downloads/document tree, or for files in Android/data/directories!  
-In  reality, developers don’t do that. Developers simply fire off  ACTION\_OPEN\_DOCUMENT, ACTION\_OPEN\_DOCUMENT\_TREE, or  ACTION\_CREATE\_DOCUMENTIntents. Where the user winds up choosing is up to  the user.  
-So, in reality, **the restrictions listed in this section will be placed on** ***users***\*\*, not developers\*\*. And I have absolutely no idea **what sort of messaging Google could use** in the Storage Access Framework UI **that would justify to the user blocking them from navigating to certain portions of external and removable storage**. “Sorry, you can’t choose Downloads/, because ¯\\\_(ツ)\_/¯” doesn’t strike me as something that will make users very happy.  
-I  am all for improved user control over privacy and security concerns,  but the boundaries between what is and is not allowed need to make sense  to users and, secondarily, to developers.  
-&gt;  
-&gt;  
-&gt;  
-&gt;**What Will Piss Off Developers**  
-&gt;  
-&gt;On the one hand, the [“All Files Access”](https://developer.android.com/preview/privacy/storage#all-files-access) support should be a good thing. It gives file managers and similar sorts of apps an option for accessing more stuff on external and removable storage. However, it is not really “all files”, as Android/data/  
- is still blocked off. IMHO, the next step is to use the one-time permission system to allow these apps to have access to these protected areas (e.g., so a backup app can actually do a backup).  
-&gt;  
-&gt;The [background location restrictions](https://developer.android.com/preview/privacy/location#background-location) are confusing as documented. I’ll be playing around with these and hopefully will work out some samples soon.
+    listMenu.apply {
+         adapter = dishAdapter
+         isNestedScrollingEnabled = false 
+    } 
+    listMenu.addItemDecoration(HeaderItemDecoration(listMenu, isHeader = isHeader()))
 
 &amp;#x200B;
 
-[https://commonsware.com/blog/2020/02/21/random-musings-r-dp1.html](https://commonsware.com/blog/2020/02/21/random-musings-r-dp1.html)
-## [12][Google Developer Account TERMINATED by bots with no explanations](https://www.reddit.com/r/androiddev/comments/f7uynm/google_developer_account_terminated_by_bots_with/)
-- url: https://www.reddit.com/r/androiddev/comments/f7uynm/google_developer_account_terminated_by_bots_with/
+Without  NestedScrollView  it works excellent, but in my case ItemDecoration doesn't work.
+
+I've found out next information:
+
+* onDrawOver's are not called on scrolling because RecyclerView.draw() is not called as well.
+* All items are created at the same time (so Adapter creates view holders for all items in the data). I think it happens because of NestedScrollView.
+* I tried to force calling recyclerview's redraw on scrolling but it doesn't work
+
+I considered combining 2 RecyclerViews into one, but first one has a horizontal scroll, so I'd like to avoid this solution.
+
+Do you have any advice how to deal with it?
+## [11][Alphaanimation with surface view.](https://www.reddit.com/r/androiddev/comments/f8q4yg/alphaanimation_with_surface_view/)
+- url: https://www.reddit.com/r/androiddev/comments/f8q4yg/alphaanimation_with_surface_view/
 ---
-Hi, my name is Raul from Spain and I also have been suspended and banned forever from Google Play Developer suddenly and because of no reason. I’m going to tell you my experience as a google play developer, and show the contrast between Google Play Developer and Apple Developer Program, to see if Google changes its unfair and absurd way of acting at once:
-
-I started as a google play developer in 2018 with some friends. We were (and have been for last) android os users, and some-kind of geek technology fans, so we decided to open a developer account and make some adventure. We learn Java in Android Studio (and then we switched to Kotlin) and started to upload apps of different categories. After a few months we discovered that our entertainment apps were the most profitable and that were the ones that were best given to us in terms of time and resources, so we started to make simple entertainment meme apps the most. So we were developing, designing and testing my apps and then uploading them, including in them both resources from internet (always fair use: deviantart, pixabay, etc) and my own resources. All was going well, my account was growing, all was great.
-
-One day (I don’t remember now) Google Play striked our account because one app was about a “nuclear bomb simulator”, and they argued that we were making fun with nuclear bomb tragedies (was that hiroshima and nagasaki? We will never know, because google is opaque as a gorilla in the middle of the night. Of course we typed that was a ”prank” in the title and that was a joke in the description, but what few months ago was correct, well and policy-compliant, some day Google Play, its review team or whosoever decided it wasn’t enough. You know, Google and his ridiculous way of acting and interpreting and applying policies. Of course, appealing was no use, didn’t work.
-
-Another day, some weeks later, in the middle of a global update, we received another strike email. This time was our app named “La meca de la irreverencia Button”, an app which consisted of just one sound button that when pressed it consisted of a button that, when pressed, emitted the sound of the phrase “La meca de la irreverencia” through the user speakers. We did it because the sentence in question was viral and a meme, and we tried to take the trend making a funny joke app. What did the the Google review team argued now? Well, that our app was a discriminatory offense. We had different options, but we obviously understood that they were talking about the “meca” word, and that it was a religion discriminatory app, according to Google review team. As you see, as you can see, a great way to apply the policies, that of google.
-
-A few hours later, then, we received the typical, robotic and horrible google email announcing that we were banned and suspended forever from Google Play.
-
-In summary: we get out of google play as a group forever because of two absurd strikes so we dissolved as a group. Appealing only served to receive more automatic robotic Google emails.
-
-Now is when it gets interesting:
-
-After some time, I decided as individual to try again on Google Play.  My Google Play Developer account, Paradise Meme Buttons (you can check my youtube account where I uploaded the promotional videos of my apps by searching Paradise Meme Buttons, which is still opened, no spam), were opened on November 24 of 2019, and I started uploading some apps to the store according to market trends and what I was able to do, what I made with our group before. I uploaded new apps and some similar to those I uploaded with my team before, always me making sure that no application was likely to be the object of any absurd interpretation of the policies of the google review team (although there is always risk because the interpretations, it seems, are almost endless ). All was fine now, I uploaded I think near 80 apps and they were growing.
-
-On 5 of February of 2020 at night I finished an update of one app adding new libraries, new functionalities and new design. The libraries in question added were the following, you can see them on GitHub:
-
-com.nightonke:boommenu:2.1.1
-
-com.github.Shashank02051997:FancyAlertDialog-Android:0.1
-
-com.github.GrenderG:Toasty:1.4.2
-
-The surprise came two months later, on 6 February of 2020, when I woke up early and checked my account and i couldn’t refresh the Google Play Developer Console page. After checking my internet was fine and working and fearing the worst, I checked my email and there was a no reply email from Google Play Support and with CC to the email “[muzychenko@google.com](mailto:muzychenko@google.com)” starting with “This is a notification that your Google Play Publisher account has been terminated.” Oh, there we go again. But this time, with NO REASONS nor strikes… NOTHING. Simply they banned me without explanations,  as if I were a nuisance to eliminate. 
-
-I of course appealed and investigating I found that email on CC, and searching it in Google I discovered that it belonged to “Olha Muzychenko”, a Google worker. I desperately wrote her explaining the situation and begging for reasons or some information. Well, I received an instantly reply from Mail Delivery Subsystem saying that “Address not found” (see files attached). Really Google? The only natural person and not a robot with whom I manage to communicate throughout my life as a developer turns out that it is an email that does not exist because it left you (guess why)?
-
-I have been appealing since then requiring INFORMATION and EXPLANATIONS and saying that according to GDPR I have the right to know why the hell has been banned and suspended forever my account. One and another time but no human response, only automatic bot no-reply responses. That’s all the support Google Play makes to its developers and creators: bots and emails that do not exist after banning you suddenly  forever because you are doing great and achieving downloads with no reasons.
-
-I also downloaded all my personal information that Google has about me (GDPR) in order to at once know why they closed my account, and only found basic information about the apps and logs, anymore.
-
-By contrast, I have been an Apple Developer since as early as 2018 and I never have trouble: in Apple they are more restrictive but when you upload an app a real person responds you and tell you what is wrong or what do you have done incorrecltly with graphic indications of specific errors to fix. Moreover, they provide you with a dialogue window to discuss with the review team the interpretation of the policies they have made and why you think they are wrong, to retract if it is a mistake. They are much more serious and rigurous.
-
-Finally, I wanted to make a public appeal to Google Play and its team, so as to try to make Google realize once and not happen to anyone else:
-
-Dear Google, what is wrong with you? You get money when we buy your account, you get money when we use admob or in-app purchases. Why do you decide to o make life impossible to your developers, those who maintain your store and its content, who give you money, who create value for your community? Do you think that banning and suspending forever from your store is a fair solution? Why do you interpret your own policies so absurdly? Why the only support you give to your developers is a bunch of no-reply automatic bot reply one after another saying that is impossible to help us? Are you happy making the time invested, the content, the value, the illusions and also the money fade into the fog as if nothing with just an email without explanations? Why do you explain that we have to comply with the GDPR policy when you are the first to violate it and not apply it? Are not consumer rights important to you?
-
-I think you should seriously reconsider your values, your way of acting, the example you intend to give and the app store you want to achieve.
-
-Sorry not sorry, Raul, an ex Google Play developer thanks to Google Play.
-
-You can contact me for help, for telling me your case and more at [elraulbenitoortola@gmail.com](mailto:elraulbenitoortola@gmail.com)
+I implemented alphaanimation in imageview to get some sort of dissolve effect for transition.
+I want the same in surface view when transitioning from one to another.but using alphaanimation in surface view gives me black screen or not animating . Please suggest me a solution for this.
+## [12][A/B test in android kotlin](https://www.reddit.com/r/androiddev/comments/f8ppqr/ab_test_in_android_kotlin/)
+- url: https://www.reddit.com/r/androiddev/comments/f8ppqr/ab_test_in_android_kotlin/
+---
+In my app there are several a/b experiments running write now in onCreate() i have several if else for handling the flow, is there any particular coding style/practice that I can follow to make it cleaner

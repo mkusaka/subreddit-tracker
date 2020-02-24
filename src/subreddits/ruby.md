@@ -1,90 +1,43 @@
 # ruby
-## [1][Fusrodah - a Roda + Sequel + Webpack/TailwindCSS boilerplate](https://www.reddit.com/r/ruby/comments/f85el7/fusrodah_a_roda_sequel_webpacktailwindcss/)
-- url: https://www.reddit.com/r/ruby/comments/f85el7/fusrodah_a_roda_sequel_webpacktailwindcss/
+## [1][Setting up Rails project with RSpec - #1 testing framework from scratch](https://www.reddit.com/r/ruby/comments/f8p1ik/setting_up_rails_project_with_rspec_1_testing/)
+- url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-testing-rspec-configuration/
 ---
-I've been enjoying Roda as my sideproject/fun stack but constantly having to rebuild my stack every time I start a side project with some basic stuff like Webpack and whatnot so I made one for cloning. Inspired by [roda-sequel-stack](https://github.com/jeremyevans/roda-sequel-stack) but catered to my needs.
 
-It combines both [jeremyevans/roda-sequel-stack](https://github.com/jeremyevans/roda-sequel-stack) and [taniarascia/webpack-boilerplate](https://github.com/taniarascia/webpack-boilerplate)
+## [2][Hash#shift using default value](https://www.reddit.com/r/ruby/comments/f8puzj/hashshift_using_default_value/)
+- url: https://medium.com/@farsi_mehdi/hash-shift-using-default-value-b0d7cb62ffa2
+---
 
-So here you go, for anyone who want to start a new project with a fully working webpack stack.
+## [3][How to test static sites with RSpec, Capybara, and Webkit](https://www.reddit.com/r/ruby/comments/f8kmgr/how_to_test_static_sites_with_rspec_capybara_and/)
+- url: https://nts.strzibny.name/how-to-test-static-sites-with-rspec-capybara-and-webkit/
+---
 
-[choonggg/fusrodah](https://github.com/choonggg/fusrodah)
+## [4][version-check gem - up-to-date? - helpers for checking for / reporting outdated gem / library versions](https://www.reddit.com/r/ruby/comments/f8p3od/versioncheck_gem_uptodate_helpers_for_checking/)
+- url: https://github.com/feedreader/pluto/tree/master/version-check
+---
 
-Forgive the name, it was in my head every time I think of Roda
-## [2][Pending cops in Rubocop to make upgrade easier](https://www.reddit.com/r/ruby/comments/f89eny/pending_cops_in_rubocop_to_make_upgrade_easier/)
+## [5][Cocktails and choreography: Array combinations and permutations in Ruby](https://www.reddit.com/r/ruby/comments/f8pvn3/cocktails_and_choreography_array_combinations_and/)
+- url: https://www.mesomorphic.co.uk/blog/2020/02/24/charity-ball/
+---
+
+## [6][Changing perception of objects by overriding the inspect method](https://www.reddit.com/r/ruby/comments/f8p2m8/changing_perception_of_objects_by_overriding_the/)
+- url: https://aliou.me/posts/2020/02/overriding-inspect/
+---
+
+## [7][When used intelligently, Rails concerns are great](https://www.reddit.com/r/ruby/comments/f8f9bl/when_used_intelligently_rails_concerns_are_great/)
+- url: https://www.codewithjason.com/used-intelligently-rails-concerns-great/
+---
+
+## [8][GitHub - unagiootoro/facade-pix2pix: Pix2Pix implementation with Ruby-dnn](https://www.reddit.com/r/ruby/comments/f8q9qf/github_unagiootorofacadepix2pix_pix2pix/)
+- url: https://github.com/unagiootoro/facade-pix2pix
+---
+
+## [9][Pending cops in Rubocop to make upgrade easier](https://www.reddit.com/r/ruby/comments/f89eny/pending_cops_in_rubocop_to_make_upgrade_easier/)
 - url: https://prathamesh.tech/2020/02/23/pending-cops-to-make-updating-rubocop-easier/
 ---
 
-## [3][Static vs Dynamic typing in the context of game development (why I use Ruby).](https://www.reddit.com/r/ruby/comments/f7udb6/static_vs_dynamic_typing_in_the_context_of_game/)
-- url: https://www.twitch.tv/videos/555300001?filter=highlights&amp;sort=time
+## [10][What are some great resources for starting out learning Ruby?](https://www.reddit.com/r/ruby/comments/f8akoy/what_are_some_great_resources_for_starting_out/)
+- url: https://www.reddit.com/r/ruby/comments/f8akoy/what_are_some_great_resources_for_starting_out/
 ---
+Hi there, I recently started my programming journey... again. Haha. Well, the first time I tried to learn Ruby I gave up after a bit because it started to become a little too complicated for my novice mind and I had other higher priorities at the time. Anyways, i've begun again. I'm using Jay McGavren's book Head First Ruby which has been supremely good so far, and i've also been working on the Ruby course on Code Academy which I find less effective but also a nice change of pace.
 
-## [4][iniparser v1.0 gem - read / parse INI configuration, settings and data files into a hash (incl. named subsections)](https://www.reddit.com/r/ruby/comments/f86smc/iniparser_v10_gem_read_parse_ini_configuration/)
-- url: https://github.com/datatxt/iniparser
----
-
-## [5][The redo Keyword in Ruby](https://www.reddit.com/r/ruby/comments/f7pi1f/the_redo_keyword_in_ruby/)
-- url: https://medium.com/rubycademy/the-redo-keyword-in-ruby-3f150d69e3c2
----
-
-## [6][Aaron Patterson's thoughts on the pipeline emoji](https://www.reddit.com/r/ruby/comments/f7d117/aaron_pattersons_thoughts_on_the_pipeline_emoji/)
-- url: https://github.com/ruby/ruby/pull/2273/
----
-
-## [7][Namespacing Rails application?](https://www.reddit.com/r/ruby/comments/f7idfp/namespacing_rails_application/)
-- url: https://www.reddit.com/r/ruby/comments/f7idfp/namespacing_rails_application/
----
-I maintain a "majestic" monolith eCommerce platform  with 3 very distinct parts -- api, admin, store. And I'd love to namespace this application, so this distinction could be move obvious and I can easily use mutant testing.  
-
-
-Has anyone went through such a hassle with their Rails apps? Any blog posts/ experience you can share?  
-
-
-Namespacing seems obvious for controller code, but not that 'obvious' for code that is being shared between all these "distinct parts". Should I namespace models as well?   
-
-
-Quite a lot of questions once I start thinking about it and very little information on such a 'transition' in the internet.
-## [8][Best Developer Tools Trick](https://www.reddit.com/r/ruby/comments/f7czxv/best_developer_tools_trick/)
-- url: https://blog.driftingruby.com/best-developer-tool-trick/
----
-
-## [9][Need help with some refactoring in a cfndsl CloudFormation template](https://www.reddit.com/r/ruby/comments/f7kn5v/need_help_with_some_refactoring_in_a_cfndsl/)
-- url: https://www.reddit.com/r/ruby/comments/f7kn5v/need_help_with_some_refactoring_in_a_cfndsl/
----
-In [cfndsl](https://github.com/cfndsl/cfndsl), you can create an AWS CloudFormation template like this:
-
-```
-CloudFormation do
-  EC2_Instance(:Example) do
-    ImageId 'ami-12345678'
-    Type 't1.micro'
-  end
-end
-```
-
-However real-world templates are usually much larger, but that's not the point.
-
-Let's say that I have dozens of CloudFormation templates that share the same `EC2_Instance`, each with a possibly different `ImageId` and `Type`.
-
-How can I extract this into a method (e.g. `ec2_instance`) so that I can refactor the `CloudFormation` block into this:
-
-```
-def ec2_instance(ami, type)
-   # ???
-end
-
-CloudFormation do
-  ec2_instance('ami-12345678', 't1.micro')
-end
-
-CloudFormation do
-  ec2_instance('ami-90111213', 't2.small')
-end
-
-```
-
-Thanks in advance.
-## [10][Ruby Quiz - Code Challenge #18 - Up-to-Date? Version Check All Your Libraries](https://www.reddit.com/r/ruby/comments/f7dct8/ruby_quiz_code_challenge_18_uptodate_version/)
-- url: https://github.com/planetruby/quiz/tree/master/018
----
-
+Are there any other books or resouces online you guys could recommend to me to help me integrate this new information i'm taking in and, I guess, just have something else to chew on? Thank you

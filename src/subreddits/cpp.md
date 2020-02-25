@@ -57,95 +57,83 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][69-year-old father of C++: C++ has survived for decades, what keeps its vitality?](https://www.reddit.com/r/cpp/comments/f8jcuj/69yearold_father_of_c_c_has_survived_for_decades/)
+## [2][How I Declare My class And Why – Howard E. Hinnant](https://www.reddit.com/r/cpp/comments/f918oz/how_i_declare_my_class_and_why_howard_e_hinnant/)
+- url: http://howardhinnant.github.io/classdecl.html
+---
+
+## [3][Would you use my ABI-breaking port of an existing std:: and/or compiler? (alt title: would you put your money where your mouth is?)](https://www.reddit.com/r/cpp/comments/f94zcr/would_you_use_my_abibreaking_port_of_an_existing/)
+- url: https://www.reddit.com/r/cpp/comments/f94zcr/would_you_use_my_abibreaking_port_of_an_existing/
+---
+Hi folks,
+Like many of you here, I was pretty disappointed in the committee's recent decision to effectively maintain ABI forever*. I'd like to gain a sense of how strong that disappointment is - paraphrasing an old favorite "most people say they would vote to send litterbugs to jail, but almost nobody would support a candidate just because they want to send litterbugs to jail."
+
+We talk about ABI a lot, but not all ABI breaks are the same. Some ABI breaks are in the library alone, while others are in the compiler as well. The ABI also has a complex relationship with the standard:
+
+ * the ABI is not part of the standard
+ * the standard can mandate that some or all implementations change their ABI (e.g. the elimination of COW std::string) 
+ * some ABI breaks require standard standard support first - either new language features or better library interfaces
+ * but some ABI breaks can be taken on by library owners alone 
+
+Today, the committee is effectively unwilling to make any changes to the language that would require any implementation to break ABI. And, std:: maintainers are generally unwilling to break the ABI of their implementation.
+
+One of the things that's a bit silly here is that a new std:: implementation based on one of the existing std:: implementations could break ABI and thereby be faster (and more conformant!) than the std:: implementation it was based on. Of course, this has happened before - this was part of the impetus for creating libc++ instead of continuing to use stdlibc++. I'd like to make such a new implementation, but with ABI incompatibility across major versions as a expectation from day0.
+
+The core question I'd like to ask is: would you use such an implementation?
+
+The compiler comes in because we'd like to mangle the names differently, to make incompatibilities occur at link time rather than runtime. 
+
+So, whats the big picture here, and how does it relate to the standard?
+
+The simple fact is, a metric ton of applications could accept an ABI break no problem. If such applications had an option of voluntarily accepting an ABI break to gain perf, some would. Once 2-5% of applications have voluntarily chosen an ABI break to gain perf, the notion that the committee needs to maintain ABI begins to stand on a much weaker foundation.
+
+So, would this work? Would you use such an implementation? Would your employer? For those with an understanding of the std::, how much perf do today's std:: implementations leave on the table compared to the total set of available perf from ABI breaks? Who would need to own / ship / use such an implementation in order for it to be viable?
+
+For reference, I'm a senior engineer at huge tech company that uses C++ heavily, and my software expertise is in C++. I wouldn't consider myself a C++ expert (and sometimes I wonder if anybody truly is a C++ expert), but I know enough to know what I don't know and I know enough to write safe / efficient / secure std:: code.
+
+I'd want to fork a popular std:: implementation on Linux that has an appropriate license. Of those, I'd like to choose the implementation that probably has more users willing to accept an ABI break. Frankly, that's probably libc++.
+
+Very curious on thoughts here.
+
+\* I'm aware that this isn't want the committee said, but it's the effective result of their decision on Linux, as other std maintainers have posted elsewhere.
+## [4][The Day The Standard Library Died](https://www.reddit.com/r/cpp/comments/f8shr6/the_day_the_standard_library_died/)
+- url: https://cor3ntin.github.io/posts/abi/
+---
+
+## [5][Stefan Petersen: Embedded RTOS in C++](https://www.reddit.com/r/cpp/comments/f96zjd/stefan_petersen_embedded_rtos_in_c/)
+- url: https://youtu.be/NTATehY_n10
+---
+
+## [6][So for epochs. Is there a reason we don't just prefix with a namespace?](https://www.reddit.com/r/cpp/comments/f91s6o/so_for_epochs_is_there_a_reason_we_dont_just/)
+- url: https://www.reddit.com/r/cpp/comments/f91s6o/so_for_epochs_is_there_a_reason_we_dont_just/
+---
+So the reason epochs didn't pass iirc was avoiding multiple definitions across translation units. Why don't we just create per epochs namespaces that automatically apply to included libraries from other epochs. You could even ignore that rule in the case where there is only one definition.
+## [7][C++ Weekly - Ep 208 - The Ultimate CMake / C++ Quick Start](https://www.reddit.com/r/cpp/comments/f8szn3/c_weekly_ep_208_the_ultimate_cmake_c_quick_start/)
+- url: https://www.youtube.com/watch?v=YbgH7yat-Jo
+---
+
+## [8][Anyone here tried out clang-10 and clang-tidy 10?](https://www.reddit.com/r/cpp/comments/f8yor4/anyone_here_tried_out_clang10_and_clangtidy_10/)
+- url: https://www.reddit.com/r/cpp/comments/f8yor4/anyone_here_tried_out_clang10_and_clangtidy_10/
+---
+Hello,  
+
+
+It looks like clang-10 will be released sometime soon, though the release/10.x branch has been available on the LLVM github mirror. I built it and tried out both this morning. Anyone else here build the branch and try out C++20 features that clang-10 supports? Also, anyone tried out clang-10 ?  
+
+
+1. What have you tried out so far and how has your experience been? 
+2. Any existing checks that clang-tidy 10 improves over clang-tidy 9?  
+
+
+Thank You!
+## [9][69-year-old father of C++: C++ has survived for decades, what keeps its vitality?](https://www.reddit.com/r/cpp/comments/f8jcuj/69yearold_father_of_c_c_has_survived_for_decades/)
 - url: https://www.youtube.com/watch?v=mWtrLdR56oA
 ---
 
-## [3][References, simply](https://www.reddit.com/r/cpp/comments/f8jrfk/references_simply/)
+## [10][References, simply](https://www.reddit.com/r/cpp/comments/f8jrfk/references_simply/)
 - url: https://herbsutter.com/2020/02/23/references-simply/
 ---
 
-## [4][Basic concepts about building C++ software](https://www.reddit.com/r/cpp/comments/f8aj36/basic_concepts_about_building_c_software/)
-- url: http://felipepiovezan.gitlab.io/blog/build_system_basics/
+## [11][Is it worth to pay for DialogBlocks?](https://www.reddit.com/r/cpp/comments/f93942/is_it_worth_to_pay_for_dialogblocks/)
+- url: https://www.reddit.com/r/cpp/comments/f93942/is_it_worth_to_pay_for_dialogblocks/
 ---
-
-## [5][xmake v2.3.1 released, Seamless integration with other build systems](https://www.reddit.com/r/cpp/comments/f8jxj6/xmake_v231_released_seamless_integration_with/)
-- url: https://tboox.org/2020/02/23/xmake-update-v2.3.1/
----
-
-## [6][Harald Achitz: Const should be a type, give me operator .](https://www.reddit.com/r/cpp/comments/f8e1k1/harald_achitz_const_should_be_a_type_give_me/)
-- url: https://youtu.be/oqGxNd5MPoM
----
-
-## [7][C++ is NOT a superset of C: tentative definitions, implicit conversions, implicit declarations &amp;more](https://www.reddit.com/r/cpp/comments/f86rdq/c_is_not_a_superset_of_c_tentative_definitions/)
-- url: https://www.youtube.com/watch?v=s3Cv0-U5bXc
----
-
-## [8][Creating std::variant based on index at runtime](https://www.reddit.com/r/cpp/comments/f8cbzs/creating_stdvariant_based_on_index_at_runtime/)
-- url: https://www.reddit.com/r/cpp/comments/f8cbzs/creating_stdvariant_based_on_index_at_runtime/
----
-Hi everyone.
-
-Here is a problem I faced recently: 
-
-You have an array of std::variants you want to save to file and load later. Saving is easy - you just save the index of value's type in std::variant and then object data itself. Loading is a bit more tricky. I couldn't find a simple way to create a std::variant with value based on an index I read from file. Basically I wanted this:
-
-    std::size_t typeIndexReadFromFile;
-    std::variant&lt;A, B, C&gt; v = make_variant&lt;A, B, C&gt;(typeIndexReadFromFile);
-    
-    // Now I can run std::visit() on `v`, so it loads its data from file.
-
-Finally I came up with this: [https://godbolt.org/z/sert3m](https://godbolt.org/z/sert3m)
-
-Is there a simpler way to do it? Maybe I missed something in the standard library?
-## [9][Q:I'm relativly new to c++ (just studied about threads and processes).my queation is: is there a simple solution to determine wether a thread finished an iteration or not](https://www.reddit.com/r/cpp/comments/f8ni2j/qim_relativly_new_to_c_just_studied_about_threads/)
-- url: https://www.reddit.com/r/cpp/comments/f8ni2j/qim_relativly_new_to_c_just_studied_about_threads/
----
-
-## [10][EnTT v3.3.0 is out: Gaming meets Modern C++](https://www.reddit.com/r/cpp/comments/f7tzbd/entt_v330_is_out_gaming_meets_modern_c/)
-- url: https://www.reddit.com/r/cpp/comments/f7tzbd/entt_v330_is_out_gaming_meets_modern_c/
----
-# What's EnTT
-
-[`EnTT`](https://github.com/skypjack/entt) is a header-only library written in **modern C++**.
-
-It's mainly known for its innovative and very performing [entity-component-system](https://en.wikipedia.org/wiki/Entity_component_system) (ECS) model. However, it offers also [many other things](https://github.com/skypjack/entt#introduction) useful for development, from flexible tools for managing signals to an integrated reflection system and so on. That's not all: some new modules are under development and will soon become part of the library (or at least I hope so).
-
-`EnTT` is also a production-ready, fully documented and battle-tested library with a 100% coverage. [Among others](https://github.com/skypjack/entt/wiki/EnTT-in-Action), It's currently used in **Minecraft** by Mojang and the **ArcGIS Runtime SDK** by Esri.
-
-# Why it's important for you
-
-You should care because the **best feedback** I've ever received is perhaps when someone told me that this library was a great source for studying modern C++. Maybe he was right, maybe not. It's not for me to say, but it may still interest you.
-
-In any case, I hope I've given other material to those interested in it in this sense and I'm open to any feedback, because ours is a language in which you never stop learning. So, go for it!
-
-# What else
-
-In my free time I'm running the [ECS back and forth](https://skypjack.github.io/tags/#ecs) series (along with [other posts](https://skypjack.github.io/)). I'd like to start something new about the internals of this library and the development of a software with `EnTT`. The latter should serve as a step by step guide to using all the feature offered by the library. I cannot really set a deadline for this but I'd like to know if there is interest in such a series before to start, so any feedback is appreciated!
-
-If you are using `EnTT` and want to tell me *hello* or which of your products relies on it, do not hesitate to [contact me](https://github.com/skypjack)! For everyone else interested in the library, the [wiki](https://github.com/skypjack/entt/wiki) contains more than what I've said here and the [gitter](https://gitter.im/skypjack/entt) channel is a great place to come and ask your first question!
-
-I'm looking forward to hearing from you. :)
-## [11][How much could we gain by completely breaking ABI?](https://www.reddit.com/r/cpp/comments/f7zls8/how_much_could_we_gain_by_completely_breaking_abi/)
-- url: https://www.reddit.com/r/cpp/comments/f7zls8/how_much_could_we_gain_by_completely_breaking_abi/
----
-Quoting from 2020-02 Prague Meeting report:
-&gt; Although there was strong interest in exploring how to evolve ABI in the future, we are not pursuing making C++23 a clean ABI breaking release at this time.
-
-Is there any big list of things that could be improved, if it was decided for C++23 to be an ABI-breaking release?
-
-I found a good paper mentioning some:
-http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2028r0.pdf
-
-But it only listed a few, and gave just vague estimates on what would be real gains.
-
-Is there a bigger list, listing more of existing problems, with measured possible speed-ups or memory gains?
-
-I encountered one myself, that is not widely known: 
-- `sizeof(std::random_device)` on GCC is enormous, cause it is a union with Mersenne Twister. It was MT on Windows until it got implemented as indeterminate recently.
-
-And I'm sure there are many many more.
-
-I'd love to know more about it. Understand, where along the way there were made some small mistakes, and how big is the technical debt we are dragging behind us.
-
-How much are we losing, and for how long can we afford not to break ABI? Are these changes big enough, that we can expect someone to fork the language just for performance reasons?
+Do you think is it worth to pay for DialogBlocks? Or do you prefer any other UI Designer for complex GUIs? Like wxCrafter

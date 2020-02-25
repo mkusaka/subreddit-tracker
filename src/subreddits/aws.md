@@ -1,117 +1,139 @@
 # aws
-## [1][Architecting a Successful SaaS](https://www.reddit.com/r/aws/comments/f8ok5z/architecting_a_successful_saas/)
-- url: https://www.reddit.com/r/aws/comments/f8ok5z/architecting_a_successful_saas/
+## [1][Lambda Overview in 2020](https://www.reddit.com/r/aws/comments/f908xx/lambda_overview_in_2020/)
+- url: https://www.reddit.com/r/aws/comments/f908xx/lambda_overview_in_2020/
 ---
-This series explores how to properly plan and architect a SaaS product offering, designed for hosting on the public cloud. This part answers basic questions, such as, what is a SaaS, what are the alternatives to SaaS for software distribution, and what are the most common SaaS product models:
+Hey folks, wanted to share a youtube channel that I've been working on dedicated to providing simple and easy to digest tutorials on various AWS services.
 
-https://medium.com/@GaryStafford/architecting-a-successful-saas-eaa24c5ad6d7?source=friends_link&amp;sk=4f53d1d8ea0ac87cbb30491e49861c89
-## [2][Knowing when a solution is a good fit](https://www.reddit.com/r/aws/comments/f8idur/knowing_when_a_solution_is_a_good_fit/)
-- url: https://www.reddit.com/r/aws/comments/f8idur/knowing_when_a_solution_is_a_good_fit/
+My newest video talks about overviews Lambda functions and the improvements they've received in the past few years. 
+
+The video is available here: https://youtu.be/iUIWG0h2D84
+
+Thank you!
+## [2][tech u intern program](https://www.reddit.com/r/aws/comments/f98edo/tech_u_intern_program/)
+- url: https://www.reddit.com/r/aws/comments/f98edo/tech_u_intern_program/
 ---
-Disclaimer, been only working with aws full time since September.
+Hi!
 
-I joined the cloud team and come to realize that only recently we reached a tipping point at which we can explore new approaches and services.
+Has anyone gone through the process of interviewing for the tech u intern program? it seems like a fairly new program.. I cant find alot of information online. was just wondering how the interview process works and what to expect at the interview. 
 
-However, almost daily I find new services that make me question my recent architecture choices for, numer one, a static website and, number two, a fullstack nodejs app (connected to a google service).
-
-For example, I could run the web app using an EC2, elastic beanstalk, amplify and probably one or two additional ways. It's funny at first, but it becomes annoying when you start questioning yourself with almost every announcement.
-
-So I'm wondering what others would do for a) a static website, quarterly updated with a zip upload and b) an all-in-one demo application that uses server side rendered views and only needs to show off a chatbot service from google
-## [3][ECS task in internal subnet cannot connect to the internet](https://www.reddit.com/r/aws/comments/f8oiy6/ecs_task_in_internal_subnet_cannot_connect_to_the/)
-- url: https://www.reddit.com/r/aws/comments/f8oiy6/ecs_task_in_internal_subnet_cannot_connect_to_the/
+Thanks! :)
+## [3][Monitor AWS Managed IAM Policies Changes - Now on Twitter](https://www.reddit.com/r/aws/comments/f8ymn7/monitor_aws_managed_iam_policies_changes_now_on/)
+- url: https://www.reddit.com/r/aws/comments/f8ymn7/monitor_aws_managed_iam_policies_changes_now_on/
 ---
-Configured ECS service to have only internal subnets as allowed subnets because this service cannot be accessed from the internet but is should be able to access internet.
+Hey Folks,
 
-However, the issue is that the service cannot access internet anymore but it can access other services in the same VPC.
+Recently, I was working on a newer version of my bot who checks changes on AWS IAM Managed Policies, to push changes to a dedicated Twitter account:
 
-Here is the terraform configuration for the VPC and ECS service - https://gist.github.com/genert/7ae99dbff9c7c1ba64edc08694fe460c
+\- [https://zoph.me/posts/2019-09-08-mamip/](https://zoph.me/posts/2019-09-08-mamip/)
 
-As you can see, the route table configuration should make this work but it does not.
+Please tell me if you see any enhancement or issue.
 
-Any ideas what the issue could be?
+A quick sneak peeks of the architecture schema below:
 
-I would also point out that the instance itself where the ECS task is running on is in an external subnet and the other tasks that do not have "subnet allowed" configured can access internet without any problems so security groups are fine.
-## [4][Any update on AWS South Africa region general availability?](https://www.reddit.com/r/aws/comments/f8p47z/any_update_on_aws_south_africa_region_general/)
-- url: https://www.reddit.com/r/aws/comments/f8p47z/any_update_on_aws_south_africa_region_general/
+https://preview.redd.it/rcey42ubxxi41.png?width=571&amp;format=png&amp;auto=webp&amp;s=e6708b83a52fbda71d189931a8a12ea39d810c7c
+
+Hope this helps :)
+
+zoph
+## [4][How to define Models for Serverless Api in CloudFormation template](https://www.reddit.com/r/aws/comments/f9a60e/how_to_define_models_for_serverless_api_in/)
+- url: https://www.reddit.com/r/aws/comments/f9a60e/how_to_define_models_for_serverless_api_in/
 ---
-Hi Team,
+See below for my template. I don't know how to set Models for Api. If I leave the Models part out, the 'sam deploy' says: "the related API does not define any Models". 
 
-Does anyone know when South Africa region is going online for general availability?  We're doing some things that having a POP doing in south Africa would help with.
+Can the models be defined in external json/yaml files? 
 
-Thanks,
-Warren
-## [5][Datasync and KMS?](https://www.reddit.com/r/aws/comments/f8p5zs/datasync_and_kms/)
-- url: https://www.reddit.com/r/aws/comments/f8p5zs/datasync_and_kms/
----
-Hi,
+What is the best approach to defining more complex requests?   
+How can I define model for the function response?
 
-I'm currently reading up on DataSync for some future transfers to our AWS environment. One thing I find a bit contradictory are the following statements in the docs:
+Can I introduce models in separate template file? 
 
-* DataSync supports using default encryption for S3 buckets using Amazon S3-Managed Encryption Keys (SSE-S3)
-* DataSync has integrations with AWS KMS
-
-So, what is it? Can you use buckets encrypted with your own KMS keys, or is only the SSE-S3 key supported?
-## [6][AWS Secrets Manager Issue](https://www.reddit.com/r/aws/comments/f8bqou/aws_secrets_manager_issue/)
-- url: https://www.reddit.com/r/aws/comments/f8bqou/aws_secrets_manager_issue/
----
-I've created a secret in Secrets Manager and a custom lambda to rotate a bearer token I need to call some APIs.   
-
-
-My issue is that sometimes... The rotation doesn't kick off at all. I have the rotation rules to automatically kick off every day (value set to 1). Am I missing something? Why would the rotation just not kick off some days?   
-
-
-The lambda it invokes is within a VPC but I don't think that has anything to do with this but thought it might be worth mentioning. Whenever I kick off the rotation via the console everything works fine.  
-
-
-I'm considering creating a cloudwatch event which will kick off the rotation (reinventing the wheel here) so I don't have to worry about this flaky behavior.
-
- 
-Response from AWS support (I'll continue to update the post as I hear from them): 
-
-Thank you for contacting AWS Support, my name is Michael and I will be assisting you with this request.
-
-I have gone through your CloudTrail Logs and can see the secret rotation triggered automatically on the 20th(01:07), 21st(08:08), 22nd(01:08) UTC time. On the 23rd I can see no automatic rotation and at 16:27 that day I can see that you manually triggered Rotate Secret from the Secrets Manager Console. I have attached the CloudTrail for each of these events.
-I have also gone through the Lambda Function CloudTrail related API calls and could see no errors hinting at what could have caused Secrets Manager not to trigger the Lambda Rotation Function. Additionally, I could see no permission errors when the Lambda function was run. When invoked, the Lambda function was able to successfully rotate your secret.
-
-To help me investigate further I have opened an Internal Ticket with the Secrets Manager Service Team to investigate why the Auto Rotation is not being triggered. While we wait for a response from the service team I will move this case into Pending Amazon Action and will update you as soon as the Service Team responds.
-In the meantime, if you have additional questions please let me know.
-## [7][Should EKS cluster be in the same subnet as other resources?](https://www.reddit.com/r/aws/comments/f8lvwf/should_eks_cluster_be_in_the_same_subnet_as_other/)
-- url: https://www.reddit.com/r/aws/comments/f8lvwf/should_eks_cluster_be_in_the_same_subnet_as_other/
----
-**EDIT:** Title should say same VPC
-
-I used [eksctl](https://eksctl.io/) to create an EKS cluster. By default, it put the cluster into its own VPC and configured the subnets.
+Thanks. 
 
 &amp;#x200B;
 
-I have other resources in the same region on a different VPC that I would like my EKS cluster to have access to (Aurora, Redis, EFS, etc), but this is harder when they are not in the same VPC.
+`Resources:`  
+  `MyApi:`  
+`Type: AWS::Serverless::Api`  
+`Properties:`  
+`StageName: test`  
+`Models:`  
+`???`
 
-Is the correct way to handle this to put the EKS cluster in the existing VPC? The [documentation](https://eksctl.io/usage/vpc-networking/#use-existing-vpc-any-custom-configuration) for eksctl mentions that you can use an existing VPC, but then you need to create your own subnets and make sure they are configured correctly, which I think seems error prone (I wasn't even sure how to fill in the IPv4 CIDR blocks, let alone any tagging). Is there a better way to solve this, or maybe a reliable guide on how to create the subnets for the EKS cluster?
-## [8][Using AWS services with OVH Object Storage](https://www.reddit.com/r/aws/comments/f8o61r/using_aws_services_with_ovh_object_storage/)
-- url: https://www.reddit.com/r/aws/comments/f8o61r/using_aws_services_with_ovh_object_storage/
+`PostNewItem:`  
+`Type: AWS::ApiGateway::Model`  
+`Properties:`  
+`RestApiId: !Ref MyApi`  
+`Name: PostNewItem`  
+`ContentType: application/json`  
+`Schema:`  
+`$schema: '`[`http://json-schema.org/draft-04/schema#`](http://json-schema.org/draft-04/schema#)`'`  
+`title: NewItemModel`  
+`type: object`  
+`properties:`  
+`name:`   
+`type: string`  
+`description:`  
+`type: string`  
+`....`
+
+  `MyFunction:`  
+`Type: AWS::Serverless::Function`   
+`Properties:`  
+`...`  
+`Events:`  
+`AddItem:`  
+`Type: Api`  
+`Properties:`  
+`Path: /item`  
+`Method: post`  
+`RestApiId:`   
+`!Ref MyApi`  
+`RequestModel:`  
+`Model: !Ref PostNewItem`  
+`Required: true`
+## [5][Any starting tips?](https://www.reddit.com/r/aws/comments/f97ojz/any_starting_tips/)
+- url: https://www.reddit.com/r/aws/comments/f97ojz/any_starting_tips/
 ---
-Hello !
+I just want to host a wordpress site on amazon with some scale-able file storage.
 
-For my current project, I need to use OVH Object Storage for their cheap bandwidth. However, I'd like to use AWS Amplify for the integrated mobile experience.  
+In layman's terms - I want to create a private video hosting site with control over storage. Hosting this at somewhere like Shitdaddy would be a bad idea I assume Amazon is better value when it comes to storage?
 
-
-My needs are :
-
-* Users should be able to upload files only if they are connected (authentication is handled by AWS Cognito)
-* They should be able to share files to other users, in a secure way
-
-How am I supposed to handle the authentication flow? I looked through OVH and AWS documentation, but I didn't find any clue on how to do that. Is that even possible?
-## [9][AWS + Kotlin : DynamoDB with superpowers](https://www.reddit.com/r/aws/comments/f8my8h/aws_kotlin_dynamodb_with_superpowers/)
-- url: https://blog.yudiz.com/aws-kotlin-dynamodb-with-superpowers/
+This whole Amazon thing has been made way too confusing, why can't it be clear how to set up a website like every other hosting company has managed to do?
+## [6][What's the best AWS Compute option for your project?](https://www.reddit.com/r/aws/comments/f97m7b/whats_the_best_aws_compute_option_for_your_project/)
+- url: https://cloudonaut.io/whats-the-best-aws-compute-option-for-your-project/
 ---
 
-## [10][Anyone successfully deploying Rails 6 apps on Elastic Beanstalk?](https://www.reddit.com/r/aws/comments/f8j8v4/anyone_successfully_deploying_rails_6_apps_on/)
-- url: https://www.reddit.com/r/aws/comments/f8j8v4/anyone_successfully_deploying_rails_6_apps_on/
+## [7][Does an Application Load Balancer automatically route traffic away from a terminating Spot Instance?](https://www.reddit.com/r/aws/comments/f93ae3/does_an_application_load_balancer_automatically/)
+- url: https://www.reddit.com/r/aws/comments/f93ae3/does_an_application_load_balancer_automatically/
 ---
-I've been using Beanstalk for a side project for a few months and, to be honest, overlooking the fact that something isn't working quite right.
+Title. Wondering how you deal with interruptions; currently considering the viability of running an NGINX+Wordpress deployment on ECS with Fargate Spot. If traffic is routed away from the terminating server for 120s prior to deletion, there shouldn't be any active connections at that point, right? If so, how do you deal with that?
+## [8][Recently asked this in an interview: How do you handle error if S3 event does not trigger lambda function - nodejs](https://www.reddit.com/r/aws/comments/f90lzq/recently_asked_this_in_an_interview_how_do_you/)
+- url: https://www.reddit.com/r/aws/comments/f90lzq/recently_asked_this_in_an_interview_how_do_you/
+---
+This was a tough one and still I am struggling to find the right answer to it.
 
-In my case, once the deploy is complete, the Puma logs show that /var/app/current/log/production.log isn't accessible. When I look at that directory, I can see the logfile... but it's set to root:root ownership. Doing a simple 'chown' to webapp:webapp makes it all work just fine.
+Lets assume a simple node app, which takes a file and uploads it to S3. 
 
-So... here's my question: why isn't a standard Rails app deploy working right out of the box?
+a) after upload to S3, event will trigger lambda
 
-I can see where the symlinks are supposed to be set (via '/opt/elasticbeanstalk/hooks/appdeploy/post/01\_rails\_support.sh') but I'm not quite sure how to debug this...
+b) lambda will parse the file and do an api call to push the contents of the file
+
+Now, how can I handle the error if S3 event for whatever reason fails to trigger the lambda? Looking for a simple solution if possible.
+## [9][Would adding CloudFront help in this case?](https://www.reddit.com/r/aws/comments/f96e5r/would_adding_cloudfront_help_in_this_case/)
+- url: https://www.reddit.com/r/aws/comments/f96e5r/would_adding_cloudfront_help_in_this_case/
+---
+Dear r/aws,
+
+I have an EKS pod getting an item from Dynamodb. The DB item contains a S3 URL of large string.  So the flow goes like:
+
+1. user request -&gt; EKS get-item from DynamoDB
+2. EKS get-object from S3
+3. EKS response to user both info: 1) info from DDB 2) large string from S3
+
+When I tried loadtest on this flow, I got like 4000 rps.  I am wondering if there is a way to improve capacity without adding cache servers.  Would adding CloudFront help in this case?
+## [10][AWS Lambda behaviour when encountering execution limits?](https://www.reddit.com/r/aws/comments/f9629y/aws_lambda_behaviour_when_encountering_execution/)
+- url: https://www.reddit.com/r/aws/comments/f9629y/aws_lambda_behaviour_when_encountering_execution/
+---
+So I need to create a system where 600k+ files in S3 are to be processed using AWS Lambda. I have planned to implement this by having two Lambda functions: One to split the files into batches of ~3000 and send SNS notifications with the batch information. Another function would be triggered by these notifications, fetch the objects using the key in the SNS message body and process them.
+
+Since there is a maximum limit of 1000 instances of any given Lambda function, I wanted to know that in case that the invocations exceed 1000, will the remaining invocations get queued or would they be denied?

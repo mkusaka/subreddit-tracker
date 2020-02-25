@@ -27,7 +27,93 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][cant use .save in model? (using rufus-scheduler)](https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/)
+## [3][Help understanding Devise](https://www.reddit.com/r/rails/comments/f8zue1/help_understanding_devise/)
+- url: https://www.reddit.com/r/rails/comments/f8zue1/help_understanding_devise/
+---
+Greetings all,
+
+I'm having a bit of confusion on how to work effectively with the Devise gem. I have a Rails app with a React front end. I'm just starting to build it out, and the first thing I want to do is make an Admin page for the app. I created an Admin model, and then created an admins_controller.rb. I updated my routes.rb as follow:
+
+    Rails.application.routes.draw do
+      root 'homepage#index'
+      devise_for :admins, controllers: { admins: 'admins', sessions: 'sessions' }
+      # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+    end
+
+On my front end, the first method I want to hit is to check if admin is logged in, so I created this function:
+
+      getAdminPromise() {
+        const url = '/admins/check_for_admin';
+
+        fetch(url)
+          .then(response =&gt; {
+            if (response.ok) {
+              console.log(response)
+              return response.json();
+            }
+            throw new Error("Network response was not ok.");
+          })
+          .then(response =&gt; this.setState({ currentUser: response }))
+          .catch(() =&gt; this.props.history.push("/"));
+      }
+
+I ran into "404 not found" and the rails console told me there was no corresponding route for /admins/check_for_admin. So I ran rake routes to see what was available, and I was surprised to see a ton of Devise routes. Awesome! 
+
+After changing the route in my promise to hit one of the prefabricated Devise routes such as '/admins/sign_in'  I was able to hit the endpoint no problem. However, I am confused that there are no apparent controllers for looking at the code, or writing other methods. Do I simply need to rely on the provided Devise methods and just write calls that hit those end points? For instance there doesn't seem to be a route that implies checking if Admin is logged in??
+## [4][Wondering about techniques for dynamic routing](https://www.reddit.com/r/rails/comments/f8t4ik/wondering_about_techniques_for_dynamic_routing/)
+- url: https://www.reddit.com/r/rails/comments/f8t4ik/wondering_about_techniques_for_dynamic_routing/
+---
+I have a site I'm working on and each page is a resource in a table of site_items. Thus, all of the relative paths will be something along the lines of **/site_items/4**
+
+I'm wondering if there's a BETTER way to dynamically link these items to prettier URL names.
+
+For instance, In order to coarsely mimic "homepage" functionality, I have a routes_controller that dynamically redirects the root to the first site_item, sorted by the table's :order column:
+
+    def root
+        redirect_to site_item_path(SiteItem.order(order: :asc).all.first)
+    end
+
+However, this means that instead of the user going to **domain.com/home**, my users are forced to go to **domain.com/site_items/6** for the home page. This is bad SEO and overall just ugly.
+
+I've looked into using slugs briefly, but—from what I can tell so far!—that looks like it'll result in something more like **domain.com/site_items/home**. This still includes much more than I would like to.
+
+I'd love it if I could pop into routes and just put something like...
+
+    get '/signup', to: SiteItem.order(order: :asc).all.first
+
+But it doesn't look like Routes work that way!
+
+Any Ideas?
+## [5][Need help switching Ruby version in Rails](https://www.reddit.com/r/rails/comments/f8zds1/need_help_switching_ruby_version_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/f8zds1/need_help_switching_ruby_version_in_rails/
+---
+Just doing it with git bash, I have been following [this guide](https://youtu.be/pPy0GQJLZUM) but run into a problem when I try to make a make a new project:
+
+&gt;An error occurred while installing byebug (11.1.1), and Bundler cannot continue.  
+Make sure that \`gem install byebug -v '11.1.1'\` succeeds before bundling.
+
+When I run that I get
+
+&gt;byebug requires Ruby version &gt;= 2.4.0.
+
+It looks like Rails is using Ruby 2.3.3. I have 2.6 installed but I don't know how to change it. I've looked into rvm to fix it but can't get it installed. When I run the first line from this guide, I get 
+
+&gt;03113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB  
+&gt;  
+&gt;gpg: invalid size of lockfile '/c/Users/hsand/.gnupg/pubring.gpg.lock'  
+&gt;  
+&gt;gpg: cannot read lockfile  
+&gt;  
+&gt;gpg: can't lock '/c/Users/hsand/.gnupg/pubring.gpg'  
+&gt;  
+&gt;gpg: key 105BD0E739499BDB: public key not found: General error  
+&gt;  
+&gt;gpg: error reading '\[stream\]': General error  
+&gt;  
+&gt;gpg: Total number processed: 0
+
+It seems like for everything I have to install, there are two other things I've had to install first. I don't doubt I've messed something up along the way but I would really appreciate some help!
+## [6][cant use .save in model? (using rufus-scheduler)](https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/)
 - url: https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/
 ---
 hi All!
@@ -117,7 +203,7 @@ Solved!     `Tracker.create!(id:tracker, qty:1000, price:1000, product_id:` [`pr
 This did the trick... now to remove the hard coded user id....
 
 After that to dynamically save the price and qty.....
-## [4][AWS Elastic Beanstalk re-deploys can see the database, but the site is inaccessible to the web](https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/)
+## [7][AWS Elastic Beanstalk re-deploys can see the database, but the site is inaccessible to the web](https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/)
 - url: https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/
 ---
 Sorry if this is a little scattered, but I'm trying to upgrade my active Rails site from Ruby 2.3 to 2.6.
@@ -129,7 +215,7 @@ For the last few weeks I've been trying to make another deployment using EB, but
 Has anyone encountered something similar? Could it be that puma isn't starting up? I can't find anything suspicious or fishy in any logs on the instance. In all the searching I've done, I haven't found anyone with a similar problem. There's no obvious error message so it's hard to tell what went wrong where.
 
 To be honest, this has me really stressed out. The site has built up an audience of several hundred users daily, and we have people regularly signing up and contributing. This all comes after about a 3-month digression into Docker to see if I could deploy the site through ECS instead, but I've never been able to get that working either. Oddly enough, I encountered the same problem - inaccessible web server, but I could confirm that the rails console could see the database. The idea that the entire site and community could just die next week because I can't figure this out is pretty frustrating. Are there any sort of freelance consultants or people who are willing to help out Rails sites in their spare time?
-## [5][Geared Pagination Gem Behind The Scenes](https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/)
+## [8][Geared Pagination Gem Behind The Scenes](https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/)
 - url: https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/
 ---
 There’s a better, more user-friendly-driven approach to writing  pagination for your application. The idea is simple: Load more records  every time the user is asking to see more.
@@ -139,7 +225,7 @@ There’s a better, more user-friendly-driven approach to writing  pagination fo
 It all starts with the set\_page\_and\_extract\_portion\_from method which initiates the flow. It receives a set of records, and you  can specify how many records per page you’d like to present to the user.
 
 [Read on Medium...](https://medium.com/squeezerhq/geared-pagination-in-rails-behind-the-scenes-61d9e227540e)
-## [6][Upgrading to Rails 5, need help with strong params?](https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/)
+## [9][Upgrading to Rails 5, need help with strong params?](https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/)
 - url: https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/
 ---
 Hello, I'm new to this, but I'm studying and trying to upgrade an old rails app (was on rails 3 so there's attr\_accessible everywhere in every single model) to rails 5. I have all of my specs passing on Rails 5.1, and I am using the "protected\_attributes\_continued" gem.
@@ -153,71 +239,17 @@ Half of the models do not even have controllers where I could put the strong par
 My specs PASS when I do all of this, and I've tested the application and nothing really seems to be wrong, but I didn't move ANYTHING from attr\_accessible to the controllers.
 
 Is this okay? I'm just confused at how my application still seems to be working fine.
-## [7]["VFS Connection does not exist" on Cloud9](https://www.reddit.com/r/rails/comments/f8gjeb/vfs_connection_does_not_exist_on_cloud9/)
+## [10]["VFS Connection does not exist" on Cloud9](https://www.reddit.com/r/rails/comments/f8gjeb/vfs_connection_does_not_exist_on_cloud9/)
 - url: https://www.reddit.com/r/rails/comments/f8gjeb/vfs_connection_does_not_exist_on_cloud9/
 ---
 As the title says, when i try to run the $rails server command and preview running application, it tells me "Oops, VFS Connection does not exist". Any way to fix this?
-## [8][Exchanging sensitive data between two Rails apps](https://www.reddit.com/r/rails/comments/f8897p/exchanging_sensitive_data_between_two_rails_apps/)
+## [11][Exchanging sensitive data between two Rails apps](https://www.reddit.com/r/rails/comments/f8897p/exchanging_sensitive_data_between_two_rails_apps/)
 - url: https://www.reddit.com/r/rails/comments/f8897p/exchanging_sensitive_data_between_two_rails_apps/
 ---
 I have two Rails apps and they both use SSL/HTTPS. They have a REST api to exchange data between each other. I assume this data is encrypted because both apps are SSL/HTTPS? And if so, is this secure enough to exchange sensitive data like passwords?
-## [9][Is the code for the GitHub web app on Github?](https://www.reddit.com/r/rails/comments/f88rba/is_the_code_for_the_github_web_app_on_github/)
+## [12][Is the code for the GitHub web app on Github?](https://www.reddit.com/r/rails/comments/f88rba/is_the_code_for_the_github_web_app_on_github/)
 - url: https://www.reddit.com/r/rails/comments/f88rba/is_the_code_for_the_github_web_app_on_github/
 ---
 Hello, This might be a noob question but I"m wondering if the code for GitHub web application rails app is hosted on GitHub as an open-source project?
 
 I'm asking this because I"m interested in how their roles and scopes are stored in the database and how it is being validated for each user. I want to draw inspiration from their implementation as I'm working on a rails app myself.
-## [10][Markdown redcarpet and mentions(link)](https://www.reddit.com/r/rails/comments/f88tu4/markdown_redcarpet_and_mentionslink/)
-- url: https://www.reddit.com/r/rails/comments/f88tu4/markdown_redcarpet_and_mentionslink/
----
-Following this tip [https://stackoverflow.com/questions/12381230/how-to-extend-redcarpet-to-support-auto-linking-user-mentions](https://stackoverflow.com/questions/12381230/how-to-extend-redcarpet-to-support-auto-linking-user-mentions)
-
-... I edited my MarkdownRenderer in this way:
-
-&amp;#x200B;
-
-    class MarkdownRenderer &lt; Redcarpet::Render::HTML
-    
-      def preprocess(text)
-        wrap_mentions(text)
-      end
-    
-      def wrap_mentions(text)
-        text.gsub! /(^|\s)(@\w+)/ do
-          "#{$1}&lt;a href='/user/#{$2}'&gt;#{$2}&lt;/a&gt;"
-        end
-        text
-      end
-
-and in product\_helper i have this
-
-      def parse_markdown(text)
-        markdown = Redcarpet::Markdown.new(MarkdownRenderer, hard_wrap: true, autolink: true, space_after_headers: true)
-        markdown.render(text)
-      end
-
-But then if I write u/marcus, it show me &lt;a href='/user/marcus'&gt;marcus&lt;/a&gt; **as a text and now as a link.** It blocks the html. How to solve?
-## [11][How to step up?](https://www.reddit.com/r/rails/comments/f80e2j/how_to_step_up/)
-- url: https://www.reddit.com/r/rails/comments/f80e2j/how_to_step_up/
----
-Hello,  
-i have been working with ROR since the start of my career but i have no idea now how can i step up.  
-I work with ROR in my daily job  60 % and 40 % is for front end stuff like vue.  
-How can i step up my level?  
-Thanks.
-## [12][Help getting set up - can't find gem railties error](https://www.reddit.com/r/rails/comments/f82shv/help_getting_set_up_cant_find_gem_railties_error/)
-- url: https://www.reddit.com/r/rails/comments/f82shv/help_getting_set_up_cant_find_gem_railties_error/
----
-I've been trying to get rails set up and I keep running into problem - all of which I'm sure are just user error. I'm using Windows 10 and Ruby 2.7.
-
-When I run rails -v, I get an error saying it can't find gem railties.
-
-&gt;C:/Ruby27-x64/lib/ruby/2.7.0/rubygems.rb:275:in \`find\_spec\_for\_exe': can't find gem railties (&gt;= 0.a) with executable rails (Gem::GemNotFoundException)  
-&gt;  
-&gt;from C:/Ruby27x64/lib/ruby/2.7.0/rubygems.rb:252:in \`bin\_path  
-&gt;  
-&gt;from C:/RailsInstaller/Ruby2.3.3/bin/rails:22:in \`&lt;main&gt;'
-
-Is it trying to get the wrong version of Ruby? I'm really stuck and would love some help! I ran into similar problem earlier but what I tried didn't help, I attempted to delete everything and start over, and here I am. 
-
-I'd be happy to provide in additional files that could help!

@@ -108,133 +108,99 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Learn the basics of React-Dnd. easily add Drag and Drop interactions to your apps!](https://www.reddit.com/r/reactjs/comments/f8p669/learn_the_basics_of_reactdnd_easily_add_drag_and/)
+## [3][I built this website that suggests places that you can travel with your passport using React and NextJS.](https://www.reddit.com/r/reactjs/comments/f90oi9/i_built_this_website_that_suggests_places_that/)
+- url: https://www.visabug.com
+---
+
+## [4][Advanced memoization and effects in React](https://www.reddit.com/r/reactjs/comments/f8vzpe/advanced_memoization_and_effects_in_react/)
+- url: https://gist.github.com/slikts/fd3768de1493419ed9506002b452fcdc
+---
+
+## [5][Learn the basics of React-Dnd. easily add Drag and Drop interactions to your apps!](https://www.reddit.com/r/reactjs/comments/f8p669/learn_the_basics_of_reactdnd_easily_add_drag_and/)
 - url: https://www.youtube.com/watch?v=NW8erkUgqus
 ---
 
-## [4][My very first React+GatsbyJS powered live website](https://www.reddit.com/r/reactjs/comments/f8e0q7/my_very_first_reactgatsbyjs_powered_live_website/)
-- url: https://www.reddit.com/r/reactjs/comments/f8e0q7/my_very_first_reactgatsbyjs_powered_live_website/
+## [6][Fake the fetch requests in browser during development](https://www.reddit.com/r/reactjs/comments/f97rli/fake_the_fetch_requests_in_browser_during/)
+- url: https://www.reddit.com/r/reactjs/comments/f97rli/fake_the_fetch_requests_in_browser_during/
 ---
-Really excited share one of my recent Gatsby site. This is a big site in-terms of size and complexity. Mobile and Desktop version is different.
+* works with  [@codesandbox](https://twitter.com/codesandbox) client templates 
+* no more setting up a mock http server just to get started 
+* supports custom delay for each requests 
+* custom 404 and error responses
 
-Check it out : [https://southbreezebd.com/](https://southbreezebd.com/)
-
-Client wants Apple website like animation on their About page and we did it too [https://southbreezebd.com/about-us](https://southbreezebd.com/about-us)
-## [5][What is the price for SSR?](https://www.reddit.com/r/reactjs/comments/f8poov/what_is_the_price_for_ssr/)
-- url: /r/webdev/comments/f8p6ri/what_is_the_price_for_ssr/
+Find it here [https://www.npmjs.com/package/fake-browser-fetch](https://www.npmjs.com/package/fake-browser-fetch)
+## [7][Struggling with how to memo'ize a placeholder component for reuse throughout list.](https://www.reddit.com/r/reactjs/comments/f981xe/struggling_with_how_to_memoize_a_placeholder/)
+- url: https://www.reddit.com/r/reactjs/comments/f981xe/struggling_with_how_to_memoize_a_placeholder/
 ---
+I'm loading up some data from an API and if I request 10 items, while the data is still coming in, I'm loading 10 skeleton components in place of the real components.
 
-## [6][Got 1 day to prepare for a front-end position interview, what to do?](https://www.reddit.com/r/reactjs/comments/f8ml79/got_1_day_to_prepare_for_a_frontend_position/)
-- url: https://www.reddit.com/r/reactjs/comments/f8ml79/got_1_day_to_prepare_for_a_frontend_position/
----
-It's my first interview ever, for an internship. And there are a lot of material online, but I don't know what worth checking out in 1 day preparation that will cover all aspects of an interview.
-## [7][React developers share your experiences as a beginner](https://www.reddit.com/r/reactjs/comments/f8p86x/react_developers_share_your_experiences_as_a/)
-- url: https://www.reddit.com/r/reactjs/comments/f8p86x/react_developers_share_your_experiences_as_a/
----
-beginning reactjs, seeing how massive it is ,need some motivation starting it. 
+Each of these skeletons is identical, so I'd like to cache them and then just copy them into the place of each item while it's rendering.
 
-thanks!!
-## [8][What are some of the React or JavaScript blogs you follow?](https://www.reddit.com/r/reactjs/comments/f8nx19/what_are_some_of_the_react_or_javascript_blogs/)
-- url: https://www.reddit.com/r/reactjs/comments/f8nx19/what_are_some_of_the_react_or_javascript_blogs/
----
-I currently have these on my list. Looking for more interesting resources
+For the life of me though, I can't get `memo` or `useMemo` to let me do this.  When I put a console.log in the `SkeletonEntry` component, it logs for each element in the list.
 
-1. [Dave Ceddia](https://daveceddia.com/archives/)
-2. [Dan Abramov](https://overreacted.io/)
-3. [Dr. Axel Rauschmayer](http://www.2ality.com/)
-4. [Jared Palmer](https://jaredpalmer.com/blog)
-5. [Kent C Dodds](https://kentcdodds.com/blog/)
-6. [Sophie Alpert](https://sophiebits.com/)
-7. [Tyler Mcginnis](https://tylermcginnis.com/blog)
-## [9][if you work for yourself but want a code review...](https://www.reddit.com/r/reactjs/comments/f8moow/if_you_work_for_yourself_but_want_a_code_review/)
-- url: https://www.reddit.com/r/reactjs/comments/f8moow/if_you_work_for_yourself_but_want_a_code_review/
----
-Where to find experienced front-end developers (code review) who could appreciate my work? Maybe there are paid services that are time-tested?
-## [10][react-admin: display &lt;SelectInput&gt; inside &lt;Datagrid&gt;](https://www.reddit.com/r/reactjs/comments/f8pnqj/reactadmin_display_selectinput_inside_datagrid/)
-- url: https://www.reddit.com/r/reactjs/comments/f8pnqj/reactadmin_display_selectinput_inside_datagrid/
----
-After fetching the data I'm displaying it within a `&lt;Datagrid&gt;` as `&lt;TextFields&gt;`. I'm trying to display one of the columns as a `&lt;SelectInput&gt;` with the values coming from the API. Code example should make more sense than my explanation:
-
-An example of the record from the db:
-
-        {
-          "id": 1,
-          "name": "foo",
-          "status": "active"
-        },
-
-In the above, `status` can have two values: `active` or `passive`. As for my (not working) code:
-
-    export const ProjectList = props =&gt; (
-      &lt;List {...props}&gt;
-        &lt;Datagrid&gt;
-          &lt;TextField source="id" /&gt;
-          &lt;TextField source="name" /&gt;
-          &lt;ReferenceInput label="Status" source="status" reference="status"&gt;
-            &lt;SelectField optionText="status" /&gt;
-          &lt;/ReferenceInput&gt;
-          &lt;EditButton /&gt;
-        &lt;/Datagrid&gt;
-      &lt;/List&gt;
-    );
-
-The idea is to display the "Status" column as a select element, allowing to change its value directly from the `&lt;Datagrid&gt;`.
-
-Any idea what am I missing here?
-## [11][Create a Custom Toast Component with React](https://www.reddit.com/r/reactjs/comments/f8plxf/create_a_custom_toast_component_with_react/)
-- url: https://www.youtube.com/watch?v=Zh8qBhnVAWI&amp;feature=share
----
-
-## [12][What's the recommended way to render SVG's in a component?](https://www.reddit.com/r/reactjs/comments/f8ietg/whats_the_recommended_way_to_render_svgs_in_a/)
-- url: https://www.reddit.com/r/reactjs/comments/f8ietg/whats_the_recommended_way_to_render_svgs_in_a/
----
-I'm coming from a pure HTML + CSS world where I would normally do this with the following
-
-    &lt;svg&gt;
-        &lt;use xlink:href="./pathToSVGFile#svg_name&gt; &lt;/use&gt;
-    &lt;/svg&gt;
-
-I've tried do this in React using the styled-components library but it's been unsuccessful:
-
-    const styledSVG = styled.svg`
-        /* some styling */
-    `;
+Given this sample code
     
-    const Icon = () =&gt; {
-        return (
-            &lt;styledSVG&gt;
-                &lt;use xlinkHref={icon}&gt; &lt;/use&gt;
-            &lt;/styledSVG&gt;
-        );
+    const SkeletonEntry = () =&gt; {
+       console.log('loadingSkeleton')
+       return &lt;div&gt;Loading...&lt;/div&gt;
     }
-    
-    export default Icon;
 
-Whether I import the value of "icon" before passing it to xlinkHref or if I just pass a string version of the path itself, the svg is not rendered on screen. If I change the styled-component to be an &lt;img&gt; instead of a &lt;svg&gt; then I can display the svg by passing it in with the src attribute. However, using this approach I believe I lose out being able to style the icon through the CSS 'fill' property. Anyone have any suggestions?
+    const MyListInLoadingState = () =&gt; {
+      const Body = Array.from(new Array(10)).map((val, index) =&gt; (
+        &lt;SkeletonEntry
+          key={index}
+        /&gt;
+      ))
 
-&amp;#x200B;
+    return (
+        &lt;Fragment&gt;
+          {Body}
+        &lt;/Fragment&gt;
+      )
+ }
 
-Edit: 
+What do I need to do to only make `SkeletonEntry` `console.log` 1 time?
+## [8][How to handle components who need internal state inside a redux environment](https://www.reddit.com/r/reactjs/comments/f97hzf/how_to_handle_components_who_need_internal_state/)
+- url: https://www.reddit.com/r/reactjs/comments/f97hzf/how_to_handle_components_who_need_internal_state/
+---
+I've been working with react and redux for about 3-4 years now and it's not often that I come to a point where I'm not shure how to handle something.
 
-Thanks all. I ended up going with /u/bakedleaf 's solution since I'm already using CRA. In case someone in the future is looking at this for reference here's the [docs link](https://create-react-app.dev/docs/adding-images-fonts-and-files/#adding-svgs).
+We have a functional app that uses a lot of tables, tabs and stuff. Mostly data visualisation in tables and editing this data. Everything is handles in redux and react basically just shows data and triggers actions (as it should be).
 
-Here's how I ended up using it to apply the same style to different SVG's. Keep in mind this is all done using the styled-components library.
+We're in early alpha and our client absolutely insists on using devexpress (devextreme) now for all our componentes. Since he made his point clear and pays for it we are definetely switching our entire components.
 
-    // Import svg's as React Components
-    import { ReactComponent as BookmarkIcon } from './pathToSVG';
-    import { ReactComponent as ChatIcon } from './pathToSVG';
-    
-    import styled from 'styled-components'
-    
-    const StyledIcon = styled.svg`
-        /* Styling that all icons will receive*/
-    `;
-    
-    
-    // assuming we want to render a styledIcon somewhere, you can call it like this.
-    &lt;StyledIcon as={BookmarkIcon}/&gt; 
-    
-    // The 'as' attribute will render the given content with the styles applied by 
-    // the current styled-component
+Devexpress was never inteded to be used with react but it offers some components which are basically wrappers for their code. Now most of the components cant handle rerenders very well and the should absolutely be used with their provided data store which is a class that handles all the logic inside the table and also comunicates with the api...
 
-&amp;#x200B;
+What do you guys think? How should this be handled? I have to use this library which is unusable if not used as intended but I also want to keep as much information as possible in the redux store. I'm thinking about letting the devexpress stuff handle all data loading and manipulation. Then store everything view related (like selected tab, ...) in the redux store.
+
+I'm totaly afraid we will run into serious issues with this and I hate these kind of mixed approaches.
+
+Should I just dump redux and go back to internal state handling... even if this is a business desktop scale software?
+
+Dumping the new component set (devexpress) is not an option.
+## [9][rbd 13.0: more accessible](https://www.reddit.com/r/reactjs/comments/f924fg/rbd_130_more_accessible/)
+- url: https://www.reddit.com/r/reactjs/comments/f924fg/rbd_130_more_accessible/
+---
+Often doing accessibility well can be painstaking work. We have invested the time to make accessibility even better out of the box
+
+https://github.com/atlassian/react-beautiful-dnd/releases/tag/v13.0.0
+## [10][Leading Best React.js mobile App development company](https://www.reddit.com/r/reactjs/comments/f973ro/leading_best_reactjs_mobile_app_development/)
+- url: https://www.ksolves.com/react-js
+---
+
+## [11][I have limited time to modernize outside of work. Is it better to spend tons of time becoming proficient with a JS framework, or vanilla JavaScript?](https://www.reddit.com/r/reactjs/comments/f93jta/i_have_limited_time_to_modernize_outside_of_work/)
+- url: /r/webdev/comments/f93jeh/i_have_limited_time_to_modernize_outside_of_work/
+---
+
+## [12][Download rendered output on submit as HTML file??](https://www.reddit.com/r/reactjs/comments/f95sxh/download_rendered_output_on_submit_as_html_file/)
+- url: https://www.reddit.com/r/reactjs/comments/f95sxh/download_rendered_output_on_submit_as_html_file/
+---
+I have a form that captures input state and spits out a string on submit.
+
+What I want to do is download the rendered state as an HTML file on submit instead.
+
+I've created a post on Stack Overflow where someone recommended I use ReactDomServer but I'm unfamiliar with the concept (fairly new). Is there an elegant way to achieve this?
+
+Here is said post which shows example code: https://stackoverflow.com/q/60370940/3357677
+
+Thanks in advance for any help.

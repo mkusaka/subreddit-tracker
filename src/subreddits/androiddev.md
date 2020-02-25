@@ -31,146 +31,69 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Justifying the Google punishment ladder - on the utility of keeping the escalation ladder from app bans to account perma-bans a secret from developers - can a "policy" be a secret policy? - and whether Google Play management employs this tactic as a defence mechanism to hide incompetence](https://www.reddit.com/r/androiddev/comments/f8loc7/justifying_the_google_punishment_ladder_on_the/)
-- url: https://www.reddit.com/r/androiddev/comments/f8loc7/justifying_the_google_punishment_ladder_on_the/
+## [3][OK, Gradle! plugin v0.5.0 released](https://www.reddit.com/r/androiddev/comments/f98mwe/ok_gradle_plugin_v050_released/)
+- url: https://www.reddit.com/r/androiddev/comments/f98mwe/ok_gradle_plugin_v050_released/
 ---
-We all know the general way that app bans work, and how they escalate to account perma-bans, and then "associated account bans".
+Some time ago I got really tired of Googling every time I wanted to add a new dependency to my project, so I decided to come up with a plugin for Android Studio that will do that for me.
 
-The bigger question is, what is the utility of perma-banning developers with a policy that is inspired by the archaic **"three strikes and you are out" thinking of the Reagan era?**
+This version finally supports **build.gradle.kts** (Kotlin Script) files! :)
 
-Even though now we know 3 app bans does not always lead to perma-ban, and sometimes 1 app ban for a new dev leads to perma-ban, **what is the logic and motivation for such arbitrariness?**
+[See the plugin in action](https://imgur.com/a/A01LGEj)
 
-Since a number of app bans are caused by dev unawareness or sloppiness, **how does an escalating punishment regime ensure better compliance?** Which sadist at Google though up this scheme?
+You can download it from the [official Jetbrains Plugin Repository](https://plugins.jetbrains.com/plugin/10102-ok-gradle-)
 
-&amp;nbsp;
+[GitHub repo](https://github.com/scana/ok-gradle)
 
+I deeply appreciate all kind of feedback! If you encounter any kind of bugs/issues, please, let me know!
 
-**Unpredictable "policies"**
-
-The current app ban to perma-ban escalation ladder is completely arbitrary and unpredictable from the developer point of view!
-
-So how does it function as "policy", or as deterrent, if it is completely opaque to the developer?
-
-The perception it creates is of arbitrary cruelty, under an unpredictable and temperamental boss.
-
-&amp;nbsp;
-
-
-**Who thought up this regime at Google?**
-
-Which creative (but out of touch with reality) mind at Google thought all this up?
-
-And which misanthrope then extended it to the **notoriously unfair "associated account ban"**, where a wife can be banned for the behavior of her husband, and the employer and friends can be banned without explanation out of the blue?
-
-&amp;nbsp;
-
-
-**Google's infinite memory**
-
-As the understood behavior stands, there is an accumulation of ill will that a developer can accumulate, which leads to a tipping point where Google finally perma-bans a developer.
-
-However if a developer has accumulated 3 app bans some time ago, due to mistakes, stupidity and even bad behavior, does Google start forgiving them after some time?  What is the motivation for infinite memory of developer sins - so an 18 year old's infractions are remembered well into his 20s?
-
-Under what motivation should such a developer proceed to develop for Google?
-
-If they have accumulated 3 app bans already, yet not been banned yet, should they continue developing for Google, or are they on the brink of an account perma-ban?
-
-If there is no more margin of error - should they embark on a new project ?
-
-Now it may be that Google erases the bad-will over time, so after some time, the dev is again given leeway to make mistakes.  Even if Google does have such an internal policy/algorithm, that is not known by the devs.
-
-**It seems Google doesn't want you to have any visibility into your status at Google.**  Evidently it sees this as some sort of a leg up - a strategic advantage Google has, but devs don't have.
-
-The end result if this opaqueness is, that a dev who has accumulated a few app bans may be better off making apps for a newer platform that telegraphs policies better to it's devs.
-
-&amp;nbsp;
-
-
-**Developer perceptions**
-
-It is no wonder that a perception exists that Google Play sees **app developers as a nuisance**.  Or as some devs report, how their contacts within Google dry up at a hint of criticism.
-
-This suggests there is a problem within Google Play management, where they have allowed, or possibly even **cultivated a culture of loathing towards app developers** - which is a sign of exasperation, and possibly incompetence within those corporate ranks - where **insularity is chosen as a defence** mechanism over openness (with openness, outsiders get a better handle to challenge management misbehavior).
-## [4][Fabric is deprecated and will shut down after March 31, 2020](https://www.reddit.com/r/androiddev/comments/f8oh3s/fabric_is_deprecated_and_will_shut_down_after/)
-- url: https://www.reddit.com/r/androiddev/comments/f8oh3s/fabric_is_deprecated_and_will_shut_down_after/
----
-Fabric is deprecated and will shut down after March 31, 2020, and is being integrated into Firebase. Fabric's Beta will be replaced by Firebase App Distribution and Crashlytics will be replaced by Firebase App Distribution. I found a simple and concise article on how to setup Firebase App Distribution with fastlane. Check it out at   
-[https://medium.com/@clementozemoya/automated-android-deployments-with-fastlane-and-firebase-app-distribution-b1d1905a4fe6](https://medium.com/@clementozemoya/automated-android-deployments-with-fastlane-and-firebase-app-distribution-b1d1905a4fe6)
-## [5][How do you prevent fragment recreation with Android Navigation Component?](https://www.reddit.com/r/androiddev/comments/f8opw0/how_do_you_prevent_fragment_recreation_with/)
-- url: https://www.reddit.com/r/androiddev/comments/f8opw0/how_do_you_prevent_fragment_recreation_with/
----
-I have seen people try to save ViewModel, create custom Navigator, etc. What do you guys use and prefer and why?
-## [6][A simple Disney app using the material transformation motion system.](https://www.reddit.com/r/androiddev/comments/f899oq/a_simple_disney_app_using_the_material/)
-- url: https://github.com/skydoves/DisneyMotions
+Disclaimer: this features is/was already kinda (only for regular build.gradle files, though) available in Android Studio, as mentioned by u/wkalicinski in other thread about this plugin. You can see how to do that here: https://imgur.com/6bxEhCe
+Though, I am still working on Ok, Gradle! in order to add more features, e.g. automatic library suggestions based on their popularity.
+## [4][Android Studio 3.6 Stable Released](https://www.reddit.com/r/androiddev/comments/f8vlbq/android_studio_36_stable_released/)
+- url: https://android-developers.googleblog.com/2020/02/android-studio-36.html
 ---
 
-## [7][Android 11 funny things: android.R.string.yes and and android.R.string.no deprecated](https://www.reddit.com/r/androiddev/comments/f8aj0f/android_11_funny_things_androidrstringyes_and_and/)
-- url: https://www.reddit.com/r/androiddev/comments/f8aj0f/android_11_funny_things_androidrstringyes_and_and/
+## [5][Using android keystore from native code (c++)](https://www.reddit.com/r/androiddev/comments/f96aqf/using_android_keystore_from_native_code_c/)
+- url: https://www.reddit.com/r/androiddev/comments/f96aqf/using_android_keystore_from_native_code_c/
 ---
-`android.R.string.yes` and `android.R.string.no` are finally deprecated because they incorrectly match `android.R.string.ok` and `android.R.string.cancel`
-## [8][Adobe Xd Design to Real Android/iOS App | Design Weekly](https://www.reddit.com/r/androiddev/comments/f8r88o/adobe_xd_design_to_real_androidios_app_design/)
-- url: https://youtu.be/DWkFLlV_Q-Q
+Hello,
+
+I am currently writing an library in C++. On Android I would like this library to use the Android keystore for storing and using cryptographic keys. How is it possible? Or is it a pain?
+
+Thanks
+## [6][What's new in Android Studio 3.6](https://www.reddit.com/r/androiddev/comments/f8v4qs/whats_new_in_android_studio_36/)
+- url: https://www.youtube.com/watch?v=h7dCm2lQLOg
 ---
 
-## [9][Suggestion: Make scoped storage better for devs](https://www.reddit.com/r/androiddev/comments/f8qook/suggestion_make_scoped_storage_better_for_devs/)
-- url: https://www.reddit.com/r/Android/comments/f8qg4u/suggestion_make_scoped_storage_better_for_devs/
+## [7][ViewBinding in Fragments: the clean &amp; easy way](https://www.reddit.com/r/androiddev/comments/f96rc6/viewbinding_in_fragments_the_clean_easy_way/)
+- url: https://medium.com/@ffvanderlaan/viewbinding-in-fragments-the-clean-easy-way-2f0ce68aee22
 ---
 
-## [10][ItemDecoration doesn't work inside NestedScrollView](https://www.reddit.com/r/androiddev/comments/f8qlc5/itemdecoration_doesnt_work_inside_nestedscrollview/)
-- url: https://www.reddit.com/r/androiddev/comments/f8qlc5/itemdecoration_doesnt_work_inside_nestedscrollview/
+## [8][Joe Birch explains the upcoming changes to the permission system in Android 11: "Exploring the Android 11 Developer Preview: Permission Changes"](https://www.reddit.com/r/androiddev/comments/f98o21/joe_birch_explains_the_upcoming_changes_to_the/)
+- url: https://joebirch.co/2020/02/21/exploring-the-android-11-developer-preview-permission-changes/
 ---
-I have implemented RecyclerView with sticky headers and I did it through [ItemDecoration](https://stackoverflow.com/questions/32949971/how-can-i-make-sticky-headers-in-recyclerview-without-external-lib). It works as expected in the case of stand-alone RecyclerView. But I have two RecyclerViews, and I need to use NestedScrollView
 
-    &lt;androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbars="none"&gt;
-        &lt;LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical"&gt;
-            &lt;androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/menuNewsList"
-                android:layout_width="match_parent"
-                android:layout_height="170dp" /&gt;
-            &lt;androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listMenu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" /&gt;
-        &lt;/LinearLayout&gt;
-    &lt;/androidx.core.widget.NestedScrollView&gt;
-
-Code initialization: 
-
-    listMenu.apply {
-         adapter = dishAdapter
-         isNestedScrollingEnabled = false 
-    } 
-    listMenu.addItemDecoration(HeaderItemDecoration(listMenu, isHeader = isHeader()))
-
-&amp;#x200B;
-
-Without  NestedScrollView  it works excellent, but in my case ItemDecoration doesn't work.
-
-I've found out next information:
-
-* onDrawOver's are not called on scrolling because RecyclerView.draw() is not called as well.
-* All items are created at the same time (so Adapter creates view holders for all items in the data). I think it happens because of NestedScrollView.
-* I tried to force calling recyclerview's redraw on scrolling but it doesn't work
-
-I considered combining 2 RecyclerViews into one, but first one has a horizontal scroll, so I'd like to avoid this solution.
-
-Do you have any advice how to deal with it?
-## [11][Alphaanimation with surface view.](https://www.reddit.com/r/androiddev/comments/f8q4yg/alphaanimation_with_surface_view/)
-- url: https://www.reddit.com/r/androiddev/comments/f8q4yg/alphaanimation_with_surface_view/
+## [9][Writing to Google Sheets - Authentication is confusing](https://www.reddit.com/r/androiddev/comments/f9aben/writing_to_google_sheets_authentication_is/)
+- url: https://www.reddit.com/r/androiddev/comments/f9aben/writing_to_google_sheets_authentication_is/
 ---
-I implemented alphaanimation in imageview to get some sort of dissolve effect for transition.
-I want the same in surface view when transitioning from one to another.but using alphaanimation in surface view gives me black screen or not animating . Please suggest me a solution for this.
-## [12][A/B test in android kotlin](https://www.reddit.com/r/androiddev/comments/f8ppqr/ab_test_in_android_kotlin/)
-- url: https://www.reddit.com/r/androiddev/comments/f8ppqr/ab_test_in_android_kotlin/
+I've spent the last few days googling and trying to figure out how to \*easily\* do authentication to write to a google sheet from my app.  I have the reading part working.  I have read a lot of tutorials, and they all seem to do it a little differently, so I'm trying to figure out what is the most basic, simple (even if less secure) way to do this.  It's just for a personal thing, so I'm not so worried about security, as it's more of a proof of concept at this point.
+
+Could someone give me a shove in the right direction, and maybe answer some questions as I work through this?
+## [10][How to set right Margin and left margin programtically?](https://www.reddit.com/r/androiddev/comments/f9a516/how_to_set_right_margin_and_left_margin/)
+- url: https://www.reddit.com/r/androiddev/comments/f9a516/how_to_set_right_margin_and_left_margin/
 ---
-In my app there are several a/b experiments running write now in onCreate() i have several if else for handling the flow, is there any particular coding style/practice that I can follow to make it cleaner
+I have a frame layout inside a relative layout and i need to move frame layout on the press of a button a bit to the left and top. I have tried setLeft() and setTop() method which necessarily stretches my view but it's still okay for my purpose. But problem is i can't get the original unstretched frame layout back. 
+Doing setRight() and setBottom() with same parameters does not seem to do the thing. Any suggestions will be welcome.
+## [11][Libraries that require Activity to work.](https://www.reddit.com/r/androiddev/comments/f97nt1/libraries_that_require_activity_to_work/)
+- url: https://www.reddit.com/r/androiddev/comments/f97nt1/libraries_that_require_activity_to_work/
+---
+How do you deal with libraries that require an actual activity in order to work? And how do you avoid leaks? 
+
+Currently my solution is to use a 'fake' activity which uses a soft reference to a real activity, but that seems to cause way too much problems and actual crashes if the activity is nulled. Is there a better way of doing this?
+## [12][Any way to track users from campaign?](https://www.reddit.com/r/androiddev/comments/f99q2d/any_way_to_track_users_from_campaign/)
+- url: https://www.reddit.com/r/androiddev/comments/f99q2d/any_way_to_track_users_from_campaign/
+---
+Hello
+
+I want to start google ads campaign.
+
+Is there any way to track (example in gameanalytics) only users from this campaign?

@@ -1,171 +1,69 @@
 # golang
-## [1][My favorite birthday present! My friends do know me well! 💕](https://www.reddit.com/r/golang/comments/f94oza/my_favorite_birthday_present_my_friends_do_know/)
+## [1][Go 1.14 Release Notes](https://www.reddit.com/r/golang/comments/f9gl15/go_114_release_notes/)
+- url: https://tip.golang.org/doc/go1.14
+---
+
+## [2][JetBrains GoLand bug - go1.14](https://www.reddit.com/r/golang/comments/f9qsxp/jetbrains_goland_bug_go114/)
+- url: https://www.reddit.com/r/golang/comments/f9qsxp/jetbrains_goland_bug_go114/
+---
+For GoLand users - the latest release of Go (go1.14) breaks it. I've raised a support ticket;
+
+[https://youtrack.jetbrains.com/issue/GO-8855](https://youtrack.jetbrains.com/issue/GO-8855)
+## [3][Go 1.14 is released](https://www.reddit.com/r/golang/comments/f9hvj2/go_114_is_released/)
+- url: https://blog.golang.org/go1.14
+---
+
+## [4][What's new in Go1.14 - LondonGophers 19/02/2020: Dominic Green](https://www.reddit.com/r/golang/comments/f9qsl6/whats_new_in_go114_londongophers_19022020_dominic/)
+- url: https://www.youtube.com/watch?v=70IzLbjRXPU
+---
+
+## [5][Go Gotcha of the day, never close over loop variables!](https://www.reddit.com/r/golang/comments/f9sayq/go_gotcha_of_the_day_never_close_over_loop/)
+- url: https://jesseduffield.com/golang-gotcha-of-the-day/
+---
+
+## [6][Can we get flairs for the subreddit?](https://www.reddit.com/r/golang/comments/f9gq5p/can_we_get_flairs_for_the_subreddit/)
+- url: https://www.reddit.com/r/golang/comments/f9gq5p/can_we_get_flairs_for_the_subreddit/
+---
+Recently I've noticed a lot of posts about Gopher mascots. It doesn't bother me too much, but I'd be glad if I could filter them out. 
+
+Some flair like "offtop" or "funny" could do. 
+
+Thanks for coming to my TED talk.
+## [7][Equality in Golang - Tale of comparison operators and {DeepEqual,Equal,EqualFold} methods](https://www.reddit.com/r/golang/comments/f9spjk/equality_in_golang_tale_of_comparison_operators/)
+- url: https://medium.com/golangspec/equality-in-golang-ff44da79b7f1
+---
+
+## [8][My favorite birthday present! My friends do know me well! 💕](https://www.reddit.com/r/golang/comments/f94oza/my_favorite_birthday_present_my_friends_do_know/)
 - url: https://i.redd.it/rt7bsyim00j41.jpg
 ---
 
-## [2][This one for me](https://www.reddit.com/r/golang/comments/f98kz4/this_one_for_me/)
+## [9][This one for me](https://www.reddit.com/r/golang/comments/f98kz4/this_one_for_me/)
 - url: https://i.redd.it/k1wqoa0ow1j41.jpg
 ---
 
-## [3][GoUp. Pure Go tool, mainly designed to be used in CI to verify if any of your go.mod dependencies are outdated. Zero call to Go or Git command line tools. Major, major with minor and patch version are supported.](https://www.reddit.com/r/golang/comments/f99lee/goup_pure_go_tool_mainly_designed_to_be_used_in/)
-- url: https://github.com/rvflash/goup
+## [10][I must be stupid, I can't make go modules work for my github project.](https://www.reddit.com/r/golang/comments/f9jtw0/i_must_be_stupid_i_cant_make_go_modules_work_for/)
+- url: https://www.reddit.com/r/golang/comments/f9jtw0/i_must_be_stupid_i_cant_make_go_modules_work_for/
 ---
+I'm working on a website in Golang because speed, but when I went to look and see how to put code files in sub directories because the main directory is growing, I found modules.
 
-## [4][Minimalist Go Logger](https://www.reddit.com/r/golang/comments/f8xb7h/minimalist_go_logger/)
-- url: https://www.reddit.com/r/golang/comments/f8xb7h/minimalist_go_logger/
----
-Hello,
+I don't understand modules at all. As far as I understand, they're rigidly named, they do nothing,  and they also do everything and are tools for galactic domination of autonomous self versioning and reference.
 
-Please check out my super simple logging library and its colorful log viewing tool. This is my first open source project. All reviews and contributions are welcome.
+I just want to put a go file in a sub directory. I don't understand. I've read tutorial after tutorial and I just keep having the github atom editor go plugin blindly remove my import path when go vet runs. It's infuriating and depressing. it comes with a confusing error about "no result for query "latest""
 
-Links:
+let me tell you where I'm at:
 
-[https://github.com/ermanimer/go-logger](https://github.com/ermanimer/go-logger)
+my go env returns that $GOPATH is C:\\users\\me\\go
 
-[https://github.com/ermanimer/go-log-viewer](https://github.com/ermanimer/go-log-viewer)
+my github repository copy sits in ... me\\go\\src\\github.com\\samiam2013\\GoMVClean
 
-&amp;#x200B;
+go.mod for this repo says module github.com/samiam2013/GoMVClean
 
-[sample output with github.com\/ermanimer\/go-log-viewer](https://preview.redd.it/pey8qzyfixi41.png?width=654&amp;format=png&amp;auto=webp&amp;s=c37008972e1995b6f7aef9425798337a53a528c9)
-## [5][Replace X509/ASN1 parser in http.Client](https://www.reddit.com/r/golang/comments/f9954v/replace_x509asn1_parser_in_httpclient/)
-- url: https://www.reddit.com/r/golang/comments/f9954v/replace_x509asn1_parser_in_httpclient/
----
-Hi, is there are way to replace the ASN1 parser as it rejects the server certificate due to ‘PrintableString contains invalid character’
+my subdirectory that I want to add code to is ... me\\go\\src\\github.com\\samiam2013\\GoMVClean\\modelConfig
 
-The certificate can’t be changed, and the service can be connected to ok from other languages - the go parser is just more strict on the acceptable characters (the cert has things like underscore characters in the common name).
+go.mod for this subdirectory says module github.com/samiam2013/GoMVClean/modelConfig
 
-Any option in the transport that could be used for this?
-## [6][Golang is not good for Fuchsia](https://www.reddit.com/r/golang/comments/f92nkc/golang_is_not_good_for_fuchsia/)
-- url: https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/docs/project/policy/programming_languages.md
----
+I'm using go version 1.13 the 111 variable is not set.
 
-## [7][giu (rapid GUI framework) v0.3 is released on github.](https://www.reddit.com/r/golang/comments/f9a43x/giu_rapid_gui_framework_v03_is_released_on_github/)
-- url: https://www.reddit.com/r/golang/comments/f9a43x/giu_rapid_gui_framework_v03_is_released_on_github/
----
-[github.com/AllenDang/giu](https://github.com/AllenDang/giu)
+Please refrain from hitting your caps lock key and calling me a retard. I know.
 
-giu is a cross platform rapid GUI framework for golang based on Dear ImGui.
-
-The major feature of this release is SplitLayout which could create live resizing layout in few lines of code.
-
-    package main
-    
-    import (
-      g "github.com/AllenDang/giu"
-    )
-    
-    func loop() {
-      g.SingleWindow("splitter", g.Layout{
-        g.SplitLayout("Split", g.DirectionHorizontal, true, 200,
-          g.Layout{
-            g.Label("Left panel"),
-            g.Line(g.Button("Button1", nil), g.Button("Button2", nil)),
-          },
-          g.SplitLayout("Right panel", g.DirectionVertical, true, 200,
-            g.Layout{},
-            g.SplitLayout("HSplit", g.DirectionHorizontal, true, 200,
-              g.Layout{},
-              g.SplitLayout("VSplit", g.DirectionVertical, true, 100,
-                g.Layout{},
-                g.Layout{},
-              ),
-            ),
-          ),
-        ),
-      })
-    }
-    
-    func main() {
-      wnd := g.NewMasterWindow("Splitter", 800, 600, 0, nil)
-      wnd.Main(loop)
-    }
-
-The result is:
-
-https://i.redd.it/01v7vifwl2j41.gif
-
-&amp;#x200B;
-## [8][Need some guidance with creating test](https://www.reddit.com/r/golang/comments/f97n4f/need_some_guidance_with_creating_test/)
-- url: https://www.reddit.com/r/golang/comments/f97n4f/need_some_guidance_with_creating_test/
----
-I am looking to automate the checks on our DNS servers and I am struggling, being new to Go.
-
-&amp;#x200B;
-
-Here is what I have 
-
-&amp;#x200B;
-
-&gt;package main  
-import (  
-shell "github.com/gruntwork-io/terratest/modules/shell"  
-"bufio"  
-"errors"  
-"fmt"  
-"io"  
-"os"  
-"os/exec"  
-"strings"  
-"sync"  
-"syscall"  
-"testing"  
-"github.com/stretchr/testify/require"  
-"github.com/gruntwork-io/terratest/modules/logger"  
- "testing"  
-)  
-type Command struct {  
-Command           string // The command to run  
-Args              \[\]string // The args to pass to the command  
-WorkingDir        string // The working directory  
-Env               map\[string\]string // Additional environment variables to set  
-OutputMaxLineSize int // The max line size of stdout and stderr (in bytes)  
-}  
-  
-&gt;  
-&gt;func TestRunCommand(t, \*testing.T) {  
- cmd := Command{  
-Command: "nslookup",  
-Args : "www.google.com",  
-WorkingDir : "/tmp",  
-Env : "",  
-OutputMaxLineSize : "1024",  
-}  
-shell.RunCommand(t, \*testing.T, cmd Command)  
-}  
-
-
-I get an error on the line 'shell.RunCommand(t, \*testing.T, cmd Command)', and I cannot work out why
-
-&amp;#x200B;
-
-I intend to use the runcommandandgetoutput to determine that the service is responding correctly.
-## [9][Golang and architecture tips for larger applications](https://www.reddit.com/r/golang/comments/f8odq4/golang_and_architecture_tips_for_larger/)
-- url: https://www.reddit.com/r/golang/comments/f8odq4/golang_and_architecture_tips_for_larger/
----
-I have lots of experience in Java and PHP (the good kind, Laravel, Symfony). I write fully object oriented code. OO allows me to do things like:
-
-\- Enforce a specific architecture. For example, to create a "Processor" for some event, I extend AbstractProcessor. This AbstractProcessor class has some abstract functions,  your editor will force you to implement them, giving the Abstract Code vital information that needs to work correctly, like getProcessorName() { return "SomeObjectProcessor" }, function getRepo() { return $this-&gt;someInjectedObject }. Then the abstract code can do its work. What is good with this approach is that, I only have to extent the base class. I don't have to remember anything else, abstract code is implemented one time, then whenever I create a new Child Class, I MUST provide the info, otherwise the program won't run at all.
-
-I have a bad memory, so I usually use lots of tricks like this and that makes my life a lot easier. All these tricks use OO and Reflection on one level or other, and its either in RunTime or "tests" that check for the validity of the data. All the problems of the type "When I do that, I must remember to do a,b,c" are usually enforced by the architecture, or the tests fail. I found that this way of programming, takes more time to setup, but maintenance is 100x easier.
-
-Now, I fucking love Go. I have rewritten some long running small tools, that use lots of parallel threads and IO, and the performance was x20 at least, CPU and RAM. All of them are fairly simple 200-500 lines of code per tool. Go is ideal for that, easy and has excellent performance. I also want to practice more for web apps in GO.
-
-I know this is because of lack of experience with the language, of procedural languages in general, but I find writing larger applications without OO very difficult. I know I have to refresh the basics, then try to write larger things and I will find my way. I also need to study composition more, but my time is limited, so I wanted to take advantage your wisdom:
-
-\- Did anyone had the similar issues ?
-
-\- Do you know any book/resource that goes beyond the basics and talks more about project architecture and good practices using go ?
-
-\- What tricks do you use to make your life easier in the future of the project ?
-## [10][First, I wrote my own parser, then rewrite in ANTLR, now back to a handwritten parser.](https://www.reddit.com/r/golang/comments/f96laz/first_i_wrote_my_own_parser_then_rewrite_in_antlr/)
-- url: https://www.reddit.com/r/golang/comments/f96laz/first_i_wrote_my_own_parser_then_rewrite_in_antlr/
----
-I wrote one popular expression evaluation library: [https://github.com/antonmedv/expr](https://github.com/antonmedv/expr)
-
-Here is the first implementation of the parser: [https://github.com/antonmedv/expr/blob/v1.1.4/parser.go](https://github.com/antonmedv/expr/blob/v1.1.4/parser.go)
-
-After I was thinking about using ANTLR: [https://github.com/antonmedv/expr/blob/v1.4.5/parser/parser.go](https://github.com/antonmedv/expr/blob/v1.4.5/parser/parser.go)
-
-But, bugs in ANTLR go bindings, lack of control of error massages, made we return back to the handwritten parser: [https://github.com/antonmedv/expr/blob/master/parser/parser.go](https://github.com/antonmedv/expr/blob/master/parser/parser.go)
-
-Also, notice what removing all `if err != nil` in the latest parser evolution makes code readable.
+Thanks for any wasted time helping me, I'm sure I'm not worth it.

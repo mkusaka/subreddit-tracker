@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][You don't need Moment.js](https://www.reddit.com/r/javascript/comments/f8sy4e/you_dont_need_momentjs/)
+## [3][Microsoft Paint/Paintbrush in Javascript](https://www.reddit.com/r/javascript/comments/f9rxhj/microsoft_paintpaintbrush_in_javascript/)
+- url: https://jspaint.app/
+---
+
+## [4][simpleParallax, Simple and tiny JavaScript library which adds parallax animations on any images](https://www.reddit.com/r/javascript/comments/f9lkoi/simpleparallax_simple_and_tiny_javascript_library/)
+- url: https://simpleparallax.com
+---
+
+## [5][[Show reddit] Asynchronous JavaScript in four chapters: foundations, Promises, async functions, async iteration](https://www.reddit.com/r/javascript/comments/f9b82e/show_reddit_asynchronous_javascript_in_four/)
+- url: https://exploringjs.com/impatient-js/ch_async-js.html
+---
+
+## [6][Formatting numbers on the fly is easy with Numeral.js. Read about it in my post featured in The Start Up.](https://www.reddit.com/r/javascript/comments/f9sldo/formatting_numbers_on_the_fly_is_easy_with/)
+- url: https://medium.com/swlh/beginners-guide-to-numeral-js-63436b614d44
+---
+
+## [7][Scala.js 1.0.0 is released](https://www.reddit.com/r/javascript/comments/f9b6k3/scalajs_100_is_released/)
+- url: https://www.scala-js.org/news/2020/02/25/announcing-scalajs-1.0.0/
+---
+
+## [8][Provides standard objects and functions for working with dates and times.](https://www.reddit.com/r/javascript/comments/f9fhh8/provides_standard_objects_and_functions_for/)
+- url: https://github.com/tc39/proposal-temporal
+---
+
+## [9][Nano Events: event emitter for JS in 75 bytes (!) with ESM and TypeScript support](https://www.reddit.com/r/javascript/comments/f9f8ko/nano_events_event_emitter_for_js_in_75_bytes_with/)
+- url: https://github.com/ai/nanoevents
+---
+
+## [10][Immutable Types in TypeScript](https://www.reddit.com/r/javascript/comments/f9g6pg/immutable_types_in_typescript/)
+- url: https://egghead.io/lessons/javascript-create-immutable-types-in-typescript
+---
+
+## [11][tsparticles - Resurrecting particles.js](https://www.reddit.com/r/javascript/comments/f9culj/tsparticles_resurrecting_particlesjs/)
+- url: https://github.com/matteobruni/tsparticles
+---
+
+## [12][You don't need Moment.js](https://www.reddit.com/r/javascript/comments/f8sy4e/you_dont_need_momentjs/)
 - url: https://github.com/you-dont-need/You-Dont-Need-Momentjs
----
-
-## [4][You don't (may not) need Lodash/Underscore: List of JavaScript methods which you can use natively + ESLint Plugin](https://www.reddit.com/r/javascript/comments/f90xn3/you_dont_may_not_need_lodashunderscore_list_of/)
-- url: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
----
-
-## [5][Hooks and Streams - React's missed opportunity](https://www.reddit.com/r/javascript/comments/f92b2b/hooks_and_streams_reacts_missed_opportunity/)
-- url: https://james-forbes.com/#!/posts/hooks-and-streams
----
-
-## [6][Visualize 2D/3D Vector Fields With Three.js](https://www.reddit.com/r/javascript/comments/f905ws/visualize_2d3d_vector_fields_with_threejs/)
-- url: https://tips4devs.com/articles/visualize-2d-and-3d-vector-fields-with-three-js.html
----
-
-## [7][Introduce AntV: a new player in data visualization](https://www.reddit.com/r/javascript/comments/f8t4y2/introduce_antv_a_new_player_in_data_visualization/)
-- url: https://medium.com/@afc163/introduce-antv-a-new-player-in-data-visualization-90ca999cfb08
----
-
-## [8][Scraping Secretary of States: California - JavaScript Web Scraping Guy](https://www.reddit.com/r/javascript/comments/f91jz2/scraping_secretary_of_states_california/)
-- url: https://javascriptwebscrapingguy.com/jordan-scrapes-secretary-of-states-california/
----
-
-## [9][Making Web Components for Different Contexts](https://www.reddit.com/r/javascript/comments/f8s0ka/making_web_components_for_different_contexts/)
-- url: https://hackdoor.io/articles/5kQdnVND/making-web-components-for-different-contexts
----
-
-## [10][Performance benchmarks for checking arrays of large data sets](https://www.reddit.com/r/javascript/comments/f93pns/performance_benchmarks_for_checking_arrays_of/)
-- url: https://jsfiddle.net/b2yw54mj/2/
----
-
-## [11][How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://www.reddit.com/r/javascript/comments/f98gvb/how_to_architect_epic_angular_app_in_less_than_10/)
-- url: https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656
----
-
-## [12][Custom Data Format: Evolving HTML and CSS language features](https://www.reddit.com/r/javascript/comments/f8wl19/custom_data_format_evolving_html_and_css_language/)
-- url: https://code.visualstudio.com/blogs/2020/02/24/custom-data-format
 ---
 

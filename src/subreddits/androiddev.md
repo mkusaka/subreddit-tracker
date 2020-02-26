@@ -31,69 +31,70 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][OK, Gradle! plugin v0.5.0 released](https://www.reddit.com/r/androiddev/comments/f98mwe/ok_gradle_plugin_v050_released/)
-- url: https://www.reddit.com/r/androiddev/comments/f98mwe/ok_gradle_plugin_v050_released/
----
-Some time ago I got really tired of Googling every time I wanted to add a new dependency to my project, so I decided to come up with a plugin for Android Studio that will do that for me.
-
-This version finally supports **build.gradle.kts** (Kotlin Script) files! :)
-
-[See the plugin in action](https://imgur.com/a/A01LGEj)
-
-You can download it from the [official Jetbrains Plugin Repository](https://plugins.jetbrains.com/plugin/10102-ok-gradle-)
-
-[GitHub repo](https://github.com/scana/ok-gradle)
-
-I deeply appreciate all kind of feedback! If you encounter any kind of bugs/issues, please, let me know!
-
-Disclaimer: this features is/was already kinda (only for regular build.gradle files, though) available in Android Studio, as mentioned by u/wkalicinski in other thread about this plugin. You can see how to do that here: https://imgur.com/6bxEhCe
-Though, I am still working on Ok, Gradle! in order to add more features, e.g. automatic library suggestions based on their popularity.
-## [4][Android Studio 3.6 Stable Released](https://www.reddit.com/r/androiddev/comments/f8vlbq/android_studio_36_stable_released/)
-- url: https://android-developers.googleblog.com/2020/02/android-studio-36.html
+## [3][TIL you can document dependencies in Gradle with `because`](https://www.reddit.com/r/androiddev/comments/f9egcc/til_you_can_document_dependencies_in_gradle_with/)
+- url: https://twitter.com/conor_smith_dev/status/1231957738411962368?s=19
 ---
 
-## [5][Using android keystore from native code (c++)](https://www.reddit.com/r/androiddev/comments/f96aqf/using_android_keystore_from_native_code_c/)
-- url: https://www.reddit.com/r/androiddev/comments/f96aqf/using_android_keystore_from_native_code_c/
----
-Hello,
-
-I am currently writing an library in C++. On Android I would like this library to use the Android keystore for storing and using cryptographic keys. How is it possible? Or is it a pain?
-
-Thanks
-## [6][What's new in Android Studio 3.6](https://www.reddit.com/r/androiddev/comments/f8v4qs/whats_new_in_android_studio_36/)
-- url: https://www.youtube.com/watch?v=h7dCm2lQLOg
+## [4][Using GitHub Packages for Android projects](https://www.reddit.com/r/androiddev/comments/f9qq1r/using_github_packages_for_android_projects/)
+- url: https://rubensousa.com/2020/02/26/github_packages_for_android_projects/
 ---
 
-## [7][ViewBinding in Fragments: the clean &amp; easy way](https://www.reddit.com/r/androiddev/comments/f96rc6/viewbinding_in_fragments_the_clean_easy_way/)
-- url: https://medium.com/@ffvanderlaan/viewbinding-in-fragments-the-clean-easy-way-2f0ce68aee22
+## [5][Android Studio 4.0 Beta 1 available](https://www.reddit.com/r/androiddev/comments/f9f0oe/android_studio_40_beta_1_available/)
+- url: https://androidstudio.googleblog.com/2020/02/android-studio-40-beta-1-available.html
 ---
 
-## [8][Joe Birch explains the upcoming changes to the permission system in Android 11: "Exploring the Android 11 Developer Preview: Permission Changes"](https://www.reddit.com/r/androiddev/comments/f98o21/joe_birch_explains_the_upcoming_changes_to_the/)
-- url: https://joebirch.co/2020/02/21/exploring-the-android-11-developer-preview-permission-changes/
+## [6][Hi everyone! Me and my high school friends made a Flutter &amp; Firebase app called Hypermind to help y'all with a healthy lifestyle. Feedback highly appreciated!](https://www.reddit.com/r/androiddev/comments/f9sp4q/hi_everyone_me_and_my_high_school_friends_made_a/)
+- url: https://www.reddit.com/r/androiddev/comments/f9sp4q/hi_everyone_me_and_my_high_school_friends_made_a/
+---
+Google Play: [https://play.google.com/store/apps/details?id=com.adamkakolewski.hypermind](https://play.google.com/store/apps/details?id=com.adamkakolewski.hypermind)
+
+GitHub: [https://github.com/CukierPuder420/hypermind](https://github.com/CukierPuder420/hypermind)
+## [7][Data Encryption on Android with Jetpack Security](https://www.reddit.com/r/androiddev/comments/f9t87m/data_encryption_on_android_with_jetpack_security/)
+- url: https://android-developers.googleblog.com/2020/02/data-encryption-on-android-with-jetpack.html
 ---
 
-## [9][Writing to Google Sheets - Authentication is confusing](https://www.reddit.com/r/androiddev/comments/f9aben/writing_to_google_sheets_authentication_is/)
-- url: https://www.reddit.com/r/androiddev/comments/f9aben/writing_to_google_sheets_authentication_is/
+## [8][Facebook Audience network payout late this month?](https://www.reddit.com/r/androiddev/comments/f9t712/facebook_audience_network_payout_late_this_month/)
+- url: https://www.reddit.com/r/androiddev/comments/f9t712/facebook_audience_network_payout_late_this_month/
 ---
-I've spent the last few days googling and trying to figure out how to \*easily\* do authentication to write to a google sheet from my app.  I have the reading part working.  I have read a lot of tutorials, and they all seem to do it a little differently, so I'm trying to figure out what is the most basic, simple (even if less secure) way to do this.  It's just for a personal thing, so I'm not so worried about security, as it's more of a proof of concept at this point.
-
-Could someone give me a shove in the right direction, and maybe answer some questions as I work through this?
-## [10][How to set right Margin and left margin programtically?](https://www.reddit.com/r/androiddev/comments/f9a516/how_to_set_right_margin_and_left_margin/)
-- url: https://www.reddit.com/r/androiddev/comments/f9a516/how_to_set_right_margin_and_left_margin/
+for paypal
+## [9][Android Studio 4.0 Beta 1 and Jetpack Compose](https://www.reddit.com/r/androiddev/comments/f9oyd8/android_studio_40_beta_1_and_jetpack_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/f9oyd8/android_studio_40_beta_1_and_jetpack_compose/
 ---
-I have a frame layout inside a relative layout and i need to move frame layout on the press of a button a bit to the left and top. I have tried setLeft() and setTop() method which necessarily stretches my view but it's still okay for my purpose. But problem is i can't get the original unstretched frame layout back. 
-Doing setRight() and setBottom() with same parameters does not seem to do the thing. Any suggestions will be welcome.
-## [11][Libraries that require Activity to work.](https://www.reddit.com/r/androiddev/comments/f97nt1/libraries_that_require_activity_to_work/)
-- url: https://www.reddit.com/r/androiddev/comments/f97nt1/libraries_that_require_activity_to_work/
+I downloaded it in order to try out Jetpack Compose but it keeps complaining:
+
+&gt;**Compose feature not supported** Jetpack  Compose is a preview feature, and support for Compose is included only  in Canary versions of Android Studio. To use Compose in your app  project, download and install the latest Canary version of the IDE.
+
+I also switched my update channel to Canary and "Invalidate cache &amp;  Restart" still no improvement. I can run the compose code on device but  Preview is not working. Any help?? :(
+
+EDIT: I changed the compose library version to 0.1.0-dev05 and Compose Preview also started working.
+## [10][My Review of Android Studio 3.6](https://www.reddit.com/r/androiddev/comments/f9ovt2/my_review_of_android_studio_36/)
+- url: http://www.evanamargain.com/blog/android/review-of-android-studio-3-6/
 ---
-How do you deal with libraries that require an actual activity in order to work? And how do you avoid leaks? 
 
-Currently my solution is to use a 'fake' activity which uses a soft reference to a real activity, but that seems to cause way too much problems and actual crashes if the activity is nulled. Is there a better way of doing this?
-## [12][Any way to track users from campaign?](https://www.reddit.com/r/androiddev/comments/f99q2d/any_way_to_track_users_from_campaign/)
-- url: https://www.reddit.com/r/androiddev/comments/f99q2d/any_way_to_track_users_from_campaign/
+## [11][Take screenshot of Frame layout](https://www.reddit.com/r/androiddev/comments/f9sa39/take_screenshot_of_frame_layout/)
+- url: https://www.reddit.com/r/androiddev/comments/f9sa39/take_screenshot_of_frame_layout/
 ---
-Hello
+So i have 3 framelayout inside a parent linear layout. Inside each framelayout i have imageview. I want to provide user a button in each of these framelayout and when user presses corresponding button it will take screenshot of that corresponding image only. I.e 3 images will be in three layouts and if user presses middle button then only the image of second layout should be saved and not just the screen with all three of them.
+Is this possible or what's the alternative way to do this?
 
-I want to start google ads campaign.
+Edit: i also have zoom gesture enabled in the imageview so if user is half zoomed-in to the image then half zoomed in image should be saved and not the whole unzoomed image.
+## [12][Has anyone try to monetize app using adaptive banner? Does it work better than smart banner?](https://www.reddit.com/r/androiddev/comments/f9qnnw/has_anyone_try_to_monetize_app_using_adaptive/)
+- url: https://www.reddit.com/r/androiddev/comments/f9qnnw/has_anyone_try_to_monetize_app_using_adaptive/
+---
+All the while, we are monetizing our app using Google AdMob smart banner.
 
-Is there any way to track (example in gameanalytics) only users from this campaign?
+&amp;#x200B;
+
+Recently, we were introduced with adaptive banner - [https://developers.google.com/admob/android/banner/adaptive](https://developers.google.com/admob/android/banner/adaptive) 
+
+&amp;#x200B;
+
+Google claims adaptive banner will increase earning by 20%
+
+&amp;#x200B;
+
+I was wondering, has anyone tried to migrate from AdMob smart banner to AdMob adaptive banner. Do you see a significant increase in term of earning?
+
+&amp;#x200B;
+
+Thanks.

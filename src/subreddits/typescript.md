@@ -22,195 +22,105 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Search your codebase in natural language (Metacode, a vscode extension)](https://www.reddit.com/r/typescript/comments/f8vc6y/search_your_codebase_in_natural_language_metacode/)
+## [2][Forget NodeJS! Build native TypeScript applications with Deno 🦖](https://www.reddit.com/r/typescript/comments/f9fayv/forget_nodejs_build_native_typescript/)
+- url: https://deepu.tech/deno-runtime-for-typescript/
+---
+
+## [3][Modern Typescript with Examples Cheat Sheet](https://www.reddit.com/r/typescript/comments/f9es9d/modern_typescript_with_examples_cheat_sheet/)
+- url: https://www.reddit.com/r/typescript/comments/f9es9d/modern_typescript_with_examples_cheat_sheet/
+---
+I was looking for something like this but could find nothing that fitted. The goal is to be a reference when looking things up with great examples that only demonstrate the syntax and problem/solution, not a load of other stuff which tends to be the case in blog examples.
+
+Once I am happy with it I will create an attractive formatted PDF to print and have that as a link too.
+
+I have taken examples from mainly the official docs and various blog posts by some great authors including quite a bit of Marius Schulz.
+
+The other goal is to try and include only what most people would need, and omit any old ways of doing things, so it is quite opinionated like that. 
+
+In my personal TS journey this is all the stuff I have needed and wanted a reference to come back to, especially with easy to understand examples. Obvious things are left out:
+
+[https://github.com/David-Else/modern-typescript-with-examples-cheat-sheet](https://github.com/David-Else/modern-typescript-with-examples-cheat-sheet)
+
+Feedback and pull requests very welcome, especially factual corrections!
+## [4][tsParticles - Resurrecting particles.js](https://www.reddit.com/r/typescript/comments/f9p0gf/tsparticles_resurrecting_particlesjs/)
+- url: https://www.reddit.com/r/typescript/comments/f9p0gf/tsparticles_resurrecting_particlesjs/
+---
+tsparticles - Resurrecting particles.js
+
+Hi all,
+
+I'm resurrecting the old particles.js, updated and converted to typescript. I've implemented some new features and fixes requested by users on the old project.
+
+[https://www.npmjs.com/package/tsparticles](https://www.npmjs.com/package/tsparticles)
+## [5][Types for PlantUML Parser: In this post I demonstrate how to parse PlantUML with TypeScript in a few simple steps.](https://www.reddit.com/r/typescript/comments/f9c4hy/types_for_plantuml_parser_in_this_post_i/)
+- url: https://duckpond.ch/plantuml-parser/javascript/2020/02/25/types-for-plantuml-parser.html
+---
+
+## [6][Is it not possible to only accept instances of a class that have a particular static method *on the class itself*?](https://www.reddit.com/r/typescript/comments/f9i892/is_it_not_possible_to_only_accept_instances_of_a/)
+- url: https://www.reddit.com/r/typescript/comments/f9i892/is_it_not_possible_to_only_accept_instances_of_a/
+---
+I've tried about 100 different things, and basically want I want to achieve is simply
+
+
+    interface Serializable {
+      serialize(): this;
+      static deserialize(input: string): this;
+    }
+
+Obviously there's no way to define static methods on an interface, but is there no other way to achieve this if I control how the parameters of a function are typed?
+## [7][Serverside typescript bundling with webpack](https://www.reddit.com/r/typescript/comments/f9gkb4/serverside_typescript_bundling_with_webpack/)
+- url: https://www.reddit.com/r/typescript/comments/f9gkb4/serverside_typescript_bundling_with_webpack/
+---
+As the title says, I’m trying to bundle a typescript app with webpack using ts-loader. I have several other typescripts module as dependencies which are declared in tsconfig.json paths section. Tsc works great. When using webpack and tsconfig-paths-webpack-plugin, those modules are treated as external and are not bundled (with the message no static exports). If I’m importing them using a relative path, then their transpiled code is added into the bundle. Is there a way to add their code to the bundle without changing every import in the project to a relative path?
+## [8][CSS not loaded](https://www.reddit.com/r/typescript/comments/f9gakw/css_not_loaded/)
+- url: https://www.reddit.com/r/typescript/comments/f9gakw/css_not_loaded/
+---
+Hi I tried to deploy to netlify a React TS app. The problem is that no of my css go built, I was using Styled-components together with typescript, is thier anything I should do before i build my project? Thank you all!
+## [9][Test if a property exists on a disjoint type?](https://www.reddit.com/r/typescript/comments/f9fdrk/test_if_a_property_exists_on_a_disjoint_type/)
+- url: https://www.reddit.com/r/typescript/comments/f9fdrk/test_if_a_property_exists_on_a_disjoint_type/
+---
+If I have a Foo with a 'name' but Bar doesn't have a name and I have:
+
+  type MyType = Foo | Bar;
+
+.. it SEEMS like I should be able to do:
+
+  if (myType.name) {
+  ... 
+  }
+
+But typescript says that this is an error as 'name' doesn't exist on Bar.
+
+What's the best way to do this?  I don't want to cast it to &lt;any&gt; because I want to know that this type exists in Foo ... but I'm not actually sure it IS a foo yet (thus the test for .name)
+
+Thoughts?
+## [10][When creating a debounce decorator function, how do I inform TypeScript there will be args?](https://www.reddit.com/r/typescript/comments/f9asjm/when_creating_a_debounce_decorator_function_how/)
+- url: https://www.reddit.com/r/typescript/comments/f9asjm/when_creating_a_debounce_decorator_function_how/
+---
+I was trying to convert a previous debounce decorator function I'd made in JS to TS, and am running into an issue where the TS interpreted is expecting 0 args, but I need to provide one. Here's the code:
+
+    function debounce(fn: { (message?: any, ...optionalParams: any[]): void; (message?: any, ...optionalParams: any[]): void; apply?: any; }, minTime: number){
+        let isCooldown = false;
+        return function(){
+            if (isCooldown){ return; }
+            fn.apply(this, arguments);
+            isCooldown = true;
+            setTimeout(() =&gt; isCooldown = false, minTime)
+        }
+    }
+
+    let log = debounce(console.log, 1000);
+
+    log('Hi'); // runs immediately
+    log('Ignore me!');
+
+    setTimeout(() =&gt; log('Ignore me as well!'), 100); // ignored ( only 100 ms passed )
+    setTimeout(() =&gt; log('Don\'t ignore me!!'), 1100); // Runs because enough time has passed
+    setTimeout(() =&gt; log('Still ignored!'), 1500); //  ignored (less than 1000 ms from the last run)
+    setTimeout(() =&gt; log('Good now you get it!!'), 2200); // Runs because enough time has passed
+
+Everywhere I use the log function, tslint tells me expected 0 args but got 1. Any advice is greatly appreciated, still new to TypeScript
+## [11][Search your codebase in natural language (Metacode, a vscode extension)](https://www.reddit.com/r/typescript/comments/f8vc6y/search_your_codebase_in_natural_language_metacode/)
 - url: https://i.redd.it/hbys8ycwwwi41.gif
----
-
-## [3][Why is reflect-metadata so important in the decorator pattern?](https://www.reddit.com/r/typescript/comments/f931o3/why_is_reflectmetadata_so_important_in_the/)
-- url: https://www.reddit.com/r/typescript/comments/f931o3/why_is_reflectmetadata_so_important_in_the/
----
-Relevant: https://www.reddit.com/r/typescript/comments/b8fphq/routing_with_typescript_decorators_for_node/
-
-I'm looking for ways on `express` to make my controller life a little bit easier because the way I've been using it so far has been very verbose in nature. I've read that the decorator pattern solves that but I don't get what `reflect-metadata` has to do with it. Is it simply a convenience tool to get things done faster?
-
-I've read the post and I've run the source code ([it's in GitHub](https://github.com/nehalist/ts-decorator-routing), by the way), but I still don't see why I shouldn't simply shove the route parameters into the constructor as properties without using `Reflect.getMetadata` / `Reflect.hasMetadata` / `Reflect.defineMetadata` to read / write / check. I've experimented the code to not use `reflect-metadata` and it still works.
-
-Could someone explain this to me, preferably like I'm five?
-## [4][Having difficulty in writing a types declaration file for a JS library](https://www.reddit.com/r/typescript/comments/f987n0/having_difficulty_in_writing_a_types_declaration/)
-- url: https://www.reddit.com/r/typescript/comments/f987n0/having_difficulty_in_writing_a_types_declaration/
----
-Its `index.js` file is as follows:
-
-    module.exports = require("./src/foolibrary.js"); // class
-    module.exports.bar = require("./src/subdir/bar.js"); // class
-    module.exports.baz = require("./src/subdir/baz.js"); // class
-
-And developers are supposed to use this library as follows:
-
-    import Foo from 'foo-library';
-    
-    const bar = new Foo.bar('hello world');
-    const foo = new Foo(bar);
-
-So as you can see, the `bar` part (and `baz` as well) are attached to `foo`. I've made this work in the types declaration file by adding `bar` and `baz` as static methods of the main `foo` class, which each return their respective classes. However, my IDE is telling me `Only a void function can be called with the 'new' keyword.ts(2350)` on `new foo.bar('hello world')`. I need to have it so that the developer can instantiate `foo`, `bar` and `baz` with the `new` keyword but the way that the `index.js` file is written for this library kind of gets in the way of that since there is the unnamed 'default' export of `foo` itself and then `bar` and `baz` are tacked onto `module.exports` as non-default exported classes. My types file is currently as follows:
-
-    declare module 'foo-library' {
-      class Foo {
-        constructor(bar: Bar);
-
-        // work-around static methods
-        static bar(path: string, options?: object): Bar;
-        static baz(path: string, options?: object): Baz;
-        ...
-      }
-
-      class Bar {
-        constructor(path: string, options?: object);
-      }
-
-      class Baz {
-        constructor(path: string, options?: object);
-      }
-
-      export = Foo;
-    }
-
-How do I declare the classes `Bar` and `Baz` as named exports with the default export of `Foo` as well?
-## [5][Keeping Original Value When Transforming in RxJS](https://www.reddit.com/r/typescript/comments/f90mek/keeping_original_value_when_transforming_in_rxjs/)
-- url: https://medium.com/@aerabi/keeping-original-value-when-transforming-in-rxjs-f4650e12c4cf?source=friends_link&amp;sk=7dff6d828ab33591fb8a9b91e11e90c0
----
-
-## [6][Is it possible to generate a Tuple Type algorithmically (for recursive sub-keyof)](https://www.reddit.com/r/typescript/comments/f94lln/is_it_possible_to_generate_a_tuple_type/)
-- url: https://www.reddit.com/r/typescript/comments/f94lln/is_it_possible_to_generate_a_tuple_type/
----
-Right now, I have these overloads:
-
-    interface Chainer&lt;Subject&gt; {
-        its2&lt;K extends keyof Subject&gt;(propertyName: K, options?: Loggable): Chainable&lt;Subject[K]&gt;;
-        its2&lt;K1 extends keyof Subject, K2 extends keyof Subject[K1]&gt;(key1: K1, key2: K2, options?: Loggable): Chainable&lt;Subject[K1][K2]&gt;;
-        its2&lt;K1 extends keyof Subject, K2 extends keyof Subject[K1], K3 extends keyof Subject[K1][K2]&gt;(key1: K1, key2: K2, key3: K3, options?: Loggable): Chainable&lt;Subject[K1][K2][K3]&gt;;
-    }
-
-This works... but it's kinda hideous. And I have to hardcode an override for every possible number of parameters.
-
-I'd like to do something along these lines (this obviously doesn't compile):
-
-    type SubKeys&lt;T, K1 extends keyof T, K2 extends keyof T[K1], K3 extends keyof T[K1][K2], ...&gt; = [keyof T1, keyof T[K1], keyof T[K1][K2], ...]
-    
-    interface Chainer&lt;Subject&gt; {
-        its2(...propertyNames: SubKeys&lt;Subject&gt;, options?: Loggable): Chainable&lt;Subject[K]&gt;;
-    }
-
-Is there any way to do this in TypeScript 3.8?
-
-&amp;#x200B;
-
-Assuming it's possible, an even better solution would be one that allows an optional number to follow each key. That is... the types match `propertyNames[0]: keyof Subject` and `propertyNames[i] : [keyof Subject[K1][K2]...[Ki], number?]` .
-
-I'm imagining usage along the lines of `its2('key1', 'key2', ['key3', 5], 'key4')` , which (more or less) returns `somethingPrivate.key1.key2.key3[5].key4` and additionally gives compile errors if keys are not valid. (I say more or less because the return value is wrapped)
-## [7][How do I check that a caught error matches a certain interface?](https://www.reddit.com/r/typescript/comments/f91zlt/how_do_i_check_that_a_caught_error_matches_a/)
-- url: https://www.reddit.com/r/typescript/comments/f91zlt/how_do_i_check_that_a_caught_error_matches_a/
----
-At first I tried `catch(e: Foo)` but realized that didn't work:
-
-&gt; ts(1196): Catch clause variable cannot have a type annotation.
-
-It makes sense I can't know the type of error that might be caught because it might be a system error.
-
-So I assume I need a type guard, but I'm not sure how do this with an interface (not a value).
-
-In my case, I'm using axios:
-
-```
-} catch (error) {
-        if (error instanceof AxiosError) {
-        if (typeof error == AxiosError) {
-}
-```
-## [8][Is it possible to use the child's type in a parent class?](https://www.reddit.com/r/typescript/comments/f8zg6p/is_it_possible_to_use_the_childs_type_in_a_parent/)
-- url: https://www.reddit.com/r/typescript/comments/f8zg6p/is_it_possible_to_use_the_childs_type_in_a_parent/
----
-I want to be able to make a "createable" superclass that attaches a static "create" function on a class. This is to basically initialise a complex class with a "field initializer" or "object initialiser" style.
-
-[https://github.com/microsoft/TypeScript/issues/16737](https://github.com/microsoft/TypeScript/issues/16737)
-
-I've kinda come close I think, but I can't get the \`obj\` argument in create to be typed checked, it accepts anything. I want it to be the type of the child class bar any methods.
-
-    type ExcludeMethods&lt;T&gt; =
-        Pick&lt;T, { [K in keyof T]: T[K] extends (_: any) =&gt; any ? never : K }[keyof T]&gt;;
-    
-    export type StaticThis&lt;T&gt; = { new (): T };
-    
-    export class Createable {
-        static create&lt;T&gt;(this: StaticThis&lt;T&gt;, obj: ExcludeMethods&lt;T&gt;): InstanceType&lt;T&gt; {
-            return Object.assign(new this(), obj)
-        }
-    }
-    
-    export class Person extends Createable {
-        constructor(public name: string) {
-            super();
-        }
-    }
-    const p = Person.create({name: 'ihsan'});
-
-&amp;#x200B;
-
-EDIT got it to work
-
-    type DataPropertyNames&lt;T&gt; = {
-        [K in keyof T]: T[K] extends Function ? never : K;
-    }[keyof T];
-    
-    type DataPropertiesOnly&lt;T&gt; = {
-        [P in DataPropertyNames&lt;T&gt;]: T[P] extends object ? DTO&lt;T[P]&gt; : T[P]
-    };
-    
-    export type DTO&lt;T&gt; = DataPropertiesOnly&lt;T&gt;;
-    
-    
-    export class Createable {
-        static create&lt;T&gt;(this: {new (): T}, obj:DTO&lt;T&gt;): T {
-            return Object.assign(new this(), obj)
-        }
-    }
-    
-    export class Person extends Createable {
-        private name: string;
-    
-    
-        logName(){
-            console.log(this.name)
-        }
-    }
-    
-    const p = Person.create({name: 'ihsan'});
-    p.logName(); // "ihsan"
-## [9][Using type guards in TypeScript](https://www.reddit.com/r/typescript/comments/f8wwrg/using_type_guards_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/f8wwrg/using_type_guards_in_typescript/
----
-I and a co-worker got into an argument some time ago about using "type guards" in TS i.e
-
-```ts
-function foo(bar: string): void {
-  if (typeof bar !== 'string') throw Error('We don't do that here!');
-
-  // more code...
-}
-```
-
-We were building a library in TS to be used in a JS app.
-
-I am of the opinion that the guard is needless since we were using TS.
-
-He's of the opinion that it's necessary since the consumers of our library are using JS.
-
-What's best practice? Thanks.
-## [10][Flagged enum, why and how](https://www.reddit.com/r/typescript/comments/f8smod/flagged_enum_why_and_how/)
-- url: https://timdeschryver.dev/blog/flagged-enum-what-why-and-how
----
-
-## [11][I feel like it’s hard to learn typescript without first learning a framework line angular or react. Is there anyone out there who learned type script without first learning a framework? If so how and why?](https://www.reddit.com/r/typescript/comments/f94c4b/i_feel_like_its_hard_to_learn_typescript_without/)
-- url: /r/LearnTypescript/comments/f947f9/i_feel_like_its_hard_to_learn_typescript_without/
 ---
 

@@ -108,99 +108,143 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I built this website that suggests places that you can travel with your passport using React and NextJS.](https://www.reddit.com/r/reactjs/comments/f90oi9/i_built_this_website_that_suggests_places_that/)
-- url: https://www.visabug.com
+## [3][How I used React-Loadable to more than half my React app's load time](https://www.reddit.com/r/reactjs/comments/f9s090/how_i_used_reactloadable_to_more_than_half_my/)
+- url: https://dev.to/rozenmd/how-i-used-react-loadable-to-more-than-half-my-react-app-s-load-time-299c
 ---
 
-## [4][Advanced memoization and effects in React](https://www.reddit.com/r/reactjs/comments/f8vzpe/advanced_memoization_and_effects_in_react/)
-- url: https://gist.github.com/slikts/fd3768de1493419ed9506002b452fcdc
+## [4][Up to date answer about when to use React context or Redux (Redux Toolkit)](https://www.reddit.com/r/reactjs/comments/f9fro5/up_to_date_answer_about_when_to_use_react_context/)
+- url: https://gist.github.com/slikts/57ff1acdb6f5b2ea075b701d1daf896d
 ---
 
-## [5][Learn the basics of React-Dnd. easily add Drag and Drop interactions to your apps!](https://www.reddit.com/r/reactjs/comments/f8p669/learn_the_basics_of_reactdnd_easily_add_drag_and/)
-- url: https://www.youtube.com/watch?v=NW8erkUgqus
+## [5][Next.js Tutorial - Part 2 | Fetch Data using getInitialProps](https://www.reddit.com/r/reactjs/comments/f9qn0m/nextjs_tutorial_part_2_fetch_data_using/)
+- url: https://www.youtube.com/watch?v=Os3JZc2CtwY&amp;feature=share
 ---
 
-## [6][Fake the fetch requests in browser during development](https://www.reddit.com/r/reactjs/comments/f97rli/fake_the_fetch_requests_in_browser_during/)
-- url: https://www.reddit.com/r/reactjs/comments/f97rli/fake_the_fetch_requests_in_browser_during/
+## [6][Current state of server-side react world as of Feb 2020](https://www.reddit.com/r/reactjs/comments/f9swe6/current_state_of_serverside_react_world_as_of_feb/)
+- url: https://www.reddit.com/r/reactjs/comments/f9swe6/current_state_of_serverside_react_world_as_of_feb/
 ---
-* works with  [@codesandbox](https://twitter.com/codesandbox) client templates 
-* no more setting up a mock http server just to get started 
-* supports custom delay for each requests 
-* custom 404 and error responses
+It's been at least two years since I dabbled in server side react.
 
-Find it here [https://www.npmjs.com/package/fake-browser-fetch](https://www.npmjs.com/package/fake-browser-fetch)
-## [7][Struggling with how to memo'ize a placeholder component for reuse throughout list.](https://www.reddit.com/r/reactjs/comments/f981xe/struggling_with_how_to_memoize_a_placeholder/)
-- url: https://www.reddit.com/r/reactjs/comments/f981xe/struggling_with_how_to_memoize_a_placeholder/
----
-I'm loading up some data from an API and if I request 10 items, while the data is still coming in, I'm loading 10 skeleton components in place of the real components.
+I'm hoping maybe folks could fill me in if there have been any major changes in implementations.
 
-Each of these skeletons is identical, so I'd like to cache them and then just copy them into the place of each item while it's rendering.
+For context, I'm starting an ecommerce website that will hit a graphql/node.js api. I was going to just do create-react-app but then it hit me I probably need ssr to get the SEO impact I want?
 
-For the life of me though, I can't get `memo` or `useMemo` to let me do this.  When I put a console.log in the `SkeletonEntry` component, it logs for each element in the list.
+If you were to put together an SSR ecommerce react app-- how would you approach it? Next? Gatsby? From scratch?
 
-Given this sample code
-    
-    const SkeletonEntry = () =&gt; {
-       console.log('loadingSkeleton')
-       return &lt;div&gt;Loading...&lt;/div&gt;
-    }
+Note I'm very comfortable with react/node, so I'd be find building it from scratch. That said, I don't mind giving up some control if it makes life easier-- so I'm open to leveraging tools too (next, gatsby, etc).
 
-    const MyListInLoadingState = () =&gt; {
-      const Body = Array.from(new Array(10)).map((val, index) =&gt; (
-        &lt;SkeletonEntry
-          key={index}
-        /&gt;
-      ))
-
-    return (
-        &lt;Fragment&gt;
-          {Body}
-        &lt;/Fragment&gt;
-      )
- }
-
-What do I need to do to only make `SkeletonEntry` `console.log` 1 time?
-## [8][How to handle components who need internal state inside a redux environment](https://www.reddit.com/r/reactjs/comments/f97hzf/how_to_handle_components_who_need_internal_state/)
-- url: https://www.reddit.com/r/reactjs/comments/f97hzf/how_to_handle_components_who_need_internal_state/
----
-I've been working with react and redux for about 3-4 years now and it's not often that I come to a point where I'm not shure how to handle something.
-
-We have a functional app that uses a lot of tables, tabs and stuff. Mostly data visualisation in tables and editing this data. Everything is handles in redux and react basically just shows data and triggers actions (as it should be).
-
-We're in early alpha and our client absolutely insists on using devexpress (devextreme) now for all our componentes. Since he made his point clear and pays for it we are definetely switching our entire components.
-
-Devexpress was never inteded to be used with react but it offers some components which are basically wrappers for their code. Now most of the components cant handle rerenders very well and the should absolutely be used with their provided data store which is a class that handles all the logic inside the table and also comunicates with the api...
-
-What do you guys think? How should this be handled? I have to use this library which is unusable if not used as intended but I also want to keep as much information as possible in the redux store. I'm thinking about letting the devexpress stuff handle all data loading and manipulation. Then store everything view related (like selected tab, ...) in the redux store.
-
-I'm totaly afraid we will run into serious issues with this and I hate these kind of mixed approaches.
-
-Should I just dump redux and go back to internal state handling... even if this is a business desktop scale software?
-
-Dumping the new component set (devexpress) is not an option.
-## [9][rbd 13.0: more accessible](https://www.reddit.com/r/reactjs/comments/f924fg/rbd_130_more_accessible/)
-- url: https://www.reddit.com/r/reactjs/comments/f924fg/rbd_130_more_accessible/
----
-Often doing accessibility well can be painstaking work. We have invested the time to make accessibility even better out of the box
-
-https://github.com/atlassian/react-beautiful-dnd/releases/tag/v13.0.0
-## [10][Leading Best React.js mobile App development company](https://www.reddit.com/r/reactjs/comments/f973ro/leading_best_reactjs_mobile_app_development/)
-- url: https://www.ksolves.com/react-js
+Sorry if this is a little vague but I'd like to leave it more open ended in hopes of getting a variety of different feeedback on SSR in general.
+## [7][React Router v6 in Three Minutes](https://www.reddit.com/r/reactjs/comments/f9j79g/react_router_v6_in_three_minutes/)
+- url: https://medium.com/better-programming/react-router-v6-in-two-minutes-a7a2963e2340
 ---
 
-## [11][I have limited time to modernize outside of work. Is it better to spend tons of time becoming proficient with a JS framework, or vanilla JavaScript?](https://www.reddit.com/r/reactjs/comments/f93jta/i_have_limited_time_to_modernize_outside_of_work/)
-- url: /r/webdev/comments/f93jeh/i_have_limited_time_to_modernize_outside_of_work/
+## [8][An ultra-fast and tiny (5.1 kB) browser based compiler for JSX / React](https://www.reddit.com/r/reactjs/comments/f9fqqr/an_ultrafast_and_tiny_51_kb_browser_based/)
+- url: https://www.reddit.com/r/reactjs/comments/f9fqqr/an_ultrafast_and_tiny_51_kb_browser_based/
+---
+**Full Documentation** with links to **source** and **many demos**:
+
+[https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md](https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md) 
+
+&amp;#x200B;
+
+**Hello World Demo:**
+
+[https://www.dataformsjs.com/examples/hello-world/en/react.htm](https://www.dataformsjs.com/examples/hello-world/en/react.htm) 
+
+&amp;#x200B;
+
+**Why?**
+
+It's a fast way to include React on any web page and build apps with using a build process or large dependencies. Simply use React with JSX in a page or site and include needed CDN or JavaScript links.
+
+&amp;#x200B;
+
+**How ?**
+
+It compiles JSX directly to JS for modern browsers and downloads Polyfills and Babel Standalone for IE and other old browsers. 
+
+&amp;#x200B;
+
+**Doesn’t Babel Standalone do this already?** 
+
+Yes, however when Babel Standalone is used in a Browser it is intended for prototyping. This script is intended for production use. Originally I used Babel Standalone for all React demos on the site however it takes a lot of memory and causes a delay of many seconds when viewing pages from a mobile device. Once I created this script memory was reduced up to 5x and content renders almost instantly now.
+## [9][Seeking Some Help Please, I Just Don't Get How To Access State](https://www.reddit.com/r/reactjs/comments/f9rd85/seeking_some_help_please_i_just_dont_get_how_to/)
+- url: https://www.reddit.com/r/reactjs/comments/f9rd85/seeking_some_help_please_i_just_dont_get_how_to/
+---
+Hi All,
+
+I'm hoping someone out there may be able to help me with a plain English understanding of how to access state when using React (with Redux).
+
+Despite doing 4+ courses and reading numerous tutorials I am struggling to understand "how to access state" in my applications.
+
+My understanding (which may not be 100% correct?) is that Redux acts as a global store for state in my application.
+
+Where I then get fuzzy is that if a user signs up for my application are these details stored in the state and readily accessible from other components/pages I create?
+
+For example, I did Brad Traverseys course on React/Redux (my code from the project is here [https://github.com/pvptowers/DevConnector-MERN](https://github.com/pvptowers/DevConnector-MERN)) 
+
+So if I then wanted to create another component that say for example displayed the users email address can I just access the state? Or do I need another API call to the backend to get this info again? If its the later then what role is state playing here?
+
+Sorry if these questions are dumb. I've been learning to code for 4 months (2 months on React) and since completing my courses have literally spent 2 weeks playing around with React and Redux trying to figure this out on my own and I'm just stumped.
+
+Perhaps you also know another resource or tutorial that might make it click for me?
+
+Thanks in advance
+
+Paul
+## [10][Contribution to very cool "best practices open source app"](https://www.reddit.com/r/reactjs/comments/f9qq12/contribution_to_very_cool_best_practices_open/)
+- url: https://www.reddit.com/r/reactjs/comments/f9qq12/contribution_to_very_cool_best_practices_open/
+---
+Hi guys, I have one microservices open-source application for showing best practices, it is done 70-80% from the backend and mobile, I was looking some react contributors, feel free to contribute 
+
+[https://github.com/Jurabek/Restaurant-App/issues/21](https://github.com/Jurabek/Restaurant-App/issues/21)
+## [11][Open source parallel processing for Gatsby](https://www.reddit.com/r/reactjs/comments/f9bxju/open_source_parallel_processing_for_gatsby/)
+- url: https://dev.to/biilmann/open-source-parallel-processing-for-gatsby-270d
 ---
 
-## [12][Download rendered output on submit as HTML file??](https://www.reddit.com/r/reactjs/comments/f95sxh/download_rendered_output_on_submit_as_html_file/)
-- url: https://www.reddit.com/r/reactjs/comments/f95sxh/download_rendered_output_on_submit_as_html_file/
+## [12][Serving gzipped file with NextJs 9.0.1](https://www.reddit.com/r/reactjs/comments/f9qfyh/serving_gzipped_file_with_nextjs_901/)
+- url: https://www.reddit.com/r/reactjs/comments/f9qfyh/serving_gzipped_file_with_nextjs_901/
 ---
-I have a form that captures input state and spits out a string on submit.
+Im working on enabling gzip on a project that i'm involved with now, which uses NextJs version 9.0.1. This version doesn't have compression enabled on it, so i'm setting the compression on my own using compression-webpack-plugin on NextJs. 
 
-What I want to do is download the rendered state as an HTML file on submit instead.
+`const withSass = require("@zeit/next-sass");`
 
-I've created a post on Stack Overflow where someone recommended I use ReactDomServer but I'm unfamiliar with the concept (fairly new). Is there an elegant way to achieve this?
+`const withCss = require("@zeit/next-css");`
 
-Here is said post which shows example code: https://stackoverflow.com/q/60370940/3357677
+`const CompressionPlugin = require('compression-webpack-plugin');`
 
-Thanks in advance for any help.
+&amp;#x200B;
+
+`module.exports = withCss(withSass({`
+
+  `webpack(config, options) {`
+
+`// Enable gzip compression using webpack compression plugin`
+
+`config.plugins.push(`
+
+`new CompressionPlugin({`
+
+`algorithm: "gzip",`
+
+`test: /\.js$|\.css$|\.html$/,`
+
+`threshold: 10240,`
+
+`minRatio: 0.8`
+
+`})`
+
+`);`
+
+`return config;`
+
+  `}`
+
+`}));`
+
+&amp;#x200B;
+
+The compression works fine, and it produces the gzip file when i build the project using npm run build. But problem is when i try to run it, it still serve the uncompressed files (the normal js, css..).
+
+I see ppl said about using Express.js to enable serving the gzip files, but say if i don't want to use Express, is it possible to change the next.config.js to serve gzipped files instead? Anywhere within the next.config.js that i need to change or add to make this happen?

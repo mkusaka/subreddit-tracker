@@ -1,139 +1,146 @@
 # aws
-## [1][Lambda Overview in 2020](https://www.reddit.com/r/aws/comments/f908xx/lambda_overview_in_2020/)
-- url: https://www.reddit.com/r/aws/comments/f908xx/lambda_overview_in_2020/
+## [1][LucidChart; 'AWS Import' tool being removed from all Pro accounts](https://www.reddit.com/r/aws/comments/f9b57g/lucidchart_aws_import_tool_being_removed_from_all/)
+- url: https://www.reddit.com/r/aws/comments/f9b57g/lucidchart_aws_import_tool_being_removed_from_all/
 ---
-Hey folks, wanted to share a youtube channel that I've been working on dedicated to providing simple and easy to digest tutorials on various AWS services.
+  
 
-My newest video talks about overviews Lambda functions and the improvements they've received in the past few years. 
+Hi All, 
 
-The video is available here: https://youtu.be/iUIWG0h2D84
-
-Thank you!
-## [2][tech u intern program](https://www.reddit.com/r/aws/comments/f98edo/tech_u_intern_program/)
-- url: https://www.reddit.com/r/aws/comments/f98edo/tech_u_intern_program/
+I was just on the phone with the LucidChart sales team to enquire about their ‘cloud insights’ product. They informed me that the “AWS Import’ Tool was going to sunset, and ‘cloud insights’ was going to be the replacement. The new tool will not be part of the ‘pro’ licensing model. It will be an add-on and will also have a per resource import cost attached to it. Needless to say, this tool is fantastic and probably the best solution out there for all my diagramming needs. I have no quarrels with paying what it's worth, but I have negative ideas about companies removing features only to add the same feature at a higher cost with usage costs on top.
+## [2][AWS Free Tier usage limit alerting via AWS Budgets](https://www.reddit.com/r/aws/comments/f9q2lk/aws_free_tier_usage_limit_alerting_via_aws_budgets/)
+- url: https://www.reddit.com/r/aws/comments/f9q2lk/aws_free_tier_usage_limit_alerting_via_aws_budgets/
 ---
-Hi!
+Hoping someone can help me with this. I received an email this morning stating   "AWS Free Tier usage limit alerting" my account has exceeded 85% of the usage limit for one or more AWS Free Tier-eligible services for the month of February.
 
-Has anyone gone through the process of interviewing for the tech u intern program? it seems like a fairly new program.. I cant find alot of information online. was just wondering how the interview process works and what to expect at the interview. 
+I've 100% not got any instances of anything running. I've not even used the account in months and I've checked everywhere I can in my portal to be sure and can't see anything.
 
-Thanks! :)
-## [3][Monitor AWS Managed IAM Policies Changes - Now on Twitter](https://www.reddit.com/r/aws/comments/f8ymn7/monitor_aws_managed_iam_policies_changes_now_on/)
-- url: https://www.reddit.com/r/aws/comments/f8ymn7/monitor_aws_managed_iam_policies_changes_now_on/
+I've used the portal probably once so not 100% familiar with it and hoping someone could help to make sure I've not missed looking somewhere that would show me what's happening.
+## [3][Has anyone built/maintained a medium-size web application fully on AWS Lambda? My experience has been horrific.](https://www.reddit.com/r/aws/comments/f9fowb/has_anyone_builtmaintained_a_mediumsize_web/)
+- url: https://www.reddit.com/r/aws/comments/f9fowb/has_anyone_builtmaintained_a_mediumsize_web/
 ---
-Hey Folks,
+I joined a team a few months ago and took over a web application that prides itself fully serverless and uses microservice architecture. The entire application is written in NodeJs and built on AWS Lambda using Serverless framework.
 
-Recently, I was working on a newer version of my bot who checks changes on AWS IAM Managed Policies, to push changes to a dedicated Twitter account:
+While I can understand that using Lambdas can help us at completing new features pretty quickly, which the product manager and senior management love, I have wondered if it's a good idea in the long run to have everything on Lambda.
 
-\- [https://zoph.me/posts/2019-09-08-mamip/](https://zoph.me/posts/2019-09-08-mamip/)
+The project has only been slightly more than 2 years old and the entire "microservice" architecture and codebase have become so difficult to maintain. While it's really convenient to start a new feature entirely separate from the existing codebase, it's extremely difficult and messy whenever I need to change anything in the existing codebase. 
 
-Please tell me if you see any enhancement or issue.
+Using NodeJs doesn't make things any better because now everyone is littering functions everywhere in files and folders. There are so many functions spread across different files that I need to figure out which one to import. The non-typed codes are so messy that I have to keep printing to the console to check what's in a variable.
 
-A quick sneak peeks of the architecture schema below:
+On top of all the usual issues in a microservice architecture, the hell lot of Lambda functions makes the already complicated architecture extremely difficult to trace and debug!
 
-https://preview.redd.it/rcey42ubxxi41.png?width=571&amp;format=png&amp;auto=webp&amp;s=e6708b83a52fbda71d189931a8a12ea39d810c7c
+It's so frustrating to be working on this project!
 
-Hope this helps :)
+I'm not sure what is the "best" practice when it comes to building applications on serverless. Is building a medium-size web application entirely on AWS Lambda a common thing in the industry and is it a good idea to do it this way? Or has someone just started this entire project the wrong way, left the company and everyone else who took over it just followed along the mess?
 
-zoph
-## [4][How to define Models for Serverless Api in CloudFormation template](https://www.reddit.com/r/aws/comments/f9a60e/how_to_define_models_for_serverless_api_in/)
-- url: https://www.reddit.com/r/aws/comments/f9a60e/how_to_define_models_for_serverless_api_in/
+If anyone has any experience building an a medium-size web application entirely on Lambda, I would  love to hear about your experience with it. I would also love to know what is the correct and better way of building an entire application serverless platforms.
+## [4][Lambda to do Cloudwatch logs to Elastic domain is timing out on POST](https://www.reddit.com/r/aws/comments/f9qfhd/lambda_to_do_cloudwatch_logs_to_elastic_domain_is/)
+- url: https://www.reddit.com/r/aws/comments/f9qfhd/lambda_to_do_cloudwatch_logs_to_elastic_domain_is/
 ---
-See below for my template. I don't know how to set Models for Api. If I leave the Models part out, the 'sam deploy' says: "the related API does not define any Models". 
+Trying to follow [https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL\_ES\_Stream.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_ES_Stream.html) , it seems pretty straight forward and the lambda is called correctly. By adding some console.log calls I can see the lambda runs up to posting to the Elastic endpoint and then times out.
 
-Can the models be defined in external json/yaml files? 
+I have followed the article twice, once creating the ES domain through terraform, and once through the web console. Unfortunately times out still happens in both cases.
 
-What is the best approach to defining more complex requests?   
-How can I define model for the function response?
+The lambda has the AWSLambdaVPCAccessExecutionRole attached, as well as additional rights to get triggered by cloudwatch (and this works).
 
-Can I introduce models in separate template file? 
+Both the ES domain and the lambda are sitting in the same VPC and the same (private) subnet. The VPC has DNS resolution set to true.
 
-Thanks. 
+The security group attached to the ES domain has https/443 allowed for the VPC CIDR on ingress and egress is open wide ([0.0.0.0/0](https://0.0.0.0/0)).
+
+I can tunnel into the subnet through a bastion and I am able to see the Elastic instance and open kibana but no data is coming in.
+
+What am I missing here ?
+
+What can I check to figure out what's missing ?
+
+update: protocol
+## [5][Private VPC needs access to mail relay](https://www.reddit.com/r/aws/comments/f9nn1i/private_vpc_needs_access_to_mail_relay/)
+- url: https://www.reddit.com/r/aws/comments/f9nn1i/private_vpc_needs_access_to_mail_relay/
+---
+We have a private VPC with a few EC2 instances. I’m trying to telnet from the instances to mail relay on port 25 but it does not connect. The mail relay is a public IP address so I’m not sure it is going to work or how it would work. I have read some stuff about port 25 not being allowed unless you specifically submit a form to aws asking for it to be available. Should I be able to Telnet? I can ping the mail relay no problem and all outbound access is wide open. Is there anything inbound that I need to add? From the instances, I can launch a web browser and browse public internet (google, espn, Facebook, etc.) so there is a path to the internet that way. I am new to AWS so there could be something I’m missing too.
+## [6][A Better Way to SSH in AWS](https://www.reddit.com/r/aws/comments/f9abzy/a_better_way_to_ssh_in_aws/)
+- url: https://nullsweep.com/a-better-way-to-ssh-in-aws/
+---
+
+## [7][Cross account S3 buckets and AWS SSO?](https://www.reddit.com/r/aws/comments/f9ibln/cross_account_s3_buckets_and_aws_sso/)
+- url: https://www.reddit.com/r/aws/comments/f9ibln/cross_account_s3_buckets_and_aws_sso/
+---
+I'm using AWS SSO to give access to my developers from their GSuite accounts, which is working great. The only problem is that I don't know what principal to give access to in my cross-account IAM roles. If I want a user to log in to one account and access an S3 bucket in the other, none of the normal solutions seem to work.
+
+Any ideas?
+## [8][Amazon FSx for Lustre Update: Persistent Storage for Long-Term, High-Performance Workloads](https://www.reddit.com/r/aws/comments/f9d6cb/amazon_fsx_for_lustre_update_persistent_storage/)
+- url: https://aws.amazon.com/blogs/aws/amazon-fsx-for-lustre-persistent-storage/
+---
+
+## [9][Could not turn on the AWS S3 Hosted website](https://www.reddit.com/r/aws/comments/f9bx7y/could_not_turn_on_the_aws_s3_hosted_website/)
+- url: https://www.reddit.com/r/aws/comments/f9bx7y/could_not_turn_on_the_aws_s3_hosted_website/
+---
+&amp;#x200B;
+
+[A NAME, NS and SOA](https://preview.redd.it/qbvb0g9z83j41.png?width=2512&amp;format=png&amp;auto=webp&amp;s=fcbb8a4897d3355acab00c5113186c660dc99663)
 
 &amp;#x200B;
 
-`Resources:`  
-  `MyApi:`  
-`Type: AWS::Serverless::Api`  
-`Properties:`  
-`StageName: test`  
-`Models:`  
-`???`
+[Settings](https://preview.redd.it/si0ml6c293j41.png?width=3094&amp;format=png&amp;auto=webp&amp;s=24748488dfdd30203cc6ae02d47b51cc055b863a)
 
-`PostNewItem:`  
-`Type: AWS::ApiGateway::Model`  
-`Properties:`  
-`RestApiId: !Ref MyApi`  
-`Name: PostNewItem`  
-`ContentType: application/json`  
-`Schema:`  
-`$schema: '`[`http://json-schema.org/draft-04/schema#`](http://json-schema.org/draft-04/schema#)`'`  
-`title: NewItemModel`  
-`type: object`  
-`properties:`  
-`name:`   
-`type: string`  
-`description:`  
-`type: string`  
-`....`
+&amp;#x200B;
 
-  `MyFunction:`  
-`Type: AWS::Serverless::Function`   
-`Properties:`  
-`...`  
-`Events:`  
-`AddItem:`  
-`Type: Api`  
-`Properties:`  
-`Path: /item`  
-`Method: post`  
-`RestApiId:`   
-`!Ref MyApi`  
-`RequestModel:`  
-`Model: !Ref PostNewItem`  
-`Required: true`
-## [5][Any starting tips?](https://www.reddit.com/r/aws/comments/f97ojz/any_starting_tips/)
-- url: https://www.reddit.com/r/aws/comments/f97ojz/any_starting_tips/
+[Bucket Policy](https://preview.redd.it/k68rjl1b93j41.png?width=2146&amp;format=png&amp;auto=webp&amp;s=90922eed5e6313b802dcefaf8687ea517e1f98ff)
+
+The source is here
+
+[http://www.devops.engineering.s3-website-us-east-1.amazonaws.com](http://www.devops.engineering.s3-website-us-east-1.amazonaws.com)
+
+I got the domain from Amazon
+
+&amp;#x200B;
+
+[Domain record](https://preview.redd.it/harc1pszz8j41.png?width=3360&amp;format=png&amp;auto=webp&amp;s=2fcd82b5ecc4fb82a2a253578fff5b19a8498252)
+
+&amp;#x200B;
+
+What is missing in this picture? ( other than my lack of knowledge :) )
+
+&amp;#x200B;
+
+[http://www.devops.engineering](http://www.devops.engineering) return error ERR\_NAME\_NOT\_RESOLVED
+## [10][Suspicious CentOS 7 AMIs on AWS Marketplace](https://www.reddit.com/r/aws/comments/f9aruy/suspicious_centos_7_amis_on_aws_marketplace/)
+- url: https://www.reddit.com/r/aws/comments/f9aruy/suspicious_centos_7_amis_on_aws_marketplace/
 ---
-I just want to host a wordpress site on amazon with some scale-able file storage.
+I use Packer to build AMIs based on CentOS 7. My filter configuration looks like this:
 
-In layman's terms - I want to create a private video hosting site with control over storage. Hosting this at somewhere like Shitdaddy would be a bad idea I assume Amazon is better value when it comes to storage?
+        "source_ami_filter": {
+          "filters": {
+            "name": "CentOS Linux 7 x86_64 HVM EBS *"
+          },
+          "owners": ["679593333241"],
+          "most_recent": true
+        },
 
-This whole Amazon thing has been made way too confusing, why can't it be clear how to set up a website like every other hosting company has managed to do?
-## [6][What's the best AWS Compute option for your project?](https://www.reddit.com/r/aws/comments/f97m7b/whats_the_best_aws_compute_option_for_your_project/)
-- url: https://cloudonaut.io/whats-the-best-aws-compute-option-for-your-project/
----
+This has worked fine for a number of years, allowing me to use the latest available AMIs when CentOS release updates. This week, builds have started failing:
 
-## [7][Does an Application Load Balancer automatically route traffic away from a terminating Spot Instance?](https://www.reddit.com/r/aws/comments/f93ae3/does_an_application_load_balancer_automatically/)
-- url: https://www.reddit.com/r/aws/comments/f93ae3/does_an_application_load_balancer_automatically/
----
-Title. Wondering how you deal with interruptions; currently considering the viability of running an NGINX+Wordpress deployment on ECS with Fargate Spot. If traffic is routed away from the terminating server for 120s prior to deletion, there shouldn't be any active connections at that point, right? If so, how do you deal with that?
-## [8][Recently asked this in an interview: How do you handle error if S3 event does not trigger lambda function - nodejs](https://www.reddit.com/r/aws/comments/f90lzq/recently_asked_this_in_an_interview_how_do_you/)
-- url: https://www.reddit.com/r/aws/comments/f90lzq/recently_asked_this_in_an_interview_how_do_you/
----
-This was a tough one and still I am struggling to find the right answer to it.
+    ==&gt; amazon-ebs: Error launching source instance: OptInRequired: In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so please visit https://aws.amazon.com/marketplace/pp?sku=67xglex2rdpaymxh17620nfoy
 
-Lets assume a simple node app, which takes a file and uploads it to S3. 
+It looks like "[SupportedImages.com](https://SupportedImages.com)" have created a new AMI with a very similar name to the existing CentOS-provided AMIs. I almost went ahead and accepted the Marketplace terms and conditions before realising these AMIs are not free - there is a subscription charge associated with them of $399 up to $23,999 depending on instance size!
 
-a) after upload to S3, event will trigger lambda
+The official CentOS AMI with AMI name "CentOS Linux 7 x86\_64 HVM EBS ENA 1901\_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-05713873c6794f575.4" is on the Marketplace here:
 
-b) lambda will parse the file and do an api call to push the contents of the file
+[https://aws.amazon.com/marketplace/pp/Centosorg-CentOS-7-x8664-with-Updates-HVM/B00O7WM7QW](https://aws.amazon.com/marketplace/pp/Centosorg-CentOS-7-x8664-with-Updates-HVM/B00O7WM7QW)
 
-Now, how can I handle the error if S3 event for whatever reason fails to trigger the lambda? Looking for a simple solution if possible.
-## [9][Would adding CloudFront help in this case?](https://www.reddit.com/r/aws/comments/f96e5r/would_adding_cloudfront_help_in_this_case/)
-- url: https://www.reddit.com/r/aws/comments/f96e5r/would_adding_cloudfront_help_in_this_case/
----
-Dear r/aws,
+The SupportedImages AMI with AMI name "CentOS Linux 7 x86\_64 HVM EBS ENA 1901\_01-691155db-037a-4082-81f2-6936b7091732-ami-07aeae1d312ef8dce.4" is here:
 
-I have an EKS pod getting an item from Dynamodb. The DB item contains a S3 URL of large string.  So the flow goes like:
+[https://aws.amazon.com/marketplace/pp/B07X8R39Q3/](https://aws.amazon.com/marketplace/pp/B07X8R39Q3/)
 
-1. user request -&gt; EKS get-item from DynamoDB
-2. EKS get-object from S3
-3. EKS response to user both info: 1) info from DDB 2) large string from S3
+The SupportedImages website is very basic and the whole thing seems quite shady; to me this looks like a deliberate attempt to mislead with the AMI name and repackaging of CentOS but with a charge attached. However, I am also not really sure what can be done here - is this just a side effect of allowing public images with no restrictions on names on the Marketplace? Who would I even report this to?
 
-When I tried loadtest on this flow, I got like 4000 rps.  I am wondering if there is a way to improve capacity without adding cache servers.  Would adding CloudFront help in this case?
-## [10][AWS Lambda behaviour when encountering execution limits?](https://www.reddit.com/r/aws/comments/f9629y/aws_lambda_behaviour_when_encountering_execution/)
-- url: https://www.reddit.com/r/aws/comments/f9629y/aws_lambda_behaviour_when_encountering_execution/
----
-So I need to create a system where 600k+ files in S3 are to be processed using AWS Lambda. I have planned to implement this by having two Lambda functions: One to split the files into batches of ~3000 and send SNS notifications with the batch information. Another function would be triggered by these notifications, fetch the objects using the key in the SNS message body and process them.
+Also, are these images even trustworthy? How would I be able to tell?
 
-Since there is a maximum limit of 1000 instances of any given Lambda function, I wanted to know that in case that the invocations exceed 1000, will the remaining invocations get queued or would they be denied?
+For anyone who has the same issue I have worked around this issue for now by adding the CentOS product code to my filter:
+
+        "source_ami_filter": {
+          "filters": {
+            "name": "CentOS Linux 7 x86_64 HVM EBS *",
+    	"product-code": "aw0evgkw8e5c1q413zgy5pjce"
+          },
+          "owners": ["679593333241"],
+          "most_recent": true
+        },

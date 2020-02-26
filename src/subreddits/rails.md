@@ -7,8 +7,8 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/f2r9mk/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/f2r9mk/personal_projects_show_off_your_own_project_andor/
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/f9t9kq/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/f9t9kq/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
 
@@ -27,7 +27,49 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Help understanding Devise](https://www.reddit.com/r/rails/comments/f8zue1/help_understanding_devise/)
+## [3][Questions about TDD and fixtures.](https://www.reddit.com/r/rails/comments/f9koam/questions_about_tdd_and_fixtures/)
+- url: https://www.reddit.com/r/rails/comments/f9koam/questions_about_tdd_and_fixtures/
+---
+Hi all,  
+
+
+I have just started to learn about TDD, and I am finding the information/tutorials online to be a little bit scattered. I have a few questions piling up and I'd like to just share them with you and hopefully iron out some of my initial hurdles:  
+
+
+1) Why do I need rspec?
+
+A lot of the tutorials I'm watching use rspec, but it seems to function almost identically to the rails tests that are included with ActiveSupport. What are the advantages of rspec, and should I learn how to use the ActiveSupport testing framework before moving on to rspec?  
+
+
+2) How do I generate fixtures?  
+A lot of the tutorials I'm following just go ahead and open up these fixtures yml files. But although I have the file structure for them, I don't have any .yml files in my fixtures folder. I didn't get these generated when my models were generated.. should they have been? Or am I expected to create these files manually?  
+
+
+3) What's the best practice for isolating parameters on models when testing?  
+Most of the tutorials I've seen show very basic test cases like "should be invalid without a title". This is fine, but normally the example only has a title, and nothing else, so we can be sure that is what is failing. But my model has about 12 fields. So, short of creating 12 different fixtures, each one having a different unique field which is set up to fail the test, how do I run specific tests for all these fields?  
+
+
+Hope my questions are clear but I often find that when I'm new to something my terminology is all over the place, so let me know if something is unclear and I'll try to explain better.  
+
+
+Thanks.
+## [4][Email SaaS Project - Where do I start?](https://www.reddit.com/r/rails/comments/f9g63p/email_saas_project_where_do_i_start/)
+- url: https://www.reddit.com/r/rails/comments/f9g63p/email_saas_project_where_do_i_start/
+---
+So I’m start thinking about how to build a email SaaS project and I was wondering how I would go about working on something like this.
+
+I want to build an application that helps users send out drip emails to their email lists.
+
+A question I have is do I need to go through an email service like SendGrid in order to achieve this?
+
+Any information on emailing and other tools that I might need to build this would be appreciated!
+## [5][How to ask help in a interview.](https://www.reddit.com/r/rails/comments/f9fjvb/how_to_ask_help_in_a_interview/)
+- url: https://www.reddit.com/r/rails/comments/f9fjvb/how_to_ask_help_in_a_interview/
+---
+Hi all, I will have an interview for Mid-level Rails developer position on next week. So I want to know how to ask right question or help when I can't give a solution for a problem solving.
+
+Thank you.
+## [6][Help understanding Devise](https://www.reddit.com/r/rails/comments/f8zue1/help_understanding_devise/)
 - url: https://www.reddit.com/r/rails/comments/f8zue1/help_understanding_devise/
 ---
 Greetings all,
@@ -60,7 +102,7 @@ On my front end, the first method I want to hit is to check if admin is logged i
 I ran into "404 not found" and the rails console told me there was no corresponding route for /admins/check_for_admin. So I ran rake routes to see what was available, and I was surprised to see a ton of Devise routes. Awesome! 
 
 After changing the route in my promise to hit one of the prefabricated Devise routes such as '/admins/sign_in'  I was able to hit the endpoint no problem. However, I am confused that there are no apparent controllers for looking at the code, or writing other methods. Do I simply need to rely on the provided Devise methods and just write calls that hit those end points? For instance there doesn't seem to be a route that implies checking if Admin is logged in??
-## [4][Wondering about techniques for dynamic routing](https://www.reddit.com/r/rails/comments/f8t4ik/wondering_about_techniques_for_dynamic_routing/)
+## [7][Wondering about techniques for dynamic routing](https://www.reddit.com/r/rails/comments/f8t4ik/wondering_about_techniques_for_dynamic_routing/)
 - url: https://www.reddit.com/r/rails/comments/f8t4ik/wondering_about_techniques_for_dynamic_routing/
 ---
 I have a site I'm working on and each page is a resource in a table of site_items. Thus, all of the relative paths will be something along the lines of **/site_items/4**
@@ -84,7 +126,7 @@ I'd love it if I could pop into routes and just put something like...
 But it doesn't look like Routes work that way!
 
 Any Ideas?
-## [5][Need help switching Ruby version in Rails](https://www.reddit.com/r/rails/comments/f8zds1/need_help_switching_ruby_version_in_rails/)
+## [8][Need help switching Ruby version in Rails](https://www.reddit.com/r/rails/comments/f8zds1/need_help_switching_ruby_version_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/f8zds1/need_help_switching_ruby_version_in_rails/
 ---
 Just doing it with git bash, I have been following [this guide](https://youtu.be/pPy0GQJLZUM) but run into a problem when I try to make a make a new project:
@@ -113,7 +155,7 @@ It looks like Rails is using Ruby 2.3.3. I have 2.6 installed but I don't know h
 &gt;gpg: Total number processed: 0
 
 It seems like for everything I have to install, there are two other things I've had to install first. I don't doubt I've messed something up along the way but I would really appreciate some help!
-## [6][cant use .save in model? (using rufus-scheduler)](https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/)
+## [9][cant use .save in model? (using rufus-scheduler)](https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/)
 - url: https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/
 ---
 hi All!
@@ -203,7 +245,7 @@ Solved!     `Tracker.create!(id:tracker, qty:1000, price:1000, product_id:` [`pr
 This did the trick... now to remove the hard coded user id....
 
 After that to dynamically save the price and qty.....
-## [7][AWS Elastic Beanstalk re-deploys can see the database, but the site is inaccessible to the web](https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/)
+## [10][AWS Elastic Beanstalk re-deploys can see the database, but the site is inaccessible to the web](https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/)
 - url: https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/
 ---
 Sorry if this is a little scattered, but I'm trying to upgrade my active Rails site from Ruby 2.3 to 2.6.
@@ -215,17 +257,7 @@ For the last few weeks I've been trying to make another deployment using EB, but
 Has anyone encountered something similar? Could it be that puma isn't starting up? I can't find anything suspicious or fishy in any logs on the instance. In all the searching I've done, I haven't found anyone with a similar problem. There's no obvious error message so it's hard to tell what went wrong where.
 
 To be honest, this has me really stressed out. The site has built up an audience of several hundred users daily, and we have people regularly signing up and contributing. This all comes after about a 3-month digression into Docker to see if I could deploy the site through ECS instead, but I've never been able to get that working either. Oddly enough, I encountered the same problem - inaccessible web server, but I could confirm that the rails console could see the database. The idea that the entire site and community could just die next week because I can't figure this out is pretty frustrating. Are there any sort of freelance consultants or people who are willing to help out Rails sites in their spare time?
-## [8][Geared Pagination Gem Behind The Scenes](https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/)
-- url: https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/
----
-There’s a better, more user-friendly-driven approach to writing  pagination for your application. The idea is simple: Load more records  every time the user is asking to see more.
-
-## Kickoff with GearedPagination::Controller
-
-It all starts with the set\_page\_and\_extract\_portion\_from method which initiates the flow. It receives a set of records, and you  can specify how many records per page you’d like to present to the user.
-
-[Read on Medium...](https://medium.com/squeezerhq/geared-pagination-in-rails-behind-the-scenes-61d9e227540e)
-## [9][Upgrading to Rails 5, need help with strong params?](https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/)
+## [11][Upgrading to Rails 5, need help with strong params?](https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/)
 - url: https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/
 ---
 Hello, I'm new to this, but I'm studying and trying to upgrade an old rails app (was on rails 3 so there's attr\_accessible everywhere in every single model) to rails 5. I have all of my specs passing on Rails 5.1, and I am using the "protected\_attributes\_continued" gem.
@@ -239,17 +271,13 @@ Half of the models do not even have controllers where I could put the strong par
 My specs PASS when I do all of this, and I've tested the application and nothing really seems to be wrong, but I didn't move ANYTHING from attr\_accessible to the controllers.
 
 Is this okay? I'm just confused at how my application still seems to be working fine.
-## [10]["VFS Connection does not exist" on Cloud9](https://www.reddit.com/r/rails/comments/f8gjeb/vfs_connection_does_not_exist_on_cloud9/)
-- url: https://www.reddit.com/r/rails/comments/f8gjeb/vfs_connection_does_not_exist_on_cloud9/
+## [12][Geared Pagination Gem Behind The Scenes](https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/)
+- url: https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/
 ---
-As the title says, when i try to run the $rails server command and preview running application, it tells me "Oops, VFS Connection does not exist". Any way to fix this?
-## [11][Exchanging sensitive data between two Rails apps](https://www.reddit.com/r/rails/comments/f8897p/exchanging_sensitive_data_between_two_rails_apps/)
-- url: https://www.reddit.com/r/rails/comments/f8897p/exchanging_sensitive_data_between_two_rails_apps/
----
-I have two Rails apps and they both use SSL/HTTPS. They have a REST api to exchange data between each other. I assume this data is encrypted because both apps are SSL/HTTPS? And if so, is this secure enough to exchange sensitive data like passwords?
-## [12][Is the code for the GitHub web app on Github?](https://www.reddit.com/r/rails/comments/f88rba/is_the_code_for_the_github_web_app_on_github/)
-- url: https://www.reddit.com/r/rails/comments/f88rba/is_the_code_for_the_github_web_app_on_github/
----
-Hello, This might be a noob question but I"m wondering if the code for GitHub web application rails app is hosted on GitHub as an open-source project?
+There’s a better, more user-friendly-driven approach to writing  pagination for your application. The idea is simple: Load more records  every time the user is asking to see more.
 
-I'm asking this because I"m interested in how their roles and scopes are stored in the database and how it is being validated for each user. I want to draw inspiration from their implementation as I'm working on a rails app myself.
+## Kickoff with GearedPagination::Controller
+
+It all starts with the set\_page\_and\_extract\_portion\_from method which initiates the flow. It receives a set of records, and you  can specify how many records per page you’d like to present to the user.
+
+[Read on Medium...](https://medium.com/squeezerhq/geared-pagination-in-rails-behind-the-scenes-61d9e227540e)

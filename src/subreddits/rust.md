@@ -33,206 +33,156 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/f8ng5w/whats_everyone_working_on_this_week_92020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-9-2020/38638?u=llogiq)!
-## [3][Securing Firefox with WebAssembly (and rust)](https://www.reddit.com/r/rust/comments/f9qk28/securing_firefox_with_webassembly_and_rust/)
-- url: https://hacks.mozilla.org/2020/02/securing-firefox-with-webassembly/
+## [3][Audit of the RustCrypto `aes-gcm` and `chacha20poly1305` crates by NCC group](https://www.reddit.com/r/rust/comments/fa8a96/audit_of_the_rustcrypto_aesgcm_and/)
+- url: https://www.reddit.com/r/rust/comments/fa8a96/audit_of_the_rustcrypto_aesgcm_and/
+---
+I'm excited to announce that two of the symmetric encryption crates from the [RustCrypto/AEADs](https://github.com/RustCrypto/AEADs) project just received their first security audit 🎉
+
+(NOTE: "RustCrypto" in this context means the Pascal Case GitHub organization, not the unmaintained kebab case `rust-crypto` crate)
+
+In December 2019, [MobileCoin](https://www.mobilecoin.com/) engaged [NCC Group](https://www.nccgroup.trust/) to conduct a review of the following crates which provide pure Rust implementations of these authenticated encryption algorithms, along with their cryptographic dependencies:
+
+- [`aes-gcm`](https://github.com/RustCrypto/AEADs/tree/master/aes-gcm): AEAD cipher implementation
+  - [`aes`](https://crates.io/crates/aes): raw AES block cipher with [`aesni`](https://crates.io/crates/aesni) and [`aes-soft`](https://crates.io/crates/aes-soft) backends
+  - [`polyval`](https://crates.io/crates/polyval): used to implement GHASH in AES-GCM
+- [`chacha20poly1305`](https://github.com/RustCrypto/AEADs/tree/master/chacha20poly1305): AEAD cipher implementation
+  - [`chacha20`](https://crates.io/crates/chacha20): raw ChaCha20 stream cipher
+  - [`poly1305`](https://crates.io/crates/poly1305): authenticator providing message integrity
+
+The scope of the audit was assessing cryptographic security including constant-time operation of these crates and their cryptographic dependencies, including implementations that leverage x86-64 CPU intrinsics as well as portable implementations based on integer arithmetic. Two consultants provided five person-days of efforts.
+
+Result: there were only minor findings (mostly related to performance).
+
+You can read the full report at:
+
+https://research.nccgroup.com/2020/02/26/public-report-rustcrypto-aes-gcm-and-chacha20poly1305-implementation-review/
+
+See also:
+
+- [`aes-gcm` crate on crates.io](https://crates.io/crates/aes-gcm) | [docs](https://docs.rs/aes-gcm)
+- [`chacha20poly1305` crate on crates.io](https://crates.io/crates/chacha20poly1305) | [docs](https://docs.rs/chacha20poly1305)
+## [4][Example of calling a Rust library from Clojure, all combined into one executable using GraalVM](https://www.reddit.com/r/rust/comments/faaqyc/example_of_calling_a_rust_library_from_clojure/)
+- url: https://www.reddit.com/r/rust/comments/faaqyc/example_of_calling_a_rust_library_from_clojure/
+---
+Hi! Currently learning Rust. As a fun exercise, I made an example of a Clojure program that calls a Rust library via Java JNI, which is then compiled to an executable with GraalVM.
+
+[https://github.com/borkdude/clojure-rust-graalvm](https://github.com/borkdude/clojure-rust-graalvm-native)
+## [5][Bentley's coding challenge: k most frequent words](https://www.reddit.com/r/rust/comments/fa5sbr/bentleys_coding_challenge_k_most_frequent_words/)
+- url: https://codegolf.stackexchange.com/questions/188133/bentleys-coding-challenge-k-most-frequent-words
 ---
 
-## [4][Space Factory game in Rust + Godot "The Recall Singularity" is progressing well](https://www.reddit.com/r/rust/comments/f9m00v/space_factory_game_in_rust_godot_the_recall/)
-- url: https://www.reddit.com/r/rust/comments/f9m00v/space_factory_game_in_rust_godot_the_recall/
----
-When I wanted to make a Factory game set in space I surveyed the options and naturally chose Rust as the very best language to simulate the core of factories. Today [I'm publishing a retrospective on the past 3 months of development](https://medium.com/@recallsingularity/space-factory-building-in-feb-2020-752e96dfaa0a) (out of 18) which lays out features developed and challenges along the way.
-
-Rust is a great fit for "scripting" with the Godot Engine both because it offers all the usual guarantees and benefits but also because the [godot rust bindings](https://github.com/GodotNativeTools/godot-rust) work out of the box with minimal work.
-
-Personally I try to give back to the community by writing tutorials covering the technically difficult challenges I've solved. I've got a few ideas lined up but my [getting started with Godot + Rust tutorial](https://medium.com/@recallsingularity/gorgeous-godot-games-in-rust-1867c56045e6?source=friends_link&amp;sk=c2fd85689b4638eae4d91b743439c75f) continues to be popular and I run a [very successful discord on the combination](https://discord.gg/NRFmb8N).
-
-Rust gamedev continues to flourish and I hope we are close to a revolution in the most popular systems language used in major games.
-## [5][Intro to rustc's self profiler | Inside Rust Blog](https://www.reddit.com/r/rust/comments/f9g9ds/intro_to_rustcs_self_profiler_inside_rust_blog/)
-- url: https://blog.rust-lang.org/inside-rust/2020/02/25/intro-rustc-self-profile.html
+## [6][Better Plotting with Plotly in Rust Notebooks](https://www.reddit.com/r/rust/comments/faayaf/better_plotting_with_plotly_in_rust_notebooks/)
+- url: https://shahinrostami.com/posts/programming/rust-notebooks/better-plotting-with-plotly/
 ---
 
-## [6][veriform: security-oriented Protobuf-like serialization format with no_std support](https://www.reddit.com/r/rust/comments/f9ihqm/veriform_securityoriented_protobuflike/)
-- url: https://www.reddit.com/r/rust/comments/f9ihqm/veriform_securityoriented_protobuflike/
----
-I'm announcing a "sneak preview" (v0.0.1) release of Veriform: a binary serialization format inspired by Protocol Buffers, but with a number of refinements which make it more useful to things like credentials, signed documents, and "blockchain" use cases:
-
-- GitHub: https://github.com/iqlusioninc/veriform
-- Docs: https://docs.rs/veriform
-- Crate: https://crates.io/crates/veriform
-
-I was hoping to get it in a slightly more polished state before making an announcement, but after seeing the [mincodec](https://www.reddit.com/r/rust/comments/f8yfuq/mincodec_extremely_spatially_efficient_true_async/) announcement yesterday (which contains a number of similar ideas, but also many differences), I thought I'd go ahead and make an announcement, both since it seems there's a lot of interest in binary encodings which support `no_std` environments, and also because it seems like there's some potential collaboration opportunities between `mincodec` and Veriform.
-
-# Background
-
-One of the main innovations in Protocol Buffers was a schema-driven binary serialization format with support for "unknown fields" - the ability to extend the schema while allowing clients with an older schema to remain backwards compatible. To do this every field in a message tagged with a [wire type](https://developers.google.com/protocol-buffers/docs/encoding#structure), which provides just enough information to allow the parser to calculate the length of an unknown field so it can be skipped.
-
-Veriform extends that additional "wire type" information to make the format fully self-describing. This doesn't require significant changes from Protobufs - mostly just [more precisely tagging the contents of fields](https://github.com/protocolbuffers/protobuf/issues/2629), and marking on-the-wire which fields contain sequences of messages (`repeated` in Protobuf terminology) so a parser can always tell a sequence from a field containing a single message.
-
-By making the format fully self-describing, it allows for computing a [structured content hash over the data](https://github.com/iqlusioninc/veriform/blob/develop/spec/draft-veriform-spec.md#structured-content-hashing-verihash), even in the presence of unknown fields. This allows for computing content hashes of (or signing) arbitrary sub-messages within a document. Computing structured content hashes in this manner is an idea borrowed from Ben Laurie's [ObjectHash](https://crates.io/crates/objecthash).
-
-This sort of content hashing is a bit at odds with data warehousing-oriented serialization formats like Protobufs or [Cap'n Proto](https://capnproto.org/). Data warehousing formats are flexible-by-design to accommodate an evolving schema, and therefore support on-the-wire representations which can be interpreted in different ways depending on how the schema says it should be interpreted. Veriform, on the other hand, encodes all of the information needed to unambiguously recognize the entire message on-the-wire.
-
-Perhaps somewhat surprisingly this can be done just as compactly as Protobufs (or more compactly, as Veriform supports an ASN.1-like `SEQUENCE` type which is encoded more compactly than Protobufs' `repeated` fields) with one exception: Veriform reserves one additional bit per field for flagging that field as "critical". Borrowing from X.509's notion of "critical extensions", Veriform allows for encoding critical fields which are not allowed to be ignored if unknown. This is important if fields are security-critical in nature, e.g. they contain a constraint/caveat/restriction about how a document should be interpreted which might cause security issues if ignored.
-
-# Encoding
-
-NOTE: There's also a [WIP specification of the encoding](https://github.com/iqlusioninc/veriform/blob/develop/spec/draft-veriform-spec.md) if you'd like to know more.
-
-Veriform's encoding is similar to Protobufs. Here is a brief description and some of the things that differ:
-
-## "TLV" format + sequence encoding
-
-Protobufs and Veriform both use a "TLV" ([type-length-value](https://en.wikipedia.org/wiki/Type-length-value)) format which models messages as key/value maps. Where Protobufs model sequences (i.e. vectors/arrays) of data in messages by allowing them to be `repeated`, Veriform has a distinct, unambiguous sequence encoding (which should be more compact than Protobufs in most cases)
-
-## 64-bit varints for framing and encoding integers
-
-Like Protobufs, Veriform elects to use varints for field identifiers, length tags, and encoding all (unsigned and signed) integers. Message compactness is important for Veriform's use cases like credentials, as using fixed-sized integers can result in a surprisingly large amount of excess space. As an example, the [Macaroons](http://macaroons.io/) format started out using a fixed-sized integer encoding (git pkt-lines), but then moved to a more Protobuf-like V2 format after experiments showed it would save considerable space. Since Veriform fully processes all messages for security reasons (examining "critical bits" and for content hashing) it can't implement something like Cap'n Proto's "infinitely faster" parser, so between that and the space savings varints are worth it.
-
-Veriform uses a "prefix varint" encoding called [`vint64`](https://github.com/iqlusioninc/veriform/tree/develop/rust/vint64) which stores the length of the varint itself in the least significant bits of the first byte, using CTZ to count them. This allows them to be decoded without loops - just a load, shift, and a mask, and the length can be deduced from the first byte alone, both of which are advantages over the LEB128 format used by Protobufs. It was nice to see that `mincodec` is doing something similar in their "[VLQ](https://github.com/noocene/bitbuf-vlq)" integer encoding, which looks quite similar to (possibly identical to?) `vint64` aside from some details of the actual implementation. To the `mincodec` folks if you're reading this: perhaps we can spec a common encoding and share a common implementation?
-
-## Fully self-describing
-
-As noted above, the full type of every field is unambiguously included on the wire. They are encoded as one of 8 "wire types", which are as follows:
-
-| ID   | Type                    | Encoding               |
-|------|-------------------------|------------------------|
-| 0    | false                   | none                   |
-| 1    | true                    | none                   |
-| 2    | unsigned 64-bit integer | vint64                 |
-| 3    | signed 64-bit integer   | vint64 (zigzag)        |
-| 4    | bytes                   | length prefixed        |
-| 5    | string (unicode)        | length prefixed UTF-8  |
-| 6    | message (nested)        | length prefixed        |
-| 7    | sequence                | length + type prefixed |
-
-Note that unlike Protos (and borrowing a trick similar to Cap'n Proto), "false" and "true" are given their own wire types to allow boolean fields to be encoded as a single bit (Protobufs encodes each boolean value as a byte in addition to the field header).
-
-# Implementation
-
-[We're using Veriform](https://github.com/iqlusioninc/armistice/pull/8/files) in a project called [Armistice](https://github.com/iqlusioninc/armistice), a bare-metal cryptography / "HSM" application for the [USB armory MkII](https://github.com/iqlusioninc/usbarmory.rs). We're presently treating it as a `no_std` environment (and leveraging Realtime For the Masses), and as such Veriform has first class `no_std` support with no `alloc` requirement. This should make it interesting to anyone looking for a microcontroller-friendly encoding.
-
-The decoder is implemented as a streaming zero-copy pull parser which is capable of incrementally decoding messages. It was quite interesting to see `mincodec` natively support async message processing - we don't do that yet, but the decoder is written in such a way which would make it easy to wrap with async support in the future.
-
-Internally it uses a hand-written state machine which always consumes its previous state and computes a new state (in a similar manner to session types), and optionally emits events if it was able to make progress decoding the message. The implementation manages to be extremely compact despite the feature set, presently weighing in at 1.1klocs, again good for anyone looking to use it on a microcontroller.
-
-# Future Work
-
-Veriform is still very rough-around-the-edges. Nevertheless the current implementation, albeit low-level, is pretty much feature complete at its core. That said, you may want to wait for the following before trying it out:
-
-- custom derive support (ala Prost and `mincodec`): using annotations on the Rust code to synthesize encoders/decoders has always been the plan. Right now we're writing the encoders/decoders by hand in Armistice as we don't want to jump to a proc macro before we've spent a lot of time handwriting the code, making sure we have a good API for the proc macro codegen to target, and looking at ways to simplify and minimize the proc macro generated code.
-- schema support + other language implementations: we'd like to support a schema language ala Protobufs to eventually support implementations in other languages. This is definitely one of the big selling points of Protobufs.
-## [7][Anouncing async_executors, a building block for executor agnostic libraries](https://www.reddit.com/r/rust/comments/f9t44x/anouncing_async_executors_a_building_block_for/)
-- url: https://blog.wnut.pw/2020/02/25/anouncing-async_executors-a-building-block-for-executor-agnostic-libraries/
+## [7][Crosspost: Rust on RG300 consoles (and similar MIPS devices)](https://www.reddit.com/r/rust/comments/fabgxm/crosspost_rust_on_rg300_consoles_and_similar_mips/)
+- url: https://www.reddit.com/r/rust_gamedev/comments/fabgof/wrote_a_rust_program_that_demonstrates_graphics/
 ---
 
-## [8][orion 0.15 - Argon2i, pure-Rust secretstream, extensive testing and benchmarks](https://www.reddit.com/r/rust/comments/f9o98k/orion_015_argon2i_purerust_secretstream_extensive/)
-- url: https://www.reddit.com/r/rust/comments/f9o98k/orion_015_argon2i_purerust_secretstream_extensive/
----
-&gt; orion is a cryptography library written in pure Rust. It aims to provide easy and usable crypto while trying to minimize the use of unsafe code.
-
-GitHub: https://github.com/brycx/orion 
-Crates.io: https://crates.io/crates/orion
-
-After 8 months since the last major update, I'm very pleased to announce orion has finally reached `0.15`.
-
-Overview of notable changes since the [last update (v0.14)](https://www.reddit.com/r/rust/comments/c3pn72/orion_014_released_improvements_and_call_for/):
-
-- Focus on improving and stabilizing the API.
-- Added support for Argon2i(single-threaded).
-- Added support for a pure-Rust implementation of libsodiums secretstream. Thanks to [snsmac](https://github.com/snsmac) for driving this effort.
-- Major improvements to the testing of the library. This includes a completely new testing framework, constant-time tests running in CI on OSX and Windows, as well as constant-time fuzzing using WASM with [sidefuzz](https://github.com/phayes/sidefuzz) in [orion-sidefuzz](https://github.com/brycx/orion-sidefuzz).
-- The library is now listed as an alternative to `rust-crypto` in the RustSec advisory database.
-- Performance improvements and newly [published benchmarks in the wiki](https://github.com/brycx/orion/wiki/Benchmarks) to give an overview of the performance that can be expected. Benchmarks include a daily workstation and Raspberry Pi 2. 
-
-([See full changelog here](https://github.com/brycx/orion/blob/master/CHANGELOG.md#0150))
-
-A huge thanks to the existing and the three new contributors that helped with this release and make the library a lot better!
-## [9][I broke my rust installation](https://www.reddit.com/r/rust/comments/f9rb39/i_broke_my_rust_installation/)
-- url: https://www.reddit.com/r/rust/comments/f9rb39/i_broke_my_rust_installation/
----
-Hello, after updating my rust installation with `rustup update` something is wrong
-
-    rustup default stable
-    info: using existing install for 'stable-x86_64-apple-darwin'
-    info: default toolchain set to 'stable-x86_64-apple-darwin'
-    
-      stable-x86_64-apple-darwin unchanged - rustc 1.41.0 (5e1a79984 2020-01-27)
-    
-    info: syncing channel updates for '1.49.0-x86_64-apple-darwin'
-    info: downloading component 'rust'
-    error: could not download nonexistent rust version `1.49.0-x86_64-apple-darwin`
-    error: caused by: could not download file from 'https://static.rust-lang.org/dist/rust-1.49.0-x86_64-apple-darwin.tar.gz.sha256' to '/Users/jan/.rustup/tmp/fq3t2xbgx12vq1w0_file'
-    error: caused by: http request returned an unsuccessful status code: 404
-
-I removed and added the stable toolchain, but without luck. Where does the rust version `1.49.0` came from? Latest version is `1.41.0`.  Any suggestion? Thanks for help.
-## [10][bottom: a cross platform TUI process/system monitor inspired by gotop and gtop](https://www.reddit.com/r/rust/comments/f99tdg/bottom_a_cross_platform_tui_processsystem_monitor/)
-- url: https://github.com/ClementTsang/bottom
+## [8][This Week in Rust 327](https://www.reddit.com/r/rust/comments/fabtwg/this_week_in_rust_327/)
+- url: https://this-week-in-rust.org/blog/2020/02/25/this-week-in-rust-327/
 ---
 
-## [11][New post: Async HTTP](https://www.reddit.com/r/rust/comments/f9dg6j/new_post_async_http/)
-- url: https://blog.yoshuawuyts.com/async-http/
+## [9][crates.io incident report for 2020-02-20 | Inside Rust Blog](https://www.reddit.com/r/rust/comments/f9tr55/cratesio_incident_report_for_20200220_inside_rust/)
+- url: https://blog.rust-lang.org/inside-rust/2020/02/26/crates-io-incident-report.html
 ---
 
-## [12][keyed_priority_queue 0.1.3 released! (major performance upgrade)](https://www.reddit.com/r/rust/comments/f9rss2/keyed_priority_queue_013_released_major/)
-- url: https://www.reddit.com/r/rust/comments/f9rss2/keyed_priority_queue_013_released_major/
+## [10][Can we write async methods? If we can,How?](https://www.reddit.com/r/rust/comments/fa9q7q/can_we_write_async_methods_if_we_canhow/)
+- url: https://www.reddit.com/r/rust/comments/fa9q7q/can_we_write_async_methods_if_we_canhow/
 ---
-At first I will talk about crate then I wish some advice about further improvements.
+I tried searching but couldn't find any place where I can get detailed info on how to write async methods.
+## [11][rust-lv2: A safe, fast, and ergonomic framework to create LV2 plugins, written in Rust](https://www.reddit.com/r/rust/comments/f9wzbx/rustlv2_a_safe_fast_and_ergonomic_framework_to/)
+- url: https://www.reddit.com/r/rust/comments/f9wzbx/rustlv2_a_safe_fast_and_ergonomic_framework_to/
+---
+About a year ago, I've released my first project with [LV2](https://lv2plug.in/), a plugin framework called [lv2rs](https://www.reddit.com/r/rust/comments/bawmbs/lv2rs_creating_lv2_plugins_in_rust/). I've received some great feedback and then joined forces with [Prokopyl](https://github.com/prokopyl) and the [RustAudio discourse](https://rust-audio.discourse.group/) to create [rust-lv2](https://crates.io/crates/lv2), the safe, fast, and ergonomic framework to create LV2 plugins, written in Rust, which now received its first release!
 
-The crate allows changing priority of items in queue using unique key.
+Using rust-lv2, you can create LV2 audio processing plugins with much less boilerplate code and worries about pointer and data handling, compared to plugins that use the raw C API directly. Thanks to Rust's incredible type system, several errors a programmer can make with the original utilities simply aren't possible.
 
-[https://crates.io/crates/keyed\_priority\_queue](https://crates.io/crates/keyed_priority_queue)
+Let's have an example. This is a basic plugin that amplifies the audio from an input port and writes it to an output port:
 
-I had benchmarked my optimizations (all numbers against v0.1.2):
+    // Include the prelude of the core crate. Every specification is implemented by
+    // exactly one crate and their preludes always contain most of the types needed
+    // to use them in a plugin.
+    use lv2_core::prelude::*;
 
-* from 20% to 40% faster construction of queue from iterator
-* nearly 50% faster popping of elements from queue
-* nearly 50% faster pushing in worst cases
-* 10% faster random item removal
-* from 10% to 30% faster random item priority change
+    // Most useful plugins will have ports for input and output data. In code, these
+    // ports are represented by a struct implementing the `PortContainer` trait.
+    #[derive(PortCollection)]
+    struct Ports {
+        gain: InputPort&lt;Control&gt;,
+        input: InputPort&lt;Audio&gt;,
+        output: OutputPort&lt;Audio&gt;,
+    }
 
-But some things are now worse (however they was very fast and this is not a problem):
+    // Every plugin defines a struct for the plugin instance. All persistent data
+    // associated with a plugin instance is stored here, and is available to every
+    // instance method. In this simple plugin, there is no additional instance data and
+    // therefore, this struct is empty.
+    struct Amp;
 
-* getting the priority of existing element slower by 50% if keys and elements are usizes and 10% if strings
-* random pushes sometimes slower in 70% for usizes
+    // The URI is the identifier for a plugin, and how the host associates this 
+    // implementation in code with its description in data. If this URI does not match
+    // that used in the data files, the host will fail to load the plugin. Since many 
+    // other things are also identified by URIs, there is a separate trait for them:
+    // The `UriBound`. It stores the URI as a constant null-terminated byte slice and
+    // provides a method to easily retrieve the URI. If the null-terminator is omitted,
+    // some other parts of the system may cause undefined behaviour. Since this can not
+    // checked by Rust's type system, this trait has to be unsafe. However, this is the
+    // only time a user has to use the `unsafe` keyword.
+    unsafe impl UriBound for Amp {
+        const URI: &amp;'static [u8] = b"urn:rust-lv2-book:eg-amp-rs\0";
+    }
 
-Benches are available in github [repository](https://github.com/AngelicosPhosphoros/keyed_priority_queue/tree/develop/benches)
+    // Every plugin struct implements the `Plugin` trait.
+    impl Plugin for Amp {
+        // Set the ports type.
+        type Ports = Ports;
 
-**How it was optimized**
+        // This plugin does not use additional host features and therefore, we set the
+        // features collection type to `()`. Other plugins may define a separate struct
+        // with their required and optional features and set it here.
+        type Features = ();
 
-In previous versions, the main crate's type — KeyedPriorityQueue&lt;Key, Value&gt; — had very straightforward structure: binary heap with key-priority pairs and mapping from keys to heap element positions. Entries can be easily found using hashmap for **O(1)** opertations and the costs of taking or putting data into queue remain was **O(log n)**.
+        // The `new` method is called by the plugin backend when it creates a new 
+        // plugin instance. The host passes the plugin URI, sample rate, and bundle 
+        // path for plugins that need to load additional resources (e.g. waveforms).
+        // The features parameter contains host-provided features defined in LV2 
+        // extensions, but this simple plugin does not use any. This method is in the
+        // “instantiation” threading class, so no other methods on this instance will 
+        // be called concurrently with it.
+        fn new(_plugin_info: &amp;PluginInfo, _features: ()) -&gt; Option&lt;Self&gt; {
+            Some(Self)
+        }
 
-However, there was a big trouble with performance: to keep hashmap indices valid I needed to make O(log n) updates on hashmap which were very costly.
+        // The `run()` method is the main process function of the plugin. It processes
+        // a block of audio in the audio context.
+        fn run(&amp;mut self, ports: &amp;mut Ports) {
+            let coef = if *(ports.gain) &gt; -90.0 {
+                10.0_f32.powf(*(ports.gain) * 0.05)
+            } else {
+                0.0
+            };
 
-In the v0.1.3, I added intermediate vec: values in hashmap point to the indices of an intermediate vec, and the vec items point to the positions in heap. This significantly improve speed of many operations, since many operations require only one hash lookup (*pop, set\_priority*) or two (*remove\_item by key*). Updates in the intermediate vec require simple index lookups.
+            for (in_frame, out_frame) in Iterator::zip(ports.input.iter(), ports.output.iter_mut()) {
+                *out_frame = in_frame * coef;
+            }
+        }
+    }
 
-However, this intermediate Vec adds extra indirection which cause performance drawbacks on some operations with exactly one hashmap lookup like *get\_priority.*
+    // The `lv2_descriptors` macro creates the entry point to the plugin library. It
+    // takes structs that implement `Plugin` and exposes them. The host will load the
+    // library and call a generated function to find all the plugins defined in the
+    // library.
+    lv2_descriptors!(Amp);
 
-**Futher plans (for 0.2.0)**
 
-1. Improve API: replace panicing method by \`Result\`, add Entry API (like in HashMap).
-2. And two possible enhancments but I need your advice about them
+If you want to learn more about rust-lv2, make sure to check out the [rust-LV2 book](https://janonard.github.io/rust-lv2-book/). It's an effort to translate the [original LV2 book](https://lv2plug.in/book/) and explains how to properly use the framework. Both examples were taken from their respective books.
 
-**First needed advice: use IndexMap instead of HashMap**
+If you have a question, have a little inconvenience or even encounter a bug, please create an issue in [the Github repository](https://github.com/RustAudio/rust-lv2/). We are striving to improve the usability of the framework and are going to implement more specifications soon.
 
-I can introduce Indexmap from indexmap crate instead of both hashmap and intermediate vec.
-
-* PRO: it greatly simplifies current code
-* PRO: it removes need of keeping two copies of each key so I will be able to remove \`Clone\` trait requirement and lower memory usage.
-* PRO: in methods with two hash lookups, one of them can be replaced by index lookup which is faster. In *pop,* it removes need of hash lookups at all
-* CON: it makes \`get\_priority\` and \`push\` operations even slower than after current modification.
-* CON: it adds dependency to the crate (currently crate depends only on std)
-
-The speed improvements are very insignificant, IMHO, because it speedups methods which already fast (e.g. popping 1000 usizes from 500'000 improved from 745 microseconds to 471 us).  Also it will add some pessimisation, e.g. pushing 1000 random usizes regressed from 5.2 milliseconds (on v0.1.3) to 6.1 ms.Are reduction memory usage and removal \`Clone\` trait requirement on keys worth such speed degradation on pushes?
-
-**Second needed advice: Create special version for usizes**
-
-There is an issue in my github where user Ten0 asked to add a new structure that has almost same API but uses usizes as keys instead any type and doesn't use hash maps at all. It can be achieved by using just one vec over map and keeping special \`invalid\` usize in places for evicted keys.
-
-* PRO: it will be useful if someone already have some domain values mapped to usizes
-* PRO: it obviously will be faster than any hashmap due lack of hashing and one level of indirection
-* CON: user can make mistakes using this API very easily: since we need to keep remapping vec for all range of ever used keys, user can allocate a lot of memory by passing some key like 2\^50.
-* CON: it increase the scope of the crate
-
-Do I need put any effort to implement this?
-
-Thanks in advance and sorry for my English!
+EDIT: I've replaced every indentation with four spaces, I hope it works now!
+EDIT 2: I've understood the comment now and fixed it. Sorry!
+## [12][What is the motivation behind default move semantics?](https://www.reddit.com/r/rust/comments/fa9pkp/what_is_the_motivation_behind_default_move/)
+- url: https://www.reddit.com/r/rust/comments/fa9pkp/what_is_the_motivation_behind_default_move/
+---
+I would imagine const ref could have been the default semantic, but I would like to understand why rust chose move instead. I’m sure there is an excellent reason but it’s something I can’t think of now.

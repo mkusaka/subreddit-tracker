@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (February 22, 2020)](https://www.reddit.com/r/javascript/comments/f7rkeq/showoff_saturday_february_22_2020/)
-- url: https://www.reddit.com/r/javascript/comments/f7rkeq/showoff_saturday_february_22_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/f8p41d/your_weekly_rjavascript_recap/)
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/f8p41d/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/f8p41d/your_weekly_rjavascript_recap/
 ---
 **Monday, February 17 - Sunday, February 23**
@@ -85,43 +79,51 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Microsoft Paint/Paintbrush in Javascript](https://www.reddit.com/r/javascript/comments/f9rxhj/microsoft_paintpaintbrush_in_javascript/)
+## [2][WTF Wednesday (February 26, 2020)](https://www.reddit.com/r/javascript/comments/f9vexa/wtf_wednesday_february_26_2020/)
+- url: https://www.reddit.com/r/javascript/comments/f9vexa/wtf_wednesday_february_26_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://www.reddit.com/r/javascript/comments/fa83qs/rome_an_experimental_javascript_toolchain_from/)
+- url: https://github.com/facebookexperimental/rome
+---
+
+## [4][I made another simple clock to visualize the 1440 precious minutes each of us has in a day](https://www.reddit.com/r/javascript/comments/f9xtf8/i_made_another_simple_clock_to_visualize_the_1440/)
+- url: https://robatron.github.io/1440-clock/bars
+---
+
+## [5][You'd be surprised how much you can do without JS :D](https://www.reddit.com/r/javascript/comments/fa7xgq/youd_be_surprised_how_much_you_can_do_without_js_d/)
+- url: https://github.com/you-dont-need/You-Dont-Need-JavaScript
+---
+
+## [6][Microsoft Paint/Paintbrush in Javascript](https://www.reddit.com/r/javascript/comments/f9rxhj/microsoft_paintpaintbrush_in_javascript/)
 - url: https://jspaint.app/
 ---
 
-## [4][simpleParallax, Simple and tiny JavaScript library which adds parallax animations on any images](https://www.reddit.com/r/javascript/comments/f9lkoi/simpleparallax_simple_and_tiny_javascript_library/)
+## [7][How Autotracking Works](https://www.reddit.com/r/javascript/comments/fa3c5s/how_autotracking_works/)
+- url: https://www.pzuraq.com/how-autotracking-works/
+---
+
+## [8][A parcel v2 transformer plugin for svelte v3](https://www.reddit.com/r/javascript/comments/fa91qv/a_parcel_v2_transformer_plugin_for_svelte_v3/)
+- url: https://github.com/22mahmoud/parcel-transformer-svelte3
+---
+
+## [9][A Solid RealWorld Demo Comparison](https://www.reddit.com/r/javascript/comments/fa8wx2/a_solid_realworld_demo_comparison/)
+- url: https://medium.com/@ryansolid/a-solid-realworld-demo-comparison-8c3363448fd8?source=friends_link&amp;sk=2f2c00e315dd126d7e28836aec532e91
+---
+
+## [10][An ultra-fast and tiny (5.2 kB) browser-based JavaScript compiler for converting JSX to JS](https://www.reddit.com/r/javascript/comments/fa1cwz/an_ultrafast_and_tiny_52_kb_browserbased/)
+- url: https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md
+---
+
+## [11][Speeding up scraping with multiple threads - JavaScript Web Scraping Guy](https://www.reddit.com/r/javascript/comments/fa0538/speeding_up_scraping_with_multiple_threads/)
+- url: https://javascriptwebscrapingguy.com/jordan-is-speed-speeding-up-scraping-with-multiple-threads/
+---
+
+## [12][simpleParallax, Simple and tiny JavaScript library which adds parallax animations on any images](https://www.reddit.com/r/javascript/comments/f9lkoi/simpleparallax_simple_and_tiny_javascript_library/)
 - url: https://simpleparallax.com
----
-
-## [5][[Show reddit] Asynchronous JavaScript in four chapters: foundations, Promises, async functions, async iteration](https://www.reddit.com/r/javascript/comments/f9b82e/show_reddit_asynchronous_javascript_in_four/)
-- url: https://exploringjs.com/impatient-js/ch_async-js.html
----
-
-## [6][Formatting numbers on the fly is easy with Numeral.js. Read about it in my post featured in The Start Up.](https://www.reddit.com/r/javascript/comments/f9sldo/formatting_numbers_on_the_fly_is_easy_with/)
-- url: https://medium.com/swlh/beginners-guide-to-numeral-js-63436b614d44
----
-
-## [7][Scala.js 1.0.0 is released](https://www.reddit.com/r/javascript/comments/f9b6k3/scalajs_100_is_released/)
-- url: https://www.scala-js.org/news/2020/02/25/announcing-scalajs-1.0.0/
----
-
-## [8][Provides standard objects and functions for working with dates and times.](https://www.reddit.com/r/javascript/comments/f9fhh8/provides_standard_objects_and_functions_for/)
-- url: https://github.com/tc39/proposal-temporal
----
-
-## [9][Nano Events: event emitter for JS in 75 bytes (!) with ESM and TypeScript support](https://www.reddit.com/r/javascript/comments/f9f8ko/nano_events_event_emitter_for_js_in_75_bytes_with/)
-- url: https://github.com/ai/nanoevents
----
-
-## [10][Immutable Types in TypeScript](https://www.reddit.com/r/javascript/comments/f9g6pg/immutable_types_in_typescript/)
-- url: https://egghead.io/lessons/javascript-create-immutable-types-in-typescript
----
-
-## [11][tsparticles - Resurrecting particles.js](https://www.reddit.com/r/javascript/comments/f9culj/tsparticles_resurrecting_particlesjs/)
-- url: https://github.com/matteobruni/tsparticles
----
-
-## [12][You don't need Moment.js](https://www.reddit.com/r/javascript/comments/f8sy4e/you_dont_need_momentjs/)
-- url: https://github.com/you-dont-need/You-Dont-Need-Momentjs
 ---
 

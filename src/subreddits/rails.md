@@ -1,13 +1,5 @@
 # rails
-## [1][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/ezrfed/gimme_gems_thursdays_found_an_awesome_new_gem/)
-- url: https://www.reddit.com/r/rails/comments/ezrfed/gimme_gems_thursdays_found_an_awesome_new_gem/
----
-Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
-
-You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
-
-Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/f9t9kq/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/f9t9kq/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/f9t9kq/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -27,7 +19,184 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Questions about TDD and fixtures.](https://www.reddit.com/r/rails/comments/f9koam/questions_about_tdd_and_fixtures/)
+## [2][Freelancing in Rails](https://www.reddit.com/r/rails/comments/fa7ojc/freelancing_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/fa7ojc/freelancing_in_rails/
+---
+hey.. how are you all?? I hope you all doing fine.. I want advice from experience people.. Anyone here doing freelancing work in ruby on rails?? can you tell me the struggles of finding a rails job in freelancing?? if someone learning rails and want a career of rails in freelancing, what advice would you like to give??
+## [3][Would anyone be interested in taking over development of a passion project that is a tool for guitarists and other musicians?](https://www.reddit.com/r/rails/comments/f9y0ge/would_anyone_be_interested_in_taking_over/)
+- url: https://www.reddit.com/r/rails/comments/f9y0ge/would_anyone_be_interested_in_taking_over/
+---
+The site is www.whatkeyamiin.com. It gets 2,000+ visits per month and has room to grow, but I haven't had time to work on it or develop new features in years. I'd love to see it continue on with someone else who wants to help give back to the guitarist community!
+
+It is built on Rails 4 and jQuery, no front end framework (although it would be a good fit for one now).
+## [4][Looking For Projects to Build a Portfolio](https://www.reddit.com/r/rails/comments/fa6f2q/looking_for_projects_to_build_a_portfolio/)
+- url: https://www.reddit.com/r/rails/comments/fa6f2q/looking_for_projects_to_build_a_portfolio/
+---
+Hi All,
+
+I'm a Business Intelligence Consultant looking to pivot careers.   I'm looking for some projects I could work on that would look good as part of a portfolio.  Any recommendations are greatly appreciated, as well as any advice on getting my foot in the door with a job.
+## [5][Problems installing ActiveAdmin - allows assigning of a non existent parameter?](https://www.reddit.com/r/rails/comments/fa5ues/problems_installing_activeadmin_allows_assigning/)
+- url: https://www.reddit.com/r/rails/comments/fa5ues/problems_installing_activeadmin_allows_assigning/
+---
+Hi all,  
+
+
+ I'm trying to experiment with Active Admin but having problems with getting set up. I'm at the final step but can't seem to understand what's going on.  
+
+
+So during the install it gives me the following line in my seeds file:  
+
+
+    AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+This seems to create the AdminUser instance fine, but then when I try to log in, I get an error:
+
+    Invalid Email or password.
+
+So, I then checked the schema, but it appears that a password field doesn't even exist for that model:  
+
+
+    create_table "admin_users", force: :cascade do |t|
+        t.string "email", default: "", null: false
+        t.string "encrypted_password", default: "", null: false
+        t.string "reset_password_token"
+        t.datetime "reset_password_sent_at"
+        t.datetime "remember_created_at"
+        t.datetime "created_at", null: false
+        t.datetime "updated_at", null: false
+        t.index ["email"], name: "index_admin_users_on_email", unique: true
+        t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+      end
+
+But for some reason, it still seems to accept the password being set when we create the instance in seeds. No error.  
+
+
+When I check the model, it looks like this:  
+
+
+    =&gt; AdminUser(id: integer, email: string, encrypted_password: string, reset_password_token: string, reset_password_sent_at: datetime, remember_created_at: datetime, created_at: datetime, updated_at: datetime)
+
+So I guess my question is twofold:  
+1) Why is it allowing me to assign a password when that column seemingly doesn't exist in the database.  
+2) How do I get round this issue?  
+
+
+Thanks.
+## [6][How are you doing structured logging?](https://www.reddit.com/r/rails/comments/f9xi4m/how_are_you_doing_structured_logging/)
+- url: https://www.reddit.com/r/rails/comments/f9xi4m/how_are_you_doing_structured_logging/
+---
+I want to bring some sanity to my logs. I run a solo SaaS business, and want quick and easy insight into debugging/support, business metrics, and general application health. 
+
+I'm on Heroku (STDOUT), using lograge and Papertail at the moment. Lograge is great, but it's not really a logging framework as it doesn't provide a DSL for custom logging, and it leaves a lot of unstructured logs as is: ActiveJob, Sidekiq, custom `Rails.logger.info ...` etc.
+
+There are others like Timber[0], and semantic_logger, but neither seem actively maintained or have widespread adoption.
+
+I think JSON is the way to go, paired with some hosted ELK (Logz.io, Scalyr, Coralogix) or other cloud platform (Datadog, LogDNA, Timber, etc). I've been trialing a bunch of them, but none seem to really click for me. Previously I've been on Papertrail. I want an all-in-one logging + metrics/dashboard service. I like the concept of Datadog, but the Heroku integration is still beta and doesn't work optimally.
+
+Choosing a cloud provider has been a little overwhelming, so I think I should start with optimizing how I log (switching to JSON, ensuring all logs are structured (AJ, Sidekiq, etc), have a good DSL for writing custom business logs w/ context, etc, and then go from there.
+
+
+
+[0] [https://docs.timber.io/setup/languages/ruby#](https://docs.timber.io/setup/languages/ruby#)
+[1] [http://rocketjob.github.io/semantic_logger/rails.html](http://rocketjob.github.io/semantic_logger/rails.html)
+## [7][Tracking Online Users within Your Rails 6 App [Tutorial]](https://www.reddit.com/r/rails/comments/f9xizg/tracking_online_users_within_your_rails_6_app/)
+- url: https://www.reddit.com/r/rails/comments/f9xizg/tracking_online_users_within_your_rails_6_app/
+---
+Hey guys, I'm working on some Rails video tutorials that I want to share with the community. Recently I've seen some questions posted about how to display "online users" within a Rails app and figured it would be a useful video to create for my YouTube channel.
+
+If this sounds interesting to you, then check out the video:
+
+[https://www.youtube.com/watch?v=koXdcLCmGEI](https://www.youtube.com/watch?v=koXdcLCmGEI)
+
+I'm a long term fan of Rails and enjoy creating and sharing content in this space. If you enjoy the video or have new content suggestions then feel free to leave a comment or send me a message.
+## [8][I made my side project with Rails!](https://www.reddit.com/r/rails/comments/f9xu5y/i_made_my_side_project_with_rails/)
+- url: https://www.reddit.com/r/rails/comments/f9xu5y/i_made_my_side_project_with_rails/
+---
+Hi y'all!
+
+I've been hard at work building my side project Debugg for the past month and now I think it's good enough to be shared. 
+
+[https://debugg.me](https://debugg.me) 
+
+It's a platform for learning systems development (part by part) by solving exercises, kind of like how Leetcode works. I'd love it if you checked it out and gave me you feedback.
+
+Lastly, I just wanna say how grateful I am that Rails exists. I'd started learning Rails in grade 12 from The Odin Project, with the aim of one day building something of my own that I would be proud of, and Rails is helping me achieve that. I don't think I would've kept interest in building this if I hadn't been able to get it up so quick (scaffolding is awesome!).
+
+Anyways, thanks again. I'll always be grateful to the Rails community.
+## [9][Help with permit value](https://www.reddit.com/r/rails/comments/f9v371/help_with_permit_value/)
+- url: https://www.reddit.com/r/rails/comments/f9v371/help_with_permit_value/
+---
+Hi, can someone please help me with permit value from submit button in form. I have four voting buttons and I want to save votes to db. I'm getting undefined method permit for String. 
+
+Form:
+
+    &lt;%= form_with scope: :votes1, url: votes_path, local: true do |form| %&gt;
+     
+    &lt;div class="row"&gt;
+          &lt;div class="col-sm"&gt;
+            &lt;%= form.submit :value =&gt; "Nuda", :class =&gt; 'btn btn-danger' %&gt;
+          &lt;/div&gt;
+          &lt;div class="col-sm"&gt;
+            &lt;%= form.submit :value =&gt; "To se mi líbí!", :class =&gt; 'btn btn-success' %&gt;
+          &lt;/div&gt;
+          &lt;div class="col-sm"&gt;
+            &lt;%= form.submit :value =&gt; "Málo detailů", :class =&gt; 'btn btn-secondary'  %&gt;
+          &lt;/div&gt;
+          &lt;div class="col-sm"&gt;
+            &lt;%= form.submit :value =&gt; "Příliš mnoho detailů.", :class =&gt; 'btn btn-warning' %&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    
+        &lt;% end %&gt;
+
+Controller:
+
+        def create
+            @vote = Vote.new(vote_params)
+            @vote.save
+            redirect_to root_path
+          end
+           
+        private
+            def vote_params
+              params.require(:commit).permit(:result)
+            end
+    end
+
+dbschema:
+
+    ActiveRecord::Schema.define(version: 2020_02_26_081717) do
+    
+      # These are extensions that must be enabled in order to support this database
+      enable_extension "plpgsql"
+    
+      create_table "votes", force: :cascade do |t|
+        t.string "result"
+        t.datetime "created_at", precision: 6, null: false
+        t.datetime "updated_at", precision: 6, null: false
+      end
+    
+    end
+## [10][How to test how much users can use the website in same time - using Camaleon CMS](https://www.reddit.com/r/rails/comments/f9v2h1/how_to_test_how_much_users_can_use_the_website_in/)
+- url: https://www.reddit.com/r/rails/comments/f9v2h1/how_to_test_how_much_users_can_use_the_website_in/
+---
+Hello,   
+I need to integrate some website with offers from another. I want to use Camaleon CMS for it. The most basic thing in this project are filters. For example there will be 20 fields that I can filter offers.
+
+My questions are mostly pointed to test and scaling. 
+
+I know it is dependand on how I will write sqls, that will determine the speed of query but I would like to get to know how to make those calculations about how many users can handle Camaleon CMS.  
+
+
+200 people hitting the page in the same time ? Will it handle ? What kind of server I need at least
+
+1000 people hitting the page in the same time ? Will it handle ? What kind of server I need at least
+
+I want to put this website on specific hosting. I think they share all their machine power with users and you are restricted by "number of processes and RAM". They dont have offer showing what is the power of cpu. So its hard to say for me what are the specifics of servers.   
+
+
+I would apprecieate any help.
+## [11][Questions about TDD and fixtures.](https://www.reddit.com/r/rails/comments/f9koam/questions_about_tdd_and_fixtures/)
 - url: https://www.reddit.com/r/rails/comments/f9koam/questions_about_tdd_and_fixtures/
 ---
 Hi all,  
@@ -53,231 +222,3 @@ Hope my questions are clear but I often find that when I'm new to something my t
 
 
 Thanks.
-## [4][Email SaaS Project - Where do I start?](https://www.reddit.com/r/rails/comments/f9g63p/email_saas_project_where_do_i_start/)
-- url: https://www.reddit.com/r/rails/comments/f9g63p/email_saas_project_where_do_i_start/
----
-So I’m start thinking about how to build a email SaaS project and I was wondering how I would go about working on something like this.
-
-I want to build an application that helps users send out drip emails to their email lists.
-
-A question I have is do I need to go through an email service like SendGrid in order to achieve this?
-
-Any information on emailing and other tools that I might need to build this would be appreciated!
-## [5][How to ask help in a interview.](https://www.reddit.com/r/rails/comments/f9fjvb/how_to_ask_help_in_a_interview/)
-- url: https://www.reddit.com/r/rails/comments/f9fjvb/how_to_ask_help_in_a_interview/
----
-Hi all, I will have an interview for Mid-level Rails developer position on next week. So I want to know how to ask right question or help when I can't give a solution for a problem solving.
-
-Thank you.
-## [6][Help understanding Devise](https://www.reddit.com/r/rails/comments/f8zue1/help_understanding_devise/)
-- url: https://www.reddit.com/r/rails/comments/f8zue1/help_understanding_devise/
----
-Greetings all,
-
-I'm having a bit of confusion on how to work effectively with the Devise gem. I have a Rails app with a React front end. I'm just starting to build it out, and the first thing I want to do is make an Admin page for the app. I created an Admin model, and then created an admins_controller.rb. I updated my routes.rb as follow:
-
-    Rails.application.routes.draw do
-      root 'homepage#index'
-      devise_for :admins, controllers: { admins: 'admins', sessions: 'sessions' }
-      # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-    end
-
-On my front end, the first method I want to hit is to check if admin is logged in, so I created this function:
-
-      getAdminPromise() {
-        const url = '/admins/check_for_admin';
-
-        fetch(url)
-          .then(response =&gt; {
-            if (response.ok) {
-              console.log(response)
-              return response.json();
-            }
-            throw new Error("Network response was not ok.");
-          })
-          .then(response =&gt; this.setState({ currentUser: response }))
-          .catch(() =&gt; this.props.history.push("/"));
-      }
-
-I ran into "404 not found" and the rails console told me there was no corresponding route for /admins/check_for_admin. So I ran rake routes to see what was available, and I was surprised to see a ton of Devise routes. Awesome! 
-
-After changing the route in my promise to hit one of the prefabricated Devise routes such as '/admins/sign_in'  I was able to hit the endpoint no problem. However, I am confused that there are no apparent controllers for looking at the code, or writing other methods. Do I simply need to rely on the provided Devise methods and just write calls that hit those end points? For instance there doesn't seem to be a route that implies checking if Admin is logged in??
-## [7][Wondering about techniques for dynamic routing](https://www.reddit.com/r/rails/comments/f8t4ik/wondering_about_techniques_for_dynamic_routing/)
-- url: https://www.reddit.com/r/rails/comments/f8t4ik/wondering_about_techniques_for_dynamic_routing/
----
-I have a site I'm working on and each page is a resource in a table of site_items. Thus, all of the relative paths will be something along the lines of **/site_items/4**
-
-I'm wondering if there's a BETTER way to dynamically link these items to prettier URL names.
-
-For instance, In order to coarsely mimic "homepage" functionality, I have a routes_controller that dynamically redirects the root to the first site_item, sorted by the table's :order column:
-
-    def root
-        redirect_to site_item_path(SiteItem.order(order: :asc).all.first)
-    end
-
-However, this means that instead of the user going to **domain.com/home**, my users are forced to go to **domain.com/site_items/6** for the home page. This is bad SEO and overall just ugly.
-
-I've looked into using slugs briefly, but—from what I can tell so far!—that looks like it'll result in something more like **domain.com/site_items/home**. This still includes much more than I would like to.
-
-I'd love it if I could pop into routes and just put something like...
-
-    get '/signup', to: SiteItem.order(order: :asc).all.first
-
-But it doesn't look like Routes work that way!
-
-Any Ideas?
-## [8][Need help switching Ruby version in Rails](https://www.reddit.com/r/rails/comments/f8zds1/need_help_switching_ruby_version_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/f8zds1/need_help_switching_ruby_version_in_rails/
----
-Just doing it with git bash, I have been following [this guide](https://youtu.be/pPy0GQJLZUM) but run into a problem when I try to make a make a new project:
-
-&gt;An error occurred while installing byebug (11.1.1), and Bundler cannot continue.  
-Make sure that \`gem install byebug -v '11.1.1'\` succeeds before bundling.
-
-When I run that I get
-
-&gt;byebug requires Ruby version &gt;= 2.4.0.
-
-It looks like Rails is using Ruby 2.3.3. I have 2.6 installed but I don't know how to change it. I've looked into rvm to fix it but can't get it installed. When I run the first line from this guide, I get 
-
-&gt;03113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB  
-&gt;  
-&gt;gpg: invalid size of lockfile '/c/Users/hsand/.gnupg/pubring.gpg.lock'  
-&gt;  
-&gt;gpg: cannot read lockfile  
-&gt;  
-&gt;gpg: can't lock '/c/Users/hsand/.gnupg/pubring.gpg'  
-&gt;  
-&gt;gpg: key 105BD0E739499BDB: public key not found: General error  
-&gt;  
-&gt;gpg: error reading '\[stream\]': General error  
-&gt;  
-&gt;gpg: Total number processed: 0
-
-It seems like for everything I have to install, there are two other things I've had to install first. I don't doubt I've messed something up along the way but I would really appreciate some help!
-## [9][cant use .save in model? (using rufus-scheduler)](https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/)
-- url: https://www.reddit.com/r/rails/comments/f8q6nj/cant_use_save_in_model_using_rufusscheduler/
----
-hi All!
-
-Im using rufus scheduler and created model/scrape.rb
-
-in the model i added this method:
-
-`def self.track_product_price(product, tracker)`
-
-`puts "Tracker scheduled for product"`
-
-`puts product.inspect`
-
-`puts tracker.inspect`
-
-`@new =` [`Tracker.new`](https://Tracker.new)
-
-`@product = Product.find(`[`product.id`](https://product.id)`)`
-
-`puts @product.inspect`
-
-`x = tracker.qty = 100 #for testing &lt; setting here to 100 to test how to save it in the DB`
-
-[`x.save`](https://x.save) `#for testing`
-
-the problem im facing is that I cant use .save in the method to save the new tracked product price and qty in the database.
-
-The error im getting is
-
-`{ 73200 rufus-scheduler intercepted an error:`
-
-`73200 job:`
-
-`73200 Rufus::Scheduler::EveryJob "10s" {}`
-
-`73200 error:`
-
-`73200 73200`
-
-`73200 NoMethodError`
-
-`\`73200 undefined method \\save' for 100:Integer\`\`\`
-
-&amp;#x200B;
-
-How can i save the data in the model method?
-
-# ## edit 1
-
-I got a step further with this:
-
-Tracker.create(id:1000, qty:1000, price:1000, product\_id:[product.id](https://product.id/) )
-
-(i want to id of the new created tracker to be automatically set, for now set it to 1000 to test.....
-
-But the log is saying:
-
-(0.1ms) BEGIN
-
-↳ app/models/scrape.rb:89:in \\track\_product\_price'\`
-
-Product Load (0.2ms) SELECT "products".\* FROM "products" WHERE "products"."id" = $1 LIMIT $2 \[\["id", 29\], \["LIMIT", 1\]\]
-
-↳ app/models/scrape.rb:89:in \\track\_product\_price'\`
-
-(0.2ms) ROLLBACK
-
-Cant see what is causing the rollback
-
-# ## edit 2 : whoops forgot to set the user ID in the create!
-
-`Tracker.create!(id:1000, qty:1000, price:1000, product_id:` [`product.id`](https://product.id)`, user_id:1 )`
-
-# ## edit 3: sick!
-
-I got it working. But how to automatically increase the trackerID? Can i use something like "trackerid +1"
-
-# ## edit 4: need to figure out how to dynamically increase the tracker id.....
-
-`73380 PG::UniqueViolation: ERROR: duplicate key value violates unique constraint "trackers_pkey"`
-
-`DETAIL: Key (id)=(1) already exists.`
-
-Solved!     `Tracker.create!(id:tracker, qty:1000, price:1000, product_id:` [`product.id`](https://product.id)`, user_id:2 )`
-
-This did the trick... now to remove the hard coded user id....
-
-After that to dynamically save the price and qty.....
-## [10][AWS Elastic Beanstalk re-deploys can see the database, but the site is inaccessible to the web](https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/)
-- url: https://www.reddit.com/r/rails/comments/f8lnc5/aws_elastic_beanstalk_redeploys_can_see_the/
----
-Sorry if this is a little scattered, but I'm trying to upgrade my active Rails site from Ruby 2.3 to 2.6.
-
-The site is deployed through AWS Elastic Beanstalk, and it's functioned smoothly for about 2 years without any incidents. I recently got an e-mail from AWS saying that they're discontinuing the Ruby 2.3 platform on March 1st. So I need to deploy another version of the site in the same environment using the Ruby 2.6 platform, make sure it works, then do a blue/green deployment to switch URLs and discontinue the old one.
-
-For the last few weeks I've been trying to make another deployment using EB, but I keep running into the same issue. I can deploy the site, EB says the health is fine, and I can even SSH into the instance and verify through running the Rails console that it can see the database and run queries against it with ActiveRecord. However, I can never get the web site to load with the URL it gives me. It just sits there for a long time until it times out. If I specify it to use SSL, my browser will complain about the certificate, but once I click past that, it still just times out.
-
-Has anyone encountered something similar? Could it be that puma isn't starting up? I can't find anything suspicious or fishy in any logs on the instance. In all the searching I've done, I haven't found anyone with a similar problem. There's no obvious error message so it's hard to tell what went wrong where.
-
-To be honest, this has me really stressed out. The site has built up an audience of several hundred users daily, and we have people regularly signing up and contributing. This all comes after about a 3-month digression into Docker to see if I could deploy the site through ECS instead, but I've never been able to get that working either. Oddly enough, I encountered the same problem - inaccessible web server, but I could confirm that the rails console could see the database. The idea that the entire site and community could just die next week because I can't figure this out is pretty frustrating. Are there any sort of freelance consultants or people who are willing to help out Rails sites in their spare time?
-## [11][Upgrading to Rails 5, need help with strong params?](https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/)
-- url: https://www.reddit.com/r/rails/comments/f8fe35/upgrading_to_rails_5_need_help_with_strong_params/
----
-Hello, I'm new to this, but I'm studying and trying to upgrade an old rails app (was on rails 3 so there's attr\_accessible everywhere in every single model) to rails 5. I have all of my specs passing on Rails 5.1, and I am using the "protected\_attributes\_continued" gem.
-
-I know this gem isn't really maintained/endorsed by the Rails team, so I want to convert to "strong params". I am so confused at how to do this, I've already read a bunch of guides.
-
-Half of the models do not even have controllers where I could put the strong params. And the majority of them are heavily nested with belongs\_to, etc.
-
-\*\*\* I have experimented with just deleting every single attr\_accessible in my entire application, removing the protected\_attributes\_continued gem, and removing the whitelist line in my config file....
-
-My specs PASS when I do all of this, and I've tested the application and nothing really seems to be wrong, but I didn't move ANYTHING from attr\_accessible to the controllers.
-
-Is this okay? I'm just confused at how my application still seems to be working fine.
-## [12][Geared Pagination Gem Behind The Scenes](https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/)
-- url: https://www.reddit.com/r/rails/comments/f8psui/geared_pagination_gem_behind_the_scenes/
----
-There’s a better, more user-friendly-driven approach to writing  pagination for your application. The idea is simple: Load more records  every time the user is asking to see more.
-
-## Kickoff with GearedPagination::Controller
-
-It all starts with the set\_page\_and\_extract\_portion\_from method which initiates the flow. It receives a set of records, and you  can specify how many records per page you’d like to present to the user.
-
-[Read on Medium...](https://medium.com/squeezerhq/geared-pagination-in-rails-behind-the-scenes-61d9e227540e)

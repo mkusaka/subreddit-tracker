@@ -1,5 +1,180 @@
 # ruby
-## [1][started to learn ruby and run into a bit of a problem](https://www.reddit.com/r/ruby/comments/f9qr4i/started_to_learn_ruby_and_run_into_a_bit_of_a/)
+## [1][Introducing Hanami::API](https://www.reddit.com/r/ruby/comments/f9tmgv/introducing_hanamiapi/)
+- url: https://www.reddit.com/r/ruby/comments/f9tmgv/introducing_hanamiapi/
+---
+It's a minimal, extremely fast, lightweight Ruby framework for HTTP APIs.
+
+(The article contains benchmark results)
+
+[http://hanamirb.org/blog/2020/02/26/introducing-hanami-api.html](http://hanamirb.org/blog/2020/02/26/introducing-hanami-api.html)
+## [2][Freelancing in Rails](https://www.reddit.com/r/ruby/comments/fa7p6q/freelancing_in_rails/)
+- url: https://www.reddit.com/r/ruby/comments/fa7p6q/freelancing_in_rails/
+---
+hey.. how are you all?? I hope you all doing fine.. I want advice from experience people.. Anyone here doing freelancing work in ruby on rails?? can you tell me the struggles of finding a rails job in freelancing?? if someone learning rails and want a career of rails in freelancing, what advice would you like to give??
+## [3][Checking something in the db (SQLite3) + Sinatra](https://www.reddit.com/r/ruby/comments/fa29sf/checking_something_in_the_db_sqlite3_sinatra/)
+- url: https://www.reddit.com/r/ruby/comments/fa29sf/checking_something_in_the_db_sqlite3_sinatra/
+---
+Greetings.
+
+I have a route a like this :
+
+    post '/login' do 
+     # Doing something here 
+
+And a SQLite3 database.
+
+I run this query:
+
+`db.execute("SELECT password FROM users where password=?", password)`
+
+And it seems fine, but when I want to check if it's what I entered in the form or not, Sinatra gives me an error and says as the query is a `nilClass`, it can't do anything on the damn thing.
+
+I just want to make sure the password is in the DB or not.
+
+P.S : It's a learning project, so I don't want to use any ORM.
+## [4][I've made a simple state machine in a class](https://www.reddit.com/r/ruby/comments/f9w7n5/ive_made_a_simple_state_machine_in_a_class/)
+- url: https://www.reddit.com/r/ruby/comments/f9w7n5/ive_made_a_simple_state_machine_in_a_class/
+---
+&amp;#x200B;
+
+https://i.redd.it/nnpm6kj1taj41.gif
+
+here is the code in action
+
+here is the code
+
+    class Player
+        attr_gtk
+        attr_accessor :grid, :inputs, :state, :outputs
+    
+        def tick 
+            defaults
+            render
+            process_inputs
+            calc_extended_stats
+            move_player
+        end
+    
+        def defaults
+            state.pos_x ||= state.wlk_spd0
+            state.pos_y ||= 400
+            state.hero_sheet ||= "kalvgv idle.png"
+            state.anim_spd ||= 20
+            state.pose ||= 1
+            state.wlk_spd ||= 10
+            state.body ||= 3
+            state.mind ||= 4
+            state.step_x ||= 29
+            state.step_y ||= 13
+            state.is_walking ||= false
+            state.sides ||= 0
+            state.verts ||= 0
+            state.name ||= "Kalvgv"
+        end
+    
+        def character ordinal_x, ordinal_y, x, y, file, sizx, sizy, w1, h1
+            [
+              {
+                x: x,
+                y: y,
+                w: w1,
+                h: h1,
+                path: "sprites/#{file}",
+                tile_x: ordinal_x * sizx,
+                tile_y: ordinal_y * sizy,
+                tile_w: sizx,
+                tile_h: sizy
+              },
+              #[x, y, 64, 32, 'sprites/watermark.png'],
+            ]
+          end
+    
+          def calc_extended_stats
+            state.health ||= 1
+            state.health = (state.body * 1.5) + state.mind + 2.5
+            state.damage = ((state.body + state.mind)/2).floor
+            state.wlk_spd = 16 - (state.body + state.mind)
+            state.step_x = 29 + state.body
+            state.step_y = 13 + state.body
+          end
+    
+          def render
+            outputs.sprites &lt;&lt; character(state.tick_count.div(state.anim_spd).mod(7),state.pose,state.pos_x, state.pos_y,state.hero_sheet, 18, 24,36,48)
+            outputs.sprites &lt;&lt; [1080,0,200,720,"sprites/character_sheet.png"]
+            outputs.labels &lt;&lt; [1160,720-32,state.name,10,23,150,255]
+            outputs.labels &lt;&lt; [1080+20,720-96,"Body: "+state.body.to_s,10,23,120,255]
+            outputs.labels &lt;&lt; [1080+20,720-96-32,"Mind: "+state.mind.to_s,10,23,120,255]
+            outputs.labels &lt;&lt; [1080+20,720-96-32-64-32,"HP: "+state.health.to_s,10,23,120,255]
+            outputs.labels &lt;&lt; [1080+20,720-96-32-64-64,"SPD: "+state.anim_spd.to_s,10,23,120,255]
+            outputs.labels &lt;&lt; [1080+20,720-96-32-64-96,"Step: "+((state.step_x + state.step_y)* 0.5).to_s,10,23,120,255]
+            outputs.labels &lt;&lt; [1080+20,720-96-96-96-32,"Damage: "+state.damage.to_s,10,23,120,255]
+          end
+    
+          def move_player
+            if state.is_walking == true &amp;&amp; state.tick_count % (state.anim_spd) == 1
+                state.pos_x += state.sides * state.step_x
+                state.pos_y += state.verts * state.step_y
+            end
+          end
+    
+          def process_inputs
+            if inputs.keyboard.key_up.up || inputs.keyboard.key_up.down || inputs.keyboard.key_up.right || inputs.keyboard.key_up.left
+                state.hero_sheet = "kalvgv idle.png"
+                state.anim_spd = 60 - (state.body + 10 + state.mind + 10) - (state.mind * 2)
+                state.is_walking = false
+            end
+    
+            if state.is_walking == false &amp;&amp; state.verts != 0
+                state.sides = 0
+                state.verts = 0
+            end
+    
+            if inputs.keyboard.key_down.up || inputs.keyboard.key_down.down || inputs.keyboard.key_down.right || inputs.keyboard.key_down.left
+                state.hero_sheet = "kalvgv_walk_sheet.png"
+                state.anim_spd = state.wlk_spd
+                state.is_walking = true
+            end
+            if inputs.keyboard.key_held.up
+                #state.pos_y += state.step_y
+                #state.pos_x += state.step_x
+                state.sides = 1
+                state.verts = 1
+                puts state.pos_y
+                puts state.pos_x
+                state.pose = 3
+            end
+            if inputs.keyboard.key_held.down
+                #state.pos_y -= state.step_y
+                #state.pos_x -= state.step_x
+                state.sides = -1
+                state.verts = -1
+                puts state.pos_y
+                puts state.pos_x
+                state.pose = 0
+            end
+            if inputs.keyboard.key_held.left
+               #state.pos_x -= state.step_x
+                #state.pos_y += state.step_y
+                state.sides = -1
+                state.verts = 1
+                puts state.pos_x
+                puts state.pos_y
+                state.pose = 2
+            end
+            if inputs.keyboard.key_held.right 
+                #state.pos_x += state.step_x
+                #state.pos_y -= state.step_y
+                state.sides = 1
+                state.verts = -1
+                puts state.pos_x
+                puts state.pos_y
+                state.pose = 1
+            end
+          end
+        end
+
+basically the character, Player is created, and the defaults are set, render is made, then we calculate the stats from the two investable stats, body and mind, then we move the player. I know there should be moving the player before the stats, but it's just a temporary system. eventually I'll add leveling for the player and that will trigger stat calculation
+## [5][started to learn ruby and run into a bit of a problem](https://www.reddit.com/r/ruby/comments/f9qr4i/started_to_learn_ruby_and_run_into_a_bit_of_a/)
 - url: https://www.reddit.com/r/ruby/comments/f9qr4i/started_to_learn_ruby_and_run_into_a_bit_of_a/
 ---
 hey guys,
@@ -49,7 +224,7 @@ No error shows up but the last part with the variable num\_apples.gsub doesnt ch
 &amp;#x200B;
 
 thank you for helping :)
-## [2][Accessing data between several Rails apps](https://www.reddit.com/r/ruby/comments/f9qxen/accessing_data_between_several_rails_apps/)
+## [6][Accessing data between several Rails apps](https://www.reddit.com/r/ruby/comments/f9qxen/accessing_data_between_several_rails_apps/)
 - url: https://www.reddit.com/r/ruby/comments/f9qxen/accessing_data_between_several_rails_apps/
 ---
 The company I work for has the domain split between a few monoliths, each is its own Rails app with its own daabase. All of the apps depend on one monolith that handles users, roles and other things, let's call it UsersApp.
@@ -61,11 +236,7 @@ Just to help get a discussion going here are the ways I know of:
 1. Using ActiveResource in BillingApp to access everything, or similar technique to just pull everything through an API that UsersApp exposes.
 2. Pulling and syncing the data from UsersApp into BillingApp (basically duplicating the database tables in BillingApp). Let's say the data isn't time sensitive, the sync can happen once a day so "real timeness" isn't an issue here.
 3. Packing UsersApp as a gem, and having BillingApp access the models/data directly.
-## [3][Ruby one of the highest-paid programming languages globally in 2020](https://www.reddit.com/r/ruby/comments/f9aumo/ruby_one_of_the_highestpaid_programming_languages/)
-- url: https://learnworthy.net/highest-paid-programming-languages-in-2020/
----
-
-## [4][.destroy Getting Killed](https://www.reddit.com/r/ruby/comments/f9ll24/destroy_getting_killed/)
+## [7][.destroy Getting Killed](https://www.reddit.com/r/ruby/comments/f9ll24/destroy_getting_killed/)
 - url: https://www.reddit.com/r/ruby/comments/f9ll24/destroy_getting_killed/
 ---
 I'm running into an issue where I have a model with many children (has\_many) relationships. 
@@ -75,7 +246,28 @@ When I call .destroy on this model, the process grows so large that it's getting
 I've tried overloading .destroy on that model and some of the associated model to use a `.each(&amp;:destroy)` where possible but that did not solve the issue.
 
 Any suggestions on destroying a model where the associated models have 100k-1M rows?
-## [5][Ruby Conferences &amp; Camps in 2020 - What's Upcoming? Anything Missing? Updates Welcome](https://www.reddit.com/r/ruby/comments/f9fohh/ruby_conferences_camps_in_2020_whats_upcoming/)
+## [8][Ruby one of the highest-paid programming languages globally in 2020](https://www.reddit.com/r/ruby/comments/f9aumo/ruby_one_of_the_highestpaid_programming_languages/)
+- url: https://learnworthy.net/highest-paid-programming-languages-in-2020/
+---
+
+## [9][Logging Accessible via Active Record](https://www.reddit.com/r/ruby/comments/f9lizu/logging_accessible_via_active_record/)
+- url: https://www.reddit.com/r/ruby/comments/f9lizu/logging_accessible_via_active_record/
+---
+Hey all! 
+
+I'm looking to have logs written in a way that reads are accessible via Active Record but I'm not sure what the options are for this.
+
+For example:  
+`User.find(123).logs.first.lines.where(type: 'Info').where('message like ?', 'My Error Message')`
+
+In short, I'd like to write logs to a standard SQL database, without the overhead of writing logs to a SQL database. (the Lines model includes +1M records)
+
+I'm assuming this is possible but my Googling is coming up short. 
+
+Can any recommend a technology, method of doing this or direction that I should be looking?
+
+Thanks in advance!
+## [10][Ruby Conferences &amp; Camps in 2020 - What's Upcoming? Anything Missing? Updates Welcome](https://www.reddit.com/r/ruby/comments/f9fohh/ruby_conferences_camps_in_2020_whats_upcoming/)
 - url: https://www.reddit.com/r/ruby/comments/f9fohh/ruby_conferences_camps_in_2020_whats_upcoming/
 ---
 Hello,
@@ -112,44 +304,3 @@ Anything missing? Updates welcome, see [`data/conferences2020.yml`](https://gith
 in the `planetruby/calendar` repo.
 
 What's your favorite ruby conference or camp? Let us know. Cheers. Prost.
-## [6][Logging Accessible via Active Record](https://www.reddit.com/r/ruby/comments/f9lizu/logging_accessible_via_active_record/)
-- url: https://www.reddit.com/r/ruby/comments/f9lizu/logging_accessible_via_active_record/
----
-Hey all! 
-
-I'm looking to have logs written in a way that reads are accessible via Active Record but I'm not sure what the options are for this.
-
-For example:  
-`User.find(123).logs.first.lines.where(type: 'Info').where('message like ?', 'My Error Message')`
-
-In short, I'd like to write logs to a standard SQL database, without the overhead of writing logs to a SQL database. (the Lines model includes +1M records)
-
-I'm assuming this is possible but my Googling is coming up short. 
-
-Can any recommend a technology, method of doing this or direction that I should be looking?
-
-Thanks in advance!
-## [7][Rails 6 fixes a bug where after_commit callbacks are called on failed update in a transaction block | The Official BigBinary Blog | BigBinary](https://www.reddit.com/r/ruby/comments/f997tk/rails_6_fixes_a_bug_where_after_commit_callbacks/)
-- url: https://blog.bigbinary.com/2020/02/25/rails-6-fixes-a-bug-where-after_commit-callbacks-are-called-on-failed-update-in-a-transaction-block.html
----
-
-## [8][Deep dive into rackup](https://www.reddit.com/r/ruby/comments/f978se/deep_dive_into_rackup/)
-- url: https://deepdive.sh/deep-dive-into-rackup
----
-
-## [9][Ruby on Rails Mistakes could kill Your Production Servers](https://www.reddit.com/r/ruby/comments/f96x3n/ruby_on_rails_mistakes_could_kill_your_production/)
-- url: https://pawelurbanek.com/rails-mistakes-downtime
----
-
-## [10][Hate for Medium](https://www.reddit.com/r/ruby/comments/f927ed/hate_for_medium/)
-- url: https://www.reddit.com/r/ruby/comments/f927ed/hate_for_medium/
----
-Several times, I've considered biting the bullet, putting my hand in my pocket, ponying up the $5, or whatever it is, for a Medium subscription. Some of the content is pretty good. I've enjoyed content by /u/mehdifarsi, /u/eric_programmer, /u/vfreefly and others in the past.
-
-But, today, the top article in my *Medium Daily Digest* points me to \***medium link alert**\* - [Tracking User Streaks in Ruby](https://levelup.gitconnected.com/tracking-user-streaks-in-ruby-a49e90ce46a1). If you don't want to follow that link, fair enough, but in it, the author presents a 14 line poorly formatted method containing errors (both syntactic and semantic) that purports to count user activity streaks.
-
-Now, I don't want to hate on the author - if this post was on a personal blog or a free aggregation site, I'd be happy to comment with some positive constructive criticism - but for a service that pesters me regularly for $5 per month to deliver this kind of "Ideas and perspectives you won’t find anywhere else" from "the world’s most insightful writers, thinkers, and storytellers" and call it "the smartest takes on topics that matter" is an outright scam!
-
-If this outfit is taking $5/month off what must be an awful lot of people, surely they can afford to pay some subject matter experts to do the most cursory of proof reading? Can't they?
-
-Anyway, rant over. Happy Birthday Ruby 🎂 🎉

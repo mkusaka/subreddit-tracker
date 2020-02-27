@@ -108,143 +108,84 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][How I used React-Loadable to more than half my React app's load time](https://www.reddit.com/r/reactjs/comments/f9s090/how_i_used_reactloadable_to_more_than_half_my/)
+## [3][React Query v1.0.0 released](https://www.reddit.com/r/reactjs/comments/f9zani/react_query_v100_released/)
+- url: https://github.com/tannerlinsley/react-query
+---
+
+## [4][How I used React-Loadable to more than half my React app's load time](https://www.reddit.com/r/reactjs/comments/f9s090/how_i_used_reactloadable_to_more_than_half_my/)
 - url: https://dev.to/rozenmd/how-i-used-react-loadable-to-more-than-half-my-react-app-s-load-time-299c
 ---
 
-## [4][Up to date answer about when to use React context or Redux (Redux Toolkit)](https://www.reddit.com/r/reactjs/comments/f9fro5/up_to_date_answer_about_when_to_use_react_context/)
-- url: https://gist.github.com/slikts/57ff1acdb6f5b2ea075b701d1daf896d
+## [5][Preventing unnecessary rerenders](https://www.reddit.com/r/reactjs/comments/fac1fb/preventing_unnecessary_rerenders/)
+- url: https://www.reddit.com/r/reactjs/comments/fac1fb/preventing_unnecessary_rerenders/
 ---
+1) state changes inside the component
 
-## [5][Next.js Tutorial - Part 2 | Fetch Data using getInitialProps](https://www.reddit.com/r/reactjs/comments/f9qn0m/nextjs_tutorial_part_2_fetch_data_using/)
-- url: https://www.youtube.com/watch?v=Os3JZc2CtwY&amp;feature=share
----
+2) props changes inside the component (when the state changes in the parent)
 
-## [6][Current state of server-side react world as of Feb 2020](https://www.reddit.com/r/reactjs/comments/f9swe6/current_state_of_serverside_react_world_as_of_feb/)
-- url: https://www.reddit.com/r/reactjs/comments/f9swe6/current_state_of_serverside_react_world_as_of_feb/
----
-It's been at least two years since I dabbled in server side react.
-
-I'm hoping maybe folks could fill me in if there have been any major changes in implementations.
-
-For context, I'm starting an ecommerce website that will hit a graphql/node.js api. I was going to just do create-react-app but then it hit me I probably need ssr to get the SEO impact I want?
-
-If you were to put together an SSR ecommerce react app-- how would you approach it? Next? Gatsby? From scratch?
-
-Note I'm very comfortable with react/node, so I'd be find building it from scratch. That said, I don't mind giving up some control if it makes life easier-- so I'm open to leveraging tools too (next, gatsby, etc).
-
-Sorry if this is a little vague but I'd like to leave it more open ended in hopes of getting a variety of different feeedback on SSR in general.
-## [7][React Router v6 in Three Minutes](https://www.reddit.com/r/reactjs/comments/f9j79g/react_router_v6_in_three_minutes/)
-- url: https://medium.com/better-programming/react-router-v6-in-two-minutes-a7a2963e2340
----
-
-## [8][An ultra-fast and tiny (5.1 kB) browser based compiler for JSX / React](https://www.reddit.com/r/reactjs/comments/f9fqqr/an_ultrafast_and_tiny_51_kb_browser_based/)
-- url: https://www.reddit.com/r/reactjs/comments/f9fqqr/an_ultrafast_and_tiny_51_kb_browser_based/
----
-**Full Documentation** with links to **source** and **many demos**:
-
-[https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md](https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md) 
+3) render being called on the component's parent
 
 &amp;#x200B;
 
-**Hello World Demo:**
-
-[https://www.dataformsjs.com/examples/hello-world/en/react.htm](https://www.dataformsjs.com/examples/hello-world/en/react.htm) 
-
-&amp;#x200B;
-
-**Why?**
-
-It's a fast way to include React on any web page and build apps with using a build process or large dependencies. Simply use React with JSX in a page or site and include needed CDN or JavaScript links.
-
-&amp;#x200B;
-
-**How ?**
-
-It compiles JSX directly to JS for modern browsers and downloads Polyfills and Babel Standalone for IE and other old browsers. 
-
-&amp;#x200B;
-
-**Doesn’t Babel Standalone do this already?** 
-
-Yes, however when Babel Standalone is used in a Browser it is intended for prototyping. This script is intended for production use. Originally I used Babel Standalone for all React demos on the site however it takes a lot of memory and causes a delay of many seconds when viewing pages from a mobile device. Once I created this script memory was reduced up to 5x and content renders almost instantly now.
-## [9][Seeking Some Help Please, I Just Don't Get How To Access State](https://www.reddit.com/r/reactjs/comments/f9rd85/seeking_some_help_please_i_just_dont_get_how_to/)
-- url: https://www.reddit.com/r/reactjs/comments/f9rd85/seeking_some_help_please_i_just_dont_get_how_to/
+All three can cause unnecessary rerenders, what are the fixes for all three cases?
+## [6][Next.js alternatives](https://www.reddit.com/r/reactjs/comments/faby5f/nextjs_alternatives/)
+- url: https://www.reddit.com/r/reactjs/comments/faby5f/nextjs_alternatives/
 ---
-Hi All,
+Anybody has experience with alternatives like [https://fusionjs.com/](https://fusionjs.com/) or [http://www.electrode.io/](http://www.electrode.io/)?
 
-I'm hoping someone out there may be able to help me with a plain English understanding of how to access state when using React (with Redux).
-
-Despite doing 4+ courses and reading numerous tutorials I am struggling to understand "how to access state" in my applications.
-
-My understanding (which may not be 100% correct?) is that Redux acts as a global store for state in my application.
-
-Where I then get fuzzy is that if a user signs up for my application are these details stored in the state and readily accessible from other components/pages I create?
-
-For example, I did Brad Traverseys course on React/Redux (my code from the project is here [https://github.com/pvptowers/DevConnector-MERN](https://github.com/pvptowers/DevConnector-MERN)) 
-
-So if I then wanted to create another component that say for example displayed the users email address can I just access the state? Or do I need another API call to the backend to get this info again? If its the later then what role is state playing here?
-
-Sorry if these questions are dumb. I've been learning to code for 4 months (2 months on React) and since completing my courses have literally spent 2 weeks playing around with React and Redux trying to figure this out on my own and I'm just stumped.
-
-Perhaps you also know another resource or tutorial that might make it click for me?
-
-Thanks in advance
-
-Paul
-## [10][Contribution to very cool "best practices open source app"](https://www.reddit.com/r/reactjs/comments/f9qq12/contribution_to_very_cool_best_practices_open/)
-- url: https://www.reddit.com/r/reactjs/comments/f9qq12/contribution_to_very_cool_best_practices_open/
----
-Hi guys, I have one microservices open-source application for showing best practices, it is done 70-80% from the backend and mobile, I was looking some react contributors, feel free to contribute 
-
-[https://github.com/Jurabek/Restaurant-App/issues/21](https://github.com/Jurabek/Restaurant-App/issues/21)
-## [11][Open source parallel processing for Gatsby](https://www.reddit.com/r/reactjs/comments/f9bxju/open_source_parallel_processing_for_gatsby/)
-- url: https://dev.to/biilmann/open-source-parallel-processing-for-gatsby-270d
+They look very good from the first view but I wonder if somebody is using them.
+## [7][FINALLY integrated build/lint/test with Rome (from FB)](https://www.reddit.com/r/reactjs/comments/fa7cbm/finally_integrated_buildlinttest_with_rome_from_fb/)
+- url: https://github.com/facebookexperimental/rome/blob/master/README.md
 ---
 
-## [12][Serving gzipped file with NextJs 9.0.1](https://www.reddit.com/r/reactjs/comments/f9qfyh/serving_gzipped_file_with_nextjs_901/)
-- url: https://www.reddit.com/r/reactjs/comments/f9qfyh/serving_gzipped_file_with_nextjs_901/
+## [8][Convert React.js website into an android app](https://www.reddit.com/r/reactjs/comments/fabin8/convert_reactjs_website_into_an_android_app/)
+- url: https://www.reddit.com/r/reactjs/comments/fabin8/convert_reactjs_website_into_an_android_app/
 ---
-Im working on enabling gzip on a project that i'm involved with now, which uses NextJs version 9.0.1. This version doesn't have compression enabled on it, so i'm setting the compression on my own using compression-webpack-plugin on NextJs. 
+I've created a website in React.js, and for my own reasons, I need this website to be available as an android app. I expect this to be done using a very simple approach - simply a frame or webview component inside a native app which runs my website full screen.
 
-`const withSass = require("@zeit/next-sass");`
+I understand the many downsides that come with such a simple approach, and that my app would be better served developing again natively for android, but I'm not looking for a long term robust solution. I just need my current website as an app!
 
-`const withCss = require("@zeit/next-css");`
+Is there a free service that can do this for me? Or is there a simple way to do this quickly in React Native or something similar?
 
-`const CompressionPlugin = require('compression-webpack-plugin');`
+Thank you!
+## [9][React 16.13 in Changelog](https://www.reddit.com/r/reactjs/comments/f9zl4h/react_1613_in_changelog/)
+- url: https://github.com/facebook/react/blob/master/CHANGELOG.md
+---
 
-&amp;#x200B;
+## [10][Is there any free good resources to learn Typescript with React?](https://www.reddit.com/r/reactjs/comments/fa9xr3/is_there_any_free_good_resources_to_learn/)
+- url: https://www.reddit.com/r/reactjs/comments/fa9xr3/is_there_any_free_good_resources_to_learn/
+---
+Actually i am using JS, what are the benefits of Typescript instead of js?
+## [11][How to trim value of object inside an array.](https://www.reddit.com/r/reactjs/comments/fa9nal/how_to_trim_value_of_object_inside_an_array/)
+- url: https://www.reddit.com/r/reactjs/comments/fa9nal/how_to_trim_value_of_object_inside_an_array/
+---
+Hey, below is my array and I want to slice the every instance of createdAt value. I tried but couldn't seem to do this. Any help will be useful.
 
-`module.exports = withCss(withSass({`
+Sorry if this isn't the correct sub.
 
-  `webpack(config, options) {`
+    const array = [
+        {
+            "deleted": false,
+            "_id": "5e53bbeb68667320462295d8",
+            "price": 300,
+            "points": 0,
+            "_userId": "5e5291a405e4b513f6e670b5",
+            "createdAt": "2020-02-24T12:04:59.309Z",
+            "updatedAt": "2020-02-24T12:04:59.309Z",
+            "__v": 0
+        },
+        {
+            "deleted": false,
+            "_id": "5e53bbf368667320462295d9",
+            "price": 300,
+            "points": 0,
+            "_userId": "5e5291a405e4b513f6e670b5",
+            "createdAt": "2020-02-24T12:05:07.405Z",
+            "updatedAt": "2020-02-24T12:05:07.405Z",
+            "__v": 0
+        }
+    ]
+## [12][I built a website to find open-source alternatives to commercial SaaS. Built using Gatsby, TinaCMS, and Chakra-UI.](https://www.reddit.com/r/reactjs/comments/f9wlte/i_built_a_website_to_find_opensource_alternatives/)
+- url: https://opensource.builders/
+---
 
-`// Enable gzip compression using webpack compression plugin`
-
-`config.plugins.push(`
-
-`new CompressionPlugin({`
-
-`algorithm: "gzip",`
-
-`test: /\.js$|\.css$|\.html$/,`
-
-`threshold: 10240,`
-
-`minRatio: 0.8`
-
-`})`
-
-`);`
-
-`return config;`
-
-  `}`
-
-`}));`
-
-&amp;#x200B;
-
-The compression works fine, and it produces the gzip file when i build the project using npm run build. But problem is when i try to run it, it still serve the uncompressed files (the normal js, css..).
-
-I see ppl said about using Express.js to enable serving the gzip files, but say if i don't want to use Express, is it possible to change the next.config.js to serve gzipped files instead? Anywhere within the next.config.js that i need to change or add to make this happen?

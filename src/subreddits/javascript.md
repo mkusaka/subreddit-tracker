@@ -87,43 +87,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://www.reddit.com/r/javascript/comments/fa83qs/rome_an_experimental_javascript_toolchain_from/)
+## [3][I made open source cross platform snippets manager for developers](https://www.reddit.com/r/javascript/comments/fag4in/i_made_open_source_cross_platform_snippets/)
+- url: https://github.com/antonreshetov/massCode
+---
+
+## [4][Lazyload images the browser way](https://www.reddit.com/r/javascript/comments/fauk6e/lazyload_images_the_browser_way/)
+- url: https://itsopensource.com/lazyload-images-the-browser-way/
+---
+
+## [5][JavaScript handles sparse arrays a bit oddly](https://www.reddit.com/r/javascript/comments/falemg/javascript_handles_sparse_arrays_a_bit_oddly/)
+- url: https://stackoverflow.com/questions/60346825/why-does-array-prototype-map-ignore-empty-slots-in-a-sparse-array-whereas-array
+---
+
+## [6][Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://www.reddit.com/r/javascript/comments/fa83qs/rome_an_experimental_javascript_toolchain_from/)
 - url: https://github.com/facebookexperimental/rome
 ---
 
-## [4][I made another simple clock to visualize the 1440 precious minutes each of us has in a day](https://www.reddit.com/r/javascript/comments/f9xtf8/i_made_another_simple_clock_to_visualize_the_1440/)
-- url: https://robatron.github.io/1440-clock/bars
+## [7][Online javascript bundle tool. Bundle and obfuscate your javascript files. Supports es6 modules.](https://www.reddit.com/r/javascript/comments/fatv3e/online_javascript_bundle_tool_bundle_and/)
+- url: https://jsbundler.now.sh/
 ---
 
-## [5][You'd be surprised how much you can do without JS :D](https://www.reddit.com/r/javascript/comments/fa7xgq/youd_be_surprised_how_much_you_can_do_without_js_d/)
+## [8][Call a JavaScript function with an explicit this • Delicious Insights](https://www.reddit.com/r/javascript/comments/fael4s/call_a_javascript_function_with_an_explicit_this/)
+- url: https://delicious-insights.com/en/posts/call-and-apply-in-javascript/?utm_source=porteneuve&amp;utm_campaign=call-apply&amp;utm_medium=reddit
+---
+
+## [9][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/javascript/comments/fasasz/top_5_frontend_development_outsourcing_challenges/)
+- url: http://frontend-challenges.xyz
+---
+
+## [10][How to generate Changelog using Conventional Commits](https://www.reddit.com/r/javascript/comments/faccan/how_to_generate_changelog_using_conventional/)
+- url: https://www.hackdoor.io/articles/PYJxqANr/how-to-generate-changelog-using-conventional-commits
+---
+
+## [11][[AskJS] Why is there a new Ecmascript specification every year?](https://www.reddit.com/r/javascript/comments/fatl0c/askjs_why_is_there_a_new_ecmascript_specification/)
+- url: https://www.reddit.com/r/javascript/comments/fatl0c/askjs_why_is_there_a_new_ecmascript_specification/
+---
+Who's supposed to keep up with this madness?
+## [12][You'd be surprised how much you can do without JS :D](https://www.reddit.com/r/javascript/comments/fa7xgq/youd_be_surprised_how_much_you_can_do_without_js_d/)
 - url: https://github.com/you-dont-need/You-Dont-Need-JavaScript
----
-
-## [6][Microsoft Paint/Paintbrush in Javascript](https://www.reddit.com/r/javascript/comments/f9rxhj/microsoft_paintpaintbrush_in_javascript/)
-- url: https://jspaint.app/
----
-
-## [7][How Autotracking Works](https://www.reddit.com/r/javascript/comments/fa3c5s/how_autotracking_works/)
-- url: https://www.pzuraq.com/how-autotracking-works/
----
-
-## [8][A parcel v2 transformer plugin for svelte v3](https://www.reddit.com/r/javascript/comments/fa91qv/a_parcel_v2_transformer_plugin_for_svelte_v3/)
-- url: https://github.com/22mahmoud/parcel-transformer-svelte3
----
-
-## [9][A Solid RealWorld Demo Comparison](https://www.reddit.com/r/javascript/comments/fa8wx2/a_solid_realworld_demo_comparison/)
-- url: https://medium.com/@ryansolid/a-solid-realworld-demo-comparison-8c3363448fd8?source=friends_link&amp;sk=2f2c00e315dd126d7e28836aec532e91
----
-
-## [10][An ultra-fast and tiny (5.2 kB) browser-based JavaScript compiler for converting JSX to JS](https://www.reddit.com/r/javascript/comments/fa1cwz/an_ultrafast_and_tiny_52_kb_browserbased/)
-- url: https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md
----
-
-## [11][Speeding up scraping with multiple threads - JavaScript Web Scraping Guy](https://www.reddit.com/r/javascript/comments/fa0538/speeding_up_scraping_with_multiple_threads/)
-- url: https://javascriptwebscrapingguy.com/jordan-is-speed-speeding-up-scraping-with-multiple-threads/
----
-
-## [12][simpleParallax, Simple and tiny JavaScript library which adds parallax animations on any images](https://www.reddit.com/r/javascript/comments/f9lkoi/simpleparallax_simple_and_tiny_javascript_library/)
-- url: https://simpleparallax.com
 ---
 

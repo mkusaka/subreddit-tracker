@@ -29,160 +29,116 @@ The Rust-related IRC channels on irc.mozilla.org (click the links to open a web-
 Also check out [last week's thread](https://reddit.com/r/rust/comments/f5413m/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (9/2020)?](https://www.reddit.com/r/rust/comments/f8ng5w/whats_everyone_working_on_this_week_92020/)
-- url: https://www.reddit.com/r/rust/comments/f8ng5w/whats_everyone_working_on_this_week_92020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-9-2020/38638?u=llogiq)!
-## [3][Audit of the RustCrypto `aes-gcm` and `chacha20poly1305` crates by NCC group](https://www.reddit.com/r/rust/comments/fa8a96/audit_of_the_rustcrypto_aesgcm_and/)
-- url: https://www.reddit.com/r/rust/comments/fa8a96/audit_of_the_rustcrypto_aesgcm_and/
----
-I'm excited to announce that two of the symmetric encryption crates from the [RustCrypto/AEADs](https://github.com/RustCrypto/AEADs) project just received their first security audit 🎉
-
-(NOTE: "RustCrypto" in this context means the Pascal Case GitHub organization, not the unmaintained kebab case `rust-crypto` crate)
-
-In December 2019, [MobileCoin](https://www.mobilecoin.com/) engaged [NCC Group](https://www.nccgroup.trust/) to conduct a review of the following crates which provide pure Rust implementations of these authenticated encryption algorithms, along with their cryptographic dependencies:
-
-- [`aes-gcm`](https://github.com/RustCrypto/AEADs/tree/master/aes-gcm): AEAD cipher implementation
-  - [`aes`](https://crates.io/crates/aes): raw AES block cipher with [`aesni`](https://crates.io/crates/aesni) and [`aes-soft`](https://crates.io/crates/aes-soft) backends
-  - [`polyval`](https://crates.io/crates/polyval): used to implement GHASH in AES-GCM
-- [`chacha20poly1305`](https://github.com/RustCrypto/AEADs/tree/master/chacha20poly1305): AEAD cipher implementation
-  - [`chacha20`](https://crates.io/crates/chacha20): raw ChaCha20 stream cipher
-  - [`poly1305`](https://crates.io/crates/poly1305): authenticator providing message integrity
-
-The scope of the audit was assessing cryptographic security including constant-time operation of these crates and their cryptographic dependencies, including implementations that leverage x86-64 CPU intrinsics as well as portable implementations based on integer arithmetic. Two consultants provided five person-days of efforts.
-
-Result: there were only minor findings (mostly related to performance).
-
-You can read the full report at:
-
-https://research.nccgroup.com/2020/02/26/public-report-rustcrypto-aes-gcm-and-chacha20poly1305-implementation-review/
-
-See also:
-
-- [`aes-gcm` crate on crates.io](https://crates.io/crates/aes-gcm) | [docs](https://docs.rs/aes-gcm)
-- [`chacha20poly1305` crate on crates.io](https://crates.io/crates/chacha20poly1305) | [docs](https://docs.rs/chacha20poly1305)
-## [4][Example of calling a Rust library from Clojure, all combined into one executable using GraalVM](https://www.reddit.com/r/rust/comments/faaqyc/example_of_calling_a_rust_library_from_clojure/)
-- url: https://www.reddit.com/r/rust/comments/faaqyc/example_of_calling_a_rust_library_from_clojure/
----
-Hi! Currently learning Rust. As a fun exercise, I made an example of a Clojure program that calls a Rust library via Java JNI, which is then compiled to an executable with GraalVM.
-
-[https://github.com/borkdude/clojure-rust-graalvm](https://github.com/borkdude/clojure-rust-graalvm-native)
-## [5][Bentley's coding challenge: k most frequent words](https://www.reddit.com/r/rust/comments/fa5sbr/bentleys_coding_challenge_k_most_frequent_words/)
-- url: https://codegolf.stackexchange.com/questions/188133/bentleys-coding-challenge-k-most-frequent-words
----
-
-## [6][Better Plotting with Plotly in Rust Notebooks](https://www.reddit.com/r/rust/comments/faayaf/better_plotting_with_plotly_in_rust_notebooks/)
-- url: https://shahinrostami.com/posts/programming/rust-notebooks/better-plotting-with-plotly/
----
-
-## [7][Crosspost: Rust on RG300 consoles (and similar MIPS devices)](https://www.reddit.com/r/rust/comments/fabgxm/crosspost_rust_on_rg300_consoles_and_similar_mips/)
-- url: https://www.reddit.com/r/rust_gamedev/comments/fabgof/wrote_a_rust_program_that_demonstrates_graphics/
----
-
-## [8][This Week in Rust 327](https://www.reddit.com/r/rust/comments/fabtwg/this_week_in_rust_327/)
+## [2][This Week in Rust 327](https://www.reddit.com/r/rust/comments/fabtwg/this_week_in_rust_327/)
 - url: https://this-week-in-rust.org/blog/2020/02/25/this-week-in-rust-327/
 ---
 
-## [9][crates.io incident report for 2020-02-20 | Inside Rust Blog](https://www.reddit.com/r/rust/comments/f9tr55/cratesio_incident_report_for_20200220_inside_rust/)
-- url: https://blog.rust-lang.org/inside-rust/2020/02/26/crates-io-incident-report.html
+## [3][Announcing arcs 0.3.0 - now with more algorithms and better docs](https://www.reddit.com/r/rust/comments/fatgr1/announcing_arcs_030_now_with_more_algorithms_and/)
+- url: https://docs.rs/arcs/0.3.0/arcs/
 ---
 
-## [10][Can we write async methods? If we can,How?](https://www.reddit.com/r/rust/comments/fa9q7q/can_we_write_async_methods_if_we_canhow/)
-- url: https://www.reddit.com/r/rust/comments/fa9q7q/can_we_write_async_methods_if_we_canhow/
+## [4][Announcing Rust 1.41.1 | Rust Blog](https://www.reddit.com/r/rust/comments/fadbx2/announcing_rust_1411_rust_blog/)
+- url: https://blog.rust-lang.org/2020/02/27/Rust-1.41.1.html
 ---
-I tried searching but couldn't find any place where I can get detailed info on how to write async methods.
-## [11][rust-lv2: A safe, fast, and ergonomic framework to create LV2 plugins, written in Rust](https://www.reddit.com/r/rust/comments/f9wzbx/rustlv2_a_safe_fast_and_ergonomic_framework_to/)
-- url: https://www.reddit.com/r/rust/comments/f9wzbx/rustlv2_a_safe_fast_and_ergonomic_framework_to/
+
+## [5][Is there any way to rename the main thread?](https://www.reddit.com/r/rust/comments/fauino/is_there_any_way_to_rename_the_main_thread/)
+- url: https://www.reddit.com/r/rust/comments/fauino/is_there_any_way_to_rename_the_main_thread/
 ---
-About a year ago, I've released my first project with [LV2](https://lv2plug.in/), a plugin framework called [lv2rs](https://www.reddit.com/r/rust/comments/bawmbs/lv2rs_creating_lv2_plugins_in_rust/). I've received some great feedback and then joined forces with [Prokopyl](https://github.com/prokopyl) and the [RustAudio discourse](https://rust-audio.discourse.group/) to create [rust-lv2](https://crates.io/crates/lv2), the safe, fast, and ergonomic framework to create LV2 plugins, written in Rust, which now received its first release!
+If I spawn threads within my Rust programs, I can name them by using the std::thread::Builder approach. So when the thread panics, it displays a relevant name for the thread.
 
-Using rust-lv2, you can create LV2 audio processing plugins with much less boilerplate code and worries about pointer and data handling, compared to plugins that use the raw C API directly. Thanks to Rust's incredible type system, several errors a programmer can make with the original utilities simply aren't possible.
+However, I have several Rust processes running that can panic and be restarted by my supervisor process. The logs are not always super helpful because every Rust process has a thread called 'main', so it's not always clear who died.
+## [6][Tokio v0.2.12, includes `Notify`, an async/await synchronization primitive, and `StreamMap` for dynamic merging of streams.](https://www.reddit.com/r/rust/comments/fagnqu/tokio_v0212_includes_notify_an_asyncawait/)
+- url: https://github.com/tokio-rs/tokio/releases/tag/tokio-0.2.12
+---
 
-Let's have an example. This is a basic plugin that amplifies the audio from an input port and writes it to an output port:
+## [7][Problem with lifetimes and destructors--is this a bug?](https://www.reddit.com/r/rust/comments/faqcu3/problem_with_lifetimes_and_destructorsis_this_a/)
+- url: https://www.reddit.com/r/rust/comments/faqcu3/problem_with_lifetimes_and_destructorsis_this_a/
+---
+I'm seeing some behavior from the result compiler involving temporaries with destructors that doesn't seem right to me. It happened with real code I was trying to make work, but I've pared it down to something fairly minimal to illustrate the issue. First, here's a wrapper around a reference that implements `Drop`:
 
-    // Include the prelude of the core crate. Every specification is implemented by
-    // exactly one crate and their preludes always contain most of the types needed
-    // to use them in a plugin.
-    use lv2_core::prelude::*;
-
-    // Most useful plugins will have ports for input and output data. In code, these
-    // ports are represented by a struct implementing the `PortContainer` trait.
-    #[derive(PortCollection)]
-    struct Ports {
-        gain: InputPort&lt;Control&gt;,
-        input: InputPort&lt;Audio&gt;,
-        output: OutputPort&lt;Audio&gt;,
+    struct SmartPtr&lt;'a, T&gt;(&amp;'a T);
+    impl&lt;'a, T&gt; Drop for SmartPtr&lt;'a, T&gt; {
+        fn drop(&amp;mut self) {}
     }
 
-    // Every plugin defines a struct for the plugin instance. All persistent data
-    // associated with a plugin instance is stored here, and is available to every
-    // instance method. In this simple plugin, there is no additional instance data and
-    // therefore, this struct is empty.
-    struct Amp;
+The type parameter `T` doesn't really matter; I just added it to show the problem isn't related to any particular type. Here's a function that creates a temporary value holding a `SmartPtr`, which the compiler rejects with the errors in the comments.
 
-    // The URI is the identifier for a plugin, and how the host associates this 
-    // implementation in code with its description in data. If this URI does not match
-    // that used in the data files, the host will fail to load the plugin. Since many 
-    // other things are also identified by URIs, there is a separate trait for them:
-    // The `UriBound`. It stores the URI as a constant null-terminated byte slice and
-    // provides a method to easily retrieve the URI. If the null-terminator is omitted,
-    // some other parts of the system may cause undefined behaviour. Since this can not
-    // checked by Rust's type system, this trait has to be unsafe. However, this is the
-    // only time a user has to use the `unsafe` keyword.
-    unsafe impl UriBound for Amp {
-        const URI: &amp;'static [u8] = b"urn:rust-lv2-book:eg-amp-rs\0";
-    }
-
-    // Every plugin struct implements the `Plugin` trait.
-    impl Plugin for Amp {
-        // Set the ports type.
-        type Ports = Ports;
-
-        // This plugin does not use additional host features and therefore, we set the
-        // features collection type to `()`. Other plugins may define a separate struct
-        // with their required and optional features and set it here.
-        type Features = ();
-
-        // The `new` method is called by the plugin backend when it creates a new 
-        // plugin instance. The host passes the plugin URI, sample rate, and bundle 
-        // path for plugins that need to load additional resources (e.g. waveforms).
-        // The features parameter contains host-provided features defined in LV2 
-        // extensions, but this simple plugin does not use any. This method is in the
-        // “instantiation” threading class, so no other methods on this instance will 
-        // be called concurrently with it.
-        fn new(_plugin_info: &amp;PluginInfo, _features: ()) -&gt; Option&lt;Self&gt; {
-            Some(Self)
+    fn broken&lt;T&gt;(x: T) -&gt; T {
+        // error[E0505]: cannot move out of `x` because it is borrowed
+        if let Some(ptr) = Some(SmartPtr(&amp;x)) {
+            //             ------------------
+            //             |             |
+            //             |             borrow of `x` occurs here
+            //             a temporary with access to the borrow is created here ...
+            drop(ptr);
+            return x;
+            //     ^ move out of `x` occurs here
         }
+        unimplemented!()
+    }
+    // ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `std::option::Option&lt;SmartPtr&lt;'_, T&gt;&gt;`
 
-        // The `run()` method is the main process function of the plugin. It processes
-        // a block of audio in the audio context.
-        fn run(&amp;mut self, ports: &amp;mut Ports) {
-            let coef = if *(ports.gain) &gt; -90.0 {
-                10.0_f32.powf(*(ports.gain) * 0.05)
-            } else {
-                0.0
-            };
+This seems wrong to me, because I've created and then dropped one instance of `SmartPtr`; after the call to `drop`, there should be no more references to `x`, but the compiler seems to think the temporary `Option` value I created still exists, even though, as far as I can tell, destructuring it *must* have destroyed it, because otherwise there would be a second instance of `SmartPtr` floating around, and that's not possible because it doesn't implement `Copy`.
 
-            for (in_frame, out_frame) in Iterator::zip(ports.input.iter(), ports.output.iter_mut()) {
-                *out_frame = in_frame * coef;
-            }
+If I rearrange things to use methods of Option instead of destructuring, everything works as you'd expect:
+
+    fn not_broken&lt;T&gt;(x: T) -&gt; T {
+        let opt_ptr = Some(SmartPtr(&amp;x));
+        if opt_ptr.is_some() {
+            let ptr = opt_ptr.unwrap();
+            drop(ptr);
+            return x;
         }
+        unimplemented!()
     }
 
-    // The `lv2_descriptors` macro creates the entry point to the plugin library. It
-    // takes structs that implement `Plugin` and exposes them. The host will load the
-    // library and call a generated function to find all the plugins defined in the
-    // library.
-    lv2_descriptors!(Amp);
+I also tried naming the temporary like so, but I got the same errors as before:
 
+    fn broken2&lt;T&gt;(x: T) -&gt; T {
+        let tmp = Some(SmartPtr(&amp;x));
+        if let Some(ptr) = tmp {
+            drop(ptr);
+            return x;
+        }
+        unimplemented!()
+    }
 
-If you want to learn more about rust-lv2, make sure to check out the [rust-LV2 book](https://janonard.github.io/rust-lv2-book/). It's an effort to translate the [original LV2 book](https://lv2plug.in/book/) and explains how to properly use the framework. Both examples were taken from their respective books.
-
-If you have a question, have a little inconvenience or even encounter a bug, please create an issue in [the Github repository](https://github.com/RustAudio/rust-lv2/). We are striving to improve the usability of the framework and are going to implement more specifications soon.
-
-EDIT: I've replaced every indentation with four spaces, I hope it works now!
-EDIT 2: I've understood the comment now and fixed it. Sorry!
-## [12][What is the motivation behind default move semantics?](https://www.reddit.com/r/rust/comments/fa9pkp/what_is_the_motivation_behind_default_move/)
-- url: https://www.reddit.com/r/rust/comments/fa9pkp/what_is_the_motivation_behind_default_move/
+I compiled all my samples with rustc 1.43.0-nightly (6d69caba1 2020-02-27). Should I file a bug?
+## [8][My first library (for printing a progress bar while iterating )](https://www.reddit.com/r/rust/comments/famvrm/my_first_library_for_printing_a_progress_bar/)
+- url: https://www.reddit.com/r/rust/comments/famvrm/my_first_library_for_printing_a_progress_bar/
 ---
-I would imagine const ref could have been the default semantic, but I would like to understand why rust chose move instead. I’m sure there is an excellent reason but it’s something I can’t think of now.
+Hello fellow Rustacians.
+
+I just wanted to share my first project I hosted on [crates.io](https://crates.io). 
+
+It is a library for printing a progress bar on stdout, while iterating over any Iterator. The main goal is to make it stupid simple to use, just like the python library tqdm, that I use when in python land.
+
+I'm not a professional rust developer, so I have learned a lot about rust and its awesome eco system from this little project already. I think I have finally found my favorite programming language.
+
+I would love to get some feedback on it, as it not only my first real rust library project but my first real library I have written and published. I have also made many mistakes on the way, but I think it's finally usable, so better use the most recent version.
+
+I'd be happy if you checked it out over at: [https://crates.io/crates/prgrs](https://crates.io/crates/prgrs).  Links to the github repo and documentation can also be found over there.
+
+I'm actively developing on it and always trying to improve, so I'm thankful for every feedback I can get.
+## [9][new crate for computational camera geometry](https://www.reddit.com/r/rust/comments/falcf4/new_crate_for_computational_camera_geometry/)
+- url: https://github.com/strawlab/cam-geom
+---
+
+## [10][Stack Overflow Developer Survey (a.k.a. annual "most loved languages" survey) closes *Friday*](https://www.reddit.com/r/rust/comments/fahwgk/stack_overflow_developer_survey_aka_annual_most/)
+- url: https://www.reddit.com/r/rust/comments/fahwgk/stack_overflow_developer_survey_aka_annual_most/
+---
+Consider taking this if you haven't already. Judging by last year's sample size, +20 responses correspond to moving the "loved" ratio for Rust by up to 0.1 percentage points. I know a lot of people around here are looking forward to using Rust in the next year and it would be great for that to be reflected in the data.
+
+- Survey announcement: https://stackoverflow.blog/2020/02/19/new-decade-new-survey-goals-reminder-to-take-the-survey-before-it-closes-next-week/
+
+- Direct link to survey: https://stackoverflow.com/dev-survey/start
+## [11][Announcing the first FFI-unwind project design meeting | Inside Rust Blog](https://www.reddit.com/r/rust/comments/faioti/announcing_the_first_ffiunwind_project_design/)
+- url: https://blog.rust-lang.org/inside-rust/2020/02/27/ffi-unwind-design-meeting.html
+---
+
+## [12][How do stacktraces work in rust?](https://www.reddit.com/r/rust/comments/fan0fk/how_do_stacktraces_work_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/fan0fk/how_do_stacktraces_work_in_rust/
+---
+Because they don't in `C`. The stacktraces are printed even with a release build, though some function calls are omitted because they're optimized out.
+
+What are the capabilities provided by rust runtime? Apparantly it keeps track of the function names and stack state.

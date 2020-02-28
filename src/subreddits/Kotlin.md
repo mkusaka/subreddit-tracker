@@ -1,42 +1,48 @@
 # Kotlin
-## [1][Writing Microservices in Kotlin with Ktor—a Multiplatform Framework for Connected System](https://www.reddit.com/r/Kotlin/comments/fa8zti/writing_microservices_in_kotlin_with_ktora/)
+## [1][Conference for Kotliners 2020 - Official lineup announced](https://www.reddit.com/r/Kotlin/comments/fartgg/conference_for_kotliners_2020_official_lineup/)
+- url: https://kotliners.com/conference
+---
+
+## [2][Optimizing application performance with Amazon CodeGuru Profiler](https://www.reddit.com/r/Kotlin/comments/far74h/optimizing_application_performance_with_amazon/)
+- url: https://aws.amazon.com/blogs/machine-learning/optimizing-application-performance-with-amazon-codeguru-profiler/
+---
+
+## [3][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/Kotlin/comments/fatalw/top_5_frontend_development_outsourcing_challenges/)
+- url: http://frontend-challenges.xyz
+---
+
+## [4][Writing Microservices in Kotlin with Ktor—a Multiplatform Framework for Connected System](https://www.reddit.com/r/Kotlin/comments/fa8zti/writing_microservices_in_kotlin_with_ktora/)
 - url: https://www.infoq.com/articles/microservices-kotlin-ktor/
 ---
 
-## [2][Composition over inheritance (and Kotlin)](https://www.reddit.com/r/Kotlin/comments/fa1v39/composition_over_inheritance_and_kotlin/)
+## [5][Learn Kotlin Channels in a Minute!](https://www.reddit.com/r/Kotlin/comments/faq0nf/learn_kotlin_channels_in_a_minute/)
+- url: https://youtu.be/0PE71S80n7E
+---
+
+## [6][New to Kotlin, was reading Android Development Guide ... is this snippet a mistake?](https://www.reddit.com/r/Kotlin/comments/fae0k3/new_to_kotlin_was_reading_android_development/)
+- url: https://www.reddit.com/r/Kotlin/comments/fae0k3/new_to_kotlin_was_reading_android_development/
+---
+[https://developer.android.com/guide/topics/connectivity/bluetooth-le#setup](https://developer.android.com/guide/topics/connectivity/bluetooth-le#setup)
+
+Second snippet starts with this:
+
+    private val BluetoothAdapter.isDisabled: Boolean
+    get() = !isEnabled 
+
+Where does `get()` come from and why is a function being assigned a Boolean value?
+## [7][Kotlin Development Plan](https://www.reddit.com/r/Kotlin/comments/faccbt/kotlin_development_plan/)
+- url: https://www.intuit.com/blog/uncategorized/kotlin-development-plan/
+---
+
+## [8][Composition over inheritance (and Kotlin)](https://www.reddit.com/r/Kotlin/comments/fa1v39/composition_over_inheritance_and_kotlin/)
 - url: https://www.rockandnull.com/composition-over-inheridance/
 ---
 
-## [3][From RxJava to Kotlin Flow: Stream Types](https://www.reddit.com/r/Kotlin/comments/f9r3nx/from_rxjava_to_kotlin_flow_stream_types/)
+## [9][11 steps to create Android App : Hello World Anko](https://www.reddit.com/r/Kotlin/comments/fac8yn/11_steps_to_create_android_app_hello_world_anko/)
+- url: /user/Elegium/comments/fac6wa/11_steps_to_create_android_app_hello_world_anko/
+---
+
+## [10][From RxJava to Kotlin Flow: Stream Types](https://www.reddit.com/r/Kotlin/comments/f9r3nx/from_rxjava_to_kotlin_flow_stream_types/)
 - url: https://proandroiddev.com/from-rxjava-to-kotlin-flow-stream-types-7916be6cabc2
 ---
 
-## [4][Build a Modernized Desktop Application](https://www.reddit.com/r/Kotlin/comments/f9ukqm/build_a_modernized_desktop_application/)
-- url: https://youtu.be/WOqHNy-UGfQ
----
-
-## [5]["Parser Combinators in Kotlin" by Neil Gall from Edinburgh Kotlin User Group](https://www.reddit.com/r/Kotlin/comments/f9ro95/parser_combinators_in_kotlin_by_neil_gall_from/)
-- url: https://twitter.com/edi_kug/status/1231889594632802307
----
-
-## [6][$900 Workshop at Kotlin conf, are they worth?](https://www.reddit.com/r/Kotlin/comments/f9ot2n/900_workshop_at_kotlin_conf_are_they_worth/)
-- url: https://www.reddit.com/r/Kotlin/comments/f9ot2n/900_workshop_at_kotlin_conf_are_they_worth/
----
-I was excited to see that kotlin conf is just $600. I got to know that workshop is $900 and you can only attend one.  Is it worth that money? Any body attended those and care to share the experience, it would be great to hear from someone.
-## [7][Creating an Android app and a Kotlin server. Multiple Modules or not?](https://www.reddit.com/r/Kotlin/comments/f9t69c/creating_an_android_app_and_a_kotlin_server/)
-- url: https://www.reddit.com/r/Kotlin/comments/f9t69c/creating_an_android_app_and_a_kotlin_server/
----
-For a school project I'm making an android app. We decided to implement our server in Kotlin as well. I thought it would be useful to create a multiple module application so the data classes that are send from the server only have to be edited at one place. Is this a good idea? And how should I do this?
-## [8][Kotlin for my first backend language](https://www.reddit.com/r/Kotlin/comments/f9ijd0/kotlin_for_my_first_backend_language/)
-- url: https://www.reddit.com/r/Kotlin/comments/f9ijd0/kotlin_for_my_first_backend_language/
----
-Hi guys, I've been thinking for a while that I want to shift into backend development from front-end.  
-I've been hearing about Kotlin everywhere I go. I just wonder if Kotlin would be a nice starting point or if you would advice starting with a different language to learn?
-## [9][Petition to Rename](https://www.reddit.com/r/Kotlin/comments/fa0wef/petition_to_rename/)
-- url: https://www.change.org/p/jetbrains-kotlin-owojava
----
-
-## [10][What are the best selling points for Kotlin over Java?](https://www.reddit.com/r/Kotlin/comments/f9960k/what_are_the_best_selling_points_for_kotlin_over/)
-- url: https://www.reddit.com/r/Kotlin/comments/f9960k/what_are_the_best_selling_points_for_kotlin_over/
----
-Working with a group of researchers and they mainly know Java. What are the biggest advantages that Kotlin has over Java ?

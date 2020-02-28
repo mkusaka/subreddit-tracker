@@ -108,84 +108,105 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Query v1.0.0 released](https://www.reddit.com/r/reactjs/comments/f9zani/react_query_v100_released/)
-- url: https://github.com/tannerlinsley/react-query
+## [3][Started working on a webapp last sunday to help make configs for Karabiner Elements. Its ugly but works! :) link in comments](https://www.reddit.com/r/reactjs/comments/fahjru/started_working_on_a_webapp_last_sunday_to_help/)
+- url: https://v.redd.it/21b6mdg6rij41
 ---
 
-## [4][How I used React-Loadable to more than half my React app's load time](https://www.reddit.com/r/reactjs/comments/f9s090/how_i_used_reactloadable_to_more_than_half_my/)
-- url: https://dev.to/rozenmd/how-i-used-react-loadable-to-more-than-half-my-react-app-s-load-time-299c
+## [4][How many requests before you should make your own api?](https://www.reddit.com/r/reactjs/comments/fasf9n/how_many_requests_before_you_should_make_your_own/)
+- url: https://www.reddit.com/r/reactjs/comments/fasf9n/how_many_requests_before_you_should_make_your_own/
+---
+More an open question than a specific problem, but for context I'm building a React app, and using firebase for auth, and also using firebase realtime-database.
+
+So user will log in, obviously making a request, then I make up to 4 different requests to different tables/nodes, to populate the 'Home' page with relevant user info, and it got me thinking, should I be deploying one request to my own api which then will log in user, make the 4 requests and  return all the the data back to the user?
+
+The app isn't overly complex at the moment so am reluctant to add this extra layer right now.
+
+So In other peoples experience when should you add your own api?
+## [5][react-curved-arrow - Curvy arrows for your React app! Great for tutorials and product tours](https://www.reddit.com/r/reactjs/comments/fad9gk/reactcurvedarrow_curvy_arrows_for_your_react_app/)
+- url: https://react-curved-arrow.nickjanssen.com/
 ---
 
-## [5][Preventing unnecessary rerenders](https://www.reddit.com/r/reactjs/comments/fac1fb/preventing_unnecessary_rerenders/)
-- url: https://www.reddit.com/r/reactjs/comments/fac1fb/preventing_unnecessary_rerenders/
+## [6][Slack Frontend Architecture with Anuj Nair (Built with Electron + React) - Software Engineering Daily](https://www.reddit.com/r/reactjs/comments/fai1ju/slack_frontend_architecture_with_anuj_nair_built/)
+- url: https://softwareengineeringdaily.com/2020/02/27/slack-frontend-architecture-with-anuj-nair/
 ---
-1) state changes inside the component
 
-2) props changes inside the component (when the state changes in the parent)
+## [7][Searching for renderless react hook components to help creating ui components in tailwindcss](https://www.reddit.com/r/reactjs/comments/farluo/searching_for_renderless_react_hook_components_to/)
+- url: https://www.reddit.com/r/reactjs/comments/farluo/searching_for_renderless_react_hook_components_to/
+---
+Hi, I want to build my own components with tailwindcss.  
 
-3) render being called on the component's parent
+
+I am looking for a renderless ui framework using hooks that can help me with the javascript part. I would like to build CSS &amp; HTML by my own.   
+
+
+Anyone knows a good package ? Thx
+## [8][React.useState updates wrong component](https://www.reddit.com/r/reactjs/comments/fat5ff/reactusestate_updates_wrong_component/)
+- url: https://www.reddit.com/r/reactjs/comments/fat5ff/reactusestate_updates_wrong_component/
+---
+Hi.
 
 &amp;#x200B;
 
-All three can cause unnecessary rerenders, what are the fixes for all three cases?
-## [6][Next.js alternatives](https://www.reddit.com/r/reactjs/comments/faby5f/nextjs_alternatives/)
-- url: https://www.reddit.com/r/reactjs/comments/faby5f/nextjs_alternatives/
----
-Anybody has experience with alternatives like [https://fusionjs.com/](https://fusionjs.com/) or [http://www.electrode.io/](http://www.electrode.io/)?
+I'm using React.useState to maintain state of two identical child components. The components are just a star rating component. 
 
-They look very good from the first view but I wonder if somebody is using them.
-## [7][FINALLY integrated build/lint/test with Rome (from FB)](https://www.reddit.com/r/reactjs/comments/fa7cbm/finally_integrated_buildlinttest_with_rome_from_fb/)
-- url: https://github.com/facebookexperimental/rome/blob/master/README.md
----
+When I update the first component, things work fine, but when I update the last last component, the first rating component is update. In other words, when I one the second component adjust the amount of starts, the change is executed on the first component instead of the second one. 
 
-## [8][Convert React.js website into an android app](https://www.reddit.com/r/reactjs/comments/fabin8/convert_reactjs_website_into_an_android_app/)
-- url: https://www.reddit.com/r/reactjs/comments/fabin8/convert_reactjs_website_into_an_android_app/
----
-I've created a website in React.js, and for my own reasons, I need this website to be available as an android app. I expect this to be done using a very simple approach - simply a frame or webview component inside a native app which runs my website full screen.
+Please see [https://codesandbox.io/s/elated-monad-n01il](https://codesandbox.io/s/elated-monad-n01il) for demo.
 
-I understand the many downsides that come with such a simple approach, and that my app would be better served developing again natively for android, but I'm not looking for a long term robust solution. I just need my current website as an app!
-
-Is there a free service that can do this for me? Or is there a simple way to do this quickly in React Native or something similar?
-
-Thank you!
-## [9][React 16.13 in Changelog](https://www.reddit.com/r/reactjs/comments/f9zl4h/react_1613_in_changelog/)
-- url: https://github.com/facebook/react/blob/master/CHANGELOG.md
+What am I missing here - why does this happen?
+## [9][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/reactjs/comments/fasoo2/top_5_frontend_development_outsourcing_challenges/)
+- url: http://frontend-challenges.xyz
 ---
 
-## [10][Is there any free good resources to learn Typescript with React?](https://www.reddit.com/r/reactjs/comments/fa9xr3/is_there_any_free_good_resources_to_learn/)
-- url: https://www.reddit.com/r/reactjs/comments/fa9xr3/is_there_any_free_good_resources_to_learn/
+## [10][Using Firebase in a react web app that does not require user authentication.](https://www.reddit.com/r/reactjs/comments/fasm5o/using_firebase_in_a_react_web_app_that_does_not/)
+- url: https://www.reddit.com/r/reactjs/comments/fasm5o/using_firebase_in_a_react_web_app_that_does_not/
 ---
-Actually i am using JS, what are the benefits of Typescript instead of js?
-## [11][How to trim value of object inside an array.](https://www.reddit.com/r/reactjs/comments/fa9nal/how_to_trim_value_of_object_inside_an_array/)
-- url: https://www.reddit.com/r/reactjs/comments/fa9nal/how_to_trim_value_of_object_inside_an_array/
+I am currently working on a reactjs website which displays various user profiles created and managed by the admin himself. Visitors can review these profiles and rate them but there is no authentication or sign ups required in any step. I was wondering if cloud firestore is the right option for this.  Any suggestions ?
+## [11][React cards problem. Please help](https://www.reddit.com/r/reactjs/comments/farmh8/react_cards_problem_please_help/)
+- url: https://www.reddit.com/r/reactjs/comments/farmh8/react_cards_problem_please_help/
 ---
-Hey, below is my array and I want to slice the every instance of createdAt value. I tried but couldn't seem to do this. Any help will be useful.
+Hi,  
 
-Sorry if this isn't the correct sub.
 
-    const array = [
-        {
-            "deleted": false,
-            "_id": "5e53bbeb68667320462295d8",
-            "price": 300,
-            "points": 0,
-            "_userId": "5e5291a405e4b513f6e670b5",
-            "createdAt": "2020-02-24T12:04:59.309Z",
-            "updatedAt": "2020-02-24T12:04:59.309Z",
-            "__v": 0
-        },
-        {
-            "deleted": false,
-            "_id": "5e53bbf368667320462295d9",
-            "price": 300,
-            "points": 0,
-            "_userId": "5e5291a405e4b513f6e670b5",
-            "createdAt": "2020-02-24T12:05:07.405Z",
-            "updatedAt": "2020-02-24T12:05:07.405Z",
-            "__v": 0
-        }
-    ]
-## [12][I built a website to find open-source alternatives to commercial SaaS. Built using Gatsby, TinaCMS, and Chakra-UI.](https://www.reddit.com/r/reactjs/comments/f9wlte/i_built_a_website_to_find_opensource_alternatives/)
-- url: https://opensource.builders/
+I am trying to make an application to understand data flow in React.   
+
+
+I have an object which looks like :
+
+```
+var data = \[  
+  { id: 1, text: 'A', favorite: false },  
+  { id: 2, text: 'B', favorite: false },  
+  { id: 3, text: 'C', favorite: false },  
+  { id: 4, text: 'D', favorite: false },  
+  { id: 5, text: 'E', favorite: false },  
+  { id: 6, text: 'F', favorite: false },  
+  { id: 7, text: 'G', favorite: true },  
+  { id: 8, text: 'H', favorite: false },  
+  { id: 9, text: 'I', favorite: false },  
+  { id: 10, text: 'J', favorite: false },  
+  { id: 11, text: 'K', favorite: false },  
+  { id: 12, text: 'L', favorite: false },  
+  { id: 13, text: 'M', favorite: false },  
+  { id: 14, text: 'N', favorite: true },  
+  { id: 15, text: 'O', favorite: true },  
+\];
+
+```
+
+These have to be displayed as a set of 15 cards, with &lt;h1&gt;id&lt;/h1&gt;, &lt;p&gt;text&lt;/p&gt; and &lt;button onClick={toggle favorite between true and false} /&gt;.
+
+I have to do the following in React.
+
+1. Show all the cards with favorite as true on top
+2. all the cards which are favorite are red and others are white
+
+I have set up the repo here: https://github.com/akhil9tiet/sampleCards
+
+it is a basic Create React App and all the code is in `App.js`
+
+Anyone who could help me, I will really be grateful
+## [12][react-swipeable-list - Swipeable list component for your mobile React app!](https://www.reddit.com/r/reactjs/comments/farcqb/reactswipeablelist_swipeable_list_component_for/)
+- url: https://github.com/sandstreamdev/react-swipeable-list
 ---
 

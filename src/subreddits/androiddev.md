@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/fau49t/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/fau49t/weekly_anything_goes_thread/
+## [1][App Feedback Thread - February 29, 2020](https://www.reddit.com/r/androiddev/comments/fbbuz9/app_feedback_thread_february_29_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/fbbuz9/app_feedback_thread_february_29_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - February 24, 2020](https://www.reddit.com/r/androiddev/comments/f8pltv/weekly_questions_thread_february_24_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/f8pltv/weekly_questions_thread_february_24_2020/
 ---
@@ -25,76 +40,81 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][JakeWharton/wormhole](https://www.reddit.com/r/androiddev/comments/fap9y6/jakewhartonwormhole/)
-- url: https://github.com/JakeWharton/wormhole
+## [3][Moment kills its Android camera app, cites constantly-changing software and hardware](https://www.reddit.com/r/androiddev/comments/fb2a27/moment_kills_its_android_camera_app_cites/)
+- url: https://www.androidpolice.com/2020/02/28/moment-kills-its-android-camera-app-cites-constantly-changing-software-and-hardware/
 ---
 
-## [4][[APP SUSPENSION] Meme Generator Free - Violation of Violence policy, No example, No warning, Editors' choice app, 4.7 average rating, +30mil downloads](https://www.reddit.com/r/androiddev/comments/fagk5j/app_suspension_meme_generator_free_violation_of/)
-- url: https://www.reddit.com/r/androiddev/comments/fagk5j/app_suspension_meme_generator_free_violation_of/
+## [4][How to deal with app crashes (mentally) ?](https://www.reddit.com/r/androiddev/comments/fbamvr/how_to_deal_with_app_crashes_mentally/)
+- url: https://www.reddit.com/r/androiddev/comments/fbamvr/how_to_deal_with_app_crashes_mentally/
 ---
-\[RESOLVED\]\[UPDATE\]: The suspension appeal was successful and Meme Generator Free is back up on the market after a review. No additional explanation was given, but we assume it was just a really bad error.  
-We might have overreacted, but as we've seen very similar horror stories from other developers, we felt like this had to be shared. An app Suspension is a very drastic and disproportionate measure for an error or misunderstanding. We hope this part of Google Play will be improved in the future.  
-We're also thankful that Google Play's team took care of this issue in less than 8 hours after suspension. We hope similar future situations can be avoided by a friendly email.  
-A huge Thank you to the entire Android Developer community, your support means a lot to us!
+Hi guys ,
 
-Hi!
+If you are someone who develop apps and release them on play store , i want to know how do you guys deal with app crashes , i mean you releasing an app update just to find out within a week u find some crashes and if u fix that and release an update again this cycle keeps repeating 
 
-Some might know our app Meme Generator Free which was suspended about one hour ago without warning and without any example of violation. The message only says: Issue: "Violation of Violence policy - We don't allow apps that depict or facilitate gratuitous violence or other dangerous activities." We don't know if it's a  meme, sticker, an example or anything else. We did not receive any other explanation so we do not know how to make our app compliant if it ever gets reinstated.
-
-Our app was an Editors' choice app, released in September 2011, had +30 million downloads, and an average user rating of 4.7. We are all shocked by this swift suspension, and by the lack of any examples or further suggestions on how to make our app compliant. We read a lot of similar posts in this subreddit and were honestly scared it would eventually happen to us as well. We are a company that employs 5 people, Meme Generator is our main app and we love co-creating the Android app space. We'd be very disappointed and sad to shut down our company because of an error.
-
-We have sent an appeal, but we since we read similar horror stories on this subreddit, we're doubtful we're resolve anything trough a regular appeal. At this moment I'd be happy to speak to someone at Google's app review team so that person can tell us how to make our app compliant. We can only achieve this with some public support from our users and fellow developers. We will also share this post on Twitter and tag GooglePlayDev.
-
-If anyone has any recommendation on what else to do, we'd be very thankful.
-
-ZomboDroid Team
-
-EDIT: This happened an hour after pushing an update to our Beta testing group. What is also interesting is that the PRO version went through the review process and got accepted, but the Free one gets suspended. They are the same apps, one Free and the other paid.
-## [5][Jake Wharton on Twitter](https://www.reddit.com/r/androiddev/comments/fahn7x/jake_wharton_on_twitter/)
-- url: https://twitter.com/JakeWharton/status/1233108590908579840?s=20
+Even after quality testing , using firebase test lab i keep getting some crashes , it's very stressful and i want to know how do u guys deal with it mentally knowing that there are 100's of users who may experince this crash , who may uninstall app after this.
+## [5][How to protect Android App from getting stolen?](https://www.reddit.com/r/androiddev/comments/fbchpj/how_to_protect_android_app_from_getting_stolen/)
+- url: https://www.reddit.com/r/androiddev/comments/fbchpj/how_to_protect_android_app_from_getting_stolen/
 ---
-
-## [6][Make sure you add mediation to your apps, THEY can flip the switch on your account!](https://www.reddit.com/r/androiddev/comments/fau20a/make_sure_you_add_mediation_to_your_apps_they_can/)
-- url: https://www.reddit.com/r/androiddev/comments/fau20a/make_sure_you_add_mediation_to_your_apps_they_can/
+Hi Everyone!
+I have created an Android Application which is gets stolen. Someone just copied my application and he changed some images and overall theme of my application and posted it on Play Store and it gets published. Not a single code he changed even on some places my account name BIG DREAMS TEAM still visible. When I reported about it google ask me to send a copy of court order to remove app from store.
+Anyone have any idea what should I do?
+And I am not the only one on that account more than 25 apps are published which are stolen.
+Also any suggestions would be very helpful, that what can I do on code level to protect my apps and updates in future.
+## [6][lock screen controls for audio player app](https://www.reddit.com/r/androiddev/comments/fbc6sp/lock_screen_controls_for_audio_player_app/)
+- url: https://www.reddit.com/r/androiddev/comments/fbc6sp/lock_screen_controls_for_audio_player_app/
 ---
-Mediation saved me when they flipped the switch on my account which made my CPC drop to $0.05-$0.06 from $0.2-$0.3 (almost 60% app users are from USA).
+I'm building ios and android versions of a simple music player.  the audio has the ability to play in the background (eg: when the user presses the power button to turn the screen off and put the phone in their pocket).  then when the user takes the phone out of their pocket and presses the power button, we see the lock screen.  on the iphone, it was super super easy to add transport controls (using MPRemoteCommandCenter) and song info (using MPNowPlayingInfoCenter) to the lock screen so that the user could see what song is playing and they can skip to the next song and play/pause, etc.  for android though, i am having a tough time figuring out how to do this.  my app is simple: it's just an activity with a MediaPlayer.  It \*seems\* like what I need to do is create a notification of some kind that will display the controls and the info, but I don't see how to launch that notification when the phone displays the lock screen.  Also, the transport controls seem to be implemented in a client / server kind of way, but my app is currently \*not\* set up as a client / server model.
 
-12th October is the exact date some bot flipped the switch on my account, no suspension, no warnings, invalid activity cuts never went above 5%, fill rate always 90%+ but revenue dropped like crazy (They still give me 95%+ fill rate so ads aren't limited) .
+So, my questions for the android dev community are: (1) is there a simple way to do this that i am missing? i've spent a lot of time looking for solutions, but haven't found anything straightforward like i found for ios;  (2) do i need to rewrite my app to be a client / server?  from what i've found, it seems like the way to do that is to make the music player core the server and then the ui is the client.  this seems obtuse and overkill to me, but if it's the only way for me to get controls and info on the lockscreen, then i'll go ahead and do it.
 
-Those numbers are tiny, so you should probably zoom.
-
-Here are my before and after pics.
-
-[Sept 2019](https://preview.redd.it/w9yo5no1qnj41.jpg?width=1635&amp;format=pjpg&amp;auto=webp&amp;s=153a007a662d5071fa0f9060af839a08a438a47e)
-
-[October 2019](https://preview.redd.it/qhsxylm0qnj41.jpg?width=1640&amp;format=pjpg&amp;auto=webp&amp;s=fa0a812c94789c1034afcf77ce39cbc7baa2bcbf)
-
-Immediately after this happened, I switched off Admob through MoPub, and gave complete traffic to FAN. Do you know FAN provides real human support and that they reply to you within 5-6 hours of you sending them an email? And just in case you're wondering, the revenue never picked up on Admob and there's nobody I can email/contact.
-
-Use mediation, stay safe.
-## [7][Make Android Studio debugger more powerful with custom Data Views](https://www.reddit.com/r/androiddev/comments/fatwcs/make_android_studio_debugger_more_powerful_with/)
-- url: https://www.reddit.com/r/androiddev/comments/fatwcs/make_android_studio_debugger_more_powerful_with/
+Thanks. :)
+## [7][Any way to set default mode to "Split" view in Layout Editor (Android Studio 3.6)?](https://www.reddit.com/r/androiddev/comments/fbc5f3/any_way_to_set_default_mode_to_split_view_in/)
+- url: https://www.reddit.com/r/androiddev/comments/fbc5f3/any_way_to_set_default_mode_to_split_view_in/
 ---
-A video lesson about a little known but very powerful feature of Android Studio (and Intellij) debugger: custom data views:
-
-[https://caster.io/lessons/make-android-studio-debugger-more-powerful-with-custom-data-views](https://caster.io/lessons/make-android-studio-debugger-more-powerful-with-custom-data-views)
-## [8][Google updates Android Studio: IDE like multi-display support and a split-view designer](https://www.reddit.com/r/androiddev/comments/faugf6/google_updates_android_studio_ide_like/)
-- url: https://www.theregister.co.uk/2020/02/28/google_updates_android_studio_with_multidisplay_support_splitview_designer/
+I went to `Settings-&gt;Editor-&gt;Layout Editor` but it only has "Prefer XML editor" checkbox, which means it'll either open the Design view, or Code view, but not split view. Is there any way I can make it open Split view by default?
+## [8][Android Studio 3.6.1 available](https://www.reddit.com/r/androiddev/comments/fazmu8/android_studio_361_available/)
+- url: https://androidstudio.googleblog.com/2020/02/android-studio-361-available.html
 ---
 
-## [9][Particle Clock made with Flutter/Dart](https://www.reddit.com/r/androiddev/comments/fa99bx/particle_clock_made_with_flutterdart/)
-- url: https://v.redd.it/587iaox2jfj41
+## [9][Transform into a different view or activity using morphing animations.](https://www.reddit.com/r/androiddev/comments/fawzu9/transform_into_a_different_view_or_activity_using/)
+- url: https://github.com/skydoves/TransformationLayout
 ---
 
-## [10][Can I use Firebase with a project I don`t own?](https://www.reddit.com/r/androiddev/comments/farq3x/can_i_use_firebase_with_a_project_i_dont_own/)
-- url: https://www.reddit.com/r/androiddev/comments/farq3x/can_i_use_firebase_with_a_project_i_dont_own/
+## [10][Publishing an App](https://www.reddit.com/r/androiddev/comments/fbbkn9/publishing_an_app/)
+- url: https://www.reddit.com/r/androiddev/comments/fbbkn9/publishing_an_app/
 ---
-The APi is [hackernews](https://github.com/HackerNews/API),they recommend using a Firebase Android Client app. Was this possible to do a few years back or am I blind?
-## [11][Localized privacy policy link on Store Page ?](https://www.reddit.com/r/androiddev/comments/fattnc/localized_privacy_policy_link_on_store_page/)
-- url: https://www.reddit.com/r/androiddev/comments/fattnc/localized_privacy_policy_link_on_store_page/
----
-Unless I missed something in the dev console, I did not find a way to specify a different link for the privacy policy for each country. Is that possible or are you supposed to handle all languages in that unique link ?
-## [12][Android Studio 4.1 Canary 1 available](https://www.reddit.com/r/androiddev/comments/fagfd8/android_studio_41_canary_1_available/)
-- url: https://androidstudio.googleblog.com/2020/02/android-studio-41-canary-1-available.html
----
+Hi guys, I've been trying to publish an App that parses messages received for a Mobile Banking platform in Kenya called MPesa. Essentially the app parses SMS messages received from "MPESA" the displays your transactions in an easy to digest format. 
 
+But after finishing the app I discovered that in order to publish your app which reads messages you have to register as the default message handler... This is not the purpose of the app. All data is stored locally on the device, thus the app does not require internet connection. So no data can be sent out.
+
+I've tried contacting Google explaining my use case but have not heard anything for weeks.. 
+
+Does anyone have any ideas?
+## [11][Using Unity as a Subview in an Android Activity](https://www.reddit.com/r/androiddev/comments/fb2f2t/using_unity_as_a_subview_in_an_android_activity/)
+- url: https://www.reddit.com/r/androiddev/comments/fb2f2t/using_unity_as_a_subview_in_an_android_activity/
+---
+Does anyone with Unity experience know of a solution to this? I can't seem to find any recent ones or answers that aren't outdated.
+
+https://stackoverflow.com/questions/43918417/display-unity-scene-as-sub-view-in-android-studio
+
+https://gamedev.stackexchange.com/questions/134347/android-black-screen-with-unity-app-in-subview
+
+https://stackoverflow.com/questions/31041031/black-screen-unity-subview-in-android
+
+All the answers I've tried is giving me a blackscreen. Someone suggested that it could be a unity issue because they reworked the whole Android-Integration in version 2019.3.0.
+## [12][App Debugging in foreign countries, South Asia, Bali, Indonesia](https://www.reddit.com/r/androiddev/comments/fbaq4i/app_debugging_in_foreign_countries_south_asia/)
+- url: https://www.reddit.com/r/androiddev/comments/fbaq4i/app_debugging_in_foreign_countries_south_asia/
+---
+Hey everyone :).
+
+I have been developing android apps for quite some time, but never released anything outside EU.
+
+Now I am building a flutter app, and I was talking to my friend who is currently in Bali. So I wanted to show him my new app, and send him the APK which works perfectly fine in EU and US on the same Phone (Pixel 2). But in Bali it crashes as soon as it should connect to Firebase/my cloud (currently only on a Europe server). He used VPN, no change. Android 10 is the OS on my Pixel2 and on his. Same build number as well.
+
+I love my App and it can be used everywhere on the world and is also kind of intended to be working wherever you go, so how can I tackle that issue? 
+
+What could even be the reason for this behavior? 
+
+Has anyone experience in releasing a "worldwide" (minus China, etc.) app?  
+
+Greetings,

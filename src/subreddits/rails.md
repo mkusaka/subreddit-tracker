@@ -19,7 +19,129 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Why does my variable behave differently when I assign using different ActiveRecord search method?](https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/)
+## [2][How should I go about adding business hours and appointment slots to my model?](https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/)
+- url: https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/
+---
+Hi everyone,  
+
+
+This is going to be quite a generalised question but I'm about to implement the most complex feature I've tried to create, and I just want to get an idea of the best way to go about this.  
+
+
+Basically I want to have two time-based features on my Business model - OpeningHours and AppointmentSlots.
+
+It's a little complicated because a Business will have multiple opening\_hours, and multiple appointment\_slots for a single day. So I think this will have to be split up into two separate models - perhaps something like:
+
+    class Business
+      has_many :business_days
+      has_many :opening_hours, through week_schedule
+      has_many :appointment_slots, through week_schedule
+    end
+    
+    class BusinessDay
+      belongs_to: business
+      has_many: opening_hours
+      has_many: appointment_slots
+    end
+    
+    class OpeningHours
+      belongs_to: business_day
+    end
+    
+    class AppointmentSlots
+      belongs_to: business_day
+    end
+
+And the schema would be something like this:
+
+    create_table "business_days", force: :cascade do |t|
+        t.bigint "business_id"
+        t.integer "day" #this will be an enum representing day of the week
+        t.boolean "is_open"
+      end
+    
+    create_table "opening_hours", force: :cascade do |t|
+        t.bigint "business_day_id"
+        t.time "open"
+        t.time "close"
+      end
+
+This seems logical so far, but I kind of feel like this is probably a common thing to implement. Seems like there should be a gem that will add this kind of functionality to my model.  
+I've looked at Biz ([https://github.com/zendesk/biz](https://github.com/zendesk/biz)) and Business Time ([https://github.com/bokmann/business\_time](https://github.com/bokmann/business_time)) and both of them seem somewhat useful, but the documentation for both of them doesn't actually mention how these incorporate with an existing model. So I'm not sure if they are right for what I'm looking for.  
+
+
+To add to this, I want AppointmentSlots to have very similar functionality to Opening\_Hours - the actual data will look very similar (numerous appointment\_slots for each day).  
+
+
+So it seems like I should be doing this with integration in mind somehow so that my code remains DRY. But I'm very new to all this and not really sure exactly how to approach the problem.  
+
+
+I have a habit of going down the wrong route and then creating problems for myself down the road so if anyone can advise me on whether I'm approaching this correctly and any advise you might have?  
+
+
+Thanks a lot.
+## [3][Advice on massive data sets](https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/)
+- url: https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/
+---
+Howdy folks.  
+
+
+I'm working on my app, [scientificmealplanner.com](https://scientificmealplanner.com), and thinking of re-engineering my meal plan generation algorithm significantly and I'd love thoughts on this direction.  
+
+
+Currently, it generates meal plans essentially mashing recipes together in a semi-random fashion until it finds ones that work together. This approach works ok for now, but I am working on adding more and more parameters (calorie ranges, prep time ranges, protein ranges, etc etc), which makes a successful generation take longer with this approach.   
+
+
+So my new possible direction is to pre-calculate stats for EVERY combination of 3 recipes (a day of the meal plan). In which case I can simply select from the pre-calculated combinations that match the desired parameters. I think, theoretically a lot easier.  
+
+
+But this introduces a massive dataset with it's own challenges. I currently have 150 recipes, but eventually there may be like 1000 in the system. Using the combinations formula, we're talking \~551K records at 150 recipes to \~166M records at 1000 recipes.   
+
+
+In addition, each month I update all ingredients via food data central API, and then it will need to run a method on every one of these recipe combination records to recalculate stats. So essentially re-calculating \~551K - 166M record stats once per month.  
+
+
+I have no experience with that level of large dataset. Normally dealing with like a few thousand.
+
+\- Is that amount of records feasible? Any idea what sort of database instance I'd need on AWS for this amount of records? Currently just on a t2.micro RDS, presumably need a much larger one.  
+\- Any advice on handling millions of small background jobs? I'm using sidekiq/redis on AWS. Currently on a cache.t3.small.   
+
+
+Thanks for any thoughts
+## [4][ActiveStorage::FileNotFoundError for existing files](https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/)
+- url: https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/
+---
+On a standard, out of the box Rails 6 with ActiveStorage set to disk storage,  I get his error from time to time:
+
+    ActionView::Template::Error (ActiveStorage::FileNotFoundError): 
+    2:     TODO cache this like forever     
+    3: --&gt; 
+    4: &lt;% if (current_website.icon.attached? rescue nil) %&gt; 
+    5: &lt;link rel="apple-touch-icon" href="&lt;%= current_website.icon.variant(resize: "57x57").service_url %&gt;" /&gt; 
+    6: &lt;link rel="shortcut icon" href="&lt;%= current_website.icon.variant(resize: "16x16").service_url %&gt;" /&gt; 
+    7: &lt;link rel="icon" href="&lt;%= current_website.icon.variant(resize: "16x16").service_url %&gt;" /&gt; 
+    app/views/common/_page_head_icons.html.erb:5 
+    app/views/common/_page_head.html.erb:61 
+    app/views/layouts/admin.html.erb:3
+
+Restarting the server solves it. It happens on nginx, apache+mod\_passenger, puma. Haven't tested others, at this point chances of it being web server related are way too small.
+
+Can anyone point a middle finger to what could be wrong? TIA
+
+I got 500 coins saying I can find someone on reddit who knows wtf is going on
+## [5][html.slim and react?](https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/)
+- url: https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/
+---
+Has anyone incorporated a react front end using html.slim? 
+
+we have tried doing 
+
+= react\_component 'MainApp'
+
+&amp;#x200B;
+
+but nothing and thats the only research I can find that connect react and slim
+## [6][Why does my variable behave differently when I assign using different ActiveRecord search method?](https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/)
 - url: https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/
 ---
 So I've noticed some unexpected behaviour when dealing with ActiveRecord.  
@@ -81,17 +203,17 @@ The actual instance seems to have been returned each time and I can see all the 
 
 
 If someone could please explain why this is, that would be very much appreciated??
-## [3][Ruby Hash#transform_keys now accepts a hash that maps existing keys to new keys](https://www.reddit.com/r/rails/comments/fae2xz/ruby_hashtransform_keys_now_accepts_a_hash_that/)
+## [7][Ruby Hash#transform_keys now accepts a hash that maps existing keys to new keys](https://www.reddit.com/r/rails/comments/fae2xz/ruby_hashtransform_keys_now_accepts_a_hash_that/)
 - url: https://blog.saeloun.com/2020/02/26/ruby-hash-transform_keys-now-accepts-a-hash-that-maps-existing-keys-to-new-keys
 ---
 
-## [4][How can I disable migrations in the second database in Rails 6?](https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/)
+## [8][How can I disable migrations in the second database in Rails 6?](https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/)
 - url: https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/
 ---
 I'm doing a new project on a database in Rails 6.0.2.1, we're going to use two databases, one of them is the database of the Rails project and the other will be connecting to the database of an ERP we have, I want to completely disable migrations on this second database database (so a `rails db:drop` or a `rails db:reset` doesn't affect our ERP's database) and only use a `schema.rb` so that Rails can know what tables are in this db.
 
 What can I do?
-## [5][When developing a big app with different parts, is it smart to split every part into their own app?](https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/)
+## [9][When developing a big app with different parts, is it smart to split every part into their own app?](https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/)
 - url: https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/
 ---
 I'm currently developing quite a big application (atleast for my standards). The application basically consists of a user-facing part with a "User" user model and a dashboard part with a "Vendor" user model (there will most likely also be a third part with it's own dashboard-like application in the future). The User part has the most business logic and is way bigger then the Vendor part, however, both parts are operating on and sharing the same data. But the data they share is the only thing they have in common. Everything else in the application, like for example the frontend or the domains, is pretty clear cut into these two parts. 
@@ -107,112 +229,11 @@ There are three big positives that I see with this approach:
 3. **Easily switchable technology.** Going with two apps instead of one big rails app would also allow me two choose and experiment with different technologies more easily. For example, I'm pretty interested in choosing Hanami but wouldn't choose it for the entire stack if everything would be a single app. However, splitting the one really big app into one big and one small app would allow me to choose Hanami for the smaller one and keep Rails for the big one. And if I find Hanami to be the wrong fit somewhere down the road I would only need to convert a small part of the original really big app back.
 
 Does this all make sense and is this a common approach to handling bigger apps with multiple different parts or am I setting myself up for a lot of issues in the future if I go this path?
-## [6][Freelancing in Rails](https://www.reddit.com/r/rails/comments/fa7ojc/freelancing_in_rails/)
+## [10][Freelancing in Rails](https://www.reddit.com/r/rails/comments/fa7ojc/freelancing_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/fa7ojc/freelancing_in_rails/
 ---
 hey.. how are you all?? I hope you all doing fine.. I want advice from experience people.. Anyone here doing freelancing work in ruby on rails?? can you tell me the struggles of finding a rails job in freelancing?? if someone learning rails and want a career of rails in freelancing, what advice would you like to give??
-## [7][How to make API calls to Rails server running on Ubuntu Virtual Machine from Windows?](https://www.reddit.com/r/rails/comments/faf1ps/how_to_make_api_calls_to_rails_server_running_on/)
+## [11][How to make API calls to Rails server running on Ubuntu Virtual Machine from Windows?](https://www.reddit.com/r/rails/comments/faf1ps/how_to_make_api_calls_to_rails_server_running_on/)
 - url: https://www.reddit.com/r/rails/comments/faf1ps/how_to_make_api_calls_to_rails_server_running_on/
 ---
 Hello. So I am developing Rails back-end on my Ubuntu VM and React front-end on my Windows machine. Is there a way to make API calls to that server running on Ubuntu VM? If yes, how to achieve it?
-## [8][Why heroku is saying the migration.sh is not present?](https://www.reddit.com/r/rails/comments/faehxi/why_heroku_is_saying_the_migrationsh_is_not/)
-- url: https://www.reddit.com/r/rails/comments/faehxi/why_heroku_is_saying_the_migrationsh_is_not/
----
-I am writing some github actions to deploy code using docker. I have the below job which kept failing and saying the file is not found. But I see the file is there. What am I missing here?
-
-    deploy-to-heroku:
-      runs-on: ubuntu-latest
-      if: github.ref != 'refs/heads/master'
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      steps:
-        - uses: actions/checkout@v2
-        - name: Deploy container
-          working-directory: backend
-          run: |
-            HEROKU_APP_NAME=`./scripts/appname.sh ${GITHUB_REF##*/}`
-            heroku container:release web -a $HEROKU_APP_NAME
-        - name: Run migrations
-          working-directory: backend/scripts
-          run: |
-            HEROKU_APP_NAME=`./appname.sh ${GITHUB_REF##*/}`
-            file_contents=`ls -l | cat`
-            echo 'current working directory'
-            echo $(pwd)
-            echo 'file contents..'
-            echo $file_contents
-            heroku run -s hobby --type=web -a $HEROKU_APP_NAME -- migration.sh
-    
-
-error output:
-
-    Run HEROKU_APP_NAME=`./appname.sh ${GITHUB_REF##*/}`
-    current working directory
-    /home/runner/work/DockingTestApp/DockingTestApp/backend/scripts
-    file contents..
-    total 20 -rwxr-xr-x 1 runner docker 198 Feb 27 16:12 appname.sh -rwxr-xr-x 1 runner docker 981 Feb 27 16:12 create-heroku-review-app.sh -rwxr-xr-x 1 runner docker 312 Feb 27 16:12 migration.sh -rwxr-xr-x 1 runner docker 772 Feb 27 16:12 review-app-setup.sh -rwxr-xr-x 1 runner docker 990 Feb 27 16:12 setup-review-app-bucket.sh
-    Running migration.sh on review-github-actions11a778... starting, web.4853 (Hobby)
-    Running migration.sh on review-github-actions11a778... connecting, web.4853 (Hobby)
-    Running migration.sh on review-github-actions11a778... up, web.4853 (Hobby)
-    /bin/sh: migration.sh: not found
-
-I tried `heroku run -s hobby --type=web -a $HEROKU_APP_NAME -- ./migration.sh` this also, but no luck. What am I missing?
-## [9][Looking For Projects to Build a Portfolio](https://www.reddit.com/r/rails/comments/fa6f2q/looking_for_projects_to_build_a_portfolio/)
-- url: https://www.reddit.com/r/rails/comments/fa6f2q/looking_for_projects_to_build_a_portfolio/
----
-Hi All,
-
-I'm a Business Intelligence Consultant looking to pivot careers.   I'm looking for some projects I could work on that would look good as part of a portfolio.  Any recommendations are greatly appreciated, as well as any advice on getting my foot in the door with a job.
-## [10][Would anyone be interested in taking over development of a passion project that is a tool for guitarists and other musicians?](https://www.reddit.com/r/rails/comments/f9y0ge/would_anyone_be_interested_in_taking_over/)
-- url: https://www.reddit.com/r/rails/comments/f9y0ge/would_anyone_be_interested_in_taking_over/
----
-The site is www.whatkeyamiin.com. It gets 2,000+ visits per month and has room to grow, but I haven't had time to work on it or develop new features in years. I'd love to see it continue on with someone else who wants to help give back to the guitarist community!
-
-It is built on Rails 4 and jQuery, no front end framework (although it would be a good fit for one now).
-## [11][Problems installing ActiveAdmin - allows assigning of a non existent parameter?](https://www.reddit.com/r/rails/comments/fa5ues/problems_installing_activeadmin_allows_assigning/)
-- url: https://www.reddit.com/r/rails/comments/fa5ues/problems_installing_activeadmin_allows_assigning/
----
-Hi all,  
-
-
- I'm trying to experiment with Active Admin but having problems with getting set up. I'm at the final step but can't seem to understand what's going on.  
-
-
-So during the install it gives me the following line in my seeds file:  
-
-
-    AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-
-This seems to create the AdminUser instance fine, but then when I try to log in, I get an error:
-
-    Invalid Email or password.
-
-So, I then checked the schema, but it appears that a password field doesn't even exist for that model:  
-
-
-    create_table "admin_users", force: :cascade do |t|
-        t.string "email", default: "", null: false
-        t.string "encrypted_password", default: "", null: false
-        t.string "reset_password_token"
-        t.datetime "reset_password_sent_at"
-        t.datetime "remember_created_at"
-        t.datetime "created_at", null: false
-        t.datetime "updated_at", null: false
-        t.index ["email"], name: "index_admin_users_on_email", unique: true
-        t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
-      end
-
-But for some reason, it still seems to accept the password being set when we create the instance in seeds. No error.  
-
-
-When I check the model, it looks like this:  
-
-
-    =&gt; AdminUser(id: integer, email: string, encrypted_password: string, reset_password_token: string, reset_password_sent_at: datetime, remember_created_at: datetime, created_at: datetime, updated_at: datetime)
-
-So I guess my question is twofold:  
-1) Why is it allowing me to assign a password when that column seemingly doesn't exist in the database.  
-2) How do I get round this issue?  
-
-
-Thanks.

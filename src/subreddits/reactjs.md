@@ -108,105 +108,150 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/eouupz/whos_available_jan_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Started working on a webapp last sunday to help make configs for Karabiner Elements. Its ugly but works! :) link in comments](https://www.reddit.com/r/reactjs/comments/fahjru/started_working_on_a_webapp_last_sunday_to_help/)
-- url: https://v.redd.it/21b6mdg6rij41
+## [3][I built a FREE online video editor using React.js](https://www.reddit.com/r/reactjs/comments/fazrti/i_built_a_free_online_video_editor_using_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/fazrti/i_built_a_free_online_video_editor_using_reactjs/
+---
+👋 Hey guys!
+
+My name is Michael Aubry. I live in San Diego and I've spent the last 8 months coding a video editor. I wanted something that was like After Effects in essence but abstracted some details and made creating stunning content a breeze. I was tired of having an overly complex toolset to create simple videos like the beginning of my tutorial video [https://www.youtube.com/watch?time\_continue=2&amp;v=J\_g38fHHvzA&amp;feature=emb\_title](https://www.youtube.com/watch?time_continue=2&amp;v=J_g38fHHvzA&amp;feature=emb_title) or the intro to my buddies YouTube video [https://youtu.be/fERlt5pTxu8?t=11](https://youtu.be/fERlt5pTxu8?t=11). 
+
+I didn't like a lot of the generic-looking solutions that were built without any soul. The videos from some solutions come out looking cheesy. I want videos in [https://storycreatorapp.com/](https://storycreatorapp.com/) to be easy to make but hard to make badly. I'm solving this with carefully selected elements. Premium templates modeled after sexy content.
+
+You might be saying to yourself *"I am just interested in learning about React.js though"*. So I digress with the intro. Let me make this post mostly about the React.js code. If you want to check it out and play around then here is a direct link (**it's FREE**) [https://storycreatorapp.com/](https://storycreatorapp.com/). Just looking for feedback before I launch on Product Hunt and spend money on advertising.
+
+Ok, so I am using TypeScript to reduce bugs. I believe this is a great practice. It can be overkill in making an MVP but I would do it to set a good foundation. You can use \`any\` and come back after features are validated to tighten them up. Most engineers would throw up at \`any\` but that's why they're not building companies, just working at them. Ship code, and ship as fast as you can while still having a good foundation to build on top of. That is my philosophy, I am just learning like anyone, and admit I can be wrong. This is just how I see it.
+
+If you explore the app you will see an "artboard". Let me talk about how I built the "artboard". I am using Dan Abramov's DND library [https://react-dnd.github.io/react-dnd/about](https://react-dnd.github.io/react-dnd/about). It's very powerful, it can be a little intimidating and has a learning curve. This definitely extended the release date but it was worth it to me. I wanted full control over DND. Not a premade solution using canvas. I was inspired to build this UX similar to Canva. I thought they did an amazing job.
+
+My criteria for the "artboard" is that when it's "active" and draggable. It should hide the selected object as the object leaves the canvas, but the "active" box should always be visible. In order to do this, I have one DragLayer that sends its x,y coordinates to the store DND uses under the hood. Then I have another component for the "active border" that has "pointer-events: none" and moves with the draggable object. It's at a position in the DOM hierarchy where it's visible outside the canvas. Where the draggable element is at a position in the DOM hierarchy where it's parent element is the canvas set to "overflow:hidden". I have tricks and hacks for manipulating the x,y for performance.
+
+Not sure if I am boring you so I'll start to wrap up and answer more questions in the comments. I'll conclude this by talking briefly about the timeline. The timeline wasn't initially in the first release, but as I thought about it. I realized it's an extremely important component in producing an interesting unique video with limitless combinations. I wanted to unleash the users' creativity and give them enough flexibility. Without it being overly complex. After Effects has a timeline where there can be unlimited layers. Inside each layer, you can go down a rabbit hole and feel overwhelmed. It's extremely powerful, don't get me wrong. However, I believed some users want something simple. That's exactly what I did. Initially, I had unlimited layers. After talking to some users I decided to make all media in one track, audio in its own track, and text on its own. Soon will be coming elements.
+
+With this feature, I am actually using [https://github.com/bokuweb/react-rnd](https://github.com/bokuweb/react-rnd). It was just easier out of the box and didn't have as many requirements as the "artboard". All the states are managed using React Apollo. The whole video editor is wrapped in Apollo actually. I am persisting the video data into apollo and syncing it to the server.
+
+If this doesn't bore you and you would like to learn more. I am happy to answer questions and share in the comments below.
+
+Best,  
+Michael Aubry [https://storycreatorapp.com/](https://storycreatorapp.com/)
+## [4][✨ Ant Design 4.0 is out! · Issue #21656 · ant-design/ant-design · GitHub](https://www.reddit.com/r/reactjs/comments/fb2b5n/ant_design_40_is_out_issue_21656/)
+- url: https://github.com/ant-design/ant-design/issues/21656
 ---
 
-## [4][How many requests before you should make your own api?](https://www.reddit.com/r/reactjs/comments/fasf9n/how_many_requests_before_you_should_make_your_own/)
-- url: https://www.reddit.com/r/reactjs/comments/fasf9n/how_many_requests_before_you_should_make_your_own/
+## [5][Why is Redux necessary?](https://www.reddit.com/r/reactjs/comments/favlhe/why_is_redux_necessary/)
+- url: https://www.reddit.com/r/reactjs/comments/favlhe/why_is_redux_necessary/
 ---
-More an open question than a specific problem, but for context I'm building a React app, and using firebase for auth, and also using firebase realtime-database.
+I am absolutely confused by Redux/React-Redux and I'm hoping someone could help let me know what makes it necessary to learn it over what's already easy in react's state management.
 
-So user will log in, obviously making a request, then I make up to 4 different requests to different tables/nodes, to populate the 'Home' page with relevant user info, and it got me thinking, should I be deploying one request to my own api which then will log in user, make the 4 requests and  return all the the data back to the user?
+I've been looking at job postings and they require knowledge of redux so I figured I'd try to get familiar with it and chose to watch this video:  [https://www.youtube.com/watch?v=8xoEpnmhxnk](https://www.youtube.com/watch?v=8xoEpnmhxnk)
 
-The app isn't overly complex at the moment so am reluctant to add this extra layer right now.
+It seems overly complicated for what could be done easily.Simply:
 
-So In other peoples experience when should you add your own api?
-## [5][react-curved-arrow - Curvy arrows for your React app! Great for tutorials and product tours](https://www.reddit.com/r/reactjs/comments/fad9gk/reactcurvedarrow_curvy_arrows_for_your_react_app/)
-- url: https://react-curved-arrow.nickjanssen.com/
----
+`const [variable, setVariable] = useState(defaultValue)And then what's inside component for onChange={ e =&gt; {setVariable(newValue) } }`
 
-## [6][Slack Frontend Architecture with Anuj Nair (Built with Electron + React) - Software Engineering Daily](https://www.reddit.com/r/reactjs/comments/fai1ju/slack_frontend_architecture_with_anuj_nair_built/)
-- url: https://softwareengineeringdaily.com/2020/02/27/slack-frontend-architecture-with-anuj-nair/
----
-
-## [7][Searching for renderless react hook components to help creating ui components in tailwindcss](https://www.reddit.com/r/reactjs/comments/farluo/searching_for_renderless_react_hook_components_to/)
-- url: https://www.reddit.com/r/reactjs/comments/farluo/searching_for_renderless_react_hook_components_to/
----
-Hi, I want to build my own components with tailwindcss.  
+So really, what makes redux so special? I don't get it.  
 
 
-I am looking for a renderless ui framework using hooks that can help me with the javascript part. I would like to build CSS &amp; HTML by my own.   
-
-
-Anyone knows a good package ? Thx
-## [8][React.useState updates wrong component](https://www.reddit.com/r/reactjs/comments/fat5ff/reactusestate_updates_wrong_component/)
-- url: https://www.reddit.com/r/reactjs/comments/fat5ff/reactusestate_updates_wrong_component/
----
-Hi.
-
-&amp;#x200B;
-
-I'm using React.useState to maintain state of two identical child components. The components are just a star rating component. 
-
-When I update the first component, things work fine, but when I update the last last component, the first rating component is update. In other words, when I one the second component adjust the amount of starts, the change is executed on the first component instead of the second one. 
-
-Please see [https://codesandbox.io/s/elated-monad-n01il](https://codesandbox.io/s/elated-monad-n01il) for demo.
-
-What am I missing here - why does this happen?
-## [9][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/reactjs/comments/fasoo2/top_5_frontend_development_outsourcing_challenges/)
-- url: http://frontend-challenges.xyz
+  
+EDIT:   
+Thanks everyone for the discussion on Redux! From what I can see is that it's more for complex apps where managing the state becomes complicated and Redux helps simplify that.   
+There are alternatives and even an easier way to do Redux with Redux Toolkit!   
+Good to know!   
+I was actually convinced to put it in my current app.
+## [6][Mocking and Fetching CRUD APIs with React-Query and Mirage JS](https://www.reddit.com/r/reactjs/comments/fb7zgf/mocking_and_fetching_crud_apis_with_reactquery/)
+- url: https://www.swyx.io/writing/react-query-miragejs-crud/
 ---
 
-## [10][Using Firebase in a react web app that does not require user authentication.](https://www.reddit.com/r/reactjs/comments/fasm5o/using_firebase_in_a_react_web_app_that_does_not/)
-- url: https://www.reddit.com/r/reactjs/comments/fasm5o/using_firebase_in_a_react_web_app_that_does_not/
+## [7][React Boilerplates with Redux, Redux-Saga and Best Practices](https://www.reddit.com/r/reactjs/comments/fbaa41/react_boilerplates_with_redux_reduxsaga_and_best/)
+- url: https://youtu.be/9CYcRj-zwk0
 ---
-I am currently working on a reactjs website which displays various user profiles created and managed by the admin himself. Visitors can review these profiles and rate them but there is no authentication or sign ups required in any step. I was wondering if cloud firestore is the right option for this.  Any suggestions ?
-## [11][React cards problem. Please help](https://www.reddit.com/r/reactjs/comments/farmh8/react_cards_problem_please_help/)
-- url: https://www.reddit.com/r/reactjs/comments/farmh8/react_cards_problem_please_help/
+
+## [8][How to access the file in antd upload component](https://www.reddit.com/r/reactjs/comments/fbcfa1/how_to_access_the_file_in_antd_upload_component/)
+- url: https://www.reddit.com/r/reactjs/comments/fbcfa1/how_to_access_the_file_in_antd_upload_component/
 ---
-Hi,  
+Hey, I'm using antd upload component to upload file to AWS but unable to understand which item gives the actual file that is to be send . Below is my code. Any help will be useful.
+
+Upload Component - 
+
+    const props = {
+      name: 'file',
+      multiple: true,
+      action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+      onChange(info) {
+        const { status } = info.file;
+        if (status !== 'uploading') {
+          console.log(info.file, info.fileList);
+        }
+        if (status === 'done') {
+          message.success(`${info.file.name} file uploaded successfully.`);
+        } else if (status === 'error') {
+          message.error(`${info.file.name} file upload failed.`);
+        }
+      },
+    };
+    
+    ReactDOM.render(
+      &lt;Dragger {...props}&gt;
+        &lt;p className="ant-upload-drag-icon"&gt;
+          &lt;InboxOutlined /&gt;
+        &lt;/p&gt;
+        &lt;p className="ant-upload-text"&gt;Click or drag file to this area to upload&lt;/p&gt;
+        &lt;p className="ant-upload-hint"&gt;
+          Support for a single or bulk upload. Strictly prohibit from uploading company data or other
+          band files
+        &lt;/p&gt;
+      &lt;/Dragger&gt;,
+      mountNode,
+    );
+## [9][Deployed a react app using github pages and the website is blank](https://www.reddit.com/r/reactjs/comments/fbc5pc/deployed_a_react_app_using_github_pages_and_the/)
+- url: https://www.reddit.com/r/reactjs/comments/fbc5pc/deployed_a_react_app_using_github_pages_and_the/
+---
+Hi everyone, could someone help me with deploying a react app on github pages? I've done it before, but this time something doesnt work.
+
+So I deployed a react app on github pages using npm run deploy  
+ and the website on github pages is blank and it has no errors. It works well on localhost. I checked the name in package.json and it is the same name.
+
+This is the source with code: [https://github.com/MichalKoscinski/Portfolio-Website](https://github.com/MichalKoscinski/Portfolio-Website)
+
+This is the website it should deploy to: [https://michalkoscinski.github.io/Portfolio-Website/](https://michalkoscinski.github.io/Portfolio-Website/)
+## [10][yarn fails to build](https://www.reddit.com/r/reactjs/comments/fbbwd0/yarn_fails_to_build/)
+- url: https://www.reddit.com/r/reactjs/comments/fbbwd0/yarn_fails_to_build/
+---
+Hi everyone. I have a fairly small [project](https://codesandbox.io/s/github/notaduck/nada_svendborg/tree/master/?fontsize=14&amp;hidenavigation=1&amp;theme=dark), however \`yarn\` fails to build it:  
+  
+```js
+[src] yarn build                                                                                              master  ✱
+yarn run v1.22.0
+$ react-scripts build
+Creating an optimized production build...
+Failed to compile.
+
+Cannot read property 'toLowerCase' of undefined
+CompileError: Begins at CSS selector .header_wrapper
 
 
-I am trying to make an application to understand data flow in React.   
-
-
-I have an object which looks like :
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 
 ```
-var data = \[  
-  { id: 1, text: 'A', favorite: false },  
-  { id: 2, text: 'B', favorite: false },  
-  { id: 3, text: 'C', favorite: false },  
-  { id: 4, text: 'D', favorite: false },  
-  { id: 5, text: 'E', favorite: false },  
-  { id: 6, text: 'F', favorite: false },  
-  { id: 7, text: 'G', favorite: true },  
-  { id: 8, text: 'H', favorite: false },  
-  { id: 9, text: 'I', favorite: false },  
-  { id: 10, text: 'J', favorite: false },  
-  { id: 11, text: 'K', favorite: false },  
-  { id: 12, text: 'L', favorite: false },  
-  { id: 13, text: 'M', favorite: false },  
-  { id: 14, text: 'N', favorite: true },  
-  { id: 15, text: 'O', favorite: true },  
-\];
 
-```
-
-These have to be displayed as a set of 15 cards, with &lt;h1&gt;id&lt;/h1&gt;, &lt;p&gt;text&lt;/p&gt; and &lt;button onClick={toggle favorite between true and false} /&gt;.
-
-I have to do the following in React.
-
-1. Show all the cards with favorite as true on top
-2. all the cards which are favorite are red and others are white
-
-I have set up the repo here: https://github.com/akhil9tiet/sampleCards
-
-it is a basic Create React App and all the code is in `App.js`
-
-Anyone who could help me, I will really be grateful
-## [12][react-swipeable-list - Swipeable list component for your mobile React app!](https://www.reddit.com/r/reactjs/comments/farcqb/reactswipeablelist_swipeable_list_component_for/)
-- url: https://github.com/sandstreamdev/react-swipeable-list
+Anyone who knows what is happening here?
+## [11][React Hooks Tutorial | Build Yelp in React #18 | improving search result items](https://www.reddit.com/r/reactjs/comments/fbatho/react_hooks_tutorial_build_yelp_in_react_18/)
+- url: https://www.youtube.com/watch?v=88z28Ge5irw
 ---
 
+## [12][React E-Commerce Online Shop - my first big project.](https://www.reddit.com/r/reactjs/comments/fbamlk/react_ecommerce_online_shop_my_first_big_project/)
+- url: https://www.reddit.com/r/reactjs/comments/fbamlk/react_ecommerce_online_shop_my_first_big_project/
+---
+Greetings, everyone!
+
+I made an online shop with React (no backend). I started building it with almost zero practical React knowledge. It took me around 5 months. I learned tons of stuff for this time!
+
+In the README on GitHub you can find links to the dependencies and CDNs. There are also list of all tools that I used to create this demo with links to the code in project.
+
+If you'll find any bugs, please, let me know!
+
+Deployed on Firebase: [https://react-e-commerce-online-store.firebaseapp.com/](https://react-e-commerce-online-store.firebaseapp.com/)
+
+Repo: [https://github.com/Alex-Noir/react\_e-commerce\_online\_store](https://github.com/Alex-Noir/react_e-commerce_online_store)
+
+https://reddit.com/link/fbamlk/video/clqgqr7h9uj41/player

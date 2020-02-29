@@ -79,51 +79,107 @@
 
 
 &amp;nbsp;
-## [2][WTF Wednesday (February 26, 2020)](https://www.reddit.com/r/javascript/comments/f9vexa/wtf_wednesday_february_26_2020/)
-- url: https://www.reddit.com/r/javascript/comments/f9vexa/wtf_wednesday_february_26_2020/
+## [2][Showoff Saturday (February 29, 2020)](https://www.reddit.com/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][I made open source cross platform snippets manager for developers](https://www.reddit.com/r/javascript/comments/fag4in/i_made_open_source_cross_platform_snippets/)
-- url: https://github.com/antonreshetov/massCode
+Show us here!
+## [3][Open Source Firebase (GraphQL) + Heroku which works anywhere and with any database!!](https://www.reddit.com/r/javascript/comments/fb49fc/open_source_firebase_graphql_heroku_which_works/)
+- url: https://blog.spaceuptech.com/posts/open-source-firebase-heroku/
 ---
 
 ## [4][Lazyload images the browser way](https://www.reddit.com/r/javascript/comments/fauk6e/lazyload_images_the_browser_way/)
 - url: https://itsopensource.com/lazyload-images-the-browser-way/
 ---
 
-## [5][JavaScript handles sparse arrays a bit oddly](https://www.reddit.com/r/javascript/comments/falemg/javascript_handles_sparse_arrays_a_bit_oddly/)
-- url: https://stackoverflow.com/questions/60346825/why-does-array-prototype-map-ignore-empty-slots-in-a-sparse-array-whereas-array
+## [5][Music written in Javascript - a live-coding environment for music running entirely in the browser, synthesizing music in webassembly using AssemblyScript](https://www.reddit.com/r/javascript/comments/fax949/music_written_in_javascript_a_livecoding/)
+- url: https://github.com/petersalomonsen/javascriptmusic
 ---
 
-## [6][Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://www.reddit.com/r/javascript/comments/fa83qs/rome_an_experimental_javascript_toolchain_from/)
-- url: https://github.com/facebookexperimental/rome
+## [6][[AskJS] Should I abandon my project?](https://www.reddit.com/r/javascript/comments/fbbxc8/askjs_should_i_abandon_my_project/)
+- url: https://www.reddit.com/r/javascript/comments/fbbxc8/askjs_should_i_abandon_my_project/
+---
+Back in December, I had a great idea for an app in NW.JS, and since then I have had 4 restarts from scratch, and two times where I "abandoned" it  and "took the L" for one day. But it was supposed to be my first actual real desktop program, and a coming-of-age symbol for my programming journey after which I could have called myself a programmer.
+
+
+
+But I really seem to have a problem with going past a certain point. I always start happy, full of hope, write maybe 300-500 lines, and suddenly I'm making excuses and get annoyed with things like scrolling up/down,  input fields, not having any inspiration for design, the code not seeming good-enough and thinking about a new restart even though it's good.
+
+Anyway, I have so much fun ignoring my project and making useless little examples on w3schools for you guys to ask you some vaguely important questions, that it seems to me that I just don't have it yet in me to do a big project. 
+
+
+So, now I am here, two months passed, nothing to show for it, failed 4+ times. But on the other hand, I learned so much from you guys, on top of what I already know. I learned that objects arent' scary or special, that you can reference higher-level variables in local functions (derp), the magic of queryselector and nth-children, that classes can be used for fetching child elements and not only for css, and so much more.
+
+
+
+So yea, now I have a choice: 
+
+
+1. Take the L and move on to learn Godot, like I intended after the glorious finish of my now failed project, right around March.
+
+
+
+2. Try a 5th time, but really modularly, with small chunks of working code, made in w3schools editor (because I somehow hate my Atom for some reason, or am afraid of it or something), to be sewn up together like a frankenstein at a later date.
+
+
+
+3. Take the L, and go make a smaller program in NW.JS, though I have no idea whatsoever what to make.
+
+
+
+4. Take the L, and go make my website for my epic future stuff that I will never make and only dream about
+
+
+
+So yea, I dunno. I only know that I love Javascript, but I am thinking about Python in a distant future. No idea how tkinter compares to my woes of making gui with web technologies
+
+
+
+What should I do? 
+
+
+Tnx!
+## [7][Don't Waste Your Ducking Time: An opinionated guide on how to test Redux ducks](https://www.reddit.com/r/javascript/comments/fb18s4/dont_waste_your_ducking_time_an_opinionated_guide/)
+- url: https://github.com/tophat/dont-waste-your-ducking-time
 ---
 
-## [7][Online javascript bundle tool. Bundle and obfuscate your javascript files. Supports es6 modules.](https://www.reddit.com/r/javascript/comments/fatv3e/online_javascript_bundle_tool_bundle_and/)
+## [8][Bootstrap 4 Treeview](https://www.reddit.com/r/javascript/comments/fay43k/bootstrap_4_treeview/)
+- url: https://github.com/chniter/bstreeview
+---
+
+## [9][[AskJS] Need to Show/Load Hidden Button](https://www.reddit.com/r/javascript/comments/fb4ueq/askjs_need_to_showload_hidden_button/)
+- url: https://www.reddit.com/r/javascript/comments/fb4ueq/askjs_need_to_showload_hidden_button/
+---
+ Hi I have a static html page with JS code
+
+This is the end of page process:
+
+    var onComplete = function() {
+    
+        var h1 = document.createElement('h1')
+        h1.appendChild(document.createTextNode('Thanks ' + questions[0].answer + ' for your registration!'))
+        setTimeout(function() {
+          register.parentElement.appendChild(h1)
+          setTimeout(function() { h1.style.opacity = 1 }, 50)
+        }, 1000)
+    
+    }
+
+ Registry form page that loads text message at the end. From there I need a button to be loaded below the text. Button that previously was hidden. 
+
+&amp;#x200B;
+
+ Any help is appreciated.
+## [10][How I recreated popular TV networks prerolls using WebGL and fragment shaders.](https://www.reddit.com/r/javascript/comments/fb3i7k/how_i_recreated_popular_tv_networks_prerolls/)
+- url: https://tips4devs.com/articles/replicating-network-prerolls-animations-with-fragment-shaders.html
+---
+
+## [11][Online javascript bundle tool. Bundle and obfuscate your javascript files. Supports es6 modules.](https://www.reddit.com/r/javascript/comments/fatv3e/online_javascript_bundle_tool_bundle_and/)
 - url: https://jsbundler.now.sh/
 ---
 
-## [8][Call a JavaScript function with an explicit this • Delicious Insights](https://www.reddit.com/r/javascript/comments/fael4s/call_a_javascript_function_with_an_explicit_this/)
-- url: https://delicious-insights.com/en/posts/call-and-apply-in-javascript/?utm_source=porteneuve&amp;utm_campaign=call-apply&amp;utm_medium=reddit
----
-
-## [9][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/javascript/comments/fasasz/top_5_frontend_development_outsourcing_challenges/)
-- url: http://frontend-challenges.xyz
----
-
-## [10][How to generate Changelog using Conventional Commits](https://www.reddit.com/r/javascript/comments/faccan/how_to_generate_changelog_using_conventional/)
-- url: https://www.hackdoor.io/articles/PYJxqANr/how-to-generate-changelog-using-conventional-commits
----
-
-## [11][[AskJS] Why is there a new Ecmascript specification every year?](https://www.reddit.com/r/javascript/comments/fatl0c/askjs_why_is_there_a_new_ecmascript_specification/)
-- url: https://www.reddit.com/r/javascript/comments/fatl0c/askjs_why_is_there_a_new_ecmascript_specification/
----
-Who's supposed to keep up with this madness?
-## [12][You'd be surprised how much you can do without JS :D](https://www.reddit.com/r/javascript/comments/fa7xgq/youd_be_surprised_how_much_you_can_do_without_js_d/)
-- url: https://github.com/you-dont-need/You-Dont-Need-JavaScript
+## [12][After much frustration, this is the simplest way to use Redux I could find. No other libraries. Please tell me if I'm doing it wrong.](https://www.reddit.com/r/javascript/comments/fb0qq2/after_much_frustration_this_is_the_simplest_way/)
+- url: https://github.com/rodrigocfd/beginner-redux
 ---
 

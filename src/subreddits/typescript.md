@@ -200,11 +200,7 @@ Hello hovering over a variable holding `Cntr` shows me a summary of the types. D
 &amp;#x200B;
 
 note: you can suggest me any other tool too
-## [10][Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://www.reddit.com/r/typescript/comments/fa83wh/rome_an_experimental_javascript_toolchain_from/)
-- url: https://github.com/facebookexperimental/rome
----
-
-## [11][I want to add methods to Object](https://www.reddit.com/r/typescript/comments/fajz99/i_want_to_add_methods_to_object/)
+## [10][I want to add methods to Object](https://www.reddit.com/r/typescript/comments/fajz99/i_want_to_add_methods_to_object/)
 - url: https://www.reddit.com/r/typescript/comments/fajz99/i_want_to_add_methods_to_object/
 ---
 Is there a convention for providing additional methods to existing classes (like you can with `obj.member = newCallable` in vanilla JS... but of course, this isn't typed)?
@@ -214,3 +210,7 @@ I have seen how you can add additional method descriptions like `interface Strin
 If i'm wrong on multiple levels and really seem to be barking up the wrong tree then **please** don't be afraid to tell me why.
 
 EDIT: replaced md syntax with reddit formatting :)
+## [11][Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://www.reddit.com/r/typescript/comments/fa83wh/rome_an_experimental_javascript_toolchain_from/)
+- url: https://github.com/facebookexperimental/rome
+---
+

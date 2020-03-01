@@ -1,5 +1,21 @@
 # ruby
-## [1][Question using ruby2d Image Class making Tic-Tac-Toe](https://www.reddit.com/r/ruby/comments/fb8tnw/question_using_ruby2d_image_class_making_tictactoe/)
+## [1][StackOverflow listed Ruby in the most commonly used programming languages](https://www.reddit.com/r/ruby/comments/fbsvvy/stackoverflow_listed_ruby_in_the_most_commonly/)
+- url: https://learnworthy.net/stackoverflow-listed-the-most-commonly-used-programming-languages/
+---
+
+## [2][RubyKaigi 2020 postponed until 3–5 September due to COVID-19](https://www.reddit.com/r/ruby/comments/fbewtn/rubykaigi_2020_postponed_until_35_september_due/)
+- url: https://esa-pages.io/p/sharing/68/posts/1006/b15a58c675f5a69d06e5.html
+---
+
+## [3][Can you download the fuel economy [dot] gov database?](https://www.reddit.com/r/ruby/comments/fblo87/can_you_download_the_fuel_economy_dot_gov_database/)
+- url: https://www.reddit.com/r/ruby/comments/fblo87/can_you_download_the_fuel_economy_dot_gov_database/
+---
+I was thinking about making a headless watir build to scrape everything they've got and join it with current kbb data, but I thought to maybe ask here first if someone hasn't already done this or similar or know of a resource I'm not considering.
+## [4][Reduce allocations for keyword argument hashes](https://www.reddit.com/r/ruby/comments/fb2e6u/reduce_allocations_for_keyword_argument_hashes/)
+- url: https://github.com/ruby/ruby/pull/2945
+---
+
+## [5][Question using ruby2d Image Class making Tic-Tac-Toe](https://www.reddit.com/r/ruby/comments/fb8tnw/question_using_ruby2d_image_class_making_tictactoe/)
 - url: https://www.reddit.com/r/ruby/comments/fb8tnw/question_using_ruby2d_image_class_making_tictactoe/
 ---
 New to Ruby but not to programming and so I wanted to mess around and make something with ruby2d. The project I went for was tic-tac-toe but I ran into a situation handling the Image class. 
@@ -42,23 +58,19 @@ I really am not a fan of this implementation because on each mouse click on a fr
 For tic-tac-toe this issue isn't that bad but the solution doesn't seem scale-able for larger games (Go for example).
 
 If there is a way to implement this where I have one x\_image and o\_image object that would be preferable. I imagine I'm missing some simple way to do this or I might be misunderstanding something obvious but any help and constructive criticism is appreciated.
-## [2][Reduce allocations for keyword argument hashes](https://www.reddit.com/r/ruby/comments/fb2e6u/reduce_allocations_for_keyword_argument_hashes/)
-- url: https://github.com/ruby/ruby/pull/2945
----
-
-## [3][2.7's pattern matching official docs (recently merged)](https://www.reddit.com/r/ruby/comments/favshb/27s_pattern_matching_official_docs_recently_merged/)
+## [6][2.7's pattern matching official docs (recently merged)](https://www.reddit.com/r/ruby/comments/favshb/27s_pattern_matching_official_docs_recently_merged/)
 - url: https://docs.ruby-lang.org/en/master/syntax/pattern_matching_rdoc.html
 ---
 
-## [4][Benchmarking Ruby 2.7.0's Numbered Parameters](https://www.reddit.com/r/ruby/comments/fat90p/benchmarking_ruby_270s_numbered_parameters/)
+## [7][Benchmarking Ruby 2.7.0's Numbered Parameters](https://www.reddit.com/r/ruby/comments/fat90p/benchmarking_ruby_270s_numbered_parameters/)
 - url: https://blog.schembri.me/post/benchmarking-ruby-2.7.0-numbered-parameters/
 ---
 
-## [5][Faster Excel Parsing in Ruby](https://www.reddit.com/r/ruby/comments/faszl8/faster_excel_parsing_in_ruby/)
+## [8][Faster Excel Parsing in Ruby](https://www.reddit.com/r/ruby/comments/faszl8/faster_excel_parsing_in_ruby/)
 - url: https://blog.schembri.me/post/faster-excel-parsing-in-ruby/
 ---
 
-## [6][I get nil for sort_by on an array of objects](https://www.reddit.com/r/ruby/comments/far4kd/i_get_nil_for_sort_by_on_an_array_of_objects/)
+## [9][I get nil for sort_by on an array of objects](https://www.reddit.com/r/ruby/comments/far4kd/i_get_nil_for_sort_by_on_an_array_of_objects/)
 - url: https://www.reddit.com/r/ruby/comments/far4kd/i_get_nil_for_sort_by_on_an_array_of_objects/
 ---
     def sorted_objects
@@ -81,7 +93,7 @@ here's an example of what objects is storing
     @objects &lt;&lt; Room.new(10 - x, y, tile.to_i, 220, 300, @max_x.to_i, @max_y.to_i,"floor",0)
 
 no idea why r returns nil.
-## [7][Has anyone used Kiba?](https://www.reddit.com/r/ruby/comments/fal2l2/has_anyone_used_kiba/)
+## [10][Has anyone used Kiba?](https://www.reddit.com/r/ruby/comments/fal2l2/has_anyone_used_kiba/)
 - url: https://www.reddit.com/r/ruby/comments/fal2l2/has_anyone_used_kiba/
 ---
 Hey! I've been looking for data engineering tools, found tons of them, to manage workflows, to generate ETL jobs, most of them use Python and I'd rather use Ruby. (i.e. amazon glue, airflow, astronomer, stitchdata, ...)
@@ -95,77 +107,3 @@ Just to give you some broad context, my main goal is to extract data from a tsv 
 My question is, do you have any experiences to share regarding data engineering in Ruby? Or have you used Kiba previously? Any insights or comments? 
 
 Anything would be appreciated!
-## [8][The state of ruby blogs and news (2020/2 Edition) - 36 channels, 1464 items](https://www.reddit.com/r/ruby/comments/fahwbr/the_state_of_ruby_blogs_and_news_20202_edition_36/)
-- url: https://www.reddit.com/r/ruby/comments/fahwbr/the_state_of_ruby_blogs_and_news_20202_edition_36/
----
-Hello,
-
-   I've put together a little survey about the state of the ruby feed-iverse that includes personal blogs, ruby project news and more.
-
-  See the [planet.ini](https://github.com/planetruby/planet/blob/master/planet.ini) for all feeds included in the survey.
-
-Q: What feed formats are in use?
-
-    Formats  (n=36)
-    ---------------------------------
-      atom        23 (63%) | *************************************
-      rss 2.0     13 (36%) | *********************
-
-
-Q: What servers are in use?
-
-    Servers  (n=36)
-    ---------------------------------
-      GitHub.com  12 (33%) | *******************
-      nginx        8 (22%) | *************
-      Cowboy       5 (13%) | *******
-      Apache       4 (11%) | ******
-      cloudflare   3 ( 8%) | ****
-      GSE          2 ( 5%) | ***
-      Netlify      2 ( 5%) | ***
-
-
-Q: What (web site) publishing tools are in use?
-
-    Generators  (n=36)
-    ---------------------------------
-      ?           22 (61%) | ************************************
-      Jekyll       9 (25%) | ***************
-      wordpress    3 ( 8%) | ****
-      webgen       1 ( 2%) | *
-      Ghost        1 ( 2%) | *
-
-
-Q: What's the update frequency of posts?
-
-    Update Frequency  (n=35)
-    ---------------------------------
-      &lt;=   7 days   3 ( 8%) | ****
-      &lt;=  14 days   4 (11%) | ******
-      &lt;=  30 days   7 (20%) | ************
-      &lt;=  90 days  12 (34%) | ********************
-      &lt;= 180 days   5 (14%) | ********
-      &lt;= 365 days   4 (11%) | ******
-
-That's all for now. Comments and ideas on how to improve
-the stats are more than welcome. Cheers. Prost.
-## [9][Building a reddit bot using Ruby](https://www.reddit.com/r/ruby/comments/fam6w7/building_a_reddit_bot_using_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/fam6w7/building_a_reddit_bot_using_ruby/
----
-I apologize if this has been asked recently, I had trouble finding anything semi-current on the subject. If there's recent threads on this that I didn't find, please let me know as I'd love to see them.
-
-I'm a newish Ruby developer and I have been toying with the idea of making a simple reddit bot with Ruby, mainly to help me learn various skills, but also to be functional and serve a sub I mod. I want it to fetch info from one outside site and post the data it finds there when requested. Simple enough I hope (not simple for me lol).
-
-I'm having trouble finding much info on how to implement a reddit bot using Ruby. I know Python is what's used most often, and I do have some experience with it but I'm focusing on Ruby atm and I don't want to go off on a Python tangent. I found the [Reddit\_Bot](https://rubygems.org/gems/reddit_bot) gem which seems to be popular and recently updated. I'm going through the docs which are helpful and have a lot of examples, but there's basic info missing that is probably common knowledge to more experienced devs but a vast abyssal mystery to newbies like me.
-
-So to be specific:
-
-1. Is Ruby okay to use for this, or should I set aside cash now for when I inevitably smash my computer in frustration?
-2. If (1) is yes, are there any videos, tutorials, anything you know of that are Ruby-specific that might be helpful for this project? (I did already watch several youtube vids on Python bots which were helpful, but since I'm still a baby dev I have a hard time translating what I learn there to Ruby context)
-3. Any advice, tips, or whatever you have for this would be appreciated. I have mainly worked in a Rails framework for general web development and have only a little experience working with API's, so pretty much every part of this process is going to be a learning experience for me.
-
-Thanks!
-## [10][Ruby Hash#transform_keys now accepts a hash that maps existing keys to new keys](https://www.reddit.com/r/ruby/comments/fae2jf/ruby_hashtransform_keys_now_accepts_a_hash_that/)
-- url: https://blog.saeloun.com/2020/02/26/ruby-hash-transform_keys-now-accepts-a-hash-that-maps-existing-keys-to-new-keys
----
-

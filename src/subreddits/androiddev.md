@@ -40,81 +40,74 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Moment kills its Android camera app, cites constantly-changing software and hardware](https://www.reddit.com/r/androiddev/comments/fb2a27/moment_kills_its_android_camera_app_cites/)
-- url: https://www.androidpolice.com/2020/02/28/moment-kills-its-android-camera-app-cites-constantly-changing-software-and-hardware/
+## [3][Scabbard (Dagger Visualizer) 0.2.0 - SVG support for generated graphs, uses simple names, improved gradle plugin and minor fixes.](https://www.reddit.com/r/androiddev/comments/fbqsbw/scabbard_dagger_visualizer_020_svg_support_for/)
+- url: https://github.com/arunkumar9t2/scabbard/releases/tag/0.2.0
 ---
 
-## [4][How to deal with app crashes (mentally) ?](https://www.reddit.com/r/androiddev/comments/fbamvr/how_to_deal_with_app_crashes_mentally/)
-- url: https://www.reddit.com/r/androiddev/comments/fbamvr/how_to_deal_with_app_crashes_mentally/
+## [4][Rx is not the problem; Asynchronous programming is.](https://www.reddit.com/r/androiddev/comments/fbpgza/rx_is_not_the_problem_asynchronous_programming_is/)
+- url: https://medium.com/@steven.popovich/rx-is-not-the-problem-asynchronous-programming-is-6055b5839b1a
 ---
-Hi guys ,
 
-If you are someone who develop apps and release them on play store , i want to know how do you guys deal with app crashes , i mean you releasing an app update just to find out within a week u find some crashes and if u fix that and release an update again this cycle keeps repeating 
-
-Even after quality testing , using firebase test lab i keep getting some crashes , it's very stressful and i want to know how do u guys deal with it mentally knowing that there are 100's of users who may experince this crash , who may uninstall app after this.
-## [5][How to protect Android App from getting stolen?](https://www.reddit.com/r/androiddev/comments/fbchpj/how_to_protect_android_app_from_getting_stolen/)
-- url: https://www.reddit.com/r/androiddev/comments/fbchpj/how_to_protect_android_app_from_getting_stolen/
+## [5][Showing the Android Keyboard Reliably](https://www.reddit.com/r/androiddev/comments/fbiakx/showing_the_android_keyboard_reliably/)
+- url: https://developer.squareup.com/blog/showing-the-android-keyboard-reliably/
 ---
-Hi Everyone!
-I have created an Android Application which is gets stolen. Someone just copied my application and he changed some images and overall theme of my application and posted it on Play Store and it gets published. Not a single code he changed even on some places my account name BIG DREAMS TEAM still visible. When I reported about it google ask me to send a copy of court order to remove app from store.
-Anyone have any idea what should I do?
-And I am not the only one on that account more than 25 apps are published which are stolen.
-Also any suggestions would be very helpful, that what can I do on code level to protect my apps and updates in future.
-## [6][lock screen controls for audio player app](https://www.reddit.com/r/androiddev/comments/fbc6sp/lock_screen_controls_for_audio_player_app/)
-- url: https://www.reddit.com/r/androiddev/comments/fbc6sp/lock_screen_controls_for_audio_player_app/
+
+## [6][Is there any FREE, SIMPLE, COMMUNITY based translation tool as Google Translator toolkit?](https://www.reddit.com/r/androiddev/comments/fbro2j/is_there_any_free_simple_community_based/)
+- url: https://www.reddit.com/r/androiddev/comments/fbro2j/is_there_any_free_simple_community_based/
 ---
-I'm building ios and android versions of a simple music player.  the audio has the ability to play in the background (eg: when the user presses the power button to turn the screen off and put the phone in their pocket).  then when the user takes the phone out of their pocket and presses the power button, we see the lock screen.  on the iphone, it was super super easy to add transport controls (using MPRemoteCommandCenter) and song info (using MPNowPlayingInfoCenter) to the lock screen so that the user could see what song is playing and they can skip to the next song and play/pause, etc.  for android though, i am having a tough time figuring out how to do this.  my app is simple: it's just an activity with a MediaPlayer.  It \*seems\* like what I need to do is create a notification of some kind that will display the controls and the info, but I don't see how to launch that notification when the phone displays the lock screen.  Also, the transport controls seem to be implemented in a client / server kind of way, but my app is currently \*not\* set up as a client / server model.
+Everything I tried, and its been a lot, is either paid, or directed towards professionals, or with landing page which takes an hour to read and offering tons of functionality I dont really need.
 
-So, my questions for the android dev community are: (1) is there a simple way to do this that i am missing? i've spent a lot of time looking for solutions, but haven't found anything straightforward like i found for ios;  (2) do i need to rewrite my app to be a client / server?  from what i've found, it seems like the way to do that is to make the music player core the server and then the ui is the client.  this seems obtuse and overkill to me, but if it's the only way for me to get controls and info on the lockscreen, then i'll go ahead and do it.
+I just want something simple. Where I:
 
-Thanks. :)
-## [7][Any way to set default mode to "Split" view in Layout Editor (Android Studio 3.6)?](https://www.reddit.com/r/androiddev/comments/fbc5f3/any_way_to_set_default_mode_to_split_view_in/)
+1. upload text I want to translate
+2. share link with people who help me with translation
+
+Thats all. Exactly like Google Translator Toolkit. Can you recommend any tools? Thanks a lot!
+## [7][How would I go about creating an app to intercept and edit all mobile hotspot traffic?](https://www.reddit.com/r/androiddev/comments/fbto0z/how_would_i_go_about_creating_an_app_to_intercept/)
+- url: https://www.reddit.com/r/androiddev/comments/fbto0z/how_would_i_go_about_creating_an_app_to_intercept/
+---
+I would like to build an app with xamarin using c# which should be able to:
+1: setup a mobile hotspot with a custom name and password.
+2: intercept and edit all traffic passing through the hotspot.
+
+Would the WifiManager class give me enough control to do this? If not, what tools could give me this level of control? If there are no tools to do this then how would I get low level access to networking on the android device?
+
+Thanks in advance for any help! :)
+## [8][How to speed up image processing on android?](https://www.reddit.com/r/androiddev/comments/fbsnpt/how_to_speed_up_image_processing_on_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fbsnpt/how_to_speed_up_image_processing_on_android/
+---
+I am working on an image enhancement android app. In one part i loop over a single channel 2d array with dimensions equal to that of image. Doing this on a full resolution image takes too much time and the app crashes. So right now i downscale the image and work on it but I have to do it on full resolution image.
+
+What i am doing is that i have already created 10 different segment of image. I have labelled the above mentioned 2d array where each index is the segment number from 1 to 10. I then sum pixel values at each belonging to a specific segment. For this I loop over the 2d array and check which segment the pixel belongs to and add the pixel value to corresponding sum.
+
+To speed up this process I can think of two techniques.
+1. Create 10 different images making pixels that don't belong to that segment equal to 0 and than using opencv's built in sum function.
+2. I am doing this in C++ using jni and I have read online about Halide and how it is used to speed up such tasks by parallelising the tasks. I currently don't know how to do it but I can learn. 
+
+Which of the above mentioned technique is better or if there exists an even better technique which I have missed?
+## [9][I opened my minesweeper game source code](https://www.reddit.com/r/androiddev/comments/fbfomo/i_opened_my_minesweeper_game_source_code/)
+- url: https://github.com/lucasnlm/antimine-android
+---
+
+## [10][Any way to set default mode to "Split" view in Layout Editor (Android Studio 3.6)?](https://www.reddit.com/r/androiddev/comments/fbc5f3/any_way_to_set_default_mode_to_split_view_in/)
 - url: https://www.reddit.com/r/androiddev/comments/fbc5f3/any_way_to_set_default_mode_to_split_view_in/
 ---
 I went to `Settings-&gt;Editor-&gt;Layout Editor` but it only has "Prefer XML editor" checkbox, which means it'll either open the Design view, or Code view, but not split view. Is there any way I can make it open Split view by default?
-## [8][Android Studio 3.6.1 available](https://www.reddit.com/r/androiddev/comments/fazmu8/android_studio_361_available/)
-- url: https://androidstudio.googleblog.com/2020/02/android-studio-361-available.html
+## [11][Android generic receipt printing](https://www.reddit.com/r/androiddev/comments/fbppn8/android_generic_receipt_printing/)
+- url: https://www.reddit.com/r/androiddev/comments/fbppn8/android_generic_receipt_printing/
 ---
-
-## [9][Transform into a different view or activity using morphing animations.](https://www.reddit.com/r/androiddev/comments/fawzu9/transform_into_a_different_view_or_activity_using/)
-- url: https://github.com/skydoves/TransformationLayout
+I am currently using Epson sdk to connect to epson thermal printers, but I would like to be able to connect to other manufacter's printers too, is there any generic way to print? I tried using sockets but it doesn't work.
+## [12][New Android App Ideas](https://www.reddit.com/r/androiddev/comments/fbrq8w/new_android_app_ideas/)
+- url: https://www.reddit.com/r/androiddev/comments/fbrq8w/new_android_app_ideas/
 ---
+A recent app I was working on I had to take down unfortunately because the API is no longer operational  
+[https://pitted.app/](https://pitted.app/)  
+So now I am looking to build a new Android app as a side project
 
-## [10][Publishing an App](https://www.reddit.com/r/androiddev/comments/fbbkn9/publishing_an_app/)
-- url: https://www.reddit.com/r/androiddev/comments/fbbkn9/publishing_an_app/
----
-Hi guys, I've been trying to publish an App that parses messages received for a Mobile Banking platform in Kenya called MPesa. Essentially the app parses SMS messages received from "MPESA" the displays your transactions in an easy to digest format. 
+I have created a couple other Android apps [https://play.google.com/store/apps/developer?id=Etienne+Lawlor&amp;hl=en\_US](https://play.google.com/store/apps/developer?id=Etienne+Lawlor&amp;hl=en_US)
 
-But after finishing the app I discovered that in order to publish your app which reads messages you have to register as the default message handler... This is not the purpose of the app. All data is stored locally on the device, thus the app does not require internet connection. So no data can be sent out.
+and have worked on several open source projects [https://github.com/lawloretienne?tab=repositories](https://github.com/lawloretienne?tab=repositories)
 
-I've tried contacting Google explaining my use case but have not heard anything for weeks.. 
+But I want to work on something new.
 
-Does anyone have any ideas?
-## [11][Using Unity as a Subview in an Android Activity](https://www.reddit.com/r/androiddev/comments/fb2f2t/using_unity_as_a_subview_in_an_android_activity/)
-- url: https://www.reddit.com/r/androiddev/comments/fb2f2t/using_unity_as_a_subview_in_an_android_activity/
----
-Does anyone with Unity experience know of a solution to this? I can't seem to find any recent ones or answers that aren't outdated.
-
-https://stackoverflow.com/questions/43918417/display-unity-scene-as-sub-view-in-android-studio
-
-https://gamedev.stackexchange.com/questions/134347/android-black-screen-with-unity-app-in-subview
-
-https://stackoverflow.com/questions/31041031/black-screen-unity-subview-in-android
-
-All the answers I've tried is giving me a blackscreen. Someone suggested that it could be a unity issue because they reworked the whole Android-Integration in version 2019.3.0.
-## [12][App Debugging in foreign countries, South Asia, Bali, Indonesia](https://www.reddit.com/r/androiddev/comments/fbaq4i/app_debugging_in_foreign_countries_south_asia/)
-- url: https://www.reddit.com/r/androiddev/comments/fbaq4i/app_debugging_in_foreign_countries_south_asia/
----
-Hey everyone :).
-
-I have been developing android apps for quite some time, but never released anything outside EU.
-
-Now I am building a flutter app, and I was talking to my friend who is currently in Bali. So I wanted to show him my new app, and send him the APK which works perfectly fine in EU and US on the same Phone (Pixel 2). But in Bali it crashes as soon as it should connect to Firebase/my cloud (currently only on a Europe server). He used VPN, no change. Android 10 is the OS on my Pixel2 and on his. Same build number as well.
-
-I love my App and it can be used everywhere on the world and is also kind of intended to be working wherever you go, so how can I tackle that issue? 
-
-What could even be the reason for this behavior? 
-
-Has anyone experience in releasing a "worldwide" (minus China, etc.) app?  
-
-Greetings,
+Does anyone have any ideas, or has any interest in possibly partnering up?

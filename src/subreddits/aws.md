@@ -1,85 +1,205 @@
 # aws
-## [1][React+nodejs: Amplify authenticates the user using cognito, but what is the best way to access protected routes and persist the session for the user?](https://www.reddit.com/r/aws/comments/fb72pq/reactnodejs_amplify_authenticates_the_user_using/)
-- url: https://www.reddit.com/r/aws/comments/fb72pq/reactnodejs_amplify_authenticates_the_user_using/
+## [1][The Complete CloudFormation Guide](https://www.reddit.com/r/aws/comments/fbi106/the_complete_cloudformation_guide/)
+- url: https://start.jcolemorrison.com/the-complete-cloudformation-guide/
 ---
-There are a few options which I am not too sure on to use as the primary one.
 
-a) Do I pass the JWT from amplify to nodejs backend to access protected routes? - if this is the case, then i am good, I know how to do this now after a previous post.
+## [2][SQS and Lambda with Async calls](https://www.reddit.com/r/aws/comments/fbtlyd/sqs_and_lambda_with_async_calls/)
+- url: https://www.reddit.com/r/aws/comments/fbtlyd/sqs_and_lambda_with_async_calls/
+---
+Hello all, 
 
-b) Do I pass the cookies that amplify creates after authenticating? - how best to do this on a node app?
+I have a question regarding the fact that you can call Lambda as an async call and then it has by default retry option for async calls. 
 
-c) Do I stick with the current way amplify persists the userbase using cookies in the browser? Or do I implement a different way? if different what would be the right architecture?
+SQS has this too, as I noticed from a basic test that SQS retries for 4 times if I'm not mistaken, and Lambda has a default value of 2 retires. So, I'm getting 6 calls in case of failure in Lambda because of the retires default options in both of them?? 
+
+Did I missed any info here and that makes me think that this is the case?
 
 &amp;#x200B;
 
-Sorry if this comes off as a little bit noobish, but I am trying to figure out the most secure way of keeping the user session alive and also accessing the backend for protected routes.
-## [2][AWS Noob - Connected a PLC (IoT Device) to AWS as a "thing", how do I go about building a simple app to collect the data?](https://www.reddit.com/r/aws/comments/fb4252/aws_noob_connected_a_plc_iot_device_to_aws_as_a/)
-- url: https://www.reddit.com/r/aws/comments/fb4252/aws_noob_connected_a_plc_iot_device_to_aws_as_a/
+Thanks..
+## [3][Everywhere I read about oatuh 2 tokens, they say you should not store them on client side/localstorage, but AWS amplify does store them on the client's local storage, can somebody more in the know explain why it is ok for Amplify to do so?](https://www.reddit.com/r/aws/comments/fbnalo/everywhere_i_read_about_oatuh_2_tokens_they_say/)
+- url: https://www.reddit.com/r/aws/comments/fbnalo/everywhere_i_read_about_oatuh_2_tokens_they_say/
 ---
-I am using MQTT to pull data off of a PLC system system and I have successfully setup a data stream into AWS - [https://imgur.com/a/mY9MCN3](https://imgur.com/a/mY9MCN3)
+For reference:
 
-What are some resources I should look into to build a very simple iOS and Android app off of this data so it can been seen on a phone? I programmed in JAVA back in 2006 but haven't been programming since so I am just trying to make sometime super basic for the time being. I am building a monitoring system for a PLC system.
-## [3][Is it possible to view the number of Invalidation requests I've sent to cloudfront?](https://www.reddit.com/r/aws/comments/fb87k9/is_it_possible_to_view_the_number_of_invalidation/)
-- url: https://www.reddit.com/r/aws/comments/fb87k9/is_it_possible_to_view_the_number_of_invalidation/
+  
+Auth0 specifying you should store them on localstorage/client: [https://auth0.com/docs/tokens/guides/store-tokens](https://auth0.com/docs/tokens/guides/store-tokens)  
+
+
+Here is docs specifying amplify stores them on the client: [https://aws-amplify.github.io/docs/js/authentication#managing-security-tokens](https://aws-amplify.github.io/docs/js/authentication#managing-security-tokens)  
+
+
+How exactly are you supposed to store these tokens using SPA apps which use S3 as a backend if its a security issue to store them on the client. Does that mean that every single SPA app which remembers user's across sessions with federated login is actually going against security best practices, and hence is  vulnerable?
+## [4][SES SMTP limitations with printers, etc.](https://www.reddit.com/r/aws/comments/fbrshf/ses_smtp_limitations_with_printers_etc/)
+- url: https://www.reddit.com/r/aws/comments/fbrshf/ses_smtp_limitations_with_printers_etc/
 ---
-I cant seem to find anything in the Cost explorer or the usage tab withing cloudfront.
+I try to use SES as our outbound SMTP infrastructure for incidental devices (printers, etc...) because I like being able to restrict to specific approved sender email addresses via IAM policies, and I have a mature Terraform setup in place for managing accounts/policies.
 
-I'm trying to stick within the free tier limits so this information would be very useful.
+HOWEVER
 
-Cheers
-## [4][Why do my aws calls not retry with a timeout set?](https://www.reddit.com/r/aws/comments/fb61iq/why_do_my_aws_calls_not_retry_with_a_timeout_set/)
-- url: https://www.reddit.com/r/aws/comments/fb61iq/why_do_my_aws_calls_not_retry_with_a_timeout_set/
+I keep running into devices that for some reason just... don't work with SES, but work with any other email provider I try.  I've encountered this on a Brother printer in the past, and an HP Color LaserJet Pro MFP M479fdw right now on my desk.
+
+Behavior: HP printer simply says "System failure" when attempting to send a test email when configured using SES.
+
+Symptoms / troubleshooting so far:
+
+* Tried changing 1 character in username and password to rule out bad credentials or a bad webUI silently truncating long passwords.  Error message changed to "Invalid credentials", so I know the credentials are being stored correctly; it's something else.
+* Tried the same SES SMTP credentials in other SMTP applications, and they do work, so the credentials are good.
+* Tried switching to Mailgun on the printer, email started working, so scan-to-email \*does\* work in some capacity.  Also Mailgun also has really long passwords, so it's not a password length thing.  Also tested with Fastmail and scan-to-email works with them as well.
+* Tried to find any sort of diagnostic/debugging logs anywhere on the printer -- no luck.  I hooked it up to external syslog at the highest debugging level, but the printer doesn't log anything about SMTP unfortunately.
+* Upgraded printer firmware to the latest published version, no change.
+* Tried all combinations of TLS / non-TLS, all SES ports, direct IP address vs. DNS entry for SMTP server hostname.
+* Extensive Googling, no luck finding anyone in a similar predicament.
+
+So -- I'm asking two things:
+
+1. Has anyone fought this specific problem and has tips for what I should try?  I wish I could get diagnostic logs out of the printer, but no luck.
+2. At a higher level, does anyone know what specific things SES does differently that would cause it to fail when used in conjunction with brittle SMTP clients in embedded devices like printers, etc?
+
+This is low-stakes -- Mailgun is working fine, I just want to know what's wrong and simplify the stack to use AWS if at all possible.  Thanks!
+## [5][Aws single VM monitoring](https://www.reddit.com/r/aws/comments/fbr0f6/aws_single_vm_monitoring/)
+- url: https://www.reddit.com/r/aws/comments/fbr0f6/aws_single_vm_monitoring/
 ---
-I have some aws client calls in a aws lambda function that have a timeout set to less than the lambda execution time. This is so the lambda doesn’t time out waiting on a dynamo query for example. I set the timeout property of the dynamo client and I see some TaskCanceledException but i don’t believe that the call is being retried since the whole lambda immediately exits around the time the exception happens. Im not sure what setting the retry property of the dynamo client is doing if it doesn’t seem to retry the operation on timeout. Here is the documentation I was using for information about aws sdk and timeouts https://docs.aws.amazon.com/sdk-for-net/v2/developer-guide/retries-timeouts.html#retries
+In short: is there a quick and dirty way to generate a weekly (CentOs)  VM performance report(CPU/MEM)? I've got CloudWatch with detailed monitoring enabled. Or is the standard to simply build a dashboard and screenshot it?
 
- Am I misunderstanding when retries are supposed to happen? If so am I supposed to implement my own retry logic in the timeout case
-## [5][One large VPC with lots of smaller subnets VS lots of smaller VPC](https://www.reddit.com/r/aws/comments/fbcji4/one_large_vpc_with_lots_of_smaller_subnets_vs/)
-- url: https://www.reddit.com/r/aws/comments/fbcji4/one_large_vpc_with_lots_of_smaller_subnets_vs/
+Background: I come from a sysadmin background and run a sizeable GCP environment. I'm now dipping into AWS as it seems to be the way to go.
+## [6][Terraform vs cloud formation?](https://www.reddit.com/r/aws/comments/fbdmjz/terraform_vs_cloud_formation/)
+- url: https://www.reddit.com/r/aws/comments/fbdmjz/terraform_vs_cloud_formation/
 ---
-I'm wondering if it makes sense to have one large VPC, say /16, and chopping up into lots of smaller subnets, say /27. Then using 1-4 of said subnets for each of our clients. Or would it be better to have 1 smaller VPC per client, that is chopped in the same fashion. With the route tables on subnets and security groups on instances I'm not seeing much of a benefit, if any, in smaller VPCs. Smaller VPCs feels like just an administrative nightmare,  but I could be wrong.
-
-A few requirements must be met.
-1, one of the subnets will allow access from the internet (web tier)
-O2, some of our clients require VPN access into one of their subnets. The build needs to support this with us not knowing the client network ahead of time and with bringing new clients on whenever we get them.
-3 , all servers are on a domain, so they will all need to be able to access the domain controllers we manage on ec2 instances for all the domainy stuff.
-4, we have centralized monitoring servers running that need to be able to access the subnets, as well as jump boxes.
-
-Things to note.
-Our application does not really scale so it has single points of failure and auto scaling groups aren't really an option just yet. 
-If something goes wrong on a server  we need to fix the server, not delete and rebuild. That is coming but still a ways out.
-
-Any thoughts or documents you can provide would be amazing.
-## [6][AWS MediaConvert down for anyone else?](https://www.reddit.com/r/aws/comments/fbbtuk/aws_mediaconvert_down_for_anyone_else/)
-- url: https://www.reddit.com/r/aws/comments/fbbtuk/aws_mediaconvert_down_for_anyone_else/
+Is it worth going over cloud formation if terraform already goes the job ? Is there something that cloud formation does better than terraform or chef,etc that one should be aware of?
+## [7][Trouble curl-ing into API Gateway to Lambda](https://www.reddit.com/r/aws/comments/fbpm3m/trouble_curling_into_api_gateway_to_lambda/)
+- url: https://www.reddit.com/r/aws/comments/fbpm3m/trouble_curling_into_api_gateway_to_lambda/
 ---
-I've got jobs that are getting hung up with "PROGRESSING" status. Haven't changed any code myself. I'm processing small videos that normally take a few seconds to transcode.
-## [7][Anyway to get list of SES Email recepients?](https://www.reddit.com/r/aws/comments/fbbsxg/anyway_to_get_list_of_ses_email_recepients/)
-- url: https://www.reddit.com/r/aws/comments/fbbsxg/anyway_to_get_list_of_ses_email_recepients/
+I'll preface this by saying I'm not an expert in this area and it might be a problem with how I'm using curl but: I've created an api gateway to a lambda function and I'm trying to test it using curl. I have successfully tested the lambda function.
+
+The lambda event uses an event:
+
+{"phone":"phone number","message":"message to send"}
+
+I created the api using HTTP API and auto deploy. I noticed that it did not deploy initially as format 2.0 seems to have problems. I had since then changed it to format 1.0, which did deploy.
+
+I attempted to curl it using:
+
+curl -v -X POST [https://myapiid.execute-api.ap-southeast-2.amazonaws.com/prod](https://dj9u44aoze.execute-api.ap-southeast-2.amazonaws.com/prod) \-d '{"phone":"+myphone","message":"curl lambda test"}'
+
+The results I get are:
+
+Note: Unnecessary use of -X or --request, POST is already inferred.
+
+\*   Trying [00.00.0](https://54.79.66.233)0.00...
+
+\* TCP\_NODELAY set
+
+\* Connected to [myapiid.execute-api.ap-southeast-2.amazonaws.com](https://dj9u44aoze.execute-api.ap-southeast-2.amazonaws.com) ([00.00.0](https://54.79.66.233)0.00) port 443 (#0)
+
+\* ALPN, offering h2
+
+\* ALPN, offering http/1.1
+
+\* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+
+\* successfully set certificate verify locations:
+
+\*   CAfile: /etc/ssl/cert.pem
+
+CApath: none
+
+\* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+
+\* TLSv1.2 (IN), TLS handshake, Server hello (2):
+
+\* TLSv1.2 (IN), TLS handshake, Certificate (11):
+
+\* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+
+\* TLSv1.2 (IN), TLS handshake, Server finished (14):
+
+\* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+
+\* TLSv1.2 (OUT), TLS change cipher, Client hello (1):
+
+\* TLSv1.2 (OUT), TLS handshake, Finished (20):
+
+\* TLSv1.2 (IN), TLS change cipher, Client hello (1):
+
+\* TLSv1.2 (IN), TLS handshake, Finished (20):
+
+\* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+
+\* ALPN, server accepted to use h2
+
+\* Server certificate:
+
+\*  subject: CN=\*.execute-api.ap-southeast-2.amazonaws.com
+
+\*  start date: Nov 20 00:00:00 2019 GMT
+
+\*  expire date: Dec 20 12:00:00 2020 GMT
+
+\*  subjectAltName: host "[myapiid.execute-api.ap-southeast-2.amazonaws.com](https://dj9u44aoze.execute-api.ap-southeast-2.amazonaws.com)" matched cert's "\*.execute-api.ap-southeast-2.amazonaws.com"
+
+\*  issuer: C=US; O=Amazon; OU=Server CA 1B; CN=Amazon
+
+\*  SSL certificate verify ok.
+
+\* Using HTTP2, server supports multi-use
+
+\* Connection state changed (HTTP/2 confirmed)
+
+\* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+
+\* Using Stream ID: 1 (easy handle 0x7fae9980ec00)
+
+\&gt; POST /prod HTTP/2
+
+\&gt; Host: [myapiid.execute-api.ap-southeast-2.amazonaws.com](https://dj9u44aoze.execute-api.ap-southeast-2.amazonaws.com)
+
+\&gt; User-Agent: curl/7.54.0
+
+\&gt; Accept: \*/\*
+
+\&gt; Content-Length: 53
+
+\&gt; Content-Type: application/x-www-form-urlencoded
+
+\&gt;
+
+\* Connection state changed (MAX\_CONCURRENT\_STREAMS updated)!
+
+\* We are completely uploaded and fine
+
+&lt; HTTP/2 404
+
+&lt; date: Sun, 01 Mar 2020 05:22:43 GMT
+
+&lt; content-length: 23
+
+&lt; x-amzn-requestid: reqidgiven=
+
+&lt;
+
+\* Connection #0 to host [myapiid.execute-api.ap-southeast-2.amazonaws.com](https://dj9u44aoze.execute-api.ap-southeast-2.amazonaws.com) left intact
+
+{"message":"Not Found"}
+
+I get the same {"message":"Not Found"} outcome when I click on the invocation link, I'm not sure which part I'm getting wrong
+## [8][boto3 dynamo](https://www.reddit.com/r/aws/comments/fbmfol/boto3_dynamo/)
+- url: https://www.reddit.com/r/aws/comments/fbmfol/boto3_dynamo/
 ---
-Hi All,
+Hello,
 
-We use SES to send email from a our applications to our customers - I was wondering if I could generate a list/report of all sent emails with sender address, recipient address &amp; subject line. 
-
-I honestly cannot find out how to do that - the documentation on creating configration sets &amp; integrating with CloudWatch is frustratingly incomplete (no mention of dimensions, values, etc). and I cannot understand why this has to be so complex, when literally every other SMTP provider can provide this basic report out of the box.
-
-Thanks in advance.
-## [8][CodePipeline + CloudFormation + Lambda](https://www.reddit.com/r/aws/comments/faumli/codepipeline_cloudformation_lambda/)
-- url: https://www.reddit.com/r/aws/comments/faumli/codepipeline_cloudformation_lambda/
+I'm using boto3 to add items to a dynamoDB table. It works fine but I can't see the added items in the AWS console. I can't even see the created tables. Am I doing something wrong?
+## [9][Identify Windows disks to EBS volumes](https://www.reddit.com/r/aws/comments/fbmaaz/identify_windows_disks_to_ebs_volumes/)
+- url: https://www.reddit.com/r/aws/comments/fbmaaz/identify_windows_disks_to_ebs_volumes/
 ---
-Hey all,
+Hi, How do we know which EBS volume is which drive in Windows OS?
 
-I created this post on medium to help the ones who like me had difficulties to understand how to implement a DevOps pipeline in AWS using AWS developer tools (CodeCommit, CodeBuild, CodeDeploy and CodePipeline). And from understanding the DevOps pipeline create an real pipeline using cloudformation and deploying the code to Lambda (Python and Java).
+I need to expand D:/ and E:/ drives on my EC2 instance and could not find a way to relate the drives in AWS Console.
 
-https://link.medium.com/blysiuvJr4
-
-I shared in the post files that I created that you can use to start an sample project in your account.
-## [9][Reclone mount inside ECS, doable?](https://www.reddit.com/r/aws/comments/fb9ft3/reclone_mount_inside_ecs_doable/)
-- url: https://www.reddit.com/r/aws/comments/fb9ft3/reclone_mount_inside_ecs_doable/
+Thanks in advance
+## [10][Attempting to create a MediaLive/MediaPackage config for streaming](https://www.reddit.com/r/aws/comments/fblfmu/attempting_to_create_a_medialivemediapackage/)
+- url: https://www.reddit.com/r/aws/comments/fblfmu/attempting_to_create_a_medialivemediapackage/
 ---
-I’ll admit I’m a noob here, my only experience with docker is some physical things running on Rancher inside FreeNAS on metal. 
+I'm attempting to create a demo service where one can livestream video/audio to an audience.
 
-I’m looking to be able to have a common storage to a number of dockers that would be backed by Rclone mount. I believe Rclone mount is available as a docker itself, but not sure if one container can provide storage to multiple other containers?
-## [10][AWS Linux restore from AMI](https://www.reddit.com/r/aws/comments/fb2jqs/aws_linux_restore_from_ami/)
-- url: /r/linuxadmin/comments/fb2j2g/aws_linux_restore_from_ami/
----
-
+via the SDKs, I am spinning up new/unique MediaLive + MediaPackage channel &amp; inputs per created stream, as well as a Cloudfront distribution pointing to my MediaPackage for cdn, however CF distros can take up to 20 minutes to propagate which is obviously not optimal for on demand stream creation. How I should approach resolving this?

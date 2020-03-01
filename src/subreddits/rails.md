@@ -19,7 +19,17 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][How should I go about adding business hours and appointment slots to my model?](https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/)
+## [2][Creating a third item by dragging and dropping one item on top of another](https://www.reddit.com/r/rails/comments/fbhgei/creating_a_third_item_by_dragging_and_dropping/)
+- url: https://www.reddit.com/r/rails/comments/fbhgei/creating_a_third_item_by_dragging_and_dropping/
+---
+I'm writing an app where I have files that I want to be able to group together by dragging and dropping one on top of another. This should create a folder that can be named. It should also be possible to nest folders like this, by dragging and dropping folders on top of each other.
+
+I got the associations working in Rails and I got the Javascript part of the drag and drop working as well, but I'm having trouble figuring out how to integrate them. 
+
+Every "drag and drop" Rails article I found online is about reordering items in a list and relies on gems for nested sets or hierarchical data, which are irrelevant to my requirements, so it doesn't even help me by showing how to get JS and Rails talking in the way I'm looking for.
+
+How should I go about doing something like this? Any ideas? Thanks!
+## [3][How should I go about adding business hours and appointment slots to my model?](https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/)
 - url: https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/
 ---
 Hi everyone,  
@@ -80,7 +90,11 @@ I have a habit of going down the wrong route and then creating problems for myse
 
 
 Thanks a lot.
-## [3][Advice on massive data sets](https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/)
+## [4][JSON-RPC infraestructure](https://www.reddit.com/r/rails/comments/fbedv2/jsonrpc_infraestructure/)
+- url: https://www.reddit.com/r/rails/comments/fbedv2/jsonrpc_infraestructure/
+---
+Hello im a begginner coder and I have been learning with ruby on rails. I have learn the basics like CRUD and REST. I can create features on my app. THis time  Im trying to create an app but he requires me to use JSON-RPC. I dont understand how to use it or set it up. Anyone can help me please? if is usefull is in order to create a Ruby on Rails app in order to connect to NEO Blockchain. Thanks
+## [5][Advice on massive data sets](https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/)
 - url: https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/
 ---
 Howdy folks.  
@@ -108,7 +122,7 @@ I have no experience with that level of large dataset. Normally dealing with lik
 
 
 Thanks for any thoughts
-## [4][ActiveStorage::FileNotFoundError for existing files](https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/)
+## [6][ActiveStorage::FileNotFoundError for existing files](https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/)
 - url: https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/
 ---
 On a standard, out of the box Rails 6 with ActiveStorage set to disk storage,  I get his error from time to time:
@@ -129,7 +143,7 @@ Restarting the server solves it. It happens on nginx, apache+mod\_passenger, pum
 Can anyone point a middle finger to what could be wrong? TIA
 
 I got 500 coins saying I can find someone on reddit who knows wtf is going on
-## [5][html.slim and react?](https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/)
+## [7][html.slim and react?](https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/)
 - url: https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/
 ---
 Has anyone incorporated a react front end using html.slim? 
@@ -141,7 +155,7 @@ we have tried doing
 &amp;#x200B;
 
 but nothing and thats the only research I can find that connect react and slim
-## [6][Why does my variable behave differently when I assign using different ActiveRecord search method?](https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/)
+## [8][Why does my variable behave differently when I assign using different ActiveRecord search method?](https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/)
 - url: https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/
 ---
 So I've noticed some unexpected behaviour when dealing with ActiveRecord.  
@@ -203,17 +217,17 @@ The actual instance seems to have been returned each time and I can see all the 
 
 
 If someone could please explain why this is, that would be very much appreciated??
-## [7][Ruby Hash#transform_keys now accepts a hash that maps existing keys to new keys](https://www.reddit.com/r/rails/comments/fae2xz/ruby_hashtransform_keys_now_accepts_a_hash_that/)
+## [9][Ruby Hash#transform_keys now accepts a hash that maps existing keys to new keys](https://www.reddit.com/r/rails/comments/fae2xz/ruby_hashtransform_keys_now_accepts_a_hash_that/)
 - url: https://blog.saeloun.com/2020/02/26/ruby-hash-transform_keys-now-accepts-a-hash-that-maps-existing-keys-to-new-keys
 ---
 
-## [8][How can I disable migrations in the second database in Rails 6?](https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/)
+## [10][How can I disable migrations in the second database in Rails 6?](https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/)
 - url: https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/
 ---
 I'm doing a new project on a database in Rails 6.0.2.1, we're going to use two databases, one of them is the database of the Rails project and the other will be connecting to the database of an ERP we have, I want to completely disable migrations on this second database database (so a `rails db:drop` or a `rails db:reset` doesn't affect our ERP's database) and only use a `schema.rb` so that Rails can know what tables are in this db.
 
 What can I do?
-## [9][When developing a big app with different parts, is it smart to split every part into their own app?](https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/)
+## [11][When developing a big app with different parts, is it smart to split every part into their own app?](https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/)
 - url: https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/
 ---
 I'm currently developing quite a big application (atleast for my standards). The application basically consists of a user-facing part with a "User" user model and a dashboard part with a "Vendor" user model (there will most likely also be a third part with it's own dashboard-like application in the future). The User part has the most business logic and is way bigger then the Vendor part, however, both parts are operating on and sharing the same data. But the data they share is the only thing they have in common. Everything else in the application, like for example the frontend or the domains, is pretty clear cut into these two parts. 
@@ -229,11 +243,3 @@ There are three big positives that I see with this approach:
 3. **Easily switchable technology.** Going with two apps instead of one big rails app would also allow me two choose and experiment with different technologies more easily. For example, I'm pretty interested in choosing Hanami but wouldn't choose it for the entire stack if everything would be a single app. However, splitting the one really big app into one big and one small app would allow me to choose Hanami for the smaller one and keep Rails for the big one. And if I find Hanami to be the wrong fit somewhere down the road I would only need to convert a small part of the original really big app back.
 
 Does this all make sense and is this a common approach to handling bigger apps with multiple different parts or am I setting myself up for a lot of issues in the future if I go this path?
-## [10][Freelancing in Rails](https://www.reddit.com/r/rails/comments/fa7ojc/freelancing_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/fa7ojc/freelancing_in_rails/
----
-hey.. how are you all?? I hope you all doing fine.. I want advice from experience people.. Anyone here doing freelancing work in ruby on rails?? can you tell me the struggles of finding a rails job in freelancing?? if someone learning rails and want a career of rails in freelancing, what advice would you like to give??
-## [11][How to make API calls to Rails server running on Ubuntu Virtual Machine from Windows?](https://www.reddit.com/r/rails/comments/faf1ps/how_to_make_api_calls_to_rails_server_running_on/)
-- url: https://www.reddit.com/r/rails/comments/faf1ps/how_to_make_api_calls_to_rails_server_running_on/
----
-Hello. So I am developing Rails back-end on my Ubuntu VM and React front-end on my Windows machine. Is there a way to make API calls to that server running on Ubuntu VM? If yes, how to achieve it?

@@ -57,67 +57,51 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Klein: A SIMD-optimized C++17 Geometry Library](https://www.reddit.com/r/cpp/comments/fb8y1n/klein_a_simdoptimized_c17_geometry_library/)
+## [2][is_printable: Check if a value is printable at compile-time with modern C++](https://www.reddit.com/r/cpp/comments/fblqwd/is_printable_check_if_a_value_is_printable_at/)
+- url: https://www.reddit.com/r/cpp/comments/fblqwd/is_printable_check_if_a_value_is_printable_at/
+---
+I came up with a helper metafunction named `is_printable` that can be used to check if a value can be printed, at compile-time. Please have a read about it at [https://nafe.es/posts/2020-02-29-is-printable/](https://nafe.es/posts/2020-02-29-is-printable/).
+
+Looking forward to your questions, suggestions, and thoughts. Thank you!
+## [3][Unity build test with Meson &amp; LibreOffice](https://www.reddit.com/r/cpp/comments/fbmp0w/unity_build_test_with_meson_libreoffice/)
+- url: https://nibblestew.blogspot.com/2020/02/unity-build-test-with-meson-libreoffice.html
+---
+
+## [4][Klein: A SIMD-optimized C++17 Geometry Library](https://www.reddit.com/r/cpp/comments/fb8y1n/klein_a_simdoptimized_c17_geometry_library/)
 - url: /r/gamedev/comments/fb8wbq/klein_a_simdoptimized_c17_geometry_library/
 ---
 
-## [3][Should there be a standard C++ pattern for this? transform_to | The Old New Thing](https://www.reddit.com/r/cpp/comments/fawq17/should_there_be_a_standard_c_pattern_for_this/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200228-00/?p=103498
+## [5][What does XSTRING mean?](https://www.reddit.com/r/cpp/comments/fbsmov/what_does_xstring_mean/)
+- url: https://www.reddit.com/r/cpp/comments/fbsmov/what_does_xstring_mean/
+---
+Hi. I was writing a very simple code with arrays to try them after I watched a tutorial, but at a certain point the code stops executing and Visual Studio opens another file, called xstring.
+
+It's more or less 4000 lines long and I can't understand anything of it (even though I can clearly see it's C++).
+
+Where can I learn more about xstrings (since I didn't find any tutorial online) and what the hell are they?
+
+Thanks
+## [6][Relaxing the One Definition Rule in Interpreted C++](https://www.reddit.com/r/cpp/comments/fbf0dg/relaxing_the_one_definition_rule_in_interpreted_c/)
+- url: https://dl.acm.org/doi/abs/10.1145/3377555.3377901
 ---
 
-## [4][Meaning of Ref implementations](https://www.reddit.com/r/cpp/comments/fbcajx/meaning_of_ref_implementations/)
+## [7][Meaning of Ref implementations](https://www.reddit.com/r/cpp/comments/fbcajx/meaning_of_ref_implementations/)
 - url: https://www.reddit.com/r/cpp/comments/fbcajx/meaning_of_ref_implementations/
 ---
 I've seen several `template &lt;typename T&gt; class Ref` implementations in various code bases (For instance [this one](https://dawn.googlesource.com/dawn/+/refs/heads/master/src/dawn_native/RefCounted.h) used e.g. [here](https://dawn.googlesource.com/dawn/+/refs/heads/master/src/dawn_native/ComputePipeline.h)) and I always wondered what's the reasoning behind this? Why not simply declare `ShaderModuleBase &amp;mModule` as a private class member if the author wants to enforce that it references  _something_ as soon as the class is instantiated?
-## [5][A quick primer on type traits in modern C++](https://www.reddit.com/r/cpp/comments/fauhzf/a_quick_primer_on_type_traits_in_modern_c/)
-- url: https://www.internalpointers.com/post/quick-primer-type-traits-modern-cpp
----
-
-## [6][The C++ rvalue lifetime disaster, by Arno Schödl, CoreHard Autumn 2019](https://www.reddit.com/r/cpp/comments/fbag4p/the_c_rvalue_lifetime_disaster_by_arno_schödl/)
+## [8][The C++ rvalue lifetime disaster, by Arno Schödl, CoreHard Autumn 2019](https://www.reddit.com/r/cpp/comments/fbag4p/the_c_rvalue_lifetime_disaster_by_arno_schödl/)
 - url: https://www.youtube.com/watch?v=s9vBk5CxFyY
 ---
 
-## [7][How I use references](https://www.reddit.com/r/cpp/comments/faszel/how_i_use_references/)
-- url: https://cor3ntin.github.io/posts/reference/
+## [9][Should there be a standard C++ pattern for this? transform_to | The Old New Thing](https://www.reddit.com/r/cpp/comments/fawq17/should_there_be_a_standard_c_pattern_for_this/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200228-00/?p=103498
 ---
 
-## [8][C++20 designated initializers](https://www.reddit.com/r/cpp/comments/faudmh/c20_designated_initializers/)
-- url: https://mariusbancila.ro/blog/2020/02/27/c20-designated-initializers/
----
-
-## [9][Is MinGW linker way too slow?](https://www.reddit.com/r/cpp/comments/fb3ylq/is_mingw_linker_way_too_slow/)
+## [10][Is MinGW linker way too slow?](https://www.reddit.com/r/cpp/comments/fb3ylq/is_mingw_linker_way_too_slow/)
 - url: https://www.reddit.com/r/cpp/comments/fb3ylq/is_mingw_linker_way_too_slow/
 ---
 I have a relatively small project that makes use of some templated libraries like Cereal. MinGW linker times are really slow for me, especially in debug. It takes over 20 seconds to link the program. Release is bearable (4-5 seconds), but the whole project links in under a second with msvc.  I tried a bunch of linker options, but nothing seems to really help (besides reducing the debug info level with -g flag, but that kinda defeats the point of the debug build). Is MinGW just that slow?  How does clang comapre on Windows?
-## [10][Crashing clang in 52 bytes: template&lt;class&gt;struct a;a&lt;typename b::template c&lt;&gt;&gt;](https://www.reddit.com/r/cpp/comments/fan0c5/crashing_clang_in_52_bytes_templateclassstruct/)
-- url: https://www.reddit.com/r/cpp/comments/fan0c5/crashing_clang_in_52_bytes_templateclassstruct/
+## [11][A quick primer on type traits in modern C++](https://www.reddit.com/r/cpp/comments/fauhzf/a_quick_primer_on_type_traits_in_modern_c/)
+- url: https://www.internalpointers.com/post/quick-primer-type-traits-modern-cpp
 ---
-Managed to distill this down from some deep deep template muck today trying to chain things in weird ways with a promises library. With some help from creduce I got it down from over a million lines preprocessed to maybe 2000 and then just started deleting random things and making sure it still segfaulted each time. GCC handles this correctly; I haven't looked through what's listed in the stack trace but my guess is that I tricked it into doing a dependent name lookup on `b` to see if it has a `c`, but `b` was never declared in the first place so it's a null pointer or something.
 
-Who says C++ can't be concise?
-
-Godbolt for proof: [https://godbolt.org/z/ZrFCcY](https://godbolt.org/z/ZrFCcY)
-
-Edit: ugh just realized it can be 51 if I used `class` instead of `struct`...
-## [11][Why is LLVM written entirely in C++?](https://www.reddit.com/r/cpp/comments/fbaqos/why_is_llvm_written_entirely_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/fbaqos/why_is_llvm_written_entirely_in_c/
----
-(by LLVM I mean LLVM, LLDB, Clang, etc, everything)
-
-sure C++ could be useful or even nessicary for some parts, but the entire thing does not need to be written in C++, and in my opinion it shouldn't be.
-
-compiling takes 200 times longer (I compiled my 50,000 SLOC project vs a 1 character change to libFormat to get this timing, and this was a rebuild, not from scratch; my project took 2 seconds, Clang took 400.)
-
-I assume that's because of the extensive use of templates.
-
-Also, there's all the issues with readability, the libFormat change was near a function called `parseBlock` which has hidden default bool values that are only visible in the UnwrappedLineParser header.
-
-and then there's all the other hidden complexity, operator overloading, function overloading, and probably a bunch more I'm not even thinking of.
-
-Don't get me wrong, I'm not saying Templates shouldn't exist, or operator overloading, or function overloading, or even default variables.
-
-all of those features can be useful.
-
-I'm just saying they should be used sparingly.
-
-so, as the title says, why is/should LLVM be written entirely in C++, instead of a healthy mix of C and C++?

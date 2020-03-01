@@ -33,112 +33,114 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/02/25/this-week-in-rust-327/
 ---
 
-## [3][Command line steganography for png images written in rust. (My First rust crate - Feedback and thoughts appreciated)](https://www.reddit.com/r/rust/comments/fbavos/command_line_steganography_for_png_images_written/)
-- url: https://crates.io/crates/stegano-cli
+## [3][Pietro Albini has joined the core team](https://www.reddit.com/r/rust/comments/fbkmon/pietro_albini_has_joined_the_core_team/)
+- url: https://blog.rust-lang.org/inside-rust/2020/02/27/pietro-joins-core-team.html
 ---
 
-## [4][I want off Mr. Golang's Wild Ride](https://www.reddit.com/r/rust/comments/fax7lj/i_want_off_mr_golangs_wild_ride/)
-- url: https://fasterthanli.me/blog/2020/i-want-off-mr-golangs-wild-ride/
+## [4][A half-hour to learn Rust](https://www.reddit.com/r/rust/comments/fbenua/a_halfhour_to_learn_rust/)
+- url: https://fasterthanli.me/blog/2020/a-half-hour-to-learn-rust/
 ---
 
-## [5][xworks - A dead-simple FAQ-style static site generator, à la anarchy.works](https://www.reddit.com/r/rust/comments/fb7jo8/xworks_a_deadsimple_faqstyle_static_site/)
-- url: https://github.com/t1ra/xworks
+## [5][Spring Cleanup](https://www.reddit.com/r/rust/comments/fbsrvl/spring_cleanup/)
+- url: https://vorner.github.io/2020/03/01/spring-cleanup.html
 ---
 
-## [6][How to implement a graph data structure in Rust?](https://www.reddit.com/r/rust/comments/fbb4rj/how_to_implement_a_graph_data_structure_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/fbb4rj/how_to_implement_a_graph_data_structure_in_rust/
+## [6][Shipyard 0.3 release](https://www.reddit.com/r/rust/comments/fbo8wf/shipyard_03_release/)
+- url: https://www.reddit.com/r/rust/comments/fbo8wf/shipyard_03_release/
 ---
-A graph data structure usually require each node to has write access to its peer. I find implementing this hard with Rust without unsafe.
+[Shipyard](https://crates.io/crates/shipyard) is an Entity Component System crate. ECS is a pattern mostly used in games but not only. It fits really well with Rust, allowing easy composition and lifetime management.
 
-What's are standard ways for implementing a graph in Rust or a library that make this easy?
-## [7][Complex Rust data structures exposed seamlessly to C++](https://www.reddit.com/r/rust/comments/faza6k/complex_rust_data_structures_exposed_seamlessly/)
-- url: https://crisal.io/words/2020/02/28/C++-rust-ffi-patterns-1-complex-data-structures.html
----
+**What's new**
 
-## [8][pallet, a searchable datastore built on sled and tantivy](https://www.reddit.com/r/rust/comments/fb23tl/pallet_a_searchable_datastore_built_on_sled_and/)
-- url: https://www.reddit.com/r/rust/comments/fb23tl/pallet_a_searchable_datastore_built_on_sled_and/
----
-[docs.rs](https://docs.rs/pallet) | [github](https://github.com/kardeiz/pallet)
+* [User guide](https://leudz.github.io/shipyard/book)
+Learning to use a crate with the documentation can be hard. There's now a guide to explain what can be done with Shipyard and how.
+* No need to register components anymore
+Components had to be registered before accessing them by using `World::new` or `World::register`.  
+Storages are now automatically created when they are first accessed.
+* `!Send` and `!Sync` components
+All components had to be `Send + Sync`, this is a strict limitation to make sure storages can use parallel features.
+With 0.3 `!Send` and `!Sync` types can be stored and accessed while still following Rust's rules. These rules limit threading for these types but doesn't always prevent it.
+* `Unique` components
+When we only need a single instance of a component, keeping an id around to access it can be annoying. A `Unique` component won't be attached to any entity but will have the storage all for itself.
+* Components sorting
+* `no_std` support
+* And more 😉
 
-A searchable document datastore built on [`sled`](https://docs.rs/sled) and [`tantivy`](https://docs.rs/tantivy).
+**Small Example**
 
-Provides a typed-tree interface to a `sled` database, with standard datastore ops (`find`, `create`, `update`, `delete`), but also Lucene/Elasticsearch style searching.
+    use shipyard::prelude::*;
 
-Usage:
-
-    #[macro_use]
-    extern crate serde;
-    
-    #[derive(Serialize, Deserialize, Debug, pallet::DocumentLike)]
-    #[pallet(tree_name = "books")]
-    pub struct Book {
-        #[pallet(default_search_field)]
-        title: String,
-        #[pallet(default_search_field)]
-        description: Option&lt;String&gt;,
-        #[pallet(index_field_type = "u64")]
-        rating: u8,
+    struct Health(f32);
+    struct Position {
+        x: f32,
+        y: f32,
     }
-    
-    fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
-        let temp_dir = tempfile::TempDir::new_in(".")?;
-    
-        let db = sled::open(temp_dir.path().join("db"))?;
-    
-        let store = pallet::Store::builder()
-            .with_db(db)
-            .with_index_dir(temp_dir.path())
-            .finish()?;
-    
-        let books = vec![
-            Book {
-                title: "The Old Man and the Sea".into(),
-                description: Some(
-                    "He was an old man who fished alone in a skiff in \
-                the Gulf Stream and he had gone eighty-four days \
-                now without taking a fish."
-                        .into(),
-                ),
-                rating: 10,
-            },
-            Book {
-                title: "The Great Gatsby".into(),
-                description: Some("About a man and some other stuff".into()),
-                rating: 8,
-            },
-        ];
-    
-        let _ = store.create_multi(&amp;books)?;
-    
-        let books = store.search("man AND rating:&gt;8")?;
-    
-        println!("{:?}", books);
-    
-        Ok(())
+
+    #[system(Populate)]
+    fn run(mut entities: &amp;mut Entities, mut positions: &amp;mut Position, mut healths: &amp;mut Health) {
+        entities.add_entity(
+            (&amp;mut positions, &amp;mut healths),
+            (Position { x: 0.0, y: 0.0 }, Health(1000.0)),
+        );
     }
-## [9][High-level graphics?](https://www.reddit.com/r/rust/comments/fb6qo1/highlevel_graphics/)
-- url: https://www.reddit.com/r/rust/comments/fb6qo1/highlevel_graphics/
+
+    #[system(InAcid)]
+    fn run(pos: &amp;Position, mut health: &amp;mut Health) {
+        (&amp;pos, &amp;mut health)
+            .iter()
+            .filter(|(pos, _)| is_in_acid(pos))
+            .for_each(|(_, mut health)| {
+                health.0 -= 1.0;
+            });
+    }
+
+    fn is_in_acid(pos: &amp;Position) -&gt; bool {
+        // it's wet season
+        true
+    }
+
+    fn main() {
+        let world = World::new();
+
+        world.run_system::&lt;Populate&gt;();
+        world.run_system::&lt;InAcid&gt;();
+    }
+
+Lastly, I want to thank dakom and eldyer for all their help and support!
+## [7][Chrono English: Parsing all kinds of human date input](https://www.reddit.com/r/rust/comments/fbt0lu/chrono_english_parsing_all_kinds_of_human_date/)
+- url: https://docs.rs/chrono-english/0.1.4/chrono_english/
 ---
-Title. Does such a thing exist? Are there any high-level graphics libraries based on a Vulkan backend or something, that's rather easy to get into?
-## [10][A tado° connected thermostatic devices Prometheus exporter written in Rust](https://www.reddit.com/r/rust/comments/fbayxd/a_tado_connected_thermostatic_devices_prometheus/)
-- url: https://github.com/eko/tado-exporter
+
+## [8][Finishing Touches for Plotly Visualisation + Crate for Extras](https://www.reddit.com/r/rust/comments/fbrwzo/finishing_touches_for_plotly_visualisation_crate/)
+- url: https://shahinrostami.com/posts/programming/rust-notebooks/finishing-touches-for-visualisation/
 ---
 
-## [11][How should I go about fixing an incorrect comment in the code?](https://www.reddit.com/r/rust/comments/fbcaxj/how_should_i_go_about_fixing_an_incorrect_comment/)
-- url: https://www.reddit.com/r/rust/comments/fbcaxj/how_should_i_go_about_fixing_an_incorrect_comment/
+## [9][Suggested VSCode extensions](https://www.reddit.com/r/rust/comments/fbrxxs/suggested_vscode_extensions/)
+- url: https://www.reddit.com/r/rust/comments/fbrxxs/suggested_vscode_extensions/
 ---
-The recent anti-golang rant led me down a rabbit hole where I found myself looking at the source for Rust's monotonic time implementation in https://github.com/rust-lang/rust/blob/master/src/libstd/time.rs, where I found a backwards comment at line 286 documenting the `saturating_duration_since` function:
+I am a bit overwhelmed by the amount of Rust extensions and I am afraid some may overlap.
 
-    /// Returns the amount of time elapsed from another instant to this one,
-    /// or zero duration if that instant is earlier than this one.
+What is a good set of extensions ?
 
-As you would expect from the function name, first comment line, and actual code, the second line should actually say "or zero duration if that instant is _later_ than this one."  The code works as expected, but the comment is incorrect. I figured I'd submit a PR with the one-word fix, but wanted to be sure I followed the community guidelines. I read through https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md, and didn't see an answer to my questions, which are these:
+In particular code completion is flaky with my current installation... :-/
+## [10][A look into ways to implement and share data with interrupt handlers in Rust](https://www.reddit.com/r/rust/comments/fbk027/a_look_into_ways_to_implement_and_share_data_with/)
+- url: https://therealprof.github.io/blog/interrupt-comparison/
+---
 
-1. For a simple doc change like this, is a bare PR enough, or does it need to reference an issue? 
-2. If it needs an issue, does that issue count as a bug report? There's no actual behavioral bug. Is fixing a comment a feature request? 
+## [11][Can WASM lead to accelerated adoption of rust?](https://www.reddit.com/r/rust/comments/fbo4eo/can_wasm_lead_to_accelerated_adoption_of_rust/)
+- url: https://www.reddit.com/r/rust/comments/fbo4eo/can_wasm_lead_to_accelerated_adoption_of_rust/
+---
+Hello!
 
-Anyway, sorry for the dumb questions, just wasn't sure what the protocol is here.
-## [12][Announcing arcs 0.3.0 - now with more algorithms and better docs](https://www.reddit.com/r/rust/comments/fatgr1/announcing_arcs_030_now_with_more_algorithms_and/)
-- url: https://docs.rs/arcs/0.3.0/arcs/
+
+As per my observations, most languages have "killer apps" that lead to widespread use of the language and also large influx of new developers into the language. Ruby had Rails. Golang had docker and kubernetes. For python, it's scientific computing ( I know this isn't one particular project like rails or docker. But doesn't make any difference for our purpose) and web frameworks like django. But rust, imo, is yet to have such a project written in it. 
+
+Although both golang and rust came about around the same time (10 years ago approx.), there is huge difference in the extent these two languages have been adopted. I understand that these two languages are unique, each with its own "domain of use". Also it's easier to get started with golang for new developers coming into the language, compared to rust (I don't think anyone will disagree with me here). But I still think that not having a "killer app" is a cause for the low adoption of rust language, even though rust offers highly beneficial features like memory safety and catching dataraces at compile time etc. 
+
+But I think we've a "killer app" in rust. It's web assembly. Although web assembly isn't particular to rust, I don't see any other language community putting as much effort as rust community in this direction. Especially making use of web assembly outside the browser, for providing both sandboxing of applications and also easy sharing of them. So these are some of my  conclusions drawn from my observations as a polyglot, using many languages. I'd like to hear from other people in the community, what they think about recent developments in rust and wasm. 
+
+Thanks.
+## [12][[Call for help] - Let's make a truly native, truly cross platform GUI for rust a reality and I believe it can be done.](https://www.reddit.com/r/rust/comments/fbf3zw/call_for_help_lets_make_a_truly_native_truly/)
+- url: https://twitter.com/ivanceras/status/1233791915792855040
 ---
 

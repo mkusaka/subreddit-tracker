@@ -85,101 +85,45 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Open Source Firebase (GraphQL) + Heroku which works anywhere and with any database!!](https://www.reddit.com/r/javascript/comments/fb49fc/open_source_firebase_graphql_heroku_which_works/)
+## [3][NextJS Boilerplate with Typescript MaterialUI and Jest](https://www.reddit.com/r/javascript/comments/fbtiz8/nextjs_boilerplate_with_typescript_materialui_and/)
+- url: https://github.com/mehmetsefabalik/next-typescript-materialui-jest-starter
+---
+
+## [4][I fell into a hole setting up fetch mocking in Jest one too many times so I wrote this guide to save you time and frustration](https://www.reddit.com/r/javascript/comments/fbe9uh/i_fell_into_a_hole_setting_up_fetch_mocking_in/)
+- url: https://swizec.com/blog/mocking-and-testing-fetch-requests-with-jest/swizec/9338
+---
+
+## [5][Prevent 404s on bulk resource requests](https://www.reddit.com/r/javascript/comments/fbovgu/prevent_404s_on_bulk_resource_requests/)
+- url: https://medium.com/vulcanca/prevent-404s-on-bulk-resource-requests-e00de3258efa
+---
+
+## [6][About coding the “FizzBuzz” interview question](https://www.reddit.com/r/javascript/comments/fbt098/about_coding_the_fizzbuzz_interview_question/)
+- url: https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question
+---
+
+## [7][[AskJS] Are there any tools with JAM stack to generate static files on the fly?](https://www.reddit.com/r/javascript/comments/fbllqg/askjs_are_there_any_tools_with_jam_stack_to/)
+- url: https://www.reddit.com/r/javascript/comments/fbllqg/askjs_are_there_any_tools_with_jam_stack_to/
+---
+As title, dynamic pages are updated a lot and new data get added, like e-commerce. Generating a new product page when new products gets pushed to database, or invalidating when products get updated.
+
+Because JAM stack seems to be generated at build time from what I've read.
+## [8][TC39 Podcast: Interview with Joardan Harband [one of the spec editor]](https://www.reddit.com/r/javascript/comments/fbe7t3/tc39_podcast_interview_with_joardan_harband_one/)
+- url: https://tc39er.us/posts/episode-2-jordan-harband/
+---
+
+## [9][Could you help me ?](https://www.reddit.com/r/javascript/comments/fbpvfg/could_you_help_me/)
+- url: /r/angularjs/comments/fbpr3o/hi_im_new_in_the_angular_and_js_could_you_tell_me/
+---
+
+## [10][Open Source Firebase (GraphQL) + Heroku which works anywhere and with any database!!](https://www.reddit.com/r/javascript/comments/fb49fc/open_source_firebase_graphql_heroku_which_works/)
 - url: https://blog.spaceuptech.com/posts/open-source-firebase-heroku/
 ---
 
-## [4][Lazyload images the browser way](https://www.reddit.com/r/javascript/comments/fauk6e/lazyload_images_the_browser_way/)
+## [11][Pmdr - Another pomodoro application](https://www.reddit.com/r/javascript/comments/fbcqas/pmdr_another_pomodoro_application/)
+- url: https://ko-fi.com/post/The-One-Week-Project---Conclusion-V7V61GRWS
+---
+
+## [12][Lazyload images the browser way](https://www.reddit.com/r/javascript/comments/fauk6e/lazyload_images_the_browser_way/)
 - url: https://itsopensource.com/lazyload-images-the-browser-way/
----
-
-## [5][Music written in Javascript - a live-coding environment for music running entirely in the browser, synthesizing music in webassembly using AssemblyScript](https://www.reddit.com/r/javascript/comments/fax949/music_written_in_javascript_a_livecoding/)
-- url: https://github.com/petersalomonsen/javascriptmusic
----
-
-## [6][[AskJS] Should I abandon my project?](https://www.reddit.com/r/javascript/comments/fbbxc8/askjs_should_i_abandon_my_project/)
-- url: https://www.reddit.com/r/javascript/comments/fbbxc8/askjs_should_i_abandon_my_project/
----
-Back in December, I had a great idea for an app in NW.JS, and since then I have had 4 restarts from scratch, and two times where I "abandoned" it  and "took the L" for one day. But it was supposed to be my first actual real desktop program, and a coming-of-age symbol for my programming journey after which I could have called myself a programmer.
-
-
-
-But I really seem to have a problem with going past a certain point. I always start happy, full of hope, write maybe 300-500 lines, and suddenly I'm making excuses and get annoyed with things like scrolling up/down,  input fields, not having any inspiration for design, the code not seeming good-enough and thinking about a new restart even though it's good.
-
-Anyway, I have so much fun ignoring my project and making useless little examples on w3schools for you guys to ask you some vaguely important questions, that it seems to me that I just don't have it yet in me to do a big project. 
-
-
-So, now I am here, two months passed, nothing to show for it, failed 4+ times. But on the other hand, I learned so much from you guys, on top of what I already know. I learned that objects arent' scary or special, that you can reference higher-level variables in local functions (derp), the magic of queryselector and nth-children, that classes can be used for fetching child elements and not only for css, and so much more.
-
-
-
-So yea, now I have a choice: 
-
-
-1. Take the L and move on to learn Godot, like I intended after the glorious finish of my now failed project, right around March.
-
-
-
-2. Try a 5th time, but really modularly, with small chunks of working code, made in w3schools editor (because I somehow hate my Atom for some reason, or am afraid of it or something), to be sewn up together like a frankenstein at a later date.
-
-
-
-3. Take the L, and go make a smaller program in NW.JS, though I have no idea whatsoever what to make.
-
-
-
-4. Take the L, and go make my website for my epic future stuff that I will never make and only dream about
-
-
-
-So yea, I dunno. I only know that I love Javascript, but I am thinking about Python in a distant future. No idea how tkinter compares to my woes of making gui with web technologies
-
-
-
-What should I do? 
-
-
-Tnx!
-## [7][Don't Waste Your Ducking Time: An opinionated guide on how to test Redux ducks](https://www.reddit.com/r/javascript/comments/fb18s4/dont_waste_your_ducking_time_an_opinionated_guide/)
-- url: https://github.com/tophat/dont-waste-your-ducking-time
----
-
-## [8][Bootstrap 4 Treeview](https://www.reddit.com/r/javascript/comments/fay43k/bootstrap_4_treeview/)
-- url: https://github.com/chniter/bstreeview
----
-
-## [9][[AskJS] Need to Show/Load Hidden Button](https://www.reddit.com/r/javascript/comments/fb4ueq/askjs_need_to_showload_hidden_button/)
-- url: https://www.reddit.com/r/javascript/comments/fb4ueq/askjs_need_to_showload_hidden_button/
----
- Hi I have a static html page with JS code
-
-This is the end of page process:
-
-    var onComplete = function() {
-    
-        var h1 = document.createElement('h1')
-        h1.appendChild(document.createTextNode('Thanks ' + questions[0].answer + ' for your registration!'))
-        setTimeout(function() {
-          register.parentElement.appendChild(h1)
-          setTimeout(function() { h1.style.opacity = 1 }, 50)
-        }, 1000)
-    
-    }
-
- Registry form page that loads text message at the end. From there I need a button to be loaded below the text. Button that previously was hidden. 
-
-&amp;#x200B;
-
- Any help is appreciated.
-## [10][How I recreated popular TV networks prerolls using WebGL and fragment shaders.](https://www.reddit.com/r/javascript/comments/fb3i7k/how_i_recreated_popular_tv_networks_prerolls/)
-- url: https://tips4devs.com/articles/replicating-network-prerolls-animations-with-fragment-shaders.html
----
-
-## [11][Online javascript bundle tool. Bundle and obfuscate your javascript files. Supports es6 modules.](https://www.reddit.com/r/javascript/comments/fatv3e/online_javascript_bundle_tool_bundle_and/)
-- url: https://jsbundler.now.sh/
----
-
-## [12][After much frustration, this is the simplest way to use Redux I could find. No other libraries. Please tell me if I'm doing it wrong.](https://www.reddit.com/r/javascript/comments/fb0qq2/after_much_frustration_this_is_the_simplest_way/)
-- url: https://github.com/rodrigocfd/beginner-redux
 ---
 

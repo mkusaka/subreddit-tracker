@@ -1,6 +1,6 @@
 # typescript
-## [1][Who's hiring Typescript developers - February](https://www.reddit.com/r/typescript/comments/ewxjh2/whos_hiring_typescript_developers_february/)
-- url: https://www.reddit.com/r/typescript/comments/ewxjh2/whos_hiring_typescript_developers_february/
+## [1][Who's hiring Typescript developers - March](https://www.reddit.com/r/typescript/comments/fbll8c/whos_hiring_typescript_developers_march/)
+- url: https://www.reddit.com/r/typescript/comments/fbll8c/whos_hiring_typescript_developers_march/
 ---
 The monthly thread for people to post openings at their companies.
 
@@ -22,11 +22,23 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/fb56ac/set_up_a_typescript_react_redux_project/)
+## [2][Race conditions in React and beyond. A race condition guard with TypeScript](https://www.reddit.com/r/typescript/comments/fcafpl/race_conditions_in_react_and_beyond_a_race/)
+- url: https://wanago.io/2020/03/02/race-conditions-in-react-and-beyond-a-race-condition-guard-with-typescript/
+---
+
+## [3][Just wanted to say that I can't even quantify the number of time Typescript saved my ass, but it's a lot.](https://www.reddit.com/r/typescript/comments/fbw9x9/just_wanted_to_say_that_i_cant_even_quantify_the/)
+- url: /r/LearnTypescript/comments/fbv23u/just_wanted_to_say_that_i_cant_even_quantify_the/
+---
+
+## [4][[@known-as-bmf/store] Lightweight synchronous shared state library.](https://www.reddit.com/r/typescript/comments/fc0eo6/knownasbmfstore_lightweight_synchronous_shared/)
+- url: https://github.com/known-as-bmf/store
+---
+
+## [5][Set Up a Typescript React Redux Project](https://www.reddit.com/r/typescript/comments/fb56ac/set_up_a_typescript_react_redux_project/)
 - url: https://typeofnan.dev/setup-a-typescript-react-redux-project/
 ---
 
-## [3][Rosebox a functional typescript library for styling](https://www.reddit.com/r/typescript/comments/fb0zse/rosebox_a_functional_typescript_library_for/)
+## [6][Rosebox a functional typescript library for styling](https://www.reddit.com/r/typescript/comments/fb0zse/rosebox_a_functional_typescript_library_for/)
 - url: https://www.reddit.com/r/typescript/comments/fb0zse/rosebox_a_functional_typescript_library_for/
 ---
 Hi guys!
@@ -38,15 +50,19 @@ Website and docs: [https://www.rosebox.dev/](https://www.rosebox.dev/0.1.4)
 Github: [https://github.com/hugonteifeh/rosebox](https://github.com/hugonteifeh/rosebox)
 
 Progress  of next release: [https://github.com/hugonteifeh/rosebox/projects/1](https://github.com/hugonteifeh/rosebox/projects/1)
-## [4][Fun practice using Generics to restrict function arguments based on other function arguments! Note the linter immediately telling me when I make missteps. One of my favorite parts of Typescript is that it helps you fail faster, enabling you to fix mistakes sooner.](https://www.reddit.com/r/typescript/comments/falwk7/fun_practice_using_generics_to_restrict_function/)
+## [7][What editor/IDE do you use, and why?](https://www.reddit.com/r/typescript/comments/fbakwg/what_editoride_do_you_use_and_why/)
+- url: https://www.reddit.com/r/typescript/comments/fbakwg/what_editoride_do_you_use_and_why/
+---
+For me, a mix between vscode &amp; phpstorm (but TS is better supported in vscode)
+## [8][Fun practice using Generics to restrict function arguments based on other function arguments! Note the linter immediately telling me when I make missteps. One of my favorite parts of Typescript is that it helps you fail faster, enabling you to fix mistakes sooner.](https://www.reddit.com/r/typescript/comments/falwk7/fun_practice_using_generics_to_restrict_function/)
 - url: https://i.redd.it/uiu34cki2kj41.png
 ---
 
-## [5][Curveball — A typescript microframework with first class AWS Lambda and HTTP/2 Push support](https://www.reddit.com/r/typescript/comments/far19m/curveball_a_typescript_microframework_with_first/)
+## [9][Curveball — A typescript microframework with first class AWS Lambda and HTTP/2 Push support](https://www.reddit.com/r/typescript/comments/far19m/curveball_a_typescript_microframework_with_first/)
 - url: https://medium.com/@evertp/curveball-a-typescript-microframework-with-first-class-aws-lambda-and-http-2-push-support-6efeba66ca45?source=friends_link&amp;sk=beff2d5d3e89693ecf3cc43a55a33e3f
 ---
 
-## [6][Writing a types declaration file for a library where one of the exported functions is a function imported from another library. How should I write this?](https://www.reddit.com/r/typescript/comments/fawz1m/writing_a_types_declaration_file_for_a_library/)
+## [10][Writing a types declaration file for a library where one of the exported functions is a function imported from another library. How should I write this?](https://www.reddit.com/r/typescript/comments/fawz1m/writing_a_types_declaration_file_for_a_library/)
 - url: https://www.reddit.com/r/typescript/comments/fawz1m/writing_a_types_declaration_file_for_a_library/
 ---
 Every approach I take, my IDE complains about it.
@@ -62,7 +78,7 @@ Every approach I take, my IDE complains about it.
     }
 
 Any ideas?
-## [7][How to get started with gulp/browserify and npm](https://www.reddit.com/r/typescript/comments/fb2za9/how_to_get_started_with_gulpbrowserify_and_npm/)
+## [11][How to get started with gulp/browserify and npm](https://www.reddit.com/r/typescript/comments/fb2za9/how_to_get_started_with_gulpbrowserify_and_npm/)
 - url: https://www.reddit.com/r/typescript/comments/fb2za9/how_to_get_started_with_gulpbrowserify_and_npm/
 ---
 Hi,
@@ -188,29 +204,3 @@ The error I get when i do
     [23:36:57] 'default' errored after 2.26 s
 
 According to  [https://github.com/djipco/webmidi/issues/82](https://github.com/djipco/webmidi/issues/82)  this is the right way to import WebMidi, and it should work - i guess I'm doing something wrong, can anyone help me?
-## [8][Incrementally migrating a CRA application to TypeScript without ejecting](https://www.reddit.com/r/typescript/comments/fat1nz/incrementally_migrating_a_cra_application_to/)
-- url: https://www.reddit.com/r/reactjs/comments/fat1b6/incrementally_migrating_a_cra_application_to/
----
-
-## [9][How can I get the full typescript doc for a variable in webstorm?](https://www.reddit.com/r/typescript/comments/far3vb/how_can_i_get_the_full_typescript_doc_for_a/)
-- url: https://www.reddit.com/r/typescript/comments/far3vb/how_can_i_get_the_full_typescript_doc_for_a/
----
-Hello hovering over a variable holding `Cntr` shows me a summary of the types. Does anyone know a way to show me the complete doc. Thanks
-
-&amp;#x200B;
-
-note: you can suggest me any other tool too
-## [10][I want to add methods to Object](https://www.reddit.com/r/typescript/comments/fajz99/i_want_to_add_methods_to_object/)
-- url: https://www.reddit.com/r/typescript/comments/fajz99/i_want_to_add_methods_to_object/
----
-Is there a convention for providing additional methods to existing classes (like you can with `obj.member = newCallable` in vanilla JS... but of course, this isn't typed)?
-
-I have seen how you can add additional method descriptions like `interface String {fn(): whatever}` but not for new actual method implementations.
-
-If i'm wrong on multiple levels and really seem to be barking up the wrong tree then **please** don't be afraid to tell me why.
-
-EDIT: replaced md syntax with reddit formatting :)
-## [11][Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://www.reddit.com/r/typescript/comments/fa83wh/rome_an_experimental_javascript_toolchain_from/)
-- url: https://github.com/facebookexperimental/rome
----
-

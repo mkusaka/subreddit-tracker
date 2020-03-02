@@ -86,72 +86,66 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][I made a small social network in MERN, link in the comments](https://www.reddit.com/r/reactjs/comments/fbe73v/i_made_a_small_social_network_in_mern_link_in_the/)
-- url: https://v.redd.it/sryhwn2luvj41
+## [3][React has been around as long as JQuery was when React came out (2468 days)](https://www.reddit.com/r/reactjs/comments/fbx646/react_has_been_around_as_long_as_jquery_was_when/)
+- url: https://twitter.com/ralex1993/status/1234165541805281280?s=20
 ---
 
-## [4][✨ Ant Design 4.0 is out!](https://www.reddit.com/r/reactjs/comments/fbdzfh/ant_design_40_is_out/)
-- url: https://github.com/ant-design/ant-design/issues/21656?reddit
+## [4][I made an application that simulates a battle between two senators using their data from office. I used React, Styled Components, Framer Motion, and the ProPublica API.](https://www.reddit.com/r/reactjs/comments/fc2r5k/i_made_an_application_that_simulates_a_battle/)
+- url: https://v.redd.it/wb44lz6ib5k41
 ---
 
-## [5][Deep Dive into Redux Toolkit - The Official toolset for efficient Redux Development (Video)](https://www.reddit.com/r/reactjs/comments/fbejn2/deep_dive_into_redux_toolkit_the_official_toolset/)
-- url: https://youtu.be/9lCmbth63k0
+## [5][Race conditions in React and beyond. A race condition guard with TypeScript](https://www.reddit.com/r/reactjs/comments/fcaft6/race_conditions_in_react_and_beyond_a_race/)
+- url: https://wanago.io/2020/03/02/race-conditions-in-react-and-beyond-a-race-condition-guard-with-typescript/
 ---
 
-## [6][I published a package to solve paginated query refetching with Apollo : refetch by partial variable match !](https://www.reddit.com/r/reactjs/comments/fbtyea/i_published_a_package_to_solve_paginated_query/)
+## [6][I made an alternative to google start page with React JS including current weather based on geolocation and custom google search bar](https://www.reddit.com/r/reactjs/comments/fcbtwo/i_made_an_alternative_to_google_start_page_with/)
+- url: https://www.reddit.com/r/reactjs/comments/fcbtwo/i_made_an_alternative_to_google_start_page_with/
+---
+Please rate 🙂 
+
+https://github.com/homeScreen-React
+
+
+https://homescreenalt.herokuapp.com/
+## [7][Would you recommend a newcomer to React to start with functional components or class components?](https://www.reddit.com/r/reactjs/comments/fc7iac/would_you_recommend_a_newcomer_to_react_to_start/)
+- url: https://www.reddit.com/r/reactjs/comments/fc7iac/would_you_recommend_a_newcomer_to_react_to_start/
+---
+I'm torn, I use both. But I need to teach this to people and not sure which one really would be the best option to go with. We don't have time to really cover both though I would love to-- it's rapid pace.
+
+The goal ultimately is to get these people working ASAP.
+
+Thoughts? Opinions?
+## [8][I've created a website tour generator for any sort of users.](https://www.reddit.com/r/reactjs/comments/fc8ktf/ive_created_a_website_tour_generator_for_any_sort/)
+- url: https://www.reddit.com/r/reactjs/comments/fc8ktf/ive_created_a_website_tour_generator_for_any_sort/
+---
+This lets any kind of users to create a tour of the website. It's still on development.
+
+I searched for something like these but they all are paid and platform based. So I wanted to make it open source for everyone to integrate. Just wanna ask if its legit and people are interested helping me.
+
+Demostration:
+
+https://reddit.com/link/fc8ktf/video/r6f9wjsfp7k41/player
+## [9][Problem with socket.io-client](https://www.reddit.com/r/reactjs/comments/fc9shl/problem_with_socketioclient/)
+- url: https://www.reddit.com/r/reactjs/comments/fc9shl/problem_with_socketioclient/
+---
+So I have been using [socket.io](https://socket.io) in a nodejs backend and socket.io-client in the corresponding react native app for communicating messages. Initially in the android app, I get a yellow box message: Unrecognized WebSocket connection option(s) \`agent\`, \`perMessageDeflate\`, \`pfx\`, \`key\`, \`passphrase\`, \`cert\`, \`ca\`, \`ciphers\`, \`rejectUnauthorized\`. Did you mean to put these under \`headers\`?
+
+The app works fine anyway, and after a quick google search, it turns out this message is harmless. But occasionally, after the app has been running for some time, this message appears again, and the communication stops. Restarting the node server does not help. There is no fixed time after which this happens, and in most of my test runs this does not happen. I checked the logs from 'adb logcat', but couldn't find anything different around the initial and new appearance of this same message. 
+
+Has anyone faced something similar? If yes, how did you solve this? Please comment if you need some more details.
+## [10][Using Postgres and Express with React](https://www.reddit.com/r/reactjs/comments/fcc155/using_postgres_and_express_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/fcc155/using_postgres_and_express_with_react/
+---
+Hi I'm a big noob here. I've been trying to find online resources for and ways that I can retrieve information from PostgreSQL database and use in the react front end. I have a basic understanding of PostgreSQL working as my database, React for front-end and Express for bridging the two. Does anyone have useful resources for using Postgres with React? or How can I get information from my PostgreSQL database and use it in the front end?
+
+&amp;#x200B;
+
+Thank you
+## [11][Building a maintainable Icon System for React and React Native](https://www.reddit.com/r/reactjs/comments/fcagzy/building_a_maintainable_icon_system_for_react_and/)
+- url: https://medium.com/omio-engineering/building-a-maintainable-icon-system-for-react-and-react-native-a03c5623cbc
+---
+
+## [12][I published a package to solve paginated query refetching with Apollo : refetch by partial variable match !](https://www.reddit.com/r/reactjs/comments/fbtyea/i_published_a_package_to_solve_paginated_query/)
 - url: https://www.npmjs.com/package/refetch-queries
 ---
 
-## [7][React Build Size](https://www.reddit.com/r/reactjs/comments/fbt3sf/react_build_size/)
-- url: https://www.reddit.com/r/reactjs/comments/fbt3sf/react_build_size/
----
-My react build size is 58MB and I have no idea why. Does anyone have any clues where I can start trying to figure out how to fix this? Thanks
-## [8][Why My Content Served by PWA Service Worker Keeps Saying: New content is available; please refresh?](https://www.reddit.com/r/reactjs/comments/fbsxgy/why_my_content_served_by_pwa_service_worker_keeps/)
-- url: https://nanmu.me/en/posts/2020/why-my-content-served-by-pwa-service-worker-not-updating/
----
-
-## [9][Confused about implementing OAuth with my React front-end and NodeJS backend](https://www.reddit.com/r/reactjs/comments/fbmfc1/confused_about_implementing_oauth_with_my_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fbmfc1/confused_about_implementing_oauth_with_my_react/
----
-I am not sure if there is a gap in my knowledge, so I am going to try to explain.
-
-I have a NodeJS backend that has an `/api/auth/google` endpoint which is configured with a Passport Strategy to send the user to the Google login screen to give my application access to their name. If they agree to login, Passport will call my `api/auth/google/callback` URL with the Google data I initially asked for. Here, I respond with a JWT signed with this user's name (and possibly add a user to my DB if they're a first time visitor). 
-
-This is great, and in fact, I can get to this Google screen by doing something like this in React:
-
-    &lt;a href={`${process.env.API_URL}/auth/google`}&gt;Login with Google&lt;/a&gt;
-
-However, my issue arises when I need my client code to now receive this JWT. Since I didn't initiate a `GET` to `/api/auth/google/callback`, I have no way of getting the JWT unless I do something like `res.redirect(${process.env.CLIENT_URL}/${jwt})`, but this just seems off? Sending the JWT in the URL? I feel like this can't be right.
-
-I found somebody else with this exact question [as seen here on Stackoverflow](https://stackoverflow.com/questions/59129691/passing-oauth-user-data-back-to-react-via-node-passport-authentication), but unfortunately, it seems nobody responded.
-
-____
-
-Am I doing OAuth incorrectly, or am I not understanding the process?
-## [10][delploy react + flask + nginx on docker swarm](https://www.reddit.com/r/reactjs/comments/fbrqs8/delploy_react_flask_nginx_on_docker_swarm/)
-- url: https://www.reddit.com/r/reactjs/comments/fbrqs8/delploy_react_flask_nginx_on_docker_swarm/
----
-Hi, I'm on a project that i was originally doing only the backend for, a simple flask/gunicorn app with nginx reverse proxy in docker-compose container running on a docker-swarm being queried with polling. I've now inherited the frontend aswell, i don't have experience deploying react apps and am wondering whether i should deploy the react app within the same container as the backend on the swarm, or serve it on a seperate host and connect to the backend swarm? Note i'm also using sockets now instead of polling with flask-socketio.  
-I would appreciate any help.
-## [11][How to integrate testing two components where one of them depends on the other?](https://www.reddit.com/r/reactjs/comments/fbr2st/how_to_integrate_testing_two_components_where_one/)
-- url: https://www.reddit.com/r/reactjs/comments/fbr2st/how_to_integrate_testing_two_components_where_one/
----
-I have a component called BlogPosts that takes a prop of currentPage = 0 initially
-
-Another component is called PaginationUI. when I click on a button, it changes currentPage to the next page (1)
-
-How could I test these two components are working together with Jest and react-testing-library?
-
-I hope I don't need to use Enzyme!
-## [12][How to handle different types of errors from APIs in React](https://www.reddit.com/r/reactjs/comments/fbq5i6/how_to_handle_different_types_of_errors_from_apis/)
-- url: https://www.reddit.com/r/reactjs/comments/fbq5i6/how_to_handle_different_types_of_errors_from_apis/
----
-In React, usually to display an error message to the use you say:
-
-`APICall.catch((e) =&gt; {`
-
-this.setState({errorMessage: e})
-
-`})`
-
-What if the API updated in the future and you received an error object instead of a string. This will cause an error when displaying this error message to the user. How would you solve this problem?

@@ -19,7 +19,45 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Creating a third item by dragging and dropping one item on top of another](https://www.reddit.com/r/rails/comments/fbhgei/creating_a_third_item_by_dragging_and_dropping/)
+## [2][Does anyone build build their rails API using the JSON API standard? What server side library do you use?](https://www.reddit.com/r/rails/comments/fbzmuj/does_anyone_build_build_their_rails_api_using_the/)
+- url: https://www.reddit.com/r/rails/comments/fbzmuj/does_anyone_build_build_their_rails_api_using_the/
+---
+The [JSON API](https://jsonapi.org/) standard is a general standard for formatting API responses for your JSON API. It's one of many standards, but I kind of like the simplicity of it and it seems fairly popular. 
+
+Their website mentions [several ruby/rails gems](https://jsonapi.org/implementations/#server-libraries-ruby) that implement the standard. All of them promise that you can just add them and it generates links, routes, responses, etc... for you. 
+
+I looked through a few of them and found the amount of choices overwhelming, and a few of them weren't really maintained that well. 
+
+Do any of you use the JSON API standard for your own APIs, and if so what would you recommend? 
+
+Thanks!
+## [3][Suggestions for incorporating a low level recommendation engine for my v1 app](https://www.reddit.com/r/rails/comments/fbyv7x/suggestions_for_incorporating_a_low_level/)
+- url: https://www.reddit.com/r/rails/comments/fbyv7x/suggestions_for_incorporating_a_low_level/
+---
+Hey everyone. I basically have a simple app that involved rating things. In this case you upvote/downvote dishes from restaurants. Dishes are tagged categorically. For example, the dish named, *Casey's Hometown Burger* will presumably be tagged as a burger. There's also an option for users to upload photos of dishes and users collectively can view recently uploaded on an, *explore-like* page similar to Instagram's.
+
+I'd like to tie in some sort of recommendation logic where if a user has a tendency to upvote multiple dishes with the same tag then they'd get shown more burger related photos on the explore page. I would do the same when they would search for restaurants. If a restaurant offers burgers and the burgers are highly rated there, this listing would show up further up in results for this user vs. another user that has a tendency to rate pasta related dishes.
+
+I'm aware that this falls under the realm of machine learning, something I have absolutely no experience in unfortunately. I was wondering if there was something like a reliable gem or article that could at the very least help me get to proof of concept. Thanks!
+## [4][rails new project --webpack=react NOT working](https://www.reddit.com/r/rails/comments/fbxitf/rails_new_project_webpackreact_not_working/)
+- url: https://www.reddit.com/r/rails/comments/fbxitf/rails_new_project_webpackreact_not_working/
+---
+&amp;#x200B;
+
+https://preview.redd.it/p16bibs9l3k41.png?width=1909&amp;format=png&amp;auto=webp&amp;s=9a11bc9f20ce70da5cee1e8444d28e7e8a1f50c0
+
+&amp;#x200B;
+
+I get this error.
+
+I installed rails using  [http://railsinstaller.org/en](http://railsinstaller.org/en)
+
+Windows ruby 2.3
+
+I don't see javascript folder inside the app folder
+
+what should I do?Thanks
+## [5][Creating a third item by dragging and dropping one item on top of another](https://www.reddit.com/r/rails/comments/fbhgei/creating_a_third_item_by_dragging_and_dropping/)
 - url: https://www.reddit.com/r/rails/comments/fbhgei/creating_a_third_item_by_dragging_and_dropping/
 ---
 I'm writing an app where I have files that I want to be able to group together by dragging and dropping one on top of another. This should create a folder that can be named. It should also be possible to nest folders like this, by dragging and dropping folders on top of each other.
@@ -29,7 +67,7 @@ I got the associations working in Rails and I got the Javascript part of the dra
 Every "drag and drop" Rails article I found online is about reordering items in a list and relies on gems for nested sets or hierarchical data, which are irrelevant to my requirements, so it doesn't even help me by showing how to get JS and Rails talking in the way I'm looking for.
 
 How should I go about doing something like this? Any ideas? Thanks!
-## [3][How should I go about adding business hours and appointment slots to my model?](https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/)
+## [6][How should I go about adding business hours and appointment slots to my model?](https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/)
 - url: https://www.reddit.com/r/rails/comments/fb6j1e/how_should_i_go_about_adding_business_hours_and/
 ---
 Hi everyone,  
@@ -90,11 +128,11 @@ I have a habit of going down the wrong route and then creating problems for myse
 
 
 Thanks a lot.
-## [4][JSON-RPC infraestructure](https://www.reddit.com/r/rails/comments/fbedv2/jsonrpc_infraestructure/)
+## [7][JSON-RPC infraestructure](https://www.reddit.com/r/rails/comments/fbedv2/jsonrpc_infraestructure/)
 - url: https://www.reddit.com/r/rails/comments/fbedv2/jsonrpc_infraestructure/
 ---
 Hello im a begginner coder and I have been learning with ruby on rails. I have learn the basics like CRUD and REST. I can create features on my app. THis time  Im trying to create an app but he requires me to use JSON-RPC. I dont understand how to use it or set it up. Anyone can help me please? if is usefull is in order to create a Ruby on Rails app in order to connect to NEO Blockchain. Thanks
-## [5][Advice on massive data sets](https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/)
+## [8][Advice on massive data sets](https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/)
 - url: https://www.reddit.com/r/rails/comments/fb4fj8/advice_on_massive_data_sets/
 ---
 Howdy folks.  
@@ -122,7 +160,7 @@ I have no experience with that level of large dataset. Normally dealing with lik
 
 
 Thanks for any thoughts
-## [6][ActiveStorage::FileNotFoundError for existing files](https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/)
+## [9][ActiveStorage::FileNotFoundError for existing files](https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/)
 - url: https://www.reddit.com/r/rails/comments/fb02tp/activestoragefilenotfounderror_for_existing_files/
 ---
 On a standard, out of the box Rails 6 with ActiveStorage set to disk storage,  I get his error from time to time:
@@ -143,7 +181,7 @@ Restarting the server solves it. It happens on nginx, apache+mod\_passenger, pum
 Can anyone point a middle finger to what could be wrong? TIA
 
 I got 500 coins saying I can find someone on reddit who knows wtf is going on
-## [7][html.slim and react?](https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/)
+## [10][html.slim and react?](https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/)
 - url: https://www.reddit.com/r/rails/comments/fb4192/htmlslim_and_react/
 ---
 Has anyone incorporated a react front end using html.slim? 
@@ -155,7 +193,7 @@ we have tried doing
 &amp;#x200B;
 
 but nothing and thats the only research I can find that connect react and slim
-## [8][Why does my variable behave differently when I assign using different ActiveRecord search method?](https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/)
+## [11][Why does my variable behave differently when I assign using different ActiveRecord search method?](https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/)
 - url: https://www.reddit.com/r/rails/comments/faoadl/why_does_my_variable_behave_differently_when_i/
 ---
 So I've noticed some unexpected behaviour when dealing with ActiveRecord.  
@@ -217,29 +255,3 @@ The actual instance seems to have been returned each time and I can see all the 
 
 
 If someone could please explain why this is, that would be very much appreciated??
-## [9][Ruby Hash#transform_keys now accepts a hash that maps existing keys to new keys](https://www.reddit.com/r/rails/comments/fae2xz/ruby_hashtransform_keys_now_accepts_a_hash_that/)
-- url: https://blog.saeloun.com/2020/02/26/ruby-hash-transform_keys-now-accepts-a-hash-that-maps-existing-keys-to-new-keys
----
-
-## [10][How can I disable migrations in the second database in Rails 6?](https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/)
-- url: https://www.reddit.com/r/rails/comments/fad72g/how_can_i_disable_migrations_in_the_second/
----
-I'm doing a new project on a database in Rails 6.0.2.1, we're going to use two databases, one of them is the database of the Rails project and the other will be connecting to the database of an ERP we have, I want to completely disable migrations on this second database database (so a `rails db:drop` or a `rails db:reset` doesn't affect our ERP's database) and only use a `schema.rb` so that Rails can know what tables are in this db.
-
-What can I do?
-## [11][When developing a big app with different parts, is it smart to split every part into their own app?](https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/)
-- url: https://www.reddit.com/r/rails/comments/faed8e/when_developing_a_big_app_with_different_parts_is/
----
-I'm currently developing quite a big application (atleast for my standards). The application basically consists of a user-facing part with a "User" user model and a dashboard part with a "Vendor" user model (there will most likely also be a third part with it's own dashboard-like application in the future). The User part has the most business logic and is way bigger then the Vendor part, however, both parts are operating on and sharing the same data. But the data they share is the only thing they have in common. Everything else in the application, like for example the frontend or the domains, is pretty clear cut into these two parts. 
-
-That's why I'm now wondering if it would be a better idea to really split these two parts into their own apps. So instead of having one big rails app, I would have one for the User side and one for the Vendor side which both share the same database. 
-
-There are three big positives that I see with this approach:
-
-1. **Seperation of concern.** Since they are essentially two different applications that just work on the same underlying data, having them on two different Rails apps should make everything more secure/stable and more easily extentable in the future.
-
-2. **Simpler auth logic.** I was previously thinking about going with devise since both apps have entirely different user models and devise is the only auth gem that can handle multiple user models. However, I'm not a huge fan of devise. Splitting everything into two apps would allow me to choose a simpler auth gem like Clearance which has a way simpler api.
-
-3. **Easily switchable technology.** Going with two apps instead of one big rails app would also allow me two choose and experiment with different technologies more easily. For example, I'm pretty interested in choosing Hanami but wouldn't choose it for the entire stack if everything would be a single app. However, splitting the one really big app into one big and one small app would allow me to choose Hanami for the smaller one and keep Rails for the big one. And if I find Hanami to be the wrong fit somewhere down the road I would only need to convert a small part of the original really big app back.
-
-Does this all make sense and is this a common approach to handling bigger apps with multiple different parts or am I setting myself up for a lot of issues in the future if I go this path?

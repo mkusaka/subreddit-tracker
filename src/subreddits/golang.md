@@ -1,9 +1,82 @@
 # golang
-## [1][Some golang spotted in a movie I'm about to watch - Guns Akimbo](https://www.reddit.com/r/golang/comments/fbeb9t/some_golang_spotted_in_a_movie_im_about_to_watch/)
-- url: https://i.redd.it/2fz3icbkvvj41.jpg
+## [1][A Virtual Stock Market Exchange game in Golang](https://www.reddit.com/r/golang/comments/fc7olw/a_virtual_stock_market_exchange_game_in_golang/)
+- url: https://www.reddit.com/r/golang/comments/fc7olw/a_virtual_stock_market_exchange_game_in_golang/
+---
+Dalal Street is a virtual stock market exchange game developed by a bunch of undergrads. It was built using golang.
+
+We used
+
+* Goroutines to handle streams / transactions / stocks matching simultaneously
+* Gorm as ORM (mysql database)
+* GRPC - to handle communication between frontend and backend
+* Server side streams (using GRPC) to send updates at frontend
+* Migrate CLI for handling migrations
+* Mockgen for generating mocks for testing
+* grpc-middleware for authentication
+* caching for getting sessions and some other info
+* Mutexes to handle race conditions and inconsistency
+
+Code : [https://github.com/delta/dalal-street-server](https://github.com/delta/dalal-street-server)
+
+&amp;#x200B;
+
+In this you will be given a fixed amount of money and you aim is to maximise your wealth.
+
+Game is live right now !! From 1st March - 7th March, 2:30PM - 5:30 PM UTC.
+
+Web : [https://dalal.pragyan.org](https://dalal.pragyan.org/trade)
+
+App :  [http://prgy.in/dalalapp](http://prgy.in/dalalapp)
+
+&amp;#x200B;
+
+Please do check it out !!
+## [2][Library for hashing an interface{}](https://www.reddit.com/r/golang/comments/fcb9ul/library_for_hashing_an_interface/)
+- url: https://www.reddit.com/r/golang/comments/fcb9ul/library_for_hashing_an_interface/
+---
+Hello reddit gophers,
+
+I'm a software developer from Athens, Greece and a professional Golang developer for the last six months.
+
+During work, I fell onto a case where I had to compare two huge structs and see if they are equal and also ignore some struct fields during comparison.
+
+The first "naive" way to do so, is to write a huge function where this comparison takes place. I thought about avoiding this in the first place.
+
+After that, I thought doing JSON Marshal to both structs that I had to compare, then use some regex and string modification to remove the fields, and then JSON unmashal again. It worked, but it seemed a bit "expensive".
+
+So I did a small research and I decided to exploit the capabilities of Golang `reflect` package. I finally wrote this library below, which iterates recursively in all fields of the given struct (ignoring the ones that have the tag `"hash:"ignore"`) and generates a hash string.
+
+[https://github.com/panospet/recursive-deep-hash](https://github.com/panospet/recursive-deep-hash)
+
+I'm pretty sure it's not perfect yet, so I need your advice / help.Feel free to give feedback, comments, improvements suggestions, possible bugs, etc.
+## [3][Which framework should i use for web development in go](https://www.reddit.com/r/golang/comments/fc9slb/which_framework_should_i_use_for_web_development/)
+- url: https://www.reddit.com/r/golang/comments/fc9slb/which_framework_should_i_use_for_web_development/
+---
+Hello guys,
+
+I would really appreciate your help if you could recommend me a good framework in go for web development. I write go in my free time but my main languages are php and java. My experience in go comes from:
+
+1. Small projects i wrote on my own.
+2. By reading [https://www.openmymind.net/The-Little-Go-Book/](https://www.openmymind.net/The-Little-Go-Book/)
+3. By watching [https://www.udemy.com/course/learn-how-to-code/](https://www.udemy.com/course/learn-how-to-code/)
+4. Attended a golang conference in London 2 years ago.
+
+I know i can use net/http to create a web server in go but what i want to find out is if golang has something like  spring boot (java) and symfony (php). These are the 2 frameworks i am using.
+
+&amp;#x200B;
+
+When i attended the conference 2 years ago they were really trying to promote go bufallo but a lot of people are saying that it is mainly a code generator. I can see that gin [https://github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) is really popular but i don't know if it is what i am looking for.
+
+I am looking forward to see your recommendations.
+## [4][Lessons Learned after 1 year of programming in Go as a C# developer | Robert Pajak](https://www.reddit.com/r/golang/comments/fc9els/lessons_learned_after_1_year_of_programming_in_go/)
+- url: https://pajak.home.blog/2020/02/28/lessons-learned-after-1-year-of-programming-in-go-as-a-c-developer/
 ---
 
-## [2][Seeking testers for gotop](https://www.reddit.com/r/golang/comments/fbtyl0/seeking_testers_for_gotop/)
+## [5][How to create a CLI in golang with cobra](https://www.reddit.com/r/golang/comments/fcc2e5/how_to_create_a_cli_in_golang_with_cobra/)
+- url: https://schadokar.dev/posts/how-to-create-a-cli-in-golang-with-cobra/
+---
+
+## [6][Seeking testers for gotop](https://www.reddit.com/r/golang/comments/fbtyl0/seeking_testers_for_gotop/)
 - url: https://www.reddit.com/r/golang/comments/fbtyl0/seeking_testers_for_gotop/
 ---
 I'm looking for some volunteers to help testing the next release of gotop.
@@ -38,69 +111,23 @@ In addition to bug fixes, the features released (and currently tested) are:
 Once again, the project URL is https://github.com/xxxserxxx/gotop .  An call for testers is in the issue tracker; if you're willing to help, please post to that ticket.  I'm only seeking sanity checks for things I can't test myself, so if someone has already volunteered to, e.g., test FreeBSD, don't feel obliged to also volunteer.
 
 Thanks for reading the long post.
-## [3][Go Security Policy](https://www.reddit.com/r/golang/comments/fbtk68/go_security_policy/)
-- url: https://golang.org/security
+## [7][Can you use Golang for low-level system and embedded programming?](https://www.reddit.com/r/golang/comments/fbzd53/can_you_use_golang_for_lowlevel_system_and/)
+- url: https://www.reddit.com/r/golang/comments/fbzd53/can_you_use_golang_for_lowlevel_system_and/
+---
+Can you use Golang for low-level system and embedded programming?
+## [8][Build a CRUD application in Golang with PostgreSQL - CodeSource.io](https://www.reddit.com/r/golang/comments/fc7gi0/build_a_crud_application_in_golang_with/)
+- url: https://codesource.io/build-a-crud-application-in-golang-with-postgresql/
 ---
 
-## [4][How to create an overlayfs mount in golang?](https://www.reddit.com/r/golang/comments/fbrutx/how_to_create_an_overlayfs_mount_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/fbrutx/how_to_create_an_overlayfs_mount_in_golang/
+## [9][zserge/webview](https://www.reddit.com/r/golang/comments/fc6qwt/zsergewebview/)
+- url: https://www.reddit.com/r/golang/comments/fc6qwt/zsergewebview/
 ---
-I'm new to go. I need to create an overlay mount. What is the correct way to do this? Say, the lower dir is /A ( read only) and upper dir is /B (read write).
-## [5][Early Impressions of Go from a Rust Programmer](https://www.reddit.com/r/golang/comments/fb7n67/early_impressions_of_go_from_a_rust_programmer/)
-- url: https://pingcap.com/blog/early-impressions-of-go-from-a-rust-programmer/
+Cool, tiny cross-platform [webview library](https://github.com/zserge/webview) for Go and C/C++ by u/zserge. I had experimented with using it for demos at AWS and liked it, but was wary of committing to the library knowing big changes were coming. Looks like they finally landed, so time to revisit!
+## [10][Looking for the most user-friendly template engine for my tool](https://www.reddit.com/r/golang/comments/fc6ivy/looking_for_the_most_userfriendly_template_engine/)
+- url: https://www.reddit.com/r/golang/comments/fc6ivy/looking_for_the_most_userfriendly_template_engine/
 ---
+Briefly about the project: I am creating a utility to generate examples for HTTP APIs. You write a configuration file, specifying for which requests you want to make examples and utility performs these requests and outputs their response.
 
-## [6][I am confused](https://www.reddit.com/r/golang/comments/fbqs84/i_am_confused/)
-- url: https://www.reddit.com/r/golang/comments/fbqs84/i_am_confused/
----
-Hello community,
-If I want to deploy a php webapp, I usually need any kind of webserver. I am a little bit confused, how to do this in golang. Afak there is no need for any webserver, because its a kind of built in, but how does the server manage the Go app? Has the application to be registered / started as a service?
+Github: [api-example-generator](https://github.com/flygrounder/api-example-generator)
 
-Kind regards
-## [7][Can someone explain me what bufio is &amp; does?](https://www.reddit.com/r/golang/comments/fbqqa7/can_someone_explain_me_what_bufio_is_does/)
-- url: https://www.reddit.com/r/golang/comments/fbqqa7/can_someone_explain_me_what_bufio_is_does/
----
-New to go lang and I went through [golangbot.com](https://golangbot.com) and was able to get it's topics. I can get to know what bufio does.
-## [8][tarry: A simple command line tool written in Go for waiting until a specific time](https://www.reddit.com/r/golang/comments/fbe0qk/tarry_a_simple_command_line_tool_written_in_go/)
-- url: https://www.reddit.com/r/golang/comments/fbe0qk/tarry_a_simple_command_line_tool_written_in_go/
----
-[https://github.com/metaphyze/tarry](https://github.com/metaphyze/tarry)
-
-A simple command line tool for waiting until a specific time. This is not the same as "sleep" which will wait for a duration of time. This is useful if you want to execute something at a specific time or more likely execute several things at exactly the same time such as testing if a server can handle multiple *very* simultaneous requests. You could use it like this with "&amp;&amp;" on Linux, Mac, or Windows:
-
-      tarry -until=16:03:04 &amp;&amp; someOtherCommand 
-
-This would wait until 4:03:04 PM and then execute someOtherCommand. Here's a Linux/Mac example of how to run multiple requests all scheduled to start at the same time:
-
-      for request in 1 2 3 4 5 6 7 8 9 10    
-      do        
-           tarry -until=16:03:04 &amp;&amp; date &gt; results.$request &amp;    
-      done
-## [9][List of Go Resources for Anybody Who Wants to Learn Golang](https://www.reddit.com/r/golang/comments/fbds4f/list_of_go_resources_for_anybody_who_wants_to/)
-- url: https://www.reddit.com/r/golang/comments/fbds4f/list_of_go_resources_for_anybody_who_wants_to/
----
-Hello everyone, I have curated a collection of links to different resources for anybody who wants to learn Golang. I hope it will be helpful. 
-
-I sorted them by their level so it has something for people from each level but I know there are some veterans out there and I am not sure about the relevancy of advanced resources. If you have any suggestions, as a resource or feedback, please leave a comment below. I would be happy to add new links to this list.
-
-Here's the List;
-
-[**Golang Module| Jooseph**](https://www.jooseph.com/go-lang)
-
-This list was curated for our platform Jooseph which is basically playlists for learning. You can curate and follow collection of links to different resources for learning a subject. You can also share yours :)
-
-Thanks in advance
-## [10][I Created a Coronavirus Tracker with Golang to help you stay updated](https://www.reddit.com/r/golang/comments/fbacj2/i_created_a_coronavirus_tracker_with_golang_to/)
-- url: https://www.reddit.com/r/golang/comments/fbacj2/i_created_a_coronavirus_tracker_with_golang_to/
----
-I'm in China and all of a sudden the coronavirus hit, things just went down. I couldn't go out, quarantine was applied, every store was closed, the city turned lifeless, I'm stuck in my apartment 24/7.
-
-But I'm a programmer &amp; I work on my project every single day, so I thought why not create a coronavirus tracker with and make a video about it, since I'm making videos anyway?
-
-So I did, and here's the site I've built Golang: [http://pandemicalert.xyz/](http://pandemicalert.xyz/)
-
-And here's the video I've made about it: [https://youtu.be/vC52Cm8hHpI](https://youtu.be/vC52Cm8hHpI)
-
-I'm making more videos about programming &amp; startups, and I write all my backend with Golang, please subscribe if you guys are interested. 😉
-
-(admin: please remove if violates policies, this is a self promotion but I don't think it's a shameless self-promo, trying to provide value here, thanks).
+Now to the question: there is an ability to use response of one request to generate another request. You can access this data using templates. At the moment I use go default templates, which works but they seem not user-friendly for people not familiar with go. Which template engine you would recommend to use here?

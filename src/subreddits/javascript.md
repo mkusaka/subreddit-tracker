@@ -85,45 +85,43 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][NextJS Boilerplate with Typescript MaterialUI and Jest](https://www.reddit.com/r/javascript/comments/fbtiz8/nextjs_boilerplate_with_typescript_materialui_and/)
+## [3][How Refactoring Too Late Is Killing Your Productivity](https://www.reddit.com/r/javascript/comments/fc3yrw/how_refactoring_too_late_is_killing_your/)
+- url: https://medium.com/javascript-in-plain-english/how-refactoring-too-late-is-killing-your-productivity-ce10e2e636cd
+---
+
+## [4][Modern Typescript with Examples Cheat Sheet](https://www.reddit.com/r/javascript/comments/fcaagi/modern_typescript_with_examples_cheat_sheet/)
+- url: /r/typescript/comments/f9es9d/modern_typescript_with_examples_cheat_sheet/
+---
+
+## [5][Stryker — Test your tests with mutation testing in JavaScript](https://www.reddit.com/r/javascript/comments/fby68o/stryker_test_your_tests_with_mutation_testing_in/)
+- url: https://stryker-mutator.io/
+---
+
+## [6][The JavaScript Beginner's Handbook (2020 Edition)](https://www.reddit.com/r/javascript/comments/fcblyu/the_javascript_beginners_handbook_2020_edition/)
+- url: https://www.freecodecamp.org/news/the-complete-javascript-handbook-f26b2c71719c/
+---
+
+## [7][Radical redux, cultivating creative composition with streams and currys - article about how to use composition to DRY-ify your rxjs](https://www.reddit.com/r/javascript/comments/fcaaf8/radical_redux_cultivating_creative_composition/)
+- url: https://medium.com/@alvino.aj/radical-redux-cultivating-creative-composition-with-streams-and-currys-fc9039909a1
+---
+
+## [8][Introducing AdonisJS v5 (Preview)](https://www.reddit.com/r/javascript/comments/fbzvf0/introducing_adonisjs_v5_preview/)
+- url: https://blog.adonisjs.com/introducing-adonisjs-v5/amp/?__twitter_impression=true
+---
+
+## [9][The Adaptive Responsive model](https://www.reddit.com/r/javascript/comments/fcbw9o/the_adaptive_responsive_model/)
+- url: https://www.hackdoor.io/articles/1vpa7LJw/the-adaptive-responsive-model
+---
+
+## [10][NextJS Boilerplate with Typescript MaterialUI and Jest](https://www.reddit.com/r/javascript/comments/fbtiz8/nextjs_boilerplate_with_typescript_materialui_and/)
 - url: https://github.com/mehmetsefabalik/next-typescript-materialui-jest-starter
 ---
 
-## [4][I fell into a hole setting up fetch mocking in Jest one too many times so I wrote this guide to save you time and frustration](https://www.reddit.com/r/javascript/comments/fbe9uh/i_fell_into_a_hole_setting_up_fetch_mocking_in/)
-- url: https://swizec.com/blog/mocking-and-testing-fetch-requests-with-jest/swizec/9338
+## [11][How memory management works in JavaScript](https://www.reddit.com/r/javascript/comments/fc9ry1/how_memory_management_works_in_javascript/)
+- url: https://medium.com/javascript-in-plain-english/how-memory-management-works-in-javascript-43e1ef22c3bb?source=friends_link&amp;sk=1ba8029f600b1ef66388b13107440a9c
 ---
 
-## [5][Prevent 404s on bulk resource requests](https://www.reddit.com/r/javascript/comments/fbovgu/prevent_404s_on_bulk_resource_requests/)
-- url: https://medium.com/vulcanca/prevent-404s-on-bulk-resource-requests-e00de3258efa
----
-
-## [6][About coding the “FizzBuzz” interview question](https://www.reddit.com/r/javascript/comments/fbt098/about_coding_the_fizzbuzz_interview_question/)
-- url: https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question
----
-
-## [7][[AskJS] Are there any tools with JAM stack to generate static files on the fly?](https://www.reddit.com/r/javascript/comments/fbllqg/askjs_are_there_any_tools_with_jam_stack_to/)
-- url: https://www.reddit.com/r/javascript/comments/fbllqg/askjs_are_there_any_tools_with_jam_stack_to/
----
-As title, dynamic pages are updated a lot and new data get added, like e-commerce. Generating a new product page when new products gets pushed to database, or invalidating when products get updated.
-
-Because JAM stack seems to be generated at build time from what I've read.
-## [8][TC39 Podcast: Interview with Joardan Harband [one of the spec editor]](https://www.reddit.com/r/javascript/comments/fbe7t3/tc39_podcast_interview_with_joardan_harband_one/)
-- url: https://tc39er.us/posts/episode-2-jordan-harband/
----
-
-## [9][Could you help me ?](https://www.reddit.com/r/javascript/comments/fbpvfg/could_you_help_me/)
-- url: /r/angularjs/comments/fbpr3o/hi_im_new_in_the_angular_and_js_could_you_tell_me/
----
-
-## [10][Open Source Firebase (GraphQL) + Heroku which works anywhere and with any database!!](https://www.reddit.com/r/javascript/comments/fb49fc/open_source_firebase_graphql_heroku_which_works/)
-- url: https://blog.spaceuptech.com/posts/open-source-firebase-heroku/
----
-
-## [11][Pmdr - Another pomodoro application](https://www.reddit.com/r/javascript/comments/fbcqas/pmdr_another_pomodoro_application/)
-- url: https://ko-fi.com/post/The-One-Week-Project---Conclusion-V7V61GRWS
----
-
-## [12][Lazyload images the browser way](https://www.reddit.com/r/javascript/comments/fauk6e/lazyload_images_the_browser_way/)
-- url: https://itsopensource.com/lazyload-images-the-browser-way/
+## [12][G2 4.0 released, bring the grammar of interactions.](https://www.reddit.com/r/javascript/comments/fcar0t/g2_40_released_bring_the_grammar_of_interactions/)
+- url: https://medium.com/antv/g2-4-0-released-488c85229991
 ---
 

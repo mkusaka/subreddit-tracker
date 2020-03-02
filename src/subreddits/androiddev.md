@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - February 29, 2020](https://www.reddit.com/r/androiddev/comments/fbbuz9/app_feedback_thread_february_29_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/fbbuz9/app_feedback_thread_february_29_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/fcbisg/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/fcbisg/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - February 24, 2020](https://www.reddit.com/r/androiddev/comments/f8pltv/weekly_questions_thread_february_24_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/f8pltv/weekly_questions_thread_february_24_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - March 02, 2020](https://www.reddit.com/r/androiddev/comments/fcaf42/weekly_questions_thread_march_02_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/fcaf42/weekly_questions_thread_march_02_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,74 +31,69 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Scabbard (Dagger Visualizer) 0.2.0 - SVG support for generated graphs, uses simple names, improved gradle plugin and minor fixes.](https://www.reddit.com/r/androiddev/comments/fbqsbw/scabbard_dagger_visualizer_020_svg_support_for/)
-- url: https://github.com/arunkumar9t2/scabbard/releases/tag/0.2.0
+## [3][Do you guys ever get burnt out and need to take a break from Android dev after finishing a major project?](https://www.reddit.com/r/androiddev/comments/fc6leu/do_you_guys_ever_get_burnt_out_and_need_to_take_a/)
+- url: https://www.reddit.com/r/androiddev/comments/fc6leu/do_you_guys_ever_get_burnt_out_and_need_to_take_a/
+---
+Obviously some of you do it for a career but I am still in school so I am still in the hobbyist/learning phase and after finishing my first major app I don't want to work with java or android studio for a while. I am going to take a break and focus on getting better at react in the meantime before starting my next app.
+## [4][App removed from PlayStore](https://www.reddit.com/r/androiddev/comments/fcb2c4/app_removed_from_playstore/)
+- url: https://www.reddit.com/r/androiddev/comments/fcb2c4/app_removed_from_playstore/
+---
+Application has been removed without any communication! Published 2 years ago, no recent changes, has been deleted from the playstore. I have not received any emails, notification on play console. What happened?  
+My app is Amazfit bip wacthfaces
+## [5][Upcoming View Model Hilt Extension with Dagger integration](https://www.reddit.com/r/androiddev/comments/fcayyy/upcoming_view_model_hilt_extension_with_dagger/)
+- url: https://android-review.googlesource.com/c/platform/frameworks/support/+/1247447
 ---
 
-## [4][Rx is not the problem; Asynchronous programming is.](https://www.reddit.com/r/androiddev/comments/fbpgza/rx_is_not_the_problem_asynchronous_programming_is/)
-- url: https://medium.com/@steven.popovich/rx-is-not-the-problem-asynchronous-programming-is-6055b5839b1a
+## [6][How do I get Activity redirected to another Activity on start using Navigation Component?](https://www.reddit.com/r/androiddev/comments/fcates/how_do_i_get_activity_redirected_to_another/)
+- url: https://www.reddit.com/r/androiddev/comments/fcates/how_do_i_get_activity_redirected_to_another/
 ---
 
-## [5][Showing the Android Keyboard Reliably](https://www.reddit.com/r/androiddev/comments/fbiakx/showing_the_android_keyboard_reliably/)
-- url: https://developer.squareup.com/blog/showing-the-android-keyboard-reliably/
+## [7][Android Feature Development at Babylon Health — Part 1: Thinking About the Problem](https://www.reddit.com/r/androiddev/comments/fcbvzv/android_feature_development_at_babylon_health/)
+- url: https://medium.com/babylon-engineering/android-feature-development-at-babylon-health-part-1-thinking-about-the-problem-d1b68521350c
 ---
 
-## [6][Is there any FREE, SIMPLE, COMMUNITY based translation tool as Google Translator toolkit?](https://www.reddit.com/r/androiddev/comments/fbro2j/is_there_any_free_simple_community_based/)
-- url: https://www.reddit.com/r/androiddev/comments/fbro2j/is_there_any_free_simple_community_based/
+## [8][Making a software keyboard (no previous android development experience)](https://www.reddit.com/r/androiddev/comments/fc02ey/making_a_software_keyboard_no_previous_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fc02ey/making_a_software_keyboard_no_previous_android/
 ---
-Everything I tried, and its been a lot, is either paid, or directed towards professionals, or with landing page which takes an hour to read and offering tons of functionality I dont really need.
+Greetings,
 
-I just want something simple. Where I:
+i just recently switched to Android from Windows Phone, and i really, REALLY miss Windows Phone's keyboard. I tried 5-6 different keyboards but there's always something wrong (SiftKey's forced space after punctuation can't be disabled, general lack of navigation keys everywhere, and when they're present they take too much space - see hacker's keyboard).
 
-1. upload text I want to translate
-2. share link with people who help me with translation
+So, since it's android, i said to myself "why not make my own?".
 
-Thats all. Exactly like Google Translator Toolkit. Can you recommend any tools? Thanks a lot!
-## [7][How would I go about creating an app to intercept and edit all mobile hotspot traffic?](https://www.reddit.com/r/androiddev/comments/fbto0z/how_would_i_go_about_creating_an_app_to_intercept/)
-- url: https://www.reddit.com/r/androiddev/comments/fbto0z/how_would_i_go_about_creating_an_app_to_intercept/
+Problem is my mobile development skill simply doesn't exist. I spend 90% of my time writing in C++ for Windows or Linux, and barely use Java for 3 or 4 university courses that require it, still targeting desktop environments.
+
+When i jump into something new i find it easier to start working after putting my hands in an example project; however, while there's a lot online about normal applications, i found very little about keyboards. Just a step by step guide that focuses mostly on layout, and this [https://developer.android.com/guide/topics/text/creating-input-method](https://developer.android.com/guide/topics/text/creating-input-method)
+
+but of course it skips on the project setup.
+
+Is there any place when i can find example projects for "system" apps like keyboards, launchers, etcc?
+## [9][Find location history without Google maps timeline](https://www.reddit.com/r/androiddev/comments/fcayy9/find_location_history_without_google_maps_timeline/)
+- url: https://www.reddit.com/r/androiddev/comments/fcayy9/find_location_history_without_google_maps_timeline/
 ---
-I would like to build an app with xamarin using c# which should be able to:
-1: setup a mobile hotspot with a custom name and password.
-2: intercept and edit all traffic passing through the hotspot.
+Hi everyone,
 
-Would the WifiManager class give me enough control to do this? If not, what tools could give me this level of control? If there are no tools to do this then how would I get low level access to networking on the android device?
-
-Thanks in advance for any help! :)
-## [8][How to speed up image processing on android?](https://www.reddit.com/r/androiddev/comments/fbsnpt/how_to_speed_up_image_processing_on_android/)
-- url: https://www.reddit.com/r/androiddev/comments/fbsnpt/how_to_speed_up_image_processing_on_android/
----
-I am working on an image enhancement android app. In one part i loop over a single channel 2d array with dimensions equal to that of image. Doing this on a full resolution image takes too much time and the app crashes. So right now i downscale the image and work on it but I have to do it on full resolution image.
-
-What i am doing is that i have already created 10 different segment of image. I have labelled the above mentioned 2d array where each index is the segment number from 1 to 10. I then sum pixel values at each belonging to a specific segment. For this I loop over the 2d array and check which segment the pixel belongs to and add the pixel value to corresponding sum.
-
-To speed up this process I can think of two techniques.
-1. Create 10 different images making pixels that don't belong to that segment equal to 0 and than using opencv's built in sum function.
-2. I am doing this in C++ using jni and I have read online about Halide and how it is used to speed up such tasks by parallelising the tasks. I currently don't know how to do it but I can learn. 
-
-Which of the above mentioned technique is better or if there exists an even better technique which I have missed?
-## [9][I opened my minesweeper game source code](https://www.reddit.com/r/androiddev/comments/fbfomo/i_opened_my_minesweeper_game_source_code/)
-- url: https://github.com/lucasnlm/antimine-android
+My girlfriends phone was stolen 2 days ago, and yesterday was found in front of her door. It is intact and fine but we want to check its location history because we have a theory who could have taken it and want to cobfirm it. 
+Location history is turned off, so I wondered if there is an API or other way to access it via adb?
+Thank you a lot in advance, hope someone can help.
+## [10][The Best Features in Android Studio 4.0 Beta](https://www.reddit.com/r/androiddev/comments/fcatjk/the_best_features_in_android_studio_40_beta/)
+- url: https://link.medium.com/WNzHV50Ew4
 ---
 
-## [10][Any way to set default mode to "Split" view in Layout Editor (Android Studio 3.6)?](https://www.reddit.com/r/androiddev/comments/fbc5f3/any_way_to_set_default_mode_to_split_view_in/)
-- url: https://www.reddit.com/r/androiddev/comments/fbc5f3/any_way_to_set_default_mode_to_split_view_in/
+## [11][Admob "Site Behavior: Navigation" policy violation](https://www.reddit.com/r/androiddev/comments/fcarwu/admob_site_behavior_navigation_policy_violation/)
+- url: https://www.reddit.com/r/androiddev/comments/fcarwu/admob_site_behavior_navigation_policy_violation/
 ---
-I went to `Settings-&gt;Editor-&gt;Layout Editor` but it only has "Prefer XML editor" checkbox, which means it'll either open the Design view, or Code view, but not split view. Is there any way I can make it open Split view by default?
-## [11][Android generic receipt printing](https://www.reddit.com/r/androiddev/comments/fbppn8/android_generic_receipt_printing/)
-- url: https://www.reddit.com/r/androiddev/comments/fbppn8/android_generic_receipt_printing/
+Hi,
+
+I used AdMob ads for a while now, and never faced an issue. A week ago however I received a notification that my app violates the AdMob policy with the reason "Site Behavior: Navigation". From the description however I cannot tell what is wrong with my app. I already asked for a review twice but it was rejected again. Also, I can't seem to reach any support team from admob to raise the issue...  
+
+
+Can someone maybe check my app and tell me what is wrong? [https://play.google.com/store/apps/details?id=clipz.streamclipz](https://play.google.com/store/apps/details?id=clipz.streamclipz) 
+
+It's a simple [twitch.tv](https://twitch.tv) clip download app, I am showing a banner at the bottom of the home screen and an interstitial ad after 3 clip downloads from a user. 
+
+Thank you very much in advance!
+## [12][Which views are automatically inflated to Material Components?](https://www.reddit.com/r/androiddev/comments/fc8jnf/which_views_are_automatically_inflated_to/)
+- url: https://www.reddit.com/r/androiddev/comments/fc8jnf/which_views_are_automatically_inflated_to/
 ---
-I am currently using Epson sdk to connect to epson thermal printers, but I would like to be able to connect to other manufacter's printers too, is there any generic way to print? I tried using sockets but it doesn't work.
-## [12][New Android App Ideas](https://www.reddit.com/r/androiddev/comments/fbrq8w/new_android_app_ideas/)
-- url: https://www.reddit.com/r/androiddev/comments/fbrq8w/new_android_app_ideas/
----
-A recent app I was working on I had to take down unfortunately because the API is no longer operational  
-[https://pitted.app/](https://pitted.app/)  
-So now I am looking to build a new Android app as a side project
-
-I have created a couple other Android apps [https://play.google.com/store/apps/developer?id=Etienne+Lawlor&amp;hl=en\_US](https://play.google.com/store/apps/developer?id=Etienne+Lawlor&amp;hl=en_US)
-
-and have worked on several open source projects [https://github.com/lawloretienne?tab=repositories](https://github.com/lawloretienne?tab=repositories)
-
-But I want to work on something new.
-
-Does anyone have any ideas, or has any interest in possibly partnering up?
+I see that Button and TextView are, are there any others? How can I know all of them?

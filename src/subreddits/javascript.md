@@ -1,23 +1,29 @@
 # javascript
-## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/f8p41d/your_weekly_rjavascript_recap/)
-- url: https://www.reddit.com/r/javascript/comments/f8p41d/your_weekly_rjavascript_recap/
+## [1][Showoff Saturday (February 29, 2020)](https://www.reddit.com/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/
 ---
-**Monday, February 17 - Sunday, February 23**
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/fc9x73/your_weekly_rjavascript_recap/)
+- url: https://www.reddit.com/r/javascript/comments/fc9x73/your_weekly_rjavascript_recap/
+---
+**Monday, February 24 - Sunday, March 01**
 
 ###Top Posts
 
 | score | comments | title &amp; link |
 |--|--|--|
-| 306  | [22 comments](https://www.reddit.com/r/javascript/comments/f807cu/top_free_programming_books_for_frontend_developers/) | [Top Free Programming Books for Front-End Developers](https://booksoncode.com/articles/free-programming-books-for-front-end-developers)|
-| 281  | [49 comments](https://www.reddit.com/r/javascript/comments/f5syqi/pagedjs_a_free_and_open_source_javascript_library/) | [Paged.js - a free and open source JavaScript library that paginates content in the browser to create PDF output from any HTML content. This means you can design works for print &amp;#40;eg. books&amp;#41; using HTML and CSS](https://www.pagedjs.org/)|
-| 278  | [20 comments](https://www.reddit.com/r/javascript/comments/f6dz1e/fixing_memory_leaks_in_web_applications/) | [Fixing memory leaks in web applications](https://nolanlawson.com/2020/02/19/fixing-memory-leaks-in-web-applications/)|
-| 261  | [48 comments](https://www.reddit.com/r/javascript/comments/f71h9i/announcing_typescript_38/) | [Announcing TypeScript 3.8](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/)|
-| 234  | [2 comments](https://www.reddit.com/r/javascript/comments/f5y2e9/all_the_coolest_react_features_collected_in_one/) | [All the coolest React features collected in one places and explained. Job interview tips as bonus.](https://blog.piotrnalepa.pl/2020/02/18/what-to-answer-when-questions-about-react-appear-at-job-interview/)|
-| 211  | [26 comments](https://www.reddit.com/r/javascript/comments/f8bvoq/draw_needlessly_complex_diagrams_in_the_console/) | [Draw needlessly complex diagrams in the console with cli-diagram](https://github.com/Lakitna/cli-diagram)|
-| 198  | [45 comments](https://www.reddit.com/r/javascript/comments/f7bj30/okcupid_presents_glowup_bringing_a_teenaged/) | [OkCupid Presents "Glow-Up: Bringing a Teenaged Website into the Modern World of SPA"](https://tech.okcupid.com/glow-up-bringing-a-teenaged-website-into-the-modern-world-of-spa/)|
-| 143  | [42 comments](https://www.reddit.com/r/javascript/comments/f7sa7x/javascript_interview_questions_common_gotchas/) | [JavaScript Interview Questions: Common Gotchas](https://alligator.io/js/gotchas/)|
-| 135  | [33 comments](https://www.reddit.com/r/javascript/comments/f5ooyt/dont_touch_my_clipboard/) | [Don't touch my clipboard](https://alexanderell.is/posts/taking-over-my-clipboard/)|
-| 121  | [1 comments](https://www.reddit.com/r/javascript/comments/f7mi3t/streams_for_reactive_programming/) | [Streams for Reactive Programming](https://dassur.ma/things/streams-for-reactive-programming/)|
+| 346  | [96 comments](https://www.reddit.com/r/javascript/comments/f8sy4e/you_dont_need_momentjs/) | [You don't need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs)|
+| 257  | [54 comments](https://www.reddit.com/r/javascript/comments/fbe9uh/i_fell_into_a_hole_setting_up_fetch_mocking_in/) | [I fell into a hole setting up fetch mocking in Jest one too many times so I wrote this guide to save you time and frustration](https://swizec.com/blog/mocking-and-testing-fetch-requests-with-jest/swizec/9338)|
+| 253  | [31 comments](https://www.reddit.com/r/javascript/comments/f9xtf8/i_made_another_simple_clock_to_visualize_the_1440/) | [I made another simple clock to visualize the 1440 precious minutes each of us has in a day](https://robatron.github.io/1440-clock/bars)|
+| 246  | [118 comments](https://www.reddit.com/r/javascript/comments/fa83qs/rome_an_experimental_javascript_toolchain_from/) | [Rome: an experimental JavaScript toolchain from Facebook. It includes a compiler, linter, formatter, bundler, testing framework and more...](https://github.com/facebookexperimental/rome)|
+| 230  | [25 comments](https://www.reddit.com/r/javascript/comments/f9b82e/show_reddit_asynchronous_javascript_in_four/) | [&amp;#91;Show reddit&amp;#93; Asynchronous JavaScript in four chapters: foundations, Promises, async functions, async iteration](https://exploringjs.com/impatient-js/ch_async-js.html)|
+| 201  | [28 comments](https://www.reddit.com/r/javascript/comments/f9rxhj/microsoft_paintpaintbrush_in_javascript/) | [Microsoft Paint/Paintbrush in Javascript](https://jspaint.app/)|
+| 178  | [31 comments](https://www.reddit.com/r/javascript/comments/fauk6e/lazyload_images_the_browser_way/) | [Lazyload images the browser way](https://itsopensource.com/lazyload-images-the-browser-way/)|
+| 126  | [20 comments](https://www.reddit.com/r/javascript/comments/fby68o/stryker_test_your_tests_with_mutation_testing_in/) | [Stryker — Test your tests with mutation testing in JavaScript](https://stryker-mutator.io/)|
+| 117  | [10 comments](https://www.reddit.com/r/javascript/comments/fag4in/i_made_open_source_cross_platform_snippets/) | [I made open source cross platform snippets manager for developers](https://github.com/antonreshetov/massCode)|
+| 106  | [15 comments](https://www.reddit.com/r/javascript/comments/fbtiz8/nextjs_boilerplate_with_typescript_materialui_and/) | [NextJS Boilerplate with Typescript MaterialUI and Jest](https://github.com/mehmetsefabalik/next-typescript-materialui-jest-starter)|
 
 
 
@@ -28,11 +34,11 @@
 
 | score | comments | title &amp; link |
 |--|--|--|
-| 119  | [48 comments](https://www.reddit.com/r/javascript/comments/f67doq/most_common_javascript_vulnerabilities_and_how_to/) | [Most common JavaScript vulnerabilities and how to fix them](https://medium.com/@AntonLawrence/javascript-vulnerabilities-e5391a746c90)|
-| 0  | [29 comments](https://www.reddit.com/r/javascript/comments/f6aile/askjs_why_do_most_developers_pronounce_json_as/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Why do most developers pronounce JSON as "JaySawn" instead of "JaySin&amp;#40;Jason&amp;#41;"?|
-| 16  | [26 comments](https://www.reddit.com/r/javascript/comments/f88kjt/javascript_performance_benchmarks_looping_with/) | [JavaScript Performance Benchmarks: Looping with `for` and `yield`](https://gist.github.com/loveencounterflow/ef69e7201f093c6a437d2feb0581be3d)|
-| 36  | [26 comments](https://www.reddit.com/r/javascript/comments/f6wl4q/react_vs_vue_developer_experience/) | [React vs Vue - Developer experience](https://medium.com/@nickbarth_277/vue-vs-react-4fd0baf093f)|
-| 28  | [21 comments](https://www.reddit.com/r/javascript/comments/f5r772/askjs_generating_pdf_on_the_frontend_vs_backend/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Generating PDF on the front-end vs back-end|
+| 14  | [24 comments](https://www.reddit.com/r/javascript/comments/f92b2b/hooks_and_streams_reacts_missed_opportunity/) | [Hooks and Streams - React's missed opportunity](https://james-forbes.com/#!/posts/hooks-and-streams)|
+| 32  | [22 comments](https://www.reddit.com/r/javascript/comments/fael4s/call_a_javascript_function_with_an_explicit_this/) | [Call a JavaScript function with an explicit this • Delicious Insights](https://delicious-insights.com/en/posts/call-and-apply-in-javascript/?utm_source=porteneuve&amp;amp;utm_campaign=call-apply&amp;amp;utm_medium=reddit)|
+| 0  | [21 comments](https://www.reddit.com/r/javascript/comments/fb04os/7_really_good_reasons_not_to_use_typescript/) | [7 really good reasons not to use TypeScript](https://medium.com/javascript-in-plain-english/7-really-good-reasons-not-to-use-typescript-166af597c466)|
+| 88  | [14 comments](https://www.reddit.com/r/javascript/comments/f9lkoi/simpleparallax_simple_and_tiny_javascript_library/) | [simpleParallax, Simple and tiny JavaScript library which adds parallax animations on any images](https://simpleparallax.com)|
+| 46  | [14 comments](https://www.reddit.com/r/javascript/comments/f9b6k3/scalajs_100_is_released/) | [Scala.js 1.0.0 is released](https://www.scala-js.org/news/2020/02/25/announcing-scalajs-1.0.0/)|
 
 
 
@@ -43,9 +49,9 @@
 
 | score | comments | title &amp; link |
 |--|--|--|
-| 99  | [15 comments](https://www.reddit.com/r/javascript/comments/f56tpd/askjs_the_javascript_way_book_is_looking_for/) | `[AskJS]` &amp;#91;AskJS&amp;#93; The JavaScript Way book is looking for contributors|
-| 8  | [18 comments](https://www.reddit.com/r/javascript/comments/f7fhpt/askjs_would_you_consider_typescript_experience/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Would you consider Typescript experience Javascript Experience?|
-| 6  | [5 comments](https://www.reddit.com/r/javascript/comments/f5beoo/askjs_pluggable_architecture_multi_app_in_business/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Pluggable architecture multi app in business|
+| 4  | [3 comments](https://www.reddit.com/r/javascript/comments/fbznrb/askjs_question_to_previous_and_current_junior/) | `[AskJS]` &amp;#91;AskJS&amp;#93; question to previous and current junior developers|
+| 4  | [6 comments](https://www.reddit.com/r/javascript/comments/fbllqg/askjs_are_there_any_tools_with_jam_stack_to/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Are there any tools with JAM stack to generate static files on the fly?|
+| 3  | [5 comments](https://www.reddit.com/r/javascript/comments/fc508i/askjs_selection_range_getboundingclientrect_is/) | `[AskJS]` &amp;#91;AskJS&amp;#93; selection range getBoundingClientRect is wrong but changes after 300 ms and becomes correct?|
 
 
 
@@ -56,9 +62,9 @@
 
 | score  |  comment  |
 |--|--|
-| 12  |  /u/welanes said [Just updated  https://simplescraper.io  It turns websites into structured data &amp;#40;CSV, JSON, API&amp;#41; in seconds  Leaned on Vue and Tailwind &amp;#40;which I was lukewarm to but now &amp;lt;3&amp;#41; to build ...](/r/javascript/comments/f7rkeq/showoff_saturday_february_22_2020/fie0jo6/?context=5) |
-| 4  |  /u/ojself said [\&amp;#91;Puzzle Game\&amp;#93; - I made a browser game with 22 levels. Thank you for playing or giving feedback!    &amp;#91;Play!&amp;#93;&amp;#40;http://chessathor2.flesjoe.com/&amp;#41;  &amp;#91;Github&amp;#93;&amp;#40;https://gith...](/r/javascript/comments/f7rkeq/showoff_saturday_february_22_2020/fidzmi1/?context=5) |
-| 3  |  /u/comart said [I built a service to discover the most rated without distractions:  &amp;#91;https://newssup.com&amp;#93;&amp;#40;https://newssup.com/#/news/webdev/devto&amp;#41;  Hey everyone, as a developer, I’m always looking out...](/r/javascript/comments/f7rkeq/showoff_saturday_february_22_2020/fihas34/?context=5) |
+| 3  |  /u/lewhunt said [This week my little video looper tool got published in the awesome net magazine which I'm really happy about :-&amp;#41;  &amp;#91;https://www.reddit.com/r/reactjs/comments/fawwxd/humbled\_and\_hyped\_that\_m...](/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/fj3n4dy/?context=5) |
+| 3  |  /u/TomerCodes said [I published my open-source web extension, &amp;#91;github-superfilter&amp;#93;, on &amp;#91;Firefox&amp;#93;&amp;#40;https://addons.mozilla.org/en-US/firefox/addon/github-superfilter/&amp;#41; and &amp;#91;Google Chrome&amp;#93;&amp;#40...](/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/fj3cke7/?context=5) |
+| 2  |  /u/Nemesis02 said [With as many people that I know who like to ask for my help, decided to start a YouTube channel doing just that. Here's my first video about searching through arrays.  https://youtu.be/nm1FxV6Bnzg](/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/fj5d9n5/?context=5) |
 
 
 
@@ -69,59 +75,53 @@
 
 | score  |  comment  |
 |--|--|
-| 110  |  /u/sickcodebruh420 said [I met my wife on OKC. I liked their product then and I like how honest this write up is now.  The problems they’re describing, terrifying legacy code in a massive mountain of tech debt written by so m...](/r/javascript/comments/f7bj30/okcupid_presents_glowup_bringing_a_teenaged/fiaclyu/?context=5) |
-| 104  |  /u/Hycinos said [I was pretty annoyed reading this. As someone who has worked with both frameworks this seemed like an article glorifying Vue for no reason other than that the solutions you're used to using in React a...](/r/javascript/comments/f6wl4q/react_vs_vue_developer_experience/fi893fj/?context=5) |
-| 69  |  /u/BooksonCode said [TL;DR, for your convenience:   - Free Book #1: HTML &amp;amp; CSS is Hard    - Free Book #2: Eloquent Javascript   - Free Book #3: You Don’t Know JS Yet: Get Started   - Free Book #4: Front-end Developer ...](/r/javascript/comments/f807cu/top_free_programming_books_for_frontend_developers/fihkume/?context=5) |
-| 57  |  /u/dblake123 said [If you get these questions on an interview you probably don't want to work there. These questions are just to fuck with you. You don't need to know these things to write a program. How do these questi...](/r/javascript/comments/f7sa7x/javascript_interview_questions_common_gotchas/fiekwbo/?context=5) |
-| 57  |  /u/highres90 said [Building 2 apps at the same time for a client in 2 different frameworks for the sake of your own comparison... You clearly don't have your clients best interests in mind 🤦‍♂️](/r/javascript/comments/f6wl4q/react_vs_vue_developer_experience/fi7qp8o/?context=5) |
+| 467  |  /u/Asmor said [Nothing has ever made me as miserable as trying to sort out timezone stuff. You might not need moment, but if you're doing anything remotely sophisticated with dates, you need *something*.  Because da...](/r/javascript/comments/f8sy4e/you_dont_need_momentjs/finiosa/?context=5) |
+| 68  |  /u/saadq_ said [Also worth noting that this was created by Sebastian McKenzie who authored Babel and Yarn. He's been tweeting about this toolchain for a pretty long while now, cool to see the early stages released no...](/r/javascript/comments/fa83qs/rome_an_experimental_javascript_toolchain_from/fiwj9vw/?context=5) |
+| 67  |  /u/chesbyiii said [I switched to DateFns for calendar-heavy projects and love it.](/r/javascript/comments/f8sy4e/you_dont_need_momentjs/fin9laa/?context=5) |
+| 51  |  /u/HugelyConfused said [I wonder how long it takes to build.](/r/javascript/comments/fa83qs/rome_an_experimental_javascript_toolchain_from/fiwlql8/?context=5) |
+| 49  |  /u/MangoManBad said [Just because I don't need it doesn't mean I'll remember to ever remove it from the dependencies.](/r/javascript/comments/f8sy4e/you_dont_need_momentjs/fin9cwa/?context=5) |
 
 
 
 
 &amp;nbsp;
-## [2][Showoff Saturday (February 29, 2020)](https://www.reddit.com/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/)
-- url: https://www.reddit.com/r/javascript/comments/fbbgeg/showoff_saturday_february_29_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [3][How Refactoring Too Late Is Killing Your Productivity](https://www.reddit.com/r/javascript/comments/fc3yrw/how_refactoring_too_late_is_killing_your/)
-- url: https://medium.com/javascript-in-plain-english/how-refactoring-too-late-is-killing-your-productivity-ce10e2e636cd
+## [3][A new version of Goxygen is released with the support of all three Angular, React, and Vue.](https://www.reddit.com/r/javascript/comments/fcslsn/a_new_version_of_goxygen_is_released_with_the/)
+- url: https://github.com/Shpota/goxygen//
 ---
 
-## [4][Modern Typescript with Examples Cheat Sheet](https://www.reddit.com/r/javascript/comments/fcaagi/modern_typescript_with_examples_cheat_sheet/)
-- url: /r/typescript/comments/f9es9d/modern_typescript_with_examples_cheat_sheet/
----
-
-## [5][Stryker — Test your tests with mutation testing in JavaScript](https://www.reddit.com/r/javascript/comments/fby68o/stryker_test_your_tests_with_mutation_testing_in/)
-- url: https://stryker-mutator.io/
----
-
-## [6][The JavaScript Beginner's Handbook (2020 Edition)](https://www.reddit.com/r/javascript/comments/fcblyu/the_javascript_beginners_handbook_2020_edition/)
+## [4][The JavaScript Beginner's Handbook (2020 Edition)](https://www.reddit.com/r/javascript/comments/fcblyu/the_javascript_beginners_handbook_2020_edition/)
 - url: https://www.freecodecamp.org/news/the-complete-javascript-handbook-f26b2c71719c/
 ---
 
-## [7][Radical redux, cultivating creative composition with streams and currys - article about how to use composition to DRY-ify your rxjs](https://www.reddit.com/r/javascript/comments/fcaaf8/radical_redux_cultivating_creative_composition/)
-- url: https://medium.com/@alvino.aj/radical-redux-cultivating-creative-composition-with-streams-and-currys-fc9039909a1
+## [5][Migrating from jQuery to vanilla JS](https://www.reddit.com/r/javascript/comments/fcqdir/migrating_from_jquery_to_vanilla_js/)
+- url: https://aristath.github.io/blog/diy-vanilla-jquery-alternative
 ---
 
-## [8][Introducing AdonisJS v5 (Preview)](https://www.reddit.com/r/javascript/comments/fbzvf0/introducing_adonisjs_v5_preview/)
-- url: https://blog.adonisjs.com/introducing-adonisjs-v5/amp/?__twitter_impression=true
+## [6][Dockerize a React App and an Express API With MongoDB](https://www.reddit.com/r/javascript/comments/fcti1p/dockerize_a_react_app_and_an_express_api_with/)
+- url: https://medium.com/better-programming/dockerizing-react-app-and-express-api-with-mongodb-f3a06bebf570
 ---
 
-## [9][The Adaptive Responsive model](https://www.reddit.com/r/javascript/comments/fcbw9o/the_adaptive_responsive_model/)
-- url: https://www.hackdoor.io/articles/1vpa7LJw/the-adaptive-responsive-model
+## [7][JavaScript Without Loops](https://www.reddit.com/r/javascript/comments/fctj92/javascript_without_loops/)
+- url: https://jrsinclair.com/articles/2017/javascript-without-loops/
 ---
 
-## [10][NextJS Boilerplate with Typescript MaterialUI and Jest](https://www.reddit.com/r/javascript/comments/fbtiz8/nextjs_boilerplate_with_typescript_materialui_and/)
-- url: https://github.com/mehmetsefabalik/next-typescript-materialui-jest-starter
+## [8][Comfort of CRA + small size of Preact! (without ejecting)](https://www.reddit.com/r/javascript/comments/fcsikw/comfort_of_cra_small_size_of_preact_without/)
+- url: https://github.com/shilangyu/cra-preact
 ---
 
-## [11][How memory management works in JavaScript](https://www.reddit.com/r/javascript/comments/fc9ry1/how_memory_management_works_in_javascript/)
-- url: https://medium.com/javascript-in-plain-english/how-memory-management-works-in-javascript-43e1ef22c3bb?source=friends_link&amp;sk=1ba8029f600b1ef66388b13107440a9c
+## [9][Javascript: Detecting external links in a paragraph of text automatically](https://www.reddit.com/r/javascript/comments/fcukb0/javascript_detecting_external_links_in_a/)
+- url: https://medium.com/@axelcwittmann/detecting-external-links-in-a-paragraph-of-text-with-javascript-automatically-3c15537f4997
 ---
 
-## [12][G2 4.0 released, bring the grammar of interactions.](https://www.reddit.com/r/javascript/comments/fcar0t/g2_40_released_bring_the_grammar_of_interactions/)
-- url: https://medium.com/antv/g2-4-0-released-488c85229991
+## [10][Optimizing data-heavy JavaScript code](https://www.reddit.com/r/javascript/comments/fcug58/optimizing_dataheavy_javascript_code/)
+- url: https://matthewmiller.dev/blog/optimizing-data-heavy-javascript/
+---
+
+## [11][JavaScript: use the finally clause in generators with caution](https://www.reddit.com/r/javascript/comments/fctq2s/javascript_use_the_finally_clause_in_generators/)
+- url: https://gehrcke.de/2020/03/javascript-use-the-finally-clause-in-generators-with-caution/
+---
+
+## [12][neo.mjs online examples](https://www.reddit.com/r/javascript/comments/fctlgh/neomjs_online_examples/)
+- url: https://neomjs.github.io/pages/
 ---
 

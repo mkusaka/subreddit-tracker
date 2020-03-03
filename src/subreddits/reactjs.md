@@ -86,66 +86,68 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][React has been around as long as JQuery was when React came out (2468 days)](https://www.reddit.com/r/reactjs/comments/fbx646/react_has_been_around_as_long_as_jquery_was_when/)
-- url: https://twitter.com/ralex1993/status/1234165541805281280?s=20
+## [3][Countering React Native FUD: There are more than 750 screens in both Facebook for Android and iOS as well as several standalone apps primarily built using RN, at FB](https://www.reddit.com/r/reactjs/comments/fcn8zm/countering_react_native_fud_there_are_more_than/)
+- url: https://twitter.com/dan_abramov/status/1234649570367299584
 ---
 
-## [4][I made an application that simulates a battle between two senators using their data from office. I used React, Styled Components, Framer Motion, and the ProPublica API.](https://www.reddit.com/r/reactjs/comments/fc2r5k/i_made_an_application_that_simulates_a_battle/)
-- url: https://v.redd.it/wb44lz6ib5k41
+## [4][React Hook Form: Performant, flexible and extensible forms with easy-to-use validation](https://www.reddit.com/r/reactjs/comments/fcfi1b/react_hook_form_performant_flexible_and/)
+- url: https://react-hook-form.com/
 ---
 
-## [5][Race conditions in React and beyond. A race condition guard with TypeScript](https://www.reddit.com/r/reactjs/comments/fcaft6/race_conditions_in_react_and_beyond_a_race/)
-- url: https://wanago.io/2020/03/02/race-conditions-in-react-and-beyond-a-race-condition-guard-with-typescript/
+## [5][The Perils of Rehydration: An Eye-Opening Realization about Gatsby and React](https://www.reddit.com/r/reactjs/comments/fckb4g/the_perils_of_rehydration_an_eyeopening/)
+- url: https://joshwcomeau.com/react/the-perils-of-rehydration
 ---
 
-## [6][I made an alternative to google start page with React JS including current weather based on geolocation and custom google search bar](https://www.reddit.com/r/reactjs/comments/fcbtwo/i_made_an_alternative_to_google_start_page_with/)
-- url: https://www.reddit.com/r/reactjs/comments/fcbtwo/i_made_an_alternative_to_google_start_page_with/
+## [6][Dockerize a React App and an Express API With MongoDB](https://www.reddit.com/r/reactjs/comments/fcthur/dockerize_a_react_app_and_an_express_api_with/)
+- url: https://medium.com/better-programming/dockerizing-react-app-and-express-api-with-mongodb-f3a06bebf570
 ---
-Please rate 🙂 
 
-https://github.com/homeScreen-React
-
-
-https://homescreenalt.herokuapp.com/
-## [7][Would you recommend a newcomer to React to start with functional components or class components?](https://www.reddit.com/r/reactjs/comments/fc7iac/would_you_recommend_a_newcomer_to_react_to_start/)
-- url: https://www.reddit.com/r/reactjs/comments/fc7iac/would_you_recommend_a_newcomer_to_react_to_start/
+## [7][TypeScript Migration Strategy (from JavaScript)](https://www.reddit.com/r/reactjs/comments/fcs7mh/typescript_migration_strategy_from_javascript/)
+- url: https://www.youtube.com/watch?v=v3lI29trIN8&amp;feature=share
 ---
-I'm torn, I use both. But I need to teach this to people and not sure which one really would be the best option to go with. We don't have time to really cover both though I would love to-- it's rapid pace.
 
-The goal ultimately is to get these people working ASAP.
-
-Thoughts? Opinions?
-## [8][I've created a website tour generator for any sort of users.](https://www.reddit.com/r/reactjs/comments/fc8ktf/ive_created_a_website_tour_generator_for_any_sort/)
-- url: https://www.reddit.com/r/reactjs/comments/fc8ktf/ive_created_a_website_tour_generator_for_any_sort/
+## [8][Webpack 5: Module Federation. A Game-changer to Javascript architecture. The missing part for true micro-frontends](https://www.reddit.com/r/reactjs/comments/fchsqn/webpack_5_module_federation_a_gamechanger_to/)
+- url: https://medium.com/@ScriptedAlchemy/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669
 ---
-This lets any kind of users to create a tour of the website. It's still on development.
 
-I searched for something like these but they all are paid and platform based. So I wanted to make it open source for everyone to integrate. Just wanna ask if its legit and people are interested helping me.
-
-Demostration:
-
-https://reddit.com/link/fc8ktf/video/r6f9wjsfp7k41/player
-## [9][Problem with socket.io-client](https://www.reddit.com/r/reactjs/comments/fc9shl/problem_with_socketioclient/)
-- url: https://www.reddit.com/r/reactjs/comments/fc9shl/problem_with_socketioclient/
+## [9][Comfort of CRA + small size of Preact! (without ejecting)](https://www.reddit.com/r/reactjs/comments/fcsho9/comfort_of_cra_small_size_of_preact_without/)
+- url: https://github.com/shilangyu/cra-preact
 ---
-So I have been using [socket.io](https://socket.io) in a nodejs backend and socket.io-client in the corresponding react native app for communicating messages. Initially in the android app, I get a yellow box message: Unrecognized WebSocket connection option(s) \`agent\`, \`perMessageDeflate\`, \`pfx\`, \`key\`, \`passphrase\`, \`cert\`, \`ca\`, \`ciphers\`, \`rejectUnauthorized\`. Did you mean to put these under \`headers\`?
 
-The app works fine anyway, and after a quick google search, it turns out this message is harmless. But occasionally, after the app has been running for some time, this message appears again, and the communication stops. Restarting the node server does not help. There is no fixed time after which this happens, and in most of my test runs this does not happen. I checked the logs from 'adb logcat', but couldn't find anything different around the initial and new appearance of this same message. 
-
-Has anyone faced something similar? If yes, how did you solve this? Please comment if you need some more details.
-## [10][Using Postgres and Express with React](https://www.reddit.com/r/reactjs/comments/fcc155/using_postgres_and_express_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fcc155/using_postgres_and_express_with_react/
+## [10][I made a chat web application using react](https://www.reddit.com/r/reactjs/comments/fcu214/i_made_a_chat_web_application_using_react/)
+- url: https://www.reddit.com/r/reactjs/comments/fcu214/i_made_a_chat_web_application_using_react/
 ---
-Hi I'm a big noob here. I've been trying to find online resources for and ways that I can retrieve information from PostgreSQL database and use in the react front end. I have a basic understanding of PostgreSQL working as my database, React for front-end and Express for bridging the two. Does anyone have useful resources for using Postgres with React? or How can I get information from my PostgreSQL database and use it in the front end?
+I made a  chat app built with React &amp; Redux , Node(Express), SocketIo and Twolio amongst other things and offers multiple functionalities such as:
+
+* Video Calling
+* Private Messaging
+* Group messaging
+* Authentication
+* Listening to music on spotify
+
+link is [Simply Chat](http://simplychatapp.herokuapp.com/).
+
+Once you create an account you get a sample user added as you friend list. To test with that default user and your account, use email: [test@yahoo.com](mailto:test@yahoo.com) and password is the number 1 typed 8 times.
 
 &amp;#x200B;
-
-Thank you
-## [11][Building a maintainable Icon System for React and React Native](https://www.reddit.com/r/reactjs/comments/fcagzy/building_a_maintainable_icon_system_for_react_and/)
-- url: https://medium.com/omio-engineering/building-a-maintainable-icon-system-for-react-and-react-native-a03c5623cbc
+## [11][cryptostats.now.sh - I made a simple app that shows top crypto assets in cards with charts!](https://www.reddit.com/r/reactjs/comments/fcrjb7/cryptostatsnowsh_i_made_a_simple_app_that_shows/)
+- url: https://www.reddit.com/r/reactjs/comments/fcrjb7/cryptostatsnowsh_i_made_a_simple_app_that_shows/
 ---
+Hi all! This is just a simple app that shows the top crypto assets by market capitalization.
 
-## [12][I published a package to solve paginated query refetching with Apollo : refetch by partial variable match !](https://www.reddit.com/r/reactjs/comments/fbtyea/i_published_a_package_to_solve_paginated_query/)
-- url: https://www.npmjs.com/package/refetch-queries
+The url is [https://cryptostats.now.sh](https://cryptostats.now.sh/)
+
+It's made with these technologies:
+
+* React
+* CoinGecko API
+* Chart.js
+* Bulma
+
+You can play with the code here [https://github.com/sorxrob/cryptostats](https://github.com/sorxrob/cryptostats)
+
+Feel free to leave a comment/suggestion! Thank you.
+## [12][React version of MrDoob's instanced-geom cannonjs physics demo](https://www.reddit.com/r/reactjs/comments/fct6wk/react_version_of_mrdoobs_instancedgeom_cannonjs/)
+- url: https://twitter.com/0xca0a/status/1233865805227577347
 ---
 

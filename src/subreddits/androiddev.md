@@ -31,69 +31,69 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Do you guys ever get burnt out and need to take a break from Android dev after finishing a major project?](https://www.reddit.com/r/androiddev/comments/fc6leu/do_you_guys_ever_get_burnt_out_and_need_to_take_a/)
-- url: https://www.reddit.com/r/androiddev/comments/fc6leu/do_you_guys_ever_get_burnt_out_and_need_to_take_a/
----
-Obviously some of you do it for a career but I am still in school so I am still in the hobbyist/learning phase and after finishing my first major app I don't want to work with java or android studio for a while. I am going to take a break and focus on getting better at react in the meantime before starting my next app.
-## [4][App removed from PlayStore](https://www.reddit.com/r/androiddev/comments/fcb2c4/app_removed_from_playstore/)
-- url: https://www.reddit.com/r/androiddev/comments/fcb2c4/app_removed_from_playstore/
----
-Application has been removed without any communication! Published 2 years ago, no recent changes, has been deleted from the playstore. I have not received any emails, notification on play console. What happened?  
-My app is Amazfit bip wacthfaces
-## [5][Upcoming View Model Hilt Extension with Dagger integration](https://www.reddit.com/r/androiddev/comments/fcayyy/upcoming_view_model_hilt_extension_with_dagger/)
-- url: https://android-review.googlesource.com/c/platform/frameworks/support/+/1247447
+## [3][[FB Engineering] Project LightSpeed: Rewriting Messenger to be faster, smaller, and simpler](https://www.reddit.com/r/androiddev/comments/fcqa9r/fb_engineering_project_lightspeed_rewriting/)
+- url: https://www.engineering.fb.com/data-infrastructure/messenger
 ---
 
-## [6][How do I get Activity redirected to another Activity on start using Navigation Component?](https://www.reddit.com/r/androiddev/comments/fcates/how_do_i_get_activity_redirected_to_another/)
-- url: https://www.reddit.com/r/androiddev/comments/fcates/how_do_i_get_activity_redirected_to_another/
+## [4][Do we still need LeakCanary now that Android Studio 3.6 has "Memory Leak Detection"?](https://www.reddit.com/r/androiddev/comments/fcsygs/do_we_still_need_leakcanary_now_that_android/)
+- url: https://www.lukaslechner.com/do-we-still-need-leakcanary-now-that-android-studio-3-6-has-memory-leak-detection/
 ---
 
-## [7][Android Feature Development at Babylon Health — Part 1: Thinking About the Problem](https://www.reddit.com/r/androiddev/comments/fcbvzv/android_feature_development_at_babylon_health/)
-- url: https://medium.com/babylon-engineering/android-feature-development-at-babylon-health-part-1-thinking-about-the-problem-d1b68521350c
+## [5][30 Best Android Libraries and Projects of 2019](https://www.reddit.com/r/androiddev/comments/fcrc9y/30_best_android_libraries_and_projects_of_2019/)
+- url: https://medium.com/@mmbialas/30-best-android-libraries-and-projects-of-2019-a1e35124f110
 ---
 
-## [8][Making a software keyboard (no previous android development experience)](https://www.reddit.com/r/androiddev/comments/fc02ey/making_a_software_keyboard_no_previous_android/)
-- url: https://www.reddit.com/r/androiddev/comments/fc02ey/making_a_software_keyboard_no_previous_android/
+## [6][Terminated Account for app that's not even public yet - next steps?](https://www.reddit.com/r/androiddev/comments/fch2z2/terminated_account_for_app_thats_not_even_public/)
+- url: https://www.reddit.com/r/androiddev/comments/fch2z2/terminated_account_for_app_thats_not_even_public/
 ---
-Greetings,
+Hi everybody. I got home today from work, excited to work on my side project app. I start cooking our dinner and my girlfriend tells me she can't find the app on the Play store anymore (in closed release). I check my developer account and there's an email from Google. The thing happened that I think many of you dread too: my Google Play Developer/Publisher Account got terminated.
 
-i just recently switched to Android from Windows Phone, and i really, REALLY miss Windows Phone's keyboard. I tried 5-6 different keyboards but there's always something wrong (SiftKey's forced space after punctuation can't be disabled, general lack of navigation keys everywhere, and when they're present they take too much space - see hacker's keyboard).
+The reason for the ban is deceptive behavior. While not giving any more reasoning behind it, the last thing I updated recently was the app category the day before, so that is probably why.  
+Now, to the best of my abilities, I took my time choosing the right categories. I ended up with 4 that I think fit it best. I re-read the list a few times before submitting my choice.  
+Now, a day later, I don't even have a developer account.
 
-So, since it's android, i said to myself "why not make my own?".
+What makes this worse to me is that:
 
-Problem is my mobile development skill simply doesn't exist. I spend 90% of my time writing in C++ for Windows or Linux, and barely use Java for 3 or 4 university courses that require it, still targeting desktop environments.
+• I didn't get a warning, saying 'hey, we think this category might not fit your app'. No, Google just straight up terminated my account (which I paid for!)  
+• The app was in closed alpha release, so not even public  
+• This is my first app ever  
+• I've been working for months on this app in my spare time  
+• I was going to use this application in my portfolio/resume
 
-When i jump into something new i find it easier to start working after putting my hands in an example project; however, while there's a lot online about normal applications, i found very little about keyboards. Just a step by step guide that focuses mostly on layout, and this [https://developer.android.com/guide/topics/text/creating-input-method](https://developer.android.com/guide/topics/text/creating-input-method)
+As a bit of background info: it's a silly game app, where the goal is commanding a little rocket to a kind of space portal without colliding with surrounding objects. Very simple in theory. Innocent.  
+The app is built in Flutter, a (Google!) technology I've invested a good chunk of my time in in the past year. I participated in a Flutter contest by Google in May last year and won one of the minor prizes with it. I didn't get the prize for 6 months after the contest, until I casually mentioned that in a comment on the Flutter subreddit. They saw my comment, came back to me within hours and I got my prize that week. Just to say that my encounters with Google haven't been great the past year.
 
-but of course it skips on the project setup.
-
-Is there any place when i can find example projects for "system" apps like keyboards, launchers, etcc?
-## [9][Find location history without Google maps timeline](https://www.reddit.com/r/androiddev/comments/fcayy9/find_location_history_without_google_maps_timeline/)
-- url: https://www.reddit.com/r/androiddev/comments/fcayy9/find_location_history_without_google_maps_timeline/
----
-Hi everyone,
-
-My girlfriends phone was stolen 2 days ago, and yesterday was found in front of her door. It is intact and fine but we want to check its location history because we have a theory who could have taken it and want to cobfirm it. 
-Location history is turned off, so I wondered if there is an API or other way to access it via adb?
-Thank you a lot in advance, hope someone can help.
-## [10][The Best Features in Android Studio 4.0 Beta](https://www.reddit.com/r/androiddev/comments/fcatjk/the_best_features_in_android_studio_40_beta/)
-- url: https://link.medium.com/WNzHV50Ew4
+What should my next steps be? I've read online a bit on appeals but most people say they get an automated answer that tells them to never try that again.
+## [7][Dynamic Headers per endpoint with Retrofit](https://www.reddit.com/r/androiddev/comments/fcr4f4/dynamic_headers_per_endpoint_with_retrofit/)
+- url: https://medium.com/@ffvanderlaan/dynamic-headers-per-endpoint-with-retrofit-664683d0af1b
 ---
 
-## [11][Admob "Site Behavior: Navigation" policy violation](https://www.reddit.com/r/androiddev/comments/fcarwu/admob_site_behavior_navigation_policy_violation/)
-- url: https://www.reddit.com/r/androiddev/comments/fcarwu/admob_site_behavior_navigation_policy_violation/
+## [8][You Don’t Need to Null Out Views](https://www.reddit.com/r/androiddev/comments/fcj9pw/you_dont_need_to_null_out_views/)
+- url: https://evan.tatarka.me/2020/03/02/you-dont-need-to-null-out-views.html
 ---
-Hi,
 
-I used AdMob ads for a while now, and never faced an issue. A week ago however I received a notification that my app violates the AdMob policy with the reason "Site Behavior: Navigation". From the description however I cannot tell what is wrong with my app. I already asked for a review twice but it was rejected again. Also, I can't seem to reach any support team from admob to raise the issue...  
-
-
-Can someone maybe check my app and tell me what is wrong? [https://play.google.com/store/apps/details?id=clipz.streamclipz](https://play.google.com/store/apps/details?id=clipz.streamclipz) 
-
-It's a simple [twitch.tv](https://twitch.tv) clip download app, I am showing a banner at the bottom of the home screen and an interstitial ad after 3 clip downloads from a user. 
-
-Thank you very much in advance!
-## [12][Which views are automatically inflated to Material Components?](https://www.reddit.com/r/androiddev/comments/fc8jnf/which_views_are_automatically_inflated_to/)
-- url: https://www.reddit.com/r/androiddev/comments/fc8jnf/which_views_are_automatically_inflated_to/
+## [9][Apps missing on PlayStore, no emails or warnings received. App is neither removed or suspended but can't be found on Play Store.](https://www.reddit.com/r/androiddev/comments/fccktn/apps_missing_on_playstore_no_emails_or_warnings/)
+- url: https://www.reddit.com/r/androiddev/comments/fccktn/apps_missing_on_playstore_no_emails_or_warnings/
 ---
-I see that Button and TextView are, are there any others? How can I know all of them?
+Anyone has any idea what is going on? This seems to be widespread issue.   
+Couple of our apps are gone from play store and I got a mini heart-attack. 
+
+I immediately logged in and everything is as usual. No warnings or emails or any kind of notifications.   
+
+
+Does anyone has some info on what the fuck is going on?
+## [10][How to Choose the Right Ad Monetization Partner?](https://www.reddit.com/r/androiddev/comments/fctzlf/how_to_choose_the_right_ad_monetization_partner/)
+- url: https://www.reddit.com/r/androiddev/comments/fctzlf/how_to_choose_the_right_ad_monetization_partner/
+---
+Every developer who monetizes with ads has a headache about eCPMs they get. Some devs simply stick to traditional solutions (Admob, Mopub, etc), others are trying to find any alternatives to the one they’re using. As you may know already, key eCPM drivers are a number of demand partners, high fill rates and header bidding technology. Additional features such as immediate payouts and wide range of ad formats could encourage you to check out Appodeal mediation today.
+https://blog.appodeal.com/how-to-choose-the-right-ad-monetization-partner/?utm_campaign=appodeal_comm&amp;utm_source=froum&amp;utm_medium=social
+## [11][How do I make my Android app 18+?](https://www.reddit.com/r/androiddev/comments/fctnzc/how_do_i_make_my_android_app_18/)
+- url: https://www.reddit.com/r/androiddev/comments/fctnzc/how_do_i_make_my_android_app_18/
+---
+I want only 18+ users to download my app. It's not explicit content or anything, so Google only gave it a "3+" rating.
+
+Is there any way I can manually make it 18+?
+## [12][Must Go YouTube Channels to learn updates about Android Dev](https://www.reddit.com/r/androiddev/comments/fctnlt/must_go_youtube_channels_to_learn_updates_about/)
+- url: https://www.reddit.com/r/androiddev/comments/fctnlt/must_go_youtube_channels_to_learn_updates_about/
+---
+What are some of the YouTube channels you guys use to learn new things about Android Development or Kotlin or any new libraries ?

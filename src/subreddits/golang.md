@@ -1,133 +1,91 @@
 # golang
-## [1][A Virtual Stock Market Exchange game in Golang](https://www.reddit.com/r/golang/comments/fc7olw/a_virtual_stock_market_exchange_game_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/fc7olw/a_virtual_stock_market_exchange_game_in_golang/
----
-Dalal Street is a virtual stock market exchange game developed by a bunch of undergrads. It was built using golang.
-
-We used
-
-* Goroutines to handle streams / transactions / stocks matching simultaneously
-* Gorm as ORM (mysql database)
-* GRPC - to handle communication between frontend and backend
-* Server side streams (using GRPC) to send updates at frontend
-* Migrate CLI for handling migrations
-* Mockgen for generating mocks for testing
-* grpc-middleware for authentication
-* caching for getting sessions and some other info
-* Mutexes to handle race conditions and inconsistency
-
-Code : [https://github.com/delta/dalal-street-server](https://github.com/delta/dalal-street-server)
-
-&amp;#x200B;
-
-In this you will be given a fixed amount of money and you aim is to maximise your wealth.
-
-Game is live right now !! From 1st March - 7th March, 2:30PM - 5:30 PM UTC.
-
-Web : [https://dalal.pragyan.org](https://dalal.pragyan.org/trade)
-
-App :  [http://prgy.in/dalalapp](http://prgy.in/dalalapp)
-
-&amp;#x200B;
-
-Please do check it out !!
-## [2][Library for hashing an interface{}](https://www.reddit.com/r/golang/comments/fcb9ul/library_for_hashing_an_interface/)
-- url: https://www.reddit.com/r/golang/comments/fcb9ul/library_for_hashing_an_interface/
----
-Hello reddit gophers,
-
-I'm a software developer from Athens, Greece and a professional Golang developer for the last six months.
-
-During work, I fell onto a case where I had to compare two huge structs and see if they are equal and also ignore some struct fields during comparison.
-
-The first "naive" way to do so, is to write a huge function where this comparison takes place. I thought about avoiding this in the first place.
-
-After that, I thought doing JSON Marshal to both structs that I had to compare, then use some regex and string modification to remove the fields, and then JSON unmashal again. It worked, but it seemed a bit "expensive".
-
-So I did a small research and I decided to exploit the capabilities of Golang `reflect` package. I finally wrote this library below, which iterates recursively in all fields of the given struct (ignoring the ones that have the tag `"hash:"ignore"`) and generates a hash string.
-
-[https://github.com/panospet/recursive-deep-hash](https://github.com/panospet/recursive-deep-hash)
-
-I'm pretty sure it's not perfect yet, so I need your advice / help.Feel free to give feedback, comments, improvements suggestions, possible bugs, etc.
-## [3][Which framework should i use for web development in go](https://www.reddit.com/r/golang/comments/fc9slb/which_framework_should_i_use_for_web_development/)
-- url: https://www.reddit.com/r/golang/comments/fc9slb/which_framework_should_i_use_for_web_development/
----
-Hello guys,
-
-I would really appreciate your help if you could recommend me a good framework in go for web development. I write go in my free time but my main languages are php and java. My experience in go comes from:
-
-1. Small projects i wrote on my own.
-2. By reading [https://www.openmymind.net/The-Little-Go-Book/](https://www.openmymind.net/The-Little-Go-Book/)
-3. By watching [https://www.udemy.com/course/learn-how-to-code/](https://www.udemy.com/course/learn-how-to-code/)
-4. Attended a golang conference in London 2 years ago.
-
-I know i can use net/http to create a web server in go but what i want to find out is if golang has something like  spring boot (java) and symfony (php). These are the 2 frameworks i am using.
-
-&amp;#x200B;
-
-When i attended the conference 2 years ago they were really trying to promote go bufallo but a lot of people are saying that it is mainly a code generator. I can see that gin [https://github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) is really popular but i don't know if it is what i am looking for.
-
-I am looking forward to see your recommendations.
-## [4][Lessons Learned after 1 year of programming in Go as a C# developer | Robert Pajak](https://www.reddit.com/r/golang/comments/fc9els/lessons_learned_after_1_year_of_programming_in_go/)
-- url: https://pajak.home.blog/2020/02/28/lessons-learned-after-1-year-of-programming-in-go-as-a-c-developer/
+## [1][Ergo - a new framework for creating mesh networks with Erlang technologies. New release 1.0.0 https://github.com/halturin/ergo 🚀Details in comment](https://www.reddit.com/r/golang/comments/fcr3ez/ergo_a_new_framework_for_creating_mesh_networks/)
+- url: https://i.redd.it/yddtl1f1tek41.gif
 ---
 
-## [5][How to create a CLI in golang with cobra](https://www.reddit.com/r/golang/comments/fcc2e5/how_to_create_a_cli_in_golang_with_cobra/)
-- url: https://schadokar.dev/posts/how-to-create-a-cli-in-golang-with-cobra/
+## [2][The Go Blog: A new Go API for Protocol Buffers](https://www.reddit.com/r/golang/comments/fciob7/the_go_blog_a_new_go_api_for_protocol_buffers/)
+- url: https://blog.golang.org/a-new-go-api-for-protocol-buffers
 ---
 
-## [6][Seeking testers for gotop](https://www.reddit.com/r/golang/comments/fbtyl0/seeking_testers_for_gotop/)
-- url: https://www.reddit.com/r/golang/comments/fbtyl0/seeking_testers_for_gotop/
+## [3][RESTful API in GO](https://www.reddit.com/r/golang/comments/fctlkq/restful_api_in_go/)
+- url: https://www.reddit.com/r/golang/comments/fctlkq/restful_api_in_go/
 ---
-I'm looking for some volunteers to help testing the next release of gotop.
-
-The original author of gotop decided to work on another project and flagged gotop as "unmaintained."  I've been working with him to assume maintainership, and in the past month have released a number of versions that merge long-outstanding pull requests and add new features and bug fixes.  I have a new major version ready to go out, but as I'm starting to get distribution packagers on board with the switch, testing becomes more of a concern for me.  I'm appealing to the community for some light assistance in smoke testing releases for other architectures and OSes that I'm unable to do myself, and for assistance with distribution packages.
-
-- OS/Arch testing. I need testers for FreeBSD, Darwin, and Windows, and for architectures other than AMD64.
-- Homebrew testing.  I'd appreciate help testing the Homebrew tap, and the instructions that are in the README.
-- Device testing.  One of the features being added is instrumentation support for GPUs.  NVIDIA support is pending, and AMD and Intel are in the queue.
-- Distribution packages.  The AUR packages have already been transferred, but I can only test that the packages work for my CPU architecture. I'm both unfamiliar and unsure how to start with Debian and Redhat derivatives; do they have AUR analogues?  What about Slackware and Alpine?
-- Performance testing. Mostly, I'd like feedback about behaviors and would especially like to have folks out there watching for changes that negatively impact.  I think I'm pretty good about this, but I can only really watch how it performs on my machine.
-
-Also, if any tuning gurus are willing to help with profiling, I'd love to get some tickets in about areas to investigate.  I'm capable of doing this myself, but will probably not get to it for a while as I continue to ramp up on the maintainer aspects.
-
-Finally, I'm always happy to look at pull requests, and will try to prioritize those.
-
-I'm getting some help already from a few folks who have been active in helping me with the transition, but I still have gaps (no ARM testers, for instance, and FreeBSD is a big worry).
-
-To smooth the transition, I've [kept the project in github](https://github.com/xxxserxxx/gotop).
-
-In addition to bug fixes, the features released (and currently tested) are:
-
-- Instrumentation data export via HTTP.
-- A battery gauge
-- Support for GPUs
-- Customizable widget layout via config file
-- Error log rotation
-- Config file support
-- Support for multiple network interfaces (incl. filtering)
-- Searching in the proc widget
-
-Once again, the project URL is https://github.com/xxxserxxx/gotop .  An call for testers is in the issue tracker; if you're willing to help, please post to that ticket.  I'm only seeking sanity checks for things I can't test myself, so if someone has already volunteered to, e.g., test FreeBSD, don't feel obliged to also volunteer.
-
-Thanks for reading the long post.
-## [7][Can you use Golang for low-level system and embedded programming?](https://www.reddit.com/r/golang/comments/fbzd53/can_you_use_golang_for_lowlevel_system_and/)
-- url: https://www.reddit.com/r/golang/comments/fbzd53/can_you_use_golang_for_lowlevel_system_and/
----
-Can you use Golang for low-level system and embedded programming?
-## [8][Build a CRUD application in Golang with PostgreSQL - CodeSource.io](https://www.reddit.com/r/golang/comments/fc7gi0/build_a_crud_application_in_golang_with/)
-- url: https://codesource.io/build-a-crud-application-in-golang-with-postgresql/
+Hey reader,   
+I want to learn how to write RESTful APIs in GOLang.
+## [4][The httpgovernor package provides an HTTP request concurreny limiter](https://www.reddit.com/r/golang/comments/fcqv0k/the_httpgovernor_package_provides_an_http_request/)
+- url: https://github.com/juju/httpgovernor
 ---
 
-## [9][zserge/webview](https://www.reddit.com/r/golang/comments/fc6qwt/zsergewebview/)
-- url: https://www.reddit.com/r/golang/comments/fc6qwt/zsergewebview/
+## [5][Golang is my new shell](https://www.reddit.com/r/golang/comments/fcumfu/golang_is_my_new_shell/)
+- url: https://www.reddit.com/r/golang/comments/fcumfu/golang_is_my_new_shell/
 ---
-Cool, tiny cross-platform [webview library](https://github.com/zserge/webview) for Go and C/C++ by u/zserge. I had experimented with using it for demos at AWS and liked it, but was wary of committing to the library knowing big changes were coming. Looks like they finally landed, so time to revisit!
-## [10][Looking for the most user-friendly template engine for my tool](https://www.reddit.com/r/golang/comments/fc6ivy/looking_for_the_most_userfriendly_template_engine/)
-- url: https://www.reddit.com/r/golang/comments/fc6ivy/looking_for_the_most_userfriendly_template_engine/
+This is not something informative or sophisticated, I just wanted to share my experience with Go over past couple of years.
+
+I am a software engineer, that breed that sometimes is called "data engineer", in particular on AWS stack. Along with writing some basic "get data out of CSV and put that into parquet" stuff on EMR clusters ( got a chance to launch a cluster of X1 EC2s, that feels really weird ) - I also do many various automations/monitoring/etc with either Ansible or good old shell scripts.
+
+For the past couple year I wrote close to zero bash scripts. 
+
+I have a ton of a small utilities like "calculate the average data volume in this S3 folder", or "get the parquet schema from these folders and compare it with the reference", or "get into the history of a EMR cluster and visualize the run time trend". All of them are written in Go.
+
+Considering that I have some Scala / functional programming background ( been doing that for almost 10 years by now) - it would be naturally to expect me suffering from lack of generics. And in fact I was missing them from time to time. But not anymore. I started to realize that most of the times I don't really need generics when I write some utility code. And even for more complex services that involve complex business logic and communications with other services I never really found myself struggling over something.
+
+Even that `if err := ...; err != nil { ... }` makes much more sense to me over `Try` or some fancy Cats effects.
+
+The tooling is great, and being able to compile things to run on MacOS or EC2 with Linux, or even Raspberry Pi is so amazing ( tried that on Rust, failed miserably ) that I take it for granted now.
+
+So basically I just wanted to say thanks to this community for your existence, I learned a lot and keep learning. And even if my work is circling around data processing and data engineering, write Spark applications and consume data streams from Kafka with Akka Streams or FS2 - there are still opportunities to write some things in Go.
+## [6][efficient json.MarshalJSON interface usage for streaming?](https://www.reddit.com/r/golang/comments/fcuf7i/efficient_jsonmarshaljson_interface_usage_for/)
+- url: https://www.reddit.com/r/golang/comments/fcuf7i/efficient_jsonmarshaljson_interface_usage_for/
 ---
-Briefly about the project: I am creating a utility to generate examples for HTTP APIs. You write a configuration file, specifying for which requests you want to make examples and utility performs these requests and outputs their response.
+We encountered the problem that we need to connect a new application which transfers files as base64 encoded string in a JSON, like following:
 
-Github: [api-example-generator](https://github.com/flygrounder/api-example-generator)
+    {
+        "attachments": [
+            {
+                "name": "asdasdasd",
+                "value": "base64encodedSomethingValue"
+            },
+            ....
+        ]
+    }
 
-Now to the question: there is an ability to use response of one request to generate another request. You can access this data using templates. At the moment I use go default templates, which works but they seem not user-friendly for people not familiar with go. Which template engine you would recommend to use here?
+So i tried to upload a 200MB file, which caused the memory to dramatically increase.
+
+Because the currently solution i found is to use the [https://golang.org/pkg/encoding/json/#RawMessage.MarshalJSON](https://golang.org/pkg/encoding/json/#RawMessage.MarshalJSON) on the "attachement" item struct but, for that i need to allocate the whole base64 into a \`\[\]byte\`, before it will be written to the json encoder, which consumes a lot of memory for nothing.
+
+So my question how, can i stream the output of `base64.NewEncoder` to the json encoder? 
+
+I checked this [https://github.com/mailru/easyjson](https://github.com/mailru/easyjson) but it also uses a `byte.Buffer` internally.
+## [7][More or less what versions of Go support what OpenBSD releases (as of March 2020)](https://www.reddit.com/r/golang/comments/fcu4uo/more_or_less_what_versions_of_go_support_what/)
+- url: https://utcc.utoronto.ca/~cks/space/blog/programming/GoWhatOpenBSDs-2020-03
+---
+
+## [8][Low level SSD read write in golang](https://www.reddit.com/r/golang/comments/fct56d/low_level_ssd_read_write_in_golang/)
+- url: https://www.reddit.com/r/golang/comments/fct56d/low_level_ssd_read_write_in_golang/
+---
+Hi Guys,
+I am new to golang and I wanted to know if there is a way to access low level system operations in golang.
+What I need specifically:
+1.  How can I access free Blocks and pages?
+2. Write-read-earse blocks
+
+Thanks a lot.
+## [9][Simple CLI to schedule tweets](https://www.reddit.com/r/golang/comments/fcsw4s/simple_cli_to_schedule_tweets/)
+- url: https://www.reddit.com/r/golang/comments/fcsw4s/simple_cli_to_schedule_tweets/
+---
+Hello everybody!
+
+I developed recently a CLI which send tweets via a CSV, at a precise date. I needed a quick way to be able to schedule tweets.
+
+I think about extending the functionality to other social media, if somebody is interested.
+
+Any feedback is welcome!
+
+https://github.com/Phantas0s/ottosocial
+## [10][GoLand help](https://www.reddit.com/r/golang/comments/fcsm7k/goland_help/)
+- url: https://www.reddit.com/r/golang/comments/fcsm7k/goland_help/
+---
+I'm done with trying to make VSCode+Gopls work as it's been crashing multiple times a day, randomly stops autocompleting, gets stuck trying to save files and so forth. I've two minor issues with GoLand and am wondering if anyone has any ideas.
+
+1. When saving files, goimports/gofmt takes way, way longer than VSCode which is near instant. It's almost as if it's formatting across multiple files, and not just the current one. Any way around that?
+2. Is there are way to setup a shortcut to test the current package? E.g. so that if I am looking at a file, it'll run all tests in the current directory? I have tons of packages and love the "Go: Test Package" feature in the VSCode integration.

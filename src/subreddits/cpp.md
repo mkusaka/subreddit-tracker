@@ -57,7 +57,364 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][ABI Breaks: Not just about rebuilding](https://www.reddit.com/r/cpp/comments/fc2qqv/abi_breaks_not_just_about_rebuilding/)
+## [2][C++ Quizzes](https://www.reddit.com/r/cpp/comments/fcqruv/c_quizzes/)
+- url: https://www.reddit.com/r/cpp/comments/fcqruv/c_quizzes/
+---
+Here are some sites that have decent free C++ Quizzes:
+
+* http://cppquiz.org/
+* http://www.mycppquiz.com/
+* http://www.interqiew.com/tests?type=cpp
+* http://www.interqiew.com/ask?ta=tqdp02&amp;qn=1
+* https://developers.google.com/edu/c++/quiz
+* http://www.pvv.org/~oma/PubQuiz_ACCU_Apr2012.pdf
+* http://www.pvv.org/~oma/PubQuiz_ACCU_Apr2013.pdf
+* http://www.pvv.org/~oma/PubQuiz_ACCU_Apr2014.pdf
+* http://www.pvv.org/~oma/PubQuiz_ACCU_Apr2016.pdf
+
+If there are any others worth mentioning please post them here
+## [3][[c++23 and beyond] Structured Binding extension ideas](https://www.reddit.com/r/cpp/comments/fcmm2s/c23_and_beyond_structured_binding_extension_ideas/)
+- url: https://www.reddit.com/r/cpp/comments/fcmm2s/c23_and_beyond_structured_binding_extension_ideas/
+---
+I like structured bindings from c++17, I have some ideas for improving them for c++23 that I'd love to get preliminary feedback on before potentially getting involved in a paper.
+
+I've seen a few referenced here and there, so I thought I'd unify them all in one post. Some of these ideas I've seen in [stack overflow](https://stackoverflow.com/questions/45541334/can-the-structured-bindings-syntax-be-used-in-polymorphic-lambdas) or inspired by the [pattern matching paper](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf). If other people have proposed these same ideas in active papers, I'd love to know.
+
+Let's get started
+
+# Structured bindings as an argument
+
+Wouldn't it be nice if we could declare a structured binding as a parameter in a function definition?
+
+This is a pattern that comes up in range code or code that uses lambdas with tuple/pair args.
+
+    std::unordered_map&lt;string, int&gt; myMap = /* ... */;
+    auto transformed = myMap
+        | ranges::views::transform([] (const auto&amp; keyValuePair) {
+             const auto&amp; [key, value] = keyValuePair;
+            // return something from key and value;
+          })
+        | ranges::to&lt;std::vector&gt;;
+
+I would love to get rid of the `const auto&amp; [k, v] = keyValuePair;` and just write:
+
+    std::unordered_map&lt;string, int&gt; myMap = /* ... */;
+    auto transformed = myMap
+        | ranges::views::transform([] (const auto&amp; [key, value]) {
+            // return something from key and value
+          })
+        | ranges::to&lt;std::vector&gt;;
+
+To me has a various obvious meaning, and I think it's not an ambiguous parse AFAIK.
+
+This would also apply to normal functions, not just lambdas. So let's say we had a structured bindings compatible type:
+
+    struct Point {
+       int x;
+       int y;
+    };
+
+And the declaration of the function taking that type 
+
+    void function(Point p);
+
+In the definition it would be nice to write:
+
+    void function(Point [x, y]) {
+       // do something with x and y
+    }
+instead of
+
+    void function(Point p) {
+       auto [x, y] = p;
+       // do something with x and y
+    }
+
+This works as long as `Point` or similar is structured bindings decomposable. The structured binding decomposition would not have to appear in the function declaration, just the definition since this is basically an implementation detail.
+
+And of course, with template/concept all the following would be valid (assuming valid type substitution):
+
+    template &lt;typename T&gt;
+    void function(T [x, y]) {}
+    void function(auto [x, y]) {}
+    void function(Concept auto [x, y]) {}
+
+EDIT: I have learned that this was proposed in the following [paper](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0931r0.pdf)
+
+# Variadic bindings
+Inspired from [here](https://www.reddit.com/r/cpp/comments/8abgg8/variadic_structured_binding/), but it'd be nice to be able to write expressions like the following:
+
+    auto [first, second, ...rest] = unpackable;
+
+Where `first` refs the first element, and `rest` packs the remaining and is usable just like a parameter pack:
+
+    callSomethingVariadic(rest...);
+
+You could also just omit the name `rest` if you didn't care:
+
+    auto [first, second, ...] = unpackable;
+
+This of course could be combined with bindings as parameters above:
+
+    void function(SomeType [first, second, ...rest]) {}
+
+# Named bindings
+Currently structured bindings are positional, wouldn't it be cool if we could unpack fields by their name?
+
+    struct Datum {
+       string name;
+       int id;
+       bool isCool;
+    } datum;
+    
+    auto [.isCool] = datum;
+    // equivalent to
+    auto isCool = datum.isCool;
+
+This is intended to be very similar to what is possible in [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment), and is similar to proposals in the pattern matching paper.
+I use `.&lt;identifier&gt;` syntax to be consistent with designator initialization syntax. So that following would be consistent:
+
+    auto [.name, .id, .isCool] = Datum{.name = "bob", .id = 2, .isCool = true};
+
+ But ordinality restrictions should be lifted on decomposition, since initialization order does not really apply to structured bindings based on what they really are.
+
+    auto [.id, isCool, .name] = datum;
+
+This would combine well with "structured bindings as a parameter" so that you could accept a whole struct as a param (to be future proof) define exactly which args your function needs in its current impl:
+
+    void doSomething(const Datum&amp; [.id, .name]) {
+       // do something with name and id
+    }
+
+Or write code that concisely genericly expresses expectation of a certain field being present:
+
+    void doSomethingGeneric(const auto&amp; [.foo]) {
+       // use foo field of passed in object
+    }
+
+## Named unpack with rename
+Named unpack with rename could be supported though I'm not 100% sold on it, e.g.:
+
+    auto [.isCool, newName = .name] = datum;
+
+Instead of:
+
+    auto isCool = datum.name;
+    auto newName = datum.name;
+
+This feature would only be for renames. I would want arbitrary expressions to be disallowed here due to order of evaluation concerns and maintaining structured binding fields as aliases rather than independent variables. So at this point I think the following should be illegal:
+
+    auto [newId = .id + 1] = datum; // illegal
+
+Definitely initialization dependent on prior fields should be illegal:
+
+    auto [
+      newId = .id,
+      newName = .name + std::to_string(newId)
+    ] = datum; // illegal
+
+One problem here is that `[newName = .name]` syntax totally implies that maybe an arbitrary expression can be substituted (as in lambdas). So perhaps we need a different syntax here. Javascript uses a colon for this:
+
+    const {originalName: newName} = obj
+
+But I don't think colon carries the same semantic meaning in c++, so the following would look a little strange in c++
+
+    auto [.name: newName] = datum;
+
+Another option could be fat or skinny arrow as in patter matching:
+
+    auto [.name -&gt; newName] = datum;
+    auto [.name =&gt; newName] = datum;
+
+Which by themselves look fine but do not correspond with any other patterns. With this analysis I'm most partial to
+    
+    auto [newName = .name] = datum;
+
+which is why I presented it first. But this problem gets even hairier when we talk about nesting...
+
+## Combination with ordinals
+In general this would be mostly disallowed in combination with ordinal bindings:
+
+    auto [.isCool, id] = datum; // disallowed
+
+Use one or the other, not both. One exception could be if the named bindings follow all the ordinal ones:
+
+    auto [newName, ..., .id] = datum
+
+meaning, `datum.name` binds to first positional as `newName`, ignore all other positionals and bind `id` as `datum.id`. I don't see a use for this and its very presence suggests structuring a data type so that it has both an ordinal and non-ordinal (named) structure. So my perspective is we should probably just disallow this.
+
+## Variadic named capture?
+What about the following:
+
+    auto [.id, .isCool, ...rest] = datum;
+
+On some level you understand what `rest` represents, a data structure that has all the fields of datum except for `.id` and `.isCool` (so just name). I don't really think this is a particularly useful object and we get a lot of hard questions as to what type the rest object actually has and how you're allowed to use it.
+
+## named capture (but with a function)
+So far named capture is pretty limited to simple structs (that which can be constructed by designated initializer). What if we had something more powerful:
+
+    std::vector&lt;int&gt; vec; // some integer range
+    auto [.begin, .end] = vec;
+    // equivalent to:
+    auto begin = vec.begin();
+    auto end = vec.end();
+
+If we expressed member capture as the rule that:
+
+    auto [.identifier] = val;
+
+is equivalent to:
+
+    auto identifier = std::invoke(&amp;decltype(val)::identifier, val);
+
+We get both forms automatically! This is a pretty radical idea though and breaks a lot of the rules associated with structured bindings, but I'm throwing it out there anyway...
+
+# Nested Bindings
+
+This has beeen requested by a few but I wanted to reiterate that it works here and fits (kind of) well with the above. Nested bindings allow you to do the following:
+
+    struct Datum {
+       int first;
+
+       struct Inner {
+          double intensity;
+          char code;
+       } config;
+
+       std::string color;
+    } datum;
+
+    auto [first, [intensity, code], color] = datum;
+
+Of course all of the above mesh with this.
+As an argument:
+
+    auto function(Datum [first, [intensity, code], color] datum) {}
+
+Variadics with named capture:
+
+    auto [first, [.intensity], ...] = datum;
+
+Fully nested named:
+
+    auto [[.intensity] = .config] = datum;
+
+We can see that the rename syntax doesn't work great with nesting. Consider the following type:
+
+    struct Outer {
+      struct Middle {
+        struct Inner {
+          int x;
+          int y;
+        };
+
+        Innter inner;
+      };
+
+      Middle middle;
+    } val;
+
+We have several options to decompose this and get `int x, int y` in the end:
+
+    auto [[[x, y]]] = val; // pure postional nested
+    auto [[[.y, .x]]] = val; // positional nested -&gt; named
+    auto [[[.x, .y] = .inner] = .mid] = val; // fully renamed
+    auto [.x, .y] = val.middle.inner; // non-nested
+
+The lesson here is that this:
+
+    auto [[[.x, .y] = .inner] = .mid] = val;
+
+Is a pretty terrible solution. No one can read that and immediately understand. It reads and writes in the completely wrong direction: you have to start with "[[[" which means you basically have to know your target variable depth before even writing.
+    
+Let's recall how javascript does this:
+
+    const {middle: {inner: {x, y}}} = val;
+
+If I'm honest, I still find this highly unreadable, maybe because in javascript the syntax makes me think I'm declaring a dictionary long before it makes me realize I'm referencing the `x` and `y` fields of `val`.
+
+If we c++ this with arrows:
+
+    auto [.middle =&gt; [.inner =&gt; [.x, .y]]] = val;
+
+To me it's still not intuitive what the heck this does from an outsider perspective, but at least it's easier to write than:
+
+    auto [[[.x, .y] = .inner] = .mid] = val;
+
+If we look at "=&gt;" from a pattern matching perspective, then some intuition arises. We can describe the following:
+
+    auto [.middle =&gt; [.inner =&gt; [.x, .y]]] = val;
+
+As "match `val` against having field `.middle`, take result and match against having field `.inner` then take result and match against fields `.x and .y` capturing them."
+
+# Conclusion/Summary
+
+So I don't know what to make of this. The "rename" syntax as well as how it would apply with nesting is probably the hardest piece to wrangle here and has questionable value, but in my perspective the others would be pretty useful and intuitive. Reminders:
+  
+  Structured Binding as a param:
+
+     [](auto [k, v]) {}
+     // same as [](auto p) {auto [k, v] = p;}
+
+  Variadic Bindings:
+
+     auto [a, b, ...] = s;
+     // no simple equivalent. for tuples:
+     // auto&amp; a = std::get&lt;0&gt;(s);
+     // auto&amp; b = std::get&lt;1&gt;(s);
+
+  Structured binding by field name
+
+     auto [.x] = s;
+     // same as auto x = s.x
+
+  Nested structured bindings (positional syntax):
+
+     auto [a, [x, y]] = s;
+     // same as: auto [a, tmp] = s; auto [x, y] = tmp;
+
+  Combination:
+     [] (auto [[.x, .y], ...]) {}
+     // same as: [] (auto s) {
+     // auto [tmp, ...] = s;
+     // auto x = tmp.x;
+     // auto y = tmp.y;}
+
+I think having them would allow us to allow for some fresh and interesting programming paradigms. I'd love to hear your thoughts on some of these components as well as references to any papers that are currently proposing some of these ideas! I would love if c++23 brought with it a super powered update to structured bindings, since c++20 did very little to improve them.
+## [4][Binlog - A high performance C++ log library to produce structured binary logs](https://www.reddit.com/r/cpp/comments/fcruym/binlog_a_high_performance_c_log_library_to/)
+- url: https://github.com/Morgan-Stanley/binlog
+---
+
+## [5][Quill - An asynchronous low latency logging library (C++14)](https://www.reddit.com/r/cpp/comments/fcbflb/quill_an_asynchronous_low_latency_logging_library/)
+- url: https://github.com/odygrd/quill
+---
+
+## [6][Verbose syntax for small function/lambdas](https://www.reddit.com/r/cpp/comments/fcrgqs/verbose_syntax_for_small_functionlambdas/)
+- url: https://www.reddit.com/r/cpp/comments/fcrgqs/verbose_syntax_for_small_functionlambdas/
+---
+    	using Op = std::function&lt;double(double, double)&gt; ;
+    	Op fns = [](double x, double y) {return x + y ;} ;
+    	Op fnm = [](double x, double y) {return abs(x) + abs(y) ;} ;
+    	Op fnv = [](double x, double y) {return hypot(x, y) ;} ;
+            ... etc
+
+Is there a more concise way to define these small lambas? Also, the definition Op std::function&lt;double(double, double)&gt; tells us already what the signatures following are. There are dependencies to update if the definition of Op is changed.
+
+Of course, we can use a macro to do the following instead:-
+
+            using Op = std::function&lt;double(double, double)&gt;
+            defop(fns, x + y) ; defop(fnm, abs(x) + abs(y)) ; defop(fnv, hypot(x, y)) ;
+
+Which is concise, with fewer dependencies, possibly fewer still if we could extract the signature from Op. Just wondering if there is a tidier C++ way (without relying on macros)?
+## [7][In-class Member Initialisation: From C++11 to C++20](https://www.reddit.com/r/cpp/comments/fc9iiz/inclass_member_initialisation_from_c11_to_c20/)
+- url: https://www.bfilipek.com/2015/02/non-static-data-members-initialization.html
+---
+
+## [8][WG21 in Prague - (Partial) Trip Report](https://www.reddit.com/r/cpp/comments/fcfbhj/wg21_in_prague_partial_trip_report/)
+- url: /user/InbalL/comments/f5ftop/wg21_in_prague_partial_trip_report/
+---
+
+## [9][ABI Breaks: Not just about rebuilding](https://www.reddit.com/r/cpp/comments/fc2qqv/abi_breaks_not_just_about_rebuilding/)
 - url: https://www.reddit.com/r/cpp/comments/fc2qqv/abi_breaks_not_just_about_rebuilding/
 ---
 Related reading:
@@ -163,83 +520,38 @@ Note that libc++ didn't need to get libstdc++'s permission in order to coexist o
 * Filters on recursive\_directory\_iterators had additional concerns beyond ABI, and there wasn't consensus to pursue, even if we chose a different name.
 * Making destructors implicitly `virtual` in polymorphic classes would be a massive cross-language ABI break, and not just a C++ ABI break, thanks to COM.  You'd be breaking the entire Windows ecosystem.  At a minimum, you'd need a way to opt out of `virtual` destructors.
 * Are you sure that you are arguing against ABI stability?  Maybe you are arguing against backwards compatibility in general.
-## [3][In-class Member Initialisation: From C++11 to C++20](https://www.reddit.com/r/cpp/comments/fc9iiz/inclass_member_initialisation_from_c11_to_c20/)
-- url: https://www.bfilipek.com/2015/02/non-static-data-members-initialization.html
+## [10][Kigs framework - A free, Open Source, Multi-Purpose and Cross-platform framework](https://www.reddit.com/r/cpp/comments/fccii8/kigs_framework_a_free_open_source_multipurpose/)
+- url: https://www.reddit.com/r/cpp/comments/fccii8/kigs_framework_a_free_open_source_multipurpose/
+---
+Hello [r/cpp readers](https://www.reddit.com/r/cpp),
+
+This is a short presentation of a newly Open Sourced C++ framework: [Kigs framework](https://kigs-framework.org/), [GitHub project](https://github.com/assoria/kigs).
+
+Kigs framework is a lightweight, fast, scalable framework that [we](https://assoria.com/) have ported to several different platforms, and we used as a base to build all our projects from Nintendo DSi games to industrial robots simulator (have a look [here](https://kigs-framework.org/Projects)). 
+
+Kigs framework gives access to high-level architecture and functionalities ( serialization, reflection, signals/slots, data-driven applications...) while maintaining low-level control (optimizations, platform-specific customization, easy C/C++ extern libraries usage ...).
+
+## Why Use the Kigs Framework?
+
+* You look for a free, MIT licensed framework, offering high-level functionalities such as serialization, instance factory, signals/slots management, scenegraph/rendering, Lua scripting... using C++.
+* You want to learn game/application development using C++ and Lua scripting.
+* You want to experiment with new ideas without starting from scratch.
+* You are curious to see how we implemented this or that feature and perhaps want to help improve the framework.
+
+We would be happy if others take over our framework, improve it and adapt it to their desires and their needs.
+
+## What is available today?
+
+Windows (x86, x64, UWP OpenGL or D3D ) and HTML5 (Emscripten, [here](https://kigs-framework.org/Samples) are the built samples) platforms are already released. Android platform should be released soon, and we would be happy to get some help to clean up and release iOS platform, or to add new platforms (Linux and MacOS ?).  
+
+We also released a series of introductory articles on [CodeProject](https://www.codeproject.com/Articles/5253209/Kigs-Framework-Introduction-1-8).
+
+I hope you will find this interesting,
+
+    thanks,
+
+          Stéphane
+## [11][For those who want a simpler single-header asynchronous logger at the cost of slightly more latency (c++17)](https://www.reddit.com/r/cpp/comments/fcfd5i/for_those_who_want_a_simpler_singleheader/)
+- url: https://gist.github.com/jrandom/5fab0cda11105e0e62c1f33c7a372b5e
 ---
 
-## [4][Quill - An asynchronous low latency logging library (C++14)](https://www.reddit.com/r/cpp/comments/fcbflb/quill_an_asynchronous_low_latency_logging_library/)
-- url: https://github.com/odygrd/quill
----
-
-## [5][In the unlikely event you want to abuse macros to test glsl shader code](https://www.reddit.com/r/cpp/comments/fc4v95/in_the_unlikely_event_you_want_to_abuse_macros_to/)
-- url: https://www.reddit.com/r/cpp/comments/fc4v95/in_the_unlikely_event_you_want_to_abuse_macros_to/
----
-Working (but not complete) [GLSL shim](https://github.com/jeremyong/klein/blob/master/test/glsl_shim.hpp)
-
-Sample GLSL code [being tested](https://github.com/jeremyong/klein/blob/master/glsl/klein.glsl)
-
-Sample [tests](https://github.com/jeremyong/klein/blob/master/test/test_glsl.cpp)
-
-In short, code like the following function works in C++ with a bunch of macros that expand to a union with 261 members. The rest of the GLSL API could likely be supported in the same manner (and it could be adapted to HLSL as well).
-
-
-    motor mm_mul(in motor a, in motor b)
-    {
-        motor c;
-        vec4 a_zyzw = a.p1.zyzw;
-        vec4 a_ywyz = a.p1.ywyz;
-        vec4 a_wzwy = a.p1.wzwy;
-        vec4 c_wwyz = b.p1.wwyz;
-        vec4 c_yzwy = b.p1.yzwy;
-
-        c.p1 = a.p1.x * b.p1;
-        vec4 t = a_ywyz * c_yzwy;
-        t += a_zyzw * b.p1.zxxx;
-        t.x = -t.x;
-        c.p1 += t;
-        c.p1 -= a_wzwy * c_wwyz;
-
-        c.p2 = a.p1.x * b.p2;
-        c.p2 += a.p2 * b.p1.x;
-        c.p2 += a_ywyz * b.p2.yzwy;
-        c.p2 += a.p2.ywyz * c_yzwy;
-        t = a_zyzw * b.p2.zxxx;
-        t += a_wzwy * b.p2.wwyz;
-        t += a.p2.zxxx * b.p1.zyzw;
-        t += a.p2.wzwy * c_wwyz;
-        t.x = -t.x;
-        c.p2 -= t;
-        return c;
-    }
-## [6][COAT: C++ EDSL for easier just-in-time code generation](https://www.reddit.com/r/cpp/comments/fbvkxp/coat_c_edsl_for_easier_justintime_code_generation/)
-- url: https://tetzank.github.io/posts/coat-edsl-for-codegen/
----
-
-## [7][Programming 3D Reconstruction Real Time](https://www.reddit.com/r/cpp/comments/fc72zr/programming_3d_reconstruction_real_time/)
-- url: https://medium.com/@taying.cheng/understanding-real-time-3d-reconstruction-and-kinectfusion-33d61d1cd402
----
-
-## [8][Looking for a good place to start.](https://www.reddit.com/r/cpp/comments/fc9xq2/looking_for_a_good_place_to_start/)
-- url: https://www.reddit.com/r/cpp/comments/fc9xq2/looking_for_a_good_place_to_start/
----
-I have a very basic knowledge of c++ and I’m looking to learn it. I have just started watching TheNewBostons c++ playlist on YouTube [playlist here](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGAKIXv8Yr6nhGJ9Vlcjyymq)
-
-I ultimately want to get into developing cheats for games I play. Do you think his tutorials will teach me all the essentials there is to c++ leaving me competent enough to develop my own cheat?
-## [9][A journey to searching Have I Been Pwned database in 49μs (C++)](https://www.reddit.com/r/cpp/comments/fc1dsi/a_journey_to_searching_have_i_been_pwned_database/)
-- url: http://stryku.pl/poetry/okon.php
----
-
-## [10][How to create an LED rave mask using Arduino and C++ to automatically animate effects while using little memory.](https://www.reddit.com/r/cpp/comments/fbxfak/how_to_create_an_led_rave_mask_using_arduino_and/)
-- url: https://armaizadenwala.com/blog/how-to-create-a-led-rave-mask-using-arduino/
----
-
-## [11][Do you need to use an IDE to fit in in a professional C++ team?](https://www.reddit.com/r/cpp/comments/fc3tg5/do_you_need_to_use_an_ide_to_fit_in_in_a/)
-- url: https://www.reddit.com/r/cpp/comments/fc3tg5/do_you_need_to_use_an_ide_to_fit_in_in_a/
----
-The answer might seem like an obvious "no" but please hear me out. 
-
-A while back I worked at a company where \*everyone\* used intelliJ for the [play](https://www.playframework.com/)\-[angular](https://angular.io/) stack we were working on. I've never liked IDEs because 1. they're bloated resource hogs, 2. they take a long time to master, and 3. they hide a ton of details under the hood. I much prefer using smart text editors like vim and vscode. I also much prefer creating bash scripts and config files so that every command/setting is in a clear place, rather than being buried within a complex sequence of mouse clicks.
-
-So I was the only one at this company not using intelliJ and I found that this made it really difficult to work with everyone else since everything they did was done through intelliJ, including VC and CI. This experience and feeling that I could only work on a professional java stack if I used intelliJ really put me off Java.
-
-I'm considering diving into C/C++, but first I'd like to know whether I would practically speaking need to master an IDE in order to fit in with a professinal crew of C++ developers. According to [this survey](https://www.jetbrains.com/lp/devecosystem-2019/cpp/), about 1/3 of C++ developers use a smart text editor, but I'd like to hear the thoughts of people within the actual industry. Thanks!

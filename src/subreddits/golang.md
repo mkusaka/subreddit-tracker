@@ -1,22 +1,13 @@
 # golang
-## [1][Ergo - a new framework for creating mesh networks with Erlang technologies. New release 1.0.0 https://github.com/halturin/ergo 🚀Details in comment](https://www.reddit.com/r/golang/comments/fcr3ez/ergo_a_new_framework_for_creating_mesh_networks/)
-- url: https://i.redd.it/yddtl1f1tek41.gif
+## [1][Look what my colleague gave me. It's so cute! 🥰](https://www.reddit.com/r/golang/comments/fdab62/look_what_my_colleague_gave_me_its_so_cute/)
+- url: https://i.redd.it/w44c9ga5emk41.jpg
 ---
 
-## [2][The Go Blog: A new Go API for Protocol Buffers](https://www.reddit.com/r/golang/comments/fciob7/the_go_blog_a_new_go_api_for_protocol_buffers/)
-- url: https://blog.golang.org/a-new-go-api-for-protocol-buffers
+## [2][Building a terminal dashboard in Golang in 300 lines of code](https://www.reddit.com/r/golang/comments/fd722v/building_a_terminal_dashboard_in_golang_in_300/)
+- url: https://levelup.gitconnected.com/building-a-terminal-dashboard-in-golang-in-300-lines-of-code-3b9f83f363a8
 ---
 
-## [3][RESTful API in GO](https://www.reddit.com/r/golang/comments/fctlkq/restful_api_in_go/)
-- url: https://www.reddit.com/r/golang/comments/fctlkq/restful_api_in_go/
----
-Hey reader,   
-I want to learn how to write RESTful APIs in GOLang.
-## [4][The httpgovernor package provides an HTTP request concurreny limiter](https://www.reddit.com/r/golang/comments/fcqv0k/the_httpgovernor_package_provides_an_http_request/)
-- url: https://github.com/juju/httpgovernor
----
-
-## [5][Golang is my new shell](https://www.reddit.com/r/golang/comments/fcumfu/golang_is_my_new_shell/)
+## [3][Golang is my new shell](https://www.reddit.com/r/golang/comments/fcumfu/golang_is_my_new_shell/)
 - url: https://www.reddit.com/r/golang/comments/fcumfu/golang_is_my_new_shell/
 ---
 This is not something informative or sophisticated, I just wanted to share my experience with Go over past couple of years.
@@ -34,58 +25,88 @@ Even that `if err := ...; err != nil { ... }` makes much more sense to me over `
 The tooling is great, and being able to compile things to run on MacOS or EC2 with Linux, or even Raspberry Pi is so amazing ( tried that on Rust, failed miserably ) that I take it for granted now.
 
 So basically I just wanted to say thanks to this community for your existence, I learned a lot and keep learning. And even if my work is circling around data processing and data engineering, write Spark applications and consume data streams from Kafka with Akka Streams or FS2 - there are still opportunities to write some things in Go.
-## [6][efficient json.MarshalJSON interface usage for streaming?](https://www.reddit.com/r/golang/comments/fcuf7i/efficient_jsonmarshaljson_interface_usage_for/)
-- url: https://www.reddit.com/r/golang/comments/fcuf7i/efficient_jsonmarshaljson_interface_usage_for/
+## [4][Go is one of the most loved languages based on StackOverflow's developer survey results](https://www.reddit.com/r/golang/comments/fcyao2/go_is_one_of_the_most_loved_languages_based_on/)
+- url: https://learnworthy.net/stackoverflows-developer-survey-results-for-2019/
 ---
-We encountered the problem that we need to connect a new application which transfers files as base64 encoded string in a JSON, like following:
 
-    {
-        "attachments": [
-            {
-                "name": "asdasdasd",
-                "value": "base64encodedSomethingValue"
-            },
-            ....
-        ]
+## [5][gopls 0.3.3 update release notes](https://www.reddit.com/r/golang/comments/fcz14k/gopls_033_update_release_notes/)
+- url: https://github.com/golang/go/issues/33030#issuecomment-593592737
+---
+
+## [6][Newbie needs some advice](https://www.reddit.com/r/golang/comments/fdcohn/newbie_needs_some_advice/)
+- url: https://www.reddit.com/r/golang/comments/fdcohn/newbie_needs_some_advice/
+---
+Hey guys. 
+
+I am currently doing a bit of freelance web development (front end only). Prior to this I practiced law for 13 years and decided to change careers at the ripe age of 38 at the end of 2017. I guess I was lucky to get a project fairly early on, but it is really simple and basically amounts to data entry with a bit of HTML and CSS throw in. Furthermore, the pay is not that good and I am slowly reaching the stage where I have to find a job and I'm getting kind of desperate. The good thing is that it "keeps the pot on the boil" while I learn further. 
+
+I am fairly proficient at Javascript and Python, but I feel as if I'm just not at that stage where I can apply for jobs. Granted, I think I have been in tutorial purgatory for the past 2 years, having that fear of trying to build something on my own. 
+
+Ironically, the first language I was introduced to when I first started out was Go. I have played around with it a bit before and I really enjoy it. I do, however, want to reach that stage where I am employable. I have both Todd Mcleod's courses (the Learn Go one and the Web Development with Go). Are there any other resources that are worth it? I also want to find out where one can find a mentor to, firstly, mentor me as I learn and, secondly, keep me accountable.  
+
+Any help will be appreciated.
+
+Thanks
+## [7][How to find goroutines during debugging - aka goroutine labeling](https://www.reddit.com/r/golang/comments/fcvruj/how_to_find_goroutines_during_debugging_aka/)
+- url: https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/
+---
+
+## [8][Verify Docker image exists using SDK?](https://www.reddit.com/r/golang/comments/fd9s98/verify_docker_image_exists_using_sdk/)
+- url: https://www.reddit.com/r/golang/comments/fd9s98/verify_docker_image_exists_using_sdk/
+---
+Is there anyway to check if an image exists/is available using the Go SDK?
+
+I know there is the ImageSearch functionality, but it seems to only be able to search by the image name, not by the name with repository and tag.
+
+The following works.
+
+
+	results, _ := cli.ImageSearch(context.Background(), "golangci-lint", types.ImageSearchOptions{Limit: 1})
+
+
+But I'd like to be able to do search like this
+
+
+	results, _ := cli.ImageSearch(context.Background(), "golangci/golangci-lint:v1.23.7", types.ImageSearchOptions{Limit: 1})
+
+EDIT:
+
+Here's a full script.
+
+Only dependency is `github.com/docker/docker v1.13.1`
+
+    package main
+    
+    import (
+    	"context"
+    	"github.com/docker/docker/api/types"
+    	"github.com/docker/docker/client"
+    	"os"
+    )
+    
+    func main() {
+    	cli, err := client.NewClientWithOpts(client.FromEnv)
+    	if err != nil {
+    		os.Exit(1)
+    	}
+    
+    	results, _ := cli.ImageSearch(context.Background(), "golangci-lint", types.ImageSearchOptions{Limit: 1})
+        // Len = 1
+    	println(len(results))
+    
+    	results, _ = cli.ImageSearch(context.Background(), "golangci/golang-lint:v1.23.7", types.ImageSearchOptions{Limit: 1})
+        // Len = 0
+   	println(len(results))
     }
 
-So i tried to upload a 200MB file, which caused the memory to dramatically increase.
+And to verify image really does exist - the following CLI command works.
 
-Because the currently solution i found is to use the [https://golang.org/pkg/encoding/json/#RawMessage.MarshalJSON](https://golang.org/pkg/encoding/json/#RawMessage.MarshalJSON) on the "attachement" item struct but, for that i need to allocate the whole base64 into a \`\[\]byte\`, before it will be written to the json encoder, which consumes a lot of memory for nothing.
-
-So my question how, can i stream the output of `base64.NewEncoder` to the json encoder? 
-
-I checked this [https://github.com/mailru/easyjson](https://github.com/mailru/easyjson) but it also uses a `byte.Buffer` internally.
-## [7][More or less what versions of Go support what OpenBSD releases (as of March 2020)](https://www.reddit.com/r/golang/comments/fcu4uo/more_or_less_what_versions_of_go_support_what/)
-- url: https://utcc.utoronto.ca/~cks/space/blog/programming/GoWhatOpenBSDs-2020-03
+    docker pull golangci/golangci-lint:v1.23.7
+## [9][Ergo - a new framework for creating mesh networks with Erlang technologies. New release 1.0.0 https://github.com/halturin/ergo 🚀Details in comment](https://www.reddit.com/r/golang/comments/fcr3ez/ergo_a_new_framework_for_creating_mesh_networks/)
+- url: https://i.redd.it/yddtl1f1tek41.gif
 ---
 
-## [8][Low level SSD read write in golang](https://www.reddit.com/r/golang/comments/fct56d/low_level_ssd_read_write_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/fct56d/low_level_ssd_read_write_in_golang/
+## [10][Jet is a tool written in Go to convert source code into Docker images. First release 0.1.0.](https://www.reddit.com/r/golang/comments/fcv8ba/jet_is_a_tool_written_in_go_to_convert_source/)
+- url: https://github.com/lade-io/jet
 ---
-Hi Guys,
-I am new to golang and I wanted to know if there is a way to access low level system operations in golang.
-What I need specifically:
-1.  How can I access free Blocks and pages?
-2. Write-read-earse blocks
 
-Thanks a lot.
-## [9][Simple CLI to schedule tweets](https://www.reddit.com/r/golang/comments/fcsw4s/simple_cli_to_schedule_tweets/)
-- url: https://www.reddit.com/r/golang/comments/fcsw4s/simple_cli_to_schedule_tweets/
----
-Hello everybody!
-
-I developed recently a CLI which send tweets via a CSV, at a precise date. I needed a quick way to be able to schedule tweets.
-
-I think about extending the functionality to other social media, if somebody is interested.
-
-Any feedback is welcome!
-
-https://github.com/Phantas0s/ottosocial
-## [10][GoLand help](https://www.reddit.com/r/golang/comments/fcsm7k/goland_help/)
-- url: https://www.reddit.com/r/golang/comments/fcsm7k/goland_help/
----
-I'm done with trying to make VSCode+Gopls work as it's been crashing multiple times a day, randomly stops autocompleting, gets stuck trying to save files and so forth. I've two minor issues with GoLand and am wondering if anyone has any ideas.
-
-1. When saving files, goimports/gofmt takes way, way longer than VSCode which is near instant. It's almost as if it's formatting across multiple files, and not just the current one. Any way around that?
-2. Is there are way to setup a shortcut to test the current package? E.g. so that if I am looking at a file, it'll run all tests in the current directory? I have tons of packages and love the "Go: Test Package" feature in the VSCode integration.

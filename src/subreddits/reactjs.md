@@ -86,68 +86,83 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Countering React Native FUD: There are more than 750 screens in both Facebook for Android and iOS as well as several standalone apps primarily built using RN, at FB](https://www.reddit.com/r/reactjs/comments/fcn8zm/countering_react_native_fud_there_are_more_than/)
-- url: https://twitter.com/dan_abramov/status/1234649570367299584
+## [3][Mini social network that I made as my first MERN stack project.](https://www.reddit.com/r/reactjs/comments/fdbgcl/mini_social_network_that_i_made_as_my_first_mern/)
+- url: https://github.com/misa-j/social-network
 ---
 
-## [4][React Hook Form: Performant, flexible and extensible forms with easy-to-use validation](https://www.reddit.com/r/reactjs/comments/fcfi1b/react_hook_form_performant_flexible_and/)
-- url: https://react-hook-form.com/
+## [4][Stop using isLoading booleans - Kent C. Dodds](https://www.reddit.com/r/reactjs/comments/fcvqnl/stop_using_isloading_booleans_kent_c_dodds/)
+- url: https://kentcdodds.com/blog/stop-using-isloading-booleans
 ---
 
-## [5][The Perils of Rehydration: An Eye-Opening Realization about Gatsby and React](https://www.reddit.com/r/reactjs/comments/fckb4g/the_perils_of_rehydration_an_eyeopening/)
-- url: https://joshwcomeau.com/react/the-perils-of-rehydration
+## [5][Corona Dashboard developed using React](https://www.reddit.com/r/reactjs/comments/fdceqo/corona_dashboard_developed_using_react/)
+- url: https://corona-board.soaple.endpoint.ainize.ai/
 ---
 
-## [6][Dockerize a React App and an Express API With MongoDB](https://www.reddit.com/r/reactjs/comments/fcthur/dockerize_a_react_app_and_an_express_api_with/)
-- url: https://medium.com/better-programming/dockerizing-react-app-and-express-api-with-mongodb-f3a06bebf570
+## [6][Fetch syntax feels too verbose to me for API calls. Do you guys use an alternative or I'm doing anything wrong?](https://www.reddit.com/r/reactjs/comments/fdb4be/fetch_syntax_feels_too_verbose_to_me_for_api/)
+- url: https://www.reddit.com/r/reactjs/comments/fdb4be/fetch_syntax_feels_too_verbose_to_me_for_api/
+---
+I mean, you have to concatenate two .then() just to retrieve the message from the server. Am I doing anything wrong?  
+this call for example:
+    
+            fetch('https://my-api/login', {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: data.name,
+                    email: data.email,
+                    password: data.password
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+                .then(async (response) =&gt; {
+            if (!response.ok) {
+                throw Error(await response.json());
+             }
+             return response.json();
+            )
+                .then(response =&gt; {
+                    console.log(response);
+                    cookie.save('token', response.token);
+                    this.setState({
+                        user: response
+                    });
+                    resolve('ok');
+                })
+                .catch(err =&gt; {
+                    reject(err);
+                });
+## [7][Immer 6.0: smaller bundle size via opt-in plugins for ES5, Maps/Sets, and patches](https://www.reddit.com/r/reactjs/comments/fd10nm/immer_60_smaller_bundle_size_via_optin_plugins/)
+- url: https://github.com/immerjs/immer/releases/tag/v6.0.0
 ---
 
-## [7][TypeScript Migration Strategy (from JavaScript)](https://www.reddit.com/r/reactjs/comments/fcs7mh/typescript_migration_strategy_from_javascript/)
-- url: https://www.youtube.com/watch?v=v3lI29trIN8&amp;feature=share
+## [8][How to sync github gists in the background?](https://www.reddit.com/r/reactjs/comments/fdbbr7/how_to_sync_github_gists_in_the_background/)
+- url: https://www.reddit.com/r/reactjs/comments/fdbbr7/how_to_sync_github_gists_in_the_background/
+---
+Hi guys, i'm trying to re-create this app as a learning guide.  
+[https://github.com/hackjutsu/Lepton](https://github.com/hackjutsu/Lepton)
+
+It  has the ability to sync the gists in the background but i have  no idea  how to do that. What's the concept behind that? Does it use websocket?  How do i know that there's new data to be synched?
+
+Hope you can help me with some concepts that needs to be learned.
+## [9][Add React to Phoenix](https://www.reddit.com/r/reactjs/comments/fdce6i/add_react_to_phoenix/)
+- url: https://medium.com/@lukeses09/add-react-to-phoenix-92c590fbbc7f
 ---
 
-## [8][Webpack 5: Module Federation. A Game-changer to Javascript architecture. The missing part for true micro-frontends](https://www.reddit.com/r/reactjs/comments/fchsqn/webpack_5_module_federation_a_gamechanger_to/)
-- url: https://medium.com/@ScriptedAlchemy/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669
+## [10][Need help](https://www.reddit.com/r/reactjs/comments/fd9qrg/need_help/)
+- url: https://www.reddit.com/r/reactjs/comments/fd9qrg/need_help/
+---
+I have a project (made with react js and material ui) that is finished and works well on all browsers accept Internet explorer.. It is a requirement that it should be supported on IE and it was a shock when I knew that.. it's clear I didn't read the requirements well :/
+
+I added some polyfill most of the pages are appearing accept one page.. 
+Plus the Grids are collapsing on each other
+
+Is there a quick way( a polly fill ) a magical spell to fix the issue other than redoing the whole pages again
+## [11][Conquering freeCodeCamp - Redux - Live Stream #27](https://www.reddit.com/r/reactjs/comments/fda625/conquering_freecodecamp_redux_live_stream_27/)
+- url: https://www.youtube.com/watch?v=ox5Jwcl6Yn8&amp;feature=share
 ---
 
-## [9][Comfort of CRA + small size of Preact! (without ejecting)](https://www.reddit.com/r/reactjs/comments/fcsho9/comfort_of_cra_small_size_of_preact_without/)
-- url: https://github.com/shilangyu/cra-preact
----
-
-## [10][I made a chat web application using react](https://www.reddit.com/r/reactjs/comments/fcu214/i_made_a_chat_web_application_using_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fcu214/i_made_a_chat_web_application_using_react/
----
-I made a  chat app built with React &amp; Redux , Node(Express), SocketIo and Twolio amongst other things and offers multiple functionalities such as:
-
-* Video Calling
-* Private Messaging
-* Group messaging
-* Authentication
-* Listening to music on spotify
-
-link is [Simply Chat](http://simplychatapp.herokuapp.com/).
-
-Once you create an account you get a sample user added as you friend list. To test with that default user and your account, use email: [test@yahoo.com](mailto:test@yahoo.com) and password is the number 1 typed 8 times.
-
-&amp;#x200B;
-## [11][cryptostats.now.sh - I made a simple app that shows top crypto assets in cards with charts!](https://www.reddit.com/r/reactjs/comments/fcrjb7/cryptostatsnowsh_i_made_a_simple_app_that_shows/)
-- url: https://www.reddit.com/r/reactjs/comments/fcrjb7/cryptostatsnowsh_i_made_a_simple_app_that_shows/
----
-Hi all! This is just a simple app that shows the top crypto assets by market capitalization.
-
-The url is [https://cryptostats.now.sh](https://cryptostats.now.sh/)
-
-It's made with these technologies:
-
-* React
-* CoinGecko API
-* Chart.js
-* Bulma
-
-You can play with the code here [https://github.com/sorxrob/cryptostats](https://github.com/sorxrob/cryptostats)
-
-Feel free to leave a comment/suggestion! Thank you.
-## [12][React version of MrDoob's instanced-geom cannonjs physics demo](https://www.reddit.com/r/reactjs/comments/fct6wk/react_version_of_mrdoobs_instancedgeom_cannonjs/)
-- url: https://twitter.com/0xca0a/status/1233865805227577347
+## [12][Hasura raised $9.9M to continue it's misison to ease GraphQL development](https://www.reddit.com/r/reactjs/comments/fda5ks/hasura_raised_99m_to_continue_its_misison_to_ease/)
+- url: https://blog.graphqleditor.com/graphql-hasura/
 ---
 

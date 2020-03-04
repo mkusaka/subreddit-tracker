@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][A new version of Goxygen is released with the support of all three Angular, React, and Vue.](https://www.reddit.com/r/javascript/comments/fcslsn/a_new_version_of_goxygen_is_released_with_the/)
-- url: https://github.com/Shpota/goxygen//
+## [3][Hey r/javascript! Autocode (in-browser IDE) team here. We just launched a new feature called "Maker Mode" -- generate Node.js API code via visual interface, then switch into code immediately. Would love feedback!](https://www.reddit.com/r/javascript/comments/fd9ur5/hey_rjavascript_autocode_inbrowser_ide_team_here/)
+- url: https://stdlib.com/blog/introducing-autocode-maker-mode-beta/
 ---
 
-## [4][The JavaScript Beginner's Handbook (2020 Edition)](https://www.reddit.com/r/javascript/comments/fcblyu/the_javascript_beginners_handbook_2020_edition/)
-- url: https://www.freecodecamp.org/news/the-complete-javascript-handbook-f26b2c71719c/
+## [4][ESNext Pattern Matching Proposal](https://www.reddit.com/r/javascript/comments/fdap2t/esnext_pattern_matching_proposal/)
+- url: https://www.hackdoor.io/articles/BGJDaNkv/pattern-matching-proposal
 ---
 
-## [5][Migrating from jQuery to vanilla JS](https://www.reddit.com/r/javascript/comments/fcqdir/migrating_from_jquery_to_vanilla_js/)
-- url: https://aristath.github.io/blog/diy-vanilla-jquery-alternative
+## [5][Introduction to D3](https://www.reddit.com/r/javascript/comments/fd6p8w/introduction_to_d3/)
+- url: https://observablehq.com/@mitvis/introduction-to-d3
 ---
 
-## [6][Dockerize a React App and an Express API With MongoDB](https://www.reddit.com/r/javascript/comments/fcti1p/dockerize_a_react_app_and_an_express_api_with/)
-- url: https://medium.com/better-programming/dockerizing-react-app-and-express-api-with-mongodb-f3a06bebf570
+## [6][Large Scale Geospatial Visualization with Deck.gl, Mapbox-gl and Vue.js](https://www.reddit.com/r/javascript/comments/fdb012/large_scale_geospatial_visualization_with_deckgl/)
+- url: https://blog.locale.ai/large-scale-geospatial-visualization-with-deck-gl-mapbox-gl-and-vue-js/
 ---
 
-## [7][JavaScript Without Loops](https://www.reddit.com/r/javascript/comments/fctj92/javascript_without_loops/)
-- url: https://jrsinclair.com/articles/2017/javascript-without-loops/
+## [7][Show Reddit: An OpenAPI compliance Proxy that ensures your data really matches your swagger.json](https://www.reddit.com/r/javascript/comments/fcvp1d/show_reddit_an_openapi_compliance_proxy_that/)
+- url: https://github.com/EXXETA/openapi-cop
 ---
 
-## [8][Comfort of CRA + small size of Preact! (without ejecting)](https://www.reddit.com/r/javascript/comments/fcsikw/comfort_of_cra_small_size_of_preact_without/)
-- url: https://github.com/shilangyu/cra-preact
+## [8][I just published my first npm package - a generator to bootstrap nextjs projects using styled-components](https://www.reddit.com/r/javascript/comments/fda47p/i_just_published_my_first_npm_package_a_generator/)
+- url: https://www.npmjs.com/package/generator-next-styled-components
 ---
 
-## [9][Javascript: Detecting external links in a paragraph of text automatically](https://www.reddit.com/r/javascript/comments/fcukb0/javascript_detecting_external_links_in_a/)
-- url: https://medium.com/@axelcwittmann/detecting-external-links-in-a-paragraph-of-text-with-javascript-automatically-3c15537f4997
+## [9][Multi-threading based RealWorld example app](https://www.reddit.com/r/javascript/comments/fdav9z/multithreading_based_realworld_example_app/)
+- url: https://github.com/neomjs/neomjs-realworld-example-app
 ---
 
-## [10][Optimizing data-heavy JavaScript code](https://www.reddit.com/r/javascript/comments/fcug58/optimizing_dataheavy_javascript_code/)
-- url: https://matthewmiller.dev/blog/optimizing-data-heavy-javascript/
+## [10][Becoming a GIT pro. Part 1: internal GIT architecture](https://www.reddit.com/r/javascript/comments/fd9zgs/becoming_a_git_pro_part_1_internal_git/)
+- url: https://indepth.dev/becoming-a-git-pro-part-1-internal-git-architecture/
 ---
 
-## [11][JavaScript: use the finally clause in generators with caution](https://www.reddit.com/r/javascript/comments/fctq2s/javascript_use_the_finally_clause_in_generators/)
-- url: https://gehrcke.de/2020/03/javascript-use-the-finally-clause-in-generators-with-caution/
+## [11][Efficiently and Dynamically Render Nested Data using Recursion in JavaScript](https://www.reddit.com/r/javascript/comments/fdcz6u/efficiently_and_dynamically_render_nested_data/)
+- url: https://medium.com/better-programming/recursive-render-in-javascript-25269594bad
 ---
 
-## [12][neo.mjs online examples](https://www.reddit.com/r/javascript/comments/fctlgh/neomjs_online_examples/)
-- url: https://neomjs.github.io/pages/
+## [12][Easily build Voice/Video Call, SMS, Chat features into your Mobile App/Website with Stringee SDK](https://www.reddit.com/r/javascript/comments/fdcis7/easily_build_voicevideo_call_sms_chat_features/)
+- url: https://stringee.com/en?utm_source=content01&amp;utm_medium=api&amp;utm_campaign=reddit
 ---
 

@@ -57,7 +57,44 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][C++ Quizzes](https://www.reddit.com/r/cpp/comments/fcqruv/c_quizzes/)
+## [2][Super compact serialisation of C++ classes](https://www.reddit.com/r/cpp/comments/fd8jnf/super_compact_serialisation_of_c_classes/)
+- url: https://www.reddit.com/r/cpp/comments/fd8jnf/super_compact_serialisation_of_c_classes/
+---
+When needing to save many different classes to disk into a human readable format and load them back (a pretty common but very boring task), I figured out this trick, which is probably the shortest way to do it without macros, working with any standard-compliant C++14 compiler (plus MSVC).
+
+    struct Device : SerialisableBrief {
+    	int timeout = key("timeout") = 1000;
+    	std::string address = key("adress") = "192.168.32.28";
+    	bool enabled = key("enabled") = false;
+    	std::vector&lt;int&gt; ports = key("ports");
+    }
+
+With the inheritance, it gets methods `save()` and `load()` that allow saving it in JSON format as an object with keys `timeout`, `address`, `enabled` and `ports`.
+
+Article how it works: [https://lordsof.tech/programming/super-compact-serialisation-of-c-classes/](https://lordsof.tech/programming/super-compact-serialisation-of-c-classes/)
+
+Full code: [https://github.com/Dugy/serialisable/blob/master/serialisable\_brief.hpp](https://github.com/Dugy/serialisable/blob/master/serialisable_brief.hpp)
+## [3]["Actor Model and C++: what, why and how?" March 2020 Edition](https://www.reddit.com/r/cpp/comments/fdbozc/actor_model_and_c_what_why_and_how_march_2020/)
+- url: https://www.reddit.com/r/cpp/comments/fdbozc/actor_model_and_c_what_why_and_how_march_2020/
+---
+I posted the first version of this presentation here a couple of years ago. But it seems that there still is a great misunderstanding of the Actor Model and its benefits between C++ developers. I saw many examples of such misunderstanding in various discussions, the latest examples can be found in [this fresh topic on HackerNews](https://news.ycombinator.com/item?id=22457554). Sometimes C++ developers simply don't know that there are ready to use, stable and mature tools that implement the Actor Model in C++. And last but not least: some things have changed from the time I published the first version in 2017.
+
+So I've updated my slides and [published it as "March 2020 Edition"](https://www.slideshare.net/YauheniAkhotnikau/actor-model-and-c-what-why-and-how-march-2020-edition). I hope it will be useful for someone.
+
+Updated slides can be found on [SlideShare](https://www.slideshare.net/YauheniAkhotnikau/actor-model-and-c-what-why-and-how-march-2020-edition), or can be downloaded from [here](https://sourceforge.net/projects/sobjectizer/files/sobjectizer/Slides/Actor_Model_and_Cpp_what_why_and_how_%28March_2020%29.pdf).
+## [4][The Performance Benefits of Final Classes | C++ Team Blog](https://www.reddit.com/r/cpp/comments/fcvlx2/the_performance_benefits_of_final_classes_c_team/)
+- url: https://devblogs.microsoft.com/cppblog/the-performance-benefits-of-final-classes/?WT.mc_id=social-reddit-marouill
+---
+
+## [5][Do not believe anyone who says that you can’t use Valgrind on Windows](https://www.reddit.com/r/cpp/comments/fdchqk/do_not_believe_anyone_who_says_that_you_cant_use/)
+- url: https://www.albertgao.xyz/2016/09/28/how-to-use-valgrind-on-windows/
+---
+
+## [6][Will calling “free” or “delete” in C/C++ release the memory to the system?](https://www.reddit.com/r/cpp/comments/fd1f5w/will_calling_free_or_delete_in_cc_release_the/)
+- url: https://lemire.me/blog/2020/03/03/calling-free-or-delete/
+---
+
+## [7][C++ Quizzes](https://www.reddit.com/r/cpp/comments/fcqruv/c_quizzes/)
 - url: https://www.reddit.com/r/cpp/comments/fcqruv/c_quizzes/
 ---
 Here are some sites that have decent free C++ Quizzes:
@@ -73,16 +110,20 @@ Here are some sites that have decent free C++ Quizzes:
 * http://www.pvv.org/~oma/PubQuiz_ACCU_Apr2016.pdf
 
 If there are any others worth mentioning please post them here
-## [3][[c++23 and beyond] Structured Binding extension ideas](https://www.reddit.com/r/cpp/comments/fcmm2s/c23_and_beyond_structured_binding_extension_ideas/)
+## [8][Binlog - A high performance C++ log library to produce structured binary logs](https://www.reddit.com/r/cpp/comments/fcruym/binlog_a_high_performance_c_log_library_to/)
+- url: https://github.com/Morgan-Stanley/binlog
+---
+
+## [9][[c++23 and beyond] Structured Binding extension ideas](https://www.reddit.com/r/cpp/comments/fcmm2s/c23_and_beyond_structured_binding_extension_ideas/)
 - url: https://www.reddit.com/r/cpp/comments/fcmm2s/c23_and_beyond_structured_binding_extension_ideas/
 ---
 I like structured bindings from c++17, I have some ideas for improving them for c++23 that I'd love to get preliminary feedback on before potentially getting involved in a paper.
 
-I've seen a few referenced here and there, so I thought I'd unify them all in one post. Some of these ideas I've seen in [stack overflow](https://stackoverflow.com/questions/45541334/can-the-structured-bindings-syntax-be-used-in-polymorphic-lambdas) or inspired by the [pattern matching paper](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf). If other people have proposed these same ideas in active papers, I'd love to know.
+I've seen a few referenced here and there, so I thought I'd unify them all in one post. Some of these ideas I've seen in [stack overflow](https://stackoverflow.com/questions/45541334/can-the-structured-bindings-syntax-be-used-in-polymorphic-lambdas) or inspired by the pattern matching paper ([P1371](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf)) . If other people have proposed these same ideas in active papers, I'd love to know.
 
 Let's get started
 
-# Structured bindings as an argument
+# Structured bindings as an argument (Edit: [P0931](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0931r0.pdf))
 
 Wouldn't it be nice if we could declare a structured binding as a parameter in a function definition?
 
@@ -139,9 +180,7 @@ And of course, with template/concept all the following would be valid (assuming 
     void function(auto [x, y]) {}
     void function(Concept auto [x, y]) {}
 
-EDIT: I have learned that this was proposed in the following [paper](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0931r0.pdf)
-
-# Variadic bindings
+# Variadic bindings (Edit: [P1061](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1061r1.html))
 Inspired from [here](https://www.reddit.com/r/cpp/comments/8abgg8/variadic_structured_binding/), but it'd be nice to be able to write expressions like the following:
 
     auto [first, second, ...rest] = unpackable;
@@ -192,14 +231,14 @@ Or write code that concisely genericly expresses expectation of a certain field 
        // use foo field of passed in object
     }
 
-## Named unpack with rename
+## Named unpack with rename (Edit: [P1371](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf) uses `auto [.name: newName] = val`)
 Named unpack with rename could be supported though I'm not 100% sold on it, e.g.:
 
     auto [.isCool, newName = .name] = datum;
 
 Instead of:
 
-    auto isCool = datum.name;
+    auto isCool = datum.isCool; (edited)
     auto newName = datum.name;
 
 This feature would only be for renames. I would want arbitrary expressions to be disallowed here due to order of evaluation concerns and maintaining structured binding fields as aliases rather than independent variables. So at this point I think the following should be illegal:
@@ -232,7 +271,7 @@ Which by themselves look fine but do not correspond with any other patterns. Wit
 
 which is why I presented it first. But this problem gets even hairier when we talk about nesting...
 
-## Combination with ordinals
+## Combination with ordinals (probably don't allow this)
 In general this would be mostly disallowed in combination with ordinal bindings:
 
     auto [.isCool, id] = datum; // disallowed
@@ -243,14 +282,20 @@ Use one or the other, not both. One exception could be if the named bindings fol
 
 meaning, `datum.name` binds to first positional as `newName`, ignore all other positionals and bind `id` as `datum.id`. I don't see a use for this and its very presence suggests structuring a data type so that it has both an ordinal and non-ordinal (named) structure. So my perspective is we should probably just disallow this.
 
-## Variadic named capture?
+## Variadic named capture? (probably don't allow this)
 What about the following:
 
     auto [.id, .isCool, ...rest] = datum;
 
 On some level you understand what `rest` represents, a data structure that has all the fields of datum except for `.id` and `.isCool` (so just name). I don't really think this is a particularly useful object and we get a lot of hard questions as to what type the rest object actually has and how you're allowed to use it.
 
-## named capture (but with a function)
+EDIT: This is allowed in javascript as nested object capture:
+
+        const {field1, field2, ...rest] = obj;
+
+Where `rest` is an object containing the same data as obj just without `field1` and `field2`. This is fine in javascript since objects are so dynamic in that language, but in c++ static typing would force rest to be an object of a new type that has no precedent (a struct alias without certain fields)?
+
+## named capture (but with a function) (Edit: [P1371](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf) has a solution for this)
 So far named capture is pretty limited to simple structs (that which can be constructed by designated initializer). What if we had something more powerful:
 
     std::vector&lt;int&gt; vec; // some integer range
@@ -269,7 +314,7 @@ is equivalent to:
 
 We get both forms automatically! This is a pretty radical idea though and breaks a lot of the rules associated with structured bindings, but I'm throwing it out there anyway...
 
-# Nested Bindings
+# Nested Bindings (Edit: also referenced in [P1371](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf))
 
 This has beeen requested by a few but I wanted to reiterate that it works here and fits (kind of) well with the above. Nested bindings allow you to do the following:
 
@@ -381,15 +426,7 @@ So I don't know what to make of this. The "rename" syntax as well as how it woul
      // auto y = tmp.y;}
 
 I think having them would allow us to allow for some fresh and interesting programming paradigms. I'd love to hear your thoughts on some of these components as well as references to any papers that are currently proposing some of these ideas! I would love if c++23 brought with it a super powered update to structured bindings, since c++20 did very little to improve them.
-## [4][Binlog - A high performance C++ log library to produce structured binary logs](https://www.reddit.com/r/cpp/comments/fcruym/binlog_a_high_performance_c_log_library_to/)
-- url: https://github.com/Morgan-Stanley/binlog
----
-
-## [5][Quill - An asynchronous low latency logging library (C++14)](https://www.reddit.com/r/cpp/comments/fcbflb/quill_an_asynchronous_low_latency_logging_library/)
-- url: https://github.com/odygrd/quill
----
-
-## [6][Verbose syntax for small function/lambdas](https://www.reddit.com/r/cpp/comments/fcrgqs/verbose_syntax_for_small_functionlambdas/)
+## [10][Verbose syntax for small function/lambdas](https://www.reddit.com/r/cpp/comments/fcrgqs/verbose_syntax_for_small_functionlambdas/)
 - url: https://www.reddit.com/r/cpp/comments/fcrgqs/verbose_syntax_for_small_functionlambdas/
 ---
     	using Op = std::function&lt;double(double, double)&gt; ;
@@ -406,152 +443,7 @@ Of course, we can use a macro to do the following instead:-
             defop(fns, x + y) ; defop(fnm, abs(x) + abs(y)) ; defop(fnv, hypot(x, y)) ;
 
 Which is concise, with fewer dependencies, possibly fewer still if we could extract the signature from Op. Just wondering if there is a tidier C++ way (without relying on macros)?
-## [7][In-class Member Initialisation: From C++11 to C++20](https://www.reddit.com/r/cpp/comments/fc9iiz/inclass_member_initialisation_from_c11_to_c20/)
-- url: https://www.bfilipek.com/2015/02/non-static-data-members-initialization.html
----
-
-## [8][WG21 in Prague - (Partial) Trip Report](https://www.reddit.com/r/cpp/comments/fcfbhj/wg21_in_prague_partial_trip_report/)
-- url: /user/InbalL/comments/f5ftop/wg21_in_prague_partial_trip_report/
----
-
-## [9][ABI Breaks: Not just about rebuilding](https://www.reddit.com/r/cpp/comments/fc2qqv/abi_breaks_not_just_about_rebuilding/)
-- url: https://www.reddit.com/r/cpp/comments/fc2qqv/abi_breaks_not_just_about_rebuilding/
----
-Related reading:
-
-[What is ABI, and What Should WG21 Do About It?](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2028r0.pdf)
-
-[The Day The Standard Library Died](https://cor3ntin.github.io/posts/abi/)
-
-# Q: What does the C++ committee need to do to fix large swaths of ABI problems?
-
-## A: Absolutely nothing
-
-On current implementations, `std::unique_ptr`'s calling convention causes some inefficiencies compared to raw pointers.  The standard doesn't dictate the calling convention of `std::unique_ptr`, so implementers could change that if they chose to.
-
-On current implementations, `std::hash` will return the same result for the same input, even across program invocations.  This makes it vulnerable to cache poisoning attacks.  Nothing in the standard requires that different instances of a program produce the same output.  An implementation could choose to have a global variable with a per-program-instance seed in it, and have `std::hash` mix that in.
-
-On current implementations, `std::regex` is extremely slow.  Allegedly, this could be improved substantially without changing the API of `std::regex`, though most implementations don't change `std::regex` due to ABI concerns.  An implementation could change if it wanted to though.  However, very few people have waded into the guts of `std::regex` and provided a faster implementation, ABI breaking or otherwise.  Declaring an ABI break won't make such an implementation appear.
-
-None of these issues are things that the C++ committee claims to have any control over.  They are dictated by vendors and by the customers of the vendors.  A new vendor could come along and have a better implementation.  For customers that prioritize QoI over ABI stability, they could switch and recompile everything.
-
-Even better, the most common standard library implementations are all open source now.  You could fork the standard library, tweak the mangling, and be your own vendor.  You can then be in control of your own ~~destiny~~ ABI, and without taking the large up-front cost of reinventing the parts of the standard library that you are satisfied with.  libc++ has a [LIBCXX\_ABI\_UNSTABLE](https://github.com/llvm/llvm-project/blob/master/libcxx/CMakeLists.txt#L125) configuration flag, so that you always get the latest and greatest optimizations.  libstdc++ has a `--enable-symvers=gnu-versioned-namespace` configuration flag that is ABI unstable, and it goes a long way towards allowing multiple libstdc++ instances coexist simultaneously.  Currently the libc++ and libstdc++ unstable ABI branches don't have many new optimizations because there aren't many contributions and few people use it.  I will choose to be optimistic, and assume that they are unused because people were not aware of them.
-
-If your only concern is ABI, and not API, then vendors and developers can fix this on their own without negatively affecting code portability or conformance.  If the QoI gains from an ABI break are worth a few days / weeks to you, then that option is available *today*.
-
-# Q: What aspects of ABI makes things difficult for the C++ committee.
-
-## A: API and semantic changes that would require changes to the ABI are difficult for the C++ committee to deal with.
-
-There are a lot of things that you can do to a type or function to make it ABI incompatible with the old type.  The C++ committee is reluctant to make these kinds of changes, as they have a substantially higher cost.  Changing the layout of a type, adding virtual methods to an existing class, and changing template parameters are the most common operations that run afoul of ABI.
-
-# Q: Are ABI changes difficult for toolchain vendors to deal with?
-
-## A1: For major vendors, they difficulty varies depending on the magnitude of the break.
-
-Since GCC 5 dealt with the std::string ABI break, [GCC has broken the language ABI 6 other times](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html), and most people didn't even notice.  There were several library ABI breaks (notably return type changes for std::complex and associative container erase) that went smoothly as well.  Quite a few people noticed the GCC 5 `std::string` ABI changes though.
-
-In some cases, there are compiler heroics that can be done to mitigate an library ABI change.  You will get varying responses as to whether this is a worthwhile thing to do, depending on the vendor and the change.
-
-If the language ABI changes in a large way, then it can cause substantially more pain.  GCC had a major language ABI change in GCC 3.4, and that rippled out into the library.  Dealing with libstdc++.so.5 and libstdc++.so.6 was a major hassle for many people, myself included.
-
-## A2: For smaller vendors, the difficulty of an ABI break depends on their customer base.
-
-These days, it's easier than ever to be your own toolchain vendor.  That makes you a vendor with excellent insight into how difficult an ABI change would be.
-
-# Q: Why don't you just rebuild after an ABI change?
-
-## A1: Are you rebuilding the standard library too?
-
-Many people will recommend not passing standard library types around, and not throwing exceptions across shared library boundaries.  They often forget that at least one very commonly used shared library does exactly that... your C++ standard library.
-
-On many platforms, there is usually a system C++ standard library.  If you want to use that, then you need to deal with standard library types and exceptions going across shared library boundaries.  If OS version N+1 breaks ABI in the system C++ standard library, the program you shipped and tested with for OS version N will not work on the upgraded OS until you rebuild.
-
-## A2: Sometimes, rebuilding isn't enough
-
-Suppose your company distributes pre-built programs to customers, and this program supports plugins (e.g. Wireshark dissector plugins).  If the plugin ABI changes, in the pre-built program, then all of the plugins need to rebuild.  The customer that upgrades the program is unlikely to be the one that does the rebuilding, but they will be responsible for upgrading all the plugins as well.  The customer cannot effectively upgrade until the entire ecosystem has responded to the ABI break.  At best, that takes a lot of time.  More likely, some parts of the ecosystem have become unresponsive, and won't ever upgrade.
-
-This also requires upgrading large swaths of a system at once.  In certain industries, it is very difficult to convince a customer to upgrade anything at all, and upgrading an entire system would be right out.
-
-Imagine breaking ABI on a system library on a phone.  Just getting all of the apps that your company owns upgraded and deployed at the same time as the system library would be a herculean effort, much less getting all the third party apps to upgrade as well.
-
-There are things you can do to mitigate these problems, at least for library and C++ language breaks on Windows, but it's hard to mitigate this if you are relying on a system C++ standard library.  Also, these mitigations usually involve writing more error prone code that is less expressive and less efficient than if you just passed around C++ standard library types.
-
-## A3: Sometimes you can't rebuild everything.
-
-Sometimes, business models revolve around selling pre-built binaries to other people.  It is difficult to coordinate ABI changes across these businesses.
-
-Sometimes, there is a pre-built binary, and the company that provided that binary is no longer able to provide updates, possibly because the company no longer exists.
-
-Sometimes, there is a pre-built binary that is a shared dependency among many companies (e.g. OpenSSL).  Breaking ABI on an upgrade of such a binary will cause substantial issues.
-
-# Q: What tools do we have for managing ABI changes?
-
-## A: Several, but they all have substantial trade-offs.
-
-The most direct tool is to just make a new thing and leave the old one alone.  Don't like `std::unordered_map`? Then make `std::open_addressed_hash_map`.  This technique allows new and old worlds to intermix, but the translations between new and old must be done explicitly.  You don't get to just rebuild your program and get the benefits of the new type.  Naming the new things becomes increasingly difficult, at least if you decide to not do the "lazy" thing and just name the new class `std::unordered_map2` or `std2::unordered_map`.  Personally, I'm fine with slapping a version number on most of these classes, as it gives a strong clue to users that we may need to revise this thing again in the future, and it would mean we might get an incrementally better hash map without needing to wait for hashing research to cease.
-
-`inline` namespaces are another tool that can be used, but they solve far fewer ABI problems than many think.  Upgrading a type like `std::string` or `std::unordered_map` via `inline` namespaces generally wouldn't work, as user types holding the upgraded types would also change, breaking those ABIs.  `inline` namespaces can probably help add / change parameters to functions, and may even extend to updating empty callable objects, but neither of those are issues that have caused many problems in the C++ committee in the past.
-
-Adding a layer of indirection, similar to COM, does a lot to address stability *and* extensibility, at a large cost to performance.  However, one area that the C++ committee hasn't explored much in the past is to look at the places where we already have a layer of indirection, and using COM-like techniques to allow us to add methods in the future.  Right now, I don't have a good understanding of the performance trade-offs between the different plug-in / indirect call techniques that we could use for things like `std::pmr::memory_resource` and `std::error_category`.
-
-# Q: What can I do if I don't want to pay the costs for ABI stability?
-
-## A: Be your own toolchain vendor, using the existing open-source libraries and tools.
-
-If you are able to rebuild all your source, then you can point all your builds at a custom standard library, and turn on (or even make your own) ABI breaking changes.  You now have a competitive advantage, and you didn't even need to amend an international treaty (the C++ standard) to make it happen!  If your changes were only ABI breaking and not API breaking, then you haven't even given up on code portability.
-
-Note that libc++ didn't need to get libstdc++'s permission in order to coexist on Linux.  You can have multiple standard libraries at the same time, though there are some technical challenges created when you do that.
-
-# Q: What can I do if I want to change the standard in a way that is ABI breaking?
-
-## A1: Consider doing things in a non-breaking way.
-
-## A2: Talk to compiler vendors and the ABI Review Group (ARG) to see if there is a way to mitigate the ABI break.
-
-## A3: Demonstrate that your change is so valuable that the benefit outweighs the cost, or that the cost isn't necessarily that high.
-
-# Assorted points to make before people in the comments get them wrong
-
-* I'm neither advocating to freeze ABI, nor am I advocating to break ABI.  In fact, I think those questions are too broad to even be useful.
-* Fixing `std::unordered_map`'s performance woes would require an API break, as well as an ABI break.
-* I have my doubts that `std::vector` could be made substantially faster with only an ABI break.  I can believe it if it is also coupled with an API break in the form of different exception safety guarantees.  Others are free to prove me wrong though.
-* Making `&lt;cstring&gt;` `constexpr` will probably be fine.  The ABI issues were raised and addressed for `constexpr` `&lt;cmath&gt;`, and that paper is waiting in LWG.
-* Filters on recursive\_directory\_iterators had additional concerns beyond ABI, and there wasn't consensus to pursue, even if we chose a different name.
-* Making destructors implicitly `virtual` in polymorphic classes would be a massive cross-language ABI break, and not just a C++ ABI break, thanks to COM.  You'd be breaking the entire Windows ecosystem.  At a minimum, you'd need a way to opt out of `virtual` destructors.
-* Are you sure that you are arguing against ABI stability?  Maybe you are arguing against backwards compatibility in general.
-## [10][Kigs framework - A free, Open Source, Multi-Purpose and Cross-platform framework](https://www.reddit.com/r/cpp/comments/fccii8/kigs_framework_a_free_open_source_multipurpose/)
-- url: https://www.reddit.com/r/cpp/comments/fccii8/kigs_framework_a_free_open_source_multipurpose/
----
-Hello [r/cpp readers](https://www.reddit.com/r/cpp),
-
-This is a short presentation of a newly Open Sourced C++ framework: [Kigs framework](https://kigs-framework.org/), [GitHub project](https://github.com/assoria/kigs).
-
-Kigs framework is a lightweight, fast, scalable framework that [we](https://assoria.com/) have ported to several different platforms, and we used as a base to build all our projects from Nintendo DSi games to industrial robots simulator (have a look [here](https://kigs-framework.org/Projects)). 
-
-Kigs framework gives access to high-level architecture and functionalities ( serialization, reflection, signals/slots, data-driven applications...) while maintaining low-level control (optimizations, platform-specific customization, easy C/C++ extern libraries usage ...).
-
-## Why Use the Kigs Framework?
-
-* You look for a free, MIT licensed framework, offering high-level functionalities such as serialization, instance factory, signals/slots management, scenegraph/rendering, Lua scripting... using C++.
-* You want to learn game/application development using C++ and Lua scripting.
-* You want to experiment with new ideas without starting from scratch.
-* You are curious to see how we implemented this or that feature and perhaps want to help improve the framework.
-
-We would be happy if others take over our framework, improve it and adapt it to their desires and their needs.
-
-## What is available today?
-
-Windows (x86, x64, UWP OpenGL or D3D ) and HTML5 (Emscripten, [here](https://kigs-framework.org/Samples) are the built samples) platforms are already released. Android platform should be released soon, and we would be happy to get some help to clean up and release iOS platform, or to add new platforms (Linux and MacOS ?).  
-
-We also released a series of introductory articles on [CodeProject](https://www.codeproject.com/Articles/5253209/Kigs-Framework-Introduction-1-8).
-
-I hope you will find this interesting,
-
-    thanks,
-
-          Stéphane
-## [11][For those who want a simpler single-header asynchronous logger at the cost of slightly more latency (c++17)](https://www.reddit.com/r/cpp/comments/fcfd5i/for_those_who_want_a_simpler_singleheader/)
-- url: https://gist.github.com/jrandom/5fab0cda11105e0e62c1f33c7a372b5e
+## [11][Quill - An asynchronous low latency logging library (C++14)](https://www.reddit.com/r/cpp/comments/fcbflb/quill_an_asynchronous_low_latency_logging_library/)
+- url: https://github.com/odygrd/quill
 ---
 

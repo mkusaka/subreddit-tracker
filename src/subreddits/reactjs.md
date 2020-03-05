@@ -86,83 +86,100 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Mini social network that I made as my first MERN stack project.](https://www.reddit.com/r/reactjs/comments/fdbgcl/mini_social_network_that_i_made_as_my_first_mern/)
+## [3][My first open source app: Sup, a Slack client with WhatsApp like UI. built using react-native and react-native-web](https://www.reddit.com/r/reactjs/comments/fdt78p/my_first_open_source_app_sup_a_slack_client_with/)
+- url: https://v.redd.it/hgky41mnvtk41
+---
+
+## [4][Beautiful React Hooks - a collection of beautiful (and hopefully useful) React hooks to speed-up your components and hooks development](https://www.reddit.com/r/reactjs/comments/fdiqm7/beautiful_react_hooks_a_collection_of_beautiful/)
+- url: https://beautifulinteractions.github.io/beautiful-react-hooks/
+---
+
+## [5][Hey guys I think it was a good idea to post this here too! I build an API to get stocks prices, financial statements, forex, crypto for you to create chart, portfolio graph.](https://www.reddit.com/r/reactjs/comments/fduf5e/hey_guys_i_think_it_was_a_good_idea_to_post_this/)
+- url: https://www.reddit.com/r/reactjs/comments/fduf5e/hey_guys_i_think_it_was_a_good_idea_to_post_this/
+---
+Hey guys I thought I would be really interesting to share this here too!
+
+I wanted to let you know that I Just finished a javascript [free stock API](https://financialmodelingprep.com/developer/docs/) you don't need any API keys you can test it and get real time stock price, forex crypto, historical data.
+
+You have also access to 1min 5min. 15min 1hour data from stocks, forex.
+
+You will be able to create portfolio, charts, access market data.
+
+Let me know what you think about it.
+
+I did an example in React:
+
+[https://jsfiddle.net/prem7qdx/2/](https://jsfiddle.net/prem7qdx/2/)
+
+Here is the github:
+
+[https://github.com/antoinevulcain/Financial-Modeling-Prep-API](https://github.com/antoinevulcain/Financial-Modeling-Prep-API)
+
+Cheers,
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+https://reddit.com/link/fduf5e/video/pbunpisejuk41/player
+## [6][React Query Devtools Released!](https://www.reddit.com/r/reactjs/comments/fdljx3/react_query_devtools_released/)
+- url: https://github.com/tannerlinsley/react-query-devtools
+---
+
+## [7][Mini social network that I made as my first MERN stack project.](https://www.reddit.com/r/reactjs/comments/fdbgcl/mini_social_network_that_i_made_as_my_first_mern/)
 - url: https://github.com/misa-j/social-network
 ---
 
-## [4][Stop using isLoading booleans - Kent C. Dodds](https://www.reddit.com/r/reactjs/comments/fcvqnl/stop_using_isloading_booleans_kent_c_dodds/)
-- url: https://kentcdodds.com/blog/stop-using-isloading-booleans
+## [8][NextJS with Guillermo Rauch - Software Engineering Daily](https://www.reddit.com/r/reactjs/comments/fdilam/nextjs_with_guillermo_rauch_software_engineering/)
+- url: https://softwareengineeringdaily.com/2020/03/02/nextjs-with-guillermo-rauch/
 ---
 
-## [5][Corona Dashboard developed using React](https://www.reddit.com/r/reactjs/comments/fdceqo/corona_dashboard_developed_using_react/)
-- url: https://corona-board.soaple.endpoint.ainize.ai/
+## [9][What test automation tool should I use for a React / Redux webapp that uses MS Oauth2 &amp; another authorization flow on top of that?](https://www.reddit.com/r/reactjs/comments/fdty8c/what_test_automation_tool_should_i_use_for_a/)
+- url: https://www.reddit.com/r/reactjs/comments/fdty8c/what_test_automation_tool_should_i_use_for_a/
 ---
+Hello,
 
-## [6][Fetch syntax feels too verbose to me for API calls. Do you guys use an alternative or I'm doing anything wrong?](https://www.reddit.com/r/reactjs/comments/fdb4be/fetch_syntax_feels_too_verbose_to_me_for_api/)
-- url: https://www.reddit.com/r/reactjs/comments/fdb4be/fetch_syntax_feels_too_verbose_to_me_for_api/
----
-I mean, you have to concatenate two .then() just to retrieve the message from the server. Am I doing anything wrong?  
-this call for example:
+I have reached ''desperate'' status in terms of automation because I can't get passed through the authorization flow. I tried testcafe and and cypress.
+
+Full disclosure: I have limited TS &amp; programming knowledge.
+
+I will explain the app flow: 
+
+1. Navigate to a link.
+2. Click on a login with microsoft button
+3. You are redirect to [login.microsoft.com](https://login.microsoft.com) and you need to provide an email and password that are part of our Azure AD, you get a client ID, token, all that MS stuff.
+4. Then another redirect happens to our authorization flow, this flow provides the client scopes and checks the token, then generates a cookie.
+5. After all of this, you are redirected to the link at step 1 /client
+
+My problems with testcafe are that I receive an error during login: 
+
+    Error in fixture.beforeEach hook -
+          A request to "our auth link" has failed.
+          Use quarantine mode to perform additional attempts to execute this test.
+          You can find troubleshooting information for this issue at
+          "https://go.devexpress.com/TestCafe_FAQ_ARequestHasFailed.aspx".
     
-            fetch('https://my-api/login', {
-                method: 'POST',
-                body: JSON.stringify({
-                    name: data.name,
-                    email: data.email,
-                    password: data.password
-                }),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                }
-            })
-                .then(async (response) =&gt; {
-            if (!response.ok) {
-                throw Error(await response.json());
-             }
-             return response.json();
-            )
-                .then(response =&gt; {
-                    console.log(response);
-                    cookie.save('token', response.token);
-                    this.setState({
-                        user: response
-                    });
-                    resolve('ok');
-                })
-                .catch(err =&gt; {
-                    reject(err);
-                });
-## [7][Immer 6.0: smaller bundle size via opt-in plugins for ES5, Maps/Sets, and patches](https://www.reddit.com/r/reactjs/comments/fd10nm/immer_60_smaller_bundle_size_via_optin_plugins/)
-- url: https://github.com/immerjs/immer/releases/tag/v6.0.0
+          Error details:
+          Failed to perform a request to the resource at "our auth link" because of
+          an error.
+          Error: Parse Error
+
+Cypress doesn't allow navigation from a super domain to another, disabling security does nothing. I tried cy.request as well, using google to check if what I'm doing is correct.
+
+I tried a bunch of options for testcafe as well and none of them worked.
+
+When doing the login manually, everything works fine, including in-private mode or on a fresh browser.
+
+Do I have any other options? Any kind of help is appreciated, thank you, and sorry if this is a stupid question.
+## [10][Statecharts: A new path for the future of web development](https://www.reddit.com/r/reactjs/comments/fdto3o/statecharts_a_new_path_for_the_future_of_web/)
+- url: https://medium.com/@mschulte_69595/statecharts-a-new-path-for-the-future-of-web-development-9c8a8fb85717
 ---
 
-## [8][How to sync github gists in the background?](https://www.reddit.com/r/reactjs/comments/fdbbr7/how_to_sync_github_gists_in_the_background/)
-- url: https://www.reddit.com/r/reactjs/comments/fdbbr7/how_to_sync_github_gists_in_the_background/
+## [11][New Team's Local development is unpleasant, to say the least](https://www.reddit.com/r/reactjs/comments/fdr4oh/new_teams_local_development_is_unpleasant_to_say/)
+- url: https://www.reddit.com/r/reactjs/comments/fdr4oh/new_teams_local_development_is_unpleasant_to_say/
 ---
-Hi guys, i'm trying to re-create this app as a learning guide.  
-[https://github.com/hackjutsu/Lepton](https://github.com/hackjutsu/Lepton)
-
-It  has the ability to sync the gists in the background but i have  no idea  how to do that. What's the concept behind that? Does it use websocket?  How do i know that there's new data to be synched?
-
-Hope you can help me with some concepts that needs to be learned.
-## [9][Add React to Phoenix](https://www.reddit.com/r/reactjs/comments/fdce6i/add_react_to_phoenix/)
-- url: https://medium.com/@lukeses09/add-react-to-phoenix-92c590fbbc7f
+I recently joined a new team as a front-end developer and still having a hard time adapting to their system. I mainly work on the UI but the way the local environment is set up right now is that I have to pull the backend code in my local and run the microservices and database in my system. I found this to be odd and overhead for a UI developer since I have to run multiple microservices in my local machine and now I have a code in my system that I have no idea what it's doing. Every time I run into some issue I have to call the backend developers and help me troubleshoot the issue.  I spoke to my team lead and boss about pointing the APIs to the higher environment but they disagreed with my approach and they think the current setup is good practice.  I am learning java in order to be able to debug the backend code but I was also wondering if I could get any advice or example of how people run their backend  while working in the UI?
+## [12][React JS certifications](https://www.reddit.com/r/reactjs/comments/fdswbe/react_js_certifications/)
+- url: https://www.reddit.com/r/reactjs/comments/fdswbe/react_js_certifications/
 ---
-
-## [10][Need help](https://www.reddit.com/r/reactjs/comments/fd9qrg/need_help/)
-- url: https://www.reddit.com/r/reactjs/comments/fd9qrg/need_help/
----
-I have a project (made with react js and material ui) that is finished and works well on all browsers accept Internet explorer.. It is a requirement that it should be supported on IE and it was a shock when I knew that.. it's clear I didn't read the requirements well :/
-
-I added some polyfill most of the pages are appearing accept one page.. 
-Plus the Grids are collapsing on each other
-
-Is there a quick way( a polly fill ) a magical spell to fix the issue other than redoing the whole pages again
-## [11][Conquering freeCodeCamp - Redux - Live Stream #27](https://www.reddit.com/r/reactjs/comments/fda625/conquering_freecodecamp_redux_live_stream_27/)
-- url: https://www.youtube.com/watch?v=ox5Jwcl6Yn8&amp;feature=share
----
-
-## [12][Hasura raised $9.9M to continue it's misison to ease GraphQL development](https://www.reddit.com/r/reactjs/comments/fda5ks/hasura_raised_99m_to_continue_its_misison_to_ease/)
-- url: https://blog.graphqleditor.com/graphql-hasura/
----
-
+Hey there, I have been working on a React js for past one year now , and currently looking for an authorized certification for React. I want to be a certified react developer and any certification by Facebook or any such authentic company will be very appreciable. I have gone through many online certification by V skills and Edureka, But I did not find them that authentic. Any leads please.

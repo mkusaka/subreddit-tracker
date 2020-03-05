@@ -23,47 +23,145 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fc7hn2/whats_everyone_working_on_this_week_102020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-10-2020/38939?u=llogiq)!
-## [3][Recent and future pattern matching improvements | Inside Rust Blog](https://www.reddit.com/r/rust/comments/fd48xh/recent_and_future_pattern_matching_improvements/)
-- url: https://blog.rust-lang.org/inside-rust/2020/03/04/recent-future-pattern-matching-improvements.html
+## [3][caniuse.rs | Rust feature search](https://www.reddit.com/r/rust/comments/fdj80k/caniusers_rust_feature_search/)
+- url: https://caniuse.rs/
 ---
 
-## [4][Cheap tricks for high-performance Rust](https://www.reddit.com/r/rust/comments/fdbszu/cheap_tricks_for_highperformance_rust/)
-- url: https://deterministic.space/high-performance-rust.html
+## [4][Timetill.rs: Now with updated conference lineup for 2020.](https://www.reddit.com/r/rust/comments/fdtok1/timetillrs_now_with_updated_conference_lineup_for/)
+- url: https://timetill.rs/
 ---
 
-## [5][Firecracker: lightweight virtualization for serverless applications](https://www.reddit.com/r/rust/comments/fd9ukx/firecracker_lightweight_virtualization_for/)
-- url: https://blog.acolyer.org/2020/03/02/firecracker/
+## [5][WebGPU, Frame Capturing and more in the latest update for Nannou - an open source, creative coding framework for Rust!](https://www.reddit.com/r/rust/comments/fduj17/webgpu_frame_capturing_and_more_in_the_latest/)
+- url: https://nannou.cc/posts/nannou_v0.13
 ---
 
-## [6][Understanding String and str in Rust](https://www.reddit.com/r/rust/comments/fcuq8x/understanding_string_and_str_in_rust/)
-- url: https://blog.thoughtram.io/string-vs-str-in-rust/
----
-
-## [7][Come from python. Want to learn Rust, but why and what?](https://www.reddit.com/r/rust/comments/fd61mh/come_from_python_want_to_learn_rust_but_why_and/)
-- url: https://www.reddit.com/r/rust/comments/fd61mh/come_from_python_want_to_learn_rust_but_why_and/
----
-So I've only been programming for about 3 years or so. Predominately in Python.  I've played with C and C++, Java, javascript, Elixir. So I know how different languages work some.  Rust looks pretty cool, but I honestly can't come up with a reason to know it.  I am a very project based learner. So having something interesting helps.  Being a new language an all, could anyone suggest some projects to start with Rust? I can't really figure out why I need web assembly at this time. Soooo. any suggestions or reason why to learn Rust are welcome.
-## [8][What is your favorite zero-dependency package?](https://www.reddit.com/r/rust/comments/fcyuh9/what_is_your_favorite_zerodependency_package/)
-- url: https://www.reddit.com/r/rust/comments/fcyuh9/what_is_your_favorite_zerodependency_package/
----
-There's a lot of benefits to understanding the dependency tree of your favorite packages.  It can also be especially impressive to see useful packages that are self contained with no dependencies.  What are some impressive no (or very little) dependency packages?
-## [9][[OXYGENGINE] Visual Novel and Animation modules are ready to be published!](https://www.reddit.com/r/rust/comments/fd7lbg/oxygengine_visual_novel_and_animation_modules_are/)
-- url: https://v.redd.it/lew00y762lk41
----
-
-## [10][This month in rustsim #9 (November - February 2020): elasticity, surface tension, viscosity in Salva](https://www.reddit.com/r/rust/comments/fcyp7c/this_month_in_rustsim_9_november_february_2020/)
-- url: https://www.rustsim.org/blog/2020/03/01/this-month-in-rustsim/
----
-
-## [11][Proper way to create R2D2 Pool for Actix-Web](https://www.reddit.com/r/rust/comments/fd7wsl/proper_way_to_create_r2d2_pool_for_actixweb/)
-- url: https://www.reddit.com/r/rust/comments/fd7wsl/proper_way_to_create_r2d2_pool_for_actixweb/
+## [6][Is there a way to transfer variable ownership into Iterator?](https://www.reddit.com/r/rust/comments/fdqx5o/is_there_a_way_to_transfer_variable_ownership/)
+- url: https://www.reddit.com/r/rust/comments/fdqx5o/is_there_a_way_to_transfer_variable_ownership/
 ---
 Hello,
 
-I was looking at this post [https://turreta.com/2020/02/29/actix-web-with-mysql-using-r2d2-for-connection-pool/](https://turreta.com/2020/02/29/actix-web-with-mysql-using-r2d2-for-connection-pool/) and wondered if the way the codes create and maintain R2D2 Pool is appropriate? Why not create the pool inside the main function?
+I'd like to make Iterator to own variable and serve it's immutable reference during evaluation.
 
-Cheers!
-## [12][async/await on embedded Rust](https://www.reddit.com/r/rust/comments/fdd28f/asyncawait_on_embedded_rust/)
+(and that immutable reference is only needed during evaluation and will not be used on the final result form)
+
+The code below works, but I used Rc for solving this issue.
+
+    // Thanks to https://github.com/yjh0502
+    // He suggested this solution: use Rc.
+    use std::rc::Rc;
+    
+    // Without Copy or Clone
+    #[derive(Debug)]
+    struct Data {
+      pub s: String,
+    }
+    
+    fn main() {
+      println!("Hello, world!");
+      
+      get_iter().for_each(|(data, n)| {
+         println!("{:?} - {}", data, n); 
+      });
+    }
+    
+    // data should be declared in the content of get_iter function.
+    fn get_iter() -&gt; Box&lt;dyn Iterator&lt;Item = (Rc&lt;Data&gt;, i32)&gt;&gt;{
+      let data = Rc::new(
+          Data { s: "Immutable String to share".to_string() }
+      );
+    
+      let iter = vec![1, 2, 3, 4, 5]
+          .into_iter()
+          .map(move |n| (Rc::clone(&amp;data), n) );
+    
+      Box::new(iter)
+    }
+
+What I'd like to use is something similar with below one,
+
+    fn get_iter() -&gt; Box&lt;dyn Iterator&lt;Item = (&amp;Data, i32)&gt;&gt;{
+      let data = Data { s: "Immutable String to share".to_string() };
+    
+      let iter = vec![1, 2, 3, 4, 5]
+          .into_iter()
+          .map(move |n| (&amp;data), n));
+    
+      Box::new(iter)
+    }
+
+Like this code below, I only need `&amp;data` until it's evaluation.
+
+      get_iter().for_each(|(data, n)| {
+         println!("{:?} - {}", data, n); 
+      });
+    
+      // or if I use collect, it will be like this
+      // no more data needed, but no idea how to make this iterator know it.
+      get_iter()
+          .map(|(_, n)| n)
+          .collect();
+
+after `for_each` or `collect`, I don't need `data` anymore but I have no idea on giving proper lifetime for this case.
+
+Is there a way to
+
+1. Transfer variable ownership into Iterator.
+2. That variable doesn't implement Copy or Clone traits.
+3. Iterator will serve the variable by immutable reference on iterating.
+4. But it is ensured that the variable will not be used in the final form (ex. `collect`)
+
+meet all those conditions above by setting proper lifetime param on variable `data`?
+
+Thanks!
+## [7][Cheap tricks for high-performance Rust](https://www.reddit.com/r/rust/comments/fdbszu/cheap_tricks_for_highperformance_rust/)
+- url: https://deterministic.space/high-performance-rust.html
+---
+
+## [8][microfft: Embedded-friendly Fast Fourier Transforms](https://www.reddit.com/r/rust/comments/fdi1nm/microfft_embeddedfriendly_fast_fourier_transforms/)
+- url: https://gitlab.com/ra_kete/microfft-rs
+---
+
+## [9][[APPEAL] Use maintenance label in your projects!](https://www.reddit.com/r/rust/comments/fdlbqb/appeal_use_maintenance_label_in_your_projects/)
+- url: https://www.reddit.com/r/rust/comments/fdlbqb/appeal_use_maintenance_label_in_your_projects/
+---
+Hi everyone,  
+
+
+Cargo.toml allow specify maintenance label. Here are some info from [documentation](https://doc.rust-lang.org/cargo/reference/manifest.html#package-metadata):
+
+```
+# Maintenance: `status` is required. Available options are:
+# - `actively-developed`: New features are being added and bugs are being fixed.
+# - `passively-maintained`: There are no plans for new features, but the maintainer intends to
+#   respond to issues that get filed.
+# - `as-is`: The crate is feature complete, the maintainer does not intend to continue working on
+#   it or providing support, but it works for the purposes it was designed for.
+# - `experimental`: The author wants to share it with the community but is not intending to meet
+#   anyone's particular use case.
+# - `looking-for-maintainer`: The current maintainer would like to transfer the crate to someone
+#   else.
+# - `deprecated`: The maintainer does not recommend using this crate (the description of the crate
+#   can describe why, there could be a better solution available or there could be problems with
+#   the crate that the author does not want to fix).
+# - `none`: Displays no badge on crates.io, since the maintainer has not chosen to specify
+#   their intentions, potential crate users will need to investigate on their own.
+maintenance = { status = "..." }
+```
+
+This will be even more useful if lib.rs or crates.io will allow search by this labels.
+
+I think sending PR to crates without maintenance status could be a nice contribution to make rust ecosystem better - especially for `deprecated` and `looking-for-maintainer` status.
+## [10][async/await on embedded Rust](https://www.reddit.com/r/rust/comments/fdd28f/asyncawait_on_embedded_rust/)
 - url: https://ferrous-systems.com/blog/async-on-embedded/
 ---
 
+## [11][CHIP-8 Game Emulator in Rust for PineTime Smart Watch](https://www.reddit.com/r/rust/comments/fdo1px/chip8_game_emulator_in_rust_for_pinetime_smart/)
+- url: https://lupyuen.github.io/pinetime-rust-mynewt/articles/chip8
+---
+
+## [12][Serverless + Rust: I tried it with Cloudflare Workers](https://www.reddit.com/r/rust/comments/fdmzyh/serverless_rust_i_tried_it_with_cloudflare_workers/)
+- url: https://www.reddit.com/r/rust/comments/fdmzyh/serverless_rust_i_tried_it_with_cloudflare_workers/
+---
+I lightly [documented](https://medium.com/@psiphi75/rust-and-serverless-with-a-focus-on-cloudflare-workers-342effbc4f85) my experience with Rust serverless using Cloudflare Workers.
+
+**TL;DR** There is a lot of promise, but the overall state of Rust on serverless is pretty immature. This is likely to change in the next 12 months.

@@ -1,112 +1,166 @@
 # golang
-## [1][Look what my colleague gave me. It's so cute! 🥰](https://www.reddit.com/r/golang/comments/fdab62/look_what_my_colleague_gave_me_its_so_cute/)
+## [1][dotGo 2020 has been cancelled](https://www.reddit.com/r/golang/comments/fdkbd1/dotgo_2020_has_been_cancelled/)
+- url: https://twitter.com/dotGoEu/status/1234767083369639937
+---
+
+## [2][Unit testing CLI programs](https://www.reddit.com/r/golang/comments/fdrx7b/unit_testing_cli_programs/)
+- url: https://medium.com/swlh/unit-testing-cli-programs-in-go-6275c85af2e7
+---
+
+## [3][Look what my colleague gave me. It's so cute! 🥰](https://www.reddit.com/r/golang/comments/fdab62/look_what_my_colleague_gave_me_its_so_cute/)
 - url: https://i.redd.it/w44c9ga5emk41.jpg
 ---
 
-## [2][Building a terminal dashboard in Golang in 300 lines of code](https://www.reddit.com/r/golang/comments/fd722v/building_a_terminal_dashboard_in_golang_in_300/)
-- url: https://levelup.gitconnected.com/building-a-terminal-dashboard-in-golang-in-300-lines-of-code-3b9f83f363a8
+## [4][How would you handle database interaction in unit tests?](https://www.reddit.com/r/golang/comments/fdvalp/how_would_you_handle_database_interaction_in_unit/)
+- url: https://www.reddit.com/r/golang/comments/fdvalp/how_would_you_handle_database_interaction_in_unit/
 ---
+Imagine you have started writing a new Go application, and you're about to write some unit tests that require database interaction. How would you do so? How would you store the environment configs for different environments?
 
-## [3][Golang is my new shell](https://www.reddit.com/r/golang/comments/fcumfu/golang_is_my_new_shell/)
-- url: https://www.reddit.com/r/golang/comments/fcumfu/golang_is_my_new_shell/
----
-This is not something informative or sophisticated, I just wanted to share my experience with Go over past couple of years.
+I assume I need to use a separate database for tests and to run migrations for this database separately. 
 
-I am a software engineer, that breed that sometimes is called "data engineer", in particular on AWS stack. Along with writing some basic "get data out of CSV and put that into parquet" stuff on EMR clusters ( got a chance to launch a cluster of X1 EC2s, that feels really weird ) - I also do many various automations/monitoring/etc with either Ansible or good old shell scripts.
+Since previously I was writing applications in Ruby on Rails, I thought it would be best to have separate config/env files for each environment and have some handy commands that could be run on each environment outside of my app's logic.
 
-For the past couple year I wrote close to zero bash scripts. 
+What I managed to do, was storing my environment variables in two files under:
 
-I have a ton of a small utilities like "calculate the average data volume in this S3 folder", or "get the parquet schema from these folders and compare it with the reference", or "get into the history of a EMR cluster and visualize the run time trend". All of them are written in Go.
+    config/.dev.env
+    config/.test.env
 
-Considering that I have some Scala / functional programming background ( been doing that for almost 10 years by now) - it would be naturally to expect me suffering from lack of generics. And in fact I was missing them from time to time. But not anymore. I started to realize that most of the times I don't really need generics when I write some utility code. And even for more complex services that involve complex business logic and communications with other services I never really found myself struggling over something.
+Then using [migrate package](https://github.com/golang-migrate/migrate) for migrations, and putting migrate commands in the Makefile similar to below:
 
-Even that `if err := ...; err != nil { ... }` makes much more sense to me over `Try` or some fancy Cats effects.
-
-The tooling is great, and being able to compile things to run on MacOS or EC2 with Linux, or even Raspberry Pi is so amazing ( tried that on Rust, failed miserably ) that I take it for granted now.
-
-So basically I just wanted to say thanks to this community for your existence, I learned a lot and keep learning. And even if my work is circling around data processing and data engineering, write Spark applications and consume data streams from Kafka with Akka Streams or FS2 - there are still opportunities to write some things in Go.
-## [4][Go is one of the most loved languages based on StackOverflow's developer survey results](https://www.reddit.com/r/golang/comments/fcyao2/go_is_one_of_the_most_loved_languages_based_on/)
-- url: https://learnworthy.net/stackoverflows-developer-survey-results-for-2019/
----
-
-## [5][gopls 0.3.3 update release notes](https://www.reddit.com/r/golang/comments/fcz14k/gopls_033_update_release_notes/)
-- url: https://github.com/golang/go/issues/33030#issuecomment-593592737
----
-
-## [6][Newbie needs some advice](https://www.reddit.com/r/golang/comments/fdcohn/newbie_needs_some_advice/)
-- url: https://www.reddit.com/r/golang/comments/fdcohn/newbie_needs_some_advice/
----
-Hey guys. 
-
-I am currently doing a bit of freelance web development (front end only). Prior to this I practiced law for 13 years and decided to change careers at the ripe age of 38 at the end of 2017. I guess I was lucky to get a project fairly early on, but it is really simple and basically amounts to data entry with a bit of HTML and CSS throw in. Furthermore, the pay is not that good and I am slowly reaching the stage where I have to find a job and I'm getting kind of desperate. The good thing is that it "keeps the pot on the boil" while I learn further. 
-
-I am fairly proficient at Javascript and Python, but I feel as if I'm just not at that stage where I can apply for jobs. Granted, I think I have been in tutorial purgatory for the past 2 years, having that fear of trying to build something on my own. 
-
-Ironically, the first language I was introduced to when I first started out was Go. I have played around with it a bit before and I really enjoy it. I do, however, want to reach that stage where I am employable. I have both Todd Mcleod's courses (the Learn Go one and the Web Development with Go). Are there any other resources that are worth it? I also want to find out where one can find a mentor to, firstly, mentor me as I learn and, secondly, keep me accountable.  
-
-Any help will be appreciated.
-
-Thanks
-## [7][How to find goroutines during debugging - aka goroutine labeling](https://www.reddit.com/r/golang/comments/fcvruj/how_to_find_goroutines_during_debugging_aka/)
-- url: https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/
----
-
-## [8][Verify Docker image exists using SDK?](https://www.reddit.com/r/golang/comments/fd9s98/verify_docker_image_exists_using_sdk/)
-- url: https://www.reddit.com/r/golang/comments/fd9s98/verify_docker_image_exists_using_sdk/
----
-Is there anyway to check if an image exists/is available using the Go SDK?
-
-I know there is the ImageSearch functionality, but it seems to only be able to search by the image name, not by the name with repository and tag.
-
-The following works.
-
-
-	results, _ := cli.ImageSearch(context.Background(), "golangci-lint", types.ImageSearchOptions{Limit: 1})
-
-
-But I'd like to be able to do search like this
-
-
-	results, _ := cli.ImageSearch(context.Background(), "golangci/golangci-lint:v1.23.7", types.ImageSearchOptions{Limit: 1})
-
-EDIT:
-
-Here's a full script.
-
-Only dependency is `github.com/docker/docker v1.13.1`
-
-    package main
+    ENV?=dev
     
-    import (
-    	"context"
-    	"github.com/docker/docker/api/types"
-    	"github.com/docker/docker/client"
-    	"os"
-    )
+    include config/.$(ENV).env
     
-    func main() {
-    	cli, err := client.NewClientWithOpts(client.FromEnv)
-    	if err != nil {
-    		os.Exit(1)
-    	}
+    export
+    POSTGRES_URL=postgres://${POSTGRESQL_USER}:${POSTGRESQL_PASSWORD}@${POSTGRESQL_HOST}:${POSTGRESQL_PORT}/${POSTGRESQL_DB}?sslmode=disable
     
-    	results, _ := cli.ImageSearch(context.Background(), "golangci-lint", types.ImageSearchOptions{Limit: 1})
-        // Len = 1
-    	println(len(results))
+    # create the database
+    .PHONY: db-create
+    db-create:
+    	@env "PGPASSWORD=${POSTGRESQL_PASSWORD}" psql -h "${POSTGRESQL_HOST}" -p "${POSTGRESQL_PORT}" \
+    			-U "${POSTGRESQL_USER}" -w -c "SELECT 1 FROM pg_database WHERE datname = '${POSTGRESQL_DB}';" \
+    			| grep 1 \
+    			|| env "PGPASSWORD=${POSTGRESQL_PASSWORD}" psql -h "${POSTGRESQL_HOST}" -p "${POSTGRESQL_PORT}" \
+    				-U "${POSTGRESQL_USER}" -w -c "create database \"${POSTGRESQL_DB}\";"
     
-    	results, _ = cli.ImageSearch(context.Background(), "golangci/golang-lint:v1.23.7", types.ImageSearchOptions{Limit: 1})
-        // Len = 0
-   	println(len(results))
-    }
+    # apply all new migrations. pass steps flag to limit number of migrations to run
+    .PHONY: migrate-up
+    migrate-up:
+    	@migrate -database ${POSTGRES_URL} -path ./database/migrations up ${steps}
 
-And to verify image really does exist - the following CLI command works.
+This allows me to run migrations for my test database with a simple: `make migrate-up ENV=test`
 
-    docker pull golangci/golangci-lint:v1.23.7
-## [9][Ergo - a new framework for creating mesh networks with Erlang technologies. New release 1.0.0 https://github.com/halturin/ergo 🚀Details in comment](https://www.reddit.com/r/golang/comments/fcr3ez/ergo_a_new_framework_for_creating_mesh_networks/)
-- url: https://i.redd.it/yddtl1f1tek41.gif
+I have not found a similar approach looking at other go applications. Is there a better way?
+## [5][Plik - OpenSource temporary file upload system ( wetransfer like ) in Go](https://www.reddit.com/r/golang/comments/fdv9ku/plik_opensource_temporary_file_upload_system/)
+- url: https://www.reddit.com/r/golang/comments/fdv9ku/plik_opensource_temporary_file_upload_system/
 ---
+We are pleased to release a first RC of Plik 1.3
 
-## [10][Jet is a tool written in Go to convert source code into Docker images. First release 0.1.0.](https://www.reddit.com/r/golang/comments/fcv8ba/jet_is_a_tool_written_in_go_to_convert_source/)
-- url: https://github.com/lade-io/jet
+Plik is an OpenSource temporary file upload system ( wetransfer like )
+
+It is shipped with a cool UI and CLI.  
+Files can be stored locally or in S3 or OpenStack Swift.  
+Metadata can be stored locally ( sqlite3 ) or in a postgresql database.  
+It supports authentication using local users or Goolgle API.  
+
+
+Some cool features like one shot upload deleted after the first download, stream mode where the files are not stored on the server and piped directly from the uploader to the dowloader, basic auth protection,...
+
+Give it a go ;)
+## [6][Use or gRPC or json/REST for web services?](https://www.reddit.com/r/golang/comments/fdsy9h/use_or_grpc_or_jsonrest_for_web_services/)
+- url: https://www.reddit.com/r/golang/comments/fdsy9h/use_or_grpc_or_jsonrest_for_web_services/
+---
+Hi, I am building a side project which requires to deploy an agent in customers docker clusters.
+
+This agent will look for some events and push them to a backend server.
+
+Right now, I have implemented 2 kinds of way to transmit those events:
+
+* based on grpc (stream and non-stream)
+* json/REST
+
+In the case of a grpc stream, I would need to open the stream at the beginning of the program, keep the stream open and push events to the stream whenever they are coming. Would you see any drawback in keeping that connection open for the entire lifecycle of the process? Is the grpc client smart enough to maintain the connection open *no matter what*?
+
+I can see some cons of using grpc for non-internal communication: mostly it requires that the connection is not intercepted by TLS terminating proxies which is not often the case. It feels like the advantages of using grpc (security, performance) in that case do not counter-balance the drawbacks I might face and I might be digging a rabbit hole.
+
+What's your experience with grpc based web-services? would you recommend it in my use case?
+## [7][Zip file with nested folders and architecture issue](https://www.reddit.com/r/golang/comments/fdv1bb/zip_file_with_nested_folders_and_architecture/)
+- url: https://www.reddit.com/r/golang/comments/fdv1bb/zip_file_with_nested_folders_and_architecture/
+---
+I'm trying to build a web application which 
+• Takes input from user
+• Uses it to run a process which creates files
+• Serves them to the user
+
+
+Right now this is the flow of the app
+• Takes some input from a html form
+• Runs an external process (with os/exec) that uses user input as flags. 
+• External process creates directories with files
+• Zip the files I need 
+• Serve them to the user
+
+The way I separate files for each user is that for every request I create a random directory for each.
+I then run the external program and set each user's directory as the output dir.
+
+My issue is that this external program creates other directories and then puts actual output in the most nested so for every request I have :
+RandomUserDir/X/output/*FilesINeedToZip
+
+When I try to zip these files, the .zip I get will have the same structure when unzipped so the end user will see and have to go through all 3 directories before accessing his files which is not really great user experience.
+
+Warning : the following feels like really bad practice
+
+I tried to solve this by running os.Chdir and going into the output directory to zip the files and then zip which works - i don't get all dirs in the zip file - but if the user tries to make another request it won't work because the app will try to chdir in the directory it's already in
+
+I solved this by having the handler chdir back to the original directory where data is stored and things kind of work now but when two users make a request simultaneously one of them will still get an error because of chdir.
+
+This feels like pretty bad design so do you know what would be a better way to architecture this ?
+ And maybe a way of not getting all directories when zipping but juste the files i need?
+
+Any help would be appreciated thank you.
+## [8][VSCode Rant](https://www.reddit.com/r/golang/comments/fdggl7/vscode_rant/)
+- url: https://www.reddit.com/r/golang/comments/fdggl7/vscode_rant/
+---
+I need to rant because my frustration with Go and Vscode can no longer be contained.
+
+&amp;#x200B;
+
+I am primarily a Backend NodeJS Developer, but I love go. I have been advocating for years to use Go at my job. I have written some tools in Go that were adopted with success at my work. I have written small personal projects and had a blast doing it.
+
+&amp;#x200B;
+
+However, the state of gopls, and the vscode integration is just so terrible that I am no longer comfortable recommending Go to other developers who are primarily web based or from a Javascript background. Vscode intelisense and type inference is better for vanilla js than it is for go, a static language. The language server is constantly broken, and since I have updated Go to v1.14 I can't get the language server to work at all. My symbols are never loaded. No features work.
+
+&amp;#x200B;
+
+I understand that people will tell me to switch to GoLand, but I don't like JetBrain products. Nothing wrong with them but they're not for me, and regardless I am not going to try and convince a team of web developers to change their editors so they can pick up a new language. Just not going to happen.
+
+&amp;#x200B;
+
+I understand people debate go over "err != nil" or lack of generics, or issues that are language related. But having the tooling broken with arguably the most popular code editor is just unacceptable. 
+
+&amp;#x200B;
+
+Currently I have no pleasant environment to work with Go. I might as well download notepad++ and run a terminal instance next to it and depend entirely on the compiler messages.
+
+&amp;#x200B;
+
+As it stands, as much as I love Go, I think until the editor tooling gets better, I have no choice but to abandon my efforts to get other people to use it, because I myself am not enjoying my experience coding in my favourite language. Even my own personal adoption of it is decreasing over time just because of how piss poor the developer experience is now.
+
+&amp;#x200B;
+
+Rant over.
+
+&amp;#x200B;
+
+If anybody has a magic bullet / config to fix vscode and go I would love to hear it.
+
+Otherwise, I'll check back in with the next few months hoping it is resolved, but I somehow doubt they won't just break it again immediately.
+## [9][Is it normal to literally google everything?](https://www.reddit.com/r/golang/comments/fdtnit/is_it_normal_to_literally_google_everything/)
+- url: https://www.reddit.com/r/golang/comments/fdtnit/is_it_normal_to_literally_google_everything/
+---
+I'm new, but I'm not new new, like 8 months new. I google literally anything. Even things that i did them 15-20 times before. Should i start memorizing or this is something normal?
+## [10][Forward proxy with rate limiting.](https://www.reddit.com/r/golang/comments/fdth2t/forward_proxy_with_rate_limiting/)
+- url: https://github.com/jamesmoriarty/goforward
 ---
 

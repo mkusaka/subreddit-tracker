@@ -1,63 +1,72 @@
 # ruby
-## [1][`insert_all` and `upsert_all` ActiveRecord methods (a short recap)](https://www.reddit.com/r/ruby/comments/fd9iim/insert_all_and_upsert_all_activerecord_methods_a/)
-- url: https://frontdeveloper.pl/2020/03/insert_all-and-upsert_all-activerecord-methods/
+## [1][Why Pry is one of the most important tools a junior Rubyist can learn](https://www.reddit.com/r/ruby/comments/fdh5gh/why_pry_is_one_of_the_most_important_tools_a/)
+- url: https://www.reddit.com/r/ruby/comments/fdh5gh/why_pry_is_one_of_the_most_important_tools_a/
+---
+As programmers we often have to mentally run code. To imagine how a program will behave given certain inputs. This is hard enough for experienced developers. But for juniors? It can seem impossible. In this article, Melissa Williams argues that pry is an invaluable tool for junior rubyists because it allows them to see exactly what is going on as their code is run. [https://www.honeybadger.io/blog/debugging-ruby-with-pry/](https://www.honeybadger.io/blog/debugging-ruby-with-pry/)
+## [2][Mistakes I've made treating file paths as strings](https://www.reddit.com/r/ruby/comments/fdnxz8/mistakes_ive_made_treating_file_paths_as_strings/)
+- url: https://www.reddit.com/r/ruby/comments/fdnxz8/mistakes_ive_made_treating_file_paths_as_strings/
+---
+It bugs me about how long I've manipulated paths as strings without having a failure, but in the last couple of months things have broken in Ruby and Node projects. So I wrote about [the issues I've faced and how we should approach path names to avoid them](https://philna.sh/blog/2020/03/04/mistakes-treating-paths-as-strings/) (TL;DR use the standard lib `Pathname` and `File.join` in Ruby).
+## [3][Can I make games or apps with ruby](https://www.reddit.com/r/ruby/comments/fdk0vs/can_i_make_games_or_apps_with_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/fdk0vs/can_i_make_games_or_apps_with_ruby/
 ---
 
-## [2][Hanami::API on Amazon AWS Lambda](https://www.reddit.com/r/ruby/comments/fdctli/hanamiapi_on_amazon_aws_lambda/)
+## [4][Is it possible for a method invoked on superclass to execute differently based on the subclass which called it?](https://www.reddit.com/r/ruby/comments/fdqdth/is_it_possible_for_a_method_invoked_on_superclass/)
+- url: https://www.reddit.com/r/ruby/comments/fdqdth/is_it_possible_for_a_method_invoked_on_superclass/
+---
+Hi everyone,
+
+Can anyone tell me if there's a way to do the following?
+
+    class Animal
+      def initialize
+      end
+    
+      def sayhello
+        # subclass is cat ? "meow" : "woof"
+      end
+    end
+    
+    class Cat &lt; Animal
+    end
+    
+    class Dog &lt; Animal
+    end
+    
+    p Cat.new.sayhello
+    =&gt; "meow"
+    
+    p Dog.new.sayhello
+    =&gt; "woof"
+
+Thanks
+## [5][Hanami::API on Amazon AWS Lambda](https://www.reddit.com/r/ruby/comments/fdctli/hanamiapi_on_amazon_aws_lambda/)
 - url: https://lucaguidi.com/2020/03/04/hanamiapi-on-amazon-aws-lambda/
 ---
 
-## [3][puma 3.12.3 and 4.3.2 released then yanked](https://www.reddit.com/r/ruby/comments/fd14qi/puma_3123_and_432_released_then_yanked/)
-- url: https://www.reddit.com/r/ruby/comments/fd14qi/puma_3123_and_432_released_then_yanked/
+## [6][can somebody explain how does the following code execute?](https://www.reddit.com/r/ruby/comments/fdjnif/can_somebody_explain_how_does_the_following_code/)
+- url: https://www.reddit.com/r/ruby/comments/fdjnif/can_somebody_explain_how_does_the_following_code/
 ---
-Puma 3.12.3 and 4.3.2 were released to fix [CVE-2020-5247](https://nvd.nist.gov/vuln/detail/CVE-2020-5247), a vulnerability where "an attacker can use newline characters to end the header and inject malicious content, such as additional headers or an entirely new response body". Which actually seems potentially serious to me, so good to update. 
+I am following a linked tutorial from the odin project, its about  blocks and procs in ruby. i cant quite understand how does the following  code works.
 
-Github's dependabot may have sent you an automatic PR to do so. So helpful! Maybe you accepted it. 
+    class Array def eachEven(&amp;wasABlock_nowAProc) # We start with "true" because arrays start with 0, which is even.     isEven = true self.each do |object| if isEven         wasABlock_nowAProc.call object       end        isEven = (not isEven) # Toggle from even to odd, or odd to even. end end end ['apple', 'bad apple', 'cherry', 'durian'].eachEven do |fruit|   puts 'Yum!  I just love '+fruit+' pies, don\'t you?' end # Remember, we are getting the even-numbered elements # of the array, all of which happen to be odd numbers, # just because I like to cause problems like that. [1, 2, 3, 4, 5].eachEven do |oddBall|   puts oddBall.to_s+' is NOT an even number!' end
 
-And then started finding today that you can't deploy/install your project, with some pretty confusing error messages that are confusing you, wait what?
+is \`\['apple', 'bad apple', 'cherry', 'durian'\]\`a block in this context and are we calling the method \`isEven\`on that block? Does \`isEven\` used to only return true or false and if true \`do |fruit|   puts 'Yum!  I just love '+fruit+' pies, don\\'t you?' end\`is executed? also what is this line doing \`self.each do |object|       if isEven         wasABlock\_nowAProc.call object       end\`? if isEven is true then call \`\[1, 2, 3, 4, 5\]\`with the object??? what does calling that block with object mean?
 
-Because... puma [3.12.3](https://rubygems.org/gems/puma/versions/3.12.3) and [4.3.2](https://rubygems.org/gems/puma/versions/4.3.2) were yanked. 
-
-I think because they maybe didn't successfully patch the vulnerability? Maybe added new bugs too? Hard to say from the puma [History.md](https://github.com/puma/puma/blob/master/History.md#433-and-3124--2020-02-28). This seems to be the [relevant PR](https://github.com/puma/puma/pull/2136), referncing [this issue](https://github.com/puma/puma/issues/2132) I don't entirely understand what happened; maybe 3.12.3/4.3.2 failed to patch the vuln, and introduced a fairly severe new bug?
-
-So, anyway, just update to puma 3.12.4 or 4.3.3, and you're good. 
-
-Yanking a gem is really disruptive and confusing, but sometimes has to be done. Perhaps this one of those times.
-
-It's interesting how dependabot in the mix can make things even more confusing.
-## [4][David Bryant Copeland, Author of Sustainable Web Development with Ruby on Rails - The Rails with Jason Podcast](https://www.reddit.com/r/ruby/comments/fd16pk/david_bryant_copeland_author_of_sustainable_web/)
-- url: https://www.codewithjason.com/rails-with-jason-podcast/david-bryant-copeland/
+&amp;#x200B;
+## [7][Building a Rails App With Multiple Subdomains](https://www.reddit.com/r/ruby/comments/fddbrx/building_a_rails_app_with_multiple_subdomains/)
+- url: https://blog.appsignal.com/2020/03/04/building-a-rails-app-with-multiple-subdomains.html
 ---
 
-## [5][Ruby 2.7 introduces numbered parameters as default block parameters](https://www.reddit.com/r/ruby/comments/fcwvgg/ruby_27_introduces_numbered_parameters_as_default/)
-- url: https://blog.bigbinary.com/2020/03/03/ruby-2-7-introduces-numbered-parameters-as-default-block-parameters.html
+## [8][JRuby on Windows Day 0 - Install and Hello World](https://www.reddit.com/r/ruby/comments/fddrbf/jruby_on_windows_day_0_install_and_hello_world/)
+- url: http://notepad.onghu.com/2020/jruby-win-day0-install-hello_world/
 ---
 
-## [6][Ruby websocket server + event loop](https://www.reddit.com/r/ruby/comments/fd0co2/ruby_websocket_server_event_loop/)
-- url: https://www.reddit.com/r/ruby/comments/fd0co2/ruby_websocket_server_event_loop/
+## [9][What tool would you recomend to document a Ruby Web Api?](https://www.reddit.com/r/ruby/comments/fdhnty/what_tool_would_you_recomend_to_document_a_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/fdhnty/what_tool_would_you_recomend_to_document_a_ruby/
 ---
-Hello my ruby friends!  
-We need to build a simple websocket server for our internal use and started experimenting with [https://github.com/igrigorik/em-websocket](https://github.com/igrigorik/em-websocket) which has a lot of stars but last release was on Apr 23, 2014 which made me worried. 
-
-My questions are:
-
-1. If you want to build websocket server on ruby what's the gem to go now? (I am aware about performance issues, it's not the case for us). falcon + async-websocket is a good option?
-2. For some reason when I run our prototype with EventMachine + em-websocket in docker locally it stuck on [`EM.run`](https://EM.run) line but works fine if I pass `-t` option to allocate virtual pseudo terminal `docker run -t`. Since I want to run it with AWS ECS I can't pass that option there, is there any work around?
-## [7][SpreadsheetArchitect v4.0.0 is now released!](https://www.reddit.com/r/ruby/comments/fcyoue/spreadsheetarchitect_v400_is_now_released/)
-- url: https://www.reddit.com/r/ruby/comments/fcyoue/spreadsheetarchitect_v400_is_now_released/
----
-Spreadsheet Architect v4.0.0 has now been released. Changes include switching to Caxlsx gem, Ruby 2.3+ required, and XLSX freeze support. Check the changelog for more details. [https://github.com/westonganger/spreadsheet\_architect](https://github.com/westonganger/spreadsheet_architect)
-## [8][Optimizing full-text search with Postgres materialized view in Rails](https://www.reddit.com/r/ruby/comments/fctdqz/optimizing_fulltext_search_with_postgres/)
-- url: https://caspg.com/blog/optimizing-full-text-search-with-postgres-materialized-view-in-rails
+I have a Rubi Web api but it doesnt have documentation or any form for a person to know how it works (only the developers knows how it works), i need to document it to allow people online to use it in the right way.
+## [10][`insert_all` and `upsert_all` ActiveRecord methods (a short recap)](https://www.reddit.com/r/ruby/comments/fd9iim/insert_all_and_upsert_all_activerecord_methods_a/)
+- url: https://frontdeveloper.pl/2020/03/insert_all-and-upsert_all-activerecord-methods/
 ---
 
-## [9][geo-info - A dead simple reverse geocoding API](https://www.reddit.com/r/ruby/comments/fd1dmn/geoinfo_a_dead_simple_reverse_geocoding_api/)
-- url: https://geo-info.co
----
-
-## [10][Tip: A great way to learn about Ruby - join a local meetup - what's your local meetup?](https://www.reddit.com/r/ruby/comments/fd0j46/tip_a_great_way_to_learn_about_ruby_join_a_local/)
-- url: https://www.reddit.com/r/ruby/comments/fd0j46/tip_a_great_way_to_learn_about_ruby_join_a_local/
----
-Hello, a great way to keep learning about ruby is joining a local meetup. What's your local? Any meetups around? Any comments welcome. 
-
-PS: Greetings from Vienna, Austria. We host an informal meetup / stammtisch once a month in a coffee house, see &lt;https://viennarb.github.io/&gt;. What's your format? What's your preference - more talks, less coding or just burger &amp; beer?

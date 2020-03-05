@@ -31,69 +31,86 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google cancels IO 2020](https://www.reddit.com/r/androiddev/comments/fd0zrd/google_cancels_io_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/fd0zrd/google_cancels_io_2020/
+## [3][App removed from playstore.](https://www.reddit.com/r/androiddev/comments/fdswex/app_removed_from_playstore/)
+- url: https://www.reddit.com/r/androiddev/comments/fdswex/app_removed_from_playstore/
 ---
-Just received an email from them:
+Every morning when I wake up I check my phone. I am always a little bit anxious of seeing this little icon from the google console in my notification bar. Usually not good news.   
+This morning I saw that icon and almost got a heart attack when I read the notification:  
+all my apps removed because of violation of the developer content policy. They did not send me an email at all. What the hell, this cannot be true. Not again please!    
+Immediately contacted my account manager at Google admob. Asked him if he could forward my issue directly to the playstore team.  
+And of course i quickly went over all my apps. Checking for missing things like app ratings etc. Found an email from last year from the Google Playstore saying: \[Action Required\] Switch to the Play Referrer API by March 1, 2020. I remember that the issue was actually in one of the firebase libs which were not fixed even a month ago. Could it be that? Lets update the libs first. I also noticed that inside the user aqcuisition section of my apps there was a warning about some kind of expired payment method. Weird, because I am not using that functionality. Checked [google.ads](https://google.ads) and found out that my creditcard was expired. Updated it immediately.
 
-&gt; Due to concerns around the coronavirus (COVID-19), and in accordance with health guidance from the CDC, WHO, and other health authorities, we have decided to cancel the physical Google I/O event at Shoreline Amphitheatre.
-&gt; 
-&gt; All guests who have purchased tickets to I/O 2020 will receive a full refund by March 13, 2020. If you don’t see the credit on your statement by then, please reach out to io@google.com. Guests who have registered for I/O 2020 will not need to enter next year’s drawing and will be automatically granted the option of purchasing an I/O 2021 ticket.
-&gt; 
-&gt; Over the coming weeks, we will explore other ways to evolve Google I/O to best connect with our developer community. We will keep the Google I/O website updated with additional information.
-&gt; 
-&gt; As always, we appreciate your enthusiasm and patience. For additional questions, please contact io@google.com
-&gt; 
-&gt; The Google I/O Team
+I filed quickly a new update of all the apps without testing them. Published it and 2 hours laters i got a notification again that my apps are back live! Amazing. My entire morning's mood changed from a hopeless , feared and angered person to the happiest man on earth.   
 
-Doesn't seem like they have updated their website yet, however.
-## [4][Google map pricing for putting markers in app](https://www.reddit.com/r/androiddev/comments/fdao9w/google_map_pricing_for_putting_markers_in_app/)
-- url: https://www.reddit.com/r/androiddev/comments/fdao9w/google_map_pricing_for_putting_markers_in_app/
+
+Nevertheless i find it still unacceptable that these kind of things are possible. I still don't know what the real issue was. My apps are having about 5m daily users and are for a large part generating income for my company. App business remains a still risky one!
+## [4][2 WorkManager releases today](https://www.reddit.com/r/androiddev/comments/fdhb7p/2_workmanager_releases_today/)
+- url: https://www.reddit.com/r/androiddev/comments/fdhb7p/2_workmanager_releases_today/
 ---
-So i am a bit confused as some say i have to pay whereas others say it's free for mobile one of the doc. say that to use  markers  its $7 per 1k request whereas other say its free for a mobile app so just want to know from the community and confirm it
-## [5][The joys of getting review bombed by one person.](https://www.reddit.com/r/androiddev/comments/fczkpj/the_joys_of_getting_review_bombed_by_one_person/)
-- url: https://i.redd.it/939wn840aik41.png
----
+2 releases of WorkManager today !
 
-## [6][PSA: Android Studio 3.6 tends to forget your active build flavor, in which case pressing 'Run' button executes 'assemble' task, and runs compilation for ALL flavors in ALL build types (both debug and release)](https://www.reddit.com/r/androiddev/comments/fcuyn7/psa_android_studio_36_tends_to_forget_your_active/)
-- url: https://www.reddit.com/r/androiddev/comments/fcuyn7/psa_android_studio_36_tends_to_forget_your_active/
----
-I thought I was messing something up originally, but it seems that if you switch between flavors, Android Studio 3.6 issues `gradlew assemble` and then no wonder the build takes more than 10 minutes.
+Here are the release notes.
 
-It's better to use terminal command `gradlew :app:assembleFlavorIActuallyWantDebug` to avoid this issue.
-## [7][Kotlin 1.3.70](https://www.reddit.com/r/androiddev/comments/fcymq4/kotlin_1370/)
-- url: https://github.com/JetBrains/kotlin/releases/tag/v1.3.70
----
+* [WorkManager version 2.3.3](https://developer.android.com/jetpack/androidx/releases/work#2.3.3) and
+* [WorkManager 2.4.0-alpha01](https://developer.android.com/jetpack/androidx/releases/work#2.4.0-alpha01).
 
-## [8][Books to read for mobile development](https://www.reddit.com/r/androiddev/comments/fdcf2m/books_to_read_for_mobile_development/)
-- url: https://www.reddit.com/r/androiddev/comments/fdcf2m/books_to_read_for_mobile_development/
----
-Hi.Which books do you recommand to read as a mobile developer?I would like to read books that talk about market,how to make downloads and how to have succes now those who talk about languages.Do you have any recomandations?
-## [9][Getting started on freelancing](https://www.reddit.com/r/androiddev/comments/fdc1ue/getting_started_on_freelancing/)
-- url: https://www.reddit.com/r/androiddev/comments/fdc1ue/getting_started_on_freelancing/
----
-Hi,
+Keep on background processing.  
 
-I currently work as Android Developer but I am looking to go freelance. Do you have any piece of advice to give me? Any particular good website? 
 
-Thanks :)
-## [10][Kotlin 1.3.70 released](https://www.reddit.com/r/androiddev/comments/fczl9s/kotlin_1370_released/)
-- url: https://blog.jetbrains.com/kotlin/2020/03/kotlin-1-3-70-released/
+There is one more bug-fix release for 2.3 planned. So please file bugs if you see anything odd.   
+Thanks ! 
+## [5][When to move to the next version](https://www.reddit.com/r/androiddev/comments/fdtvn3/when_to_move_to_the_next_version/)
+- url: https://www.reddit.com/r/androiddev/comments/fdtvn3/when_to_move_to_the_next_version/
+---
+I have written and published a few apps. I get the to the point of working then publish them, then see how they do and what their pick-up is. A couple of them are doing better than the others. At what point would you start work on the next, prettier version?
+
+Apps here [JumblyApps](http://jumblyapps.com/)
+## [6][Getting rid of the white screen on the app start up](https://www.reddit.com/r/androiddev/comments/fdjpj8/getting_rid_of_the_white_screen_on_the_app_start/)
+- url: https://www.coroutinedispatcher.com/2020/03/getting-rid-of-white-screen-on-app.html
 ---
 
-## [11][Android is blocking word Coronavirus in Google Play Stote](https://www.reddit.com/r/androiddev/comments/fd07ou/android_is_blocking_word_coronavirus_in_google/)
-- url: https://i.redd.it/t21k5gvchik41.png
+## [7][My android studio is so slow it's frustrating. Is there anything I can do to make it faster? Or are there any other programs that I can use instead?](https://www.reddit.com/r/androiddev/comments/fdt772/my_android_studio_is_so_slow_its_frustrating_is/)
+- url: https://www.reddit.com/r/androiddev/comments/fdt772/my_android_studio_is_so_slow_its_frustrating_is/
+---
+I have an old(er) PC and Ubuntu installed because it ran faster than Windows that was previously on it. It has 6GB  RAM and I know that android studio uses at least 8GB to function normally, but that's the best I got for now. It literally takes 10+ minutes for emulator to just turn on. The feeling reminds me of the old days when the internet was slow AF. Is there anything I can do?
+## [8][How does one make a progress bar for music appear on Bluetooth speakers?](https://www.reddit.com/r/androiddev/comments/fdhwu5/how_does_one_make_a_progress_bar_for_music_appear/)
+- url: https://i.redd.it/6c04q0azepk41.png
 ---
 
-## [12][I feel like such a n00b](https://www.reddit.com/r/androiddev/comments/fd4qlh/i_feel_like_such_a_n00b/)
-- url: https://www.reddit.com/r/androiddev/comments/fd4qlh/i_feel_like_such_a_n00b/
+## [9][Is it possible to eliminate javac compilation completely for a 100% Kotlin app?](https://www.reddit.com/r/androiddev/comments/fdq9ho/is_it_possible_to_eliminate_javac_compilation/)
+- url: https://www.reddit.com/r/androiddev/comments/fdq9ho/is_it_possible_to_eliminate_javac_compilation/
 ---
-I've been writing android apps professionally for 7 years. Wrote several personal apps prior to that and have been steeped in android since the froyo days.
+Even with 100% Kotlin source code, will some of the generated files (Navigation, ViewBinding, R class, etc) prevent compilation to be purely kotlinc?
+## [10][What is your advice for a First Time Android Camera App Developer](https://www.reddit.com/r/androiddev/comments/fds2l3/what_is_your_advice_for_a_first_time_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fds2l3/what_is_your_advice_for_a_first_time_android/
+---
+Hi Android Developers, I have been developing android apps for 4 years now and I am well versed with android but this is my first time with android camera2 api. I am well aware that it is a pain to work with camera in android, so can you tell me and other first time Camera app developers what are the common pitfalls and advice that one needs to be aware about.
 
-But I'm in a contract now and feel like such a n00b.
+&amp;#x200B;
 
-These guys love alpha code. If Google comes out with something new, it's in their apps within days. That's not bad. It's just tiring. Having absorbed and learned various patterns, classes or architecture that Google promotes and then deprecates (ie AsyncTasks, Broadcast Receivers, Content resolver, oh, I could go on and on) while introducing new patterns classes and architecture (WorkManager, Paging Library, androidx, view binding, and on and on) I feel like like all my previous knowledge is worthless. I'm learning all the new stuff, which is cool, but really difficult to be billed as "senior android developer" and get shit done without getting bogged down in trying to understand new things.  
+Edit: I just checked CameraX turned Beta Last Week (Good News)
 
-Anyone else ever feel like that?   I feel like like a junior developer who studied the most recent googly shit for a couple of weeks would stomp me in a sprint comparing story points completed. 
+[https://developer.android.com/jetpack/androidx/releases/camera](https://developer.android.com/jetpack/androidx/releases/camera)
+## [11][Help to choose an up-to-date Course](https://www.reddit.com/r/androiddev/comments/fdtvfm/help_to_choose_an_uptodate_course/)
+- url: https://www.reddit.com/r/androiddev/comments/fdtvfm/help_to_choose_an_uptodate_course/
+---
+I'm a mid experienced Android developer and lately, I found difficult to correctly use all the "good" stuff that the Android team pushed in the last 2 years, in particular:
 
-How can I get that "I really do know wtf I'm doing" feeling back?
+  
+\- Architecture Componentes and the MVP logic  
+\- Coroutines  
+\- Data Binding
+
+&amp;#x200B;
+
+So I decided to join a course on these topics but literally I couldn't find one that is 100% up-to-date with the latest stuff of end 2019.
+
+Paid courses are welcome, even on-site one (London).
+
+Do you have any suggestion for these topics?
+
+Thank you very much.
+## [12][Localizing A Game Into French—Which Variant Should You Choose?](https://www.reddit.com/r/androiddev/comments/fdthzw/localizing_a_game_into_frenchwhich_variant_should/)
+- url: https://www.leveluptranslation.com/single-post/localizing-a-game-into-french-which-variant-should-you-choose
+---
+

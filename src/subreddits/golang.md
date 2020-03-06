@@ -1,166 +1,87 @@
 # golang
-## [1][dotGo 2020 has been cancelled](https://www.reddit.com/r/golang/comments/fdkbd1/dotgo_2020_has_been_cancelled/)
-- url: https://twitter.com/dotGoEu/status/1234767083369639937
+## [1][Designed in ZPL !](https://www.reddit.com/r/golang/comments/fecwcd/designed_in_zpl/)
+- url: https://i.redd.it/6ygxcb44s1l41.jpg
 ---
 
-## [2][Unit testing CLI programs](https://www.reddit.com/r/golang/comments/fdrx7b/unit_testing_cli_programs/)
-- url: https://medium.com/swlh/unit-testing-cli-programs-in-go-6275c85af2e7
+## [2][emoji: A minimalistic emoji package for Go](https://www.reddit.com/r/golang/comments/fe21os/emoji_a_minimalistic_emoji_package_for_go/)
+- url: https://www.reddit.com/r/golang/comments/fe21os/emoji_a_minimalistic_emoji_package_for_go/
 ---
+[github.com/enescakir/emoji](https://github.com/enescakir/emoji)
 
-## [3][Look what my colleague gave me. It's so cute! 🥰](https://www.reddit.com/r/golang/comments/fdab62/look_what_my_colleague_gave_me_its_so_cute/)
-- url: https://i.redd.it/w44c9ga5emk41.jpg
+It makes emoji usage easier in Golang.
+
+`fmt.Printf("Hello %v", emoji.WavingHand) // Hello 👋`
+
+You don't have to remember emoji names. Your IDE's autocomplete feature handles it.
+## [3][The Goyave web framework is looking for contributors](https://www.reddit.com/r/golang/comments/febjl5/the_goyave_web_framework_is_looking_for/)
+- url: https://www.reddit.com/r/golang/comments/febjl5/the_goyave_web_framework_is_looking_for/
 ---
+https://preview.redd.it/fvcj8bbo21l41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=33bd209135b5014360db861dcb1f43c484113909
 
-## [4][How would you handle database interaction in unit tests?](https://www.reddit.com/r/golang/comments/fdvalp/how_would_you_handle_database_interaction_in_unit/)
-- url: https://www.reddit.com/r/golang/comments/fdvalp/how_would_you_handle_database_interaction_in_unit/
+Hello Gophers!
+
+After being recently added to the [awesome-go](https://github.com/avelino/awesome-go) curated list, I am looking for contributors for the development of Goyave, a feature-complete web framework focused on APIs.
+
+I created some issues on the repository to describe what I have in mind. These issues describe the main idea but not how it should be implemented, the first step is to discuss them and to define a good implementation. Come and take part in the discussion!
+
+PM or email me if needed.
+
+Repo URL: [https://github.com/System-Glitch/goyave](https://github.com/System-Glitch/goyave)
+## [4][Tool capable of hiding any file within your images](https://www.reddit.com/r/golang/comments/fdvbtu/tool_capable_of_hiding_any_file_within_your_images/)
+- url: https://www.reddit.com/r/golang/comments/fdvbtu/tool_capable_of_hiding_any_file_within_your_images/
 ---
-Imagine you have started writing a new Go application, and you're about to write some unit tests that require database interaction. How would you do so? How would you store the environment configs for different environments?
+I am developer from Sofia, Bulgaria and i am really proud with my personal project [stegify](https://github.com/DimitarPetrov/stegify). It is a command line tool which performs [steganography](https://en.wikipedia.org/wiki/Steganography) encoding and is implemented in Golang.
 
-I assume I need to use a separate database for tests and to run migrations for this database separately. 
+The tool is capable of hiding any kind of file in any image or set of images. This encoding is 100% clueless and transparent for the eye.
 
-Since previously I was writing applications in Ruby on Rails, I thought it would be best to have separate config/env files for each environment and have some handy commands that could be run on each environment outside of my app's logic.
+In short the file is hidden in the image/s last two bits of each color segment. The technique is known as LSB steganography.
 
-What I managed to do, was storing my environment variables in two files under:
-
-    config/.dev.env
-    config/.test.env
-
-Then using [migrate package](https://github.com/golang-migrate/migrate) for migrations, and putting migrate commands in the Makefile similar to below:
-
-    ENV?=dev
-    
-    include config/.$(ENV).env
-    
-    export
-    POSTGRES_URL=postgres://${POSTGRESQL_USER}:${POSTGRESQL_PASSWORD}@${POSTGRESQL_HOST}:${POSTGRESQL_PORT}/${POSTGRESQL_DB}?sslmode=disable
-    
-    # create the database
-    .PHONY: db-create
-    db-create:
-    	@env "PGPASSWORD=${POSTGRESQL_PASSWORD}" psql -h "${POSTGRESQL_HOST}" -p "${POSTGRESQL_PORT}" \
-    			-U "${POSTGRESQL_USER}" -w -c "SELECT 1 FROM pg_database WHERE datname = '${POSTGRESQL_DB}';" \
-    			| grep 1 \
-    			|| env "PGPASSWORD=${POSTGRESQL_PASSWORD}" psql -h "${POSTGRESQL_HOST}" -p "${POSTGRESQL_PORT}" \
-    				-U "${POSTGRESQL_USER}" -w -c "create database \"${POSTGRESQL_DB}\";"
-    
-    # apply all new migrations. pass steps flag to limit number of migrations to run
-    .PHONY: migrate-up
-    migrate-up:
-    	@migrate -database ${POSTGRES_URL} -path ./database/migrations up ${steps}
-
-This allows me to run migrations for my test database with a simple: `make migrate-up ENV=test`
-
-I have not found a similar approach looking at other go applications. Is there a better way?
-## [5][Plik - OpenSource temporary file upload system ( wetransfer like ) in Go](https://www.reddit.com/r/golang/comments/fdv9ku/plik_opensource_temporary_file_upload_system/)
-- url: https://www.reddit.com/r/golang/comments/fdv9ku/plik_opensource_temporary_file_upload_system/
----
-We are pleased to release a first RC of Plik 1.3
-
-Plik is an OpenSource temporary file upload system ( wetransfer like )
-
-It is shipped with a cool UI and CLI.  
-Files can be stored locally or in S3 or OpenStack Swift.  
-Metadata can be stored locally ( sqlite3 ) or in a postgresql database.  
-It supports authentication using local users or Goolgle API.  
-
-
-Some cool features like one shot upload deleted after the first download, stream mode where the files are not stored on the server and piped directly from the uploader to the dowloader, basic auth protection,...
-
-Give it a go ;)
-## [6][Use or gRPC or json/REST for web services?](https://www.reddit.com/r/golang/comments/fdsy9h/use_or_grpc_or_jsonrest_for_web_services/)
-- url: https://www.reddit.com/r/golang/comments/fdsy9h/use_or_grpc_or_jsonrest_for_web_services/
----
-Hi, I am building a side project which requires to deploy an agent in customers docker clusters.
-
-This agent will look for some events and push them to a backend server.
-
-Right now, I have implemented 2 kinds of way to transmit those events:
-
-* based on grpc (stream and non-stream)
-* json/REST
-
-In the case of a grpc stream, I would need to open the stream at the beginning of the program, keep the stream open and push events to the stream whenever they are coming. Would you see any drawback in keeping that connection open for the entire lifecycle of the process? Is the grpc client smart enough to maintain the connection open *no matter what*?
-
-I can see some cons of using grpc for non-internal communication: mostly it requires that the connection is not intercepted by TLS terminating proxies which is not often the case. It feels like the advantages of using grpc (security, performance) in that case do not counter-balance the drawbacks I might face and I might be digging a rabbit hole.
-
-What's your experience with grpc based web-services? would you recommend it in my use case?
-## [7][Zip file with nested folders and architecture issue](https://www.reddit.com/r/golang/comments/fdv1bb/zip_file_with_nested_folders_and_architecture/)
-- url: https://www.reddit.com/r/golang/comments/fdv1bb/zip_file_with_nested_folders_and_architecture/
----
-I'm trying to build a web application which 
-• Takes input from user
-• Uses it to run a process which creates files
-• Serves them to the user
-
-
-Right now this is the flow of the app
-• Takes some input from a html form
-• Runs an external process (with os/exec) that uses user input as flags. 
-• External process creates directories with files
-• Zip the files I need 
-• Serve them to the user
-
-The way I separate files for each user is that for every request I create a random directory for each.
-I then run the external program and set each user's directory as the output dir.
-
-My issue is that this external program creates other directories and then puts actual output in the most nested so for every request I have :
-RandomUserDir/X/output/*FilesINeedToZip
-
-When I try to zip these files, the .zip I get will have the same structure when unzipped so the end user will see and have to go through all 3 directories before accessing his files which is not really great user experience.
-
-Warning : the following feels like really bad practice
-
-I tried to solve this by running os.Chdir and going into the output directory to zip the files and then zip which works - i don't get all dirs in the zip file - but if the user tries to make another request it won't work because the app will try to chdir in the directory it's already in
-
-I solved this by having the handler chdir back to the original directory where data is stored and things kind of work now but when two users make a request simultaneously one of them will still get an error because of chdir.
-
-This feels like pretty bad design so do you know what would be a better way to architecture this ?
- And maybe a way of not getting all directories when zipping but juste the files i need?
-
-Any help would be appreciated thank you.
-## [8][VSCode Rant](https://www.reddit.com/r/golang/comments/fdggl7/vscode_rant/)
-- url: https://www.reddit.com/r/golang/comments/fdggl7/vscode_rant/
----
-I need to rant because my frustration with Go and Vscode can no longer be contained.
+I am happy to share with you guys, that i have managed to create a new version (v1.2) which now provides an option to hide your file in multiple images, divided into chunks.
 
 &amp;#x200B;
 
-I am primarily a Backend NodeJS Developer, but I love go. I have been advocating for years to use Go at my job. I have written some tools in Go that were adopted with success at my work. I have written small personal projects and had a blast doing it.
-
-&amp;#x200B;
-
-However, the state of gopls, and the vscode integration is just so terrible that I am no longer comfortable recommending Go to other developers who are primarily web based or from a Javascript background. Vscode intelisense and type inference is better for vanilla js than it is for go, a static language. The language server is constantly broken, and since I have updated Go to v1.14 I can't get the language server to work at all. My symbols are never loaded. No features work.
-
-&amp;#x200B;
-
-I understand that people will tell me to switch to GoLand, but I don't like JetBrain products. Nothing wrong with them but they're not for me, and regardless I am not going to try and convince a team of web developers to change their editors so they can pick up a new language. Just not going to happen.
-
-&amp;#x200B;
-
-I understand people debate go over "err != nil" or lack of generics, or issues that are language related. But having the tooling broken with arguably the most popular code editor is just unacceptable. 
-
-&amp;#x200B;
-
-Currently I have no pleasant environment to work with Go. I might as well download notepad++ and run a terminal instance next to it and depend entirely on the compiler messages.
-
-&amp;#x200B;
-
-As it stands, as much as I love Go, I think until the editor tooling gets better, I have no choice but to abandon my efforts to get other people to use it, because I myself am not enjoying my experience coding in my favourite language. Even my own personal adoption of it is decreasing over time just because of how piss poor the developer experience is now.
-
-&amp;#x200B;
-
-Rant over.
-
-&amp;#x200B;
-
-If anybody has a magic bullet / config to fix vscode and go I would love to hear it.
-
-Otherwise, I'll check back in with the next few months hoping it is resolved, but I somehow doubt they won't just break it again immediately.
-## [9][Is it normal to literally google everything?](https://www.reddit.com/r/golang/comments/fdtnit/is_it_normal_to_literally_google_everything/)
-- url: https://www.reddit.com/r/golang/comments/fdtnit/is_it_normal_to_literally_google_everything/
+It would be great if you share some feedback and ideas (Encoding in multiple images introduced with v1.2 is inspired by a community feature request). Thanks!
+## [5][anz-bank/protoc-gen-sysl - Generate sysl source code from .proto files](https://www.reddit.com/r/golang/comments/feafs8/anzbankprotocgensysl_generate_sysl_source_code/)
+- url: https://github.com/anz-bank/protoc-gen-sysl
 ---
-I'm new, but I'm not new new, like 8 months new. I google literally anything. Even things that i did them 15-20 times before. Should i start memorizing or this is something normal?
-## [10][Forward proxy with rate limiting.](https://www.reddit.com/r/golang/comments/fdth2t/forward_proxy_with_rate_limiting/)
-- url: https://github.com/jamesmoriarty/goforward
+
+## [6][GolangGDL Community February Meetup 2020 Guadalajara, México](https://www.reddit.com/r/golang/comments/fe8759/golanggdl_community_february_meetup_2020/)
+- url: https://www.reddit.com/r/golang/comments/fe8759/golanggdl_community_february_meetup_2020/
+---
+Here it is our last february 2020 meetup about golang in Guadalajara, México.
+
+[https://www.youtube.com/watch?v=CzLf8oCtT2o](https://www.youtube.com/watch?v=CzLf8oCtT2o)
+## [7][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/golang/comments/fed2gy/top_5_frontend_development_outsourcing_challenges/)
+- url: http://drdobbss.xyz
+---
+
+## [8][dque 2.2.0 released - fast, embedded, durable queue for Go](https://www.reddit.com/r/golang/comments/fdz5fh/dque_220_released_fast_embedded_durable_queue_for/)
+- url: https://www.reddit.com/r/golang/comments/fdz5fh/dque_220_released_fast_embedded_durable_queue_for/
+---
+[https://github.com/joncrlsn/dque](https://github.com/joncrlsn/dque) \- dque is a fast, embedded, durable queue for Go
+
+dque version 2.2.0 now has blocking dequeue and peek methods.
+
+dque version 2.1.0 added a lock file to prevent simultaneous processes using the same queue directory.
+
+Thank you, Thomas Kriechbaumer.
+## [9][Documentation on getting gRPC working with the new Go protoreflect API?](https://www.reddit.com/r/golang/comments/fe3a4k/documentation_on_getting_grpc_working_with_the/)
+- url: https://www.reddit.com/r/golang/comments/fe3a4k/documentation_on_getting_grpc_working_with_the/
+---
+Thanks to the [Go blog post about it](https://blog.golang.org/a-new-go-api-for-protocol-buffers), I recently learned of the new version of the protocol buffer API which serves my exact needs for auditing gRPC messages sent through services. Using the latest version of protoc and the new installation of protoc-gen-go (`go install` [`google.golang.org/protobuf/cmd/protoc-gen-go`](https://google.golang.org/protobuf/cmd/protoc-gen-go)) I can compile a simple `message` in a .proto file no worries using `protoc --proto_path=. test.proto --go_out=.`.
+
+Following [this guide to generating Go code for protobufs](https://developers.google.com/protocol-buffers/docs/reference/go-generated), this doesn't generate anything for a `service` defined in that same proto file. Unfortunately, the [gRPC Go Quickstart guide](https://github.com/grpc/grpc-go/tree/master/examples) linked in the previous article doesn't seem to be updated for the new protoc-gen-go, and using `--go_out=plugins=grpc:.` gives the following error:
+
+&gt;`--go_out: protoc-gen-go: plugins are not supported; use 'protoc --go-grpc_out=...' to generate gRPC`
+
+But using `--go-grpc_out=.` also gives an error:
+
+&gt;`'protoc-gen-go-grpc' is not recognized as an internal or external command, operable program or batch file.`
+
+Which makes sense, since that's the syntax for a protoc plugin that doesn't seem to exist.
+
+Is there documentation for how to generate gRPC services without falling back to the old protoc-gen-go and losing the `protoreflect.Message` interface? Am I missing something obvious?
+## [10][An opinionated guide on making microservices communicate! Your thoughts!!?](https://www.reddit.com/r/golang/comments/fdve7b/an_opinionated_guide_on_making_microservices/)
+- url: https://medium.com/spaceuptech/the-right-way-of-making-microservices-communicate-b6cd517ae702
 ---
 

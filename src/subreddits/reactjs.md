@@ -86,100 +86,79 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][My first open source app: Sup, a Slack client with WhatsApp like UI. built using react-native and react-native-web](https://www.reddit.com/r/reactjs/comments/fdt78p/my_first_open_source_app_sup_a_slack_client_with/)
+## [3][Mergefly - A new UI for GitHub](https://www.reddit.com/r/reactjs/comments/fe8w1y/mergefly_a_new_ui_for_github/)
+- url: https://www.reddit.com/r/reactjs/comments/fe8w1y/mergefly_a_new_ui_for_github/
+---
+Hi everyone!
+
+About a year ago, I decided that I didn't really like the current GitHub UI for reading code and doing pull requests so my brother and I decided to put our React/Redux skills to the test and make our own. I am really excited to show off our results and get all of your feedback :)
+
+The site is called [Mergefly](https://mergefly.com) and we tried to add in as many fun features as we could think of such as multiple tabs, a file tree for navigating code, full code context, floating comments, live updates, hotkeys and Slack integration. We also use the Monaco Editor for displaying code so you get a lot of the built in features that you see in VSCode. Also, for fun, we added support for all the monaco themes so you have around 50 to choose from.
+
+I'm really proud of how the site turned out as well as how well my React skills have grown and I really hope you guys enjoy it too! If you guys have any ideas for improvements please let me know! It's still very much a work in progress.
+
+https://reddit.com/link/fe8w1y/video/xgp9os2eozk41/player
+## [4][My first open source app: Sup, a Slack client with WhatsApp like UI. built using react-native and react-native-web](https://www.reddit.com/r/reactjs/comments/fdt78p/my_first_open_source_app_sup_a_slack_client_with/)
 - url: https://v.redd.it/hgky41mnvtk41
 ---
 
-## [4][Beautiful React Hooks - a collection of beautiful (and hopefully useful) React hooks to speed-up your components and hooks development](https://www.reddit.com/r/reactjs/comments/fdiqm7/beautiful_react_hooks_a_collection_of_beautiful/)
-- url: https://beautifulinteractions.github.io/beautiful-react-hooks/
+## [5][Create simple POS with React, Node and MongoDB #5: Setup ReCaptcha and define CORS](https://www.reddit.com/r/reactjs/comments/feag3c/create_simple_pos_with_react_node_and_mongodb_5/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-5-setup-recaptcha-and-define-cors/
 ---
 
-## [5][Hey guys I think it was a good idea to post this here too! I build an API to get stocks prices, financial statements, forex, crypto for you to create chart, portfolio graph.](https://www.reddit.com/r/reactjs/comments/fduf5e/hey_guys_i_think_it_was_a_good_idea_to_post_this/)
-- url: https://www.reddit.com/r/reactjs/comments/fduf5e/hey_guys_i_think_it_was_a_good_idea_to_post_this/
+## [6][Anyone know a React component or at least SVG css animation like this?](https://www.reddit.com/r/reactjs/comments/feao9f/anyone_know_a_react_component_or_at_least_svg_css/)
+- url: https://youtu.be/MBFEEJUdwnQ
 ---
-Hey guys I thought I would be really interesting to share this here too!
 
-I wanted to let you know that I Just finished a javascript [free stock API](https://financialmodelingprep.com/developer/docs/) you don't need any API keys you can test it and get real time stock price, forex crypto, historical data.
+## [7][Forms in React - must we really update the component on each character entered?](https://www.reddit.com/r/reactjs/comments/fecu2j/forms_in_react_must_we_really_update_the/)
+- url: https://www.reddit.com/r/reactjs/comments/fecu2j/forms_in_react_must_we_really_update_the/
+---
+I have been doing this for a while but find myself wondering what the point is.
 
-You have also access to 1min 5min. 15min 1hour data from stocks, forex.
+If the user is entering an email and then pressing `Submit`, what exactly do we gain from setting `email` state to the latest character entered?
 
-You will be able to create portfolio, charts, access market data.
+Isn't it just as good to do something like this?
 
-Let me know what you think about it.
+    onSubmit = (currentInputValue) =&gt; doSomeLogic(currentInputValue)
 
-I did an example in React:
+What's more - by setting state on each key press, am I not wasting computing resources and risk running into issues like missing characters if the user types or backspaces too fast?
+## [8][Redux Toolkit v1.3.0-beta.0: new `createAsyncThunk` and `createEntityAdapter` APIs, Immer 6.0, smaller bundle sizes!](https://www.reddit.com/r/reactjs/comments/fdynkd/redux_toolkit_v130beta0_new_createasyncthunk_and/)
+- url: https://github.com/reduxjs/redux-toolkit/releases/tag/v1.3.0-beta.0
+---
 
-[https://jsfiddle.net/prem7qdx/2/](https://jsfiddle.net/prem7qdx/2/)
+## [9][Looking for constructive feedback](https://www.reddit.com/r/reactjs/comments/febyww/looking_for_constructive_feedback/)
+- url: https://www.reddit.com/r/reactjs/comments/febyww/looking_for_constructive_feedback/
+---
+Hi, 
 
-Here is the github:
+This is Sanjay and I am an expert React Developer and looking to get feedback on my recent work.
 
-[https://github.com/antoinevulcain/Financial-Modeling-Prep-API](https://github.com/antoinevulcain/Financial-Modeling-Prep-API)
+Github: [https://github.com/makasanas](https://github.com/makasanas)
 
-Cheers,
+Recent projects:
+
+[https://busright.com/](https://busright.com/)
+
+[https://vue.co/](https://vue.co/)
+
+[https://www.webrexstudio.com/book-reader/](https://www.webrexstudio.com/book-reader/)
+## [10][Is there any alternative to react-admin for auto generated admin dashboard for crud rest api?](https://www.reddit.com/r/reactjs/comments/febw1j/is_there_any_alternative_to_reactadmin_for_auto/)
+- url: https://www.reddit.com/r/reactjs/comments/febw1j/is_there_any_alternative_to_reactadmin_for_auto/
+---
+I have a crud rest api and I want some simple UI to work with it. I know there is a react-admin, but before jumping into it I would like to know is there any alternative.
+## [11][What do you feel could be improved most about React Native?](https://www.reddit.com/r/reactjs/comments/fe5i6p/what_do_you_feel_could_be_improved_most_about/)
+- url: /r/expojs/comments/fe5hlt/what_do_you_feel_could_be_improved_most_about/
+---
+
+## [12][ReactJs Google Ads](https://www.reddit.com/r/reactjs/comments/fea4yr/reactjs_google_ads/)
+- url: https://www.reddit.com/r/reactjs/comments/fea4yr/reactjs_google_ads/
+---
+Hi there!
+
+I am beginner to react web app. And i switched from Unity to React about 4 months ago. I have designed a very simple react web app. But now i am thinking of adding google ads. I looked around on on Google and i found few npm packages.
 
 &amp;#x200B;
 
-&amp;#x200B;
+&gt;*Note: According to google it will take 24-48 hours to display ads*
 
-https://reddit.com/link/fduf5e/video/pbunpisejuk41/player
-## [6][React Query Devtools Released!](https://www.reddit.com/r/reactjs/comments/fdljx3/react_query_devtools_released/)
-- url: https://github.com/tannerlinsley/react-query-devtools
----
-
-## [7][Mini social network that I made as my first MERN stack project.](https://www.reddit.com/r/reactjs/comments/fdbgcl/mini_social_network_that_i_made_as_my_first_mern/)
-- url: https://github.com/misa-j/social-network
----
-
-## [8][NextJS with Guillermo Rauch - Software Engineering Daily](https://www.reddit.com/r/reactjs/comments/fdilam/nextjs_with_guillermo_rauch_software_engineering/)
-- url: https://softwareengineeringdaily.com/2020/03/02/nextjs-with-guillermo-rauch/
----
-
-## [9][What test automation tool should I use for a React / Redux webapp that uses MS Oauth2 &amp; another authorization flow on top of that?](https://www.reddit.com/r/reactjs/comments/fdty8c/what_test_automation_tool_should_i_use_for_a/)
-- url: https://www.reddit.com/r/reactjs/comments/fdty8c/what_test_automation_tool_should_i_use_for_a/
----
-Hello,
-
-I have reached ''desperate'' status in terms of automation because I can't get passed through the authorization flow. I tried testcafe and and cypress.
-
-Full disclosure: I have limited TS &amp; programming knowledge.
-
-I will explain the app flow: 
-
-1. Navigate to a link.
-2. Click on a login with microsoft button
-3. You are redirect to [login.microsoft.com](https://login.microsoft.com) and you need to provide an email and password that are part of our Azure AD, you get a client ID, token, all that MS stuff.
-4. Then another redirect happens to our authorization flow, this flow provides the client scopes and checks the token, then generates a cookie.
-5. After all of this, you are redirected to the link at step 1 /client
-
-My problems with testcafe are that I receive an error during login: 
-
-    Error in fixture.beforeEach hook -
-          A request to "our auth link" has failed.
-          Use quarantine mode to perform additional attempts to execute this test.
-          You can find troubleshooting information for this issue at
-          "https://go.devexpress.com/TestCafe_FAQ_ARequestHasFailed.aspx".
-    
-          Error details:
-          Failed to perform a request to the resource at "our auth link" because of
-          an error.
-          Error: Parse Error
-
-Cypress doesn't allow navigation from a super domain to another, disabling security does nothing. I tried cy.request as well, using google to check if what I'm doing is correct.
-
-I tried a bunch of options for testcafe as well and none of them worked.
-
-When doing the login manually, everything works fine, including in-private mode or on a fresh browser.
-
-Do I have any other options? Any kind of help is appreciated, thank you, and sorry if this is a stupid question.
-## [10][Statecharts: A new path for the future of web development](https://www.reddit.com/r/reactjs/comments/fdto3o/statecharts_a_new_path_for_the_future_of_web/)
-- url: https://medium.com/@mschulte_69595/statecharts-a-new-path-for-the-future-of-web-development-9c8a8fb85717
----
-
-## [11][New Team's Local development is unpleasant, to say the least](https://www.reddit.com/r/reactjs/comments/fdr4oh/new_teams_local_development_is_unpleasant_to_say/)
-- url: https://www.reddit.com/r/reactjs/comments/fdr4oh/new_teams_local_development_is_unpleasant_to_say/
----
-I recently joined a new team as a front-end developer and still having a hard time adapting to their system. I mainly work on the UI but the way the local environment is set up right now is that I have to pull the backend code in my local and run the microservices and database in my system. I found this to be odd and overhead for a UI developer since I have to run multiple microservices in my local machine and now I have a code in my system that I have no idea what it's doing. Every time I run into some issue I have to call the backend developers and help me troubleshoot the issue.  I spoke to my team lead and boss about pointing the APIs to the higher environment but they disagreed with my approach and they think the current setup is good practice.  I am learning java in order to be able to debug the backend code but I was also wondering if I could get any advice or example of how people run their backend  while working in the UI?
-## [12][React JS certifications](https://www.reddit.com/r/reactjs/comments/fdswbe/react_js_certifications/)
-- url: https://www.reddit.com/r/reactjs/comments/fdswbe/react_js_certifications/
----
-Hey there, I have been working on a React js for past one year now , and currently looking for an authorized certification for React. I want to be a certified react developer and any certification by Facebook or any such authentic company will be very appreciable. I have gone through many online certification by V skills and Edureka, But I did not find them that authentic. Any leads please.
+But in my case i want to display some dummy ads so that my google adsense account do not any harmful notification from Google.

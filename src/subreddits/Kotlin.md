@@ -1,74 +1,112 @@
 # Kotlin
-## [1][Coroutine Cancellation 101 - zsmb.co](https://www.reddit.com/r/Kotlin/comments/fdijzr/coroutine_cancellation_101_zsmbco/)
-- url: https://zsmb.co/coroutine-cancellation-101/
+## [1][I wrote an article about making Kotlin, Jersey, Jetty, and MongoDB work together to create an easy to maintain RESTful API](https://www.reddit.com/r/Kotlin/comments/febsfa/i_wrote_an_article_about_making_kotlin_jersey/)
+- url: https://blog.gikken.co/kotlin-jersey-jetty-mongodb-creating-a-restful-api/
 ---
 
-## [2][From RxJava to Kotlin Flow: Testing](https://www.reddit.com/r/Kotlin/comments/fduwyu/from_rxjava_to_kotlin_flow_testing/)
+## [2][What's the reasoning behind Kotlins lack of enforcement of checked exceptions?](https://www.reddit.com/r/Kotlin/comments/fe7tvx/whats_the_reasoning_behind_kotlins_lack_of/)
+- url: https://www.reddit.com/r/Kotlin/comments/fe7tvx/whats_the_reasoning_behind_kotlins_lack_of/
+---
+I always thought java was "good" in the way that it forced you to check exceptions. Kotlin being a bit more modern would likely have some proof that their way is "better", no? note, I've never fully understood exceptions and such in java. I've worked in codebases where they were heavily used, some where they weren't really used at all, and others where we were forced to create our own custom exceptions for like anything that could go wrong.
+
+From a language design aspect, I'm curious if kotlin does this well, or is there some other language that does this better? PS. I'm sure most of this stuff is subjective, but I'm just really curious to hear thoughts and discuss.
+## [3][Kotlin Illustrated Guide, Chapter 1 - Variables, Expressions, and Types](https://www.reddit.com/r/Kotlin/comments/fedekh/kotlin_illustrated_guide_chapter_1_variables/)
+- url: https://typealias.com/start/kotlin-variables-expressions-types/
+---
+
+## [4][Anyone know why I'm unable to bind to my service in this code?](https://www.reddit.com/r/Kotlin/comments/febti7/anyone_know_why_im_unable_to_bind_to_my_service/)
+- url: https://www.reddit.com/r/Kotlin/comments/febti7/anyone_know_why_im_unable_to_bind_to_my_service/
+---
+I'm a kotlin/android noob, so I'm still getting my head wrapped around how all the parts of android development work together (specifically, the bluetooth API). I'm trying to adapt [this half-finished example project](https://github.com/Nithinjith/LEKotlin-Android) to get it working on a BLE heart rate peripheral (the stock example from Espressif, running on an ESP32 dev board).
+
+Here's how I'm managing the BLE connection:
+
+    object BLEConnectionManager {
+    
+        private val TAG = "BLEConnectionManager"
+        private var mBLEService: BLEService? = null
+        private var isBind = false
+        private val mServiceConnection = object : ServiceConnection {
+            override fun onServiceConnected(componentName: ComponentName, service: IBinder) {
+                mBLEService = (service as BLEService.LocalBinder).getService()
+                Log.i(TAG, "BLEConnectionManager.onServiceConnected mBLEService = $mBLEService")
+                if (!mBLEService?.initialize()!!) {
+                    Log.e(TAG, "Unable to initialize")
+                }
+            }
+            override fun onServiceDisconnected(componentName: ComponentName) {
+                mBLEService = null
+            }
+        }
+    
+        fun initBLEService(context: Context) {
+            try {
+                if (mBLEService == null) {
+                    val gattServiceIntent = Intent(context, BLEService::class.java)
+                    if (context != null) {
+                        isBind = context.bindService(gattServiceIntent, mServiceConnection,
+                            Context.BIND_AUTO_CREATE)
+                        Log.i(TAG, "BLEConnectionManager.initBLEService isBind = $isBind")
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, e.message)
+            }
+        }
+    
+        fun connect(deviceAddress: String): Boolean {
+            var result = false
+            Log.i(TAG, "BLEConnectionManager.connect (to $deviceAddress) and mBLEService is $mBLEService")
+            if (mBLEService != null) result = mBLEService!!.connect(deviceAddress)
+            return result
+        }
+    // ...etc
+
+And call this in the main activity onCreate:
+
+    if (!BLEDeviceManager.isEnabled()) {
+        val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+        startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT)
+    }
+    BLEConnectionManager.initBLEService(this@MainActivity)
+
+The BLEService class is unchanged from the [original code](https://github.com/Nithinjith/LEKotlin-Android/blob/master/app/src/main/java/com/np/lekotlin/blemodule/BLEService.kt).
+
+When I run it, `$mBLEService` is null in `connect`, and I note that when `initBLEService` is called, `$isBind` is always null too. I therefore think I don't properly understand the mechanics of how services work and what they do in this instance. So, why am I unable to bind the service, and is the binding problem the cause of the service being null?
+## [5][Kotlin Game Development questions](https://www.reddit.com/r/Kotlin/comments/fdwz5s/kotlin_game_development_questions/)
+- url: https://www.reddit.com/r/Kotlin/comments/fdwz5s/kotlin_game_development_questions/
+---
+So I was curious as to how to approach this. I love exploring new stuff and game development was my love for a while. I then switched and went into android dev because it is a bit more employable but I'd like to come back a bit into game dev. I am planning of using Libgdx ( or ktx), any other recommendations for the libraries/ frameworks that I can use I'll gladly hear it out. On the other note, how would you recommend going about networking and multiplayer? I am not too familiar with this and this has been daunting me forever. I get it that you can use basic sockets, but how would for example a gRPC server work? I am most comfortable with Kotlin so I was hoping to do everything in it. Both networking and the clients. I am looking for your experiences and any tips / recommendations. I am willing to learn more technologies.  
+Edit: Can you use practices like dependancy injcetion in game dev?
+## [6][Any Kotlin WASM examples?](https://www.reddit.com/r/Kotlin/comments/fea4cb/any_kotlin_wasm_examples/)
+- url: https://www.reddit.com/r/Kotlin/comments/fea4cb/any_kotlin_wasm_examples/
+---
+I know Kotlin can be compiled to WASM via the Kotlin-native target, but I can't find any examples in the wild...
+## [7][From RxJava to Kotlin Flow: Testing](https://www.reddit.com/r/Kotlin/comments/fduwyu/from_rxjava_to_kotlin_flow_testing/)
 - url: https://proandroiddev.com/from-rxjava-to-kotlin-flow-testing-42f1641d8433
 ---
 
-## [3][KVision 3.0.0 is released (Object oriented web framework for Kotlin/JS)](https://www.reddit.com/r/Kotlin/comments/fdbup3/kvision_300_is_released_object_oriented_web/)
-- url: https://www.reddit.com/r/Kotlin/comments/fdbup3/kvision_300_is_released_object_oriented_web/
----
-[KVision](https://github.com/rjaros/kvision) is an open source web framework created for the Kotlin language. It allows developers to build modern web applications in Kotlin, without any use of HTML, CSS or JavaScript.
-
-I have released KVision 3.0.0. This is a major upgrade bringing a few incompatibilities and breaking changes. Highlights of this release:
-
-* major improvements to the event handling architecture (including new module with support for event Flows)
-* new server-side module with full support for the [Javalin](https://javalin.io) server
-* upgrade [Jooby](https://jooby.io) to version 2
-* important bugfixes and minor improvements for different components
-
-For more details about this release see the [changelog](https://github.com/rjaros/kvision/releases/tag/3.0.0) and the [migration chapter](https://kvision.gitbook.io/kvision-guide/part-1-fundamentals/migration) in the guide. There are also some new example apps with Javalin server in the [examples repository](https://github.com/rjaros/kvision-examples).
-
-As always any feedback is welcomed :-)
-## [4][Kotlin 1.3.70 Released](https://www.reddit.com/r/Kotlin/comments/fcy26q/kotlin_1370_released/)
-- url: https://github.com/JetBrains/kotlin/releases/tag/v1.3.70
+## [8][Newcomer Tutorial: Setting up IDEA and Creating "hello world" Application](https://www.reddit.com/r/Kotlin/comments/fdyqdg/newcomer_tutorial_setting_up_idea_and_creating/)
+- url: https://marcuseisele.com/pages/learningKotlin/setup-intellij-hello-kotlin
 ---
 
-## [5][Kotlin 1.3.70 released](https://www.reddit.com/r/Kotlin/comments/fczl3h/kotlin_1370_released/)
-- url: https://blog.jetbrains.com/kotlin/2020/03/kotlin-1-3-70-released/
+## [9][[QUESTION] Async function fire task in new thread](https://www.reddit.com/r/Kotlin/comments/fe1bjn/question_async_function_fire_task_in_new_thread/)
+- url: https://www.reddit.com/r/Kotlin/comments/fe1bjn/question_async_function_fire_task_in_new_thread/
 ---
+Hey, I need to write a function that starts some process in another thread, in a fire and forget way, and returns without waiting for said process to finish.
 
-## [6][[Question] Edit multiple value in MutableList](https://www.reddit.com/r/Kotlin/comments/fdb3im/question_edit_multiple_value_in_mutablelist/)
-- url: https://www.reddit.com/r/Kotlin/comments/fdb3im/question_edit_multiple_value_in_mutablelist/
+I tried searching online, but I find many examples for cases where the program needs to wait for a response or does thread pooling etc., and none for my case. 
+
+Does anybody know a neat way to do this in Kotlin?
+I would really apreciate a code example, pseudocode or the right term that I can use to look up examples of that.
+## [10][What is the IDE experience for Kotilin compared to Java](https://www.reddit.com/r/Kotlin/comments/fdy4dm/what_is_the_ide_experience_for_kotilin_compared/)
+- url: https://www.reddit.com/r/Kotlin/comments/fdy4dm/what_is_the_ide_experience_for_kotilin_compared/
 ---
-Is there any efficient way to update multiple value in MutableList without using for loop
-
-for example my mutablelist is \[1,2,3,4,5,\] and i want to add value at index 2 to 4 with 10, if i used for loop the process would be 
-
-\[1,2,13,4,5\]
-
-\[1,2,13,14,5\]
-
-\[1,2,13,14,15\]
-
-is there a way to update value at index 2 to 4 at the same time ?
-## [7][Kotlin is one of the most loved languages based on StackOverflow's developer survey results](https://www.reddit.com/r/Kotlin/comments/fcyand/kotlin_is_one_of_the_most_loved_languages_based/)
-- url: https://learnworthy.net/stackoverflows-developer-survey-results-for-2019/
----
-
-## [8][Does Kotlin have (or plan to have) "Conditional Types"?](https://www.reddit.com/r/Kotlin/comments/fd2uq0/does_kotlin_have_or_plan_to_have_conditional_types/)
-- url: https://www.reddit.com/r/Kotlin/comments/fd2uq0/does_kotlin_have_or_plan_to_have_conditional_types/
----
-This is my favorite feature in Typescript. Does it exist in Kotlin? Is it called something else?
-
-[https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types)
-## [9][Kunafa is evolving (Library for web front end development)](https://www.reddit.com/r/Kotlin/comments/fclq61/kunafa_is_evolving_library_for_web_front_end/)
-- url: https://www.reddit.com/r/Kotlin/comments/fclq61/kunafa_is_evolving_library_for_web_front_end/
----
-&amp;#x200B;
-
-https://preview.redd.it/059gmvsgmck41.png?width=512&amp;format=png&amp;auto=webp&amp;s=13d214d89659ba18d3795ead491b6591d1677ea9
-
-We have been actively developing Kunafa for the past year. [Check it out here](https://github.com/Kabbura/Kunafa)  . Some of its features are intuitive DSL, type safe CSS, style caching and routing. 
+I would expect it to be similar but is Kotlin on par with Java in terms of IDE features in IntelliJ or Eclipse ?
 
 &amp;#x200B;
 
-Documentation is not done yet, but will update it as soon as Kunafa API is stable enough. 
+Edit: I am aware that IntelliJ is made by JetrBrains and that they also make Kotlin. That does not however mean that the IDE experience is perfect. IntelliJ has had support for Java in over 10+ years probably more. That is why i ask this question. 
 
-Take a look at the code of the [todo demo app](https://github.com/Kabbura/kunafa-todo) and let us know what you think.
-## [10][From RxJava to Kotlin Flow: Throttling](https://www.reddit.com/r/Kotlin/comments/fcd1yk/from_rxjava_to_kotlin_flow_throttling/)
-- url: https://proandroiddev.com/from-rxjava-to-kotlin-flow-throttling-ed1778847619
----
+&amp;#x200B;
 
+Thanks

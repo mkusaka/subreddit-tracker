@@ -57,11 +57,67 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][C++ random utilities and embedded rng](https://www.reddit.com/r/cpp/comments/fdtsg8/c_random_utilities_and_embedded_rng/)
+## [2][Tortellini: A really, really stupid INI file format for C++11 and above](https://www.reddit.com/r/cpp/comments/feaul5/tortellini_a_really_really_stupid_ini_file_format/)
+- url: https://github.com/Qix-/tortellini
+---
+
+## [3][Modern std::byte stream IO for C++](https://www.reddit.com/r/cpp/comments/fe72kp/modern_stdbyte_stream_io_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/fe72kp/modern_stdbyte_stream_io_for_c/
+---
+Previous post: https://www.reddit.com/r/cpp/comments/avcalo/a_proposal_to_add_stdbytebased_io_to_the_c/
+
+Direct link to PDF: https://github.com/Lyberta/cpp-io/raw/master/generated/Paper.pdf
+
+Paper repository: https://github.com/Lyberta/cpp-io
+
+Reference implementation: https://github.com/Lyberta/cpp-io-impl
+
+This paper proposes fundamental IO concepts, customization points for serialization and deserialization and streams for memory and file IO.
+
+It's been a year since the last post and quite a few things have changed:
+
+* IO and serialization are separate now. You can use `std::io::read_raw` and `std::io::write_raw` for raw IO. They have much less overloads and will take less time to compile. `std::io::read` and `std::io::write` are more heavy because they support endianness/floating-point-format conversion as well as dispatch to custom serialization functions.
+* Concepts instead of inheritance + virtual functions. You no longer need to pay the cost of virtual function calls in generic code.
+* Custom serialization functions can now be variadic.
+* IO contexts as a way to not have format as part of the stream as well as providing local format support during nested [de]serialization.
+* File streams now support buffering.
+* Added type erased streams for cases where you need dynamic polymorphism.
+* `std::io::in()`, `std::io::out()` and `std::io::err()` for byte IO with standard streams. The objects are type erased so you can redirect them to any stream you want. This is similar to `std::cout` et al.
+
+## It is faster than both `&lt;iostream&gt;` and `&lt;stdio&gt;`
+
+During benchmarking of sequential file IO on Linux proposed `std::io::input_file_stream` was found to be ~30% faster than `std::FILE` and ~45% faster than `std::ifstream` while proposed `std::io::output_file_stream` was found to be ~38% faster than `std::FILE` and ~60% faster than `std::ofstream`. Raw numbers can be found in the paper.
+
+This post was made to gather a round of feedback before I publish R0 targeted for Varna. I'm also looking for a champion to present this proposal in Varna.
+## [4][Fluent {C++}: How to Pass Class Member Functions to STL Algorithms](https://www.reddit.com/r/cpp/comments/febn53/fluent_c_how_to_pass_class_member_functions_to/)
+- url: https://www.fluentcpp.com/2020/03/06/how-to-pass-class-member-functions-to-stl-algorithms/
+---
+
+## [5][C++20: Why the word "constinit"? Why not name the specifier complinit or staticinit?](https://www.reddit.com/r/cpp/comments/feb67q/c20_why_the_word_constinit_why_not_name_the/)
+- url: https://www.reddit.com/r/cpp/comments/feb67q/c20_why_the_word_constinit_why_not_name_the/
+---
+If I understand correctly the specifier `constinit` forces initialization of a variable (declared with constinit) at compile time. The value of the variable can be changed later and is not const. I just find that naming the specifier "constinit" could be misunderstood or is misleading in the sense that the variable specified with it isn't const. Perhaps, complinit or staticinit is a better choice for what constinit does.
+## [6][C++ random utilities and embedded rng](https://www.reddit.com/r/cpp/comments/fdtsg8/c_random_utilities_and_embedded_rng/)
 - url: https://sqrtroot.com/blog/embedded_rng
 ---
 
-## [3][Knot: seeing how far you can take a tie of a structs members in place of static reflection](https://www.reddit.com/r/cpp/comments/fdmgo6/knot_seeing_how_far_you_can_take_a_tie_of_a/)
+## [7][a speaker that recognizes and plays that particular song on which it has been placed upon.](https://www.reddit.com/r/cpp/comments/fecn76/a_speaker_that_recognizes_and_plays_that/)
+- url: https://www.reddit.com/r/cpp/comments/fecn76/a_speaker_that_recognizes_and_plays_that/
+---
+ So, My grandpa has a lyrical songbook that contains all his favorite songs lyrics in printed pages. I want to make a speaker that when put upon the particular song lyrics plays it. Please don't mind my bad English.
+## [8][Invariants and Preconditions](https://www.reddit.com/r/cpp/comments/fdu8gz/invariants_and_preconditions/)
+- url: https://www.justsoftwaresolutions.co.uk/cplusplus/invariants.html
+---
+
+## [9][CppCast: Packs and Pipelines](https://www.reddit.com/r/cpp/comments/fe7r8e/cppcast_packs_and_pipelines/)
+- url: https://cppcast.com/barry-revzin-packs-pipelines/
+---
+
+## [10][Did someone propose std::get&lt;&gt; for aggregates and similar helper functions?](https://www.reddit.com/r/cpp/comments/fdwnh5/did_someone_propose_stdget_for_aggregates_and/)
+- url: https://www.reddit.com/r/cpp/comments/fdwnh5/did_someone_propose_stdget_for_aggregates_and/
+---
+As a poor man's reflection, I think it'd be nice. Of course it'd require compiler support to implement.
+## [11][Knot: seeing how far you can take a tie of a structs members in place of static reflection](https://www.reddit.com/r/cpp/comments/fdmgo6/knot_seeing_how_far_you_can_take_a_tie_of_a/)
 - url: https://www.reddit.com/r/cpp/comments/fdmgo6/knot_seeing_how_far_you_can_take_a_tie_of_a/
 ---
 https://github.com/fried-water/knot
@@ -82,57 +138,8 @@ Given that we lack proper static reflection I was curious how far you could get 
       std::optional&lt;Point&gt; p2 = knot::deserialize&lt;Point&gt;(bytes.begin(), bytes.end());
     }
 
-Turns out you can get pretty far, the biggest thing missing is the name of the members. I was able to implement a generic hash, serialize, deserialize, debug string (without member names), lexicographic operators. On top of that there is a `visit()` and `accumulate()` that recursively visits a structs members in a preorder traversal. In addition to structs there are overloads for many of the common std types. This is all possible (names included) with something like BOOST_HANA_DEFINE_STRUCT, but this has the benefit of being non-intrusive.
+Turns out you can get pretty far, the biggest thing missing is the name of the members. I was able to implement a generic hash, serialize, deserialize, debug string (without member names), lexicographic operators. On top of that there is a `visit()` and `accumulate()` that recursively visits a structs members in a preorder traversal. In addition to structs there are overloads for many of the common std types. ~~This is all possible (names included) with something like BOOST_HANA_DEFINE_STRUCT, but this has the benefit of being non-intrusive.~~
 
 Would love to hear any questions, suggestions, or other use cases you can come up with. Thanks for taking a look!
-## [4][Invariants and Preconditions](https://www.reddit.com/r/cpp/comments/fdu8gz/invariants_and_preconditions/)
-- url: https://www.justsoftwaresolutions.co.uk/cplusplus/invariants.html
----
 
-## [5][Low-Cost Deterministic C++ Exceptions for Embedded Systems](https://www.reddit.com/r/cpp/comments/fdd7vc/lowcost_deterministic_c_exceptions_for_embedded/)
-- url: https://www.research.ed.ac.uk/portal/files/78829292/low_cost_deterministic_C_exceptions_for_embedded_systems.pdf
----
-
-## [6][Getting rid of “volatile” in (some of) Qt](https://www.reddit.com/r/cpp/comments/fdip6a/getting_rid_of_volatile_in_some_of_qt/)
-- url: https://www.kdab.com/getting-rid-of-volatile-in-some-of-qt/
----
-
-## [7][StarDraft: A C++ project for Starcraft Map Visualization](https://www.reddit.com/r/cpp/comments/fdd3c3/stardraft_a_c_project_for_starcraft_map/)
-- url: https://github.com/davechurchill/stardraft
----
-
-## [8][Thoughts on “The C++ Rvalue Lifetime Disaster”](https://www.reddit.com/r/cpp/comments/fdi5pb/thoughts_on_the_c_rvalue_lifetime_disaster/)
-- url: https://quuxplusone.github.io/blog/2020/03/04/rvalue-lifetime-disaster/
----
-
-## [9][std::binary_search should return a std::optional&lt;iterator&gt;](https://www.reddit.com/r/cpp/comments/fdj49t/stdbinary_search_should_return_a/)
-- url: https://www.reddit.com/r/cpp/comments/fdj49t/stdbinary_search_should_return_a/
----
-(like rust)
-
-Currently std::binary_search returns only the boolean value whether your container contains your value. This means that if it does *there's lost information*: the index of the element being searched for is already known but not accessible, you have to call std lower or upper bound to find it. This means that the interface presented to the programmer is less versatile for no good reason. Changing the return value to an iterator to the element found makes the standard library more useful at no performance cost. For example:
-
-    if(auto b = std::binary_search(container.begin(), container.end(), value); b) {
-        // in this branch *b is an iterator
-    }
-## [10][C++17 MySQL client Boost.Asio implementation](https://www.reddit.com/r/cpp/comments/fdes2i/c17_mysql_client_boostasio_implementation/)
-- url: https://github.com/anarthal/mysql-asio
----
-
-## [11][Super compact serialisation of C++ classes](https://www.reddit.com/r/cpp/comments/fd8jnf/super_compact_serialisation_of_c_classes/)
-- url: https://www.reddit.com/r/cpp/comments/fd8jnf/super_compact_serialisation_of_c_classes/
----
-When needing to save many different classes to disk into a human readable format and load them back (a pretty common but very boring task), I figured out this trick, which is probably the shortest way to do it without macros, working with any standard-compliant C++14 compiler (plus MSVC).
-
-    struct Device : SerialisableBrief {
-    	int timeout = key("timeout") = 1000;
-    	std::string address = key("adress") = "192.168.32.28";
-    	bool enabled = key("enabled") = false;
-    	std::vector&lt;int&gt; ports = key("ports");
-    }
-
-With the inheritance, it gets methods `save()` and `load()` that allow saving it in JSON format as an object with keys `timeout`, `address`, `enabled` and `ports`.
-
-Article how it works: [https://lordsof.tech/programming/super-compact-serialisation-of-c-classes/](https://lordsof.tech/programming/super-compact-serialisation-of-c-classes/)
-
-Full code: [https://github.com/Dugy/serialisable/blob/master/serialisable\_brief.hpp](https://github.com/Dugy/serialisable/blob/master/serialisable_brief.hpp)
+Edit: forgot BOOST_HANA_ADAPT_STRUCT was a thing

@@ -22,11 +22,73 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
+## [2][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
+- url: https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/
+---
+For some reason I can't use optional chaining in my new project, other TS features like interfaces, types, ... are working fine. Also my IDE is not throwing out any errors, but upon compiling the code, I get this error for the following line of code:
+
+Line of code: `country: location?.country`
+
+`country: location?.country,`
+
+`SyntaxError: Unexpected token '.'`
+
+`at Module._compile (internal/modules/cjs/loader.js:895:18)`
+
+What's going on?
+## [3][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
+- url: https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/
+---
+## Problem
+
+I want to optimize my TypeScript by replacing all literal enums with their values.
+
+## Why not `const enum`?
+
+* Third-party libraries may not provide them.
+* Babel does not support them.
+## [4][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
+- url: /r/LearnTypescript/comments/fe3zip/best_way_to_type_an_object_with_string_keys/
+---
+
+## [5][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
+- url: https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/
+---
+Is it possible to have a function return different return types under different circumstances?
+
+Edit: I mean without overloading.
+
+example:
+
+    const test = (name: string) : int | string =&gt; {
+    
+        if(name === 'beatdook04') return 200;
+    
+        return "Who are you?";    
+    
+    }
+    
+    test('beatdook04');
+## [6][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
 - url: https://github.com/sinclairzx81/typebox
 ---
 
-## [3][How to conditionally determine return value in a Promise](https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/)
+## [7][Trying to store typescript code in string to use in runtime. [Guidance Appreciated]](https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/)
+- url: https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/
+---
+As the description implies i'm trying to store actual code from typescript file in a variable so that when I console.log it i'll see the typescript implementation instead of the compiled code.  
+Have any of you tried anything similar?   
+
+
+What I've tried:  
+1. Using decorators and Reflection,  but struggle getting the actual code (as a string) as it is in the file.
+
+2. looking at the typescript npm package. There's just so many functions to read up on. 
+
+3.  Tried to retrofit this code [this code](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API#user-content-re-printing-sections-of-a-typescript-file) from the typescript compiler API docs for my purposes.
+
+So far I haven't had any luck. All pointers welcome ;)
+## [8][How to conditionally determine return value in a Promise](https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/)
 - url: https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/
 ---
 I'm trying to write a wrapper around fs.readFile that will return JSON if the option is set to true.
@@ -48,7 +110,7 @@ if (typeof f !== 'string') {
 \`\`\`
 
 https://preview.redd.it/peb06d2q6uk41.png?width=1300&amp;format=png&amp;auto=webp&amp;s=aec55267486ff42d3f9720d2e6f926c32b18ab6c
-## [4][Static Site with JS from TS using exports?](https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/)
+## [9][Static Site with JS from TS using exports?](https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/)
 - url: https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/
 ---
 Could anyone please explain to me (Java/Kotlin lad) how to get modules working? I am very comfortable with vanilla JS but was busy playing with the JVM when the whole Node / ES module thing went down.
@@ -60,11 +122,11 @@ I have satisfied both my ATE (VSC, fwiw) and the TSC (transpiler irl?) by using 
 I just want to visit my static site with multiple, minifed JS files that were generated by TSC, understanding that multiple TS files rely on definitions from multiple files without too many complications in the build / compilation process..?
 
 Cheers lads.
-## [5][TypeScript Migration Strategy (from JavaScript)](https://www.reddit.com/r/typescript/comments/fdhx6f/typescript_migration_strategy_from_javascript/)
+## [10][TypeScript Migration Strategy (from JavaScript)](https://www.reddit.com/r/typescript/comments/fdhx6f/typescript_migration_strategy_from_javascript/)
 - url: https://www.youtube.com/watch?v=v3lI29trIN8&amp;feature=share
 ---
 
-## [6][Is this even possible in TS?](https://www.reddit.com/r/typescript/comments/fdkxcp/is_this_even_possible_in_ts/)
+## [11][Is this even possible in TS?](https://www.reddit.com/r/typescript/comments/fdkxcp/is_this_even_possible_in_ts/)
 - url: https://www.reddit.com/r/typescript/comments/fdkxcp/is_this_even_possible_in_ts/
 ---
 Hi,
@@ -85,33 +147,3 @@ Basically I want an interface that ensures that keys won't clash, and specify th
 The above doesn't work.
 
 Thanks!
-## [7][The Typescript Pick utility type! It constructs a type by explicitly picking props from another type.](https://www.reddit.com/r/typescript/comments/fd5j72/the_typescript_pick_utility_type_it_constructs_a/)
-- url: https://i.redd.it/ld9xbryt8kk41.png
----
-
-## [8][React TypeScript: Basics and Best Practices](https://www.reddit.com/r/typescript/comments/fdgqj8/react_typescript_basics_and_best_practices/)
-- url: https://blog.bitsrc.io/react-typescript-cheetsheet-2b6fa2cecfe2
----
-
-## [9][A Type-Level Lisp Interpreter (-ish)](https://www.reddit.com/r/typescript/comments/fda3pw/a_typelevel_lisp_interpreter_ish/)
-- url: https://www.reddit.com/r/typescript/comments/fda3pw/a_typelevel_lisp_interpreter_ish/
----
-The Eval type can perform basic arithmetic, comparisons, conditionals (if expresions), define local variables and lambda expressions.
-
-e.g. this type `_` "evaluates" to `16` at compile time.
-
-```
-export type _ = Eval&lt;
-  [Let, 'square', [Lambda, X, [X, '*', X]], ['square', 4]]
-  &gt;;
-```
-
-[Typescript Playground](https://www.typescriptlang.org/play/#code/PTAEBUE8AcFMFoAysBusA2oCSA7ALrAOawBOoAsgIZ4AWoAljhDLAM4DGJ90eAUCKHhDhI0WPET4-YNNBzQAPlAAxAPZkAwpXTsArulU4A5KwYBbM+rzbQrVfoA0oQrranasUDl1mARqWwjM1BaRgBrRkJQVQAzWXklOSFQACVVX1U8UAARVHp0aXi5JQAichKixXlkgAUafPRuUAApADoVEkhCgRr0WEpWTwATQyMs3UGQ+tNGUGgSVSHddjx6Q1AACixQdkpjLPozSkJGTwB3GmpQSHsjIdAR2TP6WgY8Vo-QGPoAD1gh+CsegAL3+oDQK3UrAA-ABKN4mUB7UCwH5wLhmWD4BhMGiqM6gMzLOhnTy7HCyXY6fTUTxXSghFjwPpoTCzPAsDhcHitbpgADqsCMJE8IvmbCxqxwUUYBGIJFMAy8bAI90oJBIlEgrCcF1IngABgAtUiqA0Mdw0TywMw8SBIjVa2R7e4AagAjBbQGKRYN8GDfPazproNBIkimLKiAFZntMlayCyMNEYqBfJr2GFYHhWLyQLINuBpqALqo+oTFvpPPRTL4BvQqeh7cisexFuHYqAANpwOMOl40TGrdgAXQ2NDweGgrAAXCAsa1nhE4EN6JRWupCMAl-RgDV+jhVAB9Sg-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-IvJEozU45JfAWB5ElwWa6-EpAnCcXYOwZd5rXCpwi+nYNJ6QtkGvRGySK70MCIWGejiQcgsMwiwodLbdvPQC435gLuXBiutpjUJLLrMsLpy3l8LkXy5vKSyBlh4S-UWsDUYBLBHSJeZ85KQLVWBF1ZoiVsreB-PGLG+pCbpISBOAysdWT+NTgAEddDaDPoshQPbN7sR7Y58Uk57T9FYJRlKhxjE2klM6UAJ2nYKYtQwfFpsrFDvnmQPY9oozylMC7DSTh2A+yc0iRQP23so2hk7F7FtiXIFYKwIsexQokBmjt7QS6aJepQ6YGldz-tMv9Z4PmA2haJQAOIilpCQdHOBMfY92+gPHSEUdo8uMzrHOP2dPoZutojTAPDqCDH8qu4pUfgtXETIE6wlT2UYALSYsRZASbo0mnAmmDhMHmG9VYkwXigTYL+H+osr4bFGpGOy0xj70HuD-OlWRDCuaONOAGgOAhy5rI+Ol6Koc-bAFYvUjnKDsYEL4JwesrHqjpFfb3CpYRuKKIlAAiroTIql8DsWyE1R3zMnD5-l+oAJZqcgF7sMlwnqXPDcxL4XzefNG9iU3il09Eq89V-UHS29HMmW4z5qy0gQyNuMezBVUVoADTk4NKnjxiUjw0Xap1hr2X2LFVUE4LfZP3uU7tWPsAQctNWkmBkV4Io8BT5nwN+f+TPGgGX0hVfHestd-pZjJKcU6FD6+IftPJiZ-FQXeNfTvRdLfPvO9DGQfNuKnI2YSaNdAe4RKBYTIG9EjMjc4LUXXEIMBZKX8fwczSgUMZsDIPRF4doTiQgBBHVMAReL0CSSGB-JfKbRBLIFLabXzIqZKHfGgPKPfFGA-ENI-duCg-vZFS6eTUXfGexFKS4NBOsVgLMPABfa5JiNITIdiZiYLZbemZiNfLg0belSrRbWrPQuhUw19NlQAiiYAzQjiTaCcPggQ61P2NgraQwkbXPEwvLGqTKSwhZaw0fI2ZifET8LIfNS4KVCWMEe+RSUVawfARUazdEbXJRGQm0UWSkcWJgqHEVZSHPLIa7WeH4aIUXVQWxTsE3exEsLgMzIEeRVFMAVEaXBXafPWVAZGWkMyMwGTAUIUK+JQqSfGEo6wMo2yV+UwQgTUCwdUGPHjAwQYVzJUfNckB-VosgeCGcHtexYIAAHxEivkOPh02Klxr3mCKEbBaR2POOiDSPsQuKCg8UqLOUeN5iQiMFdFbkOKMHgB+ISVrQBKMAAD1gSTtgTDtkkPFqBVBghtjG1QBDjPRDiiIkTQAABmdEgAFnRIAFZ0SAA2dEgAdnRIAA50SABOdE90JtCvFpeQQ48ndEgbPkYlGaUmdAObdnGaJwGaHAFAKLUADlPYhsc4twc+B0TwVNExM5TAbwPwAIEKVgFdAQNY+wZA2wGxUrEgLISwRzPTM-RbTSdZYsFeLEewBaX7NUsABkExPAcsMSSwFdWEswPmGaNfVCeCbmH9bY0AT0lLHCH0uvIrD0tfEiEMrfMMgMtfDEorbmfwmMwM2vbEhMkAiqZMtfPE9MgaHBf0lMqlUwQk9MyaLMlLEk0sm3cs2vck9MpwvgAstfKk9Mw6NLJsoM70+QRMrEGsoskIC1dM8nPs6hNkkMsc+QcMlLLMG4VMAUlAeswUtfFZNZIrDLecrsGaEcNc4IoKf0kfd9W037L4XQC6WVRsHRfNI4FxbZfGZBYIJUBka-e7TxQ2OQfMd8s1Lsc4pwV40zXvO47cz8ldRsI8XAb4H4Kc2vLselO5L4owKAgIIOIC7s9pAOTk7QHkvxec+rDC7kirfkwU4REc0JGCiQhmJwIwIExCsgZC9M8AxwrkrCu5HC-kpigigMoiwrDs6C2Cyi-4mi9uFCjLA1R1diPC5iwioUtizCjinC7iyc2MlLMi6AuCsEwSuikMow3PCSgLFioimS-C+bQXeSkilmFSgIOCqEjS4SuhOnZjRnHnFnfncS9i+bfS6SgMtygXKS4ini-siysgOCiEmy9MrnJnZytnVy2S9y3ywyrCkyrimMg8oWT8-yMjXwIYJUEUTEJUsgeyLEImBYHATEbEDwCXRzaVMERgDSKRSgEBI88q6UnYJYiqKtTLbMDkbUxzBgleBkEUHbNeB7bEZBV+aUVUtK7BWBI0L4X4f4eAUrWURSPwRgWEvc9KvwLKqCgKowe8TaygBCnEaAmodUMjDSxYSAWy7mE62YtfMVSIHc7mcORk+CaAU690gRd69OF6tMC6+OC676l6wqj0wUwG+CMuHc4fN9ZKt9VKo49Aba6hQKlQU8wSkrEgK6hmLWSAaKoy9nZQVGzizy3S+bdG3yhSoDFK0iNKjYeHAgbebGVpWAeELo4hWkUwEoemvAEoAGJyG+SYWo1m3bAgI82AAcAITmq0HAHmhSEoNJCoOQaGRG0iowaGQ6+lXaCyQSqeHXI6gIGaENTGkm9nTWjTImpQFLYcxk7mY2zfKW3yyGrymK3kkNB2-0+AldPoVQpS6C3a7MdW8i7xQSgANTJnOqGEuvTO8TussgeutqdrxpLguqktAAADJQBQ5uxvFYAAcmBvERwPTvL2JQ7iFFscLQAy4KbFKDyYabCK5CykbdqMqsrDr7rpQY8cBI6Msm79qkMfaAr-tc1Y726Iwu66EjBQLwLfg+6G6Va1aO7+VR6F6UKG41bsN+7G6vbW7h7CAF7l74Mt717Z7zLB7R6V6ElGw+6jA3Tx5qcmJvMqV2Jo6Us27d7QBg7fKaJwBHccaV1nr5Auxs7c7QB86+Zg704y406itQozAXhxLBSnBvFCtjpEpv6I72IUh6YUg18UgpF1Ahh2JT7SdwN-74JAGIUZzOwUgC7UhAGBJwb16qbiVOJsa2owt6ZlA19-63rZi+Z6UbqyN04MgI6+HyKg4AaV1ga9ayB5yGIIaMsBHggX6d76yi7xGI7+SUM853qwtyba7SBGHYbZBjbwEr50R7zYEqQ1FtdcCTcr8p9FRlQLIWNHQgxZJcF8ZJILJwwxIeA6AFN8Y9gnEAhTT9EPpsR7TTlNQFSfB-B8qWB+iIBRiywtJwUsAjBmo5FPAbFwFXgFMHFNRRULGnybFywvHM0DRmIDRj5apbFZRbt8AUoSmXzOw+hpRXhKnzQskpb9IX57IDQ2nCBaBzRqjTFw10nmpY6wRajU1ajzH1Bgh7I-z0jyiQhSnPBBnaBbHijaoLxcF5CTdGhYGcxCRiQUR1RGhSBeRWirBH90YcBcHoBN96ZwA18WTDiBs6FXm+Z7n5JkDN8nBYIFAuw-b2maBb7BIwBNV7gAAJJVO84q13VMV5jYC4Bsfxxx588sDZOdJjbudiGFnfNff7IF52ccfoIYPmQl0AD4VoawfIPmcAeEBCJQf7Fm2vDYFdWlxoCyUR6A9GXgZl1lzu8DAVymox2QDQJSUgHSJxzNLFzwDYQKWBnlKUGUJgFsW0LqhVzZAcKHBV0ybwa6Dxq4S4UwTZugWAfneFzwcp8MJMAoXVOQU8v5+4WCOQN6b7JECLSoF1ssN13QOCT1miP1rU3QTYcUOATeI1zAT12dAQSGQgdoUNt1vCAiFpd13iGNpwGN7cipaxW9f17sdCNN-CAiTN7sbNrwfQdAHNmtut66bcxKX5-1vxFrYlzu0lk1FdZCVONfd1thCLXc9OA2ShZSz-OCbmFt-5r-fOKNghqtlrYRYdj9SuZSyds2Pmd0CeRKRAZuhkT4vazKg6+qCiAADRoiMB+CMFPc8GQCyEPf9sI1sBSlAOgGBTozsVIFtUulTWDBINMBMa2QxgeffA7qdyFBFGVgpZu2WuOblQ6JoMUSyDkUsBwEBCxEmD1gNL2w5F4Bub1MfzwvEvpnucedxqwr5IzsruFxYnCLWORBAVgSFrWv8noD6emDUPkAABJH9gDiP0IMTKLvinBsSRxKLqLQAiIRwRF1C7CaJ3Q0z8PONCPWCkJiOV0ux73KLWAccRRDqtP92nAz3AWTPATDqz38JAWTA9OhRRP8IV0sogA)
-## [10][Browser-based Snake game written in Typescript](https://www.reddit.com/r/typescript/comments/fdkfcf/browserbased_snake_game_written_in_typescript/)
-- url: https://github.com/ayoisaiah/snake
----
-
-## [11][Introducing AdonisJS (v5 Preview)](https://www.reddit.com/r/typescript/comments/fdaojh/introducing_adonisjs_v5_preview/)
-- url: https://blog.adonisjs.com/introducing-adonisjs-v5
----
-

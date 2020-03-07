@@ -23,7 +23,56 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/03/this-week-in-rust-328/
 ---
 
-## [3][Not Another Lifetime Annotations Post](https://www.reddit.com/r/rust/comments/feb31o/not_another_lifetime_annotations_post/)
+## [3][Considering Rust [talk]](https://www.reddit.com/r/rust/comments/fenspv/considering_rust_talk/)
+- url: https://youtu.be/DnT-LUQgc7s
+---
+
+## [4][Running Actix integration tests with Github actions](https://www.reddit.com/r/rust/comments/fettdq/running_actix_integration_tests_with_github/)
+- url: https://www.youtube.com/watch?v=TKCJl6YgsH8
+---
+
+## [5][looking at gdb how can I know whether its heap or stack allocated memory ?](https://www.reddit.com/r/rust/comments/fes6pp/looking_at_gdb_how_can_i_know_whether_its_heap_or/)
+- url: https://i.redd.it/4rmmxnbfj7l41.png
+---
+
+## [6][Demo of a new GUI + 2D drawing crate](https://www.reddit.com/r/rust/comments/fejx5a/demo_of_a_new_gui_2d_drawing_crate/)
+- url: https://www.reddit.com/r/rust/comments/fejx5a/demo_of_a_new_gui_2d_drawing_crate/
+---
+"Oh no, not another one."
+
+I've made a [standalone demo](https://github.com/dabreegster/abstreet/blob/master/ezgui/examples/demo.rs) of the [GUI library](https://github.com/dabreegster/abstreet/tree/master/ezgui) that I've built for [A/B Street](https://abstreet.org). I think the library has enough properties that set it apart from existing crates that it might be useful to the Rust community. The API needs lots of cleanup before a 0.1 release, but I'll only put in the effort if some folks have use cases for it.
+
+Some I'm here to gauge interest. Tell me what cool thing you'd build with this and why the other existing crates don't work for you.
+
+Some highlights:
+
+*  Runs on native or web, modulo text support a few months away
+*  Fully vectorized text (usvg -&gt; lyon -&gt; triangulated polygons)
+*  [All features](https://github.com/dabreegster/abstreet/tree/master/ezgui)
+
+Thanks!
+-Dustin
+## [7][Show r/rust: Belay - Run your CI checks locally to git push with confidence](https://www.reddit.com/r/rust/comments/feq2x8/show_rrust_belay_run_your_ci_checks_locally_to/)
+- url: https://github.com/JoshMcguigan/belay
+---
+
+## [8][Naming a module 'meta' results in weird behavior. I got bitten by this recently](https://www.reddit.com/r/rust/comments/fekol0/naming_a_module_meta_results_in_weird_behavior_i/)
+- url: https://internals.rust-lang.org/t/is-the-module-name-meta-forbidden/9587
+---
+
+## [9][Simple Rust program using 100% CPU.](https://www.reddit.com/r/rust/comments/feu3ru/simple_rust_program_using_100_cpu/)
+- url: https://www.reddit.com/r/rust/comments/feu3ru/simple_rust_program_using_100_cpu/
+---
+Hello, I wrote simple program which downloads multiple files at once using `threadpool` and `reqwest` and also calls API. When I run it on my main PC i get 0% CPU usage and everything works correctly. However I have a server I want to run it on, and when I run it there it uses 100% CPU constantly. I tried running it inside a VM with 1 CPU core (to simulate low performance enviromnent) and the CPU usage was 2-3%. I don't know what I am doing wrong.
+
+1. I tried using async first, but switched to blocking `threadpool, reqwest::blocking`. No change
+2. Tried building with `target-cpu native` and `lto`. No change
+3. Tried building directly on the server, also no change.
+
+Part of my download code: [https://pastebin.com/RvE0jWqK](https://pastebin.com/RvE0jWqK)
+
+I am new to Rust, so sorry for my begginer mistakes. Thank you.
+## [10][Not Another Lifetime Annotations Post](https://www.reddit.com/r/rust/comments/feb31o/not_another_lifetime_annotations_post/)
 - url: https://www.reddit.com/r/rust/comments/feb31o/not_another_lifetime_annotations_post/
 ---
 Yeah, it is. But I've spend a few days on this and I'm starting to really worry about my brain, because I'm just getting nowhere.
@@ -61,67 +110,22 @@ That's functions, I guess, and I haven't even gotten to how confused I am about 
 
 Of course it isn't the case - people use the language, write libraries and work with lifetime annotations perfectly fine, so I'm just missing something very fundamental here. If I sound a bit frustrated, that's because I am. I've written a few thousand lines of code for a personal project and have used 0 lifetime annotations, partially because I feel like most of the potential use-cases I've encountered present much better solutions in the form of transferring ownership, but mostly because I don't get it. And I just hate the feeling that such a central facet of the language I'm using is a mystery to me - it just gives me no creative confidence, and that hurts productivity.
 
+***
+
 *edit for positivity: I am genuinely enjoying learning about Rust and using it in practice. I'm just very sensitive to my own ignorance and confusion.
-## [4][I have just made my first open source contribution to rust-analyzer. You should contribute to open source too!](https://www.reddit.com/r/rust/comments/fe4bs1/i_have_just_made_my_first_open_source/)
-- url: https://avishay.dev/2020/03/04/oss-contribution/
+
+*edit 2: just woke up and am reading through comments, thanks to all for helping me out. I think there are a couple standout concepts I want to highlight as really doing work against my confusion:
+
+- Rust expects your function signature to completely and unambiguously describe the contract, lifetimes, types, etc., without relying on inference, because that allows for unmarked API changes - but it does validate your function body against the signature when actually compiling the function.
+
+- 'Getting it wrong' means that your function might be overly or unusably constrained. The job of the programmer is to consider what's happening in the body of the function (which inputs are ACTUALLY related to the output in a way that I can provide the compiler with a less constrained guarantee?) to optimize those constraints for more general use.
+
+I feel quite a bit better about the function-signature side of things. I'm going to go back and try to find some of the places I actively avoided using intermediate reference-holding structs to see if I can figure that out.
+## [11][Work in progress java virtual machine written in rust](https://www.reddit.com/r/rust/comments/feeqpl/work_in_progress_java_virtual_machine_written_in/)
+- url: https://github.com/douchuan/jvm
 ---
 
-## [5][I released my Rust Galaxy Simulator with GPU acceleration powered by wgpu. Try it out and give it a star if you like it 🎉](https://www.reddit.com/r/rust/comments/fdxdhb/i_released_my_rust_galaxy_simulator_with_gpu/)
-- url: https://github.com/timokoesters/nbodysim
----
-
-## [6][Introducing standback: portions of the standard library backported to support older compilers](https://www.reddit.com/r/rust/comments/fe7bna/introducing_standback_portions_of_the_standard/)
-- url: https://www.reddit.com/r/rust/comments/fe7bna/introducing_standback_portions_of_the_standard/
----
-# Introducing [standback](https://crates.io/crates/standback)
-
-([documentation](https://docs.rs/standback))
-
-There are [an increasing number of stabilizations](https://github.com/rust-lang/rust/blob/master/RELEASES.md) with every release. Ever wanted to use newly-stabilized features in a crate or published binary, but decided against it because it would mean bumping the minimum supported Rust version? This is a situation many authors have to deal with, and it's not always clear _when_ to bump the MSRV, even when soundness is an issue (see `mem::uninitialized()` vs `mem::MaybeUninit`).
-
-Standback (from "standard library" and "backport") helps you out here. It has a minimum supported Rust version of 1.31, and has _a ton_ of APIs that have been backported. Nearly all of this code comes directly from the standard library itself, so it can definitely be trusted. Oh, and it's also `#![no_std]` compatible to a large extent.
-
-If all you're doing is using a newly stabilized method (not an import), just add `use standback::prelude::*;` to the top of your file. If what you're using is something that must be imported, replace `std` with `standback`. For example, to import the `TryFrom` trait in Rust 1.31: `use standback::convert::TryFrom;`.
-
-Standback will automatically determine the compiler version in use, and will happily re-export an import if it has been stabilized. This ensures that you can confidently use a type even if it has been stabilized — and do so at nearly zero cost!
-
-Hopefully this proves to be a useful project to the Rust community at large. Surprisingly, it actually wasn't too much effort to put this together. I intend on keeping this up-to-date with each Rust release, so the functionality will continue to improve at (nearly) the same speed as `std` :slightly_smiling_face:. After some looking things over to ensure nothing is terribly buggy (or plain doesn't compile), my intent is to maintain a 0.X release, where X is the current compiler version (so 0.41 right now).
-
----
-
-NB: If you're actively compiling on an older compiler (in CI, for example), you'll likely want to `#![allow(unstable_name_collisions)]` on those older versions. That is the whole point of this crate, after all.
-## [7][WPC - Wallpaper Changer written in Rust](https://www.reddit.com/r/rust/comments/feadnx/wpc_wallpaper_changer_written_in_rust/)
-- url: https://github.com/jkotra/wpc
----
-
-## [8][Looking for a number of testing tools](https://www.reddit.com/r/rust/comments/fea9ry/looking_for_a_number_of_testing_tools/)
-- url: https://www.reddit.com/r/rust/comments/fea9ry/looking_for_a_number_of_testing_tools/
----
-I have a course in university called software testing. Normally, we have to use Java in this course, but I asked my professor If I can use Rust instead. Now I need to find equivalent technologies to do the same testing and I think this is the best place to consolidate such a list.
-
-These are purposes for tools Im looking for:
-
-* Random testing (JAVA tool: Randoop) (Rust tool: ?)
-   * [https://github.com/altsysrq/proptest](https://github.com/altsysrq/proptest) (Thanks @etareduce)
-* Input Space Partitioning (Combinatorial Testing) (Java tool: ACTS) (Rust tool: ?)
-* Graph Coverage (Java tool: EclEmma) (Rust tool: ?)
-* Logic Coverage (Java tool: EclEmma) (Rust tool: ?)
-   * [https://github.com/xd009642/tarpaulin](https://github.com/xd009642/tarpaulin) (?)
-* Syntax Coverage / Mutation Testing (Java tool: MuJava, Major) (Rust tool: ?)
-   * [https://github.com/Geal/mutant](https://github.com/Geal/mutant)
-   * [https://github.com/llogiq/mutagen](https://github.com/llogiq/mutagen)
-   * [https://llogiq.github.io/2018/02/14/mutagen.html](https://llogiq.github.io/2018/02/14/mutagen.html)
-
-&amp;#x200B;
-
-I could not find much info for them. I mean I can always code tests to do this kind of testing myself, but an automated way, using these tools would be nice.
-
-Cheers!
-## [9][Found this to be extremely interesting](https://www.reddit.com/r/rust/comments/fdzgc8/found_this_to_be_extremely_interesting/)
-- url: /r/FlutterDev/comments/fdgrdh/finally_running_rust_natively_on_a_flutter_plugin/
----
-
-## [10][Introducing Yew Form, a model binder for HTML forms with Yew](https://www.reddit.com/r/rust/comments/fedgwj/introducing_yew_form_a_model_binder_for_html/)
+## [12][Introducing Yew Form, a model binder for HTML forms with Yew](https://www.reddit.com/r/rust/comments/fedgwj/introducing_yew_form_a_model_binder_for_html/)
 - url: https://www.reddit.com/r/rust/comments/fedgwj/introducing_yew_form_a_model_binder_for_html/
 ---
 I love Yew, but if you're like me, you probably find that Yew is not great at binding  HTML form control to Rust `struct`.  Since my current project requires me to create rich form that require complex validation, I decided to complement Yew with  [yew\_form](https://github.com/jfbilodeau/yew_form), a set of mildly opinionated component to automatically map and validate a model to a HTML form.
@@ -141,11 +145,3 @@ There's an online demo at [http://chronogears.com/yew-form/](http://chronogears.
 There's still work to be done, but it's already quite usable at my end. I hope this can be of help to others Yew users out there!
 
 J-F
-## [11][This Month in Rust GameDev #7 - February 2020](https://www.reddit.com/r/rust/comments/fe03sb/this_month_in_rust_gamedev_7_february_2020/)
-- url: https://rust-gamedev.github.io/posts/newsletter-007
----
-
-## [12][WebGPU, Frame Capturing and more in the latest update for Nannou - an open source, creative coding framework for Rust!](https://www.reddit.com/r/rust/comments/fduj17/webgpu_frame_capturing_and_more_in_the_latest/)
-- url: https://nannou.cc/posts/nannou_v0.13
----
-

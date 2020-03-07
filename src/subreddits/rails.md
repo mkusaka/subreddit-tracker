@@ -27,7 +27,196 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Is there a more efficient way to add hundreds of things to the database?](https://www.reddit.com/r/rails/comments/fe82w2/is_there_a_more_efficient_way_to_add_hundreds_of/)
+## [3][How do I efficiently query telemetry data?](https://www.reddit.com/r/rails/comments/feswoh/how_do_i_efficiently_query_telemetry_data/)
+- url: https://www.reddit.com/r/rails/comments/feswoh/how_do_i_efficiently_query_telemetry_data/
+---
+I have this project where there are N devices in the field that beam back telemetry data **once every minute** per device. The ingest API for that is fine, but I'm running into some concerns about _reading_ that data, specifically for building a graph.
+
+Data is in PostgreSQL and roughly resembles this:
+
+```
+    create_table :telemetry do |t|
+      # some unrelated stuff here
+      t.float         :some_value, null: false, default: 0.0
+      t.timestamps
+    end
+```
+
+So there's one row per minute per device in this database. At 24 hours in one day times 60 rows per hour (one per minute), we have **1,440 rows of telemetry data!**
+
+Now, querying this is easy enough if we don't care about how evenly distributed that data is:
+
+```
+@telemetry = Telemetry.where('created_at &gt; ?', 24.hours.ago).order(created_at: :asc)
+```
+
+I could of course throw a limit on that, but then we'd just get the first N minutes of the data. So for example if I were to limit that to 50 rows, I'd only get back less than the first hour of all 24 hours.
+
+Is there a better way to do this? For example, let's say I want two data points per hour (so one every 30 minutes). I _could_ try creating a loop then using the loop to craft and execute a new query for every trip through said loop, but that also sounds pretty inefficient.
+
+How do I _efficiently_ do something like this? What should I be googling for?
+## [4][How do I delete a record and it's associated records and only skip one callback action for each, that sends a notification?](https://www.reddit.com/r/rails/comments/fethwh/how_do_i_delete_a_record_and_its_associated/)
+- url: https://www.reddit.com/r/rails/comments/fethwh/how_do_i_delete_a_record_and_its_associated/
+---
+So I have a record that I would like to delete, and it has many associated records. And every record has multiple after_destroy callbacks including one that sends a notification for the affected users.
+
+The problem here is that I want to fire all the callbacks actions but only skip the one that sends the notification. How can I achieve that?
+## [5][Question about wrapping destroy inside a transaction](https://www.reddit.com/r/rails/comments/fepzsn/question_about_wrapping_destroy_inside_a/)
+- url: https://www.reddit.com/r/rails/comments/fepzsn/question_about_wrapping_destroy_inside_a/
+---
+I need to call two separate methods that do a commit to the database and I'm wondering if I wrap these methods inside a transaction will it work properly. 
+
+    ActiveRecord::Base.transaction do 
+        destroy_roles
+        save_user
+    end
+
+and destroy roles looks like this 
+
+    def destroy_roles
+      current_user.roles.destroy(role_to_be_destroy)
+    end
+
+and save\_user is 
+
+    def save_user 
+      current_user.update_attributes(user_params)
+    end 
+
+So when `destroy_roles` is called within the transaction the role is deleted with `begin` and `commit` which will usually succeed but it's unlikely the `save_user` will succeed which is why I want `destroy_roles` to be rolled back but since each `destroy` happens withing a `begin` and `commit` I'm wondering if this will be rolled back if `save_user` fails.  
+
+I also have another question about if we should user the `!` version inside the transaction like `update_attributes!` as opposed to `update_attribute` and so on. What difference would it make inside a transaction?
+
+P.S in impossible to avoid writing this as a single commit as the roles have to be deleted first so that the before\_update callbacks have the correct roles for further processing before user is saved
+## [6][Assigning a test case to an integer doesn't work - how do I test for a non string value?](https://www.reddit.com/r/rails/comments/fendcw/assigning_a_test_case_to_an_integer_doesnt_work/)
+- url: https://www.reddit.com/r/rails/comments/fendcw/assigning_a_test_case_to_an_integer_doesnt_work/
+---
+Hi all,  
+
+
+I'm new to TDD and I'm trying to write a very simple test - checking if a value is a string.  
+
+
+Here's the test (which I'm trying to make fail):  
+
+
+    test "test model name should be a string" do
+        test_model(:one).name = 1
+        assert_equal true, test_model(:one).name.is_a?(String)
+      end
+    
+    =&gt; 0 Failures
+
+I've tried using byebug to check the value of test\_model(:one).name, and even though I'm assigning as 1, it's actually assigning it as "1" (A string rather than an integer).  
+
+
+1) Why is it doing this?  
+2) How do I test for this case?  
+
+
+Thanks.
+## [7][Lost master key rails 6](https://www.reddit.com/r/rails/comments/feo3gu/lost_master_key_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/feo3gu/lost_master_key_rails_6/
+---
+Hopefully someone can help me. I put my rails 6 project on github, then did a fresh install of my os deleting everything. After getting my project back on my “new” computer I was trying to add some secret keys in my credentials.yml file but get an error saying my master key doesn’t match. After some googling and no information on how to reset the key. Here I am. Thanks in advance for any help.
+## [8][Video as a medium for rails](https://www.reddit.com/r/rails/comments/feri5d/video_as_a_medium_for_rails/)
+- url: https://www.reddit.com/r/rails/comments/feri5d/video_as_a_medium_for_rails/
+---
+Hey guys I’m starting my journey into rails. The one problem I have is the lack of high quality videos out there that show everything. I come from front end and there’s so many videos on setting up react and your environment and basically projects and they show how everything is done and why. With rails there’s only these huge 5-7 hour projects with no set up or anything. 
+
+My question is do you guys have any good YouTubers you recommend that helped you? 
+
+I looked through the side bar and history and everyone just says read books and stuff but I learn the best with videos. Thanks guys
+## [9][Data modeling - is single table inheritance approach good here](https://www.reddit.com/r/rails/comments/fegw2e/data_modeling_is_single_table_inheritance/)
+- url: https://www.reddit.com/r/rails/comments/fegw2e/data_modeling_is_single_table_inheritance/
+---
+Hello guys, I need an opinion. I am creating a shopping platform, and basic functionality is as follows: suppliers have a product page, buyers can buy from them.
+
+Other details: 
+
+* I have the Account model which can be of two types: Buyer and Supplier. 
+
+* Product model is associated with Account of the type 'Supplier'. 
+
+* Also, there is User model which belongs to Account (both suppliers and buyers can have Users).
+
+How would you model this?
+
+I was thinking about Single table inheritance - creating Account model which inherits from ActiveRecord, and two Ruby classes for Buyer and Supplier. Putting mutual fields in Account model along with the User association, and different functionality in Account's sub-classes. What bothers me is that I don't know how to avoid having Account of type Buyer associated with Products.
+
+Is this a good approach?
+## [10][Keeping controller DRY with methods?](https://www.reddit.com/r/rails/comments/fen6xg/keeping_controller_dry_with_methods/)
+- url: https://www.reddit.com/r/rails/comments/fen6xg/keeping_controller_dry_with_methods/
+---
+Hey guys, wanted some quick thoughts on this:
+
+Suppose my controller has both a "create" and "update" action, and in both actions an instance variable needs to be instantiated the same way:
+
+    \@purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i,
+    params[:application]["purchase_date(2i)"].to_i, params[:application]["purchase_date(3i)"].to_i)
+
+I think there's three ways to do this:
+
+**\\1. Simply copy paste this code in both create and update action. Improves readability of code but is it DRY?**
+
+    def create
+      \@purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i,
+     params[:application]["purchase_date(2i)"].to_i,
+     params[:application]["purchase_date(3i)"].to_i)
+      // more code
+    end
+    
+    def update
+      \@purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i,
+     params[:application]["purchase_date(2i)"].to_i,
+     params[:application]["purchase_date(3i)"].to_i)
+      // more code
+    end
+
+**\\2. Make a private method in controller that populates the instance variable and just stick the method in both create and update**
+
+    def create
+      set_purchase_date
+      // more code
+    end
+    
+    def update
+      set_purchase_date
+      // more code
+    end
+    
+    private
+    
+    def set_purchase_date
+      @purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i, params[:application]["purchase_date(2i)"].to_i, params[:application]["purchase_date(3i)"].to_i) 
+    end
+
+**\\3. Make a private method in controller that returns the object needed by instance variable and make instance variable equal to that**
+
+    def create
+      \@purchase_date = set_purchase_date
+      // more code
+    end
+    
+    def update
+      \@purchase_date = set_purchase_date
+      // more code
+    end
+    
+    private
+    
+    def set_purchase_date
+      Date.civil(params[:application]["purchase_date(1i)"].to_i, params[:application]  ["purchase_date(2i)"].to_i, params[:application]["purchase_date(3i)"].to_i) 
+    end
+
+&amp;#x200B;
+
+What's the best way to go here? Which do you prefer? Is there another way?
+
+&amp;#x200B;
+
+Edit: Ignore the \\@ thing, I have no idea how to escape the auto formatting reddit does for @
+## [11][Is there a more efficient way to add hundreds of things to the database?](https://www.reddit.com/r/rails/comments/fe82w2/is_there_a_more_efficient_way_to_add_hundreds_of/)
 - url: https://www.reddit.com/r/rails/comments/fe82w2/is_there_a_more_efficient_way_to_add_hundreds_of/
 ---
 Let's say I have a JSON object containing an array of 300+ objects. I want to create an instance of a given model for each of these then save that instance to the database.
@@ -44,7 +233,7 @@ json['foo'].each do |foo|
   bar.save
 end
 ```
-## [4][Deploying Hundreds of Applications to AWS](https://www.reddit.com/r/rails/comments/fe448t/deploying_hundreds_of_applications_to_aws/)
+## [12][Deploying Hundreds of Applications to AWS](https://www.reddit.com/r/rails/comments/fe448t/deploying_hundreds_of_applications_to_aws/)
 - url: https://www.reddit.com/r/rails/comments/fe448t/deploying_hundreds_of_applications_to_aws/
 ---
 Hey gang, I'm having a bit of trouble researching anything truly applicable to my specific case.  For context, my company has \~150 different applications (different code, different purpose, no reliance on each other) each deployed to its own set of EC2 servers based on the needs of the application.  To do this, our deployment stack uses Capistrano 2 and an internal version of Rubber.  This has worked for years but management is pushing modernization and I want to make sure that it's done with the best available resources that will avoid as many blockers down the road.
@@ -60,249 +249,3 @@ To help with said management, I've seen suggestions of setting up Kubernetes, tu
 &amp;#x200B;
 
 So I'm hoping someone out there may have insight or advice.  Anything at all is greatly appreciated.
-## [5][Mapbox App linked to SQLite3 database?](https://www.reddit.com/r/rails/comments/fe49n6/mapbox_app_linked_to_sqlite3_database/)
-- url: https://www.reddit.com/r/rails/comments/fe49n6/mapbox_app_linked_to_sqlite3_database/
----
-Hey all, first post here. Amateur Ruby on Rails user working on my college senior project. We are working on building a site that resembles the Toronto Poetry Map: [https://torontopoetry.ca/](https://torontopoetry.ca/) \- except for the monuments in D.C. instead. We have the project on Rails and have a Mapbox app to display the locations of monuments and such and an SQLite3 database for the backend. Only issue is we're unsure of how (or if) we are able to have the map pull information from the database instead of from a json file. Google searches didn't help me much on this issue -- if anyone could provide some advice we would greatly appreciate it. Thanks!
-## [6][Can't install Rails on Windows 10](https://www.reddit.com/r/rails/comments/fe2aoj/cant_install_rails_on_windows_10/)
-- url: https://www.reddit.com/r/rails/comments/fe2aoj/cant_install_rails_on_windows_10/
----
-I've been running into the "sqlite error code"  and not being able to render the server. I've gone through about 20 different solutions trying to update that, using Ubunto on Cloud9 (through Amazon Web Services) and still no luck. 
-
-&amp;#x200B;
-
-Any Windows users have any luck installing and successfully deploying Rails?
-
-&amp;#x200B;
-
-Also my Ruby version was 2.6.5 and my Rails version was 5.0 (?) I just uninstalled it and im trying to reinstall it again. (don't know if these versions are too advanced and causing errors?)
-
-&amp;#x200B;
-
-Thanks!
-## [7][Help to find the right callback method to be used](https://www.reddit.com/r/rails/comments/feb4og/help_to_find_the_right_callback_method_to_be_used/)
-- url: https://www.reddit.com/r/rails/comments/feb4og/help_to_find_the_right_callback_method_to_be_used/
----
-I have a `user` model that has a callback method `do_something` in the `before_update`
-
-that has an association to roles model
-
-    has_many :roles, autosave: true, after_add: :added, after_remove: :removed
-
-and in the do\_something callback I am trying to compute some values based on the `user.roles` association.
-
-Currently, during an update on the user model, I first remove all the roles that the user wants to be deleted like so `user.roles.destroy(each_individual_role)` and in the `do_something` callback when I try `user.roles` I get only the valid users i.e. all the deleted roles don't show up. This deletion of the roles happen before the `user.update_attributes` so if `update_attributes` fails the associated roles would have been deleted and it is an inconsistent state.
-
-To avoid the above problem and to do the roles creation/deletion in one go I decided to delete the roles via the nested attributes like so
-
-    [{id: 54, _destroy: true}, {id: nil, name: "New Role to be added"}]
-
-Now, I have two problems
-
-1. in the do\_something callback when I try and access `user.roles` I still get the role corresponding with `"_destroy": true` since I believe the association hasn't been broken yet. and this results in incorrect computation in the `do_something` callback
-2. the `before_update` is being called twice. I believe one after saving each entry to the role table.
-
-To resolve this I converted do\_something at after\_save and then do a `self.update_column` in `do_something`. This works fine as at `after_save` the roles attribute has been saved. But I do not like this solution of updating after saving that too by passing validations and I require the callbacks it uses as well
-
-Is there a better way to resolve this?
-
-Edit: ideally I would like to have the updates roles attribute from the roles_attribute on the before_update callback and the privileges I apply will have to be used for other callbacks as well.
-## [8][Best practices for blocking bot signups?](https://www.reddit.com/r/rails/comments/fdwbuc/best_practices_for_blocking_bot_signups/)
-- url: https://www.reddit.com/r/rails/comments/fdwbuc/best_practices_for_blocking_bot_signups/
----
-My side project has a single-step signup: you just put in your email and hit subscribe. (Behind the scenes, all email is delivered via SendGrid and I automatically suppress any emails that are dropped/undeliverable. I also stop the automated weekly emails if the user has not opened or clicked any emails within the past 31 days. According to SendGrid, I've got a 99% sender reputation score...)
-
-Currently, I see a couple hundred valid signups per day (thanks, SEO!) and I can confirm they're "real" because they clearly engage with the emails, update their account settings and do other things that normal users do on my app.
-
-Lately, however, I've noticed a couple of weird signups creeping into the mix each day... they signup and then immediately request a password reset email. Additionally, their emails get deferred because of "receiving too much email currently..." and there is zero additional login attempts or any other "real" behavior. A quick look at their IP addresses seems to indicate that they're coming from Eastern Europe and Asia. My site is mostly relevant to US-based users but I don't want to entirely block outsiders because I also see a lot of traffic from military bases around the world. (I should also mention that I'm not seeing very many repeat IP addresses... they're definitely rotating them.)
-
-Before I start messing with recaptchas (which would add friction to my "real" users), I'm looking for other solutions...
-
-I'm guessing I should be using something like rack-attack... but I'm not quite sure what the best practices might be to systematically block offending IPs when they're rotating, etc. Help? :)
-## [9][Creating an OpenID Connect Server](https://www.reddit.com/r/rails/comments/fdzs0y/creating_an_openid_connect_server/)
-- url: https://www.reddit.com/r/rails/comments/fdzs0y/creating_an_openid_connect_server/
----
-I have an existing Rails server that I'd like to function as an OpenID Connect Provider. I've seen that there are at least 2 gems that might help with this: [https://github.com/doorkeeper-gem/doorkeeper-openid\_connect](https://github.com/doorkeeper-gem/doorkeeper-openid_connect) and [https://github.com/nov/openid\_connect](https://github.com/nov/openid_connect). I'm wondering if any of you had had any experience with these gems for this purpose and could tell me about your experiences?
-
-I'm running Rails 6/Ruby 2.6.5
-
-Thanks!
-## [10][Redirect all get requests except for these routes...?](https://www.reddit.com/r/rails/comments/fe2wk9/redirect_all_get_requests_except_for_these_routes/)
-- url: https://www.reddit.com/r/rails/comments/fe2wk9/redirect_all_get_requests_except_for_these_routes/
----
-Title says it all. Right now Devise will catch the get request upon initial visit to check for user session. 
-
-&amp;#x200B;
-
-Once in my app, I'd like to be able to signout, but the below block redirects the request to my react application instead of hitting devise/sessions/destroy. I would like to make an exception for this route in the below block.
-
-&amp;#x200B;
-
- `get '*page', to: 'static#index', constraints: -&gt; (req) do`  
-`!req.xhr? &amp;&amp; req.format.html?`  
- `end`
-
-&amp;#x200B;
-
-Here's my routes.rb. Thanks for the help!
-
-&amp;#x200B;
-
-`# API`  
-  `namespace :v1, defaults: { format: 'json' } do`  
-`# get 'users', 'users#index'`  
-  `end`  
-  `devise_for :users, :path =&gt; '', :path_names =&gt; {`  
-`:sign_in =&gt; 'sign-in',`  
-`:sign_out =&gt; 'sign-out',`  
-`:sign_up =&gt; 'sign-up'`  
-  `},`  
- `controllers: {`  
-`sessions: 'sessions',`  
-`registrations: 'registrations'`  
-  `}`  
- `# Forward all requests to StaticController#index but requests`  
- `# must be non-ajax (!req.xhr?) and HTML Mime type (req.format.html?)`  
- `# This does not include the root ("/") path.`  
- `get '*page', to: 'static#index', constraints: -&gt; (req) do`  
-`!req.xhr? &amp;&amp; req.format.html?`  
- `end`  
- `# Forward root to StaticController#index`  
-  `root "static#index"`
-## [11][Layer Breeding Equipment Market 2020 Top Key Vendors are | Big Dutchman, Texha, Guangdong Guangxing, Big Herdsman Machinery, Guangzhou Huanan Poultry Equipment, Chore-Time Brock, Qindao Tianrui Poultry Equipment](https://www.reddit.com/r/rails/comments/febc2v/layer_breeding_equipment_market_2020_top_key/)
-- url: https://www.reddit.com/r/rails/comments/febc2v/layer_breeding_equipment_market_2020_top_key/
----
-**Global  Layer Breeding Equipment Market 2020 Research Report**
-
-This report explains the key market drivers, trends, restraints and opportunities to give a precise data which is required and expected. It also analyzes how such aspects affect the market existence globally helping make a wider and better choice of market establishment. The  Layer Breeding Equipment markets growth and developments are studied and a detailed overview is been given.
-
-This Report covers the companies data, including: shipment, price, revenue, gross profit, interview record, business distribution etc., these data help the consumer know about the competitors better. This report also covers all the regions and countries globally, which shows a regional development status, including market size, volume and value, as well as price data.
-
-**Thoroughly Studied Key Players ||   Big Dutchman, Texha, Guangdong Guangxing, Big Herdsman Machinery, Guangzhou Huanan Poultry Equipment, Chore-Time Brock, Qindao Tianrui Poultry Equipment, Shanghai Extra Machinery, Facco, Langfang Yanbei Animal Husbandry Machinery Group, Henan Jinfeng Poultry Equipment, GARTECH Equipment, HYTEM, and Fienhage Poultry-Solutions** 
-
-The increasing demand in the well-established and emerging regions as well as latest technological advent  Layer Breeding Equipment, and the growing insistence of the end-use industries are all together driving the growth of the  Layer Breeding Equipment Industry.
-
-This report however describes a brief summary of market and explains the major terminologies of the  Layer Breeding Equipment Industry. However an accurate analysis of the market trends, drivers, challenges and opportunities has derived the most reasonable outlook of the  Layer Breeding Equipment market.
-
-**Get sample copy of  Layer Breeding Equipment :** [**https://www.reportsandmarkets.com/sample-request/global-layer-breeding-equipment-market-2020-by-manufacturers-regions-type-and-application-forecast-to-2025?utm\_source=reddit&amp;utm\_medium=47**](https://www.reportsandmarkets.com/sample-request/global-layer-breeding-equipment-market-2020-by-manufacturers-regions-type-and-application-forecast-to-2025?utm_source=reddit&amp;utm_medium=47) 
-
-**The study objectives are:**
-
-To analyze and research the global  Layer Breeding Equipment status and future forecast involving, production, revenue, consumption, historical and forecast.
-
-To present the key  Layer Breeding Equipment  manufacturers, production, revenue, market share, and recent development.
-
-To split the breakdown data by regions, type, manufacturers and applications.
-
-To analyze the global and key regions market potential and advantage, opportunity and challenge, restraints and risks.
-
-To identify significant trends, drivers, influence factors in global and regions.
-
-To analyze competitive developments such as expansions, agreements, new product launches, and acquisitions in the market.
-
-And more.
-
-**In this study, the years considered to estimate the market size of  Layer Breeding Equipment**
-
-History Year: 2015–2019
-
-Base Year: 2019
-
-Estimated Year: 2020
-
-Forecast Year: 2020–2027
-
-**The report offers in-depth assessment of the growth and other aspects of the  Layer Breeding Equipment market in important countries (regions), including:**
-
-North America
-
-Europe
-
-Asia Pacific
-
-Middle East &amp; Africa
-
-Latin America
-
-America Country (United States, Canada)
-
-South America
-
-Asia Country (China, Japan, India, Korea)
-
-Europe Country (Germany, UK, France, Italy)
-
-Other Country (Middle East, Africa, GCC)
-
-**Get Complete Report  Layer Breeding Equipment @** [**https://www.reportsandmarkets.com/reports/global-layer-breeding-equipment-market-2020-by-manufacturers-regions-type-and-application-forecast-to-2025?utm\_source=reddit&amp;utm\_medium=47**](https://www.reportsandmarkets.com/reports/global-layer-breeding-equipment-market-2020-by-manufacturers-regions-type-and-application-forecast-to-2025?utm_source=reddit&amp;utm_medium=47) 
-
-1 Report Overview
-
-2 Global Growth Trends
-
-3 Market Share by Key Players
-
-4 Breakdown Data by Type and Application
-
-5 United States
-
-6 Europe
-
-7 China
-
-8 Japan
-
-9 Southeast Asia
-
-10 India
-
-11……
-
-12…….
-
-13……..
-
-14 Central &amp; South America
-
-15 International Players Profiles
-
-16 Market Forecast 2020-2027
-
-17 Analyst's Viewpoints/Conclusions
-
-18 Appendix
-
-**About Us:**
-
-Market research is the new buzzword in the market, which helps in understanding the market potential of any product in the market. Reports And Markets is not just another company in this domain but is a part of a veteran group called Algoro Research Consultants Pvt. Ltd. It offers premium progressive statistical surveying, market research reports, analysis &amp; forecast data for a wide range of sectors both for the government and private agencies all across the world.
-
-**Contact Us:**
-
-Sanjay Jain
-
-Manager – Partner Relations &amp; International Marketing
-
-https://www.reportsandmarkets.com/
-
-Ph: +1-352-353-0818 (US)
-## [12][The tricky situation with rails before_validation callbacks](https://www.reddit.com/r/rails/comments/fdwrl2/the_tricky_situation_with_rails_before_validation/)
-- url: https://www.reddit.com/r/rails/comments/fdwrl2/the_tricky_situation_with_rails_before_validation/
----
-I have a `user` model that can have many `emails` model. I have a before validation callback method that sets the primary email from the list of `emails` for that user. 
-
-So when I create an email in the `user` model the `user_email` object with primary email will automatically be updated as part of the `before_validation` callback. 
-
-say a `user` A has the following entries in the `emails` table
-
-    user_id email primary 
-    A.      EM    true
-    C       MF   false
-
-If I wanted to update the email for user A to "MF", I'll set the `email_attributes` to `{ id: 45, "_destroy" : 1 }` and call `item.update_attributes({email : "MF"})`
-
-Now user A  will have email "MF" first in the user table. Then via callbacks, the email object will have its email updated to "MF"  for the email with primary = true email entry which will fail as the before validation is called first and the email\_attributes which destroy the entry "MF" which causes duplicate hasn't been destroyed yet. 
-
-  
-To overcome this I'll have to explicitly call Email.find(45).destroy and then there will be no duplicates. 
-
-I'm not sure how else to solve this. Any help would be great.

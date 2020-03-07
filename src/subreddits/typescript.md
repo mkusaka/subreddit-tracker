@@ -22,7 +22,15 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
+## [2][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
+- url: https://www.dandoescode.com/blog/using-typescript-without-typescript/
+---
+
+## [3][TypeScript Migration Strategy (from JavaScript)](https://www.reddit.com/r/typescript/comments/fee93i/typescript_migration_strategy_from_javascript/)
+- url: https://www.youtube.com/watch?v=v3lI29trIN8&amp;feature=share
+---
+
+## [4][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
 - url: https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/
 ---
 For some reason I can't use optional chaining in my new project, other TS features like interfaces, types, ... are working fine. Also my IDE is not throwing out any errors, but upon compiling the code, I get this error for the following line of code:
@@ -36,7 +44,7 @@ Line of code: `country: location?.country`
 `at Module._compile (internal/modules/cjs/loader.js:895:18)`
 
 What's going on?
-## [3][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
+## [5][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
 - url: https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/
 ---
 ## Problem
@@ -47,11 +55,11 @@ I want to optimize my TypeScript by replacing all literal enums with their value
 
 * Third-party libraries may not provide them.
 * Babel does not support them.
-## [4][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
+## [6][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
 - url: /r/LearnTypescript/comments/fe3zip/best_way_to_type_an_object_with_string_keys/
 ---
 
-## [5][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
+## [7][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
 - url: https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/
 ---
 Is it possible to have a function return different return types under different circumstances?
@@ -69,11 +77,11 @@ example:
     }
     
     test('beatdook04');
-## [6][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
+## [8][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
 - url: https://github.com/sinclairzx81/typebox
 ---
 
-## [7][Trying to store typescript code in string to use in runtime. [Guidance Appreciated]](https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/)
+## [9][Trying to store typescript code in string to use in runtime. [Guidance Appreciated]](https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/)
 - url: https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/
 ---
 As the description implies i'm trying to store actual code from typescript file in a variable so that when I console.log it i'll see the typescript implementation instead of the compiled code.  
@@ -88,7 +96,7 @@ What I've tried:
 3.  Tried to retrofit this code [this code](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API#user-content-re-printing-sections-of-a-typescript-file) from the typescript compiler API docs for my purposes.
 
 So far I haven't had any luck. All pointers welcome ;)
-## [8][How to conditionally determine return value in a Promise](https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/)
+## [10][How to conditionally determine return value in a Promise](https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/)
 - url: https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/
 ---
 I'm trying to write a wrapper around fs.readFile that will return JSON if the option is set to true.
@@ -110,7 +118,7 @@ if (typeof f !== 'string') {
 \`\`\`
 
 https://preview.redd.it/peb06d2q6uk41.png?width=1300&amp;format=png&amp;auto=webp&amp;s=aec55267486ff42d3f9720d2e6f926c32b18ab6c
-## [9][Static Site with JS from TS using exports?](https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/)
+## [11][Static Site with JS from TS using exports?](https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/)
 - url: https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/
 ---
 Could anyone please explain to me (Java/Kotlin lad) how to get modules working? I am very comfortable with vanilla JS but was busy playing with the JVM when the whole Node / ES module thing went down.
@@ -122,28 +130,3 @@ I have satisfied both my ATE (VSC, fwiw) and the TSC (transpiler irl?) by using 
 I just want to visit my static site with multiple, minifed JS files that were generated by TSC, understanding that multiple TS files rely on definitions from multiple files without too many complications in the build / compilation process..?
 
 Cheers lads.
-## [10][TypeScript Migration Strategy (from JavaScript)](https://www.reddit.com/r/typescript/comments/fdhx6f/typescript_migration_strategy_from_javascript/)
-- url: https://www.youtube.com/watch?v=v3lI29trIN8&amp;feature=share
----
-
-## [11][Is this even possible in TS?](https://www.reddit.com/r/typescript/comments/fdkxcp/is_this_even_possible_in_ts/)
-- url: https://www.reddit.com/r/typescript/comments/fdkxcp/is_this_even_possible_in_ts/
----
-Hi,
-
-If I have a union type like:
-
-    type KeyType = 'one' | 'two' | 'three';
-
-And I want to declare an interface that has all those keys (of a given type, say number) plus additional properties. E.g.:
-
-    interface MyInterface {
-        [key in KeyType]: number;
-        anotherProperty: string;
-    }
-
-Basically I want an interface that ensures that keys won't clash, and specify that all the keys in a given union will be there, plus any number of additional properties I like.
-
-The above doesn't work.
-
-Thanks!

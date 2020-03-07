@@ -1,87 +1,115 @@
 # golang
-## [1][Designed in ZPL !](https://www.reddit.com/r/golang/comments/fecwcd/designed_in_zpl/)
+## [1][My experience with learning Golang](https://www.reddit.com/r/golang/comments/fesci5/my_experience_with_learning_golang/)
+- url: https://pmihaylov.com/learning-golang-experience/
+---
+
+## [2][CertMagic v0.10.0 released - CertMAutomatic HTTPS for any Go program: fully-managed TLS certificate issuance and renewal.](https://www.reddit.com/r/golang/comments/fet7wz/certmagic_v0100_released_certmautomatic_https_for/)
+- url: https://github.com/caddyserver/certmagic
+---
+
+## [3][How DRY?](https://www.reddit.com/r/golang/comments/femrpz/how_dry/)
+- url: https://www.reddit.com/r/golang/comments/femrpz/how_dry/
+---
+I try to always follow this philosophy. And in Go, I tend to follow it more often than not. But I always wonder when people say "Enough. This is too much copying".
+
+In this [gist](https://gist.github.com/justrudd/8517dfbea90afe9b4b64be11d7a58290) are two functions - populateOne and populateTwo. populateOne queries a table in chunks of 1000 pulling in an int32 and int64 column and then adding those columns to a cache. populateTwo queries a table in chunks of 1000 pulling in an int32 and string column and then adding those columns to a cache.
+
+They are probably 90% similar. In the case of 2 functions, not a huge deal. but I'm repeating that pattern 12 times. 3 of the 12 definitely have more complicated queries and deal with null columns. But 9 of the 12 are structurally the same - query by id, retrieve 3 columns, update a map with one column mapping to the other.
+
+I'm not asking for how you'd get rid of the duplication (unless you think you have a neat way to do it), but just curious as to how much you care. A little? A lot? Does writing the code in Go make you care less? In Ruby, I'd get rid of it. In Java/Kotlin, I'd consider removing as much of it as possible but lean toward duplication when it started looking contrived. But in Go, it doesn't really bother me...
+## [4][Micro In Action, Coda: Distributed Cron Job](https://www.reddit.com/r/golang/comments/fetctd/micro_in_action_coda_distributed_cron_job/)
+- url: https://itnext.io/micro-in-action-coda-distributed-cron-job-a2b577885b24
+---
+
+## [5][r8limiter - envoy pluggable rate limiting service - Feedback is needed :)](https://www.reddit.com/r/golang/comments/fet1qj/r8limiter_envoy_pluggable_rate_limiting_service/)
+- url: https://github.com/samueltorres/r8limiter
+---
+
+## [6][Designed in ZPL !](https://www.reddit.com/r/golang/comments/fecwcd/designed_in_zpl/)
 - url: https://i.redd.it/6ygxcb44s1l41.jpg
 ---
 
-## [2][emoji: A minimalistic emoji package for Go](https://www.reddit.com/r/golang/comments/fe21os/emoji_a_minimalistic_emoji_package_for_go/)
-- url: https://www.reddit.com/r/golang/comments/fe21os/emoji_a_minimalistic_emoji_package_for_go/
+## [7][load testing with vegeta and postman](https://www.reddit.com/r/golang/comments/feqcz6/load_testing_with_vegeta_and_postman/)
+- url: https://www.reddit.com/r/golang/comments/feqcz6/load_testing_with_vegeta_and_postman/
 ---
-[github.com/enescakir/emoji](https://github.com/enescakir/emoji)
+Hello fellow Gophers,
 
-It makes emoji usage easier in Golang.
+Been using a small library I wrote to streamline my load testing with vegeta. 
 
-`fmt.Printf("Hello %v", emoji.WavingHand) // Hello 👋`
+The use case really came about when running the usual postman tests, and not having a great way to utilize what was defined in my postman collection to run my load tests as well. I had already been using vegeta for load testing but for anything other than a simple API that code becomes verbose very quickly. So I really just wanted a way for vegeta to use my postman collection and environment and hammer away at the API.
 
-You don't have to remember emoji names. Your IDE's autocomplete feature handles it.
-## [3][The Goyave web framework is looking for contributors](https://www.reddit.com/r/golang/comments/febjl5/the_goyave_web_framework_is_looking_for/)
-- url: https://www.reddit.com/r/golang/comments/febjl5/the_goyave_web_framework_is_looking_for/
+It simply ingests your postman collection and environment to generate vegeta targets and then allows you to configure vegeta as normal. 
+
+Figured I'd share as others might find it useful within their own workflows. 
+
+Any feedback on the implementation is welcome! Hope you guys find this useful!
+
+[https://github.com/dgparker/vegeta-powerup](https://github.com/dgparker/vegeta-powerup)
+## [8][Finding a graphql client](https://www.reddit.com/r/golang/comments/feubr3/finding_a_graphql_client/)
+- url: https://www.reddit.com/r/golang/comments/feubr3/finding_a_graphql_client/
 ---
-https://preview.redd.it/fvcj8bbo21l41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=33bd209135b5014360db861dcb1f43c484113909
+I am trying to call graphql api by golang for few days, but most of libraries in GitHub are graphql server implementation not client.
 
-Hello Gophers!
 
-After being recently added to the [awesome-go](https://github.com/avelino/awesome-go) curated list, I am looking for contributors for the development of Goyave, a feature-complete web framework focused on APIs.
+Could anybody recommend some graphql client libraries ? 
 
-I created some issues on the repository to describe what I have in mind. These issues describe the main idea but not how it should be implemented, the first step is to discuss them and to define a good implementation. Come and take part in the discussion!
-
-PM or email me if needed.
-
-Repo URL: [https://github.com/System-Glitch/goyave](https://github.com/System-Glitch/goyave)
-## [4][Tool capable of hiding any file within your images](https://www.reddit.com/r/golang/comments/fdvbtu/tool_capable_of_hiding_any_file_within_your_images/)
-- url: https://www.reddit.com/r/golang/comments/fdvbtu/tool_capable_of_hiding_any_file_within_your_images/
+machinebox/graphql or shurcool/graphql is the only one choices in GitHub?
+## [9][Yet another go module challenge for me](https://www.reddit.com/r/golang/comments/feu2pl/yet_another_go_module_challenge_for_me/)
+- url: https://www.reddit.com/r/golang/comments/feu2pl/yet_another_go_module_challenge_for_me/
 ---
-I am developer from Sofia, Bulgaria and i am really proud with my personal project [stegify](https://github.com/DimitarPetrov/stegify). It is a command line tool which performs [steganography](https://en.wikipedia.org/wiki/Steganography) encoding and is implemented in Golang.
+In the app I am developing there is a library module and a couple of executables using the library. All maintained in the same git repo.
 
-The tool is capable of hiding any kind of file in any image or set of images. This encoding is 100% clueless and transparent for the eye.
+As the library (and the signature of the functions) evolves, have a hard time convincing go to build one app or the other. when i try to build one of the apps, the "latest" change to the library is not picked up.
 
-In short the file is hidden in the image/s last two bits of each color segment. The technique is known as LSB steganography.
+Perhaps the library, each app should be in their own git repos.
 
-I am happy to share with you guys, that i have managed to create a new version (v1.2) which now provides an option to hide your file in multiple images, divided into chunks.
+Trying to avoid splitting the library and the execs into separate git repos.
 
-&amp;#x200B;
+Is there a go mod option to indicate some module to be always the latest? Or to tell go not to go to the repo for the library. after all it is local.
 
-It would be great if you share some feedback and ideas (Encoding in multiple images introduced with v1.2 is inspired by a community feature request). Thanks!
-## [5][anz-bank/protoc-gen-sysl - Generate sysl source code from .proto files](https://www.reddit.com/r/golang/comments/feafs8/anzbankprotocgensysl_generate_sysl_source_code/)
-- url: https://github.com/anz-bank/protoc-gen-sysl
+Hope the issue is clear. Looking for the "proper" approach. 
+
+thanks for any advice. srini
+## [10][XML parsing in Go](https://www.reddit.com/r/golang/comments/fekgx1/xml_parsing_in_go/)
+- url: https://www.reddit.com/r/golang/comments/fekgx1/xml_parsing_in_go/
 ---
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;service name=""&gt;
+      &lt;tabset name="Syslog"&gt;
+        &lt;tab name="Syslog Config"/&gt;
+        &lt;tab-contents name="Syslog Configuration"&gt;
+          &lt;string desc="SuperUserID" name="superID"&gt;&lt;![CDATA[admin]]&gt;&lt;/string&gt;
+          &lt;password desc="SuperUserPwd" name="superPwd"&gt;&lt;![CDATA[superman321]]&gt;&lt;/password&gt;
+          &lt;string desc="GuestID" name="guestID"&gt;&lt;![CDATA[guest]]&gt;&lt;/string&gt;
+          &lt;string desc="GuestPermission" name="guestPerm"&gt;&lt;![CDATA[1,23,122]]&gt;&lt;/string&gt;
+          &lt;password desc="GuestPwd" name="guestPwd"&gt;&lt;![CDATA[guest123]]&gt;&lt;/password&gt;
+          &lt;flag desc="Enable Guest" name="enableGuest"&gt;&lt;![CDATA[false]]&gt;&lt;/flag&gt;
+          &lt;flag desc="Enable Logging" name="enableLogging"&gt;&lt;![CDATA[true]]&gt;&lt;/flag&gt;
+        &lt;/tab-contents&gt;
+      &lt;/tabset&gt;
+    &lt;/service&gt;
 
-## [6][GolangGDL Community February Meetup 2020 Guadalajara, México](https://www.reddit.com/r/golang/comments/fe8759/golanggdl_community_february_meetup_2020/)
-- url: https://www.reddit.com/r/golang/comments/fe8759/golanggdl_community_february_meetup_2020/
----
-Here it is our last february 2020 meetup about golang in Guadalajara, México.
+I really haven't worked on XML at all. I thought it'd be simple one, but seems very flexible yet confuses heck out of me when "tab-contents" takes bunch of different type of data inside.
 
-[https://www.youtube.com/watch?v=CzLf8oCtT2o](https://www.youtube.com/watch?v=CzLf8oCtT2o)
-## [7][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/golang/comments/fed2gy/top_5_frontend_development_outsourcing_challenges/)
-- url: http://drdobbss.xyz
----
+    type Ex_XML struct {
+      XMLName xml.Name `xml:"service"`
+      Tabset  []tabset `xml:"tabset"`
+    }
+    type tabset struct {
+      Name        string      `xml:"name,attr"`
+      Tab         tab         `xml:"tab"`
+      TabContents tabContents `xml:"tab-contents"`
+    }
+    type tab struct {
+      Name string `xml:"name,attr"`
+    }
+    type tabContents struct {                  // &lt;===== I'M LOST HERE
+      Name     string `xml:"name,attr"`
+      String   string `xml:"string"`
+      Password string `xml:"password"`
+      Flag     string `xml:"flag"`
+    }
 
-## [8][dque 2.2.0 released - fast, embedded, durable queue for Go](https://www.reddit.com/r/golang/comments/fdz5fh/dque_220_released_fast_embedded_durable_queue_for/)
-- url: https://www.reddit.com/r/golang/comments/fdz5fh/dque_220_released_fast_embedded_durable_queue_for/
----
-[https://github.com/joncrlsn/dque](https://github.com/joncrlsn/dque) \- dque is a fast, embedded, durable queue for Go
+How am I supposed to code tabContents here? I think attribute "name" should be used as a key, but I can't find any examples..
 
-dque version 2.2.0 now has blocking dequeue and peek methods.
-
-dque version 2.1.0 added a lock file to prevent simultaneous processes using the same queue directory.
-
-Thank you, Thomas Kriechbaumer.
-## [9][Documentation on getting gRPC working with the new Go protoreflect API?](https://www.reddit.com/r/golang/comments/fe3a4k/documentation_on_getting_grpc_working_with_the/)
-- url: https://www.reddit.com/r/golang/comments/fe3a4k/documentation_on_getting_grpc_working_with_the/
----
-Thanks to the [Go blog post about it](https://blog.golang.org/a-new-go-api-for-protocol-buffers), I recently learned of the new version of the protocol buffer API which serves my exact needs for auditing gRPC messages sent through services. Using the latest version of protoc and the new installation of protoc-gen-go (`go install` [`google.golang.org/protobuf/cmd/protoc-gen-go`](https://google.golang.org/protobuf/cmd/protoc-gen-go)) I can compile a simple `message` in a .proto file no worries using `protoc --proto_path=. test.proto --go_out=.`.
-
-Following [this guide to generating Go code for protobufs](https://developers.google.com/protocol-buffers/docs/reference/go-generated), this doesn't generate anything for a `service` defined in that same proto file. Unfortunately, the [gRPC Go Quickstart guide](https://github.com/grpc/grpc-go/tree/master/examples) linked in the previous article doesn't seem to be updated for the new protoc-gen-go, and using `--go_out=plugins=grpc:.` gives the following error:
-
-&gt;`--go_out: protoc-gen-go: plugins are not supported; use 'protoc --go-grpc_out=...' to generate gRPC`
-
-But using `--go-grpc_out=.` also gives an error:
-
-&gt;`'protoc-gen-go-grpc' is not recognized as an internal or external command, operable program or batch file.`
-
-Which makes sense, since that's the syntax for a protoc plugin that doesn't seem to exist.
-
-Is there documentation for how to generate gRPC services without falling back to the old protoc-gen-go and losing the `protoreflect.Message` interface? Am I missing something obvious?
-## [10][An opinionated guide on making microservices communicate! Your thoughts!!?](https://www.reddit.com/r/golang/comments/fdve7b/an_opinionated_guide_on_making_microservices/)
-- url: https://medium.com/spaceuptech/the-right-way-of-making-microservices-communicate-b6cd517ae702
----
-
+Thanks!

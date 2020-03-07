@@ -86,79 +86,88 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Mergefly - A new UI for GitHub](https://www.reddit.com/r/reactjs/comments/fe8w1y/mergefly_a_new_ui_for_github/)
-- url: https://www.reddit.com/r/reactjs/comments/fe8w1y/mergefly_a_new_ui_for_github/
----
-Hi everyone!
-
-About a year ago, I decided that I didn't really like the current GitHub UI for reading code and doing pull requests so my brother and I decided to put our React/Redux skills to the test and make our own. I am really excited to show off our results and get all of your feedback :)
-
-The site is called [Mergefly](https://mergefly.com) and we tried to add in as many fun features as we could think of such as multiple tabs, a file tree for navigating code, full code context, floating comments, live updates, hotkeys and Slack integration. We also use the Monaco Editor for displaying code so you get a lot of the built in features that you see in VSCode. Also, for fun, we added support for all the monaco themes so you have around 50 to choose from.
-
-I'm really proud of how the site turned out as well as how well my React skills have grown and I really hope you guys enjoy it too! If you guys have any ideas for improvements please let me know! It's still very much a work in progress.
-
-https://reddit.com/link/fe8w1y/video/xgp9os2eozk41/player
-## [4][My first open source app: Sup, a Slack client with WhatsApp like UI. built using react-native and react-native-web](https://www.reddit.com/r/reactjs/comments/fdt78p/my_first_open_source_app_sup_a_slack_client_with/)
-- url: https://v.redd.it/hgky41mnvtk41
+## [3][Deep Dive into Redux Toolkit with React - Complete Guide](https://www.reddit.com/r/reactjs/comments/fef14k/deep_dive_into_redux_toolkit_with_react_complete/)
+- url: https://www.youtube.com/watch?v=9lCmbth63k0
 ---
 
-## [5][Create simple POS with React, Node and MongoDB #5: Setup ReCaptcha and define CORS](https://www.reddit.com/r/reactjs/comments/feag3c/create_simple_pos_with_react_node_and_mongodb_5/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-5-setup-recaptcha-and-define-cors/
+## [4][Resources for learning react under the hood?](https://www.reddit.com/r/reactjs/comments/feuoq8/resources_for_learning_react_under_the_hood/)
+- url: https://www.reddit.com/r/reactjs/comments/feuoq8/resources_for_learning_react_under_the_hood/
+---
+I am comfortable in building applications with React.js, hooks, and redux as well but I want to dive deep into react to become good developer. I have good knowledge how JavaScript works under the hood, and everything related to JavaScript like closures, hoisting, prototypal inheritance,etc. So can someone suggest some resources to learn React.js also upto that level?
+## [5][My first open source project! MyDrive, a Node.js/React based Cloud Storage Solution (Similar To Google Drive).](https://www.reddit.com/r/reactjs/comments/fefsp3/my_first_open_source_project_mydrive_a/)
+- url: https://v.redd.it/v4pm36lhv2l41
 ---
 
-## [6][Anyone know a React component or at least SVG css animation like this?](https://www.reddit.com/r/reactjs/comments/feao9f/anyone_know_a_react_component_or_at_least_svg_css/)
-- url: https://youtu.be/MBFEEJUdwnQ
+## [6][I built an app to help teams make better priority decisions last year. Hopefully it helps someone else. Built with React, mobx, and nextjs.](https://www.reddit.com/r/reactjs/comments/fem24t/i_built_an_app_to_help_teams_make_better_priority/)
+- url: https://teamvote.app
 ---
 
-## [7][Forms in React - must we really update the component on each character entered?](https://www.reddit.com/r/reactjs/comments/fecu2j/forms_in_react_must_we_really_update_the/)
-- url: https://www.reddit.com/r/reactjs/comments/fecu2j/forms_in_react_must_we_really_update_the/
+## [7][Folder Structure - Best Practice](https://www.reddit.com/r/reactjs/comments/femz4f/folder_structure_best_practice/)
+- url: https://www.reddit.com/r/reactjs/comments/femz4f/folder_structure_best_practice/
 ---
-I have been doing this for a while but find myself wondering what the point is.
+Hi all,
 
-If the user is entering an email and then pressing `Submit`, what exactly do we gain from setting `email` state to the latest character entered?
-
-Isn't it just as good to do something like this?
-
-    onSubmit = (currentInputValue) =&gt; doSomeLogic(currentInputValue)
-
-What's more - by setting state on each key press, am I not wasting computing resources and risk running into issues like missing characters if the user types or backspaces too fast?
-## [8][Redux Toolkit v1.3.0-beta.0: new `createAsyncThunk` and `createEntityAdapter` APIs, Immer 6.0, smaller bundle sizes!](https://www.reddit.com/r/reactjs/comments/fdynkd/redux_toolkit_v130beta0_new_createasyncthunk_and/)
-- url: https://github.com/reduxjs/redux-toolkit/releases/tag/v1.3.0-beta.0
----
-
-## [9][Looking for constructive feedback](https://www.reddit.com/r/reactjs/comments/febyww/looking_for_constructive_feedback/)
-- url: https://www.reddit.com/r/reactjs/comments/febyww/looking_for_constructive_feedback/
----
-Hi, 
-
-This is Sanjay and I am an expert React Developer and looking to get feedback on my recent work.
-
-Github: [https://github.com/makasanas](https://github.com/makasanas)
-
-Recent projects:
-
-[https://busright.com/](https://busright.com/)
-
-[https://vue.co/](https://vue.co/)
-
-[https://www.webrexstudio.com/book-reader/](https://www.webrexstudio.com/book-reader/)
-## [10][Is there any alternative to react-admin for auto generated admin dashboard for crud rest api?](https://www.reddit.com/r/reactjs/comments/febw1j/is_there_any_alternative_to_reactadmin_for_auto/)
-- url: https://www.reddit.com/r/reactjs/comments/febw1j/is_there_any_alternative_to_reactadmin_for_auto/
----
-I have a crud rest api and I want some simple UI to work with it. I know there is a react-admin, but before jumping into it I would like to know is there any alternative.
-## [11][What do you feel could be improved most about React Native?](https://www.reddit.com/r/reactjs/comments/fe5i6p/what_do_you_feel_could_be_improved_most_about/)
-- url: /r/expojs/comments/fe5hlt/what_do_you_feel_could_be_improved_most_about/
----
-
-## [12][ReactJs Google Ads](https://www.reddit.com/r/reactjs/comments/fea4yr/reactjs_google_ads/)
-- url: https://www.reddit.com/r/reactjs/comments/fea4yr/reactjs_google_ads/
----
-Hi there!
-
-I am beginner to react web app. And i switched from Unity to React about 4 months ago. I have designed a very simple react web app. But now i am thinking of adding google ads. I looked around on on Google and i found few npm packages.
+is there some good resource online on how to create a clean and modern folder structure for a react app? Would be nice if there'd be some thoughts on why the folders are laid out as they are, not just a list of folders itself.
 
 &amp;#x200B;
 
-&gt;*Note: According to google it will take 24-48 hours to display ads*
+Thanks!
+## [8][DatoRSS - RSS Search Engine](https://www.reddit.com/r/reactjs/comments/feuygj/datorss_rss_search_engine/)
+- url: http://www.datorss.com
+---
 
-But in my case i want to display some dummy ads so that my google adsense account do not any harmful notification from Google.
+## [9][Downtown - count 'til down ⌛️](https://www.reddit.com/r/reactjs/comments/feuce8/downtown_count_til_down/)
+- url: https://v.redd.it/1zv4p3qtr8l41
+---
+
+## [10][Ui component Framework for react](https://www.reddit.com/r/reactjs/comments/feu4bx/ui_component_framework_for_react/)
+- url: https://www.reddit.com/r/reactjs/comments/feu4bx/ui_component_framework_for_react/
+---
+I just finished learning react and mad like 2 apps with it.. but want to know which is a beginner friendly ui component Framework which i can use..
+
+And i used semantic ui Framework but... Ended up overriding the css for it almost every time... Is it ok to override css most thorough the app
+## [11][Cypress test error when importing from CRA + TS source code](https://www.reddit.com/r/reactjs/comments/fervz7/cypress_test_error_when_importing_from_cra_ts/)
+- url: https://www.reddit.com/r/reactjs/comments/fervz7/cypress_test_error_when_importing_from_cra_ts/
+---
+One of my Cypress tests fails to run when it tries to import from a file in the source code (CRA src directory).
+
+The test:
+
+    // cypress/integration/this-fails.js
+    import { MY_CONSTANT } from '../../src/constants';
+    
+    describe('Cypress', () =&gt; {
+      ...
+    })
+
+The source file:
+
+    // src/constants.ts
+    export const MY_CONSTANT = 'foo';
+
+The Cypress test failure is caused by a Jest test file in the source directory:
+
+    ERROR in /my-app/src/App.test.tsx(5,1)
+    
+    Cannot find name 'test'. Do you need to install type definitions for a test runner? Try`npm i @types/jest`or`npm i @types/mocha`.
+
+The Jest type definitions are installed. Additionally, to no avail, I have tried to exclude the problematic Jest test in the Cypress tsconfig.
+
+    // cypress/tsconfig.json
+    {
+      ...
+      "exclude": [
+        "../src/App.test.tsx"
+      ],
+      ...
+    }
+
+Solving JS build/bundling config problems is not my strongest area, so if someone could point me in the right direction I would greatly appreciate it.
+
+Here is a minimal repo that reproduces my problem: [https://github.com/brietsparks/cra-ts-cypress-troubleshooting](https://github.com/brietsparks/cra-ts-cypress-troubleshooting)
+
+Lastly, to clarify why I am importing things into Cypress tests from the source directory — the imported variable is intended to be a DOM selector or a function that returns a DOM selector so that selectors are not hardcoded in the tests.
+## [12][My first reactjs app! - an elegant way of viewing statistics about COVID-19](https://www.reddit.com/r/reactjs/comments/feslr9/my_first_reactjs_app_an_elegant_way_of_viewing/)
+- url: https://coronastats.now.sh
+---
+

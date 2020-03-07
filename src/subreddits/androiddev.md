@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/fecwy1/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/fecwy1/weekly_anything_goes_thread/
+## [1][App Feedback Thread - March 07, 2020](https://www.reddit.com/r/androiddev/comments/feuigx/app_feedback_thread_march_07_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/feuigx/app_feedback_thread_march_07_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - March 02, 2020](https://www.reddit.com/r/androiddev/comments/fcaf42/weekly_questions_thread_march_02_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/fcaf42/weekly_questions_thread_march_02_2020/
 ---
@@ -25,117 +40,144 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][PSA: Google survey about Scoped Storage for Android 11](https://www.reddit.com/r/androiddev/comments/febs6h/psa_google_survey_about_scoped_storage_for/)
+## [3][Motion layout.](https://www.reddit.com/r/androiddev/comments/ferrqr/motion_layout/)
+- url: https://v.redd.it/rg8y779sa7l41
+---
+
+## [4][AnimatedBottomBar](https://www.reddit.com/r/androiddev/comments/feg41w/animatedbottombar/)
+- url: https://github.com/Droppers/AnimatedBottomBar
+---
+
+## [5][Android Deep thread handling](https://www.reddit.com/r/androiddev/comments/ferupc/android_deep_thread_handling/)
+- url: https://www.reddit.com/r/androiddev/comments/ferupc/android_deep_thread_handling/
+---
+I have written an article about handle thread in android: 
+
+Thread handling in android part two:
+
+[https://medium.com/culi-tech-viet/thread-handling-android-p2-bd34da043afc](https://medium.com/culi-tech-viet/thread-handling-android-p2-bd34da043afc)
+
+&amp;#x200B;
+
+u/android,
+## [6][Is there a standard android studio "project assets" or "ignore" folder?](https://www.reddit.com/r/androiddev/comments/feuoi0/is_there_a_standard_android_studio_project_assets/)
+- url: /r/AndroidStudio/comments/feb4k1/is_there_a_standard_android_studio_project_assets/
+---
+
+## [7][Designing a Simple App UI](https://www.reddit.com/r/androiddev/comments/feumi5/designing_a_simple_app_ui/)
+- url: https://youtu.be/3kXrrxz_fsM
+---
+
+## [8][How to pass data to the previous fragment](https://www.reddit.com/r/androiddev/comments/fesabg/how_to_pass_data_to_the_previous_fragment/)
+- url: https://www.reddit.com/r/androiddev/comments/fesabg/how_to_pass_data_to_the_previous_fragment/
+---
+Sometimes I was considering the way to passed data to the previous fragment simplest? Didn't using EventBus, RxBus, or interface callback.  This is my article wrote about the simplest way to passed data to the previous fragment: 
+
+&amp;#x200B;
+
+[https://medium.com/culi-tech-viet/pass-data-to-the-previous-fragment-e2b1d19f39ca](https://medium.com/culi-tech-viet/pass-data-to-the-previous-fragment-e2b1d19f39ca)
+## [9][Huawei &amp; Safetynet](https://www.reddit.com/r/androiddev/comments/fetsbm/huawei_safetynet/)
+- url: https://www.reddit.com/r/androiddev/comments/fetsbm/huawei_safetynet/
+---
+I'm looking into buying the newly released Huawei Nova 6. I just have a few concerns that I'd like to know the answers to.
+
+&amp;#x200B;
+
+1: Will the Chinese version pass Safetynet if the trade war stops?
+
+2: If the phone will never pass Safetynet, what apps will I be unable to use?
+
+3: Is there a way to make the phone think it passes Safetynet? I'm not sure what Magisk or rooting is, but I think it has something to do with it.
+
+4: If there's a global release of the phone, will the global version pass Safetynet?
+
+&amp;#x200B;
+
+If anyone else has any additional comments to make regarding new Huawei devices, I'd love to hear them. I'm not concerned as far as regular Google Play services go, I'm sure I will be able to get that installed. It's just stuff like Google Pay, banking apps etc.
+
+&amp;#x200B;
+
+Thanks.
+## [10][PSA: Google survey about Scoped Storage for Android 11](https://www.reddit.com/r/androiddev/comments/febs6h/psa_google_survey_about_scoped_storage_for/)
 - url: https://google.qualtrics.com/jfe/form/SV_9HOzzyeCIEw0ij3?Source=scoped-storage
 ---
 
-## [4][Aspiring Android developer discouraged from reading about bans - would you still choose Android as a career if you did it over?](https://www.reddit.com/r/androiddev/comments/fe9laj/aspiring_android_developer_discouraged_from/)
-- url: https://www.reddit.com/r/androiddev/comments/fe9laj/aspiring_android_developer_discouraged_from/
----
-TL;DR at the bottom.
-
-A bit of background about me: I'm 27 and finishing up a degree in Computer Science. Lately I've been interested in Android development and working through their official code labs and concept chapters. I love Android Studio and enjoy the Android platform with its fun phone sensors and other features to work with. I've been planning on focusing on this and pursuing a career in it.
-
-However, I'm discouraged after reading about Google's treatment of developers (for example, removing apps without clear instructions and support about policy violations, or even worse, an outright developer ban).
-
-My biggest fear is if I somehow got permanently banned from the Playstore, that would severely limit my employability as an Android developer - especially as a new one. I'm not planning on making spammy apps, but from what I've read it seems that Google can sometimes be vague and capricious in removing apps and banning developers.
-
-How likely is a permanent ban if you try to follow their policies? And if worst case scenario you do get banned, would that actually affect your employability as an Android developer? Or am I worrying about this too much?
-
-I actually have a course at school for Android and need what I've studied so far to pass it, so even if I don't pursue Android development professionally, my studying hasn't been for nought. And I've got front end experience as well as Java, so I may go one of those routes instead. Or possibly learn React Native and try to find a job doing that.
-
-Am I overthinking this? Would you, a professional Android developer, still choose this as a career if you were in my shoes?
-
-TL;DR Considering a career in Android development, but worried about being banned from the Playstore even if I try to follow policy. Biggest worry is a ban affecting my employability. Is that a legit worry?
-## [5][How do reach out to someone at Google Play? I tried updating the logo for the application I am developing, got rejected saying we are impersonating a brand. I didn't know there was chat support in Google Play, I tried last night and this morning and I see this. What is 12am - 12am (GMT)?](https://www.reddit.com/r/androiddev/comments/fe1rqy/how_do_reach_out_to_someone_at_google_play_i/)
-- url: https://i.redd.it/stw6w4gz1xk41.png
+## [11][Emulator 30.0.3 Canary](https://www.reddit.com/r/androiddev/comments/fehn0c/emulator_3003_canary/)
+- url: https://androidstudio.googleblog.com/2020/03/emulator-3003-canary.html
 ---
 
-## [6][Facebook punishes my Android game: Your app cannot be installed by new users. 🤡](https://www.reddit.com/r/androiddev/comments/febcjn/facebook_punishes_my_android_game_your_app_cannot/)
-- url: https://www.reddit.com/r/androiddev/comments/febcjn/facebook_punishes_my_android_game_your_app_cannot/
+## [12][My suggestions for Google survey about Scoped Storage for Android 11](https://www.reddit.com/r/androiddev/comments/feqxvf/my_suggestions_for_google_survey_about_scoped/)
+- url: https://www.reddit.com/r/androiddev/comments/feqxvf/my_suggestions_for_google_survey_about_scoped/
 ---
-Hello,
+Google is asking about their clever changes to Storage:
 
-since over 2 years I run a small (150 mobile users, a bit more on desktops) word game, without any IAP or ads (I don't like ads and I haven't implemented IAP yet).
+- [Google survey about Scoped Storage for Android 11](https://google.qualtrics.com/jfe/form/SV_9HOzzyeCIEw0ij3?Source=scoped-storage)
 
-The mobile version is published at Google Play, Huawei App Gallery, Amazon.
+If you feel your time will be wasted replying to them, you can just copy and paste as you please from the list in the second section below.
 
-Users can login through Google, HMS, Amazon Login and - Facebook login.
-
-Yesterday I have gotten the warning mail by Facebook: "Your app is in violation of our Platform Policies"
-
-Being an indy dev I live in constant Angst and thus I have immediately updated my app at Google Play (changed the Facebook icon from greyscale to blue-white) and re-entered the base64 hashes in Facebook settings. I haven't fixed anything more because actually the Facebook Login just works in my little app.
-
-And of course this didn't help and now my app is:
-
-**Your app XXXXX XXXXXX has been restricted for creating a negative user experience in violation of our Platform Policies.**  Your app XXXXX XXXXXX has been restricted for creating a negative user experience that is in violation of our Platform Policies.
-
-* Your app cannot be installed by new users.
-
-I understand many things, been watching devs in this Reddit being banned last year by Google robots, understand that Facebook uses similar robot scripts...
-
-But how on Earth does Facebook want to forbid new users to install my Android app? What do they mean by the above restriction (and yes the Facebook login still works in my game).
-
-P.S. My game is super clean: no ads, no IAP, all-native Java, here few screenshots: [https://imgur.com/a/2m2X3Pa](https://imgur.com/a/2m2X3Pa)
-## [7][Glide image library being reported as malware by AVG, Avast](https://www.reddit.com/r/androiddev/comments/fe35hv/glide_image_library_being_reported_as_malware_by/)
-- url: https://www.reddit.com/r/androiddev/comments/fe35hv/glide_image_library_being_reported_as_malware_by/
----
-I spent 6 hours paring down this issue, removing one library at a time. Hopefully this information is useful for others who are hitting this issue.
-
-Starting today, AVG and Avast (they are the same reskinned app and have combined over hundreds of millions of downloads) started reporting my apps that use Glide (4.8.0 and 4.11.0) as malware. I reported it to AVG as a false positive already, but don't expect a quick fix from them.
-
-When I replaced Glide with Picasso, the apps are no longer marked as malware. I've already received about 10 bad reviews and dozens of e-mails about this issue and have not updated my app recently, which leads me to think they updated their algo very recently. I have tried disabling proguard but it makes no difference.
+&amp;nbsp;
 
 
-Quick fix is to replace Glide with Picasso and the issue goes away. Replace:
+**Preamble**
 
--            Glide.with(context).load(uri).into(imageView)
+Android is such a dominant mobile ecosystem, with such strategic value to it, that it needs to be run as an independent body, that is responsive to user and developer needs.
 
-With:
+As it is, Android is hostage to the whims of an ad/search company, that doesn't still care about audio (low latency for music performance - as iOS quite easily does).  While Google polices the Google services assets, it has cared little for standardizing audio by the manufacturers (no standard setting exists for audio source where mobmno/stereo audio will work across devices).
 
-+            Picasso.get().load(uri).into(imageView)
+As long as Google the ad/search behemoth runs this thing, things won't change - they just-don't-care.
+
+If Android was an independent mobile ecosystem (not obliged to Google the ad/search behemoth), then Android would have made internet arun-time permission as well - if they cared about user security, as they claim.  Internet would not be left open as an **implicitly granted permission by all apps!** - Google has Bern intent on shutting down everthing else - call recording, SMS backup, location, all because it cannot bring itself to plug the foundational leak that internet brings to a system.
+
+Google does not care about standard programming practices - they seek to break the ones that are strategically a threat, breaking their compact with developers - biggest one: that old apps will continue to run on new Android versions (much ballyhooed by Google in it's docs for years - no more).
+
+The disruption of storage APIs has a long history with Google - cheap ext SD cards were a well discussed threat to cloud storage growth (which hindered Google's ability to grow cloud usage) - enter disruption of ext SD card access which went from seamless to non existent with KitKat - all for no great advantage to the ecosystem.  Ostensible reason was to reduce "clutter" on ext SD card - **no one believed that at the time**.  Devs complained,  no one listened, and users found out a year later as faut accompli.
+
+All the alternate APIs introduced only serve to provide deniability for Google - "we provided an alternative" - an alternative but not an improvement - SAF was not a solution (not a complete API).
+
+Meanwhile internal storage was increasing on phones - what was not seamlessly accessible on ext SD card thanks to KitKat, now became viable with plenty of internal storage - 128GB internal storage became common.
+
+Now Google went after internal storage - constraining the APIs for internal storage access, while providing "alternatives" which broke seamless access and never quite made up in features - a way to fragment and break seamless availability of that feature, while providing deniability. 
+
+We pointed out a year or two ago how constraining APIs will not provide security as the recommended way ie SAF is logically equivalent to the same thing (users routinely provide top level access).. Yet lots of pro-Google folks argued this SAF was so much better.
+
+Now with Android 10 and 11 we find Google has "discovered" that flaw in SAF - their solution: SAF is no longer usable by just anyone.  Now you will require Permissions Declaration Form to use it (horrors of Call/SMS fiasco come to mind - just replace Call/SMS handler with file manager).
+
+They provide some half baked MediaStore stuff as alternative, which fails basic file operation capabilities.
+
+Right now the same people who argued for SAF are arguing in favor of abandoning POSIX open standards for File access - with praises for how streaming services are the thing.  That could only come from the minds of **people brainwashed into wanting to engineer local file access to be on par with cloud storage**.  Somewhere there is a compulsion to make cloud storage "as easy" as local storage - how to do that? - **make local storage as brain dead as cloud storage**, AND converge local storage APIs to the cloud APIs.
+
+Google has a habit of making security the justification for these changes (since no one questions "security").  When we demonstrated SAF was AS insecure as anything else, they didn't believe that, but are taking that tack a few YEARS later.
+
+So you tell me, **are these the behaviors of a company which thinks before it makes new APIs** - could it be that incompetent?  Or did it know exactly what it was doing - disrupting storage APIs?    Is really the whole exercise one of stonewalling - **building up brick walls to impede or curtail local storage until it is AS kludgy to work with as cloud storage?**
+
+If Android was an ecosystem devoted to users and developers, Google would be taking pains to **make things easy for storage, and not steadily harder every year.**
+
+&amp;nbsp;
 
 
-In gradle, replace:
+**Here are the things we want**
 
--    api "com.github.bumptech.glide:glide:4.8.0"
+- **File** access has to stay in both Java and NDK (C code)
+ 
+- standard POSIX file access cannot be killed at Google's whim, just to **engineer parity with screwy cloud storage paradigms** (kill standard storage to make cloud storage look good)
 
-With:
+- **Android management has to behave responsibly as custodians of the dominant phone ecosystem**.  Don't mess it up.  Unfortunately this cannot happen as long as Android is **handmaiden to the interests of an ad/search company which want to reverse history and regain control over cloud storage** revenues - just like Apple did.  Except Android grew BECAUSE it was seen by Android fans as having open storage model NOT beholden to cloud lockdown, like iOS.  Google is hoping it can renege on that without bring notice - censoring posts about Storage on r/android is not going to achieve this goal.  Google is remiss in not warning users about the **reduction in features in Androud 10 and 11 regarding storage**.
 
-+    api 'com.squareup.picasso:picasso:2.71828'
-## [8][[OC] I’ve made a LIVE INTERACTIVE dashboard to track COVID19](https://www.reddit.com/r/androiddev/comments/fedaw3/oc_ive_made_a_live_interactive_dashboard_to_track/)
-- url: https://v.redd.it/0n0d35ls8uk41
----
+- there is no excuse for killing high performance file io and file/folder creation (MediaStore and even SAF are notoriously bad performing)
 
-## [9][Animated Play/Pause Button: Animated Vector Drawables tutorial](https://www.reddit.com/r/androiddev/comments/fecdf8/animated_playpause_button_animated_vector/)
-- url: https://blog.stylingandroid.com/animatedicons-play-pause-circle/
----
+- do not kill high performance **random file access** - we need random file access in our apps - you are killing our apps' ability to perform as before.  We should not be forced to work for free to cover the gaps you are creating at your whim - just so users don't feel the impact of your actions.  **Devs are not your slaves to be covering glaring omissions you are deliberately creating** in the foundations of Android, just to fit some strategic cloud storage goal.
 
-## [10][anoop44/3dview](https://www.reddit.com/r/androiddev/comments/fe7xp5/anoop443dview/)
-- url: https://github.com/anoop44/3dview
----
+- do not kill fast **renaming of files**.  We use this for our file operations.  Having to copy a "streaming-conformant" file to another file before we can do file operations are unacceptable.. Our files are not on the cloud.  **Do not dumb down local storage just to make cloud storage look on-par** - that is just deceitful and malicious.
 
-## [11][Developing your own in-app update system. Best way to avoid random app/account ban?](https://www.reddit.com/r/androiddev/comments/fe9yve/developing_your_own_inapp_update_system_best_way/)
-- url: https://www.reddit.com/r/androiddev/comments/fe9yve/developing_your_own_inapp_update_system_best_way/
----
-I am seeing a lot of horrifying stories of developers whose apps are getting banned for frivolous reasons. An account ban automatically tarnishes your image as an android developer, and people may no longer be ready to work with you. All because you did a silly mistake or there was no mistake at all and Google bots just nuked your account due to false alarm.
+- do not restrict our abilities to **organize files into folders**.  We were doing so before, and we want to continue that in the future.  Providing flat file areas using MediaStore is not a replacement. 
 
-I was thinking this. Once your app does get published on Google Play, you are pretty much safe till you try to upload a next update. At that point of time, your app is scanned again, and you keep your fingers crossed that it won't be rejected/lead to a ban.
+- do not restrict **fopen() in C code in native NDK**.  You are violating POSIX file support if you do so.  As long as the Java side of code has gotten the appropriate permissions from the user, that file path should be workable from C code.  We don't need Google to neuter standard file behavior for our C code and libraries.
 
-So why not add an in-app updater?
-It's pretty easy actually. You put a file on GitHub/Gitlab with update definition (current version of the app and url for direct download of the update apk) compare the current version of the app with the update definition and if your current version is outdated, download the new update apk and prompt the user to install it.
+- do not curtail our ability to show file structure for our files to the user.  We allow a file manager like interface to our users.  Do not force us to rewrite or throw away capabilities we have provided for years.  Do not force us to prove we are a file manager app (via a new Permissions Declaration Form) just to show our files which are stored in a persistent place on internal storage.  We do not have time to change all our file manager code - and that too for free.  What is the appeal of these changes for devs?
 
-Atleast once your app gets published for the first time, you won't have to deal with unnecessary fears of getting banned in a future update. (Unless Google re-scans the app and finds it violating policies or anything similar)
-## [12][App removed from playstore.](https://www.reddit.com/r/androiddev/comments/fdswex/app_removed_from_playstore/)
-- url: https://www.reddit.com/r/androiddev/comments/fdswex/app_removed_from_playstore/
----
-Every morning when I wake up I check my phone. I am always a little bit anxious of seeing this little icon from the google console in my notification bar. Usually not good news.This morning I saw that icon and almost got a heart attack when I read the notification:all my apps removed because of violation of the developer content policy. They did not send me an email at all. What the hell, this cannot be true. Not again please!Immediately contacted my account manager at Google admob. Asked him if he could forward my issue directly to the playstore team.And of course i quickly went over all my apps. Checking for missing things like app ratings etc. Found an email from last year from the Google Playstore saying: \[Action Required\] Switch to the Play Referrer API by March 1, 2020. I remember that the issue was actually in one of the firebase libs which were not fixed even a month ago. Could it be that? Lets update the libs first. I also noticed that inside the user aqcuisition section of my apps there was a warning about some kind of expired payment method. Weird, because I am not using that functionality. Checked [google.ads](https://google.ads) and found out that my creditcard was expired. Updated it immediately.
+- if you were **remiss to hook users to cloud storage in your infancy** (when you were touting the openness of Android and ridiculing the closed storage on iOS), **do not do it after-the-fact** as you are trying to do it now.  Android is a dominant mobile ecosystem now, and of strategic value to the world.  You cannot **unilaterally sneak in such breakages into this ecosystem**.  The only way you have successfully done this before is by hiding the changes that are upcoming, and then having users find out a year later as a fait accompli.  However these storage changes are so big they have **potential to break or disrupt Android**.
 
-I filed quickly a new update of all the apps without testing them. Published it and 2 hours laters i got a notification again that my apps are back live! Amazing. My entire morning's mood changed from a hopeless , feared and angered person to the happiest man on earth.
+- do not act like all these file changes are "minor", or edge cases, or "only a small number of apps will be affected".  **You are breaking POSIX file support, no two ways about it**.  No amount of YouTuber praise for Android 10 and 11 will cover for this.
 
-Nevertheless i find it still unacceptable that these kind of things are possible. I still don't know what the real issue was. My apps are having about 5m daily users and are for a large part generating income for my company. App business remains a still risky one!
 
-//edit
-
-now 10 hours i receive an email from Admob that action is required.   
-Looking at the policy violations details inside the admob screen they saw that I need to fix the app because of removal. But the app is back live again ?!?!.  to be continued.....
+**Feel free to copy paste any of the above in your reply to Google survey**.

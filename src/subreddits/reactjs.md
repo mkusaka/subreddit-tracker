@@ -86,88 +86,276 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Deep Dive into Redux Toolkit with React - Complete Guide](https://www.reddit.com/r/reactjs/comments/fef14k/deep_dive_into_redux_toolkit_with_react_complete/)
-- url: https://www.youtube.com/watch?v=9lCmbth63k0
+## [3][Intro to Federated Modules in Webpack 5](https://www.reddit.com/r/reactjs/comments/ff55gz/intro_to_federated_modules_in_webpack_5/)
+- url: https://www.youtube.com/watch?v=D3XYAx30CNc
 ---
 
-## [4][Resources for learning react under the hood?](https://www.reddit.com/r/reactjs/comments/feuoq8/resources_for_learning_react_under_the_hood/)
+## [4][useEffectWithPrevious - Get previous value of dependencies](https://www.reddit.com/r/reactjs/comments/ffawrb/useeffectwithprevious_get_previous_value_of/)
+- url: https://www.reddit.com/r/reactjs/comments/ffawrb/useeffectwithprevious_get_previous_value_of/
+---
+Just wanna share my first npm package. Hope you find it useful :)
+
+[use-effect-with-previous](https://www.npmjs.com/package/use-effect-with-previous)
+## [5][We've built a tool to help developers grow in their career](https://www.reddit.com/r/reactjs/comments/fevsm3/weve_built_a_tool_to_help_developers_grow_in/)
+- url: https://www.reddit.com/r/reactjs/comments/fevsm3/weve_built_a_tool_to_help_developers_grow_in/
+---
+Hi 👋,
+
+My friend and I are both senior web developers and we came up with a tool to help developers grow in their career. This is our first time giving back to the dev community so we're pretty excited about it !
+
+Our goal is to give advice and resources to devs at specific milestones in their careers to help them progress. For now we have targeted recent graduates and junior devs that are looking for a job or just started one. It's often hard to put words on what you're looking for as a junior dev, so we're trying to build a list of milestones and goals you can follow.
+
+We're still in beta so not everything is perfect and we'd love to have your feedback to know if it's worth pursuing and growing. We have a lot of ideas for new features and milestones, but we want some feedback before we go all in.
+
+Here’s the link: [https://pathify.dev](http://pathify.dev/)
+
+TL;DR: We’ve built an online platform to help young devs that is currently in beta and we would love to have your feedback: [https://pathify.dev](http://pathify.dev/)
+## [6][Resources for learning react under the hood?](https://www.reddit.com/r/reactjs/comments/feuoq8/resources_for_learning_react_under_the_hood/)
 - url: https://www.reddit.com/r/reactjs/comments/feuoq8/resources_for_learning_react_under_the_hood/
 ---
 I am comfortable in building applications with React.js, hooks, and redux as well but I want to dive deep into react to become good developer. I have good knowledge how JavaScript works under the hood, and everything related to JavaScript like closures, hoisting, prototypal inheritance,etc. So can someone suggest some resources to learn React.js also upto that level?
-## [5][My first open source project! MyDrive, a Node.js/React based Cloud Storage Solution (Similar To Google Drive).](https://www.reddit.com/r/reactjs/comments/fefsp3/my_first_open_source_project_mydrive_a/)
-- url: https://v.redd.it/v4pm36lhv2l41
+## [7][Now you can use shallow rendering for testing components with hooks](https://www.reddit.com/r/reactjs/comments/ff10ni/now_you_can_use_shallow_rendering_for_testing/)
+- url: https://github.com/mikeborozdin/jest-react-hooks-shallow
 ---
 
-## [6][I built an app to help teams make better priority decisions last year. Hopefully it helps someone else. Built with React, mobx, and nextjs.](https://www.reddit.com/r/reactjs/comments/fem24t/i_built_an_app_to_help_teams_make_better_priority/)
-- url: https://teamvote.app
+## [8][Music app in react and electron](https://www.reddit.com/r/reactjs/comments/ffc2bc/music_app_in_react_and_electron/)
+- url: /r/typescript/comments/ff94e4/music_app_with_electron_and_react/
 ---
 
-## [7][Folder Structure - Best Practice](https://www.reddit.com/r/reactjs/comments/femz4f/folder_structure_best_practice/)
-- url: https://www.reddit.com/r/reactjs/comments/femz4f/folder_structure_best_practice/
+## [9][How to avoid code duplication?](https://www.reddit.com/r/reactjs/comments/ffbovc/how_to_avoid_code_duplication/)
+- url: https://www.reddit.com/r/reactjs/comments/ffbovc/how_to_avoid_code_duplication/
 ---
-Hi all,
+What I want to do is to avoid code duplication managing the response from the request that has been made and serving the output to the components.
 
-is there some good resource online on how to create a clean and modern folder structure for a react app? Would be nice if there'd be some thoughts on why the folders are laid out as they are, not just a list of folders itself.
+In this case, as soon as the page is loaded useEffect is triggered. It makes the request and handles the response using setLoadedPlaces to set the data to searchedPlace and setMarker to set the data to markersMap.
+
+But if the user makes a new request, data is treated in the same way as with the useEffect function, the only difference is that the request is made with POST with a body attached.   
+
+I thought that make only one request would be sufficient but how?   
+Is it an efficient way?
+
+      const [searchedPlaces, setLoadedPlaces] = useState();
+      const [MarkersMap, setMarkersMap] = useState();
+
+useEffect()
+
+    
+      useEffect(() =&gt; {
+        const fetchPlaces = async () =&gt; {
+          try {
+            const responseData = await sendRequest(
+              "http://localhost:5000/api/search"
+            );
+            setLoadedPlaces(responseData.elements);
+            let locations = [];
+            responseData.elements.map(element =&gt; {
+            element.location.lat = parseFloat(element.location.lat);
+            element.location.lng = parseFloat(element.location.lng);
+              locations.push(element.location);
+              return locations;
+            });
+            setMarkersMap(locations);
+          } catch (err) {}
+        };
+        fetchPlaces();
+      }, [sendRequest]);
+
+receivedInputs()
+
+      const SearchSubmitHandler = async event =&gt; {
+        event.preventDefault();
+        try {
+          let responseData = await fetch("http://localhost:5000/api/search?", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              address: formState.inputs.address.value.toLowerCase(),
+              price: formState.inputs.price.value.toLowerCase(),
+              leaseTime: formState.inputs.leaseTime.value.toLowerCase()
+            })
+          });
+    
+          let fetchPlaces = await responseData.json();
+          setLoadedPlaces(fetchPlaces.elements);
+          let locations = [];
+          fetchPlaces.elements.map(element =&gt; {
+            element.location.lat = parseFloat(element.location.lat);
+            element.location.lng = parseFloat(element.location.lng);
+            locations.push(element.location);
+            return locations;
+          });
+    
+          setMarkersMap(locations);
+    
+        } catch (err) {
+          console.log(err);
+        }
+      };
+## [10][Cards Application: Reduce the opacity of all the other cards which are not selected](https://www.reddit.com/r/reactjs/comments/ffb2os/cards_application_reduce_the_opacity_of_all_the/)
+- url: https://www.reddit.com/r/reactjs/comments/ffb2os/cards_application_reduce_the_opacity_of_all_the/
+---
+Hi,   
+I am making a web application where you have cards and you can favorite your cards. All the favorite cards are displayed on the top while the unfavorited ones keep moving to the bottom. When you select one card (not press on the favorite button but click on the card), then all the other card's opacity should reduce to 0.1. Is there a useRef solution?
+
+`import React, { useEffect, useState } from 'react';`  
+`const App = () =&gt; {`  
+ `const [hash, setHash] = useState({`  
+`catsdata: [`  
+  `{ id: 1, text: 'A', favorite: false, opacity: 1 },`  
+  `{ id: 2, text: 'B', favorite: false, opacity: 1 },`  
+  `{ id: 3, text: 'C', favorite: false, opacity: 1 },`  
+  `{ id: 4, text: 'D', favorite: false, opacity: 1 },`  
+  `{ id: 5, text: 'E', favorite: false, opacity: 1 },`  
+  `{ id: 6, text: 'F', favorite: false, opacity: 1 },`  
+  `{ id: 7, text: 'G', favorite: false, opacity: 1 },`  
+  `{ id: 8, text: 'H', favorite: false, opacity: 1 },`  
+  `{ id: 9, text: 'I', favorite: false, opacity: 1 },`  
+  `{ id: 10, text: 'J', favorite: false, opacity: 1 },`  
+  `{ id: 11, text: 'K', favorite: false, opacity: 1 },`  
+  `{ id: 12, text: 'L', favorite: false, opacity: 1 },`  
+  `{ id: 13, text: 'M', favorite: true, opacity: 1 },`  
+  `{ id: 14, text: 'N', favorite: true, opacity: 1 },`  
+  `{ id: 15, text: 'O', favorite: true, opacity: 1 },`  
+`],`  
+`showFav: false,`  
+  `});`  
+ `var notFavData = [],`  
+`favData = [];`  
+  `useEffect(() =&gt; {`  
+`notFavData = hash.catsdata.filter((d) =&gt; !d.favorite);`  
+`favData = hash.catsdata.filter((d) =&gt; d.favorite);`  
+`setHash({ ...hash, catsdata: [...favData, ...notFavData] });`  
+  `}, []);`  
+ `return (`  
+`&lt;div&gt;`  
+`{hash.catsdata.map((d, i) =&gt; {`  
+ `return (`  
+`&lt;div key={d.id} style={{ backgroundColor: d.favorite ? '#da7878' : '#f5f699' }}&gt;`  
+`&lt;div`  
+`onClick={(event) =&gt; {`  
+`//This is the click handler where we need to write code for the part where when you`   
+`// click on any part of the card, all the other cards, their opacity should get`   
+`//reduced to 0.5`  
+`/******************************`  
+`*`   
+`*`   
+`*`   
+`*`   
+`*`   
+`******************************/`  
+`console.log(events)`  
+`}}&gt;`  
+`&lt;h1&gt;{d.id}&lt;/h1&gt;`  
+`&lt;p&gt;{d.text}&lt;/p&gt;`  
+`&lt;button`  
+`onClick={() =&gt; {`  
+ `//This is the click handler when someone clicks on the favorite button...all the cards which are //favorite are displayed on the top`  
+ `const restD = hash.catsdata.filter((el) =&gt; el.id !== d.id);`  
+`d.favorite`  
+`? setHash({ ...hash, catsdata: [...restD, { ...d, favorite: !d.favorite }] })`  
+`: setHash({ ...hash, catsdata: [{ ...d, favorite: !d.favorite }, ...restD] });`  
+`}}&gt;{\`favorite ${d.favorite}\`}&lt;/button&gt;`  
+`&lt;/div&gt;`  
+`&lt;/div&gt;`  
+`);`  
+`})}`  
+`&lt;/div&gt;`  
+  `);`  
+`}`  
+`export default App;`  
+
+
+  
+Github library link: [https://github.com/akhil9tiet/sampleCards](https://github.com/akhil9tiet/sampleCards)   
+branch: feat/show-one
 
 &amp;#x200B;
 
-Thanks!
-## [8][DatoRSS - RSS Search Engine](https://www.reddit.com/r/reactjs/comments/feuygj/datorss_rss_search_engine/)
-- url: http://www.datorss.com
+Steps to clone:
+
+$ git clone [https://github.com/akhil9tiet/sampleCards](https://github.com/akhil9tiet/sampleCards) 
+
+$ cd sampleCards
+
+$ npm install
+
+&lt;&lt;make sure the branch has been changed to feat/show-one&gt;&gt;
+
+$ npm run start
+## [11][REDUX MADE SIMPLE!](https://www.reddit.com/r/reactjs/comments/ffaohz/redux_made_simple/)
+- url: https://www.reddit.com/r/reactjs/comments/ffaohz/redux_made_simple/
 ---
+Redux is a state management paradigm based on Facebook’s Flux architecture.
 
-## [9][Downtown - count 'til down ⌛️](https://www.reddit.com/r/reactjs/comments/feuce8/downtown_count_til_down/)
-- url: https://v.redd.it/1zv4p3qtr8l41
+Redux provides a structure for large state trees and allows you to decouple user
+
+interaction in your app from state changes.
+
+&amp;#x200B;
+
+ Can anyone provide a simple alt definition to the above def for a beginner
+## [12][Need Help With Rendering](https://www.reddit.com/r/reactjs/comments/ffagfo/need_help_with_rendering/)
+- url: https://www.reddit.com/r/reactjs/comments/ffagfo/need_help_with_rendering/
 ---
+I have a simple todo list code.
 
-## [10][Ui component Framework for react](https://www.reddit.com/r/reactjs/comments/feu4bx/ui_component_framework_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/feu4bx/ui_component_framework_for_react/
----
-I just finished learning react and mad like 2 apps with it.. but want to know which is a beginner friendly ui component Framework which i can use..
+This is the code for smart component  - 
 
-And i used semantic ui Framework but... Ended up overriding the css for it almost every time... Is it ok to override css most thorough the app
-## [11][Cypress test error when importing from CRA + TS source code](https://www.reddit.com/r/reactjs/comments/fervz7/cypress_test_error_when_importing_from_cra_ts/)
-- url: https://www.reddit.com/r/reactjs/comments/fervz7/cypress_test_error_when_importing_from_cra_ts/
----
-One of my Cypress tests fails to run when it tries to import from a file in the source code (CRA src directory).
+`import React from "react";`  
+`import ListItem from "../containers/ListItem";`  
+`let list = [];`  
+`function Lists() {`  
+`list = [`  
+`{id: 0, title: 'study', completed: true},`  
+ `{id: 1, title: 'study', completed: false},`  
+ `{id: 2, title: 'finish react', completed: false}`  
+`];`  
+`let todos = list.map(((item) =&gt; &lt;ListItem item={item} changeTodoStatus={changeTodoStatus}/&gt;));`  
+`return &lt;div&gt;`  
+`&lt;h3&gt;Welcome To TODO Lists&lt;/h3&gt;`  
+`&lt;h4&gt;Your List Items Are&lt;/h4&gt;`  
+`&lt;ul&gt;{todos}&lt;/ul&gt;`  
+`&lt;/div&gt;`  
+`}`  
 
-The test:
 
-    // cypress/integration/this-fails.js
-    import { MY_CONSTANT } from '../../src/constants';
-    
-    describe('Cypress', () =&gt; {
-      ...
-    })
+`function AddTodo() {`  
 
-The source file:
 
-    // src/constants.ts
-    export const MY_CONSTANT = 'foo';
+`}`  
 
-The Cypress test failure is caused by a Jest test file in the source directory:
 
-    ERROR in /my-app/src/App.test.tsx(5,1)
-    
-    Cannot find name 'test'. Do you need to install type definitions for a test runner? Try`npm i @types/jest`or`npm i @types/mocha`.
+`const changeTodoStatus = function ChangeTodoStatus(id) {`  
+ `console.log('called', id);`  
+`let todo = list.filter((item) =&gt; item.id === id)[0];`  
+ `console.log('todo', todo);`  
+`if (todo) todo.completed = ! todo.completed;`  
+ `console.log('after todo', todo)`  
+`};`  
+`export default Lists`
 
-The Jest type definitions are installed. Additionally, to no avail, I have tried to exclude the problematic Jest test in the Cypress tsconfig.
+&amp;#x200B;
 
-    // cypress/tsconfig.json
-    {
-      ...
-      "exclude": [
-        "../src/App.test.tsx"
-      ],
-      ...
-    }
+This is the code for container component - 
 
-Solving JS build/bundling config problems is not my strongest area, so if someone could point me in the right direction I would greatly appreciate it.
+&amp;#x200B;
 
-Here is a minimal repo that reproduces my problem: [https://github.com/brietsparks/cra-ts-cypress-troubleshooting](https://github.com/brietsparks/cra-ts-cypress-troubleshooting)
+`import React from "react";`  
+`import './style.css'`  
+`function ListItem(props) {`  
+ `return &lt;li className={props.item.completed ? 'completed' : ''}&gt;`  
+`&lt;button onClick={props.changeTodoStatus.bind(this, props.item.id)}&gt;Change Status&lt;/button&gt;`  
+ `{props.item.title}`  
+ `&lt;/li&gt;`  
+`}`  
 
-Lastly, to clarify why I am importing things into Cypress tests from the source directory — the imported variable is intended to be a DOM selector or a function that returns a DOM selector so that selectors are not hardcoded in the tests.
-## [12][My first reactjs app! - an elegant way of viewing statistics about COVID-19](https://www.reddit.com/r/reactjs/comments/feslr9/my_first_reactjs_app_an_elegant_way_of_viewing/)
-- url: https://coronastats.now.sh
----
 
+`export default ListItem`
+
+&amp;#x200B;
+
+The problem is how to update the prop and re-render after button click ?
+
+Thanks in advance :)

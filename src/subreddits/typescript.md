@@ -22,15 +22,101 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
+## [2][Music App with electron and react](https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/)
+- url: https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/
+---
+I was bored, so I made this music app with the help of `electron` and `react` in typescript.
+
+It can play music out of any directory you choose and can even download songs into that directory. It stores metadeta about each song and shows you all artists and albums which the songs are from and stores youre last queue so you can pickup where you left off.
+
+ 
+
+&amp;#x200B;
+
+https://preview.redd.it/mk3zlsszeel41.png?width=1400&amp;format=png&amp;auto=webp&amp;s=eaeae0b6b5c3a05b5e9347358935c68cbb60ed74
+
+[You can view and play all your music](https://preview.redd.it/vwmnemrzeel41.png?width=1400&amp;format=png&amp;auto=webp&amp;s=b5d37af9cf9d41a228b812b6b742e0152f1ecaa6)
+
+[A basic controller which has basic functionality](https://preview.redd.it/mhxk4frzeel41.png?width=522&amp;format=png&amp;auto=webp&amp;s=59ffd63743579809b829cd94ecb17f1c968b90dc)
+
+[You can customize all the functionality](https://preview.redd.it/69ydvtrzeel41.png?width=1400&amp;format=png&amp;auto=webp&amp;s=da0c3583ef7c2899daaafeca94c343a8b1887d97)
+
+&amp;#x200B;
+
+The project is far from perfect and any suggestions will be welcome.
+
+[GitHub Link](https://github.com/Lutetium-Vanadium/Music)
+
+&amp;#x200B;
+
+PS:
+
+ I use linux so I'm not sure if there will be any bugs in mac or windows
+
+Also you require a Napster API key(for music metadata) and a Google API key(for downloading a video) for proper functionality
+## [3][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
 - url: https://www.dandoescode.com/blog/using-typescript-without-typescript/
 ---
 
-## [3][TypeScript Migration Strategy (from JavaScript)](https://www.reddit.com/r/typescript/comments/fee93i/typescript_migration_strategy_from_javascript/)
-- url: https://www.youtube.com/watch?v=v3lI29trIN8&amp;feature=share
+## [4][Validate function parameters when passed alongside function](https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/)
+- url: https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/
 ---
+Hi, I have a use case where I need to pass a reference to a method and the parameters to call it with at a later point. How do I validate that the parameters are valid upon declaration?
 
-## [4][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
+Example of what I need:
+
+```
+interface Foo {
+    method: Function
+    params: /* Parameters of whatever is passed to "method" */
+}
+
+const api = {
+    method: async (a: number, b: string) =&gt; {},
+}
+
+// This should compile
+const foo: Foo = {
+    method: api.method,
+    params: [3, 'baz']
+}
+
+// This should NOT compile
+const bar: Foo = {
+    method: api.method,
+    params: ['wrong', 3]
+}
+```
+## [5][TypeORM relationship - relationships by id ?](https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/)
+- url: https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/
+---
+I've been kinda confused by the relationships as I'm used to save relationship by id, while docs and examples I found suggest to get the entire object and use that instead (Isn't this strange???)
+
+I found this on github addressing this issue ( [https://github.com/typeorm/typeorm/issues/447](https://github.com/typeorm/typeorm/issues/447) ) , where they suggest to use an object with just the id property, but it's from 2017. Is that a good way to do it ? And is it still the only way to do it ? (I find it pretty lame tbh)
+
+    async create( @Body() product: Product) {
+        product.category = &lt;any&gt;{ id: product.category };
+        return { payload: await this.repository.persist(product) };
+    }
+
+Another one suggested to name the column as categoryId and it would work as expected (with id instead of object) but WHY? What does the name have to do with that ??
+
+    @Entity()
+    class Product {
+    
+         @Column({ type: "int", nullable: true })
+         categoryId: number;
+    
+         @ManyToOne(type =&gt; Category)
+         @JoinColumn({ name: "categoryId" })
+         category: Category;
+    
+    }
+
+&amp;#x200B;
+
+I'm just confused, help \^\_\^
+## [6][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
 - url: https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/
 ---
 For some reason I can't use optional chaining in my new project, other TS features like interfaces, types, ... are working fine. Also my IDE is not throwing out any errors, but upon compiling the code, I get this error for the following line of code:
@@ -44,7 +130,7 @@ Line of code: `country: location?.country`
 `at Module._compile (internal/modules/cjs/loader.js:895:18)`
 
 What's going on?
-## [5][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
+## [7][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
 - url: https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/
 ---
 ## Problem
@@ -55,11 +141,11 @@ I want to optimize my TypeScript by replacing all literal enums with their value
 
 * Third-party libraries may not provide them.
 * Babel does not support them.
-## [6][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
+## [8][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
 - url: /r/LearnTypescript/comments/fe3zip/best_way_to_type_an_object_with_string_keys/
 ---
 
-## [7][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
+## [9][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
 - url: https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/
 ---
 Is it possible to have a function return different return types under different circumstances?
@@ -77,11 +163,11 @@ example:
     }
     
     test('beatdook04');
-## [8][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
+## [10][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
 - url: https://github.com/sinclairzx81/typebox
 ---
 
-## [9][Trying to store typescript code in string to use in runtime. [Guidance Appreciated]](https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/)
+## [11][Trying to store typescript code in string to use in runtime. [Guidance Appreciated]](https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/)
 - url: https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/
 ---
 As the description implies i'm trying to store actual code from typescript file in a variable so that when I console.log it i'll see the typescript implementation instead of the compiled code.  
@@ -96,37 +182,3 @@ What I've tried:
 3.  Tried to retrofit this code [this code](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API#user-content-re-printing-sections-of-a-typescript-file) from the typescript compiler API docs for my purposes.
 
 So far I haven't had any luck. All pointers welcome ;)
-## [10][How to conditionally determine return value in a Promise](https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/)
-- url: https://www.reddit.com/r/typescript/comments/fdtpov/how_to_conditionally_determine_return_value_in_a/
----
-I'm trying to write a wrapper around fs.readFile that will return JSON if the option is set to true.
-
-Having a hard time to let TS figure out when it should return JSON and a string.
-
-Trying to avoid having to do this (since I already know it is going to be JSON):
-
-\`\`\`
-
-const f = await readFile(…, { json: true });
-
-if (typeof f !== 'string') {
-
-  return f.a;
-
-}
-
-\`\`\`
-
-https://preview.redd.it/peb06d2q6uk41.png?width=1300&amp;format=png&amp;auto=webp&amp;s=aec55267486ff42d3f9720d2e6f926c32b18ab6c
-## [11][Static Site with JS from TS using exports?](https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/)
-- url: https://www.reddit.com/r/typescript/comments/fdtoqt/static_site_with_js_from_ts_using_exports/
----
-Could anyone please explain to me (Java/Kotlin lad) how to get modules working? I am very comfortable with vanilla JS but was busy playing with the JVM when the whole Node / ES module thing went down.
-
-I'm not creating a Node app here... just transpiling multiple TS files to JS, for use in a very basic, boring site.
-
-I have satisfied both my ATE (VSC, fwiw) and the TSC (transpiler irl?) by using the `export` and `import` keywords (at least the notion of *import* is familiar) ... but when I load the app, on good ol' localhost, in browser, i'm understandably seeing the *exports undefined* exception in the console (RIP Firebug)... is it as simple as including a `common.js` script in the client, to satisfy this unfamiliar concept of *exports* or am I going about this wrong?
-
-I just want to visit my static site with multiple, minifed JS files that were generated by TSC, understanding that multiple TS files rely on definitions from multiple files without too many complications in the build / compilation process..?
-
-Cheers lads.

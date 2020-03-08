@@ -1,95 +1,111 @@
 # aws
-## [1][EC2 has detected degradation of the underlying hardware hosting your Amazon EC2 instance...](https://www.reddit.com/r/aws/comments/feft7z/ec2_has_detected_degradation_of_the_underlying/)
-- url: https://www.reddit.com/r/aws/comments/feft7z/ec2_has_detected_degradation_of_the_underlying/
+## [1][AWS GitHub Actions 🚀](https://www.reddit.com/r/aws/comments/ff1o4h/aws_github_actions/)
+- url: https://www.reddit.com/r/aws/comments/ff1o4h/aws_github_actions/
 ---
-Dear Jeff,
+I created some GitHub actions for common AWS deployment tasks, open to any feedback 
 
-Is there any way we could get this email to include the \`Name\` tag??
-
-Thanks,
-
-Me
-## [2][Experimenting AWS RedShift Column Level ACL](https://www.reddit.com/r/aws/comments/fev4e5/experimenting_aws_redshift_column_level_acl/)
-- url: https://thedataguy.in/experimenting-aws-redshift-column-level-acl/
----
-
-## [3][Has anyone interviewed for a Cloud Infrastructure Architect role at AWS?](https://www.reddit.com/r/aws/comments/feobee/has_anyone_interviewed_for_a_cloud_infrastructure/)
-- url: https://www.reddit.com/r/aws/comments/feobee/has_anyone_interviewed_for_a_cloud_infrastructure/
----
-Does anyone have any experience with the interview process for this role? It seems like I can find a variety of information on SD2 but not on this role specifically.
-## [4][Cognito: Unable to signUp with amplify:](https://www.reddit.com/r/aws/comments/fes9az/cognito_unable_to_signup_with_amplify/)
-- url: https://www.reddit.com/r/aws/comments/fes9az/cognito_unable_to_signup_with_amplify/
----
-    {
-    code: "InvalidParameterException", name: "InvalidParameterException", message: "Attributes did not conform to the schema: custom:f…astname: Attribute does not exist in the schema.↵"}
-    code: "InvalidParameterException"
-    name: "InvalidParameterException"
-    message: "Attributes did not conform to the schema: custom:firstname: Attribute does not exist in the schema.↵custom:lastname: Attribute does not exist in the schema.↵"
-    }
-
-The custom attributes are present in the userpool
-
-[https://imgur.com/Hc3uQIa](https://imgur.com/Hc3uQIa)
-
-code:
-
-     Auth.signUp(
-          {
-            'username' : email,
-            'password' : password,
-            attributes: {
-              'email' : email,
-              'custom:firstname' : firstname,
-              'custom:lastname' : lastname
-            }
-          }
-        ).then(data =&gt; console.log(data))
-         .catch(err =&gt; console.log(err));
+[https://github.com/clowdhaus/aws-github-actions](https://github.com/clowdhaus/aws-github-actions)
 
 &amp;#x200B;
-## [5][CloudWatch now offers composite alarms. Great for reducing alarm fatigue and triggering scale down actions](https://www.reddit.com/r/aws/comments/fe6s3y/cloudwatch_now_offers_composite_alarms_great_for/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-cloudwatch-now-allows-you-to-combine-multiple-alarms/
+
+The IAM access credentials is similar to the AWS provided action except I've added the ability to assume roles from the action. Let me know what you think - unfortunately you won't find these from the GitHub marketplace because they do not support monorepos but the actions do support monorepos ([I know, confusing](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#example-using-a-public-action-in-a-subdirectory)).
+## [2][Hosting WP on AWS](https://www.reddit.com/r/aws/comments/ffaebt/hosting_wp_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/ffaebt/hosting_wp_on_aws/
 ---
+I’ve successfully setup a bucket for one of our WordPress sites to store and serve images. 
 
-## [6][None of our SQS to lambda triggers are working](https://www.reddit.com/r/aws/comments/fel75q/none_of_our_sqs_to_lambda_triggers_are_working/)
-- url: https://www.reddit.com/r/aws/comments/fel75q/none_of_our_sqs_to_lambda_triggers_are_working/
+Ive read aws can be utilized for website hosting so I’m wondering is AWS can be used to host an entire wp site rather then the regular hosting platforms. 
+
+Any opinions and resources will be appreciated, thanks.
+## [3][Best way to use DMS to make a local (i.e., on the developer's laptop) copy of a database?](https://www.reddit.com/r/aws/comments/ff52z6/best_way_to_use_dms_to_make_a_local_ie_on_the/)
+- url: https://www.reddit.com/r/aws/comments/ff52z6/best_way_to_use_dms_to_make_a_local_ie_on_the/
 ---
-For some bizarre reason, all of our sqs to lambda triggers stopped working at a certain time. However the API gateway integrated with lambdas are. Anyone have a similar circumstance occurred to them?
-## [7][Api call fails due to CORS policy.](https://www.reddit.com/r/aws/comments/feplc0/api_call_fails_due_to_cors_policy/)
-- url: https://www.reddit.com/r/aws/comments/feplc0/api_call_fails_due_to_cors_policy/
+This sort of operation is mentioned in the Database Migration Service overview but I haven't really found a good best-practices walkthrough of how to do it.  I have a Postgres database that developers need to clone to their local machine for dev/testing, and along the way I need to anonymize/scramble a few columns to remove PII.
+
+The export from the production database doesn't need to be up-to-the-minute accurate and a simple export every 12 or 24 hours is fine; I'd also want to trigger a migration/export via our CI/CD system.  I'd be ok using DMS to go to a dev RDS server as an intermediate step.
+
+Is DMS from Prod to Dev, then scrambling the PII in dev, then exporting a dump of the dev database to S3 the right way to think about this?  Then the developers can just run a local script to import the S3 dump files when they need it?
+## [4][SNS + Discord](https://www.reddit.com/r/aws/comments/ffb4v5/sns_discord/)
+- url: https://www.reddit.com/r/aws/comments/ffb4v5/sns_discord/
 ---
-The api works fine when the integration response has only the default response 200. But doesn't work when after I added 503 in integration response. I have enabled CORS after adding 503 and redeployed. Still not working.
-## [8][Looking for a replacement to Coinbase's assume-role CLI tool? Check out aws_longer.](https://www.reddit.com/r/aws/comments/feirqp/looking_for_a_replacement_to_coinbases_assumerole/)
-- url: https://www.reddit.com/r/aws/comments/feirqp/looking_for_a_replacement_to_coinbases_assumerole/
+Hi everyone.   
+I'm quite new to AWS and I wanted to try to setup a pipeline which will send a notification every time the build is successful or it's failed.   
+But I'm not quite sure how to achieve that. Anyone has any idea?   
+Thank you in advance :)
+## [5][How to setup CodeBuild for all branches except 1?](https://www.reddit.com/r/aws/comments/ff8gk5/how_to_setup_codebuild_for_all_branches_except_1/)
+- url: https://www.reddit.com/r/aws/comments/ff8gk5/how_to_setup_codebuild_for_all_branches_except_1/
 ---
-Do you use Coinbase's now deprecated [assume-role](https://github.com/coinbase/assume-role)? Are you annoyed by having to
-enter your MFA token into multiple terminal sessions, or simply having
-to type your MFA token in more than once a day? If so, check out
-`aws_longer`!
+Hey all! As the title reads, how can I setup CodeBuild to build for *all* branches except for the default?
 
-`aws_longer` uses your computer's keyring to store a 36-hour temporary
-credential that is used to subsequently assume-roles. The assumed
-credentials last an hour each, necessitating re-assuming, however,
-these subsequent re-assumes do not require MFA unless 36 hours hours
-have passed since your last MFA.
+Use Case:
 
-To get started check out https://github.com/appfolio/aws_longer for installation and
-testing instructions.
-## [9][Proof My Kinesis Firehose Calculations](https://www.reddit.com/r/aws/comments/fehzsx/proof_my_kinesis_firehose_calculations/)
-- url: https://www.reddit.com/r/aws/comments/fehzsx/proof_my_kinesis_firehose_calculations/
+* Developers will test their apps using a CodeBuild + buildspec.yml
+* When ready for production, the CodePipeline will use a similar buildspec + a full approval process
+
+Is there any intuitive way to do this? Ideally, we don't want the CodeBuild to invoke when the Codepipeline is invoked.
+## [6][I got locked out of my AWS Lightsail instance](https://www.reddit.com/r/aws/comments/ff2r7u/i_got_locked_out_of_my_aws_lightsail_instance/)
+- url: https://www.reddit.com/r/aws/comments/ff2r7u/i_got_locked_out_of_my_aws_lightsail_instance/
 ---
-Heyo! I often think I'm good at calculating the cost of my individual AWS services but sometimes find I miss some small/obvious things, I was hoping yall could proof my costing train of thought.
+Last night, I did an SSH access to my Lightsail instance to pull some changes to my application that was hosted on there. During the process, I figured I should update the system and I noticed that my firewall (ufw) was disabled. I did `sudo ufw enable` and didn't check the status. Turns out, the OpenSSH rule wasn't in the ufw by default so my SSH access through port 22 was disabled. As it was 4am and I was so tired, I didn't bother to check `sudo ufw status` to display my rules and logged out.
 
-[Firehose Pricing](https://aws.amazon.com/kinesis/data-firehose/pricing/)
+Today, when I tried connecting to my Lightsail instance through SSH, I kept getting timed out and after research I figured the problem was the firewall didn't allow SSH access to the instance. Last snapshot of the server was October 29th, 2019. and I cannot restore to that checkpoint as I would lose hundreds of user accounts that registered since and their uploaded content. It was a rookie mistake and now I don't know what to do to regain access to my instance. I tried creating a new shapshot and purchasing a new instance with the plan to add another storage unit and upload the snapshot to that storage unit, as that would allow me to have ssh access to the system partition and from there, I could restore my application. Unfortunately, it seems that Lightsail does not support uploading snapshots to new instances, and if I simply create a new instance from today's snapshot, I would again get an instance with a firewall blocking my SSH access.
 
-I've enabled logging on my WAF using Firehose, and a Lambda script that removes all valid requests and outputs only blocked requests (as per [this guide](https://aws.amazon.com/blogs/security/trimming-aws-waf-logs-with-amazon-kinesis-firehose-transformations/)). The WAF is looking at my ELB, which receives a max (recorded so far) number of requests of 288,000 a day.  Going with that as the "daily amount of requests" I went with the following calculations.
+&amp;#x200B;
 
-Costing works on 0.032/GB (In Canada) where each WAF request is about 1.5KB, but rounds up to 5KB per req for costing, at our max of 288,000 requests per day gives us:
-
-288,000 requests per day \* 5KB/req \* 30 days in a month = 43,200,000KB worth of requests per month, or 43.2GB \* .032 per GB = $1.38 a month.
-
-Is that right? Am I really only going to pay up to $1.38/month at my current load?
-## [10][Backuping of AWS](https://www.reddit.com/r/aws/comments/feoe96/backuping_of_aws/)
-- url: https://www.reddit.com/r/aws/comments/feoe96/backuping_of_aws/
+Is there anything at all that I can do? The future of my platform might depend on me solving this issue.
+## [7][Amazon SDK vs Using Amazon API Gateway to interact with Lambda Functions](https://www.reddit.com/r/aws/comments/ff3ezg/amazon_sdk_vs_using_amazon_api_gateway_to/)
+- url: https://www.reddit.com/r/aws/comments/ff3ezg/amazon_sdk_vs_using_amazon_api_gateway_to/
 ---
-Good day, usually I have small projects on AWS. I export for Git policies, API Gateway swagger. But looks like I cannot export IAM with users, roles. What you can recommend? What is the best practices about backuping entire AWS account? Also this is about Infrastructure as a Code. CloudFormation? But looks like I cannot export current AWS account.
+At my company we're looking into hosting a new application in a container within a VPC.  We're torn on whether or not we should call Lambda Functions via an API Gateway or using the SDK.  It'll be an .NET Core 3.1 Web app contacting .NET Core 2.1 Lambda Functions.  If we were to host the API Gateway it would be Private to the VPC and not publicly facing.  We plan on using IAM Roles as much as possible as well as Secrets Manager.
+
+Our major concerns are:
+
+* Security
+* Efficiency
+* Performance
+
+Does anyone have any experience with choosing between the two?
+## [8][Locked out of RDS accessed via boto3](https://www.reddit.com/r/aws/comments/ff5lc6/locked_out_of_rds_accessed_via_boto3/)
+- url: https://www.reddit.com/r/aws/comments/ff5lc6/locked_out_of_rds_accessed_via_boto3/
+---
+I'm trying to [execute_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.execute_statement) so I can save to my database.
+
+
+I'm getting the error "Access denied for user 'root'", I believe because I'm using the wrong parameters.
+
+
+What is execute_statement looking for in the parameter "SecretARN"? Where can I find that?
+
+
+Currently, I'm setting SecretARN = root user db password. I know the password's right, because I'm successfully using it to connect through dbeaver (which is a desktop SQL ... connector thingy).
+
+
+Any ideas?
+## [9][RDS/MySQL Community Engine import advice](https://www.reddit.com/r/aws/comments/ff83hk/rdsmysql_community_engine_import_advice/)
+- url: https://www.reddit.com/r/aws/comments/ff83hk/rdsmysql_community_engine_import_advice/
+---
+Hi All,
+
+We have an Amazon RDS, **My**SQL 5.7 and i have received a zipped `.sql` file that has inside the `INSERT INTO` commands.
+
+What should be the first step of importing them ? is it possible to avoid building a web server for phpmyadmin or installing local tools like mysqlworkbench?
+
+Thank you!
+## [10][Using CloudWatch for business metrics?](https://www.reddit.com/r/aws/comments/feymu2/using_cloudwatch_for_business_metrics/)
+- url: https://www.reddit.com/r/aws/comments/feymu2/using_cloudwatch_for_business_metrics/
+---
+Is anyone in here using CloudWatch for not just operational metrics but also business metrics? I'm talking about using CW for things like: conversion %, conversion abandonment %, time to convert, new user sign-up, etc.
+
+I'm seeing a few advantages to this:
+
+1. A change in some of these business metrics could indicate a problem in the system not readily apparent from standard operational metrics. I could see wanting to alarm on some of these metrics.
+2. A/B testing.
+3. CloudWatch could be a stop-gap tool to provide MVP measurement until a decent analytics / BI platform could be built out.
+
+**Potential use case:**
+
+A client of mine had an insurance quote wizard with several screens. Each screen had a "Next" button that was disable until all the required fields were populated. They had a bug that under certain circumstances, would not enable the "Next" button even though required fields were filled out. Their quoting conversion rate dropped significantly. I doubt that would have shown up in operational metrics but an alarm on rolling 5 minute conversion rate would have pinged about 6 minutes after they deployed.
+
+Curious how y'all handle this in your worlds...
+
+(edited to add potential use case)

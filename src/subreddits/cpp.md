@@ -57,9 +57,23 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][PSA: gsl::span iterators are not just pointers](https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/)
+## [2][A common C/C++ core specification](https://www.reddit.com/r/cpp/comments/ffaato/a_common_cc_core_specification/)
+- url: https://gustedt.wordpress.com/2020/03/08/a-common-c-c-core-specification/
+---
+
+## [3][Software optimization resources. C++ and assembly. Windows, Linux, BSD, Mac OS X](https://www.reddit.com/r/cpp/comments/fev58b/software_optimization_resources_c_and_assembly/)
+- url: https://www.agner.org/optimize/
+---
+
+## [4][PSA: gsl::span iterators are not just pointers](https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/)
 - url: https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/
 ---
+*Edit: as per this [comment](https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/fjwnv3e) from the current GSL maintainer, `gsl::span` iterators will soon be more pointer-like.*
+
+*Edit: as per comments in the thread, `gslite::span` iterators are pointers, and `std::span` iterators will be pointer-like in the upcoming MSVC release.*
+
+---
+
 A colleague stumbled upon a weird optimization in our application; a reduced example is:
 
     auto index = /*...*/;
@@ -82,7 +96,7 @@ Where `zip` is defined as:
 
 Which instantiates two zip iterators (Boost) and returns a range.
 
-Notice that `some_function` returns a `gsl::span` *by value*. Lifetime extension then kicks in so that it lives for as long as `zip(/*...*/, container.get_view())` takes to evaluate, **and no longer**.
+Notice that `container.get_view()` returns a `gsl::span` *by value*. Lifetime extension then kicks in so that it lives for as long as `zip(/*...*/, container.get_view())` takes to evaluate, **and no longer**.
 
 Why do we care, though, when the *actual container* lives long enough? Well, it turns out that a `span_iterator&lt;T&gt;` is NOT `T*`, instead it is:
 
@@ -99,23 +113,23 @@ Which is necessary to validate for the `Ensure` machinery used to ensure that on
  - Even if checks are turned off, `span_iterator` are still twice as heavy as regular `T*`.
 
 It's unclear whether the `std::span` version will take the same approach; if so, we'll likely re-implement `span` ourselves to avoid the overhead and the surprising lifetime implications.
-## [3][Analyze your builds programmatically with the C++ Build Insights SDK | Visual C++ Team Blog](https://www.reddit.com/r/cpp/comments/fegtup/analyze_your_builds_programmatically_with_the_c/)
+## [5][Analyze your builds programmatically with the C++ Build Insights SDK | Visual C++ Team Blog](https://www.reddit.com/r/cpp/comments/fegtup/analyze_your_builds_programmatically_with_the_c/)
 - url: https://devblogs.microsoft.com/cppblog/analyze-your-builds-programmatically-with-the-c-build-insights-sdk/
 ---
 
-## [4][A few experimental features for C++](https://www.reddit.com/r/cpp/comments/fef2d0/a_few_experimental_features_for_c/)
+## [6][A few experimental features for C++](https://www.reddit.com/r/cpp/comments/fef2d0/a_few_experimental_features_for_c/)
 - url: https://cor3ntin.github.io/posts/qol23/
 ---
 
-## [5][Software optimization resources. C++ and assembly. Windows, Linux, BSD, Mac OS X](https://www.reddit.com/r/cpp/comments/fev58b/software_optimization_resources_c_and_assembly/)
-- url: https://www.agner.org/optimize/
----
-
-## [6][Tortellini: A really, really stupid INI file format for C++11 and above](https://www.reddit.com/r/cpp/comments/feaul5/tortellini_a_really_really_stupid_ini_file_format/)
+## [7][Tortellini: A really, really stupid INI file format for C++11 and above](https://www.reddit.com/r/cpp/comments/feaul5/tortellini_a_really_really_stupid_ini_file_format/)
 - url: https://github.com/Qix-/tortellini
 ---
 
-## [7][Modern std::byte stream IO for C++](https://www.reddit.com/r/cpp/comments/fe72kp/modern_stdbyte_stream_io_for_c/)
+## [8][Field-testing “Down with lifetime extension!”](https://www.reddit.com/r/cpp/comments/fefk20/fieldtesting_down_with_lifetime_extension/)
+- url: https://quuxplusone.github.io/blog/2020/03/04/field-report-on-lifetime-extension/
+---
+
+## [9][Modern std::byte stream IO for C++](https://www.reddit.com/r/cpp/comments/fe72kp/modern_stdbyte_stream_io_for_c/)
 - url: https://www.reddit.com/r/cpp/comments/fe72kp/modern_stdbyte_stream_io_for_c/
 ---
 Previous post: https://www.reddit.com/r/cpp/comments/avcalo/a_proposal_to_add_stdbytebased_io_to_the_c/
@@ -143,24 +157,10 @@ It's been a year since the last post and quite a few things have changed:
 During benchmarking of sequential file IO on Linux proposed `std::io::input_file_stream` was found to be ~30% faster than `std::FILE` and ~45% faster than `std::ifstream` while proposed `std::io::output_file_stream` was found to be ~38% faster than `std::FILE` and ~60% faster than `std::ofstream`. Raw numbers can be found in the paper.
 
 This post was made to gather a round of feedback before I publish R0 targeted for Varna. I'm also looking for a champion to present this proposal in Varna.
-## [8][Fluent {C++}: How to Pass Class Member Functions to STL Algorithms](https://www.reddit.com/r/cpp/comments/febn53/fluent_c_how_to_pass_class_member_functions_to/)
+## [10][Fluent {C++}: How to Pass Class Member Functions to STL Algorithms](https://www.reddit.com/r/cpp/comments/febn53/fluent_c_how_to_pass_class_member_functions_to/)
 - url: https://www.fluentcpp.com/2020/03/06/how-to-pass-class-member-functions-to-stl-algorithms/
 ---
 
-## [9][Field-testing “Down with lifetime extension!”](https://www.reddit.com/r/cpp/comments/fefk20/fieldtesting_down_with_lifetime_extension/)
-- url: https://quuxplusone.github.io/blog/2020/03/04/field-report-on-lifetime-extension/
----
-
-## [10][Plain C vs C++ execution stack for exceptions ?](https://www.reddit.com/r/cpp/comments/feh01t/plain_c_vs_c_execution_stack_for_exceptions/)
-- url: https://www.reddit.com/r/cpp/comments/feh01t/plain_c_vs_c_execution_stack_for_exceptions/
----
-How different is the execution stack of "Plain C" versus "C++" ?
-
-I was reading a previous post on how the execution stack of a C++ code with exceptions is done, when I realize this.
-
-I read several times about "Plain C" been directly unable to have C++ style exceptions.
-
-Thanks.
 ## [11][C++20: Why the word "constinit"? Why not name the specifier complinit or staticinit?](https://www.reddit.com/r/cpp/comments/feb67q/c20_why_the_word_constinit_why_not_name_the/)
 - url: https://www.reddit.com/r/cpp/comments/feb67q/c20_why_the_word_constinit_why_not_name_the/
 ---

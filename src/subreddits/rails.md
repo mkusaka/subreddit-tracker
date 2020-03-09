@@ -27,7 +27,204 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][How to view all available methods in template or controller?](https://www.reddit.com/r/rails/comments/ff8spe/how_to_view_all_available_methods_in_template_or/)
+## [3][Monolith serving React through webpack or seperate services.](https://www.reddit.com/r/rails/comments/fftzma/monolith_serving_react_through_webpack_or/)
+- url: https://www.reddit.com/r/rails/comments/fftzma/monolith_serving_react_through_webpack_or/
+---
+Hello there...
+
+I need some advice if you don't mind.
+
+I have a service I have created as a backend only in rails with actioncable and multischema (tenant) postgres db.
+
+I'm hating having to deal with CORS and extra security and running two services.
+
+Would it be bad/not scalable to have it as a monolith?
+
+Pros? Cons? 
+
+I will be deploying this to ECS in AWS if that helps...
+
+Please and thank you all for your help.
+## [4][Help with associations](https://www.reddit.com/r/rails/comments/ffev1f/help_with_associations/)
+- url: https://www.reddit.com/r/rails/comments/ffev1f/help_with_associations/
+---
+I'm building an application which consists on two modesl: `Task` and `Project`. Projects may have several zero or more tasks (`has_many` association), but tasks don't necessarily belong to a project. Well, I don't know how to program that last part in terms of routing, because if I implement this:
+
+    Rails.application.routes.draw do
+        resources :tasks
+        resources :projects do
+            resources :tasks
+        end
+    end
+
+Rails assigns the same `Controller#Action` to both tasks, so I don't know how to distinguish between them:
+
+    Controller#Action    Prefix            Verb   URI Pattern
+    
+    tasks#index          tasks             GET    /tasks(.:format)
+    tasks#create                           POST   /tasks(.:format)
+    
+    tasks#index          project_tasks     GET    /projects/:project_id/tasks(.:format)
+    tasks#create                           POST   /projects/:project_id/tasks(.:format)
+
+Is there any way to separate them? Maybe creating different actions?
+## [5][Help splitting an array into equal subarrays](https://www.reddit.com/r/rails/comments/ffgyjk/help_splitting_an_array_into_equal_subarrays/)
+- url: https://www.reddit.com/r/rails/comments/ffgyjk/help_splitting_an_array_into_equal_subarrays/
+---
+Hi guys,
+
+I am working on my final for my Ruby class(Ruby II not rails). I have an array that I have created from reading in a file. I am creating a word search puzzle. I need to list the words under my word search grid. I have 45 words and want 3 rows of 15 words each. I am also using a Prawn to create a pdf file to output my word search grid, words, and a grid key. Any advice on the best way to split my array into 3 equal columns to print out my words?
+
+I was thinking about creating some kind of method that would calculate the length, the take that length and divide it by 3. From there I would print a string with one column ljust, one column centered, and one column rjust.
+
+The other option I am entertaining is to create a boundary with the prawn and somehow break the list into 3 parts and put each part in the created boundary.
+
+Any ideas and direction here would be greatly appreciated.
+
+Here is my method to create my array (I have to put a space after my instance variable so it would allow me to include it on this post)
+
+@ words = \[\]  
+*file* = File.open(*file*)  
+until *file*.eof?  
+*word* = *file*.gets.chomp  
+@ words&lt;&lt; *word*.delete(" ")  
+@ words = @ words.sort\_by{ |*x*|-*x*.length }
+
+end  
+*file*.close
+
+My list of words I am including
+
+Apple  
+Apricot  
+Avocado  
+Breadfruit  
+Banana  
+Blackberry  
+Blackcurrant  
+Blueberry  
+Cherimoya  
+Cherry  
+Clementine  
+Coconut  
+Cranberry  
+Custard Apple  
+Durian  
+Fig  
+Grapefruit  
+Grape  
+Guava  
+Jackfruit  
+Kiwi  
+Lemon  
+Lime  
+Loganberry  
+Mandarin  
+Mango  
+Mangosteen  
+Melon  
+Nectarine  
+Orange  
+Papaya  
+Peach  
+Pear  
+Persimmon  
+Pineapple  
+Plum  
+Pomegranate  
+Quince  
+Satsuma  
+Sharon  
+Strawberry  
+Tamarillo  
+Tangerine  
+Ugli  
+Watermelon
+
+My prawn pdf creation
+
+def create\_pdf  
+Prawn::Document.generate('puzzle2.pdf') do |*pdf*|  
+*pdf*.font 'Courier', size: 20  
+*pdf*.text 'Word Search', align: :center  
+*pdf*.font 'Courier', size: 8  
+*pdf*.move\_down(80)
+
+*pdf*.text(print\_puzzle, align: :center)  
+*pdf*.start\_new\_page  
+*pdf*.text(print\_puzzle, align: :center)  
+end  
+end  
+end
+## [6][Minitest decorate test to change setup method](https://www.reddit.com/r/rails/comments/fffozb/minitest_decorate_test_to_change_setup_method/)
+- url: https://www.reddit.com/r/rails/comments/fffozb/minitest_decorate_test_to_change_setup_method/
+---
+In Minitest I can use the `def setup` method to initialize some values before each test is run. My setup looks like this. 
+
+    def setup 
+    find_agent
+    create_session
+    end
+
+I would want to modify the setup method to take a different agent from the `find_agent` method based on which test is running. Is there a way I can decorate each test so that the common setup method picks the right type of agent based on the test and creates a session?
+## [7][Handling transactions with update_attributes!](https://www.reddit.com/r/rails/comments/ffi1b0/handling_transactions_with_update_attributes/)
+- url: https://www.reddit.com/r/rails/comments/ffi1b0/handling_transactions_with_update_attributes/
+---
+I have a two below method that I want to wrap around a transaction so if update\_model fails destroy\_roles will be rolled back
+
+    def update_model 
+      if model.update_attributes(params)
+         #do something
+      else
+         render /errors
+      end
+    end
+    
+    def destroy_roles
+        role.destroy
+    end
+
+If I wanted to achieve the below using a transaction. 
+
+    object.transaction do 
+        destroy_roles
+        update_model
+    end
+    
+    def update_model
+      begin
+        model.udpate_attributes!(params
+      resuce =&gt; e
+        generate_bad_request(model.errors)
+    end
+
+Here is what I'm assuming will happen, 
+
+1)  `destroy_roles` will destroy the roles of that particular model, in `update_model` the `update_attributes` raises an exception and we'll generate a bad request back for the user and also since it is inside a transaction the destroyed users in destroy\_roles will be restored as well. 
+
+Could you please help me if my understanding is correct, I'm confused since we have handled the exception whether the transaction will roll back the destroy\_roles or do I have to re-raise the exception and so on.   
+
+
+Any links to tutorial/documentation for the same would be really helpful as well.
+## [8][Pls help: Upgraded from Rails 3 to 5, getting a Javascript error: Error: Unknown provider: tProvider &lt;- t](https://www.reddit.com/r/rails/comments/ffmvc6/pls_help_upgraded_from_rails_3_to_5_getting_a/)
+- url: https://www.reddit.com/r/rails/comments/ffmvc6/pls_help_upgraded_from_rails_3_to_5_getting_a/
+---
+New to Rails and I'm getting this error:  **Error: Unknown provider: tProvider &lt;- t** 
+
+and it seems to be a minification error? This error is also only happening on production, development environment is working fine. We don't have a local production server set up, so I have no idea how to test this before I deploy? 
+
+I can produce this error on dev by just commenting out the **config.assets.debug**  line... I've commented this out and have tried to remove the js uglifier ( config.assets.js\_compressor = :uglifier), and have tried to put  config.assets.js\_compressor = Uglifier.new(mangle: false), but this doesn't work either.
+
+I've also tried to make my controllers minification safe, but that doesn't seem to be doing anything either.
+
+Maybe this things will work in production (and just the config.assets.debug line is messing up the output), but I don't know how to test this without deploying if I don't have a local prod server up?
+
+I'm very confused at this whole error. Prod is broken, dev is working. Please help
+## [9]["VFS Connection does not exist"](https://www.reddit.com/r/rails/comments/ffd94j/vfs_connection_does_not_exist/)
+- url: https://www.reddit.com/r/rails/comments/ffd94j/vfs_connection_does_not_exist/
+---
+As the title says, when i try to run the $rails server command andpreview running application, it tells me "Oops, VFS Connection does notexist". Any way to fix this? I'm on Firefox if it helps.
+## [10][How to view all available methods in template or controller?](https://www.reddit.com/r/rails/comments/ff8spe/how_to_view_all_available_methods_in_template_or/)
 - url: https://www.reddit.com/r/rails/comments/ff8spe/how_to_view_all_available_methods_in_template_or/
 ---
 Hi, I have been learning Rails for about a week and I am having very hard time with understanding which methods can be used when because everything seems like magically appearing in templates and controllers.
@@ -35,7 +232,7 @@ Hi, I have been learning Rails for about a week and I am having very hard time w
 Is there a way to dump all available methods in debug statement or something to see and better understand them?
 
 Also, if you have other tips on understanding this topic, your comment would be really helpful!
-## [4][How do I handle this join?](https://www.reddit.com/r/rails/comments/ff3raq/how_do_i_handle_this_join/)
+## [11][How do I handle this join?](https://www.reddit.com/r/rails/comments/ff3raq/how_do_i_handle_this_join/)
 - url: https://www.reddit.com/r/rails/comments/ff3raq/how_do_i_handle_this_join/
 ---
 I have a side project with an interesting problem. I have two tables:
@@ -50,7 +247,7 @@ My attempt is something like this:
 `Book.all.joins("INNER JOIN restrictions ON restrictions.record_id =` `books.id` `AND restrictions.record_type = 'Book'")`
 
 But this is just returning all books, and I am trying to get a list of books that isn't restricted. Any ideas?
-## [5][How do I efficiently query telemetry data?](https://www.reddit.com/r/rails/comments/feswoh/how_do_i_efficiently_query_telemetry_data/)
+## [12][How do I efficiently query telemetry data?](https://www.reddit.com/r/rails/comments/feswoh/how_do_i_efficiently_query_telemetry_data/)
 - url: https://www.reddit.com/r/rails/comments/feswoh/how_do_i_efficiently_query_telemetry_data/
 ---
 I have this project where there are N devices in the field that beam back telemetry data **once every minute** per device. The ingest API for that is fine, but I'm running into some concerns about _reading_ that data, specifically for building a graph.
@@ -78,164 +275,3 @@ I could of course throw a limit on that, but then we'd just get the first N minu
 Is there a better way to do this? For example, let's say I want two data points per hour (so one every 30 minutes). I _could_ try creating a loop then using the loop to craft and execute a new query for every trip through said loop, but that also sounds pretty inefficient.
 
 How do I _efficiently_ do something like this? What should I be googling for?
-## [6][How do I delete a record and it's associated records and only skip one callback action for each, that sends a notification?](https://www.reddit.com/r/rails/comments/fethwh/how_do_i_delete_a_record_and_its_associated/)
-- url: https://www.reddit.com/r/rails/comments/fethwh/how_do_i_delete_a_record_and_its_associated/
----
-So I have a record that I would like to delete, and it has many associated records. And every record has multiple after_destroy callbacks including one that sends a notification to the affected users.
-
-The problem here is that I want to fire all the callbacks actions but only skip the one that sends the notification. How can I achieve that?
-## [7][Question about wrapping destroy inside a transaction](https://www.reddit.com/r/rails/comments/fepzsn/question_about_wrapping_destroy_inside_a/)
-- url: https://www.reddit.com/r/rails/comments/fepzsn/question_about_wrapping_destroy_inside_a/
----
-I need to call two separate methods that do a commit to the database and I'm wondering if I wrap these methods inside a transaction will it work properly. 
-
-    ActiveRecord::Base.transaction do 
-        destroy_roles
-        save_user
-    end
-
-and destroy roles looks like this 
-
-    def destroy_roles
-      current_user.roles.destroy(role_to_be_destroy)
-    end
-
-and save\_user is 
-
-    def save_user 
-      current_user.update_attributes(user_params)
-    end 
-
-So when `destroy_roles` is called within the transaction the role is deleted with `begin` and `commit` which will usually succeed but it's unlikely the `save_user` will succeed which is why I want `destroy_roles` to be rolled back but since each `destroy` happens withing a `begin` and `commit` I'm wondering if this will be rolled back if `save_user` fails.  
-
-I also have another question about if we should user the `!` version inside the transaction like `update_attributes!` as opposed to `update_attribute` and so on. What difference would it make inside a transaction?
-
-P.S in impossible to avoid writing this as a single commit as the roles have to be deleted first so that the before\_update callbacks have the correct roles for further processing before user is saved
-## [8][Video as a medium for rails](https://www.reddit.com/r/rails/comments/feri5d/video_as_a_medium_for_rails/)
-- url: https://www.reddit.com/r/rails/comments/feri5d/video_as_a_medium_for_rails/
----
-Hey guys I’m starting my journey into rails. The one problem I have is the lack of high quality videos out there that show everything. I come from front end and there’s so many videos on setting up react and your environment and basically projects and they show how everything is done and why. With rails there’s only these huge 5-7 hour projects with no set up or anything. 
-
-My question is do you guys have any good YouTubers you recommend that helped you? 
-
-I looked through the side bar and history and everyone just says read books and stuff but I learn the best with videos. Thanks guys
-## [9][Lost master key rails 6](https://www.reddit.com/r/rails/comments/feo3gu/lost_master_key_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/feo3gu/lost_master_key_rails_6/
----
-Hopefully someone can help me. I put my rails 6 project on github, then did a fresh install of my os deleting everything. After getting my project back on my “new” computer I was trying to add some secret keys in my credentials.yml file but get an error saying my master key doesn’t match. After some googling and no information on how to reset the key. Here I am. Thanks in advance for any help.
-## [10][Assigning a test case to an integer doesn't work - how do I test for a non string value?](https://www.reddit.com/r/rails/comments/fendcw/assigning_a_test_case_to_an_integer_doesnt_work/)
-- url: https://www.reddit.com/r/rails/comments/fendcw/assigning_a_test_case_to_an_integer_doesnt_work/
----
-Hi all,  
-
-
-I'm new to TDD and I'm trying to write a very simple test - checking if a value is a string.  
-
-
-Here's the test (which I'm trying to make fail):  
-
-
-    test "test model name should be a string" do
-        test_model(:one).name = 1
-        assert_equal true, test_model(:one).name.is_a?(String)
-      end
-    
-    =&gt; 0 Failures
-
-I've tried using byebug to check the value of test\_model(:one).name, and even though I'm assigning as 1, it's actually assigning it as "1" (A string rather than an integer).  
-
-
-1) Why is it doing this?  
-2) How do I test for this case?  
-
-
-Thanks.
-## [11][Data modeling - is single table inheritance approach good here](https://www.reddit.com/r/rails/comments/fegw2e/data_modeling_is_single_table_inheritance/)
-- url: https://www.reddit.com/r/rails/comments/fegw2e/data_modeling_is_single_table_inheritance/
----
-Hello guys, I need an opinion. I am creating a shopping platform, and basic functionality is as follows: suppliers have a product page, buyers can buy from them.
-
-Other details: 
-
-* I have the Account model which can be of two types: Buyer and Supplier. 
-
-* Product model is associated with Account of the type 'Supplier'. 
-
-* Also, there is User model which belongs to Account (both suppliers and buyers can have Users).
-
-How would you model this?
-
-I was thinking about Single table inheritance - creating Account model which inherits from ActiveRecord, and two Ruby classes for Buyer and Supplier. Putting mutual fields in Account model along with the User association, and different functionality in Account's sub-classes. What bothers me is that I don't know how to avoid having Account of type Buyer associated with Products.
-
-Is this a good approach?
-## [12][Keeping controller DRY with methods?](https://www.reddit.com/r/rails/comments/fen6xg/keeping_controller_dry_with_methods/)
-- url: https://www.reddit.com/r/rails/comments/fen6xg/keeping_controller_dry_with_methods/
----
-Hey guys, wanted some quick thoughts on this:
-
-Suppose my controller has both a "create" and "update" action, and in both actions an instance variable needs to be instantiated the same way:
-
-    \@purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i,
-    params[:application]["purchase_date(2i)"].to_i, params[:application]["purchase_date(3i)"].to_i)
-
-I think there's three ways to do this:
-
-**\\1. Simply copy paste this code in both create and update action. Improves readability of code but is it DRY?**
-
-    def create
-      \@purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i,
-     params[:application]["purchase_date(2i)"].to_i,
-     params[:application]["purchase_date(3i)"].to_i)
-      // more code
-    end
-    
-    def update
-      \@purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i,
-     params[:application]["purchase_date(2i)"].to_i,
-     params[:application]["purchase_date(3i)"].to_i)
-      // more code
-    end
-
-**\\2. Make a private method in controller that populates the instance variable and just stick the method in both create and update**
-
-    def create
-      set_purchase_date
-      // more code
-    end
-    
-    def update
-      set_purchase_date
-      // more code
-    end
-    
-    private
-    
-    def set_purchase_date
-      @purchase_date = Date.civil(params[:application]["purchase_date(1i)"].to_i, params[:application]["purchase_date(2i)"].to_i, params[:application]["purchase_date(3i)"].to_i) 
-    end
-
-**\\3. Make a private method in controller that returns the object needed by instance variable and make instance variable equal to that**
-
-    def create
-      \@purchase_date = set_purchase_date
-      // more code
-    end
-    
-    def update
-      \@purchase_date = set_purchase_date
-      // more code
-    end
-    
-    private
-    
-    def set_purchase_date
-      Date.civil(params[:application]["purchase_date(1i)"].to_i, params[:application]  ["purchase_date(2i)"].to_i, params[:application]["purchase_date(3i)"].to_i) 
-    end
-
-&amp;#x200B;
-
-What's the best way to go here? Which do you prefer? Is there another way?
-
-&amp;#x200B;
-
-Edit: Ignore the \\@ thing, I have no idea how to escape the auto formatting reddit does for @

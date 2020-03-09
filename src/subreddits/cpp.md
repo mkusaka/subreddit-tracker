@@ -57,15 +57,65 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][A common C/C++ core specification](https://www.reddit.com/r/cpp/comments/ffaato/a_common_cc_core_specification/)
+## [2][How to remove cplusplus.com from Google search results?](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/)
+- url: https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/
+---
+it even \*pretends\* to be cppreference, that's how bad it is! &lt;/rant&gt;
+
+Edit: answer in comments, works for Firefox which I happen to use: [https://www.reddit.com/r/cpp/comments/ffpd1s/how\_to\_remove\_cpluspluscom\_from\_google\_search/fk00gpl?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/fk00gpl?utm_source=share&amp;utm_medium=web2x)
+
+Edit2: personal block list [https://www.reddit.com/r/cpp/comments/ffpd1s/how\_to\_remove\_cpluspluscom\_from\_google\_search/fk00noj?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/fk00noj?utm_source=share&amp;utm_medium=web2x)
+
+edit3: how to improve the proper reference: [https://www.reddit.com/r/cpp/comments/ffpd1s/how\_to\_remove\_cpluspluscom\_from\_google\_search/fk06he5?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/fk06he5?utm_source=share&amp;utm_medium=web2x)
+## [3][Demo: C++20 Concepts Feature](https://www.reddit.com/r/cpp/comments/ffdsvd/demo_c20_concepts_feature/)
+- url: https://youtu.be/B_KjoLid5gw
+---
+
+## [4][Tips for working with GCC in a MSVC compatible way](https://www.reddit.com/r/cpp/comments/ffqvda/tips_for_working_with_gcc_in_a_msvc_compatible_way/)
+- url: https://www.reddit.com/r/cpp/comments/ffqvda/tips_for_working_with_gcc_in_a_msvc_compatible_way/
+---
+Hello everyone, 
+
+First time post in here, I don't know whether this is the right sub to ask, but alas, here I go.
+
+So I am a CompSci freshman, and i have OOP this semester, which is done in C/C++.
+
+As I have an old laptop(and I prefer GNU/Linux as an OS) I am doing pretty much everything in Emacs and with GCC, but my OOP lab teacher has an online platform for checking our assignments and "demands" us working in Visual Studio under MSVC, which my computer cannot run at all.
+
+So, could you point me towards some material, or give me some advice, as to how could I finish this semester with GCC without failing?
+
+&amp;#x200B;
+
+Many thanks in advance.
+## [5][Blacksmith - Library for in-place class construction.](https://www.reddit.com/r/cpp/comments/ffqc7l/blacksmith_library_for_inplace_class_construction/)
+- url: https://www.reddit.com/r/cpp/comments/ffqc7l/blacksmith_library_for_inplace_class_construction/
+---
+Hi there, I've been toying with this idea for a while now, and have settled on a simple solution.
+
+Basically, I wanted to build classes in-place using named arguments (I know designated initialisers are coming, but in the mean time...)
+
+    auto p = build([](Point&amp; _) { _.x = 5; _.y = 6;});
+
+Or for pointers:
+
+    build_shared([](Point&amp; _) { _.x = 5; _.y = 6;}); // returns shared_ptr&lt;Point&gt;
+    
+    build_unique([](Point&amp; _) { _.x = 5; _.y = 6;}); // returns unique_ptr&lt;Point&gt;
+    
+    build_new([](Point&amp; _) { _.x = 5; _.y = 6;}); // returns a new Point* (must delete)
+
+This is my first open source c++ contribution, so I'd love some feedback! Cheers.
+
+[https://github.com/martypapa/blacksmith](https://github.com/martypapa/blacksmith)
+## [6][A common C/C++ core specification](https://www.reddit.com/r/cpp/comments/ffaato/a_common_cc_core_specification/)
 - url: https://gustedt.wordpress.com/2020/03/08/a-common-c-c-core-specification/
 ---
 
-## [3][Software optimization resources. C++ and assembly. Windows, Linux, BSD, Mac OS X](https://www.reddit.com/r/cpp/comments/fev58b/software_optimization_resources_c_and_assembly/)
+## [7][Software optimization resources. C++ and assembly. Windows, Linux, BSD, Mac OS X](https://www.reddit.com/r/cpp/comments/fev58b/software_optimization_resources_c_and_assembly/)
 - url: https://www.agner.org/optimize/
 ---
 
-## [4][PSA: gsl::span iterators are not just pointers](https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/)
+## [8][PSA: gsl::span iterators are not just pointers](https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/)
 - url: https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/
 ---
 *Edit: as per this [comment](https://www.reddit.com/r/cpp/comments/feuhzr/psa_gslspan_iterators_are_not_just_pointers/fjwnv3e) from the current GSL maintainer, `gsl::span` iterators will soon be more pointer-like.*
@@ -113,55 +163,15 @@ Which is necessary to validate for the `Ensure` machinery used to ensure that on
  - Even if checks are turned off, `span_iterator` are still twice as heavy as regular `T*`.
 
 It's unclear whether the `std::span` version will take the same approach; if so, we'll likely re-implement `span` ourselves to avoid the overhead and the surprising lifetime implications.
-## [5][Analyze your builds programmatically with the C++ Build Insights SDK | Visual C++ Team Blog](https://www.reddit.com/r/cpp/comments/fegtup/analyze_your_builds_programmatically_with_the_c/)
+## [9][Analyze your builds programmatically with the C++ Build Insights SDK | Visual C++ Team Blog](https://www.reddit.com/r/cpp/comments/fegtup/analyze_your_builds_programmatically_with_the_c/)
 - url: https://devblogs.microsoft.com/cppblog/analyze-your-builds-programmatically-with-the-c-build-insights-sdk/
 ---
 
-## [6][A few experimental features for C++](https://www.reddit.com/r/cpp/comments/fef2d0/a_few_experimental_features_for_c/)
+## [10][A few experimental features for C++](https://www.reddit.com/r/cpp/comments/fef2d0/a_few_experimental_features_for_c/)
 - url: https://cor3ntin.github.io/posts/qol23/
 ---
 
-## [7][Tortellini: A really, really stupid INI file format for C++11 and above](https://www.reddit.com/r/cpp/comments/feaul5/tortellini_a_really_really_stupid_ini_file_format/)
+## [11][Tortellini: A really, really stupid INI file format for C++11 and above](https://www.reddit.com/r/cpp/comments/feaul5/tortellini_a_really_really_stupid_ini_file_format/)
 - url: https://github.com/Qix-/tortellini
 ---
 
-## [8][Field-testing “Down with lifetime extension!”](https://www.reddit.com/r/cpp/comments/fefk20/fieldtesting_down_with_lifetime_extension/)
-- url: https://quuxplusone.github.io/blog/2020/03/04/field-report-on-lifetime-extension/
----
-
-## [9][Modern std::byte stream IO for C++](https://www.reddit.com/r/cpp/comments/fe72kp/modern_stdbyte_stream_io_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/fe72kp/modern_stdbyte_stream_io_for_c/
----
-Previous post: https://www.reddit.com/r/cpp/comments/avcalo/a_proposal_to_add_stdbytebased_io_to_the_c/
-
-Direct link to PDF: https://github.com/Lyberta/cpp-io/raw/master/generated/Paper.pdf
-
-Paper repository: https://github.com/Lyberta/cpp-io
-
-Reference implementation: https://github.com/Lyberta/cpp-io-impl
-
-This paper proposes fundamental IO concepts, customization points for serialization and deserialization and streams for memory and file IO.
-
-It's been a year since the last post and quite a few things have changed:
-
-* IO and serialization are separate now. You can use `std::io::read_raw` and `std::io::write_raw` for raw IO. They have much less overloads and will take less time to compile. `std::io::read` and `std::io::write` are more heavy because they support endianness/floating-point-format conversion as well as dispatch to custom serialization functions.
-* Concepts instead of inheritance + virtual functions. You no longer need to pay the cost of virtual function calls in generic code.
-* Custom serialization functions can now be variadic.
-* IO contexts as a way to not have format as part of the stream as well as providing local format support during nested [de]serialization.
-* File streams now support buffering.
-* Added type erased streams for cases where you need dynamic polymorphism.
-* `std::io::in()`, `std::io::out()` and `std::io::err()` for byte IO with standard streams. The objects are type erased so you can redirect them to any stream you want. This is similar to `std::cout` et al.
-
-## It is faster than both `&lt;iostream&gt;` and `&lt;stdio&gt;`
-
-During benchmarking of sequential file IO on Linux proposed `std::io::input_file_stream` was found to be ~30% faster than `std::FILE` and ~45% faster than `std::ifstream` while proposed `std::io::output_file_stream` was found to be ~38% faster than `std::FILE` and ~60% faster than `std::ofstream`. Raw numbers can be found in the paper.
-
-This post was made to gather a round of feedback before I publish R0 targeted for Varna. I'm also looking for a champion to present this proposal in Varna.
-## [10][Fluent {C++}: How to Pass Class Member Functions to STL Algorithms](https://www.reddit.com/r/cpp/comments/febn53/fluent_c_how_to_pass_class_member_functions_to/)
-- url: https://www.fluentcpp.com/2020/03/06/how-to-pass-class-member-functions-to-stl-algorithms/
----
-
-## [11][C++20: Why the word "constinit"? Why not name the specifier complinit or staticinit?](https://www.reddit.com/r/cpp/comments/feb67q/c20_why_the_word_constinit_why_not_name_the/)
-- url: https://www.reddit.com/r/cpp/comments/feb67q/c20_why_the_word_constinit_why_not_name_the/
----
-If I understand correctly the specifier `constinit` forces initialization of a variable (declared with constinit) at compile time. The value of the variable can be changed later and is not const. I just find that naming the specifier "constinit" could be misunderstood or is misleading in the sense that the variable specified with it isn't const. Perhaps, complinit or staticinit is a better choice for what constinit does.

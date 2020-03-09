@@ -1,71 +1,74 @@
 # golang
-## [1][I made a port scanner in go without dependencies!](https://www.reddit.com/r/golang/comments/ff08cd/i_made_a_port_scanner_in_go_without_dependencies/)
-- url: https://github.com/R4yGM/netscanner
+## [1][How to become really good at golang?](https://www.reddit.com/r/golang/comments/ffsaou/how_to_become_really_good_at_golang/)
+- url: https://www.reddit.com/r/golang/comments/ffsaou/how_to_become_really_good_at_golang/
+---
+I have about 1 year experience with the language, already did 2 projects with it (web apps). I still feel that I'm not doing it the 'idiomatic' way, and I didn't use channels, etc.
+The thing is I'm developing alone, there's no 'senior' developer to guide me. And I can't find 'advanced golang' courses online, to help me become a really good golang developer. Also I don't think I'm good enough to contribute to open source projects.
+Is there a book/course that would help me become a really good golang developer? Thank you
+## [2][Kopia hits 0.5.0 - Encrypted, Deduplicated, and Compressed Data Backups Using Your Own Cloud Storage](https://www.reddit.com/r/golang/comments/ffj2hb/kopia_hits_050_encrypted_deduplicated_and/)
+- url: https://www.reddit.com/r/golang/comments/ffj2hb/kopia_hits_050_encrypted_deduplicated_and/
+---
+We are very excited to announce the 0.5 release of Kopia! This is a big milestone on the way to an upcoming 1.0 release and there have not only been a large number of changes across the stack but also growth of the community.
+
+https://kopia.io
+
+Kopia is open source and welcomes community contributions on GitHub:
+
+https://github.com/kopia/kopia
+## [3][An optioned circuit breaker implementation with Go](https://www.reddit.com/r/golang/comments/ffonry/an_optioned_circuit_breaker_implementation_with_go/)
+- url: https://github.com/mustafaturan/shift
 ---
 
-## [2][A Base64 Captchas Manager](https://www.reddit.com/r/golang/comments/ffa7wv/a_base64_captchas_manager/)
-- url: https://github.com/clevergo/captchas
+## [4][consumer driven contract test in golang](https://www.reddit.com/r/golang/comments/ffsn4v/consumer_driven_contract_test_in_golang/)
+- url: https://stackoverflow.com/questions/60598617/consumer-driven-contract-test-in-golang
 ---
 
-## [3][My experience with learning Golang](https://www.reddit.com/r/golang/comments/fesci5/my_experience_with_learning_golang/)
-- url: https://pmihaylov.com/learning-golang-experience/
+## [5][New friend at work](https://www.reddit.com/r/golang/comments/ffukbe/new_friend_at_work/)
+- url: https://i.redd.it/u4t3x90henl41.jpg
 ---
 
-## [4][Thoughts on Using Micro](https://www.reddit.com/r/golang/comments/fex43s/thoughts_on_using_micro/)
-- url: https://www.reddit.com/r/golang/comments/fex43s/thoughts_on_using_micro/
+## [6][Working with nested modules](https://www.reddit.com/r/golang/comments/ffu2w4/working_with_nested_modules/)
+- url: https://www.reddit.com/r/golang/comments/ffu2w4/working_with_nested_modules/
 ---
-Presently at work I am using a mix of a home grown framework for some services and GOKit for others. I’ve been looking to evaluate using GO micro and spent a day looking through examples and documentation. Looking at the documentation I’ve got the impression that micro is fairly opinionated and really works well when you buy into its philosophy and way of doing things. I’m not sure how we’ll GO micro would work in an environment where we already have nearly 100 services with half in GOKit and half in a home grown framework. In addition gRPC doesn’t make sense for our public facing APIs that are called from client side JavaScript applications which GO micro seems to be heavy centered around gRPC. 
+I have a slightly strange problem, My team have been working with vault and golang on our internal cli tool.
 
-Does anyone have experience with using GO micro for production use, particularly in an environment where nearly every other service is not using micro? Is it even worth prototyping?
-## [5][CertMagic v0.10.0 released - CertMAutomatic HTTPS for any Go program: fully-managed TLS certificate issuance and renewal.](https://www.reddit.com/r/golang/comments/fet7wz/certmagic_v0100_released_certmautomatic_https_for/)
-- url: https://github.com/caddyserver/certmagic
----
+We have ended up using:
 
-## [6][Go Modules VS GOPATH - Creating the Workspace](https://www.reddit.com/r/golang/comments/ff6eet/go_modules_vs_gopath_creating_the_workspace/)
-- url: https://www.reddit.com/r/golang/comments/ff6eet/go_modules_vs_gopath_creating_the_workspace/
----
-Noobie question, I have been paying attention to Go for a while now but never learned it. I know it used to require all `src/` to be in the GOPATH, but in recent versions, Go has Go Modules to use. I was reading the [How to Code](https://golang.org/doc/code.html) blog post and the [Using Go Modules](https://blog.golang.org/using-go-modules) one and was curious - is it common practice to create all go projects outside of the GOPATH now? 
+`github.com/hashicorp/vault/api` &lt;-- has a go.mod
 
-In the same vein, I never knew how people incorporated their VCS with their projects. Am I supposed to manually name the directory after [`github.com/{username}/{project}`](https://github.com/{username}/{project})? Or is it better if I init it first and retrieve it with either `go get` or `git clone`.
+and
 
-Advice for how to have my workspace would be much appreciated.
-## [7][Copy-on-write variables, Go and Newsqueak](https://www.reddit.com/r/golang/comments/ff5ppz/copyonwrite_variables_go_and_newsqueak/)
-- url: https://www.reddit.com/r/golang/comments/ff5ppz/copyonwrite_variables_go_and_newsqueak/
----
-I have been very interested in the concept of copy-on-write for some time and it jumped out at me when I read about how Newsqueak dispenses with pointers.
+`github.com/hashicorp/vault/commands` &lt;-- doesn't have a go.mod so inherits from `github.com/hashicorp/vault`
 
-I am curious to make a teensy modification to Go syntax with a preprocessor that automates the implementation of this style of variable handling. But before I even start writing a parser for this (it will be a little complicated), I am applying the principle to my code to learn how this pattern works.
+I am trying to update vault/api to the latest version 1.3.3:
 
-Anyone who is a Go programmer and has written any concurrent code would know about the mess of options in front of you - atomics, mutexes, channels... When to use this, when to use that...
+```
+github.com/hashicorp/vault v1.3.3
+github.com/hashicorp/vault/api v1.3.3
+```
 
-If variables passed into functions could not be mutated you wouldn't need atomics or mutexes. It would clean up concurrency so much. Concurrency combined with imperative style code is a quagmire. The only down side is sometimes following this pattern slavishly might result in more copying than is good for performance.
+The problem is I get:
 
-It's upon this point that I need to experiment with it. This is the rules I have got so far from changing about 8 functions in one source file that is all closely connected to this:
+`go: github.com/hashicorp/vault/api@v1.3.3: reading github.com/hashicorp/vault/api/api/go.mod at revision api/v1.3.3: unknown revision api/v1.3.3`
 
-1. All parameters are pointers, except slices, interfaces and maps. These get a name with a P suffix to signify they are parameters and are copied into values as required (if it's already a pointer type leave it alone).
-
-2. All return values are values, unless they can't be, for reasons alluded to above and because the pointer is required to call pointer methods.
-
-3. Not all values in parameters have to be values. Probably numbers and booleans can stay as values, since they often don't escape the function anyway.
-
-I have a theory that writing code this way will assist the escape analysis process and improve the number of things that stay on the stack. It should also automatically reduce the amount of problems I have that normally I reach for atomics or mutexes to deal with.
-
-Once I understand this pattern thoroughly and have applied it extensively I will be looking at creating a variant of the Go language that eliminates pointers and does what I have been doing manually to study it automatically. I should start to form some useful rules of thumb about what kinds of variables are dangerous or expensive to work with and how to minimise this in the architecture of the program.
-## [8][how to install Golang on mac](https://www.reddit.com/r/golang/comments/ff9oj9/how_to_install_golang_on_mac/)
-- url: https://www.youtube.com/watch?v=EPTIZw9pxdw&amp;feature=share
+which I think is caused by this root module and a conflict. does that make sense? any ideas what to do in this case?
+## [7][Buffalo Authentication using JWT &amp; Postgres](https://www.reddit.com/r/golang/comments/ffjync/buffalo_authentication_using_jwt_postgres/)
+- url: https://www.littlewire.dev/2020/03/buffalo-auth/
 ---
 
-## [9][Using templates to render outgoing JSON.](https://www.reddit.com/r/golang/comments/few1fb/using_templates_to_render_outgoing_json/)
-- url: https://www.reddit.com/r/golang/comments/few1fb/using_templates_to_render_outgoing_json/
+## [8][Hey, I have a quick survey about the first programming language you learned in school. (It is for a high-school project and will only take 2 minutes)](https://www.reddit.com/r/golang/comments/ffta0h/hey_i_have_a_quick_survey_about_the_first/)
+- url: https://www.reddit.com/r/golang/comments/ffta0h/hey_i_have_a_quick_survey_about_the_first/
 ---
-I've been toying around with the idea of using Go's templating capabilities to "massage" end-consumer JSON output into the right format. Based on my experience, one always comes to a point, where marshaling the domain data to JSON directly becomes a problem. One either displays too much (certain fields need to be hidden) or too little (additional stuff needs to be added before sending to the client). Sure, one can always use a struct or a map dedicated to represent the end-consumer data to be JSON-ified. This is how I still do it. However, I always find it tedious to convert one struct into another, especially, ones that have nested slices of types that have to be "massaged" on their own.
+Hello, I am High School student in South Australia. I am researching what the most common first programming language is that people learn. 
 
-Somehow, the idea of using templating for this sounded more appealing, because a template has all the necessary means to allow for consistent top-to-bottom rendering. One can easily handle the nested slices too, without breaking the cognitive flow of the conversion. Moreover, templates can be referenced and reused, which can help reduce unnecessary copying and pasting. 
+Any responses will be greatly appreciated.
 
-At this point, I'm not worried about performance issues, because I only talk about end-consumer JSON. This isn't supposed to be a means of converting between struct apps inside the application, but between multiple applications. 
+Here is the link: [https://forms.gle/rBZccHudakd9SWMc6](https://forms.gle/rBZccHudakd9SWMc6)
+## [9][Elixir-Style Actors in Go](https://www.reddit.com/r/golang/comments/fff3xq/elixirstyle_actors_in_go/)
+- url: https://preslav.me/2020/03/07/elixir-style-actors-in-golang/
+---
 
-Feedback is more than appreciated.
-## [10][r8limiter - envoy pluggable rate limiting service - Feedback is needed :)](https://www.reddit.com/r/golang/comments/fet1qj/r8limiter_envoy_pluggable_rate_limiting_service/)
-- url: https://github.com/samueltorres/r8limiter
+## [10][I made a basic Arkanoid clone with Ebiten game engine using ECS.](https://www.reddit.com/r/golang/comments/fff1ye/i_made_a_basic_arkanoid_clone_with_ebiten_game/)
+- url: https://github.com/x-hgg-x/arkanoid-go
 ---
 

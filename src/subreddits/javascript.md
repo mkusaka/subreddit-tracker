@@ -5,57 +5,43 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][I created a browser extension that puts masks on faces on the internet for a safer browsing experience in times of the corona virus](https://www.reddit.com/r/javascript/comments/fev8ub/i_created_a_browser_extension_that_puts_masks_on/)
-- url: https://github.com/moklick/face-mask-browser-extension
+## [2][How I made a 3D game in only 2KB of JavaScript](https://www.reddit.com/r/javascript/comments/ffmyfl/how_i_made_a_3d_game_in_only_2kb_of_javascript/)
+- url: http://frankforce.com/?p=7427
 ---
 
-## [3][my very first npm package](https://www.reddit.com/r/javascript/comments/ffaa4g/my_very_first_npm_package/)
-- url: https://github.com/undrafted/evem
+## [3][DatoRSS - RSS Search Engine with RESTful API](https://www.reddit.com/r/javascript/comments/ffs2x3/datorss_rss_search_engine_with_restful_api/)
+- url: https://www.datorss.com
 ---
 
-## [4][[AskJS] :: JS Library for dev environment pipeline visualization?](https://www.reddit.com/r/javascript/comments/ff9ijw/askjs_js_library_for_dev_environment_pipeline/)
-- url: https://www.reddit.com/r/javascript/comments/ff9ijw/askjs_js_library_for_dev_environment_pipeline/
----
-Looking for recommendations on js library for data visualizations. 
-
-I'm looking to show a data visualizations like a gitlab pipeline for deployment environments (dev1, test, pre-prod) and corresponding features/bug fixes for a current release and what build / version is in each. Basically allowing me visually show the progress of development in a release. I thought of using Apache echart many tree per environment with data from gitlab. Wondering if anyone had suggestions ?
-## [5][[AskJS] Are there any JS date/time formatting packages that support higher resolution than milliseconds? i.e. microseconds or nanoseconds?](https://www.reddit.com/r/javascript/comments/ff76xr/askjs_are_there_any_js_datetime_formatting/)
-- url: https://www.reddit.com/r/javascript/comments/ff76xr/askjs_are_there_any_js_datetime_formatting/
----
-Does anyone know of any packages along the lines of moment.js or date-fns that supports higher resolution time than milliseconds?
-
-I've searched so many times but I can't find anything.
-
-I use postgres TIMESTMAPTZ, and I don't want to lose the last 3 digits of my timestamps every time they run through a JS app.  Same goes for timestamps from filesystems etc.
-
-I understand the limitations of the native `Date` object in JS, but it seems like it shouldn't be that hard for a newer date library to simply store the extra digits after milli internally as a string or number, and append them back when needed.  At least not as hard as all the other stuff they need to handle in these libs.
-
-I've considered making my own wrapper that does this, but it seems surprising that it wouldn't already exist seeing most databases support more than milliseconds, even mysql these days.
-
-Every time I search NPM etc for "microseconds" etc I just get much simpler lower level packages that don't really do anything near moment.js or date-fns etc. i.e. they typically just get the current system time and don't do much beyond that.  I'm looking for something that that both parses and formats existing date strings.  Ideally something that works in both browser and node.
-## [6][Build a javascript single page application without a framework](https://www.reddit.com/r/javascript/comments/ffbs7l/build_a_javascript_single_page_application/)
-- url: https://techboxweb.com/build-a-javascript-single-page-application-without-framework/
+## [4][Created a simple runtime type checker](https://www.reddit.com/r/javascript/comments/ffttak/created_a_simple_runtime_type_checker/)
+- url: https://github.com/Marcisbee/letype
 ---
 
-## [7][[AskJS] How strict should JS teams be about adding new npm dependencies?](https://www.reddit.com/r/javascript/comments/ff1zp0/askjs_how_strict_should_js_teams_be_about_adding/)
-- url: https://www.reddit.com/r/javascript/comments/ff1zp0/askjs_how_strict_should_js_teams_be_about_adding/
----
-It's so easy to just install an npm package nowadays, and I know I've been guilty of just seeing a new item in package.json and approving the thing because it works.
-
-How do you/your team handle reviewing/deciding on new dependencies? Do you discuss before implementing, or after a pull request is opened just give a quick glance to [npmjs.org](https://npmjs.org) and make sure it isn't totally horrible?
-## [8][[AskJS] Can C#/Asp.Net really hold a candle to Javascript/React/Node theses days ? or the Javascript ecosystem is more advance / better now ?](https://www.reddit.com/r/javascript/comments/ffb1ar/askjs_can_caspnet_really_hold_a_candle_to/)
-- url: https://www.reddit.com/r/javascript/comments/ffb1ar/askjs_can_caspnet_really_hold_a_candle_to/
----
-Can C#/Asp.Net really hold a candle to Javascript/React/Node theses days ? or the Javascript ecosystem is more advance / better now ?
-## [9][Multi-Threading UI framework Online Examples (Desktop)](https://www.reddit.com/r/javascript/comments/fesusv/multithreading_ui_framework_online_examples/)
-- url: https://neomjs.github.io/pages
+## [5][Now you can use shallow rendering for testing React components with hooks](https://www.reddit.com/r/javascript/comments/ffcunb/now_you_can_use_shallow_rendering_for_testing/)
+- url: https://github.com/mikeborozdin/jest-react-hooks-shallow
 ---
 
-## [10][A new console logger](https://www.reddit.com/r/javascript/comments/feyvhx/a_new_console_logger/)
-- url: https://www.npmjs.com/package/dbg-expr
+## [6][TypeScript / JavaScript OPC UA client for the browser](https://www.reddit.com/r/javascript/comments/ffsf7e/typescript_javascript_opc_ua_client_for_the/)
+- url: https://github.com/HBM/opcua
 ---
 
-## [11][winona - an api service layer for apps](https://www.reddit.com/r/javascript/comments/ff0vsd/winona_an_api_service_layer_for_apps/)
-- url: https://github.com/ajsmth/winona
+## [7][Simple Electron React Boilerplate for Desktop Applications](https://www.reddit.com/r/javascript/comments/ffpzb7/simple_electron_react_boilerplate_for_desktop/)
+- url: https://www.github.com/JaganGanesh/electron-react-boilerplate/
+---
+
+## [8][An implementation of the WebAssembly System Interface (WASI) for web browsers.](https://www.reddit.com/r/javascript/comments/ffqb8r/an_implementation_of_the_webassembly_system/)
+- url: https://github.com/caspervonb/web-wasi
+---
+
+## [9][Concept / Introduction guide for neo.mjs - The webworkers driven UI framework](https://www.reddit.com/r/javascript/comments/fftax8/concept_introduction_guide_for_neomjs_the/)
+- url: https://github.com/neomjs/neo/blob/dev/.github/CONCEPT.md
+---
+
+## [10][Demystifying Async Programming in Javascript](https://www.reddit.com/r/javascript/comments/ffde5h/demystifying_async_programming_in_javascript/)
+- url: https://yunchi.dev/posts/demystifying-async/
+---
+
+## [11][A non apocalyptic yet minimal Corona Virus (COVID19) impact tracking console. Built with Vue.js, DeckGL and MapboxGL](https://www.reddit.com/r/javascript/comments/ffi729/a_non_apocalyptic_yet_minimal_corona_virus/)
+- url: https://covid19.locale.ai
 ---
 

@@ -22,7 +22,11 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Music App with electron and react](https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/)
+## [2][Recursive Multi-Threaded Worker Processes in NodeJS](https://www.reddit.com/r/typescript/comments/ffgw9i/recursive_multithreaded_worker_processes_in_nodejs/)
+- url: https://github.com/sinclairzx81/threadbox
+---
+
+## [3][Music App with electron and react](https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/)
 - url: https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/
 ---
 I was bored, so I made this music app with the help of `electron` and `react` in typescript.
@@ -54,11 +58,11 @@ PS:
  I use linux so I'm not sure if there will be any bugs in mac or windows
 
 Also you require a Napster API key(for music metadata) and a Google API key(for downloading a video) for proper functionality
-## [3][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
+## [4][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
 - url: https://www.dandoescode.com/blog/using-typescript-without-typescript/
 ---
 
-## [4][Validate function parameters when passed alongside function](https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/)
+## [5][Validate function parameters when passed alongside function](https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/)
 - url: https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/
 ---
 Hi, I have a use case where I need to pass a reference to a method and the parameters to call it with at a later point. How do I validate that the parameters are valid upon declaration?
@@ -87,7 +91,7 @@ const bar: Foo = {
     params: ['wrong', 3]
 }
 ```
-## [5][TypeORM relationship - relationships by id ?](https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/)
+## [6][TypeORM relationship - relationships by id ?](https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/)
 - url: https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/
 ---
 I've been kinda confused by the relationships as I'm used to save relationship by id, while docs and examples I found suggest to get the entire object and use that instead (Isn't this strange???)
@@ -116,7 +120,7 @@ Another one suggested to name the column as categoryId and it would work as expe
 &amp;#x200B;
 
 I'm just confused, help \^\_\^
-## [6][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
+## [7][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
 - url: https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/
 ---
 For some reason I can't use optional chaining in my new project, other TS features like interfaces, types, ... are working fine. Also my IDE is not throwing out any errors, but upon compiling the code, I get this error for the following line of code:
@@ -130,7 +134,7 @@ Line of code: `country: location?.country`
 `at Module._compile (internal/modules/cjs/loader.js:895:18)`
 
 What's going on?
-## [7][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
+## [8][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
 - url: https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/
 ---
 ## Problem
@@ -141,11 +145,11 @@ I want to optimize my TypeScript by replacing all literal enums with their value
 
 * Third-party libraries may not provide them.
 * Babel does not support them.
-## [8][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
+## [9][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
 - url: /r/LearnTypescript/comments/fe3zip/best_way_to_type_an_object_with_string_keys/
 ---
 
-## [9][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
+## [10][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
 - url: https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/
 ---
 Is it possible to have a function return different return types under different circumstances?
@@ -163,22 +167,7 @@ example:
     }
     
     test('beatdook04');
-## [10][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
+## [11][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
 - url: https://github.com/sinclairzx81/typebox
 ---
 
-## [11][Trying to store typescript code in string to use in runtime. [Guidance Appreciated]](https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/)
-- url: https://www.reddit.com/r/typescript/comments/fdwf0e/trying_to_store_typescript_code_in_string_to_use/
----
-As the description implies i'm trying to store actual code from typescript file in a variable so that when I console.log it i'll see the typescript implementation instead of the compiled code.  
-Have any of you tried anything similar?   
-
-
-What I've tried:  
-1. Using decorators and Reflection,  but struggle getting the actual code (as a string) as it is in the file.
-
-2. looking at the typescript npm package. There's just so many functions to read up on. 
-
-3.  Tried to retrofit this code [this code](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API#user-content-re-printing-sections-of-a-typescript-file) from the typescript compiler API docs for my purposes.
-
-So far I haven't had any luck. All pointers welcome ;)

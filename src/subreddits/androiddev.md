@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - March 07, 2020](https://www.reddit.com/r/androiddev/comments/feuigx/app_feedback_thread_march_07_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/feuigx/app_feedback_thread_march_07_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/ffu3ei/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/ffu3ei/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - March 02, 2020](https://www.reddit.com/r/androiddev/comments/fcaf42/weekly_questions_thread_march_02_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/fcaf42/weekly_questions_thread_march_02_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - March 09, 2020](https://www.reddit.com/r/androiddev/comments/ffsx46/weekly_questions_thread_march_09_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/ffsx46/weekly_questions_thread_march_09_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,105 +31,71 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Rant - it took me over a year to finally get my app to this state.](https://www.reddit.com/r/androiddev/comments/ff47te/rant_it_took_me_over_a_year_to_finally_get_my_app/)
-- url: https://i.redd.it/6f30b71xccl41.png
+## [3][3 million downloads Google’s App developer account has been terminated](https://www.reddit.com/r/androiddev/comments/ffsdqp/3_million_downloads_googles_app_developer_account/)
+- url: https://medium.com/tedpark-developer/3-million-downloads-app-developer-account-has-been-terminated-f5a8f78e45ca?source=friends_link&amp;sk=f3e03a9af5891702ecd0ac14bfd49526
 ---
 
-## [4][Unable to cast RippleDrawable to StateListDrawable after migrating to androidx](https://www.reddit.com/r/androiddev/comments/ffbh9m/unable_to_cast_rippledrawable_to/)
-- url: https://www.reddit.com/r/androiddev/comments/ffbh9m/unable_to_cast_rippledrawable_to/
+## [4][Ways To Make Money As An Android App Developer?](https://www.reddit.com/r/androiddev/comments/fftyxm/ways_to_make_money_as_an_android_app_developer/)
+- url: https://www.reddit.com/r/androiddev/comments/fftyxm/ways_to_make_money_as_an_android_app_developer/
 ---
-keep getting
+Hi,
 
-    android.graphics.drawable.RippleDrawable cannot be cast to android.graphics.drawable.StateListDrawable
+I'm interested in android app development. My main ideas are to make some casual games like Angry Birds or Bubbleball. 
 
-at the following line
+But I don't want to work for someone (either getting a 9-5 or freelancing). I want to make a living totally independently. 
 
-    StateListDrawable gradientDrawable = (StateListDrawable) view.getBackground();
+My making a living, even $500 a month would be enough but I also want to have a chance of making it big. 
 
-This wasn't happening before attempting to migrate where the view was
-
-    android.support.v7.widget.AppCompatImageButton
-
-but now that its
-
-    androidx.appcompat.widget.AppCompatImageButton
-
-it doesn't work
-
-this is the XML for the view in question
-
-    &lt;androidx.appcompat.widget.AppCompatImageButton android:id="@+id/view"
-     android:layout_width="@dimen/bottomSheetPeekHeight" 
-    
-    android:layout_height="@dimen/bottomSheetPeekHeight" 
-    
-    android:layout_alignTop="@+id/dataEditorValueLayouts" 
-    
-    android:layout_alignBottom="@+id/dataEditorValueLayouts" 
-    
-    android:layout_marginEnd="@dimen/small_pad" android:scaleType="fitCenter" 
-    
-    android:padding="@dimen/small_pad" app:srcCompat="@drawable/download" 
-    
-    android:tint="@color/white" android:layout_toEndOf="@+id/dataEditorValueLayouts"
-    
-     style="@style/ButtonDefaultRuntime" android:visibility="visible" /&gt;
-
-and here is the background defined in the style
-
-    &lt;?xml version="1.0" encoding="utf-8"?&gt; 
-    
-    &lt;selector xmlns:android="http://schemas.android.com/apk/res/android"&gt;
-    
-     &lt;item android:state_pressed="true"&gt; 
-    
-    &lt;shape android:shape="oval"&gt; &lt;solid android:color="@color/faBlue" /&gt;
-    
-     &lt;stroke android:color="@color/button_border" android:width="3px" /&gt; 
-    
-    &lt;/shape&gt; 
-    &lt;/item&gt; 
-    &lt;item&gt; 
-    &lt;shape android:shape="oval"&gt; &lt;solid android:color="@android:color/transparent" /&gt; &lt;stroke android:color="@color/button_border" android:width="3px" /&gt; &lt;/shape&gt; &lt;/item&gt; &lt;/selector&gt;
-## [5][I created the Particle Clock using Jetpack Compose (source in comments!)](https://www.reddit.com/r/androiddev/comments/feysgd/i_created_the_particle_clock_using_jetpack/)
-- url: https://imgur.com/b8qAz53
+So what are the different ways to make money as an android app developer?
+## [5][Reverse Tethering for Android from Genymobile](https://www.reddit.com/r/androiddev/comments/ffs7lp/reverse_tethering_for_android_from_genymobile/)
+- url: https://github.com/Genymobile/gnirehtet
 ---
 
-## [6][I'd like to buy testing devices, suggestions?](https://www.reddit.com/r/androiddev/comments/ffbg5d/id_like_to_buy_testing_devices_suggestions/)
-- url: https://www.reddit.com/r/androiddev/comments/ffbg5d/id_like_to_buy_testing_devices_suggestions/
----
-I'd like to get couple of cheap devices for testing purposes. You guys have any suggestion on what should I get?
-
-Like, I suppose I'd want to have API21 device, small screen older device, latest API device, tablet.
-## [7][Motion layout.](https://www.reddit.com/r/androiddev/comments/ferrqr/motion_layout/)
-- url: https://v.redd.it/rg8y779sa7l41
+## [6][A collection of Jetpack Compose examples/tutorials and demos.](https://www.reddit.com/r/androiddev/comments/ffgv3f/a_collection_of_jetpack_compose_examplestutorials/)
+- url: https://foso.github.io/compose
 ---
 
-## [8][Workmanager `setRequiresCharging(true)` not triggered untill battery level reaches 100%](https://www.reddit.com/r/androiddev/comments/ff7r6q/workmanager_setrequireschargingtrue_not_triggered/)
-- url: https://www.reddit.com/r/androiddev/comments/ff7r6q/workmanager_setrequireschargingtrue_not_triggered/
+## [7][TIL How to use FragmentStateAdapter with ViewPager2 with Dynamic Fragments](https://www.reddit.com/r/androiddev/comments/ffso1z/til_how_to_use_fragmentstateadapter_with/)
+- url: https://www.reddit.com/r/androiddev/comments/ffso1z/til_how_to_use_fragmentstateadapter_with/
+---
+If you have a ViewPager that Dynamically adds, removes or updates Fragments you **NEED** to override [getItemId](https://developer.android.com/reference/androidx/viewpager2/adapter/FragmentStateAdapter#getItemId(int)) and [containsItem](https://developer.android.com/reference/androidx/viewpager2/adapter/FragmentStateAdapter#containsItem(long)) to avoid bugs where you change the data and fragment wouldn't change or have a wrong state.
+
+extra info: we're using ViewPager2 to do a step like registration and changing the registration flow based on api errors
+## [8][[Kotlin] [Github] Random Cat Photo](https://www.reddit.com/r/androiddev/comments/ffupop/kotlin_github_random_cat_photo/)
+- url: https://github.com/maxwellnewage/kotlin-random-cat-photo
 ---
 
-## [9][how I get started with android development in 2020?](https://www.reddit.com/r/androiddev/comments/ffc5c0/how_i_get_started_with_android_development_in_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/ffc5c0/how_i_get_started_with_android_development_in_2020/
+## [9][Error on Android Studio project: * daemon not running; starting now at tcp:5037 * daemon started successfully](https://www.reddit.com/r/androiddev/comments/ffubyl/error_on_android_studio_project_daemon_not/)
+- url: https://www.reddit.com/r/androiddev/comments/ffubyl/error_on_android_studio_project_daemon_not/
 ---
-Some of this subreddit's wiki content seems to have dated APIs and patterns. 
+Hii everyone, I got those errors when I start a new project or bolt one on android studio (3.6.1) * daemon not running; starting now at tcp:5037 * daemon started successfully
 
-Then, thought about checking [these](https://classroom.udacity.com/courses/ud9012) [two](https://classroom.udacity.com/courses/ud940) udacity classes or maybe this channel's [content](https://www.youtube.com/watch?v=jS0buQyfJfs&amp;list=PL0dzCUj1L5JGfHj1lwxOq67zAJV3e1S9S), but, now, I'm just worried about studying outdated information. 
-
-Could y'all help me with tips or point me in a right direction on where to get started with native development? I'll seriously appreciate your input and don't really know which place is the right one to ask this question. Thanks in advance :[
-## [10][Paid vs Ad supported apps](https://www.reddit.com/r/androiddev/comments/ffbx66/paid_vs_ad_supported_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/ffbx66/paid_vs_ad_supported_apps/
+Its happened with 3.5.3 to...
+## [10][Nonprofit FOSS Food Delivery and Local Shopping Platform](https://www.reddit.com/r/androiddev/comments/ffri42/nonprofit_foss_food_delivery_and_local_shopping/)
+- url: https://www.reddit.com/r/androiddev/comments/ffri42/nonprofit_foss_food_delivery_and_local_shopping/
 ---
-I have an app with adverts in, and a paid version which is exactly the same but no adverts. I have loads of people downloading the free ad-supported one, but even at less the $2 NOBODY buys it! I considered making my adverts show more regularly, but decided against it in case it meant fewer downloads - sometimes you just can't win!
+This is an open-source android project. That aims to help local vendors and local economy. 
 
-[JumblyApps](http://jumblyapps.com/)
-## [11][How are apps that contain a lot of information created and maintained?](https://www.reddit.com/r/androiddev/comments/ffbodz/how_are_apps_that_contain_a_lot_of_information/)
-- url: https://www.reddit.com/r/androiddev/comments/ffbodz/how_are_apps_that_contain_a_lot_of_information/
----
-For example with let's say a library app. There are a lot of books and you have to have the summaries, authors, who has it on hold, etc. all on the app and new books are added as well. But is all of that done by scratch or is there a way to have the information be auto added and layout by itself?
-## [12][Spoof device specs for Kinemaster](https://www.reddit.com/r/androiddev/comments/ffazr9/spoof_device_specs_for_kinemaster/)
-- url: https://www.reddit.com/r/androiddev/comments/ffazr9/spoof_device_specs_for_kinemaster/
----
-I use Kinemaster on my phone to edit video, but due to my devices relatively low specs (Moto g5s plus), the app only allows me to edit videos 720p or below
+People who like this project are welcome to Join us and be the part of our community. Lets unite and help our Local Economy. 
 
-How can I spoof my devices specs for this app to pretend to be a device with higher specs?
+Please checkout
+
+Github Link : [https://github.com/NearbyShops/Nearby-Shops-Android-app](https://github.com/NearbyShops/Nearby-Shops-Android-app)
+
+Website : [https://nearbyshops.org/home.html](https://nearbyshops.org/home.html)
+
+&amp;#x200B;
+
+It is our humble request !
+
+This project is for the benefit of people like you and me ... we may have flaws but we can overcome them ... please dont be over critical and discourage people from participation. 
+
+In this time of corporate monopoly where big corporations are making billions ... unless we help each other we can never obtain true freedom.
+## [11][Android Accessibility — Where to start?](https://www.reddit.com/r/androiddev/comments/fftgr2/android_accessibility_where_to_start/)
+- url: https://medium.com/android-microsoft/android-accessibility-where-to-start-b7875045d9
+---
+
+## [12][Do we still need LeakCanary now that Android Studio 3.6 has "Memory Leak Detection"?](https://www.reddit.com/r/androiddev/comments/ffja82/do_we_still_need_leakcanary_now_that_android/)
+- url: https://www.lukaslechner.com/do-we-still-need-leakcanary-now-that-android-studio-3-6-has-memory-leak-detection/
+---
+

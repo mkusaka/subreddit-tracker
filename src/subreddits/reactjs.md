@@ -86,276 +86,164 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Intro to Federated Modules in Webpack 5](https://www.reddit.com/r/reactjs/comments/ff55gz/intro_to_federated_modules_in_webpack_5/)
-- url: https://www.youtube.com/watch?v=D3XYAx30CNc
+## [3][React Native Maps Tutorial by Mapping Bushfires in Australia](https://www.reddit.com/r/reactjs/comments/ffubd9/react_native_maps_tutorial_by_mapping_bushfires/)
+- url: https://www.youtube.com/watch?v=4qq0GQPkfjI
 ---
 
-## [4][useEffectWithPrevious - Get previous value of dependencies](https://www.reddit.com/r/reactjs/comments/ffawrb/useeffectwithprevious_get_previous_value_of/)
+## [4][Looking for a partner/contributor for a side project](https://www.reddit.com/r/reactjs/comments/fftl2t/looking_for_a_partnercontributor_for_a_side/)
+- url: https://www.reddit.com/r/reactjs/comments/fftl2t/looking_for_a_partnercontributor_for_a_side/
+---
+Looking to start a small side project. I’ll be using React and the Deezer API. For motivation, I’m looking for a contributor/partner who’s looking to keep busy and is looking for work on a small project.
+## [5][react-loaders-kit](https://www.reddit.com/r/reactjs/comments/ffii68/reactloaderskit/)
+- url: https://www.reddit.com/r/reactjs/comments/ffii68/reactloaderskit/
+---
+Hi guys. I just published a package on npm which is a collection of react loaders made using the emotion library. Your feedbacks is welcome. 
+
+[react-loaders-kit](https://www.npmjs.com/package/react-loaders-kit)
+## [6][Image ratio fixer - React component for choosing selection of image in fixed ratio.](https://www.reddit.com/r/reactjs/comments/ffsb0w/image_ratio_fixer_react_component_for_choosing/)
+- url: https://haakon.underbakke.net/components/image-ratio-fixer
+---
+
+## [7][HELP UX / UI](https://www.reddit.com/r/reactjs/comments/ffty75/help_ux_ui/)
+- url: https://www.reddit.com/r/reactjs/comments/ffty75/help_ux_ui/
+---
+Hi Guys,
+
+I'm beginner as FE Developer. 
+
+Have you got some UX / UI Lesson o Blog to advise ? 
+
+&amp;#x200B;
+
+Thank you &lt;3
+## [8][Routing not working as intended](https://www.reddit.com/r/reactjs/comments/fft8v6/routing_not_working_as_intended/)
+- url: https://www.reddit.com/r/reactjs/comments/fft8v6/routing_not_working_as_intended/
+---
+I am making an algorithms visualizer using sorting algorithms. The user is able to choose different algorithms from a toolbar and the appropriate algorithm will be applied to a randomly generated array of elements. I also have user side stuff that I am trying to implement. I am trying to setup routing between everything but I am running into some problems. I have linked the repo below and will refer to files from it. In Routes.js, I have set up the paths to each component. If I use "exact path" for the home page, the routing will work just fine. However, I am then unable to choose different sorting algorithms (due to the way I set this up, the url will be updated to localhost:3000/name-of-sorting-algorithm). Any possible solutions for this? I have tried using exact path for the other components but that doesn't seem to work either.
+
+Repo: [https://github.com/kevinniland97/Applied-Project-and-Minor-Dissertation](https://github.com/kevinniland97/Applied-Project-and-Minor-Dissertation)
+## [9][Generate resume(Resume Builder)](https://www.reddit.com/r/reactjs/comments/ffh0cu/generate_resumeresume_builder/)
+- url: https://www.reddit.com/r/reactjs/comments/ffh0cu/generate_resumeresume_builder/
+---
+Hi,
+
+I have created a build resume website using Reactjs and would love to know your feedback.
+
+Website URL is [https://build-resume.netlify.com/](https://build-resume.netlify.com/). I know there is a lot to fix in terms of CSS design, but I was excited to share what I have accomplished. It's not much but I want to improve this. Please give feedback in terms of CSS, features I should be adding or fix. Star the repo if you like it - :) Github URL - [https://github.com/knowankit/build-resume](https://github.com/knowankit/build-resume).
+## [10][TypeError: "a is undefined" TypeError: "location is undefined" Map.js:23 TypeError: Cannot read property 'firstChild' of undefined](https://www.reddit.com/r/reactjs/comments/ffslfr/typeerror_a_is_undefined_typeerror_location_is/)
+- url: https://www.reddit.com/r/reactjs/comments/ffslfr/typeerror_a_is_undefined_typeerror_location_is/
+---
+I have searched this problem all over the web and none of them seem to solve my problem. I am using react and I am waiting for a response of center and location. I load the div first and then the content. here is my react code.
+
+    &lt;div className="HomeMap"&gt;
+            &lt;ErrorModal error={error} onClear={clearError} /&gt;
+            {isLoading &amp;&amp; (
+              &lt;div className="loadCenter"&gt;
+                &lt;LoadingSpinner /&gt;
+              &lt;/div&gt;
+            )}
+            
+              {!isLoading &amp;&amp; &lt;div className="map"&gt;(
+                &lt;Map
+                  className="HomeMap"
+                  center={{
+                    lat: latitude,
+                    lng: longitude
+                  }}
+                  zoom={8}
+                  location={MarkersMap}
+                /&gt;
+              )&lt;/div&gt;}
+            
+          &lt;/div&gt;
+
+css
+
+    .map {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .HomeMap {
+      height: 85% !important;
+      width: 46% !important;
+      display: block !important;
+      left: auto !important;
+      position: fixed !important;
+    
+      right: 1rem !important;
+    
+      margin-top: 5rem;
+      margin-bottom: 20rem;
+      top: 0px;
+      bottom: 0px;
+    }
+
+map component
+
+    import React, { useRef } from "react";
+    
+    import "./Map.css";
+    
+    const Map = props =&gt; {
+      const mapRef = useRef();
+    
+      const { center, zoom, location } = props;
+    
+      try {
+        const map = new window.google.maps.Map(mapRef.current, {
+          center: center,
+          zoom: zoom,
+          // location: location
+        });
+    
+         location.map(location =&gt; {
+          location.lat = parseFloat(location.lat);
+          location.lng = parseFloat(location.lng);
+            return new window.google.maps.Marker({ position: location, map: map });
+        })
+     } catch (err) {
+        console.log(err);
+      }
+    
+      return (
+        &lt;div
+          ref={mapRef}
+          className={`map ${props.className}`}
+          location={props.location}
+          style={props.style}
+        &gt;&lt;/div&gt;
+      );
+    };
+    
+    export default Map;
+
+Thanks
+## [11][Issues with using conditionally rendered components as a navigation substitute?](https://www.reddit.com/r/reactjs/comments/ffrmxh/issues_with_using_conditionally_rendered/)
+- url: https://www.reddit.com/r/reactjs/comments/ffrmxh/issues_with_using_conditionally_rendered/
+---
+Hypothetically, if I was to use conditionally rendered components as a way to handle navigation, would there be any issues on doing so?
+
+Let's assume this is nested inside a content area of the page with buttons that change the state, and when that state is true, it renders the corresponding component.
+
+**For example:**
+
+`&lt;div&gt;`
+
+`{ isActive1 ? &lt;component1 /&gt; : null }`
+
+`{ isActive2 ? &lt;component2 /&gt; : null }`
+
+`{ isActive3 ? &lt;component3 /&gt; : null }`
+
+...
+
+`&lt;/div&gt;`
+
+I get that there are navigation libraries made for a reason...but I'm just curious as to whether this would be a solution to a kind of sub-navigation thingo...
+## [12][useEffectWithPrevious - Get previous value of dependencies](https://www.reddit.com/r/reactjs/comments/ffawrb/useeffectwithprevious_get_previous_value_of/)
 - url: https://www.reddit.com/r/reactjs/comments/ffawrb/useeffectwithprevious_get_previous_value_of/
 ---
 Just wanna share my first npm package. Hope you find it useful :)
 
 [use-effect-with-previous](https://www.npmjs.com/package/use-effect-with-previous)
-## [5][We've built a tool to help developers grow in their career](https://www.reddit.com/r/reactjs/comments/fevsm3/weve_built_a_tool_to_help_developers_grow_in/)
-- url: https://www.reddit.com/r/reactjs/comments/fevsm3/weve_built_a_tool_to_help_developers_grow_in/
----
-Hi 👋,
-
-My friend and I are both senior web developers and we came up with a tool to help developers grow in their career. This is our first time giving back to the dev community so we're pretty excited about it !
-
-Our goal is to give advice and resources to devs at specific milestones in their careers to help them progress. For now we have targeted recent graduates and junior devs that are looking for a job or just started one. It's often hard to put words on what you're looking for as a junior dev, so we're trying to build a list of milestones and goals you can follow.
-
-We're still in beta so not everything is perfect and we'd love to have your feedback to know if it's worth pursuing and growing. We have a lot of ideas for new features and milestones, but we want some feedback before we go all in.
-
-Here’s the link: [https://pathify.dev](http://pathify.dev/)
-
-TL;DR: We’ve built an online platform to help young devs that is currently in beta and we would love to have your feedback: [https://pathify.dev](http://pathify.dev/)
-## [6][Resources for learning react under the hood?](https://www.reddit.com/r/reactjs/comments/feuoq8/resources_for_learning_react_under_the_hood/)
-- url: https://www.reddit.com/r/reactjs/comments/feuoq8/resources_for_learning_react_under_the_hood/
----
-I am comfortable in building applications with React.js, hooks, and redux as well but I want to dive deep into react to become good developer. I have good knowledge how JavaScript works under the hood, and everything related to JavaScript like closures, hoisting, prototypal inheritance,etc. So can someone suggest some resources to learn React.js also upto that level?
-## [7][Now you can use shallow rendering for testing components with hooks](https://www.reddit.com/r/reactjs/comments/ff10ni/now_you_can_use_shallow_rendering_for_testing/)
-- url: https://github.com/mikeborozdin/jest-react-hooks-shallow
----
-
-## [8][Music app in react and electron](https://www.reddit.com/r/reactjs/comments/ffc2bc/music_app_in_react_and_electron/)
-- url: /r/typescript/comments/ff94e4/music_app_with_electron_and_react/
----
-
-## [9][How to avoid code duplication?](https://www.reddit.com/r/reactjs/comments/ffbovc/how_to_avoid_code_duplication/)
-- url: https://www.reddit.com/r/reactjs/comments/ffbovc/how_to_avoid_code_duplication/
----
-What I want to do is to avoid code duplication managing the response from the request that has been made and serving the output to the components.
-
-In this case, as soon as the page is loaded useEffect is triggered. It makes the request and handles the response using setLoadedPlaces to set the data to searchedPlace and setMarker to set the data to markersMap.
-
-But if the user makes a new request, data is treated in the same way as with the useEffect function, the only difference is that the request is made with POST with a body attached.   
-
-I thought that make only one request would be sufficient but how?   
-Is it an efficient way?
-
-      const [searchedPlaces, setLoadedPlaces] = useState();
-      const [MarkersMap, setMarkersMap] = useState();
-
-useEffect()
-
-    
-      useEffect(() =&gt; {
-        const fetchPlaces = async () =&gt; {
-          try {
-            const responseData = await sendRequest(
-              "http://localhost:5000/api/search"
-            );
-            setLoadedPlaces(responseData.elements);
-            let locations = [];
-            responseData.elements.map(element =&gt; {
-            element.location.lat = parseFloat(element.location.lat);
-            element.location.lng = parseFloat(element.location.lng);
-              locations.push(element.location);
-              return locations;
-            });
-            setMarkersMap(locations);
-          } catch (err) {}
-        };
-        fetchPlaces();
-      }, [sendRequest]);
-
-receivedInputs()
-
-      const SearchSubmitHandler = async event =&gt; {
-        event.preventDefault();
-        try {
-          let responseData = await fetch("http://localhost:5000/api/search?", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              address: formState.inputs.address.value.toLowerCase(),
-              price: formState.inputs.price.value.toLowerCase(),
-              leaseTime: formState.inputs.leaseTime.value.toLowerCase()
-            })
-          });
-    
-          let fetchPlaces = await responseData.json();
-          setLoadedPlaces(fetchPlaces.elements);
-          let locations = [];
-          fetchPlaces.elements.map(element =&gt; {
-            element.location.lat = parseFloat(element.location.lat);
-            element.location.lng = parseFloat(element.location.lng);
-            locations.push(element.location);
-            return locations;
-          });
-    
-          setMarkersMap(locations);
-    
-        } catch (err) {
-          console.log(err);
-        }
-      };
-## [10][Cards Application: Reduce the opacity of all the other cards which are not selected](https://www.reddit.com/r/reactjs/comments/ffb2os/cards_application_reduce_the_opacity_of_all_the/)
-- url: https://www.reddit.com/r/reactjs/comments/ffb2os/cards_application_reduce_the_opacity_of_all_the/
----
-Hi,   
-I am making a web application where you have cards and you can favorite your cards. All the favorite cards are displayed on the top while the unfavorited ones keep moving to the bottom. When you select one card (not press on the favorite button but click on the card), then all the other card's opacity should reduce to 0.1. Is there a useRef solution?
-
-`import React, { useEffect, useState } from 'react';`  
-`const App = () =&gt; {`  
- `const [hash, setHash] = useState({`  
-`catsdata: [`  
-  `{ id: 1, text: 'A', favorite: false, opacity: 1 },`  
-  `{ id: 2, text: 'B', favorite: false, opacity: 1 },`  
-  `{ id: 3, text: 'C', favorite: false, opacity: 1 },`  
-  `{ id: 4, text: 'D', favorite: false, opacity: 1 },`  
-  `{ id: 5, text: 'E', favorite: false, opacity: 1 },`  
-  `{ id: 6, text: 'F', favorite: false, opacity: 1 },`  
-  `{ id: 7, text: 'G', favorite: false, opacity: 1 },`  
-  `{ id: 8, text: 'H', favorite: false, opacity: 1 },`  
-  `{ id: 9, text: 'I', favorite: false, opacity: 1 },`  
-  `{ id: 10, text: 'J', favorite: false, opacity: 1 },`  
-  `{ id: 11, text: 'K', favorite: false, opacity: 1 },`  
-  `{ id: 12, text: 'L', favorite: false, opacity: 1 },`  
-  `{ id: 13, text: 'M', favorite: true, opacity: 1 },`  
-  `{ id: 14, text: 'N', favorite: true, opacity: 1 },`  
-  `{ id: 15, text: 'O', favorite: true, opacity: 1 },`  
-`],`  
-`showFav: false,`  
-  `});`  
- `var notFavData = [],`  
-`favData = [];`  
-  `useEffect(() =&gt; {`  
-`notFavData = hash.catsdata.filter((d) =&gt; !d.favorite);`  
-`favData = hash.catsdata.filter((d) =&gt; d.favorite);`  
-`setHash({ ...hash, catsdata: [...favData, ...notFavData] });`  
-  `}, []);`  
- `return (`  
-`&lt;div&gt;`  
-`{hash.catsdata.map((d, i) =&gt; {`  
- `return (`  
-`&lt;div key={d.id} style={{ backgroundColor: d.favorite ? '#da7878' : '#f5f699' }}&gt;`  
-`&lt;div`  
-`onClick={(event) =&gt; {`  
-`//This is the click handler where we need to write code for the part where when you`   
-`// click on any part of the card, all the other cards, their opacity should get`   
-`//reduced to 0.5`  
-`/******************************`  
-`*`   
-`*`   
-`*`   
-`*`   
-`*`   
-`******************************/`  
-`console.log(events)`  
-`}}&gt;`  
-`&lt;h1&gt;{d.id}&lt;/h1&gt;`  
-`&lt;p&gt;{d.text}&lt;/p&gt;`  
-`&lt;button`  
-`onClick={() =&gt; {`  
- `//This is the click handler when someone clicks on the favorite button...all the cards which are //favorite are displayed on the top`  
- `const restD = hash.catsdata.filter((el) =&gt; el.id !== d.id);`  
-`d.favorite`  
-`? setHash({ ...hash, catsdata: [...restD, { ...d, favorite: !d.favorite }] })`  
-`: setHash({ ...hash, catsdata: [{ ...d, favorite: !d.favorite }, ...restD] });`  
-`}}&gt;{\`favorite ${d.favorite}\`}&lt;/button&gt;`  
-`&lt;/div&gt;`  
-`&lt;/div&gt;`  
-`);`  
-`})}`  
-`&lt;/div&gt;`  
-  `);`  
-`}`  
-`export default App;`  
-
-
-  
-Github library link: [https://github.com/akhil9tiet/sampleCards](https://github.com/akhil9tiet/sampleCards)   
-branch: feat/show-one
-
-&amp;#x200B;
-
-Steps to clone:
-
-$ git clone [https://github.com/akhil9tiet/sampleCards](https://github.com/akhil9tiet/sampleCards) 
-
-$ cd sampleCards
-
-$ npm install
-
-&lt;&lt;make sure the branch has been changed to feat/show-one&gt;&gt;
-
-$ npm run start
-## [11][REDUX MADE SIMPLE!](https://www.reddit.com/r/reactjs/comments/ffaohz/redux_made_simple/)
-- url: https://www.reddit.com/r/reactjs/comments/ffaohz/redux_made_simple/
----
-Redux is a state management paradigm based on Facebook’s Flux architecture.
-
-Redux provides a structure for large state trees and allows you to decouple user
-
-interaction in your app from state changes.
-
-&amp;#x200B;
-
- Can anyone provide a simple alt definition to the above def for a beginner
-## [12][Need Help With Rendering](https://www.reddit.com/r/reactjs/comments/ffagfo/need_help_with_rendering/)
-- url: https://www.reddit.com/r/reactjs/comments/ffagfo/need_help_with_rendering/
----
-I have a simple todo list code.
-
-This is the code for smart component  - 
-
-`import React from "react";`  
-`import ListItem from "../containers/ListItem";`  
-`let list = [];`  
-`function Lists() {`  
-`list = [`  
-`{id: 0, title: 'study', completed: true},`  
- `{id: 1, title: 'study', completed: false},`  
- `{id: 2, title: 'finish react', completed: false}`  
-`];`  
-`let todos = list.map(((item) =&gt; &lt;ListItem item={item} changeTodoStatus={changeTodoStatus}/&gt;));`  
-`return &lt;div&gt;`  
-`&lt;h3&gt;Welcome To TODO Lists&lt;/h3&gt;`  
-`&lt;h4&gt;Your List Items Are&lt;/h4&gt;`  
-`&lt;ul&gt;{todos}&lt;/ul&gt;`  
-`&lt;/div&gt;`  
-`}`  
-
-
-`function AddTodo() {`  
-
-
-`}`  
-
-
-`const changeTodoStatus = function ChangeTodoStatus(id) {`  
- `console.log('called', id);`  
-`let todo = list.filter((item) =&gt; item.id === id)[0];`  
- `console.log('todo', todo);`  
-`if (todo) todo.completed = ! todo.completed;`  
- `console.log('after todo', todo)`  
-`};`  
-`export default Lists`
-
-&amp;#x200B;
-
-This is the code for container component - 
-
-&amp;#x200B;
-
-`import React from "react";`  
-`import './style.css'`  
-`function ListItem(props) {`  
- `return &lt;li className={props.item.completed ? 'completed' : ''}&gt;`  
-`&lt;button onClick={props.changeTodoStatus.bind(this, props.item.id)}&gt;Change Status&lt;/button&gt;`  
- `{props.item.title}`  
- `&lt;/li&gt;`  
-`}`  
-
-
-`export default ListItem`
-
-&amp;#x200B;
-
-The problem is how to update the prop and re-render after button click ?
-
-Thanks in advance :)

@@ -27,7 +27,57 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Monolith serving React through webpack or seperate services.](https://www.reddit.com/r/rails/comments/fftzma/monolith_serving_react_through_webpack_or/)
+## [3][Is there any part of Rails you wished you understood better?](https://www.reddit.com/r/rails/comments/fgcy4s/is_there_any_part_of_rails_you_wished_you/)
+- url: https://www.reddit.com/r/rails/comments/fgcy4s/is_there_any_part_of_rails_you_wished_you/
+---
+I'm currently putting together a post about how the [Action Dispatch Request object](https://github.com/rails/rails/blob/1ef8c60dfcab2f0594b468088680fe1054d17452/actionpack/lib/action_dispatch/http/request.rb) works under the hood. Is there any part of Rails you wished you understood better? I'd be happy to write about it.
+## [4][Has anyone taken App Open Academy Rails modules, and if so, how were they?](https://www.reddit.com/r/rails/comments/fg7462/has_anyone_taken_app_open_academy_rails_modules/)
+- url: https://www.reddit.com/r/rails/comments/fg7462/has_anyone_taken_app_open_academy_rails_modules/
+---
+Fortunately I've completed the Hartl Tutorial, and done at least 1/2 of the Rails lessons on Odin project, and may try out App Open Academy (free).  Wondering if anyone has used their material, and thoughts if so.
+## [5][Noob question on a tutorial that I am taking.](https://www.reddit.com/r/rails/comments/fg2f92/noob_question_on_a_tutorial_that_i_am_taking/)
+- url: https://www.reddit.com/r/rails/comments/fg2f92/noob_question_on_a_tutorial_that_i_am_taking/
+---
+I am in the middle of a Rails tutorial and I am completely stuck.
+
+I was hoping I could get some help on here from some seasoned RoR individuals.
+
+I am trying to create a table for messages from users. I am trying to create a message in the rails console to see if my table works but it won't let me create it.
+
+I keep receiving an error that says "ActiveModel::UnknownAttributeError (unknown attribute 'body' for Message.)"
+
+Thanks in advance
+
+https://preview.redd.it/vet9u9h4vpl41.png?width=576&amp;format=png&amp;auto=webp&amp;s=36298f8429746a29578d820cab9b0495d7ab6fc9
+
+&amp;#x200B;
+
+https://preview.redd.it/85ycaj48vpl41.png?width=521&amp;format=png&amp;auto=webp&amp;s=7299193d7996141827197e2108edc0d8704c95c5
+
+&amp;#x200B;
+
+https://preview.redd.it/5zvf4gz8vpl41.png?width=356&amp;format=png&amp;auto=webp&amp;s=15ba337c59ac255c270001ad78c2a5bb64a59f39
+
+&amp;#x200B;
+
+https://preview.redd.it/b4f01yp40rl41.png?width=705&amp;format=png&amp;auto=webp&amp;s=da016cb153e25835176d445345cfea69bf29ccf9
+
+&amp;#x200B;
+
+[Message](https://preview.redd.it/0dp0elz9bul41.png?width=310&amp;format=png&amp;auto=webp&amp;s=112674952ee9fefc1bafa6c1bf57eadcaab48099)
+
+&amp;#x200B;
+
+[User](https://preview.redd.it/y2yrs8lbbul41.png?width=575&amp;format=png&amp;auto=webp&amp;s=2fdcec1909979f910f65d75de2603a35228df161)
+
+&amp;#x200B;
+
+[Schema](https://preview.redd.it/5jcwihpcbul41.png?width=462&amp;format=png&amp;auto=webp&amp;s=c3cdb894dd47a0808b057183fde3c8fde17ea6e6)
+## [6][When did you lend your first job?](https://www.reddit.com/r/rails/comments/fgb8i4/when_did_you_lend_your_first_job/)
+- url: https://www.reddit.com/r/rails/comments/fgb8i4/when_did_you_lend_your_first_job/
+---
+Hello kind people. I’m not sure whether it’s the right place to post this. So, I’m 20 y.o., doing RoR for little less than a year now on a commercial basis and around 3 years in total. Anyway, I have been looking for a job for a long time now and people just don’t care about juniors or RoR developers in general, or is it just me?... some people say at 20 you should be a middle-senior already, some say you better finish university and only than look for smth. What do you think? When did you start? Did you find the job easily? Do you have any advise?
+## [7][Monolith serving React through webpack or seperate services.](https://www.reddit.com/r/rails/comments/fftzma/monolith_serving_react_through_webpack_or/)
 - url: https://www.reddit.com/r/rails/comments/fftzma/monolith_serving_react_through_webpack_or/
 ---
 Hello there...
@@ -45,7 +95,28 @@ Pros? Cons?
 I will be deploying this to ECS in AWS if that helps...
 
 Please and thank you all for your help.
-## [4][Help with associations](https://www.reddit.com/r/rails/comments/ffev1f/help_with_associations/)
+## [8][Is this an acceptable way to roll my own hashid generation?](https://www.reddit.com/r/rails/comments/ffuw9m/is_this_an_acceptable_way_to_roll_my_own_hashid/)
+- url: https://www.reddit.com/r/rails/comments/ffuw9m/is_this_an_acceptable_way_to_roll_my_own_hashid/
+---
+I want to generate short, unique, non-sequential ids to help obfuscate my model records. I wasn't able to get [hashid-rails](https://rubygems.org/gems/hashid-rails) to work, so I decided to roll my own solution using [SecureRandom](https://ruby-doc.com/stdlib-2.5.2/libdoc/securerandom/rdoc/SecureRandom.html#module-SecureRandom-label-Examples) and [friendly_id](https://rubygems.org/gems/friendly_id).
+
+I just want to make sure that my solution is performant and acceptable.
+
+```
+class Note &lt; ApplicationRecord
+  extend FriendlyId
+  friendly_id :hashid, use: :slugged
+
+  before_create :set_hashid
+
+  private
+    def set_hashid
+      self.hashid = SecureRandom.hex(5)
+    end
+
+end
+```
+## [9][Help with associations](https://www.reddit.com/r/rails/comments/ffev1f/help_with_associations/)
 - url: https://www.reddit.com/r/rails/comments/ffev1f/help_with_associations/
 ---
 I'm building an application which consists on two modesl: `Task` and `Project`. Projects may have several zero or more tasks (`has_many` association), but tasks don't necessarily belong to a project. Well, I don't know how to program that last part in terms of routing, because if I implement this:
@@ -68,7 +139,7 @@ Rails assigns the same `Controller#Action` to both tasks, so I don't know how to
     tasks#create                           POST   /projects/:project_id/tasks(.:format)
 
 Is there any way to separate them? Maybe creating different actions?
-## [5][Help splitting an array into equal subarrays](https://www.reddit.com/r/rails/comments/ffgyjk/help_splitting_an_array_into_equal_subarrays/)
+## [10][Help splitting an array into equal subarrays](https://www.reddit.com/r/rails/comments/ffgyjk/help_splitting_an_array_into_equal_subarrays/)
 - url: https://www.reddit.com/r/rails/comments/ffgyjk/help_splitting_an_array_into_equal_subarrays/
 ---
 Hi guys,
@@ -156,7 +227,7 @@ Prawn::Document.generate('puzzle2.pdf') do |*pdf*|
 end  
 end  
 end
-## [6][Minitest decorate test to change setup method](https://www.reddit.com/r/rails/comments/fffozb/minitest_decorate_test_to_change_setup_method/)
+## [11][Minitest decorate test to change setup method](https://www.reddit.com/r/rails/comments/fffozb/minitest_decorate_test_to_change_setup_method/)
 - url: https://www.reddit.com/r/rails/comments/fffozb/minitest_decorate_test_to_change_setup_method/
 ---
 In Minitest I can use the `def setup` method to initialize some values before each test is run. My setup looks like this. 
@@ -167,7 +238,7 @@ In Minitest I can use the `def setup` method to initialize some values before ea
     end
 
 I would want to modify the setup method to take a different agent from the `find_agent` method based on which test is running. Is there a way I can decorate each test so that the common setup method picks the right type of agent based on the test and creates a session?
-## [7][Handling transactions with update_attributes!](https://www.reddit.com/r/rails/comments/ffi1b0/handling_transactions_with_update_attributes/)
+## [12][Handling transactions with update_attributes!](https://www.reddit.com/r/rails/comments/ffi1b0/handling_transactions_with_update_attributes/)
 - url: https://www.reddit.com/r/rails/comments/ffi1b0/handling_transactions_with_update_attributes/
 ---
 I have a two below method that I want to wrap around a transaction so if update\_model fails destroy\_roles will be rolled back
@@ -206,72 +277,3 @@ Could you please help me if my understanding is correct, I'm confused since we h
 
 
 Any links to tutorial/documentation for the same would be really helpful as well.
-## [8][Pls help: Upgraded from Rails 3 to 5, getting a Javascript error: Error: Unknown provider: tProvider &lt;- t](https://www.reddit.com/r/rails/comments/ffmvc6/pls_help_upgraded_from_rails_3_to_5_getting_a/)
-- url: https://www.reddit.com/r/rails/comments/ffmvc6/pls_help_upgraded_from_rails_3_to_5_getting_a/
----
-New to Rails and I'm getting this error:  **Error: Unknown provider: tProvider &lt;- t** 
-
-and it seems to be a minification error? This error is also only happening on production, development environment is working fine. We don't have a local production server set up, so I have no idea how to test this before I deploy? 
-
-I can produce this error on dev by just commenting out the **config.assets.debug**  line... I've commented this out and have tried to remove the js uglifier ( config.assets.js\_compressor = :uglifier), and have tried to put  config.assets.js\_compressor = Uglifier.new(mangle: false), but this doesn't work either.
-
-I've also tried to make my controllers minification safe, but that doesn't seem to be doing anything either.
-
-Maybe this things will work in production (and just the config.assets.debug line is messing up the output), but I don't know how to test this without deploying if I don't have a local prod server up?
-
-I'm very confused at this whole error. Prod is broken, dev is working. Please help
-## [9]["VFS Connection does not exist"](https://www.reddit.com/r/rails/comments/ffd94j/vfs_connection_does_not_exist/)
-- url: https://www.reddit.com/r/rails/comments/ffd94j/vfs_connection_does_not_exist/
----
-As the title says, when i try to run the $rails server command andpreview running application, it tells me "Oops, VFS Connection does notexist". Any way to fix this? I'm on Firefox if it helps.
-## [10][How to view all available methods in template or controller?](https://www.reddit.com/r/rails/comments/ff8spe/how_to_view_all_available_methods_in_template_or/)
-- url: https://www.reddit.com/r/rails/comments/ff8spe/how_to_view_all_available_methods_in_template_or/
----
-Hi, I have been learning Rails for about a week and I am having very hard time with understanding which methods can be used when because everything seems like magically appearing in templates and controllers.
-
-Is there a way to dump all available methods in debug statement or something to see and better understand them?
-
-Also, if you have other tips on understanding this topic, your comment would be really helpful!
-## [11][How do I handle this join?](https://www.reddit.com/r/rails/comments/ff3raq/how_do_i_handle_this_join/)
-- url: https://www.reddit.com/r/rails/comments/ff3raq/how_do_i_handle_this_join/
----
-I have a side project with an interesting problem. I have two tables:
-
-1. Books
-2. Restrictions
-
-I want to be able to restrict certain books with a scope. I'm pretty new to joins, and I feel like this would be easy, *except* I also have another unique constraint. I have set up restrictions to be polymorphic. So, there is a record\_id and record\_type column on restrictions. This is so, that in the future, I have the ability to restrict other things than just books.
-
-My attempt is something like this:
-
-`Book.all.joins("INNER JOIN restrictions ON restrictions.record_id =` `books.id` `AND restrictions.record_type = 'Book'")`
-
-But this is just returning all books, and I am trying to get a list of books that isn't restricted. Any ideas?
-## [12][How do I efficiently query telemetry data?](https://www.reddit.com/r/rails/comments/feswoh/how_do_i_efficiently_query_telemetry_data/)
-- url: https://www.reddit.com/r/rails/comments/feswoh/how_do_i_efficiently_query_telemetry_data/
----
-I have this project where there are N devices in the field that beam back telemetry data **once every minute** per device. The ingest API for that is fine, but I'm running into some concerns about _reading_ that data, specifically for building a graph.
-
-Data is in PostgreSQL and roughly resembles this:
-
-```
-    create_table :telemetry do |t|
-      # some unrelated stuff here
-      t.float         :some_value, null: false, default: 0.0
-      t.timestamps
-    end
-```
-
-So there's one row per minute per device in this database. At 24 hours in one day times 60 rows per hour (one per minute), we have **1,440 rows of telemetry data!**
-
-Now, querying this is easy enough if we don't care about how evenly distributed that data is:
-
-```
-@telemetry = Telemetry.where('created_at &gt; ?', 24.hours.ago).order(created_at: :asc)
-```
-
-I could of course throw a limit on that, but then we'd just get the first N minutes of the data. So for example if I were to limit that to 50 rows, I'd only get back less than the first hour of all 24 hours.
-
-Is there a better way to do this? For example, let's say I want two data points per hour (so one every 30 minutes). I _could_ try creating a loop then using the loop to craft and execute a new query for every trip through said loop, but that also sounds pretty inefficient.
-
-How do I _efficiently_ do something like this? What should I be googling for?

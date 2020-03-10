@@ -1,103 +1,88 @@
 # aws
-## [1][How-to Guide: Debugging a Kubernetes Application](https://www.reddit.com/r/aws/comments/ffssxi/howto_guide_debugging_a_kubernetes_application/)
-- url: https://epsagon.com/blog/development/how-to-guide-debugging-a-kubernetes-application/
+## [1][Beginning work that will involve AWS in the next week at work - what are some good resources for getting up to speed?](https://www.reddit.com/r/aws/comments/fgd3q4/beginning_work_that_will_involve_aws_in_the_next/)
+- url: https://www.reddit.com/r/aws/comments/fgd3q4/beginning_work_that_will_involve_aws_in_the_next/
 ---
+Hey, everyone. I will be joining a new team next week where I will be helping with migration from Azure to AWS. The most experience I have in AWS right now is setting up a Lightsail instance and playing around with it, so obviously what I know about AWS is very limited.
 
-## [2][Is there any use-case for multiple IPs to single instance?](https://www.reddit.com/r/aws/comments/ffjtj3/is_there_any_usecase_for_multiple_ips_to_single/)
-- url: https://www.reddit.com/r/aws/comments/ffjtj3/is_there_any_usecase_for_multiple_ips_to_single/
+The team I have been on ended their iteration at the end of last week and it will take me about a week to get all my credentials set up(my company moves slowly) so I have about a week where I'm just sitting on my hands. I'd like to use this time to start getting more familiar with the AWS landscape and its' tools so I don't have such a high learning curve once I dive in next week.
+
+Any assistance would be great. Thank you!
+## [2][Do S3 buckets live on EC2's under the hood? Can't find this information anywhere.](https://www.reddit.com/r/aws/comments/fg2rg8/do_s3_buckets_live_on_ec2s_under_the_hood_cant/)
+- url: https://www.reddit.com/r/aws/comments/fg2rg8/do_s3_buckets_live_on_ec2s_under_the_hood_cant/
 ---
-Hi, I know that we can attach a second ENI to an EC2 instance. But I was wondering what can be a possible use-case to do that? How can it be useful?
+Let's say you're using an S3 bucket to serve a static website and AWS creates an endpoint for you to view your bucket. Does clicking that endpoint (aka going to the website) trigger some kind of EC2 activity? Or maybe Lambda -&gt; EC2 activity? How are S3 files actually served?
 
-Thanks
-## [3][confusing aws lambda kickoff performance](https://www.reddit.com/r/aws/comments/ffol6k/confusing_aws_lambda_kickoff_performance/)
-- url: https://www.reddit.com/r/aws/comments/ffol6k/confusing_aws_lambda_kickoff_performance/
+Thanks everyone.
+## [3][Is it possible to compile and execute a C program using AWS lambda?](https://www.reddit.com/r/aws/comments/fg7pkq/is_it_possible_to_compile_and_execute_a_c_program/)
+- url: https://www.reddit.com/r/aws/comments/fg7pkq/is_it_possible_to_compile_and_execute_a_c_program/
 ---
-i have a lambda that kicks off an api request.  here is what happens; database dumps 5 MB files to S3.  S3 initiates lambda.  lambda copies 5 MB in, sends it to an api, gets the response, writes the response to S3.  4 lambdas are allowed to run concurrently.  all succeed.
+I am working on a personal project of making an online IDE . And i have implemented the compilation and Execution using a EC2 instance. But, Recently came to know about Lambda and i am wondering if its possible to do the same (compile and execute the c program and return the output ). IF not what would be the better way to approach this.On EC2 i went for a nodejs application to get the code from user and then send the output as the response to the user.
+## [4][AWS EC2 shell request failed on channel 0](https://www.reddit.com/r/aws/comments/fg9nmi/aws_ec2_shell_request_failed_on_channel_0/)
+- url: https://www.reddit.com/r/aws/comments/fg9nmi/aws_ec2_shell_request_failed_on_channel_0/
+---
+Previously i can easily access my EC2 instance but now i get this message over and over again and i can't access it anymore.
 
-i expect my api service to have a pretty steady state of 4 things hitting it.  what do i actually see instead?
-
-i see lots of dead space.  example is 13:08 here, nothing is going on.  [https://i.imgur.com/f2DTdrz.png](https://i.imgur.com/f2DTdrz.png)
-
-i have 4 log streams, and all look similar.  the lambdas themselves are like 10-25 seconds.  [https://i.imgur.com/wEHDOKL.png](https://i.imgur.com/wEHDOKL.png)
-
-they all have nothing going on in 13:08.  no lambda initiated in 13:07 could run long enough to result in no lambda being initiated in 13:08, yet all 4 log streams look like this.  amazon is simply doing nothing at all in the 13:08 minute, for no reason i can tell.  what is going on here?  it is super annoying, as it is killing my throughput.
-
-my best guess speculation is that it's some poor/strange limitation of the concurrency limitation.  what is extra confusing though is that it gets even worse over time.  my process was just hanging around while nothing was happening for those last requests at the tail to complete.  i'll note in the kibana log that the first hit in my actual process was 13:03:52 and the last was at that tail before 13:20.  it's about 25% the throughput end to end that i was expecting.
-
-1 minute granularity is the lowest i can get the concurrent charts to produce anything to plot.
-
-max: [https://i.imgur.com/85U5V40.png](https://i.imgur.com/85U5V40.png)
-
-sum: [https://i.imgur.com/hYQpdwi.png](https://i.imgur.com/hYQpdwi.png)
-
-what's with all my dead spots?
-## [4][Benchmarking the AWS Graviton2 with KeyDB – M6g up to 65% faster](https://www.reddit.com/r/aws/comments/ffupap/benchmarking_the_aws_graviton2_with_keydb_m6g_up/)
+`shell request failed on channel 0`
+## [5][Benchmarking the AWS Graviton2 with KeyDB – M6g up to 65% faster](https://www.reddit.com/r/aws/comments/ffupap/benchmarking_the_aws_graviton2_with_keydb_m6g_up/)
 - url: https://docs.keydb.dev/blog/2020/03/02/blog-post/
 ---
 
-## [5][Distributed Tracing in Asynchronous Applications](https://www.reddit.com/r/aws/comments/ffud9h/distributed_tracing_in_asynchronous_applications/)
-- url: https://epsagon.com/blog/distributed-tracing-in-asynchronous-applications/
+## [6][I have a simple WordPress.org blog — should I continue using regular webhosting services (using iPage currently) or switch to AWS? I'm looking for the cheapest option.](https://www.reddit.com/r/aws/comments/ffv4dy/i_have_a_simple_wordpressorg_blog_should_i/)
+- url: https://www.reddit.com/r/aws/comments/ffv4dy/i_have_a_simple_wordpressorg_blog_should_i/
 ---
+I'm paying 7.99 - 9.99USD monthly.
 
-## [6][Is it possible to choose different subnets per service like Workspaces and EC2?](https://www.reddit.com/r/aws/comments/ffub6w/is_it_possible_to_choose_different_subnets_per/)
-- url: https://www.reddit.com/r/aws/comments/ffub6w/is_it_possible_to_choose_different_subnets_per/
+Also, what is the estimated price per month if I were to go with AWS? Expected visitors per month are no more than 5k. As for storage I can go with 100MB. Because I can upload media on Imgur and other services. So that's not a huge deal. I mostly want the cheapest option possible.
+
+And I already have a domain on namesilo so don't count that. It will be linked to AWS if that's what you guys are recommending.
+
+Thank you.
+
+UPDATE: Thank you guys. Honestly overwhelmingly great responses. I can't reply to everyone but I appreciate all your inputs.
+
+I have several options now:
+
+1. Amazon's LightSail.
+2. A static website that scrapes the content from an offline (on my PC) server. This one is particularly great because it can be hosted free of charge.
+3. And DigitalOcean.
+
+These are all great suggestions and I'll probably try them all and see which method/service provider suits me the most.
+## [7][Massive siteground account to AWS?](https://www.reddit.com/r/aws/comments/fg1wsb/massive_siteground_account_to_aws/)
+- url: https://www.reddit.com/r/aws/comments/fg1wsb/massive_siteground_account_to_aws/
 ---
-I have set up 3 /24 networks and I am trying to set everything up so that our EC2 instances will use one while our workspaces are on another but they are all just getting DHCP from the same subnet.  I don't see anywhere on how to set them apart.  I'm still new to this so I hope this makes sense.
-## [7][Noob Cloudformation Egress Security Groups.... multiple ports.](https://www.reddit.com/r/aws/comments/ffu7a4/noob_cloudformation_egress_security_groups/)
-- url: https://www.reddit.com/r/aws/comments/ffu7a4/noob_cloudformation_egress_security_groups/
+Hello, I currently have a large Siteground account with 100+ wordpress sites. It works pretty well, but the cost is very high. 
+Is AWS or lightsail worth looking into? 
+My servers stats are:
+4 CPU cores centOS
+10 gb ram
+130 gb ssd storage 
+I need to upgrade the ram, so I want to explore other options first. 
+Any thoughts?
+## [8][Best practices for api logging with ALB and lambda](https://www.reddit.com/r/aws/comments/ffxq3t/best_practices_for_api_logging_with_alb_and_lambda/)
+- url: https://www.reddit.com/r/aws/comments/ffxq3t/best_practices_for_api_logging_with_alb_and_lambda/
 ---
-Please can anyone advise me on how to get a list of ports opened up in Cloudformation Security Group INgress rules.
+Hi everyone,
+I have a lambda function (a fat one) behind an ALB for a public API. I'm looking for an efficient way of sending custom logs to my rds (postgres) instance. Ideally O would like to go for a serverless/cheap solution (so dynamodb is a no).
+The problem is that for my use case api latency is a real issue, it's unacceptable for it to go over 60-70ms. 
+I've tried sending them to SQS and Kinesis, but sometimes it takes over 100ms just to send the events (there could be multiple events per request).
+Currently I'm lookong into sendong them to redis (using oub/sub) and having another lambda run every minute or so to get that data and send it to rds.
 
-I know it should be a LIST but my YAML keeps failing. When i try other syntax, the security group only seems to pick the LAST port in the list.
-
-Help me Obi wan ... you're my only hope.
-
-    #Setting Up Security Groups
-      PublicSecurityGroup:
-        Type: AWS::EC2::SecurityGroup
-        Properties:
-            GroupName: PublicSecurityGroup
-            GroupDescription: Public Security Group
-            VpcId:
-                Ref: VPC
-      PublicOutboundRule1:
-        Type: AWS::EC2::SecurityGroupEgress
-        Properties:
-            GroupId: !Ref PublicSecurityGroup
-            IpProtocol: tcp
-            FromPort: 0
-            ToPort: 65535
-            CidrIp: 0.0.0.0/0
-      PublicInboundRule1:
-        Type: AWS::EC2::SecurityGroupIngress
-        Properties:
-            GroupId: !Ref PublicSecurityGroup
-            - IpProtocol: tcp
-            FromPort: 80
-            ToPort: 80
-            - IpProtocol: tcp
-            FromPort: 443
-            ToPort: 443
-            CidrIp: 0.0.0.0/0
-## [8][Creating S2S VPN](https://www.reddit.com/r/aws/comments/ffkjwx/creating_s2s_vpn/)
-- url: https://www.reddit.com/r/aws/comments/ffkjwx/creating_s2s_vpn/
+Does anyone have a better way of doing this? Oe do you think this idea makes sense?
+## [9][Average Cloud Support Engineer Salary in Oregon, Portland?](https://www.reddit.com/r/aws/comments/fg8edk/average_cloud_support_engineer_salary_in_oregon/)
+- url: https://www.reddit.com/r/aws/comments/fg8edk/average_cloud_support_engineer_salary_in_oregon/
 ---
-I'm creating IPSec Site to Site VPNs in Azure which I'm confident work but am having difficulty testing them. Despite my best efforts our office firewall isn't letting all the packets through that I need so I'm having to test from AWS.
+I'm getting an offer for working as an Cloud Support Engineer for Amazon in Portland and I cannot find enough salaries online to justify a reasonable price.
 
-&amp;#x200B;
+Anyone here work in Amazon Cloud or knows someone and can think of a good salary range to negotiate for in the city of Portland?
 
-I want to create a VPN from AWS to the Azure VPN but the AWS VPN only seems to be for connecting from an office into AWS. It doesn't even give any options for cipher suites of DH groups. Can this be done natively in AWS or do I need to run something like pfSense in an EC2?
-## [9][deleting AWS managed KMS keys](https://www.reddit.com/r/aws/comments/fftuf0/deleting_aws_managed_kms_keys/)
-- url: https://www.reddit.com/r/aws/comments/fftuf0/deleting_aws_managed_kms_keys/
+Note: it isn't about experience and other factors \*on the topic of salary\*, They're simply looking if you have the skills for it or not. 20 years or 5 years, do not matter for this one. The initial 'entry' salary is claimed to be relatively the same from the recruiter's knowledge.
+
+I have 0 experience with AWS Cloud. Only 2 years of Azure and a history of Help desk / Entry Sys Admin work for 6 years.
+
+\- Or am I being mislead??
+
+I'm from a low CoL state in the south so I have no clue what's a good number to make up for those strenuous gas prices and rent up in the west
+## [10][Need to track downloads on S3](https://www.reddit.com/r/aws/comments/fg355n/need_to_track_downloads_on_s3/)
+- url: https://www.reddit.com/r/aws/comments/fg355n/need_to_track_downloads_on_s3/
 ---
-Hi guys,
-
-Noobie here, I was practising on AWS basic plan and created an IAM administrator account for the study guides. As part of the practise I created used Lambda, EFS and EBS which in turn created theyKMS keys for encyrption. 
-
-When I was done I deleted "everything" including the IAM admin account that created those keys. I wish to delete those keys but I don't know how. The guides I'm getting are for deleting CMKs. Please help, I'm tired of paying for keys I'm not using.
-
-(I don't want to delete the root account for fear of being unable to use it again in future)
-## [10][AWS re:Invent 2019 Announcements Recap](https://www.reddit.com/r/aws/comments/fftt4s/aws_reinvent_2019_announcements_recap/)
-- url: https://epsagon.com/blog/webinars/aws-reinvent-2019-recap/
----
-
+ My boss wants me to find a way to track client downloads. We host client data on S3 (our servers are on AWS). There's no native way to do this, it seems. I found an app called S3Stat. Anybody ever use it or have other (simple, extremely user friendly) suggestions?

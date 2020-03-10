@@ -1,86 +1,129 @@
 # Kotlin
-## [1][Koltin with more than one class in the same file, is this break the single responsibility concept?](https://www.reddit.com/r/Kotlin/comments/fftmpv/koltin_with_more_than_one_class_in_the_same_file/)
+## [1][Skraper - cli tool and kotlin library to scrape posts with media and other meta info from various sources without any authorization or full page rendering. Based on JSoup.](https://www.reddit.com/r/Kotlin/comments/fgc01r/skraper_cli_tool_and_kotlin_library_to_scrape/)
+- url: http://github.com/SokoMishaLov/skraper
+---
+
+## [2][(in progress) Tutorial Series: 0 to 100 - Learn to Code with Kotlin](https://www.reddit.com/r/Kotlin/comments/fg3vnh/in_progress_tutorial_series_0_to_100_learn_to/)
+- url: https://marcuseisele.com/pages/learning-kotlin
+---
+
+## [3][Flow: an intro for an RxJava user](https://www.reddit.com/r/Kotlin/comments/fgdmhd/flow_an_intro_for_an_rxjava_user/)
+- url: https://medium.com/@MohamedISoliman/flow-an-intro-for-an-rxjava-user-1b5b6eb21790
+---
+
+## [4][Kotlin Implementation to CLD3 language detector](https://www.reddit.com/r/Kotlin/comments/fg9wl9/kotlin_implementation_to_cld3_language_detector/)
+- url: https://www.reddit.com/r/Kotlin/comments/fg9wl9/kotlin_implementation_to_cld3_language_detector/
+---
+https://github.com/ntedgi/cld3-kotlin
+
+```kotlin
+val ld = LangDetect()
+val englishBulgarianText = "This piece of text is in English Този текст е на Български";
+val results = ld.findTopNMostFreqLangs(englishBulgarianText, 3)
+val languages = results.map { it.language }
+assert(languages.size == 3)
+assert(languages.contains("English"))
+assert(languages.contains("Bulgarian"))
+assert(languages.contains("UNKNOWN"))
+```
+## [5][Abstract or Open Class for Parent?](https://www.reddit.com/r/Kotlin/comments/fg6x6c/abstract_or_open_class_for_parent/)
+- url: https://www.reddit.com/r/Kotlin/comments/fg6x6c/abstract_or_open_class_for_parent/
+---
+I'm new to Kotlin, so I appreciate any help with what I'm guessing is a somewhat dumb question.
+
+**Context**: I have a parent class that has a few child data classes. The parent and all children simply hold data and should never have their own methods. Another package (in Java) converts data into these classes. The parent class itself will never be converted from data to class; only the child classes will be.
+
+**Question**: Is it better to have the parent class be an abstract class or an open class? Why?
+## [6][Koltin with more than one class in the same file, is this break the single responsibility concept?](https://www.reddit.com/r/Kotlin/comments/fftmpv/koltin_with_more_than_one_class_in_the_same_file/)
 - url: https://www.reddit.com/r/Kotlin/comments/fftmpv/koltin_with_more_than_one_class_in_the_same_file/
 ---
 Hey folks, I have a question that in my team we have different opinions about this question. 
 
 Is it better to use a KT file that holds more than one class or not?  for example, in android, I have a file that holds an Adapter class and its ViewHolder class. A friend of mine says that breaks the single responsibility in SOLID. Can you tell me about what do you think?
-## [2][Kotlin Note App (Github Repository)](https://www.reddit.com/r/Kotlin/comments/fffjht/kotlin_note_app_github_repository/)
+## [7][Casting to nullable types with generics? - Useless compiler warning?](https://www.reddit.com/r/Kotlin/comments/ffx8ec/casting_to_nullable_types_with_generics_useless/)
+- url: https://www.reddit.com/r/Kotlin/comments/ffx8ec/casting_to_nullable_types_with_generics_useless/
+---
+Just a nit picky question here. Is this a compiler bug?
+
+I have the following function:
+```
+private inline fun &lt;reified T&gt; castArrayToNullable(d: Array&lt;T&gt;): Array&lt;T?&gt; {
+        return d as Array&lt;T?&gt;
+    }
+```
+
+Which takes in an array of 'T' and casts it to Array&lt;T?&gt;. Surely, this is guaranteed as successful every time as non-nullable objects can be casted to nullable regularly, however with this function, I get an unchecked cast warning.
+
+If this is a bug, I will happily report it
+## [8][How can I write suspend methods that are callable from sequence?](https://www.reddit.com/r/Kotlin/comments/ffyc9p/how_can_i_write_suspend_methods_that_are_callable/)
+- url: https://www.reddit.com/r/Kotlin/comments/ffyc9p/how_can_i_write_suspend_methods_that_are_callable/
+---
+    import kotlin.sequences.*
+
+    suspend fun SequenceScope&lt;String&gt;.foo() {
+        yield("I am foo")
+        Bar(1).bar() // Restricted suspending functions can only invoke member or extension suspending functions on their restricted coroutine scope
+    }
+
+    class Bar(val index: Int) {
+        suspend fun bar() {
+            yield("I am Bar($index)") // Unresolved reference: yield
+        }
+    }
+
+    fun main() {
+        println(sequence&lt;String&gt; {
+            yield("I am main")
+            foo()
+        }.toList())
+    }
+
+`foo` is a standalone function, and to be able to call it from `sequence&lt;String&gt;` I had to make it an extension method of `SequenceScope&lt;String&gt;`. But I can't do that for `bar`, because `bar` is already a method of `Bar`.
+
+I thought about having `Bar` subclass `SequenceScope&lt;String&gt;` but it's `init` is inaccessible.
+
+Is there any way to do this?
+## [9][Abstracting subclass creation](https://www.reddit.com/r/Kotlin/comments/ffxc9m/abstracting_subclass_creation/)
+- url: https://www.reddit.com/r/Kotlin/comments/ffxc9m/abstracting_subclass_creation/
+---
+I ran into an abstraction problem when trying to reduce duplication while initializing subclasses and was curious what the preferred way to solve this is in Kotlin. Here's the minimalistic version:
+
+    open class Superclass(val x: Int)
+    
+    class Sub1(x: Int) : Superclass(x = x)
+    class Sub2(x: Int) : Superclass(x = x)
+    
+    fun doSomething(param: Superclass) {
+        print(param.x)
+    }
+    
+Here's the not-great version that duplicates some logic:
+
+    fun tester(test: Boolean) {
+        if (test) {
+            doSomething(Sub1(1))
+            // do a bunch of other stuff
+        } else {
+            doSomething(Sub2(1))
+            // do a bunch of other stuff
+        }
+    }
+
+Here's what I wanted to write when refactoring that function, but it's not allowed:
+    
+    fun testerClean(test: Boolean) {
+        val clazz: Superclass
+        if (test) {
+            clazz = Sub1
+        } else {
+            clazz = Sub2
+        }
+        doSomething(clazz(1))
+        // do a bunch of other stuff
+    }
+
+Apparently I need to define an invoke() function for the class and/or also a companion object- or take some other approach? Open to recommendations on how to eliminate this duplication elegantly!
+## [10][Kotlin Note App (Github Repository)](https://www.reddit.com/r/Kotlin/comments/fffjht/kotlin_note_app_github_repository/)
 - url: https://github.com/maxwellnewage/kotlin-notes
 ---
 
-## [3][Kotlin + JPA - val vs var](https://www.reddit.com/r/Kotlin/comments/fffgev/kotlin_jpa_val_vs_var/)
-- url: https://www.reddit.com/r/Kotlin/comments/fffgev/kotlin_jpa_val_vs_var/
----
-I'm new to Kotlin and I was wondering what's the best way to design your JPA entities? I've seen some examples for very basic Kotlin+JPA usage and they all used `val` for all fields within the entity which is a nice design but introduces the problem that you can't manipulate the values of an existing entity.
-
-Those examples never manipulate an existing entity attached to the Hibernate session. 
-
-What do you think is the best way?
-## [4][why do i need the (Int)-&gt;Unit for the lambda function definition ?](https://www.reddit.com/r/Kotlin/comments/ffe7uz/why_do_i_need_the_intunit_for_the_lambda_function/)
-- url: https://www.reddit.com/r/Kotlin/comments/ffe7uz/why_do_i_need_the_intunit_for_the_lambda_function/
----
-        fun main(args: Array&lt;String&gt;){  
-            val myLambda: (Int) -&gt; Unit= {s: Int -&gt; println(s) } //lambda function  
-            addNumber(5,10,myLambda)  
-        }  
-        fun addNumber(a: Int, b: Int, mylambda: (Int) -&gt; Unit ){   //high level function lambda as parameter  
-            val add = a + b  
-            mylambda(add) // println(add)  
-        }  
-
-what is the need to use it in both the definition and lambda function call in the addnumber function?
-## [5][Kotlin + Jersey + Jetty + MongoDB – creating a scalable RESTful API](https://www.reddit.com/r/Kotlin/comments/ffjj0v/kotlin_jersey_jetty_mongodb_creating_a_scalable/)
-- url: https://blog.gikken.co/kotlin-jersey-jetty-mongodb-creating-a-restful-api/
----
-
-## [6][Return result to activity](https://www.reddit.com/r/Kotlin/comments/ffh26r/return_result_to_activity/)
-- url: https://www.reddit.com/r/Kotlin/comments/ffh26r/return_result_to_activity/
----
-Im trying to use coroutines in android and I want to return result to the UI(fragment), so I did the following:
-
-Inside the repository class:
-
-`suspend fun saveNotes(text : String) : Deferred&lt;String?&gt; {return CoroutineScope(Dispatchers.IO).async {saveNotesToDb(text)}}`
-
-`suspend fun saveNotesToDb(text: String) : String? {var result : String? = ""try{val notes = Notes(notes = text)notesDb.notesDAO.insertNote(notes)result = "saved data to the database"return result}catch (e: Exception){print(e.stackTrace)result = e.messagereturn result}}`
-
-So basically I create suspend function saveNotesToDB, and then in another function saveNotes I return a Deferred object so I can use the result later. Then inside the viewmodel i do the following:
-
-`suspend fun setNotes(text : String) : String? {return notesRepository.saveNotes(text).await()}`
-
-So I thought I can use await() here to get the result, but then again in the fragment I need to create a suspend function, how can I leave the suspend function. All i want is for the result to go from the repository --&gt; viewmodel --&gt; display in fragment inside a snackbar
-
-&amp;#x200B;
-
-Can someone please tell me how to fix this
-## [7][JetBrains Space](https://www.reddit.com/r/Kotlin/comments/fev7jg/jetbrains_space/)
-- url: https://www.reddit.com/r/Kotlin/comments/fev7jg/jetbrains_space/
----
-Lately, Jetbrains just announced their brand new product Space. They provide us programmers, an early access preview. Jetbrains had improved our experiences to create new applications and collaborations with the team members.
-
-Learn more about them at [https://www.jetbrains.com/](https://www.jetbrains.com/?fbclid=IwAR232BrBEzCOX6Sg-uEhpzpmA3pf0jz61sWNQe852DPe3GHQWOqYAOD7Ijc) and the blog about Space [https://blog.jetbrains.com/space/2019/12/05/welcome-space/](https://blog.jetbrains.com/space/2019/12/05/welcome-space/?fbclid=IwAR3PYv7-xGVO_vz6QAidKwtm8_ipSg9lfiiK3XCgUlI3uZKZMz-coX4M2cw).
-## [8][Tutorial: Variables, Data Types, Immutability and User Input with Kotlin](https://www.reddit.com/r/Kotlin/comments/fethd6/tutorial_variables_data_types_immutability_and/)
-- url: https://marcuseisele.com/pages/learningKotlin/variables
----
-
-## [9][Kotlin implementation of CommonMark spec](https://www.reddit.com/r/Kotlin/comments/feq3fw/kotlin_implementation_of_commonmark_spec/)
-- url: https://www.reddit.com/r/Kotlin/comments/feq3fw/kotlin_implementation_of_commonmark_spec/
----
-[https://github.com/matt-belisle/CommonMarK/tree/master/src/main/kotlin/com/matt/belisle/commonmark](https://github.com/matt-belisle/CommonMarK/tree/master/src/main/kotlin/com/matt/belisle/commonmark)
-
-&amp;#x200B;
-
-Finished this recently, a kotlin only implementaiton of the CommonMark MarkDown spec, was a pretty interesting deeper dive into kotlin than I have ever done before, did profiling on a project for the first time, had to design the architecture of a medium sized project, and face some of the consequences of some of my decisions and how they impacted the programming experience
-## [10][Making my own apps or freelance to make money under 18 with kotlin?](https://www.reddit.com/r/Kotlin/comments/fexgu8/making_my_own_apps_or_freelance_to_make_money/)
-- url: https://www.reddit.com/r/Kotlin/comments/fexgu8/making_my_own_apps_or_freelance_to_make_money/
----
-Hi.I am 15 and I want to make money from programming because i don't want to take a summer job:)).I am still learning android development and I have 2 ways of making money:
-
-1.Building my own app:I have some ideas but i think is very hard to publish and have success with it if i am under 18 and have little knowleadge about app marketing but i whould like to try this thought.
-
-2.Freelancing:I heard that i can make some  money out of freelancing even if i am under 18 but I am not sure if it is true.I whould like to freelance too.
-
-Soo out of this ways of making income which one do you guys thing i should use?And why?Please help me if you can,any advice is good.
-
-Btw:I DON'T WANT TO MAKE MUCH MONEY ONLY A FEW JUST TO BE ABLE TO STAY HOME AND CODE ALL SUMMER AND NOT TAKING A SUMMER JOB

@@ -86,164 +86,101 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][React Native Maps Tutorial by Mapping Bushfires in Australia](https://www.reddit.com/r/reactjs/comments/ffubd9/react_native_maps_tutorial_by_mapping_bushfires/)
+## [3][react-google-flight-datepicker](https://www.reddit.com/r/reactjs/comments/fg9zqj/reactgoogleflightdatepicker/)
+- url: https://www.reddit.com/r/reactjs/comments/fg9zqj/reactgoogleflightdatepicker/
+---
+Hi all, I've just launched a new datepicker component by ReactJS. This datepicker is inspired by the datepicker in Google flight. It works well in both desktop and mobile.
+
+You can check the live demo and props for this component at here: [https://github.com/JSLancerTeam/react-google-flight-datepicker](https://github.com/JSLancerTeam/react-google-flight-datepicker)
+## [4][Next.js released v9.3.0](https://www.reddit.com/r/reactjs/comments/fg1h31/nextjs_released_v930/)
+- url: https://app.releasly.co/releases/zeit/next.js/9_3_0
+---
+
+## [5][Popular Admin Panel for Node.js apps with React frontend just got version 2](https://www.reddit.com/r/reactjs/comments/fgcpgk/popular_admin_panel_for_nodejs_apps_with_react/)
+- url: https://medium.com/@wojciechkrysiak/one-year-ago-at-softwarebrothers-we-started-developing-adminbro-a-universal-admin-panel-for-ba95a086dee
+---
+
+## [6][PrimeReact 4.1.0 brings the Ultimate React DataTable](https://www.reddit.com/r/reactjs/comments/fgcssb/primereact_410_brings_the_ultimate_react_datatable/)
+- url: https://www.primefaces.org/introducing-primereact-4-1-0/
+---
+
+## [7][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/reactjs/comments/fgcwnn/top_5_frontend_development_outsourcing_challenges/)
+- url: http://selleooo.xyz
+---
+
+## [8][React Native Maps Tutorial by Mapping Bushfires in Australia](https://www.reddit.com/r/reactjs/comments/ffubd9/react_native_maps_tutorial_by_mapping_bushfires/)
 - url: https://www.youtube.com/watch?v=4qq0GQPkfjI
 ---
 
-## [4][Looking for a partner/contributor for a side project](https://www.reddit.com/r/reactjs/comments/fftl2t/looking_for_a_partnercontributor_for_a_side/)
-- url: https://www.reddit.com/r/reactjs/comments/fftl2t/looking_for_a_partnercontributor_for_a_side/
+## [9][React.FunctionComponent vs React.PureComponent (Gatsby)](https://www.reddit.com/r/reactjs/comments/fgdoup/reactfunctioncomponent_vs_reactpurecomponent/)
+- url: https://www.reddit.com/r/reactjs/comments/fgdoup/reactfunctioncomponent_vs_reactpurecomponent/
 ---
-Looking to start a small side project. I’ll be using React and the Deezer API. For motivation, I’m looking for a contributor/partner who’s looking to keep busy and is looking for work on a small project.
-## [5][react-loaders-kit](https://www.reddit.com/r/reactjs/comments/ffii68/reactloaderskit/)
-- url: https://www.reddit.com/r/reactjs/comments/ffii68/reactloaderskit/
+What is the difference? They seem awfully similar but I don't know which one is better/faster? I'm creating a static site with Gatsby &amp; Typescript if that's relevant.
+## [10][Best maps library?](https://www.reddit.com/r/reactjs/comments/fgatfs/best_maps_library/)
+- url: https://www.reddit.com/r/reactjs/comments/fgatfs/best_maps_library/
 ---
-Hi guys. I just published a package on npm which is a collection of react loaders made using the emotion library. Your feedbacks is welcome. 
+Hello guys, new to React and Geo maps here, so please be nice :D
 
-[react-loaders-kit](https://www.npmjs.com/package/react-loaders-kit)
-## [6][Image ratio fixer - React component for choosing selection of image in fixed ratio.](https://www.reddit.com/r/reactjs/comments/ffsb0w/image_ratio_fixer_react_component_for_choosing/)
-- url: https://haakon.underbakke.net/components/image-ratio-fixer
----
+I am building a project where I want the user to be able to interact with a map.
 
-## [7][HELP UX / UI](https://www.reddit.com/r/reactjs/comments/ffty75/help_ux_ui/)
-- url: https://www.reddit.com/r/reactjs/comments/ffty75/help_ux_ui/
----
-Hi Guys,
+Some of the scenarios that I want to have for example are:
 
-I'm beginner as FE Developer. 
+\- Draw a polygon object and save it into the PostGIS database
 
-Have you got some UX / UI Lesson o Blog to advise ? 
+\- Insert a marker and save it into PostGIS
+
+\- Read all the selections from the database and display them on the map, etc. etc.
+
+I looked trough the available libraries for that purpose, but there are so many and I am kind of stuck on this one.
+
+Initially I started with Google Maps, but then there were two libraries, and in the time when I was reading which one was the official one I saw that I can use Mapbox, so I then started with react-map-gl and I am currently using this one. I have also had a look at Leaflet, but not sure about it.. So can you please tell me which library have you used in your own project?
 
 &amp;#x200B;
 
-Thank you &lt;3
-## [8][Routing not working as intended](https://www.reddit.com/r/reactjs/comments/fft8v6/routing_not_working_as_intended/)
-- url: https://www.reddit.com/r/reactjs/comments/fft8v6/routing_not_working_as_intended/
+Thanks in advance!!
+## [11][Video-JS with React Hooks](https://www.reddit.com/r/reactjs/comments/fgd3ey/videojs_with_react_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/fgd3ey/videojs_with_react_hooks/
 ---
-I am making an algorithms visualizer using sorting algorithms. The user is able to choose different algorithms from a toolbar and the appropriate algorithm will be applied to a randomly generated array of elements. I also have user side stuff that I am trying to implement. I am trying to setup routing between everything but I am running into some problems. I have linked the repo below and will refer to files from it. In Routes.js, I have set up the paths to each component. If I use "exact path" for the home page, the routing will work just fine. However, I am then unable to choose different sorting algorithms (due to the way I set this up, the url will be updated to localhost:3000/name-of-sorting-algorithm). Any possible solutions for this? I have tried using exact path for the other components but that doesn't seem to work either.
+Hey there, I'm trying to implement a video-js player with React using hooks. I'm able to initialise the player and everything is fine, I want to be able to update a state based on the current time of the video. The second `useEffect` runs once and doesn't want to continue re-rendering to update the state (`currentTime` stays at "0"), I'm sure the problem is simple and syntax based thanks!
 
-Repo: [https://github.com/kevinniland97/Applied-Project-and-Minor-Dissertation](https://github.com/kevinniland97/Applied-Project-and-Minor-Dissertation)
-## [9][Generate resume(Resume Builder)](https://www.reddit.com/r/reactjs/comments/ffh0cu/generate_resumeresume_builder/)
-- url: https://www.reddit.com/r/reactjs/comments/ffh0cu/generate_resumeresume_builder/
----
-Hi,
+&amp;#x200B;
 
-I have created a build resume website using Reactjs and would love to know your feedback.
-
-Website URL is [https://build-resume.netlify.com/](https://build-resume.netlify.com/). I know there is a lot to fix in terms of CSS design, but I was excited to share what I have accomplished. It's not much but I want to improve this. Please give feedback in terms of CSS, features I should be adding or fix. Star the repo if you like it - :) Github URL - [https://github.com/knowankit/build-resume](https://github.com/knowankit/build-resume).
-## [10][TypeError: "a is undefined" TypeError: "location is undefined" Map.js:23 TypeError: Cannot read property 'firstChild' of undefined](https://www.reddit.com/r/reactjs/comments/ffslfr/typeerror_a_is_undefined_typeerror_location_is/)
-- url: https://www.reddit.com/r/reactjs/comments/ffslfr/typeerror_a_is_undefined_typeerror_location_is/
----
-I have searched this problem all over the web and none of them seem to solve my problem. I am using react and I am waiting for a response of center and location. I load the div first and then the content. here is my react code.
-
-    &lt;div className="HomeMap"&gt;
-            &lt;ErrorModal error={error} onClear={clearError} /&gt;
-            {isLoading &amp;&amp; (
-              &lt;div className="loadCenter"&gt;
-                &lt;LoadingSpinner /&gt;
-              &lt;/div&gt;
-            )}
-            
-              {!isLoading &amp;&amp; &lt;div className="map"&gt;(
-                &lt;Map
-                  className="HomeMap"
-                  center={{
-                    lat: latitude,
-                    lng: longitude
-                  }}
-                  zoom={8}
-                  location={MarkersMap}
-                /&gt;
-              )&lt;/div&gt;}
-            
-          &lt;/div&gt;
-
-css
-
-    .map {
-      width: 100%;
-      height: 100%;
-    }
-    
-    .HomeMap {
-      height: 85% !important;
-      width: 46% !important;
-      display: block !important;
-      left: auto !important;
-      position: fixed !important;
-    
-      right: 1rem !important;
-    
-      margin-top: 5rem;
-      margin-bottom: 20rem;
-      top: 0px;
-      bottom: 0px;
-    }
-
-map component
-
-    import React, { useRef } from "react";
-    
-    import "./Map.css";
-    
-    const Map = props =&gt; {
-      const mapRef = useRef();
-    
-      const { center, zoom, location } = props;
-    
-      try {
-        const map = new window.google.maps.Map(mapRef.current, {
-          center: center,
-          zoom: zoom,
-          // location: location
-        });
-    
-         location.map(location =&gt; {
-          location.lat = parseFloat(location.lat);
-          location.lng = parseFloat(location.lng);
-            return new window.google.maps.Marker({ position: location, map: map });
-        })
-     } catch (err) {
-        console.log(err);
+    export default function VideoPlayer ({ videoSrc }) {
+      const videoPlayerRef = useRef() // Instead of ID
+      const [currentTime, setCurrentTime] = useState(null)
+      const videoJSOptions = {
+        autoplay: 'muted',
+        fluid: true,
+        controls: true,
+        userActions: { hotkeys: true },
+        playbackRates: [0.5, 1, 1.5, 2]
       }
+      // Initialise video player
+      useEffect(() =&gt; {
+        const player = videojs(videoPlayerRef.current, videoJSOptions, () =&gt; {
+          player.src(videoSrc)
+          console.log('Player Ready')
+        })
+        return () =&gt; {
+          player.dispose()
+          console.log('Player Disposed')
+        }
+      }, [])
+    
+      /* Testing video properties */
+      useEffect(() =&gt; {
+        const player = videojs(videoPlayerRef.current)
+        setCurrentTime(player.currentTime())
+      }, [currentTime])
     
       return (
-        &lt;div
-          ref={mapRef}
-          className={`map ${props.className}`}
-          location={props.location}
-          style={props.style}
-        &gt;&lt;/div&gt;
-      );
-    };
-    
-    export default Map;
-
-Thanks
-## [11][Issues with using conditionally rendered components as a navigation substitute?](https://www.reddit.com/r/reactjs/comments/ffrmxh/issues_with_using_conditionally_rendered/)
-- url: https://www.reddit.com/r/reactjs/comments/ffrmxh/issues_with_using_conditionally_rendered/
+        &lt;div&gt;
+          &lt;video ref={videoPlayerRef} className='video-js' /&gt;
+          &lt;span&gt;Current Time: {currentTime}&lt;/span&gt;
+        &lt;/div&gt;
+      )
+    }
+## [12][React-frontload: component data loading that works on client &amp; server render](https://www.reddit.com/r/reactjs/comments/fgapey/reactfrontload_component_data_loading_that_works/)
+- url: https://github.com/davnicwil/react-frontload
 ---
-Hypothetically, if I was to use conditionally rendered components as a way to handle navigation, would there be any issues on doing so?
 
-Let's assume this is nested inside a content area of the page with buttons that change the state, and when that state is true, it renders the corresponding component.
-
-**For example:**
-
-`&lt;div&gt;`
-
-`{ isActive1 ? &lt;component1 /&gt; : null }`
-
-`{ isActive2 ? &lt;component2 /&gt; : null }`
-
-`{ isActive3 ? &lt;component3 /&gt; : null }`
-
-...
-
-`&lt;/div&gt;`
-
-I get that there are navigation libraries made for a reason...but I'm just curious as to whether this would be a solution to a kind of sub-navigation thingo...
-## [12][useEffectWithPrevious - Get previous value of dependencies](https://www.reddit.com/r/reactjs/comments/ffawrb/useeffectwithprevious_get_previous_value_of/)
-- url: https://www.reddit.com/r/reactjs/comments/ffawrb/useeffectwithprevious_get_previous_value_of/
----
-Just wanna share my first npm package. Hope you find it useful :)
-
-[use-effect-with-previous](https://www.npmjs.com/package/use-effect-with-previous)

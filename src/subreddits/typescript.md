@@ -22,11 +22,31 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Recursive Multi-Threaded Worker Processes in NodeJS](https://www.reddit.com/r/typescript/comments/ffgw9i/recursive_multithreaded_worker_processes_in_nodejs/)
+## [2][Is the TypeScript Playground the best place to learn right now?](https://www.reddit.com/r/typescript/comments/fgd3ax/is_the_typescript_playground_the_best_place_to/)
+- url: https://www.reddit.com/r/typescript/comments/fgd3ax/is_the_typescript_playground_the_best_place_to/
+---
+Or are there better resources? I'm a new react developer learning typescript. Suggestions are very much appreciated! TIA!
+## [3][Up-to-date overview of JavaScript and TypeScript tooling](https://www.reddit.com/r/typescript/comments/ffxjhj/uptodate_overview_of_javascript_and_typescript/)
+- url: https://tooling.js.org/
+---
+
+## [4][Functional React components with generic props in TypeScript](https://www.reddit.com/r/typescript/comments/ffv4c0/functional_react_components_with_generic_props_in/)
+- url: https://wanago.io/2020/03/09/functional-react-components-with-generic-props-in-typescript/
+---
+
+## [5][tsParticles CodePen collection](https://www.reddit.com/r/typescript/comments/fg51rq/tsparticles_codepen_collection/)
+- url: https://codepen.io/collection/DPOage
+---
+
+## [6][Understand Evolving any (Effective TypeScript sample item)](https://www.reddit.com/r/typescript/comments/ffxfo4/understand_evolving_any_effective_typescript/)
+- url: https://effectivetypescript.com/2020/03/09/evolving-any/
+---
+
+## [7][Recursive Multi-Threaded Worker Processes in NodeJS](https://www.reddit.com/r/typescript/comments/ffgw9i/recursive_multithreaded_worker_processes_in_nodejs/)
 - url: https://github.com/sinclairzx81/threadbox
 ---
 
-## [3][Music App with electron and react](https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/)
+## [8][Music App with electron and react](https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/)
 - url: https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/
 ---
 I was bored, so I made this music app with the help of `electron` and `react` in typescript.
@@ -58,11 +78,11 @@ PS:
  I use linux so I'm not sure if there will be any bugs in mac or windows
 
 Also you require a Napster API key(for music metadata) and a Google API key(for downloading a video) for proper functionality
-## [4][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
+## [9][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
 - url: https://www.dandoescode.com/blog/using-typescript-without-typescript/
 ---
 
-## [5][Validate function parameters when passed alongside function](https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/)
+## [10][Validate function parameters when passed alongside function](https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/)
 - url: https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/
 ---
 Hi, I have a use case where I need to pass a reference to a method and the parameters to call it with at a later point. How do I validate that the parameters are valid upon declaration?
@@ -91,7 +111,7 @@ const bar: Foo = {
     params: ['wrong', 3]
 }
 ```
-## [6][TypeORM relationship - relationships by id ?](https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/)
+## [11][TypeORM relationship - relationships by id ?](https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/)
 - url: https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/
 ---
 I've been kinda confused by the relationships as I'm used to save relationship by id, while docs and examples I found suggest to get the entire object and use that instead (Isn't this strange???)
@@ -120,54 +140,3 @@ Another one suggested to name the column as categoryId and it would work as expe
 &amp;#x200B;
 
 I'm just confused, help \^\_\^
-## [7][Optional chaining](https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/)
-- url: https://www.reddit.com/r/typescript/comments/fe4r99/optional_chaining/
----
-For some reason I can't use optional chaining in my new project, other TS features like interfaces, types, ... are working fine. Also my IDE is not throwing out any errors, but upon compiling the code, I get this error for the following line of code:
-
-Line of code: `country: location?.country`
-
-`country: location?.country,`
-
-`SyntaxError: Unexpected token '.'`
-
-`at Module._compile (internal/modules/cjs/loader.js:895:18)`
-
-What's going on?
-## [8][How to replace all non-const enum value with literals? And should I do it?](https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/)
-- url: https://www.reddit.com/r/typescript/comments/fe9e7a/how_to_replace_all_nonconst_enum_value_with/
----
-## Problem
-
-I want to optimize my TypeScript by replacing all literal enums with their values.
-
-## Why not `const enum`?
-
-* Third-party libraries may not provide them.
-* Babel does not support them.
-## [9][Best way to type an object with string keys?](https://www.reddit.com/r/typescript/comments/fe40sr/best_way_to_type_an_object_with_string_keys/)
-- url: /r/LearnTypescript/comments/fe3zip/best_way_to_type_an_object_with_string_keys/
----
-
-## [10][Different function return types?](https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/)
-- url: https://www.reddit.com/r/typescript/comments/fe2mgz/different_function_return_types/
----
-Is it possible to have a function return different return types under different circumstances?
-
-Edit: I mean without overloading.
-
-example:
-
-    const test = (name: string) : int | string =&gt; {
-    
-        if(name === 'beatdook04') return 200;
-    
-        return "Who are you?";    
-    
-    }
-    
-    test('beatdook04');
-## [11][TypeBox - Mapping TypeScript as JSONSchema](https://www.reddit.com/r/typescript/comments/fdoolj/typebox_mapping_typescript_as_jsonschema/)
-- url: https://github.com/sinclairzx81/typebox
----
-

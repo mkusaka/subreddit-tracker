@@ -86,101 +86,73 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][react-google-flight-datepicker](https://www.reddit.com/r/reactjs/comments/fg9zqj/reactgoogleflightdatepicker/)
-- url: https://www.reddit.com/r/reactjs/comments/fg9zqj/reactgoogleflightdatepicker/
----
-Hi all, I've just launched a new datepicker component by ReactJS. This datepicker is inspired by the datepicker in Google flight. It works well in both desktop and mobile.
-
-You can check the live demo and props for this component at here: [https://github.com/JSLancerTeam/react-google-flight-datepicker](https://github.com/JSLancerTeam/react-google-flight-datepicker)
-## [4][Next.js released v9.3.0](https://www.reddit.com/r/reactjs/comments/fg1h31/nextjs_released_v930/)
-- url: https://app.releasly.co/releases/zeit/next.js/9_3_0
+## [3][🎉 Announcing React Table v7! 🎉](https://www.reddit.com/r/reactjs/comments/fgjw7u/announcing_react_table_v7/)
+- url: https://github.com/tannerlinsley/react-table/releases/tag/v7.0.0?twitter=20200310
 ---
 
-## [5][Popular Admin Panel for Node.js apps with React frontend just got version 2](https://www.reddit.com/r/reactjs/comments/fgcpgk/popular_admin_panel_for_nodejs_apps_with_react/)
-- url: https://medium.com/@wojciechkrysiak/one-year-ago-at-softwarebrothers-we-started-developing-adminbro-a-universal-admin-panel-for-ba95a086dee
+## [4][The official Redux+TypeScript template for Create-React-App is now available!](https://www.reddit.com/r/reactjs/comments/fgmydz/the_official_reduxtypescript_template_for/)
+- url: https://github.com/reduxjs/cra-template-redux-typescript/releases/tag/v1.0.0
 ---
 
-## [6][PrimeReact 4.1.0 brings the Ultimate React DataTable](https://www.reddit.com/r/reactjs/comments/fgcssb/primereact_410_brings_the_ultimate_react_datatable/)
-- url: https://www.primefaces.org/introducing-primereact-4-1-0/
+## [5][A React component to compare two images](https://www.reddit.com/r/reactjs/comments/fgg0p7/a_react_component_to_compare_two_images/)
+- url: https://streamable.com/11iyc
 ---
 
-## [7][Top 5 Frontend Development Outsourcing Challenges And How To Overcome Them](https://www.reddit.com/r/reactjs/comments/fgcwnn/top_5_frontend_development_outsourcing_challenges/)
-- url: http://selleooo.xyz
+## [6][What is the difference between const { foo} = props and using props.foo directly?](https://www.reddit.com/r/reactjs/comments/fgvwvj/what_is_the_difference_between_const_foo_props/)
+- url: https://www.reddit.com/r/reactjs/comments/fgvwvj/what_is_the_difference_between_const_foo_props/
 ---
+As the title says.
 
-## [8][React Native Maps Tutorial by Mapping Bushfires in Australia](https://www.reddit.com/r/reactjs/comments/ffubd9/react_native_maps_tutorial_by_mapping_bushfires/)
-- url: https://www.youtube.com/watch?v=4qq0GQPkfjI
----
+I noticed that there are codelines in project that I got that looks like this:
 
-## [9][React.FunctionComponent vs React.PureComponent (Gatsby)](https://www.reddit.com/r/reactjs/comments/fgdoup/reactfunctioncomponent_vs_reactpurecomponent/)
-- url: https://www.reddit.com/r/reactjs/comments/fgdoup/reactfunctioncomponent_vs_reactpurecomponent/
----
-What is the difference? They seem awfully similar but I don't know which one is better/faster? I'm creating a static site with Gatsby &amp; Typescript if that's relevant.
-## [10][Best maps library?](https://www.reddit.com/r/reactjs/comments/fgatfs/best_maps_library/)
-- url: https://www.reddit.com/r/reactjs/comments/fgatfs/best_maps_library/
----
-Hello guys, new to React and Geo maps here, so please be nice :D
-
-I am building a project where I want the user to be able to interact with a map.
-
-Some of the scenarios that I want to have for example are:
-
-\- Draw a polygon object and save it into the PostGIS database
-
-\- Insert a marker and save it into PostGIS
-
-\- Read all the selections from the database and display them on the map, etc. etc.
-
-I looked trough the available libraries for that purpose, but there are so many and I am kind of stuck on this one.
-
-Initially I started with Google Maps, but then there were two libraries, and in the time when I was reading which one was the official one I saw that I can use Mapbox, so I then started with react-map-gl and I am currently using this one. I have also had a look at Leaflet, but not sure about it.. So can you please tell me which library have you used in your own project?
-
-&amp;#x200B;
-
-Thanks in advance!!
-## [11][Video-JS with React Hooks](https://www.reddit.com/r/reactjs/comments/fgd3ey/videojs_with_react_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/fgd3ey/videojs_with_react_hooks/
----
-Hey there, I'm trying to implement a video-js player with React using hooks. I'm able to initialise the player and everything is fine, I want to be able to update a state based on the current time of the video. The second `useEffect` runs once and doesn't want to continue re-rendering to update the state (`currentTime` stays at "0"), I'm sure the problem is simple and syntax based thanks!
-
-&amp;#x200B;
-
-    export default function VideoPlayer ({ videoSrc }) {
-      const videoPlayerRef = useRef() // Instead of ID
-      const [currentTime, setCurrentTime] = useState(null)
-      const videoJSOptions = {
-        autoplay: 'muted',
-        fluid: true,
-        controls: true,
-        userActions: { hotkeys: true },
-        playbackRates: [0.5, 1, 1.5, 2]
-      }
-      // Initialise video player
-      useEffect(() =&gt; {
-        const player = videojs(videoPlayerRef.current, videoJSOptions, () =&gt; {
-          player.src(videoSrc)
-          console.log('Player Ready')
-        })
-        return () =&gt; {
-          player.dispose()
-          console.log('Player Disposed')
-        }
-      }, [])
+    export const FooComponent = (props: FooProps) =&gt; {
+      const { id } = props;
     
-      /* Testing video properties */
-      useEffect(() =&gt; {
-        const player = videojs(videoPlayerRef.current)
-        setCurrentTime(player.currentTime())
-      }, [currentTime])
-    
-      return (
-        &lt;div&gt;
-          &lt;video ref={videoPlayerRef} className='video-js' /&gt;
-          &lt;span&gt;Current Time: {currentTime}&lt;/span&gt;
-        &lt;/div&gt;
-      )
+      return (&lt;div&gt;{props.id}&lt;/div&gt;);
     }
-## [12][React-frontload: component data loading that works on client &amp; server render](https://www.reddit.com/r/reactjs/comments/fgapey/reactfrontload_component_data_loading_that_works/)
-- url: https://github.com/davnicwil/react-frontload
+
+What is the difference between:
+
+    export const FooComponent = (props: FooProps) =&gt; {
+      return (&lt;div&gt;{props.id}&lt;/div&gt;);
+    }
+
+This is a redux project so I guess its related to mutability of the vars.
+## [7][Building Secure React Applications](https://www.reddit.com/r/reactjs/comments/fgx0cl/building_secure_react_applications/)
+- url: https://youtu.be/O91hJJ5KMLs?list=PLEx5khR4g7PKMVeAqZdIHRdOwTM1yktD8
 ---
 
+## [8][Next.js Tutorial - API Routes using SQL Database](https://www.reddit.com/r/reactjs/comments/fguhdy/nextjs_tutorial_api_routes_using_sql_database/)
+- url: https://www.youtube.com/watch?v=PxiQDo0CmDE&amp;feature=share
+---
+
+## [9][Learning Jest and TDD Suggestions](https://www.reddit.com/r/reactjs/comments/fgweod/learning_jest_and_tdd_suggestions/)
+- url: https://www.reddit.com/r/reactjs/comments/fgweod/learning_jest_and_tdd_suggestions/
+---
+Hey, guys, I'm planning to learn JEST and TDD in React, can you please give any tips and recommendations? I've never written any test and am very new to testing.
+## [10][swyx Writing | React Single File Components Are Here](https://www.reddit.com/r/reactjs/comments/fgqzuw/swyx_writing_react_single_file_components_are_here/)
+- url: https://www.swyx.io/writing/react-sfcs-here
+---
+
+## [11][Building a Minesweeper game using React Hooks](https://www.reddit.com/r/reactjs/comments/fgwy71/building_a_minesweeper_game_using_react_hooks/)
+- url: https://www.ivaylopavlov.com/building-a-minesweeper-game-using-react-hooks/#.Xmjg0SWnzDs
+---
+
+## [12][Any people here who work with React daily but aren't thrilled by it?](https://www.reddit.com/r/reactjs/comments/fgrflz/any_people_here_who_work_with_react_daily_but/)
+- url: https://www.reddit.com/r/reactjs/comments/fgrflz/any_people_here_who_work_with_react_daily_but/
+---
+The title.
+
+So I've picked up React on the job. There are a lot of things which I like in particular. First, very wide ecosystem. Things like material-ui for example really cuts down the development costs and allows to rapidly build decent looking UI's while also providing design guidelines unlike common component libraries.
+
+I particularly like Redux and how it enforces explicit structure. While it can be a bit unwieldy for smaller  tasks, it's godsent when it comes to debugging a complex application.
+
+And I really appreciate JSX. Liked it from day one actually. Although perhaps angular 1.x left a bit of a bitter aftertaste in regards to html directives with fluff syntax on top which pretends to be html, but isn't.
+
+I really like how it doesn't concern itself with classes all that much as a structural unit of code which is very prevalent in programming. IMO, often out of mare habit or syntactic familiarity rather than some pragmatic benefit.
+
+However, having written a few non trivial applications and having one more down the pipelines to come, I'm not exactly thrilled about some of library features. Namely, how it stupidly rerenders everything down the component tree by default having you always explicitly marking not to rerender. Gotcha with PureComponent back in classes, memo everything by default when it comes to functional. Should component update / memo second argument when it comes to functional components on more complex cases. When I feel that the opposite should be true or some kind of reactivity would be more sensible approach.
+
+Hooks feels like an improvement, but ultimately end up like surrogate for actual FRP. Now it's yet too difficult to draw conclusions, the jury is still out of how it will eventually work out. 
+
+What are your gripes with the library you wish it did a bit differently if it could?

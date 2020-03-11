@@ -1,88 +1,91 @@
 # aws
-## [1][Beginning work that will involve AWS in the next week at work - what are some good resources for getting up to speed?](https://www.reddit.com/r/aws/comments/fgd3q4/beginning_work_that_will_involve_aws_in_the_next/)
-- url: https://www.reddit.com/r/aws/comments/fgd3q4/beginning_work_that_will_involve_aws_in_the_next/
----
-Hey, everyone. I will be joining a new team next week where I will be helping with migration from Azure to AWS. The most experience I have in AWS right now is setting up a Lightsail instance and playing around with it, so obviously what I know about AWS is very limited.
-
-The team I have been on ended their iteration at the end of last week and it will take me about a week to get all my credentials set up(my company moves slowly) so I have about a week where I'm just sitting on my hands. I'd like to use this time to start getting more familiar with the AWS landscape and its' tools so I don't have such a high learning curve once I dive in next week.
-
-Any assistance would be great. Thank you!
-## [2][Do S3 buckets live on EC2's under the hood? Can't find this information anywhere.](https://www.reddit.com/r/aws/comments/fg2rg8/do_s3_buckets_live_on_ec2s_under_the_hood_cant/)
-- url: https://www.reddit.com/r/aws/comments/fg2rg8/do_s3_buckets_live_on_ec2s_under_the_hood_cant/
----
-Let's say you're using an S3 bucket to serve a static website and AWS creates an endpoint for you to view your bucket. Does clicking that endpoint (aka going to the website) trigger some kind of EC2 activity? Or maybe Lambda -&gt; EC2 activity? How are S3 files actually served?
-
-Thanks everyone.
-## [3][Is it possible to compile and execute a C program using AWS lambda?](https://www.reddit.com/r/aws/comments/fg7pkq/is_it_possible_to_compile_and_execute_a_c_program/)
-- url: https://www.reddit.com/r/aws/comments/fg7pkq/is_it_possible_to_compile_and_execute_a_c_program/
----
-I am working on a personal project of making an online IDE . And i have implemented the compilation and Execution using a EC2 instance. But, Recently came to know about Lambda and i am wondering if its possible to do the same (compile and execute the c program and return the output ). IF not what would be the better way to approach this.On EC2 i went for a nodejs application to get the code from user and then send the output as the response to the user.
-## [4][AWS EC2 shell request failed on channel 0](https://www.reddit.com/r/aws/comments/fg9nmi/aws_ec2_shell_request_failed_on_channel_0/)
-- url: https://www.reddit.com/r/aws/comments/fg9nmi/aws_ec2_shell_request_failed_on_channel_0/
----
-Previously i can easily access my EC2 instance but now i get this message over and over again and i can't access it anymore.
-
-`shell request failed on channel 0`
-## [5][Benchmarking the AWS Graviton2 with KeyDB – M6g up to 65% faster](https://www.reddit.com/r/aws/comments/ffupap/benchmarking_the_aws_graviton2_with_keydb_m6g_up/)
-- url: https://docs.keydb.dev/blog/2020/03/02/blog-post/
+## [1][Amazon EKS now supports Kubernetes 1.15](https://www.reddit.com/r/aws/comments/fgo244/amazon_eks_now_supports_kubernetes_115/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-now-supports-kubernetes-version-1-15/
 ---
 
-## [6][I have a simple WordPress.org blog — should I continue using regular webhosting services (using iPage currently) or switch to AWS? I'm looking for the cheapest option.](https://www.reddit.com/r/aws/comments/ffv4dy/i_have_a_simple_wordpressorg_blog_should_i/)
-- url: https://www.reddit.com/r/aws/comments/ffv4dy/i_have_a_simple_wordpressorg_blog_should_i/
+## [2][New AWS OS for running containers](https://www.reddit.com/r/aws/comments/fgnhjd/new_aws_os_for_running_containers/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/03/announcing-bottlerocket-a-new-open-source-linux-based-operating-system-optimized-to-run-containers/
 ---
-I'm paying 7.99 - 9.99USD monthly.
 
-Also, what is the estimated price per month if I were to go with AWS? Expected visitors per month are no more than 5k. As for storage I can go with 100MB. Because I can upload media on Imgur and other services. So that's not a huge deal. I mostly want the cheapest option possible.
-
-And I already have a domain on namesilo so don't count that. It will be linked to AWS if that's what you guys are recommending.
-
-Thank you.
-
-UPDATE: Thank you guys. Honestly overwhelmingly great responses. I can't reply to everyone but I appreciate all your inputs.
-
-I have several options now:
-
-1. Amazon's LightSail.
-2. A static website that scrapes the content from an offline (on my PC) server. This one is particularly great because it can be hosted free of charge.
-3. And DigitalOcean.
-
-These are all great suggestions and I'll probably try them all and see which method/service provider suits me the most.
-## [7][Massive siteground account to AWS?](https://www.reddit.com/r/aws/comments/fg1wsb/massive_siteground_account_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/fg1wsb/massive_siteground_account_to_aws/
+## [3][How to download files from S3 with Lambda?](https://www.reddit.com/r/aws/comments/fguobe/how_to_download_files_from_s3_with_lambda/)
+- url: https://www.reddit.com/r/aws/comments/fguobe/how_to_download_files_from_s3_with_lambda/
 ---
-Hello, I currently have a large Siteground account with 100+ wordpress sites. It works pretty well, but the cost is very high. 
-Is AWS or lightsail worth looking into? 
-My servers stats are:
-4 CPU cores centOS
-10 gb ram
-130 gb ssd storage 
-I need to upgrade the ram, so I want to explore other options first. 
-Any thoughts?
-## [8][Best practices for api logging with ALB and lambda](https://www.reddit.com/r/aws/comments/ffxq3t/best_practices_for_api_logging_with_alb_and_lambda/)
-- url: https://www.reddit.com/r/aws/comments/ffxq3t/best_practices_for_api_logging_with_alb_and_lambda/
+I want to grant users access to some PDF files stored in a private S3 bucket. Upon request of the file I call a Lambda function that checks whether they're allowed to access the file (e.g. they can't have it if they're over 18 or if their name starts with an A - those are just dumb examples of the pre-access checks I do). I wanted to use this Lambda to also get the file from the bucket and return it in the response but I don't think I can given the body payload limit of 6MB.I read about pre-signed URLs but what bothers me is that anyone with the link can access the file, granted they do it before it expires.Is there a way to download my S3 files and return them within the Lambda function? If not, is there another way to do so that would guarantee the download link cannot be shared?
+## [4][Control your AWS Lambda with Provisioned Concurrency](https://www.reddit.com/r/aws/comments/fgvrgv/control_your_aws_lambda_with_provisioned/)
+- url: https://epsagon.com/blog/development/control-your-aws-lambda-with-provisioned-concurrency/
 ---
-Hi everyone,
-I have a lambda function (a fat one) behind an ALB for a public API. I'm looking for an efficient way of sending custom logs to my rds (postgres) instance. Ideally O would like to go for a serverless/cheap solution (so dynamodb is a no).
-The problem is that for my use case api latency is a real issue, it's unacceptable for it to go over 60-70ms. 
-I've tried sending them to SQS and Kinesis, but sometimes it takes over 100ms just to send the events (there could be multiple events per request).
-Currently I'm lookong into sendong them to redis (using oub/sub) and having another lambda run every minute or so to get that data and send it to rds.
 
-Does anyone have a better way of doing this? Oe do you think this idea makes sense?
-## [9][Average Cloud Support Engineer Salary in Oregon, Portland?](https://www.reddit.com/r/aws/comments/fg8edk/average_cloud_support_engineer_salary_in_oregon/)
-- url: https://www.reddit.com/r/aws/comments/fg8edk/average_cloud_support_engineer_salary_in_oregon/
+## [5][AWS Summit San Francisco 2020 Cancelled](https://www.reddit.com/r/aws/comments/fgmzqw/aws_summit_san_francisco_2020_cancelled/)
+- url: https://www.reddit.com/r/aws/comments/fgmzqw/aws_summit_san_francisco_2020_cancelled/
 ---
-I'm getting an offer for working as an Cloud Support Engineer for Amazon in Portland and I cannot find enough salaries online to justify a reasonable price.
+Just got the email today. 
+ 
 
-Anyone here work in Amazon Cloud or knows someone and can think of a good salary range to negotiate for in the city of Portland?
+Important Event Update
 
-Note: it isn't about experience and other factors \*on the topic of salary\*, They're simply looking if you have the skills for it or not. 20 years or 5 years, do not matter for this one. The initial 'entry' salary is claimed to be relatively the same from the recruiter's knowledge.
+Our top priority is the well-being of our customers, partners, and employees. After careful review of the current situation with COVID-19 in San Francisco and listening to the guidance provided by the local authorities, Amazon Web Services has made the decision to cancel the AWS Summit San Francisco 2020, which was scheduled for April 14 at the Moscone Center. If you booked a hotel reservation through the AWS Summit room block at the Marriott Marquis San Francisco you will need to take action to cancel it to avoid charges. You can do this via the confirmation email you received from Marriott Marquis San Francisco or by calling them directly at 1-877-622-3056.
 
-I have 0 experience with AWS Cloud. Only 2 years of Azure and a history of Help desk / Entry Sys Admin work for 6 years.
-
-\- Or am I being mislead??
-
-I'm from a low CoL state in the south so I have no clue what's a good number to make up for those strenuous gas prices and rent up in the west
-## [10][Need to track downloads on S3](https://www.reddit.com/r/aws/comments/fg355n/need_to_track_downloads_on_s3/)
-- url: https://www.reddit.com/r/aws/comments/fg355n/need_to_track_downloads_on_s3/
+We are reimagining the AWS Summit San Francisco to be a fully digital experience in May. In this new format, you can still hear about exciting new product announcements from AWS leaders, dive into educational and technical content, and engage with AWS experts. More information will be released in the coming weeks.
+## [6][AWS Lambda and Node.js 12: Support and Benchmark](https://www.reddit.com/r/aws/comments/fgx209/aws_lambda_and_nodejs_12_support_and_benchmark/)
+- url: https://epsagon.com/blog/aws-lambda-and-node-js-12-support-and-benchmark/
 ---
- My boss wants me to find a way to track client downloads. We host client data on S3 (our servers are on AWS). There's no native way to do this, it seems. I found an app called S3Stat. Anybody ever use it or have other (simple, extremely user friendly) suggestions?
+
+## [7][AWS S3 bucket storage type and sync](https://www.reddit.com/r/aws/comments/fguafp/aws_s3_bucket_storage_type_and_sync/)
+- url: https://www.reddit.com/r/aws/comments/fguafp/aws_s3_bucket_storage_type_and_sync/
+---
+I'm using CLI to sync assets over from one bucket to another (back up in different region) . The main bucket has Intelligent Tiering and the back up has Standard-IA.
+
+When I run a sync between the 2 buckets, the assets appearing in the backup bucket are appearing as standard storage class rather than standard-IA.
+
+Why's this?
+## [8][AWS CloudWatch - Part 1/3: Logs and Insights](https://www.reddit.com/r/aws/comments/fgwk7o/aws_cloudwatch_part_13_logs_and_insights/)
+- url: https://epsagon.com/blog/aws-cloudwatch-logs-and-insights/
+---
+
+## [9][AppSpec.yml not found issue when deploying to Windows EC2 from CodeDeploy](https://www.reddit.com/r/aws/comments/fgvb2g/appspecyml_not_found_issue_when_deploying_to/)
+- url: https://www.reddit.com/r/aws/comments/fgvb2g/appspecyml_not_found_issue_when_deploying_to/
+---
+Hi,
+
+I've had this running months ago, so I know it works, but have created a new EC2 instance to deploy my code and stuck at the first hurdle.
+
+My Deployment Details runs as follows:
+
+* Application Stop - succeeded
+* Download Bundle - succeeded
+* BeforeInstall - Failed
+
+Upon looking at the failed event, I get:
+
+&gt; The CodeDeploy agent did not find an AppSpec file within the unpacked revision directory at revision-relative path "appspec.yml". The revision was unpacked to directory "C:\\ProgramData/Amazon/CodeDeploy/57f7ec1b-0452-444e-840c-4deb4566e82d/d-WH9HTZAW0/deployment-archive", and the AppSpec file was expected but not found at path "C:\\ProgramData/Amazon/CodeDeploy/57f7ec1b-0452-444e-840c-4deb4566e82d/d-WH9HTZAW0/deployment-archive/appspec.yml". Consult the AWS CodeDeploy Appspec documentation for more information at http://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html 
+
+Thing is, if I jump onto my EC2 and copy and paste the full path, sure enough I see the YML file, along with the files that were in a ZIP file within my S3 bucket, so they've been successfully sent to the EC2 and unzipped.
+
+So I'm sure it's not a permissions things, the connection is being clearly made, and the S3 Bucket, CodeDeploy and my EC2 are all happy.
+
+I read somewhere about changing the AppSpec.yml file to "appspec.yml", "AppSpec.yaml", "appspec.yaml", and still nothing works.
+
+Anything obvious to try out?
+## [10][Permissions Needed For Waiter In Lambda?](https://www.reddit.com/r/aws/comments/fgv9v5/permissions_needed_for_waiter_in_lambda/)
+- url: https://www.reddit.com/r/aws/comments/fgv9v5/permissions_needed_for_waiter_in_lambda/
+---
+I'm in the middle of migrating a Python3 lambda from a fairly unrestrictive account, to a more restricted account.  I'm running into an issue where my code:
+
+```python
+s3Waiter = s3Conn.get_waiter( 'object_exists' )
+```
+
+Triggers an exception in the restricted account:
+
+```python
+[ERROR] WaiterError: Waiter ObjectExists failed: Forbidden
+Traceback (most recent call last):
+  File "/var/task/lambda_function.py", line 165, in lambda_handler
+    s3Waiter.wait( Bucket = s3Bucket, Key = s3Key )
+  File "/var/runtime/botocore/waiter.py", line 53, in wait
+    Waiter.wait(self, **kwargs)
+  File "/var/runtime/botocore/waiter.py", line 310, in wait
+    raise WaiterError(
+```
+
+Are there any resources that detail what permissions are required for such actions?

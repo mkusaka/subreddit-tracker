@@ -57,45 +57,31 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Fast float parsing in practice](https://www.reddit.com/r/cpp/comments/fgcufa/fast_float_parsing_in_practice/)
+## [2][PythonFMU or how to call Python from C++](https://www.reddit.com/r/cpp/comments/fgthet/pythonfmu_or_how_to_call_python_from_c/)
+- url: https://www.reddit.com/r/cpp/comments/fgthet/pythonfmu_or_how_to_call_python_from_c/
+---
+Wanted to share a library I co-wrote for exporting co-simulation models written in Python that is compatible with FMI 2.0.  [https://github.com/NTNU-IHB/PythonFMU](https://github.com/NTNU-IHB/PythonFMU)
+
+The reason I share it in the cpp sub is that it is a nice example of how Python can be embedded from C++. See  [https://github.com/NTNU-IHB/PythonFMU/tree/master/pythonfmu/pythonfmu-export](https://github.com/NTNU-IHB/PythonFMU/tree/master/pythonfmu/pythonfmu-export) and especially  [https://github.com/NTNU-IHB/PythonFMU/blob/master/pythonfmu/pythonfmu-export/cpp/PySlaveInstance.cpp](https://github.com/NTNU-IHB/PythonFMU/blob/master/pythonfmu/pythonfmu-export/cpp/PySlaveInstance.cpp)
+## [3][I wrote a 3D math library for games](https://www.reddit.com/r/cpp/comments/fgmj30/i_wrote_a_3d_math_library_for_games/)
+- url: https://www.reddit.com/r/cpp/comments/fgmj30/i_wrote_a_3d_math_library_for_games/
+---
+Hi everyone,
+
+A while ago, I was looking for a math lib for game dev that supports my math conventions, all the features I need, and has a good syntax. I had problems with all of the existing libs, so I made my own. I also tried to solve other peoples' similar problems by making the library highly configurable with templates, so hopefully it supports your conventions and features as well.
+
+I'm sharing this library in the hopes that it will be useful for your project. If you want to get into template meta-programming and modern C++, the source code may also be interesting to browse.
+
+Let me know what you think: [https://github.com/petiaccja/Mathter](https://github.com/petiaccja/Mathter)
+## [4][Is my textbook outdated?](https://www.reddit.com/r/cpp/comments/fgwxo8/is_my_textbook_outdated/)
+- url: https://www.reddit.com/r/cpp/comments/fgwxo8/is_my_textbook_outdated/
+---
+I’m currently trying to learn C++ and found a textbook laying around that was written in 1998. Has the language changed a lot since then? Is this too outdated?
+## [5][Fast float parsing in practice](https://www.reddit.com/r/cpp/comments/fgcufa/fast_float_parsing_in_practice/)
 - url: https://lemire.me/blog/2020/03/10/fast-float-parsing-in-practice/
 ---
 
-## [3][(Yet another) C++17 Signal-Slots (First Part)](https://www.reddit.com/r/cpp/comments/ffzp4o/yet_another_c17_signalslots_first_part/)
-- url: https://dreamdota.com/c-17-signals/
----
-
-## [4][Quick object instantiation question](https://www.reddit.com/r/cpp/comments/fgcy9c/quick_object_instantiation_question/)
-- url: https://www.reddit.com/r/cpp/comments/fgcy9c/quick_object_instantiation_question/
----
-Hi guys. I have been coding for a few months now, and I have a quick question about object instantiation.
-
-&amp;#x200B;
-
-I am using a class called cv::namedWindow, and in order to use it, I do not supply a name for the instantiated object. instead, I just pass values in to the constructor. This is weird. Have I instantiated the object or not and where does it exist in memory?
-
-&amp;#x200B;
-
-Eg.
-
-cv::namedWindow("myWindow", cv::WINDOW\_NORMAL);
-
-See, I havent supplied the name to the object, so how I am I to use this object later on?
-## [5][Why does including existing libraries (e.g. fmt, ranges, etc.) into the standard matter?](https://www.reddit.com/r/cpp/comments/fg2kvq/why_does_including_existing_libraries_eg_fmt/)
-- url: https://www.reddit.com/r/cpp/comments/fg2kvq/why_does_including_existing_libraries_eg_fmt/
----
-After seeing all the excitement from people about upcoming changes to c++20 with the std::format and std::ranges, I'm a bit confused. The libraries exist already and you could make use of them before, yet people put a lot of effort and time into writing the technical specifications and proposals to include them into the std. I've seen Eric Niebler talking about including ranges in standard in 2015 and it only made its way in c++20.
-
-Is it done to make the compiler developers work on supporting them, therefore making it more stable, or to increase awareness that such libraries exist? I'm just curious as I feel like missing a big part of reasoning)
-## [6][Bool in C++](https://www.reddit.com/r/cpp/comments/fgdnuh/bool_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/fgdnuh/bool_in_c/
----
-I'm going through PPP by Bjarne Stroustrup when I came across this line:
-
-bool c = "fool"&lt;s;
-
-I have two questions, how does bool process string inputs and what does the "&lt;s" do?
-## [7][How would passing non-trivial types in registers preserve semantics?](https://www.reddit.com/r/cpp/comments/fgdcs9/how_would_passing_nontrivial_types_in_registers/)
+## [6][How would passing non-trivial types in registers preserve semantics?](https://www.reddit.com/r/cpp/comments/fgdcs9/how_would_passing_nontrivial_types_in_registers/)
 - url: https://www.reddit.com/r/cpp/comments/fgdcs9/how_would_passing_nontrivial_types_in_registers/
 ---
 Many recent posts in this subreddit about breaking ABI compatibility mention the ability to pass `unique_ptr` in a register as one of the potential benefits. While I agree this would be beneficial, I wonder how it can be done while preserving the following fundamental properties of objects:
@@ -113,31 +99,25 @@ The calls to `a()`, `b()`, and `c()` are indeterminately sequenced, but the temp
 I was also taught that, in general, the address of an object uniquely identifies that object (modulo base classes, first members, or objects that provide storage for other objects). In particular, if for some non-trivial type a constructor runs with `this` = some address, I can expect the destructor to eventually run with the same `this`. If we allow passing non-trivial objects through registers, how will this property be preserved?
 
 I'm aware of one situation where the above is not the case - the proposed `[[trivially_relocatable]]` attribute. `unique_ptr` and even `shared_ptr` would benefit greatly from it, and its use "answers" my concerns. But will the imagined future ABI that allows passing non-trivial types in registers only allow it for types that opt in to this attribute?
-## [8][Differences between std::string_view and std::span](https://www.reddit.com/r/cpp/comments/fg79hm/differences_between_stdstring_view_and_stdspan/)
+## [7][(Yet another) C++17 Signal-Slots (First Part)](https://www.reddit.com/r/cpp/comments/ffzp4o/yet_another_c17_signalslots_first_part/)
+- url: https://dreamdota.com/c-17-signals/
+---
+
+## [8][Application of Amdahl theorem in Pelagia](https://www.reddit.com/r/cpp/comments/fgmuik/application_of_amdahl_theorem_in_pelagia/)
+- url: https://surparallel.org/application_of_amdahl_theorem_in_pelagia.html
+---
+
+## [9][Differences between std::string_view and std::span](https://www.reddit.com/r/cpp/comments/fg79hm/differences_between_stdstring_view_and_stdspan/)
 - url: https://www.nextptr.com/question/qa1344313286/differences-between-stdstring_view-and-stdspan
 ---
 
-## [9][How to remove cplusplus.com from Google search results?](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/)
-- url: https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/
+## [10][Why does including existing libraries (e.g. fmt, ranges, etc.) into the standard matter?](https://www.reddit.com/r/cpp/comments/fg2kvq/why_does_including_existing_libraries_eg_fmt/)
+- url: https://www.reddit.com/r/cpp/comments/fg2kvq/why_does_including_existing_libraries_eg_fmt/
 ---
-it even \*pretends\* to be cppreference, that's how bad it is! &lt;/rant&gt;
+After seeing all the excitement from people about upcoming changes to c++20 with the std::format and std::ranges, I'm a bit confused. The libraries exist already and you could make use of them before, yet people put a lot of effort and time into writing the technical specifications and proposals to include them into the std. I've seen Eric Niebler talking about including ranges in standard in 2015 and it only made its way in c++20.
 
-Edit: answer in comments, works for Firefox which I happen to use: [https://www.reddit.com/r/cpp/comments/ffpd1s/how\_to\_remove\_cpluspluscom\_from\_google\_search/fk00gpl?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/fk00gpl?utm_source=share&amp;utm_medium=web2x)
-
-Edit2: personal block list [https://www.reddit.com/r/cpp/comments/ffpd1s/how\_to\_remove\_cpluspluscom\_from\_google\_search/fk00noj?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/fk00noj?utm_source=share&amp;utm_medium=web2x)
-
-edit3: how to improve the proper reference: [https://www.reddit.com/r/cpp/comments/ffpd1s/how\_to\_remove\_cpluspluscom\_from\_google\_search/fk06he5?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/cpp/comments/ffpd1s/how_to_remove_cpluspluscom_from_google_search/fk06he5?utm_source=share&amp;utm_medium=web2x)
-## [10][Const collection of unique_ptr, options and design choices](https://www.reddit.com/r/cpp/comments/fg2t6i/const_collection_of_unique_ptr_options_and_design/)
+Is it done to make the compiler developers work on supporting them, therefore making it more stable, or to increase awareness that such libraries exist? I'm just curious as I feel like missing a big part of reasoning)
+## [11][Const collection of unique_ptr, options and design choices](https://www.reddit.com/r/cpp/comments/fg2t6i/const_collection_of_unique_ptr_options_and_design/)
 - url: https://www.bfilipek.com/2020/03/const-collection-of-uniqueptr-options.html
 ---
 
-## [11][Shared General Utilities](https://www.reddit.com/r/cpp/comments/fg0bv9/shared_general_utilities/)
-- url: https://www.reddit.com/r/cpp/comments/fg0bv9/shared_general_utilities/
----
-&gt;Code I never intended to be part of a library is now used by many  applications and in environments I never foresaw. ***A goal for a  programmer has to be to look beyond the product they are shipping and  recognize their obligation to create correct and efficient solutions*** and  understand that their code may well endure, for good or bad.   
-&gt;  
-&gt;\- Sean Parent.
-
-A lot of us have written something particularly useful to our case, which we then generalized to all -or most- uses. The idea of the thread is to share and discuss such code, the sort that would fit in a "GeneralUtilities.h" header with the namespace `gu` .
-
-Code that was sufficiently discussed and is nigh unanimously approved of will be pinned to this post. Better means of saving will be used as needed.

@@ -22,31 +22,57 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Is the TypeScript Playground the best place to learn right now?](https://www.reddit.com/r/typescript/comments/fgd3ax/is_the_typescript_playground_the_best_place_to/)
+## [2][The official Redux+TypeScript template for Create-React-App is now available!](https://www.reddit.com/r/typescript/comments/fgnqpg/the_official_reduxtypescript_template_for/)
+- url: https://github.com/reduxjs/cra-template-redux-typescript/releases/tag/v1.0.0
+---
+
+## [3][React + TypeScript Cheatsheets](https://www.reddit.com/r/typescript/comments/fgi3dv/react_typescript_cheatsheets/)
+- url: https://github.com/typescript-cheatsheets/react-typescript-cheatsheet
+---
+
+## [4][Is the TypeScript Playground the best place to learn right now?](https://www.reddit.com/r/typescript/comments/fgd3ax/is_the_typescript_playground_the_best_place_to/)
 - url: https://www.reddit.com/r/typescript/comments/fgd3ax/is_the_typescript_playground_the_best_place_to/
 ---
 Or are there better resources? I'm a new react developer learning typescript. Suggestions are very much appreciated! TIA!
-## [3][Up-to-date overview of JavaScript and TypeScript tooling](https://www.reddit.com/r/typescript/comments/ffxjhj/uptodate_overview_of_javascript_and_typescript/)
+## [5][How to create a memory leak in Angular](https://www.reddit.com/r/typescript/comments/fglury/how_to_create_a_memory_leak_in_angular/)
+- url: https://medium.com/angular-in-depth/how-to-create-a-memory-leak-in-angular-4c583ad78b8b
+---
+
+## [6][A SQL Playground that executes TS code](https://www.reddit.com/r/typescript/comments/fgbkcq/a_sql_playground_that_executes_ts_code/)
+- url: https://www.reddit.com/r/typescript/comments/fgbkcq/a_sql_playground_that_executes_ts_code/
+---
+Hey, everyone!
+
+I've been working on a compile-time safe SQL query builder/ORM for quite some time now. I **finally** have a Playground that allows you to execute both SQL and **TS** code to interact with a database! This Playground is SQLite3 only but it's a huge milestone for my project.
+
+https://anyhowstep.github.io/tsql-sqlite3-browser/test-playground/public/
+
+Sorry if the sample code on the Playground is contrived! But I swear the library already has a tonne of features!
+
+There isn't documentation yet and I still have stuff to work on before publishing, but I figured I'd put up a link to the Playground, anyway, in case anyone here is interested!
+
+And here are links to other parts of the project,
+
++ https://github.com/AnyhowStep/tsql-sqlite3-browser
++ https://github.com/AnyhowStep/tsql-mysql-5.7
++ https://github.com/AnyhowStep/tsql
+## [7][Up-to-date overview of JavaScript and TypeScript tooling](https://www.reddit.com/r/typescript/comments/ffxjhj/uptodate_overview_of_javascript_and_typescript/)
 - url: https://tooling.js.org/
 ---
 
-## [4][Functional React components with generic props in TypeScript](https://www.reddit.com/r/typescript/comments/ffv4c0/functional_react_components_with_generic_props_in/)
-- url: https://wanago.io/2020/03/09/functional-react-components-with-generic-props-in-typescript/
----
-
-## [5][tsParticles CodePen collection](https://www.reddit.com/r/typescript/comments/fg51rq/tsparticles_codepen_collection/)
-- url: https://codepen.io/collection/DPOage
----
-
-## [6][Understand Evolving any (Effective TypeScript sample item)](https://www.reddit.com/r/typescript/comments/ffxfo4/understand_evolving_any_effective_typescript/)
+## [8][Understand Evolving any (Effective TypeScript sample item)](https://www.reddit.com/r/typescript/comments/ffxfo4/understand_evolving_any_effective_typescript/)
 - url: https://effectivetypescript.com/2020/03/09/evolving-any/
 ---
 
-## [7][Recursive Multi-Threaded Worker Processes in NodeJS](https://www.reddit.com/r/typescript/comments/ffgw9i/recursive_multithreaded_worker_processes_in_nodejs/)
+## [9][tsParticles CodePen collection](https://www.reddit.com/r/typescript/comments/fg51rq/tsparticles_codepen_collection/)
+- url: https://codepen.io/collection/DPOage
+---
+
+## [10][Recursive Multi-Threaded Worker Processes in NodeJS](https://www.reddit.com/r/typescript/comments/ffgw9i/recursive_multithreaded_worker_processes_in_nodejs/)
 - url: https://github.com/sinclairzx81/threadbox
 ---
 
-## [8][Music App with electron and react](https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/)
+## [11][Music App with electron and react](https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/)
 - url: https://www.reddit.com/r/typescript/comments/ff94e4/music_app_with_electron_and_react/
 ---
 I was bored, so I made this music app with the help of `electron` and `react` in typescript.
@@ -78,65 +104,3 @@ PS:
  I use linux so I'm not sure if there will be any bugs in mac or windows
 
 Also you require a Napster API key(for music metadata) and a Google API key(for downloading a video) for proper functionality
-## [9][Using Typescript without Typescript](https://www.reddit.com/r/typescript/comments/fes93e/using_typescript_without_typescript/)
-- url: https://www.dandoescode.com/blog/using-typescript-without-typescript/
----
-
-## [10][Validate function parameters when passed alongside function](https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/)
-- url: https://www.reddit.com/r/typescript/comments/fewodc/validate_function_parameters_when_passed/
----
-Hi, I have a use case where I need to pass a reference to a method and the parameters to call it with at a later point. How do I validate that the parameters are valid upon declaration?
-
-Example of what I need:
-
-```
-interface Foo {
-    method: Function
-    params: /* Parameters of whatever is passed to "method" */
-}
-
-const api = {
-    method: async (a: number, b: string) =&gt; {},
-}
-
-// This should compile
-const foo: Foo = {
-    method: api.method,
-    params: [3, 'baz']
-}
-
-// This should NOT compile
-const bar: Foo = {
-    method: api.method,
-    params: ['wrong', 3]
-}
-```
-## [11][TypeORM relationship - relationships by id ?](https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/)
-- url: https://www.reddit.com/r/typescript/comments/ff0hcr/typeorm_relationship_relationships_by_id/
----
-I've been kinda confused by the relationships as I'm used to save relationship by id, while docs and examples I found suggest to get the entire object and use that instead (Isn't this strange???)
-
-I found this on github addressing this issue ( [https://github.com/typeorm/typeorm/issues/447](https://github.com/typeorm/typeorm/issues/447) ) , where they suggest to use an object with just the id property, but it's from 2017. Is that a good way to do it ? And is it still the only way to do it ? (I find it pretty lame tbh)
-
-    async create( @Body() product: Product) {
-        product.category = &lt;any&gt;{ id: product.category };
-        return { payload: await this.repository.persist(product) };
-    }
-
-Another one suggested to name the column as categoryId and it would work as expected (with id instead of object) but WHY? What does the name have to do with that ??
-
-    @Entity()
-    class Product {
-    
-         @Column({ type: "int", nullable: true })
-         categoryId: number;
-    
-         @ManyToOne(type =&gt; Category)
-         @JoinColumn({ name: "categoryId" })
-         category: Category;
-    
-    }
-
-&amp;#x200B;
-
-I'm just confused, help \^\_\^

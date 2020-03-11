@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Visual Studio Code February 2020](https://www.reddit.com/r/javascript/comments/fg27vn/visual_studio_code_february_2020/)
-- url: https://code.visualstudio.com/updates/v1_43
+## [3][A case for using `void` in modern JavaScript](https://www.reddit.com/r/javascript/comments/fgujar/a_case_for_using_void_in_modern_javascript/)
+- url: https://gist.github.com/slikts/dee3702357765dda3d484d8888d3029e
 ---
 
-## [4][Why Svelte is our choice for a large web project in 2020](https://www.reddit.com/r/javascript/comments/fgcmxo/why_svelte_is_our_choice_for_a_large_web_project/)
+## [4][What PWA Can Do Today, a showcase of what is possible with PWAs today](https://www.reddit.com/r/javascript/comments/fgui8h/what_pwa_can_do_today_a_showcase_of_what_is/)
+- url: https://whatpwacando.today/
+---
+
+## [5][What the Web (and PWAs) can do today. A showcase of web apis and their support / implementation status.](https://www.reddit.com/r/javascript/comments/fgwdbt/what_the_web_and_pwas_can_do_today_a_showcase_of/)
+- url: https://whatwebcando.today/
+---
+
+## [6][Aborting a signal: How to cancel an asynchronous task in JavaScript](https://www.reddit.com/r/javascript/comments/fge8h8/aborting_a_signal_how_to_cancel_an_asynchronous/)
+- url: https://ckeditor.com/blog/Aborting-a-signal-how-to-cancel-an-asynchronous-task-in-JavaScript/
+---
+
+## [7][Why Svelte is our choice for a large web project in 2020](https://www.reddit.com/r/javascript/comments/fgcmxo/why_svelte_is_our_choice_for_a_large_web_project/)
 - url: https://github.com/feltcoop/why-svelte
 ---
 
-## [5][Jsonbox.io V2 – A free HTTP-based JSON storage. Now w/ private box](https://www.reddit.com/r/javascript/comments/fgceov/jsonboxio_v2_a_free_httpbased_json_storage_now_w/)
+## [8][Next.js 9.3 – static site support, 32kb smaller runtime](https://www.reddit.com/r/javascript/comments/fge4wz/nextjs_93_static_site_support_32kb_smaller_runtime/)
+- url: https://nextjs.org/blog/next-9-3
+---
+
+## [9][Jsonbox.io V2 – A free HTTP-based JSON storage. Now w/ private box](https://www.reddit.com/r/javascript/comments/fgceov/jsonboxio_v2_a_free_httpbased_json_storage_now_w/)
 - url: https://jsonbox.io/
 ---
 
-## [6][Class definitions in TypeScript](https://www.reddit.com/r/javascript/comments/fgaxwe/class_definitions_in_typescript/)
-- url: https://2ality.com/2020/03/class-definitions-typescript.html
+## [10][RedwoodJS - Bringing full-stack to the JAMstack (React + GraphQL + Prisma)](https://www.reddit.com/r/javascript/comments/fgl90w/redwoodjs_bringing_fullstack_to_the_jamstack/)
+- url: https://redwoodjs.com/
 ---
 
-## [7][Promisify events](https://www.reddit.com/r/javascript/comments/fgbpgz/promisify_events/)
-- url: https://github.com/sindresorhus/p-event
+## [11][Multi-Threaded Parallelism in NodeJS using Process Recursion](https://www.reddit.com/r/javascript/comments/fgjuvn/multithreaded_parallelism_in_nodejs_using_process/)
+- url: https://github.com/sinclairzx81/threadbox
 ---
 
-## [8][A Javascript framework implementation of "UI Focused State Oriented Architecture" grounded by MVP (Model View Presenter), with micro-frontends support.](https://www.reddit.com/r/javascript/comments/fgc0vy/a_javascript_framework_implementation_of_ui/)
-- url: https://github.com/afsec/cellular-js/
----
-
-## [9][The hidden power of Promise.resolve()](https://www.reddit.com/r/javascript/comments/ffxop1/the_hidden_power_of_promiseresolve/)
-- url: https://codingwithjs.rocks/blog/the-hidden-power-of-promise-resolve
----
-
-## [10][How I made a 3D game in only 2KB of JavaScript](https://www.reddit.com/r/javascript/comments/ffmyfl/how_i_made_a_3d_game_in_only_2kb_of_javascript/)
-- url: http://frankforce.com/?p=7427
----
-
-## [11][[AskJS] Any recommendations on finding sponsors for groundbreaking and very time intensive OSS projects?](https://www.reddit.com/r/javascript/comments/fgagxk/askjs_any_recommendations_on_finding_sponsors_for/)
-- url: https://github.com/neomjs/neo/blob/dev/BACKERS.md
----
-
-## [12][I built a one month Weather tracker based on desired city.](https://www.reddit.com/r/javascript/comments/ffxkx6/i_built_a_one_month_weather_tracker_based_on/)
-- url: https://condescending-kalam-7ab617.netlify.com/
+## [12][Deploy Strapi on DigitalOcean in one-click](https://www.reddit.com/r/javascript/comments/fgv9ru/deploy_strapi_on_digitalocean_in_oneclick/)
+- url: https://strapi.io/blog/deploy-strapi-on-digitalocean-droplet
 ---
 

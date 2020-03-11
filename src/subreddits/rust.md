@@ -23,121 +23,82 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fg0q9l/whats_everyone_working_on_this_week_112020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-11-2020/39269?u=llogiq)!
-## [3][For your consideration: An alternative to the builder pattern, Init Struct Pattern!](https://www.reddit.com/r/rust/comments/fg6vrn/for_your_consideration_an_alternative_to_the/)
-- url: https://xaeroxe.github.io/init-struct-pattern/
+## [3][Bottlerocket, a new Linux-based OS, uses Rust for almost all new components](https://www.reddit.com/r/rust/comments/fgm2st/bottlerocket_a_new_linuxbased_os_uses_rust_for/)
+- url: https://github.com/bottlerocket-os/bottlerocket
 ---
 
-## [4][Cloudsmith releases improved Cargo support](https://www.reddit.com/r/rust/comments/fgbr71/cloudsmith_releases_improved_cargo_support/)
-- url: https://blog.cloudsmith.io/2020/03/09/announcing-native-cargo-uploads-in-cloudsmith/
+## [4][AVRA-RS: Microchip (Atmel) assembler written entirely in Rust](https://www.reddit.com/r/rust/comments/fguvdu/avrars_microchip_atmel_assembler_written_entirely/)
+- url: https://github.com/no111u3/avra-rs
 ---
 
-## [5][Blog post: A C# programmer examines Rust](https://www.reddit.com/r/rust/comments/fg5ble/blog_post_a_c_programmer_examines_rust/)
-- url: https://treit.github.io/programming,/rust,/c%23/2020/03/06/StartingRust.html
+## [5][Impressions of Rust as a Swift Developer: Memory Management](https://www.reddit.com/r/rust/comments/fgue77/impressions_of_rust_as_a_swift_developer_memory/)
+- url: https://blog.spencerkohan.com/impressions-of-rust-as-a-swift-developer-2/
 ---
 
-## [6][Announcing rust-search-extension v0.8! The ultimate search extension for Rust.](https://www.reddit.com/r/rust/comments/fg5wo1/announcing_rustsearchextension_v08_the_ultimate/)
-- url: https://www.reddit.com/r/rust/comments/fg5wo1/announcing_rustsearchextension_v08_the_ultimate/
----
-Hi all!
-
-Near a month ago, I announced **Rust Search Extension** v0.7 here and got more than 200 upvotes! Thank you all!! (In case someone missed it, here is the [original post](https://www.reddit.com/r/rust/comments/eymfxu/announcing_rustsearchextension_v07_search_std/).) 
-
-Today, I'm so happy to announce v0.8 and along with a new slogan: **The Ultimate Search Extension for Rust**! Obviously, we're hoping the extension brings ultimate capability, flexibility, and productivity that every Rustacean could benefit from. 
-
-Here is the basic introduction, let me know what you think! Thank you again!
-
-# All the major features:
-
-* Support search std docs
-* Support search builtin attributes
-* Support search error codes
-* Support search **top 20K** crates **^(\[new\])**
-* Support search official Rust book chapters **^(\[new\])**
-* [Docs.rs](http://docs.rs/) enhancement (display **Feature flags**) **^(\[new\])**
-* Command system **^(\[new\])**
-* Support page down/up easily ^(\[new\])
-* Support open in a new tab by using `Cmd`/`Alt` \+ `Enter` ^(\[new\])
-
-# Support search top 20K crates
-
-We bump the crates index size from top 10K to **top 20K** (more than 35k in total on [crates.io](http://crates.io/)) to help you search crates instantly. You can open the popup page to sync the latest crates index automatically.
-
-What more, you can prefix an `!` (exclamation mark) before the keyword to search crates exclusively, prefix `!!` (double exclamation mark) to open [docs.rs](http://docs.rs/) page instead [crates.io](http://crates.io/) page!
-
-[Prefix !! to open docs.rs page](https://preview.redd.it/m4wdifquzql41.png?width=2058&amp;format=png&amp;auto=webp&amp;s=fd2df82d5a53540d170db31099aadd63de209459)
-
-# Support search official Rust book chapters
-
-You can prefix `%` (percent sign) before the keyword to search all of Rust book chapters on your address bar! The result will show the title of the related page, parent chapter, and grandparent chapter.
-
-[Search official Rust books](https://preview.redd.it/cxymbmi6yql41.png?width=2062&amp;format=png&amp;auto=webp&amp;s=b0af3d42b0e9346229b2b5375e7cda22c0222911)
-
-# [Docs.rs](http://docs.rs/) enhancement (display Feature flags)
-
-[Docs.rs](http://docs.rs/) don't display the crate's feature flags, which is inconvenient. So we fill the gap.
-
-[Display Feature flags on docs.rs](https://preview.redd.it/h0ga65dnyql41.png?width=2068&amp;format=png&amp;auto=webp&amp;s=6a2dd1edaff63a64952f3064b533de54341adf23)
-
-# Command system
-
-The command system brings a handy set of useful and convenient commands to you. Each command starts with a `:` (colon), followed by the name, and function differently in individual. Those commands including but not limited to:
-
-* `:help`  \- Show the help messages.
-* `:yet` \- Show all Are We Yet websites.
-* `:book` \- Show all Rust official books.
-* `:stable` \- Show stable Rust scheduled release date in the next year.
-* `:history` \- Show your local search history
-
-[:yet command](https://preview.redd.it/mtmo5xmzyql41.png?width=2066&amp;format=png&amp;auto=webp&amp;s=0cdb78594e1862f3308d3359fad24148908d0b25)
-
-[:stable command](https://preview.redd.it/b0hmp243zql41.png?width=2058&amp;format=png&amp;auto=webp&amp;s=449f833c43b0539d9498dbae63a38e53219a048e)
-
-# Page down/up easily
-
-You can press `space` after the keyword, then increase or decrease the number of `-` (hyphen) to page down or page up.
-
-[Page down\/up](https://preview.redd.it/0ximu499zql41.png?width=2064&amp;format=png&amp;auto=webp&amp;s=59403cf995a6b0ef82bd89bcc69eb6e396c36538)
-
-The official website [https://rust-search-extension.now.sh](https://rust-search-extension.now.sh/) gives you more details and tips about the extension, welcome to check it out.
-
-## Github
-
-**Rust Search Extension** is open-sourced on Github ([https://github.com/Folyd/rust-search-extension](https://github.com/Folyd/rust-search-extension)), welcome to file issue or PR!
-
-# Installation
-
-* [Chrome Web Store](https://chrome.google.com/webstore/detail/rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh)
-* [Firefox](https://addons.mozilla.org/en-US/firefox/addon/rust-search-extension/)
-## [7][rust-analyzer Changelog #15](https://www.reddit.com/r/rust/comments/ffvszw/rustanalyzer_changelog_15/)
-- url: https://rust-analyzer.github.io/thisweek/2020/03/09/changelog-15.html
+## [6][My exploration of Rust and .NET](https://www.reddit.com/r/rust/comments/fgqz5l/my_exploration_of_rust_and_net/)
+- url: https://ericsink.com/entries/dotnet_rust.html
 ---
 
-## [8][2020 Energy Efficiency across Programming Languages](https://www.reddit.com/r/rust/comments/ffyy31/2020_energy_efficiency_across_programming/)
-- url: https://sites.google.com/view/energy-efficiency-languages/updated-functional-results-2020
+## [7][[talk] Rust NYC: Jon Gjengset - Demystifying unsafe code](https://www.reddit.com/r/rust/comments/fglm6k/talk_rust_nyc_jon_gjengset_demystifying_unsafe/)
+- url: https://www.youtube.com/watch?v=QAz-maaH0KM
 ---
 
-## [9][NATS-WebUI: A web app for NATS Server written with Warp](https://www.reddit.com/r/rust/comments/fgdsyu/natswebui_a_web_app_for_nats_server_written_with/)
-- url: https://github.com/sphqxe/NATS-WebUI
+## [8][Etsy Open-Sources Their Neuro-Evolution Machine Learning System for Search](https://www.reddit.com/r/rust/comments/fgmlwc/etsy_opensources_their_neuroevolution_machine/)
+- url: https://github.com/etsy/Evokit
 ---
 
-## [10][I just now wrote my first Hello World program using Rust. Excited to be a part of this community...](https://www.reddit.com/r/rust/comments/fgb4wj/i_just_now_wrote_my_first_hello_world_program/)
-- url: https://www.reddit.com/r/rust/comments/fgb4wj/i_just_now_wrote_my_first_hello_world_program/
+## [9][Trying to understand &amp;str vs. str, &amp;[T] vs [T], &amp;OsStr vs OsStr](https://www.reddit.com/r/rust/comments/fgpdb0/trying_to_understand_str_vs_str_t_vs_t_osstr_vs/)
+- url: https://www.reddit.com/r/rust/comments/fgpdb0/trying_to_understand_str_vs_str_t_vs_t_osstr_vs/
 ---
-Suggest some beginner-friendly projects too. :)
-## [11][Why are error types so rarely cloneable?](https://www.reddit.com/r/rust/comments/fg5mf7/why_are_error_types_so_rarely_cloneable/)
-- url: https://www.reddit.com/r/rust/comments/fg5mf7/why_are_error_types_so_rarely_cloneable/
+A someone coming from C++-land and working with Rust recently, I'm trying to get a better understanding of how Rust's slices work. With C++, whenever I see a `std::string_view` or `std::span`, I know that there's a struct/class containing a pointer to the beginning of some contiguous sequence and a size. I understand that Rust's `&amp;str` and `&amp;[T]` primitives serve the same purpose.
+
+What (I think) I know: `&amp;str` and `&amp;[T]` (and `&amp;OsStr`, etc.) behave less like "pointers" or "references", despite the `&amp;`, and more like structures holding a reference to the data and the size. The fact that `mem::size_of::&lt;&amp;str&gt;()` is 16 bytes on my system and that the following code:
+
+    let foo = "Hello, world!";
+
+compiles down to:
+
+    example::test:
+            push    rax
+            lea     rax, [rip + .L__unnamed_1]
+            mov     rdi, rax
+            mov     esi, 13
+            ...
+
+when optimizations are disabled seems to confirm this.
+
+What I don't understand is what exactly `str` and `[T]` are. The documentation seems to just gloss over them. What do they represent and how are they laid out in memory? Why aren't `str` and `[T]` themselves the structure that holds the pointer and size?
+
+I'm unable to call `std::mem::size_of::&lt;T&gt;()` on `str` or `[T]` or create variables of those types without hitting compile errors. I know that it's possible to use these types though. Looking at the [`OsStr` implementation](https://github.com/rust-lang/rust/blob/15812785344d913d779d9738fe3cca8de56f71d5/src/libstd/ffi/os_str.rs#L106-L108), it seems to boil down to [a struct holding a `[u8]`](https://github.com/rust-lang/rust/blob/15812785344d913d779d9738fe3cca8de56f71d5/src/libstd/sys_common/os_str_bytes.rs#L27-L29). What does it mean for a struct to contain a `[u8]`?
+
+When I see `&amp;str`, my brain is trying to equate that to `std::string_view *` in C++. I know that's not correct and that it actually behaves like a `std::string_view`. Maybe it'd be more intuitive to me if I knew why the `&amp;` is there and what purpose it serves.
+
+I'd appreciate any pointers (ha!) for better understanding these types!
+## [10][release of crow 0.4.0, a pixel perfect 2D graphics library](https://www.reddit.com/r/rust/comments/fgeoey/release_of_crow_040_a_pixel_perfect_2d_graphics/)
+- url: https://www.reddit.com/r/rust/comments/fgeoey/release_of_crow_040_a_pixel_perfect_2d_graphics/
 ---
-Every time I run into this, like io::Error not being cloneable, I'm confused. Why is this the case? How are people handling errors in an async/threaded environment? I need Clone on basically all of my generics, and so I end up wrapping errors with Arc.
-## [12][Returning "Map" as IntoIter for IntoIterator](https://www.reddit.com/r/rust/comments/fgdp1y/returning_map_as_intoiter_for_intoiterator/)
-- url: https://www.reddit.com/r/rust/comments/fgdp1y/returning_map_as_intoiter_for_intoiterator/
+After publishing version [0.3.0](https://www.reddit.com/r/rust/comments/f2wuwc/i_just_published_crow_03_a_pixel_perfect_2d/), this version of `crow` now supports OpenGL version ~~0.3.3~~ `3.3` and has actually decent errors.
+
+Using it in my WIP showcase game, [akari](https://github.com/lcnr/akari), I am really happy with the current API and will keep working on it in the future.
+
+[CHANGELOG](https://github.com/lcnr/crow/blob/master/CHANGELOG.md)
+## [11][Rust impl (plus Python bindings) of MIDAS Count-Min Sketch based graph anomaly detector](https://www.reddit.com/r/rust/comments/fgshi9/rust_impl_plus_python_bindings_of_midas_countmin/)
+- url: https://www.reddit.com/r/rust/comments/fgshi9/rust_impl_plus_python_bindings_of_midas_countmin/
 ---
-I have a struct with a `Vec` of `nalgebra::Vector3&lt;f32&gt;`. I need to implement IntoIterator for a mutable reference to this struct with the `Item` type being `&amp;mut f32` (aka, flatten into an iterator over `f32`. This can be done pretty easily using flatten and map, but I am not sure how to specify the return type for the map part of the iterator.
+[https://github.com/scooter-dangle/midas\_rs](https://github.com/scooter-dangle/midas_rs)
 
-From my understanding, each function has a unique type. Is there any way to access this specific type (aka, the function returns a `Map` iterator using this exact function)?
+Original implementation: [https://github.com/bhatiasiddharth/MIDAS](https://github.com/bhatiasiddharth/MIDAS)
 
-I can solve this problem with boxing, but I am worried this will lead the iterator to not be inlined and it is used in performance sensitive code. Will llvm still be able to inline?
+Corresponding paper: [https://www.comp.nus.edu.sg/\~sbhatia/assets/pdf/midas.pdf](https://www.comp.nus.edu.sg/~sbhatia/assets/pdf/midas.pdf)
 
-Alternatively, I would be happy to solve this problem using [the type_alias_impl_trait feature](https://github.com/rust-lang/rust/issues/63063),
-but this leads to lifetimes error I think is a compiler bug.
+&amp;#x200B;
 
-I have all three versions of this code in a playground [here](https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=0850edff23378df08da6f4811d0c4b7d)
+A teammate wanted to noodle around with the algorithm described in the paper. The original C++ implementation is already pretty straight-forward (which made the port very easy), but both to be able to understand the workings of the algorithm a little better and to have a version that we'd be more comfortable supporting (since we work primarily in Rust and Python) if anyone on the team wanted to play with it, I ported it to Rust.
+
+I haven't done any benchmarking or extensive tests—will develop further based on interest from the team or external users.
+
+I think the original author will be around here in case anyone has questions about the algorithm itself and how to interpret the outputs.
+## [12][The 2020 RustConf CFP is Now Open!](https://www.reddit.com/r/rust/comments/fgj1u1/the_2020_rustconf_cfp_is_now_open/)
+- url: https://blog.rust-lang.org/2020/03/10/rustconf-cfp.html
+---
+

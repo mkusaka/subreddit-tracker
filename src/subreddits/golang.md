@@ -1,45 +1,48 @@
 # golang
-## [1][Is there free/cheap hosting for Go web applications?](https://www.reddit.com/r/golang/comments/fgvk3z/is_there_freecheap_hosting_for_go_web_applications/)
-- url: https://www.reddit.com/r/golang/comments/fgvk3z/is_there_freecheap_hosting_for_go_web_applications/
----
-I have been working on few web applications in Go but I don't really have the time to find out the "best" places to host my applications. I'd love to know if people here know any.
-## [2][Video: Your first test in Go and taming test tables](https://www.reddit.com/r/golang/comments/fgtz8g/video_your_first_test_in_go_and_taming_test_tables/)
-- url: https://www.youtube.com/watch?v=0Ov3JAYDyhQ
+## [1][Build PWA with Go and WebAssembly](https://www.reddit.com/r/golang/comments/fhaneq/build_pwa_with_go_and_webassembly/)
+- url: https://github.com/maxence-charriere/go-app
 ---
 
-## [3][srv - a simple, secure and modern Go HTTP server to serve static sites, single-page applications or a file with ease](https://www.reddit.com/r/golang/comments/fgjy8w/srv_a_simple_secure_and_modern_go_http_server_to/)
-- url: https://github.com/kevinpollet/srv#readme
+## [2][A short introduction to Rust for programmers familiar with Go](https://www.reddit.com/r/golang/comments/fgy1fo/a_short_introduction_to_rust_for_programmers/)
+- url: https://youtu.be/eQjPvsmfIts
 ---
 
-## [4][Awesomer Go - A searchable, sortable UI for awesome-go, with GitHub metadata (number of watchers, stars, activity).](https://www.reddit.com/r/golang/comments/fgm29v/awesomer_go_a_searchable_sortable_ui_for/)
-- url: https://awesomer-go.pantas.net/
+## [3][Why Struct Type with Interface Type Works](https://www.reddit.com/r/golang/comments/fhg6df/why_struct_type_with_interface_type_works/)
+- url: https://www.reddit.com/r/golang/comments/fhg6df/why_struct_type_with_interface_type_works/
+---
+First, I apologize for the title. I don't even know how to phrase it correctly. 
+
+Here's the [code](https://play.golang.org/p/XpNR8jxwlQk). I don't understand why it works specifically on line 23. Does it mean because responseWriter has http.ResponseWriter in it, it is implementing the io.Writer interface which satisfies fmt.Fprintln?
+
+To me, this [code](https://play.golang.org/p/Kp3qyECTeD-) where responseWriter is an interface type make sense because both (responseWriter and http.ResponseWriter) are the same interface types.
+## [4][A server to make (almost) any Go function into an API with one request](https://www.reddit.com/r/golang/comments/fh6a6m/a_server_to_make_almost_any_go_function_into_an/)
+- url: https://github.com/schollz/faas
 ---
 
-## [5][Dating with Go](https://www.reddit.com/r/golang/comments/fgwiho/dating_with_go/)
-- url: https://0x46.net/thoughts/2020/03/10/time/
+## [5][OAuth2 client and Go · Developer 2.0](https://www.reddit.com/r/golang/comments/fhbykn/oauth2_client_and_go_developer_20/)
+- url: https://developer20.com/oauth2-and-go/?utm_source=reddit&amp;utm_medium=link&amp;utm_campaign=oauth-and-go
 ---
 
-## [6][Codegen for Kubernetes-API-compatible Jsonnet libraries](https://www.reddit.com/r/golang/comments/fgvmw5/codegen_for_kubernetesapicompatible_jsonnet/)
-- url: https://github.com/ksonnet/ksonnet-lib
+## [6][Implementing encryption at rest in Dgraph and Badger](https://www.reddit.com/r/golang/comments/fhevdi/implementing_encryption_at_rest_in_dgraph_and/)
+- url: https://www.reddit.com/r/golang/comments/fhevdi/implementing_encryption_at_rest_in_dgraph_and/
 ---
-
-## [7][Quickly scrape google search results](https://www.reddit.com/r/golang/comments/fgrll6/quickly_scrape_google_search_results/)
-- url: https://github.com/rocketlaunchr/google-search
----
-
-## [8][SFTPGo: a Golang performance story and some questions](https://www.reddit.com/r/golang/comments/fgwyei/sftpgo_a_golang_performance_story_and_some/)
-- url: https://groups.google.com/forum/#!topic/golang-nuts/wLRJHQ9ydrk
----
-
-## [9][Database basics: writing a SQL database from scratch in Go](https://www.reddit.com/r/golang/comments/fgwwlx/database_basics_writing_a_sql_database_from/)
+[https://blog.dgraph.io/post/encryption-at-rest-dgraph-badger/](https://blog.dgraph.io/post/encryption-at-rest-dgraph-badger/)
+## [7][Database basics: writing a SQL database from scratch in Go](https://www.reddit.com/r/golang/comments/fgwwlx/database_basics_writing_a_sql_database_from/)
 - url: http://notes.eatonphil.com/database-basics.html
 ---
 
-## [10][Custom personalized gopher](https://www.reddit.com/r/golang/comments/fgw01x/custom_personalized_gopher/)
-- url: https://www.reddit.com/r/golang/comments/fgw01x/custom_personalized_gopher/
+## [8][uint64 via json becomes different value](https://www.reddit.com/r/golang/comments/fhdvaj/uint64_via_json_becomes_different_value/)
+- url: https://www.reddit.com/r/golang/comments/fhdvaj/uint64_via_json_becomes_different_value/
 ---
-I know of the online gopher creator sites and those are cool, but I want a custom one drawn for me. Anyone have this done or know of a good resource?
+When I put the largest value in (18446744073709551615), and pass it through an unmarshal it becomes a different value. Is this a bug?  
 
-Do I just go to one of the 'hire an artist' sites or is there someone we've identified on these threads who is good?
 
-My ultimate goal is, of course, to turn it into a plushie and post it here. ;)
+[https://goplay.space/#RVDX88h1dQi](https://goplay.space/#RVDX88h1dQi)
+## [9][I made a simple game engine wrapping Ebiten with ECS](https://www.reddit.com/r/golang/comments/fh5yos/i_made_a_simple_game_engine_wrapping_ebiten_with/)
+- url: https://github.com/x-hgg-x/goecsengine
+---
+
+## [10][Is there free/cheap hosting for Go web applications?](https://www.reddit.com/r/golang/comments/fgvk3z/is_there_freecheap_hosting_for_go_web_applications/)
+- url: https://www.reddit.com/r/golang/comments/fgvk3z/is_there_freecheap_hosting_for_go_web_applications/
+---
+I have been working on few web applications in Go but I don't really have the time to find out the "best" places to host my applications. I'd love to know if people here know any.

@@ -1,91 +1,110 @@
 # aws
-## [1][Amazon EKS now supports Kubernetes 1.15](https://www.reddit.com/r/aws/comments/fgo244/amazon_eks_now_supports_kubernetes_115/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-now-supports-kubernetes-version-1-15/
+## [1][I publicly tore an AWS engineer's AWS bill apart to find savings, then shared the story with the world.](https://www.reddit.com/r/aws/comments/fh41zb/i_publicly_tore_an_aws_engineers_aws_bill_apart/)
+- url: https://www.lastweekinaws.com/blog/an-aws-bill-analysis-changelogs-md/
 ---
 
-## [2][New AWS OS for running containers](https://www.reddit.com/r/aws/comments/fgnhjd/new_aws_os_for_running_containers/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/announcing-bottlerocket-a-new-open-source-linux-based-operating-system-optimized-to-run-containers/
+## [2][Amazon Redshift launches pause and resume](https://www.reddit.com/r/aws/comments/fh5dpb/amazon_redshift_launches_pause_and_resume/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-redshift-launches-pause-resume/
 ---
 
-## [3][How to download files from S3 with Lambda?](https://www.reddit.com/r/aws/comments/fguobe/how_to_download_files_from_s3_with_lambda/)
-- url: https://www.reddit.com/r/aws/comments/fguobe/how_to_download_files_from_s3_with_lambda/
+## [3][S3 Replication Time Control pricing??](https://www.reddit.com/r/aws/comments/fhdypa/s3_replication_time_control_pricing/)
+- url: https://www.reddit.com/r/aws/comments/fhdypa/s3_replication_time_control_pricing/
 ---
-I want to grant users access to some PDF files stored in a private S3 bucket. Upon request of the file I call a Lambda function that checks whether they're allowed to access the file (e.g. they can't have it if they're over 18 or if their name starts with an A - those are just dumb examples of the pre-access checks I do). I wanted to use this Lambda to also get the file from the bucket and return it in the response but I don't think I can given the body payload limit of 6MB.I read about pre-signed URLs but what bothers me is that anyone with the link can access the file, granted they do it before it expires.Is there a way to download my S3 files and return them within the Lambda function? If not, is there another way to do so that would guarantee the download link cannot be shared?
-## [4][Control your AWS Lambda with Provisioned Concurrency](https://www.reddit.com/r/aws/comments/fgvrgv/control_your_aws_lambda_with_provisioned/)
-- url: https://epsagon.com/blog/development/control-your-aws-lambda-with-provisioned-concurrency/
+I'm trying to estimate time control fees in advance of enabling it and reviewing my bill later.  Crazy I know...
+
+Here's my example use case: 5,000 objects, 50 GB in total, replicated between two regions, say over 1 month.
+
+From the **S3 replication pricing** section on this link:  [https://aws.amazon.com/s3/pricing/](https://aws.amazon.com/s3/pricing/) 
+
+*"When you use S3 Replication Time Control, you also pay a* ***Replication Time Control Data Transfer fee*** *and* ***S3 Replication Metrics*** *charges that are billed at the same rate as Amazon CloudWatch custom metrics."*
+
+The RTC Data Transfer fee is $0.015 per GB = simple
+
+But how do the S3 Replication Metrics translate to CloudWatch custom metrics?  5,000 custom metrics?
+## [4][Best way to upload REALLY large files to S3 from my web app](https://www.reddit.com/r/aws/comments/fh6zg6/best_way_to_upload_really_large_files_to_s3_from/)
+- url: https://www.reddit.com/r/aws/comments/fh6zg6/best_way_to_upload_really_large_files_to_s3_from/
 ---
+So I have a Django app running on an EC2 instance, with a React front-end, and I'm trying to figure out the best way to upload really large DNA/RNA FASTQ files. I'm fairly new to AWS and it's a bit overwhelming. The file sizes range from a couple of gigs up to 13 GB and users will upload potentially 10-15 of these files at a time. 
 
-## [5][AWS Summit San Francisco 2020 Cancelled](https://www.reddit.com/r/aws/comments/fgmzqw/aws_summit_san_francisco_2020_cancelled/)
-- url: https://www.reddit.com/r/aws/comments/fgmzqw/aws_summit_san_francisco_2020_cancelled/
----
-Just got the email today. 
- 
+First I tried uploading them to my web server sequentially and transferring them to s3 using boto3. That took forever. Now I'm getting a presigned POST request from my server using , returning it to the client, and uploading it directly from the client. That still seems to be pretty slow. It's frustrating that presigned POST requests don't support transfer accelerated endpoints. However, PUT requests do.
 
-Important Event Update
+&amp;#x200B;
 
-Our top priority is the well-being of our customers, partners, and employees. After careful review of the current situation with COVID-19 in San Francisco and listening to the guidance provided by the local authorities, Amazon Web Services has made the decision to cancel the AWS Summit San Francisco 2020, which was scheduled for April 14 at the Moscone Center. If you booked a hotel reservation through the AWS Summit room block at the Marriott Marquis San Francisco you will need to take action to cancel it to avoid charges. You can do this via the confirmation email you received from Marriott Marquis San Francisco or by calling them directly at 1-877-622-3056.
+That brings me to two main questions:
 
-We are reimagining the AWS Summit San Francisco to be a fully digital experience in May. In this new format, you can still hear about exciting new product announcements from AWS leaders, dive into educational and technical content, and engage with AWS experts. More information will be released in the coming weeks.
-## [6][AWS Lambda and Node.js 12: Support and Benchmark](https://www.reddit.com/r/aws/comments/fgx209/aws_lambda_and_nodejs_12_support_and_benchmark/)
-- url: https://epsagon.com/blog/aws-lambda-and-node-js-12-support-and-benchmark/
----
+1. Is the way I'm currently doing this (uploading directly from the client using a multipart POST) the best/fastest way of doing this?
+2. Is a presigned PUT with transfer acceleration faster than a multipart POST? Is it even possible to upload a file with a PUT request to s3? I'm getting mixed messages after scouring the internet a bit. 
 
-## [7][AWS S3 bucket storage type and sync](https://www.reddit.com/r/aws/comments/fguafp/aws_s3_bucket_storage_type_and_sync/)
-- url: https://www.reddit.com/r/aws/comments/fguafp/aws_s3_bucket_storage_type_and_sync/
----
-I'm using CLI to sync assets over from one bucket to another (back up in different region) . The main bucket has Intelligent Tiering and the back up has Standard-IA.
-
-When I run a sync between the 2 buckets, the assets appearing in the backup bucket are appearing as standard storage class rather than standard-IA.
-
-Why's this?
-## [8][AWS CloudWatch - Part 1/3: Logs and Insights](https://www.reddit.com/r/aws/comments/fgwk7o/aws_cloudwatch_part_13_logs_and_insights/)
-- url: https://epsagon.com/blog/aws-cloudwatch-logs-and-insights/
+Thanks for any insight you could provide!
+## [5][Amazon Redshift launches pause and resume](https://www.reddit.com/r/aws/comments/fhd1iq/amazon_redshift_launches_pause_and_resume/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-redshift-launches-pause-resume/
 ---
 
-## [9][AppSpec.yml not found issue when deploying to Windows EC2 from CodeDeploy](https://www.reddit.com/r/aws/comments/fgvb2g/appspecyml_not_found_issue_when_deploying_to/)
-- url: https://www.reddit.com/r/aws/comments/fgvb2g/appspecyml_not_found_issue_when_deploying_to/
+## [6][Using AWS Athena To Convert A CSV File To Parquet](https://www.reddit.com/r/aws/comments/fh3tmp/using_aws_athena_to_convert_a_csv_file_to_parquet/)
+- url: https://www.cloudforecast.io/blog/Athena-to-transform-CSV-to-Parquet/
 ---
-Hi,
 
-I've had this running months ago, so I know it works, but have created a new EC2 instance to deploy my code and stuck at the first hurdle.
-
-My Deployment Details runs as follows:
-
-* Application Stop - succeeded
-* Download Bundle - succeeded
-* BeforeInstall - Failed
-
-Upon looking at the failed event, I get:
-
-&gt; The CodeDeploy agent did not find an AppSpec file within the unpacked revision directory at revision-relative path "appspec.yml". The revision was unpacked to directory "C:\\ProgramData/Amazon/CodeDeploy/57f7ec1b-0452-444e-840c-4deb4566e82d/d-WH9HTZAW0/deployment-archive", and the AppSpec file was expected but not found at path "C:\\ProgramData/Amazon/CodeDeploy/57f7ec1b-0452-444e-840c-4deb4566e82d/d-WH9HTZAW0/deployment-archive/appspec.yml". Consult the AWS CodeDeploy Appspec documentation for more information at http://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html 
-
-Thing is, if I jump onto my EC2 and copy and paste the full path, sure enough I see the YML file, along with the files that were in a ZIP file within my S3 bucket, so they've been successfully sent to the EC2 and unzipped.
-
-So I'm sure it's not a permissions things, the connection is being clearly made, and the S3 Bucket, CodeDeploy and my EC2 are all happy.
-
-I read somewhere about changing the AppSpec.yml file to "appspec.yml", "AppSpec.yaml", "appspec.yaml", and still nothing works.
-
-Anything obvious to try out?
-## [10][Permissions Needed For Waiter In Lambda?](https://www.reddit.com/r/aws/comments/fgv9v5/permissions_needed_for_waiter_in_lambda/)
-- url: https://www.reddit.com/r/aws/comments/fgv9v5/permissions_needed_for_waiter_in_lambda/
+## [7][Need help understanding the "renewal" of RDS Reserved Instances.](https://www.reddit.com/r/aws/comments/fhceul/need_help_understanding_the_renewal_of_rds/)
+- url: https://www.reddit.com/r/aws/comments/fhceul/need_help_understanding_the_renewal_of_rds/
 ---
-I'm in the middle of migrating a Python3 lambda from a fairly unrestrictive account, to a more restricted account.  I'm running into an issue where my code:
+I have 2 RDS on-demand instances (1 micro, 1 large) and 1 reserved instance for the large one.
 
-```python
-s3Waiter = s3Conn.get_waiter( 'object_exists' )
-```
+The RI for the large one will expire on April 5th. While I understand that there are no "auto-renewals" of reserved instances, I'm trying to find out if I can purchase the reserved instance now and have it start only after the current RI expires on April 5th.
 
-Triggers an exception in the restricted account:
+However, what I read online and in this sub-reddit got me confused. It seems to be that if I purchase a new RI now, it will start immediately and apply the RI hours to my micro instance instead of waiting for the old RI to expire.
 
-```python
-[ERROR] WaiterError: Waiter ObjectExists failed: Forbidden
-Traceback (most recent call last):
-  File "/var/task/lambda_function.py", line 165, in lambda_handler
-    s3Waiter.wait( Bucket = s3Bucket, Key = s3Key )
-  File "/var/runtime/botocore/waiter.py", line 53, in wait
-    Waiter.wait(self, **kwargs)
-  File "/var/runtime/botocore/waiter.py", line 310, in wait
-    raise WaiterError(
-```
+If that's the case, then how should I configure the RIs such that it will only start after current RI expire?
 
-Are there any resources that detail what permissions are required for such actions?
+TIA for any assistance.
+## [8][What's the difference between these two policies using NotPrincipal?](https://www.reddit.com/r/aws/comments/fhccmr/whats_the_difference_between_these_two_policies/)
+- url: https://www.reddit.com/r/aws/comments/fhccmr/whats_the_difference_between_these_two_policies/
+---
+ One has Deny and the other has Allow, but how do they both work with NotPrincipal?
+
+    {
+      "Version": "2012-10-17",
+      "Statement": [{
+          "Effect": "Deny",
+          "NotPrincipal": {"AWS": [
+              "arn:aws:iam::123456789012:user/John",
+              "arn:aws:iam::246810121416:user/Mary"
+          ]},
+          "Action": "s3:*",
+          "Resource": [
+              "arn:aws:s3:::BUCKETNAME",
+              "arn:aws:s3:::BUCKETNAME/*"
+          ]
+      }]
+    }
+
+and
+
+    {
+      "Version": "2012-10-17",
+      "Statement": [{
+          "Effect": "Allow",
+          "NotPrincipal": {"AWS": [
+              "arn:aws:iam::123456789012:user/John",
+              "arn:aws:iam::246810121416:user/Mary"
+          ]},
+          "Action": "s3:*",
+          "Resource": [
+              "arn:aws:s3:::BUCKETNAME",
+              "arn:aws:s3:::BUCKETNAME/*"
+          ]
+      }]
+    }
+## [9][is AWS required to tell anyone who asks for; the serial numbers of all servers, switching, routers, etc inside their data centers?](https://www.reddit.com/r/aws/comments/fhdper/is_aws_required_to_tell_anyone_who_asks_for_the/)
+- url: https://www.reddit.com/r/aws/comments/fhdper/is_aws_required_to_tell_anyone_who_asks_for_the/
+---
+is it public information or something that needs to be guarded, protected and encrypted and kept away from everyone.
+## [10][Verifying c5n/m5n/r5n encryption in-transit?](https://www.reddit.com/r/aws/comments/fh7xyc/verifying_c5nm5nr5n_encryption_intransit/)
+- url: https://www.reddit.com/r/aws/comments/fh7xyc/verifying_c5nm5nr5n_encryption_intransit/
+---
+Hey Everyone,
+
+The c5n/m5n/r5n (and a few other) families of instance types support in-transit encryption at the hardware layer according to AWS' documentation: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit
+
+Is there any way to actually verify this is happening? I tried a before/after VPC mirror session when moving from m5 to m5n on 2 instances, but that's not really showing any differences. I assume the encryption is happening at too low of a level that we can't see at the AWS control pane layer, but I'd be curious if anyone has any insight into this.
+
+Thanks!

@@ -23,82 +23,111 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fg0q9l/whats_everyone_working_on_this_week_112020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-11-2020/39269?u=llogiq)!
-## [3][Bottlerocket, a new Linux-based OS, uses Rust for almost all new components](https://www.reddit.com/r/rust/comments/fgm2st/bottlerocket_a_new_linuxbased_os_uses_rust_for/)
-- url: https://github.com/bottlerocket-os/bottlerocket
+## [3][This Week in Rust 329](https://www.reddit.com/r/rust/comments/fhcuec/this_week_in_rust_329/)
+- url: https://this-week-in-rust.org/blog/2020/03/10/this-week-in-rust-329/
 ---
 
-## [4][AVRA-RS: Microchip (Atmel) assembler written entirely in Rust](https://www.reddit.com/r/rust/comments/fguvdu/avrars_microchip_atmel_assembler_written_entirely/)
-- url: https://github.com/no111u3/avra-rs
+## [4][Improving spotify-tui: going async](https://www.reddit.com/r/rust/comments/fheutk/improving_spotifytui_going_async/)
+- url: https://www.reddit.com/r/rust/comments/fheutk/improving_spotifytui_going_async/
+---
+[spotify-tui](https://github.com/Rigellute/spotify-tui) is a terminal client for Spotify written in Rust.
+
+The latest release fixes slow, laggy, or frozen UI experienced by users on slow internet connections.
+
+This fix involved spawning a thread to handle network requests, and sharing state with the main rendering loop using `Arc`, `Mutex` and `sync::channel`.
+
+At the same time, I implemented `async/await` and used `tokio`!
+
+Sharing here in case others face similar challenges in their applications.
+
+If you are interested, you can read more in this [blog post](https://keliris.dev/improving-spotify-tui/).
+
+I would also be interested to hear any thoughts on a better architecture!
+## [5][An interactive cheatsheet tool for the command-line written in Rust](https://www.reddit.com/r/rust/comments/fgzifj/an_interactive_cheatsheet_tool_for_the/)
+- url: https://i.redd.it/nktdx1akh2m41.gif
 ---
 
-## [5][Impressions of Rust as a Swift Developer: Memory Management](https://www.reddit.com/r/rust/comments/fgue77/impressions_of_rust_as_a_swift_developer_memory/)
-- url: https://blog.spencerkohan.com/impressions-of-rust-as-a-swift-developer-2/
+## [6][Guide on how to write (good) documentation for a Rust crate](https://www.reddit.com/r/rust/comments/fhegra/guide_on_how_to_write_good_documentation_for_a/)
+- url: https://blog.guillaume-gomez.fr/articles/2020-03-11+Guide+on+how+to+write+documentation+for+a+Rust+crate
 ---
 
-## [6][My exploration of Rust and .NET](https://www.reddit.com/r/rust/comments/fgqz5l/my_exploration_of_rust_and_net/)
-- url: https://ericsink.com/entries/dotnet_rust.html
+## [7][OBS Studio "focus current window" filter and wrapper in Rust](https://www.reddit.com/r/rust/comments/fheh9u/obs_studio_focus_current_window_filter_and/)
+- url: https://v.redd.it/4wj22pxj28m41
 ---
 
-## [7][[talk] Rust NYC: Jon Gjengset - Demystifying unsafe code](https://www.reddit.com/r/rust/comments/fglm6k/talk_rust_nyc_jon_gjengset_demystifying_unsafe/)
-- url: https://www.youtube.com/watch?v=QAz-maaH0KM
+## [8][Tired of trying to debug mysterious panics? Dump a core file on every panic with this code snippet.](https://www.reddit.com/r/rust/comments/fhc1x2/tired_of_trying_to_debug_mysterious_panics_dump_a/)
+- url: https://gist.github.com/epilys/a6caba03cb02cfd2880fd80755cd08b8
 ---
 
-## [8][Etsy Open-Sources Their Neuro-Evolution Machine Learning System for Search](https://www.reddit.com/r/rust/comments/fgmlwc/etsy_opensources_their_neuroevolution_machine/)
-- url: https://github.com/etsy/Evokit
+## [9][Be friendly :) A short introduction to Rust for programmers familiar with Go](https://www.reddit.com/r/rust/comments/fh8zb4/be_friendly_a_short_introduction_to_rust_for/)
+- url: https://www.reddit.com/r/golang/comments/fgy1fo/a_short_introduction_to_rust_for_programmers/
 ---
 
-## [9][Trying to understand &amp;str vs. str, &amp;[T] vs [T], &amp;OsStr vs OsStr](https://www.reddit.com/r/rust/comments/fgpdb0/trying_to_understand_str_vs_str_t_vs_t_osstr_vs/)
-- url: https://www.reddit.com/r/rust/comments/fgpdb0/trying_to_understand_str_vs_str_t_vs_t_osstr_vs/
+## [10][How to translate this C++ program to Rust?](https://www.reddit.com/r/rust/comments/fhdque/how_to_translate_this_c_program_to_rust/)
+- url: https://www.reddit.com/r/rust/comments/fhdque/how_to_translate_this_c_program_to_rust/
 ---
-A someone coming from C++-land and working with Rust recently, I'm trying to get a better understanding of how Rust's slices work. With C++, whenever I see a `std::string_view` or `std::span`, I know that there's a struct/class containing a pointer to the beginning of some contiguous sequence and a size. I understand that Rust's `&amp;str` and `&amp;[T]` primitives serve the same purpose.
+Hello Rust community!  
 
-What (I think) I know: `&amp;str` and `&amp;[T]` (and `&amp;OsStr`, etc.) behave less like "pointers" or "references", despite the `&amp;`, and more like structures holding a reference to the data and the size. The fact that `mem::size_of::&lt;&amp;str&gt;()` is 16 bytes on my system and that the following code:
+I wrote a tutorial how to create a shared library from Clojure code via GraalVM and how to call this C library from C++. The tutorial is [here](https://github.com/borkdude/sci/blob/master/doc/libsci.md).
 
-    let foo = "Hello, world!";
+Clarification:
 
-compiles down to:
+I'm not looking to do FFI with C++. The only thing I want is to translate this piece of C++ (which interoperates with a C lib) to Rust.
 
-    example::test:
-            push    rax
-            lea     rax, [rip + .L__unnamed_1]
-            mov     rdi, rax
-            mov     esi, 13
-            ...
+The C++ code:
 
-when optimizations are disabled seems to confirm this.
+``` C++
+#include &lt;iostream&gt;
+#include &lt;libsci.h&gt;
 
-What I don't understand is what exactly `str` and `[T]` are. The documentation seems to just gloss over them. What do they represent and how are they laid out in memory? Why aren't `str` and `[T]` themselves the structure that holds the pointer and size?
+int main(int argc, char* argv[]) {
+  graal_isolate_t *isolate = NULL;
+  graal_isolatethread_t *thread = NULL;
 
-I'm unable to call `std::mem::size_of::&lt;T&gt;()` on `str` or `[T]` or create variables of those types without hitting compile errors. I know that it's possible to use these types though. Looking at the [`OsStr` implementation](https://github.com/rust-lang/rust/blob/15812785344d913d779d9738fe3cca8de56f71d5/src/libstd/ffi/os_str.rs#L106-L108), it seems to boil down to [a struct holding a `[u8]`](https://github.com/rust-lang/rust/blob/15812785344d913d779d9738fe3cca8de56f71d5/src/libstd/sys_common/os_str_bytes.rs#L27-L29). What does it mean for a struct to contain a `[u8]`?
+  if (graal_create_isolate(NULL, &amp;isolate, &amp;thread) != 0) {
+    fprintf(stderr, "initialization error\n");
+    return 1;
+  }
 
-When I see `&amp;str`, my brain is trying to equate that to `std::string_view *` in C++. I know that's not correct and that it actually behaves like a `std::string_view`. Maybe it'd be more intuitive to me if I knew why the `&amp;` is there and what purpose it serves.
+  char *result = eval_string((long)thread, &amp;argv[1][0]);
+  std::cout &lt;&lt; result &lt;&lt; std::endl;
+  return 0;
+}
+```
 
-I'd appreciate any pointers (ha!) for better understanding these types!
-## [10][release of crow 0.4.0, a pixel perfect 2D graphics library](https://www.reddit.com/r/rust/comments/fgeoey/release_of_crow_040_a_pixel_perfect_2d_graphics/)
-- url: https://www.reddit.com/r/rust/comments/fgeoey/release_of_crow_040_a_pixel_perfect_2d_graphics/
+I want to translate this code to Rust. I made a start using the `libloading` crate:
+
+``` rust
+extern crate libloading as lib;
+
+fn call_dynamic() -&gt; lib::Result&lt;String&gt; {
+
+    let lib = lib::Library::new("target/libsci.dylib")?;
+    // how do I refer to the C type graal_isolate_t from Rust?
+    let mut foo: *mut graal_isolate_t = std::ptr::null_mut();
+    // same for graal_isolatethread_t
+    let mut bar: *mut graal_isolatethread_t = std::ptr::null_mut();
+
+    unsafe {
+        let func: lib::Symbol&lt;unsafe extern fn(String) -&gt; String&gt; = lib.get(b"eval_string")?;
+        Ok(func(String::from("(+ 1 2 3)")))
+    }
+}
+
+fn main() {
+    println!("{:?}", call_dynamic())
+}
+```
+
+So the first issue I run into is how to access the type `graal_isolate_t` from Rust.
+I suspect the next issue will be how to translate the pointer bits from C++ to Rust.
+
+Your help is welcome.
+## [11][Intro to WebAssembly via Rust](https://www.reddit.com/r/rust/comments/fhdwhy/intro_to_webassembly_via_rust/)
+- url: https://medium.com/@lironhazan/intro-to-webassembly-via-rust-7365464868bf?source=friends_link&amp;sk=80c9fb8994131b711b02577c615a6a38
 ---
-After publishing version [0.3.0](https://www.reddit.com/r/rust/comments/f2wuwc/i_just_published_crow_03_a_pixel_perfect_2d/), this version of `crow` now supports OpenGL version ~~0.3.3~~ `3.3` and has actually decent errors.
 
-Using it in my WIP showcase game, [akari](https://github.com/lcnr/akari), I am really happy with the current API and will keep working on it in the future.
-
-[CHANGELOG](https://github.com/lcnr/crow/blob/master/CHANGELOG.md)
-## [11][Rust impl (plus Python bindings) of MIDAS Count-Min Sketch based graph anomaly detector](https://www.reddit.com/r/rust/comments/fgshi9/rust_impl_plus_python_bindings_of_midas_countmin/)
-- url: https://www.reddit.com/r/rust/comments/fgshi9/rust_impl_plus_python_bindings_of_midas_countmin/
----
-[https://github.com/scooter-dangle/midas\_rs](https://github.com/scooter-dangle/midas_rs)
-
-Original implementation: [https://github.com/bhatiasiddharth/MIDAS](https://github.com/bhatiasiddharth/MIDAS)
-
-Corresponding paper: [https://www.comp.nus.edu.sg/\~sbhatia/assets/pdf/midas.pdf](https://www.comp.nus.edu.sg/~sbhatia/assets/pdf/midas.pdf)
-
-&amp;#x200B;
-
-A teammate wanted to noodle around with the algorithm described in the paper. The original C++ implementation is already pretty straight-forward (which made the port very easy), but both to be able to understand the workings of the algorithm a little better and to have a version that we'd be more comfortable supporting (since we work primarily in Rust and Python) if anyone on the team wanted to play with it, I ported it to Rust.
-
-I haven't done any benchmarking or extensive tests—will develop further based on interest from the team or external users.
-
-I think the original author will be around here in case anyone has questions about the algorithm itself and how to interpret the outputs.
-## [12][The 2020 RustConf CFP is Now Open!](https://www.reddit.com/r/rust/comments/fgj1u1/the_2020_rustconf_cfp_is_now_open/)
-- url: https://blog.rust-lang.org/2020/03/10/rustconf-cfp.html
+## [12][An embedded-hal driver for the PZEM004T energy monitor](https://www.reddit.com/r/rust/comments/fhfwbb/an_embeddedhal_driver_for_the_pzem004t_energy/)
+- url: https://github.com/iostapyshyn/pzem004t
 ---
 

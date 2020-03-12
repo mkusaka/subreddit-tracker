@@ -86,73 +86,73 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][🎉 Announcing React Table v7! 🎉](https://www.reddit.com/r/reactjs/comments/fgjw7u/announcing_react_table_v7/)
-- url: https://github.com/tannerlinsley/react-table/releases/tag/v7.0.0?twitter=20200310
+## [3][react-state-selector released: expressive, type-safe and efficient React global state manager working on top of Immer and reselect.](https://www.reddit.com/r/reactjs/comments/fhb7be/reactstateselector_released_expressive_typesafe/)
+- url: https://github.com/pabloszx/react-state-selector
 ---
 
-## [4][The official Redux+TypeScript template for Create-React-App is now available!](https://www.reddit.com/r/reactjs/comments/fgmydz/the_official_reduxtypescript_template_for/)
-- url: https://github.com/reduxjs/cra-template-redux-typescript/releases/tag/v1.0.0
+## [4][Road to React: The one with Hooks](https://www.reddit.com/r/reactjs/comments/fhfz5u/road_to_react_the_one_with_hooks/)
+- url: https://roadtoreact.com/
 ---
 
-## [5][A React component to compare two images](https://www.reddit.com/r/reactjs/comments/fgg0p7/a_react_component_to_compare_two_images/)
-- url: https://streamable.com/11iyc
+## [5][I created an anonymous chat app using React/Redux/SocketIO](https://www.reddit.com/r/reactjs/comments/fhat5c/i_created_an_anonymous_chat_app_using/)
+- url: https://www.reddit.com/r/reactjs/comments/fhat5c/i_created_an_anonymous_chat_app_using/
+---
+Hello all, 
+
+I wanted to learn more about socketio and some real-time data stuff so I built a chat app.
+
+[https://joinsynapse.com/](https://joinsynapse.com/)
+
+I didn't want to deal with authentication and all that jazz (since I deal with it every day at work) so I thought an anonymous chat app would be really neat. I've added image upload and unread message tracking, as well as some functions to regenerate your current identity. I posted this in [r/webdev](https://www.reddit.com/r/webdev/) over the weekend and got some good feedback. I think it's in a decent spot now.
+## [6][FlowTask - Interactive task board to organize your day on mobile device written in React](https://www.reddit.com/r/reactjs/comments/fhfhwt/flowtask_interactive_task_board_to_organize_your/)
+- url: https://www.reddit.com/r/reactjs/comments/fhfhwt/flowtask_interactive_task_board_to_organize_your/
+---
+Simple yet interactive task board for your mobile browser. Written in **React** using **create-react-app**. [https://github.com/moubi/flow-task#readme](https://github.com/moubi/flow-task#readme)
+
+This is my third app to implemented [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) in and it didn't go without difficulties. The main constraints came from inline edit elements and swiping gestures.
+
+I am looking for help to further develop the project.
+
+If you are interested in working with React or would like to use the app, ping me
+## [7][New Ionic React live code demo and starter apps](https://www.reddit.com/r/reactjs/comments/fgyr52/new_ionic_react_live_code_demo_and_starter_apps/)
+- url: https://ionicframework.com/react
 ---
 
-## [6][What is the difference between const { foo} = props and using props.foo directly?](https://www.reddit.com/r/reactjs/comments/fgvwvj/what_is_the_difference_between_const_foo_props/)
-- url: https://www.reddit.com/r/reactjs/comments/fgvwvj/what_is_the_difference_between_const_foo_props/
+## [8][Do "dependencies" and "devDependencies" matter when using Webpack?](https://www.reddit.com/r/reactjs/comments/fhecm8/do_dependencies_and_devdependencies_matter_when/)
+- url: https://jsramblings.com/do-dependencies-devdependencies-matter-when-using-webpack/
 ---
-As the title says.
 
-I noticed that there are codelines in project that I got that looks like this:
+## [9][Currently looking for a junior React role, may land a Svelte role. Accept?](https://www.reddit.com/r/reactjs/comments/fhbpg7/currently_looking_for_a_junior_react_role_may/)
+- url: https://www.reddit.com/r/reactjs/comments/fhbpg7/currently_looking_for_a_junior_react_role_may/
+---
+Hi people
 
-    export const FooComponent = (props: FooProps) =&gt; {
-      const { id } = props;
-    
-      return (&lt;div&gt;{props.id}&lt;/div&gt;);
-    }
+I have been studying React for a while now and considering my level I feel quite confident. I have also been hunting for a job, and I found one that will use Svelte instead of React. Simple question - do you guys recommend that I take this role? Or keep looking until I find a React role?
 
-What is the difference between:
+Svelte is quite popular and it is growing but using React feels safe seeing as it is backed by a huge company, just like Angular as well.
 
-    export const FooComponent = (props: FooProps) =&gt; {
-      return (&lt;div&gt;{props.id}&lt;/div&gt;);
-    }
+So **TL:DR**, looking for a junior react role, but there is a possible svelte role instead, should I take this?
+## [10][WSYWYG Form editor/creator for Javascript/React](https://www.reddit.com/r/reactjs/comments/fhga65/wsywyg_form_editorcreator_for_javascriptreact/)
+- url: https://www.reddit.com/r/reactjs/comments/fhga65/wsywyg_form_editorcreator_for_javascriptreact/
+---
+I am looking for a graphical form designer, which would support drag n drop of form elements (buttons, label entry areas etc) onto a form. 
 
-This is a redux project so I guess its related to mutability of the vars.
-## [7][Building Secure React Applications](https://www.reddit.com/r/reactjs/comments/fgx0cl/building_secure_react_applications/)
+[example](https://blog.4d.com/wp-content/uploads/2017/10/FormEditor-e1512993913941.png)
+
+When done an export to javascript or React jsx.
+
+Does such a thing exist?
+
+if so, any recommendations?
+
+Thanks in advance!
+## [11][Any new when concurrent will become stable](https://www.reddit.com/r/reactjs/comments/fhg7k5/any_new_when_concurrent_will_become_stable/)
+- url: https://www.reddit.com/r/reactjs/comments/fhg7k5/any_new_when_concurrent_will_become_stable/
+---
+newS :) sorry for typo
+
+Hi all,I have a large project that would really benefit from concurrent but since it's not stable release I can't include it yet.Is there any news recently about getting concurrent mode out in a stable release.Looks like Facebook is slowly rolling out new Facebook design which leads me to think it will be sooner then later.
+## [12][Building Secure React Applications](https://www.reddit.com/r/reactjs/comments/fgx0cl/building_secure_react_applications/)
 - url: https://youtu.be/O91hJJ5KMLs?list=PLEx5khR4g7PKMVeAqZdIHRdOwTM1yktD8
 ---
 
-## [8][Next.js Tutorial - API Routes using SQL Database](https://www.reddit.com/r/reactjs/comments/fguhdy/nextjs_tutorial_api_routes_using_sql_database/)
-- url: https://www.youtube.com/watch?v=PxiQDo0CmDE&amp;feature=share
----
-
-## [9][Learning Jest and TDD Suggestions](https://www.reddit.com/r/reactjs/comments/fgweod/learning_jest_and_tdd_suggestions/)
-- url: https://www.reddit.com/r/reactjs/comments/fgweod/learning_jest_and_tdd_suggestions/
----
-Hey, guys, I'm planning to learn JEST and TDD in React, can you please give any tips and recommendations? I've never written any test and am very new to testing.
-## [10][swyx Writing | React Single File Components Are Here](https://www.reddit.com/r/reactjs/comments/fgqzuw/swyx_writing_react_single_file_components_are_here/)
-- url: https://www.swyx.io/writing/react-sfcs-here
----
-
-## [11][Building a Minesweeper game using React Hooks](https://www.reddit.com/r/reactjs/comments/fgwy71/building_a_minesweeper_game_using_react_hooks/)
-- url: https://www.ivaylopavlov.com/building-a-minesweeper-game-using-react-hooks/#.Xmjg0SWnzDs
----
-
-## [12][Any people here who work with React daily but aren't thrilled by it?](https://www.reddit.com/r/reactjs/comments/fgrflz/any_people_here_who_work_with_react_daily_but/)
-- url: https://www.reddit.com/r/reactjs/comments/fgrflz/any_people_here_who_work_with_react_daily_but/
----
-The title.
-
-So I've picked up React on the job. There are a lot of things which I like in particular. First, very wide ecosystem. Things like material-ui for example really cuts down the development costs and allows to rapidly build decent looking UI's while also providing design guidelines unlike common component libraries.
-
-I particularly like Redux and how it enforces explicit structure. While it can be a bit unwieldy for smaller  tasks, it's godsent when it comes to debugging a complex application.
-
-And I really appreciate JSX. Liked it from day one actually. Although perhaps angular 1.x left a bit of a bitter aftertaste in regards to html directives with fluff syntax on top which pretends to be html, but isn't.
-
-I really like how it doesn't concern itself with classes all that much as a structural unit of code which is very prevalent in programming. IMO, often out of mare habit or syntactic familiarity rather than some pragmatic benefit.
-
-However, having written a few non trivial applications and having one more down the pipelines to come, I'm not exactly thrilled about some of library features. Namely, how it stupidly rerenders everything down the component tree by default having you always explicitly marking not to rerender. Gotcha with PureComponent back in classes, memo everything by default when it comes to functional. Should component update / memo second argument when it comes to functional components on more complex cases. When I feel that the opposite should be true or some kind of reactivity would be more sensible approach.
-
-Hooks feels like an improvement, but ultimately end up like surrogate for actual FRP. Now it's yet too difficult to draw conclusions, the jury is still out of how it will eventually work out. 
-
-What are your gripes with the library you wish it did a bit differently if it could?

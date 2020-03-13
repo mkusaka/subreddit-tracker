@@ -57,21 +57,81 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][Fold Expressions with cout - doubt](https://www.reddit.com/r/cpp/comments/fhfxwr/fold_expressions_with_cout_doubt/)
-- url: https://www.reddit.com/r/cpp/comments/fhfxwr/fold_expressions_with_cout_doubt/
+## [2][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
+- url: http://cppnow.org/announcements/2020/03/Canceled/
 ---
-Why the the atempt to print with a break line using binary fold doesn't work but the second option with unary case it works?
 
-    template&lt;typename... T&gt;
-    void print(T&amp;&amp;... args)
-    {
-            // Binary fold
-    	(cout &lt;&lt; ... &lt;&lt; (args &lt;&lt; '\n')) &lt;&lt; '\n'; // doesn't work
-             
-            // Unary fold
-    	((cout &lt;&lt; args &lt;&lt; '\n'), ...); // prints with break line - Works fine!
-    }
-## [3][Question: Websocket in STL](https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/)
+## [3][What's the reliable and FOSS way to compile C++ code for Windows (on Linux)?](https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/)
+- url: https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/
+---
+I primarily develop my C++ applications (and everything else) on Linux, where there are two extremely good, FOSS, and maintained C++ compilers (GCC and clang).
+
+Unfortunately, enough people use Windows that it's desirable to be able to produce Windows binaries. On windows, Microsoft's MSVC seems to have a similar level of support as GCC and Clang on Linux, but it has other issues. It's not FOSS. It doesn't work on Linux (forcing me to maintain 2 OS's for any sort of automated building). Besides not being FOSS, it has an unfavorable license that forces me to keep track of revenue, and eventually pay them. Perhaps these trade-offs are worth it, but that depends on what alternatives exist.
+
+Clang, being extremely well supported, seems to be working on a Windows mode, but, unfortunately, that doesn't seem to be ready yet and still relies on MSVC's toolchain in key places, creating licensing issues. There may be some way to make it work, but I tried and failed to find it.
+
+Mingw-w64 exists, works great, and has a good license, but, unfortunately, it seems to be not nearly as professionally run as Linux GCC (which has the Free Software Foundation, a serious and respected organization, behind it, and countless multi-billion dollar companies rely on it — it's not going anywhere). As evidence, consider that the Arch Linux packages (in AUR) are a full GCC version behind the native GCC packages, and that [their website](https://mingw-w64.org/doku.php) (for at least a week or so now) has had an expired TLS certificate (despite the fact that this fix can be automated quite easily). It looks like no one is actually putting the time in to maintain it, which makes me very cautious before relying on it in any way, and may make it worth it to pay Microsoft and deal with separate build infrastructure, although, there are even more flaws with that approach (then, anyone else who wants to work with my code needs to do the same, since I need ABI compatibility with 3rd party code in most of my projects).
+
+One glimmer of hope is that the Arch Linux packages (in AUR)'s build scripts seem to pull their code from the main GCC repository. Is the necessary C++ code to build a working MinGW toolchain maintained with the GCC code in its main repository, in such a way that I can presumably learn how to build it whenever I want a maintained MinGw version?
+
+So, how do you all address these concerns in your projects where you need to distribute Windows binaries? Is there a solution that addresses all concerns well?
+## [4][Trip Report: C++ Standards Meeting in Prague, February 2020](https://www.reddit.com/r/cpp/comments/fhkeg3/trip_report_c_standards_meeting_in_prague/)
+- url: https://botondballo.wordpress.com/2020/03/12/trip-report-c-standards-meeting-in-prague-february-2020/
+---
+
+## [5][Creating an intermediate GUI with dear imgui is not that difficult, but offers lots of flexibility that other GUI libraries miss out on.](https://www.reddit.com/r/cpp/comments/fhpm4t/creating_an_intermediate_gui_with_dear_imgui_is/)
+- url: https://ruurdsdevlog.wordpress.com/2020/03/07/c-desktop-application-with-dear-imgui/
+---
+
+## [6][Varna ISO meeting postponed](https://www.reddit.com/r/cpp/comments/fhldku/varna_iso_meeting_postponed/)
+- url: https://www.reddit.com/r/cpp/comments/fhldku/varna_iso_meeting_postponed/
+---
+Via [Bryce Lelbach on Twitter](https://twitter.com/blelbach/status/1238133359043174400).
+
+The ACCU conference due to be held in Bristol, UK later this month [has also been cancelled](https://conference.accu.org/news/2020/202003121205_accu2020cancelled.html).
+
+Update: C++ Now has been [cancelled too](http://cppnow.org/announcements/2020/03/Canceled/)
+## [7][CppCast: PVS-Studio Static Analysis](https://www.reddit.com/r/cpp/comments/fhtjxd/cppcast_pvsstudio_static_analysis/)
+- url: https://cppcast.com/yuri-minaev-static-analysis/
+---
+
+## [8][Make C++ like nowday languages](https://www.reddit.com/r/cpp/comments/fhybk4/make_c_like_nowday_languages/)
+- url: https://www.reddit.com/r/cpp/comments/fhybk4/make_c_like_nowday_languages/
+---
+I'm working on transpiler that make C++ looks modern but not modify to much. Here's my initial thought please suggest or add your ideas.
+
+Sur: Syntactic Sugar for C++
+
+- No more separating headers and sources (Will be generated automatically)
+- Move `c` libraries to a folder and a namespace
+- `enum` always behave like `enum class`
+- Swap `::` with `:`
+- Auto insert `std` when namespace is not given
+- Introduce `newl` as `\n` sugar
+- `'` as equivalent of `"`
+- `\`` as char delimiter
+- ( still bothering my mind ) remove semicolon
+
+```
+include 'iostream';
+include 'string';
+include 'c/stdio';
+
+int main() {
+  :cout &lt;&lt; glm:sin(10f) &lt;&lt; :newl;
+
+  c:printf('%d', 10);
+
+  :string str = 'my string';
+
+  for (auto ch :: str) {
+    :cout &lt;&lt; ch;
+  }
+
+  return 0;
+}
+```
+## [9][Question: Websocket in STL](https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/)
 - url: https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/
 ---
 I've found a number of libraries that do websockets in C++
@@ -85,11 +145,11 @@ I was wondering what people used for this/is there an STL way of doing WebSocket
 The library needs to be permissive (Apache, MIT, BSD) because it's for an open source project.
 
 Edit: I'm consuming a WebSocket API, not creating one.
-## [4][Why there is no wchar_t variant of to_chars and from_chars?](https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/)
+## [10][Why there is no wchar_t variant of to_chars and from_chars?](https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/)
 - url: https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/
 ---
 It is especially painful on Windows where most text is `wchar_t`. `to_chars` and `from_chars` operate on `char*` buffers. But what is `char` anyway? It could be binary blob or it could be text. If it is text, what encoding is it in? It could be ASCII, UTF-8, ANSI (Windows codepage such as cp1250 or Shift-JIS), EBCDIC or something completely different. On some platforms, `char` is 16bits wide. This is bad for inter-compatibility. We already have `char` / `wchar_t` / `char8_t` / `char16_t` / `char32_t` types in Standard and also `std::string` is using them. Is there a reason why `to_chars` and `from_chars` didn't receive a bit of Unicode love? Is there a paper where I can read the rationale why this feature was not included?
-## [5][C++ Benchmark: Timsort vs pdqsort vs quadsort vs std::stable_sort](https://www.reddit.com/r/cpp/comments/fgxfqa/c_benchmark_timsort_vs_pdqsort_vs_quadsort_vs/)
+## [11][C++ Benchmark: Timsort vs pdqsort vs quadsort vs std::stable_sort](https://www.reddit.com/r/cpp/comments/fgxfqa/c_benchmark_timsort_vs_pdqsort_vs_quadsort_vs/)
 - url: https://www.reddit.com/r/cpp/comments/fgxfqa/c_benchmark_timsort_vs_pdqsort_vs_quadsort_vs/
 ---
 [https://rextester.com/QDXH20310](https://rextester.com/QDXH20310)
@@ -160,56 +220,3 @@ timsort source and description:
 pdqsort source and description:
 
 [https://github.com/orlp/pdqsort](https://github.com/orlp/pdqsort)
-## [6][PythonFMU or how to call Python from C++](https://www.reddit.com/r/cpp/comments/fgthet/pythonfmu_or_how_to_call_python_from_c/)
-- url: https://www.reddit.com/r/cpp/comments/fgthet/pythonfmu_or_how_to_call_python_from_c/
----
-Wanted to share a library I co-wrote for exporting co-simulation models written in Python that is compatible with FMI 2.0.  [https://github.com/NTNU-IHB/PythonFMU](https://github.com/NTNU-IHB/PythonFMU)
-
-The reason I share it in the cpp sub is that it is a nice example of how Python can be embedded from C++. See  [https://github.com/NTNU-IHB/PythonFMU/tree/master/pythonfmu/pythonfmu-export](https://github.com/NTNU-IHB/PythonFMU/tree/master/pythonfmu/pythonfmu-export) and especially  [https://github.com/NTNU-IHB/PythonFMU/blob/master/pythonfmu/pythonfmu-export/cpp/PySlaveInstance.cpp](https://github.com/NTNU-IHB/PythonFMU/blob/master/pythonfmu/pythonfmu-export/cpp/PySlaveInstance.cpp)
-## [7][Moving from C to C++](https://www.reddit.com/r/cpp/comments/fhe4oi/moving_from_c_to_c/)
-- url: https://www.reddit.com/r/cpp/comments/fhe4oi/moving_from_c_to_c/
----
-Hello everybody,  
-I'm a university student and I've been working with C for the past 2 years. At this point, I think I have a solid knowledge of C, but nothing super advanced. I've done some basic programming and data structures, also many different functions and algorithms. Right now I want to switch to C++, because I'll have to use it in the next semester, but I want to do some preparation before that. 
-
-My question for you is: How to I make a transition to C++? Are there any good books or tutorials you can recommend? Do you have any tips?
-
-Thanks guys!
-## [8][I wrote a 3D math library for games](https://www.reddit.com/r/cpp/comments/fgmj30/i_wrote_a_3d_math_library_for_games/)
-- url: https://www.reddit.com/r/cpp/comments/fgmj30/i_wrote_a_3d_math_library_for_games/
----
-Hi everyone,
-
-A while ago, I was looking for a math lib for game dev that supports my math conventions, all the features I need, and has a good syntax. I had problems with all of the existing libs, so I made my own. I also tried to solve other peoples' similar problems by making the library highly configurable with templates, so hopefully it supports your conventions and features as well.
-
-I'm sharing this library in the hopes that it will be useful for your project. If you want to get into template meta-programming and modern C++, the source code may also be interesting to browse.
-
-Let me know what you think: [https://github.com/petiaccja/Mathter](https://github.com/petiaccja/Mathter)
-## [9][Fast float parsing in practice](https://www.reddit.com/r/cpp/comments/fgcufa/fast_float_parsing_in_practice/)
-- url: https://lemire.me/blog/2020/03/10/fast-float-parsing-in-practice/
----
-
-## [10][&lt;cuchar&gt; mbrtoc8 c8rtomb](https://www.reddit.com/r/cpp/comments/fgy4da/cuchar_mbrtoc8_c8rtomb/)
-- url: https://www.reddit.com/r/cpp/comments/fgy4da/cuchar_mbrtoc8_c8rtomb/
----
-When will the [full implementation](https://en.cppreference.com/w/cpp/header/cuchar) of \`&lt;cuchar&gt;\` be delivered by all three?
-
-By all three you know who I mean. I am looking at you: clang, gcc and msvc  :)
-## [11][How would passing non-trivial types in registers preserve semantics?](https://www.reddit.com/r/cpp/comments/fgdcs9/how_would_passing_nontrivial_types_in_registers/)
-- url: https://www.reddit.com/r/cpp/comments/fgdcs9/how_would_passing_nontrivial_types_in_registers/
----
-Many recent posts in this subreddit about breaking ABI compatibility mention the ability to pass `unique_ptr` in a register as one of the potential benefits. While I agree this would be beneficial, I wonder how it can be done while preserving the following fundamental properties of objects:
-- Construction / destruction order
-- Object identity
-
-I was taught that, in general, objects are destroyed in the opposite order of creation. This applies to class members, bases, function locals, and most crucially to temporaries.
-
-In the expression:
-   
-    f(a(), b(), c());
-   
-The calls to `a()`, `b()`, and `c()` are indeterminately sequenced, but the temporary values returned live until the call to `f` returns, and then are destroyed in the opposite order. If one of those temporaries is a non-trivial object and is passed through a register, will this continue to be true?
-
-I was also taught that, in general, the address of an object uniquely identifies that object (modulo base classes, first members, or objects that provide storage for other objects). In particular, if for some non-trivial type a constructor runs with `this` = some address, I can expect the destructor to eventually run with the same `this`. If we allow passing non-trivial objects through registers, how will this property be preserved?
-
-I'm aware of one situation where the above is not the case - the proposed `[[trivially_relocatable]]` attribute. `unique_ptr` and even `shared_ptr` would benefit greatly from it, and its use "answers" my concerns. But will the imagined future ABI that allows passing non-trivial types in registers only allow it for types that opt in to this attribute?

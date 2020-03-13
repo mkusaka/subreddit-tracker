@@ -39,25 +39,36 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][An architecture for a chat system that interacts with a telegram bot](https://www.reddit.com/r/rails/comments/fh652g/an_architecture_for_a_chat_system_that_interacts/)
-- url: https://www.reddit.com/r/rails/comments/fh652g/an_architecture_for_a_chat_system_that_interacts/
+## [3][How I can build User invitation system?](https://www.reddit.com/r/rails/comments/fhmmor/how_i_can_build_user_invitation_system/)
+- url: https://www.reddit.com/r/rails/comments/fhmmor/how_i_can_build_user_invitation_system/
 ---
-Hey, guys!
+Totally noob here, 
 
-As you can see in the image, I'm building a chat system (Just me interacting with a telegram bot)
+I am trying to build something similar to project management system. 
 
-Right now my architecture is the following:
+Admin where he can CRUD projects, reports, users. Also, add/invite user to projects (no sign up, I will seed him) 
 
-Conversation(name: string) -&gt; has\_many :messages
+Users can only  CRUD reports and view projects and  that they are added/invited into by admin. 
 
-Message(body: string, conversation\_id: integer) -&gt; belongs\_to :conversation
+I have been looking online for a while, no luck! Most of the  tutorials doesn't help. 
 
-The main problem is saving the telegram bot messages because I need them to appear as history, so I have a few questions
+Can someone please point me to the direction or help me with this.
+## [4][Does Rails auto-load all classes from all Gems?](https://www.reddit.com/r/rails/comments/fhhyz6/does_rails_autoload_all_classes_from_all_gems/)
+- url: https://www.reddit.com/r/rails/comments/fhhyz6/does_rails_autoload_all_classes_from_all_gems/
+---
+Does Rails auto-load all classes from all Gems? So I can reference any class from any Gem's lib folder, and it will work?
+## [5][why is rails more expensive to work with?](https://www.reddit.com/r/rails/comments/fhqtqi/why_is_rails_more_expensive_to_work_with/)
+- url: https://www.reddit.com/r/rails/comments/fhqtqi/why_is_rails_more_expensive_to_work_with/
+---
+why is rails more expensive to work with? when a client starts working with a ruby developer, after once having worked with a php site, they often find
 
-Should I save the bot messages in the database at all? or use the method 'get\_updates' from telegram bot API and make them appear into the chat using the DateTime, for example, to order the messages correctly? I'm still trying to figure the best architecture for this issue
+* ruby developers generally charge more (per hour)
+* (usually) estimates to build a MVP with ruby on rails is higher
 
-https://preview.redd.it/xbkutozoi4m41.png?width=800&amp;format=png&amp;auto=webp&amp;s=c68400833c2835a8ae7d2615427de88ba42cbebe
-## [4][How do I use Devise in normal AND API mode](https://www.reddit.com/r/rails/comments/fgwc24/how_do_i_use_devise_in_normal_and_api_mode/)
+&gt;why is rails more expensive to work with?
+
+More to the point, how does one justify the extra cost?
+## [6][How do I use Devise in normal AND API mode](https://www.reddit.com/r/rails/comments/fgwc24/how_do_i_use_devise_in_normal_and_api_mode/)
 - url: https://www.reddit.com/r/rails/comments/fgwc24/how_do_i_use_devise_in_normal_and_api_mode/
 ---
 Hi guys,  
@@ -66,7 +77,7 @@ So in API I want to return JSON and appropriate HTTP codes. Also I want to issue
 On web I want normal devise functionality.  
 How I should structure controllers, router and other stuff? I cant find any good resources about this.  
 Thank you guys.
-## [5][Devise and Client ID and Secret Key authentication?](https://www.reddit.com/r/rails/comments/fh15pj/devise_and_client_id_and_secret_key_authentication/)
+## [7][Devise and Client ID and Secret Key authentication?](https://www.reddit.com/r/rails/comments/fh15pj/devise_and_client_id_and_secret_key_authentication/)
 - url: https://www.reddit.com/r/rails/comments/fh15pj/devise_and_client_id_and_secret_key_authentication/
 ---
 Hi everyone,
@@ -76,7 +87,7 @@ I currently use Devise for authentication, both by normal rails and JWT auth. I'
 My initial thought is to create a new user role `api` and when the company authenticates via client id and secret to an endpoint, I sign them into the api user and return a JWT.
 
 Am I doing this right?
-## [6][[HELP] Test if a method is called after create/update method on controller](https://www.reddit.com/r/rails/comments/fh0ykp/help_test_if_a_method_is_called_after/)
+## [8][[HELP] Test if a method is called after create/update method on controller](https://www.reddit.com/r/rails/comments/fh0ykp/help_test_if_a_method_is_called_after/)
 - url: https://www.reddit.com/r/rails/comments/fh0ykp/help_test_if_a_method_is_called_after/
 ---
 Hi guys, I have the following controller
@@ -131,7 +142,7 @@ The test would be something like this
 I got the error message: "document ... does not implement: run\_jobs"
 
 That error message is because document is a FactoryBot object, which doesn't correspond to the document object responsible for calling run\_jobs method.
-## [7][Multiple shopping carts for a single user](https://www.reddit.com/r/rails/comments/fgy9kw/multiple_shopping_carts_for_a_single_user/)
+## [9][Multiple shopping carts for a single user](https://www.reddit.com/r/rails/comments/fgy9kw/multiple_shopping_carts_for_a_single_user/)
 - url: https://www.reddit.com/r/rails/comments/fgy9kw/multiple_shopping_carts_for_a_single_user/
 ---
 I'm currently working on an app where you can book beauty and related services. Right now, I'm adding the shopping cart functionality and I'm facing an issue deciding what to do with it.
@@ -145,7 +156,7 @@ I have thought about having a cart with "venue\_id" and "user\_id" created each 
 I think that this approach can solve the issue but I can't avoid to feel it as a hacky solution.
 
 What do you think would the best approach here?
-## [8][Need help designing](https://www.reddit.com/r/rails/comments/fh2sgh/need_help_designing/)
+## [10][Need help designing](https://www.reddit.com/r/rails/comments/fh2sgh/need_help_designing/)
 - url: https://www.reddit.com/r/rails/comments/fh2sgh/need_help_designing/
 ---
 I want to make a web application similar to a ToDo list. Thus, I have two models: projects and tasks. Projects are composed of several tasks, but tasks may be created without belonging to any project.
@@ -153,7 +164,7 @@ I want to make a web application similar to a ToDo list. Thus, I have two models
 I don't know how to implement this association. I think project `has_many` tasks, but tasks don't necessarily `belongs_to` project, because they may be free.
 
 I've tried to implement it with an optional belongs\_to, but when calling `@project.tasks` it throws `NoMethodError`, so I really don't know how to access the tasks belonging to a specific project.
-## [9][Question: Rails 5.2 Testing Javascript and Manipulating the Session](https://www.reddit.com/r/rails/comments/fgmzfk/question_rails_52_testing_javascript_and/)
+## [11][Question: Rails 5.2 Testing Javascript and Manipulating the Session](https://www.reddit.com/r/rails/comments/fgmzfk/question_rails_52_testing_javascript_and/)
 - url: https://www.reddit.com/r/rails/comments/fgmzfk/question_rails_52_testing_javascript_and/
 ---
 Hey everyone,
@@ -170,7 +181,7 @@ I've seen a StackOverflow post where BrowserMob was suggested - but it seems to 
 Any suggestions? I'm probably overlooking something obvious.  The aim is be able to manipulate the HTTP\_REFERRER header in a test to cause the JS to fire and show the modal.
 
 Thanks in advance.
-## [10][Deployment Questions](https://www.reddit.com/r/rails/comments/fgnxqg/deployment_questions/)
+## [12][Deployment Questions](https://www.reddit.com/r/rails/comments/fgnxqg/deployment_questions/)
 - url: https://www.reddit.com/r/rails/comments/fgnxqg/deployment_questions/
 ---
 Hello, I have a few questions about your preferred way to deploy. I typically just launch an EC2, ssh in, configure capistrano, nginx, route 53 &amp; deploy.
@@ -182,23 +193,3 @@ ElastiCache is the price of a small EC2. Using this service could double the bil
 
 
 Regardless, what's your preferred way deploying RoR while not being backed by a corporate budget? Open to exploring other options!
-## [11][Rails with nginx/unicorn - 2gb per process??](https://www.reddit.com/r/rails/comments/fgkwuf/rails_with_nginxunicorn_2gb_per_process/)
-- url: https://www.reddit.com/r/rails/comments/fgkwuf/rails_with_nginxunicorn_2gb_per_process/
----
-Hi all,
-
-My unicorn processes are taking up about 2GB each of memory. The internet tells me this is rather abnormal and high, but I'm not sure what size app people are benchmarking against. 
-
-I have a production consumer web app which does about a million people per month in traffic. My AWS instance is 16gb memory. I have my unicorn config set to `worker_processes 5`. 
-
-When I run a command like `ps -aux --sort -rss | head -n 10` the top six are the unicorn master and 5 workers, each taking up between 2 and 2.5GB of memory. 
-
-I've already gone down several rabbit holes here, but before following any one path I would love to get a sense if this is at all normal for the kind of traffic my website does. 
-
-Thanks!
-## [12][Migrate a Rails Project from Paperclip to ActiveStorage](https://www.reddit.com/r/rails/comments/fgiswf/migrate_a_rails_project_from_paperclip_to/)
-- url: https://www.reddit.com/r/rails/comments/fgiswf/migrate_a_rails_project_from_paperclip_to/
----
-I've recently started a blog and the first article I wrote was based around my experience migrating one of my personal projects from Paperclip to ActiveStorage.  Sharing here in hopes someone finds it useful!
-
-[https://www.kevin-custer.com/blog/migrate-a-rails-project-from-paperclip-to-active-storage/](https://www.kevin-custer.com/blog/migrate-a-rails-project-from-paperclip-to-active-storage/)

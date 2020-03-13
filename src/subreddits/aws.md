@@ -1,110 +1,90 @@
 # aws
-## [1][I publicly tore an AWS engineer's AWS bill apart to find savings, then shared the story with the world.](https://www.reddit.com/r/aws/comments/fh41zb/i_publicly_tore_an_aws_engineers_aws_bill_apart/)
-- url: https://www.lastweekinaws.com/blog/an-aws-bill-analysis-changelogs-md/
+## [1][Howto remove Public Ip of instance created with “Auto-assign Public IP”?](https://www.reddit.com/r/aws/comments/fhy5x7/howto_remove_public_ip_of_instance_created_with/)
+- url: https://www.reddit.com/r/aws/comments/fhy5x7/howto_remove_public_ip_of_instance_created_with/
+---
+I’m bringing env to private but I don’t find a way to remove public IP address of an instance once I had enabled vpn for private access to VPC. 
+
+I’m using default vpc. 
+
+So howto?
+## [2][Building faster, lower cost, better APIs – HTTP APIs now generally available | Amazon Web Services](https://www.reddit.com/r/aws/comments/fhnh0g/building_faster_lower_cost_better_apis_http_apis/)
+- url: https://aws.amazon.com/blogs/compute/building-better-apis-http-apis-now-generally-available/
 ---
 
-## [2][Amazon Redshift launches pause and resume](https://www.reddit.com/r/aws/comments/fh5dpb/amazon_redshift_launches_pause_and_resume/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-redshift-launches-pause-resume/
+## [3][Can a lightsail load balancer handle websocket connections?](https://www.reddit.com/r/aws/comments/fhxg15/can_a_lightsail_load_balancer_handle_websocket/)
+- url: https://www.reddit.com/r/aws/comments/fhxg15/can_a_lightsail_load_balancer_handle_websocket/
 ---
+I have a high bandwidth websocket application that isnt feasible for me to run on ordinary EC2 due to the bandwidth costs being too high - this app does about 15TB per month. 
 
-## [3][S3 Replication Time Control pricing??](https://www.reddit.com/r/aws/comments/fhdypa/s3_replication_time_control_pricing/)
-- url: https://www.reddit.com/r/aws/comments/fhdypa/s3_replication_time_control_pricing/
+I'm looking at Lightsail that seems a good fit - an 8gb node comes with 5TB of traffic, so three of those nodes would sort me out. I understand Lightsail throttles sustained CPU usage but it seems like an 8gb node even if throttled down to 30% will still be fine for me as websockets aren't CPU intensive.
+
+What I need to understand is:
+
+1. Is the lightsail loadbalancer compatible with secure websockets (wss)?
+2. Are there hidden charges I need to worry about? In addition to running Lightsail nodes for the websocket app, the main app itself will be hosted on EC2 nodes as the main app is highly demanding on CPU. Therefore I need the lightsail nodes to be able to access Redis and RDBS - I believe this can be done through the right VPC settings **but does it have charges?**
+3. How much load can the lightsail loadbalance handle? Can lightsail in general handle big production traffic?
+
+Thanks for any help!
+## [4][SSO logs me out too quickly](https://www.reddit.com/r/aws/comments/fhvu1w/sso_logs_me_out_too_quickly/)
+- url: https://www.reddit.com/r/aws/comments/fhvu1w/sso_logs_me_out_too_quickly/
 ---
-I'm trying to estimate time control fees in advance of enabling it and reviewing my bill later.  Crazy I know...
+https://signin.aws.amazon.com keeps me logged in for a day or 12 hours. So SSO feels a little two steps forward, one step back.
 
-Here's my example use case: 5,000 objects, 50 GB in total, replicated between two regions, say over 1 month.
+I'm also a little puzzled how in Firefox I can keep multiple accounts open in one Profile session.
 
-From the **S3 replication pricing** section on this link:  [https://aws.amazon.com/s3/pricing/](https://aws.amazon.com/s3/pricing/) 
-
-*"When you use S3 Replication Time Control, you also pay a* ***Replication Time Control Data Transfer fee*** *and* ***S3 Replication Metrics*** *charges that are billed at the same rate as Amazon CloudWatch custom metrics."*
-
-The RTC Data Transfer fee is $0.015 per GB = simple
-
-But how do the S3 Replication Metrics translate to CloudWatch custom metrics?  5,000 custom metrics?
-## [4][Best way to upload REALLY large files to S3 from my web app](https://www.reddit.com/r/aws/comments/fh6zg6/best_way_to_upload_really_large_files_to_s3_from/)
-- url: https://www.reddit.com/r/aws/comments/fh6zg6/best_way_to_upload_really_large_files_to_s3_from/
+Any tips guys?
+## [5][Donating AWS services to charities?](https://www.reddit.com/r/aws/comments/fhjs7v/donating_aws_services_to_charities/)
+- url: https://www.reddit.com/r/aws/comments/fhjs7v/donating_aws_services_to_charities/
 ---
-So I have a Django app running on an EC2 instance, with a React front-end, and I'm trying to figure out the best way to upload really large DNA/RNA FASTQ files. I'm fairly new to AWS and it's a bit overwhelming. The file sizes range from a couple of gigs up to 13 GB and users will upload potentially 10-15 of these files at a time. 
+I am looking to start giving back to charitable causes. 
 
-First I tried uploading them to my web server sequentially and transferring them to s3 using boto3. That took forever. Now I'm getting a presigned POST request from my server using , returning it to the client, and uploading it directly from the client. That still seems to be pretty slow. It's frustrating that presigned POST requests don't support transfer accelerated endpoints. However, PUT requests do.
-
-&amp;#x200B;
-
-That brings me to two main questions:
-
-1. Is the way I'm currently doing this (uploading directly from the client using a multipart POST) the best/fastest way of doing this?
-2. Is a presigned PUT with transfer acceleration faster than a multipart POST? Is it even possible to upload a file with a PUT request to s3? I'm getting mixed messages after scouring the internet a bit. 
-
-Thanks for any insight you could provide!
-## [5][Amazon Redshift launches pause and resume](https://www.reddit.com/r/aws/comments/fhd1iq/amazon_redshift_launches_pause_and_resume/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-redshift-launches-pause-resume/
+Are there any charities out there that are in need of an IT guy skilled in AWS and cloud services?
+## [6][Internet Lag in AWS WorkSpaces and AppStream](https://www.reddit.com/r/aws/comments/fhtlih/internet_lag_in_aws_workspaces_and_appstream/)
+- url: https://www.reddit.com/r/aws/comments/fhtlih/internet_lag_in_aws_workspaces_and_appstream/
 ---
+I did a survey on our users using WorkSpaces and AppStream. The major concern we received is Internet lag. Some of our users use laptops to do their work and lags when using these services. I notice the same when using laptops, but not on desktops.
 
-## [6][Using AWS Athena To Convert A CSV File To Parquet](https://www.reddit.com/r/aws/comments/fh3tmp/using_aws_athena_to_convert_a_csv_file_to_parquet/)
-- url: https://www.cloudforecast.io/blog/Athena-to-transform-CSV-to-Parquet/
+Is there to mitigate this issue?
+## [7][Bug report: `aws apigateway get-export` sometimes returns reordered items (no harm but noise in Git)](https://www.reddit.com/r/aws/comments/fhu7k6/bug_report_aws_apigateway_getexport_sometimes/)
+- url: https://www.reddit.com/r/aws/comments/fhu7k6/bug_report_aws_apigateway_getexport_sometimes/
 ---
+Good day, I have a file `pull.sh`:
 
-## [7][Need help understanding the "renewal" of RDS Reserved Instances.](https://www.reddit.com/r/aws/comments/fhceul/need_help_understanding_the_renewal_of_rds/)
-- url: https://www.reddit.com/r/aws/comments/fhceul/need_help_understanding_the_renewal_of_rds/
+    AWS_PROFILE=gms-ai \
+        aws apigateway get-export \
+            --rest-api-id xxxxxxxxxx \
+            --stage-name prod \
+            --export-type swagger \
+            --parameters '{"extensions": "integrations,authorizers"}' \
+            --accepts application/yaml \
+            swagger.yaml
+
+And sometimes after executing I see this sad picture from `git diff`:
+
+[Pointless reorder :\(](https://preview.redd.it/4rzjc374ddm41.png?width=1170&amp;format=png&amp;auto=webp&amp;s=e520b21119fb07679c0e2302c7199634ae19760e)
+
+Not mentioning that it is better to see body mapping template in readable/editable form, without  \\n\\n\\n.
+## [8][Can you use AWS Workspaces to reach on premises resources over VPN, not just AD.](https://www.reddit.com/r/aws/comments/fhq0wk/can_you_use_aws_workspaces_to_reach_on_premises/)
+- url: https://www.reddit.com/r/aws/comments/fhq0wk/can_you_use_aws_workspaces_to_reach_on_premises/
 ---
-I have 2 RDS on-demand instances (1 micro, 1 large) and 1 reserved instance for the large one.
-
-The RI for the large one will expire on April 5th. While I understand that there are no "auto-renewals" of reserved instances, I'm trying to find out if I can purchase the reserved instance now and have it start only after the current RI expires on April 5th.
-
-However, what I read online and in this sub-reddit got me confused. It seems to be that if I purchase a new RI now, it will start immediately and apply the RI hours to my micro instance instead of waiting for the old RI to expire.
-
-If that's the case, then how should I configure the RIs such that it will only start after current RI expire?
-
-TIA for any assistance.
-## [8][What's the difference between these two policies using NotPrincipal?](https://www.reddit.com/r/aws/comments/fhccmr/whats_the_difference_between_these_two_policies/)
-- url: https://www.reddit.com/r/aws/comments/fhccmr/whats_the_difference_between_these_two_policies/
+Can AWS workspaces access on-premises resources like file shares etc over Direct connect or VPN? I know it can auth against AD, but what about everything else?
+## [9][Is there a way to customize the lambda by installing required libraries and compilers ?](https://www.reddit.com/r/aws/comments/fhu0my/is_there_a_way_to_customize_the_lambda_by/)
+- url: https://www.reddit.com/r/aws/comments/fhu0my/is_there_a_way_to_customize_the_lambda_by/
 ---
- One has Deny and the other has Allow, but how do they both work with NotPrincipal?
-
-    {
-      "Version": "2012-10-17",
-      "Statement": [{
-          "Effect": "Deny",
-          "NotPrincipal": {"AWS": [
-              "arn:aws:iam::123456789012:user/John",
-              "arn:aws:iam::246810121416:user/Mary"
-          ]},
-          "Action": "s3:*",
-          "Resource": [
-              "arn:aws:s3:::BUCKETNAME",
-              "arn:aws:s3:::BUCKETNAME/*"
-          ]
-      }]
-    }
-
-and
-
-    {
-      "Version": "2012-10-17",
-      "Statement": [{
-          "Effect": "Allow",
-          "NotPrincipal": {"AWS": [
-              "arn:aws:iam::123456789012:user/John",
-              "arn:aws:iam::246810121416:user/Mary"
-          ]},
-          "Action": "s3:*",
-          "Resource": [
-              "arn:aws:s3:::BUCKETNAME",
-              "arn:aws:s3:::BUCKETNAME/*"
-          ]
-      }]
-    }
-## [9][is AWS required to tell anyone who asks for; the serial numbers of all servers, switching, routers, etc inside their data centers?](https://www.reddit.com/r/aws/comments/fhdper/is_aws_required_to_tell_anyone_who_asks_for_the/)
-- url: https://www.reddit.com/r/aws/comments/fhdper/is_aws_required_to_tell_anyone_who_asks_for_the/
+I would like to use Lambda services but my use case need a compiler installed in lambda but i am not sure if its possible.
+## [10][As an Office 365 shop, what are compelling reasons to choose AWS over Azure?](https://www.reddit.com/r/aws/comments/fhlkfr/as_an_office_365_shop_what_are_compelling_reasons/)
+- url: https://www.reddit.com/r/aws/comments/fhlkfr/as_an_office_365_shop_what_are_compelling_reasons/
 ---
-is it public information or something that needs to be guarded, protected and encrypted and kept away from everyone.
-## [10][Verifying c5n/m5n/r5n encryption in-transit?](https://www.reddit.com/r/aws/comments/fh7xyc/verifying_c5nm5nr5n_encryption_intransit/)
-- url: https://www.reddit.com/r/aws/comments/fh7xyc/verifying_c5nm5nr5n_encryption_intransit/
----
-Hey Everyone,
+We have been using O365 for about 1.5 years.  This primarily includes Exchange for email and SharePoint for our intranet and other internal documents.  We are a health care organization and also a Windows shop.
 
-The c5n/m5n/r5n (and a few other) families of instance types support in-transit encryption at the hardware layer according to AWS' documentation: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit
+We use AD Connect to sync our accounts, passwords, and groups to the O365 cloud but still have our 2016 DCs on-prem.  All of our other servers / services / etc. are hosted on-prem using VMWare and Horizon View.  
 
-Is there any way to actually verify this is happening? I tried a before/after VPC mirror session when moving from m5 to m5n on 2 instances, but that's not really showing any differences. I assume the encryption is happening at too low of a level that we can't see at the AWS control pane layer, but I'd be curious if anyone has any insight into this.
+On my own time, I have recently earned 2 AWS certs and have been playing around with AWS for my own side projects and really like it.  I only have just a small bit of experience with Azure.  My experience was not as enjoyable, but I honestly have not spent nearly as much time with Azure as I have with AWS.
 
-Thanks!
+The cost of Office 365 is not a concern as we've been very happy with the results.  Are there any compelling reasons to use AWS vs Azure given our current situation?  If so, I'd love to hear about them, but it seems like future integration with Azure would be easier.  AWS seems like it would be a hard sell to others in our org.
+
+Either way, we would most certainly keep using O365.
+
+Thanks.
+
+**EDIT:** We are not a software company, but rather more akin to a small hospital -- but no overnight stays or surgeries.

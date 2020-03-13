@@ -7,46 +7,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][AnimeJS is a great JavaScript animation library, check my tutorial on how to use it](https://www.reddit.com/r/javascript/comments/fhbakq/animejs_is_a_great_javascript_animation_library/)
-- url: https://developerbacon.ca/articles/how-to-animate-css-and-svg-s-with-anime-js/
+## [2][Dark Reader is now available as a JavaScript library](https://www.reddit.com/r/javascript/comments/fhx5uf/dark_reader_is_now_available_as_a_javascript/)
+- url: https://www.npmjs.com/package/darkreader
 ---
 
-## [3][An ultra-simplified modern compiler, written in easy to read JavaScript](https://www.reddit.com/r/javascript/comments/fhg3r8/an_ultrasimplified_modern_compiler_written_in/)
+## [3][8 New Features Shipping With ES2020](https://www.reddit.com/r/javascript/comments/fhyjij/8_new_features_shipping_with_es2020/)
+- url: https://medium.com/better-programming/8-new-features-shipping-with-es2020-7a2721f710fb
+---
+
+## [4][The getOwnPropertyDescriptors Method in JavaScript](https://www.reddit.com/r/javascript/comments/fhqxj2/the_getownpropertydescriptors_method_in_javascript/)
+- url: https://alligator.io/js/getownpropertydescriptors/
+---
+
+## [5][A tiny (134B) and fast utility to generate random IDs of fixed length](https://www.reddit.com/r/javascript/comments/fhwn7w/a_tiny_134b_and_fast_utility_to_generate_random/)
+- url: https://github.com/lukeed/uid
+---
+
+## [6][React hook for local storage state done right](https://www.reddit.com/r/javascript/comments/fhwtl1/react_hook_for_local_storage_state_done_right/)
+- url: https://github.com/astoilkov/use-local-storage-state
+---
+
+## [7][A 3D ping pong mini game made in Javascript](https://www.reddit.com/r/javascript/comments/fhzjqx/a_3d_ping_pong_mini_game_made_in_javascript/)
+- url: https://codesandbox.io/s/white-resonance-0mgum
+---
+
+## [8][[ react-updates ] Debug redundant re-renders of React components](https://www.reddit.com/r/javascript/comments/fhz1w6/reactupdates_debug_redundant_rerenders_of_react/)
+- url: https://github.com/multum/react-updates
+---
+
+## [9][Awesome list of Pika - Move the web forward](https://www.reddit.com/r/javascript/comments/fhvc76/awesome_list_of_pika_move_the_web_forward/)
+- url: https://github.com/rajasegar/awesome-pika
+---
+
+## [10][An ultra-simplified modern compiler, written in easy to read JavaScript](https://www.reddit.com/r/javascript/comments/fhg3r8/an_ultrasimplified_modern_compiler_written_in/)
 - url: https://github.com/jamiebuilds/the-super-tiny-compiler/
 ---
 
-## [4][The first release of the official Redux+TypeScript template for Create-React-App](https://www.reddit.com/r/javascript/comments/fgxijc/the_first_release_of_the_official_reduxtypescript/)
-- url: https://github.com/reduxjs/cra-template-redux-typescript/releases/tag/v1.0.0
----
-
-## [5][A case for using `void` in modern JavaScript](https://www.reddit.com/r/javascript/comments/fgujar/a_case_for_using_void_in_modern_javascript/)
-- url: https://gist.github.com/slikts/dee3702357765dda3d484d8888d3029e
----
-
-## [6][heMenu - A no-dependency, simple yet effective, multi-level off-canvas menu library.](https://www.reddit.com/r/javascript/comments/fhduib/hemenu_a_nodependency_simple_yet_effective/)
-- url: https://github.com/meceware/heMenu
----
-
-## [7][Create a Modern Vanilla Javascript Router](https://www.reddit.com/r/javascript/comments/fheg02/create_a_modern_vanilla_javascript_router/)
-- url: https://www.hackdoor.io/articles/0XN6jANd/create-a-modern-vanilla-javascript-router
----
-
-## [8][Intercept, debug &amp; rewrite all HTTP(S) from any Electron app](https://www.reddit.com/r/javascript/comments/fh0e38/intercept_debug_rewrite_all_https_from_any/)
-- url: https://httptoolkit.tech/electron/
----
-
-## [9][What PWA Can Do Today, a showcase of what is possible with PWAs today](https://www.reddit.com/r/javascript/comments/fgui8h/what_pwa_can_do_today_a_showcase_of_what_is/)
-- url: https://whatpwacando.today/
----
-
-## [10][[AskJS] Which framework do you hate the most?](https://www.reddit.com/r/javascript/comments/fhecri/askjs_which_framework_do_you_hate_the_most/)
-- url: https://www.reddit.com/r/javascript/comments/fhecri/askjs_which_framework_do_you_hate_the_most/
----
-Not which you like and know best. What you HATE the most.
-
-Try to not repeat the same answer.
-Just upvote other's comments if you felt the same.
-## [11][A Longitudinal Analysis of the ads.txt Standard](https://www.reddit.com/r/javascript/comments/fh6iv6/a_longitudinal_analysis_of_the_adstxt_standard/)
-- url: /user/sajjadium/comments/fdmqdk/a_longitudinal_analysis_of_the_adstxt_standard/
+## [11][AnimeJS is a great JavaScript animation library, check my tutorial on how to use it](https://www.reddit.com/r/javascript/comments/fhbakq/animejs_is_a_great_javascript_animation_library/)
+- url: https://developerbacon.ca/articles/how-to-animate-css-and-svg-s-with-anime-js/
 ---
 

@@ -1,9 +1,63 @@
 # ruby
-## [1][Find why your Ruby app is slow with ruby-prof](https://www.reddit.com/r/ruby/comments/fhcskc/find_why_your_ruby_app_is_slow_with_rubyprof/)
+## [1][Released a string metrics/distance gem written in Rust!](https://www.reddit.com/r/ruby/comments/fhu07l/released_a_string_metricsdistance_gem_written_in/)
+- url: https://github.com/anirbanmu/str_metrics
+---
+
+## [2][i need help for a ruby script that i made](https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/)
+- url: https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/
+---
+ 
+
+its for school and it keeps getting this notice
+
+(repl):24: syntax error, unexpected end-of-input, expecting keyword\_end begginings()             \^
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+this is the code
+
+&amp;#x200B;
+
+def greeting  
+puts "Hello adventurer!  Please type your name: "  
+name = gets  
+puts "\\n" + "It is nice to meet you #{name}"
+
+return name  
+end  
+greeting()  
+def begginings  
+puts "\\n" "you spawn on a mysteriouse island where will you go? 1 for north 2 for east 3 for south 4 for west"  
+direction = gets  
+operation\_selection = gets.to\_i  
+if operation\_selection == 4  
+return "you encounter a pack of wild dogs"  
+else  
+return "you encounter a pack of wild dogs"  
+if operation\_selection == 1  
+return "you find a tree"  
+end  
+end  
+begginings()
+## [3][Announcing RubyGems.org Stats - RubyGems Blog](https://www.reddit.com/r/ruby/comments/fhr6t1/announcing_rubygemsorg_stats_rubygems_blog/)
+- url: https://blog.rubygems.org/2020/03/09/announcing-rubygems-stats.html
+---
+
+## [4][Build a Linux CLI tool like glances in Ruby](https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/
+---
+I was thinking of using ruby to build a CLI tool like the glances or Top commands in linux . Ideally it's just a fun project for myself to learn about how ruby can interact with the system to get info like memory usage and CPU load. What do you guys think of this venture?
+## [5][Cypress vs. Capybara](https://www.reddit.com/r/ruby/comments/fhhd1t/cypress_vs_capybara/)
+- url: https://blog.testdouble.com/talks/2020-03-12-cypress-vs-capybara/
+---
+
+## [6][Find why your Ruby app is slow with ruby-prof](https://www.reddit.com/r/ruby/comments/fhcskc/find_why_your_ruby_app_is_slow_with_rubyprof/)
 - url: https://link.medium.com/koAvxdRZM4
 ---
 
-## [2][Bundle Install errors on aarm64](https://www.reddit.com/r/ruby/comments/fheceu/bundle_install_errors_on_aarm64/)
+## [7][Bundle Install errors on aarm64](https://www.reddit.com/r/ruby/comments/fheceu/bundle_install_errors_on_aarm64/)
 - url: https://www.reddit.com/r/ruby/comments/fheceu/bundle_install_errors_on_aarm64/
 ---
 Not a regular Ruby user.  I'm trying to use bundle install to test out an application that I'm interested in self hosting.  I've gotten through most of the major pitfalls...but cannot figure out how to get the bundle to install libv8 successfully.
@@ -11,15 +65,15 @@ Not a regular Ruby user.  I'm trying to use bundle install to test out an applic
 I was able to build the correct libv8 (7.3.492.27.1) by pulling the source from git and locally building the gem.  But the application's bundle keeps trying to Install it by pulling and compiling itself (the arch doesn't have a rubygems prebuilt?), and it keeps failing.  Is there a way to nudge it towards the locally built gem?
 
 Thanks!
-## [3][How we migrated from Timecop to built-in Rails 5.2 time helpers (and unified tests code by the way)](https://www.reddit.com/r/ruby/comments/fh3nxh/how_we_migrated_from_timecop_to_builtin_rails_52/)
+## [8][How we migrated from Timecop to built-in Rails 5.2 time helpers (and unified tests code by the way)](https://www.reddit.com/r/ruby/comments/fh3nxh/how_we_migrated_from_timecop_to_builtin_rails_52/)
 - url: https://frontdeveloper.pl/2020/03/how-we-migrated-from-timecop-to-built-in-rails-5-2-time-helpers/
 ---
 
-## [4][dry-schema and dry-validation 1.5.0 released](https://www.reddit.com/r/ruby/comments/fgxcxw/dryschema_and_dryvalidation_150_released/)
+## [9][dry-schema and dry-validation 1.5.0 released](https://www.reddit.com/r/ruby/comments/fgxcxw/dryschema_and_dryvalidation_150_released/)
 - url: https://dry-rb.org/news/2020/03/11/dry-schema-and-dry-validation-1-5-0-released/
 ---
 
-## [5][Ruby's Bitwise Toolbox: Operators, Applications and Magic Tricks](https://www.reddit.com/r/ruby/comments/fh018t/rubys_bitwise_toolbox_operators_applications_and/)
+## [10][Ruby's Bitwise Toolbox: Operators, Applications and Magic Tricks](https://www.reddit.com/r/ruby/comments/fh018t/rubys_bitwise_toolbox_operators_applications_and/)
 - url: https://www.reddit.com/r/ruby/comments/fh018t/rubys_bitwise_toolbox_operators_applications_and/
 ---
 How often do you think about the bits -- the ones and zeroes -- that make up your app's data? If you're doing web development in Ruby there's rarely any need to. But what if you want to interact with the operating system or a piece of hardware? What if you'd like to understand network protocols or databases? In that case, a solid understanding of bitwise operators is foundational. 
@@ -27,58 +81,3 @@ How often do you think about the bits -- the ones and zeroes -- that make up you
 In this article José M. Gilgado will introduce you to bitwise operations in Ruby, give practical examples of how they can be useful, and finish big with with some fun math tricks. 
 
 [https://www.honeybadger.io/blog/ruby-bitwise-operators/](https://www.honeybadger.io/blog/ruby-bitwise-operators/)
-## [6][Image duplicates search docker image demo using the dhash-vips gem](https://www.reddit.com/r/ruby/comments/fh5vii/image_duplicates_search_docker_image_demo_using/)
-- url: https://github.com/Nakilon/dhash-vips/tree/master/example_dups
----
-
-## [7][RailsConf 2020 Cancelled](https://www.reddit.com/r/ruby/comments/fgjhcx/railsconf_2020_cancelled/)
-- url: https://railsconf.com/
----
-
-## [8][Roast my terminal app :)](https://www.reddit.com/r/ruby/comments/fgslkn/roast_my_terminal_app/)
-- url: https://www.reddit.com/r/ruby/comments/fgslkn/roast_my_terminal_app/
----
-Hey guys :)
-
-Im currently working on a project for school and I would be stoked if you guys could roast it and tell me what i should change :)
-
-any feedback is welcome as I am just learning
-
-Essentially I've built a terminal app to track staffs moral
-
-&amp;#x200B;
-
-[https://github.com/alex1092/MoralChecker](https://github.com/alex1092/MoralChecker)
-
-Also if anyone has any tips with making uml diagrams that would be awesome :) 
-## [9][Ressources to improve after a few years?](https://www.reddit.com/r/ruby/comments/fgfx05/ressources_to_improve_after_a_few_years/)
-- url: https://www.reddit.com/r/ruby/comments/fgfx05/ressources_to_improve_after_a_few_years/
----
-I've been a Ruby developer for four years, and feel like I'm not as good as I should be.
-
-For example a recruiter asked me if I used XXX (don't remember the word). It was just a fancy word for blocks, but I didn't know the word and it was one of the main reason I wasn't hired (or so he told me).
-
-Most things I've read online is for new developpers, not really to improve as an already pretty experienced dev, do you have any places to recommend?  
-(I know about the Ruby Bibliography)
-## [10][How to create rake task for importing javascript libraries](https://www.reddit.com/r/ruby/comments/fgjuph/how_to_create_rake_task_for_importing_javascript/)
-- url: https://www.reddit.com/r/ruby/comments/fgjuph/how_to_create_rake_task_for_importing_javascript/
----
-I started using ruby on rails with its 5.2 version and since the newest rails version(not correlated) was released I haven't been coding that much in rails/ruby. I got used to using asset pipeline for importing javascript or css libraries. And then the switch to webpacker happened, which in my opinion hasn't made things much simpler. Long story short, I went through few tutorials for implementing bootstrap into rails project and I thought it could be nice to have a rake task for importing javascript libraries. 
-
-I fell in love with rails because it frees you from great amount of "manual" labor and gives you time to spend energy on being creative. 
-
-So basically I'd like to perform automatic installation of bootstrap into rails project with the command like this: 
-
-`rake bootstrap:install`
-
-I've came up with an idea that this task should do this
-
-1. `system("yarn install bootstrap")` \- to install javascript dependency
-2. create file app/javascript/stylesheets/application.scss
-   1. fill it with this text "`@import '~bootstrap';`"
-3. append to app/javascript/packs/applications.js text below:
-
-* `require("bootstrap/dist/js/bootstrap")`
-* `require("stylesheets/application")`
-
-I'd like to get some opinions about this, is there something wrong with my approach, what's the best way to do it etc.

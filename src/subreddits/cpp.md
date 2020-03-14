@@ -57,11 +57,63 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
+## [2][C++ Events Affected By Coronavirus](https://www.reddit.com/r/cpp/comments/fidita/c_events_affected_by_coronavirus/)
+- url: https://www.reddit.com/r/cpp/comments/fidita/c_events_affected_by_coronavirus/
+---
+**Don't talk about the coronavirus. r/cpp is not the place to discuss or debate the coronavirus.**
+
+# Purpose
+
+Many C++ conferences, meetups, and even the next committee meeting have been affected by the ongoing public health crisis caused by the coronavirus.
+
+I think it will be helpful to everyone to collect information about C++ events that have been or may be affected by the coronavirus. That includes not only cancellations/postponements, but also events that are planning to move forward but may be impacted in the future
+
+**This is intended to be a living document. Please help be suggesting changes or additions.**
+
+
+# Lexicon
+
+**Cancelled** == The event will definitely not be rescheduled.
+
+**Postponed** == The event will not happen on the planned dates, but may happen later this year.
+
+**Still planned** == The event has not announced any changes to the planned dates.
+
+# Conferences
+
+- CppCon 2020 is still planned.
+- C++Now 2020 is cancelled.
+- ACCU 2020 is cancelled.
+- [Cpp On Sea 2020](https://cpponsea.uk/) is still on for June 7-10.
+- Core C++ 2020 is postponed from May until Fall.
+- [Cpp Russia Moscow 2020](https://cppconf.ru/en/) is postponed from April 27-28 until June.
+- [Advanced Developer's Conference++ 2020](https://adcpp.de/20/default) is postponed from May until October.
+
+# C++ User Groups
+
+- ACCU Bay Area is cancelled until further notice.
+
+# ISO C++ Committee Meetings
+
+- ISO C++ Varna 2020 is cancelled.
+- ISO C++ New York 2020 is status quo.
+## [3][A simple Star War game made purely out of C++ &amp; SFML with code](https://www.reddit.com/r/cpp/comments/fih7qs/a_simple_star_war_game_made_purely_out_of_c_sfml/)
+- url: https://www.youtube.com/watch?v=3t0JbsZ6X4I
+---
+
+## [4][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
+- url: https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/
+---
+I'd like to gather some feedback on a short proposal I've written: [https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md](https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md)
+
+I've seen this feature in Rust, where my initial reaction was that it looks very dangerous. After using it for a while though, I've found it to not only solve ergonomics issues in my code, but also prevent bugs, which is why I've decided to draft a proposal.
+
+I also know that the committee doesn't like proposals that change fundamentals in the language, but I think this a small change with huge upsides and no backwards-compatibility issues. I've personally hit a nasty bug in my C++ code that could have been avoided with this very feature recently.
+## [5][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
 - url: http://cppnow.org/announcements/2020/03/Canceled/
 ---
 
-## [3][What's the reliable and FOSS way to compile C++ code for Windows (on Linux)?](https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/)
+## [6][What's the reliable and FOSS way to compile C++ code for Windows (on Linux)?](https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/)
 - url: https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/
 ---
 I primarily develop my C++ applications (and everything else) on Linux, where there are two extremely good, FOSS, and maintained C++ compilers (GCC and clang).
@@ -75,15 +127,15 @@ Mingw-w64 exists, works great, and has a good license, but, unfortunately, it se
 One glimmer of hope is that the Arch Linux packages (in AUR)'s build scripts seem to pull their code from the main GCC repository. Is the necessary C++ code to build a working MinGW toolchain maintained with the GCC code in its main repository, in such a way that I can presumably learn how to build it whenever I want a maintained MinGw version?
 
 So, how do you all address these concerns in your projects where you need to distribute Windows binaries? Is there a solution that addresses all concerns well?
-## [4][Trip Report: C++ Standards Meeting in Prague, February 2020](https://www.reddit.com/r/cpp/comments/fhkeg3/trip_report_c_standards_meeting_in_prague/)
+## [7][Trip Report: C++ Standards Meeting in Prague, February 2020](https://www.reddit.com/r/cpp/comments/fhkeg3/trip_report_c_standards_meeting_in_prague/)
 - url: https://botondballo.wordpress.com/2020/03/12/trip-report-c-standards-meeting-in-prague-february-2020/
 ---
 
-## [5][Creating an intermediate GUI with dear imgui is not that difficult, but offers lots of flexibility that other GUI libraries miss out on.](https://www.reddit.com/r/cpp/comments/fhpm4t/creating_an_intermediate_gui_with_dear_imgui_is/)
+## [8][Creating an intermediate GUI with dear imgui is not that difficult, but offers lots of flexibility that other GUI libraries miss out on.](https://www.reddit.com/r/cpp/comments/fhpm4t/creating_an_intermediate_gui_with_dear_imgui_is/)
 - url: https://ruurdsdevlog.wordpress.com/2020/03/07/c-desktop-application-with-dear-imgui/
 ---
 
-## [6][Varna ISO meeting postponed](https://www.reddit.com/r/cpp/comments/fhldku/varna_iso_meeting_postponed/)
+## [9][Varna ISO meeting postponed](https://www.reddit.com/r/cpp/comments/fhldku/varna_iso_meeting_postponed/)
 - url: https://www.reddit.com/r/cpp/comments/fhldku/varna_iso_meeting_postponed/
 ---
 Via [Bryce Lelbach on Twitter](https://twitter.com/blelbach/status/1238133359043174400).
@@ -91,47 +143,11 @@ Via [Bryce Lelbach on Twitter](https://twitter.com/blelbach/status/1238133359043
 The ACCU conference due to be held in Bristol, UK later this month [has also been cancelled](https://conference.accu.org/news/2020/202003121205_accu2020cancelled.html).
 
 Update: C++ Now has been [cancelled too](http://cppnow.org/announcements/2020/03/Canceled/)
-## [7][CppCast: PVS-Studio Static Analysis](https://www.reddit.com/r/cpp/comments/fhtjxd/cppcast_pvsstudio_static_analysis/)
+## [10][CppCast: PVS-Studio Static Analysis](https://www.reddit.com/r/cpp/comments/fhtjxd/cppcast_pvsstudio_static_analysis/)
 - url: https://cppcast.com/yuri-minaev-static-analysis/
 ---
 
-## [8][Make C++ like nowday languages](https://www.reddit.com/r/cpp/comments/fhybk4/make_c_like_nowday_languages/)
-- url: https://www.reddit.com/r/cpp/comments/fhybk4/make_c_like_nowday_languages/
----
-I'm working on transpiler that make C++ looks modern but not modify to much. Here's my initial thought please suggest or add your ideas.
-
-Sur: Syntactic Sugar for C++
-
-- No more separating headers and sources (Will be generated automatically)
-- Move `c` libraries to a folder and a namespace
-- `enum` always behave like `enum class`
-- Swap `::` with `:`
-- Auto insert `std` when namespace is not given
-- Introduce `newl` as `\n` sugar
-- `'` as equivalent of `"`
-- `\`` as char delimiter
-- ( still bothering my mind ) remove semicolon
-
-```
-include 'iostream';
-include 'string';
-include 'c/stdio';
-
-int main() {
-  :cout &lt;&lt; glm:sin(10f) &lt;&lt; :newl;
-
-  c:printf('%d', 10);
-
-  :string str = 'my string';
-
-  for (auto ch :: str) {
-    :cout &lt;&lt; ch;
-  }
-
-  return 0;
-}
-```
-## [9][Question: Websocket in STL](https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/)
+## [11][Question: Websocket in STL](https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/)
 - url: https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/
 ---
 I've found a number of libraries that do websockets in C++
@@ -145,78 +161,7 @@ I was wondering what people used for this/is there an STL way of doing WebSocket
 The library needs to be permissive (Apache, MIT, BSD) because it's for an open source project.
 
 Edit: I'm consuming a WebSocket API, not creating one.
-## [10][Why there is no wchar_t variant of to_chars and from_chars?](https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/)
+## [12][Why there is no wchar_t variant of to_chars and from_chars?](https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/)
 - url: https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/
 ---
 It is especially painful on Windows where most text is `wchar_t`. `to_chars` and `from_chars` operate on `char*` buffers. But what is `char` anyway? It could be binary blob or it could be text. If it is text, what encoding is it in? It could be ASCII, UTF-8, ANSI (Windows codepage such as cp1250 or Shift-JIS), EBCDIC or something completely different. On some platforms, `char` is 16bits wide. This is bad for inter-compatibility. We already have `char` / `wchar_t` / `char8_t` / `char16_t` / `char32_t` types in Standard and also `std::string` is using them. Is there a reason why `to_chars` and `from_chars` didn't receive a bit of Unicode love? Is there a paper where I can read the rationale why this feature was not included?
-## [11][C++ Benchmark: Timsort vs pdqsort vs quadsort vs std::stable_sort](https://www.reddit.com/r/cpp/comments/fgxfqa/c_benchmark_timsort_vs_pdqsort_vs_quadsort_vs/)
-- url: https://www.reddit.com/r/cpp/comments/fgxfqa/c_benchmark_timsort_vs_pdqsort_vs_quadsort_vs/
----
-[https://rextester.com/QDXH20310](https://rextester.com/QDXH20310)
-
-Linked above is the benchmark source code, I set int max = 512 because it only allows 10 seconds of running time.
-
-My main question for those interested at looking at the source code, is this a fair c++ benchmark or do any of the specific implementations have an unfair advantage? Also, any idea why quadsort is significantly faster on small arrays?
-
-Output with max set to 1000000 and compiled with g++ -O3 -fpermissive source.cpp. Each result is the best run out of 100.
-
-             quadsort: sorted 1000000 i32s in 0.070989 seconds. MO: 0 (random order)
-            std::sort: sorted 1000000 i32s in 0.064780 seconds. MO: 0 (random order)
-              timsort: sorted 1000000 i32s in 0.088847 seconds. MO: 0 (random order)
-              pdqsort: sorted 1000000 i32s in 0.030218 seconds. MO: 0 (random order)
-    
-             quadsort: sorted 1000000 i32s in 0.000856 seconds. MO: 0 (ascending order)
-            std::sort: sorted 1000000 i32s in 0.011282 seconds. MO: 0 (ascending order)
-              timsort: sorted 1000000 i32s in 0.000365 seconds. MO: 0 (ascending order)
-              pdqsort: sorted 1000000 i32s in 0.000833 seconds. MO: 0 (ascending order)
-    
-             quadsort: sorted 1000000 i32s in 0.000847 seconds. MO: 0 (uniform order)
-            std::sort: sorted 1000000 i32s in 0.007948 seconds. MO: 0 (uniform order)
-              timsort: sorted 1000000 i32s in 0.000361 seconds. MO: 0 (uniform order)
-              pdqsort: sorted 1000000 i32s in 0.000903 seconds. MO: 0 (uniform order)
-    
-             quadsort: sorted 1000000 i32s in 0.003561 seconds. MO: 0 (descending order)
-            std::sort: sorted 1000000 i32s in 0.008633 seconds. MO: 0 (descending order)
-              timsort: sorted 1000000 i32s in 0.000782 seconds. MO: 0 (descending order)
-              pdqsort: sorted 1000000 i32s in 0.001882 seconds. MO: 0 (descending order)
-    
-             quadsort: sorted 1000000 i32s in 0.017593 seconds. MO: 0 (random tail)
-            std::sort: sorted 1000000 i32s in 0.026802 seconds. MO: 0 (random tail)
-              timsort: sorted 1000000 i32s in 0.020676 seconds. MO: 0 (random tail)
-              pdqsort: sorted 1000000 i32s in 0.021670 seconds. MO: 0 (random tail)
-    
-             quadsort: sorted 1000000 i32s in 0.010657 seconds. MO: 0 (wave order)
-            std::sort: sorted 1000000 i32s in 0.026747 seconds. MO: 0 (wave order)
-              timsort: sorted 1000000 i32s in 0.008884 seconds. MO: 0 (wave order)
-              pdqsort: sorted 1000000 i32s in 0.024792 seconds. MO: 0 (wave order)
-    
-             quadsort: sorted    1000 i32s in 0.005088 seconds. KO: 0 (random range)
-            std::sort: sorted    1000 i32s in 0.015931 seconds. KO: 0 (random range)
-              timsort: sorted    1000 i32s in 0.014487 seconds. KO: 0 (random range)
-              pdqsort: sorted    1000 i32s in 0.010379 seconds. KO: 0 (random range)
-
-Summary:
-
-quadsort wins 2 out of 7, timsort wins 4 out of 7, pdqsort wins 1 out of 7
-
-quadsort is good at semi-ordered data and small arrays.
-
-timsort is good at ordered / reverse ordered data.
-
-pdqsort is good at random data and large arrays. (not a stable sort)
-
-std::sort beats timsort and quadsort at random data. (not a stable sort)
-
-The final test measures the average performance on 1000 arrays ranging from size 1 to 999 filled with random data.
-
-quadsort source and description:
-
-[https://github.com/scandum/quadsort](https://github.com/scandum/quadsort)
-
-timsort source and description:
-
-[https://github.com/timsort/cpp-TimSort](https://github.com/timsort/cpp-TimSort)
-
-pdqsort source and description:
-
-[https://github.com/orlp/pdqsort](https://github.com/orlp/pdqsort)

@@ -86,7 +86,15 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/ex778e/whos_hiring_feb_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Understanding writing tests for React](https://www.reddit.com/r/reactjs/comments/fhyat9/understanding_writing_tests_for_react/)
+## [3][A Windows 95 style Pokédex built with React.](https://www.reddit.com/r/reactjs/comments/fibnwh/a_windows_95_style_pokédex_built_with_react/)
+- url: https://poke95.now.sh
+---
+
+## [4][Trying to understand why react fragments are necessary](https://www.reddit.com/r/reactjs/comments/fib0yu/trying_to_understand_why_react_fragments_are/)
+- url: https://www.reddit.com/r/reactjs/comments/fib0yu/trying_to_understand_why_react_fragments_are/
+---
+I understand I have to wrap adjacent jsx elements in fragment tags in turn statements. But why do we have to jump through this hoop? If React made this workaround so we can return adjacent elements, why not just allow that in the first place?
+## [5][Understanding writing tests for React](https://www.reddit.com/r/reactjs/comments/fhyat9/understanding_writing_tests_for_react/)
 - url: https://www.reddit.com/r/reactjs/comments/fhyat9/understanding_writing_tests_for_react/
 ---
 Hi, 
@@ -111,80 +119,60 @@ QUESTIONS
 3) Between unit testing, snapshot testing, and end to end testing, which is the best for React apps?
 
 Thanks
-## [4][Improve build speed by moving node_modules into RAM](https://www.reddit.com/r/reactjs/comments/fhmi4u/improve_build_speed_by_moving_node_modules_into/)
-- url: https://twitter.com/nullvoxpopuli/status/1238143519237300229?s=20
+## [6][Create a React Markdown Editor (Hooks &amp; Context)](https://www.reddit.com/r/reactjs/comments/fifizk/create_a_react_markdown_editor_hooks_context/)
+- url: https://youtu.be/fF9vrZNSQC4
 ---
 
-## [5][Getting Started with React Native in 2020](https://www.reddit.com/r/reactjs/comments/fhygl6/getting_started_with_react_native_in_2020/)
-- url: https://blog.soshace.com/getting-started-with-react-native-in-2020/
+## [7][5 steps to perform a search when user stops typing](https://www.reddit.com/r/reactjs/comments/fi6my2/5_steps_to_perform_a_search_when_user_stops_typing/)
+- url: https://joaoforja.com/blog/5-steps-to-perform-a-search-when-user-stops-typing-using-react-+-hooks-in-a-controlled-component/
 ---
 
-## [6][Road to React: The one with Hooks](https://www.reddit.com/r/reactjs/comments/fhfz5u/road_to_react_the_one_with_hooks/)
-- url: https://roadtoreact.com/
+## [8][force react SPA to scroll to top](https://www.reddit.com/r/reactjs/comments/fihgo5/force_react_spa_to_scroll_to_top/)
+- url: https://www.reddit.com/r/reactjs/comments/fihgo5/force_react_spa_to_scroll_to_top/
+---
+I have a bunch of links at the bottom of my page and when I click one link it takes me to another render, but the app still stays in the same Y position.. How can I make my react app render at the top of the page when I click the link - just like non-SPA websites work?
+## [9][What's the best React component architecture in your opinion?](https://www.reddit.com/r/reactjs/comments/fignry/whats_the_best_react_component_architecture_in/)
+- url: https://www.reddit.com/r/reactjs/comments/fignry/whats_the_best_react_component_architecture_in/
+---
+(1)
+
+`- components`
+
+`-ExampleComponent`
+
+`*ExampleComponentContainer.js`
+
+`*ExampleComponent.js`
+
+`(2)`
+
+`- components`
+
+`-ExampleComponent`
+
+`- containers`
+
+`-ExampleComponent`
+## [10][Shared code: Learning lessons from old-school development](https://www.reddit.com/r/reactjs/comments/fi71rn/shared_code_learning_lessons_from_oldschool/)
+- url: https://ceuk.dev/posts/sharing-code-across-unrelated-projects
 ---
 
-## [7][React ping pong game](https://www.reddit.com/r/reactjs/comments/fhznll/react_ping_pong_game/)
-- url: https://twitter.com/0xca0a/status/1238441912371216389
+## [11][React and SVG make a powerful combination: Declarative UI component library meets declarative graphics language . A match made in front-end developer heaven.](https://www.reddit.com/r/reactjs/comments/fi4q2o/react_and_svg_make_a_powerful_combination/)
+- url: https://datalanguage.com/blog/graphical-uis-with-svg-and-react-part-1-declarative-graphics?utm_source=reddit&amp;utm_medium=normal_post&amp;utm_campaign=graphical-uis-03
 ---
 
-## [8][How can I use storybook docs with knob](https://www.reddit.com/r/reactjs/comments/fhzn45/how_can_i_use_storybook_docs_with_knob/)
-- url: https://www.reddit.com/r/reactjs/comments/fhzn45/how_can_i_use_storybook_docs_with_knob/
+## [12][I wrote this custom hook that's basically `useState`, but will log the state whenever it's used, but it doesn't work (With demo), why?](https://www.reddit.com/r/reactjs/comments/fibnik/i_wrote_this_custom_hook_thats_basically_usestate/)
+- url: https://www.reddit.com/r/reactjs/comments/fibnik/i_wrote_this_custom_hook_thats_basically_usestate/
 ---
-Hi
-I am trying to find a way to use docs and knob together
-So whenever I go to the canvas tab I can play with the component with knob addon and when I go to docs tab I can read the doc. 
-I cant figure this out. Does anyone know how to do this?
-## [9][React Hooks Tutorial | Build Yelp in React #20 | finish static search results list](https://www.reddit.com/r/reactjs/comments/fhzlnd/react_hooks_tutorial_build_yelp_in_react_20/)
-- url: https://www.youtube.com/watch?v=JDEbtN9qXhI
----
+The goal: I want a `redux-logger` for my `useState`, so that whenever state changes using the `setState` function (or setXXX, whatever you named it), it will log the previous state and the next state.
 
-## [10][Styling React Applications in 2020](https://www.reddit.com/r/reactjs/comments/fhzlbx/styling_react_applications_in_2020/)
-- url: https://elliotbonneville.com/blog/how-to-style-react-applications-in-2020/
----
+The reality: I wrote this demo https://codesandbox.io/s/gracious-mestorf-wcxvy, it doesn't work when several setState called at the same time, does that mean setState is async? And how do I make it work to achieve my goal?
 
-## [11][PWA Coronavirus tracking map, data table, chart built with React supports mobile and desktop.](https://www.reddit.com/r/reactjs/comments/fhz6jl/pwa_coronavirus_tracking_map_data_table_chart/)
-- url: https://talksub.com/covid19
----
-
-## [12][[NextJS/Styled-JSX] Am I doing global styles right?](https://www.reddit.com/r/reactjs/comments/fhz2w6/nextjsstyledjsx_am_i_doing_global_styles_right/)
-- url: https://www.reddit.com/r/reactjs/comments/fhz2w6/nextjsstyledjsx_am_i_doing_global_styles_right/
----
-Sorry for posting this here, but /r/nextjs looks dead-ish.
-
-I am refactoring a NextJS 8 application built with a $15 template which loads a tons of useless stuff. I am in the process of abstracting components and scoping the styles with styled-jsx for ease of maintainance. I noticed there are some global classes that are useful in the whole project, like `.justify { text-align: justify }`, so I thought those would be good candidates for global styles.
-
-Is this the correct way to import the global styles in the whole project? I am kinda new to React and in my mind adding the `GlobalStyles` component in the `_app.js` means that EVERY component gets wrapped with the globals, possibly creating problems?
-
-pages/_app.js:
+PS: And something weird in my demo actually
 ```js
-import GlobalStyles from "../components/shared/GlobalStyles";
-
-// This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
-  return (
-    &lt;&gt;
-      &lt;Component {...pageProps} /&gt;
-      &lt;GlobalStyles /&gt;
-    &lt;/&gt;
-  );
-}
+// initialState: 2 
+setState(3)
+setState(4)
+setState(5)
+// console.log: 2,2,5,5 weird, isn't it?
 ```
-
-components/shared/GlobalStyles.js
-```js
-const GlobalStyles = () =&gt; (
-  &lt;&gt;
-    &lt;style jsx global&gt;
-      {`
-        .justify {
-          text-align: justify;
-        }
-      `}
-    &lt;/style&gt;
-  &lt;/&gt;
-);
-
-export default GlobalStyles;
-```
-
-thanks!

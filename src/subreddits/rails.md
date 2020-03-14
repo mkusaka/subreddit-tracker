@@ -39,7 +39,76 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][How I can build User invitation system?](https://www.reddit.com/r/rails/comments/fhmmor/how_i_can_build_user_invitation_system/)
+## [3][What is the most Rails-savvy javascript framework for a green-field project in 2020?](https://www.reddit.com/r/rails/comments/fi431t/what_is_the_most_railssavvy_javascript_framework/)
+- url: https://www.reddit.com/r/rails/comments/fi431t/what_is_the_most_railssavvy_javascript_framework/
+---
+When I build a web app, I want it to feel like a coherent whole with a consistent philosophy. I want a framework that can easily talk to a Rails-provided RESTful API without customization. I want it to be as "omakase" as possible so that I can focus on the challenges of my domain rather than researching alternative technical approaches. Over the years, I've used jquery, backbone, angular, and most recently react. None of these experiences was satisfying. For example, I've found client-side rendering to be a deeply disappointing trade: about a 75% slow-down in project velocity for a little polish that, frankly, most features don't need. I say all this to clarify my preferences, not to get in an argument about why I'm wrong. So, fresh thoughts about a client-side framework that plays nice with Rails 6?
+## [4][How do you test multi-step forms using rspec?](https://www.reddit.com/r/rails/comments/fid8ww/how_do_you_test_multistep_forms_using_rspec/)
+- url: https://www.reddit.com/r/rails/comments/fid8ww/how_do_you_test_multistep_forms_using_rspec/
+---
+**If this question is too general and not rails specific please let me know and I'll post it elsewhere :)**
+
+Hi everyone. I wanted to get your thoughts on how you methodically write rspec tests for multi-step (multi-page) forms.
+
+I want to be able to achieve 100% coverage, but I don't know if that's feasible considering how many different possible input combinations my form can have, and how different the options available from fields in the next page can be depending on what was inputted in the first page.
+
+I was wondering if any of you have done anything like this, and if you can give general advice in how you can tackle it. I am a beginner in rspec and so far have only managed to write tests for simple features like logging in, logging out, changing password, etc. without giving up...
+## [5][[HELP] Creating a Inner join &amp; Left join SQL query using scopes](https://www.reddit.com/r/rails/comments/fi39jj/help_creating_a_inner_join_left_join_sql_query/)
+- url: https://www.reddit.com/r/rails/comments/fi39jj/help_creating_a_inner_join_left_join_sql_query/
+---
+Hi guys, I need to create an query with inner join &amp; left join using scopes
+
+What I have is something like this:
+
+    scope :query_show, -&gt; { joins(:user, :document, requirements: [:status, :model] }
+
+Because requirements may not exist on db for some users, this query may return empty. I don't want that behavior. I need a Left Join for the Requirement table and its association with the Inner Join. Something like this:
+
+    scope :query_show, -&gt; { joins(:user, :document).select(...) }
+    scope :requirements, -&gt; { includes(requirements: [:status, :model]).select(...) }
+    
+    User.query_show.requeriments # I don't think this work...
+    
+
+I know how to do it in raw SQL, but I'm trying to build with scopes. How can I achieve that? 
+
+Thanks in advance.
+## [6][undefined method 'method_name' for Controller:Module](https://www.reddit.com/r/rails/comments/fiavil/undefined_method_method_name_for_controllermodule/)
+- url: https://www.reddit.com/r/rails/comments/fiavil/undefined_method_method_name_for_controllermodule/
+---
+Hi all, can't seem to resolve this error:  
+
+
+    undefined method 'api_call' for CoffeeShopsController:Foursquare
+
+Here's what my code looks like.  
+Controller:
+
+    class CoffeeShopsController &lt; ApplicationController
+      include Foursquare
+    
+      def venue_search
+        Foursquare.api_call(location, search)
+      end
+    
+      ...
+    
+    emd
+
+Module (app/lib/foursquare.rb)
+
+    module Foursquare
+      def api_call(location, search)
+        ...
+      end
+    end
+
+I've tried putting the following into application.rb which seemed to be the suggested solution on StackOverflow, but this has not worked:
+
+    config.eager_load_paths += %W(#{config.root}/lib)
+    config.autoload_paths &lt;&lt; Rails.root.join('lib')
+    config.autoload_paths &lt;&lt; Rails.root.join('lib/notifier')
+## [7][How I can build User invitation system?](https://www.reddit.com/r/rails/comments/fhmmor/how_i_can_build_user_invitation_system/)
 - url: https://www.reddit.com/r/rails/comments/fhmmor/how_i_can_build_user_invitation_system/
 ---
 Totally noob here, 
@@ -53,11 +122,7 @@ Users can only  CRUD reports and view projects and  that they are added/invited 
 I have been looking online for a while, no luck! Most of the  tutorials doesn't help. 
 
 Can someone please point me to the direction or help me with this.
-## [4][Does Rails auto-load all classes from all Gems?](https://www.reddit.com/r/rails/comments/fhhyz6/does_rails_autoload_all_classes_from_all_gems/)
-- url: https://www.reddit.com/r/rails/comments/fhhyz6/does_rails_autoload_all_classes_from_all_gems/
----
-Does Rails auto-load all classes from all Gems? So I can reference any class from any Gem's lib folder, and it will work?
-## [5][why is rails more expensive to work with?](https://www.reddit.com/r/rails/comments/fhqtqi/why_is_rails_more_expensive_to_work_with/)
+## [8][why is rails more expensive to work with?](https://www.reddit.com/r/rails/comments/fhqtqi/why_is_rails_more_expensive_to_work_with/)
 - url: https://www.reddit.com/r/rails/comments/fhqtqi/why_is_rails_more_expensive_to_work_with/
 ---
 why is rails more expensive to work with? when a client starts working with a ruby developer, after once having worked with a php site, they often find
@@ -68,7 +133,11 @@ why is rails more expensive to work with? when a client starts working with a ru
 &gt;why is rails more expensive to work with?
 
 More to the point, how does one justify the extra cost?
-## [6][How do I use Devise in normal AND API mode](https://www.reddit.com/r/rails/comments/fgwc24/how_do_i_use_devise_in_normal_and_api_mode/)
+## [9][Does Rails auto-load all classes from all Gems?](https://www.reddit.com/r/rails/comments/fhhyz6/does_rails_autoload_all_classes_from_all_gems/)
+- url: https://www.reddit.com/r/rails/comments/fhhyz6/does_rails_autoload_all_classes_from_all_gems/
+---
+Does Rails auto-load all classes from all Gems? So I can reference any class from any Gem's lib folder, and it will work?
+## [10][How do I use Devise in normal AND API mode](https://www.reddit.com/r/rails/comments/fgwc24/how_do_i_use_devise_in_normal_and_api_mode/)
 - url: https://www.reddit.com/r/rails/comments/fgwc24/how_do_i_use_devise_in_normal_and_api_mode/
 ---
 Hi guys,  
@@ -77,7 +146,7 @@ So in API I want to return JSON and appropriate HTTP codes. Also I want to issue
 On web I want normal devise functionality.  
 How I should structure controllers, router and other stuff? I cant find any good resources about this.  
 Thank you guys.
-## [7][Devise and Client ID and Secret Key authentication?](https://www.reddit.com/r/rails/comments/fh15pj/devise_and_client_id_and_secret_key_authentication/)
+## [11][Devise and Client ID and Secret Key authentication?](https://www.reddit.com/r/rails/comments/fh15pj/devise_and_client_id_and_secret_key_authentication/)
 - url: https://www.reddit.com/r/rails/comments/fh15pj/devise_and_client_id_and_secret_key_authentication/
 ---
 Hi everyone,
@@ -87,7 +156,7 @@ I currently use Devise for authentication, both by normal rails and JWT auth. I'
 My initial thought is to create a new user role `api` and when the company authenticates via client id and secret to an endpoint, I sign them into the api user and return a JWT.
 
 Am I doing this right?
-## [8][[HELP] Test if a method is called after create/update method on controller](https://www.reddit.com/r/rails/comments/fh0ykp/help_test_if_a_method_is_called_after/)
+## [12][[HELP] Test if a method is called after create/update method on controller](https://www.reddit.com/r/rails/comments/fh0ykp/help_test_if_a_method_is_called_after/)
 - url: https://www.reddit.com/r/rails/comments/fh0ykp/help_test_if_a_method_is_called_after/
 ---
 Hi guys, I have the following controller
@@ -142,54 +211,3 @@ The test would be something like this
 I got the error message: "document ... does not implement: run\_jobs"
 
 That error message is because document is a FactoryBot object, which doesn't correspond to the document object responsible for calling run\_jobs method.
-## [9][Multiple shopping carts for a single user](https://www.reddit.com/r/rails/comments/fgy9kw/multiple_shopping_carts_for_a_single_user/)
-- url: https://www.reddit.com/r/rails/comments/fgy9kw/multiple_shopping_carts_for_a_single_user/
----
-I'm currently working on an app where you can book beauty and related services. Right now, I'm adding the shopping cart functionality and I'm facing an issue deciding what to do with it.
-
-The issue is that the business requirement doesn't allow any user to book services from more than one venue at a time but they want each specific venue where the user has added a service to the shopping cart to "remember" which service was added.
-
-So I can't have a traditional "Cart" model where you can add any item as long as the relations are set up because the cart is kinda venue specific.
-
-I have thought about having a cart with "venue\_id" and "user\_id" created each time the user adds a product to the shopping cart and have a "valid\_up\_to" field so I can make a cron job to delete the invalid carts.
-
-I think that this approach can solve the issue but I can't avoid to feel it as a hacky solution.
-
-What do you think would the best approach here?
-## [10][Need help designing](https://www.reddit.com/r/rails/comments/fh2sgh/need_help_designing/)
-- url: https://www.reddit.com/r/rails/comments/fh2sgh/need_help_designing/
----
-I want to make a web application similar to a ToDo list. Thus, I have two models: projects and tasks. Projects are composed of several tasks, but tasks may be created without belonging to any project.
-
-I don't know how to implement this association. I think project `has_many` tasks, but tasks don't necessarily `belongs_to` project, because they may be free.
-
-I've tried to implement it with an optional belongs\_to, but when calling `@project.tasks` it throws `NoMethodError`, so I really don't know how to access the tasks belonging to a specific project.
-## [11][Question: Rails 5.2 Testing Javascript and Manipulating the Session](https://www.reddit.com/r/rails/comments/fgmzfk/question_rails_52_testing_javascript_and/)
-- url: https://www.reddit.com/r/rails/comments/fgmzfk/question_rails_52_testing_javascript_and/
----
-Hey everyone,
-
-I've been at this problem for too long, so I'm reaching out for a steer on it.  
-I have some code that works in the browser, but I can't work out how to write a test for it.
-
-Basically, I have a Bootstrap 4 modal in a view. There's some Coffeescript that will open the modal if the user has come from a particular HTTP\_REFERRER.
-
-I cannot find a test framework that supports JS as well as supporting manipulating request headers. I've looked at MiniTest, RSpec and Capybara.
-
-I've seen a StackOverflow post where BrowserMob was suggested - but it seems to have been abandoned, and I'm loathe to add another dependency for this one feature.
-
-Any suggestions? I'm probably overlooking something obvious.  The aim is be able to manipulate the HTTP\_REFERRER header in a test to cause the JS to fire and show the modal.
-
-Thanks in advance.
-## [12][Deployment Questions](https://www.reddit.com/r/rails/comments/fgnxqg/deployment_questions/)
-- url: https://www.reddit.com/r/rails/comments/fgnxqg/deployment_questions/
----
-Hello, I have a few questions about your preferred way to deploy. I typically just launch an EC2, ssh in, configure capistrano, nginx, route 53 &amp; deploy.
-
-I want to explore some other areas of deployment to try and speed this process up without increasing monthly cost too much. What i am thinking is to start using docker, deploy with beanstalk, RDS for a DB but i have one last area to figure out. Redis.   
-
-
-ElastiCache is the price of a small EC2. Using this service could double the bill which isn't the goal. Maybe i don't understand the pricing the model. If i turn one on, am i charged $0.05/hr like a EC2 or is it on-demand? My other thought is to put redis into the docker container. My fear is something like this: 50 jobs in queue, deploy, queue is gone. Is this possible? Maybe i don't understand how the deployment works nor redis? Would the queue be gone if i put redis in the container?   
-
-
-Regardless, what's your preferred way deploying RoR while not being backed by a corporate budget? Open to exploring other options!

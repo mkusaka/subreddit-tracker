@@ -1,9 +1,110 @@
 # ruby
-## [1][Released a string metrics/distance gem written in Rust!](https://www.reddit.com/r/ruby/comments/fhu07l/released_a_string_metricsdistance_gem_written_in/)
+## [1][Ruby Conferences Updates - Status: CANCELD, NEW DATE, ONSITE CANCELED / ONLINE ONLY](https://www.reddit.com/r/ruby/comments/fi3etc/ruby_conferences_updates_status_canceld_new_date/)
+- url: https://www.reddit.com/r/ruby/comments/fi3etc/ruby_conferences_updates_status_canceld_new_date/
+---
+FYI: I try to keep the [Ruby Conference Calendar](https://planetruby.github.io/calendar/2020) up-to-date with Corona Covid-19 cancellations. So far the list includes:
+CANCELED:
+
+- Wrocław &lt;3 Ruby (wroclove.rb) @ Poland
+- RailsConf @ United States
+- Balkan Ruby @ Bulgaria
+- RubyNess @ Scottland
+- RubyConf India
+- RedDotRubyConf @ Singapore 
+
+ONSITE CANCELED / ONLINE ONLY:
+
+- Ruby Wine 2.0 @ Moldova
+- Brighton RubyConf @ England
+
+POSTPONED:
+
+- RubyConf Belarus (July)
+- RubyKaigi @ Japan (September)
+- Ruby Day Italy (September)
+
+PS: Cancellation or postponement or going all online is the responsible thing to do to try to contain (or mitigate) the covid epidemic. See [Coronavirus: why you must act NOW](https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca) for example.
+## [2][Adding documentation to a docker image](https://www.reddit.com/r/ruby/comments/fia0et/adding_documentation_to_a_docker_image/)
+- url: https://www.reddit.com/r/ruby/comments/fia0et/adding_documentation_to_a_docker_image/
+---
+TL; DR -- If ruby is installed with the --disable-install-doc flag and then the source is deleted, is there a simple way to go back and install the `ri` documentation?
+
+The Docker container for ruby is slimmed down and they do the configure with the --disable-install-doc option and then they remove the source directory and the tar ball.  This makes sense for a production image.
+
+But during development, I'd like to have the `ri` documentation "local".  One choice is to put it on my laptop outside of the Docker images which is the path I'm currently taking.  But I'm wondering if there is a simple way to go back and create the documentation.
+
+The third alternative I can think of is to use an entirely different image (e.g. an Ubuntu Linux image with the ruby package installed) and use that during development but that implies that my development and testing images will be different from my production images.  And... for RoR in particular, that is somewhat typical since the development and testing systems tend to have additional gems installed (e.g. rspec) that are not installed in production.
+## [3][HAPPY FRIDAY THE 13TH Y'ALL](https://www.reddit.com/r/ruby/comments/fi2dlg/happy_friday_the_13th_yall/)
+- url: https://i.redd.it/h2id8j4rvgm41.png
+---
+
+## [4][need help...](https://www.reddit.com/r/ruby/comments/fiekc0/need_help/)
+- url: https://www.reddit.com/r/ruby/comments/fiekc0/need_help/
+---
+module Modu
+
+	cons = 10
+
+&amp;#x200B;
+
+	def Modu.add(x,y)
+
+		puts x+y
+
+	end
+
+	def sub(x,y)
+
+		puts x-y
+
+	end
+
+end
+
+&amp;#x200B;
+
+class Cls
+
+	include Modu
+
+	def mul(x,y)
+
+		puts x\*y
+
+	end
+
+end
+
+&amp;#x200B;
+
+obj = [Cls.new](https://Cls.new)
+
+puts "enter two numbers "
+
+x = gets.chomp.to\_i
+
+y = gets.chomp.to\_i
+
+obj.mul(x,y)
+
+obj.sub(x,y)
+
+Modu.add(x,y)
+
+puts Modu::cons
+
+&amp;#x200B;
+
+The code works fine except the fact that it doesn't print the cons value and throws a "no\_method\_error"
+## [5][Released a string metrics/distance gem written in Rust!](https://www.reddit.com/r/ruby/comments/fhu07l/released_a_string_metricsdistance_gem_written_in/)
 - url: https://github.com/anirbanmu/str_metrics
 ---
 
-## [2][i need help for a ruby script that i made](https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/)
+## [6][Build a Linux CLI tool like glances in Ruby](https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/
+---
+I was thinking of using ruby to build a CLI tool like the glances or Top commands in linux . Ideally it's just a fun project for myself to learn about how ruby can interact with the system to get info like memory usage and CPU load. What do you guys think of this venture?
+## [7][i need help for a ruby script that i made](https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/)
 - url: https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/
 ---
  
@@ -41,43 +142,15 @@ return "you find a tree"
 end  
 end  
 begginings()
-## [3][Announcing RubyGems.org Stats - RubyGems Blog](https://www.reddit.com/r/ruby/comments/fhr6t1/announcing_rubygemsorg_stats_rubygems_blog/)
+## [8][Announcing RubyGems.org Stats - RubyGems Blog](https://www.reddit.com/r/ruby/comments/fhr6t1/announcing_rubygemsorg_stats_rubygems_blog/)
 - url: https://blog.rubygems.org/2020/03/09/announcing-rubygems-stats.html
 ---
 
-## [4][Build a Linux CLI tool like glances in Ruby](https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/
----
-I was thinking of using ruby to build a CLI tool like the glances or Top commands in linux . Ideally it's just a fun project for myself to learn about how ruby can interact with the system to get info like memory usage and CPU load. What do you guys think of this venture?
-## [5][Cypress vs. Capybara](https://www.reddit.com/r/ruby/comments/fhhd1t/cypress_vs_capybara/)
+## [9][Cypress vs. Capybara](https://www.reddit.com/r/ruby/comments/fhhd1t/cypress_vs_capybara/)
 - url: https://blog.testdouble.com/talks/2020-03-12-cypress-vs-capybara/
 ---
 
-## [6][Find why your Ruby app is slow with ruby-prof](https://www.reddit.com/r/ruby/comments/fhcskc/find_why_your_ruby_app_is_slow_with_rubyprof/)
+## [10][Find why your Ruby app is slow with ruby-prof](https://www.reddit.com/r/ruby/comments/fhcskc/find_why_your_ruby_app_is_slow_with_rubyprof/)
 - url: https://link.medium.com/koAvxdRZM4
 ---
 
-## [7][Bundle Install errors on aarm64](https://www.reddit.com/r/ruby/comments/fheceu/bundle_install_errors_on_aarm64/)
-- url: https://www.reddit.com/r/ruby/comments/fheceu/bundle_install_errors_on_aarm64/
----
-Not a regular Ruby user.  I'm trying to use bundle install to test out an application that I'm interested in self hosting.  I've gotten through most of the major pitfalls...but cannot figure out how to get the bundle to install libv8 successfully.
-
-I was able to build the correct libv8 (7.3.492.27.1) by pulling the source from git and locally building the gem.  But the application's bundle keeps trying to Install it by pulling and compiling itself (the arch doesn't have a rubygems prebuilt?), and it keeps failing.  Is there a way to nudge it towards the locally built gem?
-
-Thanks!
-## [8][How we migrated from Timecop to built-in Rails 5.2 time helpers (and unified tests code by the way)](https://www.reddit.com/r/ruby/comments/fh3nxh/how_we_migrated_from_timecop_to_builtin_rails_52/)
-- url: https://frontdeveloper.pl/2020/03/how-we-migrated-from-timecop-to-built-in-rails-5-2-time-helpers/
----
-
-## [9][dry-schema and dry-validation 1.5.0 released](https://www.reddit.com/r/ruby/comments/fgxcxw/dryschema_and_dryvalidation_150_released/)
-- url: https://dry-rb.org/news/2020/03/11/dry-schema-and-dry-validation-1-5-0-released/
----
-
-## [10][Ruby's Bitwise Toolbox: Operators, Applications and Magic Tricks](https://www.reddit.com/r/ruby/comments/fh018t/rubys_bitwise_toolbox_operators_applications_and/)
-- url: https://www.reddit.com/r/ruby/comments/fh018t/rubys_bitwise_toolbox_operators_applications_and/
----
-How often do you think about the bits -- the ones and zeroes -- that make up your app's data? If you're doing web development in Ruby there's rarely any need to. But what if you want to interact with the operating system or a piece of hardware? What if you'd like to understand network protocols or databases? In that case, a solid understanding of bitwise operators is foundational. 
-
-In this article José M. Gilgado will introduce you to bitwise operations in Ruby, give practical examples of how they can be useful, and finish big with with some fun math tricks. 
-
-[https://www.honeybadger.io/blog/ruby-bitwise-operators/](https://www.honeybadger.io/blog/ruby-bitwise-operators/)

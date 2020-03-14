@@ -23,138 +23,97 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/10/this-week-in-rust-329/
 ---
 
-## [3][Announcing Rust 1.42.0](https://www.reddit.com/r/rust/comments/fhhkqo/announcing_rust_1420/)
-- url: https://blog.rust-lang.org/2020/03/12/Rust-1.42.html
+## [3][beef::Cow, a more compact std::borrow::Cow](https://www.reddit.com/r/rust/comments/fif7ob/beefcow_a_more_compact_stdborrowcow/)
+- url: https://github.com/maciejhirsz/beef/
 ---
 
-## [4][Tips for approaching Rust code base](https://www.reddit.com/r/rust/comments/fhw6uu/tips_for_approaching_rust_code_base/)
-- url: https://www.reddit.com/r/rust/comments/fhw6uu/tips_for_approaching_rust_code_base/
----
-I previously programmed in Java and a little bit in C#.
-
-With these languages, almost 99% of code-base you encounter have the convention that a source file holds a single class definition. Hence when you approach a file, cognitively when you are looking at definitions like methods, variables etc, you know it is part of a that very class you are introspecting.
-
-Now that I am picking up Rust, I find things are done a little bit different. A source file could have multiple struct/enum definitions and definitions of methods/functions on structs are not as visually and cognitively linked together as it is with Java.
-
-Hence, when I approach a code base in Rust and I am looking at definitions like methods, variables etc, it is a little bit harder to quickly tell which struct a function definition is for. And in some cases (which is not actually rare) there might be multiple structs defined in the file, making it harder to quickly tell where things belong. I am finding this to be a little confusing and straining cognitively.
-
-How do experienced Rust developers deal with this? Any tips?
-## [5][Traits, dynamic dispatch and upcasting](https://www.reddit.com/r/rust/comments/fhpas7/traits_dynamic_dispatch_and_upcasting/)
-- url: https://articles.bchlr.de/traits-dynamic-dispatch-upcasting
+## [4][Archetypal vs Grouped ECS architectures](https://www.reddit.com/r/rust/comments/fiemdi/archetypal_vs_grouped_ecs_architectures/)
+- url: https://community.amethyst.rs/t/archetypal-vs-grouped-ecs-architectures-my-take/1344?u=erlend_sh
 ---
 
-## [6][Question about what happens when iterating over a vector](https://www.reddit.com/r/rust/comments/fhz6rk/question_about_what_happens_when_iterating_over_a/)
-- url: https://www.reddit.com/r/rust/comments/fhz6rk/question_about_what_happens_when_iterating_over_a/
----
-Hey
-
-I have this simple code:
-
-https://gist.github.com/rust-play/21158e9e5d4851abb8116a9707cae98e
-
-Which gives me the error:
-
-error[E0507]: cannot move out of `self.rules` which is behind a shared reference
-  --&gt; src/lib.rs:16:21
-   |
-16 |         for rule in self.rules {
-   |                     ^^^^^^^^^^
-   |                     |
-   |                     move occurs because `self.rules` has type `std::vec::Vec&lt;Rule&gt;`, which does not implement the `Copy` trait
-
-Can someone please help me understand why a for over the vector causes a move?
-## [7][The project that brute forced every possible melody used Rust](https://www.reddit.com/r/rust/comments/fhkji0/the_project_that_brute_forced_every_possible/)
-- url: https://www.reddit.com/r/rust/comments/fhkji0/the_project_that_brute_forced_every_possible/
----
-[The project](https://www.musictech.net/news/programmers-generate-every-possible-melody-in-midi-to-prevent-lawsuits/) has been getting lots of press, but the first mention of Rust I'd heard in relation to it was on last night's (3/11/2020) episode of [Off the Hook](https://www.2600.com/offthehook/2020/0320.html). The whole segment is worthwhile, but the developer talks about how and why they used Rust around 20:45.
-## [8][Command error: request error nvim_call_function - Vim(let):E15: Invalid expression #59](https://www.reddit.com/r/rust/comments/fhy4vl/command_error_request_error_nvim_call_function/)
-- url: https://www.reddit.com/r/rust/comments/fhy4vl/command_error_request_error_nvim_call_function/
----
-Hello! I'm trying to figure out how to use coc-rls.  
-I have setup cargo, have updated (:CocCommand rls.update) coc-rls latest version u/1.1.4, neovim :checkhealth is all ok, but when try to run .rs file i get this nasty message:
-
-``` 
-[coc.nvim] Command error: request error nvim_call_function - Vim(let):E15: Invalid expression: 'ps -o state= -o comm= -t '#{pane_tty}'  
- | grep -iqE '^[^TXZ ]+ +(\S+\/)?g?(view|n?vim?x?)(diff)?$''
-```
-
-CocInfo:
-```
-vim version: NVIM v0.5.0-139-g610755ff6
-node version: v12.16.1
-coc.nvim version: 0.0.75-d5e12d81b2
-term: screen-256color
-platform: linux
-
-[coc.nvim] Setting sysroot to/home/sky/.rustup/toolchains/stable-x86_64-unknown-linux-gnu
-[coc.nvim] running: rustup run stable-x86_64-unknown-linux-gnu rls, at /home/sky/rust_learning/a3_rust-by-example
-
-## Output channel: prettier
-## Output channel: snippets
-```
-
-CocOpenLog (selected printout of Error message):
-```
-2020-03-08T22:33:53.834 ERROR (pid:19851) [commands] - Error: request error nvim_call_function - Vim(let):E15: Invalid expression: 'ps -o state= -o comm= -t '#{pane_tty}'   | grep -iqE '^[^TXZ ]+ +(\S+\/)?g?(view|n?vim?x?)(diff)?$''
-    at /home/sky/.config/nvim/plugged/coc.nvim/build/index.js:14243:32
-    at NvimTransport.parseMessage (/home/sky/.config/nvim/plugged/coc.nvim/build/index.js:10847:17)
-    at DecodeStream.&lt;anonymous&gt; (/home/sky/.config/nvim/plugged/coc.nvim/build/index.js:10817:18)
-    at DecodeStream.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at DecodeStream.Readable.push (_stream_readable.js:209:10)
-    at DecodeStream.Transform.push (_stream_transform.js:152:32)
-    at DecodeBuffer.DecodeStream.decoder.push (/home/sky/.config/nvim/plugged/coc.nvim/build/index.js:13767:12)
-    at DecodeBuffer.flush (/home/sky/.config/nvim/plugged/coc.nvim/build/index.js:12757:12)
-```
-
-How to fix the above problem, and have coc-rls start to work? (PS. I posted on `github.com/coc.rls` but the site was not helpful)
-## [9][Async Interview #7: Withoutboats](https://www.reddit.com/r/rust/comments/fhiizd/async_interview_7_withoutboats/)
-- url: http://smallcultfollowing.com/babysteps/blog/2020/03/10/async-interview-7-withoutboats/
+## [5][This Week in Rust is looking for a new maintainer. | Inside Rust Blog](https://www.reddit.com/r/rust/comments/fi1g1u/this_week_in_rust_is_looking_for_a_new_maintainer/)
+- url: https://blog.rust-lang.org/inside-rust/2020/03/13/twir-new-lead.html
 ---
 
-## [10][Someday Rust will form their own foundation and standardize the language?](https://www.reddit.com/r/rust/comments/fhueqp/someday_rust_will_form_their_own_foundation_and/)
-- url: https://www.reddit.com/r/rust/comments/fhueqp/someday_rust_will_form_their_own_foundation_and/
+## [6][s3-algo: High-level, high-performance algorithms for S3 batch operations, built on top of Rusoto](https://www.reddit.com/r/rust/comments/figp3a/s3algo_highlevel_highperformance_algorithms_for/)
+- url: https://www.reddit.com/r/rust/comments/figp3a/s3algo_highlevel_highperformance_algorithms_for/
 ---
-The standarization of a language and libraries is important to evolve the future in the right way, I guess, so, Why Rust doesn't have it?  (Please be nice is my first post :D)
-## [11][Confy 0.4 is released!](https://www.reddit.com/r/rust/comments/fhzolr/confy_04_is_released/)
-- url: https://www.reddit.com/r/rust/comments/fhzolr/confy_04_is_released/
+[https://crates.io/crates/s3-algo](https://crates.io/crates/s3-algo)
+
+(more info in repository README: [https://github.com/openanalytics/s3-algo](https://github.com/openanalytics/s3-algo))
+
+I made this library originally to upload lots of files to S3, where previously the aws cli was used. The result is a very satisfactory performance boost, with the added feature that we can track the progress of all such multi-file uploads.
+
+I made [s3-cli](https://github.com/Ploppz/s3-cli) (in its very infancy) in order to benchmark performance on a real S3 bucket in eu-west-1, and compare it with \`aws s3 cp ...\`. I'm sure the latter is not at all optimized for this so I suppose it's not a fair comparison. In the project I work on however, they had been using aws cli for this task up until now, so in my case it's a relevant comparison. I'm open to other benchmarking ideas! \`s3-algo\` copied 406 files totaling 1.1 GB in 6 seconds on average, and \`aws s3 cp\` on average 20 seconds. (benchmarked with \`hyperfine\`)
+
+&amp;#x200B;
+
+Currently supported operations:
+
+* upload files (or in-memory data)
+* list objects with a certain prefix or any other requirement
+* delete or copy all objects that were listed
+
+&amp;#x200B;
+
+General features:
+
+* stream files to upload requests
+* detailed data about each request is gathered, and processed in programmer-given closure
+* as generic as possible
+* focus on parallelization
+* aggressive timeouts for good performance
+* retry mechanism and exponential back-off
+
+&amp;#x200B;
+
+Things to consider:
+
+* I have just made a few functions, but maybe another type of abstraction would be nicer - e.g. extension trait or something like that?
+* One existing project I have found is \`s4\`, or its fork \`s3-ext\`. Would it be an idea to merge efforts? So far it seems like \`s3-algo\` and \`s3-ext\` complement each other, as \`s3-ext\` focuses on doing single \[multipart\] file upload properly, while \`s3-algo\` is optimized for large number of smaller files, so far without multipart upload, etags or any more advanced S3 feature.
+
+&amp;#x200B;
+
+I eagerly welcome any suggestions for change (be it in the interface or internals) or PRs.
+## [7][analyze-reify: a Rust/tree-sitter based CLI that analyzes clojure code for occurrences of reify](https://www.reddit.com/r/rust/comments/fig9t5/analyzereify_a_rusttreesitter_based_cli_that/)
+- url: https://www.reddit.com/r/rust/comments/fig9t5/analyzereify_a_rusttreesitter_based_cli_that/
 ---
-Hi folks
-
-We the Rust CLI Working Group (a.k.a Clique) are pleased to announce the release of Confy 0.4. Confy is a boilerplate-free configuration library. 
-
-Links:
-crates.io: https://crates.io/crates/confy
-Github: https://github.com/rust-cli/confy
-
-Changes:
-* Deal with bad TOML data
-* Replace panics with a custom error type
-* Ability to use crate name in the directory
-* fix issues with dependencies, runtime cargo-manifest, etc
-* Add `load_path` &amp; `save_path`
-* Migrate to 2018 edition
+I think it's always fun to build useful tools while learning a new language. To me Rust is new, but I'm familiar with Clojure and I already built a few tools around Clojure code. This time I used Rust and tree-sitter to analyze Clojure code:  
 
 
-Example:  
-```rust
-#[derive(Default, Debug, Serialize, Deserialize)]
-struct MyConfig {
-    version: u8,
-    api_key: String,
-}
-
-fn main() -&gt; Result&lt;(), ::std::io::Error&gt; {
-    let cfg: MyConfig = confy::load("my-app-name")?;
-    dbg!(cfg);
-    Ok(())
-}
-```
-
-Thanks to all  our contributors :) 
-You can reach out to us at #wg-cli on both the official discord &amp; zulip servers
-## [12][Self-hosted bot for sending messages to yourself in Telegram](https://www.reddit.com/r/rust/comments/fhv1uj/selfhosted_bot_for_sending_messages_to_yourself/)
-- url: https://github.com/Mr-Andersen/notify-tg
+[https://github.com/borkdude/analyze-reify](https://github.com/borkdude/analyze-reify)
+## [8][Oxidize 1K: A Remote Embedded Rust Conference](https://www.reddit.com/r/rust/comments/fi3da0/oxidize_1k_a_remote_embedded_rust_conference/)
+- url: https://oxidizeconf.com/oxidize-1k/
 ---
 
+## [9][Looking for a guide (post/book fragment) on `to`, `as` and `into`.](https://www.reddit.com/r/rust/comments/fi63tl/looking_for_a_guide_postbook_fragment_on_to_as/)
+- url: https://www.reddit.com/r/rust/comments/fi63tl/looking_for_a_guide_postbook_fragment_on_to_as/
+---
+I recall reading some document that highlighted the differences between them. I think it was a guide on designing APIs. Thanks!
+## [10][Why does rust not support default arguments?](https://www.reddit.com/r/rust/comments/fi6nov/why_does_rust_not_support_default_arguments/)
+- url: https://www.reddit.com/r/rust/comments/fi6nov/why_does_rust_not_support_default_arguments/
+---
+Just curious. Is it a philosophical stance or an implementation issue, etc?
+## [11][New process-viewer release (whole new network viewer)!](https://www.reddit.com/r/rust/comments/fi5tiy/new_processviewer_release_whole_new_network_viewer/)
+- url: https://blog.guillaume-gomez.fr/articles/2020-03-13+New+process-viewer+release
+---
+
+## [12][Why can't I borrow inmutably in this context?](https://www.reddit.com/r/rust/comments/fig3v6/why_cant_i_borrow_inmutably_in_this_context/)
+- url: https://www.reddit.com/r/rust/comments/fig3v6/why_cant_i_borrow_inmutably_in_this_context/
+---
+Here the playground: https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=abe473c4500154759826602f056a55ba
+
+If I don't touch the borrowed value after calling readonly it is ok, but if I do it complains.  
+I don't understand where the problem is since by the time I modify it the second time the readonly function has already returned and it could not possibly change self since its an inmutable reference.  
+EDIT:
+
+It is also interesting that I can just reborrow mutably and keep going.  
+
+    pub fn run(mut self) {
+        println!("I consume myself");
+        let text = &amp;mut self.text;
+        *text = "hello".to_owned();
+        self.readonly();
+        let text = &amp;mut self.text;
+        *text = "done".to_owned(); // This actually works
+    }

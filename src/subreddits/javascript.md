@@ -7,43 +7,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Dark Reader is now available as a JavaScript library](https://www.reddit.com/r/javascript/comments/fhx5uf/dark_reader_is_now_available_as_a_javascript/)
-- url: https://www.npmjs.com/package/darkreader
+## [2][Showoff Saturday (March 14, 2020)](https://www.reddit.com/r/javascript/comments/fih52u/showoff_saturday_march_14_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fih52u/showoff_saturday_march_14_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][I made a small game in JavaScript](https://www.reddit.com/r/javascript/comments/fidpn8/i_made_a_small_game_in_javascript/)
+- url: https://play.google.com/store/apps/details?id=io.deltatime.fruitfactory
 ---
 
-## [3][8 New Features Shipping With ES2020](https://www.reddit.com/r/javascript/comments/fhyjij/8_new_features_shipping_with_es2020/)
+## [4][uPlot.js v1.0 – A fast, small chart for time series, OHLC and bars](https://www.reddit.com/r/javascript/comments/fi3d7l/uplotjs_v10_a_fast_small_chart_for_time_series/)
+- url: https://github.com/leeoniya/uPlot
+---
+
+## [5][Harland: Simple and complete framework for building web apps in NodeJS](https://www.reddit.com/r/javascript/comments/fihwsq/harland_simple_and_complete_framework_for/)
+- url: https://github.com/usbac/harland
+---
+
+## [6][8 New Features Shipping With ES2020](https://www.reddit.com/r/javascript/comments/fhyjij/8_new_features_shipping_with_es2020/)
 - url: https://medium.com/better-programming/8-new-features-shipping-with-es2020-7a2721f710fb
 ---
 
-## [4][The getOwnPropertyDescriptors Method in JavaScript](https://www.reddit.com/r/javascript/comments/fhqxj2/the_getownpropertydescriptors_method_in_javascript/)
-- url: https://alligator.io/js/getownpropertydescriptors/
+## [7][Multithreading Gallery showing countries affected by Covid 19](https://www.reddit.com/r/javascript/comments/fib6k9/multithreading_gallery_showing_countries_affected/)
+- url: https://github.com/neomjs/covid19
 ---
 
-## [5][A tiny (134B) and fast utility to generate random IDs of fixed length](https://www.reddit.com/r/javascript/comments/fhwn7w/a_tiny_134b_and_fast_utility_to_generate_random/)
-- url: https://github.com/lukeed/uid
+## [8][Dark Reader is now available as a JavaScript library](https://www.reddit.com/r/javascript/comments/fhx5uf/dark_reader_is_now_available_as_a_javascript/)
+- url: https://www.npmjs.com/package/darkreader
 ---
 
-## [6][React hook for local storage state done right](https://www.reddit.com/r/javascript/comments/fhwtl1/react_hook_for_local_storage_state_done_right/)
-- url: https://github.com/astoilkov/use-local-storage-state
+## [9][heapify: the fastest priority queue implementation out there](https://www.reddit.com/r/javascript/comments/fiibjm/heapify_the_fastest_priority_queue_implementation/)
+- url: https://github.com/luciopaiva/heapify
 ---
 
-## [7][A 3D ping pong mini game made in Javascript](https://www.reddit.com/r/javascript/comments/fhzjqx/a_3d_ping_pong_mini_game_made_in_javascript/)
-- url: https://codesandbox.io/s/white-resonance-0mgum
+## [10][To have some fun during the many conference calls next week I created this Conference Call Soundboard!](https://www.reddit.com/r/javascript/comments/fihr67/to_have_some_fun_during_the_many_conference_calls/)
+- url: https://conference-sounds.netlify.com
 ---
 
-## [8][[ react-updates ] Debug redundant re-renders of React components](https://www.reddit.com/r/javascript/comments/fhz1w6/reactupdates_debug_redundant_rerenders_of_react/)
-- url: https://github.com/multum/react-updates
+## [11][I made A Project That Generates A shakespearean insult, It only logs the insult to the console right now but I'm working on maybe changing the code then using Apache Cordova.](https://www.reddit.com/r/javascript/comments/fihjf9/i_made_a_project_that_generates_a_shakespearean/)
+- url: https://github.com/JohnNodeJs/Shakespear-insults/tree/master
 ---
 
-## [9][Awesome list of Pika - Move the web forward](https://www.reddit.com/r/javascript/comments/fhvc76/awesome_list_of_pika_move_the_web_forward/)
-- url: https://github.com/rajasegar/awesome-pika
----
-
-## [10][An ultra-simplified modern compiler, written in easy to read JavaScript](https://www.reddit.com/r/javascript/comments/fhg3r8/an_ultrasimplified_modern_compiler_written_in/)
-- url: https://github.com/jamiebuilds/the-super-tiny-compiler/
----
-
-## [11][AnimeJS is a great JavaScript animation library, check my tutorial on how to use it](https://www.reddit.com/r/javascript/comments/fhbakq/animejs_is_a_great_javascript_animation_library/)
-- url: https://developerbacon.ca/articles/how-to-animate-css-and-svg-s-with-anime-js/
+## [12][WebGL Shooter Demo (Mobile Compatible) - Plasma Rifle](https://www.reddit.com/r/javascript/comments/fi6hxw/webgl_shooter_demo_mobile_compatible_plasma_rifle/)
+- url: https://oguzeroglu.github.io/ROYGBIV/demo/plasmaGun/application.html
 ---
 

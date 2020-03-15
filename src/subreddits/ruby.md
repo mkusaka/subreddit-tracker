@@ -1,5 +1,11 @@
 # ruby
-## [1][Ruby Conferences Updates - Status: CANCELD, NEW DATE, ONSITE CANCELED / ONLINE ONLY](https://www.reddit.com/r/ruby/comments/fi3etc/ruby_conferences_updates_status_canceld_new_date/)
+## [1][Generate colorfull Triangle patterns](https://www.reddit.com/r/ruby/comments/fimzrs/generate_colorfull_triangle_patterns/)
+- url: https://www.reddit.com/r/ruby/comments/fimzrs/generate_colorfull_triangle_patterns/
+---
+[TrianglePattern](https://github.com/hendrixfan/triangle)
+
+I made a Gem to generate colorfull triangle patterns. You can use the resulting SVG as background image for your Project.
+## [2][Ruby Conferences Updates - Status: CANCELD, NEW DATE, ONSITE CANCELED / ONLINE ONLY](https://www.reddit.com/r/ruby/comments/fi3etc/ruby_conferences_updates_status_canceld_new_date/)
 - url: https://www.reddit.com/r/ruby/comments/fi3etc/ruby_conferences_updates_status_canceld_new_date/
 ---
 FYI: I try to keep the [Ruby Conference Calendar](https://planetruby.github.io/calendar/2020) up-to-date with Corona Covid-19 cancellations. So far the list includes:
@@ -24,7 +30,7 @@ POSTPONED:
 - Ruby Day Italy (September)
 
 PS: Cancellation or postponement or going all online is the responsible thing to do to try to contain (or mitigate) the covid epidemic. See [Coronavirus: why you must act NOW](https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca) for example.
-## [2][Adding documentation to a docker image](https://www.reddit.com/r/ruby/comments/fia0et/adding_documentation_to_a_docker_image/)
+## [3][Adding documentation to a docker image](https://www.reddit.com/r/ruby/comments/fia0et/adding_documentation_to_a_docker_image/)
 - url: https://www.reddit.com/r/ruby/comments/fia0et/adding_documentation_to_a_docker_image/
 ---
 TL; DR -- If ruby is installed with the --disable-install-doc flag and then the source is deleted, is there a simple way to go back and install the `ri` documentation?
@@ -34,11 +40,11 @@ The Docker container for ruby is slimmed down and they do the configure with the
 But during development, I'd like to have the `ri` documentation "local".  One choice is to put it on my laptop outside of the Docker images which is the path I'm currently taking.  But I'm wondering if there is a simple way to go back and create the documentation.
 
 The third alternative I can think of is to use an entirely different image (e.g. an Ubuntu Linux image with the ruby package installed) and use that during development but that implies that my development and testing images will be different from my production images.  And... for RoR in particular, that is somewhat typical since the development and testing systems tend to have additional gems installed (e.g. rspec) that are not installed in production.
-## [3][HAPPY FRIDAY THE 13TH Y'ALL](https://www.reddit.com/r/ruby/comments/fi2dlg/happy_friday_the_13th_yall/)
+## [4][HAPPY FRIDAY THE 13TH Y'ALL](https://www.reddit.com/r/ruby/comments/fi2dlg/happy_friday_the_13th_yall/)
 - url: https://i.redd.it/h2id8j4rvgm41.png
 ---
 
-## [4][need help...](https://www.reddit.com/r/ruby/comments/fiekc0/need_help/)
+## [5][need help...](https://www.reddit.com/r/ruby/comments/fiekc0/need_help/)
 - url: https://www.reddit.com/r/ruby/comments/fiekc0/need_help/
 ---
 module Modu
@@ -96,15 +102,15 @@ puts Modu::cons
 &amp;#x200B;
 
 The code works fine except the fact that it doesn't print the cons value and throws a "no\_method\_error"
-## [5][Released a string metrics/distance gem written in Rust!](https://www.reddit.com/r/ruby/comments/fhu07l/released_a_string_metricsdistance_gem_written_in/)
+## [6][Released a string metrics/distance gem written in Rust!](https://www.reddit.com/r/ruby/comments/fhu07l/released_a_string_metricsdistance_gem_written_in/)
 - url: https://github.com/anirbanmu/str_metrics
 ---
 
-## [6][Build a Linux CLI tool like glances in Ruby](https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/)
+## [7][Build a Linux CLI tool like glances in Ruby](https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/)
 - url: https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/
 ---
 I was thinking of using ruby to build a CLI tool like the glances or Top commands in linux . Ideally it's just a fun project for myself to learn about how ruby can interact with the system to get info like memory usage and CPU load. What do you guys think of this venture?
-## [7][i need help for a ruby script that i made](https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/)
+## [8][i need help for a ruby script that i made](https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/)
 - url: https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/
 ---
  
@@ -142,15 +148,11 @@ return "you find a tree"
 end  
 end  
 begginings()
-## [8][Announcing RubyGems.org Stats - RubyGems Blog](https://www.reddit.com/r/ruby/comments/fhr6t1/announcing_rubygemsorg_stats_rubygems_blog/)
+## [9][Announcing RubyGems.org Stats - RubyGems Blog](https://www.reddit.com/r/ruby/comments/fhr6t1/announcing_rubygemsorg_stats_rubygems_blog/)
 - url: https://blog.rubygems.org/2020/03/09/announcing-rubygems-stats.html
 ---
 
-## [9][Cypress vs. Capybara](https://www.reddit.com/r/ruby/comments/fhhd1t/cypress_vs_capybara/)
+## [10][Cypress vs. Capybara](https://www.reddit.com/r/ruby/comments/fhhd1t/cypress_vs_capybara/)
 - url: https://blog.testdouble.com/talks/2020-03-12-cypress-vs-capybara/
----
-
-## [10][Find why your Ruby app is slow with ruby-prof](https://www.reddit.com/r/ruby/comments/fhcskc/find_why_your_ruby_app_is_slow_with_rubyprof/)
-- url: https://link.medium.com/koAvxdRZM4
 ---
 

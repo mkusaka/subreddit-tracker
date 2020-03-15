@@ -70,38 +70,94 @@ I think it will be helpful to everyone to collect information about C++ events t
 
 **This is intended to be a living document. Please help be suggesting changes or additions.**
 
-
 # Lexicon
 
-**Cancelled** == The event will definitely not be rescheduled.
+Term | Meaning
+-|-
+**Cancelled** | The event will not happen on the planned dates and will not be rescheduled in 2020.
+**Postponed** | The event will not happen on the planned dates but may happen later in 2020.
+**No Date Changes Yet** | The event has not announced any changes to the planned dates.
 
-**Postponed** == The event will not happen on the planned dates, but may happen later this year.
+# 2020 Conferences
 
-**Still planned** == The event has not announced any changes to the planned dates.
+Event | Location | Original Dates | Status | New Dates
+-|-|-|-|-
+[QtDay](https://www.qtday.it) | Florence, Italy | 03-13 to 03-14 | [Postponed](https://www.qtday.it) | 11-20 to 11-21
+[emBO++](https://www.embo.io) | Bochum, Germany | 03-13 to 03-15 | No Date Changes Yet | 
+[ConanDays](https://conandays.conan.io) | Madrid, Spain | 03-19 to 03-20 | [Postponed](https://conandays.conan.io) | Autumn
+[ACCU](https://conference.accu.org) | Bristol, UK | 03-25 to 03-28 | [Cancelled](https://conference.accu.org/news/2020/202003121205_accu2020cancelled.html)
+[C++ CoreHard](https://conference.corehard.by) | Minsk, Belarus | 04-10 to 04-11 | [Postponed](https://conference.corehard.by) | 10-30 to 10-31
+[using std::cpp](https://usingstdcpp.org) | Madrid, Spain | 04-16 | [Postponed](https://eventos.uc3m.es/40350/detail/using-std_cpp-2020.html) | October
+[C++ Russia Moscow](https://cppconf-moscow.ru/en) | Moscow, Russia | 04-27 to 04-28 | [Postponed](https://twitter.com/timur_audio/status/1238544415876096000) | June
+[C++Now](https://cppnow.org) | Aspen, CO, US | 05-03 to 05-08 | [Cancelled](http://cppnow.org/announcements/2020/03/Canceled) |
+[ADC++](https://adcpp.de/20) | Regensburg, Germany | 05-04 to 05-06 | [Postponed](https://adcpp.de/20) | 10-13 to 10-14
+[Qt World Summit](https://www.qt.io/qtws20) | Palm Springs, California, US | 05-12 to 05-14 | [Postponed](https://www.qt.io/blog/qt-world-summit-20-postponed-to-october) | 10-20 to 10-22
+[Core C++](https://corecpp.org) | Tel Aviv, Israel | 05-25 to 05-27 | [Postponed](https://twitter.com/corecpp/status/1238373483501010944) | Autumn
+[Total Chaos](https://www.chaosgroup.com/total-chaos) | Sofia, Bulgaria | 05-29 to 05-31 | [Cancelled](https://www.chaosgroup.com/total-chaos) |
+[Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | No Date Changes Yet |
+[Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | No Date Changes Yet |
+[CPPP](https://cppp.fr/) | Paris, France | 06-22 to 06-23 | No Date Changes Yet | 
+[CppCon](https://cppcon.org) | Aurora, CO, US | 09-13 to 09-18 | No Date Changes Yet |
+[Meeting C++](https://meetingcpp.com) | Berlin, Germany | 11-12 to 11-14 | No Date Changes Yet |
 
-# Conferences
+# 2020 ISO C++ Committee Meetings
 
-- CppCon 2020 is still planned.
-- C++Now 2020 is cancelled.
-- ACCU 2020 is cancelled.
-- [Cpp On Sea 2020](https://cpponsea.uk/) is still on for June 7-10.
-- Core C++ 2020 is postponed from May until Fall.
-- [Cpp Russia Moscow 2020](https://cppconf.ru/en/) is postponed from April 27-28 until June.
-- [Advanced Developer's Conference++ 2020](https://adcpp.de/20/default) is postponed from May until October.
+Location | Original Dates | Status | New Dates
+-|-|-|-
+[Varna, Bulgaria](https://wg21.link/N4837) | 06-01 to 06-06 | [Cancelled](https://herbsutter.com/2020/03/13/the-varna-iso-c-meeting-is-postponed) | 
+[JFK Airport, New York](https://wg21.link/N4848) |  11-09 to 11-14 | No Date Changes Yet |
 
-# C++ User Groups
+# 2020 C++ User Groups
 
-- ACCU Bay Area is cancelled until further notice.
-
-# ISO C++ Committee Meetings
-
-- ISO C++ Varna 2020 is cancelled.
-- ISO C++ New York 2020 is status quo.
+Group | Location | Status | Until
+-|-|-|-
+[ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
+[Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
 ## [3][A simple Star War game made purely out of C++ &amp; SFML with code](https://www.reddit.com/r/cpp/comments/fih7qs/a_simple_star_war_game_made_purely_out_of_c_sfml/)
 - url: https://www.youtube.com/watch?v=3t0JbsZ6X4I
 ---
 
-## [4][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
+## [4][A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)](https://www.reddit.com/r/cpp/comments/fij6tl/a_minimal_webassembly_virtual_dom_to_build_c_spa/)
+- url: https://github.com/mbasso/asm-dom
+---
+
+## [5][Cs50 vs Udacity](https://www.reddit.com/r/cpp/comments/fj0435/cs50_vs_udacity/)
+- url: /r/cs50/comments/fis7mz/cs50_vs_udacity/
+---
+
+## [6][ECS back and forth, part 8: Type Id](https://www.reddit.com/r/cpp/comments/fijq6n/ecs_back_and_forth_part_8_type_id/)
+- url: https://skypjack.github.io/2020-03-14-ecs-baf-part-8/
+---
+
+## [7][Problem with string replace method.](https://www.reddit.com/r/cpp/comments/fiz5lg/problem_with_string_replace_method/)
+- url: https://www.reddit.com/r/cpp/comments/fiz5lg/problem_with_string_replace_method/
+---
+Today I was solving some easy leetcode problems, as I am beginner, I came with a solution in which I was trying to replace "." in the string with "\[.\]" , don't know what's the problem but it gets stuck in some sort of infinite loop, but it works very well with other inputs.
+
+such as "hello", "hi", etc.
+
+here is the code:
+
+    #include &lt;stdio.h&gt;
+    #include &lt;string&gt;
+    #include &lt;iostream&gt; 
+    using namespace std; 
+    
+    int main(){
+        string address = "1.1.1.1";
+            for(int i=0; i&lt;=address.length(); i++){
+                if(address[i] == '.'){
+                    address.replace(i, 1, "[.]");
+                }
+            }
+        cout &lt;&lt; address &lt;&lt; endl;
+        return 0;
+    }
+
+someone please explain why this happens ?
+
+if you replace "\[.\]" with some other word like "hey" the code works just fine.
+## [8][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
 - url: https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/
 ---
 I'd like to gather some feedback on a short proposal I've written: [https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md](https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md)
@@ -109,11 +165,27 @@ I'd like to gather some feedback on a short proposal I've written: [https://gith
 I've seen this feature in Rust, where my initial reaction was that it looks very dangerous. After using it for a while though, I've found it to not only solve ergonomics issues in my code, but also prevent bugs, which is why I've decided to draft a proposal.
 
 I also know that the committee doesn't like proposals that change fundamentals in the language, but I think this a small change with huge upsides and no backwards-compatibility issues. I've personally hit a nasty bug in my C++ code that could have been avoided with this very feature recently.
-## [5][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
+## [9][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
 - url: http://cppnow.org/announcements/2020/03/Canceled/
 ---
 
-## [6][What's the reliable and FOSS way to compile C++ code for Windows (on Linux)?](https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/)
+## [10][C++ keeps adding features no one really wants.](https://www.reddit.com/r/cpp/comments/filxpg/c_keeps_adding_features_no_one_really_wants/)
+- url: https://www.reddit.com/r/cpp/comments/filxpg/c_keeps_adding_features_no_one_really_wants/
+---
+Just look at the networking, formatting, \[maybe\_unused\] / \[likely\] / \[unlikely\] and others.  
+I mean these are all cool features I use every day but It has already been solved.  
+If I want networking library why would I use standard one? Especially when it simply copies from others  and have to wait for it like 10 years.  
+Setting up libfmt is like 10 seconds on Linux. And if I don't like it I can use a different one. How many people thought that streams were a good idea?  
+\[maybe\_unused\] is cool, but I probably will use the old trick with cast to void because it works with older compilers and everybody knows the trick anyway (I might want to provide simple macro if I want to be more explicit), using new syntax simply breaks compatibility and gives NOTHING.  
+
+
+Many hours spent for making it part of language and I think no one will use It, especially when standard library does not care about performance. Unlike standard implementation, some library can be  even be forked and modified if need to, no luck for me if I decide to use standard one.  
+
+
+It all just seems like short-sighted design, but I am just an internet dude.
+
+Modules, concept and coroutines (AFAIK these need compiler support, also library solution would be bug prone and perhaps slower) are great features and I am happy that they are coming.
+## [11][What's the reliable and FOSS way to compile C++ code for Windows (on Linux)?](https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/)
 - url: https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/
 ---
 I primarily develop my C++ applications (and everything else) on Linux, where there are two extremely good, FOSS, and maintained C++ compilers (GCC and clang).
@@ -127,41 +199,7 @@ Mingw-w64 exists, works great, and has a good license, but, unfortunately, it se
 One glimmer of hope is that the Arch Linux packages (in AUR)'s build scripts seem to pull their code from the main GCC repository. Is the necessary C++ code to build a working MinGW toolchain maintained with the GCC code in its main repository, in such a way that I can presumably learn how to build it whenever I want a maintained MinGw version?
 
 So, how do you all address these concerns in your projects where you need to distribute Windows binaries? Is there a solution that addresses all concerns well?
-## [7][Trip Report: C++ Standards Meeting in Prague, February 2020](https://www.reddit.com/r/cpp/comments/fhkeg3/trip_report_c_standards_meeting_in_prague/)
+## [12][Trip Report: C++ Standards Meeting in Prague, February 2020](https://www.reddit.com/r/cpp/comments/fhkeg3/trip_report_c_standards_meeting_in_prague/)
 - url: https://botondballo.wordpress.com/2020/03/12/trip-report-c-standards-meeting-in-prague-february-2020/
 ---
 
-## [8][Creating an intermediate GUI with dear imgui is not that difficult, but offers lots of flexibility that other GUI libraries miss out on.](https://www.reddit.com/r/cpp/comments/fhpm4t/creating_an_intermediate_gui_with_dear_imgui_is/)
-- url: https://ruurdsdevlog.wordpress.com/2020/03/07/c-desktop-application-with-dear-imgui/
----
-
-## [9][Varna ISO meeting postponed](https://www.reddit.com/r/cpp/comments/fhldku/varna_iso_meeting_postponed/)
-- url: https://www.reddit.com/r/cpp/comments/fhldku/varna_iso_meeting_postponed/
----
-Via [Bryce Lelbach on Twitter](https://twitter.com/blelbach/status/1238133359043174400).
-
-The ACCU conference due to be held in Bristol, UK later this month [has also been cancelled](https://conference.accu.org/news/2020/202003121205_accu2020cancelled.html).
-
-Update: C++ Now has been [cancelled too](http://cppnow.org/announcements/2020/03/Canceled/)
-## [10][CppCast: PVS-Studio Static Analysis](https://www.reddit.com/r/cpp/comments/fhtjxd/cppcast_pvsstudio_static_analysis/)
-- url: https://cppcast.com/yuri-minaev-static-analysis/
----
-
-## [11][Question: Websocket in STL](https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/)
-- url: https://www.reddit.com/r/cpp/comments/fh1vfb/question_websocket_in_stl/
----
-I've found a number of libraries that do websockets in C++
-
-* [https://docs.websocketpp.org/index.html](https://docs.websocketpp.org/index.html)
-* [https://www.boost.org/doc/libs/1\_72\_0/libs/beast/doc/html/index.html](https://www.boost.org/doc/libs/1_72_0/libs/beast/doc/html/index.html)
-* [https://libwebsockets.org](https://libwebsockets.org)
-
-I was wondering what people used for this/is there an STL way of doing WebSockets easily?
-
-The library needs to be permissive (Apache, MIT, BSD) because it's for an open source project.
-
-Edit: I'm consuming a WebSocket API, not creating one.
-## [12][Why there is no wchar_t variant of to_chars and from_chars?](https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/)
-- url: https://www.reddit.com/r/cpp/comments/fh5h8q/why_there_is_no_wchar_t_variant_of_to_chars_and/
----
-It is especially painful on Windows where most text is `wchar_t`. `to_chars` and `from_chars` operate on `char*` buffers. But what is `char` anyway? It could be binary blob or it could be text. If it is text, what encoding is it in? It could be ASCII, UTF-8, ANSI (Windows codepage such as cp1250 or Shift-JIS), EBCDIC or something completely different. On some platforms, `char` is 16bits wide. This is bad for inter-compatibility. We already have `char` / `wchar_t` / `char8_t` / `char16_t` / `char32_t` types in Standard and also `std::string` is using them. Is there a reason why `to_chars` and `from_chars` didn't receive a bit of Unicode love? Is there a paper where I can read the rationale why this feature was not included?

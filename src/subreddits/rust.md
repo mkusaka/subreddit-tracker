@@ -23,97 +23,144 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/10/this-week-in-rust-329/
 ---
 
-## [3][beef::Cow, a more compact std::borrow::Cow](https://www.reddit.com/r/rust/comments/fif7ob/beefcow_a_more_compact_stdborrowcow/)
-- url: https://github.com/maciejhirsz/beef/
+## [3][Kondo 🧹 v0.3 released, now with GUI 🎉!](https://www.reddit.com/r/rust/comments/fixsyj/kondo_v03_released_now_with_gui/)
+- url: https://i.redd.it/q80b5uregsm41.png
 ---
 
-## [4][Archetypal vs Grouped ECS architectures](https://www.reddit.com/r/rust/comments/fiemdi/archetypal_vs_grouped_ecs_architectures/)
-- url: https://community.amethyst.rs/t/archetypal-vs-grouped-ecs-architectures-my-take/1344?u=erlend_sh
+## [4][Out of the Box Dynamic Dispatch](https://www.reddit.com/r/rust/comments/fiprk7/out_of_the_box_dynamic_dispatch/)
+- url: https://llogiq.github.io/2020/03/14/ootb.html
 ---
 
-## [5][This Week in Rust is looking for a new maintainer. | Inside Rust Blog](https://www.reddit.com/r/rust/comments/fi1g1u/this_week_in_rust_is_looking_for_a_new_maintainer/)
-- url: https://blog.rust-lang.org/inside-rust/2020/03/13/twir-new-lead.html
+## [5][Reducing the size of `Option&lt;T&gt;` by adding members to `T`?](https://www.reddit.com/r/rust/comments/fimbo3/reducing_the_size_of_optiont_by_adding_members_to/)
+- url: https://www.reddit.com/r/rust/comments/fimbo3/reducing_the_size_of_optiont_by_adding_members_to/
 ---
+Suppose I have a struct `BoolPadded`
 
-## [6][s3-algo: High-level, high-performance algorithms for S3 batch operations, built on top of Rusoto](https://www.reddit.com/r/rust/comments/figp3a/s3algo_highlevel_highperformance_algorithms_for/)
-- url: https://www.reddit.com/r/rust/comments/figp3a/s3algo_highlevel_highperformance_algorithms_for/
----
-[https://crates.io/crates/s3-algo](https://crates.io/crates/s3-algo)
-
-(more info in repository README: [https://github.com/openanalytics/s3-algo](https://github.com/openanalytics/s3-algo))
-
-I made this library originally to upload lots of files to S3, where previously the aws cli was used. The result is a very satisfactory performance boost, with the added feature that we can track the progress of all such multi-file uploads.
-
-I made [s3-cli](https://github.com/Ploppz/s3-cli) (in its very infancy) in order to benchmark performance on a real S3 bucket in eu-west-1, and compare it with \`aws s3 cp ...\`. I'm sure the latter is not at all optimized for this so I suppose it's not a fair comparison. In the project I work on however, they had been using aws cli for this task up until now, so in my case it's a relevant comparison. I'm open to other benchmarking ideas! \`s3-algo\` copied 406 files totaling 1.1 GB in 6 seconds on average, and \`aws s3 cp\` on average 20 seconds. (benchmarked with \`hyperfine\`)
-
-&amp;#x200B;
-
-Currently supported operations:
-
-* upload files (or in-memory data)
-* list objects with a certain prefix or any other requirement
-* delete or copy all objects that were listed
-
-&amp;#x200B;
-
-General features:
-
-* stream files to upload requests
-* detailed data about each request is gathered, and processed in programmer-given closure
-* as generic as possible
-* focus on parallelization
-* aggressive timeouts for good performance
-* retry mechanism and exponential back-off
-
-&amp;#x200B;
-
-Things to consider:
-
-* I have just made a few functions, but maybe another type of abstraction would be nicer - e.g. extension trait or something like that?
-* One existing project I have found is \`s4\`, or its fork \`s3-ext\`. Would it be an idea to merge efforts? So far it seems like \`s3-algo\` and \`s3-ext\` complement each other, as \`s3-ext\` focuses on doing single \[multipart\] file upload properly, while \`s3-algo\` is optimized for large number of smaller files, so far without multipart upload, etags or any more advanced S3 feature.
-
-&amp;#x200B;
-
-I eagerly welcome any suggestions for change (be it in the interface or internals) or PRs.
-## [7][analyze-reify: a Rust/tree-sitter based CLI that analyzes clojure code for occurrences of reify](https://www.reddit.com/r/rust/comments/fig9t5/analyzereify_a_rusttreesitter_based_cli_that/)
-- url: https://www.reddit.com/r/rust/comments/fig9t5/analyzereify_a_rusttreesitter_based_cli_that/
----
-I think it's always fun to build useful tools while learning a new language. To me Rust is new, but I'm familiar with Clojure and I already built a few tools around Clojure code. This time I used Rust and tree-sitter to analyze Clojure code:  
-
-
-[https://github.com/borkdude/analyze-reify](https://github.com/borkdude/analyze-reify)
-## [8][Oxidize 1K: A Remote Embedded Rust Conference](https://www.reddit.com/r/rust/comments/fi3da0/oxidize_1k_a_remote_embedded_rust_conference/)
-- url: https://oxidizeconf.com/oxidize-1k/
----
-
-## [9][Looking for a guide (post/book fragment) on `to`, `as` and `into`.](https://www.reddit.com/r/rust/comments/fi63tl/looking_for_a_guide_postbook_fragment_on_to_as/)
-- url: https://www.reddit.com/r/rust/comments/fi63tl/looking_for_a_guide_postbook_fragment_on_to_as/
----
-I recall reading some document that highlighted the differences between them. I think it was a guide on designing APIs. Thanks!
-## [10][Why does rust not support default arguments?](https://www.reddit.com/r/rust/comments/fi6nov/why_does_rust_not_support_default_arguments/)
-- url: https://www.reddit.com/r/rust/comments/fi6nov/why_does_rust_not_support_default_arguments/
----
-Just curious. Is it a philosophical stance or an implementation issue, etc?
-## [11][New process-viewer release (whole new network viewer)!](https://www.reddit.com/r/rust/comments/fi5tiy/new_processviewer_release_whole_new_network_viewer/)
-- url: https://blog.guillaume-gomez.fr/articles/2020-03-13+New+process-viewer+release
----
-
-## [12][Why can't I borrow inmutably in this context?](https://www.reddit.com/r/rust/comments/fig3v6/why_cant_i_borrow_inmutably_in_this_context/)
-- url: https://www.reddit.com/r/rust/comments/fig3v6/why_cant_i_borrow_inmutably_in_this_context/
----
-Here the playground: https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=abe473c4500154759826602f056a55ba
-
-If I don't touch the borrowed value after calling readonly it is ok, but if I do it complains.  
-I don't understand where the problem is since by the time I modify it the second time the readonly function has already returned and it could not possibly change self since its an inmutable reference.  
-EDIT:
-
-It is also interesting that I can just reborrow mutably and keep going.  
-
-    pub fn run(mut self) {
-        println!("I consume myself");
-        let text = &amp;mut self.text;
-        *text = "hello".to_owned();
-        self.readonly();
-        let text = &amp;mut self.text;
-        *text = "done".to_owned(); // This actually works
+    struct BoolPadded {
+        _x: u16,
+        _y: u8,
+        _z: bool,
     }
+
+Then `Option&lt;BoolPadded&gt;` takes up 4 bytes in memory. I assume this is because the compiler is smart enough to use the invalid bit patterns of `bool` to represent the enum tag of `Option&lt;T&gt;`.
+
+However, if I remove the bool member:
+
+    struct Unpadded {
+        _x: u16,
+        _y: u8,
+    }
+
+Now `Option&lt;Unpadded&gt;` takes up 6 bytes in memory. It seems as though now the compiler can't determine that `Unpadded`, when aligned at a 2-byte boundary, will have unused padding bits at the end.
+
+Is there some sort of memory layout or ABI stability guarantee that is preventing this kind of optimization?
+
+[Playground Example](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=14ff93f1a0b204cba11bb3b47c7a9c58)
+## [6][Flume, a 100% safe MPSC that's faster than std and gives crossbeam a run for its money](https://www.reddit.com/r/rust/comments/fj17z6/flume_a_100_safe_mpsc_thats_faster_than_std_and/)
+- url: https://github.com/zesterer/flume
+---
+
+## [7][Redox OS - pkgar introduction](https://www.reddit.com/r/rust/comments/fim6ju/redox_os_pkgar_introduction/)
+- url: https://www.redox-os.org/news/pkgar-introduction/
+---
+
+## [8][Parsing Library in Rust pt. 2 - Testing](https://www.reddit.com/r/rust/comments/fj086p/parsing_library_in_rust_pt_2_testing/)
+- url: https://blog.frondeus.pl/parser-2/
+---
+
+## [9][StaticVec 0.9.0: now with a fixed-capacity StaticHeap based on std::collections::BinaryHeap, a const-context-compatible macro constructor for StaticString, const trait impls, and more!](https://www.reddit.com/r/rust/comments/fis6dd/staticvec_090_now_with_a_fixedcapacity_staticheap/)
+- url: https://github.com/slightlyoutofphase/staticvec
+---
+
+## [10][TpNote - fast note talking with templates and filename-synchronization V1.0.0 is out](https://www.reddit.com/r/rust/comments/fiyq5s/tpnote_fast_note_talking_with_templates_and/)
+- url: https://www.reddit.com/r/rust/comments/fiyq5s/tpnote_fast_note_talking_with_templates_and/
+---
+Markup languages like *Markdown*, *ReStructuredText*, *asciidoc*, *textile*,
+*txt2tags* or *mediawiki* are perfectly suited for fast note-taking. Type
+your notes with your favourite editor and chose your favourite markup
+language[^1].
+
+_Tp-Note_ helps you to quickly get started writing notes with its powerful
+template system. As _Tp-Note_ takes care that the note's filename is always
+synchronized with its document title, you will find back your notes easily.
+
+_Tp-Note_ is available for Linux, Windows and iOS. The manual illustrates
+its main use-cases and how to get started:
+
+1. Fast start note-taking (when the lecture starts).
+2. Take a note about an existing (downloaded) file.
+3. Bookmark and comment a hyperlink.
+
+If you want to customize _Tp-Note_ with own templates, another markup
+language, please consult the [man-page] for more technical details.
+
+The project is hosted on Github:
+[getreu/tp-note](https://github.com/getreu/tp-note). The project's webpage is on
+[http://blog.getreu.net](http://blog.getreu.net/projects/tp-note/).
+The documentation of this project is dived into tow parts:
+
+* User manual
+
+  [tp-note user manual - html](https://blog.getreu.net/projects/tp-note/tp-note--manual.html)\
+  [tp-note user manual - pdf](https://blog.getreu.net/_downloads/tp-note--manual.pdf)
+
+* Unix man-page (more technical)
+
+  [tp-note manual page - html](https://blog.getreu.net/projects/tp-note/tp-note--manpage.html)\
+  [tp-note manual page - pdf](https://blog.getreu.net/_downloads/tp-note--manpage.pdf)
+
+Download _tp-note_:
+
+* Binaries and packages:
+
+  - Executable for Windows:
+
+    [x86_64-pc-windows-gnu/release/tp-note.exe](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-pc-windows-gnu/release/tp-note.exe)
+
+  - Binary for Linux:
+
+    [x86_64-unknown-linux-gnu/release/tp-note](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-unknown-linux-gnu/release/tp-note) \
+    [x86_64-unknown-linux-musl/release/tp-note](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-unknown-linux-musl/release/tp-note)
+
+  - Package for Debian and Ubuntu:
+
+    [x86_64-unknown-linux-gnu/debian/tp-note_1.0.0_amd64.deb](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-unknown-linux-gnu/debian/tp-note_1.0.0_amd64.deb)
+
+As this project follows [Semantic Versioning](https://semver.org/), version 1.0.0 comes with a stable API.
+## [11][Optimizations That Aren't, or are they?](https://www.reddit.com/r/rust/comments/fill1q/optimizations_that_arent_or_are_they/)
+- url: https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write
+---
+
+## [12][Tuple structs are functions](https://www.reddit.com/r/rust/comments/firk1r/tuple_structs_are_functions/)
+- url: https://www.reddit.com/r/rust/comments/firk1r/tuple_structs_are_functions/
+---
+In a project I'm working on I have a few lines of code like this:
+
+    str::from_utf8(&amp;string_bytes).map_err(
+        |utf8_err| DeserializationError::InvalidUTF8(utf8_err),
+    )?
+
+where `DeserializationError` is an enum and `InvalidUTF8` is a tuple variant. Clippy corrected this to the following, which also compiles:
+
+    str::from_utf8(&amp;string_bytes)
+        .map_err(DeserializationError::InvalidUTF8)?
+
+`map_err` takes a `FnOnce(E) -&gt; F` , so I was curious why the name of the enum variant also works. Is the construction of a tuple variant like calling a function? Yes, as it turns out!
+
+From [this 2017 thread](https://users.rust-lang.org/t/enum-variants-and-newtype-as-functions-closures/14706) in the rust-lang users forum:
+
+&gt;Unit structs, newtypes and tuple structs all live simultaneously in both  the type/module namespace and the value/function namespace.  Only standard, braced structs live exclusively in the type/module namespace.
+
+    struct Unit; // exists as a value
+    struct Unit2(); // exists in value namespace as a 0-arg function
+    struct Newtype(u8); // exists in value namespace as a 1-arg function
+    struct Tuple(u8, u8); // exists in value namespace as a 2-arg function
+    struct Regular { value: u8 }
+    
+    // fn Unit() {} // the name `Unit` is defined multiple times
+    // fn Unit2() {} // the name `Unit2` is defined multiple times
+    // fn Newtype() {} // the name `Newtype` is defined multiple times
+    // fn Tuple() {} // the name `Tuple` is defined multiple times
+    fn Regular() {} // ok
+
+Thought that was a neat syntactical coincidence, though it tripped me up for a second.

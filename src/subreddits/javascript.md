@@ -13,43 +13,43 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][I made a small game in JavaScript](https://www.reddit.com/r/javascript/comments/fidpn8/i_made_a_small_game_in_javascript/)
-- url: https://play.google.com/store/apps/details?id=io.deltatime.fruitfactory
+## [3][CSS Dark Mode tutorial – adding selectable themes to your site or PWA with alternate style](https://www.reddit.com/r/javascript/comments/fiwfrj/css_dark_mode_tutorial_adding_selectable_themes/)
+- url: https://www.javascriptteacher.com/dark-mode-alternate-css-style-sheet.html?rt
 ---
 
-## [4][uPlot.js v1.0 – A fast, small chart for time series, OHLC and bars](https://www.reddit.com/r/javascript/comments/fi3d7l/uplotjs_v10_a_fast_small_chart_for_time_series/)
-- url: https://github.com/leeoniya/uPlot
+## [4][I'm a beginner in Javascript and made an online life simulator!](https://www.reddit.com/r/javascript/comments/fizjgs/im_a_beginner_in_javascript_and_made_an_online/)
+- url: https://github.com/wraithM17/lifely
 ---
 
-## [5][Harland: Simple and complete framework for building web apps in NodeJS](https://www.reddit.com/r/javascript/comments/fihwsq/harland_simple_and_complete_framework_for/)
-- url: https://github.com/usbac/harland
----
-
-## [6][8 New Features Shipping With ES2020](https://www.reddit.com/r/javascript/comments/fhyjij/8_new_features_shipping_with_es2020/)
-- url: https://medium.com/better-programming/8-new-features-shipping-with-es2020-7a2721f710fb
----
-
-## [7][Multithreading Gallery showing countries affected by Covid 19](https://www.reddit.com/r/javascript/comments/fib6k9/multithreading_gallery_showing_countries_affected/)
-- url: https://github.com/neomjs/covid19
----
-
-## [8][Dark Reader is now available as a JavaScript library](https://www.reddit.com/r/javascript/comments/fhx5uf/dark_reader_is_now_available_as_a_javascript/)
-- url: https://www.npmjs.com/package/darkreader
----
-
-## [9][heapify: the fastest priority queue implementation out there](https://www.reddit.com/r/javascript/comments/fiibjm/heapify_the_fastest_priority_queue_implementation/)
+## [5][heapify: the fastest priority queue implementation out there](https://www.reddit.com/r/javascript/comments/fiibjm/heapify_the_fastest_priority_queue_implementation/)
 - url: https://github.com/luciopaiva/heapify
 ---
 
-## [10][To have some fun during the many conference calls next week I created this Conference Call Soundboard!](https://www.reddit.com/r/javascript/comments/fihr67/to_have_some_fun_during_the_many_conference_calls/)
-- url: https://conference-sounds.netlify.com
+## [6][Odd or Even: local multiplayer math game — PWA written in vanilla everything](https://www.reddit.com/r/javascript/comments/fiozyr/odd_or_even_local_multiplayer_math_game_pwa/)
+- url: https://oddoreven.app/
 ---
 
-## [11][I made A Project That Generates A shakespearean insult, It only logs the insult to the console right now but I'm working on maybe changing the code then using Apache Cordova.](https://www.reddit.com/r/javascript/comments/fihjf9/i_made_a_project_that_generates_a_shakespearean/)
-- url: https://github.com/JohnNodeJs/Shakespear-insults/tree/master
+## [7][My new Javascript Game](https://www.reddit.com/r/javascript/comments/fioma8/my_new_javascript_game/)
+- url: https://spaceadvent.glitch.me/
 ---
 
-## [12][WebGL Shooter Demo (Mobile Compatible) - Plasma Rifle](https://www.reddit.com/r/javascript/comments/fi6hxw/webgl_shooter_demo_mobile_compatible_plasma_rifle/)
-- url: https://oguzeroglu.github.io/ROYGBIV/demo/plasmaGun/application.html
+## [8][Node.js Best Practices](https://www.reddit.com/r/javascript/comments/fiywmm/nodejs_best_practices/)
+- url: https://github.com/goldbergyoni/nodebestpractices#readme
+---
+
+## [9][Dark theme anatomy](https://www.reddit.com/r/javascript/comments/fj0vam/dark_theme_anatomy/)
+- url: https://material.io/design/color/dark-theme.html
+---
+
+## [10][Form validation using chain of responsibility pattern](https://www.reddit.com/r/javascript/comments/fiosmh/form_validation_using_chain_of_responsibility/)
+- url: https://medium.com/@rehmankhan.exe/form-validation-using-chain-of-responsibility-design-pattern-69c09339461a
+---
+
+## [11][Neutralino takes aim at Electron and NW.js - InfoWorld](https://www.reddit.com/r/javascript/comments/fij3lm/neutralino_takes_aim_at_electron_and_nwjs/)
+- url: https://www.infoworld.com/article/3530470/neutralino-takes-aim-at-electron-and-nwjs.html
+---
+
+## [12][I used JavaScript to create an unconventional landing page template for Bootstrap 4: Exodus. It's free and open source!](https://www.reddit.com/r/javascript/comments/fimx23/i_used_javascript_to_create_an_unconventional/)
+- url: https://github.com/vantagedesign/exodus-landing-page
 ---
 

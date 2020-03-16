@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (11/2020)!](https://www.reddit.com/r/rust/comments/fg0p1v/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/fg0p1v/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (12/2020)!](https://www.reddit.com/r/rust/comments/fjef12/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/fjef12/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,151 +16,87 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/fc7h20/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/fg0p1v/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 329](https://www.reddit.com/r/rust/comments/fhcuec/this_week_in_rust_329/)
-- url: https://this-week-in-rust.org/blog/2020/03/10/this-week-in-rust-329/
+## [2][What's everyone working on this week (12/2020)?](https://www.reddit.com/r/rust/comments/fjefxj/whats_everyone_working_on_this_week_122020/)
+- url: https://www.reddit.com/r/rust/comments/fjefxj/whats_everyone_working_on_this_week_122020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-12-2020/39545?u=llogiq)!
+## [3][ripgrep 12 is released](https://www.reddit.com/r/rust/comments/fje2ya/ripgrep_12_is_released/)
+- url: https://github.com/BurntSushi/ripgrep/releases/tag/12.0.0
 ---
 
-## [3][Kondo 🧹 v0.3 released, now with GUI 🎉!](https://www.reddit.com/r/rust/comments/fixsyj/kondo_v03_released_now_with_gui/)
-- url: https://i.redd.it/q80b5uregsm41.png
+## [4][Rust the 4th most active programming languages in GitHub](https://www.reddit.com/r/rust/comments/fj6rp9/rust_the_4th_most_active_programming_languages_in/)
+- url: https://learnworthy.net/10-most-active-programming-languages-in-github/
 ---
 
-## [4][Out of the Box Dynamic Dispatch](https://www.reddit.com/r/rust/comments/fiprk7/out_of_the_box_dynamic_dispatch/)
-- url: https://llogiq.github.io/2020/03/14/ootb.html
+## [5][Sheeit - An experimental blazing-fast spreadsheet engine that supports thousands of concurrent users and millions of cells.](https://www.reddit.com/r/rust/comments/fj5uu5/sheeit_an_experimental_blazingfast_spreadsheet/)
+- url: https://github.com/wilfredwee/sheeit
 ---
 
-## [5][Reducing the size of `Option&lt;T&gt;` by adding members to `T`?](https://www.reddit.com/r/rust/comments/fimbo3/reducing_the_size_of_optiont_by_adding_members_to/)
-- url: https://www.reddit.com/r/rust/comments/fimbo3/reducing_the_size_of_optiont_by_adding_members_to/
+## [6][Zenith - sort of like top or htop but with histograms, network usage, and more](https://www.reddit.com/r/rust/comments/fjdcla/zenith_sort_of_like_top_or_htop_but_with/)
+- url: https://github.com/bvaisvil/zenith
 ---
-Suppose I have a struct `BoolPadded`
 
-    struct BoolPadded {
-        _x: u16,
-        _y: u8,
-        _z: bool,
+## [7][TIL you can put closures of the same type into a collection/iterator without boxing](https://www.reddit.com/r/rust/comments/fjfqxa/til_you_can_put_closures_of_the_same_type_into_a/)
+- url: https://www.reddit.com/r/rust/comments/fjfqxa/til_you_can_put_closures_of_the_same_type_into_a/
+---
+You can use this to implement something akin to C++ output iterator:
+
+```
+    fn output_iterator&lt;'item, 'iter, T, C&gt;(
+        c: C,
+    ) -&gt; impl Iterator&lt;Item = impl FnMut(T) + 'item&gt; + 'iter
+    where
+        C::IntoIter: 'iter,
+        'item: 'iter,
+        T: 'item,
+        C: IntoIterator&lt;Item = &amp;'item mut T&gt;,
+    {
+        c.into_iter().map(|r| {
+            move |t: T| {
+                *r = t;
+            }
+        })
     }
+```
 
-Then `Option&lt;BoolPadded&gt;` takes up 4 bytes in memory. I assume this is because the compiler is smart enough to use the invalid bit patterns of `bool` to represent the enum tag of `Option&lt;T&gt;`.
+You can then do this:
+```
+let mut vec = vec![0;10];
+for (mut f, v) in output_iterator(&amp;mut vec).zip(0..) {
+    f(v);
+}
+println!("{:?}", vec); // prints [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
 
-However, if I remove the bool member:
+This seems interesting, though I'm not sure how useful this pattern is in practice. It could be useful if you only want the user of your library to call a function for a certain amount of times, although I can't come up with such a situation.
 
-    struct Unpadded {
-        _x: u16,
-        _y: u8,
-    }
-
-Now `Option&lt;Unpadded&gt;` takes up 6 bytes in memory. It seems as though now the compiler can't determine that `Unpadded`, when aligned at a 2-byte boundary, will have unused padding bits at the end.
-
-Is there some sort of memory layout or ABI stability guarantee that is preventing this kind of optimization?
-
-[Playground Example](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=14ff93f1a0b204cba11bb3b47c7a9c58)
-## [6][Flume, a 100% safe MPSC that's faster than std and gives crossbeam a run for its money](https://www.reddit.com/r/rust/comments/fj17z6/flume_a_100_safe_mpsc_thats_faster_than_std_and/)
+[Link to Playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=0a6637190d5f5ce80a951ddbdcc7254f)
+## [8][Flume, a 100% safe MPSC that's faster than std and gives crossbeam a run for its money](https://www.reddit.com/r/rust/comments/fj17z6/flume_a_100_safe_mpsc_thats_faster_than_std_and/)
 - url: https://github.com/zesterer/flume
 ---
 
-## [7][Redox OS - pkgar introduction](https://www.reddit.com/r/rust/comments/fim6ju/redox_os_pkgar_introduction/)
-- url: https://www.redox-os.org/news/pkgar-introduction/
+## [9][How I Start: Rust](https://www.reddit.com/r/rust/comments/fjb7fl/how_i_start_rust/)
+- url: https://christine.website/blog/how-i-start-rust-2020-03-15
 ---
 
-## [8][Parsing Library in Rust pt. 2 - Testing](https://www.reddit.com/r/rust/comments/fj086p/parsing_library_in_rust_pt_2_testing/)
-- url: https://blog.frondeus.pl/parser-2/
+## [10][Introducing quit - Exit cleanly with an exit code](https://www.reddit.com/r/rust/comments/fj7k3b/introducing_quit_exit_cleanly_with_an_exit_code/)
+- url: https://www.reddit.com/r/rust/comments/fj7k3b/introducing_quit_exit_cleanly_with_an_exit_code/
+---
+[Documentation](https://docs.rs/quit) | [Repository](https://github.com/dylni/quit) | [crates.io](https://crates.io/crates/quit)
+
+This crate fixes the problems with [`std::process::exit`](https://doc.rust-lang.org/std/process/fn.exit.html). Instead of immediately terminating the program, [`quit::with_code`](https://docs.rs/quit/0.1.0/quit/fn.with_code.html) is similar to a panic. You can still set an exit code, but destructors will be called, and the stack will be unwound to the main function.
+
+It's most useful for CLI scripts, which often exit for normal reasons, such as printing a help message or giving an error about an unknown option. [`std::process::exit`](https://doc.rust-lang.org/std/process/fn.exit.html) is usually overkill in those cases.
+## [11][Rust Notebooks: Typed Arrays from String Arrays for Dataset Operation](https://www.reddit.com/r/rust/comments/fjkmxp/rust_notebooks_typed_arrays_from_string_arrays/)
+- url: https://shahinrostami.com/posts/programming/rust-notebooks/typed-arrays-from-string-arrays-for-dataset-operation/
 ---
 
-## [9][StaticVec 0.9.0: now with a fixed-capacity StaticHeap based on std::collections::BinaryHeap, a const-context-compatible macro constructor for StaticString, const trait impls, and more!](https://www.reddit.com/r/rust/comments/fis6dd/staticvec_090_now_with_a_fixedcapacity_staticheap/)
-- url: https://github.com/slightlyoutofphase/staticvec
+## [12][What's your controversal Rust opinion?](https://www.reddit.com/r/rust/comments/fj824y/whats_your_controversal_rust_opinion/)
+- url: https://www.reddit.com/r/rust/comments/fj824y/whats_your_controversal_rust_opinion/
 ---
+Do you think there's a technique more people should use that many wouldn't like? Is there a popular library you think isn't the best way of doing things (explain why). Is there any patterns you think is confusing enough that people shouldn't do? What is your controversal rust opinion?
 
-## [10][TpNote - fast note talking with templates and filename-synchronization V1.0.0 is out](https://www.reddit.com/r/rust/comments/fiyq5s/tpnote_fast_note_talking_with_templates_and/)
-- url: https://www.reddit.com/r/rust/comments/fiyq5s/tpnote_fast_note_talking_with_templates_and/
----
-Markup languages like *Markdown*, *ReStructuredText*, *asciidoc*, *textile*,
-*txt2tags* or *mediawiki* are perfectly suited for fast note-taking. Type
-your notes with your favourite editor and chose your favourite markup
-language[^1].
-
-_Tp-Note_ helps you to quickly get started writing notes with its powerful
-template system. As _Tp-Note_ takes care that the note's filename is always
-synchronized with its document title, you will find back your notes easily.
-
-_Tp-Note_ is available for Linux, Windows and iOS. The manual illustrates
-its main use-cases and how to get started:
-
-1. Fast start note-taking (when the lecture starts).
-2. Take a note about an existing (downloaded) file.
-3. Bookmark and comment a hyperlink.
-
-If you want to customize _Tp-Note_ with own templates, another markup
-language, please consult the [man-page] for more technical details.
-
-The project is hosted on Github:
-[getreu/tp-note](https://github.com/getreu/tp-note). The project's webpage is on
-[http://blog.getreu.net](http://blog.getreu.net/projects/tp-note/).
-The documentation of this project is dived into tow parts:
-
-* User manual
-
-  [tp-note user manual - html](https://blog.getreu.net/projects/tp-note/tp-note--manual.html)\
-  [tp-note user manual - pdf](https://blog.getreu.net/_downloads/tp-note--manual.pdf)
-
-* Unix man-page (more technical)
-
-  [tp-note manual page - html](https://blog.getreu.net/projects/tp-note/tp-note--manpage.html)\
-  [tp-note manual page - pdf](https://blog.getreu.net/_downloads/tp-note--manpage.pdf)
-
-Download _tp-note_:
-
-* Binaries and packages:
-
-  - Executable for Windows:
-
-    [x86_64-pc-windows-gnu/release/tp-note.exe](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-pc-windows-gnu/release/tp-note.exe)
-
-  - Binary for Linux:
-
-    [x86_64-unknown-linux-gnu/release/tp-note](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-unknown-linux-gnu/release/tp-note) \
-    [x86_64-unknown-linux-musl/release/tp-note](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-unknown-linux-musl/release/tp-note)
-
-  - Package for Debian and Ubuntu:
-
-    [x86_64-unknown-linux-gnu/debian/tp-note_1.0.0_amd64.deb](https://blog.getreu.net/projects/tp-note/_downloads/x86_64-unknown-linux-gnu/debian/tp-note_1.0.0_amd64.deb)
-
-As this project follows [Semantic Versioning](https://semver.org/), version 1.0.0 comes with a stable API.
-## [11][Optimizations That Aren't, or are they?](https://www.reddit.com/r/rust/comments/fill1q/optimizations_that_arent_or_are_they/)
-- url: https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write
----
-
-## [12][Tuple structs are functions](https://www.reddit.com/r/rust/comments/firk1r/tuple_structs_are_functions/)
-- url: https://www.reddit.com/r/rust/comments/firk1r/tuple_structs_are_functions/
----
-In a project I'm working on I have a few lines of code like this:
-
-    str::from_utf8(&amp;string_bytes).map_err(
-        |utf8_err| DeserializationError::InvalidUTF8(utf8_err),
-    )?
-
-where `DeserializationError` is an enum and `InvalidUTF8` is a tuple variant. Clippy corrected this to the following, which also compiles:
-
-    str::from_utf8(&amp;string_bytes)
-        .map_err(DeserializationError::InvalidUTF8)?
-
-`map_err` takes a `FnOnce(E) -&gt; F` , so I was curious why the name of the enum variant also works. Is the construction of a tuple variant like calling a function? Yes, as it turns out!
-
-From [this 2017 thread](https://users.rust-lang.org/t/enum-variants-and-newtype-as-functions-closures/14706) in the rust-lang users forum:
-
-&gt;Unit structs, newtypes and tuple structs all live simultaneously in both  the type/module namespace and the value/function namespace.  Only standard, braced structs live exclusively in the type/module namespace.
-
-    struct Unit; // exists as a value
-    struct Unit2(); // exists in value namespace as a 0-arg function
-    struct Newtype(u8); // exists in value namespace as a 1-arg function
-    struct Tuple(u8, u8); // exists in value namespace as a 2-arg function
-    struct Regular { value: u8 }
-    
-    // fn Unit() {} // the name `Unit` is defined multiple times
-    // fn Unit2() {} // the name `Unit2` is defined multiple times
-    // fn Newtype() {} // the name `Newtype` is defined multiple times
-    // fn Tuple() {} // the name `Tuple` is defined multiple times
-    fn Regular() {} // ok
-
-Thought that was a neat syntactical coincidence, though it tripped me up for a second.
+Wow, I posted a similar question to learnprogramming and they banned me for it. What a bunch of dickwads

@@ -39,7 +39,74 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][organizing/managing Routes for an MVP](https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/)
+## [3][Standing out as a true Pro Rails Developer](https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/)
+- url: https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/
+---
+Sorry for the long windedness, but here goes...
+
+In my day job, I work as a JavaScript developer at a DotNet shop.  However, I've loved Rails - and Ruby - ever since I started playing around with them about 8 years ago.
+
+People have always told me "don't waste your time on that, stick with dotnet (or Java), because that's where the money is."
+
+But I honestly don't care about working in large enterprise organizations and I want to do the thing that I enjoy doing in programming.  Over the years I've done lots of Rails tutorials and made small projects.  Followed YouTube videos about various Rails subjects, and gone through books - like Sandi Metz excellent "Practical Object Oriented Design in Ruby".
+
+Over the next few months I would like to transition into my first job as a Rails developer.  But I just have this hunch, some sneaky feeling that "real world" Rails development is much messier and different than what I'm seeing in the tutorials and books that I'm working with.
+
+So I have a few questions for you Rails pros out there who have been in the trenches for a long time.
+
+**What knowledge would I need to know to make me stand out from other Rails newbies?**  What do the tutorials **not** prepare you for?
+
+For instance, in the DotNet world, we've had new developers who had experience working with Entity Framework - the dotnet equivalent of ActiveRecord.
+
+But in most companies I've worked at, nobody actually uses Entity Framework, or any ORM for that matter.  The databases have generally been around for a long time and are super complicated and not very well designed.  To get the data you need, there are vast oceans of hand-made stored procedures and custom designed SQL - a lot of them pointed at OLAP cubes.
+
+So a lot of newbies feel like there's this whole world they weren't prepared for.
+
+In "real world" Rails development, are you really working with a SQLite database in Dev, updating migration files, and just running those against a PostGres or MySql database?  Or is it much more complicated than that?
+
+Just looking for tips of what I need to study at a more advanced level that maybe the tutorials and books aren't preparing me for.
+## [4][Date default value](https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/)
+- url: https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/
+---
+So I have a model `Task` which has an attribute `deadline` of type `datetime`. I also have at some point in my views the following input:
+
+    &lt;input type="date" id="start" name="task[deadline]" min="2020-01-01" max="2025-12-31" value="&lt;%= @task.deadline.strftime("%Y/%m/%d - %H:%M %p") %&gt;"&gt;
+
+Well, apparently strftime does not work, as it shows `mm/dd/yyyy` instead of the corresponding date. I don't know how to fix this, but probably is a simple thing that right now I don't see.
+## [5][SCSS changes not triggering recompile](https://www.reddit.com/r/rails/comments/fjfonm/scss_changes_not_triggering_recompile/)
+- url: https://www.reddit.com/r/rails/comments/fjfonm/scss_changes_not_triggering_recompile/
+---
+Hi everyone, I'm having the a problem whereby my scss changes are not recompiling. Every time I make a change  I'm having to do the following:  
+
+
+    rake assets:clean
+    rake assets:precompile
+    &lt;kill server&gt;
+    rails s
+
+  
+I've tried all these suggested solutions I found online:  
+
+
+    Deleting the contents of public/assets/
+    
+    # development.rb
+    config.serve_static_assets = false
+    
+    Clearing browser cache
+
+  
+None of these things have worked.  
+
+
+Any ideas? Thanks
+## [6][Making Rails apps more beautiful? (using frontend technologies/frameworks)](https://www.reddit.com/r/rails/comments/fj5s94/making_rails_apps_more_beautiful_using_frontend/)
+- url: https://www.reddit.com/r/rails/comments/fj5s94/making_rails_apps_more_beautiful_using_frontend/
+---
+Today I depolyed a rails app and what most of people tested say was : "Make it look more beautiful please". I was thinking about what are the ways to make a rails app look more and more beautiful? I did search and I found it's possible to use react or vue with webpacker on rails, but they still need some work to look beautiful. 
+
+I'm not searching for "immediate" ways of course, but I look for something look better than rails default views on start. How should I say ... a more stylish way of views we can see.
+## [7][organizing/managing Routes for an MVP](https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/)
 - url: https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/
 ---
 so i start working on an MVP with rails, 
@@ -51,11 +118,17 @@ but now i'm not sure if i have to change it to account/model for the user submis
 so my question is when starting a project do you think about routes ? 
 
 should i make a simple text file to list all the best names/titles for routes or i can keep the default resources and don't think/let the user think about them ?
-## [4][Deploying to Heroku, do you have to worry about HTTP server?](https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/)
+## [8][ran rufus scheduler in my rails app, now when I later went back to the app is hanging in the browser](https://www.reddit.com/r/rails/comments/fj2oyy/ran_rufus_scheduler_in_my_rails_app_now_when_i/)
+- url: https://www.reddit.com/r/rails/comments/fj2oyy/ran_rufus_scheduler_in_my_rails_app_now_when_i/
+---
+So i created a job, and I wanted to test it in console (eh, I'm new to it so don't know if this is bad) so I ran the job there.  I noticed when I went back later that my app doesn't load in browser, and I can't even ctrl+c out of the rails server log.  So I had to kill the rails pid and then start up rails s again, but it still doesn't load in the browser, though I see the initial GET for the homepage.  
+
+Is there some process or other thing I need to do in rails console to stop rufus?  I had exited all my console sessions too, including the one in which I was trying to test a rufus job.  I've even commented out code, etc
+## [9][Deploying to Heroku, do you have to worry about HTTP server?](https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/)
 - url: https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/
 ---
 Deploying to Heroku, do I have to worry about adding my own apache/nginx server?
-## [5][GraphQL Rails queries](https://www.reddit.com/r/rails/comments/fimrmk/graphql_rails_queries/)
+## [10][GraphQL Rails queries](https://www.reddit.com/r/rails/comments/fimrmk/graphql_rails_queries/)
 - url: https://www.reddit.com/r/rails/comments/fimrmk/graphql_rails_queries/
 ---
 I have been messing with GraphQL in Rails, and have created a simple API so far. I have a couple of questions oh how extend this a little.
@@ -66,7 +139,7 @@ I have been messing with GraphQL in Rails, and have created a simple API so far.
 
 
 Any help would be much appreciated, Thank you.
-## [6][Creating a react on rails app based on existing rails web-app?](https://www.reddit.com/r/rails/comments/fir46o/creating_a_react_on_rails_app_based_on_existing/)
+## [11][Creating a react on rails app based on existing rails web-app?](https://www.reddit.com/r/rails/comments/fir46o/creating_a_react_on_rails_app_based_on_existing/)
 - url: https://www.reddit.com/r/rails/comments/fir46o/creating_a_react_on_rails_app_based_on_existing/
 ---
 So I have an existing web application but there's only so much web design I can do to make it useable on mobile.
@@ -82,7 +155,7 @@ b.) Create seperate project for mobile and isolate each project from one another
 c.) Create seperate project for mobile but utilise the backend of existing project.
 
 Let me know your thoughts!
-## [7][How do you test multi-step forms using rspec?](https://www.reddit.com/r/rails/comments/fid8ww/how_do_you_test_multistep_forms_using_rspec/)
+## [12][How do you test multi-step forms using rspec?](https://www.reddit.com/r/rails/comments/fid8ww/how_do_you_test_multistep_forms_using_rspec/)
 - url: https://www.reddit.com/r/rails/comments/fid8ww/how_do_you_test_multistep_forms_using_rspec/
 ---
 **If this question is too general and not rails specific please let me know and I'll post it elsewhere :)**
@@ -92,87 +165,3 @@ Hi everyone. I wanted to get your thoughts on how you methodically write rspec t
 I want to be able to achieve 100% coverage, but I don't know if that's feasible considering how many different possible input combinations my form can have, and how different the options available from fields in the next page can be depending on what was inputted in the first page.
 
 I was wondering if any of you have done anything like this, and if you can give general advice in how you can tackle it. I am a beginner in rspec and so far have only managed to write tests for simple features like logging in, logging out, changing password, etc. without giving up...
-## [8][What is the most Rails-savvy javascript framework for a green-field project in 2020?](https://www.reddit.com/r/rails/comments/fi431t/what_is_the_most_railssavvy_javascript_framework/)
-- url: https://www.reddit.com/r/rails/comments/fi431t/what_is_the_most_railssavvy_javascript_framework/
----
-When I build a web app, I want it to feel like a coherent whole with a consistent philosophy. I want a framework that can easily talk to a Rails-provided RESTful API without customization. I want it to be as "omakase" as possible so that I can focus on the challenges of my domain rather than researching alternative technical approaches. Over the years, I've used jquery, backbone, angular, and most recently react. None of these experiences was satisfying. For example, I've found client-side rendering to be a deeply disappointing trade: about a 75% slow-down in project velocity for a little polish that, frankly, most features don't need. I say all this to clarify my preferences, not to get in an argument about why I'm wrong. So, fresh thoughts about a client-side framework that plays nice with Rails 6?
-## [9][[HELP] Creating a Inner join &amp; Left join SQL query using scopes](https://www.reddit.com/r/rails/comments/fi39jj/help_creating_a_inner_join_left_join_sql_query/)
-- url: https://www.reddit.com/r/rails/comments/fi39jj/help_creating_a_inner_join_left_join_sql_query/
----
-Hi guys, I need to create an query with inner join &amp; left join using scopes
-
-What I have is something like this:
-
-    scope :query_show, -&gt; { joins(:user, :document, requirements: [:status, :model] }
-
-Because requirements may not exist on db for some users, this query may return empty. I don't want that behavior. I need a Left Join for the Requirement table and its association with the Inner Join. Something like this:
-
-    scope :query_show, -&gt; { joins(:user, :document).select(...) }
-    scope :requirements, -&gt; { includes(requirements: [:status, :model]).select(...) }
-    
-    User.query_show.requeriments # I don't think this work...
-    
-
-I know how to do it in raw SQL, but I'm trying to build with scopes. How can I achieve that? 
-
-Thanks in advance.
-## [10][undefined method 'method_name' for Controller:Module](https://www.reddit.com/r/rails/comments/fiavil/undefined_method_method_name_for_controllermodule/)
-- url: https://www.reddit.com/r/rails/comments/fiavil/undefined_method_method_name_for_controllermodule/
----
-Hi all, can't seem to resolve this error:  
-
-
-    undefined method 'api_call' for CoffeeShopsController:Foursquare
-
-Here's what my code looks like.  
-Controller:
-
-    class CoffeeShopsController &lt; ApplicationController
-      include Foursquare
-    
-      def venue_search
-        Foursquare.api_call(location, search)
-      end
-    
-      ...
-    
-    emd
-
-Module (app/lib/foursquare.rb)
-
-    module Foursquare
-      def api_call(location, search)
-        ...
-      end
-    end
-
-I've tried putting the following into application.rb which seemed to be the suggested solution on StackOverflow, but this has not worked:
-
-    config.eager_load_paths += %W(#{config.root}/lib)
-    config.autoload_paths &lt;&lt; Rails.root.join('lib')
-    config.autoload_paths &lt;&lt; Rails.root.join('lib/notifier')
-## [11][How I can build User invitation system?](https://www.reddit.com/r/rails/comments/fhmmor/how_i_can_build_user_invitation_system/)
-- url: https://www.reddit.com/r/rails/comments/fhmmor/how_i_can_build_user_invitation_system/
----
-Totally noob here, 
-
-I am trying to build something similar to project management system. 
-
-Admin where he can CRUD projects, reports, users. Also, add/invite user to projects (no sign up, I will seed him) 
-
-Users can only  CRUD reports and view projects and  that they are added/invited into by admin. 
-
-I have been looking online for a while, no luck! Most of the  tutorials doesn't help. 
-
-Can someone please point me to the direction or help me with this.
-## [12][why is rails more expensive to work with?](https://www.reddit.com/r/rails/comments/fhqtqi/why_is_rails_more_expensive_to_work_with/)
-- url: https://www.reddit.com/r/rails/comments/fhqtqi/why_is_rails_more_expensive_to_work_with/
----
-why is rails more expensive to work with? when a client starts working with a ruby developer, after once having worked with a php site, they often find
-
-* ruby developers generally charge more (per hour)
-* (usually) estimates to build a MVP with ruby on rails is higher
-
-&gt;why is rails more expensive to work with?
-
-More to the point, how does one justify the extra cost?

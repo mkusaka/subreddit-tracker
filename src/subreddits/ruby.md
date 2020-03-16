@@ -1,158 +1,158 @@
 # ruby
-## [1][Generate colorfull Triangle patterns](https://www.reddit.com/r/ruby/comments/fimzrs/generate_colorfull_triangle_patterns/)
-- url: https://www.reddit.com/r/ruby/comments/fimzrs/generate_colorfull_triangle_patterns/
----
-[TrianglePattern](https://github.com/hendrixfan/triangle)
-
-I made a Gem to generate colorfull triangle patterns. You can use the resulting SVG as background image for your Project.
-## [2][Ruby Conferences Updates - Status: CANCELD, NEW DATE, ONSITE CANCELED / ONLINE ONLY](https://www.reddit.com/r/ruby/comments/fi3etc/ruby_conferences_updates_status_canceld_new_date/)
-- url: https://www.reddit.com/r/ruby/comments/fi3etc/ruby_conferences_updates_status_canceld_new_date/
----
-FYI: I try to keep the [Ruby Conference Calendar](https://planetruby.github.io/calendar/2020) up-to-date with Corona Covid-19 cancellations. So far the list includes:
-CANCELED:
-
-- Wrocław &lt;3 Ruby (wroclove.rb) @ Poland
-- RailsConf @ United States
-- Balkan Ruby @ Bulgaria
-- RubyNess @ Scottland
-- RubyConf India
-- RedDotRubyConf @ Singapore 
-
-ONSITE CANCELED / ONLINE ONLY:
-
-- Ruby Wine 2.0 @ Moldova
-- Brighton RubyConf @ England
-
-POSTPONED:
-
-- RubyConf Belarus (July)
-- RubyKaigi @ Japan (September)
-- Ruby Day Italy (September)
-
-PS: Cancellation or postponement or going all online is the responsible thing to do to try to contain (or mitigate) the covid epidemic. See [Coronavirus: why you must act NOW](https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca) for example.
-## [3][Adding documentation to a docker image](https://www.reddit.com/r/ruby/comments/fia0et/adding_documentation_to_a_docker_image/)
-- url: https://www.reddit.com/r/ruby/comments/fia0et/adding_documentation_to_a_docker_image/
----
-TL; DR -- If ruby is installed with the --disable-install-doc flag and then the source is deleted, is there a simple way to go back and install the `ri` documentation?
-
-The Docker container for ruby is slimmed down and they do the configure with the --disable-install-doc option and then they remove the source directory and the tar ball.  This makes sense for a production image.
-
-But during development, I'd like to have the `ri` documentation "local".  One choice is to put it on my laptop outside of the Docker images which is the path I'm currently taking.  But I'm wondering if there is a simple way to go back and create the documentation.
-
-The third alternative I can think of is to use an entirely different image (e.g. an Ubuntu Linux image with the ruby package installed) and use that during development but that implies that my development and testing images will be different from my production images.  And... for RoR in particular, that is somewhat typical since the development and testing systems tend to have additional gems installed (e.g. rspec) that are not installed in production.
-## [4][HAPPY FRIDAY THE 13TH Y'ALL](https://www.reddit.com/r/ruby/comments/fi2dlg/happy_friday_the_13th_yall/)
-- url: https://i.redd.it/h2id8j4rvgm41.png
+## [1][Ruby among the most active programming languages in GitHub](https://www.reddit.com/r/ruby/comments/fj6rl4/ruby_among_the_most_active_programming_languages/)
+- url: https://learnworthy.net/10-most-active-programming-languages-in-github/
 ---
 
-## [5][need help...](https://www.reddit.com/r/ruby/comments/fiekc0/need_help/)
-- url: https://www.reddit.com/r/ruby/comments/fiekc0/need_help/
+## [2][Can please someone explain me the code](https://www.reddit.com/r/ruby/comments/fjgsla/can_please_someone_explain_me_the_code/)
+- url: https://www.reddit.com/r/ruby/comments/fjgsla/can_please_someone_explain_me_the_code/
 ---
-module Modu
-
-	cons = 10
+	f = open("test.txt" , 'a+')
 
 &amp;#x200B;
 
-	def Modu.add(x,y)
+	f.write("hello ruby")
 
-		puts x+y
+	f.close
 
-	end
 
-	def sub(x,y)
 
-		puts x-y
+	f =  open("test.txt" , 'a+')
 
-	end
 
-end
 
-&amp;#x200B;
+	f.write(". happy bday")
 
-class Cls
+		
 
-	include Modu
+	f.close
 
-	def mul(x,y)
 
-		puts x\*y
 
-	end
+	f = open("test.txt" , 'a+')
 
-end
 
-&amp;#x200B;
 
-obj = [Cls.new](https://Cls.new)
+	content = f.sysread(7)
 
-puts "enter two numbers "
+			
 
-x = gets.chomp.to\_i
+	puts content
 
-y = gets.chomp.to\_i
+			
 
-obj.mul(x,y)
+	f.syswrite("fresh")	
 
-obj.sub(x,y)
+	f = open("test.txt" , 'r')		
 
-Modu.add(x,y)
+	print [f.read](https://f.read)
 
-puts Modu::cons
+	f.close
 
 &amp;#x200B;
 
-The code works fine except the fact that it doesn't print the cons value and throws a "no\_method\_error"
-## [6][Released a string metrics/distance gem written in Rust!](https://www.reddit.com/r/ruby/comments/fhu07l/released_a_string_metricsdistance_gem_written_in/)
-- url: https://github.com/anirbanmu/str_metrics
+	IN this code , the text is getting printed multiple times . Please help me with this code and the reason for multiple printing of the text.
+## [3][Adding typescript to a ember.js + rails 2.3 project - should I still use typescript-rails?](https://www.reddit.com/r/ruby/comments/fjhrwn/adding_typescript_to_a_emberjs_rails_23_project/)
+- url: https://www.reddit.com/r/ruby/comments/fjhrwn/adding_typescript_to_a_emberjs_rails_23_project/
 ---
+EDIT: My bad - its a rails 4.2 project, confused it with ruby version.
 
-## [7][Build a Linux CLI tool like glances in Ruby](https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/
+I've looked around for how to add TS to rails and a lot of newer articles suggest using webpacker which rails 2 doesn't have.
+
+I found [typescript-rails](https://github.com/typescript-ruby/typescript-rails) which can be added to the asset pipeline, but it was last updated on Nov 2016 :/.
+
+So, those on older rails versions, how would you suggest getting TS on rails?
+## [4][Is there a Jupyter Notebook equivalent for ruby?](https://www.reddit.com/r/ruby/comments/fj1o5z/is_there_a_jupyter_notebook_equivalent_for_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/fj1o5z/is_there_a_jupyter_notebook_equivalent_for_ruby/
 ---
-I was thinking of using ruby to build a CLI tool like the glances or Top commands in linux . Ideally it's just a fun project for myself to learn about how ruby can interact with the system to get info like memory usage and CPU load. What do you guys think of this venture?
-## [8][i need help for a ruby script that i made](https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/)
-- url: https://www.reddit.com/r/ruby/comments/fhy31c/i_need_help_for_a_ruby_script_that_i_made/
+I know that in python, Jupyter is used when writing papers or data science, so I was wondering if there is a Ruby equivalent?
+## [5][Help extending Math module](https://www.reddit.com/r/ruby/comments/fj7532/help_extending_math_module/)
+- url: https://www.reddit.com/r/ruby/comments/fj7532/help_extending_math_module/
 ---
- 
+Hi all,
 
-its for school and it keeps getting this notice
+I'm trying to extend the Math module to include a method, `to_rad` that converts degrees to radians. 
 
-(repl):24: syntax error, unexpected end-of-input, expecting keyword\_end begginings()             \^
+Firstly I'm not entirely sure where to put that file. I've tried in /lib and I can't seem to get the rest of my engine, (models) to recognize that I've adding a method to that module like so[1]. Is there a better place to put it?
 
-&amp;#x200B;
+I'm sure there's just a misunderstanding of how Ruby namespacing and such works. I've tried googling some stuff and it isn't very helpful in this case for some reason.
 
-&amp;#x200B;
+[1]
 
-this is the code
+    module Math
+      def self.to_rad(angle)
+        angle/180 * Math::PI
+      end
+    end    
 
-&amp;#x200B;
+In my model (/app/models/model.rb) I'd just like to do `Math.to_rad(x)`
 
-def greeting  
-puts "Hello adventurer!  Please type your name: "  
-name = gets  
-puts "\\n" + "It is nice to meet you #{name}"
-
-return name  
-end  
-greeting()  
-def begginings  
-puts "\\n" "you spawn on a mysteriouse island where will you go? 1 for north 2 for east 3 for south 4 for west"  
-direction = gets  
-operation\_selection = gets.to\_i  
-if operation\_selection == 4  
-return "you encounter a pack of wild dogs"  
-else  
-return "you encounter a pack of wild dogs"  
-if operation\_selection == 1  
-return "you find a tree"  
-end  
-end  
-begginings()
-## [9][Announcing RubyGems.org Stats - RubyGems Blog](https://www.reddit.com/r/ruby/comments/fhr6t1/announcing_rubygemsorg_stats_rubygems_blog/)
-- url: https://blog.rubygems.org/2020/03/09/announcing-rubygems-stats.html
+Thanks, and sorry if this isn't the right place for this.
+## [6][Github - red-data-tools/GR.rb - GR framework - the graphics library for visualization - for Ruby](https://www.reddit.com/r/ruby/comments/fj1i93/github_reddatatoolsgrrb_gr_framework_the_graphics/)
+- url: https://www.reddit.com/r/ruby/comments/fj1i93/github_reddatatoolsgrrb_gr_framework_the_graphics/
 ---
-
-## [10][Cypress vs. Capybara](https://www.reddit.com/r/ruby/comments/fhhd1t/cypress_vs_capybara/)
-- url: https://blog.testdouble.com/talks/2020-03-12-cypress-vs-capybara/
+https://github.com/red-data-tools/GR.rb
+## [7][Compact: Automating the contract -collaboration test correspondence](https://www.reddit.com/r/ruby/comments/fja0hl/compact_automating_the_contract_collaboration/)
+- url: https://www.reddit.com/r/ruby/comments/fja0hl/compact_automating_the_contract_collaboration/
 ---
+So I wrote my my first Ruby gem and thought it might be nice if someone else knew it existed: [https://github.com/robwold/compact](https://github.com/robwold/compact)
 
+It's very much at the proof-of-concept stage, but I figured this showcased enough of what I had in mind that it could form a starting point for a useful discussion. I'd be really keen to hear from anyone interested in the problem it's trying to solve about how it could be developed into something really useful. If any more experienced OSS maintainers have any feedback on on the code, documentation or whatever, that would be gratefully received too.
+
+For some more background on what problem it's trying to solve:
+
+I watched Joe Rainsberger's talk [Integration tests are a scam](https://www.infoq.com/presentations/integration-tests-scam/) and became interested in the thinking outlined there. (Gary Bernhardt discusses some advantages of this approach in his well-known [Boundaries](https://destroyallsoftware.com/talks/boundaries) talk.) The TL;DR: 
+
+1. If you want to prove the 'basic correctness' of your code with true unit tests, then when you use a test double (mock/stub) in a 'collaboration' test, write a 'contract' test that some class in your code really behaves the way you've said your mock does.
+2. This approach is actually more likely to throughly test the basic correctness of your code than the corresponding integration tests, because integration tests are hard to write and slow to run, so nobody writes enough of them to actually exercise all the possible paths of execution in your code.
+
+He said it would be nice to have a tool that helps you automate this correspondence. Sandi Metz mentioned some tools intended to help with this in her talk [The magic tricks of testing](https://www.youtube.com/watch?v=URSWYvyc42M), but they seem to have largely fallen by the wayside. Have a look at the README if you're interested in how I'm trying to approach the problem.
+
+Thanks for reading!
+## [8][Gem markdown_helper Reaches 20,000 Downloads](https://www.reddit.com/r/ruby/comments/fj6r07/gem_markdown_helper_reaches_20000_downloads/)
+- url: https://www.reddit.com/r/ruby/comments/fj6r07/gem_markdown_helper_reaches_20000_downloads/
+---
+My gem \[markdown\_helper\]([https://github.com/BurdetteLamar/markdown\_helper#markdown-helper](https://github.com/BurdetteLamar/markdown_helper#markdown-helper)) has reached 20,000 downloads!
+
+Thanks to all users!
+
+Has a \[CLI\]([https://github.com/BurdetteLamar/markdown\_helper#cli](https://github.com/BurdetteLamar/markdown_helper#cli)), btw, so you need not write Ruby code to use it.
+## [9][Threads acting strange](https://www.reddit.com/r/ruby/comments/fj2pap/threads_acting_strange/)
+- url: https://www.reddit.com/r/ruby/comments/fj2pap/threads_acting_strange/
+---
+I wanted to add some multitasking to my project and faced a problem : ruby 2.7 executes threads on their declaration, not waiting for .join() command.
+
+that's my test code for threads:
+
+`a =` [`Thread.new`](https://Thread.new)`{sleep 2;puts 'thread'}`  
+`sleep 3`  
+`puts 'waiting'`  
+`sleep 2`  
+`puts 'waiting'`  
+`a.join`
+
+what this code DESIRED to do:
+
+`waiting`  
+`waiting`  
+`thread`
+
+what it does for me:
+
+`thread`  
+`waiting`  
+`waiting`
+
+For some reason threads in new version execute on declaration.  
+What am I doing wrong?
+## [10][A gem for generating canned data](https://www.reddit.com/r/ruby/comments/fj2ocz/a_gem_for_generating_canned_data/)
+- url: https://www.reddit.com/r/ruby/comments/fj2ocz/a_gem_for_generating_canned_data/
+---
+Currently in quarantine and so have dusted off an old project.
+
+It's a DSL for generating fixture data where the timestamp of the created items is important.  An example of this could be generating test data for a cohort analysis tool.
+
+Anyway, I've been struggling with explaining succinctly how it works and could do with another set of eyes. 
+
+Any feedback on the documentation, on the code or on the concept as a whole will be greatly appreciated!
+
+[https://github.com/tmfnll/bonito](https://github.com/tmfnll/bonito)

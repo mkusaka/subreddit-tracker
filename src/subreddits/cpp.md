@@ -68,7 +68,7 @@ Many C++ conferences, meetups, and even the next committee meeting have been aff
 
 I think it will be helpful to everyone to collect information about C++ events that have been or may be affected by the coronavirus. That includes not only cancellations/postponements, but also events that are planning to move forward but may be impacted in the future
 
-**This is intended to be a living document. Please help be suggesting changes or additions.**
+**This is intended to be a living document. Please help by suggesting changes or additions.**
 
 # Lexicon
 
@@ -96,7 +96,7 @@ Event | Location | Original Dates | Status | New Dates
 [Total Chaos](https://www.chaosgroup.com/total-chaos) | Sofia, Bulgaria | 05-29 to 05-31 | [Cancelled](https://www.chaosgroup.com/total-chaos) |
 [Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | No Date Changes Yet |
 [Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | No Date Changes Yet |
-[CPPP](https://cppp.fr/) | Paris, France | 06-22 to 06-23 | No Date Changes Yet | 
+[CPPP](https://cppp.fr) | Paris, France | 06-22 to 06-23 | [Cancelled](https://cppp.fr/blog/canceled) |
 [CppCon](https://cppcon.org) | Aurora, CO, US | 09-13 to 09-18 | No Date Changes Yet |
 [Meeting C++](https://meetingcpp.com) | Berlin, Germany | 11-12 to 11-14 | No Date Changes Yet |
 
@@ -113,51 +113,23 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][A simple Star War game made purely out of C++ &amp; SFML with code](https://www.reddit.com/r/cpp/comments/fih7qs/a_simple_star_war_game_made_purely_out_of_c_sfml/)
+## [3][Memory leaks hunter for C++](https://www.reddit.com/r/cpp/comments/fjklal/memory_leaks_hunter_for_c/)
+- url: https://codingtidbit.com/2020/03/15/deleaker-review/
+---
+
+## [4][A simple Star War game made purely out of C++ &amp; SFML with code](https://www.reddit.com/r/cpp/comments/fih7qs/a_simple_star_war_game_made_purely_out_of_c_sfml/)
 - url: https://www.youtube.com/watch?v=3t0JbsZ6X4I
 ---
 
-## [4][A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)](https://www.reddit.com/r/cpp/comments/fij6tl/a_minimal_webassembly_virtual_dom_to_build_c_spa/)
+## [5][A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)](https://www.reddit.com/r/cpp/comments/fij6tl/a_minimal_webassembly_virtual_dom_to_build_c_spa/)
 - url: https://github.com/mbasso/asm-dom
----
-
-## [5][Cs50 vs Udacity](https://www.reddit.com/r/cpp/comments/fj0435/cs50_vs_udacity/)
-- url: /r/cs50/comments/fis7mz/cs50_vs_udacity/
 ---
 
 ## [6][ECS back and forth, part 8: Type Id](https://www.reddit.com/r/cpp/comments/fijq6n/ecs_back_and_forth_part_8_type_id/)
 - url: https://skypjack.github.io/2020-03-14-ecs-baf-part-8/
 ---
 
-## [7][Problem with string replace method.](https://www.reddit.com/r/cpp/comments/fiz5lg/problem_with_string_replace_method/)
-- url: https://www.reddit.com/r/cpp/comments/fiz5lg/problem_with_string_replace_method/
----
-Today I was solving some easy leetcode problems, as I am beginner, I came with a solution in which I was trying to replace "." in the string with "\[.\]" , don't know what's the problem but it gets stuck in some sort of infinite loop, but it works very well with other inputs.
-
-such as "hello", "hi", etc.
-
-here is the code:
-
-    #include &lt;stdio.h&gt;
-    #include &lt;string&gt;
-    #include &lt;iostream&gt; 
-    using namespace std; 
-    
-    int main(){
-        string address = "1.1.1.1";
-            for(int i=0; i&lt;=address.length(); i++){
-                if(address[i] == '.'){
-                    address.replace(i, 1, "[.]");
-                }
-            }
-        cout &lt;&lt; address &lt;&lt; endl;
-        return 0;
-    }
-
-someone please explain why this happens ?
-
-if you replace "\[.\]" with some other word like "hey" the code works just fine.
-## [8][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
+## [7][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
 - url: https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/
 ---
 I'd like to gather some feedback on a short proposal I've written: [https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md](https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md)
@@ -165,11 +137,11 @@ I'd like to gather some feedback on a short proposal I've written: [https://gith
 I've seen this feature in Rust, where my initial reaction was that it looks very dangerous. After using it for a while though, I've found it to not only solve ergonomics issues in my code, but also prevent bugs, which is why I've decided to draft a proposal.
 
 I also know that the committee doesn't like proposals that change fundamentals in the language, but I think this a small change with huge upsides and no backwards-compatibility issues. I've personally hit a nasty bug in my C++ code that could have been avoided with this very feature recently.
-## [9][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
+## [8][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
 - url: http://cppnow.org/announcements/2020/03/Canceled/
 ---
 
-## [10][C++ keeps adding features no one really wants.](https://www.reddit.com/r/cpp/comments/filxpg/c_keeps_adding_features_no_one_really_wants/)
+## [9][C++ keeps adding features no one really wants.](https://www.reddit.com/r/cpp/comments/filxpg/c_keeps_adding_features_no_one_really_wants/)
 - url: https://www.reddit.com/r/cpp/comments/filxpg/c_keeps_adding_features_no_one_really_wants/
 ---
 Just look at the networking, formatting, \[maybe\_unused\] / \[likely\] / \[unlikely\] and others.  
@@ -185,6 +157,10 @@ Many hours spent for making it part of language and I think no one will use It, 
 It all just seems like short-sighted design, but I am just an internet dude.
 
 Modules, concept and coroutines (AFAIK these need compiler support, also library solution would be bug prone and perhaps slower) are great features and I am happy that they are coming.
+## [10][Creating an intermediate GUI with dear imgui is not that difficult, but offers lots of flexibility that other GUI libraries miss out on.](https://www.reddit.com/r/cpp/comments/fhpm4t/creating_an_intermediate_gui_with_dear_imgui_is/)
+- url: https://ruurdsdevlog.wordpress.com/2020/03/07/c-desktop-application-with-dear-imgui/
+---
+
 ## [11][What's the reliable and FOSS way to compile C++ code for Windows (on Linux)?](https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/)
 - url: https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/
 ---

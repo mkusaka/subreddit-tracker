@@ -111,95 +111,61 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Do something to lower worlds healthcare cost](https://www.reddit.com/r/reactjs/comments/fj76zf/do_something_to_lower_worlds_healthcare_cost/)
-- url: https://www.reddit.com/r/reactjs/comments/fj76zf/do_something_to_lower_worlds_healthcare_cost/
----
-OHIF is open source DICOM(medical imaging) viewer www.ohif.org
-
-Github https://github.com/OHIF/Viewers
-
-In our healthcare radiologists uses expensive viewers and pay average 1$ for each DICOM(X-RAY, MRI, CT Scan etc) 
-
-This is just a simple part of the healthcare system and you might think 1$ is not too much. 
-But let me tell you this, it costs a hospital in California 20M a year... 
-
-This big companies(Philips, Samsung and others) does not even try to sell their softwares to outside develop countries, because there isn’t enough profit..
-
-OHIF is web based and any radiologist can use it remotely diagnose patients, its not there yet, it have many missing features which radiologists needs.
-
-Please help OHIF its a modern ReactJS project , come and do some refactoring do some bug fix. 
-
-
-https://github.com/OHIF/Viewers
-## [4][Open-source lightweight SVG/CSS spinners for React](https://www.reddit.com/r/reactjs/comments/fjiscy/opensource_lightweight_svgcss_spinners_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fjiscy/opensource_lightweight_svgcss_spinners_for_react/
----
-Hi guys, I am looking for feedback on the open-source react component which our team built. This component contains 9 typescript-aware lightweight spinners. It would be great if you can check it out and let me know what you think. Thank you in advance!
-
-Spinners-react demo: [https://adexin.github.io/spinners/](https://adexin.github.io/spinners/)  
-Spinners-react repo: [https://github.com/adexin/spinners-react](https://github.com/adexin/spinners-react)
-
-&amp;#x200B;
-
-https://reddit.com/link/fjiscy/video/frh0e0tjg0n41/player
-## [5][A Visual Development Tool For Web Applications with React](https://www.reddit.com/r/reactjs/comments/fjkjf1/a_visual_development_tool_for_web_applications/)
-- url: https://hackernoon.com/i-developed-a-visual-development-tool-for-web-applications-with-react-gmbr3280
+## [3][npm is joining GitHub - The GitHub Blog](https://www.reddit.com/r/reactjs/comments/fjofxn/npm_is_joining_github_the_github_blog/)
+- url: https://github.blog/2020-03-16-npm-is-joining-github/
 ---
 
-## [6][Zoomable floor plan with overlaying interactive icons](https://www.reddit.com/r/reactjs/comments/fjjc6x/zoomable_floor_plan_with_overlaying_interactive/)
-- url: https://www.reddit.com/r/reactjs/comments/fjjc6x/zoomable_floor_plan_with_overlaying_interactive/
----
-Trying to make a webpage to show a interactive floor plan with an SVG image as background image, with interactive SVG icons or text boxes overlaying the background image.  As such icons needs to get a fixed position in relation to the background image, and needs to keep this position regardless of resizing of browser window, zooming etc.  The purpose is to show the status in a "smart house" environment.  Preferably the floor plan should be mouse-wheel zoomable on desktop or pan/pinch zoomable on mobile device.
-
-Is there a library that can help with the "heavy lifting" here, in regards to graphics processing?  I've already spent quite a while on [react-zoom-pan-pinch](https://www.npmjs.com/package/react-zoom-pan-pinch), but was unable to get it working without having icons move around on the background image, SVG's becoming rasterized etc.
-
-Would e.g. [nivo](https://nivo.rocks/) be a possibility?  Any tips would be greatly appreciated.
-## [7][My first React project - PokeHUB](https://www.reddit.com/r/reactjs/comments/fjj8d3/my_first_react_project_pokehub/)
-- url: https://www.reddit.com/r/reactjs/comments/fjj8d3/my_first_react_project_pokehub/
----
-Hello! Today was the day I finished my first React project - PokeHUB. It is an app that gets and conveniently displays data downloaded from PokeAPI (BIG thank you to the creators!). I encountered many issues and obstacles along the way and now I think I may call this app finished. Of course I am open to suggestions, reviews and criticism :)
-
-Tech Stack:
-- React 16.12
-- Redux
-- CSS Modules
-- React-Transition-Group
-- Styled Components
-
-Deployed site: https://pokehubreact.firebaseapp.com/
-GitHub: https://github.com/ciemekk92/pokehub_react
-
-API: https://pokeapi.co
-
-If you find anything that you think is wrong or could be done better, please let me know! Thank you :)
-## [8][React hook that persist data in local storage while having the same API as useState()](https://www.reddit.com/r/reactjs/comments/fji78h/react_hook_that_persist_data_in_local_storage/)
-- url: https://github.com/astoilkov/use-local-storage-state
+## [4][I have just published my portfolio! Built with Gatsby. Thoughts?](https://www.reddit.com/r/reactjs/comments/fjwkcn/i_have_just_published_my_portfolio_built_with/)
+- url: https://aesign.me
 ---
 
-## [9][Some better ways than shaking your device to show dev-menu in React Native](https://www.reddit.com/r/reactjs/comments/fji3xj/some_better_ways_than_shaking_your_device_to_show/)
-- url: https://medium.com/javascript-in-plain-english/some-better-ways-than-shaking-your-device-to-show-dev-menu-in-react-native-1fd6d051bf90?source=friends_link&amp;sk=d87ed5e56e505dfca4d1776fb4dd4692
+## [5][I created a web application for travel agents on the MERN stack. Travel is kinda at a halt right now so I would love feedback on the product.](https://www.reddit.com/r/reactjs/comments/fk40zb/i_created_a_web_application_for_travel_agents_on/)
+- url: https://app.travel-left.com
 ---
 
-## [10][Supervising XState machines with Redux](https://www.reddit.com/r/reactjs/comments/fjkaqp/supervising_xstate_machines_with_redux/)
-- url: https://codesandbox.io/s/xstate-actor-supervisor-using-redux-wjqyg
+## [6]["Integrate" Material-UI in a Next.js project](https://www.reddit.com/r/reactjs/comments/fk2nes/integrate_materialui_in_a_nextjs_project/)
+- url: https://www.youtube.com/watch?v=k7bKDpw-JGk&amp;feature=share
 ---
 
-## [11][Is it a bad practice to render different components based on the screen size?](https://www.reddit.com/r/reactjs/comments/fjdcas/is_it_a_bad_practice_to_render_different/)
-- url: https://www.reddit.com/r/reactjs/comments/fjdcas/is_it_a_bad_practice_to_render_different/
+## [7][Getting started with React Hooks](https://www.reddit.com/r/reactjs/comments/fk4mrk/getting_started_with_react_hooks/)
+- url: https://www.vtnetzwelt.com/web/getting-started-with-react-hooks/
 ---
-I have to create a navigation bar and it must have different behaviors based on the user screen size. I was thinking about making two different nav bar components, but I searched about this practice and I found nothing.
 
-Is this a bad practice or is it just uncommon? Many thanks!
-## [12][Notifying users about version upgrades](https://www.reddit.com/r/reactjs/comments/fjitcw/notifying_users_about_version_upgrades/)
-- url: https://www.reddit.com/r/reactjs/comments/fjitcw/notifying_users_about_version_upgrades/
+## [8][Dynamic Name React Component With Closure](https://www.reddit.com/r/reactjs/comments/fk2fg8/dynamic_name_react_component_with_closure/)
+- url: https://dev.to/zlfnhmd/dynamic-name-react-component-with-closure-54gp
 ---
-Hello Community,
 
-I am curious how you guys force refresh the user's App state after rolling out a new version.
+## [9][People always talk about putting API keys in .env files to file them, but the user can still see them by going into the network tab in inspect element](https://www.reddit.com/r/reactjs/comments/fjljtv/people_always_talk_about_putting_api_keys_in_env/)
+- url: https://www.reddit.com/r/reactjs/comments/fjljtv/people_always_talk_about_putting_api_keys_in_env/
+---
+This isn't really ReactJS specific, but what measures should be taken to prevent people from stealing sensitive API keys for google maps etc by simply going into network requests in inspect element?
+## [10][How to stand out myself as a React Developer in Job Hunting?](https://www.reddit.com/r/reactjs/comments/fk1wce/how_to_stand_out_myself_as_a_react_developer_in/)
+- url: https://www.reddit.com/r/reactjs/comments/fk1wce/how_to_stand_out_myself_as_a_react_developer_in/
+---
+After one year of fast track in Web Dev, I arrived in the job-hunting mode now. But I am having difficulties describing myself as a react developer. I mean, I can show up some projects, or say I know x, y, z in react, but beyond that, I really can't think of any other way to differentiate myself in my resume. Any suggestion? Thanks!
+## [11][IOT Dashboard with ReactJS (and MQTT?!?)](https://www.reddit.com/r/reactjs/comments/fk3olb/iot_dashboard_with_reactjs_and_mqtt/)
+- url: https://www.reddit.com/r/reactjs/comments/fk3olb/iot_dashboard_with_reactjs_and_mqtt/
+---
+Hi there! I'm new to reactJS and I have a very basic but conceptual question:
 
-I have a SaaS app with a React/Redux frontend and a Java/Spring Boot backend. I'm using create-react-app and react-app-rewired with Workbox (so I wouldn't need to eject CRA). I'm relatively new to React, but I'm aware that using the service worker gives a considerable performance boost, but it also prevents refreshing the state (unless the user clears the cache / service worker entry).
+I would like to build a responsive Webpage for an IOT dashboard (with ReactJS) and I'm struggling with way too many options on how to start, component variety and so on...!
 
-My question is: whenever I roll out a new version (on AWS, in my case), how could I somehow notify the user's browser about that (perhaps log him out and clear the local storage) so that the web app is refreshed with the new stuff? How would you approach this? Perhaps using push notifications?
+My main concern now is: how do I get live IoT data (most efficiently) into such a react dashboard?
 
-Thanks,  
-Robert
+My core IOT system is a simple Mosquito MQTT broker + Node-Red.
+
+Would be MQTT.js (via websocket) be a good option in order to get data into a reactJS page?
+
+What other options are suitable/available?
+
+It would be really great if someone could give me some starting guidance/tutorial on essential bits and pieces to start with.
+
+(I started to experiment with create-react-app, material-ui, mqtt.js, char.js ... but I'm not sure if I'm on the right path here ... especially the mqtt suff worries me, as I hardly can find useful tutorials on it...)
+
+Any help would be really appreciated! Thank you in advance!
+
+BR Martin
+## [12][Made a new portfolio website. Any suggestions for additional functionality?](https://www.reddit.com/r/reactjs/comments/fjx3o0/made_a_new_portfolio_website_any_suggestions_for/)
+- url: https://nickhu.info/
+---
+

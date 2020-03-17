@@ -13,43 +13,43 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Ever heard of The Celibacy Pattern? It promises to be a singleton...](https://www.reddit.com/r/javascript/comments/fjbfz7/ever_heard_of_the_celibacy_pattern_it_promises_to/)
-- url: https://terodox.tech/celibacy-pattern/
+## [3][GitHub acquires NPM](https://www.reddit.com/r/javascript/comments/fjodsi/github_acquires_npm/)
+- url: https://github.blog/2020-03-16-npm-is-joining-github/
 ---
 
-## [4][I created a Apollo GraphQL server for retrieving COVID-19 data by date. Looking for feedback and contribution.](https://www.reddit.com/r/javascript/comments/fjjyax/i_created_a_apollo_graphql_server_for_retrieving/)
+## [4][Square Brackets are the Enemy (Prototype Poisoning)](https://www.reddit.com/r/javascript/comments/fk41gf/square_brackets_are_the_enemy_prototype_poisoning/)
+- url: https://hueniverse.com/square-brackets-are-the-enemy-ff5b9fd8a3e8
+---
+
+## [5][Some examples of `reduce` in JavaScript](https://www.reddit.com/r/javascript/comments/fk3okg/some_examples_of_reduce_in_javascript/)
+- url: https://herebeseaswines.net/essays/2020-03-14-fold-as-universal-form
+---
+
+## [6][I created a Apollo GraphQL server for retrieving COVID-19 data by date. Looking for feedback and contribution.](https://www.reddit.com/r/javascript/comments/fjjyax/i_created_a_apollo_graphql_server_for_retrieving/)
 - url: https://github.com/SiddharthMantri/covid-graphql
 ---
 
-## [5][Some better ways than shaking your device to show dev-menu in React Native](https://www.reddit.com/r/javascript/comments/fji431/some_better_ways_than_shaking_your_device_to_show/)
-- url: https://medium.com/javascript-in-plain-english/some-better-ways-than-shaking-your-device-to-show-dev-menu-in-react-native-1fd6d051bf90?source=friends_link&amp;sk=d87ed5e56e505dfca4d1776fb4dd4692
+## [7][GitHub has signed an agreement to acquire npm.](https://www.reddit.com/r/javascript/comments/fjy5gc/github_has_signed_an_agreement_to_acquire_npm/)
+- url: https://github.blog/2020-03-16-npm-is-joining-github/?utm_campaign=1584377606&amp;utm_medium=social&amp;utm_source=twitter&amp;utm_content=1584377606
 ---
 
-## [6][ultimate-guitar.com - user interface &amp; pdf generator](https://www.reddit.com/r/javascript/comments/fjjwpk/ultimateguitarcom_user_interface_pdf_generator/)
+## [8][Vue v3.0.0-alpha.9 Released](https://www.reddit.com/r/javascript/comments/fk212y/vue_v300alpha9_released/)
+- url: https://github.com/vuejs/vue-next/releases/tag/v3.0.0-alpha.9
+---
+
+## [9][Generated tests with XState and Cypress](https://www.reddit.com/r/javascript/comments/fjs7qh/generated_tests_with_xstate_and_cypress/)
+- url: https://timdeschryver.dev/blog/generated-tests-with-xstate-and-cypress
+---
+
+## [10][New AB Testing Framework (React, vanilla and python)](https://www.reddit.com/r/javascript/comments/fk0f2m/new_ab_testing_framework_react_vanilla_and_python/)
+- url: https://github.com/appannie/ab-testing
+---
+
+## [11][ultimate-guitar.com - user interface &amp; pdf generator](https://www.reddit.com/r/javascript/comments/fjjwpk/ultimateguitarcom_user_interface_pdf_generator/)
 - url: https://github.com/hedwiggggg/ugrip
 ---
 
-## [7][I'm a beginner in Javascript and made an online life simulator!](https://www.reddit.com/r/javascript/comments/fizjgs/im_a_beginner_in_javascript_and_made_an_online/)
-- url: https://github.com/wraithM17/lifely
----
-
-## [8][Made a small plugin for FireFox to track Covid-19 cases and news.](https://www.reddit.com/r/javascript/comments/fjj838/made_a_small_plugin_for_firefox_to_track_covid19/)
-- url: https://addons.mozilla.org/en-US/firefox/addon/covid-19-cases-counter/
----
-
-## [9][CSS Dark Mode tutorial – adding selectable themes to your site or PWA with alternate style](https://www.reddit.com/r/javascript/comments/fiwfrj/css_dark_mode_tutorial_adding_selectable_themes/)
-- url: https://www.javascriptteacher.com/dark-mode-alternate-css-style-sheet.html?rt
----
-
-## [10][Published ip-filter v3](https://www.reddit.com/r/javascript/comments/fje7mr/published_ipfilter_v3/)
-- url: https://ghub.now.sh/ip-filter
----
-
-## [11][Performance optimization with react PureComponent and react.memo](https://www.reddit.com/r/javascript/comments/fj59mv/performance_optimization_with_react_purecomponent/)
-- url: https://techboxweb.com/performance-optimization-with-react-purecomponent-and-react-memo/
----
-
-## [12][I built a free, schema-less rest api with socket.io support to help devs create front ends before they’ve built back ends.](https://www.reddit.com/r/javascript/comments/fjhou1/i_built_a_free_schemaless_rest_api_with_socketio/)
-- url: https://superfastapi.com
+## [12][Learn from home webinar: Writing clean JS tests](https://www.reddit.com/r/javascript/comments/fjlwmf/learn_from_home_webinar_writing_clean_js_tests/)
+- url: https://zoom.us/webinar/register/1215843693079/WN_0LQj8e5rTwSQr4X9NSnX-w
 ---
 

@@ -23,80 +23,96 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fjefxj/whats_everyone_working_on_this_week_122020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-12-2020/39545?u=llogiq)!
-## [3][ripgrep 12 is released](https://www.reddit.com/r/rust/comments/fje2ya/ripgrep_12_is_released/)
-- url: https://github.com/BurntSushi/ripgrep/releases/tag/12.0.0
+## [3][Rewriting the Heart of our Sync Engine (in Rust)](https://www.reddit.com/r/rust/comments/fjt4q3/rewriting_the_heart_of_our_sync_engine_in_rust/)
+- url: https://dropbox.tech/infrastructure/rewriting-the-heart-of-our-sync-engine
 ---
 
-## [4][Rust the 4th most active programming languages in GitHub](https://www.reddit.com/r/rust/comments/fj6rp9/rust_the_4th_most_active_programming_languages_in/)
-- url: https://learnworthy.net/10-most-active-programming-languages-in-github/
+## [4][Postponing RustFest Netherlands](https://www.reddit.com/r/rust/comments/fk35ir/postponing_rustfest_netherlands/)
+- url: https://blog.rustfest.eu/postponing-rustfest-nl
 ---
 
-## [5][Sheeit - An experimental blazing-fast spreadsheet engine that supports thousands of concurrent users and millions of cells.](https://www.reddit.com/r/rust/comments/fj5uu5/sheeit_an_experimental_blazingfast_spreadsheet/)
-- url: https://github.com/wilfredwee/sheeit
+## [5][References in Rust](https://www.reddit.com/r/rust/comments/fk3my2/references_in_rust/)
+- url: https://blog.thoughtram.io/references-in-rust/
 ---
 
-## [6][Zenith - sort of like top or htop but with histograms, network usage, and more](https://www.reddit.com/r/rust/comments/fjdcla/zenith_sort_of_like_top_or_htop_but_with/)
-- url: https://github.com/bvaisvil/zenith
+## [6][Building Site Search With Tantivy](https://www.reddit.com/r/rust/comments/fjzigm/building_site_search_with_tantivy/)
+- url: https://jstrong.dev/posts/2020/building-a-site-search-with-tantivy/
 ---
 
-## [7][TIL you can put closures of the same type into a collection/iterator without boxing](https://www.reddit.com/r/rust/comments/fjfqxa/til_you_can_put_closures_of_the_same_type_into_a/)
-- url: https://www.reddit.com/r/rust/comments/fjfqxa/til_you_can_put_closures_of_the_same_type_into_a/
+## [7][My First Library: FlatBuffers *without* compiling (NoProto)](https://www.reddit.com/r/rust/comments/fjyhj7/my_first_library_flatbuffers_without_compiling/)
+- url: https://www.reddit.com/r/rust/comments/fjyhj7/my_first_library_flatbuffers_without_compiling/
 ---
-You can use this to implement something akin to C++ output iterator:
+Working on some projects, I needed a way to implement Flatbuffers/Cap'N Proto objects dynamically at runtime.  The schema of the objects has to be flexible and might not be known before compile time.  
 
-```
-    fn output_iterator&lt;'item, 'iter, T, C&gt;(
-        c: C,
-    ) -&gt; impl Iterator&lt;Item = impl FnMut(T) + 'item&gt; + 'iter
-    where
-        C::IntoIter: 'iter,
-        'item: 'iter,
-        T: 'item,
-        C: IntoIterator&lt;Item = &amp;'item mut T&gt;,
-    {
-        c.into_iter().map(|r| {
-            move |t: T| {
-                *r = t;
-            }
-        })
-    }
-```
+[https://crates.io/crates/no\_proto](https://crates.io/crates/no_proto)
 
-You can then do this:
-```
-let mut vec = vec![0;10];
-for (mut f, v) in output_iterator(&amp;mut vec).zip(0..) {
-    f(v);
-}
-println!("{:?}", vec); // prints [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
+I'm like 2 months into Rust and this is the first (hopefully) useful thing I've put together, any feedback is appreciated. :)
+## [8][Book suggestion](https://www.reddit.com/r/rust/comments/fk4jr5/book_suggestion/)
+- url: https://www.reddit.com/r/rust/comments/fk4jr5/book_suggestion/
+---
+Hi Rustaceans,
 
-This seems interesting, though I'm not sure how useful this pattern is in practice. It could be useful if you only want the user of your library to call a function for a certain amount of times, although I can't come up with such a situation.
+I've became Rustacean since yesterday.
 
-[Link to Playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=0a6637190d5f5ce80a951ddbdcc7254f)
-## [8][Flume, a 100% safe MPSC that's faster than std and gives crossbeam a run for its money](https://www.reddit.com/r/rust/comments/fj17z6/flume_a_100_safe_mpsc_thats_faster_than_std_and/)
-- url: https://github.com/zesterer/flume
+I'm reading "The Rust Programming Language" official book.
+
+After finishing this book, what book do you recommend for further deep learning and advanced topics?
+
+I ❤ Rust
+## [9][rust-analyzer Changelog #16](https://www.reddit.com/r/rust/comments/fjl875/rustanalyzer_changelog_16/)
+- url: https://rust-analyzer.github.io/thisweek/2020/03/16/changelog-16.html
 ---
 
-## [9][How I Start: Rust](https://www.reddit.com/r/rust/comments/fjb7fl/how_i_start_rust/)
-- url: https://christine.website/blog/how-i-start-rust-2020-03-15
+## [10][I want to write a pseudo linter in Rust](https://www.reddit.com/r/rust/comments/fk1877/i_want_to_write_a_pseudo_linter_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/fk1877/i_want_to_write_a_pseudo_linter_in_rust/
+---
+Their is a simulation code I use for work that takes script files to define commands and variables. The files can be complex and include other files. Basically, it works like a programming language.
+
+Some common mistakes (at least the ones I make) can be catched before runtime so I thought about writing a pseudo linter. As I love Rust I though this would be a cool project to learn more about the language. I made a first version in python but i'm unsatisfied with the way I did it (brute force algorithm read line, define command read line, check if defined etc). Plus I would like to run it asynchronously with my text editor so it should be light and fast (at least fast). 
+
+Are their any rust written linters that I could check to get inspiration from? Or do you have any advice on where I should go? Is it a good project as I'm not a very skilled rustacean?
+
+Regards.
+## [11][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.42]](https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/)
+- url: https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/
+---
+Welcome once again to the official /r/rust Who's Hiring thread!
+
+Before we begin, job-seekers should also remember to peruse [the prior thread](https://en.reddit.com/r/rust/comments/eyw94s/official_rrust_whos_hiring_thread_for_jobseekers/).
+
+This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+
+Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
+
+#### Rules for individuals:
+
+* Don't create top-level comments; those are for employers.
+* Feel free to reply to top-level comments with on-topic questions.
+* I will create a stickied top-level comment for individuals looking for work.
+* I will create an additional top-level comment for meta discussion.
+
+#### Rules for employers:
+
+* To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
+* To make a top-level comment you must be hiring directly; no third-party recruiters.
+* One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
+* Proofread your comment after posting it and edit it if necessary to correct mistakes.
+* Please base your comment on the following template:
+
+COMPANY: *[Company name; please link to your company's website or careers page.]*
+
+TYPE: *[Full time, part time, internship, contract, etc.]*
+
+DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+
+LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+
+REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+
+VISA: *[Does your company sponsor visas?]*
+
+CONTACT: *[How can someone get in touch with you?]*
+## [12][How to build an embedded Rust application on top of a C vendor library](https://www.reddit.com/r/rust/comments/fjsnqz/how_to_build_an_embedded_rust_application_on_top/)
+- url: https://github.com/mogenson/trinket-m0
 ---
 
-## [10][Introducing quit - Exit cleanly with an exit code](https://www.reddit.com/r/rust/comments/fj7k3b/introducing_quit_exit_cleanly_with_an_exit_code/)
-- url: https://www.reddit.com/r/rust/comments/fj7k3b/introducing_quit_exit_cleanly_with_an_exit_code/
----
-[Documentation](https://docs.rs/quit) | [Repository](https://github.com/dylni/quit) | [crates.io](https://crates.io/crates/quit)
-
-This crate fixes the problems with [`std::process::exit`](https://doc.rust-lang.org/std/process/fn.exit.html). Instead of immediately terminating the program, [`quit::with_code`](https://docs.rs/quit/0.1.0/quit/fn.with_code.html) is similar to a panic. You can still set an exit code, but destructors will be called, and the stack will be unwound to the main function.
-
-It's most useful for CLI scripts, which often exit for normal reasons, such as printing a help message or giving an error about an unknown option. [`std::process::exit`](https://doc.rust-lang.org/std/process/fn.exit.html) is usually overkill in those cases.
-## [11][Rust Notebooks: Typed Arrays from String Arrays for Dataset Operation](https://www.reddit.com/r/rust/comments/fjkmxp/rust_notebooks_typed_arrays_from_string_arrays/)
-- url: https://shahinrostami.com/posts/programming/rust-notebooks/typed-arrays-from-string-arrays-for-dataset-operation/
----
-
-## [12][What's your controversal Rust opinion?](https://www.reddit.com/r/rust/comments/fj824y/whats_your_controversal_rust_opinion/)
-- url: https://www.reddit.com/r/rust/comments/fj824y/whats_your_controversal_rust_opinion/
----
-Do you think there's a technique more people should use that many wouldn't like? Is there a popular library you think isn't the best way of doing things (explain why). Is there any patterns you think is confusing enough that people shouldn't do? What is your controversal rust opinion?
-
-Wow, I posted a similar question to learnprogramming and they banned me for it. What a bunch of dickwads

@@ -39,7 +39,42 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Standing out as a true Pro Rails Developer](https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/)
+## [3][Can't modify frozen String on form tags after upgrade to Rails 6.0.0](https://www.reddit.com/r/rails/comments/fjsp5w/cant_modify_frozen_string_on_form_tags_after/)
+- url: https://www.reddit.com/r/rails/comments/fjsp5w/cant_modify_frozen_string_on_form_tags_after/
+---
+I'm in the middle of upgrading a monolith from Rails 5.2 to 6.0.0. This upgrade so far has gone pretty easy. I was able to knock out the deprecations and a co-worker of mine was able to fix the test suite (for the most part. Still having an issue with Capybara on 2 tests).
+
+I ran `rails app:update` and manually updated the config files that were updated in Rails 6.0.0. One line I forgot to change was `config.load_defaults '6.0'`, in fact this was still on `config.load_defaults '5.1.'` even though we were on 5.2.
+
+After updating this line to `config.load_defaults '6.0'` and fixing any zeitwerk loading issues (by running `rails zeitwerk:check`) we're getting nearly 200 errors in our test suite.
+
+`ActionView::Template::Error: can't modify frozen String`
+
+Every one of these I've checked (so far) are pointing to a form tag. The main one pointing to a `form_tag` call and a few others pointing to a `semantic_form_for` tag in an older part of our app (we've since upgrade to simple_form).
+
+I've added the configs we were using in the old `new_framework_defaults_5_x` files to application.rb hoping it was a config in one of those but no dice...
+
+Not really sure what to do from here. Any ideas?
+## [4][Anybody having readline issues with macos](https://www.reddit.com/r/rails/comments/fjux86/anybody_having_readline_issues_with_macos/)
+- url: https://www.reddit.com/r/rails/comments/fjux86/anybody_having_readline_issues_with_macos/
+---
+https://preview.redd.it/nkm2w8kie4n41.png?width=1206&amp;format=png&amp;auto=webp&amp;s=738055f6456cde40f478ed3768d10e925e9f9533
+
+Whats expected is for the number 2 to be printed,  
+instead the rails repl prints some garbage after the number 2.
+## [5][is rack on the same layer as fastCGI?](https://www.reddit.com/r/rails/comments/fjwgtu/is_rack_on_the_same_layer_as_fastcgi/)
+- url: https://www.reddit.com/r/rails/comments/fjwgtu/is_rack_on_the_same_layer_as_fastcgi/
+---
+Are rack and fastCGI on the same layer solving the same problem and are alternatives to each other, or is rack built on top where fastCGI is?
+## [6][Date default value](https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/)
+- url: https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/
+---
+So I have a model `Task` which has an attribute `deadline` of type `datetime`. I also have at some point in my views the following input:
+
+    &lt;input type="date" id="start" name="task[deadline]" min="2020-01-01" max="2025-12-31" value="&lt;%= @task.deadline.strftime("%Y/%m/%d - %H:%M %p") %&gt;"&gt;
+
+Well, apparently strftime does not work, as it shows `mm/dd/yyyy` instead of the corresponding date. I don't know how to fix this, but probably is a simple thing that right now I don't see.
+## [7][Standing out as a true Pro Rails Developer](https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/)
 - url: https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/
 ---
 Sorry for the long windedness, but here goes...
@@ -65,15 +100,7 @@ So a lot of newbies feel like there's this whole world they weren't prepared for
 In "real world" Rails development, are you really working with a SQLite database in Dev, updating migration files, and just running those against a PostGres or MySql database?  Or is it much more complicated than that?
 
 Just looking for tips of what I need to study at a more advanced level that maybe the tutorials and books aren't preparing me for.
-## [4][Date default value](https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/)
-- url: https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/
----
-So I have a model `Task` which has an attribute `deadline` of type `datetime`. I also have at some point in my views the following input:
-
-    &lt;input type="date" id="start" name="task[deadline]" min="2020-01-01" max="2025-12-31" value="&lt;%= @task.deadline.strftime("%Y/%m/%d - %H:%M %p") %&gt;"&gt;
-
-Well, apparently strftime does not work, as it shows `mm/dd/yyyy` instead of the corresponding date. I don't know how to fix this, but probably is a simple thing that right now I don't see.
-## [5][SCSS changes not triggering recompile](https://www.reddit.com/r/rails/comments/fjfonm/scss_changes_not_triggering_recompile/)
+## [8][SCSS changes not triggering recompile](https://www.reddit.com/r/rails/comments/fjfonm/scss_changes_not_triggering_recompile/)
 - url: https://www.reddit.com/r/rails/comments/fjfonm/scss_changes_not_triggering_recompile/
 ---
 Hi everyone, I'm having the a problem whereby my scss changes are not recompiling. Every time I make a change  I'm having to do the following:  
@@ -100,13 +127,13 @@ None of these things have worked.
 
 
 Any ideas? Thanks
-## [6][Making Rails apps more beautiful? (using frontend technologies/frameworks)](https://www.reddit.com/r/rails/comments/fj5s94/making_rails_apps_more_beautiful_using_frontend/)
+## [9][Making Rails apps more beautiful? (using frontend technologies/frameworks)](https://www.reddit.com/r/rails/comments/fj5s94/making_rails_apps_more_beautiful_using_frontend/)
 - url: https://www.reddit.com/r/rails/comments/fj5s94/making_rails_apps_more_beautiful_using_frontend/
 ---
 Today I depolyed a rails app and what most of people tested say was : "Make it look more beautiful please". I was thinking about what are the ways to make a rails app look more and more beautiful? I did search and I found it's possible to use react or vue with webpacker on rails, but they still need some work to look beautiful. 
 
 I'm not searching for "immediate" ways of course, but I look for something look better than rails default views on start. How should I say ... a more stylish way of views we can see.
-## [7][organizing/managing Routes for an MVP](https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/)
+## [10][organizing/managing Routes for an MVP](https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/)
 - url: https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/
 ---
 so i start working on an MVP with rails, 
@@ -118,50 +145,13 @@ but now i'm not sure if i have to change it to account/model for the user submis
 so my question is when starting a project do you think about routes ? 
 
 should i make a simple text file to list all the best names/titles for routes or i can keep the default resources and don't think/let the user think about them ?
-## [8][ran rufus scheduler in my rails app, now when I later went back to the app is hanging in the browser](https://www.reddit.com/r/rails/comments/fj2oyy/ran_rufus_scheduler_in_my_rails_app_now_when_i/)
+## [11][ran rufus scheduler in my rails app, now when I later went back to the app is hanging in the browser](https://www.reddit.com/r/rails/comments/fj2oyy/ran_rufus_scheduler_in_my_rails_app_now_when_i/)
 - url: https://www.reddit.com/r/rails/comments/fj2oyy/ran_rufus_scheduler_in_my_rails_app_now_when_i/
 ---
 So i created a job, and I wanted to test it in console (eh, I'm new to it so don't know if this is bad) so I ran the job there.  I noticed when I went back later that my app doesn't load in browser, and I can't even ctrl+c out of the rails server log.  So I had to kill the rails pid and then start up rails s again, but it still doesn't load in the browser, though I see the initial GET for the homepage.  
 
 Is there some process or other thing I need to do in rails console to stop rufus?  I had exited all my console sessions too, including the one in which I was trying to test a rufus job.  I've even commented out code, etc
-## [9][Deploying to Heroku, do you have to worry about HTTP server?](https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/)
+## [12][Deploying to Heroku, do you have to worry about HTTP server?](https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/)
 - url: https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/
 ---
 Deploying to Heroku, do I have to worry about adding my own apache/nginx server?
-## [10][GraphQL Rails queries](https://www.reddit.com/r/rails/comments/fimrmk/graphql_rails_queries/)
-- url: https://www.reddit.com/r/rails/comments/fimrmk/graphql_rails_queries/
----
-I have been messing with GraphQL in Rails, and have created a simple API so far. I have a couple of questions oh how extend this a little.
-
-\- How would I go about creating a query with multiple variables, say looking up posts by {x} user on {y} date?  
-\- How can I add a total returned count like how Shopify does their GraphQL queries.  
-\- Also in should I be putting all my queries within the \`query\_type.rb\` file? The tutorial I was following wasn't that explicit.   
-
-
-Any help would be much appreciated, Thank you.
-## [11][Creating a react on rails app based on existing rails web-app?](https://www.reddit.com/r/rails/comments/fir46o/creating_a_react_on_rails_app_based_on_existing/)
-- url: https://www.reddit.com/r/rails/comments/fir46o/creating_a_react_on_rails_app_based_on_existing/
----
-So I have an existing web application but there's only so much web design I can do to make it useable on mobile.
-
-Is react on rails the best way to go about creating an MVP for mobile that I can use to publish an app on the app/Google store?
-
-And if so, would you:
-
-a.) Recreate the entire project in react-rails and use this new project for both web and mobile.
-
-b.) Create seperate project for mobile and isolate each project from one another.
-
-c.) Create seperate project for mobile but utilise the backend of existing project.
-
-Let me know your thoughts!
-## [12][How do you test multi-step forms using rspec?](https://www.reddit.com/r/rails/comments/fid8ww/how_do_you_test_multistep_forms_using_rspec/)
-- url: https://www.reddit.com/r/rails/comments/fid8ww/how_do_you_test_multistep_forms_using_rspec/
----
-**If this question is too general and not rails specific please let me know and I'll post it elsewhere :)**
-
-Hi everyone. I wanted to get your thoughts on how you methodically write rspec tests for multi-step (multi-page) forms.
-
-I want to be able to achieve 100% coverage, but I don't know if that's feasible considering how many different possible input combinations my form can have, and how different the options available from fields in the next page can be depending on what was inputted in the first page.
-
-I was wondering if any of you have done anything like this, and if you can give general advice in how you can tackle it. I am a beginner in rspec and so far have only managed to write tests for simple features like logging in, logging out, changing password, etc. without giving up...

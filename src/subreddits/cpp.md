@@ -113,23 +113,39 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Memory leaks hunter for C++](https://www.reddit.com/r/cpp/comments/fjklal/memory_leaks_hunter_for_c/)
+## [3][Demo Zoo: Zero Cost Abstractions in C++20, Rust, &amp; Zig](https://www.reddit.com/r/cpp/comments/fjmcah/demo_zoo_zero_cost_abstractions_in_c20_rust_zig/)
+- url: https://youtu.be/43X9ia-qpds
+---
+
+## [4][Learning-based Memory Allocation for C++ Server Workloads - Google Research](https://www.reddit.com/r/cpp/comments/fjtuty/learningbased_memory_allocation_for_c_server/)
+- url: https://research.google/pubs/pub49008/?fbclid=IwAR3Ccaf0qd090qkjl-6cq0o-KDflsiWYBB110jW7JSMIL5jL2ngVJ8dEdek
+---
+
+## [5][Memory leaks hunter for C++](https://www.reddit.com/r/cpp/comments/fjklal/memory_leaks_hunter_for_c/)
 - url: https://codingtidbit.com/2020/03/15/deleaker-review/
 ---
 
-## [4][A simple Star War game made purely out of C++ &amp; SFML with code](https://www.reddit.com/r/cpp/comments/fih7qs/a_simple_star_war_game_made_purely_out_of_c_sfml/)
+## [6][[Boost].μt - C++ single module/header, macro-free Unit Testing Framework - v1.1.7 released ⬆️](https://www.reddit.com/r/cpp/comments/fjords/boostμt_c_single_moduleheader_macrofree_unit/)
+- url: https://github.com/boost-experimental/ut/releases/tag/v1.1.7
+---
+
+## [7][Modeling the Invariance of Virtual Pointers in LLVM](https://www.reddit.com/r/cpp/comments/fjn674/modeling_the_invariance_of_virtual_pointers_in/)
+- url: https://arxiv.org/abs/2003.04228
+---
+
+## [8][A simple Star War game made purely out of C++ &amp; SFML with code](https://www.reddit.com/r/cpp/comments/fih7qs/a_simple_star_war_game_made_purely_out_of_c_sfml/)
 - url: https://www.youtube.com/watch?v=3t0JbsZ6X4I
 ---
 
-## [5][A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)](https://www.reddit.com/r/cpp/comments/fij6tl/a_minimal_webassembly_virtual_dom_to_build_c_spa/)
+## [9][A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)](https://www.reddit.com/r/cpp/comments/fij6tl/a_minimal_webassembly_virtual_dom_to_build_c_spa/)
 - url: https://github.com/mbasso/asm-dom
 ---
 
-## [6][ECS back and forth, part 8: Type Id](https://www.reddit.com/r/cpp/comments/fijq6n/ecs_back_and_forth_part_8_type_id/)
+## [10][ECS back and forth, part 8: Type Id](https://www.reddit.com/r/cpp/comments/fijq6n/ecs_back_and_forth_part_8_type_id/)
 - url: https://skypjack.github.io/2020-03-14-ecs-baf-part-8/
 ---
 
-## [7][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
+## [11][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
 - url: https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/
 ---
 I'd like to gather some feedback on a short proposal I've written: [https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md](https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md)
@@ -137,45 +153,7 @@ I'd like to gather some feedback on a short proposal I've written: [https://gith
 I've seen this feature in Rust, where my initial reaction was that it looks very dangerous. After using it for a while though, I've found it to not only solve ergonomics issues in my code, but also prevent bugs, which is why I've decided to draft a proposal.
 
 I also know that the committee doesn't like proposals that change fundamentals in the language, but I think this a small change with huge upsides and no backwards-compatibility issues. I've personally hit a nasty bug in my C++ code that could have been avoided with this very feature recently.
-## [8][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
+## [12][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
 - url: http://cppnow.org/announcements/2020/03/Canceled/
----
-
-## [9][C++ keeps adding features no one really wants.](https://www.reddit.com/r/cpp/comments/filxpg/c_keeps_adding_features_no_one_really_wants/)
-- url: https://www.reddit.com/r/cpp/comments/filxpg/c_keeps_adding_features_no_one_really_wants/
----
-Just look at the networking, formatting, \[maybe\_unused\] / \[likely\] / \[unlikely\] and others.  
-I mean these are all cool features I use every day but It has already been solved.  
-If I want networking library why would I use standard one? Especially when it simply copies from others  and have to wait for it like 10 years.  
-Setting up libfmt is like 10 seconds on Linux. And if I don't like it I can use a different one. How many people thought that streams were a good idea?  
-\[maybe\_unused\] is cool, but I probably will use the old trick with cast to void because it works with older compilers and everybody knows the trick anyway (I might want to provide simple macro if I want to be more explicit), using new syntax simply breaks compatibility and gives NOTHING.  
-
-
-Many hours spent for making it part of language and I think no one will use It, especially when standard library does not care about performance. Unlike standard implementation, some library can be  even be forked and modified if need to, no luck for me if I decide to use standard one.  
-
-
-It all just seems like short-sighted design, but I am just an internet dude.
-
-Modules, concept and coroutines (AFAIK these need compiler support, also library solution would be bug prone and perhaps slower) are great features and I am happy that they are coming.
-## [10][Creating an intermediate GUI with dear imgui is not that difficult, but offers lots of flexibility that other GUI libraries miss out on.](https://www.reddit.com/r/cpp/comments/fhpm4t/creating_an_intermediate_gui_with_dear_imgui_is/)
-- url: https://ruurdsdevlog.wordpress.com/2020/03/07/c-desktop-application-with-dear-imgui/
----
-
-## [11][What's the reliable and FOSS way to compile C++ code for Windows (on Linux)?](https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/)
-- url: https://www.reddit.com/r/cpp/comments/fhnlwh/whats_the_reliable_and_foss_way_to_compile_c_code/
----
-I primarily develop my C++ applications (and everything else) on Linux, where there are two extremely good, FOSS, and maintained C++ compilers (GCC and clang).
-
-Unfortunately, enough people use Windows that it's desirable to be able to produce Windows binaries. On windows, Microsoft's MSVC seems to have a similar level of support as GCC and Clang on Linux, but it has other issues. It's not FOSS. It doesn't work on Linux (forcing me to maintain 2 OS's for any sort of automated building). Besides not being FOSS, it has an unfavorable license that forces me to keep track of revenue, and eventually pay them. Perhaps these trade-offs are worth it, but that depends on what alternatives exist.
-
-Clang, being extremely well supported, seems to be working on a Windows mode, but, unfortunately, that doesn't seem to be ready yet and still relies on MSVC's toolchain in key places, creating licensing issues. There may be some way to make it work, but I tried and failed to find it.
-
-Mingw-w64 exists, works great, and has a good license, but, unfortunately, it seems to be not nearly as professionally run as Linux GCC (which has the Free Software Foundation, a serious and respected organization, behind it, and countless multi-billion dollar companies rely on it — it's not going anywhere). As evidence, consider that the Arch Linux packages (in AUR) are a full GCC version behind the native GCC packages, and that [their website](https://mingw-w64.org/doku.php) (for at least a week or so now) has had an expired TLS certificate (despite the fact that this fix can be automated quite easily). It looks like no one is actually putting the time in to maintain it, which makes me very cautious before relying on it in any way, and may make it worth it to pay Microsoft and deal with separate build infrastructure, although, there are even more flaws with that approach (then, anyone else who wants to work with my code needs to do the same, since I need ABI compatibility with 3rd party code in most of my projects).
-
-One glimmer of hope is that the Arch Linux packages (in AUR)'s build scripts seem to pull their code from the main GCC repository. Is the necessary C++ code to build a working MinGW toolchain maintained with the GCC code in its main repository, in such a way that I can presumably learn how to build it whenever I want a maintained MinGw version?
-
-So, how do you all address these concerns in your projects where you need to distribute Windows binaries? Is there a solution that addresses all concerns well?
-## [12][Trip Report: C++ Standards Meeting in Prague, February 2020](https://www.reddit.com/r/cpp/comments/fhkeg3/trip_report_c_standards_meeting_in_prague/)
-- url: https://botondballo.wordpress.com/2020/03/12/trip-report-c-standards-meeting-in-prague-february-2020/
 ---
 

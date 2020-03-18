@@ -111,61 +111,151 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][npm is joining GitHub - The GitHub Blog](https://www.reddit.com/r/reactjs/comments/fjofxn/npm_is_joining_github_the_github_blog/)
-- url: https://github.blog/2020-03-16-npm-is-joining-github/
+## [3][A Sneak Peek at React Router v6](https://www.reddit.com/r/reactjs/comments/fknsma/a_sneak_peek_at_react_router_v6/)
+- url: https://alligator.io/react/react-router-v6/
 ---
 
-## [4][I have just published my portfolio! Built with Gatsby. Thoughts?](https://www.reddit.com/r/reactjs/comments/fjwkcn/i_have_just_published_my_portfolio_built_with/)
-- url: https://aesign.me
+## [4][How React Reignited My Love for Web Development](https://www.reddit.com/r/reactjs/comments/fka30l/how_react_reignited_my_love_for_web_development/)
+- url: https://upmostly.com/web-development/how-react-reignited-my-love-for-web-development
 ---
 
-## [5][I created a web application for travel agents on the MERN stack. Travel is kinda at a halt right now so I would love feedback on the product.](https://www.reddit.com/r/reactjs/comments/fk40zb/i_created_a_web_application_for_travel_agents_on/)
-- url: https://app.travel-left.com
+## [5][Learn React Hooks in 5 minutes - Hashnode](https://www.reddit.com/r/reactjs/comments/fkk5uh/learn_react_hooks_in_5_minutes_hashnode/)
+- url: https://hashnode.com/post/learn-react-hooks-in-5-minutes-ck2qateps002viws1btju56ia
 ---
 
-## [6]["Integrate" Material-UI in a Next.js project](https://www.reddit.com/r/reactjs/comments/fk2nes/integrate_materialui_in_a_nextjs_project/)
-- url: https://www.youtube.com/watch?v=k7bKDpw-JGk&amp;feature=share
+## [6][React Map GL how do you add a legend to a picture](https://www.reddit.com/r/reactjs/comments/fkp8vk/react_map_gl_how_do_you_add_a_legend_to_a_picture/)
+- url: https://www.reddit.com/r/reactjs/comments/fkp8vk/react_map_gl_how_do_you_add_a_legend_to_a_picture/
+---
+I'd like to add a legend in my case, a legend that shows colors, a good example can be [https://coronameter.co/](https://coronameter.co/) where there is a legend that shows what the colors mean, I wonder how can one do that using [Uber's React Map GL](https://uber.github.io/react-map-gl/)
+## [7][React Three Fiber + Tensorflow.js hand tracking demo (CodeSandbox)](https://www.reddit.com/r/reactjs/comments/fk5hod/react_three_fiber_tensorflowjs_hand_tracking_demo/)
+- url: https://twitter.com/shinework/status/1239476675643138049
 ---
 
-## [7][Getting started with React Hooks](https://www.reddit.com/r/reactjs/comments/fk4mrk/getting_started_with_react_hooks/)
-- url: https://www.vtnetzwelt.com/web/getting-started-with-react-hooks/
+## [8][Filtering, Sorting and Pagination - Advanced Filtering with React and Redux](https://www.reddit.com/r/reactjs/comments/fkmlos/filtering_sorting_and_pagination_advanced/)
+- url: https://blog.soshace.com/filtering-sorting-and-pagination-advanced-filtering-with-react-and-redux/
 ---
 
-## [8][Dynamic Name React Component With Closure](https://www.reddit.com/r/reactjs/comments/fk2fg8/dynamic_name_react_component_with_closure/)
-- url: https://dev.to/zlfnhmd/dynamic-name-react-component-with-closure-54gp
+## [9][React.Js Installation failure](https://www.reddit.com/r/reactjs/comments/fkow4v/reactjs_installation_failure/)
+- url: https://www.reddit.com/r/reactjs/comments/fkow4v/reactjs_installation_failure/
+---
+ 
+
+Hello,
+
+I have been trying to install React in my PC frfom past 24 hours and couldn't do it.  
+I followed the following procedure:
+
+1) node.js in C drive  
+2) node version 12.16.1  
+3)npm version 6.14.2  
+4) Windows 10  
+5) then I followed: npx create-react-app my-app  
+6) cd my-app  
+7) npm start
+
+But the following errors show up when I hit npm start
+
+`&gt; my-app@0.1.0 start C:\Users\mohin\my-app`
+
+`&gt; react-scripts start`
+
+&amp;#x200B;
+
+`i ｢wds｣: Project is running at` [`http://192.168.1.33/`](http://192.168.1.33/)
+
+`i ｢wds｣: webpack output is served from`
+
+`i ｢wds｣: Content not from webpack is served from C:\Users\mohin\my-app\public`
+
+`i ｢wds｣: 404s will fallback to /`
+
+`Starting the development server...`
+
+&amp;#x200B;
+
+`events.js:288`
+
+`throw er; // Unhandled 'error' event`
+
+`^`
+
+&amp;#x200B;
+
+`Error: spawn cmd ENOENT`
+
+`at Process.ChildProcess._handle.onexit (internal/child_process.js:267:19)`
+
+`at onErrorNT (internal/child_process.js:469:16)`
+
+`at processTicksAndRejections (internal/process/task_queues.js:84:21)`
+
+`Emitted 'error' event on ChildProcess instance at:`
+
+`at Process.ChildProcess._handle.onexit (internal/child_process.js:273:12)`
+
+`at onErrorNT (internal/child_process.js:469:16)`
+
+`at processTicksAndRejections (internal/process/task_queues.js:84:21) {`
+
+  `errno: 'ENOENT',`
+
+  `code: 'ENOENT',`
+
+  `syscall: 'spawn cmd',`
+
+  `path: 'cmd',`
+
+  `spawnargs: [ '/s', '/c', 'start', '""', '/b', '"`[`http://localhost:3000`](http://localhost:3000)`"' ]`
+
+`}`
+
+`npm ERR! code ELIFECYCLE`
+
+`npm ERR! errno 1`
+
+`npm ERR! my-app@0.1.0 start: \`react-scripts start\``
+
+`npm ERR! Exit status 1`
+
+`npm ERR!`
+
+`npm ERR! Failed at the my-app@0.1.0 start script.`
+
+`npm ERR! This is probably not a problem with npm. There is likely additional logging output above.`
+
+&amp;#x200B;
+
+`npm ERR! A complete log of this run can be found in:`
+
+`npm ERR!     C:\Users\mohin\AppData\Roaming\npm-cache\_logs\2020-03-18T11_58_48_790Z-debug.log`
+
+&amp;#x200B;
+
+I tried deleting node-modules and reinstalling and even cleared catche.  
+I tried every way I know but I couldn't find solution
+
+I thought it was showing error for LIVE SERVER step so maybe I can still use it without live server but when i open index.html in public folder there is no output.
+
+Please help me.
+
+I really want to learn in this break quickly.
+## [10][Portfolio site in minutes - React](https://www.reddit.com/r/reactjs/comments/fkouit/portfolio_site_in_minutes_react/)
+- url: https://www.reddit.com/r/reactjs/comments/fkouit/portfolio_site_in_minutes_react/
+---
+[YourPortfolio](https://github.com/ValeedAnjum/yourportfolio) is a readymade react portfolio template that could be used to develop portfolio sites in minutes just changing values of config.js.
+## [11][The useRef Hook Explained In Detail | React Tutorials](https://www.reddit.com/r/reactjs/comments/fkon2p/the_useref_hook_explained_in_detail_react/)
+- url: https://www.youtube.com/watch?v=jFR4ZS8VCNM
 ---
 
-## [9][People always talk about putting API keys in .env files to file them, but the user can still see them by going into the network tab in inspect element](https://www.reddit.com/r/reactjs/comments/fjljtv/people_always_talk_about_putting_api_keys_in_env/)
-- url: https://www.reddit.com/r/reactjs/comments/fjljtv/people_always_talk_about_putting_api_keys_in_env/
+## [12][Which Bootstrap Library should I use for React?](https://www.reddit.com/r/reactjs/comments/fkm4n4/which_bootstrap_library_should_i_use_for_react/)
+- url: https://www.reddit.com/r/reactjs/comments/fkm4n4/which_bootstrap_library_should_i_use_for_react/
 ---
-This isn't really ReactJS specific, but what measures should be taken to prevent people from stealing sensitive API keys for google maps etc by simply going into network requests in inspect element?
-## [10][How to stand out myself as a React Developer in Job Hunting?](https://www.reddit.com/r/reactjs/comments/fk1wce/how_to_stand_out_myself_as_a_react_developer_in/)
-- url: https://www.reddit.com/r/reactjs/comments/fk1wce/how_to_stand_out_myself_as_a_react_developer_in/
----
-After one year of fast track in Web Dev, I arrived in the job-hunting mode now. But I am having difficulties describing myself as a react developer. I mean, I can show up some projects, or say I know x, y, z in react, but beyond that, I really can't think of any other way to differentiate myself in my resume. Any suggestion? Thanks!
-## [11][IOT Dashboard with ReactJS (and MQTT?!?)](https://www.reddit.com/r/reactjs/comments/fk3olb/iot_dashboard_with_reactjs_and_mqtt/)
-- url: https://www.reddit.com/r/reactjs/comments/fk3olb/iot_dashboard_with_reactjs_and_mqtt/
----
-Hi there! I'm new to reactJS and I have a very basic but conceptual question:
+Hello.
 
-I would like to build a responsive Webpage for an IOT dashboard (with ReactJS) and I'm struggling with way too many options on how to start, component variety and so on...!
+Which Bootstrap Library should I use?
 
-My main concern now is: how do I get live IoT data (most efficiently) into such a react dashboard?
+I started with React Bootstrap and I found some features are missing.
 
-My core IOT system is a simple Mosquito MQTT broker + Node-Red.
+and then I search and I found about MDBootstrap, ReactStrap etc..
 
-Would be MQTT.js (via websocket) be a good option in order to get data into a reactJS page?
-
-What other options are suitable/available?
-
-It would be really great if someone could give me some starting guidance/tutorial on essential bits and pieces to start with.
-
-(I started to experiment with create-react-app, material-ui, mqtt.js, char.js ... but I'm not sure if I'm on the right path here ... especially the mqtt suff worries me, as I hardly can find useful tutorials on it...)
-
-Any help would be really appreciated! Thank you in advance!
-
-BR Martin
-## [12][Made a new portfolio website. Any suggestions for additional functionality?](https://www.reddit.com/r/reactjs/comments/fjx3o0/made_a_new_portfolio_website_any_suggestions_for/)
-- url: https://nickhu.info/
----
-
+Which one do you recommend?

@@ -1,5 +1,13 @@
 # Kotlin
-## [1][Good API design patterns to help imports be more seamless?](https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/)
+## [1][can we use Spring with Kotlin/Native?](https://www.reddit.com/r/Kotlin/comments/fkn5ko/can_we_use_spring_with_kotlinnative/)
+- url: https://www.reddit.com/r/Kotlin/comments/fkn5ko/can_we_use_spring_with_kotlinnative/
+---
+Hi, we have some java business logic that we want to migrate to Kotlin and use as library on multiplatform. Spring is used in the java code, can we reuse it directly in the new library that will be also integrated in iOS/Andoird solutions?
+
+If we have to use Kotlin DI solution in the library, can it be mixed back with Spring-based java apps that would consume this new library?
+
+thanks!
+## [2][Good API design patterns to help imports be more seamless?](https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/)
 - url: https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/
 ---
 My web framework [Kweb](https://docs.kweb.io/) incorporates quite a sophisticated DSL involving a large number of quite short functions (often corresponding to HTML tags).
@@ -7,7 +15,7 @@ My web framework [Kweb](https://docs.kweb.io/) incorporates quite a sophisticate
 My instinct was to break these small functions up into different packages according to purpose, but this had the effect of relying much more heavily on IntelliJ to auto-import symbols when necessary.
 
 Is there a better pattern?  Should I just say "screw it" and put them all in `kweb.*` for ease of importing?
-## [2][I'm beginner I'm trying to make Tic Tac Toe game but when I press any button the app crashes and the device don't choose any button](https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/)
+## [3][I'm beginner I'm trying to make Tic Tac Toe game but when I press any button the app crashes and the device don't choose any button](https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/)
 - url: https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/
 ---
     
@@ -179,7 +187,7 @@ Is there a better pattern?  Should I just say "screw it" and put them all in `kw
     
     
     }
-## [3][MVIKotlin - new Kotlin Multiplatform framework for MVI](https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/)
+## [4][MVIKotlin - new Kotlin Multiplatform framework for MVI](https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/)
 - url: https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/
 ---
 Checkout it here: [https://github.com/arkivanov/MVIKotlin](https://github.com/arkivanov/MVIKotlin)
@@ -196,30 +204,26 @@ Features:
    * Multiplatform for all supported targets
    * Plug-and-play UI for Android and iOS
    * Export/import events for JVM and Android
-## [4][How brevity in Kotlin increases developers' product as compare to Java with example](https://www.reddit.com/r/Kotlin/comments/fk1k4s/how_brevity_in_kotlin_increases_developers/)
+## [5][How brevity in Kotlin increases developers' product as compare to Java with example](https://www.reddit.com/r/Kotlin/comments/fk1k4s/how_brevity_in_kotlin_increases_developers/)
 - url: https://www.vtnetzwelt.com/mobile/java-vs-kotlin/
 ---
 
-## [5][Which programming languages and libraries should I learn to become a complete kotlin android developer?](https://www.reddit.com/r/Kotlin/comments/fj35j3/which_programming_languages_and_libraries_should/)
+## [6][Which programming languages and libraries should I learn to become a complete kotlin android developer?](https://www.reddit.com/r/Kotlin/comments/fj35j3/which_programming_languages_and_libraries_should/)
 - url: https://www.reddit.com/r/Kotlin/comments/fj35j3/which_programming_languages_and_libraries_should/
 ---
 
-## [6][Any of you guys switched to Kotlin and then back to Java?](https://www.reddit.com/r/Kotlin/comments/fj6a2c/any_of_you_guys_switched_to_kotlin_and_then_back/)
+## [7][Any of you guys switched to Kotlin and then back to Java?](https://www.reddit.com/r/Kotlin/comments/fj6a2c/any_of_you_guys_switched_to_kotlin_and_then_back/)
 - url: /r/java/comments/fj24n8/any_of_you_guys_switched_to_kotlin_and_then_back/
 ---
 
-## [7][Starting a project, quick question on language](https://www.reddit.com/r/Kotlin/comments/fjciq0/starting_a_project_quick_question_on_language/)
+## [8][Starting a project, quick question on language](https://www.reddit.com/r/Kotlin/comments/fjciq0/starting_a_project_quick_question_on_language/)
 - url: https://www.reddit.com/r/Kotlin/comments/fjciq0/starting_a_project_quick_question_on_language/
 ---
 Hi, I'm about to start a project that involves managing files on devices such as my Android phone and my computer. I know I need to use something on the JVM and I'm trying to decide between just Java, Scala and kotlin, but if a different language would definitely be better than those feel free to suggest it. I know this is a Kotlin page but if possible please try to be unbiased. 
 
 Thanks in advance.
-## [8][From Apache Cordova to Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/fj4fuo/from_apache_cordova_to_kotlin_multiplatform/)
+## [9][From Apache Cordova to Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/fj4fuo/from_apache_cordova_to_kotlin_multiplatform/)
 - url: http://whereisdarran.com/2020/03/from-apache-cordova-to-kotlin-multiplatform/
----
-
-## [9][How the JVM converts bytecode to machine code.](https://www.reddit.com/r/Kotlin/comments/fipcai/how_the_jvm_converts_bytecode_to_machine_code/)
-- url: https://www.reddit.com/r/programming/comments/fipbgk/how_the_jvm_converts_bytecode_to_machine_code/?utm_medium=android_app&amp;utm_source=share
 ---
 
 ## [10][Kotlin data class builders](https://www.reddit.com/r/Kotlin/comments/fja3v4/kotlin_data_class_builders/)

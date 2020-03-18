@@ -22,7 +22,27 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Bring some structure to your file and directory names with ls-lint](https://www.reddit.com/r/typescript/comments/fk4rc3/bring_some_structure_to_your_file_and_directory/)
+## [2][Do I need both the @types modules, and the normal module?](https://www.reddit.com/r/typescript/comments/fkmpw3/do_i_need_both_the_types_modules_and_the_normal/)
+- url: https://www.reddit.com/r/typescript/comments/fkmpw3/do_i_need_both_the_types_modules_and_the_normal/
+---
+Hey, I know this may seem like a silly question, but I'm brand new to TS, and a bit confused about this.
+
+I have it so that my typescript compiles into javascript in a dist folder, where a copy of the node_modules folder is placed.
+
+The server then runs out of dist, and I noticed that, despite me using @types modules exclusively, the javascript compiled errors when I do not have the non @types module installed.
+
+For example, I have a module @types/winston installed, so I uninstalled the normal winston module, and the entire project ceased to function. Typescript of course gives no errors about this, as it's the javascript it compiled causing the issues.
+
+Is this normal behavior, or behavior I could fix?
+## [3][Curveball — March updates](https://www.reddit.com/r/typescript/comments/fkmcuk/curveball_march_updates/)
+- url: https://medium.com//curveball-march-updates-10e0ea96f808?source=friends_link&amp;sk=10a5292d65d01264385fcd2eaa89e0d2
+---
+
+## [4][Curveball - Starter template, CLI colors and Content-Negotiation](https://www.reddit.com/r/typescript/comments/fkim3o/curveball_starter_template_cli_colors_and/)
+- url: https://evertpot.com/curveball-march-updates/
+---
+
+## [5][Bring some structure to your file and directory names with ls-lint](https://www.reddit.com/r/typescript/comments/fk4rc3/bring_some_structure_to_your_file_and_directory/)
 - url: https://www.reddit.com/r/typescript/comments/fk4rc3/bring_some_structure_to_your_file_and_directory/
 ---
 Hey, worked on this a couple of weeks:
@@ -34,8 +54,6 @@ From time to time its hard to keep a clean naming structure in your projects. [l
 **Benefits:**
 
 \- Works for directory and file names (all extensions supported)
-
-\- Linux &amp; Mac Support (Windows coming soon)
 
 \- Incredibly fast
 
@@ -79,7 +97,47 @@ From time to time its hard to keep a clean naming structure in your projects. [l
 Would love to get some feedback :-)
 
 Pull requests are welcome!
-## [3][How do I assign a type to a property that is supposed to accept any React component](https://www.reddit.com/r/typescript/comments/fjufi8/how_do_i_assign_a_type_to_a_property_that_is/)
+## [6][Trying to figure out how to define multiple generic types, with an unknown number of them](https://www.reddit.com/r/typescript/comments/fkdtgz/trying_to_figure_out_how_to_define_multiple/)
+- url: https://www.reddit.com/r/typescript/comments/fkdtgz/trying_to_figure_out_how_to_define_multiple/
+---
+Ok, so the code will make this more obvious. Here is what I have now:
+
+    interface CreatorArgs&lt;Ctx&gt; {
+    	context: {
+    		type: Context&lt;Ctx&gt;;
+    		value: Ctx;
+    	};
+    }
+
+This interface has a "context" property, whose properties depend on the generic parameter Ctx. However, I have a situation where I need to be able to support a variable number of Contexts. So I'm trying to adjust this interface accordingly. Here is what I have so far:
+
+    interface CreatorArgs&lt;Ctx&gt; {
+    	contexts: {
+    		[ctxKey: string]: {
+    			type: Context&lt;Ctx&gt;;
+    			value: Ctx;
+    		};
+    	};
+    }
+
+So each context will have a key which will contain the same structure from above. There will be an unknown number of these Contexts. My problem is the generic Ctx parameter, it will not be consistent in its value across all Contexts. 
+
+So I'm wondering what the option is for how to type this. I'm not super experienced with TypeScript, I'm a longtime JS developer who is trying to get a better feel for TS. Any guidance, including telling me I'm approaching this all wrong, is appreciated.
+## [7][Converting TypeScript in Javascript](https://www.reddit.com/r/typescript/comments/fkb1su/converting_typescript_in_javascript/)
+- url: https://www.reddit.com/r/typescript/comments/fkb1su/converting_typescript_in_javascript/
+---
+Hi everyone,
+
+I'm currently working on this project [https://github.com/matteobruni/tsparticles](https://github.com/matteobruni/tsparticles) and you can see the webpack config in the root.
+
+Webpack is giving me warnings about the javascript output because it's becoming big. 
+
+I'm thinking to split the options classes from the main file but I've read someone saying that webpack is not a great choice with TypeScript, so I was wondering about what's the best solution for having a javascript output.
+
+ES5 is not required, if the solution requires ES6 it's still welcome.
+
+If you have tips for the code they're welcome too, I've started some months ago with TypeScript
+## [8][How do I assign a type to a property that is supposed to accept any React component](https://www.reddit.com/r/typescript/comments/fjufi8/how_do_i_assign_a_type_to_a_property_that_is/)
 - url: https://www.reddit.com/r/typescript/comments/fjufi8/how_do_i_assign_a_type_to_a_property_that_is/
 ---
     type AnyComponent&lt;Props,State&gt; = FC&lt;Props&gt; | Component&lt;Props,State&gt;;
@@ -99,7 +157,13 @@ Pull requests are welcome!
 So the code sample is above. Basically I'm writing a function, one of the arguments to this function is a React component. This should be able to be either a class component or a functional component. I tried creating a union type for them, but I'm getting the error in the comment above, where it doesn't have any constructor or call signature.
 
 I'm an experienced JS dev trying to boost my TS skills here. Looking for guidance. Thanks.
-## [4][[HELP] Bundle CSS / SCSS modules library with rollup](https://www.reddit.com/r/typescript/comments/fk1td1/help_bundle_css_scss_modules_library_with_rollup/)
+## [9][What's up with language servers?](https://www.reddit.com/r/typescript/comments/fk6zte/whats_up_with_language_servers/)
+- url: https://www.reddit.com/r/typescript/comments/fk6zte/whats_up_with_language_servers/
+---
+While the adoption of TypeScript and also of LSP grows, somehow TypeScript language servers seem to have been dying a slow death. [SourceGraph's server](https://github.com/sourcegraph/javascript-typescript-langserver/) has not seen real updates in at least a year and while everybody has migrated off to [TypeFox' one](https://github.com/theia-ide/typescript-language-server), it has not been updated for several months either and is actively (but apparently not very successfully) [looking for maintainers](https://github.com/theia-ide/typescript-language-server/issues/141).
+
+So what's going on, has everyone migrated to VSCode and not using language servers anymore? ~~Is [Microsoft's LS](https://github.com/microsoft/vscode-languageserver-node) any good for using without VSCode?~~ (EDIT: It's a framework, not an implementation of TS language server)
+## [10][[HELP] Bundle CSS / SCSS modules library with rollup](https://www.reddit.com/r/typescript/comments/fk1td1/help_bundle_css_scss_modules_library_with_rollup/)
 - url: https://www.reddit.com/r/typescript/comments/fk1td1/help_bundle_css_scss_modules_library_with_rollup/
 ---
 As the title says,
@@ -194,7 +258,7 @@ import * as styles from './surface.module.css';
 
 // exports ...
 ```
-## [5][Trouble in finding modules with '@' paths, getting "cannot find module '@/common/utils'" despite the file definitely existing and being recognised by my IDE.](https://www.reddit.com/r/typescript/comments/fjiqzr/trouble_in_finding_modules_with_paths_getting/)
+## [11][Trouble in finding modules with '@' paths, getting "cannot find module '@/common/utils'" despite the file definitely existing and being recognised by my IDE.](https://www.reddit.com/r/typescript/comments/fjiqzr/trouble_in_finding_modules_with_paths_getting/)
 - url: https://www.reddit.com/r/typescript/comments/fjiqzr/trouble_in_finding_modules_with_paths_getting/
 ---
 I need help, `tsc` and `ts-node` do not recognise the custom path aliases specified in my `tsconfig.json` file. My file is as follows:
@@ -231,94 +295,3 @@ I need help, `tsc` and `ts-node` do not recognise the custom path aliases specif
 My IDE recognises the paths and I'm able to use the imported values as expected but when I compile any TS file or use `ts-node` on them, I get the error that the module is not recognised. Any help would be much appreciated, thanks fellas.
 
 EDIT: **SOLVED** thanks to /u/moremattymattmatt, I had to install the `tsconfig-paths` npm package to use path aliasing.
-## [6][Example of simple Typescript util npm package on Azure DevOps](https://www.reddit.com/r/typescript/comments/fjjp7r/example_of_simple_typescript_util_npm_package_on/)
-- url: https://www.reddit.com/r/typescript/comments/fjjp7r/example_of_simple_typescript_util_npm_package_on/
----
-I was wondering if anyone had a simple and good example/tutorial/course on how to set up an NPM package written in Typescript on Azure DevOps?
-
-Pretty new at Azure DevOps, and the repository itself is no problem, but I don't know how to:
-
-  1. set up pipelines
-  2. how to deal with npm package versioning (since package.json needs to be updated)
-  3. how to publish it to the Artifacts npm feed.
-## [7][best way to use images from an API?](https://www.reddit.com/r/typescript/comments/fjfisf/best_way_to_use_images_from_an_api/)
-- url: https://www.reddit.com/r/typescript/comments/fjfisf/best_way_to_use_images_from_an_api/
----
-using angular 7 iirc and TS.  I have an API written in go and part of this API call is to return data as well as a base64 image.  In my TS side, I have to use a santizer and then a bypasssecurity method which just seems really odd.
-
-is there a better way to do something like this?
-## [8]["Lazy" IoC on TypeScript](https://www.reddit.com/r/typescript/comments/fj4lgt/lazy_ioc_on_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/fj4lgt/lazy_ioc_on_typescript/
----
-Recently I've created my first npm [package](https://github.com/ceoro9/ioc-ts). It's a "lazy" inversion of control container. And yes, I heard about inversify, the things I don't like in it, that it's too bloated and does not support no-decorator constructor injection, like in NestJS. And btw it seems like inversify lacks activity. Anyway, for me the main goal was learning, but I'll be very glad if somebody can rate my code and leave some feedback, for now I'm just a junior dev, so for me any feedback is really valuable. May be somebody would like to help in writing more tests and docs, I welcome everybody.
-
-Also I don't know if I can ask for this, but tomorrow I am going to the job interview and to make a good impression on a interviewer, I'll be very glad if somebody can put a star on my github repo. I'd really appreciate this.
-## [9][Global typings only working with triple slash directive](https://www.reddit.com/r/typescript/comments/fj5a8u/global_typings_only_working_with_triple_slash/)
-- url: https://www.reddit.com/r/typescript/comments/fj5a8u/global_typings_only_working_with_triple_slash/
----
-&amp;#x200B;
-
-https://preview.redd.it/lqyma3hfjvm41.png?width=249&amp;format=png&amp;auto=webp&amp;s=8e726199e506b541a19d79d9a53e1273d92b82a7
-
-react-app-env.d.ts
-
-    /// &lt;reference types="react-scripts" /&gt;
-    /// &lt;reference path="types.d.ts" /&gt;
-
-types.d.ts
-
-    type Response = {
-      token: string;
-      email: string;
-      firstName: string;
-      lastName: string;
-    }
-
-only when bringing in types.d.ts with /// works
-
-otherwise I keep getting error that the types are not found
-
-What should be the correct way of mentioning global types?
-## [10][Put together an illustration to clear up my own confusion as to why the Union and Intersection operators are named as such](https://www.reddit.com/r/typescript/comments/fisz4q/put_together_an_illustration_to_clear_up_my_own/)
-- url: https://www.reddit.com/r/typescript/comments/fisz4q/put_together_an_illustration_to_clear_up_my_own/
----
-The naming of the Union and Intersection operators had always felt curious to me, as it seemed in direct contrast to their respective functions. Why do we call `&amp;` the Intersection operator when the declared object possesses not only the mutual members, but the members of all concerning types? Why do we call `|` Union when the declared object can only reference the mutual members? Recently stumbled upon an SO question asking the same things and decided to finally sit down and reason through it. While the existing answers are great and helped a good deal, I figured it might be of value to put my own understanding down (in good old graphic form) for others who may fall for the same misinterpretive line of thinking.
-
-SO answer:
-https://stackoverflow.com/a/60686242/1107110
-
-Illustration:
-https://i.stack.imgur.com/fY4gL.png
-
-Feel free to share your thoughts. Does it make sense? Does it clear things up? Does it confuse you more? All feedback welcome. 🙂
-## [11][Correct way of storing interfaces in TypeScript](https://www.reddit.com/r/typescript/comments/fi8v85/correct_way_of_storing_interfaces_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/fi8v85/correct_way_of_storing_interfaces_in_typescript/
----
-New to TS here. When I have to declare objects, I create their corresponding interfaces in the same file.
-
-```ts
-// Interfaces
-interface User {
-  name: string;
-  age: number;
-}
-
-interface City {
-  state: string;
-  zipcode: string;
-}
-
-// Objects
-const bob: User = {
-  name: 'Bob',
-  age: 20
-}
-
-const boston: City = {
-  state: 'MA',
-  zipcode: '02022'
-}
-```
-1. What is the correct way of storing interfaces? Is it storing all of them in one file and importing as needed or is it storing one interface per file?
-
-2. What is the role of `.d.ts` files here? Can we store all interfaces under one namespace in a `.d.ts` file?

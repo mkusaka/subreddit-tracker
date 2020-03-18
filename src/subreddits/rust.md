@@ -23,96 +23,75 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fjefxj/whats_everyone_working_on_this_week_122020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-12-2020/39545?u=llogiq)!
-## [3][Rewriting the Heart of our Sync Engine (in Rust)](https://www.reddit.com/r/rust/comments/fjt4q3/rewriting_the_heart_of_our_sync_engine_in_rust/)
-- url: https://dropbox.tech/infrastructure/rewriting-the-heart-of-our-sync-engine
+## [3][Apple hiring Rust engineers for storage and networking groups](https://www.reddit.com/r/rust/comments/fkngza/apple_hiring_rust_engineers_for_storage_and/)
+- url: https://twitter.com/benwilliamson/status/1240113606374686721
 ---
 
-## [4][Postponing RustFest Netherlands](https://www.reddit.com/r/rust/comments/fk35ir/postponing_rustfest_netherlands/)
+## [4][Rust Search Extension - The ultimate search extension for Rust](https://www.reddit.com/r/rust/comments/fkmdwg/rust_search_extension_the_ultimate_search/)
+- url: https://rust-search-extension.now.sh/
+---
+
+## [5][COVID-19 data cleaner, converts CSV in to beautiful typed parquet (powered by Rust)](https://www.reddit.com/r/rust/comments/fkhv5k/covid19_data_cleaner_converts_csv_in_to_beautiful/)
+- url: https://github.com/assaydepot/dracula-covid19
+---
+
+## [6][docs.rs now allows you to choose your build targets | Rust Blog](https://www.reddit.com/r/rust/comments/fk9gey/docsrs_now_allows_you_to_choose_your_build/)
+- url: https://blog.rust-lang.org/2020/03/15/docs-rs-opt-into-fewer-targets.html
+---
+
+## [7][Post: parallel-stream](https://www.reddit.com/r/rust/comments/fk74ef/post_parallelstream/)
+- url: https://blog.yoshuawuyts.com/parallel-stream/
+---
+
+## [8][How can I build a raw web request?](https://www.reddit.com/r/rust/comments/fkn83o/how_can_i_build_a_raw_web_request/)
+- url: https://www.reddit.com/r/rust/comments/fkn83o/how_can_i_build_a_raw_web_request/
+---
+Context: I want to test a server on what ciphers it supports in his TLS configurations, this means  sending an *Hello Client* request on port 443 (this is the standard port at least). After the *Server Hello* response I will just close the connection. I don't need any crypto implementation or fancy stuff.
+
+I tried to give a look to *rustls* but I was not able to figure it out by myself.
+
+Hope someone would help me and if you are at home cause COVID-19 and you want to share your knowledge/experience mentoring me in something cooler I would be excited.
+
+PS: I crave for being able to contribute to some project but I have this initial barrier that stops me every time.
+## [9][Converting human-like times into time.Duration](https://www.reddit.com/r/rust/comments/fkmvm9/converting_humanlike_times_into_timeduration/)
+- url: https://www.reddit.com/r/rust/comments/fkmvm9/converting_humanlike_times_into_timeduration/
+---
+Hey, Reddit! Today I want to tell you about the new update `ms_converter` library. Now you can convert time not only into i64, but you can also convert it into `time.Duration`
+
+For that, you need to set library version 0.7.0 or higher:
+
+    [dependencies]
+    ms-converter = "0.7"
+
+&amp;#x200B;
+
+And now you can use this construction:
+
+    use crate::ms_converter::ms_into_time;
+    
+    let value = ms_into_time("1d").unwrap();
+    assert_eq!(value.as_millis(), 86400000)
+
+Where `value` will be `time.Duration` instance.
+
+&amp;#x200B;
+
+For more info, you can read Readme on [the repository](https://github.com/Mnwa/ms) or read the doc on [doc.rs](https://docs.rs/ms-converter/).
+
+Good luck!
+## [10][Governance Working Group Update: Meeting 12 March 2020 | Inside Rust Blog](https://www.reddit.com/r/rust/comments/fkfa2j/governance_working_group_update_meeting_12_march/)
+- url: https://blog.rust-lang.org/inside-rust/2020/03/17/governance-wg.html
+---
+
+## [11][Postponing RustFest Netherlands](https://www.reddit.com/r/rust/comments/fk35ir/postponing_rustfest_netherlands/)
 - url: https://blog.rustfest.eu/postponing-rustfest-nl
 ---
 
-## [5][References in Rust](https://www.reddit.com/r/rust/comments/fk3my2/references_in_rust/)
-- url: https://blog.thoughtram.io/references-in-rust/
+## [12][What is lock step application in `ndarray::azip`?](https://www.reddit.com/r/rust/comments/fklrs4/what_is_lock_step_application_in_ndarrayazip/)
+- url: https://www.reddit.com/r/rust/comments/fklrs4/what_is_lock_step_application_in_ndarrayazip/
 ---
+The `ndarray` describes that `azip` applies **lock step function application.**
 
-## [6][Building Site Search With Tantivy](https://www.reddit.com/r/rust/comments/fjzigm/building_site_search_with_tantivy/)
-- url: https://jstrong.dev/posts/2020/building-a-site-search-with-tantivy/
----
+*Array zip macro: lock step function application across several arrays and producers.*
 
-## [7][My First Library: FlatBuffers *without* compiling (NoProto)](https://www.reddit.com/r/rust/comments/fjyhj7/my_first_library_flatbuffers_without_compiling/)
-- url: https://www.reddit.com/r/rust/comments/fjyhj7/my_first_library_flatbuffers_without_compiling/
----
-Working on some projects, I needed a way to implement Flatbuffers/Cap'N Proto objects dynamically at runtime.  The schema of the objects has to be flexible and might not be known before compile time.  
-
-[https://crates.io/crates/no\_proto](https://crates.io/crates/no_proto)
-
-I'm like 2 months into Rust and this is the first (hopefully) useful thing I've put together, any feedback is appreciated. :)
-## [8][Book suggestion](https://www.reddit.com/r/rust/comments/fk4jr5/book_suggestion/)
-- url: https://www.reddit.com/r/rust/comments/fk4jr5/book_suggestion/
----
-Hi Rustaceans,
-
-I've became Rustacean since yesterday.
-
-I'm reading "The Rust Programming Language" official book.
-
-After finishing this book, what book do you recommend for further deep learning and advanced topics?
-
-I ❤ Rust
-## [9][rust-analyzer Changelog #16](https://www.reddit.com/r/rust/comments/fjl875/rustanalyzer_changelog_16/)
-- url: https://rust-analyzer.github.io/thisweek/2020/03/16/changelog-16.html
----
-
-## [10][I want to write a pseudo linter in Rust](https://www.reddit.com/r/rust/comments/fk1877/i_want_to_write_a_pseudo_linter_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/fk1877/i_want_to_write_a_pseudo_linter_in_rust/
----
-Their is a simulation code I use for work that takes script files to define commands and variables. The files can be complex and include other files. Basically, it works like a programming language.
-
-Some common mistakes (at least the ones I make) can be catched before runtime so I thought about writing a pseudo linter. As I love Rust I though this would be a cool project to learn more about the language. I made a first version in python but i'm unsatisfied with the way I did it (brute force algorithm read line, define command read line, check if defined etc). Plus I would like to run it asynchronously with my text editor so it should be light and fast (at least fast). 
-
-Are their any rust written linters that I could check to get inspiration from? Or do you have any advice on where I should go? Is it a good project as I'm not a very skilled rustacean?
-
-Regards.
-## [11][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.42]](https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/)
-- url: https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/
----
-Welcome once again to the official /r/rust Who's Hiring thread!
-
-Before we begin, job-seekers should also remember to peruse [the prior thread](https://en.reddit.com/r/rust/comments/eyw94s/official_rrust_whos_hiring_thread_for_jobseekers/).
-
-This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
-
-Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
-
-#### Rules for individuals:
-
-* Don't create top-level comments; those are for employers.
-* Feel free to reply to top-level comments with on-topic questions.
-* I will create a stickied top-level comment for individuals looking for work.
-* I will create an additional top-level comment for meta discussion.
-
-#### Rules for employers:
-
-* To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
-* To make a top-level comment you must be hiring directly; no third-party recruiters.
-* One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
-* Proofread your comment after posting it and edit it if necessary to correct mistakes.
-* Please base your comment on the following template:
-
-COMPANY: *[Company name; please link to your company's website or careers page.]*
-
-TYPE: *[Full time, part time, internship, contract, etc.]*
-
-DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
-
-LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
-
-REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
-
-VISA: *[Does your company sponsor visas?]*
-
-CONTACT: *[How can someone get in touch with you?]*
-## [12][How to build an embedded Rust application on top of a C vendor library](https://www.reddit.com/r/rust/comments/fjsnqz/how_to_build_an_embedded_rust_application_on_top/)
-- url: https://github.com/mogenson/trinket-m0
----
-
+Some googling let me to [lockstep\_computing](https://en.wikipedia.org/wiki/Lockstep_(computing)). This describes fault tolerancy by doing redundant operations and comparing them. To me this doesn't seem to be the case for a simple elementwise operation on arrays. What does ndarray mean by lock step computing?

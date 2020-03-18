@@ -113,47 +113,55 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Demo Zoo: Zero Cost Abstractions in C++20, Rust, &amp; Zig](https://www.reddit.com/r/cpp/comments/fjmcah/demo_zoo_zero_cost_abstractions_in_c20_rust_zig/)
-- url: https://youtu.be/43X9ia-qpds
+## [3][SIARE Engineering, an Italian producer of intensive care machines, is looking for a C++ programmer in Emilia Romagna (Italy) to handle the increased in production to deal with COVID-19 [Facebook]](https://www.reddit.com/r/cpp/comments/fkm7nk/siare_engineering_an_italian_producer_of/)
+- url: https://www.facebook.com/siareengineering/posts/3153957624673910?comment_id=3155916694478003
 ---
 
-## [4][Learning-based Memory Allocation for C++ Server Workloads - Google Research](https://www.reddit.com/r/cpp/comments/fjtuty/learningbased_memory_allocation_for_c_server/)
+## [4][Ways C++ prevents you from doing X](https://www.reddit.com/r/cpp/comments/fkez6b/ways_c_prevents_you_from_doing_x/)
+- url: https://quuxplusone.github.io/blog/2020/03/17/you-cant-do-x/
+---
+
+## [5][Is it worth buying the current edition of one of the "canonical textbooks" (the C++ programming language, the C++ Primer e.t.c.) given that C++20 is about to be released?](https://www.reddit.com/r/cpp/comments/fk7ijd/is_it_worth_buying_the_current_edition_of_one_of/)
+- url: https://www.reddit.com/r/cpp/comments/fk7ijd/is_it_worth_buying_the_current_edition_of_one_of/
+---
+I'm about to start learning C++ (going through the "Tour of C++" right now), and am considering buying a textbook, but was wondering if it would be worth it to hold fire for a few months if a bunch of textbooks are about to release new editions updated for C++20. I suppose this question has two sub-parts:
+
+1. Will the changes to the language be noticeable for a beginner (to C++; I've programmed a bit in other languages before), enough so that a beginner textbook for an older version of the language would be considered out of date?
+
+2.Will/when will the textbooks listed in the sidebar/recommended by Bjarne get updated for C++20?
+## [6][The poplar heap, an implicit data structure](https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/)
+- url: https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/
+---
+A few years ago while going through old computer science papers I stumbled upon *Smoothsort Revisited* by Coenraad Bron and Wim H. Hesselink which introduces a new sorting algorithm inspired by Dijkstra's smoothsort that they call *poplar sort*. The algorithm is based on the construction and sorting of a forest of "poplars", which is the name the authors give to some specific kinds of heap.
+
+Back then I decided to implement this *poplar sort* algorithm in C++ for fun. Over the years I kept coming back to this simple algorithm, trying to find optimizations which led to a variety of experiments. Eventually I managed to turn the backing *poplar heap* into an implicit data structure and to implement functions for it matching the heap functions from the standard library's `&lt;algorithm&gt;` header. I turned those experiments into an "article" some time ago, so if you're interested into algorithms, data structures and C++ optimization, you can read it here: https://github.com/Morwenn/poplar-heap
+
+Most of the space and time complexities mentioned in the repository are guesstimates waiting for proofs that I'm unlikely to provide myself.  That said the same heap data structure was also described by Nicholas J. A. Harvey and Kevin C. Zatloukal under the name *post-order heap* and their paper has complexity proofs for similar algorithms (theirs differs slightly from ours since it uses two additional variables to keep track of the state of the heap).
+
+The article only describes my successful experiments. If you want to look further into the research area, I've also a Gist with another experiment where I used a secondary heap (a normal binary heap this time) to try to reduce the amount of comparison performed by the `sort_heap` algorithm: https://gist.github.com/Morwenn/4441d4d1d01dbaf613cf539ad9c13a2a
+
+If you are currently stuck at home like I am, I hope that this might help you to kill time a bit.
+## [7][Effective Header Management in C++](https://www.reddit.com/r/cpp/comments/fkp9w4/effective_header_management_in_c/)
+- url: https://pspdfkit.com/blog/2020/effective-header-management-in-cpp/
+---
+
+## [8][Using Visual Studio Code for Qt Applications – Part One](https://www.reddit.com/r/cpp/comments/fkna0x/using_visual_studio_code_for_qt_applications_part/)
+- url: https://www.kdab.com/using-visual-studio-code-for-qt-apps-pt-1/
+---
+
+## [9][Learning-based Memory Allocation for C++ Server Workloads - Google Research](https://www.reddit.com/r/cpp/comments/fjtuty/learningbased_memory_allocation_for_c_server/)
 - url: https://research.google/pubs/pub49008/?fbclid=IwAR3Ccaf0qd090qkjl-6cq0o-KDflsiWYBB110jW7JSMIL5jL2ngVJ8dEdek
 ---
 
-## [5][Memory leaks hunter for C++](https://www.reddit.com/r/cpp/comments/fjklal/memory_leaks_hunter_for_c/)
+## [10][Demo Zoo: Zero Cost Abstractions in C++20, Rust, &amp; Zig](https://www.reddit.com/r/cpp/comments/fjmcah/demo_zoo_zero_cost_abstractions_in_c20_rust_zig/)
+- url: https://youtu.be/43X9ia-qpds
+---
+
+## [11][Memory leaks hunter for C++](https://www.reddit.com/r/cpp/comments/fjklal/memory_leaks_hunter_for_c/)
 - url: https://codingtidbit.com/2020/03/15/deleaker-review/
 ---
 
-## [6][[Boost].μt - C++ single module/header, macro-free Unit Testing Framework - v1.1.7 released ⬆️](https://www.reddit.com/r/cpp/comments/fjords/boostμt_c_single_moduleheader_macrofree_unit/)
-- url: https://github.com/boost-experimental/ut/releases/tag/v1.1.7
----
-
-## [7][Modeling the Invariance of Virtual Pointers in LLVM](https://www.reddit.com/r/cpp/comments/fjn674/modeling_the_invariance_of_virtual_pointers_in/)
+## [12][Modeling the Invariance of Virtual Pointers in LLVM](https://www.reddit.com/r/cpp/comments/fjn674/modeling_the_invariance_of_virtual_pointers_in/)
 - url: https://arxiv.org/abs/2003.04228
----
-
-## [8][A simple Star War game made purely out of C++ &amp; SFML with code](https://www.reddit.com/r/cpp/comments/fih7qs/a_simple_star_war_game_made_purely_out_of_c_sfml/)
-- url: https://www.youtube.com/watch?v=3t0JbsZ6X4I
----
-
-## [9][A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)](https://www.reddit.com/r/cpp/comments/fij6tl/a_minimal_webassembly_virtual_dom_to_build_c_spa/)
-- url: https://github.com/mbasso/asm-dom
----
-
-## [10][ECS back and forth, part 8: Type Id](https://www.reddit.com/r/cpp/comments/fijq6n/ecs_back_and_forth_part_8_type_id/)
-- url: https://skypjack.github.io/2020-03-14-ecs-baf-part-8/
----
-
-## [11][Proposal: Shadowing within the same scope](https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/)
-- url: https://www.reddit.com/r/cpp/comments/fi0g7v/proposal_shadowing_within_the_same_scope/
----
-I'd like to gather some feedback on a short proposal I've written: [https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md](https://github.com/mgrech/cpp-proposals/blob/master/shadowing.md)
-
-I've seen this feature in Rust, where my initial reaction was that it looks very dangerous. After using it for a while though, I've found it to not only solve ergonomics issues in my code, but also prevent bugs, which is why I've decided to draft a proposal.
-
-I also know that the committee doesn't like proposals that change fundamentals in the language, but I think this a small change with huge upsides and no backwards-compatibility issues. I've personally hit a nasty bug in my C++ code that could have been avoided with this very feature recently.
-## [12][C++Now 2020 is Canceled](https://www.reddit.com/r/cpp/comments/fhqzw4/cnow_2020_is_canceled/)
-- url: http://cppnow.org/announcements/2020/03/Canceled/
 ---
 

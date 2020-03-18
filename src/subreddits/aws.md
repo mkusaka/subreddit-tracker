@@ -1,87 +1,71 @@
 # aws
-## [1][Locked myself out of my Lightsail instance - UPDATE](https://www.reddit.com/r/aws/comments/fk2hc2/locked_myself_out_of_my_lightsail_instance_update/)
-- url: https://www.reddit.com/r/aws/comments/fk2hc2/locked_myself_out_of_my_lightsail_instance_update/
+## [1][Cortex - Open source alternative to SageMaker for model serving](https://www.reddit.com/r/aws/comments/fkmpnr/cortex_open_source_alternative_to_sagemaker_for/)
+- url: https://github.com/cortexlabs/cortex
 ---
-Considering I wasn't able to find any elegant solution online, I posted a question on this sub about a week ago looking for a way to regain SSH access to my Lightsail instance. [Original post](https://www.reddit.com/r/aws/comments/ff2r7u/i_got_locked_out_of_my_aws_lightsail_instance/)
 
-You guys proposed transfering over to EC2 from my snapshot in order to externally disable the UFW and that seemed like it would work, but I wanted to minimize my expenses since the budget wasn't really high. I upgraded my support plan to create a technical case and a support representative came up with this solution:
+## [2][Is Workmail still being developed?](https://www.reddit.com/r/aws/comments/fko8vm/is_workmail_still_being_developed/)
+- url: https://www.reddit.com/r/aws/comments/fko8vm/is_workmail_still_being_developed/
+---
+We use Workmail as our companies email service. It is generally ok, but it doesn't seem to have had any new features since it's release 3 years ago. The interface is clunky but we expected this to improve. 
+
+We are concerned that there seems to be a lack of development on the platform. It is very basic but we pay almost the same amount as we would pay for Gmail. 
+
+Also, we receive calendar invites for AWS events, from AWS, and the only options we have are Outlook, Google or iCal.  No mention of Workmail or any web based integration to their events. This just comes across as a product that AWS doesn't even recognise.
+
+Does anybody use Workmail and is there any reason not to move onto Gmail?
+## [3][Automated Terraform Deployments to AWS with Github Actions](https://www.reddit.com/r/aws/comments/fkcqi3/automated_terraform_deployments_to_aws_with/)
+- url: https://medium.com/@dnorth98/automated-terraform-deployments-to-aws-with-github-actions-c590c065c179
+---
+
+## [4][Understand pod networking in your eks!](https://www.reddit.com/r/aws/comments/fkmm7i/understand_pod_networking_in_your_eks/)
+- url: https://yashmehrotra.com/post/2020-03-16-case-of-missing-packet/
+---
+
+## [5][Using SSM for patching (this is the most confusing patch interface I've ever seen)](https://www.reddit.com/r/aws/comments/fki1yl/using_ssm_for_patching_this_is_the_most_confusing/)
+- url: https://www.reddit.com/r/aws/comments/fki1yl/using_ssm_for_patching_this_is_the_most_confusing/
+---
+Hello all,
+
+ I've spend hours trying to understand AWS's patching interface with SSM. I get the concept of:
+
+* patch groups
+* maintenance windows
+* patch baselines
+
+but for the love of god how do you actually put this stuff together?  The interface is absolutely horrible. 
+
+Does anyone have a good resource (yes I've read the docs) on how to actually go about doing this? Even our AWS engineers at work are struggling to put this all together. 
 
 &amp;#x200B;
 
-1. Create a snapshot of your Lightsail instance
-2. Select "Create instance from snapshot"
-3. While configuring the new instance, locate the "Launch script" section and paste the following:
-
-&amp;#x200B;
-
-        --//
-        Content-Type: text/cloud-config; charset="us-ascii"
-        MIME-Version: 1.0
-        Content-Transfer-Encoding: 7bit
-        Content-Disposition: attachment; filename="cloud-config.txt"
-        
-        #cloud-config
-        cloud_final_modules:
-        - [scripts-user, always]
-        
-        --//
-        Content-Type: text/x-shellscript; charset="us-ascii"
-        MIME-Version: 1.0
-        Content-Transfer-Encoding: 7bit
-        Content-Disposition: attachment; filename="userdata.txt"
-        
-        #!/bin/bash
-        sudo ufw disable
-        --//
-
-&amp;#x200B;
-
-4. Detach your static IP from your old instance and attach to the new one 
-
-5. SSH into your new instance
-
-&amp;#x200B;
-
-Hope this helps if anyone finds themselves in the same situation I did. Cheers.
-## [2][Amazon ElastiCache Global Datastore for Redis](https://www.reddit.com/r/aws/comments/fjvaac/amazon_elasticache_global_datastore_for_redis/)
-- url: https://aws.amazon.com/blogs/aws/now-available-amazon-elasticache-global-datastore-for-redis/
+Kind regards
+## [6][CodePipeline to deploy an AWS CloudFormation stack](https://www.reddit.com/r/aws/comments/fklulr/codepipeline_to_deploy_an_aws_cloudformation_stack/)
+- url: https://www.reddit.com/r/aws/comments/fklulr/codepipeline_to_deploy_an_aws_cloudformation_stack/
 ---
+hi all, while I am also trying to figure this out, I thought I will ask the helpful peeps on reddit.
 
-## [3][Tracking environmental impact of AWS usage?](https://www.reddit.com/r/aws/comments/fk0qn1/tracking_environmental_impact_of_aws_usage/)
-- url: https://www.reddit.com/r/aws/comments/fk0qn1/tracking_environmental_impact_of_aws_usage/
----
-Is there a good way to estimate carbon footprint/KwH or other consumption metrics for AWS services? I'd like to offset my usage and am struggling to find applicable data or resources.
+I am attempting to deploy a cloudformation stack using code pipeline but my stack takes some parameters which I am not sure how to integrate with code pipeline.
 
-If not, I'd be interested in spinning up a project to develop the tooling to do so. I imagine there are plenty of users and businesses that could use this info.
-## [4][Is it possible to enforce a smaller max payload on API Gateway?](https://www.reddit.com/r/aws/comments/fk2wbd/is_it_possible_to_enforce_a_smaller_max_payload/)
-- url: https://www.reddit.com/r/aws/comments/fk2wbd/is_it_possible_to_enforce_a_smaller_max_payload/
----
-I'm building an API with API Gateway. The service it is exposing is inherently slow and cannot be made faster. The service is experimental so speed is not being prioritised while the proof of concept is being tested. Is it possible to reduce the max payload allowed by API Gateway to reduce load on the system. I can see in the docs that payload cannot be increased but can it be decreased?  [https://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html](https://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html)
-## [5][Cloning Production RDS DB for Staging](https://www.reddit.com/r/aws/comments/fk4rka/cloning_production_rds_db_for_staging/)
-- url: https://www.reddit.com/r/aws/comments/fk4rka/cloning_production_rds_db_for_staging/
----
-I’m just getting started with RDS for my Postgres database and my question is, how would I be able to clone my production database so that I could connect my app to it and run test in a staging environment?
-## [6][CloudFront Updates Are No Longer Soul Destroying - Adam Johnson](https://www.reddit.com/r/aws/comments/fjjdkg/cloudfront_updates_are_no_longer_soul_destroying/)
-- url: https://adamj.eu/tech/2020/03/16/cloudfront-updates-no-longer-soul-destroying/
----
+Those parameters are simple user inputs which can filled when deploying just using cloudformation.
 
-## [7][Can data stored in EBS Volume on the master node be replicated on the slave nodes?](https://www.reddit.com/r/aws/comments/fk0rvb/can_data_stored_in_ebs_volume_on_the_master_node/)
-- url: https://www.reddit.com/r/aws/comments/fk0rvb/can_data_stored_in_ebs_volume_on_the_master_node/
+Is there a way I can tell code pipeline values to those parameters?
+## [7][How do you handle promoting lambda functions to different environments with respect to their attached environment variables?](https://www.reddit.com/r/aws/comments/fko1r2/how_do_you_handle_promoting_lambda_functions_to/)
+- url: https://www.reddit.com/r/aws/comments/fko1r2/how_do_you_handle_promoting_lambda_functions_to/
 ---
-I'm using Kubernetes with AWS. I've created a master and 2 slave nodes. The EBS volume path is attached to the master. I can see the volume directory on the slaves(/data). When I add data to that directory on my master node i can view it in the path set on my pods but the data doesn't get updated on my slave nodes. What I wanted to know is if its possible for the data to be replicated on my slaves and if so, then how do I do it?
-## [8][Amazon WorkSpaces](https://www.reddit.com/r/aws/comments/fjxiur/amazon_workspaces/)
-- url: https://www.reddit.com/r/aws/comments/fjxiur/amazon_workspaces/
----
-I've been looking into Amazon WorkSpaces for a group project regarding a business's IT infrastructure. I understand that it is a desktop as a service, however, would the business still require on-site servers? Or would data and information be stored over the cloud and managed by AWS? Would it be possible to have private on-site servers? 
+Lambda does not support per-alias environment variables, which makes promoting a single through different environments very difficult. We have opted for simply running two functions, with the same code, but different env vars.
 
-I've noticed a lot of Universities starting to use WorkSpaces, and I'm uncertain if they would be okay with just keeping all data in the cloud storage.
-## [9][Does API gateway support multiple levels of wildcard domains](https://www.reddit.com/r/aws/comments/fjwpw4/does_api_gateway_support_multiple_levels_of/)
-- url: https://www.reddit.com/r/aws/comments/fjwpw4/does_api_gateway_support_multiple_levels_of/
----
-Hey all, I’m trying to setup and API with Lambda and API Gateway with a custom domain (cert with ACM). I’m wondering if it’s possible to setup multiple levels of wildcard domains as it doesn’t seem possible from my tests. By multiple levels I mean *.*.mydomain.com and *.*.*.mydomain.com.
+I've heard of other solutions like parsing the alias from the context and then including a certain set of secrets depending on the alias.
 
-I’m wondering if this is more so a certificate issue than API gateway since multiple levels of domains do find the API service properly, but I get a certificate error and the API gateway endpoints are forbidden
-## [10][Amazon Athena now publishes CloudWatch Events for Athena query state transitions](https://www.reddit.com/r/aws/comments/fjp9bl/amazon_athena_now_publishes_cloudwatch_events_for/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-athena-now-publishes-cloudwatch-events-for-athena-query-state-transitions/
+How have you guys solved this limitation?
+## [8][Can S3 Select be used on hidden files?](https://www.reddit.com/r/aws/comments/fkjxdr/can_s3_select_be_used_on_hidden_files/)
+- url: https://www.reddit.com/r/aws/comments/fkjxdr/can_s3_select_be_used_on_hidden_files/
 ---
-
+The title says it all really.  I've only discovered S3 Select tonight after struggling to find a solution to a particular ETL problem I've run into.  It works great on the latest version of the file,  but I can't seem to figure out how to use it to read older versions.  I'm currently using boto3 and the select\_object\_content method doesn't appear to take VersionId as a parameter.  Is there a way around this?  I'm fairly new to S3 so apologies if I'm missing something obvious.
+## [9][Can someone explain the real differences between Amzn EFS and Azure Files?](https://www.reddit.com/r/aws/comments/fkh7c9/can_someone_explain_the_real_differences_between/)
+- url: https://www.reddit.com/r/aws/comments/fkh7c9/can_someone_explain_the_real_differences_between/
+---
+And additionally, why should I NOT choose one over the other? What are the shortcomings of each? I've heard EFS isn't considered enterprise. Why? Thank you!
+## [10][Has anyone done auto-tagging AWS resources by their IAM username across all AWS accounts in the Org? Currently, I'm able to auto-tag resources in one account, I need for all the accounts.](https://www.reddit.com/r/aws/comments/fkmpuy/has_anyone_done_autotagging_aws_resources_by/)
+- url: https://www.reddit.com/r/aws/comments/fkmpuy/has_anyone_done_autotagging_aws_resources_by/
+---
+We currently have around 90+ AWS accounts in the Org, is there any way I can achieve Auto-tagging across all regions in all the accounts?

@@ -1,25 +1,5 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/f9t9kq/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/f9t9kq/personal_projects_show_off_your_own_project_andor/
----
-In this thread you can showcase your personal pet project to other redditors.
-
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
-
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/fgx7fz/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/fgx7fz/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/fgx7fz/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -39,7 +19,67 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Can't modify frozen String on form tags after upgrade to Rails 6.0.0](https://www.reddit.com/r/rails/comments/fjsp5w/cant_modify_frozen_string_on_form_tags_after/)
+## [2][Taking Rails 6’s Action Mailbox for a Spin](https://www.reddit.com/r/rails/comments/fkmhsu/taking_rails_6s_action_mailbox_for_a_spin/)
+- url: https://www.reddit.com/r/rails/comments/fkmhsu/taking_rails_6s_action_mailbox_for_a_spin/
+---
+In this article the author will take Action Mailbox for a spin and write a simple working Rails 6 app to demonstrate Action Mailbox in action.
+
+Link to article: https://medium.com/merajulislam/taking-rails-6s-action-mailbox-for-a-spin-104d0e34d379
+## [3][Google Oauth2 not applying image_size](https://www.reddit.com/r/rails/comments/fkombb/google_oauth2_not_applying_image_size/)
+- url: https://www.reddit.com/r/rails/comments/fkombb/google_oauth2_not_applying_image_size/
+---
+I'm trying to apply image\_size to omniauth-google-oauth2, but everything I tried didn't work.
+
+My devise.rb
+
+    config.omniauth :google_oauth2, google_client_id, google_client_secret, {image_aspect_ratio: "square", image_size: 100}
+
+I'm using my application\_helper to display the image with:
+
+    module ApplicationHelper def avatar_url(user)     user.image   end end
+
+If I check the image\_url it still shows [https://lh3.googleusercontent.com/a-/AOh14Gg9KNrUy\_97f3wDhevAJGE52nT8Y6ho48Uo9vJwHw](https://lh3.googleusercontent.com/a-/AOh14Gg9KNrUy_97f3wDhevAJGE52nT8Y6ho48Uo9vJwHw) without any change in size
+
+I've also tried auth.info.image.sub('?sz=32','?sz=100'), but it didn't work.
+## [4][ActionText uploading a gif is being shown as an image](https://www.reddit.com/r/rails/comments/fk8anx/actiontext_uploading_a_gif_is_being_shown_as_an/)
+- url: https://www.reddit.com/r/rails/comments/fk8anx/actiontext_uploading_a_gif_is_being_shown_as_an/
+---
+Trying to upload a gif through action text and it gets uploaded correctly but on update or creation something happens and an image variant is created and is used to display the post  
+
+would appreiciate any help, here is the SO link with a bit more detail
+
+[https://stackoverflow.com/questions/60721539/actiontext-gif-attachment-converts-to-photo-when-submitting-rails-form](https://stackoverflow.com/questions/60721539/actiontext-gif-attachment-converts-to-photo-when-submitting-rails-form)
+## [5][Example of Search Form with Google Places Autocomplete in Rails 6?](https://www.reddit.com/r/rails/comments/fkch08/example_of_search_form_with_google_places/)
+- url: https://www.reddit.com/r/rails/comments/fkch08/example_of_search_form_with_google_places/
+---
+Does anyone have a tutorial of an example of Google Places Autocomplete being used in a search form in Rails 6? I am trying to add it to my app, but it looks like most of the resources available are for Rails 3/4.
+## [6][Aliasing polymorphic relationships](https://www.reddit.com/r/rails/comments/fkdccv/aliasing_polymorphic_relationships/)
+- url: https://www.reddit.com/r/rails/comments/fkdccv/aliasing_polymorphic_relationships/
+---
+Hi, I have an address model. It has an belongs\_to :addressable relationship which is polymorphic. One of the models that can be an addressable is "property".
+
+I'm aware there's a syntax that allows me to somewhat alias the addressable relationship with an specific relation.
+
+Somewhat like
+
+    belongs_to :addressable, polymorphic: true
+    belongs_to :property, as: :addressable, -&gt; {where(addressable_type: 'Property')}
+
+&amp;#x200B;
+
+What's the correct syntax for it? I have done this before but I can't find anything online or figure out where I've done it.
+## [7][is rack on the same layer as fastCGI?](https://www.reddit.com/r/rails/comments/fjwgtu/is_rack_on_the_same_layer_as_fastcgi/)
+- url: https://www.reddit.com/r/rails/comments/fjwgtu/is_rack_on_the_same_layer_as_fastcgi/
+---
+Are rack and fastCGI on the same layer solving the same problem and are alternatives to each other, or is rack built on top where fastCGI is?
+## [8][Anybody having readline issues with macos](https://www.reddit.com/r/rails/comments/fjux86/anybody_having_readline_issues_with_macos/)
+- url: https://www.reddit.com/r/rails/comments/fjux86/anybody_having_readline_issues_with_macos/
+---
+https://preview.redd.it/nkm2w8kie4n41.png?width=1206&amp;format=png&amp;auto=webp&amp;s=738055f6456cde40f478ed3768d10e925e9f9533
+
+Whats expected is for the number 2 to be printed,  
+instead the rails repl prints some garbage after the number 2.
+## [9][Can't modify frozen String on form tags after upgrade to Rails 6.0.0](https://www.reddit.com/r/rails/comments/fjsp5w/cant_modify_frozen_string_on_form_tags_after/)
 - url: https://www.reddit.com/r/rails/comments/fjsp5w/cant_modify_frozen_string_on_form_tags_after/
 ---
 I'm in the middle of upgrading a monolith from Rails 5.2 to 6.0.0. This upgrade so far has gone pretty easy. I was able to knock out the deprecations and a co-worker of mine was able to fix the test suite (for the most part. Still having an issue with Capybara on 2 tests).
@@ -55,18 +95,7 @@ Every one of these I've checked (so far) are pointing to a form tag. The main on
 I've added the configs we were using in the old `new_framework_defaults_5_x` files to application.rb hoping it was a config in one of those but no dice...
 
 Not really sure what to do from here. Any ideas?
-## [4][Anybody having readline issues with macos](https://www.reddit.com/r/rails/comments/fjux86/anybody_having_readline_issues_with_macos/)
-- url: https://www.reddit.com/r/rails/comments/fjux86/anybody_having_readline_issues_with_macos/
----
-https://preview.redd.it/nkm2w8kie4n41.png?width=1206&amp;format=png&amp;auto=webp&amp;s=738055f6456cde40f478ed3768d10e925e9f9533
-
-Whats expected is for the number 2 to be printed,  
-instead the rails repl prints some garbage after the number 2.
-## [5][is rack on the same layer as fastCGI?](https://www.reddit.com/r/rails/comments/fjwgtu/is_rack_on_the_same_layer_as_fastcgi/)
-- url: https://www.reddit.com/r/rails/comments/fjwgtu/is_rack_on_the_same_layer_as_fastcgi/
----
-Are rack and fastCGI on the same layer solving the same problem and are alternatives to each other, or is rack built on top where fastCGI is?
-## [6][Date default value](https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/)
+## [10][Date default value](https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/)
 - url: https://www.reddit.com/r/rails/comments/fjk0mu/date_default_value/
 ---
 So I have a model `Task` which has an attribute `deadline` of type `datetime`. I also have at some point in my views the following input:
@@ -74,7 +103,7 @@ So I have a model `Task` which has an attribute `deadline` of type `datetime`. I
     &lt;input type="date" id="start" name="task[deadline]" min="2020-01-01" max="2025-12-31" value="&lt;%= @task.deadline.strftime("%Y/%m/%d - %H:%M %p") %&gt;"&gt;
 
 Well, apparently strftime does not work, as it shows `mm/dd/yyyy` instead of the corresponding date. I don't know how to fix this, but probably is a simple thing that right now I don't see.
-## [7][Standing out as a true Pro Rails Developer](https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/)
+## [11][Standing out as a true Pro Rails Developer](https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/)
 - url: https://www.reddit.com/r/rails/comments/fjedn3/standing_out_as_a_true_pro_rails_developer/
 ---
 Sorry for the long windedness, but here goes...
@@ -100,58 +129,3 @@ So a lot of newbies feel like there's this whole world they weren't prepared for
 In "real world" Rails development, are you really working with a SQLite database in Dev, updating migration files, and just running those against a PostGres or MySql database?  Or is it much more complicated than that?
 
 Just looking for tips of what I need to study at a more advanced level that maybe the tutorials and books aren't preparing me for.
-## [8][SCSS changes not triggering recompile](https://www.reddit.com/r/rails/comments/fjfonm/scss_changes_not_triggering_recompile/)
-- url: https://www.reddit.com/r/rails/comments/fjfonm/scss_changes_not_triggering_recompile/
----
-Hi everyone, I'm having the a problem whereby my scss changes are not recompiling. Every time I make a change  I'm having to do the following:  
-
-
-    rake assets:clean
-    rake assets:precompile
-    &lt;kill server&gt;
-    rails s
-
-  
-I've tried all these suggested solutions I found online:  
-
-
-    Deleting the contents of public/assets/
-    
-    # development.rb
-    config.serve_static_assets = false
-    
-    Clearing browser cache
-
-  
-None of these things have worked.  
-
-
-Any ideas? Thanks
-## [9][Making Rails apps more beautiful? (using frontend technologies/frameworks)](https://www.reddit.com/r/rails/comments/fj5s94/making_rails_apps_more_beautiful_using_frontend/)
-- url: https://www.reddit.com/r/rails/comments/fj5s94/making_rails_apps_more_beautiful_using_frontend/
----
-Today I depolyed a rails app and what most of people tested say was : "Make it look more beautiful please". I was thinking about what are the ways to make a rails app look more and more beautiful? I did search and I found it's possible to use react or vue with webpacker on rails, but they still need some work to look beautiful. 
-
-I'm not searching for "immediate" ways of course, but I look for something look better than rails default views on start. How should I say ... a more stylish way of views we can see.
-## [10][organizing/managing Routes for an MVP](https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/)
-- url: https://www.reddit.com/r/rails/comments/fj16w9/organizingmanaging_routes_for_an_mvp/
----
-so i start working on an MVP with rails, 
-i added devise to manage users and created my first model/controller 
-which added to the route as resource so i have /model/:id/[edit/show] and /model/add 
-
-but now i'm not sure if i have to change it to account/model for the user submission and /model for the rest of user to see the object 
-
-so my question is when starting a project do you think about routes ? 
-
-should i make a simple text file to list all the best names/titles for routes or i can keep the default resources and don't think/let the user think about them ?
-## [11][ran rufus scheduler in my rails app, now when I later went back to the app is hanging in the browser](https://www.reddit.com/r/rails/comments/fj2oyy/ran_rufus_scheduler_in_my_rails_app_now_when_i/)
-- url: https://www.reddit.com/r/rails/comments/fj2oyy/ran_rufus_scheduler_in_my_rails_app_now_when_i/
----
-So i created a job, and I wanted to test it in console (eh, I'm new to it so don't know if this is bad) so I ran the job there.  I noticed when I went back later that my app doesn't load in browser, and I can't even ctrl+c out of the rails server log.  So I had to kill the rails pid and then start up rails s again, but it still doesn't load in the browser, though I see the initial GET for the homepage.  
-
-Is there some process or other thing I need to do in rails console to stop rufus?  I had exited all my console sessions too, including the one in which I was trying to test a rufus job.  I've even commented out code, etc
-## [12][Deploying to Heroku, do you have to worry about HTTP server?](https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/)
-- url: https://www.reddit.com/r/rails/comments/fiub0i/deploying_to_heroku_do_you_have_to_worry_about/
----
-Deploying to Heroku, do I have to worry about adding my own apache/nginx server?

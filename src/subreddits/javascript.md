@@ -1,55 +1,51 @@
 # javascript
-## [1][WTF Wednesday (March 11, 2020)](https://www.reddit.com/r/javascript/comments/fgzgvk/wtf_wednesday_march_11_2020/)
-- url: https://www.reddit.com/r/javascript/comments/fgzgvk/wtf_wednesday_march_11_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Showoff Saturday (March 14, 2020)](https://www.reddit.com/r/javascript/comments/fih52u/showoff_saturday_march_14_2020/)
+## [1][Showoff Saturday (March 14, 2020)](https://www.reddit.com/r/javascript/comments/fih52u/showoff_saturday_march_14_2020/)
 - url: https://www.reddit.com/r/javascript/comments/fih52u/showoff_saturday_march_14_2020/
 ---
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][GitHub acquires NPM](https://www.reddit.com/r/javascript/comments/fjodsi/github_acquires_npm/)
+## [2][I made a chess engine using only vanilla JS. Let me know what you think!](https://www.reddit.com/r/javascript/comments/fkaglg/i_made_a_chess_engine_using_only_vanilla_js_let/)
+- url: https://github.com/VanillaJSChess/VanillaJSChess.github.io
+---
+
+## [3][Try Playwright an library to automate Chromium, Firefox and WebKit interactively in your browser](https://www.reddit.com/r/javascript/comments/fkpafz/try_playwright_an_library_to_automate_chromium/)
+- url: https://try.playwright.tech
+---
+
+## [4][Javascript Proxies : Real world use cases](https://www.reddit.com/r/javascript/comments/fk5csj/javascript_proxies_real_world_use_cases/)
+- url: https://www.arbazsiddiqui.me/javascript-proxies-real-world-use-cases/
+---
+
+## [5][GitHub acquires NPM](https://www.reddit.com/r/javascript/comments/fjodsi/github_acquires_npm/)
 - url: https://github.blog/2020-03-16-npm-is-joining-github/
 ---
 
-## [4][Square Brackets are the Enemy (Prototype Poisoning)](https://www.reddit.com/r/javascript/comments/fk41gf/square_brackets_are_the_enemy_prototype_poisoning/)
+## [6][Dealing with async functions and resolving them all with Promise.all()](https://www.reddit.com/r/javascript/comments/fkkzry/dealing_with_async_functions_and_resolving_them/)
+- url: https://blog.piotrnalepa.pl/2020/03/18/dealing-with-promise-all-and-a-bunch-of-async-functions/
+---
+
+## [7][Microsoft buys NPM to integrate it with Github.](https://www.reddit.com/r/javascript/comments/fkkfjv/microsoft_buys_npm_to_integrate_it_with_github/)
+- url: https://www.zdnet.com/article/microsoft-buys-javascript-developer-platform-npm-plans-to-integrate-it-with-github/
+---
+
+## [8][Remaking Twitter Emoji Finder UI in vanilla (categorizes 3200 emojis with 1 sprite sheet)](https://www.reddit.com/r/javascript/comments/fkk227/remaking_twitter_emoji_finder_ui_in_vanilla/)
+- url: https://www.javascriptteacher.com/remake-twitter-emoji-ui.html?r
+---
+
+## [9][I wrote an article on GraphQL. It's corona time so why not learn something new?](https://www.reddit.com/r/javascript/comments/fkjzkq/i_wrote_an_article_on_graphql_its_corona_time_so/)
+- url: https://medium.com/@saswatamcode/get-up-and-running-with-graphql-7f86e30b2334
+---
+
+## [10][Square Brackets are the Enemy (Prototype Poisoning)](https://www.reddit.com/r/javascript/comments/fk41gf/square_brackets_are_the_enemy_prototype_poisoning/)
 - url: https://hueniverse.com/square-brackets-are-the-enemy-ff5b9fd8a3e8
 ---
 
-## [5][Some examples of `reduce` in JavaScript](https://www.reddit.com/r/javascript/comments/fk3okg/some_examples_of_reduce_in_javascript/)
-- url: https://herebeseaswines.net/essays/2020-03-14-fold-as-universal-form
+## [11][[AskJS] AP Com Sci Principles App](https://www.reddit.com/r/javascript/comments/fkiyf1/askjs_ap_com_sci_principles_app/)
+- url: https://www.reddit.com/r/javascript/comments/fkiyf1/askjs_ap_com_sci_principles_app/
 ---
+Hi everyone, I take APCSP and am currently remote learning, so accessing my teacher for help is a lot more difficult. I am currently coding for a tic-tac-toe game but am having trouble. Whenever the user clicks on the screen, only X’s appear, regardless of the function I have which should make O’s appear when it is player 2’s turn. Any help would be appreciated!!
 
-## [6][I created a Apollo GraphQL server for retrieving COVID-19 data by date. Looking for feedback and contribution.](https://www.reddit.com/r/javascript/comments/fjjyax/i_created_a_apollo_graphql_server_for_retrieving/)
-- url: https://github.com/SiddharthMantri/covid-graphql
----
 
-## [7][GitHub has signed an agreement to acquire npm.](https://www.reddit.com/r/javascript/comments/fjy5gc/github_has_signed_an_agreement_to_acquire_npm/)
-- url: https://github.blog/2020-03-16-npm-is-joining-github/?utm_campaign=1584377606&amp;utm_medium=social&amp;utm_source=twitter&amp;utm_content=1584377606
----
 
-## [8][Vue v3.0.0-alpha.9 Released](https://www.reddit.com/r/javascript/comments/fk212y/vue_v300alpha9_released/)
-- url: https://github.com/vuejs/vue-next/releases/tag/v3.0.0-alpha.9
----
-
-## [9][Generated tests with XState and Cypress](https://www.reddit.com/r/javascript/comments/fjs7qh/generated_tests_with_xstate_and_cypress/)
-- url: https://timdeschryver.dev/blog/generated-tests-with-xstate-and-cypress
----
-
-## [10][New AB Testing Framework (React, vanilla and python)](https://www.reddit.com/r/javascript/comments/fk0f2m/new_ab_testing_framework_react_vanilla_and_python/)
-- url: https://github.com/appannie/ab-testing
----
-
-## [11][ultimate-guitar.com - user interface &amp; pdf generator](https://www.reddit.com/r/javascript/comments/fjjwpk/ultimateguitarcom_user_interface_pdf_generator/)
-- url: https://github.com/hedwiggggg/ugrip
----
-
-## [12][Learn from home webinar: Writing clean JS tests](https://www.reddit.com/r/javascript/comments/fjlwmf/learn_from_home_webinar_writing_clean_js_tests/)
-- url: https://zoom.us/webinar/register/1215843693079/WN_0LQj8e5rTwSQr4X9NSnX-w
----
-
+https://studio.code.org/projects/applab/7E1HEbe-aePdEAaQ1o_GqfLj5P7buo4z_Ci03lPosoE?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf

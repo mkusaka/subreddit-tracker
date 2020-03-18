@@ -31,56 +31,76 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Creating your own REST API?](https://www.reddit.com/r/androiddev/comments/fk1ivf/creating_your_own_rest_api/)
-- url: https://www.reddit.com/r/androiddev/comments/fk1ivf/creating_your_own_rest_api/
----
-How hard is it for someone with Android development experience to create their own REST API? Is this something that every Android dev should know how to do?
-
-I have a couple project ideas that would require this, but no idea where to start (or if it's worth the time investment). I know Java/Kotlin but I have little experience outside of the Android framework.
-## [4][Android's Built-in ProGuard Rules: The Missing Guide](https://www.reddit.com/r/androiddev/comments/fjqp6k/androids_builtin_proguard_rules_the_missing_guide/)
-- url: https://www.zacsweers.dev/android-proguard-rules/
+## [3][The Arrival of Java 14!](https://www.reddit.com/r/androiddev/comments/fknyt9/the_arrival_of_java_14/)
+- url: https://blogs.oracle.com/java-platform-group/the-arrival-of-java-14
 ---
 
-## [5][minSdkVersion](https://www.reddit.com/r/androiddev/comments/fk3akr/minsdkversion/)
-- url: https://www.reddit.com/r/androiddev/comments/fk3akr/minsdkversion/
+## [4][My personal library of Kotlin extensions that might be useful](https://www.reddit.com/r/androiddev/comments/fko1zm/my_personal_library_of_kotlin_extensions_that/)
+- url: https://www.reddit.com/r/androiddev/comments/fko1zm/my_personal_library_of_kotlin_extensions_that/
 ---
-Hey guys,
+Hey folks, I'm sharing my personal library that I use in every project of mine, it has things found working from StackOverflow to things I've written personally to take shortcuts, copied some from Github and modified them to work as intended just to make the Android development easier.
 
-I am asking this question because I don't think it has been asked lately and all I find on the net is pretty old.
-- How do you guys know when it is time to upgrade the minSdkVersion to a newer one? For me, as a rule of thumb, I would have try to choose the minimum sdk version based on having at least 95% of the android devices that are on the market.
-- I don't think that [android dashboard](https://developer.android.com/about/dashboards) is reliable because it has not been updated for almost a year.
-- is [@minSdkVersion](https://mobile.twitter.com/minsdkversion?lang=en) reliable?
-- I have heard that pornhub have published what are their users' versions. Although it is a nice act, I don't think it is reliable enough.
+[Github Link](https://github.com/CraZyLegenD/Set-Of-Useful-Kotlin-Extensions-and-Helpers)
 
-Thanks a lot guys!
-## [6][Android’s CameraX Jetpack Library is now in Beta!](https://www.reddit.com/r/androiddev/comments/fjpgfg/androids_camerax_jetpack_library_is_now_in_beta/)
-- url: https://medium.com/androiddevelopers/androids-camerax-jetpack-library-is-now-in-beta-bf4cf0cc3ea6
+It lacks documentation, feel free to contribute or to use it in your projects, pull requests are welcomed as well as if something doesn't work feel free to open an issue or if you find your code add headers/credits that's yours and make a pull request.
+## [5][Google Removed my app without any heads up, they said we were uploading users' contact info but we are not doing this. We use the Contacts API to send SMSs but never storing this data. Have anyone experience this issue before?](https://www.reddit.com/r/androiddev/comments/fkayei/google_removed_my_app_without_any_heads_up_they/)
+- url: https://i.redd.it/jiavn4m96an41.png
 ---
 
-## [7][I have just published an article "Implementing The Motion System with material components for Android"](https://www.reddit.com/r/androiddev/comments/fk41r2/i_have_just_published_an_article_implementing_the/)
-- url: https://proandroiddev.com/implementing-the-motion-system-with-material-components-for-android-75bfeef8de9e
+## [6][How will location permission changes in android 11 effect my app?](https://www.reddit.com/r/androiddev/comments/fklt22/how_will_location_permission_changes_in_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fklt22/how_will_location_permission_changes_in_android/
 ---
+I work on a  app which collects user data with his permission (we give justification and only collect if user accepts it).  
 
-## [8][Sending logs from Android device via internet](https://www.reddit.com/r/androiddev/comments/fk3rfq/sending_logs_from_android_device_via_internet/)
-- url: https://www.reddit.com/r/androiddev/comments/fk3rfq/sending_logs_from_android_device_via_internet/
----
-Hello, guys!  
-I have written an article about sending logs from Android device via internet. Might be helpful if your client (or tester) is experiencing a bug and you need to debug it.  
-**Hope you'll enjoy:**  
-[https://medium.com/@mixeden/sending-logs-via-internet-from-android-with-timber-and-node-js-d6dd29de2b8f](https://medium.com/@mixeden/sending-logs-via-internet-from-android-with-timber-and-node-js-d6dd29de2b8f?source=post_stats_page---------------------------)
-## [9][Android Makers joins the list of conferences going virtual](https://www.reddit.com/r/androiddev/comments/fk3ja7/android_makers_joins_the_list_of_conferences/)
-- url: https://twitter.com/AndroidMakersFR/status/1239652177389539328
----
+Location is the most important part of the data i am collecting. It is collected every 2 hrs, only when permission is given and GPS is turned on. Currently, app target SDK is 28, So i have not added BACKGROUND permission yet.
 
-## [10][How to improve organic user acquisition and get the most out of channels that can bring you growth at minimum cost?](https://www.reddit.com/r/androiddev/comments/fk54d9/how_to_improve_organic_user_acquisition_and_get/)
-- url: https://www.appodeal.com/home/blog/how-to-increase-your-organic-app-growth/?utm_campaign=appodeal_comm&amp;utm_source=reddit&amp;utm_term=androiddev
----
+I read the developer blog and understood things. What i am not able to understand is how google play policy changes and increasing target SDK version to 29 , 30 impact my app separately.
 
-## [11][Developers! Cry for help](https://www.reddit.com/r/androiddev/comments/fk4l0b/developers_cry_for_help/)
-- url: https://www.reddit.com/r/androiddev/comments/fk4l0b/developers_cry_for_help/
----
-This has been asked before, but there arent many threads about it. The problem at hand is getting apps full screen (aka "immersive mode") on devices with notches or hole punch cameras. Im using a S20 ultra but the question pertains to all phones since the s10 range. Currently its impossible to do without either rooting or using app cloner, but there are obvious drawbacks. A simple solution would be implementing a profile under developer options that simulates a screen without a notch. Currently there are only options to simulate screens with different notches. AFAIK the problem is that the hole punch is letterboxed so most apps render under this area. Is there anyone that can find a solution to remove this letterbox area? ANYONE??
-## [12][Bots are quarantined too :) [But joke apart, needs to be known for planning]](https://www.reddit.com/r/androiddev/comments/fji4jx/bots_are_quarantined_too_but_joke_apart_needs_to/)
-- url: https://i.redd.it/gra6liuy40n41.png
----
+Will i have to show permission dialog every 2hrs?
 
+Any other way to get location with reduced accuracy and not going through all this pain of changed policies?
+## [7][Is indoor automatic positioning possible with AR?](https://www.reddit.com/r/androiddev/comments/fkpb20/is_indoor_automatic_positioning_possible_with_ar/)
+- url: https://www.reddit.com/r/androiddev/comments/fkpb20/is_indoor_automatic_positioning_possible_with_ar/
+---
+i read a lot of projects about indoor navigation but all of them require to set the start location and every time the user need initially to be in this location, in some cases it is not beneficial such as for blind users, is there a way to detect the position automatically using the available SDK such as ARCore and ARKit or this technology still doesn't exist?!!
+## [8][What should I use to make animations and transitions in android?](https://www.reddit.com/r/androiddev/comments/fkocu3/what_should_i_use_to_make_animations_and/)
+- url: https://www.reddit.com/r/androiddev/comments/fkocu3/what_should_i_use_to_make_animations_and/
+---
+I looked to the docs and I've found so many long docs talking about making animations from xml resources (sets, translate ... object animator, value animator) to programmatic code (Scenes, Transition's custom animations, ViewAnimationUtils), and there's also MotionLayout which is in beta 4 at the current time.
+
+&amp;#x200B;
+
+I'm kinda lost with all of these, is Motion layout the go to from now on for all animations?
+## [9][Getting back into android development](https://www.reddit.com/r/androiddev/comments/fknntk/getting_back_into_android_development/)
+- url: https://www.reddit.com/r/androiddev/comments/fknntk/getting_back_into_android_development/
+---
+Hi guys bit of a background, i use to develop android applications, and had a kinda career change to developing web applications , last android app i worked on was around marshmallow, i'm been assigned work to redevelop an android app and not sure whether to continue with what i know and doing it in native java or learn Kotlin, i want to get back into working on android projects full time moving forward. You guys seen java keeping a firm market-share in android development ?
+## [10][How do you decide on which devices to support when developing an Android app?](https://www.reddit.com/r/androiddev/comments/fkk7y0/how_do_you_decide_on_which_devices_to_support/)
+- url: https://www.reddit.com/r/androiddev/comments/fkk7y0/how_do_you_decide_on_which_devices_to_support/
+---
+I want to ask a question about how you decide which devices to support when developing an app.
+
+We are developing Unity apps that use sensors like compass, gyroscope, and accelerometer. There are so many cheap Android devices out there that have these sensors but aren't accurate enough. We need to figure out a list of devices that we can support, and it's YMMV for the rest of the devices. We cannot practically buy every device that exists out there and support each and every one of them.
+
+We think that market share stats by the device (not the manufacturer) will give us a good starting point to limit the number of devices we want to officially support. Since there is no such data available officially from Google or Apple, can anyone recommend a good source for this info? I suppose there are companies built around this kind of thing?
+
+Or is there a better way of doing this?
+
+I appreciate your input.
+## [11][End of Google Play Games Multiplayer](https://www.reddit.com/r/androiddev/comments/fkoer0/end_of_google_play_games_multiplayer/)
+- url: https://www.reddit.com/r/androiddev/comments/fkoer0/end_of_google_play_games_multiplayer/
+---
+A few weeks ago I shared a video about using Firebase to create multiplayer game: [https://www.youtube.com/watch?v=nj-trslVFPc](https://www.youtube.com/watch?v=nj-trslVFPc)
+
+Now I want to share simple logic to connect devices that can be implemented in your own server: [https://www.youtube.com/watch?v=0Pg5s6VJOqI](https://www.youtube.com/watch?v=0Pg5s6VJOqI)
+
+Both of these can help you migrate to new multiplayer system by the end of March.
+## [12][Help a noob keep his sanity](https://www.reddit.com/r/androiddev/comments/fkoa90/help_a_noob_keep_his_sanity/)
+- url: https://www.reddit.com/r/androiddev/comments/fkoa90/help_a_noob_keep_his_sanity/
+---
+New to android development, was playing around with some code and came across a problem thats been driving me insane over the past couple days so I thought why not see if anyone else can make any sense of it.
+
+There's part of the code that's meant to send the users contact list to firebase when they open the app, and it creates a new child under their user in the real-time db with the list, but for some reason it only updates the list when I use the test accounts in my emulator and when I run the apk on my phone with normal accounts, everything else works, but it just doesn't make the new child with the list in firebase. I've checked the permissions, and they're all set to allow, but it just doesn't want to update the list.
+
+Does anyone have any suggestions as to why this may be happening? I just don't understand why it sends my emulator contact lists, but not my phone's. 
+All help is appreciated, tia

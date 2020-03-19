@@ -31,76 +31,80 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][The Arrival of Java 14!](https://www.reddit.com/r/androiddev/comments/fknyt9/the_arrival_of_java_14/)
-- url: https://blogs.oracle.com/java-platform-group/the-arrival-of-java-14
+## [3][And that's somehow my fault](https://www.reddit.com/r/androiddev/comments/fl7jq0/and_thats_somehow_my_fault/)
+- url: https://i.redd.it/y12rfgohrln41.png
 ---
 
-## [4][My personal library of Kotlin extensions that might be useful](https://www.reddit.com/r/androiddev/comments/fko1zm/my_personal_library_of_kotlin_extensions_that/)
-- url: https://www.reddit.com/r/androiddev/comments/fko1zm/my_personal_library_of_kotlin_extensions_that/
----
-Hey folks, I'm sharing my personal library that I use in every project of mine, it has things found working from StackOverflow to things I've written personally to take shortcuts, copied some from Github and modified them to work as intended just to make the Android development easier.
-
-[Github Link](https://github.com/CraZyLegenD/Set-Of-Useful-Kotlin-Extensions-and-Helpers)
-
-It lacks documentation, feel free to contribute or to use it in your projects, pull requests are welcomed as well as if something doesn't work feel free to open an issue or if you find your code add headers/credits that's yours and make a pull request.
-## [5][Google Removed my app without any heads up, they said we were uploading users' contact info but we are not doing this. We use the Contacts API to send SMSs but never storing this data. Have anyone experience this issue before?](https://www.reddit.com/r/androiddev/comments/fkayei/google_removed_my_app_without_any_heads_up_they/)
-- url: https://i.redd.it/jiavn4m96an41.png
+## [4][Deprecated onActivityCreated() on Fragment 1.3 Alpha 02](https://www.reddit.com/r/androiddev/comments/fl3du6/deprecated_onactivitycreated_on_fragment_13_alpha/)
+- url: https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha02
 ---
 
-## [6][How will location permission changes in android 11 effect my app?](https://www.reddit.com/r/androiddev/comments/fklt22/how_will_location_permission_changes_in_android/)
-- url: https://www.reddit.com/r/androiddev/comments/fklt22/how_will_location_permission_changes_in_android/
+## [5][What libraries do you hate the most and why?](https://www.reddit.com/r/androiddev/comments/fl8bmt/what_libraries_do_you_hate_the_most_and_why/)
+- url: https://www.reddit.com/r/androiddev/comments/fl8bmt/what_libraries_do_you_hate_the_most_and_why/
 ---
-I work on a  app which collects user data with his permission (we give justification and only collect if user accepts it).  
 
-Location is the most important part of the data i am collecting. It is collected every 2 hrs, only when permission is given and GPS is turned on. Currently, app target SDK is 28, So i have not added BACKGROUND permission yet.
-
-I read the developer blog and understood things. What i am not able to understand is how google play policy changes and increasing target SDK version to 29 , 30 impact my app separately.
-
-Will i have to show permission dialog every 2hrs?
-
-Any other way to get location with reduced accuracy and not going through all this pain of changed policies?
-## [7][Is indoor automatic positioning possible with AR?](https://www.reddit.com/r/androiddev/comments/fkpb20/is_indoor_automatic_positioning_possible_with_ar/)
-- url: https://www.reddit.com/r/androiddev/comments/fkpb20/is_indoor_automatic_positioning_possible_with_ar/
+## [6][Native Dependencies in Android Studio 4.0](https://www.reddit.com/r/androiddev/comments/fl99pb/native_dependencies_in_android_studio_40/)
+- url: https://android-developers.googleblog.com/2020/02/native-dependencies-in-android-studio-40.html
 ---
-i read a lot of projects about indoor navigation but all of them require to set the start location and every time the user need initially to be in this location, in some cases it is not beneficial such as for blind users, is there a way to detect the position automatically using the available SDK such as ARCore and ARKit or this technology still doesn't exist?!!
-## [8][What should I use to make animations and transitions in android?](https://www.reddit.com/r/androiddev/comments/fkocu3/what_should_i_use_to_make_animations_and/)
-- url: https://www.reddit.com/r/androiddev/comments/fkocu3/what_should_i_use_to_make_animations_and/
+
+## [7][Android 11: Developer Preview 2](https://www.reddit.com/r/androiddev/comments/fkt2ts/android_11_developer_preview_2/)
+- url: https://android-developers.googleblog.com/2020/03/android-11-developer-preview-2.html?
 ---
-I looked to the docs and I've found so many long docs talking about making animations from xml resources (sets, translate ... object animator, value animator) to programmatic code (Scenes, Transition's custom animations, ViewAnimationUtils), and there's also MotionLayout which is in beta 4 at the current time.
+
+## [8][How can I use custom and default SSL certificate simultaneously in app](https://www.reddit.com/r/androiddev/comments/fl7jjm/how_can_i_use_custom_and_default_ssl_certificate/)
+- url: https://www.reddit.com/r/androiddev/comments/fl7jjm/how_can_i_use_custom_and_default_ssl_certificate/
+---
+In my app, I have to use custom certificate for making 2 API calls, and default certificate for all other API calls.
 
 &amp;#x200B;
 
-I'm kinda lost with all of these, is Motion layout the go to from now on for all animations?
-## [9][Getting back into android development](https://www.reddit.com/r/androiddev/comments/fknntk/getting_back_into_android_development/)
-- url: https://www.reddit.com/r/androiddev/comments/fknntk/getting_back_into_android_development/
+But once I pin custom certificate in Volley RequestQueue, all the subsequent calls with default certificate are failing with SSLHandshakeException.
+
+&amp;#x200B;
+
+How can I do this?
+## [9][Question about minSdkVersion and Play Store publishing](https://www.reddit.com/r/androiddev/comments/fl87wq/question_about_minsdkversion_and_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/fl87wq/question_about_minsdkversion_and_play_store/
 ---
-Hi guys bit of a background, i use to develop android applications, and had a kinda career change to developing web applications , last android app i worked on was around marshmallow, i'm been assigned work to redevelop an android app and not sure whether to continue with what i know and doing it in native java or learn Kotlin, i want to get back into working on android projects full time moving forward. You guys seen java keeping a firm market-share in android development ?
-## [10][How do you decide on which devices to support when developing an Android app?](https://www.reddit.com/r/androiddev/comments/fkk7y0/how_do_you_decide_on_which_devices_to_support/)
-- url: https://www.reddit.com/r/androiddev/comments/fkk7y0/how_do_you_decide_on_which_devices_to_support/
+Let's say that I have an app currently published with minSdkVersion x.
+
+&amp;nbsp;
+
+If I publish a new APK with versionCode incremented (+1000) and  minSdkVersion y, where y &gt; x, will distribution to devices on the Play Store be like this:
+
+&amp;nbsp;
+
+- devices with Android version with API level &gt;= y  get the new APK installed for new installs. And existing installs of the old version are upgraded to the new APK
+- devices with Android version with API level &lt; y  get the old APK installed for new installs. And existing installs do not get upgraded to the new version
+
+&amp;nbsp;
+
+Long story short: I have an app minSdkVersion 14 but need to make a specific version for API 29+ (Android 10) devices.
+## [10][Desperately searching for entry-level Android Developer position](https://www.reddit.com/r/androiddev/comments/fl0qqv/desperately_searching_for_entrylevel_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fl0qqv/desperately_searching_for_entrylevel_android/
 ---
-I want to ask a question about how you decide which devices to support when developing an app.
+Friends,
 
-We are developing Unity apps that use sensors like compass, gyroscope, and accelerometer. There are so many cheap Android devices out there that have these sensors but aren't accurate enough. We need to figure out a list of devices that we can support, and it's YMMV for the rest of the devices. We cannot practically buy every device that exists out there and support each and every one of them.
+I have been searching full-time for an entry-level Android Developer role for the last few months. I left my career in mechanical engineering (8+ years) to pursue this new field, but it has been very difficult to get any traction. I (barely) failed the Google interview as I attempted to do it both Java and Python. A foolish mistake. I have an app released on the Play Store and a solid resume. I have penetrated into the final round of interviews multiple times with a few companies, however they want more experience even at the junior level. I am supporting my family on savings from my previous career and time is running out. I don't know what else to do ...
 
-We think that market share stats by the device (not the manufacturer) will give us a good starting point to limit the number of devices we want to officially support. Since there is no such data available officially from Google or Apple, can anyone recommend a good source for this info? I suppose there are companies built around this kind of thing?
+Do you know any "feeder" programs that accept new grads (or career change like me)? I realize that Amazon, Facebook, etc. have similar interview styles to Google. I'm tentative to start those due to a one year penalty if I fail. Also, smaller companies are preferred as one the reasons I left mechanical engineering was the mind numbing slow pace of corporate giants.
 
-Or is there a better way of doing this?
+There must be something out there I am missing. I have talent, an app in the market, and a decade of engineering experience.
 
-I appreciate your input.
-## [11][End of Google Play Games Multiplayer](https://www.reddit.com/r/androiddev/comments/fkoer0/end_of_google_play_games_multiplayer/)
-- url: https://www.reddit.com/r/androiddev/comments/fkoer0/end_of_google_play_games_multiplayer/
+Any thoughts for an increasingly nervous new developer?
+## [11][Can't find my drawable, but it's definitely there and I've cleaned + invalidated the cache. Other ideas?](https://www.reddit.com/r/androiddev/comments/fla2z3/cant_find_my_drawable_but_its_definitely_there/)
+- url: https://www.reddit.com/r/androiddev/comments/fla2z3/cant_find_my_drawable_but_its_definitely_there/
 ---
-A few weeks ago I shared a video about using Firebase to create multiplayer game: [https://www.youtube.com/watch?v=nj-trslVFPc](https://www.youtube.com/watch?v=nj-trslVFPc)
+I was following [this tutorial on splash screens](https://android.jlelse.eu/right-way-to-create-splash-screen-on-android-e7f1709ba154), and my app keeps throwing a `NotFoundException: Drawable com.example.ktest:drawable/splash_background with resource ID #0x7f070077`. There seems to be something wrong with this part of my `res/values/styles.xml`:
 
-Now I want to share simple logic to connect devices that can be implemented in your own server: [https://www.youtube.com/watch?v=0Pg5s6VJOqI](https://www.youtube.com/watch?v=0Pg5s6VJOqI)
+    &lt;style name="SplashTheme" parent="Theme.AppCompat.NoActionBar"&gt;
+    &lt;item name="android:windowBackground"&gt;@drawable/splash_background&lt;/item&gt;
+&lt;/style&gt; 
 
-Both of these can help you migrate to new multiplayer system by the end of March.
-## [12][Help a noob keep his sanity](https://www.reddit.com/r/androiddev/comments/fkoa90/help_a_noob_keep_his_sanity/)
-- url: https://www.reddit.com/r/androiddev/comments/fkoa90/help_a_noob_keep_his_sanity/
+This `res/drawable/splash_background.xml` file definitely exists in that directory, and is [exactly the same as the tutorial file](https://raw.githubusercontent.com/AnkitSinhal/SplashScreen/master/app/src/main/res/drawable/splash_background.xml). If I change the value to `@drawable/ic_launcher_background` I get the a working splash screen (albeit with a different image).
+
+I've cleaned the project to regenerate [R.java](https://R.java), I've invalidated the cache, and I'm out of ideas. What's causing this problem?
+## [12][I've made a level that includes Illuminati logo, is this considered copyright using their logo there?](https://www.reddit.com/r/androiddev/comments/fl9aaw/ive_made_a_level_that_includes_illuminati_logo_is/)
+- url: https://i.redd.it/a866ewivimn41.jpg
 ---
-New to android development, was playing around with some code and came across a problem thats been driving me insane over the past couple days so I thought why not see if anyone else can make any sense of it.
 
-There's part of the code that's meant to send the users contact list to firebase when they open the app, and it creates a new child under their user in the real-time db with the list, but for some reason it only updates the list when I use the test accounts in my emulator and when I run the apk on my phone with normal accounts, everything else works, but it just doesn't make the new child with the list in firebase. I've checked the permissions, and they're all set to allow, but it just doesn't want to update the list.
-
-Does anyone have any suggestions as to why this may be happening? I just don't understand why it sends my emulator contact lists, but not my phone's. 
-All help is appreciated, tia

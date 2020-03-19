@@ -1,5 +1,107 @@
 # Kotlin
-## [1][can we use Spring with Kotlin/Native?](https://www.reddit.com/r/Kotlin/comments/fkn5ko/can_we_use_spring_with_kotlinnative/)
+## [1][Kotlin pattern matching with instanceof (the Java 14 way)](https://www.reddit.com/r/Kotlin/comments/fl9ry0/kotlin_pattern_matching_with_instanceof_the_java/)
+- url: https://www.reddit.com/r/Kotlin/comments/fl9ry0/kotlin_pattern_matching_with_instanceof_the_java/
+---
+In Java 14 we are now enabled to use pattern matching with `instanceof` expressions.
+e.g. on my code
+
+```
+if (psiVariableReferenceContext instanceof PsiExpressionList psiExpressionList &amp;&amp;
+    psiExpressionList.getContext() instanceof PsiMethodCallExpression psiMethodCallExpr &amp;&amp;
+    !isMethodParameterCharSequence(psiVariableReference, psiMethodCallExpr)) {
+  return false;
+}
+```
+
+Is there a similar Kotlin alternative?  
+Currently I need to re-cast the instance and call the getter a second time.
+
+```
+if (psiVariableReferenceContext is PsiExpressionList &amp;&amp;
+    psiVariableReferenceContext.context is PsiMethodCallExpression &amp;&amp;
+    !isMethodParameterCharSequence(
+      psiVariableReference,
+      psiVariable.context as PsiMethodCallExpression
+    )) {
+  return false
+}
+```
+## [2][How do you work with Network System Discovery? [Question]](https://www.reddit.com/r/Kotlin/comments/fl5yb6/how_do_you_work_with_network_system_discovery/)
+- url: https://www.reddit.com/r/Kotlin/comments/fl5yb6/how_do_you_work_with_network_system_discovery/
+---
+1. I am having a hard time checking whether or not [NSD](https://developer.android.com/training/connect-devices-wirelessly/nsd) is working or not. The resources online are scarce, slack isn't answering, documentation is well made but nothing past the bare minimum. All in all catastrophe... I am basically registering a service, discovering, and then I keep discovering myself on my emulators (I run 2 emulators at the same time). By myself I mean I discover the emulator I registered on and not the other....
+2.  Could someone explain a little bit what "service type" and "service name" are. As service type when registering equals to \_http.\_tcp NO DOT, and when listening to a protocol it's with A DOT at the end.  And an example for this with real machine (printer, PC, another phone). 
+3. Is there an easier way to work with 2 emulators without having to go into android studio and change the device everytime? Is there a way to split screen logcat and just have both emulators logcats open? (if not where can i ask for this feature?) Or is there another way to test an application that talks to another device. I mean you have to  have 2 emulators open?  
+
+
+Thank you for your time. I am stuck on this for like 3 or so days. It's been frustrating. The examples online are horrible and just a copy paste of the documentation.
+## [3][State-full sequences](https://www.reddit.com/r/Kotlin/comments/fl3nq7/statefull_sequences/)
+- url: https://www.reddit.com/r/Kotlin/comments/fl3nq7/statefull_sequences/
+---
+So here's the behaviour I want:
+
+```Kotlin
+val nums = sequence {
+    var n = 0
+    while (true) { yield(n++) }
+}
+
+nums.find { isPrime(it) } // 2
+nums.first()              // Want : 3 but I get 0
+nums.take(5).toList()     // Want : [4, 5, 6, 7, 8] but I get [0, 1, 2, 3, 4]
+```
+
+Any ideas on how I could do something like this?
+
+---
+
+Here's my actual code which essentially require a state-full sequence.
+
+Here's my actual code:
+```Kotlin
+// See 0 for setup.
+while (true) {
+    // See 1 for the logic that's implemented below (if sequences had state)
+    val data = (blockingQueuesLoopingSequence.take(numQueues) 
+        .find { it.peek() != null } ?: blockingQueuesLoopingSequence.first())
+        .get()
+    // Do stuff with data
+}
+```
+### 0
+Here i have a sequence that loops infinitely over a list of `blockingQueues`. 
+
+### 1
+Think of a Round-Robin scheduler, current position in the list 
+could be any particular queue which would be our state.  
+Say we are on the `m^th` queue and we have a total on `N` unique queues.
+
+From all Queues starting from position `m` (our state) looping back to `m-1th` queue.  
+Find the first queue that has something available. (Now state is m')
+
+If no such queue choose the first queue from current position 
+(which will be `m' = (m + N) mod N = m`)
+
+Call a blocking get on the chosen queue.
+
+Unfortunately, the state(`m`) of `blockingQueuesLoopingSequence` doesn't update and `m is always 0`.
+## [4][Equalizer type Progress Indicator](https://www.reddit.com/r/Kotlin/comments/fl6cz3/equalizer_type_progress_indicator/)
+- url: /r/androiddev/comments/fko6rs/equalizer_type_progress_indicator/
+---
+
+## [5][How can I pass different version of object without altering it as argument?](https://www.reddit.com/r/Kotlin/comments/fl6dom/how_can_i_pass_different_version_of_object/)
+- url: https://www.reddit.com/r/Kotlin/comments/fl6dom/how_can_i_pass_different_version_of_object/
+---
+I have a code like this
+
+val x = MyObject("first", "second")
+
+function1(x)
+
+function2(x)
+
+I want to send different version of x to function 1 but without actually altering it so function2 can have the first version. I have tried let, run, apply and also but couldn't get a solution.
+## [6][can we use Spring with Kotlin/Native?](https://www.reddit.com/r/Kotlin/comments/fkn5ko/can_we_use_spring_with_kotlinnative/)
 - url: https://www.reddit.com/r/Kotlin/comments/fkn5ko/can_we_use_spring_with_kotlinnative/
 ---
 Hi, we have some java business logic that we want to migrate to Kotlin and use as library on multiplatform. Spring is used in the java code, can we reuse it directly in the new library that will be also integrated in iOS/Andoird solutions?
@@ -7,7 +109,7 @@ Hi, we have some java business logic that we want to migrate to Kotlin and use a
 If we have to use Kotlin DI solution in the library, can it be mixed back with Spring-based java apps that would consume this new library?
 
 thanks!
-## [2][Good API design patterns to help imports be more seamless?](https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/)
+## [7][Good API design patterns to help imports be more seamless?](https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/)
 - url: https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/
 ---
 My web framework [Kweb](https://docs.kweb.io/) incorporates quite a sophisticated DSL involving a large number of quite short functions (often corresponding to HTML tags).
@@ -15,7 +117,7 @@ My web framework [Kweb](https://docs.kweb.io/) incorporates quite a sophisticate
 My instinct was to break these small functions up into different packages according to purpose, but this had the effect of relying much more heavily on IntelliJ to auto-import symbols when necessary.
 
 Is there a better pattern?  Should I just say "screw it" and put them all in `kweb.*` for ease of importing?
-## [3][I'm beginner I'm trying to make Tic Tac Toe game but when I press any button the app crashes and the device don't choose any button](https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/)
+## [8][I'm beginner I'm trying to make Tic Tac Toe game but when I press any button the app crashes and the device don't choose any button](https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/)
 - url: https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/
 ---
     
@@ -187,7 +289,7 @@ Is there a better pattern?  Should I just say "screw it" and put them all in `kw
     
     
     }
-## [4][MVIKotlin - new Kotlin Multiplatform framework for MVI](https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/)
+## [9][MVIKotlin - new Kotlin Multiplatform framework for MVI](https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/)
 - url: https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/
 ---
 Checkout it here: [https://github.com/arkivanov/MVIKotlin](https://github.com/arkivanov/MVIKotlin)
@@ -204,29 +306,7 @@ Features:
    * Multiplatform for all supported targets
    * Plug-and-play UI for Android and iOS
    * Export/import events for JVM and Android
-## [5][How brevity in Kotlin increases developers' product as compare to Java with example](https://www.reddit.com/r/Kotlin/comments/fk1k4s/how_brevity_in_kotlin_increases_developers/)
+## [10][How brevity in Kotlin increases developers' product as compare to Java with example](https://www.reddit.com/r/Kotlin/comments/fk1k4s/how_brevity_in_kotlin_increases_developers/)
 - url: https://www.vtnetzwelt.com/mobile/java-vs-kotlin/
----
-
-## [6][Which programming languages and libraries should I learn to become a complete kotlin android developer?](https://www.reddit.com/r/Kotlin/comments/fj35j3/which_programming_languages_and_libraries_should/)
-- url: https://www.reddit.com/r/Kotlin/comments/fj35j3/which_programming_languages_and_libraries_should/
----
-
-## [7][Any of you guys switched to Kotlin and then back to Java?](https://www.reddit.com/r/Kotlin/comments/fj6a2c/any_of_you_guys_switched_to_kotlin_and_then_back/)
-- url: /r/java/comments/fj24n8/any_of_you_guys_switched_to_kotlin_and_then_back/
----
-
-## [8][Starting a project, quick question on language](https://www.reddit.com/r/Kotlin/comments/fjciq0/starting_a_project_quick_question_on_language/)
-- url: https://www.reddit.com/r/Kotlin/comments/fjciq0/starting_a_project_quick_question_on_language/
----
-Hi, I'm about to start a project that involves managing files on devices such as my Android phone and my computer. I know I need to use something on the JVM and I'm trying to decide between just Java, Scala and kotlin, but if a different language would definitely be better than those feel free to suggest it. I know this is a Kotlin page but if possible please try to be unbiased. 
-
-Thanks in advance.
-## [9][From Apache Cordova to Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/fj4fuo/from_apache_cordova_to_kotlin_multiplatform/)
-- url: http://whereisdarran.com/2020/03/from-apache-cordova-to-kotlin-multiplatform/
----
-
-## [10][Kotlin data class builders](https://www.reddit.com/r/Kotlin/comments/fja3v4/kotlin_data_class_builders/)
-- url: https://www.rockandnull.com/kotlin-data-class-builders/
 ---
 

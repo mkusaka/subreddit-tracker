@@ -5,47 +5,51 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][I made a chess engine using only vanilla JS. Let me know what you think!](https://www.reddit.com/r/javascript/comments/fkaglg/i_made_a_chess_engine_using_only_vanilla_js_let/)
-- url: https://github.com/VanillaJSChess/VanillaJSChess.github.io
+## [2][WTF Wednesday (March 18, 2020)](https://www.reddit.com/r/javascript/comments/fkrx98/wtf_wednesday_march_18_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fkrx98/wtf_wednesday_march_18_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Inside Fiber: in-depth overview of the new reconciliation algorithm in React](https://www.reddit.com/r/javascript/comments/fl67ru/inside_fiber_indepth_overview_of_the_new/)
+- url: https://indepth.dev/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/
 ---
 
-## [3][Try Playwright an library to automate Chromium, Firefox and WebKit interactively in your browser](https://www.reddit.com/r/javascript/comments/fkpafz/try_playwright_an_library_to_automate_chromium/)
-- url: https://try.playwright.tech
+## [4][Get Involved: Open Source Healthcare Software](https://www.reddit.com/r/javascript/comments/fkrxi4/get_involved_open_source_healthcare_software/)
+- url: https://medium.com/@dannyrb/get-involved-open-source-healthcare-software-a5122c505ec0
 ---
 
-## [4][Javascript Proxies : Real world use cases](https://www.reddit.com/r/javascript/comments/fk5csj/javascript_proxies_real_world_use_cases/)
-- url: https://www.arbazsiddiqui.me/javascript-proxies-real-world-use-cases/
+## [5][Data validation using functions interfaces](https://www.reddit.com/r/javascript/comments/fl7fif/data_validation_using_functions_interfaces/)
+- url: https://github.com/neuledge/funval
 ---
 
-## [5][GitHub acquires NPM](https://www.reddit.com/r/javascript/comments/fjodsi/github_acquires_npm/)
-- url: https://github.blog/2020-03-16-npm-is-joining-github/
+## [6][Live Book Writing Stream with Roy Osherove: Art of Unit Testing 3rd Edition in JavaScript](https://www.reddit.com/r/javascript/comments/fl6yko/live_book_writing_stream_with_roy_osherove_art_of/)
+- url: https://osherove.com
 ---
 
-## [6][Dealing with async functions and resolving them all with Promise.all()](https://www.reddit.com/r/javascript/comments/fkkzry/dealing_with_async_functions_and_resolving_them/)
-- url: https://blog.piotrnalepa.pl/2020/03/18/dealing-with-promise-all-and-a-bunch-of-async-functions/
+## [7][ReRE.js: Re-implementation of JavaScript (ECMA-262) RegExp written in TypeScript](https://www.reddit.com/r/javascript/comments/fl9vl4/rerejs_reimplementation_of_javascript_ecma262/)
+- url: https://github.com/MakeNowJust/rerejs
 ---
 
-## [7][Microsoft buys NPM to integrate it with Github.](https://www.reddit.com/r/javascript/comments/fkkfjv/microsoft_buys_npm_to_integrate_it_with_github/)
-- url: https://www.zdnet.com/article/microsoft-buys-javascript-developer-platform-npm-plans-to-integrate-it-with-github/
+## [8][Built a simple light weight Node.js Boilerplate with OAuth Integration](https://www.reddit.com/r/javascript/comments/fl8w17/built_a_simple_light_weight_nodejs_boilerplate/)
+- url: https://github.com/i-break-codes/red
 ---
 
-## [8][Remaking Twitter Emoji Finder UI in vanilla (categorizes 3200 emojis with 1 sprite sheet)](https://www.reddit.com/r/javascript/comments/fkk227/remaking_twitter_emoji_finder_ui_in_vanilla/)
-- url: https://www.javascriptteacher.com/remake-twitter-emoji-ui.html?r
+## [9][How to use the new Nullish Coalescing operator in JavaScript](https://www.reddit.com/r/javascript/comments/fl5ob3/how_to_use_the_new_nullish_coalescing_operator_in/)
+- url: https://medium.com/javascript-in-plain-english/nullish-coalescing-operator-for-javascript-8f502b970ba8
 ---
 
-## [9][I wrote an article on GraphQL. It's corona time so why not learn something new?](https://www.reddit.com/r/javascript/comments/fkjzkq/i_wrote_an_article_on_graphql_its_corona_time_so/)
-- url: https://medium.com/@saswatamcode/get-up-and-running-with-graphql-7f86e30b2334
+## [10][JavaScript Pop Quiz](https://www.reddit.com/r/javascript/comments/fl4dce/javascript_pop_quiz/)
+- url: https://github.com/WeiChiaChang/js-pop-quiz
 ---
 
-## [10][Square Brackets are the Enemy (Prototype Poisoning)](https://www.reddit.com/r/javascript/comments/fk41gf/square_brackets_are_the_enemy_prototype_poisoning/)
-- url: https://hueniverse.com/square-brackets-are-the-enemy-ff5b9fd8a3e8
+## [11][Building Vue Enterprise Application: Part 1. Entities](https://www.reddit.com/r/javascript/comments/fl9us0/building_vue_enterprise_application_part_1/)
+- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-1-entities-808077f3d2e7
 ---
 
-## [11][[AskJS] AP Com Sci Principles App](https://www.reddit.com/r/javascript/comments/fkiyf1/askjs_ap_com_sci_principles_app/)
-- url: https://www.reddit.com/r/javascript/comments/fkiyf1/askjs_ap_com_sci_principles_app/
+## [12][Introducing Swach - a Cross-Platform Color Management Tool Written in Ember.js and Electron](https://www.reddit.com/r/javascript/comments/fktd4g/introducing_swach_a_crossplatform_color/)
+- url: https://swach.io/
 ---
-Hi everyone, I take APCSP and am currently remote learning, so accessing my teacher for help is a lot more difficult. I am currently coding for a tic-tac-toe game but am having trouble. Whenever the user clicks on the screen, only X’s appear, regardless of the function I have which should make O’s appear when it is player 2’s turn. Any help would be appreciated!!
 
-
-
-https://studio.code.org/projects/applab/7E1HEbe-aePdEAaQ1o_GqfLj5P7buo4z_Ci03lPosoE?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf

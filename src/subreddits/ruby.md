@@ -1,135 +1,93 @@
 # ruby
-## [1][Lies, Damned Lies, and Averages: Perc50, Perc95 explained for Programmers](https://www.reddit.com/r/ruby/comments/fkaja8/lies_damned_lies_and_averages_perc50_perc95/)
-- url: https://schneems.com/2020/03/17/lies-damned-lies-and-averages-perc50-perc95-explained-for-programmers/
+## [1][Build a location-aware WhatsApp weather bot with Ruby, Sinatra and Twilio](https://www.reddit.com/r/ruby/comments/fl5lri/build_a_locationaware_whatsapp_weather_bot_with/)
+- url: https://www.twilio.com/blog/location-aware-whatsapp-bot-ruby-sinatra-twilio
 ---
 
-## [2][Jason Gedge, Staff Production Engineer at Shopify - The Rails with Jason Podcast](https://www.reddit.com/r/ruby/comments/fk6rbh/jason_gedge_staff_production_engineer_at_shopify/)
-- url: https://www.codewithjason.com/rails-with-jason-podcast/jason-gedge/
+## [2][Kiba-Tips: Exploding rows from the lowly block transform](https://www.reddit.com/r/ruby/comments/fkywme/kibatips_exploding_rows_from_the_lowly_block/)
+- url: https://www.timtilberg.com/kiba-tips/2020/03/18/yield-multiple-rows-with-a-block-transform-in-kiba.html
 ---
 
-## [3][Spring Cleaning: Tidying up your Rails codebase](https://www.reddit.com/r/ruby/comments/fk5vco/spring_cleaning_tidying_up_your_rails_codebase/)
-- url: https://boringrails.com/articles/spring-cleaning/
+## [3][The Ruby Blend Episode 5: Joined by Chris Oliver](https://www.reddit.com/r/ruby/comments/fl82qg/the_ruby_blend_episode_5_joined_by_chris_oliver/)
+- url: https://www.reddit.com/r/ruby/comments/fl82qg/the_ruby_blend_episode_5_joined_by_chris_oliver/
+---
+In this episode, Nate and Andrew talk with guest, Chris Oliver, creator of GoRails and HatchBox. He worked with an astrophysicist using Rails to sync data between various applications and CMS systems. The guys go in-depth about GoRails, HatchBox, videos Chris has made (and there are  
+MANY), IRC Bots, and many other interesting things. There may even be a  
+funny story or two from the guys.
+
+Listen on your favorite podcast player or on our [website](https://the-ruby-blend.fireside.fm/5).
+## [4][Dig'gin through hashes and arrays in Ruby](https://www.reddit.com/r/ruby/comments/fl3d67/diggin_through_hashes_and_arrays_in_ruby/)
+- url: https://prathamesh.tech/2020/03/18/diggin-through-hashes-and-arrays-in-ruby/
 ---
 
-## [4][Understanding delegate in Ruby on Rails](https://www.reddit.com/r/ruby/comments/fk1fte/understanding_delegate_in_ruby_on_rails/)
-- url: https://medium.com/@merajulislam/understanding-delegate-in-ruby-on-rails-i-wish-i-knew-before-5edd341bad47?source=friends_link&amp;sk=c5905885f140221f5c480d264ae2152d
+## [5][Generating OR separated string from an array](https://www.reddit.com/r/ruby/comments/fl92uu/generating_or_separated_string_from_an_array/)
+- url: https://www.reddit.com/r/ruby/comments/fl92uu/generating_or_separated_string_from_an_array/
+---
+If I have an array like \[1, 3\]  I wish to build a string as 
+
+    "id: 1 OR id: 3"
+
+Could you tell me what the cleanest way to do it is in ruby? 
+
+I was thinking of MAP and JOIN but it wasn't looking clean when i had to avoid the last OR
+## [6][Any pitfalls to note when migrating from Sprockets to Webpack(er)?](https://www.reddit.com/r/ruby/comments/fl2jho/any_pitfalls_to_note_when_migrating_from/)
+- url: https://www.reddit.com/r/ruby/comments/fl2jho/any_pitfalls_to_note_when_migrating_from/
+---
+I'm new to Webpack (and Rails) so everything is kinda confusing to me.
+
+From what I know from reading up on it is that Sprockets is a simple file concatenator, but Webpack is an actual dependency manager.
+
+The code I'm working with has files that assumes certain variables will be available after the concatenation. However, in webpack you would have to explicitly import those variables since the scope of a module is its dependencies.
+
+I came across this article on global variables with Webpack which is really helpful:
+
+https://rossta.net/blog/from-sprockets-to-webpack.html#importing-libraries-and-global-scope
+## [7][Facade Pattern in Rails for Performance and Maintainability](https://www.reddit.com/r/ruby/comments/fkq7yv/facade_pattern_in_rails_for_performance_and/)
+- url: https://blog.appsignal.com/2020/03/18/facade-pattern-in-rails-for-performance-and-maintainability.html
 ---
 
-## [5][Clean up downloads folder(My 3rd month of studying ruby)](https://www.reddit.com/r/ruby/comments/fk3x3a/clean_up_downloads_foldermy_3rd_month_of_studying/)
-- url: https://www.reddit.com/r/ruby/comments/fk3x3a/clean_up_downloads_foldermy_3rd_month_of_studying/
+## [8][If I halted an RVM install, how do I clean it up?](https://www.reddit.com/r/ruby/comments/fku2ca/if_i_halted_an_rvm_install_how_do_i_clean_it_up/)
+- url: https://www.reddit.com/r/ruby/comments/fku2ca/if_i_halted_an_rvm_install_how_do_i_clean_it_up/
 ---
-After 3 month studying ruby 4 hours in week I finally made something useful.
+Hi, i tried using RVM to install ruby, then it heated up my computer, and I don't actually need to install Ruby again, so I stopped the installation while it's at the compilation step. How do I clean up in order to now waste any space for the partial installation?
 
-[https://github.com/brian7346/Clean-downloads/blob/master/cleanup.rb](https://github.com/brian7346/Clean-downloads/blob/master/cleanup.rb)
+I don't really mind installing the dependencies, since they're small and I might end up needing them anyway. But I want to remove the downloaded files specifically for the particular ruby version. I already removed everything inside */.rvm/rubies/ruby-2.7.0, are there anything else?*
 
-Here's my program that clean my "Downloads" folder. It takes about 2-3 hours to make it.
+Here's the output from the installation:
 
-https://preview.redd.it/jjr3bpoi18n41.png?width=324&amp;format=png&amp;auto=webp&amp;s=37c8389fe3e4fef8ba6c8bc1be75d9149ae3eb5c
+*Updating system................................................................|*
 
-https://preview.redd.it/vauytioi18n41.png?width=320&amp;format=png&amp;auto=webp&amp;s=60e4fdc3921efed4d309d4dd4c53885e7ad2d5dc
-## [6][Corona Helper](https://www.reddit.com/r/ruby/comments/fkdom8/corona_helper/)
-- url: https://www.reddit.com/r/ruby/comments/fkdom8/corona_helper/
+*Installing required packages: autoconf, automake, libtool, pkg-config, coreutils, libyaml, libksba, readline, zlib,* [*openssl@1.1*](mailto:openssl@1.1)*.................*
+
+*Certificates bundle '/usr/local/etc/openssl@1.1/cert.pem' is already up to date.*
+
+*Requirements installation successful.*
+
+*Installing Ruby from source to: /Users/user/.rvm/rubies/ruby-2.7.0, this may take a while depending on your cpu(s)...*
+
+*ruby-2.7.0 - #downloading ruby-2.7.0, this may take a while depending on your connection...*
+
+*% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current*
+
+*Dload  Upload   Total   Spent    Left  Speed*
+
+*100 14.0M  100 14.0M    0     0  1447k      0  0:00:09  0:00:09 --:--:-- 1646k*
+
+*ruby-2.7.0 - #extracting ruby-2.7.0 to /Users/user/.rvm/src/ruby-2.7.0.....*
+
+*ruby-2.7.0 - #configuring.....................................................................|*
+
+*ruby-2.7.0 - #post-configuration.*
+
+*ruby-2.7.0 - #compiling.......................................\^*C**Error running '\_\_rvm\_make -j4',**
+
+**please read /Users/user/.rvm/log/1584553515\_ruby-2.7.0/make.log**
+
+**There has been an error while running make. Halting the installation.**
+## [9][It’s been a while... but a NEW RUBY VERSION????](https://www.reddit.com/r/ruby/comments/fl4ijx/its_been_a_while_but_a_new_ruby_version/)
+- url: https://www.reddit.com/r/ruby/comments/fl4ijx/its_been_a_while_but_a_new_ruby_version/
 ---
-Hello all,
-
-Lots of people are having problems due to the corona virus. There are lots of people who are willing to help. I was hoping that something could be done to connect them efficiently so we can all get through Corona. 
-
-Here is my idea for an app: 
-
-	* On one side a user can post their need (such as: I am out of pasta/nappies and there are none in the store. Could someone check on my grandma, I have a burst pipe but there is no one around to help) along with their location.
-	* On the other side people who are willing to help can post their location and info such if they have a car or extra supplies
-	* Both users will post if they have been exposed to Corona or not. (this could go on for 12-18 months so people can show if they already have immunity etc)
-	* The users can message each other.
-	* This can be implemented worldwide using post codes/zip codes etc.
-	* Some things like safeguarding and protecting vulnerable people from exploitation will need to be worked out - but I'm sure solutions can be found.
-
-
-
-To build this we will need:
-	* Backend Developers (Python/Ruby etc)
-	* Frontend (Javascript)
-	* IOS developers
-	* Android
-	* UX
-	* DevOps
-	* Project Management
-	* Anyone else with skills they can bring to the table.
-
-
-
-I've set up a discord server https://discord.gg/YQgZvfr - please join if you have some time to spare and would like to help.
-
-(if you could upvote and comment on this post to keep it bumped it would be most apprecaited).
-## [7][Unable to rename file...](https://www.reddit.com/r/ruby/comments/fk97is/unable_to_rename_file/)
-- url: https://www.reddit.com/r/ruby/comments/fk97is/unable_to_rename_file/
+I haven’t programmed in a while because of my new job, and I’m very VERY rusty now, but from what I hear, a new Ruby version is out and I can’t wait to get back into it. Anything I need to get back in? I might start doing the back end with ruby for my portfolio.
+## [10][Rails - Allows to specify schema cache path in database configuration file](https://www.reddit.com/r/ruby/comments/fkuzs4/rails_allows_to_specify_schema_cache_path_in/)
+- url: https://blog.saeloun.com/2020/03/18/rails-schema-cache-path-config
 ---
-f = [File.open](https://File.open)("test.txt" , 'w+')
 
-&amp;#x200B;
-
-    f.write("hello ruby")
-    
-    f.close
-    
-    
-    
-    f =  File.open("test.txt" , 'a+')
-    
-    
-    
-    f.write(". happy bday")
-    
-    	
-    
-    f.close
-    
-    
-    
-    f = File.open("test.txt" , 'a+')
-    
-    
-    
-    content = f.sysread(7)
-    
-    		
-    
-    puts content
-    
-    		
-    
-    f.syswrite("fresh")	
-    
-    f = File.open("test.txt" , 'r')			
-    
-    print f.read
-    f.close
-    
-    File.rename("test.txt" , "new.txt")
-    
-    f = File.open("new.txt" , r)
-    
-    print f.read
-
-when I try to rename the file , the compiler throws an error-
-
-in \`rename': Permission denied @ rb\_file\_s\_rename - (test.txt, new.txt) (Errno::EACCES)
-
-What can be the possible solution?
-## [8][For everyone (yes, both of you) who's planning to make a Telegram bot with Ruby](https://www.reddit.com/r/ruby/comments/fjqpv0/for_everyone_yes_both_of_you_whos_planning_to/)
-- url: https://www.reddit.com/r/ruby/comments/fjqpv0/for_everyone_yes_both_of_you_whos_planning_to/
----
-&amp;#x200B;
-
-[Example of how this is useful](https://preview.redd.it/w4f8klc533n41.png?width=1051&amp;format=png&amp;auto=webp&amp;s=a612f6e7f02fa1d0a8e8aa4afab1418fe1ba3e2f)
-
-I've been learning Ruby for several months now, and making my own Telegram bot with Ruby (using [telegram-bot gem](https://github.com/atipugin/telegram-bot-ruby)). These are helpers I've built during that time to help myself with that. I'm not a professional developer (yet :3), so the choices in the structure and the code itself might seem questionable. I don't feel like building a full-fledged gem with it, so I'll just leave a link:  [https://github.com/bulgakke/telegram\_bot\_helpers](https://github.com/bulgakke/telegram_bot_helpers)
-
-Even if you feel you don't need it and you can do it better than me, or you can't bother reading someone else's home project, just take a look and maybe you'll better understand how to encapsulate stuff while working with Telegram Bot API
-## [9][Remote work for Ruby?](https://www.reddit.com/r/ruby/comments/fjmo4d/remote_work_for_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/fjmo4d/remote_work_for_ruby/
----
-Does anyone know where I can get remote work for ruby. Ideally small jobs that would pay about $30-50
-## [10][gets.chomp waits for input before rest of the code runs](https://www.reddit.com/r/ruby/comments/fjud5z/getschomp_waits_for_input_before_rest_of_the_code/)
-- url: https://www.reddit.com/r/ruby/comments/fjud5z/getschomp_waits_for_input_before_rest_of_the_code/
----
-Is this a common issue? I have a gets.chomp towards the end but it won’t run the preceding code (most puts statements) until I enter a value for the gets statements. Is this a normal problem to run into?

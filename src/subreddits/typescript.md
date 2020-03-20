@@ -22,33 +22,180 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][The official TypeScript website's certificate expired today](https://www.reddit.com/r/typescript/comments/fl3ion/the_official_typescript_websites_certificate/)
+## [2][Bitwise expression computed property name in class?](https://www.reddit.com/r/typescript/comments/flk7j4/bitwise_expression_computed_property_name_in_class/)
+- url: https://www.reddit.com/r/typescript/comments/flk7j4/bitwise_expression_computed_property_name_in_class/
+---
+I can't figure out how to use a bitwise expression as a computed property name in a TypeScript class (either through type literal, const assertion, or other means).
+
+I'm converting legacy code to TypeScript, and this code uses integers that are powers of 2 as class identifiers. This enables using bitwise operations and computed property names to call unique functions for specific class/class interactions. For example, in JS:
+
+    Dog.type = 2
+    Cat.type = 4
+    Interaction.prototype[Dog.type | Cat.type] = () =&gt; console.log('dog and cat')
+
+Which is equivalent to:
+
+    Interaction.prototype[6] = () =&gt; console.log('dog and cat')
+
+It's perfectly valid JavaScript, but using a bitwise expression as a computed property name in TypeScript gives me an error:
+
+    A computed property name in a class property declaration must refer to an expression whose type is a literal type or a 'unique symbol' type.
+
+Both of the values are being used as a literal type - is there some way to tell the compiler that the resulting value is also a literal type?
+
+EDIT: There is a workaround that requires reassignment and literal assertion:
+
+    const test = (Dog.type | Cat.type) as 6
+    Interaction.prototype[test] = () =&gt; console.log('dog and cat')
+
+but the same workaround doesn't work with const assertion:
+
+    const test = (Dog.type | Cat.type) as const
+
+gives an error:
+
+    A 'const' assertions can only be applied to references to enum members, or string, number, boolean, array, or object literals.
+
+which is very inconvenient, because I'd need to remember to update the literal assertion if a class's type id ever changes.
+## [3][Building Vue Enterprise Application: Part 1. Entities](https://www.reddit.com/r/typescript/comments/fljt1k/building_vue_enterprise_application_part_1/)
+- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-1-entities-808077f3d2e7
+---
+
+## [4][The official TypeScript website's certificate expired today](https://www.reddit.com/r/typescript/comments/fl3ion/the_official_typescript_websites_certificate/)
 - url: https://i.redd.it/n740bvlzyjn41.png
 ---
 
-## [3][Why we chose Typescript for the Hasura Console](https://www.reddit.com/r/typescript/comments/fl74hh/why_we_chose_typescript_for_the_hasura_console/)
+## [5][Inferring types with a key of a type object in typescript](https://www.reddit.com/r/typescript/comments/flkk9l/inferring_types_with_a_key_of_a_type_object_in/)
+- url: https://www.reddit.com/r/typescript/comments/flkk9l/inferring_types_with_a_key_of_a_type_object_in/
+---
+So i have a type and I would like to dynamically update its fields based on a key value I pass into a function. However, the way I would like to do it (brokenFunction) is giving me an error on the assignment: Type '34' is not assignable to type 'never' and Type '34' is not assignable to type 'never'. workingFunction works but is not as handy. Does anyone have a way to make this work? I'm guessing it involves generics but I still dont understand why the type guards arent working.....
+
+````
+interface Todo {
+  id: number;
+  text: string;
+}
+
+const todo = {
+  id: 1,
+  text: "Buy milk",
+};
+
+
+function brokenFunction(x: Todo, field: keyof Todo): void {
+  if (typeof field === 'number') {
+    x[field] = 34
+  } else if (typeof field === 'string') {
+    x[field] = 'something else'
+  }
+}
+
+
+function workingFunction(x: Todo, field: keyof Todo): void {
+  if (field == 'id') {
+    x[field] = 2345
+  } else if (field == 'text') {
+    x[field] = 'asdfsf'
+  }
+}
+````
+playground [link][1]
+
+
+  [1]: https://www.typescriptlang.org/play/?ssl=28&amp;ssc=2&amp;pln=1&amp;pc=1#code/FASwdgLgpgTgZgQwMZQAQBUD2ATTqDewqqI2AXKmAK4C2ARrANxGrQAeEFAzhDOAObMAvsGBJMYHqxx4AvARakKARgA0Ldp1QAiAEJUAnqhogANgGtt6oc1FwqYJBBATUdGJnNQwAMQdOXMAAKNgosXFVUOBAoU3JULwNMOAwZAEoKADdMUgViEBSgiAMAByhkqJi41Fla1AByanpYerS84lQ2AG1o2OwAXRrUAGYAFhYhVFiuNALUItLylN7q2vl6nj4wflb24m6VgaGNzBooCAALASnTGfqJ4BE7f2dXAHdMGHMBP0dX4NCqQilT6FESFXCmAyqGyuUI%20UKhxq61Iu3hHQOVSO8gATGMAKwTG4zEiIrHIhqaNEsfY9LGDdYILjYOBcOD3YgiERAA
+## [6][A typesafe, in-memory database implementation for TypeScript](https://www.reddit.com/r/typescript/comments/flbbip/a_typesafe_inmemory_database_implementation_for/)
+- url: https://github.com/hoppinger/TypeScript-typesafe-relational-processor/blob/master/Article/article.md
+---
+
+## [7][How do I specify the return type here?](https://www.reddit.com/r/typescript/comments/flhu5c/how_do_i_specify_the_return_type_here/)
+- url: https://www.reddit.com/r/typescript/comments/flhu5c/how_do_i_specify_the_return_type_here/
+---
+Hello,  
+
+
+I have the following code:  
+```
+interface SomeInterface&lt;T&gt; {
+body : T;
+randomFunction: (field: keyof T) =&gt; typeof field;
+}
+```
+
+I want randomFunction to receive a field from T and it should return a value with the type of the field. So for example if T is:
+```
+{
+field1: string;
+field2: number;
+}
+```
+Then randomFunction when calling field1 should return string.
+
+Is my function type correct?
+
+Thank you in advance!
+## [8][I made a React UI Library with a focus on a minimalist design](https://www.reddit.com/r/typescript/comments/fleasg/i_made_a_react_ui_library_with_a_focus_on_a/)
+- url: https://github.com/ericm/uniui
+---
+
+## [9][Why we chose Typescript for the Hasura Console](https://www.reddit.com/r/typescript/comments/fl74hh/why_we_chose_typescript_for_the_hasura_console/)
 - url: https://hasura.io/blog/why-we-chose-typescript-for-hasura-console/
 ---
 
-## [4][GitHub launched their official app for Android and iOS](https://www.reddit.com/r/typescript/comments/fl67rh/github_launched_their_official_app_for_android/)
-- url: https://innovativebeast.com/github-app-guide/
+## [10][How to make instance of class?](https://www.reddit.com/r/typescript/comments/flbem5/how_to_make_instance_of_class/)
+- url: https://www.reddit.com/r/typescript/comments/flbem5/how_to_make_instance_of_class/
 ---
+suppose i have 2 classes.
 
-## [5][How to safely parse JSON?](https://www.reddit.com/r/typescript/comments/fkwxi0/how_to_safely_parse_json/)
-- url: https://www.reddit.com/r/typescript/comments/fkwxi0/how_to_safely_parse_json/
----
-Hello,
+&gt;//  User model  
+&gt;  
+&gt;export class User{  
+&gt;  
+&gt;name: string;  
+&gt;  
+&gt;car: Car  
+&gt;  
+&gt;}  
+&gt;  
+&gt;// Car Model  
+&gt;  
+&gt;export class Car{  
+&gt;  
+&gt;brand: string  
+&gt;  
+&gt;}
 
-I want to parse a JSON from the server and convert it to my model.
+&amp;#x200B;
 
-Of course, I can use `JSON.parse` in combination with a model interface, but the problem is that I should also check if the keys of the JSON actually exist and if they match the actual types because, of course, one can't fully trust that what is received as always correct.
+if i want to make a new instance of user and assign values to it, it is pretty simple.
 
-How I would go about this is by creating a function that tells if the object is an instance of that particular model where each key would be checked against undefined and also verify its `typeof`.
+&gt;user:User = new User();  
+&gt;  
+&gt;[user.name](https://user.name) = 'John Doe'
 
-How do you usually handle the creation of models in TypeScript?
+&amp;#x200B;
 
-Thanks!
-## [6][Important Rules For Writing Idiomatic TypeScript](https://www.reddit.com/r/typescript/comments/fl59bk/important_rules_for_writing_idiomatic_typescript/)
+However if i want to also assign the car i should do the following.
+
+&gt;car:Car = new Car();  
+&gt;  
+&gt;car.brand = 'BMW'  
+&gt;  
+&gt;user:User = new User();  
+&gt;  
+&gt;[user.car](https://user.car) =  car;
+
+&amp;#x200B;
+
+My problem is i have a class that has many attributes that are models, i don't to instantiate a car each time, i have the value of the car i want to assign it directly, is there a way ?
+
+&gt;// i want something like this  
+&gt;  
+&gt;user:User = new User();  
+&gt;  
+&gt;[user.name](https://user.name) = nameIGotFromaForm;  
+&gt;  
+&gt;[user.car](https://user.car) = carIGotFromaForm;
+## [11][Important Rules For Writing Idiomatic TypeScript](https://www.reddit.com/r/typescript/comments/fl59bk/important_rules_for_writing_idiomatic_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/fl59bk/important_rules_for_writing_idiomatic_typescript/
 ---
  
@@ -170,82 +317,3 @@ By simply specifying the index signature return values, we’re able to solve ou
 ## Conclusion-
 
 TypeScript is a great way to write type-safe JavaScript, yet you need to do it right. It’s possible to write TypeScript such that just causes headaches with no real benefit, yet fortunately, that can be easily solved by taking the time to learn the suddenly appearing issues in the language.
-## [7][Data validation using functions interfaces](https://www.reddit.com/r/typescript/comments/fksft0/data_validation_using_functions_interfaces/)
-- url: https://github.com/neuledge/funval
----
-
-## [8][Do I need both the @types modules, and the normal module?](https://www.reddit.com/r/typescript/comments/fkmpw3/do_i_need_both_the_types_modules_and_the_normal/)
-- url: https://www.reddit.com/r/typescript/comments/fkmpw3/do_i_need_both_the_types_modules_and_the_normal/
----
-Hey, I know this may seem like a silly question, but I'm brand new to TS, and a bit confused about this.
-
-I have it so that my typescript compiles into javascript in a dist folder, where a copy of the node_modules folder is placed.
-
-The server then runs out of dist, and I noticed that, despite me using @types modules exclusively, the javascript compiled errors when I do not have the non @types module installed.
-
-For example, I have a module @types/winston installed, so I uninstalled the normal winston module, and the entire project ceased to function. Typescript of course gives no errors about this, as it's the javascript it compiled causing the issues.
-
-Is this normal behavior, or behavior I could fix?
-## [9][Curveball — March updates](https://www.reddit.com/r/typescript/comments/fkmcuk/curveball_march_updates/)
-- url: https://medium.com//curveball-march-updates-10e0ea96f808?source=friends_link&amp;sk=10a5292d65d01264385fcd2eaa89e0d2
----
-
-## [10][Curveball - Starter template, CLI colors and Content-Negotiation](https://www.reddit.com/r/typescript/comments/fkim3o/curveball_starter_template_cli_colors_and/)
-- url: https://evertpot.com/curveball-march-updates/
----
-
-## [11][Bring some structure to your file and directory names with ls-lint](https://www.reddit.com/r/typescript/comments/fk4rc3/bring_some_structure_to_your_file_and_directory/)
-- url: https://www.reddit.com/r/typescript/comments/fk4rc3/bring_some_structure_to_your_file_and_directory/
----
-Hey, worked on this a couple of weeks:
-
-GitHub: [ls-lint](https://github.com/loeffel-io/ls-lint)
-
-From time to time its hard to keep a clean naming structure in your projects. [ls-lint](https://github.com/loeffel-io/ls-lint) would solves this issue easily for all of your files and directories. With a simple .ls-lint.yml file, ls-lint makes sure that all your files are at the right place.
-
-**Benefits:**
-
-\- Works for directory and file names (all extensions supported)
-
-\- Incredibly fast
-
-\- Full unicode support
-
-\- Almost zero third-party dependencies (only go-yaml)
-
-**Example &amp; How-to (vue.js)**
-
-    # .ls-lint.yml
-    
-    ls:
-      .dir: regex:[a-z0-9\-]+
-      .js: kebab-case
-      .css: kebab-case
-      .html: kebab-case
-      .json: kebab-case
-      .ts: kebab-case
-      .sh: kebab-case
-      .dev.js: kebab-case
-      .prod.js: kebab-case
-      .d.ts: kebab-case
-      .vdom.js: kebab-case
-      .spec.js: kebab-case
-    
-      dist:
-        .js: point.case
-    
-      benchmarks/ssr:
-        .js: camelCase
-    
-    ignore:
-      - test
-      - benchmarks/dbmon/ENV.js
-      - .babelrc.js
-      - .eslintrc.js
-      - .github
-      - .circleci
-      - .git
-
-Would love to get some feedback :-)
-
-Pull requests are welcome!

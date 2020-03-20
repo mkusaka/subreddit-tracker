@@ -1,50 +1,50 @@
 # all
 ## androiddev
-### [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/fjkdhu/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/fjkdhu/weekly_whos_hiring_thread/
+### [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/flud0f/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/flud0f/weekly_anything_goes_thread/
 ### [2][Weekly Questions Thread - March 16, 2020](https://www.reddit.com/r/androiddev/comments/fjj4qu/weekly_questions_thread_march_16_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/fjj4qu/weekly_questions_thread_march_16_2020/
-### [3][And that's somehow my fault](https://www.reddit.com/r/androiddev/comments/fl7jq0/and_thats_somehow_my_fault/)
+### [3][Low number of installs from last 15 days (since 5th march). I just wanted to know that its happening with my developer account or all developers are getting this issue or maybe this is due to coronavirus as people are panicking and not interested in checking out new apps.](https://www.reddit.com/r/androiddev/comments/fltkdj/low_number_of_installs_from_last_15_days_since/)
+- url: https://www.reddit.com/r/androiddev/comments/fltkdj/low_number_of_installs_from_last_15_days_since/
+### [4][Android Studio 4.0 Beta 3 available](https://www.reddit.com/r/androiddev/comments/flh28d/android_studio_40_beta_3_available/)
+- url: https://androidstudio.googleblog.com/2020/03/android-studio-40-beta-3-available.html
+### [5][And that's somehow my fault](https://www.reddit.com/r/androiddev/comments/fl7jq0/and_thats_somehow_my_fault/)
 - url: https://i.redd.it/y12rfgohrln41.png
-### [4][Deprecated onActivityCreated() on Fragment 1.3 Alpha 02](https://www.reddit.com/r/androiddev/comments/fl3du6/deprecated_onactivitycreated_on_fragment_13_alpha/)
-- url: https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha02
-### [5][What libraries do you hate the most and why?](https://www.reddit.com/r/androiddev/comments/fl8bmt/what_libraries_do_you_hate_the_most_and_why/)
-- url: https://www.reddit.com/r/androiddev/comments/fl8bmt/what_libraries_do_you_hate_the_most_and_why/
-### [6][Native Dependencies in Android Studio 4.0](https://www.reddit.com/r/androiddev/comments/fl99pb/native_dependencies_in_android_studio_40/)
-- url: https://android-developers.googleblog.com/2020/02/native-dependencies-in-android-studio-40.html
-### [7][Android 11: Developer Preview 2](https://www.reddit.com/r/androiddev/comments/fkt2ts/android_11_developer_preview_2/)
-- url: https://android-developers.googleblog.com/2020/03/android-11-developer-preview-2.html?
-### [8][How can I use custom and default SSL certificate simultaneously in app](https://www.reddit.com/r/androiddev/comments/fl7jjm/how_can_i_use_custom_and_default_ssl_certificate/)
-- url: https://www.reddit.com/r/androiddev/comments/fl7jjm/how_can_i_use_custom_and_default_ssl_certificate/
-### [9][Question about minSdkVersion and Play Store publishing](https://www.reddit.com/r/androiddev/comments/fl87wq/question_about_minsdkversion_and_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/fl87wq/question_about_minsdkversion_and_play_store/
-### [10][Desperately searching for entry-level Android Developer position](https://www.reddit.com/r/androiddev/comments/fl0qqv/desperately_searching_for_entrylevel_android/)
-- url: https://www.reddit.com/r/androiddev/comments/fl0qqv/desperately_searching_for_entrylevel_android/
-### [11][Can't find my drawable, but it's definitely there and I've cleaned + invalidated the cache. Other ideas?](https://www.reddit.com/r/androiddev/comments/fla2z3/cant_find_my_drawable_but_its_definitely_there/)
-- url: https://www.reddit.com/r/androiddev/comments/fla2z3/cant_find_my_drawable_but_its_definitely_there/
-### [12][I've made a level that includes Illuminati logo, is this considered copyright using their logo there?](https://www.reddit.com/r/androiddev/comments/fl9aaw/ive_made_a_level_that_includes_illuminati_logo_is/)
-- url: https://i.redd.it/a866ewivimn41.jpg
+### [6][How do you work with Network System Discovery?](https://www.reddit.com/r/androiddev/comments/flr3py/how_do_you_work_with_network_system_discovery/)
+- url: https://www.reddit.com/r/androiddev/comments/flr3py/how_do_you_work_with_network_system_discovery/
+### [7][X-post: New data report: The Impact of a Nationwide Quarantine on App Store Downloads - COVID-19 in Italy : AppBusiness](https://www.reddit.com/r/androiddev/comments/flp52t/xpost_new_data_report_the_impact_of_a_nationwide/)
+- url: https://www.reddit.com/r/appbusiness/comments/fljbym/_/
+### [8][Tracking daily streaks - How to?](https://www.reddit.com/r/androiddev/comments/flv0ah/tracking_daily_streaks_how_to/)
+- url: https://www.reddit.com/r/androiddev/comments/flv0ah/tracking_daily_streaks_how_to/
+### [9][Decrease in download](https://www.reddit.com/r/androiddev/comments/fluser/decrease_in_download/)
+- url: https://www.reddit.com/r/androiddev/comments/fluser/decrease_in_download/
+### [10][Which ad network to use? How does AdMob compare to Appodeal and other networks?](https://www.reddit.com/r/androiddev/comments/flugxl/which_ad_network_to_use_how_does_admob_compare_to/)
+- url: https://www.reddit.com/r/androiddev/comments/flugxl/which_ad_network_to_use_how_does_admob_compare_to/
+### [11][How to create Activity scoped ViewModel instance in Kodein?](https://www.reddit.com/r/androiddev/comments/flubbo/how_to_create_activity_scoped_viewmodel_instance/)
+- url: https://www.reddit.com/r/androiddev/comments/flubbo/how_to_create_activity_scoped_viewmodel_instance/
+### [12][X-post: Data report: How the Coronavirus is Impacting Downloads of Business Apps : AppBusiness](https://www.reddit.com/r/androiddev/comments/flnaeq/xpost_data_report_how_the_coronavirus_is/)
+- url: https://www.reddit.com/r/appbusiness/comments/fljcro/_/
 ## Kotlin
-### [1][Kotlin pattern matching with instanceof (the Java 14 way)](https://www.reddit.com/r/Kotlin/comments/fl9ry0/kotlin_pattern_matching_with_instanceof_the_java/)
+### [1][KotlinConf 2020 has been postponed until 2021](https://www.reddit.com/r/Kotlin/comments/fluber/kotlinconf_2020_has_been_postponed_until_2021/)
+- url: https://kotlinconf.com/?2020Postponed
+### [2][Unit Testing Delays, Errors &amp; Retries with Kotlin Flows](https://www.reddit.com/r/Kotlin/comments/fll2a7/unit_testing_delays_errors_retries_with_kotlin/)
+- url: https://medium.com/@heyitsmohit/unit-testing-delays-errors-retries-with-kotlin-flows-77ce00d0c2f3
+### [3][How to build Interactive App with Kotlin](https://www.reddit.com/r/Kotlin/comments/flj8ij/how_to_build_interactive_app_with_kotlin/)
+- url: https://medium.com/@martinbaraya/how-to-build-interactive-app-with-kotlin-447b81f0d5cb?source=friends_link&amp;sk=45bcd21b90f8f2c12a6f2c6d94a109b9
+### [4][Kotlin pattern matching with instanceof (the Java 14 way)](https://www.reddit.com/r/Kotlin/comments/fl9ry0/kotlin_pattern_matching_with_instanceof_the_java/)
 - url: https://www.reddit.com/r/Kotlin/comments/fl9ry0/kotlin_pattern_matching_with_instanceof_the_java/
-### [2][How do you work with Network System Discovery? [Question]](https://www.reddit.com/r/Kotlin/comments/fl5yb6/how_do_you_work_with_network_system_discovery/)
+### [5][Basic(?) coroutines question for Ktor project](https://www.reddit.com/r/Kotlin/comments/flfxui/basic_coroutines_question_for_ktor_project/)
+- url: https://www.reddit.com/r/Kotlin/comments/flfxui/basic_coroutines_question_for_ktor_project/
+### [6][Help With Next Steps](https://www.reddit.com/r/Kotlin/comments/flesct/help_with_next_steps/)
+- url: https://www.reddit.com/r/Kotlin/comments/flesct/help_with_next_steps/
+### [7][How do you work with Network System Discovery? [Question]](https://www.reddit.com/r/Kotlin/comments/fl5yb6/how_do_you_work_with_network_system_discovery/)
 - url: https://www.reddit.com/r/Kotlin/comments/fl5yb6/how_do_you_work_with_network_system_discovery/
-### [3][State-full sequences](https://www.reddit.com/r/Kotlin/comments/fl3nq7/statefull_sequences/)
+### [8][State-full sequences](https://www.reddit.com/r/Kotlin/comments/fl3nq7/statefull_sequences/)
 - url: https://www.reddit.com/r/Kotlin/comments/fl3nq7/statefull_sequences/
-### [4][Equalizer type Progress Indicator](https://www.reddit.com/r/Kotlin/comments/fl6cz3/equalizer_type_progress_indicator/)
+### [9][Equalizer type Progress Indicator](https://www.reddit.com/r/Kotlin/comments/fl6cz3/equalizer_type_progress_indicator/)
 - url: /r/androiddev/comments/fko6rs/equalizer_type_progress_indicator/
-### [5][How can I pass different version of object without altering it as argument?](https://www.reddit.com/r/Kotlin/comments/fl6dom/how_can_i_pass_different_version_of_object/)
+### [10][How can I pass different version of object without altering it as argument?](https://www.reddit.com/r/Kotlin/comments/fl6dom/how_can_i_pass_different_version_of_object/)
 - url: https://www.reddit.com/r/Kotlin/comments/fl6dom/how_can_i_pass_different_version_of_object/
-### [6][can we use Spring with Kotlin/Native?](https://www.reddit.com/r/Kotlin/comments/fkn5ko/can_we_use_spring_with_kotlinnative/)
-- url: https://www.reddit.com/r/Kotlin/comments/fkn5ko/can_we_use_spring_with_kotlinnative/
-### [7][Good API design patterns to help imports be more seamless?](https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/)
-- url: https://www.reddit.com/r/Kotlin/comments/fk1r38/good_api_design_patterns_to_help_imports_be_more/
-### [8][I'm beginner I'm trying to make Tic Tac Toe game but when I press any button the app crashes and the device don't choose any button](https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/)
-- url: https://www.reddit.com/r/Kotlin/comments/fk22et/im_beginner_im_trying_to_make_tic_tac_toe_game/
-### [9][MVIKotlin - new Kotlin Multiplatform framework for MVI](https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/)
-- url: https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/
-### [10][How brevity in Kotlin increases developers' product as compare to Java with example](https://www.reddit.com/r/Kotlin/comments/fk1k4s/how_brevity_in_kotlin_increases_developers/)
-- url: https://www.vtnetzwelt.com/mobile/java-vs-kotlin/
 ## reduxjs
 ### [1][Tricks you never knew about Redux DevTool](https://www.reddit.com/r/reduxjs/comments/fkyd85/tricks_you_never_knew_about_redux_devtool/)
 - url: https://blog.logrocket.com/redux-devtools-tips-tricks-for-faster-debugging/
@@ -71,207 +71,207 @@
 - url: https://www.reddit.com/r/reactjs/comments/fbn1p2/beginners_thread_easy_questions_march_2020/
 ### [2][Who's Available? [Mar 2020]](https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/)
 - url: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
-### [3][Why we chose Typescript for the Hasura Console (React Codebase)](https://www.reddit.com/r/reactjs/comments/fl76kh/why_we_chose_typescript_for_the_hasura_console/)
+### [3][React Lessons. Lesson 11. Pt.1. Normalize Comments with Immutable.js](https://www.reddit.com/r/reactjs/comments/flrfgx/react_lessons_lesson_11_pt1_normalize_comments/)
+- url: https://blog.soshace.com/react-lesson-11/
+### [4][Is it bad practice to pass a function down to a child component and return the child's state up to its parent component using this function?](https://www.reddit.com/r/reactjs/comments/fltl1t/is_it_bad_practice_to_pass_a_function_down_to_a/)
+- url: https://www.reddit.com/r/reactjs/comments/fltl1t/is_it_bad_practice_to_pass_a_function_down_to_a/
+### [5][How to add Tailwind to unejected Create-React-App](https://www.reddit.com/r/reactjs/comments/flebuh/how_to_add_tailwind_to_unejected_createreactapp/)
+- url: https://github.com/kentcdodds/bookshelf/commit/b984b34239aee9f57fb7bf8868b7e78dfe475ae8
+### [6][Trying to understand what I'm doing wrong.](https://www.reddit.com/r/reactjs/comments/flmtxg/trying_to_understand_what_im_doing_wrong/)
+- url: https://www.reddit.com/r/reactjs/comments/flmtxg/trying_to_understand_what_im_doing_wrong/
+### [7][Hosting a React app on firebase](https://www.reddit.com/r/reactjs/comments/fluvp1/hosting_a_react_app_on_firebase/)
+- url: https://youtu.be/21qyl-rBBcU
+### [8][Confused And Need Opinions On How To Structure Application State(React Hooks)](https://www.reddit.com/r/reactjs/comments/fltz66/confused_and_need_opinions_on_how_to_structure/)
+- url: https://www.reddit.com/r/reactjs/comments/fltz66/confused_and_need_opinions_on_how_to_structure/
+### [9][How to safely send username and password from react js?](https://www.reddit.com/r/reactjs/comments/flt8h2/how_to_safely_send_username_and_password_from/)
+- url: https://www.reddit.com/r/reactjs/comments/flt8h2/how_to_safely_send_username_and_password_from/
+### [10][Why we chose Typescript for the Hasura Console (React Codebase)](https://www.reddit.com/r/reactjs/comments/fl76kh/why_we_chose_typescript_for_the_hasura_console/)
 - url: https://hasura.io/blog/why-we-chose-typescript-for-hasura-console/
-### [4][Quick question about props drilling](https://www.reddit.com/r/reactjs/comments/fl2q22/quick_question_about_props_drilling/)
-- url: https://www.reddit.com/r/reactjs/comments/fl2q22/quick_question_about_props_drilling/
-### [5][Anybody tried upgrading react-intl v2 to v3?](https://www.reddit.com/r/reactjs/comments/fl867m/anybody_tried_upgrading_reactintl_v2_to_v3/)
-- url: https://www.reddit.com/r/reactjs/comments/fl867m/anybody_tried_upgrading_reactintl_v2_to_v3/
-### [6][A Sneak Peek at React Router v6](https://www.reddit.com/r/reactjs/comments/fknsma/a_sneak_peek_at_react_router_v6/)
-- url: https://alligator.io/react/react-router-v6/
-### [7][Good remote freelancing sites recommendations](https://www.reddit.com/r/reactjs/comments/fkzcxn/good_remote_freelancing_sites_recommendations/)
-- url: https://www.reddit.com/r/reactjs/comments/fkzcxn/good_remote_freelancing_sites_recommendations/
-### [8][what is difference of &lt;SomeComp /&gt; vs { SomeComp() }](https://www.reddit.com/r/reactjs/comments/fl7cvz/what_is_difference_of_somecomp_vs_somecomp/)
-- url: https://www.reddit.com/r/reactjs/comments/fl7cvz/what_is_difference_of_somecomp_vs_somecomp/
-### [9][List childs are not beeing updated correctly? (React / Preact)](https://www.reddit.com/r/reactjs/comments/fl9j5k/list_childs_are_not_beeing_updated_correctly/)
-- url: https://www.reddit.com/r/reactjs/comments/fl9j5k/list_childs_are_not_beeing_updated_correctly/
-### [10][Layouting for React Websites?](https://www.reddit.com/r/reactjs/comments/fl9cjz/layouting_for_react_websites/)
-- url: https://www.reddit.com/r/reactjs/comments/fl9cjz/layouting_for_react_websites/
-### [11][React popup box on antd form input showing operator such as &lt; &gt; &lt;= &gt;= etc to add to the input](https://www.reddit.com/r/reactjs/comments/fl94zi/react_popup_box_on_antd_form_input_showing/)
-- url: https://www.reddit.com/r/reactjs/comments/fl94zi/react_popup_box_on_antd_form_input_showing/
-### [12][Using Netlify Functions with Gatsby Cloud](https://www.reddit.com/r/reactjs/comments/fl8unh/using_netlify_functions_with_gatsby_cloud/)
-- url: https://joshwcomeau.com/gatsby/netlify-functions-and-gatsby-cloud/
+### [11][Build Yelp in React #21 | submitting forms in the landing page](https://www.reddit.com/r/reactjs/comments/flang3/build_yelp_in_react_21_submitting_forms_in_the/)
+- url: https://youtu.be/WeAOy77BhCA
+### [12][I'm looking for a popup table with symbols to add into form.](https://www.reddit.com/r/reactjs/comments/flrs4z/im_looking_for_a_popup_table_with_symbols_to_add/)
+- url: https://www.reddit.com/r/reactjs/comments/flrs4z/im_looking_for_a_popup_table_with_symbols_to_add/
 ## typescript
 ### [1][Who's hiring Typescript developers - March](https://www.reddit.com/r/typescript/comments/fbll8c/whos_hiring_typescript_developers_march/)
 - url: https://www.reddit.com/r/typescript/comments/fbll8c/whos_hiring_typescript_developers_march/
-### [2][The official TypeScript website's certificate expired today](https://www.reddit.com/r/typescript/comments/fl3ion/the_official_typescript_websites_certificate/)
+### [2][Bitwise expression computed property name in class?](https://www.reddit.com/r/typescript/comments/flk7j4/bitwise_expression_computed_property_name_in_class/)
+- url: https://www.reddit.com/r/typescript/comments/flk7j4/bitwise_expression_computed_property_name_in_class/
+### [3][Building Vue Enterprise Application: Part 1. Entities](https://www.reddit.com/r/typescript/comments/fljt1k/building_vue_enterprise_application_part_1/)
+- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-1-entities-808077f3d2e7
+### [4][The official TypeScript website's certificate expired today](https://www.reddit.com/r/typescript/comments/fl3ion/the_official_typescript_websites_certificate/)
 - url: https://i.redd.it/n740bvlzyjn41.png
-### [3][Why we chose Typescript for the Hasura Console](https://www.reddit.com/r/typescript/comments/fl74hh/why_we_chose_typescript_for_the_hasura_console/)
+### [5][Inferring types with a key of a type object in typescript](https://www.reddit.com/r/typescript/comments/flkk9l/inferring_types_with_a_key_of_a_type_object_in/)
+- url: https://www.reddit.com/r/typescript/comments/flkk9l/inferring_types_with_a_key_of_a_type_object_in/
+### [6][A typesafe, in-memory database implementation for TypeScript](https://www.reddit.com/r/typescript/comments/flbbip/a_typesafe_inmemory_database_implementation_for/)
+- url: https://github.com/hoppinger/TypeScript-typesafe-relational-processor/blob/master/Article/article.md
+### [7][How do I specify the return type here?](https://www.reddit.com/r/typescript/comments/flhu5c/how_do_i_specify_the_return_type_here/)
+- url: https://www.reddit.com/r/typescript/comments/flhu5c/how_do_i_specify_the_return_type_here/
+### [8][I made a React UI Library with a focus on a minimalist design](https://www.reddit.com/r/typescript/comments/fleasg/i_made_a_react_ui_library_with_a_focus_on_a/)
+- url: https://github.com/ericm/uniui
+### [9][Why we chose Typescript for the Hasura Console](https://www.reddit.com/r/typescript/comments/fl74hh/why_we_chose_typescript_for_the_hasura_console/)
 - url: https://hasura.io/blog/why-we-chose-typescript-for-hasura-console/
-### [4][GitHub launched their official app for Android and iOS](https://www.reddit.com/r/typescript/comments/fl67rh/github_launched_their_official_app_for_android/)
-- url: https://innovativebeast.com/github-app-guide/
-### [5][How to safely parse JSON?](https://www.reddit.com/r/typescript/comments/fkwxi0/how_to_safely_parse_json/)
-- url: https://www.reddit.com/r/typescript/comments/fkwxi0/how_to_safely_parse_json/
-### [6][Important Rules For Writing Idiomatic TypeScript](https://www.reddit.com/r/typescript/comments/fl59bk/important_rules_for_writing_idiomatic_typescript/)
+### [10][How to make instance of class?](https://www.reddit.com/r/typescript/comments/flbem5/how_to_make_instance_of_class/)
+- url: https://www.reddit.com/r/typescript/comments/flbem5/how_to_make_instance_of_class/
+### [11][Important Rules For Writing Idiomatic TypeScript](https://www.reddit.com/r/typescript/comments/fl59bk/important_rules_for_writing_idiomatic_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/fl59bk/important_rules_for_writing_idiomatic_typescript/
-### [7][Data validation using functions interfaces](https://www.reddit.com/r/typescript/comments/fksft0/data_validation_using_functions_interfaces/)
-- url: https://github.com/neuledge/funval
-### [8][Do I need both the @types modules, and the normal module?](https://www.reddit.com/r/typescript/comments/fkmpw3/do_i_need_both_the_types_modules_and_the_normal/)
-- url: https://www.reddit.com/r/typescript/comments/fkmpw3/do_i_need_both_the_types_modules_and_the_normal/
-### [9][Curveball — March updates](https://www.reddit.com/r/typescript/comments/fkmcuk/curveball_march_updates/)
-- url: https://medium.com//curveball-march-updates-10e0ea96f808?source=friends_link&amp;sk=10a5292d65d01264385fcd2eaa89e0d2
-### [10][Curveball - Starter template, CLI colors and Content-Negotiation](https://www.reddit.com/r/typescript/comments/fkim3o/curveball_starter_template_cli_colors_and/)
-- url: https://evertpot.com/curveball-march-updates/
-### [11][Bring some structure to your file and directory names with ls-lint](https://www.reddit.com/r/typescript/comments/fk4rc3/bring_some_structure_to_your_file_and_directory/)
-- url: https://www.reddit.com/r/typescript/comments/fk4rc3/bring_some_structure_to_your_file_and_directory/
 ## javascript
 ### [1][Showoff Saturday (March 14, 2020)](https://www.reddit.com/r/javascript/comments/fih52u/showoff_saturday_march_14_2020/)
 - url: https://www.reddit.com/r/javascript/comments/fih52u/showoff_saturday_march_14_2020/
 ### [2][WTF Wednesday (March 18, 2020)](https://www.reddit.com/r/javascript/comments/fkrx98/wtf_wednesday_march_18_2020/)
 - url: https://www.reddit.com/r/javascript/comments/fkrx98/wtf_wednesday_march_18_2020/
-### [3][Inside Fiber: in-depth overview of the new reconciliation algorithm in React](https://www.reddit.com/r/javascript/comments/fl67ru/inside_fiber_indepth_overview_of_the_new/)
+### [3][Introduction to AntV](https://www.reddit.com/r/javascript/comments/fls423/introduction_to_antv/)
+- url: https://observablehq.com/@jiazhewang/introduction-to-antv
+### [4][Should you learn VIM as a JavaScript Developer?](https://www.reddit.com/r/javascript/comments/flc3t6/should_you_learn_vim_as_a_javascript_developer/)
+- url: https://medium.com/@joey_colon/should-you-learn-vim-as-a-developer-in-2020-75fde02c5443
+### [5][[AskJS] Delphi (Win32) to web - Pros and cons of each of the big JS frameworks?](https://www.reddit.com/r/javascript/comments/flqgzj/askjs_delphi_win32_to_web_pros_and_cons_of_each/)
+- url: https://www.reddit.com/r/javascript/comments/flqgzj/askjs_delphi_win32_to_web_pros_and_cons_of_each/
+### [6][MediaWiki is adopting a modern JavaScript framework: Vue.js](https://www.reddit.com/r/javascript/comments/flbgo4/mediawiki_is_adopting_a_modern_javascript/)
+- url: https://phabricator.wikimedia.org/T241180
+### [7][[AskJS] jQuery spaghetti code project refactoring using es6 classes](https://www.reddit.com/r/javascript/comments/fltl0b/askjs_jquery_spaghetti_code_project_refactoring/)
+- url: https://www.reddit.com/r/javascript/comments/fltl0b/askjs_jquery_spaghetti_code_project_refactoring/
+### [8][Everything You Need to Know About Regular Expressions in JavaScript](https://www.reddit.com/r/javascript/comments/flt1n8/everything_you_need_to_know_about_regular/)
+- url: https://medium.com/better-programming/everything-you-need-to-know-about-regular-expressions-in-javascript-59807f758cbd?source=friends_link&amp;sk=75db29991e31cd204cefe8c8d4b7a821
+### [9][Inside Fiber: in-depth overview of the new reconciliation algorithm in React](https://www.reddit.com/r/javascript/comments/fl67ru/inside_fiber_indepth_overview_of_the_new/)
 - url: https://indepth.dev/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/
-### [4][Get Involved: Open Source Healthcare Software](https://www.reddit.com/r/javascript/comments/fkrxi4/get_involved_open_source_healthcare_software/)
-- url: https://medium.com/@dannyrb/get-involved-open-source-healthcare-software-a5122c505ec0
-### [5][Data validation using functions interfaces](https://www.reddit.com/r/javascript/comments/fl7fif/data_validation_using_functions_interfaces/)
-- url: https://github.com/neuledge/funval
-### [6][Live Book Writing Stream with Roy Osherove: Art of Unit Testing 3rd Edition in JavaScript](https://www.reddit.com/r/javascript/comments/fl6yko/live_book_writing_stream_with_roy_osherove_art_of/)
-- url: https://osherove.com
-### [7][ReRE.js: Re-implementation of JavaScript (ECMA-262) RegExp written in TypeScript](https://www.reddit.com/r/javascript/comments/fl9vl4/rerejs_reimplementation_of_javascript_ecma262/)
-- url: https://github.com/MakeNowJust/rerejs
-### [8][Built a simple light weight Node.js Boilerplate with OAuth Integration](https://www.reddit.com/r/javascript/comments/fl8w17/built_a_simple_light_weight_nodejs_boilerplate/)
-- url: https://github.com/i-break-codes/red
-### [9][How to use the new Nullish Coalescing operator in JavaScript](https://www.reddit.com/r/javascript/comments/fl5ob3/how_to_use_the_new_nullish_coalescing_operator_in/)
-- url: https://medium.com/javascript-in-plain-english/nullish-coalescing-operator-for-javascript-8f502b970ba8
-### [10][JavaScript Pop Quiz](https://www.reddit.com/r/javascript/comments/fl4dce/javascript_pop_quiz/)
-- url: https://github.com/WeiChiaChang/js-pop-quiz
-### [11][Building Vue Enterprise Application: Part 1. Entities](https://www.reddit.com/r/javascript/comments/fl9us0/building_vue_enterprise_application_part_1/)
-- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-1-entities-808077f3d2e7
-### [12][Introducing Swach - a Cross-Platform Color Management Tool Written in Ember.js and Electron](https://www.reddit.com/r/javascript/comments/fktd4g/introducing_swach_a_crossplatform_color/)
-- url: https://swach.io/
+### [10][I have made a cheatsheet for Puppeteer to code your tests/bots faster.](https://www.reddit.com/r/javascript/comments/flbrwj/i_have_made_a_cheatsheet_for_puppeteer_to_code/)
+- url: https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/puppeteer.js
+### [11][Tab Bar Animation React Native - Project in Github](https://www.reddit.com/r/javascript/comments/flnqhn/tab_bar_animation_react_native_project_in_github/)
+- url: /user/marcelxsilva/comments/fk7ofo/tab_bar_animation_react_native_project_in_github/
+### [12][A great tool to know about the current world information on corona virus record. Very useful and created by a high school student. Made from javascript and maybe other, but the js is stunning!](https://www.reddit.com/r/javascript/comments/flqjrk/a_great_tool_to_know_about_the_current_world/)
+- url: https://ncov2019.live/
 ## cpp
 ### [1][C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
 - url: https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/
 ### [2][C++ Events Affected By Coronavirus](https://www.reddit.com/r/cpp/comments/fidita/c_events_affected_by_coronavirus/)
 - url: https://www.reddit.com/r/cpp/comments/fidita/c_events_affected_by_coronavirus/
-### [3][Why so many students are using '#include&lt;bits/stdc++.h&gt;' instead of '#include&lt;iostream&gt;'?](https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/)
+### [3][CMake 3.17.0 available for download - Announcements](https://www.reddit.com/r/cpp/comments/fluibz/cmake_3170_available_for_download_announcements/)
+- url: https://discourse.cmake.org/t/cmake-3-17-0-available-for-download/828
+### [4][Writing Linux File Buffer Cache top in C++ with BPF](https://www.reddit.com/r/cpp/comments/flr4kn/writing_linux_file_buffer_cache_top_in_c_with_bpf/)
+- url: http://www.mycpu.org/cachetop-bpf-part-2/
+### [5][Eclipse 2020-03 released with CDT 9.11](https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/)
+- url: https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/
+### [6][Application of C++ in ARM processors](https://www.reddit.com/r/cpp/comments/flqdmy/application_of_c_in_arm_processors/)
+- url: https://www.reddit.com/r/cpp/comments/flqdmy/application_of_c_in_arm_processors/
+### [7][CppCast: Meson and the Meson Manual](https://www.reddit.com/r/cpp/comments/flnu7y/cppcast_meson_and_the_meson_manual/)
+- url: https://cppcast.com/jussi-pakkanen-meson-manual/
+### [8][Native Language Benchmark: C/C++ is 10% faster than rust.](https://www.reddit.com/r/cpp/comments/fluv6d/native_language_benchmark_cc_is_10_faster_than/)
+- url: https://github.com/skywind3000/LanguageMark
+### [9][Why so many students are using '#include&lt;bits/stdc++.h&gt;' instead of '#include&lt;iostream&gt;'?](https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/)
 - url: https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/
-### [4][My C++ sorting algorithms implementation](https://www.reddit.com/r/cpp/comments/fl96gh/my_c_sorting_algorithms_implementation/)
-- url: https://www.reddit.com/r/cpp/comments/fl96gh/my_c_sorting_algorithms_implementation/
-### [5][SIARE Engineering, an Italian producer of intensive care machines, is looking for a C++ programmer in Emilia Romagna (Italy) to handle the increased in production to deal with COVID-19 [Facebook]](https://www.reddit.com/r/cpp/comments/fkm7nk/siare_engineering_an_italian_producer_of/)
+### [10][SIARE Engineering, an Italian producer of intensive care machines, is looking for a C++ programmer in Emilia Romagna (Italy) to handle the increased in production to deal with COVID-19 [Facebook]](https://www.reddit.com/r/cpp/comments/fkm7nk/siare_engineering_an_italian_producer_of/)
 - url: https://www.facebook.com/siareengineering/posts/3153957624673910?comment_id=3155916694478003
-### [6][The poplar heap, an implicit data structure](https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/)
+### [11][The poplar heap, an implicit data structure](https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/)
 - url: https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/
-### [7][Effective Header Management in C++](https://www.reddit.com/r/cpp/comments/fkp9w4/effective_header_management_in_c/)
+### [12][Effective Header Management in C++](https://www.reddit.com/r/cpp/comments/fkp9w4/effective_header_management_in_c/)
 - url: https://pspdfkit.com/blog/2020/effective-header-management-in-cpp/
-### [8][Using Visual Studio Code for Qt Applications – Part One](https://www.reddit.com/r/cpp/comments/fkna0x/using_visual_studio_code_for_qt_applications_part/)
-- url: https://www.kdab.com/using-visual-studio-code-for-qt-apps-pt-1/
-### [9][Automated Test Case Generation of native applications from Python, with branch coverage feedback](https://www.reddit.com/r/cpp/comments/fktxdo/automated_test_case_generation_of_native/)
-- url: https://engineering.backtrace.io/posts/2020-03-11-how-hard-is-it-to-guide-test-case-generators-with-branch-coverage-feedback/
-### [10][Ways C++ prevents you from doing X](https://www.reddit.com/r/cpp/comments/fkez6b/ways_c_prevents_you_from_doing_x/)
-- url: https://quuxplusone.github.io/blog/2020/03/17/you-cant-do-x/
-### [11][Is it worth buying the current edition of one of the "canonical textbooks" (the C++ programming language, the C++ Primer e.t.c.) given that C++20 is about to be released?](https://www.reddit.com/r/cpp/comments/fk7ijd/is_it_worth_buying_the_current_edition_of_one_of/)
-- url: https://www.reddit.com/r/cpp/comments/fk7ijd/is_it_worth_buying_the_current_edition_of_one_of/
-### [12][Learning-based Memory Allocation for C++ Server Workloads - Google Research](https://www.reddit.com/r/cpp/comments/fjtuty/learningbased_memory_allocation_for_c_server/)
-- url: https://research.google/pubs/pub49008/?fbclid=IwAR3Ccaf0qd090qkjl-6cq0o-KDflsiWYBB110jW7JSMIL5jL2ngVJ8dEdek
 ## golang
-### [1][Diago, a visualization tool for profiles and heap snapshots generated with pprof](https://www.reddit.com/r/golang/comments/fl8gbv/diago_a_visualization_tool_for_profiles_and_heap/)
+### [1][gopls 0.3.4 update release notes](https://www.reddit.com/r/golang/comments/fln72e/gopls_034_update_release_notes/)
+- url: https://github.com/golang/go/issues/33030#issuecomment-601280048
+### [2][Go 1.14.1 and Go 1.13.9 are released](https://www.reddit.com/r/golang/comments/flhjz4/go_1141_and_go_1139_are_released/)
+- url: https://groups.google.com/d/msg/golang-announce/Ix2U_8WWmXo/a2nJkNW5AAAJ
+### [3][Buffalo Tests with Cookie](https://www.reddit.com/r/golang/comments/fls9n1/buffalo_tests_with_cookie/)
+- url: https://www.reddit.com/r/golang/comments/fls9n1/buffalo_tests_with_cookie/
+### [4][Illustrated Tales of Go Runtime Scheduler.](https://www.reddit.com/r/golang/comments/flek7p/illustrated_tales_of_go_runtime_scheduler/)
+- url: https://medium.com/@ankur_anand/illustrated-tales-of-go-runtime-scheduler-74809ef6d19b
+### [5][Building and Testing a REST API in Go with Gorilla Mux](https://www.reddit.com/r/golang/comments/flb4bo/building_and_testing_a_rest_api_in_go_with/)
+- url: https://semaphoreci.com/community/tutorials/building-and-testing-a-rest-api-in-go-with-gorilla-mux-and-postgresql
+### [6][[Recommendation] Does golang have any third-party stateful, structured logging packages](https://www.reddit.com/r/golang/comments/flhx95/recommendation_does_golang_have_any_thirdparty/)
+- url: https://www.reddit.com/r/golang/comments/flhx95/recommendation_does_golang_have_any_thirdparty/
+### [7][Diago, a visualization tool for profiles and heap snapshots generated with pprof](https://www.reddit.com/r/golang/comments/fl8gbv/diago_a_visualization_tool_for_profiles_and_heap/)
 - url: https://remy.io/blog/how-to-use-diago-to-diagnose-cpu-and-memory-usage-in-go-programs/
-### [2][I wrote a guide for beginners wanting to get started with Go](https://www.reddit.com/r/golang/comments/fkw2rx/i_wrote_a_guide_for_beginners_wanting_to_get/)
-- url: https://www.reddit.com/r/golang/comments/fkw2rx/i_wrote_a_guide_for_beginners_wanting_to_get/
-### [3][Implementations of reinforcement learning processes in Go.](https://www.reddit.com/r/golang/comments/fl5pq1/implementations_of_reinforcement_learning/)
-- url: https://github.com/eltorocorp/reinforcement-learning
-### [4][Golang Mutexes - What Is RWMutex For?](https://www.reddit.com/r/golang/comments/fl9cgc/golang_mutexes_what_is_rwmutex_for/)
-- url: https://qvault.io/2020/03/19/golang-mutexes-what-is-rwmutex-for/
-### [5][Untyped constants in Go - 2mins intro with quiz inside](https://www.reddit.com/r/golang/comments/fl7ouv/untyped_constants_in_go_2mins_intro_with_quiz/)
-- url: https://medium.com/golangspec/untyped-constants-in-go-2c69eb519b5b
-### [6][Help with error goroutine [running] sync.(*Mutex).Lock(...)](https://www.reddit.com/r/golang/comments/fl9ww9/help_with_error_goroutine_running_syncmutexlock/)
-- url: https://www.reddit.com/r/golang/comments/fl9ww9/help_with_error_goroutine_running_syncmutexlock/
-### [7][Convert Apple CoreML to any format which I can use with Go.](https://www.reddit.com/r/golang/comments/fl9qyh/convert_apple_coreml_to_any_format_which_i_can/)
-- url: https://www.reddit.com/r/golang/comments/fl9qyh/convert_apple_coreml_to_any_format_which_i_can/
-### [8][Linux Window Managers in Go?](https://www.reddit.com/r/golang/comments/fl9lxg/linux_window_managers_in_go/)
+### [8][Gophercon 2020 Update](https://www.reddit.com/r/golang/comments/flaz8s/gophercon_2020_update/)
+- url: https://blog.gopheracademy.com/gophercon-2020-news/
+### [9][Linux Window Managers in Go?](https://www.reddit.com/r/golang/comments/fl9lxg/linux_window_managers_in_go/)
 - url: https://www.reddit.com/r/golang/comments/fl9lxg/linux_window_managers_in_go/
-### [9][A GoMock Quick Start Guide](https://www.reddit.com/r/golang/comments/fl3gqo/a_gomock_quick_start_guide/)
-- url: https://medium.com/better-programming/a-gomock-quick-start-guide-71bee4b3a6f1
-### [10][Handy wrapper for MongoDB driver (repositories, query builder, aggregate pipeline builder)](https://www.reddit.com/r/golang/comments/fl49t0/handy_wrapper_for_mongodb_driver_repositories/)
-- url: https://www.reddit.com/r/golang/comments/fl49t0/handy_wrapper_for_mongodb_driver_repositories/
+### [10][A library for initializing heaps from arbitrary slices](https://www.reddit.com/r/golang/comments/flkiw3/a_library_for_initializing_heaps_from_arbitrary/)
+- url: https://www.reddit.com/r/golang/comments/flkiw3/a_library_for_initializing_heaps_from_arbitrary/
 ## ruby
-### [1][Build a location-aware WhatsApp weather bot with Ruby, Sinatra and Twilio](https://www.reddit.com/r/ruby/comments/fl5lri/build_a_locationaware_whatsapp_weather_bot_with/)
-- url: https://www.twilio.com/blog/location-aware-whatsapp-bot-ruby-sinatra-twilio
-### [2][Kiba-Tips: Exploding rows from the lowly block transform](https://www.reddit.com/r/ruby/comments/fkywme/kibatips_exploding_rows_from_the_lowly_block/)
-- url: https://www.timtilberg.com/kiba-tips/2020/03/18/yield-multiple-rows-with-a-block-transform-in-kiba.html
-### [3][The Ruby Blend Episode 5: Joined by Chris Oliver](https://www.reddit.com/r/ruby/comments/fl82qg/the_ruby_blend_episode_5_joined_by_chris_oliver/)
-- url: https://www.reddit.com/r/ruby/comments/fl82qg/the_ruby_blend_episode_5_joined_by_chris_oliver/
-### [4][Dig'gin through hashes and arrays in Ruby](https://www.reddit.com/r/ruby/comments/fl3d67/diggin_through_hashes_and_arrays_in_ruby/)
-- url: https://prathamesh.tech/2020/03/18/diggin-through-hashes-and-arrays-in-ruby/
-### [5][Generating OR separated string from an array](https://www.reddit.com/r/ruby/comments/fl92uu/generating_or_separated_string_from_an_array/)
+### [1][Trying to calculate pi out of random numbers. How to make it faster?](https://www.reddit.com/r/ruby/comments/fli9gk/trying_to_calculate_pi_out_of_random_numbers_how/)
+- url: https://i.redd.it/dgorxxxo5pn41.png
+### [2][Just getting introduced to Ruby, and I have a question](https://www.reddit.com/r/ruby/comments/flnn6d/just_getting_introduced_to_ruby_and_i_have_a/)
+- url: https://www.reddit.com/r/ruby/comments/flnn6d/just_getting_introduced_to_ruby_and_i_have_a/
+### [3][Alt::BrightonRuby](https://www.reddit.com/r/ruby/comments/flc6dw/altbrightonruby/)
+- url: /r/rubyonrails/comments/flc3u1/altbrightonruby/
+### [4][Generating OR separated string from an array](https://www.reddit.com/r/ruby/comments/fl92uu/generating_or_separated_string_from_an_array/)
 - url: https://www.reddit.com/r/ruby/comments/fl92uu/generating_or_separated_string_from_an_array/
-### [6][Any pitfalls to note when migrating from Sprockets to Webpack(er)?](https://www.reddit.com/r/ruby/comments/fl2jho/any_pitfalls_to_note_when_migrating_from/)
+### [5][CVE-2020-10663: Unsafe Object Creation Vulnerability in JSON (Additional fix)](https://www.reddit.com/r/ruby/comments/flcvp8/cve202010663_unsafe_object_creation_vulnerability/)
+- url: https://www.ruby-lang.org/en/news/2020/03/19/json-dos-cve-2020-10663/
+### [6][Build a location-aware WhatsApp weather bot with Ruby, Sinatra and Twilio](https://www.reddit.com/r/ruby/comments/fl5lri/build_a_locationaware_whatsapp_weather_bot_with/)
+- url: https://www.twilio.com/blog/location-aware-whatsapp-bot-ruby-sinatra-twilio
+### [7][The Ruby Blend Episode 5: Joined by Chris Oliver](https://www.reddit.com/r/ruby/comments/fl82qg/the_ruby_blend_episode_5_joined_by_chris_oliver/)
+- url: https://www.reddit.com/r/ruby/comments/fl82qg/the_ruby_blend_episode_5_joined_by_chris_oliver/
+### [8][Dig'gin through hashes and arrays in Ruby](https://www.reddit.com/r/ruby/comments/fl3d67/diggin_through_hashes_and_arrays_in_ruby/)
+- url: https://prathamesh.tech/2020/03/18/diggin-through-hashes-and-arrays-in-ruby/
+### [9][Kiba-Tips: Exploding rows from the lowly block transform](https://www.reddit.com/r/ruby/comments/fkywme/kibatips_exploding_rows_from_the_lowly_block/)
+- url: https://www.timtilberg.com/kiba-tips/2020/03/18/yield-multiple-rows-with-a-block-transform-in-kiba.html
+### [10][Any pitfalls to note when migrating from Sprockets to Webpack(er)?](https://www.reddit.com/r/ruby/comments/fl2jho/any_pitfalls_to_note_when_migrating_from/)
 - url: https://www.reddit.com/r/ruby/comments/fl2jho/any_pitfalls_to_note_when_migrating_from/
-### [7][Facade Pattern in Rails for Performance and Maintainability](https://www.reddit.com/r/ruby/comments/fkq7yv/facade_pattern_in_rails_for_performance_and/)
-- url: https://blog.appsignal.com/2020/03/18/facade-pattern-in-rails-for-performance-and-maintainability.html
-### [8][If I halted an RVM install, how do I clean it up?](https://www.reddit.com/r/ruby/comments/fku2ca/if_i_halted_an_rvm_install_how_do_i_clean_it_up/)
-- url: https://www.reddit.com/r/ruby/comments/fku2ca/if_i_halted_an_rvm_install_how_do_i_clean_it_up/
-### [9][It’s been a while... but a NEW RUBY VERSION????](https://www.reddit.com/r/ruby/comments/fl4ijx/its_been_a_while_but_a_new_ruby_version/)
-- url: https://www.reddit.com/r/ruby/comments/fl4ijx/its_been_a_while_but_a_new_ruby_version/
-### [10][Rails - Allows to specify schema cache path in database configuration file](https://www.reddit.com/r/ruby/comments/fkuzs4/rails_allows_to_specify_schema_cache_path_in/)
-- url: https://blog.saeloun.com/2020/03/18/rails-schema-cache-path-config
 ## rust
 ### [1][Hey Rustaceans! Got an easy question? Ask here (12/2020)!](https://www.reddit.com/r/rust/comments/fjef12/hey_rustaceans_got_an_easy_question_ask_here/)
 - url: https://www.reddit.com/r/rust/comments/fjef12/hey_rustaceans_got_an_easy_question_ask_here/
 ### [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.42]](https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/)
 - url: https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/
-### [3][Announcing Rust IPFS, and a call for contributors](https://www.reddit.com/r/rust/comments/fl6ij9/announcing_rust_ipfs_and_a_call_for_contributors/)
+### [3][`template-rust-backend-with-electron-frontend` released](https://www.reddit.com/r/rust/comments/flsoa0/templaterustbackendwithelectronfrontend_released/)
+- url: https://www.reddit.com/r/rust/comments/flsoa0/templaterustbackendwithelectronfrontend_released/
+### [4][Alchemy: A New Rust GUI Framework](https://www.reddit.com/r/rust/comments/flsrq5/alchemy_a_new_rust_gui_framework/)
+- url: https://alchemy.rs/
+### [5][Cheatsheet: Option (in Rust) vs Maybe (in Haskell)](https://www.reddit.com/r/rust/comments/fli7wk/cheatsheet_option_in_rust_vs_maybe_in_haskell/)
+- url: https://notes.iveselov.info/cheatsheet-rust-option-vs-haskell-maybe
+### [6][How does Rust's scalability compare to Erlang?](https://www.reddit.com/r/rust/comments/flf2ld/how_does_rusts_scalability_compare_to_erlang/)
+- url: https://www.reddit.com/r/rust/comments/flf2ld/how_does_rusts_scalability_compare_to_erlang/
+### [7][WASM built with Emscripten and loaded with js-sys?](https://www.reddit.com/r/rust/comments/flravn/wasm_built_with_emscripten_and_loaded_with_jssys/)
+- url: https://www.reddit.com/r/rust/comments/flravn/wasm_built_with_emscripten_and_loaded_with_jssys/
+### [8][Trace caller’s source location in the stable Rust](https://www.reddit.com/r/rust/comments/flnns3/trace_callers_source_location_in_the_stable_rust/)
+- url: https://www.reddit.com/r/rust/comments/flnns3/trace_callers_source_location_in_the_stable_rust/
+### [9][This Week in Rust 330](https://www.reddit.com/r/rust/comments/flb5tn/this_week_in_rust_330/)
+- url: https://this-week-in-rust.org/blog/2020/03/17/this-week-in-rust-330/
+### [10][Announcing Rust IPFS, and a call for contributors](https://www.reddit.com/r/rust/comments/fl6ij9/announcing_rust_ipfs_and_a_call_for_contributors/)
 - url: https://blog.ipfs.io/2020-03-18-announcing-rust-ipfs/
-### [4][Unpopular opinion: Hyper is plenty good. You probably don't need a framework.](https://www.reddit.com/r/rust/comments/fkz7ui/unpopular_opinion_hyper_is_plenty_good_you/)
-- url: https://www.reddit.com/r/rust/comments/fkz7ui/unpopular_opinion_hyper_is_plenty_good_you/
-### [5][ttf-parser 0.5 - now with variable fonts support and C API](https://www.reddit.com/r/rust/comments/fl7kfx/ttfparser_05_now_with_variable_fonts_support_and/)
-- url: https://www.reddit.com/r/rust/comments/fl7kfx/ttfparser_05_now_with_variable_fonts_support_and/
-### [6][Dropbox gives up trying to port its sync engine to Python3 and rewrites it in Rust instead](https://www.reddit.com/r/rust/comments/fl9pdq/dropbox_gives_up_trying_to_port_its_sync_engine/)
-- url: https://dropbox.tech/infrastructure/rewriting-the-heart-of-our-sync-engine
-### [7][Announcing const-tweaker! Change your constants live from from a web GUI](https://www.reddit.com/r/rust/comments/fl8wpl/announcing_consttweaker_change_your_constants/)
-- url: /r/rust_gamedev/comments/fl7593/announcing_consttweaker_change_your_constants/
-### [8][Apple hiring Rust engineers for storage and networking groups](https://www.reddit.com/r/rust/comments/fkngza/apple_hiring_rust_engineers_for_storage_and/)
-- url: https://twitter.com/benwilliamson/status/1240113606374686721
-### [9][All Hands Retrospective | Inside Rust Blog](https://www.reddit.com/r/rust/comments/fkvcsr/all_hands_retrospective_inside_rust_blog/)
-- url: https://blog.rust-lang.org/inside-rust/2020/03/18/all-hands-retrospective.html
-### [10][Code Review AVL-Tree](https://www.reddit.com/r/rust/comments/fl8cwn/code_review_avltree/)
-- url: https://www.reddit.com/r/rust/comments/fl8cwn/code_review_avltree/
-### [11][Blog post: Parsing Library in Rust pt. 3 - TextSize crate](https://www.reddit.com/r/rust/comments/fky8pt/blog_post_parsing_library_in_rust_pt_3_textsize/)
-- url: https://blog.frondeus.pl/parser-3/
-### [12][Quick question about unused generic type parameter](https://www.reddit.com/r/rust/comments/fkulrf/quick_question_about_unused_generic_type_parameter/)
-- url: https://www.reddit.com/r/rust/comments/fkulrf/quick_question_about_unused_generic_type_parameter/
+### [11][Recommendations on this data structure](https://www.reddit.com/r/rust/comments/fltzwg/recommendations_on_this_data_structure/)
+- url: https://www.reddit.com/r/rust/comments/fltzwg/recommendations_on_this_data_structure/
+### [12][As a programming language, how does Rust compare to Python?](https://www.reddit.com/r/rust/comments/fld46b/as_a_programming_language_how_does_rust_compare/)
+- url: https://www.reddit.com/r/rust/comments/fld46b/as_a_programming_language_how_does_rust_compare/
 ## aws
-### [1][Don't let this happen to you!](https://www.reddit.com/r/aws/comments/fkwrxv/dont_let_this_happen_to_you/)
-- url: https://www.reddit.com/r/aws/comments/fkwrxv/dont_let_this_happen_to_you/
-### [2][Converting to AWS: Advice and Best Practices](https://www.reddit.com/r/aws/comments/fkujsv/converting_to_aws_advice_and_best_practices/)
-- url: https://www.reddit.com/r/aws/comments/fkujsv/converting_to_aws_advice_and_best_practices/
-### [3][AWSome Day](https://www.reddit.com/r/aws/comments/fl86kd/awsome_day/)
-- url: https://www.reddit.com/r/aws/comments/fl86kd/awsome_day/
-### [4][Lambda Synchronous](https://www.reddit.com/r/aws/comments/fl7lda/lambda_synchronous/)
-- url: https://www.reddit.com/r/aws/comments/fl7lda/lambda_synchronous/
-### [5][WFH office NAS to AWS?](https://www.reddit.com/r/aws/comments/fl31mp/wfh_office_nas_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/fl31mp/wfh_office_nas_to_aws/
-### [6][Cortex - Open source alternative to SageMaker for model serving](https://www.reddit.com/r/aws/comments/fkmpnr/cortex_open_source_alternative_to_sagemaker_for/)
-- url: https://github.com/cortexlabs/cortex
-### [7][[Support query] How to access private IP publicly?](https://www.reddit.com/r/aws/comments/fl3ynl/support_query_how_to_access_private_ip_publicly/)
-- url: https://www.reddit.com/r/aws/comments/fl3ynl/support_query_how_to_access_private_ip_publicly/
-### [8][API gateway v2 and SQS?](https://www.reddit.com/r/aws/comments/fkv9aq/api_gateway_v2_and_sqs/)
-- url: https://www.reddit.com/r/aws/comments/fkv9aq/api_gateway_v2_and_sqs/
-### [9][Is Workmail still being developed?](https://www.reddit.com/r/aws/comments/fko8vm/is_workmail_still_being_developed/)
-- url: https://www.reddit.com/r/aws/comments/fko8vm/is_workmail_still_being_developed/
-### [10][Any reasons why the /r/aws moderators are removing the link posts?](https://www.reddit.com/r/aws/comments/fl0pv3/any_reasons_why_the_raws_moderators_are_removing/)
-- url: https://www.reddit.com/r/aws/comments/fl0pv3/any_reasons_why_the_raws_moderators_are_removing/
+### [1][Run Folding@home on AWS spot instances and help crack COVID-19](https://www.reddit.com/r/aws/comments/flkdgm/run_foldinghome_on_aws_spot_instances_and_help/)
+- url: https://www.reddit.com/r/aws/comments/flkdgm/run_foldinghome_on_aws_spot_instances_and_help/
+### [2][Amazon WorkSpaces and Amazon WorkDocs for up to 50 users no charge through June 30, 2020.](https://www.reddit.com/r/aws/comments/flcwwo/amazon_workspaces_and_amazon_workdocs_for_up_to/)
+- url: https://www.reddit.com/r/aws/comments/flcwwo/amazon_workspaces_and_amazon_workdocs_for_up_to/
+### [3][Exam reschedule due to COVID-19](https://www.reddit.com/r/aws/comments/flsugg/exam_reschedule_due_to_covid19/)
+- url: https://www.reddit.com/r/aws/comments/flsugg/exam_reschedule_due_to_covid19/
+### [4][AWS signature for SNS?](https://www.reddit.com/r/aws/comments/fltq0c/aws_signature_for_sns/)
+- url: https://www.reddit.com/r/aws/comments/fltq0c/aws_signature_for_sns/
+### [5][Signed Cookies AWSSDK - Cloudfront](https://www.reddit.com/r/aws/comments/floatz/signed_cookies_awssdk_cloudfront/)
+- url: https://www.reddit.com/r/aws/comments/floatz/signed_cookies_awssdk_cloudfront/
+### [6][aws-cli S3 bucket setting Content-Type text/html ?](https://www.reddit.com/r/aws/comments/flt4g0/awscli_s3_bucket_setting_contenttype_texthtml/)
+- url: https://www.reddit.com/r/aws/comments/flt4g0/awscli_s3_bucket_setting_contenttype_texthtml/
+### [7][Non-USD billing and COVID-19](https://www.reddit.com/r/aws/comments/flqem9/nonusd_billing_and_covid19/)
+- url: https://www.reddit.com/r/aws/comments/flqem9/nonusd_billing_and_covid19/
+### [8][Programatically modify a security group?](https://www.reddit.com/r/aws/comments/flst8y/programatically_modify_a_security_group/)
+- url: https://www.reddit.com/r/aws/comments/flst8y/programatically_modify_a_security_group/
+### [9][Determining read/write capacity on DynamoDB](https://www.reddit.com/r/aws/comments/flscvx/determining_readwrite_capacity_on_dynamodb/)
+- url: https://www.reddit.com/r/aws/comments/flscvx/determining_readwrite_capacity_on_dynamodb/
+### [10][a standard IT infrastructure for ROS robots and IoT devices.](https://www.reddit.com/r/aws/comments/flsa2h/a_standard_it_infrastructure_for_ros_robots_and/)
+- url: https://github.com/rdbox-intec/rdbox
 ## rails
 ### [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/fgx7fz/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/fgx7fz/personal_projects_show_off_your_own_project_andor/
-### [2][Rails Logging Help](https://www.reddit.com/r/rails/comments/fl31hn/rails_logging_help/)
-- url: https://www.reddit.com/r/rails/comments/fl31hn/rails_logging_help/
-### [3][Social Media Platform](https://www.reddit.com/r/rails/comments/fl9vzd/social_media_platform/)
+### [2][Postgres client / server version mismatch](https://www.reddit.com/r/rails/comments/flkqlo/postgres_client_server_version_mismatch/)
+- url: https://www.reddit.com/r/rails/comments/flkqlo/postgres_client_server_version_mismatch/
+### [3][Alternative to Active Admin?](https://www.reddit.com/r/rails/comments/flj0e0/alternative_to_active_admin/)
+- url: https://www.reddit.com/r/rails/comments/flj0e0/alternative_to_active_admin/
+### [4][Get DB data ID in model class](https://www.reddit.com/r/rails/comments/flow2j/get_db_data_id_in_model_class/)
+- url: https://www.reddit.com/r/rails/comments/flow2j/get_db_data_id_in_model_class/
+### [5][devise changing routes to confirmation.user](https://www.reddit.com/r/rails/comments/flh8ym/devise_changing_routes_to_confirmationuser/)
+- url: https://www.reddit.com/r/rails/comments/flh8ym/devise_changing_routes_to_confirmationuser/
+### [6][Encrypted Chat App](https://www.reddit.com/r/rails/comments/flgbg7/encrypted_chat_app/)
+- url: https://www.reddit.com/r/rails/comments/flgbg7/encrypted_chat_app/
+### [7][Social Media Platform](https://www.reddit.com/r/rails/comments/fl9vzd/social_media_platform/)
 - url: https://www.reddit.com/r/rails/comments/fl9vzd/social_media_platform/
-### [4][Improving performance with Presenter and Eager Load of a big Rails app](https://www.reddit.com/r/rails/comments/fkvtdz/improving_performance_with_presenter_and_eager/)
+### [8][Rails Logging Help](https://www.reddit.com/r/rails/comments/fl31hn/rails_logging_help/)
+- url: https://www.reddit.com/r/rails/comments/fl31hn/rails_logging_help/
+### [9][Improving performance with Presenter and Eager Load of a big Rails app](https://www.reddit.com/r/rails/comments/fkvtdz/improving_performance_with_presenter_and_eager/)
 - url: https://www.reddit.com/r/rails/comments/fkvtdz/improving_performance_with_presenter_and_eager/
-### [5][Best pattern for ActiveRecord Create objects](https://www.reddit.com/r/rails/comments/fl2103/best_pattern_for_activerecord_create_objects/)
+### [10][Best pattern for ActiveRecord Create objects](https://www.reddit.com/r/rails/comments/fl2103/best_pattern_for_activerecord_create_objects/)
 - url: https://www.reddit.com/r/rails/comments/fl2103/best_pattern_for_activerecord_create_objects/
-### [6][[HELP] Restrict browsers mode on websites](https://www.reddit.com/r/rails/comments/fkw3kv/help_restrict_browsers_mode_on_websites/)
+### [11][[HELP] Restrict browsers mode on websites](https://www.reddit.com/r/rails/comments/fkw3kv/help_restrict_browsers_mode_on_websites/)
 - url: https://www.reddit.com/r/rails/comments/fkw3kv/help_restrict_browsers_mode_on_websites/
-### [7][Taking Rails 6’s Action Mailbox for a Spin](https://www.reddit.com/r/rails/comments/fkmhsu/taking_rails_6s_action_mailbox_for_a_spin/)
-- url: https://www.reddit.com/r/rails/comments/fkmhsu/taking_rails_6s_action_mailbox_for_a_spin/
-### [8][Google Oauth2 not applying image_size](https://www.reddit.com/r/rails/comments/fkombb/google_oauth2_not_applying_image_size/)
-- url: https://www.reddit.com/r/rails/comments/fkombb/google_oauth2_not_applying_image_size/
-### [9][ActionText uploading a gif is being shown as an image](https://www.reddit.com/r/rails/comments/fk8anx/actiontext_uploading_a_gif_is_being_shown_as_an/)
-- url: https://www.reddit.com/r/rails/comments/fk8anx/actiontext_uploading_a_gif_is_being_shown_as_an/
-### [10][Example of Search Form with Google Places Autocomplete in Rails 6?](https://www.reddit.com/r/rails/comments/fkch08/example_of_search_form_with_google_places/)
-- url: https://www.reddit.com/r/rails/comments/fkch08/example_of_search_form_with_google_places/
-### [11][Aliasing polymorphic relationships](https://www.reddit.com/r/rails/comments/fkdccv/aliasing_polymorphic_relationships/)
-- url: https://www.reddit.com/r/rails/comments/fkdccv/aliasing_polymorphic_relationships/

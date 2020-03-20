@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/fjkdhu/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/fjkdhu/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/flud0f/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/flud0f/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - March 16, 2020](https://www.reddit.com/r/androiddev/comments/fjj4qu/weekly_questions_thread_march_16_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/fjj4qu/weekly_questions_thread_march_16_2020/
 ---
@@ -31,80 +25,78 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][And that's somehow my fault](https://www.reddit.com/r/androiddev/comments/fl7jq0/and_thats_somehow_my_fault/)
+## [3][Low number of installs from last 15 days (since 5th march). I just wanted to know that its happening with my developer account or all developers are getting this issue or maybe this is due to coronavirus as people are panicking and not interested in checking out new apps.](https://www.reddit.com/r/androiddev/comments/fltkdj/low_number_of_installs_from_last_15_days_since/)
+- url: https://www.reddit.com/r/androiddev/comments/fltkdj/low_number_of_installs_from_last_15_days_since/
+---
+
+## [4][Android Studio 4.0 Beta 3 available](https://www.reddit.com/r/androiddev/comments/flh28d/android_studio_40_beta_3_available/)
+- url: https://androidstudio.googleblog.com/2020/03/android-studio-40-beta-3-available.html
+---
+
+## [5][And that's somehow my fault](https://www.reddit.com/r/androiddev/comments/fl7jq0/and_thats_somehow_my_fault/)
 - url: https://i.redd.it/y12rfgohrln41.png
 ---
 
-## [4][Deprecated onActivityCreated() on Fragment 1.3 Alpha 02](https://www.reddit.com/r/androiddev/comments/fl3du6/deprecated_onactivitycreated_on_fragment_13_alpha/)
-- url: https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha02
+## [6][How do you work with Network System Discovery?](https://www.reddit.com/r/androiddev/comments/flr3py/how_do_you_work_with_network_system_discovery/)
+- url: https://www.reddit.com/r/androiddev/comments/flr3py/how_do_you_work_with_network_system_discovery/
+---
+Cross-post from r/Kotlin, as this topic is a bit difficult to find answers to. I still havent had any luck. Basically what I have learned is that you need to test on real devices. But I still haven't gotten much luck when it comes to service types and names, to have those explained to me would be very helpful.
+
+So how do you work with [NSD](https://developer.android.com/training/connect-devices-wirelessly/nsd) durning the production/ debugging? How do you test that it works properly? Could someone explain a little bit what "service type" and "service name" are. As service type when registering equals to \_http.\_tcp NO DOT, and when listening to a protocol it's with A DOT at the end. And an example for this with real machine (printer, PC, another phone). Like this is what I get when I run avahi-discover [https://imgur.com/a/DA7F14M](https://imgur.com/a/DA7F14M)  , if someone could use this an example to explain what is going on exactly.Thank you for your time. I am stuck on this for like 5 or so days. It's been frustrating. The examples online are horrible and just a copy paste of the documentation.
+## [7][X-post: New data report: The Impact of a Nationwide Quarantine on App Store Downloads - COVID-19 in Italy : AppBusiness](https://www.reddit.com/r/androiddev/comments/flp52t/xpost_new_data_report_the_impact_of_a_nationwide/)
+- url: https://www.reddit.com/r/appbusiness/comments/fljbym/_/
 ---
 
-## [5][What libraries do you hate the most and why?](https://www.reddit.com/r/androiddev/comments/fl8bmt/what_libraries_do_you_hate_the_most_and_why/)
-- url: https://www.reddit.com/r/androiddev/comments/fl8bmt/what_libraries_do_you_hate_the_most_and_why/
+## [8][Tracking daily streaks - How to?](https://www.reddit.com/r/androiddev/comments/flv0ah/tracking_daily_streaks_how_to/)
+- url: https://www.reddit.com/r/androiddev/comments/flv0ah/tracking_daily_streaks_how_to/
 ---
+Im making a very very simple meditation app. The core of it is done but I want to be able to track daily streaks and display them in a neat minimalistic layout.   
+I sorta have the [design](https://imgur.com/a/EKCafU7) in mind but don't really know where to start with coding it in. 
+Any help would be appreciated.
+## [9][Decrease in download](https://www.reddit.com/r/androiddev/comments/fluser/decrease_in_download/)
+- url: https://www.reddit.com/r/androiddev/comments/fluser/decrease_in_download/
+---
+I have a financial app to track daily expenses. Generally I get around 400 installs a day. For the last week I am seeing a decrease in download. (around 150 each day) and number of sessions are also less. Not sure if people are more engaged with the Corona issue worldwide and that is affecting the downloads. Is anyone experiencing a similar trend ?
+## [10][Which ad network to use? How does AdMob compare to Appodeal and other networks?](https://www.reddit.com/r/androiddev/comments/flugxl/which_ad_network_to_use_how_does_admob_compare_to/)
+- url: https://www.reddit.com/r/androiddev/comments/flugxl/which_ad_network_to_use_how_does_admob_compare_to/
+---
+What ad network are you using for your app?  
 
-## [6][Native Dependencies in Android Studio 4.0](https://www.reddit.com/r/androiddev/comments/fl99pb/native_dependencies_in_android_studio_40/)
-- url: https://android-developers.googleblog.com/2020/02/native-dependencies-in-android-studio-40.html
----
 
-## [7][Android 11: Developer Preview 2](https://www.reddit.com/r/androiddev/comments/fkt2ts/android_11_developer_preview_2/)
-- url: https://android-developers.googleblog.com/2020/03/android-11-developer-preview-2.html?
----
-
-## [8][How can I use custom and default SSL certificate simultaneously in app](https://www.reddit.com/r/androiddev/comments/fl7jjm/how_can_i_use_custom_and_default_ssl_certificate/)
-- url: https://www.reddit.com/r/androiddev/comments/fl7jjm/how_can_i_use_custom_and_default_ssl_certificate/
----
-In my app, I have to use custom certificate for making 2 API calls, and default certificate for all other API calls.
+I am using AdMob, but wondering if there are other better ad networks.
 
 &amp;#x200B;
 
-But once I pin custom certificate in Volley RequestQueue, all the subsequent calls with default certificate are failing with SSLHandshakeException.
+For example, Appdoeal. Is anyone here using it? How effective have you found it? Maybe there are better networks out there?
 
 &amp;#x200B;
 
-How can I do this?
-## [9][Question about minSdkVersion and Play Store publishing](https://www.reddit.com/r/androiddev/comments/fl87wq/question_about_minsdkversion_and_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/fl87wq/question_about_minsdkversion_and_play_store/
+Any information would be much appreciated.
+## [11][How to create Activity scoped ViewModel instance in Kodein?](https://www.reddit.com/r/androiddev/comments/flubbo/how_to_create_activity_scoped_viewmodel_instance/)
+- url: https://www.reddit.com/r/androiddev/comments/flubbo/how_to_create_activity_scoped_viewmodel_instance/
 ---
-Let's say that I have an app currently published with minSdkVersion x.
+I have tried this approach which obviously isn't working.
 
-&amp;nbsp;
+// In Kodein module
 
-If I publish a new APK with versionCode incremented (+1000) and  minSdkVersion y, where y &gt; x, will distribution to devices on the Play Store be like this:
+`bind&lt;HomeViewModel&gt;() with scoped(WeakContextScope.of&lt;Activity&gt;()).singleton{`  
+ `KotlinViewModelProvider.of(context as FragmentActivity) {`  
+ `HomeViewModel(instance())`  
+ `}`  
+`}`
 
-&amp;nbsp;
+// Calling it lazily from fragment
 
-- devices with Android version with API level &gt;= y  get the new APK installed for new installs. And existing installs of the old version are upgraded to the new APK
-- devices with Android version with API level &lt; y  get the old APK installed for new installs. And existing installs do not get upgraded to the new version
+`private val mViewModel: HomeViewModel by kodein.on(this.activity).instance()`
 
-&amp;nbsp;
+This doesn't work, since it might be called before the fragment even attaches to the Activity. 
 
-Long story short: I have an app minSdkVersion 14 but need to make a specific version for API 29+ (Android 10) devices.
-## [10][Desperately searching for entry-level Android Developer position](https://www.reddit.com/r/androiddev/comments/fl0qqv/desperately_searching_for_entrylevel_android/)
-- url: https://www.reddit.com/r/androiddev/comments/fl0qqv/desperately_searching_for_entrylevel_android/
----
-Friends,
+This is my first attempt to use DI, I started with Kodein, but this part of using, Activity context in binding isn't clear to me. Any help would be appreciated. 
 
-I have been searching full-time for an entry-level Android Developer role for the last few months. I left my career in mechanical engineering (8+ years) to pursue this new field, but it has been very difficult to get any traction. I (barely) failed the Google interview as I attempted to do it both Java and Python. A foolish mistake. I have an app released on the Play Store and a solid resume. I have penetrated into the final round of interviews multiple times with a few companies, however they want more experience even at the junior level. I am supporting my family on savings from my previous career and time is running out. I don't know what else to do ...
+&amp;#x200B;
 
-Do you know any "feeder" programs that accept new grads (or career change like me)? I realize that Amazon, Facebook, etc. have similar interview styles to Google. I'm tentative to start those due to a one year penalty if I fail. Also, smaller companies are preferred as one the reasons I left mechanical engineering was the mind numbing slow pace of corporate giants.
-
-There must be something out there I am missing. I have talent, an app in the market, and a decade of engineering experience.
-
-Any thoughts for an increasingly nervous new developer?
-## [11][Can't find my drawable, but it's definitely there and I've cleaned + invalidated the cache. Other ideas?](https://www.reddit.com/r/androiddev/comments/fla2z3/cant_find_my_drawable_but_its_definitely_there/)
-- url: https://www.reddit.com/r/androiddev/comments/fla2z3/cant_find_my_drawable_but_its_definitely_there/
----
-I was following [this tutorial on splash screens](https://android.jlelse.eu/right-way-to-create-splash-screen-on-android-e7f1709ba154), and my app keeps throwing a `NotFoundException: Drawable com.example.ktest:drawable/splash_background with resource ID #0x7f070077`. There seems to be something wrong with this part of my `res/values/styles.xml`:
-
-    &lt;style name="SplashTheme" parent="Theme.AppCompat.NoActionBar"&gt;
-    &lt;item name="android:windowBackground"&gt;@drawable/splash_background&lt;/item&gt;
-&lt;/style&gt; 
-
-This `res/drawable/splash_background.xml` file definitely exists in that directory, and is [exactly the same as the tutorial file](https://raw.githubusercontent.com/AnkitSinhal/SplashScreen/master/app/src/main/res/drawable/splash_background.xml). If I change the value to `@drawable/ic_launcher_background` I get the a working splash screen (albeit with a different image).
-
-I've cleaned the project to regenerate [R.java](https://R.java), I've invalidated the cache, and I'm out of ideas. What's causing this problem?
-## [12][I've made a level that includes Illuminati logo, is this considered copyright using their logo there?](https://www.reddit.com/r/androiddev/comments/fl9aaw/ive_made_a_level_that_includes_illuminati_logo_is/)
-- url: https://i.redd.it/a866ewivimn41.jpg
+Thank you.
+## [12][X-post: Data report: How the Coronavirus is Impacting Downloads of Business Apps : AppBusiness](https://www.reddit.com/r/androiddev/comments/flnaeq/xpost_data_report_how_the_coronavirus_is/)
+- url: https://www.reddit.com/r/appbusiness/comments/fljcro/_/
 ---
 

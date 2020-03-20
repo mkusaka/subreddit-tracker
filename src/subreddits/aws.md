@@ -1,55 +1,117 @@
 # aws
-## [1][Don't let this happen to you!](https://www.reddit.com/r/aws/comments/fkwrxv/dont_let_this_happen_to_you/)
-- url: https://www.reddit.com/r/aws/comments/fkwrxv/dont_let_this_happen_to_you/
+## [1][Run Folding@home on AWS spot instances and help crack COVID-19](https://www.reddit.com/r/aws/comments/flkdgm/run_foldinghome_on_aws_spot_instances_and_help/)
+- url: https://www.reddit.com/r/aws/comments/flkdgm/run_foldinghome_on_aws_spot_instances_and_help/
 ---
-At work I am developing a proof-of-concept application based around exporting an Aurora RDS snapshot to S3 and querying the exported Parquet files with AWS Athena. As part of this process I had  to set up an AWS Glue database and a crawler to populate same. I kept getting "Access Denied" errors, though, when I ran the crawler, even though the crawler had the appropriate S3 permissions with regard to the bucket.
+Spare AWS credits? [This CloudFormation template](https://github.com/jkataja/cfn-foldingathome) creates an AWS spot instance fleet for running the [Folding@Home](https://foldingathome.org/) client. Folding@home is a computing platform to assist disease research, for instance to find a cure for the COVID-19 virus. The template uses g4dn.xlarge instances with GPUs.
 
-Turns out the problem was KMS. Aurora encrypts the exported files, so the IAM Role for the crawler needs the additional permission of `kms:Decrypt` for the KMS key used to encrypt the Parquet files. I had to get AWS support to look at the back-end S3 logs to figure that out. :)
+The template installs Ubuntu 18.04 LTS, NVidia CUDA 10.2 and Folding@home client 7.5.1. Folding@home client is started automatically after instance initialization is complete. Client runs until the template is removed, auto scaling group is scaled in or spot instance is reclaimed. The template bids 100% of on-demand price. Spot instance pricing varies: I have seen approximately 60-70% discount. The Folding@home servers have been recently busy and you cannot always retrieve a work package, so there may be some idle.
 
-Don't let this happen to you! If the thing that's writing to S3 is writing encrypted, then the thing that's reading from S3 has to have permission to decrypt stuff.
-## [2][Converting to AWS: Advice and Best Practices](https://www.reddit.com/r/aws/comments/fkujsv/converting_to_aws_advice_and_best_practices/)
-- url: https://www.reddit.com/r/aws/comments/fkujsv/converting_to_aws_advice_and_best_practices/
+GitHub link: [https://github.com/jkataja/cfn-foldingathome](https://github.com/jkataja/cfn-foldingathome)
+## [2][Amazon WorkSpaces and Amazon WorkDocs for up to 50 users no charge through June 30, 2020.](https://www.reddit.com/r/aws/comments/flcwwo/amazon_workspaces_and_amazon_workdocs_for_up_to/)
+- url: https://www.reddit.com/r/aws/comments/flcwwo/amazon_workspaces_and_amazon_workdocs_for_up_to/
 ---
-I am a Systems Engineer who has been given a task to prototype conversion of our physical system to AWS. I can't go into details, except to say it involves multiple servers and micro-services. Are there any common pitfalls I can avoid or best practices I should be following? I've a small amount of AWS experience, enough to launch an instance, but AWS is pretty daunting. Is there anywhere you would recommend starting?
-## [3][AWSome Day](https://www.reddit.com/r/aws/comments/fl86kd/awsome_day/)
-- url: https://www.reddit.com/r/aws/comments/fl86kd/awsome_day/
----
-Can somebody explain to me why people feel the need to be dumping links to their LinkedIn/Instagram accounts in the chat ? What do they plan on achieving?
-## [4][Lambda Synchronous](https://www.reddit.com/r/aws/comments/fl7lda/lambda_synchronous/)
-- url: https://www.reddit.com/r/aws/comments/fl7lda/lambda_synchronous/
----
-The lamda statement is querying DynamoDB, emailing customers with info and then updating the database. However, I need this to happen not in parallel, so each request is placed in a queue, as the database update may affect the next customers query. Any thoughts? I'm using Python for the lambda.
-## [5][WFH office NAS to AWS?](https://www.reddit.com/r/aws/comments/fl31mp/wfh_office_nas_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/fl31mp/wfh_office_nas_to_aws/
----
-OneDrive/Dropbox is probably a better solution for my wife's office, but as a thought experiment, to get her office laptop mounting her familiar NAS volumes from home, what is the AWS answer for this?
+ [https://aws.amazon.com/blogs/desktop-and-application-streaming/new-offers-to-enable-work-from-home-from-amazon-workspaces-and-ama](https://aws.amazon.com/blogs/desktop-and-application-streaming/new-offers-to-enable-work-from-home-from-amazon-workspaces-and-amazon-workdocs/) 
 
-Lets assume the current local NAS could be wholly hosted on AWS instead of the office. So no VPN server at the office. Lets assume that there is a mix of Windows and MacOS clients at her office. Files are typically ~100M architecture drawings that multiple people might work on.
+&amp;#x200B;
 
-What are the steps. S3 sync to s3 and then setup FSx and then setup VPN client on the PCs? Or is it more involved with Active Directory?
-## [6][Cortex - Open source alternative to SageMaker for model serving](https://www.reddit.com/r/aws/comments/fkmpnr/cortex_open_source_alternative_to_sagemaker_for/)
-- url: https://github.com/cortexlabs/cortex
+*We are announcing two new offers that enable you to use Amazon WorkSpaces and Amazon WorkDocs for up to 50 users at no charge. Both offers are for new customers that have not previously used these services and are available through June 30, 2020. The WorkSpaces offer is available beginning on April 1st and will include our Standard, Value, and Performance bundles. The WorkDocs offer is available immediately. Together, WorkSpaces and WorkDocs provide remote workers the ability to securely use the applications they need, while collaborating on documents with their colleagues around the world. If you want to get started with WorkSpaces immediately, you can use our ongoing* [*Free Tier*](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;all-free-tier.q=Desktop%2B%26%2BApp%2BStreaming%2BAmazon%2BWorkSpaces%2B40%2Bhours&amp;all-free-tier.q_operator=AND) *offer of the WorkSpaces Standard bundle* [zon-workdocs/](https://aws.amazon.com/blogs/desktop-and-application-streaming/new-offers-to-enable-work-from-home-from-amazon-workspaces-and-amazon-workdocs/)  
+
+&amp;#x200B;
+
+I'm an AWS Employee.
+## [3][Exam reschedule due to COVID-19](https://www.reddit.com/r/aws/comments/flsugg/exam_reschedule_due_to_covid19/)
+- url: https://www.reddit.com/r/aws/comments/flsugg/exam_reschedule_due_to_covid19/
+---
+Has anyone facing issues with connecting to PSI Support ?
+
+We have a total lockdown on 22nd March due to Coronavirus, and my exam is scheduled on the same day. Due to the outbreak, I have already exhausted my 2x rescheduling options and now I am unable to reschedule it for a later date.
+
+Do we have someone here from PSI ? or can AWS help in this regard ?
+## [4][AWS signature for SNS?](https://www.reddit.com/r/aws/comments/fltq0c/aws_signature_for_sns/)
+- url: https://www.reddit.com/r/aws/comments/fltq0c/aws_signature_for_sns/
+---
+I'm using the AWS key derivation for python listed in the [example](https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html#sig-v4-examples-get-auth-header) for use without boto3. 
+
+Im submitting a request to publish to an SNS Topic but keep getting the error message `The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.`. The Access Key and Secret Key match whats in IAM.
+
+The only thing I changed in the script was the URI params:
+
+    method = 'GET'
+    service = 'sns'
+    host = 'sns.us-east-1.amazonaws.com'
+    region = 'us-east-1'
+    endpoint = 'https://sns.us-east-1.amazonaws.com'
+    request_parameters = 'Action=Publish&amp;Version=2010-03-31&amp;Message=HowBowDah&amp;TopicArn=arn%3aws%3sns%3us-east-1%3151341732511%3test'
+
+
+
+Does this underlying request look right?
+
+    GET /?Action=Publish&amp;Version=2010-03-31&amp;Message=HowBowDah&amp;TopicArn=arn%253Aws%253sns%253us-east-1%253151341732511%253test HTTP/1.1
+    Host: sns.us-east-1.amazonaws.com
+    User-Agent: python-requests/2.22.0
+    Accept-Encoding: gzip, deflate
+    Accept: */*
+    Connection: close
+    x-amz-date: 20200320T113335Z
+    Authorization: AWS4-HMAC-SHA256 
+    Credential=AKIASGPFLSKPVMSJFLML/20200320/us-east-1/sns/aws4_request, SignedHeaders=host;x-amz-date, Signature=8d5a555626c592146768499aee1e85d64f6d4898cfb568ea2544cf7ad0d6d9f0
+## [5][Signed Cookies AWSSDK - Cloudfront](https://www.reddit.com/r/aws/comments/floatz/signed_cookies_awssdk_cloudfront/)
+- url: https://www.reddit.com/r/aws/comments/floatz/signed_cookies_awssdk_cloudfront/
+---
+Anyone have a working solution with the new Cloudfront AWSSDK to get the signed cookies working with alternate domain.  Created the CNAME for the hosted domain, e.g., (cdn.example.com).  Signed URLs works fine but for the life of me cannot get the signed cookies to work.
+## [6][aws-cli S3 bucket setting Content-Type text/html ?](https://www.reddit.com/r/aws/comments/flt4g0/awscli_s3_bucket_setting_contenttype_texthtml/)
+- url: https://www.reddit.com/r/aws/comments/flt4g0/awscli_s3_bucket_setting_contenttype_texthtml/
+---
+Hello,
+
+I'm trying to upload a bunch of files with no extensions that are in fact html
+
+I'm doing it like this:
+
+aws s3 sync . s3://$FRONTEND\_BUCKET\_NAME --exclude '\*.\*' --content-type text/html --content-language html --metadata-directive REPLACE
+
+Yet content-type is set to  binary/octet-stream in the bucket? What am I missing?
+
+&amp;#x200B;
+
+UPDATE:
+
+Ok I figured it out, trash this post if you want but solution is to:
+
+dist: bionic  
+install: pyenv global 3.8.1 &amp;&amp; pip3 install --user awscli==1.17.7
+
+because reasons I guess.
+## [7][Non-USD billing and COVID-19](https://www.reddit.com/r/aws/comments/flqem9/nonusd_billing_and_covid19/)
+- url: https://www.reddit.com/r/aws/comments/flqem9/nonusd_billing_and_covid19/
+---
+Has anyone seen any communications about what will happen for those of us billed in a non-USD currency? Exchange rates have taken a plunge with the global pandemic so I'm wondering what the options are... 😨
+## [8][Programatically modify a security group?](https://www.reddit.com/r/aws/comments/flst8y/programatically_modify_a_security_group/)
+- url: https://www.reddit.com/r/aws/comments/flst8y/programatically_modify_a_security_group/
+---
+It doesn't look like this is specifically possible. To be specific, I want to modify a member IP permision within a group. I'm using the .NET API, but since it's feature parity seemingly with the command line, I've been looking at that too.
+
+&amp;#x200B;
+
+I thought I was doing well, I was able to find my way through describeSecurityGroups, and find the appropriate SecurityGroup. Then i can iterate the IpPermissions, into IPv4Ranges and loop that and find the one I want to change (by Description in this case)
+
+&amp;#x200B;
+
+Ideally, I'd be wanting to update the IP when I find it, but there is only UpdateDescription for it, not the IP. I can't seem to find any commands to remove a specific Ipv4Range entry. 
+
+&amp;#x200B;
+
+To give some back story, we have a web-based product that is used by many users, including our staff. Our staff also have RDP access to a Bastion host that they need to use on occasion. Our office IPs are whitelisted, and some of our staff have static Ips, so those aren't an issue either. However a lot of staff are on dynamic connections. We're getting a bit overrun of "can you add my IP to the bastion" every day with so many now working from home. We don't have a VPN into the production network, it's what this Bastion host is for. 
+
+What I had hoped to do was to use the Description field, and put the username from the web product in there, and then during logon to the product, pickup their IP, and update the security group accordingly, so as soon as they web-login, they would also be granted access on the Bastion. 
+
+Since there doesn't seem to be function to do this, I guess the only option is to make a security group per user, but is there a limit of how many security groups can exist on an EC2 instance, and this seems a lot messier. Short of a VPN into production, can anyone think of any other way to approach this?
+## [9][Determining read/write capacity on DynamoDB](https://www.reddit.com/r/aws/comments/flscvx/determining_readwrite_capacity_on_dynamodb/)
+- url: https://www.reddit.com/r/aws/comments/flscvx/determining_readwrite_capacity_on_dynamodb/
+---
+Can someone please help me determine the right read/write capacity units for my dynamodb tabels? I have 2 tables already in dynamodb, but one of the engineers set up read and write cus too high when created the tables, so the costs are higher that they should be. How can I determine the right amount of units to minimize the costs and maintain the performance? Thanks
+## [10][a standard IT infrastructure for ROS robots and IoT devices.](https://www.reddit.com/r/aws/comments/flsa2h/a_standard_it_infrastructure_for_ros_robots_and/)
+- url: https://github.com/rdbox-intec/rdbox
 ---
 
-## [7][[Support query] How to access private IP publicly?](https://www.reddit.com/r/aws/comments/fl3ynl/support_query_how_to_access_private_ip_publicly/)
-- url: https://www.reddit.com/r/aws/comments/fl3ynl/support_query_how_to_access_private_ip_publicly/
----
-So i have some content that can only run on the private IP and no matter what hosts file chicanery i do i can't get it to resolve on the public IP, so how can i make it so the private IP is like the public IP?
-## [8][API gateway v2 and SQS?](https://www.reddit.com/r/aws/comments/fkv9aq/api_gateway_v2_and_sqs/)
-- url: https://www.reddit.com/r/aws/comments/fkv9aq/api_gateway_v2_and_sqs/
----
-Does anyone know if you can set up SQS as the target for the new apigatewayv2 API AWS_PROXY? Or maybe you’d use HTTP_PROXY with the queue URL?
-## [9][Is Workmail still being developed?](https://www.reddit.com/r/aws/comments/fko8vm/is_workmail_still_being_developed/)
-- url: https://www.reddit.com/r/aws/comments/fko8vm/is_workmail_still_being_developed/
----
-We use Workmail as our company's email service. It is generally ok, but it doesn't seem to have had any new features since its release 3 years ago. The interface is clunky but we expected this to improve. 
-
-We are concerned that there seems to be a lack of development on the platform. It is very basic but we pay almost the same amount as we would pay for Gmail. 
-
-Also, we receive calendar invites for AWS events, from AWS, and the only options we have are Outlook, Google or iCal.  No mention of Workmail or any web based integration to their events. This just comes across as a product that AWS doesn't even recognise.
-
-Does anybody use Workmail and is there any reason not to move onto Gmail?
-## [10][Any reasons why the /r/aws moderators are removing the link posts?](https://www.reddit.com/r/aws/comments/fl0pv3/any_reasons_why_the_raws_moderators_are_removing/)
-- url: https://www.reddit.com/r/aws/comments/fl0pv3/any_reasons_why_the_raws_moderators_are_removing/
----
-Recently I have submitted few blog links (redshift related resources) but after a day the post got removed by the moderator. It is an AWS related external link. But I don't know why they are removing it.

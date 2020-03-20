@@ -113,7 +113,61 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Why so many students are using '#include&lt;bits/stdc++.h&gt;' instead of '#include&lt;iostream&gt;'?](https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/)
+## [3][CMake 3.17.0 available for download - Announcements](https://www.reddit.com/r/cpp/comments/fluibz/cmake_3170_available_for_download_announcements/)
+- url: https://discourse.cmake.org/t/cmake-3-17-0-available-for-download/828
+---
+
+## [4][Writing Linux File Buffer Cache top in C++ with BPF](https://www.reddit.com/r/cpp/comments/flr4kn/writing_linux_file_buffer_cache_top_in_c_with_bpf/)
+- url: http://www.mycpu.org/cachetop-bpf-part-2/
+---
+
+## [5][Eclipse 2020-03 released with CDT 9.11](https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/)
+- url: https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/
+---
+Hi, Eclipse 2020-03 with CDT 9.11 has been released. Recently a lot of changes to improve c++ support into Eclipse has been performed and a lot of other effort needs to be spent.  I'm curious to know what you think about it. Eclipse is quite popular but there are a lot of alternatives like Visual Studio, CLion, Netbeans and so on. What are you using and why?
+
+Just some improvements so far:
+
+1. A lot of new options for the built-in formatter: improvements for comment formatting, on/off tags
+2. Improvements and bug fixes for the refactor: for example the automatic implementation to override methods in child classes
+3. Improved the class wizard to create a new class with fresh new C++11 options and according to the rule of five
+4. Improved doxygen support for automatic generation of tags
+5. Added a lot of new options about compiler warnings
+6. Added new C++17 features support, like structured bindings
+
+Some areas where cdt community is currently working for short-term:
+
+1. Integrate all C++17 features into the built-in parser, like CTAD and constexpr lambda expressions (with 9.12 I think 95% should be covered)
+2. Improve the support for CMake projects
+3. Other Improvements for the static analysis and built-in formatter support
+
+For long-term:
+
+1. There's nothing for C++20 yet, the idea could be to move everything to LSP, it could be a great change
+2. Rework the built-in build system to have something more flexible
+## [6][Application of C++ in ARM processors](https://www.reddit.com/r/cpp/comments/flqdmy/application_of_c_in_arm_processors/)
+- url: https://www.reddit.com/r/cpp/comments/flqdmy/application_of_c_in_arm_processors/
+---
+Hello,
+
+It has been two quarters (third one online due to COVID-19) and I have been studying C++ at my university. I have made several fundamental projects using C++ and want to dig deeper.
+
+I want to build something with an ARM processor, but I don't know how should I go about it! I am willing to learn new things, and want to not only study, but use a programming language learned in the classroom.
+
+Is there a specific learning path I should follow to explore ARM processors? How and what should I start learning? (I have just recently completed Data Structures in C++)
+
+&amp;#x200B;
+
+Thanks in advance!
+## [7][CppCast: Meson and the Meson Manual](https://www.reddit.com/r/cpp/comments/flnu7y/cppcast_meson_and_the_meson_manual/)
+- url: https://cppcast.com/jussi-pakkanen-meson-manual/
+---
+
+## [8][Native Language Benchmark: C/C++ is 10% faster than rust.](https://www.reddit.com/r/cpp/comments/fluv6d/native_language_benchmark_cc_is_10_faster_than/)
+- url: https://github.com/skywind3000/LanguageMark
+---
+
+## [9][Why so many students are using '#include&lt;bits/stdc++.h&gt;' instead of '#include&lt;iostream&gt;'?](https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/)
 - url: https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/
 ---
 I am hiring for my company. And the codes submitted for a test problem has '#include&lt;bits/stdc++.h&gt;' at the beginning. The MacOS default compiler complains
@@ -127,19 +181,11 @@ I am hiring for my company. And the codes submitted for a test problem has '#inc
 `1 error generated.` 
 
 Why people are using '#include&lt;bits/stdc++.h&gt;'?
-## [4][My C++ sorting algorithms implementation](https://www.reddit.com/r/cpp/comments/fl96gh/my_c_sorting_algorithms_implementation/)
-- url: https://www.reddit.com/r/cpp/comments/fl96gh/my_c_sorting_algorithms_implementation/
----
-In order to learn how to program in C ++ with some programming bases acquired in Python, I coded this little program which compares the efficiency of the different usual sorts in terms of execution time.
-
-I am open to advice here is the github link:
-
-[https://github.com/Code-Kiyosuke/C-\_SortAlgorithm/tree/master](https://github.com/Code-Kiyosuke/C-_SortAlgorithm/tree/master)
-## [5][SIARE Engineering, an Italian producer of intensive care machines, is looking for a C++ programmer in Emilia Romagna (Italy) to handle the increased in production to deal with COVID-19 [Facebook]](https://www.reddit.com/r/cpp/comments/fkm7nk/siare_engineering_an_italian_producer_of/)
+## [10][SIARE Engineering, an Italian producer of intensive care machines, is looking for a C++ programmer in Emilia Romagna (Italy) to handle the increased in production to deal with COVID-19 [Facebook]](https://www.reddit.com/r/cpp/comments/fkm7nk/siare_engineering_an_italian_producer_of/)
 - url: https://www.facebook.com/siareengineering/posts/3153957624673910?comment_id=3155916694478003
 ---
 
-## [6][The poplar heap, an implicit data structure](https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/)
+## [11][The poplar heap, an implicit data structure](https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/)
 - url: https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/
 ---
 A few years ago while going through old computer science papers I stumbled upon *Smoothsort Revisited* by Coenraad Bron and Wim H. Hesselink which introduces a new sorting algorithm inspired by Dijkstra's smoothsort that they call *poplar sort*. The algorithm is based on the construction and sorting of a forest of "poplars", which is the name the authors give to some specific kinds of heap.
@@ -151,31 +197,7 @@ Most of the space and time complexities mentioned in the repository are guesstim
 The article only describes my successful experiments. If you want to look further into the research area, I've also a Gist with another experiment where I used a secondary heap (a normal binary heap this time) to try to reduce the amount of comparison performed by the `sort_heap` algorithm: https://gist.github.com/Morwenn/4441d4d1d01dbaf613cf539ad9c13a2a
 
 If you are currently stuck at home like I am, I hope that this might help you to kill time a bit.
-## [7][Effective Header Management in C++](https://www.reddit.com/r/cpp/comments/fkp9w4/effective_header_management_in_c/)
+## [12][Effective Header Management in C++](https://www.reddit.com/r/cpp/comments/fkp9w4/effective_header_management_in_c/)
 - url: https://pspdfkit.com/blog/2020/effective-header-management-in-cpp/
----
-
-## [8][Using Visual Studio Code for Qt Applications – Part One](https://www.reddit.com/r/cpp/comments/fkna0x/using_visual_studio_code_for_qt_applications_part/)
-- url: https://www.kdab.com/using-visual-studio-code-for-qt-apps-pt-1/
----
-
-## [9][Automated Test Case Generation of native applications from Python, with branch coverage feedback](https://www.reddit.com/r/cpp/comments/fktxdo/automated_test_case_generation_of_native/)
-- url: https://engineering.backtrace.io/posts/2020-03-11-how-hard-is-it-to-guide-test-case-generators-with-branch-coverage-feedback/
----
-
-## [10][Ways C++ prevents you from doing X](https://www.reddit.com/r/cpp/comments/fkez6b/ways_c_prevents_you_from_doing_x/)
-- url: https://quuxplusone.github.io/blog/2020/03/17/you-cant-do-x/
----
-
-## [11][Is it worth buying the current edition of one of the "canonical textbooks" (the C++ programming language, the C++ Primer e.t.c.) given that C++20 is about to be released?](https://www.reddit.com/r/cpp/comments/fk7ijd/is_it_worth_buying_the_current_edition_of_one_of/)
-- url: https://www.reddit.com/r/cpp/comments/fk7ijd/is_it_worth_buying_the_current_edition_of_one_of/
----
-I'm about to start learning C++ (going through the "Tour of C++" right now), and am considering buying a textbook, but was wondering if it would be worth it to hold fire for a few months if a bunch of textbooks are about to release new editions updated for C++20. I suppose this question has two sub-parts:
-
-1. Will the changes to the language be noticeable for a beginner (to C++; I've programmed a bit in other languages before), enough so that a beginner textbook for an older version of the language would be considered out of date?
-
-2.Will/when will the textbooks listed in the sidebar/recommended by Bjarne get updated for C++20?
-## [12][Learning-based Memory Allocation for C++ Server Workloads - Google Research](https://www.reddit.com/r/cpp/comments/fjtuty/learningbased_memory_allocation_for_c_server/)
-- url: https://research.google/pubs/pub49008/?fbclid=IwAR3Ccaf0qd090qkjl-6cq0o-KDflsiWYBB110jW7JSMIL5jL2ngVJ8dEdek
 ---
 

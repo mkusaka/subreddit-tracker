@@ -13,43 +13,120 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Inside Fiber: in-depth overview of the new reconciliation algorithm in React](https://www.reddit.com/r/javascript/comments/fl67ru/inside_fiber_indepth_overview_of_the_new/)
+## [3][Introduction to AntV](https://www.reddit.com/r/javascript/comments/fls423/introduction_to_antv/)
+- url: https://observablehq.com/@jiazhewang/introduction-to-antv
+---
+
+## [4][Should you learn VIM as a JavaScript Developer?](https://www.reddit.com/r/javascript/comments/flc3t6/should_you_learn_vim_as_a_javascript_developer/)
+- url: https://medium.com/@joey_colon/should-you-learn-vim-as-a-developer-in-2020-75fde02c5443
+---
+
+## [5][[AskJS] Delphi (Win32) to web - Pros and cons of each of the big JS frameworks?](https://www.reddit.com/r/javascript/comments/flqgzj/askjs_delphi_win32_to_web_pros_and_cons_of_each/)
+- url: https://www.reddit.com/r/javascript/comments/flqgzj/askjs_delphi_win32_to_web_pros_and_cons_of_each/
+---
+Hello,
+
+A couple of months ago I ported an old Delphi application to the web. It was the standard, classic, Windows desktop application, with windows to enter data, datatables, reports and so. It works, but I think that it's a bit clunky, as it's all server side renderer with Symfony 4 (PHP).
+
+As an enhancement, I wanna port the frontend of this application to Javascript. I'm an experienced developer (more than 20 years programming), but I'm a novice with modern Javascript (I'm sorry, currently I only use jQuery... :P).
+
+I've been doing some Angular and React tutorials, but these tutorials are very simple and easy, so I still don't know which of these frameworks is the more recommended for the kind of application I want to write. Can you help me to choose which framework to use? 
+
+Thank you! :)
+## [6][MediaWiki is adopting a modern JavaScript framework: Vue.js](https://www.reddit.com/r/javascript/comments/flbgo4/mediawiki_is_adopting_a_modern_javascript/)
+- url: https://phabricator.wikimedia.org/T241180
+---
+
+## [7][[AskJS] jQuery spaghetti code project refactoring using es6 classes](https://www.reddit.com/r/javascript/comments/fltl0b/askjs_jquery_spaghetti_code_project_refactoring/)
+- url: https://www.reddit.com/r/javascript/comments/fltl0b/askjs_jquery_spaghetti_code_project_refactoring/
+---
+Hi!
+
+I'm refactoring a project where there is a file "app.js" that contain all jQuery code used in the project.
+
+I'd like to split all functionality in es6 classes in order to improve the file's organization and clean the code.
+
+I started from a simple accordion functionality that was written in this way:
+
+    $('.accordion__item').click(function () {
+ $(this).siblings('.accordion__sub-items').slideToggle();
+
+ if ($(this).siblings('.accordion__sub-items').length &gt; 0) {
+     $(this).toggleClass('open');
+ }
+});
+
+HTML (for simplicity I added only 2° levels):
+
+    &lt;ul class="accordion__list"&gt;
+        &lt;li class="accordion__elm"&gt;
+            &lt;div class="accordion__item"&gt;
+                &lt;div class="accordion__item-title"&gt;First Level&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;ul class="accordion__sub-items"&gt;
+                &lt;li class="accordion__elm"&gt;
+                    &lt;div class="accordion__item"&gt;
+                        &lt;div class="accordion__item-title"&gt;Second Level&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+Started from here I created this Accordion class:
+
+    import $ from 'jquery';
+    
+    class Accordion {
+        constructor({ root }) {
+            this.root = $(root);
+            this.item = this.root.children('.accordion__item');
+    
+            this.initEvents();
+        }
+    
+        initEvents() {
+            this.item.on('click', (ev) =&gt; this._openAccordion(ev.currentTarget));
+        }
+    
+        _openAccordion(item) {
+            const sub_items = $(item).siblings('.accordion__sub-items');
+            sub_items.slideToggle();
+    
+            if (sub_items.length &gt; 0) {
+                $(item).toggleClass('open');
+            }
+        }
+    }
+    
+    export default Accordion;
+
+and edited the app.js file in this way:
+
+    import Accordion from './modules/Accordion';
+    
+    $(document).ready(() =&gt; {
+        const AccordionElm = new Accordion({ root: '.accordion__elm' });
+    });
+
+Everything works well but I would ask you if my approach is correct  or could be improved. When an accordion\_\_item is clicked  I pass to \_openAccordion method the ev.currentTarget is this correct?
+## [8][Everything You Need to Know About Regular Expressions in JavaScript](https://www.reddit.com/r/javascript/comments/flt1n8/everything_you_need_to_know_about_regular/)
+- url: https://medium.com/better-programming/everything-you-need-to-know-about-regular-expressions-in-javascript-59807f758cbd?source=friends_link&amp;sk=75db29991e31cd204cefe8c8d4b7a821
+---
+
+## [9][Inside Fiber: in-depth overview of the new reconciliation algorithm in React](https://www.reddit.com/r/javascript/comments/fl67ru/inside_fiber_indepth_overview_of_the_new/)
 - url: https://indepth.dev/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/
 ---
 
-## [4][Get Involved: Open Source Healthcare Software](https://www.reddit.com/r/javascript/comments/fkrxi4/get_involved_open_source_healthcare_software/)
-- url: https://medium.com/@dannyrb/get-involved-open-source-healthcare-software-a5122c505ec0
+## [10][I have made a cheatsheet for Puppeteer to code your tests/bots faster.](https://www.reddit.com/r/javascript/comments/flbrwj/i_have_made_a_cheatsheet_for_puppeteer_to_code/)
+- url: https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/puppeteer.js
 ---
 
-## [5][Data validation using functions interfaces](https://www.reddit.com/r/javascript/comments/fl7fif/data_validation_using_functions_interfaces/)
-- url: https://github.com/neuledge/funval
+## [11][Tab Bar Animation React Native - Project in Github](https://www.reddit.com/r/javascript/comments/flnqhn/tab_bar_animation_react_native_project_in_github/)
+- url: /user/marcelxsilva/comments/fk7ofo/tab_bar_animation_react_native_project_in_github/
 ---
 
-## [6][Live Book Writing Stream with Roy Osherove: Art of Unit Testing 3rd Edition in JavaScript](https://www.reddit.com/r/javascript/comments/fl6yko/live_book_writing_stream_with_roy_osherove_art_of/)
-- url: https://osherove.com
----
-
-## [7][ReRE.js: Re-implementation of JavaScript (ECMA-262) RegExp written in TypeScript](https://www.reddit.com/r/javascript/comments/fl9vl4/rerejs_reimplementation_of_javascript_ecma262/)
-- url: https://github.com/MakeNowJust/rerejs
----
-
-## [8][Built a simple light weight Node.js Boilerplate with OAuth Integration](https://www.reddit.com/r/javascript/comments/fl8w17/built_a_simple_light_weight_nodejs_boilerplate/)
-- url: https://github.com/i-break-codes/red
----
-
-## [9][How to use the new Nullish Coalescing operator in JavaScript](https://www.reddit.com/r/javascript/comments/fl5ob3/how_to_use_the_new_nullish_coalescing_operator_in/)
-- url: https://medium.com/javascript-in-plain-english/nullish-coalescing-operator-for-javascript-8f502b970ba8
----
-
-## [10][JavaScript Pop Quiz](https://www.reddit.com/r/javascript/comments/fl4dce/javascript_pop_quiz/)
-- url: https://github.com/WeiChiaChang/js-pop-quiz
----
-
-## [11][Building Vue Enterprise Application: Part 1. Entities](https://www.reddit.com/r/javascript/comments/fl9us0/building_vue_enterprise_application_part_1/)
-- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-1-entities-808077f3d2e7
----
-
-## [12][Introducing Swach - a Cross-Platform Color Management Tool Written in Ember.js and Electron](https://www.reddit.com/r/javascript/comments/fktd4g/introducing_swach_a_crossplatform_color/)
-- url: https://swach.io/
+## [12][A great tool to know about the current world information on corona virus record. Very useful and created by a high school student. Made from javascript and maybe other, but the js is stunning!](https://www.reddit.com/r/javascript/comments/flqjrk/a_great_tool_to_know_about_the_current_world/)
+- url: https://ncov2019.live/
 ---
 

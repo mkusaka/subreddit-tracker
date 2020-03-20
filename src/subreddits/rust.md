@@ -58,259 +58,80 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Announcing Rust IPFS, and a call for contributors](https://www.reddit.com/r/rust/comments/fl6ij9/announcing_rust_ipfs_and_a_call_for_contributors/)
+## [3][`template-rust-backend-with-electron-frontend` released](https://www.reddit.com/r/rust/comments/flsoa0/templaterustbackendwithelectronfrontend_released/)
+- url: https://www.reddit.com/r/rust/comments/flsoa0/templaterustbackendwithelectronfrontend_released/
+---
+Hi Rust users, I published the template project for a Rust backend with Electron frontend project. I believe this template is useful for now maybe until a GUI Toolkit libraries will be grows well that has a high Rust purity and high licensing flexibility.
+
+[https://github.com/usagi/template-rust-backend-with-electron-frontend](https://github.com/usagi/template-rust-backend-with-electron-frontend)
+## [4][Alchemy: A New Rust GUI Framework](https://www.reddit.com/r/rust/comments/flsrq5/alchemy_a_new_rust_gui_framework/)
+- url: https://alchemy.rs/
+---
+
+## [5][Cheatsheet: Option (in Rust) vs Maybe (in Haskell)](https://www.reddit.com/r/rust/comments/fli7wk/cheatsheet_option_in_rust_vs_maybe_in_haskell/)
+- url: https://notes.iveselov.info/cheatsheet-rust-option-vs-haskell-maybe
+---
+
+## [6][How does Rust's scalability compare to Erlang?](https://www.reddit.com/r/rust/comments/flf2ld/how_does_rusts_scalability_compare_to_erlang/)
+- url: https://www.reddit.com/r/rust/comments/flf2ld/how_does_rusts_scalability_compare_to_erlang/
+---
+The ErlangVM (BEAM) is well regarded as a battle tested, no downtime runtime that can scale gracefully to handling orders of magnitude more concurrent tasks without spiking.
+What kind of mechanisms need to be in place to enable a similar amount of graceful scaling in Rust?
+
+I have been keeping an eye on the actor frameworks (such as actix, bastion), but I haven't seen something that would allow you to schedule and prefer short running processes rather than long running processes as Erlang does. I believe that if a process handlers runs for a long time in Erlang, the scheduler will pause that process to allow shorter handlers to take priority. This leads to ensuring that there will seldom be anything blocking your program (unless it's a long running NIF).
+
+Does anyone have thoughts about if these scalability characteristics are already enabled today with Rust, or what would have to be done to achieve them?
+
+Thanks!
+## [7][WASM built with Emscripten and loaded with js-sys?](https://www.reddit.com/r/rust/comments/flravn/wasm_built_with_emscripten_and_loaded_with_jssys/)
+- url: https://www.reddit.com/r/rust/comments/flravn/wasm_built_with_emscripten_and_loaded_with_jssys/
+---
+I have been playing with [https://github.com/rustwasm/wasm-bindgen/tree/master/examples/wasm-in-wasm](https://github.com/rustwasm/wasm-bindgen/tree/master/examples/wasm-in-wasm) in order to see how I can load in a WASM module.  I have some C code that I would like to use so I built a WASM module from this code using Emscripten.  Unfortunately it panics when I run the code and I am now asking myself if this is possible at all.  Is this possible?
+## [8][Trace caller’s source location in the stable Rust](https://www.reddit.com/r/rust/comments/flnns3/trace_callers_source_location_in_the_stable_rust/)
+- url: https://www.reddit.com/r/rust/comments/flnns3/trace_callers_source_location_in_the_stable_rust/
+---
+[https://blog.knoldus.com/trace-callers-source-location-in-the-stable-rust/](https://blog.knoldus.com/trace-callers-source-location-in-the-stable-rust/)
+## [9][This Week in Rust 330](https://www.reddit.com/r/rust/comments/flb5tn/this_week_in_rust_330/)
+- url: https://this-week-in-rust.org/blog/2020/03/17/this-week-in-rust-330/
+---
+
+## [10][Announcing Rust IPFS, and a call for contributors](https://www.reddit.com/r/rust/comments/fl6ij9/announcing_rust_ipfs_and_a_call_for_contributors/)
 - url: https://blog.ipfs.io/2020-03-18-announcing-rust-ipfs/
 ---
 
-## [4][Unpopular opinion: Hyper is plenty good. You probably don't need a framework.](https://www.reddit.com/r/rust/comments/fkz7ui/unpopular_opinion_hyper_is_plenty_good_you/)
-- url: https://www.reddit.com/r/rust/comments/fkz7ui/unpopular_opinion_hyper_is_plenty_good_you/
+## [11][Recommendations on this data structure](https://www.reddit.com/r/rust/comments/fltzwg/recommendations_on_this_data_structure/)
+- url: https://www.reddit.com/r/rust/comments/fltzwg/recommendations_on_this_data_structure/
 ---
-Whenever people ask here for a framework, people recommend actix, rocket, or maybe gotham or warp.
+Any recommendations on how to design the following data structure:
 
-I just used hyper for a small project. It's amazing. It:
-
-1. Does exactly what you ask for, no more and no less. There's no magic.
-2. Is async
-3. Works on stable rust.
-
-Honestly, when I heard that it's minimalistic, I took it to mean that I'll be playing with sockets or something. In reality, it's _almost_ one step under the standard Go or servlet API (the only thing is that you'll have to import a crate to decode query_string and POST data). That's it. Debugging is a breeze (you know why it doesn't work because you write the router), footspace (in code) is minimal (so when it upgrades you just need to fix your router - no more need to go restructure your code base). It's just a breath of fresh air.
-## [5][ttf-parser 0.5 - now with variable fonts support and C API](https://www.reddit.com/r/rust/comments/fl7kfx/ttfparser_05_now_with_variable_fonts_support_and/)
-- url: https://www.reddit.com/r/rust/comments/fl7kfx/ttfparser_05_now_with_variable_fonts_support_and/
----
-A new major version of [ttf-parser](https://github.com/RazrFalcon/ttf-parser) has been released, and since it gained a lot of new features, I wanted to advertise it a bit.
-
-`ttf-parser` is a TrueType/OpenType parser like `stb_truetype` and `FreeType`, but unlike FreeType it doesn't render glyphs (stb_truetype also supports rendering, but a very primitive one). But the main difference from those projects is that `ttf-parser` is the only memory-safe, thread-safe and zero-allocation library (not sure about proprietary one from MS, Apple and Adobe). And more importantly, despite all the safety guarantees, it still the fastest (at least in my benchmarks). You can find more info in the readme.
-
-In the latest version, `ttf-parser` gained a complete variable font support and C API. Right now it supports way more features than `stb_truetype` and has roughly the same TrueType support as FreeType (except rendering).
-
-I hope a new version of rusttype with ttf-parser will be released soon, which will help with testing and adoption in the Rust ecosystem.
-## [6][Dropbox gives up trying to port its sync engine to Python3 and rewrites it in Rust instead](https://www.reddit.com/r/rust/comments/fl9pdq/dropbox_gives_up_trying_to_port_its_sync_engine/)
-- url: https://dropbox.tech/infrastructure/rewriting-the-heart-of-our-sync-engine
----
-
-## [7][Announcing const-tweaker! Change your constants live from from a web GUI](https://www.reddit.com/r/rust/comments/fl8wpl/announcing_consttweaker_change_your_constants/)
-- url: /r/rust_gamedev/comments/fl7593/announcing_consttweaker_change_your_constants/
----
-
-## [8][Apple hiring Rust engineers for storage and networking groups](https://www.reddit.com/r/rust/comments/fkngza/apple_hiring_rust_engineers_for_storage_and/)
-- url: https://twitter.com/benwilliamson/status/1240113606374686721
----
-
-## [9][All Hands Retrospective | Inside Rust Blog](https://www.reddit.com/r/rust/comments/fkvcsr/all_hands_retrospective_inside_rust_blog/)
-- url: https://blog.rust-lang.org/inside-rust/2020/03/18/all-hands-retrospective.html
----
-
-## [10][Code Review AVL-Tree](https://www.reddit.com/r/rust/comments/fl8cwn/code_review_avltree/)
-- url: https://www.reddit.com/r/rust/comments/fl8cwn/code_review_avltree/
----
-Hey Guys,
-
-I am pretty new to Rust. Currently I am doing daily coding challenges in mutiple programming languages. A few days ago there was the question to programm an AVL-tree. I had no problems in the other languages but Rust was completely different, even though i worked throught the  'The Book'. Now I am ready, and i would love to get some critics about my code and what i could do better:  
-
-
-    struct Node{
-        key: i32,
-        left: Option&lt;Box&lt;Node&gt;&gt;,
-        right: Option&lt;Box&lt;Node&gt;&gt;,
+The biggest issue I have is using the RefCell to be able to mutate the structure inside the hashmap. Is there a better solution to this?
+            
+    pub struct AAA {
+        pub(crate) one: Option&lt;u8&gt;,
     }
     
-    impl Node{
-        fn new(key: i32) -&gt; Node{
-            Node{
-                key,
-                left:None,
-                right:None,
-            }
-        }
-    
-    
-        fn height(pot_node: &amp;mut Option&lt;Box&lt;Node&gt;&gt;) -&gt; i32{
-            match pot_node {
-                Some(node) =&gt;{
-                    let left_height = Node::height(&amp;mut node.left);
-                    let right_height = Node::height(&amp;mut node.right);
-    
-                    let height = max(left_height, right_height) +1;
-                    height
-                },
-                None =&gt; 0,
-            }
-        }
-    
-        fn rotate_right(mut node: Box&lt;Node&gt;) -&gt; Box&lt;Node&gt;{
-            let mut y = node.left.take().unwrap();
-            let mut b = y.right.take();
-    
-            node.left = b.take();
-            y.right = Some(node).take();
-    
-            y
-        }
-    
-        fn left_rotate(mut node: Box&lt;Node&gt;) -&gt; Box&lt;Node&gt;{
-            let mut y = node.right.take().unwrap();
-            let mut b = y.left.take();
-    
-            node.right = b.take();
-            y.left =  Some(node).take();
-    
-            y
-        }
-    
-        fn balance(pot_node: Option&lt;Box&lt;Node&gt;&gt;) -&gt; (Option&lt;Box&lt;Node&gt;&gt;, i32){
-            match pot_node{
-                None =&gt;{
-                    return (None, 0);
-                },
-                Some(mut node) =&gt;{
-                    let balance = Node::height(&amp;mut node.left)-Node::height(&amp;mut node.right);
-    
-                    return (Some(node),balance);
-                }
-            }
-        }
-    
-        fn insert(pot_node : Option&lt;Box&lt;Node&gt;&gt;, key : i32) -&gt; Option&lt;Box&lt;Node&gt;&gt; {
-            match pot_node{
-                None =&gt;{
-                  return Some(Box::new(Node::new(key)));
-                },
-                Some(mut node) =&gt;{
-                    if key &lt; node.key{
-                        node.left = Node::insert(node.left, key);
-                    }else if key &gt; node.key{
-                        node.right = Node::insert(node.right, key);
-                    }else{
-                        return Some(node);
-                    }
-    
-                    let (tmp_node,balance) = Node::balance(Some(node).take());
-                    let mut node = tmp_node.unwrap();
-    
-                    if balance &lt; -1{
-                        match node.right.take(){
-                            None =&gt;{
-                                node.right = None;
-                            },
-                            Some(right_node) =&gt;{
-                                if key &lt; right_node.key{
-                                    node.right = Some(right_node);
-                                    node.right = Some(Node::rotate_right(node.right.take().unwrap()));
-                                    node = Node::left_rotate(node);
-                                }else if key &gt; right_node.key{
-                                    node.right = Some(right_node);
-                                    node = Node::left_rotate(node);
-                                }else{
-                                    node.right = Some(right_node);
-                                }
-                            },
-                        }
-                    }else if balance &gt; 1{
-                        match node.left.take() {
-                            None =&gt;{
-                                node.left = None;
-                            },
-                            Some(left_node) =&gt; {
-                                if key &gt; left_node.key{
-                                    node.left = Some(left_node);
-                                    node.left = Some(Node::left_rotate(node.left.take().unwrap()));
-                                    node = Node::rotate_right(node);
-                                }else if key &lt; left_node.key{
-                                    node.left = Some(left_node);
-                                    node = Node::rotate_right(node);
-                                }else{
-                                    node.right = Some(left_node);
-                                }
-                            },
-                        }
-                    }
-                    return Some(node);
-                }
-            };
-        }
-    
-        fn pre_order_print(pot_node : Option&lt;Box&lt;Node&gt;&gt;){
-            match pot_node {
-                Some(node) =&gt;{
-                    print!("{} ", node.key);
-                    Node::pre_order_print(node.left);
-                    Node::pre_order_print(node.right);
-                },
-                None =&gt; (),
-            }
-        }
+    pub struct BBB {
+        pub(crate) one: Option&lt;u8&gt;,
+        pub(crate) two: Option&lt;u8&gt;,
+        pub(crate) three: Option&lt;u8&gt;,
+        pub(crate) four: Option&lt;u8&gt;,
+        pub(crate) five: Option&lt;u32&gt;,
+        pub(crate) six: Option&lt;u32&gt;,
     }
-
-Best regards :)
-## [11][Blog post: Parsing Library in Rust pt. 3 - TextSize crate](https://www.reddit.com/r/rust/comments/fky8pt/blog_post_parsing_library_in_rust_pt_3_textsize/)
-- url: https://blog.frondeus.pl/parser-3/
+    
+    pub struct Union {
+        pub(crate) b: Option&lt;AAA&gt;,
+        pub(crate) a: Option&lt;BBB&gt;,
+    }
+    
+    pub struct Hash {
+        hash: HashMap&lt;u32, RefCell&lt;Union&gt;&gt;,
+    }
+## [12][As a programming language, how does Rust compare to Python?](https://www.reddit.com/r/rust/comments/fld46b/as_a_programming_language_how_does_rust_compare/)
+- url: https://www.reddit.com/r/rust/comments/fld46b/as_a_programming_language_how_does_rust_compare/
 ---
+Now I know that Rust is incredibly good at memory management and is also quite fast(?), and companies like Discord are using it in their backend systems. On the other hand, Python is the go to language for machine learning and other AI related stuff.
 
-## [12][Quick question about unused generic type parameter](https://www.reddit.com/r/rust/comments/fkulrf/quick_question_about_unused_generic_type_parameter/)
-- url: https://www.reddit.com/r/rust/comments/fkulrf/quick_question_about_unused_generic_type_parameter/
----
-I'm trying to write a type that allows me to call a function once and save the result of that one function call.
+I know it seems like I answered my own question, but what I really want to know is that being a student, should I focus on Rust as well, or just continue with Python until the right time comes, when Rust becomes more popular than it is now?
 
-I have a definition written for the struct like this
-
-    struct CallOnce&lt;T, U, V&gt;
-    where
-        T: Fn(U) -&gt; V,
-    {
-        value: Option&lt;V&gt;,
-        calculate: T,
-    }
-
-&amp;#x200B;
-
-but I'm getting this error
-
-    parameter `U` is never used
-    
-    unused parameter
-    
-    help: consider removing `U`, referring to it in a field, or using a marker such as `std::marker::PhantomData`rustc(E0392)main.rs(1, 18): unused parameter
-
-This is confusing to me because it looks like I'm using U as a generic input parameter for type T (Fn(U) -&gt; V). I'm wondering how I can fix this error.
-
-For what it's worth, here's all my code if that helps.
-
-    struct CallOnce&lt;T, U, V&gt;
-    where
-        T: Fn(U) -&gt; V,
-    {
-        value: Option&lt;V&gt;,
-        calculate: T,
-    }
-    
-    impl&lt;T, U, V&gt; CallOnce&lt;T, U, V&gt;
-    where
-        T: Fn(U) -&gt; V,
-    {
-        fn new(calculate: T) -&gt; CallOnce&lt;T, U, V&gt; {
-            CallOnce {
-                value: None,
-                calculate,
-            }
-        }
-    
-        fn call(&amp;mut self, arg: U) -&gt; V {
-            match self.value {
-                Some(value) =&gt; value,
-                None =&gt; {
-                    let value = (self.calculate)(arg);
-                    self.value = Some(value);
-                    value
-                }
-            }
-        }
-    }
-    
-    fn main() {
-        let mut add_one = CallOnce::new(|x| {
-            println!("Calling with {}", x);
-            x + 1
-        });
-        println!("Result 1: {}", add_one.call(1));
-        println!("Result 2: {}", add_one.call(2));
-    }
+ I don't know as much about Rust as I would like to, so please correct me if I'm wrong about anything.

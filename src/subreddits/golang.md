@@ -1,97 +1,101 @@
 # golang
-## [1][gopls 0.3.4 update release notes](https://www.reddit.com/r/golang/comments/fln72e/gopls_034_update_release_notes/)
+## [1][golang-dev &amp; the next few months](https://www.reddit.com/r/golang/comments/flzoc1/golangdev_the_next_few_months/)
+- url: https://groups.google.com/forum/#!topic/golang-dev/UxvN1W2B-zg
+---
+
+## [2][What do employers look in GitHub repo of golang services?](https://www.reddit.com/r/golang/comments/fma0dz/what_do_employers_look_in_github_repo_of_golang/)
+- url: https://www.reddit.com/r/golang/comments/fma0dz/what_do_employers_look_in_github_repo_of_golang/
+---
+Apologies if already asked, I have started learning golang and am writing a few backend services. What are the things that employers specifically seek in such personal projects that could help me stand out?
+## [3][Golang MVC framework](https://www.reddit.com/r/golang/comments/fmdody/golang_mvc_framework/)
+- url: https://github.com/RobyFerro/go-web
+---
+
+## [4][Design pattern to avoid hitting the rate limit on an external API resource](https://www.reddit.com/r/golang/comments/flyvzg/design_pattern_to_avoid_hitting_the_rate_limit_on/)
+- url: https://www.reddit.com/r/golang/comments/flyvzg/design_pattern_to_avoid_hitting_the_rate_limit_on/
+---
+I have to get the PR reviews from hundreds of repos, lets say I have these in batches of 20 PRs for ever repo
+
+like this 
+
+    {RepoA: #1, #2, ..........#20}
+    {RepoA: #21, #22, ..........#40}
+    .
+    .
+    {RepoZ: #1, #2, ..........#20}
+
+Something like this, and I want to run goroutines for all these different batches, but the Github API limit is 5000 requests per hour
+
+Is there a design pattern that would apply to this problem to solve it in an elegant way,
+
+also should I launch the goroutines for a specific number of batches and use the rest later or should I run all the goroutines and pause them when I hit the rate limit and resume them later on once a certain amount of time has passed?
+
+I know for server-side APIs there are patterns like token bucket and leaky bucket and all but I am a client of these APIs is there something similar for throttling/regulating the frequency of requests from my application?
+## [5][Why are 2 arrays of equivalent interface types not assignable to each other](https://www.reddit.com/r/golang/comments/fm682s/why_are_2_arrays_of_equivalent_interface_types/)
+- url: https://www.reddit.com/r/golang/comments/fm682s/why_are_2_arrays_of_equivalent_interface_types/
+---
+I'm not sure why this doesn't compile
+    
+    package main
+    
+    import "fmt"
+    
+    type FromLibA interface {
+    	Something()
+    }
+    
+    type FromLibB interface {
+    	FromLibA
+    }
+    
+    type FromLibBType1 struct {
+    }
+    
+    func (*FromLibBType1) Something() {}
+    
+    func main() {
+    	var a FromLibB
+    	var b *FromLibBType1
+    	a = b // works
+    
+    	var arr []FromLibB
+    	var brr []*FromLibBType1
+    	arr = brr // doesn't work
+    
+    	fmt.Println("%v, %v, %v, %v", a, b, arr, brr)
+    }
+
+Is there any way to make it work other than for loop over the array to copy it?
+## [6][Anyone know of a Go discord?](https://www.reddit.com/r/golang/comments/fm5wvs/anyone_know_of_a_go_discord/)
+- url: https://www.reddit.com/r/golang/comments/fm5wvs/anyone_know_of_a_go_discord/
+---
+I want to be more immersed in the go community anyone know of a discord. Also looking for any development discord’s in general 
+Thanks in advance
+## [7][gopls 0.3.4 update release notes](https://www.reddit.com/r/golang/comments/fln72e/gopls_034_update_release_notes/)
 - url: https://github.com/golang/go/issues/33030#issuecomment-601280048
 ---
 
-## [2][Go 1.14.1 and Go 1.13.9 are released](https://www.reddit.com/r/golang/comments/flhjz4/go_1141_and_go_1139_are_released/)
-- url: https://groups.google.com/d/msg/golang-announce/Ix2U_8WWmXo/a2nJkNW5AAAJ
+## [8][buffalo database](https://www.reddit.com/r/golang/comments/fm4zv5/buffalo_database/)
+- url: https://www.reddit.com/r/golang/comments/fm4zv5/buffalo_database/
 ---
+Hi, guys. I try with Buffalo. But I have some problems at start. How I must create migrations?
 
-## [3][Buffalo Tests with Cookie](https://www.reddit.com/r/golang/comments/fls9n1/buffalo_tests_with_cookie/)
-- url: https://www.reddit.com/r/golang/comments/fls9n1/buffalo_tests_with_cookie/
+I tried to generate and I have empty fizz files. And then in database I have just table schema\_migration without my tables. Can someone help me with this problem, please?
+
+I will be very grateful. 
+
+Thanks for attention
+## [9][Testing a change in an imported package (newbie)](https://www.reddit.com/r/golang/comments/fm4umi/testing_a_change_in_an_imported_package_newbie/)
+- url: https://www.reddit.com/r/golang/comments/fm4umi/testing_a_change_in_an_imported_package_newbie/
 ---
-Hi !
+*Warning: I am very new to golang. I hope I get the terminology correct*
 
-  
-I am trying to set up few basic tests on my Buffalo API project, but I can't make it works with Cookies..  
-I have a Middleware checking Cookie content, and I want to make sure it is properly tested
+I am trying to update a package `github.com/terraform-providers/terraform-provider-gitlab` but it has an imported package from `github.com/xanzy/go-gitlab`. The change I want to make requires changes in both packages and I don't want to create a pull request until I test everything. I have no issues changing and building the files in `go-gitlab` but don't have a good way to test it independently. The problem I have is building `terraform-provider-gitlab` with the changes I put into `go-gitlab`. I don't know how to tell `terraform-provider-gitlab` to use my changes. I think it has something to do with the `go.mod` file calling the specific version of `go-gitlab`. My changes only exist on my local computer and my `go-gitlab` fork. I tried to modify the files in `terraform-provider-gitlab/vendor/github.com/xanzy/go-gitlab/` but I still think it's looking somewhere else because of some errors I see. 
 
-```go
-const Cookie string  = "somename=somevalue"
-
-func (as *ActionSuite) Test_APIAuthorizer_Success() {
-	req := as.JSON("/api/v1/foo/bar")
-	req.Headers["Cookie"] = Cookie
-	res := req.Get()
-	as.Equal(200, res.Code)
-}
-```
-
-Any clue ?
-## [4][Illustrated Tales of Go Runtime Scheduler.](https://www.reddit.com/r/golang/comments/flek7p/illustrated_tales_of_go_runtime_scheduler/)
-- url: https://medium.com/@ankur_anand/illustrated-tales-of-go-runtime-scheduler-74809ef6d19b
+Example Error: `gitlab/resource_gitlab_group_cluster.go:175:40: cluster.ManagementProject undefined (type *gitlab.GroupCluster has no field or method ManagementProject)`
+## [10][I'm working on a Grafana alertManager for Lark - Glark](https://www.reddit.com/r/golang/comments/flzwi2/im_working_on_a_grafana_alertmanager_for_lark/)
+- url: https://www.reddit.com/r/golang/comments/flzwi2/im_working_on_a_grafana_alertmanager_for_lark/
 ---
+This is my first project in Go, chat bot integration works well so far, I'd love some criticisms and suggestions!
 
-## [5][Building and Testing a REST API in Go with Gorilla Mux](https://www.reddit.com/r/golang/comments/flb4bo/building_and_testing_a_rest_api_in_go_with/)
-- url: https://semaphoreci.com/community/tutorials/building-and-testing-a-rest-api-in-go-with-gorilla-mux-and-postgresql
----
-
-## [6][[Recommendation] Does golang have any third-party stateful, structured logging packages](https://www.reddit.com/r/golang/comments/flhx95/recommendation_does_golang_have_any_thirdparty/)
-- url: https://www.reddit.com/r/golang/comments/flhx95/recommendation_does_golang_have_any_thirdparty/
----
-I am looking for a logger similar to logrus but that lets me set/remove fields that persist and pass the logger instance around in my program. Also it needs to be concurrency safe. I tried building [https://github.com/nitishm/logger](https://github.com/nitishm/logger) but I am running into some significant race conditions.
-## [7][Diago, a visualization tool for profiles and heap snapshots generated with pprof](https://www.reddit.com/r/golang/comments/fl8gbv/diago_a_visualization_tool_for_profiles_and_heap/)
-- url: https://remy.io/blog/how-to-use-diago-to-diagnose-cpu-and-memory-usage-in-go-programs/
----
-
-## [8][Gophercon 2020 Update](https://www.reddit.com/r/golang/comments/flaz8s/gophercon_2020_update/)
-- url: https://blog.gopheracademy.com/gophercon-2020-news/
----
-
-## [9][Linux Window Managers in Go?](https://www.reddit.com/r/golang/comments/fl9lxg/linux_window_managers_in_go/)
-- url: https://www.reddit.com/r/golang/comments/fl9lxg/linux_window_managers_in_go/
----
-Has anyone come across any Linux Window managers written in Go?
-
-A tiling window manger written in Go would be cool. Like i3 etc..
-## [10][A library for initializing heaps from arbitrary slices](https://www.reddit.com/r/golang/comments/flkiw3/a_library_for_initializing_heaps_from_arbitrary/)
-- url: https://www.reddit.com/r/golang/comments/flkiw3/a_library_for_initializing_heaps_from_arbitrary/
----
-I've written a library to help initializing heaps from arbitrary slices without having to implement all the methods required by `heap.Interface`.
-
-The repo on Github: [https://github.com/suzaku/heaptools](https://github.com/suzaku/heaptools)
-
-Since `reflect` is used, it's slower than when you implement `heap.Interface` manually, the benchmark result is pasted below:
-
-```
-BenchmarkNewSliceHeap/init-12            4749110               247 ns/op
-BenchmarkNewSliceHeap/init-12            4773699               246 ns/op
-BenchmarkNewSliceHeap/init-12            4856407               248 ns/op
-BenchmarkNewSliceHeap/init-12            4832068               245 ns/op
-BenchmarkNewSliceHeap/init-12            4827453               248 ns/op
-BenchmarkNewSliceHeap/push-12            8304612               140 ns/op
-BenchmarkNewSliceHeap/push-12            8990208               132 ns/op
-BenchmarkNewSliceHeap/push-12            9116899               133 ns/op
-BenchmarkNewSliceHeap/push-12            8923878               135 ns/op
-BenchmarkNewSliceHeap/push-12            9216303               131 ns/op
-BenchmarkNewSliceHeap/pop-12             3839652               350 ns/op
-BenchmarkNewSliceHeap/pop-12             3912520               339 ns/op
-BenchmarkNewSliceHeap/pop-12             3878684               342 ns/op
-BenchmarkNewSliceHeap/pop-12             3833668               357 ns/op
-BenchmarkNewSliceHeap/pop-12             3407191               350 ns/op
-BenchmarkExplicitImplementation/init-12                 18090414                67.3 ns/op
-BenchmarkExplicitImplementation/init-12                 15764011                70.1 ns/op
-BenchmarkExplicitImplementation/init-12                 17032052                67.0 ns/op
-BenchmarkExplicitImplementation/init-12                 18332876                64.7 ns/op
-BenchmarkExplicitImplementation/init-12                 18457176                63.7 ns/op
-BenchmarkExplicitImplementation/push-12                 41596758                48.5 ns/op
-BenchmarkExplicitImplementation/push-12                 43841671                36.6 ns/op
-BenchmarkExplicitImplementation/push-12                 44319072                35.5 ns/op
-BenchmarkExplicitImplementation/push-12                 45409448                33.1 ns/op
-BenchmarkExplicitImplementation/push-12                 39200691                27.2 ns/op
-BenchmarkExplicitImplementation/pop-12                   6022366               236 ns/op
-BenchmarkExplicitImplementation/pop-12                   5759280               243 ns/op
-BenchmarkExplicitImplementation/pop-12                   5334996               230 ns/op
-BenchmarkExplicitImplementation/pop-12                   6122968               229 ns/op
-BenchmarkExplicitImplementation/pop-12                   6127668               232 ns/op
-```
+[https://github.com/nehsus/glark](https://github.com/nehsus/glark)

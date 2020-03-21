@@ -113,15 +113,51 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][CMake 3.17.0 available for download - Announcements](https://www.reddit.com/r/cpp/comments/fluibz/cmake_3170_available_for_download_announcements/)
+## [3][Why so many people hate C++?](https://www.reddit.com/r/cpp/comments/fm5h6r/why_so_many_people_hate_c/)
+- url: https://www.reddit.com/r/cpp/comments/fm5h6r/why_so_many_people_hate_c/
+---
+I see on the web so many say what is better lean C#, I see people  answer a other that say want to learn C++ to learn other language why this?
+## [4][Would you pick C++ for your own pet project in 2020?](https://www.reddit.com/r/cpp/comments/fmaezz/would_you_pick_c_for_your_own_pet_project_in_2020/)
+- url: https://www.reddit.com/r/cpp/comments/fmaezz/would_you_pick_c_for_your_own_pet_project_in_2020/
+---
+I heard many times that one shouldn’t start any new project in C++ these days. Comments like “I’m writing in C++ for 20+ years and I hate that language” seem to be pretty common here in reddit. While you may be capped in C++ because of existing code base at work / current project and it may be too late to switch to another language, would you still choose C++ for your project in 2020? Considering that C++ is widely used in your type of projects, e.g if you’d be like to write your own 2D game library to use it for your 2D game of your dream.
+
+I have an idea for 2D game since 2017 and writing 2D framework from scratch is the best option (2D multiplayer Rimworld-alike, could send .docx description in Russian if interesting). Soon I will have time for making it, but I don’t want to regret with language choice in future. Want to hear your opinions, thanks!
+## [5][c_str-correctness](https://www.reddit.com/r/cpp/comments/fmeeuq/c_strcorrectness/)
+- url: https://quuxplusone.github.io/blog/2020/03/20/c-str-correctness/
+---
+
+## [6][best way to self teach cpp?](https://www.reddit.com/r/cpp/comments/fmd44x/best_way_to_self_teach_cpp/)
+- url: https://www.reddit.com/r/cpp/comments/fmd44x/best_way_to_self_teach_cpp/
+---
+i know almost nothing about programming let alone cpp but i know enough to know that i wanna learn a lot more about it no matter the time it takes but i'm having a hard time finding a good source to learn cpp from the ground up for someone who doesn't know much, so id love to hear any advice or recommendations on the topic.
+
+pms are open too
+## [7][CMake 3.17.0 available for download - Announcements](https://www.reddit.com/r/cpp/comments/fluibz/cmake_3170_available_for_download_announcements/)
 - url: https://discourse.cmake.org/t/cmake-3-17-0-available-for-download/828
 ---
 
-## [4][Writing Linux File Buffer Cache top in C++ with BPF](https://www.reddit.com/r/cpp/comments/flr4kn/writing_linux_file_buffer_cache_top_in_c_with_bpf/)
+## [8][C++ Testing &amp; Fuzzing Resources](https://www.reddit.com/r/cpp/comments/flw64e/c_testing_fuzzing_resources/)
+- url: https://github.com/MattPD/cpplinks/blob/master/testing.md
+---
+
+## [9][Order of initializer list vs class members, could choice of fix open exploit?](https://www.reddit.com/r/cpp/comments/fm6jyg/order_of_initializer_list_vs_class_members_could/)
+- url: https://www.reddit.com/r/cpp/comments/fm6jyg/order_of_initializer_list_vs_class_members_could/
+---
+I wonder, I have a class that defines an integer and a pointer, a and b. But the constructor initializer list has them in reverse b(), a(). This raises a warning/error and should be fixed, good.
+
+So, I can switch their declarations, or I can switch the initializer list order. My worry is, if I fix by switching the declarations, then the class' binary representation will have them in reverse order. Sibling files to this header have mentions of streams and I see many void\*s and reinterpret cast uses, I dont fully understand the entire code to be sure whether this class is involved or not but I feel like by switching the declarations I could enable an exploit if this class is somehow saved and loaded to/from disk/network at some point, because then i could load a file saved on the previous ordering as the new one.
+
+Am I correct with this worry or am I being paranoid? Is it truly safer to switch the initializer list instead and due to the reason above? (I mean even if it was indeed safer, I could be wrong about the reason)
+## [10][Writing Linux File Buffer Cache top in C++ with BPF](https://www.reddit.com/r/cpp/comments/flr4kn/writing_linux_file_buffer_cache_top_in_c_with_bpf/)
 - url: http://www.mycpu.org/cachetop-bpf-part-2/
 ---
 
-## [5][Eclipse 2020-03 released with CDT 9.11](https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/)
+## [11][An example of what it has been like writing a c++ space arcade game from scratch (still WIP)](https://www.reddit.com/r/cpp/comments/fm5aea/an_example_of_what_it_has_been_like_writing_a_c/)
+- url: https://www.youtube.com/watch?v=xMg5c-KdSoE&amp;list=PL22CMuqloY0qiYlv1Lm_QtfwuFz9OB0NE&amp;index=14&amp;t=0s
+---
+
+## [12][Eclipse 2020-03 released with CDT 9.11](https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/)
 - url: https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/
 ---
 Hi, Eclipse 2020-03 with CDT 9.11 has been released. Recently a lot of changes to improve c++ support into Eclipse has been performed and a lot of other effort needs to be spent.  I'm curious to know what you think about it. Eclipse is quite popular but there are a lot of alternatives like Visual Studio, CLion, Netbeans and so on. What are you using and why?
@@ -145,59 +181,3 @@ For long-term:
 
 1. There's nothing for C++20 yet, the idea could be to move everything to LSP, it could be a great change
 2. Rework the built-in build system to have something more flexible
-## [6][Application of C++ in ARM processors](https://www.reddit.com/r/cpp/comments/flqdmy/application_of_c_in_arm_processors/)
-- url: https://www.reddit.com/r/cpp/comments/flqdmy/application_of_c_in_arm_processors/
----
-Hello,
-
-It has been two quarters (third one online due to COVID-19) and I have been studying C++ at my university. I have made several fundamental projects using C++ and want to dig deeper.
-
-I want to build something with an ARM processor, but I don't know how should I go about it! I am willing to learn new things, and want to not only study, but use a programming language learned in the classroom.
-
-Is there a specific learning path I should follow to explore ARM processors? How and what should I start learning? (I have just recently completed Data Structures in C++)
-
-&amp;#x200B;
-
-Thanks in advance!
-## [7][CppCast: Meson and the Meson Manual](https://www.reddit.com/r/cpp/comments/flnu7y/cppcast_meson_and_the_meson_manual/)
-- url: https://cppcast.com/jussi-pakkanen-meson-manual/
----
-
-## [8][Native Language Benchmark: C/C++ is 10% faster than rust.](https://www.reddit.com/r/cpp/comments/fluv6d/native_language_benchmark_cc_is_10_faster_than/)
-- url: https://github.com/skywind3000/LanguageMark
----
-
-## [9][Why so many students are using '#include&lt;bits/stdc++.h&gt;' instead of '#include&lt;iostream&gt;'?](https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/)
-- url: https://www.reddit.com/r/cpp/comments/fl5pr1/why_so_many_students_are_using_includebitsstdch/
----
-I am hiring for my company. And the codes submitted for a test problem has '#include&lt;bits/stdc++.h&gt;' at the beginning. The MacOS default compiler complains
-
-`main.cpp:1:9: fatal error: 'bits/stdc++.h' file not found`
-
-`#include&lt;bits/stdc++.h&gt;`
-
-`^~~~~~~~~~~~~~~`
-
-`1 error generated.` 
-
-Why people are using '#include&lt;bits/stdc++.h&gt;'?
-## [10][SIARE Engineering, an Italian producer of intensive care machines, is looking for a C++ programmer in Emilia Romagna (Italy) to handle the increased in production to deal with COVID-19 [Facebook]](https://www.reddit.com/r/cpp/comments/fkm7nk/siare_engineering_an_italian_producer_of/)
-- url: https://www.facebook.com/siareengineering/posts/3153957624673910?comment_id=3155916694478003
----
-
-## [11][The poplar heap, an implicit data structure](https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/)
-- url: https://www.reddit.com/r/cpp/comments/fko8f2/the_poplar_heap_an_implicit_data_structure/
----
-A few years ago while going through old computer science papers I stumbled upon *Smoothsort Revisited* by Coenraad Bron and Wim H. Hesselink which introduces a new sorting algorithm inspired by Dijkstra's smoothsort that they call *poplar sort*. The algorithm is based on the construction and sorting of a forest of "poplars", which is the name the authors give to some specific kinds of heap.
-
-Back then I decided to implement this *poplar sort* algorithm in C++ for fun. Over the years I kept coming back to this simple algorithm, trying to find optimizations which led to a variety of experiments. Eventually I managed to turn the backing *poplar heap* into an implicit data structure and to implement functions for it matching the heap functions from the standard library's `&lt;algorithm&gt;` header. I turned those experiments into an "article" some time ago, so if you're interested into algorithms, data structures and C++ optimization, you can read it here: https://github.com/Morwenn/poplar-heap
-
-Most of the space and time complexities mentioned in the repository are guesstimates waiting for proofs that I'm unlikely to provide myself.  That said the same heap data structure was also described by Nicholas J. A. Harvey and Kevin C. Zatloukal under the name *post-order heap* and their paper has complexity proofs for similar algorithms (theirs differs slightly from ours since it uses two additional variables to keep track of the state of the heap).
-
-The article only describes my successful experiments. If you want to look further into the research area, I've also a Gist with another experiment where I used a secondary heap (a normal binary heap this time) to try to reduce the amount of comparison performed by the `sort_heap` algorithm: https://gist.github.com/Morwenn/4441d4d1d01dbaf613cf539ad9c13a2a
-
-If you are currently stuck at home like I am, I hope that this might help you to kill time a bit.
-## [12][Effective Header Management in C++](https://www.reddit.com/r/cpp/comments/fkp9w4/effective_header_management_in_c/)
-- url: https://pspdfkit.com/blog/2020/effective-header-management-in-cpp/
----
-

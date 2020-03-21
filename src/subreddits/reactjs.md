@@ -111,95 +111,116 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Lessons. Lesson 11. Pt.1. Normalize Comments with Immutable.js](https://www.reddit.com/r/reactjs/comments/flrfgx/react_lessons_lesson_11_pt1_normalize_comments/)
-- url: https://blog.soshace.com/react-lesson-11/
+## [3][I've created a little React package for animated hamburger icons. 🍔 Any type of feedback is really appreciated.](https://www.reddit.com/r/reactjs/comments/fmd36e/ive_created_a_little_react_package_for_animated/)
+- url: https://hamburger-react.netlify.com
 ---
 
-## [4][Is it bad practice to pass a function down to a child component and return the child's state up to its parent component using this function?](https://www.reddit.com/r/reactjs/comments/fltl1t/is_it_bad_practice_to_pass_a_function_down_to_a/)
-- url: https://www.reddit.com/r/reactjs/comments/fltl1t/is_it_bad_practice_to_pass_a_function_down_to_a/
----
-My understanding is that there should only be a one way data flow?
-## [5][How to add Tailwind to unejected Create-React-App](https://www.reddit.com/r/reactjs/comments/flebuh/how_to_add_tailwind_to_unejected_createreactapp/)
-- url: https://github.com/kentcdodds/bookshelf/commit/b984b34239aee9f57fb7bf8868b7e78dfe475ae8
+## [4][gqless: GraphQL client without queries](https://www.reddit.com/r/reactjs/comments/flv3ym/gqless_graphql_client_without_queries/)
+- url: https://gqless.netlify.com/
 ---
 
-## [6][Trying to understand what I'm doing wrong.](https://www.reddit.com/r/reactjs/comments/flmtxg/trying_to_understand_what_im_doing_wrong/)
-- url: https://www.reddit.com/r/reactjs/comments/flmtxg/trying_to_understand_what_im_doing_wrong/
+## [5][I've created "Tetris Racing" in React](https://www.reddit.com/r/reactjs/comments/fmcnzg/ive_created_tetris_racing_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/fmcnzg/ive_created_tetris_racing_in_react/
 ---
-Hi all,
-I'm new to React (and Javascript, for that matter). I've followed lots of resources; I'm trying to get global data to populate in this list. I feel like I'm doing something stupidly wrong, but can't really tell what it is.
-I would appreciate any tips or feedback anyone might be able to offer.
-Also, I don't know what best formatting standards are, I do need to find a styler but I think from what I can tell my code is (mostly) sort of formatted, but if I'm doing anything wrong or should be doing it much better, please let me know.
-I hope that it is okay to link to Also sorry there's no syntax highlighting; I tried to use Pastebin, but it thinks I'm a Russian bot out to rig elections and spam, and I'm using a screen reader so I can't solve the spam detection; there is no audio.
-Thanks in advance for any tips!
-http://codepad.org/R73o0tP1
-## [7][Hosting a React app on firebase](https://www.reddit.com/r/reactjs/comments/fluvp1/hosting_a_react_app_on_firebase/)
-- url: https://youtu.be/21qyl-rBBcU
+Hi, React Redditors!
+
+Recently I watched Thomas Weibenfalk's (freecodecamp YouTube channel) tutorial on "How to Build Tetris in React" and remembered a less known but still memorable game from my childhood where you had to avoid hit "cars" by moving left and right. So inspired by this tutorial, I decided to build my own version of (I don't actually know how this game is called, but I called it -) Tetris Racing.
+
+Here's the [demo](https://ckkz-it.github.io/react-tetris-racing/) and [source code](https://github.com/ckkz-it/react-tetris-racing/).
+
+Current functionality and technologies used you can find in the project's readme file.
+## [6][List of drag &amp; drop React UI builders](https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/)
+- url: https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/
 ---
+a coworker made this list and some were new to me - i figured i should share.
 
-## [8][Confused And Need Opinions On How To Structure Application State(React Hooks)](https://www.reddit.com/r/reactjs/comments/fltz66/confused_and_need_opinions_on_how_to_structure/)
-- url: https://www.reddit.com/r/reactjs/comments/fltz66/confused_and_need_opinions_on_how_to_structure/
+- https://blocks-ui.com/
+- https://openchakra.app/
+- https://pagedraw.io/
+- https://craft.js.org/
+## [7][React Native Responsive Dimensions - Update 3.1.0 (Typescript, foldable devices &amp; more)](https://www.reddit.com/r/reactjs/comments/fmew4b/react_native_responsive_dimensions_update_310/)
+- url: https://www.reddit.com/r/reactjs/comments/fmew4b/react_native_responsive_dimensions_update_310/
 ---
-I am currently testing out my React knowledge by building a simple file upload React front-end project.
+[https://github.com/DaniAkash/react-native-responsive-dimensions](https://github.com/DaniAkash/react-native-responsive-dimensions)
 
-Now I want to show file operations to the end user based on the following activities happening on the Front-end.
+Hi Guys!
 
-File Operations
+I recently pushed an update to React Native Responsive Dimensions (v3.1.0). This update focuses on adding new utilities that will help with building apps for foldable devices &amp; react-native-web apps.
 
-1. File Upload Started
-2. File Upload Complete
-3. File Convert Started
-4. File Convert Complete
-5. Error Status
+New features:
+- Full typescript support
+- Separate utilities for Responsive "window" &amp; "screen" sizes (screen sizes will be useful while working with foldables)
+- New responsive screen size hooks
+- `useDimensionsChange` hook to let your application respond to dimension changes
 
-Now the problem is that I'm confused about how to structure my App state based on the operations above. I don't know if I should use `useState` or `useReducer`
+Checkout the example projects at [Snack](https://snack.expo.io/@daniakash/responsive-dimensions) &amp; [CodeSandbox](https://codesandbox.io/s/react-native-responsive-dimensions-hooks-2cqm8)
 
-Below is what I currently came up with but feel it makes the App State too much bloated because if I begin passing each state as props to other components that might need them, this will make the app too bloated.
-
-
-`/*Value of fileUploadStatus will be either the string null or start or done*/`
-
-`const [fileUploadStatus, setFileUploadStatus] = useState(null);` 
-
-`/*Value of fileConvertStatus will be either the string null or start or done*/`
-
-`const [fileConvertStatus, setFileConvertStatus] = useState(null); `
-
-`const [errorStatus, setErrorStatus] = useState({`
-	`errorOccured: false,`
-	`errorMessage: null`
-	`}); `
-
-I just need opinions on how you would structure your data based on the above file operations. Suggestions are also welcomed
-
-Thanks
-## [9][How to safely send username and password from react js?](https://www.reddit.com/r/reactjs/comments/flt8h2/how_to_safely_send_username_and_password_from/)
-- url: https://www.reddit.com/r/reactjs/comments/flt8h2/how_to_safely_send_username_and_password_from/
+Feedbacks &amp; Feature Requests all welcome! Do let me know your thoughts 😁
+## [8][A PC / Macbook Pro for Web Development and Web Design.](https://www.reddit.com/r/reactjs/comments/fmertl/a_pc_macbook_pro_for_web_development_and_web/)
+- url: https://www.reddit.com/r/reactjs/comments/fmertl/a_pc_macbook_pro_for_web_development_and_web/
 ---
-My app consists of a form with a username input and a password input box, after pressing the button to submit, I send a fetch request to my server that is built with express js.
+Hello folks!
 
-Is there a way to safely send the username and password from the client-side?
-## [10][Why we chose Typescript for the Hasura Console (React Codebase)](https://www.reddit.com/r/reactjs/comments/fl76kh/why_we_chose_typescript_for_the_hasura_console/)
-- url: https://hasura.io/blog/why-we-chose-typescript-for-hasura-console/
+I have been doing web Development on my 10 years old HP laptop which has intel core i3 and 4GB of RAM and an HDD. I'm looking to get something new because the HP is so slow.
+
+I'm thinking about buying a Macbook pro because I may need the mobility someday. But it's expensive and my country doesn't have any Apple stores to get support from if anything happened to my Macbook pro. 
+
+I'm also thinking about a PC build even though they are expensive as well in Morocco, but the problem with a pc is that I will have to pay for a monitor, Keyboard, and mouse.
+
+A used 15' i7 16GB  512GB MacBook Pro 2018 cost around 1800 USD, 
+While the whole PC build and its peripherals would cost more than 2000 USD.
+
+For example a used Macbooks Pro 2018 in the picture bellow cost 
+And the PC cost
+## [9][Rxjs Wrapper over axios](https://www.reddit.com/r/reactjs/comments/fmernv/rxjs_wrapper_over_axios/)
+- url: https://www.reddit.com/r/reactjs/comments/fmernv/rxjs_wrapper_over_axios/
 ---
+Hey , guys my new article was published in Medium yesterday. Topic for this one is wrapping axios with rxjs.
 
-## [11][Build Yelp in React #21 | submitting forms in the landing page](https://www.reddit.com/r/reactjs/comments/flang3/build_yelp_in_react_21_submitting_forms_in_the/)
-- url: https://youtu.be/WeAOy77BhCA
+&amp;#x200B;
+
+[https://medium.com/@kostaskapasakis/how-to-wrap-axios-inside-rxjs-with-typescript-and-react-6c21e47dcb63](https://medium.com/@kostaskapasakis/how-to-wrap-axios-inside-rxjs-with-typescript-and-react-6c21e47dcb63)
+
+&amp;#x200B;
+
+Appreciate any feedback.
+## [10][React Testing Formik and React Redux Hook](https://www.reddit.com/r/reactjs/comments/fmeiwc/react_testing_formik_and_react_redux_hook/)
+- url: https://www.reddit.com/r/reactjs/comments/fmeiwc/react_testing_formik_and_react_redux_hook/
 ---
+I want to test that the dispatch here is called:
 
-## [12][I'm looking for a popup table with symbols to add into form.](https://www.reddit.com/r/reactjs/comments/flrs4z/im_looking_for_a_popup_table_with_symbols_to_add/)
-- url: https://www.reddit.com/r/reactjs/comments/flrs4z/im_looking_for_a_popup_table_with_symbols_to_add/
+       onSubmit={(values, { setSubmitting }) =&gt; {
+              setSubmitting(true);
+              const { id, text} = values;
+              dispatch(fetchData(id, text));
+            }}
+
+My Test:
+
+        const dispatch = store.dispatch();
+        await updateField(wrapper.find('input[name="id"]'), "id", 123);
+        await updateField(wrapper.find('input[name="text"]'), "text", "hi");
+        const button = wrapper.find(Button);
+        expect(button.props().type).toEqual("submit");
+        await submitFormikForm(button);
+        expect(dispatch).toHaveBeenCalledWith(fetchData(123, "hi"));
+
+Mocking the store using the following:
+
+    const middlewares = [
+      thunk.withExtraArgument({ fetchData: () =&gt; Promise.resolve() })
+    ];
+    const mockStore = configureMockStore(middlewares);
+    const store = mockStore({});
+
+Gives out the error:  Actions must be plain objects. Use custom middleware for async actions. Even though I have passed thunk. Any ideas or suggestions on what to do here. I am completely running out of ideas here. Any help would be greatly appreciated. Thanks
+## [11][Page Animation Library](https://www.reddit.com/r/reactjs/comments/fmebw3/page_animation_library/)
+- url: https://www.reddit.com/r/reactjs/comments/fmebw3/page_animation_library/
 ---
- 
+I was wondering if there were a full Page Animation library kind of like [react-transition-group](https://www.npmjs.com/package/react-transition-group) but which can take a grid and apply different animations based on the relative direction the two pages are in?
+## [12][How to implement dragging to scroll horizontally within a container in React?](https://www.reddit.com/r/reactjs/comments/fme5s7/how_to_implement_dragging_to_scroll_horizontally/)
+- url: https://www.reddit.com/r/reactjs/comments/fme5s7/how_to_implement_dragging_to_scroll_horizontally/
+---
+Code sandbox: https://codesandbox.io/s/draggable-image-gallery-yp20u
 
-# Does it exist a component that does this?
-
-React popup box on antd form input showing operator such as &lt; &gt; &lt;= &gt;= etc to add to the input
-
-It can look like something like this - **Lookup-Patterns - Certain Category** :
-
-[https://ant.design/components/auto-complete/](https://ant.design/components/auto-complete/)
-
-However, it should add the chosen row in dropdown to the input instead.
-
-Does anyone know a recommendation?
+I have an image gallery that can be scrolled horizontally, but how to implement a solution in React to drag to scroll?

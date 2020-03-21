@@ -1,117 +1,139 @@
 # aws
-## [1][Run Folding@home on AWS spot instances and help crack COVID-19](https://www.reddit.com/r/aws/comments/flkdgm/run_foldinghome_on_aws_spot_instances_and_help/)
-- url: https://www.reddit.com/r/aws/comments/flkdgm/run_foldinghome_on_aws_spot_instances_and_help/
+## [1][AWS launches initiative to accelerate COVID-19 diagnostics, research, and testing](https://www.reddit.com/r/aws/comments/fluzsm/aws_launches_initiative_to_accelerate_covid19/)
+- url: https://blog.aboutamazon.com/innovation/aws-launches-initiative-to-accelerate-covid-19-diagnostics-research-and-testing
 ---
-Spare AWS credits? [This CloudFormation template](https://github.com/jkataja/cfn-foldingathome) creates an AWS spot instance fleet for running the [Folding@Home](https://foldingathome.org/) client. Folding@home is a computing platform to assist disease research, for instance to find a cure for the COVID-19 virus. The template uses g4dn.xlarge instances with GPUs.
 
-The template installs Ubuntu 18.04 LTS, NVidia CUDA 10.2 and Folding@home client 7.5.1. Folding@home client is started automatically after instance initialization is complete. Client runs until the template is removed, auto scaling group is scaled in or spot instance is reclaimed. The template bids 100% of on-demand price. Spot instance pricing varies: I have seen approximately 60-70% discount. The Folding@home servers have been recently busy and you cannot always retrieve a work package, so there may be some idle.
-
-GitHub link: [https://github.com/jkataja/cfn-foldingathome](https://github.com/jkataja/cfn-foldingathome)
-## [2][Amazon WorkSpaces and Amazon WorkDocs for up to 50 users no charge through June 30, 2020.](https://www.reddit.com/r/aws/comments/flcwwo/amazon_workspaces_and_amazon_workdocs_for_up_to/)
-- url: https://www.reddit.com/r/aws/comments/flcwwo/amazon_workspaces_and_amazon_workdocs_for_up_to/
+## [2][IOST Becomes First Blockchain Project Advertised by Amazon AWS China](https://www.reddit.com/r/aws/comments/fmd9br/iost_becomes_first_blockchain_project_advertised/)
+- url: https://www.reddit.com/r/aws/comments/fmd9br/iost_becomes_first_blockchain_project_advertised/
 ---
- [https://aws.amazon.com/blogs/desktop-and-application-streaming/new-offers-to-enable-work-from-home-from-amazon-workspaces-and-ama](https://aws.amazon.com/blogs/desktop-and-application-streaming/new-offers-to-enable-work-from-home-from-amazon-workspaces-and-amazon-workdocs/) 
+ 
+
+**IOST’s Blockchain as a Service (BaaS) platform** [**announced**](https://medium.com/iost/iost-became-the-first-blockchain-project-interviewed-advertised-by-amazon-aws-china-aac0dab38b57) **on March 20, 2020, that it has strengthened its relationship with AWS China, the global leading cloud computing platform.** 
+
+## Amazon Sponsors IOST
+
+[IOST](https://btcmanager.com/?s=iost), a China-based enterprise-level blockchain system, had already [announced](https://medium.com/iost/iost-now-live-on-aws-launch-your-blockchain-solution-in-5-minutes-6a93632ccfe5) its launch on the Amazon Web Service (AWS) marketplace last year. The news had been received very positively by the community and represented an important step in the development of IOST. Thanks to this collaboration, developers can easily deploy a blockchain infrastructure with dev tools to develop dApps, projects and test out IOST’s high-speed infrastructure with just one click.
+
+[https://btcmanager.com/iost-first-blockchain-project-amazon-aws-china/](https://btcmanager.com/iost-first-blockchain-project-amazon-aws-china/)
+## [3][Using Lambda and CloudWatch to Start/Stop Lightsail Instance automatically](https://www.reddit.com/r/aws/comments/fmc9qr/using_lambda_and_cloudwatch_to_startstop/)
+- url: https://www.reddit.com/r/aws/comments/fmc9qr/using_lambda_and_cloudwatch_to_startstop/
+---
+So I'm trying to write a python script to automatically turn on/off my Lightsail instance using Lambda and CloudWatch. But after figuring out one after another error, I'm stuck with `"errorMessage": "Could not connect to the endpoint URL: \"`[`https://lightsail.us-west-1.amazonaws.com/\`](https://lightsail.us-west-1.amazonaws.com/\)`"", "errorType": "EndpointConnectionError"`.
+
+BTW, total Python newbie, but here is my really simple but definitely not working code:
+
+`import boto3`
+
+`session = boto3.Session(`
+
+`aws_access_key_id=ACCESS_KEY,`
+
+`aws_secret_access_key=SECRET_KEY,`
+
+`region_name='ap-southeast-2'`
+
+`)`
+
+`client = boto3.client('lightsail')`
+
+`response = client.start_instance(`   
+
+`instanceName='ap-southeast-2b'`
+
+`)`
+
+I had to hardcoded my access key and secret key in since it throws error when I don't: `"errorMessage": "name 'ACCESS_KEY' is not defined", "errorType": "NameError"` (I have my keys in the environment variables and test event, but I'm not sure why when I run test, it didn't use those).
 
 &amp;#x200B;
 
-*We are announcing two new offers that enable you to use Amazon WorkSpaces and Amazon WorkDocs for up to 50 users at no charge. Both offers are for new customers that have not previously used these services and are available through June 30, 2020. The WorkSpaces offer is available beginning on April 1st and will include our Standard, Value, and Performance bundles. The WorkDocs offer is available immediately. Together, WorkSpaces and WorkDocs provide remote workers the ability to securely use the applications they need, while collaborating on documents with their colleagues around the world. If you want to get started with WorkSpaces immediately, you can use our ongoing* [*Free Tier*](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;all-free-tier.q=Desktop%2B%26%2BApp%2BStreaming%2BAmazon%2BWorkSpaces%2B40%2Bhours&amp;all-free-tier.q_operator=AND) *offer of the WorkSpaces Standard bundle* [zon-workdocs/](https://aws.amazon.com/blogs/desktop-and-application-streaming/new-offers-to-enable-work-from-home-from-amazon-workspaces-and-amazon-workdocs/)  
+One more thing, why the `Encryption in transit` option in the environment variables doesn't stick? I toggled the `Enable helpers for encryption in transit`, selected my key (SYMMETRIC\_DEFAULT), pressed encrypt, and then save, but all of this for nothing, why?
+## [4][Slashing CloudFront change propagation times in 2020 – recent changes and looking forward | Amazon Web Services](https://www.reddit.com/r/aws/comments/flzeix/slashing_cloudfront_change_propagation_times_in/)
+- url: https://aws.amazon.com/blogs/networking-and-content-delivery/slashing-cloudfront-change-propagation-times-in-2020-recent-changes-and-looking-forward/
+---
+
+## [5][school me on aws privatelink please](https://www.reddit.com/r/aws/comments/fmb9lu/school_me_on_aws_privatelink_please/)
+- url: https://www.reddit.com/r/aws/comments/fmb9lu/school_me_on_aws_privatelink_please/
+---
+i'm pretty unfamiliar with this service, and am most interested in how it works with a snowflake database, ie. [https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html](https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html)
+
+i'd like to confirm my understanding of the basics of how it works and how a 3rd party trusted relationship could be set up.
+
+company ACME vpc and company ACME account on snowflake, both on us-east-1, \_without\_ privatelink, i'm assuming the data traverses only the internal amazon network but it takes place in network pipes shared with internet traffic.  ACME is reaching out to their public facing https snowflake account URL [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com).
+
+\*with\* privatelink, a trust relationship is set up between ACME's aws vpc and snowflake, now with a private ACME DNS entry; [acme.snowflakecomputing.com](https://acme.snowflakecomputing.com).  this only resolves from ACME's vpc and for users on their vpn.  when snowflake is accessed via it, the network traffic is routed on internal aws pipes, although in some methodology where the traffic is not shared with other accounts or public data.
+
+at this point [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com) is still accessible to the world.  but it could be restricted to allow only ACME employees to access it by providing whitelisted blocks of ACME IPs?  [https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html#blocking-public-access-optional](https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html#blocking-public-access-optional)
+
+after which both [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com) and [acme.snowflakecomputing.com](https://acme.snowflakecomputing.com) will still work, but the former will still put traffic through shared public pipes and the latter through private ones, and only ACME employees will be able to reach the former address and be able to even resolve the latter address.
+
+if i'm a 3rd party provider providing a cloud service, and want to access ACME's snowflake, i essentially have to do the same as above?  which is either get them to whitelist a subset or block of my IPs to access [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com), or to alternatively set up a privatelink trust between MYCO vpc and the customer's snowflake account, hosting my own DNS to [acme.snowflakecomputing.com](https://acme.snowflakecomputing.com), at which point no IP addresses or ranges must be specified?
+
+in the case of snowflake, it also appears that there is some additional complexity in regards to also needing to make S3 buckets visible as well as some additional client configuration items.
+
+am i understanding this correctly?  or where am i falling apart?
+## [6][EC2 Spot instance](https://www.reddit.com/r/aws/comments/fm55q0/ec2_spot_instance/)
+- url: https://www.reddit.com/r/aws/comments/fm55q0/ec2_spot_instance/
+---
+How long can my ec2 spot request stay on pending-fullfilment? It’s been stuck on this for an hour already.
+## [7][Stupid question -- where is the Elasticache Redis API for Java? Or am I misunderstanding what that is?](https://www.reddit.com/r/aws/comments/fm9m6e/stupid_question_where_is_the_elasticache_redis/)
+- url: https://www.reddit.com/r/aws/comments/fm9m6e/stupid_question_where_is_the_elasticache_redis/
+---
+Started a new job, was given the task to create a lambda that writes to Redis. Is that such a thing? Or was it shorthand for write to a DynamoDb table fronted by Redis?
+
+Sorry I feel so dumb
+## [8][How to use (prediction) from a deployed model in Sagemaker for IOS](https://www.reddit.com/r/aws/comments/fm8ub3/how_to_use_prediction_from_a_deployed_model_in/)
+- url: https://www.reddit.com/r/aws/comments/fm8ub3/how_to_use_prediction_from_a_deployed_model_in/
+---
+Hi, i can't seem to find any documentation on using a deployed model for IOS. Is Amplify framework able to connect to a deployed model in sagemaker and make predictions using that?
+## [9][Common use cases for Aurora](https://www.reddit.com/r/aws/comments/fm3tiq/common_use_cases_for_aurora/)
+- url: https://www.reddit.com/r/aws/comments/fm3tiq/common_use_cases_for_aurora/
+---
+What are some common use cases for Aurora? Trying to understand exactly how it stacks up against AWS' db offerings in comparison to the other options and in a more concrete day-to-day use case sense.
+## [10][Difficulty Getting Lamda Edge function to work with CF](https://www.reddit.com/r/aws/comments/fm8f3n/difficulty_getting_lamda_edge_function_to_work/)
+- url: https://www.reddit.com/r/aws/comments/fm8f3n/difficulty_getting_lamda_edge_function_to_work/
+---
+I've been having on-going CORS issues with some assets on my client's server. Everything I can find suggests it's the fact that S3/CF does not always x'mit the Vary header, so the workaround is to do it ourselves using Lamda to append to the HTTP response.
+
+So I created this Lamda Function that I sourced from others in a similar situation
+
+    'use strict';
+    
+    // If the response lacks a Vary: header, fix it in a CloudFront Origin Response trigger.
+    
+    exports.handler = async (event) =&gt; {
+        const response = event.Records[0].cf.response;
+        const headers = response.headers;
+        
+        console.log("vary headers before", headers['vary']);
+    
+        if (!headers['vary'])
+        {
+            headers['vary'] = [
+                { key: 'Vary', value: 'Access-Control-Request-Headers' },
+                { key: 'Vary', value: 'Access-Control-Request-Method' },
+                { key: 'Vary', value: 'Origin' },
+            ];
+        }
+        
+        console.log("vary headers after", headers['vary']);
+        // Return modified response
+        return response
+    }
+
+Note, I added the console.log to test that it was actually working. When I run it through the Test engine in Lamda's UI, it works exactly how I expect, the console.log()s fire and output. Perfect. It even shows up in CloudWatch logs.
+
+So I deploy it to my CF distro, I select "Origin Response" as the event and save it. I go over to CF and see that it's deploying. Great. After it is finished deploying, I run an Invalidation on \* (not sure if this step is necessary if CF is being re-deployed).
+
+Once the Invalidation completes, I go test a couple URLs via curl. The Vary headers are not there. The file loads, as expected, but no Vary headers.
+
+I checked CloudWatch and there are no logs about it at all. No errors, no successes, nothing -- other than the test event I did that did work. I checked all US based regions, all of the service groups, no relevant logs anywhere, which tells me that the lamda function isn't be invoked at all.
+
+I double checked the CF config. Checked the behavior tab and confirmed that there is a Origin Response trigger that is indeed pointing to the lamda function and the correct version.
 
 &amp;#x200B;
 
-I'm an AWS Employee.
-## [3][Exam reschedule due to COVID-19](https://www.reddit.com/r/aws/comments/flsugg/exam_reschedule_due_to_covid19/)
-- url: https://www.reddit.com/r/aws/comments/flsugg/exam_reschedule_due_to_covid19/
----
-Has anyone facing issues with connecting to PSI Support ?
-
-We have a total lockdown on 22nd March due to Coronavirus, and my exam is scheduled on the same day. Due to the outbreak, I have already exhausted my 2x rescheduling options and now I am unable to reschedule it for a later date.
-
-Do we have someone here from PSI ? or can AWS help in this regard ?
-## [4][AWS signature for SNS?](https://www.reddit.com/r/aws/comments/fltq0c/aws_signature_for_sns/)
-- url: https://www.reddit.com/r/aws/comments/fltq0c/aws_signature_for_sns/
----
-I'm using the AWS key derivation for python listed in the [example](https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html#sig-v4-examples-get-auth-header) for use without boto3. 
-
-Im submitting a request to publish to an SNS Topic but keep getting the error message `The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.`. The Access Key and Secret Key match whats in IAM.
-
-The only thing I changed in the script was the URI params:
-
-    method = 'GET'
-    service = 'sns'
-    host = 'sns.us-east-1.amazonaws.com'
-    region = 'us-east-1'
-    endpoint = 'https://sns.us-east-1.amazonaws.com'
-    request_parameters = 'Action=Publish&amp;Version=2010-03-31&amp;Message=HowBowDah&amp;TopicArn=arn%3aws%3sns%3us-east-1%3151341732511%3test'
-
-
-
-Does this underlying request look right?
-
-    GET /?Action=Publish&amp;Version=2010-03-31&amp;Message=HowBowDah&amp;TopicArn=arn%253Aws%253sns%253us-east-1%253151341732511%253test HTTP/1.1
-    Host: sns.us-east-1.amazonaws.com
-    User-Agent: python-requests/2.22.0
-    Accept-Encoding: gzip, deflate
-    Accept: */*
-    Connection: close
-    x-amz-date: 20200320T113335Z
-    Authorization: AWS4-HMAC-SHA256 
-    Credential=AKIASGPFLSKPVMSJFLML/20200320/us-east-1/sns/aws4_request, SignedHeaders=host;x-amz-date, Signature=8d5a555626c592146768499aee1e85d64f6d4898cfb568ea2544cf7ad0d6d9f0
-## [5][Signed Cookies AWSSDK - Cloudfront](https://www.reddit.com/r/aws/comments/floatz/signed_cookies_awssdk_cloudfront/)
-- url: https://www.reddit.com/r/aws/comments/floatz/signed_cookies_awssdk_cloudfront/
----
-Anyone have a working solution with the new Cloudfront AWSSDK to get the signed cookies working with alternate domain.  Created the CNAME for the hosted domain, e.g., (cdn.example.com).  Signed URLs works fine but for the life of me cannot get the signed cookies to work.
-## [6][aws-cli S3 bucket setting Content-Type text/html ?](https://www.reddit.com/r/aws/comments/flt4g0/awscli_s3_bucket_setting_contenttype_texthtml/)
-- url: https://www.reddit.com/r/aws/comments/flt4g0/awscli_s3_bucket_setting_contenttype_texthtml/
----
-Hello,
-
-I'm trying to upload a bunch of files with no extensions that are in fact html
-
-I'm doing it like this:
-
-aws s3 sync . s3://$FRONTEND\_BUCKET\_NAME --exclude '\*.\*' --content-type text/html --content-language html --metadata-directive REPLACE
-
-Yet content-type is set to  binary/octet-stream in the bucket? What am I missing?
+I'm all out of ideas at this point, especially being an admitted AWS newb. I'd appreciate any pointers!
 
 &amp;#x200B;
 
-UPDATE:
-
-Ok I figured it out, trash this post if you want but solution is to:
-
-dist: bionic  
-install: pyenv global 3.8.1 &amp;&amp; pip3 install --user awscli==1.17.7
-
-because reasons I guess.
-## [7][Non-USD billing and COVID-19](https://www.reddit.com/r/aws/comments/flqem9/nonusd_billing_and_covid19/)
-- url: https://www.reddit.com/r/aws/comments/flqem9/nonusd_billing_and_covid19/
----
-Has anyone seen any communications about what will happen for those of us billed in a non-USD currency? Exchange rates have taken a plunge with the global pandemic so I'm wondering what the options are... 😨
-## [8][Programatically modify a security group?](https://www.reddit.com/r/aws/comments/flst8y/programatically_modify_a_security_group/)
-- url: https://www.reddit.com/r/aws/comments/flst8y/programatically_modify_a_security_group/
----
-It doesn't look like this is specifically possible. To be specific, I want to modify a member IP permision within a group. I'm using the .NET API, but since it's feature parity seemingly with the command line, I've been looking at that too.
-
-&amp;#x200B;
-
-I thought I was doing well, I was able to find my way through describeSecurityGroups, and find the appropriate SecurityGroup. Then i can iterate the IpPermissions, into IPv4Ranges and loop that and find the one I want to change (by Description in this case)
-
-&amp;#x200B;
-
-Ideally, I'd be wanting to update the IP when I find it, but there is only UpdateDescription for it, not the IP. I can't seem to find any commands to remove a specific Ipv4Range entry. 
-
-&amp;#x200B;
-
-To give some back story, we have a web-based product that is used by many users, including our staff. Our staff also have RDP access to a Bastion host that they need to use on occasion. Our office IPs are whitelisted, and some of our staff have static Ips, so those aren't an issue either. However a lot of staff are on dynamic connections. We're getting a bit overrun of "can you add my IP to the bastion" every day with so many now working from home. We don't have a VPN into the production network, it's what this Bastion host is for. 
-
-What I had hoped to do was to use the Description field, and put the username from the web product in there, and then during logon to the product, pickup their IP, and update the security group accordingly, so as soon as they web-login, they would also be granted access on the Bastion. 
-
-Since there doesn't seem to be function to do this, I guess the only option is to make a security group per user, but is there a limit of how many security groups can exist on an EC2 instance, and this seems a lot messier. Short of a VPN into production, can anyone think of any other way to approach this?
-## [9][Determining read/write capacity on DynamoDB](https://www.reddit.com/r/aws/comments/flscvx/determining_readwrite_capacity_on_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/flscvx/determining_readwrite_capacity_on_dynamodb/
----
-Can someone please help me determine the right read/write capacity units for my dynamodb tabels? I have 2 tables already in dynamodb, but one of the engineers set up read and write cus too high when created the tables, so the costs are higher that they should be. How can I determine the right amount of units to minimize the costs and maintain the performance? Thanks
-## [10][a standard IT infrastructure for ROS robots and IoT devices.](https://www.reddit.com/r/aws/comments/flsa2h/a_standard_it_infrastructure_for_ros_robots_and/)
-- url: https://github.com/rdbox-intec/rdbox
----
-
+**UPDATE:** Looks like the non-logging might have been a permissions issue. I noticed some warnings in the IAM role relating to the CloudWatch needing resources specified or w/e. So I added some wildcards, and boom, the logging happens. But still no header rewriting. Might there be a permission for rewriting headers?

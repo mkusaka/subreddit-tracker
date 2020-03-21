@@ -58,80 +58,74 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][`template-rust-backend-with-electron-frontend` released](https://www.reddit.com/r/rust/comments/flsoa0/templaterustbackendwithelectronfrontend_released/)
-- url: https://www.reddit.com/r/rust/comments/flsoa0/templaterustbackendwithelectronfrontend_released/
----
-Hi Rust users, I published the template project for a Rust backend with Electron frontend project. I believe this template is useful for now maybe until a GUI Toolkit libraries will be grows well that has a high Rust purity and high licensing flexibility.
-
-[https://github.com/usagi/template-rust-backend-with-electron-frontend](https://github.com/usagi/template-rust-backend-with-electron-frontend)
-## [4][Alchemy: A New Rust GUI Framework](https://www.reddit.com/r/rust/comments/flsrq5/alchemy_a_new_rust_gui_framework/)
-- url: https://alchemy.rs/
+## [3][Comparing Alternatives to top Written in Rust](https://www.reddit.com/r/rust/comments/fm8yam/comparing_alternatives_to_top_written_in_rust/)
+- url: https://www.wezm.net/v2/posts/2020/rust-top-alternatives/
 ---
 
-## [5][Cheatsheet: Option (in Rust) vs Maybe (in Haskell)](https://www.reddit.com/r/rust/comments/fli7wk/cheatsheet_option_in_rust_vs_maybe_in_haskell/)
-- url: https://notes.iveselov.info/cheatsheet-rust-option-vs-haskell-maybe
+## [4][Error 418](https://www.reddit.com/r/rust/comments/fmd6v3/error_418/)
+- url: https://docs.rs/cargo/0.43.1/src/cargo/core/manifest.rs.html#511
 ---
 
-## [6][How does Rust's scalability compare to Erlang?](https://www.reddit.com/r/rust/comments/flf2ld/how_does_rusts_scalability_compare_to_erlang/)
-- url: https://www.reddit.com/r/rust/comments/flf2ld/how_does_rusts_scalability_compare_to_erlang/
----
-The ErlangVM (BEAM) is well regarded as a battle tested, no downtime runtime that can scale gracefully to handling orders of magnitude more concurrent tasks without spiking.
-What kind of mechanisms need to be in place to enable a similar amount of graceful scaling in Rust?
-
-I have been keeping an eye on the actor frameworks (such as actix, bastion), but I haven't seen something that would allow you to schedule and prefer short running processes rather than long running processes as Erlang does. I believe that if a process handlers runs for a long time in Erlang, the scheduler will pause that process to allow shorter handlers to take priority. This leads to ensuring that there will seldom be anything blocking your program (unless it's a long running NIF).
-
-Does anyone have thoughts about if these scalability characteristics are already enabled today with Rust, or what would have to be done to achieve them?
-
-Thanks!
-## [7][WASM built with Emscripten and loaded with js-sys?](https://www.reddit.com/r/rust/comments/flravn/wasm_built_with_emscripten_and_loaded_with_jssys/)
-- url: https://www.reddit.com/r/rust/comments/flravn/wasm_built_with_emscripten_and_loaded_with_jssys/
----
-I have been playing with [https://github.com/rustwasm/wasm-bindgen/tree/master/examples/wasm-in-wasm](https://github.com/rustwasm/wasm-bindgen/tree/master/examples/wasm-in-wasm) in order to see how I can load in a WASM module.  I have some C code that I would like to use so I built a WASM module from this code using Emscripten.  Unfortunately it panics when I run the code and I am now asking myself if this is possible at all.  Is this possible?
-## [8][Trace caller’s source location in the stable Rust](https://www.reddit.com/r/rust/comments/flnns3/trace_callers_source_location_in_the_stable_rust/)
-- url: https://www.reddit.com/r/rust/comments/flnns3/trace_callers_source_location_in_the_stable_rust/
----
-[https://blog.knoldus.com/trace-callers-source-location-in-the-stable-rust/](https://blog.knoldus.com/trace-callers-source-location-in-the-stable-rust/)
-## [9][This Week in Rust 330](https://www.reddit.com/r/rust/comments/flb5tn/this_week_in_rust_330/)
-- url: https://this-week-in-rust.org/blog/2020/03/17/this-week-in-rust-330/
+## [5][Secure Rust Guidelines](https://www.reddit.com/r/rust/comments/fmdsc3/secure_rust_guidelines/)
+- url: https://anssi-fr.github.io/rust-guide/
 ---
 
-## [10][Announcing Rust IPFS, and a call for contributors](https://www.reddit.com/r/rust/comments/fl6ij9/announcing_rust_ipfs_and_a_call_for_contributors/)
-- url: https://blog.ipfs.io/2020-03-18-announcing-rust-ipfs/
+## [6][Memory-Safety Challenge Considered Solved? An Empirical Study with All Rust CVEs](https://www.reddit.com/r/rust/comments/fm6vc2/memorysafety_challenge_considered_solved_an/)
+- url: https://arxiv.org/abs/2003.03296
 ---
 
-## [11][Recommendations on this data structure](https://www.reddit.com/r/rust/comments/fltzwg/recommendations_on_this_data_structure/)
-- url: https://www.reddit.com/r/rust/comments/fltzwg/recommendations_on_this_data_structure/
+## [7][The original concept for the Rust logo](https://www.reddit.com/r/rust/comments/flzpbo/the_original_concept_for_the_rust_logo/)
+- url: https://twitter.com/mart3ll/status/1240705442839277569
 ---
-Any recommendations on how to design the following data structure:
 
-The biggest issue I have is using the RefCell to be able to mutate the structure inside the hashmap. Is there a better solution to this?
-            
-    pub struct AAA {
-        pub(crate) one: Option&lt;u8&gt;,
-    }
-    
-    pub struct BBB {
-        pub(crate) one: Option&lt;u8&gt;,
-        pub(crate) two: Option&lt;u8&gt;,
-        pub(crate) three: Option&lt;u8&gt;,
-        pub(crate) four: Option&lt;u8&gt;,
-        pub(crate) five: Option&lt;u32&gt;,
-        pub(crate) six: Option&lt;u32&gt;,
-    }
-    
-    pub struct Union {
-        pub(crate) b: Option&lt;AAA&gt;,
-        pub(crate) a: Option&lt;BBB&gt;,
-    }
-    
-    pub struct Hash {
-        hash: HashMap&lt;u32, RefCell&lt;Union&gt;&gt;,
-    }
-## [12][As a programming language, how does Rust compare to Python?](https://www.reddit.com/r/rust/comments/fld46b/as_a_programming_language_how_does_rust_compare/)
-- url: https://www.reddit.com/r/rust/comments/fld46b/as_a_programming_language_how_does_rust_compare/
+## [8][Announcing `absolution`: Freedom from `syn`](https://www.reddit.com/r/rust/comments/fm4jdu/announcing_absolution_freedom_from_syn/)
+- url: https://github.com/Manishearth/absolution
 ---
-Now I know that Rust is incredibly good at memory management and is also quite fast(?), and companies like Discord are using it in their backend systems. On the other hand, Python is the go to language for machine learning and other AI related stuff.
 
-I know it seems like I answered my own question, but what I really want to know is that being a student, should I focus on Rust as well, or just continue with Python until the right time comes, when Rust becomes more popular than it is now?
+## [9][Building a Simple GraphQL API with Actix and Juniper - #1](https://www.reddit.com/r/rust/comments/flvhk4/building_a_simple_graphql_api_with_actix_and/)
+- url: https://youtu.be/9q4GcWbAIEM
+---
 
- I don't know as much about Rust as I would like to, so please correct me if I'm wrong about anything.
+## [10][Building a Discord Bot in Rust](https://www.reddit.com/r/rust/comments/fm4luc/building_a_discord_bot_in_rust/)
+- url: https://youtu.be/sOA6rSRCqPw
+---
+
+## [11][The Lean Crate Initiative begins with The Criner Waste Report (ugly alpha)](https://www.reddit.com/r/rust/comments/fm8nhv/the_lean_crate_initiative_begins_with_the_criner/)
+- url: https://github.com/crates-io/criner#the-lean-crate-initiative
+---
+
+## [12][Repl vs Cli](https://www.reddit.com/r/rust/comments/fm3o4z/repl_vs_cli/)
+- url: https://www.reddit.com/r/rust/comments/fm3o4z/repl_vs_cli/
+---
+I am writing a tool for personal use to organize documents, mark them for revision and implement a spaced repetition algorithm and so on.
+
+I already figured out the features and know pretty well what I want it to look like in the end, so right now I am fiddling around with the implementation.
+
+First of all I am, well not confused, but uncertain about the implementation of a CLI and REPL, since a REPL should implement the exact same CLI logic, namely passing the command and arguments, processing it and output something.
+
+Example CLI (let's say my binary is called my-project)
+
+    $ my-project init
+    $ my-project create document ...
+    $ my-project memorize document ...
+
+... and so on
+
+A REPL would just be an instance where you would execute "my-document" once and get into a shell, where you can type the exact commands.
+
+    $ my-project
+    &gt; init
+    &gt; create document ...
+    &gt; memorize document ...
+
+Pretty much like python.
+
+The CLI implementation in rust would be pretty straight forward with clap or structopt.
+
+The REPL can be implemented with the help of rustyline.
+
+But I am wondering, since the commands in both cases are literally going to be the same logic, if I can just take the input from rustyline, split along the " " spaces and pass that vector/array to a clap instance, to process the commands? Since that seems to be what rust does with the env arguments, that it gives you.
+
+That way I can keep the logic seperate from the interface, since I might want to write a desktop and web GUI for this project, so I could load the whole thing off to a client/server architecture, kind of like Docker does it and just create another interface via a REST API.
+
+The REST API and client/server architecture are not the main focus right now though, more like something that would be interesting to do later on. But I want to implement the first interfaces, in the terminal, in a manner, that is scale able and is not going to be too much work to port other platforms in the future.

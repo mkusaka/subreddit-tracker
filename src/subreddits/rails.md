@@ -19,7 +19,153 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Postgres client / server version mismatch](https://www.reddit.com/r/rails/comments/flkqlo/postgres_client_server_version_mismatch/)
+## [2][Are Companies still hiring?](https://www.reddit.com/r/rails/comments/fm6nwe/are_companies_still_hiring/)
+- url: https://www.reddit.com/r/rails/comments/fm6nwe/are_companies_still_hiring/
+---
+I am a part time Rails developer searching for a full time role. It looks like I am facing some tough trends with companies everywhere closing and doing layoffs. 
+I am seeing Jr developers getting laid off everywhere. Do I stand a chance in the job search right now with less than a year of professional experience.
+## [3][Wanting to help other RoR developers](https://www.reddit.com/r/rails/comments/fm6vfn/wanting_to_help_other_ror_developers/)
+- url: https://www.reddit.com/r/rails/comments/fm6vfn/wanting_to_help_other_ror_developers/
+---
+I really enjoy helping other programmers so i'd like to offer my time to anyone is stuck on something in Rails. I've been developing in RoR for 6 years and own a small custom software development company working with some pretty large projects.
+
+I mostly enjoy working with with the backend focusing on code design and testing in rspec, but if I can help you in something else, I'm happy to give it a shot. Even if you're brand new and it's just a discussion to ask some questions and maybe help connect the dots for you.
+
+Some requirements:
+
+* I'd like to video conference the session (you sharing your screen) so we can record it and pop it up on YouTube for others. I'd like to keep it less than 2 hours.
+* You would need a mic/camera and good internet connection
+* I think it would be best suited those who are a beginner/intermediate in the framework. Preferably I'd like us to focus on an actual problem in the session rather than it turning into a straight video tutorial.
+* It would be helpful to get an idea on what the challenge you're facing, just so I know I can actually help you and not waste our time
+
+If you're keen just leave a comment or send me a PM with your challenge and I'll be in touch. If it's not within my skillset maybe someone else might offer some time!
+
+&amp;#x200B;
+
+EDIT:  I'm not looking to charge anything, I'm just trying to stay busy, take a break from personal projects, and avoid video games.
+## [4][How to make sure you are integrating google/outlook calendar correctly with your product](https://www.reddit.com/r/rails/comments/flyeuv/how_to_make_sure_you_are_integrating/)
+- url: https://www.reddit.com/r/rails/comments/flyeuv/how_to_make_sure_you_are_integrating/
+---
+I have worked on calendar integrations in my current role for quite some time now and have a deep understanding of how they work. Hence, I thought it would be nice to help developers who would face this challenge in their own workplace.
+
+Google calendar has decent documentation for most of its products and supports most of the libraries, even then, it's confusing enough to take the wrong approach while integrating with google calendar.
+
+When I set out to build calendar integration for one of my products, I had never thought that it would end up becoming so complicated to do things which I had initially thought to be simple.
+
+Product Requirements
+
+1. During Signup/Login ask for permission to view/edit/create the events in their primary google calendar.
+2. Fetch the calendar events(both recurring and 1 time) and show them to the users so that they can add more details to it(specific to the product).
+3. Keep in sync with any new events that are created.
+4. Sync existing events between the product and the calendar.
+5. Updating the correct recurring events in google calendar for any updates done to them in my product.
+
+Remember that, my product required 2-way sync of events.
+
+The Incorrect Approach
+
+During my research, most of the blog posts I read pointed to using the [Calendar Events List API](https://developers.google.com/calendar/v3/reference/events/list) and my brain started to work in that direction. I took the following approach which is inefficient and unscalable -
+
+1. Integrated the Calendar Events List API which got me the event information for all the upcoming events.
+2. Saved the ones which matched as per the algorithm of the product
+3. If the user performed any update to these events then update the calendar events accordingly(changes to date/time/description)
+4. Write a Cron job which runs every 30 minutes to check if any new events were added/existing events changed(biggest blunder) for all the users in the database.
+
+The Correct Approach
+
+Soon, I realised that this was not the most efficient and scalable way to achieve the results I wanted.  
+I dug deeper into the google documentation to realize that there is a [synch API](https://developers.google.com/calendar/v3/sync) which helps in incremental synch of data and works as a [webhook](https://en.wikipedia.org/wiki/Webhook). This is what made complete sense and would fit my requirements perfectly.  
+I am going to talk about this approach in a new series. Stay Tuned
+
+Would be nice to hear your comments.
+
+I plan to write a series about how to actually do it correctly as well
+## [5][Auto creating memberships and assigning roles](https://www.reddit.com/r/rails/comments/fm3qz0/auto_creating_memberships_and_assigning_roles/)
+- url: https://www.reddit.com/r/rails/comments/fm3qz0/auto_creating_memberships_and_assigning_roles/
+---
+I have an application where I want user to create workspaces/companies. I have a many\_through join model setup that's working fine. I have the rolify gem handling roles for me. They way I have setup creating a company is as follows.
+
+    def create
+    @company = Company.new(company_params)
+    if @company.save
+    .... things going on after save...
+            
+    @company.memberships &lt;&lt; Membership.create(user_id: current_user.id,     company_id: @company)
+            Membership.last.add_role :owner, @company
+    end
+
+This way when a user creates a company the membership is created and set to the right company and user. My concern is the role adding part. Calling `Membership.last`, doesn't seem like a proper solution to handle this. I have tried things with @ sings etc but that didnt seem to work..
+
+&amp;#x200B;
+
+How to handle this correctly?
+## [6][How to block access from most of the application until users finish stripe payments?](https://www.reddit.com/r/rails/comments/fm4w26/how_to_block_access_from_most_of_the_application/)
+- url: https://www.reddit.com/r/rails/comments/fm4w26/how_to_block_access_from_most_of_the_application/
+---
+Not sure how much explanation is needed in conjunction with the title, but I have a signup process where users can be a parent or a student of a parent. They have slightly different processes to complete based on their selections. 
+
+**The flows goes like this for students:**
+Select create new account -&gt;
+choose student account option -&gt;
+fill out new user form -&gt;
+submit -&gt;
+stripe payment on stripe website -&gt;
+should be able to see their dashboard 
+
+**&amp; for parents:**
+Select create new account -&gt;
+choose parent account option -&gt;
+fill out new user form -&gt;
+submit -&gt;
+add children to your account -&gt;
+finish that process -&gt;
+stripe payment on stripe website -&gt;
+should be able to see their dashboard 
+
+My main concern is that they can access their accounts by typing in the url or by clicking on their profile before they finish the process, and I want to make that impossible until they’ve paid. They’ll have stripe info rows on their table after paying, and I assume I can use that to make it impossible to see things. I have pundit for authorization, and a home rolled authorization (I’ve been pushing for devise, I know, I know). This seems like it should go in an authorization step, but I’m not totally sure. 
+
+I’d be happy to provide more info, but I didn’t want to have a wall of text. Thanks in advance for any help!
+## [7][Will a nosql database more suitable when it comes to a personal app like a todo list?](https://www.reddit.com/r/rails/comments/flxzre/will_a_nosql_database_more_suitable_when_it_comes/)
+- url: https://www.reddit.com/r/rails/comments/flxzre/will_a_nosql_database_more_suitable_when_it_comes/
+---
+What I mean by a personal app is that when a user logs in, all they can see is their data, so they don't need to know anything else in the database.
+
+What I understand is that if I use a relational database like postgres, to do lists of different users (for example) will be meshed in a single to do table, so I'll have to query by user id. Is there a more efficient way to do this, will mongodb better to solve this type of problem?
+## [8][Hello! to all RoR experts here](https://www.reddit.com/r/rails/comments/fm95uk/hello_to_all_ror_experts_here/)
+- url: https://www.reddit.com/r/rails/comments/fm95uk/hello_to_all_ror_experts_here/
+---
+How much should I pay for a project very similar to this website?   
+
+
+[https://www.investagrams.com/](https://www.investagrams.com/)  
+
+
+I think you can try and log in with your Facebook account. Thank you!!
+## [9][Where to store file paths](https://www.reddit.com/r/rails/comments/flxmag/where_to_store_file_paths/)
+- url: https://www.reddit.com/r/rails/comments/flxmag/where_to_store_file_paths/
+---
+I work on a rails app that has a number of hard coded paths. For example, on app initialization a class might load a YAML file like this:
+
+@@variable = YAML.load_file('path/to/the/file.yaml')
+
+Is this bad practice? I have been taught it is better to place paths in an environment variable, but my develop lead disagrees. I am trying to write tests that run in many different environments (dev, test server, etc.). This is an example of our configuration making the process more difficult than it should be. Is there a better solution?
+
+Thanks!
+## [10]["The Rails way" to deal with a lot of tables with custom columns](https://www.reddit.com/r/rails/comments/flw9ly/the_rails_way_to_deal_with_a_lot_of_tables_with/)
+- url: https://www.reddit.com/r/rails/comments/flw9ly/the_rails_way_to_deal_with_a_lot_of_tables_with/
+---
+Hi,
+
+I have very recently started learning Rails and I feel, after quite a few tutorials, that I am ready to tackle more complicated projects to learn Rails beyond basic stuff.
+
+The project that I am building is some kind of inventory tracking system. The most challenging thing right now is structuring database because items have different columns based on their type. For example book has ISBN and screen resolution. I have tried to do some research on that topic but I don't even know what to search to find answers. I am currently thinking about having table with all universal columns and separate tables for each type with custom fields.
+
+How should I approach this problem in "The Rails way". Should I create model for each type and is there a way to add new types (with their tables and models) without explicitly typing \`rails g model...\` on command line?
+
+Thanks for helping me learn,
+
+Bartol
+## [11][Postgres client / server version mismatch](https://www.reddit.com/r/rails/comments/flkqlo/postgres_client_server_version_mismatch/)
 - url: https://www.reddit.com/r/rails/comments/flkqlo/postgres_client_server_version_mismatch/
 ---
 I’m toying with Rails in containers using [this page](https://docs.docker.com/compose/rails/) as my guide.
@@ -31,183 +177,3 @@ I create a table and then from the Rails container, go into “rails dbconsole�
 Sure enough, “psql —version” from inside the Rails container says 11 while the DB container says 12.
 
 My question is if I can somehow force the error to happen (and perhaps be more obvious) when Rails (using a version 11 library) connects to a version 12 DB server?
-## [3][Alternative to Active Admin?](https://www.reddit.com/r/rails/comments/flj0e0/alternative_to_active_admin/)
-- url: https://www.reddit.com/r/rails/comments/flj0e0/alternative_to_active_admin/
----
-The app I am on is using ActiveAdmin for backend administration. It's been very painful to use lately and I was wondering which alternative to go after and why. There are so many options, but not all of them are maintained or even lightweight.
-## [4][Get DB data ID in model class](https://www.reddit.com/r/rails/comments/flow2j/get_db_data_id_in_model_class/)
-- url: https://www.reddit.com/r/rails/comments/flow2j/get_db_data_id_in_model_class/
----
-Hello everyone! I have two almost equal tables in DB. I need to add a callback on update in 1 table will update same column or columns in other table.
-So here is a question. How can I get the row ID in model class file?
-## [5][devise changing routes to confirmation.user](https://www.reddit.com/r/rails/comments/flh8ym/devise_changing_routes_to_confirmationuser/)
-- url: https://www.reddit.com/r/rails/comments/flh8ym/devise_changing_routes_to_confirmationuser/
----
-Hi! I have this strange bug in my application that devise is changing the routes .... :S 
-
-e.g when submitting the form here [http://localhost:3000/users/confirmation/new](http://localhost:3000/users/confirmation/new) it is sending the user to  [http://localhost:3000/confirmation.user](http://localhost:3000/confirmation.user)  :S 
-
-and when signing up i get this mail
-
-&lt;p&gt;&lt;a href="[http://localhost:3000/confirmation.16?confirmation\_token=yaQYvdu-ysiC1rkqtsxC](http://localhost:3000/confirmation.16?confirmation_token=yaQYvdu-ysiC1rkqtsxC)"&gt;Confirm my account&lt;/a&gt;&lt;/p&gt;
-
-notice the .16 (this is the user id) in the url?
-
-User.rb
-
-`class User &lt; ApplicationRecord`
-
-  `# Include default devise modules. Others available are:`
-
-  `# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable`
-
-  `devise :database_authenticatable, :registerable,`
-
-`:recoverable, :rememberable, :validatable , :confirmable`
-
-&amp;#x200B;
-
-  `has_many :products, dependent: :destroy`
-
-  `has_many :trackers, dependent: :destroy`
-
-  `validates_presence_of :firstname, :lastname`
-
-  `has_one :plan, dependent: :destroy`
-
-`end` 
-
-&amp;#x200B;
-
-routes.rb
-
-`Rails.application.routes.draw do`
-
-  `mount RailsAdmin::Engine =&gt; '/admin', as: 'rails_admin'`
-
-&amp;#x200B;
-
-`authenticate :user, lambda { |u| u.admin? } do`
-
-  `require 'sidekiq/web'`
-
-  `require 'sidekiq/cron/web'`
-
-  `mount Sidekiq::Web =&gt; '/sidekiq', as: "sidekiq"`
-
-  `end`
-
-&amp;#x200B;
-
-  `resources :trackers`
-
-  `get 'home/index'`
-
-  `resources :products do`
-
-`resources :trackers`
-
-  `end`
-
-  `devise_for :users`
-
-  `root to:'pages#index'`
-
-  `get 'support', to: "pages#support"`
-
-  `get 'confirmation', to: "pages#confirmation"`
-
-  `get 'upgrade', to: 'pages#upgrade'`
-
-  `get 'cancel', to: 'pages#cancel'`
-
-  `get 'payments', to: 'pages#payments'`
-
-  `post 'upgrade', to: 'pages#upgrade_product_limit'`
-
-  `post 'cancel', to: 'pages#cancel_plan'`
-
-&amp;#x200B;
-
-  `#post 'payments', to: 'pages#list_subscriptions'`
-
-`end`
-
-What can be the issue?
-## [6][Encrypted Chat App](https://www.reddit.com/r/rails/comments/flgbg7/encrypted_chat_app/)
-- url: https://www.reddit.com/r/rails/comments/flgbg7/encrypted_chat_app/
----
-I haven't worked with encryption/security much so I thought of a small demo app to create. I was thinking something like slack but the centralized server/webmasters have zero access to the messages. 
-
-I wanted to ask what would be the best way to approach this. Do the messages need to be digested client side to prevent the server from receiving the clear text message? How would I go about secret keys for each user? 
-
-I'd like some method that the server has literally zero ways to decode messages. Any tips, tricks or tutorials are totally welcomed! Thanks 😁
-## [7][Social Media Platform](https://www.reddit.com/r/rails/comments/fl9vzd/social_media_platform/)
-- url: https://www.reddit.com/r/rails/comments/fl9vzd/social_media_platform/
----
-Hey guys,   
-I'm working on a project using the Rails WAF. I'm relatively new to this and am getting lost here and there so please be patient.  
-
-
-I'm looking to create a social media platform for a college project where users can sign up and organise events with one another.  
-
-
-So far I have followed a few tutorials online and have been able to successfully implement a functioning devise based platform, which allows users to sign-up/sign-in and create 'events' which can be seen by other users and have basic CRUD functionality for the user who created the event.  
-
-
-I am now looking to turn my attention to user profiles. From what I have gathered from my research it is okay to used the same database table to populate a user profile that I have used to create user login.  
-
-
-Can you please advise the best way to create user profiles which allows the logged in user to flesh out their account with personal details which can be viewed by other users?
-## [8][Rails Logging Help](https://www.reddit.com/r/rails/comments/fl31hn/rails_logging_help/)
-- url: https://www.reddit.com/r/rails/comments/fl31hn/rails_logging_help/
----
-I've set this in my development.rb and production.rb but the timestamp only shows up in dev. How do I set my logger to display correctly in PROD?
-
-`logger = ActiveSupport::Logger.new(STDOUT)`  
-  `logger.formatter = proc { |severity, datetime, progname, msg| "[#{severity}, #{datetime}] -  #{msg}\n" }`  
-  `config.logger = logger`
-
-Dev:
-
-`[INFO, 2020-03-18 22:11:03 -0500] -  Redirected to` [`http://localhost:3000/`](http://localhost:3000/)
-
-&amp;#x200B;
-
-Prod:
-
-`[8c173dc6-7acf-4b57-95e0-a8d6c610d3ee] Completed 302 Found in 128ms (ActiveRecord: 10.0ms | Allocations: 12865)`
-## [9][Improving performance with Presenter and Eager Load of a big Rails app](https://www.reddit.com/r/rails/comments/fkvtdz/improving_performance_with_presenter_and_eager/)
-- url: https://www.reddit.com/r/rails/comments/fkvtdz/improving_performance_with_presenter_and_eager/
----
-Hey guys, I have written a post about how I helped to improve the performance of a Ruby on Rails application where I work.
-
-The app is used by people all over the world and has around of 4 million request every month.
-
-https://medium.com/@wlss.lucas/improving-performance-of-a-rails-app-12beb830319a
-## [10][Best pattern for ActiveRecord Create objects](https://www.reddit.com/r/rails/comments/fl2103/best_pattern_for_activerecord_create_objects/)
-- url: https://www.reddit.com/r/rails/comments/fl2103/best_pattern_for_activerecord_create_objects/
----
-I have a business model, for example *CheckForWidgetOrder.*
-
-Code is similar to:
-
-    class CheckForWidgetOrder
-      def check(user, widget_name, widget_area)
-        if (user.on_west_coast)
-          WidgetOrder.create(name: widget_name, area: widget_area)
-        end
-      end 
-    end
-
-Is this the right place for the WidgetOrder.create?  It seems like I am littering the business logic with ActiveRecord syntax...
-
-I could inject the ActiveRecord model and still do the create, or is the preferred way to do the create action is to use a WidgetCreator class with the ActiveRecord call in there?  Or is that overkill?
-## [11][[HELP] Restrict browsers mode on websites](https://www.reddit.com/r/rails/comments/fkw3kv/help_restrict_browsers_mode_on_websites/)
-- url: https://www.reddit.com/r/rails/comments/fkw3kv/help_restrict_browsers_mode_on_websites/
----
-Hi guys, this question is not related to Rails, but with websites in general. I work with a website that the browsers change to a restrict mode after you log in on the restrict area . What I mean with "restrict mode" is a browser with static address bar (users can't change), no button options (bookmark, reload, back/forward page, etc.). You basically have a static address bar and the rendered html page. 
-
-My question is: why they use this restrict mode? I think is because of the back/forward page and the static address bar and how the website caches, or how they load Javascript on page, or because they don't want users reloading pages as the website load a lot of data on certain pages, or because they don't want users open more than one tab per user logged in, I don't know, but I was kind of curious.
-
-Sorry if this question don't fit this sub, but I didn't know where to ask.

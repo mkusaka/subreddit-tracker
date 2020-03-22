@@ -40,53 +40,94 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google I/O 2020 has been completely cancelled. Just got an email stating that it won't be held in any capacity this year.](https://www.reddit.com/r/androiddev/comments/fm12de/google_io_2020_has_been_completely_cancelled_just/)
-- url: https://i.redd.it/61jit5nppvn41.png
+## [3][Corona-Tracker: App built in Kotlin using Architecture Components, Dagger2, Retrofit and Coroutines](https://www.reddit.com/r/androiddev/comments/fmyat4/coronatracker_app_built_in_kotlin_using/)
+- url: https://github.com/sidhuparas/Coronavirus-Tracker
 ---
 
-## [4][A sample app built with Kotlin, Coroutines, Flow, Dagger 2, Architecture Components, MVVM, Room, Retrofit, Moshi, Material Components and other Jetpack libraries.](https://www.reddit.com/r/androiddev/comments/fm91d0/a_sample_app_built_with_kotlin_coroutines_flow/)
-- url: https://github.com/PatilShreyas/Foodium
+## [4][Feeling Hopeless Like I'll Never get Android development](https://www.reddit.com/r/androiddev/comments/fmttd5/feeling_hopeless_like_ill_never_get_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fmttd5/feeling_hopeless_like_ill_never_get_android/
+---
+Going through the android course on Udacity, currently on the Android architecture Components  and they're doing things I just really dont understand. As a complete noob between that course and looking at everyone posts here about new tech stacks that seem so complex I feel lost. Is this normal as a beginner? Does it get easier?
+
+
+Edit: for reference I'm a HS Senior, with a background in Python, Front end web dev, and learning Java (almost finished the course at school)
+
+Edit2: Thanks for the clarity fellas (and ladies), I'll take your reccomendations and just start making simple apps to get started. You're right it's just inherently hard to learn
+## [5][Introducing the Activity Result APIs](https://www.reddit.com/r/androiddev/comments/fmyhvv/introducing_the_activity_result_apis/)
+- url: https://adambennett.dev/2020/03/introducing-the-activity-result-apis/
 ---
 
-## [5][Upcoming dagger.hilt package](https://www.reddit.com/r/androiddev/comments/fmenb2/upcoming_daggerhilt_package/)
-- url: https://github.com/google/dagger/commit/90a1d2f612d4f80844e83c737e8f5c2362020c5a
+## [6][Since the start of this week I'm seeing 50,000 uninstalling one of my apps DAILY with just 10,000 installs a day. I don't know why this is happening, anyone else seeing weird stats?](https://www.reddit.com/r/androiddev/comments/fmp6bz/since_the_start_of_this_week_im_seeing_50000/)
+- url: https://www.reddit.com/r/androiddev/comments/fmp6bz/since_the_start_of_this_week_im_seeing_50000/
 ---
 
-## [6][Hello guys ! I made a simple and lightweight To-Do list app (less than 80kB in size).](https://www.reddit.com/r/androiddev/comments/fmd8us/hello_guys_i_made_a_simple_and_lightweight_todo/)
-- url: https://www.reddit.com/r/androiddev/comments/fmd8us/hello_guys_i_made_a_simple_and_lightweight_todo/
+## [7][I made a playground app for my AnimatedBottomBar library](https://www.reddit.com/r/androiddev/comments/fmqe2k/i_made_a_playground_app_for_my_animatedbottombar/)
+- url: https://www.reddit.com/r/androiddev/comments/fmqe2k/i_made_a_playground_app_for_my_animatedbottombar/
 ---
-To-Do Micro a basic to-do list app and it is super lightweight. You can create lists and add tasks to them, you can also share your list with other people. My main goal will be to keep this app  small in size. I'll be adding more features in due time like themes, reminders etc.
+Hey guys,
 
-If you are interested, here is the link :
+I made an app for my library to test out all functionality and also generate the XML layout! I could possibly also turn this into a library :)! 
 
-https://play.google.com/store/apps/details?id=com.bitpix.todo
-## [7][Getting out of a coding rut](https://www.reddit.com/r/androiddev/comments/fmbgy4/getting_out_of_a_coding_rut/)
-- url: https://www.reddit.com/r/androiddev/comments/fmbgy4/getting_out_of_a_coding_rut/
+Image: https://i.imgur.com/LNPc4sq.png
+App: https://github.com/Droppers/AnimatedBottomBar/raw/master/media/demo.apk
+Library: https://github.com/Droppers/AnimatedBottomBar
+## [8][making app to stream content throw DLNA\UPNP like BubbleUpnp\XCast](https://www.reddit.com/r/androiddev/comments/fmyft5/making_app_to_stream_content_throw_dlnaupnp_like/)
+- url: https://www.reddit.com/r/androiddev/comments/fmyft5/making_app_to_stream_content_throw_dlnaupnp_like/
 ---
-I'm in a rut right now, don't have the passion and drive to code and create... even small apps for self-learning
+hello there!
 
-I know ill get it back sometimes, but it's bothering me...
+i trying to make an app that can stream videos from phone to samsung smart tv,
 
-how do you get out of a rut?
-## [8][Need help testing coroutines](https://www.reddit.com/r/androiddev/comments/fmewyz/need_help_testing_coroutines/)
-- url: https://www.reddit.com/r/androiddev/comments/fmewyz/need_help_testing_coroutines/
----
-Hello all,
+i tried using [Cling library](https://github.com/4thline/cling) and was successful only to start the stream but cant control the tv, no pause,seek, volume..
 
-Would appreciate any ideas why this test fails: https://github.com/jshvarts/FlowChannels101/blob/master/app/src/test/java/com/example/coroutines/views/UserDetailViewModelTest.kt#L100 with “Wanted but not invoked observer.onChanged...no interactions with this mock”. I think it has to do with the toList() which is itself a suspend function. Debugging shows that correct data flows thru the channel but assertion fails.
-## [9][How We Reduced Our App Size By 50% With Split APKs.](https://www.reddit.com/r/androiddev/comments/fmenx8/how_we_reduced_our_app_size_by_50_with_split_apks/)
-- url: https://www.reddit.com/r/androiddev/comments/fmenx8/how_we_reduced_our_app_size_by_50_with_split_apks/
----
-“How We Reduced Our App Size By 50% With Split APKs” by Steven Popovich https://link.medium.com/FsmmzZpi24
-## [10][How We Reduced Our App Size By 50% With Split APKs.](https://www.reddit.com/r/androiddev/comments/fmentf/how_we_reduced_our_app_size_by_50_with_split_apks/)
-- url: https://www.reddit.com/r/androiddev/comments/fmentf/how_we_reduced_our_app_size_by_50_with_split_apks/
----
-“How We Reduced Our App Size By 50% With Split APKs” by Steven Popovich https://link.medium.com/FsmmzZpi24
-## [11][Random Musings on the R Developer Preview 2](https://www.reddit.com/r/androiddev/comments/fm7sod/random_musings_on_the_r_developer_preview_2/)
-- url: https://commonsware.com/blog/2020/03/19/random-musings-r-dp2.html
----
+i reserched everything there is on google about libraries and portocols (without going to deep with dlna signed integers..)
 
-## [12][What is the best technology for high accurate indoor positioning in specific building](https://www.reddit.com/r/androiddev/comments/fmdoj2/what_is_the_best_technology_for_high_accurate/)
-- url: https://www.reddit.com/r/androiddev/comments/fmdoj2/what_is_the_best_technology_for_high_accurate/
+from what i understand samsung use some internal custom version of dlna,
+
+so i found "[Smartview SDK](https://developer.samsung.com/smarttv/develop/extension-libraries/smart-view-sdk/android-sender-app.html)" on samsung developers website,
+
+guess what last update was in 2017/8, the documentaion is \~ok
+
+but i cant make it work (got some 300 error from tv).
+
+i did succeed to make "[hello world](https://smartviewsdk.github.io/API-GUIDE/android-api/docs/)" app that worked
+
+so i checked other apps on the palystore XCast and BubbleUpnp
+
+and they work flawlessly, stream,pause,seek everything...
+
+my next step is try reverse engineer with fiddler.
+
+can someone point to somethig useful in this topic? i really hate reverse engineering
+
+thank you!
+## [9][COVID-19 and App Review Times](https://www.reddit.com/r/androiddev/comments/fmyemc/covid19_and_app_review_times/)
+- url: https://www.reddit.com/r/androiddev/comments/fmyemc/covid19_and_app_review_times/
 ---
-What is the best technology for high accurate indoor positioning in specific building (the environment will not change)??
+I updated two apps on Wednesday. They're still pending review on Google Play. In that same time, I've updated iOS versions of those same apps on the AppStore, and each has been ready in less than 24hrs.
+
+Last night at 1am, I updated the third iOS app. That took less than 8 hours to get to the AppStore.
+
+These are unprecedented times.
+## [10][Notes app repository comprises three independent modules, segregated into Beginner, Intermediate and Advanced category, Build using Room, MVVM, LiveData, Data-Binding, Dagger-2, Coroutines.](https://www.reddit.com/r/androiddev/comments/fmy7hm/notes_app_repository_comprises_three_independent/)
+- url: https://www.reddit.com/r/androiddev/comments/fmy7hm/notes_app_repository_comprises_three_independent/
+---
+[room-demo-repo](https://github.com/Pavneet-Sing/room-demo-repo) which is a successor of [RoomDemo](https://github.com/Pavneet-Sing/RoomDemo).
+
+To get started from scratch, follow [Making a Notes App Using Room Database](https://www.pluralsight.com/guides/making-a-notes-app-using-room-database)
+## [11][How to make a chat app connect to a server?](https://www.reddit.com/r/androiddev/comments/fmvpfq/how_to_make_a_chat_app_connect_to_a_server/)
+- url: https://www.reddit.com/r/androiddev/comments/fmvpfq/how_to_make_a_chat_app_connect_to_a_server/
+---
+I have a chat app designed, all the UI and the front-end is developed.
+But how do I connect it to an actual server? 
+Not using firebase, I want to use ejabberd. The place where I'm an intern are using AWS.
+What is the Java code to connect with the server?
+How do I go about ejabberd?
+## [12][Transferring app to new Play account, what happens with purchase validation API calls?](https://www.reddit.com/r/androiddev/comments/fmtab1/transferring_app_to_new_play_account_what_happens/)
+- url: https://www.reddit.com/r/androiddev/comments/fmtab1/transferring_app_to_new_play_account_what_happens/
+---
+We are transferring an app to a new Google Play Developer Account because of Google's ridiculous policy of not being able to change the email address associated with the Play account owner.
+
+If you recall, in app purchases get validated server-side, and the server has a private key that is tied to a service account created in a Google API Console project (which is subsequently linked to the Google Play Developer account).
+
+When the app is transferred to the new Google Play Developer account, **what happens with the existing Google API Console project?** Will in-app purchases just start failing until the new account creates and deploys its own API Console project? Does the old project get linked to the new account?

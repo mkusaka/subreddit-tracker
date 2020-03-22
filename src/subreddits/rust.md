@@ -58,74 +58,76 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Comparing Alternatives to top Written in Rust](https://www.reddit.com/r/rust/comments/fm8yam/comparing_alternatives_to_top_written_in_rust/)
-- url: https://www.wezm.net/v2/posts/2020/rust-top-alternatives/
+## [3][C++20 &amp; Rust on Static vs Dynamic Generics](https://www.reddit.com/r/rust/comments/fmo4zb/c20_rust_on_static_vs_dynamic_generics/)
+- url: https://youtu.be/olM7o_oYML0
 ---
 
-## [4][Error 418](https://www.reddit.com/r/rust/comments/fmd6v3/error_418/)
-- url: https://docs.rs/cargo/0.43.1/src/cargo/core/manifest.rs.html#511
+## [4][Memory database](https://www.reddit.com/r/rust/comments/fmvpvs/memory_database/)
+- url: https://github.com/bloq/memds
 ---
 
-## [5][Secure Rust Guidelines](https://www.reddit.com/r/rust/comments/fmdsc3/secure_rust_guidelines/)
+## [5][Announcing Tokei 11: Now over 40–60% faster](https://www.reddit.com/r/rust/comments/fmfpfu/announcing_tokei_11_now_over_4060_faster/)
+- url: https://github.com/XAMPPRocky/tokei/releases/tag/v11.0.0
+---
+
+## [6][Can wrapper types (Box, Rc, RefCell) be implemented in safe Rust?](https://www.reddit.com/r/rust/comments/fmzmsx/can_wrapper_types_box_rc_refcell_be_implemented/)
+- url: https://www.reddit.com/r/rust/comments/fmzmsx/can_wrapper_types_box_rc_refcell_be_implemented/
+---
+My intuition tells me the RefCell is impossible, because of multiple mutable borrowings, but Rc and Box might be possible.
+
+I would like to see code examples, if it's possible
+## [7][TerraMach a GUI for devices and desktop](https://www.reddit.com/r/rust/comments/fmnwza/terramach_a_gui_for_devices_and_desktop/)
+- url: https://github.com/lykhonis/terramach
+---
+
+## [8][Yet another gui crate](https://www.reddit.com/r/rust/comments/fmlzel/yet_another_gui_crate/)
+- url: https://www.reddit.com/r/rust/comments/fmlzel/yet_another_gui_crate/
+---
+I recently published a new desktop gui crate. It’s basically rust bindings to fltk. Here is the link to the repo (it also contains some examples and screenshots):
+
+https://github.com/MoAlyousef/fltk-rs
+
+It’s still in alpha  with a lot of unsafe code due to interfacing with C and C++. 
+
+I would appreciate any code reviews and any testers willing to try it out. 
+
+An advantage of fltk is that it builds into a small and self-contained binary with no external dependencies needed for deployment. 
+
+Downsides include bad right-to-left support, no text alignment inside input and output widgets, and is kinda ugly (think windows 98!), but is customizable. 
+
+However it gets the job done and is used by several applications and Linux distros. https://en.m.wikipedia.org/wiki/FLTK#Use
+
+It also has a permissive modified LGPL license to allow static linking, although the fltk-rs crate is licensed under the MIT license.
+## [9][Telegram bot for Reddit weekly popular posts, powered by Rust](https://www.reddit.com/r/rust/comments/fmz309/telegram_bot_for_reddit_weekly_popular_posts/)
+- url: https://www.reddit.com/r/rust/comments/fmz309/telegram_bot_for_reddit_weekly_popular_posts/
+---
+Hi,
+
+I wanted to share a Rust project that I have been working on in my spare time. It's a Telegram Bot that allows you to subscribe to Reddit weekly popular posts of your choice. You can also choose the day of the week and time when you want to receive the posts.
+
+The bot is available here [https://t.me/RedditWeeklyBot](https://t.me/RedditWeeklyBot)  
+And the code is available here [https://github.com/aldis-ameriks/reddit-bot](https://github.com/aldis-ameriks/reddit-bot)
+
+I'm rather new to Rust, so feedback is more than welcome.
+
+P.S. I hope you're all doing well. I'm currently in self-isolation with mild symptoms. Writing some Rust and watching Smallville.
+
+Stay safe!
+## [10][Secure Rust Guidelines](https://www.reddit.com/r/rust/comments/fmdsc3/secure_rust_guidelines/)
 - url: https://anssi-fr.github.io/rust-guide/
 ---
 
-## [6][Memory-Safety Challenge Considered Solved? An Empirical Study with All Rust CVEs](https://www.reddit.com/r/rust/comments/fm6vc2/memorysafety_challenge_considered_solved_an/)
-- url: https://arxiv.org/abs/2003.03296
+## [11][`never` crate - stable alternative to !](https://www.reddit.com/r/rust/comments/fmllgx/never_crate_stable_alternative_to/)
+- url: https://www.reddit.com/r/rust/comments/fmllgx/never_crate_stable_alternative_to/
 ---
+I'd like to announce the new [never](https://crates.io/crates/never) crate. It provides the `Never` type, which is a stable version of the currently-unstable [`!`](https://doc.rust-lang.org/std/primitive.never.html) type in Rust. It provides much (though not all) of the same functionality.
 
-## [7][The original concept for the Rust logo](https://www.reddit.com/r/rust/comments/flzpbo/the_original_concept_for_the_rust_logo/)
-- url: https://twitter.com/mart3ll/status/1240705442839277569
+**Why not use the existing [void](https://crates.io/crates/void) crate?** `void` is great, but unfortunately isn't actively maintained anymore. The last commit was four years ago, and issues have gone unresponded to since August, 2016. It doesn't implement `Hash` or `Eq`, and due to lack of maintenance, never will. We use `never` in production, and plan to actively maintain it until the built-in `!` type is stabilized.
+
+**Why not use the existing standard library [`Infallible`](https://doc.rust-lang.org/nightly/std/convert/enum.Infallible.html) type?** It doesn't implement `Hash`.
+## [12][Implementing Hash, Eq of Box&lt;dyn Trait&gt; using hash of Struct&lt;S&gt;: Trait](https://www.reddit.com/r/rust/comments/fmyku6/implementing_hash_eq_of_boxdyn_trait_using_hash/)
+- url: https://www.reddit.com/r/rust/comments/fmyku6/implementing_hash_eq_of_boxdyn_trait_using_hash/
 ---
+TL;DR Can I implement `Hash` and `Eq` of `Box&lt;dyn Trait&gt;` by hashing `Struct&lt;S&gt;: Trait`? Is it possible that hashes of `Struct&lt;U&gt;` and `Struct&lt;V&gt;` would collide?
 
-## [8][Announcing `absolution`: Freedom from `syn`](https://www.reddit.com/r/rust/comments/fm4jdu/announcing_absolution_freedom_from_syn/)
-- url: https://github.com/Manishearth/absolution
----
-
-## [9][Building a Simple GraphQL API with Actix and Juniper - #1](https://www.reddit.com/r/rust/comments/flvhk4/building_a_simple_graphql_api_with_actix_and/)
-- url: https://youtu.be/9q4GcWbAIEM
----
-
-## [10][Building a Discord Bot in Rust](https://www.reddit.com/r/rust/comments/fm4luc/building_a_discord_bot_in_rust/)
-- url: https://youtu.be/sOA6rSRCqPw
----
-
-## [11][The Lean Crate Initiative begins with The Criner Waste Report (ugly alpha)](https://www.reddit.com/r/rust/comments/fm8nhv/the_lean_crate_initiative_begins_with_the_criner/)
-- url: https://github.com/crates-io/criner#the-lean-crate-initiative
----
-
-## [12][Repl vs Cli](https://www.reddit.com/r/rust/comments/fm3o4z/repl_vs_cli/)
-- url: https://www.reddit.com/r/rust/comments/fm3o4z/repl_vs_cli/
----
-I am writing a tool for personal use to organize documents, mark them for revision and implement a spaced repetition algorithm and so on.
-
-I already figured out the features and know pretty well what I want it to look like in the end, so right now I am fiddling around with the implementation.
-
-First of all I am, well not confused, but uncertain about the implementation of a CLI and REPL, since a REPL should implement the exact same CLI logic, namely passing the command and arguments, processing it and output something.
-
-Example CLI (let's say my binary is called my-project)
-
-    $ my-project init
-    $ my-project create document ...
-    $ my-project memorize document ...
-
-... and so on
-
-A REPL would just be an instance where you would execute "my-document" once and get into a shell, where you can type the exact commands.
-
-    $ my-project
-    &gt; init
-    &gt; create document ...
-    &gt; memorize document ...
-
-Pretty much like python.
-
-The CLI implementation in rust would be pretty straight forward with clap or structopt.
-
-The REPL can be implemented with the help of rustyline.
-
-But I am wondering, since the commands in both cases are literally going to be the same logic, if I can just take the input from rustyline, split along the " " spaces and pass that vector/array to a clap instance, to process the commands? Since that seems to be what rust does with the env arguments, that it gives you.
-
-That way I can keep the logic seperate from the interface, since I might want to write a desktop and web GUI for this project, so I could load the whole thing off to a client/server architecture, kind of like Docker does it and just create another interface via a REST API.
-
-The REST API and client/server architecture are not the main focus right now though, more like something that would be interesting to do later on. But I want to implement the first interfaces, in the terminal, in a manner, that is scale able and is not going to be too much work to port other platforms in the future.
+Hi! I want to have a `Vec` or a `HashSet` of `Box&lt;dyn Trait&gt;` and I sometimes need to remove an item, so I need to implement `Hash` and `Eq`. The structs implementing `Trait` are [`actix::Addr`](https://docs.rs/actix/0.10.0-alpha.2/actix/struct.Addr.html) of various actors (that are not the same type). The only relevant difference of structs implementing `Trait` is whether they are an address of the same actor of not. Is it possible that their hashes would collide?

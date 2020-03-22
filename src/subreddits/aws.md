@@ -1,139 +1,144 @@
 # aws
-## [1][AWS launches initiative to accelerate COVID-19 diagnostics, research, and testing](https://www.reddit.com/r/aws/comments/fluzsm/aws_launches_initiative_to_accelerate_covid19/)
-- url: https://blog.aboutamazon.com/innovation/aws-launches-initiative-to-accelerate-covid-19-diagnostics-research-and-testing
+## [1][Unzipping s3 file in chunks using lambda](https://www.reddit.com/r/aws/comments/fmrwfb/unzipping_s3_file_in_chunks_using_lambda/)
+- url: https://www.reddit.com/r/aws/comments/fmrwfb/unzipping_s3_file_in_chunks_using_lambda/
 ---
+I used lambda to unzip S3 file back to s3.  Lambda can't unzip more than 3gb file.  I created a script that unzips by streaming chunks of file. 
 
-## [2][IOST Becomes First Blockchain Project Advertised by Amazon AWS China](https://www.reddit.com/r/aws/comments/fmd9br/iost_becomes_first_blockchain_project_advertised/)
-- url: https://www.reddit.com/r/aws/comments/fmd9br/iost_becomes_first_blockchain_project_advertised/
+[https://medium.com/@multiaki/unzipping-s3-files-back-to-s3-without-uncompressing-entire-file-streaming-82f662b5065a](https://medium.com/@multiaki/unzipping-s3-files-back-to-s3-without-uncompressing-entire-file-streaming-82f662b5065a)
+## [2][Existing VPS image to EC2](https://www.reddit.com/r/aws/comments/fmxbzm/existing_vps_image_to_ec2/)
+- url: https://www.reddit.com/r/aws/comments/fmxbzm/existing_vps_image_to_ec2/
 ---
- 
+For lift &amp; shifts (Rehosting), I think CloudEndure is used for Windows workloads, but what do people use for Linux based workloads?
 
-**IOST’s Blockchain as a Service (BaaS) platform** [**announced**](https://medium.com/iost/iost-became-the-first-blockchain-project-interviewed-advertised-by-amazon-aws-china-aac0dab38b57) **on March 20, 2020, that it has strengthened its relationship with AWS China, the global leading cloud computing platform.** 
-
-## Amazon Sponsors IOST
-
-[IOST](https://btcmanager.com/?s=iost), a China-based enterprise-level blockchain system, had already [announced](https://medium.com/iost/iost-now-live-on-aws-launch-your-blockchain-solution-in-5-minutes-6a93632ccfe5) its launch on the Amazon Web Service (AWS) marketplace last year. The news had been received very positively by the community and represented an important step in the development of IOST. Thanks to this collaboration, developers can easily deploy a blockchain infrastructure with dev tools to develop dApps, projects and test out IOST’s high-speed infrastructure with just one click.
-
-[https://btcmanager.com/iost-first-blockchain-project-amazon-aws-china/](https://btcmanager.com/iost-first-blockchain-project-amazon-aws-china/)
-## [3][Using Lambda and CloudWatch to Start/Stop Lightsail Instance automatically](https://www.reddit.com/r/aws/comments/fmc9qr/using_lambda_and_cloudwatch_to_startstop/)
-- url: https://www.reddit.com/r/aws/comments/fmc9qr/using_lambda_and_cloudwatch_to_startstop/
+I gather the best option is to boot the OS AMI on EC2 and rsync across the system as best you can and create your own AMI? Or am I missing a tool? VM import/export is only for VMware AFACIT.
+## [3][Cloudfront really can't handle sub-directory indexes without a lambda trigger?](https://www.reddit.com/r/aws/comments/fmzcjg/cloudfront_really_cant_handle_subdirectory/)
+- url: https://www.reddit.com/r/aws/comments/fmzcjg/cloudfront_really_cant_handle_subdirectory/
 ---
-So I'm trying to write a python script to automatically turn on/off my Lightsail instance using Lambda and CloudWatch. But after figuring out one after another error, I'm stuck with `"errorMessage": "Could not connect to the endpoint URL: \"`[`https://lightsail.us-west-1.amazonaws.com/\`](https://lightsail.us-west-1.amazonaws.com/\)`"", "errorType": "EndpointConnectionError"`.
+I was in disbelief to discover that using Cloudfront infront of a static S3 website you're unable to request sub-directory index files unless [you have a lambda trigger function that rewrites the request](https://aws.amazon.com/blogs/compute/implementing-default-directory-indexes-in-amazon-s3-backed-amazon-cloudfront-origins-using-lambdaedge/) for you.
 
-BTW, total Python newbie, but here is my really simple but definitely not working code:
+Is this still the case or is there a better way to configure this in Cloudfront today?
+## [4][How to configure cross-account Cognito authorizer for Appsync?](https://www.reddit.com/r/aws/comments/fmvuxf/how_to_configure_crossaccount_cognito_authorizer/)
+- url: https://www.reddit.com/r/aws/comments/fmvuxf/how_to_configure_crossaccount_cognito_authorizer/
+---
+Is it possible to set up Appsync in a way that uses the Cognito user pool of another AWS account? API Gateway can use user pools from other accounts as an authorizer but I can't find docs for Appsync. I'd like to allow existing users to call appsync endpoints in a new account.
+## [5][Display data in d3js visualizations(KPIs) using API Gateway, Lambda and Aurora](https://www.reddit.com/r/aws/comments/fmucc4/display_data_in_d3js_visualizationskpis_using_api/)
+- url: https://www.reddit.com/r/aws/comments/fmucc4/display_data_in_d3js_visualizationskpis_using_api/
+---
+Hello,
 
-`import boto3`
+We currently have data in S3, that gets transformed using EMR and copied to Redshift - which serves our internal users for building their visualizations using Tableau. We are looking for options to leverage the transformed data in S3, then build a few KPIs using D3js or something similar. Idea is to display the visualizations(usage stats) on the home page for all users when the user logs into the website. 
 
-`session = boto3.Session(`
+I am planning to use D3js, API Gateway, Lambda and Aurora Postgres to achieve this. The reasons I am leaning towards Aurora Postgres is 
 
-`aws_access_key_id=ACCESS_KEY,`
+* Transformed data that we build visualizations using D3js is less than 3GB.
+* Redshift is expensive.
+* our website can have 300-500 concurrent users at a time.
 
-`aws_secret_access_key=SECRET_KEY,`
+Here are the questions I've:
 
-`region_name='ap-southeast-2'`
+1. When I've so many concurrent users logged in, is triggering 300-500 Lambdas scalable?
+2. Is there a better DB Backend solution than Aurora Postgres for less data and more concurrency?
+3. Finally, is my approach correct?
 
-`)`
+Thanks in advance.
+## [6][Monitor vpn traffic](https://www.reddit.com/r/aws/comments/fmuq3b/monitor_vpn_traffic/)
+- url: https://www.reddit.com/r/aws/comments/fmuq3b/monitor_vpn_traffic/
+---
+Hi guys, i we have a bastion host in AWS infra, that we use it to tshoot vpn connectivity issues by simply pinging vpn peers.  
+My purpose is to write the results of the ping in an html file and i was thinking to install apache web server and place there the html file so my colleagues that don't have ssh access to the bastion host, can see if pings fail through this html page.  
+My concern is: isn't it dangerous if i expose our bastion to the public web by installing apache on it? can someone experienced on the matter offer me his advice of how to design a solution without security "holes"? It doesn't have to be necessarily via bastion host &amp; html, something with Cloudwatch perhaps ?  
+Thank you!
+## [7][AWS Active Directory Connector and Azure Active Directory Domain Services](https://www.reddit.com/r/aws/comments/fmogdc/aws_active_directory_connector_and_azure_active/)
+- url: https://www.reddit.com/r/aws/comments/fmogdc/aws_active_directory_connector_and_azure_active/
+---
+I am trying to replicate the steps in this [post](https://aws.amazon.com/blogs/desktop-and-application-streaming/add-your-workspaces-to-azure-ad-using-azure-active-directory-domain-services/). However, When I get to the step where I create the ad connector, it fails with the following error:
 
-`client = boto3.client('lightsail')`
+\&gt; DNS unavailable (TCP port 53) for IP: [10.0.0.4](https://10.0.0.4), DNS unavailable (TCP port 53) for IP: [10.0.0.5](https://10.0.0.5)
 
-`response = client.start_instance(`   
-
-`instanceName='ap-southeast-2b'`
-
-`)`
-
-I had to hardcoded my access key and secret key in since it throws error when I don't: `"errorMessage": "name 'ACCESS_KEY' is not defined", "errorType": "NameError"` (I have my keys in the environment variables and test event, but I'm not sure why when I run test, it didn't use those).
+I am very proficient with AWS. However, I'm struggling with Azure and feel I may have misconfigured something. I have carried out the following steps thus far:
 
 &amp;#x200B;
 
-One more thing, why the `Encryption in transit` option in the environment variables doesn't stick? I toggled the `Enable helpers for encryption in transit`, selected my key (SYMMETRIC\_DEFAULT), pressed encrypt, and then save, but all of this for nothing, why?
-## [4][Slashing CloudFront change propagation times in 2020 – recent changes and looking forward | Amazon Web Services](https://www.reddit.com/r/aws/comments/flzeix/slashing_cloudfront_change_propagation_times_in/)
-- url: https://aws.amazon.com/blogs/networking-and-content-delivery/slashing-cloudfront-change-propagation-times-in-2020-recent-changes-and-looking-forward/
+In Azure, I used an existing resource group and created "Azure AD Domain Services" instance using default configuration
+
+**Basics**
+
+ \- Name: sy\*\*\*\*\*\*[k.com](https://k.com) 
+
+ \- Subscription: Pay-As-You-Go 
+
+ \- Resource Group:
+
+ \- Default Region: UK South
+
+ \- SKU: Standard  Forest type: User
+
+**Network**
+
+ \- Virtual network: (new) aadds-vnet
+
+ \- Subnet: (new) aadds-subnet
+
+ \- Subnet Address: [10.0.0.0/24](https://10.0.0.0/24)
+
+ \- Network Security Group: (new) aadds-nsg
+
+&amp;#x200B;
+
+I created a site to site vpn connection with azure virtual network. However, I am not sure about this step in the post: "The tunnels must be configured to allow traffic from your AADDS endpoints and the Subnets" How exactly do I do this?
+
+&amp;#x200B;
+
+In AWS VPC cidr is [10.1.0.0/16](https://10.1.0.0/16) and both tunnels between AWS VPC and Azure Virtual Network are up and connected. I tried to contact the post author: "Justin Stokes" directly but can't find any emails for him. I cannot find a single online guide on how to set this up step by step along with the site to site ipsec setup. It would be very very helpful if someone can provide a video tutorial for this step by step from A-Z instead of leaving a chunk of the steps out of the guide.
+
+&amp;#x200B;
+
+The troubleshooting guide [here](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_troubleshooting.html) suggest that the firewall i.e. network security group is not allowing port 53TCP/UDP inbound for AD Connector. But I updated the networks security group as a test with a rule to allow any source, any destination and any port and still I'm getting the same error.
+## [8][One Lambda to Rule Them All - A Python Adventure in AWS (Feat. API Gateway)](https://www.reddit.com/r/aws/comments/fmffvo/one_lambda_to_rule_them_all_a_python_adventure_in/)
+- url: https://medium.com/@cottenio/one-lambda-to-rule-them-all-44401893123f
 ---
 
-## [5][school me on aws privatelink please](https://www.reddit.com/r/aws/comments/fmb9lu/school_me_on_aws_privatelink_please/)
-- url: https://www.reddit.com/r/aws/comments/fmb9lu/school_me_on_aws_privatelink_please/
+## [9][Question: How to prevent direct linking from website.](https://www.reddit.com/r/aws/comments/fmevna/question_how_to_prevent_direct_linking_from/)
+- url: https://www.reddit.com/r/aws/comments/fmevna/question_how_to_prevent_direct_linking_from/
 ---
-i'm pretty unfamiliar with this service, and am most interested in how it works with a snowflake database, ie. [https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html](https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html)
+Hello,
+I have an S3 bucket setup to serve a static site along with CloudFront. I have the below bucket policy and CORS configuration, and what I am wondering now is how do I prevent direct access to assets except for when they are loaded through the site? That is, if I go to mySite.tld I want to see mySite.tld/images/someImage.jpg displayed on it, but if I go directly to mySite.tld/images/someImage.jpg in my browser I'd like it to give back forbidden or such. Is that feasible?
 
-i'd like to confirm my understanding of the basics of how it works and how a 3rd party trusted relationship could be set up.
+Motivation: I bought a commercial font and the license asks that I put such technical barriers in place.
 
-company ACME vpc and company ACME account on snowflake, both on us-east-1, \_without\_ privatelink, i'm assuming the data traverses only the internal amazon network but it takes place in network pipes shared with internet traffic.  ACME is reaching out to their public facing https snowflake account URL [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com).
+Thank you in advance for any advice / help you can give.
 
-\*with\* privatelink, a trust relationship is set up between ACME's aws vpc and snowflake, now with a private ACME DNS entry; [acme.snowflakecomputing.com](https://acme.snowflakecomputing.com).  this only resolves from ACME's vpc and for users on their vpn.  when snowflake is accessed via it, the network traffic is routed on internal aws pipes, although in some methodology where the traffic is not shared with other accounts or public data.
-
-at this point [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com) is still accessible to the world.  but it could be restricted to allow only ACME employees to access it by providing whitelisted blocks of ACME IPs?  [https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html#blocking-public-access-optional](https://docs.snowflake.com/en/user-guide/admin-security-privatelink.html#blocking-public-access-optional)
-
-after which both [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com) and [acme.snowflakecomputing.com](https://acme.snowflakecomputing.com) will still work, but the former will still put traffic through shared public pipes and the latter through private ones, and only ACME employees will be able to reach the former address and be able to even resolve the latter address.
-
-if i'm a 3rd party provider providing a cloud service, and want to access ACME's snowflake, i essentially have to do the same as above?  which is either get them to whitelist a subset or block of my IPs to access [acc-12345.us-east-1.snowflakecomputing.com](https://acc-12345.us-east-1.snowflakecomputing.com), or to alternatively set up a privatelink trust between MYCO vpc and the customer's snowflake account, hosting my own DNS to [acme.snowflakecomputing.com](https://acme.snowflakecomputing.com), at which point no IP addresses or ranges must be specified?
-
-in the case of snowflake, it also appears that there is some additional complexity in regards to also needing to make S3 buckets visible as well as some additional client configuration items.
-
-am i understanding this correctly?  or where am i falling apart?
-## [6][EC2 Spot instance](https://www.reddit.com/r/aws/comments/fm55q0/ec2_spot_instance/)
-- url: https://www.reddit.com/r/aws/comments/fm55q0/ec2_spot_instance/
----
-How long can my ec2 spot request stay on pending-fullfilment? It’s been stuck on this for an hour already.
-## [7][Stupid question -- where is the Elasticache Redis API for Java? Or am I misunderstanding what that is?](https://www.reddit.com/r/aws/comments/fm9m6e/stupid_question_where_is_the_elasticache_redis/)
-- url: https://www.reddit.com/r/aws/comments/fm9m6e/stupid_question_where_is_the_elasticache_redis/
----
-Started a new job, was given the task to create a lambda that writes to Redis. Is that such a thing? Or was it shorthand for write to a DynamoDb table fronted by Redis?
-
-Sorry I feel so dumb
-## [8][How to use (prediction) from a deployed model in Sagemaker for IOS](https://www.reddit.com/r/aws/comments/fm8ub3/how_to_use_prediction_from_a_deployed_model_in/)
-- url: https://www.reddit.com/r/aws/comments/fm8ub3/how_to_use_prediction_from_a_deployed_model_in/
----
-Hi, i can't seem to find any documentation on using a deployed model for IOS. Is Amplify framework able to connect to a deployed model in sagemaker and make predictions using that?
-## [9][Common use cases for Aurora](https://www.reddit.com/r/aws/comments/fm3tiq/common_use_cases_for_aurora/)
-- url: https://www.reddit.com/r/aws/comments/fm3tiq/common_use_cases_for_aurora/
----
-What are some common use cases for Aurora? Trying to understand exactly how it stacks up against AWS' db offerings in comparison to the other options and in a more concrete day-to-day use case sense.
-## [10][Difficulty Getting Lamda Edge function to work with CF](https://www.reddit.com/r/aws/comments/fm8f3n/difficulty_getting_lamda_edge_function_to_work/)
-- url: https://www.reddit.com/r/aws/comments/fm8f3n/difficulty_getting_lamda_edge_function_to_work/
----
-I've been having on-going CORS issues with some assets on my client's server. Everything I can find suggests it's the fact that S3/CF does not always x'mit the Vary header, so the workaround is to do it ourselves using Lamda to append to the HTTP response.
-
-So I created this Lamda Function that I sourced from others in a similar situation
-
-    'use strict';
-    
-    // If the response lacks a Vary: header, fix it in a CloudFront Origin Response trigger.
-    
-    exports.handler = async (event) =&gt; {
-        const response = event.Records[0].cf.response;
-        const headers = response.headers;
-        
-        console.log("vary headers before", headers['vary']);
-    
-        if (!headers['vary'])
-        {
-            headers['vary'] = [
-                { key: 'Vary', value: 'Access-Control-Request-Headers' },
-                { key: 'Vary', value: 'Access-Control-Request-Method' },
-                { key: 'Vary', value: 'Origin' },
-            ];
-        }
-        
-        console.log("vary headers after", headers['vary']);
-        // Return modified response
-        return response
+Bucket Policy:
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "2",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ------------"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::mySite.tld/*"
     }
+  ]
+}
+```
 
-Note, I added the console.log to test that it was actually working. When I run it through the Test engine in Lamda's UI, it works exactly how I expect, the console.log()s fire and output. Perfect. It even shows up in CloudWatch logs.
+CORS Configuration:
+```
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"&gt;
+  &lt;CORSRule&gt;
+    &lt;AllowedOrigin&gt;https://mySite.tld&lt;/AllowedOrigin&gt;
+    &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
+  &lt;/CORSRule&gt;
+&lt;/CORSConfiguration&gt;
+```
+## [10][S3 Bucket Download Limit](https://www.reddit.com/r/aws/comments/fmiwaf/s3_bucket_download_limit/)
+- url: https://www.reddit.com/r/aws/comments/fmiwaf/s3_bucket_download_limit/
+---
+Hi, I'm hoping you can help. I have an S3 bucket that I have created a TotalDownloaded metric, and now I'm trying to create an alarm that will go off if someone uses more than a monthly allotted amount of bandwidth but I don't see how to control the flow of data.
 
-So I deploy it to my CF distro, I select "Origin Response" as the event and save it. I go over to CF and see that it's deploying. Great. After it is finished deploying, I run an Invalidation on \* (not sure if this step is necessary if CF is being re-deployed).
-
-Once the Invalidation completes, I go test a couple URLs via curl. The Vary headers are not there. The file loads, as expected, but no Vary headers.
-
-I checked CloudWatch and there are no logs about it at all. No errors, no successes, nothing -- other than the test event I did that did work. I checked all US based regions, all of the service groups, no relevant logs anywhere, which tells me that the lamda function isn't be invoked at all.
-
-I double checked the CF config. Checked the behavior tab and confirmed that there is a Origin Response trigger that is indeed pointing to the lamda function and the correct version.
-
-&amp;#x200B;
-
-I'm all out of ideas at this point, especially being an admitted AWS newb. I'd appreciate any pointers!
-
-&amp;#x200B;
-
-**UPDATE:** Looks like the non-logging might have been a permissions issue. I noticed some warnings in the IAM role relating to the CloudWatch needing resources specified or w/e. So I added some wildcards, and boom, the logging happens. But still no header rewriting. Might there be a permission for rewriting headers?
+I don't know how to tame that metric and make it go into an alarm state when the limit is hit within 30 days.

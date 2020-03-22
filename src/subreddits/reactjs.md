@@ -111,116 +111,73 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I've created a little React package for animated hamburger icons. 🍔 Any type of feedback is really appreciated.](https://www.reddit.com/r/reactjs/comments/fmd36e/ive_created_a_little_react_package_for_animated/)
+## [3][Prettier 2.0](https://www.reddit.com/r/reactjs/comments/fmnfn0/prettier_20/)
+- url: https://prettier.io/blog/2020/03/21/2.0.0.html
+---
+
+## [4][Seven examples to test your React components with Jest and @testing-library](https://www.reddit.com/r/reactjs/comments/fmyoba/seven_examples_to_test_your_react_components_with/)
+- url: https://mintel.me/testing-react-components-with-jest-and-testing-library/
+---
+
+## [5][A help needed with SEO with React.js](https://www.reddit.com/r/reactjs/comments/fmyecd/a_help_needed_with_seo_with_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/fmyecd/a_help_needed_with_seo_with_reactjs/
+---
+Hey everyone,
+
+I'm a backend dev, and I'm askin for help, we have a web app at my job that was made with react.js as a frontend and Wordpress headless cms as a backend.
+
+We came into the problem of SEO, we heard about too many things like using [prerender.io](https://prerender.io) , or build all over again with [next.js](https://nextjs.org/) or using [hydrate()](https://reactjs.org/docs/react-dom.html#hydrate) function built-in react.js itself, we are very confused about what to use or what to do right now, we don't have much experience over there.
+
+So what do you think or you recommend if there is something better.
+
+Any help would be much appreciated
+## [6][I've created a little React package for animated hamburger icons. 🍔 Any type of feedback is really appreciated.](https://www.reddit.com/r/reactjs/comments/fmd36e/ive_created_a_little_react_package_for_animated/)
 - url: https://hamburger-react.netlify.com
 ---
 
-## [4][gqless: GraphQL client without queries](https://www.reddit.com/r/reactjs/comments/flv3ym/gqless_graphql_client_without_queries/)
-- url: https://gqless.netlify.com/
+## [7][Open source service worker fund site](https://www.reddit.com/r/reactjs/comments/fmylf1/open_source_service_worker_fund_site/)
+- url: https://www.reddit.com/r/reactjs/comments/fmylf1/open_source_service_worker_fund_site/
+---
+I am building a site that will allow users to donate money, and then distribute this to service workers who have lost their jobs. Anyone who would like to help would be greatly appreciated as this needs to launch ASAP. https://github.com/Jaseyacey/ServiceWorkerFund
+## [8][Server-Side Rendering in React using express.js](https://www.reddit.com/r/reactjs/comments/fmzk90/serverside_rendering_in_react_using_expressjs/)
+- url: https://medium.com/javascript-in-plain-english/server-side-rendering-in-react-expressjs-8a87af0edba4
 ---
 
-## [5][I've created "Tetris Racing" in React](https://www.reddit.com/r/reactjs/comments/fmcnzg/ive_created_tetris_racing_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fmcnzg/ive_created_tetris_racing_in_react/
+## [9][YourSpotify, self hosted music dashboard using React and ExpressJS](https://www.reddit.com/r/reactjs/comments/fmyylt/yourspotify_self_hosted_music_dashboard_using/)
+- url: /r/selfhosted/comments/fjjw0j/yourspotify/
 ---
-Hi, React Redditors!
 
-Recently I watched Thomas Weibenfalk's (freecodecamp YouTube channel) tutorial on "How to Build Tetris in React" and remembered a less known but still memorable game from my childhood where you had to avoid hit "cars" by moving left and right. So inspired by this tutorial, I decided to build my own version of (I don't actually know how this game is called, but I called it -) Tetris Racing.
-
-Here's the [demo](https://ckkz-it.github.io/react-tetris-racing/) and [source code](https://github.com/ckkz-it/react-tetris-racing/).
-
-Current functionality and technologies used you can find in the project's readme file.
-## [6][List of drag &amp; drop React UI builders](https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/)
-- url: https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/
+## [10][useWorker() simple hook to execute your functions on a separate thread](https://www.reddit.com/r/reactjs/comments/fmy31b/useworker_simple_hook_to_execute_your_functions/)
+- url: https://www.reddit.com/r/reactjs/comments/fmy31b/useworker_simple_hook_to_execute_your_functions/
 ---
-a coworker made this list and some were new to me - i figured i should share.
+GitHub: [https://github.com/alewin/useWorker](https://github.com/alewin/useWorker)
 
-- https://blocks-ui.com/
-- https://openchakra.app/
-- https://pagedraw.io/
-- https://craft.js.org/
-## [7][React Native Responsive Dimensions - Update 3.1.0 (Typescript, foldable devices &amp; more)](https://www.reddit.com/r/reactjs/comments/fmew4b/react_native_responsive_dimensions_update_310/)
-- url: https://www.reddit.com/r/reactjs/comments/fmew4b/react_native_responsive_dimensions_update_310/
+Documentation: [https://useworker.js.org/docs/api-useworker](https://useworker.js.org/docs/api-useworker)
+## [11][Find a course buddy during quarantine!](https://www.reddit.com/r/reactjs/comments/fmiv8q/find_a_course_buddy_during_quarantine/)
+- url: https://www.reddit.com/r/reactjs/comments/fmiv8q/find_a_course_buddy_during_quarantine/
 ---
-[https://github.com/DaniAkash/react-native-responsive-dimensions](https://github.com/DaniAkash/react-native-responsive-dimensions)
+Hi! One of the best things you can do during quarantine is learning a new framework, programming language or something entirely different.
 
-Hi Guys!
+But doing these courses feels kinda lonely and often you just stop doing them so I thought I’d create a site where you can find buddies to do the same course with (frankly this quarantine is becoming really boring).
 
-I recently pushed an update to React Native Responsive Dimensions (v3.1.0). This update focuses on adding new utilities that will help with building apps for foldable devices &amp; react-native-web apps.
+The idea is that you talk regularly about your progress and problems you're facing so you can learn and grow together.
 
-New features:
-- Full typescript support
-- Separate utilities for Responsive "window" &amp; "screen" sizes (screen sizes will be useful while working with foldables)
-- New responsive screen size hooks
-- `useDimensionsChange` hook to let your application respond to dimension changes
+If you’re interested, take a look at [Cuddy](https://cuddy.netlify.com/) and sign up for the newsletter!
 
-Checkout the example projects at [Snack](https://snack.expo.io/@daniakash/responsive-dimensions) &amp; [CodeSandbox](https://codesandbox.io/s/react-native-responsive-dimensions-hooks-2cqm8)
+The current tech stack is: React, TypeScript, Next, Heroku, Netlify (landing page)
 
-Feedbacks &amp; Feature Requests all welcome! Do let me know your thoughts 😁
-## [8][A PC / Macbook Pro for Web Development and Web Design.](https://www.reddit.com/r/reactjs/comments/fmertl/a_pc_macbook_pro_for_web_development_and_web/)
-- url: https://www.reddit.com/r/reactjs/comments/fmertl/a_pc_macbook_pro_for_web_development_and_web/
+If enough people sign up I’ll be happy to implement the whole thing this weekend, anyone want to join me building it?
+
+Also if you've got questions or feature ideas please do let me know in the comments! :)
+
+**Let's destroy this virus together and take it as an opportunity to get better at what we love!**
+## [12][Creating a card game](https://www.reddit.com/r/reactjs/comments/fmwx96/creating_a_card_game/)
+- url: https://www.reddit.com/r/reactjs/comments/fmwx96/creating_a_card_game/
 ---
-Hello folks!
+I'm creating a card game for me and my friends to play online but I need a little help
 
-I have been doing web Development on my 10 years old HP laptop which has intel core i3 and 4GB of RAM and an HDD. I'm looking to get something new because the HP is so slow.
+The code can bee found from here:[https://github.com/pete02/Korttipeli\_react](https://github.com/pete02/Korttipeli_react)
 
-I'm thinking about buying a Macbook pro because I may need the mobility someday. But it's expensive and my country doesn't have any Apple stores to get support from if anything happened to my Macbook pro. 
+The picture of ui can bee seen in here:[https://imgur.com/a/bREDbFa](https://imgur.com/a/bREDbFa). It also explains what I want to achieve. Basically I want to have a card, that is visible to all players, and every player has a button to change that card. Once the button is clicked, it changes the card on all players. Also If you have the time and energy, I'd appreciate if you could also help me to create something, that keeps track of whose turn it is
 
-I'm also thinking about a PC build even though they are expensive as well in Morocco, but the problem with a pc is that I will have to pay for a monitor, Keyboard, and mouse.
-
-A used 15' i7 16GB  512GB MacBook Pro 2018 cost around 1800 USD, 
-While the whole PC build and its peripherals would cost more than 2000 USD.
-
-For example a used Macbooks Pro 2018 in the picture bellow cost 
-And the PC cost
-## [9][Rxjs Wrapper over axios](https://www.reddit.com/r/reactjs/comments/fmernv/rxjs_wrapper_over_axios/)
-- url: https://www.reddit.com/r/reactjs/comments/fmernv/rxjs_wrapper_over_axios/
----
-Hey , guys my new article was published in Medium yesterday. Topic for this one is wrapping axios with rxjs.
-
-&amp;#x200B;
-
-[https://medium.com/@kostaskapasakis/how-to-wrap-axios-inside-rxjs-with-typescript-and-react-6c21e47dcb63](https://medium.com/@kostaskapasakis/how-to-wrap-axios-inside-rxjs-with-typescript-and-react-6c21e47dcb63)
-
-&amp;#x200B;
-
-Appreciate any feedback.
-## [10][React Testing Formik and React Redux Hook](https://www.reddit.com/r/reactjs/comments/fmeiwc/react_testing_formik_and_react_redux_hook/)
-- url: https://www.reddit.com/r/reactjs/comments/fmeiwc/react_testing_formik_and_react_redux_hook/
----
-I want to test that the dispatch here is called:
-
-       onSubmit={(values, { setSubmitting }) =&gt; {
-              setSubmitting(true);
-              const { id, text} = values;
-              dispatch(fetchData(id, text));
-            }}
-
-My Test:
-
-        const dispatch = store.dispatch();
-        await updateField(wrapper.find('input[name="id"]'), "id", 123);
-        await updateField(wrapper.find('input[name="text"]'), "text", "hi");
-        const button = wrapper.find(Button);
-        expect(button.props().type).toEqual("submit");
-        await submitFormikForm(button);
-        expect(dispatch).toHaveBeenCalledWith(fetchData(123, "hi"));
-
-Mocking the store using the following:
-
-    const middlewares = [
-      thunk.withExtraArgument({ fetchData: () =&gt; Promise.resolve() })
-    ];
-    const mockStore = configureMockStore(middlewares);
-    const store = mockStore({});
-
-Gives out the error:  Actions must be plain objects. Use custom middleware for async actions. Even though I have passed thunk. Any ideas or suggestions on what to do here. I am completely running out of ideas here. Any help would be greatly appreciated. Thanks
-## [11][Page Animation Library](https://www.reddit.com/r/reactjs/comments/fmebw3/page_animation_library/)
-- url: https://www.reddit.com/r/reactjs/comments/fmebw3/page_animation_library/
----
-I was wondering if there were a full Page Animation library kind of like [react-transition-group](https://www.npmjs.com/package/react-transition-group) but which can take a grid and apply different animations based on the relative direction the two pages are in?
-## [12][How to implement dragging to scroll horizontally within a container in React?](https://www.reddit.com/r/reactjs/comments/fme5s7/how_to_implement_dragging_to_scroll_horizontally/)
-- url: https://www.reddit.com/r/reactjs/comments/fme5s7/how_to_implement_dragging_to_scroll_horizontally/
----
-Code sandbox: https://codesandbox.io/s/draggable-image-gallery-yp20u
-
-I have an image gallery that can be scrolled horizontally, but how to implement a solution in React to drag to scroll?
+Thank you everyone in advance

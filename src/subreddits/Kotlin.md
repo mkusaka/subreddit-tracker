@@ -1,35 +1,89 @@
 # Kotlin
-## [1][A sample app built with Kotlin, Coroutines, Flow, Dagger 2, Architecture Components, MVVM, Room, Retrofit, Moshi, Material Components and other Jetpack libraries.](https://www.reddit.com/r/Kotlin/comments/fm91pb/a_sample_app_built_with_kotlin_coroutines_flow/)
+## [1][Coroutines: a practical vocabulary](https://www.reddit.com/r/Kotlin/comments/fmnllf/coroutines_a_practical_vocabulary/)
+- url: https://www.rockandnull.com/coroutines-practical/
+---
+
+## [2][A template for building Alfred workflows in Kotlin/JS](https://www.reddit.com/r/Kotlin/comments/fmu4hu/a_template_for_building_alfred_workflows_in/)
+- url: https://twitter.com/VladyslavSitalo/status/1241584247812448256?s=20
+---
+
+## [3][A sample app built with Kotlin, Coroutines, Flow, Dagger 2, Architecture Components, MVVM, Room, Retrofit, Moshi, Material Components and other Jetpack libraries.](https://www.reddit.com/r/Kotlin/comments/fm91pb/a_sample_app_built_with_kotlin_coroutines_flow/)
 - url: https://github.com/PatilShreyas/Foodium
 ---
 
-## [2][KotlinConf 2020 has been postponed until 2021](https://www.reddit.com/r/Kotlin/comments/fluber/kotlinconf_2020_has_been_postponed_until_2021/)
+## [4][My personal library of Kotlin extensions for Android development](https://www.reddit.com/r/Kotlin/comments/fmkwcl/my_personal_library_of_kotlin_extensions_for/)
+- url: https://www.reddit.com/r/Kotlin/comments/fmkwcl/my_personal_library_of_kotlin_extensions_for/
+---
+Hey folks, I'm sharing my personal library that I use in every project of mine, it has things found working from StackOverflow to things I've written personally to take shortcuts, copied some from Github and modified them to work as intended just to make the Android development easier.
+
+[Github Link](https://github.com/CraZyLegenD/Set-Of-Useful-Kotlin-Extensions-and-Helpers)
+
+It lacks documentation at some places, but the methods are quite self explanatory, feel free to contribute or to use it in your projects, pull requests are welcomed as well as if something doesn't work feel free to open an issue or if you find your code add headers/credits that's yours and make a pull request.
+## [5][Try make code friends](https://www.reddit.com/r/Kotlin/comments/fmnen3/try_make_code_friends/)
+- url: https://www.reddit.com/r/Kotlin/comments/fmnen3/try_make_code_friends/
+---
+Which is the best way to make friends for talk and code?
+## [6][Kotlin multiplatform annotation](https://www.reddit.com/r/Kotlin/comments/fmhlm0/kotlin_multiplatform_annotation/)
+- url: https://www.reddit.com/r/Kotlin/comments/fmhlm0/kotlin_multiplatform_annotation/
+---
+Hello,
+
+&amp;#x200B;
+
+I'm trying to create a shared library of entities (target for Android, JVM and JS).
+
+&amp;#x200B;
+
+Everything goes well until implementing annotations. My goal is to have validator annotations directly written in the entities classes. I want to use JSR 303 (Bean validation) compliant annotation to validate the entities for JVM and Android and write a fallback for Javascript (using the npm class-validator package).
+
+    import validation.Min
+    
+    class Marketable : Salable() {
+    
+        @Min(0)
+        var stockAmount: Int = 0
+    }
+
+My approach is to define a set of "generic" (expected) annotations like this :
+
+    package validation.Min 
+    expect annotation class Min
+
+And in JVM implementation
+
+    package validation.Min 
+    
+    actual typealias Min = javax.validation.constraints.Min
+    // ^----- error : Actual class 'Min' 
+    // has no corresponding members for expected class members 
+
+What I would like to achieve is to "proxy" the calls to the "actual" annotations because the parameters list is not the same for javax.validation.\* and the annotations from the class-validator npm package.
+
+&amp;#x200B;
+
+In Javascript/Typescript (and even Python), we can wrap decorator into decorator like this (since decorators are simply functions) :
+
+    function MinValidator(value, message, ...) {
+        // ... the base Min validator
+        return function(target) {}
+    }
+    
+    function MinProxy(value) {
+        return MinValidator(value, "Some message", ...)
+    }
+
+Thanks
+## [7][KotlinConf 2020 has been postponed until 2021](https://www.reddit.com/r/Kotlin/comments/fluber/kotlinconf_2020_has_been_postponed_until_2021/)
 - url: https://kotlinconf.com/?2020Postponed
 ---
 
-## [3][Why does Kotlin have Unit when Nothing? could have done the same job?](https://www.reddit.com/r/Kotlin/comments/fm3hke/why_does_kotlin_have_unit_when_nothing_could_have/)
-- url: https://www.reddit.com/r/Kotlin/comments/fm3hke/why_does_kotlin_have_unit_when_nothing_could_have/
----
-I understand that `Unit` exists to be a lack of a useful value, i.e., what you return from a function that just performs a side effect. I'm wondering why the language designers decided that `Unit` was necessary when it seems to me that `Nothing?` would have worked just as well, all without introducing a new type.
-
-    // Instead of this:
-    fun doSomething() {  // implicit Unit return type
-        doStuff()
-        // implicitly return Unit
-    }
-    
-    // Why not this?
-    fun doSomething() {  // implicit Nothing? return type
-        doStuff()
-        // implicitly return null
-    }
-## [4][Are there any examples of websites built with kotlin/kotlinJS/react?](https://www.reddit.com/r/Kotlin/comments/fm3qa3/are_there_any_examples_of_websites_built_with/)
+## [8][Are there any examples of websites built with kotlin/kotlinJS/react?](https://www.reddit.com/r/Kotlin/comments/fm3qa3/are_there_any_examples_of_websites_built_with/)
 - url: https://www.reddit.com/r/Kotlin/comments/fm3qa3/are_there_any_examples_of_websites_built_with/
 ---
 I know that react supports kotlin now.  There are a number of videos showing web applications being built with kotlin-react.  But are there any full websites made with kotlin that you can point me to?
 
 Thanks in advance!
-## [5][Help needed with YAML parsing and accessing specific keys(?)](https://www.reddit.com/r/Kotlin/comments/fm2jat/help_needed_with_yaml_parsing_and_accessing/)
+## [9][Help needed with YAML parsing and accessing specific keys(?)](https://www.reddit.com/r/Kotlin/comments/fm2jat/help_needed_with_yaml_parsing_and_accessing/)
 - url: https://www.reddit.com/r/Kotlin/comments/fm2jat/help_needed_with_yaml_parsing_and_accessing/
 ---
 Now I'm sure that there's something out there for this, but I haven't found it yet. I need a YAML parsing library that lets me access the keys(?) (I dunno the terminology, here) in a file, using the dot notation (like how we do in Spring Boot).
@@ -46,44 +100,7 @@ root:
 ```
 
 . . . and let's say that I wanna access ```"root.foo"``` . . . **is there a way to do so _without_ having to create nested maps or creating DTOs or (basically) data classes?**
-## [6][TornadoFX Help](https://www.reddit.com/r/Kotlin/comments/fm0acd/tornadofx_help/)
+## [10][TornadoFX Help](https://www.reddit.com/r/Kotlin/comments/fm0acd/tornadofx_help/)
 - url: https://www.reddit.com/r/Kotlin/comments/fm0acd/tornadofx_help/
 ---
 Hey all, I am trying to set up a tornadoFX project. I have openjdk 8, and I need to get javafx in there somewhere, preferably through gradle. Whats the best way to do this? Thanks!
-## [7][I want to do addition function. What's wrong here ?](https://www.reddit.com/r/Kotlin/comments/flxdu8/i_want_to_do_addition_function_whats_wrong_here/)
-- url: https://www.reddit.com/r/Kotlin/comments/flxdu8/i_want_to_do_addition_function_whats_wrong_here/
----
-`fun addition(x,y){`  
-`var z = x+y`  
-`print(z)`  
-`}`  
-
-
-`fun main() {`  
- `addition(5,5)`  
-`}`
-## [8][Beginners question: How do I include an external library?](https://www.reddit.com/r/Kotlin/comments/flwd1u/beginners_question_how_do_i_include_an_external/)
-- url: https://www.reddit.com/r/Kotlin/comments/flwd1u/beginners_question_how_do_i_include_an_external/
----
-I'm trying to add the Exposed library to a project, but there seems to be no way to add an external library to a Kotlin project. 
-
-I've added this to my gradle.build:
-dependencies {
-  compile("org.jetbrains.exposed", "exposed-core", "0.22.1")
-  compile("org.jetbrains.exposed", "exposed-dao", "0.22.1")
-  compile("org.jetbrains.exposed", "exposed-jdbc", "0.22.1")
-}
-
-and this to my class:
-import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.transactions.transaction
-
-But it just refuses to see the Exposed library. What am I missing?
-## [9][Announcing GraphQLize - an open-source JVM library for developing GraphQL API instantly from MySQL &amp; Postgres](https://www.reddit.com/r/Kotlin/comments/flw2sz/announcing_graphqlize_an_opensource_jvm_library/)
-- url: https://www.graphqlize.org/blog/announcing-graphqlize-alpha
----
-
-## [10][Unit Testing Delays, Errors &amp; Retries with Kotlin Flows](https://www.reddit.com/r/Kotlin/comments/fll2a7/unit_testing_delays_errors_retries_with_kotlin/)
-- url: https://medium.com/@heyitsmohit/unit-testing-delays-errors-retries-with-kotlin-flows-77ce00d0c2f3
----
-

@@ -113,71 +113,116 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Why so many people hate C++?](https://www.reddit.com/r/cpp/comments/fm5h6r/why_so_many_people_hate_c/)
-- url: https://www.reddit.com/r/cpp/comments/fm5h6r/why_so_many_people_hate_c/
+## [3][Forbidden C++ - was waiting for that GOTO moment](https://www.reddit.com/r/cpp/comments/fmq6a4/forbidden_c_was_waiting_for_that_goto_moment/)
+- url: https://www.youtube.com/watch?v=j0_u26Vpb4w
 ---
-I see on the web so many say what is better lean C#, I see people  answer a other that say want to learn C++ to learn other language why this?
-## [4][Would you pick C++ for your own pet project in 2020?](https://www.reddit.com/r/cpp/comments/fmaezz/would_you_pick_c_for_your_own_pet_project_in_2020/)
+
+## [4][C++20 &amp; Rust on Static vs Dynamic Generics](https://www.reddit.com/r/cpp/comments/fmx87z/c20_rust_on_static_vs_dynamic_generics/)
+- url: https://youtu.be/olM7o_oYML0
+---
+
+## [5][c_str-correctness](https://www.reddit.com/r/cpp/comments/fmeeuq/c_strcorrectness/)
+- url: https://quuxplusone.github.io/blog/2020/03/20/c-str-correctness/
+---
+
+## [6][How to check if a graph is related or has 1 or more related components](https://www.reddit.com/r/cpp/comments/fmzus7/how_to_check_if_a_graph_is_related_or_has_1_or/)
+- url: https://www.reddit.com/r/cpp/comments/fmzus7/how_to_check_if_a_graph_is_related_or_has_1_or/
+---
+    #include &lt;conio.h&gt;
+    #include&lt;iostream.h&gt;
+    #include&lt;stodio.h&gt;
+    int a[20][20];
+    int viz[20];
+    int i,n,j,pl,m,x,y,ok;
+    void parc_adancime(int pl)
+    {int j;
+    viz[pl]=1;
+    for(i=1;j&lt;=n,j++)
+        if(a[pl][j]==1)&amp;&amp;(viz[j]==0)
+    parc_adancime(j);}
+    void main ()
+    cout&lt;&lt;"n,m";cin&gt;&gt;n&gt;&gt;m;
+    for(i=1;i&lt;=m;i++)
+    {cout&lt;&lt;"x,y";cin&gt;&gt;x&gt;&gt;y;
+    a[x][y]=1;a[y][x]=1;}
+    for(i=1;i&lt;=m,i++) viz[i]=0;
+    cout&lt;&lt;"dati nodul de plecare" "pl";
+    cin&gt;&gt;pl;
+    parc_adancime(pl);
+    ok=0;
+    for(i=1,i&lt;=m,i++)
+    if(viz[i]==0) ok=1;
+    if(ok) cout&lt;&lt;"graful este format din mai multe elemente conexe";
+    else cout&lt;&lt;"graful este conex";
+    getche();}
+    
+    
+
+I need to edit this and make it work in C++ and run it in code blocks
+## [7][cppgit2: Git for Modern C++ (A libgit2 Wrapper Library)](https://www.reddit.com/r/cpp/comments/fmzu5x/cppgit2_git_for_modern_c_a_libgit2_wrapper_library/)
+- url: https://github.com/p-ranav/cppgit2
+---
+
+## [8][cmodule - unintrusive CMake dependency management](https://www.reddit.com/r/cpp/comments/fmy5zh/cmodule_unintrusive_cmake_dependency_management/)
+- url: /r/cmake/comments/fkpj1u/cmodule_unintrusive_cmake_dependency_management/
+---
+
+## [9][How can anyone use std::chrono::steady_clock portably? It seems to be very broken (under-specified).](https://www.reddit.com/r/cpp/comments/fmosnb/how_can_anyone_use_stdchronosteady_clock_portably/)
+- url: https://www.reddit.com/r/cpp/comments/fmosnb/how_can_anyone_use_stdchronosteady_clock_portably/
+---
+I'm writing a cross-platform real-time audio/video processing library and I need a clock with some guarantees:
+
+  1. monotonic
+  2. with at least 1 microsecond resolution (how frequently the value changes)
+  3. always increasing even if the thread sleeps
+
+Looking over at cppreference.com I see that [`std::chrono::steady_clock`](https://en.cppreference.com/w/cpp/chrono/steady_clock) provides the guarantee #1.
+
+However, `std::chrono::steady_clock` mentions no minimal guaranteed resolution. [There are horror stories on stackoverflow](https://stackoverflow.com/questions/29551126) saying that their `std::chrono::steady_clock` has only 10ms resolution. Something like:
+
+       static_assert(std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(typename std::chrono::steady_clock::duration(1)).count() &lt;= 1, "Your C++ compiler doesn't provide a precise enough steady_clock.");
+
+might do the trick, as long as the C++ compiler is actually aware of its clock resolution. It won't work if it reports 1ns resolution at compile time but is actually 10ms at run time. So #2 falls short as the clock resolution is actually not defined - neither the minimal resolution is mandated by the spec, nor you can reliably check it at compile time.
+
+Reading [this stack overflow thread](https://stackoverflow.com/questions/38252022) it appears like the C++ specification doesn't prohibit `std::chrono::steady_clock` to be stopped when the thread sleeps, similar to how `clock()` behaves. While it appears that no common C++ compiler implementation does this, it's also not prohibited, so relying on this sounds like undefined behavior.
+
+So `std::chrono::steady_clock` falls short in #2 and #3. Isn't this really bad? With so much being left up to the compiler implementations, how can anyone use `std::chrono::steady_clock` portably at all? It's pretty much broken for a lot of use cases. Sure, you could probably run some tests at your program startup, to check if clock lies about the precision and if it ticks during thread sleeps, but such startup diagnostics have no place in a mere library. I now have to implement my own cross-platform OS clock abstraction since system APIs provide stricter clock guarantees than `std::chrono` does.
+## [10][Optimizing static variable initialization and uses for constexpr / consteval and constinit.](https://www.reddit.com/r/cpp/comments/fmg2m6/optimizing_static_variable_initialization_and/)
+- url: https://felipepiovezan.gitlab.io/blog/const_constinit_constexpr_consteval/
+---
+
+## [11][Would you pick C++ for your own pet project in 2020?](https://www.reddit.com/r/cpp/comments/fmaezz/would_you_pick_c_for_your_own_pet_project_in_2020/)
 - url: https://www.reddit.com/r/cpp/comments/fmaezz/would_you_pick_c_for_your_own_pet_project_in_2020/
 ---
 I heard many times that one shouldn’t start any new project in C++ these days. Comments like “I’m writing in C++ for 20+ years and I hate that language” seem to be pretty common here in reddit. While you may be capped in C++ because of existing code base at work / current project and it may be too late to switch to another language, would you still choose C++ for your project in 2020? Considering that C++ is widely used in your type of projects, e.g if you’d be like to write your own 2D game library to use it for your 2D game of your dream.
 
 I have an idea for 2D game since 2017 and writing 2D framework from scratch is the best option (2D multiplayer Rimworld-alike, could send .docx description in Russian if interesting). Soon I will have time for making it, but I don’t want to regret with language choice in future. Want to hear your opinions, thanks!
-## [5][c_str-correctness](https://www.reddit.com/r/cpp/comments/fmeeuq/c_strcorrectness/)
-- url: https://quuxplusone.github.io/blog/2020/03/20/c-str-correctness/
+## [12][Need to get the users input.. Anyways thats possible here? input for if its a male or is it tall](https://www.reddit.com/r/cpp/comments/fmxubm/need_to_get_the_users_input_anyways_thats/)
+- url: https://www.reddit.com/r/cpp/comments/fmxubm/need_to_get_the_users_input_anyways_thats/
 ---
-
-## [6][best way to self teach cpp?](https://www.reddit.com/r/cpp/comments/fmd44x/best_way_to_self_teach_cpp/)
-- url: https://www.reddit.com/r/cpp/comments/fmd44x/best_way_to_self_teach_cpp/
----
-i know almost nothing about programming let alone cpp but i know enough to know that i wanna learn a lot more about it no matter the time it takes but i'm having a hard time finding a good source to learn cpp from the ground up for someone who doesn't know much, so id love to hear any advice or recommendations on the topic.
-
-pms are open too
-## [7][CMake 3.17.0 available for download - Announcements](https://www.reddit.com/r/cpp/comments/fluibz/cmake_3170_available_for_download_announcements/)
-- url: https://discourse.cmake.org/t/cmake-3-17-0-available-for-download/828
----
-
-## [8][C++ Testing &amp; Fuzzing Resources](https://www.reddit.com/r/cpp/comments/flw64e/c_testing_fuzzing_resources/)
-- url: https://github.com/MattPD/cpplinks/blob/master/testing.md
----
-
-## [9][Order of initializer list vs class members, could choice of fix open exploit?](https://www.reddit.com/r/cpp/comments/fm6jyg/order_of_initializer_list_vs_class_members_could/)
-- url: https://www.reddit.com/r/cpp/comments/fm6jyg/order_of_initializer_list_vs_class_members_could/
----
-I wonder, I have a class that defines an integer and a pointer, a and b. But the constructor initializer list has them in reverse b(), a(). This raises a warning/error and should be fixed, good.
-
-So, I can switch their declarations, or I can switch the initializer list order. My worry is, if I fix by switching the declarations, then the class' binary representation will have them in reverse order. Sibling files to this header have mentions of streams and I see many void\*s and reinterpret cast uses, I dont fully understand the entire code to be sure whether this class is involved or not but I feel like by switching the declarations I could enable an exploit if this class is somehow saved and loaded to/from disk/network at some point, because then i could load a file saved on the previous ordering as the new one.
-
-Am I correct with this worry or am I being paranoid? Is it truly safer to switch the initializer list instead and due to the reason above? (I mean even if it was indeed safer, I could be wrong about the reason)
-## [10][Writing Linux File Buffer Cache top in C++ with BPF](https://www.reddit.com/r/cpp/comments/flr4kn/writing_linux_file_buffer_cache_top_in_c_with_bpf/)
-- url: http://www.mycpu.org/cachetop-bpf-part-2/
----
-
-## [11][An example of what it has been like writing a c++ space arcade game from scratch (still WIP)](https://www.reddit.com/r/cpp/comments/fm5aea/an_example_of_what_it_has_been_like_writing_a_c/)
-- url: https://www.youtube.com/watch?v=xMg5c-KdSoE&amp;list=PL22CMuqloY0qiYlv1Lm_QtfwuFz9OB0NE&amp;index=14&amp;t=0s
----
-
-## [12][Eclipse 2020-03 released with CDT 9.11](https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/)
-- url: https://www.reddit.com/r/cpp/comments/fls89i/eclipse_202003_released_with_cdt_911/
----
-Hi, Eclipse 2020-03 with CDT 9.11 has been released. Recently a lot of changes to improve c++ support into Eclipse has been performed and a lot of other effort needs to be spent.  I'm curious to know what you think about it. Eclipse is quite popular but there are a lot of alternatives like Visual Studio, CLion, Netbeans and so on. What are you using and why?
-
-Just some improvements so far:
-
-1. A lot of new options for the built-in formatter: improvements for comment formatting, on/off tags
-2. Improvements and bug fixes for the refactor: for example the automatic implementation to override methods in child classes
-3. Improved the class wizard to create a new class with fresh new C++11 options and according to the rule of five
-4. Improved doxygen support for automatic generation of tags
-5. Added a lot of new options about compiler warnings
-6. Added new C++17 features support, like structured bindings
-
-Some areas where cdt community is currently working for short-term:
-
-1. Integrate all C++17 features into the built-in parser, like CTAD and constexpr lambda expressions (with 9.12 I think 95% should be covered)
-2. Improve the support for CMake projects
-3. Other Improvements for the static analysis and built-in formatter support
-
-For long-term:
-
-1. There's nothing for C++20 yet, the idea could be to move everything to LSP, it could be a great change
-2. Rework the built-in build system to have something more flexible
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    using namespace std;
+    
+    int main()
+    {
+    
+         bool IsMale = true;
+         bool IsTall = true;
+    
+         if(IsMale, IsTall){
+            cout  &lt;&lt; "You are a tall male";
+           } else if(!IsMale &amp;&amp; !IsTall){
+             cout &lt;&lt; "Your A Short Female";
+           }else if(!IsMale &amp;&amp; IsTall){
+           cout &lt;&lt; "You Are A Tall Female";
+           }else if(IsMale &amp;&amp; !IsTall){
+           cout &lt;&lt; "You Are A short male";
+           }else{
+                cout &lt;&lt; "You are not a male";
+            }
+    
+    
+    
+        return 0;
+    }

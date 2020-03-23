@@ -1,144 +1,86 @@
 # aws
-## [1][Unzipping s3 file in chunks using lambda](https://www.reddit.com/r/aws/comments/fmrwfb/unzipping_s3_file_in_chunks_using_lambda/)
-- url: https://www.reddit.com/r/aws/comments/fmrwfb/unzipping_s3_file_in_chunks_using_lambda/
+## [1][Static IPs with an ALB?](https://www.reddit.com/r/aws/comments/fnjj41/static_ips_with_an_alb/)
+- url: https://www.reddit.com/r/aws/comments/fnjj41/static_ips_with_an_alb/
 ---
-I used lambda to unzip S3 file back to s3.  Lambda can't unzip more than 3gb file.  I created a script that unzips by streaming chunks of file. 
+We're launching a new service soon and I'd like your input on how to set up the networking infrastructure. Here are the main points that I'd like to accomplish and a bit of background
 
-[https://medium.com/@multiaki/unzipping-s3-files-back-to-s3-without-uncompressing-entire-file-streaming-82f662b5065a](https://medium.com/@multiaki/unzipping-s3-files-back-to-s3-without-uncompressing-entire-file-streaming-82f662b5065a)
-## [2][Existing VPS image to EC2](https://www.reddit.com/r/aws/comments/fmxbzm/existing_vps_image_to_ec2/)
-- url: https://www.reddit.com/r/aws/comments/fmxbzm/existing_vps_image_to_ec2/
+* The service runs on ECS (Fargate) with an Nginx reverse proxy in front
+* Would like to use an application load balancer in front of the service, mainly for the nice monitoring capabilities you don't get with an NLB (and also built-in authentication which I'd like to use to keep our test environment private)
+* Would strongly prefer having static IPs (presumably using EIPs) for the service to ease DNS setup 
+* This service will be at the domain apex and unfortunately name server delegation to Route 53 is probably not feasible
+
+Currently ALBs do not support EIPs while NLBs do. AWS has published a blog post with a solution to get around that problem, but it looks byzantine and seems like overengineering to solve what should be a simple problem: [https://aws.amazon.com/blogs/networking-and-content-delivery/using-static-ip-addresses-for-application-load-balancers/](https://aws.amazon.com/blogs/networking-and-content-delivery/using-static-ip-addresses-for-application-load-balancers/)
+
+Does anyone have experience with that setup? If not I'll probably go with a setup of EIPs -&gt; NLB -&gt; ECS service, even though I'll miss out on the nice things that ALBs provide.
+## [2][VPC with Public and Private Subnets - EC2 in public subnet has no IP](https://www.reddit.com/r/aws/comments/fnggp0/vpc_with_public_and_private_subnets_ec2_in_public/)
+- url: https://www.reddit.com/r/aws/comments/fnggp0/vpc_with_public_and_private_subnets_ec2_in_public/
 ---
-For lift &amp; shifts (Rehosting), I think CloudEndure is used for Windows workloads, but what do people use for Linux based workloads?
+Just tried the VPC wizard with "VPC with Public and Private Subnets" but the EC2 instance I created in the public subnet has no public IP.
 
-I gather the best option is to boot the OS AMI on EC2 and rsync across the system as best you can and create your own AMI? Or am I missing a tool? VM import/export is only for VMware AFACIT.
-## [3][Cloudfront really can't handle sub-directory indexes without a lambda trigger?](https://www.reddit.com/r/aws/comments/fmzcjg/cloudfront_really_cant_handle_subdirectory/)
-- url: https://www.reddit.com/r/aws/comments/fmzcjg/cloudfront_really_cant_handle_subdirectory/
+What am I missing?
+## [3][Automating docker deployments to EKS with CDK and CodePipeline](https://www.reddit.com/r/aws/comments/fnc69t/automating_docker_deployments_to_eks_with_cdk_and/)
+- url: https://www.reddit.com/r/aws/comments/fnc69t/automating_docker_deployments_to_eks_with_cdk_and/
 ---
-I was in disbelief to discover that using Cloudfront infront of a static S3 website you're unable to request sub-directory index files unless [you have a lambda trigger function that rewrites the request](https://aws.amazon.com/blogs/compute/implementing-default-directory-indexes-in-amazon-s3-backed-amazon-cloudfront-origins-using-lambdaedge/) for you.
+Anyone successfully created a CodePipeline deployment with CDK? I found [this doc](https://github.com/aws/aws-cdk/tree/master/packages/%40aws-cdk/aws-codepipeline-actions) but it skips over EKS completely. And I couldn't find anything online that describes the ins and outs of this pipeline -- it's like they don't want us to use EKS at all (all the docs, examples, and helper classes are geared towards ECS). 
 
-Is this still the case or is there a better way to configure this in Cloudfront today?
-## [4][How to configure cross-account Cognito authorizer for Appsync?](https://www.reddit.com/r/aws/comments/fmvuxf/how_to_configure_crossaccount_cognito_authorizer/)
-- url: https://www.reddit.com/r/aws/comments/fmvuxf/how_to_configure_crossaccount_cognito_authorizer/
+P.S. If codepipeline isn't the way to go, what would you recommend for an easy-to-setup and use CI/CD pipeline?
+## [4][Problem Deploying a docker container on ECS](https://www.reddit.com/r/aws/comments/fn7zhk/problem_deploying_a_docker_container_on_ecs/)
+- url: https://www.reddit.com/r/aws/comments/fn7zhk/problem_deploying_a_docker_container_on_ecs/
 ---
-Is it possible to set up Appsync in a way that uses the Cognito user pool of another AWS account? API Gateway can use user pools from other accounts as an authorizer but I can't find docs for Appsync. I'd like to allow existing users to call appsync endpoints in a new account.
-## [5][Display data in d3js visualizations(KPIs) using API Gateway, Lambda and Aurora](https://www.reddit.com/r/aws/comments/fmucc4/display_data_in_d3js_visualizationskpis_using_api/)
-- url: https://www.reddit.com/r/aws/comments/fmucc4/display_data_in_d3js_visualizationskpis_using_api/
+Hey all, today is my first day on AWS, so apologies in advance if this is a stupid question. I have a Dash App that I wrapped up in a docker container, which I'm not trying to deploy on AWS. I *think* that I've successfully got an ECS instance up and running, but I can't access my app access the given Public DNS. I've been following tutorials all day, but something is just not working out for me. The Cluster, ECS Instance, and Task are all running and everything appear to be in a good state. However, when I try to access either the Public DNS or Public IP, I get hit with a Problem Loading Page. I'm not really sure how to troubleshoot at this point. Does anyone have any idea what may be going on?
+## [5][Is the Workspaces service getting hammered due to the increase of WFH persons?](https://www.reddit.com/r/aws/comments/fnj5ix/is_the_workspaces_service_getting_hammered_due_to/)
+- url: https://www.reddit.com/r/aws/comments/fnj5ix/is_the_workspaces_service_getting_hammered_due_to/
 ---
-Hello,
+I'm sure that the internet as a whole is getting hammered with the increase of persons WFH, and that AWS announcing:
 
-We currently have data in S3, that gets transformed using EMR and copied to Redshift - which serves our internal users for building their visualizations using Tableau. We are looking for options to leverage the transformed data in S3, then build a few KPIs using D3js or something similar. Idea is to display the visualizations(usage stats) on the home page for all users when the user logs into the website. 
+&gt;We are announcing two new offers that enable you to use Amazon WorkSpaces and Amazon WorkDocs for up to 50 users at no charge. Both offers are for new customers that have not previously used these services and are available through June 30, 2020.
 
-I am planning to use D3js, API Gateway, Lambda and Aurora Postgres to achieve this. The reasons I am leaning towards Aurora Postgres is 
+... probably isn't helping much.  
 
-* Transformed data that we build visualizations using D3js is less than 3GB.
-* Redshift is expensive.
-* our website can have 300-500 concurrent users at a time.
-
-Here are the questions I've:
-
-1. When I've so many concurrent users logged in, is triggering 300-500 Lambdas scalable?
-2. Is there a better DB Backend solution than Aurora Postgres for less data and more concurrency?
-3. Finally, is my approach correct?
-
-Thanks in advance.
-## [6][Monitor vpn traffic](https://www.reddit.com/r/aws/comments/fmuq3b/monitor_vpn_traffic/)
-- url: https://www.reddit.com/r/aws/comments/fmuq3b/monitor_vpn_traffic/
+Is anyone seeing an increase of end users complaining of their Workspaces being "laggy" or unresponsive?  I have some users on the other side of the world, and trying to determine if there is anything I can do to help them.
+## [6][Websocket](https://www.reddit.com/r/aws/comments/fniuvx/websocket/)
+- url: https://www.reddit.com/r/aws/comments/fniuvx/websocket/
 ---
-Hi guys, i we have a bastion host in AWS infra, that we use it to tshoot vpn connectivity issues by simply pinging vpn peers.  
-My purpose is to write the results of the ping in an html file and i was thinking to install apache web server and place there the html file so my colleagues that don't have ssh access to the bastion host, can see if pings fail through this html page.  
-My concern is: isn't it dangerous if i expose our bastion to the public web by installing apache on it? can someone experienced on the matter offer me his advice of how to design a solution without security "holes"? It doesn't have to be necessarily via bastion host &amp; html, something with Cloudwatch perhaps ?  
+Hey guys, I'm using serverless-offline and I already have a websocket configured, but i want to know is it possible to open multiple websocket connections in different ports using serverless?
+## [7][Python/boto3 question](https://www.reddit.com/r/aws/comments/fn6ank/pythonboto3_question/)
+- url: https://www.reddit.com/r/aws/comments/fn6ank/pythonboto3_question/
+---
+Hey everyone, 
+
+Was looking for some help on writing a simple python script that takes a user input like “us-East-1” and reboots all instances there. So like “script.py us-east-1” on a regular shell command line. Already have profile, keys, and permissions loaded up and can perform basic things just can’t narrow it down. Thanks in advance!
+## [8][Regarding Amazon SFTP](https://www.reddit.com/r/aws/comments/fn8e3j/regarding_amazon_sftp/)
+- url: https://www.reddit.com/r/aws/comments/fn8e3j/regarding_amazon_sftp/
+---
+Users of my product/app (not a webapp) needs to submit files for processing via SFTP and after processing we need to send the results back to user via same SFTP.
+
+ I learnt that behind the scenes Amazon SFTP stores the files in S3 buckets. If I have several users and if they should not be able to see each other's file then I create multiple S3 buckets like User1, User2, etc.
+
+Under User folder, I further create folders like User/Inbound and User/Outbound so that we can receive and send the files.
+
+Question:
+
+If I need to mount all these S3 buckets to the EC2 instance where my app is running do I need to mount all the S3's separately or could there be a parent folder that I can mount so that I can do it only once and need not create a input handler on my app?
+
+Also, after processing can I pass the S3 bucket names corresponding to each user as a parameter so that I don't have to create individual S3 outputs on my app?
+
+Note - Apologies if I am not using AWS terms and using regular NAS terms, as I am new to AWS.
+## [9][EventBridge: The key component in Serverless Architectures (Serverless-Transformation Article)](https://www.reddit.com/r/aws/comments/fngqtz/eventbridge_the_key_component_in_serverless/)
+- url: https://medium.com/serverless-transformation/eventbridge-the-key-component-in-serverless-architectures-e7d4e60fca2d
+---
+
+## [10][SQS Policy that only allows S3 notifications from objects from a specific user](https://www.reddit.com/r/aws/comments/fngfnq/sqs_policy_that_only_allows_s3_notifications_from/)
+- url: https://www.reddit.com/r/aws/comments/fngfnq/sqs_policy_that_only_allows_s3_notifications_from/
+---
+Dear Experts! 
+
+I'm building a messaging system for a customer that responds to all create events on a s3 bucket. This system has the task of responding to new files files being written to the bucket, editing them, and the re-uploading the edited files back to the same bucket; under the same key. As you might understand, this causes a problem: Since my own edits will trigger new create notifications themselves, the event systems gets into an infinite loop.
+
+I have no control over the s3 bucket keys, so I cannot use the build-in notification filters. I could check in my code if the changes where already made and don't upload the file to stop the loop. But this still means that some unwanted events from objects end up in my SQS queue. 
+
+The most promising solution I can think of is to have some SQS policy that only allows s3 to send a message if the s3 key was put by a certain user. That way I can prevent s3 from sending events from objects that I uploaded myself. The hope that this is even possible comes from the fact that I see the ["userIdentity.principalId"](https://docs.aws.amazon.com/AmazonS3/latest/dev/notification-content-structure.html) change in the notification message. 
+
+Or maybe there are other options like the other [policy conditions](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html#sqs-specifying-conditions-in-policy). I could freely set certain tags on the object for example.
+
+Does anyone know if it is possible to create an SQS policy that only allows s3 to send notifications to the queue if an s3 key was created by certain user? Or maybe have another solution to my problem.
+
 Thank you!
-## [7][AWS Active Directory Connector and Azure Active Directory Domain Services](https://www.reddit.com/r/aws/comments/fmogdc/aws_active_directory_connector_and_azure_active/)
-- url: https://www.reddit.com/r/aws/comments/fmogdc/aws_active_directory_connector_and_azure_active/
----
-I am trying to replicate the steps in this [post](https://aws.amazon.com/blogs/desktop-and-application-streaming/add-your-workspaces-to-azure-ad-using-azure-active-directory-domain-services/). However, When I get to the step where I create the ad connector, it fails with the following error:
-
-\&gt; DNS unavailable (TCP port 53) for IP: [10.0.0.4](https://10.0.0.4), DNS unavailable (TCP port 53) for IP: [10.0.0.5](https://10.0.0.5)
-
-I am very proficient with AWS. However, I'm struggling with Azure and feel I may have misconfigured something. I have carried out the following steps thus far:
-
-&amp;#x200B;
-
-In Azure, I used an existing resource group and created "Azure AD Domain Services" instance using default configuration
-
-**Basics**
-
- \- Name: sy\*\*\*\*\*\*[k.com](https://k.com) 
-
- \- Subscription: Pay-As-You-Go 
-
- \- Resource Group:
-
- \- Default Region: UK South
-
- \- SKU: Standard  Forest type: User
-
-**Network**
-
- \- Virtual network: (new) aadds-vnet
-
- \- Subnet: (new) aadds-subnet
-
- \- Subnet Address: [10.0.0.0/24](https://10.0.0.0/24)
-
- \- Network Security Group: (new) aadds-nsg
-
-&amp;#x200B;
-
-I created a site to site vpn connection with azure virtual network. However, I am not sure about this step in the post: "The tunnels must be configured to allow traffic from your AADDS endpoints and the Subnets" How exactly do I do this?
-
-&amp;#x200B;
-
-In AWS VPC cidr is [10.1.0.0/16](https://10.1.0.0/16) and both tunnels between AWS VPC and Azure Virtual Network are up and connected. I tried to contact the post author: "Justin Stokes" directly but can't find any emails for him. I cannot find a single online guide on how to set this up step by step along with the site to site ipsec setup. It would be very very helpful if someone can provide a video tutorial for this step by step from A-Z instead of leaving a chunk of the steps out of the guide.
-
-&amp;#x200B;
-
-The troubleshooting guide [here](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_troubleshooting.html) suggest that the firewall i.e. network security group is not allowing port 53TCP/UDP inbound for AD Connector. But I updated the networks security group as a test with a rule to allow any source, any destination and any port and still I'm getting the same error.
-## [8][One Lambda to Rule Them All - A Python Adventure in AWS (Feat. API Gateway)](https://www.reddit.com/r/aws/comments/fmffvo/one_lambda_to_rule_them_all_a_python_adventure_in/)
-- url: https://medium.com/@cottenio/one-lambda-to-rule-them-all-44401893123f
----
-
-## [9][Question: How to prevent direct linking from website.](https://www.reddit.com/r/aws/comments/fmevna/question_how_to_prevent_direct_linking_from/)
-- url: https://www.reddit.com/r/aws/comments/fmevna/question_how_to_prevent_direct_linking_from/
----
-Hello,
-I have an S3 bucket setup to serve a static site along with CloudFront. I have the below bucket policy and CORS configuration, and what I am wondering now is how do I prevent direct access to assets except for when they are loaded through the site? That is, if I go to mySite.tld I want to see mySite.tld/images/someImage.jpg displayed on it, but if I go directly to mySite.tld/images/someImage.jpg in my browser I'd like it to give back forbidden or such. Is that feasible?
-
-Motivation: I bought a commercial font and the license asks that I put such technical barriers in place.
-
-Thank you in advance for any advice / help you can give.
-
-Bucket Policy:
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "2",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ------------"
-      },
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::mySite.tld/*"
-    }
-  ]
-}
-```
-
-CORS Configuration:
-```
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"&gt;
-  &lt;CORSRule&gt;
-    &lt;AllowedOrigin&gt;https://mySite.tld&lt;/AllowedOrigin&gt;
-    &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
-  &lt;/CORSRule&gt;
-&lt;/CORSConfiguration&gt;
-```
-## [10][S3 Bucket Download Limit](https://www.reddit.com/r/aws/comments/fmiwaf/s3_bucket_download_limit/)
-- url: https://www.reddit.com/r/aws/comments/fmiwaf/s3_bucket_download_limit/
----
-Hi, I'm hoping you can help. I have an S3 bucket that I have created a TotalDownloaded metric, and now I'm trying to create an alarm that will go off if someone uses more than a monthly allotted amount of bandwidth but I don't see how to control the flow of data.
-
-I don't know how to tame that metric and make it go into an alarm state when the limit is hit within 30 days.

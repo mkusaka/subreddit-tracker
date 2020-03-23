@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - March 21, 2020](https://www.reddit.com/r/androiddev/comments/fme89v/app_feedback_thread_march_21_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/fme89v/app_feedback_thread_march_21_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/fnjcmy/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/fnjcmy/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - March 16, 2020](https://www.reddit.com/r/androiddev/comments/fjj4qu/weekly_questions_thread_march_16_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/fjj4qu/weekly_questions_thread_march_16_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - March 23, 2020](https://www.reddit.com/r/androiddev/comments/fni20d/weekly_questions_thread_march_23_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/fni20d/weekly_questions_thread_march_23_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,94 +31,101 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Corona-Tracker: App built in Kotlin using Architecture Components, Dagger2, Retrofit and Coroutines](https://www.reddit.com/r/androiddev/comments/fmyat4/coronatracker_app_built_in_kotlin_using/)
-- url: https://github.com/sidhuparas/Coronavirus-Tracker
+## [3][App with 1 Million downloads suspended because of the word "Corona"](https://www.reddit.com/r/androiddev/comments/fn0wzl/app_with_1_million_downloads_suspended_because_of/)
+- url: https://www.reddit.com/r/androiddev/comments/fn0wzl/app_with_1_million_downloads_suspended_because_of/
 ---
+I'm the creator of the Meme and Vine Soundboard which had nearly 1 Million downloads. Sadly it got suspended 2 days ago because I wasn't aware of the fact that anything which mentions "Corona" is getting suspended instantly.
 
-## [4][Feeling Hopeless Like I'll Never get Android development](https://www.reddit.com/r/androiddev/comments/fmttd5/feeling_hopeless_like_ill_never_get_android/)
-- url: https://www.reddit.com/r/androiddev/comments/fmttd5/feeling_hopeless_like_ill_never_get_android/
+The app contained more than 600 different meme sounds and one of them was unfortunately labeled "Corona time"  
+I would love to get the chance to remove that one string and upload an update. Sadly I can't because the app got suspended instantly.  
+My two employees and I rely on the App because it accounts for 90% of our income.  
+Without it we will probably have to close our small studio.  
+
+
+We are very sorry for unknowingly violating the guidelines.  
+Does someone has an idea on how to get our app back online (besides of writing a ticket)?   
+
+
+Aaron Waller,  
+FujiGames
+
+https://preview.redd.it/u0vbc8kuk8o41.jpg?width=750&amp;format=pjpg&amp;auto=webp&amp;s=7ce6594ce006faf7a75647ef03ab6551fb4f0847
+## [4][Anyone not get their admob payment this month?](https://www.reddit.com/r/androiddev/comments/fnixqf/anyone_not_get_their_admob_payment_this_month/)
+- url: https://www.reddit.com/r/androiddev/comments/fnixqf/anyone_not_get_their_admob_payment_this_month/
 ---
-Going through the android course on Udacity, currently on the Android architecture Components  and they're doing things I just really dont understand. As a complete noob between that course and looking at everyone posts here about new tech stacks that seem so complex I feel lost. Is this normal as a beginner? Does it get easier?
-
-
-Edit: for reference I'm a HS Senior, with a background in Python, Front end web dev, and learning Java (almost finished the course at school)
-
-Edit2: Thanks for the clarity fellas (and ladies), I'll take your reccomendations and just start making simple apps to get started. You're right it's just inherently hard to learn
-## [5][Introducing the Activity Result APIs](https://www.reddit.com/r/androiddev/comments/fmyhvv/introducing_the_activity_result_apis/)
-- url: https://adambennett.dev/2020/03/introducing-the-activity-result-apis/
+I received my payment on the 15th for IAP but have not received ad income. I'm assuming it's because of this covid business..
+## [5][Follow up: Transferring app to new Play account, what happens with purchase validation API calls?](https://www.reddit.com/r/androiddev/comments/fne1kx/follow_up_transferring_app_to_new_play_account/)
+- url: https://www.reddit.com/r/androiddev/comments/fne1kx/follow_up_transferring_app_to_new_play_account/
 ---
+As outlined in [this post](https://www.reddit.com/r/androiddev/comments/fmtab1/transferring_app_to_new_play_account_what_happens/) I was wondering when transferring apps between Google Play Developer accounts, **what happens with the existing Google API Console project?** Will in-app purchases just start failing until the new account creates and deploys its own API Console project? Does the old project get linked to the new account?
 
-## [6][Since the start of this week I'm seeing 50,000 uninstalling one of my apps DAILY with just 10,000 installs a day. I don't know why this is happening, anyone else seeing weird stats?](https://www.reddit.com/r/androiddev/comments/fmp6bz/since_the_start_of_this_week_im_seeing_50000/)
-- url: https://www.reddit.com/r/androiddev/comments/fmp6bz/since_the_start_of_this_week_im_seeing_50000/
+Well, I grit my teeth and jumped in. The transfer went through within about 8 hours (on a Sunday)... at which point we started seeing errors in the server logs and the Google API console. **Nobody could purchase our app anymore. We also couldn't process renewals.** Fantastic.
+
+Even though I added the new account owner as the owner of the Google Play Android Developer API project, Google did not transfer the link to the new account. This resulted in 403 errors saying:
+
+&gt;The project id used to call the Google Play Developer API has not been linked in the Google Play Developer Console.
+
+We unlinked the old account and linked the new one, and gave the correct service accounts access. Even after doing so, we still had errors.
+
+Finally, we added a dummy managed in-app purchase, inactive, to the apps under the new account. The errors went away, and we were able to then delete the dummy in-app purchase.
+
+Google really needs to do a better job with this process, but we seem to be back up and running!
+## [6][Is FAN banner placement practically impossible to use in mediation?](https://www.reddit.com/r/androiddev/comments/fngroe/is_fan_banner_placement_practically_impossible_to/)
+- url: https://www.reddit.com/r/androiddev/comments/fngroe/is_fan_banner_placement_practically_impossible_to/
 ---
-
-## [7][I made a playground app for my AnimatedBottomBar library](https://www.reddit.com/r/androiddev/comments/fmqe2k/i_made_a_playground_app_for_my_animatedbottombar/)
-- url: https://www.reddit.com/r/androiddev/comments/fmqe2k/i_made_a_playground_app_for_my_animatedbottombar/
+Hey, did anyone have luck using Facebook Audience Network banner ads with AdMob? I had &gt;200k impressions, 76% fill rate, 1,48 CTR and that didn’t pass FAN quality check. Support is useless, as they point to guidelines, which are useless.
+## [7][Getting downloads - but don't know what the users want!](https://www.reddit.com/r/androiddev/comments/fniw77/getting_downloads_but_dont_know_what_the_users/)
+- url: https://www.reddit.com/r/androiddev/comments/fniw77/getting_downloads_but_dont_know_what_the_users/
 ---
-Hey guys,
+Hi guys,
 
-I made an app for my library to test out all functionality and also generate the XML layout! I could possibly also turn this into a library :)! 
+I have a simple emoji translator app, in which you can select preset questions and get the emoji translations for it.
+I am getting around 10 downloads a day mostly from Russia &amp; Ukraine but from US &amp; UK as well. 
+Now all my users uninstall the app the same day. A couple of them have also left negative reviews and I am having a hard time understanding what is it that they want exactly.
 
-Image: https://i.imgur.com/LNPc4sq.png
-App: https://github.com/Droppers/AnimatedBottomBar/raw/master/media/demo.apk
-Library: https://github.com/Droppers/AnimatedBottomBar
-## [8][making app to stream content throw DLNA\UPNP like BubbleUpnp\XCast](https://www.reddit.com/r/androiddev/comments/fmyft5/making_app_to_stream_content_throw_dlnaupnp_like/)
-- url: https://www.reddit.com/r/androiddev/comments/fmyft5/making_app_to_stream_content_throw_dlnaupnp_like/
+Please help me out!
+
+The apps name is Travemo
+
+Thank you
+## [8][How do you get context into ViewModel?](https://www.reddit.com/r/androiddev/comments/fniftf/how_do_you_get_context_into_viewmodel/)
+- url: https://www.reddit.com/r/androiddev/comments/fniftf/how_do_you_get_context_into_viewmodel/
 ---
-hello there!
-
-i trying to make an app that can stream videos from phone to samsung smart tv,
-
-i tried using [Cling library](https://github.com/4thline/cling) and was successful only to start the stream but cant control the tv, no pause,seek, volume..
-
-i reserched everything there is on google about libraries and portocols (without going to deep with dlna signed integers..)
-
-from what i understand samsung use some internal custom version of dlna,
-
-so i found "[Smartview SDK](https://developer.samsung.com/smarttv/develop/extension-libraries/smart-view-sdk/android-sender-app.html)" on samsung developers website,
-
-guess what last update was in 2017/8, the documentaion is \~ok
-
-but i cant make it work (got some 300 error from tv).
-
-i did succeed to make "[hello world](https://smartviewsdk.github.io/API-GUIDE/android-api/docs/)" app that worked
-
-so i checked other apps on the palystore XCast and BubbleUpnp
-
-and they work flawlessly, stream,pause,seek everything...
-
-my next step is try reverse engineer with fiddler.
-
-can someone point to somethig useful in this topic? i really hate reverse engineering
-
-thank you!
-## [9][COVID-19 and App Review Times](https://www.reddit.com/r/androiddev/comments/fmyemc/covid19_and_app_review_times/)
-- url: https://www.reddit.com/r/androiddev/comments/fmyemc/covid19_and_app_review_times/
+Is extending AndroidViewModel and using application context the most efficient solution?
+## [9][Order list items in room db?](https://www.reddit.com/r/androiddev/comments/fnida1/order_list_items_in_room_db/)
+- url: https://www.reddit.com/r/androiddev/comments/fnida1/order_list_items_in_room_db/
 ---
-I updated two apps on Wednesday. They're still pending review on Google Play. In that same time, I've updated iOS versions of those same apps on the AppStore, and each has been ready in less than 24hrs.
+I've been trying to order list items in room database using `ItemTouchHelper`, where the item has a `position` property, I posted this before but I got no valid response [here](https://www.reddit.com/r/androiddev/comments/fcveue/is_there_a_way_to_update_a_column_of_entity_in/?utm_source=share&amp;utm_medium=web2x). Can someone please help me with this? 
 
-Last night at 1am, I updated the third iOS app. That took less than 8 hours to get to the AppStore.
-
-These are unprecedented times.
-## [10][Notes app repository comprises three independent modules, segregated into Beginner, Intermediate and Advanced category, Build using Room, MVVM, LiveData, Data-Binding, Dagger-2, Coroutines.](https://www.reddit.com/r/androiddev/comments/fmy7hm/notes_app_repository_comprises_three_independent/)
-- url: https://www.reddit.com/r/androiddev/comments/fmy7hm/notes_app_repository_comprises_three_independent/
+I spent a lot of time trying to implement it but it just doesn't work, I searched a lot but everyone is just implementing swiping and ignoring the dragging.
+## [10][Architecture for connecting touch events and openGLES (for pinch/scale, drag/pan)?](https://www.reddit.com/r/androiddev/comments/fnib8k/architecture_for_connecting_touch_events_and/)
+- url: https://www.reddit.com/r/androiddev/comments/fnib8k/architecture_for_connecting_touch_events_and/
 ---
-[room-demo-repo](https://github.com/Pavneet-Sing/room-demo-repo) which is a successor of [RoomDemo](https://github.com/Pavneet-Sing/RoomDemo).
+The effect is as in maps or a browser or an image viewer, where you can pinch-zoom and drag-pan.
+I do it by handling pinch/drag events, then scaling and translating a matrix accordingly, which is applied in a vertex shader.
 
-To get started from scratch, follow [Making a Notes App Using Room Database](https://www.pluralsight.com/guides/making-a-notes-app-using-room-database)
-## [11][How to make a chat app connect to a server?](https://www.reddit.com/r/androiddev/comments/fmvpfq/how_to_make_a_chat_app_connect_to_a_server/)
-- url: https://www.reddit.com/r/androiddev/comments/fmvpfq/how_to_make_a_chat_app_connect_to_a_server/
+It's all working -- but the communicating is very awkward: from `onScale`/`onDrag` (in a `GLSurfaceView`) to `draw` (in a `Draw` object). I've just hacked a chain of objects to do it (`mRenderer.sim.coords.draw`), but there's got to be a better way!
+
+Is there a standard way to do it? Thanks for any pointers!
+## [11][Android App- WiFi Password Show For rooted phones](https://www.reddit.com/r/androiddev/comments/fniawv/android_app_wifi_password_show_for_rooted_phones/)
+- url: https://www.reddit.com/r/androiddev/comments/fniawv/android_app_wifi_password_show_for_rooted_phones/
 ---
-I have a chat app designed, all the UI and the front-end is developed.
-But how do I connect it to an actual server? 
-Not using firebase, I want to use ejabberd. The place where I'm an intern are using AWS.
-What is the Java code to connect with the server?
-How do I go about ejabberd?
-## [12][Transferring app to new Play account, what happens with purchase validation API calls?](https://www.reddit.com/r/androiddev/comments/fmtab1/transferring_app_to_new_play_account_what_happens/)
-- url: https://www.reddit.com/r/androiddev/comments/fmtab1/transferring_app_to_new_play_account_what_happens/
+  You neer ROOT your device to use 'Wifi Password show'.Because on Android the wifi passwords are stored in "/data/misc/wifi/wpa\_supplicant.conf" or "/data/misc/wifi//WifiConfigStore.xml"  
+ **Wifi password show app features:**  
+Wifi password recovery  
+share wifi password  
+copy wifi password  
+Show wifi info  
+show wifi help section  
+Generate qr code/barcode with wifi ssd and wifi password details 
+
+ [https://play.google.com/store/apps/details?id=com.sbacham.srinu.showwifipassword2017](https://play.google.com/store/apps/details?id=com.sbacham.srinu.showwifipassword2017)
+## [12][AndroidX camera in production?](https://www.reddit.com/r/androiddev/comments/fnhnpy/androidx_camera_in_production/)
+- url: https://www.reddit.com/r/androiddev/comments/fnhnpy/androidx_camera_in_production/
 ---
-We are transferring an app to a new Google Play Developer Account because of Google's ridiculous policy of not being able to change the email address associated with the Play account owner.
+Hello, I hope you all doing well :) We are planning to switch [Fotoappart](https://github.com/RedApparat/Fotoapparat) library for camerax, due to dropped maintenance of that library and some errors occurring in phones like Nokia. [Here](https://github.com/android/camera-samples/issues/17#issuecomment-556661413) is an error example.    
 
-If you recall, in app purchases get validated server-side, and the server has a private key that is tied to a service account created in a Google API Console project (which is subsequently linked to the Google Play Developer account).
 
-When the app is transferred to the new Google Play Developer account, **what happens with the existing Google API Console project?** Will in-app purchases just start failing until the new account creates and deploys its own API Console project? Does the old project get linked to the new account?
+However, I doubt that it is still **production-ready** (*even though that API is beta now***)** and will not cause issues... Working with camera API, we have encountered various issues, like black previews, crashes, strange lifecycle issues ant etc.. Perhaps someone has been using androidx camera for a while and can share their experience?
+
+Also, maybe I should rather use [CameraView](https://github.com/natario1/CameraView)? Seems the most stable and maintanable currently, while CameraKit and Fotoapparat seems dead :(

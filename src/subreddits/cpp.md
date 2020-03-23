@@ -113,116 +113,162 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Forbidden C++ - was waiting for that GOTO moment](https://www.reddit.com/r/cpp/comments/fmq6a4/forbidden_c_was_waiting_for_that_goto_moment/)
-- url: https://www.youtube.com/watch?v=j0_u26Vpb4w
+## [3][Evaluating user defined logical expressions - booleval, small C++17 library](https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/)
+- url: https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/
 ---
+Hi there,
 
-## [4][C++20 &amp; Rust on Static vs Dynamic Generics](https://www.reddit.com/r/cpp/comments/fmx87z/c20_rust_on_static_vs_dynamic_generics/)
-- url: https://youtu.be/olM7o_oYML0
----
+For quite some time now, I have been implementing a small C++17 library [booleval](https://github.com/m-peko/booleval).
 
-## [5][c_str-correctness](https://www.reddit.com/r/cpp/comments/fmeeuq/c_strcorrectness/)
-- url: https://quuxplusone.github.io/blog/2020/03/20/c-str-correctness/
----
+**How** ***booleval*** **library helps you?**
 
-## [6][How to check if a graph is related or has 1 or more related components](https://www.reddit.com/r/cpp/comments/fmzus7/how_to_check_if_a_graph_is_related_or_has_1_or/)
-- url: https://www.reddit.com/r/cpp/comments/fmzus7/how_to_check_if_a_graph_is_related_or_has_1_or/
----
-    #include &lt;conio.h&gt;
-    #include&lt;iostream.h&gt;
-    #include&lt;stodio.h&gt;
-    int a[20][20];
-    int viz[20];
-    int i,n,j,pl,m,x,y,ok;
-    void parc_adancime(int pl)
-    {int j;
-    viz[pl]=1;
-    for(i=1;j&lt;=n,j++)
-        if(a[pl][j]==1)&amp;&amp;(viz[j]==0)
-    parc_adancime(j);}
-    void main ()
-    cout&lt;&lt;"n,m";cin&gt;&gt;n&gt;&gt;m;
-    for(i=1;i&lt;=m;i++)
-    {cout&lt;&lt;"x,y";cin&gt;&gt;x&gt;&gt;y;
-    a[x][y]=1;a[y][x]=1;}
-    for(i=1;i&lt;=m,i++) viz[i]=0;
-    cout&lt;&lt;"dati nodul de plecare" "pl";
-    cin&gt;&gt;pl;
-    parc_adancime(pl);
-    ok=0;
-    for(i=1,i&lt;=m,i++)
-    if(viz[i]==0) ok=1;
-    if(ok) cout&lt;&lt;"graful este format din mai multe elemente conexe";
-    else cout&lt;&lt;"graful este conex";
-    getche();}
-    
-    
+*booleval* library enables you to define logical expressions like *field\_a foo and field\_b 123*. Once you defined this expression, expression tree is being built by using recursive descent parser. Once the tree is built, you can pass a map of fields representing your object like:
 
-I need to edit this and make it work in C++ and run it in code blocks
-## [7][cppgit2: Git for Modern C++ (A libgit2 Wrapper Library)](https://www.reddit.com/r/cpp/comments/fmzu5x/cppgit2_git_for_modern_c_a_libgit2_wrapper_library/)
-- url: https://github.com/p-ranav/cppgit2
----
-
-## [8][cmodule - unintrusive CMake dependency management](https://www.reddit.com/r/cpp/comments/fmy5zh/cmodule_unintrusive_cmake_dependency_management/)
-- url: /r/cmake/comments/fkpj1u/cmodule_unintrusive_cmake_dependency_management/
----
-
-## [9][How can anyone use std::chrono::steady_clock portably? It seems to be very broken (under-specified).](https://www.reddit.com/r/cpp/comments/fmosnb/how_can_anyone_use_stdchronosteady_clock_portably/)
-- url: https://www.reddit.com/r/cpp/comments/fmosnb/how_can_anyone_use_stdchronosteady_clock_portably/
----
-I'm writing a cross-platform real-time audio/video processing library and I need a clock with some guarantees:
-
-  1. monotonic
-  2. with at least 1 microsecond resolution (how frequently the value changes)
-  3. always increasing even if the thread sleeps
-
-Looking over at cppreference.com I see that [`std::chrono::steady_clock`](https://en.cppreference.com/w/cpp/chrono/steady_clock) provides the guarantee #1.
-
-However, `std::chrono::steady_clock` mentions no minimal guaranteed resolution. [There are horror stories on stackoverflow](https://stackoverflow.com/questions/29551126) saying that their `std::chrono::steady_clock` has only 10ms resolution. Something like:
-
-       static_assert(std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(typename std::chrono::steady_clock::duration(1)).count() &lt;= 1, "Your C++ compiler doesn't provide a precise enough steady_clock.");
-
-might do the trick, as long as the C++ compiler is actually aware of its clock resolution. It won't work if it reports 1ns resolution at compile time but is actually 10ms at run time. So #2 falls short as the clock resolution is actually not defined - neither the minimal resolution is mandated by the spec, nor you can reliably check it at compile time.
-
-Reading [this stack overflow thread](https://stackoverflow.com/questions/38252022) it appears like the C++ specification doesn't prohibit `std::chrono::steady_clock` to be stopped when the thread sleeps, similar to how `clock()` behaves. While it appears that no common C++ compiler implementation does this, it's also not prohibited, so relying on this sounds like undefined behavior.
-
-So `std::chrono::steady_clock` falls short in #2 and #3. Isn't this really bad? With so much being left up to the compiler implementations, how can anyone use `std::chrono::steady_clock` portably at all? It's pretty much broken for a lot of use cases. Sure, you could probably run some tests at your program startup, to check if clock lies about the precision and if it ticks during thread sleeps, but such startup diagnostics have no place in a mere library. I now have to implement my own cross-platform OS clock abstraction since system APIs provide stricter clock guarantees than `std::chrono` does.
-## [10][Optimizing static variable initialization and uses for constexpr / consteval and constinit.](https://www.reddit.com/r/cpp/comments/fmg2m6/optimizing_static_variable_initialization_and/)
-- url: https://felipepiovezan.gitlab.io/blog/const_constinit_constexpr_consteval/
----
-
-## [11][Would you pick C++ for your own pet project in 2020?](https://www.reddit.com/r/cpp/comments/fmaezz/would_you_pick_c_for_your_own_pet_project_in_2020/)
-- url: https://www.reddit.com/r/cpp/comments/fmaezz/would_you_pick_c_for_your_own_pet_project_in_2020/
----
-I heard many times that one shouldn’t start any new project in C++ these days. Comments like “I’m writing in C++ for 20+ years and I hate that language” seem to be pretty common here in reddit. While you may be capped in C++ because of existing code base at work / current project and it may be too late to switch to another language, would you still choose C++ for your project in 2020? Considering that C++ is widely used in your type of projects, e.g if you’d be like to write your own 2D game library to use it for your 2D game of your dream.
-
-I have an idea for 2D game since 2017 and writing 2D framework from scratch is the best option (2D multiplayer Rimworld-alike, could send .docx description in Russian if interesting). Soon I will have time for making it, but I don’t want to regret with language choice in future. Want to hear your opinions, thanks!
-## [12][Need to get the users input.. Anyways thats possible here? input for if its a male or is it tall](https://www.reddit.com/r/cpp/comments/fmxubm/need_to_get_the_users_input_anyways_thats/)
-- url: https://www.reddit.com/r/cpp/comments/fmxubm/need_to_get_the_users_input_anyways_thats/
----
-    #include &lt;iostream&gt;
-    #include &lt;cmath&gt;
-    using namespace std;
-    
-    int main()
     {
+        "field_a": "foo",
+        "field_b": 123
+    }
+
+This will evaluate to *true* since the condition from the logical expression is satisfied.
+
+On the contrary, map of fields like:
+
+    {
+        "field_a": "bar",
+        "field_b": 123
+    }
+
+will be evaluated to *false* since the AND logical operator is not satisfied.
+
+**What is the use case?**
+
+Let's say you have large number of packets coming through the network interface and you want to filter them out by the following logical expression *port 55* *or port 32*. Packets with port 55 or port 32 will pass the filter, and maybe those will be written out to the file. Other packets will be ignored.
+
+**Supported data types:**
+
+* string
+* integer
+* float
+* double
+* ...
+
+&amp;#x200B;
+
+Please let me know what you think about this library:
+
+* are there any other libraries that I can include in my future benchmark?
+* is there something to do to improve performance of evaluation?
+* any feedback, suggestion is welcome :)
+* don't forget to give it a star on Github ;)
+
+Thanks in advance!!!
+## [4][Modern CMake tutorials, part1: CMake basics](https://www.reddit.com/r/cpp/comments/fn0lv6/modern_cmake_tutorials_part1_cmake_basics/)
+- url: https://www.siliceum.com/en/blog/post/cmake_01_cmake-basics
+---
+
+## [5][uvw v2.4.0 is out: a header-only wrapper for libuv written in modern C++](https://www.reddit.com/r/cpp/comments/fn751f/uvw_v240_is_out_a_headeronly_wrapper_for_libuv/)
+- url: https://github.com/skypjack/uvw
+---
+
+## [6][If you like std::span you'd like a new poly_span](https://www.reddit.com/r/cpp/comments/fn937i/if_you_like_stdspan_youd_like_a_new_poly_span/)
+- url: https://www.reddit.com/r/cpp/comments/fn937i/if_you_like_stdspan_youd_like_a_new_poly_span/
+---
+I like span and use it in my code (so far from abseil). I really miss derived to base class conversion feature which is provided by any pointer. I'd love to have functions specifying an interface, but taking containers of implementation classes directly, kind of Java-like type erasure.
+
+    int countHungryAnimals(span::poly_span&lt;const Animal&gt; animals);
+    std::vector&lt;Dog&gt; dogs = getDogs();
+    std::array&lt;Cat, 5&gt; cats = getCats();
+    const int hungryAnimanls = countHungryAnimals(dogs) + countHungryAnimals(cats);
+
+Please welcome a new light-weight view poly\_span. Poly is for polymorphism. The interface is almost the same as for std::span. There is no dynamic allocation involved, just pointer arithmetic. Header-only lib, C++11 and newer.
+
+Please check it out on [github](https://github.com/mrshurik/poly_span) and let me know what do you think.
+## [7][Template literals to interpolate variables and expressions into strings](https://www.reddit.com/r/cpp/comments/fnix8h/template_literals_to_interpolate_variables_and/)
+- url: https://www.reddit.com/r/cpp/comments/fnix8h/template_literals_to_interpolate_variables_and/
+---
+lately working heavily on web and databases with typescript/javascript, there we have template literals which make working with sql and json much easier. On CPP side I work with nlohmann::json which works great though creating a json string does not look natural :D
+
+same goes for SQL...
+
+what would be needed to do to C++ to allow this behavior?
+
+example:
+
+    #include "mylib/myjson.hpp" // namespace mylib::json
+    #include "mylib/mysql.hpp"  // namespace mylib::sql
+    #include &lt;format&gt;
+    #include &lt;iostream&gt;
+    #include &lt;string&gt;
+    #include &lt;sstream&gt;
     
-         bool IsMale = true;
-         bool IsTall = true;
+    int main() {
     
-         if(IsMale, IsTall){
-            cout  &lt;&lt; "You are a tall male";
-           } else if(!IsMale &amp;&amp; !IsTall){
-             cout &lt;&lt; "Your A Short Female";
-           }else if(!IsMale &amp;&amp; IsTall){
-           cout &lt;&lt; "You Are A Tall Female";
-           }else if(IsMale &amp;&amp; !IsTall){
-           cout &lt;&lt; "You Are A short male";
-           }else{
-                cout &lt;&lt; "You are not a male";
+        // SQL
+        const std::string table = static_cast&lt;int&gt;(rand()%2) ? "manager" : "engineer";
+        const uint32_t salary =200'000u;
+        // mylib::sql should take care of serializing and do typechecking
+        mylib::sql sql_query(`
+                SELECT * FROM ${table}
+                WHERE salary &lt;=${salary}
+            `);
+    
+        // JSON
+        struct User {
+            std::string username;
+            uint8_t age;
+        };
+    
+        User user{.username= "hans",.age= 99};
+        // mylib::json should take care of serializing this to std::string
+        mylib::json json_object(`
+            {
+                username: ${user.username},
+                age: ${user.age}
             }
+        `);
     
+        // mylib::json should take care of serializing this to std::string and do typechecking
+        const std::string serialized_json1 = `
+        {
+            username: ${user.username},
+            age: ${user.age}
+        }`_mylib_json;
     
+        // today with fmt
+        const std::string sereliazed_json2 = std::format(R"({{
+            username: {},
+            age: {}
+        }})",user.username,user.age  ); 
+    
+        // today with iostream
+        std::stringstream ss;
+        ss &lt;&lt;
+            "{" &lt;&lt;
+                "username : " &lt;&lt; user.name &lt;&lt; ","&lt;&lt;
+                "age: " &lt;&lt; user.age &lt;&lt; 
+            "}";
     
         return 0;
     }
+## [8][C++20 &amp; Rust on Static vs Dynamic Generics](https://www.reddit.com/r/cpp/comments/fmx87z/c20_rust_on_static_vs_dynamic_generics/)
+- url: https://youtu.be/olM7o_oYML0
+---
+
+## [9][Trip report: February 2020 ISO C++ committee meeting, Prague](https://www.reddit.com/r/cpp/comments/fn5s4f/trip_report_february_2020_iso_c_committee_meeting/)
+- url: https://timur.audio/trip-report-february-2020-iso-c-committee-meeting-prague
+---
+
+## [10][ANNOUNCE: yomm2 1.1.0 has been released - open (multi-) methods in a C++17 library](https://www.reddit.com/r/cpp/comments/fn2iqc/announce_yomm2_110_has_been_released_open_multi/)
+- url: https://www.reddit.com/r/cpp/comments/fn2iqc/announce_yomm2_110_has_been_released_open_multi/
+---
+yomm2 is a library that implements open (multi-) methods for C++17. The library is fast (dispatching a 1-method takes only \~30% more time than the equivalent virtual function call) and non-intrusive. It is available here:  [https://github.com/jll63/yomm2](https://github.com/jll63/yomm2) I presented it at CppCon 2018, you can view the recording here:  [https://www.youtube.com/watch?v=xkxo0lah51s](https://www.youtube.com/watch?v=xkxo0lah51s) 
+
+In addition to minor fixes and improvements, the major feature of this release is support for friend and inline methods.
+## [11][cppgit2: Git for Modern C++ (A libgit2 Wrapper Library)](https://www.reddit.com/r/cpp/comments/fmzu5x/cppgit2_git_for_modern_c_a_libgit2_wrapper_library/)
+- url: https://github.com/p-ranav/cppgit2
+---
+
+## [12][High performance SQLite, PostgreSQL, MySQL sync &amp; async drivers](https://www.reddit.com/r/cpp/comments/fn31cp/high_performance_sqlite_postgresql_mysql_sync/)
+- url: https://github.com/matt-42/lithium/tree/master/libraries/sql
+---
+

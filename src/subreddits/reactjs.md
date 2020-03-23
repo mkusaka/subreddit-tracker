@@ -111,73 +111,63 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Prettier 2.0](https://www.reddit.com/r/reactjs/comments/fmnfn0/prettier_20/)
-- url: https://prettier.io/blog/2020/03/21/2.0.0.html
+## [3][React Lessons. Lesson 11. Pt.2. Redux Middlewares](https://www.reddit.com/r/reactjs/comments/fnillj/react_lessons_lesson_11_pt2_redux_middlewares/)
+- url: https://blog.soshace.com/react-lesson-11-pt2/
 ---
 
-## [4][Seven examples to test your React components with Jest and @testing-library](https://www.reddit.com/r/reactjs/comments/fmyoba/seven_examples_to_test_your_react_components_with/)
-- url: https://mintel.me/testing-react-components-with-jest-and-testing-library/
+## [4][Compound Components in React w/Styled Components](https://www.reddit.com/r/reactjs/comments/fn071f/compound_components_in_react_wstyled_components/)
+- url: https://www.youtube.com/watch?v=nHMAMS38x-E
 ---
 
-## [5][A help needed with SEO with React.js](https://www.reddit.com/r/reactjs/comments/fmyecd/a_help_needed_with_seo_with_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/fmyecd/a_help_needed_with_seo_with_reactjs/
----
-Hey everyone,
-
-I'm a backend dev, and I'm askin for help, we have a web app at my job that was made with react.js as a frontend and Wordpress headless cms as a backend.
-
-We came into the problem of SEO, we heard about too many things like using [prerender.io](https://prerender.io) , or build all over again with [next.js](https://nextjs.org/) or using [hydrate()](https://reactjs.org/docs/react-dom.html#hydrate) function built-in react.js itself, we are very confused about what to use or what to do right now, we don't have much experience over there.
-
-So what do you think or you recommend if there is something better.
-
-Any help would be much appreciated
-## [6][I've created a little React package for animated hamburger icons. 🍔 Any type of feedback is really appreciated.](https://www.reddit.com/r/reactjs/comments/fmd36e/ive_created_a_little_react_package_for_animated/)
-- url: https://hamburger-react.netlify.com
+## [5][Converting an HTML Navigation Menu to use React/Styled Components](https://www.reddit.com/r/reactjs/comments/fnigk0/converting_an_html_navigation_menu_to_use/)
+- url: https://www.youtube.com/watch?v=q0cvyGm3nag
 ---
 
-## [7][Open source service worker fund site](https://www.reddit.com/r/reactjs/comments/fmylf1/open_source_service_worker_fund_site/)
-- url: https://www.reddit.com/r/reactjs/comments/fmylf1/open_source_service_worker_fund_site/
+## [6][Should I use bootstrap or materialize UI with react?](https://www.reddit.com/r/reactjs/comments/fnf1l9/should_i_use_bootstrap_or_materialize_ui_with/)
+- url: https://www.reddit.com/r/reactjs/comments/fnf1l9/should_i_use_bootstrap_or_materialize_ui_with/
 ---
-I am building a site that will allow users to donate money, and then distribute this to service workers who have lost their jobs. Anyone who would like to help would be greatly appreciated as this needs to launch ASAP. https://github.com/Jaseyacey/ServiceWorkerFund
-## [8][Server-Side Rendering in React using express.js](https://www.reddit.com/r/reactjs/comments/fmzk90/serverside_rendering_in_react_using_expressjs/)
-- url: https://medium.com/javascript-in-plain-english/server-side-rendering-in-react-expressjs-8a87af0edba4
+I have mostly been a backend developer but decided to learn reactjs, and since then I have absolutely loved this framework. My question is that as a beginner should I learn bootstrap or materialize to style my components.
+## [7][A twin-looking clone of Google Keep in ReactJS, GraphQL &amp; Golang with dark theme and more](https://www.reddit.com/r/reactjs/comments/fnj541/a_twinlooking_clone_of_google_keep_in_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/fnj541/a_twinlooking_clone_of_google_keep_in_reactjs/
+---
+Hello, Recently completed this twin-looking clone of Google Keep written in ReactJS with exact colours, margins, paddings etc. but with reduced feature-set without collaboration, archiving and likes. The UI is built with ***MaterialUI Components*** themed to match Google's *Dark/Light* theme. 
+
+You can create Notes, assign colours, change the theme, attach labels and filter accordingly. Also has a custom login/logout implementation via ***AuthBoss*** library for **Golang**.  It has a real-time update feature, wherein you can create/delete notes in different tabs, the updates are pushed from the server via *GraphQL's Subscriptions.* 
+
+Backend is a ***GraphQL*** server written in ***Golang*** using ***gqlgen***. The user logon &amp; data is persisted in an ***SQLite*** DB file and uses ***GORM*** library. 
+
+**Github Project:** [https://github.com/anselm94/googlekeepclone](https://github.com/anselm94/googlekeepclone)
+
+**Live Demo:** [https://googlekeep-anselm94.herokuapp.com/](https://googlekeep-anselm94.herokuapp.com/)
+
+I've deployed this entire project as a ***Docker*** container in the **Heroku** platform. Because of free-tier limitation, the container will be killed after *30 mins of inactivity*. All the data will be lost, as DB is an SQLite file inside the container.
+## [8][Thoughts on Grommet](https://www.reddit.com/r/reactjs/comments/fnimdc/thoughts_on_grommet/)
+- url: https://www.reddit.com/r/reactjs/comments/fnimdc/thoughts_on_grommet/
+---
+I have been using Grommet for the last 8 months or so in my first React project.  I have been very happy with it so far but haven't tried anything else yet as this has been a very long first project (React web app is jist one part). What is the general consensus on this sub from those that have tried it? Do other libraries like Material UI offer significantly more?
+## [9][What's the most convenient backend as a service for my app?](https://www.reddit.com/r/reactjs/comments/fngqjs/whats_the_most_convenient_backend_as_a_service/)
+- url: https://www.reddit.com/r/reactjs/comments/fngqjs/whats_the_most_convenient_backend_as_a_service/
+---
+I'm creating a blog type of application where I do not want to use any cms. I want to be able to log in and then edit things /articles on the website. First thought is firebase. Anything else? I'm looking to build somewhat functionality like with Tina CMS for authorised user.
+## [10][is it normal having components with more than 50 props?](https://www.reddit.com/r/reactjs/comments/fnhnfr/is_it_normal_having_components_with_more_than_50/)
+- url: https://www.reddit.com/r/reactjs/comments/fnhnfr/is_it_normal_having_components_with_more_than_50/
+---
+I'm working on a CRM for a big hotel brand at my job and we have some components that are massive, they are mostly forms, and every input is a component with some kind of logic, so we have parent components that have more than 50 props in almost every page. I fear it's getting way to complicated and we are doing something wrong.
+## [11][Which package does the following effect ?](https://www.reddit.com/r/reactjs/comments/fni1u3/which_package_does_the_following_effect/)
+- url: https://www.reddit.com/r/reactjs/comments/fni1u3/which_package_does_the_following_effect/
+---
+I know that this is little bit more complicated then it sounds but I just want an advice about which tools will help me make an app that functions this way :
+
+User chooses a case (let's say iPhone).
+
+User uploads a photo / gives a link to a photo.
+
+The photo covers the back of the case that the user chosen.
+
+(Like this :  [https://www.case-custom.com/custom-iphone-xs-case.html](https://www.case-custom.com/custom-iphone-xs-case.html)  )
+
+I want to make a similar web app by my own, which tools would you guys recommend? Thanks!
+## [12][Integrate react and asp.net core 3.1 app using SQLite database with the help of EF core](https://www.reddit.com/r/reactjs/comments/fnhmze/integrate_react_and_aspnet_core_31_app_using/)
+- url: https://dotnetdetail.net/integrate-react-and-asp-net-core-3-1-app/
 ---
 
-## [9][YourSpotify, self hosted music dashboard using React and ExpressJS](https://www.reddit.com/r/reactjs/comments/fmyylt/yourspotify_self_hosted_music_dashboard_using/)
-- url: /r/selfhosted/comments/fjjw0j/yourspotify/
----
-
-## [10][useWorker() simple hook to execute your functions on a separate thread](https://www.reddit.com/r/reactjs/comments/fmy31b/useworker_simple_hook_to_execute_your_functions/)
-- url: https://www.reddit.com/r/reactjs/comments/fmy31b/useworker_simple_hook_to_execute_your_functions/
----
-GitHub: [https://github.com/alewin/useWorker](https://github.com/alewin/useWorker)
-
-Documentation: [https://useworker.js.org/docs/api-useworker](https://useworker.js.org/docs/api-useworker)
-## [11][Find a course buddy during quarantine!](https://www.reddit.com/r/reactjs/comments/fmiv8q/find_a_course_buddy_during_quarantine/)
-- url: https://www.reddit.com/r/reactjs/comments/fmiv8q/find_a_course_buddy_during_quarantine/
----
-Hi! One of the best things you can do during quarantine is learning a new framework, programming language or something entirely different.
-
-But doing these courses feels kinda lonely and often you just stop doing them so I thought I’d create a site where you can find buddies to do the same course with (frankly this quarantine is becoming really boring).
-
-The idea is that you talk regularly about your progress and problems you're facing so you can learn and grow together.
-
-If you’re interested, take a look at [Cuddy](https://cuddy.netlify.com/) and sign up for the newsletter!
-
-The current tech stack is: React, TypeScript, Next, Heroku, Netlify (landing page)
-
-If enough people sign up I’ll be happy to implement the whole thing this weekend, anyone want to join me building it?
-
-Also if you've got questions or feature ideas please do let me know in the comments! :)
-
-**Let's destroy this virus together and take it as an opportunity to get better at what we love!**
-## [12][Creating a card game](https://www.reddit.com/r/reactjs/comments/fmwx96/creating_a_card_game/)
-- url: https://www.reddit.com/r/reactjs/comments/fmwx96/creating_a_card_game/
----
-I'm creating a card game for me and my friends to play online but I need a little help
-
-The code can bee found from here:[https://github.com/pete02/Korttipeli\_react](https://github.com/pete02/Korttipeli_react)
-
-The picture of ui can bee seen in here:[https://imgur.com/a/bREDbFa](https://imgur.com/a/bREDbFa). It also explains what I want to achieve. Basically I want to have a card, that is visible to all players, and every player has a button to change that card. Once the button is clicked, it changes the card on all players. Also If you have the time and energy, I'd appreciate if you could also help me to create something, that keeps track of whose turn it is
-
-Thank you everyone in advance

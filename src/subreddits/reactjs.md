@@ -111,63 +111,74 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Lessons. Lesson 11. Pt.2. Redux Middlewares](https://www.reddit.com/r/reactjs/comments/fnillj/react_lessons_lesson_11_pt2_redux_middlewares/)
-- url: https://blog.soshace.com/react-lesson-11-pt2/
+## [3][I've created a small package where you can link similar components together to animate them when changing views. Feedback appreciated. 🙌](https://www.reddit.com/r/reactjs/comments/fno2q4/ive_created_a_small_package_where_you_can_link/)
+- url: https://motion-layout.azurewebsites.net/
 ---
 
-## [4][Compound Components in React w/Styled Components](https://www.reddit.com/r/reactjs/comments/fn071f/compound_components_in_react_wstyled_components/)
-- url: https://www.youtube.com/watch?v=nHMAMS38x-E
+## [4][Undefinend response with axios](https://www.reddit.com/r/reactjs/comments/fo3w3w/undefinend_response_with_axios/)
+- url: https://www.reddit.com/r/reactjs/comments/fo3w3w/undefinend_response_with_axios/
+---
+Hi I have a question about the following code, this code makes a rest call with axios to a server, the value returns correctly from the node.js server, that is, if I test the call with postman I have a response with the integer value however in this case the value is undefined what is it due to?
+
+ `axios.post(apiBaseUrl+'/utente/login', payload,header).then(function (response) {            console.log("\n Valore di response.data:"+response.data); //Undefinend?            }`
+## [5][GitHub - appwrite/appwrite: End-to-end backend as a service for web and mobile 🚀](https://www.reddit.com/r/reactjs/comments/fo47ij/github_appwriteappwrite_endtoend_backend_as_a/)
+- url: https://www.reddit.com/r/reactjs/comments/fo47ij/github_appwriteappwrite_endtoend_backend_as_a/
+---
+I am super excited to share my first major open source project called Appwrite and I would really appreciate your feedbacks. 🙏
+
+Appwrite is an open-source platform for developers that abstracts and simplifies common and repeating development tasks behind REST APIs, in order to help developers build apps way faster.
+
+Appwrite has many cool services like a DB which integrate directly into clients, file upload and file cropping management, user authentication (OAuth support, password recovery and more) and many more cool services that all try to make developers life a lot more easy and less frustrating.
+
+The best way to learn more is to visit the project website and docs (https://appwrite.io/docs) or to check out the GitHub repository (https://github.com/appwrite/appwrite).
+
+The project is just at the start of its way, any feedback will be very much appreciated! ❤️
+## [6][Building a Real-Time Chat App with React and Firebase | CSS-Tricks](https://www.reddit.com/r/reactjs/comments/fnx5n7/building_a_realtime_chat_app_with_react_and/)
+- url: https://css-tricks.com/building-a-real-time-chat-app-with-react-and-firebase/
 ---
 
-## [5][Converting an HTML Navigation Menu to use React/Styled Components](https://www.reddit.com/r/reactjs/comments/fnigk0/converting_an_html_navigation_menu_to_use/)
-- url: https://www.youtube.com/watch?v=q0cvyGm3nag
+## [7][Most popular 25+ JS repositories in March 2020](https://www.reddit.com/r/reactjs/comments/fo54qk/most_popular_25_js_repositories_in_march_2020/)
+- url: https://kriss.io/most-popular-25-js-repositories-in-march-2020/
 ---
 
-## [6][Should I use bootstrap or materialize UI with react?](https://www.reddit.com/r/reactjs/comments/fnf1l9/should_i_use_bootstrap_or_materialize_ui_with/)
-- url: https://www.reddit.com/r/reactjs/comments/fnf1l9/should_i_use_bootstrap_or_materialize_ui_with/
+## [8][Best practices for calling and setting state within a function](https://www.reddit.com/r/reactjs/comments/fo4vj6/best_practices_for_calling_and_setting_state/)
+- url: https://www.reddit.com/r/reactjs/comments/fo4vj6/best_practices_for_calling_and_setting_state/
 ---
-I have mostly been a backend developer but decided to learn reactjs, and since then I have absolutely loved this framework. My question is that as a beginner should I learn bootstrap or materialize to style my components.
-## [7][A twin-looking clone of Google Keep in ReactJS, GraphQL &amp; Golang with dark theme and more](https://www.reddit.com/r/reactjs/comments/fnj541/a_twinlooking_clone_of_google_keep_in_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/fnj541/a_twinlooking_clone_of_google_keep_in_reactjs/
+Hey guys, what is the best practice, in terms of performance, for setting and calling variables in a components state?
+
+Let's say I have a function that continuously calls and modifies the same variable. Is it better to call it from State once, use it within the function, and then update the state at the end... Or is it just as fast to continuously refer to the state variable (this.state.variable and this.setState(variable: update)) within the function?
+## [9][Why doesn't the react team update their official getting started guide to one that shows hooks more prominently?](https://www.reddit.com/r/reactjs/comments/fnzn6n/why_doesnt_the_react_team_update_their_official/)
+- url: https://www.reddit.com/r/reactjs/comments/fnzn6n/why_doesnt_the_react_team_update_their_official/
 ---
-Hello, Recently completed this twin-looking clone of Google Keep written in ReactJS with exact colours, margins, paddings etc. but with reduced feature-set without collaboration, archiving and likes. The UI is built with ***MaterialUI Components*** themed to match Google's *Dark/Light* theme. 
+Pretend that you're a new react user reading the initial docs [here](https://reactjs.org/docs/hello-world.html) or following their official [tutorial](https://reactjs.org/tutorial/tutorial.html), I think most new users would get the idea that Class components are the way to go and hooks just some weird advanced features.
 
-You can create Notes, assign colours, change the theme, attach labels and filter accordingly. Also has a custom login/logout implementation via ***AuthBoss*** library for **Golang**.  It has a real-time update feature, wherein you can create/delete notes in different tabs, the updates are pushed from the server via *GraphQL's Subscriptions.* 
-
-Backend is a ***GraphQL*** server written in ***Golang*** using ***gqlgen***. The user logon &amp; data is persisted in an ***SQLite*** DB file and uses ***GORM*** library. 
-
-**Github Project:** [https://github.com/anselm94/googlekeepclone](https://github.com/anselm94/googlekeepclone)
-
-**Live Demo:** [https://googlekeep-anselm94.herokuapp.com/](https://googlekeep-anselm94.herokuapp.com/)
-
-I've deployed this entire project as a ***Docker*** container in the **Heroku** platform. Because of free-tier limitation, the container will be killed after *30 mins of inactivity*. All the data will be lost, as DB is an SQLite file inside the container.
-## [8][Thoughts on Grommet](https://www.reddit.com/r/reactjs/comments/fnimdc/thoughts_on_grommet/)
-- url: https://www.reddit.com/r/reactjs/comments/fnimdc/thoughts_on_grommet/
+Is there any reason to start learning with class components when almost everyone agrees that hooks are the prefered way to write code in react?
+## [10][Formik / Uncontrolled input of elements with dynamic (api fetched) names?](https://www.reddit.com/r/reactjs/comments/fo3mlh/formik_uncontrolled_input_of_elements_with/)
+- url: https://www.reddit.com/r/reactjs/comments/fo3mlh/formik_uncontrolled_input_of_elements_with/
 ---
-I have been using Grommet for the last 8 months or so in my first React project.  I have been very happy with it so far but haven't tried anything else yet as this has been a very long first project (React web app is jist one part). What is the general consensus on this sub from those that have tried it? Do other libraries like Material UI offer significantly more?
-## [9][What's the most convenient backend as a service for my app?](https://www.reddit.com/r/reactjs/comments/fngqjs/whats_the_most_convenient_backend_as_a_service/)
-- url: https://www.reddit.com/r/reactjs/comments/fngqjs/whats_the_most_convenient_backend_as_a_service/
----
-I'm creating a blog type of application where I do not want to use any cms. I want to be able to log in and then edit things /articles on the website. First thought is firebase. Anything else? I'm looking to build somewhat functionality like with Tina CMS for authorised user.
-## [10][is it normal having components with more than 50 props?](https://www.reddit.com/r/reactjs/comments/fnhnfr/is_it_normal_having_components_with_more_than_50/)
-- url: https://www.reddit.com/r/reactjs/comments/fnhnfr/is_it_normal_having_components_with_more_than_50/
----
-I'm working on a CRM for a big hotel brand at my job and we have some components that are massive, they are mostly forms, and every input is a component with some kind of logic, so we have parent components that have more than 50 props in almost every page. I fear it's getting way to complicated and we are doing something wrong.
-## [11][Which package does the following effect ?](https://www.reddit.com/r/reactjs/comments/fni1u3/which_package_does_the_following_effect/)
-- url: https://www.reddit.com/r/reactjs/comments/fni1u3/which_package_does_the_following_effect/
----
-I know that this is little bit more complicated then it sounds but I just want an advice about which tools will help me make an app that functions this way :
+Hello
 
-User chooses a case (let's say iPhone).
+I am fetching list of checkboxes from API which in typescript looks like that:
 
-User uploads a photo / gives a link to a photo.
+    product: { list: { [key: string]: boolean } }
 
-The photo covers the back of the case that the user chosen.
+So, while using Formik, my fiend name varies and are dynamically created. Some examples:
 
-(Like this :  [https://www.case-custom.com/custom-iphone-xs-case.html](https://www.case-custom.com/custom-iphone-xs-case.html)  )
+    product.list.users
+    product.list.parts
+    product.list.utils
 
-I want to make a similar web app by my own, which tools would you guys recommend? Thanks!
-## [12][Integrate react and asp.net core 3.1 app using SQLite database with the help of EF core](https://www.reddit.com/r/reactjs/comments/fnhmze/integrate_react_and_aspnet_core_31_app_using/)
-- url: https://dotnetdetail.net/integrate-react-and-asp-net-core-3-1-app/
+However, since Formik's Form initial values cannot be fetched before the API request happens (UX), I really don't have initial values for these checkboxes (users, parts, utils). Therefore I am getting an error about transitioning from uncontrolled input to controlled ones.
+
+Anything I can do about it?
+
+&amp;#x200B;
+## [11][I decided to try some new toys, (useContext and Parcel), while building something useful](https://www.reddit.com/r/reactjs/comments/fo3hqu/i_decided_to_try_some_new_toys_usecontext_and/)
+- url: https://cazzer.github.io/covid-curves/
 ---
 
+## [12][A blogging app using react.js and django.](https://www.reddit.com/r/reactjs/comments/fo3gu5/a_blogging_app_using_reactjs_and_django/)
+- url: https://www.reddit.com/r/reactjs/comments/fo3gu5/a_blogging_app_using_reactjs_and_django/
+---
+I want to create a blogging app using react.js in the frontend and want to use Django and postgres in the backend. What all are the things I need to keep in mind while integrating the frontend and the backend. The app will include routing to different pages. Also I want to include authentication. I want to know all the steps that I should take to make the app efficiently.
+Any kind of help from my fellow developers will be appreciated.

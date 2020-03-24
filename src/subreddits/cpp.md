@@ -113,7 +113,35 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Evaluating user defined logical expressions - booleval, small C++17 library](https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/)
+## [3][Changes between C++17 and C++20](https://www.reddit.com/r/cpp/comments/fo2dyw/changes_between_c17_and_c20/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2131r0.html
+---
+
+## [4][C++ style poll by Cor3ntin on Twitter](https://www.reddit.com/r/cpp/comments/fo1wy5/c_style_poll_by_cor3ntin_on_twitter/)
+- url: https://twitter.com/Cor3ntin/status/1242166022532206595
+---
+
+## [5][Post Prague Mailing is Posted](https://www.reddit.com/r/cpp/comments/fnu3nu/post_prague_mailing_is_posted/)
+- url: https://www.reddit.com/r/cpp/comments/fnu3nu/post_prague_mailing_is_posted/
+---
+The post-Prague mailing has been posted.   
+[http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-03](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-03)   
+
+
+Word on the street is that further mailings will be monthly in order to provided a faster feedback loop.
+## [6][Vector of Objects vs Vector of Pointers And Memory Access Patterns](https://www.reddit.com/r/cpp/comments/fnki5i/vector_of_objects_vs_vector_of_pointers_and/)
+- url: https://www.bfilipek.com/2014/05/vector-of-objects-vs-vector-of-pointers.html
+---
+
+## [7][Anyone wrote a multi-vector-iterator?](https://www.reddit.com/r/cpp/comments/fo4qui/anyone_wrote_a_multivectoriterator/)
+- url: https://www.reddit.com/r/cpp/comments/fo4qui/anyone_wrote_a_multivectoriterator/
+---
+Every once in a while you find yourself with multiple vectors that represent something like different columns of the same data set:  the vectors will be of the same length, and elements at common indexes are related.  This is mostly no big deal until you want to do something fun like sort based on one of them.  I was thinking to myself how the algorithms  would work fine if I could have an iterator that iterates all n vectors at once.  Basically, have a tuple of iterators, and have that tuple itself satisfy the iterator interface by forwarding the calls to each of the elements of the tuple.  
+
+&amp;#x200B;
+
+I assume this isn't a wholly original idea, is there one out there written already?  Are there better solutions, other than the obvious refactoring of it into a vector of tuples/objects/structs/etc? Isn't there some trick like using an algorithm to get an ordering from the sort order vector, and using that ordering to sort the others?
+## [8][Evaluating user defined logical expressions - booleval, small C++17 library](https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/)
 - url: https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/
 ---
 Hi there,
@@ -162,113 +190,65 @@ Please let me know what you think about this library:
 * don't forget to give it a star on Github ;)
 
 Thanks in advance!!!
-## [4][Modern CMake tutorials, part1: CMake basics](https://www.reddit.com/r/cpp/comments/fn0lv6/modern_cmake_tutorials_part1_cmake_basics/)
-- url: https://www.siliceum.com/en/blog/post/cmake_01_cmake-basics
+## [9][Released Artemis 2.4.0](https://www.reddit.com/r/cpp/comments/fo0f8t/released_artemis_240/)
+- url: https://www.reddit.com/r/cpp/comments/fo0f8t/released_artemis_240/
 ---
+For Eclipse CDT users: the free static code analysis tool/plugin has been released in version 2.4.0 for Eclipse 2020-03.
 
-## [5][uvw v2.4.0 is out: a header-only wrapper for libuv written in modern C++](https://www.reddit.com/r/cpp/comments/fn751f/uvw_v240_is_out_a_headeronly_wrapper_for_libuv/)
-- url: https://github.com/skypjack/uvw
+Link to market place and GitHub:
+https://marketplace.eclipse.org/content/artemis
+## [10][Why doesn't C++ templates have macro like token replacement?](https://www.reddit.com/r/cpp/comments/fnn0be/why_doesnt_c_templates_have_macro_like_token/)
+- url: https://www.reddit.com/r/cpp/comments/fnn0be/why_doesnt_c_templates_have_macro_like_token/
 ---
+So I'm sure at one point or another, we've all heard the argument that macros are evil and you should use templates instead. Unfortunately, I keep running into problem sets where I could conceptually use some sort of template that generates itself based on different tokens or keywords, and am wondering if any previous proposals have been made on this topic, as well as any unforeseen challenges that may arise out of a design like this, as I'm considering the value of drafting a proposal on the matter.
+Consider the following example:
 
-## [6][If you like std::span you'd like a new poly_span](https://www.reddit.com/r/cpp/comments/fn937i/if_you_like_stdspan_youd_like_a_new_poly_span/)
-- url: https://www.reddit.com/r/cpp/comments/fn937i/if_you_like_stdspan_youd_like_a_new_poly_span/
+    struct test { int i; char j; }; 
+    template &lt;typename T&gt; auto get_i(T&amp;&amp; t) { return t._i; } 
+    template &lt;typename T&gt; auto get_j(T&amp;&amp; t) { return t._j; } 
+    test t{1, 'c'}; 
+    auto i = get_i(t);
+
+Consider the following proposed alternative:
+
+    template &lt;token _member, typename T&gt; auto get_member(T&amp;&amp; t) { return t.@_member; } 
+    test t{1, 'c'}; 
+    auto i = get_member&lt;@i&gt;(t);
+
+While the use of @ is merely a placeholder, .token (in the spirit of .template) may also work (and be required in the event of ambiguity). Now what about for something actually (potentially) useful?
+
+    struct frobnicates_transmogrifies 
+    { 
+        int frobnicate(){ return 2; } 
+        double transmogrify(){ return 3.0; } 
+    }; 
+    template &lt;typename T&gt; struct proxy_s 
+    { 
+        T t; 
+        template &lt;token _Func, typename... Args&gt; auto operator()(Args&amp;&amp;... args) 
+        { 
+            std::cout &lt;&lt; __PRETTY_FUNCTION__; 
+            return t.@_Func(std::forward&lt;Args&gt;(args)...); 
+        } 
+    }; 
+    
+    template &lt;token... Tokens, typename T&gt; auto make_tuple_from_tokens(T&amp;&amp; t) 
+    { 
+        return std::make_tuple(t.@Tokens...); 
+    } 
+    
+    using frob_tran = frobnicates_transmogrifies; 
+    auto proxy = proxy{frob_tran{}}; 
+    std::tuple&lt;int(proxy_s&lt;frob_tran&gt;*)(), double(proxy_s&lt;frob_tran&gt;*)()&gt; t = make_tuple_from_tokens(proxy);
+
+Essentially, there seems to be at least some value in token replacement with compile time type safety as opposed to macros, as well as the added benefit of not having to maintain multiple functions. Since this proposed syntax would be a sort of template generator, it would be subject to the same restrictions as current templates. What are the immediate problems and pitfalls of an idea like this?
+## [11][Let's accelerate BOINC](https://www.reddit.com/r/cpp/comments/fnm7zo/lets_accelerate_boinc/)
+- url: https://www.reddit.com/r/cpp/comments/fnm7zo/lets_accelerate_boinc/
 ---
-I like span and use it in my code (so far from abseil). I really miss derived to base class conversion feature which is provided by any pointer. I'd love to have functions specifying an interface, but taking containers of implementation classes directly, kind of Java-like type erasure.
+The BOINC (Rosetta@Home) project lets people donate CPU time to find vaccines, such as for COVID-19. Can we improve performance, either for the BOINC platform or the COVID-19 job specifically?
 
-    int countHungryAnimals(span::poly_span&lt;const Animal&gt; animals);
-    std::vector&lt;Dog&gt; dogs = getDogs();
-    std::array&lt;Cat, 5&gt; cats = getCats();
-    const int hungryAnimanls = countHungryAnimals(dogs) + countHungryAnimals(cats);
-
-Please welcome a new light-weight view poly\_span. Poly is for polymorphism. The interface is almost the same as for std::span. There is no dynamic allocation involved, just pointer arithmetic. Header-only lib, C++11 and newer.
-
-Please check it out on [github](https://github.com/mrshurik/poly_span) and let me know what do you think.
-## [7][Template literals to interpolate variables and expressions into strings](https://www.reddit.com/r/cpp/comments/fnix8h/template_literals_to_interpolate_variables_and/)
-- url: https://www.reddit.com/r/cpp/comments/fnix8h/template_literals_to_interpolate_variables_and/
----
-lately working heavily on web and databases with typescript/javascript, there we have template literals which make working with sql and json much easier. On CPP side I work with nlohmann::json which works great though creating a json string does not look natural :D
-
-same goes for SQL...
-
-what would be needed to do to C++ to allow this behavior?
-
-example:
-
-    #include "mylib/myjson.hpp" // namespace mylib::json
-    #include "mylib/mysql.hpp"  // namespace mylib::sql
-    #include &lt;format&gt;
-    #include &lt;iostream&gt;
-    #include &lt;string&gt;
-    #include &lt;sstream&gt;
-    
-    int main() {
-    
-        // SQL
-        const std::string table = static_cast&lt;int&gt;(rand()%2) ? "manager" : "engineer";
-        const uint32_t salary =200'000u;
-        // mylib::sql should take care of serializing and do typechecking
-        mylib::sql sql_query(`
-                SELECT * FROM ${table}
-                WHERE salary &lt;=${salary}
-            `);
-    
-        // JSON
-        struct User {
-            std::string username;
-            uint8_t age;
-        };
-    
-        User user{.username= "hans",.age= 99};
-        // mylib::json should take care of serializing this to std::string
-        mylib::json json_object(`
-            {
-                username: ${user.username},
-                age: ${user.age}
-            }
-        `);
-    
-        // mylib::json should take care of serializing this to std::string and do typechecking
-        const std::string serialized_json1 = `
-        {
-            username: ${user.username},
-            age: ${user.age}
-        }`_mylib_json;
-    
-        // today with fmt
-        const std::string sereliazed_json2 = std::format(R"({{
-            username: {},
-            age: {}
-        }})",user.username,user.age  ); 
-    
-        // today with iostream
-        std::stringstream ss;
-        ss &lt;&lt;
-            "{" &lt;&lt;
-                "username : " &lt;&lt; user.name &lt;&lt; ","&lt;&lt;
-                "age: " &lt;&lt; user.age &lt;&lt; 
-            "}";
-    
-        return 0;
-    }
-## [8][C++20 &amp; Rust on Static vs Dynamic Generics](https://www.reddit.com/r/cpp/comments/fmx87z/c20_rust_on_static_vs_dynamic_generics/)
-- url: https://youtu.be/olM7o_oYML0
----
-
-## [9][Trip report: February 2020 ISO C++ committee meeting, Prague](https://www.reddit.com/r/cpp/comments/fn5s4f/trip_report_february_2020_iso_c_committee_meeting/)
-- url: https://timur.audio/trip-report-february-2020-iso-c-committee-meeting-prague
----
-
-## [10][ANNOUNCE: yomm2 1.1.0 has been released - open (multi-) methods in a C++17 library](https://www.reddit.com/r/cpp/comments/fn2iqc/announce_yomm2_110_has_been_released_open_multi/)
-- url: https://www.reddit.com/r/cpp/comments/fn2iqc/announce_yomm2_110_has_been_released_open_multi/
----
-yomm2 is a library that implements open (multi-) methods for C++17. The library is fast (dispatching a 1-method takes only \~30% more time than the equivalent virtual function call) and non-intrusive. It is available here:  [https://github.com/jll63/yomm2](https://github.com/jll63/yomm2) I presented it at CppCon 2018, you can view the recording here:  [https://www.youtube.com/watch?v=xkxo0lah51s](https://www.youtube.com/watch?v=xkxo0lah51s) 
-
-In addition to minor fixes and improvements, the major feature of this release is support for friend and inline methods.
-## [11][cppgit2: Git for Modern C++ (A libgit2 Wrapper Library)](https://www.reddit.com/r/cpp/comments/fmzu5x/cppgit2_git_for_modern_c_a_libgit2_wrapper_library/)
-- url: https://github.com/p-ranav/cppgit2
----
-
-## [12][High performance SQLite, PostgreSQL, MySQL sync &amp; async drivers](https://www.reddit.com/r/cpp/comments/fn31cp/high_performance_sqlite_postgresql_mysql_sync/)
-- url: https://github.com/matt-42/lithium/tree/master/libraries/sql
+https://github.com/BOINC/boinc
+## [12][C++ and friend keyword explained in detail @panicsoftware](https://www.reddit.com/r/cpp/comments/fnqfq2/c_and_friend_keyword_explained_in_detail/)
+- url: https://blog.panicsoftware.com/friends-and-where-to-find-them/
 ---
 

@@ -11,49 +11,49 @@ Show us here!
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Common tasks of managing DOM with native APIs](https://www.reddit.com/r/javascript/comments/fnf4na/common_tasks_of_managing_dom_with_native_apis/)
-- url: https://htmldom.dev
+## [3][Stanford CS253: Web Security](https://www.reddit.com/r/javascript/comments/fnpzdx/stanford_cs253_web_security/)
+- url: https://cs253.stanford.edu
 ---
 
-## [4][Virus spreading simulation tool made with plain/vanilla JavaScript (demo link and detailed description in the README)](https://www.reddit.com/r/javascript/comments/fn7rcj/virus_spreading_simulation_tool_made_with/)
-- url: https://github.com/MTrajK/virus-spreading
----
-
-## [5][A tiny progress bar that supports promise (1.2kb)](https://www.reddit.com/r/javascript/comments/fnixfa/a_tiny_progress_bar_that_supports_promise_12kb/)
+## [4][A tiny progress bar that supports promise (1.2kb)](https://www.reddit.com/r/javascript/comments/fnixfa/a_tiny_progress_bar_that_supports_promise_12kb/)
 - url: https://skt-t1-byungi.github.io/rsup-progress/
 ---
 
-## [6][Implementing single-file Web Components](https://www.reddit.com/r/javascript/comments/fnj51n/implementing_singlefile_web_components/)
+## [5][Structure 2 alpha released - Faster, with new features and easier to test](https://www.reddit.com/r/javascript/comments/fo3zdr/structure_2_alpha_released_faster_with_new/)
+- url: https://structure.js.org/v/structure-2/
+---
+
+## [6][I built a chrome extension that sends you a new Algorithm question whenever you open a new tab. Make problem solving a habit](https://www.reddit.com/r/javascript/comments/fnor70/i_built_a_chrome_extension_that_sends_you_a_new/)
+- url: https://github.com/yasimba/algotab
+---
+
+## [7][I made a simple kanban board chrome extension that would open on the same page](https://www.reddit.com/r/javascript/comments/fo33eb/i_made_a_simple_kanban_board_chrome_extension/)
+- url: https://chrome.google.com/webstore/detail/kanbie/hancagoabobbbadijbbfepodbdgjbfpf?hl=en
+---
+
+## [8][Common tasks of managing DOM with native APIs](https://www.reddit.com/r/javascript/comments/fnf4na/common_tasks_of_managing_dom_with_native_apis/)
+- url: https://htmldom.dev
+---
+
+## [9][[AskJS] OAUTH 2.0 redirect URI and handling](https://www.reddit.com/r/javascript/comments/fo0vbi/askjs_oauth_20_redirect_uri_and_handling/)
+- url: https://www.reddit.com/r/javascript/comments/fo0vbi/askjs_oauth_20_redirect_uri_and_handling/
+---
+ 
+
+Hello,
+
+I am trying to learn how to work with OAUTH and the Twitch API and their documentation says I need to provide a redirect URI and I have no idea what this means, and what am I supposed to do. I have tried Googling this and attempting to find an example script that includes a redirect but no real luck.
+
+Can someone help me out with this, please? Just hit me with a message or here. I am looking for an actual JS code example.
+## [10][Implementing single-file Web Components](https://www.reddit.com/r/javascript/comments/fnj51n/implementing_singlefile_web_components/)
 - url: https://ckeditor.com/blog/implementing-single-file-web-components/
 ---
 
-## [7][Bing COVID-19 Current Data, more information in comments section](https://www.reddit.com/r/javascript/comments/fnea18/bing_covid19_current_data_more_information_in/)
-- url: https://github.com/Maanuj-Vora/Bing-COVID-19-Current-Data
+## [11][An Insecure Mess: How Flawed JavaScript is Turning Web Into a Hacker's Playground](https://www.reddit.com/r/javascript/comments/fo0kpg/an_insecure_mess_how_flawed_javascript_is_turning/)
+- url: https://www.zdnet.com/article/an-insecure-mess-how-flawed-javascript-is-turning-web-into-a-hackers-playground/
 ---
 
-## [8][How to create a fully tree shakable icon library in Angular](https://www.reddit.com/r/javascript/comments/fnibp0/how_to_create_a_fully_tree_shakable_icon_library/)
-- url: https://medium.com/angular-in-depth/how-to-create-a-fully-tree-shakable-icon-library-in-angular-c5488cf9cd76
+## [12][A new approach to object oriented web app design](https://www.reddit.com/r/javascript/comments/fo3i9z/a_new_approach_to_object_oriented_web_app_design/)
+- url: https://www.infoq.com/articles/pieces-data-routing-transitions/
 ---
 
-## [9][Firebase and example usage with Angular](https://www.reddit.com/r/javascript/comments/fni4rl/firebase_and_example_usage_with_angular/)
-- url: https://medium.com/@michele.patrassi/firebase-and-example-usage-with-angular-3d5353a84231?source=friends_link&amp;sk=bae1fb054fbcbbd1e7cf9830ea9073d3
----
-
-## [10][[AskJS] Why is it important to update the project's dependencies?](https://www.reddit.com/r/javascript/comments/fnivxm/askjs_why_is_it_important_to_update_the_projects/)
-- url: https://www.reddit.com/r/javascript/comments/fnivxm/askjs_why_is_it_important_to_update_the_projects/
----
-Hey, everyone! Thank you in advance to those who will read and write their thoughts on the next question.
-
-So the question itself, "Why is it important to update the project's dependencies?"
-
-I update them quite often, about once a week. And my colleagues are very strongly against it, I think they just don't know why it is necessary, so I would like to know what you think and educate them.
-## [11][Prettier 2.0 "2020" is out](https://www.reddit.com/r/javascript/comments/fmx38i/prettier_20_2020_is_out/)
-- url: https://prettier.io/blog/2020/03/21/2.0.0.html
----
-
-## [12][[AskJS] how do you structure the folders your project?](https://www.reddit.com/r/javascript/comments/fnfor5/askjs_how_do_you_structure_the_folders_your/)
-- url: https://www.reddit.com/r/javascript/comments/fnfor5/askjs_how_do_you_structure_the_folders_your/
----
-I’m kinda new and want to follow a nice structure for my future projects.
-
-I’m mainly using NodeJS/express for backend and currently working on a project using Angular

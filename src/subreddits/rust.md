@@ -23,67 +23,49 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fnflsh/whats_everyone_working_on_this_week_132020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-13-2020/39864?u=llogiq)!
-## [3][Two Years With Rust](https://www.reddit.com/r/rust/comments/fnf7ni/two_years_with_rust/)
-- url: http://brooker.co.za/blog/2020/03/22/rust.html
+## [3][Tokio's new internal semaphore based on intrusive lists](https://www.reddit.com/r/rust/comments/fo066j/tokios_new_internal_semaphore_based_on_intrusive/)
+- url: https://github.com/tokio-rs/tokio/commit/acf8a7da7a64bf08d578db9a9836a8e061765314
 ---
 
-## [4][bat v0.13.0 released](https://www.reddit.com/r/rust/comments/fn9jrg/bat_v0130_released/)
-- url: https://github.com/sharkdp/bat/releases/tag/v0.13.0
+## [4][How I structure my apps (in Rust and other languages)](https://www.reddit.com/r/rust/comments/fnyird/how_i_structure_my_apps_in_rust_and_other/)
+- url: https://dpc.pw/how-i-structure-my-apps-in-rust-and-other-languages
 ---
 
-## [5][Rust Async and the Terrible, Horrible, No Good, Very Bad Day](https://www.reddit.com/r/rust/comments/fnj12j/rust_async_and_the_terrible_horrible_no_good_very/)
+## [5][Broom: An ergonomic, easy to use garbage collector for your toy programming languages](https://www.reddit.com/r/rust/comments/fnscsx/broom_an_ergonomic_easy_to_use_garbage_collector/)
+- url: https://github.com/zesterer/broom
+---
+
+## [6][Inviting God's Wrath with Cursed Rust](https://www.reddit.com/r/rust/comments/fo487h/inviting_gods_wrath_with_cursed_rust/)
+- url: http://troubles.md/abusing-rustc/
+---
+
+## [7][gfx-hal-0.5 is released!](https://www.reddit.com/r/rust/comments/fnq64x/gfxhal05_is_released/)
+- url: https://www.reddit.com/r/rust/comments/fnq64x/gfxhal05_is_released/
+---
+This is mostly a polishing release, see the [CHANGELOG](https://github.com/gfx-rs/gfx/blob/fdfe887f5afab7ca057e3e824817d0bcdcf794ba/CHANGELOG.md#hal-050-23-03-2020). The existing APIs are yak-shaved, a few more is added. At the same time, we are moving closer to WebGPU needs, in particular with:
+
+  * read-only storage binding flags. Specifying them is an optimization on DX and Metal. Users can always keep them off as in Vulkan mode.
+  * sizes are passed to vertex and index buffer bindings. Again, this can be an optimization, and users can always pass them without bounds as in Vulkan.
+  * support for NDC space that is Y-flipped, to match DX and Metal.
+
+[gfx-ocean](https://github.com/gfx-rs/gfx-ocean) demo has been moved under gfx-rs organization, it's a great demo of using gfx-hal directly.
+## [8][A Rust library built on top of libbpf that allows to write and load bpf programs (no bcc dependency).](https://www.reddit.com/r/rust/comments/fnzktq/a_rust_library_built_on_top_of_libbpf_that_allows/)
+- url: https://github.com/uccidibuti/rebpf
+---
+
+## [9][Rust Async and the Terrible, Horrible, No Good, Very Bad Day](https://www.reddit.com/r/rust/comments/fnj12j/rust_async_and_the_terrible_horrible_no_good_very/)
 - url: https://medium.com/@KevinHoffman/rust-async-and-the-terrible-horrible-no-good-very-bad-day-348ebc836274
 ---
 
-## [6][async functions for no_std now available on nightly](https://www.reddit.com/r/rust/comments/fn6zzq/async_functions_for_no_std_now_available_on/)
-- url: https://www.reddit.com/r/rust/comments/fn6zzq/async_functions_for_no_std_now_available_on/
----
-I noticed today a really interesting PR got resolved on Rust nightly! It used to not be possible with vanilla rust to write **async** functions blocks in **#\[no\_std\]** libraries. Now with this resolved its one step closer to better async/await in embedded and no\_std web assembly.
-
-[https://github.com/rust-lang/rust/issues/56974](https://github.com/rust-lang/rust/issues/56974)
-
-example: [https://github.com/richardanaya/js\_ffi/blob/master/examples/helloworld\_async/src/lib.rs](https://github.com/richardanaya/js_ffi/blob/master/examples/helloworld_async/src/lib.rs)
-
-I was able to shave about 10kb off this wasm module.
-## [7][Terminal Tamagotchi in Rust - Beginner Friendly](https://www.reddit.com/r/rust/comments/fnhu78/terminal_tamagotchi_in_rust_beginner_friendly/)
-- url: https://github.com/trevarj/termagotchi
+## [10][SIMD Array-of-Structures-of-Arrays in nalgebra and comparison with ultraviolet](https://www.reddit.com/r/rust/comments/fnt1ru/simd_arrayofstructuresofarrays_in_nalgebra_and/)
+- url: https://www.rustsim.org/blog/2020/03/23/simd-aosoa-in-nalgebra/
 ---
 
-## [8][cargo-feature - Don't suffer from adding or removing feature](https://www.reddit.com/r/rust/comments/fnj8xp/cargofeature_dont_suffer_from_adding_or_removing/)
-- url: https://www.reddit.com/r/rust/comments/fnj8xp/cargofeature_dont_suffer_from_adding_or_removing/
----
-[https://github.com/Riey/cargo-feature](https://github.com/Riey/cargo-feature)
-
-&amp;#x200B;
-
-Just type
-
-    cargo feature serde +derive
-
-&amp;#x200B;
-
-You don't need typing this by hand!
-
-    [dependencies]
-    serde = "1"
-
-&amp;#x200B;
-
-    [dependencies]
-    serde = { version = "1", features = ["derive"] }
-## [9][New version of unsafe Qt bindings for Rust is released](https://www.reddit.com/r/rust/comments/fn9dqh/new_version_of_unsafe_qt_bindings_for_rust_is/)
-- url: https://rust-qt.github.io/blog/qt_crates_release_0_5/
+## [11][Rust analyser weekly changelog](https://www.reddit.com/r/rust/comments/fnl8s1/rust_analyser_weekly_changelog/)
+- url: https://rust-analyzer.github.io/thisweek/2020/03/23/changelog-17.html
 ---
 
-## [10][I've written a Python VM in Rust and open for any feedback](https://www.reddit.com/r/rust/comments/fn45fk/ive_written_a_python_vm_in_rust_and_open_for_any/)
-- url: https://github.com/FKLC/PyVM
----
-
-## [11][Explain — a tool to visualize postgresql explain](https://www.reddit.com/r/rust/comments/fni8c7/explain_a_tool_to_visualize_postgresql_explain/)
-- url: https://www.reddit.com/r/PostgreSQL/comments/fn08ff/another_explain_visualizer/
----
-
-## [12][Rust bindings for the Philips Hue API](https://www.reddit.com/r/rust/comments/fnc8i0/rust_bindings_for_the_philips_hue_api/)
-- url: https://github.com/yuqio/huelib-rs
+## [12][Former Haskellers: Do you miss purity in rust? Why.](https://www.reddit.com/r/rust/comments/fnl4px/former_haskellers_do_you_miss_purity_in_rust_why/)
+- url: https://www.reddit.com/r/rust/comments/fnl4px/former_haskellers_do_you_miss_purity_in_rust_why/
 ---
 

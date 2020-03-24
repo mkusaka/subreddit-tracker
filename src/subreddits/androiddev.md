@@ -31,101 +31,112 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][App with 1 Million downloads suspended because of the word "Corona"](https://www.reddit.com/r/androiddev/comments/fn0wzl/app_with_1_million_downloads_suspended_because_of/)
-- url: https://www.reddit.com/r/androiddev/comments/fn0wzl/app_with_1_million_downloads_suspended_because_of/
+## [3][Data Encryption on Android with Jetpack Security](https://www.reddit.com/r/androiddev/comments/fo2lto/data_encryption_on_android_with_jetpack_security/)
+- url: https://android-developers.googleblog.com/2020/02/data-encryption-on-android-with-jetpack.html
 ---
-I'm the creator of the Meme and Vine Soundboard which had nearly 1 Million downloads. Sadly it got suspended 2 days ago because I wasn't aware of the fact that anything which mentions "Corona" is getting suspended instantly.
 
-The app contained more than 600 different meme sounds and one of them was unfortunately labeled "Corona time"  
-I would love to get the chance to remove that one string and upload an update. Sadly I can't because the app got suspended instantly.  
-My two employees and I rely on the App because it accounts for 90% of our income.  
-Without it we will probably have to close our small studio.  
-
-
-We are very sorry for unknowingly violating the guidelines.  
-Does someone has an idea on how to get our app back online (besides of writing a ticket)?   
-
-
-Aaron Waller,  
-FujiGames
-
-https://preview.redd.it/u0vbc8kuk8o41.jpg?width=750&amp;format=pjpg&amp;auto=webp&amp;s=7ce6594ce006faf7a75647ef03ab6551fb4f0847
-## [4][Anyone not get their admob payment this month?](https://www.reddit.com/r/androiddev/comments/fnixqf/anyone_not_get_their_admob_payment_this_month/)
-- url: https://www.reddit.com/r/androiddev/comments/fnixqf/anyone_not_get_their_admob_payment_this_month/
+## [4][Search results on Play Store now include install count..what a U-turn!](https://www.reddit.com/r/androiddev/comments/fnv4ou/search_results_on_play_store_now_include_install/)
+- url: https://www.reddit.com/r/androiddev/comments/fnv4ou/search_results_on_play_store_now_include_install/
 ---
-I received my payment on the 15th for IAP but have not received ad income. I'm assuming it's because of this covid business..
-## [5][Follow up: Transferring app to new Play account, what happens with purchase validation API calls?](https://www.reddit.com/r/androiddev/comments/fne1kx/follow_up_transferring_app_to_new_play_account/)
-- url: https://www.reddit.com/r/androiddev/comments/fne1kx/follow_up_transferring_app_to_new_play_account/
+By doing this, Google has now given the option to users to discriminate between apps that come up on search result listing, based on the number of installs.
+
+This puts renewed focus on the install count being a key metric, because it influences buyers decisions on what app listing to click on.
+
+Previously Google stated that retention is the number one thing to focus on. They even removed the total number of installs for each app from the Developer Console.
+
+But users will always target the biggest apps. So now developers need to go back to boosting that install count by fair means or foul to remain competitive.
+## [5][From an aspiring Venezuelan to Android developers, is this career worth it?](https://www.reddit.com/r/androiddev/comments/fnocrd/from_an_aspiring_venezuelan_to_android_developers/)
+- url: https://www.reddit.com/r/androiddev/comments/fnocrd/from_an_aspiring_venezuelan_to_android_developers/
 ---
-As outlined in [this post](https://www.reddit.com/r/androiddev/comments/fmtab1/transferring_app_to_new_play_account_what_happens/) I was wondering when transferring apps between Google Play Developer accounts, **what happens with the existing Google API Console project?** Will in-app purchases just start failing until the new account creates and deploys its own API Console project? Does the old project get linked to the new account?
+Hey everyone. I'm an 18 years old dude from the world's biggest shitho- I mean Venezuela. 
 
-Well, I grit my teeth and jumped in. The transfer went through within about 8 hours (on a Sunday)... at which point we started seeing errors in the server logs and the Google API console. **Nobody could purchase our app anymore. We also couldn't process renewals.** Fantastic.
+This will be a long post, but I will very much appreciate it if you read my story and give me your take on it.
 
-Even though I added the new account owner as the owner of the Google Play Android Developer API project, Google did not transfer the link to the new account. This resulted in 403 errors saying:
+Currently, I'm in college, studying Marketing. I did not want to take up Computer Science because I was taught math very badly in school. This wouldn't be a problem if I was paying for college as I could learn math by myself with Khan Academy or something and repeat any failed class, but I have a scholarship, and if I fail a class once, I basically lose my only chance in life to get a college degree.
 
-&gt;The project id used to call the Google Play Developer API has not been linked in the Google Play Developer Console.
+For a long time I've known that what I want to do in life is to be a software developer, and recently I decided on Android development as my starting point in this world; eventually I'd like to learn web development (back and front end) in order to expand my skills, but thats not my focus right now. I love learning things on my own, and in fact, I've studied things like programming paradigms, runtimes, typing, and weird stuff like that all out of sheer curiousity before ever typing my first line of code, because I find it fascinating.
 
-We unlinked the old account and linked the new one, and gave the correct service accounts access. Even after doing so, we still had errors.
+So I made a plan to learn.
 
-Finally, we added a dummy managed in-app purchase, inactive, to the apps under the new account. The errors went away, and we were able to then delete the dummy in-app purchase.
+• Learn Java with mooc.fi's newest Java course
+• Take Google's Udacity course
+• Read around the Android docs and play around with small toy apps
+• Immediately throw myself into the water and start making an actual app
 
-Google really needs to do a better job with this process, but we seem to be back up and running!
-## [6][Is FAN banner placement practically impossible to use in mediation?](https://www.reddit.com/r/androiddev/comments/fngroe/is_fan_banner_placement_practically_impossible_to/)
-- url: https://www.reddit.com/r/androiddev/comments/fngroe/is_fan_banner_placement_practically_impossible_to/
+And for that last part, I have two projects already.
+
+For the first app, I'm planning to make a client for the AniList.co and AniChart.co sites, since there dont seem to be any good ones out there and I really want one. Would make my life a little bit easier. 
+
+This should give me some experience, something malleable to apply the things I learned, and also learn how to interact with APIs.
+
+Once I feel that app has reached the "It's shit, but fairly usable shit" stage and I publish it, then comes the second app.
+
+The second app is a lot more ambitious, but I'm fairly confident in my chances.
+
+My university's application sucks ass. Looks straight out of 2009, is not even in the Play Store, it asks for weird permissions it does not need (Read external USB storage, what?), all stuff that needs to be fixed. It's a fairly simple app too, just a frontend to their PHP servers. 99% of people use it only to see their schedule or check their grades.
+
+Venezuela is a shithole. And this shithole happens to have a HUGE braindrain. It's so bad, that for example, in the most prestigious English school in my city, most teachers are my age, and some of their bosses haven't even graduated from college yet. Why? Because the salaries suck, all the professionals left the country, and only us young people willing to work for peanuts are left. To give you an idea, they wanted to pay my dad, someone with 30 years of experience in the education field, having worked for the ministry of education at one point, 20$ a month. Just think about that for a little bit. And it doesn't get any better than that .
+
+So, I want to remake my university's app. 
+
+I'll show them that I'm capable by showing them my first app. I'll tell them I'm willing to remake their app, maintain it and get it on the Play Store, in exchange, all I ask is for a work scholarship. I work for them, they let me study for free (they readily offer this already, I'd just be asking for a programming job instead of the usual clerk). Work scholarships are not lost if you fail a class.
+
+The only developers they have are the teachers that know PHP, and they simply maintain the servers so that they don't collapse, when they have free time. Which is not often. The university has much bigger problems to think about than financing a new app. The only ones willing to work for nothing are inexperienced kids like me.
+
+The reason I wanna do this is so that one day, when I leave this country, I can say in an interview "I made and maintained my university's app". Plus, I could say I have some work experience in my resume. Maybe. I dont know, I'm a kid, I've never had a job interview before, but I doubt this would hurt me. All in the name of 'work experience', right?
+
+Eventually, I'd like to take that first AniList app and expand it in features, monetize it as well. I wont say how exactly, I dont wanna give away my ideas, but this is where I start doubting myself.
+
+People often say Android development is a huge pain in the ass, what with Google deprecating APIs every millisecond and all, and the Play Store bots making the lives of indie developers a nightmare.
+
+Even though I'm totally okay with a monthly revenue of 50$ (hell, 500$ a month would allow me to eat like a normal human being again) the bar to success is so fucking high I don't even know if it's worth it. I am good with design and I always think about marketability, but that means nothing if people don't even see your app to begin with.
+
+So this is where I want your opinions.
+
+Is this worth it? Would people in America actually hire me with that kind of experience? What if I never get a degree? I know some people hire devs with no degrees but seriously, it's kind of scary not having superior education. What if is this all a waste of time because no one wants to hire an immigrant? Specially a Venezuelan, god knows people in some latin american countries think we're vermin. Moreover, isn't the developer market oversaturated already? I don't see how I'll be a better choice than someone with a PhD in Stanford.
+
+And then there's the app I wanna make. I seriously want to make an app I can monetize, but how the hell do you do marketing while being piss poor? And given how unstable Android development seems, even moreso than web development, what if I learn deprecated practices and I mess it all up because of it?
+
+Thank you for making it this far
+
+TLDR; Is it worth it? Does it matter if I have a degree or not, as long as I have a good app to show I'm not a total dweeb? Is being an indie developer still a good idea?
+## [6][Awesome libraries, write less code, focus on the business logic](https://www.reddit.com/r/androiddev/comments/fo0br0/awesome_libraries_write_less_code_focus_on_the/)
+- url: https://github.com/android-promise
 ---
-Hey, did anyone have luck using Facebook Audience Network banner ads with AdMob? I had &gt;200k impressions, 76% fill rate, 1,48 CTR and that didn’t pass FAN quality check. Support is useless, as they point to guidelines, which are useless.
-## [7][Getting downloads - but don't know what the users want!](https://www.reddit.com/r/androiddev/comments/fniw77/getting_downloads_but_dont_know_what_the_users/)
-- url: https://www.reddit.com/r/androiddev/comments/fniw77/getting_downloads_but_dont_know_what_the_users/
+
+## [7][Material design MaterialCardView what's going on? Why can't I set white color?](https://www.reddit.com/r/androiddev/comments/fo0prt/material_design_materialcardview_whats_going_on/)
+- url: https://v.redd.it/09spdkvhkko41
 ---
-Hi guys,
 
-I have a simple emoji translator app, in which you can select preset questions and get the emoji translations for it.
-I am getting around 10 downloads a day mostly from Russia &amp; Ukraine but from US &amp; UK as well. 
-Now all my users uninstall the app the same day. A couple of them have also left negative reviews and I am having a hard time understanding what is it that they want exactly.
-
-Please help me out!
-
-The apps name is Travemo
-
-Thank you
-## [8][How do you get context into ViewModel?](https://www.reddit.com/r/androiddev/comments/fniftf/how_do_you_get_context_into_viewmodel/)
-- url: https://www.reddit.com/r/androiddev/comments/fniftf/how_do_you_get_context_into_viewmodel/
+## [8][Any end-to-end encryption library for android?](https://www.reddit.com/r/androiddev/comments/fnzq0k/any_endtoend_encryption_library_for_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fnzq0k/any_endtoend_encryption_library_for_android/
 ---
-Is extending AndroidViewModel and using application context the most efficient solution?
-## [9][Order list items in room db?](https://www.reddit.com/r/androiddev/comments/fnida1/order_list_items_in_room_db/)
-- url: https://www.reddit.com/r/androiddev/comments/fnida1/order_list_items_in_room_db/
+Is there any good end-to-end encryption library for android? I am aware of  following, but there is not much documentation
+
+* [https://github.com/signalapp/libsignal-protocol-java](https://github.com/signalapp/libsignal-protocol-java)
+
+If there any articles about e2ee in android please share.
+
+Thanks in advance!
+## [9][Easiest way to put a load on GPU, CPU and Memory?](https://www.reddit.com/r/androiddev/comments/fo2vau/easiest_way_to_put_a_load_on_gpu_cpu_and_memory/)
+- url: https://www.reddit.com/r/androiddev/comments/fo2vau/easiest_way_to_put_a_load_on_gpu_cpu_and_memory/
 ---
-I've been trying to order list items in room database using `ItemTouchHelper`, where the item has a `position` property, I posted this before but I got no valid response [here](https://www.reddit.com/r/androiddev/comments/fcveue/is_there_a_way_to_update_a_column_of_entity_in/?utm_source=share&amp;utm_medium=web2x). Can someone please help me with this? 
+Hello!
 
-I spent a lot of time trying to implement it but it just doesn't work, I searched a lot but everyone is just implementing swiping and ignoring the dragging.
-## [10][Architecture for connecting touch events and openGLES (for pinch/scale, drag/pan)?](https://www.reddit.com/r/androiddev/comments/fnib8k/architecture_for_connecting_touch_events_and/)
-- url: https://www.reddit.com/r/androiddev/comments/fnib8k/architecture_for_connecting_touch_events_and/
+I want to create a small app that can put full load on CPU, GPU and Memory (if that is possible) in a easy way, I have been looking at OpenGL but the best option would be to not have any 3D rendering or anything like that.
+
+The plan with this app is to stress test a larger virtual server that have multiple android devices running, and also for me to get a better understanding of Java.
+
+Any suggestions on what might be the easiest way to achieve the above?
+## [10][Android Notification BigTextStyle](https://www.reddit.com/r/androiddev/comments/fo4bbh/android_notification_bigtextstyle/)
+- url: https://medium.com/@myrickchow32/android-notification-bigtextstyle-bd35f7530eae?source=friends_link&amp;sk=b7a41e84e63133210edb6713a52c056a
 ---
-The effect is as in maps or a browser or an image viewer, where you can pinch-zoom and drag-pan.
-I do it by handling pinch/drag events, then scaling and translating a matrix accordingly, which is applied in a vertex shader.
 
-It's all working -- but the communicating is very awkward: from `onScale`/`onDrag` (in a `GLSurfaceView`) to `draw` (in a `Draw` object). I've just hacked a chain of objects to do it (`mRenderer.sim.coords.draw`), but there's got to be a better way!
-
-Is there a standard way to do it? Thanks for any pointers!
-## [11][Android App- WiFi Password Show For rooted phones](https://www.reddit.com/r/androiddev/comments/fniawv/android_app_wifi_password_show_for_rooted_phones/)
-- url: https://www.reddit.com/r/androiddev/comments/fniawv/android_app_wifi_password_show_for_rooted_phones/
+## [11][Selfhosted Firebase Crashlytics alternative?](https://www.reddit.com/r/androiddev/comments/fo4aj8/selfhosted_firebase_crashlytics_alternative/)
+- url: https://www.reddit.com/r/androiddev/comments/fo4aj8/selfhosted_firebase_crashlytics_alternative/
 ---
-  You neer ROOT your device to use 'Wifi Password show'.Because on Android the wifi passwords are stored in "/data/misc/wifi/wpa\_supplicant.conf" or "/data/misc/wifi//WifiConfigStore.xml"  
- **Wifi password show app features:**  
-Wifi password recovery  
-share wifi password  
-copy wifi password  
-Show wifi info  
-show wifi help section  
-Generate qr code/barcode with wifi ssd and wifi password details 
-
- [https://play.google.com/store/apps/details?id=com.sbacham.srinu.showwifipassword2017](https://play.google.com/store/apps/details?id=com.sbacham.srinu.showwifipassword2017)
-## [12][AndroidX camera in production?](https://www.reddit.com/r/androiddev/comments/fnhnpy/androidx_camera_in_production/)
-- url: https://www.reddit.com/r/androiddev/comments/fnhnpy/androidx_camera_in_production/
+Sorry if this question doesn't fit here but is there a selfhosted opensource firebase crashlytics alternative?
+## [12][What is the best approach to render a PDF into a single scrollview without using third party libraries?](https://www.reddit.com/r/androiddev/comments/fnvekh/what_is_the_best_approach_to_render_a_pdf_into_a/)
+- url: https://www.reddit.com/r/androiddev/comments/fnvekh/what_is_the_best_approach_to_render_a_pdf_into_a/
 ---
-Hello, I hope you all doing well :) We are planning to switch [Fotoappart](https://github.com/RedApparat/Fotoapparat) library for camerax, due to dropped maintenance of that library and some errors occurring in phones like Nokia. [Here](https://github.com/android/camera-samples/issues/17#issuecomment-556661413) is an error example.    
-
-
-However, I doubt that it is still **production-ready** (*even though that API is beta now***)** and will not cause issues... Working with camera API, we have encountered various issues, like black previews, crashes, strange lifecycle issues ant etc.. Perhaps someone has been using androidx camera for a while and can share their experience?
-
-Also, maybe I should rather use [CameraView](https://github.com/natario1/CameraView)? Seems the most stable and maintanable currently, while CameraKit and Fotoapparat seems dead :(
+While PDFRenderer exists, it doesn't directly support the rendering of a complete pdf file. I am not sure how to approach this problem without running into issues with larger pdfs.

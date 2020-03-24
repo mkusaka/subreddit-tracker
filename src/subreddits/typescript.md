@@ -22,11 +22,80 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How to create a fully tree shakable icon library in Angular](https://www.reddit.com/r/typescript/comments/fnibx7/how_to_create_a_fully_tree_shakable_icon_library/)
-- url: https://medium.com/angular-in-depth/how-to-create-a-fully-tree-shakable-icon-library-in-angular-c5488cf9cd76
+## [2][How to type return type of a function based on given argument](https://www.reddit.com/r/typescript/comments/fo2rsk/how_to_type_return_type_of_a_function_based_on/)
+- url: https://www.reddit.com/r/typescript/comments/fo2rsk/how_to_type_return_type_of_a_function_based_on/
 ---
+Probably the title is wrong, i couldn't figure out how to explain it. Here is a simplified version of the problem.
 
-## [3][What is the common convention for interface names?](https://www.reddit.com/r/typescript/comments/fng5ji/what_is_the_common_convention_for_interface_names/)
+
+```
+type Foo&lt;T&gt; = {
+    getValue: () =&gt; T;
+};
+
+function createFoo&lt;T&gt;(value: T): Foo&lt;T&gt; {
+    return {
+        getValue: () =&gt; value
+    };
+}
+
+let items = {
+    apple: createFoo(1),
+    orange: createFoo('hello'),
+};
+
+function combine(items) {
+    //
+}
+
+let combined = combine({
+    apple,
+    orange
+});
+
+
+/*
+combined's type should be
+
+{
+    apple: number,
+    orange: string
+}
+*/
+```
+
+Thank you :)
+## [3][How to type object with variable key names?](https://www.reddit.com/r/typescript/comments/fnu9ha/how_to_type_object_with_variable_key_names/)
+- url: https://www.reddit.com/r/typescript/comments/fnu9ha/how_to_type_object_with_variable_key_names/
+---
+For practice I'm working on an algorithm that assigns values as (object) key names. The keys are paired to an array.
+
+This is in raw  JS. In TS I don't know how to handle objects with dynamic key names:
+
+    { joe : [{...}, {...}, {...}], sally : [{...}, {...}]  } 
+
+(key names will vary)
+
+Anyone know how to properly type these?
+## [4][typedi cheat sheet](https://www.reddit.com/r/typescript/comments/fo1equ/typedi_cheat_sheet/)
+- url: https://www.reddit.com/r/typescript/comments/fo1equ/typedi_cheat_sheet/
+---
+Trying to grok `typedi` and came up with this. Is following right?
+
+1. `@Inject()` injects `Container` into decorated class properties,  
+*Hint: **InjectContainer**IntoProp*
+2. `@Service()` injects `Container` into decorated classes via constructor params,  
+*Hint: **InjectContainer**IntoClassViaConstructorParams*
+3. `@Service{'&lt;name&gt;')` injects `Container` into decorated classes and provides that classes via `&lt;name&gt;` via `Container.get('&lt;name&gt;')`,  
+*Hint: **InjectContainer**IntoClassViaConstructorParamsAnd**ProvideClass**ViaAlias*
+
+1 is mandatory for classes without a constructor. 2 is mandatory if a constructor with params injects the dependency. 3 is the one which actually act as a *service*.
+
+A more intuitive naming scheme would have been:  
+1: `@InjectToProp()`   
+2: `@InjectViaConstructor()`  
+3: `@ProvideAs('&lt;name&gt;')`
+## [5][What is the common convention for interface names?](https://www.reddit.com/r/typescript/comments/fng5ji/what_is_the_common_convention_for_interface_names/)
 - url: https://www.reddit.com/r/typescript/comments/fng5ji/what_is_the_common_convention_for_interface_names/
 ---
 Hello all,
@@ -49,7 +118,7 @@ Therefore, do you know what is the most common way to naming mongo stuff and int
 
 
 Thank you in advance.
-## [4][Need help with spread operator and Date in typescript](https://www.reddit.com/r/typescript/comments/fnhe74/need_help_with_spread_operator_and_date_in/)
+## [6][Need help with spread operator and Date in typescript](https://www.reddit.com/r/typescript/comments/fnhe74/need_help_with_spread_operator_and_date_in/)
 - url: https://www.reddit.com/r/typescript/comments/fnhe74/need_help_with_spread_operator_and_date_in/
 ---
 Consider the below code:
@@ -63,7 +132,92 @@ export function(date :string) : Date{
 I cannot use spread operator for the new Date in typescript, but I actually can use it in javascript, the error is Expected 0-7 arguments, but got 0 or more.ts(2556)
 
 Please help me with that, I could not figure it out.
-## [5][why am able to push this "any" into a typed array?](https://www.reddit.com/r/typescript/comments/fn2s73/why_am_able_to_push_this_any_into_a_typed_array/)
+## [7][Can't seem to augment typed NPM module?](https://www.reddit.com/r/typescript/comments/fnn5tf/cant_seem_to_augment_typed_npm_module/)
+- url: https://www.reddit.com/r/typescript/comments/fnn5tf/cant_seem_to_augment_typed_npm_module/
+---
+I'm trying to augment a certain [typed npm module called iam-policies](https://github.com/Rogger794/iam-policies). The types I'm trying to augment are declared [here](https://github.com/Rogger794/iam-policies/blob/master/src/types.ts). So far, here's what I've come up with (in a file called `iam-policies.d.ts`):
+```ts
+import { EEntityPolicyEnumPrincipal } from './types/principal.enum';
+import { EClient }                    from './types/client.enum';
+import { conditionResolvers }         from './iam/conditions';
+import { Patterns, ConditionMap, ConditionKey, ActionBlock, ResourceBlock, NotResourceBlock } from 'iam-policies/dist/src/types';
+
+declare module 'iam-policies' {
+
+    type PrincipalMap = {
+        [key in EEntityPolicyEnumPrincipal]?: EClient | EClient[]
+    }
+
+    type AugmentedConditionBlock = {
+        [key in keyof typeof conditionResolvers]?: ConditionMap
+    }
+
+    interface ConditionBlock extends AugmentedConditionBlock {}
+
+    // The above code works for some reason...
+
+    type AugmentedConditionKey = Date | Date[];
+
+    type AugmentedResolver = (data: AugmentedConditionKey, expected: AugmentedConditionKey) =&gt; boolean
+    
+    type AugmentedConditionResolver = {
+        [key in keyof typeof conditionResolvers]?: AugmentedResolver
+    }
+
+    type AugmentedContext = {
+    [key: string]: ConditionKey | Context | string[] | number[] | boolean[];
+}
+
+    export interface Context extends AugmentedContext {}
+
+    interface ConditionResolver extends AugmentedConditionResolver {}
+}
+```
+
+`conditionResolvers` is an object of string properties with functions for values:
+
+```ts
+const conditionResolvers = {
+    prop1: (data, expected) =&gt; logic...,
+    prop2: (data, expected) =&gt; logic...,
+...
+}
+```
+
+Among the many errors I've received throughout my many attempts are the following (sorry I didn't write them down as I was trying to debug and try my next attempt):
+- Duplicate identifier.
+- Incorrect index signature.
+- Type x does not extend type y correctly.
+
+My `tsconfig` is basically the [Typescript starter NestJS has](https://github.com/nestjs/typescript-starter).
+
+I've already augmented Express's typings like so (in a file called `express.d.ts`):
+```ts
+import { CookieOptions } from 'express';
+import { IJwtPayload }   from './types/interfaces/payload.jwt.interface';
+import { IEntityUser }   from './user/user.entity';
+
+declare module 'express-serve-static-core' {
+    interface Request {
+        user?: IJwtPayload | Partial&lt;IEntityUser&gt;;
+    }
+}
+declare module 'express' {
+    interface CookieSettings {
+        name    : string;
+        value?  : string;
+        options?: CookieOptions;
+    }
+}
+
+```
+
+I'd appreciate any help I can get. I already posted on [SO](https://stackoverflow.com/q/60797716/1934402) without any responses. You're welcome to answer to get the correct answer.
+## [8][First typescript application: instagram bot](https://www.reddit.com/r/typescript/comments/fnt859/first_typescript_application_instagram_bot/)
+- url: https://youtu.be/k-lWQUIA4f4
+---
+
+## [9][why am able to push this "any" into a typed array?](https://www.reddit.com/r/typescript/comments/fn2s73/why_am_able_to_push_this_any_into_a_typed_array/)
 - url: https://www.reddit.com/r/typescript/comments/fn2s73/why_am_able_to_push_this_any_into_a_typed_array/
 ---
  Good Morning I'm beginning to learn nestJS for a backend and so far liking it... 
@@ -83,7 +237,7 @@ More generally, not having worked with type unknown before, this is the concept 
 Thanks for your time and consideration.
 
  [https://codesandbox.io/s/practical-shape-p5rko](https://codesandbox.io/s/practical-shape-p5rko)
-## [6][(Open Source) Corona Statistics Dashboard in Angular 9 (PWA) + NodeJS Scrapper](https://www.reddit.com/r/typescript/comments/fn63q5/open_source_corona_statistics_dashboard_in/)
+## [10][(Open Source) Corona Statistics Dashboard in Angular 9 (PWA) + NodeJS Scrapper](https://www.reddit.com/r/typescript/comments/fn63q5/open_source_corona_statistics_dashboard_in/)
 - url: https://www.reddit.com/r/typescript/comments/fn63q5/open_source_corona_statistics_dashboard_in/
 ---
 (Open Source) Corona Statistics Dashboard in Angular 9 (PWA) + NodeJS Scrapper
@@ -97,7 +251,7 @@ Github: [https://github.com/OssamaRafique/Corona-Statistics-And-Tracker-Dashboar
 Buy me a Coffee [https://ko-fi.com/ossamarafique](https://ko-fi.com/ossamarafique)
 
 Please give me a star and upvote if you like it.
-## [7][Confused by generic related compilation error.](https://www.reddit.com/r/typescript/comments/fmgw5y/confused_by_generic_related_compilation_error/)
+## [11][Confused by generic related compilation error.](https://www.reddit.com/r/typescript/comments/fmgw5y/confused_by_generic_related_compilation_error/)
 - url: https://www.reddit.com/r/typescript/comments/fmgw5y/confused_by_generic_related_compilation_error/
 ---
 Basically the code that I have that is leading to the compilation error is similar to this:
@@ -142,30 +296,3 @@ I can't decipher the error message. Why is it failing and how do I fix it?
 I asked the question on StackOverflow, if you know how to crack this riddle, please feel free to answer the question over there
 
 [https://stackoverflow.com/questions/60789275/how-to-fix-compilation-error-when-trying-to-call-a-generic-typescript-method](https://stackoverflow.com/questions/60789275/how-to-fix-compilation-error-when-trying-to-call-a-generic-typescript-method)
-## [8][Proper TypeGraphQL architecture](https://www.reddit.com/r/typescript/comments/fmcymr/proper_typegraphql_architecture/)
-- url: https://www.reddit.com/r/typescript/comments/fmcymr/proper_typegraphql_architecture/
----
-Trying to figure out the reference setup with TypeGraphQL and my feeling is...
-
-- `@ObjectType` + the decorated class reflect the TS Type + SDL Type
-- `@Resolver` + the decorated class reflect the resolver
-- `@Service` + the decorated class which is DIed with `typedi` should reflect the data source
-
-Where I am unsure is the last one, `@Service`: 
-
-1. Does it makes sense?
-2. Do I put actual db queries (in my case mongo native driver) there or do I make another extra class?
-3. Why do I have to decorate also the resolver with `@Service`?
-4. How would 3 differ re ActiveRecord and DataMapper pattern?
-## [9][Introducing Gretchen: Making Fetch Happen in TypeScript](https://www.reddit.com/r/typescript/comments/fm038x/introducing_gretchen_making_fetch_happen_in/)
-- url: https://www.truework.com/blog/engineering/2020-03-04-introducing-gretchen/
----
-
-## [10][PostSass - A Sass x PostCSS cli tool, written in TypeScript (X-Post r/webdev)](https://www.reddit.com/r/typescript/comments/fmdebi/postsass_a_sass_x_postcss_cli_tool_written_in/)
-- url: https://github.com/Tanuel/postsass
----
-
-## [11][Seafox: self-hosted javascript parser written in Typescript](https://www.reddit.com/r/typescript/comments/fm02aq/seafox_selfhosted_javascript_parser_written_in/)
-- url: https://github.com/KFlash/seafox
----
-

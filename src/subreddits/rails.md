@@ -19,284 +19,268 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][JavaScript file structure in Rails 6?](https://www.reddit.com/r/rails/comments/fna1n4/javascript_file_structure_in_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/fna1n4/javascript_file_structure_in_rails_6/
+## [2][Best new thing to learn after Rails?](https://www.reddit.com/r/rails/comments/fo05t5/best_new_thing_to_learn_after_rails/)
+- url: https://www.reddit.com/r/rails/comments/fo05t5/best_new_thing_to_learn_after_rails/
 ---
-Hello,
-
-I'm developing a Rails application and I'm at the point of development where I need to add some JS. I can't find much documentation or tutorials how to do that correctly. I need to have some page specific JavaScript and the best thing I found so far was:
-- under the packs folder create a `page1.js` where I have my JavaScript for page1
-- in the view of page1 (`page1.html.erb`) include that pack with a JavaScript pack tag 
-
-Allthough it works, it doesn't seem like the best solution and also sometimes this `page1.js` appears to be running on other pages as well.
-
-Can you guys help me with this? 
-Thanks a lots
-## [3][To add different texts in the same popup-view](https://www.reddit.com/r/rails/comments/fniyhd/to_add_different_texts_in_the_same_popupview/)
-- url: https://www.reddit.com/r/rails/comments/fniyhd/to_add_different_texts_in_the_same_popupview/
----
-I have a popup in views/application/generic\_popup.html.erb
-
-    &lt;div&gt;Warning&lt;/div&gt;
-    &lt;div class="popup_body"&gt;text to show&lt;/div&gt;
-    
-
-I want to open this popup in my page on `views/cars/show.html.erb`
-
-    &lt;%= link_to generic_popup_path, data: { load_popup: true, remote: true } do %&gt;Submit&lt;% end %&gt;
-
-and I want to show in the `&lt;div class="popup_body"&gt;`, in generic\_popup, another text, for example `&lt;div class="popup_body"&gt;you can't submit it&lt;/div&gt;`
+I heard it might be JS. Did they mean vanilla JS? God that is ugly. I keep forgetting parentheses and ending the sentence with ;  I heard also buzzwords like MongoDB, Angular. I see myself as a Rails dev, but what should a take a look next? I would think some JS framework, and only using Rails as an API? 
 
 &amp;#x200B;
 
-I want to open the SAME popup also in another page on `views/drivers/show.html.erb`
-
-and to show A DIFFERENT TEXT always replacing `&lt;div class="popup_body"&gt;`, in generic\_popup, for example `&lt;div class="popup_body"&gt;The driver is stupid&lt;/div&gt;`
-
-**How to do? Is it possible?**
-## [4][Interacting with sass-lang?](https://www.reddit.com/r/rails/comments/fn7vf9/interacting_with_sasslang/)
-- url: https://www.reddit.com/r/rails/comments/fn7vf9/interacting_with_sasslang/
+What technology do you think is really useful to learn when working with Ruby on Rails?
+## [3][Babel Es6 With Rails 6](https://www.reddit.com/r/rails/comments/fo4y2g/babel_es6_with_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/fo4y2g/babel_es6_with_rails_6/
 ---
-Is there a way to interact with scss file? like passing a variable or a value to scss to determine with file to import in that scss?
-## [5][how to load all user email in background.](https://www.reddit.com/r/rails/comments/fnemmw/how_to_load_all_user_email_in_background/)
-- url: https://www.reddit.com/r/rails/comments/fnemmw/how_to_load_all_user_email_in_background/
+Hi
+
+I can't seem to get react written in ES6 style to compile with Rails 6 and Webpacker. Maybe I'm missing a config? Not sure how to configure babel to tell it to understand ES6.
+## [4][How would one go about finding Jr Dev Position?](https://www.reddit.com/r/rails/comments/fnzvnd/how_would_one_go_about_finding_jr_dev_position/)
+- url: https://www.reddit.com/r/rails/comments/fnzvnd/how_would_one_go_about_finding_jr_dev_position/
 ---
-i need when create post immediate send mail not waiting when search . appear this solution load all email in background . i need how to load all user mails in background . i use `delayed job gem`
-## [6][Rails migration runs without errors but doesnt create tsvector column, GIN index or TRIGGER](https://www.reddit.com/r/rails/comments/fmwhoe/rails_migration_runs_without_errors_but_doesnt/)
-- url: https://www.reddit.com/r/rails/comments/fmwhoe/rails_migration_runs_without_errors_but_doesnt/
+I (almost) got 2 personal projects, one on Rails 4 which I kind of abandoned, because it was useful at the start for me but not anymore. The current one I see potential in (Rails 6), a couple weeks in the future I see launching 1-st or 2nd iteration. This could be a good or bad thing - I know what I want to accomplish, and keep improving it, because the thing I don't like is publishing something I would critique for edge cases bugs or overall user experience. But enough excuses. I am getting into the business, so I would be fine with minimum salary/hourly in your country, working remote. Is it hard in this climate, and I am asking thinking before Corona outbreak. I got my Git reps for those projects on bitbucket, so I can arrange for potential employers to have a peak; I do not know what is the procedure. I am not big on CVs, just like the idea of showing the way I code and if there are any takers, start working remotely for minimal compensation. My written English, my 2nd language, is quite good, not sure about spoken, haven't had opportunities to practice it much.
+
+&amp;#x200B;
+
+Any general advice guys on how to get into business having some code to show off? With tests and all :)
+## [5][best command to kill all running `rails server` in macos](https://www.reddit.com/r/rails/comments/fnyi8f/best_command_to_kill_all_running_rails_server_in/)
+- url: https://www.reddit.com/r/rails/comments/fnyi8f/best_command_to_kill_all_running_rails_server_in/
 ---
-Hi,
 
-I'm currently implementing search functionality in my rails app using pg\_search for PostgreSQL full text search. Unfortunately, I'm having a problem with getting the migration to add the tsvector column, GIN INDEX and the TRIGGER in the listings table. The migration runs successfully but doesn't create the things specified in the migration file.
+```
+kill -9 `cat tmp/pids/server.pid`
+issues
+- only works if you're cd'd to the application directory
+- stops only that instance
 
-The migration file:
+killall ruby || killall rails
+issues
+- works on some types of applications only
 
-    class AddTsVectorColumns &lt; ActiveRecord::Migration[6.0]
-      def change
-        def up
-          add_column :listings, :tsv, :tsvector
-          add_index :listings, :tsv, using: 'gin'
-    
-          execute &lt;&lt;-SQL
-            CREATE OR REPLACE FUNCTION update_listings_tsv() RETURNS trigger AS $$
-            BEGIN
-              new.tsv := (
-                SELECT
-                  setweight(to_tsvector(l.item_name), 'A') ||
-                  setweight(to_tsvector(coalesce((string_agg(brands.name, ' ')), '')), 'A') ||
-                  setweight(to_tsvector(coalesce((string_agg(colours.name, ' ')), '')), 'B') ||
-                  setweight(to_tsvector(l.description), 'B') ||
-                  setweight(to_tsvector(categories.name), 'B') ||
-                  setweight(to_tsvector(sub_categories.name), 'B') ||
-                  setweight(to_tsvector(sizes.name), 'B') ||
-                  setweight(to_tsvector(users.username), 'C')
-    
-    
-                FROM listings l
-                JOIN users ON users.id = l.user_id
-                JOIN categories ON categories.id = l.category_id
-                JOIN sub_categories ON sub_categories.id = l.sub_category_id
-                JOIN sizes ON sizes.id = l.size_id
-                JOIN conditions ON conditions.id = l.condition_id
-    
-                -- Associative Tables
-                JOIN brands_listings ON brands_listings.listing_id = brands_listings.brand_id
-                JOIN brands ON brands.id = brands_listings.brand_id
-                JOIN colours_listings ON colours_listings.listing_id = colours_listings.colour_id
-                JOIN colours ON colours.id = colours_listings.colour_id
-                WHERE l.id = new.id
-                GROUP BY l.id, users.id, categories.id, sub_categories.id, sizes.id, conditions.id
-              );
-              RETURN new;
-            END;
-            $$ LANGUAGE plpgsql;
-    
-            CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
-            ON listings FOR EACH ROW EXECUTE PROCEDURE update_listings_tsv();
-          SQL
-        end
-    
-        def down
-          execute &lt;&lt;-SQL
-            DROP TRIGGER tsvectorupdate
-            ON listings
-          SQL
-    
-          remove_index :listings, :tsv
-          remove_column :listings, :tsv
-        end
+killall puma
+issues
+- im not sure this has ever worked for me. the only reason i try this is because _ps aux_ shows several puma entries
+
+```
+
+if you guys have a good ~/bin/kill-all-rails snippet, please share.
+## [6][How many comments in the latest 24 hours posted by the (current)User?](https://www.reddit.com/r/rails/comments/fnqgzm/how_many_comments_in_the_latest_24_hours_posted/)
+- url: https://www.reddit.com/r/rails/comments/fnqgzm/how_many_comments_in_the_latest_24_hours_posted/
+---
+In the `models/user.rb` I have
+
+      has_many :comments
+
+and in `models/comment.rb`, obviously, I have
+
+    #  id         :integer          not null, primary key
+    #  user_id    :integer          not null
+    #  text       :text             not null
+    #  created_at :datetime         not null
+    #  updated_at :datetime         not null
+
+&amp;#x200B;
+
+**How to check how many comments the User posted in the latest 24 horus?**
+
+Shoud I add it in `models/user.rb`, right?
+
+I was thinking to 
+
+      def comments_latest_24
+        Comments.where('created_at &gt;= ?', 24.hours.ago)
       end
-    end
 
-The output of the migration:
+and in view to use `&lt;%= @comments_latest_24.count %&gt;`
 
-    D, [2020-03-22T13:23:39.965602 #70710] DEBUG -- :   primary::SchemaMigration Create (0.4ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"  [["version", "20200313140854"]]
-    D, [2020-03-22T13:23:39.968646 #70710] DEBUG -- :    (0.9ms)  COMMIT
-    I, [2020-03-22T13:23:39.969992 #70710]  INFO -- : Migrating to AddTsVectorColumns (20200321060306)
-    == 20200321060306 AddTsVectorColumns: migrating ===============================
-    == 20200321060306 AddTsVectorColumns: migrated (0.0000s) ======================
-    
-    D, [2020-03-22T13:23:39.973220 #70710] DEBUG -- :    (0.4ms)  BEGIN
-    D, [2020-03-22T13:23:39.975042 #70710] DEBUG -- :   primary::SchemaMigration Create (0.4ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"  [["version", "20200321060306"]]
-    D, [2020-03-22T13:23:39.977113 #70710] DEBUG -- :    (0.4ms)  COMMIT
-    D, [2020-03-22T13:23:39.986874 #70710] DEBUG -- :   ActiveRecord::InternalMetadata Load (0.8ms)  SELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2  [["key", "environment"], ["LIMIT", 1]]
-    D, [2020-03-22T13:23:39.993805 #70710] DEBUG -- :    (0.2ms)  BEGIN
-    D, [2020-03-22T13:23:39.999419 #70710] DEBUG -- :   ActiveRecord::InternalMetadata Create (4.2ms)  INSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-22 03:23:39.992922"], ["updated_at", "2020-03-22 03:23:39.992922"]]
-    D, [2020-03-22T13:23:40.002363 #70710] DEBUG -- :    (0.7ms)  COMMIT
-    D, [2020-03-22T13:23:40.003788 #70710] DEBUG -- :    (0.4ms)  SELECT pg_advisory_unlock(6123583507257778380)
-    D, [2020-03-22T13:23:40.258046 #70710] DEBUG -- :    (0.6ms)  SELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC
+is it right?
 
-Error when trying to access the tsv column (which should have been created):
-
-    I, [2020-03-22T10:49:43.273416 #64203]  INFO -- : Started GET "/api/v1/public/search?q=Adidas" for ::1 at 2020-03-22 10:49:43 +1000
-    D, [2020-03-22T10:49:43.367465 #64203] DEBUG -- :    (6.1ms)  SELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC
-    I, [2020-03-22T10:49:43.383171 #64203]  INFO -- : Processing by Api::V1::Public::ListingsController#search as */*
-    I, [2020-03-22T10:49:43.383234 #64203]  INFO -- :   Parameters: {"q"=&gt;"Adidas"}
-    D, [2020-03-22T10:49:43.638039 #64203] DEBUG -- :   Listing Load (12.4ms)  SELECT "listings".* FROM "listings" INNER JOIN (SELECT "listings"."id" AS pg_search_id, (ts_rank(("listings"."tsv"), (to_tsquery('simple', ''' ' || 'Adidas' || ' ''' || ':*')), 0)) AS rank FROM "listings" WHERE (("listings"."tsv") @@ (to_tsquery('simple', ''' ' || 'Adidas' || ' ''' || ':*')))) AS pg_search_8a836f245cd6a84ba9cbd1 ON "listings"."id" = pg_search_8a836f245cd6a84ba9cbd1.pg_search_id ORDER BY pg_search_8a836f245cd6a84ba9cbd1.rank DESC, "listings"."id" ASC LIMIT $1  [["LIMIT", 100]]
-    D, [2020-03-22T10:49:43.638832 #64203] DEBUG -- :   ↳ app/controllers/application_controller.rb:47:in `public_render_listings_helper'
-    I, [2020-03-22T10:49:43.639121 #64203]  INFO -- : Completed 500 Internal Server Error in 256ms (ActiveRecord: 22.8ms | Allocations: 45123)
-    
-    
-    F, [2020-03-22T10:49:43.640013 #64203] FATAL -- :
-    ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column listings.tsv does not exist
-    LINE 1: ...SELECT "listings"."id" AS pg_search_id, (ts_rank(("listings"...
-                                                                 ^
-    ):
-
-Extract from the sql schema (with config.active\_record.schema\_format = :sql) -- -- PostgreSQL database dump --
-
-    SET statement_timeout = 0;
-    SET lock_timeout = 0;
-    SET client_encoding = 'UTF8';
-    SET standard_conforming_strings = on;
-    SET check_function_bodies = false;
-    SET client_min_messages = warning;
-    SET row_security = off;
-    
-    --
-    -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
-    --
-    
-    CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-    
-    
-    --
-    -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
-    --
-    
-    COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-    
-    
-    SET search_path = public, pg_catalog;
-    
-    SET default_tablespace = '';
-    
-    SET default_with_oids = false;
-    
-    --
-    -- Name: listings; Type: TABLE; Schema: public; Owner: -
-    --
-    
-    CREATE TABLE listings (
-        id bigint NOT NULL,
-        item_name character varying,
-        description character varying,
-        price integer,
-        shipping_cost integer,
-        created_at timestamp without time zone NOT NULL,
-        updated_at timestamp without time zone NOT NULL,
-        category_id bigint,
-        sub_category_id bigint,
-        size_id bigint,
-        user_id bigint,
-        full_item_name text,
-        cached_votes_total integer DEFAULT 0,
-        cached_votes_score integer DEFAULT 0,
-        cached_votes_up integer DEFAULT 0,
-        cached_votes_down integer DEFAULT 0,
-        cached_weighted_score integer DEFAULT 0,
-        cached_weighted_total integer DEFAULT 0,
-        cached_weighted_average double precision DEFAULT 0.0,
-        flaremeter integer DEFAULT 0,
-        condition_id bigint,
-        cover_photo_data text
-    );
-    
-    
-    --
-    -- Name: listings_id_seq; Type: SEQUENCE; Schema: public; Owner: -
-    --
-    
-    CREATE SEQUENCE listings_id_seq
-        START WITH 1
-        INCREMENT BY 1
-        NO MINVALUE
-        NO MAXVALUE
-        CACHE 1;
-    
-    
-    --
-    -- Name: listings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
-    --
-    
-    ALTER SEQUENCE listings_id_seq OWNED BY listings.id;
-    
-    
-    --
-    -- PostgreSQL database dump complete
-    --
-    
-    SET search_path TO "$user", public;
-    
-    INSERT INTO "schema_migrations" (version) VALUES
-    ('20200223103428'),
-    ('20200313111818'),
-    ('20200313140854'),
-    ('20200321060306');
-## [7][VS Code Extention help](https://www.reddit.com/r/rails/comments/fmwbw4/vs_code_extention_help/)
-- url: https://www.reddit.com/r/rails/comments/fmwbw4/vs_code_extention_help/
+**Is it counting only the comments posted by THE User? Or the comments posted by everyone?!**
+## [7][undefined method authenticate_user! after Rails 6 upgrade](https://www.reddit.com/r/rails/comments/fnzwwp/undefined_method_authenticate_user_after_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/fnzwwp/undefined_method_authenticate_user_after_rails_6/
 ---
-What is the extention used by pressing Ctrl + Shift to auto complete CSS classes in erb files.  
-
-
-ex - 
-
- `.nav navbar`     \-&gt;  Ctrl + Shift -&gt; `&lt;div class="nav navbar"&gt;&lt;/div&gt;`
-## [8][Sessions + Devise - [How to force sign out a user from all its session?]](https://www.reddit.com/r/rails/comments/fmx7ve/sessions_devise_how_to_force_sign_out_a_user_from/)
-- url: https://www.reddit.com/r/rails/comments/fmx7ve/sessions_devise_how_to_force_sign_out_a_user_from/
+Hi I did a Rails 5.2 to Rails 6 upgrade but then the authenticate\_user! from devise doesn't seem to be recognized. Anyone encounter a similar problem?
+## [8][optimizing DB query based on whether last_updated_at field at has changed in last x hours](https://www.reddit.com/r/rails/comments/fnqjdw/optimizing_db_query_based_on_whether_last_updated/)
+- url: https://www.reddit.com/r/rails/comments/fnqjdw/optimizing_db_query_based_on_whether_last_updated/
 ---
-I want to clear all sessions of a user on some attribute changes(email, password, etc.)
+I am relatively new to understanding indexing and not sure if this is an appropriate use case.  I have a model of about 1000 records, and it is associated with another model of about lets say 3000 records, and another with 10s of thousands of records.  I plan to create a scheduled job that runs every few hours or perhaps 24 hours based on whether or not certain fields have changed and if so, if they need to be updated/saved with changes grabbed from a site. 
 
-I use the ActiveRecord sessions table along with devise to handle user sessions. Since a user can have multiple sessions and each session is a unique entry in the table it's becoming difficult for me to figure out the most optimum approach to clear all the sessions for the user.
+I'm not sure at which level I yet want to to check, but I will want to check one of the above models to see whether `last_updated_at` has changed say with the last hour or few, or perhaps 24 hours - still figuring out the time frame. 
+
+Is an index just not a use case for the above example(I hope it makes some sense)?  Also available to the models is logidze so we could check relative changes, if I understand correctly.
+## [9][API design using fast jsonapi](https://www.reddit.com/r/rails/comments/fnlwqe/api_design_using_fast_jsonapi/)
+- url: https://www.reddit.com/r/rails/comments/fnlwqe/api_design_using_fast_jsonapi/
+---
+Hey, I'm new to Rails here! And no, this isn't a query on the framework itself
+
+I'm designing an API for a smart home app. This is a sample response 
+
+    {
+      "data": [
+        {
+          "id": "1",
+          "type": "Gateway",
+          "attributes": {
+            "name": "Soho Home",
+            "serial_number": "1234567890",
+            "integrator_id": 1,
+            "rooms": {
+              "data": [
+                {
+                  "id": "1",
+                  "type": "Room",
+                  "attributes": {
+                    "name": "Foyer",
+                    "devices": {
+                      "data": [
+                        {
+                          "id": "1",
+                          "type": "device",
+                          "attributes": {
+                            "name": "Corner Lamp",
+                            "device_type": "light",
+                            "percentage": "1.0"
+                          },
+                          "relationships": {
+                            "room": {
+                              "data": {
+                                "id": "1",
+                                "type": "room"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "id": "2",
+                          "type": "device",
+                          "attributes": {
+                            "name": "Curtain",
+                            "device_type": "curtain",
+                            "percentage": "1.0"
+                          },
+                          "relationships": {
+                            "room": {
+                              "data": {
+                                "id": "1",
+                                "type": "room"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "relationships": {
+                    "devices": {
+                      "data": [
+                        {
+                          "id": "1",
+                          "type": "device"
+                        },
+                        {
+                          "id": "2",
+                          "type": "device"
+                        }
+                      ]
+                    },
+                    "gateway": {
+                      "data": {
+                        "id": "1",
+                        "type": "gateway"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "2",
+                  "type": "Room",
+                  "attributes": {
+                    "name": "Cabin",
+                    "devices": {
+                      "data": []
+                    }
+                  },
+                  "relationships": {
+                    "devices": {
+                      "data": []
+                    },
+                    "gateway": {
+                      "data": {
+                        "id": "1",
+                        "type": "gateway"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "relationships": {
+            "rooms": {
+              "data": [
+                {
+                  "id": "1",
+                  "type": "room"
+                },
+                {
+                  "id": "2",
+                  "type": "room"
+                }
+              ]
+            },
+          }
+        }
+      ]
+    }
+
+Now, I'm using the fast jsonapi gem provided by Netflix, and my question is whether I load all that data down to three-four levels in one call or do I utilise the link option provided in the gem to make continous calls to get data at each level
 
 &amp;#x200B;
 
-Note - the table is quite big so iterating over the sessions and doing marshal dump in a batch won't be helpful.
-## [9][whats the point of integration test?](https://www.reddit.com/r/rails/comments/fmrycp/whats_the_point_of_integration_test/)
-- url: https://www.reddit.com/r/rails/comments/fmrycp/whats_the_point_of_integration_test/
+For example, lets assume I have four homes in my account. Each home has a gateway. Each gateway has rooms. Each room has devices. And I toggle those devices.
+
+The API will be consumed by an Android/iOS app. Does it make sense to load everything on startup in one call (all the gateways and their nested attributes) and operate the device, or utilise the JSON API spec and make a subsequent calls to get the rooms, then another call for the devices, and then operate them?
+
+I've not written an API in a while and this is my first time writing one in Rails. I absolutely love Rails so far but this bit of decision making is beyond my current capacity and I would be happy if someone chimed in!
+## [10][Connecting users - Friendship](https://www.reddit.com/r/rails/comments/fnp4lg/connecting_users_friendship/)
+- url: https://www.reddit.com/r/rails/comments/fnp4lg/connecting_users_friendship/
 ---
-If you are already doing unit testing and system testing, whats the value of doing integration testing? How can multiple components together fail an integration test when they each pass their own unit test (and the system test passes too)?
-## [10][Are Companies still hiring?](https://www.reddit.com/r/rails/comments/fm6nwe/are_companies_still_hiring/)
-- url: https://www.reddit.com/r/rails/comments/fm6nwe/are_companies_still_hiring/
+Hey Guys,   
+
+
+I'm currently working on a simple enough Social Media platform for a college project.  
+Am looking for a good(recent) guide to adding friendships between users. I have followed a guide or two already but seem to be hitting a dead end every time.   
+
+
+The guilds I've tried (with no luck):  
+ [https://smartfunnycool.com/friendships-in-activerecord/](https://smartfunnycool.com/friendships-in-activerecord/)   
+ [http://railscasts.com/episodes/163-self-referential-association?view=asciicast](http://railscasts.com/episodes/163-self-referential-association?view=asciicast) 
+
+Can anyone advise on a good guide or tutorial?  
+
+
+Cheers
+## [11][How to change table in db item?](https://www.reddit.com/r/rails/comments/fnq3jr/how_to_change_table_in_db_item/)
+- url: https://www.reddit.com/r/rails/comments/fnq3jr/how_to_change_table_in_db_item/
 ---
-I am a part time Rails developer searching for a full time role. It looks like I am facing some tough trends with companies everywhere closing and doing layoffs. 
-I am seeing Jr developers getting laid off everywhere. Do I stand a chance in the job search right now with less than a year of professional experience.
-## [11][Wanting to help other RoR developers](https://www.reddit.com/r/rails/comments/fm6vfn/wanting_to_help_other_ror_developers/)
-- url: https://www.reddit.com/r/rails/comments/fm6vfn/wanting_to_help_other_ror_developers/
----
-I really enjoy helping other programmers so i'd like to offer my time to anyone is stuck on something in Rails. I've been developing in RoR for 6 years and own a small custom software development company working with some pretty large projects.
+One of my tables looks like this...
 
-I mostly enjoy working with with the backend focusing on code design and testing in rspec, but if I can help you in something else, I'm happy to give it a shot. Even if you're brand new and it's just a discussion to ask some questions and maybe help connect the dots for you.
+      create_table "artists", force: :cascade do |t|
+        t.string "name"
+        t.integer "user_id", null: false
+        t.datetime "created_at", precision: 6, null: false
+        t.datetime "updated_at", precision: 6, null: false
+        t.index ["user_id"], name: "index_artists_on_user_id"
+      end
 
-Some requirements:
+But I need to delete the null: false from the user\_id to look like this...
 
-* I'd like to video conference the session (you sharing your screen) so we can record it and pop it up on YouTube for others. I'd like to keep it less than 2 hours.
-* You would need a mic/camera and good internet connection
-* I think it would be best suited those who are a beginner/intermediate in the framework. Preferably I'd like us to focus on an actual problem in the session rather than it turning into a straight video tutorial.
-* It would be helpful to get an idea on what the challenge you're facing, just so I know I can actually help you and not waste our time
+      create_table "artists", force: :cascade do |t|
+        t.string "name"
+        t.integer "user_id"
+        t.datetime "created_at", null: false
+        t.datetime "updated_at", null: false
+        t.index ["user_id"], name: "index_artists_on_user_id"
+      end
 
-If you're keen just leave a comment or send me a PM with your challenge and I'll be in touch. If it's not within my skillset maybe someone else might offer some time!
+How do I go about that? 
 
-&amp;#x200B;
-
-EDIT:  I'm not looking to charge anything, I'm just trying to stay busy, take a break from personal projects, and avoid video games.
+Thanks!

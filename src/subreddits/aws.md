@@ -1,86 +1,63 @@
 # aws
-## [1][Static IPs with an ALB?](https://www.reddit.com/r/aws/comments/fnjj41/static_ips_with_an_alb/)
-- url: https://www.reddit.com/r/aws/comments/fnjj41/static_ips_with_an_alb/
----
-We're launching a new service soon and I'd like your input on how to set up the networking infrastructure. Here are the main points that I'd like to accomplish and a bit of background
-
-* The service runs on ECS (Fargate) with an Nginx reverse proxy in front
-* Would like to use an application load balancer in front of the service, mainly for the nice monitoring capabilities you don't get with an NLB (and also built-in authentication which I'd like to use to keep our test environment private)
-* Would strongly prefer having static IPs (presumably using EIPs) for the service to ease DNS setup 
-* This service will be at the domain apex and unfortunately name server delegation to Route 53 is probably not feasible
-
-Currently ALBs do not support EIPs while NLBs do. AWS has published a blog post with a solution to get around that problem, but it looks byzantine and seems like overengineering to solve what should be a simple problem: [https://aws.amazon.com/blogs/networking-and-content-delivery/using-static-ip-addresses-for-application-load-balancers/](https://aws.amazon.com/blogs/networking-and-content-delivery/using-static-ip-addresses-for-application-load-balancers/)
-
-Does anyone have experience with that setup? If not I'll probably go with a setup of EIPs -&gt; NLB -&gt; ECS service, even though I'll miss out on the nice things that ALBs provide.
-## [2][VPC with Public and Private Subnets - EC2 in public subnet has no IP](https://www.reddit.com/r/aws/comments/fnggp0/vpc_with_public_and_private_subnets_ec2_in_public/)
-- url: https://www.reddit.com/r/aws/comments/fnggp0/vpc_with_public_and_private_subnets_ec2_in_public/
----
-Just tried the VPC wizard with "VPC with Public and Private Subnets" but the EC2 instance I created in the public subnet has no public IP.
-
-What am I missing?
-## [3][Automating docker deployments to EKS with CDK and CodePipeline](https://www.reddit.com/r/aws/comments/fnc69t/automating_docker_deployments_to_eks_with_cdk_and/)
-- url: https://www.reddit.com/r/aws/comments/fnc69t/automating_docker_deployments_to_eks_with_cdk_and/
----
-Anyone successfully created a CodePipeline deployment with CDK? I found [this doc](https://github.com/aws/aws-cdk/tree/master/packages/%40aws-cdk/aws-codepipeline-actions) but it skips over EKS completely. And I couldn't find anything online that describes the ins and outs of this pipeline -- it's like they don't want us to use EKS at all (all the docs, examples, and helper classes are geared towards ECS). 
-
-P.S. If codepipeline isn't the way to go, what would you recommend for an easy-to-setup and use CI/CD pipeline?
-## [4][Problem Deploying a docker container on ECS](https://www.reddit.com/r/aws/comments/fn7zhk/problem_deploying_a_docker_container_on_ecs/)
-- url: https://www.reddit.com/r/aws/comments/fn7zhk/problem_deploying_a_docker_container_on_ecs/
----
-Hey all, today is my first day on AWS, so apologies in advance if this is a stupid question. I have a Dash App that I wrapped up in a docker container, which I'm not trying to deploy on AWS. I *think* that I've successfully got an ECS instance up and running, but I can't access my app access the given Public DNS. I've been following tutorials all day, but something is just not working out for me. The Cluster, ECS Instance, and Task are all running and everything appear to be in a good state. However, when I try to access either the Public DNS or Public IP, I get hit with a Problem Loading Page. I'm not really sure how to troubleshoot at this point. Does anyone have any idea what may be going on?
-## [5][Is the Workspaces service getting hammered due to the increase of WFH persons?](https://www.reddit.com/r/aws/comments/fnj5ix/is_the_workspaces_service_getting_hammered_due_to/)
-- url: https://www.reddit.com/r/aws/comments/fnj5ix/is_the_workspaces_service_getting_hammered_due_to/
----
-I'm sure that the internet as a whole is getting hammered with the increase of persons WFH, and that AWS announcing:
-
-&gt;We are announcing two new offers that enable you to use Amazon WorkSpaces and Amazon WorkDocs for up to 50 users at no charge. Both offers are for new customers that have not previously used these services and are available through June 30, 2020.
-
-... probably isn't helping much.  
-
-Is anyone seeing an increase of end users complaining of their Workspaces being "laggy" or unresponsive?  I have some users on the other side of the world, and trying to determine if there is anything I can do to help them.
-## [6][Websocket](https://www.reddit.com/r/aws/comments/fniuvx/websocket/)
-- url: https://www.reddit.com/r/aws/comments/fniuvx/websocket/
----
-Hey guys, I'm using serverless-offline and I already have a websocket configured, but i want to know is it possible to open multiple websocket connections in different ports using serverless?
-## [7][Python/boto3 question](https://www.reddit.com/r/aws/comments/fn6ank/pythonboto3_question/)
-- url: https://www.reddit.com/r/aws/comments/fn6ank/pythonboto3_question/
----
-Hey everyone, 
-
-Was looking for some help on writing a simple python script that takes a user input like “us-East-1” and reboots all instances there. So like “script.py us-east-1” on a regular shell command line. Already have profile, keys, and permissions loaded up and can perform basic things just can’t narrow it down. Thanks in advance!
-## [8][Regarding Amazon SFTP](https://www.reddit.com/r/aws/comments/fn8e3j/regarding_amazon_sftp/)
-- url: https://www.reddit.com/r/aws/comments/fn8e3j/regarding_amazon_sftp/
----
-Users of my product/app (not a webapp) needs to submit files for processing via SFTP and after processing we need to send the results back to user via same SFTP.
-
- I learnt that behind the scenes Amazon SFTP stores the files in S3 buckets. If I have several users and if they should not be able to see each other's file then I create multiple S3 buckets like User1, User2, etc.
-
-Under User folder, I further create folders like User/Inbound and User/Outbound so that we can receive and send the files.
-
-Question:
-
-If I need to mount all these S3 buckets to the EC2 instance where my app is running do I need to mount all the S3's separately or could there be a parent folder that I can mount so that I can do it only once and need not create a input handler on my app?
-
-Also, after processing can I pass the S3 bucket names corresponding to each user as a parameter so that I don't have to create individual S3 outputs on my app?
-
-Note - Apologies if I am not using AWS terms and using regular NAS terms, as I am new to AWS.
-## [9][EventBridge: The key component in Serverless Architectures (Serverless-Transformation Article)](https://www.reddit.com/r/aws/comments/fngqtz/eventbridge_the_key_component_in_serverless/)
-- url: https://medium.com/serverless-transformation/eventbridge-the-key-component-in-serverless-architectures-e7d4e60fca2d
+## [1][Covid-19 AWS Certification Update: You can now take all AWS Certification exams with online proctoring](https://www.reddit.com/r/aws/comments/fnri6t/covid19_aws_certification_update_you_can_now_take/)
+- url: https://aws.amazon.com/certification/faqs/
 ---
 
-## [10][SQS Policy that only allows S3 notifications from objects from a specific user](https://www.reddit.com/r/aws/comments/fngfnq/sqs_policy_that_only_allows_s3_notifications_from/)
-- url: https://www.reddit.com/r/aws/comments/fngfnq/sqs_policy_that_only_allows_s3_notifications_from/
+## [2][How to hide credentials from aws-sdk in lambda when running untrusted code?](https://www.reddit.com/r/aws/comments/fo3mnt/how_to_hide_credentials_from_awssdk_in_lambda/)
+- url: https://www.reddit.com/r/aws/comments/fo3mnt/how_to_hide_credentials_from_awssdk_in_lambda/
 ---
-Dear Experts! 
+I am running Node.js sandbox as a service (part of bigger SaaS product). 
 
-I'm building a messaging system for a customer that responds to all create events on a s3 bucket. This system has the task of responding to new files files being written to the bucket, editing them, and the re-uploading the edited files back to the same bucket; under the same key. As you might understand, this causes a problem: Since my own edits will trigger new create notifications themselves, the event systems gets into an infinite loop.
+Currently, I am invoking a lambda handler which injects the untrusted code(passed from SQS as plaintext) into the excellent [VM2 sandbox](https://github.com/patriksimek/vm2). I would like to whitelist the `aws-sdk` module for the untrusted code. 
 
-I have no control over the s3 bucket keys, so I cannot use the build-in notification filters. I could check in my code if the changes where already made and don't upload the file to stop the loop. But this still means that some unwanted events from objects end up in my SQS queue. 
+The problem I noticed is that when the untrusted code requires `aws-sdk` it is populated with AWS credentials of the lambda execution role (fortunately it can only publish to CloudWatch, I can live with that). Is there any way to hide/remove the credentials?
+## [3][Adding Cloudwatch Alarms to EC2s via Terraform](https://www.reddit.com/r/aws/comments/fo2hhb/adding_cloudwatch_alarms_to_ec2s_via_terraform/)
+- url: https://www.reddit.com/r/aws/comments/fo2hhb/adding_cloudwatch_alarms_to_ec2s_via_terraform/
+---
+The author wanted to add Cloudwatch Status Check alarms to his ec2 instances and used terraform to do this. Here’s how he did it: https://medium.com/kareemery_78433/adding-cloudwatch-alarms-to-ec2s-via-terraform-d19c006ad95a?source=friends_link&amp;sk=fe6d7e0ced10c7b2354ed71339f13c1f
+## [4][ECS ComposeX](https://www.reddit.com/r/aws/comments/fo1fku/ecs_composex/)
+- url: https://docs.ecs-composex.lambda-my-aws.io/
+---
 
-The most promising solution I can think of is to have some SQS policy that only allows s3 to send a message if the s3 key was put by a certain user. That way I can prevent s3 from sending events from objects that I uploaded myself. The hope that this is even possible comes from the fact that I see the ["userIdentity.principalId"](https://docs.aws.amazon.com/AmazonS3/latest/dev/notification-content-structure.html) change in the notification message. 
+## [5][CloudFormation stack errors](https://www.reddit.com/r/aws/comments/fo21kf/cloudformation_stack_errors/)
+- url: https://www.reddit.com/r/aws/comments/fo21kf/cloudformation_stack_errors/
+---
+I had a user yesterday whose stack was failing when trying to create a new VPC.  The underlying issue was that the account they were using was at their VPC limit.  I happened to have seen this situation before, so I was able to delete some unused dev VPCs, but the user had no indication of the underlying reasoning.  A few hours were lost troubleshooting where or how the code may be failing, checking bucket permissions, role permissions, etc.  It would've likely been several more hours if they hadn't reached out to me for help.  In these situations, I haven't been able to find a way to find a log or warning that tells the user why they failed to create resources.  Is there some way to find these sorts of errors either in the console or via CLI?
+## [6][Does separate organization per client make sense?](https://www.reddit.com/r/aws/comments/fnle81/does_separate_organization_per_client_make_sense/)
+- url: https://www.reddit.com/r/aws/comments/fnle81/does_separate_organization_per_client_make_sense/
+---
+Hello, I am potentially working on multiple projects with different clients and want to setup billing separately with their own credit card for each account. So for example, lets say I have 2 clients. Each with their own infra since they have diff systems and apps. What is the best setup for something like this? What I am leaning towards is "Project based account structure" as defined in this article:
 
-Or maybe there are other options like the other [policy conditions](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html#sqs-specifying-conditions-in-policy). I could freely set certain tags on the object for example.
+ [https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)
 
-Does anyone know if it is possible to create an SQS policy that only allows s3 to send notifications to the queue if an s3 key was created by certain user? Or maybe have another solution to my problem.
+Does this make sense for my use case? Is there a better way? If I need to turn over the keys how would I do that?
+## [7][Are all t2 EC2's free?](https://www.reddit.com/r/aws/comments/fo18fq/are_all_t2_ec2s_free/)
+- url: https://www.reddit.com/r/aws/comments/fo18fq/are_all_t2_ec2s_free/
+---
+Today I launched the t2.2xlarge just for funzies since Ive only been using the free tier and need to upgrade.  I was expecting to get billed but haven't yet despite pricing being $0.148 per hour.  On the reserved instances pricing page, there were no t2 types.. Im a little confused.
 
-Thank you!
+I haven't been billed and I replaced my debit card, so Im not too worried
+## [8][How to check website speed from different locations?](https://www.reddit.com/r/aws/comments/fo18do/how_to_check_website_speed_from_different/)
+- url: https://www.reddit.com/r/aws/comments/fo18do/how_to_check_website_speed_from_different/
+---
+Which AWS Service can be used or how can I setup AWS to check the website speed from different locations?
+
+We are looking at building some custom tool for our requirement which needs to check the website speed at certain intervals. A script that can check website speed giving details about TTFB, as I understand, that would be different for each location. So how to check and setup this?
+
+Any help or reference to any article/video would be of great support.
+
+Thanks.
+## [9][Has there been any changes to how Performance Insights works for MySQL RDS?](https://www.reddit.com/r/aws/comments/fo0vk7/has_there_been_any_changes_to_how_performance/)
+- url: https://www.reddit.com/r/aws/comments/fo0vk7/has_there_been_any_changes_to_how_performance/
+---
+I used to be able to see the full mysql queries in my Performance insights. Now I’m only seeing database admin operations unlike
+
+Use database;
+COMMIT
+Etc..
+## [10][Updating AWS Workspace Image](https://www.reddit.com/r/aws/comments/fnzzn8/updating_aws_workspace_image/)
+- url: https://www.reddit.com/r/aws/comments/fnzzn8/updating_aws_workspace_image/
+---
+I've created a custom AWS Workspace Image and successfully created the follow on bundle and generated an AWS Workspace from it. The image contains some software downloaded to the C drive, and some reference files stored on the Desktop. In trying to update the image, I've created a new workspace from the base image, installed some additional software, and added new files to the reference folder on the desktop. I then go through and create a new image and bundle based on the updated Workspace. When I try to spin up a new workspace from this new bundle, the software is installed, but the changes to the desktop file do not persist. Am I missing a step in the process?
+
+Thanks!

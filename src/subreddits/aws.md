@@ -1,63 +1,110 @@
 # aws
-## [1][Covid-19 AWS Certification Update: You can now take all AWS Certification exams with online proctoring](https://www.reddit.com/r/aws/comments/fnri6t/covid19_aws_certification_update_you_can_now_take/)
-- url: https://aws.amazon.com/certification/faqs/
+## [1][CRUD App backend: API Gateway also, or just Lambda?](https://www.reddit.com/r/aws/comments/fom3ah/crud_app_backend_api_gateway_also_or_just_lambda/)
+- url: https://www.reddit.com/r/aws/comments/fom3ah/crud_app_backend_api_gateway_also_or_just_lambda/
 ---
+My backend will handle user auth/session management, and CRUD requests to a database on Amazon RDS (MySQL). I'm not clear on the role of API Gateway. 
 
-## [2][How to hide credentials from aws-sdk in lambda when running untrusted code?](https://www.reddit.com/r/aws/comments/fo3mnt/how_to_hide_credentials_from_awssdk_in_lambda/)
-- url: https://www.reddit.com/r/aws/comments/fo3mnt/how_to_hide_credentials_from_awssdk_in_lambda/
+Lambda gives a direct URL for REST queries for every function, right? What is the additional benefit of Amazon API gateway then? Should a small web application generally be concerned with API gateway, or focus on Lambda plus the database service?
+
+Thank you
+## [2][What do you think is the best up-to-date AWS AppSync tutorial for a complex Webapp?](https://www.reddit.com/r/aws/comments/foq7tc/what_do_you_think_is_the_best_uptodate_aws/)
+- url: https://www.reddit.com/r/aws/comments/foq7tc/what_do_you_think_is_the_best_uptodate_aws/
 ---
-I am running Node.js sandbox as a service (part of bigger SaaS product). 
+Currently I am planning to build a project with the following stack:
 
-Currently, I am invoking a lambda handler which injects the untrusted code(passed from SQS as plaintext) into the excellent [VM2 sandbox](https://github.com/patriksimek/vm2). I would like to whitelist the `aws-sdk` module for the untrusted code. 
+* ReactJS
+* AppSync 
+* Amazon DynamoDB 
+* Amazon Cognito 
+* AWS Lambda
 
-The problem I noticed is that when the untrusted code requires `aws-sdk` it is populated with AWS credentials of the lambda execution role (fortunately it can only publish to CloudWatch, I can live with that). Is there any way to hide/remove the credentials?
-## [3][Adding Cloudwatch Alarms to EC2s via Terraform](https://www.reddit.com/r/aws/comments/fo2hhb/adding_cloudwatch_alarms_to_ec2s_via_terraform/)
-- url: https://www.reddit.com/r/aws/comments/fo2hhb/adding_cloudwatch_alarms_to_ec2s_via_terraform/
+and I am looking for a tutorial which shows me a general overview how it would play together in a production app, so no todo lists or similar. Maybe a ecommerce shop would be interesting even if that's not what I am looking to build but it has many similarities.
+
+What would you recommend?
+
+Thank you for your time :)
+## [3][[QUESTION] Using Lambda to change files and create a Github pull request](https://www.reddit.com/r/aws/comments/fonc7g/question_using_lambda_to_change_files_and_create/)
+- url: https://www.reddit.com/r/aws/comments/fonc7g/question_using_lambda_to_change_files_and_create/
 ---
-The author wanted to add Cloudwatch Status Check alarms to his ec2 instances and used terraform to do this. Here’s how he did it: https://medium.com/kareemery_78433/adding-cloudwatch-alarms-to-ec2s-via-terraform-d19c006ad95a?source=friends_link&amp;sk=fe6d7e0ced10c7b2354ed71339f13c1f
-## [4][ECS ComposeX](https://www.reddit.com/r/aws/comments/fo1fku/ecs_composex/)
-- url: https://docs.ecs-composex.lambda-my-aws.io/
+Hi all, I have a pipeline that goes like this:
+
+1.  I created RDS using Terraform, something like:
+
+&amp;#8203;
+
+    module database {
+      # other details
+      db_storage              = "400"
+    }
+
+  2.  I have an RDS storage checker running on Lambda. This checks the remaining amount of storage in RDS and automatically increase the AllocatedStorage if it is below a certain threshold.
+
+3. However, this Lambda function only increases the storage in RDS, and it is not reflected in the repo. So, we have to manually change it in the repo and create a pull request. 
+
+So, I want to automate changing the `db_storage` value in the repo (which means I have to checkout a branch first), and create a pull request.
+
+&amp;#x200B;
+
+I went to check the Github webhook, but there is only an outgoing webhook and no incoming webhook. 
+
+&amp;#x200B;
+
+What should be the approach to achieve this?
+## [4][Does anyone work for AWS in Fed Gov Solutions? Deciding if I want to respond to a recruiter.](https://www.reddit.com/r/aws/comments/fo97zt/does_anyone_work_for_aws_in_fed_gov_solutions/)
+- url: https://www.reddit.com/r/aws/comments/fo97zt/does_anyone_work_for_aws_in_fed_gov_solutions/
 ---
+Was recently pinged by an AWS recruiter about a cloud infrastructure architect role with Federal Gov Solutions in the DC/VA area.
 
-## [5][CloudFormation stack errors](https://www.reddit.com/r/aws/comments/fo21kf/cloudformation_stack_errors/)
-- url: https://www.reddit.com/r/aws/comments/fo21kf/cloudformation_stack_errors/
+I've been curious about working at AWS in the past, but always read reviews about how many departments are meat grinders/sweat shops with no sense of work life balance. I'm very motivated and passionate about my work but I'm not at the point in life where I'm interested in 12 hour days as the regular.
+
+I have been told AWS Education Solutions is a nice department to work for in this regard and I'm curious if the same is true for federal.
+
+Does anyone work for AWS in Fed Solutions? What do you think?
+## [5][[Question] API as the registered target in the target group of NLB](https://www.reddit.com/r/aws/comments/foo7xb/question_api_as_the_registered_target_in_the/)
+- url: https://www.reddit.com/r/aws/comments/foo7xb/question_api_as_the_registered_target_in_the/
 ---
-I had a user yesterday whose stack was failing when trying to create a new VPC.  The underlying issue was that the account they were using was at their VPC limit.  I happened to have seen this situation before, so I was able to delete some unused dev VPCs, but the user had no indication of the underlying reasoning.  A few hours were lost troubleshooting where or how the code may be failing, checking bucket permissions, role permissions, etc.  It would've likely been several more hours if they hadn't reached out to me for help.  In these situations, I haven't been able to find a way to find a log or warning that tells the user why they failed to create resources.  Is there some way to find these sorts of errors either in the console or via CLI?
-## [6][Does separate organization per client make sense?](https://www.reddit.com/r/aws/comments/fnle81/does_separate_organization_per_client_make_sense/)
-- url: https://www.reddit.com/r/aws/comments/fnle81/does_separate_organization_per_client_make_sense/
+I am trying to build a API Gateway fronted by an NLB linked to a VPC endpoint so API can be exposed to other VPCs. However the targets in NLB target group needs to be either an IP address or an instance. How can I direct the traffic from NLB to API? Do I need to write a Lambda to get the IP address of APIs?
+## [6][Request more than 5 eip?](https://www.reddit.com/r/aws/comments/fopgoy/request_more_than_5_eip/)
+- url: https://www.reddit.com/r/aws/comments/fopgoy/request_more_than_5_eip/
 ---
-Hello, I am potentially working on multiple projects with different clients and want to setup billing separately with their own credit card for each account. So for example, lets say I have 2 clients. Each with their own infra since they have diff systems and apps. What is the best setup for something like this? What I am leaning towards is "Project based account structure" as defined in this article:
-
- [https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)
-
-Does this make sense for my use case? Is there a better way? If I need to turn over the keys how would I do that?
-## [7][Are all t2 EC2's free?](https://www.reddit.com/r/aws/comments/fo18fq/are_all_t2_ec2s_free/)
-- url: https://www.reddit.com/r/aws/comments/fo18fq/are_all_t2_ec2s_free/
+Default aws only gives max 5 eip. I want to more, how to have more eips and what’s its cost?
+## [7][Free Unlimited Load Testing for 30 days if you help me by completing a 2 minute Google Form](https://www.reddit.com/r/aws/comments/fop2ck/free_unlimited_load_testing_for_30_days_if_you/)
+- url: https://www.reddit.com/r/aws/comments/fop2ck/free_unlimited_load_testing_for_30_days_if_you/
 ---
-Today I launched the t2.2xlarge just for funzies since Ive only been using the free tier and need to upgrade.  I was expecting to get billed but haven't yet despite pricing being $0.148 per hour.  On the reserved instances pricing page, there were no t2 types.. Im a little confused.
+Everyone is offering something these days, in order to help other people or other businesses. Being a startup that is not launched yet, is very hard to contribute with something valuable to the community.
 
-I haven't been billed and I replaced my debit card, so Im not too worried
-## [8][How to check website speed from different locations?](https://www.reddit.com/r/aws/comments/fo18do/how_to_check_website_speed_from_different/)
-- url: https://www.reddit.com/r/aws/comments/fo18do/how_to_check_website_speed_from_different/
+So, here at [Rungutan](https://rungutan.com), we decided to offer you useful data instead 🙂. 
+
+In order to do this, we will need your help as well: share with us your Load Testing routine in times of crisis and __get our FREE report on this__ 📰 + __1 Month FREE access to the Rungutan Load Testing Platform (in Beta Test version)__ 📣
+
+PS: We welcome all DevOps, Testers and Developers to contribute with their responses
+
+[https://docs.google.com/forms/d/e/1FAIpQLSe7vt7SXagYg3wMgNPIEz4vW8j0rIh-rqv9ydiwLQkhFYQEaA/viewform](https://docs.google.com/forms/d/e/1FAIpQLSe7vt7SXagYg3wMgNPIEz4vW8j0rIh-rqv9ydiwLQkhFYQEaA/viewform)
+## [8][Amazon CA Question](https://www.reddit.com/r/aws/comments/fod47f/amazon_ca_question/)
+- url: https://www.reddit.com/r/aws/comments/fod47f/amazon_ca_question/
 ---
-Which AWS Service can be used or how can I setup AWS to check the website speed from different locations?
+I'm sure you have seen that Amazon communicated their plans to migrate all SSL/TLS certs to their own CA, Amazon Trust Services. 
 
-We are looking at building some custom tool for our requirement which needs to check the website speed at certain intervals. A script that can check website speed giving details about TTFB, as I understand, that would be different for each location. So how to check and setup this?
+I have been doing the recommended test by fetching an S3 object they provide and looking for a 200 OK in the response. Funny thing is, we have some instances that are 8-10 years old, some of which haven't really been kept up-to-date and yet they are passing with a 200 OK, just fine. Taking that a step further, some of those very same instances do not show Amazon Trust Services in the .crt that gets used. (I verify the file being used by doing a `curl -v` .)
 
-Any help or reference to any article/video would be of great support.
+So, my question is, have any of you seen a failure yet? If so, what does it look like? And if you're willing to share, what type of instance is it and how old?
 
-Thanks.
-## [9][Has there been any changes to how Performance Insights works for MySQL RDS?](https://www.reddit.com/r/aws/comments/fo0vk7/has_there_been_any_changes_to_how_performance/)
-- url: https://www.reddit.com/r/aws/comments/fo0vk7/has_there_been_any_changes_to_how_performance/
+Cheers!
+## [9][Looking for Advice on Systems Manager Patch Manager](https://www.reddit.com/r/aws/comments/fo935v/looking_for_advice_on_systems_manager_patch/)
+- url: https://www.reddit.com/r/aws/comments/fo935v/looking_for_advice_on_systems_manager_patch/
 ---
-I used to be able to see the full mysql queries in my Performance insights. Now I’m only seeing database admin operations unlike
+I've been tasked with getting a handle on the current environment patch compliance and software inventory. The environments are all AWS. I have the SSM agent installed and upgraded to the newest version pretty much across the board. I have almost all instances showing inventory.
 
-Use database;
-COMMIT
-Etc..
-## [10][Updating AWS Workspace Image](https://www.reddit.com/r/aws/comments/fnzzn8/updating_aws_workspace_image/)
-- url: https://www.reddit.com/r/aws/comments/fnzzn8/updating_aws_workspace_image/
+When it comes to patching compliance, I am struggling to come up with a plan.
+
+What I have so far are 4 environments: dev, staging, qa, and perf. Most of the instances are tagged with the appropriate tag for the respective environment. So I have a different maintenance windows setup for each environment to only scan for needed updates so I can report compliance. Eventually, I will need to patch these instances and this is where I am really struggling. 
+
+We have ASGs and those instances spun up via scaling policy will get the environment tag I mentioned above. What I don't want to do is kick off an install maintenance window and have these ASG machines get rebooted and potentially triggering more scaling events. Ideally, I wouldn't target my ASGs at all for patching, but instead automate the AMI to be updated and attached to the launch template.
+
+So my first couple questions are:
+How are others patching their static instances separate from their instances spun up via ASG?
+How are you leveraging tagging and Patch Groups to ensure the right patches are getting applied to the right instances?
+## [10][What is the best way to tags to AWS resource to oversee cost](https://www.reddit.com/r/aws/comments/fodth4/what_is_the_best_way_to_tags_to_aws_resource_to/)
+- url: https://www.reddit.com/r/aws/comments/fodth4/what_is_the_best_way_to_tags_to_aws_resource_to/
 ---
-I've created a custom AWS Workspace Image and successfully created the follow on bundle and generated an AWS Workspace from it. The image contains some software downloaded to the C drive, and some reference files stored on the Desktop. In trying to update the image, I've created a new workspace from the base image, installed some additional software, and added new files to the reference folder on the desktop. I then go through and create a new image and bundle based on the updated Workspace. When I try to spin up a new workspace from this new bundle, the software is installed, but the changes to the desktop file do not persist. Am I missing a step in the process?
-
-Thanks!
+Due to the whole Corona Virus outbreak, the company want to save some money and review existing AWS resource and cut cost.  What is the best way to go about this. I want to see cost of EC2/EBS/SNAPSHOT as well S3/Kinesis stream etc ?  Also we monitor usage via Wavefront hence we do lot of Data transfer, is there way to see cost of those too ?

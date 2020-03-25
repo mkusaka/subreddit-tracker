@@ -113,15 +113,54 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Changes between C++17 and C++20](https://www.reddit.com/r/cpp/comments/fo2dyw/changes_between_c17_and_c20/)
+## [3][LLVM/Clang 10.0.0 is released!](https://www.reddit.com/r/cpp/comments/fodkif/llvmclang_1000_is_released/)
+- url: https://www.reddit.com/r/cpp/comments/fodkif/llvmclang_1000_is_released/
+---
+From Hans Wennborgs email:
+
+&gt; Some highlights include:
+
+&gt; - C++ Concepts support in Clang
+
+&gt; - Clang no longer runs in a separate process by default ("in-process cc1")
+
+&gt; - Windows control flow guard (CFG) checks
+
+&gt; - Support for more processor cores and features
+
+
+https://llvm.org/releases/10.0.0/docs/ReleaseNotes.html
+
+https://llvm.org/releases/10.0.0/tools/clang/docs/ReleaseNotes.html
+
+https://llvm.org/releases/10.0.0/tools/clang/tools/extra/docs/ReleaseNotes.html
+
+https://llvm.org/releases/10.0.0/tools/lld/docs/ReleaseNotes.html
+
+https://llvm.org/releases/10.0.0/tools/polly/docs/ReleaseNotes.html
+
+https://llvm.org/releases/10.0.0/projects/libcxx/docs/ReleaseNotes.html
+## [4][Cpp-Taskflow 2.4-pre: A New Concurrent CPU-GPU Tasking Interface (cudaFlow)](https://www.reddit.com/r/cpp/comments/fokuwv/cpptaskflow_24pre_a_new_concurrent_cpugpu_tasking/)
+- url: https://github.com/cpp-taskflow/cpp-taskflow
+---
+
+## [5][Changes between C++17 and C++20](https://www.reddit.com/r/cpp/comments/fo2dyw/changes_between_c17_and_c20/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2131r0.html
 ---
 
-## [4][C++ style poll by Cor3ntin on Twitter](https://www.reddit.com/r/cpp/comments/fo1wy5/c_style_poll_by_cor3ntin_on_twitter/)
+## [6][P2137R0 Goals and priorities for C++](https://www.reddit.com/r/cpp/comments/fo5x17/p2137r0_goals_and_priorities_for_c/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2137r0.html
+---
+
+## [7][decltype(lambda) as default template argument](https://www.reddit.com/r/cpp/comments/foa3fk/decltypelambda_as_default_template_argument/)
+- url: https://www.reddit.com/r/cpp/comments/foa3fk/decltypelambda_as_default_template_argument/
+---
+I've read P0315R4, but I'm still not sure whether decltype of a lambda should yield different types in multiple instantiations when used as a default template argument. If it does, would that mean that this [is_complete type trait](https://godbolt.org/z/CO9CA6) is valid C++20 and actually works?
+## [8][C++ style poll by Cor3ntin on Twitter](https://www.reddit.com/r/cpp/comments/fo1wy5/c_style_poll_by_cor3ntin_on_twitter/)
 - url: https://twitter.com/Cor3ntin/status/1242166022532206595
 ---
 
-## [5][Post Prague Mailing is Posted](https://www.reddit.com/r/cpp/comments/fnu3nu/post_prague_mailing_is_posted/)
+## [9][Post Prague Mailing is Posted](https://www.reddit.com/r/cpp/comments/fnu3nu/post_prague_mailing_is_posted/)
 - url: https://www.reddit.com/r/cpp/comments/fnu3nu/post_prague_mailing_is_posted/
 ---
 The post-Prague mailing has been posted.   
@@ -129,11 +168,7 @@ The post-Prague mailing has been posted.
 
 
 Word on the street is that further mailings will be monthly in order to provided a faster feedback loop.
-## [6][Vector of Objects vs Vector of Pointers And Memory Access Patterns](https://www.reddit.com/r/cpp/comments/fnki5i/vector_of_objects_vs_vector_of_pointers_and/)
-- url: https://www.bfilipek.com/2014/05/vector-of-objects-vs-vector-of-pointers.html
----
-
-## [7][Anyone wrote a multi-vector-iterator?](https://www.reddit.com/r/cpp/comments/fo4qui/anyone_wrote_a_multivectoriterator/)
+## [10][Anyone wrote a multi-vector-iterator?](https://www.reddit.com/r/cpp/comments/fo4qui/anyone_wrote_a_multivectoriterator/)
 - url: https://www.reddit.com/r/cpp/comments/fo4qui/anyone_wrote_a_multivectoriterator/
 ---
 Every once in a while you find yourself with multiple vectors that represent something like different columns of the same data set:  the vectors will be of the same length, and elements at common indexes are related.  This is mostly no big deal until you want to do something fun like sort based on one of them.  I was thinking to myself how the algorithms  would work fine if I could have an iterator that iterates all n vectors at once.  Basically, have a tuple of iterators, and have that tuple itself satisfy the iterator interface by forwarding the calls to each of the elements of the tuple.  
@@ -141,114 +176,18 @@ Every once in a while you find yourself with multiple vectors that represent som
 &amp;#x200B;
 
 I assume this isn't a wholly original idea, is there one out there written already?  Are there better solutions, other than the obvious refactoring of it into a vector of tuples/objects/structs/etc? Isn't there some trick like using an algorithm to get an ordering from the sort order vector, and using that ordering to sort the others?
-## [8][Evaluating user defined logical expressions - booleval, small C++17 library](https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/)
-- url: https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/
----
-Hi there,
-
-For quite some time now, I have been implementing a small C++17 library [booleval](https://github.com/m-peko/booleval).
-
-**How** ***booleval*** **library helps you?**
-
-*booleval* library enables you to define logical expressions like *field\_a foo and field\_b 123*. Once you defined this expression, expression tree is being built by using recursive descent parser. Once the tree is built, you can pass a map of fields representing your object like:
-
-    {
-        "field_a": "foo",
-        "field_b": 123
-    }
-
-This will evaluate to *true* since the condition from the logical expression is satisfied.
-
-On the contrary, map of fields like:
-
-    {
-        "field_a": "bar",
-        "field_b": 123
-    }
-
-will be evaluated to *false* since the AND logical operator is not satisfied.
-
-**What is the use case?**
-
-Let's say you have large number of packets coming through the network interface and you want to filter them out by the following logical expression *port 55* *or port 32*. Packets with port 55 or port 32 will pass the filter, and maybe those will be written out to the file. Other packets will be ignored.
-
-**Supported data types:**
-
-* string
-* integer
-* float
-* double
-* ...
-
-&amp;#x200B;
-
-Please let me know what you think about this library:
-
-* are there any other libraries that I can include in my future benchmark?
-* is there something to do to improve performance of evaluation?
-* any feedback, suggestion is welcome :)
-* don't forget to give it a star on Github ;)
-
-Thanks in advance!!!
-## [9][Released Artemis 2.4.0](https://www.reddit.com/r/cpp/comments/fo0f8t/released_artemis_240/)
-- url: https://www.reddit.com/r/cpp/comments/fo0f8t/released_artemis_240/
----
-For Eclipse CDT users: the free static code analysis tool/plugin has been released in version 2.4.0 for Eclipse 2020-03.
-
-Link to market place and GitHub:
-https://marketplace.eclipse.org/content/artemis
-## [10][Why doesn't C++ templates have macro like token replacement?](https://www.reddit.com/r/cpp/comments/fnn0be/why_doesnt_c_templates_have_macro_like_token/)
-- url: https://www.reddit.com/r/cpp/comments/fnn0be/why_doesnt_c_templates_have_macro_like_token/
----
-So I'm sure at one point or another, we've all heard the argument that macros are evil and you should use templates instead. Unfortunately, I keep running into problem sets where I could conceptually use some sort of template that generates itself based on different tokens or keywords, and am wondering if any previous proposals have been made on this topic, as well as any unforeseen challenges that may arise out of a design like this, as I'm considering the value of drafting a proposal on the matter.
-Consider the following example:
-
-    struct test { int i; char j; }; 
-    template &lt;typename T&gt; auto get_i(T&amp;&amp; t) { return t._i; } 
-    template &lt;typename T&gt; auto get_j(T&amp;&amp; t) { return t._j; } 
-    test t{1, 'c'}; 
-    auto i = get_i(t);
-
-Consider the following proposed alternative:
-
-    template &lt;token _member, typename T&gt; auto get_member(T&amp;&amp; t) { return t.@_member; } 
-    test t{1, 'c'}; 
-    auto i = get_member&lt;@i&gt;(t);
-
-While the use of @ is merely a placeholder, .token (in the spirit of .template) may also work (and be required in the event of ambiguity). Now what about for something actually (potentially) useful?
-
-    struct frobnicates_transmogrifies 
-    { 
-        int frobnicate(){ return 2; } 
-        double transmogrify(){ return 3.0; } 
-    }; 
-    template &lt;typename T&gt; struct proxy_s 
-    { 
-        T t; 
-        template &lt;token _Func, typename... Args&gt; auto operator()(Args&amp;&amp;... args) 
-        { 
-            std::cout &lt;&lt; __PRETTY_FUNCTION__; 
-            return t.@_Func(std::forward&lt;Args&gt;(args)...); 
-        } 
-    }; 
-    
-    template &lt;token... Tokens, typename T&gt; auto make_tuple_from_tokens(T&amp;&amp; t) 
-    { 
-        return std::make_tuple(t.@Tokens...); 
-    } 
-    
-    using frob_tran = frobnicates_transmogrifies; 
-    auto proxy = proxy{frob_tran{}}; 
-    std::tuple&lt;int(proxy_s&lt;frob_tran&gt;*)(), double(proxy_s&lt;frob_tran&gt;*)()&gt; t = make_tuple_from_tokens(proxy);
-
-Essentially, there seems to be at least some value in token replacement with compile time type safety as opposed to macros, as well as the added benefit of not having to maintain multiple functions. Since this proposed syntax would be a sort of template generator, it would be subject to the same restrictions as current templates. What are the immediate problems and pitfalls of an idea like this?
-## [11][Let's accelerate BOINC](https://www.reddit.com/r/cpp/comments/fnm7zo/lets_accelerate_boinc/)
-- url: https://www.reddit.com/r/cpp/comments/fnm7zo/lets_accelerate_boinc/
----
-The BOINC (Rosetta@Home) project lets people donate CPU time to find vaccines, such as for COVID-19. Can we improve performance, either for the BOINC platform or the COVID-19 job specifically?
-
-https://github.com/BOINC/boinc
-## [12][C++ and friend keyword explained in detail @panicsoftware](https://www.reddit.com/r/cpp/comments/fnqfq2/c_and_friend_keyword_explained_in_detail/)
-- url: https://blog.panicsoftware.com/friends-and-where-to-find-them/
+## [11][Vector of Objects vs Vector of Pointers And Memory Access Patterns](https://www.reddit.com/r/cpp/comments/fnki5i/vector_of_objects_vs_vector_of_pointers_and/)
+- url: https://www.bfilipek.com/2014/05/vector-of-objects-vs-vector-of-pointers.html
 ---
 
+## [12][Why is string to string_view an operator of string and not a constructor of string_view?](https://www.reddit.com/r/cpp/comments/fo6o78/why_is_string_to_string_view_an_operator_of/)
+- url: https://www.reddit.com/r/cpp/comments/fo6o78/why_is_string_to_string_view_an_operator_of/
+---
+So I'm coming from a four-hour debugging ordeal which basically boiled down to a code line like this:
+
+    // std::string *str; 
+    std::string_view view(str == nullptr ? "" : *str);
+
+The problem was that this creates a temporary string as result of the ternary operator, since `""` is implicitly converted to `string` and that is not an lvalue. So the `string_view` is created from a temporary `string` object. However, since the temporary object goes out of scope immediately after the constructor call, `view` points to free'd memory (and, in the future, to garbage).
+
+If the conversion from `string` to `string_view` would have instead been defined as single-argument constructor of `string_view` taking a `const std::string&amp;`, my code would not have compiled. So, why is it defined as operator? Doesn't that just invite bugs like this?

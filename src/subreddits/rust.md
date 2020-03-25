@@ -23,49 +23,52 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fnflsh/whats_everyone_working_on_this_week_132020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-13-2020/39864?u=llogiq)!
-## [3][Tokio's new internal semaphore based on intrusive lists](https://www.reddit.com/r/rust/comments/fo066j/tokios_new_internal_semaphore_based_on_intrusive/)
-- url: https://github.com/tokio-rs/tokio/commit/acf8a7da7a64bf08d578db9a9836a8e061765314
+## [3][Learning Rust feels overwhelming](https://www.reddit.com/r/rust/comments/fomxnc/learning_rust_feels_overwhelming/)
+- url: https://www.reddit.com/r/rust/comments/fomxnc/learning_rust_feels_overwhelming/
+---
+Maybe it is because I have worked with JS ( Aah ) mostly in my short coding life. I'm currently in the Ownership section of the Rust book and it totally smashed my head. It's like I need to forget everything I learnt in C classes to understand Rust. I'm up for the challenge though as I will be home for the next 21 days due to Corona Lockdown nationwide here.   
+
+
+Also, I have huge respect for those programmers who work with Rust daily. You guys really tamed the wild horse.
+## [4][Learn Rust building a toy JIRA clone](https://www.reddit.com/r/rust/comments/fog2dj/learn_rust_building_a_toy_jira_clone/)
+- url: https://github.com/LukeMathWalker/build-your-own-jira-with-rust
 ---
 
-## [4][How I structure my apps (in Rust and other languages)](https://www.reddit.com/r/rust/comments/fnyird/how_i_structure_my_apps_in_rust_and_other/)
-- url: https://dpc.pw/how-i-structure-my-apps-in-rust-and-other-languages
+## [5][Rust Pie!](https://www.reddit.com/r/rust/comments/fopj3r/rust_pie/)
+- url: https://i.redd.it/1ig1geehcto41.jpg
 ---
 
-## [5][Broom: An ergonomic, easy to use garbage collector for your toy programming languages](https://www.reddit.com/r/rust/comments/fnscsx/broom_an_ergonomic_easy_to_use_garbage_collector/)
-- url: https://github.com/zesterer/broom
+## [6][Reducing memory consumption in librsvg, part 3: slack space in Bézier paths](https://www.reddit.com/r/rust/comments/fopa94/reducing_memory_consumption_in_librsvg_part_3/)
+- url: https://people.gnome.org/~federico/blog/reducing-memory-consumption-in-librsvg-3.html
 ---
 
-## [6][Inviting God's Wrath with Cursed Rust](https://www.reddit.com/r/rust/comments/fo487h/inviting_gods_wrath_with_cursed_rust/)
+## [7][Plans for the regex crate](https://www.reddit.com/r/rust/comments/fo8clp/plans_for_the_regex_crate/)
+- url: https://github.com/rust-lang/regex/issues/656
+---
+
+## [8][My rust-themed home office decoration](https://www.reddit.com/r/rust/comments/fopy3b/my_rustthemed_home_office_decoration/)
+- url: https://i.redd.it/gps2brjqhto41.jpg
+---
+
+## [9][`zig cc`: Drop-In Replacement for GCC/Clang with built in cross-compilation](https://www.reddit.com/r/rust/comments/fodv5d/zig_cc_dropin_replacement_for_gccclang_with_built/)
+- url: https://andrewkelley.me/post/zig-cc-powerful-drop-in-replacement-gcc-clang.html
+---
+
+## [10][tokio vs async-std in 2020?](https://www.reddit.com/r/rust/comments/fohfb7/tokio_vs_asyncstd_in_2020/)
+- url: https://www.reddit.com/r/rust/comments/fohfb7/tokio_vs_asyncstd_in_2020/
+---
+I'm aware of https://www.reddit.com/r/rust/comments/dngig6/tokio_vs_asyncstd but since so much has changed since that post I think it would be good to get an update. Thanks!
+## [11][Announcing Agnostik: Executor Agnostic Runtime](https://www.reddit.com/r/rust/comments/fo98kc/announcing_agnostik_executor_agnostic_runtime/)
+- url: https://www.reddit.com/r/rust/comments/fo98kc/announcing_agnostik_executor_agnostic_runtime/
+---
+[GitHub](https://github.com/bastion-rs/agnostik) | [Docs](https://docs.rs/agnostik) | [Crates.io](https://crates.io/crates/agnostik)
+
+We are happy to make everything agnostic, so we made Agnostik. Agnostik is a layer between your application and the executor that is used to execute futures. It allows you to switch between the executors smoothly and without having to change much code. You can use Agnostik in every library that requires an executor but wants to let the user decide which executor should be used. You can also use Agnostik in an application if you plan to use multiple executors or want to switch between executors. Soon, the Executor trait will be exposed with a unified async block handle.
+
+&amp;#x200B;
+
+Brought to you by [Bastion](https://bastion.rs)
+## [12][Inviting God's Wrath with Cursed Rust](https://www.reddit.com/r/rust/comments/fo487h/inviting_gods_wrath_with_cursed_rust/)
 - url: http://troubles.md/abusing-rustc/
----
-
-## [7][gfx-hal-0.5 is released!](https://www.reddit.com/r/rust/comments/fnq64x/gfxhal05_is_released/)
-- url: https://www.reddit.com/r/rust/comments/fnq64x/gfxhal05_is_released/
----
-This is mostly a polishing release, see the [CHANGELOG](https://github.com/gfx-rs/gfx/blob/fdfe887f5afab7ca057e3e824817d0bcdcf794ba/CHANGELOG.md#hal-050-23-03-2020). The existing APIs are yak-shaved, a few more is added. At the same time, we are moving closer to WebGPU needs, in particular with:
-
-  * read-only storage binding flags. Specifying them is an optimization on DX and Metal. Users can always keep them off as in Vulkan mode.
-  * sizes are passed to vertex and index buffer bindings. Again, this can be an optimization, and users can always pass them without bounds as in Vulkan.
-  * support for NDC space that is Y-flipped, to match DX and Metal.
-
-[gfx-ocean](https://github.com/gfx-rs/gfx-ocean) demo has been moved under gfx-rs organization, it's a great demo of using gfx-hal directly.
-## [8][A Rust library built on top of libbpf that allows to write and load bpf programs (no bcc dependency).](https://www.reddit.com/r/rust/comments/fnzktq/a_rust_library_built_on_top_of_libbpf_that_allows/)
-- url: https://github.com/uccidibuti/rebpf
----
-
-## [9][Rust Async and the Terrible, Horrible, No Good, Very Bad Day](https://www.reddit.com/r/rust/comments/fnj12j/rust_async_and_the_terrible_horrible_no_good_very/)
-- url: https://medium.com/@KevinHoffman/rust-async-and-the-terrible-horrible-no-good-very-bad-day-348ebc836274
----
-
-## [10][SIMD Array-of-Structures-of-Arrays in nalgebra and comparison with ultraviolet](https://www.reddit.com/r/rust/comments/fnt1ru/simd_arrayofstructuresofarrays_in_nalgebra_and/)
-- url: https://www.rustsim.org/blog/2020/03/23/simd-aosoa-in-nalgebra/
----
-
-## [11][Rust analyser weekly changelog](https://www.reddit.com/r/rust/comments/fnl8s1/rust_analyser_weekly_changelog/)
-- url: https://rust-analyzer.github.io/thisweek/2020/03/23/changelog-17.html
----
-
-## [12][Former Haskellers: Do you miss purity in rust? Why.](https://www.reddit.com/r/rust/comments/fnl4px/former_haskellers_do_you_miss_purity_in_rust_why/)
-- url: https://www.reddit.com/r/rust/comments/fnl4px/former_haskellers_do_you_miss_purity_in_rust_why/
 ---
 

@@ -19,268 +19,147 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Best new thing to learn after Rails?](https://www.reddit.com/r/rails/comments/fo05t5/best_new_thing_to_learn_after_rails/)
-- url: https://www.reddit.com/r/rails/comments/fo05t5/best_new_thing_to_learn_after_rails/
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/foqc07/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/foqc07/personal_projects_show_off_your_own_project_andor/
 ---
-I heard it might be JS. Did they mean vanilla JS? God that is ugly. I keep forgetting parentheses and ending the sentence with ;  I heard also buzzwords like MongoDB, Angular. I see myself as a Rails dev, but what should a take a look next? I would think some JS framework, and only using Rails as an API? 
+In this thread you can showcase your personal pet project to other redditors.
+
+Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+
+A suggested format to get you started:
+
+1. **Name of your project**
+2. **A short description**
+3. **Application stack**
+4. **Link to Live app**
+5. **Link to GitHub**
+6. **You experience level**
+7. **Other information or areas that you would like advice on**
+
+ 
+
+^(Many thanks to Kritnc for getting the ball rolling.)
+## [3][Scintilla is a gem for one-time scripts on Rails apps](https://www.reddit.com/r/rails/comments/fonh4l/scintilla_is_a_gem_for_onetime_scripts_on_rails/)
+- url: https://www.reddit.com/r/rails/comments/fonh4l/scintilla_is_a_gem_for_onetime_scripts_on_rails/
+---
+Hi all!
+
+I just extracted a gem from a couple projects I'm running in production. It allows running scripts only once, exactly as you do with migrations.
+
+Here's the link: [https://github.com/metalelf0/scintilla](https://github.com/metalelf0/scintilla)
+
+My typical use case is this:
+
+\- I realize I need to do some operations involving production data, and I want to keep track of them;
+
+\- I create a \`Scintilla\` script with \`rails g:scintilla \[my\_script\_name\]\`, and put my ruby code in the \`do\_the\_stuff\` method;
+
+\- I commit and push the code to staging env; an hook in my deployment flow runs \`rake scintilla:run\`, that finds the new script and runs it;
+
+\- I check it did what intended and push the code to production.
+
+It has some advantages over other approaches:
+
+\- if you're currently using \`seeds.rb\` for every data operation, \`Scintilla\` will allow to have a better history of scripts you have ran; also scripts no longer need to be idempotent - they are ran only once;
+
+\- if you're using migrations, \`Scintilla\` will allow to better separate concerns - you will be able to use migrations for db related operations and \`Scintilla\` for everything else. Also, you can safely use rails models in \`Scintilla\`: each script is \`require\`d conditionally, so if it has already been ran, it won't be required anymore.
+
+What do you think about it? Feel free to post any suggestion, criticism and anything you find useful!
+## [4][ActiveStorage DB relation explainer please](https://www.reddit.com/r/rails/comments/foop3u/activestorage_db_relation_explainer_please/)
+- url: https://www.reddit.com/r/rails/comments/foop3u/activestorage_db_relation_explainer_please/
+---
+Hi there. I’m migrating from Paperclip to AS and so far doing fine but got stuck converting a gem that uses multiple images per record. 
+
+It’s a has_many_attached relation, with an Offer model having many OfferImages. 
+
+Should I have one Attachment per record, then multiple Blobs per Attachment? Or one Attachment per Blob, meaning many Blobs and Attachments per record? 
+
+I can’t find this info anywhere, but I suspect that because each Attachment has a blob_id there’s actually many Attachment and many Blobs for each Offer. 
+
+Please enlighten me as to how the Attachment and Blob tables should look.
+## [5][clockworkd on aws](https://www.reddit.com/r/rails/comments/fohlp4/clockworkd_on_aws/)
+- url: https://www.reddit.com/r/rails/comments/fohlp4/clockworkd_on_aws/
+---
+Has anyone ever tried to daemonize clockwork process on an aws environment? For some reason it doesn't save on the processes.
+
+OS is in ubuntu 
+## [6][Trying to hit a third party API from a controller action](https://www.reddit.com/r/rails/comments/folhcn/trying_to_hit_a_third_party_api_from_a_controller/)
+- url: https://www.reddit.com/r/rails/comments/folhcn/trying_to_hit_a_third_party_api_from_a_controller/
+---
+I am using a rails application to fetch some data from a third party API and want to dedicate a controller action specifically for one action, how can I possibly do something like this?  
+For example:- I want to list a blog post from WordPress API and link it with blogs action in my post controller.  
+any help?
+## [7][Rails 6 API template](https://www.reddit.com/r/rails/comments/fo9kii/rails_6_api_template/)
+- url: https://www.reddit.com/r/rails/comments/fo9kii/rails_6_api_template/
+---
+Recently I've created rails API template. Because it seems that there no any well configured and modern template around GitHub. Anyway the template still pretty raw. So I will be grateful for any feedback/pull requests/github stars and you comments. Thanks :)  [rails-api-template](https://github.com/pandwoter/rails-api-template)
+## [8][Best lightweight alternative for text search SQL / Sphinx / Solr / Elastic Search ?](https://www.reddit.com/r/rails/comments/fondtn/best_lightweight_alternative_for_text_search_sql/)
+- url: https://www.reddit.com/r/rails/comments/fondtn/best_lightweight_alternative_for_text_search_sql/
+---
+Been developing with Rails for years and years.   
+
+
+For my projects, I tend to keep my dependencies and architecture as light as possible. I own some **website with mid side database** (dozens of thousands of entries). I keep looking for best practices for searches.  
+
+
+Currently, I use to do so :
 
 &amp;#x200B;
 
-What technology do you think is really useful to learn when working with Ruby on Rails?
-## [3][Babel Es6 With Rails 6](https://www.reddit.com/r/rails/comments/fo4y2g/babel_es6_with_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/fo4y2g/babel_es6_with_rails_6/
----
-Hi
+1. SQL only search (mysql) with Match queries (and good indices)  
 
-I can't seem to get react written in ES6 style to compile with Rails 6 and Webpacker. Maybe I'm missing a config? Not sure how to configure babel to tell it to understand ES6.
-## [4][How would one go about finding Jr Dev Position?](https://www.reddit.com/r/rails/comments/fnzvnd/how_would_one_go_about_finding_jr_dev_position/)
-- url: https://www.reddit.com/r/rails/comments/fnzvnd/how_would_one_go_about_finding_jr_dev_position/
+2. Thinking Sphinx (works quite well out of the box and do not require tons of dependencies)
+
+If some of you use things like Elastic Search (seems like very huge for small website, require java AFAIR) or Solr, what would be your advises ?
+## [9][Enums as constants in Ruby DSL](https://www.reddit.com/r/rails/comments/fomw4d/enums_as_constants_in_ruby_dsl/)
+- url: https://www.reddit.com/r/rails/comments/fomw4d/enums_as_constants_in_ruby_dsl/
 ---
-I (almost) got 2 personal projects, one on Rails 4 which I kind of abandoned, because it was useful at the start for me but not anymore. The current one I see potential in (Rails 6), a couple weeks in the future I see launching 1-st or 2nd iteration. This could be a good or bad thing - I know what I want to accomplish, and keep improving it, because the thing I don't like is publishing something I would critique for edge cases bugs or overall user experience. But enough excuses. I am getting into the business, so I would be fine with minimum salary/hourly in your country, working remote. Is it hard in this climate, and I am asking thinking before Corona outbreak. I got my Git reps for those projects on bitbucket, so I can arrange for potential employers to have a peak; I do not know what is the procedure. I am not big on CVs, just like the idea of showing the way I code and if there are any takers, start working remotely for minimal compensation. My written English, my 2nd language, is quite good, not sure about spoken, haven't had opportunities to practice it much.
+Define enums as constants in Ruby easily and maintain the code with pleasure. See how in my latest [post](https://railsguides.net/enums-as-constants-in-ruby-dsl/)
+## [10][Is there a way to connect ActionCable channels to SocketIO on the client side?](https://www.reddit.com/r/rails/comments/foj5ar/is_there_a_way_to_connect_actioncable_channels_to/)
+- url: https://www.reddit.com/r/rails/comments/foj5ar/is_there_a_way_to_connect_actioncable_channels_to/
+---
+
+## [11][How important is cache? Does reddit use cache?](https://www.reddit.com/r/rails/comments/fo6iih/how_important_is_cache_does_reddit_use_cache/)
+- url: https://www.reddit.com/r/rails/comments/fo6iih/how_important_is_cache_does_reddit_use_cache/
+---
+It is very strange to me the loading times even if nothing changed, maybe up/down votes only? I admit it might be my internet, but it is not very likely.
 
 &amp;#x200B;
 
-Any general advice guys on how to get into business having some code to show off? With tests and all :)
-## [5][best command to kill all running `rails server` in macos](https://www.reddit.com/r/rails/comments/fnyi8f/best_command_to_kill_all_running_rails_server_in/)
-- url: https://www.reddit.com/r/rails/comments/fnyi8f/best_command_to_kill_all_running_rails_server_in/
----
-
-```
-kill -9 `cat tmp/pids/server.pid`
-issues
-- only works if you're cd'd to the application directory
-- stops only that instance
-
-killall ruby || killall rails
-issues
-- works on some types of applications only
-
-killall puma
-issues
-- im not sure this has ever worked for me. the only reason i try this is because _ps aux_ shows several puma entries
-
-```
-
-if you guys have a good ~/bin/kill-all-rails snippet, please share.
-## [6][How many comments in the latest 24 hours posted by the (current)User?](https://www.reddit.com/r/rails/comments/fnqgzm/how_many_comments_in_the_latest_24_hours_posted/)
-- url: https://www.reddit.com/r/rails/comments/fnqgzm/how_many_comments_in_the_latest_24_hours_posted/
----
-In the `models/user.rb` I have
-
-      has_many :comments
-
-and in `models/comment.rb`, obviously, I have
-
-    #  id         :integer          not null, primary key
-    #  user_id    :integer          not null
-    #  text       :text             not null
-    #  created_at :datetime         not null
-    #  updated_at :datetime         not null
+So I want to ask you guys, working on Production grade sites/apps, how important is caching? Fragment caching seems the only reasonably way for Rails, and it is both simple and can go complicated choosing the keys.
 
 &amp;#x200B;
 
-**How to check how many comments the User posted in the latest 24 horus?**
+So answer to the first question is that cache is probably important.
 
-Shoud I add it in `models/user.rb`, right?
-
-I was thinking to 
-
-      def comments_latest_24
-        Comments.where('created_at &gt;= ?', 24.hours.ago)
-      end
-
-and in view to use `&lt;%= @comments_latest_24.count %&gt;`
-
-is it right?
-
-**Is it counting only the comments posted by THE User? Or the comments posted by everyone?!**
-## [7][undefined method authenticate_user! after Rails 6 upgrade](https://www.reddit.com/r/rails/comments/fnzwwp/undefined_method_authenticate_user_after_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/fnzwwp/undefined_method_authenticate_user_after_rails_6/
----
-Hi I did a Rails 5.2 to Rails 6 upgrade but then the authenticate\_user! from devise doesn't seem to be recognized. Anyone encounter a similar problem?
-## [8][optimizing DB query based on whether last_updated_at field at has changed in last x hours](https://www.reddit.com/r/rails/comments/fnqjdw/optimizing_db_query_based_on_whether_last_updated/)
-- url: https://www.reddit.com/r/rails/comments/fnqjdw/optimizing_db_query_based_on_whether_last_updated/
----
-I am relatively new to understanding indexing and not sure if this is an appropriate use case.  I have a model of about 1000 records, and it is associated with another model of about lets say 3000 records, and another with 10s of thousands of records.  I plan to create a scheduled job that runs every few hours or perhaps 24 hours based on whether or not certain fields have changed and if so, if they need to be updated/saved with changes grabbed from a site. 
-
-I'm not sure at which level I yet want to to check, but I will want to check one of the above models to see whether `last_updated_at` has changed say with the last hour or few, or perhaps 24 hours - still figuring out the time frame. 
-
-Is an index just not a use case for the above example(I hope it makes some sense)?  Also available to the models is logidze so we could check relative changes, if I understand correctly.
-## [9][API design using fast jsonapi](https://www.reddit.com/r/rails/comments/fnlwqe/api_design_using_fast_jsonapi/)
-- url: https://www.reddit.com/r/rails/comments/fnlwqe/api_design_using_fast_jsonapi/
----
-Hey, I'm new to Rails here! And no, this isn't a query on the framework itself
-
-I'm designing an API for a smart home app. This is a sample response 
-
-    {
-      "data": [
-        {
-          "id": "1",
-          "type": "Gateway",
-          "attributes": {
-            "name": "Soho Home",
-            "serial_number": "1234567890",
-            "integrator_id": 1,
-            "rooms": {
-              "data": [
-                {
-                  "id": "1",
-                  "type": "Room",
-                  "attributes": {
-                    "name": "Foyer",
-                    "devices": {
-                      "data": [
-                        {
-                          "id": "1",
-                          "type": "device",
-                          "attributes": {
-                            "name": "Corner Lamp",
-                            "device_type": "light",
-                            "percentage": "1.0"
-                          },
-                          "relationships": {
-                            "room": {
-                              "data": {
-                                "id": "1",
-                                "type": "room"
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "id": "2",
-                          "type": "device",
-                          "attributes": {
-                            "name": "Curtain",
-                            "device_type": "curtain",
-                            "percentage": "1.0"
-                          },
-                          "relationships": {
-                            "room": {
-                              "data": {
-                                "id": "1",
-                                "type": "room"
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  "relationships": {
-                    "devices": {
-                      "data": [
-                        {
-                          "id": "1",
-                          "type": "device"
-                        },
-                        {
-                          "id": "2",
-                          "type": "device"
-                        }
-                      ]
-                    },
-                    "gateway": {
-                      "data": {
-                        "id": "1",
-                        "type": "gateway"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "2",
-                  "type": "Room",
-                  "attributes": {
-                    "name": "Cabin",
-                    "devices": {
-                      "data": []
-                    }
-                  },
-                  "relationships": {
-                    "devices": {
-                      "data": []
-                    },
-                    "gateway": {
-                      "data": {
-                        "id": "1",
-                        "type": "gateway"
-                      }
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "relationships": {
-            "rooms": {
-              "data": [
-                {
-                  "id": "1",
-                  "type": "room"
-                },
-                {
-                  "id": "2",
-                  "type": "room"
-                }
-              ]
-            },
-          }
-        }
-      ]
-    }
-
-Now, I'm using the fast jsonapi gem provided by Netflix, and my question is whether I load all that data down to three-four levels in one call or do I utilise the link option provided in the gem to make continous calls to get data at each level
+I am most interested is there any technique for testing it, like in Capybara? Or is this one of those esoteric topics that it just comes with experience? That always kind of frightened me before I really studied TR5W.
 
 &amp;#x200B;
 
-For example, lets assume I have four homes in my account. Each home has a gateway. Each gateway has rooms. Each room has devices. And I toggle those devices.
-
-The API will be consumed by an Android/iOS app. Does it make sense to load everything on startup in one call (all the gateways and their nested attributes) and operate the device, or utilise the JSON API spec and make a subsequent calls to get the rooms, then another call for the devices, and then operate them?
-
-I've not written an API in a while and this is my first time writing one in Rails. I absolutely love Rails so far but this bit of decision making is beyond my current capacity and I would be happy if someone chimed in!
-## [10][Connecting users - Friendship](https://www.reddit.com/r/rails/comments/fnp4lg/connecting_users_friendship/)
-- url: https://www.reddit.com/r/rails/comments/fnp4lg/connecting_users_friendship/
+How does it work in reality, on production site? Let's say you got to implement a small feature, how do you go about caching your implementation?
+## [12][Anti-spam system for Comments. Wait 60 seconds](https://www.reddit.com/r/rails/comments/fo6a6d/antispam_system_for_comments_wait_60_seconds/)
+- url: https://www.reddit.com/r/rails/comments/fo6a6d/antispam_system_for_comments_wait_60_seconds/
 ---
-Hey Guys,   
+The website is growing up. I am tring to create an anti-spam system.
 
+The users have to wait 60 seconds to post again.
 
-I'm currently working on a simple enough Social Media platform for a college project.  
-Am looking for a good(recent) guide to adding friendships between users. I have followed a guide or two already but seem to be hitting a dead end every time.   
+in `models/user.rb` I added this
 
+    def anti_spam_comment
+    	@anti_spam_comment ||= (comments.last.created_at.to_time - Time.zone.today.to_datetime.to_time).floor
+    end
 
-The guilds I've tried (with no luck):  
- [https://smartfunnycool.com/friendships-in-activerecord/](https://smartfunnycool.com/friendships-in-activerecord/)   
- [http://railscasts.com/episodes/163-self-referential-association?view=asciicast](http://railscasts.com/episodes/163-self-referential-association?view=asciicast) 
+and in `views/comments/index` I added this
 
-Can anyone advise on a good guide or tutorial?  
+    &lt;%= current_user.anti_spam_comment &gt; 60 %&gt;
+    	You can not post
+    &lt;% else %&gt;
+    	Post Button
+    &lt;% end %&gt;
 
+But I have always the same value (and it is something like 48929)
 
-Cheers
-## [11][How to change table in db item?](https://www.reddit.com/r/rails/comments/fnq3jr/how_to_change_table_in_db_item/)
-- url: https://www.reddit.com/r/rails/comments/fnq3jr/how_to_change_table_in_db_item/
----
-One of my tables looks like this...
+**What is wrong?**
 
-      create_table "artists", force: :cascade do |t|
-        t.string "name"
-        t.integer "user_id", null: false
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.index ["user_id"], name: "index_artists_on_user_id"
-      end
-
-But I need to delete the null: false from the user\_id to look like this...
-
-      create_table "artists", force: :cascade do |t|
-        t.string "name"
-        t.integer "user_id"
-        t.datetime "created_at", null: false
-        t.datetime "updated_at", null: false
-        t.index ["user_id"], name: "index_artists_on_user_id"
-      end
-
-How do I go about that? 
-
-Thanks!
+**Is there a best way to do it? Should I use the scope?**

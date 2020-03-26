@@ -1,77 +1,86 @@
 # Kotlin
-## [1][Backend project Scala or Kotlin?](https://www.reddit.com/r/Kotlin/comments/fo57gd/backend_project_scala_or_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/fo57gd/backend_project_scala_or_kotlin/
+## [1][Comments vs. descriptive method names?](https://www.reddit.com/r/Kotlin/comments/fpa4v1/comments_vs_descriptive_method_names/)
+- url: https://www.reddit.com/r/Kotlin/comments/fpa4v1/comments_vs_descriptive_method_names/
 ---
-Hi all   
+I've recently been playing around with writing a gradle plugin. While doing so I found myself adding some comments.
 
-I will have microservices project, that I can choose between the language Kotlin and Scala.    
-What is your recommendation? Why should I go for Kotlin instead Scala?   
+For the last couple of years I've been arguing that only complicated (or just not obvious) business logic should be commented. If the code needed comments it should probably be refactored. Possible into smaller methods with descriptive names.
+
+What are your thoughts on the matter?
+
+https://github.com/tonsV2/source-release/blob/feature/methods-over-comments/src/main/kotlin/dk/fitfit/gradle/SourceRelease.kt
+
+https://github.com/tonsV2/source-release/blob/master/src/main/kotlin/dk/fitfit/gradle/SourceRelease.kt
+
+Which version do you guys prefer?
+## [2][Mocking is not practical — Use fakes](https://www.reddit.com/r/Kotlin/comments/fovn9z/mocking_is_not_practical_use_fakes/)
+- url: https://medium.com/@june.pravin/mocking-is-not-practical-use-fakes-e30cc6eaaf4e
+---
+
+## [3][Cheat code to get started with Kotlin](https://www.reddit.com/r/Kotlin/comments/fp9sxg/cheat_code_to_get_started_with_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/fp9sxg/cheat_code_to_get_started_with_kotlin/
+---
+ [https://www.hackerearth.com/blog/getting-started-with-kotlin](https://www.hackerearth.com/blog/getting-started-with-kotlin)
+## [4][Any free kotlin courses to take during this time?Except ones on udacity from google](https://www.reddit.com/r/Kotlin/comments/foys3h/any_free_kotlin_courses_to_take_during_this/)
+- url: https://www.reddit.com/r/Kotlin/comments/foys3h/any_free_kotlin_courses_to_take_during_this/
+---
+
+## [5][Android Notification BigPictureStyle &amp; BigTextStyle](https://www.reddit.com/r/Kotlin/comments/fozzxj/android_notification_bigpicturestyle_bigtextstyle/)
+- url: https://www.reddit.com/r/Kotlin/comments/fozzxj/android_notification_bigpicturestyle_bigtextstyle/
+---
+Android provides 5 notification styles for styling notification, BigTextStyle, BigPictureStyle, MessagingStyle, InboxStyle and MediaStyle. These two articles describe the first two styles:
+
+[Android Notification BigPictureStyle](https://itnext.io/android-notification-bigpicturestyle-1f293e6cabaf?source=friends_link&amp;sk=d760eea0b5e5fb27af137332f6871da6)
+
+[Android Notification BigTextStyle](https://itnext.io/android-notification-bigtextstyle-bd35f7530eae?source=friends_link&amp;sk=b7a41e84e63133210edb6713a52c056a)
+## [6][Kotlin equivalent of functional Ruby factorial code?](https://www.reddit.com/r/Kotlin/comments/fp3gpx/kotlin_equivalent_of_functional_ruby_factorial/)
+- url: https://www.reddit.com/r/Kotlin/comments/fp3gpx/kotlin_equivalent_of_functional_ruby_factorial/
+---
+What would be the Kotlin equivalent of this Ruby factorial one-liner?
+
+`(0..50).each {|x| puts -&gt;i { i.(i) }.(-&gt;i { -&gt;n { n.zero? ? 1 : n * i.(i).(n - 1) } }).(x)}`
+## [7][Confusion inlining .shuffle within a method (unresolved reference)](https://www.reddit.com/r/Kotlin/comments/fp31mp/confusion_inlining_shuffle_within_a_method/)
+- url: https://www.reddit.com/r/Kotlin/comments/fp31mp/confusion_inlining_shuffle_within_a_method/
+---
+Hey all, currently converting my blackjack game to Kotlin.
+
+I created a Deck class, and have a generateDeck method. In the main body, I invoke 
+
+    deck = Deck().generateDeck()
+
+which works nice. But then I want to shuffle the deck with a method. `deck.Deck().shuffleDeck()` . Here is my method:
+
+    fun shuffleDeck(deck : List&lt;Card?&gt;) : List&lt;Card?&gt; {
+            deck.shuffle()
+            println("Shuffling Deck")
+            return deck
+        }
+
+The .shuffle() works nice in the main code body, but when I try using it in the class method I get:
+
+    Error:(44, 14) Kotlin: Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+    @InlineOnly @SinceKotlin public inline fun &lt;T&gt; MutableList&lt;???&gt;.shuffle(): Unit defined in kotlin.collections
+    @InlineOnly @SinceKotlin public inline fun &lt;T&gt; MutableList&lt;???&gt;.shuffle(random: java.util.Random): Unit defined in kotlin.collections
+    @SinceKotlin public fun &lt;T&gt; MutableList&lt;???&gt;.shuffle(random: kotlin.random.Random): Unit defined in kotlin.collections
+
+So I think I need to inline the .shuffle function? But I am not sure on the proper way/syntax to do that. I tried adding to my intializer for the Deck class but that didn't work. 
 
 Thanks
-## [2][A few questions about Kotlin Native / MPP](https://www.reddit.com/r/Kotlin/comments/fo4phk/a_few_questions_about_kotlin_native_mpp/)
-- url: https://www.reddit.com/r/Kotlin/comments/fo4phk/a_few_questions_about_kotlin_native_mpp/
+## [8][Making a todo list](https://www.reddit.com/r/Kotlin/comments/foxjdv/making_a_todo_list/)
+- url: https://www.reddit.com/r/Kotlin/comments/foxjdv/making_a_todo_list/
 ---
-Hey I'm mostly an iOS developer and new to Kotlin. I'm building a Kotlin Multiplatform app for fun and to learn a bit about the ecosystem. I had a pretty rough time setting everything up and getting the right versions of dependencies to play well together as well as a hard time wrapping my head around async tasks between my iOS code and my shared Kotlin framework, I'm also seeing some really awful compile times for a fairly simple app (+1.5 minutes). How much of this will likely change in the future and how much of this is just down to my inexperience with the platform? on paper it looks great but I'm finding it pretty difficult to get behind for a serious project.
-## [3][Kotlin Named Tuple equivalent?](https://www.reddit.com/r/Kotlin/comments/fnzfry/kotlin_named_tuple_equivalent/)
-- url: https://www.reddit.com/r/Kotlin/comments/fnzfry/kotlin_named_tuple_equivalent/
----
-Hey all, I am in the process of converting my Blackjack game from Python to Kotlin. One of the tools I used was collections, where I could use collections.namedtuple('Card',['rank','suit','faceval']) function. 
+ Hello guys , i’m new in kotlin and i’m making now a todo list app , the  problem is i have two activities the first one contain the list view and  the other contain an edit text to receive the data from the user, i  used intent to passe the data between the two activities but if for  example a created a task it’s stored on the array if i want creat  another one the previous one it’s deleted 
 
-This would set up a list of cards, where each card would have a rank ("Ace" through "King"), suit, and faceval (0-9,10,10,10,10). I could then create two loops and use .append() to add card values. 
-
-Does anyone have any idea on how I should do this in Kotlin? I've tried making a  mutableList of each item in the loop, but I'm not sure how to add that list to another list. 
-
-Thx in advance.
-
-Here is my code: https://i.imgur.com/F2mdaTI.png
-## [4][Kotlin 1.4-M1 Released](https://www.reddit.com/r/Kotlin/comments/fnjpot/kotlin_14m1_released/)
-- url: https://blog.jetbrains.com/kotlin/2020/03/kotlin-1-4-m1-released/
----
-
-## [5][Kotlin 1.3.71](https://www.reddit.com/r/Kotlin/comments/fnmug8/kotlin_1371/)
-- url: https://github.com/JetBrains/kotlin/releases/tag/v1.3.71
----
-
-## [6][Has anyone here used/seen kotlin/native used with flutter via dart ffi?](https://www.reddit.com/r/Kotlin/comments/fnwii0/has_anyone_here_usedseen_kotlinnative_used_with/)
-- url: https://www.reddit.com/r/Kotlin/comments/fnwii0/has_anyone_here_usedseen_kotlinnative_used_with/
----
-asking for a friend ;)
-## [7][Authorization for a Kotlin Spring backend, using JSON Web Tokens](https://www.reddit.com/r/Kotlin/comments/fngfcj/authorization_for_a_kotlin_spring_backend_using/)
-- url: https://medium.com//authorization-for-a-kotlin-spring-backend-using-json-web-tokens-9f3c7b0d1ee7?source=friends_link&amp;sk=d1da9d3f7594d2b66cc882f260fd000f
----
-
-## [8][Getting Started with Kotlin on iOS, Part 2: Interop](https://www.reddit.com/r/Kotlin/comments/fnbx8x/getting_started_with_kotlin_on_ios_part_2_interop/)
-- url: https://benasher.co/kotlin-ios-getting-started-interop/
----
-
-## [9][Ktor, nested features](https://www.reddit.com/r/Kotlin/comments/fnjzrz/ktor_nested_features/)
-- url: https://www.reddit.com/r/Kotlin/comments/fnjzrz/ktor_nested_features/
----
-Maybe I have luck here, stackoverflow doesn't have a big ktor community.
-
-Has anyone achieved that only the last interceptor is executed when they are nested? Like
+[  here is the image for the list view activity.kt  ](https://preview.redd.it/tog1en7kovo41.png?width=946&amp;format=png&amp;auto=webp&amp;s=17602fcfa2cfa3136a3f307eb578a065ce73ab19)
 
 &amp;#x200B;
 
-    a(1) {
-      a(2) {
-       call.respond("")
-      }
-    }
-
-I do not want a(1) to be executed for the call pipeline at all as soon as one child also has a registered.
-## [10][Is there a better way to get a non-nullable object from a map?](https://www.reddit.com/r/Kotlin/comments/fn9njv/is_there_a_better_way_to_get_a_nonnullable_object/)
-- url: https://www.reddit.com/r/Kotlin/comments/fn9njv/is_there_a_better_way_to_get_a_nonnullable_object/
+[ and this is the editext activity.kt](https://preview.redd.it/otcg8tsmovo41.png?width=575&amp;format=png&amp;auto=webp&amp;s=8618107247deb9e3ac5f8133e6f6e84838abb10f)
+## [9][Using Kotlin, i can get and set variables using only its names. How can i implement the same for custom variables?](https://www.reddit.com/r/Kotlin/comments/fox92q/using_kotlin_i_can_get_and_set_variables_using/)
+- url: https://www.reddit.com/r/Kotlin/comments/fox92q/using_kotlin_i_can_get_and_set_variables_using/
 ---
-Hi!
 
-I'm pretty new to Kotlin. I've rewritten a smaller Java component of mine into Kotlin throughout the weekend and I'm liking what I'm seeing thus far. I have but one question for now:
+## [10][I'm just starting out in Kotlin and was wondering if anyone could help me out with this question](https://www.reddit.com/r/Kotlin/comments/fouqk6/im_just_starting_out_in_kotlin_and_was_wondering/)
+- url: https://i.redd.it/n68rmq75xuo41.jpg
+---
 
-&gt;if (name !in catsByName) {  
- return  
-}  
-val cat: Cat = catsByName\[name\]!!
-
-There are some occasions when I ran into code like this. I don't want to do a thing when there is no value under the key specified, but if there is I want my code to run past through the first if guard. The problem is that the get method of the map (here it is \[\]) gives back a Cat? type when in realty I need a non-nullable Cat. Is there a better practice to get a non-nullable Cat type or is using the !! operator the best thing to do here? I know it is safe, there is no chance it will throw an exception here but still, I guess it looks a bit ugly.
-
-Thanks!

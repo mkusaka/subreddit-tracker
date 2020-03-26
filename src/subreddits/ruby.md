@@ -1,9 +1,114 @@
 # ruby
-## [1][Improving Net::HTTP Concurrency by Samuel Williams](https://www.reddit.com/r/ruby/comments/foos7v/improving_nethttp_concurrency_by_samuel_williams/)
+## [1][Webpacker 5.0 released](https://www.reddit.com/r/ruby/comments/fp6r12/webpacker_50_released/)
+- url: https://prathamesh.tech/2020/03/25/webpacker-5-0-released/
+---
+
+## [2][Glimmer (JRuby Desktop UI DSL + Data-Binding)](https://www.reddit.com/r/ruby/comments/fp62o1/glimmer_jruby_desktop_ui_dsl_databinding/)
+- url: https://www.reddit.com/r/ruby/comments/fp62o1/glimmer_jruby_desktop_ui_dsl_databinding/
+---
+[https://github.com/AndyObtiva/glimmer](https://github.com/AndyObtiva/glimmer)
+
+Glimmer (JRuby Desktop UI DSL + Data-Binding) has been undergoing new development.
+
+Examples:
+
+https://preview.redd.it/56f1oatgqyo41.png?width=135&amp;format=png&amp;auto=webp&amp;s=00d9663fd6bc51de0652b892e00d68d8aa8d5d7c
+
+    include Glimmer
+    
+    shell {
+      text "Glimmer"
+      label {
+        text "Hello World!"
+      }
+    }.open
+
+&amp;#x200B;
+
+https://preview.redd.it/022q03llqyo41.png?width=159&amp;format=png&amp;auto=webp&amp;s=f2c23d985d7497c32c19534e9950fa8de6572be0
+
+    shell {
+      text "Tic-Tac-Toe"
+      composite {
+        grid_layout 3, true
+        (1..3).each { |row|
+          (1..3).each { |column|
+            button {
+              layout_data :fill, :fill, true, true
+              text        bind(@tic_tac_toe_board[row, column], :sign)
+              enabled     bind(@tic_tac_toe_board[row, column], :empty)
+              on_widget_selected {
+                @tic_tac_toe_board.mark_box(row, column)
+              }
+            }
+          }
+        }
+      }
+    }
+
+Recent changes/additions:
+- Nested/indexed property data-binding
+- SWT layout and layout data DSL
+- SWT Color and Font DSL
+- Ability to add Glimmer Custom Widgets
+- SWT Browser widget support
+- Automatic cleanup of data-binding/observers upon disposing a widget
+- Easier SWT style syntax via GSWT class
+- Inclusion of SWT library jars in Ruby gem
+- Improved glimmer/girb commands for running on Windows/Linux/Mac
+## [3][Why and How to Host your Rails 6 App with AWS ElasticBeanstalk and RDS](https://www.reddit.com/r/ruby/comments/fowm39/why_and_how_to_host_your_rails_6_app_with_aws/)
+- url: https://www.reddit.com/r/ruby/comments/fowm39/why_and_how_to_host_your_rails_6_app_with_aws/
+---
+When you deploy a new Rails app, you typically face a double-bind. If you use an easy platform like Heroku, you could create problems for yourself as your application scales. If you use a more fully-featured platform, you risk wasting time on ops that could be spent on your product. What if you could have both: an easy deployment option that is easy to scale? In this article, Amos Omondi argues that AWS Elastic Beanstalk gives us both, then he shows us everything we need to know to get a Rails 6 app up and running on EB. [https://www.honeybadger.io/blog/rails-6-aws-elastic-beanstalk/](https://www.honeybadger.io/blog/rails-6-aws-elastic-beanstalk/)
+## [4][Sending data from Ruby to Frontend without Rails?](https://www.reddit.com/r/ruby/comments/fp3djx/sending_data_from_ruby_to_frontend_without_rails/)
+- url: https://www.reddit.com/r/ruby/comments/fp3djx/sending_data_from_ruby_to_frontend_without_rails/
+---
+I was just wondering if anyone had any resources or references on how one would use just Ruby without a framework such as rails to use as a backend and pass data to the front end?
+## [5][Improving Net::HTTP Concurrency by Samuel Williams](https://www.reddit.com/r/ruby/comments/foos7v/improving_nethttp_concurrency_by_samuel_williams/)
 - url: https://youtube.com/watch?v=uU8ziRoJ2Z8&amp;feature=youtu.be
 ---
 
-## [2][Why does Hash.new(0) allow for unique values but Hash.new("some text") makes all keys' values point to the same place in memory?](https://www.reddit.com/r/ruby/comments/fod8gx/why_does_hashnew0_allow_for_unique_values_but/)
+## [6][Setup Ruby on Rails Active Storage for Transfer Accelerated S3](https://www.reddit.com/r/ruby/comments/fp5jln/setup_ruby_on_rails_active_storage_for_transfer/)
+- url: https://www.reddit.com/r/ruby/comments/fp5jln/setup_ruby_on_rails_active_storage_for_transfer/
+---
+Transfer Accelerated S3 bucket allows you to upload/download faster. The setup should be simple in theory:
+
+The endpoint changes from:
+
+`mybucket.s3.us-east-1.amazonaws.com`
+
+to:
+
+`mybucket.s3-accelerate.amazonaws.com`
+
+In Ruby on Rails config/storage.yml the environment variables look like this:
+
+`amazon:`
+
+`service: S3`
+
+`access_key_id: &lt;%= ENV['AWS_ACCESS_KEY_ID'] %&gt;`
+
+`secret_access_key: &lt;%= ENV['AWS_SECRET_ACCESS_KEY'] %&gt;`
+
+`region: &lt;%= ENV['AWS_REGION'] %&gt;`
+
+`bucket: &lt;%= ENV['AWS_BUCKET'] %&gt;`
+
+The problem is the pattern is different, so I can't just change `AWS_REGION`. There is an extra `.s3` in there. Do you know how to implement transfer acceleration?
+## [7][2 word file](https://www.reddit.com/r/ruby/comments/fp0df0/2_word_file/)
+- url: https://www.reddit.com/r/ruby/comments/fp0df0/2_word_file/
+---
+Having some trouble running 2 worded .rb files. I am using the GNOME text editor and running the code from the Linux terminal. Does anyone know why it refuses to run? Sorry for the beginner question! 
+## [8][render_async Fires Events By Default](https://www.reddit.com/r/ruby/comments/fosp1m/render_async_fires_events_by_default/)
+- url: https://pragmaticpineapple.com/render-async-fires-events-by-default/
+---
+
+## [9][The return Keyword in Ruby](https://www.reddit.com/r/ruby/comments/foq6ww/the_return_keyword_in_ruby/)
+- url: https://medium.com/rubycademy/the-return-keyword-in-ruby-df0a7f578fcb
+---
+
+## [10][Why does Hash.new(0) allow for unique values but Hash.new("some text") makes all keys' values point to the same place in memory?](https://www.reddit.com/r/ruby/comments/fod8gx/why_does_hashnew0_allow_for_unique_values_but/)
 - url: https://www.reddit.com/r/ruby/comments/fod8gx/why_does_hashnew0_allow_for_unique_values_but/
 ---
 To illustrate my question:
@@ -26,39 +131,3 @@ h["b"] # =&gt; 0
 I didn't have to pass the block `{ |hash, key| hash[key] = ... }` into `Hash.new` and yet `h["b"]` remained as 0 while `h["a"]` changed. After seeing the behavior of `Hash.new("some text")` I would expect `h["b"]` to also be `1`.
 
 Thanks for any explanations or pointing out any holes in my understanding!
-## [3][The return Keyword in Ruby](https://www.reddit.com/r/ruby/comments/foq6ww/the_return_keyword_in_ruby/)
-- url: https://medium.com/rubycademy/the-return-keyword-in-ruby-df0a7f578fcb
----
-
-## [4][RuboCoping with legacy: Bring your Ruby code up to Standard](https://www.reddit.com/r/ruby/comments/fo57nt/rubocoping_with_legacy_bring_your_ruby_code_up_to/)
-- url: https://evilmartians.com/chronicles/rubocoping-with-legacy-bring-your-ruby-code-up-to-standard
----
-
-## [5][Six-month release cadence is moving @OpenJDK forward at a fast pace.](https://www.reddit.com/r/ruby/comments/fobwg8/sixmonth_release_cadence_is_moving_openjdk/)
-- url: https://twitter.com/bellsoftware/status/1240762836042878977
----
-
-## [6][How to Develop and Debug Ruby Applications in Kubernetes](https://www.reddit.com/r/ruby/comments/fo2w02/how_to_develop_and_debug_ruby_applications_in/)
-- url: https://www.reddit.com/r/ruby/comments/fo2w02/how_to_develop_and_debug_ruby_applications_in/
----
-Develop your Ruby applications in Kubernetes with instant hot reload as you type code and using your favorite IDE debugger:
-
-[https://okteto.com/blog/how-to-develop-ruby-apps-in-kubernetes/](https://okteto.com/blog/how-to-develop-ruby-apps-in-kubernetes/)
-## [7][When Ruby 2.7.1 is coming out?](https://www.reddit.com/r/ruby/comments/foehws/when_ruby_271_is_coming_out/)
-- url: https://www.reddit.com/r/ruby/comments/foehws/when_ruby_271_is_coming_out/
----
-
-## [8][So I have started planning for this project and there is a lot I do not know. For starters, is there a tool I can use to get system info like memory or CPU usage?](https://www.reddit.com/r/ruby/comments/fo4gk4/so_i_have_started_planning_for_this_project_and/)
-- url: /r/ruby/comments/fhzkng/build_a_linux_cli_tool_like_glances_in_ruby/
----
-
-## [9][Using UUIDs to your new Rails 6 application](https://www.reddit.com/r/ruby/comments/fnmqj5/using_uuids_to_your_new_rails_6_application/)
-- url: https://www.reddit.com/r/ruby/comments/fnmqj5/using_uuids_to_your_new_rails_6_application/
----
-
-[The first part](https://itnext.io/why-working-with-uuids-instead-of-ids-is-better-b60d22caf601?source=friends_link&amp;sk=ed026c73e0cb06d153c63814c95746c3) of this series describes why working with UUIDs instead of IDs is better
-[The second part](https://medium.com/@guillaumeocculy/using-uuids-to-your-rails-6-application-6438f4eeafdf?source=friends_link&amp;sk=cf6c4b885e89ce382f6adea703adea77) explains the power of UUIDs on a brand new Rails application.
-## [10][How to do multi-step forms in Rails](https://www.reddit.com/r/ruby/comments/fnpbru/how_to_do_multistep_forms_in_rails/)
-- url: https://www.codewithjason.com/rails-multi-step-forms/
----
-

@@ -113,7 +113,39 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][LLVM/Clang 10.0.0 is released!](https://www.reddit.com/r/cpp/comments/fodkif/llvmclang_1000_is_released/)
+## [3][Wt 4.3.0 released! (widget-based C++ web framework)](https://www.reddit.com/r/cpp/comments/fp7hs1/wt_430_released_widgetbased_c_web_framework/)
+- url: https://www.webtoolkit.eu/wt/news/2020/03/26/wt___jwt_3_6_0_and_wt_4_3_0
+---
+
+## [4][Tutorial: C++20's Iterator Sentinels](https://www.reddit.com/r/cpp/comments/foqik0/tutorial_c20s_iterator_sentinels/)
+- url: https://foonathan.net/2020/03/iterator-sentinel/
+---
+
+## [5][Build C++ from source: Part 1/N - Improving compile times](https://www.reddit.com/r/cpp/comments/fov6vn/build_c_from_source_part_1n_improving_compile/)
+- url: https://cor3ntin.github.io/posts/compiletime/
+---
+
+## [6][Yet another micro HTTP server C++ library](https://www.reddit.com/r/cpp/comments/fpar1j/yet_another_micro_http_server_c_library/)
+- url: https://www.reddit.com/r/cpp/comments/fpar1j/yet_another_micro_http_server_c_library/
+---
+https://github.com/Dale-M/dmbcs-micro-server
+
+It's FOSS.  You never know, this might fit your precise coding paradigm better than any of the others.
+## [7][jsoncons release 0.149.0 (easy JSON and CBOR decode/encode in C++ 11)](https://www.reddit.com/r/cpp/comments/foulh4/jsoncons_release_01490_easy_json_and_cbor/)
+- url: https://github.com/danielaparker/jsoncons
+---
+
+## [8][cannot an object of abstract type 'drawEllipse'](https://www.reddit.com/r/cpp/comments/fpaxik/cannot_an_object_of_abstract_type_drawellipse/)
+- url: https://www.reddit.com/r/cpp/comments/fpaxik/cannot_an_object_of_abstract_type_drawellipse/
+---
+You make a mistake : cannot an object of abstract type 'drawEllipse'. 
+Writing in qt.
+I changed the name of drawEllipse, but it didn't help, what could be the problem?
+## [9][Basic Methods For Finding Zeroes and Mins / Maxes of Functions](https://www.reddit.com/r/cpp/comments/foz2li/basic_methods_for_finding_zeroes_and_mins_maxes/)
+- url: https://blog.demofox.org/2020/03/17/basic-methods-for-finding-zeroes-and-mins-maxes-of-functions/
+---
+
+## [10][LLVM/Clang 10.0.0 is released!](https://www.reddit.com/r/cpp/comments/fodkif/llvmclang_1000_is_released/)
 - url: https://www.reddit.com/r/cpp/comments/fodkif/llvmclang_1000_is_released/
 ---
 From Hans Wennborgs email:
@@ -140,54 +172,43 @@ https://llvm.org/releases/10.0.0/tools/lld/docs/ReleaseNotes.html
 https://llvm.org/releases/10.0.0/tools/polly/docs/ReleaseNotes.html
 
 https://llvm.org/releases/10.0.0/projects/libcxx/docs/ReleaseNotes.html
-## [4][Cpp-Taskflow 2.4-pre: A New Concurrent CPU-GPU Tasking Interface (cudaFlow)](https://www.reddit.com/r/cpp/comments/fokuwv/cpptaskflow_24pre_a_new_concurrent_cpugpu_tasking/)
-- url: https://github.com/cpp-taskflow/cpp-taskflow
+## [11][Why can emplace_back in vectors call explicit constructors?](https://www.reddit.com/r/cpp/comments/fowcp9/why_can_emplace_back_in_vectors_call_explicit/)
+- url: https://www.reddit.com/r/cpp/comments/fowcp9/why_can_emplace_back_in_vectors_call_explicit/
 ---
-
-## [5][Changes between C++17 and C++20](https://www.reddit.com/r/cpp/comments/fo2dyw/changes_between_c17_and_c20/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2131r0.html
----
-
-## [6][P2137R0 Goals and priorities for C++](https://www.reddit.com/r/cpp/comments/fo5x17/p2137r0_goals_and_priorities_for_c/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2137r0.html
----
-
-## [7][decltype(lambda) as default template argument](https://www.reddit.com/r/cpp/comments/foa3fk/decltypelambda_as_default_template_argument/)
-- url: https://www.reddit.com/r/cpp/comments/foa3fk/decltypelambda_as_default_template_argument/
----
-I've read P0315R4, but I'm still not sure whether decltype of a lambda should yield different types in multiple instantiations when used as a default template argument. If it does, would that mean that this [is_complete type trait](https://godbolt.org/z/CO9CA6) is valid C++20 and actually works?
-## [8][C++ style poll by Cor3ntin on Twitter](https://www.reddit.com/r/cpp/comments/fo1wy5/c_style_poll_by_cor3ntin_on_twitter/)
-- url: https://twitter.com/Cor3ntin/status/1242166022532206595
----
-
-## [9][Post Prague Mailing is Posted](https://www.reddit.com/r/cpp/comments/fnu3nu/post_prague_mailing_is_posted/)
-- url: https://www.reddit.com/r/cpp/comments/fnu3nu/post_prague_mailing_is_posted/
----
-The post-Prague mailing has been posted.   
-[http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-03](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-03)   
-
-
-Word on the street is that further mailings will be monthly in order to provided a faster feedback loop.
-## [10][Anyone wrote a multi-vector-iterator?](https://www.reddit.com/r/cpp/comments/fo4qui/anyone_wrote_a_multivectoriterator/)
-- url: https://www.reddit.com/r/cpp/comments/fo4qui/anyone_wrote_a_multivectoriterator/
----
-Every once in a while you find yourself with multiple vectors that represent something like different columns of the same data set:  the vectors will be of the same length, and elements at common indexes are related.  This is mostly no big deal until you want to do something fun like sort based on one of them.  I was thinking to myself how the algorithms  would work fine if I could have an iterator that iterates all n vectors at once.  Basically, have a tuple of iterators, and have that tuple itself satisfy the iterator interface by forwarding the calls to each of the elements of the tuple.  
+    class person
+    {
+        public:
+        
+        std::string name;
+        int age;
+        
+        explicit person(int _age) :
+        age(_age)
+        {
+            name = "John Doe";
+        }
+        
+    };
+    
+    int main()
+    {
+        std::vector&lt;person&gt; people;
+        
+        people.emplace_back(60); //compiles and uses explicit method to cast from int
+        
+        people.push_back(60); //compiler error
+        
+        system("pause");
+    }
 
 &amp;#x200B;
 
-I assume this isn't a wholly original idea, is there one out there written already?  Are there better solutions, other than the obvious refactoring of it into a vector of tuples/objects/structs/etc? Isn't there some trick like using an algorithm to get an ordering from the sort order vector, and using that ordering to sort the others?
-## [11][Vector of Objects vs Vector of Pointers And Memory Access Patterns](https://www.reddit.com/r/cpp/comments/fnki5i/vector_of_objects_vs_vector_of_pointers_and/)
-- url: https://www.bfilipek.com/2014/05/vector-of-objects-vs-vector-of-pointers.html
+trying to use push\_back() will give a compiler error, as expected.
+
+Meanwhile, emplace\_back() uses the explicit method as a cast, which is definitely not the programmers intention.  Is there a reason for why this is allowed here?
+
+thanks.
+## [12][Cpp-Taskflow 2.4-pre: A New Concurrent CPU-GPU Tasking Interface (cudaFlow)](https://www.reddit.com/r/cpp/comments/fokuwv/cpptaskflow_24pre_a_new_concurrent_cpugpu_tasking/)
+- url: https://github.com/cpp-taskflow/cpp-taskflow
 ---
 
-## [12][Why is string to string_view an operator of string and not a constructor of string_view?](https://www.reddit.com/r/cpp/comments/fo6o78/why_is_string_to_string_view_an_operator_of/)
-- url: https://www.reddit.com/r/cpp/comments/fo6o78/why_is_string_to_string_view_an_operator_of/
----
-So I'm coming from a four-hour debugging ordeal which basically boiled down to a code line like this:
-
-    // std::string *str; 
-    std::string_view view(str == nullptr ? "" : *str);
-
-The problem was that this creates a temporary string as result of the ternary operator, since `""` is implicitly converted to `string` and that is not an lvalue. So the `string_view` is created from a temporary `string` object. However, since the temporary object goes out of scope immediately after the constructor call, `view` points to free'd memory (and, in the future, to garbage).
-
-If the conversion from `string` to `string_view` would have instead been defined as single-argument constructor of `string_view` taking a `const std::string&amp;`, my code would not have compiled. So, why is it defined as operator? Doesn't that just invite bugs like this?

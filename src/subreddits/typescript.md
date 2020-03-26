@@ -22,102 +22,132 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Type-safe lenses](https://www.reddit.com/r/typescript/comments/foo055/typesafe_lenses/)
+## [2][Enums, string/number types of interfaces/classes cannot be used as index signatures](https://www.reddit.com/r/typescript/comments/fp5wfk/enums_stringnumber_types_of_interfacesclasses/)
+- url: https://www.reddit.com/r/typescript/comments/fp5wfk/enums_stringnumber_types_of_interfacesclasses/
+---
+I just came across this post [https://github.com/microsoft/TypeScript/issues/37448](https://github.com/microsoft/TypeScript/issues/37448)...
+
+Does anyone have the problem here? Are there any strategies you'd found to overcome it?
+## [3][Converting Node.js (benchmarks game) programs to TypeScript](https://www.reddit.com/r/typescript/comments/foxvol/converting_nodejs_benchmarks_game_programs_to/)
+- url: https://www.reddit.com/r/typescript/comments/foxvol/converting_nodejs_benchmarks_game_programs_to/
+---
+I've been trying to convert Node.js (benchmarks game) programs to TypeScript — using *trial and error* and *dumb luck*.
+
+[That has worked](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/node-typescript.html) for:
+
+* binary-trees
+* mandelbrot
+* n-body
+* pidigits
+* regex-redux
+
+But the converted `fannkuch-redux` program was considerably slower, and I failed to convert these programs:
+
+* spectral-norm
+* reverse-complement
+* k-nucleotide
+* fasta
+
+Please help!
+
+Please convert those 5 Node.js programs and [contribute working TypeScript equivalents to the benchmarks game](https://salsa.debian.org/benchmarksgame-team/benchmarksgame/blob/master/CONTRIBUTING.md#contribute-source-code-for-measurement).
+## [4][Please suggest advanced generics course](https://www.reddit.com/r/typescript/comments/fp862c/please_suggest_advanced_generics_course/)
+- url: https://www.reddit.com/r/typescript/comments/fp862c/please_suggest_advanced_generics_course/
+---
+I have a Pluralsight subscription but it doesn't have anything deep on topic. Personally I prefer video courses, but any suggestion is appreciated. Thanks!
+## [5][Possible to type based on entered params?](https://www.reddit.com/r/typescript/comments/foz02q/possible_to_type_based_on_entered_params/)
+- url: https://www.reddit.com/r/typescript/comments/foz02q/possible_to_type_based_on_entered_params/
+---
+I'm curious if this is possible in TypeScript. I'm creating a `urlHelper` function where a user supplies an entity, method and path. I'm trying to see if I can limit the values in `path` based on what the user put in for `entity`/`method` and what is available in a const. Here's what I've got so far:
+
+
+    const endpoints = {
+      company: {
+        get: {
+          address: '/company/{id}/address',
+          owner: '/company/{id}/owner'
+        },
+        post: {
+          details: '/company/{id}'
+        }
+      },
+      user: {
+        get: {
+          profile: '/me/profile'
+        }
+      }
+    } as const
+    
+    type Entity = keyof typeof endpoints // "company" | "user"
+    type Method = 'get' | 'post'
+    type Path = ????
+    
+    const urlHelper = (entity: Entity, method: Method, path: Path) =&gt; {
+      // Do some stuff
+    }
+
+
+What I'm looking for is if a user puts "company" for `entity`, then "get" for `method`, `path` can only be "address" or "owner". Is this doable?
+## [6][Type-safe lenses](https://www.reddit.com/r/typescript/comments/foo055/typesafe_lenses/)
 - url: https://github.com/hoppinger/ts-lenses
 ---
 
-## [3][MySQL Parser in Typescript](https://www.reddit.com/r/typescript/comments/fojj5j/mysql_parser_in_typescript/)
+## [7][Best option to make a Libary?](https://www.reddit.com/r/typescript/comments/forltt/best_option_to_make_a_libary/)
+- url: https://www.reddit.com/r/typescript/comments/forltt/best_option_to_make_a_libary/
+---
+Hi everyone!
+
+I'm currently working a project which requires a self made library to make calls to a soap server. This library I need to make needs to be Typescript and needs to be imported using gitlab (no need for npm compatibilities). 
+
+The point is that this library will wrap every header and soap method, so I can just create a connector and let the library/wrapper works.
+
+What is the best option to make a library like that and make it exportable with it's definition types? It is very important that the definitions are available in the project that imports this library. I've checked some guides, but all of them are npm-oriented or jus too simple for my case.
+
+I hope I'm asking in the right place,
+
+thanks!
+## [8][Enforce Immutability With Typescript To Boost Refactor Process](https://www.reddit.com/r/typescript/comments/foqn34/enforce_immutability_with_typescript_to_boost/)
+- url: https://medium.com//enforce-immutability-with-typescript-to-boost-refactor-process-70055dac5d52?source=friends_link&amp;sk=a750d3062f3fbba9f2d3c156f5050800
+---
+
+## [9][MySQL Parser in Typescript](https://www.reddit.com/r/typescript/comments/fojj5j/mysql_parser_in_typescript/)
 - url: https://github.com/stevenmiller888/ts-mysql-parser
 ---
 
-## [4][Redux Toolkit v1.3.0 final: New `createAsyncThunk` and `createEntityAdapter` APIs, Immer 6.0, smaller bundle sizes!](https://www.reddit.com/r/typescript/comments/fo5uvd/redux_toolkit_v130_final_new_createasyncthunk_and/)
-- url: https://github.com/reduxjs/redux-toolkit/releases/tag/v1.3.0
+## [10][What's wrong with this type predicate?](https://www.reddit.com/r/typescript/comments/fore56/whats_wrong_with_this_type_predicate/)
+- url: https://www.reddit.com/r/typescript/comments/fore56/whats_wrong_with_this_type_predicate/
 ---
+I'm trying to use a [type predicate](https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-predicates) to type something, and for some reason, it doesn't appear to be working.
 
-## [5][Is typescript programmers should know about prototype in JavaScript in deep?](https://www.reddit.com/r/typescript/comments/fok6fv/is_typescript_programmers_should_know_about/)
-- url: https://www.reddit.com/r/typescript/comments/fok6fv/is_typescript_programmers_should_know_about/
+Here's some example code:
+
+    const getIsTypeA = (thingIAmChecking, value): thingIAmChecking is SomeGenericType&lt;TypeA&gt; =&gt; 
+      value === 'some other value'
+
+    const myFn = (thingIAmChecking: SomeGenericType&lt;TypeA | TypeB&gt;) =&gt; {
+      const value = getValue();
+      if (getIsTypeA(thingIAmChecking, value)) {
+        thingIAmChecking.onlyTypeAHasThis // ERROR
+      }
+    }
+
+Is there something I am fundamentally misunderstanding about type predicates? I thought if I return a boolean value, typescript will understand that inside the block of the `if`, the type is `SomeGenericType&lt;TypeA&gt;`.
+
+I can post a more specific example if needed, and thanks in advance for any help with understanding what's going on here!
+## [11][`as` vs. `new class` in object literals?](https://www.reddit.com/r/typescript/comments/foua9e/as_vs_new_class_in_object_literals/)
+- url: https://www.reddit.com/r/typescript/comments/foua9e/as_vs_new_class_in_object_literals/
 ---
-If yes why?
-## [6][A rule of thumb for working with null values](https://www.reddit.com/r/typescript/comments/fo5sim/a_rule_of_thumb_for_working_with_null_values/)
-- url: https://effectivetypescript.com/2020/03/24/null-values-to-perimeter/
----
-
-## [7][How to type return type of a function based on given argument](https://www.reddit.com/r/typescript/comments/fo2rsk/how_to_type_return_type_of_a_function_based_on/)
-- url: https://www.reddit.com/r/typescript/comments/fo2rsk/how_to_type_return_type_of_a_function_based_on/
----
-Probably the title is wrong, i couldn't figure out how to explain it. Here is a simplified version of the problem.
-
-    type Foo&lt;T&gt; = { getValue: () =&gt; T; };
-    
-    function createFoo&lt;T&gt;(value: T): Foo&lt;T&gt; { return { getValue: () =&gt; value }; }
-    
-    let items = { apple: createFoo(1), orange: createFoo('hello'), };
-    
-    function combine(items) { // }
-    
-    let combined = combine({ apple, orange });
-    
-    /* combined's type should be { apple: number, orange: string } */
-
-Thank you :)
-## [8][Ran into a TS issue. Maybe a TSC problem?](https://www.reddit.com/r/typescript/comments/fo7j2s/ran_into_a_ts_issue_maybe_a_tsc_problem/)
-- url: https://www.reddit.com/r/typescript/comments/fo7j2s/ran_into_a_ts_issue_maybe_a_tsc_problem/
----
-Here's the [code](https://pastebin.com/cQrWSrd3)
-
-Compiler [error](https://pastebin.com/auYcY96J)
-
-Edit: Switched to Markdown. I really need to see if there's a way to set that to default. Also, apologies for the syntax highlighting in Pastebin. Is there a better service to share TS code?
-## [9][How to type object with variable key names?](https://www.reddit.com/r/typescript/comments/fnu9ha/how_to_type_object_with_variable_key_names/)
-- url: https://www.reddit.com/r/typescript/comments/fnu9ha/how_to_type_object_with_variable_key_names/
----
-For practice I'm working on an algorithm that assigns values as (object) key names. The keys are paired to an array.
-
-This is in raw  JS. In TS I don't know how to handle objects with dynamic key names:
-
-    { joe : [{...}, {...}, {...}], sally : [{...}, {...}]  } 
-
-(key names will vary)
-
-Anyone know how to properly type these?
-## [10][typedi cheat sheet](https://www.reddit.com/r/typescript/comments/fo1equ/typedi_cheat_sheet/)
-- url: https://www.reddit.com/r/typescript/comments/fo1equ/typedi_cheat_sheet/
----
-Trying to grok `typedi` and came up with this. Is following right?
-
-1. `@Inject()` injects `Container` into decorated class properties,  
-*Hint: **InjectContainer**IntoProp*
-2. `@Service()` injects `Container` into decorated classes via constructor params,  
-*Hint: **InjectContainer**IntoClassViaConstructorParams*
-3. `@Service{'&lt;name&gt;')` injects `Container` into decorated classes and provides that classes via `&lt;name&gt;` via `Container.get('&lt;name&gt;')`,  
-*Hint: **InjectContainer**IntoClassViaConstructorParamsAnd**ProvideClass**ViaAlias*
-
-1 is mandatory for classes without a constructor. 2 is mandatory if a constructor with params injects the dependency. 3 is the one which actually act as a *service*.
-
-A more intuitive naming scheme would have been:  
-1: `@InjectToProp()`   
-2: `@InjectViaConstructor()`  
-3: `@ProvideAs('&lt;name&gt;')`
-## [11][What is the common convention for interface names?](https://www.reddit.com/r/typescript/comments/fng5ji/what_is_the_common_convention_for_interface_names/)
-- url: https://www.reddit.com/r/typescript/comments/fng5ji/what_is_the_common_convention_for_interface_names/
----
-Hello all,
-
-I am learning Typescript and I was naming my interfaces happily until I arrived to Mongodb/Mongoose.  
+```tsx
+// const initialState = {
+//   counter: 0 as number
+// }
 
 
-For example, I had before an interface called User. However, when I create my model schema, in mongo without Typescript I would have called this User as well. Therefore, that would create a conflict.  
+const initialState = new class {
+  counter: number = 0
+}
 
+type State = typeof initialState;
+```
 
-Is there a common convention about this?  
-
-
-I see this guy in the link down below uses IUser but I have read also that Typescript community does not like using Iwhatever... and personally I do not like that either.
-
-[https://brianflove.com/2016/10/04/typescript-declaring-mongoose-schema-model/](https://brianflove.com/2016/10/04/typescript-declaring-mongoose-schema-model/)  
-
-
-Therefore, do you know what is the most common way to naming mongo stuff and interfaces?  
-
-
-Thank you in advance.
+[View Poll](https://www.reddit.com/poll/foua9e)

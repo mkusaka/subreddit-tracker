@@ -1,53 +1,47 @@
 # golang
-## [1][I made a burnout barometer as my first Golang Project!](https://www.reddit.com/r/golang/comments/folqj1/i_made_a_burnout_barometer_as_my_first_golang/)
-- url: https://i.redd.it/aj96tujrmro41.gif
+## [1][How much performance headroom is left / longer compile times](https://www.reddit.com/r/golang/comments/fp9mrk/how_much_performance_headroom_is_left_longer/)
+- url: https://www.reddit.com/r/golang/comments/fp9mrk/how_much_performance_headroom_is_left_longer/
+---
+Hi all – As you know, the Go compiler is incredibly fast, and generated application code is decently fast. How much do you think application performance could be improved with longer compile times?
+
+Say there was an option for longer, deeper compiles, for contexts where instant compiles were not needed. For example, for the release build of an application I'd want the best possible runtime performance – I'd be fine letting a compiler run over a weekend. Do you think there is still a lot of application performance headroom to be realized with longer build times?
+
+The compiler is somewhat threadbare when it comes to optimization options. It lacks the suite of optimizations that gcc, clang, Visual Studio, and the Intel compiler offer for C/C++ applications. Where I see possible headroom is in targeting modern CPU instructions and vectorization. The last time I looked at the compiler code base I saw a bunch of old assembly targeting old CPUs – is it still not accounting for Haswell+ CPUs? Go support for modern assembly *by the application developer* is excellent, but I'm not sure if the Go compiler itself uses modern instructions in its generated code. Thoughts?
+
+Thanks.
+## [2][grailbio/bigslice: A serverless cluster computing system for the Go programming language](https://www.reddit.com/r/golang/comments/fp8424/grailbiobigslice_a_serverless_cluster_computing/)
+- url: https://github.com/grailbio/bigslice
 ---
 
-## [2][Examine Go types and their transitive dependencies.](https://www.reddit.com/r/golang/comments/foe2a4/examine_go_types_and_their_transitive_dependencies/)
-- url: https://github.com/dtgorski/typex
+## [3][pion/ion, self-hosted conferencing software with single command deploy written entirely in Go!](https://www.reddit.com/r/golang/comments/fouryt/pionion_selfhosted_conferencing_software_with/)
+- url: https://github.com/pion/ion
 ---
 
-## [3][Sorcia - Self-hosted web frontend for git repositories written in Go](https://www.reddit.com/r/golang/comments/foowep/sorcia_selfhosted_web_frontend_for_git/)
-- url: https://sorcia.mysticmode.org/
+## [4][Custom JSON unmarshal to fingerprint objects](https://www.reddit.com/r/golang/comments/fp5dm5/custom_json_unmarshal_to_fingerprint_objects/)
+- url: https://klotzandrew.com/blog/object-fingerprinting-for-efficient-data-ingestion
 ---
 
-## [4][Revolut Business SDK written in Golang](https://www.reddit.com/r/golang/comments/fopbz2/revolut_business_sdk_written_in_golang/)
-- url: https://github.com/rysavyvladan/go-revolut
+## [5][Gold: Reinforcement Learning in Go](https://www.reddit.com/r/golang/comments/fpa515/gold_reinforcement_learning_in_go/)
+- url: https://github.com/aunum/gold
 ---
 
-## [5][Golang retry package: thedevsaddam/retry bug fixed!](https://www.reddit.com/r/golang/comments/fonegj/golang_retry_package_thedevsaddamretry_bug_fixed/)
-- url: https://github.com/thedevsaddam/retry
+## [6][Go, the Go Community, and the Pandemic](https://www.reddit.com/r/golang/comments/fowx7s/go_the_go_community_and_the_pandemic/)
+- url: https://blog.golang.org/pandemic
 ---
 
-## [6][Free Unlimited Load Testing for 30 days if you help me by completing a 2 minute Google Form](https://www.reddit.com/r/golang/comments/fop5i8/free_unlimited_load_testing_for_30_days_if_you/)
-- url: https://www.reddit.com/r/golang/comments/fop5i8/free_unlimited_load_testing_for_30_days_if_you/
+## [7][xcgo has what gophers crave (including snap)](https://www.reddit.com/r/golang/comments/fp4h9e/xcgo_has_what_gophers_crave_including_snap/)
+- url: https://www.reddit.com/r/golang/comments/fp4h9e/xcgo_has_what_gophers_crave_including_snap/
 ---
-Everyone is offering something these days, in order to help other people or other businesses. Being a startup that is not launched yet, is very hard to contribute with something valuable to the community.
-
-So, here at [Rungutan](https://rungutan.com), we decided to offer you useful data instead 🙂. 
-
-In order to do this, we will need your help as well: share with us your Load Testing routine in times of crisis and __get our FREE report on this__ 📰 + __1 Month FREE access to the Rungutan Load Testing Platform (in Beta Test version)__ 📣
-
-PS: We welcome all DevOps, Testers and Developers to contribute with their responses
-
-[https://docs.google.com/forms/d/e/1FAIpQLSe7vt7SXagYg3wMgNPIEz4vW8j0rIh-rqv9ydiwLQkhFYQEaA/viewform](https://docs.google.com/forms/d/e/1FAIpQLSe7vt7SXagYg3wMgNPIEz4vW8j0rIh-rqv9ydiwLQkhFYQEaA/viewform)
-## [7][How do you use context.Context in your applications?](https://www.reddit.com/r/golang/comments/fo395d/how_do_you_use_contextcontext_in_your_applications/)
-- url: https://www.reddit.com/r/golang/comments/fo395d/how_do_you_use_contextcontext_in_your_applications/
----
-The context in Go is very popular. The most popular use case is the cancellation and setting timeouts. But, we can pass some scope-related data in it. And here's my question: do you do it?
-
-One use case I can imagine is putting the authenticated user's details in the middleware and retrieving them in the final HTTP handler. What's your practice?
-
-I'm asking because I noticed that every time I try to put ANYTHING into the context, I have a very long discussion about it in PRs. Do you have any (in your opinion) good examples of using \`context.WithValue\` and similar? Should we use it this way or not?
-## [8][Announcing RxGo v2](https://www.reddit.com/r/golang/comments/fo9hl4/announcing_rxgo_v2/)
-- url: https://medium.com/@teivah/introducing-rxgo-v2-e7e369faa99a
+[neilotoole/xcgo](https://github.com/neilotoole/xcgo) docker image will cross-compile and distribute (via `goreleaser`) your CGo app, even a `snap`. See the companion [neilotoole/sqlitr](https://github.com/neilotoole/sqlitr) project for an example of using `goreleaser` to publish to `brew`, `scoop`, `deb`, `rpm`, and also... `snap`.
+## [8][Building Distributed Services with Go is available in beta. Learn how to build a distributed service from scratch.](https://www.reddit.com/r/golang/comments/fotz2h/building_distributed_services_with_go_is/)
+- url: https://pragprog.com/book/tjgo/distributed-services-with-go
 ---
 
-## [9][Testing in Go: WebSockets](https://www.reddit.com/r/golang/comments/fobvhg/testing_in_go_websockets/)
-- url: https://ieftimov.com/post/testing-in-go-websockets/
+## [9][Using environment variables in your next GoLang project](https://www.reddit.com/r/golang/comments/fp9y53/using_environment_variables_in_your_next_golang/)
+- url: https://www.hackdoor.io/articles/lMN5AwN1/using-environment-variables-in-your-next-golang-project
 ---
 
-## [10][Profiling Golang gRPC server](https://www.reddit.com/r/golang/comments/fof9yh/profiling_golang_grpc_server/)
-- url: https://www.reddit.com/r/golang/comments/fof9yh/profiling_golang_grpc_server/
+## [10][Quickly Find Rust Program Bottlenecks Online Using a Go Tool](https://www.reddit.com/r/golang/comments/fp3e2h/quickly_find_rust_program_bottlenecks_online/)
+- url: https://pingcap.com/blog/quickly-find-rust-program-bottlenecks-online-using-a-go-tool/
 ---
-We've got a gRPC server on Kubernetes managing a set of streams. I'm getting abnormally high memory usage right now and am wondering what the best way to profile it is?
+

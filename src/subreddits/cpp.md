@@ -113,102 +113,96 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Wt 4.3.0 released! (widget-based C++ web framework)](https://www.reddit.com/r/cpp/comments/fp7hs1/wt_430_released_widgetbased_c_web_framework/)
+## [3][ESeed Math, my first C++ library!](https://www.reddit.com/r/cpp/comments/fpum4g/eseed_math_my_first_c_library/)
+- url: https://www.reddit.com/r/cpp/comments/fpum4g/eseed_math_my_first_c_library/
+---
+Hey friends, I'm 17, obviously not going out much lately due to current events, so I've been spending my time working on a set of C++ libraries for game programming, mainly [ESeed Math (GitHub)](https://github.com/elijahseedarita/eseed-math), a math library with scalar, vector, matrix, and (in the future) quaternion support.
+
+This is the first time I've written code with other people in mind. I have no idea about best practices for open source library programming. I've done my research, but I think from this point the thing that'll teach me the most is doing. So, here's the result!
+
+Why did I make this library even though there are other great math libraries out there? Because I'm 0iq and insist on doing everything on myself! :'))))) nice
+
+\----
+
+There *are* a few special things about this library that sets it apart from (most) others. I think?
+
+1. `constexpr`, `constexpr` **everywhere!** Better compile time optimization. Except `&lt;cmath&gt;` dependent functions :   )   ^(\*wink wink c++ standard guys haha thanks)
+2. **Designed around C++20 with heavy use of Concepts.** Okay, this isn't actually a good thing for a lot of folks, in fact for most real people it's a bad thing because of compatibility and incomplete C++20 implementation on most compilers, haha. In any case, it comes with the substantial benefit of code readability, and of course, C++20 will start to catch on before long.
+3. **Completely template-based**, meaning you can use any operator / most functions on any sized vector of any type, even with user-defined types! This is accomplished mostly by using loops. In my experience, even in debug mode, the loops seem to be unrolled, but as a dumb lil kid I might be totally wrong :))))
+
+In any case, I'd love it if y'all would go check it out! How do you guys think I did? Things that I could improve on, aside from originality? :P There are so many things that I could have and likely did do wrong. Living on and island means I sadly have no programmer friends or mentor that can help me out with this kind of thing :(. I definitely want to work on open source libraries in the future. One's gotta start somewhere, right?
+
+I hope this post is appropriate for this sub, I see other library sharing posts on here so I think it's aight, but let me know. Have a good day everyone, and if you spend the time to check out my library, thanks very much! I really appreciate it! Peace!
+## [4][Static analysis in GCC 10](https://www.reddit.com/r/cpp/comments/fpvtd7/static_analysis_in_gcc_10/)
+- url: https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10/
+---
+
+## [5][Requires-clause | Andrzej's C++ blog](https://www.reddit.com/r/cpp/comments/fpm2cd/requiresclause_andrzejs_c_blog/)
+- url: https://akrzemi1.wordpress.com/2020/03/26/requires-clause/
+---
+
+## [6][Another Logging Library, Aiming to be Small and Easy to Use](https://www.reddit.com/r/cpp/comments/fplloy/another_logging_library_aiming_to_be_small_and/)
+- url: https://www.reddit.com/r/cpp/comments/fplloy/another_logging_library_aiming_to_be_small_and/
+---
+[https://github.com/filipdutescu/small-better-logger](https://github.com/filipdutescu/small-better-logger)
+
+A small, cross-platform one header file logger library, compatible with all standards from C++11 onwards (support for C++20 coming ASAP, waiting on std::chrono formatting support). Inspired by the C# ```Console``` class. 
+
+Any and all feedback is greatly appreciated!
+
+### Why use this library and not another?
+The aim of this project was to make something as easy to use as I could. I wanted to be able to just copy and paste it into any project, without the need to link libraries, move multiple files and folders etc. At most, you need to define 3-4 macros (or just 2 if you can bother setting a compiler flag).
+
+It was also an opportunity for me to make a full, complete and tested project, complete with well written documentation. I aimed to learn as much as I could from multithreading to date manipulation.
+
+### What does it offer?
+A quick summary of what it offers:
+
+ The following loggers:
+
+  * ```StreamLogger``` - which writes to the standard streams
+
+  * ```FileLogger``` - which writes to a file
+
+  * ```DailyLogger``` - which writes to a file that changes daily at the specified time
+
+Placeholders to customize your logs, such as:
+
+  * ```"{i}"``` - replaces the sequence with the i-th parameter of your log call (examples can be found both in the REAME.md and Wiki)
+
+  * All **time and date** placeholders available in ```strftime```
+
+  * Placeholders for **file, line and function** information
+
+  * Standard stream output colour modifiers
+
+
+Other information, regarding development more than the library, in case you are interested:
+
+It is a passion project which started from my need to have a logger in a bigger project. I did not want to bother with too many big, hard to manage/learn dependencies. I just wanted a quick and easy solution and I figured it couldn't hurt to somewhat learn hoe loggers work. It quickly became a thing of its own and I am proud to say it is my first well-rounded completed C++ project.
+
+I hope you either like it, use it or both! Thank you for sticking with me so far!
+## [7][TDM-GCC 9.2.0 release | tdm-gcc](https://www.reddit.com/r/cpp/comments/fpvdhy/tdmgcc_920_release_tdmgcc/)
+- url: https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release
+---
+
+## [8][Bulk v2.0.0 released (Unified interface for (mixed) shared-memory and distributed-memory HPC applications)](https://www.reddit.com/r/cpp/comments/fpuqvf/bulk_v200_released_unified_interface_for_mixed/)
+- url: https://github.com/jwbuurlage/Bulk/releases/tag/v2.0.0
+---
+
+## [9][Looking for Proofreaders for new Book: C++ Core Guidelines](https://www.reddit.com/r/cpp/comments/fpular/looking_for_proofreaders_for_new_book_c_core/)
+- url: http://www.modernescpp.com/index.php/looking-for-proofreaders-for-my-new-book-the-c-core-guidelines
+---
+
+## [10][Hackerrank CPP Challenges Solutions](https://www.reddit.com/r/cpp/comments/fptu2s/hackerrank_cpp_challenges_solutions/)
+- url: https://architecturecoding.com/series/hackerrank-c++-challanges.html
+---
+
+## [11][Wt 4.3.0 released! (widget-based C++ web framework)](https://www.reddit.com/r/cpp/comments/fp7hs1/wt_430_released_widgetbased_c_web_framework/)
 - url: https://www.webtoolkit.eu/wt/news/2020/03/26/wt___jwt_3_6_0_and_wt_4_3_0
 ---
 
-## [4][Tutorial: C++20's Iterator Sentinels](https://www.reddit.com/r/cpp/comments/foqik0/tutorial_c20s_iterator_sentinels/)
-- url: https://foonathan.net/2020/03/iterator-sentinel/
----
-
-## [5][Build C++ from source: Part 1/N - Improving compile times](https://www.reddit.com/r/cpp/comments/fov6vn/build_c_from_source_part_1n_improving_compile/)
-- url: https://cor3ntin.github.io/posts/compiletime/
----
-
-## [6][Yet another micro HTTP server C++ library](https://www.reddit.com/r/cpp/comments/fpar1j/yet_another_micro_http_server_c_library/)
-- url: https://www.reddit.com/r/cpp/comments/fpar1j/yet_another_micro_http_server_c_library/
----
-https://github.com/Dale-M/dmbcs-micro-server
-
-It's FOSS.  You never know, this might fit your precise coding paradigm better than any of the others.
-## [7][jsoncons release 0.149.0 (easy JSON and CBOR decode/encode in C++ 11)](https://www.reddit.com/r/cpp/comments/foulh4/jsoncons_release_01490_easy_json_and_cbor/)
-- url: https://github.com/danielaparker/jsoncons
----
-
-## [8][cannot an object of abstract type 'drawEllipse'](https://www.reddit.com/r/cpp/comments/fpaxik/cannot_an_object_of_abstract_type_drawellipse/)
-- url: https://www.reddit.com/r/cpp/comments/fpaxik/cannot_an_object_of_abstract_type_drawellipse/
----
-You make a mistake : cannot an object of abstract type 'drawEllipse'. 
-Writing in qt.
-I changed the name of drawEllipse, but it didn't help, what could be the problem?
-## [9][Basic Methods For Finding Zeroes and Mins / Maxes of Functions](https://www.reddit.com/r/cpp/comments/foz2li/basic_methods_for_finding_zeroes_and_mins_maxes/)
-- url: https://blog.demofox.org/2020/03/17/basic-methods-for-finding-zeroes-and-mins-maxes-of-functions/
----
-
-## [10][LLVM/Clang 10.0.0 is released!](https://www.reddit.com/r/cpp/comments/fodkif/llvmclang_1000_is_released/)
-- url: https://www.reddit.com/r/cpp/comments/fodkif/llvmclang_1000_is_released/
----
-From Hans Wennborgs email:
-
-&gt; Some highlights include:
-
-&gt; - C++ Concepts support in Clang
-
-&gt; - Clang no longer runs in a separate process by default ("in-process cc1")
-
-&gt; - Windows control flow guard (CFG) checks
-
-&gt; - Support for more processor cores and features
-
-
-https://llvm.org/releases/10.0.0/docs/ReleaseNotes.html
-
-https://llvm.org/releases/10.0.0/tools/clang/docs/ReleaseNotes.html
-
-https://llvm.org/releases/10.0.0/tools/clang/tools/extra/docs/ReleaseNotes.html
-
-https://llvm.org/releases/10.0.0/tools/lld/docs/ReleaseNotes.html
-
-https://llvm.org/releases/10.0.0/tools/polly/docs/ReleaseNotes.html
-
-https://llvm.org/releases/10.0.0/projects/libcxx/docs/ReleaseNotes.html
-## [11][Why can emplace_back in vectors call explicit constructors?](https://www.reddit.com/r/cpp/comments/fowcp9/why_can_emplace_back_in_vectors_call_explicit/)
-- url: https://www.reddit.com/r/cpp/comments/fowcp9/why_can_emplace_back_in_vectors_call_explicit/
----
-    class person
-    {
-        public:
-        
-        std::string name;
-        int age;
-        
-        explicit person(int _age) :
-        age(_age)
-        {
-            name = "John Doe";
-        }
-        
-    };
-    
-    int main()
-    {
-        std::vector&lt;person&gt; people;
-        
-        people.emplace_back(60); //compiles and uses explicit method to cast from int
-        
-        people.push_back(60); //compiler error
-        
-        system("pause");
-    }
-
-&amp;#x200B;
-
-trying to use push\_back() will give a compiler error, as expected.
-
-Meanwhile, emplace\_back() uses the explicit method as a cast, which is definitely not the programmers intention.  Is there a reason for why this is allowed here?
-
-thanks.
-## [12][Cpp-Taskflow 2.4-pre: A New Concurrent CPU-GPU Tasking Interface (cudaFlow)](https://www.reddit.com/r/cpp/comments/fokuwv/cpptaskflow_24pre_a_new_concurrent_cpugpu_tasking/)
-- url: https://github.com/cpp-taskflow/cpp-taskflow
+## [12][HPX Community Survey Summary -- The STE||AR Group](https://www.reddit.com/r/cpp/comments/fpf9nz/hpx_community_survey_summary_the_stear_group/)
+- url: http://hpx.stellar-group.org/2020/03/24/hpx-community-survey-summary/
 ---
 

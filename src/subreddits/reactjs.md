@@ -111,7 +111,27 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I made a free and open-source resume builder using ReactJS!](https://www.reddit.com/r/reactjs/comments/fp88n0/i_made_a_free_and_opensource_resume_builder_using/)
+## [3][Serverless Stack - learn how to build a note taking app using Serverless and React on AWS](https://www.reddit.com/r/reactjs/comments/fpt9w0/serverless_stack_learn_how_to_build_a_note_taking/)
+- url: https://serverless-stack.com/
+---
+
+## [4][react-native released 0.62.0 🎉](https://www.reddit.com/r/reactjs/comments/fph9ne/reactnative_released_0620/)
+- url: https://app.releasly.co/releases/facebook/react-native/0_62_0?utm_campaign=r_reactjs
+---
+
+## [5][Trying to figure out how to scroll to a component in React after it renders](https://www.reddit.com/r/reactjs/comments/fpq1m8/trying_to_figure_out_how_to_scroll_to_a_component/)
+- url: https://www.reddit.com/r/reactjs/comments/fpq1m8/trying_to_figure_out_how_to_scroll_to_a_component/
+---
+Hi everyone.  I'm rather new to React, I'm creating a Spotify playlist building app for my portfolio.  I've been searching all over but can't really find a solution.  I want to be able to scroll to my "tracks" component after the playlist is built.  This component renders only after http request and the track list is populated.  The button that initiates the http request is in a sibling component to the tracks component, so I'm not trying to scroll/navigate to a nested component, rather a component which shares the same parent but is conditionally rendered.
+
+Any tips?  Is it possible to get a reference to a component that is not nested in the component where the "click" happens?
+
+Thanks!
+## [6][Web front end engine for GraphQL query](https://www.reddit.com/r/reactjs/comments/fpvujn/web_front_end_engine_for_graphql_query/)
+- url: https://twitter.com/ACzemiel/status/1243503719037177857
+---
+
+## [7][I made a free and open-source resume builder using ReactJS!](https://www.reddit.com/r/reactjs/comments/fp88n0/i_made_a_free_and_opensource_resume_builder_using/)
 - url: https://www.reddit.com/r/reactjs/comments/fp88n0/i_made_a_free_and_opensource_resume_builder_using/
 ---
 Hey there, fellow r/reactjs lurkers and devs!
@@ -122,43 +142,160 @@ Check it out here: [https://rx-resume.web.app/](https://rx-resume.web.app/)
 
 Here's a demo video: [https://www.youtube.com/watch?v=4OM0LEPzDO8](https://www.youtube.com/watch?v=4OM0LEPzDO8)  
 and here's the link to the GitHub Repo: [https://github.com/AmruthPillai/Reactive-Resume](https://github.com/AmruthPillai/Reactive-Resume)
-## [4][React Geospatial Visualization with kepler.gl](https://www.reddit.com/r/reactjs/comments/fozkxl/react_geospatial_visualization_with_keplergl/)
-- url: https://youtu.be/BEZjt08Myxs
+## [8][Released a new book on building GraphQL servers: Production Ready GraphQL](https://www.reddit.com/r/reactjs/comments/fpx0bi/released_a_new_book_on_building_graphql_servers/)
+- url: https://www.reddit.com/r/reactjs/comments/fpx0bi/released_a_new_book_on_building_graphql_servers/
+---
+Hey React folks 👋
+
+I've been working on a GraphQL book for at least the past year and I finally released it on Monday this week. I know a lot of React devs wanting to know more about **GraphQL** **server** **design** and I felt like there wasn't so much on the subject.
+
+Over the past 4 years I've worked on the Shopify GraphQL API and currently at GitHub. I've also been helping a lot of organizations with their move to GraphQL and this is everything I know about it in book form!   
+If you're interested, it's for sale here: [http://book.productionreadygraphql.com/](http://book.productionreadygraphql.com/)
+
+You can also get the ToC right here if you don't know if it's for you: [Table of Contents](http://book.productionreadygraphql.com/static/toc.pdf)
+## [9][I Created an Event Countdown App with React Native &amp; Typescript!](https://www.reddit.com/r/reactjs/comments/fpwkko/i_created_an_event_countdown_app_with_react/)
+- url: https://www.youtube.com/watch?v=7aXwDqMy1Mw
 ---
 
-## [5][Create React App or NextJS?](https://www.reddit.com/r/reactjs/comments/fp8gob/create_react_app_or_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/fp8gob/create_react_app_or_nextjs/
+## [10][Create desktop applications through a React syntax, on all platforms](https://www.reddit.com/r/reactjs/comments/fpwgpl/create_desktop_applications_through_a_react/)
+- url: https://www.reddit.com/r/reactjs/comments/fpwgpl/create_desktop_applications_through_a_react/
 ---
-I am thinking of starting working on a project but I am confused to choose between create-react-app or nextJS?Previously, I only have experience with Create-react-app and NodeJS API (without any server-side rendering). I need server-side rendering in my application But couldn't able to understand how I would structure my API and Front-End together.
-## [6][Covid-19 Local Info Template - built with Next.js](https://www.reddit.com/r/reactjs/comments/fp1lcl/covid19_local_info_template_built_with_nextjs/)
-- url: https://github.com/Jordan-Gilliam/covid-19-template
+**Explore this universe**
+
+https://proton-native.js.org/
+
+**About**
+
+Proton Native is a small project to try and create a React interface for desktop app building. Proton Native was designed as an alternative to Electron. Rather than building apps that use the overhead of Electron and web technologies, Proton Native allows you to use native widgets cross platform, all in a React environment that you would get with Electron.
+
+**Advantages**
+
+- No large web browser running your app
+- Better system compatibility
+- Simple React components that are the same as React Native components
+- Constantly being improved and added to
+
+**Disadvantages**
+
+- Currently smaller than Electron
+- Smaller community since Proton Native is newer
+## [11][[API DESIGN] How to make a component with Fetch-As-You-Input behavior Concurrent-Mode-Ready?](https://www.reddit.com/r/reactjs/comments/fpvvhi/api_design_how_to_make_a_component_with/)
+- url: https://www.reddit.com/r/reactjs/comments/fpvvhi/api_design_how_to_make_a_component_with/
+---
+I am asking this from a UIKit developer perspective in terms of providing an API. I am going to provide an example; so that, it is easier to visualize what I am trying to tell.
+
+I have a controlled `Filter` component that opens a custom Autofill dropdown based on the given query string (something similar to Google Search's input box).
+
+Here is how it is being used currently (currently, I am fetching data by non-suspense means in usage):
+
+    &lt;Filter
+      value={value}
+      onChange={handleChange}
+      options={options}
+      loading={loading}
+      {...otherProps}
+    /&gt;
+
+So, the data fetching process starts when the user enters anything in the input.
+
+React Docs suggest that Concurrent UI patterns should be implemented at a [Design System level](https://reactjs.org/docs/concurrent-mode-patterns.html#baking-transitions-into-the-design-system) in order to simplify the developer experience for devs who use the design system.
+
+Now, I have one place where I need to update the state. How am I supposed to design this? Let's say that I have an example like below (taken from third example [here](https://reactjs.org/docs/concurrent-mode-patterns.html#splitting-high-and-low-priority-state):
+
+    &lt;Filter
+      value={value}
+      onChange={(val) =&gt; {
+        // this is high priority state, needs to be updated immediately
+        setValue(value);
+        // transition should be here but I want the transition to be in the component
+        setOptionsResource(fetchOptions(val));
+      }}
+      options={optionsResource}
+      {...otherProps}
+    /&gt;
+
+Here is a preliminary implementation for the transition:
+
+    // no more loading prop
+    const Filter = ({ onOpen, onChange, ...otherProps }) =&gt; {
+      const [startTransition, isPending] = useTransition({ timeoutMS: TIMEOUT });
+
+      // this doesn't
+      const handleChange = (e) =&gt; {
+        // I am setting both input value and resource in `onChange`
+        // but I need a way to separate it; so that, low priority resource
+        // is happening in `startTransition`
+        onChange(e.target.value);
+
+        startTransition(() =&gt; {
+          // how should pass resource setter here?
+        });
+      }
+
+      // ...
+    }
+
+How can I separate these values? My only guess is that I need to add a new callback such as `populateData` or something similar. I don't like this approach because to me personally, it bleeds too many actions to the ui library.
+
+
 ---
 
-## [7][yuchi/hooks.macro - Babel Macros for automatic React Hooks memoization invalidation](https://www.reddit.com/r/reactjs/comments/fp5mly/yuchihooksmacro_babel_macros_for_automatic_react/)
-- url: https://github.com/yuchi/hooks.macro
----
+My second question is regarding deferring in this situation. Previously, I was able to defer the `value` state because the entire fetching process was happening outside the scope of the UI library. Now, the fetching process is split into two parts -- transition in the UI library component and fetching is happening outside. Where should the deferring happen? Should it happen in the Filter component or should it happen outside the component?
 
-## [8][mini-graphiql - A mini graphql playground for documentation and mdx sites](https://www.reddit.com/r/reactjs/comments/fp93pp/minigraphiql_a_mini_graphql_playground_for/)
-- url: https://www.reddit.com/r/reactjs/comments/fp93pp/minigraphiql_a_mini_graphql_playground_for/
----
-It is the same playground you can use in the graphql documentation website and in hasura docs site but packaged as a react component
+In the component:
 
-It supports autocompletion and automatically queries to the remote graphql schema
+    const Filter = ({ onOpen, onChange, value, ...otherProps }) =&gt; {
+      const [startTransition, isPending] = useTransition({ timeoutMS: TIMEOUT });
+      const deferredValue = useDeferredValue(value, { timeoutMS: DEFERRED_TIMEOUT });
 
-more at [https://github.com/remorses/mini-graphiql-playground](https://github.com/remorses/mini-graphiql-playground)
-## [9][TypeScript + React: Typing custom hooks with tuple types](https://www.reddit.com/r/reactjs/comments/fpanc8/typescript_react_typing_custom_hooks_with_tuple/)
-- url: https://fettblog.eu/typescript-react-typeing-custom-hooks/
----
+      const handleChange = (e) =&gt; {
+        // I am setting both input value and resource in `onChange`
+        // but I need a way to separate it; so that, low priority resource
+        // is happening in `startTransition`
+        onChange(e.target.value);
 
-## [10][ELI5: When would I use useReducer/useCallback/useMemo over state/effect/ref?](https://www.reddit.com/r/reactjs/comments/fooxw9/eli5_when_would_i_use/)
-- url: https://www.reddit.com/r/reactjs/comments/fooxw9/eli5_when_would_i_use/
----
-I've been on the hook train since it went into production last year. But for the life of me I don't ever think of using useReducer/useCallback/useMemo over the core 3. I feel like I understand what they are used for, but Id on't know when to actually apply them. I've read articles on it and I still don't get it. So I'm hoping I can find someone here that can finally tick that switch for me.
-## [11][COVID-19 Timeline Heatmap](https://www.reddit.com/r/reactjs/comments/fpb78j/covid19_timeline_heatmap/)
-- url: https://willosof.github.io/covid-19/
----
+        startTransition(() =&gt; {
+          populateData(deferredValue);
+        });
+      }
+    }
 
-## [12][Introduction to MDXJS](https://www.reddit.com/r/reactjs/comments/fp4isd/introduction_to_mdxjs/)
-- url: https://css-tricks.com/an-introduction-to-mdxjs/
+    // usage:
+
+    &lt;Filter
+      value={value}
+      onChange={(val) =&gt; {
+        // this is high priority state, needs to be updated immediately
+        setValue(value);
+      }}
+      populateData={(val) =&gt; {
+        setOptionsResource(fetchOptions(val));
+      }}
+      options={optionsResource}
+      {...otherProps}
+    /&gt;
+
+    // or should it be like this:
+
+    const debouncedValue = useDeferredValue(value, { timeoutMs: DEFERRED_TIMEOUT });
+
+    return &lt;Filter
+      value={value}
+      onChange={(val) =&gt; {
+        setValue(value);
+      }}
+      populateData={() =&gt; {
+        // no argument in `populateData` function
+        setOptionsResource(fetchOptions(deferredValue));
+      }}
+      options={optionsResource}
+      {...otherProps}
+    /&gt;
+
+Concurrent mode is all new to me and I get that there are not many best practices available at the moment. However, I am trying to understand and prepare what kind of decisions that we need to make to future-proof my implementation. For example, I can set an API that is easier to migrate to concurrent mode in the future.
+
+P.S I am currently not using Concurrent Mode in my apps in production. I am just curious as to how to approach this from a UI library maintainer perspective.
+## [12][How a tree of React components can render a flat DOM and why flat DOM + CSS-grid scaffolding is awesome](https://www.reddit.com/r/reactjs/comments/fpvo9p/how_a_tree_of_react_components_can_render_a_flat/)
+- url: http://ikoshelev.azurewebsites.net/search/id/15/Modern-reusable-components-Separating-DOM-structure-from-visual-structure---maximum-flexibility-with-minimum-complexity
 ---
 

@@ -1,5 +1,9 @@
 # Kotlin
-## [1][Comments vs. descriptive method names?](https://www.reddit.com/r/Kotlin/comments/fpa4v1/comments_vs_descriptive_method_names/)
+## [1][Introductory Post about the Kotlin/Native Compiler](https://www.reddit.com/r/Kotlin/comments/fpdq7p/introductory_post_about_the_kotlinnative_compiler/)
+- url: https://www.bignerdranch.com/blog/exploring-kotlin-native-part-1/
+---
+
+## [2][Comments vs. descriptive method names?](https://www.reddit.com/r/Kotlin/comments/fpa4v1/comments_vs_descriptive_method_names/)
 - url: https://www.reddit.com/r/Kotlin/comments/fpa4v1/comments_vs_descriptive_method_names/
 ---
 I've recently been playing around with writing a gradle plugin. While doing so I found myself adding some comments.
@@ -8,31 +12,23 @@ For the last couple of years I've been arguing that only complicated (or just no
 
 What are your thoughts on the matter?
 
-https://github.com/tonsV2/source-release/blob/feature/methods-over-comments/src/main/kotlin/dk/fitfit/gradle/SourceRelease.kt
-
 https://github.com/tonsV2/source-release/blob/master/src/main/kotlin/dk/fitfit/gradle/SourceRelease.kt
 
 Which version do you guys prefer?
-## [2][Mocking is not practical — Use fakes](https://www.reddit.com/r/Kotlin/comments/fovn9z/mocking_is_not_practical_use_fakes/)
+
+Edit: Thanks for the feedback everyone! I stripped the comment and kept my code as refactored methods.
+## [3][Mocking is not practical — Use fakes](https://www.reddit.com/r/Kotlin/comments/fovn9z/mocking_is_not_practical_use_fakes/)
 - url: https://medium.com/@june.pravin/mocking-is-not-practical-use-fakes-e30cc6eaaf4e
 ---
 
-## [3][Cheat code to get started with Kotlin](https://www.reddit.com/r/Kotlin/comments/fp9sxg/cheat_code_to_get_started_with_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/fp9sxg/cheat_code_to_get_started_with_kotlin/
----
- [https://www.hackerearth.com/blog/getting-started-with-kotlin](https://www.hackerearth.com/blog/getting-started-with-kotlin)
 ## [4][Any free kotlin courses to take during this time?Except ones on udacity from google](https://www.reddit.com/r/Kotlin/comments/foys3h/any_free_kotlin_courses_to_take_during_this/)
 - url: https://www.reddit.com/r/Kotlin/comments/foys3h/any_free_kotlin_courses_to_take_during_this/
 ---
 
-## [5][Android Notification BigPictureStyle &amp; BigTextStyle](https://www.reddit.com/r/Kotlin/comments/fozzxj/android_notification_bigpicturestyle_bigtextstyle/)
-- url: https://www.reddit.com/r/Kotlin/comments/fozzxj/android_notification_bigpicturestyle_bigtextstyle/
+## [5][Cheat code to get started with Kotlin](https://www.reddit.com/r/Kotlin/comments/fp9sxg/cheat_code_to_get_started_with_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/fp9sxg/cheat_code_to_get_started_with_kotlin/
 ---
-Android provides 5 notification styles for styling notification, BigTextStyle, BigPictureStyle, MessagingStyle, InboxStyle and MediaStyle. These two articles describe the first two styles:
-
-[Android Notification BigPictureStyle](https://itnext.io/android-notification-bigpicturestyle-1f293e6cabaf?source=friends_link&amp;sk=d760eea0b5e5fb27af137332f6871da6)
-
-[Android Notification BigTextStyle](https://itnext.io/android-notification-bigtextstyle-bd35f7530eae?source=friends_link&amp;sk=b7a41e84e63133210edb6713a52c056a)
+ [https://www.hackerearth.com/blog/getting-started-with-kotlin](https://www.hackerearth.com/blog/getting-started-with-kotlin)
 ## [6][Kotlin equivalent of functional Ruby factorial code?](https://www.reddit.com/r/Kotlin/comments/fp3gpx/kotlin_equivalent_of_functional_ruby_factorial/)
 - url: https://www.reddit.com/r/Kotlin/comments/fp3gpx/kotlin_equivalent_of_functional_ruby_factorial/
 ---

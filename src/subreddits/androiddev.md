@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/fnjcmy/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/fnjcmy/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/fpw91a/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/fpw91a/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - March 23, 2020](https://www.reddit.com/r/androiddev/comments/fni20d/weekly_questions_thread_march_23_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/fni20d/weekly_questions_thread_march_23_2020/
 ---
@@ -31,7 +25,67 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Create awesome app screenshots for PlayStore](https://www.reddit.com/r/androiddev/comments/fp98il/create_awesome_app_screenshots_for_playstore/)
+## [3][What stops Android apps from reaching feature parity with equivalent iOS apps?](https://www.reddit.com/r/androiddev/comments/fpr8tu/what_stops_android_apps_from_reaching_feature/)
+- url: https://www.reddit.com/r/androiddev/comments/fpr8tu/what_stops_android_apps_from_reaching_feature/
+---
+For example, why is Spotify so far behind on android? There are useful features that we've been missing for years. I even saw a whole advertisement on Instagram specifically for Spotify's swipe to queue and save songs feature. (This feature is iOS only.) How can they blatantly and shamelessly neglect Android, or is there a reason? Yes I am a little salty
+## [4][New WindowInsetsAnimation sample released](https://www.reddit.com/r/androiddev/comments/fpivds/new_windowinsetsanimation_sample_released/)
+- url: https://github.com/android/user-interface-samples/tree/master/WindowInsetsAnimation
+---
+
+## [5][Create simple CPU intensive task?](https://www.reddit.com/r/androiddev/comments/fpvgju/create_simple_cpu_intensive_task/)
+- url: https://www.reddit.com/r/androiddev/comments/fpvgju/create_simple_cpu_intensive_task/
+---
+Hello!
+
+I'm working on a app that has 3 buttons:
+
+LOW, MEDIUM, HIGH
+
+Those buttons corresponds to CPU intensity, what would be the easiest way to create a CPU intensive task that can generate a low, medium and high load?
+
+Thank you!
+## [6][Improved *.gradle.kts IDE Support](https://www.reddit.com/r/androiddev/comments/fputtw/improved_gradlekts_ide_support/)
+- url: https://blog.jetbrains.com/kotlin/2020/02/improved-gradle-kts-ide-support/
+---
+
+## [7][Let's build an open source COVID-19 app](https://www.reddit.com/r/androiddev/comments/fpvoj3/lets_build_an_open_source_covid19_app/)
+- url: https://www.reddit.com/r/androiddev/comments/fpvoj3/lets_build_an_open_source_covid19_app/
+---
+With the Coronavirus spreading like wildfire these days, a lot of people are helping each other. In my local community I see a lot of people helping elderly/sick people by cooking for them, warning them about regulations, running errands for them or just chatting with them from a distance because they are quarantined and have no social contact. I hope I'm not alone this, but I feel like I also need to help anyway I can. And I know can make/publish an Android app and write some reasonable code. There are/were a lot of apps spreading misinformation on this issue, hell some even put ads/premium functions on those apps. For that reason Google has [blocked](https://www.cnet.com/news/apple-google-amazon-block-nonofficial-coronavirus-apps-from-app-stores/) all COVID-19 apps.
+
+**So why not create a comprehensive open source COVID-19 app as a community?**
+
+Considering there is a complete lack of a good map/overview app for this on the Play Store at the moment. Maybe if we do this as a collective with only official information from the WHO/NHC, Google might consider allowing this app to be available on the Play Store.
+
+**Some requirements:**
+
+* Confirmation from Google (yeah..)
+* A list of contributors
+* Someone who wants to lead this thing (or maybe a few people)
+* Wireframes/Mockups
+   * If you don't have a lot of experience with Android you can still contribute by creating Wireframes/mockups.
+
+**Some things to setup:**
+
+* A repository
+* A Slack channel (or something else)
+* Project overview (Kanban board)
+* List of requirements
+* List of things to implement (backlog)
+
+I haven't really seen an open source app succeed on a subreddit before, so this is probably going to fail. But let's give this a try. Leave a comment if you want to help.
+
+Link to the [Github organisation page](https://github.com/COVID-19-ANDROIDDEV).
+
+Link to the android app [repository](https://github.com/COVID-19-ANDROIDDEV/covid-19-android-app).
+
+Link to the [Github project](https://github.com/orgs/COVID-19-ANDROIDDEV/projects).
+## [8][I just published my first Medium article talking about how to get rid of Fragment/Activity boilerplate code (especially with MVVM). Would love some feedback!](https://www.reddit.com/r/androiddev/comments/fpwuj4/i_just_published_my_first_medium_article_talking/)
+- url: https://link.medium.com/8ERE5g4gc5
+---
+
+## [9][Create awesome app screenshots for PlayStore](https://www.reddit.com/r/androiddev/comments/fp98il/create_awesome_app_screenshots_for_playstore/)
 - url: https://www.reddit.com/r/androiddev/comments/fp98il/create_awesome_app_screenshots_for_playstore/
 ---
 I know you all are being extra productive in this difficult time and have multiple mobile apps lined up to be released, so please don't upvote me too fast in excitement, let me pitch something first.
@@ -45,207 +99,30 @@ You end up with something that looks like
 [Please use PC to keep your sanity.](https://preview.redd.it/4w4v1oi3yzo41.png?width=2368&amp;format=png&amp;auto=webp&amp;s=85d2c795f41203eb07c498ca2ffea1cf6b81a405)
 
 P.S. Thanks for the downvotes!
-## [4][I guess I should feel flattered but not sure this is fair.](https://www.reddit.com/r/androiddev/comments/foyiho/i_guess_i_should_feel_flattered_but_not_sure_this/)
-- url: https://i.redd.it/ehd5kzs3yvo41.png
+## [10][Handle Dynamic runtime overlays (RRO)](https://www.reddit.com/r/androiddev/comments/fpshxl/handle_dynamic_runtime_overlays_rro/)
+- url: https://www.reddit.com/r/androiddev/comments/fpshxl/handle_dynamic_runtime_overlays_rro/
 ---
+Hi! I'm using Dynamic Runtime Overlays in my AOSP image, and I have a  problem with handling overlays. Each enable or disable of the overlay leads to restart of the every  application but without any onConfigurationChange received. I would like  to prevent some applications from restart such as map application to  avoid lengthy initialization process.
 
-## [5][How does my application work on an Android device?](https://www.reddit.com/r/androiddev/comments/fp7p4o/how_does_my_application_work_on_an_android_device/)
-- url: https://www.reddit.com/r/androiddev/comments/fp7p4o/how_does_my_application_work_on_an_android_device/
+Thanks for help!
+## [11][How does token flow work in android app?](https://www.reddit.com/r/androiddev/comments/fpsg9y/how_does_token_flow_work_in_android_app/)
+- url: https://www.reddit.com/r/androiddev/comments/fpsg9y/how_does_token_flow_work_in_android_app/
 ---
-Hello, everyone! I want to ask you about what's going on under the hood when you created or you're creating your own mobile application for Android. So, let's get started from the underlying technologies.
+Is this how the token flow works?
 
-1. On you computer you have JDK. You wrote some code and it was compiled by javac into bytecode. Then does my byte code go to .apk file or it should be converted into machine code by JVM and only then into .apk file?
-2. We have our application on an Android device. Imagine that I want to run it. How does it work? Should it compile my code again or .apk contains machine code already? If it doesn't contain, what will compile my code on an Android device? Kernel?
-## [6][Mocking is not practical — Use fakes](https://www.reddit.com/r/androiddev/comments/fovoch/mocking_is_not_practical_use_fakes/)
-- url: https://medium.com/@june.pravin/mocking-is-not-practical-use-fakes-e30cc6eaaf4e
+1. Authenticate user
+2. Get token
+3. Enter android app content
+4. On each request token is being sent in the request
+
+Questions:
+
+1. What if token is expired? Do I logout user and send him back to authentication screen?
+2. If user is already logged in, and he enters app second time, do I validate user with previously stored token?
+3. Do I use some crypto tools to obfuscate token before storing it on the device?
+## [12][Who else gets these Maven errors constantly during building in the last few weeks?](https://www.reddit.com/r/androiddev/comments/fptl9g/who_else_gets_these_maven_errors_constantly/)
+- url: https://www.reddit.com/r/androiddev/comments/fptl9g/who_else_gets_these_maven_errors_constantly/
 ---
+https://i.imgur.com/q0u3xEW.png
 
-## [7][AutoCompleteTextView - Disable dropdown behavior](https://www.reddit.com/r/androiddev/comments/fpbbc8/autocompletetextview_disable_dropdown_behavior/)
-- url: https://www.reddit.com/r/androiddev/comments/fpbbc8/autocompletetextview_disable_dropdown_behavior/
----
-So I have subclassed autocompletetextview to meet my requirements but I'm stuck with one issue with the dropdown behavior, whenever I click on the view the dropdown fluctuates,  the number of times I click on the view, it fluctuates every time, I want it to be persistent and dismiss only on outside touch or back press.
-
-here is an example [https://imgur.com/PmVBANa](https://imgur.com/PmVBANa)
-
-&amp;#x200B;
-
-    package com.momentsnap.android.searchableSpinner;
-    
-    import android.content.Context;
-    import android.util.AttributeSet;
-    import android.view.MotionEvent;
-    
-    import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
-    
-    import com.momentsnap.android.teamlist.ui.entity.OnSpinnerEventsListener;
-    
-    import java.util.Calendar;
-    
-    import timber.log.Timber;
-    
-    
-    public class MyAutoCompleteTextView extends AppCompatAutoCompleteTextView {
-    
-        private static final int MAX_CLICK_DURATION = 200;
-        private long startClickTime;
-        private OnSpinnerEventsListener mListener;
-        private boolean mOpenInitiated = false;
-    
-    
-        public MyAutoCompleteTextView(Context context) {
-            super(context);
-        }
-    
-        public MyAutoCompleteTextView(Context context, AttributeSet attrs) {
-            super(context, attrs);
-        }
-    
-        public MyAutoCompleteTextView(Context context, AttributeSet attrs, int defStyleAttr) {
-            super(context, attrs, defStyleAttr);
-        }
-    
-        public void performFiltering(CharSequence text) {
-            super.performFiltering(text, 0);
-        }
-    
-        public void setSpinnerEventsListener(OnSpinnerEventsListener onSpinnerEventsListener) {
-            mListener = onSpinnerEventsListener;
-        }
-    
-        //Override the parent class method, so that the drop-down box selection is also generated
-        // when 0 input is possible. By default, at least 1 character is required for input.
-        @Override
-        public boolean enoughToFilter() {
-            if (!isEnabled() || getAdapter() == null) {
-                return false;
-            }
-            if (getText().length() == 0) {
-                return true;
-            } else {
-                return super.enoughToFilter();
-            }
-        }
-    
-        @Override
-        public boolean performClick() {
-            // register that the Spinner was opened so we have a status
-            // indicator for the activity(which may lose focus for some other
-            // reasons)
-            mOpenInitiated = true;
-            if (mListener != null) {
-                mListener.onSpinnerOpened();
-            }
-            return super.performClick();
-        }
-    
-        public void performClosedEvent() {
-            mOpenInitiated = false;
-            if (mListener != null) {
-                mListener.onSpinnerClosed();
-            }
-        }
-    
-        /**
-         * A boolean flag indicating that the Spinner triggered an open event.
-         *
-         * @return true for opened Spinner
-         */
-        public boolean hasBeenOpened() {
-            return mOpenInitiated;
-        }
-    
-        @Override
-        public void onWindowFocusChanged(boolean hasWindowFocus) {
-            Timber.d("onWindowFocusChanged");
-            super.onWindowFocusChanged(hasWindowFocus);
-            if (hasBeenOpened() &amp;&amp; hasWindowFocus) {
-                Timber.d("closing popup");
-                performClosedEvent();
-            }
-        }
-    
-        //Increase the chance of drop-down box display.
-        @Override
-        public boolean onTouchEvent(MotionEvent event) {
-    
-            if (!isEnabled() || getAdapter() == null) {
-                return false;
-            }
-    
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN: {
-                    startClickTime = Calendar.getInstance().getTimeInMillis();
-                    break;
-                }
-                case MotionEvent.ACTION_UP: {
-                    long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
-                    if (clickDuration &lt; MAX_CLICK_DURATION) {
-                        if (!isPopupShowing()) {
-                            performFiltering(getText());
-                            showDropDown();
-                        }
-                    }
-                    break;
-                }
-            }
-            return super.onTouchEvent(event);
-        }
-    }
-## [8][ADB: Cant connect to emulator but can issue commands](https://www.reddit.com/r/androiddev/comments/fpb2r1/adb_cant_connect_to_emulator_but_can_issue/)
-- url: https://www.reddit.com/r/androiddev/comments/fpb2r1/adb_cant_connect_to_emulator_but_can_issue/
----
-Hi guys,
-
-&amp;#x200B;
-
-Just started working with adb and emulated androids.
-
-I have an android emulator with Android studio.
-
-If I do "adb devices" it shows up as "emulator-5554" , but second column just says "device".
-
-I've tried to install an apk and check the packages and it all seemed fine, I just did "adb -e &lt;command&gt;"
-
-But I can't do "adb connect emulator-5554:5555", should I be worried or is that expected behaviour from emulators? 
-
-&amp;#x200B;
-
-Thank you
-## [9][ART and Davlik under the hood?](https://www.reddit.com/r/androiddev/comments/fpaoxk/art_and_davlik_under_the_hood/)
-- url: https://www.reddit.com/r/androiddev/comments/fpaoxk/art_and_davlik_under_the_hood/
----
-Hello, everyone! I asked the question here and you helped me where I should dig on that topic. So, now I've read some articles about this topic but I found a lot of unnecessary information about that. I need to get only superficially knowledge which will be useful.
-
-As I understand, when you run your Java code on PC you have JVM but when Google created Android OS he couldn't afford use JVM in their project free. Hence, they created their own VM's for running Android applications. Once upon a time we had Davlik. It translates your Java bytecode into executable .dex files during your application is running. Now we have ART. It translates your Java bytecode into executable ART files when you're installing your app and move the code into your storage. Every application is running on ART can be run on Davlik but not every application is running on Davlik can be run on ART. ART is faster because you compiled the source code only one time when you were installing the app. It uses less performance of you device.
-
-I hope you can tell me if something's wrong.
-
-*Updated:* therefore, every application is running on its own virtual machine. It helps in debugging and also it prevents malicious software from their impact on the Linux kernel of your device.
-## [10][Emulator 30.0.5 Stable](https://www.reddit.com/r/androiddev/comments/fowk50/emulator_3005_stable/)
-- url: https://androidstudio.googleblog.com/2020/03/emulator-3005-stable.html
----
-
-## [11][Before diving into this projects: What's your opinion on writing Python code for Android?](https://www.reddit.com/r/androiddev/comments/fp9oru/before_diving_into_this_projects_whats_your/)
-- url: https://www.reddit.com/r/androiddev/comments/fp9oru/before_diving_into_this_projects_whats_your/
----
- tldr: Would you reccomend to write Android Apps in Python instead of Java?
-
-Hallo fellow redditors!
-
-I hope you can help me here with some advice.
-
-A  friend and I planned on programming Alexa Skills using Python. I just  began learning programming and after I told my friend, who is a software  developer, he got hooked with my idea and we decided to write the Alexa  Skill in Python.
-
-Now, after a  month however, we realised that the Amazon Web Services suck. Amazon is  very restrictive in terms of what you are allowed to do and how to do it  when programming Alexa Skills.
-
-So we decided to work on an Android App instead.
-
-Only  problem is: Thus far I only know the basics of Python and my friends  thinks that it would be way, way  easier to code an App in Java. Which  means that I'd have to start learning Java now.... :/
-
-(and after taking a glimpse it looks scary...haha!)
-
-So...  what do you think? I definately want to keep up studying Python, but  would you say that it is better to code in Java when it comes to Apps?
-## [12][D8 Optimization: Assertions – Jake Wharton](https://www.reddit.com/r/androiddev/comments/for73y/d8_optimization_assertions_jake_wharton/)
-- url: https://jakewharton.com/d8-optimization-assertions/
----
-
+Maven seems to be down almost every day at least once. How can I force Android Studio to not check this on every build?

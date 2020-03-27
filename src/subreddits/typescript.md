@@ -22,132 +22,114 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Enums, string/number types of interfaces/classes cannot be used as index signatures](https://www.reddit.com/r/typescript/comments/fp5wfk/enums_stringnumber_types_of_interfacesclasses/)
+## [2][Elm style JSON decoder for TypeScript, providing type safety compile- and run-time](https://www.reddit.com/r/typescript/comments/fptbvb/elm_style_json_decoder_for_typescript_providing/)
+- url: https://github.com/venil7/json-decoder
+---
+
+## [3][How to loop through a specific field of all documents and match it against a value?](https://www.reddit.com/r/typescript/comments/fpw42t/how_to_loop_through_a_specific_field_of_all/)
+- url: https://www.reddit.com/r/typescript/comments/fpw42t/how_to_loop_through_a_specific_field_of_all/
+---
+Im reading and saving an NFC tag id into my firebase as a hexstring. I want to check all the tag ids against the one I scan with my phone and return add the matching product to my cart.. any advice?
+
+&amp;#x200B;
+
+[firebase](https://preview.redd.it/zydt47wml7p41.png?width=974&amp;format=png&amp;auto=webp&amp;s=d42e71e7aaf8bd0c2bc885147dc814a44b6eea53)
+
+&amp;#x200B;
+
+[ts](https://preview.redd.it/mnbhynfol7p41.png?width=677&amp;format=png&amp;auto=webp&amp;s=8ac975ee0b9d60ce6527f8dd81b15d47d0ef3fc1)
+## [4][Approximating haskell's do syntax in Typescript](https://www.reddit.com/r/typescript/comments/fpvsxu/approximating_haskells_do_syntax_in_typescript/)
+- url: https://paulgray.net/do-syntax-in-typescript/
+---
+
+## [5][TypeScript + React: Typing custom hooks with tuple types](https://www.reddit.com/r/typescript/comments/fpt5nf/typescript_react_typing_custom_hooks_with_tuple/)
+- url: https://fettblog.eu/typescript-react-typeing-custom-hooks/
+---
+
+## [6][Building Vue Enterprise Application: Part 2. Services](https://www.reddit.com/r/typescript/comments/fpjcut/building_vue_enterprise_application_part_2/)
+- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-2-services-f7ec400190e7
+---
+
+## [7][How to convert this to ts](https://www.reddit.com/r/typescript/comments/fptqhj/how_to_convert_this_to_ts/)
+- url: https://www.reddit.com/r/typescript/comments/fptqhj/how_to_convert_this_to_ts/
+---
+Hello guys, any suggestions on how to convert this to ts?
+const mutations = {
+ [AUTH_REQUEST]: (state) =&gt; {
+   state.status = ""
+}}
+## [8][How do I turn Typescript types into a markdown table?](https://www.reddit.com/r/typescript/comments/fph6m0/how_do_i_turn_typescript_types_into_a_markdown/)
+- url: https://www.reddit.com/r/typescript/comments/fph6m0/how_do_i_turn_typescript_types_into_a_markdown/
+---
+I'm writing docs for a library and would like to find a way to turn my \`props\` into a simple markdown table. Every example I've seen so far feels too complex, and creates a whole docs website for me.
+
+Is there a way to turn this:
+
+```typescript
+type Props = {
+  /*
+   * this is a required color!
+   */
+  color: string
+}
+```
+
+into this:
+
+| Prop  | description  | type  | Required  |
+|---|---|---|---|
+|  color | this is a required color!  | string  | yes |
+## [9][Am I using the right RxJS operator?](https://www.reddit.com/r/typescript/comments/fpco9r/am_i_using_the_right_rxjs_operator/)
+- url: https://www.reddit.com/r/typescript/comments/fpco9r/am_i_using_the_right_rxjs_operator/
+---
+Hi guys!
+
+I am struggling with understanding when to use the different operators. I have one method where I first subscribe to check if a service is online if it is then I subscribe to another observable. If not I show a dialogue saying service is down. What I have done is something like this:
+
+    public methodName(parameter: parameterName): any {
+            this.nameOfService
+                .isServiceOnline()
+                .pipe(
+                    concatMap(isOnline =&gt; {
+                        if (!isOnline) {
+                            this.showServiceDownDialog();
+                            return;
+                        }
+    
+                        do stuff
+    
+                        return this.nameOfService.searchInService(parameter);
+                    })
+                )
+                .subscribe(
+                    data =&gt; {
+                        do more stuff
+                    }
+                );
+        }
+
+Does this look ok? I used concatMap because I guess I want to make sure the service is online before I try to use the search method? Or is there any other operator I should use here?
+## [10][Making a 3rd Party Interface more strict](https://www.reddit.com/r/typescript/comments/fpc17j/making_a_3rd_party_interface_more_strict/)
+- url: https://www.reddit.com/r/typescript/comments/fpc17j/making_a_3rd_party_interface_more_strict/
+---
+Hi. I am importing a 3rd party library (xml-parser) that returns an instance of the following interface from a function
+
+    export interface Attributes {
+        [name: string]: string;
+    }
+
+In my code I'd like to be able to project into a stricter type because I know the attributes returned will have certain property names e.g.
+
+    type UserInfo = {
+      username: string
+    }
+
+However assigning something of interface Attributes to a const of type UserInfo, rightly, doesn't compile. 
+
+Is there a utility type that I can use to say this Attribute interface can be utilised like UserInfo? I tried Pick&lt;Attributes, 'username'&gt; but again username doesn't exist on the Attribute type.
+## [11][Enums, string/number types of interfaces/classes cannot be used as index signatures](https://www.reddit.com/r/typescript/comments/fp5wfk/enums_stringnumber_types_of_interfacesclasses/)
 - url: https://www.reddit.com/r/typescript/comments/fp5wfk/enums_stringnumber_types_of_interfacesclasses/
 ---
 I just came across this post [https://github.com/microsoft/TypeScript/issues/37448](https://github.com/microsoft/TypeScript/issues/37448)...
 
 Does anyone have the problem here? Are there any strategies you'd found to overcome it?
-## [3][Converting Node.js (benchmarks game) programs to TypeScript](https://www.reddit.com/r/typescript/comments/foxvol/converting_nodejs_benchmarks_game_programs_to/)
-- url: https://www.reddit.com/r/typescript/comments/foxvol/converting_nodejs_benchmarks_game_programs_to/
----
-I've been trying to convert Node.js (benchmarks game) programs to TypeScript — using *trial and error* and *dumb luck*.
-
-[That has worked](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/node-typescript.html) for:
-
-* binary-trees
-* mandelbrot
-* n-body
-* pidigits
-* regex-redux
-
-But the converted `fannkuch-redux` program was considerably slower, and I failed to convert these programs:
-
-* spectral-norm
-* reverse-complement
-* k-nucleotide
-* fasta
-
-Please help!
-
-Please convert those 5 Node.js programs and [contribute working TypeScript equivalents to the benchmarks game](https://salsa.debian.org/benchmarksgame-team/benchmarksgame/blob/master/CONTRIBUTING.md#contribute-source-code-for-measurement).
-## [4][Please suggest advanced generics course](https://www.reddit.com/r/typescript/comments/fp862c/please_suggest_advanced_generics_course/)
-- url: https://www.reddit.com/r/typescript/comments/fp862c/please_suggest_advanced_generics_course/
----
-I have a Pluralsight subscription but it doesn't have anything deep on topic. Personally I prefer video courses, but any suggestion is appreciated. Thanks!
-## [5][Possible to type based on entered params?](https://www.reddit.com/r/typescript/comments/foz02q/possible_to_type_based_on_entered_params/)
-- url: https://www.reddit.com/r/typescript/comments/foz02q/possible_to_type_based_on_entered_params/
----
-I'm curious if this is possible in TypeScript. I'm creating a `urlHelper` function where a user supplies an entity, method and path. I'm trying to see if I can limit the values in `path` based on what the user put in for `entity`/`method` and what is available in a const. Here's what I've got so far:
-
-
-    const endpoints = {
-      company: {
-        get: {
-          address: '/company/{id}/address',
-          owner: '/company/{id}/owner'
-        },
-        post: {
-          details: '/company/{id}'
-        }
-      },
-      user: {
-        get: {
-          profile: '/me/profile'
-        }
-      }
-    } as const
-    
-    type Entity = keyof typeof endpoints // "company" | "user"
-    type Method = 'get' | 'post'
-    type Path = ????
-    
-    const urlHelper = (entity: Entity, method: Method, path: Path) =&gt; {
-      // Do some stuff
-    }
-
-
-What I'm looking for is if a user puts "company" for `entity`, then "get" for `method`, `path` can only be "address" or "owner". Is this doable?
-## [6][Type-safe lenses](https://www.reddit.com/r/typescript/comments/foo055/typesafe_lenses/)
-- url: https://github.com/hoppinger/ts-lenses
----
-
-## [7][Best option to make a Libary?](https://www.reddit.com/r/typescript/comments/forltt/best_option_to_make_a_libary/)
-- url: https://www.reddit.com/r/typescript/comments/forltt/best_option_to_make_a_libary/
----
-Hi everyone!
-
-I'm currently working a project which requires a self made library to make calls to a soap server. This library I need to make needs to be Typescript and needs to be imported using gitlab (no need for npm compatibilities). 
-
-The point is that this library will wrap every header and soap method, so I can just create a connector and let the library/wrapper works.
-
-What is the best option to make a library like that and make it exportable with it's definition types? It is very important that the definitions are available in the project that imports this library. I've checked some guides, but all of them are npm-oriented or jus too simple for my case.
-
-I hope I'm asking in the right place,
-
-thanks!
-## [8][Enforce Immutability With Typescript To Boost Refactor Process](https://www.reddit.com/r/typescript/comments/foqn34/enforce_immutability_with_typescript_to_boost/)
-- url: https://medium.com//enforce-immutability-with-typescript-to-boost-refactor-process-70055dac5d52?source=friends_link&amp;sk=a750d3062f3fbba9f2d3c156f5050800
----
-
-## [9][MySQL Parser in Typescript](https://www.reddit.com/r/typescript/comments/fojj5j/mysql_parser_in_typescript/)
-- url: https://github.com/stevenmiller888/ts-mysql-parser
----
-
-## [10][What's wrong with this type predicate?](https://www.reddit.com/r/typescript/comments/fore56/whats_wrong_with_this_type_predicate/)
-- url: https://www.reddit.com/r/typescript/comments/fore56/whats_wrong_with_this_type_predicate/
----
-I'm trying to use a [type predicate](https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-predicates) to type something, and for some reason, it doesn't appear to be working.
-
-Here's some example code:
-
-    const getIsTypeA = (thingIAmChecking, value): thingIAmChecking is SomeGenericType&lt;TypeA&gt; =&gt; 
-      value === 'some other value'
-
-    const myFn = (thingIAmChecking: SomeGenericType&lt;TypeA | TypeB&gt;) =&gt; {
-      const value = getValue();
-      if (getIsTypeA(thingIAmChecking, value)) {
-        thingIAmChecking.onlyTypeAHasThis // ERROR
-      }
-    }
-
-Is there something I am fundamentally misunderstanding about type predicates? I thought if I return a boolean value, typescript will understand that inside the block of the `if`, the type is `SomeGenericType&lt;TypeA&gt;`.
-
-I can post a more specific example if needed, and thanks in advance for any help with understanding what's going on here!
-## [11][`as` vs. `new class` in object literals?](https://www.reddit.com/r/typescript/comments/foua9e/as_vs_new_class_in_object_literals/)
-- url: https://www.reddit.com/r/typescript/comments/foua9e/as_vs_new_class_in_object_literals/
----
-```tsx
-// const initialState = {
-//   counter: 0 as number
-// }
-
-
-const initialState = new class {
-  counter: number = 0
-}
-
-type State = typeof initialState;
-```
-
-[View Poll](https://www.reddit.com/poll/foua9e)

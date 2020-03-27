@@ -1,93 +1,141 @@
 # aws
-## [1][PSA: the AWSLambdaExecute policy grants lambdas permission to put and get any object in any S3 bucket](https://www.reddit.com/r/aws/comments/fp6moa/psa_the_awslambdaexecute_policy_grants_lambdas/)
-- url: https://www.reddit.com/r/aws/comments/fp6moa/psa_the_awslambdaexecute_policy_grants_lambdas/
----
-I applied this policy to all my lambdas, because I thought it's an easy way to grant Cloudwatch permissions.
-
-I was shocked when I later realised what I'd actually done.
-
-I spend so long fine tuning most permissions. It's annoying to see a giant asterisk bulldozing through my IAM security measures.
-## [2][Amazon Managed Cassandra Service now helps you automate the creation and management of resources by using AWS CloudFormation](https://www.reddit.com/r/aws/comments/foyp8f/amazon_managed_cassandra_service_now_helps_you/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-managed-cassandra-service-now-helps-you-automate-the-creation-and-management-of-resources-by-using-aws-cloudformation/
+## [1][Easily create production ready serverless app powered by multi-account CI/CD pipeline in just few minutes, with my 1st open-source project](https://www.reddit.com/r/aws/comments/fpje9b/easily_create_production_ready_serverless_app/)
+- url: https://github.com/eficode/serverless-ops-boilerplate
 ---
 
-## [3][Migrating from one account to another](https://www.reddit.com/r/aws/comments/fpaz9w/migrating_from_one_account_to_another/)
-- url: https://www.reddit.com/r/aws/comments/fpaz9w/migrating_from_one_account_to_another/
+## [2][Policy for a Cloud Economist job function?](https://www.reddit.com/r/aws/comments/fpvvak/policy_for_a_cloud_economist_job_function/)
+- url: https://www.reddit.com/r/aws/comments/fpvvak/policy_for_a_cloud_economist_job_function/
 ---
-Does amazon provide a way to migrate an AWS account? I started building on a personal account and now need to migrate my entire setup to my work sponsored account. I’ve got ec2 machines, s3, Efs, workspaces.
-## [4][S3 open source solution to transparently aggregate objects](https://www.reddit.com/r/aws/comments/fparmg/s3_open_source_solution_to_transparently/)
-- url: https://www.reddit.com/r/aws/comments/fparmg/s3_open_source_solution_to_transparently/
+arn:aws:iam::aws:policy/job-function/Billing + compute-optimizer:*
+
+Or a more limited https://s.natalian.org/2020-03-27/billing.json + compute-optimizer:*
+
+Any suggestions please?
+## [3][[LAMBDA/DYNAMODB] PUT /resource/:id how to handle the metadata ?](https://www.reddit.com/r/aws/comments/fpuh9x/lambdadynamodb_put_resourceid_how_to_handle_the/)
+- url: https://www.reddit.com/r/aws/comments/fpuh9x/lambdadynamodb_put_resourceid_how_to_handle_the/
 ---
-Imagine we got a solution/apps that stores petazillions of small objects on s3. 
+Hi People, 
 
-It obviously will cost us a lot in put and get and the performance will no bet good.
+I will illustrate my problem with an example.
 
-It can be acceptable for us to delay a bit the write and to store objects grouped. (same for read).
+Imagine you have the User resource. Let's say we have :  
+POST /users =&gt; add a user  
+PUT /users/:id =&gt; edit a user. 
 
-My question is there any existing solution that can do this job for me ? 
+When we add a user, we persist it in a dynamoDB with : id, lastname, firstname, age, creationDate, lastModificationDate. 
 
-akka I know I can handle this in my code but it's a lot of work, so if something can do it for me I take.
-## [5][Postgres index type for uuid[] array, supported on amazon rds?](https://www.reddit.com/r/aws/comments/fpa798/postgres_index_type_for_uuid_array_supported_on/)
-- url: https://www.reddit.com/r/aws/comments/fpa798/postgres_index_type_for_uuid_array_supported_on/
+How would you handle the update ? Because the client will just send us in body :   
+name, firstname, age.   
+
+
+To avoid erase creationDate - lastModificationDate, how would you handle this ?   
+I know it exists just partial update by using update() instead of put() in aws-sdk.   
+
+
+But in my real case, we have a lot of properties, it seems to complicated to handle each one in a update query.   
+
+
+So we thought a basic solution :   
+\- Get the user, retrieve the id/creationDate/modificationDate to add it in the new object, then put it. =&gt; seems also complex because when we will need to add new properties, we don't have to forget to edit this part of code.   
+To facilitate, we could add a "metadata" property.
+
+How do you handle this in your project ?
+
+If I was not clear, don't hesitate. \^\^  
+
+
+Thanks
+## [4][AWS Route53 CNAME record](https://www.reddit.com/r/aws/comments/fpwpy7/aws_route53_cname_record/)
+- url: https://www.reddit.com/r/aws/comments/fpwpy7/aws_route53_cname_record/
 ---
-PostgreSQL doesn't include an index type for uuid array columns. But it is possible to create an index type that understands how to compare in an array of uuids using operators.
-This requires superuser privileges (to create an operator). I was wandering if this was possible if I host my pg database in amazon rds.
-Kind regards
-## [6][Savings Plan recommendations for Linked Accounts](https://www.reddit.com/r/aws/comments/fp7sfz/savings_plan_recommendations_for_linked_accounts/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/03/aws-cost-explorer-now-offers-savings-plans-recommendations-for-member-linked-accounts/
+Hello!
+
+I am about to edit an old CNAME record which looks something like this.
+
+[abc.set.com](https://abc.set.com) CNAME [ns.te.com](https://ns.te.com).
+
+I will report [ns.te.com](https://ns.te.com) with [st.set.com](https://st.set.com).
+
+I can see that the old CNAME contains a . in the last. 
+
+Does this make any difference.
+
+[abc.set.com](https://abc.set.com) CNAME [ns.te.com](https://ns.te.com).
+
+[abc.set.com](https://abc.set.com) CNAME [st.set.com](https://st.set.com)
+
+Whats the purpose of "." in the last in the CNAME record?
+
+&amp;#x200B;
+
+Thanks
+## [5][EC2 with Elastic IP and S3 Data Transfer cost](https://www.reddit.com/r/aws/comments/fpvnjj/ec2_with_elastic_ip_and_s3_data_transfer_cost/)
+- url: https://www.reddit.com/r/aws/comments/fpvnjj/ec2_with_elastic_ip_and_s3_data_transfer_cost/
 ---
+Please assure me that interconnection traffic between EC2 instance with Elastic IP attached toward S3 bucket **within same region** doesn't count against VPC outbound data transfer cost (0.09$ per GB).
 
-## [7][CLI install help](https://www.reddit.com/r/aws/comments/fpaww1/cli_install_help/)
-- url: https://www.reddit.com/r/aws/comments/fpaww1/cli_install_help/
+*Conditions:*  
+EC2 has single network adapter.  
+No VPC Endpoint used.  
+Same region.
+## [6][What's the maximum time /tmp files are stored in AWS Lambda?](https://www.reddit.com/r/aws/comments/fpdbnv/whats_the_maximum_time_tmp_files_are_stored_in/)
+- url: https://www.reddit.com/r/aws/comments/fpdbnv/whats_the_maximum_time_tmp_files_are_stored_in/
 ---
-I'm upgrading my CLI from v1 to v2 on my OSX (10.13.6) machine. I thought I had v1 completely removed and v2 installed properly. 
+I've read that "AWS Lambda **maintains the execution context for some time in anticipation of another Lambda function invocation**". - but what does that actually mean in practice? How frequently would the function have to be called to still be in the same execution context? What's the maximum possible time that something would stay in the tmp folder?
 
-When I go to a terminal window and type `which aws` I get back:
-
-`/usr/local/bin/aws` 
-
-However, when I type `aws --version`, I get back: 
-
-`-bash: /Library/Frameworks/Python.framework/Versions/3.7/bin/aws: No such file or directory` which appears to me as the old directory where I had v1 CLI installed.
-
-What can I do here to fix this and point `aws` to go look in the `/usr/local/bin` directory? 
-
-Thanks!
-## [8][Serverless .Net API Design](https://www.reddit.com/r/aws/comments/fp5is4/serverless_net_api_design/)
-- url: https://www.reddit.com/r/aws/comments/fp5is4/serverless_net_api_design/
+My project requires that it stays 1 hour or less, but I can't find out if what the AWS docs say would mean that that's what will happen.
+## [7][NLB --&gt; EC2 possible?](https://www.reddit.com/r/aws/comments/fpu3cq/nlb_ec2_possible/)
+- url: https://www.reddit.com/r/aws/comments/fpu3cq/nlb_ec2_possible/
 ---
-I'm trying to work out the best way to architect the back end of a React website to be serverless where possible and I'm having a hard time finding real world examples of how people are doing it.
+Hello, im trying to use an ELB with an EIP attached to balance traffic for my EC2 hosted website. However i can see AWS for situations like this recommend that you use a setup like:
 
-[Amazon's own documentation](https://aws.amazon.com/blogs/developer/net-core-3-0-on-lambda-with-aws-lambdas-custom-runtime/) seems to upload an entire webAPI project into one Lambda function and uses API Gateway proxying to direct traffic inside it. While this makes it very easy to use, deploy and develop, it feels like a pretty bad way to do it given lack of control over the functions themselves.
+NLB (with EIP) --&gt; ALB --&gt; EC2
 
-It feels like a microservice approach would be better to allow each controller to be it's own Lambda function with API Gateway directing as appropriate. The problem here is managing access while developing, it seems that Docker is usually the way to go to run the microservices, but since the functions would be written as Lambda handlers I can't just change the API URL at run time in my front end.
-
-Does anyone have experience with this, or know of any real world examples that go into some depth around actually developing and managing this process? Most blogs and walkthroughs just talk about the very basics of setting it up and don't integrate the entire process.
-## [9][using awscli ssm send-command to run Powershell script](https://www.reddit.com/r/aws/comments/fowfkt/using_awscli_ssm_sendcommand_to_run_powershell/)
-- url: https://www.reddit.com/r/aws/comments/fowfkt/using_awscli_ssm_sendcommand_to_run_powershell/
+And i wonder why? Why not just NLB --&gt; EC2?
+## [8][Challenges with network connectivity between VPN Clients and EC2 instances](https://www.reddit.com/r/aws/comments/fplxre/challenges_with_network_connectivity_between_vpn/)
+- url: https://www.reddit.com/r/aws/comments/fplxre/challenges_with_network_connectivity_between_vpn/
 ---
-I'm trying to use aws ssm to run a powershell script, the script takes a parameter which is a file name.  The awscli command:
+Hi r/aws!
 
-    aws ssm send-command --timeout-seconds 60 --instance-ids i-blahblah --document-name AWS-RunPowerShellScript --parameters commands=["c:\myscript.ps1 c:\filename"]
+&amp;#x200B;
 
-However script.ps1 fails when there's a space in filename.  If I'm running it on the remote server I can just quote like "c:\file name", and my script.ps1 would work.  But using the quote in the command resulted in
+I'm having some challenges with full connectivity between my VPN endpoint clients and EC2 instances.
 
-    aws ssm send-command --timeout-seconds 60 --instance-ids i-blahblah --document-name AWS-RunPowerShellScript --parameters commands=["c:\myscript.ps1 'c:\file name'"]
+VPC subnet: [172.31.0.0/20](https://172.31.0.0/20)
 
-    Error parsing parameter '--parameters': Expected: ',', received: ''' for input:
-    commands=[c:\myscript.ps1 c:\file name]
-                                                     ^
+Client VPN: [192.168.200.0/22](https://192.168.200.0/22)
 
-How should I format --parameters?
+&amp;#x200B;
 
-EDIT: Found a workaround, backtick (\`) escapes space in powershell, so I can do:
+When my VPN clients try to access EC2 instances everything works fine.  For example, users can RDP to my remote desktop server without issue.
 
-    --parameters commands=["c:\myscript.ps1 c:\file` name"]
-## [10][Does anyone have experience with the average implementation time of bug fixes in AWS?](https://www.reddit.com/r/aws/comments/fp8wa8/does_anyone_have_experience_with_the_average/)
-- url: https://www.reddit.com/r/aws/comments/fp8wa8/does_anyone_have_experience_with_the_average/
+When I try to reach out to my VPN clients through (using Lansweeper, or even ping them), I can't make a connection.
+
+To test, i've connected my PC to the VPN, then turned off my firewall, still the same result.
+
+My Network ACLs and Security Groups are all very permissive currently (as a results of testing), but I still the same problems.
+
+My thought was that my EC2 instances don't know how to route to my VPN clients, but I can't seem to add an entry into the VPC route table for this.  There is no target I can reference for the Client VPN Endpoint subnet.
+
+&amp;#x200B;
+
+Is there something simple I am missing here?
+## [9][Confused by Billing Alerts](https://www.reddit.com/r/aws/comments/fphgqq/confused_by_billing_alerts/)
+- url: https://www.reddit.com/r/aws/comments/fphgqq/confused_by_billing_alerts/
 ---
-Hi, I'm trying to configure AWS SES to send emails to S3 but failed because of a bug in SES (SES cannot deliver emails to a bucket with Object Lock).
+I only have experience with Cost and Usage reporting, but that is a bit heavy for my current need. Thus, I'm reading https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html and getting confused by billing alerts (not alarms, which I think I understand). It says that once turned on, billing alerts cannot be turned off. From that page, it looks like billing alerts is in fact a Cloudwatch metric called Estimated Charge. Questions:
 
-I contacted AWS Support and they confirmed it and will implement a fix but cannot give me an ETA for that. 
+- Why would I want to turn billing alerts off?
+- If they are metrics, do I get charged normal CW metric rates for them?
+## [10][Undoing transaction error](https://www.reddit.com/r/aws/comments/fpklyl/undoing_transaction_error/)
+- url: https://www.reddit.com/r/aws/comments/fpklyl/undoing_transaction_error/
+---
+Hi Gurus,
 
-Does anyone know if I should expect weeks, months or even longer here based on their previous experience?
+While running the copy command to load the data from S3 into Redshift I am getting below error in logs:
+Undoing 1 transactions ON TABLE 456834 with current xid ...
+Could you please let me know where I am going wrong?
+I am running the copy command from from python using psycopg2 .
+
+Thanks,
+S

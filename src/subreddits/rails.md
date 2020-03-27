@@ -39,170 +39,91 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Do I need to back up /dev/zero ?](https://www.reddit.com/r/rails/comments/fp28d7/do_i_need_to_back_up_devzero/)
-- url: https://www.reddit.com/r/rails/comments/fp28d7/do_i_need_to_back_up_devzero/
+## [3][Database - is there any benefit to index a list of names?](https://www.reddit.com/r/rails/comments/fpv4h6/database_is_there_any_benefit_to_index_a_list_of/)
+- url: https://www.reddit.com/r/rails/comments/fpv4h6/database_is_there_any_benefit_to_index_a_list_of/
 ---
-My Ruby on Rails website application has a really big /dev/zero file (250+ GB). I'm not much of a developer, but a few times a year, I back up the site by FTPing all of the files to my desktop. Do I need this file?
-## [4][DIY JWT Auth + Refresh Tokens + Blacklisting + Whitelisting](https://www.reddit.com/r/rails/comments/fov6tb/diy_jwt_auth_refresh_tokens_blacklisting/)
-- url: https://www.reddit.com/r/rails/comments/fov6tb/diy_jwt_auth_refresh_tokens_blacklisting/
+Say I have a model Company, it has one single :name column. The purpose of this model is just to store company names. The only use for this model is to create a select list when needed (i.e Select All), and to **find by id** when a company name is required (i.e I won't search the Company model directly). The user can manage the company list (create/delete/etc).
+
+Is there any reason to (or not to) index the :name column?
+## [4][Solopreneur owner of 20k/month Rails app gives inside view.](https://www.reddit.com/r/rails/comments/fpenft/solopreneur_owner_of_20kmonth_rails_app_gives/)
+- url: https://www.reddit.com/r/rails/comments/fpenft/solopreneur_owner_of_20kmonth_rails_app_gives/
 ---
-Hey all,
+Do you remember the [Solopreneur owner of 20k/month Rails app who wanted to give an inside view](https://www.reddit.com/r/rails/comments/ev2s0n/solopreneur_owner_of_20kmonth_rails_app_wants_to/)?
 
-So I just made a gist with some code I extrapolated from a project I was working on. I ran into an issue, where I need my user to stay logged in indefinitely which lead to me needing to use refresh tokens/sliding sessions. Not only, I needed a way to both whitelist and blacklist tokens based on their jti for added security.
+His first video is up on [Youtube](https://youtu.be/aCzT-LQI6x0)
 
-I spent a good while searching, found some excellent gems, but none could match exactly what I needed so I thought I'd do it DIY.
-
-A couple hours, and modules later, I managed to get something working and thought I might share it for anyone in a similar predicament to me.
-
-The code is public here -&gt; [https://gist.github.com/jesster2k10/e626ee61d678350a21a9d3e81da2493e](https://gist.github.com/jesster2k10/e626ee61d678350a21a9d3e81da2493e)
-
-so anyone can take it, improve on it, use it or just look at it for fun.
-
-I'm a relatively new ruby developer, only got into it last year but I think my code could help someone out.
-## [5][Seeking paid mentor for my startup](https://www.reddit.com/r/rails/comments/fovc42/seeking_paid_mentor_for_my_startup/)
-- url: https://www.reddit.com/r/rails/comments/fovc42/seeking_paid_mentor_for_my_startup/
+EDIT: Not my work - The developer is /u/semicolonandsons
+## [5][Nested has_many not calling validations -- sometimes?](https://www.reddit.com/r/rails/comments/fpre8u/nested_has_many_not_calling_validations_sometimes/)
+- url: https://www.reddit.com/r/rails/comments/fpre8u/nested_has_many_not_calling_validations_sometimes/
 ---
-Hello!
+I'm currently looking at a pretty simple scenario that kinda has me stumped. Here is the setup:
 
-I'm looking for a long-term paid Rails mentor.
-
-My name is Oliver Curting and I'm building a wedding planner platform for the Danish market, [www.bryllupsplaner.dk](https://www.bryllupsplaner.dk).
-
-I'm looking for a mentor since I find it increasingly difficult to keep momentum as a solo founder. Programming the wedding planner is a behemoth of a project for me since my forte is in online marketing (self-employed for five years). I often find myself stumbling into difficulties I just can't seem to crack – even with Stackoverflow's help. They slow me unnecessarily down, as well as giving me a sense of loneliness. I'm doing elite sport and I know how important it is to have a trainer/coach/mentor and I could really use one here.
-
-It is my second Rails app. My first one is [www.brudevalsen.dk](https://www.brudevalsen.dk), which I launched a few years ago (and is now the most popular way to learn the bridal waltz in Denmark 🥳). A simple paid video course with Devise and Stripe integration. Just to give you an idea of my skill level.
-
-Please DM me with your experience and rates if you're interested. Thank you! :-)
-## [6][Building rails api with multiple Auth strategies](https://www.reddit.com/r/rails/comments/fosxp4/building_rails_api_with_multiple_auth_strategies/)
-- url: https://www.reddit.com/r/rails/comments/fosxp4/building_rails_api_with_multiple_auth_strategies/
----
-Hi, I've stated working on rails api-only app which will be backend for mobile app. I need to provide sign-in with my own authentication (email + password), google, and Facebook. Also I need jwt as token format. How can I implement that in safe and as easy as possible authentication? I see how can I accomplish that in classic web app but I don't know how can I implement that in api-only app. I can use devise user, google and Facebook clients and jwt gem, but I don't know if it's secure and elegant way, there is devise-jwt but I'm not sure if it possible to use it with Google and Facebook authenticators.
-## [7][Strategy for a model with all 50 states and account selection?](https://www.reddit.com/r/rails/comments/fot9k8/strategy_for_a_model_with_all_50_states_and/)
-- url: https://www.reddit.com/r/rails/comments/fot9k8/strategy_for_a_model_with_all_50_states_and/
----
-I have a model named \`account\` and on creation of the account, the user can select any of the 50 states (51 with D.C.). I want to treat the states as a separate model. How would implement this? Would I create a model named \`state\` and then create all 51 instances, each with a unique id? And would it be \`account has\_many states\`?
-## [8][Scintilla is a gem for one-time scripts on Rails apps](https://www.reddit.com/r/rails/comments/fonh4l/scintilla_is_a_gem_for_onetime_scripts_on_rails/)
-- url: https://www.reddit.com/r/rails/comments/fonh4l/scintilla_is_a_gem_for_onetime_scripts_on_rails/
----
-Hi all!
-
-I just extracted a gem from a couple projects I'm running in production. It allows running scripts only once, exactly as you do with migrations.
-
-Here's the link: [https://github.com/metalelf0/scintilla](https://github.com/metalelf0/scintilla)
-
-My typical use case is this:
-
-\- I realize I need to do some operations involving production data, and I want to keep track of them;
-
-\- I create a \`Scintilla\` script with \`rails g:scintilla \[my\_script\_name\]\`, and put my ruby code in the \`do\_the\_stuff\` method;
-
-\- I commit and push the code to staging env; an hook in my deployment flow runs \`rake scintilla:run\`, that finds the new script and runs it;
-
-\- I check it did what intended and push the code to production.
-
-It has some advantages over other approaches:
-
-\- if you're currently using \`seeds.rb\` for every data operation, \`Scintilla\` will allow to have a better history of scripts you have ran; also scripts no longer need to be idempotent - they are ran only once;
-
-\- if you're using migrations, \`Scintilla\` will allow to better separate concerns - you will be able to use migrations for db related operations and \`Scintilla\` for everything else. Also, you can safely use rails models in \`Scintilla\`: each script is \`require\`d conditionally, so if it has already been ran, it won't be required anymore.
-
-What do you think about it? Feel free to post any suggestion, criticism and anything you find useful!
-## [9][for 22x times the slowness, what extras am I getting by doing `bundle exec rails dbconsole` instead of `psql yourapp_development`?](https://www.reddit.com/r/rails/comments/foqhb8/for_22x_times_the_slowness_what_extras_am_i/)
-- url: https://www.reddit.com/r/rails/comments/foqhb8/for_22x_times_the_slowness_what_extras_am_i/
----
-
-```
-$ time bundle exec rails dbconsole
-psql (12.1)
-Type "help" for help.
-
-myapp_development=# \q
-
-real	0m8.890s
-user	0m3.787s
-sys	0m3.098s
-$ 
-```
-
-VERSUS
-
-```
-$ time psql myapp_development
-psql (12.1)
-Type "help" for help.
-
-myapp_development=# \q
-
-real	0m0.461s
-user	0m0.006s
-sys	0m0.008s
-$ 
-```
-## [10][MarkdownRender, redcarpet and custimization text...](https://www.reddit.com/r/rails/comments/fosafx/markdownrender_redcarpet_and_custimization_text/)
-- url: https://www.reddit.com/r/rails/comments/fosafx/markdownrender_redcarpet_and_custimization_text/
----
-I edited my MarkdownRenderer in this way.
-
-    class MarkdownRenderer &lt; Redcarpet::Render::HTML
-      def preprocess(text)
-        text_formatting(text)
-      end
+    class modelA &lt; ApplicationRecord
+        has_many :model_b, autosave: true
+        has_many :model_c, through: :model_b
+    end
     
-      def text_formatting(text)
-        text.gsub! /(^|\&gt;|\s)@(\w+)/ do
-          "#{$1}&lt;a href=\"/user/#{$2}\"&gt;@#{$2}&lt;/a&gt;"
-       end
-       text
-      end
+    class modelB &lt; ApplicationRecord
+        has_many :model_c, autosave: true
+    end
     
-      def autolink(link, link_type)
-        case link
-          when /((?:https?)?:\/\/\S*\.(?i:png|jpe?g|gif))/ then image_link(link)
-          else normal_link(link)
-        end
-      end
-    
-        def image_link(link)
-        "&lt;img src=\"#{link}\"&gt;"
-      end
-    
-      def normal_link(link)
-        "&lt;a href=\"#{link}\"&gt;#{link}&lt;/a&gt;"
-      end
+    class modelC &lt; ApplicationRecord
+        validate :may_return_false
+    end
 
-If I add a link or an image-link, it works perfectly. But if I add `@mark` (for example), it show me `&lt;a href="/user/mark"&gt;@mark&lt;/a&gt;` with the html tags. 
+I found that when a given model\_c is invalid the respective model\_a can have this behavior:
 
-**In image\_link or normal\_link, it doesn't show the html tags, but in the text\_formatting, yes. I don't know how to solve it.**
+    model_a_instance.valid? # true
+    model_a_instance.model_bs.first.valid? # true
+    model_a_instance.model_bs.map(&amp;:model_cs)
+    model_a_instance.valid? # false
+    model_a_instance.model_bs.first.valid? # false
 
-&amp;#x200B;
-
-p.s. In the views I added `&lt;%= parse_markdown(comment.text).html_safe %&gt;`
-
-and in the comments\_helper I have this
-
-    module CommentsHelper
-      def parse_markdown(text)
-        markdown = Redcarpet::Markdown.new(MarkdownRenderer, hard_wrap: true, autolink: true, space_after_headers: true)
-        markdown.render(text)
-      end
-## [11][Registration Form - Skills](https://www.reddit.com/r/rails/comments/fowg7f/registration_form_skills/)
-- url: https://www.reddit.com/r/rails/comments/fowg7f/registration_form_skills/
+Does anyone have any ideas why I need to "touch" the child model in order to make the parent invalid?
+## [6][Bulma.io Omniauth](https://www.reddit.com/r/rails/comments/fpspms/bulmaio_omniauth/)
+- url: https://www.reddit.com/r/rails/comments/fpspms/bulmaio_omniauth/
 ---
-I'm looking to add the option for users to be able to list their skills upon registration/account edit but am unable to think what the best way to do so is.   
-
-
-The skills entry will have multiple inputs from a user from 0 to 10 lets say.    
-What is the best way to log this information to the user table, JSON Obj?   
-or is it best to have a skills table linked to each user?
-## [12][ActiveStorage DB relation explainer please](https://www.reddit.com/r/rails/comments/foop3u/activestorage_db_relation_explainer_please/)
-- url: https://www.reddit.com/r/rails/comments/foop3u/activestorage_db_relation_explainer_please/
+Hello! I used the framework Bulma to the Index/login, and i use Omniauth for sign in with facebook, but the button for redirect to FB is color Black, and i want to change to Blue
+How i can do this? Sorry If i have grammatical errors:/
+## [7][How do you do search autocompletes in Rails 6 (with webpacker)?](https://www.reddit.com/r/rails/comments/fps9zt/how_do_you_do_search_autocompletes_in_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/fps9zt/how_do_you_do_search_autocompletes_in_rails_6/
 ---
-Hi there. I’m migrating from Paperclip to AS and so far doing fine but got stuck converting a gem that uses multiple images per record. 
+Everyone on the internet seems to post something that's kinda right, but nothing seems to be working?
 
-It’s a has_many_attached relation, with an Offer model having many OfferImages. 
+What is the best way to get autocomplete working with Rails 6? For clarity, I don't care if I'm using jquery-ui, one of the fifty js packages called autocomplete.js, or whatever.
 
-Should I have one Attachment per record, then multiple Blobs per Attachment? Or one Attachment per Blob, meaning many Blobs and Attachments per record? 
+// just want to add a simple autocomplete search bar with minimal code (that's css customizable)
+## [8][Authentication and authorization in microservices](https://www.reddit.com/r/rails/comments/fpua7o/authentication_and_authorization_in_microservices/)
+- url: https://www.reddit.com/r/rails/comments/fpua7o/authentication_and_authorization_in_microservices/
+---
+I'm working on app which will contain some microservices, I've made an auth service which handles user creation and authentication, that service returns doorkeeper token with proper scope. And I'm not sure how handle tokens with requests for another microservices. I feel most comfortable with making microservices as independent as possible, when microservice get request with token then it verifies token by making call to Auth service, Auth service returns user Identity and then microservice performs own operations. But I'm wondering about security, performance and elegancy of this solution. Is api gateway solution cleaner and safer?
+## [9][How do you guys typically use Stimulus + Rails?](https://www.reddit.com/r/rails/comments/fpdypd/how_do_you_guys_typically_use_stimulus_rails/)
+- url: https://www.reddit.com/r/rails/comments/fpdypd/how_do_you_guys_typically_use_stimulus_rails/
+---
+Hey guys, I've been in search for an incredibly productive stack for solo dev (I know this is highly subjective). I've been enjoying Rails due to the developer productivity it provides. I tried Elixir + Phoenix, and I think they are INCREDIBLY cool tech, but their package maturity and community size leave much to be desired.
 
-I can’t find this info anywhere, but I suspect that because each Attachment has a blob_id there’s actually many Attachment and many Blobs for each Offer. 
+Currently my stack entails:
 
-Please enlighten me as to how the Attachment and Blob tables should look.
+* Ember (Ember-paper for UI, Auth0 for auth)
+* Rails + Graphiti gem for JSON-API (amazing)
+
+
+
+I very much enjoy how much I can lean on convention with these technologies, but I'm curious about what dev workflow would look like to use Rails, Stimulus, Turbolinks, Graphiti (https://www.graphiti.dev/quickstart), and Spraypaint (https://www.graphiti.dev/js/).
+
+
+Are you guys still typically hitting a highly structured internal api? What do you all do for frontend themes/animations/etc?
+## [10][[Help] Google Analytics works on restricted pages?](https://www.reddit.com/r/rails/comments/fpos88/help_google_analytics_works_on_restricted_pages/)
+- url: https://www.reddit.com/r/rails/comments/fpos88/help_google_analytics_works_on_restricted_pages/
+---
+As the title said, can GA analyze statics on restricted pages (pages that demand login from the user)?. 
+
+If analysts doesn't, what companies usually use to keep track on user behaviors on these pages? Do they roll their on implementation?
+## [11][Does Rails 6 work well with Postgres 12?](https://www.reddit.com/r/rails/comments/fpk8ks/does_rails_6_work_well_with_postgres_12/)
+- url: https://www.reddit.com/r/rails/comments/fpk8ks/does_rails_6_work_well_with_postgres_12/
+---
+Or should I stick with 11 for now? I am going to rebuild my k8s cluster so was wondering which version is recommended. Thanks
+## [12][How to get crowd funding on a project?](https://www.reddit.com/r/rails/comments/fpi01w/how_to_get_crowd_funding_on_a_project/)
+- url: https://www.reddit.com/r/rails/comments/fpi01w/how_to_get_crowd_funding_on_a_project/
+---
+What is the best strategy? If you read my earlier posts you will see I am not into scam business, so don't insult me, you can, and we will laugh it off, but what is the point? So I am thinking it would be unethical to just post an idea. Oh I got one which I don't like to share just yet :) So ANYWAY let's say I got a project at Iteration #1-2. It is really baffling to me that ANYONE would put investment into that, let alone donation. Are some people that Rich? But maybe there are people with money and thus I should just post first iteration, give my ideas for next, and hope they would pitch in? I am Really lost here, mates.....

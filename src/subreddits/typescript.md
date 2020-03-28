@@ -22,114 +22,178 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Elm style JSON decoder for TypeScript, providing type safety compile- and run-time](https://www.reddit.com/r/typescript/comments/fptbvb/elm_style_json_decoder_for_typescript_providing/)
+## [2][Announcing TypeScript 3.9 Beta | TypeScript](https://www.reddit.com/r/typescript/comments/fq4l4r/announcing_typescript_39_beta_typescript/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-beta/
+---
+
+## [3][Help needed! stuck on this issue](https://www.reddit.com/r/typescript/comments/fqinx4/help_needed_stuck_on_this_issue/)
+- url: https://www.reddit.com/r/typescript/comments/fqinx4/help_needed_stuck_on_this_issue/
+---
+    this.cartService.addProduct(this.product == 
+      this.db.collection('products', ref =&gt; ref.where('tagid', '==', 
+      this.nfc.bytesToHexString(event.tag.id))));
+
+So what I'm trying to do here is add a product to my cart where the tagid of the product is equal to the hexstring of an nfc tag im reading in. 
+
+I have the correct hexstring of the tag saved into my firebase but it's not adding the product to cart when tested in app.
+
+Can supply more code if necessary
+## [4][Would you call this "lateinit"?](https://www.reddit.com/r/typescript/comments/fqhsep/would_you_call_this_lateinit/)
+- url: https://www.reddit.com/r/typescript/comments/fqhsep/would_you_call_this_lateinit/
+---
+interface Name {  
+name: string;  
+}  
+let a!: Name;  
+function setup(): void {  
+a = { name: "Mike" };  
+}  
+setup();
+
+console.log(a);
+
+I think this "a + exclamation mark"-Thing (null assertion operator is misleading in my opinion) always as 'lateinit' in the Kotlin sense of meaning  - do you agree?
+## [5][How do you keep your code tight when reverting back to vanilla JS](https://www.reddit.com/r/typescript/comments/fqdxmg/how_do_you_keep_your_code_tight_when_reverting/)
+- url: https://www.reddit.com/r/typescript/comments/fqdxmg/how_do_you_keep_your_code_tight_when_reverting/
+---
+Typescript has showed me the true path to readable, easy to modify code but I now find myself in a JS heavy environment with no option to switch to TS. It seems every refactor I do opens a slew of `undefined` errors. In general I find the code hard to extend and even reason about, since it's so easy to misread the chain of inputs and outputs between functions.
+
+I think I need to make a habit out of JSDoc comments. I used that for a couple months before the TS switch and now it seems like it's time to go back.
+
+Is this the best vanila JS defense against `undefined` errors and unexpected inputs or do you guys practice anything else?
+## [6][Experienced Typescript Developer for my Podcast](https://www.reddit.com/r/typescript/comments/fq4c3w/experienced_typescript_developer_for_my_podcast/)
+- url: https://www.reddit.com/r/typescript/comments/fq4c3w/experienced_typescript_developer_for_my_podcast/
+---
+Hi all!  I'm looking to interview someone on my podcast, Contentful { Creators }, on TypeScript.  If you are interested, please email me at [marcelo@themarcelolewin.com](mailto:marcelo@themarcelolewin.com) \- You can listen to the podcast here - [https://anchor.fm/contentful-creators](https://anchor.fm/contentful-creators)
+## [7][Partial&lt;T&gt; is not assignable to T, help please](https://www.reddit.com/r/typescript/comments/fq7vjk/partialt_is_not_assignable_to_t_help_please/)
+- url: https://www.reddit.com/r/typescript/comments/fq7vjk/partialt_is_not_assignable_to_t_help_please/
+---
+Hi,
+
+I'm coding some tests to unit tests some services in my NestJS application and I encountered some errors using Partial&lt;T&gt;.
+
+&amp;#x200B;
+
+The error :
+
+`error TS2322: Type 'Partial&lt;User&gt;' is not assignable to type 'User'.`
+
+`Property 'id' is optional in type 'Partial&lt;User&gt;' but required in type 'User'.`
+
+&amp;#x200B;
+
+The interface :
+
+`import { Document, Schema } from 'mongoose'`  
+`export enum UserGender {`  
+ `FEMALE = "FEMALE",`  
+ `MALE = "MALE"`  
+`}`
+
+`export interface User extends Document {`  
+`id: string;`  
+`email: string;`  
+`password: string;`  
+`firstname: string;`  
+`lastname: string;`  
+`address: string;`  
+`city: string;`  
+`zipcode: string;`  
+`country: string;`  
+`gender: UserGender;`  
+`}`
+
+The function causing this error :
+
+`const mockUserDoc: (mock?: {`  
+  `id?: string;`  
+  `email?: string;`  
+  `password?: string;`  
+  `firstname?: string;`  
+  `lastname?: string;`  
+  `address?: string;`  
+  `city?: string;`  
+  `zipcode?: string;`  
+  `country?: string;`  
+  `gender?: UserGender;`  
+`}) =&gt; Partial&lt;User&gt; = (mock?: {`  
+  `id: string;`  
+  `email: string;`  
+  `password: string;`  
+  `firstname: string;`  
+  `lastname: string;`  
+  `address: string;`  
+  `city: string;`  
+  `zipcode: string;`  
+  `country: string;`  
+  `gender: UserGender;`  
+`}) =&gt; {`  
+ `return {`  
+`_id: (mock &amp;&amp; mock.id) || "an id",`  
+`email: (mock &amp;&amp; mock.email) || "john.doe@test.com",`  
+`password: (mock &amp;&amp; mock.password) || "password",`  
+`firstname: (mock &amp;&amp; mock.firstname) || "John",`  
+`lastname: (mock &amp;&amp; mock.lastname) || "Doe",`  
+`address: (mock &amp;&amp; mock.address) || "address",`  
+`city: (mock &amp;&amp; mock.city) || "city",`  
+`country: (mock &amp;&amp; mock.country) || "country",`  
+`zipcode: (mock &amp;&amp; mock.zipcode) || "zipcode",`  
+`gender: (mock &amp;&amp; mock.gender) || UserGender.MALE,`  
+  `};`  
+`};`
+
+`mockUserDoc()`
+
+I can't see where the error come from, I'm assuming it could come from the enum but still don't know why ...
+## [8][Elm style JSON decoder for TypeScript, providing type safety compile- and run-time](https://www.reddit.com/r/typescript/comments/fptbvb/elm_style_json_decoder_for_typescript_providing/)
 - url: https://github.com/venil7/json-decoder
 ---
 
-## [3][How to loop through a specific field of all documents and match it against a value?](https://www.reddit.com/r/typescript/comments/fpw42t/how_to_loop_through_a_specific_field_of_all/)
-- url: https://www.reddit.com/r/typescript/comments/fpw42t/how_to_loop_through_a_specific_field_of_all/
----
-Im reading and saving an NFC tag id into my firebase as a hexstring. I want to check all the tag ids against the one I scan with my phone and return add the matching product to my cart.. any advice?
-
-&amp;#x200B;
-
-[firebase](https://preview.redd.it/zydt47wml7p41.png?width=974&amp;format=png&amp;auto=webp&amp;s=d42e71e7aaf8bd0c2bc885147dc814a44b6eea53)
-
-&amp;#x200B;
-
-[ts](https://preview.redd.it/mnbhynfol7p41.png?width=677&amp;format=png&amp;auto=webp&amp;s=8ac975ee0b9d60ce6527f8dd81b15d47d0ef3fc1)
-## [4][Approximating haskell's do syntax in Typescript](https://www.reddit.com/r/typescript/comments/fpvsxu/approximating_haskells_do_syntax_in_typescript/)
+## [9][Approximating haskell's do syntax in Typescript](https://www.reddit.com/r/typescript/comments/fpvsxu/approximating_haskells_do_syntax_in_typescript/)
 - url: https://paulgray.net/do-syntax-in-typescript/
 ---
 
-## [5][TypeScript + React: Typing custom hooks with tuple types](https://www.reddit.com/r/typescript/comments/fpt5nf/typescript_react_typing_custom_hooks_with_tuple/)
-- url: https://fettblog.eu/typescript-react-typeing-custom-hooks/
+## [10][Any game developers here? I need to find an easy Cocos Creator Typescript documentation. Any help please?](https://www.reddit.com/r/typescript/comments/fq4bfa/any_game_developers_here_i_need_to_find_an_easy/)
+- url: https://www.reddit.com/r/typescript/comments/fq4bfa/any_game_developers_here_i_need_to_find_an_easy/
 ---
 
-## [6][Building Vue Enterprise Application: Part 2. Services](https://www.reddit.com/r/typescript/comments/fpjcut/building_vue_enterprise_application_part_2/)
-- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-2-services-f7ec400190e7
+## [11][Recursive Type Cast](https://www.reddit.com/r/typescript/comments/fq0549/recursive_type_cast/)
+- url: https://www.reddit.com/r/typescript/comments/fq0549/recursive_type_cast/
 ---
+Hello,
 
-## [7][How to convert this to ts](https://www.reddit.com/r/typescript/comments/fptqhj/how_to_convert_this_to_ts/)
-- url: https://www.reddit.com/r/typescript/comments/fptqhj/how_to_convert_this_to_ts/
----
-Hello guys, any suggestions on how to convert this to ts?
-const mutations = {
- [AUTH_REQUEST]: (state) =&gt; {
-   state.status = ""
-}}
-## [8][How do I turn Typescript types into a markdown table?](https://www.reddit.com/r/typescript/comments/fph6m0/how_do_i_turn_typescript_types_into_a_markdown/)
-- url: https://www.reddit.com/r/typescript/comments/fph6m0/how_do_i_turn_typescript_types_into_a_markdown/
----
-I'm writing docs for a library and would like to find a way to turn my \`props\` into a simple markdown table. Every example I've seen so far feels too complex, and creates a whole docs website for me.
+I have two interfaces.  One that looks like this:
 
-Is there a way to turn this:
-
-```typescript
-type Props = {
-  /*
-   * this is a required color!
-   */
-  color: string
-}
-```
-
-into this:
-
-| Prop  | description  | type  | Required  |
-|---|---|---|---|
-|  color | this is a required color!  | string  | yes |
-## [9][Am I using the right RxJS operator?](https://www.reddit.com/r/typescript/comments/fpco9r/am_i_using_the_right_rxjs_operator/)
-- url: https://www.reddit.com/r/typescript/comments/fpco9r/am_i_using_the_right_rxjs_operator/
----
-Hi guys!
-
-I am struggling with understanding when to use the different operators. I have one method where I first subscribe to check if a service is online if it is then I subscribe to another observable. If not I show a dialogue saying service is down. What I have done is something like this:
-
-    public methodName(parameter: parameterName): any {
-            this.nameOfService
-                .isServiceOnline()
-                .pipe(
-                    concatMap(isOnline =&gt; {
-                        if (!isOnline) {
-                            this.showServiceDownDialog();
-                            return;
-                        }
+    interface Group {
+      name: string;
+      options: Option[];
+    }
     
-                        do stuff
-    
-                        return this.nameOfService.searchInService(parameter);
-                    })
-                )
-                .subscribe(
-                    data =&gt; {
-                        do more stuff
-                    }
-                );
-        }
-
-Does this look ok? I used concatMap because I guess I want to make sure the service is online before I try to use the search method? Or is there any other operator I should use here?
-## [10][Making a 3rd Party Interface more strict](https://www.reddit.com/r/typescript/comments/fpc17j/making_a_3rd_party_interface_more_strict/)
-- url: https://www.reddit.com/r/typescript/comments/fpc17j/making_a_3rd_party_interface_more_strict/
----
-Hi. I am importing a 3rd party library (xml-parser) that returns an instance of the following interface from a function
-
-    export interface Attributes {
-        [name: string]: string;
+    interface Option {
+      name: string;
+      optionGroups: Group[];
     }
 
-In my code I'd like to be able to project into a stricter type because I know the attributes returned will have certain property names e.g.
+and
 
-    type UserInfo = {
-      username: string
+    interface AnotherGroup {
+      name: string;
+      options: AnotherOption[];
+    }
+    
+    interface AnotherOption {
+      name: string;
+      optionGroups: AnotherGroup[];
     }
 
-However assigning something of interface Attributes to a const of type UserInfo, rightly, doesn't compile. 
+I then have a react component that expects an item that looks like this
 
-Is there a utility type that I can use to say this Attribute interface can be utilised like UserInfo? I tried Pick&lt;Attributes, 'username'&gt; but again username doesn't exist on the Attribute type.
-## [11][Enums, string/number types of interfaces/classes cannot be used as index signatures](https://www.reddit.com/r/typescript/comments/fp5wfk/enums_stringnumber_types_of_interfacesclasses/)
-- url: https://www.reddit.com/r/typescript/comments/fp5wfk/enums_stringnumber_types_of_interfacesclasses/
----
-I just came across this post [https://github.com/microsoft/TypeScript/issues/37448](https://github.com/microsoft/TypeScript/issues/37448)...
+    interface Item {
+      options: Group[];
+    }
 
-Does anyone have the problem here? Are there any strategies you'd found to overcome it?
+I want to be able to pass an item that has options of type AnotherGroup.
+
+The type definitions basically overlap but, but the type checker complains because they are different interfaces..
+
+Is there a way that I can recursively cast `AnotherGroup[]` to `Group[]`?

@@ -23,11 +23,31 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/24/this-week-in-rust-331/
 ---
 
-## [3][Asset browser for the Ignite game editor is finally complete! [OXYGENGINE]](https://www.reddit.com/r/rust/comments/fppdt6/asset_browser_for_the_ignite_game_editor_is/)
-- url: https://v.redd.it/fmyyvc27r4p41
+## [3][Goodbye, docs team - Inside Rust](https://www.reddit.com/r/rust/comments/fq7znr/goodbye_docs_team_inside_rust/)
+- url: https://blog.rust-lang.org/inside-rust/2020/03/27/goodbye-docs-team.html
 ---
 
-## [4][Nalgebra is incredible and plays nice with wasm](https://www.reddit.com/r/rust/comments/fpvc91/nalgebra_is_incredible_and_plays_nice_with_wasm/)
+## [4][A video to help you climb one of Rust’s highest walls... Lifetimes! 🎥](https://www.reddit.com/r/rust/comments/fqeq2v/a_video_to_help_you_climb_one_of_rusts_highest/)
+- url: https://youtu.be/tyuDitqoZbM
+---
+
+## [5][Writing an OS in Rust: Async/Await](https://www.reddit.com/r/rust/comments/fq083y/writing_an_os_in_rust_asyncawait/)
+- url: https://os.phil-opp.com/async-await/
+---
+
+## [6][Open sourced my tuntap crate](https://www.reddit.com/r/rust/comments/fqgplt/open_sourced_my_tuntap_crate/)
+- url: https://github.com/siegfried/utuntap
+---
+
+## [7][Creating 50 stock prices that change over time using threads.](https://www.reddit.com/r/rust/comments/fqjljk/creating_50_stock_prices_that_change_over_time/)
+- url: https://www.reddit.com/r/rust/comments/fqjljk/creating_50_stock_prices_that_change_over_time/
+---
+ I am creating a program which simulates 50 stocks being updated.  Each stock is monitored (incremented) by a thread, updating a listener thread of any change. The listener thread receives the update and prints the value of the stock before waiting for the next update. 
+
+So far what I did was create a threadpool that generates 50 random stock names with their respective random pricing. I send the stock prices and stock names over a channel to the next threapool which is responsible for incrementing the prices with a random value and the thread sleeps with a random sleeptime. Then i send these values to an infinite loop which prints the values out. 
+
+Need advice on whether I am doing it the right way. Here is the [link](https://github.com/yudhiesh1997/50-Stocks-Rust/blob/master/stock/src/main.rs) to my code on Github.
+## [8][Nalgebra is incredible and plays nice with wasm](https://www.reddit.com/r/rust/comments/fpvc91/nalgebra_is_incredible_and_plays_nice_with_wasm/)
 - url: https://www.reddit.com/r/rust/comments/fpvc91/nalgebra_is_incredible_and_plays_nice_with_wasm/
 ---
 I just wanted to let people know about this crate,and the fantastic experience I had using it. 
@@ -35,39 +55,26 @@ I just wanted to let people know about this crate,and the fantastic experience I
 I leveraged it to compute the best fit line for a point cloud in my react front end packed with parcel. 
 
 The runtime is absurdly good. The whole cycle takes less than 23 microseconds. I haven't calculated the exact overhead, but it's basically nothing.
-## [5][How did Redox OS make its gui?](https://www.reddit.com/r/rust/comments/fpr52q/how_did_redox_os_make_its_gui/)
-- url: https://www.reddit.com/r/rust/comments/fpr52q/how_did_redox_os_make_its_gui/
----
-How did redox os create its gui? Did they use Piston, Amethyst? Did they use their OrbTK crate and if so how did it work bare metal (i.e. VGA stuff, honestly idek) how did they display on the computer Are there any rust crates that work for guis on bare metal?. Thanks (this question has been bothering me forever).
-## [6][Free memory](https://www.reddit.com/r/rust/comments/fptgf4/free_memory/)
-- url: https://www.reddit.com/r/rust/comments/fptgf4/free_memory/
----
-This was truly a facepalm moment. I was trying to figure out why a simple program is using ~130-150MB of RAM...
-TLDR; `unset RUST_BACKTRACE` and boom 130MB down to 13MB RssAnon.
-## [7][Disk Usage Analyzer v2.3.8 now nearly twice as fast in interactive mode](https://www.reddit.com/r/rust/comments/fppfrd/disk_usage_analyzer_v238_now_nearly_twice_as_fast/)
-- url: https://github.com/Byron/dua-cli/releases/tag/v2.3.8
+## [9][Cross-compile Rust programs to run on Turris Omnia](https://www.reddit.com/r/rust/comments/fqjot7/crosscompile_rust_programs_to_run_on_turris_omnia/)
+- url: https://medium.com//cross-compile-rust-programs-to-run-on-turris-omnia-e592b555e2aa?source=friends_link&amp;sk=1f8c6b55e04d67482657e1a8a1e21489
 ---
 
-## [8][rustc-dev-guide Overview | Inside Rust Blog](https://www.reddit.com/r/rust/comments/fpsnw9/rustcdevguide_overview_inside_rust_blog/)
-- url: https://blog.rust-lang.org/inside-rust/2020/03/26/rustc-dev-guide-overview.html
+## [10][The Book versions](https://www.reddit.com/r/rust/comments/fqiwwt/the_book_versions/)
+- url: https://www.reddit.com/r/rust/comments/fqiwwt/the_book_versions/
+---
+Hi everyone,
+
+I have a problem with understanding the book versioning. As far as i researched there are stable, beta and nightly and also NoStarch first-edition, second-edition and 2018-edition.  
+I'm not a fan of reading on screen so i face two options, printing one of the stable, beta, nightly or printing one of the versions of the NoStarch (i have low availability in my country and the prices are around 100$).
+
+So which version should i print and what are the differences?
+
+[View Poll](https://www.reddit.com/poll/fqiwwt)
+## [11][Paris 1.4. Now with macros and more control!](https://www.reddit.com/r/rust/comments/fq1ol9/paris_14_now_with_macros_and_more_control/)
+- url: https://github.com/0x20F/logger
 ---
 
-## [9][Pre-RFC for platform-dependent infallible integer conversions](https://www.reddit.com/r/rust/comments/fpr3jh/prerfc_for_platformdependent_infallible_integer/)
-- url: https://internals.rust-lang.org/t/pre-rfc-platformfrom-and-platforminto/12033
+## [12][What will happen if I will Pin something inside of function that returns never?](https://www.reddit.com/r/rust/comments/fqiipy/what_will_happen_if_i_will_pin_something_inside/)
+- url: https://www.reddit.com/r/rust/comments/fqiipy/what_will_happen_if_i_will_pin_something_inside/
 ---
-
-## [10][An agent-based epidemiology simulation framework built in Rust](https://www.reddit.com/r/rust/comments/fpu6d7/an_agentbased_epidemiology_simulation_framework/)
-- url: https://github.com/thoughtworks/epirust
----
-
-## [11][Rust as an alternative to C++ in microcontrollers](https://www.reddit.com/r/rust/comments/fpfmtv/rust_as_an_alternative_to_c_in_microcontrollers/)
-- url: https://www.reddit.com/r/rust/comments/fpfmtv/rust_as_an_alternative_to_c_in_microcontrollers/
----
-So I have started learning Rust, and so far it has been great. But my final goal is to build embedded systems and program microcontrollers.
-
-I know that a lot of embedded systems support C/C++. But I would like to know the prospect of using Rust in this field.
-For example, there are a lot of sensors that can be used with a raspberry Pi. If I use rust for development, will I face any major disadvantage while using them?
-## [12][Productive Rust: Implementing Traits with Macros](https://www.reddit.com/r/rust/comments/fpt9ms/productive_rust_implementing_traits_with_macros/)
-- url: https://jstrong.dev/posts/2020/productive-rust-implementing-traits-with-macros/
----
-
+And how actually never works?

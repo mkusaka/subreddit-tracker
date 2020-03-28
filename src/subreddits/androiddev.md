@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/fpw91a/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/fpw91a/weekly_anything_goes_thread/
+## [1][App Feedback Thread - March 28, 2020](https://www.reddit.com/r/androiddev/comments/fqjai3/app_feedback_thread_march_28_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/fqjai3/app_feedback_thread_march_28_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - March 23, 2020](https://www.reddit.com/r/androiddev/comments/fni20d/weekly_questions_thread_march_23_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/fni20d/weekly_questions_thread_march_23_2020/
 ---
@@ -25,104 +40,93 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][What stops Android apps from reaching feature parity with equivalent iOS apps?](https://www.reddit.com/r/androiddev/comments/fpr8tu/what_stops_android_apps_from_reaching_feature/)
-- url: https://www.reddit.com/r/androiddev/comments/fpr8tu/what_stops_android_apps_from_reaching_feature/
----
-For example, why is Spotify so far behind on android? There are useful features that we've been missing for years. I even saw a whole advertisement on Instagram specifically for Spotify's swipe to queue and save songs feature. (This feature is iOS only.) How can they blatantly and shamelessly neglect Android, or is there a reason? Yes I am a little salty
-## [4][New WindowInsetsAnimation sample released](https://www.reddit.com/r/androiddev/comments/fpivds/new_windowinsetsanimation_sample_released/)
-- url: https://github.com/android/user-interface-samples/tree/master/WindowInsetsAnimation
+## [3][[Part 2] This guy decompiled my app, so I reported this app 14 days ago, and Google took down this app, but now this app is live again and still using my code. And this time it's worst he is showing ads in my own ranked keywords.](https://www.reddit.com/r/androiddev/comments/fq4mz7/part_2_this_guy_decompiled_my_app_so_i_reported/)
+- url: https://i.redd.it/22jpa7rtu9p41.jpg
 ---
 
-## [5][Create simple CPU intensive task?](https://www.reddit.com/r/androiddev/comments/fpvgju/create_simple_cpu_intensive_task/)
-- url: https://www.reddit.com/r/androiddev/comments/fpvgju/create_simple_cpu_intensive_task/
----
-Hello!
-
-I'm working on a app that has 3 buttons:
-
-LOW, MEDIUM, HIGH
-
-Those buttons corresponds to CPU intensity, what would be the easiest way to create a CPU intensive task that can generate a low, medium and high load?
-
-Thank you!
-## [6][Improved *.gradle.kts IDE Support](https://www.reddit.com/r/androiddev/comments/fputtw/improved_gradlekts_ide_support/)
-- url: https://blog.jetbrains.com/kotlin/2020/02/improved-gradle-kts-ide-support/
+## [4][Navigation Component Using Custom Views](https://www.reddit.com/r/androiddev/comments/fqgob0/navigation_component_using_custom_views/)
+- url: https://sasikanth.dev/posts/navigaiton-component-using-custom-views
 ---
 
-## [7][Let's build an open source COVID-19 app](https://www.reddit.com/r/androiddev/comments/fpvoj3/lets_build_an_open_source_covid19_app/)
-- url: https://www.reddit.com/r/androiddev/comments/fpvoj3/lets_build_an_open_source_covid19_app/
+## [5][What is the most efficient way of passing arguments into fragments](https://www.reddit.com/r/androiddev/comments/fqi8zx/what_is_the_most_efficient_way_of_passing/)
+- url: https://www.reddit.com/r/androiddev/comments/fqi8zx/what_is_the_most_efficient_way_of_passing/
 ---
-With the Coronavirus spreading like wildfire these days, a lot of people are helping each other. In my local community I see a lot of people helping elderly/sick people by cooking for them, warning them about regulations, running errands for them or just chatting with them from a distance because they are quarantined and have no social contact. I hope I'm not alone this, but I feel like I also need to help anyway I can. And I know can make/publish an Android app and write some reasonable code. There are/were a lot of apps spreading misinformation on this issue, hell some even put ads/premium functions on those apps. For that reason Google has [blocked](https://www.cnet.com/news/apple-google-amazon-block-nonofficial-coronavirus-apps-from-app-stores/) all COVID-19 apps.
+In my current project we follow the normal practice of passing arguments like so  
+```
+    companion object {
+        const val TAG = "variableAmountFragment"
+        const val CURRENCY_DETAILS_TAG = "currencyDetails"
+        const val MIN_MEALS = "minMeals"
+        const val TYPE = "variableAmountType"
+        fun newInstance(currencyDetails: CurrencyDetails, minMeals: Int, variableAmountType: VariableAmountType) = VariableAmountFragment().apply {
+            val bundle = Bundle().apply {
+                putParcelable(CURRENCY_DETAILS_TAG, currencyDetails)
+                putInt(MIN_MEALS, minMeals)
+                putSerializable(TYPE, variableAmountType)
+            }
+            arguments = bundle
+        }
+    }
+```
 
-**So why not create a comprehensive open source COVID-19 app as a community?**
+To retrieve the arguments we do this
+```
+private fun setState(savedInstanceState: Bundle?) {
+    val bundle = savedInstanceState ?: requireArguments()
+    currencyDetails = bundle.getParcelable(CURRENCY_DETAILS_TAG)!!
+    minMeals = bundle.getInt(MIN_MEALS)
+    type = bundle.getSerializable(TYPE) as VariableAmountType
+}
+```
 
-Considering there is a complete lack of a good map/overview app for this on the Play Store at the moment. Maybe if we do this as a collective with only official information from the WHO/NHC, Google might consider allowing this app to be available on the Play Store.
+To retain the state we do
+```
+override fun onSaveInstanceState(outState: Bundle) {
+    outState.putParcelable(CURRENCY_DETAILS_TAG, currencyDetails)
+    outState.putInt(MIN_MEALS, minMeals)
+    outState.putSerializable(TYPE, type)
+    super.onSaveInstanceState(outState)
+}
+```
 
-**Some requirements:**
+Thats 23 LOC to pass in 3 arguments. In a Kotlin class it would be 1 line of a constructor. This process seems unreasonable and error prone. Are there no better options in this day and age?
+## [6][Anyone successfully implemented FAN sandwich model?](https://www.reddit.com/r/androiddev/comments/fqk93v/anyone_successfully_implemented_fan_sandwich_model/)
+- url: https://www.reddit.com/r/androiddev/comments/fqk93v/anyone_successfully_implemented_fan_sandwich_model/
+---
+I've been trying to wrap my head around facebooks sandwich model and how I can implement it through MoPub? I attended their webinar few days ago where they recommended doing this to increase ad revenue.
 
-* Confirmation from Google (yeah..)
-* A list of contributors
-* Someone who wants to lead this thing (or maybe a few people)
-* Wireframes/Mockups
-   * If you don't have a lot of experience with Android you can still contribute by creating Wireframes/mockups.
+You can find info about it here -&gt;  [https://www.facebook.com/help/publisher/821011588003559](https://www.facebook.com/help/publisher/821011588003559) 
 
-**Some things to setup:**
-
-* A repository
-* A Slack channel (or something else)
-* Project overview (Kanban board)
-* List of requirements
-* List of things to implement (backlog)
-
-I haven't really seen an open source app succeed on a subreddit before, so this is probably going to fail. But let's give this a try. Leave a comment if you want to help.
-
-Link to the [Github organisation page](https://github.com/COVID-19-ANDROIDDEV).
-
-Link to the android app [repository](https://github.com/COVID-19-ANDROIDDEV/covid-19-android-app).
-
-Link to the [Github project](https://github.com/orgs/COVID-19-ANDROIDDEV/projects).
-## [8][I just published my first Medium article talking about how to get rid of Fragment/Activity boilerplate code (especially with MVVM). Would love some feedback!](https://www.reddit.com/r/androiddev/comments/fpwuj4/i_just_published_my_first_medium_article_talking/)
-- url: https://link.medium.com/8ERE5g4gc5
+Basically you set up for example 3 placements. One which has very high CPM, another one with lower CPM and so on. You're supposed to get higher CPM if you set it up like that? But I'm unable to figure out how I can map those multiple ad units to a single one on MoPub?
+## [7][Benefits if learning deprecated technology](https://www.reddit.com/r/androiddev/comments/fqevju/benefits_if_learning_deprecated_technology/)
+- url: https://www.reddit.com/r/androiddev/comments/fqevju/benefits_if_learning_deprecated_technology/
+---
+Am I wasting my time learning AsyncTask, Loaders, Content Providers, etc? Are these useful for the event that I might run into them at a company in the future? Are they helpful to better understand how their evolved predecessors came to be? We're being taught a lot of obsolete libraries at Udacity, but I'm trying to motivate myself with a justification to get down with them and start coding them into my projects. I definitely won't be using them for my future apps, but I still wanna know what you veterans think about this; is there any benefit for me to get experience with obsolete libraries?
+## [8][Stay Logged In Across Life Cycle](https://www.reddit.com/r/androiddev/comments/fqil67/stay_logged_in_across_life_cycle/)
+- url: https://youtu.be/h1iXyPhRkHA
 ---
 
-## [9][Create awesome app screenshots for PlayStore](https://www.reddit.com/r/androiddev/comments/fp98il/create_awesome_app_screenshots_for_playstore/)
-- url: https://www.reddit.com/r/androiddev/comments/fp98il/create_awesome_app_screenshots_for_playstore/
+## [9][The Night version of my drawables are applied to a Light theme when I set the system Night mode to ON (Android 9). How to avoid this behavior?](https://www.reddit.com/r/androiddev/comments/fqi3vy/the_night_version_of_my_drawables_are_applied_to/)
+- url: https://www.reddit.com/r/androiddev/comments/fqi3vy/the_night_version_of_my_drawables_are_applied_to/
 ---
-I know you all are being extra productive in this difficult time and have multiple mobile apps lined up to be released, so please don't upvote me too fast in excitement, let me pitch something first.
-
-We made the daunting work of creating screenshots for GooglePlay a little bit more enjoyable. You might think, well, there were other ones already. Yes, we thought so too, but they didn't have the styles nor the devices we wanted and it's also cool to do the project yourself.
-
-So do use our service if it comes handy in your next app. Go to [previewed.app](https://previewed.app), select a device, choose a style, upload a screenshot and whoalla, pretty PlayStore.
-
-You end up with something that looks like 
-
-[Please use PC to keep your sanity.](https://preview.redd.it/4w4v1oi3yzo41.png?width=2368&amp;format=png&amp;auto=webp&amp;s=85d2c795f41203eb07c498ca2ffea1cf6b81a405)
-
-P.S. Thanks for the downvotes!
-## [10][Handle Dynamic runtime overlays (RRO)](https://www.reddit.com/r/androiddev/comments/fpshxl/handle_dynamic_runtime_overlays_rro/)
-- url: https://www.reddit.com/r/androiddev/comments/fpshxl/handle_dynamic_runtime_overlays_rro/
+The result is white images on white background. Is there a clean way to avoid resolving of -night resources in case of Light theme? That defeats the whole idea of having the "-night" qualifier!
+## [10][[It's 2020] Does anyone still use Genymotion ?](https://www.reddit.com/r/androiddev/comments/fpyhxg/its_2020_does_anyone_still_use_genymotion/)
+- url: https://www.reddit.com/r/androiddev/comments/fpyhxg/its_2020_does_anyone_still_use_genymotion/
 ---
-Hi! I'm using Dynamic Runtime Overlays in my AOSP image, and I have a  problem with handling overlays. Each enable or disable of the overlay leads to restart of the every  application but without any onConfigurationChange received. I would like  to prevent some applications from restart such as map application to  avoid lengthy initialization process.
+I use Docker to deploy and test my web app, but Docker use Hyper-V, which would never work with Virtual Box (used by Genymotion). So i am planning to switch back to Android Studio Emulator.
 
-Thanks for help!
-## [11][How does token flow work in android app?](https://www.reddit.com/r/androiddev/comments/fpsg9y/how_does_token_flow_work_in_android_app/)
-- url: https://www.reddit.com/r/androiddev/comments/fpsg9y/how_does_token_flow_work_in_android_app/
+Is this a good solution ?, how about the performance of AS Emulator compared to Genymotion ? Which emulator are you using ?
+
+Thanks in advance
+
+&amp;#x200B;
+
+[View Poll](https://www.reddit.com/poll/fpyhxg)
+## [11][Google store update times](https://www.reddit.com/r/androiddev/comments/fq7lkr/google_store_update_times/)
+- url: https://www.reddit.com/r/androiddev/comments/fq7lkr/google_store_update_times/
 ---
-Is this how the token flow works?
-
-1. Authenticate user
-2. Get token
-3. Enter android app content
-4. On each request token is being sent in the request
-
-Questions:
-
-1. What if token is expired? Do I logout user and send him back to authentication screen?
-2. If user is already logged in, and he enters app second time, do I validate user with previously stored token?
-3. Do I use some crypto tools to obfuscate token before storing it on the device?
-## [12][Who else gets these Maven errors constantly during building in the last few weeks?](https://www.reddit.com/r/androiddev/comments/fptl9g/who_else_gets_these_maven_errors_constantly/)
-- url: https://www.reddit.com/r/androiddev/comments/fptl9g/who_else_gets_these_maven_errors_constantly/
+Google said to expect delays of up to 7 days or more - they took about an hour tonight!
+## [12][How to capture heap dump from Android App?](https://www.reddit.com/r/androiddev/comments/fqel5f/how_to_capture_heap_dump_from_android_app/)
+- url: https://blog.heaphero.io/2018/06/04/how-to-capture-heap-dump-from-android-app-3-options/
 ---
-https://i.imgur.com/q0u3xEW.png
 
-Maven seems to be down almost every day at least once. How can I force Android Studio to not check this on every build?

@@ -111,191 +111,84 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Serverless Stack - learn how to build a note taking app using Serverless and React on AWS](https://www.reddit.com/r/reactjs/comments/fpt9w0/serverless_stack_learn_how_to_build_a_note_taking/)
+## [3][TikTok-esque app for browsing NSFW subreddits [NSFW]](https://www.reddit.com/r/reactjs/comments/fpxj14/tiktokesque_app_for_browsing_nsfw_subreddits_nsfw/)
+- url: https://fap.bar
+---
+
+## [4][Tomato: Full Stack Food Delivery App](https://www.reddit.com/r/reactjs/comments/fqiesz/tomato_full_stack_food_delivery_app/)
+- url: https://www.reddit.com/r/reactjs/comments/fqiesz/tomato_full_stack_food_delivery_app/
+---
+Tomato app is a full-stack system build in MERN.js which aims to offer a customer a range of food products to order. Then the customer can choose and order a menu build on its own.
+
+&amp;#x200B;
+
+GitHub URL: [https://github.com/ShahAnuj2610/tomato-food-delivery](https://github.com/ShahAnuj2610/tomato-food-delivery)
+
+Heroku Demo URL: [https://mysterious-stream-91962.herokuapp.com/restaurants](https://mysterious-stream-91962.herokuapp.com/restaurants)
+
+&amp;#x200B;
+
+Demo Video: 
+
+[User Flow](https://reddit.com/link/fqiesz/video/leil1qzjeep41/player)
+
+&amp;#x200B;
+
+**The main features are:**
+
+* Complete guidance on the UI for the ordering process.
+* 2 different roles (Role-Based Access Control):
+   * **Manager**  
+Can process the orders received in Real-time, view a history, add new restaurants and new meals. Can change the order status.
+   * **User**  
+Can order from the restaurants. Also, view an orders history.
+* Use of **state-machine**  
+ to validate transitions of order status.
+* Follow React and Node.js best practices.
+## [5][How to Micro Frontend with React - RWieruch](https://www.reddit.com/r/reactjs/comments/fqedds/how_to_micro_frontend_with_react_rwieruch/)
+- url: https://www.robinwieruch.de/react-micro-frontend
+---
+
+## [6][Introduction to MobX &amp; React in 2020](https://www.reddit.com/r/reactjs/comments/fqjyit/introduction_to_mobx_react_in_2020/)
+- url: https://youtu.be/pnhIJA64ByY
+---
+
+## [7][How to animate the page like a stack with react-router-native](https://www.reddit.com/r/reactjs/comments/fqjrhz/how_to_animate_the_page_like_a_stack_with/)
+- url: https://github.com/Taymindis/react-router-native-animate-stack#usage
+---
+
+## [8][useRef with no DOM manipulation](https://www.reddit.com/r/reactjs/comments/fqjf13/useref_with_no_dom_manipulation/)
+- url: https://www.reddit.com/r/reactjs/comments/fqjf13/useref_with_no_dom_manipulation/
+---
+I came across [a guide](https://medium.com/@ItsMeDannyZ/react-hooks-slider-how-to-build-an-image-slider-with-autoplay-part-2-c94deaf763c4) that makes use of useRef alongside useEffect (section "useRef and useEffect Hooks" in the previous link), and I have a hard time understanding exactly how that works. 
+
+Thus I went looking for articles talking about useRef in depth, but everything I found has been about useRef as a tool for manipulating the DOM directly, which I guess is their primary use.
+
+I have two questions : 
+
+* Every article I read so far kept saying we shouldn't use refs except when there was no other choice. Is the practice shown in the previous link recommended? 
+* Does anybody know of an in-depth article about that particular pattern of useRef alongside useEffect, and not to manipulate the DOM?
+## [9][Serverless Stack - learn how to build a note taking app using Serverless and React on AWS](https://www.reddit.com/r/reactjs/comments/fpt9w0/serverless_stack_learn_how_to_build_a_note_taking/)
 - url: https://serverless-stack.com/
 ---
 
-## [4][react-native released 0.62.0 🎉](https://www.reddit.com/r/reactjs/comments/fph9ne/reactnative_released_0620/)
-- url: https://app.releasly.co/releases/facebook/react-native/0_62_0?utm_campaign=r_reactjs
+## [10][Painless Route Transitions with Framer Motion and React Router](https://www.reddit.com/r/reactjs/comments/fpyupo/painless_route_transitions_with_framer_motion_and/)
+- url: https://www.youtube.com/watch?v=sIm1ApP5YH8&amp;feature=youtu.be
 ---
 
-## [5][Trying to figure out how to scroll to a component in React after it renders](https://www.reddit.com/r/reactjs/comments/fpq1m8/trying_to_figure_out_how_to_scroll_to_a_component/)
-- url: https://www.reddit.com/r/reactjs/comments/fpq1m8/trying_to_figure_out_how_to_scroll_to_a_component/
+## [11][Help me choose please.](https://www.reddit.com/r/reactjs/comments/fqfpqa/help_me_choose_please/)
+- url: https://www.reddit.com/r/reactjs/comments/fqfpqa/help_me_choose_please/
 ---
-Hi everyone.  I'm rather new to React, I'm creating a Spotify playlist building app for my portfolio.  I've been searching all over but can't really find a solution.  I want to be able to scroll to my "tracks" component after the playlist is built.  This component renders only after http request and the track list is populated.  The button that initiates the http request is in a sibling component to the tracks component, so I'm not trying to scroll/navigate to a nested component, rather a component which shares the same parent but is conditionally rendered.
+Hi all, 
 
-Any tips?  Is it possible to get a reference to a component that is not nested in the component where the "click" happens?
+I am coming from Angular world and new to React . I have a simple question...
 
-Thanks!
-## [6][Web front end engine for GraphQL query](https://www.reddit.com/r/reactjs/comments/fpvujn/web_front_end_engine_for_graphql_query/)
-- url: https://twitter.com/ACzemiel/status/1243503719037177857
----
+What would be the best back-end API call that I can use which gives you the event subscription. 
 
-## [7][I made a free and open-source resume builder using ReactJS!](https://www.reddit.com/r/reactjs/comments/fp88n0/i_made_a_free_and_opensource_resume_builder_using/)
-- url: https://www.reddit.com/r/reactjs/comments/fp88n0/i_made_a_free_and_opensource_resume_builder_using/
----
-Hey there, fellow r/reactjs lurkers and devs!
+I found SWR, Axios and ofc fetch ...
 
-I made this neat little Resume Builder project, completely free and open-source for anyone to use. It is a minimalistic and straightforward resume builder that focuses on clean design, user data privacy, quick ease of use, and easy resume updates. If you are someone who cares about any of these issues, this might be of help to you!
-
-Check it out here: [https://rx-resume.web.app/](https://rx-resume.web.app/)
-
-Here's a demo video: [https://www.youtube.com/watch?v=4OM0LEPzDO8](https://www.youtube.com/watch?v=4OM0LEPzDO8)  
-and here's the link to the GitHub Repo: [https://github.com/AmruthPillai/Reactive-Resume](https://github.com/AmruthPillai/Reactive-Resume)
-## [8][Released a new book on building GraphQL servers: Production Ready GraphQL](https://www.reddit.com/r/reactjs/comments/fpx0bi/released_a_new_book_on_building_graphql_servers/)
-- url: https://www.reddit.com/r/reactjs/comments/fpx0bi/released_a_new_book_on_building_graphql_servers/
----
-Hey React folks 👋
-
-I've been working on a GraphQL book for at least the past year and I finally released it on Monday this week. I know a lot of React devs wanting to know more about **GraphQL** **server** **design** and I felt like there wasn't so much on the subject.
-
-Over the past 4 years I've worked on the Shopify GraphQL API and currently at GitHub. I've also been helping a lot of organizations with their move to GraphQL and this is everything I know about it in book form!   
-If you're interested, it's for sale here: [http://book.productionreadygraphql.com/](http://book.productionreadygraphql.com/)
-
-You can also get the ToC right here if you don't know if it's for you: [Table of Contents](http://book.productionreadygraphql.com/static/toc.pdf)
-## [9][I Created an Event Countdown App with React Native &amp; Typescript!](https://www.reddit.com/r/reactjs/comments/fpwkko/i_created_an_event_countdown_app_with_react/)
-- url: https://www.youtube.com/watch?v=7aXwDqMy1Mw
----
-
-## [10][Create desktop applications through a React syntax, on all platforms](https://www.reddit.com/r/reactjs/comments/fpwgpl/create_desktop_applications_through_a_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fpwgpl/create_desktop_applications_through_a_react/
----
-**Explore this universe**
-
-https://proton-native.js.org/
-
-**About**
-
-Proton Native is a small project to try and create a React interface for desktop app building. Proton Native was designed as an alternative to Electron. Rather than building apps that use the overhead of Electron and web technologies, Proton Native allows you to use native widgets cross platform, all in a React environment that you would get with Electron.
-
-**Advantages**
-
-- No large web browser running your app
-- Better system compatibility
-- Simple React components that are the same as React Native components
-- Constantly being improved and added to
-
-**Disadvantages**
-
-- Currently smaller than Electron
-- Smaller community since Proton Native is newer
-## [11][[API DESIGN] How to make a component with Fetch-As-You-Input behavior Concurrent-Mode-Ready?](https://www.reddit.com/r/reactjs/comments/fpvvhi/api_design_how_to_make_a_component_with/)
-- url: https://www.reddit.com/r/reactjs/comments/fpvvhi/api_design_how_to_make_a_component_with/
----
-I am asking this from a UIKit developer perspective in terms of providing an API. I am going to provide an example; so that, it is easier to visualize what I am trying to tell.
-
-I have a controlled `Filter` component that opens a custom Autofill dropdown based on the given query string (something similar to Google Search's input box).
-
-Here is how it is being used currently (currently, I am fetching data by non-suspense means in usage):
-
-    &lt;Filter
-      value={value}
-      onChange={handleChange}
-      options={options}
-      loading={loading}
-      {...otherProps}
-    /&gt;
-
-So, the data fetching process starts when the user enters anything in the input.
-
-React Docs suggest that Concurrent UI patterns should be implemented at a [Design System level](https://reactjs.org/docs/concurrent-mode-patterns.html#baking-transitions-into-the-design-system) in order to simplify the developer experience for devs who use the design system.
-
-Now, I have one place where I need to update the state. How am I supposed to design this? Let's say that I have an example like below (taken from third example [here](https://reactjs.org/docs/concurrent-mode-patterns.html#splitting-high-and-low-priority-state):
-
-    &lt;Filter
-      value={value}
-      onChange={(val) =&gt; {
-        // this is high priority state, needs to be updated immediately
-        setValue(value);
-        // transition should be here but I want the transition to be in the component
-        setOptionsResource(fetchOptions(val));
-      }}
-      options={optionsResource}
-      {...otherProps}
-    /&gt;
-
-Here is a preliminary implementation for the transition:
-
-    // no more loading prop
-    const Filter = ({ onOpen, onChange, ...otherProps }) =&gt; {
-      const [startTransition, isPending] = useTransition({ timeoutMS: TIMEOUT });
-
-      // this doesn't
-      const handleChange = (e) =&gt; {
-        // I am setting both input value and resource in `onChange`
-        // but I need a way to separate it; so that, low priority resource
-        // is happening in `startTransition`
-        onChange(e.target.value);
-
-        startTransition(() =&gt; {
-          // how should pass resource setter here?
-        });
-      }
-
-      // ...
-    }
-
-How can I separate these values? My only guess is that I need to add a new callback such as `populateData` or something similar. I don't like this approach because to me personally, it bleeds too many actions to the ui library.
-
-
----
-
-My second question is regarding deferring in this situation. Previously, I was able to defer the `value` state because the entire fetching process was happening outside the scope of the UI library. Now, the fetching process is split into two parts -- transition in the UI library component and fetching is happening outside. Where should the deferring happen? Should it happen in the Filter component or should it happen outside the component?
-
-In the component:
-
-    const Filter = ({ onOpen, onChange, value, ...otherProps }) =&gt; {
-      const [startTransition, isPending] = useTransition({ timeoutMS: TIMEOUT });
-      const deferredValue = useDeferredValue(value, { timeoutMS: DEFERRED_TIMEOUT });
-
-      const handleChange = (e) =&gt; {
-        // I am setting both input value and resource in `onChange`
-        // but I need a way to separate it; so that, low priority resource
-        // is happening in `startTransition`
-        onChange(e.target.value);
-
-        startTransition(() =&gt; {
-          populateData(deferredValue);
-        });
-      }
-    }
-
-    // usage:
-
-    &lt;Filter
-      value={value}
-      onChange={(val) =&gt; {
-        // this is high priority state, needs to be updated immediately
-        setValue(value);
-      }}
-      populateData={(val) =&gt; {
-        setOptionsResource(fetchOptions(val));
-      }}
-      options={optionsResource}
-      {...otherProps}
-    /&gt;
-
-    // or should it be like this:
-
-    const debouncedValue = useDeferredValue(value, { timeoutMs: DEFERRED_TIMEOUT });
-
-    return &lt;Filter
-      value={value}
-      onChange={(val) =&gt; {
-        setValue(value);
-      }}
-      populateData={() =&gt; {
-        // no argument in `populateData` function
-        setOptionsResource(fetchOptions(deferredValue));
-      }}
-      options={optionsResource}
-      {...otherProps}
-    /&gt;
-
-Concurrent mode is all new to me and I get that there are not many best practices available at the moment. However, I am trying to understand and prepare what kind of decisions that we need to make to future-proof my implementation. For example, I can set an API that is easier to migrate to concurrent mode in the future.
-
-P.S I am currently not using Concurrent Mode in my apps in production. I am just curious as to how to approach this from a UI library maintainer perspective.
-## [12][How a tree of React components can render a flat DOM and why flat DOM + CSS-grid scaffolding is awesome](https://www.reddit.com/r/reactjs/comments/fpvo9p/how_a_tree_of_react_components_can_render_a_flat/)
-- url: http://ikoshelev.azurewebsites.net/search/id/15/Modern-reusable-components-Separating-DOM-structure-from-visual-structure---maximum-flexibility-with-minimum-complexity
+any recommendation  ?
+## [12][Top 10 Best React Admin template 2020](https://www.reddit.com/r/reactjs/comments/fqexm1/top_10_best_react_admin_template_2020/)
+- url: https://bootstraplib.com/react-admin-templates-2020/
 ---
 

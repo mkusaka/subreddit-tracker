@@ -1,102 +1,81 @@
 # golang
-## [1][GoLand 2020.1 Reaches Beta with a lot of Go Modules, Completion, Editing, Performance improvements and more!](https://www.reddit.com/r/golang/comments/fpfim3/goland_20201_reaches_beta_with_a_lot_of_go/)
-- url: https://blog.jetbrains.com/go/2020/03/26/goland-2020-1-reaches-beta/
+## [1][My girlfriend’s evening project](https://www.reddit.com/r/golang/comments/fq9gf2/my_girlfriends_evening_project/)
+- url: https://i.imgur.com/mjfzcOu.jpg
 ---
 
-## [2][Cron job library in GO](https://www.reddit.com/r/golang/comments/fps32l/cron_job_library_in_go/)
-- url: https://www.reddit.com/r/golang/comments/fps32l/cron_job_library_in_go/
----
-Hi gophers,
-
-[https://github.com/Fred07/gron](https://github.com/Fred07/gron)
-
-This lib forked from [https://github.com/roylee0704/gron](https://github.com/roylee0704/gron), which is not updating since 4 years ago.
-
-I forked it and add some new feature that old one didn't have, like \`GracefullyStop()\`, \`StartAndServe()\`,  handling OS signal interrupt.
-
-check it out and welcome to leave some advice to me :)
-## [3][Code Generation with Go and Cuelang](https://www.reddit.com/r/golang/comments/fpt2yy/code_generation_with_go_and_cuelang/)
-- url: https://www.reddit.com/r/golang/comments/fpt2yy/code_generation_with_go_and_cuelang/
----
-Brand new implementation of our code generation project using CUE here: [https://github.com/hofstadter-io/hof](https://github.com/hofstadter-io/hof) Supports  
-
-
-* Writing generator specs and "designs" in Cuelang
-* Code generation from Cuelang (follow the projects cue files and imports (vendor is cue.mod/pkg))
-* Cleanup of any generated code that has been deleted in the design
-* Regeneration without losing custom code, write right in the output
-
-Hof uses itself to generate it's CLI layout using [https://github.com/hofstadter-io/cuemod--cli-golang](https://github.com/hofstadter-io/cuemod--cli-golang) \[The only supported generator today, just wait for tomorrow ;\]  
-Docs are a bit light right now, it will generate any values that start with `Gen.*` but expects the format seen in `cli-main.cue` and the imported `cuemod--cli-golang/module.cue`. The main engine starts in `hof/lib/gen.go` and is just over 1000LOC.
-## [4][PokeTraveler - an old-school Pokémon world in Go (Ebiten)](https://www.reddit.com/r/golang/comments/fpfett/poketraveler_an_oldschool_pokémon_world_in_go/)
-- url: https://github.com/Akatsuki-py/PokeTraveler
+## [2][GoCache - Cache Server in Go](https://www.reddit.com/r/golang/comments/fqjrat/gocache_cache_server_in_go/)
+- url: https://github.com/kadnan/gocache
 ---
 
-## [5][Question about GOPATH and directory structure with multiple projects/repositories](https://www.reddit.com/r/golang/comments/fplej3/question_about_gopath_and_directory_structure/)
-- url: https://www.reddit.com/r/golang/comments/fplej3/question_about_gopath_and_directory_structure/
----
-Hi, new to Go here and my Google skills are coming up short.  What is best/preferred practice for directory structure of Go code in the following use cases:
-
-1) A project that has source files of many types, such as Go, CloudFormation YAML, and Ansible scripts?
-
-2) Multiple separate and completely independent entirely Go programs?
-
-The reason I ask is because everything I read indicates a single root directory, say "src" for ALL Go work.  Then sub-directories not at a project level, but based on function.  So for ex.
-
-`/src/cmd/application1`
-
-`/src/cmd/application2`
-
-`/src/pkg/reqforapp1`
-
-`/src/pkg/reqforapp2`
-
-and so forth.  This would make source control repositories by project chaos, and does not work for either use case I mentioned.  I am assuming my naivety with Go is the source of my confusion, looking for someone who has solved this to correct me.  
-
-I guess my basic issue is that everything I read assumes a single GOPATH value across an entire system, and I just don't see how that can work.  If I have a structure of:
-
-`/project1/servicefunctions`
-
-`/project1/service/functions/gosrc`
-
-`/project1/cloudformation`
-
-`/project1/ansible`
-
-I would expect that while I work on that project, my GOPATH = /project1/service/functions/gosrc
-
-If it matters, I'm using GoLand for the IDE.  Any tips are appreciated, critique tolerated.
-## [6][Quote : Displays random quotes from collection of quotes.](https://www.reddit.com/r/golang/comments/fprlce/quote_displays_random_quotes_from_collection_of/)
-- url: https://www.reddit.com/r/golang/comments/fprlce/quote_displays_random_quotes_from_collection_of/
----
-&amp;#x200B;
-
-[Quote](https://preview.redd.it/295zbrkdl5p41.png?width=832&amp;format=png&amp;auto=webp&amp;s=c9cd8450460bd9a6167c206180d5c815032f258a)
-
-I am currently learning Go and made this simple program for fun. Link to Github repository is provide below. Please provide suggestion and new ideas to improve it. Feel free to download, make changes and contribute to it.
-
-[https://github.com/aryanmaurya1/quote](https://github.com/aryanmaurya1/quote)
-## [7][I created a linter for organizations who want to standardize on the modules used and be able to recommend alternative modules. Would like some feedback if anyone was interested.](https://www.reddit.com/r/golang/comments/fpo32e/i_created_a_linter_for_organizations_who_want_to/)
-- url: https://github.com/ryancurrah/gomodguard
+## [3][A form deocder that decode request body of any types(xml, json, form, multipart form...) into a scturct by same codebase.](https://www.reddit.com/r/golang/comments/fqbrza/a_form_deocder_that_decode_request_body_of_any/)
+- url: https://github.com/clevergo/form
 ---
 
-## [8][Golang library for fbprophet](https://www.reddit.com/r/golang/comments/fpthh9/golang_library_for_fbprophet/)
-- url: https://www.reddit.com/r/golang/comments/fpthh9/golang_library_for_fbprophet/
+## [4][Help, noob, trying to understand](https://www.reddit.com/r/golang/comments/fqg1xq/help_noob_trying_to_understand/)
+- url: https://www.reddit.com/r/golang/comments/fqg1xq/help_noob_trying_to_understand/
 ---
-Does anyone know of a native Go library that is equivalent to Facebook's fbprophet?
-## [9][How to do testing with zap a popular logging library for Golang](https://www.reddit.com/r/golang/comments/fpsmf0/how_to_do_testing_with_zap_a_popular_logging/)
-- url: https://gianarb.it/blog/golang-mockmania-zap-logger
+I only know a little bit of python and I'm trying to learn Go. I'm following this book: The Go Programming Language by Alan A. A. Donovan and Brian W. Kernighan. In chapter 1, page 11, a program to find duplicate lines in files is discussed. [This is the code](https://pastebin.com/vAjJhWr0) . Can someone explain why we are using pointers while mentioning the type for "f" in this line.
+
+func countLines(f \*os.File, counts map\[string\]int)
+
+This is the first instance I came across such thing.  Help please.
+## [5][To people who came from python programming](https://www.reddit.com/r/golang/comments/fqatyp/to_people_who_came_from_python_programming/)
+- url: https://www.reddit.com/r/golang/comments/fqatyp/to_people_who_came_from_python_programming/
+---
+How did you adjust to life with Golang. I know Golang's model is simplicity is complicated, but when I'm building, say an api applications using http sessions its just simpler for me to go back to requests.session package in python, then figure it out with net/http and gorilla mux; I would think for a language that prides itself in simplicity that http session managing would be an internal package and pointers, I'm still trying to get the hang of pointers. I understand them, but when I see a pointer on an Http request type it confuses me.
+## [6][A path to learn Go?](https://www.reddit.com/r/golang/comments/fpzcrc/a_path_to_learn_go/)
+- url: https://www.reddit.com/r/golang/comments/fpzcrc/a_path_to_learn_go/
+---
+Does anyone have any valuable resources that they want to share with me?
+## [7][Json object passing to a function fails](https://www.reddit.com/r/golang/comments/fqik2y/json_object_passing_to_a_function_fails/)
+- url: https://www.reddit.com/r/golang/comments/fqik2y/json_object_passing_to_a_function_fails/
+---
+In this program, I try pass a JSON object to a function and then to a REST API with `POST`. To do that I have following.
+
+```
+type resposeObj struct{
+	uid 	string `json :"uid"`
+	service string `json : "service"`
+}
+
+response := resposeObj{uid:validatemailID.String(),service:"API Gateway"}
+
+validateResponse,err := json.Marshal(response)
+
+		if err != nil{
+			log.Println("Error in marshaling data",err)
+		}
+
+		log.Println("Validate response byte slice: ",validateResponse)
+
+err = sendResponse(validatemailResponse) 
+
+```
+```
+
+func sendResponse(req []byte)error{
+	log.Println("Received response : ",string(req))
+    return nil
+}
+
+```
+
+And I get `Validate response byte slice:  [123 125]` as output. Which should be the byte array of Json object.
+
+What am I missing here? Why its not converting to byte slice?
+
+https://stackoverflow.com/questions/60899550/json-object-passing-to-a-function-fails-in-golang
+## [8][Coworker made a nice tool to manage SSH hosts](https://www.reddit.com/r/golang/comments/fq2nyw/coworker_made_a_nice_tool_to_manage_ssh_hosts/)
+- url: https://github.com/aalbacetef/ssh-helper
 ---
 
-## [10][How much performance headroom is left / longer compile times](https://www.reddit.com/r/golang/comments/fp9mrk/how_much_performance_headroom_is_left_longer/)
-- url: https://www.reddit.com/r/golang/comments/fp9mrk/how_much_performance_headroom_is_left_longer/
+## [9][Coding bud](https://www.reddit.com/r/golang/comments/fqeat1/coding_bud/)
+- url: https://www.reddit.com/r/golang/comments/fqeat1/coding_bud/
 ---
-Hi all – As you know, the Go compiler is incredibly fast, and generated application code is decently fast. How much do you think application performance could be improved with longer compile times?
+I am re-starting my journey with Go and I am looking for someone to bug about basics reasoning in Go programming. Anyone is generous enough to help me learn? I have 3 years of experience in programming (Python, JavaScript), so I understand tech talk, just need someone to discuss Go specifics with.
+## [10][Starter Projects in Go](https://www.reddit.com/r/golang/comments/fqbda4/starter_projects_in_go/)
+- url: https://www.reddit.com/r/golang/comments/fqbda4/starter_projects_in_go/
+---
+I am from a Java/JS/PHP/C background. I m learning Go, having a hard time with the syntax but I really want to learn. 
 
-Say there was an option for longer, deeper compiles, for contexts where instant compiles were not needed. For example, for the release build of an application I'd want the best possible runtime performance – I'd be fine letting a compiler run over a weekend. Do you think there is still a lot of application performance headroom to be realized with longer build times?
-
-The compiler is somewhat threadbare when it comes to optimization options. It lacks the suite of optimizations that gcc, clang, Visual Studio, and the Intel compiler offer for C/C++ applications. Where I see possible headroom is in targeting modern CPU instructions and vectorization. The last time I looked at the compiler code base I saw a bunch of old assembly targeting old CPUs – is it still not accounting for Haswell+ CPUs? Go support for modern assembly *by the application developer* is excellent, but I'm not sure if the Go compiler itself uses modern instructions in its generated code. Thoughts?
-
-**Edit:** I mentioned vectorization, but I'm mostly thinking about things like Whole Program Optimization / Link Time Optimization (LTO), Profile Guided Optimization (PGO), and superoptimization. For the latter, see Stanford's [STOKE superoptimizing compiler](http://stoke.stanford.edu/) for the x86-64 ISA.
-
-Thanks.
+What starter projects (preferably web based) I can work on  in Go to learn it decently and put on my resume as I will be graduating in 2 months and looking for a job which has some Go involved?

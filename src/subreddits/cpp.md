@@ -113,96 +113,114 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][ESeed Math, my first C++ library!](https://www.reddit.com/r/cpp/comments/fpum4g/eseed_math_my_first_c_library/)
-- url: https://www.reddit.com/r/cpp/comments/fpum4g/eseed_math_my_first_c_library/
+## [3][State of C++20 modules?](https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/)
+- url: https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/
 ---
-Hey friends, I'm 17, obviously not going out much lately due to current events, so I've been spending my time working on a set of C++ libraries for game programming, mainly [ESeed Math (GitHub)](https://github.com/elijahseedarita/eseed-math), a math library with scalar, vector, matrix, and (in the future) quaternion support.
+There had been a couple of problems raised few years ago in regards to parallelizing the compilation process in modules being necessarily harder.
 
-This is the first time I've written code with other people in mind. I have no idea about best practices for open source library programming. I've done my research, but I think from this point the thing that'll teach me the most is doing. So, here's the result!
 
-Why did I make this library even though there are other great math libraries out there? Because I'm 0iq and insist on doing everything on myself! :'))))) nice
+Since then, what happened? Any significant design changes merged to C++20 modules to tackle the problem raised?
 
-\----
 
-There *are* a few special things about this library that sets it apart from (most) others. I think?
+Or do people that were pessimistic back then still think modules will be dead on arrival?
+## [4][Why don't the Allocator concept have a way to return the actually allocated size?](https://www.reddit.com/r/cpp/comments/fqfw3q/why_dont_the_allocator_concept_have_a_way_to/)
+- url: https://www.reddit.com/r/cpp/comments/fqfw3q/why_dont_the_allocator_concept_have_a_way_to/
+---
+For containers allocating potentially large continuous blocks like *std::vector*, *std::string*, *abseil::flat_hash_map* etc it would be useful if the container could inquire the allocator about the actual amount that was allocated. If using 2MiB and 1GiB huge pages it's easy to waste a lot of space if the container is not aware of the actually allocated space or the block size of the allocator. Has there been any previous discussion on this?
+## [5][Handling C++20 modules in classic Linux package managers (or how to properly distribute and package C++ modules for Linux)?](https://www.reddit.com/r/cpp/comments/fqgp03/handling_c20_modules_in_classic_linux_package/)
+- url: https://www.reddit.com/r/cpp/comments/fqgp03/handling_c20_modules_in_classic_linux_package/
+---
+Hi,
 
-1. `constexpr`, `constexpr` **everywhere!** Better compile time optimization. Except `&lt;cmath&gt;` dependent functions :   )   ^(\*wink wink c++ standard guys haha thanks)
-2. **Designed around C++20 with heavy use of Concepts.** Okay, this isn't actually a good thing for a lot of folks, in fact for most real people it's a bad thing because of compatibility and incomplete C++20 implementation on most compilers, haha. In any case, it comes with the substantial benefit of code readability, and of course, C++20 will start to catch on before long.
-3. **Completely template-based**, meaning you can use any operator / most functions on any sized vector of any type, even with user-defined types! This is accomplished mostly by using loops. In my experience, even in debug mode, the loops seem to be unrolled, but as a dumb lil kid I might be totally wrong :))))
+I've asked (approximately) the same question on StackOverflow a few months back, [here](https://stackoverflow.com/questions/59598282/how-would-linux-package-managers-handle-c20-modules). But I didn't get a conclusive answer and the problem is starting to bug me again.
 
-In any case, I'd love it if y'all would go check it out! How do you guys think I did? Things that I could improve on, aside from originality? :P There are so many things that I could have and likely did do wrong. Living on and island means I sadly have no programmer friends or mentor that can help me out with this kind of thing :(. I definitely want to work on open source libraries in the future. One's gotta start somewhere, right?
+Anyway. C++20's modules are dependent on the exact version of the compiler they are using. You can't use modules built by GCC on clang. And you can't use modules built by GCC 9 on GCC 10.
 
-I hope this post is appropriate for this sub, I see other library sharing posts on here so I think it's aight, but let me know. Have a good day everyone, and if you spend the time to check out my library, thanks very much! I really appreciate it! Peace!
-## [4][Static analysis in GCC 10](https://www.reddit.com/r/cpp/comments/fpvtd7/static_analysis_in_gcc_10/)
+I find this requirement quite troublesome as a library author. Let's say there's a library \`awsomecpp\`. Currently packaging is as simple as putting the .so file and headers into a directory, specify the dependencies and launch the packaging process. And distributing pre-built packages are the norm. But with C++20 modules. We have to specify which exact compiler the package depends on, which forces us to built at least two binary releases, \`awsomecpp-gcc\` and \`awsomecpp-clang\`, on most distros. Also as now libraries depends on the exact compiler version. Updating the compiler forces the entire system to download all libraries that are using modules. I don't see this is viable.
+
+There's also problem if we ditch binary releases and stick with source packages (package all the module definition and implementation units). Then everything depends on \`awsomecpp\` have to be compiled on the user's system, it gets worse if \`awsomecpp\` is a luge library and takes forever to compile. Effectively turning every distro into Gentoo or AUR. Which isn't a good solution either.
+
+I think I must be missing something. My conclusions are horrible yet I can't see where I'm wrong. Is there a solution?
+
+&amp;#x200B;
+
+**Edit:** English isn't my first language. Sorry for the grammar mistakes.
+## [6][Announcing full support for a C/C++ conformant preprocessor in MSVC | C++ Team Blog](https://www.reddit.com/r/cpp/comments/fpzcyp/announcing_full_support_for_a_cc_conformant/)
+- url: https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/?WT.mc_id=reddit-social-marouill
+---
+
+## [7][Share your little-known optimizing trick](https://www.reddit.com/r/cpp/comments/fqfmck/share_your_littleknown_optimizing_trick/)
+- url: https://www.reddit.com/r/cpp/comments/fqfmck/share_your_littleknown_optimizing_trick/
+---
+To start off, I'll share mine first. When I use parallel for loop, after processing each element in the vector, I store them in another result vector which I have to guard with a mutex. I was processing image files. So this present 2 problems for me: images are loaded out of order and a mutex limits parallelism.
+
+Before the solution, my implementation in pseudo-code
+
+```
+vector&lt;string&gt; files;
+vector&lt;image&gt; results;
+
+parallel_for(s: files) {
+  image img = load_image(s);
+  take_mutex();
+  results.emplace_back(img);
+}
+
+```
+My solution is to assign the loaded image back to the vector element member. This way, my user images are loaded in order and no mutex.
+
+```
+struct img_obj {
+  string file;
+  image img;
+};
+
+vector&lt;img_obj&gt; objects;
+
+parallel_for(o: objects) {
+
+  o.img = std::move(load_image(o.file));
+
+}
+
+```
+## [8][What If C++ Abandoned Backward Compatibility?](https://www.reddit.com/r/cpp/comments/fqh63v/what_if_c_abandoned_backward_compatibility/)
+- url: https://robert.ocallahan.org/2020/03/what-if-c-abandoned-backward.html
+---
+
+## [9][Static analysis in GCC 10](https://www.reddit.com/r/cpp/comments/fpvtd7/static_analysis_in_gcc_10/)
 - url: https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10/
 ---
 
-## [5][Requires-clause | Andrzej's C++ blog](https://www.reddit.com/r/cpp/comments/fpm2cd/requiresclause_andrzejs_c_blog/)
-- url: https://akrzemi1.wordpress.com/2020/03/26/requires-clause/
+## [10][CCLS Server doesn't speak anything](https://www.reddit.com/r/cpp/comments/fqj08q/ccls_server_doesnt_speak_anything/)
+- url: https://www.reddit.com/r/cpp/comments/fqj08q/ccls_server_doesnt_speak_anything/
 ---
+Hi! I cannot get CCLS to say anything from command line. I've tried to run it in verbose mode, but it outputs no debug information as well. It is installed correctly and starts fine in a docker alpine container. Here's the Dockerfile for that:
 
-## [6][Another Logging Library, Aiming to be Small and Easy to Use](https://www.reddit.com/r/cpp/comments/fplloy/another_logging_library_aiming_to_be_small_and/)
-- url: https://www.reddit.com/r/cpp/comments/fplloy/another_logging_library_aiming_to_be_small_and/
+```
+FROM alpine:edge
+RUN apk add alpine-sdk cmake make clang clang-static clang-dev llvm-dev llvm-static \
+    &amp;&amp; git clone --depth=1 --recursive https://github.com/MaskRay/ccls \
+    &amp;&amp; cd ccls \
+    &amp;&amp; cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
+    &amp;&amp; cmake --build Release --target install
+
+RUN apk add alpine-sdk clang llvm
+WORKDIR /root
+```
+
+And here's what happens when I try to run it: https://user-images.githubusercontent.com/10388889/77822222-b8b04380-7116-11ea-8b68-f95931f38705.png
+
+Has anyone worked with stdin/stdout mode from terminal in CCLS directly? How do I get CCLS to speak anything? It should've responded with a JSONRPC message saying `Invalid data` in the above screenshot, but it didn't.
+## [11][redis-cpp is a header-only client library in C++ for Redis](https://www.reddit.com/r/cpp/comments/fq70lt/rediscpp_is_a_headeronly_client_library_in_c_for/)
+- url: https://www.reddit.com/r/cpp/comments/fq70lt/rediscpp_is_a_headeronly_client_library_in_c_for/
 ---
-[https://github.com/filipdutescu/small-better-logger](https://github.com/filipdutescu/small-better-logger)
+Hello.  Occasionally, the temptation to try something new leads to the appearance of my new projects on GitHub. Today I'd like to share one my new client library for Redis in C++. I'd really appreciate your feedback.
 
-A small, cross-platform one header file logger library, compatible with all standards from C++11 onwards (support for C++20 coming ASAP, waiting on std::chrono formatting support). Inspired by the C# ```Console``` class. 
+[https://github.com/tdv/redis-cpp](https://github.com/tdv/redis-cpp)
 
-Any and all feedback is greatly appreciated!
-
-### Why use this library and not another?
-The aim of this project was to make something as easy to use as I could. I wanted to be able to just copy and paste it into any project, without the need to link libraries, move multiple files and folders etc. At most, you need to define 3-4 macros (or just 2 if you can bother setting a compiler flag).
-
-It was also an opportunity for me to make a full, complete and tested project, complete with well written documentation. I aimed to learn as much as I could from multithreading to date manipulation.
-
-### What does it offer?
-A quick summary of what it offers:
-
- The following loggers:
-
-  * ```StreamLogger``` - which writes to the standard streams
-
-  * ```FileLogger``` - which writes to a file
-
-  * ```DailyLogger``` - which writes to a file that changes daily at the specified time
-
-Placeholders to customize your logs, such as:
-
-  * ```"{i}"``` - replaces the sequence with the i-th parameter of your log call (examples can be found both in the REAME.md and Wiki)
-
-  * All **time and date** placeholders available in ```strftime```
-
-  * Placeholders for **file, line and function** information
-
-  * Standard stream output colour modifiers
-
-
-Other information, regarding development more than the library, in case you are interested:
-
-It is a passion project which started from my need to have a logger in a bigger project. I did not want to bother with too many big, hard to manage/learn dependencies. I just wanted a quick and easy solution and I figured it couldn't hurt to somewhat learn hoe loggers work. It quickly became a thing of its own and I am proud to say it is my first well-rounded completed C++ project.
-
-I hope you either like it, use it or both! Thank you for sticking with me so far!
-## [7][TDM-GCC 9.2.0 release | tdm-gcc](https://www.reddit.com/r/cpp/comments/fpvdhy/tdmgcc_920_release_tdmgcc/)
-- url: https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release
----
-
-## [8][Bulk v2.0.0 released (Unified interface for (mixed) shared-memory and distributed-memory HPC applications)](https://www.reddit.com/r/cpp/comments/fpuqvf/bulk_v200_released_unified_interface_for_mixed/)
-- url: https://github.com/jwbuurlage/Bulk/releases/tag/v2.0.0
----
-
-## [9][Looking for Proofreaders for new Book: C++ Core Guidelines](https://www.reddit.com/r/cpp/comments/fpular/looking_for_proofreaders_for_new_book_c_core/)
-- url: http://www.modernescpp.com/index.php/looking-for-proofreaders-for-my-new-book-the-c-core-guidelines
----
-
-## [10][Hackerrank CPP Challenges Solutions](https://www.reddit.com/r/cpp/comments/fptu2s/hackerrank_cpp_challenges_solutions/)
-- url: https://architecturecoding.com/series/hackerrank-c++-challanges.html
----
-
-## [11][Wt 4.3.0 released! (widget-based C++ web framework)](https://www.reddit.com/r/cpp/comments/fp7hs1/wt_430_released_widgetbased_c_web_framework/)
-- url: https://www.webtoolkit.eu/wt/news/2020/03/26/wt___jwt_3_6_0_and_wt_4_3_0
----
-
-## [12][HPX Community Survey Summary -- The STE||AR Group](https://www.reddit.com/r/cpp/comments/fpf9nz/hpx_community_survey_summary_the_stear_group/)
-- url: http://hpx.stellar-group.org/2020/03/24/hpx-community-survey-summary/
+Thanks.
+## [12][IntelliSense Code Linter for C++ | C++ Team Blog](https://www.reddit.com/r/cpp/comments/fq13bu/intellisense_code_linter_for_c_c_team_blog/)
+- url: https://devblogs.microsoft.com/cppblog/intellisense-code-linter-for-cpp/
 ---
 

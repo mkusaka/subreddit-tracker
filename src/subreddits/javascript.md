@@ -5,66 +5,49 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][WTF Wednesday (March 25, 2020)](https://www.reddit.com/r/javascript/comments/fostb4/wtf_wednesday_march_25_2020/)
-- url: https://www.reddit.com/r/javascript/comments/fostb4/wtf_wednesday_march_25_2020/
+## [2][Showoff Saturday (March 28, 2020)](https://www.reddit.com/r/javascript/comments/fqiplh/showoff_saturday_march_28_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fqiplh/showoff_saturday_march_28_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Measuring the Performance of JavaScript Functions – JavaScript APIs explained and how to use them](https://www.reddit.com/r/javascript/comments/fpu4dg/measuring_the_performance_of_javascript_functions/)
+Show us here!
+## [3][Announcing TypeScript 3.9 Beta](https://www.reddit.com/r/javascript/comments/fq4k5s/announcing_typescript_39_beta/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-beta/
+---
+
+## [4][How to speed up Node.js modules installation in CI/CD Pipeline as of 2020](https://www.reddit.com/r/javascript/comments/fqjmvi/how_to_speed_up_nodejs_modules_installation_in/)
+- url: https://medium.com/@jeromewus/how-to-speed-up-node-js-modules-installation-in-ci-cd-pipeline-as-of-2020-4865d77c0eb7
+---
+
+## [5][[AskJS] [Noob] how do I send my e.dataTransfer.files to upload.php?](https://www.reddit.com/r/javascript/comments/fqjt9k/askjs_noob_how_do_i_send_my_edatatransferfiles_to/)
+- url: https://www.reddit.com/r/javascript/comments/fqjt9k/askjs_noob_how_do_i_send_my_edatatransferfiles_to/
+---
+[here’s a link](https://drive.google.com/open?id=1VEMZnIZCXnmcyUanuiyo1DW6qmpNTFY2) to view the files. There’s a function upload in js when I pass my e.dT.files they get there correctly but sending those files from there to my upload.php is proving challenging. It keeps saying my $_FILES['files'] is empty. Please help.
+## [6][Endb — Simple key-value storage with support for multiple backends.](https://www.reddit.com/r/javascript/comments/fq44f1/endb_simple_keyvalue_storage_with_support_for/)
+- url: https://git.io/JvHQn
+---
+
+## [7][Who's participating ?](https://www.reddit.com/r/javascript/comments/fqi48k/whos_participating/)
+- url: https://covid-global-hackathon.devpost.com/participants
+---
+
+## [8][Measuring the Performance of JavaScript Functions – JavaScript APIs explained and how to use them](https://www.reddit.com/r/javascript/comments/fpu4dg/measuring_the_performance_of_javascript_functions/)
 - url: https://felixgerschau.com/measuring-the-performance-of-java-script-functions
 ---
 
-## [4][Need help understanding a coding task sent by a company - Knowledge Based Index](https://www.reddit.com/r/javascript/comments/fpve56/need_help_understanding_a_coding_task_sent_by_a/)
-- url: /r/webdev/comments/fpv4ny/need_help_understanding_a_coding_task_sent_by_a/
+## [9][The Complete JavaScript Guide For Noobs](https://www.reddit.com/r/javascript/comments/fqh4m4/the_complete_javascript_guide_for_noobs/)
+- url: https://www.howtocodejs.com/javascript-data-types/
 ---
 
-## [5][Learn D3: a guided intro](https://www.reddit.com/r/javascript/comments/fpb7lq/learn_d3_a_guided_intro/)
-- url: https://observablehq.com/@d3/learn-d3
+## [10][Bulk Delete Instagram Posts : Delete All Instagram Pics in 1 Click : Chromium Extension](https://www.reddit.com/r/javascript/comments/fq4kny/bulk_delete_instagram_posts_delete_all_instagram/)
+- url: https://github.com/NARCOTIC/Instagram-Bulk-Delete
 ---
 
-## [6][[AskJS] Self Studying JS, freelancing prospects and coronavirus](https://www.reddit.com/r/javascript/comments/fppcdb/askjs_self_studying_js_freelancing_prospects_and/)
-- url: https://www.reddit.com/r/javascript/comments/fppcdb/askjs_self_studying_js_freelancing_prospects_and/
----
-Is it possible to go straight from months of programming to becoming a freelancer? Does freelancing not pay as much as being employed at a company?
-
-What about freelancing as a web designer? Are there too much competition either as a javascript developer or web designer developer?
-
-With the rise of coronavirus, would this mean that many people will be thinking of going into IT sector so that they can work from home to stay safe from the virus, and with the competition would pay will go down for everyone in the field?
-
-Will people be willing to hire newbies remotely from the start (especially because of the virus?) for a JS job? I've been thinking of JS because I read that you can work on both front and back end as well as mobile with JS. But I also read that Python will be more popular than JS. Anyway would you say that JS would have better job prospects compared to Python if you want to freelance remotely?
-## [7][What happens when the maintainer of a JS library downloaded 26m times a week goes to prison for killing someone with a motorcycle? Core-js just found out](https://www.reddit.com/r/javascript/comments/fpc8ay/what_happens_when_the_maintainer_of_a_js_library/)
-- url: https://www.theregister.co.uk/2020/03/26/corejs_maintainer_jailed_code_release/
+## [11][Increment date by 1 day using JavaScript Examples](https://www.reddit.com/r/javascript/comments/fqfpke/increment_date_by_1_day_using_javascript_examples/)
+- url: https://www.foxinfotech.in/2020/03/javascript-increment-date-by-1-day-examples.html
 ---
 
-## [8][[AskJS] What does ?? mean](https://www.reddit.com/r/javascript/comments/fpwv1d/askjs_what_does_mean/)
-- url: https://www.reddit.com/r/javascript/comments/fpwv1d/askjs_what_does_mean/
----
-I can use `?` for ternary expressions but I have come across `??` in a scenario like this:
-
-`const y = x?.value ?? j`
-
-Is this some kind of value specific ternary operator like `===` that is being used in a `null` check?
-## [9][Nice example of how to convert React components into Web Components for better code reusability across projects](https://www.reddit.com/r/javascript/comments/fpw4x0/nice_example_of_how_to_convert_react_components/)
-- url: https://blog.piotrnalepa.pl/2020/03/27/converting-react-components-to-web-components/
----
-
-## [10][[AskJS] Do you use Lodash / Underscore or Vanilla / ES6 in 2020?](https://www.reddit.com/r/javascript/comments/fpjsjy/askjs_do_you_use_lodash_underscore_or_vanilla_es6/)
-- url: https://www.reddit.com/r/javascript/comments/fpjsjy/askjs_do_you_use_lodash_underscore_or_vanilla_es6/
----
-I'm taking a course online dated back to 2017, and the instructor uses the Underscore Api for some object-related tasks (e.g. looping through properties, turning strings into objects, etc.).
-
-I'm wondering if I should learn this sort of library. Do you still use it? No? Would you recommend new developers to learn it or skip it?  
-
-
-UPDATE: Seems like Lodash is still popular. Thanks for your comments!
-## [11][The Great Adventure - My First Platformer in Phaser](https://www.reddit.com/r/javascript/comments/fpmors/the_great_adventure_my_first_platformer_in_phaser/)
-- url: http://n8python.github.io/thegreatadventure
----
-
-## [12][Data structure - 3 - Stack](https://www.reddit.com/r/javascript/comments/fps0rs/data_structure_3_stack/)
-- url: https://raufrahman.com/data-structure-part-3-queue/
+## [12][Distributed Web Applications](https://www.reddit.com/r/javascript/comments/fq6jr1/distributed_web_applications/)
+- url: https://medium.com/@Evan_Brass/distributed-web-applications-eaf3092901c5?source=friends_link&amp;sk=b0d3fa537abf09c7d9231844e761e364
 ---
 

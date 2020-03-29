@@ -40,93 +40,94 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][[Part 2] This guy decompiled my app, so I reported this app 14 days ago, and Google took down this app, but now this app is live again and still using my code. And this time it's worst he is showing ads in my own ranked keywords.](https://www.reddit.com/r/androiddev/comments/fq4mz7/part_2_this_guy_decompiled_my_app_so_i_reported/)
-- url: https://i.redd.it/22jpa7rtu9p41.jpg
+## [3][I made a tiny annotation library to load styled attributes into custom views. Similar to ButterKnife.](https://www.reddit.com/r/androiddev/comments/fr4t5d/i_made_a_tiny_annotation_library_to_load_styled/)
+- url: https://i.redd.it/g1cgec2volp41.png
 ---
 
-## [4][Navigation Component Using Custom Views](https://www.reddit.com/r/androiddev/comments/fqgob0/navigation_component_using_custom_views/)
-- url: https://sasikanth.dev/posts/navigaiton-component-using-custom-views
+## [4][Any good Kotlin Android course for someone how has some experience in Java Android?](https://www.reddit.com/r/androiddev/comments/fqsker/any_good_kotlin_android_course_for_someone_how/)
+- url: https://www.reddit.com/r/androiddev/comments/fqsker/any_good_kotlin_android_course_for_someone_how/
+---
+Hello, I'm still a baby in diapers in Android Dev and finishing my Multiplatform App Development degree here in Spain.
+
+What I've been teached in school sucks and some of the content is now deprecated. For example we've been teached Android Dev only in Java, MVC pattern instead of MVVM, implementation of a RecyclerView has been teached like shit and I couldn't stop having a cloudy smile because of it (Thanks god I've been doing some side courses) and a long etc...
+
+I've developed simple apps to learn in my own and for my classes exercises with libraries such as Volley(eww never again), Retrofit, Firebase, Room and I dunno if other more? Glide, Picasso meeh
+
+I understand basics things of Kotlin, but then I get confused in somethings advanced like for example, a class with static methods for multiple uses in Java is replaced with companion / object class in Kotlin, but when I try to implement it I get errors because I'm not doing it correctly, so that means I need more practice and understand the concepts of the language better.
+
+Because of that, I'm trying to find a course that's not for beginners but neither for super advanced dudes.
+
+I've found this [https://www.udemy.com/course/modernandroid/](https://www.udemy.com/course/modernandroid/) but I have no idea about the instructor, what I saw is that he has many courses using modern android development as Kotlin, Coroutine, JetPack, MVVM, Livedata. So... I'm gonna give it a try, but I would love to hear your opinion and if you have any good resources for my purposes. I really want to learn and develop android apps "correctly" with the last tech.
+## [5][Development vs. Production](https://www.reddit.com/r/androiddev/comments/fr4bc1/development_vs_production/)
+- url: https://www.reddit.com/r/androiddev/comments/fr4bc1/development_vs_production/
+---
+I'll like to use Toasts only on the development phase, and I assume that it is possible with Gradle. Unfortunately Idk how to do it, and the Gradle tutorials that I've found are not talking about this problem.
+
+Can you share your approach about the development vs production flavors of code?
+## [6][Which libraries/architecture components/etc. should I use?](https://www.reddit.com/r/androiddev/comments/fr54o6/which_librariesarchitecture_componentsetc_should/)
+- url: https://www.reddit.com/r/androiddev/comments/fr54o6/which_librariesarchitecture_componentsetc_should/
+---
+I'm fairly new with android development and even though it can be overwhelming sometimes I still love it.
+
+But I was wondering which things I should be using or maybe you could give me some insight which you are using and which not?
+
+There are for example things like Dagger 2 which seems to be a must-have for every little bigger app. Same for MVVM I would say.
+
+But what about all the architecture components? For me they all seem great and I think I should use/learn them all.
+
+I often read here that many don't like Navigation or Data Binding for example but to me they look great.
+
+And what about UI libraries? Material Design is one where most people agree that it's pretty good. But not long ago I was using Firebase UI in particular FirebaseRecyclerAdapter and when looking for help many would just say why I am using it if I can do it without Firebase UI?
+
+To me it seems like a nice, Google supported library which will save me a ton of work, but it seems like more advanced developers think otherwise.
+
+Would love some insight and advice to help me and I'm sure many other newcomers.
+## [7][Invoke a method when a Boolean is True for a set amount of time](https://www.reddit.com/r/androiddev/comments/fqvgou/invoke_a_method_when_a_boolean_is_true_for_a_set/)
+- url: https://www.reddit.com/r/androiddev/comments/fqvgou/invoke_a_method_when_a_boolean_is_true_for_a_set/
+---
+Basically, how can I make it so that a notification or method executes if a Boolean has been true for lets say 13 seconds?
+
+I appreciate the help.
+## [8][Gradle plugin to keep your modules graph healthy and lean](https://www.reddit.com/r/androiddev/comments/fqxaiu/gradle_plugin_to_keep_your_modules_graph_healthy/)
+- url: https://github.com/jraska/modules-graph-assert
 ---
 
-## [5][What is the most efficient way of passing arguments into fragments](https://www.reddit.com/r/androiddev/comments/fqi8zx/what_is_the_most_efficient_way_of_passing/)
-- url: https://www.reddit.com/r/androiddev/comments/fqi8zx/what_is_the_most_efficient_way_of_passing/
----
-In my current project we follow the normal practice of passing arguments like so  
-```
-    companion object {
-        const val TAG = "variableAmountFragment"
-        const val CURRENCY_DETAILS_TAG = "currencyDetails"
-        const val MIN_MEALS = "minMeals"
-        const val TYPE = "variableAmountType"
-        fun newInstance(currencyDetails: CurrencyDetails, minMeals: Int, variableAmountType: VariableAmountType) = VariableAmountFragment().apply {
-            val bundle = Bundle().apply {
-                putParcelable(CURRENCY_DETAILS_TAG, currencyDetails)
-                putInt(MIN_MEALS, minMeals)
-                putSerializable(TYPE, variableAmountType)
-            }
-            arguments = bundle
-        }
-    }
-```
-
-To retrieve the arguments we do this
-```
-private fun setState(savedInstanceState: Bundle?) {
-    val bundle = savedInstanceState ?: requireArguments()
-    currencyDetails = bundle.getParcelable(CURRENCY_DETAILS_TAG)!!
-    minMeals = bundle.getInt(MIN_MEALS)
-    type = bundle.getSerializable(TYPE) as VariableAmountType
-}
-```
-
-To retain the state we do
-```
-override fun onSaveInstanceState(outState: Bundle) {
-    outState.putParcelable(CURRENCY_DETAILS_TAG, currencyDetails)
-    outState.putInt(MIN_MEALS, minMeals)
-    outState.putSerializable(TYPE, type)
-    super.onSaveInstanceState(outState)
-}
-```
-
-Thats 23 LOC to pass in 3 arguments. In a Kotlin class it would be 1 line of a constructor. This process seems unreasonable and error prone. Are there no better options in this day and age?
-## [6][Anyone successfully implemented FAN sandwich model?](https://www.reddit.com/r/androiddev/comments/fqk93v/anyone_successfully_implemented_fan_sandwich_model/)
-- url: https://www.reddit.com/r/androiddev/comments/fqk93v/anyone_successfully_implemented_fan_sandwich_model/
----
-I've been trying to wrap my head around facebooks sandwich model and how I can implement it through MoPub? I attended their webinar few days ago where they recommended doing this to increase ad revenue.
-
-You can find info about it here -&gt;  [https://www.facebook.com/help/publisher/821011588003559](https://www.facebook.com/help/publisher/821011588003559) 
-
-Basically you set up for example 3 placements. One which has very high CPM, another one with lower CPM and so on. You're supposed to get higher CPM if you set it up like that? But I'm unable to figure out how I can map those multiple ad units to a single one on MoPub?
-## [7][Benefits if learning deprecated technology](https://www.reddit.com/r/androiddev/comments/fqevju/benefits_if_learning_deprecated_technology/)
-- url: https://www.reddit.com/r/androiddev/comments/fqevju/benefits_if_learning_deprecated_technology/
----
-Am I wasting my time learning AsyncTask, Loaders, Content Providers, etc? Are these useful for the event that I might run into them at a company in the future? Are they helpful to better understand how their evolved predecessors came to be? We're being taught a lot of obsolete libraries at Udacity, but I'm trying to motivate myself with a justification to get down with them and start coding them into my projects. I definitely won't be using them for my future apps, but I still wanna know what you veterans think about this; is there any benefit for me to get experience with obsolete libraries?
-## [8][Stay Logged In Across Life Cycle](https://www.reddit.com/r/androiddev/comments/fqil67/stay_logged_in_across_life_cycle/)
-- url: https://youtu.be/h1iXyPhRkHA
+## [9][Dagger Dependency Injection From the Ground Up](https://www.reddit.com/r/androiddev/comments/fqtzdt/dagger_dependency_injection_from_the_ground_up/)
+- url: https://kcianfarini.dev/dependency-injection/
 ---
 
-## [9][The Night version of my drawables are applied to a Light theme when I set the system Night mode to ON (Android 9). How to avoid this behavior?](https://www.reddit.com/r/androiddev/comments/fqi3vy/the_night_version_of_my_drawables_are_applied_to/)
-- url: https://www.reddit.com/r/androiddev/comments/fqi3vy/the_night_version_of_my_drawables_are_applied_to/
+## [10][Some thoughts on Google Sensitive Events policy - after they banned a Corona game](https://www.reddit.com/r/androiddev/comments/fr3z75/some_thoughts_on_google_sensitive_events_policy/)
+- url: https://youtu.be/2awNhEpM_lM
 ---
-The result is white images on white background. Is there a clean way to avoid resolving of -night resources in case of Light theme? That defeats the whole idea of having the "-night" qualifier!
-## [10][[It's 2020] Does anyone still use Genymotion ?](https://www.reddit.com/r/androiddev/comments/fpyhxg/its_2020_does_anyone_still_use_genymotion/)
-- url: https://www.reddit.com/r/androiddev/comments/fpyhxg/its_2020_does_anyone_still_use_genymotion/
+
+## [11][Emulator vs physical device](https://www.reddit.com/r/androiddev/comments/fr3omj/emulator_vs_physical_device/)
+- url: https://www.reddit.com/r/androiddev/comments/fr3omj/emulator_vs_physical_device/
 ---
-I use Docker to deploy and test my web app, but Docker use Hyper-V, which would never work with Virtual Box (used by Genymotion). So i am planning to switch back to Android Studio Emulator.
+Hello, recently I have started learning android apps development, however I've faced a problem, that makes it not as fun as it could be. The problem is that android studio with emulator is taking 100% of my budget laptop's ram and everything is running so slow, so I thought maybe I could run apps on my phone. Are there any big differences? I know with emulator e.g I can kill processes. I tried to find some informations about, but I couldn't or it very old. Thank you all for help.
+## [12][Need Android Developer's Help for New App called WorkoutFH](https://www.reddit.com/r/androiddev/comments/fr303n/need_android_developers_help_for_new_app_called/)
+- url: https://www.reddit.com/r/androiddev/comments/fr303n/need_android_developers_help_for_new_app_called/
+---
+The app is called WorkoutFH. If you're stuck in quarantine and have some free time on your hands, I'm looking for an android developer with at least 2 years of experience.
 
-Is this a good solution ?, how about the performance of AS Emulator compared to Genymotion ? Which emulator are you using ?
+* I'm Ed. Back before I worked for a big company I used to build my own apps (Writeaday was my most popular).
+* I'm currently coding but, I also dabble in Sketch so I'll be directly working on the design mocks.
+* The idea is for us to both be working in parallel every day and get this app to a launchable state by next weekend.
 
-Thanks in advance
+**Motivation**
+
+* While stuck at home in California under quarantine, I really found myself wanting a way to track work-from-home workouts I've been doing.
+* I thought it would be cool to build an app that helps people take breaks from working and acts as a tracker for number of pushups, pullups, etc.
+
+**Logistics**
+
+* Pay: $50/hr or we can do it project-based. We'll work it out.
+* Let's start with 1 hour to set up the codebase and take a look at the way that I code my xml files and write java code. Then maybe 2 hours to add a color picker row to the "new habit dialog".
+* Here's the project which you'll be submitting pull requests to: [https://github.com/eddieberklee/workoutfh](https://github.com/eddieberklee/workoutfh)
+
+[New Workout Dialog](https://preview.redd.it/yp1h5m9aukp41.png?width=1440&amp;format=png&amp;auto=webp&amp;s=397b07b5853a2c0c80f0083146526bde02db2ce2)
 
 &amp;#x200B;
 
-[View Poll](https://www.reddit.com/poll/fpyhxg)
-## [11][Google store update times](https://www.reddit.com/r/androiddev/comments/fq7lkr/google_store_update_times/)
-- url: https://www.reddit.com/r/androiddev/comments/fq7lkr/google_store_update_times/
----
-Google said to expect delays of up to 7 days or more - they took about an hour tonight!
-## [12][How to capture heap dump from Android App?](https://www.reddit.com/r/androiddev/comments/fqel5f/how_to_capture_heap_dump_from_android_app/)
-- url: https://blog.heaphero.io/2018/06/04/how-to-capture-heap-dump-from-android-app-3-options/
----
+[Task #1: Add Color Picker UI](https://preview.redd.it/qosp2robukp41.png?width=1112&amp;format=png&amp;auto=webp&amp;s=4adc6b55b80ceb600aea3278640fa6aa970516f3)
 
+[First Sketches of WorkoutFH](https://preview.redd.it/djkvpdfeukp41.png?width=1122&amp;format=png&amp;auto=webp&amp;s=3a95270bd7801e259dbba4391851cf9d073b2abd)

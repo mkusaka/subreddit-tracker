@@ -111,84 +111,126 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][TikTok-esque app for browsing NSFW subreddits [NSFW]](https://www.reddit.com/r/reactjs/comments/fpxj14/tiktokesque_app_for_browsing_nsfw_subreddits_nsfw/)
-- url: https://fap.bar
+## [3][✨ Introducing react-cool-portal: React hook for Portals, which renders modals, dropdowns, tooltips etc. to &lt;body&gt; or else.](https://www.reddit.com/r/reactjs/comments/fqxptx/introducing_reactcoolportal_react_hook_for/)
+- url: https://github.com/wellyshen/react-cool-portal
 ---
 
-## [4][Tomato: Full Stack Food Delivery App](https://www.reddit.com/r/reactjs/comments/fqiesz/tomato_full_stack_food_delivery_app/)
-- url: https://www.reddit.com/r/reactjs/comments/fqiesz/tomato_full_stack_food_delivery_app/
----
-Tomato app is a full-stack system build in MERN.js which aims to offer a customer a range of food products to order. Then the customer can choose and order a menu build on its own.
-
-&amp;#x200B;
-
-GitHub URL: [https://github.com/ShahAnuj2610/tomato-food-delivery](https://github.com/ShahAnuj2610/tomato-food-delivery)
-
-Heroku Demo URL: [https://mysterious-stream-91962.herokuapp.com/restaurants](https://mysterious-stream-91962.herokuapp.com/restaurants)
-
-&amp;#x200B;
-
-Demo Video: 
-
-[User Flow](https://reddit.com/link/fqiesz/video/leil1qzjeep41/player)
-
-&amp;#x200B;
-
-**The main features are:**
-
-* Complete guidance on the UI for the ordering process.
-* 2 different roles (Role-Based Access Control):
-   * **Manager**  
-Can process the orders received in Real-time, view a history, add new restaurants and new meals. Can change the order status.
-   * **User**  
-Can order from the restaurants. Also, view an orders history.
-* Use of **state-machine**  
- to validate transitions of order status.
-* Follow React and Node.js best practices.
-## [5][How to Micro Frontend with React - RWieruch](https://www.reddit.com/r/reactjs/comments/fqedds/how_to_micro_frontend_with_react_rwieruch/)
-- url: https://www.robinwieruch.de/react-micro-frontend
----
-
-## [6][Introduction to MobX &amp; React in 2020](https://www.reddit.com/r/reactjs/comments/fqjyit/introduction_to_mobx_react_in_2020/)
+## [4][Introduction to MobX &amp; React in 2020](https://www.reddit.com/r/reactjs/comments/fqjyit/introduction_to_mobx_react_in_2020/)
 - url: https://youtu.be/pnhIJA64ByY
 ---
 
-## [7][How to animate the page like a stack with react-router-native](https://www.reddit.com/r/reactjs/comments/fqjrhz/how_to_animate_the_page_like_a_stack_with/)
-- url: https://github.com/Taymindis/react-router-native-animate-stack#usage
+## [5][India Covid 19 Tracker Source Code](https://www.reddit.com/r/reactjs/comments/fr5v92/india_covid_19_tracker_source_code/)
+- url: https://www.htmlhints.com/article/78/covid-19-india-tracker-source-code
 ---
 
-## [8][useRef with no DOM manipulation](https://www.reddit.com/r/reactjs/comments/fqjf13/useref_with_no_dom_manipulation/)
-- url: https://www.reddit.com/r/reactjs/comments/fqjf13/useref_with_no_dom_manipulation/
+## [6][Questions about Types in a React-Apollo component](https://www.reddit.com/r/reactjs/comments/fr4qjm/questions_about_types_in_a_reactapollo_component/)
+- url: https://www.reddit.com/r/reactjs/comments/fr4qjm/questions_about_types_in_a_reactapollo_component/
 ---
-I came across [a guide](https://medium.com/@ItsMeDannyZ/react-hooks-slider-how-to-build-an-image-slider-with-autoplay-part-2-c94deaf763c4) that makes use of useRef alongside useEffect (section "useRef and useEffect Hooks" in the previous link), and I have a hard time understanding exactly how that works. 
+I am just messing around with typescript and react-apollo for the first time. I have a component
 
-Thus I went looking for articles talking about useRef in depth, but everything I found has been about useRef as a tool for manipulating the DOM directly, which I guess is their primary use.
+import React from 'react'  
+import { gql, useQuery } from '@apollo/client'  
+import { trailCount, trailCountVariables } from './\_\_generated\_\_/trailCount'  
+import { TrailStatus } from '../../\_\_generated\_\_/globalTypes'  
+export const TRAIL\_COUNT = gql\`  
+query trailCount($status: TrailStatus) {  
+trailCount(status: $status)  
+}  
+\`  
+export const Mountains: any = () =&gt; {  
+const { data, loading, error } = useQuery&lt;trailCount, trailCountVariables&gt;(TRAIL\_COUNT, {  
+variables: { status: TrailStatus.OPEN }  
+})  
+if (loading) return &lt;div&gt;Grabing Trail Info&lt;/div&gt;  
+if (error) return console.error(error)  
+return &lt;div&gt;{data?.trailCount}&lt;/div&gt;
 
-I have two questions : 
+}
 
-* Every article I read so far kept saying we shouldn't use refs except when there was no other choice. Is the practice shown in the previous link recommended? 
-* Does anybody know of an in-depth article about that particular pattern of useRef alongside useEffect, and not to manipulate the DOM?
-## [9][Serverless Stack - learn how to build a note taking app using Serverless and React on AWS](https://www.reddit.com/r/reactjs/comments/fpt9w0/serverless_stack_learn_how_to_build_a_note_taking/)
-- url: https://serverless-stack.com/
+1.) The types for the query and the queryVariables were auto generated by the apollo-codegen tool, and it generated `import { TrailStatus } from '../../__generated__/globalTypes'` outside of the project src/ directory which failed at compiled time because it wasn't within src/. I added the same file to src/ and it worked, but is this a problem with apollo or am I doing something wrong?
+
+2.) The Function Component Mountains I typed as any because I couldn't figure out  what type it should be. How should I type function components that will have apollo queries and mutations?
+
+3.) Why does the Mountains component have to return data?.trailCount and not trailCount?
+
+4.) Are there any resources out there that I'm not finding that will help me through this? I'm having trouble finding resources that help me with typescript+apollo+hooks/Function Components.
+## [7][route-codegen: Manage client-side and server-side routing automatically with generated components and typescript interfaces. Currently supports react-router and NextJS!](https://www.reddit.com/r/reactjs/comments/fr2xlf/routecodegen_manage_clientside_and_serverside/)
+- url: https://github.com/eddeee888/route-codegen
 ---
 
-## [10][Painless Route Transitions with Framer Motion and React Router](https://www.reddit.com/r/reactjs/comments/fpyupo/painless_route_transitions_with_framer_motion_and/)
-- url: https://www.youtube.com/watch?v=sIm1ApP5YH8&amp;feature=youtu.be
+## [8][[Podcast] Moving from Vue to React at Starbucks](https://www.reddit.com/r/reactjs/comments/fr2ldc/podcast_moving_from_vue_to_react_at_starbucks/)
+- url: https://johnpapa.net/rtjs-0074-react-at-starbucks/
 ---
 
-## [11][Help me choose please.](https://www.reddit.com/r/reactjs/comments/fqfpqa/help_me_choose_please/)
-- url: https://www.reddit.com/r/reactjs/comments/fqfpqa/help_me_choose_please/
+## [9][New in React-Can I assign a function as a property in this.state?](https://www.reddit.com/r/reactjs/comments/fqzp3c/new_in_reactcan_i_assign_a_function_as_a_property/)
+- url: https://www.reddit.com/r/reactjs/comments/fqzp3c/new_in_reactcan_i_assign_a_function_as_a_property/
 ---
-Hi all, 
+ 
 
-I am coming from Angular world and new to React . I have a simple question...
+Im trying to render the last value of a string in a div, using this.handleFormula function. Im assigning this function to formula in this.state and linking this.state.formula to a div. Im trying to console.log the return value but still nothing is rendering, do you what could be the issue?
 
-What would be the best back-end API call that I can use which gives you the event subscription. 
+here is my codepen: [https://codepen.io/tonytony92/pen/bGdmbzx?editors=1111](https://codepen.io/tonytony92/pen/bGdmbzx?editors=1111)
 
-I found SWR, Axios and ofc fetch ...
+       this.state={
+          display:"0",
+          formula:this.handleFormula,
+          buttonState:[{key: 'AC',
+            col:'red',
+            key1:"AC"
+            },///and a bunch of other objects in array/// ]  }
+    
+    handleFormula(){
+        let str=this.state.display
+        console.log(str)
+        let newArr=str.match(/["/"+"x"-]/gi)
+        let newStr=""
+        if (Boolean(newArr)==false){//If no special characters are found in string ,return current display//
+          console.log(str)
+          return str
+        }
+        else{
+           for(let i=newArr.length-1;i&gt;-1;i--){// if last value is a number concatenate it to a variable///
+            if(parseFloat(newArr[i])!==NaN){
+                 newStr+=newArr[i]
+               } 
+             else if(i===newArr.length-1&amp;&amp; parseFloat(newArr[i])===NaN){ // if last value is a specialChar return it///
+               return newArr[i]
+             }
+             else{  /// return numbers concatenated in variable///
+               return newStr
+             }
+           }
+        }
+      }
+## [10][I created Next.js PWA Boilerplate + React Hooks + Redux Toolkit + Styled Components](https://www.reddit.com/r/reactjs/comments/fqlnx0/i_created_nextjs_pwa_boilerplate_react_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/fqlnx0/i_created_nextjs_pwa_boilerplate_react_hooks/
+---
+Hello friends!
 
-any recommendation  ?
-## [12][Top 10 Best React Admin template 2020](https://www.reddit.com/r/reactjs/comments/fqexm1/top_10_best_react_admin_template_2020/)
-- url: https://bootstraplib.com/react-admin-templates-2020/
+I was looking at some Next.js PWA boilerplates and even tho there are some really good ones like [NextSimpleStarter](https://github.com/ooade/NextSimpleStarter), it didn't use Redux Toolkit or Styled Components. So I cloned NextSimpleStarter and tweaked it so it uses mentioned libraries. It is a good resource for everyone who wants to learn about how to implement those libraries into next.js project.
+
+I built a simple todo app (did you expect something else for real?) and styling is complete garbage, feel free to edit it however you want!
+
+Link to the repo:  [https://github.com/trujic1000/next-pwa-boilerplate](https://github.com/trujic1000/next-pwa-boilerplate) 
+
+Live version:  [https://next-pwa.netlify.com/](https://next-pwa.netlify.com/) 
+
+Happy coding!
+## [11][passing props. why didn't this work?](https://www.reddit.com/r/reactjs/comments/fr23pm/passing_props_why_didnt_this_work/)
+- url: https://www.reddit.com/r/reactjs/comments/fr23pm/passing_props_why_didnt_this_work/
+---
+so I had a function `func` that I needed to pass down through three components. the function would return `some-data` and push it to some array in Component1's state.
+
+The first component was a class. The second component was a class. The third component was a function. I passed the function from Component1 to Component2 as you normally would:`&lt;Component2 func={this.func}&gt;`. Then Class 2 received the prop as a class would normally receive a property `constructor({func}){this.func = func}`. Then from Component2 to component 3 it was rendered: `&lt;Component3 func={this.func}&gt;`. Now component3 isnt a class, it's a function, so i received it as `const component3 = ({func}) =&gt;` before using it as `(&lt;a onClick={func(some-data)}&gt;click&lt;/a&gt;);`
+
+Now this totally worked fine. the function would return `some-data` and push it to an array in Component1's state.
+
+Until someone refactored Component1 to a function and used hooks. Then Component1's hooks would always reset to its initial state every time Component3 was clicked so it would only store an array of one `some-data`, instead of array of many `some-data`. THEN I had to change Component2's constructor as `constructor(props){super(props)}` or the hook state kept reverting to its initial state instead of some-data.
+
+Does anyone know why this is?
+
+I can write out code but i thought I'd try to give you as little code to look at as possible.
+## [12][Tagged — My first React component](https://www.reddit.com/r/reactjs/comments/fr1soc/tagged_my_first_react_component/)
+- url: https://github.com/hiquest/react-tagged
 ---
 

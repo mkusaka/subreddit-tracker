@@ -19,10 +19,80 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][ActionText iframe embeds](https://www.reddit.com/r/rails/comments/fqj15c/actiontext_iframe_embeds/)
+## [2][Add react/Vue existing Rails app ?](https://www.reddit.com/r/rails/comments/fr32wy/add_reactvue_existing_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/fr32wy/add_reactvue_existing_rails_app/
+---
+
+#newbieHere 
+Have you add react or vue on existing Rails  ? I have heard Webpacker would be done this to use React or Vue , would it affects on Rails version also if I add  FE framework?
+
+If you use react or vue on existing Rails app without do "rails new my-app --webpack=react" ? Here is my another questions
+ - should I use gem to use react or vue ? Such as "gem install react_on_rails"
+- or I just use "yard add react react-dom" ?
+## [3][noob questions](https://www.reddit.com/r/rails/comments/fqpsyp/noob_questions/)
+- url: https://www.reddit.com/r/rails/comments/fqpsyp/noob_questions/
+---
+So, I've been a Microsoft stack guy for most of my career.  Especially on the web.  I've been happy enough with it to have never looked at Ruby or RoR at all.  In the lockdown, I'm spending some time learning "new" things and have just now watched some Ruby and RoR videos.
+
+It looks to me like "ASP.old (before .NET) but with MVC and Active Record baked in."  Is that about right?
+
+Also, if I were to write a Rails site, where would I host it?  I'm used to using Netlify or just S3 these days for "JAMstack" front ends, with back-end APIs on Azure.
+
+If you had to give an elevator speech about why I might want to consider switching from Vue.js/.NET APIs to RoR, what wold it be?
+
+Thanks!
+## [4][Unable to access instance variables in .js.erb files](https://www.reddit.com/r/rails/comments/fqrdlr/unable_to_access_instance_variables_in_jserb_files/)
+- url: https://www.reddit.com/r/rails/comments/fqrdlr/unable_to_access_instance_variables_in_jserb_files/
+---
+Hello,
+
+I posted the following a while ago related to getting action specific javascript to wok in rails 6 (JQuery wasn't working)
+
+https://www.reddit.com/r/rails/comments/dg2c0z/cant_get_action_specific_javascript_working_in/
+
+I feel this is a different issue (of course I could be wrong). I am attempting to get a create action working via javascript `create.js.erb`, but it seems like I can't access the instance variable created by the controller. Just wondering what I am not understanding.
+
+Here is what I have so far:
+
+app/controllers/admin/permissions_controller.rb
+
+      def create
+        @permission = Permission.new permission_params
+
+        respond_to do |format|
+          if @permission.save
+            format.html { redirect_to admin_role_path(@role), success: success_message(@permission) }
+            format.js
+          else
+            format.html { redirect_to admin_role_path(@role), error: error_message }
+            format.js
+          end
+        end
+      end
+
+app/views/admin/permissions/create.js.erb
+
+    elm = document.getElementById(&lt;%= dom_id(@permission.user) %&gt;);
+    elm.style.display = "none";
+
+Console prints out
+
+    VM45161:1 Uncaught SyntaxError: Unexpected string
+        at processResponse (rails-ujs.js:283)
+        at rails-ujs.js:196
+        at XMLHttpRequest.xhr.onreadystatechange (rails-ujs.js:264)
+## [5][Formatting Rails Exectuables](https://www.reddit.com/r/rails/comments/fqpkgu/formatting_rails_exectuables/)
+- url: https://www.reddit.com/r/rails/comments/fqpkgu/formatting_rails_exectuables/
+---
+Hi all, so basically, I've been getting into "prettifying" and customizing my terminal experience. This includes git as well as the shell itself. Specifically, one that I am using now that I really enjoy is using the `--pretty` flag for `git log`. 
+
+I was wondering if there's an equivalent for rails executables, specifically, in my case, `(bundle exec) rails routes`. Namely, I want a way to skip the printing of the default Active Storage routes when running this command. 
+
+Thanks!
+## [6][ActionText iframe embeds](https://www.reddit.com/r/rails/comments/fqj15c/actiontext_iframe_embeds/)
 - url: https://www.reddit.com/r/rails/comments/fqj15c/actiontext_iframe_embeds/
 ---
-Hi, 
+Hi,
 
 I am currently building some kind of inventory tracking system and I am using ActionText to capture rich text descriptions for products.
 
@@ -35,11 +105,21 @@ Currently `@product.description.body.to_trix_html` outputs santized `&lt;iframe&
 Thanks r/rails for helping me, I have learned a lot about rails from answers from this community.
 
 Bartol
-## [3][When do you decide to rewrite a project?](https://www.reddit.com/r/rails/comments/fq9hhh/when_do_you_decide_to_rewrite_a_project/)
+
+&amp;#x200B;
+
+Edit:
+
+Solved!
+
+    &lt;div class="trix-content"&gt;
+      &lt;%= raw CGI.unescape_element @product.description.body.to_s, ['iframe'] %&gt;
+    &lt;/div&gt;
+## [7][When do you decide to rewrite a project?](https://www.reddit.com/r/rails/comments/fq9hhh/when_do_you_decide_to_rewrite_a_project/)
 - url: https://www.reddit.com/r/rails/comments/fq9hhh/when_do_you_decide_to_rewrite_a_project/
 ---
 I am revisiting an old rails app that I was developing, but the stack I used is completely different and the code quality and design is pretty bad. I'm considering just doing a complete rewrite. When do you guys say screw it and rewrite it?
-## [4][using instance_of with mocha for ActionController::TestCase](https://www.reddit.com/r/rails/comments/fqez0r/using_instance_of_with_mocha_for/)
+## [8][using instance_of with mocha for ActionController::TestCase](https://www.reddit.com/r/rails/comments/fqez0r/using_instance_of_with_mocha_for/)
 - url: https://www.reddit.com/r/rails/comments/fqez0r/using_instance_of_with_mocha_for/
 ---
 In my controller test, I need to stub a method where a parameter should be an instance of a class. I decided I wanted to use instance\_of method here =&gt; [https://mocha.jamesmead.org/Mocha/API.html](https://mocha.jamesmead.org/Mocha/API.html)
@@ -56,11 +136,11 @@ And from the documentation, I can see that parameter matching (instance\_of) is 
 I get an error message like instance\_of is not defined
 
 But I'm not able to include the required files to get this to work. Any help would be great :)
-## [5][Successive Q and A](https://www.reddit.com/r/rails/comments/fq8r1f/successive_q_and_a/)
+## [9][Successive Q and A](https://www.reddit.com/r/rails/comments/fq8r1f/successive_q_and_a/)
 - url: https://www.reddit.com/r/rails/comments/fq8r1f/successive_q_and_a/
 ---
 Trying to come up with a way for when a user is filling out the answers for multiple questions on a form to just see one at a time and when they answer, it stores the value and goes to the next question. Would this be something better done with using React or Angular, perhaps? Curious if anyone has tackled a similar issue and what route they went.
-## [6][Has any of you worked on a HIPAA codebase? Advice?](https://www.reddit.com/r/rails/comments/fq49wk/has_any_of_you_worked_on_a_hipaa_codebase_advice/)
+## [10][Has any of you worked on a HIPAA codebase? Advice?](https://www.reddit.com/r/rails/comments/fq49wk/has_any_of_you_worked_on_a_hipaa_codebase_advice/)
 - url: https://www.reddit.com/r/rails/comments/fq49wk/has_any_of_you_worked_on_a_hipaa_codebase_advice/
 ---
 I am about to start work on a multi-tenant HIPAA-compatible SAAS.
@@ -72,7 +152,7 @@ Keep an encryption key for each tenant and encrypt these fields? But, if the enc
 This in addition to heroku shield dynos and database of course. https://www.heroku.com/compliance
 
 Or, would using the shield dyno and database be sufficient?
-## [7][Using multiple parameters in scope using has_scope](https://www.reddit.com/r/rails/comments/fq5mu0/using_multiple_parameters_in_scope_using_has_scope/)
+## [11][Using multiple parameters in scope using has_scope](https://www.reddit.com/r/rails/comments/fq5mu0/using_multiple_parameters_in_scope_using_has_scope/)
 - url: https://www.reddit.com/r/rails/comments/fq5mu0/using_multiple_parameters_in_scope_using_has_scope/
 ---
 Hi everyone,  
@@ -112,39 +192,3 @@ Or even if you have advice on how I can debug this, that would be useful. I feel
 
 
 Thanks.
-## [8][Pragmatic Studo - Latest Courses?](https://www.reddit.com/r/rails/comments/fq42cb/pragmatic_studo_latest_courses/)
-- url: https://www.reddit.com/r/rails/comments/fq42cb/pragmatic_studo_latest_courses/
----
-Hey ya'll, apologies if I'm in the wrong forum, but I just completed the Pragmatic Studio course in Rails 6 and it was really great.
-
-They also offer a Ruby language course, and a special course on "Mastering Ruby Blocks".  They also offer new courses on Elixir/OTP and Phoenix.
-
-Has anyone tried any of these other courses out?  I would imagine that they are equally good but just wanted to make sure since they are quite a bit more expensive than other training sites.
-
-https://pragmaticstudio.com/
-## [9][Dynamic Feed That Pulls Data from multiple sources in Rails](https://www.reddit.com/r/rails/comments/fq2ytc/dynamic_feed_that_pulls_data_from_multiple/)
-- url: https://www.reddit.com/r/rails/comments/fq2ytc/dynamic_feed_that_pulls_data_from_multiple/
----
-I was taking a look at the Grailed website - [https://www.grailed.com](https://www.grailed.com) and was wondering what's the best way to replicate something like this in rails. Specifically, the home page; in the way it's a dynamic feed that pulls data from a number of different sources; I assume like a CMS and a SQL database of some sort.
-
-I really have no idea how to start building something like this or where to look, so any little bit of guidance (even if it's what to search for on google) would be great.
-## [10][No luck changing activeRecord naming convention with 'authorized'](https://www.reddit.com/r/rails/comments/fq0j4y/no_luck_changing_activerecord_naming_convention/)
-- url: https://www.reddit.com/r/rails/comments/fq0j4y/no_luck_changing_activerecord_naming_convention/
----
-I'm trying to create a table named \`authorized\`. Naturally, active record changes it to the plural \`authorizeds\`. I've tried over riding this with \`self.table\_name = 'authroized' but no luck when actually migrating the tables (\`rails db:migrate\`). Any other ways around this?
-## [11][Database - is there any benefit to index a list of names?](https://www.reddit.com/r/rails/comments/fpv4h6/database_is_there_any_benefit_to_index_a_list_of/)
-- url: https://www.reddit.com/r/rails/comments/fpv4h6/database_is_there_any_benefit_to_index_a_list_of/
----
-Say I have a model Company, it has one single :name column. The purpose of this model is just to store company names. The only use for this model is to create a select list when needed (i.e Select All), and to **find by id** when a company name is required (i.e I won't search the Company model directly). The user can manage the company list (create/delete/etc).
-
-Is there any reason to (or not to) index the :name column?
-
----
-Edit: Thanks guys your answers are very helpful!
-
-A little summary:
-
-- Add index when you need to search the column, of course.
-- Add index when you need to sort a column e.g sort by company name in this case.
-- Add index can be helpful if the column needs to be unique.
-- If the model is simple and will be used very often (like the company name in this case), it doesn't hurt to index the column early on. Because you may need to search or sort the column later.

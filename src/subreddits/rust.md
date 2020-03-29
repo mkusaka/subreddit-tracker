@@ -23,58 +23,206 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/24/this-week-in-rust-331/
 ---
 
-## [3][Goodbye, docs team - Inside Rust](https://www.reddit.com/r/rust/comments/fq7znr/goodbye_docs_team_inside_rust/)
-- url: https://blog.rust-lang.org/inside-rust/2020/03/27/goodbye-docs-team.html
+## [3][R2: A Router in Rust](https://www.reddit.com/r/rust/comments/fr50vl/r2_a_router_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/fr50vl/r2_a_router_in_rust/
+---
+Introducing R2 [**https://r2.rs/,**](https://r2.rs/,) a 'Router in Rust' that I wrote. Read my experience with Rust at [**https://r2.rs/blog/**](https://r2.rs/blog/)
+## [4][Traits working group 2020 sprint 1 summary](https://www.reddit.com/r/rust/comments/fqrrv5/traits_working_group_2020_sprint_1_summary/)
+- url: https://blog.rust-lang.org/inside-rust/2020/03/28/traits-sprint-1.html
 ---
 
-## [4][A video to help you climb one of Rust’s highest walls... Lifetimes! 🎥](https://www.reddit.com/r/rust/comments/fqeq2v/a_video_to_help_you_climb_one_of_rusts_highest/)
-- url: https://youtu.be/tyuDitqoZbM
+## [5][Clokwerk run scheduler indefinitely](https://www.reddit.com/r/rust/comments/fr414j/clokwerk_run_scheduler_indefinitely/)
+- url: https://www.reddit.com/r/rust/comments/fr414j/clokwerk_run_scheduler_indefinitely/
 ---
+Hello!
+Recently, I started learning Rust. I'm trying to run Clokwerk to go on forever, but the main function is dropping the reference to ScheduleHandle at the end. What's the proper way to keep it running indefinitely?
 
-## [5][Writing an OS in Rust: Async/Await](https://www.reddit.com/r/rust/comments/fq083y/writing_an_os_in_rust_asyncawait/)
-- url: https://os.phil-opp.com/async-await/
+    fn main() {
+        let yaml = load_yaml!("app.yaml");
+        let matches = App::from_yaml(yaml).get_matches();
+    
+        let mut params = Params::new();
+    
+        let domain = matches.value_of("domain").unwrap();
+        params.domain = String::from(domain);
+    
+        let subdomains = matches.value_of("subdomains").unwrap();
+        params.subdomains = subdomains.split(",").map(|s| s.to_string()).collect();
+    
+        scheduler
+            .every(10.seconds())
+            .run(move || run_checker(&amp;params));
+    
+        let _thread_handle: ScheduleHandle = scheduler.watch_thread(Duration::from_millis(6000));
+    }
+
+
+I'm at the beginning of my adventure with Rust, so please be understanding :).
+## [6][Implementing the lambda calculus in Rust](https://www.reddit.com/r/rust/comments/fqpwan/implementing_the_lambda_calculus_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/fqpwan/implementing_the_lambda_calculus_in_rust/
 ---
+Here is my first post in what will hopefully be a series about type systems: https://christianpoveda.github.io/blog/untyped-lambda-calculus/
 
-## [6][Open sourced my tuntap crate](https://www.reddit.com/r/rust/comments/fqgplt/open_sourced_my_tuntap_crate/)
-- url: https://github.com/siegfried/utuntap
+I'm happy to receive constructive feedback about it.
+## [7][Unsure what graphics library to use in my Rust application](https://www.reddit.com/r/rust/comments/fqsw4t/unsure_what_graphics_library_to_use_in_my_rust/)
+- url: https://www.reddit.com/r/rust/comments/fqsw4t/unsure_what_graphics_library_to_use_in_my_rust/
 ---
+Hello fellow rustaceans!
 
-## [7][Creating 50 stock prices that change over time using threads.](https://www.reddit.com/r/rust/comments/fqjljk/creating_50_stock_prices_that_change_over_time/)
-- url: https://www.reddit.com/r/rust/comments/fqjljk/creating_50_stock_prices_that_change_over_time/
+I am coding the Conway's Game of Life as part of my journey to learn Rust.
+
+I have already coded the "engine" and a nice terminal output with termion, but I would also like to have a windowed graphical display for it. I am unsure what dependency to use for this purpose. I did my research and gfx-rs seems the most popular option, but seems just too low level to just draw some squares in a window. Amethyst in the other end, looks too overfecthed, using a game engine for this seems unreasonable.
+
+I am new to Rust and to graphics, so I am not sure if it is worth it to spend some ours learning gfx-rs or go directly to some higher level library, if so, which one? Also, if possible, I would like this library to be cross-platform and pure Rust.
+
+Any good recommendations? Thank you!
+## [8][derive_more 0.99.5 released: Support for Error derive similar to dtolnay/thiserror](https://www.reddit.com/r/rust/comments/fqkxtm/derive_more_0995_released_support_for_error/)
+- url: https://www.reddit.com/r/rust/comments/fqkxtm/derive_more_0995_released_support_for_error/
 ---
- I am creating a program which simulates 50 stocks being updated.  Each stock is monitored (incremented) by a thread, updating a listener thread of any change. The listener thread receives the update and prints the value of the stock before waiting for the next update. 
+derive_more allows you to derive lots of traits that are present in the standard library, but that you normally have to implement manually yourself. 
+This release adds support for deriving `Error` and it's methods `source` and `backtrace`. This works very well with the `Display` derive that already exists in this library.
 
-So far what I did was create a threadpool that generates 50 random stock names with their respective random pricing. I send the stock prices and stock names over a channel to the next threapool which is responsible for incrementing the prices with a random value and the thread sleeps with a random sleeptime. Then i send these values to an infinite loop which prints the values out. 
-
-Need advice on whether I am doing it the right way. Here is the [link](https://github.com/yudhiesh1997/50-Stocks-Rust/blob/master/stock/src/main.rs) to my code on Github.
-## [8][Nalgebra is incredible and plays nice with wasm](https://www.reddit.com/r/rust/comments/fpvc91/nalgebra_is_incredible_and_plays_nice_with_wasm/)
-- url: https://www.reddit.com/r/rust/comments/fpvc91/nalgebra_is_incredible_and_plays_nice_with_wasm/
+* Github: [https://github.com/JelteF/derive_more](https://github.com/JelteF/derive_more)
+* Docs: [https://jeltef.github.io/derive_more/derive_more/index.html](https://jeltef.github.io/derive_more/derive_more/index.html)
+* Docs for Error derive: [https://jeltef.github.io/derive_more/derive_more/error.html](https://jeltef.github.io/derive_more/derive_more/error.html)
+*  Crates.io: [https://crates.io/crates/derive_more](https://crates.io/crates/derive_more)
+## [9][I need help sending emails with rust](https://www.reddit.com/r/rust/comments/fr53jb/i_need_help_sending_emails_with_rust/)
+- url: https://www.reddit.com/r/rust/comments/fr53jb/i_need_help_sending_emails_with_rust/
 ---
-I just wanted to let people know about this crate,and the fantastic experience I had using it. 
+I want to make a login system with email verification. I found the crate lettre but I keep getting errors when sending.
 
-I leveraged it to compute the best fit line for a point cloud in my react front end packed with parcel. 
+The code I tried:
 
-The runtime is absurdly good. The whole cycle takes less than 23 microseconds. I haven't calculated the exact overhead, but it's basically nothing.
-## [9][Cross-compile Rust programs to run on Turris Omnia](https://www.reddit.com/r/rust/comments/fqjot7/crosscompile_rust_programs_to_run_on_turris_omnia/)
-- url: https://medium.com//cross-compile-rust-programs-to-run-on-turris-omnia-e592b555e2aa?source=friends_link&amp;sk=1f8c6b55e04d67482657e1a8a1e21489
+`extern crate lettre;`  
+`use lettre::smtp::authentication::{Credentials, Mechanism};`  
+`use lettre::{SendableEmail, Envelope, EmailAddress, Transport, SmtpClient};`  
+`use lettre::smtp::extension::ClientId;`  
+`use lettre::smtp::ConnectionReuseParameters;`  
+`fn main() {`  
+ `let email_1 = SendableEmail::new(`  
+`Envelope::new(`  
+ `Some(EmailAddress::new("user@localhost".to_string()).unwrap()),`  
+ `vec![EmailAddress::new("root@localhost".to_string()).unwrap()],`  
+ `).unwrap(),`  
+ `"id1".to_string(),`  
+ `"Hello world".to_string().into_bytes(),`  
+ `);`  
+`let email_2 = SendableEmail::new(`  
+`Envelope::new(`  
+ `Some(EmailAddress::new("user@localhost".to_string()).unwrap()),`  
+ `vec![EmailAddress::new("root@localhost".to_string()).unwrap()],`  
+ `).unwrap(),`  
+ `"id2".to_string(),`  
+ `"Hello world a second time".to_string().into_bytes(),`  
+ `);`  
+ `// Connect to a remote server on a custom port`  
+ `let mut mailer = SmtpClient::new_simple("smtp.mailtrap.io").unwrap()`  
+ `// Set the name sent during EHLO/HELO, default is \`localhost\``  
+ `.hello_name(ClientId::Domain("my.hostname.tld".to_string()))`  
+ `// Add credentials for authentication`  
+ `.credentials(Credentials::new("username".to_string(), "password".to_string()))`  
+ `// Enable SMTPUTF8 if the server supports it`  
+ `.smtp_utf8(true)`  
+ `// Configure expected authentication mechanism`  
+ `.authentication_mechanism(Mechanism::Plain)`  
+ `// Enable connection reuse`  
+ `.connection_reuse(ConnectionReuseParameters::ReuseUnlimited).transport();`  
+`let result_1 = mailer.send(email_1);`  
+ `assert!(result_1.is_ok());`  
+ `// The second email will use the same connection`  
+ `let result_2 = mailer.send(email_2);`  
+ `assert!(result_2.is_ok());`  
+ `// Explicitly close the SMTP transaction as we enabled connection reuse`  
+ `mailer.close();`  
+`}`
+
+&amp;#x200B;
+
+It panics on the result asserts. The error in the debugger is:
+
+[CLion debugger](https://preview.redd.it/58ie9nq8tlp41.png?width=740&amp;format=png&amp;auto=webp&amp;s=765c3100b210f9c90535bf849ad77709dc3c11ed)
+
+Does anyone know what I am doing wrong?
+## [10][How to handle money in diesel and rust?](https://www.reddit.com/r/rust/comments/fr0wvc/how_to_handle_money_in_diesel_and_rust/)
+- url: https://www.reddit.com/r/rust/comments/fr0wvc/how_to_handle_money_in_diesel_and_rust/
 ---
+So I'm making a graphql api and I'm going to need to use money as one of my fields.
 
-## [10][The Book versions](https://www.reddit.com/r/rust/comments/fqiwwt/the_book_versions/)
-- url: https://www.reddit.com/r/rust/comments/fqiwwt/the_book_versions/
+I know postgres has a special money field. However, I'm not really sure how to get a value from whatever is thrown to my api and then convert it to Diesel's [Cents](https://docs.diesel.rs/diesel/pg/data_types/struct.Cents.html) class.
+
+I would like to know if anybody has any advice. I would appreciate it.
+## [11][[Help] Cursive T-UI Application structure with mutable states](https://www.reddit.com/r/rust/comments/fqybys/help_cursive_tui_application_structure_with/)
+- url: https://www.reddit.com/r/rust/comments/fqybys/help_cursive_tui_application_structure_with/
 ---
-Hi everyone,
+# \# Intro
+Hi, I have been using `Cursive` and some other crates together to make an auto-clicker.
+A bit of a learning + useful projects started in this recent period of time.
 
-I have a problem with understanding the book versioning. As far as i researched there are stable, beta and nightly and also NoStarch first-edition, second-edition and 2018-edition.  
-I'm not a fan of reading on screen so i face two options, printing one of the stable, beta, nightly or printing one of the versions of the NoStarch (i have low availability in my country and the prices are around 100$).
+UI: [cursive github](https://github.com/gyscos/cursive) + [cursive-tableview github](https://github.com/BonsaiDen/cursive_table_view)
+KeySimulation: [rdev github](https://github.com/Narsil/rdev)
+Hotkey: [hotkey github](https://github.com/unwrittenfun/hotkey-rs)
 
-So which version should i print and what are the differences?
+# \# Program General Structure
+Code general structure, note that `new()` returns `Rc&lt;RefCell&lt;Controller&gt;&gt;` not `Controller`.
+```
+struct Controller {
+siv: Cursive,
+mode: Mode,
+active_cell: Option&lt;ACAction&gt;,
+}
+impl Controller {
+fn new_tableview() { ... } // get new tableview instance
+fn new_siv() { ... } // get new cursive instance
+fn new() -&gt; Rc&lt;RefCell&lt;Controller&gt;&gt; { ... } // get a shared controller
+fn add_action(&amp;self) { ... } // add a new action to view, but check if mode is not RunningAction
+fn run_selected_cell(&amp;self) { ... } // run current selected cell in tableview, but check if cell is None
+}
 
-[View Poll](https://www.reddit.com/poll/fqiwwt)
-## [11][Paris 1.4. Now with macros and more control!](https://www.reddit.com/r/rust/comments/fq1ol9/paris_14_now_with_macros_and_more_control/)
-- url: https://github.com/0x20F/logger
+```
+# \# Issue
+At first, I was having trouble to capture `Controller` in some of the callbacks, such as from key press n for add_action. This was resolved with #415 (comment), by using `Rc&lt;RefCell&lt;Controller&gt;&gt;`.
+
+[gtk closure tutorial link i used for Rc&lt;RefCell&lt;_&gt;&gt;](https://gtk-rs.org/docs-src/tutorial/closures)
+
+However, this restrict me to always `borrow_mut()` to get access to siv:
+
+```
+fn main() {
+let mut controller = Controller::new();
+controller.borrow_mut().siv.run();  // Starts the event loop.
+}
+```
+
+Which means the callbacks that requires access to my controller by `borrow_mut()`, it will panic because the controller has been `borrow_mut()`ed forever in the main code.
+I have thought of separate `siv` from `Controller`, but that makes it hard to update ui with just controller.
+Using `Rc&lt;RefCell&lt;&amp;'a Controller&gt;&gt;` instead `Rc&lt;RefCell&lt;Controller&gt;&gt;` introduces a lifetime issue.
+
+This seems like in a deadlock, `Rc&lt;RefCell&lt;_&gt;&gt;` is required in callback to ensure the program is in right 'state', but this prevents state updating because of `borrow_mut()` twice panic.
+
+# \# End
+
+Going through all the trouble to getting my application to work, I feel like my current way of modelling UI application is definitely not compatible with rust.
+
+It just seems to be so much more easier to get started with programming languages such as C/C++/ObjC.
+
+I would like to get 'trained' to think in the way of rust, similar to how I learned lisp with SICP, by reading some good books, or materials, that walks me through the ideology of rust.
+
+I understand this would be the steep learning curve of rust that I am facing, but I also feel like this learning curve is not an introduction to something new, rather something confusing.
+
+Thanks for reading. Any helpful advices given are appreciated in any ways.
+## [12][Does Rustfmt support column alignment?](https://www.reddit.com/r/rust/comments/fqybka/does_rustfmt_support_column_alignment/)
+- url: https://www.reddit.com/r/rust/comments/fqybka/does_rustfmt_support_column_alignment/
 ---
+like 
 
-## [12][What will happen if I will Pin something inside of function that returns never?](https://www.reddit.com/r/rust/comments/fqiipy/what_will_happen_if_i_will_pin_something_inside/)
-- url: https://www.reddit.com/r/rust/comments/fqiipy/what_will_happen_if_i_will_pin_something_inside/
----
-And how actually never works?
+```
+struct T {
+  id        : i32,
+  active    : bool,
+  username  : String
+}
+```
+
+Also what happened to the weekly small questions thread?
+
+Looks like reddit doesn't display the codeblocks properly in mobile clients. I really do not appreciate this. Ever since they introduced the new redesign, everything has been unpredictable. A complete UX disaster. For those who are confused, the `i32`, `bool` and `String` are intended to be aligned in one column.

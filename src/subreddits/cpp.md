@@ -113,7 +113,105 @@ Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][State of C++20 modules?](https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/)
+## [3][Bolero Murakami, the author of Sprout was dead in Feb 16th](https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/)
+- url: https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/
+---
+Genya Murakami, aka Bolero Murakami was found dead in Feb 16th at his workshop. 32 years old. It seems he was working on his pottery art at night and suddenly died.
+
+[https://www.facebook.com/100519794904313/photos/a.115722580050701/115721186717507/?type=3&amp;theater](https://www.facebook.com/100519794904313/photos/a.115722580050701/115721186717507/?type=3&amp;theater)
+
+&amp;#x200B;
+
+His tweet at Feb 15th 9:51 PM indicate that he felt pain on his back side of neck and head.
+
+[https://twitter.com/bolero\_MURAKAMI/status/1228663003324661760](https://twitter.com/bolero_MURAKAMI/status/1228663003324661760)
+
+&amp;#x200B;
+
+He is the author of C++ library Sprout which is a C++ framework for general compile-time computation. It exploits template and constexpr so hard that some compiler vendor using it as a test case for their compiler implementation.
+
+[https://github.com/bolero-MURAKAMI/Sprout](https://github.com/bolero-MURAKAMI/Sprout)
+
+&amp;#x200B;
+
+The notable works of him were C++ compile-time ray tracing using pure template metaprogramming and later using C++11 constexpr(Do you remember the day when constexpr fucntion can only contains one return statement?)
+
+[http://boleros.hateblo.jp/entry/20111205/1323106563](http://boleros.hateblo.jp/entry/20111205/1323106563)
+
+&amp;#x200B;
+
+Or compile time sound synthesizer.
+
+[http://boleros.hateblo.jp/entry/20121207/1354888090](http://boleros.hateblo.jp/entry/20121207/1354888090)
+
+&amp;#x200B;
+
+I am so sad for his loss and I can't even visit his workshop for the coronavirus situation.
+
+&amp;#x200B;
+
+EDIT: I tell you the memory of Genya Murakami since I occasionally met him.
+
+&amp;#x200B;
+
+Genya Murakami, aka Bolero Murakami or 中3女子(literally, Junior High school 3rd grade student girl) was an exceptional man who lived in an exceptional life.
+
+His parents are artists too. His father, 猪風来(Ifuurai), is a Jōmon artist, meaning, he express his art by the way of Jōmon period. Mostly, by Jōmon pottery.
+
+Jōmon pottery is a traditional earthenware pottery, meaning it doesn't use kiln so it's fired in low temperature. The exact technique was lost but Ifuurai is the one of the researcher who rediscover the necessary techniques. Genya Murakami is the son of Ifuurai.
+
+Ifuurai is a pretty extremest on his Jōmon art to the point that he thought, in order to truly understand the heart of Jōmon people, he must live like the way  Jōmon people did. So he built a Jōmon style dugout house in Hokkaido. He and his wife and Genya Murakami were living in that traditional dugout house until Genya's Junior high or high school. Then the family move to the Okayama prefecture. The building of closed public school was available so they turn that buildings to the workshop and museum for their works.
+
+&amp;#x200B;
+
+Despite the fact that Genya Murakami live in an very strange life during his youth, he grow up, graduate public school like everybody else. After he graduate from a techinical school, he was working as a drafting engineer for a few years. But he thought "playing with the clay is more interesting than this", so he quit his job and follow the father's path.
+
+&amp;#x200B;
+
+As a pottery artist, he learned from his father the techniques of Jomon pottery, lately, he learned enough to create his own art.
+
+&amp;#x200B;
+
+People recognize him as a weird C++ programmer who exploits the template meta programming and constexpr, but his real life work was the Jomon pottery artist. Once, I asked him if the C++ is an art for him, he said "No, C++ is not an art for me. It's one of the things I enjoy doing it."
+## [4][The C++ Annotations, a free (GPL), up-to-date C++(20) learners book/reference manual. From basic C++ to concepts](https://www.reddit.com/r/cpp/comments/fqkf51/the_c_annotations_a_free_gpl_uptodate_c20/)
+- url: http://www.icce.rug.nl/documents/cplusplus/
+---
+
+## [5][Why is Visual Studio producing 30% slower code than clang?](https://www.reddit.com/r/cpp/comments/fqsxwm/why_is_visual_studio_producing_30_slower_code/)
+- url: https://www.reddit.com/r/cpp/comments/fqsxwm/why_is_visual_studio_producing_30_slower_code/
+---
+My JSON parsing code compiled with msvc gets 315 megabytes per second, while the same code compiled with clang gets 412 megabytes per second.  msvc is consistently slower, why is that? And yes I have optimizations on...
+## [6][toml++ v1.0.0 - TOML config file parser and serializer for C++17](https://www.reddit.com/r/cpp/comments/fqo3q6/toml_v100_toml_config_file_parser_and_serializer/)
+- url: https://marzer.github.io/tomlplusplus/
+---
+
+## [7][Discussion : Unified Memory and Cache system CPU+iGPU](https://www.reddit.com/r/cpp/comments/fr09xw/discussion_unified_memory_and_cache_system_cpuigpu/)
+- url: https://www.reddit.com/r/cpp/comments/fr09xw/discussion_unified_memory_and_cache_system_cpuigpu/
+---
+Do you think we ll get to a unified L3+L4 cache memory for CPU and GPU any time soon? 
+
+It's already abundantly clear that in maybe 2 years we ll have chiplet CPU + iGPU + HBM last level cache and combinations in between ... But on another direction , on a monolithic die , could we get CPU + L2 cache , GPU+ L2 cache and then L3 cache for both? What are the limitations on actually doing this today?
+
+\- C++ is clearly heading in an "accelerator aware" future, multicore already but GPU accelerated natively by 2023 with a *mayyybeee .*
+
+\- Different algorithm implementations scale differently on different data sizes , L1 cache miniscule sizes like 30 element arrays , then up to 1000 for L2 and then the last level implementation that just does with all sizes there after. 
+
+&amp;#x200B;
+
+**What is stopping Intel/AMD from putting a shared L3 cache and implementing AVX512 on the integrated GPU part while keeping a more modest CPU compute vector implementation?  Having a shared L3 cache would alleviate the transition from CPU operating on the same data to the GPU operating on the same data.**
+
+Obviously , small size algorithms that fit in L1/L2 cache should be run on CPU part but everything else should run on a better architecture for large computations like the integrated GPU , at better power efficiency too seeing as CPU will do what it does best in the meantime , Out of Order general purpose execution and GPU would do what it does best , highly parallelizeable code .
+
+Eliminating/Hiding DRAM latency for communication CPU/iGPU and utilizing the huge L3 cache bandwidth would do wonders for IPC , let alone leaving other parts of CPU able to do other work.
+
+Lastly, UNDENIABLY , huge problem sizes take so long to compute that latency for transfer is completely hidden behind the monstrous power of an RTX 2080ti for example...
+
+&amp;#x200B;
+
+**TO SUM UP:  Does such an implementation make sense ? Can it succesfully pull off a decent trade off between power , transistor count and performance ? Or  does it not fit anywhere in the Algorithm Data Size increase curve mentioned above somewhere inbetween small data sizes and huge data sizes?**
+
+***I would love an actually informed discussion , because i don't have the knowledge to answer this by myself...*** L4 cache is inevitable in the chiplet future , but is shared L3 cache do-able?
+## [8][State of C++20 modules?](https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/)
 - url: https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/
 ---
 There had been a couple of problems raised few years ago in regards to parallelizing the compilation process in modules being necessarily harder.
@@ -123,11 +221,15 @@ Since then, what happened? Any significant design changes merged to C++20 module
 
 
 Or do people that were pessimistic back then still think modules will be dead on arrival?
-## [4][Why don't the Allocator concept have a way to return the actually allocated size?](https://www.reddit.com/r/cpp/comments/fqfw3q/why_dont_the_allocator_concept_have_a_way_to/)
+## [9][Why don't the Allocator concept have a way to return the actually allocated size?](https://www.reddit.com/r/cpp/comments/fqfw3q/why_dont_the_allocator_concept_have_a_way_to/)
 - url: https://www.reddit.com/r/cpp/comments/fqfw3q/why_dont_the_allocator_concept_have_a_way_to/
 ---
 For containers allocating potentially large continuous blocks like *std::vector*, *std::string*, *abseil::flat_hash_map* etc it would be useful if the container could inquire the allocator about the actual amount that was allocated. If using 2MiB and 1GiB huge pages it's easy to waste a lot of space if the container is not aware of the actually allocated space or the block size of the allocator. Has there been any previous discussion on this?
-## [5][Handling C++20 modules in classic Linux package managers (or how to properly distribute and package C++ modules for Linux)?](https://www.reddit.com/r/cpp/comments/fqgp03/handling_c20_modules_in_classic_linux_package/)
+## [10][What If C++ Abandoned Backward Compatibility?](https://www.reddit.com/r/cpp/comments/fqh63v/what_if_c_abandoned_backward_compatibility/)
+- url: https://robert.ocallahan.org/2020/03/what-if-c-abandoned-backward.html
+---
+
+## [11][Handling C++20 modules in classic Linux package managers (or how to properly distribute and package C++ modules for Linux)?](https://www.reddit.com/r/cpp/comments/fqgp03/handling_c20_modules_in_classic_linux_package/)
 - url: https://www.reddit.com/r/cpp/comments/fqgp03/handling_c20_modules_in_classic_linux_package/
 ---
 Hi,
@@ -145,82 +247,7 @@ I think I must be missing something. My conclusions are horrible yet I can't see
 &amp;#x200B;
 
 **Edit:** English isn't my first language. Sorry for the grammar mistakes.
-## [6][Announcing full support for a C/C++ conformant preprocessor in MSVC | C++ Team Blog](https://www.reddit.com/r/cpp/comments/fpzcyp/announcing_full_support_for_a_cc_conformant/)
-- url: https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/?WT.mc_id=reddit-social-marouill
----
-
-## [7][Share your little-known optimizing trick](https://www.reddit.com/r/cpp/comments/fqfmck/share_your_littleknown_optimizing_trick/)
-- url: https://www.reddit.com/r/cpp/comments/fqfmck/share_your_littleknown_optimizing_trick/
----
-To start off, I'll share mine first. When I use parallel for loop, after processing each element in the vector, I store them in another result vector which I have to guard with a mutex. I was processing image files. So this present 2 problems for me: images are loaded out of order and a mutex limits parallelism.
-
-Before the solution, my implementation in pseudo-code
-
-```
-vector&lt;string&gt; files;
-vector&lt;image&gt; results;
-
-parallel_for(s: files) {
-  image img = load_image(s);
-  take_mutex();
-  results.emplace_back(img);
-}
-
-```
-My solution is to assign the loaded image back to the vector element member. This way, my user images are loaded in order and no mutex.
-
-```
-struct img_obj {
-  string file;
-  image img;
-};
-
-vector&lt;img_obj&gt; objects;
-
-parallel_for(o: objects) {
-
-  o.img = std::move(load_image(o.file));
-
-}
-
-```
-## [8][What If C++ Abandoned Backward Compatibility?](https://www.reddit.com/r/cpp/comments/fqh63v/what_if_c_abandoned_backward_compatibility/)
-- url: https://robert.ocallahan.org/2020/03/what-if-c-abandoned-backward.html
----
-
-## [9][Static analysis in GCC 10](https://www.reddit.com/r/cpp/comments/fpvtd7/static_analysis_in_gcc_10/)
-- url: https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10/
----
-
-## [10][CCLS Server doesn't speak anything](https://www.reddit.com/r/cpp/comments/fqj08q/ccls_server_doesnt_speak_anything/)
-- url: https://www.reddit.com/r/cpp/comments/fqj08q/ccls_server_doesnt_speak_anything/
----
-Hi! I cannot get CCLS to say anything from command line. I've tried to run it in verbose mode, but it outputs no debug information as well. It is installed correctly and starts fine in a docker alpine container. Here's the Dockerfile for that:
-
-```
-FROM alpine:edge
-RUN apk add alpine-sdk cmake make clang clang-static clang-dev llvm-dev llvm-static \
-    &amp;&amp; git clone --depth=1 --recursive https://github.com/MaskRay/ccls \
-    &amp;&amp; cd ccls \
-    &amp;&amp; cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
-    &amp;&amp; cmake --build Release --target install
-
-RUN apk add alpine-sdk clang llvm
-WORKDIR /root
-```
-
-And here's what happens when I try to run it: https://user-images.githubusercontent.com/10388889/77822222-b8b04380-7116-11ea-8b68-f95931f38705.png
-
-Has anyone worked with stdin/stdout mode from terminal in CCLS directly? How do I get CCLS to speak anything? It should've responded with a JSONRPC message saying `Invalid data` in the above screenshot, but it didn't.
-## [11][redis-cpp is a header-only client library in C++ for Redis](https://www.reddit.com/r/cpp/comments/fq70lt/rediscpp_is_a_headeronly_client_library_in_c_for/)
-- url: https://www.reddit.com/r/cpp/comments/fq70lt/rediscpp_is_a_headeronly_client_library_in_c_for/
----
-Hello.  Occasionally, the temptation to try something new leads to the appearance of my new projects on GitHub. Today I'd like to share one my new client library for Redis in C++. I'd really appreciate your feedback.
-
-[https://github.com/tdv/redis-cpp](https://github.com/tdv/redis-cpp)
-
-Thanks.
-## [12][IntelliSense Code Linter for C++ | C++ Team Blog](https://www.reddit.com/r/cpp/comments/fq13bu/intellisense_code_linter_for_c_c_team_blog/)
-- url: https://devblogs.microsoft.com/cppblog/intellisense-code-linter-for-cpp/
+## [12][Prague trip report](https://www.reddit.com/r/cpp/comments/fqo57t/prague_trip_report/)
+- url: https://hatcat.com/?p=119
 ---
 

@@ -19,176 +19,358 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Add react/Vue existing Rails app ?](https://www.reddit.com/r/rails/comments/fr32wy/add_reactvue_existing_rails_app/)
-- url: https://www.reddit.com/r/rails/comments/fr32wy/add_reactvue_existing_rails_app/
+## [2][best implementation for a model with an owner and users?](https://www.reddit.com/r/rails/comments/frkvhe/best_implementation_for_a_model_with_an_owner_and/)
+- url: https://www.reddit.com/r/rails/comments/frkvhe/best_implementation_for_a_model_with_an_owner_and/
 ---
+I have a Team model in my rails app. The team should have an owner. The owner should be able to invite other users to his/her team.
 
-#newbieHere 
-Have you add react or vue on existing Rails  ? I have heard Webpacker would be done this to use React or Vue , would it affects on Rails version also if I add  FE framework?
+I'm using a Team as an "account" for my app. This account can have many users on it, but ultimately belongs to the owner of the team.
 
-If you use react or vue on existing Rails app without do "rails new my-app --webpack=react" ? Here is my another questions
- - should I use gem to use react or vue ? Such as "gem install react_on_rails"
-- or I just use "yard add react react-dom" ?
-## [3][noob questions](https://www.reddit.com/r/rails/comments/fqpsyp/noob_questions/)
-- url: https://www.reddit.com/r/rails/comments/fqpsyp/noob_questions/
----
-So, I've been a Microsoft stack guy for most of my career.  Especially on the web.  I've been happy enough with it to have never looked at Ruby or RoR at all.  In the lockdown, I'm spending some time learning "new" things and have just now watched some Ruby and RoR videos.
+Therefore a team should also have many users. The users can interact with the account/app a certain way. But, the owner has more authorization with what he/she can do with the account/app because of his/her owner status.
 
-It looks to me like "ASP.old (before .NET) but with MVC and Active Record baked in."  Is that about right?
+Also, the owner should be able to assign different roles to any of the users, with each role having it's own unique set of authorizations.
 
-Also, if I were to write a Rails site, where would I host it?  I'm used to using Netlify or just S3 these days for "JAMstack" front ends, with back-end APIs on Azure.
-
-If you had to give an elevator speech about why I might want to consider switching from Vue.js/.NET APIs to RoR, what wold it be?
-
-Thanks!
-## [4][Unable to access instance variables in .js.erb files](https://www.reddit.com/r/rails/comments/fqrdlr/unable_to_access_instance_variables_in_jserb_files/)
-- url: https://www.reddit.com/r/rails/comments/fqrdlr/unable_to_access_instance_variables_in_jserb_files/
----
-Hello,
-
-I posted the following a while ago related to getting action specific javascript to wok in rails 6 (JQuery wasn't working)
-
-https://www.reddit.com/r/rails/comments/dg2c0z/cant_get_action_specific_javascript_working_in/
-
-I feel this is a different issue (of course I could be wrong). I am attempting to get a create action working via javascript `create.js.erb`, but it seems like I can't access the instance variable created by the controller. Just wondering what I am not understanding.
-
-Here is what I have so far:
-
-app/controllers/admin/permissions_controller.rb
-
-      def create
-        @permission = Permission.new permission_params
-
-        respond_to do |format|
-          if @permission.save
-            format.html { redirect_to admin_role_path(@role), success: success_message(@permission) }
-            format.js
-          else
-            format.html { redirect_to admin_role_path(@role), error: error_message }
-            format.js
-          end
-        end
-      end
-
-app/views/admin/permissions/create.js.erb
-
-    elm = document.getElementById(&lt;%= dom_id(@permission.user) %&gt;);
-    elm.style.display = "none";
-
-Console prints out
-
-    VM45161:1 Uncaught SyntaxError: Unexpected string
-        at processResponse (rails-ujs.js:283)
-        at rails-ujs.js:196
-        at XMLHttpRequest.xhr.onreadystatechange (rails-ujs.js:264)
-## [5][Formatting Rails Exectuables](https://www.reddit.com/r/rails/comments/fqpkgu/formatting_rails_exectuables/)
-- url: https://www.reddit.com/r/rails/comments/fqpkgu/formatting_rails_exectuables/
----
-Hi all, so basically, I've been getting into "prettifying" and customizing my terminal experience. This includes git as well as the shell itself. Specifically, one that I am using now that I really enjoy is using the `--pretty` flag for `git log`. 
-
-I was wondering if there's an equivalent for rails executables, specifically, in my case, `(bundle exec) rails routes`. Namely, I want a way to skip the printing of the default Active Storage routes when running this command. 
-
-Thanks!
-## [6][ActionText iframe embeds](https://www.reddit.com/r/rails/comments/fqj15c/actiontext_iframe_embeds/)
-- url: https://www.reddit.com/r/rails/comments/fqj15c/actiontext_iframe_embeds/
----
-Hi,
-
-I am currently building some kind of inventory tracking system and I am using ActionText to capture rich text descriptions for products.
-
-It would be great if I could just paste iframe embed and view it on `show` page. It doesn't need to be transformed to embed immediately in editor. I know this can be security risk, but this is in dashboard and only admins can edit this content so is there a way to disable ActionText html sanitization for `&lt;iframe&gt;` html tag?
-
-Currently `@product.description.body.to_trix_html` outputs santized `&lt;iframe&gt;` tags.
-
-    &amp;lt;iframe width=\"560\"...
-
-Thanks r/rails for helping me, I have learned a lot about rails from answers from this community.
-
-Bartol
+Lastly, users may have their own teams, separate from the ones the members of. Meaning, that users can have multiple teams, being members of some, and being owners of others (although, it's likely they'll only ever be the owner of one, for convenience reasons).
 
 &amp;#x200B;
 
-Edit:
+How can I implement this? My initial thought was this:
 
-Solved!
+**3 models**: Team, User, UserTeam
 
-    &lt;div class="trix-content"&gt;
-      &lt;%= raw CGI.unescape_element @product.description.body.to_s, ['iframe'] %&gt;
-    &lt;/div&gt;
-## [7][When do you decide to rewrite a project?](https://www.reddit.com/r/rails/comments/fq9hhh/when_do_you_decide_to_rewrite_a_project/)
-- url: https://www.reddit.com/r/rails/comments/fq9hhh/when_do_you_decide_to_rewrite_a_project/
+**Many-to-many assocation (has\_many through):** using user\_team as the middle man.
+
+Lastly, I thought to keep track of roles on the user\_team records.
+
+But this doesn't *feel* right. Ideally, I'd like to be able to write
+
+    team.users # =&gt; returns all users including owner
+    team.owner # =&gt; returns user that is the owner
+    
+    user.teams # =&gt; returns all teams user belongs to (including owned teams)
+    user.owned_teams # =&gt; returns only the teams that the user owns.
+    
+    # and most importantly
+    team.owner == @owner # =&gt; true
+    team.users.includes?(@owner) # =&gt; true
+
+because owners are technically users with an owner role.
+
+What do you all think? Was my first thought on the right track? is there a better way? or should I just completely give up programming and become a musician?
+
+Thanks!
+## [3][Building a rails app that can upload pictures to an S3 bucket via CarrierWave and fog-aws, but it's giving me a Errno::EPIPE at /posts Broken pipe error](https://www.reddit.com/r/rails/comments/frmi1y/building_a_rails_app_that_can_upload_pictures_to/)
+- url: https://www.reddit.com/r/rails/comments/frmi1y/building_a_rails_app_that_can_upload_pictures_to/
 ---
-I am revisiting an old rails app that I was developing, but the stack I used is completely different and the code quality and design is pretty bad. I'm considering just doing a complete rewrite. When do you guys say screw it and rewrite it?
-## [8][using instance_of with mocha for ActionController::TestCase](https://www.reddit.com/r/rails/comments/fqez0r/using_instance_of_with_mocha_for/)
-- url: https://www.reddit.com/r/rails/comments/fqez0r/using_instance_of_with_mocha_for/
+Edit: Note to anyone with the same issue in the future: 
+
+SOLVED - Remember to specify the region in fog.credentials 
+
+&amp;#x200B;
+
+Hi there.
+
+First of all this is my first post, I am really new at both Ruby and Rails, so I am glad to be here.
+
+The last few days I've tried following a youtube tutorial creating an "instagram clone" cause I for my second rails project wanted to learn about implementing a postgres db, devise user authentication and also file hosting on AWS.
+
+For the last 2 days I have been stuck on this issue where I cannot push anything to S3, and I feel like either the error is extremely vague or I am just not equipped to understand it. I tried using better\_errors and binding\_of\_caller to get a better feel for what's going on, but I am as stuck as can be.
+
+things I've done:
+
+I generated a CarrierWave uploader via the cli, and changed it to use :fog for storageI created the CarrierWave initializer and filled in the required fog credentials and directory as such:
+
+&amp;#x200B;
+
+https://preview.redd.it/65f2byqgjrp41.png?width=1310&amp;format=png&amp;auto=webp&amp;s=9837ef56e4d1a0baec84e83d9a96405a6d10d183
+
+I have the variables for my credentials and bucket in a separate application.yml file living in the config directory
+
+I then have a Post model in which I mount the uploader mentioned, and I have a controller for it. It is the controller specifically that throws the error
+
+&amp;#x200B;
+
+https://preview.redd.it/emqer83ckrp41.png?width=1490&amp;format=png&amp;auto=webp&amp;s=94ad7b7745fbf906b4d2e0136406410decadfa6d
+
+Please let me know what other information is required cause right now I am feeling desperate and that's never a fun experience :)
+
+(also, if someone would be willing to help me out with screensharing or similar, I would appreciate and welcome it)
+
+Best regards
+
+&amp;#x200B;
+
+ps: forgot to mention that it looks like it times out when trying to upload/connect to aws, and that I verified the credentials and bucket with the awscli tool
+## [4][Ruby 2.7.0 Warnings](https://www.reddit.com/r/rails/comments/frjwgd/ruby_270_warnings/)
+- url: https://www.reddit.com/r/rails/comments/frjwgd/ruby_270_warnings/
 ---
-In my controller test, I need to stub a method where a parameter should be an instance of a class. I decided I wanted to use instance\_of method here =&gt; [https://mocha.jamesmead.org/Mocha/API.html](https://mocha.jamesmead.org/Mocha/API.html)
-
-I use `ActionController::TestCase` and I import both in the test class file. 
-
-    require 'mocha/setup'
-    require 'mocha/api' 
-
-And from the documentation, I can see that parameter matching (instance\_of) is defined in the api.rb file but when I try 
-
-    User.any_instance.stubs(:something).with(instance_of(String)).returns true
-
-I get an error message like instance\_of is not defined
-
-But I'm not able to include the required files to get this to work. Any help would be great :)
-## [9][Successive Q and A](https://www.reddit.com/r/rails/comments/fq8r1f/successive_q_and_a/)
-- url: https://www.reddit.com/r/rails/comments/fq8r1f/successive_q_and_a/
+I started using Ruby 2.7.0 for my projects. However there seems to be a lot of warning messages with Rails 6 libraries like activesupport. Will this be an issue moving forward?
+## [5][From %&lt;a href=... to &lt;%=link_to in text.gsub!](https://www.reddit.com/r/rails/comments/frmzyn/from_a_href_to_link_to_in_textgsub/)
+- url: https://www.reddit.com/r/rails/comments/frmzyn/from_a_href_to_link_to_in_textgsub/
 ---
-Trying to come up with a way for when a user is filling out the answers for multiple questions on a form to just see one at a time and when they answer, it stores the value and goes to the next question. Would this be something better done with using React or Angular, perhaps? Curious if anyone has tackled a similar issue and what route they went.
-## [10][Has any of you worked on a HIPAA codebase? Advice?](https://www.reddit.com/r/rails/comments/fq49wk/has_any_of_you_worked_on_a_hipaa_codebase_advice/)
-- url: https://www.reddit.com/r/rails/comments/fq49wk/has_any_of_you_worked_on_a_hipaa_codebase_advice/
+Hi, I'm customizing my  **markdown redcarpet (**`class MarkdownRenderer &lt; Redcarpet::Render::HTML`**)**.
+
+I found this part
+
+      def paragraph(text)
+        text.gsub!(/@(\w+)/) do |match|
+          %(&lt;a href="/user/#{match[1..-1]}"&gt;#{match}&lt;/a&gt;)
+        end
+
+Can I replace `%(&lt;a href="/user/#{match[1..-1]}"&gt;#{match}&lt;/a&gt;)` using `&lt;%= link_to #{match}, user_path(#{match}) etc. etc.` ?
+
+**How to do?** What is the right syntax?
+## [6][Live podcasting in rails](https://www.reddit.com/r/rails/comments/frbetq/live_podcasting_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/frbetq/live_podcasting_in_rails/
 ---
-I am about to start work on a multi-tenant HIPAA-compatible SAAS.
-
-My understanding is that PII needs to be encrypted at rest. How do you go about this? 
-
-Keep an encryption key for each tenant and encrypt these fields? But, if the encryption key is a part of the database which it would need to be, then how is that protection?
-
-This in addition to heroku shield dynos and database of course. https://www.heroku.com/compliance
-
-Or, would using the shield dyno and database be sufficient?
-## [11][Using multiple parameters in scope using has_scope](https://www.reddit.com/r/rails/comments/fq5mu0/using_multiple_parameters_in_scope_using_has_scope/)
-- url: https://www.reddit.com/r/rails/comments/fq5mu0/using_multiple_parameters_in_scope_using_has_scope/
+Hello, I want to ask how I can build a live podcasting app on rails. Something like facebook's live video. Thanks!
+## [7][Dtos in rails](https://www.reddit.com/r/rails/comments/frn6cd/dtos_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/frn6cd/dtos_in_rails/
 ---
-Hi everyone,  
+Hi, im from c#. How to create dto in ruby on rails?
+## [8][Is there any way to run a command automatically after ```rails s``` is run?](https://www.reddit.com/r/rails/comments/frhstu/is_there_any_way_to_run_a_command_automatically/)
+- url: https://www.reddit.com/r/rails/comments/frhstu/is_there_any_way_to_run_a_command_automatically/
+---
+I want to ensure that whenever the server starts up it destroys all entries in the Conversations model ```Conversations.destroy_all```. This is to prevent some after effects up the server shutting down abruptly (there are some methods in a channels unsubscribe that need to run).
+## [9][Rails Integration Test (Internal Response Error)](https://www.reddit.com/r/rails/comments/freuf4/rails_integration_test_internal_response_error/)
+- url: https://www.reddit.com/r/rails/comments/freuf4/rails_integration_test_internal_response_error/
+---
+I am trying to write an integration test for a simple create route, and could use some help. Everything works just fine, including the redirect, but when I check to see if the post had a valid response, it is saying that it turned a 500 response rather than a 200. Here is the code:
+
+Integration Test:
+
+```
+require 'test\_helper'  
+class *CreateEventTest* &lt; ActionDispatch::IntegrationTest  
+ fixtures :users  
+ test "can login and create an event" do  
+ get "/login"  
+ assert\_response :success  
+ post "/login", params: {user\_name: users(:one).user\_name, password: 'secret'}  
+follow\_redirect!  
+assert\_equal 200, status  
+assert\_equal "/", path  
 
 
-I'm using the [has\_scope](https://github.com/heartcombo/has_scope) gem for my scopes, and I'm trying to create a scope which takes two parameters, location and distance. I'm using the [geocoder](https://github.com/alexreisner/geocoder) gem to find venues within a certain location using the .near method.  
+get "/events/new"  
+ assert\_response :success  
+ post '/events', params: { event: { name: "Event Title", description: "Description", location: "Search Results  
+1600 Pennsylvania Ave NW, Washington, DC 20500", date\_from: DateTime.now + 10, date\_to: DateTime.now + 15, latitude: -35.000000, longitude: 100.000000}}  
+assert\_response :redirect  
+ follow\_redirect!  
+assert\_response :created  
+ end  
+end
 
+```
 
-Here's my existing scope (which is just for location):
+Events Controller:
 
-    scope :location, -&gt; location { near(location) }
-
-But now want to give distance as an extra parameter.  
-Here's essentially what I want to do (but does not work)
-
-    scope :by_location_and_distance, -&gt; location, distance { near(location, distance) }
-
-I think the reason this doesn't work is because has\_scope is looking for a param named "by\_location\_and\_distance". Which I do not have, as I have "location" and "distance" as two separate params.  
-
-
-I've also tried this (which I hoped would allow the scope to access the params hash (first time I've ever used the lambda keyword so this was a complete guess - unsurprisingly it also does not work).
-
-    scope :by_location_and_distance, lambda { |params| near(params["location"], params["distance"]) }
-
-  
-I've also tried to supply the params to the scope in the controller when calling has\_scope, like so:
-
-    has_scope :by_location_and_distance do |controller, scope|
-        scope.by_location_and_distance(params[:location], params[:distance])
+```
+# POST /events
+  # POST /events.json
+  def create
+    @event = Event.new(event_params)
+    respond_to do | format |
+      if @event.save
+        if(params.require(:event).key?("tags"))
+          tags = Tag.find(params.require(:event)['tags'])
+        else
+          tags = Tag.find_by(name: "Other") # Set default tag if none was selected
+        end
+        @event.tags &lt;&lt; tags
+        UserEventRelationship.create(event_id: @event.id, user_id: current_user.id, role_type_id: 0)
+        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.json { render json: @event, status: :created, location: @event }
+      else
+        format.html {render 'new'}
+        format.json {render json: @event.errors, status: :unprocessable_entity }
       end
+    end
+  end
 
-This also doesn't work. None of these throw an error, but it's as though the scope hasn't run.  
-I'm running out of ideas a bit here. Has anyone used this gem and can explain to me how to give the scope two different params? All my other scopes only require one param so this is different to the logic I've been using up till now.  
+private
+
+    def event_params
+      params.require(:event).permit(:name, :date_from,
+      :location, :date_to, :description, :picture, :tags, :latitude, :longitude)
+    end
+
+```
+
+Here are my routes:
+```
+Rails.application.routes.draw do
+  resources :users
+  resources :events
+  resources :account_activations, only: [:edit]
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get  '/events/new',  to: 'events#new'
+  get  '/browse',  to: 'events#index'
+  post '/events/:id/signup', to: 'events#register', as: 'register'
+  delete '/events/:id/unregister', to: 'events#unregister', as: 'unregister'
+  get '/home', to: 'home#index'
+
+  get 'sessions/new'
+  get  '/signup',  to: 'users#new'
+  get    '/login',   to: 'sessions#new'
+  get    '/profile',   to: 'users#profile'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  post '/setUserLocation', to: 'users#setUserLocation'
+
+  root 'home#index'
 
 
-Or even if you have advice on how I can debug this, that would be useful. I feel like the has\_scopes gem uses a lot of rails magic which is kind of working against me here, as I don't actually know how to debug it since all my scopes are being called in one line in controller#index (`@venues = apply_scopes(Venue).all`)  
+end
+
+```
+ 
+Here is the error I get:
+```
+Failure:
+CreateEventTest#test_can_login_and_create_an_event [/Users/user/Documents/GitHub/my_app/test/integration/create_event_test.rb:21]:
+Expected response to be a &lt;201: created&gt;, but was a &lt;500: Internal Server Error&gt;.
+Expected: 201
+  Actual: 500
+```
+## [10][Warning: The running version of Bundler is older than the version that created the lockfile](https://www.reddit.com/r/rails/comments/fr6ulk/warning_the_running_version_of_bundler_is_older/)
+- url: https://www.reddit.com/r/rails/comments/fr6ulk/warning_the_running_version_of_bundler_is_older/
+---
+Hi all,  
+
+
+I can't seem to get my system to use the version of bundler specified when I run "ruby -v".  
+
+
+I keep getting the error "the running version of Bundler (2.1.2) is older than the version that created the lockfile (2.1.4)".  
+
+
+They appear to match, but I can't seem to get rid of the error:  
+
+
+    gem install bundler:2.1.4
+    
+    Successfully installed bundler-2.1.4
+    1 gem installed
+    
+    ➜  project git:(upgrade_ruby) ✗ bundle -v
+    Bundler version 2.1.4
+    
+    ➜  project git:(upgrade_ruby) ✗ bundle exec bundle -v
+    Bundler version 2.1.4
+    
+    ➜  project git:(upgrade_ruby) ✗ rails s
+    
+    Warning: the running version of Bundler (2.1.2) is older than the version that created the lockfile (2.1.4). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.1.4`.
+
+Can anyone help me to identify why my system is seemingly using a version of bundler other than that which is returned with bundle -v, and also how to change it to the latest?  
 
 
 Thanks.
+## [11][Failed to run multiple Rails apps with Unicorn + Nginx on single AWS EC2 Instance](https://www.reddit.com/r/rails/comments/frar43/failed_to_run_multiple_rails_apps_with_unicorn/)
+- url: https://www.reddit.com/r/rails/comments/frar43/failed_to_run_multiple_rails_apps_with_unicorn/
+---
+I am going to run multiple Rails apps on AWS EC2 Instance with Unicorn and Nginx.
+
+I could run one rails app on **mydomain.com**
+
+So project will be on **mydomain.com/app1** and **mydomain.com/app2**
+
+Projects are in `/home/ubuntu/work/app1` and `/home/ubuntu/work/app2`
+
+***/etc/nginx/sites-available/default***
+
+`upstream app1 {`
+
+`server unix:/home/ubuntu/work/app1/shared/sockets/unicorn.sock fail_timeout=0;`
+
+`}`
+
+`upstream app2 {`
+
+`server unix:/home/ubuntu/work/app2/shared/sockets/unicorn.sock fail_timeout=0;`
+
+`}`
+
+`server {`
+
+`listen 80;`
+
+`server_name localhost;`
+
+`root /home/ubuntu/work;`
+
+`access_log /home/ubuntu/work/log/nginx.access.log;`
+
+`error_log /home/ubuntu/work/log/nginx.error.log;`
+
+`location /app1/ {`
+
+`root /home/ubuntu/work/app1/public;`
+
+`rewrite ^/app1/(.*)$ /$1 break;`
+
+`try_files /app1/$uri/index.html /app1/$uri.html /app1/$uri @app1;`
+
+`}`
+
+`location /app2/ {`
+
+`root /home/ubuntu/work/app2/public;`
+
+`rewrite ^/app2/(.*)$ /$1 break;`
+
+`try_files /app2/$uri/index.html /app2/$uri.html /app2/$uri @app2;`
+
+`}`
+
+`location @app1 {`
+
+`proxy_pass` [`http://app1`](http://app1)`;`
+
+`proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`
+
+`proxy_set_header Host $http_host;`
+
+`proxy_redirect off;`
+
+`}`
+
+`location @app2 {`
+
+`proxy_pass` [`http://app2`](http://app2)`;`
+
+`proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`
+
+`proxy_set_header Host $http_host;`
+
+`proxy_redirect off;`
+
+`}`
+
+`error_page 500 502 503 504 /500.html;`
+
+`client_max_body_size 4G;`
+
+`keepalive_timeout 10;`
+
+`}`
+
+&amp;#x200B;
+
+The error I am getting now. (Looks like the internal errors)
+
+    We're sorry, but something went wrong. If you are the application owner check the logs for more information.  
+
+I have checked these files to check logs.
+
+    /home/ubuntu/work/log/nginx.error.log /home/ubuntu/work/fastland1/shared/log/unicorn.stderr.log  /home/ubuntu/work/fastland2/shared/log/unicorn.stderr.log  
+
+But I can't find any log in nginx.error.log
+
+And there were just warning in 2 unicorn.stderr.log files.
+
+There were not any errors.
+
+Anyone can help me?

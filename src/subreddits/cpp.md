@@ -76,6 +76,7 @@ Term | Meaning
 -|-
 **Cancelled** | The event will not happen on the planned dates and will not be rescheduled in 2020.
 **Postponed** | The event will not happen on the planned dates but may happen later in 2020.
+**Virtual** | The event is now virtual.
 **No Date Changes Yet** | The event has not announced any changes to the planned dates.
 
 # 2020 Conferences
@@ -94,7 +95,7 @@ Event | Location | Original Dates | Status | New Dates
 [Qt World Summit](https://www.qt.io/qtws20) | Palm Springs, California, US | 05-12 to 05-14 | [Postponed](https://www.qt.io/blog/qt-world-summit-20-postponed-to-october) | 10-20 to 10-22
 [Core C++](https://corecpp.org) | Tel Aviv, Israel | 05-25 to 05-27 | [Postponed](https://twitter.com/corecpp/status/1238373483501010944) | Autumn
 [Total Chaos](https://www.chaosgroup.com/total-chaos) | Sofia, Bulgaria | 05-29 to 05-31 | [Cancelled](https://www.chaosgroup.com/total-chaos) |
-[Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | No Date Changes Yet |
+[Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | [Postponed](https://cpponsea.uk/news/2020-conference-rethink.html) |
 [Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | No Date Changes Yet |
 [CPPP](https://cppp.fr) | Paris, France | 06-22 to 06-23 | [Cancelled](https://cppp.fr/blog/canceled) |
 [CppCon](https://cppcon.org) | Aurora, CO, US | 09-13 to 09-18 | No Date Changes Yet |
@@ -112,8 +113,42 @@ Location | Original Dates | Status | New Dates
 Group | Location | Status | Until
 -|-|-|-
 [ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
+[PDXCPP](https://www.meetup.com/pdxcpp) | Portland, Oregon, US | [Postponed](https://www.meetup.com/pdxcpp/events/xgjlqrybcfbwb/) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
-## [3][Bolero Murakami, the author of Sprout was dead in Feb 16th](https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/)
+[C++TO](https://www.meetup.com/CPPTORONTO/) | Toronto, Ontario, Canada | [Postponed](https://www.meetup.com/CPPTORONTO/) | Indefinitely
+[C++ Montréal](https://www.meetup.com/CppMtl/) | Montréal, Québec, Canada | [Postponed](https://www.meetup.com/CppMtl/events/269392467/) | Indefinitely
+[Bulgaria C++ Meetup](https://dev.bg/groups/c-c-plus-plus/) | Sofia, Bulgaria | [Virtual](https://dev.bg/groups/c-c-plus-plus/) | Indefinitely
+## [3][Boost.Nowide released](https://www.reddit.com/r/cpp/comments/frnw7y/boostnowide_released/)
+- url: https://www.reddit.com/r/cpp/comments/frnw7y/boostnowide_released/
+---
+Can be found in: [https://github.com/boostorg/nowide](https://github.com/boostorg/nowide)
+
+**Boost.Nowide** is a new addition of the upcoming 1.73.0 Boost release which has been pending for a long time now. It is finally ready to be used!
+
+**In short**:  It provides Standard library functions with UTF-8 API on Windows
+
+So if you wanted to do cross-platform `std::fopen` or `std::ofstream` to open files by an UTF-8 encoded name but were hit by Windows using UTF-16 instead you can now simply use `boost::nowide::fopen` or `boost::nowide::ofstream` and have it handle all the conversions in the background.
+
+There are also some custom functions for conversion of strings to interoperate with other WinAPI functions. In short: `boost::nowide::narrow` and `boost::nowide::widen` will convert your wide string to narrow (UTF-16 -&gt; UTF-8) and back.
+
+The library has existed for a while now but contained some outright bugs and performance degradation. Those have been fixed now. On top there is CMake integration, support for use as a submodule (`add_subdirectory("path/to/nowide")`) and a standalone version which does not require Boost at all.
+
+Note that the library is currently usable as a submodule with any Boost version of at least 1.56. So you don't have to wait for Boost 1.73 to be released.
+
+Versioning: The library will get tags from the usual Boost releases but also has an internal version which adheres to semantic versioning. To differentiate that from the Boost build it starts at `10.0.0`.
+
+I invite you to review the code, use it now and provide feedback!
+## [4][TheLartians/BitView - Have your cake and eat it! A C++17 bit view for vector types.](https://www.reddit.com/r/cpp/comments/frdufc/thelartiansbitview_have_your_cake_and_eat_it_a/)
+- url: https://github.com/TheLartians/BitView
+---
+
+## [5][Using boost for serialising into XML](https://www.reddit.com/r/cpp/comments/frq5ye/using_boost_for_serialising_into_xml/)
+- url: https://www.reddit.com/r/cpp/comments/frq5ye/using_boost_for_serialising_into_xml/
+---
+I know boost can be used to serialise into text files or file types of that sort. 
+Would you recommend it for XML? I would need to edit the XML itself and create objects directly from the new XML.
+Or should I consider other libraries like [pugixml](https://pugixml.org/)?
+## [6][Bolero Murakami, the author of Sprout was dead in Feb 16th](https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/)
 - url: https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/
 ---
 Genya Murakami, aka Bolero Murakami was found dead in Feb 16th at his workshop. 32 years old. It seems he was working on his pottery art at night and suddenly died.
@@ -173,45 +208,32 @@ As a pottery artist, he learned from his father the techniques of Jomon pottery,
 &amp;#x200B;
 
 People recognize him as a weird C++ programmer who exploits the template meta programming and constexpr, but his real life work was the Jomon pottery artist. Once, I asked him if the C++ is an art for him, he said "No, C++ is not an art for me. It's one of the things I enjoy doing it."
-## [4][The C++ Annotations, a free (GPL), up-to-date C++(20) learners book/reference manual. From basic C++ to concepts](https://www.reddit.com/r/cpp/comments/fqkf51/the_c_annotations_a_free_gpl_uptodate_c20/)
-- url: http://www.icce.rug.nl/documents/cplusplus/
+## [7][Why is there a std::runtime_error if there are no compile time exceptions? Why specify "runtime" if there is no alternative?](https://www.reddit.com/r/cpp/comments/frptsh/why_is_there_a_stdruntime_error_if_there_are_no/)
+- url: https://www.reddit.com/r/cpp/comments/frptsh/why_is_there_a_stdruntime_error_if_there_are_no/
 ---
 
-## [5][Why is Visual Studio producing 30% slower code than clang?](https://www.reddit.com/r/cpp/comments/fqsxwm/why_is_visual_studio_producing_30_slower_code/)
+## [8][Purpose of moduli here](https://www.reddit.com/r/cpp/comments/frq29j/purpose_of_moduli_here/)
+- url: https://www.reddit.com/r/cpp/comments/frq29j/purpose_of_moduli_here/
+---
+    last = (last + 1) % size;  
+Is the line I'm referring to. This is in a college textbook discussing queues. And as far as I can tell there's no purpose. The variable `last` always starts as `-1` (so the result of this will be `0`) and there is no way for it to go past `size` so the moduli will never change the amount in `last` Correct?  
+
+&amp;nbsp;
+
+Is there something I'm missing?
+## [9][Why is Visual Studio producing 30% slower code than clang?](https://www.reddit.com/r/cpp/comments/fqsxwm/why_is_visual_studio_producing_30_slower_code/)
 - url: https://www.reddit.com/r/cpp/comments/fqsxwm/why_is_visual_studio_producing_30_slower_code/
 ---
 My JSON parsing code compiled with msvc gets 315 megabytes per second, while the same code compiled with clang gets 412 megabytes per second.  msvc is consistently slower, why is that? And yes I have optimizations on...
-## [6][toml++ v1.0.0 - TOML config file parser and serializer for C++17](https://www.reddit.com/r/cpp/comments/fqo3q6/toml_v100_toml_config_file_parser_and_serializer/)
+## [10][The C++ Annotations, a free (GPL), up-to-date C++(20) learners book/reference manual. From basic C++ to concepts](https://www.reddit.com/r/cpp/comments/fqkf51/the_c_annotations_a_free_gpl_uptodate_c20/)
+- url: http://www.icce.rug.nl/documents/cplusplus/
+---
+
+## [11][toml++ v1.0.0 - TOML config file parser and serializer for C++17](https://www.reddit.com/r/cpp/comments/fqo3q6/toml_v100_toml_config_file_parser_and_serializer/)
 - url: https://marzer.github.io/tomlplusplus/
 ---
 
-## [7][Discussion : Unified Memory and Cache system CPU+iGPU](https://www.reddit.com/r/cpp/comments/fr09xw/discussion_unified_memory_and_cache_system_cpuigpu/)
-- url: https://www.reddit.com/r/cpp/comments/fr09xw/discussion_unified_memory_and_cache_system_cpuigpu/
----
-Do you think we ll get to a unified L3+L4 cache memory for CPU and GPU any time soon? 
-
-It's already abundantly clear that in maybe 2 years we ll have chiplet CPU + iGPU + HBM last level cache and combinations in between ... But on another direction , on a monolithic die , could we get CPU + L2 cache , GPU+ L2 cache and then L3 cache for both? What are the limitations on actually doing this today?
-
-\- C++ is clearly heading in an "accelerator aware" future, multicore already but GPU accelerated natively by 2023 with a *mayyybeee .*
-
-\- Different algorithm implementations scale differently on different data sizes , L1 cache miniscule sizes like 30 element arrays , then up to 1000 for L2 and then the last level implementation that just does with all sizes there after. 
-
-&amp;#x200B;
-
-**What is stopping Intel/AMD from putting a shared L3 cache and implementing AVX512 on the integrated GPU part while keeping a more modest CPU compute vector implementation?  Having a shared L3 cache would alleviate the transition from CPU operating on the same data to the GPU operating on the same data.**
-
-Obviously , small size algorithms that fit in L1/L2 cache should be run on CPU part but everything else should run on a better architecture for large computations like the integrated GPU , at better power efficiency too seeing as CPU will do what it does best in the meantime , Out of Order general purpose execution and GPU would do what it does best , highly parallelizeable code .
-
-Eliminating/Hiding DRAM latency for communication CPU/iGPU and utilizing the huge L3 cache bandwidth would do wonders for IPC , let alone leaving other parts of CPU able to do other work.
-
-Lastly, UNDENIABLY , huge problem sizes take so long to compute that latency for transfer is completely hidden behind the monstrous power of an RTX 2080ti for example...
-
-&amp;#x200B;
-
-**TO SUM UP:  Does such an implementation make sense ? Can it succesfully pull off a decent trade off between power , transistor count and performance ? Or  does it not fit anywhere in the Algorithm Data Size increase curve mentioned above somewhere inbetween small data sizes and huge data sizes?**
-
-***I would love an actually informed discussion , because i don't have the knowledge to answer this by myself...*** L4 cache is inevitable in the chiplet future , but is shared L3 cache do-able?
-## [8][State of C++20 modules?](https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/)
+## [12][State of C++20 modules?](https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/)
 - url: https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/
 ---
 There had been a couple of problems raised few years ago in regards to parallelizing the compilation process in modules being necessarily harder.
@@ -221,33 +243,3 @@ Since then, what happened? Any significant design changes merged to C++20 module
 
 
 Or do people that were pessimistic back then still think modules will be dead on arrival?
-## [9][Why don't the Allocator concept have a way to return the actually allocated size?](https://www.reddit.com/r/cpp/comments/fqfw3q/why_dont_the_allocator_concept_have_a_way_to/)
-- url: https://www.reddit.com/r/cpp/comments/fqfw3q/why_dont_the_allocator_concept_have_a_way_to/
----
-For containers allocating potentially large continuous blocks like *std::vector*, *std::string*, *abseil::flat_hash_map* etc it would be useful if the container could inquire the allocator about the actual amount that was allocated. If using 2MiB and 1GiB huge pages it's easy to waste a lot of space if the container is not aware of the actually allocated space or the block size of the allocator. Has there been any previous discussion on this?
-## [10][What If C++ Abandoned Backward Compatibility?](https://www.reddit.com/r/cpp/comments/fqh63v/what_if_c_abandoned_backward_compatibility/)
-- url: https://robert.ocallahan.org/2020/03/what-if-c-abandoned-backward.html
----
-
-## [11][Handling C++20 modules in classic Linux package managers (or how to properly distribute and package C++ modules for Linux)?](https://www.reddit.com/r/cpp/comments/fqgp03/handling_c20_modules_in_classic_linux_package/)
-- url: https://www.reddit.com/r/cpp/comments/fqgp03/handling_c20_modules_in_classic_linux_package/
----
-Hi,
-
-I've asked (approximately) the same question on StackOverflow a few months back, [here](https://stackoverflow.com/questions/59598282/how-would-linux-package-managers-handle-c20-modules). But I didn't get a conclusive answer and the problem is starting to bug me again.
-
-Anyway. C++20's modules are dependent on the exact version of the compiler they are using. You can't use modules built by GCC on clang. And you can't use modules built by GCC 9 on GCC 10.
-
-I find this requirement quite troublesome as a library author. Let's say there's a library \`awsomecpp\`. Currently packaging is as simple as putting the .so file and headers into a directory, specify the dependencies and launch the packaging process. And distributing pre-built packages are the norm. But with C++20 modules. We have to specify which exact compiler the package depends on, which forces us to built at least two binary releases, \`awsomecpp-gcc\` and \`awsomecpp-clang\`, on most distros. Also as now libraries depends on the exact compiler version. Updating the compiler forces the entire system to download all libraries that are using modules. I don't see this is viable.
-
-There's also problem if we ditch binary releases and stick with source packages (package all the module definition and implementation units). Then everything depends on \`awsomecpp\` have to be compiled on the user's system, it gets worse if \`awsomecpp\` is a luge library and takes forever to compile. Effectively turning every distro into Gentoo or AUR. Which isn't a good solution either.
-
-I think I must be missing something. My conclusions are horrible yet I can't see where I'm wrong. Is there a solution?
-
-&amp;#x200B;
-
-**Edit:** English isn't my first language. Sorry for the grammar mistakes.
-## [12][Prague trip report](https://www.reddit.com/r/cpp/comments/fqo57t/prague_trip_report/)
-- url: https://hatcat.com/?p=119
----
-

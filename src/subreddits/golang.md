@@ -1,125 +1,156 @@
 # golang
-## [1][100+ LeetCode solutions in Go](https://www.reddit.com/r/golang/comments/fqu0nf/100_leetcode_solutions_in_go/)
-- url: https://www.reddit.com/r/golang/comments/fqu0nf/100_leetcode_solutions_in_go/
----
-I'd like to share a set of 100+ solutions to LeetCode problems that are all written in Go. My hope is that these solutions can serve as a helpful reference for others, since there is not always a solution available that's written in Go.
-
-You can check out the solutions at: [https://github.com/austingebauer/go-leetcode](https://github.com/austingebauer/go-leetcode)
-
-I hope this will be a helpful resource to someone :) If you find it useful, a project star is much appreciated.
-## [2][Service for markdown sharing in Go](https://www.reddit.com/r/golang/comments/fr5jpl/service_for_markdown_sharing_in_go/)
-- url: https://www.reddit.com/r/golang/comments/fr5jpl/service_for_markdown_sharing_in_go/
----
-I've written simple service for markdown sharing in Go.
-It renders raw markdown to pages and supports CommonMark markdown with additional extensions like tweet embedding.
-
-Further I'm planning to add posts editing support, enhance styles and add minor frontend features, add more extensions to markdown, but main feature is keeping clean and simple.
-
-Comments on service itself, code review, or notes about project architecture will be *very* appreciated!
-
-Code on GitHub:
-https://github.com/vdimir/markify
-
-Deployed application:
-https://markify.dev/
-## [3][formatting library for Node-like (recursive) data structures](https://www.reddit.com/r/golang/comments/fr5606/formatting_library_for_nodelike_recursive_data/)
-- url: https://www.reddit.com/r/golang/comments/fr5606/formatting_library_for_nodelike_recursive_data/
----
-[https://github.com/roz3x/formatter](https://github.com/roz3x/formatter)
-
-not a common use-case but , i needed something like that. a comment would be great . 👍
-## [4][How To Separate Library Packages in Go](https://www.reddit.com/r/golang/comments/fr5r1k/how_to_separate_library_packages_in_go/)
-- url: https://qvault.io/2020/03/29/how-to-separate-library-packages-in-go/
+## [1][Collection of Technical Interview Problems Solved In Go](https://www.reddit.com/r/golang/comments/frdm4u/collection_of_technical_interview_problems_solved/)
+- url: https://github.com/shomali11/go-interview
 ---
 
-## [5][GoCache - Cache Server in Go](https://www.reddit.com/r/golang/comments/fqjrat/gocache_cache_server_in_go/)
-- url: https://github.com/kadnan/gocache
+## [2][Mokku - A clipboard-based mocking framework for Go that gets out of your way](https://www.reddit.com/r/golang/comments/frq068/mokku_a_clipboardbased_mocking_framework_for_go/)
+- url: https://github.com/kinbiko/mokku
 ---
 
-## [6][Does this mean everybody will have to create retry loops around every system call?](https://www.reddit.com/r/golang/comments/fqv036/does_this_mean_everybody_will_have_to_create/)
-- url: https://www.reddit.com/r/golang/comments/fqv036/does_this_mean_everybody_will_have_to_create/
----
-[Goroutines are asynchronously preemptible](https://golang.org/doc/go1.14#runtime)
-
-[https://golang.org/doc/go1.14#runtime](https://golang.org/doc/go1.14#runtime)
-## [7][Best approach to pass flag values to a function while also allowing the function to be called independently ?](https://www.reddit.com/r/golang/comments/fr1xok/best_approach_to_pass_flag_values_to_a_function/)
-- url: https://www.reddit.com/r/golang/comments/fr1xok/best_approach_to_pass_flag_values_to_a_function/
----
-Basically i am building a cli application. 
-
-I want to pass the user given values that are given to flags to the function for further processing on it. But i also want the function to be called independently by any other library without the cli so what would be the best approach.
-
-Below are couple of approaches i have thought of.
-
-A . Have everything from the flag sent to a variable using the Flag.StringVar and then Pass the variables to the function. 
-
-B. Create a Struct,use the Flag.StringVar(&amp;var) thing and pass the struct to the function. 
-
-C. Pass the Whole Flags() thing to the function for further processing. 
-
-Rn i am thinking B would be the best as i need some default values to be there aswell as the output location if not speciied by the user should default to the current working library.
-
-So basically my flag looks like this     
-
-    imageCmd.Flags().StringVarP(&amp;inloc, "in", "i", "", " image location (stdin by default)") 
-
-    imageCmd.Flags().StringVarP(&amp;outloc, "out", "o", "", "where to put the image ")
-
-    imageCmd.Flags().BoolVarP(&amp;meta, "metad", "m", false, "image metdata")
-
-    func imagelib(inloc string, outloc string, meta string) // processes the image
-
-Now the outloc is optional, so i want it to default to nil but given that optional parameter passing to function is not possible in golang i think rn the struct option would be the best. Since i also want to  acess the function from another lib which means flags wont be used so using struct would mean i can simply pass a struct there . 
-
-    e := mylib.decode(parameters)
-## [8][A Guide To Writing Logging Middleware in Go](https://www.reddit.com/r/golang/comments/fqqkwb/a_guide_to_writing_logging_middleware_in_go/)
-- url: https://blog.questionable.services/article/guide-logging-middleware-go/
+## [3][Retrieve Location of macOS Device from Go](https://www.reddit.com/r/golang/comments/frn6qt/retrieve_location_of_macos_device_from_go/)
+- url: https://vladimir.varank.in/notes/2020/03/go-osx-core-location/
 ---
 
-## [9][go get -u all: "cannot find package"](https://www.reddit.com/r/golang/comments/fr37qx/go_get_u_all_cannot_find_package/)
-- url: https://www.reddit.com/r/golang/comments/fr37qx/go_get_u_all_cannot_find_package/
+## [4][Molecule – Streaming, zero-allocation protobuf decoding in Go](https://www.reddit.com/r/golang/comments/fr6c8n/molecule_streaming_zeroallocation_protobuf/)
+- url: https://github.com/richardartoul/molecule
 ---
-Good day. I installed packages with normal `go get`.
 
-`go version go1.13.8 linux/386`
+## [5][How does one express tagged unions in Go?](https://www.reddit.com/r/golang/comments/frqg5h/how_does_one_express_tagged_unions_in_go/)
+- url: https://www.reddit.com/r/golang/comments/frqg5h/how_does_one_express_tagged_unions_in_go/
+---
+I want to represent a state called slope, the state can be any of positive, negative or zero. As far as I came to understand, Go doesn't support unions [yet](https://github.com/golang/go/issues/19412). What is the popular pattern for emulating unions?
 
-Full log:
+In Rust I would do something like 
 
-    package github.com/cncf/udpa/test/build: C++ source files not allowed when not using cgo or SWIG: build_test.cc
-    package github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/go: cannot find package "github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/go" in any of:
-    	/usr/lib/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/go (from $GOROOT)
-    	/home/vitaly/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/go (from $GOPATH)
-    package github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/go: cannot find package "github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/go" in any of:
-    	/usr/lib/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/go (from $GOROOT)
-    	/home/vitaly/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/go (from $GOPATH)
-    package github.com/envoyproxy/protoc-gen-validate/tests/harness/go: no Go files in /home/vitaly/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/go
-    package github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/gogo: cannot find package "github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/gogo" in any of:
-    	/usr/lib/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/gogo (from $GOROOT)
-    	/home/vitaly/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/gogo (from $GOPATH)
-    package github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/gogo: cannot find package "github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/gogo" in any of:
-    	/usr/lib/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/gogo (from $GOROOT)
-    	/home/vitaly/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/cases/other_package/gogo (from $GOPATH)
-    package github.com/envoyproxy/protoc-gen-validate/tests/harness/gogo: no Go files in /home/vitaly/go/src/github.com/envoyproxy/protoc-gen-validate/tests/harness/gogo
-    package github.com/google/go-github/v28/github: cannot find package "github.com/google/go-github/v28/github" in any of:
-    	/usr/lib/go/src/github.com/google/go-github/v28/github (from $GOROOT)
-    	/home/vitaly/go/src/github.com/google/go-github/v28/github (from $GOPATH)
-    # cd /home/vitaly/go/src/github.com/rwcarlsen/goexif; git pull --ff-only
-    You are not currently on a branch.
-    Please specify which branch you want to merge with.
-    See git-pull(1) for details.
+```
+enum Slope {
+  positive, zero, negative
+}
+```
+## [6][My program is slower when it comes to time spent on single operation when using goroutines](https://www.reddit.com/r/golang/comments/frqerw/my_program_is_slower_when_it_comes_to_time_spent/)
+- url: https://www.reddit.com/r/golang/comments/frqerw/my_program_is_slower_when_it_comes_to_time_spent/
+---
+Hello, I'm writing a path tracer in Golang, which is basically a Monte Carlo program for rendering photorealistic 3D scenes. Using Monte Carlo method, it implements random sampling. When I render each pixel, it doesn't need information about other pixels or about other samples of itself. Here's my sampling strategy:
+
+* split samples evenly for each CPU core (eg. if I have 128 samples and 16 cores, then each core will render 8 samples
+* each sample works like this:
+   * for each row in a column:
+      * shoot a ray towards a scene for each pixel in a row
+
+Everything works well, I can see 100% CPU utilization on all cores, but when I compare time spent for single pixel sample I can see significantly better results if I sample without the first step above (so without goroutines). In one example scene I had average 20.677µs for single pixel sample with goroutines and 12.138µs without goroutines, so calculating single sample gets about 70% slower, which is a lot. Here's example code, I removed unnecessary parts and simplified it:
+
+    cpus := runtime.NumCPU()
+    runtime.GOMAXPROCS(cpus)
     
-        git pull &lt;remote&gt; &lt;branch&gt;
+    buf := make([][]Color, cpus)
+    canvas := make([]Color, vsize*hsize)
     
-    package github.com/rwcarlsen/goexif/exif: exit status 1
-## [10][Got nil from the channel, which is not possible by code.](https://www.reddit.com/r/golang/comments/fqurch/got_nil_from_the_channel_which_is_not_possible_by/)
-- url: https://www.reddit.com/r/golang/comments/fqurch/got_nil_from_the_channel_which_is_not_possible_by/
+    for i := 0; i &lt; cpus; i++ {
+    	buf[i] = make([]Color, vsize*hsize)
+    }
+    
+    ch := make(chan int, cpus)
+    
+    samplesCPU := samples / cpus
+    
+    for i := 0; i &lt; cpus; i++ {
+    	go func(i int) {
+    		for s := 0; s &lt; samplesCPU; s++ {
+    			source := rand.NewSource(time.Now().UnixNano())
+    			generator := rand.New(source) // without using custom generator for each sample, it gets very slow, because of mutex lock
+    			for y := vsize - 1; y &gt;= 0; y-- {
+    				for x := 0; x &lt; hsize; x++ {
+    					// calculate sample here
+    
+    					buf[i][y*hsize+x] = buf[i][y*hsize+x].Add(col) // add pixel value to temporary buffer, it'll get all averaged later
+    				}
+    			}
+    		}
+    		ch &lt;- 1
+    	}(i)
+    }
+    
+    for i := 0; i &lt; cpus; i++ {
+    	&lt;-ch
+    }
+    close(ch)
+
+I noticed another weird thing: when I use goroutines, but set my program to render on one core, I can see in the Task Manager that my program doesn't use only one core on 100%, but it uses multiple cores on low %. What am I missing here?
+## [7][KubeAct - A Helm chart for hosting your own runner on Kubernetes to run jobs in your GitHub Actions workflows. ☸️ 🚀](https://www.reddit.com/r/golang/comments/frpag4/kubeact_a_helm_chart_for_hosting_your_own_runner/)
+- url: https://www.reddit.com/r/golang/comments/frpag4/kubeact_a_helm_chart_for_hosting_your_own_runner/
 ---
-Hi folks - we faced the strange behavior inside our system.  
-[https://play.golang.org/p/P3HdG2jNvz7](https://play.golang.org/p/P3HdG2jNvz7)  
-we've got a panic line:36  
-As for me, that's not possible, can you help?  
-maybe a possibility exists?  
+Hey guys,  
+Today I have completed an [**#opensource**](https://www.linkedin.com/feed/hashtag/?keywords=opensource&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6650351024202702848) project that I've built especially [**#devops**](https://www.linkedin.com/feed/hashtag/?keywords=devops&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6650351024202702848) enthusiasts &amp; I call it [**#kubeact**](https://www.linkedin.com/feed/hashtag/?keywords=kubeact&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6650351024202702848) .  
+It is a package for [**#Kubernetes**](https://www.linkedin.com/feed/hashtag/?keywords=kubernetes&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6650351024202702848) ([**#K8s**](https://www.linkedin.com/feed/hashtag/?keywords=k8s&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6650351024202702848)) to deploy and host your own runners on the cluster to run jobs in your [**#githubactions**](https://www.linkedin.com/feed/hashtag/?keywords=githubactions&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6650351024202702848) workflows. It makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from [**#GitHub**](https://www.linkedin.com/feed/hashtag/?keywords=github&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6650351024202702848).  
+Checkout : [https://github.com/itsksaurabh/kubeact](https://github.com/itsksaurabh/kubeact)
+
+&amp;#x200B;
+
+Feel free to review and contribute 🍻
+
+[https:\/\/github.com\/itsksaurabh\/kubeact](https://preview.redd.it/pigrrip3ssp41.jpg?width=847&amp;format=pjpg&amp;auto=webp&amp;s=a810e3c237240168348d352b26502d057d01d7fc)
+## [8][Call rust from golang](https://www.reddit.com/r/golang/comments/freknn/call_rust_from_golang/)
+- url: https://www.reddit.com/r/golang/comments/freknn/call_rust_from_golang/
+---
+I've recently found this blog https://blog.filippo.io/rustgo/ Have anyone tried to implement this? Does really works?
+## [9][Access a member in an anonymous C structure from Go](https://www.reddit.com/r/golang/comments/frnq02/access_a_member_in_an_anonymous_c_structure_from/)
+- url: https://www.reddit.com/r/golang/comments/frnq02/access_a_member_in_an_anonymous_c_structure_from/
+---
+Hi,
+
+I need to access a member ("imm_data") of an anonymous union in a C structure:
+
+	struct ibv_send_wr {
+			...
+	        union {
+	                __be32                  imm_data;
+	                uint32_t                invalidate_rkey;
+	        };
+
+However, when compiling this with GCCGO it cannot find the reference:
+
+	var sendWr C.struct_ibv_send_wr
+    if imm &gt; 0 {
+			...
+            sendWr.imm_data = C.uint32_t(imm)
+    }
 
 
-that is how it's implemented in the system without the rest of the code.  
-I mean, I extracted the main idea of how it's implemented, without details.
+```
+error: reference to undefined field or method ‘imm_data’
+```
+
+For background, this is from the Infiniband kernel driver and this member was previously not in a union - and that worked.
+
+I'm not a Go programmer, unfortunately.
+
+Can anyone help?
+
+Many thanks!
+## [10][Question about pointers and references from a Golang learner](https://www.reddit.com/r/golang/comments/frne8v/question_about_pointers_and_references_from_a/)
+- url: https://www.reddit.com/r/golang/comments/frne8v/question_about_pointers_and_references_from_a/
+---
+This is my first language that has pointers, so forgive me if this is a silly question.
+
+I was looking at the `http` package yesterday and I saw this snippet of code: 
+
+```
+client := &amp;http.Client{
+   CheckRedirect: redirectPolicyFunc,
+}
+
+resp, err := client.Get("http://example.com")
+// ...
+
+req, err := http.NewRequest("GET", "http://example.com", nil)
+// ...
+req.Header.Add("If-None-Match", `W/"wyzzy"`)
+resp, err := client.Do(req)
+// ...
+```
+
+On the first line, why do they write `client := &amp;http.Client` instead of just `client := http.Client`? What practical differences does this mean?
+
+`client` now holds the reference to the `http.Client` struct instead of the struct itself. But when you call `client.Get`, it gets dereferenced anyway. Why not just use the `client` variable for the struct itself instead of the pointer to it?
+
+Also, please tell me if any of my terminology is wrong!

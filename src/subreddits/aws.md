@@ -1,129 +1,76 @@
 # aws
-## [1][Does anyone know how S3 Intelligent Tiering works under the hood?](https://www.reddit.com/r/aws/comments/fr33ai/does_anyone_know_how_s3_intelligent_tiering_works/)
-- url: https://www.reddit.com/r/aws/comments/fr33ai/does_anyone_know_how_s3_intelligent_tiering_works/
+## [1][Amazon AWS, Google Cloud, and Microsoft Azure should let startups and small businesses defer their cloud infrastructure payments for three to six months](https://www.reddit.com/r/aws/comments/frh10o/amazon_aws_google_cloud_and_microsoft_azure/)
+- url: https://techcrunch.com/2020/03/26/cloud-relief/
 ---
-I know it uses machine learning, but I'd like to know more about the algorithm itself. 
 
-I'm thinking about implementing something similar on my personal PC using Python, to move big folders (looking at you, games) from my SSD to a HDD if not touched for a while.
-## [2][In-progress aws pricing calculator](https://www.reddit.com/r/aws/comments/fr4i4t/inprogress_aws_pricing_calculator/)
-- url: https://www.reddit.com/r/aws/comments/fr4i4t/inprogress_aws_pricing_calculator/
+## [2][Is it possible to emulate AWS?](https://www.reddit.com/r/aws/comments/fregoi/is_it_possible_to_emulate_aws/)
+- url: https://www.reddit.com/r/aws/comments/fregoi/is_it_possible_to_emulate_aws/
 ---
-Working on an aws pricing calculator for newbies like me who just want an easy to understand number. [https://aws-calculator.com/](https://aws-calculator.com/)
-
-The above is a proof of concept of sorts ill be iterating on, only has EC2 Instances and Fargate atm. Next ill be adding storage followed by the ability to 'save' an estimate.
-
-Thoughts, feedback, suggestions welcomed.
-## [3][Could someone help me set up SSL on my EC2 Instance?](https://www.reddit.com/r/aws/comments/fqv4fk/could_someone_help_me_set_up_ssl_on_my_ec2/)
-- url: https://www.reddit.com/r/aws/comments/fqv4fk/could_someone_help_me_set_up_ssl_on_my_ec2/
+Is it possible to emulate AWS? How do you do it? I just want to post code that's going to work when deployed to AWS. To make sure it works, I need to test the application on an emulator. I don't want to use AWS, because it costs money. What are the alternatives?
+## [3][Hosting static site on Wordpress Instance](https://www.reddit.com/r/aws/comments/fro6h5/hosting_static_site_on_wordpress_instance/)
+- url: https://www.reddit.com/r/aws/comments/fro6h5/hosting_static_site_on_wordpress_instance/
 ---
-Hi! My name is Jack, and I am brand new to AWS, and need to set up a SSL certificate on my EC2 instance, running Amazon's Linux distro and https. Please send me a PM if you are willing to walk me through the process!
-## [4][Should I use Amplify or build out my backend without it?](https://www.reddit.com/r/aws/comments/fqpio2/should_i_use_amplify_or_build_out_my_backend/)
-- url: https://www.reddit.com/r/aws/comments/fqpio2/should_i_use_amplify_or_build_out_my_backend/
+Hi all,
+
+I have a Wordpress instance up and running with a Wordpress site hosted, but I also need to host a few static HTML sites on it. Would that be doable at all, or would it make more sense to set up a new instance specifically for the static sites ?
+## [4][AWS Amplify: How do I test REST API's and lambda template?](https://www.reddit.com/r/aws/comments/frokdx/aws_amplify_how_do_i_test_rest_apis_and_lambda/)
+- url: https://www.reddit.com/r/aws/comments/frokdx/aws_amplify_how_do_i_test_rest_apis_and_lambda/
 ---
-I've been working on a project and have been gearing up to work on a serverless backend. I was planning on using Cognito for authentication / user management, AppSync for the API, Lambda for backend functions, and DynamoDB for storage.
+I was playing around with Amplify CLI in an angular project. I wanted to create a REST API endpoint and connect it with Lambda and DynamoDB. I was successfully able to create the cloud resources but how do I get the API gateway payload for all the HTTP methods. I want to test and develop my lambdas against it. I know I can invoke functions for the amplify CLI but do not have the payload passed by API gateway. Do I have to deploy my functions and test the APIs with say, Postman. Then debug and deploy again? Because that will take a lot of deploys. And because the package of lambda is too large for web-IDE I have no option but to debug it in VSCode.
 
-A lot of AWS' documentation and resources on the usage of these services together suggest to use Amplify.
-
-I guess my concern with using Amplify is that I'm worried I'm not going to learn these services as well as I could if I didn't use Amplify. I'm also worried that if I implemented Amplify and wanted greater customization in the future, that it might be difficult to migrate away from Amplify.
-
-Would you recommend using Amplify in favor of not using it? Why / why not?
-
-Edit: I guess I'm interpreting Amplify as training wheels, or a way to quickly scaffold a backend.
-## [5][DynamoDB Table design - to RDBS](https://www.reddit.com/r/aws/comments/fqq488/dynamodb_table_design_to_rdbs/)
-- url: https://www.reddit.com/r/aws/comments/fqq488/dynamodb_table_design_to_rdbs/
+What am I missing here? I can create an API and Lambda and DynamoDB table but can't test it. If there are any resources on the internet you people can tell me I would be grateful.
+## [5][Building a Scalable Website/Blog on AWS](https://www.reddit.com/r/aws/comments/frcl0o/building_a_scalable_websiteblog_on_aws/)
+- url: https://virtualg.uk/building-a-scalable-website-on-aws-with-route-53-ec2-rds-cloudwatch-part-1-aws-route-53/
 ---
-Im used to relational DBs and cant quite get my head around NoSQL.
 
-I have been looking at DDB design best practices but cant see how to model my data to a DDB table.
-
-The application contains Events;Event have attributes:
-
-Title (String)  
-DataTime (String)  
-Duration (String)  
-Location (String)  
-Attendees (List of String)
-
-The access patterns are as follows;Get events by TitleGet events by date rangeGet events by locationGet attendees by event
-
-I thought I could model it as follows;  
-PK          | SK                | Data  
-eventId | title              | data  
-eventId | dataTime    | data  
-eventId | attendee1  | data  
-eventId | attendee2  | data  
-eventId | eventDetails | non queryable attribute e.g. duration/created/updated/active
-
-Now I see that if I have the eventId I can easily query for the title/date/attendee.But if I dont know the eventId and want to query by title only the above design wont work.
-
-How best can I model the data above?
-## [6][Manage in-flight transactions while RDS migration](https://www.reddit.com/r/aws/comments/fr1mqt/manage_inflight_transactions_while_rds_migration/)
-- url: https://www.reddit.com/r/aws/comments/fr1mqt/manage_inflight_transactions_while_rds_migration/
+## [6][Appstream 2.0 embed in website](https://www.reddit.com/r/aws/comments/frqd0y/appstream_20_embed_in_website/)
+- url: https://www.reddit.com/r/aws/comments/frqd0y/appstream_20_embed_in_website/
 ---
-Hi All,
+I´m using Appstream 2.0 and want to create a streaming url to embed Appstream in my website. Atm i´m at step 2 of this guide:
 
-I am working on a cross-region partial migration of the RDS instance. It means I will be only migrating a few tables from one region to another in the end. I have thought of taking a `dump` of DB and importing it in new RDS while selecting what all I would need in new RDS.
+https://docs.aws.amazon.com/appstream2/latest/developerguide/embed-streaming-sessions.html
 
-However, I am more worried about any transaction that would be done meanwhile to the existing RDS.  One way I could manage this is before starting the migration I would start pushing the events to an SQS (FIFO) along with existing RDS (still need this in case things go wrong) and can poll a lambda for moving the transaction out of SQS to new RDS. 
-
-Is there any other thing I can do here?
-## [7][Is AWS manually extending recertification dates?](https://www.reddit.com/r/aws/comments/fr1kgr/is_aws_manually_extending_recertification_dates/)
-- url: https://www.reddit.com/r/aws/comments/fr1kgr/is_aws_manually_extending_recertification_dates/
+To access the API of Appstream do i need to use Amazon API Gateway?
+## [7][Beanstalk php retirement blue-green deployment.](https://www.reddit.com/r/aws/comments/frq31j/beanstalk_php_retirement_bluegreen_deployment/)
+- url: https://www.reddit.com/r/aws/comments/frq31j/beanstalk_php_retirement_bluegreen_deployment/
 ---
-I received a notification over the weekend stating my SA certs were recertified and now expiring later this year instead of in the coming months. I haven't taken *any* AWS cert exams as of late, so there's no chance I took a higher level one that automatically recertified my lower level things.
+Hey all,  
 
-Anyone else seeing similar extensions? I assume it's due to COVID, but haven't seen anything official other than the exams being available online now.
 
-[Certs Extended](https://imgur.com/Xp4EbGy)
-## [8][Can you version control a CodePipeline pipeline that uses GitHub source?](https://www.reddit.com/r/aws/comments/fqlr3a/can_you_version_control_a_codepipeline_pipeline/)
-- url: https://www.reddit.com/r/aws/comments/fqlr3a/can_you_version_control_a_codepipeline_pipeline/
+I'm doing a blue-green deployment since php platform version 7.0 is retired. I'm running into the following error:   
+`[proxy:error] [pid 4422] (2)No such file or directory: AH02454: FCGI: attempt to connect to Unix domain socket /run/php-fpm/www.sock (*) failed [proxy_fcgi:error] [pid 4422] [client x.x.x.x:32038] AH01079: failed to make connection to backend: httpd-UDS`
+
+I'm not using php-fpm, its a wordpress env. So I ssh'd into the instance to check the php version. I noticed the version is still at 7.0 while I specified 7.3 in my beanstalk environment, which seems weird to me.  
+
+
+Anyone has any experience with this?
+## [8][Exclude a s3 bucket form the AWS config auto remediation action](https://www.reddit.com/r/aws/comments/frq0ne/exclude_a_s3_bucket_form_the_aws_config_auto/)
+- url: https://www.reddit.com/r/aws/comments/frq0ne/exclude_a_s3_bucket_form_the_aws_config_auto/
 ---
-I'm using AWS CodeStar and yesterday, after deleting an old CloudFormation stack, I go back to my CodeStar dashboard to find that my CD pipeline is gone. WTF?
+Hi DevOps,
 
-Anyways, I can recreate it OK but I'd like to get it version controlled so when it randomly disappears again I can recreate it. I tried the CLI but it turns out, because I'm using GitHub for source, I can't seem to recreate the pipeline in the CLI from JSON because I can't pass in an OAuth code.
-
-Anyone else have this problem? Anyone else able to version control their AWS CI/CD configuration?
-## [9][Securing WIX subdomain connected (externally) to AWS](https://www.reddit.com/r/aws/comments/fr0zqq/securing_wix_subdomain_connected_externally_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/fr0zqq/securing_wix_subdomain_connected_externally_to_aws/
----
-Hi, I am Leon and i'm relatively new to AWS and was trying to secure my WIX subdomain ([api.example.co.za](https://api.example.co.za)) which is connected to AWS. So far, I have an EC2 instance for the website, as well as my S3 bucket running. I have also set up my CloudFront and pointed my subdomain on wix ([api.example.co.za](https://api.example.co.za)) to CloudFront ([df\*\*\*.cloudfront.net](https://dfxxx.cloudfront.net)) within WIX DNS records. I got an AWS certificate through DNS verification and attached it to my CloudFront. In AWS CloudFront, I also routed all requests to my S3 bucket. I also redirected all traffic from http to https in CloudFront
-
-When I type into my brower [api.example.co.za](https://api.example.co.za), I am able to access my website, but insecurely, just as before. But when I type [https://api.example.co.za](https://api.example.co.za), the website is secure, but does not load the web content. When Inspect the web content in Chrome&gt;Inspect&gt;Console, I see the following errors
-
-Mixed Content: The page at '[https://api.example.co.za](https://api.example.co.za)' zone-evergreen.js:29\*\* was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint '[http://api.example.co.za/users/5e7a2](http://api.example.co.za/users/5e7a2)'. This request has been blocked; the content must be served over HTTPS.
-## [10][Trouble renewing Let's Encrypt Certificate on Lightsail](https://www.reddit.com/r/aws/comments/fqxs5p/trouble_renewing_lets_encrypt_certificate_on/)
-- url: https://www.reddit.com/r/aws/comments/fqxs5p/trouble_renewing_lets_encrypt_certificate_on/
----
-I don't speak command line, so I am always copy/pasting from tutorials. Renewal of certificates was bumpy, but worked so far. Today I got a weird response from the server and cannot go on.
-
-I am using [this tutorial](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-wordpress#request-a-lets-encrypt-certificate-wordpress) for renewal,  and started with   
-[DOMAIN=mydomain.com](https://DOMAIN=mydomain.com)
-
-WILDCARD=\*.$DOMAIN
-
-echo $DOMAIN &amp;&amp; echo $WILDCARD
-
-and 
-
-sudo certbot -d $DOMAIN -d $WILDCARD --manual --preferred-challenges dns certonly
+Is there any way to exclude a s3 bucket from auto remediation action. Please suggest.
 
 &amp;#x200B;
 
-Today I get a response
+Thanks.
+## [9][How to interpret anomaly score AWS Sagemaker Random Cut Forest?](https://www.reddit.com/r/aws/comments/frkyq1/how_to_interpret_anomaly_score_aws_sagemaker/)
+- url: https://www.reddit.com/r/aws/comments/frkyq1/how_to_interpret_anomaly_score_aws_sagemaker/
+---
+Hi all,
 
-Certbot can obtain and install HTTPS/TLS/SSL certificates.  By default,
+I tried using AWS Sagemaker Random Cut Forest Model and built a anomaly detection model on my own dataset. Now, I am trying to interpret the anomaly scores. 
 
-it will attempt to use a webserver both for obtaining and installing the
+I followed the example given in [this blog post](https://aws.amazon.com/blogs/machine-learning/use-the-built-in-amazon-sagemaker-random-cut-forest-algorithm-for-anomaly-detection/).
 
-certificate. 
+In the post, it mentions that - 
 
-certbot: error: argument -d/--domains/--domain: expected one argument  
-
-
-I have done these steps before, but now I am lost.  
+&gt; common practice suggests that scores beyond three standard deviations from the mean score are considered anomalous
 
 
-Anybody..?
-
-  
-Thanks!
+I understand the point, but isn't this only true if the data distribution is approximately normal? Does this mean that the anomaly scores computed by RCF for a given dataset will follow a normal distribution?
+## [10][MongoDb on RDS](https://www.reddit.com/r/aws/comments/frnazr/mongodb_on_rds/)
+- url: https://www.reddit.com/r/aws/comments/frnazr/mongodb_on_rds/
+---
+Why isn’t AWS bringing MongoDb on RDS? 
+NoSQL is becoming popular these days but still why isn’t AWS bringing support for MongoDb?

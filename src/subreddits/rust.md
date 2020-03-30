@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (13/2020)!](https://www.reddit.com/r/rust/comments/fnfky9/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/fnfky9/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (14/2020)!](https://www.reddit.com/r/rust/comments/frfduy/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/frfduy/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,213 +16,73 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/fjef12/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/fnfky9/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 331](https://www.reddit.com/r/rust/comments/fp9z5t/this_week_in_rust_331/)
-- url: https://this-week-in-rust.org/blog/2020/03/24/this-week-in-rust-331/
+## [2][What's everyone working on this week (14/2020)?](https://www.reddit.com/r/rust/comments/frff7k/whats_everyone_working_on_this_week_142020/)
+- url: https://www.reddit.com/r/rust/comments/frff7k/whats_everyone_working_on_this_week_142020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-14-2020/40159?u=llogiq)!
+## [3][Rust Logo should be part of Font-Awesome](https://www.reddit.com/r/rust/comments/frmw35/rust_logo_should_be_part_of_fontawesome/)
+- url: https://www.reddit.com/r/rust/comments/frmw35/rust_logo_should_be_part_of_fontawesome/
+---
+Please leave a thumps up so that the Rust logo gets added to Font-Awesome !  
+
+
+[https://github.com/FortAwesome/Font-Awesome/issues/13764](https://github.com/FortAwesome/Font-Awesome/issues/13764)
+## [4][How many error types should a library have?](https://www.reddit.com/r/rust/comments/frk192/how_many_error_types_should_a_library_have/)
+- url: https://www.reddit.com/r/rust/comments/frk192/how_many_error_types_should_a_library_have/
+---
+I've recently been thinking about error type best practices and came across [this github issue](https://github.com/rust-lang-nursery/failure/issues/7) asking about how many error types a crate should have.
+
+The discussion is from 2017, and I was wondering what current opinions are on how many error types a library should have (thinking of a large crate)? One per library, one per module, or even one per function?
+
+Or a combo like the stdlib based on how much usage can be grouped together?
+## [5][dbcrossbar 0.3.1: Copy large tables between BigQuery, PostgreSQL, RedShift, CSV, S3, etc. (preview release, uses async Rust)](https://www.reddit.com/r/rust/comments/froyzx/dbcrossbar_031_copy_large_tables_between_bigquery/)
+- url: https://www.reddit.com/r/rust/comments/froyzx/dbcrossbar_031_copy_large_tables_between_bigquery/
+---
+Hello! Faraday has generously agreed to [open source dbcrossbar](https://www.dbcrossbar.org/), their table-copying tool. This has been heavily used in production for over a year now, and it's ready for a few intrepid Rust developers to take a look. (There will be a larger announcement later for version 1.0.)
+
+You can use `dbcrossbar` to load raw CSVs into PostgreSQL, or to mirror PostgreSQL tables in BigQuery for analysis. It has drivers for [several popular databases](https://www.dbcrossbar.org/dbcrossbar_guide_0.generated.svg). It's designed to operate efficiently on datasets in the 1GB to 500GB range. (Beyond that, it may be better to use a cluster for distributed copies.) No temporary files are required, because dbcrossbar uses multiple async Rust streams and [backpressure](https://ferd.ca/queues-don-t-fix-overload.html) to control data flow. Internally, dbcrossbar represents a table as multiple streams of CSV data, to avoid the need to store an entire table in a single CSV file, and to make efficient use of cloud buckets.
+
+`dbcrossbar` supports common scalar data types, plus arrays, JSON, GeoJSON and UUIDs. It can convert these types between databases. `dbcrossbar` can filter data using `--where`. It can overwrite tables, append to them, or (for BigQuery and PostgreSQL) perform upserts. It knows how to automatically transform a PostgreSQL table definition into a BigQuery one, and vice versa.
+
+Async Rust has proven to be an excellent language for this project. There have definitely been some challenges along the way. But Rust's discipline around ownership and borrowing has made it possible to mix async functions and threads with very few surprises. And solid performance is the default in Rust. Special thanks go to u/burntsushi for his excellent `csv` library, and to the rest of the Rust community for excellent libraries and tools. The list of people to thank would be enormous.
+
+Your bug reports and PRs are very much appreciated. To learn more, see the [manual and installation instructions](https://www.dbcrossbar.org/). And please let me know about any rough edges!
+## [6][Game Development in Rust: Monsters and AI!](https://www.reddit.com/r/rust/comments/frkb38/game_development_in_rust_monsters_and_ai/)
+- url: https://youtu.be/JxT3r56aqcA
 ---
 
-## [3][R2: A Router in Rust](https://www.reddit.com/r/rust/comments/fr50vl/r2_a_router_in_rust/)
+## [7][Many-to-many relationships in Diesel? Does anybody know how to do this?](https://www.reddit.com/r/rust/comments/frkta2/manytomany_relationships_in_diesel_does_anybody/)
+- url: https://www.reddit.com/r/rust/comments/frkta2/manytomany_relationships_in_diesel_does_anybody/
+---
+So, I basically have a many-to-many association between two tables. I'm not quite sure how you can handle this with diesel. I think there isn't a particular macro for doing this. 
+
+Is there any standard way of doing? Should I implement it myself?
+
+I would appreciate any suggestions on this.
+## [8][Let’s Write a Web Assembly Interpreter (Part 2)](https://www.reddit.com/r/rust/comments/frq583/lets_write_a_web_assembly_interpreter_part_2/)
+- url: https://medium.com/@richardanaya/lets-write-a-web-assembly-interpreter-part-2-6c430f3f4bfd
+---
+
+## [9][Is there a way to use png's StreamWriter with actix' SyncArbiter?](https://www.reddit.com/r/rust/comments/frp28n/is_there_a_way_to_use_pngs_streamwriter_with/)
+- url: https://www.reddit.com/r/rust/comments/frp28n/is_there_a_way_to_use_pngs_streamwriter_with/
+---
+I'm currently experimenting with actix to create big images. These images won't fit into memory (at least not on my machine) so I'm trying to use the StreamWriter provide by the png crate. My Problem is that it borrows the underlying writer so the borrow checker complains that references in my Actor type need to have static lifetimes. You can find the code [here](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=2e2bb738e719a9383b0914608d1c6ce3), though it won't run online since it requires extern crates.
+
+I know this sub isn't ideal for tech support but since the IRCs are down I don't know where to go with this.
+## [10][Global variables for database connection for websockets?](https://www.reddit.com/r/rust/comments/frnwp5/global_variables_for_database_connection_for/)
+- url: https://www.reddit.com/r/rust/comments/frnwp5/global_variables_for_database_connection_for/
+---
+I have clients connected by a websocket to my Rust server. Currently, all those clients hold a Rc&lt;MyDatabase&gt; variable. I am wondering if this is good practice, because it is not really needed for the lifetime of the websocket connection to hold a reference to the database connection. It is only used when the client requests something.
+
+I am wondering what other options are available. I can create a global variable, or a closure that returns a connection. Any thoughts which option I should use?
+## [11][R2: A Router in Rust](https://www.reddit.com/r/rust/comments/fr50vl/r2_a_router_in_rust/)
 - url: https://www.reddit.com/r/rust/comments/fr50vl/r2_a_router_in_rust/
 ---
 Introducing R2 [**https://r2.rs/,**](https://r2.rs/,) a 'Router in Rust' that I wrote. Read my experience with Rust at [**https://r2.rs/blog/**](https://r2.rs/blog/)
-## [4][Traits working group 2020 sprint 1 summary](https://www.reddit.com/r/rust/comments/fqrrv5/traits_working_group_2020_sprint_1_summary/)
-- url: https://blog.rust-lang.org/inside-rust/2020/03/28/traits-sprint-1.html
+## [12][gdbstub: An implementation of the GDB Remote Serial Protocol in Rust](https://www.reddit.com/r/rust/comments/franjy/gdbstub_an_implementation_of_the_gdb_remote/)
+- url: https://docs.rs/gdbstub/0.1.1/gdbstub/
 ---
 
-## [5][Clokwerk run scheduler indefinitely](https://www.reddit.com/r/rust/comments/fr414j/clokwerk_run_scheduler_indefinitely/)
-- url: https://www.reddit.com/r/rust/comments/fr414j/clokwerk_run_scheduler_indefinitely/
----
-Hello!
-Recently, I started learning Rust. I'm trying to run Clokwerk to go on forever, but the main function is dropping the reference to ScheduleHandle at the end. What's the proper way to keep it running indefinitely?
-
-    fn main() {
-        let yaml = load_yaml!("app.yaml");
-        let matches = App::from_yaml(yaml).get_matches();
-    
-        let mut params = Params::new();
-    
-        let domain = matches.value_of("domain").unwrap();
-        params.domain = String::from(domain);
-    
-        let subdomains = matches.value_of("subdomains").unwrap();
-        params.subdomains = subdomains.split(",").map(|s| s.to_string()).collect();
-    
-        scheduler
-            .every(10.seconds())
-            .run(move || run_checker(&amp;params));
-    
-        let _thread_handle: ScheduleHandle = scheduler.watch_thread(Duration::from_millis(6000));
-    }
-
-
-I'm at the beginning of my adventure with Rust, so please be understanding :).
-## [6][Implementing the lambda calculus in Rust](https://www.reddit.com/r/rust/comments/fqpwan/implementing_the_lambda_calculus_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/fqpwan/implementing_the_lambda_calculus_in_rust/
----
-Here is my first post in what will hopefully be a series about type systems: https://christianpoveda.github.io/blog/untyped-lambda-calculus/
-
-I'm happy to receive constructive feedback about it.
-## [7][Unsure what graphics library to use in my Rust application](https://www.reddit.com/r/rust/comments/fqsw4t/unsure_what_graphics_library_to_use_in_my_rust/)
-- url: https://www.reddit.com/r/rust/comments/fqsw4t/unsure_what_graphics_library_to_use_in_my_rust/
----
-Hello fellow rustaceans!
-
-I am coding the Conway's Game of Life as part of my journey to learn Rust.
-
-I have already coded the "engine" and a nice terminal output with termion, but I would also like to have a windowed graphical display for it. I am unsure what dependency to use for this purpose. I did my research and gfx-rs seems the most popular option, but seems just too low level to just draw some squares in a window. Amethyst in the other end, looks too overfecthed, using a game engine for this seems unreasonable.
-
-I am new to Rust and to graphics, so I am not sure if it is worth it to spend some ours learning gfx-rs or go directly to some higher level library, if so, which one? Also, if possible, I would like this library to be cross-platform and pure Rust.
-
-Any good recommendations? Thank you!
-## [8][derive_more 0.99.5 released: Support for Error derive similar to dtolnay/thiserror](https://www.reddit.com/r/rust/comments/fqkxtm/derive_more_0995_released_support_for_error/)
-- url: https://www.reddit.com/r/rust/comments/fqkxtm/derive_more_0995_released_support_for_error/
----
-derive_more allows you to derive lots of traits that are present in the standard library, but that you normally have to implement manually yourself. 
-This release adds support for deriving `Error` and it's methods `source` and `backtrace`. This works very well with the `Display` derive that already exists in this library.
-
-* Github: [https://github.com/JelteF/derive_more](https://github.com/JelteF/derive_more)
-* Docs: [https://jeltef.github.io/derive_more/derive_more/index.html](https://jeltef.github.io/derive_more/derive_more/index.html)
-* Docs for Error derive: [https://jeltef.github.io/derive_more/derive_more/error.html](https://jeltef.github.io/derive_more/derive_more/error.html)
-*  Crates.io: [https://crates.io/crates/derive_more](https://crates.io/crates/derive_more)
-## [9][I need help sending emails with rust](https://www.reddit.com/r/rust/comments/fr53jb/i_need_help_sending_emails_with_rust/)
-- url: https://www.reddit.com/r/rust/comments/fr53jb/i_need_help_sending_emails_with_rust/
----
-I want to make a login system with email verification. I found the crate lettre but I keep getting errors when sending.
-
-The code I tried:
-
-`extern crate lettre;`  
-`use lettre::smtp::authentication::{Credentials, Mechanism};`  
-`use lettre::{SendableEmail, Envelope, EmailAddress, Transport, SmtpClient};`  
-`use lettre::smtp::extension::ClientId;`  
-`use lettre::smtp::ConnectionReuseParameters;`  
-`fn main() {`  
- `let email_1 = SendableEmail::new(`  
-`Envelope::new(`  
- `Some(EmailAddress::new("user@localhost".to_string()).unwrap()),`  
- `vec![EmailAddress::new("root@localhost".to_string()).unwrap()],`  
- `).unwrap(),`  
- `"id1".to_string(),`  
- `"Hello world".to_string().into_bytes(),`  
- `);`  
-`let email_2 = SendableEmail::new(`  
-`Envelope::new(`  
- `Some(EmailAddress::new("user@localhost".to_string()).unwrap()),`  
- `vec![EmailAddress::new("root@localhost".to_string()).unwrap()],`  
- `).unwrap(),`  
- `"id2".to_string(),`  
- `"Hello world a second time".to_string().into_bytes(),`  
- `);`  
- `// Connect to a remote server on a custom port`  
- `let mut mailer = SmtpClient::new_simple("smtp.mailtrap.io").unwrap()`  
- `// Set the name sent during EHLO/HELO, default is \`localhost\``  
- `.hello_name(ClientId::Domain("my.hostname.tld".to_string()))`  
- `// Add credentials for authentication`  
- `.credentials(Credentials::new("username".to_string(), "password".to_string()))`  
- `// Enable SMTPUTF8 if the server supports it`  
- `.smtp_utf8(true)`  
- `// Configure expected authentication mechanism`  
- `.authentication_mechanism(Mechanism::Plain)`  
- `// Enable connection reuse`  
- `.connection_reuse(ConnectionReuseParameters::ReuseUnlimited).transport();`  
-`let result_1 = mailer.send(email_1);`  
- `assert!(result_1.is_ok());`  
- `// The second email will use the same connection`  
- `let result_2 = mailer.send(email_2);`  
- `assert!(result_2.is_ok());`  
- `// Explicitly close the SMTP transaction as we enabled connection reuse`  
- `mailer.close();`  
-`}`
-
-&amp;#x200B;
-
-It panics on the result asserts. The error in the debugger is:
-
-[CLion debugger](https://preview.redd.it/58ie9nq8tlp41.png?width=740&amp;format=png&amp;auto=webp&amp;s=765c3100b210f9c90535bf849ad77709dc3c11ed)
-
-Does anyone know what I am doing wrong?
-## [10][How to handle money in diesel and rust?](https://www.reddit.com/r/rust/comments/fr0wvc/how_to_handle_money_in_diesel_and_rust/)
-- url: https://www.reddit.com/r/rust/comments/fr0wvc/how_to_handle_money_in_diesel_and_rust/
----
-So I'm making a graphql api and I'm going to need to use money as one of my fields.
-
-I know postgres has a special money field. However, I'm not really sure how to get a value from whatever is thrown to my api and then convert it to Diesel's [Cents](https://docs.diesel.rs/diesel/pg/data_types/struct.Cents.html) class.
-
-I would like to know if anybody has any advice. I would appreciate it.
-## [11][[Help] Cursive T-UI Application structure with mutable states](https://www.reddit.com/r/rust/comments/fqybys/help_cursive_tui_application_structure_with/)
-- url: https://www.reddit.com/r/rust/comments/fqybys/help_cursive_tui_application_structure_with/
----
-# \# Intro
-Hi, I have been using `Cursive` and some other crates together to make an auto-clicker.
-A bit of a learning + useful projects started in this recent period of time.
-
-UI: [cursive github](https://github.com/gyscos/cursive) + [cursive-tableview github](https://github.com/BonsaiDen/cursive_table_view)
-KeySimulation: [rdev github](https://github.com/Narsil/rdev)
-Hotkey: [hotkey github](https://github.com/unwrittenfun/hotkey-rs)
-
-# \# Program General Structure
-Code general structure, note that `new()` returns `Rc&lt;RefCell&lt;Controller&gt;&gt;` not `Controller`.
-```
-struct Controller {
-siv: Cursive,
-mode: Mode,
-active_cell: Option&lt;ACAction&gt;,
-}
-impl Controller {
-fn new_tableview() { ... } // get new tableview instance
-fn new_siv() { ... } // get new cursive instance
-fn new() -&gt; Rc&lt;RefCell&lt;Controller&gt;&gt; { ... } // get a shared controller
-fn add_action(&amp;self) { ... } // add a new action to view, but check if mode is not RunningAction
-fn run_selected_cell(&amp;self) { ... } // run current selected cell in tableview, but check if cell is None
-}
-
-```
-# \# Issue
-At first, I was having trouble to capture `Controller` in some of the callbacks, such as from key press n for add_action. This was resolved with #415 (comment), by using `Rc&lt;RefCell&lt;Controller&gt;&gt;`.
-
-[gtk closure tutorial link i used for Rc&lt;RefCell&lt;_&gt;&gt;](https://gtk-rs.org/docs-src/tutorial/closures)
-
-However, this restrict me to always `borrow_mut()` to get access to siv:
-
-```
-fn main() {
-let mut controller = Controller::new();
-controller.borrow_mut().siv.run();  // Starts the event loop.
-}
-```
-
-Which means the callbacks that requires access to my controller by `borrow_mut()`, it will panic because the controller has been `borrow_mut()`ed forever in the main code.
-I have thought of separate `siv` from `Controller`, but that makes it hard to update ui with just controller.
-Using `Rc&lt;RefCell&lt;&amp;'a Controller&gt;&gt;` instead `Rc&lt;RefCell&lt;Controller&gt;&gt;` introduces a lifetime issue.
-
-This seems like in a deadlock, `Rc&lt;RefCell&lt;_&gt;&gt;` is required in callback to ensure the program is in right 'state', but this prevents state updating because of `borrow_mut()` twice panic.
-
-# \# End
-
-Going through all the trouble to getting my application to work, I feel like my current way of modelling UI application is definitely not compatible with rust.
-
-It just seems to be so much more easier to get started with programming languages such as C/C++/ObjC.
-
-I would like to get 'trained' to think in the way of rust, similar to how I learned lisp with SICP, by reading some good books, or materials, that walks me through the ideology of rust.
-
-I understand this would be the steep learning curve of rust that I am facing, but I also feel like this learning curve is not an introduction to something new, rather something confusing.
-
-Thanks for reading. Any helpful advices given are appreciated in any ways.
-## [12][Does Rustfmt support column alignment?](https://www.reddit.com/r/rust/comments/fqybka/does_rustfmt_support_column_alignment/)
-- url: https://www.reddit.com/r/rust/comments/fqybka/does_rustfmt_support_column_alignment/
----
-like 
-
-```
-struct T {
-  id        : i32,
-  active    : bool,
-  username  : String
-}
-```
-
-Also what happened to the weekly small questions thread?
-
-Looks like reddit doesn't display the codeblocks properly in mobile clients. I really do not appreciate this. Ever since they introduced the new redesign, everything has been unpredictable. A complete UX disaster. For those who are confused, the `i32`, `bool` and `String` are intended to be aligned in one column.

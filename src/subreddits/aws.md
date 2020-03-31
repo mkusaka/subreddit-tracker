@@ -1,76 +1,92 @@
 # aws
-## [1][Amazon AWS, Google Cloud, and Microsoft Azure should let startups and small businesses defer their cloud infrastructure payments for three to six months](https://www.reddit.com/r/aws/comments/frh10o/amazon_aws_google_cloud_and_microsoft_azure/)
-- url: https://techcrunch.com/2020/03/26/cloud-relief/
+## [1][AWS Global Accelerator: Terrible Name, Awesome Service](https://www.reddit.com/r/aws/comments/fsba7m/aws_global_accelerator_terrible_name_awesome/)
+- url: https://www.sentiatechblog.com/aws-global-accelerator-terrible-name-awesome-service?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=global_accelerator
 ---
 
-## [2][Is it possible to emulate AWS?](https://www.reddit.com/r/aws/comments/fregoi/is_it_possible_to_emulate_aws/)
-- url: https://www.reddit.com/r/aws/comments/fregoi/is_it_possible_to_emulate_aws/
----
-Is it possible to emulate AWS? How do you do it? I just want to post code that's going to work when deployed to AWS. To make sure it works, I need to test the application on an emulator. I don't want to use AWS, because it costs money. What are the alternatives?
-## [3][Hosting static site on Wordpress Instance](https://www.reddit.com/r/aws/comments/fro6h5/hosting_static_site_on_wordpress_instance/)
-- url: https://www.reddit.com/r/aws/comments/fro6h5/hosting_static_site_on_wordpress_instance/
----
-Hi all,
-
-I have a Wordpress instance up and running with a Wordpress site hosted, but I also need to host a few static HTML sites on it. Would that be doable at all, or would it make more sense to set up a new instance specifically for the static sites ?
-## [4][AWS Amplify: How do I test REST API's and lambda template?](https://www.reddit.com/r/aws/comments/frokdx/aws_amplify_how_do_i_test_rest_apis_and_lambda/)
-- url: https://www.reddit.com/r/aws/comments/frokdx/aws_amplify_how_do_i_test_rest_apis_and_lambda/
----
-I was playing around with Amplify CLI in an angular project. I wanted to create a REST API endpoint and connect it with Lambda and DynamoDB. I was successfully able to create the cloud resources but how do I get the API gateway payload for all the HTTP methods. I want to test and develop my lambdas against it. I know I can invoke functions for the amplify CLI but do not have the payload passed by API gateway. Do I have to deploy my functions and test the APIs with say, Postman. Then debug and deploy again? Because that will take a lot of deploys. And because the package of lambda is too large for web-IDE I have no option but to debug it in VSCode.
-
-What am I missing here? I can create an API and Lambda and DynamoDB table but can't test it. If there are any resources on the internet you people can tell me I would be grateful.
-## [5][Building a Scalable Website/Blog on AWS](https://www.reddit.com/r/aws/comments/frcl0o/building_a_scalable_websiteblog_on_aws/)
-- url: https://virtualg.uk/building-a-scalable-website-on-aws-with-route-53-ec2-rds-cloudwatch-part-1-aws-route-53/
+## [2][Docker desktop creators built a Kubernetes management tool](https://www.reddit.com/r/aws/comments/fs1lvy/docker_desktop_creators_built_a_kubernetes/)
+- url: https://infra.app/
 ---
 
-## [6][Appstream 2.0 embed in website](https://www.reddit.com/r/aws/comments/frqd0y/appstream_20_embed_in_website/)
-- url: https://www.reddit.com/r/aws/comments/frqd0y/appstream_20_embed_in_website/
+## [3][Now Open – Third Availability Zone in the AWS Canada (Central) Region](https://www.reddit.com/r/aws/comments/frrqky/now_open_third_availability_zone_in_the_aws/)
+- url: https://aws.amazon.com/blogs/aws/now-open-third-availability-zone-in-the-aws-canada-central-region/
 ---
-I´m using Appstream 2.0 and want to create a streaming url to embed Appstream in my website. Atm i´m at step 2 of this guide:
 
-https://docs.aws.amazon.com/appstream2/latest/developerguide/embed-streaming-sessions.html
-
-To access the API of Appstream do i need to use Amazon API Gateway?
-## [7][Beanstalk php retirement blue-green deployment.](https://www.reddit.com/r/aws/comments/frq31j/beanstalk_php_retirement_bluegreen_deployment/)
-- url: https://www.reddit.com/r/aws/comments/frq31j/beanstalk_php_retirement_bluegreen_deployment/
+## [4][ECS Task IAM Role for cross-account resource sharing.](https://www.reddit.com/r/aws/comments/fsa78f/ecs_task_iam_role_for_crossaccount_resource/)
+- url: https://www.reddit.com/r/aws/comments/fsa78f/ecs_task_iam_role_for_crossaccount_resource/
 ---
-Hey all,  
+I have a ECS task that needs to access resources in another aws account. 
 
+My ECS tasks are running in Account A and the resources that I need to access are in account B.
 
-I'm doing a blue-green deployment since php platform version 7.0 is retired. I'm running into the following error:   
-`[proxy:error] [pid 4422] (2)No such file or directory: AH02454: FCGI: attempt to connect to Unix domain socket /run/php-fpm/www.sock (*) failed [proxy_fcgi:error] [pid 4422] [client x.x.x.x:32038] AH01079: failed to make connection to backend: httpd-UDS`
+For this I have created a role in account B with necessary  permission to the required resources and I have added a trust relationship with account A as well.
 
-I'm not using php-fpm, its a wordpress env. So I ssh'd into the instance to check the php version. I noticed the version is still at 7.0 while I specified 7.3 in my beanstalk environment, which seems weird to me.  
+Now in account A where ECS is running I have added  sts:AssumeRole to the Remote IAM role in account B.
 
-
-Anyone has any experience with this?
-## [8][Exclude a s3 bucket form the AWS config auto remediation action](https://www.reddit.com/r/aws/comments/frq0ne/exclude_a_s3_bucket_form_the_aws_config_auto/)
-- url: https://www.reddit.com/r/aws/comments/frq0ne/exclude_a_s3_bucket_form_the_aws_config_auto/
----
-Hi DevOps,
-
-Is there any way to exclude a s3 bucket from auto remediation action. Please suggest.
+This however is not working. My ECS task is still not being able to access resourcecs in account B.
 
 &amp;#x200B;
 
-Thanks.
-## [9][How to interpret anomaly score AWS Sagemaker Random Cut Forest?](https://www.reddit.com/r/aws/comments/frkyq1/how_to_interpret_anomaly_score_aws_sagemaker/)
-- url: https://www.reddit.com/r/aws/comments/frkyq1/how_to_interpret_anomaly_score_aws_sagemaker/
+How do i set up cross-account IAM roles/policies that work with ECS  Task.
+## [5][How to automate workspace?](https://www.reddit.com/r/aws/comments/fsaz6p/how_to_automate_workspace/)
+- url: https://www.reddit.com/r/aws/comments/fsaz6p/how_to_automate_workspace/
 ---
-Hi all,
+Hello guys,
 
-I tried using AWS Sagemaker Random Cut Forest Model and built a anomaly detection model on my own dataset. Now, I am trying to interpret the anomaly scores. 
-
-I followed the example given in [this blog post](https://aws.amazon.com/blogs/machine-learning/use-the-built-in-amazon-sagemaker-random-cut-forest-algorithm-for-anomaly-detection/).
-
-In the post, it mentions that - 
-
-&gt; common practice suggests that scores beyond three standard deviations from the mean score are considered anomalous
+how do you automate your virtual desktops? Because after the creation of the image, the sysprep/general process killed understandably my user settings. Now I have to set things like language, default browser, etc. manually on every machine.  
 
 
-I understand the point, but isn't this only true if the data distribution is approximately normal? Does this mean that the anomaly scores computed by RCF for a given dataset will follow a normal distribution?
-## [10][MongoDb on RDS](https://www.reddit.com/r/aws/comments/frnazr/mongodb_on_rds/)
-- url: https://www.reddit.com/r/aws/comments/frnazr/mongodb_on_rds/
+Do you use something like PS scripts, autostart scripts in the default image or something similiar? I cant find anything about answer.xlm files or something else. 
+
+PS. my native language isnt EN, sorry for some grammatical mistakes and I am a beginner with AWS.   
+
+
+Thanks in advance. Greetings Manuel
+## [6][Manage infrastructure Programmatically](https://www.reddit.com/r/aws/comments/fs5831/manage_infrastructure_programmatically/)
+- url: https://www.reddit.com/r/aws/comments/fs5831/manage_infrastructure_programmatically/
 ---
-Why isn’t AWS bringing MongoDb on RDS? 
-NoSQL is becoming popular these days but still why isn’t AWS bringing support for MongoDb?
+I am currently working on a project which allows engineers to manage their infrastructure by using Terrafrom in conjunction with Protocall Buffers.  This allows the developer to use a language of their choice without relying on data definition languages. If you have any comments, thoughts or ideas about the project, raise an issue.  
+[https://github.com/jackskj/terraform-pb](https://github.com/jackskj/terraform-pb)
+## [7][Nearest Lightsail instance region for South Africa](https://www.reddit.com/r/aws/comments/fsaqpg/nearest_lightsail_instance_region_for_south_africa/)
+- url: https://www.reddit.com/r/aws/comments/fsaqpg/nearest_lightsail_instance_region_for_south_africa/
+---
+I'm currently setting up lightsail for wordpress and I'm trying to find out which is the instance location with the lowest latency for South Africa. Does anyone here knows or has a similar experience?
+
+Geographically, Mumbai is the nearest. Would it be a safe bet to go with Mumbai?
+
+https://preview.redd.it/6a2wzpqcmzp41.jpg?width=3657&amp;format=pjpg&amp;auto=webp&amp;s=9d4524fc2c25ee3c48e875c7a10ac7131c71c63c
+## [8][HELP: CloudFront subdirectory hosting multiple angular apps](https://www.reddit.com/r/aws/comments/fs9nnn/help_cloudfront_subdirectory_hosting_multiple/)
+- url: https://www.reddit.com/r/aws/comments/fs9nnn/help_cloudfront_subdirectory_hosting_multiple/
+---
+Hi there,
+
+I have several angular apps, which I want to host on S3 in a single bucket but under different sub directories(Only for the sake of maintenance of a single bucket )
+
+Note: I'm aware and have been hosting single app in its own bucket.
+
+I have been trying to do three things 
+
+1) Cloudfront CDN for s3 sub directory hosting
+
+2) preventing Subdirectory folder name in the URL
+
+3) Making Angular routes work with the cloudfront. 
+
+So far I have had success with the 1st point.
+
+I have been trying to do this for like 3 hours now. but unable to achieve a whole solution.
+
+Please guide me if its even possible to do that or not as no solution is available on the net properly.
+## [9][AWS Cognito](https://www.reddit.com/r/aws/comments/fs9hrc/aws_cognito/)
+- url: https://www.reddit.com/r/aws/comments/fs9hrc/aws_cognito/
+---
+I don't quite understand the documentation and I hope this does not sound like a stupid question. 
+
+I have a subdomain (xxx.yyy.com) which i need to secure with MFA. This sub-domain is running a on-prem setup of Dynamics CRM.  It is possible for me to use AWS Cognito, create a user pool with a fixed list of users and at the domain to it? I am also using EC2 to run the AD server instead of managed AD.
+## [10][Monitor ALL EC2 instances in a region for status check failures.](https://www.reddit.com/r/aws/comments/fs3t0h/monitor_all_ec2_instances_in_a_region_for_status/)
+- url: https://www.reddit.com/r/aws/comments/fs3t0h/monitor_all_ec2_instances_in_a_region_for_status/
+---
+I am looking for ideas on what combination of AWS services I can use.
+
+The idea is to have a check in place to send an alert (email, SNS, Pagerduty) of some kind if health checks on ANY of the EC2 instances in a REGION fails. Ignore any EC2 instances that are stopped.
+
+The alarm should work if new instances are added or old instances are removed from the region. Would a lambda function do the job for something like this?

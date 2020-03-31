@@ -19,7 +19,143 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][best implementation for a model with an owner and users?](https://www.reddit.com/r/rails/comments/frkvhe/best_implementation_for_a_model_with_an_owner_and/)
+## [2][What do you use to measure API endpoint calls?](https://www.reddit.com/r/rails/comments/fs7v2f/what_do_you_use_to_measure_api_endpoint_calls/)
+- url: https://www.reddit.com/r/rails/comments/fs7v2f/what_do_you_use_to_measure_api_endpoint_calls/
+---
+I‘m searching for an inexpensive product, should  also be GDPR compliant.
+
+
+Do you know an overview of popular products that solve such and similar tasks?
+## [3][Using ES6 in Rails 4.2.x](https://www.reddit.com/r/rails/comments/fs8pio/using_es6_in_rails_42x/)
+- url: https://www.reddit.com/r/rails/comments/fs8pio/using_es6_in_rails_42x/
+---
+Everyone here using ES6 in Rails 4.2.x ? 
+I heard that I should use Sprockets 3 , but my sprockets is 2.11.0 and there is only a documentation from upgrading from 3 to 4 
+
+Did you think it gonna break my project if I upgrade this from 2 to 3 ?
+And I would say from 2 to 4 is impossible for me because my rails still 4.2 
+
+Any guide for this ? 
+
+When I want to deploy to production, and if I use ES6 it is always error , And I think they way here using Babel to transpile it 
+
+If anyone here in 4.2 and using Es6 in their rails
+I d love to get know your guide for this 
+Thank you :)
+## [4][How to Rspec this?](https://www.reddit.com/r/rails/comments/fsbo6p/how_to_rspec_this/)
+- url: https://www.reddit.com/r/rails/comments/fsbo6p/how_to_rspec_this/
+---
+I've been assigned to write rspec tests for a bit dated legacy project as a part of training.
+
+I am to write factories and spec for existing models. Some code in those models look weird and even silly, but I can not replace/refactor any of it and should create tests for model as the are.
+
+The model code has a class method:
+
+*def self*.filter\_type(type\_id)  
+ *case* type\_id  
+ *when* 1  
+5  
+ *when* 2  
+6  
+ *when* 3  
+7  
+ *when* 4  
+3  
+ *when* 5  
+9  
+ *when* 6  
+10  
+ *else*  
+ 8  
+ *end*  
+*end*
+
+So I can just create examples for each 'when' one-by-one to get rid of it but it's the 'else' case that bugs me. How do I make a proper test to include any value othere then (1..6). 
+
+There is no restriction to use only integers as 'type\_id' in the code but let's assume there is.
+
+Any hints to this?
+## [5][Best way to Solve O(n + 1) in a table display](https://www.reddit.com/r/rails/comments/frtx0b/best_way_to_solve_on_1_in_a_table_display/)
+- url: https://www.reddit.com/r/rails/comments/frtx0b/best_way_to_solve_on_1_in_a_table_display/
+---
+Let's say I have model `A` that `has_many` model `B` that in turn `has_many` model `C`. 
+
+If I want to create a page that has a table where given an instance of `A`, I should display rows of `B`'s where each column in each row is defined by `C`s of each `B`. Assuming each `C` in `B` always equal number of instances and can be sorted by `C`'s column called `priority`.
+
+What's the most efficient way to go about it?
+
+```
+# Some controller:
+@a = A.find(a_id)
+@b_records = B.where(a_id: @a.id)
+```
+
+Haml O(n+1) style:
+
+```
+%table
+  - @b_records.each do |r|
+    %tr
+      - r.cs.order('priority ASC').each do |c|
+        %td= c.some_value
+```
+## [6][ActiveRecord::RecordInvalid: Validation failed: Users must exist on db:seed](https://www.reddit.com/r/rails/comments/frvagj/activerecordrecordinvalid_validation_failed_users/)
+- url: https://www.reddit.com/r/rails/comments/frvagj/activerecordrecordinvalid_validation_failed_users/
+---
+I am trying to seed an sqlite3 db from a json file as a project. I have two models user and logins.
+
+    `require 'json'  file = File.read('db/people.json')`
+     data_hash = JSON.parse(file, symbolize_names: true) 
+     records = JSON.parse(File.read('db/people.json'))
+     records.each do |record| User.create!(record.except('logins').merge('password' =&gt; 'encrypted password'))
+     end 
+    records.each do |record| Login.create!(record['logins']) 
+    end
+
+When I run my rails db:seed it successfully seeds the users and then fails when creating the logins with this error **ActiveRecord::RecordInvalid: Validation failed: Users must exist** It may be something with my schema or my seed script im not sure which .
+
+       ActiveRecord::Schema.define(version: 2020_03_30_164743) do
+    
+       create_table "logins", force: :cascade do |t|
+        t.datetime "date"
+        t.datetime "created_at", null: false
+        t.datetime "updated_at", null: false
+        t.integer "user_id"
+        t.index ["user_id"], name: "index_logins_on_user_id"
+       end
+    
+       create_table "users", force: :cascade do |t|
+        t.string "first_name"
+        t.string "last_name"
+        t.string "city"
+        t.string "state"
+        t.string "email", default: "", null: false
+        t.string "encrypted_password", default: "", null: false
+        t.string "reset_password_token"
+        t.datetime "reset_password_sent_at"
+        t.datetime "remember_created_at"
+        t.datetime "created_at", null: false
+         t.datetime "updated_at", null: false
+         t.index ["email"], name: "index_users_on_email", unique: true
+         t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+        end
+    
+       end
+
+Here is a link to my source code [https://github.com/jslack2537/apiDemoApp](https://github.com/jslack2537/apiDemoApp)
+
+&amp;#x200B;
+
+I was able to make it work like this 
+
+    records.each do |record|    
+     u = User.new(record.except('logins').merge('password' =&gt; 'encrypted password'))    
+     u.logins = record['logins'].map{|l| Login.new(l)}     
+     u.save! 
+    end
+
+&amp;#x200B;
+## [7][best implementation for a model with an owner and users?](https://www.reddit.com/r/rails/comments/frkvhe/best_implementation_for_a_model_with_an_owner_and/)
 - url: https://www.reddit.com/r/rails/comments/frkvhe/best_implementation_for_a_model_with_an_owner_and/
 ---
 I have a Team model in my rails app. The team should have an owner. The owner should be able to invite other users to his/her team.
@@ -59,7 +195,7 @@ because owners are technically users with an owner role.
 What do you all think? Was my first thought on the right track? is there a better way? or should I just completely give up programming and become a musician?
 
 Thanks!
-## [3][Building a rails app that can upload pictures to an S3 bucket via CarrierWave and fog-aws, but it's giving me a Errno::EPIPE at /posts Broken pipe error](https://www.reddit.com/r/rails/comments/frmi1y/building_a_rails_app_that_can_upload_pictures_to/)
+## [8][Building a rails app that can upload pictures to an S3 bucket via CarrierWave and fog-aws, but it's giving me a Errno::EPIPE at /posts Broken pipe error](https://www.reddit.com/r/rails/comments/frmi1y/building_a_rails_app_that_can_upload_pictures_to/)
 - url: https://www.reddit.com/r/rails/comments/frmi1y/building_a_rails_app_that_can_upload_pictures_to/
 ---
 Edit: Note to anyone with the same issue in the future: 
@@ -101,11 +237,11 @@ Best regards
 &amp;#x200B;
 
 ps: forgot to mention that it looks like it times out when trying to upload/connect to aws, and that I verified the credentials and bucket with the awscli tool
-## [4][Ruby 2.7.0 Warnings](https://www.reddit.com/r/rails/comments/frjwgd/ruby_270_warnings/)
+## [9][Ruby 2.7.0 Warnings](https://www.reddit.com/r/rails/comments/frjwgd/ruby_270_warnings/)
 - url: https://www.reddit.com/r/rails/comments/frjwgd/ruby_270_warnings/
 ---
 I started using Ruby 2.7.0 for my projects. However there seems to be a lot of warning messages with Rails 6 libraries like activesupport. Will this be an issue moving forward?
-## [5][From %&lt;a href=... to &lt;%=link_to in text.gsub!](https://www.reddit.com/r/rails/comments/frmzyn/from_a_href_to_link_to_in_textgsub/)
+## [10][From %&lt;a href=... to &lt;%=link_to in text.gsub!](https://www.reddit.com/r/rails/comments/frmzyn/from_a_href_to_link_to_in_textgsub/)
 - url: https://www.reddit.com/r/rails/comments/frmzyn/from_a_href_to_link_to_in_textgsub/
 ---
 Hi, I'm customizing my  **markdown redcarpet (**`class MarkdownRenderer &lt; Redcarpet::Render::HTML`**)**.
@@ -120,257 +256,7 @@ I found this part
 Can I replace `%(&lt;a href="/user/#{match[1..-1]}"&gt;#{match}&lt;/a&gt;)` using `&lt;%= link_to #{match}, user_path(#{match}) etc. etc.` ?
 
 **How to do?** What is the right syntax?
-## [6][Live podcasting in rails](https://www.reddit.com/r/rails/comments/frbetq/live_podcasting_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/frbetq/live_podcasting_in_rails/
----
-Hello, I want to ask how I can build a live podcasting app on rails. Something like facebook's live video. Thanks!
-## [7][Dtos in rails](https://www.reddit.com/r/rails/comments/frn6cd/dtos_in_rails/)
+## [11][Dtos in rails](https://www.reddit.com/r/rails/comments/frn6cd/dtos_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/frn6cd/dtos_in_rails/
 ---
 Hi, im from c#. How to create dto in ruby on rails?
-## [8][Is there any way to run a command automatically after ```rails s``` is run?](https://www.reddit.com/r/rails/comments/frhstu/is_there_any_way_to_run_a_command_automatically/)
-- url: https://www.reddit.com/r/rails/comments/frhstu/is_there_any_way_to_run_a_command_automatically/
----
-I want to ensure that whenever the server starts up it destroys all entries in the Conversations model ```Conversations.destroy_all```. This is to prevent some after effects up the server shutting down abruptly (there are some methods in a channels unsubscribe that need to run).
-## [9][Rails Integration Test (Internal Response Error)](https://www.reddit.com/r/rails/comments/freuf4/rails_integration_test_internal_response_error/)
-- url: https://www.reddit.com/r/rails/comments/freuf4/rails_integration_test_internal_response_error/
----
-I am trying to write an integration test for a simple create route, and could use some help. Everything works just fine, including the redirect, but when I check to see if the post had a valid response, it is saying that it turned a 500 response rather than a 200. Here is the code:
-
-Integration Test:
-
-```
-require 'test\_helper'  
-class *CreateEventTest* &lt; ActionDispatch::IntegrationTest  
- fixtures :users  
- test "can login and create an event" do  
- get "/login"  
- assert\_response :success  
- post "/login", params: {user\_name: users(:one).user\_name, password: 'secret'}  
-follow\_redirect!  
-assert\_equal 200, status  
-assert\_equal "/", path  
-
-
-get "/events/new"  
- assert\_response :success  
- post '/events', params: { event: { name: "Event Title", description: "Description", location: "Search Results  
-1600 Pennsylvania Ave NW, Washington, DC 20500", date\_from: DateTime.now + 10, date\_to: DateTime.now + 15, latitude: -35.000000, longitude: 100.000000}}  
-assert\_response :redirect  
- follow\_redirect!  
-assert\_response :created  
- end  
-end
-
-```
-
-Events Controller:
-
-```
-# POST /events
-  # POST /events.json
-  def create
-    @event = Event.new(event_params)
-    respond_to do | format |
-      if @event.save
-        if(params.require(:event).key?("tags"))
-          tags = Tag.find(params.require(:event)['tags'])
-        else
-          tags = Tag.find_by(name: "Other") # Set default tag if none was selected
-        end
-        @event.tags &lt;&lt; tags
-        UserEventRelationship.create(event_id: @event.id, user_id: current_user.id, role_type_id: 0)
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render json: @event, status: :created, location: @event }
-      else
-        format.html {render 'new'}
-        format.json {render json: @event.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-private
-
-    def event_params
-      params.require(:event).permit(:name, :date_from,
-      :location, :date_to, :description, :picture, :tags, :latitude, :longitude)
-    end
-
-```
-
-Here are my routes:
-```
-Rails.application.routes.draw do
-  resources :users
-  resources :events
-  resources :account_activations, only: [:edit]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get  '/events/new',  to: 'events#new'
-  get  '/browse',  to: 'events#index'
-  post '/events/:id/signup', to: 'events#register', as: 'register'
-  delete '/events/:id/unregister', to: 'events#unregister', as: 'unregister'
-  get '/home', to: 'home#index'
-
-  get 'sessions/new'
-  get  '/signup',  to: 'users#new'
-  get    '/login',   to: 'sessions#new'
-  get    '/profile',   to: 'users#profile'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
-  post '/setUserLocation', to: 'users#setUserLocation'
-
-  root 'home#index'
-
-
-end
-
-```
- 
-Here is the error I get:
-```
-Failure:
-CreateEventTest#test_can_login_and_create_an_event [/Users/user/Documents/GitHub/my_app/test/integration/create_event_test.rb:21]:
-Expected response to be a &lt;201: created&gt;, but was a &lt;500: Internal Server Error&gt;.
-Expected: 201
-  Actual: 500
-```
-## [10][Warning: The running version of Bundler is older than the version that created the lockfile](https://www.reddit.com/r/rails/comments/fr6ulk/warning_the_running_version_of_bundler_is_older/)
-- url: https://www.reddit.com/r/rails/comments/fr6ulk/warning_the_running_version_of_bundler_is_older/
----
-Hi all,  
-
-
-I can't seem to get my system to use the version of bundler specified when I run "ruby -v".  
-
-
-I keep getting the error "the running version of Bundler (2.1.2) is older than the version that created the lockfile (2.1.4)".  
-
-
-They appear to match, but I can't seem to get rid of the error:  
-
-
-    gem install bundler:2.1.4
-    
-    Successfully installed bundler-2.1.4
-    1 gem installed
-    
-    ➜  project git:(upgrade_ruby) ✗ bundle -v
-    Bundler version 2.1.4
-    
-    ➜  project git:(upgrade_ruby) ✗ bundle exec bundle -v
-    Bundler version 2.1.4
-    
-    ➜  project git:(upgrade_ruby) ✗ rails s
-    
-    Warning: the running version of Bundler (2.1.2) is older than the version that created the lockfile (2.1.4). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.1.4`.
-
-Can anyone help me to identify why my system is seemingly using a version of bundler other than that which is returned with bundle -v, and also how to change it to the latest?  
-
-
-Thanks.
-## [11][Failed to run multiple Rails apps with Unicorn + Nginx on single AWS EC2 Instance](https://www.reddit.com/r/rails/comments/frar43/failed_to_run_multiple_rails_apps_with_unicorn/)
-- url: https://www.reddit.com/r/rails/comments/frar43/failed_to_run_multiple_rails_apps_with_unicorn/
----
-I am going to run multiple Rails apps on AWS EC2 Instance with Unicorn and Nginx.
-
-I could run one rails app on **mydomain.com**
-
-So project will be on **mydomain.com/app1** and **mydomain.com/app2**
-
-Projects are in `/home/ubuntu/work/app1` and `/home/ubuntu/work/app2`
-
-***/etc/nginx/sites-available/default***
-
-`upstream app1 {`
-
-`server unix:/home/ubuntu/work/app1/shared/sockets/unicorn.sock fail_timeout=0;`
-
-`}`
-
-`upstream app2 {`
-
-`server unix:/home/ubuntu/work/app2/shared/sockets/unicorn.sock fail_timeout=0;`
-
-`}`
-
-`server {`
-
-`listen 80;`
-
-`server_name localhost;`
-
-`root /home/ubuntu/work;`
-
-`access_log /home/ubuntu/work/log/nginx.access.log;`
-
-`error_log /home/ubuntu/work/log/nginx.error.log;`
-
-`location /app1/ {`
-
-`root /home/ubuntu/work/app1/public;`
-
-`rewrite ^/app1/(.*)$ /$1 break;`
-
-`try_files /app1/$uri/index.html /app1/$uri.html /app1/$uri @app1;`
-
-`}`
-
-`location /app2/ {`
-
-`root /home/ubuntu/work/app2/public;`
-
-`rewrite ^/app2/(.*)$ /$1 break;`
-
-`try_files /app2/$uri/index.html /app2/$uri.html /app2/$uri @app2;`
-
-`}`
-
-`location @app1 {`
-
-`proxy_pass` [`http://app1`](http://app1)`;`
-
-`proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`
-
-`proxy_set_header Host $http_host;`
-
-`proxy_redirect off;`
-
-`}`
-
-`location @app2 {`
-
-`proxy_pass` [`http://app2`](http://app2)`;`
-
-`proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`
-
-`proxy_set_header Host $http_host;`
-
-`proxy_redirect off;`
-
-`}`
-
-`error_page 500 502 503 504 /500.html;`
-
-`client_max_body_size 4G;`
-
-`keepalive_timeout 10;`
-
-`}`
-
-&amp;#x200B;
-
-The error I am getting now. (Looks like the internal errors)
-
-    We're sorry, but something went wrong. If you are the application owner check the logs for more information.  
-
-I have checked these files to check logs.
-
-    /home/ubuntu/work/log/nginx.error.log /home/ubuntu/work/fastland1/shared/log/unicorn.stderr.log  /home/ubuntu/work/fastland2/shared/log/unicorn.stderr.log  
-
-But I can't find any log in nginx.error.log
-
-And there were just warning in 2 unicorn.stderr.log files.
-
-There were not any errors.
-
-Anyone can help me?

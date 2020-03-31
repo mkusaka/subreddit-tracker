@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Web Cache Deception Named Top Web Hacking Technique of 2019](https://www.reddit.com/r/javascript/comments/fr9w2o/web_cache_deception_named_top_web_hacking/)
-- url: https://portswigger.net/daily-swig/web-cache-deception-named-top-web-hacking-technique-of-2019
+## [3][Deno 1.0 will be released on May 13](https://www.reddit.com/r/javascript/comments/fry8mg/deno_10_will_be_released_on_may_13/)
+- url: https://github.com/denoland/deno/issues/2473
 ---
 
-## [4][React Native 0.62 and Flipper Will Change Your Mobile Development Experience and make it easier!](https://www.reddit.com/r/javascript/comments/frpkwg/react_native_062_and_flipper_will_change_your/)
-- url: https://medium.com/javascript-in-plain-english/react-native-0-62-and-flipper-will-change-your-mobile-development-experience-and-make-it-easier-8945d345f644?source=friends_link&amp;sk=134c00cc44a426476657abeaf9bfcaf9
+## [4][How an anti ad-blocker works: Reverse-engineering BlockAdBlock](https://www.reddit.com/r/javascript/comments/fs9030/how_an_anti_adblocker_works_reverseengineering/)
+- url: https://xy2.dev/article/re-bab/
 ---
 
-## [5][How to Use Javascript “Fetch-Chaining” with the Pokemon API to Get that Deep Data](https://www.reddit.com/r/javascript/comments/frjyv4/how_to_use_javascript_fetchchaining_with_the/)
-- url: https://medium.com/@kennethscoggins/how-to-use-javascript-fetch-chaining-with-the-pokemon-api-to-get-that-deep-data-3f0f45abb5b7?source=friends_link&amp;sk=c56e30df5a00fbcea27876769531484b
+## [5][A simple, small, and alternative code to replace javascript native eval() function.](https://www.reddit.com/r/javascript/comments/fsa9xt/a_simple_small_and_alternative_code_to_replace/)
+- url: https://github.com/pvzzombs/simple-math-eval-calc
 ---
 
-## [6][I coded an interactive visualisation using HTML5 Canvas and equilateral triangles.](https://www.reddit.com/r/javascript/comments/frpsdt/i_coded_an_interactive_visualisation_using_html5/)
-- url: https://kaleidoscope.portejoie.fr
+## [6][Introducing A JavaScript Annotation, Redact, and Form Editor for PDFs](https://www.reddit.com/r/javascript/comments/fs9qk6/introducing_a_javascript_annotation_redact_and/)
+- url: https://www.grapecity.com/blogs/introducing-a-javascript-annotation-redact-form-editor-for-pdfs
 ---
 
-## [7][Smack Cove: Anti Face Touching Website is out now](https://www.reddit.com/r/javascript/comments/frawg9/smack_cove_anti_face_touching_website_is_out_now/)
-- url: https://smack.ahadcove.com
+## [7][Mixin pattern RFC](https://www.reddit.com/r/javascript/comments/fsbbu7/mixin_pattern_rfc/)
+- url: https://www.bryntum.com/blog/the-mixin-pattern-in-typescript-all-you-need-to-know-part-2/
 ---
 
-## [8][Custom Metrics with WebPageTest and TravisCI | Introduction to custom metrics and how to integrate them into you CI pipeline](https://www.reddit.com/r/javascript/comments/frp305/custom_metrics_with_webpagetest_and_travisci/)
-- url: https://felixgerschau.com/custom-metrics-webpagetest-travisci
+## [8][Module for Creating Classes/Objects in JavaScript using OLOO Pattern.](https://www.reddit.com/r/javascript/comments/fsb7cc/module_for_creating_classesobjects_in_javascript/)
+- url: https://www.learngamedevelopment.net/blog/oloo(objectslinkingtootherobjects)
 ---
 
-## [9][Built tool to track the spread of COVID-19 on cruise ships including real time positioning via a serverless API](https://www.reddit.com/r/javascript/comments/frgxxz/built_tool_to_track_the_spread_of_covid19_on/)
-- url: https://covid-cruise-tracker.atymic.dev/
+## [9][When (and why) you should use ES6 arrow functions — and when you shouldn’t](https://www.reddit.com/r/javascript/comments/fs8gm0/when_and_why_you_should_use_es6_arrow_functions/)
+- url: https://christosploutarchou.com/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt/
 ---
 
-## [10][JavaScript, What Are You?](https://www.reddit.com/r/javascript/comments/frohmd/javascript_what_are_you/)
-- url: https://www.howtocodejs.com/what-is-javascript/
+## [10][piano-chart - a JavaScript library to visualize musical notes on a piano keyboard](https://www.reddit.com/r/javascript/comments/frrlha/pianochart_a_javascript_library_to_visualize/)
+- url: https://github.com/ailon/piano-chart
 ---
 
-## [11][Using Google Sheets live JSON export to populate a table. (With modification to active links)](https://www.reddit.com/r/javascript/comments/frnpyr/using_google_sheets_live_json_export_to_populate/)
-- url: https://codepen.io/conor-lyons/pen/mdJarVG
+## [11][Nano ID 3.0: unique, secure, and URL-friendly ID generator in 108 bytes (!)](https://www.reddit.com/r/javascript/comments/fs4pot/nano_id_30_unique_secure_and_urlfriendly_id/)
+- url: https://github.com/ai/nanoid
 ---
 
-## [12][Understanding JavaScript's This and Bind](https://www.reddit.com/r/javascript/comments/frcn69/understanding_javascripts_this_and_bind/)
-- url: https://www.howtocodejs.com/javascript-this-and-bind/
+## [12][New Set to Form Controls Styles Coming to Chromium](https://www.reddit.com/r/javascript/comments/fsbrs3/new_set_to_form_controls_styles_coming_to_chromium/)
+- url: https://blog.chromium.org/2020/03/updates-to-form-controls-and-focus.html
 ---
 

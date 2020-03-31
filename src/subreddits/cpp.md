@@ -118,7 +118,31 @@ Group | Location | Status | Until
 [C++TO](https://www.meetup.com/CPPTORONTO/) | Toronto, Ontario, Canada | [Postponed](https://www.meetup.com/CPPTORONTO/) | Indefinitely
 [C++ Montréal](https://www.meetup.com/CppMtl/) | Montréal, Québec, Canada | [Postponed](https://www.meetup.com/CppMtl/events/269392467/) | Indefinitely
 [Bulgaria C++ Meetup](https://dev.bg/groups/c-c-plus-plus/) | Sofia, Bulgaria | [Virtual](https://dev.bg/groups/c-c-plus-plus/) | Indefinitely
-## [3][Boost.Nowide released](https://www.reddit.com/r/cpp/comments/frnw7y/boostnowide_released/)
+## [3][Demo: C++20 Modules](https://www.reddit.com/r/cpp/comments/fsc0ff/demo_c20_modules/)
+- url: https://youtu.be/6SKIUeRaLZE
+---
+
+## [4][To Unify or Not to Unify: A Case Study on Unified Builds (in WebKit)](https://www.reddit.com/r/cpp/comments/fsap5g/to_unify_or_not_to_unify_a_case_study_on_unified/)
+- url: https://doi.org/10.1145/3302516.3307347
+---
+
+## [5][BitLens 2.0 released! - Have your bits and eat them! A C++17 bit lens for vector types.](https://www.reddit.com/r/cpp/comments/fsccwb/bitlens_20_released_have_your_bits_and_eat_them_a/)
+- url: https://www.reddit.com/r/cpp/comments/fsccwb/bitlens_20_released_have_your_bits_and_eat_them_a/
+---
+Based on the feedback from the recent [release thread](https://www.reddit.com/r/cpp/comments/frdufc/thelartiansbitview_have_your_cake_and_eat_it_a/) I've refactored the BitLens (former BitView) API to fix issues and match the expectations from the community. Most important changes are
+
+* Now uses a more container like interface. `get()` and `set()` have been replaced with a `[]`\-operator that returns a `BitReference` type.
+* `forEach()` has been replaced with proper iterators.
+* Many `&lt;algorithm&gt;` functions should  now work with bit vectors.
+* A `BitContainer` class that owns its storage container has been added.
+* Added a benchmark to illustrate the orders of magnitude difference in performance between `std::vector&lt;bool&gt;` and working with "normal" containers for bitwise operations.
+* Bit setting now works without branching.
+* Added a custom `.clang-format` config for cleaner looking code.
+
+Would love to hear your thoughts and feedback!
+
+[https://github.com/TheLartians/BitLens](https://github.com/TheLartians/BitLens)
+## [6][Boost.Nowide released](https://www.reddit.com/r/cpp/comments/frnw7y/boostnowide_released/)
 - url: https://www.reddit.com/r/cpp/comments/frnw7y/boostnowide_released/
 ---
 Can be found in: [https://github.com/boostorg/nowide](https://github.com/boostorg/nowide)
@@ -138,17 +162,29 @@ Note that the library is currently usable as a submodule with any Boost version 
 Versioning: The library will get tags from the usual Boost releases but also has an internal version which adheres to semantic versioning. To differentiate that from the Boost build it starts at `10.0.0`.
 
 I invite you to review the code, use it now and provide feedback!
-## [4][TheLartians/BitView - Have your cake and eat it! A C++17 bit view for vector types.](https://www.reddit.com/r/cpp/comments/frdufc/thelartiansbitview_have_your_cake_and_eat_it_a/)
+## [7][Peeking Into Your Compiler - DevConf.CZ 2020 - Jakub Jelínek &amp; Ulrich Drepper](https://www.reddit.com/r/cpp/comments/frsm6i/peeking_into_your_compiler_devconfcz_2020_jakub/)
+- url: https://www.youtube.com/watch?v=QObetyo90Ps
+---
+
+## [8][Why does std::pmr::get_default_resource return a pointer instead of a reference?](https://www.reddit.com/r/cpp/comments/frupfq/why_does_stdpmrget_default_resource_return_a/)
+- url: https://www.reddit.com/r/cpp/comments/frupfq/why_does_stdpmrget_default_resource_return_a/
+---
+The return value is never null, right? So wouldn't a reference make more sense?
+## [9][Anyone having issues downloading boost via the SHA256 key?](https://www.reddit.com/r/cpp/comments/frutin/anyone_having_issues_downloading_boost_via_the/)
+- url: https://www.reddit.com/r/cpp/comments/frutin/anyone_having_issues_downloading_boost_via_the/
+---
+I've been using boost in my cmake projects all last week in an external\_project\_add build by downloading the zip files via the  SHA256 key. However today all of my builds in github actions are failing. I then tried re-building my projects in my enviornments and I am getting timeout issues on them. However when I checked whether or not bintray is down I get that everything is operational.
+
+I haven't made any updates to any of my programs. And it is failing on Ubuntu, Windows, and OSX. So I am wondering if anyone has had any issues with it today?
+
+Also, if this is not the place to post it and I should post in /r/cpp_questions let me know.
+
+EDIT: Just clicked on the download link and I get a FORBIDDEN! Page. Something is definitely down. 
+## [10][TheLartians/BitView - Have your cake and eat it! A C++17 bit view for vector types.](https://www.reddit.com/r/cpp/comments/frdufc/thelartiansbitview_have_your_cake_and_eat_it_a/)
 - url: https://github.com/TheLartians/BitView
 ---
 
-## [5][Using boost for serialising into XML](https://www.reddit.com/r/cpp/comments/frq5ye/using_boost_for_serialising_into_xml/)
-- url: https://www.reddit.com/r/cpp/comments/frq5ye/using_boost_for_serialising_into_xml/
----
-I know boost can be used to serialise into text files or file types of that sort. 
-Would you recommend it for XML? I would need to edit the XML itself and create objects directly from the new XML.
-Or should I consider other libraries like [pugixml](https://pugixml.org/)?
-## [6][Bolero Murakami, the author of Sprout was dead in Feb 16th](https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/)
+## [11][Bolero Murakami, the author of Sprout was dead in Feb 16th](https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/)
 - url: https://www.reddit.com/r/cpp/comments/fr0rma/bolero_murakami_the_author_of_sprout_was_dead_in/
 ---
 Genya Murakami, aka Bolero Murakami was found dead in Feb 16th at his workshop. 32 years old. It seems he was working on his pottery art at night and suddenly died.
@@ -208,38 +244,7 @@ As a pottery artist, he learned from his father the techniques of Jomon pottery,
 &amp;#x200B;
 
 People recognize him as a weird C++ programmer who exploits the template meta programming and constexpr, but his real life work was the Jomon pottery artist. Once, I asked him if the C++ is an art for him, he said "No, C++ is not an art for me. It's one of the things I enjoy doing it."
-## [7][Why is there a std::runtime_error if there are no compile time exceptions? Why specify "runtime" if there is no alternative?](https://www.reddit.com/r/cpp/comments/frptsh/why_is_there_a_stdruntime_error_if_there_are_no/)
-- url: https://www.reddit.com/r/cpp/comments/frptsh/why_is_there_a_stdruntime_error_if_there_are_no/
+## [12][Porting a C++/CLI Project to .NET Core | C++ Team Blog](https://www.reddit.com/r/cpp/comments/frug5a/porting_a_ccli_project_to_net_core_c_team_blog/)
+- url: https://devblogs.microsoft.com/cppblog/porting-a-c-cli-project-to-net-core/?WT.mc_id=reddit-social-marouill
 ---
 
-## [8][Purpose of moduli here](https://www.reddit.com/r/cpp/comments/frq29j/purpose_of_moduli_here/)
-- url: https://www.reddit.com/r/cpp/comments/frq29j/purpose_of_moduli_here/
----
-    last = (last + 1) % size;  
-Is the line I'm referring to. This is in a college textbook discussing queues. And as far as I can tell there's no purpose. The variable `last` always starts as `-1` (so the result of this will be `0`) and there is no way for it to go past `size` so the moduli will never change the amount in `last` Correct?  
-
-&amp;nbsp;
-
-Is there something I'm missing?
-## [9][Why is Visual Studio producing 30% slower code than clang?](https://www.reddit.com/r/cpp/comments/fqsxwm/why_is_visual_studio_producing_30_slower_code/)
-- url: https://www.reddit.com/r/cpp/comments/fqsxwm/why_is_visual_studio_producing_30_slower_code/
----
-My JSON parsing code compiled with msvc gets 315 megabytes per second, while the same code compiled with clang gets 412 megabytes per second.  msvc is consistently slower, why is that? And yes I have optimizations on...
-## [10][The C++ Annotations, a free (GPL), up-to-date C++(20) learners book/reference manual. From basic C++ to concepts](https://www.reddit.com/r/cpp/comments/fqkf51/the_c_annotations_a_free_gpl_uptodate_c20/)
-- url: http://www.icce.rug.nl/documents/cplusplus/
----
-
-## [11][toml++ v1.0.0 - TOML config file parser and serializer for C++17](https://www.reddit.com/r/cpp/comments/fqo3q6/toml_v100_toml_config_file_parser_and_serializer/)
-- url: https://marzer.github.io/tomlplusplus/
----
-
-## [12][State of C++20 modules?](https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/)
-- url: https://www.reddit.com/r/cpp/comments/fqdbft/state_of_c20_modules/
----
-There had been a couple of problems raised few years ago in regards to parallelizing the compilation process in modules being necessarily harder.
-
-
-Since then, what happened? Any significant design changes merged to C++20 modules to tackle the problem raised?
-
-
-Or do people that were pessimistic back then still think modules will be dead on arrival?

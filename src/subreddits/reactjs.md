@@ -111,49 +111,55 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Learning React.js during this quarantine. Here's a simple memory game I made](https://www.reddit.com/r/reactjs/comments/frp8ls/learning_reactjs_during_this_quarantine_heres_a/)
+## [3][I created a Redux-like library with a better TypeScript experience. Let me know what you think.](https://www.reddit.com/r/reactjs/comments/fsalda/i_created_a_reduxlike_library_with_a_better/)
+- url: https://github.com/bearbytes/react-zeno
+---
+
+## [4][Learning React.js during this quarantine. Here's a simple memory game I made](https://www.reddit.com/r/reactjs/comments/frp8ls/learning_reactjs_during_this_quarantine_heres_a/)
 - url: https://v.redd.it/o2zzpqp2rsp41
 ---
 
-## [4][React coding challenges for interviews/beginners](https://www.reddit.com/r/reactjs/comments/frklcv/react_coding_challenges_for_interviewsbeginners/)
-- url: https://dev.to/alexgurr/react-coding-challenges-for-interviews-beginners-1hlk
+## [5][Beep Boop! Announcing “use-sound”, a React hook for sound effects](https://www.reddit.com/r/reactjs/comments/frwleb/beep_boop_announcing_usesound_a_react_hook_for/)
+- url: https://joshwcomeau.com/react/announcing-use-sound-react-hook/
 ---
 
-## [5][I built a private social media site with no trackers and completely Ad-Free! Do check it out! Suggestions and Feedback will be helpful](https://www.reddit.com/r/reactjs/comments/fri0e5/i_built_a_private_social_media_site_with_no/)
-- url: https://igloosocial.com
+## [6][Naming: how to differentiate the function that adds a resource to the local state (reducer) from the function that adds the same resource to a remote server (REST API) ?](https://www.reddit.com/r/reactjs/comments/fsauc7/naming_how_to_differentiate_the_function_that/)
+- url: https://www.reddit.com/r/reactjs/comments/fsauc7/naming_how_to_differentiate_the_function_that/
+---
+Imagine you have a todo list app which is a react app. The todos are persisted in a database somewhere and the client fetches the todos from a REST API.
+
+When the user creates a todo in the react app, 2 things happen:
++ the client sends a POST request to the REST api asking to add a todo to the database
++ if the request is successful, the todo is also added to the state of the react app so that react can do it's magic and represent it in the DOM.
+
+Both actions could be called `addTodo`. How would you approach naming those ? I'm looking for names that would be both meaningful and represent the fact that one action adds the todo localy and the other adds the todo remotely.
+
+Thanks
+## [7][Compiled | The CSS in JS authoring experience you love without the runtime cost](https://www.reddit.com/r/reactjs/comments/fs98v7/compiled_the_css_in_js_authoring_experience_you/)
+- url: https://compiled.netlify.com
 ---
 
-## [6][I created my first npm package! A react component to customise/add multiple cursors to your app.](https://www.reddit.com/r/reactjs/comments/frq11u/i_created_my_first_npm_package_a_react_component/)
-- url: https://v.redd.it/6dd5x35n1tp41
+## [8][Custom Hooks in React: The Ultimate UI Abstraction Layer - Tanner Linsley | JSConf Hawaii 2020](https://www.reddit.com/r/reactjs/comments/fs3v37/custom_hooks_in_react_the_ultimate_ui_abstraction/)
+- url: https://youtu.be/J-g9ZJha8FE
 ---
 
-## [7][React debugging session - Why is this function called hundreds of times?](https://www.reddit.com/r/reactjs/comments/frpu1n/react_debugging_session_why_is_this_function/)
-- url: https://jkettmann.com/react-debugging-session-hundreds-of-function-calls/
+## [9][Redux in Worker: Off-main-thread Redux Reducers and Middleware](https://www.reddit.com/r/reactjs/comments/fsaoaa/redux_in_worker_offmainthread_redux_reducers_and/)
+- url: https://medium.com/@dai_shi/redux-in-worker-off-main-thread-redux-reducers-and-middleware-508e0cad8ac6?source=friends_link&amp;sk=e54dee252862e02d6a8a22c527547542
 ---
 
-## [8][Quickly and Easily Deploying your React App Using Next.js and Now](https://www.reddit.com/r/reactjs/comments/fri9rk/quickly_and_easily_deploying_your_react_app_using/)
-- url: https://youtu.be/nolv-AJkQQ0
+## [10][How to share code between react web apps and react native](https://www.reddit.com/r/reactjs/comments/fscu87/how_to_share_code_between_react_web_apps_and/)
+- url: https://medium.com/unibuddy-technology-blog/how-to-share-code-between-react-web-apps-and-react-native-7020dbb8e601
 ---
 
-## [9][Any recommendations for video series about testing?](https://www.reddit.com/r/reactjs/comments/frdofg/any_recommendations_for_video_series_about_testing/)
-- url: https://www.reddit.com/r/reactjs/comments/frdofg/any_recommendations_for_video_series_about_testing/
+## [11][New use-cannon features of react-spring](https://www.reddit.com/r/reactjs/comments/fscedr/new_usecannon_features_of_reactspring/)
+- url: https://twitter.com/0xca0a/status/1244949419407093769
 ---
-I’m completely new to it and i like learning vis videos, any recommendations appreciated!
-## [10][What kind of method do you prefer when styling a react app?](https://www.reddit.com/r/reactjs/comments/frpfk6/what_kind_of_method_do_you_prefer_when_styling_a/)
-- url: https://www.reddit.com/r/reactjs/comments/frpfk6/what_kind_of_method_do_you_prefer_when_styling_a/
----
-Like CSS Module, styled-components etc.
-## [11][What should I use for a big project, hooks or classes?](https://www.reddit.com/r/reactjs/comments/fr7xza/what_should_i_use_for_a_big_project_hooks_or/)
-- url: https://www.reddit.com/r/reactjs/comments/fr7xza/what_should_i_use_for_a_big_project_hooks_or/
----
-I'm creating a really big react native app (and will probably also create a web version). What should I use? What's better in the long run? 
 
-Please explain your answer in the comments, thanks in advance!
-
-[View Poll](https://www.reddit.com/poll/fr7xza)
-## [12][Pain Points of Testing in React?](https://www.reddit.com/r/reactjs/comments/fragyo/pain_points_of_testing_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fragyo/pain_points_of_testing_in_react/
+## [12][Difference Between React JS vs Angular JS](https://www.reddit.com/r/reactjs/comments/fsc46a/difference_between_react_js_vs_angular_js/)
+- url: https://www.reddit.com/r/reactjs/comments/fsc46a/difference_between_react_js_vs_angular_js/
 ---
-I recently delved into Jest and Enzyme to start testing my React apps, and I'm curious about the struggles that other React developers face while testing. 
+  
 
-What are some issues you've faced while using the testing tools currently available for React? E.g. limitations of Enzyme's shallow wrapper or snapshot testing, any aspects of React that are hard to test satisfactorily, etc.
+The primary difference between [AngularJS and ReactJS](https://www.aparajayah.com/web-development/react-js) lies in the state of its management. AngularJS has data binding bundled in by default, whereas React is generally augmented by Redux to give unidirectional data flow and work with immutable data. 
+
+Prompt rendering is among the best features of React that gives a significant edge over Angular. The core difference between React JS and Angular JS. That React is JS-centric, while ng2 remains HTML-centric. JavaScript is far more robust than HTML, that makes React far more simple, focused and consistent. It's very common knowledge in the JavaScript community that Angular1/Angular2 has much larger API to learn than ReactJS +FLUX (combined). In Angular, in general, the learning curve is much steeper so that means that being efficient in that area of expertise is much harder than in React. Because ReactJS helps to prevent updating of DOM, it means that the apps will be faster and deliver better UX. ReactJS was designed to help improve the total rendered pages from the website server. Besides, it utilizes nodes to render on the client-side. React vs. Angular: Which one is easier. Angular is a full-featured MVC framework, developed and maintained by Google whereas React is an open-source JS library which is developed and maintained by Facebook. The toolchain in React is high as compared to Angular where it is low.

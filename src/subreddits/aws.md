@@ -1,92 +1,125 @@
 # aws
-## [1][AWS Global Accelerator: Terrible Name, Awesome Service](https://www.reddit.com/r/aws/comments/fsba7m/aws_global_accelerator_terrible_name_awesome/)
+## [1][Should I switch my ALB to use the Least Outstanding Requests algorithm? YES!](https://www.reddit.com/r/aws/comments/fsy2sq/should_i_switch_my_alb_to_use_the_least/)
+- url: https://medium.com/dazn-tech/aws-application-load-balancer-algorithms-765be2eca158?source=friends_link&amp;sk=2da467951a30524ef398b9b333707d43
+---
+
+## [2][Considering using AWS to host a Minecraft server. Would this be a bad idea?](https://www.reddit.com/r/aws/comments/fss6nx/considering_using_aws_to_host_a_minecraft_server/)
+- url: https://www.reddit.com/r/aws/comments/fss6nx/considering_using_aws_to_host_a_minecraft_server/
+---
+I always run servers on my own computer, but I have a group of fifteen friends who all want to play on a server that would be running 24/7 and I can't commit to that for my own computer. We've used MC hosting services in the past, but I feel like using something like AWS would be better because there wouldn't be any middleman. Is there any reason why I shouldn't use AWS? If I should use it, do you have any suggestions?
+
+Edit: Our current option costs $30/month and we're looking to reduce that.
+## [3][Introducing Amazon Detective Following The Breadcrumbs](https://www.reddit.com/r/aws/comments/fsp836/introducing_amazon_detective_following_the/)
+- url: https://engineering.kablamo.com.au/posts/2020/amazon-detective-following-the-breadcrumbs
+---
+
+## [4][AWS Global Accelerator: Terrible Name, Awesome Service](https://www.reddit.com/r/aws/comments/fsba7m/aws_global_accelerator_terrible_name_awesome/)
 - url: https://www.sentiatechblog.com/aws-global-accelerator-terrible-name-awesome-service?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=global_accelerator
 ---
 
-## [2][Docker desktop creators built a Kubernetes management tool](https://www.reddit.com/r/aws/comments/fs1lvy/docker_desktop_creators_built_a_kubernetes/)
-- url: https://infra.app/
+## [5][CDK Templates for Elasticsearch, Kinesis Streams, DynamoDB, Cognito, and Lambda](https://www.reddit.com/r/aws/comments/fskejj/cdk_templates_for_elasticsearch_kinesis_streams/)
+- url: https://github.com/vbudilov/aws-cdk-starter
 ---
 
-## [3][Now Open – Third Availability Zone in the AWS Canada (Central) Region](https://www.reddit.com/r/aws/comments/frrqky/now_open_third_availability_zone_in_the_aws/)
-- url: https://aws.amazon.com/blogs/aws/now-open-third-availability-zone-in-the-aws-canada-central-region/
+## [6][Do you delete the default VPC?](https://www.reddit.com/r/aws/comments/fshd0f/do_you_delete_the_default_vpc/)
+- url: https://www.reddit.com/r/aws/comments/fshd0f/do_you_delete_the_default_vpc/
 ---
-
-## [4][ECS Task IAM Role for cross-account resource sharing.](https://www.reddit.com/r/aws/comments/fsa78f/ecs_task_iam_role_for_crossaccount_resource/)
-- url: https://www.reddit.com/r/aws/comments/fsa78f/ecs_task_iam_role_for_crossaccount_resource/
+After setting up your VPC do you delete the default AWS one? I've read conflicting information on it.
+## [7][AWS NOOB: AWS EC2 or RDS?](https://www.reddit.com/r/aws/comments/fsztmm/aws_noob_aws_ec2_or_rds/)
+- url: https://www.reddit.com/r/aws/comments/fsztmm/aws_noob_aws_ec2_or_rds/
 ---
-I have a ECS task that needs to access resources in another aws account. 
+Our DB needs to be accessible 24/7, but it has low load.  We are a company of 10 people using the DB during an 8-hour workday, but we have some users (maybe 50) lightly touching the system outside of business hours.
 
-My ECS tasks are running in Account A and the resources that I need to access are in account B.
+Right now, we have a SQL Server 2012 on-premises.  The physical device is at least 5 years old. The VM has 64 GB RAM.  The total DB size is 200GB.  I don't know the total data throughput or the total number of queries.  It's been running fine like this for years.  I think we're over specced at 64 GB of RAM, but since we had it available, we assigned it. We use no stored procedures or T-SQL.  Just a simple RDMS that serves our web site which is our primary CMS/operations system.
 
-For this I have created a role in account B with necessary  permission to the required resources and I have added a trust relationship with account A as well.
+I'm looking to migrate to AWS while spending as little money as I can feasibly spend, but with a solution that I won't have to worry about and will be fast. I am not a DBA... I'm a hack programmer.
 
-Now in account A where ECS is running I have added  sts:AssumeRole to the Remote IAM role in account B.
+Here's what I'm considering...
 
-This however is not working. My ECS task is still not being able to access resourcecs in account B.
+**Convert to either postgresql or mysql**
+
+I've used mysql before and have been comfortable with it.  I'm a little worried that some of the queries that have been working in sql server will break.  Perhaps I might've unknowingly used some sql server specific function or syntax. I'm considering this to avoid paying sql server licensing fees.  Is this wise?
+
+**Server options**
+
+I'm using 16 GB RAM as a baseline for comparison.  
+
+\-Get an EC2 instance and run that as our DB server.  16GB Linux instance costs about $140 per month. 
+
+\-An on-demand RDS instance - m4.2xlarge has 16 GB ram and costs about $280 / mo.
+
+\-Aurora Serverless - 100% utilization with 8 ACU 16 GB RAM costs $371.   
+**My questions**
+
+Are these reasonable solutions?  Are my price estimates accurate?  Which of these sounds like the best solution for my use-case?    
+Thanks so much for your help.  Love you all.
+## [8][Elasticbeanstalk single docker environment, customized awslogs overwritten on ConfigDeploy.](https://www.reddit.com/r/aws/comments/fszsnn/elasticbeanstalk_single_docker_environment/)
+- url: https://www.reddit.com/r/aws/comments/fszsnn/elasticbeanstalk_single_docker_environment/
+---
+I've noticed an issue when updating config on Elasticbeanstalk environment and I'm looking for a clean way to overcome it.
+
+When deploying configuration changes,  my customized awslogs.conf gets overwritten with addon.
+
+&gt;AddonsBefore/ConfigCWLAgent/10-config.sh
+
+When I deploy my app, I use container command to modify the logs and container command is running after the addons therefore awslogs.conf is the way I want it, that is not the case on ConfigUpdate.
+
+Consequence is that my logs are not streamed anymore. As per AWS documentation using files in post hooks is not advised.
+
+Anyone has a suggestion how can I resolve this?
+## [9][Making billing dashboard publically accessible?](https://www.reddit.com/r/aws/comments/fsz4rc/making_billing_dashboard_publically_accessible/)
+- url: https://www.reddit.com/r/aws/comments/fsz4rc/making_billing_dashboard_publically_accessible/
+---
+Hey, I want to make it transparent to my customers how much the infrastructure costs. Is there any way how I can do it? Preferable the whole dashboard.
+## [10][Publish WebSite with https in AWS nightmare](https://www.reddit.com/r/aws/comments/fsz2rk/publish_website_with_https_in_aws_nightmare/)
+- url: https://www.reddit.com/r/aws/comments/fsz2rk/publish_website_with_https_in_aws_nightmare/
+---
+I can see the website with [http://www.devops.engineering/](http://www.devops.engineering/)
 
 &amp;#x200B;
 
-How do i set up cross-account IAM roles/policies that work with ECS  Task.
-## [5][How to automate workspace?](https://www.reddit.com/r/aws/comments/fsaz6p/how_to_automate_workspace/)
-- url: https://www.reddit.com/r/aws/comments/fsaz6p/how_to_automate_workspace/
----
-Hello guys,
+but I am unable to use [https://www.devops.engineering/](https://www.devops.engineering/)
 
-how do you automate your virtual desktops? Because after the creation of the image, the sysprep/general process killed understandably my user settings. Now I have to set things like language, default browser, etc. manually on every machine.  
+I am getting **www.devops.engineering** unexpectedly closed the connection.
 
+For certificate
 
-Do you use something like PS scripts, autostart scripts in the default image or something similiar? I cant find anything about answer.xlm files or something else. 
+&amp;#x200B;
 
-PS. my native language isnt EN, sorry for some grammatical mistakes and I am a beginner with AWS.   
+https://preview.redd.it/2oxvvu32c7q41.png?width=345&amp;format=png&amp;auto=webp&amp;s=9caab69219fa7cf6dee1d94498745d9efad35979
 
+&amp;#x200B;
 
-Thanks in advance. Greetings Manuel
-## [6][Manage infrastructure Programmatically](https://www.reddit.com/r/aws/comments/fs5831/manage_infrastructure_programmatically/)
-- url: https://www.reddit.com/r/aws/comments/fs5831/manage_infrastructure_programmatically/
----
-I am currently working on a project which allows engineers to manage their infrastructure by using Terrafrom in conjunction with Protocall Buffers.  This allows the developer to use a language of their choice without relying on data definition languages. If you have any comments, thoughts or ideas about the project, raise an issue.  
-[https://github.com/jackskj/terraform-pb](https://github.com/jackskj/terraform-pb)
-## [7][Nearest Lightsail instance region for South Africa](https://www.reddit.com/r/aws/comments/fsaqpg/nearest_lightsail_instance_region_for_south_africa/)
-- url: https://www.reddit.com/r/aws/comments/fsaqpg/nearest_lightsail_instance_region_for_south_africa/
----
-I'm currently setting up lightsail for wordpress and I'm trying to find out which is the instance location with the lowest latency for South Africa. Does anyone here knows or has a similar experience?
+What did I do?
 
-Geographically, Mumbai is the nearest. Would it be a safe bet to go with Mumbai?
+Created a certificated using and passed validation
 
-https://preview.redd.it/6a2wzpqcmzp41.jpg?width=3657&amp;format=pjpg&amp;auto=webp&amp;s=9d4524fc2c25ee3c48e875c7a10ac7131c71c63c
-## [8][HELP: CloudFront subdirectory hosting multiple angular apps](https://www.reddit.com/r/aws/comments/fs9nnn/help_cloudfront_subdirectory_hosting_multiple/)
-- url: https://www.reddit.com/r/aws/comments/fs9nnn/help_cloudfront_subdirectory_hosting_multiple/
----
-Hi there,
+[https://console.aws.amazon.com/acm/home?region=us-east-1#/](https://console.aws.amazon.com/acm/home?region=us-east-1#/)
 
-I have several angular apps, which I want to host on S3 in a single bucket but under different sub directories(Only for the sake of maintenance of a single bucket )
+&amp;#x200B;
 
-Note: I'm aware and have been hosting single app in its own bucket.
+https://preview.redd.it/ob5x2xa8c7q41.png?width=1911&amp;format=png&amp;auto=webp&amp;s=30a784a7169db48168c382228ce18b7280bf09be
 
-I have been trying to do three things 
+i checked the routes
 
-1) Cloudfront CDN for s3 sub directory hosting
+[https://console.aws.amazon.com/route53/home#resource-record-sets:Z2QK9LSHRP09KZ](https://console.aws.amazon.com/route53/home#resource-record-sets:Z2QK9LSHRP09KZ)
 
-2) preventing Subdirectory folder name in the URL
+&amp;#x200B;
 
-3) Making Angular routes work with the cloudfront. 
+https://preview.redd.it/kogxfuyac7q41.png?width=1557&amp;format=png&amp;auto=webp&amp;s=f8affe1f0c718b6103f198cc0a39e5f8ce88e29e
 
-So far I have had success with the 1st point.
+I have created the CloudFront distributions
 
-I have been trying to do this for like 3 hours now. but unable to achieve a whole solution.
+[https://console.aws.amazon.com/cloudfront/home#distributions:](https://console.aws.amazon.com/cloudfront/home#distributions:)
 
-Please guide me if its even possible to do that or not as no solution is available on the net properly.
-## [9][AWS Cognito](https://www.reddit.com/r/aws/comments/fs9hrc/aws_cognito/)
-- url: https://www.reddit.com/r/aws/comments/fs9hrc/aws_cognito/
----
-I don't quite understand the documentation and I hope this does not sound like a stupid question. 
+https://preview.redd.it/jfybem5ec7q41.png?width=1869&amp;format=png&amp;auto=webp&amp;s=7fff009ed078e7e1f2b81796db07049cbdfb4e89
 
-I have a subdomain (xxx.yyy.com) which i need to secure with MFA. This sub-domain is running a on-prem setup of Dynamics CRM.  It is possible for me to use AWS Cognito, create a user pool with a fixed list of users and at the domain to it? I am also using EC2 to run the AD server instead of managed AD.
-## [10][Monitor ALL EC2 instances in a region for status check failures.](https://www.reddit.com/r/aws/comments/fs3t0h/monitor_all_ec2_instances_in_a_region_for_status/)
-- url: https://www.reddit.com/r/aws/comments/fs3t0h/monitor_all_ec2_instances_in_a_region_for_status/
----
-I am looking for ideas on what combination of AWS services I can use.
+One with a redirect
 
-The idea is to have a check in place to send an alert (email, SNS, Pagerduty) of some kind if health checks on ANY of the EC2 instances in a REGION fails. Ignore any EC2 instances that are stopped.
+&amp;#x200B;
 
-The alarm should work if new instances are added or old instances are removed from the region. Would a lambda function do the job for something like this?
+https://preview.redd.it/q960p4dhc7q41.png?width=1212&amp;format=png&amp;auto=webp&amp;s=05603b1f49d554cf3e81685c44b528ca700065c3
+
+&amp;#x200B;
+
+https://preview.redd.it/78vj95uic7q41.png?width=1313&amp;format=png&amp;auto=webp&amp;s=712a6bde323142fcb8c530bf081dbd6df9db5de2

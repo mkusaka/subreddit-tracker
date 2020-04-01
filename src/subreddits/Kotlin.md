@@ -1,52 +1,17 @@
 # Kotlin
-## [1][Hash Map/Hash Table/Data Class](https://www.reddit.com/r/Kotlin/comments/fsaryl/hash_maphash_tabledata_class/)
-- url: https://www.reddit.com/r/Kotlin/comments/fsaryl/hash_maphash_tabledata_class/
+## [1][🎉 GraphQL Kotlin 2.0.0!](https://www.reddit.com/r/Kotlin/comments/fsru6c/graphql_kotlin_200/)
+- url: https://github.com/ExpediaGroup/graphql-kotlin/releases/tag/2.0.0
 ---
-     var data = HashMap&lt;String,Any&gt;()
-    
-        fun getOrczKeys() {
-    
-            //Must set android:usesCleartextTraffic="true" in AndroidManifest.xml
-            val soup = Jsoup.connect("http://orcz.com/Borderlands_3:_Shift_Codes").get()
-            val soupData = soup.select("tr")
-            soupData.forEach {element -&gt;
-    
-                //val elementData = element.select("td").text()
-                val source = element.select("td:eq(0)")
-                val rewards = element.select("td:eq(1)")
-                val issuedate = element.select("td:eq(2)")
-                val expirationdate = element.select("td:eq(3)")
-                val code = element.select("td:eq(4)")
-                val xbox = element.select("td:eq(5)")
-                val psn = element.select("td:eq(6)")
-                val epic = element.select("td:eq(7)")
-                val steam = element.select("td:eq(8)")
-                val stadia = element.select("td:eq(9)")
-    
-                data["source"] = source.text()
-                data["rewards"] = rewards.text()
-                data["issuedate"] = issuedate.text()
-                data["expirationdate"] = expirationdate.text()
-                data["code"] = code.text()
-                data["xbox"] = xbox.text()
-                data["psn"] = psn.text()
-                data["epic"] = epic.text()
-                data["steam"] = steam.text()
-                data["stadia"] = stadia.text()
-            }
-        }
-    
-        fun writeme () {
-    
-            println(data)
-        }
 
-I'm obviously missing something here with. I'm unsure if I'm adding the objects incorrectly, or if I'm using the incorrect storage. I'm trying to put all of the data from `soupData` foreach loop into the hashmap `data`. 
+## [2][`scan()` and `scanReduce()` in Kotlin 1.3.70!](https://www.reddit.com/r/Kotlin/comments/fsywl7/scan_and_scanreduce_in_kotlin_1370/)
+- url: https://twitter.com/kotlin/status/1245300637916594179?s=20
+---
 
-How would you go about this? I want to be able to call `data` and loop through an entire database/hashmap/hashtable. As the code sits, I only get the final object in the table showing. What am I missing? 
+## [3][“How to Combine Kotlin Flows” #androiddev #androiddevelopment #kotlin #roomdatabase #kotlin_multiplatform #programming #androiddeveloper](https://www.reddit.com/r/Kotlin/comments/fssg5b/how_to_combine_kotlin_flows_androiddev/)
+- url: https://medium.com/better-programming/learn-how-to-combine-kotlin-flows-317849a71d3e?source=friends_link&amp;sk=fc6ee71b885f67afe4dae695cb179a0b
+---
 
-Any resources/answers/articles are greatly appreciated here. I am more than willing to dig into documentation and figure this out, but I'm hitting a wall here. TIA!
-## [2][Why does Kotlin look so good ? Am I missing something?](https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/)
+## [4][Why does Kotlin look so good ? Am I missing something?](https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/)
 - url: https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/
 ---
 Hello there, 
@@ -60,18 +25,18 @@ Hello there,
 &amp;#x200B;
 
 Just joined the subreddit and I am still having a look around so please be kind :)
-## [3][Spring Boot in Kotlin - IntelliJ Idea Community vs Ultimate](https://www.reddit.com/r/Kotlin/comments/frtxez/spring_boot_in_kotlin_intellij_idea_community_vs/)
+## [5][Spring Boot in Kotlin - IntelliJ Idea Community vs Ultimate](https://www.reddit.com/r/Kotlin/comments/frtxez/spring_boot_in_kotlin_intellij_idea_community_vs/)
 - url: https://www.reddit.com/r/Kotlin/comments/frtxez/spring_boot_in_kotlin_intellij_idea_community_vs/
 ---
 What are the real disadvantages of developing Spring Boot Api (kotlin) in the Community version of IntelliJ vs Ultimate.
-## [4][JavaFX / Kotlin Discord Server](https://www.reddit.com/r/Kotlin/comments/fs0pzb/javafx_kotlin_discord_server/)
+## [6][JavaFX / Kotlin Discord Server](https://www.reddit.com/r/Kotlin/comments/fs0pzb/javafx_kotlin_discord_server/)
 - url: https://www.reddit.com/r/Kotlin/comments/fs0pzb/javafx_kotlin_discord_server/
 ---
 It is a great discord server where you can get some help or chat about Java / Kotlin related stuff. I like to talk with people that involve Kotlin and JavaFX or people who need some help with Kotlin or JavaFX.
 
 Discord Server link:  
 [https://discord.gg/2CFBxrw](https://discord.gg/2CFBxrw)
-## [5][Exploring the MVIKotlin project](https://www.reddit.com/r/Kotlin/comments/frwelx/exploring_the_mvikotlin_project/)
+## [7][Exploring the MVIKotlin project](https://www.reddit.com/r/Kotlin/comments/frwelx/exploring_the_mvikotlin_project/)
 - url: https://www.reddit.com/r/Kotlin/comments/frwelx/exploring_the_mvikotlin_project/
 ---
 I was excited when u/ArkadiiIvanov posted about the [MVIKotlin](https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/) project a few weeks ago.
@@ -90,7 +55,7 @@ Two initial takeaways:
 Video of exploration:
 
 [https://gitduck.com/watch/5e812cf8b7d7b83d6395fc69](https://gitduck.com/watch/5e812cf8b7d7b83d6395fc69)
-## [6][A framework to use PostgreSQL JSONB feature ?](https://www.reddit.com/r/Kotlin/comments/frnpp5/a_framework_to_use_postgresql_jsonb_feature/)
+## [8][A framework to use PostgreSQL JSONB feature ?](https://www.reddit.com/r/Kotlin/comments/frnpp5/a_framework_to_use_postgresql_jsonb_feature/)
 - url: https://www.reddit.com/r/Kotlin/comments/frnpp5/a_framework_to_use_postgresql_jsonb_feature/
 ---
 Good day to you fellow Kotlin enthusiasts ! 
@@ -100,7 +65,7 @@ I am kinda new to Kotlin ( finished my Kotlin Koans not even a week ago) and I h
 As for the database, I have been imposed with a PostgreSQL one by my client's company policy. The problem I do think having a flexible data representation would be a non negligeable plus, and thus I am very interested in PostgreSQL JSONB data type, with all the sweet queries features around. 
 
 I there a Kotlin framework you know of which would expose this feature ? I can't seem to find any information on this.
-## [7][A long shot: Does anyone remember this blog post from several/many months ago?](https://www.reddit.com/r/Kotlin/comments/frf3ba/a_long_shot_does_anyone_remember_this_blog_post/)
+## [9][A long shot: Does anyone remember this blog post from several/many months ago?](https://www.reddit.com/r/Kotlin/comments/frf3ba/a_long_shot_does_anyone_remember_this_blog_post/)
 - url: https://www.reddit.com/r/Kotlin/comments/frf3ba/a_long_shot_does_anyone_remember_this_blog_post/
 ---
 I'm trying to find a blog post that I remember enjoying. My memory is fuzzy, but the big picture was that this person implement some kind of database/domain model as a class with a nullable "id" field. Like this:
@@ -115,36 +80,7 @@ Anybody else remember this or have any idea what I'm talking about? Thanks in ad
 
 EDIT: I found it! It was this https://medium.com/@nwillc/kotlin-data-class-inheritance-by-delegation-2ad3fe6f9bd7
 Cheers!
-## [8][Restful Api using Spring Boot](https://www.reddit.com/r/Kotlin/comments/frm589/restful_api_using_spring_boot/)
+## [10][Restful Api using Spring Boot](https://www.reddit.com/r/Kotlin/comments/frm589/restful_api_using_spring_boot/)
 - url: https://www.reddit.com/r/Kotlin/comments/frm589/restful_api_using_spring_boot/
 ---
 I am trying to learn how to make a Restful Api using Spring Boot. I have advanced programming skills with Android so I am good with Kotlin. Can someone share resources to learn; how to organise the architecture, code organisation etc?
-## [9][Looking for an example of a Service communicating with an Activity](https://www.reddit.com/r/Kotlin/comments/frb6iz/looking_for_an_example_of_a_service_communicating/)
-- url: https://www.reddit.com/r/Kotlin/comments/frb6iz/looking_for_an_example_of_a_service_communicating/
----
-Hello!
-
-I'm very new to Kotlin and new to Android development. I have a strong background using Java.
-
-All inputs and opinions are welcome! Feel free to link me to answers to similar questions, I'm very green here.
-
-**What I'm Doing:**
-
-* I'm writing a demo in Kotlin to run on an Android phone
-* I want to make a background (process?) that sends simulated data, once per second, to the Activity, which is a chart
-* I'd like to keep it in Kotlin but I'd be amenable to calling Java classes
-
-**I Have Questions:**
-
-* Is there already an example of this somewhere?
-* would this be a Service? Or am I way off here?
-* how does the Activity connect to the Service? Or does it? how does the Service update the Activity?
-* how does the Service know when to run (the scheduling)?
-
-&amp;#x200B;
-
-Thank you!
-## [10][Build a Signature Capture Application Using Canvas &amp; Kotlin - CodeSource.io](https://www.reddit.com/r/Kotlin/comments/fr6muq/build_a_signature_capture_application_using/)
-- url: https://codesource.io/build-a-signature-capture-application-using-canvas-kotlin/
----
-

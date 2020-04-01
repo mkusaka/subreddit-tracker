@@ -19,244 +19,157 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][What do you use to measure API endpoint calls?](https://www.reddit.com/r/rails/comments/fs7v2f/what_do_you_use_to_measure_api_endpoint_calls/)
-- url: https://www.reddit.com/r/rails/comments/fs7v2f/what_do_you_use_to_measure_api_endpoint_calls/
+## [2][Need help with AWS Cognito, S3, IAM, STS confusion](https://www.reddit.com/r/rails/comments/fsy7g7/need_help_with_aws_cognito_s3_iam_sts_confusion/)
+- url: https://www.reddit.com/r/rails/comments/fsy7g7/need_help_with_aws_cognito_s3_iam_sts_confusion/
 ---
-I‘m searching for an inexpensive product, should  also be GDPR compliant.
+I'm using AWS Cognito User Pool for authentication to my Ruby on Rails app. I've also created an Identity Pool for the User Pool, with the intention that logged in users are able to read files from a specific S3 bucket. However, I'm having trouble access objects in S3 as the logged in user. I have the tokens for the logged in user (`id_token`, `access_token`), but I don't know where to supply them.
 
-
-Do you know an overview of popular products that solve such and similar tasks?
-## [3][Using ES6 in Rails 4.2.x](https://www.reddit.com/r/rails/comments/fs8pio/using_es6_in_rails_42x/)
-- url: https://www.reddit.com/r/rails/comments/fs8pio/using_es6_in_rails_42x/
----
-Everyone here using ES6 in Rails 4.2.x ? 
-I heard that I should use Sprockets 3 , but my sprockets is 2.11.0 and there is only a documentation from upgrading from 3 to 4 
-
-Did you think it gonna break my project if I upgrade this from 2 to 3 ?
-And I would say from 2 to 4 is impossible for me because my rails still 4.2 
-
-Any guide for this ? 
-
-When I want to deploy to production, and if I use ES6 it is always error , And I think they way here using Babel to transpile it 
-
-If anyone here in 4.2 and using Es6 in their rails
-I d love to get know your guide for this 
-Thank you :)
-## [4][How to Rspec this?](https://www.reddit.com/r/rails/comments/fsbo6p/how_to_rspec_this/)
-- url: https://www.reddit.com/r/rails/comments/fsbo6p/how_to_rspec_this/
----
-I've been assigned to write rspec tests for a bit dated legacy project as a part of training.
-
-I am to write factories and spec for existing models. Some code in those models look weird and even silly, but I can not replace/refactor any of it and should create tests for model as the are.
-
-The model code has a class method:
-
-*def self*.filter\_type(type\_id)  
- *case* type\_id  
- *when* 1  
-5  
- *when* 2  
-6  
- *when* 3  
-7  
- *when* 4  
-3  
- *when* 5  
-9  
- *when* 6  
-10  
- *else*  
- 8  
- *end*  
-*end*
-
-So I can just create examples for each 'when' one-by-one to get rid of it but it's the 'else' case that bugs me. How do I make a proper test to include any value othere then (1..6). 
-
-There is no restriction to use only integers as 'type\_id' in the code but let's assume there is.
-
-Any hints to this?
-## [5][Best way to Solve O(n + 1) in a table display](https://www.reddit.com/r/rails/comments/frtx0b/best_way_to_solve_on_1_in_a_table_display/)
-- url: https://www.reddit.com/r/rails/comments/frtx0b/best_way_to_solve_on_1_in_a_table_display/
----
-Let's say I have model `A` that `has_many` model `B` that in turn `has_many` model `C`. 
-
-If I want to create a page that has a table where given an instance of `A`, I should display rows of `B`'s where each column in each row is defined by `C`s of each `B`. Assuming each `C` in `B` always equal number of instances and can be sorted by `C`'s column called `priority`.
-
-What's the most efficient way to go about it?
-
-```
-# Some controller:
-@a = A.find(a_id)
-@b_records = B.where(a_id: @a.id)
+Following the [sample code](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/s3-example-get-bucket-item.html) from the Ruby SDK doc only allows me to access S3 as a shared user, not the logged in user:
+```ruby
+s3 = Aws::S3::Resource.new(region: aws_region)
+obj = s3.bucket('my-bucket').object('my-item')
+obj.get(response_target: './my-code/my-item.txt')
 ```
 
-Haml O(n+1) style:
+Then I found [this doc](https://docs.aws.amazon.com/AmazonS3/latest/dev/AuthUsingTempSessionTokenRuby.html) about using temporary credentials, but I also don't know how use the user's tokens anywhere. I've also tried STS' [AssumeRoleWithWebIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) that allows me to pass in the `id_token`, and used the Identity Pool's `role_arn`, but I'm getting `AccessDenied` error. I'm confused of the relationship between STS, IAM, and Cognito Identity Pool. Can anyone help?
 
-```
-%table
-  - @b_records.each do |r|
-    %tr
-      - r.cs.order('priority ASC').each do |c|
-        %td= c.some_value
-```
-## [6][ActiveRecord::RecordInvalid: Validation failed: Users must exist on db:seed](https://www.reddit.com/r/rails/comments/frvagj/activerecordrecordinvalid_validation_failed_users/)
-- url: https://www.reddit.com/r/rails/comments/frvagj/activerecordrecordinvalid_validation_failed_users/
+Note: I've also enabled S3 access logging and it should log the Cognito user who access the files.
+## [3][Can we see the generated metaprogramming method](https://www.reddit.com/r/rails/comments/fswsxp/can_we_see_the_generated_metaprogramming_method/)
+- url: https://www.reddit.com/r/rails/comments/fswsxp/can_we_see_the_generated_metaprogramming_method/
 ---
-I am trying to seed an sqlite3 db from a json file as a project. I have two models user and logins.
+I want to know if there is possible to check if a method that is generated by metaprogramming in rails can be viewed as a normal method definition. 
 
-    `require 'json'  file = File.read('db/people.json')`
-     data_hash = JSON.parse(file, symbolize_names: true) 
-     records = JSON.parse(File.read('db/people.json'))
-     records.each do |record| User.create!(record.except('logins').merge('password' =&gt; 'encrypted password'))
-     end 
-    records.each do |record| Login.create!(record['logins']) 
-    end
+Suppose in the meta-programming definition I have defined a few methods which have a few conditional statements and for a particular such method, I want to see the finally constructed method.
+## [4][How to issolate all the bits and pieces of a scraper to run more independently?](https://www.reddit.com/r/rails/comments/fsxq97/how_to_issolate_all_the_bits_and_pieces_of_a/)
+- url: https://www.reddit.com/r/rails/comments/fsxq97/how_to_issolate_all_the_bits_and_pieces_of_a/
+---
+Im building a scraper and using sidekiq for the scrape job. Per product a user can activate a scraper and the scraper called using in a cron job:
 
-When I run my rails db:seed it successfully seeds the users and then fails when creating the logins with this error **ActiveRecord::RecordInvalid: Validation failed: Users must exist** It may be something with my schema or my seed script im not sure which .
+Sidekiq::Cron::Job.create(name: "StartScraper - every 2 hours!" , cron: '0 \*/2 \* \* \*', class: 'StartScraper')
 
-       ActiveRecord::Schema.define(version: 2020_03_30_164743) do
+\---------
+
+Before starting the scraper i have this in my code (to only scrape the activated products)
+
+product = Product.where('scraper\_active = true')
+
+everything is working fine if the scraper **doesnt brake.** 
+
+But the issue im facing is; **whenever the scraper fails**, the **sidekiq job is starting all over again**. This is bad because if a user is tracking 20 products, and the 19the product is failing, **it will rerun** and start with product 1 again - assuming all 19 products are active.
+
+If i get 10 users, all tracking 20 products, it will go and rerun all the scrapers.
+
+&amp;#x200B;
+
+Im storing the scraped data in a Tracker modal, with these fields
+
+`create_table "trackers", force: :cascade do |t|`
+
+`t.integer "qty"`
+
+`t.string "price"`
+
+`t.bigint "product_id", null: false`
+
+`t.datetime "created_at", precision: 6, null: false`
+
+`t.datetime "updated_at", precision: 6, null: false`
+
+`t.integer "user_id"`
+
+`t.string "current_seller"`
+
+`t.boolean "success", default: false`
+
+I have created a Tracker before starting the scrape job to track if the scraper is failing
+
+tracker = Tracker.new
+
+Tracker.create!(id:tracker, qty:1, price:1, product\_id: product.id, user\_id:product.user\_id, current\_seller: nil, success: false )
+
+and setting the tracker.succes to true when finishing the scrape job succesfully
+
+`current_tracker = Tracker.last`
+
+`current_tracker.update_attribute(:price, price)`
+
+`current_tracker.update_attribute(:qty, current_stock)`
+
+`current_tracker.update_attribute(:success, true)`
+
+`current_tracker.update_attribute(:current_seller, current_seller)`
+
+Everything is one big file. I have thought about splitting everything up in smaller jobs, but then still Sidekiq is performing the job in start\_scraper.rb and will re run everything whenever something is failling.
+
+My ideal solution would be to issolate all the pieces of the scraper in multiple jobs, and to call the next job if the current job is finished succesfully. But cant figure out how.
+
+My question is, 
+
+* what is a better approach to isolate everything and make the scraper more secure?
+* How to issolate a job in Sidekiq and move to the next one if success, and retry only the ones that failed?
+
+\------------
+
+Im almost building this thing for 2 months. Started learning rails a few months a go and like it a lot.
+
+Want to test the application out yourself (not the code, but the frontend)? See below...
+
+I considered my application finished untill I noticed this behaviour :D 
+
+You can sign up here and test the application your self [http://pnnq.hatchboxapp.com/](http://pnnq.hatchboxapp.com/)  the application is only interesting for dutch people because it scrapes one of the biggest ecommerce sites in NL. 
+
+a free user can only scrape 1 product and will have 3 alerts
+## [5]['rails new' throwing Sqlite3 error](https://www.reddit.com/r/rails/comments/fsw2ju/rails_new_throwing_sqlite3_error/)
+- url: https://www.reddit.com/r/rails/comments/fsw2ju/rails_new_throwing_sqlite3_error/
+---
+I'm setting up Ruby and Rails on a new dev machine--running Linux Mint--and I've successfully installed Ruby, ruby-dev, Rails, and Sqlite with the package manager. (I think Ruby 2.5.1 and Rails 4.2.10.) However, every time I try to run "rails new", it gets as far as "bundle install --local" and then throws the following error:
+
+    run  bundle install --local
+    Could not find gem 'sqlite3' in any of the gem sources listed in your Gemfile.
+    run  bundle exec spring binstub --all
+    bundler: command not found: spring
+    Install missing gem executables with `bundle install`
+
+I am, however, certain that I've installed Sqlite. I tried "gem install sqlite3", but that fails on the grounds that I don't have Ruby development tools installed--but I do. Everything I've been able to find online so far advises adding stuff to my Gemfile--but my Gemfile doesn't exist yet since it's the command that creates the Gemfile that's failing! So I'm now massively confused ...
+
+I've used Rails before but it's been a while, and I'm not super familiar with Linux, so please assume I need maximum handholding when answering--apologies for that!
+## [6][Acts-as-follower gem alternative](https://www.reddit.com/r/rails/comments/fsxfsz/actsasfollower_gem_alternative/)
+- url: https://www.reddit.com/r/rails/comments/fsxfsz/actsasfollower_gem_alternative/
+---
+I need some social relations such as liking, following etc. In my app, I'm wondering if there is any gem which provides that functionality and is actively maintained at now. Acts-as-follower looks great but it's abandoned so I'm looking for alternative befor I will start coding it on my own
+## [7][Digital Signature](https://www.reddit.com/r/rails/comments/fsnzud/digital_signature/)
+- url: https://www.reddit.com/r/rails/comments/fsnzud/digital_signature/
+---
+Hey everyone! I am working on a Rails application that requires a digital signature. Many of our clients have opted to use Topaz pads. This works great when everyone is around to share the machine. However, due to COVID-19, this isn't really possible. Our workaround has been signing via mouse and JSignature (I think thats is what its called) but this is quite clunky. Does someone have an alternative to this? Maybe via a mobile app (signing via touchscreen and finger seems nicer than mouse/trackpad). Thanks in advanced and stay healthy.
+## [8][Rails and Bootstrap styling on checkboxes?](https://www.reddit.com/r/rails/comments/fsm7gl/rails_and_bootstrap_styling_on_checkboxes/)
+- url: https://www.reddit.com/r/rails/comments/fsm7gl/rails_and_bootstrap_styling_on_checkboxes/
+---
+I'm building a form in Rails views and have several checkboxes created with \`collection\_check\_boxes\`. 
+
+This is working but looks terrible since there are 51 checkboxes. I would like to space them out but having a lot of difficulty with the usual Bootstrap stylings using components wrapped around the collection and within and both. I've tried \`grid\`, \`flex\` and others. I've even tried to do custom CSS Grid but nothing really works. I would like 5 rows of 10 checkboxes nicely spaced out. How do I get in there and manipulate the checkboxes? In my approaches, it's not that the boxes aren't moving, it's just that they either go into a long row or 1 or 2 columns. Here's the line: 
+
+      &lt;div class="what bootstrap goes here ??"&gt;
     
-       create_table "logins", force: :cascade do |t|
-        t.datetime "date"
-        t.datetime "created_at", null: false
-        t.datetime "updated_at", null: false
-        t.integer "user_id"
-        t.index ["user_id"], name: "index_logins_on_user_id"
-       end
+        &lt;%= f.collection_check_boxes(:authorization_ids, Authorization.all, :id, :auth_name, { checked: @account.try { |a| a.authorization_ids.map(&amp;:to_param) } }, multiple: true, class: "&lt;What bootstrap goes here??") %&gt;
     
-       create_table "users", force: :cascade do |t|
-        t.string "first_name"
-        t.string "last_name"
-        t.string "city"
-        t.string "state"
-        t.string "email", default: "", null: false
-        t.string "encrypted_password", default: "", null: false
-        t.string "reset_password_token"
-        t.datetime "reset_password_sent_at"
-        t.datetime "remember_created_at"
-        t.datetime "created_at", null: false
-         t.datetime "updated_at", null: false
-         t.index ["email"], name: "index_users_on_email", unique: true
-         t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-        end
-    
-       end
-
-Here is a link to my source code [https://github.com/jslack2537/apiDemoApp](https://github.com/jslack2537/apiDemoApp)
-
-&amp;#x200B;
-
-I was able to make it work like this 
-
-    records.each do |record|    
-     u = User.new(record.except('logins').merge('password' =&gt; 'encrypted password'))    
-     u.logins = record['logins'].map{|l| Login.new(l)}     
-     u.save! 
-    end
-
-&amp;#x200B;
-## [7][best implementation for a model with an owner and users?](https://www.reddit.com/r/rails/comments/frkvhe/best_implementation_for_a_model_with_an_owner_and/)
-- url: https://www.reddit.com/r/rails/comments/frkvhe/best_implementation_for_a_model_with_an_owner_and/
+        &lt;/div&gt;
+## [9][Need help configuring part of an API controller](https://www.reddit.com/r/rails/comments/fsufkb/need_help_configuring_part_of_an_api_controller/)
+- url: https://www.reddit.com/r/rails/comments/fsufkb/need_help_configuring_part_of_an_api_controller/
 ---
-I have a Team model in my rails app. The team should have an owner. The owner should be able to invite other users to his/her team.
+I left my code and more description of what was going on over on stackoverflow 
 
-I'm using a Team as an "account" for my app. This account can have many users on it, but ultimately belongs to the owner of the team.
+ [https://stackoverflow.com/questions/60964973/rails-api-setting-up-an-endpoint-to-get-my-logins-by-day](https://stackoverflow.com/questions/60964973/rails-api-setting-up-an-endpoint-to-get-my-logins-by-day) 
 
-Therefore a team should also have many users. The users can interact with the account/app a certain way. But, the owner has more authorization with what he/she can do with the account/app because of his/her owner status.
-
-Also, the owner should be able to assign different roles to any of the users, with each role having it's own unique set of authorizations.
-
-Lastly, users may have their own teams, separate from the ones the members of. Meaning, that users can have multiple teams, being members of some, and being owners of others (although, it's likely they'll only ever be the owner of one, for convenience reasons).
-
-&amp;#x200B;
-
-How can I implement this? My initial thought was this:
-
-**3 models**: Team, User, UserTeam
-
-**Many-to-many assocation (has\_many through):** using user\_team as the middle man.
-
-Lastly, I thought to keep track of roles on the user\_team records.
-
-But this doesn't *feel* right. Ideally, I'd like to be able to write
-
-    team.users # =&gt; returns all users including owner
-    team.owner # =&gt; returns user that is the owner
-    
-    user.teams # =&gt; returns all teams user belongs to (including owned teams)
-    user.owned_teams # =&gt; returns only the teams that the user owns.
-    
-    # and most importantly
-    team.owner == @owner # =&gt; true
-    team.users.includes?(@owner) # =&gt; true
-
-because owners are technically users with an owner role.
-
-What do you all think? Was my first thought on the right track? is there a better way? or should I just completely give up programming and become a musician?
-
-Thanks!
-## [8][Building a rails app that can upload pictures to an S3 bucket via CarrierWave and fog-aws, but it's giving me a Errno::EPIPE at /posts Broken pipe error](https://www.reddit.com/r/rails/comments/frmi1y/building_a_rails_app_that_can_upload_pictures_to/)
-- url: https://www.reddit.com/r/rails/comments/frmi1y/building_a_rails_app_that_can_upload_pictures_to/
+I know anther link
+## [10][Simple question, but in a Rails migration file, does the |t| just represent the table itself?](https://www.reddit.com/r/rails/comments/fsklxh/simple_question_but_in_a_rails_migration_file/)
+- url: https://www.reddit.com/r/rails/comments/fsklxh/simple_question_but_in_a_rails_migration_file/
 ---
-Edit: Note to anyone with the same issue in the future: 
-
-SOLVED - Remember to specify the region in fog.credentials 
-
-&amp;#x200B;
-
-Hi there.
-
-First of all this is my first post, I am really new at both Ruby and Rails, so I am glad to be here.
-
-The last few days I've tried following a youtube tutorial creating an "instagram clone" cause I for my second rails project wanted to learn about implementing a postgres db, devise user authentication and also file hosting on AWS.
-
-For the last 2 days I have been stuck on this issue where I cannot push anything to S3, and I feel like either the error is extremely vague or I am just not equipped to understand it. I tried using better\_errors and binding\_of\_caller to get a better feel for what's going on, but I am as stuck as can be.
-
-things I've done:
-
-I generated a CarrierWave uploader via the cli, and changed it to use :fog for storageI created the CarrierWave initializer and filled in the required fog credentials and directory as such:
-
-&amp;#x200B;
-
-https://preview.redd.it/65f2byqgjrp41.png?width=1310&amp;format=png&amp;auto=webp&amp;s=9837ef56e4d1a0baec84e83d9a96405a6d10d183
-
-I have the variables for my credentials and bucket in a separate application.yml file living in the config directory
-
-I then have a Post model in which I mount the uploader mentioned, and I have a controller for it. It is the controller specifically that throws the error
-
-&amp;#x200B;
-
-https://preview.redd.it/emqer83ckrp41.png?width=1490&amp;format=png&amp;auto=webp&amp;s=94ad7b7745fbf906b4d2e0136406410decadfa6d
-
-Please let me know what other information is required cause right now I am feeling desperate and that's never a fun experience :)
-
-(also, if someone would be willing to help me out with screensharing or similar, I would appreciate and welcome it)
-
-Best regards
-
-&amp;#x200B;
-
-ps: forgot to mention that it looks like it times out when trying to upload/connect to aws, and that I verified the credentials and bucket with the awscli tool
-## [9][Ruby 2.7.0 Warnings](https://www.reddit.com/r/rails/comments/frjwgd/ruby_270_warnings/)
-- url: https://www.reddit.com/r/rails/comments/frjwgd/ruby_270_warnings/
+wasn't too clear, simple question. is the `|t|` just representative in the table and then in the do/end block we reference it with like `t.integer :games, null: false` ?
+## [11][Rails 6 jQuery upgrade with webpacker!](https://www.reddit.com/r/rails/comments/fsgo0t/rails_6_jquery_upgrade_with_webpacker/)
+- url: https://www.reddit.com/r/rails/comments/fsgo0t/rails_6_jquery_upgrade_with_webpacker/
 ---
-I started using Ruby 2.7.0 for my projects. However there seems to be a lot of warning messages with Rails 6 libraries like activesupport. Will this be an issue moving forward?
-## [10][From %&lt;a href=... to &lt;%=link_to in text.gsub!](https://www.reddit.com/r/rails/comments/frmzyn/from_a_href_to_link_to_in_textgsub/)
-- url: https://www.reddit.com/r/rails/comments/frmzyn/from_a_href_to_link_to_in_textgsub/
----
-Hi, I'm customizing my  **markdown redcarpet (**`class MarkdownRenderer &lt; Redcarpet::Render::HTML`**)**.
+Hello Everyone,  
 
-I found this part
+Here’s a detailed blog on [how to add jQuery in your Rails 6 application with the help of webpacker](https://www.botreetechnologies.com/blog/rails-6-jquery-upgrade-with-webpacker)!
 
-      def paragraph(text)
-        text.gsub!(/@(\w+)/) do |match|
-          %(&lt;a href="/user/#{match[1..-1]}"&gt;#{match}&lt;/a&gt;)
-        end
-
-Can I replace `%(&lt;a href="/user/#{match[1..-1]}"&gt;#{match}&lt;/a&gt;)` using `&lt;%= link_to #{match}, user_path(#{match}) etc. etc.` ?
-
-**How to do?** What is the right syntax?
-## [11][Dtos in rails](https://www.reddit.com/r/rails/comments/frn6cd/dtos_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/frn6cd/dtos_in_rails/
----
-Hi, im from c#. How to create dto in ruby on rails?
+Hope this will be helpful to #railscommunity.

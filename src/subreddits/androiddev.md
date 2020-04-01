@@ -31,82 +31,95 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Introducing dual-screen layouts for Android | Surface Duo Blog](https://www.reddit.com/r/androiddev/comments/fs39j7/introducing_dualscreen_layouts_for_android/)
-- url: https://devblogs.microsoft.com/surface-duo/introducing-dual-screen-layouts-android/
+## [3][Ask us Anything! We’re the Bumble Android engineering team.](https://www.reddit.com/r/androiddev/comments/fsuwr2/ask_us_anything_were_the_bumble_android/)
+- url: https://www.reddit.com/r/androiddev/comments/fsuwr2/ask_us_anything_were_the_bumble_android/
+---
+This is Bumble’s first AMA and we are really excited to be participating in it!
+
+For those of you who don’t know much about us, we are the company behind the dating and social network Bumble and Badoo apps counting half a billion users around the world.  Our Android apps are huge, with over 1.3 million lines of code, over 210 million downloads on the Google Play store and an amazing team of 23 people who develop it.
+
+This is a great opportunity for you to ask any technical questions you may have about developing android apps at this scale, the technical challenges we face, our [Open Source projects](https://github.com/badoo), articles in [our Tech Blog](https://badootech.badoo.com/tagged/android) and anything in-between. Please note we’re only able to answer questions relevant to the Android development team.
+
+We will start answering questions from 6pm (GMT+1) but you can already start writing them. We will be here with you guys until 9pm (GMT+1). [Check here for other timezones](https://www.worldtimebuddy.com/?qm=1&amp;lid=100,14,8,5&amp;h=14&amp;date=2020-4-1&amp;sln=18-22)
+
+\------
+
+About our developers who will answer you:
+
+* **Anatoliy:** Responsible for the registration component in the Android team. You can find me on reddit: u/anatolv
+* **Andrei:** Engineer, musician. Interested in everything that can be described as software. Working in the Bumble app.
+* **Anton:** Android engineer in the Badoo features team. Worked on the apps for phones, tablets and even TVs.
+* **Arkadii:** Born in Saint-Petersburg, Russia. Currently living in London, UK. Started working as a Windows developer in 2008, then switched to Android development in 2012. Passionate about Kotlin Multiplatform, MVI and reactivity.
+* **Michael:** Android Developer in the Revenue team - we work on ads and payment flows. Keen on Multiplatform Architecture and Rust.
+* **Nick:** Android engineer in the Core team, mostly focused on mobile infrastructure.
+* **Zsolt:** Programming since 1996 and on Android since 2.3, at Badoo since late 2016. Working in the platform team on architecture and tooling. Passionate about architecture, Jetpack Compose, and learning about better ways to approach problems.
+
+\---------
+
+**Proof**: [https://twitter.com/BadooTech/status/1244635799536250882?s=20](https://twitter.com/BadooTech/status/1244635799536250882?s=20)
+## [4][DarkSky API is getting revoked in 2021 and DarkSky android app will shutdown on the 1st of July 2020](https://www.reddit.com/r/androiddev/comments/fsppsa/darksky_api_is_getting_revoked_in_2021_and/)
+- url: https://www.androidauthority.com/dark-sky-shut-down-1101040/
 ---
 
-## [4][BL Taxi is an open-source app built to showcase the latest technologies. It uses Kotlin, Coroutines, Koin, Architecture Components, MVVM, Room, Retrofit, Material Components, and other Jetpack libraries.](https://www.reddit.com/r/androiddev/comments/frvv8s/bl_taxi_is_an_opensource_app_built_to_showcase/)
-- url: https://github.com/VladimirWrites/BLTaxi
+## [5][Android Studio 3.6.2 available](https://www.reddit.com/r/androiddev/comments/fsjq4h/android_studio_362_available/)
+- url: https://androidstudio.googleblog.com/2020/03/android-studio-362-available.html
 ---
 
-## [5][Is it worth it to follow the Android Kotlin course by Google on Udacity?](https://www.reddit.com/r/androiddev/comments/fsba8g/is_it_worth_it_to_follow_the_android_kotlin/)
-- url: https://www.reddit.com/r/androiddev/comments/fsba8g/is_it_worth_it_to_follow_the_android_kotlin/
----
-I'm a beginner here trying to learn different Jetpack packages such as Architecture and Navigation.
-
- 
-I have taken the Android Kotlin Udacity by Google course and I have noticed in their examples that they have used android arch libraries and on the documentation page it has been mentioned androidx. 
-
-I know what AndroidX is but is it okay to replace those examples but using the versions mentioned in the docs? 
-
-Thanks in advance!
-## [6][How to test api calls from android app to localhost service?](https://www.reddit.com/r/androiddev/comments/fsa8as/how_to_test_api_calls_from_android_app_to/)
-- url: https://www.reddit.com/r/androiddev/comments/fsa8as/how_to_test_api_calls_from_android_app_to/
----
-I'm trying to understand how to test http calls from my app (which is running in an emulator) to my backend service, which is running in debug on my pc on https://localhost:8080.
-
-I get that talking to https://localhost:8080 directly from android won't work because it means "emulator's localhost", so I'm talking to my pc local ip, but I got CERTIFICATE_VERIFY_FAILED because of course https://192.168.1.123:8080 doesn't have a signed cert.
-
-What is the correct way to handle this situation?
-## [7][Is there anyway I could test an Android application (via Android Studio) without ADB?](https://www.reddit.com/r/androiddev/comments/fs91sl/is_there_anyway_i_could_test_an_android/)
-- url: https://www.reddit.com/r/androiddev/comments/fs91sl/is_there_anyway_i_could_test_an_android/
----
-Hi all,
-
-I'm currently studying Android developing(personally) using Android Studio. Due to my company's security policy, we must gain permission to execute adb.exe. I think my boss would not allow me to gain this permission, so I'm looking for ways to test out my app. Is this possible? Would there be any way for me to do this?
-## [8][Where do you guys find good svgs and image assets for your apps?](https://www.reddit.com/r/androiddev/comments/fs6olp/where_do_you_guys_find_good_svgs_and_image_assets/)
-- url: https://www.reddit.com/r/androiddev/comments/fs6olp/where_do_you_guys_find_good_svgs_and_image_assets/
----
-I want to make a simple app as my first, however I'm looking for some crisp images assets I can use. Is there a better alternative than using non copyrighted google images?
-## [9][Unit testing help](https://www.reddit.com/r/androiddev/comments/fs777k/unit_testing_help/)
-- url: https://www.reddit.com/r/androiddev/comments/fs777k/unit_testing_help/
----
-I've recently been through u/VasiliyZukanov 's Android unit testing course, but I'm still at a bit of a loss here with how to attack this problem.
-
-I've been trying to get Unit tests into my project at work for a while now which has zero test coverage and severely lacks architecture. Fortunately I'm able to refactor where necessary, although I'm really not sure what to do about the these kind of scenarios of callbacks containing business logic, or even in some cases, nested callbacks which are extremely common in our codebase.
-
-For example how would I possibly approach testing the logic within onAvailablePlansLoaded() or onFail()?
-
-    billingCenter.connect(object :
-            billingCenter.BillingConnectionCallback {
-        override fun onConnected() {
-            billingCenter.loadAvailablePlans(object : BillingCenter.LoadAvailablePlansCallback {
-                override fun onAvailablePlansLoaded() {
-                    when {
-                        billingCenter.availablePlans.isEmpty() -&gt; showError()
-                        else -&gt; checkDiscounts()                
-                    }
-                }
-    
-                override fun onFail() {
-                    showError()
-                }
-            }
-        })
-
-I feel like I'm missing something fundamental here, please enlighten me!
-## [10][Is there a library for this style dialog? Looks really nice.](https://www.reddit.com/r/androiddev/comments/fryfih/is_there_a_library_for_this_style_dialog_looks/)
-- url: https://i.imgur.com/tWxtZ1c.jpg
+## [6][Kotlin Coroutines - So that you async](https://www.reddit.com/r/androiddev/comments/fszl72/kotlin_coroutines_so_that_you_async/)
+- url: https://medium.com/android-microsoft/kotlin-coroutines-1c8e009cb711
 ---
 
-## [11][How to write in a txt file in my internal storage](https://www.reddit.com/r/androiddev/comments/fs7sw0/how_to_write_in_a_txt_file_in_my_internal_storage/)
-- url: https://www.reddit.com/r/androiddev/comments/fs7sw0/how_to_write_in_a_txt_file_in_my_internal_storage/
+## [7][How is/was your experience with AppLovin?](https://www.reddit.com/r/androiddev/comments/fsyi21/how_iswas_your_experience_with_applovin/)
+- url: https://www.reddit.com/r/androiddev/comments/fsyi21/how_iswas_your_experience_with_applovin/
 ---
-I want to write in a file, for example in 
-/storage/emulated/0/My Files/abc.txt
+I've been trying to integrate more ad networks in my mediation chain and looked at AppLovin, for which the minimum payout for PayPal is $20 and the payout period is NET 30 (I think, because they don't mention the exact payout dates if you don't have an account, all the above info is gathered from various sources).
 
-How can I do that while mentioning the path in the code. I want to mention the path in tbe code.
-## [12][Why is the emoji on Gboard became inconsistent recently. Before, it was uniform Samsung Emoji across apps. Now it differs per app.](https://www.reddit.com/r/androiddev/comments/fsckc6/why_is_the_emoji_on_gboard_became_inconsistent/)
-- url: https://i.redd.it/fzvw5sjkb0q41.jpg
+So how is/was your experience with them? What eCPM do you get for Interstitials/Banners/Rewarded Vids? Is the above info about payout correct? What's the Fill rate you got? Is it worth adding?
+## [8][Carousel effect recycler view](https://www.reddit.com/r/androiddev/comments/fsy7mh/carousel_effect_recycler_view/)
+- url: https://www.reddit.com/r/androiddev/comments/fsy7mh/carousel_effect_recycler_view/
+---
+How do we create a carousel effect for a horizontal recycler view where each item is snapped to the center of the screen (and the size of the snapped view increases) while scrolling along?
+## [9][Flutter E-Commerce Login UI BolierPlate - Speed Code](https://www.reddit.com/r/androiddev/comments/fsxuky/flutter_ecommerce_login_ui_bolierplate_speed_code/)
+- url: https://youtu.be/BJ5xixtIzAk
 ---
 
+## [10][Android OS Releases](https://www.reddit.com/r/androiddev/comments/fsxrbk/android_os_releases/)
+- url: https://www.reddit.com/r/androiddev/comments/fsxrbk/android_os_releases/
+---
+I see that on Android Studio SDK Emulators, there are many API levels and ABI versions.
+
+&amp;#x200B;
+
+My app supports only arm64-v8a and armabi-7a. I want to support newer version like Pie and OREO but I can only find x86 and x86\_64 ABI versions.
+
+&amp;#x200B;
+
+Does that mean I can't support these versions like Orea etc?
+## [11][google admob in app](https://www.reddit.com/r/androiddev/comments/fsscw8/google_admob_in_app/)
+- url: https://www.reddit.com/r/androiddev/comments/fsscw8/google_admob_in_app/
+---
+I have implemented rewarded video ads on my app.
+
+&amp;#x200B;
+
+I also set up a mediation with AppLovin.
+
+&amp;#x200B;
+
+However, now it seems most of my ads served are from AppLovin.
+
+I do not want this because applovin ads does not show the "X" close button and indicator of duration of video.
+
+&amp;#x200B;
+
+I would like to use Google Admob as main source of ads, and use only applovin if they can't fulfil an ad request
+
+&amp;#x200B;
+
+How do I do this?
+## [12][Can BOM (bill of materials) be used in Gradle build script classpath dependencies?](https://www.reddit.com/r/androiddev/comments/fswn2b/can_bom_bill_of_materials_be_used_in_gradle_build/)
+- url: https://www.reddit.com/r/androiddev/comments/fswn2b/can_bom_bill_of_materials_be_used_in_gradle_build/
+---
+Asking because Firebase BOM includes version for Gradle plugin `com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta03`, which is added to classpath of top-level build script. BOM usage example only tells to add BOM to module's build.gradle via `implementation platform`.
+
+So the question is, can the version from BOM be propagated to buildscript classpath? I tried adding BOM line to classpath to no avail.

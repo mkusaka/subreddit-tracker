@@ -1,89 +1,107 @@
 # golang
-## [1][Virtual Go Meetup - Come learn about WebRTC and how you can build sub-second decentralized real-time communications software!](https://www.reddit.com/r/golang/comments/fs6lrc/virtual_go_meetup_come_learn_about_webrtc_and_how/)
+## [1][Help with concurrent linear search](https://www.reddit.com/r/golang/comments/fsxbhj/help_with_concurrent_linear_search/)
+- url: https://www.reddit.com/r/golang/comments/fsxbhj/help_with_concurrent_linear_search/
+---
+I've been trying to write a simple concurrent linear search function in Go but haven't been too successful. I'm not sure if my understanding of channels and go routines is poor (I'm assuming it to be true) but here's my code -
+
+    func simpleLinSearch(slice []int, num int, c chan int, startIndex int) {
+        for index, item := range slice {
+            if item == num {
+                c &lt;- index + startIndex
+                return
+            }
+        }
+        c &lt;- -1
+    }
+    
+    func concurrentLinSearch(slice []int, num int) {
+        c := make(chan int)
+        go simpleLinSearch(slice[:len(slice)/2], num, c, 0)
+        go simpleLinSearch(slice[len(slice)/2:], num, c, len(slice)/2)
+        x, y := &lt;-c, &lt;-c
+        if x == -1 {
+            return y
+        } else {
+            return x
+        }
+    }
+
+A description of what I'm trying to achieve - the `concurrentLinSearch` function takes in a slice and a number to search for. It creates a channel. It splits the slice into two equal halves and calls `simpleLinSearch` that simply goes through each element of the slice and tries to write the index to the channel if found otherwise write -1 to it. I call this for both halves of the slice with appropriate starting indicies (because the second half of the slice would start from 0 but the elements in the original slice would have the index as `len(slice) / 2`). Then I read from the channel into x and y.
+
+If x is -1 then it means the element wasn't in the half that was given to the function that wrote to the channel and vice versa.
+
+It runs perfectly fine, `concurrentLinSearch` returns the correct index for a given slice and a given number to check in it but when I tried printing out the comparisions, I found that it runs linearly in both cases - not concurrently.
+
+What am I doing wrong? Do the reads from the channel to `x` and `y` block the other goroutine so as to not read from the channel at the same time? I tried reading about `sync.WaitGroup` but couldn't go too far as I kept encountering deadlocks.
+## [2][Let's make a tiny chess engine in Go](https://www.reddit.com/r/golang/comments/fsknxh/lets_make_a_tiny_chess_engine_in_go/)
+- url: https://zserge.com/posts/carnatus/
+---
+
+## [3][Using Go for my Distributed Systems class](https://www.reddit.com/r/golang/comments/fsvlrc/using_go_for_my_distributed_systems_class/)
+- url: https://www.reddit.com/r/golang/comments/fsvlrc/using_go_for_my_distributed_systems_class/
+---
+It is my final quarter of university and in my Distributed Systems class we will be implementing a RESTful API across multiple Docker containers, and the professor gave us the choice of programming language. I'm heckin' stoked cause my group is down to clown and write the assignment in Go.
+## [4][Are you an employed software engineering using Go that is entirely self taught? What was your path to success and major milestones you remember from your first day of using Go to getting your offer letter?](https://www.reddit.com/r/golang/comments/fsegsq/are_you_an_employed_software_engineering_using_go/)
+- url: https://www.reddit.com/r/golang/comments/fsegsq/are_you_an_employed_software_engineering_using_go/
+---
+I'm trying to learn from other people's experience and make a structured timeline with projects, resources, and milestones on my way to becoming a software engineer.
+## [5][cancelling blocking read from stdin](https://www.reddit.com/r/golang/comments/fsxkqr/cancelling_blocking_read_from_stdin/)
+- url: https://www.reddit.com/r/golang/comments/fsxkqr/cancelling_blocking_read_from_stdin/
+---
+Hey,
+
+I'm processing stdin reading lines, but at some point, I want the user to be able to interrupt the process. This means stop channels etc but my goroutine that scans stdin will block until there is more data to be read, which might be an unreasonable amount of time in the future..
+
+The way I've "solved" this feels wrong:
+
+    lines := make(chan string)
+    go func() { 
+      s := bufio.NewScanner(os.Stdin)
+      s.Split(bufio.ScanLines)
+      for s.Scan() {
+        lines &lt;- s.Text()
+      }
+    }()
+    // ....
+    go func() {
+      for {
+        select {
+        case &lt;- stop:
+          return
+        case line := &lt;- lines:
+         // process line
+        }
+      }
+    }()
+
+I think if I `close(stop)` then this will stop my second goroutine as I want, but then nothing is receiving on `lines` anymore, so `lines &lt;- s.Text()` will block indefinitely.
+
+I can't come up with a better solution as I/O read is always exposed as synchronous, even if under the covers it isn't.
+
+Should I just ignore this blocking goroutine? Is there a better solution? maybe if I `close(lines)` then I could handle the panic that I think will happen because `lines &lt;- s.Text()` is still trying to write to it..
+
+Thanks!
+## [6][A little help for a beginner :&gt; [type system]](https://www.reddit.com/r/golang/comments/fszo8l/a_little_help_for_a_beginner_type_system/)
+- url: https://www.reddit.com/r/golang/comments/fszo8l/a_little_help_for_a_beginner_type_system/
+---
+Hey, could you help me understand type system in Go? Why does \*widget.Label started to be not compatible with fyne.CanvasObject.   
+Thanks very much for the help!  
+PS Do gophers have their char room?
+
+https://preview.redd.it/nluov05si7q41.png?width=773&amp;format=png&amp;auto=webp&amp;s=8af869263e34dab07b624176d858c12a50b70779
+## [7][Running Golang on the browser with WebAssembly and TinyGo](https://www.reddit.com/r/golang/comments/fszeix/running_golang_on_the_browser_with_webassembly/)
+- url: https://marianogappa.github.io/software/2020/04/01/webassembly-tinygo-cheesse/
+---
+
+## [8][Go: How Does a Goroutine Start and Exit?](https://www.reddit.com/r/golang/comments/fsyl42/go_how_does_a_goroutine_start_and_exit/)
+- url: https://medium.com/a-journey-with-go/go-how-does-a-goroutine-start-and-exit-2b3303890452
+---
+
+## [9][Why don't more people use Golang for scientific computing?](https://www.reddit.com/r/golang/comments/fsfqg0/why_dont_more_people_use_golang_for_scientific/)
+- url: https://www.reddit.com/r/golang/comments/fsfqg0/why_dont_more_people_use_golang_for_scientific/
+---
+Because of its concurrency, wouldn't Go be a good candidate for lots of (especially) bioinformatics workflows where you're just running the same functions against lots of inputs in many cases?  Why haven't people in the scientific community taken to Golang?
+## [10][Virtual Go Meetup - Come learn about WebRTC and how you can build sub-second decentralized real-time communications software!](https://www.reddit.com/r/golang/comments/fs6lrc/virtual_go_meetup_come_learn_about_webrtc_and_how/)
 - url: https://www.meetup.com/golang/events/269676725/
----
-
-## [2][An engineer who uses Go and Rust details when he likes to use each](https://www.reddit.com/r/golang/comments/frs5av/an_engineer_who_uses_go_and_rust_details_when_he/)
-- url: https://dmv.myhatchpad.com/insight/choosing-between-rust-or-go/
----
-
-## [3][unmarshal and anonymus strut in struct](https://www.reddit.com/r/golang/comments/fscqz0/unmarshal_and_anonymus_strut_in_struct/)
-- url: https://www.reddit.com/r/golang/comments/fscqz0/unmarshal_and_anonymus_strut_in_struct/
----
-Hi.
-
-I struggle to understand how to deserialize json to my types
-
-Consider the flowing:
-
-```
-type Car struct {
-	Brand string `json:"brand"`
-	Model string `json:"model"`
-}
-
-type Entry struct {
-	Car
-	Color string `json:"color"`
-}
-
-```
-The folowing json is deserialized fine:
-
-```
-{"brand":"Nissan","model":"Sunny","color":"white"}
-```
-
-However, when Car have a custom unmarshalJSON function, the field Color wont be set.
-
-Here is an example: https://play.golang.org/p/dEIVnJctykV
-
-I can probably find ways around this, but I am curios why this not works as expected. (or why I should expect this not to work :)
-
-br.
-## [4][Go Micro v2.4.0 release is out - The Go microservices development framework](https://www.reddit.com/r/golang/comments/fsb58y/go_micro_v240_release_is_out_the_go_microservices/)
-- url: https://github.com/micro/go-micro/releases/tag/v2.4.0
----
-
-## [5][Marshal structs the right way: Golang](https://www.reddit.com/r/golang/comments/fs8fkx/marshal_structs_the_right_way_golang/)
-- url: https://www.reddit.com/r/golang/comments/fs8fkx/marshal_structs_the_right_way_golang/
----
-Ever got stuck with marshalling structs in [\#Golang](https://twitter.com/hashtag/Golang?src=hashtag_click)? 
-
-Penned a new blog on this problem!!  This will surely be useful for you someday.
-
-Do give it a read :)
-
-Feedbacks and improvements are welcome.
-
-[https://mohitkhare.me/blog/marshal-structs-golang/](https://mohitkhare.me/blog/marshal-structs-golang/)
-## [6][hashicorp/go-connlimit: A simple library that allows a network server to limit how may concurrent connections it supports from each client IP.](https://www.reddit.com/r/golang/comments/fsaugv/hashicorpgoconnlimit_a_simple_library_that_allows/)
-- url: https://github.com/hashicorp/go-connlimit
----
-
-## [7][Minimal push-pull service based on worker pool](https://www.reddit.com/r/golang/comments/fs9ly7/minimal_pushpull_service_based_on_worker_pool/)
-- url: https://github.com/vardius/pushpull
----
-
-## [8][Split a text file into two text files of equal size in order](https://www.reddit.com/r/golang/comments/fsbq89/split_a_text_file_into_two_text_files_of_equal/)
-- url: https://www.reddit.com/r/golang/comments/fsbq89/split_a_text_file_into_two_text_files_of_equal/
----
-[https://stackoverflow.com/questions/60950014/split-a-text-file-into-two-text-files-of-equal-size-in-order](https://stackoverflow.com/questions/60950014/split-a-text-file-into-two-text-files-of-equal-size-in-order) 
-
-`func WordbyWordScan() { //A function for dividing a text file into two file texts.file, err := os.Open("file.txt.txt") //Open a file for doing operation on it.if err != nil {log.Fatal(err)}file1, err := os.Create("file1.txt.txt") //Create a fileif err != nil {panic(err)}file2, err := os.Create("file2.txt.txt") //Create a fileif err != nil {panic(err)}defer file.Close()                //close file at the end.defer file1.Close()               //close file at the end.defer file2.Close()               //close file at the end.file.Seek(0, 0)                   // "Seek sets the offset for the next Read or Write on file to offset."scanner := bufio.NewScanner(file) // "NewScanner returns a new Scanner to read from file"scanner.Split(bufio.ScanWords)    // "Set the split function for the scanning operation."w := 0for scanner.Scan() { //writing to file1 and file2var outfile *os.Fileif w%2 == 0 {outfile = file1} else {outfile = file2}fmt.Fprintln(outfile, scanner.Text()) //"Fprintln formats using the default formats for its operands and writes to outfile."w++}if err := scanner.Err(); err != nil {log.Fatal(err)}}`
-
-This code above, split the file.txt word by word instead of splitting the first half of words and then the second half in order. For example, this sentence “Package bufio implements buffered I/O. It wraps an io.Reader or io.Writer object, creating another object.” should be split like this:
-
-First half: “Package bufio implements buffered I/O. It wraps an io”
-
-Second half: “.Reader or io.Writer object, creating another object.”
-
-If anyone has any idea to fix this, I look forward to hearing from you.
-## [9][Goro: A High-level Machine Learning Library](https://www.reddit.com/r/golang/comments/frrz42/goro_a_highlevel_machine_learning_library/)
-- url: https://github.com/aunum/goro
----
-
-## [10][Learn Golang Step By Step](https://www.reddit.com/r/golang/comments/fs7qqd/learn_golang_step_by_step/)
-- url: https://sagarjaybhay.net/category/google-go/
 ---
 

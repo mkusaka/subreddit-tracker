@@ -1,6 +1,6 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (March 2020)](https://www.reddit.com/r/reactjs/comments/fbn1p2/beginners_thread_easy_questions_march_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/fbn1p2/beginners_thread_easy_questions_march_2020/
+## [1][Beginner's Thread / Easy Questions (April 2020)](https://www.reddit.com/r/reactjs/comments/fsqgep/beginners_thread_easy_questions_april_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/fsqgep/beginners_thread_easy_questions_april_2020/
 ---
 You can find [previous threads][wiki previous threads] in the wiki.
 
@@ -17,7 +17,7 @@ No question is too simple. 🙂
 - **Improve your chances** by adding a minimal example with [JSFiddle][jsfiddle], [CodeSandbox][code sandbox], or [Stackblitz][stackblitz].
   - Describe what you want it to do, and things you've tried. Don't just post big blocks of code!
   - **[Formatting Code][wiki formatting code]** wiki shows how to format code in this thread.
-- **Pay it forward!** Answer questions even if there is already an answer. Other perspectives can be helpful to beginners. Also there's no quicker way to learn than [being wrong on the Internet][being wrong on the internet].
+- **Pay it forward!** Answer questions even if there is already an answer. Other perspectives can be helpful to beginners. Also, there's no quicker way to learn than [being wrong on the Internet][being wrong on the internet].
 
 ---
 
@@ -31,7 +31,6 @@ No question is too simple. 🙂
 - [Microsoft Frontend Bootcamp][microsoft frontend bootcamp]
 - [Codecademy's React courses][codecademy's react courses]
 - [Scrimba's React Course][scrimba's react course]
-- [Robin Wieruch's Road to React][robin wieruch's road to react]
 - [FreeCodeCamp's React course][freecodecamp's react course]
 - [Kent Dodd's Egghead.io course][kent dodd's egghead.io course]
 - [New to Hooks? Check Amelia Wattenberger's Thinking in React Hooks][thinking in react hooks]
@@ -52,7 +51,6 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [kent dodd's egghead.io course]: http://kcd.im/beginner-react
 [codecademy's react courses]: https://www.codecademy.com/catalog/language/javascript
 [scrimba's react course]: https://scrimba.com/g/glearnreact
-[robin wieruch's road to react]: https://roadtoreact.com/
 [wiki formatting code]: https://www.reddit.com/r/reactjs/wiki/index#wiki_formatting_code
 [wiki previous threads]: https://www.reddit.com/r/reactjs/wiki/index#wiki_previous_threads
 [code sandbox]: https://codesandbox.io/s/new
@@ -63,103 +61,286 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Available? [Mar 2020]](https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
+## [2][Who's Hiring? [April 2020]](https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 ---
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
 
----
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
 
-If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
-because Automods bot is not perfect :)
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
 
----
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
 
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
+examples:
 
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
 
-## (Fulltime | Contract | USA | Remote)
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
 
-or
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
 
-## (Agency | Europe | Remote)
-
-Then we recommend adding a 2-3 sentence bio as well.
-
-Not required, but may help:
-
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
-
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-Just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/f44wd7/whos_available_feb_2020/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
-[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I created a Redux-like library with a better TypeScript experience. Let me know what you think.](https://www.reddit.com/r/reactjs/comments/fsalda/i_created_a_reduxlike_library_with_a_better/)
-- url: https://github.com/bearbytes/react-zeno
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
+[format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
+## [3][My library (React Easy State) is now supported by my workplace (Risingstack). I am excited about the future (:](https://www.reddit.com/r/reactjs/comments/fsx2vv/my_library_react_easy_state_is_now_supported_by/)
+- url: https://blog.risingstack.com/introducing-react-easy-state-risingstack/
 ---
 
-## [4][Learning React.js during this quarantine. Here's a simple memory game I made](https://www.reddit.com/r/reactjs/comments/frp8ls/learning_reactjs_during_this_quarantine_heres_a/)
-- url: https://v.redd.it/o2zzpqp2rsp41
+## [4][Instagram Pinch-to-Zoom - “Can it be done in React Native?”](https://www.reddit.com/r/reactjs/comments/fsen15/instagram_pinchtozoom_can_it_be_done_in_react/)
+- url: https://youtu.be/MukiK57qwVY
 ---
 
-## [5][Beep Boop! Announcing “use-sound”, a React hook for sound effects](https://www.reddit.com/r/reactjs/comments/frwleb/beep_boop_announcing_usesound_a_react_hook_for/)
-- url: https://joshwcomeau.com/react/announcing-use-sound-react-hook/
+## [5][Redux course Lesson #1: introduction, history, and architecture](https://www.reddit.com/r/reactjs/comments/fsvp66/redux_course_lesson_1_introduction_history_and/)
+- url: https://youtu.be/4lnkiPQ8spk
 ---
 
-## [6][Naming: how to differentiate the function that adds a resource to the local state (reducer) from the function that adds the same resource to a remote server (REST API) ?](https://www.reddit.com/r/reactjs/comments/fsauc7/naming_how_to_differentiate_the_function_that/)
-- url: https://www.reddit.com/r/reactjs/comments/fsauc7/naming_how_to_differentiate_the_function_that/
----
-Imagine you have a todo list app which is a react app. The todos are persisted in a database somewhere and the client fetches the todos from a REST API.
-
-When the user creates a todo in the react app, 2 things happen:
-+ the client sends a POST request to the REST api asking to add a todo to the database
-+ if the request is successful, the todo is also added to the state of the react app so that react can do it's magic and represent it in the DOM.
-
-Both actions could be called `addTodo`. How would you approach naming those ? I'm looking for names that would be both meaningful and represent the fact that one action adds the todo localy and the other adds the todo remotely.
-
-Thanks
-## [7][Compiled | The CSS in JS authoring experience you love without the runtime cost](https://www.reddit.com/r/reactjs/comments/fs98v7/compiled_the_css_in_js_authoring_experience_you/)
-- url: https://compiled.netlify.com
+## [6][react-native-maps working with Geojson and Polygon at the same time](https://www.reddit.com/r/reactjs/comments/fsws67/reactnativemaps_working_with_geojson_and_polygon/)
+- url: https://www.reddit.com/r/reactnative/comments/fsdenu/reactnativemaps_working_with_geojson_and_polygon/
 ---
 
-## [8][Custom Hooks in React: The Ultimate UI Abstraction Layer - Tanner Linsley | JSConf Hawaii 2020](https://www.reddit.com/r/reactjs/comments/fs3v37/custom_hooks_in_react_the_ultimate_ui_abstraction/)
-- url: https://youtu.be/J-g9ZJha8FE
+## [7][I've created use-needed-state - it's like `useState` - but it'll spy what part of the state is actually used during the render and re-render only if needed.](https://www.reddit.com/r/reactjs/comments/fsw1dx/ive_created_useneededstate_its_like_usestate_but/)
+- url: https://github.com/pie6k/use-needed-state
 ---
 
-## [9][Redux in Worker: Off-main-thread Redux Reducers and Middleware](https://www.reddit.com/r/reactjs/comments/fsaoaa/redux_in_worker_offmainthread_redux_reducers_and/)
-- url: https://medium.com/@dai_shi/redux-in-worker-off-main-thread-redux-reducers-and-middleware-508e0cad8ac6?source=friends_link&amp;sk=e54dee252862e02d6a8a22c527547542
+## [8][Use TailwindCSS base styles in your emotion CSS-in-JS project](https://www.reddit.com/r/reactjs/comments/fsx4g5/use_tailwindcss_base_styles_in_your_emotion/)
+- url: https://www.reddit.com/r/reactjs/comments/fsx4g5/use_tailwindcss_base_styles_in_your_emotion/
+---
+Hi everybody,
+
+As my first post in this community I'd like to introduce you into a small library I've published recently.
+
+You might know the issues with having some default CSS base styles in every browser:
+
+* They are inconsistent over different browsers
+* They probably do not align with your design system
+* They just look a little oldschool
+
+There are various base style reset libraries out there. Personally, I like the opinionated base styles used by TailwindCSS the most. That's why I have created a small library to easily incorporate the TailwindCSS base styles into Emotion CSS-in-JS projects!
+
+Check it out (and leave a star if you like it 🙂):
+
+GitHub:  [https://github.com/flogy/emotion-tailwind-preflight](https://github.com/flogy/emotion-tailwind-preflight) 
+
+NPM:  [https://www.npmjs.com/package/emotion-tailwind-preflight](https://www.npmjs.com/package/emotion-tailwind-preflight)
+## [9][Can't fix this bug since last week](https://www.reddit.com/r/reactjs/comments/fsznao/cant_fix_this_bug_since_last_week/)
+- url: https://www.reddit.com/r/reactjs/comments/fsznao/cant_fix_this_bug_since_last_week/
+---
+This is going to be an unusual amount of code because I am trying to share everything that is going on here. What I am trying to do is in a list, mark services as complete. When it's complete, it changes the colour of the service and then hides that service. Also, there's a button to show the hidden services.
+
+I manage to hide each individual service OK. But cannot work with the button that hides/shows ALL of the completed services.
+
+I have a context provider:
+
+`const ContextProviderBooking = ({ children }) =&gt; {`
+
+`const [isHidden, setIsHidden] = useState(false); //sharing among both components to hide/show list`
+
+`return &lt;ContextBooking.Provider value={{ isHidden, setIsHidden }}&gt;`
+
+`{children}`
+
+`&lt;/ContextBooking.Provider&gt;`
+
+`}`
+
+`export { ContextBooking, ContextProviderBooking }`
+
+Each 'Booking' component has a button that marks the service as complete. This happen by conditionally changing the class of each component. This works fine
+
+`const Booking = (props) =&gt; {`
+
+  `const [isHidden, setIsHidden] = useState(props.isHidden)`
+
+  `console.log(props.isHidden) // will output true or false 16 times(there are 16 component in total)`
+
+  `const [isCompleted, setIsCompleted] = useState(props.completed);`
+
+  `return (`
+
+  `&lt;li`
+
+`className={`
+
+`isCompleted &amp;&amp; isHidden ? 'booking-complete hide' //class names are not changing individually`
+
+`: isCompleted ? 'booking-complete' //if button is pressed on one of them,`
+
+`: 'booking' //it may affect the other`
+
+`}`
+
+`key={`[`props.id`](https://props.id)`}`
+
+`id={`[`props.id`](https://props.id)`}&gt;`
+
+`&lt;h3&gt;{`[`props.date`](https://props.date)`}&lt;/h3&gt;`
+
+`&lt;h4&gt;{props.time}&lt;/h4&gt;`
+
+`&lt;h5&gt;{`[`props.name`](https://props.name)`}&lt;/h5&gt;`
+
+`&lt;button`
+
+`onClick={() =&gt; { //shouldn't this button work of each li and not sometimes all of them?` 
+
+`if (!isCompleted &amp;&amp; !isHidden) {`
+
+`setIsCompleted(!isCompleted); //this changes color of the service as className changes`
+
+`setTimeout(() =&gt; setIsHidden(!isHidden), 200) //after a short time it is hidden`
+
+`}`
+
+`else if (isCompleted &amp;&amp; !isHidden) {`
+
+`setIsCompleted(!isCompleted);`
+
+`}`
+
+`else {`
+
+`setIsCompleted(!isCompleted);`
+
+`setIsHidden(!isHidden);`
+
+`}`
+
+`}}&gt;`
+
+`{!isCompleted ? \`Completed\` : \`Not complete\`}\`
+
+`&lt;/button&gt;`
+
+`&lt;/li&gt;`
+
+`)`
+
+`}`
+
+Then I am rendering each of the services in a larger component called 'Bookings'
+
+`const Bookings = () =&gt; {`
+
+`const { isHidden, setIsHidden } = useContext(ContextBooking)`
+
+`const display = day =&gt; //function that displays each service according to the day it was booked for`
+
+`allBookings.map( //allBookings is a json file`
+
+   `item =&gt;`
+
+  [`item.day`](https://item.day) `=== day &amp;&amp; (`
+
+`&lt;Booking`
+
+`isHidden={isHidden}`
+
+`completed={item.completed} //comes from json file, all default to false`
+
+`key={`[`item.id`](https://item.id)`}`
+
+`id={`[`item.id`](https://item.id)`}`
+
+`time={item.time}`
+
+`name={`[`item.name`](https://item.name)`}`
+
+`date={`[`item.date`](https://item.date)`}`
+
+`/&gt;`
+
+`)`
+
+`)`
+
+`return (`
+
+`&lt;div className="bookings"&gt;`
+
+`&lt;h2 className="ib"&gt;Next bookings&lt;/h2&gt;`
+
+`&lt;button`
+
+`onClick={() =&gt;{ //This won't work.`
+
+`setIsHidden(!isHidden);}`
+
+`}&gt;`
+
+`Show hidden`
+
+`&lt;/button&gt;`
+
+`&lt;h2&gt;Today&lt;/h2&gt;`
+
+`&lt;ul&gt; {display('today')} &lt;/ul&gt;`
+
+`&lt;h2&gt; Tomorrow &lt;/h2&gt;`
+
+`&lt;ul&gt; {display('tomorrow')} &lt;/ul&gt;`
+
+`&lt;h2&gt; General &lt;/h2&gt;`
+
+`&lt;ul&gt; {display('other')} &lt;/ul&gt;`
+
+`&lt;/div&gt;`
+
+`)`
+
+`}`
+## [10][I made a chrome extension with React which replaces the github file list with with an expandable tree view with file preview! It's called Tako, check it out!](https://www.reddit.com/r/reactjs/comments/fsz7oy/i_made_a_chrome_extension_with_react_which/)
+- url: https://github.com/brumm/tako
 ---
 
-## [10][How to share code between react web apps and react native](https://www.reddit.com/r/reactjs/comments/fscu87/how_to_share_code_between_react_web_apps_and/)
-- url: https://medium.com/unibuddy-technology-blog/how-to-share-code-between-react-web-apps-and-react-native-7020dbb8e601
+## [11][React Native Tutorial: QRCode Scanner App for Android or iOS](https://www.reddit.com/r/reactjs/comments/fsz5xq/react_native_tutorial_qrcode_scanner_app_for/)
+- url: https://www.djamware.com/post/5e83f1e7344bef67e448798c/react-native-tutorial-qrcode-scanner-app-for-android-or-ios#.XoSNxs1g6R8.reddit
 ---
 
-## [11][New use-cannon features of react-spring](https://www.reddit.com/r/reactjs/comments/fscedr/new_usecannon_features_of_reactspring/)
-- url: https://twitter.com/0xca0a/status/1244949419407093769
+## [12][Firebase cloud functions CORS policy error](https://www.reddit.com/r/reactjs/comments/fsw405/firebase_cloud_functions_cors_policy_error/)
+- url: https://www.reddit.com/r/reactjs/comments/fsw405/firebase_cloud_functions_cors_policy_error/
 ---
+Hey there, I'm nearly pulling my hair out on this one.
 
-## [12][Difference Between React JS vs Angular JS](https://www.reddit.com/r/reactjs/comments/fsc46a/difference_between_react_js_vs_angular_js/)
-- url: https://www.reddit.com/r/reactjs/comments/fsc46a/difference_between_react_js_vs_angular_js/
----
-  
+I am working off a create-react-app project and am needing to call firebase cloud function but am getting this error:
 
-The primary difference between [AngularJS and ReactJS](https://www.aparajayah.com/web-development/react-js) lies in the state of its management. AngularJS has data binding bundled in by default, whereas React is generally augmented by Redux to give unidirectional data flow and work with immutable data. 
+`Access to fetch at '`[`https://us-central1-careerhub-a50a2.cloudfunctions.net/createUser`](https://us-central1-careerhub-a50a2.cloudfunctions.net/createUser)`' from origin '`[`http://localhost:3000`](http://localhost:3000)`' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.`
 
-Prompt rendering is among the best features of React that gives a significant edge over Angular. The core difference between React JS and Angular JS. That React is JS-centric, while ng2 remains HTML-centric. JavaScript is far more robust than HTML, that makes React far more simple, focused and consistent. It's very common knowledge in the JavaScript community that Angular1/Angular2 has much larger API to learn than ReactJS +FLUX (combined). In Angular, in general, the learning curve is much steeper so that means that being efficient in that area of expertise is much harder than in React. Because ReactJS helps to prevent updating of DOM, it means that the apps will be faster and deliver better UX. ReactJS was designed to help improve the total rendered pages from the website server. Besides, it utilizes nodes to render on the client-side. React vs. Angular: Which one is easier. Angular is a full-featured MVC framework, developed and maintained by Google whereas React is an open-source JS library which is developed and maintained by Facebook. The toolchain in React is high as compared to Angular where it is low.
+Server-side code looks like this:
+
+`const functions = require('firebase-functions');`  
+`const admin = require('firebase-admin');`  
+`admin.initializeApp();`  
+
+
+`exports.createUser = functions.https.onCall((data, context) =&gt; {`  
+ `const email = data.email`  
+ `const password = data.password`  
+ `return new Promise((resolve, reject) =&gt; {`  
+ `admin.auth().createUser({`  
+ `email: email,`  
+ `emailVerified: false,`  
+ `password: password`  
+`}).then(resolve).catch((err) =&gt; {`  
+ `console.error(err.code)`  
+ `reject(new functions.https.HttpsError(err.code, err.message))`  
+`})`  
+`})`  
+`})`
+
+&amp;#x200B;
+
+Client-side:
+
+`const handleAddUser = () =&gt; {`  
+ `let pswd = passwordGen(7)`  
+ `firebase.functions().httpsCallable('createUser')({email: email, password: pswd}).then((response) =&gt; {`  
+ `console.log(response)`  
+`}).catch((error) =&gt; {`  
+ `console.log(error)`  
+`})`  
+   `}`  
+
+
+This is probably a silly mistake on my end...but I'd be eternally grateful if you could put me out of my misery. :)

@@ -23,109 +23,106 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/frff7k/whats_everyone_working_on_this_week_142020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-14-2020/40159?u=llogiq)!
-## [3][SQLx 0.3 released! Now with support for SQLite, zero-copy/amortized-allocation row decoding, nullable columns, user-defined types and LISTEN/NOTIFY in Postgres, plus a bunch more data types!](https://www.reddit.com/r/rust/comments/frww6f/sqlx_03_released_now_with_support_for_sqlite/)
-- url: https://github.com/launchbadge/sqlx/blob/master/CHANGELOG.md#030---2020-03-29
+## [3][Writing a reverse shell in Rust?](https://www.reddit.com/r/rust/comments/fsxaaa/writing_a_reverse_shell_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/fsxaaa/writing_a_reverse_shell_in_rust/
+---
+So I'm a Rust beginner, and I thought it would be cool to write my own reverse shell in Rust. I like messing with security and occasionally do boot2root challenges like [hackthebox](https://hackthebox.eu/). Usually I just use a simple netcat shell, since meterpreter is a little bit overkill and is detected by virtually every antivirus in existance. But I thought creating my own thing would be a fun challenge. I already wrote a simple program that creates a TcpStream it can send/receive stuff from.
+
+Now my question is, how could I go about "piping" a program (cmd or bash) through a TcpStream (like netcat's `-e` flag does)? I found a couple of existing reverse shells written in Rust, but most of them are pretty outdated and don't compile on the latest version anymore (and generally not cross-platform, which would also be nice).
+## [4][Bryan Cantrill on Rust making systems programming exciting](https://www.reddit.com/r/rust/comments/fsih8g/bryan_cantrill_on_rust_making_systems_programming/)
+- url: https://m.youtube.com/watch?v=vvZA9n3e5pc&amp;t=49m20s
 ---
 
-## [4][How does Rust or the LLVM optimize code so well?](https://www.reddit.com/r/rust/comments/fsbwya/how_does_rust_or_the_llvm_optimize_code_so_well/)
-- url: https://www.reddit.com/r/rust/comments/fsbwya/how_does_rust_or_the_llvm_optimize_code_so_well/
+## [5][Rust debugging is still really painful, VSCode particularly included](https://www.reddit.com/r/rust/comments/fspk43/rust_debugging_is_still_really_painful_vscode/)
+- url: https://www.reddit.com/r/rust/comments/fspk43/rust_debugging_is_still_really_painful_vscode/
 ---
-[Solved] I'm an idiot and didn't use the variabels. LLVM optimized and removed them.
+I'm surprised I'm writing this, but I cannot find a good debugger for Rust. I've been using VSCode as it has been the best---everything else has horribly mangled function names and whatnot. But VSCode debugging is a very broken experience. I've had issues with how it handles the embedded terminal. I'm currently having issues where code gets a segfault within the debugger which runs totally fine without it. And with *the exact same code* I've gotten "Inconsistency detected by ld.so: rtld.c: 1180: dl\_main: Assertion" which makes the launch fail. It's like once every two weeks there's some new problem.
 
-For my school I'm doing research on Rust.
-I've been comparing the performance of Rust and Java.
-I'm doing this by creating a few test applications and comparing the execution time and memory usages.
-
-One of the applications is calculating the Fibonacci sequence in [Rust](https://github.com/SemtexError/rust-fibonacci/blob/master/src/main.rs) and in [Java](https://github.com/SemtexError/java-fibonacci/blob/master/src/com/semtex/Main.java).
-The execution time is calculated with [Hyperfine](https://github.com/sharkdp/hyperfine) and adding a random number to the sequence so LLVM can't optimize it.
-
-After compiling and running both applications I noticed a big difference.
-Calculating the sequence once will give the follow result.
-
-Language|Time (ms)
-:--|:--
-Java|139.9
-Rust|0.8
-
-I thought maybe the JVM, the GC will take some time to start up and the JIT need some time to optimize the code.
-So we calculate the sequence 1000 times within a single application.
-
-Language|Time (ms)
-:--|:--
-Java|29397
-Rust|1.8
-
-This is a huge difference.
-I would expect Rust to be way faster but this difference is huge.
-The un-optimized Rust code has comparable results to Java.
-
-How can Rust or the LLVM optimize this code so well?
-How can it be this much faster then other languages?
-
-Can anyone of you help me answer this question or point me in the right direction?
-
-PS: English is not my native language so sorry for that.
-
-Edit: Table didn't mark like normal markdown.
-## [5][so long rust, why i built ZZ](https://www.reddit.com/r/rust/comments/fsc6p7/so_long_rust_why_i_built_zz/)
-- url: http://aep.github.io/from-rust-to-zz/
+I'm tired of realizing I have to file a VSCode bug report for Rust debugging. The lack of a decent debugger is really hampering me right now. I want to give up.
+## [6][Rust in a Commercial](https://www.reddit.com/r/rust/comments/fsd5s8/rust_in_a_commercial/)
+- url: https://youtu.be/h3yFOf6hIjQ
 ---
 
-## [6][Reducing memory consumption in librsvg, part 4: compact representation for Bézier paths](https://www.reddit.com/r/rust/comments/fs24cq/reducing_memory_consumption_in_librsvg_part_4/)
-- url: https://people.gnome.org/~federico/blog/reducing-memory-consumption-in-librsvg-4.html
+## [7][Oxidize 1K: March 20th, 2020 - Embedded Rust Lightning Conference - Full Video Stream](https://www.reddit.com/r/rust/comments/fsn4ux/oxidize_1k_march_20th_2020_embedded_rust/)
+- url: https://www.youtube.com/watch?v=zPuELAzJyno
 ---
 
-## [7][embedded Rust: writing to file on SD card?](https://www.reddit.com/r/rust/comments/fsaiic/embedded_rust_writing_to_file_on_sd_card/)
-- url: https://www.reddit.com/r/rust/comments/fsaiic/embedded_rust_writing_to_file_on_sd_card/
+## [8][macro_rules! ($($a:expr),+) flattening](https://www.reddit.com/r/rust/comments/fsw9b1/macro_rules_aexpr_flattening/)
+- url: https://www.reddit.com/r/rust/comments/fsw9b1/macro_rules_aexpr_flattening/
 ---
-fellow Rustaceans,
+Hey guys,
+I am trying to write proper DRY code by using a declarative macro. For this purpose, I want to input a string with n+2 format fillers, replace the first and the last filler with static data and the intermediate ones with my variables, and wrap the API call around that. For this, I wrote a macro_rules! macro:
 
-As I'm learning #rustlang on embedded devices, I'm trying to port some of my earlier MicroPython project to embedded Rust. 
-
-I have a simple embedded (STM32) contraption that measures the temperature and displays it on an OLED display: [https://github.com/nebelgrau77/stm32f411\_TMP36](https://github.com/nebelgrau77/stm32f411_TMP36) 
-
- I would like to log these readings to a simple text file on an SD Card, to retrieve them later and use for some data analysis in Python. In MicroPython that was pretty simple, I would just create a new line with comma-separated values, and append to file on the card. 
-
-I know there are some crates for SD cards in no\_std Rust environment, such as  [**embedded-sdmmc-rs**](https://github.com/thejpster/embedded-sdmmc-rs) and  [**rust-fatfs**](https://github.com/rafalh/rust-fatfs). What I need is a simple example, and the examples in the crates themselves are a bit confusing. While I'm trying to figure it out, does anyone have an example of a working code that writes to a file in embedded no\_std application?
-## [8][Rust auto use in Vim ?](https://www.reddit.com/r/rust/comments/fsbje1/rust_auto_use_in_vim/)
-- url: /r/vim/comments/fsbj5i/rust_auto_use_in_vim/
----
-
-## [9][How to iterate trees nicely?](https://www.reddit.com/r/rust/comments/fsbqwp/how_to_iterate_trees_nicely/)
-- url: https://www.reddit.com/r/rust/comments/fsbqwp/how_to_iterate_trees_nicely/
----
-Whenever I'm writing trees, or any similar recursive structure, I repeatedly run into a problem when I want to iterate over the leaves of the tree. The "obvious" way to find the leaves recursively like this:
-
-    fn iter(&amp;self) -&gt; impl Iterator&lt;Item = &amp;ItemType&gt; {
-            match &amp;self {
-                Leaf(items) =&gt; items.iter(),
-                Children(c) =&gt; { c.iter().map(Deref:deref).flat_map(Self::iter) }
-            }
+    macro_rules! apicall {
+        ($s:expr,$($args:expr),*) =&gt; {
+            Ok(self
+                .client
+                .get(
+                    format!(
+                        $s,
+                        &amp;self.apiurl,
+                        $args,
+                        &amp;self.apikey,
+                    )
+                    .as_str(),
+                )
+                .send()
+                .await?
+                .json()
+                .await?)
+        };
     }
 
-Doesn't work because the return type can't be made consistent and finite. It does work if you box everything:
 
-    fn iter&lt;'a&gt;(&amp;'a self) -&gt; Box&lt;dyn Iterator&lt;Item = &amp;'a ItemType&gt; + 'a&gt; {
-        match &amp;self {
-            Leaf(items) =&gt; Box::new(items.iter()),
-            Children(c) =&gt; Box::new(c.iter().map(Deref::deref).flat_map(Self::iter)),
+The problem is that at the time I use the $args macro variable, I get a compiler error because the argument still repeats and the preprocessor doesn't know how to deal with that. So I tried to write a fix:
+
+    macro_rules! flatten {
+        ($arg:expr) =&gt; ($arg);
+        ($arg1:expr, $($args:expr),+) =&gt; {
+            $arg1, dewrap!($args)
         }
     }
 
-(For context, `c` in the Children variant is `[Box&lt;Self&gt;, _]`, so the Deref call is there to unbox everything. I also think the second example shouldn't work because we end up with one too many layers of iterator, but the compiler lets it pass)
-
-This second way is workable, but feels inefficient - if I ask for all the leaves in the tree, I'd create one box per tree node, when in principle I only need O(depth) space. Is there any way to do this more efficiently, perhaps with generators, that doesn't go so far that I need to write a completely non-recursive iterator from scratch? (I can imagine recursive iterators might somehow work, but can't get my head around how to do the allocations efficiently)
-
-I've also ran into this problem dealing with "trees" that are implicitly generated in constraint solving and the like, where we take a collection of states and apply a function to produce all the "next" states possible from a given starting point, which might be as few as zero. Repeatedly flat\_mapping this function creates an iterator that yields the "leaves"  of an implicitly calculated tree search... except the call to flat\_map is very awkward because the iterator changes static type each iteration. Is this possible to do without creating lots of intermediate boxes? Or is it possible to replace a `mut Box&lt;dyn _&gt;`'s contents with a completely different type, so long as it implements the same trait?
-## [10][Article about the DW1000 (IEEE 802.15.4-based radio transceiver) driver I wrote in Rust](https://www.reddit.com/r/rust/comments/fs9q54/article_about_the_dw1000_ieee_802154based_radio/)
-- url: https://braun-embedded.com/dw1000/
+and replaced $args with flatten!($args). This however still produces the same compiler error even though $args should match the second pattern of flatten!. How do I work around this?
+## [9][Introducing TinyVec: 100% safe alternative to SmallVec and ArrayVec](https://www.reddit.com/r/rust/comments/fshuhk/introducing_tinyvec_100_safe_alternative_to/)
+- url: https://www.reddit.com/r/rust/comments/fshuhk/introducing_tinyvec_100_safe_alternative_to/
 ---
+[TinyVec](https://github.com/Lokathor/tinyvec) is a 100% safe code alternative to [SmallVec](https://github.com/servo/rust-smallvec) and [ArrayVec](https://github.com/bluss/arrayvec) crates. While SmallVec and ArrayVec create an array of unintialized memory and try to hide it from the user, TinyVec simply initializes the entire array up front. Real-world performance of this approach is surprisingly good: I have replaced SmallVec with TinyVec in `unicode-normalization` and `lewton` crates with no measurable impact on benchmarks.
 
-## [11][More advanced aspects of pattern matching in Rust](https://www.reddit.com/r/rust/comments/fs0jg8/more_advanced_aspects_of_pattern_matching_in_rust/)
-- url: https://notes.iveselov.info/programming/refs-and-pattern-matching-in-rust
+The main drawback is that the type stored in TinyVec must implement `Default`, so it cannot replace SmallVec or ArrayVec in _all_ scenarios.
+
+TinyVec is implemented as an enum of `std::Vec` and `tinyvec::ArrayVec`, which allows some optimizations that are not possible with SmallVec - for example, you can explicitly match on this enum and call `drain()` on the underlying type to avoid branching on every access.
+
+TinyVec is designed to be a drop-in replacement for `std::Vec`, more so than SmallVec or ArrayVec that diverge from Vec behavior in some of their methods. We got a fuzzer to verify that TinyVec's behavior is identical to `std::Vec` via [arbitrary-model-tests](https://github.com/jakubadamw/arbitrary-model-tests) (which has found a few bugs!). Newly introduced methods are given deliberately long names that are unlikely to clash with future additions on Vec.
+
+For a more detailed overview of the crate see the [docs.rs page](https://docs.rs/tinyvec/0.3.3/tinyvec/).
+
+P.S. I'm not the author of the crate, I'm just a happy user of it.
+## [10][kmon: Linux Kernel Manager and Activity Monitor written in Rust](https://www.reddit.com/r/rust/comments/fsz7ef/kmon_linux_kernel_manager_and_activity_monitor/)
+- url: https://www.reddit.com/r/rust/comments/fsz7ef/kmon_linux_kernel_manager_and_activity_monitor/
 ---
+[kmon](https://github.com/orhun/kmon) provides a text-based user interface for managing the Linux kernel modules and monitoring the kernel activities. By managing, it means loading, unloading, blacklisting and showing the information of a module. These updates in the kernel modules, logs about the hardware and other kernel messages can be tracked with the real-time activity monitor in kmon. Since the usage of different tools like dmesg and kmod are required for these tasks in Linux, kmon aims to gather them in a single terminal window and facilitate the usage as much as possible while keeping the functionality.
 
-## [12][rust-analyzer Changelog #18](https://www.reddit.com/r/rust/comments/frrboc/rustanalyzer_changelog_18/)
-- url: https://rust-analyzer.github.io/thisweek/2020/03/30/changelog-18.html
+kmon is written in Rust and uses [tui-rs](https://github.com/fdehau/tui-rs) &amp; [termion](https://github.com/redox-os/termion) libraries for its text-based user interface.
+
+[kmon on action](https://i.redd.it/frrmmacme7q41.gif)
+
+**Project Homepage:** [https://github.com/orhun/kmon](https://github.com/orhun/kmon)  
+**Rust Package:** [https://crates.io/crates/kmon](https://crates.io/crates/kmon)
+## [11][Rust in Action update - upcoming live stream; Japanese and Korean versions will be available, probably Russian also](https://www.reddit.com/r/rust/comments/fsm1i1/rust_in_action_update_upcoming_live_stream/)
+- url: https://www.reddit.com/r/rust/comments/fsm1i1/rust_in_action_update_upcoming_live_stream/
+---
+Hi all,
+
+[Rust in Action](https://www.manning.com/books/rust-in-action?a_aid=rust&amp;a_bid=0367c58f&amp;chan=reddit) is an upcoming book from Manning Publications that teaches Rust by walking through systems programming examples.
+
+Some updates
+
+* I will be [live streaming](https://www.twitch.tv/manningpublications) on 16 April (7pm EDT)
+* there is still time to provide feedback! I'm committed to addressing every comment submitted to [the liveBook](https://livebook.manning.com/book/rust-in-action/)
+* the publisher informs me that Japanese and Korean translation rights have been sold and Russian is negotiation
+* the book should be at the printers in May!
+## [12][Specs and Legion, two very different approaches to ECS](https://www.reddit.com/r/rust/comments/fsczky/specs_and_legion_two_very_different_approaches_to/)
+- url: https://csherratt.github.io/blog/posts/specs-and-legion/
 ---
 

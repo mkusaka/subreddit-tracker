@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Deno 1.0 will be released on May 13](https://www.reddit.com/r/javascript/comments/fry8mg/deno_10_will_be_released_on_may_13/)
-- url: https://github.com/denoland/deno/issues/2473
+## [3]["Logical assignment" operators (||= &amp;&amp;= ??=) proposal reaches stage 3](https://www.reddit.com/r/javascript/comments/fsrrtx/logical_assignment_operators_proposal_reaches/)
+- url: http://github.com/tc39/proposal-logical-assignment
 ---
 
-## [4][How an anti ad-blocker works: Reverse-engineering BlockAdBlock](https://www.reddit.com/r/javascript/comments/fs9030/how_an_anti_adblocker_works_reverseengineering/)
+## [4][Bungholio - Get text messages when a product (like TP) becomes available on amazon](https://www.reddit.com/r/javascript/comments/fsn3s4/bungholio_get_text_messages_when_a_product_like/)
+- url: https://github.com/johntitus/bungholio
+---
+
+## [5][A glitch template for executing jest tests with pretty output](https://www.reddit.com/r/javascript/comments/fslpfj/a_glitch_template_for_executing_jest_tests_with/)
+- url: https://glitch.com/~jest-runner
+---
+
+## [6][How many warnings should your JavaScript app have?](https://www.reddit.com/r/javascript/comments/fsz0eq/how_many_warnings_should_your_javascript_app_have/)
+- url: https://gist.github.com/laurent22/bbe965c3321f4d49a605e95219b37661
+---
+
+## [7][Hey r/javascript! I had a creative weekend and put together Halo Stat Notifier: a Node.js project to talk to the Halo: Master Chief Collection API and notify your friends (SMS) when you're gaming.](https://www.reddit.com/r/javascript/comments/fsuqao/hey_rjavascript_i_had_a_creative_weekend_and_put/)
+- url: https://github.com/keithwhor/halo-stat-notifier
+---
+
+## [8][How an anti ad-blocker works: Reverse-engineering BlockAdBlock](https://www.reddit.com/r/javascript/comments/fs9030/how_an_anti_adblocker_works_reverseengineering/)
 - url: https://xy2.dev/article/re-bab/
 ---
 
-## [5][A simple, small, and alternative code to replace javascript native eval() function.](https://www.reddit.com/r/javascript/comments/fsa9xt/a_simple_small_and_alternative_code_to_replace/)
-- url: https://github.com/pvzzombs/simple-math-eval-calc
+## [9][How to remove Array duplicates in Javascript](https://www.reddit.com/r/javascript/comments/fszhrs/how_to_remove_array_duplicates_in_javascript/)
+- url: https://mightytechno.com/how-to-remove-array-duplicates-in-javascript/
 ---
 
-## [6][Introducing A JavaScript Annotation, Redact, and Form Editor for PDFs](https://www.reddit.com/r/javascript/comments/fs9qk6/introducing_a_javascript_annotation_redact_and/)
-- url: https://www.grapecity.com/blogs/introducing-a-javascript-annotation-redact-form-editor-for-pdfs
+## [10][use-sound - a React Hook for Sound Effects](https://www.reddit.com/r/javascript/comments/fsdtgl/usesound_a_react_hook_for_sound_effects/)
+- url: https://joshwcomeau.com/react/announcing-use-sound-react-hook/
 ---
 
-## [7][Mixin pattern RFC](https://www.reddit.com/r/javascript/comments/fsbbu7/mixin_pattern_rfc/)
-- url: https://www.bryntum.com/blog/the-mixin-pattern-in-typescript-all-you-need-to-know-part-2/
+## [11][Trusted - Validate localStorage entries against a schema and set fallback values](https://www.reddit.com/r/javascript/comments/fslc4v/trusted_validate_localstorage_entries_against_a/)
+- url: https://github.com/baleeds/trusted
 ---
 
-## [8][Module for Creating Classes/Objects in JavaScript using OLOO Pattern.](https://www.reddit.com/r/javascript/comments/fsb7cc/module_for_creating_classesobjects_in_javascript/)
-- url: https://www.learngamedevelopment.net/blog/oloo(objectslinkingtootherobjects)
----
-
-## [9][When (and why) you should use ES6 arrow functions — and when you shouldn’t](https://www.reddit.com/r/javascript/comments/fs8gm0/when_and_why_you_should_use_es6_arrow_functions/)
-- url: https://christosploutarchou.com/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt/
----
-
-## [10][piano-chart - a JavaScript library to visualize musical notes on a piano keyboard](https://www.reddit.com/r/javascript/comments/frrlha/pianochart_a_javascript_library_to_visualize/)
-- url: https://github.com/ailon/piano-chart
----
-
-## [11][Nano ID 3.0: unique, secure, and URL-friendly ID generator in 108 bytes (!)](https://www.reddit.com/r/javascript/comments/fs4pot/nano_id_30_unique_secure_and_urlfriendly_id/)
-- url: https://github.com/ai/nanoid
----
-
-## [12][New Set to Form Controls Styles Coming to Chromium](https://www.reddit.com/r/javascript/comments/fsbrs3/new_set_to_form_controls_styles_coming_to_chromium/)
-- url: https://blog.chromium.org/2020/03/updates-to-form-controls-and-focus.html
+## [12][Getting Acquainted With Svelte, the New Framework on the Block](https://www.reddit.com/r/javascript/comments/fsht2f/getting_acquainted_with_svelte_the_new_framework/)
+- url: https://css-tricks.com/getting-acquainted-with-svelte-the-new-framework-on-the-block/
 ---
 

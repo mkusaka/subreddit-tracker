@@ -1,63 +1,5 @@
 # cpp
-## [1][C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-- url: https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/
----
-Rules For Individuals
----------------------
-
-* **Don't** create top-level comments - those are for employers.
-* Feel free to reply to top-level comments with **on-topic** questions.
-* I will create one top-level comment for **meta** discussion.
-* I will create another top-level comment for **individuals looking for work** and **community groups looking for sponsors**.
-
-Rules For Employers
----------------------
-
-* You must be hiring **directly**. No third-party recruiters.
-* **One** top-level comment per employer. If you have multiple job openings, that's great, but please consolidate their descriptions or mention them in replies to your own top-level comment.
-* **Don't** use URL shorteners. [reddiquette](https://www.reddithelp.com/en/categories/reddit-101/reddit-basics/reddiquette) forbids them because they're opaque to the spam filter.
-* Templates are awesome. Please **use** the following template. As the "formatting help" says, use \*\*two stars\*\* to **bold text**. Use empty lines to separate sections.
-* **Proofread** your comment after posting it, and edit any formatting mistakes.
-
----
-
-\*\*Company:\*\* [Company name; also, use the "formatting help" to make it a link to your company's website, or a specific careers page if you have one.]
-
-&amp;nbsp;
-
-\*\*Type:\*\* [Full time, part time, internship, contract, etc.]
-
-&amp;nbsp;
-
-\*\*Description:\*\* [What does your company do, and what are you hiring C++ devs for? How much experience are you looking for, and what seniority levels are you hiring for? The more details you provide, the better.]
-
-&amp;nbsp;
-
-\*\*Location:\*\* [Where's your office - or if you're hiring at multiple offices, list them. If your workplace language isn't English, please specify it.]
-
-&amp;nbsp;
-
-\*\*Remote:\*\* [Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]
-
-&amp;nbsp;
-
-\*\*Visa Sponsorship:\*\* [Does your company sponsor visas?]
-
-&amp;nbsp;
-
-\*\*Technologies:\*\* [Required: do you mainly use C++98/03, C++11, C++14, C++17, or the C++20 working draft? Optional: do you use Linux/Mac/Windows, are there languages you use in addition to C++, are there technologies like OpenGL or libraries like Boost that you need/want/like experience with, etc.]
-
-&amp;nbsp;
-
-\*\*Contact:\*\* [How do you want to be contacted? Email, reddit PM, telepathy, gravitational waves?]
-
----
-
-Previous Post
---------------
-
-* [C++ Jobs - Q4 2019](https://www.reddit.com/r/cpp/comments/dbqgbw/c_jobs_q4_2019/)
-## [2][C++ Events Affected By Coronavirus](https://www.reddit.com/r/cpp/comments/fidita/c_events_affected_by_coronavirus/)
+## [1][C++ Events Affected By Coronavirus](https://www.reddit.com/r/cpp/comments/fidita/c_events_affected_by_coronavirus/)
 - url: https://www.reddit.com/r/cpp/comments/fidita/c_events_affected_by_coronavirus/
 ---
 **Don't talk about the coronavirus. r/cpp is not the place to discuss or debate the coronavirus.**
@@ -118,55 +60,149 @@ Group | Location | Status | Until
 [C++TO](https://www.meetup.com/CPPTORONTO/) | Toronto, Ontario, Canada | [Postponed](https://www.meetup.com/CPPTORONTO/) | Indefinitely
 [C++ Montréal](https://www.meetup.com/CppMtl/) | Montréal, Québec, Canada | [Virtual](https://www.meetup.com/CppMtl/events/269770766/) | Indefinitely
 [Bulgaria C++ Meetup](https://dev.bg/groups/c-c-plus-plus/) | Sofia, Bulgaria | [Virtual](https://dev.bg/groups/c-c-plus-plus/) | Indefinitely
-## [3][Where can you find an advanced C++ software development course?](https://www.reddit.com/r/cpp/comments/fsqxve/where_can_you_find_an_advanced_c_software/)
-- url: https://www.reddit.com/r/cpp/comments/fsqxve/where_can_you_find_an_advanced_c_software/
+## [2][C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
+- url: https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/
 ---
-I finish a course of C++, I know about the rules of the language (data types, control flows, pointers, object oriented,  standard library, etc). Now I want to start with the next step, of the rules of the software development like the tools (compilers, debugger, test, etc) and also the management of the headers files. Any course do you suggest? Or should I learns in the hard way? (I would like to program in a professional way on Unix systems)
-## [4][When is *x also &amp;x?](https://www.reddit.com/r/cpp/comments/fsyg1f/when_is_x_also_x/)
-- url: https://quuxplusone.github.io/blog/2020/03/31/asterisk-and-ampersand/
+Rules For Individuals
+---------------------
+
+* **Don't** create top-level comments - those are for employers.
+* Feel free to reply to top-level comments with **on-topic** questions.
+* I will create one top-level comment for **meta** discussion.
+* I will create another top-level comment for **individuals looking for work**.
+
+Rules For Employers
+---------------------
+
+* You must be hiring **directly**. No third-party recruiters.
+* **One** top-level comment per employer. If you have multiple job openings, that's great, but please consolidate their descriptions or mention them in replies to your own top-level comment.
+* **Don't** use URL shorteners. [reddiquette](https://www.reddithelp.com/en/categories/reddit-101/reddit-basics/reddiquette) forbids them because they're opaque to the spam filter.
+* Templates are awesome. Please **use** the following template. As the "formatting help" says, use \*\*two stars\*\* to **bold text**. Use empty lines to separate sections.
+* **Proofread** your comment after posting it, and edit any formatting mistakes.
+* 🚨 **Updated Remote section.** 🚨 You must follow its guidance, or your post will be removed.
+
 ---
 
-## [5][Sourcetrail 2020.1. released - Visual source explorer for C++](https://www.reddit.com/r/cpp/comments/fsi3o6/sourcetrail_20201_released_visual_source_explorer/)
-- url: https://www.sourcetrail.com/blog/release_2020_1/
+\*\*Company:\*\* [Company name; also, use the "formatting help" to make it a link to your company's website, or a specific careers page if you have one.]
+
+&amp;nbsp;
+
+\*\*Type:\*\* [Full time, part time, internship, contract, etc.]
+
+&amp;nbsp;
+
+\*\*Description:\*\* [What does your company do, and what are you hiring C++ devs for? How much experience are you looking for, and what seniority levels are you hiring for? The more details you provide, the better.]
+
+&amp;nbsp;
+
+\*\*Location:\*\* [Where's your office - or if you're hiring at multiple offices, list them. If your workplace language isn't English, please specify it.]
+
+&amp;nbsp;
+
+\*\*Remote:\*\* [🚨 **Updated!** 🚨 Is this permanently a remote job, or is this remote (including new employee orientation) for the duration of the crisis? If so, do you require employees to live in certain areas or time zones? If you require programmers to be physically present, please explain either why you're essential infrastructure (e.g. programmers must physically interact with manufacturing/medical equipment) or why you're recklessly foolish.]
+
+&amp;nbsp;
+
+\*\*Visa Sponsorship:\*\* [Does your company sponsor visas?]
+
+&amp;nbsp;
+
+\*\*Technologies:\*\* [Required: do you mainly use C++98/03, C++11, C++14, C++17, or the C++20 working draft? Optional: do you use Linux/Mac/Windows, are there languages you use in addition to C++, are there technologies like OpenGL or libraries like Boost that you need/want/like experience with, etc.]
+
+&amp;nbsp;
+
+\*\*Contact:\*\* [How do you want to be contacted? Email, reddit PM, telepathy, gravitational waves?]
+
 ---
 
-## [6][C++23: Mutable string_view](https://www.reddit.com/r/cpp/comments/fszna2/c23_mutable_string_view/)
+Previous Post
+--------------
+
+* [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
+## [3][What syntax changes would you make to C++ if you had the chance?](https://www.reddit.com/r/cpp/comments/ftesce/what_syntax_changes_would_you_make_to_c_if_you/)
+- url: https://www.reddit.com/r/cpp/comments/ftesce/what_syntax_changes_would_you_make_to_c_if_you/
+---
+Suppose you don't have to worry about legacy code, what retroactive changes would you make to C++ to make it more readable or a better language overall syntax-wise?
+## [4][Ranged-Based For-Loops and Indices](https://www.reddit.com/r/cpp/comments/ftj56k/rangedbased_forloops_and_indices/)
+- url: https://www.reddit.com/r/cpp/comments/ftj56k/rangedbased_forloops_and_indices/
+---
+Hi!
+
+I often see sentiments akin to "raw for-loops are a code smell" when I read about Modern C++, however, as programmers we often have problem domain information that's coupled with our indices.
+
+For certain collections, such as maps, we can iterate through every key-value pair thusly:
+
+    std::unordered_map&lt;int,std::string&gt; m = { {1,"one"}, {2,"two"} /*...*/ };
+    
+    for ( auto &amp;[k,v] : m ) { ... }
+
+But for random access collections we've only got:
+
+    std::vector&lt;int&gt; v = { 1, 2, 3, 4, /*...*/ };
+    
+    for ( auto &amp;e : v ) { ... }
+
+Even though implementing it so that we could iterate over index,value pairs as well would seems fairly trivial.
+
+As an example, I implemented this likely buggy code as a proof of concept (and lacking, as I omitted random access from the iterator as well as cbegin, cend, rbegin, rend, crbegin, and crend for the sake of brevity):
+
+https://onlinegdb.com/r1m6_XmPI
+
+Which allows for the following:
+
+    // Vector&lt;T&gt; specializes std::vector&lt;T&gt;, adding context()
+    Vector v = { "Never", "gonna", "give", "you", "up" };
+    
+    for ( auto &amp;&amp;[i,e] : v.context() )
+        std::cout &lt;&lt; "Element at index " &lt;&lt; i &lt;&lt; " has value: " &lt;&lt; e &lt;&lt; "\n";
+
+This kind of looping seems fairly common in other languages (Lua and Python springs to mind), but C++ seems to be lacking it. Is there a particular reason for this? I'm still fairly new to C++, so perhaps there's an obvious explanation to this that eludes me... so I'd very much like to hear your thoughts on the matter. :-)
+
+I haven't done any benchmarks of it, so I don't know how this approach compares performance-wise.
+
+Sorry if there's any mistakes in my code or English!
+
+------
+
+Edit 1: I missed a few words!
+
+Edit 2: Oh dear, I just noticed that I wrote "Ranged-Based" instead of "Range-Based" in the title... sorry!
+## [5][Polymorphism and the Ternary Operator: Trickier Than You Think - Human Readable Magazine](https://www.reddit.com/r/cpp/comments/fthdg7/polymorphism_and_the_ternary_operator_trickier/)
+- url: https://humanreadablemag.com/issues/2/articles/polymorphism-and-the-ternary-operator
+---
+
+## [6][How to get better at C++ infrastructure design?](https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/)
+- url: https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/
+---
+Most of the books I came across talks about basics of the language, even advanced topic don’t seem to talk much about how to design a new project. 
+What dictates what classes to use? How classes are connected to each other?
+
+Any recommendation on how to progress on that side?
+## [7][Is there anyway to stop the console output from approximating the result?](https://www.reddit.com/r/cpp/comments/ftlzc3/is_there_anyway_to_stop_the_console_output_from/)
+- url: https://www.reddit.com/r/cpp/comments/ftlzc3/is_there_anyway_to_stop_the_console_output_from/
+---
+As the title says, is there anyway to stop the console output from automatically approximating the result? If my result is, say 17√3, whenever you compile the program you just wrote, the console will output 29.44486(or more digits), instead of 17√3.
+
+If I can help you more to understand what I am talking about, let's try to find out the geometric mean of 2 integers, a &amp; b. For a = 2 and b = 27, your geometric mean will be 3√6. If you "std::cout&lt;&lt;sqrt(a\*b)&lt;&lt;std::endl;", the console will output 7.34847.
+
+(This post is written by a person with lack of C++ experience, I'm just making some random, easy projects to help me a bit with Maths).
+## [8][Game engine in visual studio code](https://www.reddit.com/r/cpp/comments/ftlofo/game_engine_in_visual_studio_code/)
+- url: https://www.reddit.com/r/cpp/comments/ftlofo/game_engine_in_visual_studio_code/
+---
+I want to make a game engine from scratch. I want to follow a tutorial from the Cherno but he uses visual studio and I don’t have visual studio because im on a Mac. Now I use vscode for c++, I really like it but I don’t know how to set things up like he does in visual studio. I don’t like to use Xcode. Can somebody help me to use visual studio code for making a game engine.
+## [9][How C++ Templates Are Used for Generic Programming: An Empirical Study on 50 Open Source Systems](https://www.reddit.com/r/cpp/comments/ft7lnc/how_c_templates_are_used_for_generic_programming/)
+- url: https://doi.org/10.1145/3356579
+---
+
+## [10][C++23: Mutable string_view](https://www.reddit.com/r/cpp/comments/fszna2/c23_mutable_string_view/)
 - url: https://codingtidbit.com/2020/04/01/c23-mutable-string_view/
 ---
 
-## [7][Big Project Build Times–Chromium](https://www.reddit.com/r/cpp/comments/fslf0p/big_project_build_timeschromium/)
-- url: https://randomascii.wordpress.com/2020/03/30/big-project-build-times-chromium/
+## [11][no_unique_address and address of](https://www.reddit.com/r/cpp/comments/ftkyre/no_unique_address_and_address_of/)
+- url: https://www.reddit.com/r/cpp/comments/ftkyre/no_unique_address_and_address_of/
 ---
-
-## [8][Demo: C++20 Modules](https://www.reddit.com/r/cpp/comments/fsc0ff/demo_c20_modules/)
-- url: https://youtu.be/6SKIUeRaLZE
+What object do objects with the attribute [[no_unique_address]] share the address with? Is it possible to cast that pointer (this) to the other objects pointer in a well defined way?
+## [12][C++ (Software Development) Job Requirements (Junior &amp; Intermediate)](https://www.reddit.com/r/cpp/comments/ft75ii/c_software_development_job_requirements_junior/)
+- url: https://www.reddit.com/r/cpp/comments/ft75ii/c_software_development_job_requirements_junior/
 ---
-
-## [9][repl.it is cool](https://www.reddit.com/r/cpp/comments/fso2yv/replit_is_cool/)
-- url: https://www.reddit.com/r/cpp/comments/fso2yv/replit_is_cool/
----
-I have been playing around with [repl.it](https://repl.it) and integrating CMake into it for interviews. I basically wanted to see what the tool was actually capable of. Some requirements that I was looking for:
-
-1. CMake (or some Build System) Integration
-2. IDE to reflect the project
-3. code completion, auto-completion, and tooling support (asan, tsan, etc)
-
-Anyhow, anyone who wants to play around with a cool tool for code collaboration I recommend it! I have a repository [https://github.com/JeremyBorys/repl-cpp11](https://github.com/JeremyBorys/repl-cpp11) which have the changes I made to integrate with CMake. My guess is that the same changes would also be done for meson or some other build system generator as well.
-
-This does require creating a free repl account.
-## [10][Tool to add namespace?](https://www.reddit.com/r/cpp/comments/fsxwxl/tool_to_add_namespace/)
-- url: https://www.reddit.com/r/cpp/comments/fsxwxl/tool_to_add_namespace/
----
-I inherited a large code base that uses `using namespace std` in a header file included everywhere. I would like to get rid of that but in order to be able to remove it I need to add `std::` everywhere. Is there a tool that can do this for me?
-## [11][TypeScript to C++ transpiler](https://www.reddit.com/r/cpp/comments/fsfehj/typescript_to_c_transpiler/)
-- url: https://www.reddit.com/r/cpp/comments/fsfehj/typescript_to_c_transpiler/
----
-TypeScript to C++  transpiler
-
-[https://github.com/ASDAlexander77/TypeScript2Cxx](https://github.com/ASDAlexander77/TypeScript2Cxx)
-
-I have written the app to transpile TypeScript into C++.  I did it as I like C++ but I don't like its syntax, so I deceived why not to use TS syntax to generate C++ code.
-## [12][To Unify or Not to Unify: A Case Study on Unified Builds (in WebKit)](https://www.reddit.com/r/cpp/comments/fsap5g/to_unify_or_not_to_unify_a_case_study_on_unified/)
-- url: https://doi.org/10.1145/3302516.3307347
----
-
+# Since C++ is a complex programming language, what are the requirements for a Junior, or an intermediate programming field?

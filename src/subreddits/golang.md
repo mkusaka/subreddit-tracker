@@ -1,107 +1,140 @@
 # golang
-## [1][Help with concurrent linear search](https://www.reddit.com/r/golang/comments/fsxbhj/help_with_concurrent_linear_search/)
-- url: https://www.reddit.com/r/golang/comments/fsxbhj/help_with_concurrent_linear_search/
----
-I've been trying to write a simple concurrent linear search function in Go but haven't been too successful. I'm not sure if my understanding of channels and go routines is poor (I'm assuming it to be true) but here's my code -
-
-    func simpleLinSearch(slice []int, num int, c chan int, startIndex int) {
-        for index, item := range slice {
-            if item == num {
-                c &lt;- index + startIndex
-                return
-            }
-        }
-        c &lt;- -1
-    }
-    
-    func concurrentLinSearch(slice []int, num int) {
-        c := make(chan int)
-        go simpleLinSearch(slice[:len(slice)/2], num, c, 0)
-        go simpleLinSearch(slice[len(slice)/2:], num, c, len(slice)/2)
-        x, y := &lt;-c, &lt;-c
-        if x == -1 {
-            return y
-        } else {
-            return x
-        }
-    }
-
-A description of what I'm trying to achieve - the `concurrentLinSearch` function takes in a slice and a number to search for. It creates a channel. It splits the slice into two equal halves and calls `simpleLinSearch` that simply goes through each element of the slice and tries to write the index to the channel if found otherwise write -1 to it. I call this for both halves of the slice with appropriate starting indicies (because the second half of the slice would start from 0 but the elements in the original slice would have the index as `len(slice) / 2`). Then I read from the channel into x and y.
-
-If x is -1 then it means the element wasn't in the half that was given to the function that wrote to the channel and vice versa.
-
-It runs perfectly fine, `concurrentLinSearch` returns the correct index for a given slice and a given number to check in it but when I tried printing out the comparisions, I found that it runs linearly in both cases - not concurrently.
-
-What am I doing wrong? Do the reads from the channel to `x` and `y` block the other goroutine so as to not read from the channel at the same time? I tried reading about `sync.WaitGroup` but couldn't go too far as I kept encountering deadlocks.
-## [2][Let's make a tiny chess engine in Go](https://www.reddit.com/r/golang/comments/fsknxh/lets_make_a_tiny_chess_engine_in_go/)
-- url: https://zserge.com/posts/carnatus/
+## [1][The best kafka tool to debug brokers written in Go !](https://www.reddit.com/r/golang/comments/ftgxel/the_best_kafka_tool_to_debug_brokers_written_in_go/)
+- url: https://github.com/birdayz/kaf
 ---
 
-## [3][Using Go for my Distributed Systems class](https://www.reddit.com/r/golang/comments/fsvlrc/using_go_for_my_distributed_systems_class/)
-- url: https://www.reddit.com/r/golang/comments/fsvlrc/using_go_for_my_distributed_systems_class/
+## [2][Announcing Go-TinyTime, Go-TinyDate's Sister Package](https://www.reddit.com/r/golang/comments/ftlmxo/announcing_gotinytime_gotinydates_sister_package/)
+- url: https://qvault.io/2020/04/02/announcing-go-tinytime-go-tinydates-sister-package/
 ---
-It is my final quarter of university and in my Distributed Systems class we will be implementing a RESTful API across multiple Docker containers, and the professor gave us the choice of programming language. I'm heckin' stoked cause my group is down to clown and write the assignment in Go.
-## [4][Are you an employed software engineering using Go that is entirely self taught? What was your path to success and major milestones you remember from your first day of using Go to getting your offer letter?](https://www.reddit.com/r/golang/comments/fsegsq/are_you_an_employed_software_engineering_using_go/)
-- url: https://www.reddit.com/r/golang/comments/fsegsq/are_you_an_employed_software_engineering_using_go/
+
+## [3][Code generation in Go - constructors](https://www.reddit.com/r/golang/comments/fthwok/code_generation_in_go_constructors/)
+- url: http://domsu.net/posts/code-generation-go-constructors/
 ---
-I'm trying to learn from other people's experience and make a structured timeline with projects, resources, and milestones on my way to becoming a software engineer.
-## [5][cancelling blocking read from stdin](https://www.reddit.com/r/golang/comments/fsxkqr/cancelling_blocking_read_from_stdin/)
-- url: https://www.reddit.com/r/golang/comments/fsxkqr/cancelling_blocking_read_from_stdin/
+
+## [4][Noob Q: How do I use .proto with go mod? (imports)](https://www.reddit.com/r/golang/comments/fthlcv/noob_q_how_do_i_use_proto_with_go_mod_imports/)
+- url: https://www.reddit.com/r/golang/comments/fthlcv/noob_q_how_do_i_use_proto_with_go_mod_imports/
 ---
-Hey,
+Hello all,
+I've currently got a folder structure as follows:
 
-I'm processing stdin reading lines, but at some point, I want the user to be able to interrupt the process. This means stop channels etc but my goroutine that scans stdin will block until there is more data to be read, which might be an unreasonable amount of time in the future..
+cmd/
+proto/
+- A/
+- - A.proto
+- B/
+- - B.proto
 
-The way I've "solved" this feels wrong:
+in B.proto, i have want to import a message from A.proto.
 
-    lines := make(chan string)
-    go func() { 
-      s := bufio.NewScanner(os.Stdin)
-      s.Split(bufio.ScanLines)
-      for s.Scan() {
-        lines &lt;- s.Text()
-      }
-    }()
-    // ....
-    go func() {
-      for {
-        select {
-        case &lt;- stop:
-          return
-        case line := &lt;- lines:
-         // process line
-        }
-      }
-    }()
+so do the following in b.proto:
 
-I think if I `close(stop)` then this will stop my second goroutine as I want, but then nothing is receiving on `lines` anymore, so `lines &lt;- s.Text()` will block indefinitely.
+`import "proto/A/A.proto"; `
 
-I can't come up with a better solution as I/O read is always exposed as synchronous, even if under the covers it isn't.
+However, the generated `b.pb.go` file looks as follows:
 
-Should I just ignore this blocking goroutine? Is there a better solution? maybe if I `close(lines)` then I could handle the panic that I think will happen because `lines &lt;- s.Text()` is still trying to write to it..
+```
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+	_ "proto/A"
+)
 
-Thanks!
-## [6][A little help for a beginner :&gt; [type system]](https://www.reddit.com/r/golang/comments/fszo8l/a_little_help_for_a_beginner_type_system/)
-- url: https://www.reddit.com/r/golang/comments/fszo8l/a_little_help_for_a_beginner_type_system/
----
-Hey, could you help me understand type system in Go? Why does \*widget.Label started to be not compatible with fyne.CanvasObject.   
-Thanks very much for the help!  
-PS Do gophers have their char room?
+...
+```
 
-https://preview.redd.it/nluov05si7q41.png?width=773&amp;format=png&amp;auto=webp&amp;s=8af869263e34dab07b624176d858c12a50b70779
-## [7][Running Golang on the browser with WebAssembly and TinyGo](https://www.reddit.com/r/golang/comments/fszeix/running_golang_on_the_browser_with_webassembly/)
+due to the `_ "proto/A"`, I keep getting the error
+```
+proto/B/b.pb.go:10:2: cannot find package "." in:
+        /path/to/repo/vendor/proto/A
+``` 
+
+How would I go about using proto files with go mod?
+
+Any help greatly appreciated. Thanks!
+## [5][Running Golang on the browser with WebAssembly and TinyGo](https://www.reddit.com/r/golang/comments/fszeix/running_golang_on_the_browser_with_webassembly/)
 - url: https://marianogappa.github.io/software/2020/04/01/webassembly-tinygo-cheesse/
 ---
 
-## [8][Go: How Does a Goroutine Start and Exit?](https://www.reddit.com/r/golang/comments/fsyl42/go_how_does_a_goroutine_start_and_exit/)
-- url: https://medium.com/a-journey-with-go/go-how-does-a-goroutine-start-and-exit-2b3303890452
+## [6][How do you like to host a golang webservice](https://www.reddit.com/r/golang/comments/fteuve/how_do_you_like_to_host_a_golang_webservice/)
+- url: https://www.reddit.com/r/golang/comments/fteuve/how_do_you_like_to_host_a_golang_webservice/
+---
+Just curious about how people do this.
+
+I've set up nginx with my golang app serving local host upstream.  
+
+How do you provision your servers? 
+
+Thanks!
+## [7][how do i only select the last given flag our of multiple flags ? is there a way to do a list of flags ?](https://www.reddit.com/r/golang/comments/ftlhwv/how_do_i_only_select_the_last_given_flag_our_of/)
+- url: https://www.reddit.com/r/golang/comments/ftlhwv/how_do_i_only_select_the_last_given_flag_our_of/
+---
+for example i could pass in 
+    command subcommand --flag1 flag2 --flag3
+
+but i just want to use the last passed flag.  I was hoping i could do something similar to this in golang.
+
+    parser.add_argument('what', choices=['1', 2', '3', '4'])
+
+i haven't been able to find something similar to this in the flags package that golang has built in.
+## [8][How to Unit Test a GORM Application With Sqlmock](https://www.reddit.com/r/golang/comments/ftitio/how_to_unit_test_a_gorm_application_with_sqlmock/)
+- url: https://medium.com/better-programming/how-to-unit-test-a-gorm-application-with-sqlmock-97ee73e36526
 ---
 
-## [9][Why don't more people use Golang for scientific computing?](https://www.reddit.com/r/golang/comments/fsfqg0/why_dont_more_people_use_golang_for_scientific/)
-- url: https://www.reddit.com/r/golang/comments/fsfqg0/why_dont_more_people_use_golang_for_scientific/
+## [9][Need help unterstand example](https://www.reddit.com/r/golang/comments/ftiboz/need_help_unterstand_example/)
+- url: https://www.reddit.com/r/golang/comments/ftiboz/need_help_unterstand_example/
 ---
-Because of its concurrency, wouldn't Go be a good candidate for lots of (especially) bioinformatics workflows where you're just running the same functions against lots of inputs in many cases?  Why haven't people in the scientific community taken to Golang?
-## [10][Virtual Go Meetup - Come learn about WebRTC and how you can build sub-second decentralized real-time communications software!](https://www.reddit.com/r/golang/comments/fs6lrc/virtual_go_meetup_come_learn_about_webrtc_and_how/)
-- url: https://www.meetup.com/golang/events/269676725/
----
+I'm trying to learn go with the book "Learning Go Porgramming".  
+So far I had no difficulties, but I'm having a hard time on this example.
 
+[https://github.com/vladimirvivien/learning-go/blob/master/ch09/sync2.go](https://github.com/vladimirvivien/learning-go/blob/master/ch09/sync2.go)
+
+    package main
+    
+    import (
+    	"sync"
+    	"time"
+    )
+    
+    type Service struct {
+    	started bool
+    	stpCh   chan struct{}
+    	mutex   sync.Mutex
+    }
+    
+    func (s *Service) Start() {
+    	s.stpCh = make(chan struct{})
+    	go func() {
+    		s.mutex.Lock()
+    		s.started = true
+    		s.mutex.Unlock()
+    		&lt;-s.stpCh // wait to be closed.
+    	}()
+    }
+    func (s *Service) Stop() {
+    	s.mutex.Lock()
+    	defer s.mutex.Unlock()
+    	if s.started {
+    		s.started = false
+    		close(s.stpCh)
+    	}
+    }
+    
+    func main() {
+    	s := &amp;Service{}
+    	s.Start()
+    	time.Sleep(time.Second) // do some work
+    	s.Stop()
+    }
+
+Which purpose does the stop channel stpCh serve ?Why is it necessary that the annonymous go routine in Service.Start blocks until the service has been stopped ? First I thought it's some kind of protection, which prevents from calling Start() again, but I tried it, and I can call start multiple times before calling Stop() once.
+## [10][Fun project ideas for golang beginner](https://www.reddit.com/r/golang/comments/fthxei/fun_project_ideas_for_golang_beginner/)
+- url: https://www.reddit.com/r/golang/comments/fthxei/fun_project_ideas_for_golang_beginner/
+---
+Hey Everyone,
+
+I just started learning golang and its very fun to learn as well. 
+
+I am looking for some project ideas that I can implement as a beginner. 
+
+Thanks..

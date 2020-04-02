@@ -22,13 +22,76 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Which is a better pattern: `declare global` or `.d.ts` file?](https://www.reddit.com/r/typescript/comments/fskubj/which_is_a_better_pattern_declare_global_or_dts/)
-- url: https://www.reddit.com/r/typescript/comments/fskubj/which_is_a_better_pattern_declare_global_or_dts/
+## [2][Assign nested Object as copy, not reference](https://www.reddit.com/r/typescript/comments/ftl7pi/assign_nested_object_as_copy_not_reference/)
+- url: https://www.reddit.com/r/typescript/comments/ftl7pi/assign_nested_object_as_copy_not_reference/
 ---
-Both `declare global` and `.d.ts` files let you declare Typescript definitions globally.  But which one is a better pattern in general? 
+Hi guys, i seem to not understand the assignment operator completly, when it comes to nested Objects.
 
-`.d.ts` seems to make more sense since it is all in one place but I want to know what good cases there are to prefer `declare global` as well.
-## [3][Tetris clone built with TypeScript - https://tetris-js.now.sh/](https://www.reddit.com/r/typescript/comments/fszs1c/tetris_clone_built_with_typescript/)
+I have initialization objects for my classes data, which is defined by an interface.
+
+    export const MY_DATA_INIT {
+        device: {
+            id: 0,
+            ip: "unknown"
+        }
+        anotherProperty: "unknown"
+    }
+    
+    export interface MyData {
+        device: Device;
+        anotherProperty: string;
+    }
+    
+    interface Device {
+        id: number;
+        ip: string;
+    }
+
+When i make an Object of type MyData and use MY\_DATA\_INIT to initialize it, i am only pointing to  MY\_DATA\_INIT
+
+    let myDataObject: MyData = MY_DATA_INIT;
+    
+    myDataObject.device.ip = "192.168.0.2";    // This updates on MY_DATA_INIT
+    myDataObject.anotherProperty = "value";    // This does'nt
+    
+    console.log(JSON.stringify(MY_DATA_INIT)).
+    /*    {
+     *        device: {
+     *            id: 0,
+     *            ip: "192.168.0.2",
+     *        }
+     *        anotherProperty: "unknown"
+     *     }
+     */
+
+Using the spread operator {...MY\_DATA\_INIT} does not make a difference.
+
+Same using the spread operator in the MY\_DATA\_INIT itself.
+
+    export const MY_DATA_INIT {
+        device: {...MY_DEVICE_INIT}
+        anotherProperty: "unknown"
+    }
+    
+    export const MY_DEVICE_INIT {
+        id: 0,
+        ip: "unknown"
+    }
+
+I don't get why this is failing. The direct Object properties of MyData seems to work as expected, but the nested device object is passed as reference.
+
+Any ideas?
+
+Edit: you're not seeing the class itself cause i stumbled upon this while writing Mocha unit tests for my DB access &amp; i only need to pass the data interface MyData.
+## [3][Best way of figuring out the proper type to use?](https://www.reddit.com/r/typescript/comments/ftfqcf/best_way_of_figuring_out_the_proper_type_to_use/)
+- url: https://www.reddit.com/r/typescript/comments/ftfqcf/best_way_of_figuring_out_the_proper_type_to_use/
+---
+TypeScript can be occasionally fussy about types, which is what I want, but at the same time it can be annoying, some things I've basically given up on figuring out and just put "any." Which kind of defeats the purpose of using it.   I'm learning React with TypeScript at the moment. Mostly it's okay, there are a few times that I've been defeated by React/TypesScript typings.  So where do you go for figuring out the proper types for variables, methods etc?
+## [4][Prisma 2.0 is Now in Beta: Type-safe Database Access with Prisma Client](https://www.reddit.com/r/typescript/comments/ft21zn/prisma_20_is_now_in_beta_typesafe_database_access/)
+- url: https://www.prisma.io/blog/prisma-2-beta-b7bcl0gd8d8e
+---
+
+## [5][Tetris clone built with TypeScript - https://tetris-js.now.sh/](https://www.reddit.com/r/typescript/comments/fszs1c/tetris_clone_built_with_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/fszs1c/tetris_clone_built_with_typescript/
 ---
 I built a Tetris clone with TypeScript, not quite finished but there's enough meat there to play it. Expanding my OOP knowledge, coming from a functional programming background. Enjoy!
@@ -36,95 +99,103 @@ I built a Tetris clone with TypeScript, not quite finished but there's enough me
 Game: [https://tetris-js.now.sh/](https://tetris-js.now.sh/)
 
 Repo: [https://github.com/grantsru/tetris-js](https://github.com/grantsru/tetris-js)
-## [4][Are closures still useful?](https://www.reddit.com/r/typescript/comments/fsz0sc/are_closures_still_useful/)
-- url: https://www.reddit.com/r/typescript/comments/fsz0sc/are_closures_still_useful/
+## [6][Access Private/Protected via Utility Type?](https://www.reddit.com/r/typescript/comments/ft9tyy/access_privateprotected_via_utility_type/)
+- url: https://www.reddit.com/r/typescript/comments/ft9tyy/access_privateprotected_via_utility_type/
 ---
-Closures return a function that has access to private state. Typescript allows for private variables. 
+I recently discovered [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html) and found one that allows modification of readonly properties via [TypeScript/issues/24509](https://github.com/microsoft/TypeScript/issues/24509).
 
-Do you guys still use closures for anything? If so what are the still relevant use cases for them?
-## [5][Since typescript compiles itself can it optimize functional staff?](https://www.reddit.com/r/typescript/comments/fsv79v/since_typescript_compiles_itself_can_it_optimize/)
-- url: https://www.reddit.com/r/typescript/comments/fsv79v/since_typescript_compiles_itself_can_it_optimize/
----
-Staff like arr.map().filter().map().reduce() - can theoretically be compiled to single for loop. Should it be?  TypeScript can even give users some superset of standart   library
-## [6][Myzod: Schema Validation and Type Inference Package](https://www.reddit.com/r/typescript/comments/fsew7n/myzod_schema_validation_and_type_inference_package/)
-- url: https://www.reddit.com/r/typescript/comments/fsew7n/myzod_schema_validation_and_type_inference_package/
----
-I want to acknowledge [zod](https://www.npmjs.com/package/zod) for their work and inspiring me to write this package.
+```typescript
+export type Mutable&lt;Type&gt; = {
+  -readonly [key in keyof Type]: Type[key]
+}
 
-[Myzod](https://www.npmjs.com/package/myzod) is a joi like object validation library with built-in typescript support that can infer the types defined by your schemas. The purpose of myzod is to no longer have to maintain types and validation separately so that they will always be in sync.  
+class Foo{
+  readonly bar: boolean = true
+}
 
+const foo = new Foo()
 
-Here is a basic example of how the package is used:  
-
+;(foo as Mutable&lt;Foo&gt;).bar = false
 ```
-import myzod, { Infer } from 'myzod';
+ 
+This is very useful because it maintains IntelliSense &amp; refactoring capabilities in VSCode, and allows you to make assignments in your library code while still keeping the end-user's property access as read-only. 
 
-const personSchema = myzod.object({
-  id: myzod.number(),
-  name: myzod.string().pattern(/^[A-Z]/),
-  age: myzod.number().min(0),
-  birthdate: myzod.number().or(myzod.string()),
-  employed: myzod.boolean(),
-  friendIds: myzod.array(myzod.number()).nullable()
-});
+Here are some examples demonstrating the differences of several implementations:
 
-type Person = Infer&lt;typeof personSchema&gt;;
-// same as
-type Person = {
-  id: number;
-  name: string;
-  age: number;
-  birthdate: number | string;
-  employed: boolean;
-  friendIds: number[] | null;
-};
+- no cast, has error:  
+[@Imgur](https://i.imgur.com/f7I6phu.png)  
+- cast to `any`, no error, but removes IntelliSense &amp; refactoring:  
+[@Imgur](https://i.imgur.com/khysPQB.png)  
+- cast to `Mutable`, no error, maintains IntelliSense &amp; refactoring:  
+[@Imgur](https://i.imgur.com/LMutHUA.png)  
+ 
+&amp;nbsp;  
 
-const person = personSchema.parse({ ... }); // here person is statically inferred with the correct type (Person)
-```
+-----
+&amp;nbsp;  
+ 
+Similarly, I'd like to be able to modify private and protected properties while maintaining IntelliSense &amp; refactoring.
 
-Use it if you find it can be useful for you :) 
-All feedback welcome.
-
-[Myzod](https://www.npmjs.com/package/myzod)
-## [7][Deno 1.0 will be released on May 13](https://www.reddit.com/r/typescript/comments/fry3ct/deno_10_will_be_released_on_may_13/)
-- url: https://twitter.com/deno_land/status/1244707313006624772
+Is it possible to write a utility type that allows this?
+## [7][Beginner learning TypeScript? What are your favorite links to learn TS ASAP?](https://www.reddit.com/r/typescript/comments/ftjhc9/beginner_learning_typescript_what_are_your/)
+- url: https://www.reddit.com/r/typescript/comments/ftjhc9/beginner_learning_typescript_what_are_your/
 ---
 
-## [8][First project in TypeScript - https://github.com/vydimitrov/react-random-reveal](https://www.reddit.com/r/typescript/comments/fse2c2/first_project_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/fse2c2/first_project_in_typescript/
+## [8][Webpack can't tree-shake class methods? How are you guys dealing with this?](https://www.reddit.com/r/typescript/comments/ft7wj6/webpack_cant_treeshake_class_methods_how_are_you/)
+- url: https://www.reddit.com/r/typescript/comments/ft7wj6/webpack_cant_treeshake_class_methods_how_are_you/
 ---
- Hey all,
+I migrated over from Java so still have a bunch of Java conventions - one of which being I generally prefer OO programming.
 
-Just want to share with you my first project written in TypeScript - [https://github.com/vydimitrov/react-random-reveal](https://github.com/vydimitrov/react-random-reveal). It is a small library that adds a little thrill before revealing the truth so to speak. The effect is achieved with a character animation that shows random characters before revealing the text you want to emphasize. 
+The issue is that webpack can't tree-shake class methods because they can't be statically analyzed. 
 
-I must say that I fell in love with TypeScript, the compiler helped me several times to find some issues with my code. Of course, there were a few times where the compiler and I did not agree .... but after some time it manage to convince me :)
+It IS able to tree shake functions though.  
 
-Any feedback on the TypeScript part would be appreciated, I hope you also find it useful.
-## [9][How to Use Plain Functions to Validate Complex Structures](https://www.reddit.com/r/typescript/comments/fsajao/how_to_use_plain_functions_to_validate_complex/)
-- url: https://medium.com/@moshesimantov/how-to-use-plain-functions-to-validate-complex-structures-85af5c8d4b93
+What's the best way to deal with this? Sometimes I use static classes as more like namespaces so I'm thinking of just using namespaces with functions instead.
+
+This way they SEEM like static classes and tree-shaking can work.
+
+Thoughts?
+## [9][Help with a Styled-Components media query function](https://www.reddit.com/r/typescript/comments/ft7jhv/help_with_a_styledcomponents_media_query_function/)
+- url: https://www.reddit.com/r/typescript/comments/ft7jhv/help_with_a_styledcomponents_media_query_function/
 ---
+I'm following along with LevelupTutorials styled-components and most of it doesn't concern typescript vey much , but the lesson about media queries has me stumped about typing this function (mostly because I don't understand typing reduce functions:
 
-## [10][Combine multiple basic types?](https://www.reddit.com/r/typescript/comments/fscok7/combine_multiple_basic_types/)
-- url: https://www.reddit.com/r/typescript/comments/fscok7/combine_multiple_basic_types/
+`type SizesProps = {`  
+`[key: string]: number`  
+`}`
+
+`const sizes: SizesProps = {`  
+`small: 400,`  
+`medium: 960,`  
+`large: 1140,`  
+`xlarge: 1792`  
+`}`  
+`const media = Object.keys(sizes).reduce((accumulator, label)=&gt; {`  
+`accumulator[label] = (...args)=&gt; css\\`\``  
+`u/media(min-width: ${sizes[label]}px) {`  
+`${css(...args)}`  
+`}`  
+`\``  
+`return accumulator`  
+`}, {} )\``
+
+The `accumulator[label]`  
+ is telling me: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.  
+No index signature with a parameter of type 'string' was found on type '{}'.
+
+`${css(...args)}`  
+is saying Expected at least 1 arguments, but got 0.ts(2555)
+
+index.d.ts(277, 9): An argument for 'first' was not provided.
+
+I've been trying to fiddle around with this but I just don't get it. Please help
+## [10][Where should type declarations go for libraries with no type definition files?](https://www.reddit.com/r/typescript/comments/ft8elz/where_should_type_declarations_go_for_libraries/)
+- url: https://www.reddit.com/r/typescript/comments/ft8elz/where_should_type_declarations_go_for_libraries/
 ---
-Hello everyone,
+...including nothing available on the atTypes repository? I recall having this issue a couple months ago. I created a global.d.ts file and put the needed type declaration in there. It worked.
 
-let's say I have the following string:
-
-&gt;'133962:22:last'
-
-The colons are used as separators. The first two parts are always only digits, the last one is a known string value.
-
-Now I'd like to define this as its own type, preferably by combining multiple subtypes, e.g. (pseudocode)
-
-&gt;type knownString = 'first' | 'second' | 'last' 
-
-&gt;type groupedType = number &amp; ':' &amp; number &amp; ':' &amp; knownString
-
-is something like this at all possible?
-
-Thanks!
-## [11][The Omit Helper Type in TypeScript](https://www.reddit.com/r/typescript/comments/frz2qm/the_omit_helper_type_in_typescript/)
-- url: https://mariusschulz.com/blog/the-omit-helper-type-in-typescript
+But I remember when I changed the file name, it stoppered working even after ensuring that the declaration import was updated. It made me think there is a strict place (project root?) or naming convention for this to work, at least with default tsconfig.json settings.
+## [11][Jetbrains vs Visual Studio Code with Typescript](https://www.reddit.com/r/typescript/comments/ft36lv/jetbrains_vs_visual_studio_code_with_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/ft36lv/jetbrains_vs_visual_studio_code_with_typescript/
 ---
-
+Do you guys have any preferences when coding in Typescript? VSC is free I think and has autocomplete on types. Very useful in big libraries with non-ideal levels of distinction (I'm looking at you Firebase SDK) .I'm using Phpstorm, a Jetbrains IDE, and am considering jumping ship for those features.

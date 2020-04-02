@@ -1,125 +1,92 @@
 # aws
-## [1][Should I switch my ALB to use the Least Outstanding Requests algorithm? YES!](https://www.reddit.com/r/aws/comments/fsy2sq/should_i_switch_my_alb_to_use_the_least/)
+## [1][Amazon Elastic File System announces 400% increase in read operations for General Purpose mode file systems](https://www.reddit.com/r/aws/comments/ft2wqq/amazon_elastic_file_system_announces_400_increase/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/04/amazon-elastic-file-system-announces-increase-in-read-operations-for-general-purpose-file-systems/
+---
+
+## [2][How to ensure that a role can be assumed but a single resource?](https://www.reddit.com/r/aws/comments/ftllyb/how_to_ensure_that_a_role_can_be_assumed_but_a/)
+- url: https://www.reddit.com/r/aws/comments/ftllyb/how_to_ensure_that_a_role_can_be_assumed_but_a/
+---
+I have a Lambda function so I had to create a role with some permissions and also had to add a trusted relationship to the Lambda service. But how to ensure that just my lambda function can assume that role?
+
+I've tried everything but nothing is working.
+## [3][How to use a Terraform state stored in one AWS account and deploy it in another?](https://www.reddit.com/r/aws/comments/ftlq05/how_to_use_a_terraform_state_stored_in_one_aws/)
+- url: https://www.reddit.com/r/aws/comments/ftlq05/how_to_use_a_terraform_state_stored_in_one_aws/
+---
+When using Terraform with other people it’s often useful to store your state in a bucket. For example, an S3 bucket if you deploy on AWS. And then you may want to use the same bucket for different AWS accounts for consistency purposes. Or you may also want your S3 bucket to be stored in a different AWS account for right management reasons. This article explains [how to use a Terraform state stored in one AWS account](https://www.padok.fr/en/blog/terraform-s3-bucket-aws) and deploy it in another one.
+## [4][Serverless Cognito app - where to store secure data?](https://www.reddit.com/r/aws/comments/ftlaw6/serverless_cognito_app_where_to_store_secure_data/)
+- url: https://www.reddit.com/r/aws/comments/ftlaw6/serverless_cognito_app_where_to_store_secure_data/
+---
+Hello,
+
+I am developing a serverless application and managing user data inside Cognito. However, I need to store bank account details (sort and account number). 
+
+What would be the best method to save this highly secure information? 
+
+I am not sure if Cognito has a method of saving this information (I don't think so). 
+
+Possibly in parameter store as a secret? Or possibly store as an encrypted value with the encryption key being stored in secrets manager? Could even use KMS for this?
+
+There are a lot of possible solutions but I am not sure which would be the most appropriate.
+## [5][Turning my already deployed HTTP site to use HTTPS](https://www.reddit.com/r/aws/comments/ftf8np/turning_my_already_deployed_http_site_to_use_https/)
+- url: https://www.reddit.com/r/aws/comments/ftf8np/turning_my_already_deployed_http_site_to_use_https/
+---
+The site works fine but it's served in http. I want https.  
+ 
+- I went to CloudFront → selected the static site bucket’s distribution → distribution settings → `Behaviors` → `Edit` → Selected `HTTPS only`  
+- I also went to the bucket, → Properties → Static website hosting → Redirect requests → entered in the target domain and https.  
+  
+I did that because before, I had the default behavior selected to reroute HTTP to HTTPS. That definitely didn’t work on any browser I used. Either way, the site still loads as an HTTP site. What’s worse, if I manually type in `https://www.mysite.xyz` the page doesn’t load at all.  
+  
+Some context:  
+- Its CloudFront distribution is enabled and deployed.  
+- Its SSL Certificate is the custom certificate that I requested. Setting it to this was no different from when the site used the default CloudFront Certificate.  
+- Bucket policy:  
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "PublicReadGetObject",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::my-site.xyz/*"
+            }
+        ]
+    }
+
+Here's one of the [better tutorials](https://dcurt.is/how-to-host-a-static-website-on-aws-with-https) I found on the matter, since most only detail how to get to the https setting in CloudFront.  
+Pardon the shitty markdown. [Reddit's instructions](https://www.reddit.com/wiki/markdown) don't work.
+## [6][Assume role vs changing S3 bucket acl](https://www.reddit.com/r/aws/comments/ftguh6/assume_role_vs_changing_s3_bucket_acl/)
+- url: https://www.reddit.com/r/aws/comments/ftguh6/assume_role_vs_changing_s3_bucket_acl/
+---
+If an application on an EC2 instance from Account A needs to upload files to a S3 bucket in Account B owned by someone else, is it better to assume a role in Account B or change the acl like the example below in order to grant bucket owner permission to access the uploaded file in the S3 bucket?
+
+    aws s3 cp --acl bucket-owner-full-control localFile s3://bucketname/path/filename
+## [7][Should I switch my ALB to use the Least Outstanding Requests algorithm? YES!](https://www.reddit.com/r/aws/comments/fsy2sq/should_i_switch_my_alb_to_use_the_least/)
 - url: https://medium.com/dazn-tech/aws-application-load-balancer-algorithms-765be2eca158?source=friends_link&amp;sk=2da467951a30524ef398b9b333707d43
 ---
 
-## [2][Considering using AWS to host a Minecraft server. Would this be a bad idea?](https://www.reddit.com/r/aws/comments/fss6nx/considering_using_aws_to_host_a_minecraft_server/)
-- url: https://www.reddit.com/r/aws/comments/fss6nx/considering_using_aws_to_host_a_minecraft_server/
----
-I always run servers on my own computer, but I have a group of fifteen friends who all want to play on a server that would be running 24/7 and I can't commit to that for my own computer. We've used MC hosting services in the past, but I feel like using something like AWS would be better because there wouldn't be any middleman. Is there any reason why I shouldn't use AWS? If I should use it, do you have any suggestions?
-
-Edit: Our current option costs $30/month and we're looking to reduce that.
-## [3][Introducing Amazon Detective Following The Breadcrumbs](https://www.reddit.com/r/aws/comments/fsp836/introducing_amazon_detective_following_the/)
-- url: https://engineering.kablamo.com.au/posts/2020/amazon-detective-following-the-breadcrumbs
+## [8][Scalable Serverless Microservice Demo AWS Lambda Kinesis Terraform](https://www.reddit.com/r/aws/comments/ftik1i/scalable_serverless_microservice_demo_aws_lambda/)
+- url: https://medium.com//scalable-serverless-microservice-demo-aws-lambda-kinesis-terraform-cbe6036bf5ac?source=friends_link&amp;sk=074614683a6641cab9b6067929bdc660
 ---
 
-## [4][AWS Global Accelerator: Terrible Name, Awesome Service](https://www.reddit.com/r/aws/comments/fsba7m/aws_global_accelerator_terrible_name_awesome/)
-- url: https://www.sentiatechblog.com/aws-global-accelerator-terrible-name-awesome-service?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=global_accelerator
+## [9][Invoke Async Lambda Function from Go](https://www.reddit.com/r/aws/comments/ftbzaa/invoke_async_lambda_function_from_go/)
+- url: https://www.reddit.com/r/aws/comments/ftbzaa/invoke_async_lambda_function_from_go/
 ---
+I'm trying to invoke Lambda function from another Lambda function asynchronously with Go.
 
-## [5][CDK Templates for Elasticsearch, Kinesis Streams, DynamoDB, Cognito, and Lambda](https://www.reddit.com/r/aws/comments/fskejj/cdk_templates_for_elasticsearch_kinesis_streams/)
-- url: https://github.com/vbudilov/aws-cdk-starter
+There seems to be a method to invoke them as listed in the documentation [here](https://docs.aws.amazon.com/sdk-for-go/api/service/lambda/#Lambda.Invoke) but I cannot find any documentation on what the handler should look like in Go.
+
+If anyone has done this before and has an example of what the handler should look like that would be fantastic.
+## [10][Is this security group normal for Workspaces directory?](https://www.reddit.com/r/aws/comments/ftdl6f/is_this_security_group_normal_for_workspaces/)
+- url: https://www.reddit.com/r/aws/comments/ftdl6f/is_this_security_group_normal_for_workspaces/
 ---
+with all this working from home going on i spun up a workspaces machine in AWS and in part of doing this workspaces requires a directory. so i opted for the AWS Simple AD directory service.
 
-## [6][Do you delete the default VPC?](https://www.reddit.com/r/aws/comments/fshd0f/do_you_delete_the_default_vpc/)
-- url: https://www.reddit.com/r/aws/comments/fshd0f/do_you_delete_the_default_vpc/
----
-After setting up your VPC do you delete the default AWS one? I've read conflicting information on it.
-## [7][AWS NOOB: AWS EC2 or RDS?](https://www.reddit.com/r/aws/comments/fsztmm/aws_noob_aws_ec2_or_rds/)
-- url: https://www.reddit.com/r/aws/comments/fsztmm/aws_noob_aws_ec2_or_rds/
----
-Our DB needs to be accessible 24/7, but it has low load.  We are a company of 10 people using the DB during an 8-hour workday, but we have some users (maybe 50) lightly touching the system outside of business hours.
-
-Right now, we have a SQL Server 2012 on-premises.  The physical device is at least 5 years old. The VM has 64 GB RAM.  The total DB size is 200GB.  I don't know the total data throughput or the total number of queries.  It's been running fine like this for years.  I think we're over specced at 64 GB of RAM, but since we had it available, we assigned it. We use no stored procedures or T-SQL.  Just a simple RDMS that serves our web site which is our primary CMS/operations system.
-
-I'm looking to migrate to AWS while spending as little money as I can feasibly spend, but with a solution that I won't have to worry about and will be fast. I am not a DBA... I'm a hack programmer.
-
-Here's what I'm considering...
-
-**Convert to either postgresql or mysql**
-
-I've used mysql before and have been comfortable with it.  I'm a little worried that some of the queries that have been working in sql server will break.  Perhaps I might've unknowingly used some sql server specific function or syntax. I'm considering this to avoid paying sql server licensing fees.  Is this wise?
-
-**Server options**
-
-I'm using 16 GB RAM as a baseline for comparison.  
-
-\-Get an EC2 instance and run that as our DB server.  16GB Linux instance costs about $140 per month. 
-
-\-An on-demand RDS instance - m4.2xlarge has 16 GB ram and costs about $280 / mo.
-
-\-Aurora Serverless - 100% utilization with 8 ACU 16 GB RAM costs $371.   
-**My questions**
-
-Are these reasonable solutions?  Are my price estimates accurate?  Which of these sounds like the best solution for my use-case?    
-Thanks so much for your help.  Love you all.
-## [8][Elasticbeanstalk single docker environment, customized awslogs overwritten on ConfigDeploy.](https://www.reddit.com/r/aws/comments/fszsnn/elasticbeanstalk_single_docker_environment/)
-- url: https://www.reddit.com/r/aws/comments/fszsnn/elasticbeanstalk_single_docker_environment/
----
-I've noticed an issue when updating config on Elasticbeanstalk environment and I'm looking for a clean way to overcome it.
-
-When deploying configuration changes,  my customized awslogs.conf gets overwritten with addon.
-
-&gt;AddonsBefore/ConfigCWLAgent/10-config.sh
-
-When I deploy my app, I use container command to modify the logs and container command is running after the addons therefore awslogs.conf is the way I want it, that is not the case on ConfigUpdate.
-
-Consequence is that my logs are not streamed anymore. As per AWS documentation using files in post hooks is not advised.
-
-Anyone has a suggestion how can I resolve this?
-## [9][Making billing dashboard publically accessible?](https://www.reddit.com/r/aws/comments/fsz4rc/making_billing_dashboard_publically_accessible/)
-- url: https://www.reddit.com/r/aws/comments/fsz4rc/making_billing_dashboard_publically_accessible/
----
-Hey, I want to make it transparent to my customers how much the infrastructure costs. Is there any way how I can do it? Preferable the whole dashboard.
-## [10][Publish WebSite with https in AWS nightmare](https://www.reddit.com/r/aws/comments/fsz2rk/publish_website_with_https_in_aws_nightmare/)
-- url: https://www.reddit.com/r/aws/comments/fsz2rk/publish_website_with_https_in_aws_nightmare/
----
-I can see the website with [http://www.devops.engineering/](http://www.devops.engineering/)
+once the simple ad directory service was created i noticed a new security group was also created and upon looking at it, it's open to everyone and their brother...
 
 &amp;#x200B;
 
-but I am unable to use [https://www.devops.engineering/](https://www.devops.engineering/)
+[security group](https://preview.redd.it/96zj4aw59bq41.png?width=550&amp;format=png&amp;auto=webp&amp;s=7778a5fad006660052990eef776619fd680ba33a)
 
-I am getting **www.devops.engineering** unexpectedly closed the connection.
-
-For certificate
-
-&amp;#x200B;
-
-https://preview.redd.it/2oxvvu32c7q41.png?width=345&amp;format=png&amp;auto=webp&amp;s=9caab69219fa7cf6dee1d94498745d9efad35979
-
-&amp;#x200B;
-
-What did I do?
-
-Created a certificated using and passed validation
-
-[https://console.aws.amazon.com/acm/home?region=us-east-1#/](https://console.aws.amazon.com/acm/home?region=us-east-1#/)
-
-&amp;#x200B;
-
-https://preview.redd.it/ob5x2xa8c7q41.png?width=1911&amp;format=png&amp;auto=webp&amp;s=30a784a7169db48168c382228ce18b7280bf09be
-
-i checked the routes
-
-[https://console.aws.amazon.com/route53/home#resource-record-sets:Z2QK9LSHRP09KZ](https://console.aws.amazon.com/route53/home#resource-record-sets:Z2QK9LSHRP09KZ)
-
-&amp;#x200B;
-
-https://preview.redd.it/kogxfuyac7q41.png?width=1557&amp;format=png&amp;auto=webp&amp;s=f8affe1f0c718b6103f198cc0a39e5f8ce88e29e
-
-I have created the CloudFront distributions
-
-[https://console.aws.amazon.com/cloudfront/home#distributions:](https://console.aws.amazon.com/cloudfront/home#distributions:)
-
-https://preview.redd.it/jfybem5ec7q41.png?width=1869&amp;format=png&amp;auto=webp&amp;s=7fff009ed078e7e1f2b81796db07049cbdfb4e89
-
-One with a redirect
-
-&amp;#x200B;
-
-https://preview.redd.it/q960p4dhc7q41.png?width=1212&amp;format=png&amp;auto=webp&amp;s=05603b1f49d554cf3e81685c44b528ca700065c3
-
-&amp;#x200B;
-
-https://preview.redd.it/78vj95uic7q41.png?width=1313&amp;format=png&amp;auto=webp&amp;s=712a6bde323142fcb8c530bf081dbd6df9db5de2
+is this normal? this certainly can't be best practice is it? how best can i make this more secure?

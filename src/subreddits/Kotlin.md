@@ -1,17 +1,345 @@
 # Kotlin
-## [1][🎉 GraphQL Kotlin 2.0.0!](https://www.reddit.com/r/Kotlin/comments/fsru6c/graphql_kotlin_200/)
-- url: https://github.com/ExpediaGroup/graphql-kotlin/releases/tag/2.0.0
+## [1][New to Kotlin](https://www.reddit.com/r/Kotlin/comments/ftjw23/new_to_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/ftjw23/new_to_kotlin/
+---
+Hey,
+
+I am currently studying Kotlin but having a hard time since I feel every tutorial I find somehow expects you to be a bit experienced in Java. In which I have zero experience. Are there any books which really offer the reader an extensive overview of the language? I prefer reading over videos.  
+Thanks!
+## [2][Math solver android app question](https://www.reddit.com/r/Kotlin/comments/ftkzsu/math_solver_android_app_question/)
+- url: https://www.reddit.com/r/Kotlin/comments/ftkzsu/math_solver_android_app_question/
+---
+I am thinking of a making a math solver app, mostly linear algebra stuff, matrixes, vectors etc.
+
+If i were to make something like symbolab/wolfram (much less complex, only some features), would it be resonable to do the computation on the mobile app, or should i do it with api calls to a backend?
+
+Thank you :)
+## [3][Setting up Google Authentication in a Kotlin Android App](https://www.reddit.com/r/Kotlin/comments/ft1wft/setting_up_google_authentication_in_a_kotlin/)
+- url: https://codesource.io/setting-up-google-authentication-in-a-kotlin-android-app/
 ---
 
-## [2][`scan()` and `scanReduce()` in Kotlin 1.3.70!](https://www.reddit.com/r/Kotlin/comments/fsywl7/scan_and_scanreduce_in_kotlin_1370/)
+## [4][`scan()` and `scanReduce()` in Kotlin 1.3.70!](https://www.reddit.com/r/Kotlin/comments/fsywl7/scan_and_scanreduce_in_kotlin_1370/)
 - url: https://twitter.com/kotlin/status/1245300637916594179?s=20
 ---
 
-## [3][“How to Combine Kotlin Flows” #androiddev #androiddevelopment #kotlin #roomdatabase #kotlin_multiplatform #programming #androiddeveloper](https://www.reddit.com/r/Kotlin/comments/fssg5b/how_to_combine_kotlin_flows_androiddev/)
+## [5][🎉 GraphQL Kotlin 2.0.0!](https://www.reddit.com/r/Kotlin/comments/fsru6c/graphql_kotlin_200/)
+- url: https://github.com/ExpediaGroup/graphql-kotlin/releases/tag/2.0.0
+---
+
+## [6][Async Coroutine error handling](https://www.reddit.com/r/Kotlin/comments/ft1ro1/async_coroutine_error_handling/)
+- url: https://www.reddit.com/r/Kotlin/comments/ft1ro1/async_coroutine_error_handling/
+---
+I'd like to say "all good 'til Coroutines".  
+Jokes asides, in Java I'm used to `CompletableFuture`s.  
+So I was using that one in Kotlin too
+
+```
+myList
+  .map {
+    CompletableFuture
+      .supplyAsync { it.fn() }
+      .orTimeout(1, SECONDS)
+      .exceptionally { emptyList() }
+  }
+  .toList()
+  .flatMap { it.join() }
+
+```
+
+Now, in Kotlin, all what I could come up is
+
+```
+myList
+  .map {
+    try {
+      withTimeout(1000) {
+        async {
+          it.fn()
+        }
+      }
+    } catch (e: Exception) {
+      async { emptyList() }
+    }
+  }
+  .awaitAll()
+  .asSequence()
+  .flatten()
+```
+
+Honestly this looks a bit weird on a functional flow.  
+What am I missing?
+## [7][[Help] View/Button ins't clickable](https://www.reddit.com/r/Kotlin/comments/ft5vwi/help_viewbutton_inst_clickable/)
+- url: https://www.reddit.com/r/Kotlin/comments/ft5vwi/help_viewbutton_inst_clickable/
+---
+So, im making an for the purpose of calculating numbers in a game while the user plays the game.
+
+For that i've made a floating button that draws over all apps.
+
+The issue im facing is that the button isn't clickable, and when i set a listener it crashes.
+
+Heres the code.. thanks for help.
+
+MainActivity.kt
+
+    package com.example.rokcalkot
+    
+    import android.content.Intent
+    import android.app.Activity
+    import android.os.Build
+    import android.provider.Settings
+    import android.view.View
+    import android.content.pm.PackageManager
+    import android.os.Bundle
+    import android.util.Log
+    import android.widget.Button
+    import android.widget.Toast
+    import androidx.appcompat.app.AlertDialog
+    import androidx.appcompat.app.AppCompatActivity
+    import android.net.Uri
+    import androidx.core.app.ActivityCompat
+    import androidx.core.content.ContextCompat
+    import kotlinx.android.synthetic.main.onscreen.*
+    
+    import android.graphics.Canvas
+    import android.graphics.Color
+    import android.graphics.Bitmap
+    
+    
+    class MainActivity : AppCompatActivity() {
+    
+        val requestCode = 201
+    
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+    
+            //-------------------------- LAUNCH BUTTON BTN ---------------------------
+            val btnL = findViewById&lt;Button&gt;(R.id.btnShow)
+            val btnS= findViewById&lt;Button&gt;(R.id.btnService)
+    
+            /*btnS.setOnClickListener{
+                Toast.makeText(this@MainActivity, "CLICKBLE", Toast.LENGTH_LONG).show()
+            }*/
+            //btnShow?.setOnClickListener { Toast.makeText(this@MainActivity, "Bannaa", Toast.LENGTH_LONG).show() }
+            btnL.setOnClickListener {
+                if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M &amp;&amp; !Settings.canDrawOverlays(this)) {
+                    val intent = Intent(
+                        Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:$packageName")
+                    )
+    
+                    startActivityForResult(intent, requestCode)
+                    //startActivityForResult(intent2,requestCode1)
+                } else {
+                    startService(Intent(this, MyFloatingWindowService::class.java))
+    
+                    finish()
+                }
+                //Toast.makeText(this@MainActivity, "Bannaa", Toast.LENGTH_LONG).show()
+                }
+    
+            fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+                super.onActivityResult(requestCode, resultCode, data)
+                if (resultCode == Activity.RESULT_OK) {
+                    startService(Intent(this, MyFloatingWindowService::class.java))
+                    finish()
+                }
+            }
+        }
+    }
+
+&amp;#x200B;
+
+Activity\_Main.xml
+
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme"
+        tools:context=".MainActivity"&gt;
+    
+        &lt;Button
+            android:id="@+id/btnShow"
+            android:layout_width="95dp"
+            android:layout_height="96dp"
+            android:text="Start Rok Cal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" /&gt;
+    
+        &lt;TextView
+            android:id="@+id/textView"
+            android:layout_width="141dp"
+            android:layout_height="45dp"
+            android:text="Welcome to Rok Cal"
+            app:layout_constraintBottom_toTopOf="@+id/btnShow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" /&gt;
+    
+    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+
+&amp;#x200B;
+
+MyFloatingWindowService.kt
+
+    package com.example.rokcalkot
+    import android.annotation.SuppressLint
+    import android.app.Service
+    import android.content.Context
+    import android.content.Intent
+    import android.graphics.PixelFormat
+    import android.os.Build
+    import android.os.IBinder
+    import android.view.*
+    import android.widget.Toast
+    import kotlin.math.roundToInt
+    
+    class MyFloatingWindowService : Service() {
+    
+        var LAYOUT_FLAG: Int = 0
+    
+        lateinit var floatingView: View
+        lateinit var floatingViewMain: View
+        lateinit var manager: WindowManager
+        lateinit var params: WindowManager.LayoutParams
+        override fun onBind(intent: Intent?): IBinder? {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    
+        }
+    
+    
+        override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+    
+            LAYOUT_FLAG = if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) {
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+            } else {
+                WindowManager.LayoutParams.TYPE_PHONE
+            }
+            val params = WindowManager.LayoutParams(
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                LAYOUT_FLAG,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                PixelFormat.TRANSLUCENT
+            )
+    
+            this.params = params
+            //Specify the view position
+            params.gravity =
+                Gravity.TOP or Gravity.CENTER //Initially view will be added to top-left corner
+            params.x = 0
+            params.y = 0
+    
+    
+            manager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            floatingView = LayoutInflater.from(this).inflate(R.layout.onscreen, null)
+            floatingViewMain = LayoutInflater.from(this).inflate(R.layout.activity_main, null)
+            manager.addView(floatingView, params)
+            floatingView.findViewById&lt;View&gt;(R.id.btnService)?.setOnTouchListener(object :
+                View.OnTouchListener {
+                var initialX: Int? = null
+                var initialY: Int? = null
+                var initialTouchX: Float? = null
+                var initialTouchY: Float? = null
+    
+    
+                @SuppressLint("ClickableViewAccessibility")
+                override fun onTouch(view: View?, motionEvent: MotionEvent?): Boolean {
+                    //Toast.makeText(this@MyFloatingWindowService, "Clickble", Toast.LENGTH_SHORT).show()
+                    when (motionEvent!!.action) {
+                        MotionEvent.ACTION_DOWN -&gt; {
+                            //remember the initial position.
+                            initialX = params.x
+                            initialY = params.y
+    
+    
+                            //get the touch location
+                            //Toast.makeText(this@MyFloatingWindowService, "ACTION DOWN", Toast.LENGTH_SHORT).show()
+                            initialTouchX = motionEvent!!.getRawX()
+                            initialTouchY = motionEvent!!.getRawY()
+                            return true
+                        }
+                        MotionEvent.ACTION_UP -&gt; {
+                            //Toast.makeText(this@MyFloatingWindowService, "ACTION UP", Toast.LENGTH_SHORT).show()
+                            val Xdiff = (motionEvent.getRawX() - initialTouchX!!)
+                            val Ydiff = (motionEvent.getRawY() - initialTouchY!!)
+                            return true
+                        }
+                        MotionEvent.ACTION_MOVE -&gt; {
+                            //Calculate the X and Y coordinates of the view.
+    
+                            params.x = initialX!!.plus((motionEvent.getRawX() - initialTouchX!!)).roundToInt()
+                            params.y = initialY!!.plus((motionEvent.getRawY() - initialTouchY!!).roundToInt())
+                            manager.updateViewLayout(floatingView, params)
+                            return true
+                        }
+    
+                    }
+                    return false
+                }
+            })
+    
+    
+            return START_NOT_STICKY
+        }
+    
+    
+    
+        fun CHECK() {
+            Toast.makeText(this@MyFloatingWindowService, "Clickble", Toast.LENGTH_LONG).show()
+        }
+    
+        override fun onDestroy() {
+            super.onDestroy()
+            manager.removeView(floatingView)
+        }
+    
+    
+    }
+
+&amp;#x200B;
+
+onscreen.xml --&gt; the xml that the service interacts with which draws over all apps.
+
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme"
+        tools:context=".MainActivity"
+        android:launchMode="singleTask"&gt;
+    
+        &lt;Button
+            android:id="@+id/btnService"
+            android:layout_width="51dp"
+            android:layout_height="62dp"
+            android:clickable="true"
+            android:text="Start Service"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.522" /&gt;
+    
+    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+## [8][Kotlin Coroutined](https://www.reddit.com/r/Kotlin/comments/ft5i2s/kotlin_coroutined/)
+- url: https://medium.com/@shelbyc0hen/kotlin-coroutined-8c57acd3c45e
+---
+
+## [9][“How to Combine Kotlin Flows” #androiddev #androiddevelopment #kotlin #roomdatabase #kotlin_multiplatform #programming #androiddeveloper](https://www.reddit.com/r/Kotlin/comments/fssg5b/how_to_combine_kotlin_flows_androiddev/)
 - url: https://medium.com/better-programming/learn-how-to-combine-kotlin-flows-317849a71d3e?source=friends_link&amp;sk=fc6ee71b885f67afe4dae695cb179a0b
 ---
 
-## [4][Why does Kotlin look so good ? Am I missing something?](https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/)
+## [10][Why does Kotlin look so good ? Am I missing something?](https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/)
 - url: https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/
 ---
 Hello there, 
@@ -25,62 +353,3 @@ Hello there,
 &amp;#x200B;
 
 Just joined the subreddit and I am still having a look around so please be kind :)
-## [5][Spring Boot in Kotlin - IntelliJ Idea Community vs Ultimate](https://www.reddit.com/r/Kotlin/comments/frtxez/spring_boot_in_kotlin_intellij_idea_community_vs/)
-- url: https://www.reddit.com/r/Kotlin/comments/frtxez/spring_boot_in_kotlin_intellij_idea_community_vs/
----
-What are the real disadvantages of developing Spring Boot Api (kotlin) in the Community version of IntelliJ vs Ultimate.
-## [6][JavaFX / Kotlin Discord Server](https://www.reddit.com/r/Kotlin/comments/fs0pzb/javafx_kotlin_discord_server/)
-- url: https://www.reddit.com/r/Kotlin/comments/fs0pzb/javafx_kotlin_discord_server/
----
-It is a great discord server where you can get some help or chat about Java / Kotlin related stuff. I like to talk with people that involve Kotlin and JavaFX or people who need some help with Kotlin or JavaFX.
-
-Discord Server link:  
-[https://discord.gg/2CFBxrw](https://discord.gg/2CFBxrw)
-## [7][Exploring the MVIKotlin project](https://www.reddit.com/r/Kotlin/comments/frwelx/exploring_the_mvikotlin_project/)
-- url: https://www.reddit.com/r/Kotlin/comments/frwelx/exploring_the_mvikotlin_project/
----
-I was excited when u/ArkadiiIvanov posted about the [MVIKotlin](https://www.reddit.com/r/Kotlin/comments/fjjupo/mvikotlin_new_kotlin_multiplatform_framework_for/) project a few weeks ago.
-
-Kicked the tires on the project and I was overall impressed.
-
-Majority of my experience is as a Kotlin Android developer, but I write about 30% of my code for Swift iOS. Putting up what is essentially the same PR for business logic on two platforms is frustrating. MVIKotlin seems like a great initiative to solve duplicate code.
-
-I jumped into the deep end of the pool as I'm fresh when it comes to Kotlin multiplatform, RX, and SwiftUI. Lots to learn.
-
-Two initial takeaways:
-
-1. Sharing code across multiple platforms likely benefits from a strict architecture, especially for a complex project. *Curious to see how quickly new developers can pickup the framework* (like myself). I set up the samples and learned about Stores in under an hour. Next steps would be to understand Views and Binding.
-2. Building the iOS libraries from scratch took 16 minutes on my underpowered Macbook. *Curious how build times play into a normal development cycle for iOS*. I'd like to play around with incremental updates further ( u/ArkadiiIvanov mentioned the first build is slow).
-
-Video of exploration:
-
-[https://gitduck.com/watch/5e812cf8b7d7b83d6395fc69](https://gitduck.com/watch/5e812cf8b7d7b83d6395fc69)
-## [8][A framework to use PostgreSQL JSONB feature ?](https://www.reddit.com/r/Kotlin/comments/frnpp5/a_framework_to_use_postgresql_jsonb_feature/)
-- url: https://www.reddit.com/r/Kotlin/comments/frnpp5/a_framework_to_use_postgresql_jsonb_feature/
----
-Good day to you fellow Kotlin enthusiasts ! 
-
-I am kinda new to Kotlin ( finished my Kotlin Koans not even a week ago) and I have a project which include a mobile app in Flutter and a REST API which I am planning to do using Spring Boot. 
-
-As for the database, I have been imposed with a PostgreSQL one by my client's company policy. The problem I do think having a flexible data representation would be a non negligeable plus, and thus I am very interested in PostgreSQL JSONB data type, with all the sweet queries features around. 
-
-I there a Kotlin framework you know of which would expose this feature ? I can't seem to find any information on this.
-## [9][A long shot: Does anyone remember this blog post from several/many months ago?](https://www.reddit.com/r/Kotlin/comments/frf3ba/a_long_shot_does_anyone_remember_this_blog_post/)
-- url: https://www.reddit.com/r/Kotlin/comments/frf3ba/a_long_shot_does_anyone_remember_this_blog_post/
----
-I'm trying to find a blog post that I remember enjoying. My memory is fuzzy, but the big picture was that this person implement some kind of database/domain model as a class with a nullable "id" field. Like this:
-
-    /* data ? */ class Person(var id: Int?, val name: String, val age: Int)
-
-And then he and a coworker "hated" each other for their differing opinions. The other coworker thought they should have a `Person` without an `id` and a `SavedPerson` that has an `id`, but the classes are almost identical, and it would require lots of `to` and `from` code, so the author hated that.
-
-He came up with some pretty elegant solution, but I don't remember what it was. It might have been interface + inner classes + delegation or maybe a sealed class with interfaces and delegation. I don't remember.
-
-Anybody else remember this or have any idea what I'm talking about? Thanks in advance.
-
-EDIT: I found it! It was this https://medium.com/@nwillc/kotlin-data-class-inheritance-by-delegation-2ad3fe6f9bd7
-Cheers!
-## [10][Restful Api using Spring Boot](https://www.reddit.com/r/Kotlin/comments/frm589/restful_api_using_spring_boot/)
-- url: https://www.reddit.com/r/Kotlin/comments/frm589/restful_api_using_spring_boot/
----
-I am trying to learn how to make a Restful Api using Spring Boot. I have advanced programming skills with Android so I am good with Kotlin. Can someone share resources to learn; how to organise the architecture, code organisation etc?

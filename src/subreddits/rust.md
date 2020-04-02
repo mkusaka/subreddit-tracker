@@ -23,82 +23,74 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/frff7k/whats_everyone_working_on_this_week_142020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-14-2020/40159?u=llogiq)!
-## [3][Writing a reverse shell in Rust?](https://www.reddit.com/r/rust/comments/fsxaaa/writing_a_reverse_shell_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/fsxaaa/writing_a_reverse_shell_in_rust/
+## [3][swc now has a typescript / javascript node visitor which works on stable](https://www.reddit.com/r/rust/comments/ftjmhh/swc_now_has_a_typescript_javascript_node_visitor/)
+- url: https://www.reddit.com/r/rust/comments/ftjmhh/swc_now_has_a_typescript_javascript_node_visitor/
 ---
-So I'm a Rust beginner, and I thought it would be cool to write my own reverse shell in Rust. I like messing with security and occasionally do boot2root challenges like [hackthebox](https://hackthebox.eu/). Usually I just use a simple netcat shell, since meterpreter is a little bit overkill and is detected by virtually every antivirus in existance. But I thought creating my own thing would be a fun challenge. I already wrote a simple program that creates a TcpStream it can send/receive stuff from.
+I've implemented a Visitor and code generator which works on stable rust.
 
-Now my question is, how could I go about "piping" a program (cmd or bash) through a TcpStream (like netcat's `-e` flag does)? I found a couple of existing reverse shells written in Rust, but most of them are pretty outdated and don't compile on the latest version anymore (and generally not cross-platform, which would also be nice).
-## [4][Bryan Cantrill on Rust making systems programming exciting](https://www.reddit.com/r/rust/comments/fsih8g/bryan_cantrill_on_rust_making_systems_programming/)
-- url: https://m.youtube.com/watch?v=vvZA9n3e5pc&amp;t=49m20s
----
+If you are building a tool related to typescript or javascript in rust, please take a look at it.,
 
-## [5][Rust debugging is still really painful, VSCode particularly included](https://www.reddit.com/r/rust/comments/fspk43/rust_debugging_is_still_really_painful_vscode/)
-- url: https://www.reddit.com/r/rust/comments/fspk43/rust_debugging_is_still_really_painful_vscode/
----
-I'm surprised I'm writing this, but I cannot find a good debugger for Rust. I've been using VSCode as it has been the best---everything else has horribly mangled function names and whatnot. But VSCode debugging is a very broken experience. I've had issues with how it handles the embedded terminal. I'm currently having issues where code gets a segfault within the debugger which runs totally fine without it. And with *the exact same code* I've gotten "Inconsistency detected by ld.so: rtld.c: 1180: dl\_main: Assertion" which makes the launch fail. It's like once every two weeks there's some new problem.
+&amp;#x200B;
 
-I'm tired of realizing I have to file a VSCode bug report for Rust debugging. The lack of a decent debugger is really hampering me right now. I want to give up.
-## [6][Rust in a Commercial](https://www.reddit.com/r/rust/comments/fsd5s8/rust_in_a_commercial/)
-- url: https://youtu.be/h3yFOf6hIjQ
+The PR: [https://github.com/swc-project/swc/pull/743](https://github.com/swc-project/swc/pull/743)
+## [4][This Week in Rust 332](https://www.reddit.com/r/rust/comments/ftl9l3/this_week_in_rust_332/)
+- url: https://this-week-in-rust.org/blog/2020/03/31/this-week-in-rust-332/
 ---
 
-## [7][Oxidize 1K: March 20th, 2020 - Embedded Rust Lightning Conference - Full Video Stream](https://www.reddit.com/r/rust/comments/fsn4ux/oxidize_1k_march_20th_2020_embedded_rust/)
-- url: https://www.youtube.com/watch?v=zPuELAzJyno
+## [5][Forbid pineapple on pizza](https://www.reddit.com/r/rust/comments/ft2r71/forbid_pineapple_on_pizza/)
+- url: https://github.com/rust-lang/rust/pull/70645
 ---
 
-## [8][macro_rules! ($($a:expr),+) flattening](https://www.reddit.com/r/rust/comments/fsw9b1/macro_rules_aexpr_flattening/)
-- url: https://www.reddit.com/r/rust/comments/fsw9b1/macro_rules_aexpr_flattening/
+## [6][Tokio: Reducing tail latencies with automatic cooperative task yielding](https://www.reddit.com/r/rust/comments/ft98nz/tokio_reducing_tail_latencies_with_automatic/)
+- url: https://tokio.rs/blog/2020-04-preemption/
 ---
-Hey guys,
-I am trying to write proper DRY code by using a declarative macro. For this purpose, I want to input a string with n+2 format fillers, replace the first and the last filler with static data and the intermediate ones with my variables, and wrap the API call around that. For this, I wrote a macro_rules! macro:
 
-    macro_rules! apicall {
-        ($s:expr,$($args:expr),*) =&gt; {
-            Ok(self
-                .client
-                .get(
-                    format!(
-                        $s,
-                        &amp;self.apiurl,
-                        $args,
-                        &amp;self.apikey,
-                    )
-                    .as_str(),
-                )
-                .send()
-                .await?
-                .json()
-                .await?)
-        };
+## [7][New project: Crush, a command line shell](https://www.reddit.com/r/rust/comments/ftb7fc/new_project_crush_a_command_line_shell/)
+- url: https://www.reddit.com/r/rust/comments/ftb7fc/new_project_crush_a_command_line_shell/
+---
+I've written Crush, a shell/programming language aimed at replacing shells like bash or fish. It has some ideas in common with nushell, but Crush focuses on being a fully featured and reasonably modern programming language with types, closures, etc. 
+
+The code (and a longer description) is available [here](https://github.com/liljencrantz/crush/), and I'd be interested in patches, feedback and opinions. The shell is fully functional and should at least work out of the box on modern Linux systems, but it's still pretty rough around the edges. Also, this has been my way of teaching myself Rust. I am already aware that I'm doing error handling wrong and that I should look into Cow strings, I will be looking into fixing those issues, but any other rust anti-patterns and mistakes I'm doing would be helpful to hear about.
+## [8][(Partially) fixing a bug in a Rust research database [video]](https://www.reddit.com/r/rust/comments/ftdljb/partially_fixing_a_bug_in_a_rust_research/)
+- url: https://www.youtube.com/watch?v=kiMUI0y91YI
+---
+
+## [9][Help: Parsing/Deserializing straight from the network](https://www.reddit.com/r/rust/comments/ftkcl5/help_parsingdeserializing_straight_from_the/)
+- url: https://www.reddit.com/r/rust/comments/ftkcl5/help_parsingdeserializing_straight_from_the/
+---
+I'm trying to implement a network protocol that makes use of some weird decisions, for example I am trying to deserialize the following.
+
+    struct Foo {
+      length: VarInt,
+      data: Vec&lt;u8&gt;
     }
 
+Where VarInt is an i32 represented between 1 and 5 bytes with the LSB indicating whether or not to read another byte.
 
-The problem is that at the time I use the $args macro variable, I get a compiler error because the argument still repeats and the preprocessor doesn't know how to deal with that. So I tried to write a fix:
+Serde and Nom seem like the obvious choices but Serde appears to be lacking a way of pulling bytes off the line one at a time (for parsing `VarInt`) or pulling N at once without consuming a length prefix.
 
-    macro_rules! flatten {
-        ($arg:expr) =&gt; ($arg);
-        ($arg1:expr, $($args:expr),+) =&gt; {
-            $arg1, dewrap!($args)
-        }
-    }
+Nom only seems to want to take byte slices rather than anything that implements the Read trait.
 
-and replaced $args with flatten!($args). This however still produces the same compiler error even though $args should match the second pattern of flatten!. How do I work around this?
-## [9][Introducing TinyVec: 100% safe alternative to SmallVec and ArrayVec](https://www.reddit.com/r/rust/comments/fshuhk/introducing_tinyvec_100_safe_alternative_to/)
-- url: https://www.reddit.com/r/rust/comments/fshuhk/introducing_tinyvec_100_safe_alternative_to/
+Is this something that would need to be implemented by hand or is there another crate better suited to this that I've missed?
+## [10][Why don't the format and println macros use the f-string syntax from Python?](https://www.reddit.com/r/rust/comments/ftkse0/why_dont_the_format_and_println_macros_use_the/)
+- url: https://www.reddit.com/r/rust/comments/ftkse0/why_dont_the_format_and_println_macros_use_the/
 ---
-[TinyVec](https://github.com/Lokathor/tinyvec) is a 100% safe code alternative to [SmallVec](https://github.com/servo/rust-smallvec) and [ArrayVec](https://github.com/bluss/arrayvec) crates. While SmallVec and ArrayVec create an array of unintialized memory and try to hide it from the user, TinyVec simply initializes the entire array up front. Real-world performance of this approach is surprisingly good: I have replaced SmallVec with TinyVec in `unicode-normalization` and `lewton` crates with no measurable impact on benchmarks.
+I've recently started learning Rust. As far as I understand, macros work by actually parsing and analysing the tokens given to the macro. Then I wonder, why does the format and print macros use this syntax:
 
-The main drawback is that the type stored in TinyVec must implement `Default`, so it cannot replace SmallVec or ArrayVec in _all_ scenarios.
+```println!("The person {} is {} years old", name, age);```
 
-TinyVec is implemented as an enum of `std::Vec` and `tinyvec::ArrayVec`, which allows some optimizations that are not possible with SmallVec - for example, you can explicitly match on this enum and call `drain()` on the underlying type to avoid branching on every access.
+Rather than this syntax, inspired by f-strings from Python:
 
-TinyVec is designed to be a drop-in replacement for `std::Vec`, more so than SmallVec or ArrayVec that diverge from Vec behavior in some of their methods. We got a fuzzer to verify that TinyVec's behavior is identical to `std::Vec` via [arbitrary-model-tests](https://github.com/jakubadamw/arbitrary-model-tests) (which has found a few bugs!). Newly introduced methods are given deliberately long names that are unlikely to clash with future additions on Vec.
+```println!("The person {name} is {age} years old");```
 
-For a more detailed overview of the crate see the [docs.rs page](https://docs.rs/tinyvec/0.3.3/tinyvec/).
+Is there something about the way macros work that prevents this kind of syntax? Would it be possible to make a macro which works this way?
 
-P.S. I'm not the author of the crate, I'm just a happy user of it.
-## [10][kmon: Linux Kernel Manager and Activity Monitor written in Rust](https://www.reddit.com/r/rust/comments/fsz7ef/kmon_linux_kernel_manager_and_activity_monitor/)
+Personally I find the second syntax much more readable, especially if there are many arguments to the format string. Why was the first syntax chosen?
+## [11][What happened to the 2019 State of Rust Survey results?](https://www.reddit.com/r/rust/comments/ftch5o/what_happened_to_the_2019_state_of_rust_survey/)
+- url: https://www.reddit.com/r/rust/comments/ftch5o/what_happened_to_the_2019_state_of_rust_survey/
+---
+The survey was closed on Dec 16th 2019 and the results were supposed to be released "a month or so afterwards" but there is no mention of it on the blog.  What happened?
+## [12][kmon: Linux Kernel Manager and Activity Monitor written in Rust](https://www.reddit.com/r/rust/comments/fsz7ef/kmon_linux_kernel_manager_and_activity_monitor/)
 - url: https://www.reddit.com/r/rust/comments/fsz7ef/kmon_linux_kernel_manager_and_activity_monitor/
 ---
 [kmon](https://github.com/orhun/kmon) provides a text-based user interface for managing the Linux kernel modules and monitoring the kernel activities. By managing, it means loading, unloading, blacklisting and showing the information of a module. These updates in the kernel modules, logs about the hardware and other kernel messages can be tracked with the real-time activity monitor in kmon. Since the usage of different tools like dmesg and kmod are required for these tasks in Linux, kmon aims to gather them in a single terminal window and facilitate the usage as much as possible while keeping the functionality.
@@ -109,20 +101,3 @@ kmon is written in Rust and uses [tui-rs](https://github.com/fdehau/tui-rs) &amp
 
 **Project Homepage:** [https://github.com/orhun/kmon](https://github.com/orhun/kmon)  
 **Rust Package:** [https://crates.io/crates/kmon](https://crates.io/crates/kmon)
-## [11][Rust in Action update - upcoming live stream; Japanese and Korean versions will be available, probably Russian also](https://www.reddit.com/r/rust/comments/fsm1i1/rust_in_action_update_upcoming_live_stream/)
-- url: https://www.reddit.com/r/rust/comments/fsm1i1/rust_in_action_update_upcoming_live_stream/
----
-Hi all,
-
-[Rust in Action](https://www.manning.com/books/rust-in-action?a_aid=rust&amp;a_bid=0367c58f&amp;chan=reddit) is an upcoming book from Manning Publications that teaches Rust by walking through systems programming examples.
-
-Some updates
-
-* I will be [live streaming](https://www.twitch.tv/manningpublications) on 16 April (7pm EDT)
-* there is still time to provide feedback! I'm committed to addressing every comment submitted to [the liveBook](https://livebook.manning.com/book/rust-in-action/)
-* the publisher informs me that Japanese and Korean translation rights have been sold and Russian is negotiation
-* the book should be at the printers in May!
-## [12][Specs and Legion, two very different approaches to ECS](https://www.reddit.com/r/rust/comments/fsczky/specs_and_legion_two_very_different_approaches_to/)
-- url: https://csherratt.github.io/blog/posts/specs-and-legion/
----
-

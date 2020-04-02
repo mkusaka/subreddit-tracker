@@ -19,7 +19,133 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Need help with AWS Cognito, S3, IAM, STS confusion](https://www.reddit.com/r/rails/comments/fsy7g7/need_help_with_aws_cognito_s3_iam_sts_confusion/)
+## [2][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/ftl6xc/gimme_gems_thursdays_found_an_awesome_new_gem/)
+- url: https://www.reddit.com/r/rails/comments/ftl6xc/gimme_gems_thursdays_found_an_awesome_new_gem/
+---
+Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
+
+You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
+
+Please include a **description** and a **link** to the gem's homepage in your comment.
+## [3][Properly Exporting JS Files per Page Only in Rails 6](https://www.reddit.com/r/rails/comments/ftimgw/properly_exporting_js_files_per_page_only_in/)
+- url: https://www.reddit.com/r/rails/comments/ftimgw/properly_exporting_js_files_per_page_only_in/
+---
+I'm currently migrating an application from sprockets to webpacker under Rails 6. I have a situation where I name my js files after the page I attach it to for some crud modules. So I have:
+
+* model_as/Show.js
+* model_bs/Show.js
+
+The style of each file is something like `var Show = (function() { })();` using the revealing pattern in vanilla js. The last line of each file is `window.Show = Show`.
+
+In `ModelA`'s show page, I include it using `javascript_pack_tag 'model_as/Show.js'` and in`ModelB`'s show page, I include it using `javascript_pack_tag 'model_bs/Show.js'`. 
+
+When I visit the show page for `A`, it works fine. However when I visit the show page for `B`, it seems to still have cache-ed `A`'s `Show.js` file. So I think it's an issue with `window.Show = Show`. 
+
+My question is, given a setup like that, what's the best practice to export js files that we load only on a per page basis?
+## [4][Launching Your First Freelance Application (A Tutorial Beginner Series)](https://www.reddit.com/r/rails/comments/ftgvwg/launching_your_first_freelance_application_a/)
+- url: https://www.reddit.com/r/rails/comments/ftgvwg/launching_your_first_freelance_application_a/
+---
+Hey everyone. I've been holding off on sharing this resource I've been working on until I made it past the 2 week mark and had episodes under my belt.
+
+I've started working on a series of Ruby on Rails tutorials called my "20 in 20" challenge, where I plan to build 20 different projects in 20 weeks, from varying scopes and difficulties.
+
+Week 2 involved what was initially a very simple mock freelance gig. You went into your local diner, and Frank, the owner, asked if you could make a website for him if he would pay you. It's your first project like this, so you don't have a lot of experience but you say yes.
+
+I covered Frank's requirements in episode 1, and then was met with several comments including one about one of my viewers whose friend just had to close his restaurant because of the Covid-19 outbreak. I decided to increase the scope, so that he could use this project to actually help his friend by creating an online platform for him.
+
+The current scope has covered:
+
+* Creating the initial pages, adding bootstrap, and how to source &amp; edit the images used in the background
+* Attempting to implement a search field by the menu item names, as well as by whether the meals are: Gluten free, Peanut free, vegan, vegetarian, kosher, etc..
+* Converting the menu into a list of products that you can add to an order
+* The ability to manage your order on the shopping cart page
+* Pushing to production and the challenges this poses with Active Storage
+
+Part 6 just went up which covered deploying to Digital Ocean, using Digital Ocean Spaces for Active Storage, configuring the Capistrano files for handling Webpacker so that our bootstrap would work, and more. Hopefully this can serve as the basis for showing how to add Stripe, move to HTTPS with Cloudflare and a custom domain, and more.
+
+I thought I would share it on this subreddit because I see others sharing their resources, and I feel like this might be a series for people looking to see a project go from an initial concept to a real world application (Helping out someone whose friend actually could use this project in practice, rather than theory) and I plan to continue this project well into what is now week 3, and soon to be week 4, by implementing the remaining features such as an admin panel, stripe checkout, and the customer reviews.
+
+I'll include a link to the current episode as of this post. You can find all of the playlists by week, or just the master 20in20 playlist, on my channel. I really hope this helps someone. It was a ton of work to create, so I can only imagine what it would be like for someone without even my limited experience.
+
+[https://www.youtube.com/watch?v=NOa3WEuimJc](https://www.youtube.com/watch?v=NOa3WEuimJc)
+## [5][Production Rails - live-coding video series](https://www.reddit.com/r/rails/comments/ft90y5/production_rails_livecoding_video_series/)
+- url: https://www.reddit.com/r/rails/comments/ft90y5/production_rails_livecoding_video_series/
+---
+I've been working on this series for a while, been holding back on sharing it until I had a decent number of videos uploaded.
+
+Basically the idea is that I code a Rails application and show absolutely everything including when I get hopelessly stuck and don't know what to do.
+
+I also include the stuff most tutorials don't include like setting up the production environment and writing tests.
+
+[Here's the YouTube link.](https://www.youtube.com/watch?v=hBnzhi2kQ80&amp;list=PLYzYlrv4LHcgIuymTahL3UIlzS8fMTVOz&amp;index=2&amp;t=2s)
+
+Hope you like it.
+## [6][Deployment problem](https://www.reddit.com/r/rails/comments/ftjxv2/deployment_problem/)
+- url: https://www.reddit.com/r/rails/comments/ftjxv2/deployment_problem/
+---
+I made updated my personal blog and website which used to be hosted on heroku, but this time I deployed to digitalocean using capistrino. In production on localhost it works more or less fine but when i visit the site at the hosted address it has a routing problem. The main pages controller works fine but the controllers for Blog and Profile don't work. I have no idea why, production.log is also empty so I am at a loss as how to fix it. I'm not sure the rules on posting code so contact me if you have any advice pleaase
+
+&amp;#x200B;
+
+Thanks
+## [7][best way write inside pdf &amp; pptx](https://www.reddit.com/r/rails/comments/ftmag5/best_way_write_inside_pdf_pptx/)
+- url: https://www.reddit.com/r/rails/comments/ftmag5/best_way_write_inside_pdf_pptx/
+---
+I need write in  pdf &amp; pptx  . use some data in side pdf &amp; pptx .  
+Data like 
+
+* Table with some style
+* Add image and add above some text 
+* add some Graph like pie graph
+## [8][if trying to pick up Rails, AppAcademyOpen is pretty good](https://www.reddit.com/r/rails/comments/ft0zm2/if_trying_to_pick_up_rails_appacademyopen_is/)
+- url: https://www.reddit.com/r/rails/comments/ft0zm2/if_trying_to_pick_up_rails_appacademyopen_is/
+---
+I've used Odin and benefited there, but if you feel you want further practice and engrain ideas more, AppAcademyOpen and its demos have been really nice, you have to expand the menu, but there are lots of lessons and modules such as:
+
+https://imgur.com/a/9FVa6FK
+
+Just a recommendation for those looking to get better. I've really enjoyed it.
+## [9][Adding a rescue clause to middleware for a specific](https://www.reddit.com/r/rails/comments/ft9uyv/adding_a_rescue_clause_to_middleware_for_a/)
+- url: https://www.reddit.com/r/rails/comments/ft9uyv/adding_a_rescue_clause_to_middleware_for_a/
+---
+Hi all,  
+   I'm a newbie when it comes to Rails so looking for some help. I am looking to add some middleware that detects a specific request (in this case assets) and sends data to a logger should that request fail (for example, a 404).   
+
+
+    class AssetLogger
+      def initialize app
+        @app = app
+      end
+    
+      def call env
+        path = env['PATH_INFO']
+        @status, @headers, @response = @app.call(env)
+        rescue Exception
+          if path.include? "/asset_path/"
+            logstuff
+          end
+    
+    
+        [@status, @headers, @response]
+      end
+    end
+    
+    config.middleware.use AssetLogger
+
+When I test this out and try to load an asset that doesn't exist I get an ActionController::RoutingError and it does not go in to my rescue block. So clearly this approach will not work. I am wondering if anyone has any insight on a better way to do this?
+## [10][Sorry dumb question: which database is schema_migrations supposed to be in?](https://www.reddit.com/r/rails/comments/ft3i9a/sorry_dumb_question_which_database_is_schema/)
+- url: https://www.reddit.com/r/rails/comments/ft3i9a/sorry_dumb_question_which_database_is_schema/
+---
+dev or prod?
+
+We've made changes to some configs and for some reason I can't remember if it is in the default location and the docs aren't helping me answer this question.   Thanks.
+## [11][Can we see the generated metaprogramming method](https://www.reddit.com/r/rails/comments/fswsxp/can_we_see_the_generated_metaprogramming_method/)
+- url: https://www.reddit.com/r/rails/comments/fswsxp/can_we_see_the_generated_metaprogramming_method/
+---
+I want to know if there is possible to check if a method that is generated by metaprogramming in rails can be viewed as a normal method definition. 
+
+Suppose in the meta-programming definition I have defined a few methods which have a few conditional statements and for a particular such method, I want to see the finally constructed method.
+## [12][Need help with AWS Cognito, S3, IAM, STS confusion](https://www.reddit.com/r/rails/comments/fsy7g7/need_help_with_aws_cognito_s3_iam_sts_confusion/)
 - url: https://www.reddit.com/r/rails/comments/fsy7g7/need_help_with_aws_cognito_s3_iam_sts_confusion/
 ---
 I'm using AWS Cognito User Pool for authentication to my Ruby on Rails app. I've also created an Identity Pool for the User Pool, with the intention that logged in users are able to read files from a specific S3 bucket. However, I'm having trouble access objects in S3 as the logged in user. I have the tokens for the logged in user (`id_token`, `access_token`), but I don't know where to supply them.
@@ -34,142 +160,3 @@ obj.get(response_target: './my-code/my-item.txt')
 Then I found [this doc](https://docs.aws.amazon.com/AmazonS3/latest/dev/AuthUsingTempSessionTokenRuby.html) about using temporary credentials, but I also don't know how use the user's tokens anywhere. I've also tried STS' [AssumeRoleWithWebIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) that allows me to pass in the `id_token`, and used the Identity Pool's `role_arn`, but I'm getting `AccessDenied` error. I'm confused of the relationship between STS, IAM, and Cognito Identity Pool. Can anyone help?
 
 Note: I've also enabled S3 access logging and it should log the Cognito user who access the files.
-## [3][Can we see the generated metaprogramming method](https://www.reddit.com/r/rails/comments/fswsxp/can_we_see_the_generated_metaprogramming_method/)
-- url: https://www.reddit.com/r/rails/comments/fswsxp/can_we_see_the_generated_metaprogramming_method/
----
-I want to know if there is possible to check if a method that is generated by metaprogramming in rails can be viewed as a normal method definition. 
-
-Suppose in the meta-programming definition I have defined a few methods which have a few conditional statements and for a particular such method, I want to see the finally constructed method.
-## [4][How to issolate all the bits and pieces of a scraper to run more independently?](https://www.reddit.com/r/rails/comments/fsxq97/how_to_issolate_all_the_bits_and_pieces_of_a/)
-- url: https://www.reddit.com/r/rails/comments/fsxq97/how_to_issolate_all_the_bits_and_pieces_of_a/
----
-Im building a scraper and using sidekiq for the scrape job. Per product a user can activate a scraper and the scraper called using in a cron job:
-
-Sidekiq::Cron::Job.create(name: "StartScraper - every 2 hours!" , cron: '0 \*/2 \* \* \*', class: 'StartScraper')
-
-\---------
-
-Before starting the scraper i have this in my code (to only scrape the activated products)
-
-product = Product.where('scraper\_active = true')
-
-everything is working fine if the scraper **doesnt brake.** 
-
-But the issue im facing is; **whenever the scraper fails**, the **sidekiq job is starting all over again**. This is bad because if a user is tracking 20 products, and the 19the product is failing, **it will rerun** and start with product 1 again - assuming all 19 products are active.
-
-If i get 10 users, all tracking 20 products, it will go and rerun all the scrapers.
-
-&amp;#x200B;
-
-Im storing the scraped data in a Tracker modal, with these fields
-
-`create_table "trackers", force: :cascade do |t|`
-
-`t.integer "qty"`
-
-`t.string "price"`
-
-`t.bigint "product_id", null: false`
-
-`t.datetime "created_at", precision: 6, null: false`
-
-`t.datetime "updated_at", precision: 6, null: false`
-
-`t.integer "user_id"`
-
-`t.string "current_seller"`
-
-`t.boolean "success", default: false`
-
-I have created a Tracker before starting the scrape job to track if the scraper is failing
-
-tracker = Tracker.new
-
-Tracker.create!(id:tracker, qty:1, price:1, product\_id: product.id, user\_id:product.user\_id, current\_seller: nil, success: false )
-
-and setting the tracker.succes to true when finishing the scrape job succesfully
-
-`current_tracker = Tracker.last`
-
-`current_tracker.update_attribute(:price, price)`
-
-`current_tracker.update_attribute(:qty, current_stock)`
-
-`current_tracker.update_attribute(:success, true)`
-
-`current_tracker.update_attribute(:current_seller, current_seller)`
-
-Everything is one big file. I have thought about splitting everything up in smaller jobs, but then still Sidekiq is performing the job in start\_scraper.rb and will re run everything whenever something is failling.
-
-My ideal solution would be to issolate all the pieces of the scraper in multiple jobs, and to call the next job if the current job is finished succesfully. But cant figure out how.
-
-My question is, 
-
-* what is a better approach to isolate everything and make the scraper more secure?
-* How to issolate a job in Sidekiq and move to the next one if success, and retry only the ones that failed?
-
-\------------
-
-Im almost building this thing for 2 months. Started learning rails a few months a go and like it a lot.
-
-Want to test the application out yourself (not the code, but the frontend)? See below...
-
-I considered my application finished untill I noticed this behaviour :D 
-
-You can sign up here and test the application your self [http://pnnq.hatchboxapp.com/](http://pnnq.hatchboxapp.com/)  the application is only interesting for dutch people because it scrapes one of the biggest ecommerce sites in NL. 
-
-a free user can only scrape 1 product and will have 3 alerts
-## [5]['rails new' throwing Sqlite3 error](https://www.reddit.com/r/rails/comments/fsw2ju/rails_new_throwing_sqlite3_error/)
-- url: https://www.reddit.com/r/rails/comments/fsw2ju/rails_new_throwing_sqlite3_error/
----
-I'm setting up Ruby and Rails on a new dev machine--running Linux Mint--and I've successfully installed Ruby, ruby-dev, Rails, and Sqlite with the package manager. (I think Ruby 2.5.1 and Rails 4.2.10.) However, every time I try to run "rails new", it gets as far as "bundle install --local" and then throws the following error:
-
-    run  bundle install --local
-    Could not find gem 'sqlite3' in any of the gem sources listed in your Gemfile.
-    run  bundle exec spring binstub --all
-    bundler: command not found: spring
-    Install missing gem executables with `bundle install`
-
-I am, however, certain that I've installed Sqlite. I tried "gem install sqlite3", but that fails on the grounds that I don't have Ruby development tools installed--but I do. Everything I've been able to find online so far advises adding stuff to my Gemfile--but my Gemfile doesn't exist yet since it's the command that creates the Gemfile that's failing! So I'm now massively confused ...
-
-I've used Rails before but it's been a while, and I'm not super familiar with Linux, so please assume I need maximum handholding when answering--apologies for that!
-## [6][Acts-as-follower gem alternative](https://www.reddit.com/r/rails/comments/fsxfsz/actsasfollower_gem_alternative/)
-- url: https://www.reddit.com/r/rails/comments/fsxfsz/actsasfollower_gem_alternative/
----
-I need some social relations such as liking, following etc. In my app, I'm wondering if there is any gem which provides that functionality and is actively maintained at now. Acts-as-follower looks great but it's abandoned so I'm looking for alternative befor I will start coding it on my own
-## [7][Digital Signature](https://www.reddit.com/r/rails/comments/fsnzud/digital_signature/)
-- url: https://www.reddit.com/r/rails/comments/fsnzud/digital_signature/
----
-Hey everyone! I am working on a Rails application that requires a digital signature. Many of our clients have opted to use Topaz pads. This works great when everyone is around to share the machine. However, due to COVID-19, this isn't really possible. Our workaround has been signing via mouse and JSignature (I think thats is what its called) but this is quite clunky. Does someone have an alternative to this? Maybe via a mobile app (signing via touchscreen and finger seems nicer than mouse/trackpad). Thanks in advanced and stay healthy.
-## [8][Rails and Bootstrap styling on checkboxes?](https://www.reddit.com/r/rails/comments/fsm7gl/rails_and_bootstrap_styling_on_checkboxes/)
-- url: https://www.reddit.com/r/rails/comments/fsm7gl/rails_and_bootstrap_styling_on_checkboxes/
----
-I'm building a form in Rails views and have several checkboxes created with \`collection\_check\_boxes\`. 
-
-This is working but looks terrible since there are 51 checkboxes. I would like to space them out but having a lot of difficulty with the usual Bootstrap stylings using components wrapped around the collection and within and both. I've tried \`grid\`, \`flex\` and others. I've even tried to do custom CSS Grid but nothing really works. I would like 5 rows of 10 checkboxes nicely spaced out. How do I get in there and manipulate the checkboxes? In my approaches, it's not that the boxes aren't moving, it's just that they either go into a long row or 1 or 2 columns. Here's the line: 
-
-      &lt;div class="what bootstrap goes here ??"&gt;
-    
-        &lt;%= f.collection_check_boxes(:authorization_ids, Authorization.all, :id, :auth_name, { checked: @account.try { |a| a.authorization_ids.map(&amp;:to_param) } }, multiple: true, class: "&lt;What bootstrap goes here??") %&gt;
-    
-        &lt;/div&gt;
-## [9][Need help configuring part of an API controller](https://www.reddit.com/r/rails/comments/fsufkb/need_help_configuring_part_of_an_api_controller/)
-- url: https://www.reddit.com/r/rails/comments/fsufkb/need_help_configuring_part_of_an_api_controller/
----
-I left my code and more description of what was going on over on stackoverflow 
-
- [https://stackoverflow.com/questions/60964973/rails-api-setting-up-an-endpoint-to-get-my-logins-by-day](https://stackoverflow.com/questions/60964973/rails-api-setting-up-an-endpoint-to-get-my-logins-by-day) 
-
-I know anther link
-## [10][Simple question, but in a Rails migration file, does the |t| just represent the table itself?](https://www.reddit.com/r/rails/comments/fsklxh/simple_question_but_in_a_rails_migration_file/)
-- url: https://www.reddit.com/r/rails/comments/fsklxh/simple_question_but_in_a_rails_migration_file/
----
-wasn't too clear, simple question. is the `|t|` just representative in the table and then in the do/end block we reference it with like `t.integer :games, null: false` ?
-## [11][Rails 6 jQuery upgrade with webpacker!](https://www.reddit.com/r/rails/comments/fsgo0t/rails_6_jquery_upgrade_with_webpacker/)
-- url: https://www.reddit.com/r/rails/comments/fsgo0t/rails_6_jquery_upgrade_with_webpacker/
----
-Hello Everyone,  
-
-Here’s a detailed blog on [how to add jQuery in your Rails 6 application with the help of webpacker](https://www.botreetechnologies.com/blog/rails-6-jquery-upgrade-with-webpacker)!
-
-Hope this will be helpful to #railscommunity.

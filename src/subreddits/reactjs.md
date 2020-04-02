@@ -84,263 +84,77 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][My library (React Easy State) is now supported by my workplace (Risingstack). I am excited about the future (:](https://www.reddit.com/r/reactjs/comments/fsx2vv/my_library_react_easy_state_is_now_supported_by/)
-- url: https://blog.risingstack.com/introducing-react-easy-state-risingstack/
+## [3][Created a small hook which tells you when you've scrolled to bottom](https://www.reddit.com/r/reactjs/comments/ftgevr/created_a_small_hook_which_tells_you_when_youve/)
+- url: https://www.reddit.com/r/reactjs/comments/ftgevr/created_a_small_hook_which_tells_you_when_youve/
 ---
+Hey guys! Been browsing reddit for some time but this is my first post. 
 
-## [4][Instagram Pinch-to-Zoom - “Can it be done in React Native?”](https://www.reddit.com/r/reactjs/comments/fsen15/instagram_pinchtozoom_can_it_be_done_in_react/)
-- url: https://youtu.be/MukiK57qwVY
----
-
-## [5][Redux course Lesson #1: introduction, history, and architecture](https://www.reddit.com/r/reactjs/comments/fsvp66/redux_course_lesson_1_introduction_history_and/)
-- url: https://youtu.be/4lnkiPQ8spk
----
-
-## [6][react-native-maps working with Geojson and Polygon at the same time](https://www.reddit.com/r/reactjs/comments/fsws67/reactnativemaps_working_with_geojson_and_polygon/)
-- url: https://www.reddit.com/r/reactnative/comments/fsdenu/reactnativemaps_working_with_geojson_and_polygon/
----
-
-## [7][I've created use-needed-state - it's like `useState` - but it'll spy what part of the state is actually used during the render and re-render only if needed.](https://www.reddit.com/r/reactjs/comments/fsw1dx/ive_created_useneededstate_its_like_usestate_but/)
-- url: https://github.com/pie6k/use-needed-state
----
-
-## [8][Use TailwindCSS base styles in your emotion CSS-in-JS project](https://www.reddit.com/r/reactjs/comments/fsx4g5/use_tailwindcss_base_styles_in_your_emotion/)
-- url: https://www.reddit.com/r/reactjs/comments/fsx4g5/use_tailwindcss_base_styles_in_your_emotion/
----
-Hi everybody,
-
-As my first post in this community I'd like to introduce you into a small library I've published recently.
-
-You might know the issues with having some default CSS base styles in every browser:
-
-* They are inconsistent over different browsers
-* They probably do not align with your design system
-* They just look a little oldschool
-
-There are various base style reset libraries out there. Personally, I like the opinionated base styles used by TailwindCSS the most. That's why I have created a small library to easily incorporate the TailwindCSS base styles into Emotion CSS-in-JS projects!
-
-Check it out (and leave a star if you like it 🙂):
-
-GitHub:  [https://github.com/flogy/emotion-tailwind-preflight](https://github.com/flogy/emotion-tailwind-preflight) 
-
-NPM:  [https://www.npmjs.com/package/emotion-tailwind-preflight](https://www.npmjs.com/package/emotion-tailwind-preflight)
-## [9][Can't fix this bug since last week](https://www.reddit.com/r/reactjs/comments/fsznao/cant_fix_this_bug_since_last_week/)
-- url: https://www.reddit.com/r/reactjs/comments/fsznao/cant_fix_this_bug_since_last_week/
----
-This is going to be an unusual amount of code because I am trying to share everything that is going on here. What I am trying to do is in a list, mark services as complete. When it's complete, it changes the colour of the service and then hides that service. Also, there's a button to show the hidden services.
-
-I manage to hide each individual service OK. But cannot work with the button that hides/shows ALL of the completed services.
-
-I have a context provider:
-
-`const ContextProviderBooking = ({ children }) =&gt; {`
-
-`const [isHidden, setIsHidden] = useState(false); //sharing among both components to hide/show list`
-
-`return &lt;ContextBooking.Provider value={{ isHidden, setIsHidden }}&gt;`
-
-`{children}`
-
-`&lt;/ContextBooking.Provider&gt;`
-
-`}`
-
-`export { ContextBooking, ContextProviderBooking }`
-
-Each 'Booking' component has a button that marks the service as complete. This happen by conditionally changing the class of each component. This works fine
-
-`const Booking = (props) =&gt; {`
-
-  `const [isHidden, setIsHidden] = useState(props.isHidden)`
-
-  `console.log(props.isHidden) // will output true or false 16 times(there are 16 component in total)`
-
-  `const [isCompleted, setIsCompleted] = useState(props.completed);`
-
-  `return (`
-
-  `&lt;li`
-
-`className={`
-
-`isCompleted &amp;&amp; isHidden ? 'booking-complete hide' //class names are not changing individually`
-
-`: isCompleted ? 'booking-complete' //if button is pressed on one of them,`
-
-`: 'booking' //it may affect the other`
-
-`}`
-
-`key={`[`props.id`](https://props.id)`}`
-
-`id={`[`props.id`](https://props.id)`}&gt;`
-
-`&lt;h3&gt;{`[`props.date`](https://props.date)`}&lt;/h3&gt;`
-
-`&lt;h4&gt;{props.time}&lt;/h4&gt;`
-
-`&lt;h5&gt;{`[`props.name`](https://props.name)`}&lt;/h5&gt;`
-
-`&lt;button`
-
-`onClick={() =&gt; { //shouldn't this button work of each li and not sometimes all of them?` 
-
-`if (!isCompleted &amp;&amp; !isHidden) {`
-
-`setIsCompleted(!isCompleted); //this changes color of the service as className changes`
-
-`setTimeout(() =&gt; setIsHidden(!isHidden), 200) //after a short time it is hidden`
-
-`}`
-
-`else if (isCompleted &amp;&amp; !isHidden) {`
-
-`setIsCompleted(!isCompleted);`
-
-`}`
-
-`else {`
-
-`setIsCompleted(!isCompleted);`
-
-`setIsHidden(!isHidden);`
-
-`}`
-
-`}}&gt;`
-
-`{!isCompleted ? \`Completed\` : \`Not complete\`}\`
-
-`&lt;/button&gt;`
-
-`&lt;/li&gt;`
-
-`)`
-
-`}`
-
-Then I am rendering each of the services in a larger component called 'Bookings'
-
-`const Bookings = () =&gt; {`
-
-`const { isHidden, setIsHidden } = useContext(ContextBooking)`
-
-`const display = day =&gt; //function that displays each service according to the day it was booked for`
-
-`allBookings.map( //allBookings is a json file`
-
-   `item =&gt;`
-
-  [`item.day`](https://item.day) `=== day &amp;&amp; (`
-
-`&lt;Booking`
-
-`isHidden={isHidden}`
-
-`completed={item.completed} //comes from json file, all default to false`
-
-`key={`[`item.id`](https://item.id)`}`
-
-`id={`[`item.id`](https://item.id)`}`
-
-`time={item.time}`
-
-`name={`[`item.name`](https://item.name)`}`
-
-`date={`[`item.date`](https://item.date)`}`
-
-`/&gt;`
-
-`)`
-
-`)`
-
-`return (`
-
-`&lt;div className="bookings"&gt;`
-
-`&lt;h2 className="ib"&gt;Next bookings&lt;/h2&gt;`
-
-`&lt;button`
-
-`onClick={() =&gt;{ //This won't work.`
-
-`setIsHidden(!isHidden);}`
-
-`}&gt;`
-
-`Show hidden`
-
-`&lt;/button&gt;`
-
-`&lt;h2&gt;Today&lt;/h2&gt;`
-
-`&lt;ul&gt; {display('today')} &lt;/ul&gt;`
-
-`&lt;h2&gt; Tomorrow &lt;/h2&gt;`
-
-`&lt;ul&gt; {display('tomorrow')} &lt;/ul&gt;`
-
-`&lt;h2&gt; General &lt;/h2&gt;`
-
-`&lt;ul&gt; {display('other')} &lt;/ul&gt;`
-
-`&lt;/div&gt;`
-
-`)`
-
-`}`
-## [10][I made a chrome extension with React which replaces the github file list with with an expandable tree view with file preview! It's called Tako, check it out!](https://www.reddit.com/r/reactjs/comments/fsz7oy/i_made_a_chrome_extension_with_react_which/)
-- url: https://github.com/brumm/tako
----
-
-## [11][React Native Tutorial: QRCode Scanner App for Android or iOS](https://www.reddit.com/r/reactjs/comments/fsz5xq/react_native_tutorial_qrcode_scanner_app_for/)
-- url: https://www.djamware.com/post/5e83f1e7344bef67e448798c/react-native-tutorial-qrcode-scanner-app-for-android-or-ios#.XoSNxs1g6R8.reddit
----
-
-## [12][Firebase cloud functions CORS policy error](https://www.reddit.com/r/reactjs/comments/fsw405/firebase_cloud_functions_cors_policy_error/)
-- url: https://www.reddit.com/r/reactjs/comments/fsw405/firebase_cloud_functions_cors_policy_error/
----
-Hey there, I'm nearly pulling my hair out on this one.
-
-I am working off a create-react-app project and am needing to call firebase cloud function but am getting this error:
-
-`Access to fetch at '`[`https://us-central1-careerhub-a50a2.cloudfunctions.net/createUser`](https://us-central1-careerhub-a50a2.cloudfunctions.net/createUser)`' from origin '`[`http://localhost:3000`](http://localhost:3000)`' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.`
-
-Server-side code looks like this:
-
-`const functions = require('firebase-functions');`  
-`const admin = require('firebase-admin');`  
-`admin.initializeApp();`  
-
-
-`exports.createUser = functions.https.onCall((data, context) =&gt; {`  
- `const email = data.email`  
- `const password = data.password`  
- `return new Promise((resolve, reject) =&gt; {`  
- `admin.auth().createUser({`  
- `email: email,`  
- `emailVerified: false,`  
- `password: password`  
-`}).then(resolve).catch((err) =&gt; {`  
- `console.error(err.code)`  
- `reject(new functions.https.HttpsError(err.code, err.message))`  
-`})`  
-`})`  
-`})`
+I've created a small hook which tells you when you've scrolled something to bottom: [https://www.npmjs.com/package/use-scroll-to-bottom](https://www.npmjs.com/package/use-scroll-to-bottom)
 
 &amp;#x200B;
 
-Client-side:
+Here's the source code: [https://github.com/tudorgergely/use-scroll-to-bottom](https://github.com/tudorgergely/use-scroll-to-bottom) and you can see it in action here: [https://tudorgergely.github.io/use-scroll-to-bottom/](https://tudorgergely.github.io/use-scroll-to-bottom/)
 
-`const handleAddUser = () =&gt; {`  
- `let pswd = passwordGen(7)`  
- `firebase.functions().httpsCallable('createUser')({email: email, password: pswd}).then((response) =&gt; {`  
- `console.log(response)`  
-`}).catch((error) =&gt; {`  
- `console.log(error)`  
-`})`  
-   `}`  
+&amp;#x200B;
 
+Oh, and I also created a small codesandbox if you want to try it: [https://codesandbox.io/s/stupefied-dirac-23z5q](https://codesandbox.io/s/stupefied-dirac-23z5q)
 
-This is probably a silly mistake on my end...but I'd be eternally grateful if you could put me out of my misery. :)
+&amp;#x200B;
+
+Not much, but maybe it helps someone.
+## [4][What’s your go to animation library?](https://www.reddit.com/r/reactjs/comments/ftfj9e/whats_your_go_to_animation_library/)
+- url: https://www.reddit.com/r/reactjs/comments/ftfj9e/whats_your_go_to_animation_library/
+---
+Eg 
+
+react-spring
+framer-motion
+GSAP
+## [5][Consume Authenticated APIs on Server-Side Rendering Pages](https://www.reddit.com/r/reactjs/comments/ftli4y/consume_authenticated_apis_on_serverside/)
+- url: https://www.youtube.com/watch?v=sxwCxmKhhas&amp;feature=share
+---
+
+## [6][I made a chrome extension with React which replaces the github file list with with an expandable tree view with file preview! It's called Tako, check it out!](https://www.reddit.com/r/reactjs/comments/fsz7oy/i_made_a_chrome_extension_with_react_which/)
+- url: https://github.com/brumm/tako
+---
+
+## [7][RFC for The New Blitz.js Architecture (Rails-like framework for fullstack React Apps)](https://www.reddit.com/r/reactjs/comments/ftm4gd/rfc_for_the_new_blitzjs_architecture_railslike/)
+- url: https://github.com/blitz-js/blitz/pull/73
+---
+
+## [8][React Hook Form: the best form library?](https://www.reddit.com/r/reactjs/comments/ftlt71/react_hook_form_the_best_form_library/)
+- url: https://dev.to/matfrana/react-hook-form-the-best-form-library-1o1l
+---
+
+## [9][My library (React Easy State) is now supported by my workplace (Risingstack). I am excited about the future (:](https://www.reddit.com/r/reactjs/comments/fsx2vv/my_library_react_easy_state_is_now_supported_by/)
+- url: https://blog.risingstack.com/introducing-react-easy-state-risingstack/
+---
+
+## [10][Tutorial for using Axios with React](https://www.reddit.com/r/reactjs/comments/ftkoe1/tutorial_for_using_axios_with_react/)
+- url: https://youtu.be/12l6lkW6JhE
+---
+
+## [11][Made modular React Datepicker component](https://www.reddit.com/r/reactjs/comments/ftk18y/made_modular_react_datepicker_component/)
+- url: https://www.reddit.com/r/reactjs/comments/ftk18y/made_modular_react_datepicker_component/
+---
+Hi guys,
+
+As a part of New Year Resolution I've made modular Datepicker component using hooks and date-fns.
+
+[https://github.com/morewings/react-calendar-toolkit](https://github.com/morewings/react-calendar-toolkit)
+
+Features:
+
+* Localization (**69 languages** with the help of date-fns). Week starts according to provided locale.
+* CSS vars based light **theming**.
+* Developer can provide **custom render components** for each part of Datepicker.
+* **Highlight** and **disable** any date or range.
+* Small size **\~10kb.**
+* **Typescript** friendly.
+* **IE11** compatible.
+
+Tweak examples and read the docs: [https://morewings.github.io/react-calendar-toolkit/](https://morewings.github.io/react-calendar-toolkit/)
+## [12][New to react](https://www.reddit.com/r/reactjs/comments/ftf1oo/new_to_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ftf1oo/new_to_react/
+---
+How could I go about getting dummy data to use when practicing react ?  I am front  end developer with a goal of learning back end after I learn react so any ideas on how to get dummy data would be highly appreciated.

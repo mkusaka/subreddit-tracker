@@ -1,9 +1,17 @@
 # ruby
-## [1][Programming languages not required!](https://www.reddit.com/r/ruby/comments/ftk7kf/programming_languages_not_required/)
-- url: https://medium.com/the-developers-journey/programming-languages-not-required-6fd0422e9dec?source=friends_link&amp;sk=227ce47f96f0aab7dcd803538d500953
+## [1][jinb.in | elegant pastebins](https://www.reddit.com/r/ruby/comments/fu4mni/jinbin_elegant_pastebins/)
+- url: /r/rubyonrails/comments/fu2g2g/jinbin_elegant_pastebins/
 ---
 
-## [2][Veteran developers, how do you get acclimated to a large new codebase?](https://www.reddit.com/r/ruby/comments/ft5fbc/veteran_developers_how_do_you_get_acclimated_to_a/)
+## [2][Most common Ruby on Rails vulnerabilities and how to deal with them in your projects](https://www.reddit.com/r/ruby/comments/ftp02g/most_common_ruby_on_rails_vulnerabilities_and_how/)
+- url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-security-best-practices/
+---
+
+## [3][Join RubyWine Online conference Saturday 10:00 UTC](https://www.reddit.com/r/ruby/comments/ftwffd/join_rubywine_online_conference_saturday_1000_utc/)
+- url: https://rubywine.org
+---
+
+## [4][Veteran developers, how do you get acclimated to a large new codebase?](https://www.reddit.com/r/ruby/comments/ft5fbc/veteran_developers_how_do_you_get_acclimated_to_a/)
 - url: https://www.reddit.com/r/ruby/comments/ft5fbc/veteran_developers_how_do_you_get_acclimated_to_a/
 ---
 I just landed my second Ruby job a few weeks ago. The codebase is HUGE and (for me) mind-bendingly complex, with layers upon layers of ... interesting ... architectural decisions in various stages of deprecation.
@@ -13,7 +21,11 @@ For those of you who've been around the block a few times, how do you get acclim
 It definitely takes time and practice. But are there any other ideas that might help in the meantime?
 
 EDIT: The amount of great advice in this thread blows me away. Thanks!
-## [3][Terminal Snake](https://www.reddit.com/r/ruby/comments/ft8pxs/terminal_snake/)
+## [5][Programming languages not required!](https://www.reddit.com/r/ruby/comments/ftk7kf/programming_languages_not_required/)
+- url: https://medium.com/the-developers-journey/programming-languages-not-required-6fd0422e9dec?source=friends_link&amp;sk=227ce47f96f0aab7dcd803538d500953
+---
+
+## [6][Terminal Snake](https://www.reddit.com/r/ruby/comments/ft8pxs/terminal_snake/)
 - url: https://www.reddit.com/r/ruby/comments/ft8pxs/terminal_snake/
 ---
 I have written a game in Ruby 2.6:
@@ -32,7 +44,7 @@ It should work in any ANSI compatible terminal.
 EDIT:
 
 Here is the full source: https://pastebin.com/BzW1WUDP
-## [4][Why doesn't my defined function return anything?](https://www.reddit.com/r/ruby/comments/ftb2xe/why_doesnt_my_defined_function_return_anything/)
+## [7][Why doesn't my defined function return anything?](https://www.reddit.com/r/ruby/comments/ftb2xe/why_doesnt_my_defined_function_return_anything/)
 - url: https://www.reddit.com/r/ruby/comments/ftb2xe/why_doesnt_my_defined_function_return_anything/
 ---
 I am pretty new to Ruby and coding in general so my first project was to make a functional calculator that allows you to input two numbers as well as decide what you wanted to do with them(+, -, \*, /). The calculator was also supposed to keep asking to enter a number until the user asks an actual number and then turn it into either an integer or a float depending on what the user initially entered. (Whether it has a "." or not). The calculator would also allow you to enter the math signs and would keep asking until you entered an actual math sign as apposed to something random. I was able to successfully pull this off without using defined functions however I wanted to update the code with defined functions for fun, since I recently learned them. For some reason when I defined my function and tried running it, it doesn't return anything.
@@ -95,15 +107,15 @@ I am pretty new to Ruby and coding in general so my first project was to make a 
     else
       print "Error"
     end
-## [5][Exploring Method Arguments in Ruby](https://www.reddit.com/r/ruby/comments/ft09xy/exploring_method_arguments_in_ruby/)
+## [8][Exploring Method Arguments in Ruby](https://www.reddit.com/r/ruby/comments/ft09xy/exploring_method_arguments_in_ruby/)
 - url: https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html
 ---
 
-## [6][Changing the Approach to Debugging in Ruby with TracePoint](https://www.reddit.com/r/ruby/comments/ft01e8/changing_the_approach_to_debugging_in_ruby_with/)
+## [9][Changing the Approach to Debugging in Ruby with TracePoint](https://www.reddit.com/r/ruby/comments/ft01e8/changing_the_approach_to_debugging_in_ruby_with/)
 - url: https://blog.appsignal.com/2020/04/01/changing-the-approach-to-debugging-in-ruby-with-tracepoint.html
 ---
 
-## [7][Swapping Out Ruby Minor Version Without Re-running Bundler 2 Leads to "Missing Gems"?](https://www.reddit.com/r/ruby/comments/ft97fg/swapping_out_ruby_minor_version_without_rerunning/)
+## [10][Swapping Out Ruby Minor Version Without Re-running Bundler 2 Leads to "Missing Gems"?](https://www.reddit.com/r/ruby/comments/ft97fg/swapping_out_ruby_minor_version_without_rerunning/)
 - url: https://www.reddit.com/r/ruby/comments/ft97fg/swapping_out_ruby_minor_version_without_rerunning/
 ---
 We deploy our applications using Capistrano-Bundler and have noticed the last couple of times we've updated a patch Ruby version (e.g. 2.6.5 to 2.6.6) in an existing environment, applications using Bundler 2 cannot find the previously installed gems in the existing /app/shared/bundle directory. Swapping out the Ruby version works fine for applications using Bundler 1. Redeploying the same code (no changes) results in a full \`bundle install\` (unexpected) running successfully with no issues, and the applications come online as expected. While this is a solution to the issue, it's not ideal for simply doing light security-related patching as it causes an outage for the applications.
@@ -115,15 +127,3 @@ I was curious if anyone else had run into this sort of situation and maybe could
 &amp;#x200B;
 
 Please note: I do understand how containerization or possibly another alternative deployment method would solve this issue, and while that's another project I'm working on, I'm not switching things up right now. I'm trying to get our customer there, but that's not something that is going to happen soon. Thanks for understanding.
-## [8][A 10-day long hackathon called JamCraft 5 starts in less than 9 days. DragonRuby is sponsoring this jam and is providing all participants with a license to Game Toolkit. Here's your chance to build a game with Ruby.](https://www.reddit.com/r/ruby/comments/fsr5s8/a_10day_long_hackathon_called_jamcraft_5_starts/)
-- url: http://jamcraft.dragonruby.org/
----
-
-## [9][RailsConf 2020.2 Couch Edition](https://www.reddit.com/r/ruby/comments/fsk4w3/railsconf_20202_couch_edition/)
-- url: https://twitter.com/railsconf/status/1245056735892525057?s=20
----
-
-## [10][A new feature proposal today—Endless method definition: def: value(args) = expression](https://www.reddit.com/r/ruby/comments/fstnrz/a_new_feature_proposal_todayendless_method/)
-- url: https://bugs.ruby-lang.org/issues/16746
----
-

@@ -22,7 +22,62 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Assign nested Object as copy, not reference](https://www.reddit.com/r/typescript/comments/ftl7pi/assign_nested_object_as_copy_not_reference/)
+## [2][dtsearch: CLI to find npm packages with types, either bundled or on DefinitelyTyped](https://www.reddit.com/r/typescript/comments/ftvegk/dtsearch_cli_to_find_npm_packages_with_types/)
+- url: https://github.com/danvk/dtsearch
+---
+
+## [3][How to infer callback function return type?](https://www.reddit.com/r/typescript/comments/fu5kkg/how_to_infer_callback_function_return_type/)
+- url: https://www.reddit.com/r/typescript/comments/fu5kkg/how_to_infer_callback_function_return_type/
+---
+Hi there! I'm fairly new to typescript, so maybe the question is wrong itself but, I need to do get the possible outputs of a function as the keys for an object. That is:
+
+    interface Tagger {
+        factory: (x: number) =&gt; T
+        tags: { [key of T]: () =&gt; void }
+    }
+    
+    const tagger: Tagger = {
+        factory: x =&gt; x % 2 === 0 ? "even" : "odd",
+        tags: {
+            even: () =&gt; console.log('is even'),
+            odd: () =&gt; console.log('is odd'),
+        }
+    }
+
+The property `tags` should have possible keys `"even" | "odd"`.
+
+Is this even possible? Thanks!
+## [4][Humpf: Damped Spring motion as a function of time](https://www.reddit.com/r/typescript/comments/fu74v8/humpf_damped_spring_motion_as_a_function_of_time/)
+- url: https://github.com/etienne-dldc/humpf
+---
+
+## [5][Building Vue Enterprise Application: Part 3. The Store](https://www.reddit.com/r/typescript/comments/ftzy3l/building_vue_enterprise_application_part_3_the/)
+- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-3-the-store-dbda0e4bb117
+---
+
+## [6][How to optimize a serverless typescript eslint webpack setup for performance](https://www.reddit.com/r/typescript/comments/ftobyk/how_to_optimize_a_serverless_typescript_eslint/)
+- url: https://medium.com//how-to-optimise-your-serverless-typescript-webpack-eslint-setup-for-performance-86d052284505?source=friends_link&amp;sk=79e3c3629452ac39d2eb8ea8c041c609
+---
+
+## [7][Junior Dev Help](https://www.reddit.com/r/typescript/comments/fu0i38/junior_dev_help/)
+- url: https://www.reddit.com/r/typescript/comments/fu0i38/junior_dev_help/
+---
+I have a project right now for a job I just started that is stumping me and making me sweat. I need to do checks on a dataset to ensure that there is data in a sub-array of a sub-array, and if there is no data, it should return. I have the code to check if the initial array is empty, but I can't really figure out how to check for each array as shown in the picture. For example, the device\_name has something in the sub\_bucket, but dhcp\_fingerprint does not. Do I have put in the code for every el.sub\_bucket\[#\].sub\_bucket\[0\] is empty? Or is there a better way to run this check than writing it 6 times over?
+
+`if (!Array.isArray(result) || result.length &lt; 1 ) {`
+
+`return [];`
+
+https://preview.redd.it/9x4mf5suriq41.png?width=1010&amp;format=png&amp;auto=webp&amp;s=c6dc9f6eb127ac03e63417dfe2de959ffd1afd82
+## [8][TypeScript (WebStorm) suggest imports outside of rootDir](https://www.reddit.com/r/typescript/comments/ftmqyl/typescript_webstorm_suggest_imports_outside_of/)
+- url: https://www.reddit.com/r/typescript/comments/ftmqyl/typescript_webstorm_suggest_imports_outside_of/
+---
+I'm the only one who gets caught by this bug???? I hate it. 
+
+[imgconv ist the module-root \(where tsconfig is\)](https://preview.redd.it/p4u0q3hwteq41.png?width=909&amp;format=png&amp;auto=webp&amp;s=548c3b0b9a7f5573cbd1ae8a85a94bc190159949)
+
+[https://youtrack.jetbrains.com/issue/WEB-38051](https://youtrack.jetbrains.com/issue/WEB-38051) \- this bug is now open for ONE year!
+## [9][Assign nested Object as copy, not reference](https://www.reddit.com/r/typescript/comments/ftl7pi/assign_nested_object_as_copy_not_reference/)
 - url: https://www.reddit.com/r/typescript/comments/ftl7pi/assign_nested_object_as_copy_not_reference/
 ---
 Hi guys, i seem to not understand the assignment operator completly, when it comes to nested Objects.
@@ -83,119 +138,19 @@ I don't get why this is failing. The direct Object properties of MyData seems to
 Any ideas?
 
 Edit: you're not seeing the class itself cause i stumbled upon this while writing Mocha unit tests for my DB access &amp; i only need to pass the data interface MyData.
-## [3][Best way of figuring out the proper type to use?](https://www.reddit.com/r/typescript/comments/ftfqcf/best_way_of_figuring_out_the_proper_type_to_use/)
+## [10][Setting up VS project](https://www.reddit.com/r/typescript/comments/ftmgu1/setting_up_vs_project/)
+- url: https://www.reddit.com/r/typescript/comments/ftmgu1/setting_up_vs_project/
+---
+Greetings,
+
+sorry, i'm simply getting crazy. How do i create a TypeScript project in visual studio? I've installed the modules: "support for JavaScript and TypeScript" and "TypeScript 3.8 SDK", but what now? I don't want an angular project, i don't want a node project, i simply need to create a webpage that runs my script, and i don't want to write it in javascript.
+
+Can someone direct me pls? I've only used Visual Studio for C++ until now.
+
+(note Visual Studio the IDE, not Visual Studio Code the baby text editor)
+
+Thanks!
+## [11][Best way of figuring out the proper type to use?](https://www.reddit.com/r/typescript/comments/ftfqcf/best_way_of_figuring_out_the_proper_type_to_use/)
 - url: https://www.reddit.com/r/typescript/comments/ftfqcf/best_way_of_figuring_out_the_proper_type_to_use/
 ---
 TypeScript can be occasionally fussy about types, which is what I want, but at the same time it can be annoying, some things I've basically given up on figuring out and just put "any." Which kind of defeats the purpose of using it.   I'm learning React with TypeScript at the moment. Mostly it's okay, there are a few times that I've been defeated by React/TypesScript typings.  So where do you go for figuring out the proper types for variables, methods etc?
-## [4][Prisma 2.0 is Now in Beta: Type-safe Database Access with Prisma Client](https://www.reddit.com/r/typescript/comments/ft21zn/prisma_20_is_now_in_beta_typesafe_database_access/)
-- url: https://www.prisma.io/blog/prisma-2-beta-b7bcl0gd8d8e
----
-
-## [5][Tetris clone built with TypeScript - https://tetris-js.now.sh/](https://www.reddit.com/r/typescript/comments/fszs1c/tetris_clone_built_with_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/fszs1c/tetris_clone_built_with_typescript/
----
-I built a Tetris clone with TypeScript, not quite finished but there's enough meat there to play it. Expanding my OOP knowledge, coming from a functional programming background. Enjoy!
-
-Game: [https://tetris-js.now.sh/](https://tetris-js.now.sh/)
-
-Repo: [https://github.com/grantsru/tetris-js](https://github.com/grantsru/tetris-js)
-## [6][Access Private/Protected via Utility Type?](https://www.reddit.com/r/typescript/comments/ft9tyy/access_privateprotected_via_utility_type/)
-- url: https://www.reddit.com/r/typescript/comments/ft9tyy/access_privateprotected_via_utility_type/
----
-I recently discovered [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html) and found one that allows modification of readonly properties via [TypeScript/issues/24509](https://github.com/microsoft/TypeScript/issues/24509).
-
-```typescript
-export type Mutable&lt;Type&gt; = {
-  -readonly [key in keyof Type]: Type[key]
-}
-
-class Foo{
-  readonly bar: boolean = true
-}
-
-const foo = new Foo()
-
-;(foo as Mutable&lt;Foo&gt;).bar = false
-```
- 
-This is very useful because it maintains IntelliSense &amp; refactoring capabilities in VSCode, and allows you to make assignments in your library code while still keeping the end-user's property access as read-only. 
-
-Here are some examples demonstrating the differences of several implementations:
-
-- no cast, has error:  
-[@Imgur](https://i.imgur.com/f7I6phu.png)  
-- cast to `any`, no error, but removes IntelliSense &amp; refactoring:  
-[@Imgur](https://i.imgur.com/khysPQB.png)  
-- cast to `Mutable`, no error, maintains IntelliSense &amp; refactoring:  
-[@Imgur](https://i.imgur.com/LMutHUA.png)  
- 
-&amp;nbsp;  
-
------
-&amp;nbsp;  
- 
-Similarly, I'd like to be able to modify private and protected properties while maintaining IntelliSense &amp; refactoring.
-
-Is it possible to write a utility type that allows this?
-## [7][Beginner learning TypeScript? What are your favorite links to learn TS ASAP?](https://www.reddit.com/r/typescript/comments/ftjhc9/beginner_learning_typescript_what_are_your/)
-- url: https://www.reddit.com/r/typescript/comments/ftjhc9/beginner_learning_typescript_what_are_your/
----
-
-## [8][Webpack can't tree-shake class methods? How are you guys dealing with this?](https://www.reddit.com/r/typescript/comments/ft7wj6/webpack_cant_treeshake_class_methods_how_are_you/)
-- url: https://www.reddit.com/r/typescript/comments/ft7wj6/webpack_cant_treeshake_class_methods_how_are_you/
----
-I migrated over from Java so still have a bunch of Java conventions - one of which being I generally prefer OO programming.
-
-The issue is that webpack can't tree-shake class methods because they can't be statically analyzed. 
-
-It IS able to tree shake functions though.  
-
-What's the best way to deal with this? Sometimes I use static classes as more like namespaces so I'm thinking of just using namespaces with functions instead.
-
-This way they SEEM like static classes and tree-shaking can work.
-
-Thoughts?
-## [9][Help with a Styled-Components media query function](https://www.reddit.com/r/typescript/comments/ft7jhv/help_with_a_styledcomponents_media_query_function/)
-- url: https://www.reddit.com/r/typescript/comments/ft7jhv/help_with_a_styledcomponents_media_query_function/
----
-I'm following along with LevelupTutorials styled-components and most of it doesn't concern typescript vey much , but the lesson about media queries has me stumped about typing this function (mostly because I don't understand typing reduce functions:
-
-`type SizesProps = {`  
-`[key: string]: number`  
-`}`
-
-`const sizes: SizesProps = {`  
-`small: 400,`  
-`medium: 960,`  
-`large: 1140,`  
-`xlarge: 1792`  
-`}`  
-`const media = Object.keys(sizes).reduce((accumulator, label)=&gt; {`  
-`accumulator[label] = (...args)=&gt; css\\`\``  
-`u/media(min-width: ${sizes[label]}px) {`  
-`${css(...args)}`  
-`}`  
-`\``  
-`return accumulator`  
-`}, {} )\``
-
-The `accumulator[label]`  
- is telling me: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.  
-No index signature with a parameter of type 'string' was found on type '{}'.
-
-`${css(...args)}`  
-is saying Expected at least 1 arguments, but got 0.ts(2555)
-
-index.d.ts(277, 9): An argument for 'first' was not provided.
-
-I've been trying to fiddle around with this but I just don't get it. Please help
-## [10][Where should type declarations go for libraries with no type definition files?](https://www.reddit.com/r/typescript/comments/ft8elz/where_should_type_declarations_go_for_libraries/)
-- url: https://www.reddit.com/r/typescript/comments/ft8elz/where_should_type_declarations_go_for_libraries/
----
-...including nothing available on the atTypes repository? I recall having this issue a couple months ago. I created a global.d.ts file and put the needed type declaration in there. It worked.
-
-But I remember when I changed the file name, it stoppered working even after ensuring that the declaration import was updated. It made me think there is a strict place (project root?) or naming convention for this to work, at least with default tsconfig.json settings.
-## [11][Jetbrains vs Visual Studio Code with Typescript](https://www.reddit.com/r/typescript/comments/ft36lv/jetbrains_vs_visual_studio_code_with_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/ft36lv/jetbrains_vs_visual_studio_code_with_typescript/
----
-Do you guys have any preferences when coding in Typescript? VSC is free I think and has autocomplete on types. Very useful in big libraries with non-ideal levels of distinction (I'm looking at you Firebase SDK) .I'm using Phpstorm, a Jetbrains IDE, and am considering jumping ship for those features.

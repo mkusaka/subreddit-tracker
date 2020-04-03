@@ -19,85 +19,94 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/fnfky9/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (14/2020)?](https://www.reddit.com/r/rust/comments/frff7k/whats_everyone_working_on_this_week_142020/)
-- url: https://www.reddit.com/r/rust/comments/frff7k/whats_everyone_working_on_this_week_142020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-14-2020/40159?u=llogiq)!
-## [3][swc now has a typescript / javascript node visitor which works on stable](https://www.reddit.com/r/rust/comments/ftjmhh/swc_now_has_a_typescript_javascript_node_visitor/)
-- url: https://www.reddit.com/r/rust/comments/ftjmhh/swc_now_has_a_typescript_javascript_node_visitor/
----
-I've implemented a Visitor and code generator which works on stable rust.
-
-If you are building a tool related to typescript or javascript in rust, please take a look at it.,
-
-&amp;#x200B;
-
-The PR: [https://github.com/swc-project/swc/pull/743](https://github.com/swc-project/swc/pull/743)
-## [4][This Week in Rust 332](https://www.reddit.com/r/rust/comments/ftl9l3/this_week_in_rust_332/)
+## [2][This Week in Rust 332](https://www.reddit.com/r/rust/comments/ftl9l3/this_week_in_rust_332/)
 - url: https://this-week-in-rust.org/blog/2020/03/31/this-week-in-rust-332/
 ---
 
-## [5][Forbid pineapple on pizza](https://www.reddit.com/r/rust/comments/ft2r71/forbid_pineapple_on_pizza/)
-- url: https://github.com/rust-lang/rust/pull/70645
+## [3][Iced, a cross-platform GUI library — New release featuring custom styling, event subscriptions, additional widgets, new examples, and more!](https://www.reddit.com/r/rust/comments/ftpld3/iced_a_crossplatform_gui_library_new_release/)
+- url: https://github.com/hecrj/iced/pull/253
 ---
 
-## [6][Tokio: Reducing tail latencies with automatic cooperative task yielding](https://www.reddit.com/r/rust/comments/ft98nz/tokio_reducing_tail_latencies_with_automatic/)
-- url: https://tokio.rs/blog/2020-04-preemption/
+## [4][Like alloca but not quite. Hello to the community and please take a look at my library.](https://www.reddit.com/r/rust/comments/fu37q9/like_alloca_but_not_quite_hello_to_the_community/)
+- url: https://www.reddit.com/r/rust/comments/fu37q9/like_alloca_but_not_quite_hello_to_the_community/
+---
+Hi people. This is my first post on reddit, so congratulate me on losing my reddit-virginity and don’t kick me very much for post design.
+
+I recently wrote one library for rust, because I didn’t find any analogues on the network, and because I had an idea for implementing this feature.
+
+And recently, I discovered that Google somehow does not know about it, so I decided to post it here so that at least someone would look at it and give me feedback or something like that.
+
+And so, there it is. https://crates.io/crates/inplace_it
+
+It solves the problem of allocating arrays of previously unknown length on the stack memory. Well, at least, it's trying to solve.
+## [5][[OC] Fondant - macro based, configuration management library for CLI utils](https://www.reddit.com/r/rust/comments/fu8c0p/oc_fondant_macro_based_configuration_management/)
+- url: https://i.redd.it/akvcc4e7hlq41.png
 ---
 
-## [7][New project: Crush, a command line shell](https://www.reddit.com/r/rust/comments/ftb7fc/new_project_crush_a_command_line_shell/)
-- url: https://www.reddit.com/r/rust/comments/ftb7fc/new_project_crush_a_command_line_shell/
+## [6][Using Rust to follow along with a book directed towards C](https://www.reddit.com/r/rust/comments/fu7q1a/using_rust_to_follow_along_with_a_book_directed/)
+- url: https://www.reddit.com/r/rust/comments/fu7q1a/using_rust_to_follow_along_with_a_book_directed/
 ---
-I've written Crush, a shell/programming language aimed at replacing shells like bash or fish. It has some ideas in common with nushell, but Crush focuses on being a fully featured and reasonably modern programming language with types, closures, etc. 
+I started studying Computer Organisation and Design (ARM Edition). All codes and other things are directed towards C.
+So if anyone has read the book, can I follow along with the book with Rust knowledge?
+Can I implement what is being taught using Rust?
+## [7][A recursive-descent parser for the Lambda Calculus in Rust](https://www.reddit.com/r/rust/comments/fu041f/a_recursivedescent_parser_for_the_lambda_calculus/)
+- url: https://www.reddit.com/r/rust/comments/fu041f/a_recursivedescent_parser_for_the_lambda_calculus/
+---
+[This](https://christianpoveda.github.io/blog/parsing/) is the second post in my "Writing a Lambda Calculus Implementation in Rust" series. It's about writing a simple parser for the Lambda Calculus implementation I did in the [first post](https://christianpoveda.github.io/blog/untyped-lambda-calculus/)
 
-The code (and a longer description) is available [here](https://github.com/liljencrantz/crush/), and I'd be interested in patches, feedback and opinions. The shell is fully functional and should at least work out of the box on modern Linux systems, but it's still pretty rough around the edges. Also, this has been my way of teaching myself Rust. I am already aware that I'm doing error handling wrong and that I should look into Cow strings, I will be looking into fixing those issues, but any other rust anti-patterns and mistakes I'm doing would be helpful to hear about.
-## [8][(Partially) fixing a bug in a Rust research database [video]](https://www.reddit.com/r/rust/comments/ftdljb/partially_fixing_a_bug_in_a_rust_research/)
-- url: https://www.youtube.com/watch?v=kiMUI0y91YI
+I'm happy to receive suggestions, opinions and comments in general about it :)
+## [8][watson - a minimalistic no_std + alloc web assembly parser](https://www.reddit.com/r/rust/comments/ftwyud/watson_a_minimalistic_no_std_alloc_web_assembly/)
+- url: https://github.com/richardanaya/watson
 ---
 
-## [9][Help: Parsing/Deserializing straight from the network](https://www.reddit.com/r/rust/comments/ftkcl5/help_parsingdeserializing_straight_from_the/)
-- url: https://www.reddit.com/r/rust/comments/ftkcl5/help_parsingdeserializing_straight_from_the/
+## [9][Is there a cleaner way to write this code while appeasing the borrow checker?](https://www.reddit.com/r/rust/comments/fu2xeh/is_there_a_cleaner_way_to_write_this_code_while/)
+- url: https://www.reddit.com/r/rust/comments/fu2xeh/is_there_a_cleaner_way_to_write_this_code_while/
 ---
-I'm trying to implement a network protocol that makes use of some weird decisions, for example I am trying to deserialize the following.
+Sorry for the noob question :) I have a performance critical piece of code similar to this:
 
-    struct Foo {
-      length: VarInt,
-      data: Vec&lt;u8&gt;
+    fn parse(data: Vec&lt;u8&gt;) {
+      let prefix = &amp;data[0..2];
+      let header = &amp;data[3..6];
+      // .. some more processing of prefix and header ..
+      if prefix[0] == 0 &amp;&amp; header[1] == 1 {
+        let text = &amp;data[7..];
+        let lowercase_text: Vec&lt;u8&gt; = text.to_ascii_lowercase();
+        if lowercase_text[0] == 'a' &amp;&amp; lowercase_text[5] == 'x' &amp;&amp; .. {
+          process(prefix, header, &amp;lowercase_text);
+        }
+      }
     }
 
-Where VarInt is an i32 represented between 1 and 5 bytes with the LSB indicating whether or not to read another byte.
+What I would like to do is be able to mutate the 'text\_bytes' portion of the current Vec without having to allocate a new Vec:
 
-Serde and Nom seem like the obvious choices but Serde appears to be lacking a way of pulling bytes off the line one at a time (for parsing `VarInt`) or pulling N at once without consuming a length prefix.
+    fn parse(data: Vec&lt;u8&gt;) {
+      let prefix = &amp;data[0..2];
+      let header = &amp;data[3..6];
+      // .. some more processing of prefix and header ..
+      if prefix[0] == 0 &amp;&amp; header[1] == 1 {
+        let text = &amp;mut data[7..];
+        text.make_ascii_lowercase();
+        if text[0] == 'a' &amp;&amp; text[5] == 'x' &amp;&amp; .. {
+          process(prefix, header, text);
+        }
+      }
+    }
 
-Nom only seems to want to take byte slices rather than anything that implements the Read trait.
-
-Is this something that would need to be implemented by hand or is there another crate better suited to this that I've missed?
-## [10][Why don't the format and println macros use the f-string syntax from Python?](https://www.reddit.com/r/rust/comments/ftkse0/why_dont_the_format_and_println_macros_use_the/)
-- url: https://www.reddit.com/r/rust/comments/ftkse0/why_dont_the_format_and_println_macros_use_the/
+however, because I have the two immutable borrows in prefix and header, I can't do this. One option is to drop prefix/header first before calling make\_ascii\_lowercase(), and then re-assigning prefix and header again. What would be the most efficient way to do this? Thanks!
+## [10][Movie-thumbnailer: create wallpapers from movie scenes. Super minimalist glue for ffmpeg+imagemagick](https://www.reddit.com/r/rust/comments/fu7lrk/moviethumbnailer_create_wallpapers_from_movie/)
+- url: https://github.com/indiscipline/movie-thumbnailer
 ---
-I've recently started learning Rust. As far as I understand, macros work by actually parsing and analysing the tokens given to the macro. Then I wonder, why does the format and print macros use this syntax:
 
-```println!("The person {} is {} years old", name, age);```
-
-Rather than this syntax, inspired by f-strings from Python:
-
-```println!("The person {name} is {age} years old");```
-
-Is there something about the way macros work that prevents this kind of syntax? Would it be possible to make a macro which works this way?
-
-Personally I find the second syntax much more readable, especially if there are many arguments to the format string. Why was the first syntax chosen?
-## [11][What happened to the 2019 State of Rust Survey results?](https://www.reddit.com/r/rust/comments/ftch5o/what_happened_to_the_2019_state_of_rust_survey/)
-- url: https://www.reddit.com/r/rust/comments/ftch5o/what_happened_to_the_2019_state_of_rust_survey/
+## [11][Is there any way of converting futures::Future and std future back and forth?](https://www.reddit.com/r/rust/comments/fu786p/is_there_any_way_of_converting_futuresfuture_and/)
+- url: https://www.reddit.com/r/rust/comments/fu786p/is_there_any_way_of_converting_futuresfuture_and/
 ---
-The survey was closed on Dec 16th 2019 and the results were supposed to be released "a month or so afterwards" but there is no mention of it on the blog.  What happened?
-## [12][kmon: Linux Kernel Manager and Activity Monitor written in Rust](https://www.reddit.com/r/rust/comments/fsz7ef/kmon_linux_kernel_manager_and_activity_monitor/)
-- url: https://www.reddit.com/r/rust/comments/fsz7ef/kmon_linux_kernel_manager_and_activity_monitor/
+I am stuct with a function that returns a futures::Future. I have a bunch of async functions but apparently I cannot use them in a function that is not async but returns a Future. 
+This sounds so stupid really but here it is.
+What are my options I cant abandon using async functions because of actix but also I cant use them in from_request apparently because it is not an async function.
+the most stupid thing is that I am forced to use blocking functions inside from_request which defeats the entire idea of using async functions for request since the extractors are blocking
+## [12][Dataframes in Rust that support String and numeric types in the same value?](https://www.reddit.com/r/rust/comments/fu6p8k/dataframes_in_rust_that_support_string_and/)
+- url: https://www.reddit.com/r/rust/comments/fu6p8k/dataframes_in_rust_that_support_string_and/
 ---
-[kmon](https://github.com/orhun/kmon) provides a text-based user interface for managing the Linux kernel modules and monitoring the kernel activities. By managing, it means loading, unloading, blacklisting and showing the information of a module. These updates in the kernel modules, logs about the hardware and other kernel messages can be tracked with the real-time activity monitor in kmon. Since the usage of different tools like dmesg and kmod are required for these tasks in Linux, kmon aims to gather them in a single terminal window and facilitate the usage as much as possible while keeping the functionality.
+I've just started exploring Pandas and Numpy from the Python world, and I've found that the dataframes there are tremendously useful because you can load all kinds of real world datasets into them that include strings. Its also easy to dynamically add, remove, slice and filter these dataframes too.
 
-kmon is written in Rust and uses [tui-rs](https://github.com/fdehau/tui-rs) &amp; [termion](https://github.com/redox-os/termion) libraries for its text-based user interface.
-
-[kmon on action](https://i.redd.it/frrmmacme7q41.gif)
-
-**Project Homepage:** [https://github.com/orhun/kmon](https://github.com/orhun/kmon)  
-**Rust Package:** [https://crates.io/crates/kmon](https://crates.io/crates/kmon)
+However, when I looked for a good library in Rust that had even basic support for Strings, I could find any. Do they exist?

@@ -119,11 +119,52 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][What syntax changes would you make to C++ if you had the chance?](https://www.reddit.com/r/cpp/comments/ftesce/what_syntax_changes_would_you_make_to_c_if_you/)
+## [3][static const struct to constexpr, taking the address for memcpy, too many ways to declare constants](https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/)
+- url: https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/
+---
+I'm updating some legacy code to C++17.  There's a header which defines test data in structs.  It uses the "static" keyword (in the C sense, outside of a class) to make the instances local to a translation unit (so that the header can be included in multiple cpp files without the linker complaining about duplicate symbol definitions).
+
+`static const Foo foo1 { 0, 1, 0, 0 };`
+
+`static const Foo foo2 { 2, 3, 0, 0 };`
+
+`static const Bar bar1 { 0, 33, 0 };`
+
+`// and so on for 2500 lines`
+
+Since these structs are pure data, they can be constexpr.  However I'm not sure whether to declare them "`static constexpr`" or just "`constexpr`", and does it make any difference if I wrap them in an anonymous namespace or not?
+
+This data is used as the source (but never the destination) of memcpy's.  I was surprised that the compiler did NOT complain about this when I changed the test data to constexpr.  Is this intended and safe (to take the address of a constexpr struct)?
+
+When I tried to look this up, my search turned up questions about making sure the constexpr address is unique (aka persistent aka global) (which I don't need it to be) and things talking about declaring these as inline variables (which I don't know if I need) and a recommendation to make the constexpr a static member of a class (which I don't think I want).
+
+If need be I can just replace all of the memcpy's with copy-assignments to render the question moot.  However it would be better if, for now, I can keep the existing memcpy'ing code as-is while using contexpr source values.  I guess I'm just looking for an explanation why it's even possible to take the address of a constexpr value &amp; assurance that's an intentional feature.
+
+It seems C++ has accumulated so many old and new ways of declaring constant and "kind of constant" things (all with different benefits and pitfalls) that we need some kind of cheat sheet for this.  For example, "constexpr" implies "inline", but adding the word "inline" causes all the instances to share an address?  Or it causes them all to receive unique addresses?  We need a cheat sheet with a matrix of yes/no boxes.  The rows are things like "nonmember static", "static member", and columns like "weak linkage", "unique address", etc.
+## [4][How to get better at C++ infrastructure design?](https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/)
+- url: https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/
+---
+Most of the books I came across talks about basics of the language, even advanced topic don’t seem to talk much about how to design a new project. 
+What dictates what classes to use? How classes are connected to each other?
+
+Any recommendation on how to progress on that side?
+## [5][Version 3 of reckless logging released - now with Windows support](https://www.reddit.com/r/cpp/comments/ftsi1j/version_3_of_reckless_logging_released_now_with/)
+- url: https://github.com/mattiasflodin/reckless
+---
+
+## [6][Conversion of hexadecimal character to its binary value](https://www.reddit.com/r/cpp/comments/fty8us/conversion_of_hexadecimal_character_to_its_binary/)
+- url: http://stryku.pl/poetry/hex_chars_to_binary.html
+---
+
+## [7][CppCast: Intro to Modules](https://www.reddit.com/r/cpp/comments/fu0wpb/cppcast_intro_to_modules/)
+- url: https://cppcast.com/daniela-engert-intro-modules/
+---
+
+## [8][What syntax changes would you make to C++ if you had the chance?](https://www.reddit.com/r/cpp/comments/ftesce/what_syntax_changes_would_you_make_to_c_if_you/)
 - url: https://www.reddit.com/r/cpp/comments/ftesce/what_syntax_changes_would_you_make_to_c_if_you/
 ---
 Suppose you don't have to worry about legacy code, what retroactive changes would you make to C++ to make it more readable or a better language overall syntax-wise?
-## [4][Ranged-Based For-Loops and Indices](https://www.reddit.com/r/cpp/comments/ftj56k/rangedbased_forloops_and_indices/)
+## [9][Ranged-Based For-Loops and Indices](https://www.reddit.com/r/cpp/comments/ftj56k/rangedbased_forloops_and_indices/)
 - url: https://www.reddit.com/r/cpp/comments/ftj56k/rangedbased_forloops_and_indices/
 ---
 Hi!
@@ -167,42 +208,15 @@ Sorry if there's any mistakes in my code or English!
 Edit 1: I missed a few words!
 
 Edit 2: Oh dear, I just noticed that I wrote "Ranged-Based" instead of "Range-Based" in the title... sorry!
-## [5][Polymorphism and the Ternary Operator: Trickier Than You Think - Human Readable Magazine](https://www.reddit.com/r/cpp/comments/fthdg7/polymorphism_and_the_ternary_operator_trickier/)
+## [10][Polymorphism and the Ternary Operator: Trickier Than You Think - Human Readable Magazine](https://www.reddit.com/r/cpp/comments/fthdg7/polymorphism_and_the_ternary_operator_trickier/)
 - url: https://humanreadablemag.com/issues/2/articles/polymorphism-and-the-ternary-operator
 ---
 
-## [6][How to get better at C++ infrastructure design?](https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/)
-- url: https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/
----
-Most of the books I came across talks about basics of the language, even advanced topic don’t seem to talk much about how to design a new project. 
-What dictates what classes to use? How classes are connected to each other?
-
-Any recommendation on how to progress on that side?
-## [7][Is there anyway to stop the console output from approximating the result?](https://www.reddit.com/r/cpp/comments/ftlzc3/is_there_anyway_to_stop_the_console_output_from/)
-- url: https://www.reddit.com/r/cpp/comments/ftlzc3/is_there_anyway_to_stop_the_console_output_from/
----
-As the title says, is there anyway to stop the console output from automatically approximating the result? If my result is, say 17√3, whenever you compile the program you just wrote, the console will output 29.44486(or more digits), instead of 17√3.
-
-If I can help you more to understand what I am talking about, let's try to find out the geometric mean of 2 integers, a &amp; b. For a = 2 and b = 27, your geometric mean will be 3√6. If you "std::cout&lt;&lt;sqrt(a\*b)&lt;&lt;std::endl;", the console will output 7.34847.
-
-(This post is written by a person with lack of C++ experience, I'm just making some random, easy projects to help me a bit with Maths).
-## [8][Game engine in visual studio code](https://www.reddit.com/r/cpp/comments/ftlofo/game_engine_in_visual_studio_code/)
-- url: https://www.reddit.com/r/cpp/comments/ftlofo/game_engine_in_visual_studio_code/
----
-I want to make a game engine from scratch. I want to follow a tutorial from the Cherno but he uses visual studio and I don’t have visual studio because im on a Mac. Now I use vscode for c++, I really like it but I don’t know how to set things up like he does in visual studio. I don’t like to use Xcode. Can somebody help me to use visual studio code for making a game engine.
-## [9][How C++ Templates Are Used for Generic Programming: An Empirical Study on 50 Open Source Systems](https://www.reddit.com/r/cpp/comments/ft7lnc/how_c_templates_are_used_for_generic_programming/)
+## [11][How C++ Templates Are Used for Generic Programming: An Empirical Study on 50 Open Source Systems](https://www.reddit.com/r/cpp/comments/ft7lnc/how_c_templates_are_used_for_generic_programming/)
 - url: https://doi.org/10.1145/3356579
 ---
 
-## [10][C++23: Mutable string_view](https://www.reddit.com/r/cpp/comments/fszna2/c23_mutable_string_view/)
+## [12][C++23: Mutable string_view](https://www.reddit.com/r/cpp/comments/fszna2/c23_mutable_string_view/)
 - url: https://codingtidbit.com/2020/04/01/c23-mutable-string_view/
 ---
 
-## [11][no_unique_address and address of](https://www.reddit.com/r/cpp/comments/ftkyre/no_unique_address_and_address_of/)
-- url: https://www.reddit.com/r/cpp/comments/ftkyre/no_unique_address_and_address_of/
----
-What object do objects with the attribute [[no_unique_address]] share the address with? Is it possible to cast that pointer (this) to the other objects pointer in a well defined way?
-## [12][C++ (Software Development) Job Requirements (Junior &amp; Intermediate)](https://www.reddit.com/r/cpp/comments/ft75ii/c_software_development_job_requirements_junior/)
-- url: https://www.reddit.com/r/cpp/comments/ft75ii/c_software_development_job_requirements_junior/
----
-# Since C++ is a complex programming language, what are the requirements for a Junior, or an intermediate programming field?

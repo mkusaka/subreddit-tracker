@@ -1,12 +1,131 @@
 # Kotlin
-## [1][New to Kotlin](https://www.reddit.com/r/Kotlin/comments/ftjw23/new_to_kotlin/)
+## [1][Stop scan and scanReduce before it's too late](https://www.reddit.com/r/Kotlin/comments/ftnvzd/stop_scan_and_scanreduce_before_its_too_late/)
+- url: https://www.reddit.com/r/Kotlin/comments/ftnvzd/stop_scan_and_scanreduce_before_its_too_late/
+---
+**TLDR**
+
+The names `scan` and `scanReduce` are poorly chosen and should be renamed as long as they are still in experimental. That is if Kotlin wants to remain a well readable language. Other languages such as Python avoided the name 'scan' as well.
+
+&amp;#x200B;
+
+**1.  Introduction**
+
+With version 1.7.0 `scan` and `scanReduce` made it finally into the Kotlin programming language, but the name choice was poorly made. These functions are still in experimental state, so this is the last chance to get it right.
+
+In Advance I want to appologize for my strong opinion on this topic, but if I didn't love Kotlin I woudn't care so much.
+
+&amp;#x200B;
+
+**2. Conventional names in functional programming**
+
+Functions to process collections such as `map`, `filter` and `reduce` are well known across many programming languages.
+
+`reduce` (also called `fold`) is a function which accumulates/reduces many values to a single result value.
+
+`scan` is like reduce, but instead of returning a single result it yields all intermediate results.
+
+In the example of adding a list of numbers `reduce` would simply be a sum and `scan` would be a running sum/cumulative sum.
+
+&amp;#x200B;
+
+**3. Names in Kotlin**
+
+For `reduce` Kotlin uses two different names: `reduce` and `fold`. The difference is in the initial value of the operation. Kotlin's `reduce` starts operating on the first element of the collection and `fold` expects an initial value as parameter.
+
+In similar fashion Kotlin recently introduced two versions of `scan`. Kotlin's `scan` is a running `fold` and Kotlin's `scanReduce` is a running `reduce`.
+
+|returns \\ initial value|by paramter|first element|
+|:-|:-|:-|
+|end result|**fold**|**reduce**|
+|all intermediate result|**scan** 😢|**scanReduce** 🤮|
+
+&amp;#x200B;
+
+**4. Naming Problem**
+
+There are two naming problems. The first one being that `scanReduce` as name is totally wrong by definition. The second one being my personal opinion why the name `scan` is bad in general.
+
+**4.1 scanReduce must not exist**
+
+Earlier we saw that `reduce` operates on a collection and returns a single value and that `scan` does the same returning all intermediate results. If we use this definition to understand the difference between the two, what in God's name does `scanReduce` mean? This term is an **abomination** and **must not exist**. It is clear to me that `fold` relates to `scan` and there has to be a name for `reduce` to relate to. But it cannot be `scanReduce`!
+
+**4.2 The never ending legacy of scan**
+
+Not only the name `scanReduce` is wrong. Also the name `scan` is flawed. Many programming languages such as Haskell, Scala or Typescript have a `scan` function. `map`, `filter`, `reduce` all make sense, but the name `scan` is more than awkward. Outside of programming scan has the following meanings:
+
+1. to look quickly but not very carefully at a document, etc.
+2. to look at every part of something carefully, especially because you are looking for a particular thing or person
+
+So where does the name in programming come from? The term scan was coined in the programming language APL by Kenneth E. Iverson at IBM in the early 1960s. I could not find out why the `\` operator was named scan operator. In this book "A Programming Language" (1962) he uses the term scan quite frequently to describe traversing a vector/matrix without changing its rank.
+
+Since a lot of operations (`forEach`, `map`, `find`/`first`, and even `reduce`!) traverse a collection they are all technically 'scanning'. What `scan` should have been named is `accumulate`. "Accumulative" means:
+
+1. having a result that increases in strength or importance each time more of something is added
+2. including all the amounts that have been added previously
+
+Isn't that a much better name for what the function is doing? By the way this is how the function is named in Python.
+
+**5 Conclusion**
+
+`accumulate` is a much better name for `scan`. Since Kotlin has two names for `reduce` (`reduce` \+ `fold`) it also needs two counterparts for `scan`. I suggest one of the follwing:
+
+1. `accumulate` with overloads
+2. `runningFold` \+ `runningReduce`
+3. `accumulativeFold` \+ `accumulativeReduce`.
+
+Python has made the right choice and it is well known for its readability and use in data science. The scan function is actually quite heavily used in data science. Kotlin is about readability too and has recently started to position itself in data science too. Will it also make the right choice?
+## [2][Working with KTOR and multi-platform projects in IntelliJ](https://www.reddit.com/r/Kotlin/comments/fu6bcq/working_with_ktor_and_multiplatform_projects_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/fu6bcq/working_with_ktor_and_multiplatform_projects_in/
+---
+Hi all,
+
+I've been struggling to create a good 'kotlin-for-all' project, with a KTOR server and and a kotlin/JS client, that runs nicely in IntelliJ
+
+&amp;#x200B;
+
+I've used the Kotlin Project template 'JS Client and JVM Server' which gets me a working project, but I can't seem dynamically recompile the Javascript. I'm not even sure where the JS is coming from - presumably the assembled JS jar? If I make a change to the Kotlin JS, do I have to stop the server, re-assemble the JS JAR, and restart?
+
+&amp;#x200B;
+
+I've managed to get dynamic JS recompilation working in a project at work but only with a small raft of hacks held together with string and sticky tape - what I want is a standardized, JetBrains-approved, non-hacky, clear way of accomplishing this goal.
+
+&amp;#x200B;
+
+Can anyone give me a hint on how to proceed?
+## [3][Android Custom Notification in 6 Mins](https://www.reddit.com/r/Kotlin/comments/fu60b8/android_custom_notification_in_6_mins/)
+- url: https://medium.com//android-custom-notification-in-6-mins-c2e7e2ddadab?source=friends_link&amp;sk=1d157d143c877d03370e311f2206e230
+---
+
+## [4][Coroutines flow with Kotlin](https://www.reddit.com/r/Kotlin/comments/fu7dl3/coroutines_flow_with_kotlin/)
+- url: https://youtu.be/CIvjwIfOG5A
+---
+
+## [5][Help with when expression](https://www.reddit.com/r/Kotlin/comments/fty435/help_with_when_expression/)
+- url: https://www.reddit.com/r/Kotlin/comments/fty435/help_with_when_expression/
+---
+Hi, recently started learning Kotlin, I encounter a question that really confuses me
+
+ What is true about  **when**?
+
+1. We can not use multiple statements in branches of expression style ***when***
+
+2. Any ***if*** expression can be written with ***when***.
+
+3. If we use ***when*** without an argument, all the branch conditions are to be boolean expressions.
+
+4. ***else*** branch is to be use in expression ***when*** only.
+
+5. We can not execute more than one branch in ***when***.
+
+Can someone not just give the answer but explain why?
+## [6][New to Kotlin](https://www.reddit.com/r/Kotlin/comments/ftjw23/new_to_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/ftjw23/new_to_kotlin/
 ---
 Hey,
 
 I am currently studying Kotlin but having a hard time since I feel every tutorial I find somehow expects you to be a bit experienced in Java. In which I have zero experience. Are there any books which really offer the reader an extensive overview of the language? I prefer reading over videos.  
 Thanks!
-## [2][Math solver android app question](https://www.reddit.com/r/Kotlin/comments/ftkzsu/math_solver_android_app_question/)
+## [7][Math solver android app question](https://www.reddit.com/r/Kotlin/comments/ftkzsu/math_solver_android_app_question/)
 - url: https://www.reddit.com/r/Kotlin/comments/ftkzsu/math_solver_android_app_question/
 ---
 I am thinking of a making a math solver app, mostly linear algebra stuff, matrixes, vectors etc.
@@ -14,342 +133,55 @@ I am thinking of a making a math solver app, mostly linear algebra stuff, matrix
 If i were to make something like symbolab/wolfram (much less complex, only some features), would it be resonable to do the computation on the mobile app, or should i do it with api calls to a backend?
 
 Thank you :)
-## [3][Setting up Google Authentication in a Kotlin Android App](https://www.reddit.com/r/Kotlin/comments/ft1wft/setting_up_google_authentication_in_a_kotlin/)
-- url: https://codesource.io/setting-up-google-authentication-in-a-kotlin-android-app/
+## [8][How much can a kotlin android developer make as a freelancer pe hour?](https://www.reddit.com/r/Kotlin/comments/ftt6lm/how_much_can_a_kotlin_android_developer_make_as_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/ftt6lm/how_much_can_a_kotlin_android_developer_make_as_a/
 ---
-
-## [4][`scan()` and `scanReduce()` in Kotlin 1.3.70!](https://www.reddit.com/r/Kotlin/comments/fsywl7/scan_and_scanreduce_in_kotlin_1370/)
-- url: https://twitter.com/kotlin/status/1245300637916594179?s=20
+Hi.I have a friend who started freelancing and he doesn't know how much should he charge per hour.He has some experience because he already published about 7 apps on the market and got 5k or more downloads on each of them.He knows how to build good apps and I whould say he is preatty good.He is also studing CS.So guys,how much do you thing he should ask per hour?And I am curios which is the realistic maximum amount that a android dev can make per hour(one with a lot of experience).
+## [9][Compared to Java I like Kotlin's typesafety and flexibility, but...](https://www.reddit.com/r/Kotlin/comments/ftrnrq/compared_to_java_i_like_kotlins_typesafety_and/)
+- url: https://www.reddit.com/r/Kotlin/comments/ftrnrq/compared_to_java_i_like_kotlins_typesafety_and/
 ---
-
-## [5][🎉 GraphQL Kotlin 2.0.0!](https://www.reddit.com/r/Kotlin/comments/fsru6c/graphql_kotlin_200/)
-- url: https://github.com/ExpediaGroup/graphql-kotlin/releases/tag/2.0.0
----
-
-## [6][Async Coroutine error handling](https://www.reddit.com/r/Kotlin/comments/ft1ro1/async_coroutine_error_handling/)
-- url: https://www.reddit.com/r/Kotlin/comments/ft1ro1/async_coroutine_error_handling/
----
-I'd like to say "all good 'til Coroutines".  
-Jokes asides, in Java I'm used to `CompletableFuture`s.  
-So I was using that one in Kotlin too
-
-```
-myList
-  .map {
-    CompletableFuture
-      .supplyAsync { it.fn() }
-      .orTimeout(1, SECONDS)
-      .exceptionally { emptyList() }
-  }
-  .toList()
-  .flatMap { it.join() }
-
-```
-
-Now, in Kotlin, all what I could come up is
-
-```
-myList
-  .map {
-    try {
-      withTimeout(1000) {
-        async {
-          it.fn()
-        }
-      }
-    } catch (e: Exception) {
-      async { emptyList() }
-    }
-  }
-  .awaitAll()
-  .asSequence()
-  .flatten()
-```
-
-Honestly this looks a bit weird on a functional flow.  
-What am I missing?
-## [7][[Help] View/Button ins't clickable](https://www.reddit.com/r/Kotlin/comments/ft5vwi/help_viewbutton_inst_clickable/)
-- url: https://www.reddit.com/r/Kotlin/comments/ft5vwi/help_viewbutton_inst_clickable/
----
-So, im making an for the purpose of calculating numbers in a game while the user plays the game.
-
-For that i've made a floating button that draws over all apps.
-
-The issue im facing is that the button isn't clickable, and when i set a listener it crashes.
-
-Heres the code.. thanks for help.
-
-MainActivity.kt
-
-    package com.example.rokcalkot
-    
-    import android.content.Intent
-    import android.app.Activity
-    import android.os.Build
-    import android.provider.Settings
-    import android.view.View
-    import android.content.pm.PackageManager
-    import android.os.Bundle
-    import android.util.Log
-    import android.widget.Button
-    import android.widget.Toast
-    import androidx.appcompat.app.AlertDialog
-    import androidx.appcompat.app.AppCompatActivity
-    import android.net.Uri
-    import androidx.core.app.ActivityCompat
-    import androidx.core.content.ContextCompat
-    import kotlinx.android.synthetic.main.onscreen.*
-    
-    import android.graphics.Canvas
-    import android.graphics.Color
-    import android.graphics.Bitmap
-    
-    
-    class MainActivity : AppCompatActivity() {
-    
-        val requestCode = 201
-    
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-    
-            //-------------------------- LAUNCH BUTTON BTN ---------------------------
-            val btnL = findViewById&lt;Button&gt;(R.id.btnShow)
-            val btnS= findViewById&lt;Button&gt;(R.id.btnService)
-    
-            /*btnS.setOnClickListener{
-                Toast.makeText(this@MainActivity, "CLICKBLE", Toast.LENGTH_LONG).show()
-            }*/
-            //btnShow?.setOnClickListener { Toast.makeText(this@MainActivity, "Bannaa", Toast.LENGTH_LONG).show() }
-            btnL.setOnClickListener {
-                if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M &amp;&amp; !Settings.canDrawOverlays(this)) {
-                    val intent = Intent(
-                        Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                        Uri.parse("package:$packageName")
-                    )
-    
-                    startActivityForResult(intent, requestCode)
-                    //startActivityForResult(intent2,requestCode1)
-                } else {
-                    startService(Intent(this, MyFloatingWindowService::class.java))
-    
-                    finish()
-                }
-                //Toast.makeText(this@MainActivity, "Bannaa", Toast.LENGTH_LONG).show()
-                }
-    
-            fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-                super.onActivityResult(requestCode, resultCode, data)
-                if (resultCode == Activity.RESULT_OK) {
-                    startService(Intent(this, MyFloatingWindowService::class.java))
-                    finish()
-                }
-            }
-        }
-    }
+sometimes it bites me:
 
 &amp;#x200B;
 
-Activity\_Main.xml
+`fun main(args: Array&lt;String&gt;) {`
 
-    &lt;?xml version="1.0" encoding="utf-8"?&gt;
-    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:theme="@style/AppTheme"
-        tools:context=".MainActivity"&gt;
-    
-        &lt;Button
-            android:id="@+id/btnShow"
-            android:layout_width="95dp"
-            android:layout_height="96dp"
-            android:text="Start Rok Cal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" /&gt;
-    
-        &lt;TextView
-            android:id="@+id/textView"
-            android:layout_width="141dp"
-            android:layout_height="45dp"
-            android:text="Welcome to Rok Cal"
-            app:layout_constraintBottom_toTopOf="@+id/btnShow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" /&gt;
-    
-    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+  `data class Transaction(`
+
+  @`SerializedName("amount") val amountInCents: Int,`
+
+  @`SerializedName("description") val description: String)`
+
+  `val tx = Transaction(amountInCents = 42, description = "For Bob")`
+
+  `val payloadStringOrNull: String? = Gson().toJson(tx, Transaction::class.java)`
+
+  `payloadStringOrNull?.let { payloadStr: String -&gt;`
+
+`val payloadIsNull: Boolean = payloadStr == null`
+
+  `println("I feel cheated ${payloadIsNull} -- $payloadStr")`
+
+  `}`
+
+`}`
 
 &amp;#x200B;
 
-MyFloatingWindowService.kt
+Moving the \`data class\` definition out fixes it. Hard to find this one.
 
-    package com.example.rokcalkot
-    import android.annotation.SuppressLint
-    import android.app.Service
-    import android.content.Context
-    import android.content.Intent
-    import android.graphics.PixelFormat
-    import android.os.Build
-    import android.os.IBinder
-    import android.view.*
-    import android.widget.Toast
-    import kotlin.math.roundToInt
-    
-    class MyFloatingWindowService : Service() {
-    
-        var LAYOUT_FLAG: Int = 0
-    
-        lateinit var floatingView: View
-        lateinit var floatingViewMain: View
-        lateinit var manager: WindowManager
-        lateinit var params: WindowManager.LayoutParams
-        override fun onBind(intent: Intent?): IBinder? {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    
-        }
-    
-    
-        override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-    
-            LAYOUT_FLAG = if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) {
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
-            } else {
-                WindowManager.LayoutParams.TYPE_PHONE
-            }
-            val params = WindowManager.LayoutParams(
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                LAYOUT_FLAG,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-                PixelFormat.TRANSLUCENT
-            )
-    
-            this.params = params
-            //Specify the view position
-            params.gravity =
-                Gravity.TOP or Gravity.CENTER //Initially view will be added to top-left corner
-            params.x = 0
-            params.y = 0
-    
-    
-            manager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-            floatingView = LayoutInflater.from(this).inflate(R.layout.onscreen, null)
-            floatingViewMain = LayoutInflater.from(this).inflate(R.layout.activity_main, null)
-            manager.addView(floatingView, params)
-            floatingView.findViewById&lt;View&gt;(R.id.btnService)?.setOnTouchListener(object :
-                View.OnTouchListener {
-                var initialX: Int? = null
-                var initialY: Int? = null
-                var initialTouchX: Float? = null
-                var initialTouchY: Float? = null
-    
-    
-                @SuppressLint("ClickableViewAccessibility")
-                override fun onTouch(view: View?, motionEvent: MotionEvent?): Boolean {
-                    //Toast.makeText(this@MyFloatingWindowService, "Clickble", Toast.LENGTH_SHORT).show()
-                    when (motionEvent!!.action) {
-                        MotionEvent.ACTION_DOWN -&gt; {
-                            //remember the initial position.
-                            initialX = params.x
-                            initialY = params.y
-    
-    
-                            //get the touch location
-                            //Toast.makeText(this@MyFloatingWindowService, "ACTION DOWN", Toast.LENGTH_SHORT).show()
-                            initialTouchX = motionEvent!!.getRawX()
-                            initialTouchY = motionEvent!!.getRawY()
-                            return true
-                        }
-                        MotionEvent.ACTION_UP -&gt; {
-                            //Toast.makeText(this@MyFloatingWindowService, "ACTION UP", Toast.LENGTH_SHORT).show()
-                            val Xdiff = (motionEvent.getRawX() - initialTouchX!!)
-                            val Ydiff = (motionEvent.getRawY() - initialTouchY!!)
-                            return true
-                        }
-                        MotionEvent.ACTION_MOVE -&gt; {
-                            //Calculate the X and Y coordinates of the view.
-    
-                            params.x = initialX!!.plus((motionEvent.getRawX() - initialTouchX!!)).roundToInt()
-                            params.y = initialY!!.plus((motionEvent.getRawY() - initialTouchY!!).roundToInt())
-                            manager.updateViewLayout(floatingView, params)
-                            return true
-                        }
-    
-                    }
-                    return false
-                }
-            })
-    
-    
-            return START_NOT_STICKY
-        }
-    
-    
-    
-        fun CHECK() {
-            Toast.makeText(this@MyFloatingWindowService, "Clickble", Toast.LENGTH_LONG).show()
-        }
-    
-        override fun onDestroy() {
-            super.onDestroy()
-            manager.removeView(floatingView)
-        }
-    
-    
-    }
+But should this compile? I try ot pass something to Java, if that is not supposed to work for non-top-level-defined things then why accept it at compile time?
 
-&amp;#x200B;
+Also Gson using Unsafe to gimme nulls where I did not expect them really messed me up.
 
-onscreen.xml --&gt; the xml that the service interacts with which draws over all apps.
-
-    &lt;?xml version="1.0" encoding="utf-8"?&gt;
-    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:theme="@style/AppTheme"
-        tools:context=".MainActivity"
-        android:launchMode="singleTask"&gt;
-    
-        &lt;Button
-            android:id="@+id/btnService"
-            android:layout_width="51dp"
-            android:layout_height="62dp"
-            android:clickable="true"
-            android:text="Start Service"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.522" /&gt;
-    
-    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
-## [8][Kotlin Coroutined](https://www.reddit.com/r/Kotlin/comments/ft5i2s/kotlin_coroutined/)
-- url: https://medium.com/@shelbyc0hen/kotlin-coroutined-8c57acd3c45e
+Is there some things to keep in mind so I will not get bitten like that again?
+## [10][Suppress redundant semicolon warning](https://www.reddit.com/r/Kotlin/comments/ftr9jv/suppress_redundant_semicolon_warning/)
+- url: https://www.reddit.com/r/Kotlin/comments/ftr9jv/suppress_redundant_semicolon_warning/
 ---
+Hey guys,
 
-## [9][“How to Combine Kotlin Flows” #androiddev #androiddevelopment #kotlin #roomdatabase #kotlin_multiplatform #programming #androiddeveloper](https://www.reddit.com/r/Kotlin/comments/fssg5b/how_to_combine_kotlin_flows_androiddev/)
-- url: https://medium.com/better-programming/learn-how-to-combine-kotlin-flows-317849a71d3e?source=friends_link&amp;sk=fc6ee71b885f67afe4dae695cb179a0b
----
+Like most people, I am using kotlin in android studio, and it keeps telling me that the semicolon is redundant, by greying it out and even underlining it.
 
-## [10][Why does Kotlin look so good ? Am I missing something?](https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/)
-- url: https://www.reddit.com/r/Kotlin/comments/frr50s/why_does_kotlin_look_so_good_am_i_missing/
----
-Hello there, 
+Now I don't mind that it's redundant, but I do work in languages where semicolon IS enforced (fx Flutter/Dart), so I'm not about to change my habits.
 
- So I am software engineer and I started with C++, transitioned to Java in Uni, and I used a lot of Perl and Bash during my job that started around 6 months ago. I started developing Android apps about 1 year ago in Java, and never looked at Kotlin. A couple of days ago, I finally gave it a chance before starting a new project (might as well start with a new programming language as well). 
-
- I am amazed by the syntax and the language features. Everything that I like in C-like languages and that is good in scripting languages is combined in Kotlin. I even had an idea to implement a new language of my own (just as a learning exercise) and some stuff that I wanted to bring "new" to the table, they are implemented in Kotlin. 
-
- My questions are, is it actually that much better of a coding experience as it looks? What are some drawbacks that you experience ? Also, why do you thing it's not that popular ? 
-
-&amp;#x200B;
-
-Just joined the subreddit and I am still having a look around so please be kind :)
+Instead, I'd love to just suppress the warning. Is there anyway to do that?

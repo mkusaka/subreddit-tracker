@@ -119,7 +119,91 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][static const struct to constexpr, taking the address for memcpy, too many ways to declare constants](https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/)
+## [3][IceCream-Cpp: A C++ helper library to print debugging. Released](https://www.reddit.com/r/cpp/comments/fun91l/icecreamcpp_a_c_helper_library_to_print_debugging/)
+- url: https://github.com/renatoGarcia/icecream-cpp
+---
+
+## [4][unique_ptr with custom deleter](https://www.reddit.com/r/cpp/comments/fun9zt/unique_ptr_with_custom_deleter/)
+- url: https://www.nextptr.com/question/qa1366990479/unique_ptr-with-custom-deleter
+---
+
+## [5][Constraining templates in C++](https://www.reddit.com/r/cpp/comments/furljy/constraining_templates_in_c/)
+- url: https://panky-codes.github.io/2020/03/22/Templates.html
+---
+
+## [6][Lambda expression, rvalue captured by-reference.](https://www.reddit.com/r/cpp/comments/fus702/lambda_expression_rvalue_captured_byreference/)
+- url: https://www.reddit.com/r/cpp/comments/fus702/lambda_expression_rvalue_captured_byreference/
+---
+Hi,
+
+I have a case in which I want to modify a variable inside a lambda expression in way that each new call of the lambda shall use this modified variable. I know it can be done with a temporary variable outside of the lambda. For example:
+```C++
+char* ptr = get_ptr();
+std::transform(in.begin(), in.end(), out.begin(),
+    [&amp;ptr](auto&amp; val) { return (*ptr++) + val; });
+```
+
+I wonder if I can achieve this without a temporary variable ptr. Using Visual Studio 2019 I successfully compiled the following code:
+```C++
+std::transform(in.begin(), in.end(), out.begin(),
+    [&amp;ptr = get_ptr()](auto&amp; val) { return (*ptr++) + val; });
+```
+
+However, I cannot find in the [reference](https://en.cppreference.com/w/cpp/language/lambda#Lambda_capture) any information if this behavior will be consistent between C++ compilators. Could any of you give me a clue how does C++ standard handles the above case?
+
+Thanks
+## [7][vector transform constructor](https://www.reddit.com/r/cpp/comments/fu8nuc/vector_transform_constructor/)
+- url: https://www.reddit.com/r/cpp/comments/fu8nuc/vector_transform_constructor/
+---
+Wouldn't it be nice to add a constructor to the vector class that takes a pair of iterators or a range and applies a transformation to the elements before their inserted? For example:
+
+```
+template&lt;class InputIt, class UnaryOperation&gt;
+vector(InputIt first, InputIt last, UnaryOperation unary_op);
+```
+
+This would greatly simplify and be essentially equivalent to
+
+```
+std::vector&lt;int&gt; vec;
+vec.reserve(other_vec.size());
+std::transform(other_vec.begin(), other_vec.end(),
+               std::back_inserter(vec), unary_func);
+
+// becomes
+std::vector&lt;int&gt; vec(other_vec.begin(), other_vec.end(), unary_func);
+```
+
+Is this a decent idea? I've been meaning to try to get involved in the standardization process in some way and submitting a paper for this would be a good place to start if the idea makes sense.
+## [8][WezosTradingEngine - Fast cryptocurrency matching engine in C++17](https://www.reddit.com/r/cpp/comments/fupi8z/wezostradingengine_fast_cryptocurrency_matching/)
+- url: https://www.reddit.com/r/cpp/comments/fupi8z/wezostradingengine_fast_cryptocurrency_matching/
+---
+I was working on my own cryptocurrency exchange a couple of years ago, as a part of that I set out to make one of the fastest cryptocurrency matching engines in the industry. The project had been festering for quite a while, so I decided to extract out the matching engine portion and open source it.[https://github.com/wezrule/WezosTradingEngine](https://github.com/wezrule/WezosTradingEngine)
+
+Disclaimer: I haven't largely looked at the code in 2 years (it still uses \`&lt;experimental/filesystem&gt;\` for instance!), but I tested it recently with gcc 7.5 and to my surprise it was still building and all tests passed, I wasn't sure what state it would be in. After some modifications it builds with MSVC, but I had to disable the main custom allocator for the order book (which is where most of the performance comes from!), so instead I've just left it as is. Mainly just putting this up as a learning resource for others who might find it of interest. Cheers
+## [9][Searching for a good IDE on Mac](https://www.reddit.com/r/cpp/comments/fuoaga/searching_for_a_good_ide_on_mac/)
+- url: https://www.reddit.com/r/cpp/comments/fuoaga/searching_for_a_good_ide_on_mac/
+---
+Hi everybody! I just started teaching myself C++ and I'm looking for a good IDE on Mac.
+
+Thus far I have been working pretty low tech, coding in Vim and compiling manually / writing my own Makefiles. However, I'd like to start learning to code with an IDE so that it's less intimidating, and to better familiarize myself with the debugging process and build options. 
+
+I've already heard that XCode is good, but I can't download the latest version without updating to Catalina and screwing my 32-bit apps, which I don't want to do.
+
+Any recommendations or advice would be appreciated!
+## [10][Error Checks + Inconsistent Boolean Conversion = ?](https://www.reddit.com/r/cpp/comments/fuaafj/error_checks_inconsistent_boolean_conversion/)
+- url: https://www.reddit.com/r/cpp/comments/fuaafj/error_checks_inconsistent_boolean_conversion/
+---
+Working with a code base that internally often returns `optional&lt;&gt;` and also `error_code`. There is also an `expect&lt;&gt;` type mixed in.
+
+With `optional&lt;&gt;` or `expect&lt;&gt;` you check `if(!ret)` for error, but if an `error_code` is returned you check `if(ret)`. Easy?
+
+I've never really been confronted with the immediate problem that kind of dimorphic error tests cause until there was a bug. God damn it! That's no fun when you have to deep dive into a mess of functions with lots of those nasty `if(!ret)` just to find out that one `if(!ret)` in a very rarely executed path that escaped the unit tests should have actually been an `if(ret)`. I cannot even blame the author, humans are just not meant to get this right consistently. But when the compiler cannot detect such errors (since the code is obviously well formed) I get scared. Like raw pointer magic scared - you never know when things are going to blow up. It might be a very good idea to consistently use something like `if(has_error(ret))` and overload that `has_error(...)` for `error_code` and `optional&lt;&gt;` and `expect&lt;&gt;` \- thus ditching the boolean conversions like plain new and delete and raw pointers in the hope to maybe produce less broken code.
+
+In my humble and useless opinion error\_code should convert to boolean true if no error just for consistency or don't provide a boolean conversion at all. But that train has long left the station.
+
+/venting
+## [11][static const struct to constexpr, taking the address for memcpy, too many ways to declare constants](https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/)
 - url: https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/
 ---
 I'm updating some legacy code to C++17.  There's a header which defines test data in structs.  It uses the "static" keyword (in the C sense, outside of a class) to make the instances local to a translation unit (so that the header can be included in multiple cpp files without the linker complaining about duplicate symbol definitions).
@@ -141,82 +225,10 @@ When I tried to look this up, my search turned up questions about making sure th
 If need be I can just replace all of the memcpy's with copy-assignments to render the question moot.  However it would be better if, for now, I can keep the existing memcpy'ing code as-is while using contexpr source values.  I guess I'm just looking for an explanation why it's even possible to take the address of a constexpr value &amp; assurance that's an intentional feature.
 
 It seems C++ has accumulated so many old and new ways of declaring constant and "kind of constant" things (all with different benefits and pitfalls) that we need some kind of cheat sheet for this.  For example, "constexpr" implies "inline", but adding the word "inline" causes all the instances to share an address?  Or it causes them all to receive unique addresses?  We need a cheat sheet with a matrix of yes/no boxes.  The rows are things like "nonmember static", "static member", and columns like "weak linkage", "unique address", etc.
-## [4][How to get better at C++ infrastructure design?](https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/)
+## [12][How to get better at C++ infrastructure design?](https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/)
 - url: https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/
 ---
 Most of the books I came across talks about basics of the language, even advanced topic don’t seem to talk much about how to design a new project. 
 What dictates what classes to use? How classes are connected to each other?
 
 Any recommendation on how to progress on that side?
-## [5][Version 3 of reckless logging released - now with Windows support](https://www.reddit.com/r/cpp/comments/ftsi1j/version_3_of_reckless_logging_released_now_with/)
-- url: https://github.com/mattiasflodin/reckless
----
-
-## [6][Conversion of hexadecimal character to its binary value](https://www.reddit.com/r/cpp/comments/fty8us/conversion_of_hexadecimal_character_to_its_binary/)
-- url: http://stryku.pl/poetry/hex_chars_to_binary.html
----
-
-## [7][CppCast: Intro to Modules](https://www.reddit.com/r/cpp/comments/fu0wpb/cppcast_intro_to_modules/)
-- url: https://cppcast.com/daniela-engert-intro-modules/
----
-
-## [8][What syntax changes would you make to C++ if you had the chance?](https://www.reddit.com/r/cpp/comments/ftesce/what_syntax_changes_would_you_make_to_c_if_you/)
-- url: https://www.reddit.com/r/cpp/comments/ftesce/what_syntax_changes_would_you_make_to_c_if_you/
----
-Suppose you don't have to worry about legacy code, what retroactive changes would you make to C++ to make it more readable or a better language overall syntax-wise?
-## [9][Ranged-Based For-Loops and Indices](https://www.reddit.com/r/cpp/comments/ftj56k/rangedbased_forloops_and_indices/)
-- url: https://www.reddit.com/r/cpp/comments/ftj56k/rangedbased_forloops_and_indices/
----
-Hi!
-
-I often see sentiments akin to "raw for-loops are a code smell" when I read about Modern C++, however, as programmers we often have problem domain information that's coupled with our indices.
-
-For certain collections, such as maps, we can iterate through every key-value pair thusly:
-
-    std::unordered_map&lt;int,std::string&gt; m = { {1,"one"}, {2,"two"} /*...*/ };
-    
-    for ( auto &amp;[k,v] : m ) { ... }
-
-But for random access collections we've only got:
-
-    std::vector&lt;int&gt; v = { 1, 2, 3, 4, /*...*/ };
-    
-    for ( auto &amp;e : v ) { ... }
-
-Even though implementing it so that we could iterate over index,value pairs as well would seems fairly trivial.
-
-As an example, I implemented this likely buggy code as a proof of concept (and lacking, as I omitted random access from the iterator as well as cbegin, cend, rbegin, rend, crbegin, and crend for the sake of brevity):
-
-https://onlinegdb.com/r1m6_XmPI
-
-Which allows for the following:
-
-    // Vector&lt;T&gt; specializes std::vector&lt;T&gt;, adding context()
-    Vector v = { "Never", "gonna", "give", "you", "up" };
-    
-    for ( auto &amp;&amp;[i,e] : v.context() )
-        std::cout &lt;&lt; "Element at index " &lt;&lt; i &lt;&lt; " has value: " &lt;&lt; e &lt;&lt; "\n";
-
-This kind of looping seems fairly common in other languages (Lua and Python springs to mind), but C++ seems to be lacking it. Is there a particular reason for this? I'm still fairly new to C++, so perhaps there's an obvious explanation to this that eludes me... so I'd very much like to hear your thoughts on the matter. :-)
-
-I haven't done any benchmarks of it, so I don't know how this approach compares performance-wise.
-
-Sorry if there's any mistakes in my code or English!
-
-------
-
-Edit 1: I missed a few words!
-
-Edit 2: Oh dear, I just noticed that I wrote "Ranged-Based" instead of "Range-Based" in the title... sorry!
-## [10][Polymorphism and the Ternary Operator: Trickier Than You Think - Human Readable Magazine](https://www.reddit.com/r/cpp/comments/fthdg7/polymorphism_and_the_ternary_operator_trickier/)
-- url: https://humanreadablemag.com/issues/2/articles/polymorphism-and-the-ternary-operator
----
-
-## [11][How C++ Templates Are Used for Generic Programming: An Empirical Study on 50 Open Source Systems](https://www.reddit.com/r/cpp/comments/ft7lnc/how_c_templates_are_used_for_generic_programming/)
-- url: https://doi.org/10.1145/3356579
----
-
-## [12][C++23: Mutable string_view](https://www.reddit.com/r/cpp/comments/fszna2/c23_mutable_string_view/)
-- url: https://codingtidbit.com/2020/04/01/c23-mutable-string_view/
----
-

@@ -1,5 +1,45 @@
 # golang
-## [1][Quarantine has driven me crazy - I'm writing ArnoldC as a UNIX shell, in Go](https://www.reddit.com/r/golang/comments/ftxrwx/quarantine_has_driven_me_crazy_im_writing_arnoldc/)
+## [1][Which framework to use for a multiplayer mobile game?](https://www.reddit.com/r/golang/comments/fuqwqm/which_framework_to_use_for_a_multiplayer_mobile/)
+- url: https://www.reddit.com/r/golang/comments/fuqwqm/which_framework_to_use_for_a_multiplayer_mobile/
+---
+Hi, I have to develop the back-end of a multiplayer mobile game. I specify that the real time part of the game will be managed with a separate service, so in Go I should just develop the services (REST API) that interface with the database (for example user registration, writing matches completed on db etc.), In particular we will use Mongodb.
+
+So far I've simply used Gorilla/Mux and net/http to create APIs. I wanted to ask if you recommend a framework (e.g. Gin Gonic, Chi etc.) that allows me to better structure the code and allows me to develop faster than using only Gorilla/mux and net/http.
+
+Thanks in advance.
+## [2][Understanding bytes in Go by building a TCP protocol](https://www.reddit.com/r/golang/comments/fucme1/understanding_bytes_in_go_by_building_a_tcp/)
+- url: https://ieftimov.com/post/understanding-bytes-golang-build-tcp-protocol/
+---
+
+## [3][Recursive JSON Parser](https://www.reddit.com/r/golang/comments/ful672/recursive_json_parser/)
+- url: https://www.reddit.com/r/golang/comments/ful672/recursive_json_parser/
+---
+Howdy!
+
+Do y'all use any libraries that parse JSON into structs without needing to know the structure of the JSON beforehand?
+
+I've found a couple around the interwebs but they don't fit my needs (too slow for hundreds of thousands of concurrent JSON requests).
+
+Edit: We have a couple hundred thousand requests coming through our API hourly and we grab the data from each request. Most fit our API spec but ~5,000/hour do not. We want to capture these in a _struct way_ instead of simply logging and parsing a JSON string to potentially expand our API to better serve our users so we're looking for a lib that can recursively parse a JSON payload into a struct so we can use that in some of our functions. The goal is not to simply log, but use the payload data to call other functions based on the value payloads that we weren't expecting to receive (which are already built).
+## [4][Access denied.](https://www.reddit.com/r/golang/comments/fuph9l/access_denied/)
+- url: https://www.reddit.com/r/golang/comments/fuph9l/access_denied/
+---
+Hi. I am new to Golang. I use VScode as IDE. I created a new file, save it as main.go. I wrote a simple println method and tried to run it from vsvode trrminal. When i hit &gt;go run main.go I get an Access Denied error. 
+
+Can someone help me?
+## [5][A tiny Go library which can help you to keep your configurations structured. Currently you can init fields from: environment variables, flags, files(json and yaml) and 'default' tag.](https://www.reddit.com/r/golang/comments/fu7s9o/a_tiny_go_library_which_can_help_you_to_keep_your/)
+- url: https://github.com/BoRuDar/configuration
+---
+
+## [6][Gobinaries.com](https://www.reddit.com/r/golang/comments/fuo5ez/gobinariescom/)
+- url: https://gobinaries.com/
+---
+
+## [7][Anyone participating in Code Jam?](https://www.reddit.com/r/golang/comments/fukkqd/anyone_participating_in_code_jam/)
+- url: https://www.reddit.com/r/golang/comments/fukkqd/anyone_participating_in_code_jam/
+---
+Has anyone been able to do indicium?
+## [8][Quarantine has driven me crazy - I'm writing ArnoldC as a UNIX shell, in Go](https://www.reddit.com/r/golang/comments/ftxrwx/quarantine_has_driven_me_crazy_im_writing_arnoldc/)
 - url: https://www.reddit.com/r/golang/comments/ftxrwx/quarantine_has_driven_me_crazy_im_writing_arnoldc/
 ---
 For those unfamiliar: [https://esolangs.org/wiki/ArnoldC](https://esolangs.org/wiki/ArnoldC)
@@ -11,99 +51,44 @@ I'm a lowly CS student with no experience in Go and no business writing any syst
 &amp;#x200B;
 
 [https://github.com/John123Allison/ArnoldShell](https://github.com/John123Allison/ArnoldShell)
-## [2][Help setting up ECHO framework](https://www.reddit.com/r/golang/comments/fu80zv/help_setting_up_echo_framework/)
-- url: https://www.reddit.com/r/golang/comments/fu80zv/help_setting_up_echo_framework/
+## [9][time.Duration question](https://www.reddit.com/r/golang/comments/fugefd/timeduration_question/)
+- url: https://www.reddit.com/r/golang/comments/fugefd/timeduration_question/
 ---
-I'm using echo's quick guide that you can follow along to see where I'm at([labstack.com/guide](https://labstack.com/guide)) here.  
-So far I've ran "go get -u github.com/labstack/echo/..." on my terminal. Then, I CD'd into the directory of my project and ran "touch server.go". I opened this directory on VS Code, and copied and pasted the server file code into the server.go file. I saved it and was prompted with an error that says the following:
-
-    server.go:6:2: cannot find package "github.com/labstack/echo/v4" in any of:
-    	/usr/local/go/src/github.com/labstack/echo/v4 (from $GOROOT)
-    	/Users/[my_comp_name]/go/src/github.com/labstack/echo/v4 (from $GOPATH)
-
-I've tried going back to my terminal and run "go get ./..." to no avail. What am I doing wrong here?
-## [3][A tiny Go library which can help you to keep your configurations structured. Currently you can init fields from: environment variables, flags, files(json and yaml) and 'default' tag.](https://www.reddit.com/r/golang/comments/fu7s9o/a_tiny_go_library_which_can_help_you_to_keep_your/)
-- url: https://github.com/BoRuDar/configuration
+why does time stop at hour?  why does it not at least go to day?
+## [10][JWT parse error](https://www.reddit.com/r/golang/comments/fuj0s3/jwt_parse_error/)
+- url: https://www.reddit.com/r/golang/comments/fuj0s3/jwt_parse_error/
 ---
+Does anyone has experience with this error?
 
-## [4][Announcing Go-TinyTime, Go-TinyDate's Sister Package](https://www.reddit.com/r/golang/comments/ftlmxo/announcing_gotinytime_gotinydates_sister_package/)
-- url: https://qvault.io/2020/04/02/announcing-go-tinytime-go-tinydates-sister-package/
----
+&gt;cannot use (func(token \*jwt.Token) (interface{}, error) literal) (value of type func(token \*jwt.Token) (interface{}, error)) as jwt.Keyfunc value in argument to jwt.Parse
 
-## [5][Open source tool to auto-generate API tests using text/template](https://www.reddit.com/r/golang/comments/ftxdfg/open_source_tool_to_autogenerate_api_tests_using/)
-- url: https://www.reddit.com/r/golang/comments/ftxdfg/open_source_tool_to_autogenerate_api_tests_using/
----
-Hi all! I'm a software engineer in quality + automation tooling at Intuit, and today my team would like to announce our newly open source tool Replay Zero, a developer productivity tool to assist in authoring functional API tests. As the title says we use the standard library's templating engine to generate our output and have had a great experience with it so far.
+my code:
 
-Read my Medium post given a bit of backstory
+&amp;#x200B;
 
-[https://medium.com/@wtait1/introducing-replay-zero-77c9e5a54466](https://medium.com/@wtait1/introducing-replay-zero-77c9e5a54466)
+https://preview.redd.it/i6cq21xluoq41.png?width=776&amp;format=png&amp;auto=webp&amp;s=42b73d98fe3bdcf638b0caad0020ff3030f6020e
 
-  
-Or check out the repo directly here  
-[https://github.com/intuit/ReplayZero](https://github.com/intuit/ReplayZero)
-## [6][Generating Go code in Kubebuilder style](https://www.reddit.com/r/golang/comments/ftnxak/generating_go_code_in_kubebuilder_style/)
-- url: https://banzaicloud.com/blog/generating-go-code/
----
+Edit: Reddit won't let me post the code properly:
 
-## [7][alash3al/go-pubsub: An in-process simple publish/subscribe library for golang](https://www.reddit.com/r/golang/comments/fu59zy/alash3algopubsub_an_inprocess_simple/)
-- url: https://github.com/alash3al/go-pubsub
----
+`func GetLoggedUser(w http.ResponseWriter, r *http.Request) {`  
+`w.Header().Set("Content-Type", "application/json")`  
+`tokenString := r.Header.Get("Authorization")`  
+`token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {`  
+ `if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {`  
+ `return nil, fmt.Errorf("Unexpected signing method")`  
+ `}`  
+ `return []byte("secret"), nil`  
+ `})`  
+ `var result models.User`  
+ `var res models.Exception`  
+ `if claims, ok := token.Claims.(jwt.MapClaims); ok &amp;&amp; token.Valid {`  
+`result.Username = claims["Username"].(string)`  
+`json.NewEncoder(w).Encode(result)`  
+ `return`  
+ `} else {`  
+`res.Message = err.Error()`  
+`json.NewEncoder(w).Encode(res)`  
+ `return`  
+ `}`  
+`}`  
 
-## [8][The best kafka tool to debug brokers written in Go !](https://www.reddit.com/r/golang/comments/ftgxel/the_best_kafka_tool_to_debug_brokers_written_in_go/)
-- url: https://github.com/birdayz/kaf
----
-
-## [9][Golang on Mips](https://www.reddit.com/r/golang/comments/ftpy4s/golang_on_mips/)
-- url: https://www.reddit.com/r/golang/comments/ftpy4s/golang_on_mips/
----
-Can Golang run on this hardware? I tried to compile with GOOS=linux GOARCH=mips, but when I run compiled app, I get syntax error.
-
-`root@dm500hd:~# uname -a
-Linux dm500hd 3.2-dm500hd #1 SMP Sun Oct 29 08:22:40 CET 2017 mips GNU/Linux
-root@dm500hd:~# cat /proc/cpuinfo
-system type             : BCM7413B1 STB platform
-processor               : 0
-cpu model               : Brcm4380 V4.4  FPU V0.1
-BogoMIPS                : 403.45
-cpu MHz                 : 405.016
-wait instruction        : yes
-microsecond timers      : yes
-tlb_entries             : 32
-extra interrupt vector  : yes
-hardware watchpoint     : no
-ASEs implemented        : mips16
-shadow register sets    : 1
-kscratch registers      : 0
-core                    : 0
-VCED exceptions         : not available
-VCEI exceptions         : not available
-
-processor               : 1
-cpu model               : Brcm4380 V4.4  FPU V0.1
-BogoMIPS                : 403.45
-cpu MHz                 : 405.016
-wait instruction        : yes
-microsecond timers      : yes
-tlb_entries             : 32
-extra interrupt vector  : yes
-hardware watchpoint     : no
-ASEs implemented        : mips16
-shadow register sets    : 1
-kscratch registers      : 0
-core                    : 0
-VCED exceptions         : not available
-VCEI exceptions         : not available
-
-root@dm500hd:~# `
-## [10][Trying to make changes to an interface](https://www.reddit.com/r/golang/comments/ftuult/trying_to_make_changes_to_an_interface/)
-- url: https://www.reddit.com/r/golang/comments/ftuult/trying_to_make_changes_to_an_interface/
----
-I have a variable  named \`\`\`result\`\`\` that is an interface but when I use 
-
-    fmt.Printf("(%v, %T)\n", result, result)
-    (&amp;[0x6d 0x00000 0x01f401f5f 0x03], *[]string)
-
-I am trying to change the \`\`\`0x03\`\`\` to a different value but  \`\`\`result\[3\] = "3faf"\`\`\` doesn't work.
-
-Using golang, the variable type is [this](https://prnt.sc/rrv3ae).

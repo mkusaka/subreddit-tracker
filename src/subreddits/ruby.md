@@ -1,17 +1,65 @@
 # ruby
-## [1][jinb.in | elegant pastebins](https://www.reddit.com/r/ruby/comments/fu4mni/jinbin_elegant_pastebins/)
+## [1][The Real Difference: `self.method_name` vs `class &lt;&lt; self`](https://www.reddit.com/r/ruby/comments/fummrh/the_real_difference_selfmethod_name_vs_class_self/)
+- url: https://emmanuelhayford.com/the-difference-between-self-method-name-and-class-self-in-ruby/
+---
+
+## [2][Advanced Sneakers adapter for ActiveJob](https://www.reddit.com/r/ruby/comments/fus9k8/advanced_sneakers_adapter_for_activejob/)
+- url: https://www.reddit.com/r/ruby/comments/fus9k8/advanced_sneakers_adapter_for_activejob/
+---
+Usually [Sidekiq](https://github.com/mperham/sidekiq/) is the best choice for ruby background processing. But if a project has advanced requirements for background processing (routing, heterogeneous consumers, message priorities, etc), it might be a good idea to switch to [RabbitMQ](https://www.rabbitmq.com/)\-based solutions: build ad-hoc consumers using [Bunny](https://github.com/ruby-amqp/bunny) or use a framework (like [Sneakers](https://github.com/jondot/sneakers) and [Hutch](https://github.com/jondot/sneakers)). Any of these approaches require some boilerplate code to be written to play nice with rails.
+
+Since Rails 4.2 there is ActiveJob abstraction over background processing solutions which is great improvement. Developers have ability to replace one backend with another without much changes in codebase. But not all backends cover complete ActiveJob interface. Sneakers already has [ActiveJob adapter](https://github.com/rails/rails/blob/master/activejob/lib/active_job/queue_adapters/sneakers_adapter.rb), but it is too basic and requires a lot of work to be done to at least cover same functionality Sidekiq has (like retries with [exponential back-off](https://en.wikipedia.org/wiki/Exponential_backoff) in case of failures or even delayed execution). Hutch [does not have ActiveJob adapter](https://github.com/gocardless/hutch/issues/117).
+
+Here is the another custom ActiveJob adapter for Sneakers - [:advanced\_sneakers](https://github.com/veeqo/advanced-sneakers-activejob). It supports delays and retries. It also allows to customize message params (like routing keys or headers) and exposes AMQP metadata to jobs.
+## [3][CSV Shaper: DSL for creating CSV output in Ruby &amp; Rails](https://www.reddit.com/r/ruby/comments/fuerse/csv_shaper_dsl_for_creating_csv_output_in_ruby/)
+- url: https://github.com/paulspringett/csv_shaper
+---
+
+## [4][How to improve my skill of finding where ruby variables are defined?](https://www.reddit.com/r/ruby/comments/fufxwc/how_to_improve_my_skill_of_finding_where_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/fufxwc/how_to_improve_my_skill_of_finding_where_ruby/
+---
+Hi folks,
+
+I've not yet developed the skill of quickly determining where a variable in ruby is defined.
+
+This leads me to feel frustrated when programming ruby. Imagine if you were cooking and every time you
+needed a knife, you had to spend 3 minutes hunting around for it. 3 minutes is not a lot, but compared to
+the 3-8 seconds you're used to, it makes the cooking really frustrating.
+
+I would like to becomes as fast at finding variable definitions in ruby as I am in python or javascript
+
+Could you please suggest some
+
+ * courses I can watch/read
+
+ * exercises I can do
+
+ * tools I can use
+
+?
+## [5][emacs mode-line color according guard-rspec result?](https://www.reddit.com/r/ruby/comments/fubyhk/emacs_modeline_color_according_guardrspec_result/)
+- url: https://www.reddit.com/r/ruby/comments/fubyhk/emacs_modeline_color_according_guardrspec_result/
+---
+Is there any support / integration between guard-rspec and Emacs / zenburn-theme?
+
+(I think zenburn-theme has integration with flycheck, though it seems not working for me)
+
+&amp;#x200B;
+
+I've seen such ,,, color changing by rspec result... now i'm thinking that maybe i'm crazy or dreamt sth...
+## [6][jinb.in | elegant pastebins](https://www.reddit.com/r/ruby/comments/fu4mni/jinbin_elegant_pastebins/)
 - url: /r/rubyonrails/comments/fu2g2g/jinbin_elegant_pastebins/
 ---
 
-## [2][Most common Ruby on Rails vulnerabilities and how to deal with them in your projects](https://www.reddit.com/r/ruby/comments/ftp02g/most_common_ruby_on_rails_vulnerabilities_and_how/)
+## [7][Most common Ruby on Rails vulnerabilities and how to deal with them in your projects](https://www.reddit.com/r/ruby/comments/ftp02g/most_common_ruby_on_rails_vulnerabilities_and_how/)
 - url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-security-best-practices/
 ---
 
-## [3][Join RubyWine Online conference Saturday 10:00 UTC](https://www.reddit.com/r/ruby/comments/ftwffd/join_rubywine_online_conference_saturday_1000_utc/)
+## [8][Join RubyWine Online conference Saturday 10:00 UTC](https://www.reddit.com/r/ruby/comments/ftwffd/join_rubywine_online_conference_saturday_1000_utc/)
 - url: https://rubywine.org
 ---
 
-## [4][Veteran developers, how do you get acclimated to a large new codebase?](https://www.reddit.com/r/ruby/comments/ft5fbc/veteran_developers_how_do_you_get_acclimated_to_a/)
+## [9][Veteran developers, how do you get acclimated to a large new codebase?](https://www.reddit.com/r/ruby/comments/ft5fbc/veteran_developers_how_do_you_get_acclimated_to_a/)
 - url: https://www.reddit.com/r/ruby/comments/ft5fbc/veteran_developers_how_do_you_get_acclimated_to_a/
 ---
 I just landed my second Ruby job a few weeks ago. The codebase is HUGE and (for me) mind-bendingly complex, with layers upon layers of ... interesting ... architectural decisions in various stages of deprecation.
@@ -21,109 +69,7 @@ For those of you who've been around the block a few times, how do you get acclim
 It definitely takes time and practice. But are there any other ideas that might help in the meantime?
 
 EDIT: The amount of great advice in this thread blows me away. Thanks!
-## [5][Programming languages not required!](https://www.reddit.com/r/ruby/comments/ftk7kf/programming_languages_not_required/)
+## [10][Programming languages not required!](https://www.reddit.com/r/ruby/comments/ftk7kf/programming_languages_not_required/)
 - url: https://medium.com/the-developers-journey/programming-languages-not-required-6fd0422e9dec?source=friends_link&amp;sk=227ce47f96f0aab7dcd803538d500953
 ---
 
-## [6][Terminal Snake](https://www.reddit.com/r/ruby/comments/ft8pxs/terminal_snake/)
-- url: https://www.reddit.com/r/ruby/comments/ft8pxs/terminal_snake/
----
-I have written a game in Ruby 2.6:
-
-`require'io/console';X,Y=15,10;U,D,L,R=-X,X,-1,1;f=Array.new S=X*Y,'.';`
-`t=[h=X*(Y+1)/2];f[h]='*';(g=-&gt;{f[f.zip(0..).select{|v,_|v=='.'}.sample[1]]='+'}).();`
-`m,s=U,0;Thread.new{loop{k=STDIN.getch;`
-`m=k=='q'&amp;&amp;exit||k=='w'&amp;&amp;U||k=='s'&amp;&amp;D||k=='a'&amp;&amp;L||k=='d'&amp;&amp;R||m}};`
-`begin;print"\e[2J\e[?25l";loop{h+=m;m==U&amp;&amp;h&lt;0&amp;&amp;h+=S;m==D&amp;&amp;h&gt;=S&amp;&amp;h-=S;`
-`m==R&amp;&amp;h%X==0&amp;&amp;h-=X;m==L&amp;&amp;h%X==X-1&amp;&amp;h+=X;`
-`f[h]=='*'&amp;&amp;break;f[h]!='+'?(f[t[0]]='.';t=t.drop(1)):(s+=1;g.());t&lt;&lt;h;f[h]='*';print"\e[H";`
-`f.each_slice(X){|c|puts"#{c.join}\e[#{X}D"};puts"+#{s}\e[#{X}D";sleep 0.2}ensure;print"\e[?25h";end`
-
-It should work in any ANSI compatible terminal.
-
-EDIT:
-
-Here is the full source: https://pastebin.com/BzW1WUDP
-## [7][Why doesn't my defined function return anything?](https://www.reddit.com/r/ruby/comments/ftb2xe/why_doesnt_my_defined_function_return_anything/)
-- url: https://www.reddit.com/r/ruby/comments/ftb2xe/why_doesnt_my_defined_function_return_anything/
----
-I am pretty new to Ruby and coding in general so my first project was to make a functional calculator that allows you to input two numbers as well as decide what you wanted to do with them(+, -, \*, /). The calculator was also supposed to keep asking to enter a number until the user asks an actual number and then turn it into either an integer or a float depending on what the user initially entered. (Whether it has a "." or not). The calculator would also allow you to enter the math signs and would keep asking until you entered an actual math sign as apposed to something random. I was able to successfully pull this off without using defined functions however I wanted to update the code with defined functions for fun, since I recently learned them. For some reason when I defined my function and tried running it, it doesn't return anything.
-
-    num1=" "
-     
-    num2=" "
-     
-    def onlynums(number, word)
-      until number.to_i.to_s == number or number.to_f.to_s == number
-        print "Please enter your"+" "+word+" "+"number: "
-        number = gets.chomp()
-      end
-    return number
-    end
-     
-     
-    def stringtofloatinteger(number)
-      if number.include? "."
-        number = number.to_f
-      else
-        number = number.to_i
-      end
-    return number
-    end
-     
-     
-     
-    onlynums(num1, "first")
-     
-    stringtofloatinteger(num1)
-     
-     
-    onlynums(num2, "second")
-     
-    stringtofloatinteger(num2)
-     
-     
-    print "Please enter the mathicmatical sign you desire: "
-    sign = gets.chomp.to_s
-     
-    until sign == "+" or sign == "-" or sign == "*" or sign == "/"
-      print "Please enter the mathicmatical sign you desire: "
-      sign = gets.chomp.to_s
-    end
-     
-     
-    if sign == "+"
-      answer = num1 + num2
-      print "#{num1} + #{num2} = #{answer}"
-    elsif sign == "-"
-        answer = num1 - num2
-        print "#{num1} - #{num2} = #{answer}"
-    elsif sign == "*"
-        answer = num1 * num2
-        print "#{num1} * #{num2} = #{answer}"
-    elsif sign == "/"
-        answer = num1 / num2
-        print "#{num1} / #{num2} = #{answer}"
-    else
-      print "Error"
-    end
-## [8][Exploring Method Arguments in Ruby](https://www.reddit.com/r/ruby/comments/ft09xy/exploring_method_arguments_in_ruby/)
-- url: https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html
----
-
-## [9][Changing the Approach to Debugging in Ruby with TracePoint](https://www.reddit.com/r/ruby/comments/ft01e8/changing_the_approach_to_debugging_in_ruby_with/)
-- url: https://blog.appsignal.com/2020/04/01/changing-the-approach-to-debugging-in-ruby-with-tracepoint.html
----
-
-## [10][Swapping Out Ruby Minor Version Without Re-running Bundler 2 Leads to "Missing Gems"?](https://www.reddit.com/r/ruby/comments/ft97fg/swapping_out_ruby_minor_version_without_rerunning/)
-- url: https://www.reddit.com/r/ruby/comments/ft97fg/swapping_out_ruby_minor_version_without_rerunning/
----
-We deploy our applications using Capistrano-Bundler and have noticed the last couple of times we've updated a patch Ruby version (e.g. 2.6.5 to 2.6.6) in an existing environment, applications using Bundler 2 cannot find the previously installed gems in the existing /app/shared/bundle directory. Swapping out the Ruby version works fine for applications using Bundler 1. Redeploying the same code (no changes) results in a full \`bundle install\` (unexpected) running successfully with no issues, and the applications come online as expected. While this is a solution to the issue, it's not ideal for simply doing light security-related patching as it causes an outage for the applications.
-
-I was curious if anyone else had run into this sort of situation and maybe could point me in the right direction. I'm guessing it's a Capistrano-Bundler configuration setting that I can adjust?
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Please note: I do understand how containerization or possibly another alternative deployment method would solve this issue, and while that's another project I'm working on, I'm not switching things up right now. I'm trying to get our customer there, but that's not something that is going to happen soon. Thanks for understanding.

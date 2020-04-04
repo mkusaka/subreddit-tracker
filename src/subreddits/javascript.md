@@ -7,43 +7,65 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][ECMAScript 2020: the final feature set [show reddit]](https://www.reddit.com/r/javascript/comments/ftvgyr/ecmascript_2020_the_final_feature_set_show_reddit/)
-- url: https://2ality.com/2019/12/ecmascript-2020.html
+## [2][Showoff Saturday (April 04, 2020)](https://www.reddit.com/r/javascript/comments/fusdd8/showoff_saturday_april_04_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fusdd8/showoff_saturday_april_04_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][[OC] Interactive Timeline Map Showing Cumulative COVID-19 Cases For U.S Counties. Includes Cases Per Square Mile and Cases Per Capita (100,000)](https://www.reddit.com/r/javascript/comments/fulhbq/oc_interactive_timeline_map_showing_cumulative/)
+- url: https://www.coronashutdown.com/
 ---
 
-## [3][Building UI application with Luigi — open source micro-fronteds orchestrator](https://www.reddit.com/r/javascript/comments/fu5rto/building_ui_application_with_luigi_open_source/)
+## [4][New WebKit Features in Safari 13.1](https://www.reddit.com/r/javascript/comments/fupjhm/new_webkit_features_in_safari_131/)
+- url: https://webkit.org/blog/10247/new-webkit-features-in-safari-13-1/
+---
+
+## [5][Understanding the ECMAScript spec, part 1](https://www.reddit.com/r/javascript/comments/fuq9fv/understanding_the_ecmascript_spec_part_1/)
+- url: https://v8.dev/blog/understanding-ecmascript-part-1
+---
+
+## [6][Jolt: build lighting fast web apps using JavaScript, HTML, and CSS](https://www.reddit.com/r/javascript/comments/fukz68/jolt_build_lighting_fast_web_apps_using/)
+- url: https://github.com/outwalk-studios/jolt
+---
+
+## [7][Sudoku Visualizer, i made. Try the Algorithm X on hard :)](https://www.reddit.com/r/javascript/comments/fultvf/sudoku_visualizer_i_made_try_the_algorithm_x_on/)
+- url: https://tarikgul.github.io/Sudoku-solving-visualizer/dist/
+---
+
+## [8][[AskJS] Is there any IDE that lets you structure your code and edit one piece at a time?](https://www.reddit.com/r/javascript/comments/futjjb/askjs_is_there_any_ide_that_lets_you_structure/)
+- url: https://www.reddit.com/r/javascript/comments/futjjb/askjs_is_there_any_ide_that_lets_you_structure/
+---
+This is my biggest problem with all the IDEs I have tried. Any time I approach the 100 line mark, I suddenly get annoyed by scrolling. Because I put my global starting initializations and objects and classes at the top where they belong, but my actual main loop is at the bottom. 
+
+
+So what if there was a way for me to select the top area and make it designateed for classes initialization, then another one for objects, then another for global values, then another for loading the savegame, then another for actual logic. All would be in the same file, but you could "extract" the part you want ,and you could look only at it and have it focused.. without the interrruptions from the rest of the code... if it got too long, or less relevant, you could just branch off another sub-category. That would be great. 
+
+
+Like arbitrary chapters or groups that you could click and jump to like in Word.
+
+
+
+But like this.. I have no way to make little chunks of code without corrupting them into separate require module and convoluting the whole logic and whatnot.
+
+
+Only way to achieve what I want is to load 75 different .js files in the html header and having to deal with naming so they are in order always if I add something, and then when everything is done, just copy them and assemble one file. That's a lot of work... but I think something like this is the only way for me to not get overwhelmed and sidetracked by ("wtf is this shit" - actual code that works) while scrolling down.
+
+
+How can you guys handle one giant file... or a billion small ones where anyone trying to read the code is at a major disadvantage?
+## [9][Building UI application with Luigi — open source micro-fronteds orchestrator](https://www.reddit.com/r/javascript/comments/fu5rto/building_ui_application_with_luigi_open_source/)
 - url: https://medium.com/@arturnowakowski/luigi-micro-fronteds-orchestrator-8c0eca710151?sk=1cd1bf7d608ad64687a4b11bef6d59fb
 ---
 
-## [4][All Pluralsight videos are free for the month of April](https://www.reddit.com/r/javascript/comments/ftuevj/all_pluralsight_videos_are_free_for_the_month_of/)
-- url: https://www.pluralsight.com/
----
-
-## [5][What's new in ECMAScript 2020 | pawelgrzybek.com](https://www.reddit.com/r/javascript/comments/fu35mk/whats_new_in_ecmascript_2020_pawelgrzybekcom/)
-- url: https://pawelgrzybek.com/whats-new-in-ecmascript-2020/
----
-
-## [6][Manage HTML DOM with vanilla JavaScript](https://www.reddit.com/r/javascript/comments/ftkhco/manage_html_dom_with_vanilla_javascript/)
-- url: https://htmldom.dev/
----
-
-## [7][I recreated the colours in motion design style into an image uploader.](https://www.reddit.com/r/javascript/comments/fu80mc/i_recreated_the_colours_in_motion_design_style/)
-- url: https://conorlyons.co.uk/the-colours-of-motion/
----
-
-## [8][Zero-Dependency Utility Library with Over 400 Useful Modules](https://www.reddit.com/r/javascript/comments/fu7ze0/zerodependency_utility_library_with_over_400/)
+## [10][Zero-Dependency Utility Library with Over 400 Useful Modules](https://www.reddit.com/r/javascript/comments/fu7ze0/zerodependency_utility_library_with_over_400/)
 - url: https://licia.liriliri.io/
 ---
 
-## [9][Build an extendable command parser with pure js](https://www.reddit.com/r/javascript/comments/fu7pv2/build_an_extendable_command_parser_with_pure_js/)
-- url: https://gymconsole.app/blog/create-command-parser
+## [11][For us, who like to work with background music, this sub might be of interest. Check it out!](https://www.reddit.com/r/javascript/comments/fukkfa/for_us_who_like_to_work_with_background_music/)
+- url: /r/codingplaylists/comments/fugv8w/welcome_to_rcodingplaylists/
 ---
 
-## [10][Interactive Javascript Particles Network Library](https://www.reddit.com/r/javascript/comments/fu2zdf/interactive_javascript_particles_network_library/)
-- url: https://github.com/OssamaRafique/Interactive-Image-Particles
----
-
-## [11][sort-es , a modern, tree-shakeable, type-safe, utility library to sort any type of array](https://www.reddit.com/r/javascript/comments/fu43jm/sortes_a_modern_treeshakeable_typesafe_utility/)
-- url: http://sort-es.netlify.com/
+## [12][Crawlium (DeepCrawling): A crawling platform based on Chrome (Chromium) browser to get a deeper look into the ecosystem of content inclusion on the Web.](https://www.reddit.com/r/javascript/comments/fup0fe/crawlium_deepcrawling_a_crawling_platform_based/)
+- url: https://github.com/sajjadium/Crawlium
 ---
 

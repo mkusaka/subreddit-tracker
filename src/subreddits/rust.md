@@ -23,90 +23,129 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/31/this-week-in-rust-332/
 ---
 
-## [3][Iced, a cross-platform GUI library — New release featuring custom styling, event subscriptions, additional widgets, new examples, and more!](https://www.reddit.com/r/rust/comments/ftpld3/iced_a_crossplatform_gui_library_new_release/)
-- url: https://github.com/hecrj/iced/pull/253
+## [3][Why I’m building a new async runtime](https://www.reddit.com/r/rust/comments/fudgku/why_im_building_a_new_async_runtime/)
+- url: https://stjepang.github.io/2020/04/03/why-im-building-a-new-async-runtime.html
 ---
 
-## [4][Like alloca but not quite. Hello to the community and please take a look at my library.](https://www.reddit.com/r/rust/comments/fu37q9/like_alloca_but_not_quite_hello_to_the_community/)
-- url: https://www.reddit.com/r/rust/comments/fu37q9/like_alloca_but_not_quite_hello_to_the_community/
+## [4][Introducing Kubie: a more powerful alternative to kubectx and kubens, written in Rust](https://www.reddit.com/r/rust/comments/fut560/introducing_kubie_a_more_powerful_alternative_to/)
+- url: https://blog.sbstp.ca/introducing-kubie/
 ---
-Hi people. This is my first post on reddit, so congratulate me on losing my reddit-virginity and don’t kick me very much for post design.
 
-I recently wrote one library for rust, because I didn’t find any analogues on the network, and because I had an idea for implementing this feature.
-
-And recently, I discovered that Google somehow does not know about it, so I decided to post it here so that at least someone would look at it and give me feedback or something like that.
-
-And so, there it is. https://crates.io/crates/inplace_it
-
-It solves the problem of allocating arrays of previously unknown length on the stack memory. Well, at least, it's trying to solve.
 ## [5][[OC] Fondant - macro based, configuration management library for CLI utils](https://www.reddit.com/r/rust/comments/fu8c0p/oc_fondant_macro_based_configuration_management/)
 - url: https://i.redd.it/akvcc4e7hlq41.png
 ---
 
-## [6][Using Rust to follow along with a book directed towards C](https://www.reddit.com/r/rust/comments/fu7q1a/using_rust_to_follow_along_with_a_book_directed/)
-- url: https://www.reddit.com/r/rust/comments/fu7q1a/using_rust_to_follow_along_with_a_book_directed/
+## [6][I've made a templates engine to ease writing repetitive boilerplate code [CHROBRY]](https://www.reddit.com/r/rust/comments/fuobnj/ive_made_a_templates_engine_to_ease_writing/)
+- url: https://www.reddit.com/r/rust/comments/fuobnj/ive_made_a_templates_engine_to_ease_writing/
 ---
-I started studying Computer Organisation and Design (ARM Edition). All codes and other things are directed towards C.
-So if anyone has read the book, can I follow along with the book with Rust knowledge?
-Can I implement what is being taught using Rust?
-## [7][A recursive-descent parser for the Lambda Calculus in Rust](https://www.reddit.com/r/rust/comments/fu041f/a_recursivedescent_parser_for_the_lambda_calculus/)
-- url: https://www.reddit.com/r/rust/comments/fu041f/a_recursivedescent_parser_for_the_lambda_calculus/
----
-[This](https://christianpoveda.github.io/blog/parsing/) is the second post in my "Writing a Lambda Calculus Implementation in Rust" series. It's about writing a simple parser for the Lambda Calculus implementation I did in the [first post](https://christianpoveda.github.io/blog/untyped-lambda-calculus/)
+Hi Rustaceans!
 
-I'm happy to receive suggestions, opinions and comments in general about it :)
-## [8][watson - a minimalistic no_std + alloc web assembly parser](https://www.reddit.com/r/rust/comments/ftwyud/watson_a_minimalistic_no_std_alloc_web_assembly/)
-- url: https://github.com/richardanaya/watson
----
+I've made a crate (and CLI app) that generates your target language files based on template file with data types definitions and behaviours assigned to them. Loosely inspired by Rust structs and traits.
 
-## [9][Is there a cleaner way to write this code while appeasing the borrow checker?](https://www.reddit.com/r/rust/comments/fu2xeh/is_there_a_cleaner_way_to_write_this_code_while/)
-- url: https://www.reddit.com/r/rust/comments/fu2xeh/is_there_a_cleaner_way_to_write_this_code_while/
----
-Sorry for the noob question :) I have a performance critical piece of code similar to this:
+I'm using it to generate serde-like serializable data for my Unreal Engine 4 game project, i think you might find it useful too :)
 
-    fn parse(data: Vec&lt;u8&gt;) {
-      let prefix = &amp;data[0..2];
-      let header = &amp;data[3..6];
-      // .. some more processing of prefix and header ..
-      if prefix[0] == 0 &amp;&amp; header[1] == 1 {
-        let text = &amp;data[7..];
-        let lowercase_text: Vec&lt;u8&gt; = text.to_ascii_lowercase();
-        if lowercase_text[0] == 'a' &amp;&amp; lowercase_text[5] == 'x' &amp;&amp; .. {
-          process(prefix, header, &amp;lowercase_text);
+Repo: [https://github.com/PsichiX/Chrobry](https://github.com/PsichiX/Chrobry)
+## [7][PSA: docs.rs/std redirects to doc.rust-lang.org/std](https://www.reddit.com/r/rust/comments/fuk39x/psa_docsrsstd_redirects_to_docrustlangorgstd/)
+- url: https://www.reddit.com/r/rust/comments/fuk39x/psa_docsrsstd_redirects_to_docrustlangorgstd/
+---
+Title. Just in case someone didn't know (just like me).
+## [8][Impact of TLS dependency removal from async internals](https://www.reddit.com/r/rust/comments/fua76v/impact_of_tls_dependency_removal_from_async/)
+- url: https://www.reddit.com/r/rust/comments/fua76v/impact_of_tls_dependency_removal_from_async/
+---
+TL;DR: The compiler is now able to optimize much better than before.
+
+I wanted to see the impact of recent TLS dependency removal from async internal implementation (https://github.com/rust-lang/rust/pull/69033)
+
+Here is the toy example:
+
+```
+async fn foo() -&gt; u32 {
+    3
+}
+
+async fn square() -&gt; u32 {
+    let a = foo().await;
+    let b = foo().await;
+    a * b
+}
+
+pub fn xx(cx: &amp;mut Context&lt;'_&gt;) -&gt; u32 {
+    let mut f = square();
+    let mut f = unsafe { Pin::new_unchecked(&amp;mut f) };
+    loop {
+        match f.as_mut().poll(cx) {
+            Poll::Ready(x) =&gt; break x,
+            Poll::Pending =&gt; {}
         }
-      }
     }
+}
+```
 
-What I would like to do is be able to mutate the 'text\_bytes' portion of the current Vec without having to allocate a new Vec:
+On stable 1.42.0: https://rust.godbolt.org/z/WfZMRs
 
-    fn parse(data: Vec&lt;u8&gt;) {
-      let prefix = &amp;data[0..2];
-      let header = &amp;data[3..6];
-      // .. some more processing of prefix and header ..
-      if prefix[0] == 0 &amp;&amp; header[1] == 1 {
-        let text = &amp;mut data[7..];
-        text.make_ascii_lowercase();
-        if text[0] == 'a' &amp;&amp; text[5] == 'x' &amp;&amp; .. {
-          process(prefix, header, text);
+On current nightly: https://rust.godbolt.org/z/jL_5sC
+
+It would be interesting to see some real world differences.
+## [9][Rust and Computational Science?](https://www.reddit.com/r/rust/comments/fugyk0/rust_and_computational_science/)
+- url: https://www.reddit.com/r/rust/comments/fugyk0/rust_and_computational_science/
+---
+hi,
+
+i am interested in a Master's Degree in Computational Science (Neuroscience) / Computational Neuroscience. Doing a bit of research I came across this [Wiki article](https://en.wikipedia.org/wiki/Computational_science).
+
+It lists a few programming languages that are predominately used in that field: Fortran, Octave, Haskell, Julia, Maple, Matlab, Python, Perl, R , etc.
+
+Rust isn't listed. Is that just because of the relative novelty of the language or are there some features missing that would make rust a bad choice language for that field?
+
+what do those languages have that rust doesn't (yet)?
+## [10][From&lt;Option&lt;T&gt;&gt; for Option&lt;U&gt; is not implemented?](https://www.reddit.com/r/rust/comments/fui7g4/fromoptiont_for_optionu_is_not_implemented/)
+- url: https://www.reddit.com/r/rust/comments/fui7g4/fromoptiont_for_optionu_is_not_implemented/
+---
+Is there a reason that the follow blanket impl is not actually in core?  
+
+``` rust
+impl&lt;T, U: From&lt;T&gt;&gt; From&lt;Option&lt;T&gt;&gt; for Option&lt;U&gt; {
+    fn from(t: Option&lt;T&gt;) -&gt; Option&lt;U&gt; {
+        if let Some(inner_t) = t {
+            Some(t.into())
+        } else {
+            None
         }
-      }
     }
-
-however, because I have the two immutable borrows in prefix and header, I can't do this. One option is to drop prefix/header first before calling make\_ascii\_lowercase(), and then re-assigning prefix and header again. What would be the most efficient way to do this? Thanks!
-## [10][Movie-thumbnailer: create wallpapers from movie scenes. Super minimalist glue for ffmpeg+imagemagick](https://www.reddit.com/r/rust/comments/fu7lrk/moviethumbnailer_create_wallpapers_from_movie/)
-- url: https://github.com/indiscipline/movie-thumbnailer
+}
+```
+## [11][Rust has to rework its error reporting](https://www.reddit.com/r/rust/comments/fubeek/rust_has_to_rework_its_error_reporting/)
+- url: https://www.reddit.com/r/rust/comments/fubeek/rust_has_to_rework_its_error_reporting/
 ---
+I really like rust and a in the beginning a great feature was the detailed error reporting where you could directly see what's wrong and how you could fix it.
 
-## [11][Is there any way of converting futures::Future and std future back and forth?](https://www.reddit.com/r/rust/comments/fu786p/is_there_any_way_of_converting_futuresfuture_and/)
-- url: https://www.reddit.com/r/rust/comments/fu786p/is_there_any_way_of_converting_futuresfuture_and/
----
-I am stuct with a function that returns a futures::Future. I have a bunch of async functions but apparently I cannot use them in a function that is not async but returns a Future. 
-This sounds so stupid really but here it is.
-What are my options I cant abandon using async functions because of actix but also I cant use them in from_request apparently because it is not an async function.
-the most stupid thing is that I am forced to use blocking functions inside from_request which defeats the entire idea of using async functions for request since the extractors are blocking
-## [12][Dataframes in Rust that support String and numeric types in the same value?](https://www.reddit.com/r/rust/comments/fu6p8k/dataframes_in_rust_that_support_string_and/)
-- url: https://www.reddit.com/r/rust/comments/fu6p8k/dataframes_in_rust_that_support_string_and/
----
-I've just started exploring Pandas and Numpy from the Python world, and I've found that the dataframes there are tremendously useful because you can load all kinds of real world datasets into them that include strings. Its also easy to dynamically add, remove, slice and filter these dataframes too.
+I am afraid that now with `futures` rust error messages became really bad. Quite often I get error messages like these:
 
-However, when I looked for a good library in Rust that had even basic support for Strings, I could find any. Do they exist?
+    error[E0599]: no method named `into_stream` found for type `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt;` in the current scope
+       --&gt; src/main.rs:220:19
+        |
+    220 |     let foo = foo.into_stream();
+        |                   ^^^^^^^^^^^ method not found in `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt;`
+        |
+        = note: the method `into_stream` exists but the following trait bounds were not satisfied:
+                `&amp;futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::future::future::FutureExt`
+                `&amp;futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::stream::try_stream::TryStreamExt`
+                `&amp;mut futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::future::future::FutureExt`
+                `&amp;mut futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::stream::try_stream::TryStreamExt`
+                `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::future::future::FutureExt`
+                `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::stream::try_stream::TryStreamExt`
+    
+
+I think that async and futures are really amazing tools that help you to write good and efficient code, but coding with unreadable error messages like these is no longer fun.
+
+Do you think this situation can be resolved somehow?
+## [12][Mutable Slices &amp; Borrow Checker](https://www.reddit.com/r/rust/comments/fuiwze/mutable_slices_borrow_checker/)
+- url: https://www.reddit.com/r/rust/comments/fuiwze/mutable_slices_borrow_checker/
+---
+This post is inspired by [this tweet](https://twitter.com/plaidfinch/status/1246200064332234758) challenging everyone to get the linked piece of code ([link to playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=a7a8e3e6b08039370bcc4caa10212e4d)) working.
+
+However, it is not quite clear to me why this piece of code fails in the first place; according to the compiler error message, the call to `slice.get_mut(index)` in line 8 mutably borrows `slice` in the previous loop iteration; but shouldn't that reference have been dropped in the previous loop iteration as well?
+
+If I am mistaken, what is the reason this piece of code doesn't pass the borrow checker?
+
+Looking forward to your opinions!

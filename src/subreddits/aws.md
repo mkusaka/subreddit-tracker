@@ -1,107 +1,76 @@
 # aws
-## [1][Amazon Redshift update – ra3.4xlarge instances](https://www.reddit.com/r/aws/comments/fu14lp/amazon_redshift_update_ra34xlarge_instances/)
-- url: https://aws.amazon.com/blogs/aws/amazon-redshift-update-ra3-4xlarge-instances/
+## [1][Four months of 100% website uptime! Thanks AWS!](https://www.reddit.com/r/aws/comments/fua8ye/four_months_of_100_website_uptime_thanks_aws/)
+- url: https://www.reddit.com/r/aws/comments/fua8ye/four_months_of_100_website_uptime_thanks_aws/
+---
+We used to host our website using a dedicated server with each web service in separate Docker containers. Although it worked, it wasn't elegant and we often had downtime. We're now using Elastic Beanstalk and Aurora through AWS.
+
+When we initially moved over, our I/O charges with Aurora were horrendous. It forced us to tweak our code to decrease the database queries. As a result, lower charges and our web app runs quicker.
+
+Even after multiple tweaks, AWS is still roughly twice the price of hosting the website on a dedicated server but I've now gained something invaluable which is better sleep.
+
+Thought I'd share my experience in-case anybody else is thinking of switching from dedicated to cloud.
+## [2][Internet outage scenario between regions?](https://www.reddit.com/r/aws/comments/fuqmvk/internet_outage_scenario_between_regions/)
+- url: https://www.reddit.com/r/aws/comments/fuqmvk/internet_outage_scenario_between_regions/
+---
+I have two aws regions, one near me and one far from other continent. 
+
+My ISP have problems with their internet that causes extremely lags or timeouts frequently to the far region. 
+
+I must keep them both. How to solve connectivity issue with far region from current region?
+
+Mostly I can’t access our website that written using MERN stack - with over 500mil records in db. 
+
+I’m thinking of putting a cloudfront in front of website’s load balancer?
+
+And maybe use vpc peering? Can vpc peering hep in this case? If yes then how?
+## [3][Amazon RDS for SQL Server now supports In-Region Read Replicas](https://www.reddit.com/r/aws/comments/fuepgt/amazon_rds_for_sql_server_now_supports_inregion/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/04/amazon-rds-for-sql-server-now-supports-in-region-read-replicas/
 ---
 
-## [2][Face Recognition Attendence with Python AWS Rekognition Raspberry Pi3](https://www.reddit.com/r/aws/comments/fu5hhc/face_recognition_attendence_with_python_aws/)
+## [4][TIFU. Left my instances paused](https://www.reddit.com/r/aws/comments/fuktaa/tifu_left_my_instances_paused/)
+- url: https://www.reddit.com/r/aws/comments/fuktaa/tifu_left_my_instances_paused/
+---
+The bill was awful.
+
+:(
+## [5][Stepfunction sending SNS Issue](https://www.reddit.com/r/aws/comments/fuklrt/stepfunction_sending_sns_issue/)
+- url: https://www.reddit.com/r/aws/comments/fuklrt/stepfunction_sending_sns_issue/
+---
+I have a stepfunction which utilizes a lambda function that will call send a email SNS via the sdk.  Unfortunately it doesnt seem to make publish the SNS as I dont receive any emails.  My other lambda functions not inside a stepfunction work as intended.  Does a step function need specific privileges?  Im all this via serverless and my top level iamrolesstatement lets all lambdas publish SNS messages.  Thoughts or suggestions please. Thank you!
+## [6][How to set scopes for a JWT Authorizer (from HTTP APIs) with Cognito as issuer?](https://www.reddit.com/r/aws/comments/fujfwa/how_to_set_scopes_for_a_jwt_authorizer_from_http/)
+- url: https://www.reddit.com/r/aws/comments/fujfwa/how_to_set_scopes_for_a_jwt_authorizer_from_http/
+---
+The API Gateway Developer Guide instructs us in [this page](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) on how to create their built-in **JWT Authorizers** for **HTTP API** routes.
+
+According to this guide, we can create a JWT Authorizer for a given route. The authorizer evaluates the token by checking the token's **"aud" claim** (which should match acceptable clients configured for the authorizer), as well as the token's **scopes** (which should match acceptable scopes configured for the authorizer) and other token claims (kid, iss, etc).
+
+However, I'm using AWS Cognito as IdP and token issuer. And the tokens we get back from Cognito after login seem to be incompatible with JWT Authorizers: Cognito's **Access Tokens** include scopes but don't include an "aud" claim (they use "client\_id" instead), and their **ID Tokens** include an "aud" claim, but don't include scopes.
+
+I really liked the simplicity of JWT Authorizers. **But how am I supposed to scope my authorizers if Cognito can't give me a workable token**?
+
+Can anybody suggest me a workaround this issue that can target a large user base (like \~50,000 users)?
+## [7][Any news on Aurora multi-region multi-master?](https://www.reddit.com/r/aws/comments/fuf8t1/any_news_on_aurora_multiregion_multimaster/)
+- url: https://www.reddit.com/r/aws/comments/fuf8t1/any_news_on_aurora_multiregion_multimaster/
+---
+Back in 2017, AWS announced [Aurora multi-master](https://www.youtube.com/watch?v=4XL1VZymTA8), and that went GA in August last year. In that announcement AWS said that multi-region support for multi-master would come in 2018, but as far as I'm aware nothing else has been announced. Delays are understandable, I'm really just curious. Has anyone heard anything? Anyone know if multi-region Aurora masters are any closer to reality?
+## [8][Face Recognition Attendence with Python AWS Rekognition Raspberry Pi3](https://www.reddit.com/r/aws/comments/fu5hhc/face_recognition_attendence_with_python_aws/)
 - url: https://www.reddit.com/r/aws/comments/fu5hhc/face_recognition_attendence_with_python_aws/
 ---
 Face Recognition Attendence with AWS Rekognition Raspberry Pi3
 
 https://github.com/Arbazkhan4712/Face-Recognition-Attendence-with-AWS-Rekognition-Raspberry-Pi3
-## [3][AWS management console takes forever to load](https://www.reddit.com/r/aws/comments/fu8e3u/aws_management_console_takes_forever_to_load/)
-- url: https://www.reddit.com/r/aws/comments/fu8e3u/aws_management_console_takes_forever_to_load/
+## [9][How to create an encrypted AMI?](https://www.reddit.com/r/aws/comments/fugrju/how_to_create_an_encrypted_ami/)
+- url: https://www.reddit.com/r/aws/comments/fugrju/how_to_create_an_encrypted_ami/
 ---
-us-east-2
+I started with a standard AMI (unbuntu).  I installed various software, edited config files, etc.  My EC2 instance is working how I want.  Now I want to create an AMI so I can stop the instance and restart it later with all the same setup, possibly on a more capable instance type as circumstances require.  But as some of the config files contain passwords, I need the AMI to be encrypted.  How do I do that?
 
-Tried with Firefox, Opera, Chrome. It's the same.
-
-Anybody facing similar issue?
-## [4][Heard of Lightsail? Use Lightsail? Let us know your feedback!](https://www.reddit.com/r/aws/comments/ftpvbb/heard_of_lightsail_use_lightsail_let_us_know_your/)
-- url: https://www.reddit.com/r/aws/comments/ftpvbb/heard_of_lightsail_use_lightsail_let_us_know_your/
+I have a Customer Master Key, and enabled default encryption, but that does not seem to be enough, as when I created a new AMI from my running instance, the underlying snapshot was marked NOT encrypted.
+## [10][Cors issues](https://www.reddit.com/r/aws/comments/fug7hy/cors_issues/)
+- url: https://www.reddit.com/r/aws/comments/fug7hy/cors_issues/
 ---
-Hello redditors,You may or may not have heard of [Lightsail](https://aws.amazon.com/lightsail/). For those of us who haven’t heard, to quote our marketing folks -“Lightsail is an easy-to-use cloud platform that offers you everything needed to build an application or website, plus a cost-effective, monthly plan.”
-
-TL;DR we provide you basic building blocks like instances, load balancers and databases with an easy-to-use interface (no really!) and simple monthly bundle pricing (just like paying for your netflix). We use the same infra as other AWS services like EC2 - hence same the reliability and availability. Give us a try if you haven’t (first month’s on us).
-
-OK. Those of you who are already using us, Thank you! We from the service team are looking forward for your feedback - What do you like? What do you dislike? Something blocking you from using Lightsail? Something that could improve? You have a feature idea? Is there a cloud technology which could benefit from Lightsailification?Even a “How do I do &lt;this&gt; on Lightsail?” question.ANY and ALL feedback welcome!
-
-As we plan our roadmap for the year ahead, we take this feedback seriously. So, thank you in advance for your feedback!I am joined by /u/mgcataws , /u/emwaws from my team to respond to your feedback.
-
-Thank you and stay safe!
-
-Some resources that may come in handy-Bunch of getting started guides - [https://aws.amazon.com/lightsail/resources/](https://aws.amazon.com/lightsail/resources/)Lightsail pricing- [https://aws.amazon.com/lightsail/pricing/ ](https://aws.amazon.com/lightsail/pricing/)
-
-&amp;#x200B;
-
-EDIT: Thank you all for taking time to give your feedback! Please keep them coming. We will read through every comment and take that feedback. Even if you don't see us comment on your comment, we still have taken your feedback!
-## [5][Help to create Aurora Read Replica](https://www.reddit.com/r/aws/comments/fu7jdj/help_to_create_aurora_read_replica/)
-- url: https://www.reddit.com/r/aws/comments/fu7jdj/help_to_create_aurora_read_replica/
----
-I have a Primary/Master RDS with Mysql 5.7 running and whenever i create a Aurora Read replica, it always create like this:    
-https://imgur.com/a/vEEwX2D
-
-
-why its creating a write role when i clearly click on "Create Aurora Read Replica"?
-
-
-even if i connect using the 2nd endpoint that says "ro" with "reader" role, i can still see its not read only(value is = 0) by doing this query:  SHOW GLOBAL VARIABLES LIKE 'innodb_read_only';    
-(Why it created 2 endpoints anyway?)
-
-
-I try to find that "role" so i can modify it but i cant find it.
-
-
-I did try to create a normal mysql replica(Create Read Replica) before this and it was as read only as expected.
-
-
-I want to use the Aurora as i read that it can use autoscale for up to 15 Read Replica compared to a normal one of 5 replicas without autoscale, Plus i think i dont need HAProxy for Aurora read replica compared to the normal read replica
-## [6][AWS Cognito SignUp and LogIn with MobileID / Unique Phone Id](https://www.reddit.com/r/aws/comments/fu6ooj/aws_cognito_signup_and_login_with_mobileid_unique/)
-- url: https://www.reddit.com/r/aws/comments/fu6ooj/aws_cognito_signup_and_login_with_mobileid_unique/
----
-Hello people
-
-I want to perform the following SingUp/ Login flow with  amazon cognito:
-
-Option 1.) LogIn with E-Mail and Password
-
-Option 2.a) LogIn with unique device id.               
-
-2.b) If account doesn't exist: Sign Up User with unique device id
-
-Basically we let the user acces the App directly and save him as a  user with his unique device id, so that we can save his input, even if  he deletes  and reinstalls the app / the app crashes etc.
-
-We didn't find a working solution as of right now, is there a way to realize this?
-
-Thanks a lot!!
-## [7][Is it possible to only use a phone number as a sender for AWS SNS SMS?](https://www.reddit.com/r/aws/comments/fu3uav/is_it_possible_to_only_use_a_phone_number_as_a/)
-- url: https://www.reddit.com/r/aws/comments/fu3uav/is_it_possible_to_only_use_a_phone_number_as_a/
----
-Currently I'm able to send SMS using AWS SNS but it defaults to using the Sender ID in countries where it is supported. Is it possible to turn the Sender ID off completely in all countries?
-## [8][How to get details of terminated EC2 instance?](https://www.reddit.com/r/aws/comments/fttbzn/how_to_get_details_of_terminated_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/fttbzn/how_to_get_details_of_terminated_ec2_instance/
----
-I only have the internal IP of an EC2 instance that has been terminated. I don’t know any other details like the InstanceId. How do I get info (like who created/terminated) on that terminated instance in cloudtrail by private IP?
-## [9][Every time a Lambda function fails (synchronous and async) I want to receive an email with the logs and traceback. How can I do this?](https://www.reddit.com/r/aws/comments/ftzf3r/every_time_a_lambda_function_fails_synchronous/)
-- url: https://www.reddit.com/r/aws/comments/ftzf3r/every_time_a_lambda_function_fails_synchronous/
----
-Currently I've used my tooling to set up a DLQ for each lambda. One error handler lambda processes events from those SNS topics.
-
-So I currently get emails like below, but only for asynchronously invoked lambdas.
-
-&gt; Lambda x was invoked at time y with payload z. The error message was "blah". Here's a URL to the full Cloudwatch logs, but also the logs are printed here, below.
-
-(Note: at my scale one email per lambda won't overwhelm my mail client. And I can get my error handler lambda to deduplicate messages if the same fault happens repeatedly)
-
-The code to achieve this is pretty messy. The SNS payload only includes the error message sometimes. It also doesn't have the complete logs.
-
-But worst of all, DLQ doesn't work for synchronously invokes Lambdas. (E.g. ones serving a Rest API.)
-
-How else could I go about doing this?
-How can I trigger a lambda every time a synchronously invoked Lambda fails?
-## [10][How to ensure that a role can be assumed but a single resource?](https://www.reddit.com/r/aws/comments/ftllyb/how_to_ensure_that_a_role_can_be_assumed_but_a/)
-- url: https://www.reddit.com/r/aws/comments/ftllyb/how_to_ensure_that_a_role_can_be_assumed_but_a/
----
-I have a Lambda function so I had to create a role with some permissions and also had to add a trusted relationship to the Lambda service. But how to ensure that just my lambda function can assume that role?
-
-I've tried everything but nothing is working.
+My lambda api is throwing cors issue from my browser. I have a react front end.
+Lambda is nodejs.
+I have enabled cors headers in the response.
+Access-control-allow-origin but the issue doesn’t go away.
+Any tips on how to resolve.
+Thanks

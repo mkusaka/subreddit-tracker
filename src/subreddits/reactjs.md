@@ -84,328 +84,234 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Flowify - A new tab extension that I made. It uses React, Framer Motion, and Styled Components. https://addons.mozilla.org/en-US/firefox/addon/flowify/ https://github.com/Etesam913/flowify](https://www.reddit.com/r/reactjs/comments/ftrlpf/flowify_a_new_tab_extension_that_i_made_it_uses/)
-- url: https://v.redd.it/7izazpne6gq41
+## [3][How to test custom React hooks](https://www.reddit.com/r/reactjs/comments/fuq6py/how_to_test_custom_react_hooks/)
+- url: https://kentcdodds.com/blog/how-to-test-custom-react-hooks
 ---
 
-## [4][Help Designing an Optimized Approach to Multi-Filtering Data](https://www.reddit.com/r/reactjs/comments/fu8et9/help_designing_an_optimized_approach_to/)
-- url: https://www.reddit.com/r/reactjs/comments/fu8et9/help_designing_an_optimized_approach_to/
+## [4][show reddit: I made something very silly in react: the mlemmer blepper](https://www.reddit.com/r/reactjs/comments/fuawdr/show_reddit_i_made_something_very_silly_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/fuawdr/show_reddit_i_made_something_very_silly_in_react/
 ---
-We have a table displaying data and a filter component. In this filter you can filter the different columns in the table.
+I took some quarantine downtime to make something silly: [https://blepper.andrewray.me/](https://blepper.andrewray.me/)
 
-Ex.
+Tech stack: This is built using react, react-spring, and the awesome [react-three-fiber](https://github.com/react-spring/react-three-fiber) library, which glues imperative Threejs code to declarative react code. The model was hand traced in Blender from a photo, and loaded using GLTF. For fun I built a local development setup using Nextjs and Docker. Nextjs gave me hot reloading in my dev environment, code splitting, and static site generation.
 
-column A) "Event Types" You can filter by checkboxes of the different possible event types
-
-column B) "Number" You can filter by slider 
-
-column C) "Non enumerated text" you can filter by text field you enter value to match
-
-My first approach to filtering this would be,
-
-1) Loop through data
-2) Loop through user selected filters
-
-for each data (row in table) see if it matches the filter, if true push to a "filteredData" array.
-
-The problem is this approach only checks if true for ANY of the filters and pushes to "filteredData" I need to ensure the each data row matches ALL filters before pushing. But any approach I take feels slow for the size of dataset.
-## [5][The callback in S3.putObject().on('httpUploadProgress', callback) doesn't update a React state array correctly](https://www.reddit.com/r/reactjs/comments/fu87ap/the_callback_in_s3putobjectonhttpuploadprogress/)
-- url: https://www.reddit.com/r/reactjs/comments/fu87ap/the_callback_in_s3putobjectonhttpuploadprogress/
+If you've been on the internet long enough, you probably know the gif that inspired this site.
+## [5][How to develop infinite scroll with React. Explanation and tested implementation.](https://www.reddit.com/r/reactjs/comments/futg5v/how_to_develop_infinite_scroll_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/futg5v/how_to_develop_infinite_scroll_with_react/
 ---
-[I also posted this on Stack Overflow](https://stackoverflow.com/posts/61004673/edit)
+Hi guys! I hope you're all doing well.
 
-[Github repo](https://github.com/BitterDone/ReactAwsS3UploadProgress)
+A couple of days ago, I decided to implement a React app with an infinite scroll. I ended up writing an [article](https://joaoforja.com/blog/how-to-implement-infinite-scroll-in-react/) that goes over the implementation and the thought process I used.
 
-Apologies for the formatting. It looks better on the SO post.
+Although the article doesn't go over how to test the implementation, you can check this [repository](https://github.com/Jnforja/infinite-scroll-react-app) to see the tests I ended up doing.
 
-My desired goal is a state array that's updated in real-time with the upload progress of multiple file.
-
-Each callback is able to update the % progress for its file at the correct index in the state array \`uploadProg\`, but it's like they can't see the updated \`uploadProg\` that result from other callbacks.
-
-In the image below, the first \`&gt; (3) \[0,0,0\]\` is logging \`uploadProg\` before updating, the second is logging \`newUploadProg\` after updating.
-
-What am I missing here? Is this a misunderstanding of closures in Javascript?
-
-Thank you for any insights!
-
-[Imgur screencap of uploadProg state array console.log'd](https://i.stack.imgur.com/2C3zY.png)
-
- 
-
-`import React, { useState } from 'react';`  
-`import logo from './logo.svg';`  
-`import './App.css';`  
-`import AWS from 'aws-sdk';`  
-`function App() {`  
- `const [selectedFiles, setSelectedFiles] = useState({})`  
- `const [uploadProg, setUploadProg] = useState([])`  
- `var s3 = new AWS.S3({`  
- `apiVersion: '2012-10-17',`  
- `accessKeyId: 'accessKeyId',`  
- `secretAccessKey: 'secretAccessKey',`  
-`});`  
- `const handleFile = event =&gt; {`  
- `setSelectedFiles(event?.target?.files)`  
- `setUploadProg(new Array(Object.keys(event?.target?.files).length).fill(0))`  
-`}`  
- `const upload = event =&gt; {`  
- `Object.keys(selectedFiles).forEach((key, index) =&gt; {`  
- `console.log(key)`  
- `console.log(selectedFiles[key])`  
- `var params = {`  
- `Body: selectedFiles[key],`  
- `Bucket: "uploadprogress",`  
- `Key: \`exampleobject${index}\`,`  
-`};`  
- `s3.putObject(params)`  
-`.on('httpUploadProgress', (progressEvent, response) =&gt; {`  
- `const newUploadProg = [...uploadProg]`  
- `const percent = parseInt(100 * progressEvent.loaded / progressEvent.total)`  
- `newUploadProg[index] = percent`  
- `console.log(uploadProg)`  
- `console.log(newUploadProg)`  
- `console.log('______________')`  
- `setUploadProg(newUploadProg)`  
-`})`  
-`.send((err, data) =&gt; {`  
- `if (err) console.log(err, err.stack);`  
- `else console.log(data);`  
-`})`  
-`})`  
-`}`  
- `return (`  
- `&lt;div className="App"&gt;`  
- `&lt;header className="App-header"&gt;`  
- `&lt;img src={logo} className="App-logo" alt="logo" /&gt;`  
- `&lt;input type="file" name="file" onChange={handleFile} multiple /&gt;`  
- `&lt;button type="button" class="btn btn-success btn-block" onClick={upload}&gt;Upload&lt;/button&gt;`  
- `{uploadProg.map(percent =&gt; (&lt;div style={{`  
- `margin: 5,`  
- `width: 100,`  
- `height: 10,`  
- `backgroundColor: 'green'`  
-`}}&gt;`  
- `&lt;div style={{`  
- `height: 8,`  
- `width: percent,`  
- `backgroundColor: 'yellow',`  
-`}}&gt;`  
- `&lt;/div&gt;`  
- `&lt;/div&gt;))}`  
- `&lt;/header&gt;`  
- `&lt;/div&gt;`  
-`);`  
-`}`  
-`export default App;`
-## [6][Any tips for a code review?](https://www.reddit.com/r/reactjs/comments/fu841r/any_tips_for_a_code_review/)
-- url: https://www.reddit.com/r/reactjs/comments/fu841r/any_tips_for_a_code_review/
+I hope you find this interesting and let me know if you have any questions :)
+## [6][react-tech-tree - React-based trees like the X-Men family tree, Slay the Spire room selection and more!](https://www.reddit.com/r/reactjs/comments/fundic/reacttechtree_reactbased_trees_like_the_xmen/)
+- url: https://www.reddit.com/r/reactjs/comments/fundic/reacttechtree_reactbased_trees_like_the_xmen/
 ---
-Hi guys, 
-I’m interviewing for a company, they code mostly frontend code. My work experience is 100% backend. 
-I was requested to code a rather simple single page site. 
+TL;DR: [link](https://ldd.github.io/react-tech-tree/#examples) | [code](https://github.com/ldd/react-tech-tree) MIT licensed
 
-I finished it and they want me to perform a code review with them sometime next week. 
+A couple of years ago I made tech-trees [using d3](https://github.com/ldd/tech-tree-js). I wanted to revisit the project, so I remade tech tree as composable React Components.
 
-I am pretty confident with what I did but I’m not so sure what kind of questions to expect from them. 
-If anyone has any experience I would love to get any tips on what should I expect or on what things should I think about before the code review.
+Please take a look at the examples. They are interactable and I hope people can suggest new features or find bugs.
 
-Thanks alot for your help.
-## [7][Trouble understanding rendering when state is updated](https://www.reddit.com/r/reactjs/comments/fu83u9/trouble_understanding_rendering_when_state_is/)
-- url: https://www.reddit.com/r/reactjs/comments/fu83u9/trouble_understanding_rendering_when_state_is/
+I'll also try to actually procedurally generate the data for these in the future.
+## [7][ReactJS Class: How to use multiple contexts?](https://www.reddit.com/r/reactjs/comments/fuqy6o/reactjs_class_how_to_use_multiple_contexts/)
+- url: https://www.reddit.com/r/reactjs/comments/fuqy6o/reactjs_class_how_to_use_multiple_contexts/
 ---
-Hey, I am fairly new to react, and have been playing around with the `useState` hook. I have the following code:
+Hello,
 
-    import React, { useState } from 'react';
-    import Label from './Label';
-    import Button from './Button';
-    import './App.css';
+I am new to the React Context API. How can I use multiple contexts in a Component (I use class components)?
+
+One Context works perfectly with that code:
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+`import React, { Component } from "react";`
+
+`import { ContextA } from "../contexts/ContextA";`
+
+&amp;#x200B;
+
+`class MyClass extends Component {`
+
+  `constructor() {`
+
+`super();`
+
+  `}`
+
+&amp;#x200B;
+
+  `componentDidMount() {`
+
+&amp;#x200B;
+
+  `}`
+
+&amp;#x200B;
+
+  `render() {`
+
+`return (`
+
+		`&lt;h1&gt;hello&lt;/h1&gt;`
+
+	`);`
+
+  `}`
+
+`}`
+
+&amp;#x200B;
+
+`MyClass.contextType = RoundContext;`
+
+`export default Bracket;`
+## [8][Wrapping all redux code in hooks.](https://www.reddit.com/r/reactjs/comments/fupvao/wrapping_all_redux_code_in_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/fupvao/wrapping_all_redux_code_in_hooks/
+---
+I have started to only use redux inside any component via a custom hook. It started as an experiment, but I am quite enamored with the approach, not only does it completely encapsulate redux making it easy to swapping it for another state management library, but it also much more lightweight to connect a component:
+
+Here is an example of such a hook to get a specific book and its update action from the store:[https://gist.github.com/JanBussieck/b58d604691d89c98524a109719c0605c](https://gist.github.com/JanBussieck/b58d604691d89c98524a109719c0605c)
+
+I was  wondering what people here thought of this approach and what some potential downsides may be.
+
+I have outlined my approach in more detail here [https://www.bussieck.com/decouple-from-redux-using-hooks/](https://www.bussieck.com/decouple-from-redux-using-hooks/)
+
+Thanks!
+## [9][Whats the proper way of selecting selectedOption of select tag in react](https://www.reddit.com/r/reactjs/comments/fus7xv/whats_the_proper_way_of_selecting_selectedoption/)
+- url: https://www.reddit.com/r/reactjs/comments/fus7xv/whats_the_proper_way_of_selecting_selectedoption/
+---
+Hey i was trying to implement this basic `HTML` and `Js` code into my react:
+
+    &lt;select id="country"&gt;
+        &lt;option data-countryCode="IN" value="91" selected&gt;India&lt;/option&gt;
+        &lt;option data-countryCode="US" value="1"&gt;US&lt;/option&gt;
+        &lt;option data-countryCode="GB" value="44"&gt;UK&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;input type="tel" placeholder ="956 826 4457" id="tel"&gt;
+    &lt;script&gt;
+      const select = document.querySelector('#country');
+    const tel = document.getElementById('tel');
+    let prevVal = select.value; // storing previous value of select
+    
+    // this block will be exected on init of code
+    if(tel.value) tel.value = `${select.value}${tel.value}`;
+    else tel.placeholder = `${select.value}${tel.placeholder}`;
+    
+    // adding event on changing input
+    tel.addEventListener('change', ({ target }) =&gt; {
+      const reg = new RegExp(`(^${prevVal} )`);
+      // checking do we already have country code
+      if (reg.test(target.value)) tel.value = tel.value.replace(reg, target.value);
+      else tel.value = `${select.value}${target.value}`;
+    });
+    
+    // adding event on changing select
+    select.addEventListener('change', ({ target }) =&gt; {
+      const reg = new RegExp(`(^${prevVal})`);
+      if(tel.value) tel.value = `${target.value}${tel.value.replace(reg, '')}`;
+      else tel.placeholder =  tel.placeholder.replace(reg, target.value);
+      prevVal = target.value;
+    });
+    
+    &lt;/script&gt;
+
+as per the following:
+
+    import React, { Component } from 'react';
+    import './component_style/telinput.css';
+    export class telinput extends Component {
+        render() {
+             const selectCountryChange = ({target}) =&gt; {
+            const img = document.querySelector('#img');
+            const select = document.querySelector('#country');
+            const tel = document.getElementById('tel');
+    
+            let prevVal = select.value; 
+    
+            if(tel.value) tel.value = `${select.value}${tel.value}`;
+            else tel.placeholder = `${select.value}${tel.placeholder}`;
     
     
-    function App() {
-      const [number, setNumber] = useState(0);
+            const reg = new RegExp(`(^${prevVal} )`);
+            if (reg.test(target.value)) tel.value = tel.value.replace(reg, target.value);
+            else tel.value = `${select.value}${target.value}`;
     
-      function clickHandler() {
-        setNumber(number + 1);
-      }
-      return(
-        &lt;div&gt;
-          &lt;Label&gt;{number}&lt;/Label&gt;
-          &lt;Button clickHandler={clickHandler}&gt;Tap&lt;/Button&gt;
-        &lt;/div&gt;
-      );
+    
+    
+    
+            if(tel.value) tel.value = `${target.value}${tel.value.replace(reg, '')}`;
+            else tel.placeholder =  tel.placeholder.replace(reg, target.value);
+            prevVal = target.value;
+    
+    
+            img.src = `https://flagpedia.net/data/flags/h80/${this.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`
+    
+    
+        }
+    
+            return (
+                &lt;div&gt;
+                    &lt;div className="tel-input"&gt;
+                        &lt;div className="tel-mechanism"&gt;
+                            &lt;div className="select-box"&gt;
+                                &lt;img
+                                    src="https://raw.githubusercontent.com/MeRahulAhire/country-calling-code-html/master/phone_icon.png"
+                                    alt=""
+                                    id="img"
+                                /&gt;
+                               &lt;select id="country"&gt;
+                                  &lt;option data-countryCode="IN" value="91"&gt;India&lt;/option&gt;
+                                  &lt;option data-countryCode="US" value="1"&gt;US&lt;/option&gt;
+                                  &lt;option data-countryCode="GB" value="44"&gt;UK&lt;/option&gt;
+                               &lt;/select&gt;
+    &lt;/div&gt;
+                            &lt;div className="input-box"&gt;
+                                &lt;input type="tel" placeholder=" 956 826 4457" alt="" id="tel" /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            );
+        }
     }
     
-    export default App;
-    
-    import React, { useEffect } from 'react';
-    import './App.css';
-    
-    function Label(props) {
-    
-      useEffect(() =&gt; {
-        // Why is this called?
-        console.log("label updated");
-      });
-      return &lt;div className="Label"&gt;{props.children}&lt;/div&gt;
-    }
-    
-    export default Label;
-    
-    import React, { useEffect } from 'react';
-    import './App.css';
-    
-    function Button(props) {
-    
-      useEffect(() =&gt; {
-        // Why is this called?
-        console.log("button updated");
-      });
-      return (
-        &lt;button className="Button" onClick={props.clickHandler}&gt;
-          {props.children}
-        &lt;/button&gt;
-      );
-    }
-    
-    export default Button;
+    export default telinput;
 
-When I hit the button the log in the `Button` class prints `"button updated"`, I am using the `useEffect` hook to detect this. Why is the button rendering again? From what I have read, only the components related to the state are re-rendered if the state is updated but the `Label` class is not related to the state. Am I missing something here?
-## [8][Any good tutorial that shows you how to use the profiling tools for detecting memory leaks?](https://www.reddit.com/r/reactjs/comments/fu82bo/any_good_tutorial_that_shows_you_how_to_use_the/)
-- url: https://www.reddit.com/r/reactjs/comments/fu82bo/any_good_tutorial_that_shows_you_how_to_use_the/
+but i got this error:
+
+    TypeError: Cannot read property '0' of undefined
+    selectCountryChange
+    C:/Users/Rahul/Desktop/collegefacemash/src/form/components/telinput.js:20
+      17 |      else tel.placeholder = tel.placeholder.replace(reg, target.value);
+      18 |      prevVal = target.value;
+      19 | 
+    &gt; 20 |      img.src = `https://flagpedia.net/data/flags/h80/${this.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`;
+         | ^  21 |  };
+      22 | 
+      23 |  return (
+
+I really didn't understand that why such error occurred in react whereas when the selectedOptions\[0\] is the native JavaScript property and should work well.
+
+can anyone tell me what should I do to correct this Thanks...
+## [10][What are the possible implications of this vs a custom hook?](https://www.reddit.com/r/reactjs/comments/furs9e/what_are_the_possible_implications_of_this_vs_a/)
+- url: https://www.reddit.com/r/reactjs/comments/furs9e/what_are_the_possible_implications_of_this_vs_a/
 ---
-Any good tutorial that shows you how to use the profiling tools for detecting memory leaks? It's one of the most advanced skills for React developers, but I don't know a single tutorial that covers it. Any suggestion?
-## [9][Error handling to be done in the front-end or the back-end?](https://www.reddit.com/r/reactjs/comments/fu54uk/error_handling_to_be_done_in_the_frontend_or_the/)
-- url: https://www.reddit.com/r/reactjs/comments/fu54uk/error_handling_to_be_done_in_the_frontend_or_the/
----
-I'm creating an application with React as front-end and Flask as back-end. I had a doubt regarding error handling, there are two ways of doing it, one by handling all the errors in the front-end (React) or directly creating error templates in the back-end (Flask) and sending it to the front-end.
-
-Which method is more efficient ?
-## [10][Is it best to use prop drilling, context api or redux in this scenario?](https://www.reddit.com/r/reactjs/comments/fu5wrp/is_it_best_to_use_prop_drilling_context_api_or/)
-- url: https://www.reddit.com/r/reactjs/comments/fu5wrp/is_it_best_to_use_prop_drilling_context_api_or/
----
-My app has a sidebar which can open and close. A `isSidebarOpen` prop is passed down to some child components within the `Header` and `Sidebar` components as they also need to know about it as well. I was wondering if this is ok? Or should I put that `isSidebarOpen` property into a store like redux or else use the Context API?
-
-&amp;nbsp;
-
-    function App(): JSX.Element {
-      const [isSidebarOpen, setSidebarOpen] = useState(false);
-    
-      const toggleSidebar = (): void =&gt; {
-        setSidebarOpen(!isSidebarOpen);
-      };
-    
-      return (
-        &lt;Layout&gt;
-          &lt;Header isSidebarOpen={isSidebarOpen} onMenuButtonClicked={toggleSidebar} /&gt;
-          &lt;Sidebar isSidebarOpen={isSidebarOpen} onSidebarLinkClicked={toggleSidebar} /&gt;
-          &lt;Footer /&gt;
-        &lt;/Layout&gt;
-      );
-    }
-
-&amp;nbsp;
-
-Both `Header` and `Sidebar` have child components which use this prop as well so there is about 3 levels of prop drilling.
-## [11][I'm a React Dev and I Make $10/hr](https://www.reddit.com/r/reactjs/comments/ftxbsa/im_a_react_dev_and_i_make_10hr/)
-- url: https://www.reddit.com/r/reactjs/comments/ftxbsa/im_a_react_dev_and_i_make_10hr/
----
-This is my first job, so I'm trying to have a good attitude and get as much experience as I can, but I can't help but feel like something's wrong here.
-
-Okay, full disclosure, I make $10/hr PLUS $25 per 'Story Point'. You devs know what I'm talking about. In my shop, we estimate based on 5 points/day, so I average around $22/hr, but it varies.
-
-And when I'm doing un-pointed work, such as meetings, planning, code-review, coordinating with other team members, and even bug-fixing, it's hard for me not to think about the fact that at this moment, for this particular portion of my job, I make $10/hr.
-
-Has anyone ever heard of a pay-by-point arrangement like this? Am I crazy, or is this low-key exploitative? Add to that the fact that our senior Front-End guy just left, and I'm now taking on a huge amount of responsibility with nobody to answer my questions or guide big decisions. For $10/hr.
-
-After six months, it's time to get out of here. So I'm posting in hopes that someone can help me find a new opportunity with competitive compensation, and more opportunity for mentorship and growth.
-
-Would love to hear from anyone who can offer some perspective, or has a line on some work!
-
-(Will send resume/personal info separately. Trying not to let my employer know that I'm looking for work on reddit :)
-## [12][Request for help on an open source AWS Amplify project that allows you to create CMS back-ends for your APIs in breakneck speed using react-admin](https://www.reddit.com/r/reactjs/comments/fu4j8t/request_for_help_on_an_open_source_aws_amplify/)
-- url: https://www.reddit.com/r/reactjs/comments/fu4j8t/request_for_help_on_an_open_source_aws_amplify/
----
-[AWS Amplify](https://aws-amplify.github.io) is great for generating infrastructure from the CLI - love that. Unfortunately managing your data and files easily is pretty crappy, short of trawling DynamoDB/S3 console (yuck) or building a complete CMS (yikes). 
-
-It's all good though, I've got that problem solved (with your help).
-
-## TLDR
-
-I'm looking for people who are familiar with Amplify and React, and want to contribute to an open source project called [`ra-aws-amplify`](https://github.com/mayteio/ra-aws-amplify) that lets you build CMS front-ends for Amplify projects really quickly - with some help from [`react-admin`](https://github.com/marmelab/react-admin). [Here's some good first issues](https://github.com/mayteio/ra-aws-amplify/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) &lt;3
-
-## So what's this breakneck thing you're talking about?
-
-As I mentioned - actually managing the data in DynamoDB is a pain in the ass via the console - and I set out to make this easier with [`ra-aws-amplify`](https://github.com/mayteio/ra-aws-amplify). It's a toolchain that lets you build a CMS front-end for your amplify projects using [`react-admin`](https://github.com/marmelab/react-admin) at breakneck speed.
-
-I was using Amplify for an app platform that manages locations, apps and device tracking. I was able to build the back-end for it within a day with the current features in `ra-aws-amplify` - letting me focus on integrating it into the client app (where the real features are built) which is great.
-
-I want to make it better though. And I'm asking for some help in creating some great open source software. 
-
-## Quick example
-
-Let me first give you an example of how easy it is though. To create a *really* rough back-end that supports `API` and `Auth`, given the following Amplify GraphQL Schema: 
-
-```graphql
-type Post @model @auth({rules: [allow: owner]}) {
-  id: ID!
-  title: String!
-  content: String
-}
+```javascript
+onMouseEnter={() =&gt; setOpen(true)}
+onMouseLeave={() =&gt; setOpen(false)}
 ```
+I recon that if I write a custom hook with `useRef()` I would be able to reuse that in other elements while this is just for the element it's written into. Thoughts please...
+## [11][How to create animated SVG using React](https://www.reddit.com/r/reactjs/comments/furoha/how_to_create_animated_svg_using_react/)
+- url: https://dev.to/tornord/how-to-create-animated-svg-using-react-296l
+---
 
-Here's your entire Admin component:
-```js
-// App.js
-import React, { useEffect, useState } from 'react';
-import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
-import { useAmplifyDataProvider, useAuthProvider } from 'ra-aws-amplify';
-
-// grab your amplify generated code
-import config from './aws-exports';
-import schema from './graphql/schema.json';
-import * as queries from './graphql/queries';
-import * as mutations from './graphql/mutations';
-
-function App() {
-  // dataProvider that connects Amplify API with react-admin
-  const dataProvider = useAmplifyDataProvider({ config, schema, queries, mutations });
-  // authProvider that connects Amplify Auth with react-admin
-  const authProvider = useAuthProvider();
-
-  return
-    &lt;Admin dataProvider={dataProvider} authProvider={authProvider}&gt;
-      &lt;Resource 
-        name="Post" 
-        list={ListGuesser} 
-        create={EditGuesser} 
-        edit={EditGuesser} 
-      /&gt;
-    &lt;/Admin&gt;
-  )
-}
-```
-
-This will create an admin app that allows you to create, edit, list and delete your Posts. Complete with authentication. Breakneck speed.
-
-## Details
-
-For those who are unacquainted, `react-admin` lets you rapidly build admin screens and forms without worrying too much about building individual components, form validation, and all the lovely jazz that comes with building a CMS from scratch. Here's their demo video:
-
-[![react-admin-demo](https://marmelab.com/react-admin/img/react-admin-demo-still.png)](https://vimeo.com/268958716)
-
-The way it works, is basically this: `react-admin` calls your API in a generic way and expects the response in a certain format. `ra-aws-amplify` (specifically, the `useAmplifyDataProvider` hook) is the missing connector here, that translates react-admin queries into Amplify graphql queries (using the output from `amplify codegen`) and parses the response into a react-admin friendly format. It also [handles authentication for you](https://github.com/mayteio/ra-aws-amplify#authentication-and-sign-in-with-auth).
-
-On top of that, I've also built out tools and components for uploading images and files via `Storage`, including support for `private` and `protected` files - it's all in the [README](https://github.com/mayteio/ra-aws-amplify#image-upload-with-storage), check it out.
-
-## What do you need help with?
-Glad you asked. Most pressingly, [I need help with handling many-to-many connections](https://github.com/mayteio/ra-aws-amplify/issues/8).
-Other awesome features would be
-- [Filtering and sorting models](https://github.com/mayteio/ra-aws-amplify/issues/13)
-- [List Pagination with nextToken](https://github.com/mayteio/ra-aws-amplify/issues/11) (essential) 
-- [Making models/lists searchable using `@searchable`](https://github.com/mayteio/ra-aws-amplify/projects/1).
-
-If there are typescript buffs out there, typing the package would be great (I have, shamefully, been littering `any`s everywhere) or people who get a kick out of creating rock-solid unit tests, the [dataProvider needs testing](https://github.com/mayteio/ra-aws-amplify/issues/3).
-
-Anyone who wants to contribute - I am more than happy to zoom or chat with you, or even write better comments in the code where you don't understand something. Or talk you through the ins and outs of react-admin if you're not familiar. 
-
-So that's it - let me know if you want to contribute and let's get cracking on this!
+## [12][Time to market speed, React vs Vue](https://www.reddit.com/r/reactjs/comments/fup0b8/time_to_market_speed_react_vs_vue/)
+- url: https://www.reddit.com/r/reactjs/comments/fup0b8/time_to_market_speed_react_vs_vue/
+---
+Did someone measured development time using React and Vue? I like React's features to optimize an app performance (worrying about unnecessary re-renders) and flexibility, but i often find myself writing web-apps in Vue much quicker, i have equal experience in Vue and React (\~1 year in both).

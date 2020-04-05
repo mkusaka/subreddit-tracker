@@ -13,59 +13,60 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][[OC] Interactive Timeline Map Showing Cumulative COVID-19 Cases For U.S Counties. Includes Cases Per Square Mile and Cases Per Capita (100,000)](https://www.reddit.com/r/javascript/comments/fulhbq/oc_interactive_timeline_map_showing_cumulative/)
-- url: https://www.coronashutdown.com/
+## [3][Evolving fractals through genetic algorithm](https://www.reddit.com/r/javascript/comments/fv7l5x/evolving_fractals_through_genetic_algorithm/)
+- url: https://victorribeiro.com/randomFractal/
 ---
 
-## [4][New WebKit Features in Safari 13.1](https://www.reddit.com/r/javascript/comments/fupjhm/new_webkit_features_in_safari_131/)
-- url: https://webkit.org/blog/10247/new-webkit-features-in-safari-13-1/
+## [4][Why localStorage only allows to store string values](https://www.reddit.com/r/javascript/comments/fv8yw0/why_localstorage_only_allows_to_store_string/)
+- url: https://www.pixelstech.net/article/1586062871-Why-localStorage-only-allows-to-store-string-values
 ---
 
-## [5][Understanding the ECMAScript spec, part 1](https://www.reddit.com/r/javascript/comments/fuq9fv/understanding_the_ecmascript_spec_part_1/)
-- url: https://v8.dev/blog/understanding-ecmascript-part-1
+## [5][Pointer Compression in V8](https://www.reddit.com/r/javascript/comments/fvb2w7/pointer_compression_in_v8/)
+- url: https://v8.dev/blog/pointer-compression
 ---
 
-## [6][Jolt: build lighting fast web apps using JavaScript, HTML, and CSS](https://www.reddit.com/r/javascript/comments/fukz68/jolt_build_lighting_fast_web_apps_using/)
-- url: https://github.com/outwalk-studios/jolt
+## [6][[OC] Live COVID-19 statistics and news PWA](https://www.reddit.com/r/javascript/comments/fuw8ml/oc_live_covid19_statistics_and_news_pwa/)
+- url: https://coronastats.now.sh
 ---
 
-## [7][Sudoku Visualizer, i made. Try the Algorithm X on hard :)](https://www.reddit.com/r/javascript/comments/fultvf/sudoku_visualizer_i_made_try_the_algorithm_x_on/)
-- url: https://tarikgul.github.io/Sudoku-solving-visualizer/dist/
+## [7][3d multithreading COVID19 dashboard created with just 2100 lines of JS code](https://www.reddit.com/r/javascript/comments/fvdprt/3d_multithreading_covid19_dashboard_created_with/)
+- url: https://github.com/neomjs/neo/tree/dev/apps/covid/
 ---
 
-## [8][[AskJS] Is there any IDE that lets you structure your code and edit one piece at a time?](https://www.reddit.com/r/javascript/comments/futjjb/askjs_is_there_any_ide_that_lets_you_structure/)
-- url: https://www.reddit.com/r/javascript/comments/futjjb/askjs_is_there_any_ide_that_lets_you_structure/
----
-This is my biggest problem with all the IDEs I have tried. Any time I approach the 100 line mark, I suddenly get annoyed by scrolling. Because I put my global starting initializations and objects and classes at the top where they belong, but my actual main loop is at the bottom. 
-
-
-So what if there was a way for me to select the top area and make it designateed for classes initialization, then another one for objects, then another for global values, then another for loading the savegame, then another for actual logic. All would be in the same file, but you could "extract" the part you want ,and you could look only at it and have it focused.. without the interrruptions from the rest of the code... if it got too long, or less relevant, you could just branch off another sub-category. That would be great. 
-
-
-Like arbitrary chapters or groups that you could click and jump to like in Word.
-
-
-
-But like this.. I have no way to make little chunks of code without corrupting them into separate require module and convoluting the whole logic and whatnot.
-
-
-Only way to achieve what I want is to load 75 different .js files in the html header and having to deal with naming so they are in order always if I add something, and then when everything is done, just copy them and assemble one file. That's a lot of work... but I think something like this is the only way for me to not get overwhelmed and sidetracked by ("wtf is this shit" - actual code that works) while scrolling down.
-
-
-How can you guys handle one giant file... or a billion small ones where anyone trying to read the code is at a major disadvantage?
-## [9][Building UI application with Luigi — open source micro-fronteds orchestrator](https://www.reddit.com/r/javascript/comments/fu5rto/building_ui_application_with_luigi_open_source/)
-- url: https://medium.com/@arturnowakowski/luigi-micro-fronteds-orchestrator-8c0eca710151?sk=1cd1bf7d608ad64687a4b11bef6d59fb
+## [8][Coloringbook project that churches and non-profits can use to help kids engage. (seeking comments on how to proceed)](https://www.reddit.com/r/javascript/comments/fuza0v/coloringbook_project_that_churches_and_nonprofits/)
+- url: https://primoweb.com/vfc-coloring-book
 ---
 
-## [10][Zero-Dependency Utility Library with Over 400 Useful Modules](https://www.reddit.com/r/javascript/comments/fu7ze0/zerodependency_utility_library_with_over_400/)
-- url: https://licia.liriliri.io/
+## [9][mock-cwd: Mocks your CWD for tests](https://www.reddit.com/r/javascript/comments/fvbbns/mockcwd_mocks_your_cwd_for_tests/)
+- url: https://github.com/marvinscharle/mock-cwd#readme
 ---
 
-## [11][For us, who like to work with background music, this sub might be of interest. Check it out!](https://www.reddit.com/r/javascript/comments/fukkfa/for_us_who_like_to_work_with_background_music/)
-- url: /r/codingplaylists/comments/fugv8w/welcome_to_rcodingplaylists/
+## [10][Beachball: The Sunniest Semantic Version Bumper](https://www.reddit.com/r/javascript/comments/fv9ltw/beachball_the_sunniest_semantic_version_bumper/)
+- url: https://microsoft.github.io/beachball/
 ---
 
-## [12][Crawlium (DeepCrawling): A crawling platform based on Chrome (Chromium) browser to get a deeper look into the ecosystem of content inclusion on the Web.](https://www.reddit.com/r/javascript/comments/fup0fe/crawlium_deepcrawling_a_crawling_platform_based/)
-- url: https://github.com/sajjadium/Crawlium
+## [11][[AskJS] React: Choosing a Frontend Framework/Library](https://www.reddit.com/r/javascript/comments/fuyvg2/askjs_react_choosing_a_frontend_frameworklibrary/)
+- url: https://www.reddit.com/r/javascript/comments/fuyvg2/askjs_react_choosing_a_frontend_frameworklibrary/
+---
+Hi, I am looking to pick a frontend framework/library for creating a simple REST CRUD website. I have years of experience programming but haven't done much in way of web development. Ideally, the framework I choose will result in some transferable skills/knowledge to a career. Aside from that, I would just like to develop a visually appealing final product that doesn't necessarily need to look unique.
+
+&amp;#x200B;
+
+Some of the options I've seen:
+
+* **React-bootstrap**
+   * I've used Bootstrap before and am somewhat familiar with it.
+   * Seems pretty ubiquitous.
+* **Chakra UI**
+   * Looks great, but seems relatively new.
+* **Vanilla React/HTML/CSS**
+   * Best in terms of learning.
+   * Most time consuming in terms of getting a final product that looks nice.
+
+&amp;#x200B;
+
+Can anyone hit me with some insights? Thanks.
+## [12][Animating route transitions while using React Router (and why I think the imperative approach for writing animations is awesome)](https://www.reddit.com/r/javascript/comments/fv8hbz/animating_route_transitions_while_using_react/)
+- url: https://dutzi.party/animating-route-transitions-using-react-router/
 ---
 

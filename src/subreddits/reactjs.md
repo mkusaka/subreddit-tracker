@@ -84,234 +84,143 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][How to test custom React hooks](https://www.reddit.com/r/reactjs/comments/fuq6py/how_to_test_custom_react_hooks/)
+## [3][Fully functional Trello board written using React and Redux](https://www.reddit.com/r/reactjs/comments/fuzyui/fully_functional_trello_board_written_using_react/)
+- url: https://github.com/rcdexta/react-trello
+---
+
+## [4][How to add Storybook to a Typescript CRA project](https://www.reddit.com/r/reactjs/comments/fvajxu/how_to_add_storybook_to_a_typescript_cra_project/)
+- url: https://www.youtube.com/watch?v=95Qgwg3wwUg&amp;feature=share
+---
+
+## [5][What's your definition of done?](https://www.reddit.com/r/reactjs/comments/fvd3jq/whats_your_definition_of_done/)
+- url: https://www.reddit.com/r/reactjs/comments/fvd3jq/whats_your_definition_of_done/
+---
+Hi guys!
+
+As most of us are aware, there are always multiple ways to implement a feature correctly. And there will also always be room for improvement.
+
+Since we can always improve on a solution, the question then becomes, when are we done implementing something? My approach has been to ask myself these questions, and if I can answer yes to all of them, then I'm done:
+
+1. Does it fill the requirements?
+2. If someone touched the code for the feature and broke it, would that person have a way to know it? And also to know where exactly it broke?
+3. If someone wanted to change the feature, would that person know where to look and what to change? 
+4. In need of a future to refactor, is the feature organized such that I can do it a little at a time without breaking functionality?
+
+This has been my definition of done that helps me deal with the tight schedule deadlines that are normal in software projects.
+
+So I was wondering, what's your definition of done?
+## [6][Deploying react apps](https://www.reddit.com/r/reactjs/comments/fvdno8/deploying_react_apps/)
+- url: https://www.reddit.com/r/reactjs/comments/fvdno8/deploying_react_apps/
+---
+So basically i have built my first react application and now i am ready to deploy it to my digital ocean server. I want to use the compiled version of react which is created with the run build command. But i dont know how to run the compiled version.
+## [7][React Components Library with Typescript and styled-components](https://www.reddit.com/r/reactjs/comments/fvd1c9/react_components_library_with_typescript_and/)
+- url: https://www.reddit.com/r/reactjs/comments/fvd1c9/react_components_library_with_typescript_and/
+---
+Hello. I am trying to create a React Components library using Typescript and styled-components. 
+I don't want to use webpack or any unnecessary dependency.
+Other projects should be able to install the library and use it straight away regardless of whether they use Typescript or not. But if they do, the library should provide all types.
+I want to use tsc as a compiler, but I'm not really sure how my tsconfig and should look like. 
+Also I've seen the use of index.d.ts files but I'm also not sure how to use it properly.
+
+I want my directory tree to look like this, if possible:
+```
+/lib    # output of tsc
+/src
+    /assets    # any kind of assets like images, fonts, ...
+        /fonts
+    /components    # all useable components
+        /forms
+            /Button
+                Button.tsx
+                Button.style.ts
+    /tests
+    /theme    # for now here will be a theme.ts for all constants
+    typings.d.ts    # typings for uncommon filetypes like *.ttf
+package.json
+tsconfig.json
+Readme.md
+
+```
+
+Thank you for your help
+## [8][What style of functions do you prefer to use in React and why?](https://www.reddit.com/r/reactjs/comments/fvd0h9/what_style_of_functions_do_you_prefer_to_use_in/)
+- url: https://www.reddit.com/r/reactjs/comments/fvd0h9/what_style_of_functions_do_you_prefer_to_use_in/
+---
+Hey, I'm new to using react and seen various function styles thrown around. I was wondering what type people follow and why? For example:
+
+    import React, { useState } from 'react';
+    import './App.css';
+    
+    const Message1 = (props) =&gt; (
+      &lt;div&gt;{props.message}&lt;/div&gt;
+    );
+    
+    const Message2 = (props) =&gt; (
+      &lt;div&gt;{props.message}&lt;/div&gt;
+    );
+    
+    const Message3 = ({ message }) =&gt; (
+      &lt;div&gt;{message}&lt;/div&gt;
+    );
+    
+    function Message4(props) {
+      return &lt;div&gt;{props.message}&lt;/div&gt;
+    }
+    
+    function App() {
+      return (
+        &lt;div&gt;
+          &lt;Message1 message="How" /&gt;
+          &lt;Message2 message="you" /&gt;
+          &lt;Message3 message="doin" /&gt;
+          &lt;Message4 message="Today?" /&gt;
+        &lt;/div&gt;
+      );
+    }
+    
+    export default App;
+
+Why declare a constant instead of a function? Why are variables placed in the `{}`?
+## [9][What do you use to convert Keys from Snake Case to Camel Case of the payload you receive from backend?](https://www.reddit.com/r/reactjs/comments/fvak6m/what_do_you_use_to_convert_keys_from_snake_case/)
+- url: https://www.reddit.com/r/reactjs/comments/fvak6m/what_do_you_use_to_convert_keys_from_snake_case/
+---
+The response from backend I get always will have snake case keys, and I would like to convert them to cameCase for compatibility  with other JS ecosystem variable names. How do you deal with this in your project? Lodash has a [method](https://lodash.com/docs/4.17.15#camelCase) to convert it, but nothing to do it recursively if I give it any size of payload of different structure.
+## [10][ELI5 this dan abromov tweet about async/await buggyness in React Components](https://www.reddit.com/r/reactjs/comments/fv3a3r/eli5_this_dan_abromov_tweet_about_asyncawait/)
+- url: https://www.reddit.com/r/reactjs/comments/fv3a3r/eli5_this_dan_abromov_tweet_about_asyncawait/
+---
+Can anyone clearly explain the problem he's describing or even better, provide a sandbox?
+
+[https://twitter.com/dan\_abramov/status/1246432321579950081](https://twitter.com/dan_abramov/status/1246432321579950081)
+## [11][How to test custom React hooks](https://www.reddit.com/r/reactjs/comments/fuq6py/how_to_test_custom_react_hooks/)
 - url: https://kentcdodds.com/blog/how-to-test-custom-react-hooks
 ---
 
-## [4][show reddit: I made something very silly in react: the mlemmer blepper](https://www.reddit.com/r/reactjs/comments/fuawdr/show_reddit_i_made_something_very_silly_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/fuawdr/show_reddit_i_made_something_very_silly_in_react/
+## [12][Best way to restrict access if not logged in?](https://www.reddit.com/r/reactjs/comments/fvbvlr/best_way_to_restrict_access_if_not_logged_in/)
+- url: https://www.reddit.com/r/reactjs/comments/fvbvlr/best_way_to_restrict_access_if_not_logged_in/
 ---
-I took some quarantine downtime to make something silly: [https://blepper.andrewray.me/](https://blepper.andrewray.me/)
+What is an effective and secure example of a Higher Order Component in React that prevents a logged in user from say:
 
-Tech stack: This is built using react, react-spring, and the awesome [react-three-fiber](https://github.com/react-spring/react-three-fiber) library, which glues imperative Threejs code to declarative react code. The model was hand traced in Blender from a photo, and loaded using GLTF. For fun I built a local development setup using Nextjs and Docker. Nextjs gave me hot reloading in my dev environment, code splitting, and static site generation.
+1. Viewing the sign in / sign up page
+2. Viewing pages that are for "admin" only
 
-If you've been on the internet long enough, you probably know the gif that inspired this site.
-## [5][How to develop infinite scroll with React. Explanation and tested implementation.](https://www.reddit.com/r/reactjs/comments/futg5v/how_to_develop_infinite_scroll_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/futg5v/how_to_develop_infinite_scroll_with_react/
----
-Hi guys! I hope you're all doing well.
+And what about for Users that have not yet signed in:
 
-A couple of days ago, I decided to implement a React app with an infinite scroll. I ended up writing an [article](https://joaoforja.com/blog/how-to-implement-infinite-scroll-in-react/) that goes over the implementation and the thought process I used.
+* How to prevent user from access pages that logged in users can view?
 
-Although the article doesn't go over how to test the implementation, you can check this [repository](https://github.com/Jnforja/infinite-scroll-react-app) to see the tests I ended up doing.
+Here's my current example, which is terrible I know, help appreciated!
 
-I hope you find this interesting and let me know if you have any questions :)
-## [6][react-tech-tree - React-based trees like the X-Men family tree, Slay the Spire room selection and more!](https://www.reddit.com/r/reactjs/comments/fundic/reacttechtree_reactbased_trees_like_the_xmen/)
-- url: https://www.reddit.com/r/reactjs/comments/fundic/reacttechtree_reactbased_trees_like_the_xmen/
----
-TL;DR: [link](https://ldd.github.io/react-tech-tree/#examples) | [code](https://github.com/ldd/react-tech-tree) MIT licensed
-
-A couple of years ago I made tech-trees [using d3](https://github.com/ldd/tech-tree-js). I wanted to revisit the project, so I remade tech tree as composable React Components.
-
-Please take a look at the examples. They are interactable and I hope people can suggest new features or find bugs.
-
-I'll also try to actually procedurally generate the data for these in the future.
-## [7][ReactJS Class: How to use multiple contexts?](https://www.reddit.com/r/reactjs/comments/fuqy6o/reactjs_class_how_to_use_multiple_contexts/)
-- url: https://www.reddit.com/r/reactjs/comments/fuqy6o/reactjs_class_how_to_use_multiple_contexts/
----
-Hello,
-
-I am new to the React Context API. How can I use multiple contexts in a Component (I use class components)?
-
-One Context works perfectly with that code:
+    import { Query } from "react-apollo";
+    import { CURRENT_USER_QUERY } from "./User";
+    import LogIn from "./LogIn";
+    
+    const PleaseSignIn = props =&gt; (
+        &lt;Query query={CURRENT_USER_QUERY}&gt;
+            {({ data, loading }) =&gt; {
+                if (loading) return &lt;p&gt;Loading...&lt;/p&gt;;
+                if (!data.me) return &lt;LogIn /&gt;;
+                return props.children;}}
+        &lt;/Query&gt;);
+    
+    export default PleaseSignIn;
 
 &amp;#x200B;
-
-&amp;#x200B;
-
-`import React, { Component } from "react";`
-
-`import { ContextA } from "../contexts/ContextA";`
-
-&amp;#x200B;
-
-`class MyClass extends Component {`
-
-  `constructor() {`
-
-`super();`
-
-  `}`
-
-&amp;#x200B;
-
-  `componentDidMount() {`
-
-&amp;#x200B;
-
-  `}`
-
-&amp;#x200B;
-
-  `render() {`
-
-`return (`
-
-		`&lt;h1&gt;hello&lt;/h1&gt;`
-
-	`);`
-
-  `}`
-
-`}`
-
-&amp;#x200B;
-
-`MyClass.contextType = RoundContext;`
-
-`export default Bracket;`
-## [8][Wrapping all redux code in hooks.](https://www.reddit.com/r/reactjs/comments/fupvao/wrapping_all_redux_code_in_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/fupvao/wrapping_all_redux_code_in_hooks/
----
-I have started to only use redux inside any component via a custom hook. It started as an experiment, but I am quite enamored with the approach, not only does it completely encapsulate redux making it easy to swapping it for another state management library, but it also much more lightweight to connect a component:
-
-Here is an example of such a hook to get a specific book and its update action from the store:[https://gist.github.com/JanBussieck/b58d604691d89c98524a109719c0605c](https://gist.github.com/JanBussieck/b58d604691d89c98524a109719c0605c)
-
-I was  wondering what people here thought of this approach and what some potential downsides may be.
-
-I have outlined my approach in more detail here [https://www.bussieck.com/decouple-from-redux-using-hooks/](https://www.bussieck.com/decouple-from-redux-using-hooks/)
-
-Thanks!
-## [9][Whats the proper way of selecting selectedOption of select tag in react](https://www.reddit.com/r/reactjs/comments/fus7xv/whats_the_proper_way_of_selecting_selectedoption/)
-- url: https://www.reddit.com/r/reactjs/comments/fus7xv/whats_the_proper_way_of_selecting_selectedoption/
----
-Hey i was trying to implement this basic `HTML` and `Js` code into my react:
-
-    &lt;select id="country"&gt;
-        &lt;option data-countryCode="IN" value="91" selected&gt;India&lt;/option&gt;
-        &lt;option data-countryCode="US" value="1"&gt;US&lt;/option&gt;
-        &lt;option data-countryCode="GB" value="44"&gt;UK&lt;/option&gt;
-    &lt;/select&gt;
-    
-    &lt;input type="tel" placeholder ="956 826 4457" id="tel"&gt;
-    &lt;script&gt;
-      const select = document.querySelector('#country');
-    const tel = document.getElementById('tel');
-    let prevVal = select.value; // storing previous value of select
-    
-    // this block will be exected on init of code
-    if(tel.value) tel.value = `${select.value}${tel.value}`;
-    else tel.placeholder = `${select.value}${tel.placeholder}`;
-    
-    // adding event on changing input
-    tel.addEventListener('change', ({ target }) =&gt; {
-      const reg = new RegExp(`(^${prevVal} )`);
-      // checking do we already have country code
-      if (reg.test(target.value)) tel.value = tel.value.replace(reg, target.value);
-      else tel.value = `${select.value}${target.value}`;
-    });
-    
-    // adding event on changing select
-    select.addEventListener('change', ({ target }) =&gt; {
-      const reg = new RegExp(`(^${prevVal})`);
-      if(tel.value) tel.value = `${target.value}${tel.value.replace(reg, '')}`;
-      else tel.placeholder =  tel.placeholder.replace(reg, target.value);
-      prevVal = target.value;
-    });
-    
-    &lt;/script&gt;
-
-as per the following:
-
-    import React, { Component } from 'react';
-    import './component_style/telinput.css';
-    export class telinput extends Component {
-        render() {
-             const selectCountryChange = ({target}) =&gt; {
-            const img = document.querySelector('#img');
-            const select = document.querySelector('#country');
-            const tel = document.getElementById('tel');
-    
-            let prevVal = select.value; 
-    
-            if(tel.value) tel.value = `${select.value}${tel.value}`;
-            else tel.placeholder = `${select.value}${tel.placeholder}`;
-    
-    
-            const reg = new RegExp(`(^${prevVal} )`);
-            if (reg.test(target.value)) tel.value = tel.value.replace(reg, target.value);
-            else tel.value = `${select.value}${target.value}`;
-    
-    
-    
-    
-            if(tel.value) tel.value = `${target.value}${tel.value.replace(reg, '')}`;
-            else tel.placeholder =  tel.placeholder.replace(reg, target.value);
-            prevVal = target.value;
-    
-    
-            img.src = `https://flagpedia.net/data/flags/h80/${this.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`
-    
-    
-        }
-    
-            return (
-                &lt;div&gt;
-                    &lt;div className="tel-input"&gt;
-                        &lt;div className="tel-mechanism"&gt;
-                            &lt;div className="select-box"&gt;
-                                &lt;img
-                                    src="https://raw.githubusercontent.com/MeRahulAhire/country-calling-code-html/master/phone_icon.png"
-                                    alt=""
-                                    id="img"
-                                /&gt;
-                               &lt;select id="country"&gt;
-                                  &lt;option data-countryCode="IN" value="91"&gt;India&lt;/option&gt;
-                                  &lt;option data-countryCode="US" value="1"&gt;US&lt;/option&gt;
-                                  &lt;option data-countryCode="GB" value="44"&gt;UK&lt;/option&gt;
-                               &lt;/select&gt;
-    &lt;/div&gt;
-                            &lt;div className="input-box"&gt;
-                                &lt;input type="tel" placeholder=" 956 826 4457" alt="" id="tel" /&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            );
-        }
-    }
-    
-    export default telinput;
-
-but i got this error:
-
-    TypeError: Cannot read property '0' of undefined
-    selectCountryChange
-    C:/Users/Rahul/Desktop/collegefacemash/src/form/components/telinput.js:20
-      17 |      else tel.placeholder = tel.placeholder.replace(reg, target.value);
-      18 |      prevVal = target.value;
-      19 | 
-    &gt; 20 |      img.src = `https://flagpedia.net/data/flags/h80/${this.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`;
-         | ^  21 |  };
-      22 | 
-      23 |  return (
-
-I really didn't understand that why such error occurred in react whereas when the selectedOptions\[0\] is the native JavaScript property and should work well.
-
-can anyone tell me what should I do to correct this Thanks...
-## [10][What are the possible implications of this vs a custom hook?](https://www.reddit.com/r/reactjs/comments/furs9e/what_are_the_possible_implications_of_this_vs_a/)
-- url: https://www.reddit.com/r/reactjs/comments/furs9e/what_are_the_possible_implications_of_this_vs_a/
----
-```javascript
-onMouseEnter={() =&gt; setOpen(true)}
-onMouseLeave={() =&gt; setOpen(false)}
-```
-I recon that if I write a custom hook with `useRef()` I would be able to reuse that in other elements while this is just for the element it's written into. Thoughts please...
-## [11][How to create animated SVG using React](https://www.reddit.com/r/reactjs/comments/furoha/how_to_create_animated_svg_using_react/)
-- url: https://dev.to/tornord/how-to-create-animated-svg-using-react-296l
----
-
-## [12][Time to market speed, React vs Vue](https://www.reddit.com/r/reactjs/comments/fup0b8/time_to_market_speed_react_vs_vue/)
-- url: https://www.reddit.com/r/reactjs/comments/fup0b8/time_to_market_speed_react_vs_vue/
----
-Did someone measured development time using React and Vue? I like React's features to optimize an app performance (worrying about unnecessary re-renders) and flexibility, but i often find myself writing web-apps in Vue much quicker, i have equal experience in Vue and React (\~1 year in both).

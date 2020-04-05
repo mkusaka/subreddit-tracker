@@ -119,40 +119,47 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][IceCream-Cpp: A C++ helper library to print debugging. Released](https://www.reddit.com/r/cpp/comments/fun91l/icecreamcpp_a_c_helper_library_to_print_debugging/)
+## [3][A simple library to create CLI tools in cpp](https://www.reddit.com/r/cpp/comments/fv1txw/a_simple_library_to_create_cli_tools_in_cpp/)
+- url: https://github.com/chewax/Ginseng
+---
+
+## [4][Reflection TS. Where/when to try? What do you think about it?](https://www.reddit.com/r/cpp/comments/fvccfa/reflection_ts_wherewhen_to_try_what_do_you_think/)
+- url: https://www.reddit.com/r/cpp/comments/fvccfa/reflection_ts_wherewhen_to_try_what_do_you_think/
+---
+I am very excited about static reflection proposal. I think with this proposal shoud be possible implement Dependency Injection, automatic function mapper (like in Asp.Net MVC, where you can just declare function `foo` in class, and http request with path `/foo` run this func), type mapper (there is Automapper and awesome thing like MassTransit for RabbitMQ in C#), etc.
+
+I know that Clang already has implementation of Reflection, but not sure — is there up to date version of proposal?
+
+Also, there was a proposal about custom attributes. I've used PostSharp in my job, so I am very excited to see implementation in C++ of automatic logger, maybe exception handling, caching (with Redis/KeyDB for example), etc. Is that propasal somehow implemented in clang?
+
+What do you think? What problems can solve or what boilerplate code can remove this features in your projects? If you used any other languages, what features you wish to be implemented in C++?
+## [5][IceCream-Cpp: A C++ helper library to print debugging. Released](https://www.reddit.com/r/cpp/comments/fun91l/icecreamcpp_a_c_helper_library_to_print_debugging/)
 - url: https://github.com/renatoGarcia/icecream-cpp
 ---
 
-## [4][unique_ptr with custom deleter](https://www.reddit.com/r/cpp/comments/fun9zt/unique_ptr_with_custom_deleter/)
-- url: https://www.nextptr.com/question/qa1366990479/unique_ptr-with-custom-deleter
+## [6][Clean Usage of JSON Library](https://www.reddit.com/r/cpp/comments/fv1vaz/clean_usage_of_json_library/)
+- url: https://www.reddit.com/r/cpp/comments/fv1vaz/clean_usage_of_json_library/
 ---
+After writing a few systems for games that I needed to serialize myself using RapidJSON, I wanted to know if there are any guides on "the right way" to write these functions that convert from documents to structs.
 
-## [5][Constraining templates in C++](https://www.reddit.com/r/cpp/comments/furljy/constraining_templates_in_c/)
+The way I usually tackle the problem is straight forward creation of values which are added to the document. This works well enough when (de)serializing 5 values and a vector, but I'd rather not redo what I did for deserializing output from a simple tile based level editor, which became a several hundred line long pyramid of doom, weakly factored into functions in the few regions I could find an appropriate place to separate the code.
+
+I imagine it's possible to get it down to a helper function or two and a single line of code for each parameter, but I don't know the most efficient way to tackle that problem.
+
+I know rttr is the most complete solution, but setting it up is a project in itself, and I'd like to figure out how I should be handling my serialization/deserialization for the small projects where I don't want to spend much more time on setup than what it takes to put the library in my project.
+## [7][Constraining templates in C++](https://www.reddit.com/r/cpp/comments/furljy/constraining_templates_in_c/)
 - url: https://panky-codes.github.io/2020/03/22/Templates.html
 ---
 
-## [6][Lambda expression, rvalue captured by-reference.](https://www.reddit.com/r/cpp/comments/fus702/lambda_expression_rvalue_captured_byreference/)
-- url: https://www.reddit.com/r/cpp/comments/fus702/lambda_expression_rvalue_captured_byreference/
+## [8][Trivia/Concepts to Know for Quant/Prop Shops/HFT?](https://www.reddit.com/r/cpp/comments/fv1yrn/triviaconcepts_to_know_for_quantprop_shopshft/)
+- url: https://www.reddit.com/r/cpp/comments/fv1yrn/triviaconcepts_to_know_for_quantprop_shopshft/
 ---
-Hi,
+I've been asked questions before in interviews such as processes/threads/programs, virtual memory, templates, java vs c++, etc. in a couple interviews I did for SWE at these types of firms for my internship interviews the past year. I will be searching for full time roles next year and would like to be better prepared for these types of questions. What sort of things should I know/understand in terms of C++/systems/design knowledge?
+## [9][unique_ptr with custom deleter](https://www.reddit.com/r/cpp/comments/fun9zt/unique_ptr_with_custom_deleter/)
+- url: https://www.nextptr.com/question/qa1366990479/unique_ptr-with-custom-deleter
+---
 
-I have a case in which I want to modify a variable inside a lambda expression in way that each new call of the lambda shall use this modified variable. I know it can be done with a temporary variable outside of the lambda. For example:
-```C++
-char* ptr = get_ptr();
-std::transform(in.begin(), in.end(), out.begin(),
-    [&amp;ptr](auto&amp; val) { return (*ptr++) + val; });
-```
-
-I wonder if I can achieve this without a temporary variable ptr. Using Visual Studio 2019 I successfully compiled the following code:
-```C++
-std::transform(in.begin(), in.end(), out.begin(),
-    [&amp;ptr = get_ptr()](auto&amp; val) { return (*ptr++) + val; });
-```
-
-However, I cannot find in the [reference](https://en.cppreference.com/w/cpp/language/lambda#Lambda_capture) any information if this behavior will be consistent between C++ compilators. Could any of you give me a clue how does C++ standard handles the above case?
-
-Thanks
-## [7][vector transform constructor](https://www.reddit.com/r/cpp/comments/fu8nuc/vector_transform_constructor/)
+## [10][vector transform constructor](https://www.reddit.com/r/cpp/comments/fu8nuc/vector_transform_constructor/)
 - url: https://www.reddit.com/r/cpp/comments/fu8nuc/vector_transform_constructor/
 ---
 Wouldn't it be nice to add a constructor to the vector class that takes a pair of iterators or a range and applies a transformation to the elements before their inserted? For example:
@@ -175,23 +182,7 @@ std::vector&lt;int&gt; vec(other_vec.begin(), other_vec.end(), unary_func);
 ```
 
 Is this a decent idea? I've been meaning to try to get involved in the standardization process in some way and submitting a paper for this would be a good place to start if the idea makes sense.
-## [8][WezosTradingEngine - Fast cryptocurrency matching engine in C++17](https://www.reddit.com/r/cpp/comments/fupi8z/wezostradingengine_fast_cryptocurrency_matching/)
-- url: https://www.reddit.com/r/cpp/comments/fupi8z/wezostradingengine_fast_cryptocurrency_matching/
----
-I was working on my own cryptocurrency exchange a couple of years ago, as a part of that I set out to make one of the fastest cryptocurrency matching engines in the industry. The project had been festering for quite a while, so I decided to extract out the matching engine portion and open source it.[https://github.com/wezrule/WezosTradingEngine](https://github.com/wezrule/WezosTradingEngine)
-
-Disclaimer: I haven't largely looked at the code in 2 years (it still uses \`&lt;experimental/filesystem&gt;\` for instance!), but I tested it recently with gcc 7.5 and to my surprise it was still building and all tests passed, I wasn't sure what state it would be in. After some modifications it builds with MSVC, but I had to disable the main custom allocator for the order book (which is where most of the performance comes from!), so instead I've just left it as is. Mainly just putting this up as a learning resource for others who might find it of interest. Cheers
-## [9][Searching for a good IDE on Mac](https://www.reddit.com/r/cpp/comments/fuoaga/searching_for_a_good_ide_on_mac/)
-- url: https://www.reddit.com/r/cpp/comments/fuoaga/searching_for_a_good_ide_on_mac/
----
-Hi everybody! I just started teaching myself C++ and I'm looking for a good IDE on Mac.
-
-Thus far I have been working pretty low tech, coding in Vim and compiling manually / writing my own Makefiles. However, I'd like to start learning to code with an IDE so that it's less intimidating, and to better familiarize myself with the debugging process and build options. 
-
-I've already heard that XCode is good, but I can't download the latest version without updating to Catalina and screwing my 32-bit apps, which I don't want to do.
-
-Any recommendations or advice would be appreciated!
-## [10][Error Checks + Inconsistent Boolean Conversion = ?](https://www.reddit.com/r/cpp/comments/fuaafj/error_checks_inconsistent_boolean_conversion/)
+## [11][Error Checks + Inconsistent Boolean Conversion = ?](https://www.reddit.com/r/cpp/comments/fuaafj/error_checks_inconsistent_boolean_conversion/)
 - url: https://www.reddit.com/r/cpp/comments/fuaafj/error_checks_inconsistent_boolean_conversion/
 ---
 Working with a code base that internally often returns `optional&lt;&gt;` and also `error_code`. There is also an `expect&lt;&gt;` type mixed in.
@@ -203,7 +194,7 @@ I've never really been confronted with the immediate problem that kind of dimorp
 In my humble and useless opinion error\_code should convert to boolean true if no error just for consistency or don't provide a boolean conversion at all. But that train has long left the station.
 
 /venting
-## [11][static const struct to constexpr, taking the address for memcpy, too many ways to declare constants](https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/)
+## [12][static const struct to constexpr, taking the address for memcpy, too many ways to declare constants](https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/)
 - url: https://www.reddit.com/r/cpp/comments/ftwovt/static_const_struct_to_constexpr_taking_the/
 ---
 I'm updating some legacy code to C++17.  There's a header which defines test data in structs.  It uses the "static" keyword (in the C sense, outside of a class) to make the instances local to a translation unit (so that the header can be included in multiple cpp files without the linker complaining about duplicate symbol definitions).
@@ -225,10 +216,3 @@ When I tried to look this up, my search turned up questions about making sure th
 If need be I can just replace all of the memcpy's with copy-assignments to render the question moot.  However it would be better if, for now, I can keep the existing memcpy'ing code as-is while using contexpr source values.  I guess I'm just looking for an explanation why it's even possible to take the address of a constexpr value &amp; assurance that's an intentional feature.
 
 It seems C++ has accumulated so many old and new ways of declaring constant and "kind of constant" things (all with different benefits and pitfalls) that we need some kind of cheat sheet for this.  For example, "constexpr" implies "inline", but adding the word "inline" causes all the instances to share an address?  Or it causes them all to receive unique addresses?  We need a cheat sheet with a matrix of yes/no boxes.  The rows are things like "nonmember static", "static member", and columns like "weak linkage", "unique address", etc.
-## [12][How to get better at C++ infrastructure design?](https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/)
-- url: https://www.reddit.com/r/cpp/comments/ftm8n3/how_to_get_better_at_c_infrastructure_design/
----
-Most of the books I came across talks about basics of the language, even advanced topic don’t seem to talk much about how to design a new project. 
-What dictates what classes to use? How classes are connected to each other?
-
-Any recommendation on how to progress on that side?

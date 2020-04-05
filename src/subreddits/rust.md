@@ -23,129 +23,114 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/31/this-week-in-rust-332/
 ---
 
-## [3][Why I’m building a new async runtime](https://www.reddit.com/r/rust/comments/fudgku/why_im_building_a_new_async_runtime/)
-- url: https://stjepang.github.io/2020/04/03/why-im-building-a-new-async-runtime.html
+## [3][State machines with const-generics](https://www.reddit.com/r/rust/comments/fvciq3/state_machines_with_constgenerics/)
+- url: https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=e957af6f8ba26b8f496366182178a9d2
 ---
 
-## [4][Introducing Kubie: a more powerful alternative to kubectx and kubens, written in Rust](https://www.reddit.com/r/rust/comments/fut560/introducing_kubie_a_more_powerful_alternative_to/)
-- url: https://blog.sbstp.ca/introducing-kubie/
+## [4][To learn how base64 works I implemented it with Rust](https://www.reddit.com/r/rust/comments/fvcouv/to_learn_how_base64_works_i_implemented_it_with/)
+- url: https://www.reddit.com/r/rust/comments/fvcouv/to_learn_how_base64_works_i_implemented_it_with/
+---
+[https://medium.com/@niklasbuechner/implementing-base64-in-rust-34ef6db1e73a](https://medium.com/@niklasbuechner/implementing-base64-in-rust-34ef6db1e73a)
+## [5][Dirscan: A high performance tool for summarising large directories or drives](https://www.reddit.com/r/rust/comments/fv2czk/dirscan_a_high_performance_tool_for_summarising/)
+- url: https://github.com/orf/dirscan
 ---
 
-## [5][[OC] Fondant - macro based, configuration management library for CLI utils](https://www.reddit.com/r/rust/comments/fu8c0p/oc_fondant_macro_based_configuration_management/)
-- url: https://i.redd.it/akvcc4e7hlq41.png
+## [6][Panic message conventions?](https://www.reddit.com/r/rust/comments/fv7830/panic_message_conventions/)
+- url: https://www.reddit.com/r/rust/comments/fv7830/panic_message_conventions/
+---
+I'm writing libraries and was wondering what the panic message convention is.
+
+I looked around but there's no posts about this, so I looked at the rust compiler source, here are my findings:
+
+&amp;#x200B;
+
+* Lots of panics are lower-case without final punctuation: **("overflow when converting float to duration")**
+* Panics in tests tend to have an uppercase start: **("Unexpected value {:?}")**
+* Bootstrap panics include newlines: **("\\n\\nfailed to specify \`dist.sign-folder\` in \`config.toml\`\\n\\n")**
+* liballoc tests contain exclamation marks at the end **("usize::MAX should trigger an overflow!")**
+* Some panics include their logical domain of interest designated before a colon: **("align\_offset: align is not a power-of-two")**
+* Some panics put printed data between backticks: **("invalid format arg \`{:?}\`")**
+* Some panics put argument data after the final colon: **("rustc didn't succeed: {}")**
+
+&amp;#x200B;
+
+**My question is:** what is generally the "best" format for panic messages?
+## [7][Rust Dataframe: Update 1](https://www.reddit.com/r/rust/comments/fv11ir/rust_dataframe_update_1/)
+- url: https://github.com/nevi-me/rust-dataframe/blob/master/notes/update-01__04-04-2020.md
 ---
 
-## [6][I've made a templates engine to ease writing repetitive boilerplate code [CHROBRY]](https://www.reddit.com/r/rust/comments/fuobnj/ive_made_a_templates_engine_to_ease_writing/)
-- url: https://www.reddit.com/r/rust/comments/fuobnj/ive_made_a_templates_engine_to_ease_writing/
+## [8][Help sorting BTreeMap in different order](https://www.reddit.com/r/rust/comments/fv96yi/help_sorting_btreemap_in_different_order/)
+- url: https://www.reddit.com/r/rust/comments/fv96yi/help_sorting_btreemap_in_different_order/
 ---
-Hi Rustaceans!
+I need to have two of BTreeMaps&lt;i64, Data&gt;, one sorted ascending and the other sorted descending (different data in each). Performance is very, very important. I'm already paying up in the Ordering enum (I cannot just subtract like I would in C++), so I'm trying not to pay up more with extra Options and stuff like I would by having to implement PartialOrd.
 
-I've made a crate (and CLI app) that generates your target language files based on template file with data types definitions and behaviours assigned to them. Loosely inspired by Rust structs and traits.
+My first attempt was to create `struct IncVal(i64)` and `struct DecVal(i64)` but that was a lot of biolerplate and had to go though the Option with PartialEq. There has to be a better way.
 
-I'm using it to generate serde-like serializable data for my Unreal Engine 4 game project, i think you might find it useful too :)
-
-Repo: [https://github.com/PsichiX/Chrobry](https://github.com/PsichiX/Chrobry)
-## [7][PSA: docs.rs/std redirects to doc.rust-lang.org/std](https://www.reddit.com/r/rust/comments/fuk39x/psa_docsrsstd_redirects_to_docrustlangorgstd/)
-- url: https://www.reddit.com/r/rust/comments/fuk39x/psa_docsrsstd_redirects_to_docrustlangorgstd/
+This is a somewhat simplified example. There key is a user defined class that holds a more complex number, but just getting it to work with an i128 right now would be a small win.
+## [9][How does one mutably borrow a value after conditionally returning an immutable reference to it?](https://www.reddit.com/r/rust/comments/fv9yke/how_does_one_mutably_borrow_a_value_after/)
+- url: https://www.reddit.com/r/rust/comments/fv9yke/how_does_one_mutably_borrow_a_value_after/
 ---
-Title. Just in case someone didn't know (just like me).
-## [8][Impact of TLS dependency removal from async internals](https://www.reddit.com/r/rust/comments/fua76v/impact_of_tls_dependency_removal_from_async/)
-- url: https://www.reddit.com/r/rust/comments/fua76v/impact_of_tls_dependency_removal_from_async/
----
-TL;DR: The compiler is now able to optimize much better than before.
-
-I wanted to see the impact of recent TLS dependency removal from async internal implementation (https://github.com/rust-lang/rust/pull/69033)
-
-Here is the toy example:
+I have the following pattern in my code:
 
 ```
-async fn foo() -&gt; u32 {
-    3
-}
+struct Data {};
 
-async fn square() -&gt; u32 {
-    let a = foo().await;
-    let b = foo().await;
-    a * b
-}
-
-pub fn xx(cx: &amp;mut Context&lt;'_&gt;) -&gt; u32 {
-    let mut f = square();
-    let mut f = unsafe { Pin::new_unchecked(&amp;mut f) };
-    loop {
-        match f.as_mut().poll(cx) {
-            Poll::Ready(x) =&gt; break x,
-            Poll::Pending =&gt; {}
-        }
+fn x(input: &amp;mut Vec&lt;Data&gt;) -&gt; Option&lt;&amp;Data&gt; {
+    let (idx, data) = input.iter().enumerate().next()?;
+    if false { // some condition
+        Some(data)
+    } else {
+        input.remove(idx);
+        x(input)
     }
 }
 ```
 
-On stable 1.42.0: https://rust.godbolt.org/z/WfZMRs
+I get the following error from the borrow checker:
 
-On current nightly: https://rust.godbolt.org/z/jL_5sC
+```
+cannot borrow `*input` as mutable because it is also borrowed as immutable
+```
 
-It would be interesting to see some real world differences.
-## [9][Rust and Computational Science?](https://www.reddit.com/r/rust/comments/fugyk0/rust_and_computational_science/)
-- url: https://www.reddit.com/r/rust/comments/fugyk0/rust_and_computational_science/
----
-hi,
+How does one make this work?
 
-i am interested in a Master's Degree in Computational Science (Neuroscience) / Computational Neuroscience. Doing a bit of research I came across this [Wiki article](https://en.wikipedia.org/wiki/Computational_science).
+EDIT: I've simplified the problem to the following:
 
-It lists a few programming languages that are predominately used in that field: Fortran, Octave, Haskell, Julia, Maple, Matlab, Python, Perl, R , etc.
+```rust
+struct Data {}
 
-Rust isn't listed. Is that just because of the relative novelty of the language or are there some features missing that would make rust a bad choice language for that field?
+fn condition(data: &amp;Data) -&gt; bool {
+    true
+}
 
-what do those languages have that rust doesn't (yet)?
-## [10][From&lt;Option&lt;T&gt;&gt; for Option&lt;U&gt; is not implemented?](https://www.reddit.com/r/rust/comments/fui7g4/fromoptiont_for_optionu_is_not_implemented/)
-- url: https://www.reddit.com/r/rust/comments/fui7g4/fromoptiont_for_optionu_is_not_implemented/
----
-Is there a reason that the follow blanket impl is not actually in core?  
-
-``` rust
-impl&lt;T, U: From&lt;T&gt;&gt; From&lt;Option&lt;T&gt;&gt; for Option&lt;U&gt; {
-    fn from(t: Option&lt;T&gt;) -&gt; Option&lt;U&gt; {
-        if let Some(inner_t) = t {
-            Some(t.into())
-        } else {
-            None
-        }
+fn x(input: &amp;mut Vec&lt;Data&gt;) -&gt; &amp;Data {
+    let data = &amp;input[0];
+    if condition(data) {
+        data
+    } else {
+        y(input)
     }
 }
+
+fn y(input: &amp;mut Vec&lt;Data&gt;) -&gt; &amp;Data {
+    todo!()
+}
 ```
-## [11][Rust has to rework its error reporting](https://www.reddit.com/r/rust/comments/fubeek/rust_has_to_rework_its_error_reporting/)
-- url: https://www.reddit.com/r/rust/comments/fubeek/rust_has_to_rework_its_error_reporting/
+## [10][Error recovery with parser combinators (using nom)](https://www.reddit.com/r/rust/comments/fvc7hy/error_recovery_with_parser_combinators_using_nom/)
+- url: https://www.eyalkalderon.com/nom-error-recovery/
 ---
-I really like rust and a in the beginning a great feature was the detailed error reporting where you could directly see what's wrong and how you could fix it.
 
-I am afraid that now with `futures` rust error messages became really bad. Quite often I get error messages like these:
-
-    error[E0599]: no method named `into_stream` found for type `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt;` in the current scope
-       --&gt; src/main.rs:220:19
-        |
-    220 |     let foo = foo.into_stream();
-        |                   ^^^^^^^^^^^ method not found in `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt;`
-        |
-        = note: the method `into_stream` exists but the following trait bounds were not satisfied:
-                `&amp;futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::future::future::FutureExt`
-                `&amp;futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::stream::try_stream::TryStreamExt`
-                `&amp;mut futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::future::future::FutureExt`
-                `&amp;mut futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::stream::try_stream::TryStreamExt`
-                `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::future::future::FutureExt`
-                `futures_util::stream::stream::forward::Forward&lt;impl futures_core::stream::TryStream, futures_util::sink::map_err::SinkMapErr&lt;futures_util::sink::fanout::Fanout&lt;futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;, futures_channel::mpsc::UnboundedSender&lt;(bytes::bytes::Bytes, std::net::SocketAddr)&gt;&gt;, [closure@src/main.rs:218:47: 218:101]&gt;&gt; : futures_util::stream::try_stream::TryStreamExt`
-    
-
-I think that async and futures are really amazing tools that help you to write good and efficient code, but coding with unreadable error messages like these is no longer fun.
-
-Do you think this situation can be resolved somehow?
-## [12][Mutable Slices &amp; Borrow Checker](https://www.reddit.com/r/rust/comments/fuiwze/mutable_slices_borrow_checker/)
-- url: https://www.reddit.com/r/rust/comments/fuiwze/mutable_slices_borrow_checker/
+## [11][[Question] What are some of real-world open-source Rust product?](https://www.reddit.com/r/rust/comments/fvdr7y/question_what_are_some_of_realworld_opensource/)
+- url: https://www.reddit.com/r/rust/comments/fvdr7y/question_what_are_some_of_realworld_opensource/
 ---
-This post is inspired by [this tweet](https://twitter.com/plaidfinch/status/1246200064332234758) challenging everyone to get the linked piece of code ([link to playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=a7a8e3e6b08039370bcc4caa10212e4d)) working.
+Hey!
 
-However, it is not quite clear to me why this piece of code fails in the first place; according to the compiler error message, the call to `slice.get_mut(index)` in line 8 mutably borrows `slice` in the previous loop iteration; but shouldn't that reference have been dropped in the previous loop iteration as well?
+It seems that a lot of companies started adopting [Rust](https://www.rust-lang.org/production) , and more traditional companies [do as well](https://twitter.com/steveklabnik/status/1246510586416050179). However, I would like to check some products or startup's work built on top of Rust Stack and how it serves Mobile app or large-scale website as a backend.
 
-If I am mistaken, what is the reason this piece of code doesn't pass the borrow checker?
+For learning purposes, I would like to check real-world open-source Rust stack, and how teams orchestrate different services. Do you know of any repositories like that?
+## [12][vim - How can I see source code for a module/trait I have imported?](https://www.reddit.com/r/rust/comments/fvb8or/vim_how_can_i_see_source_code_for_a_moduletrait_i/)
+- url: https://www.reddit.com/r/rust/comments/fvb8or/vim_how_can_i_see_source_code_for_a_moduletrait_i/
+---
+New to rust here.
 
-Looking forward to your opinions!
+When I have \`use std::cmp::Ordering\` in my source code file, how can I see what is inside that module/trait? I tried "gf" in vim but it didn't work.

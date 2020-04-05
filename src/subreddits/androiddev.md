@@ -40,91 +40,219 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Removing app from Amazon app store](https://www.reddit.com/r/androiddev/comments/fuktlz/removing_app_from_amazon_app_store/)
-- url: https://www.reddit.com/r/androiddev/comments/fuktlz/removing_app_from_amazon_app_store/
----
-Hi,
-
-A few months ago I submitted an app to the Amazon app store. It is a paid app and has only had one download in that time. I would like to delete the listing and only focus on the Google Play Store for Android as it's not worth continually updating the Amazon listing whenever I change something when there is only one user.
-
-My question is, if I remove the app from the store using the 'Remove from Appstore' button, what happens for the one user that has purchased the app? I can't tell from Amazon's reporting if the user has updated to the latest version. Will they still be able to update to the latest version even when it has been de-listed? Will they be able to re-download the app later if they remove it or switch devices, seeing as how they have already purchased it?
-
-Thanks!
-## [4][Kotlin Resources for Beginners](https://www.reddit.com/r/androiddev/comments/furu3w/kotlin_resources_for_beginners/)
-- url: https://www.reddit.com/r/androiddev/comments/furu3w/kotlin_resources_for_beginners/
----
-I have basic programming knowledge. I was trying out learning Java but it seems Kotlin is more geared towards android development. 
-
-I cant find beginner resources for Kotlin. Please do recommend.
-## [5][Modifying the default View touch/click behaviour - is there anything wrong with this tweak?](https://www.reddit.com/r/androiddev/comments/fumupu/modifying_the_default_view_touchclick_behaviour/)
-- url: https://www.reddit.com/r/androiddev/comments/fumupu/modifying_the_default_view_touchclick_behaviour/
----
-For a long time during the development of my app I've noticed a perceptible bit of input lag in the ripple animation that occurs when a View is touched or pressed. As I fiddled around with it yesterday, I decided to investigate.
-
-I found these comments/code in the OnTouchEvent method of the default View class:
-
-    // Walk up the hierarchy to determine if we're inside a scrolling container.
-    boolean isInScrollingContainer = isInScrollingContainer();
-    
-    // For views inside a scrolling container, delay the pressed feedback for
-    // a short period in case this is a scroll.
-
-So essentially, if the view you're clicking is inside a scrolling container, the ripple is delayed by exactly 100ms (ViewConfiguration.getTapTimeout()). To me this delay was ruining the effect of the ripple entirely in my Recycler and Scroll views, and meant that even long presses or press and slides (where you slide your finger off a view to avoid triggering a click) had a perceptible "touch latency".
-
-The 'fix' was very simple: override the 'shouldDelayChildPressedState()' method in your scroll containers to return false always, like so:
-
-    class ImprovedRecyclerView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0 ) : RecyclerView(context, attrs, defStyleAttr) {
-        override fun shouldDelayChildPressedState(): Boolean {
-         return false
-    }
-    
-    }
-
-This method is very tightly constrained to the pressed state behaviour, so no scrolling or other touch behaviour is affected. The result in my opinion is much nicer, views feel more interactive and the ripple feels more connected to the touch. The only negative outcome is that when you start a scroll, you can trigger a ripple on the view your finger started scrolling from. It doesn't bother me though, it feels like the screen is just registering your input like a hover state in CSS.
-
-I'm not sure whether I'm sharing this because it's interesting or whether I'm asking if this is fine to change, but I feel strange modifying such a low level behaviour. I think the changed behaviour is much nicer - is that all the justification I need?
-
-Edit: also worth noting that for whatever reason, Coordinator and Frame Layouts also delay pressed states, so views inside them have the 100ms delay.
-## [6][Passing data ownership to your app’s customers](https://www.reddit.com/r/androiddev/comments/fut7mr/passing_data_ownership_to_your_apps_customers/)
-- url: https://medium.com/@andrei.lupic/passing-data-ownership-to-your-apps-customers-e57de14e3459
+## [3][Google is trying to fix Android camera apps but it's not going to work - AndroidCentral](https://www.reddit.com/r/androiddev/comments/fva9rr/google_is_trying_to_fix_android_camera_apps_but/)
+- url: https://www.androidcentral.com/google-trying-fix-android-camera-apps-its-not-going-work?amp
 ---
 
-## [7][The settings panel in Android Q](https://www.reddit.com/r/androiddev/comments/fu6vc2/the_settings_panel_in_android_q/)
-- url: https://youtu.be/kv8a5aaH9rc
+## [4][Chucker v3.2.0 is out 🚀 - with a lot of UI/perf. improvements, RTL support, URL decoding and much more.](https://www.reddit.com/r/androiddev/comments/fvbmw8/chucker_v320_is_out_with_a_lot_of_uiperf/)
+- url: https://github.com/ChuckerTeam/chucker/releases/tag/3.2.0
 ---
 
-## [8][Does income really depend that much on the logic of ad display and network performance? Check out the ultimate guide on essential in-app advertising metrics.](https://www.reddit.com/r/androiddev/comments/fursuz/does_income_really_depend_that_much_on_the_logic/)
-- url: https://www.appodeal.com/home/blog/essential-metrics-for-mobile-ad-revenue-success/?utm_campaign=appodeal_comm&amp;utm_source=reddit&amp;utm_term=androiddev
+## [5][I need to do some large math operations in my app, and i used AsyncTask till now, what is a good alternative?](https://www.reddit.com/r/androiddev/comments/fvb71f/i_need_to_do_some_large_math_operations_in_my_app/)
+- url: https://www.reddit.com/r/androiddev/comments/fvb71f/i_need_to_do_some_large_math_operations_in_my_app/
+---
+The app is in Java, so can't use coroutines. Also i am a multithreading noob.
+## [6][Greg Kroah Hartman AMA coming next week, write your questions now!](https://www.reddit.com/r/androiddev/comments/fvahmf/greg_kroah_hartman_ama_coming_next_week_write/)
+- url: https://www.reddit.com/r/linux/comments/fu9sv5/greg_kh_ama_coming_next_week_write_your_questions/
 ---
 
-## [9][Confused by In-App-Purchase Data Provided by Google (gross/net)](https://www.reddit.com/r/androiddev/comments/furqbf/confused_by_inapppurchase_data_provided_by_google/)
-- url: https://www.reddit.com/r/androiddev/comments/furqbf/confused_by_inapppurchase_data_provided_by_google/
----
-Hey guys,
-
-I am a app publisher and I’m very confused by the In-App-Purchase data (Both In-App-Purchases and Subscriptions) provided by Google. Sometimes they provide gross (revenue without taxes and Google Play cut) and sometimes net (What I receive on my bank account). So far I have several data views:
-
--Acquisition reports in Google Play Developer console (net revenue, also ARPU KPI is net revenue but only calculates IAP?)
--Analytics in Firebase Dashboard (gross revenue, however Admob is net)
--Revenue Chart in Google Play Developer console Android app (gross revenue)
--Financial Reports - Revenue in Google Play Developer console (gross revenue)
--Google Play Developer Console - Payment Settings Shows net revenue 
-
-Guys I’m a bit confused, Google seems to mix data as they like, however I need this data to make my strategic decisions on Marketing spent.
-## [10][Internal Test app still pending Publication even after 6 days.](https://www.reddit.com/r/androiddev/comments/furq28/internal_test_app_still_pending_publication_even/)
-- url: https://www.reddit.com/r/androiddev/comments/furq28/internal_test_app_still_pending_publication_even/
----
-I uploaded and internal test version of my app to the Internal Test Track on 30th March and today 6th April it is Still Pending Publication. Is anyone else facing the same problem. I have to test a lot of things before I resume app development and for the past 6 days I have just been sitting idle waiting for my test app to get published. Is this normal
-## [11][Jetpack ViewModel initialization](https://www.reddit.com/r/androiddev/comments/furo3r/jetpack_viewmodel_initialization/)
-- url: https://www.rockandnull.com/jetpack-viewmodel-initialization/
+## [7][Android Studio Layout Inspector](https://www.reddit.com/r/androiddev/comments/fuxi57/android_studio_layout_inspector/)
+- url: https://medium.com/androiddevelopers/layout-inspector-1f8d446d048
 ---
 
-## [12][Android Studio 4.0 - Translate Editor not work](https://www.reddit.com/r/androiddev/comments/fuql2a/android_studio_40_translate_editor_not_work/)
-- url: https://www.reddit.com/r/androiddev/comments/fuql2a/android_studio_40_translate_editor_not_work/
+## [8][Image from camera or gallery comes rotated sometimes](https://www.reddit.com/r/androiddev/comments/fvdic3/image_from_camera_or_gallery_comes_rotated/)
+- url: https://www.reddit.com/r/androiddev/comments/fvdic3/image_from_camera_or_gallery_comes_rotated/
 ---
-Translate Editor stuck at screen "Loading string resource data". I tried to "Invalided &amp; Restart" but same result. This issue just happens on Android Studio 4.0. 
+Sometimes, when I load an image from the gallery or the camera the image gets rotated not in a 90Degrees angle but just a little bit something like 5 Degrees and I can't explain it since it's not even happening consistently but random, and it has nothing to do with the actual image sometimes it rotates a certain image and sometimes it doesn't rotate the same image. I already have tried setting the rotation to the actual rotation of the image after selecting but somehow it doesn't care and I can't find people with the same problem, so thanks in advance for everyone helping me with this.
+
+Here is my code for the selection of the image:
+
+[code](https://hastebin.com/bahunifanu.cs)
+## [9][Android Navigation component button navigation to another fragment and back shows blank screen](https://www.reddit.com/r/androiddev/comments/fvdhxq/android_navigation_component_button_navigation_to/)
+- url: https://www.reddit.com/r/androiddev/comments/fvdhxq/android_navigation_component_button_navigation_to/
+---
+Am using navigation component to handle navigation in my app, i have a user profile with two buttons , one is to navigate to users posts when clicked and the other is to log out the user 
+
+`class MeFragment : BaseFragment() {`  
+
+
+`override fun onCreateView(`  
+`inflater: LayoutInflater, container: ViewGroup?,`  
+ `savedInstanceState: Bundle?`  
+`): View? {`  
+ `// Inflate the layout for this fragment`  
+ `return inflater.inflate(R.layout.fragment_me, container, false)`  
+`}`  
+
+
+`override fun onViewCreated(view: View, savedInstanceState: Bundle?) {`  
+ `super.onViewCreated(view, savedInstanceState)`  
+
+
+`myProperty.setOnClickListener {`  
+ `val action = MeFragmentDirections.actionMeFragmentToMyUploadHousesFragment()`  
+ `findNavController().navigate(R.id.myUploadHousesFragment)`  
+ `}`  
+ `logout.setOnClickListener {`  
+ `FirebaseAuth.getInstance().signOut()`  
+ `}`  
+ `}`  
+
+
+`}`  
+but when user clicks on user profile they can navigate just fine, issue is when they click from the posts back to the meFragment, the whole app breaks and shows a blank, here is my navigation component graph 
 
 &amp;#x200B;
 
-https://preview.redd.it/xi2togysprq41.png?width=1778&amp;format=png&amp;auto=webp&amp;s=1a2a9ae03165339d6ef3cd22ad631e5e76cd167a
+`&lt;?xml version="1.0" encoding="utf-8"?&gt;`  
+`&lt;navigation xmlns:android="http://schemas.android.com/apk/res/android"`  
+ `xmlns:app="http://schemas.android.com/apk/res-auto"`  
+ `xmlns:tools="http://schemas.android.com/tools"`  
+ `android:id="@+id/main_graph.xml"`  
+ `app:startDestination="@id/onBoarding"&gt;`  
+`&lt;action`  
+ `android:id="@+id/action_logout"`  
+ `app:destination="@id/authFragment"`  
+ `app:enterAnim="@anim/nav_default_enter_anim"`  
+ `app:exitAnim="@anim/nav_default_exit_anim"`  
+ `app:popEnterAnim="@anim/nav_default_pop_enter_anim"`  
+ `app:popExitAnim="@anim/nav_default_pop_exit_anim"`  
+ `app:popUpTo="@id/main_graph.xml"`  
+ `app:popUpToInclusive="true" /&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/onBoarding"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.onBoarding.OnBoarding"`  
+ `android:label="OnBoarding"`  
+ `tools:layout="@layout/fragment_on_boarding"&gt;`  
+`&lt;action`  
+ `android:id="@+id/action_onBoarding_to_authFragment"`  
+ `app:destination="@id/authFragment"`  
+ `app:enterAnim="@anim/nav_default_enter_anim"`  
+ `app:exitAnim="@anim/nav_default_exit_anim"`  
+ `app:popEnterAnim="@anim/nav_default_pop_enter_anim"`  
+ `app:popExitAnim="@anim/nav_default_pop_exit_anim"`  
+ `app:popUpTo="@id/main_graph.xml"`  
+ `app:popUpToInclusive="true" /&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/authFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.authHost.AuthFragment"`  
+ `android:label="AuthFragment"`  
+ `tools:layout="@layout/fragment_auth"&gt;`  
+`&lt;action`  
+ `android:id="@+id/action_authFragment_to_phoneVerificationFragment"`  
+ `app:destination="@id/phoneVerificationFragment"`  
+ `app:enterAnim="@anim/nav_default_enter_anim"`  
+ `app:exitAnim="@anim/nav_default_exit_anim"`  
+ `app:popEnterAnim="@anim/nav_default_pop_enter_anim"`  
+ `app:popExitAnim="@anim/nav_default_pop_exit_anim"/&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/loginFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.login.LoginFragment"`  
+ `android:label="LoginFragment"`  
+ `tools:layout="@layout/fragment_login" /&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/signUpFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.signUp.SignUpFragment"`  
+ `android:label="SignUpFragment"`  
+ `tools:layout="@layout/fragment_sign_up" /&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/homeFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.home.HomeFragment"`  
+ `android:label="Home"`  
+ `tools:layout="@layout/fragment_home" /&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/homepageFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.homepage.HomepageFragment"`  
+ `android:label="fragment_homepage"`  
+ `tools:layout="@layout/fragment_homepage" &gt;`  
+`&lt;action`  
+ `android:id="@+id/action_homepageFragment_to_categoryFragment"`  
+ `app:destination="@id/categoryFragment"`  
+ `app:popUpToInclusive="false" /&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/meFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.me.MeFragment"`  
+ `android:label="fragment_me"`  
+ `tools:layout="@layout/fragment_me" &gt;`  
+`&lt;action`  
+ `android:id="@+id/action_meFragment_to_myUploadHousesFragment"`  
+ `app:destination="@id/myUploadHousesFragment" /&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/postFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.post.PostFragment"`  
+ `android:label="fragment_post"`  
+ `tools:layout="@layout/fragment_post" /&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/searchFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.search.SearchFragment"`  
+ `android:label="fragment_search"`  
+ `tools:layout="@layout/fragment_search" /&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/servicesFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.services.ServicesFragment"`  
+ `android:label="fragment_services"`  
+ `tools:layout="@layout/fragment_services" /&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/otpVerificationFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.phone.OtpVerificationFragment"`  
+ `android:label="OtpVerificationFragment" &gt;`  
+`&lt;action`  
+ `android:id="@+id/action_otpVerificationFragment_to_signUpFragment"`  
+ `app:destination="@id/signUpFragment" /&gt;`  
+`&lt;action`  
+ `android:id="@+id/action_otpVerificationFragment_to_homeFragment"`  
+ `app:destination="@id/homeFragment" /&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/phoneVerificationFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.phone.PhoneVerificationFragment"`  
+ `android:label="PhoneVerificationFragment" &gt;`  
+`&lt;action`  
+ `android:id="@+id/action_phoneVerificationFragment_to_otpVerificationFragment"`  
+ `app:destination="@id/otpVerificationFragment" /&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/myUploadHousesFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.me.MyUploadHousesFragment"`  
+ `android:label="fragment_my_upload_houses"`  
+ `tools:layout="@layout/fragment_my_upload_houses" &gt;`  
+`&lt;action`  
+ `android:id="@+id/action_myUploadHousesFragment_pop"`  
+ `app:popUpTo="@id/meFragment"`  
+ `app:popUpToInclusive="true" /&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;fragment`  
+ `android:id="@+id/categoryFragment"`  
+ `android:name="org.hero76.zedhousely.ui.fragments.category.CategoryFragment"`  
+ `android:label="CategoryFragment" &gt;`  
+`&lt;action`  
+ `android:id="@+id/action_categoryFragment_to_homepageFragment"`  
+ `app:destination="@id/homepageFragment" /&gt;`  
+`&lt;/fragment&gt;`  
+`&lt;/navigation&gt;`
+
+&amp;#x200B;
+
+`Asking for help on how to fix the issue.`
+## [10][What subjects do I need to learn for a stick balance game?](https://www.reddit.com/r/androiddev/comments/fvdafj/what_subjects_do_i_need_to_learn_for_a_stick/)
+- url: https://www.reddit.com/r/androiddev/comments/fvdafj/what_subjects_do_i_need_to_learn_for_a_stick/
+---
+Our professor wanted us to build something simple with Android sensors. A simple app that displays sensor values would probably do just fine but I want to build a fun app, an app that would teach me more than a 5-10 minutes tutorial does.
+
+So I decided to build a stick balance game where a long stick slowly tips one side and the player uses accelerometer to try to keep it standing up.
+
+I am a novice Android dev but I thought it is still doable for someone on my level, with a bit of a challenge of course. 
+
+Now, my question is, what topics should I be looking at to build something like this? I hope I don't have to use a physics engine or something
+## [11][How to add margin to the MaterialButton inside MaterialButtonToggleGroup?](https://www.reddit.com/r/androiddev/comments/fvd614/how_to_add_margin_to_the_materialbutton_inside/)
+- url: https://www.reddit.com/r/androiddev/comments/fvd614/how_to_add_margin_to_the_materialbutton_inside/
+---
+It's not working by setting `android:layout_margin="16dp"` to the buttons
+## [12][[Lyla Fujiwara / Shailen Tull] Android Conference Talks - Easy Android accessibility](https://www.reddit.com/r/androiddev/comments/fv57zq/lyla_fujiwara_shailen_tull_android_conference/)
+- url: https://www.youtube.com/watch?v=yxNROzu9nQQ
+---
+

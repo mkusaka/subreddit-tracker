@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - April 04, 2020](https://www.reddit.com/r/androiddev/comments/fusw1l/app_feedback_thread_april_04_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/fusw1l/app_feedback_thread_april_04_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/fvy3fg/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/fvy3fg/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - March 30, 2020](https://www.reddit.com/r/androiddev/comments/fronhm/weekly_questions_thread_march_30_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/fronhm/weekly_questions_thread_march_30_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - April 06, 2020](https://www.reddit.com/r/androiddev/comments/fvwq7t/weekly_questions_thread_april_06_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/fvwq7t/weekly_questions_thread_april_06_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,219 +31,88 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google is trying to fix Android camera apps but it's not going to work - AndroidCentral](https://www.reddit.com/r/androiddev/comments/fva9rr/google_is_trying_to_fix_android_camera_apps_but/)
-- url: https://www.androidcentral.com/google-trying-fix-android-camera-apps-its-not-going-work?amp
+## [3][ViewBinding – the New Standard for View Interaction Handling in Android](https://www.reddit.com/r/androiddev/comments/fvx3n8/viewbinding_the_new_standard_for_view_interaction/)
+- url: https://infinum.com/the-capsized-eight/viewbinding-the-new-standard-for-view-interaction-handling-in-android
 ---
 
-## [4][Chucker v3.2.0 is out 🚀 - with a lot of UI/perf. improvements, RTL support, URL decoding and much more.](https://www.reddit.com/r/androiddev/comments/fvbmw8/chucker_v320_is_out_with_a_lot_of_uiperf/)
-- url: https://github.com/ChuckerTeam/chucker/releases/tag/3.2.0
+## [4][Learn Jetpack Compose from examples that show the Compose way of doing common Android tasks](https://www.reddit.com/r/androiddev/comments/fvmktf/learn_jetpack_compose_from_examples_that_show_the/)
+- url: https://www.reddit.com/r/androiddev/comments/fvmktf/learn_jetpack_compose_from_examples_that_show_the/
 ---
+I've been playing with Jetpack Compose the past few months so decided to release a project that shows examples of how you would do common Android things the Jetpack Compose way. Each example is fairly self contained and the hope is that you can learn Compose by just going through the examples and reading through the comments.
 
-## [5][I need to do some large math operations in my app, and i used AsyncTask till now, what is a good alternative?](https://www.reddit.com/r/androiddev/comments/fvb71f/i_need_to_do_some_large_math_operations_in_my_app/)
-- url: https://www.reddit.com/r/androiddev/comments/fvb71f/i_need_to_do_some_large_math_operations_in_my_app/
----
-The app is in Java, so can't use coroutines. Also i am a multithreading noob.
-## [6][Greg Kroah Hartman AMA coming next week, write your questions now!](https://www.reddit.com/r/androiddev/comments/fvahmf/greg_kroah_hartman_ama_coming_next_week_write/)
-- url: https://www.reddit.com/r/linux/comments/fu9sv5/greg_kh_ama_coming_next_week_write_your_questions/
----
-
-## [7][Android Studio Layout Inspector](https://www.reddit.com/r/androiddev/comments/fuxi57/android_studio_layout_inspector/)
-- url: https://medium.com/androiddevelopers/layout-inspector-1f8d446d048
----
-
-## [8][Image from camera or gallery comes rotated sometimes](https://www.reddit.com/r/androiddev/comments/fvdic3/image_from_camera_or_gallery_comes_rotated/)
-- url: https://www.reddit.com/r/androiddev/comments/fvdic3/image_from_camera_or_gallery_comes_rotated/
----
-Sometimes, when I load an image from the gallery or the camera the image gets rotated not in a 90Degrees angle but just a little bit something like 5 Degrees and I can't explain it since it's not even happening consistently but random, and it has nothing to do with the actual image sometimes it rotates a certain image and sometimes it doesn't rotate the same image. I already have tried setting the rotation to the actual rotation of the image after selecting but somehow it doesn't care and I can't find people with the same problem, so thanks in advance for everyone helping me with this.
-
-Here is my code for the selection of the image:
-
-[code](https://hastebin.com/bahunifanu.cs)
-## [9][Android Navigation component button navigation to another fragment and back shows blank screen](https://www.reddit.com/r/androiddev/comments/fvdhxq/android_navigation_component_button_navigation_to/)
-- url: https://www.reddit.com/r/androiddev/comments/fvdhxq/android_navigation_component_button_navigation_to/
----
-Am using navigation component to handle navigation in my app, i have a user profile with two buttons , one is to navigate to users posts when clicked and the other is to log out the user 
-
-`class MeFragment : BaseFragment() {`  
+Github - [https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example](https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example)  
 
 
-`override fun onCreateView(`  
-`inflater: LayoutInflater, container: ViewGroup?,`  
- `savedInstanceState: Bundle?`  
-`): View? {`  
- `// Inflate the layout for this fragment`  
- `return inflater.inflate(R.layout.fragment_me, container, false)`  
-`}`  
-
-
-`override fun onViewCreated(view: View, savedInstanceState: Bundle?) {`  
- `super.onViewCreated(view, savedInstanceState)`  
-
-
-`myProperty.setOnClickListener {`  
- `val action = MeFragmentDirections.actionMeFragmentToMyUploadHousesFragment()`  
- `findNavController().navigate(R.id.myUploadHousesFragment)`  
- `}`  
- `logout.setOnClickListener {`  
- `FirebaseAuth.getInstance().signOut()`  
- `}`  
- `}`  
-
-
-`}`  
-but when user clicks on user profile they can navigate just fine, issue is when they click from the posts back to the meFragment, the whole app breaks and shows a blank, here is my navigation component graph 
+Here are some examples that I cover (there are a lot more examples!) -
 
 &amp;#x200B;
 
-`&lt;?xml version="1.0" encoding="utf-8"?&gt;`  
-`&lt;navigation xmlns:android="http://schemas.android.com/apk/res/android"`  
- `xmlns:app="http://schemas.android.com/apk/res-auto"`  
- `xmlns:tools="http://schemas.android.com/tools"`  
- `android:id="@+id/main_graph.xml"`  
- `app:startDestination="@id/onBoarding"&gt;`  
-`&lt;action`  
- `android:id="@+id/action_logout"`  
- `app:destination="@id/authFragment"`  
- `app:enterAnim="@anim/nav_default_enter_anim"`  
- `app:exitAnim="@anim/nav_default_exit_anim"`  
- `app:popEnterAnim="@anim/nav_default_pop_enter_anim"`  
- `app:popExitAnim="@anim/nav_default_pop_exit_anim"`  
- `app:popUpTo="@id/main_graph.xml"`  
- `app:popUpToInclusive="true" /&gt;`  
-`&lt;fragment`  
- `android:id="@+id/onBoarding"`  
- `android:name="org.hero76.zedhousely.ui.fragments.onBoarding.OnBoarding"`  
- `android:label="OnBoarding"`  
- `tools:layout="@layout/fragment_on_boarding"&gt;`  
-`&lt;action`  
- `android:id="@+id/action_onBoarding_to_authFragment"`  
- `app:destination="@id/authFragment"`  
- `app:enterAnim="@anim/nav_default_enter_anim"`  
- `app:exitAnim="@anim/nav_default_exit_anim"`  
- `app:popEnterAnim="@anim/nav_default_pop_enter_anim"`  
- `app:popExitAnim="@anim/nav_default_pop_exit_anim"`  
- `app:popUpTo="@id/main_graph.xml"`  
- `app:popUpToInclusive="true" /&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;fragment`  
- `android:id="@+id/authFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.authHost.AuthFragment"`  
- `android:label="AuthFragment"`  
- `tools:layout="@layout/fragment_auth"&gt;`  
-`&lt;action`  
- `android:id="@+id/action_authFragment_to_phoneVerificationFragment"`  
- `app:destination="@id/phoneVerificationFragment"`  
- `app:enterAnim="@anim/nav_default_enter_anim"`  
- `app:exitAnim="@anim/nav_default_exit_anim"`  
- `app:popEnterAnim="@anim/nav_default_pop_enter_anim"`  
- `app:popExitAnim="@anim/nav_default_pop_exit_anim"/&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;fragment`  
- `android:id="@+id/loginFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.login.LoginFragment"`  
- `android:label="LoginFragment"`  
- `tools:layout="@layout/fragment_login" /&gt;`  
-`&lt;fragment`  
- `android:id="@+id/signUpFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.signUp.SignUpFragment"`  
- `android:label="SignUpFragment"`  
- `tools:layout="@layout/fragment_sign_up" /&gt;`  
-`&lt;fragment`  
- `android:id="@+id/homeFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.home.HomeFragment"`  
- `android:label="Home"`  
- `tools:layout="@layout/fragment_home" /&gt;`  
-`&lt;fragment`  
- `android:id="@+id/homepageFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.homepage.HomepageFragment"`  
- `android:label="fragment_homepage"`  
- `tools:layout="@layout/fragment_homepage" &gt;`  
-`&lt;action`  
- `android:id="@+id/action_homepageFragment_to_categoryFragment"`  
- `app:destination="@id/categoryFragment"`  
- `app:popUpToInclusive="false" /&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;fragment`  
- `android:id="@+id/meFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.me.MeFragment"`  
- `android:label="fragment_me"`  
- `tools:layout="@layout/fragment_me" &gt;`  
-`&lt;action`  
- `android:id="@+id/action_meFragment_to_myUploadHousesFragment"`  
- `app:destination="@id/myUploadHousesFragment" /&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;fragment`  
- `android:id="@+id/postFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.post.PostFragment"`  
- `android:label="fragment_post"`  
- `tools:layout="@layout/fragment_post" /&gt;`  
-`&lt;fragment`  
- `android:id="@+id/searchFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.search.SearchFragment"`  
- `android:label="fragment_search"`  
- `tools:layout="@layout/fragment_search" /&gt;`  
-`&lt;fragment`  
- `android:id="@+id/servicesFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.services.ServicesFragment"`  
- `android:label="fragment_services"`  
- `tools:layout="@layout/fragment_services" /&gt;`  
-`&lt;fragment`  
- `android:id="@+id/otpVerificationFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.phone.OtpVerificationFragment"`  
- `android:label="OtpVerificationFragment" &gt;`  
-`&lt;action`  
- `android:id="@+id/action_otpVerificationFragment_to_signUpFragment"`  
- `app:destination="@id/signUpFragment" /&gt;`  
-`&lt;action`  
- `android:id="@+id/action_otpVerificationFragment_to_homeFragment"`  
- `app:destination="@id/homeFragment" /&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;fragment`  
- `android:id="@+id/phoneVerificationFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.phone.PhoneVerificationFragment"`  
- `android:label="PhoneVerificationFragment" &gt;`  
-`&lt;action`  
- `android:id="@+id/action_phoneVerificationFragment_to_otpVerificationFragment"`  
- `app:destination="@id/otpVerificationFragment" /&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;fragment`  
- `android:id="@+id/myUploadHousesFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.me.MyUploadHousesFragment"`  
- `android:label="fragment_my_upload_houses"`  
- `tools:layout="@layout/fragment_my_upload_houses" &gt;`  
-`&lt;action`  
- `android:id="@+id/action_myUploadHousesFragment_pop"`  
- `app:popUpTo="@id/meFragment"`  
- `app:popUpToInclusive="true" /&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;fragment`  
- `android:id="@+id/categoryFragment"`  
- `android:name="org.hero76.zedhousely.ui.fragments.category.CategoryFragment"`  
- `android:label="CategoryFragment" &gt;`  
-`&lt;action`  
- `android:id="@+id/action_categoryFragment_to_homepageFragment"`  
- `app:destination="@id/homepageFragment" /&gt;`  
-`&lt;/fragment&gt;`  
-`&lt;/navigation&gt;`
+https://preview.redd.it/7xrlb7c7r2r41.png?width=360&amp;format=png&amp;auto=webp&amp;s=e4cb73145008d63a26edd64c6302b8756ed780f1
+
+https://preview.redd.it/x863n5c7r2r41.png?width=360&amp;format=png&amp;auto=webp&amp;s=f51b1bd89586e8f26351d34f19d0850c936752d8
+
+https://preview.redd.it/zsf6x3c7r2r41.png?width=360&amp;format=png&amp;auto=webp&amp;s=cf0a184a11a0cff21fb93c962503e4aa73069830
 
 &amp;#x200B;
 
-`Asking for help on how to fix the issue.`
-## [10][What subjects do I need to learn for a stick balance game?](https://www.reddit.com/r/androiddev/comments/fvdafj/what_subjects_do_i_need_to_learn_for_a_stick/)
-- url: https://www.reddit.com/r/androiddev/comments/fvdafj/what_subjects_do_i_need_to_learn_for_a_stick/
+[Shared some more context in this Twitter thread](https://twitter.com/vinaygaba/status/1246918230439911425)
+
+My plan with this project is to keep adding more examples as I learn new things about Compose. I'll also happily welcome feedback/contributions so if you find something wrong or are hoping to contribute to the project, just send a pull request!
+
+Github - [https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example](https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example)
+## [5][How long did it take for your first app/game to be downloaded by random people on Google Play?](https://www.reddit.com/r/androiddev/comments/fvw8ta/how_long_did_it_take_for_your_first_appgame_to_be/)
+- url: https://www.reddit.com/r/androiddev/comments/fvw8ta/how_long_did_it_take_for_your_first_appgame_to_be/
 ---
-Our professor wanted us to build something simple with Android sensors. A simple app that displays sensor values would probably do just fine but I want to build a fun app, an app that would teach me more than a 5-10 minutes tutorial does.
+My first app, a chess game, has been published two days ago, and it has zero downloads by random people. I know that Google doesn't always recommend apps at the beggining, but I'm just wondering about your experience. How long did it take for your games/apps to be downloaded by random people?
 
-So I decided to build a stick balance game where a long stick slowly tips one side and the player uses accelerometer to try to keep it standing up.
-
-I am a novice Android dev but I thought it is still doable for someone on my level, with a bit of a challenge of course. 
-
-Now, my question is, what topics should I be looking at to build something like this? I hope I don't have to use a physics engine or something
-## [11][How to add margin to the MaterialButton inside MaterialButtonToggleGroup?](https://www.reddit.com/r/androiddev/comments/fvd614/how_to_add_margin_to_the_materialbutton_inside/)
-- url: https://www.reddit.com/r/androiddev/comments/fvd614/how_to_add_margin_to_the_materialbutton_inside/
+Edit: the link to my game is  [https://play.google.com/store/apps/details?id=com.LMProgramming.Chessbutmess](https://play.google.com/store/apps/details?id=com.LMProgramming.Chessbutmess) , if you wan't to check it out.
+## [6][How is corona impacting your apps and business?](https://www.reddit.com/r/androiddev/comments/fvu776/how_is_corona_impacting_your_apps_and_business/)
+- url: https://www.reddit.com/r/androiddev/comments/fvu776/how_is_corona_impacting_your_apps_and_business/
 ---
-It's not working by setting `android:layout_margin="16dp"` to the buttons
-## [12][[Lyla Fujiwara / Shailen Tull] Android Conference Talks - Easy Android accessibility](https://www.reddit.com/r/androiddev/comments/fv57zq/lyla_fujiwara_shailen_tull_android_conference/)
-- url: https://www.youtube.com/watch?v=yxNROzu9nQQ
+Is there a drop in revenue? How are you and your company working? Is your productivity and long term goals somehow affected?
+
+On my side, despite increase of installs revenue is dropping due to decreasing fill rates, productivity is gone because of uncertainty of what will happen with economy and ads.
+## [7][Whats your expertise and preferences ?](https://www.reddit.com/r/androiddev/comments/fvyry7/whats_your_expertise_and_preferences/)
+- url: https://i.redd.it/aajsmxhh97r41.jpg
 ---
 
+## [8][Limit the number of documents a user can create?](https://www.reddit.com/r/androiddev/comments/fvymd0/limit_the_number_of_documents_a_user_can_create/)
+- url: /r/Firebase/comments/fvyd6y/limit_the_number_of_documents_a_user_can_create/
+---
+
+## [9][Welcome to droidcon Online!](https://www.reddit.com/r/androiddev/comments/fvygaq/welcome_to_droidcon_online/)
+- url: https://www.online.droidcon.com/
+---
+
+## [10][Play Store Appeals are ridiculous](https://www.reddit.com/r/androiddev/comments/fvtuy0/play_store_appeals_are_ridiculous/)
+- url: https://www.reddit.com/r/androiddev/comments/fvtuy0/play_store_appeals_are_ridiculous/
+---
+I recently had an app removed for "impersonation" so I wanted to change the title as well as the description to make it clear that I was not affiliated with the entity. I went to the store listing tab to find it empty, as well as all other tabs; I could not make any changes. I made an appeal saying I agree with their decision and I would like to fix it but I can't. After a week of review I get an email back explaining what impersonation is and telling me to fix it. I can't take the Google team seriously anymore
+## [11][3d Card Game](https://www.reddit.com/r/androiddev/comments/fvy0b9/3d_card_game/)
+- url: https://www.reddit.com/r/androiddev/comments/fvy0b9/3d_card_game/
+---
+Hi All
+
+Newbie here. In college I previously used unity to create a side scroller game and found unity great to use.
+
+I am now looking to develop an android game. More specifically a 2D multiplayer card game based off  of a popular card game here in my country. 
+
+Is unity the platform to use here or does anyone have any other suggestions?
+
+Thanks for your help in advance.
+## [12][I'm making an android app for a client and I don't know how to deal with the pricing](https://www.reddit.com/r/androiddev/comments/fvpcxx/im_making_an_android_app_for_a_client_and_i_dont/)
+- url: https://www.reddit.com/r/androiddev/comments/fvpcxx/im_making_an_android_app_for_a_client_and_i_dont/
+---
+I just graduated last year October and was hired as an Android Developer on the same year November. I don't have much experience but I am willing to learn on new things. In my current work, there is no android app project yet so they allowed me to help with other teams working on a website. So I don't really count it as an experience.  
+
+
+I'm currently working from home due to coronavirus. And I received a project from a restaurant (not client project from my company). This is my first time working on an actual project. I've made projects before but for thesis. Can you help me out? I'm really new to this. Here are my questions:  
+
+
+How much should I ask for the price?  
+Should I ask for money before? After? Or in the middle when I'm almost finished?  
+Is there a contract? Should the developers make it? Or our client?
+
+&amp;#x200B;
+
+Thank you so much for your reply.

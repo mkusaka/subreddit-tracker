@@ -84,143 +84,74 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Fully functional Trello board written using React and Redux](https://www.reddit.com/r/reactjs/comments/fuzyui/fully_functional_trello_board_written_using_react/)
-- url: https://github.com/rcdexta/react-trello
+## [3][React Libraries in 2020](https://www.reddit.com/r/reactjs/comments/fvteil/react_libraries_in_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/fvteil/react_libraries_in_2020/
+---
+React Libraries in 2020 by Robin Wieruch  
+The list of React libraries for every React beginner, including state management, routing, forms, types, etc.
+
+[https://www.robinwieruch.de/react-libraries](https://www.robinwieruch.de/react-libraries)
+## [4][I built my first website in ReactJS while in self isolation! A coronavirus stats tracker!](https://www.reddit.com/r/reactjs/comments/fvmass/i_built_my_first_website_in_reactjs_while_in_self/)
+- url: https://ncovstats.live
 ---
 
-## [4][How to add Storybook to a Typescript CRA project](https://www.reddit.com/r/reactjs/comments/fvajxu/how_to_add_storybook_to_a_typescript_cra_project/)
-- url: https://www.youtube.com/watch?v=95Qgwg3wwUg&amp;feature=share
+## [5][gqless - GraphQL client without queries for React](https://www.reddit.com/r/reactjs/comments/fvyfbm/gqless_graphql_client_without_queries_for_react/)
+- url: https://blog.graphqleditor.com/gqless-new-graphql-client/
 ---
 
-## [5][What's your definition of done?](https://www.reddit.com/r/reactjs/comments/fvd3jq/whats_your_definition_of_done/)
-- url: https://www.reddit.com/r/reactjs/comments/fvd3jq/whats_your_definition_of_done/
----
-Hi guys!
-
-As most of us are aware, there are always multiple ways to implement a feature correctly. And there will also always be room for improvement.
-
-Since we can always improve on a solution, the question then becomes, when are we done implementing something? My approach has been to ask myself these questions, and if I can answer yes to all of them, then I'm done:
-
-1. Does it fill the requirements?
-2. If someone touched the code for the feature and broke it, would that person have a way to know it? And also to know where exactly it broke?
-3. If someone wanted to change the feature, would that person know where to look and what to change? 
-4. In need of a future to refactor, is the feature organized such that I can do it a little at a time without breaking functionality?
-
-This has been my definition of done that helps me deal with the tight schedule deadlines that are normal in software projects.
-
-So I was wondering, what's your definition of done?
-## [6][Deploying react apps](https://www.reddit.com/r/reactjs/comments/fvdno8/deploying_react_apps/)
-- url: https://www.reddit.com/r/reactjs/comments/fvdno8/deploying_react_apps/
----
-So basically i have built my first react application and now i am ready to deploy it to my digital ocean server. I want to use the compiled version of react which is created with the run build command. But i dont know how to run the compiled version.
-## [7][React Components Library with Typescript and styled-components](https://www.reddit.com/r/reactjs/comments/fvd1c9/react_components_library_with_typescript_and/)
-- url: https://www.reddit.com/r/reactjs/comments/fvd1c9/react_components_library_with_typescript_and/
----
-Hello. I am trying to create a React Components library using Typescript and styled-components. 
-I don't want to use webpack or any unnecessary dependency.
-Other projects should be able to install the library and use it straight away regardless of whether they use Typescript or not. But if they do, the library should provide all types.
-I want to use tsc as a compiler, but I'm not really sure how my tsconfig and should look like. 
-Also I've seen the use of index.d.ts files but I'm also not sure how to use it properly.
-
-I want my directory tree to look like this, if possible:
-```
-/lib    # output of tsc
-/src
-    /assets    # any kind of assets like images, fonts, ...
-        /fonts
-    /components    # all useable components
-        /forms
-            /Button
-                Button.tsx
-                Button.style.ts
-    /tests
-    /theme    # for now here will be a theme.ts for all constants
-    typings.d.ts    # typings for uncommon filetypes like *.ttf
-package.json
-tsconfig.json
-Readme.md
-
-```
-
-Thank you for your help
-## [8][What style of functions do you prefer to use in React and why?](https://www.reddit.com/r/reactjs/comments/fvd0h9/what_style_of_functions_do_you_prefer_to_use_in/)
-- url: https://www.reddit.com/r/reactjs/comments/fvd0h9/what_style_of_functions_do_you_prefer_to_use_in/
----
-Hey, I'm new to using react and seen various function styles thrown around. I was wondering what type people follow and why? For example:
-
-    import React, { useState } from 'react';
-    import './App.css';
-    
-    const Message1 = (props) =&gt; (
-      &lt;div&gt;{props.message}&lt;/div&gt;
-    );
-    
-    const Message2 = (props) =&gt; (
-      &lt;div&gt;{props.message}&lt;/div&gt;
-    );
-    
-    const Message3 = ({ message }) =&gt; (
-      &lt;div&gt;{message}&lt;/div&gt;
-    );
-    
-    function Message4(props) {
-      return &lt;div&gt;{props.message}&lt;/div&gt;
-    }
-    
-    function App() {
-      return (
-        &lt;div&gt;
-          &lt;Message1 message="How" /&gt;
-          &lt;Message2 message="you" /&gt;
-          &lt;Message3 message="doin" /&gt;
-          &lt;Message4 message="Today?" /&gt;
-        &lt;/div&gt;
-      );
-    }
-    
-    export default App;
-
-Why declare a constant instead of a function? Why are variables placed in the `{}`?
-## [9][What do you use to convert Keys from Snake Case to Camel Case of the payload you receive from backend?](https://www.reddit.com/r/reactjs/comments/fvak6m/what_do_you_use_to_convert_keys_from_snake_case/)
-- url: https://www.reddit.com/r/reactjs/comments/fvak6m/what_do_you_use_to_convert_keys_from_snake_case/
----
-The response from backend I get always will have snake case keys, and I would like to convert them to cameCase for compatibility  with other JS ecosystem variable names. How do you deal with this in your project? Lodash has a [method](https://lodash.com/docs/4.17.15#camelCase) to convert it, but nothing to do it recursively if I give it any size of payload of different structure.
-## [10][ELI5 this dan abromov tweet about async/await buggyness in React Components](https://www.reddit.com/r/reactjs/comments/fv3a3r/eli5_this_dan_abromov_tweet_about_asyncawait/)
-- url: https://www.reddit.com/r/reactjs/comments/fv3a3r/eli5_this_dan_abromov_tweet_about_asyncawait/
----
-Can anyone clearly explain the problem he's describing or even better, provide a sandbox?
-
-[https://twitter.com/dan\_abramov/status/1246432321579950081](https://twitter.com/dan_abramov/status/1246432321579950081)
-## [11][How to test custom React hooks](https://www.reddit.com/r/reactjs/comments/fuq6py/how_to_test_custom_react_hooks/)
-- url: https://kentcdodds.com/blog/how-to-test-custom-react-hooks
+## [6][Junior to Senior - Refactoring a dynamic multi-input component](https://www.reddit.com/r/reactjs/comments/fvxopa/junior_to_senior_refactoring_a_dynamic_multiinput/)
+- url: https://jkettmann.com/junior-to-senior-refactoring-a-dynamic-multi-input-component/
 ---
 
-## [12][Best way to restrict access if not logged in?](https://www.reddit.com/r/reactjs/comments/fvbvlr/best_way_to_restrict_access_if_not_logged_in/)
-- url: https://www.reddit.com/r/reactjs/comments/fvbvlr/best_way_to_restrict_access_if_not_logged_in/
+## [7][Recently I pushed a major update to my long abandoned project, YouTube Remote, a chrome-extension for everyone to control their YouTube tabs from anywhere in the browser. It's free and offers more features that the default chrome audio remote!](https://www.reddit.com/r/reactjs/comments/fvfxz3/recently_i_pushed_a_major_update_to_my_long/)
+- url: https://www.reddit.com/r/reactjs/comments/fvfxz3/recently_i_pushed_a_major_update_to_my_long/
 ---
-What is an effective and secure example of a Higher Order Component in React that prevents a logged in user from say:
+posted this on r/music also a few days back.
 
-1. Viewing the sign in / sign up page
-2. Viewing pages that are for "admin" only
-
-And what about for Users that have not yet signed in:
-
-* How to prevent user from access pages that logged in users can view?
-
-Here's my current example, which is terrible I know, help appreciated!
-
-    import { Query } from "react-apollo";
-    import { CURRENT_USER_QUERY } from "./User";
-    import LogIn from "./LogIn";
-    
-    const PleaseSignIn = props =&gt; (
-        &lt;Query query={CURRENT_USER_QUERY}&gt;
-            {({ data, loading }) =&gt; {
-                if (loading) return &lt;p&gt;Loading...&lt;/p&gt;;
-                if (!data.me) return &lt;LogIn /&gt;;
-                return props.children;}}
-        &lt;/Query&gt;);
-    
-    export default PleaseSignIn;
+this update fixes a lot of the bugs people had reported earlier. It now has support to **skip ads** also. Since many of us are working from home, i find this quite useful while listening to music on youtube during my development time.
 
 &amp;#x200B;
+
+***// \*\* HISTORY \*\* //***
+
+So this is fun project which i made during my free time in early January and then kinda abandoned it. Had a lot of free time these days so decided to update it a release a major version for it!
+
+Here's the chrome extension that i created:  
+[https://chrome.google.com/webstore/detail/youtube-remote/jodpnmokilccncpcgfjpmkhengjhligo](https://chrome.google.com/webstore/detail/youtube-remote/jodpnmokilccncpcgfjpmkhengjhligo)
+
+Here are some screenshots of the extension running:  
+[https://imgur.com/a/FGXfbHt](https://imgur.com/a/FGXfbHt)
+
+This extension allows you control the entire YouTube player on the tab. It has controls like play, pause, skip, seek, volume etc right there! You can also choose to skip ads here. Search tracks directly from this extension and play it on your running youtube tab. Ability to control multiple youtube tabs from here is also present.
+
+\*NOTE\* : You have to have a YouTube tab(s) open with a video playing, which is what this extension will control. This extension is NOT an audio player. It's merely a remote control for your YouTube tabs. I find it useful, since i'm a developer and have music playing in my pinned youtube tabs and can easily control them from anywhere in the browser.
+
+***// \*\* //***
+
+&amp;#x200B;
+
+Go ahead and have a look. I'm open to your opinions and critics :)
+
+Stay safe people!
+## [8][Handling Side Effects in Redux: Redux-Saga](https://www.reddit.com/r/reactjs/comments/fvuwpl/handling_side_effects_in_redux_reduxsaga/)
+- url: https://blog.soshace.com/handling-side-effects-in-redux-redux-saga/#comments
+---
+
+## [9][Best tech-stack to develop an e-learning platform?](https://www.reddit.com/r/reactjs/comments/fvxv5j/best_techstack_to_develop_an_elearning_platform/)
+- url: https://www.reddit.com/r/reactjs/comments/fvxv5j/best_techstack_to_develop_an_elearning_platform/
+---
+ So I'm working at a company which due to the current world situation is planning to step into online teaching. The company being in its early stages of growth is not considering hiring any additional developers and has handed over the task to build an Edu website from scratch to me. I'm considering to build the website using **React**, **Laravel**, **Contentful** and AWS. Is this the right tech-stack to go with or can you please suggest me what would work the best?
+## [10][What is the React Scheduler?](https://www.reddit.com/r/reactjs/comments/fvv6ui/what_is_the_react_scheduler/)
+- url: https://ahuth.github.io/articles/what-is-the-react-scheduler.html
+---
+
+## [11][CSS Grid in React.js](https://www.reddit.com/r/reactjs/comments/fvwbwg/css_grid_in_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/fvwbwg/css_grid_in_reactjs/
+---
+I'm working on a React.js application and would like to implement a CSS Grid-based component.
+
+I was wondering if there are react libraries providing a API for CSS Grid. Any suggetions?
+## [12][What every front-end developer should know about change detection in Angular and React](https://www.reddit.com/r/reactjs/comments/fvys2s/what_every_frontend_developer_should_know_about/)
+- url: https://indepth.dev/what-every-front-end-developer-should-know-about-change-detection-in-angular-and-react/
+---
+

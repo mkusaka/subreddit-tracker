@@ -23,114 +23,79 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/03/31/this-week-in-rust-332/
 ---
 
-## [3][State machines with const-generics](https://www.reddit.com/r/rust/comments/fvciq3/state_machines_with_constgenerics/)
-- url: https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=e957af6f8ba26b8f496366182178a9d2
+## [3]["Manning's Coronavirus Response": All ebooks from Manning (including Rust in Action, wink wink) are half price until the end of May! No coupon required.](https://www.reddit.com/r/rust/comments/fvt5k3/mannings_coronavirus_response_all_ebooks_from/)
+- url: https://freecontent.manning.com/mannings-coronavirus-response/?utm_medium=social&amp;utm_source=reddit&amp;a_aid=rust&amp;a_bid=0367c58f&amp;chan=reddit
 ---
 
-## [4][To learn how base64 works I implemented it with Rust](https://www.reddit.com/r/rust/comments/fvcouv/to_learn_how_base64_works_i_implemented_it_with/)
-- url: https://www.reddit.com/r/rust/comments/fvcouv/to_learn_how_base64_works_i_implemented_it_with/
+## [4][Congratulations](https://www.reddit.com/r/rust/comments/fvxghs/congratulations/)
+- url: https://www.reddit.com/r/rust/comments/fvxghs/congratulations/
 ---
-[https://medium.com/@niklasbuechner/implementing-base64-in-rust-34ef6db1e73a](https://medium.com/@niklasbuechner/implementing-base64-in-rust-34ef6db1e73a)
-## [5][Dirscan: A high performance tool for summarising large directories or drives](https://www.reddit.com/r/rust/comments/fv2czk/dirscan_a_high_performance_tool_for_summarising/)
-- url: https://github.com/orf/dirscan
+Hello rustaceans,
+
+I started learning Go about one year ago. I started my journey in computer science/security from C so going back (from Python and JS) to a compiled, strongly typed language made me feel somehow home. Two things I appreciated a lot are the ecosystem and the Go community. The tools are well done and the community is very welcoming.
+
+In the meantime I discovered this beautiful language called Rust. I know the public opinion is that Go is competing with Rust, but for me it served as a bridge. Reading the rust book I caught myself saying under my breath "No freaking way..." more than once. Everything just clicked and just made sense. Besides the content I was impressed by the initiative of writing such a wonderful resource to help virtually anyone transition to Rust. Cargo is so incredibly polished that it was a pleasure even to just watch source code compile. Now to the main point. I heard plenty of good stuff about Rust's community and they all proved to be true. The thing that pushed me to post this is seeing an anon's post here a few days ago, being quite on the offensive about Rust being unsafe. More than once he proved a lot of bias which kind of drove me insane just by reading it. I was shocked to see how rustaceans responded with information, sources and explanations pointing out the differences in perspective. It was just incredible. This is just an example, there are more where this came from.
+
+Go's ecosystem and community are cool, I'm not trying to deny it. But for me,  Rust is superior in every way, except maybe the breadth and maturity of some packages. But this will come with time, I'm not worried at all.
+
+Congratulations for building such a community. I am looking forward to finish the introductory stuff in the language and be a part of it. Continue to shock me and be at least as awesome as you are
+## [5][I wrote a blog post about Rust CLI tools I find useful](https://www.reddit.com/r/rust/comments/fvx7bm/i_wrote_a_blog_post_about_rust_cli_tools_i_find/)
+- url: https://elliehuxtable.com/my-tools-are-pretty-rusty/
 ---
 
-## [6][Panic message conventions?](https://www.reddit.com/r/rust/comments/fv7830/panic_message_conventions/)
-- url: https://www.reddit.com/r/rust/comments/fv7830/panic_message_conventions/
+## [6][Rust analyzer weekly changelog](https://www.reddit.com/r/rust/comments/fvygkf/rust_analyzer_weekly_changelog/)
+- url: https://rust-analyzer.github.io/thisweek/2020/04/06/changelog-19.html
 ---
-I'm writing libraries and was wondering what the panic message convention is.
 
-I looked around but there's no posts about this, so I looked at the rust compiler source, here are my findings:
+## [7][Common JSON patterns in Haskell, Rust and TypeScript](https://www.reddit.com/r/rust/comments/fvw58f/common_json_patterns_in_haskell_rust_and/)
+- url: https://codetalk.io/posts/2020-04-05-common-json-patterns-in-haskell-rust-and-javascript.html#update-a-nested-field
+---
+
+## [8][This month in rustsim #10 (March 2020): introducing the new crate Simba for generic SIMD/non-SIMD code!](https://www.reddit.com/r/rust/comments/fvmsjb/this_month_in_rustsim_10_march_2020_introducing/)
+- url: https://www.rustsim.org/blog/2020/04/01/this-month-in-rustsim/
+---
+
+## [9][I've just begun learning Rust and made this stupid CLI tool that deletes your Reddit comments and posts](https://www.reddit.com/r/rust/comments/fvqrw3/ive_just_begun_learning_rust_and_made_this_stupid/)
+- url: https://github.com/yagehu/regreddit
+---
+
+## [10][Announcing: `deploy-mdbook`, a GitHub action to easily deploy and build your mdBook projects.](https://www.reddit.com/r/rust/comments/fvwruw/announcing_deploymdbook_a_github_action_to_easily/)
+- url: https://github.com/XAMPPRocky/deploy-mdbook
+---
+
+## [11][What kev level database is everyone using? leveldb? rockdsb?](https://www.reddit.com/r/rust/comments/fvudme/what_kev_level_database_is_everyone_using_leveldb/)
+- url: https://www.reddit.com/r/rust/comments/fvudme/what_kev_level_database_is_everyone_using_leveldb/
+---
+Hey, 
 
 &amp;#x200B;
 
-* Lots of panics are lower-case without final punctuation: **("overflow when converting float to duration")**
-* Panics in tests tend to have an uppercase start: **("Unexpected value {:?}")**
-* Bootstrap panics include newlines: **("\\n\\nfailed to specify \`dist.sign-folder\` in \`config.toml\`\\n\\n")**
-* liballoc tests contain exclamation marks at the end **("usize::MAX should trigger an overflow!")**
-* Some panics include their logical domain of interest designated before a colon: **("align\_offset: align is not a power-of-two")**
-* Some panics put printed data between backticks: **("invalid format arg \`{:?}\`")**
-* Some panics put argument data after the final colon: **("rustc didn't succeed: {}")**
+Which keylevel database are you using and why?
 
 &amp;#x200B;
 
-**My question is:** what is generally the "best" format for panic messages?
-## [7][Rust Dataframe: Update 1](https://www.reddit.com/r/rust/comments/fv11ir/rust_dataframe_update_1/)
-- url: https://github.com/nevi-me/rust-dataframe/blob/master/notes/update-01__04-04-2020.md
+i need to pick one
+## [12][does std::Vec::clear() leak memory?](https://www.reddit.com/r/rust/comments/fvynya/does_stdvecclear_leak_memory/)
+- url: https://www.reddit.com/r/rust/comments/fvynya/does_stdvecclear_leak_memory/
 ---
+I am porting [a c library][1] into rust and i could use vector.clear() to empty a vector of PhysicsManifolds. Is that dangerous? I heard that in cpp, when you do a `new PhysicsManifold` the vector.clear() method leaks memory. Is that the same on rust?  
 
-## [8][Help sorting BTreeMap in different order](https://www.reddit.com/r/rust/comments/fv96yi/help_sorting_btreemap_in_different_order/)
-- url: https://www.reddit.com/r/rust/comments/fv96yi/help_sorting_btreemap_in_different_order/
----
-I need to have two of BTreeMaps&lt;i64, Data&gt;, one sorted ascending and the other sorted descending (different data in each). Performance is very, very important. I'm already paying up in the Ordering enum (I cannot just subtract like I would in C++), so I'm trying not to pay up more with extra Options and stuff like I would by having to implement PartialOrd.
+EDIT, to elaborate:
 
-My first attempt was to create `struct IncVal(i64)` and `struct DecVal(i64)` but that was a lot of biolerplate and had to go though the Option with PartialEq. There has to be a better way.
+suppose you have a vec of `physicsManifold`s:  
+```c
 
-This is a somewhat simplified example. There key is a user defined class that holds a more complex number, but just getting it to work with an i128 right now would be a small win.
-## [9][How does one mutably borrow a value after conditionally returning an immutable reference to it?](https://www.reddit.com/r/rust/comments/fv9yke/how_does_one_mutably_borrow_a_value_after/)
-- url: https://www.reddit.com/r/rust/comments/fv9yke/how_does_one_mutably_borrow_a_value_after/
----
-I have the following pattern in my code:
-
-```
-struct Data {};
-
-fn x(input: &amp;mut Vec&lt;Data&gt;) -&gt; Option&lt;&amp;Data&gt; {
-    let (idx, data) = input.iter().enumerate().next()?;
-    if false { // some condition
-        Some(data)
-    } else {
-        input.remove(idx);
-        x(input)
-    }
+while(!gameLoopEnded()) {
+    auto contacts = std::vector&lt;physicsManifold*&gt;;
+    contacts.push_back(new physicsManifold);
+    contacts.push_back(new physicsManifold);
+    contacts.push_back(new physicsManifold);
+    contacts.push_back(new physicsManifold);
+    contacts.push_back(new physicsManifold);
 }
 ```
 
-I get the following error from the borrow checker:
+In C++, such behavior causes memory leaks, and is prevented with `unique_ptr`.  
+Is it the same in rust?
 
-```
-cannot borrow `*input` as mutable because it is also borrowed as immutable
-```
-
-How does one make this work?
-
-EDIT: I've simplified the problem to the following:
-
-```rust
-struct Data {}
-
-fn condition(data: &amp;Data) -&gt; bool {
-    true
-}
-
-fn x(input: &amp;mut Vec&lt;Data&gt;) -&gt; &amp;Data {
-    let data = &amp;input[0];
-    if condition(data) {
-        data
-    } else {
-        y(input)
-    }
-}
-
-fn y(input: &amp;mut Vec&lt;Data&gt;) -&gt; &amp;Data {
-    todo!()
-}
-```
-## [10][Error recovery with parser combinators (using nom)](https://www.reddit.com/r/rust/comments/fvc7hy/error_recovery_with_parser_combinators_using_nom/)
-- url: https://www.eyalkalderon.com/nom-error-recovery/
----
-
-## [11][[Question] What are some of real-world open-source Rust product?](https://www.reddit.com/r/rust/comments/fvdr7y/question_what_are_some_of_realworld_opensource/)
-- url: https://www.reddit.com/r/rust/comments/fvdr7y/question_what_are_some_of_realworld_opensource/
----
-Hey!
-
-It seems that a lot of companies started adopting [Rust](https://www.rust-lang.org/production) , and more traditional companies [do as well](https://twitter.com/steveklabnik/status/1246510586416050179). However, I would like to check some products or startup's work built on top of Rust Stack and how it serves Mobile app or large-scale website as a backend.
-
-For learning purposes, I would like to check real-world open-source Rust stack, and how teams orchestrate different services. Do you know of any repositories like that?
-## [12][vim - How can I see source code for a module/trait I have imported?](https://www.reddit.com/r/rust/comments/fvb8or/vim_how_can_i_see_source_code_for_a_moduletrait_i/)
-- url: https://www.reddit.com/r/rust/comments/fvb8or/vim_how_can_i_see_source_code_for_a_moduletrait_i/
----
-New to rust here.
-
-When I have \`use std::cmp::Ordering\` in my source code file, how can I see what is inside that module/trait? I tried "gf" in vim but it didn't work.
+Thanks!

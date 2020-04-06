@@ -1,13 +1,60 @@
 # ruby
-## [1][I've written a tiny gem which allows you to rerun your last IRB command using the "did you mean" suggestion if you make a typo. Hopefully it's a handy time-saver!](https://www.reddit.com/r/ruby/comments/fuyo4u/ive_written_a_tiny_gem_which_allows_you_to_rerun/)
-- url: https://github.com/AaronC81/yes_i_did
+## [1][AwesomePrint forked to AmazingPrint after it became stale.](https://www.reddit.com/r/ruby/comments/fvq3dv/awesomeprint_forked_to_amazingprint_after_it/)
+- url: https://github.com/amazing-print/amazing_print
 ---
 
-## [2][Stimulus Reflex](https://www.reddit.com/r/ruby/comments/fvd1pb/stimulus_reflex/)
+## [2][Google Maps API with StimulusJS](https://www.reddit.com/r/ruby/comments/fvx7xg/google_maps_api_with_stimulusjs/)
+- url: https://www.driftingruby.com/episodes/google-maps-api-with-stimulusjs?utm_medium=social&amp;utm_campaign=weekly_episode&amp;utm_source=reddit
+---
+
+## [3][I'm a Java/JS dev learning Ruby to transition to a fully remote job. What should I focus on after the basics?](https://www.reddit.com/r/ruby/comments/fvm54k/im_a_javajs_dev_learning_ruby_to_transition_to_a/)
+- url: https://www.reddit.com/r/ruby/comments/fvm54k/im_a_javajs_dev_learning_ruby_to_transition_to_a/
+---
+I'm most way through the Ruby On Rails Tutorial (Michael Hartl) book and it gives a good foundation on how to make a MVC site with Rails. Is this representative of most professional rails development or are there other skills I need to learn? I might spend some time learning to make JSON APIs with Rails aftewards.
+## [4][Optimised Docker builds for Rails apps](https://www.reddit.com/r/ruby/comments/fvxzaa/optimised_docker_builds_for_rails_apps/)
+- url: https://vitobotta.com/2020/04/06/optimised-docker-builds-rails-apps/
+---
+
+## [5][How to restart Sidekiq automatically for each deployment](https://www.reddit.com/r/ruby/comments/fvxnzk/how_to_restart_sidekiq_automatically_for_each/)
+- url: https://www.codewithjason.com/restart-sidekiq-automatically-deployment/
+---
+
+## [6][How do I clean up objects created in a shared context](https://www.reddit.com/r/ruby/comments/fvuloq/how_do_i_clean_up_objects_created_in_a_shared/)
+- url: https://www.reddit.com/r/ruby/comments/fvuloq/how_do_i_clean_up_objects_created_in_a_shared/
+---
+I am using \`RSpec.shared\_context\` which and I am setting up a few variables using let 
+
+    RSpec.shared_context "common" do 
+    let(:name) { #creates a database object }
+    end
+
+Now after I invoke it from describe block 
+
+    describe "common test" do 
+    include_context "common"
+    #run few tests
+    end
+
+Now after running the describe block I want to clean it up. How do I rollback all the objects created in the shared context?
+## [7][Understanding arel](https://www.reddit.com/r/ruby/comments/fvug4d/understanding_arel/)
+- url: https://www.reddit.com/r/ruby/comments/fvug4d/understanding_arel/
+---
+Anyone knows what's a good way to understand how arel works? good blog post or MR maybe?
+
+There's no special reason for me to do this other than it's how activerecord works and I like understanding the underlying system. Usually I can figure stuff out from the source code or the test suite but it's hard with arel.
+
+Stuff I'm trying to figure out - how is the arel tree actually being transformed to actual sql? Couldn't find the class/classes where that happens.
+
+Is there an equivalent library in other frameworks?
+## [8][Stimulus Reflex](https://www.reddit.com/r/ruby/comments/fvd1pb/stimulus_reflex/)
 - url: /r/rails/comments/fvd1cs/stimulus_reflex/
 ---
 
-## [3][Small web crawler ruby-based for practice purpose. How should I approach my project ?](https://www.reddit.com/r/ruby/comments/fv4dcw/small_web_crawler_rubybased_for_practice_purpose/)
+## [9][I've written a tiny gem which allows you to rerun your last IRB command using the "did you mean" suggestion if you make a typo. Hopefully it's a handy time-saver!](https://www.reddit.com/r/ruby/comments/fuyo4u/ive_written_a_tiny_gem_which_allows_you_to_rerun/)
+- url: https://github.com/AaronC81/yes_i_did
+---
+
+## [10][Small web crawler ruby-based for practice purpose. How should I approach my project ?](https://www.reddit.com/r/ruby/comments/fv4dcw/small_web_crawler_rubybased_for_practice_purpose/)
 - url: https://www.reddit.com/r/ruby/comments/fv4dcw/small_web_crawler_rubybased_for_practice_purpose/
 ---
 So, paralleling with my rails course, I do like to code as practice few ruby scripts to get used to more and more ruby gems.  
@@ -37,71 +84,3 @@ So how should I approach ? Make exclusively functions to each store? Like each s
 Or the best way is to “global” functions which will have to cover a lot of exceptions due the different structure each website has. 
 
 You can check out my scrape codes [here](https://github.com/nicweeaboo) . It’s really nothing special.
-## [4][Tell us a feature written in Ruby that gives you a real sense of achievement](https://www.reddit.com/r/ruby/comments/fva8ll/tell_us_a_feature_written_in_ruby_that_gives_you/)
-- url: https://www.reddit.com/r/ruby/comments/fva8ll/tell_us_a_feature_written_in_ruby_that_gives_you/
----
-For me, I implemented a slightly modified version of the Quota Rule algorithm that dispatches application forms to different callcenters. 😊
-
-**PS: Don't be shy! This is not a competition. We can all learn from each other!**
-## [5][Advanced Sneakers adapter for ActiveJob](https://www.reddit.com/r/ruby/comments/fus9k8/advanced_sneakers_adapter_for_activejob/)
-- url: https://www.reddit.com/r/ruby/comments/fus9k8/advanced_sneakers_adapter_for_activejob/
----
-Usually [Sidekiq](https://github.com/mperham/sidekiq/) is the best choice for ruby background processing. But if a project has advanced requirements for background processing (routing, heterogeneous consumers, message priorities, etc), it might be a good idea to switch to [RabbitMQ](https://www.rabbitmq.com/)\-based solutions: build ad-hoc consumers using [Bunny](https://github.com/ruby-amqp/bunny) or use a framework (like [Sneakers](https://github.com/jondot/sneakers) and [Hutch](https://github.com/jondot/sneakers)). Any of these approaches require some boilerplate code to be written to play nice with rails.
-
-Since Rails 4.2 there is ActiveJob abstraction over background processing solutions which is great improvement. Developers have ability to replace one backend with another without much changes in codebase. But not all backends cover complete ActiveJob interface. Sneakers already has [ActiveJob adapter](https://github.com/rails/rails/blob/master/activejob/lib/active_job/queue_adapters/sneakers_adapter.rb), but it is too basic and requires a lot of work to be done to at least cover same functionality Sidekiq has (like retries with [exponential back-off](https://en.wikipedia.org/wiki/Exponential_backoff) in case of failures or even delayed execution). Hutch [does not have ActiveJob adapter](https://github.com/gocardless/hutch/issues/117).
-
-Here is the another custom ActiveJob adapter for Sneakers - [:advanced\_sneakers](https://github.com/veeqo/advanced-sneakers-activejob). It supports delays and retries. It also allows to customize message params (like routing keys or headers) and exposes AMQP metadata to jobs.
-## [6][The Real Difference: `self.method_name` vs `class &lt;&lt; self`](https://www.reddit.com/r/ruby/comments/fummrh/the_real_difference_selfmethod_name_vs_class_self/)
-- url: https://emmanuelhayford.com/the-difference-between-self-method-name-and-class-self-in-ruby/
----
-
-## [7][CSV Shaper: DSL for creating CSV output in Ruby &amp; Rails](https://www.reddit.com/r/ruby/comments/fuerse/csv_shaper_dsl_for_creating_csv_output_in_ruby/)
-- url: https://github.com/paulspringett/csv_shaper
----
-
-## [8][How to improve my skill of finding where ruby variables are defined?](https://www.reddit.com/r/ruby/comments/fufxwc/how_to_improve_my_skill_of_finding_where_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/fufxwc/how_to_improve_my_skill_of_finding_where_ruby/
----
-Hi folks,
-
-I've not yet developed the skill of quickly determining where a variable in ruby is defined.
-
-This leads me to feel frustrated when programming ruby. Imagine if you were cooking and every time you
-needed a knife, you had to spend 3 minutes hunting around for it. 3 minutes is not a lot, but compared to
-the 3-8 seconds you're used to, it makes the cooking really frustrating.
-
-I would like to becomes as fast at finding variable definitions in ruby as I am in python or javascript
-
-Could you please suggest some
-
- * courses I can watch/read
-
- * exercises I can do
-
- * tools I can use
-
-?
-
-------
-
-Tools I'm going to explore:
-
-For VSCode: Solargraph, suggested by /u/efreed09
-
-For Vim: [Vim-Jump](https://github.com/pechorin/any-jump.vim), suggested by /u/shvedchenko
-
-And credit to /u/fl00pz for the early ask of a pretty important focusing question.
-## [9][emacs mode-line color according guard-rspec result?](https://www.reddit.com/r/ruby/comments/fubyhk/emacs_modeline_color_according_guardrspec_result/)
-- url: https://www.reddit.com/r/ruby/comments/fubyhk/emacs_modeline_color_according_guardrspec_result/
----
-Is there any support / integration between guard-rspec and Emacs / zenburn-theme?
-
-(I think zenburn-theme has integration with flycheck, though it seems not working for me)
-
-&amp;#x200B;
-
-I've seen such ,,, color changing by rspec result... now i'm thinking that maybe i'm crazy or dreamt sth...
-## [10][jinb.in | elegant pastebins](https://www.reddit.com/r/ruby/comments/fu4mni/jinbin_elegant_pastebins/)
-- url: /r/rubyonrails/comments/fu2g2g/jinbin_elegant_pastebins/
----
-

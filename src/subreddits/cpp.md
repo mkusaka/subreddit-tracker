@@ -119,69 +119,157 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Runtime Polymorphism with std::variant and std::visit @ bfilipek](https://www.reddit.com/r/cpp/comments/fvtf4j/runtime_polymorphism_with_stdvariant_and_stdvisit/)
-- url: https://www.bfilipek.com/2020/04/variant-virtual-polymorphism.html
+## [3][Making a STL-compatible hash map from scratch](https://www.reddit.com/r/cpp/comments/fwgco5/making_a_stlcompatible_hash_map_from_scratch/)
+- url: https://jguegant.github.io//jguegant.github.io/blogs/tech/dense-hash-map.html
 ---
 
-## [4][{fmt} 6.2 released with improved error reporting, smaller library size, better compatibility with std::format and more](https://www.reddit.com/r/cpp/comments/fvyixl/fmt_62_released_with_improved_error_reporting/)
-- url: https://github.com/fmtlib/fmt/releases/tag/6.2.0
+## [4][Approximate string match library in c++?](https://www.reddit.com/r/cpp/comments/fwhuk0/approximate_string_match_library_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/fwhuk0/approximate_string_match_library_in_c/
 ---
+Hi, I was curious if there is already around a modern library for approximate string matching in c++
 
-## [5][A programming Language interpreter, in C++](https://www.reddit.com/r/cpp/comments/fvkb66/a_programming_language_interpreter_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/fvkb66/a_programming_language_interpreter_in_c/
----
-Been working on my programming language - Feral, implemented in C++14.
+The use case would be catching potential typos in string input parameters and providing the user with an error message with the closest matching suggestion coming from a list of already existing strings.
 
-The repositories: [https://github.com/Feral-Lang](https://github.com/Feral-Lang) (Compiler/VM is in the **Feral** repository)
-
-WIP Book: [https://feral-lang.github.io/Book/](https://feral-lang.github.io/Book/)
-
-Article: [https://medium.com/@ElectruxR/the-feral-programming-language-81f87deb58cc?sk=e2cfe98332fc4684e1e792b88aebe2ba](https://medium.com/@ElectruxR/the-feral-programming-language-81f87deb58cc?sk=e2cfe98332fc4684e1e792b88aebe2ba)
-
-The VM, as of now, is by no means very fast. It is still a work in progress.
-
-Feedback and suggestions of any kind are most certainly welcome and appreciated.
-
-Thanks a lot &lt;3 &lt;3
+(if not we might try to roll our own.
 
 &amp;#x200B;
 
-PS. If this post does not belong in this subreddit, apologies in advance, and feel free to delete the post :).
-## [6][Could you suggest a free course on advanced c++?](https://www.reddit.com/r/cpp/comments/fvybf6/could_you_suggest_a_free_course_on_advanced_c/)
-- url: https://www.reddit.com/r/cpp/comments/fvybf6/could_you_suggest_a_free_course_on_advanced_c/
+Thanks!
+## [5][rocket - Fast C++ Observer Pattern](https://www.reddit.com/r/cpp/comments/fw7tpm/rocket_fast_c_observer_pattern/)
+- url: https://www.reddit.com/r/cpp/comments/fw7tpm/rocket_fast_c_observer_pattern/
 ---
-I have a problem. I am doing programming on c++ for several years but my knowledge is pretty inconsistent. I know that I should read the cpp iso standard, cppcoreguidelines, cpp best practices by Meyers and so on. But is there any comprehensive course for cpp programmers? That would deepen their knowledge, show best practices and reinforce them using appropriate tasks.
-## [7][What's your experience in writing code for ARM compared to x86?](https://www.reddit.com/r/cpp/comments/fvqf5j/whats_your_experience_in_writing_code_for_arm/)
-- url: https://www.reddit.com/r/cpp/comments/fvqf5j/whats_your_experience_in_writing_code_for_arm/
+Rocket is a single-header implementation of a signal/slots library for C++.
+
+## Why another one?
+
+The library was developed because existing solutions were too inflexible, too slow, or came as a part of a larger dependency (for example boost::signals and boost::signals2).
+
+## Design goals
+
+1. Efficiency. The library takes special care to not use cache unfriendly code (such as calling virtual methods) unless absolutely necessary.
+2. Low memory footprint (does not allocate during signal emission).
+3. Modern C++. No bloat from overloading 50 template specializations for each function.
+4. Single header file implementation.
+5. No dependencies.
+
+The API was heavily inspired by boost::signals2. If you are already familiar with boost::signals2, switching to rocket will be a no brainer.
+
+## What makes rocket unique?
+
+1. All classes in this library are single threaded\*. No efficiency loss due to locks or atomics.
+2. Policy based design. Specify at declaration time and invocation time of the signal how _you_ want the call results to be returned.
+3. The signals are reentrant. This property is a must have for any event processing library because it must be possible to recursively emit signals, or disconnect slots from within a signal handler.
+4. Support for smart `scoped_connection`'s and `scoped_connection_container`'s.
+5. Support for automatic lifetime tracking of observers via `rocket::trackable`.
+6. Allows slots to get an instance to the `current_connection` object (see example 6).
+7. Allows slots to preemtively abort the emission of the signal (see example 7).
+
+
+\*) This does not mean that you cannot use different signals in multiple different threads. The library has no global state and thus two different signals are always thread safe as long as you don't call one of them from multiple threads at the same time.
+
+## Performance
+
+Because the main focus of this library was to provide an efficient single threaded implementation, `rocket::signal` has about the same overhead as an iteration through an `std::list&lt;std::function&lt;T&gt;&gt;`.
+
+Here are some performance benchmarks between boost::signals2 and rocket for registering 10 slots to each signal type and emitting each one 1000 times.
+
+| Library         | Avg. execution time |
+| --------------  | -------------------:|
+| boost::signals2 |          810.389 µs |
+| rocket::signal  |           98.155 µs |
+
+## Github Link
+
+https://github.com/tripleslash/rocket
+## [6][{fmt} 6.2 released with improved error reporting, smaller library size, better compatibility with std::format and more](https://www.reddit.com/r/cpp/comments/fvyixl/fmt_62_released_with_improved_error_reporting/)
+- url: https://github.com/fmtlib/fmt/releases/tag/6.2.0
 ---
-There are tens of talks on how to optimize code for C++ and how you have to know the hardware you're writing the code for. But almost all talks consider that the code is targeting x86, however ARM architecture is also very popular but I cannot find that many talks or blogs about writing code for ARM. I would like to know more about any gotchas and experiences you have when writing code or porting code for ARM devices, specially if it's related to optimization.
-## [8][Repositories of Open-Source Computer Vision/Machine Learning/Deep Learning/Image or Audio Processing/Digital Signal Processing Projects which showcase best software development practices using C++?](https://www.reddit.com/r/cpp/comments/fvixv8/repositories_of_opensource_computer_visionmachine/)
-- url: https://www.reddit.com/r/cpp/comments/fvixv8/repositories_of_opensource_computer_visionmachine/
----
-As the title, says, I'm looking to improve the programs I do at graduate school by looking at existing, established, well-done and documented projects in my area of interest.
 
-In my opinion, if I get told to do something I'll probably be able to, but not necessarily in the most elegant way. Be that functional/object-oriented programming, multi-file projects with multiple-folder levels, my goal is to make sure everything is organized, to allow for easy modifications or improvements on existing code, without being an spaguetti where you can't find anything or changing something somewhere breaks something else.
-
-Therefore, any repos with good SWD practices using C++ are more than welcome. Thanks in advance.
-## [9][C++ memory](https://www.reddit.com/r/cpp/comments/fvw5rw/c_memory/)
-- url: https://www.reddit.com/r/cpp/comments/fvw5rw/c_memory/
----
-Hello, I recently started to learn more about memory in C++. I know dynamic memory allocation and deallocation and custom allocators. Is there something else I can learn about memory in C++?
-## [10][Reflection TS. Where/when to try? What do you think about it?](https://www.reddit.com/r/cpp/comments/fvccfa/reflection_ts_wherewhen_to_try_what_do_you_think/)
-- url: https://www.reddit.com/r/cpp/comments/fvccfa/reflection_ts_wherewhen_to_try_what_do_you_think/
----
-I am very excited about static reflection proposal. I think with this proposal shoud be possible implement Dependency Injection, automatic function mapper (like in Asp.Net MVC, where you can just declare function `foo` in class, and http request with path `/foo` run this func), type mapper (there is Automapper and awesome thing like MassTransit for RabbitMQ in C#), etc.
-
-I know that Clang already has implementation of Reflection, but not sure — is there up to date version of proposal?
-
-Also, there was a proposal about custom attributes. I've used PostSharp in my job, so I am very excited to see implementation in C++ of automatic logger, maybe exception handling, caching (with Redis/KeyDB for example), etc. Is that propasal somehow implemented in clang?
-
-What do you think? What problems can solve or what boilerplate code can remove this features in your projects? If you used any other languages, what features you wish to be implemented in C++?
-## [11][`make_overloaded_function` for C++11 and later](https://www.reddit.com/r/cpp/comments/fvlx27/make_overloaded_function_for_c11_and_later/)
-- url: https://github.com/ligfx/make_overloaded_function
+## [7][Things I learned about C++ exceptions from Boost](https://www.reddit.com/r/cpp/comments/fw882x/things_i_learned_about_c_exceptions_from_boost/)
+- url: https://github.com/HDembinski/essays/blob/master/exceptions.md
 ---
 
-## [12][Improved `eventbus` library implemented with C++17](https://www.reddit.com/r/cpp/comments/fvktft/improved_eventbus_library_implemented_with_c17/)
-- url: https://github.com/DeveloperPaul123/eventbus
+## [8][iris: Lightweight Component Model and Messaging Framework based on ØMQ](https://www.reddit.com/r/cpp/comments/fwk63r/iris_lightweight_component_model_and_messaging/)
+- url: https://github.com/p-ranav/iris
+---
+
+## [9][Optimizing okon's B-tree file creation. Going down from 477.2s to 342.2s. I even learned SIMD a little bit \o/](https://www.reddit.com/r/cpp/comments/fw67d3/optimizing_okons_btree_file_creation_going_down/)
+- url: http://stryku.pl/poetry/okon_preparing_optimizations.html
+---
+
+## [10][corobatch: using coroutines to batch operations with no effort](https://www.reddit.com/r/cpp/comments/fw1068/corobatch_using_coroutines_to_batch_operations/)
+- url: https://www.reddit.com/r/cpp/comments/fw1068/corobatch_using_coroutines_to_batch_operations/
+---
+Often performing operations in batch is more efficient than doing them one at a time. 
+Typical examples could be most kinds of I/O, or vectorized instructions.
+
+Unfortunately, doing operations on groups of items at the same time can be much less readable than doing them one element at a time.
+
+For example, the following example 
+
+    std::vector&lt;Bar4&gt; res;
+    for(const Bar1&amp; bar1 : bar1s) {
+        Bar3 bar3 = foo({bar1.bar2}).at(0); // takes a vector and returns a vector
+        res.push_back(bar3.bar4);
+    }
+
+would be
+
+    std::vector&lt;Bar2&gt; bar2s;
+    std::transform(bar1s.begin(), bar1s.end(), std::back_inserter(bar2s), [](const Bar1&amp; bar1) { return bar1.bar2; });
+    std::vector&lt;Bar3&gt; bar3s = foo(bar2s);
+    std::vector&lt;Bar4&gt; ret;
+    std::transform(bar3s.begin(), bar3s.end(), std::back_inserter(ret), [](const Bar3&amp; bar3) { return bar3.bar4; });
+
+In the second version it's much harder to understand what is going on, but if `foo` benefits from being executed with batches of data the second version might be significantly faster.
+
+---
+
+While reading more on coroutines, I though that they could be used to take control of the control flow of the code and manage to execute batch operations without having to rewrite the main logic completely.
+
+This resulted in the creation of [corobatch](https://github.com/MakersF/corobatch).
+
+
+With `corobatch`, the code above could we written like this
+
+    [](const Bar1&amp; bar1, auto&amp;&amp; foo) -&gt; corobatch::task&lt;Bar4&gt; {
+        Bar3 bar3 = co_await foo(bar1.bar2);
+        co_return bar3.bar4;
+    }
+    // Plus some boilerplate
+
+
+The idea is that when a task needs the result of a batch operation, its parameter gets saved and it gets suspended, and another task is started. This goes on until the library gathered enough parameters, at which point it performs the batch operation, and restarts all the tasks waiting for the result.
+
+---
+
+In the repository at https://github.com/MakersF/corobatch you can find a complete example with explanation in the readme, plus an example of integrating the library with `boost::asio` in a fully asynchronous way.
+
+
+While this is a proof of concept, I think the idea is fairly cool, and it could be applied to different use cases:
+
+* I/O
+* allocating memory in big chucks and splitting the buffer across several tasks
+* loading data in the GPU and performing batch computation
+* performing math with SIMD
+
+
+What do you think of the idea?
+
+
+Due to my background I'm most familiar with batch operation for network related operations, but I think this is applicable to several fields.
+Do you have experience in some field I don't know about which usually relies heavily on performing batch operations?
+
+For any suggestion or criticism feel free to leave a comment here or open an issue in github.
+
+Thanks!
+
+Note: you need `clang-11` and `libc++-11` to use the library, and you need to download `boost` and `libnop` to run the tests. At the start of the `CMakeLists.txt` file there are the instructions on how to download the dependencies, and you can find the instructions for installing clang-11 at https://apt.llvm.org/.
+## [11][GCC always assumes aligned pointer accesses](https://www.reddit.com/r/cpp/comments/fw1jkx/gcc_always_assumes_aligned_pointer_accesses/)
+- url: https://trust-in-soft.com/blog/2020/04/06/gcc-always-assumes-aligned-pointers/
+---
+
+## [12][Continuable 4.0 released - zero cost futures now with asio integration and better exception control](https://www.reddit.com/r/cpp/comments/fw1dhx/continuable_40_released_zero_cost_futures_now/)
+- url: https://github.com/Naios/continuable
 ---
 

@@ -1,5 +1,17 @@
 # Kotlin
-## [1][Help with Rest Api for noob](https://www.reddit.com/r/Kotlin/comments/fvurqz/help_with_rest_api_for_noob/)
+## [1][Migrating Duolingo’s Android app to 100% Kotlin](https://www.reddit.com/r/Kotlin/comments/fw3wkt/migrating_duolingos_android_app_to_100_kotlin/)
+- url: https://blog.duolingo.com/migrating-duolingos-android-app-to-100-kotlin/
+---
+
+## [2][Rawky v0.19.5.15-alpha has just been released!](https://www.reddit.com/r/Kotlin/comments/fw8i2r/rawky_v019515alpha_has_just_been_released/)
+- url: /r/rawky/comments/fw8fm5/rawky_v019515alpha_has_just_been_released/
+---
+
+## [3][Will Kotlin ever be able to compile to a stand-alone exe?](https://www.reddit.com/r/Kotlin/comments/fwch4x/will_kotlin_ever_be_able_to_compile_to_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/fwch4x/will_kotlin_ever_be_able_to_compile_to_a/
+---
+I really like the syntax of Kotlin and I'm wondering if it'll ever be possible to easily compile to a stand-alone executable (like you'd get with "gcc myprog.c").  I'm aware I can do things like append the .jar to a shell script to create an "executable", but that feels pretty clunky.
+## [4][Help with Rest Api for noob](https://www.reddit.com/r/Kotlin/comments/fvurqz/help_with_rest_api_for_noob/)
 - url: https://www.reddit.com/r/Kotlin/comments/fvurqz/help_with_rest_api_for_noob/
 ---
 Hey. I am asking for help what I am doing wrong. I have recently been learning the Kotlin for Andorid. I'm trying to make a simple application that connects to api to download a list of beers, their photos, name and description. I'm trying to connect to this api: https://punkapi.com/documentation/v2 
@@ -17,7 +29,60 @@ Hey. I am asking for help what I am doing wrong. I have recently been learning t
 [https://pastebin.com/2bnPF6gP](https://pastebin.com/2bnPF6gP) MainViewModel
 
 [https://pastebin.com/jWYU3sJX](https://pastebin.com/jWYU3sJX) \- Repository
-## [2][Unable to "interact(?)" with buttons etc... outside of the MainAcitivty](https://www.reddit.com/r/Kotlin/comments/fvxkd1/unable_to_interact_with_buttons_etc_outside_of/)
+## [5][[Question] How to change my helper function so that is collects the results of the parallel processing tasks](https://www.reddit.com/r/Kotlin/comments/fvxd1a/question_how_to_change_my_helper_function_so_that/)
+- url: https://www.reddit.com/r/Kotlin/comments/fvxd1a/question_how_to_change_my_helper_function_so_that/
+---
+[https://stackoverflow.com/questions/61058974/how-to-change-my-helper-function-so-that-is-collects-the-results-of-the-parallel](https://stackoverflow.com/questions/61058974/how-to-change-my-helper-function-so-that-is-collects-the-results-of-the-parallel)
+
+&amp;#x200B;
+
+I would really appreciate if anybody has a suggestion for me with this issue. (sorry for not copying the whole question over here, but I am on mobile and code snippets are hard to do without markdown on reddit)
+## [6][Do you use local functions?](https://www.reddit.com/r/Kotlin/comments/fvlrtb/do_you_use_local_functions/)
+- url: https://www.reddit.com/r/Kotlin/comments/fvlrtb/do_you_use_local_functions/
+---
+I know this question has been asked before, but not very recently, and I'm curious of whether people's views have changed here.
+
+Do you use local functions? Personally, I like the idea of a function being hidden inside another function, but I don't like Kotlin's implementation of local functions. In particular, I dislike the fact that they must be defined *before* they are used, and I also don't like how much bytecode they generate compared to a normal function.
+
+Here's an example of a scenario which might call for local functions. I'm making a mathematics game, using MVP, and my presenter (which responds to the user pressing buttons) has code like this:
+
+    class FooPresenter {
+        // ...
+    
+        fun onDigitClick(digit: Char) {
+            inputSoFar += digit
+            view.showInput(inputSoFar)
+            if (inputSoFar.length == answerLength) {
+                if (inputSoFar.toInt() == expression.evaluation) {
+                    onCorrectAnswer()
+                } else {
+                    onIncorrectAnswer()
+                }
+            }
+        }
+    
+        private fun onCorrectAnswer() {
+            numQuestionsAnswered++
+            if (numQuestionsAnswered &lt; numQuestions) {
+                expression = expressionGenerator.generate()
+                view.showExpression(expression)
+                clearViewInput()
+            } else {
+                view.onGameOver()
+            }
+        }
+    
+        private fun onIncorrectAnswer() {
+            clearViewInput()
+        }
+    }
+
+I like the idea of making `onCorrectAnswer` and `onIncorrectAnswer` local functions, because they will only ever be called from `onDigitClick`, but for the reasons given above I'm reluctant to.
+## [7][Coroutines and callbacks](https://www.reddit.com/r/Kotlin/comments/fvd35o/coroutines_and_callbacks/)
+- url: https://www.coroutinedispatcher.com/2020/04/coroutines-and-callbacks.html
+---
+
+## [8][Unable to "interact(?)" with buttons etc... outside of the MainAcitivty](https://www.reddit.com/r/Kotlin/comments/fvxkd1/unable_to_interact_with_buttons_etc_outside_of/)
 - url: https://www.reddit.com/r/Kotlin/comments/fvxkd1/unable_to_interact_with_buttons_etc_outside_of/
 ---
 Title. ( And please see the comment in LoginActivity.kt) Here are the codes:
@@ -218,64 +283,7 @@ AndroidManifest.xml
             &lt;activity android:name=".LoginActivity" /&gt;
         &lt;/application&gt;
     &lt;/manifest&gt;
-## [3][[Question] How to change my helper function so that is collects the results of the parallel processing tasks](https://www.reddit.com/r/Kotlin/comments/fvxd1a/question_how_to_change_my_helper_function_so_that/)
-- url: https://www.reddit.com/r/Kotlin/comments/fvxd1a/question_how_to_change_my_helper_function_so_that/
----
-[https://stackoverflow.com/questions/61058974/how-to-change-my-helper-function-so-that-is-collects-the-results-of-the-parallel](https://stackoverflow.com/questions/61058974/how-to-change-my-helper-function-so-that-is-collects-the-results-of-the-parallel)
-
-&amp;#x200B;
-
-I would really appreciate if anybody has a suggestion for me with this issue. (sorry for not copying the whole question over here, but I am on mobile and code snippets are hard to do without markdown on reddit)
-## [4][Do you use local functions?](https://www.reddit.com/r/Kotlin/comments/fvlrtb/do_you_use_local_functions/)
-- url: https://www.reddit.com/r/Kotlin/comments/fvlrtb/do_you_use_local_functions/
----
-I know this question has been asked before, but not very recently, and I'm curious of whether people's views have changed here.
-
-Do you use local functions? Personally, I like the idea of a function being hidden inside another function, but I don't like Kotlin's implementation of local functions. In particular, I dislike the fact that they must be defined *before* they are used, and I also don't like how much bytecode they generate compared to a normal function.
-
-Here's an example of a scenario which might call for local functions. I'm making a mathematics game, using MVP, and my presenter (which responds to the user pressing buttons) has code like this:
-
-    class FooPresenter {
-        // ...
-    
-        fun onDigitClick(digit: Char) {
-            inputSoFar += digit
-            view.showInput(inputSoFar)
-            if (inputSoFar.length == answerLength) {
-                if (inputSoFar.toInt() == expression.evaluation) {
-                    onCorrectAnswer()
-                } else {
-                    onIncorrectAnswer()
-                }
-            }
-        }
-    
-        private fun onCorrectAnswer() {
-            numQuestionsAnswered++
-            if (numQuestionsAnswered &lt; numQuestions) {
-                expression = expressionGenerator.generate()
-                view.showExpression(expression)
-                clearViewInput()
-            } else {
-                view.onGameOver()
-            }
-        }
-    
-        private fun onIncorrectAnswer() {
-            clearViewInput()
-        }
-    }
-
-I like the idea of making `onCorrectAnswer` and `onIncorrectAnswer` local functions, because they will only ever be called from `onDigitClick`, but for the reasons given above I'm reluctant to.
-## [5][Coroutines and callbacks](https://www.reddit.com/r/Kotlin/comments/fvd35o/coroutines_and_callbacks/)
-- url: https://www.coroutinedispatcher.com/2020/04/coroutines-and-callbacks.html
----
-
-## [6][Template-Oriented-Programming to Ship Faster | Kotlin, Arrow | KotlinHyderabad](https://www.reddit.com/r/Kotlin/comments/fvd5dh/templateorientedprogramming_to_ship_faster_kotlin/)
-- url: https://youtu.be/_QBlKtUY6ac
----
-
-## [7][Boilerplate free proxy fakes](https://www.reddit.com/r/Kotlin/comments/fvb2z1/boilerplate_free_proxy_fakes/)
+## [9][Boilerplate free proxy fakes](https://www.reddit.com/r/Kotlin/comments/fvb2z1/boilerplate_free_proxy_fakes/)
 - url: https://www.reddit.com/r/Kotlin/comments/fvb2z1/boilerplate_free_proxy_fakes/
 ---
 Where do you stand on mocks vs fakes? Would you go for more fakes if you had less boilerplate and noisy code?
@@ -283,56 +291,7 @@ Where do you stand on mocks vs fakes? Would you go for more fakes if you had les
 Inspired by retrofit, I tried out a proxy based approach to solve this issue and make fakes a bit more pleasant. Have a look below.
 
 “Boilerplate free proxy fakes” by Fanis Veizis https://link.medium.com/Rql07BXVq5
-## [8][Can I make a Discord bot using Kotlin?](https://www.reddit.com/r/Kotlin/comments/fux84n/can_i_make_a_discord_bot_using_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/fux84n/can_i_make_a_discord_bot_using_kotlin/
----
-Coming from a Python background, I don't really know about all the applications of Kotlin. It seems like a developer friendly language and I want to try out tasks simply done in Python using Kotlin.
-
-How can I go about this?
-## [9][How to avoid code repetition?](https://www.reddit.com/r/Kotlin/comments/fuybbx/how_to_avoid_code_repetition/)
-- url: https://www.reddit.com/r/Kotlin/comments/fuybbx/how_to_avoid_code_repetition/
----
-Hello Kotliners!
-
-I would like to ask your help in some code snippet that haunts me. I have a Spring controller with a few routes. Each of this routes has the lines of code that can be presented like:
-
-`//some code before which is specific for route`  
-`collectionOfSomething.forEach {`  
-`if (incomingParameterValid) {`  
-`service.methodWhichDoingSomething(enumValue)`  
-`} else {`  
-`service.methodWhichDoingSomething(defaultEnumValue)`  
-`}`  
-`}`  
-`//some code after which is specific for route`
-
-where, 
-
-`incomingParameterValid` \- is the same for all routes.
-
-`service` \- is the same for all routes.
-
-`methodWhichDoingSomething` \- is the same for all routes.
-
-`enumValue` &amp; `defaultEnumValue` \- are specific for each route.
-
-So,  the question is: since I really hate to see all these repetitions, is there a way how to extract duplicated lines of code and call them with different parameters `enumValue` &amp; `defaultEnumValue` for each route?
-
-&gt;!Please note!!&lt;
-
-One possible way that I found is creating of private method and moving repeatable lines into it (but it does not seem like a good variant):
-
-`private fun sharedMethod(collection: List&lt;of sth&gt;, incomingParameterValid: Boolean, service:`   
-`Service, enumValue: Enum, enumValueDefault: Enum) {`  
-`collection.forEach {`  
-`if (incomingParameterValid) {`  
-`service.methodWhichDoingSomething(enumValue)`  
-`} else {`  
-`service.methodWhichDoingSomething(enumValueDefault)`  
-`}`  
-`}`  
-`}`
-## [10][GraphQLize Update (#1) - Pagination, Scalar Types, Scala &amp; Kotlin Support](https://www.reddit.com/r/Kotlin/comments/fux6v9/graphqlize_update_1_pagination_scalar_types_scala/)
-- url: https://www.graphqlize.org/blog/graphqlize-update-1
+## [10][Template-Oriented-Programming to Ship Faster | Kotlin, Arrow | KotlinHyderabad](https://www.reddit.com/r/Kotlin/comments/fvd5dh/templateorientedprogramming_to_ship_faster_kotlin/)
+- url: https://youtu.be/_QBlKtUY6ac
 ---
 

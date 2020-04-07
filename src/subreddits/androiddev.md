@@ -31,88 +31,256 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][ViewBinding – the New Standard for View Interaction Handling in Android](https://www.reddit.com/r/androiddev/comments/fvx3n8/viewbinding_the_new_standard_for_view_interaction/)
+## [3][I just finished my first full-size MVVM app - Upcoming Games. Can I get a code review?](https://www.reddit.com/r/androiddev/comments/fwissh/i_just_finished_my_first_fullsize_mvvm_app/)
+- url: https://www.reddit.com/r/androiddev/comments/fwissh/i_just_finished_my_first_fullsize_mvvm_app/
+---
+[https://github.com/gavingt/upcoming-games](https://github.com/gavingt/upcoming-games)
+
+[https://youtu.be/RS\_684kyOEk](https://youtu.be/RS_684kyOEk)
+
+The app lets you view release dates and other info for every video game ever made.  It allows you to easily track your favorite and most anticipated games. Contains full sorting and search capabilities. The database is updated periodically using WorkManager.
+
+This is my first time using several modern Android libraries, so I'm sure I've made some mistakes along the way. Any feedback would be appreciated.
+
+Also, what more do I need to learn to become hireable?
+
+Thanks!
+## [4][Migrating Duolingo’s Android app to 100% Kotlin](https://www.reddit.com/r/androiddev/comments/fw45de/migrating_duolingos_android_app_to_100_kotlin/)
+- url: https://blog.duolingo.com/migrating-duolingos-android-app-to-100-kotlin/
+---
+
+## [5][Playstore App Publication process when you push put multiple updates](https://www.reddit.com/r/androiddev/comments/fwhnir/playstore_app_publication_process_when_you_push/)
+- url: https://www.reddit.com/r/androiddev/comments/fwhnir/playstore_app_publication_process_when_you_push/
+---
+I published a new update for my app on Playstore on 3rd April. However I found an bug in the latest code and published a fix for that on 5th April. Since my 3rd April update  wasn't rolled out, what happens now ? Will my latest update be rolled out first or it will happen sequentially , i.e. 3rd April one first and then 5th April one ?
+
+I've been unable to find anything regarding this in the documentation, so any info would be helpful. 
+
+Thanks
+## [6][A step-by-step guide to creating an IoT based Flutter app that interacts with any home electrical equipment.](https://www.reddit.com/r/androiddev/comments/fwjjif/a_stepbystep_guide_to_creating_an_iot_based/)
+- url: https://blog.codemagic.io/creating-iot-based-flutter-app/
+---
+
+## [7][Should i memorize codes?](https://www.reddit.com/r/androiddev/comments/fwikuu/should_i_memorize_codes/)
+- url: https://www.reddit.com/r/androiddev/comments/fwikuu/should_i_memorize_codes/
+---
+Okay so im a learning Android Development. I learned kotlin as well as java. These language are really easy to remember for me at least. But when i get to the actual development there are more codes that i have to write in Android studio. So should i memorize these code. For example there are lots of codes in recycler view. Should i memorize all of em. I keep notes of everything. So when i start developing apps i can look at them when i forget the codes. I hope my post makes sense. Would appreciate help from fellow developers. Thabks in advance
+## [8][Unable to "interact(?)" with buttons etc... outside of the MainAcitivty](https://www.reddit.com/r/androiddev/comments/fwijfd/unable_to_interact_with_buttons_etc_outside_of/)
+- url: https://www.reddit.com/r/androiddev/comments/fwijfd/unable_to_interact_with_buttons_etc_outside_of/
+---
+Title. ( And please see the comment in LoginActivity.kt) Here are the codes:
+
+MainActivity.kt
+
+    package com.andrycoder.kotlinmessages
+    
+    import android.content.Intent
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import kotlinx.android.synthetic.main.activity_main.*
+    
+    class MainActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+    
+            register_button_register.setOnClickListener {
+                val email = email_edittext_register.text.toString()
+                val password = password_edittext_register.text.toString()
+                Log.d("MainActivity Activity", "The email is: \"$email\".")
+                Log.d("MainActivity Activity", "The password is: \"$password\".")
+            }
+    
+            login_button_register.setOnClickListener {
+                Log.d("MainActivity Activity", "Login button clicked, try to show login activity.")
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                Log.d("LoginActivity", "LoginActivity has been opened")
+            }
+    
+        }
+    }
+
+activity\_main.xml
+
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:scrollbarSize="24dp"
+        tools:context=".MainActivity"&gt;
+    
+        &lt;TextView
+            android:id="@+id/textView2"
+            android:layout_width="363dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="104dp"
+            android:gravity="center"
+            android:text="@string/kotlinmessages"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" /&gt;
+    
+        &lt;EditText
+            android:id="@+id/username_edittext_register"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="94dp"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:autofillHints="" /&gt;
+    
+        &lt;EditText
+            android:id="@+id/email_edittext_register"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/username_edittext_register"
+            app:layout_constraintStart_toStartOf="@+id/username_edittext_register"
+            app:layout_constraintTop_toBottomOf="@+id/username_edittext_register"
+            android:autofillHints="" /&gt;
+    
+        &lt;EditText
+            android:id="@+id/password_edittext_register"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/email_edittext_register"
+            app:layout_constraintStart_toStartOf="@+id/email_edittext_register"
+            app:layout_constraintTop_toBottomOf="@+id/email_edittext_register"
+            android:autofillHints="" /&gt;
+    
+        &lt;Button
+            android:id="@+id/register_button_register"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/register"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/password_edittext_register"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/password_edittext_register"
+            app:layout_constraintTop_toBottomOf="@+id/password_edittext_register" /&gt;
+    
+        &lt;Button
+            android:id="@+id/login_button_register"
+            android:layout_width="92dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:background="#00FFFFFF"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="#A1A1A1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/register_button_register"
+            app:layout_constraintStart_toStartOf="@+id/register_button_register"
+            app:layout_constraintTop_toBottomOf="@+id/register_button_register" /&gt;
+    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+
+LoginActivity.kt
+
+    package com.andrycoder.kotlinmessages
+    
+    import android.content.BroadcastReceiver
+    import android.content.Intent
+    import android.os.Bundle
+    import android.util.Log
+    import androidx.appcompat.*
+    import kotlinx.android.synthetic.main.activity_login.*
+    import androidx.appcompat.app.AppCompatActivity
+    
+    
+    class LoginActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_login)
+            Log.d("MainActivity Activity", "LoginActivity opened.")
+        }
+    
+        // from here I cannot do stuff like "button.onClickSetListener {}..."
+    
+    } 
+
+activity\_login.xml
+
+    package com.andrycoder.kotlinmessages
+    
+    import android.content.BroadcastReceiver
+    import android.content.Intent
+    import android.os.Bundle
+    import android.util.Log
+    import androidx.appcompat.*
+    import androidx.appcompat.app.AppCompatActivity
+    
+    
+    class LoginActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_login)
+            Log.d("MainActivity Activity", "LoginActivity opened.")
+        }
+    
+        // from here I cannot do stuff like "button.onClickSetListener {}..."
+    
+    }
+
+AndroidManifest.xml
+
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.andrycoder.kotlinmessages"&gt;
+    
+        &lt;application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"&gt;
+            &lt;activity android:name=".MainActivity"&gt;
+                &lt;intent-filter&gt;
+                    &lt;action android:name="android.intent.action.MAIN" /&gt;
+    
+                    &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+                &lt;/intent-filter&gt;
+            &lt;/activity&gt;
+            &lt;activity android:name=".LoginActivity" /&gt;
+        &lt;/application&gt;
+    &lt;/manifest&gt;
+## [9][ViewBinding – the New Standard for View Interaction Handling in Android](https://www.reddit.com/r/androiddev/comments/fvx3n8/viewbinding_the_new_standard_for_view_interaction/)
 - url: https://infinum.com/the-capsized-eight/viewbinding-the-new-standard-for-view-interaction-handling-in-android
 ---
 
-## [4][Learn Jetpack Compose from examples that show the Compose way of doing common Android tasks](https://www.reddit.com/r/androiddev/comments/fvmktf/learn_jetpack_compose_from_examples_that_show_the/)
-- url: https://www.reddit.com/r/androiddev/comments/fvmktf/learn_jetpack_compose_from_examples_that_show_the/
+## [10][Is libGdx the best framework for Java 2d game development?](https://www.reddit.com/r/androiddev/comments/fwi5gn/is_libgdx_the_best_framework_for_java_2d_game/)
+- url: https://www.reddit.com/r/androiddev/comments/fwi5gn/is_libgdx_the_best_framework_for_java_2d_game/
 ---
-I've been playing with Jetpack Compose the past few months so decided to release a project that shows examples of how you would do common Android things the Jetpack Compose way. Each example is fairly self contained and the hope is that you can learn Compose by just going through the examples and reading through the comments.
+Hello, I'm new to the Java &amp; Android development screen and nearly done with my first full app. When I finish that I'd like to try making a simple 2d game and was wondering if anyone here has experience with libGdx?
 
-Github - [https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example](https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example)  
-
-
-Here are some examples that I cover (there are a lot more examples!) -
-
-&amp;#x200B;
-
-https://preview.redd.it/7xrlb7c7r2r41.png?width=360&amp;format=png&amp;auto=webp&amp;s=e4cb73145008d63a26edd64c6302b8756ed780f1
-
-https://preview.redd.it/x863n5c7r2r41.png?width=360&amp;format=png&amp;auto=webp&amp;s=f51b1bd89586e8f26351d34f19d0850c936752d8
-
-https://preview.redd.it/zsf6x3c7r2r41.png?width=360&amp;format=png&amp;auto=webp&amp;s=cf0a184a11a0cff21fb93c962503e4aa73069830
-
-&amp;#x200B;
-
-[Shared some more context in this Twitter thread](https://twitter.com/vinaygaba/status/1246918230439911425)
-
-My plan with this project is to keep adding more examples as I learn new things about Compose. I'll also happily welcome feedback/contributions so if you find something wrong or are hoping to contribute to the project, just send a pull request!
-
-Github - [https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example](https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example)
-## [5][How long did it take for your first app/game to be downloaded by random people on Google Play?](https://www.reddit.com/r/androiddev/comments/fvw8ta/how_long_did_it_take_for_your_first_appgame_to_be/)
-- url: https://www.reddit.com/r/androiddev/comments/fvw8ta/how_long_did_it_take_for_your_first_appgame_to_be/
----
-My first app, a chess game, has been published two days ago, and it has zero downloads by random people. I know that Google doesn't always recommend apps at the beggining, but I'm just wondering about your experience. How long did it take for your games/apps to be downloaded by random people?
-
-Edit: the link to my game is  [https://play.google.com/store/apps/details?id=com.LMProgramming.Chessbutmess](https://play.google.com/store/apps/details?id=com.LMProgramming.Chessbutmess) , if you wan't to check it out.
-## [6][How is corona impacting your apps and business?](https://www.reddit.com/r/androiddev/comments/fvu776/how_is_corona_impacting_your_apps_and_business/)
-- url: https://www.reddit.com/r/androiddev/comments/fvu776/how_is_corona_impacting_your_apps_and_business/
----
-Is there a drop in revenue? How are you and your company working? Is your productivity and long term goals somehow affected?
-
-On my side, despite increase of installs revenue is dropping due to decreasing fill rates, productivity is gone because of uncertainty of what will happen with economy and ads.
-## [7][Whats your expertise and preferences ?](https://www.reddit.com/r/androiddev/comments/fvyry7/whats_your_expertise_and_preferences/)
-- url: https://i.redd.it/aajsmxhh97r41.jpg
+I'd prefer to stick to a Java framework, because I'm still learning Java and Android, and would rather not try adding learning an engine at the same time.
+## [11][Mobile application security testing methodology and key mobile vulnerabilities](https://www.reddit.com/r/androiddev/comments/fwi0nt/mobile_application_security_testing_methodology/)
+- url: https://www.immuniweb.com/resources/mobile-application-security-testing/
 ---
 
-## [8][Limit the number of documents a user can create?](https://www.reddit.com/r/androiddev/comments/fvymd0/limit_the_number_of_documents_a_user_can_create/)
-- url: /r/Firebase/comments/fvyd6y/limit_the_number_of_documents_a_user_can_create/
+## [12][Decompiling system APK's and modify'ing them to save battery](https://www.reddit.com/r/androiddev/comments/fwhp1c/decompiling_system_apks_and_modifying_them_to/)
+- url: https://www.reddit.com/r/androiddev/comments/fwhp1c/decompiling_system_apks_and_modifying_them_to/
 ---
-
-## [9][Welcome to droidcon Online!](https://www.reddit.com/r/androiddev/comments/fvygaq/welcome_to_droidcon_online/)
-- url: https://www.online.droidcon.com/
----
-
-## [10][Play Store Appeals are ridiculous](https://www.reddit.com/r/androiddev/comments/fvtuy0/play_store_appeals_are_ridiculous/)
-- url: https://www.reddit.com/r/androiddev/comments/fvtuy0/play_store_appeals_are_ridiculous/
----
-I recently had an app removed for "impersonation" so I wanted to change the title as well as the description to make it clear that I was not affiliated with the entity. I went to the store listing tab to find it empty, as well as all other tabs; I could not make any changes. I made an appeal saying I agree with their decision and I would like to fix it but I can't. After a week of review I get an email back explaining what impersonation is and telling me to fix it. I can't take the Google team seriously anymore
-## [11][3d Card Game](https://www.reddit.com/r/androiddev/comments/fvy0b9/3d_card_game/)
-- url: https://www.reddit.com/r/androiddev/comments/fvy0b9/3d_card_game/
----
-Hi All
-
-Newbie here. In college I previously used unity to create a side scroller game and found unity great to use.
-
-I am now looking to develop an android game. More specifically a 2D multiplayer card game based off  of a popular card game here in my country. 
-
-Is unity the platform to use here or does anyone have any other suggestions?
-
-Thanks for your help in advance.
-## [12][I'm making an android app for a client and I don't know how to deal with the pricing](https://www.reddit.com/r/androiddev/comments/fvpcxx/im_making_an_android_app_for_a_client_and_i_dont/)
-- url: https://www.reddit.com/r/androiddev/comments/fvpcxx/im_making_an_android_app_for_a_client_and_i_dont/
----
-I just graduated last year October and was hired as an Android Developer on the same year November. I don't have much experience but I am willing to learn on new things. In my current work, there is no android app project yet so they allowed me to help with other teams working on a website. So I don't really count it as an experience.  
-
-
-I'm currently working from home due to coronavirus. And I received a project from a restaurant (not client project from my company). This is my first time working on an actual project. I've made projects before but for thesis. Can you help me out? I'm really new to this. Here are my questions:  
-
-
-How much should I ask for the price?  
-Should I ask for money before? After? Or in the middle when I'm almost finished?  
-Is there a contract? Should the developers make it? Or our client?
-
-&amp;#x200B;
-
-Thank you so much for your reply.
+Has anyone gone to this extend to save battery? If so, what did you do, how much battery did it save, and what advice do you have for me? My battery lasts about a day default, arround 2 days with a few tweaks i made, and i think i can get it to 2,5 to 3 days now. Any tips to save even more battery?

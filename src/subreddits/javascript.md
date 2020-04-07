@@ -87,43 +87,43 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Uppy open source file uploader gains support for Facebook and OneDrive — in addition to Instagram, Google Drive, Dropbox, public urls and Camera.](https://www.reddit.com/r/javascript/comments/fvy67z/uppy_open_source_file_uploader_gains_support_for/)
+## [3][Library for FormData/Form inputs to JSON or fill form inputs from JSON](https://www.reddit.com/r/javascript/comments/fwezre/library_for_formdataform_inputs_to_json_or_fill/)
+- url: https://github.com/brainfoolong/form-data-json
+---
+
+## [4][Isotope - new statically-dynamic UI library](https://www.reddit.com/r/javascript/comments/fwgotw/isotope_new_staticallydynamic_ui_library/)
+- url: https://github.com/Isotope-js/core
+---
+
+## [5][Uppy open source file uploader gains support for Facebook and OneDrive — in addition to Instagram, Google Drive, Dropbox, public urls and Camera.](https://www.reddit.com/r/javascript/comments/fvy67z/uppy_open_source_file_uploader_gains_support_for/)
 - url: https://uppy.io/blog/2020/04/1.10/
 ---
 
-## [4][Quickly Improve Your Docker and Node.Js Containers](https://www.reddit.com/r/javascript/comments/fvydme/quickly_improve_your_docker_and_nodejs_containers/)
+## [6][OriginTracer: An In-Browser System for Identifying Extension-based Ad Injection](https://www.reddit.com/r/javascript/comments/fwftqm/origintracer_an_inbrowser_system_for_identifying/)
+- url: https://github.com/sajjadium/OriginTracer
+---
+
+## [7][Add a mask to your profile pic!](https://www.reddit.com/r/javascript/comments/fwazav/add_a_mask_to_your_profile_pic/)
+- url: https://maskyourpfp.com/
+---
+
+## [8][Quickly Improve Your Docker and Node.Js Containers](https://www.reddit.com/r/javascript/comments/fvydme/quickly_improve_your_docker_and_nodejs_containers/)
 - url: https://medium.com/better-programming/quickly-improve-your-docker-and-node-js-containers-b841858a0b38
 ---
 
-## [5][Node.js dist builds are experiencing intermittent 500 errors](https://www.reddit.com/r/javascript/comments/fvxmw3/nodejs_dist_builds_are_experiencing_intermittent/)
-- url: https://github.com/nodejs/node/issues/32683
+## [9][How an Angular App Work Behind the Scenes](https://www.reddit.com/r/javascript/comments/fwioex/how_an_angular_app_work_behind_the_scenes/)
+- url: https://medium.com/siam-vit/how-an-angular-app-work-behind-the-scenes-angular-flow-dcc4d1df27bd
 ---
 
-## [6][The JavaScript Framework That Puts Web Pages on a Diet](https://www.reddit.com/r/javascript/comments/fviugl/the_javascript_framework_that_puts_web_pages_on_a/)
-- url: https://www.wired.com/story/javascript-framework-puts-web-pages-diet/
+## [10][Make your Angular application accessible for everybody](https://www.reddit.com/r/javascript/comments/fwi1sm/make_your_angular_application_accessible_for/)
+- url: https://medium.com/angular-in-depth/make-your-angular-application-accessible-for-everybody-2e5e8e402387
 ---
 
-## [7][Yarn 2 — the future of package managers for JavaScript?](https://www.reddit.com/r/javascript/comments/fvvmmx/yarn_2_the_future_of_package_managers_for/)
-- url: https://snyk.io/blog/yarn-2-intro/
----
-
-## [8][JSON files download with the anchor download attribute](https://www.reddit.com/r/javascript/comments/fvxcrf/json_files_download_with_the_anchor_download/)
-- url: https://www.valentinog.com/blog/link-download/
----
-
-## [9][Excision: An In-Browser System for Detection of Malicious Third-Party Content Inclusions](https://www.reddit.com/r/javascript/comments/fvu7zh/excision_an_inbrowser_system_for_detection_of/)
-- url: https://github.com/sajjadium/Excision
----
-
-## [10][What every front-end developer should know about change detection in Angular and React](https://www.reddit.com/r/javascript/comments/fvyriy/what_every_frontend_developer_should_know_about/)
+## [11][What every front-end developer should know about change detection in Angular and React](https://www.reddit.com/r/javascript/comments/fvyriy/what_every_frontend_developer_should_know_about/)
 - url: https://indepth.dev/what-every-front-end-developer-should-know-about-change-detection-in-angular-and-react/
 ---
 
-## [11][Why JavaScript Is Going to Be the Language of the Future](https://www.reddit.com/r/javascript/comments/fvxfh0/why_javascript_is_going_to_be_the_language_of_the/)
-- url: https://www.freecodecamp.org/news/future-of-javascript/
----
-
-## [12][You all suggested that I open source my coloring book webcomponent. Here it is, nearly standalone.](https://www.reddit.com/r/javascript/comments/fvmzr3/you_all_suggested_that_i_open_source_my_coloring/)
-- url: https://github.com/collinph/jl-coloringbook
+## [12][Node.js dist builds are experiencing intermittent 500 errors](https://www.reddit.com/r/javascript/comments/fvxmw3/nodejs_dist_builds_are_experiencing_intermittent/)
+- url: https://github.com/nodejs/node/issues/32683
 ---
 

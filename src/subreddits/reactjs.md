@@ -84,74 +84,173 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][React Libraries in 2020](https://www.reddit.com/r/reactjs/comments/fvteil/react_libraries_in_2020/)
+## [3][Come help build our open source react web app for organizing food delivery and volunteering #COVID-19](https://www.reddit.com/r/reactjs/comments/fw9m46/come_help_build_our_open_source_react_web_app_for/)
+- url: https://www.reddit.com/r/reactjs/comments/fw9m46/come_help_build_our_open_source_react_web_app_for/
+---
+Hello React devs!
+
+At [https://mutualaid.world](https://mutualaid.world/volunteer) we are building a 100% open source app to make volunteers’ and community organisers’ lives easier and **empower communities to help themselves.**
+
+We’ve been working on resilience apps [since Hurricane Sandy.](https://mutualaid.world/heres-what-were-building/) We focused on post-disaster resilience in communities - how well a community can recover after a catastrophe. A hurricane is different from a pandemic, so we’ve been working hard with our new volunteers (over 150 active people[ on Slack](https://join.slack.com/t/coronadonor/shared_invite/zt-cwm4b79c-12NHPqGWbzZ1aR5geyME1g)) to change our code to focus on where the need is greatest. We’ve also been organising ourselves and our many volunteers.
+
+After talking to a number of volunteer groups, we heard that the greatest need now is food – so that’s where we are focused. Delivering food and pharmacy needs is crucial because [normal delivery systems are not keeping up](https://www.postandcourier.com/health/covid19/online-grocery-orders-have-delivery-pickup-services-on-overload-during-coronavirus-crisis/article_edbf1c06-6921-11ea-ab93-839914b63a19.html), and vulnerable people can’t access what they need. At the same time, farmers’ markets have too much food and no way to distribute it – so there’s an obvious need for systems that can solve this problem. We are [already delivering food in LA](http://mutualaid.world/volunteer) as we test out our tool, but we hope to expand into more areas soon. A number of volunteer organizations already exist, using ‘ad hoc’ systems, but they need decent tools to organize themselves. We already have a big queue of people wanting to use our system. Come help us build it!
+
+We’re ready to get more people on board to help us cover more than just food delivery. **Donor sponsoring of food and resources for families in need** is high on our list. **We need your skills to make this happen!**.
+
+**Come** [**join us**](https://mutualaid.world/volunteer/) **!**
+
+*If you happen to be reading this and aren’t a React dev, join anyway! We need Rails/Node/Python/Firebase devs, technical writers, designers, community organizers, volunteers, translators, communicators and marketers, data scientists, and testers.*
+## [4][styled-components released v5.1.0](https://www.reddit.com/r/reactjs/comments/fwgz1d/styledcomponents_released_v510/)
+- url: https://app.releasly.co/releases/styled-components/styled-components/5_1_0?utm_campaign=r_reactjs
+---
+
+## [5][How I code React/Vue.js apps everyday, straight from Sketch](https://www.reddit.com/r/reactjs/comments/fwgy89/how_i_code_reactvuejs_apps_everyday_straight_from/)
+- url: https://www.reddit.com/r/reactjs/comments/fwgy89/how_i_code_reactvuejs_apps_everyday_straight_from/
+---
+Hello everyone.
+
+I am Kévin, a developper, and Overlay CTO. For 2 years, I have been studying design-to-development workflows in web projects. This article explain what we have learnt and how we started solving the problem : let designers create reusable and dev-friendly React and VueJs components, straight form Sketch 👇👇
+
+[https://medium.com/overlay-blog/how-designers-can-produce-clean-react-vue-js-code-from-sketch-bbe7388f93c4?sk=b41766d44ecef860b4f14de2ee688977](https://medium.com/overlay-blog/how-designers-can-produce-clean-react-vue-js-code-from-sketch-bbe7388f93c4?sk=b41766d44ecef860b4f14de2ee688977)
+
+Hope you enjoy reading this. If interested in Overlay, just request access here : [https://overlay-tech.com](https://overlay-tech.com/)
+## [6][I started a CRA project but now I need to integrate with CMS](https://www.reddit.com/r/reactjs/comments/fwkiiq/i_started_a_cra_project_but_now_i_need_to/)
+- url: https://www.reddit.com/r/reactjs/comments/fwkiiq/i_started_a_cra_project_but_now_i_need_to/
+---
+Hello everyone,
+
+I've created a website using Create-React-App and I'm wondering if it's possible to transition the app into using CMS solution in case this person wants to change text in different places.
+
+&amp;#x200B;
+
+I don't have any experience with this. Would it make sense to change to Gatsby, try to copy paste everything over? What do I do exactly?
+
+&amp;#x200B;
+
+The app is quite simple, it's not grabbing data from any external apis and needs to be setup in a trigger a e-mail.
+
+&amp;#x200B;
+
+Hope some people with expertise in this field can give a few pointers!
+## [7][Looking for a function to create a new setState for a part of the state](https://www.reddit.com/r/reactjs/comments/fwk2ok/looking_for_a_function_to_create_a_new_setstate/)
+- url: https://www.reddit.com/r/reactjs/comments/fwk2ok/looking_for_a_function_to_create_a_new_setstate/
+---
+Hey, does anybody know if there exists a function where I could do this:
+
+    const [state, setState] = React.useState({a: 0, b: 'hello'})
+    const setB = createSetSubState(setState, 'b')
+     .... 
+    setB(oldB =&gt; oldB + ' world')
+
+and also
+
+```
+const [state, setState] = React.useState([0,1,2]) 
+const setElem2 = createSetSubState(setState, 2) 
+....
+ setB(oldElem2 =&gt; oldElem2 + 1)
+```
+
+Preferably with typescript types, but a JS implementation would be great.
+
+It's useful for many things, not limited to just doing form inputs using setState.
+
+Thanks!
+## [8][Jest Test with Loader](https://www.reddit.com/r/reactjs/comments/fwjvzr/jest_test_with_loader/)
+- url: https://www.reddit.com/r/reactjs/comments/fwjvzr/jest_test_with_loader/
+---
+Making a test using Jest to check the attributes of color and height. I am new to the react world and was wondering the best way to do this.
+
+I wanted to use the setProps and toHaveStyleRule components be used and pass in an attribute of "foo", since right now we are only checking hard coded values. Anyone have good tutorials or documentation for me to look at?
+## [9][Is this way of injecting a placeholder/defaultvalue an anti pattern?](https://www.reddit.com/r/reactjs/comments/fwj16a/is_this_way_of_injecting_a/)
+- url: https://www.reddit.com/r/reactjs/comments/fwj16a/is_this_way_of_injecting_a/
+---
+I know, classes are out of trend, but i am bound to them for now.
+
+I got this textarea class, and i call it like so:
+
+                &lt;Textarea
+                    placeholder={'twestest'}
+                    onSubmit={v =&gt; console.log(v)}
+                /&gt;
+
+and the class looks like this:
+
+    
+    class Textarea extends Component {
+        state = {
+            value: null,
+        }
+    
+        setValue = value =&gt; this.setState({ value })
+        render() {
+            const { placeholder, onSubmit } = this.props
+            return (
+                &lt;div className="field"&gt;
+                    &lt;div className="control"&gt;
+                        &lt;textarea
+                            className="textarea"
+                            value={this.state.value || placeholder}
+                            onChange={e =&gt; this.setValue(e.currentTarget.value)}
+                        /&gt;
+                    &lt;/div&gt;
+                    &lt;button
+                        className="button is-success"
+                        disabled={this.state.value === null}
+                        onClick={e =&gt; onSubmit(this.state.value)}
+                    &gt;
+                        &lt;FormattedMessage id="SubmitButton_button"&gt;&lt;/FormattedMessage&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            )
+        }
+    }
+
+Is this the right way to handle a placeholder prob?
+## [10][OLED Online - Tool made in React to OLED-ify images client-side](https://www.reddit.com/r/reactjs/comments/fwek0v/oled_online_tool_made_in_react_to_oledify_images/)
+- url: https://www.reddit.com/r/reactjs/comments/fwek0v/oled_online_tool_made_in_react_to_oledify_images/
+---
+Repo: https://gitlab.com/cclloyd1/oledonline
+
+Relevant post in [/r/Amoledbackgrounds - link](https://www.reddit.com/r/Amoledbackgrounds/comments/fw8j64/meta_i_made_a_new_web_app_that_can_oledify/)
+
+&amp;nbsp;
+
+**Link to app:**
+
+1. [http://oledonline.app/](http://oledonline.app/) (may not work)
+2.  [https://cclloyd1.gitlab.io/oledonline](https://cclloyd1.gitlab.io/oledonline)
+
+&amp;nbsp;
+
+Screenshot: [link](https://i.imgur.com/FpCiW1H.png)
+
+&amp;nbsp;
+
+As a coding excesise to help learn React some more, I made a small single view app that lets you upload an image and turn it majority black, for use on OLED screens.   All the image manipulation takes place in the client, so nothing gets uploaded to a server.  
+
+&amp;nbsp;
+
+Technologies used:
+
+- React
+- Material-UI (framework)
+- Jimp (image manipulation)
+- react-toast-notifications (user feedback)
+
+&amp;nbsp;
+
+I feel like I still have a lot to learn, but this taught me a lot.  My biggest how-do-I-do-it right now is how to deal with layout out a page without having hundreds of lines of formatting.
+
+My next step is to convert it to typescript, 1 component at a time, to learn how to use Typescript, as I feel that would make anything I work on more organized once I get used to the extra boilerplate required.
+## [11][Building React Components using Tailwind](https://www.reddit.com/r/reactjs/comments/fwb3ct/building_react_components_using_tailwind/)
+- url: http://tilomitra.com/building-react-components-using-tailwind/
+---
+
+## [12][React Libraries in 2020](https://www.reddit.com/r/reactjs/comments/fvteil/react_libraries_in_2020/)
 - url: https://www.reddit.com/r/reactjs/comments/fvteil/react_libraries_in_2020/
 ---
 React Libraries in 2020 by Robin Wieruch  
 The list of React libraries for every React beginner, including state management, routing, forms, types, etc.
 
 [https://www.robinwieruch.de/react-libraries](https://www.robinwieruch.de/react-libraries)
-## [4][I built my first website in ReactJS while in self isolation! A coronavirus stats tracker!](https://www.reddit.com/r/reactjs/comments/fvmass/i_built_my_first_website_in_reactjs_while_in_self/)
-- url: https://ncovstats.live
----
-
-## [5][gqless - GraphQL client without queries for React](https://www.reddit.com/r/reactjs/comments/fvyfbm/gqless_graphql_client_without_queries_for_react/)
-- url: https://blog.graphqleditor.com/gqless-new-graphql-client/
----
-
-## [6][Junior to Senior - Refactoring a dynamic multi-input component](https://www.reddit.com/r/reactjs/comments/fvxopa/junior_to_senior_refactoring_a_dynamic_multiinput/)
-- url: https://jkettmann.com/junior-to-senior-refactoring-a-dynamic-multi-input-component/
----
-
-## [7][Recently I pushed a major update to my long abandoned project, YouTube Remote, a chrome-extension for everyone to control their YouTube tabs from anywhere in the browser. It's free and offers more features that the default chrome audio remote!](https://www.reddit.com/r/reactjs/comments/fvfxz3/recently_i_pushed_a_major_update_to_my_long/)
-- url: https://www.reddit.com/r/reactjs/comments/fvfxz3/recently_i_pushed_a_major_update_to_my_long/
----
-posted this on r/music also a few days back.
-
-this update fixes a lot of the bugs people had reported earlier. It now has support to **skip ads** also. Since many of us are working from home, i find this quite useful while listening to music on youtube during my development time.
-
-&amp;#x200B;
-
-***// \*\* HISTORY \*\* //***
-
-So this is fun project which i made during my free time in early January and then kinda abandoned it. Had a lot of free time these days so decided to update it a release a major version for it!
-
-Here's the chrome extension that i created:  
-[https://chrome.google.com/webstore/detail/youtube-remote/jodpnmokilccncpcgfjpmkhengjhligo](https://chrome.google.com/webstore/detail/youtube-remote/jodpnmokilccncpcgfjpmkhengjhligo)
-
-Here are some screenshots of the extension running:  
-[https://imgur.com/a/FGXfbHt](https://imgur.com/a/FGXfbHt)
-
-This extension allows you control the entire YouTube player on the tab. It has controls like play, pause, skip, seek, volume etc right there! You can also choose to skip ads here. Search tracks directly from this extension and play it on your running youtube tab. Ability to control multiple youtube tabs from here is also present.
-
-\*NOTE\* : You have to have a YouTube tab(s) open with a video playing, which is what this extension will control. This extension is NOT an audio player. It's merely a remote control for your YouTube tabs. I find it useful, since i'm a developer and have music playing in my pinned youtube tabs and can easily control them from anywhere in the browser.
-
-***// \*\* //***
-
-&amp;#x200B;
-
-Go ahead and have a look. I'm open to your opinions and critics :)
-
-Stay safe people!
-## [8][Handling Side Effects in Redux: Redux-Saga](https://www.reddit.com/r/reactjs/comments/fvuwpl/handling_side_effects_in_redux_reduxsaga/)
-- url: https://blog.soshace.com/handling-side-effects-in-redux-redux-saga/#comments
----
-
-## [9][Best tech-stack to develop an e-learning platform?](https://www.reddit.com/r/reactjs/comments/fvxv5j/best_techstack_to_develop_an_elearning_platform/)
-- url: https://www.reddit.com/r/reactjs/comments/fvxv5j/best_techstack_to_develop_an_elearning_platform/
----
- So I'm working at a company which due to the current world situation is planning to step into online teaching. The company being in its early stages of growth is not considering hiring any additional developers and has handed over the task to build an Edu website from scratch to me. I'm considering to build the website using **React**, **Laravel**, **Contentful** and AWS. Is this the right tech-stack to go with or can you please suggest me what would work the best?
-## [10][What is the React Scheduler?](https://www.reddit.com/r/reactjs/comments/fvv6ui/what_is_the_react_scheduler/)
-- url: https://ahuth.github.io/articles/what-is-the-react-scheduler.html
----
-
-## [11][CSS Grid in React.js](https://www.reddit.com/r/reactjs/comments/fvwbwg/css_grid_in_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/fvwbwg/css_grid_in_reactjs/
----
-I'm working on a React.js application and would like to implement a CSS Grid-based component.
-
-I was wondering if there are react libraries providing a API for CSS Grid. Any suggetions?
-## [12][What every front-end developer should know about change detection in Angular and React](https://www.reddit.com/r/reactjs/comments/fvys2s/what_every_frontend_developer_should_know_about/)
-- url: https://indepth.dev/what-every-front-end-developer-should-know-about-change-detection-in-angular-and-react/
----
-

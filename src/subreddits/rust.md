@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (14/2020)!](https://www.reddit.com/r/rust/comments/frfduy/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/frfduy/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (15/2020)!](https://www.reddit.com/r/rust/comments/fw2hd8/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/fw2hd8/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,18 +16,43 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/fnfky9/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/frfduy/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 332](https://www.reddit.com/r/rust/comments/ftl9l3/this_week_in_rust_332/)
-- url: https://this-week-in-rust.org/blog/2020/03/31/this-week-in-rust-332/
+## [2][What's everyone working on this week (15/2020)?](https://www.reddit.com/r/rust/comments/fw2i84/whats_everyone_working_on_this_week_152020/)
+- url: https://www.reddit.com/r/rust/comments/fw2i84/whats_everyone_working_on_this_week_152020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-15-2020/40539?u=llogiq)!
+## [3][Most commonly ignored clippy lints](https://www.reddit.com/r/rust/comments/fwev22/most_commonly_ignored_clippy_lints/)
+- url: https://github.com/rust-lang/rust-clippy/issues/5418
 ---
 
-## [3]["Manning's Coronavirus Response": All ebooks from Manning (including Rust in Action, wink wink) are half price until the end of May! No coupon required.](https://www.reddit.com/r/rust/comments/fvt5k3/mannings_coronavirus_response_all_ebooks_from/)
-- url: https://freecontent.manning.com/mannings-coronavirus-response/?utm_medium=social&amp;utm_source=reddit&amp;a_aid=rust&amp;a_bid=0367c58f&amp;chan=reddit
+## [4][Futures Explained in 200 Lines of Rust](https://www.reddit.com/r/rust/comments/fwiet3/futures_explained_in_200_lines_of_rust/)
+- url: https://cfsamson.github.io/books-futures-explained/
 ---
 
-## [4][Congratulations](https://www.reddit.com/r/rust/comments/fvxghs/congratulations/)
+## [5][Ask Rust Experts - a live Q&amp;A series for your questions about Rust](https://www.reddit.com/r/rust/comments/fwj27s/ask_rust_experts_a_live_qa_series_for_your/)
+- url: https://rust-experts.com/#askrustexperts
+---
+
+## [6][Security advisories for March 2020: bitvec, hyper and others](https://www.reddit.com/r/rust/comments/fw3vyg/security_advisories_for_march_2020_bitvec_hyper/)
+- url: https://www.reddit.com/r/rust/comments/fw3vyg/security_advisories_for_march_2020_bitvec_hyper/
+---
+[RustSec](https://rustsec.org) is a community database of security advisories filed against crates published to crates.io. It is maintained by the [Rust Secure Code Working Group](https://github.com/rust-secure-code/wg).
+
+These security bugs have been identified and corrected in Rust crates in March 2020:
+
+ * [bitvec: use-after or double free of allocated memory](https://rustsec.org/advisories/RUSTSEC-2020-0007.html)
+ * [hyper: Flaw in hyper allows request smuggling by sending a body in GET requests](https://rustsec.org/advisories/RUSTSEC-2020-0008.html)
+ * [cbox: CBox API allows to de-reference raw pointers without `unsafe` code](https://rustsec.org/advisories/RUSTSEC-2020-0005.html)
+ * [bumpalo: Flaw in `realloc` allows reading unknown memory](https://rustsec.org/advisories/RUSTSEC-2020-0006.html)
+
+You can use [cargo-audit](https://github.com/RustSec/cargo-audit) to identify whether your code depends on vulnerable versions of these crates and upgrade. [A GitHub action](https://github.com/actions-rs/audit-check) that files bugs if your code depends on vulnerable crates is also available.
+
+If you have found a vulnerability in your code, please [report it to RustSec](https://github.com/RustSec/advisory-db) so that your users can identify that they're running a vulnerable version and upgrade.
+
+If you discover a bug in unsafe code and aren't sure if it has security implications, please get in touch and we'll work with you to figure out if could have security implications.
+## [7][Congratulations](https://www.reddit.com/r/rust/comments/fvxghs/congratulations/)
 - url: https://www.reddit.com/r/rust/comments/fvxghs/congratulations/
 ---
 Hello rustaceans,
@@ -39,63 +64,98 @@ In the meantime I discovered this beautiful language called Rust. I know the pub
 Go's ecosystem and community are cool, I'm not trying to deny it. But for me,  Rust is superior in every way, except maybe the breadth and maturity of some packages. But this will come with time, I'm not worried at all.
 
 Congratulations for building such a community. I am looking forward to finish the introductory stuff in the language and be a part of it. Continue to shock me and be at least as awesome as you are
-## [5][I wrote a blog post about Rust CLI tools I find useful](https://www.reddit.com/r/rust/comments/fvx7bm/i_wrote_a_blog_post_about_rust_cli_tools_i_find/)
-- url: https://elliehuxtable.com/my-tools-are-pretty-rusty/
+## [8][From failure to Fehler](https://www.reddit.com/r/rust/comments/fw4jsx/from_failure_to_fehler/)
+- url: https://boats.gitlab.io/blog/post/failure-to-fehler/
 ---
 
-## [6][Rust analyzer weekly changelog](https://www.reddit.com/r/rust/comments/fvygkf/rust_analyzer_weekly_changelog/)
+## [9][rustfmt is not working from VIM](https://www.reddit.com/r/rust/comments/fwjr6k/rustfmt_is_not_working_from_vim/)
+- url: https://www.reddit.com/r/rust/comments/fwjr6k/rustfmt_is_not_working_from_vim/
+---
+I installed rust.vim plugin via Pathogen. Running rustfmt from the filesystem is fine but when I try to run :RustFmt from within VIM i get the following error:
+
+Error detected while processing function rustfmt#Format:
+
+line    1:
+
+E121: Undefined variable: v:false
+
+E116: Invalid arguments for function &lt;SNR&gt;33\_RunRustfmt
+
+Also I would like to run rustfmt each time I'm saving changes. This doesnt work either.
+
+Can somebody help?
+## [10][Rust analyzer weekly changelog](https://www.reddit.com/r/rust/comments/fvygkf/rust_analyzer_weekly_changelog/)
 - url: https://rust-analyzer.github.io/thisweek/2020/04/06/changelog-19.html
 ---
 
-## [7][Common JSON patterns in Haskell, Rust and TypeScript](https://www.reddit.com/r/rust/comments/fvw58f/common_json_patterns_in_haskell_rust_and/)
-- url: https://codetalk.io/posts/2020-04-05-common-json-patterns-in-haskell-rust-and-javascript.html#update-a-nested-field
+## [11][Why doesn't rust allow invoking "static" methods on trait objects?](https://www.reddit.com/r/rust/comments/fwfggk/why_doesnt_rust_allow_invoking_static_methods_on/)
+- url: https://www.reddit.com/r/rust/comments/fwfggk/why_doesnt_rust_allow_invoking_static_methods_on/
+---
+Take the following code ([playground link](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=db51eb20e8355f95578b6ceba07b904f))
+
+(kind of a dumb example, but it's just to demonstrate the point)
+
+    trait Test {
+        fn init() -&gt; Box&lt;dyn Test&gt;;
+    }
+
+If you try to compile this, you get the following error:
+
+    error[E0038]: the trait `Test` cannot be made into an object...
+    associated function `init` has no `self` parameter
+
+The rustc explanation (`rustc --explain E0038`) for this isn't very satisfying:
+
+&gt;Methods that do not take a \`self\` parameter can't be called since there won't be  
+&gt;  
+&gt;a way to get a pointer to the method table for them  
+&gt;  
+&gt;...  
+&gt;  
+&gt;This could be called as \`&lt;Foo as Foo&gt;::foo()\`, which would not be able to pick  
+&gt;  
+&gt;an implementation.  
+&gt;  
+&gt;...  
+&gt;  
+&gt;Adding a \`Self: Sized\` bound to these methods will generally make this compile.
+
+If you think about it, there's nothing stopping the compiler from embedding function pointers to "static" methods in the trait object's vtable just like it does for any other trait method, and there isn't any ambiguity about the calling convention since both the caller and the callee are aware that the method doesn't borrow 'self'.
+
+This is especially annoying if you're trying to make up for the lack of arbitrary self types, by doing something like:
+
+    // Do something with my custom smart pointer
+    trait DoSomething {
+        // This method *needs* to consume "this" (self), so can't use a borrow
+        fn do_something(this: SmartPointer&lt;dyn DoSomething&gt;, arg: f32) -&gt; String;
+    }
+    
+    // Totally making up the syntax here
+    let sp: SmartPointer&lt;dyn DoSomething&gt; = ...;
+    let do_something = sp.do_something;
+    (do_something)(sp);
+
+Now, you could work around this by doing something like:
+
+    trait DoSomething {
+        fn get_do_something(&amp;self) -&gt; fn(SmartPointer&lt;dyn DoSomething&gt;, f32) -&gt; String;
+    }
+
+But then you're paying the cost of two dynamic function calls when you really only need one, which is unfortunate.
+
+This will be kind of a moot point once arbitrary self types on trait objects get stabilized since the absence of that is the primary use case I'm running into for this, but it's unclear when that will happen.
+
+I can imagine two arguments for why this was initially decided against:
+
+* Don't want to bloat memory with vtable members that are unlikely to get called
+   * This is kind of irrelevant now since all existing code uses the `where Self: Sized` bound on static methods, so enabling it wouldn't have any immediate effect.
+   * It's also outweighed by the way `dyn(TraitA + TraitB)` is represented (by constructing a brand new vtable with the combination of TraitA's and TraitB's methods).
+* If you're designing a polymorphic trait, you need to account for the fact that implementations may need to borrow 'self'
+   * If you had to implement a trait from a library that didn't allow you to do that, you'd be hosed.
+   * I think most API designers probably realize that, so this is kind of a weak argument.
+
+This post is kind of a ramble, but I'm sitting here slightly frustrated since I need one of these two features  and neither are currently allowed. This one seems like the lower hanging fruit, so does anyone know why this was decided against?
+## [12][no_error - an error library for no_std](https://www.reddit.com/r/rust/comments/fwenhz/no_error_an_error_library_for_no_std/)
+- url: https://github.com/richardanaya/no_error
 ---
 
-## [8][This month in rustsim #10 (March 2020): introducing the new crate Simba for generic SIMD/non-SIMD code!](https://www.reddit.com/r/rust/comments/fvmsjb/this_month_in_rustsim_10_march_2020_introducing/)
-- url: https://www.rustsim.org/blog/2020/04/01/this-month-in-rustsim/
----
-
-## [9][I've just begun learning Rust and made this stupid CLI tool that deletes your Reddit comments and posts](https://www.reddit.com/r/rust/comments/fvqrw3/ive_just_begun_learning_rust_and_made_this_stupid/)
-- url: https://github.com/yagehu/regreddit
----
-
-## [10][Announcing: `deploy-mdbook`, a GitHub action to easily deploy and build your mdBook projects.](https://www.reddit.com/r/rust/comments/fvwruw/announcing_deploymdbook_a_github_action_to_easily/)
-- url: https://github.com/XAMPPRocky/deploy-mdbook
----
-
-## [11][What kev level database is everyone using? leveldb? rockdsb?](https://www.reddit.com/r/rust/comments/fvudme/what_kev_level_database_is_everyone_using_leveldb/)
-- url: https://www.reddit.com/r/rust/comments/fvudme/what_kev_level_database_is_everyone_using_leveldb/
----
-Hey, 
-
-&amp;#x200B;
-
-Which keylevel database are you using and why?
-
-&amp;#x200B;
-
-i need to pick one
-## [12][does std::Vec::clear() leak memory?](https://www.reddit.com/r/rust/comments/fvynya/does_stdvecclear_leak_memory/)
-- url: https://www.reddit.com/r/rust/comments/fvynya/does_stdvecclear_leak_memory/
----
-I am porting [a c library][1] into rust and i could use vector.clear() to empty a vector of PhysicsManifolds. Is that dangerous? I heard that in cpp, when you do a `new PhysicsManifold` the vector.clear() method leaks memory. Is that the same on rust?  
-
-EDIT, to elaborate:
-
-suppose you have a vec of `physicsManifold`s:  
-```c
-
-while(!gameLoopEnded()) {
-    auto contacts = std::vector&lt;physicsManifold*&gt;;
-    contacts.push_back(new physicsManifold);
-    contacts.push_back(new physicsManifold);
-    contacts.push_back(new physicsManifold);
-    contacts.push_back(new physicsManifold);
-    contacts.push_back(new physicsManifold);
-}
-```
-
-In C++, such behavior causes memory leaks, and is prevented with `unique_ptr`.  
-Is it the same in rust?
-
-Thanks!

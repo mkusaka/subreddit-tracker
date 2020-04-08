@@ -1,123 +1,87 @@
 # golang
-## [1][GoLang Game Development : devlog 04 (pixel lib)](https://www.reddit.com/r/golang/comments/fwimmw/golang_game_development_devlog_04_pixel_lib/)
+## [1][GO Modules Behind The Corporate Firewall](https://www.reddit.com/r/golang/comments/fx648a/go_modules_behind_the_corporate_firewall/)
+- url: https://www.dudley.codes/posts/2020.04.02-golang-behind-corporate-firewall/
+---
+
+## [2][VmTest, a library to simplify QEMU emulation in your integration tests](https://www.reddit.com/r/golang/comments/fwupcc/vmtest_a_library_to_simplify_qemu_emulation_in/)
+- url: https://www.reddit.com/r/golang/comments/fwupcc/vmtest_a_library_to_simplify_qemu_emulation_in/
+---
+Hello everyone,
+
+I would like to share my small contribution to this wonderful golang community.
+
+Before going to the project description I would like to give some background. I’ve been working on a project that involved a custom Linux kernel + initramfs image. To verify my project functionality I initially used QEMU and ran it from a command-line. While manual testing kinda worked it became clear that I need an automated way to run the tests. I did not find a good library that allows me to setup &amp; run QEMU from the tests hence I wrote my own library.
+
+Please welcome VmTest project. It allows one to set up and run a QEMU instance programmatically. The library has a number of options (kernel params, disks, architecture, timeout..) that allow to configure QEMU depending on the tests needs. VmTest also handles console input and output which makes it possible to implement test cases that interact with the emulated application.
+
+Please find more information and examples at the project github page [https://github.com/anatol/vmtest](https://github.com/anatol/vmtest) Any feedback and contributions are welcome.
+## [3][#Goyave v2.9.0](https://www.reddit.com/r/golang/comments/fx52nx/goyave_v290/)
+- url: https://www.reddit.com/r/golang/comments/fx52nx/goyave_v290/
+---
+[\#Goyave](https://twitter.com/hashtag/Goyave?src=hashtag_click) v2.9.0 (Golang Web Framework) released check out the changelog here [https://system-glitch.github.io/goyave/guide/changelog.html#v2-9-0%E2%80%A6](https://system-glitch.github.io/goyave/guide/changelog.html#v2-9-0%E2%80%A6)
+## [4][lithdew/recaptcha: Quickly verify reCAPTCHA v2/v3 submissions in Go.](https://www.reddit.com/r/golang/comments/fx0h8n/lithdewrecaptcha_quickly_verify_recaptcha_v2v3/)
+- url: https://github.com/lithdew/recaptcha
+---
+
+## [5][GoLang Game Development : devlog 04 (pixel lib)](https://www.reddit.com/r/golang/comments/fwimmw/golang_game_development_devlog_04_pixel_lib/)
 - url: https://www.youtube.com/watch?v=XBQ6jMGGk_Y
 ---
 
-## [2][week 2 from my learning go series is up! check it out 👍🏻](https://www.reddit.com/r/golang/comments/fwizn4/week_2_from_my_learning_go_series_is_up_check_it/)
-- url: https://martincartledge.io/learning-go-week-2
+## [6][What is a three comma separated expression?](https://www.reddit.com/r/golang/comments/fwzlsx/what_is_a_three_comma_separated_expression/)
+- url: https://www.reddit.com/r/golang/comments/fwzlsx/what_is_a_three_comma_separated_expression/
+---
+How does a three comma separated expression work?
+I'm a fairly new programmer and having done Java, Python and Javascript, C++ moderately I have never come across the three comma separated expression that you see inside the go while(for) loop.
+`z, t=z-(z*z-x)/(2*z), z`
+Could you please provide some documentation on this?
+```
+func Sqrt(x float64) float64 {
+	z := 1.0
+	var t float64
+
+	fmt.Printf("Sqrt approximation of %v:\n", x)
+	for {
+		z, t = z-(z*z-x)/(2*z), z
+		if math.Abs(t-z) &lt; 1e-6 {
+			break
+		}
+	}
+	return z
+}
+```
+## [7][UniDoc now supports JBIG2 encoding format](https://www.reddit.com/r/golang/comments/fx3vyf/unidoc_now_supports_jbig2_encoding_format/)
+- url: https://unidoc.io/news/jbig2-support-in-golang
 ---
 
-## [3][A lightweight job scheduler for Golang web apps](https://www.reddit.com/r/golang/comments/fwdsat/a_lightweight_job_scheduler_for_golang_web_apps/)
-- url: https://www.reddit.com/r/golang/comments/fwdsat/a_lightweight_job_scheduler_for_golang_web_apps/
+## [8][Persisting cookies after application exits?](https://www.reddit.com/r/golang/comments/fx14wu/persisting_cookies_after_application_exits/)
+- url: https://www.reddit.com/r/golang/comments/fx14wu/persisting_cookies_after_application_exits/
 ---
-Hi Gophers,
+I have a program that uses an `http.Client` with a standard cookie jar from the `net/http/cookiejar` package. The API I'm consuming gives a couple of cookies at login that, when consumed by a browser, allow the user to remain logged in even after closing and reopening the browser.
 
-I have written a job scheduler in Go which can be used in any Golang web apps. It does not have any dependency on any third-party library. It is very small and lightweight. It uses a priority queue to distribute requests to workers. The library makes all the backend calls asynchronously with retry, timeout and context cancellation functionality. It also provides very easy semantics to join multiple data sources based on their output and input types, at the same time having no coupling between the data sources. 
+Annoyingly, `http.Cookie` doesn't seem to have JSON struct tags, so my naive initial solution was to make my own struct with the same fields, copy each cookie and store it as JSON, then read the cookies back and set them on the client at launch to prevent having to send login requests every time it starts. But when I do this, I get missing fields in the stored JSON (domain is missing from all of them).
 
-[https://github.com/susamn/rio](https://github.com/susamn/rio)
-
-The included example shows how to use it. 
-
-&amp;#x200B;
-
-Reviews are welcome !!!
-## [4][NATS Messaging - Part 1 - choria.io/blog](https://www.reddit.com/r/golang/comments/fwg5na/nats_messaging_part_1_choriaioblog/)
-- url: https://choria.io/blog/post/2020/03/23/nats_patterns_1/
+I'm curious what solutions you have used to tackle this problem.
+## [9][goSSE: (Yet Another) light and humble go SSE server](https://www.reddit.com/r/golang/comments/fx3f63/gosse_yet_another_light_and_humble_go_sse_server/)
+- url: https://www.reddit.com/r/golang/comments/fx3f63/gosse_yet_another_light_and_humble_go_sse_server/
 ---
+Does containment mean boredom ? It depends.... Having needs for stream and persistent connexion between my legacy apps and a browser notification system (uni-directional), i wrote this:
 
-## [5][Example Rest API](https://www.reddit.com/r/golang/comments/fw0pv7/example_rest_api/)
-- url: https://www.reddit.com/r/golang/comments/fw0pv7/example_rest_api/
+ [https://github.com/xefiji/goSSE](https://github.com/xefiji/goSSE) 
+
+It was mostly as a playgroynd to learn more about the language.
+
+No tests yet :(
+
+Chears!
+## [10][go-interview: A collection of technical interview problems solved with Go](https://www.reddit.com/r/golang/comments/fwkpeo/gointerview_a_collection_of_technical_interview/)
+- url: https://www.reddit.com/r/golang/comments/fwkpeo/gointerview_a_collection_of_technical_interview/
 ---
-Hello gophers ✌️
+I have been collecting various technical interview problems and coding challenges then solving them with Go.
 
-I've been working on an example Rest API to show how I'm currently building them in production.
+From as simple as reversing a string to as more involving as writing the A Star algorithm. Moreover, implementing from scratch the data structures needed.
 
-Hopefully someone will find this useful. All feedback, suggestions and discussions welcome.
+Since I started, I have received plenty of great feedback and more fun problems/challenges to solve. I was asked to design an LRU Cache, so I will be doing that next.
 
-[https://github.com/cobbinma/example-go-api](https://github.com/cobbinma/example-go-api)
+Send me some of your favorite ones! I'd like to grow the collection for anyone interested in reading and/or learning.
 
-Thanks!
-
-&amp;#x200B;
-
-https://preview.redd.it/k7lh4l8av7r41.jpg?width=800&amp;format=pjpg&amp;auto=webp&amp;s=53f7feddc7ac999271a7efafba28868ba079be56
-## [6][Are there any gophers here who are looking for a side project?](https://www.reddit.com/r/golang/comments/fwi52w/are_there_any_gophers_here_who_are_looking_for_a/)
-- url: https://www.reddit.com/r/golang/comments/fwi52w/are_there_any_gophers_here_who_are_looking_for_a/
----
-I'd like to bring in a few low-middle experience gophers who want to learn and contribute to an open source network routing project, and at least one expert-level gopher who has some extra time on their hands.
-## [7][Micro In Action: Error Handling Across Service Boundaries](https://www.reddit.com/r/golang/comments/fwkehd/micro_in_action_error_handling_across_service/)
-- url: https://medium.com/@dche423/micro-in-action-error-handling-across-services-boundary-2f9f27821bd5?source=friends_link&amp;sk=5e665efa74853455391d877d8aaf500f
----
-
-## [8][Building Go Documentation](https://www.reddit.com/r/golang/comments/fwg32p/building_go_documentation/)
-- url: https://www.reddit.com/r/golang/comments/fwg32p/building_go_documentation/
----
-TL;DR: Are there any good static site documentation generators that take inline docs and spit out either HTML or PDF's like rust's [cargo doc command](https://doc.rust-lang.org/cargo/commands/cargo-doc.html) or the [pdoc3 package](https://pdoc3.github.io/pdoc/) for python? I am aware of [godoc static](https://gitlab.com/tslocum/godoc-static?0.1.5) but it does not give you per-function documentation, just per-package.
-
-&amp;#x200B;
-
-For reference here is the file I am looking to document (more to test it out on a simple program than anything):  [https://github.com/Descent098/simple-otp/blob/master/go/otp.go](https://github.com/Descent098/simple-otp/blob/master/go/otp.go) 
-
-&amp;#x200B;
-
-I have been messing around a bit with go recently trying to see if I want to invest time into learning it deeply. I had used it in the past and one of the things that blew me away was that it was the first language I used that included an easy to use documentation system (godoc). Admittedly I seemed to remember it being able to output to static documentation, but I think I may just have rose tinted nostalgia glasses on since it doesn't seem to have ever been the case.
-
-&amp;#x200B;
-
-Anyway since using go originally I have been using rust and cargo's doc tool and the pdoc3 module for python have spoil me with generating nice documentation from docstrings in programs. Now however it looks like:
-
-1. godoc is no longer included in go (I can live with go getting it even though google's results gave me the wrong answer a few times)
-2. Even when I got it setup and use [godoc static](https://gitlab.com/tslocum/godoc-static?0.1.5) I cannot for the life of me wrap my head around getting it to generate good docs on a single file program since godoc static builds package, but not function docs.
-
-&amp;#x200B;
-
-Am I missing something here or is the commonplace to generate manual docs in an external system for API's, scripts and such? 
-
-&amp;#x200B;
-
-P.S. This post is not a dig at go, just a genuine question so I know what the standard practices are in the community going forward it seems like a great language and I want to make sure to get this right from the beginning.
-## [9][Tests fail when run individually but pass when run together](https://www.reddit.com/r/golang/comments/fwkc53/tests_fail_when_run_individually_but_pass_when/)
-- url: https://www.reddit.com/r/golang/comments/fwkc53/tests_fail_when_run_individually_but_pass_when/
----
-Seeing some strange behavior from my tests. When I run all my tests using \`go test ./...\` they all pass, however I have two tests that when run individually fail with the error 
-
-    Failed to run &lt;myDependency&gt;` exec: \"&lt;myDependency&gt;\": executable file not found in $PATH
-
-The app runs fine when built and the dependencies are in the $PATH,  but something about the testing is off. Any ideas?
-## [10][Q : database/sql - can I create a Row struct from my code ?](https://www.reddit.com/r/golang/comments/fwhisv/q_databasesql_can_i_create_a_row_struct_from_my/)
-- url: https://www.reddit.com/r/golang/comments/fwhisv/q_databasesql_can_i_create_a_row_struct_from_my/
----
-Hello gophers,
-
-I am posting here a question I also asked on StackOverflow : [https://stackoverflow.com/q/61076580/86072](https://stackoverflow.com/q/61076580/86072)
-
-**Context**
-
-I am trying to write code that would allow "nested" transactions, using PostgreSQL savepoints.
-
-I would like to have a common interface, which would look like :
-
-    type interface Trx{
-      Begin() (Trx, error)
-      Commit() error
-      Rollback() error
-
-      Query(...) (*sql.Rows, error)
-      QueryRow(...) *sql.Row
-      Exec(...) (sql.Result, error)
-    }
-
-I would like my code would introduce new error cases when making queries : a transaction should not be used while a "sub transaction" is active.
-
-**Issue**
-
-My issue is with the `QueryRow()` method :
-
-  * as `Query()` and `Exec()` methods return their error in a separate value, I can return any error I want from my implementation, along with the zero value for the result part ;
-  * for `QueryRow()`, however, my custom error should be wrapped in as `*sql.Row{}` struct, so that the next call to `.Scan()` returns the error.
-
-`sql.Row` is a struct, not an interface, and I see no way to create something else than the zero value from my code.
-
-**Question**
-
-Is there a way to create a `sql.Row{}` struct, that would not trigger any call to any underlying driver function, and just wrap a known error ?
+https://github.com/shomali11/go-interview

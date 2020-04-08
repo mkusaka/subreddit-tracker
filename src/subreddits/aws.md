@@ -1,171 +1,102 @@
 # aws
-## [1][How we run EKS with spot instances but fallback to on-demand](https://www.reddit.com/r/aws/comments/fw2pv1/how_we_run_eks_with_spot_instances_but_fallback/)
-- url: https://blog.doit-intl.com/running-eks-workloads-on-spot-instances-with-on-demand-instances-fallback-14bef39ce689
+## [1][AWS started running Folding@Home on Spot Instances](https://www.reddit.com/r/aws/comments/fx1aw0/aws_started_running_foldinghome_on_spot_instances/)
+- url: https://folding.extremeoverclocking.com/team_summary.php?s=&amp;t=238068
 ---
 
-## [2][How to limit data usage inside of a EC2 instance ?](https://www.reddit.com/r/aws/comments/fwil6o/how_to_limit_data_usage_inside_of_a_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/fwil6o/how_to_limit_data_usage_inside_of_a_ec2_instance/
+## [2][Optimizing Japanese text-to-speech with Amazon Polly | Amazon Web Services](https://www.reddit.com/r/aws/comments/fwt4ma/optimizing_japanese_texttospeech_with_amazon/)
+- url: https://aws.amazon.com/blogs/machine-learning/optimizing-japanese-text-to-speech-with-amazon-polly/
 ---
-Hello !  
-We are currently deploying a VDI solution using Ubuntu instances + Nomachine (Amazon Workspaces is not available in our region)  
 
-
-We would like to prevent our students from using more than 5 gb of data each day.   
-I tried to use iptables with the "Quota" module, but for some reason, even if I explicitly allow SSH and Nomachine in the first rules, put the quota rules for the TCP protocol after that, and the DROP rules at the very end, the EC2 instance becomes inaccessible as soon as the quota is reached, even through SSH.  
-
-
-Is there an Amazon service that could help ? Do you have idea I could try to get the result I want ?  
-Have an excellent day :)
-## [3][How do I gain access from aws-sdk to private bucket if IAM is not the creator of the bucket.](https://www.reddit.com/r/aws/comments/fwkg34/how_do_i_gain_access_from_awssdk_to_private/)
-- url: https://www.reddit.com/r/aws/comments/fwkg34/how_do_i_gain_access_from_awssdk_to_private/
+## [3][Network configuration error and AWS not reachable anymore](https://www.reddit.com/r/aws/comments/fx6hce/network_configuration_error_and_aws_not_reachable/)
+- url: https://www.reddit.com/r/aws/comments/fx6hce/network_configuration_error_and_aws_not_reachable/
 ---
-So, I am trying to retrieve files from private bucket on the frontend. 
-
-I have created bucket from lets say accountA, and want to access it from accountB. my current configuration looks like this
-
-bucket policy:
-```json
-{
-    "Version": "2012-10-17",
-    "Id": "http referer policy example",
-    "Statement": [
-        {
-            "Sid": "Allow get requests originating from localhost",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::accountB:user/accountB"
-            },
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::bucketname/*",
-            "Condition": {
-                "StringLike": {
-                    "aws:Referer": [
-                        "http://localhost:4200/*"
-                    ]
-                }
-            }
-        }
-    ]
-}
-```
-
-bucket cors config:
-```xml
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"&gt;
-&lt;CORSRule&gt;
-    &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
-    &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
-    &lt;AllowedMethod&gt;HEAD&lt;/AllowedMethod&gt;
-    &lt;MaxAgeSeconds&gt;3000&lt;/MaxAgeSeconds&gt;
-    &lt;AllowedHeader&gt;Authorization&lt;/AllowedHeader&gt;
-&lt;/CORSRule&gt;
-&lt;/CORSConfiguration&gt;
-```
-and i have attached this policy to accountB:
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowGroupToSeeBucketListAndAlsoAllowGetBucketLocationRequiredForListBucket",
-            "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:GetBucketLocation"
-            ],
-            "Effect": "Allow",
-            "Resource": [
-                "arn:aws:s3:::*"
-            ]
-        },
-        {
-            "Sid": "AllowRootLevelListingOfCompanyBucket",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Effect": "Allow",
-            "Resource": [
-                "arn:aws:s3:::bucketname"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "s3:prefix": [
-                        ""
-                    ],
-                    "s3:delimiter": [
-                        "/"
-                    ]
-                }
-            }
-        },
-        {
-            "Sid": "AllowUserToReadWriteObjectData",
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject"
-            ],
-            "Effect": "Allow",
-            "Resource": [
-                "arn:aws:s3:::bucketname/*"
-            ]
-        }
-    ]
-}
-```
+Hello,   
+I made a stupid thing :   
+I tried to setup a network bridge connection between two network connections - comporting my "main" one on an AWS server (windows) but it won't be reachable again. I think the network interface crashed and an hard reset didn't fix it.   
 
 
-from my server side, where i am using accountA credentials to upload files to bucket, it works without any problems, however, when i use accountB credentials on my front end to do ```getObject``` on private files, i get forbidden 403 and ``` No'Access-Control-Allow-Origin'``` error at the same time. 
-
-could anyone help?
-## [4][Free tier ended up with a $17k/2400% increase on monthly bill due to UX bug in Redshift configurator, what are our odds of leniency? :O](https://www.reddit.com/r/aws/comments/fw367k/free_tier_ended_up_with_a_17k2400_increase_on/)
-- url: https://www.reddit.com/r/aws/comments/fw367k/free_tier_ended_up_with_a_17k2400_increase_on/
+Is there a fix to this mistake ?
+## [4][S3 lifecycle not triggering](https://www.reddit.com/r/aws/comments/fx0qo4/s3_lifecycle_not_triggering/)
+- url: https://www.reddit.com/r/aws/comments/fx0qo4/s3_lifecycle_not_triggering/
 ---
-I recently started working for a startup and had a plan to setup a Redshift DC2.large instance for a data warehouse project and to be eligible for the 2 month free tier as described [here](https://aws.amazon.com/redshift/free-trial/). After reading up on all the selling points of Amazon Redshift, logged into AWS console, clicked Redshift -&gt; Clusters -&gt; Create cluster. At this point I involved a colleague to have four eyes on the process. After a while I was able to get my colleague on the line to proceed creating the cluster. Selected DC2.large 1 node (estimated $266 p/m) and some other options and selected create, at which point I think my session had ran out and it asked me to reload and sign in again, which was somewhat frustrating at this point. Upon signing in is where I think a major UX/CX flaw (see below) caused me to proceed create a completely different cluster which also is extremely expensive. It accidentally proceeded with the RA3.16XL with 2 nodes since it reset the form and all prior config which ended up costing $17.331 for a service we did not intend to use or fully utilise. This is a 2400% increase on our monthly avg. and blows our entire annual budget in a month. What is your guys experiences? Is Amazon AWS understanding of such situations? Or should I prepare my vacancy over this embarrassing accident :/
+I have two "folders" in a standard bucket, where i want to move one "folder" to glacier. However since one of the folders has 9TB of 180byte sized files, i absolutely don't want to accidentally move it to glacier (because of astronomical metadata costs on such small files), so i wanted to first test out the lifecycle rule on dummy data, before committing it on the real data.
 
-https://reddit.com/link/fw367k/video/srbhgw1vh8r41/player
-## [5][Single Page Application on Beanstalk](https://www.reddit.com/r/aws/comments/fwj52v/single_page_application_on_beanstalk/)
-- url: https://www.reddit.com/r/aws/comments/fwj52v/single_page_application_on_beanstalk/
+I set up a bucket with two "folders" of fake data:
+
+[https://imgur.com/a/44xeLLV](https://imgur.com/a/44xeLLV)
+
+And added a lifecycle rule with the following prefix:
+
+[https://imgur.com/a/cIlQFfD](https://imgur.com/a/cIlQFfD)
+
+I waited two days, but nothing seems to be happening. Am i declaring the prefix incorrectly? Should it have slashes from both sides?
+## [5][Whitelist only traffic that has gone through my NLB, how?](https://www.reddit.com/r/aws/comments/fx5hq3/whitelist_only_traffic_that_has_gone_through_my/)
+- url: https://www.reddit.com/r/aws/comments/fx5hq3/whitelist_only_traffic_that_has_gone_through_my/
 ---
-I'm using Flask as the web server, and Angular as my SPA in a /static directory. I implemented a catch-all end point on my Flask app to try solve the issue where users are given a 404 when they refresh a page, but it didnt solve the issue. Does anyone know how to fix this? 
+Im working on a setup: Public web --&gt; NLB(with EIP) --&gt; EC2(with webserver)
 
-The catch-all looks like:
-application.route('/', defaults={'path': ''})
-application.route('/static/&lt;path:path&gt;')
-def main(path):
-     return render_template('index.html')
-## [6][AWS Serverless Applications with Code Commit](https://www.reddit.com/r/aws/comments/fwb0a7/aws_serverless_applications_with_code_commit/)
-- url: https://www.reddit.com/r/aws/comments/fwb0a7/aws_serverless_applications_with_code_commit/
+However clients can just circumvent the NLB and connect to the EC2 directly , and by doing this avoid the logging happening in the NLB, which is a problem. Im not sure how to avoid the at the moment outside of making the EC2 private, but in this case i would also lose SSH access to it which is not acceptable.  
+Ive tried:
+
+1. Add a SG to the NLB so i can whiteliste this SG in the EC2s SG, however NLBs dont support SGs. ALBs dont support EIPs which i need, so im stuck with the NLB.
+2. Whitelisting the NLBs EIP in the EC2s SG, however it seems traffic is still resolved in the EC2s by their source IP which is not whitelisted, hence no connection.
+
+What options do i have here to block clients from just connecting to the EC2 directly given the circumstances where i need SSH access to the EC2 and EIP for my LB ?
+## [6][Lambda to create jira ticket?](https://www.reddit.com/r/aws/comments/fwpm1q/lambda_to_create_jira_ticket/)
+- url: https://www.reddit.com/r/aws/comments/fwpm1q/lambda_to_create_jira_ticket/
 ---
-My question is....
+I have pushed ecs services log to aws cloudwatch log group for creating alarms to trigger lambda that take filtered log group’s content and send to group of email. 
 
-**Can someone point me to a tutorial on how build a CI/CD pipeline for deploying code that is already hosed in AWS Commit that uses Lambda for compute?**  
+I want to have a way to create jira ticket (jira cloud) from aws service (lambda maybe?)— I’m not sure how. 
 
-Excuse my poor use of terminology, I am new to this.  We have all of the pieces to do it, just need to put it together.  We have CloudFormation Templates for all of the resources(API GW, LoadBalancer, Lambda, DynamoDB, SQS), Lambda Code checked into our AWS Commit repo, and S3 buckets to store artifacts.  I feel like there is some piece of technology that I am missing to glue these together into a deployed app.
-
-I have been through the SAM tutorial, but I must have missed a key component during that session.
-## [7][Apigee on aws](https://www.reddit.com/r/aws/comments/fwcaww/apigee_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/fwcaww/apigee_on_aws/
+So I’m asking is there away to create jira ticket from aws that contain filtered contents from aws log group? And how to make it non-repeatedly of same filtered content?
+## [7][Active Directory](https://www.reddit.com/r/aws/comments/fwu93o/active_directory/)
+- url: https://www.reddit.com/r/aws/comments/fwu93o/active_directory/
 ---
-Did anyone use the apigee gateway in an AWS deployment as an api gateway.
-## [8][[CloudFormation] What does the error "Transforms defined as maps require Name key." really mean?](https://www.reddit.com/r/aws/comments/fwfx83/cloudformation_what_does_the_error_transforms/)
-- url: https://www.reddit.com/r/aws/comments/fwfx83/cloudformation_what_does_the_error_transforms/
+Im on a one forest and one domain structure, HQ in california, office in NV, and NY. Most servers are in HQ along with Primary Domain Controller and i have Read Only Domain Controllers at the other sites. NY and NV are both connected to CA by site to site vpn where they access a file server (there are other servers, just keeping it simple). We are currently 100% on prem. 
+I cleared my AWS SAA and would like to create a cloud environment that Could potentially be used for work. As of now, it’s just a personal project but I would like to be an AWS Solutions Architect in the future so I’d like to approach this personal project as professional as possible. 
+Now that I got that out of the way, on to the questions:
+
+1. Should I create an EC2 and use win 2016 AMI      then install the roles and promote it as PDC? offices would then have RODC including HQ. 
+Or
+2. Should I create an EC2 with a different domain but create a trust relationship?
+Or
+3. Use AWS Managed Directory but would it let me have RODC for other sites and keep my users, groups, OU’s, and permissions? Probably not. 
+Or
+4. Any suggestions?
+
+Also, what is the devops approach for this? Cloud Formation the EC2? versioning in S3 or Code Commit the YAML template? Use powershell to add users? 
+This project is multi-purpose - something i could possibly use for work, showcase for a future interview as Cloud Solutions Architect, and self learning (with guidance from reddit fam). 
+
+Sorry for the long post and loaded post, I have a long journey ahead. Thanks for any input!
+## [8][Data Transfer Costs between ELB and EC2](https://www.reddit.com/r/aws/comments/fx46ig/data_transfer_costs_between_elb_and_ec2/)
+- url: https://www.reddit.com/r/aws/comments/fx46ig/data_transfer_costs_between_elb_and_ec2/
 ---
-I googled and searched everywhere and I cant find any reference to this error so far.
+Hey everyone!
 
-Does anyone know how to interpret this?
+I am trying to figure out, what our traffic costs will be for our setup:
 
-I get this error on the CLI as well as when I validate it in the designer. Unfortunately, the error does not give any indication of where the error occurs (like a line number), which would have been super helpful.
+We have an internet-facing ALB in region eu-central-1 and two EC2 instances in the same region. ALB is configured with two subnets in AZs eu-central-1a and eu-central-1b. In each of these AZs, there is one EC2 instance running in a private subnet with only a private IP.
 
-\[SOLVED\] Go figure, just shortly after I asked it, I solved it myself. Turns out you cant have an empty \`Transform\` clause in your JSON file, like such: `"Transform" : {},`
-## [9][Reading workspaces tags within guest OS](https://www.reddit.com/r/aws/comments/fwfdbu/reading_workspaces_tags_within_guest_os/)
-- url: https://www.reddit.com/r/aws/comments/fwfdbu/reading_workspaces_tags_within_guest_os/
+Clients are loading data via the ALB, so we have mostly outgoing data.
+
+I know how to calculate the costs for the ALB, but what I don't get is the data transfer costs between EC2 and ALB. According to the docs: *"Data transferred "in" to and "out" from Amazon Classic and Application Elastic Load Balancers using private IP addresses, between EC2 instances and the load balancer in the same AWS Region is free."*  
+Do they mean "EC2 instance is connecting to the ALB via private IP" or "ALB is connecting to the EC2 via private IP"?
+
+Another thing I don't get is this: According to the docs, traffic between ALB and EC2 within the same AZ is free. Considering our setup, does that mean the traffic will always be within the same AZ no matter what instance is chosen by the ALB as the target?
+
+Thank you for any help!
+## [9][Should I stop idle EC2 spot instances?](https://www.reddit.com/r/aws/comments/fx17k7/should_i_stop_idle_ec2_spot_instances/)
+- url: https://www.reddit.com/r/aws/comments/fx17k7/should_i_stop_idle_ec2_spot_instances/
 ---
-I'm trying to find out if there is a way to read the tags set on our workspaces from within the guess OS itself?  We're trying to find a way to pull this data into our SCCM system so we can determine which software needs to be deployed and we're coming up short.  We've been going down the route of possibly using the powershell cmdlets to write registry keys and haven't gotten anything to work reliably.  Thank you in advance.
-## [10][EC2 internet seems so slow](https://www.reddit.com/r/aws/comments/fw8hyg/ec2_internet_seems_so_slow/)
-- url: https://www.reddit.com/r/aws/comments/fw8hyg/ec2_internet_seems_so_slow/
+Sorry for the noob question. I've set up a small GPU-enabled EC2 instance that I am going to provide to four or five people in my lab for occasional use (no one has access to a GPU and we need it for our work). I don't want to keep stopping and starting the instance, and I don't know when people will need to access it. 
+
+&amp;#x200B;
+
+Will I actually be charged much if the instance is just sitting idle (but not switched off)? I'm under the impression that the pricing is scaled by usage, i.e. if the CPU is running at 2% I will be charged less than if I am pushing the machine at 100% utilization. Is this true, and is the charge for low usage scaled linearly by utilization? Thanks.
+## [10][Deleted Lightsail Instance without detaching Static IP](https://www.reddit.com/r/aws/comments/fx39le/deleted_lightsail_instance_without_detaching/)
+- url: https://www.reddit.com/r/aws/comments/fx39le/deleted_lightsail_instance_without_detaching/
 ---
-I have made a couple of instances, one with t3.medium and the other with m4.xlarge and the internet seems so lackluster, is there anything that I have to enable to get full speed or am I missing something?
+Hi guys,
 
-btw I use wget to FTP files from a hosted directory into my EC2 instance
-
-EDIT: I get a 5 megabyte/second internet, as opposed to the 10Gigabit/s that's promised
+I spun up a few Amazon Lightsail Instances, installed wordpress, attached the provided Static IP addresses (5) then deleted the instances without detaching the Static IP's first. Now i have spun up new instances and when i try to attach a Static IP Im getting an error message that i have exceeded the maximum number of Static IP addresses. This despite I physically have less than 5 instances in my console. Does anyone know what I can do here?

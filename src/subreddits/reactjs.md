@@ -84,173 +84,69 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Come help build our open source react web app for organizing food delivery and volunteering #COVID-19](https://www.reddit.com/r/reactjs/comments/fw9m46/come_help_build_our_open_source_react_web_app_for/)
-- url: https://www.reddit.com/r/reactjs/comments/fw9m46/come_help_build_our_open_source_react_web_app_for/
----
-Hello React devs!
-
-At [https://mutualaid.world](https://mutualaid.world/volunteer) we are building a 100% open source app to make volunteers’ and community organisers’ lives easier and **empower communities to help themselves.**
-
-We’ve been working on resilience apps [since Hurricane Sandy.](https://mutualaid.world/heres-what-were-building/) We focused on post-disaster resilience in communities - how well a community can recover after a catastrophe. A hurricane is different from a pandemic, so we’ve been working hard with our new volunteers (over 150 active people[ on Slack](https://join.slack.com/t/coronadonor/shared_invite/zt-cwm4b79c-12NHPqGWbzZ1aR5geyME1g)) to change our code to focus on where the need is greatest. We’ve also been organising ourselves and our many volunteers.
-
-After talking to a number of volunteer groups, we heard that the greatest need now is food – so that’s where we are focused. Delivering food and pharmacy needs is crucial because [normal delivery systems are not keeping up](https://www.postandcourier.com/health/covid19/online-grocery-orders-have-delivery-pickup-services-on-overload-during-coronavirus-crisis/article_edbf1c06-6921-11ea-ab93-839914b63a19.html), and vulnerable people can’t access what they need. At the same time, farmers’ markets have too much food and no way to distribute it – so there’s an obvious need for systems that can solve this problem. We are [already delivering food in LA](http://mutualaid.world/volunteer) as we test out our tool, but we hope to expand into more areas soon. A number of volunteer organizations already exist, using ‘ad hoc’ systems, but they need decent tools to organize themselves. We already have a big queue of people wanting to use our system. Come help us build it!
-
-We’re ready to get more people on board to help us cover more than just food delivery. **Donor sponsoring of food and resources for families in need** is high on our list. **We need your skills to make this happen!**.
-
-**Come** [**join us**](https://mutualaid.world/volunteer/) **!**
-
-*If you happen to be reading this and aren’t a React dev, join anyway! We need Rails/Node/Python/Firebase devs, technical writers, designers, community organizers, volunteers, translators, communicators and marketers, data scientists, and testers.*
-## [4][styled-components released v5.1.0](https://www.reddit.com/r/reactjs/comments/fwgz1d/styledcomponents_released_v510/)
-- url: https://app.releasly.co/releases/styled-components/styled-components/5_1_0?utm_campaign=r_reactjs
+## [3][Pokemon Application | React, Apollo &amp; GraphQL Tutorial For Beginners](https://www.reddit.com/r/reactjs/comments/fwqb1c/pokemon_application_react_apollo_graphql_tutorial/)
+- url: https://youtu.be/yKFoAF7J0mc
 ---
 
-## [5][How I code React/Vue.js apps everyday, straight from Sketch](https://www.reddit.com/r/reactjs/comments/fwgy89/how_i_code_reactvuejs_apps_everyday_straight_from/)
-- url: https://www.reddit.com/r/reactjs/comments/fwgy89/how_i_code_reactvuejs_apps_everyday_straight_from/
+## [4][React Folder Structure in 5 Steps](https://www.reddit.com/r/reactjs/comments/fx3206/react_folder_structure_in_5_steps/)
+- url: https://www.robinwieruch.de/react-folder-structure
 ---
-Hello everyone.
 
-I am Kévin, a developper, and Overlay CTO. For 2 years, I have been studying design-to-development workflows in web projects. This article explain what we have learnt and how we started solving the problem : let designers create reusable and dev-friendly React and VueJs components, straight form Sketch 👇👇
-
-[https://medium.com/overlay-blog/how-designers-can-produce-clean-react-vue-js-code-from-sketch-bbe7388f93c4?sk=b41766d44ecef860b4f14de2ee688977](https://medium.com/overlay-blog/how-designers-can-produce-clean-react-vue-js-code-from-sketch-bbe7388f93c4?sk=b41766d44ecef860b4f14de2ee688977)
-
-Hope you enjoy reading this. If interested in Overlay, just request access here : [https://overlay-tech.com](https://overlay-tech.com/)
-## [6][I started a CRA project but now I need to integrate with CMS](https://www.reddit.com/r/reactjs/comments/fwkiiq/i_started_a_cra_project_but_now_i_need_to/)
-- url: https://www.reddit.com/r/reactjs/comments/fwkiiq/i_started_a_cra_project_but_now_i_need_to/
+## [5][React App: Creating a Responsive Navigation Bar from Scratch](https://www.reddit.com/r/reactjs/comments/fx5jol/react_app_creating_a_responsive_navigation_bar/)
+- url: https://youtu.be/SkyoBJwwvh4
 ---
-Hello everyone,
 
-I've created a website using Create-React-App and I'm wondering if it's possible to transition the app into using CMS solution in case this person wants to change text in different places.
+## [6][My first React app. A website that connects you to a random developer (no sign up needed)](https://www.reddit.com/r/reactjs/comments/fx539f/my_first_react_app_a_website_that_connects_you_to/)
+- url: http://connectdev.justsharedthis.info/5pyyU
+---
+
+## [7][Static Sites with Next.js 9.3 and Prisma](https://www.reddit.com/r/reactjs/comments/fx6gb1/static_sites_with_nextjs_93_and_prisma/)
+- url: https://leerob.io/blog/next-prisma
+---
+
+## [8][A Static Future: The magic of compile-time workflows](https://www.reddit.com/r/reactjs/comments/fx61za/a_static_future_the_magic_of_compiletime_workflows/)
+- url: https://joshwcomeau.com/gatsby/a-static-future/
+---
+
+## [9][Side Project: A Safe Haven for rants](https://www.reddit.com/r/reactjs/comments/fwn4zf/side_project_a_safe_haven_for_rants/)
+- url: https://www.reddit.com/r/reactjs/comments/fwn4zf/side_project_a_safe_haven_for_rants/
+---
+This past Friday I received word that my internship had been cancelled because of COVID-19, and almost immediately after my PC broke. Feeling the need to vent, I spent the weekend building a website for posting anonymous rants. If anyone else needs to blow off some steam, you can join me [here](https://yitv.app).
 
 &amp;#x200B;
 
-I don't have any experience with this. Would it make sense to change to Gatsby, try to copy paste everything over? What do I do exactly?
+Frontend: React
+
+Backend: Node.js, Express, [Socket.IO](https://Socket.IO), GCP Compute Engine, and MongoDB Atlas
 
 &amp;#x200B;
 
-The app is quite simple, it's not grabbing data from any external apis and needs to be setup in a trigger a e-mail.
-
-&amp;#x200B;
-
-Hope some people with expertise in this field can give a few pointers!
-## [7][Looking for a function to create a new setState for a part of the state](https://www.reddit.com/r/reactjs/comments/fwk2ok/looking_for_a_function_to_create_a_new_setstate/)
-- url: https://www.reddit.com/r/reactjs/comments/fwk2ok/looking_for_a_function_to_create_a_new_setstate/
+Would love some feedback :)
+## [10][Looking for help - Not For Profit project to help those forced to self-isolate due to coronavirus](https://www.reddit.com/r/reactjs/comments/fx3wpc/looking_for_help_not_for_profit_project_to_help/)
+- url: https://www.reddit.com/r/reactjs/comments/fx3wpc/looking_for_help_not_for_profit_project_to_help/
 ---
-Hey, does anybody know if there exists a function where I could do this:
+**Details on the project:**
 
-    const [state, setState] = React.useState({a: 0, b: 'hello'})
-    const setB = createSetSubState(setState, 'b')
-     .... 
-    setB(oldB =&gt; oldB + ' world')
+A few weeks ago I sourced a group of volunteers from Reddit to help build a website to help those in self-isolation due to coronavirus. We've now built the website skeleton and core functionality, but need some help on the front end, which is built in React! You can see the repo here: [https://github.com/Fiip/p2p-volunteering-fe](https://github.com/Fiip/p2p-volunteering-fe).
 
-and also
+Can't post images here, but if you [join our Slack group](https://join.slack.com/t/coronavolunte-bof8889/shared_invite/zt-ct9mb7ev-iWZoDHv3JL1eO~Jdlh1j3Q), you can see the current web designs. This is a not for profit project, and I will not be paying for help, but will personally pay for hosting, infrastructure costs etc.
 
-```
-const [state, setState] = React.useState([0,1,2]) 
-const setElem2 = createSetSubState(setState, 2) 
-....
- setB(oldElem2 =&gt; oldElem2 + 1)
-```
+**How to help:**
 
-Preferably with typescript types, but a JS implementation would be great.
+Comment on this post, and/or join our Slack group: [https://join.slack.com/t/coronavolunte-bof8889/shared\_invite/zt-ct9mb7ev-iWZoDHv3JL1eO\~Jdlh1j3Q](https://join.slack.com/t/coronavolunte-bof8889/shared_invite/zt-ct9mb7ev-iWZoDHv3JL1eO~Jdlh1j3Q).
 
-It's useful for many things, not limited to just doing form inputs using setState.
+**Details on the product:**
 
-Thanks!
-## [8][Jest Test with Loader](https://www.reddit.com/r/reactjs/comments/fwjvzr/jest_test_with_loader/)
-- url: https://www.reddit.com/r/reactjs/comments/fwjvzr/jest_test_with_loader/
----
-Making a test using Jest to check the attributes of color and height. I am new to the react world and was wondering the best way to do this.
+Hundreds of millions of individuals around the world are now being forced to self-isolate. People in isolation struggle to get vital resources such as groceries, hygiene items, and basic medical supplies. Delivery services are becoming steadily more overloaded and booked out. For example, in central London it's now not possible to get any food delivered to your house within the next 3 weeks. For someone showing symptoms, or a vulnerable/elderly individual, waiting 3 weeks to get supplies is not an option, and neither is leaving your house.
 
-I wanted to use the setProps and toHaveStyleRule components be used and pass in an attribute of "foo", since right now we are only checking hard coded values. Anyone have good tutorials or documentation for me to look at?
-## [9][Is this way of injecting a placeholder/defaultvalue an anti pattern?](https://www.reddit.com/r/reactjs/comments/fwj16a/is_this_way_of_injecting_a/)
-- url: https://www.reddit.com/r/reactjs/comments/fwj16a/is_this_way_of_injecting_a/
----
-I know, classes are out of trend, but i am bound to them for now.
+However... a lot of people have shown their willingness to help these people! There are thousands of of volunteers ready to help, but no system to match them with those that need help.
 
-I got this textarea class, and i call it like so:
-
-                &lt;Textarea
-                    placeholder={'twestest'}
-                    onSubmit={v =&gt; console.log(v)}
-                /&gt;
-
-and the class looks like this:
-
-    
-    class Textarea extends Component {
-        state = {
-            value: null,
-        }
-    
-        setValue = value =&gt; this.setState({ value })
-        render() {
-            const { placeholder, onSubmit } = this.props
-            return (
-                &lt;div className="field"&gt;
-                    &lt;div className="control"&gt;
-                        &lt;textarea
-                            className="textarea"
-                            value={this.state.value || placeholder}
-                            onChange={e =&gt; this.setValue(e.currentTarget.value)}
-                        /&gt;
-                    &lt;/div&gt;
-                    &lt;button
-                        className="button is-success"
-                        disabled={this.state.value === null}
-                        onClick={e =&gt; onSubmit(this.state.value)}
-                    &gt;
-                        &lt;FormattedMessage id="SubmitButton_button"&gt;&lt;/FormattedMessage&gt;
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            )
-        }
-    }
-
-Is this the right way to handle a placeholder prob?
-## [10][OLED Online - Tool made in React to OLED-ify images client-side](https://www.reddit.com/r/reactjs/comments/fwek0v/oled_online_tool_made_in_react_to_oledify_images/)
-- url: https://www.reddit.com/r/reactjs/comments/fwek0v/oled_online_tool_made_in_react_to_oledify_images/
----
-Repo: https://gitlab.com/cclloyd1/oledonline
-
-Relevant post in [/r/Amoledbackgrounds - link](https://www.reddit.com/r/Amoledbackgrounds/comments/fw8j64/meta_i_made_a_new_web_app_that_can_oledify/)
-
-&amp;nbsp;
-
-**Link to app:**
-
-1. [http://oledonline.app/](http://oledonline.app/) (may not work)
-2.  [https://cclloyd1.gitlab.io/oledonline](https://cclloyd1.gitlab.io/oledonline)
-
-&amp;nbsp;
-
-Screenshot: [link](https://i.imgur.com/FpCiW1H.png)
-
-&amp;nbsp;
-
-As a coding excesise to help learn React some more, I made a small single view app that lets you upload an image and turn it majority black, for use on OLED screens.   All the image manipulation takes place in the client, so nothing gets uploaded to a server.  
-
-&amp;nbsp;
-
-Technologies used:
-
-- React
-- Material-UI (framework)
-- Jimp (image manipulation)
-- react-toast-notifications (user feedback)
-
-&amp;nbsp;
-
-I feel like I still have a lot to learn, but this taught me a lot.  My biggest how-do-I-do-it right now is how to deal with layout out a page without having hundreds of lines of formatting.
-
-My next step is to convert it to typescript, 1 component at a time, to learn how to use Typescript, as I feel that would make anything I work on more organized once I get used to the extra boilerplate required.
-## [11][Building React Components using Tailwind](https://www.reddit.com/r/reactjs/comments/fwb3ct/building_react_components_using_tailwind/)
-- url: http://tilomitra.com/building-react-components-using-tailwind/
+We have built a simple website that allows those in need of a volunteer to enter their address and get matched with the closest volunteers in their area.
+## [11][Apollo Client and Local State Management](https://www.reddit.com/r/reactjs/comments/fx25ge/apollo_client_and_local_state_management/)
+- url: https://blog.soshace.com/apollo-client-and-local-state-management/
 ---
 
-## [12][React Libraries in 2020](https://www.reddit.com/r/reactjs/comments/fvteil/react_libraries_in_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/fvteil/react_libraries_in_2020/
+## [12][React Admin Dashboard Template integrated with Node.js backend and PostgreSQL](https://www.reddit.com/r/reactjs/comments/fx2o91/react_admin_dashboard_template_integrated_with/)
+- url: https://www.producthunt.com/posts/sing-app-react-node-js
 ---
-React Libraries in 2020 by Robin Wieruch  
-The list of React libraries for every React beginner, including state management, routing, forms, types, etc.
 
-[https://www.robinwieruch.de/react-libraries](https://www.robinwieruch.de/react-libraries)

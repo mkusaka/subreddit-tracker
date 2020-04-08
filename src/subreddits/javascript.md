@@ -87,43 +87,45 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Library for FormData/Form inputs to JSON or fill form inputs from JSON](https://www.reddit.com/r/javascript/comments/fwezre/library_for_formdataform_inputs_to_json_or_fill/)
-- url: https://github.com/brainfoolong/form-data-json
+## [3][Converting a Redux app to Recollect (how and why)](https://www.reddit.com/r/javascript/comments/fwzy6n/converting_a_redux_app_to_recollect_how_and_why/)
+- url: https://medium.com/@david.gilbertson/converting-a-redux-app-to-recollect-how-and-why-345a35088ea9
 ---
 
-## [4][Isotope - new statically-dynamic UI library](https://www.reddit.com/r/javascript/comments/fwgotw/isotope_new_staticallydynamic_ui_library/)
-- url: https://github.com/Isotope-js/core
+## [4][EVT: A new EventEmitter for Deno ( and every other JavaScript runtimes )](https://www.reddit.com/r/javascript/comments/fx58rx/evt_a_new_eventemitter_for_deno_and_every_other/)
+- url: https://evt.land
 ---
 
-## [5][Uppy open source file uploader gains support for Facebook and OneDrive — in addition to Instagram, Google Drive, Dropbox, public urls and Camera.](https://www.reddit.com/r/javascript/comments/fvy67z/uppy_open_source_file_uploader_gains_support_for/)
-- url: https://uppy.io/blog/2020/04/1.10/
+## [5][simpleParallax.js, the easiest way to get a parallax effect with javascript](https://www.reddit.com/r/javascript/comments/fx4lqt/simpleparallaxjs_the_easiest_way_to_get_a/)
+- url: https://simpleparallax.com/
 ---
 
-## [6][OriginTracer: An In-Browser System for Identifying Extension-based Ad Injection](https://www.reddit.com/r/javascript/comments/fwftqm/origintracer_an_inbrowser_system_for_identifying/)
-- url: https://github.com/sajjadium/OriginTracer
+## [6][5 Mistakes Web Developers Should Avoid When using JWTs for Authentication](https://www.reddit.com/r/javascript/comments/fwm8wc/5_mistakes_web_developers_should_avoid_when_using/)
+- url: https://ducktypelabs.com/5-mistakes-web-developers-should-avoid-when-using-jwts-for-authentication/
 ---
 
-## [7][Add a mask to your profile pic!](https://www.reddit.com/r/javascript/comments/fwazav/add_a_mask_to_your_profile_pic/)
-- url: https://maskyourpfp.com/
+## [7][Open source: A library that introduce a new way to write CSS-in-JS](https://www.reddit.com/r/javascript/comments/fwxxpl/open_source_a_library_that_introduce_a_new_way_to/)
+- url: https://github.com/07akioni/css-render
 ---
 
-## [8][Quickly Improve Your Docker and Node.Js Containers](https://www.reddit.com/r/javascript/comments/fvydme/quickly_improve_your_docker_and_nodejs_containers/)
-- url: https://medium.com/better-programming/quickly-improve-your-docker-and-node-js-containers-b841858a0b38
+## [8][Reducing technical debt with the help of CI steadily](https://www.reddit.com/r/javascript/comments/fx4mzu/reducing_technical_debt_with_the_help_of_ci/)
+- url: https://medium.com/@mindaugasnakr/decreasing-technical-debt-on-a-large-codebase-steadily-696c55bca4f1
 ---
 
-## [9][How an Angular App Work Behind the Scenes](https://www.reddit.com/r/javascript/comments/fwioex/how_an_angular_app_work_behind_the_scenes/)
-- url: https://medium.com/siam-vit/how-an-angular-app-work-behind-the-scenes-angular-flow-dcc4d1df27bd
+## [9][USA Covid County By County done with react and mapgl geocoder.me](https://www.reddit.com/r/javascript/comments/fx0wby/usa_covid_county_by_county_done_with_react_and/)
+- url: https://www.geocoder.me/
 ---
 
-## [10][Make your Angular application accessible for everybody](https://www.reddit.com/r/javascript/comments/fwi1sm/make_your_angular_application_accessible_for/)
-- url: https://medium.com/angular-in-depth/make-your-angular-application-accessible-for-everybody-2e5e8e402387
+## [10][[AskJS] Tool to find or remove unused code](https://www.reddit.com/r/javascript/comments/fx69h8/askjs_tool_to_find_or_remove_unused_code/)
+- url: https://www.reddit.com/r/javascript/comments/fx69h8/askjs_tool_to_find_or_remove_unused_code/
+---
+Is there a tool to get all functions/objects/types (ts or flow) that's never been imported, used or called? in the current project? This is different than tree shaking as tree shaking removes code in the bundle but we want to remove code in the source. 
+
+If there's none, I think it's a great project idea. What do you think?
+## [11][How to Easily Build a Slack App that Scrapes Websites for Data using Autocode - an Online IDE](https://www.reddit.com/r/javascript/comments/fx1cnq/how_to_easily_build_a_slack_app_that_scrapes/)
+- url: https://github.com/JanethL/SlackAppWebscraper
 ---
 
-## [11][What every front-end developer should know about change detection in Angular and React](https://www.reddit.com/r/javascript/comments/fvyriy/what_every_frontend_developer_should_know_about/)
-- url: https://indepth.dev/what-every-front-end-developer-should-know-about-change-detection-in-angular-and-react/
----
-
-## [12][Node.js dist builds are experiencing intermittent 500 errors](https://www.reddit.com/r/javascript/comments/fvxmw3/nodejs_dist_builds_are_experiencing_intermittent/)
-- url: https://github.com/nodejs/node/issues/32683
+## [12][COVID-19 Mobile app with React Native](https://www.reddit.com/r/javascript/comments/fx52a8/covid19_mobile_app_with_react_native/)
+- url: https://github.com/ezranbayantemur/covid-19-app
 ---
 

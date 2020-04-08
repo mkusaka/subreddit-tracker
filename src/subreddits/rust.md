@@ -23,139 +23,101 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/fw2i84/whats_everyone_working_on_this_week_152020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-15-2020/40539?u=llogiq)!
-## [3][Most commonly ignored clippy lints](https://www.reddit.com/r/rust/comments/fwev22/most_commonly_ignored_clippy_lints/)
-- url: https://github.com/rust-lang/rust-clippy/issues/5418
+## [3][Invisible performance wins](https://www.reddit.com/r/rust/comments/fwynp1/invisible_performance_wins/)
+- url: https://www.reddit.com/r/rust/comments/fwynp1/invisible_performance_wins/
+---
+**I want to praise those who work on Rust and LLVM compilers to make our Rust applications even faster to execute!**
+
+I have [a benchmark](https://github.com/frol/completely-unscientific-benchmarks) which my friend and I started to compare a few languages we were interested in (the list is kind of weird: Rust, Kotlin Native, C++, and Python), but once I [published](https://www.reddit.com/r/rust/comments/8jbjku/naive_benchmark_treap_implementation_of_c_rust/) the benchmark to the wild, we received over 40 solutions and now the benchmark has implementations in 24 languages (+4 in PRs). It was 2 years ago, so I used Rust 1.26 back then, and yesterday I decided to re-run the whole benchmark with the recent versions of compilers... Long story short, Rust 1.42 improved the execution time of the same source code by 5-17%! *I want to say this again, we get 5-17% performance win from just compiler version upgrade!*
+
+P.S. Here are some takeaways from this benchmark update:
+
+* With the above optimizations, Rust is now faster than the algorithmically similar implementations in C++ (the matching pairs are: "Rust naive ref-counted" vs "C++ naive java-like", "Rust tuned safe mem::forget" vs "C++ tuned unique\_ptr"). Also, Rust naive idiomatic version is faster than naive "idiomatic" \[I have a hard time defining this term for C++\] solution in C++ (called "C++ naive shared\_ptr"); though, C++ solution has to use defensive programming (using \`shared\_ptr\`) while Rust solution just relies on compile-time ownership checks.
+* Most of the compilers (for other languages) did not impact the performance of this unscientific benchmark in the course of the last two years; C++ is still the leader of the naive (and tuned) scoreboards, though I still argue that even though it used to be common to use raw pointers, it is not "idiomatic" C++ nowadays (gcc and clang manage to optimize tail recursion if you pass a mutable out parameter instead of returning a value), and given the previous paragraph, we just need to have algorithmically matching implementations in Rust to be on par with C++.
+* The noticeable improvements were in Python (update from 3.5 to 3.8 get 19% improvement, yet 48 times slower than the best naive solution in C++) and Kotlin Native (update from 0.7 to 1.3.71 yield 48% improvement, so it is twice as fast as it used to be, but it is still 16 times slower than the best naive solution)
+
+P.P.S. I wish Rust can optimize the idiomatic version down to the one that uses a simple trick of \`swap\` + \`mem::forget\`. I even tried to pull this myself but failed. Here are some references if you are interested:
+
+* [https://barrielle.cedeela.fr/research\_page/dropping-drops.html](https://barrielle.cedeela.fr/research_page/dropping-drops.html)
+* [https://github.com/rust-lang/rfcs/pull/1736](https://github.com/rust-lang/rfcs/pull/1736)
+* [https://github.com/rust-lang/rfcs/pull/2490](https://github.com/rust-lang/rfcs/pull/2490) (my duplicate of the #1736)
+
+&amp;#x200B;
+
+P.P.P.S Thank you, Rust designers, developers, and community! You rock!
+## [4][Nine patches](https://www.reddit.com/r/rust/comments/fx13f1/nine_patches/)
+- url: https://blog.yoshuawuyts.com/nine-patches/
 ---
 
-## [4][Futures Explained in 200 Lines of Rust](https://www.reddit.com/r/rust/comments/fwiet3/futures_explained_in_200_lines_of_rust/)
+## [5][Rust Tutorial: Building a Ray Tracer in One Weekend](https://www.reddit.com/r/rust/comments/fx2jyi/rust_tutorial_building_a_ray_tracer_in_one_weekend/)
+- url: https://www.youtube.com/watch?v=_5hD0gxRzzg&amp;list=PLctja8lh-0MdlbFXjmBoFn_1hiK4qkVqe
+---
+
+## [6][Error Handling in a Large Correctness-Critical Rust Project](https://www.reddit.com/r/rust/comments/fx5ibw/error_handling_in_a_large_correctnesscritical/)
+- url: http://sled.rs/errors
+---
+
+## [7][A brief apology of Ok-Wrapping](https://www.reddit.com/r/rust/comments/fwpgsh/a_brief_apology_of_okwrapping/)
+- url: https://boats.gitlab.io/blog/post/why-ok-wrapping/
+---
+
+## [8][How to share the same dependency build artifacts between different rust projects properly](https://www.reddit.com/r/rust/comments/fx47z7/how_to_share_the_same_dependency_build_artifacts/)
+- url: https://www.reddit.com/r/rust/comments/fx47z7/how_to_share_the_same_dependency_build_artifacts/
+---
+Lets say I am going to build 3 separate rust projects. I don't want to build dependencies for each of them every time I build them, I just want to complile my source code.
+
+How can I copy all the build artifacts generated after `cargo build release` in the target directory so that lets say I have built my project A for the first time and all the deps have been built  and now when I go to build project B and C they simply lookup the copies of those build artifacts and just compile the source code instead of all the deps all over again.
+
+What is the right way to do this?
+## [9][Announcing Cooked Wakers 2.0! Now with 100% less unnecessary derives](https://www.reddit.com/r/rust/comments/fwstbs/announcing_cooked_wakers_20_now_with_100_less/)
+- url: https://www.reddit.com/r/rust/comments/fwstbs/announcing_cooked_wakers_20_now_with_100_less/
+---
+Hey everyone! A couple months ago, I [published Cooked Wakers]( https://www.reddit.com/r/rust/comments/f05qiy/announcing_cooked_wakers/), a set of traits designed for making it easy to create `std::task::Waker` objects with 100% safe Rust and without any implementation overhead. One of the frustrating things about that design is that Rust's generic monomorphization rules made it impossible to generically create a `RawWakerVTable`; This meant that the `IntoWaker` trait could only ever be implemented on concrete types, which meant that I had to provide a complex derive for it, rather than a generic implementation. It also meant that downstream users had to create a lot of boilerplate types wrapping `Arc&lt;Notifier&gt;`.
+
+Well, I'm excited to announce that I figured out how to [solve](https://github.com/Lucretiel/cooked-waker/blob/master/src/lib.rs#L193-L217) that issue using an associated `const` on the `IntoWaker` trait. This means that I was able to remove a huge amount of boilerplate from the library and release [version 2.0](https://crates.io/crates/cooked_waker)! Aside from the removal of all the derives, the major change in this library is that it is now possible to call `into_waker` directly on shared pointer types, like so:
+
+    // OLD VERSION /////////////////////////////////////////////////
+    struct MyNotifier { ... }
+
+    // Because IntoWaker requires a concrete type, we have to wrap
+    // Arc in a struct.
+    #[derive(Debug, Clone, WakeRef, Wake, IntoWaker)]
+    struct NotifierHandle {
+        handle: Arc&lt;MyNotifier&gt;
+    }
+
+    let handle = NotifierHandle::new(Arc::new(MyNotifier{...}));
+    let waker = handle.clone().into_waker();
+
+    // NEW VERSION ////////////////////////////////////////////////////
+    struct MyNotifier { ... }
+
+    // Arc now implements IntoWaker directly!
+    let handle = Arc::new(MyNotifier{...}));
+    let waker = handle.clone().into_waker();
+
+Like before, this library is based on [`stowaway`](https://docs.rs/stowaway/1.1.2/stowaway/), a crate I designed to pack a `struct` into a `*mut ()` as efficiently as possible, only boxing it if it's larger than a pointer. By using this, plus generic function pointers in the VTable, it allows the creation of wakers that are exactly as efficient as if you had implemented them by hand, without any `unsafe` on your part.
+
+Cooked Wakers: because consuming unsafe RawWakers is bad for your health.
+
+As always, feedback and pull requests are welcome.
+## [10][Rust on GPU?](https://www.reddit.com/r/rust/comments/fx0tbt/rust_on_gpu/)
+- url: https://www.reddit.com/r/rust/comments/fx0tbt/rust_on_gpu/
+---
+Hi everyone,
+
+I would love to build in some functionality to my crate which enables it to optionality run on a GPU (shameless plug to [radiate](https://github.com/pkalivas/radiate) \- if you've used it or have experienced issues PLEASE lmk, it is in active development and can use as much input as possible - all comments are totally welcome and will not hurt my feelings). It is a genetic programming engine with an implementation of [NEAT](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf) with a few personal tweaks and additions to it - check out the above github for more information. LSTM, GRU, traditional neural net training, etc. NEAT Has definitely taken a front seat to development as I've been using it personally, so any type of feedback on the engine or the models is incredibly welcome and appreciated.
+
+But, long story short, I've been using this crate for some personal projects and although it meets my needs, using the engine on the CPU for large problems can take a long time and cause my CPU to burn quite hot (rayon::ThreadPoolBuilder only helps so much). In terms of ML and AI, although I'm not aiming for this crate to be the 'gold standard' by any means, I would like it to be a viable solution for people and would like it to be a professional level crate (I graduated from college a year ago and have only been working in the software industry since Sep '19, so again, any advice or constructive criticism on the crate is 100% welcome and encouraged.). I think there are areas of the crate which can definitely be improved - using the GPU for training being one of them.
+
+I know for languages like Python there are mature libraries for executing code on the GPU through libraries like CUDA. Does something along the same lines exist for rust, and if so could anyone point me in that direction? I've found a few abandoned GPU crates that are a few years old and would like to either use or contribute to one which would be (somewhat) future-proof. 
+
+Thanks.
+## [11][Futures Explained in 200 Lines of Rust](https://www.reddit.com/r/rust/comments/fwiet3/futures_explained_in_200_lines_of_rust/)
 - url: https://cfsamson.github.io/books-futures-explained/
 ---
 
-## [5][Ask Rust Experts - a live Q&amp;A series for your questions about Rust](https://www.reddit.com/r/rust/comments/fwj27s/ask_rust_experts_a_live_qa_series_for_your/)
-- url: https://rust-experts.com/#askrustexperts
----
-
-## [6][Security advisories for March 2020: bitvec, hyper and others](https://www.reddit.com/r/rust/comments/fw3vyg/security_advisories_for_march_2020_bitvec_hyper/)
-- url: https://www.reddit.com/r/rust/comments/fw3vyg/security_advisories_for_march_2020_bitvec_hyper/
----
-[RustSec](https://rustsec.org) is a community database of security advisories filed against crates published to crates.io. It is maintained by the [Rust Secure Code Working Group](https://github.com/rust-secure-code/wg).
-
-These security bugs have been identified and corrected in Rust crates in March 2020:
-
- * [bitvec: use-after or double free of allocated memory](https://rustsec.org/advisories/RUSTSEC-2020-0007.html)
- * [hyper: Flaw in hyper allows request smuggling by sending a body in GET requests](https://rustsec.org/advisories/RUSTSEC-2020-0008.html)
- * [cbox: CBox API allows to de-reference raw pointers without `unsafe` code](https://rustsec.org/advisories/RUSTSEC-2020-0005.html)
- * [bumpalo: Flaw in `realloc` allows reading unknown memory](https://rustsec.org/advisories/RUSTSEC-2020-0006.html)
-
-You can use [cargo-audit](https://github.com/RustSec/cargo-audit) to identify whether your code depends on vulnerable versions of these crates and upgrade. [A GitHub action](https://github.com/actions-rs/audit-check) that files bugs if your code depends on vulnerable crates is also available.
-
-If you have found a vulnerability in your code, please [report it to RustSec](https://github.com/RustSec/advisory-db) so that your users can identify that they're running a vulnerable version and upgrade.
-
-If you discover a bug in unsafe code and aren't sure if it has security implications, please get in touch and we'll work with you to figure out if could have security implications.
-## [7][Congratulations](https://www.reddit.com/r/rust/comments/fvxghs/congratulations/)
-- url: https://www.reddit.com/r/rust/comments/fvxghs/congratulations/
----
-Hello rustaceans,
-
-I started learning Go about one year ago. I started my journey in computer science/security from C so going back (from Python and JS) to a compiled, strongly typed language made me feel somehow home. Two things I appreciated a lot are the ecosystem and the Go community. The tools are well done and the community is very welcoming.
-
-In the meantime I discovered this beautiful language called Rust. I know the public opinion is that Go is competing with Rust, but for me it served as a bridge. Reading the rust book I caught myself saying under my breath "No freaking way..." more than once. Everything just clicked and just made sense. Besides the content I was impressed by the initiative of writing such a wonderful resource to help virtually anyone transition to Rust. Cargo is so incredibly polished that it was a pleasure even to just watch source code compile. Now to the main point. I heard plenty of good stuff about Rust's community and they all proved to be true. The thing that pushed me to post this is seeing an anon's post here a few days ago, being quite on the offensive about Rust being unsafe. More than once he proved a lot of bias which kind of drove me insane just by reading it. I was shocked to see how rustaceans responded with information, sources and explanations pointing out the differences in perspective. It was just incredible. This is just an example, there are more where this came from.
-
-Go's ecosystem and community are cool, I'm not trying to deny it. But for me,  Rust is superior in every way, except maybe the breadth and maturity of some packages. But this will come with time, I'm not worried at all.
-
-Congratulations for building such a community. I am looking forward to finish the introductory stuff in the language and be a part of it. Continue to shock me and be at least as awesome as you are
-## [8][From failure to Fehler](https://www.reddit.com/r/rust/comments/fw4jsx/from_failure_to_fehler/)
-- url: https://boats.gitlab.io/blog/post/failure-to-fehler/
----
-
-## [9][rustfmt is not working from VIM](https://www.reddit.com/r/rust/comments/fwjr6k/rustfmt_is_not_working_from_vim/)
-- url: https://www.reddit.com/r/rust/comments/fwjr6k/rustfmt_is_not_working_from_vim/
----
-I installed rust.vim plugin via Pathogen. Running rustfmt from the filesystem is fine but when I try to run :RustFmt from within VIM i get the following error:
-
-Error detected while processing function rustfmt#Format:
-
-line    1:
-
-E121: Undefined variable: v:false
-
-E116: Invalid arguments for function &lt;SNR&gt;33\_RunRustfmt
-
-Also I would like to run rustfmt each time I'm saving changes. This doesnt work either.
-
-Can somebody help?
-## [10][Rust analyzer weekly changelog](https://www.reddit.com/r/rust/comments/fvygkf/rust_analyzer_weekly_changelog/)
-- url: https://rust-analyzer.github.io/thisweek/2020/04/06/changelog-19.html
----
-
-## [11][Why doesn't rust allow invoking "static" methods on trait objects?](https://www.reddit.com/r/rust/comments/fwfggk/why_doesnt_rust_allow_invoking_static_methods_on/)
-- url: https://www.reddit.com/r/rust/comments/fwfggk/why_doesnt_rust_allow_invoking_static_methods_on/
----
-Take the following code ([playground link](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=db51eb20e8355f95578b6ceba07b904f))
-
-(kind of a dumb example, but it's just to demonstrate the point)
-
-    trait Test {
-        fn init() -&gt; Box&lt;dyn Test&gt;;
-    }
-
-If you try to compile this, you get the following error:
-
-    error[E0038]: the trait `Test` cannot be made into an object...
-    associated function `init` has no `self` parameter
-
-The rustc explanation (`rustc --explain E0038`) for this isn't very satisfying:
-
-&gt;Methods that do not take a \`self\` parameter can't be called since there won't be  
-&gt;  
-&gt;a way to get a pointer to the method table for them  
-&gt;  
-&gt;...  
-&gt;  
-&gt;This could be called as \`&lt;Foo as Foo&gt;::foo()\`, which would not be able to pick  
-&gt;  
-&gt;an implementation.  
-&gt;  
-&gt;...  
-&gt;  
-&gt;Adding a \`Self: Sized\` bound to these methods will generally make this compile.
-
-If you think about it, there's nothing stopping the compiler from embedding function pointers to "static" methods in the trait object's vtable just like it does for any other trait method, and there isn't any ambiguity about the calling convention since both the caller and the callee are aware that the method doesn't borrow 'self'.
-
-This is especially annoying if you're trying to make up for the lack of arbitrary self types, by doing something like:
-
-    // Do something with my custom smart pointer
-    trait DoSomething {
-        // This method *needs* to consume "this" (self), so can't use a borrow
-        fn do_something(this: SmartPointer&lt;dyn DoSomething&gt;, arg: f32) -&gt; String;
-    }
-    
-    // Totally making up the syntax here
-    let sp: SmartPointer&lt;dyn DoSomething&gt; = ...;
-    let do_something = sp.do_something;
-    (do_something)(sp);
-
-Now, you could work around this by doing something like:
-
-    trait DoSomething {
-        fn get_do_something(&amp;self) -&gt; fn(SmartPointer&lt;dyn DoSomething&gt;, f32) -&gt; String;
-    }
-
-But then you're paying the cost of two dynamic function calls when you really only need one, which is unfortunate.
-
-This will be kind of a moot point once arbitrary self types on trait objects get stabilized since the absence of that is the primary use case I'm running into for this, but it's unclear when that will happen.
-
-I can imagine two arguments for why this was initially decided against:
-
-* Don't want to bloat memory with vtable members that are unlikely to get called
-   * This is kind of irrelevant now since all existing code uses the `where Self: Sized` bound on static methods, so enabling it wouldn't have any immediate effect.
-   * It's also outweighed by the way `dyn(TraitA + TraitB)` is represented (by constructing a brand new vtable with the combination of TraitA's and TraitB's methods).
-* If you're designing a polymorphic trait, you need to account for the fact that implementations may need to borrow 'self'
-   * If you had to implement a trait from a library that didn't allow you to do that, you'd be hosed.
-   * I think most API designers probably realize that, so this is kind of a weak argument.
-
-This post is kind of a ramble, but I'm sitting here slightly frustrated since I need one of these two features  and neither are currently allowed. This one seems like the lower hanging fruit, so does anyone know why this was decided against?
-## [12][no_error - an error library for no_std](https://www.reddit.com/r/rust/comments/fwenhz/no_error_an_error_library_for_no_std/)
-- url: https://github.com/richardanaya/no_error
+## [12][async-postgres: a runtime-independent, asynchronous PostgreSQL client.](https://www.reddit.com/r/rust/comments/fwyb41/asyncpostgres_a_runtimeindependent_asynchronous/)
+- url: https://github.com/Hexilee/async-postgres
 ---
 

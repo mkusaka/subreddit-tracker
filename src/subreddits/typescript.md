@@ -22,7 +22,158 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Is it possible to type this in TypeScript?](https://www.reddit.com/r/typescript/comments/fwi9h8/is_it_possible_to_type_this_in_typescript/)
+## [2][Foal TS - April release (version 1.7) - File uploads to local or Cloud storage (AWS S3), OpenAPI spec generation, safe config access](https://www.reddit.com/r/typescript/comments/fx40ui/foal_ts_april_release_version_17_file_uploads_to/)
+- url: https://www.reddit.com/r/typescript/comments/fx40ui/foal_ts_april_release_version_17_file_uploads_to/
+---
+Foal TS framework version 1.7 is officially released!
+
+[Foal TS - April release \(version 1.7\)](https://preview.redd.it/bpntqk11lkr41.png?width=1020&amp;format=png&amp;auto=webp&amp;s=7de8eaa02ac49ea52d7368e494930e1c9118afaf)
+
+**File uploads to local and Cloud storage**, better error description, safer config access, logging improved, you can discover the features of this version here: [https://github.com/FoalTS/foal/releases/tag/v1.7.0](https://github.com/FoalTS/foal/releases/tag/v1.7.0)
+
+The **big feature** of this release is the new `@ValidateMultipartFormDataBody` hook which allows you to **validate and parse multipart/form-data requests** (used for file uploads).
+
+Let’s say we have a profile page from which the user can upload their profile picture as well as their pseudonym. The image should not exceed a certain size and the pseudonym should be 30-characters long.
+
+We want to upload the files in streaming (for performance reason) to our local server file system when coding the application.
+
+Then, when deploying the application to production, we want to use AWS and store our images in an S3 bucket.
+
+And finally, we would like to generate the OpenAPI specification and use Swagger UI to test our application.
+
+=&gt; This new version allows you to achieve this with just a few lines of code and configuration.
+
+More documentation here: [https://foalts.gitbook.io/docs/topic-guides/file-system/upload-and-download-files](https://foalts.gitbook.io/docs/topic-guides/file-system/upload-and-download-files)
+
+[Page at http:\/\/localhost:3001\/swagger](https://preview.redd.it/tw35xed3lkr41.png?width=1446&amp;format=png&amp;auto=webp&amp;s=b9084c176684da1e120daa1ebc07e98ef4d1accf)
+
+[api.controller.ts](https://preview.redd.it/dzn0pmd3lkr41.png?width=588&amp;format=png&amp;auto=webp&amp;s=e246d7c948b0dd098d16d28c804afdcba7953a82)
+
+[openapi.controller.ts](https://preview.redd.it/y7eo8fd3lkr41.png?width=430&amp;format=png&amp;auto=webp&amp;s=d27d45618d0fdb18c8a9bc112c7967f0c47446c0)
+
+[app.controller.ts \(the root controller of the app\)](https://preview.redd.it/xbp0ajd3lkr41.png?width=482&amp;format=png&amp;auto=webp&amp;s=2e82cf41d6da5235de2bb87c82e3da9f8b3cf70a)
+
+[the configuration file config\/development.yml](https://preview.redd.it/x2ah4hd3lkr41.png?width=217&amp;format=png&amp;auto=webp&amp;s=1dbaed210f1d93fd3a909c5609ab82b67fecacaa)
+
+[the configuration file config\/production.yml](https://preview.redd.it/4d5bzld3lkr41.png?width=203&amp;format=png&amp;auto=webp&amp;s=6d2804d009e8ebf59d7056877050023e9a3934b3)
+
+Foal, in a few words, it's a Node.js framework:
+
+&amp;#x200B;
+
+* written in TypeScript
+* provided with batteries included (Auth, OpenAPI, GraphQL, ORM, CLI, scripts, file storage)
+* and with a simple and intuitive architecture (no magic, no over-engineering).  
+ 
+
+And the must: it has more than 11,000 lines of documentation.
+
+[https://foalts.org](https://foalts.org/)
+
+[https://github.com/FoalTS/foal](https://github.com/FoalTS/foal)
+
+[https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
+
+\#TypeScript #JavaScript #NodeJS #FoalTS #AWS #S3
+## [3][Type error while binding a value](https://www.reddit.com/r/typescript/comments/fx6bip/type_error_while_binding_a_value/)
+- url: https://www.reddit.com/r/typescript/comments/fx6bip/type_error_while_binding_a_value/
+---
+Begginer question here..
+
+const item = ({ index, value }) =&gt; \`${index}:${value}\`; 
+
+Error in VS: Binding element 'index' implicitly has an 'any' type.ts(7031)
+
+where do I specificy the type for the above line?
+## [4][Dealing with types at scale](https://www.reddit.com/r/typescript/comments/fx5nrx/dealing_with_types_at_scale/)
+- url: https://www.reddit.com/r/typescript/comments/fx5nrx/dealing_with_types_at_scale/
+---
+During development, we tend to consume types, i.e:
+
+```ts
+interface Foo {
+  x: string
+  y: number
+  z: boolean
+  //... more properties
+}
+```
+
+Then in our functions, we just "re-use" that type `Foo`
+
+```ts
+type Fn = (f: Foo) =&gt; ReturnType
+```
+
+But what happens when `Foo` is an object containing a bunch of properties where let's say a function `SimpleFn` does not use the whole set of properties
+
+```ts
+type SimpleFn = (f: Pick&lt;Foo, 'x' | 'y'&gt;) =&gt; ReturnType
+```
+
+later we have a 
+
+```ts
+type SimpleFn2 = (g: Pick&lt;Foo, 'y' | 'z'&gt;) =&gt; ReturnType 
+```
+
+What option do you prefer?
+
+a)
+```ts
+type SimpleFn = (f: Foo) =&gt; ReturnType
+type SimpleFn2 = (g: Foo) =&gt; ReturnType
+```
+
+b)
+```
+type SimpleFn = (f: Pick&lt;Foo, 'x' | 'y'&gt;) =&gt; ReturnType
+type SimpleFn2 = (g: Pick&lt;Foo, 'y' | 'z'&gt;) =&gt; ReturnType 
+```
+
+c) Try to have a very well defined domain where I can group all my types in a file and then reuse them
+## [5][Announcing Chronograph 1.0.0 - An open-source reactive computational engine, implemented in TypeScript](https://www.reddit.com/r/typescript/comments/fwp8ga/announcing_chronograph_100_an_opensource_reactive/)
+- url: https://www.bryntum.com/blog/announcing-chronograph-1-0-0/
+---
+
+## [6][Can't solve this TypeScript error! :(](https://www.reddit.com/r/typescript/comments/fx2lha/cant_solve_this_typescript_error/)
+- url: https://www.reddit.com/r/typescript/comments/fx2lha/cant_solve_this_typescript_error/
+---
+Was trying to work with a React app, but this Typescript error happens. Since I'm a noob at TS, not sure what's happening. Any clue, pros? :( 
+
+https://preview.redd.it/vly86gw8zjr41.png?width=1053&amp;format=png&amp;auto=webp&amp;s=768d6e7d0d78be2634dd91747a1918354b9043be
+## [7][Why do these typings stop working when they are used inside an indexed type?](https://www.reddit.com/r/typescript/comments/fwv4ky/why_do_these_typings_stop_working_when_they_are/)
+- url: https://www.reddit.com/r/typescript/comments/fwv4ky/why_do_these_typings_stop_working_when_they_are/
+---
+
+    type Thing = { name: string; };
+    type Things = Array&lt;Thing&gt;;
+    type ThingOrThings = Thing | Things;
+    
+    var thing: ThingOrThings = { name: "sam" };
+    thing.name = "pat"
+    // ts correctly infers that thing is a Thing that has .name
+    var things: ThingOrThings = [{ name: "sam" },{ name: "ash" }];
+    things[0].name = "pat"
+    things.map(x =&gt; x)
+    // ts correctly infers that things is a Things, an array I can index or .map()
+    
+    interface ThingMap { [key: string]: ThingOrThings; }
+    var thingmap: ThingMap = { thing: { name: "sam" }, things: [{ name: "sam" },{ name: "ash" }] };
+    thingmap.thing.name = "pat"; // ERROR: Property 'name' does not exist on type 'Things'. (2339)
+    // How is thingmap.thing here functionally different from thing above? they have the same contents and the same type
+    thingmap.things[0].name = "pat"; // ERROR: Property '0' does not exist on type 'ThingOrThings'. (7053)
+    // How is thingmap.things here functionally different from things above? they have the same contents and the same type
+    
+Most of the question is in the comments above. When I use ThingOrThings directly as the type of an object, Typescript is quite capable of figuring out whether the object is a Thing or a Things, then allowing or disallowing me to manipulate it as such. However, when I put that exact same type into an indexed interface, and then put the exact same contents into two objects inside that interface, TS suddenly can't figure out how to handle the objects.
+
+[Typescript Playground link](https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=19&amp;pc=1#code/C4TwDgpgBAKgFgSwHYHMoF4oG8pIIYC2EAXFAM7ABOyKA3FAL60BQoksiqZGUAgpZTwgAPPBoA+Fm2hjUAeUqyU3TEqgAfDjTItmANzyUowTilJKFSldlyESUAERlCDxlNMA6fER4OweYAdmAHpg424AYwB7AQgI4AAbEChkADMISm4TAONTFO48LVRcnLg8bi87fUNc7XNTS1NrAG0cb3snF0YAGja7UgdyuFcGAF13bWaABlHKn0w-AKCTbQ8CPDAACgAPDHEobYBKELDgSJjKOMTktIyssuBarnyoQqtu16RXgSEoAEkoBE8F9kAATCC7GJQNYbTbHZjIYAZVJ4CIyUwAWQ2NmaAGsICBSBRqKhRvUaI1tPQGNUjCtUOswOTUFiwDwcPSzDZ2gNnAQRh9OWRSK1bEReV0GL0xR0hiNRm5WKZGR5OXNoAt-IEWKEoAAJKIAdxenJVnKgcAy0FSAFckPEEFF8AkklBQQhUulLkhHqlKFECE80HgAEZRPQQAD8uQJFrwEZj5DsgKdSJ9BSQoMTfOg0iVNDNTWms3avi1Dh1YQNxoQ9wLG1VTQtVqgtvtwEdztd7s9Vp9rf9gaFrzDEejJljZQTE6TPmiPog6c+WZnOeM4AgzCAA
+)
+## [8][Building Vue Enterprise Application: Part 3. The Store](https://www.reddit.com/r/typescript/comments/fwkytl/building_vue_enterprise_application_part_3_the/)
+- url: https://medium.com//building-vue-enterprise-application-part-3-the-store-dbda0e4bb117?source=friends_link&amp;sk=e394ce16a71eef6187eb578e3d0783fe
+---
+
+## [9][Is it possible to type this in TypeScript?](https://www.reddit.com/r/typescript/comments/fwi9h8/is_it_possible_to_type_this_in_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/fwi9h8/is_it_possible_to_type_this_in_typescript/
 ---
 Hey everyone, having troubles typing something in TypeScript, I understand the error more or less but I don't know how I could do it differently.
@@ -65,177 +216,30 @@ Basically, I want:
  * `T` to always be an object `{}` so no one should be able to do `useComplexState&lt;boolean&gt;`
  * Ideally, `T` shouldn't be required, so if I use `useComplexState()` I should just have a generic object Record&lt;string, any&gt; inside.
  * I'd like to have a default value of `{}` for the `state`.
-## [3][Help with TestBed](https://www.reddit.com/r/typescript/comments/fwgu9e/help_with_testbed/)
-- url: https://www.reddit.com/r/typescript/comments/fwgu9e/help_with_testbed/
+## [10][utils-decorators library](https://www.reddit.com/r/typescript/comments/fwq433/utilsdecorators_library/)
+- url: https://www.reddit.com/r/typescript/comments/fwq433/utilsdecorators_library/
 ---
-Hi all.    
+Hi,
 
-I'm trying to set up a test for my service using TestBed. That service has some dependencies of other services. I've created .stub files for those dependencies and exported them. Problem is when I try to use these stubs in the test it still seems like the test methods use the real service and not the test. Here's my setup (the fake names are just for this thread):    
+I just published a new version of my decorators library [utils-decorators](https://github.com/vlio20/utils-decorators).
 
-    describe('ServiceToTest', () =&gt; {
-        let serviceDependency1Stub: ServiceDependency1;
-    
-        beforeEach(() =&gt; {
-            TestBed.configureTestingModule({
-                imports: [],
-                providers: [
-                    ServiceToTest,
-                    { provide: ServiceDependency1, useClass: ServiceDependency1Stub },
-                    { provide: ServiceDependency2, useClass: ServiceDependency2Stub }
-                ]
-            });
-    
-            serviceDependency1Stub = TestBed.inject(ServiceDependency1);
-        });
-    
-        it('description', fakeAsync(() =&gt; {
-            // Error appears here when trying to use the BehaviorSubject on the mock:
-            // Property 'behaviorSubjectTest' does not exist on type                 
-           'ServiceDependency1'
-            serviceDependency1Stub.behaviorSubjectTest.next(new Test());
-            ... more logic
-        }));
-    });
-    
+It already contained decorators such as debounce, memozie, refreshable and many more. Now I am introducing some new and useful decorators which can be handy both for node and web applications.
 
-I understand the error, that's because behaviorSubjectTest property is on the stub and not the real service. But why doesn't it use the stub service when I listed it as a useClass in the providers?
+The added decorators are:
 
-What am I doing wrong? When I see what's available on serviceDependency1Stub I see all the methods and properties on the real service and not the stub.
-## [4][Hey, I made a super small super type safe library to sort any type of array](https://www.reddit.com/r/typescript/comments/fwfwli/hey_i_made_a_super_small_super_type_safe_library/)
+`@timeout -` Retries execution of the decorated method. The method will be invoked extra x + 1 (where x is the retries values) in the worst case (when all invocation failed).
+
+`@multiDispatch -` Will throw an error (`TimeoutError`) if the decorated method returned promise won't be resolved within the provided timeout (timeout is in milliseconds
+
+`@retry -` Will invoke the decorated method the amount of provided times in parallel. This decorator is useful when you want to increase the chance of successful invocation of the decorated method.
+
+`@delegate -` For a given input, if within the time period of the resolving of the promise of the first invocation the decorated method was invoked multiple times (with the same input) the response would be the promise that was generated by the first invocation.  
+This way this decorator reduces the amount of calls to the implementation of the decorated method, for example accessing the database.  
+
+
+I would be happy to hear your feedback and suggest improvements to the library. The library has 100% of unit tests code coverage but most importantly it has a 100 score in mutation tests (using [stryker](https://stryker-mutator.io/)).
+## [11][Hey, I made a super small super type safe library to sort any type of array](https://www.reddit.com/r/typescript/comments/fwfwli/hey_i_made_a_super_small_super_type_safe_library/)
 - url: https://www.reddit.com/r/typescript/comments/fwfwli/hey_i_made_a_super_small_super_type_safe_library/
 ---
 check it out  
 [sort-es](https://sort-es.netlify.com/) : Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array
-## [5][what is the difference between `Ts` errors vs `Eslint` errors when using `@typescript-eslint/parser` ?](https://www.reddit.com/r/typescript/comments/fwfe0x/what_is_the_difference_between_ts_errors_vs/)
-- url: https://www.reddit.com/r/typescript/comments/fwfe0x/what_is_the_difference_between_ts_errors_vs/
----
-the reason I'm asking this is, I wanna check for both type errors as well as eslint errors before commit my code, does running eslint covers all cases or should I run `tsc` or `typescript` too ?
-## [6][Return type of promise + Try/Catch](https://www.reddit.com/r/typescript/comments/fwf9im/return_type_of_promise_trycatch/)
-- url: https://www.reddit.com/r/typescript/comments/fwf9im/return_type_of_promise_trycatch/
----
-Hello all,
-
-I am getting the typical error of "A function whose declared type is neither void nor any must return a value" in the following code:  
-
-```
-const getStuff= async (  
-  { setFieldValue, setFieldError, values: { stuff } }
-): Promise&lt;AxiosResponse&lt;Stuff&gt;&gt; =&gt; {  
- try {  
- const res = await queryStuff(stuff);  
- if (res.status === 200) {  
- if (res.data.length &gt; 0) {  
-        setFieldValue('stuff', res.data);  
-      } else {  
-        setFieldError('stuff', 'blabla error message');  
-      }  
-    }  
-  } catch (err) {  
-    setFieldError('stuff', 'blablabla error message');  
- if (err.response) {  
- // return error  
-    } else if (err.request) {  
- // server did not respond  
-    } else {  
- // something happened setting up the request  
-    }  
-  }  
-};
-```
-
-QueryStuff calls axios and because getStuff is async then I must return a promise. The problem is that axios will throw an error upon an error so I am not sure how to refactor this. setFieldValue/setFieldError are Formik functions that return void.
-
-How would you refactor the code to avoid this?
-
-Thank you in advance.
-## [7][Type checking a JSON file?](https://www.reddit.com/r/typescript/comments/fwgob0/type_checking_a_json_file/)
-- url: https://www.reddit.com/r/typescript/comments/fwgob0/type_checking_a_json_file/
----
-    export var tileList: hexes.TileList = {
-      "3": {color: "yellow", stop: {value: 10}},
-      "4": {color: "yellow", stop: {value: 10}},
-      ...
-
-My editor will happily do type checking inside this object within a .ts file.
-
-However, if I take object and drop it in a JSON file, I lose the ability to type check it. Not just in realtime in my editor, but at all.
-
-My workaround is to have a header file that contains `import blah blah; var tileList: hexes.TileList = `, then a script that concatenates that with the json file and pipes the result to tsc, but that seems so hacky-y.
-
-Is there a better way, for one-time checking or for realtime checking in any editor or IDE?
-## [8][Typescript - VSCode, object generator based on interface.](https://www.reddit.com/r/typescript/comments/fw85yx/typescript_vscode_object_generator_based_on/)
-- url: https://www.reddit.com/r/typescript/comments/fw85yx/typescript_vscode_object_generator_based_on/
----
-Hi folks, 
-
-Using Typescript in VSCode, is there any extension to create an object using all properties of an interface. Example -
-
-`interface IFields {`
-
-`name: string;`
-
-`age: number;`
-
-`address: IAddress;`
-
-`}`
-
-&amp;#x200B;
-
-`interface IAddress {`
-
-`city: string;`
-
-`zip: number;`
-
-`}`
-
-&amp;#x200B;
-
-And then I can get something similar to -
-
-const obj = {
-
-  name: '',
-
-  age: 0,
-
-  address: {
-
-city: '',
-
-zip: 0
-
-  }
-
-};
-
-&amp;#x200B;
-
-Thanks!
-## [9][How to structure a type where a particular field is occasionally not set?](https://www.reddit.com/r/typescript/comments/fw7e3n/how_to_structure_a_type_where_a_particular_field/)
-- url: https://www.reddit.com/r/typescript/comments/fw7e3n/how_to_structure_a_type_where_a_particular_field/
----
-I'm new to Typescript and this is tripping me up a bit. 
-
-I've got a type for an object that is written to a database. Before it's written to the database, it does not have an ID, but anytime after that it does have an ID.
-
-For simplicity say my type is something like:
-
-    interface DatabaseObject {
-        id: string,
-        name: string
-    }
-
-When my Typescript backend is initially creating that object, I don't have an id string to set, which makes the type invalid. However, if I make `id` optional in the type, then I have to constantly check if `id` is set in the other 99% of my code, so I'd prefer to keep id non-optional.   
-
-
-What's the best way to handle this?
-## [10][Common JSON patterns in Haskell, Rust and TypeScript](https://www.reddit.com/r/typescript/comments/fvwm3o/common_json_patterns_in_haskell_rust_and/)
-- url: https://codetalk.io/posts/2020-04-05-common-json-patterns-in-haskell-rust-and-javascript.html
----
-
-## [11][CSS in TS?](https://www.reddit.com/r/typescript/comments/fw4ydy/css_in_ts/)
-- url: https://www.reddit.com/r/typescript/comments/fw4ydy/css_in_ts/
----
-What are you using for CSS in TypeScript? Only good library that I've found for type-safe CSS is Typestyle, so curious about what all of you are using. Also, is there a way to have type-safe CSS in other CSS in JS libraries like Emotion or Styled Components?

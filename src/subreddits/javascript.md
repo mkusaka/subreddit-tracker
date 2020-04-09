@@ -1,13 +1,5 @@
 # javascript
-## [1][WTF Wednesday (April 01, 2020)](https://www.reddit.com/r/javascript/comments/ft2jy1/wtf_wednesday_april_01_2020/)
-- url: https://www.reddit.com/r/javascript/comments/ft2jy1/wtf_wednesday_april_01_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/fvve9m/your_weekly_rjavascript_recap/)
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/fvve9m/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/fvve9m/your_weekly_rjavascript_recap/
 ---
 **Monday, March 30 - Sunday, April 05**
@@ -87,45 +79,51 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Converting a Redux app to Recollect (how and why)](https://www.reddit.com/r/javascript/comments/fwzy6n/converting_a_redux_app_to_recollect_how_and_why/)
-- url: https://medium.com/@david.gilbertson/converting-a-redux-app-to-recollect-how-and-why-345a35088ea9
+## [2][WTF Wednesday (April 08, 2020)](https://www.reddit.com/r/javascript/comments/fx95dy/wtf_wednesday_april_08_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fx95dy/wtf_wednesday_april_08_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][How To Build Simple Node.js Rest APIs with Express, Sequelize &amp; MySQL](https://www.reddit.com/r/javascript/comments/fxpvpo/how_to_build_simple_nodejs_rest_apis_with_express/)
+- url: https://christosploutarchou.com/how-to-build-simple-node-js-rest-api/
 ---
 
-## [4][EVT: A new EventEmitter for Deno ( and every other JavaScript runtimes )](https://www.reddit.com/r/javascript/comments/fx58rx/evt_a_new_eventemitter_for_deno_and_every_other/)
-- url: https://evt.land
+## [4][Website that reskins Reddit into Microsoft Teams (Good for work / school)](https://www.reddit.com/r/javascript/comments/fxczmp/website_that_reskins_reddit_into_microsoft_teams/)
+- url: https://abberispe.github.io/teamit/
 ---
 
-## [5][simpleParallax.js, the easiest way to get a parallax effect with javascript](https://www.reddit.com/r/javascript/comments/fx4lqt/simpleparallaxjs_the_easiest_way_to_get_a/)
-- url: https://simpleparallax.com/
+## [5][Solving Recursive Parsing Problems With State Machines In My 16-Bit VMs Assembly Language Parser](https://www.reddit.com/r/javascript/comments/fxs3o2/solving_recursive_parsing_problems_with_state/)
+- url: https://youtube.com/watch?v=ai63l4OUxSs
 ---
 
-## [6][5 Mistakes Web Developers Should Avoid When using JWTs for Authentication](https://www.reddit.com/r/javascript/comments/fwm8wc/5_mistakes_web_developers_should_avoid_when_using/)
-- url: https://ducktypelabs.com/5-mistakes-web-developers-should-avoid-when-using-jwts-for-authentication/
+## [6][Visual Studio Code March 2020](https://www.reddit.com/r/javascript/comments/fxdies/visual_studio_code_march_2020/)
+- url: https://code.visualstudio.com/updates/v1_44
 ---
 
-## [7][Open source: A library that introduce a new way to write CSS-in-JS](https://www.reddit.com/r/javascript/comments/fwxxpl/open_source_a_library_that_introduce_a_new_way_to/)
-- url: https://github.com/07akioni/css-render
+## [7][10 security tips for frontend developers](https://www.reddit.com/r/javascript/comments/fxrlac/10_security_tips_for_frontend_developers/)
+- url: https://medium.com/@koss_lebedev/10-security-tips-for-frontend-developers-19e3dd9fb069
 ---
 
-## [8][Reducing technical debt with the help of CI steadily](https://www.reddit.com/r/javascript/comments/fx4mzu/reducing_technical_debt_with_the_help_of_ci/)
-- url: https://medium.com/@mindaugasnakr/decreasing-technical-debt-on-a-large-codebase-steadily-696c55bca4f1
+## [8][Linkdash - Generate a handy dashboard of links in seconds!](https://www.reddit.com/r/javascript/comments/fxphy5/linkdash_generate_a_handy_dashboard_of_links_in/)
+- url: https://github.com/igimanaloto/linkdash
 ---
 
-## [9][USA Covid County By County done with react and mapgl geocoder.me](https://www.reddit.com/r/javascript/comments/fx0wby/usa_covid_county_by_county_done_with_react_and/)
-- url: https://www.geocoder.me/
+## [9][SVGR: A VSCode extension for converting SVG's to inline JSX or React (Native) Components](https://www.reddit.com/r/javascript/comments/fxs583/svgr_a_vscode_extension_for_converting_svgs_to/)
+- url: https://marketplace.visualstudio.com/items?itemName=NathHorrigan.code-svgr
 ---
 
-## [10][[AskJS] Tool to find or remove unused code](https://www.reddit.com/r/javascript/comments/fx69h8/askjs_tool_to_find_or_remove_unused_code/)
-- url: https://www.reddit.com/r/javascript/comments/fx69h8/askjs_tool_to_find_or_remove_unused_code/
----
-Is there a tool to get all functions/objects/types (ts or flow) that's never been imported, used or called? in the current project? This is different than tree shaking as tree shaking removes code in the bundle but we want to remove code in the source. 
-
-If there's none, I think it's a great project idea. What do you think?
-## [11][How to Easily Build a Slack App that Scrapes Websites for Data using Autocode - an Online IDE](https://www.reddit.com/r/javascript/comments/fx1cnq/how_to_easily_build_a_slack_app_that_scrapes/)
-- url: https://github.com/JanethL/SlackAppWebscraper
+## [10][React Summit: Attend the biggest ReactJS online conference for free](https://www.reddit.com/r/javascript/comments/fxrzs0/react_summit_attend_the_biggest_reactjs_online/)
+- url: https://sfree.life/reactjs-react-summit-conf-2020-stream-free/
 ---
 
-## [12][COVID-19 Mobile app with React Native](https://www.reddit.com/r/javascript/comments/fx52a8/covid19_mobile_app_with_react_native/)
-- url: https://github.com/ezranbayantemur/covid-19-app
+## [11][The Boolean Type in JavaScript](https://www.reddit.com/r/javascript/comments/fxp88q/the_boolean_type_in_javascript/)
+- url: https://www.hackdoor.io/articles/lOQ98vpB/the-boolean-type-in-javascript
+---
+
+## [12][[D] Built a platform for virtual conferences](https://www.reddit.com/r/javascript/comments/fxoq0s/d_built_a_platform_for_virtual_conferences/)
+- url: /r/MachineLearning/comments/fxhfbp/d_built_a_platform_for_virtual_conferences/
 ---
 

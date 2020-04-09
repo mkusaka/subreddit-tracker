@@ -1,87 +1,58 @@
 # golang
-## [1][GO Modules Behind The Corporate Firewall](https://www.reddit.com/r/golang/comments/fx648a/go_modules_behind_the_corporate_firewall/)
+## [1][Generics in Go - How They Work and How to Play With Them](https://www.reddit.com/r/golang/comments/fxdypf/generics_in_go_how_they_work_and_how_to_play_with/)
+- url: https://blog.tempus-ex.com/generics-in-go-how-they-work-and-how-to-play-with-them/
+---
+
+## [2][I ported a Ray Tracer from C++ to Go so I could learn the language. Here's the result if anyone's interested.](https://www.reddit.com/r/golang/comments/fxjdqp/i_ported_a_ray_tracer_from_c_to_go_so_i_could/)
+- url: https://github.com/razodactyl/go-raytracer
+---
+
+## [3][gopls 0.4.0 update release notes](https://www.reddit.com/r/golang/comments/fxhpc6/gopls_040_update_release_notes/)
+- url: https://github.com/golang/go/issues/33030#issuecomment-611219680
+---
+
+## [4][Go 1.14.2 and Go 1.13.10 are released](https://www.reddit.com/r/golang/comments/fxglgx/go_1142_and_go_11310_are_released/)
+- url: https://groups.google.com/d/msg/golang-announce/9UJN3gwMzhY/HVdQFNOVBgAJ
+---
+
+## [5][Here's an OSS ChatOps for Slack, Mattermost and MS Teams purely developed in Go](https://www.reddit.com/r/golang/comments/fxp44x/heres_an_oss_chatops_for_slack_mattermost_and_ms/)
+- url: https://www.reddit.com/r/golang/comments/fxp44x/heres_an_oss_chatops_for_slack_mattermost_and_ms/
+---
+ It helps you to monitor your Kubernetes cluster(s), debug critical deployments and give recommendations for standard practices by running checks on the Kubernetes resources.
+
+Want to try? www.botkube.io
+## [6][loov/goda: Go Dependency Analysis toolkit](https://www.reddit.com/r/golang/comments/fxruqt/loovgoda_go_dependency_analysis_toolkit/)
+- url: https://github.com/loov/goda
+---
+
+## [7][should I use an ORM for a CRUD/api gin server? what packages/libraries should i look into to build a gin server?](https://www.reddit.com/r/golang/comments/fxr171/should_i_use_an_orm_for_a_crudapi_gin_server_what/)
+- url: https://www.reddit.com/r/golang/comments/fxr171/should_i_use_an_orm_for_a_crudapi_gin_server_what/
+---
+I'm kinda new to Go. i;ve worked w Python/Java/Node web frameworks and with them ive been using the standard MVC structure to build RESTful services and I've been thinking of building a Go RESTful api. Ive got a few questions.
+
+1. What file structure would you recommend for a project that i would like to be maintainable/easy to add new features?
+2.  should I use an ORM (eg GORM)? Ill be needing to make both easy SQL queries and some semi cmplex squeries involving a few joins. 
+3. Should I just write all my queries raw like and just use go-migrate for db migration? 
+4. What other Go packages should I look into to build the standard Go/Gin web server (ie gin-jwt, CORS, etc)
+
+Thanks!
+## [8][WebCSV: A Proposal to Use CSV for Web Data Interchange](https://www.reddit.com/r/golang/comments/fxqfjt/webcsv_a_proposal_to_use_csv_for_web_data/)
+- url: https://eaglebush.github.io/webcsv/
+---
+
+## [9][GO Modules Behind The Corporate Firewall](https://www.reddit.com/r/golang/comments/fx648a/go_modules_behind_the_corporate_firewall/)
 - url: https://www.dudley.codes/posts/2020.04.02-golang-behind-corporate-firewall/
 ---
 
-## [2][VmTest, a library to simplify QEMU emulation in your integration tests](https://www.reddit.com/r/golang/comments/fwupcc/vmtest_a_library_to_simplify_qemu_emulation_in/)
-- url: https://www.reddit.com/r/golang/comments/fwupcc/vmtest_a_library_to_simplify_qemu_emulation_in/
+## [10][Garbage collecting only on heap?](https://www.reddit.com/r/golang/comments/fxou9b/garbage_collecting_only_on_heap/)
+- url: https://www.reddit.com/r/golang/comments/fxou9b/garbage_collecting_only_on_heap/
 ---
-Hello everyone,
+Hi everyone,  
 
-I would like to share my small contribution to this wonderful golang community.
 
-Before going to the project description I would like to give some background. I’ve been working on a project that involved a custom Linux kernel + initramfs image. To verify my project functionality I initially used QEMU and ran it from a command-line. While manual testing kinda worked it became clear that I need an automated way to run the tests. I did not find a good library that allows me to setup &amp; run QEMU from the tests hence I wrote my own library.
+I'm currently trying to have a go app without garbage collecting, i have two questions about it  
+Is the GC only collecting in the heap? meaning every variable in the stack not being concerned by GC?  
+Is it possible to do a 100% app with variables on the stack?  
 
-Please welcome VmTest project. It allows one to set up and run a QEMU instance programmatically. The library has a number of options (kernel params, disks, architecture, timeout..) that allow to configure QEMU depending on the tests needs. VmTest also handles console input and output which makes it possible to implement test cases that interact with the emulated application.
 
-Please find more information and examples at the project github page [https://github.com/anatol/vmtest](https://github.com/anatol/vmtest) Any feedback and contributions are welcome.
-## [3][#Goyave v2.9.0](https://www.reddit.com/r/golang/comments/fx52nx/goyave_v290/)
-- url: https://www.reddit.com/r/golang/comments/fx52nx/goyave_v290/
----
-[\#Goyave](https://twitter.com/hashtag/Goyave?src=hashtag_click) v2.9.0 (Golang Web Framework) released check out the changelog here [https://system-glitch.github.io/goyave/guide/changelog.html#v2-9-0%E2%80%A6](https://system-glitch.github.io/goyave/guide/changelog.html#v2-9-0%E2%80%A6)
-## [4][lithdew/recaptcha: Quickly verify reCAPTCHA v2/v3 submissions in Go.](https://www.reddit.com/r/golang/comments/fx0h8n/lithdewrecaptcha_quickly_verify_recaptcha_v2v3/)
-- url: https://github.com/lithdew/recaptcha
----
-
-## [5][GoLang Game Development : devlog 04 (pixel lib)](https://www.reddit.com/r/golang/comments/fwimmw/golang_game_development_devlog_04_pixel_lib/)
-- url: https://www.youtube.com/watch?v=XBQ6jMGGk_Y
----
-
-## [6][What is a three comma separated expression?](https://www.reddit.com/r/golang/comments/fwzlsx/what_is_a_three_comma_separated_expression/)
-- url: https://www.reddit.com/r/golang/comments/fwzlsx/what_is_a_three_comma_separated_expression/
----
-How does a three comma separated expression work?
-I'm a fairly new programmer and having done Java, Python and Javascript, C++ moderately I have never come across the three comma separated expression that you see inside the go while(for) loop.
-`z, t=z-(z*z-x)/(2*z), z`
-Could you please provide some documentation on this?
-```
-func Sqrt(x float64) float64 {
-	z := 1.0
-	var t float64
-
-	fmt.Printf("Sqrt approximation of %v:\n", x)
-	for {
-		z, t = z-(z*z-x)/(2*z), z
-		if math.Abs(t-z) &lt; 1e-6 {
-			break
-		}
-	}
-	return z
-}
-```
-## [7][UniDoc now supports JBIG2 encoding format](https://www.reddit.com/r/golang/comments/fx3vyf/unidoc_now_supports_jbig2_encoding_format/)
-- url: https://unidoc.io/news/jbig2-support-in-golang
----
-
-## [8][Persisting cookies after application exits?](https://www.reddit.com/r/golang/comments/fx14wu/persisting_cookies_after_application_exits/)
-- url: https://www.reddit.com/r/golang/comments/fx14wu/persisting_cookies_after_application_exits/
----
-I have a program that uses an `http.Client` with a standard cookie jar from the `net/http/cookiejar` package. The API I'm consuming gives a couple of cookies at login that, when consumed by a browser, allow the user to remain logged in even after closing and reopening the browser.
-
-Annoyingly, `http.Cookie` doesn't seem to have JSON struct tags, so my naive initial solution was to make my own struct with the same fields, copy each cookie and store it as JSON, then read the cookies back and set them on the client at launch to prevent having to send login requests every time it starts. But when I do this, I get missing fields in the stored JSON (domain is missing from all of them).
-
-I'm curious what solutions you have used to tackle this problem.
-## [9][goSSE: (Yet Another) light and humble go SSE server](https://www.reddit.com/r/golang/comments/fx3f63/gosse_yet_another_light_and_humble_go_sse_server/)
-- url: https://www.reddit.com/r/golang/comments/fx3f63/gosse_yet_another_light_and_humble_go_sse_server/
----
-Does containment mean boredom ? It depends.... Having needs for stream and persistent connexion between my legacy apps and a browser notification system (uni-directional), i wrote this:
-
- [https://github.com/xefiji/goSSE](https://github.com/xefiji/goSSE) 
-
-It was mostly as a playgroynd to learn more about the language.
-
-No tests yet :(
-
-Chears!
-## [10][go-interview: A collection of technical interview problems solved with Go](https://www.reddit.com/r/golang/comments/fwkpeo/gointerview_a_collection_of_technical_interview/)
-- url: https://www.reddit.com/r/golang/comments/fwkpeo/gointerview_a_collection_of_technical_interview/
----
-I have been collecting various technical interview problems and coding challenges then solving them with Go.
-
-From as simple as reversing a string to as more involving as writing the A Star algorithm. Moreover, implementing from scratch the data structures needed.
-
-Since I started, I have received plenty of great feedback and more fun problems/challenges to solve. I was asked to design an LRU Cache, so I will be doing that next.
-
-Send me some of your favorite ones! I'd like to grow the collection for anyone interested in reading and/or learning.
-
-https://github.com/shomali11/go-interview
+Thanks for your help, I am a bit lost on it and can't find the ultimate resource.

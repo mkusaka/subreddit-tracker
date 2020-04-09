@@ -84,69 +84,119 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Pokemon Application | React, Apollo &amp; GraphQL Tutorial For Beginners](https://www.reddit.com/r/reactjs/comments/fwqb1c/pokemon_application_react_apollo_graphql_tutorial/)
-- url: https://youtu.be/yKFoAF7J0mc
+## [3][Introducing storybook-addon-performance 🚀](https://www.reddit.com/r/reactjs/comments/fxmfzv/introducing_storybookaddonperformance/)
+- url: https://www.reddit.com/r/reactjs/comments/fxmfzv/introducing_storybookaddonperformance/
+---
+Over at Atlassian, we have been working on an experimental storybook addon to help better understand and debug performance problems with `React` components
+
+[storybook-addon-performance](https://github.com/atlassian-labs/storybook-addon-performance)
+
+Enjoy!
+## [4][React Summit: Attend the biggest ReactJS online conference for free](https://www.reddit.com/r/reactjs/comments/fx95e6/react_summit_attend_the_biggest_reactjs_online/)
+- url: https://sfree.life/reactjs-react-summit-conf-2020-stream-free/
 ---
 
-## [4][React Folder Structure in 5 Steps](https://www.reddit.com/r/reactjs/comments/fx3206/react_folder_structure_in_5_steps/)
+## [5][A simple game to kill time](https://www.reddit.com/r/reactjs/comments/fxrvha/a_simple_game_to_kill_time/)
+- url: https://sttronn.github.io/8-TILES/
+---
+
+## [6][Webpack 5 Module Federation for Fully Dynamic Apps](https://www.reddit.com/r/reactjs/comments/fxgg0j/webpack_5_module_federation_for_fully_dynamic_apps/)
+- url: https://www.reddit.com/r/reactjs/comments/fxgg0j/webpack_5_module_federation_for_fully_dynamic_apps/
+---
+Hey folks, I want to share it with you a video I made: [https://youtu.be/27QbUycVrHg](https://youtu.be/27QbUycVrHg) about Webpack 5 Federated Module for a fully dynamic environment.
+
+I hope you find this useful, I worked in multiple apps that couldn't scale due to the organization structure and this feature will enable a clean solution for them to scale better.
+
+I am working on some platform using Material UI and React that will give you a better starting point for some of these enterprise apps, stay tuned about that one.
+
+I am still learning how to make videos, so I would appreciate a lot your constructive criticisms.
+
+Cheers,
+## [7][SVGR: A VSCode extension for converting SVG's to inline JSX or React Components](https://www.reddit.com/r/reactjs/comments/fxrpcl/svgr_a_vscode_extension_for_converting_svgs_to/)
+- url: https://marketplace.visualstudio.com/items?itemName=NathHorrigan.code-svgr
+---
+
+## [8][TypeScript Tutorial For Beginners](https://www.reddit.com/r/reactjs/comments/fxo9tx/typescript_tutorial_for_beginners/)
+- url: https://afteracademy.com/blog/typescript-tutorial-for-beginners
+---
+
+## [9][Ways to add external JS file in react](https://www.reddit.com/r/reactjs/comments/fxkabu/ways_to_add_external_js_file_in_react/)
+- url: https://link.medium.com/NIxziXiyw5
+---
+
+## [10][React Folder Structure in 5 Steps](https://www.reddit.com/r/reactjs/comments/fx3206/react_folder_structure_in_5_steps/)
 - url: https://www.robinwieruch.de/react-folder-structure
 ---
 
-## [5][React App: Creating a Responsive Navigation Bar from Scratch](https://www.reddit.com/r/reactjs/comments/fx5jol/react_app_creating_a_responsive_navigation_bar/)
-- url: https://youtu.be/SkyoBJwwvh4
+## [11][Edit button is not wroking while trying to edit a todo item](https://www.reddit.com/r/reactjs/comments/fxq3c1/edit_button_is_not_wroking_while_trying_to_edit_a/)
+- url: https://www.reddit.com/r/reactjs/comments/fxq3c1/edit_button_is_not_wroking_while_trying_to_edit_a/
 ---
+Hi champs
 
-## [6][My first React app. A website that connects you to a random developer (no sign up needed)](https://www.reddit.com/r/reactjs/comments/fx539f/my_first_react_app_a_website_that_connects_you_to/)
-- url: http://connectdev.justsharedthis.info/5pyyU
----
+i  have started reactjs  for a while and started learning hooks. i am trying to make a simple todo app in react without using useEffect and useReducers and use Context. below i am providing only edit button section ...i am stuck here for a day....
 
-## [7][Static Sites with Next.js 9.3 and Prisma](https://www.reddit.com/r/reactjs/comments/fx6gb1/static_sites_with_nextjs_93_and_prisma/)
-- url: https://leerob.io/blog/next-prisma
----
+my problem is edit button is not working. when i press the button it's not editing anything
 
-## [8][A Static Future: The magic of compile-time workflows](https://www.reddit.com/r/reactjs/comments/fx61za/a_static_future_the_magic_of_compiletime_workflows/)
-- url: https://joshwcomeau.com/gatsby/a-static-future/
----
+you can find the whole code in [codesandbox](https://codesandbox.io/s/condescending-worker-s0igh)
 
-## [9][Side Project: A Safe Haven for rants](https://www.reddit.com/r/reactjs/comments/fwn4zf/side_project_a_safe_haven_for_rants/)
-- url: https://www.reddit.com/r/reactjs/comments/fwn4zf/side_project_a_safe_haven_for_rants/
----
-This past Friday I received word that my internship had been cancelled because of COVID-19, and almost immediately after my PC broke. Feeling the need to vent, I spent the weekend building a website for posting anonymous rants. If anyone else needs to blow off some steam, you can join me [here](https://yitv.app).
+TodoList,js:
+
+ 
+
+import React from "react";  
+const TodoItem = ({ id, title, completed, editItem }) =&gt; {  
+ return (  
+ &lt;div style={{ width: 400, height: 25 }}&gt;  
+&lt;input type="checkbox" checked={completed} /&gt;  
+ {title}  
+&lt;button  
+ style={{ float: "right" }}  
+ value={id}  
+ onClick={() =&gt; editItem({ title })}  
+ \&gt;  
+Edit  
+&lt;/button&gt;  
+&lt;/div&gt;  
+ );  
+};  
+const TodoList = ({ items = \[\], editItem }) =&gt; {  
+ return items.map(p =&gt; &lt;TodoItem {...p} key={p.id} editItem={editItem} /&gt;);  
+};  
+export default TodoList;  
+
 
 &amp;#x200B;
 
-Frontend: React
-
-Backend: Node.js, Express, [Socket.IO](https://Socket.IO), GCP Compute Engine, and MongoDB Atlas
+and App.js is:
 
 &amp;#x200B;
 
-Would love some feedback :)
-## [10][Looking for help - Not For Profit project to help those forced to self-isolate due to coronavirus](https://www.reddit.com/r/reactjs/comments/fx3wpc/looking_for_help_not_for_profit_project_to_help/)
-- url: https://www.reddit.com/r/reactjs/comments/fx3wpc/looking_for_help_not_for_profit_project_to_help/
----
-**Details on the project:**
+ 
 
-A few weeks ago I sourced a group of volunteers from Reddit to help build a website to help those in self-isolation due to coronavirus. We've now built the website skeleton and core functionality, but need some help on the front end, which is built in React! You can see the repo here: [https://github.com/Fiip/p2p-volunteering-fe](https://github.com/Fiip/p2p-volunteering-fe).
+import React, { useState } from "react";  
+import TodoList from "./TodoList";  
+import "./styles.css";  
+const defaultItems = \[  
+ { id: 1, title: "Write React Todo Project", completed: true },  
+ { id: 2, title: "Upload it to github", completed: false }  
+\];  
+export default function App() {  
+ const \[items, setItems\] = useState(defaultItems);  
+ const editItem = ({ id, title }) =&gt; {  
+ setItems(oldItems =&gt;  
+ oldItems.map(p =&gt; (p.id === id ? { ...p, title } : p))  
+ );  
+ };  
+ return (  
+ &lt;div style={{ width: 400 }}&gt;  
+&lt;hr /&gt;  
+&lt;TodoList items={items} editItem={editItem} /&gt;  
+&lt;hr /&gt;  
+&lt;/div&gt;  
+ );  
+}  
 
-Can't post images here, but if you [join our Slack group](https://join.slack.com/t/coronavolunte-bof8889/shared_invite/zt-ct9mb7ev-iWZoDHv3JL1eO~Jdlh1j3Q), you can see the current web designs. This is a not for profit project, and I will not be paying for help, but will personally pay for hosting, infrastructure costs etc.
-
-**How to help:**
-
-Comment on this post, and/or join our Slack group: [https://join.slack.com/t/coronavolunte-bof8889/shared\_invite/zt-ct9mb7ev-iWZoDHv3JL1eO\~Jdlh1j3Q](https://join.slack.com/t/coronavolunte-bof8889/shared_invite/zt-ct9mb7ev-iWZoDHv3JL1eO~Jdlh1j3Q).
-
-**Details on the product:**
-
-Hundreds of millions of individuals around the world are now being forced to self-isolate. People in isolation struggle to get vital resources such as groceries, hygiene items, and basic medical supplies. Delivery services are becoming steadily more overloaded and booked out. For example, in central London it's now not possible to get any food delivered to your house within the next 3 weeks. For someone showing symptoms, or a vulnerable/elderly individual, waiting 3 weeks to get supplies is not an option, and neither is leaving your house.
-
-However... a lot of people have shown their willingness to help these people! There are thousands of of volunteers ready to help, but no system to match them with those that need help.
-
-We have built a simple website that allows those in need of a volunteer to enter their address and get matched with the closest volunteers in their area.
-## [11][Apollo Client and Local State Management](https://www.reddit.com/r/reactjs/comments/fx25ge/apollo_client_and_local_state_management/)
-- url: https://blog.soshace.com/apollo-client-and-local-state-management/
----
-
-## [12][React Admin Dashboard Template integrated with Node.js backend and PostgreSQL](https://www.reddit.com/r/reactjs/comments/fx2o91/react_admin_dashboard_template_integrated_with/)
-- url: https://www.producthunt.com/posts/sing-app-react-node-js
+## [12][Job Listing App - ReactJS and TailwindCSS - Live Coding](https://www.reddit.com/r/reactjs/comments/fxp7i4/job_listing_app_reactjs_and_tailwindcss_live/)
+- url: https://www.youtube.com/watch?v=JZQ8m08cbF0&amp;feature=share
 ---
 

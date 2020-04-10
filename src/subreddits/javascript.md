@@ -87,43 +87,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][How To Build Simple Node.js Rest APIs with Express, Sequelize &amp; MySQL](https://www.reddit.com/r/javascript/comments/fxpvpo/how_to_build_simple_nodejs_rest_apis_with_express/)
-- url: https://christosploutarchou.com/how-to-build-simple-node-js-rest-api/
+## [3][Vime - media player library that gives you complete control. The final bundle is Vanilla JS (compiled with Svelte).](https://www.reddit.com/r/javascript/comments/fy8spw/vime_media_player_library_that_gives_you_complete/)
+- url: /r/sveltejs/comments/fy81ey/vime_media_player_library_built_with_svelte/
 ---
 
-## [4][Website that reskins Reddit into Microsoft Teams (Good for work / school)](https://www.reddit.com/r/javascript/comments/fxczmp/website_that_reskins_reddit_into_microsoft_teams/)
-- url: https://abberispe.github.io/teamit/
+## [4][REFLEX adds reactivity to build-in HTML elements](https://www.reddit.com/r/javascript/comments/fyeij6/reflex_adds_reactivity_to_buildin_html_elements/)
+- url: https://github.com/raneio/reflex
 ---
 
-## [5][Solving Recursive Parsing Problems With State Machines In My 16-Bit VMs Assembly Language Parser](https://www.reddit.com/r/javascript/comments/fxs3o2/solving_recursive_parsing_problems_with_state/)
-- url: https://youtube.com/watch?v=ai63l4OUxSs
+## [5][Created a Coronavirus Dashboard](https://www.reddit.com/r/javascript/comments/fyfeat/created_a_coronavirus_dashboard/)
+- url: https://n8python.github.io/covid19dashboard/
 ---
 
-## [6][Visual Studio Code March 2020](https://www.reddit.com/r/javascript/comments/fxdies/visual_studio_code_march_2020/)
-- url: https://code.visualstudio.com/updates/v1_44
----
-
-## [7][10 security tips for frontend developers](https://www.reddit.com/r/javascript/comments/fxrlac/10_security_tips_for_frontend_developers/)
+## [6][10 security tips for frontend developers](https://www.reddit.com/r/javascript/comments/fxrlac/10_security_tips_for_frontend_developers/)
 - url: https://medium.com/@koss_lebedev/10-security-tips-for-frontend-developers-19e3dd9fb069
 ---
 
-## [8][Linkdash - Generate a handy dashboard of links in seconds!](https://www.reddit.com/r/javascript/comments/fxphy5/linkdash_generate_a_handy_dashboard_of_links_in/)
-- url: https://github.com/igimanaloto/linkdash
+## [7][How To Build Simple Node.js Rest APIs with Express, Sequelize &amp; MySQL](https://www.reddit.com/r/javascript/comments/fxpvpo/how_to_build_simple_nodejs_rest_apis_with_express/)
+- url: https://christosploutarchou.com/how-to-build-simple-node-js-rest-api/
 ---
 
-## [9][SVGR: A VSCode extension for converting SVG's to inline JSX or React (Native) Components](https://www.reddit.com/r/javascript/comments/fxs583/svgr_a_vscode_extension_for_converting_svgs_to/)
-- url: https://marketplace.visualstudio.com/items?itemName=NathHorrigan.code-svgr
+## [8][Getting into Performance Budgets - Explaining what you need to know to get started](https://www.reddit.com/r/javascript/comments/fyefdi/getting_into_performance_budgets_explaining_what/)
+- url: https://felixgerschau.com/getting-into-performance-budgets
 ---
 
-## [10][React Summit: Attend the biggest ReactJS online conference for free](https://www.reddit.com/r/javascript/comments/fxrzs0/react_summit_attend_the_biggest_reactjs_online/)
-- url: https://sfree.life/reactjs-react-summit-conf-2020-stream-free/
+## [9][How to Build a Covid-19 Tracker Using Javascript](https://www.reddit.com/r/javascript/comments/fyfrpx/how_to_build_a_covid19_tracker_using_javascript/)
+- url: https://medium.com/@kennethscoggins/how-to-build-a-covid-19-tracker-using-javascript-379236e34b4?sk=5623622de637aadbdbd54399299fb199
 ---
 
-## [11][The Boolean Type in JavaScript](https://www.reddit.com/r/javascript/comments/fxp88q/the_boolean_type_in_javascript/)
-- url: https://www.hackdoor.io/articles/lOQ98vpB/the-boolean-type-in-javascript
+## [10][Dobble / Spot it! online Emoji card generator](https://www.reddit.com/r/javascript/comments/fyf88k/dobble_spot_it_online_emoji_card_generator/)
+- url: https://ondras.github.io/dobble/
 ---
 
-## [12][[D] Built a platform for virtual conferences](https://www.reddit.com/r/javascript/comments/fxoq0s/d_built_a_platform_for_virtual_conferences/)
-- url: /r/MachineLearning/comments/fxhfbp/d_built_a_platform_for_virtual_conferences/
+## [11][Under-the-hood of web bundlers (e.g. Webpack), blog post](https://www.reddit.com/r/javascript/comments/fy2vh7/underthehood_of_web_bundlers_eg_webpack_blog_post/)
+- url: https://medium.com/@tabu_craig/under-the-hood-of-web-bundlers-e-g-webpack-926e868f7f5e
+---
+
+## [12][React library that masks unimportant parts of your page - useful for making tutorials](https://www.reddit.com/r/javascript/comments/fxyc8c/react_library_that_masks_unimportant_parts_of/)
+- url: https://github.com/andrew4699/react-see-through
 ---
 

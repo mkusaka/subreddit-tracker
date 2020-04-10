@@ -1,58 +1,99 @@
 # golang
-## [1][Generics in Go - How They Work and How to Play With Them](https://www.reddit.com/r/golang/comments/fxdypf/generics_in_go_how_they_work_and_how_to_play_with/)
-- url: https://blog.tempus-ex.com/generics-in-go-how-they-work-and-how-to-play-with-them/
+## [1][CLI for ordering Dominos pizza](https://www.reddit.com/r/golang/comments/fy2qya/cli_for_ordering_dominos_pizza/)
+- url: https://www.reddit.com/r/golang/comments/fy2qya/cli_for_ordering_dominos_pizza/
+---
+[https://github.com/harrybrwn/apizza](https://github.com/harrybrwn/apizza)
+
+My hobby project is finally at a place where I'm comfortable sharing it with the world. Tell me what you think.
+## [2][GoLand 2020.1 is out now! Check out the Go Modules support and better overall improvements for your workflows!](https://www.reddit.com/r/golang/comments/fxxq1m/goland_20201_is_out_now_check_out_the_go_modules/)
+- url: https://twitter.com/GoLandIDE/status/1248313039146844161
 ---
 
-## [2][I ported a Ray Tracer from C++ to Go so I could learn the language. Here's the result if anyone's interested.](https://www.reddit.com/r/golang/comments/fxjdqp/i_ported_a_ray_tracer_from_c_to_go_so_i_could/)
-- url: https://github.com/razodactyl/go-raytracer
+## [3][Protect CRUD API against third-party app creation](https://www.reddit.com/r/golang/comments/fyf4sr/protect_crud_api_against_thirdparty_app_creation/)
+- url: https://www.reddit.com/r/golang/comments/fyf4sr/protect_crud_api_against_thirdparty_app_creation/
+---
+I'm building a GO CRUD API that I would like to protect as much as possible.  I'm already issuing JWTs and providing access to certain handlers based on that user's level of access.  The problem is that the API is exposed and anyone can sniff out the calls I'm making, reverse engineer how JWTs are created and create their own front end, or automated tool to perform unauthenticated/authenticated calls to my API.  I'd like to avoid third-party apps from using the API, even if they properly authenticate a user and gain a proper JWT.
+
+My first thought is an API key for the web front ends and mobile apps (when that part comes). But even if we're sending the key via HTTPS with the other payload, that can still be sniffed with a MITM attack, so it's pointless. How can I appropriately verify that API calls are coming from a legitimate source before processing the request?
+## [4][I made simple and easy to use custom oauth server with example included for mysql driver. Any suggestions?](https://www.reddit.com/r/golang/comments/fyficm/i_made_simple_and_easy_to_use_custom_oauth_server/)
+- url: https://github.com/gobeam/golang-oauth
 ---
 
-## [3][gopls 0.4.0 update release notes](https://www.reddit.com/r/golang/comments/fxhpc6/gopls_040_update_release_notes/)
-- url: https://github.com/golang/go/issues/33030#issuecomment-611219680
+## [5][What are some favorite go packages for the following](https://www.reddit.com/r/golang/comments/fyfcxk/what_are_some_favorite_go_packages_for_the/)
+- url: https://www.reddit.com/r/golang/comments/fyfcxk/what_are_some_favorite_go_packages_for_the/
+---
+CLI
+
+Configuration
+
+Serialization
+
+Text processing
+
+Regex
+
+Api
+## [6][ldhcpd: a light, minimal dhcpd with a GRPC control plane](https://www.reddit.com/r/golang/comments/fxsyuf/ldhcpd_a_light_minimal_dhcpd_with_a_grpc_control/)
+- url: https://github.com/erikh/ldhcpd
 ---
 
-## [4][Go 1.14.2 and Go 1.13.10 are released](https://www.reddit.com/r/golang/comments/fxglgx/go_1142_and_go_11310_are_released/)
-- url: https://groups.google.com/d/msg/golang-announce/9UJN3gwMzhY/HVdQFNOVBgAJ
+## [7][Slice operation time complexity](https://www.reddit.com/r/golang/comments/fyckxf/slice_operation_time_complexity/)
+- url: https://www.reddit.com/r/golang/comments/fyckxf/slice_operation_time_complexity/
+---
+I have a question about the time complexity of slice's window operation. Is it always O(1)?
+
+&amp;#x200B;
+
+For example,
+
+If I had 2 lines of code that do this:
+
+`s := make([]int, N)`
+
+`s = s[N/2:]`
+
+Is the 2nd line's time complexity O(1)? or O(N) because I moved up the start of the window by half of N?
+## [8][Help me choose a framework for Golang web app](https://www.reddit.com/r/golang/comments/fybza8/help_me_choose_a_framework_for_golang_web_app/)
+- url: https://www.reddit.com/r/golang/comments/fybza8/help_me_choose_a_framework_for_golang_web_app/
+---
+I'm a backend (DB) guy, I've last touched frontend (HTML) when 4.01 was a thing.  
+
+
+I  love Go, what shall I try for a simple events (a fix has been deployed  happened) view and event inject (sy approves a fix), and a status page  (which fix is in what state) app?  
+
+
+Macaron, beego, gobuffalo?  
+
+
+I want sth less opinionated, more opt-in, and I'm lost with javascript, frontend frameworks. But want sth good-looking.  
+
+
+Please help me!
+## [9][Extend go library](https://www.reddit.com/r/golang/comments/fybove/extend_go_library/)
+- url: https://github.com/go-board/x-go
 ---
 
-## [5][Here's an OSS ChatOps for Slack, Mattermost and MS Teams purely developed in Go](https://www.reddit.com/r/golang/comments/fxp44x/heres_an_oss_chatops_for_slack_mattermost_and_ms/)
-- url: https://www.reddit.com/r/golang/comments/fxp44x/heres_an_oss_chatops_for_slack_mattermost_and_ms/
+## [10][GRPC Unidirectional streaming noob question](https://www.reddit.com/r/golang/comments/fyaczb/grpc_unidirectional_streaming_noob_question/)
+- url: https://www.reddit.com/r/golang/comments/fyaczb/grpc_unidirectional_streaming_noob_question/
 ---
- It helps you to monitor your Kubernetes cluster(s), debug critical deployments and give recommendations for standard practices by running checks on the Kubernetes resources.
+Hello all,
 
-Want to try? www.botkube.io
-## [6][loov/goda: Go Dependency Analysis toolkit](https://www.reddit.com/r/golang/comments/fxruqt/loovgoda_go_dependency_analysis_toolkit/)
-- url: https://github.com/loov/goda
----
+I have this piece of code written to receive messages from grpc unidirectional stream
+```
+func getmsg(cli terminalchat.Terminalchat_JoinClient, msgChan chan *terminalchat.Message) {
+	for {
+		msg := terminalchat.Message{}
+		err := cli.RecvMsg(&amp;msg)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println("Got msg: ")
+		msgChan &lt;- &amp;msg
+	}
+}
+```
+the description of `cli.RecvMsg` (generated with protoc btw) says it's supposed to block until it receives a message into m, returns io.EOF when stream completes successfully.
 
-## [7][should I use an ORM for a CRUD/api gin server? what packages/libraries should i look into to build a gin server?](https://www.reddit.com/r/golang/comments/fxr171/should_i_use_an_orm_for_a_crudapi_gin_server_what/)
-- url: https://www.reddit.com/r/golang/comments/fxr171/should_i_use_an_orm_for_a_crudapi_gin_server_what/
----
-I'm kinda new to Go. i;ve worked w Python/Java/Node web frameworks and with them ive been using the standard MVC structure to build RESTful services and I've been thinking of building a Go RESTful api. Ive got a few questions.
+Even though nothing's been sent from the server, it keeps receiving EOF.
 
-1. What file structure would you recommend for a project that i would like to be maintainable/easy to add new features?
-2.  should I use an ORM (eg GORM)? Ill be needing to make both easy SQL queries and some semi cmplex squeries involving a few joins. 
-3. Should I just write all my queries raw like and just use go-migrate for db migration? 
-4. What other Go packages should I look into to build the standard Go/Gin web server (ie gin-jwt, CORS, etc)
-
-Thanks!
-## [8][WebCSV: A Proposal to Use CSV for Web Data Interchange](https://www.reddit.com/r/golang/comments/fxqfjt/webcsv_a_proposal_to_use_csv_for_web_data/)
-- url: https://eaglebush.github.io/webcsv/
----
-
-## [9][GO Modules Behind The Corporate Firewall](https://www.reddit.com/r/golang/comments/fx648a/go_modules_behind_the_corporate_firewall/)
-- url: https://www.dudley.codes/posts/2020.04.02-golang-behind-corporate-firewall/
----
-
-## [10][Garbage collecting only on heap?](https://www.reddit.com/r/golang/comments/fxou9b/garbage_collecting_only_on_heap/)
-- url: https://www.reddit.com/r/golang/comments/fxou9b/garbage_collecting_only_on_heap/
----
-Hi everyone,  
-
-
-I'm currently trying to have a go app without garbage collecting, i have two questions about it  
-Is the GC only collecting in the heap? meaning every variable in the stack not being concerned by GC?  
-Is it possible to do a 100% app with variables on the stack?  
-
-
-Thanks for your help, I am a bit lost on it and can't find the ultimate resource.
+How can I stop receiving EOF from the stream?

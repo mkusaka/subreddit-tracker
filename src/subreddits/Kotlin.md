@@ -1,84 +1,51 @@
 # Kotlin
-## [1][My fav. IntelliJ Live Template? .debug ==&gt; .also(::println)](https://www.reddit.com/r/Kotlin/comments/fxgfpw/my_fav_intellij_live_template_debug_alsoprintln/)
-- url: https://twitter.com/cortinico/status/1247187387173781506
+## [1][Kotlin: Prefers clarity over conciseness](https://www.reddit.com/r/Kotlin/comments/fyb2lq/kotlin_prefers_clarity_over_conciseness/)
+- url: https://medium.com/@elye.project/kotlin-prefers-clarity-over-concise-a5a2088536b6
 ---
 
-## [2][Kotlin Illustrated Guide - Chapter 2 - Functions](https://www.reddit.com/r/Kotlin/comments/fxjx4x/kotlin_illustrated_guide_chapter_2_functions/)
-- url: https://typealias.com/start/kotlin-functions/
+## [2][Ktor cookie session authentication](https://www.reddit.com/r/Kotlin/comments/fycxw7/ktor_cookie_session_authentication/)
+- url: https://www.reddit.com/r/Kotlin/comments/fycxw7/ktor_cookie_session_authentication/
+---
+Hi guys, can someone please help me with ktor cookie session authentication. Send me a tutorial or a github example please
+## [3][Kotlin: Prefers clarity over concise](https://www.reddit.com/r/Kotlin/comments/fyaz1e/kotlin_prefers_clarity_over_concise/)
+- url: https://medium.com/@elye.project/kotlin-prefers-clarity-over-concise-a5a2088536b6?source=friends_link&amp;sk=0934d1a42ea8dd3ca1316c57439168e0
 ---
 
-## [3][Does optional boolean default is null?](https://www.reddit.com/r/Kotlin/comments/fxofej/does_optional_boolean_default_is_null/)
-- url: https://www.reddit.com/r/Kotlin/comments/fxofej/does_optional_boolean_default_is_null/
----
-Say for example I have this code in textview using MVVM
-
-`val sample = Transformations.map(someRandomLiveData){it.isOkay}`
-
-`&lt;Textview android:visibility="@{viewModel.sample ? View.VISIBLE : View.GONE }" /&gt;`
-
-The `sample` variable is  a `liveData` that will have a true or false value but will only have one once a request from network is  complete. Up until then, it is null. On the onCreateView of fragment is the condition will default on false first since it is null?
-## [4][Litmus-Testing Kotlin's Many Memory Models – Jake Wharton](https://www.reddit.com/r/Kotlin/comments/fx8105/litmustesting_kotlins_many_memory_models_jake/)
-- url: https://jakewharton.com/litmus-testing-kotlins-many-memory-models/
+## [4][Recognizing Text in Image using Firebase Ml kit in a Kotlin app - OCR](https://www.reddit.com/r/Kotlin/comments/fyfbak/recognizing_text_in_image_using_firebase_ml_kit/)
+- url: https://codesource.io/recognizing-text-in-image-using-firebase-ml-kit-in-a-kotlin-app/
 ---
 
-## [5][Generating pdf output. What is the best practice?](https://www.reddit.com/r/Kotlin/comments/fxf74v/generating_pdf_output_what_is_the_best_practice/)
-- url: https://www.reddit.com/r/Kotlin/comments/fxf74v/generating_pdf_output_what_is_the_best_practice/
+## [5][Writing a Kotlin Compiler Plugin with Arrow Meta](https://www.reddit.com/r/Kotlin/comments/fy6i3d/writing_a_kotlin_compiler_plugin_with_arrow_meta/)
+- url: https://link.medium.com/gNQRr3vyx5
 ---
-Hi, i have a problem and dont find anything nice.
 
-I have some data on my android app i want to print it as a pdf and store it. 
-Its not much, more like question/ answer stuff. 
-
-I found pdfBox and iText, but i cant use iText because its a commercial app for a client of mine. 
-PdfBox seems to be super clunky because of the streams-like usage. 
-
-I tried the PDFDocument from android to convert a view, but this seems to be not perfect also. I had problems defining pages, because it seems to be kinda clunky to define when page ends. Or to get a good page format. 
-
-What would be the goto for you guys and what would you consider best practice for this type of stuff?
-## [6][The Kotlin discord](https://www.reddit.com/r/Kotlin/comments/fwu8vh/the_kotlin_discord/)
-- url: https://www.reddit.com/r/Kotlin/comments/fwu8vh/the_kotlin_discord/
+## [6][Backend Kotlin Projects](https://www.reddit.com/r/Kotlin/comments/fxysy8/backend_kotlin_projects/)
+- url: https://www.reddit.com/r/Kotlin/comments/fxysy8/backend_kotlin_projects/
 ---
-Heya, just wondering if anyone has an invite for the Kotlin discord server? It'd be more convenient for me if i was able to use it
-## [7][[Question] Overload resolution ambiguity](https://www.reddit.com/r/Kotlin/comments/fwohn2/question_overload_resolution_ambiguity/)
-- url: https://www.reddit.com/r/Kotlin/comments/fwohn2/question_overload_resolution_ambiguity/
+I started developing android app with Kotlin. Before that, I had some java, oop knowledge. I want to develop a backend with Kotlin. Can you give a sample project? I have never developed a backend project before. Which way should I take? As a result, how can I become a "Backend" developer?
+## [7][Im a newbie in when conditions](https://www.reddit.com/r/Kotlin/comments/fybr66/im_a_newbie_in_when_conditions/)
+- url: https://www.reddit.com/r/Kotlin/comments/fybr66/im_a_newbie_in_when_conditions/
 ---
-https://preview.redd.it/bj8e691rifr41.png?width=794&amp;format=png&amp;auto=webp&amp;s=0062da1a51bbcf2ad26efb28d66a1c4bfc4f21cf
+Hi guys just to know how can I call functions like this
 
-From [this answer](https://stackoverflow.com/questions/47884934/im-getting-overload-resolution-ambiguity-error-on-kotlin-safe-call) I think this might be due to smart casting. But if that is the case, why is it only happening inside the if block (line: 42) and not outside (line: 39)?
-
-  
-**Code:**
-
-    fun main(){
-        var greeting: String? = "Hello"
-        greeting = null
-    
-        println(greeting)
-    
-        if(greeting!=null){
-            println(greeting)
-        }
-    }
-## [8][Python style sort with key?](https://www.reddit.com/r/Kotlin/comments/fwtyva/python_style_sort_with_key/)
-- url: https://www.reddit.com/r/Kotlin/comments/fwtyva/python_style_sort_with_key/
----
-In python you can take a list and sort it by applying a "key" function that determines the sorted order. Is there something similar in Kotlin other than something like this?
-```
-list.map { elem -&gt; 
-    MyDataClass(elem, key(elem)) 
+when(userInput){
+       "buy" -&gt; buy() \n
+       "fill" -&gt; full() \n
+       "take" -&gt; take()
 }
-    .sortedBy{it.key}
-    .map {it.elem}
-```
-Thanks!
-## [9][What UI toolkit to use?](https://www.reddit.com/r/Kotlin/comments/fwmusp/what_ui_toolkit_to_use/)
-- url: https://www.reddit.com/r/Kotlin/comments/fwmusp/what_ui_toolkit_to_use/
----
-First time coding in Kotlin, and I'm creating an app for both iOS and Android. I've decided to go with Jetpack for the Android UI, but what do I use for iOS? Is Flutter an option? Because the common consensus is that I'll be coding in Dart if I use it. 
 
-Do I go with the default SwiftUI, or is there an alternative?  
-Also, I understand if this question sounds completely asinine - I've never coded mobile apps before, so all help is appreciated, thanks!
-## [10][Migrating Duolingo’s Android app to 100% Kotlin](https://www.reddit.com/r/Kotlin/comments/fw3wkt/migrating_duolingos_android_app_to_100_kotlin/)
-- url: https://blog.duolingo.com/migrating-duolingos-android-app-to-100-kotlin/
+userInput should be one of those word but the functions shows me like error in the IDE
+## [8][EOL for kotlin version](https://www.reddit.com/r/Kotlin/comments/fy75oc/eol_for_kotlin_version/)
+- url: https://www.reddit.com/r/Kotlin/comments/fy75oc/eol_for_kotlin_version/
+---
+Hi, 
+
+Is there a documentation of end of support or end of life dates for versions of kotlin?
+## [9][Kotlin Extensions | functions, properties and companion objects](https://www.reddit.com/r/Kotlin/comments/fxw8eo/kotlin_extensions_functions_properties_and/)
+- url: https://youtu.be/oMm0Ewgzfn8
+---
+
+## [10][Newcomer Tutorial: Functions in Kotlin](https://www.reddit.com/r/Kotlin/comments/fy43qg/newcomer_tutorial_functions_in_kotlin/)
+- url: https://marcuseisele.com/pages/learningKotlin/kotlin-functions
 ---
 

@@ -39,7 +39,100 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Does this look like a good strategy for Rails model relationships?](https://www.reddit.com/r/rails/comments/fxqy28/does_this_look_like_a_good_strategy_for_rails/)
+## [3][I've launched a new newsletter with all my Ruby posts](https://www.reddit.com/r/rails/comments/fyd68r/ive_launched_a_new_newsletter_with_all_my_ruby/)
+- url: https://www.reddit.com/r/rails/comments/fyd68r/ive_launched_a_new_newsletter_with_all_my_ruby/
+---
+I've launched a new newsletter That Weekly Tech with 3 of my Ruby on Rails posts &amp; more to come ––&gt;
+
+[https://www.thatweeklytech.com](https://www.thatweeklytech.com/)
+
+\- Active storage file upload behind the scenes
+
+\- Geared pagination behind the scenes
+
+\- JSON in Rails behind the scenes
+
+\- More content to come...
+
+I didn't want Medium to charge/put my content behind a paywall. So now it's, of course, all free.
+## [4][From form.radio_button to form.hidden_field](https://www.reddit.com/r/rails/comments/fyd43w/from_formradio_button_to_formhidden_field/)
+- url: https://www.reddit.com/r/rails/comments/fyd43w/from_formradio_button_to_formhidden_field/
+---
+have this form.radio\_button
+
+    &lt;%= form.radio_button :id, language.id, selected: selected %&gt;
+    &lt;%= language.name %&gt;
+
+and the result is
+
+    &lt;input id="language_id_7", value="7", name="language[id]", typer="radio"&gt;
+    Spanish
+
+**&gt;&gt;&gt; I want to turn it in a form.hidden\_field**
+
+&amp;#x200B;
+
+I edited it in this way
+
+    &lt;%= form.hidden_field :id, language.id %&gt;
+    &lt;%= language.name %&gt;
+
+But I have this error: **Undefined method "merge" for 13:Fixium**
+
+&amp;#x200B;
+
+I also tried with
+
+    &lt;%= form.hidden_field :id, :value =&gt; language.id %&gt;
+    &lt;%= language.name %&gt;
+
+But then the result is (check out the id)
+
+    &lt;input id="language_id", value="7", name="language[id]", typer="hidden"&gt;
+    Spanish
+
+**and it doesn't work. How to solve?**
+## [5][Migration depending on recently created table](https://www.reddit.com/r/rails/comments/fyctoh/migration_depending_on_recently_created_table/)
+- url: https://www.reddit.com/r/rails/comments/fyctoh/migration_depending_on_recently_created_table/
+---
+I have two migrations, a "create users" one:
+
+    class CreateUsers &lt; ActiveRecord::Migration[6.0]
+      def change
+        create_table :users do |t|
+          t.string :email, null: false
+          t.string :name, null: false
+          t.integer :balance, default: 0
+    
+          t.timestamps
+        end
+      end
+    end
+    
+
+And a "add balance constraint" one:
+
+    class AddBalanceConstraint &lt; ActiveRecord::Migration[6.0]
+      def up
+        execute 'ALTER TABLE users ADD CONSTRAINT non_negative_balance CHECK(balance &gt;= 0);'
+      end
+    
+      def down
+        execute 'ALTER TABLE users DROP CONSTRAINT non_negative_balance;'
+      end
+    end
+    
+
+ This does not work if I run all the migrations from the start, but if I run everything **except** the constraint one, and **then** run it separately, it does work. As if it requires that the table is actually added to postgres. And I know I can validate this in the User model class, but I want it to be safer and have it one the lowest level possible. Any ideas?
+## [6][Quick styling questions from a newbie.](https://www.reddit.com/r/rails/comments/fy8ap8/quick_styling_questions_from_a_newbie/)
+- url: https://www.reddit.com/r/rails/comments/fy8ap8/quick_styling_questions_from_a_newbie/
+---
+Seen a few different styling gems from a few different sources of tutorial vids. Wondering, what are the gold standards for styling and how often do you use more than one styling gem at once? 
+
+&amp;#x200B;
+
+So far, I'm liking semantic and TailWind, but I'm wondering if I'm missing out on something else.
+## [7][Does this look like a good strategy for Rails model relationships?](https://www.reddit.com/r/rails/comments/fxqy28/does_this_look_like_a_good_strategy_for_rails/)
 - url: https://www.reddit.com/r/rails/comments/fxqy28/does_this_look_like_a_good_strategy_for_rails/
 ---
 Here's the ERD: 
@@ -51,19 +144,79 @@ Here's the ERD:
 &amp;#x200B;
 
 When a service goes down, an Outage is created. Users (employees) can write notes about the outage. When the service goes back up, the Outage gets an end\_time. A service can have many outages through time, not at once. A single Outage has one Service associated with it. Users can have many Notes per Outage. Is this ERD fine for my purposes or does it violate some basics of db relational rules.
-## [4][Can I run a spec file with a different set of inputs in RSpec](https://www.reddit.com/r/rails/comments/fxru5a/can_i_run_a_spec_file_with_a_different_set_of/)
-- url: https://www.reddit.com/r/rails/comments/fxru5a/can_i_run_a_spec_file_with_a_different_set_of/
+## [8][Code Review: Sidekiq Error Service](https://www.reddit.com/r/rails/comments/fxxh58/code_review_sidekiq_error_service/)
+- url: https://www.reddit.com/r/rails/comments/fxxh58/code_review_sidekiq_error_service/
 ---
-Suppose there is a class User for which there are tests like below.  I want to run this test multiple times but with a different set of input. 
+Hey everyone,
 
-Can I do that?
+I've got a simple app that uses Sidekiq. Most of the error handling services on heroku just aren't a great fit so I'm rolling my own. All I need is for the errors to show up in slack in our #ops channel. Then, someone on the team claims the error and we track the resolution in slack.
 
-    describe User do 
-    all tests
+My big question is if I should use class variables in the `SlackErrorService` to reuse the `request` between messages. 
+
+```
+#config/initializers/sidekiq.rb
+
+Sidekiq.configure_server do |config|
+  config.error_handlers &lt;&lt; Proc.new {|exception, context_hash| SlackErrorService.notify(exception, context_hash) }
+end
+```
+
+```
+#app/services/slack_error_service.rb
+
+require 'net/http'
+require 'uri'
+require 'json'
+
+class SlackErrorService
+  def self.notify(exception, context_hash)
+    uri = URI.parse("#{ENV['SLACK_URI']}")
+    request = Net::HTTP::Post.new(uri)
+
+    request.content_type = "application/json"
+    request.body = JSON.dump({
+      "text" =&gt; exception,
+      "blocks" =&gt; [
+        {
+          "type": "section",
+          "block_id": context_hash[:job]["jid"],
+          "fields": [
+            {
+              "type": "mrkdwn",
+              "text": "*Context*\n#{context_hash[:context]}"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Class*\n#{context_hash[:job]['class']}"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Queue*\n#{context_hash[:job]['queue']}"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Retry Count*\n#{context_hash[:job]['retry_count']}"
+            },
+            {
+              "type": "mrkdwn",
+            "text": "*Error*\n#{context_hash[:job]['error_message']}"
+            }
+          ]
+        }
+      ]
+    }) 
+
+    req_options = {
+      use_ssl: uri.scheme == "https",
+    }
+
+    Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+      http.request(request)
     end
-
-I know inside the test cases I can write a loop and make it run multiple times but I have lots of test cases and this will not be scalable.
-## [5][Best practices to learn the structure in the big project with rails for new dev](https://www.reddit.com/r/rails/comments/fxrf86/best_practices_to_learn_the_structure_in_the_big/)
+  end
+end
+```
+## [9][Best practices to learn the structure in the big project with rails for new dev](https://www.reddit.com/r/rails/comments/fxrf86/best_practices_to_learn_the_structure_in_the_big/)
 - url: https://www.reddit.com/r/rails/comments/fxrf86/best_practices_to_learn_the_structure_in_the_big/
 ---
 I currently new in Ruby and Rails, but I have learn and practice to create some apps , what I do before made the project
@@ -75,7 +228,19 @@ I have review some codes of this project and get confused and don't want to scro
 
 How do you know quickly the methods were called/invoke when we in the page view on it ?
 And how do you know this service on that files ? How you do best practices wit Rails console ?
-## [6][Need help with rake development:seed not working](https://www.reddit.com/r/rails/comments/fxoim4/need_help_with_rake_developmentseed_not_working/)
+## [10][Can I run a spec file with a different set of inputs in RSpec](https://www.reddit.com/r/rails/comments/fxru5a/can_i_run_a_spec_file_with_a_different_set_of/)
+- url: https://www.reddit.com/r/rails/comments/fxru5a/can_i_run_a_spec_file_with_a_different_set_of/
+---
+Suppose there is a class User for which there are tests like below.  I want to run this test multiple times but with a different set of input. 
+
+Can I do that?
+
+    describe User do 
+    all tests
+    end
+
+I know inside the test cases I can write a loop and make it run multiple times but I have lots of test cases and this will not be scalable.
+## [11][Need help with rake development:seed not working](https://www.reddit.com/r/rails/comments/fxoim4/need_help_with_rake_developmentseed_not_working/)
 - url: https://www.reddit.com/r/rails/comments/fxoim4/need_help_with_rake_developmentseed_not_working/
 ---
 I have a rails server running in docker that does graphql API things.  
@@ -276,7 +441,7 @@ But this error below appears. the command used to work, and add all the User acc
     /usr/local/bin/bundle:23:in `&lt;main&gt;'
     Tasks: TOP =&gt; development:seed
     (See full trace by running task with --trace)
-## [7][Problems installing sqlite3](https://www.reddit.com/r/rails/comments/fxctvq/problems_installing_sqlite3/)
+## [12][Problems installing sqlite3](https://www.reddit.com/r/rails/comments/fxctvq/problems_installing_sqlite3/)
 - url: https://www.reddit.com/r/rails/comments/fxctvq/problems_installing_sqlite3/
 ---
  I just created a new project. It's just a blog and I'm following a tutorial on Medium. Just going through the process of setting up the project and when trying to set up the rails server, it's having trouble installing sqlite3. The Gemfile that was automatically created when I created the project had the gem defined like this automatically: gem 'sqlite3', '1.4.2' (I think, while trying to fix it, I've changed it).
@@ -544,69 +709,3 @@ succeeds before bundling.
 In Gemfile:
 
 sqlite3
-## [8][Is It Possible to Learn Rails Development by Volunteering?](https://www.reddit.com/r/rails/comments/fx080d/is_it_possible_to_learn_rails_development_by/)
-- url: https://www.reddit.com/r/rails/comments/fx080d/is_it_possible_to_learn_rails_development_by/
----
-I'm 52 years old former attorney. I suffer from a bi-polar condition that has rendered me disabled for 19 years. I'm still licensed but because of my condition I don't want to expose myself to the stress of practicing law. I've always enjoyed computers and in my college days I supported myself working as a  computer support technician. In fact, after I obtained my BS, I worked as a phone tech support for Packard Bell (arguably the worst computer manufacturer ever) until the company closed operations in California after the Northridge Earthquake of 1994.
-
-Afterwards, I worked for an insurance sales company where I sold insurance by day and wrote the company's software by night. I used MS Access Basic. For a small company with fewer than 10 computers that were networked via a peer to peer network. It worked surprisingly well. I then went to law school and practiced for about 5 years before my illness disabled me.
-
-As a therapy, I've studied linux and ROR.  I'd like to gain proficiency in Rails development to further my well being. My question to the group is it possible to do this by volunteering? I currently do not have the skill set nor experience to do this commercially. Also, by working for pay, I could jeopardize my disability status. If I lose my disability status, I could lose my medical coverage.
-## [9][From radio_button to link_to](https://www.reddit.com/r/rails/comments/fx7tlh/from_radio_button_to_link_to/)
-- url: https://www.reddit.com/r/rails/comments/fx7tlh/from_radio_button_to_link_to/
----
-I have this in language/edit.html.erb
-
-    &lt;%= form_for :language, url: language_path, method: :put do |f| %&gt;
-    	&lt;% Language.order(:name).each do |language| %&gt;
-    		&lt;label&gt;
-    			&lt;%= form.radio_button :id, language.id, selected: selected %&gt;
-    			&lt;%= language.name %&gt;
-    		&lt;/label&gt;
-    	&lt;% end %&gt;
-    	&lt;button type="submit"&gt;&lt;/button&gt;
-    &lt;% end %&gt;
-
-As you can see there is the `radio_button`.
-
-**The user have to select the radio button and then click on the button to change the language**.
-
-**I want to edit it**. I want to remove the radio\_button and the button and replace the `radio_button` with `link_to`.
-
-In this way the user will click on the `language.name` and the language will be changed.
-
-**But I don't know where to start and how to do. Any tips? How can I edit it?**
-## [10][good resources for learning testing in Rails](https://www.reddit.com/r/rails/comments/fwkcyx/good_resources_for_learning_testing_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/fwkcyx/good_resources_for_learning_testing_in_rails/
----
-I've posted about them before but was curious and went ahead in the curriculum, but as a part of their free extensive Rails course, they have a large section (14.5 hrs) of testing at AppAcademy Open
-
-https://open.appacademy.io/learn/full-stack-online/rails/rails-testing--intro
-
-Here is a look at most of it:
-
-https://imgur.com/a/BTlm7v8
-
-Just another resource for those out there who may feel they are fuzzy and this might help fill some gaps, or be the main learning path.
-## [11][understanding has_many x through: y](https://www.reddit.com/r/rails/comments/fwr58t/understanding_has_many_x_through_y/)
-- url: https://www.reddit.com/r/rails/comments/fwr58t/understanding_has_many_x_through_y/
----
-I was watching this lesson and around the 3 min mark is the relevant material:
-
-https://open.appacademy.io/learn/full-stack-online/sql/more-associations--has_many-through-----
-
-one has to have an account(free), but here are images of the relevant code:
-
-https://imgur.com/a/vWsjOF8
-
-The instructor was emphasizing that the `through` ActiveRecord method in `through: :dogs` is a key with a value paired to the `:dogs`, and that `:dogs` here is a **method** - I guess in this case referring to the `House#dogs` method and NOT referring to the `Dog` class itself.  Same with the `source: :toys`, that `:toys` is also a method and NOT the `Toy` model, so I guess in that case it would be the `Dog#toys` method that the `:toys` in `source: :toys` is referring to.  Is the above understanding correct?
-## [12][Yet another active form](https://www.reddit.com/r/rails/comments/fwk4ip/yet_another_active_form/)
-- url: https://www.reddit.com/r/rails/comments/fwk4ip/yet_another_active_form/
----
-Hey! I just want to share with you a gem we've been working on recently and it's about form objects. 
-
-Me and my coworkers built an abstraction to handle these form objects in one of our client's projects, and provided it was so helpful we decided to extract it to a gem.
-
-I would really appreciate every early feedback I can get, we just published v0.1.0. 
-
-[https://github.com/rootstrap/yaaf](https://github.com/rootstrap/yaaf)

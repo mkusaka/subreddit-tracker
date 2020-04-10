@@ -84,119 +84,172 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Introducing storybook-addon-performance 🚀](https://www.reddit.com/r/reactjs/comments/fxmfzv/introducing_storybookaddonperformance/)
-- url: https://www.reddit.com/r/reactjs/comments/fxmfzv/introducing_storybookaddonperformance/
----
-Over at Atlassian, we have been working on an experimental storybook addon to help better understand and debug performance problems with `React` components
-
-[storybook-addon-performance](https://github.com/atlassian-labs/storybook-addon-performance)
-
-Enjoy!
-## [4][React Summit: Attend the biggest ReactJS online conference for free](https://www.reddit.com/r/reactjs/comments/fx95e6/react_summit_attend_the_biggest_reactjs_online/)
-- url: https://sfree.life/reactjs-react-summit-conf-2020-stream-free/
+## [3][How to get these animations working in react js? Is there a library that i can use or can it be done using plain css?](https://www.reddit.com/r/reactjs/comments/fydnl9/how_to_get_these_animations_working_in_react_js/)
+- url: https://v.redd.it/678gklfmzyr41
 ---
 
-## [5][A simple game to kill time](https://www.reddit.com/r/reactjs/comments/fxrvha/a_simple_game_to_kill_time/)
+## [4][Build a Google Chrome Extension Using React (Full Project Download)](https://www.reddit.com/r/reactjs/comments/fydd37/build_a_google_chrome_extension_using_react_full/)
+- url: https://www.youtube.com/watch?v=4x0lQu1TOCQ
+---
+
+## [5][react-see-through - Draw attention to specific components on your page](https://www.reddit.com/r/reactjs/comments/fxxpfd/reactseethrough_draw_attention_to_specific/)
+- url: https://www.reddit.com/r/reactjs/comments/fxxpfd/reactseethrough_draw_attention_to_specific/
+---
+Hi r/reactjs this is my first post on here.
+
+&amp;nbsp;
+
+I built a React component [(link: react-see-through)](https://github.com/andrew4699/react-see-through) that lets you mask unimportant elements on your page. **This could be useful for a tutorial where you want users to focus on particular parts of your page.**
+
+&amp;nbsp;
+
+A lot of work went into making sure **this could be plugged anywhere into a big project and just work and not break layouts**. I was able to swap this in at random places in one of my big projects and had it work just fine. There's a picture of that at the top of the README. There are also [examples available here.](https://andrew4699.github.io/react-see-through/#basic-usage)
+
+&amp;nbsp;
+
+This is my first sizeable open-source project and **I would love feedback** on anything from feature requests to even code quality. Enjoy!
+## [6][Feedback Request: CSS Grid Intro (in React)](https://www.reddit.com/r/reactjs/comments/fy5rw5/feedback_request_css_grid_intro_in_react/)
+- url: https://www.youtube.com/watch?v=sA_glquejwE
+---
+
+## [7][Failed to get remote.origin.url (task must either be run in a git repository with a configured origin remote or must be configured with the "repo" option).](https://www.reddit.com/r/reactjs/comments/fyehha/failed_to_get_remoteoriginurl_task_must_either_be/)
+- url: https://www.reddit.com/r/reactjs/comments/fyehha/failed_to_get_remoteoriginurl_task_must_either_be/
+---
+
+
+i was trying to deploy my react app to github pages. I have issues like that :
+
+Failed to get remote.origin.url (task must either be run in a git repository with a configured origin remote or must be configured with the "repo" option).
+
+npm ERR! code ELIFECYCLE npm ERR! errno 1 npm ERR! react_app@0.1.0 deploy: gh-pages -d build — repo https://baranacikgoz.github.io/Employee-Management-App npm ERR! Exit status 1 npm ERR! npm ERR! Failed at the react_app@0.1.0 deploy script. npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in: npm ERR! /root/.npm/_logs/2020-04-10T11_21_26_577Z-debug.log
+
+Here is my git remote -v output:
+
+    Employee-Management-App https://github.com/baranacikgoz/Employee-Management-App.git (fetch)
+Employee-Management-App https://github.com/baranacikgoz/Employee-Management-App.git (push)
+
+And Here is my package.json file :
+
+    "name": "react_app",
+  "homepage": "https://baranacikgoz.github.io/Employee-Management-App",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
+    "react-dom": "^16.13.1",
+    "react-pose": "^4.0.10",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "reactjs-popup": "^1.5.0",
+    "uniqid": "^5.2.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      "&gt;0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
+
+Finally here is errors log:
+
+    0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'run', 'deploy' ]
+2 info using npm@6.14.4
+3 info using node@v10.17.0
+4 verbose run-script [ 'predeploy', 'deploy', 'postdeploy' ]
+5 info lifecycle react_app@0.1.0~predeploy: react_app@0.1.0
+6 verbose lifecycle react_app@0.1.0~predeploy: unsafe-perm in lifecycle true
+7 verbose lifecycle react_app@0.1.0~predeploy: PATH: /usr/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/baran/Software/Completed Works/Employee-Management-App/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+8 verbose lifecycle react_app@0.1.0~predeploy: CWD: /home/baran/Software/Completed Works/Employee-Management-App
+9 silly lifecycle react_app@0.1.0~predeploy: Args: [ '-c', 'npm run build' ]
+10 silly lifecycle react_app@0.1.0~predeploy: Returned: code: 0  signal: null
+11 info lifecycle react_app@0.1.0~deploy: react_app@0.1.0
+12 verbose lifecycle react_app@0.1.0~deploy: unsafe-perm in lifecycle true
+13 verbose lifecycle react_app@0.1.0~deploy: PATH: /usr/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/baran/Software/Completed Works/Employee-Management-App/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+14 verbose lifecycle react_app@0.1.0~deploy: CWD: /home/baran/Software/Completed Works/Employee-Management-App
+15 silly lifecycle react_app@0.1.0~deploy: Args: [ '-c', 'gh-pages -d build' ]
+16 silly lifecycle react_app@0.1.0~deploy: Returned: code: 1  signal: null
+17 info lifecycle react_app@0.1.0~deploy: Failed to exec deploy script
+18 verbose stack Error: react_app@0.1.0 deploy: `gh-pages -d build`
+18 verbose stack Exit status 1
+18 verbose stack     at EventEmitter.&lt;anonymous&gt; (/usr/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
+18 verbose stack     at EventEmitter.emit (events.js:198:13)
+18 verbose stack     at ChildProcess.&lt;anonymous&gt; (/usr/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+18 verbose stack     at ChildProcess.emit (events.js:198:13)
+18 verbose stack     at maybeClose (internal/child_process.js:982:16)
+18 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:259:5)
+19 verbose pkgid react_app@0.1.0
+20 verbose cwd /home/baran/Software/Completed Works/Employee-Management-App
+21 verbose Linux 5.4.0-4parrot1-amd64
+22 verbose argv "/usr/bin/node" "/usr/bin/npm" "run" "deploy"
+23 verbose node v10.17.0
+24 verbose npm  v6.14.4
+25 error code ELIFECYCLE
+26 error errno 1
+27 error react_app@0.1.0 deploy: `gh-pages -d build`
+27 error Exit status 1
+28 error Failed at the react_app@0.1.0 deploy script.
+28 error This is probably not a problem with npm. There is likely additional logging output above.
+29 verbose exit [ 1, true ]
+## [8][How to explain difference of thinking between React and traditional OO language](https://www.reddit.com/r/reactjs/comments/fye9em/how_to_explain_difference_of_thinking_between/)
+- url: https://www.reddit.com/r/reactjs/comments/fye9em/how_to_explain_difference_of_thinking_between/
+---
+TL;DR do you have good resources to help share the difference between traditional OO software development and modern React Applications?
+
+Background:
+
+The project is based on React+TypeScript.
+
+My coworkers  come from a C#, Java, etc. background. They are used to develop big traditional applications, with Object Oriented good practices, Types, Classes, etc. They often tend to take their Objet Oriented background here, so wanting to create Classes, Types in separate files, and they tend to "think" a lot in the classic OO way.
+
+On my side: I have less general dev experience than them (2years xp), but more in React/ JS/ TS. I can't say I'm officially the lead developer, but I did develop all the codebase for months before another dev (OO oriented) came along.
+
+I have the feeling and I know that things are not done 100% the same in Java/C# and React, I know that you cannot think the same. But I lack the experience and the skills to share it in a efficient and clear way. I would be really glad if anyone have good links, articles, ideas, to help share the difference between OO oriented traditional Java/C#/C++ applications, and the modern and changing React and JS way of thinking.
+## [9][A simple game to kill time](https://www.reddit.com/r/reactjs/comments/fxrvha/a_simple_game_to_kill_time/)
 - url: https://sttronn.github.io/8-TILES/
 ---
 
-## [6][Webpack 5 Module Federation for Fully Dynamic Apps](https://www.reddit.com/r/reactjs/comments/fxgg0j/webpack_5_module_federation_for_fully_dynamic_apps/)
-- url: https://www.reddit.com/r/reactjs/comments/fxgg0j/webpack_5_module_federation_for_fully_dynamic_apps/
+## [10][Basic UI framework to build upon?](https://www.reddit.com/r/reactjs/comments/fyf71j/basic_ui_framework_to_build_upon/)
+- url: https://www.reddit.com/r/reactjs/comments/fyf71j/basic_ui_framework_to_build_upon/
 ---
-Hey folks, I want to share it with you a video I made: [https://youtu.be/27QbUycVrHg](https://youtu.be/27QbUycVrHg) about Webpack 5 Federated Module for a fully dynamic environment.
+Is there a basic UI framework that I can build my custom look on? Basically I'm looking for a library that already has the most components like datatables, date pickers etc. built-in but requires me to style it to fit the company brand identity?
 
-I hope you find this useful, I worked in multiple apps that couldn't scale due to the organization structure and this feature will enable a clean solution for them to scale better.
-
-I am working on some platform using Material UI and React that will give you a better starting point for some of these enterprise apps, stay tuned about that one.
-
-I am still learning how to make videos, so I would appreciate a lot your constructive criticisms.
-
-Cheers,
-## [7][SVGR: A VSCode extension for converting SVG's to inline JSX or React Components](https://www.reddit.com/r/reactjs/comments/fxrpcl/svgr_a_vscode_extension_for_converting_svgs_to/)
-- url: https://marketplace.visualstudio.com/items?itemName=NathHorrigan.code-svgr
+Or would it be more beneficial to re-style an existing library like Bootstrap?
+## [11][JSCasts ep16 - AdminBro Startup - setup admin panel in Node.js from scratch](https://www.reddit.com/r/reactjs/comments/fyeopu/jscasts_ep16_adminbro_startup_setup_admin_panel/)
+- url: https://www.youtube.com/watch?v=n0IuXnL_cWs
 ---
 
-## [8][TypeScript Tutorial For Beginners](https://www.reddit.com/r/reactjs/comments/fxo9tx/typescript_tutorial_for_beginners/)
-- url: https://afteracademy.com/blog/typescript-tutorial-for-beginners
----
-
-## [9][Ways to add external JS file in react](https://www.reddit.com/r/reactjs/comments/fxkabu/ways_to_add_external_js_file_in_react/)
-- url: https://link.medium.com/NIxziXiyw5
----
-
-## [10][React Folder Structure in 5 Steps](https://www.reddit.com/r/reactjs/comments/fx3206/react_folder_structure_in_5_steps/)
-- url: https://www.robinwieruch.de/react-folder-structure
----
-
-## [11][Edit button is not wroking while trying to edit a todo item](https://www.reddit.com/r/reactjs/comments/fxq3c1/edit_button_is_not_wroking_while_trying_to_edit_a/)
-- url: https://www.reddit.com/r/reactjs/comments/fxq3c1/edit_button_is_not_wroking_while_trying_to_edit_a/
----
-Hi champs
-
-i  have started reactjs  for a while and started learning hooks. i am trying to make a simple todo app in react without using useEffect and useReducers and use Context. below i am providing only edit button section ...i am stuck here for a day....
-
-my problem is edit button is not working. when i press the button it's not editing anything
-
-you can find the whole code in [codesandbox](https://codesandbox.io/s/condescending-worker-s0igh)
-
-TodoList,js:
-
- 
-
-import React from "react";  
-const TodoItem = ({ id, title, completed, editItem }) =&gt; {  
- return (  
- &lt;div style={{ width: 400, height: 25 }}&gt;  
-&lt;input type="checkbox" checked={completed} /&gt;  
- {title}  
-&lt;button  
- style={{ float: "right" }}  
- value={id}  
- onClick={() =&gt; editItem({ title })}  
- \&gt;  
-Edit  
-&lt;/button&gt;  
-&lt;/div&gt;  
- );  
-};  
-const TodoList = ({ items = \[\], editItem }) =&gt; {  
- return items.map(p =&gt; &lt;TodoItem {...p} key={p.id} editItem={editItem} /&gt;);  
-};  
-export default TodoList;  
-
-
-&amp;#x200B;
-
-and App.js is:
-
-&amp;#x200B;
-
- 
-
-import React, { useState } from "react";  
-import TodoList from "./TodoList";  
-import "./styles.css";  
-const defaultItems = \[  
- { id: 1, title: "Write React Todo Project", completed: true },  
- { id: 2, title: "Upload it to github", completed: false }  
-\];  
-export default function App() {  
- const \[items, setItems\] = useState(defaultItems);  
- const editItem = ({ id, title }) =&gt; {  
- setItems(oldItems =&gt;  
- oldItems.map(p =&gt; (p.id === id ? { ...p, title } : p))  
- );  
- };  
- return (  
- &lt;div style={{ width: 400 }}&gt;  
-&lt;hr /&gt;  
-&lt;TodoList items={items} editItem={editItem} /&gt;  
-&lt;hr /&gt;  
-&lt;/div&gt;  
- );  
-}  
-
-## [12][Job Listing App - ReactJS and TailwindCSS - Live Coding](https://www.reddit.com/r/reactjs/comments/fxp7i4/job_listing_app_reactjs_and_tailwindcss_live/)
-- url: https://www.youtube.com/watch?v=JZQ8m08cbF0&amp;feature=share
+## [12][Static Site Generation (SSG) in Next.js 9.3](https://www.reddit.com/r/reactjs/comments/fydvp4/static_site_generation_ssg_in_nextjs_93/)
+- url: https://www.youtube.com/watch?v=MxlmfI9IxVs&amp;feature=share
 ---
 

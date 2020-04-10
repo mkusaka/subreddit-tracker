@@ -22,179 +22,141 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Linkdash - Generate a handy dashboard of links in seconds!](https://www.reddit.com/r/typescript/comments/fxpx9q/linkdash_generate_a_handy_dashboard_of_links_in/)
+## [2][If x has a type of T, then what's the type of JSON.parse(JSON.stringify(x))?](https://www.reddit.com/r/typescript/comments/fxub0f/if_x_has_a_type_of_t_then_whats_the_type_of/)
+- url: https://effectivetypescript.com/2020/04/09/jsonify/
+---
+
+## [3][Porting to TypeScript Solved Our API Woes](https://www.reddit.com/r/typescript/comments/fy37h9/porting_to_typescript_solved_our_api_woes/)
+- url: https://www.executeprogram.com/blog/porting-to-typescript-solved-our-api-woes
+---
+
+## [4][typescript object literal problem](https://www.reddit.com/r/typescript/comments/fy5v3r/typescript_object_literal_problem/)
+- url: https://www.reddit.com/r/typescript/comments/fy5v3r/typescript_object_literal_problem/
+---
+Hi,
+
+so in typescript, once we define an object like this 
+
+```
+const parsedData = {
+            serviceType,
+            stops,
+            deliveries,
+            requesterContact: {
+                name: pickup.personInChargeName,
+                phone: merchantPhoneValidator(pickup.personInChargePhoneNum),
+            },
+            specialRequests,
+        };
+```
+Then we cannot dynamically add more fields like javascript
+```
+// error 
+if (isPreOrder) {
+       parsedData.scheduleAt = new Date(pickup.startAt).toISOString();
+}
+```
+Nor we can add dummy field just letting typescript know we have this field
+```
+const parsedData = {
+            scheduleAt : undefined  // error
+            serviceType,
+            stops,
+            deliveries,
+            requesterContact: {
+                name: pickup.personInChargeName,
+                phone: merchantPhoneValidator(pickup.personInChargePhoneNum),
+            },
+            specialRequests,
+        };
+```
+
+Any better way to get around with this except disabling typescript? Thanks!
+## [5][Linkdash - Generate a handy dashboard of links in seconds!](https://www.reddit.com/r/typescript/comments/fxpx9q/linkdash_generate_a_handy_dashboard_of_links_in/)
 - url: https://i.redd.it/3mgoes21prr41.gif
 ---
 
-## [3][TypeScript Tutorial For Beginners](https://www.reddit.com/r/typescript/comments/fxo95b/typescript_tutorial_for_beginners/)
+## [6][Debugging typescript dependencies from a non typescript node project](https://www.reddit.com/r/typescript/comments/fy81ch/debugging_typescript_dependencies_from_a_non/)
+- url: https://www.reddit.com/r/typescript/comments/fy81ch/debugging_typescript_dependencies_from_a_non/
+---
+I've seen setups for debugging Frontend code with source maps, and complex configurations for debugging entire typescript projects in vscode with sourcemaps.  
+
+
+However, what if I have a project that is in Vanilla Node.js, but some of my dependencies are in Typescript? How do I debug those in vscode or chrome?
+## [7][Typescript problem using GraphQL Nexus](https://www.reddit.com/r/typescript/comments/fxz4f6/typescript_problem_using_graphql_nexus/)
+- url: https://www.reddit.com/r/typescript/comments/fxz4f6/typescript_problem_using_graphql_nexus/
+---
+So I just started using GraphQL Nexus today and I'm just doing some basic setup and noodling around with some stuff. I coded a simple registerUser mutation like so:
+
+`export const Mutation = objectType({`  
+  `name: 'Mutation',`  
+ `definition(t) {`  
+ `t.boolean('register', {`  
+`args: {`  
+`email: stringArg({ required: true }),`  
+`password: stringArg({ required: true }),`  
+ `},`  
+`async resolve(_, { email, password }) {`  
+ `console.log(password, email)`  
+`return true`  
+ `},`  
+ `})`  
+ `},`  
+`})`
+
+But when I replaced the arguments to 'register' with a RegisterInput input like so:
+
+`export const RegisterInput = inputObjectType({`  
+  `name: 'RegisterInput',`  
+ `definition(t) {`  
+ `t.string('email', { required: true })`  
+ `t.string('password', { required: true })`  
+ `},`  
+`})`  
+
+
+`export const Mutation = objectType({`  
+  `name: 'Mutation',`  
+ `definition(t) {`  
+ `t.boolean('register', {`  
+`args: {`  
+`input: arg({ type: RegisterInput }),`  
+ `},`  
+`async resolve(_, { input: { email, password } }) {`  
+ `console.log(password, email)`  
+`return true`  
+ `},`  
+ `})`  
+ `},`  
+`})`
+
+Everything works, but he resolver input argument `{ input: { email, password } }` gets typescript a little complain - Property 'email'/'password' does not exist on type '{ email: string; password: string; } | null | undefined'? How do I get those annoying red squiggles to go away?
+## [8][Typescript problem with a GraphQl Nexus resolver](https://www.reddit.com/r/typescript/comments/fy1iaz/typescript_problem_with_a_graphql_nexus_resolver/)
+- url: https://www.reddit.com/r/typescript/comments/fy1iaz/typescript_problem_with_a_graphql_nexus_resolver/
+---
+I'm creating a new MongoDB document in a GraphQL Nexus resolver:
+
+`async resolve(_, { input: { email, password } }, { userData }) {`  
+ `const hashedPassword = await bcrypt.hash(password, 10)`  
+ `let newUser = {`  
+  `email,`  
+  `password: hashedPassword,`  
+ `}`  
+ `const { insertedId } = await userData.insertOne(newUser)`  
+ `newUser._id = insertedId`  
+  `return newUser`  
+ `},`
+
+but typescript says property '\_id' does not exist on type '{ email: string; password: string; }'. I'm stuck because this is how I create a new document in mongo using plain JS. What is the proper way to add the insertedId?
+## [9][TypeScript Tutorial For Beginners](https://www.reddit.com/r/typescript/comments/fxo95b/typescript_tutorial_for_beginners/)
 - url: https://afteracademy.com/blog/typescript-tutorial-for-beginners
 ---
 
-## [4][Instantly find code using intuitive search and code rank — live demo (metacode.app)](https://www.reddit.com/r/typescript/comments/fxfeih/instantly_find_code_using_intuitive_search_and/)
+## [10][Instantly find code using intuitive search and code rank — live demo (metacode.app)](https://www.reddit.com/r/typescript/comments/fxfeih/instantly_find_code_using_intuitive_search_and/)
 - url: https://v.redd.it/ythfwk0dxnr41
 ---
 
-## [5][I'm forced to discriminate a union type to then perform the same operation (Visitor Pattern for ASTs)](https://www.reddit.com/r/typescript/comments/fxolgd/im_forced_to_discriminate_a_union_type_to_then/)
+## [11][I'm forced to discriminate a union type to then perform the same operation (Visitor Pattern for ASTs)](https://www.reddit.com/r/typescript/comments/fxolgd/im_forced_to_discriminate_a_union_type_to_then/)
 - url: https://stackoverflow.com/questions/61111469/forced-to-discriminate-a-union-type-to-then-perform-the-same-operation-visitor?stw=2
 ---
 
-## [6][Foal TS - April release (version 1.7) - File uploads to local or Cloud storage (AWS S3), OpenAPI spec generation, safe config access](https://www.reddit.com/r/typescript/comments/fx40ui/foal_ts_april_release_version_17_file_uploads_to/)
-- url: https://www.reddit.com/r/typescript/comments/fx40ui/foal_ts_april_release_version_17_file_uploads_to/
----
-Foal TS framework version 1.7 is officially released!
-
-[Foal TS - April release \(version 1.7\)](https://preview.redd.it/bpntqk11lkr41.png?width=1020&amp;format=png&amp;auto=webp&amp;s=7de8eaa02ac49ea52d7368e494930e1c9118afaf)
-
-**File uploads to local and Cloud storage**, better error description, safer config access, logging improved, you can discover the features of this version here: [https://github.com/FoalTS/foal/releases/tag/v1.7.0](https://github.com/FoalTS/foal/releases/tag/v1.7.0)
-
-The **big feature** of this release is the new `@ValidateMultipartFormDataBody` hook which allows you to **validate and parse multipart/form-data requests** (used for file uploads).
-
-Let’s say we have a profile page from which the user can upload their profile picture as well as their pseudonym. The image should not exceed a certain size and the pseudonym should be 30-characters long.
-
-We want to upload the files in streaming (for performance reason) to our local server file system when coding the application.
-
-Then, when deploying the application to production, we want to use AWS and store our images in an S3 bucket.
-
-And finally, we would like to generate the OpenAPI specification and use Swagger UI to test our application.
-
-=&gt; This new version allows you to achieve this with just a few lines of code and configuration.
-
-More documentation here: [https://foalts.gitbook.io/docs/topic-guides/file-system/upload-and-download-files](https://foalts.gitbook.io/docs/topic-guides/file-system/upload-and-download-files)
-
-[Page at http:\/\/localhost:3001\/swagger](https://preview.redd.it/tw35xed3lkr41.png?width=1446&amp;format=png&amp;auto=webp&amp;s=b9084c176684da1e120daa1ebc07e98ef4d1accf)
-
-[api.controller.ts](https://preview.redd.it/dzn0pmd3lkr41.png?width=588&amp;format=png&amp;auto=webp&amp;s=e246d7c948b0dd098d16d28c804afdcba7953a82)
-
-[openapi.controller.ts](https://preview.redd.it/y7eo8fd3lkr41.png?width=430&amp;format=png&amp;auto=webp&amp;s=d27d45618d0fdb18c8a9bc112c7967f0c47446c0)
-
-[app.controller.ts \(the root controller of the app\)](https://preview.redd.it/xbp0ajd3lkr41.png?width=482&amp;format=png&amp;auto=webp&amp;s=2e82cf41d6da5235de2bb87c82e3da9f8b3cf70a)
-
-[the configuration file config\/development.yml](https://preview.redd.it/x2ah4hd3lkr41.png?width=217&amp;format=png&amp;auto=webp&amp;s=1dbaed210f1d93fd3a909c5609ab82b67fecacaa)
-
-[the configuration file config\/production.yml](https://preview.redd.it/4d5bzld3lkr41.png?width=203&amp;format=png&amp;auto=webp&amp;s=6d2804d009e8ebf59d7056877050023e9a3934b3)
-
-Foal, in a few words, it's a Node.js framework:
-
-&amp;#x200B;
-
-* written in TypeScript
-* provided with batteries included (Auth, OpenAPI, GraphQL, ORM, CLI, scripts, file storage)
-* and with a simple and intuitive architecture (no magic, no over-engineering).  
- 
-
-And the must: it has more than 11,000 lines of documentation.
-
-[https://foalts.org](https://foalts.org/)
-
-[https://github.com/FoalTS/foal](https://github.com/FoalTS/foal)
-
-[https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
-
-\#TypeScript #JavaScript #NodeJS #FoalTS #AWS #S3
-## [7][Do you guys verify your axios responses?](https://www.reddit.com/r/typescript/comments/fx75qu/do_you_guys_verify_your_axios_responses/)
-- url: https://www.reddit.com/r/typescript/comments/fx75qu/do_you_guys_verify_your_axios_responses/
----
-My App recieves a lot of data through axios, and currently I do not type check any of it. So basically I'm casting completely unknown values into typescript. Which is not ideal.
-
-I wonder, does anyone check their axios responses somehow? Runtime typechecking doesn't really seem to be a thing for typescript.
-
-I've read about user defined type guards, but I couldn't get them to do what I want them to do, which is something like this
-
-    interface WhatIWant {
-        ...
-    }
-    
-    Axios.get(...).then(res =&gt; {
-        if (verifyType(res.data, WhatIWant))
-            setState(res.data)
-        else throw new Error("Unexpected Type")
-    }
-
-Going full verbose shouldn't be the moral of the story and doesn't use my typescript types.
-
-    let data;
-    if (typeof res.data.foo === string) data.foo = res.data.foo;
-    if (typeof res.data.bar === number) data.bar = res.data.bar;
-
-I've heard of libraries like yup. But again, that doesn't solve anything if I'm not using my typescript types/interfaces.
-
-Edit: Thanks for the answers! Great suggestions in this thread, I'll check them out when I have time :-)
-## [8][Type Checking String Literal Access](https://www.reddit.com/r/typescript/comments/fxcjo4/type_checking_string_literal_access/)
-- url: https://www.reddit.com/r/typescript/comments/fxcjo4/type_checking_string_literal_access/
----
-I'm getting data from this API that has some irritatingly shaped data.  
-
-```
-interface Res{
-    Title: string;
-    'Publish Date': string;
-    'Citation Count': number; 
-}
-```
-
-I get type safety when accessing `obj.Title` but not when accessing `obj['Publish Date']`
-
-I would prefer not to do manipulations of the API response if I don't have to. What are your suggestions?
-## [9][Dealing with types at scale](https://www.reddit.com/r/typescript/comments/fx5nrx/dealing_with_types_at_scale/)
-- url: https://www.reddit.com/r/typescript/comments/fx5nrx/dealing_with_types_at_scale/
----
-During development, we tend to consume types, i.e:
-
-```ts
-interface Foo {
-  x: string
-  y: number
-  z: boolean
-  //... more properties
-}
-```
-
-Then in our functions, we just "re-use" that type `Foo`
-
-```ts
-type Fn = (f: Foo) =&gt; ReturnType
-```
-
-But what happens when `Foo` is an object containing a bunch of properties where let's say a function `SimpleFn` does not use the whole set of properties
-
-```ts
-type SimpleFn = (f: Pick&lt;Foo, 'x' | 'y'&gt;) =&gt; ReturnType
-```
-
-later we have a 
-
-```ts
-type SimpleFn2 = (g: Pick&lt;Foo, 'y' | 'z'&gt;) =&gt; ReturnType 
-```
-
-What option do you prefer?
-
-a)
-```ts
-type SimpleFn = (f: Foo) =&gt; ReturnType
-type SimpleFn2 = (g: Foo) =&gt; ReturnType
-```
-
-b)
-```
-type SimpleFn = (f: Pick&lt;Foo, 'x' | 'y'&gt;) =&gt; ReturnType
-type SimpleFn2 = (g: Pick&lt;Foo, 'y' | 'z'&gt;) =&gt; ReturnType 
-```
-
-c) Try to have a very well defined domain where I can group all my types in a file and then reuse them
-## [10][Type error while binding a value](https://www.reddit.com/r/typescript/comments/fx6bip/type_error_while_binding_a_value/)
-- url: https://www.reddit.com/r/typescript/comments/fx6bip/type_error_while_binding_a_value/
----
-Begginer question here..
-
-const item = ({ index, value }) =&gt; \`${index}:${value}\`; 
-
-Error in VS: Binding element 'index' implicitly has an 'any' type.ts(7031)
-
-where do I specificy the type for the above line?
-## [11][Can't solve this TypeScript error! :(](https://www.reddit.com/r/typescript/comments/fx2lha/cant_solve_this_typescript_error/)
-- url: https://www.reddit.com/r/typescript/comments/fx2lha/cant_solve_this_typescript_error/
----
-Was trying to work with a React app, but this Typescript error happens. Since I'm a noob at TS, not sure what's happening. Any clue, pros? :( 
-
-https://preview.redd.it/vly86gw8zjr41.png?width=1053&amp;format=png&amp;auto=webp&amp;s=768d6e7d0d78be2634dd91747a1918354b9043be

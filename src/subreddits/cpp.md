@@ -119,58 +119,66 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Qt, Open Source and corona](https://www.reddit.com/r/cpp/comments/fxbo24/qt_open_source_and_corona/)
+## [3][Qt and Open Source (Qt company declaration)](https://www.reddit.com/r/cpp/comments/fyamc6/qt_and_open_source_qt_company_declaration/)
+- url: https://www.qt.io/blog/qt-and-open-source
+---
+
+## [4][CLion dev team will host an AMA on may 7](https://www.reddit.com/r/cpp/comments/fxzrxp/clion_dev_team_will_host_an_ama_on_may_7/)
+- url: https://blog.jetbrains.com/clion/2020/04/live-webinar-clion-ama/
+---
+
+## [5][How I installed FLTK for use with Visual C++. FLTK is a library for windows and graphics used in Bjarne Stroustrup’s “Programming: Principles and Practice Using C++”.](https://www.reddit.com/r/cpp/comments/fy5cgj/how_i_installed_fltk_for_use_with_visual_c_fltk/)
+- url: https://alf-p-steinbach.github.io/Install-FLTK-for-use-with-Visual-C-/
+---
+
+## [6][Dynamic Dispatch vs. Late Binding](https://www.reddit.com/r/cpp/comments/fxvh4d/dynamic_dispatch_vs_late_binding/)
+- url: https://www.reddit.com/r/cpp/comments/fxvh4d/dynamic_dispatch_vs_late_binding/
+---
+[The wikipedia page for Dynamic Dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch) says 
+
+&gt;Since C++ does not support late binding, the virtual table in a C++  object cannot be modified at run-time, which limits the potential set of  dispatch targets to a finite set chosen at compile time.
+
+However the [Late Binding](https://en.wikipedia.org/wiki/Late_binding#Late_binding_in_C++) page says
+
+&gt;In C++, late binding (also called "dynamic binding") refers to what normally happens when the virtual keyword is used in a method's declaration.
+
+I'm *somewhat* confused by this discrepancy. What is the difference between dynamic dispatch and late binding and does C++ support late binding?
+## [7][Event loop ingredients for elaboration](https://www.reddit.com/r/cpp/comments/fye6ru/event_loop_ingredients_for_elaboration/)
+- url: https://www.reddit.com/r/cpp/comments/fye6ru/event_loop_ingredients_for_elaboration/
+---
+I would like to share my point of view about event loops.  
+[Ingredients and test concept code](https://github.com/z-ninja/nwOS/blob/z-ninja-bug/main.cpp)
+
+And would be very happy to elaborate about the code with anyone who is interesting to review/learn the concept from my point of view and give opinion/question about to push the concept and skill event further.
+## [8][Visual Studio "Just my code"](https://www.reddit.com/r/cpp/comments/fydbof/visual_studio_just_my_code/)
+- url: https://www.reddit.com/r/cpp/comments/fydbof/visual_studio_just_my_code/
+---
+Checked the box and notice no difference? Still stepping into all of standard library headers. All i want is to step into std::visit and end up in my predicate and not into visit.h. That is to much to ask.
+
+Can someone explain where is the documentation for this uber-complicated checkbox?
+## [9][Making VisualStudio less clunky for text editing](https://www.reddit.com/r/cpp/comments/fy9szi/making_visualstudio_less_clunky_for_text_editing/)
+- url: https://www.reddit.com/r/cpp/comments/fy9szi/making_visualstudio_less_clunky_for_text_editing/
+---
+I've been using VS because it'd rock solid IDE for C++ and using VSCode for everything else. I just hate the clunkyness of VS compared to VSCode for text editing. All the text shortcuts are different, no fuzzy search, everytime I hunt where I left writing the code because IDE keeps opening internal libraries and then I have to hunt the file I've been editing prior...   
+Are there any good plugins to overcome my hurdles and make it more like VSCode in that regard?  
+For a while now I've been writing code in VSCode and compiling in VS but that's an additional step I would like to skip.
+## [10][CppCast: Making Nu Languages](https://www.reddit.com/r/cpp/comments/fy87r5/cppcast_making_nu_languages/)
+- url: https://cppcast.com/nu-programming-languages-jonathan-turner/
+---
+
+## [11][Destructible move emulation](https://www.reddit.com/r/cpp/comments/fxt2xp/destructible_move_emulation/)
+- url: https://www.reddit.com/r/cpp/comments/fxt2xp/destructible_move_emulation/
+---
+\*edit: Title should be "destructive move emulation" ;\]
+
+Random idea I wanted to share.I was thinking about a way to tell the compiler that lifetime of some object started or ended without generating any instructions, because there are cases where programmer might know better.
+
+I prepared two examples in one I create object s, then allocate some memory, pass object to function that compiler can know nothing about and in one of cases, explicitly say that object should be considered destroyed.
+
+This results in omitting call to delete in the second case.
+
+[https://godbolt.org/z/3zBhh-](https://godbolt.org/z/3zBhh-)
+## [12][Qt, Open Source and corona](https://www.reddit.com/r/cpp/comments/fxbo24/qt_open_source_and_corona/)
 - url: https://mail.kde.org/pipermail/kde-community/2020q2/006098.html
----
-
-## [4][shared_ptr - basics and internals with examples](https://www.reddit.com/r/cpp/comments/fx66ja/shared_ptr_basics_and_internals_with_examples/)
-- url: https://www.nextptr.com/tutorial/ta1358374985/shared_ptr-basics-and-internals-with-examples
----
-
-## [5][Blog Post: system_executor - “What Could Possibly Go Wrong?”](https://www.reddit.com/r/cpp/comments/fxghkv/blog_post_system_executor_what_could_possibly_go/)
-- url: https://www.reddit.com/r/cpp/comments/fxghkv/blog_post_system_executor_what_could_possibly_go/
----
-My C++ Alliance blog post for March.
-
-Possibly interesting to fans of Asio.  
-
-
-[https://cppalliance.org/richard/2020/03/31/RichardsMarchUpdate.html](https://cppalliance.org/richard/2020/03/31/RichardsMarchUpdate.html)
-## [6][Third Annual C++ Foundation Developer Survey](https://www.reddit.com/r/cpp/comments/fx20hu/third_annual_c_foundation_developer_survey/)
-- url: https://isocpp.org/blog/2020/04/third-annual-cpp-foundation-developer-survey-lite
----
-
-## [7][Best-in-class C++ to WebAssembly with Cheerp 2.5 (RC1)](https://www.reddit.com/r/cpp/comments/fx5qq7/bestinclass_c_to_webassembly_with_cheerp_25_rc1/)
-- url: https://medium.com/leaningtech/best-in-class-webassembly-with-cheerp-2-5-rc1-aa44951bc0f0
----
-
-## [8][C++ Weekly - Ep 214 - Epic 10 Hour Port of Doom to C++](https://www.reddit.com/r/cpp/comments/fwov31/c_weekly_ep_214_epic_10_hour_port_of_doom_to_c/)
-- url: https://www.youtube.com/watch?v=0dkzLdqH9V4
----
-
-## [9][C++20: Technical Question on upcoming Modules](https://www.reddit.com/r/cpp/comments/fx3trm/c20_technical_question_on_upcoming_modules/)
-- url: https://www.reddit.com/r/cpp/comments/fx3trm/c20_technical_question_on_upcoming_modules/
----
-Suppose a module `M` has an exported method `foo` whose implementation uses class `myclass` and/or method `mymethod` that originiate in an unrelated module or header and the module doesn't export them . Also implemetation of this method `foo` is exported in the module `M`.
-
-Can one import the module and use the function `foo` from another library doesn't import of either `myclass` or `mymethod`? Technically, one can use implementation that supplied by the module so it can work.
-
-Why the question? Suppose I have a simple function `foo` that can be inlined (fully or not fully as it might call some other heavy methods but it will at least save unnecessary function call). However, to compile and inline it one needs to import an additional header or module and I want to minimize header-level dependencies.
-
-So the question is in short, is it possible to use exported method whose implementation is also exported - yet my current module is unable to compile it due to dependencies issue? Or the implementation must not be exported in this case?
-
-Edit: from the replies it is understood the classification of "visible" and "reachable" methods/classes essentialy solve the issue. However, now I have another question: When ODR violation happens? When visible objects have identical names or even when reachable objects have the same name?
-
-In similar note, consider diamond problem in modules. `struct X` is used by `module A` and `module B` yet none of them export it. Can module `B` use struct `X` generated by `A`? If yes, then suppose struct `X` is defined differently in `A` and `B` will it result in UB or a sensible compiler/linker error?
-## [10][Aliasing constructed shared_ptr as key of map or set](https://www.reddit.com/r/cpp/comments/fwz4av/aliasing_constructed_shared_ptr_as_key_of_map_or/)
-- url: https://www.nextptr.com/question/qa1355324734/aliasing-constructed-shared_ptr-as-key-of-map-or-set
----
-
-## [11][Making a STL-compatible hash map from scratch](https://www.reddit.com/r/cpp/comments/fwgco5/making_a_stlcompatible_hash_map_from_scratch/)
-- url: https://jguegant.github.io//jguegant.github.io/blogs/tech/dense-hash-map.html
----
-
-## [12][iris: Lightweight Component Model and Messaging Framework based on ØMQ](https://www.reddit.com/r/cpp/comments/fwk63r/iris_lightweight_component_model_and_messaging/)
-- url: https://github.com/p-ranav/iris
 ---
 

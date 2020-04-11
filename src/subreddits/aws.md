@@ -1,131 +1,81 @@
 # aws
-## [1][dynoexpr - expression builder for AWS.DynamoDB.DocumentClient](https://www.reddit.com/r/aws/comments/fye6vp/dynoexpr_expression_builder_for/)
-- url: https://github.com/tuplo/dynoexpr
+## [1][The new AWS calculator is terrible.](https://www.reddit.com/r/aws/comments/fyvifi/the_new_aws_calculator_is_terrible/)
+- url: https://www.reddit.com/r/aws/comments/fyvifi/the_new_aws_calculator_is_terrible/
+---
+Am I the only one that hates the new AWS calculator, [calculator.aws](https://calculator.aws)? I don't need a wizard to hold my hand through getting pricing. I need something simple, like the already existing simply monthly calculator. Now I see that the simple monthly calculator is going away on June 30, 2020, and we have to start using calculator.aws? Say it ain't so.
+## [2][Service Meshes: An Introduction for Infrastructure/DevOps Teams (AWS App Mesh)](https://www.reddit.com/r/aws/comments/fyu1lb/service_meshes_an_introduction_for/)
+- url: https://www.singlestoneconsulting.com/blog/what-are-service-meshes/
 ---
 
-## [2][Has anyone noticed issues with Aurora MySQL 5.7?](https://www.reddit.com/r/aws/comments/fya7sh/has_anyone_noticed_issues_with_aurora_mysql_57/)
-- url: https://www.reddit.com/r/aws/comments/fya7sh/has_anyone_noticed_issues_with_aurora_mysql_57/
+## [3][Test/Dev and Prod environments](https://www.reddit.com/r/aws/comments/fyxk54/testdev_and_prod_environments/)
+- url: https://www.reddit.com/r/aws/comments/fyxk54/testdev_and_prod_environments/
 ---
-We run Aurora MySQL 5.7 (latest version) in production. We currently run MySQL 5.7 (not Aurora) in staging, but I'm working on changing that.
+I have been tasked with setting up test/dev and production environments in AWS. I'm curious how you would approach this. 
 
-We've been running it for two years, and its been overall pretty good. However, recently (last 6 months), we've had a couple issues pop up:
+My initial instinct is to create two separate VPCs with different private subnets. I've read a couple of other posts where people separate the accounts. I can see where this comes into play for IAM among other things. I believe IAM is account specific so going with two VPC's i'd have to have to take that into account for groups, etc. 
 
-1. `Error Code: 2013. Lost connection to MySQL server during query`
-   1. When RDS did the SSL certificate switchover in March, around the exact same time they swapped the certs, we had a bunch of MySQL error 2013s pop up. It was on very specific queries (not widespread), and even *more* specifically, certain values in queries. Sometimes a specific operation would fail (and always fail), other operations with different arguments would pass. Reads &amp; writes both.
-   2. Recently, I have been trying to get an app running in Docker, and on boot, it tries to load a table from information schema and *every single time* it would result in a Lost connection. I restarted the Aurora cluster and it started working again.
-2. Queries that hang every time.
-   1. In a similar vein to the first Lost connection issue, I have queries that, when run with specific arguments, hang and never finish.
-   2. But only in Docker, and only when talking to Aurora. Weird.
-
-Anyone else having these experiences?
-## [3][Subreddit subscribers: AWS vs Azure vs GCP](https://www.reddit.com/r/aws/comments/fxrkt2/subreddit_subscribers_aws_vs_azure_vs_gcp/)
-- url: https://i.redd.it/ohx3vdrbdsr41.png
+Any input and suggestions are welcome!
+## [4][New to making a server, need guidance/advice](https://www.reddit.com/r/aws/comments/fz52jt/new_to_making_a_server_need_guidanceadvice/)
+- url: https://www.reddit.com/r/aws/comments/fz52jt/new_to_making_a_server_need_guidanceadvice/
 ---
+Hi, I am new to making server/backend with aws. 
 
-## [4][CloudFront + API Gateway: Error 403 - Bad request](https://www.reddit.com/r/aws/comments/fyfwt7/cloudfront_api_gateway_error_403_bad_request/)
-- url: https://www.reddit.com/r/aws/comments/fyfwt7/cloudfront_api_gateway_error_403_bad_request/
----
-Hello everyone,
+Currently I have a setup where clients can communicate to our server via grpc and we have a python3 backend using boto3. 
 
-I'm currently facing an issue I can't solve, and I'm admitting it's getting out of my current knowledge of AWS so I'm asking the crowd to see if anyone can help me figure out what I'm doing wrong.
+The concern we have is that it seems like we are adding another layer that only seems to create an overhead between our clients and the server. For instance, if client wishes to authenticate itself, it would send its username and password via grpc to our python backend, and our boto3 would relay that information to cognito. Cognito tells the server whether user was authenticated with accessToken, and the server sends back exact same info to the client. 
 
-I'm trying to set up a CloudFront distribution in front of an API Gateway to allow HTTP requests to be done on the API. I'm \*not\* using Route53 nor any CNAME because the requests are done programmatically so the "naked" CF domaine name is perfectly serviceable. Here is [the cloudfront configuration](https://imgur.com/tP0TK8r). However, when I try to reach my endpoint xxxx.cloudfront.net/hello, I get the following error:
+This seems cumbersome and defeats the purpose of having an accessToken. The problem is that aws sdk does not support the language we wish to deploy to our clients, and this seems to be the only way to go about it. Even if our client side language is in python, is it a good practice to have boto3 do the work on the server side like this? 
 
-&gt;403 ERROR  
-&gt;  
-&gt;The request could not be satisfied.  
-&gt;  
-&gt;Bad request. We can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later, or contact the app or website owner.  
-&gt;  
-&gt;If you provide content to customers through CloudFront, you can find steps to troubleshoot and help prevent this error by reviewing the CloudFront documentation.  
-&gt;  
-&gt;Generated by cloudfront (CloudFront)
+Thanks in advance.
 
-What I know/done so far:
-
-* I tested out my API Gateway with a call directly on its URL. Everything works perfectly from this point onward. It means the problem is purely located in CF.
-* I've followed [this article](https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cloudfront-bad-request-error/) instructions to be sure the distribution allows HTTP requests. I've tested sending a request in HTTPS also, I got the same result. So the problem doesn't seem to come from there.
-* I've checked CloudWatch and the request doesn't reach the API Gateway (no activity) so confirming again the problem is in CF.
-* I have a working CF distribution for another project (with a CNAME this time), so I compared the Origin &amp; Origin Groups for both and they're exactly the same.
-
-I'm at a loss here because my search results all talk about S3 requests, which is not my case, and/or problems with the CNAME configuration, which I don't use.
-
-Am I doing something inherently wrong here?
-## [5][Serverless Framework Components GA - Rapid Deployments, Real-time Logs &amp; More](https://www.reddit.com/r/aws/comments/fxxqe0/serverless_framework_components_ga_rapid/)
-- url: https://serverless.com/blog/serverless-components-ga/
+By the way, I'm not actually sure how JWT tokens work. Once the client has a hold of it, how does the client use it?
+## [5][27 DynamoDB Best Practices [Bite-sized Tips]](https://www.reddit.com/r/aws/comments/fyjdr2/27_dynamodb_best_practices_bitesized_tips/)
+- url: https://dynobase.dev/dynamodb-best-practices/
 ---
 
-## [6][Building an AMI with Ubuntu 18.04 and ubuntu-desktop results in an unreachable AWS instance?](https://www.reddit.com/r/aws/comments/fy70ye/building_an_ami_with_ubuntu_1804_and/)
-- url: https://askubuntu.com/questions/1225672/building-an-ami-with-ubuntu-18-04-and-ubuntu-desktop-results-in-an-unreachable-a
+## [6][S3 and Cloudfront web deployment - inconsistent rendering](https://www.reddit.com/r/aws/comments/fyqmvr/s3_and_cloudfront_web_deployment_inconsistent/)
+- url: https://www.reddit.com/r/aws/comments/fyqmvr/s3_and_cloudfront_web_deployment_inconsistent/
 ---
+I've deployed a React app using S3 and Cloudfront and the content being displayed is very inconsistent. For one, I changed the app favicon and page titles to reflect my brand and the current active page.
 
-## [7][Isn't there an outgoing webhook support for AWS Amplify Console ?](https://www.reddit.com/r/aws/comments/fy9asd/isnt_there_an_outgoing_webhook_support_for_aws/)
-- url: https://www.reddit.com/r/aws/comments/fy9asd/isnt_there_an_outgoing_webhook_support_for_aws/
+After building and deploying to S3, I open the app and it is still using the default React favicon and title (React App). Then, if I navigate to another page and reload, the correct favicon and page title are shown for every subsequent page I navigate to until I go back to Home and reload.
+
+This is the case with every new deployed feature (new components, css).
+
+If I understand correctly, bucket object changes take 24 to reflect in Cloudfront, but in that case, shouldn't everything still be as the default? It seems very strange to me that things are switching back and forth between different versions of the same file in S3.
+
+As far as I can tell, I'm supposed to be invalidating bucket files, or changing the Cache-Control header.
+## [7][Why does aws route table have no source but only destination?](https://www.reddit.com/r/aws/comments/fz1hfh/why_does_aws_route_table_have_no_source_but_only/)
+- url: https://www.reddit.com/r/aws/comments/fz1hfh/why_does_aws_route_table_have_no_source_but_only/
 ---
-I wanted to send notifications to Slack as soon as a build is triggered or when it's completed. But, looks like AWS Amplify Console only has email notifications. 
-This was really helpful when we used Netlify. 
-Does AWS have any plans to support this?
-## [8][Need help: Giving permissions for EC2 to S3. Access is still tied to user credentials, not EC2 credentials...](https://www.reddit.com/r/aws/comments/fxzanc/need_help_giving_permissions_for_ec2_to_s3_access/)
-- url: https://www.reddit.com/r/aws/comments/fxzanc/need_help_giving_permissions_for_ec2_to_s3_access/
+I'm trying to conceptually understand route tables and am a bit confused. When I create a route in a route table, I can only specify destination and target. Why not a source and target for inbound traffic?
+## [8][Get info about current VPC/subnet within lambda?](https://www.reddit.com/r/aws/comments/fyqgoj/get_info_about_current_vpcsubnet_within_lambda/)
+- url: https://www.reddit.com/r/aws/comments/fyqgoj/get_info_about_current_vpcsubnet_within_lambda/
 ---
-Hey all:  I need some help on something.  Either I am not understanding it or I am missing a step.
+Is there an easy way to determine the current VPC/subnet information from within a lambda function?
 
-I was under the impression that you can provide EC2 Instances access to S3 buckets, regardless of the roles of the user.
+I'd like to be able to have a simple function that does some information gathering for me. I can think of a few possible ways to do it, just wondering if anyone knows of anything natively direct.
 
-I have followed the guides for assigning a role to an EC2 instance to have access to an S3 bucket.  They all essentially have the same steps:
+1. Get current IP address
+2. Find and describe ENI with that IP
+3. Get info about subnet/vpc that ENI resides in
 
-\-Create a role with full S3 access
-
-\-Create an EC2 Instance
-
-\-Give that EC2 Instance the role with the full S3 access
-
- [https://cloud-gc.readthedocs.io/en/latest/chapter03\_advanced-tutorial/iam-role.html](https://cloud-gc.readthedocs.io/en/latest/chapter03_advanced-tutorial/iam-role.html) 
-
- [https://www.youtube.com/watch?v=NHAuCWIHevk&amp;t=291s](https://www.youtube.com/watch?v=NHAuCWIHevk&amp;t=291s) 
-
-**Here is the problem:**
-
-\-I use SSH to connect to the EC2 instance.  
-
-\-I run "aws s3 ls" to read the S3.
-
-\**If I have my console configured as an Admin, I can see the files.*
-
-\**If I have my console logged in as a user with no S3 rights*, I cannot see the files (An error occurred (AccessDenied) when calling the ListBuckets operation: Access Denied)
-
-It appears that the S3 access is not tied to the EC2, but rather the user.  I thought that I should be able to log in as a normal user with no S3 access, and EC2 could still access S3.  Is that incorrect?
-## [9][Oracle Database on AWS?](https://www.reddit.com/r/aws/comments/fxzkv8/oracle_database_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/fxzkv8/oracle_database_on_aws/
+Thanks
+## [9][AWS IPv6 traffic routing through vps](https://www.reddit.com/r/aws/comments/fz0mas/aws_ipv6_traffic_routing_through_vps/)
+- url: https://www.reddit.com/r/aws/comments/fz0mas/aws_ipv6_traffic_routing_through_vps/
 ---
-New to aws. I am just learning at home. I have built an oracle database on a local machine, now I want to move this to aws.
-What kind of service/file system I should choose for..
-Datafiles, archive log files, redolog files, dB logs, control files etc.. I would like to test and choose like you are choosing an enterprise grade platform.
-## [10][Private subnet communication](https://www.reddit.com/r/aws/comments/fxz1dk/private_subnet_communication/)
-- url: https://www.reddit.com/r/aws/comments/fxz1dk/private_subnet_communication/
+I am wanting to use a VPS firewall to manage IPv6 traffic from AWS LAN to the internet. You can do this in IPv4 using nat.
+
+How could this be done using IPv6? If i set a default ipv6 route to point at a VPS instance, how would I get the VPS firewall instance to then onforward that to the internet and vice versa?
+## [10][Lightsail : how to auto-renew SSL certificate ?](https://www.reddit.com/r/aws/comments/fys545/lightsail_how_to_autorenew_ssl_certificate/)
+- url: https://www.reddit.com/r/aws/comments/fys545/lightsail_how_to_autorenew_ssl_certificate/
 ---
-Hello,
+Referring to this piece of documentation:  [https://lightsail.aws.amazon.com/ls/docs/en\_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-wordpress](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-wordpress)
 
-First day testing AWS and hoping someone can clear this up for me as I cant see anything online for this so must be barking up the wrong tree somewhere..
+I do not need a Load Balancer, and thus don't want to pay for one.
 
-Basically I have two Linux EC2 instances both on different subnets
+How do I get the SSL certificate to automatically renew itself ? I do not want to have to SSH every 2 months to repeat all these steps...
 
-VPC 192.168.0.0/16
+\`certbot renew\` apparently does the trick. But when I run it, it says that the certificate isn't yet set to expire. This leads me to think that it's a simple command that I'll have to run every 2 months, rather than a command which takes care of running the appropriate set of commands automatically every 2 months.
 
-subnet a: [192.168.10.0/24](https://192.168.10.0/24)
-
-subnet b: [192.168.20.0/24](https://192.168.20.0/24)
-
-one vm in each subnet
-
-I have configured my routing tables to have [192.168.0.0/16](https://192.168.0.0/16) to destination local
-
-[0.0.0.0/0](https://0.0.0.0/0) to igw (reading online that this makes my private subnet a public subnet now?)
-
-I am struggling to get vm a in [192.168.10.0/24](https://192.168.10.0/24) to ping vm b in [192.168.20.0/24](https://192.168.20.0/24)
-
-firewall turned off on the vms and they can both get out to the internet.
-
-my ACL and Security groups are set to allow all.
-
-Can someone clear up what im doing wrong here?
+**How do I get this process automatized ?**

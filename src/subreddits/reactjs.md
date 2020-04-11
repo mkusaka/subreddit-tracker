@@ -84,172 +84,256 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][How to get these animations working in react js? Is there a library that i can use or can it be done using plain css?](https://www.reddit.com/r/reactjs/comments/fydnl9/how_to_get_these_animations_working_in_react_js/)
-- url: https://v.redd.it/678gklfmzyr41
+## [3][Dark Mode w/ Custom React Hooks using Local Storage](https://www.reddit.com/r/reactjs/comments/fyrgy7/dark_mode_w_custom_react_hooks_using_local_storage/)
+- url: https://youtu.be/BAf0uhKVHBk
 ---
 
-## [4][Build a Google Chrome Extension Using React (Full Project Download)](https://www.reddit.com/r/reactjs/comments/fydd37/build_a_google_chrome_extension_using_react_full/)
+## [4][From React to React Native](https://www.reddit.com/r/reactjs/comments/fyzrz6/from_react_to_react_native/)
+- url: https://www.reddit.com/r/reactjs/comments/fyzrz6/from_react_to_react_native/
+---
+Im working with react for a while and built some projects. Now i need to learn react native. Should I start from zero ? Can you give me some advices ?
+## [5][Build a Google Chrome Extension Using React (Full Project Download)](https://www.reddit.com/r/reactjs/comments/fydd37/build_a_google_chrome_extension_using_react_full/)
 - url: https://www.youtube.com/watch?v=4x0lQu1TOCQ
 ---
 
-## [5][react-see-through - Draw attention to specific components on your page](https://www.reddit.com/r/reactjs/comments/fxxpfd/reactseethrough_draw_attention_to_specific/)
-- url: https://www.reddit.com/r/reactjs/comments/fxxpfd/reactseethrough_draw_attention_to_specific/
----
-Hi r/reactjs this is my first post on here.
-
-&amp;nbsp;
-
-I built a React component [(link: react-see-through)](https://github.com/andrew4699/react-see-through) that lets you mask unimportant elements on your page. **This could be useful for a tutorial where you want users to focus on particular parts of your page.**
-
-&amp;nbsp;
-
-A lot of work went into making sure **this could be plugged anywhere into a big project and just work and not break layouts**. I was able to swap this in at random places in one of my big projects and had it work just fine. There's a picture of that at the top of the README. There are also [examples available here.](https://andrew4699.github.io/react-see-through/#basic-usage)
-
-&amp;nbsp;
-
-This is my first sizeable open-source project and **I would love feedback** on anything from feature requests to even code quality. Enjoy!
-## [6][Feedback Request: CSS Grid Intro (in React)](https://www.reddit.com/r/reactjs/comments/fy5rw5/feedback_request_css_grid_intro_in_react/)
-- url: https://www.youtube.com/watch?v=sA_glquejwE
+## [6][How to get these animations working in react js? Is there a library that i can use or can it be done using plain css?](https://www.reddit.com/r/reactjs/comments/fydnl9/how_to_get_these_animations_working_in_react_js/)
+- url: https://v.redd.it/678gklfmzyr41
 ---
 
-## [7][Failed to get remote.origin.url (task must either be run in a git repository with a configured origin remote or must be configured with the "repo" option).](https://www.reddit.com/r/reactjs/comments/fyehha/failed_to_get_remoteoriginurl_task_must_either_be/)
-- url: https://www.reddit.com/r/reactjs/comments/fyehha/failed_to_get_remoteoriginurl_task_must_either_be/
+## [7][Switch Button using hooks in react JS to display different content](https://www.reddit.com/r/reactjs/comments/fz5424/switch_button_using_hooks_in_react_js_to_display/)
+- url: https://www.reddit.com/r/reactjs/comments/fz5424/switch_button_using_hooks_in_react_js_to_display/
 ---
+Hi, I'm trying to create a switch button that can display 2 different contents depending on which of the 2 buttons I click on using the hooks in react js.   
 
 
-i was trying to deploy my react app to github pages. I have issues like that :
+I would like to display for example a sentence "You have clicked on the left button" when I click on the left one and the opposite when I click on the right one.   
 
-Failed to get remote.origin.url (task must either be run in a git repository with a configured origin remote or must be configured with the "repo" option).
 
-npm ERR! code ELIFECYCLE npm ERR! errno 1 npm ERR! react_app@0.1.0 deploy: gh-pages -d build — repo https://baranacikgoz.github.io/Employee-Management-App npm ERR! Exit status 1 npm ERR! npm ERR! Failed at the react_app@0.1.0 deploy script. npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+ I would like the content to be displayed just below the switch buttons.  
 
-npm ERR! A complete log of this run can be found in: npm ERR! /root/.npm/_logs/2020-04-10T11_21_26_577Z-debug.log
+&amp;#x200B;
 
-Here is my git remote -v output:
+In addition, I would like my button to remain active when I clicked on it. That is to say, it should be of a darker color since it is active.  Do you have an idea?  You can see the code below  
 
-    Employee-Management-App https://github.com/baranacikgoz/Employee-Management-App.git (fetch)
-Employee-Management-App https://github.com/baranacikgoz/Employee-Management-App.git (push)
 
-And Here is my package.json file :
+**import** React,{*useState*} **from 'react'**;  
+**import** {Button} **from "react-bootstrap"**;  
+**import** {*FontAwesomeIcon*} **from "@fortawesome/react-fontawesome"**;  
+**import** {faBars, faChartLine} **from "@fortawesome/free-solid-svg-icons"**;  
+**import** *CustomerTable* **from "../CustomerTable/CustomerTable"**;  
 
-    "name": "react_app",
-  "homepage": "https://baranacikgoz.github.io/Employee-Management-App",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.0",
-    "react-dom": "^16.13.1",
-    "react-pose": "^4.0.10",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "reactjs-popup": "^1.5.0",
-    "uniqid": "^5.2.0"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy" : "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
 
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      "&gt;0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.2.0"
-  }
+**export default function** *HookButtonSwitch*(props) {  
+ **const** \[state, setState\] = *useState*(**false**); */\*Initialisé à false par défaut\*/*  
+ **const** \[stateTest, setStateTest\] = *useState*(**false**);  
+
+
+**const** *handleEventSwitchButton* = event =&gt; {  
+
+
+**let** resultatContenu;  
+ **switch**(event.**target**.**id**) {  
+ **case 'stats'**:  
+ ***console***.log(**"Coucou Stats"**);  
+ resultatContenu = **'Stats'**;  
+ **break**;  
+ **case 'list'**:  
+ ***console***.log(**"Coucou List"**);  
+ resultatContenu = **'LIST'**;  
+ **break**;  
+}  
+ setStateTest(resultatContenu);  
+};  
+
+
+**const** *toggle* = () =&gt; setState(!state);  
+
+
+**const** *handleEventList* = event =&gt; {  
+
+
+**let** resultatTestContenu;  
+
+
+***console***.log(**"Coucou List"**);  
+
+
+resultatTestContenu = **'&lt;p&gt;LIST&lt;/p&gt;'**;  
+
+
+setStateTest(resultatTestContenu);  
+};  
+
+
+**const** *handleEventGraphique* = event =&gt; {  
+
+
+**let** resultatTestContenu;  
+
+
+***console***.log(**"Coucou Graphique"**);  
+
+
+resultatTestContenu = **'&lt;p&gt;Graphique&lt;/p&gt;'**;  
+
+
+setStateTest(resultatTestContenu);  
+
+
+   };  
+
+
+**return** (  
+ &lt;**div**\&gt;  
+
+
+&lt;**br** /&gt;  
+
+
+&lt;**Button**  
+ **id="list"**  
+ **variant="light"**  
+ **className="border-radius-left"**  
+ **onClick=**{*handleEventSwitchButton*}  
+\&gt;  
+ &lt;**FontAwesomeIcon icon=**{faBars} /&gt;  
+ &lt;/**Button**\&gt;  
+
+
+&lt;**Button**  
+ **id="stats"**  
+ **variant="light"**  
+ **className="border-radius-right"**  
+ **onClick=**{*handleEventSwitchButton*}  
+\&gt;  
+ &lt;**FontAwesomeIcon icon=**{faChartLine} /&gt;  
+ &lt;/**Button**\&gt;  
+
+
+&lt;**div**\&gt; {resultatContenu} &lt;/**div**\&gt;  
+
+
+&lt;**p**\&gt;-------&lt;/**p**\&gt;  
+
+
+&lt;**div onClick=**{*toggle*}&gt;  
+ &lt;**div className="toggle"**\&gt;  
+{*/\*{state ? &lt;p&gt;Yes! 👍  &lt;/p&gt; : &lt;p&gt;No! 👎&lt;/p&gt;}\*/*}  
+
+
+{state ? &lt;**div**\&gt;  
+
+
+&lt;**Button**  
+ **id="list"**  
+ **variant="light"**  
+ **className="border-radius-left"**  
+ **onClick=**{*handleEventList*}  
+\&gt;  
+ &lt;**FontAwesomeIcon icon=**{faBars} /&gt;  
+ &lt;/**Button**\&gt;  
+
+
+{*/\*&lt;Button*  
+*id="stats"*  
+*variant="secondary"*  
+*className="border-radius-right"*  
+*onClick={handleEventGraphique}*  
+*&gt;*  
+*&lt;FontAwesomeIcon icon={faChartLine} /&gt;*  
+*&lt;/Button&gt;*  
+*\*/*}  
+
+
+&lt;/**div**\&gt;  
+
+
+:  
+
+
+&lt;**div**\&gt;  
+
+
+{*/\*&lt;Button*  
+*id="list"*  
+*variant="secondary"*  
+*className="border-radius-left"*  
+*onClick={handleEventList}*  
+*&gt;*  
+*&lt;FontAwesomeIcon icon={faBars} /&gt;*  
+*&lt;/Button&gt;*  
+*\*/*}  
+
+
+&lt;**Button**  
+ **id="stats"**  
+ **variant="light"**  
+ **className="border-radius-right"**  
+ **onClick=**{*handleEventGraphique*}  
+\&gt;  
+ &lt;**FontAwesomeIcon icon=**{faChartLine} /&gt;  
+ &lt;/**Button**\&gt;  
+
+
+&lt;/**div**\&gt;}  
+ &lt;/**div**\&gt;  
+ &lt;/**div**\&gt;  
+
+
+{*/\**  
+*&lt;p&gt;-------&lt;/p&gt;*  
+*&lt;Button*  
+*id="list"*  
+*variant="light"*  
+*className="border-radius-left"*  
+*onClick={handleEventData}*  
+*&gt;*  
+*&lt;FontAwesomeIcon icon={faBars} /&gt;*  
+*&lt;/Button&gt;*  
+*&lt;Button*  
+*id="stats"*  
+*variant="light"*  
+*className="border-radius-right"*  
+*onClick={handleEventData}*  
+*&gt;*  
+*&lt;FontAwesomeIcon icon={faChartLine} /&gt;*  
+*&lt;/Button&gt;*  
+*&lt;div&gt; {stateTest} &lt;/div&gt;*  
+*\*/*}  
+
+
+&lt;/**div**\&gt;  
+)  
 }
-
-Finally here is errors log:
-
-    0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'run', 'deploy' ]
-2 info using npm@6.14.4
-3 info using node@v10.17.0
-4 verbose run-script [ 'predeploy', 'deploy', 'postdeploy' ]
-5 info lifecycle react_app@0.1.0~predeploy: react_app@0.1.0
-6 verbose lifecycle react_app@0.1.0~predeploy: unsafe-perm in lifecycle true
-7 verbose lifecycle react_app@0.1.0~predeploy: PATH: /usr/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/baran/Software/Completed Works/Employee-Management-App/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-8 verbose lifecycle react_app@0.1.0~predeploy: CWD: /home/baran/Software/Completed Works/Employee-Management-App
-9 silly lifecycle react_app@0.1.0~predeploy: Args: [ '-c', 'npm run build' ]
-10 silly lifecycle react_app@0.1.0~predeploy: Returned: code: 0  signal: null
-11 info lifecycle react_app@0.1.0~deploy: react_app@0.1.0
-12 verbose lifecycle react_app@0.1.0~deploy: unsafe-perm in lifecycle true
-13 verbose lifecycle react_app@0.1.0~deploy: PATH: /usr/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/baran/Software/Completed Works/Employee-Management-App/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-14 verbose lifecycle react_app@0.1.0~deploy: CWD: /home/baran/Software/Completed Works/Employee-Management-App
-15 silly lifecycle react_app@0.1.0~deploy: Args: [ '-c', 'gh-pages -d build' ]
-16 silly lifecycle react_app@0.1.0~deploy: Returned: code: 1  signal: null
-17 info lifecycle react_app@0.1.0~deploy: Failed to exec deploy script
-18 verbose stack Error: react_app@0.1.0 deploy: `gh-pages -d build`
-18 verbose stack Exit status 1
-18 verbose stack     at EventEmitter.&lt;anonymous&gt; (/usr/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
-18 verbose stack     at EventEmitter.emit (events.js:198:13)
-18 verbose stack     at ChildProcess.&lt;anonymous&gt; (/usr/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
-18 verbose stack     at ChildProcess.emit (events.js:198:13)
-18 verbose stack     at maybeClose (internal/child_process.js:982:16)
-18 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:259:5)
-19 verbose pkgid react_app@0.1.0
-20 verbose cwd /home/baran/Software/Completed Works/Employee-Management-App
-21 verbose Linux 5.4.0-4parrot1-amd64
-22 verbose argv "/usr/bin/node" "/usr/bin/npm" "run" "deploy"
-23 verbose node v10.17.0
-24 verbose npm  v6.14.4
-25 error code ELIFECYCLE
-26 error errno 1
-27 error react_app@0.1.0 deploy: `gh-pages -d build`
-27 error Exit status 1
-28 error Failed at the react_app@0.1.0 deploy script.
-28 error This is probably not a problem with npm. There is likely additional logging output above.
-29 verbose exit [ 1, true ]
-## [8][How to explain difference of thinking between React and traditional OO language](https://www.reddit.com/r/reactjs/comments/fye9em/how_to_explain_difference_of_thinking_between/)
-- url: https://www.reddit.com/r/reactjs/comments/fye9em/how_to_explain_difference_of_thinking_between/
+## [8][Need some clarification on useReducer vs useState](https://www.reddit.com/r/reactjs/comments/fz531g/need_some_clarification_on_usereducer_vs_usestate/)
+- url: https://www.reddit.com/r/reactjs/comments/fz531g/need_some_clarification_on_usereducer_vs_usestate/
 ---
-TL;DR do you have good resources to help share the difference between traditional OO software development and modern React Applications?
-
-Background:
-
-The project is based on React+TypeScript.
-
-My coworkers  come from a C#, Java, etc. background. They are used to develop big traditional applications, with Object Oriented good practices, Types, Classes, etc. They often tend to take their Objet Oriented background here, so wanting to create Classes, Types in separate files, and they tend to "think" a lot in the classic OO way.
-
-On my side: I have less general dev experience than them (2years xp), but more in React/ JS/ TS. I can't say I'm officially the lead developer, but I did develop all the codebase for months before another dev (OO oriented) came along.
-
-I have the feeling and I know that things are not done 100% the same in Java/C# and React, I know that you cannot think the same. But I lack the experience and the skills to share it in a efficient and clear way. I would be really glad if anyone have good links, articles, ideas, to help share the difference between OO oriented traditional Java/C#/C++ applications, and the modern and changing React and JS way of thinking.
-## [9][A simple game to kill time](https://www.reddit.com/r/reactjs/comments/fxrvha/a_simple_game_to_kill_time/)
-- url: https://sttronn.github.io/8-TILES/
+Most of the resources I have used state that the major advantage of useReducer is that it groups similar state logic changes into one. But what I can theorize is that useReducer can also help in avoiding rerenders for example: if a component uses data from 3 different state variables and we stack 3 continous setState calls then the final result will be visible after 3 rerenders but if we group all 3 state into one and use useReducer then changes will be applied after just one rerender. Am I correct to think this or its wrong?
+## [9][send JSON array as a POST](https://www.reddit.com/r/reactjs/comments/fz5313/send_json_array_as_a_post/)
+- url: https://www.reddit.com/r/reactjs/comments/fz5313/send_json_array_as_a_post/
 ---
-
-## [10][Basic UI framework to build upon?](https://www.reddit.com/r/reactjs/comments/fyf71j/basic_ui_framework_to_build_upon/)
-- url: https://www.reddit.com/r/reactjs/comments/fyf71j/basic_ui_framework_to_build_upon/
+Hi, how do I send I JSON array as a post request in javascript? When I console.log the value I get \[object, object\]
+## [10][I made rock, paper, scissors game using react.js hooks](https://www.reddit.com/r/reactjs/comments/fyxfqb/i_made_rock_paper_scissors_game_using_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/fyxfqb/i_made_rock_paper_scissors_game_using_reactjs/
 ---
-Is there a basic UI framework that I can build my custom look on? Basically I'm looking for a library that already has the most components like datatables, date pickers etc. built-in but requires me to style it to fit the company brand identity?
-
-Or would it be more beneficial to re-style an existing library like Bootstrap?
-## [11][JSCasts ep16 - AdminBro Startup - setup admin panel in Node.js from scratch](https://www.reddit.com/r/reactjs/comments/fyeopu/jscasts_ep16_adminbro_startup_setup_admin_panel/)
-- url: https://www.youtube.com/watch?v=n0IuXnL_cWs
+Link for the app: [https://rockpaperscisor.netlify.com/](https://rockpaperscisor.netlify.com/)  
+Source code of the project: [https://github.com/codeclassifiers/rockpaperscissors](https://github.com/codeclassifiers/rockpaperscissors)  
+Preview: [https://youtu.be/lQJLk\_gQJ9c](https://youtu.be/lQJLk_gQJ9c)
+## [11][SVG Splash. A React/Electron SVG colouring/painting app.](https://www.reddit.com/r/reactjs/comments/fz3nkl/svg_splash_a_reactelectron_svg_colouringpainting/)
+- url: https://www.reddit.com/r/reactjs/comments/fz3nkl/svg_splash_a_reactelectron_svg_colouringpainting/
 ---
+A macOS app I've built this over the last day. Pretty minimalistic. Keen to get people's thoughts/feedback before potentially putting on the app store!
 
-## [12][Static Site Generation (SSG) in Next.js 9.3](https://www.reddit.com/r/reactjs/comments/fydvp4/static_site_generation_ssg_in_nextjs_93/)
-- url: https://www.youtube.com/watch?v=MxlmfI9IxVs&amp;feature=share
+[www.alexgurr.com/svgsplash.html](http://www.alexgurr.com/svgsplash.html)
+## [12][Have anyone use Syncfusion with React and Redux and can share your thoughts?](https://www.reddit.com/r/reactjs/comments/fz3jzu/have_anyone_use_syncfusion_with_react_and_redux/)
+- url: https://www.reddit.com/r/reactjs/comments/fz3jzu/have_anyone_use_syncfusion_with_react_and_redux/
 ---
+I will really appreciate if you can share your stories about:
 
+1. How was your experience with this stack?
+2. Will you use it again? why / why not
+3. Do you know any open source project build with this stack? Can you share a link?
+4. What are the best parts of using it?
+5. Any good tutorials or instructions?
+
+Thank you very much!

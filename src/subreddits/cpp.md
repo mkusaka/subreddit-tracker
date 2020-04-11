@@ -119,66 +119,51 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Qt and Open Source (Qt company declaration)](https://www.reddit.com/r/cpp/comments/fyamc6/qt_and_open_source_qt_company_declaration/)
+## [3][Modern CMake tutorials, part2: Customization points](https://www.reddit.com/r/cpp/comments/fyoy4l/modern_cmake_tutorials_part2_customization_points/)
+- url: https://www.siliceum.com/en/blog/post/cmake_02_customization-points
+---
+
+## [4][I Accidentaly Wrote A Compile Time Executable State Machine • memdump](https://www.reddit.com/r/cpp/comments/fyibob/i_accidentaly_wrote_a_compile_time_executable/)
+- url: https://philippegroarke.com/posts/2020/constexpr_fsm/
+---
+
+## [5][Qt and Open Source (Qt company declaration)](https://www.reddit.com/r/cpp/comments/fyamc6/qt_and_open_source_qt_company_declaration/)
 - url: https://www.qt.io/blog/qt-and-open-source
 ---
 
-## [4][CLion dev team will host an AMA on may 7](https://www.reddit.com/r/cpp/comments/fxzrxp/clion_dev_team_will_host_an_ama_on_may_7/)
+## [6][I want to get started with C++ during the pandemic. What are some of the best free tutorials out there?](https://www.reddit.com/r/cpp/comments/fz1xh3/i_want_to_get_started_with_c_during_the_pandemic/)
+- url: https://www.reddit.com/r/cpp/comments/fz1xh3/i_want_to_get_started_with_c_during_the_pandemic/
+---
+
+## [7][Programming challenges](https://www.reddit.com/r/cpp/comments/fz12td/programming_challenges/)
+- url: https://www.reddit.com/r/cpp/comments/fz12td/programming_challenges/
+---
+I was thinking of some new projects to work on. I have over 10yrs of programming experience in various languages.
+
+I was wondering whether people are interested in using coding challenges apps? The idea would be to show short cryptic snippets (from easy to hard of course) and let people figure out the answer.
+
+It's mobile friendly since it requires only code reading, interpretation, logic and math.
+
+It might be useful to both novice as advanced programmers. But also people who want to start programming by learning logical thinking.
+## [8][CLion dev team will host an AMA on may 7](https://www.reddit.com/r/cpp/comments/fxzrxp/clion_dev_team_will_host_an_ama_on_may_7/)
 - url: https://blog.jetbrains.com/clion/2020/04/live-webinar-clion-ama/
 ---
 
-## [5][How I installed FLTK for use with Visual C++. FLTK is a library for windows and graphics used in Bjarne Stroustrup’s “Programming: Principles and Practice Using C++”.](https://www.reddit.com/r/cpp/comments/fy5cgj/how_i_installed_fltk_for_use_with_visual_c_fltk/)
+## [9][C++ equivalent to wasm-pack?](https://www.reddit.com/r/cpp/comments/fyi8u0/c_equivalent_to_wasmpack/)
+- url: https://www.reddit.com/r/cpp/comments/fyi8u0/c_equivalent_to_wasmpack/
+---
+I am aware of Rust and wasm-pack, and Emscripten for compiling C++ to webassembly. Is there any progress or proposals towards "native" webassembly tooling for C++?
+## [10][CppCast: Making Nu Languages](https://www.reddit.com/r/cpp/comments/fy87r5/cppcast_making_nu_languages/)
+- url: https://cppcast.com/nu-programming-languages-jonathan-turner/
+---
+
+## [11][How I installed FLTK for use with Visual C++. FLTK is a library for windows and graphics used in Bjarne Stroustrup’s “Programming: Principles and Practice Using C++”.](https://www.reddit.com/r/cpp/comments/fy5cgj/how_i_installed_fltk_for_use_with_visual_c_fltk/)
 - url: https://alf-p-steinbach.github.io/Install-FLTK-for-use-with-Visual-C-/
 ---
 
-## [6][Dynamic Dispatch vs. Late Binding](https://www.reddit.com/r/cpp/comments/fxvh4d/dynamic_dispatch_vs_late_binding/)
-- url: https://www.reddit.com/r/cpp/comments/fxvh4d/dynamic_dispatch_vs_late_binding/
----
-[The wikipedia page for Dynamic Dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch) says 
-
-&gt;Since C++ does not support late binding, the virtual table in a C++  object cannot be modified at run-time, which limits the potential set of  dispatch targets to a finite set chosen at compile time.
-
-However the [Late Binding](https://en.wikipedia.org/wiki/Late_binding#Late_binding_in_C++) page says
-
-&gt;In C++, late binding (also called "dynamic binding") refers to what normally happens when the virtual keyword is used in a method's declaration.
-
-I'm *somewhat* confused by this discrepancy. What is the difference between dynamic dispatch and late binding and does C++ support late binding?
-## [7][Event loop ingredients for elaboration](https://www.reddit.com/r/cpp/comments/fye6ru/event_loop_ingredients_for_elaboration/)
-- url: https://www.reddit.com/r/cpp/comments/fye6ru/event_loop_ingredients_for_elaboration/
----
-I would like to share my point of view about event loops.  
-[Ingredients and test concept code](https://github.com/z-ninja/nwOS/blob/z-ninja-bug/main.cpp)
-
-And would be very happy to elaborate about the code with anyone who is interesting to review/learn the concept from my point of view and give opinion/question about to push the concept and skill event further.
-## [8][Visual Studio "Just my code"](https://www.reddit.com/r/cpp/comments/fydbof/visual_studio_just_my_code/)
-- url: https://www.reddit.com/r/cpp/comments/fydbof/visual_studio_just_my_code/
----
-Checked the box and notice no difference? Still stepping into all of standard library headers. All i want is to step into std::visit and end up in my predicate and not into visit.h. That is to much to ask.
-
-Can someone explain where is the documentation for this uber-complicated checkbox?
-## [9][Making VisualStudio less clunky for text editing](https://www.reddit.com/r/cpp/comments/fy9szi/making_visualstudio_less_clunky_for_text_editing/)
+## [12][Making VisualStudio less clunky for text editing](https://www.reddit.com/r/cpp/comments/fy9szi/making_visualstudio_less_clunky_for_text_editing/)
 - url: https://www.reddit.com/r/cpp/comments/fy9szi/making_visualstudio_less_clunky_for_text_editing/
 ---
 I've been using VS because it'd rock solid IDE for C++ and using VSCode for everything else. I just hate the clunkyness of VS compared to VSCode for text editing. All the text shortcuts are different, no fuzzy search, everytime I hunt where I left writing the code because IDE keeps opening internal libraries and then I have to hunt the file I've been editing prior...   
 Are there any good plugins to overcome my hurdles and make it more like VSCode in that regard?  
 For a while now I've been writing code in VSCode and compiling in VS but that's an additional step I would like to skip.
-## [10][CppCast: Making Nu Languages](https://www.reddit.com/r/cpp/comments/fy87r5/cppcast_making_nu_languages/)
-- url: https://cppcast.com/nu-programming-languages-jonathan-turner/
----
-
-## [11][Destructible move emulation](https://www.reddit.com/r/cpp/comments/fxt2xp/destructible_move_emulation/)
-- url: https://www.reddit.com/r/cpp/comments/fxt2xp/destructible_move_emulation/
----
-\*edit: Title should be "destructive move emulation" ;\]
-
-Random idea I wanted to share.I was thinking about a way to tell the compiler that lifetime of some object started or ended without generating any instructions, because there are cases where programmer might know better.
-
-I prepared two examples in one I create object s, then allocate some memory, pass object to function that compiler can know nothing about and in one of cases, explicitly say that object should be considered destroyed.
-
-This results in omitting call to delete in the second case.
-
-[https://godbolt.org/z/3zBhh-](https://godbolt.org/z/3zBhh-)
-## [12][Qt, Open Source and corona](https://www.reddit.com/r/cpp/comments/fxbo24/qt_open_source_and_corona/)
-- url: https://mail.kde.org/pipermail/kde-community/2020q2/006098.html
----
-

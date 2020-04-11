@@ -79,51 +79,49 @@
 
 
 &amp;nbsp;
-## [2][WTF Wednesday (April 08, 2020)](https://www.reddit.com/r/javascript/comments/fx95dy/wtf_wednesday_april_08_2020/)
-- url: https://www.reddit.com/r/javascript/comments/fx95dy/wtf_wednesday_april_08_2020/
+## [2][Showoff Saturday (April 11, 2020)](https://www.reddit.com/r/javascript/comments/fz3g6w/showoff_saturday_april_11_2020/)
+- url: https://www.reddit.com/r/javascript/comments/fz3g6w/showoff_saturday_april_11_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Vime - media player library that gives you complete control. The final bundle is Vanilla JS (compiled with Svelte).](https://www.reddit.com/r/javascript/comments/fy8spw/vime_media_player_library_that_gives_you_complete/)
+Show us here!
+## [3][🚀 I made a peer-to-peer video calling website to call my friends during the pandemic!](https://www.reddit.com/r/javascript/comments/fyiay3/i_made_a_peertopeer_video_calling_website_to_call/)
+- url: https://zipcall.io
+---
+
+## [4][multicopy - VS Code extension to copy and paste multiple snippets of code in your workspace.](https://www.reddit.com/r/javascript/comments/fz0zzu/multicopy_vs_code_extension_to_copy_and_paste/)
+- url: https://github.com/adoi/multicopy
+---
+
+## [5][Covid-19 timeline prediction with Gaussian curve](https://www.reddit.com/r/javascript/comments/fz2xk2/covid19_timeline_prediction_with_gaussian_curve/)
+- url: https://covid-gauss.site
+---
+
+## [6][Built a social media app for journalling/sharing knowledge - seeking feedback 🙂](https://www.reddit.com/r/javascript/comments/fz08wt/built_a_social_media_app_for_journallingsharing/)
+- url: https://www.nuggtsofwisdom.com/
+---
+
+## [7][Shortest path between two points with unweighted edges problem with JS](https://www.reddit.com/r/javascript/comments/fz0nql/shortest_path_between_two_points_with_unweighted/)
+- url: https://github.com/ianwoo/weiho/blob/master/src/App.js
+---
+
+## [8][SVG Splash. A beautiful Electron-based SVG painting macOS app.](https://www.reddit.com/r/javascript/comments/fz4zzb/svg_splash_a_beautiful_electronbased_svg_painting/)
+- url: http://www.alexgurr.com/svgsplash.html
+---
+
+## [9][Vime - media player library that gives you complete control. The final bundle is Vanilla JS (compiled with Svelte).](https://www.reddit.com/r/javascript/comments/fy8spw/vime_media_player_library_that_gives_you_complete/)
 - url: /r/sveltejs/comments/fy81ey/vime_media_player_library_built_with_svelte/
 ---
 
-## [4][REFLEX adds reactivity to build-in HTML elements](https://www.reddit.com/r/javascript/comments/fyeij6/reflex_adds_reactivity_to_buildin_html_elements/)
-- url: https://github.com/raneio/reflex
+## [10][Chat example of hero transitions using react-motion-layout](https://www.reddit.com/r/javascript/comments/fyqx0v/chat_example_of_hero_transitions_using/)
+- url: https://codesandbox.io/embed/chat-example-dyyy1?&amp;view=preview
 ---
 
-## [5][Created a Coronavirus Dashboard](https://www.reddit.com/r/javascript/comments/fyfeat/created_a_coronavirus_dashboard/)
-- url: https://n8python.github.io/covid19dashboard/
+## [11][Easier server-side rendering in JS (with template literals)](https://www.reddit.com/r/javascript/comments/fyom3l/easier_serverside_rendering_in_js_with_template/)
+- url: https://medium.com/@trevorlinton/easier-server-side-rendering-in-js-7cfd523de754
 ---
 
-## [6][10 security tips for frontend developers](https://www.reddit.com/r/javascript/comments/fxrlac/10_security_tips_for_frontend_developers/)
-- url: https://medium.com/@koss_lebedev/10-security-tips-for-frontend-developers-19e3dd9fb069
----
-
-## [7][How To Build Simple Node.js Rest APIs with Express, Sequelize &amp; MySQL](https://www.reddit.com/r/javascript/comments/fxpvpo/how_to_build_simple_nodejs_rest_apis_with_express/)
-- url: https://christosploutarchou.com/how-to-build-simple-node-js-rest-api/
----
-
-## [8][Getting into Performance Budgets - Explaining what you need to know to get started](https://www.reddit.com/r/javascript/comments/fyefdi/getting_into_performance_budgets_explaining_what/)
-- url: https://felixgerschau.com/getting-into-performance-budgets
----
-
-## [9][How to Build a Covid-19 Tracker Using Javascript](https://www.reddit.com/r/javascript/comments/fyfrpx/how_to_build_a_covid19_tracker_using_javascript/)
-- url: https://medium.com/@kennethscoggins/how-to-build-a-covid-19-tracker-using-javascript-379236e34b4?sk=5623622de637aadbdbd54399299fb199
----
-
-## [10][Dobble / Spot it! online Emoji card generator](https://www.reddit.com/r/javascript/comments/fyf88k/dobble_spot_it_online_emoji_card_generator/)
-- url: https://ondras.github.io/dobble/
----
-
-## [11][Under-the-hood of web bundlers (e.g. Webpack), blog post](https://www.reddit.com/r/javascript/comments/fy2vh7/underthehood_of_web_bundlers_eg_webpack_blog_post/)
-- url: https://medium.com/@tabu_craig/under-the-hood-of-web-bundlers-e-g-webpack-926e868f7f5e
----
-
-## [12][React library that masks unimportant parts of your page - useful for making tutorials](https://www.reddit.com/r/javascript/comments/fxyc8c/react_library_that_masks_unimportant_parts_of/)
-- url: https://github.com/andrew4699/react-see-through
+## [12][React Summit: Attend the biggest ReactJS online conference for free](https://www.reddit.com/r/javascript/comments/fygwy9/react_summit_attend_the_biggest_reactjs_online/)
+- url: https://sfree.life/reactjs-react-summit-conf-2020-stream-free/
 ---
 

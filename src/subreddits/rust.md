@@ -23,99 +23,169 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/04/07/this-week-in-rust-333/
 ---
 
-## [3][Mental models around Ok-Wrapping](https://www.reddit.com/r/rust/comments/fyakdx/mental_models_around_okwrapping/)
-- url: https://vorner.github.io/2020/04/09/wrapping-mental-models.html
+## [3][Intermodal: A nice torrent creator written in Rust](https://www.reddit.com/r/rust/comments/fytczt/intermodal_a_nice_torrent_creator_written_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/fytczt/intermodal_a_nice_torrent_creator_written_in_rust/
+---
+Hi everyone!
+
+I just finished the first release of a project I've been working on for a while, Intermodal.
+
+Intermodal is a command-line BitTorrent `.torrent` file utility. The binary is called `imdl`, and at the moment, it can create, verify, and display the contents of torrents.
+
+It has a whole bunch of nice features, like cute progress bars, file inclusion and exclusion and exclusion with globs, and an automatic piece length picker that will chose a good piece length for torrents based on the size of their contents.
+
+This is the first step in a much larger project to try to improve the state of decentralized content creation, distribution, and consumption. I go into a lot of detail about the current state of the project, and where I hope to take it in the future, in a blog post [here](https://rodarmor.com/blog/intermodal/).
+
+The current version of Intermodal would not be nearly as good if it wasn't for the Rust language, and all the wonderful crates that the community has created.
+
+In particular, I want to thank the creators of `globset`, `regex`, `indicatif`, `ansi_term`, `serde`, `snafu`, `tempfile`, `walkdir`, `structopt`, `clap`, and `bendy`. (Although I honestly feel bad leaving out all the little guys in my `Cargo.toml`, like `atty`. What would I do without `atty`!)
+
+[`bendy`](https://github.com/P3KI/bendy), an excellent crate for encoding and decoding bencode, which is the encoding format that BitTorrent uses for `.torrent` files, didn't initially have Serde support. The maintainers were supportive of the idea of adding it, and were super friendly and and responsive, which made contributing a breeze. So thanks to @thequux and @0ndorio on GitHub!
+
+Development is hosted [here](https://github.com/casey/intermodal), and there are a bunch of good first issues if you're interested in contributing:
+
+- [Setting up code coverage on CI.](https://github.com/casey/intermodal/issues/9)
+- [Adding web seeds to torrents.](https://github.com/casey/intermodal/issues/92).
+- [Adding another kind of web seeds to torrents.](https://github.com/casey/intermodal/issues/93)
+- [Supporting the addition of arbitrary keys to created torrents.](https://github.com/casey/intermodal/issues/23)
+- [Adding a config file containing profiles to use for torrent file creation.](https://github.com/casey/intermodal/issues/36)
+- [Adding support for generating file padding.](https://github.com/casey/intermodal/issues/99)
+- [Adding a  whole new subcommand to edit existing `.torrent` files.](https://github.com/casey/intermodal/issues/124)
+- [Fixing a no-doubt silly bug causing tests to leave behind `.torrent` files in `/tmp`.](https://github.com/casey/intermodal/issues/344)
+- [Adding file selections to magnet links.](https://github.com/casey/intermodal/issues/245)
+- [Creating `.torrent` files from magnet links.](https://github.com/casey/intermodal/issues/255)
+- [Verifying multiple `.torrent` files at a time.](https://github.com/casey/intermodal/issues/165)
+- [Showing nonstandard fields in `imdl torrent show`.](https://github.com/casey/intermodal/issues/168)
+- [Adding a `--quiet` flag to `imdl torrent create`.](https://github.com/casey/intermodal/issues/174)
+- [Showing corrupted piece information during verification.](https://github.com/casey/intermodal/issues/192)
+- [Supporting BitTorrent V2 torrents.](https://github.com/casey/intermodal/issues/101)
+
+If you need to create a torrent, definitely give it a shot!
+## [4][Programming Servo: My own private runtime.](https://www.reddit.com/r/rust/comments/fywv7n/programming_servo_my_own_private_runtime/)
+- url: https://www.reddit.com/r/rust/comments/fywv7n/programming_servo_my_own_private_runtime/
+---
+An overview of how Servo, a large parallel, concurrent, and multiprocess web engine written in Rust, embeds a JS/Wasm VM.
+
+[https://medium.com/programming-servo/programming-servo-my-own-private-runtime-8a5ba74c63c8](https://medium.com/programming-servo/programming-servo-my-own-private-runtime-8a5ba74c63c8)
+## [5][Is there something I don't understand here ?](https://www.reddit.com/r/rust/comments/fz40nu/is_there_something_i_dont_understand_here/)
+- url: https://www.reddit.com/r/rust/comments/fz40nu/is_there_something_i_dont_understand_here/
+---
+Note that I'm just giving a quick thought about Ok wrapping and try blocks from an end user perspective. Not sorry for another post on the subject.
+
+Rust is the most attractive language for me for many reasons, including the fact that it's not \*too much\* magic, clear enough and obviously all the reasons it's Rust. But I want to emphasize the fact that it's clear and readable, I always felt comfortable writing Ok and Err, I know what it means and it gives a good look to my code, there is a good amount of helper methods in std that makes it bearable and I know when I look at the end of my function and I see Ok(thing) that at this moment everything went well, it's easy to write, I don't want to save 3 keystrokes if it makes my code looks bad and I really think it's gonna make my code look bad.
+
+What is the problem with Ok(\_) ? Nothing has yet convinced me that there was a problem with this, and I can't see what is the advantage of going the mainstream way... and I hate JS, why would I want to see JS style try blocks ? or remove the Ok wrapping that makes my code feel clear ? Maybe I'm not informed well enough or not experienced enough, I don't know, but my first thought about this thing is this.
+
+tl;dr, Try blocks are ugly and make me feel like I'm writing JS and I hate it, and Ok(\_) looks good to me.
+## [6][The differences between Ok-wrapping, try blocks, and function level try](https://www.reddit.com/r/rust/comments/fyj43p/the_differences_between_okwrapping_try_blocks_and/)
+- url: https://yaah.dev/try-blocks
 ---
 
-## [4][What is wrong with Ok(match thing { ... }) ?](https://www.reddit.com/r/rust/comments/fye583/what_is_wrong_with_okmatch_thing/)
-- url: https://www.reddit.com/r/rust/comments/fye583/what_is_wrong_with_okmatch_thing/
----
-Sorry for yet another post on this topic. I'll keep it short.
-
-In boats's [recent blog](https://boats.gitlab.io/blog/post/why-ok-wrapping/), he mentions:
-
-&gt; Most of my functions with many return paths terminate with a match statement. Technically, these could be reduced to a single return path by just wrapping the whole match in an Ok, but I don’t know anyone who considers that good form, and I certainly don’t. But an experience I find quite common is that I introduce a new arm to that match as I introduce some new state to handle, and handling that new state is occassionally fallible.
-
-I personally do not see the problem with Ok-wrapping the match. Or, if one doesn't wish to do this, introducing a let binding:
-```rust
-let result = match thing {
-   ...
-};
-Ok(result)
-```
-
-As for "expressing effects", we already have syntax for that: `return Err(...);`. The only case "Ok-wrapping" would really be a boon is with multiple `return Ok(result);` paths, which I don't find to be common in practice.
-
-I am not against Ok-Wrapping (other than recognising that the addition has a cost), but am surprised about the number of error-handling crates which have sprung up over the years and amount of discussion this topic has generated. The only error-handling facility I find lacking in `std` rust is the overhead of instantiating a new error type ([anyhow::anyhow](https://docs.rs/anyhow/1.0.28/anyhow/macro.anyhow.html) and [thiserror](https://github.com/dtolnay/thiserror) address this omission).
-## [5][Brainfuck to Web Assembly compiler in &lt; 100 lines](https://www.reddit.com/r/rust/comments/fy0tqj/brainfuck_to_web_assembly_compiler_in_100_lines/)
-- url: https://github.com/richardanaya/watson/blob/master/examples/bf/src/main.rs
+## [7][native Android app with Kotlin and Rust](https://www.reddit.com/r/rust/comments/fywgwj/native_android_app_with_kotlin_and_rust/)
+- url: https://gitlab.com/dpezely/native-android-kotlin-rust
 ---
 
-## [6][Q: Rust as a hardware description language to be synthesized on an FPGA?](https://www.reddit.com/r/rust/comments/fyd57q/q_rust_as_a_hardware_description_language_to_be/)
-- url: https://www.reddit.com/r/rust/comments/fyd57q/q_rust_as_a_hardware_description_language_to_be/
----
-I'm just curious, are there any projects that try to adapt rust to the domain of hardware description languages (like Verilog and VHDL) and system-level modelling (SystemC)?
-
-At a first glance this is an interesting perspective, since it seems that Rust's approach to memory safety and value access semantics maps quite nicely to RTL and Rust's powerful macro system can be used to mimic/implement more subtle aspects of hardware design such as signal definition and mapping.
-
-Heck, maybe even async stuff could be used to synthesize state machines!
-
-Of course all of the above is just my pure speculation. So I'd like to know the opinion of experienced people that work in this field.
-## [7][GPLv2 airbag control software written in Rust](https://www.reddit.com/r/rust/comments/fya5om/gplv2_airbag_control_software_written_in_rust/)
-- url: https://github.com/victoredwardocallaghan/techair
+## [8][A new programming language for malayalees,based on malayalam memes,written completely in rust](https://www.reddit.com/r/rust/comments/fyvl10/a_new_programming_language_for_malayaleesbased_on/)
+- url: https://github.com/Sreyas-Sreelal/malluscript
 ---
 
-## [8][64K BASIC runs the classics like Oregon Trail and Super Star Trek](https://www.reddit.com/r/rust/comments/fy7s1z/64k_basic_runs_the_classics_like_oregon_trail_and/)
-- url: http://basic-lang.org/
+## [9][Using struct method on other thread?](https://www.reddit.com/r/rust/comments/fz2pmi/using_struct_method_on_other_thread/)
+- url: https://www.reddit.com/r/rust/comments/fz2pmi/using_struct_method_on_other_thread/
 ---
+I have seen questions like this before, but I don't get my head around the answers.  
+So, please, could someone tell me why my code is not working and how to get this piece of code working.  
 
-## [9][Deserialize an arbitrary json structure](https://www.reddit.com/r/rust/comments/fyevnx/deserialize_an_arbitrary_json_structure/)
-- url: https://www.reddit.com/r/rust/comments/fyevnx/deserialize_an_arbitrary_json_structure/
+
+    use std::thread;
+    use std::thread::JoinHandle;
+    
+    pub struct TestStruct {
+        string_vec: Vec&lt;String&gt;
+    }
+    
+    impl TestStruct {
+    
+        pub fn new() -&gt; Self {
+            TestStruct {
+                string_vec: Vec::new()
+            }
+        }
+    
+        pub fn vec_push(&amp;mut self) {
+            self.string_vec.push(String::from("+1"));
+        }
+    
+        pub fn spawn_thread(&amp;mut self) -&gt; JoinHandle&lt;()&gt; {
+            thread::spawn(move || {
+                self.vec_push();
+            })
+        }
+    
+    }
+## [10][Create HashMap of Rust struct properties](https://www.reddit.com/r/rust/comments/fz345k/create_hashmap_of_rust_struct_properties/)
+- url: https://www.reddit.com/r/rust/comments/fz345k/create_hashmap_of_rust_struct_properties/
 ---
-I have a json object like following,
+I want to create a HashMap of a Rust struct. The key is the name of the property and the value is the value of the property. This is my current attempt:
 
-    {
-    page1: { group1: [name: ""] },
-    page2: { group1: [name: ""] }, 
-    // around 500 of them...
-    page500: { group22: [name: ""] }
+    pub fn into_query_values(self) -&gt; cdrs::query::QueryValues {
+        use std::collections::HashMap;
+        let mut values: HashMap&lt;String, cdrs::types::value::Value&gt; = HashMap::new();
+    
+        #(
+            values.insert(stringify!(#idents), self.#idents);
+        )*
+    
+        cdrs::query::QueryValues::NamedValues(values)
     }
 
-From what I know is the
+This code (and the other code) can be cloned from this repo:  [https://github.com/Jasperav/cdrs-helpers-derive/tree/auto\_into\_query\_values](https://github.com/Jasperav/cdrs-helpers-derive/tree/auto_into_query_values). Trying to cargo expend the 'SomeStruct' inside examples/src/main.rs will reproduce the compile time error.
 
-* page can be 1 to 500 or even more (totally random, all have page prefix).
-* each of the page can have group1 or group 2 or group 22 (totally random, all have group prefix).
-* all group have a specific name string.
+I expect it will do something like this:
 
-Been searching high and low for a way to create a struct and process the json data.
+    values.insert("pk", self.pk);
+    values.insert("name", self.name);
+## [11][Why can’t you ? inside a let x = {} block?](https://www.reddit.com/r/rust/comments/fyx8va/why_cant_you_inside_a_let_x_block/)
+- url: https://www.reddit.com/r/rust/comments/fyx8va/why_cant_you_inside_a_let_x_block/
+---
+I'm trying to avoid using a ton of `if let`'s  inside of each other here. So I thought I could do this:
 
-I did a reddit search before making this post, but I cannot seem to apply the knowledge gained from those posts:
+	let x: Option&lt;type&gt; = {
+		let a = someFunctionThatReturnsOption()?;
+		let b = someOtherOptionFunction()?;
+		Some(a + b)
+	}
 
-* [https://www.reddit.com/r/rust/comments/fw1q36/help\_with\_constructing\_arbitrary\_json\_object/](https://www.reddit.com/r/rust/comments/fw1q36/help_with_constructing_arbitrary_json_object/)
-* [https://www.reddit.com/r/learnpython/comments/c8qlyq/parsing\_a\_very\_large\_streamed\_json\_file\_and/](https://www.reddit.com/r/learnpython/comments/c8qlyq/parsing_a_very_large_streamed_json_file_and/)
+Why can't I do this?
 
-I can use serde Value to read them without any speicific structure, which was described on this [github issue](https://github.com/serde-rs/json/issues/144).
+Instead of doing something elegant like that I've had to do:
 
-It's super easy in js/python where you don't have to specify the types, but cannot figure out on rust/nim etc languages.
+    let dist: Option&lt;f32&gt; = {
+        if let Some(mouse_position) = input.mouse_position() {
+            if let ActiveCamera(Some(camera_ent)) = *active_camera {
+                if let Some(camera) = camera_comp.get(camera_ent) {
+                    if let Some(camera_transform) = transforms.get(camera_ent) {
+                        let camera_trans = camera_transform.translation();
+                        Some(
+                            ((camera_trans.x - mouse_position.0).powi(2)
+                                + (camera_trans.y - mouse_position.1).powi(2))
+                            .sqrt(),
+                        )
+                    } else {
+                        None
+                    }
+                } else {
+                    None
+                }
+            } else {
+                None
+            }
+        } else {
+            None
+        }
+    };
 
-I cannot change the structure of the json to an array, it comes from a third party api.
-
-Here is an example file where I'm reading data using neon and serde. The data comes from js, and I do some loops to get the insider data. [https://github.com/entrptaher/neon-serde-example/blob/master/native/src/lib.rs#L19](https://github.com/entrptaher/neon-serde-example/blob/master/native/src/lib.rs#L19)
-
-Is there any way I can get a struct for this kind of data dynamically? Is that even healthy to do so?
-
-Pardon me if I made any mistake. Thank you in advance.
-## [10][Library-ification and analyzing Rust](https://www.reddit.com/r/rust/comments/fxs0fm/libraryification_and_analyzing_rust/)
-- url: http://smallcultfollowing.com/babysteps/blog/2020/04/09/libraryification/
+It’s horrible.
+## [12][Swift: Google's bet on differentiable programming](https://www.reddit.com/r/rust/comments/fyt1ou/swift_googles_bet_on_differentiable_programming/)
+- url: https://tryolabs.com/blog/2020/04/02/swift-googles-bet-on-differentiable-programming/
 ---
 
-## [11][How to download all the crates on crates.io](https://www.reddit.com/r/rust/comments/fxxued/how_to_download_all_the_crates_on_cratesio/)
-- url: https://www.pietroalbini.org/blog/downloading-crates-io/
----
-
-## [12][Help with speeding up smart-pointered code](https://www.reddit.com/r/rust/comments/fyd96g/help_with_speeding_up_smartpointered_code/)
-- url: https://www.reddit.com/r/rust/comments/fyd96g/help_with_speeding_up_smartpointered_code/
----
-Hi. I was trying to make a randomized skiplist with rust. I needed multiple pointers to nodes and i also needed to be able to mutate the pointers which they hold, So I went with a combination of Rc and RefCell. It worked well but then i tried a completely unsafe solution with raw pointers and it is about 2x faster. Then i benchmarked my code and it seems that most of the overhead comes from borrow() and borrow\_mut() methods of RefCell (there is also a drop\_in\_place function that takes considerable time).
-
-Do you think my datastructure is poorly designed, or is this performance drop almost natural when using refcells? (As far as i can understand the overhead of Rc is almost zero and nothing about Rc shows up in my profiling)

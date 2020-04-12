@@ -1,5 +1,31 @@
 # Kotlin
-## [1][Coding interviews in Kotlin?](https://www.reddit.com/r/Kotlin/comments/fym4tl/coding_interviews_in_kotlin/)
+## [1][[RELEASE] OBD API written in Kotlin](https://www.reddit.com/r/Kotlin/comments/fzkar6/release_obd_api_written_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/fzkar6/release_obd_api_written_in_kotlin/
+---
+Hey! I've just released a lightweight and developer-driven API to query and parse OBD commands.
+
+It's written in pure Kotlin and platform agnostic with a simple and easy to use interface, so we can hack our cars without any hassle.
+
+This is the repository link with the installation and usage guide -&gt; [https://github.com/eltonvs/kotlin-obd-api](https://github.com/eltonvs/kotlin-obd-api)
+
+I've been using this API in some personal projects for several months and decided to release it to the public now.
+## [2][Kweb 0.7.0 released, Kweb is a server-side web framework inspired by frameworks like Vaadin and Apache Wicket](https://www.reddit.com/r/Kotlin/comments/fzk8ov/kweb_070_released_kweb_is_a_serverside_web/)
+- url: https://github.com/kwebio/kweb-core/releases/tag/0.7.0
+---
+
+## [3][Using property configuration in spring with kotlin](https://www.reddit.com/r/Kotlin/comments/fzaium/using_property_configuration_in_spring_with_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/fzaium/using_property_configuration_in_spring_with_kotlin/
+---
+Simply explains how to use property configuration in spring. It is a try run for git pods. I love how git pods works.
+
+[https://bijanconsulting.com/2020/04/07/reading-properties-in-spring-using-configurationproperties/](https://bijanconsulting.com/2020/04/07/reading-properties-in-spring-using-configurationproperties/)
+## [4][Help with Room library again](https://www.reddit.com/r/Kotlin/comments/fzitur/help_with_room_library_again/)
+- url: https://www.reddit.com/r/Kotlin/comments/fzitur/help_with_room_library_again/
+---
+ Hi. Once again I am asking you for help. I am learning to use the Room  library. This is an application that records notes. I was able to save  notes and show them all. However, I can't do deleting a note on  onLongClick and editing a note on onClick. I tried in different ways but  always crashes applications. I will be grateful for any tip. 
+
+My app:[https://github.com/ciechanek1/note](https://github.com/ciechanek1/note)
+## [5][Coding interviews in Kotlin?](https://www.reddit.com/r/Kotlin/comments/fym4tl/coding_interviews_in_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/fym4tl/coding_interviews_in_kotlin/
 ---
 Over the last year at work I have been using Kotlin almost exclusively, and as a result I am most comfortable with it now. I find that now when I write Java I make lots of dumb mistakes like forgetting semicolons or the `new` keyword. Previously Java was my go-to interview language but given how little I write it I think these small mistakes would give a poor impression if I continued to use it during coding live challenges. 
@@ -7,11 +33,11 @@ Over the last year at work I have been using Kotlin almost exclusively, and as a
 Does anyone have experience going on the interview circuit using Kotlin for these challenges? How was that received? I'm a huge fan of the language but I recognize that many companies have outdated views on it, perhaps thinking of it as an exclusively Android tool (I'm a backend dev). Were companies generally receptive or did they raise eyebrows when you would use it? 
 
 The other option I am thinking is investing time learning more Python. That is a nice interviewing language in general and the syntax is different enough that I think I can effectively switch from "kotlin-mode" to "python-mode" without too much fuss. The downside is that I don't have nearly as much experience in this language.
-## [2][Kotlin: Prefers clarity over conciseness](https://www.reddit.com/r/Kotlin/comments/fyb2lq/kotlin_prefers_clarity_over_conciseness/)
+## [6][Kotlin: Prefers clarity over conciseness](https://www.reddit.com/r/Kotlin/comments/fyb2lq/kotlin_prefers_clarity_over_conciseness/)
 - url: https://medium.com/@elye.project/kotlin-prefers-clarity-over-concise-a5a2088536b6
 ---
 
-## [3][[Hadoop] Does one need to know a lot of Java before getting into Hadoop ecosystem using Kotlin only?](https://www.reddit.com/r/Kotlin/comments/fyhcy5/hadoop_does_one_need_to_know_a_lot_of_java_before/)
+## [7][[Hadoop] Does one need to know a lot of Java before getting into Hadoop ecosystem using Kotlin only?](https://www.reddit.com/r/Kotlin/comments/fyhcy5/hadoop_does_one_need_to_know_a_lot_of_java_before/)
 - url: https://www.reddit.com/r/Kotlin/comments/fyhcy5/hadoop_does_one_need_to_know_a_lot_of_java_before/
 ---
 I'm actually from a python only background. I have basic syntax level understanding of both C++ and Java, but I'm planning to move forward and explore the Java APIs for Spark, Flink, Presto, Kafka etc **using Kotlin instead of Java.**   
@@ -24,39 +50,15 @@ I dont think I'm violating any of the subreddit rules. but if mods feel its bad 
 
 
 Thanks!
-## [4][Recognizing Text in Image using Firebase Ml kit in a Kotlin app - OCR](https://www.reddit.com/r/Kotlin/comments/fyfbak/recognizing_text_in_image_using_firebase_ml_kit/)
+## [8][Recognizing Text in Image using Firebase Ml kit in a Kotlin app - OCR](https://www.reddit.com/r/Kotlin/comments/fyfbak/recognizing_text_in_image_using_firebase_ml_kit/)
 - url: https://codesource.io/recognizing-text-in-image-using-firebase-ml-kit-in-a-kotlin-app/
 ---
 
-## [5][Kotlin: Prefers clarity over concise](https://www.reddit.com/r/Kotlin/comments/fyaz1e/kotlin_prefers_clarity_over_concise/)
+## [9][Kotlin: Prefers clarity over concise](https://www.reddit.com/r/Kotlin/comments/fyaz1e/kotlin_prefers_clarity_over_concise/)
 - url: https://medium.com/@elye.project/kotlin-prefers-clarity-over-concise-a5a2088536b6?source=friends_link&amp;sk=0934d1a42ea8dd3ca1316c57439168e0
 ---
 
-## [6][Ktor cookie session authentication](https://www.reddit.com/r/Kotlin/comments/fycxw7/ktor_cookie_session_authentication/)
+## [10][Ktor cookie session authentication](https://www.reddit.com/r/Kotlin/comments/fycxw7/ktor_cookie_session_authentication/)
 - url: https://www.reddit.com/r/Kotlin/comments/fycxw7/ktor_cookie_session_authentication/
 ---
 Hi guys, can someone please help me with ktor cookie session authentication. Send me a tutorial or a github example please
-## [7][Implementing Retrofit in Android | Implementation | Part 2](https://www.reddit.com/r/Kotlin/comments/fyhbsg/implementing_retrofit_in_android_implementation/)
-- url: https://www.youtube.com/watch?v=-blbULls-QM
----
-
-## [8][Writing a Kotlin Compiler Plugin with Arrow Meta](https://www.reddit.com/r/Kotlin/comments/fy6i3d/writing_a_kotlin_compiler_plugin_with_arrow_meta/)
-- url: https://link.medium.com/gNQRr3vyx5
----
-
-## [9][Backend Kotlin Projects](https://www.reddit.com/r/Kotlin/comments/fxysy8/backend_kotlin_projects/)
-- url: https://www.reddit.com/r/Kotlin/comments/fxysy8/backend_kotlin_projects/
----
-I started developing android app with Kotlin. Before that, I had some java, oop knowledge. I want to develop a backend with Kotlin. Can you give a sample project? I have never developed a backend project before. Which way should I take? As a result, how can I become a "Backend" developer?
-## [10][Im a newbie in when conditions](https://www.reddit.com/r/Kotlin/comments/fybr66/im_a_newbie_in_when_conditions/)
-- url: https://www.reddit.com/r/Kotlin/comments/fybr66/im_a_newbie_in_when_conditions/
----
-Hi guys just to know how can I call functions like this
-
-when(userInput){
-       "buy" -&gt; buy()
-       "fill" -&gt; full()
-       "take" -&gt; take()
-}
-
-userInput should be one of those word but the functions shows me like error in the IDE

@@ -22,11 +22,15 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Isotope - fast, simple &amp; lightweight UI library](https://www.reddit.com/r/typescript/comments/fykjph/isotope_fast_simple_lightweight_ui_library/)
+## [2][How to add relay to Create-React-App with Typescript](https://www.reddit.com/r/typescript/comments/fzr1jm/how_to_add_relay_to_createreactapp_with_typescript/)
+- url: https://medium.com/@ricardojgonzlez/how-to-add-relay-to-create-react-app-with-typescript-b6daacea21dd
+---
+
+## [3][Isotope - fast, simple &amp; lightweight UI library](https://www.reddit.com/r/typescript/comments/fykjph/isotope_fast_simple_lightweight_ui_library/)
 - url: https://github.com/Isotope-js/core
 ---
 
-## [3][What's the best practice for data modeling, shared by both front-end and back-end?](https://www.reddit.com/r/typescript/comments/fyj2u6/whats_the_best_practice_for_data_modeling_shared/)
+## [4][What's the best practice for data modeling, shared by both front-end and back-end?](https://www.reddit.com/r/typescript/comments/fyj2u6/whats_the_best_practice_for_data_modeling_shared/)
 - url: https://www.reddit.com/r/typescript/comments/fyj2u6/whats_the_best_practice_for_data_modeling_shared/
 ---
 Hi,
@@ -75,15 +79,15 @@ which is another mess, since they're hidden in code, and the developer **needs t
 
 If you guys have any idea on how to model my data types, I'd be more than happy to hear.\
 Thanks!
-## [4][If x has a type of T, then what's the type of JSON.parse(JSON.stringify(x))?](https://www.reddit.com/r/typescript/comments/fxub0f/if_x_has_a_type_of_t_then_whats_the_type_of/)
+## [5][If x has a type of T, then what's the type of JSON.parse(JSON.stringify(x))?](https://www.reddit.com/r/typescript/comments/fxub0f/if_x_has_a_type_of_t_then_whats_the_type_of/)
 - url: https://effectivetypescript.com/2020/04/09/jsonify/
 ---
 
-## [5][Porting to TypeScript Solved Our API Woes](https://www.reddit.com/r/typescript/comments/fy37h9/porting_to_typescript_solved_our_api_woes/)
+## [6][Porting to TypeScript Solved Our API Woes](https://www.reddit.com/r/typescript/comments/fy37h9/porting_to_typescript_solved_our_api_woes/)
 - url: https://www.executeprogram.com/blog/porting-to-typescript-solved-our-api-woes
 ---
 
-## [6][typescript object literal problem](https://www.reddit.com/r/typescript/comments/fy5v3r/typescript_object_literal_problem/)
+## [7][typescript object literal problem](https://www.reddit.com/r/typescript/comments/fy5v3r/typescript_object_literal_problem/)
 - url: https://www.reddit.com/r/typescript/comments/fy5v3r/typescript_object_literal_problem/
 ---
 Hi,
@@ -125,18 +129,18 @@ const parsedData = {
 ```
 
 Any better way to get around with this except disabling typescript? Thanks!
-## [7][Linkdash - Generate a handy dashboard of links in seconds!](https://www.reddit.com/r/typescript/comments/fxpx9q/linkdash_generate_a_handy_dashboard_of_links_in/)
+## [8][Linkdash - Generate a handy dashboard of links in seconds!](https://www.reddit.com/r/typescript/comments/fxpx9q/linkdash_generate_a_handy_dashboard_of_links_in/)
 - url: https://i.redd.it/3mgoes21prr41.gif
 ---
 
-## [8][Debugging typescript dependencies from a non typescript node project](https://www.reddit.com/r/typescript/comments/fy81ch/debugging_typescript_dependencies_from_a_non/)
+## [9][Debugging typescript dependencies from a non typescript node project](https://www.reddit.com/r/typescript/comments/fy81ch/debugging_typescript_dependencies_from_a_non/)
 - url: https://www.reddit.com/r/typescript/comments/fy81ch/debugging_typescript_dependencies_from_a_non/
 ---
 I've seen setups for debugging Frontend code with source maps, and complex configurations for debugging entire typescript projects in vscode with sourcemaps.  
 
 
 However, what if I have a project that is in Vanilla Node.js, but some of my dependencies are in Typescript? How do I debug those in vscode or chrome?
-## [9][Typescript problem using GraphQL Nexus](https://www.reddit.com/r/typescript/comments/fxz4f6/typescript_problem_using_graphql_nexus/)
+## [10][Typescript problem using GraphQL Nexus](https://www.reddit.com/r/typescript/comments/fxz4f6/typescript_problem_using_graphql_nexus/)
 - url: https://www.reddit.com/r/typescript/comments/fxz4f6/typescript_problem_using_graphql_nexus/
 ---
 So I just started using GraphQL Nexus today and I'm just doing some basic setup and noodling around with some stuff. I coded a simple registerUser mutation like so:
@@ -184,7 +188,7 @@ But when I replaced the arguments to 'register' with a RegisterInput input like 
 `})`
 
 Everything works, but he resolver input argument `{ input: { email, password } }` gets typescript a little complain - Property 'email'/'password' does not exist on type '{ email: string; password: string; } | null | undefined'? How do I get those annoying red squiggles to go away?
-## [10][Typescript problem with a GraphQl Nexus resolver](https://www.reddit.com/r/typescript/comments/fy1iaz/typescript_problem_with_a_graphql_nexus_resolver/)
+## [11][Typescript problem with a GraphQl Nexus resolver](https://www.reddit.com/r/typescript/comments/fy1iaz/typescript_problem_with_a_graphql_nexus_resolver/)
 - url: https://www.reddit.com/r/typescript/comments/fy1iaz/typescript_problem_with_a_graphql_nexus_resolver/
 ---
 I'm creating a new MongoDB document in a GraphQL Nexus resolver:
@@ -201,20 +205,3 @@ I'm creating a new MongoDB document in a GraphQL Nexus resolver:
  `},`
 
 but typescript says property '\_id' does not exist on type '{ email: string; password: string; }'. I'm stuck because this is how I create a new document in mongo using plain JS. What is the proper way to add the insertedId?
-## [11][Why does typescript think my sort comparator is invalid?](https://www.reddit.com/r/typescript/comments/fy0qtz/why_does_typescript_think_my_sort_comparator_is/)
-- url: https://www.reddit.com/r/typescript/comments/fy0qtz/why_does_typescript_think_my_sort_comparator_is/
----
-[https://pastebin.com/hNgyeeBx](https://pastebin.com/hNgyeeBx)
-
-I'm using a Map to match up the possible values of a \`Select\` to different comparators. When the user changes the dropdown, they can sort the elements differently. The code runs fine, but typescript doesn't like it.
-
-I've tried a lot of different solutions to this: enum, casting, guard statement, and I'm out of ideas.
-
-      if (comparator) {
-        return SKILLS.sort(comparator); // `comparator` has a typescript error here:
-        // TS2345: Argument of type 'Function' is not assignable to parameter
-        // of type '(a: Skill, b: Skill) =&gt; number'. Type 'Function' provides
-        // no match for the signature '(a: Skill, b: Skill): number'.
-      }
-
-Thanks in advance for any help!

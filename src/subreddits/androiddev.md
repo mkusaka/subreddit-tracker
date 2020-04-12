@@ -40,7 +40,99 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][How do you build a professional UI?](https://www.reddit.com/r/androiddev/comments/fz2gua/how_do_you_build_a_professional_ui/)
+## [3][Featured videos on app listing page now plays within the PS app instead of opening the YT app](https://www.reddit.com/r/androiddev/comments/fzu07d/featured_videos_on_app_listing_page_now_plays/)
+- url: https://i.redd.it/obfi2oqzzcs41.png
+---
+
+## [4][Adventures in Compose - The Doom fire effect](https://www.reddit.com/r/androiddev/comments/fzva59/adventures_in_compose_the_doom_fire_effect/)
+- url: https://adambennett.dev/2020/04/adventures-in-compose-the-doom-fire-effect/
+---
+
+## [5][These coding games could definitely improve your programming skills](https://www.reddit.com/r/androiddev/comments/fzk3vk/these_coding_games_could_definitely_improve_your/)
+- url: https://hurmaniqbal.blogspot.com/2020/04/list-of-coding-games-to-practice.html
+---
+
+## [6][CS student looking for a free android course](https://www.reddit.com/r/androiddev/comments/fzs2s7/cs_student_looking_for_a_free_android_course/)
+- url: https://www.reddit.com/r/androiddev/comments/fzs2s7/cs_student_looking_for_a_free_android_course/
+---
+ Hello,  I'm a CS student and I'm looking for a free course that teaches the  Android Development using Android Studio. I know how to code (especially  in Java) but I don't know how to build a decent/good android app.
+
+I don't even know where to search, I tried udemy and youtube and I haven't found something that convinced me....
+
+I  found a bunch of 5 year old courses, should they still be good? Also,  is it a standard to use the Kotlin language (when creating the project,  as it is the default) ? Or is Java still good?
+## [7][ViewBinding thing you probably don't know about](https://www.reddit.com/r/androiddev/comments/fzw6e5/viewbinding_thing_you_probably_dont_know_about/)
+- url: https://www.reddit.com/r/androiddev/comments/fzw6e5/viewbinding_thing_you_probably_dont_know_about/
+---
+If you need to, you can add custom layout for you main layout while using ViewBinding.
+
+Initialize you custom layout just like you initializing your main fragment/activity layout:
+
+// MainLayout ViewBinding variables
+
+private var mBinding
+: FragmentRegistrationFirstBinding? = null  
+
+private val mainBinding get() = mBinding!!  
+
+// CustomLayout ViewBinding variables  
+
+private var mapsBinding
+:RegistrationGoogleMapsLayoutBinding? = null  
+
+private val addressBinding get() = mapsBinding!!
+
+&amp;#x200B;
+
+// Main Layout ViewBinding initialization  
+mBinding = FragmentRegistrationFirstBinding.inflate(inflater, container, false)
+
+// CustomLayout ViewBinding initialization  
+mapsBinding = RegistrationGoogleMapsLayoutBinding.inflate(inflater, container, false)  
+
+
+And then just add it to MainLayout ViewBinding, just like you do with a simple view, or remove it:
+
+// For adding  
+
+mainBinding.mainLayout.addView(addressBinding.*root*)  
+
+
+//For removing
+
+mainBinding.mainLayout.removeView(addressBinding.*root*)
+
+&amp;#x200B;
+
+where mainLayout is one of layouts in your MainLayout ViewBinding
+## [8][How to get a working ViewModel in an Activity like the dev guide example?](https://www.reddit.com/r/androiddev/comments/fzt2wo/how_to_get_a_working_viewmodel_in_an_activity/)
+- url: https://www.reddit.com/r/androiddev/comments/fzt2wo/how_to_get_a_working_viewmodel_in_an_activity/
+---
+I'm struggling through the [ViewModel tutorial](https://developer.android.com/topic/libraries/architecture/viewmodel#implement). Google's example code says to do this:
+
+    class MyActivity : AppCompatActivity() {
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // Create a ViewModel the first time the system calls an activity's onCreate() method.
+        // Re-created activities receive the same MyViewModel instance created by the first activity.
+    
+        // Use the 'by viewModels()' Kotlin property delegate
+        val model: MyViewModel by viewModels()
+        model.getUsers().observe(this, Observer&lt;List&lt;User&gt;&gt;{ users -&gt;
+            // update UI
+        })
+    } 
+    }
+
+However, this causes the following compiler error that I don't understand:
+
+&gt;Unresolved reference. None of the following candidates is applicable because of receiver type mismatch:  
+&gt;  
+&gt;MainThread public inline fun &lt;reified VM : ViewModel&gt; Fragment.viewModels(noinline ownerProducer: () -&gt; ViewModelStoreOwner = ..., noinline factoryProducer: (() -&gt; ViewModelProvider.Factory)? = ...): Lazy&lt;MyViewModel&gt; defined in [androidx.fragment.app](https://androidx.fragment.app)
+
+So, the Google example is different to [the docs](https://developer.android.com/reference/kotlin/androidx/fragment/app/package-summary#viewmodels), where `by viewModels()` delegate is scoped to a Fragment instead of an activity. I don't know if this is significant, because ... well, the documentation is pretty far removed from the reality I encounter when trying to reproduce something that remotely works like their example.
+
+Is their example even valid and would it actually work?
+## [9][How do you build a professional UI?](https://www.reddit.com/r/androiddev/comments/fz2gua/how_do_you_build_a_professional_ui/)
 - url: https://www.reddit.com/r/androiddev/comments/fz2gua/how_do_you_build_a_professional_ui/
 ---
 I started teaching myself to code about 2-3 years ago and started with Android studio. I could almost get any answer I needed from tutorials or resources.
@@ -52,76 +144,24 @@ With coding, it's like I know what I want to do and I just need to find out how.
 But with UI it's like I don't even know what I want to do.
 
 Does anyone know any good tutorials or learning resources on how to build polished UIs?
-## [4][Sr Developer - learn idiomatic programming?](https://www.reddit.com/r/androiddev/comments/fyxk3q/sr_developer_learn_idiomatic_programming/)
-- url: https://www.reddit.com/r/androiddev/comments/fyxk3q/sr_developer_learn_idiomatic_programming/
+
+Edit: been a busy day but come back to lots of answers thanks all! Will be reading through tonight, really appreciate it !
+## [10][Is it okay to ask for donations in a medium outside the Play Store](https://www.reddit.com/r/androiddev/comments/fzv8cd/is_it_okay_to_ask_for_donations_in_a_medium/)
+- url: https://www.reddit.com/r/androiddev/comments/fzv8cd/is_it_okay_to_ask_for_donations_in_a_medium/
 ---
-sadly, i dont use kotlin professionaly at my job, it's just the way it is. the other day, i just began leetcoding as practice for kotlin, and solved LC-121 Buy and Sell Stocks. my solution was accepted, good, but when i saw the most voted solution, i had mixed feelings. i realized i just wrote a java  code in kotlin. 
+I've got apps I don't plan on ever charging money for. However, I'd like to offer fans of these apps the opportunity to give me money if they wish to show appreciation in that way.
 
-kotlin is not just functional programming and idiomatic syntax, it has a idiomatic programming flair to it. just look-up the solution for the aforementioned leetcode problem, and i hope you'll see what i am suggesting here. how do i learn to program idiomatically like that? books? online site? professionally? switch jobs? what happens when in a white-board interview i prefer to code in kotlin, but my solution is more java oriented than idiomatic programming?
-## [5][Feel free to join](https://www.reddit.com/r/androiddev/comments/fz07er/feel_free_to_join/)
-- url: /r/learnprogramming/comments/fz06c5/discord_for_beginners_in_android_development/
+My question is: Would Google consider that (for instance, in the form of a "support me" link in an "About" fragment) an attempt at circumventing the App Store Payment system, or are they okay with kinda-sorta-noncommercial content like this?
+## [11][Dualshock2 dpad problem](https://www.reddit.com/r/androiddev/comments/fzv3qj/dualshock2_dpad_problem/)
+- url: https://www.reddit.com/r/androiddev/comments/fzv3qj/dualshock2_dpad_problem/
 ---
-
-## [6][Covid19 tracker widget](https://www.reddit.com/r/androiddev/comments/fz0ebd/covid19_tracker_widget/)
-- url: https://www.reddit.com/r/androiddev/comments/fz0ebd/covid19_tracker_widget/
+So I'm using an original dualshock2 with a usb converter and a otg adapter on my android phone and I can't get the dpad to work I've tried countless remapping/gamepad controller apps but it seems like my phone doesn't recive any inputs from dpad presses but they work I use em on the PS2 console do you guys have any idea how to fix this
+(Sorry if this is against the rules I'm new here)
+## [12][I would love some assistance](https://www.reddit.com/r/androiddev/comments/fzun28/i_would_love_some_assistance/)
+- url: https://www.reddit.com/r/androiddev/comments/fzun28/i_would_love_some_assistance/
 ---
-Learning widget during lockdown . Any code tips will be helpful.
+Noob HS student here trying to go about with my first app, so please go easy on me.
 
-[Widget one](https://i.imgur.com/S4gXl9p.jpg)
+I finally figured out how to start Alpha testing so I grabbed a bunch of my friends mails and started it. It says 'full rollout'  in the App releases (closed tracks)  but the status of the application is 'Pending Publication'. I thought Pending Publication is only for if you are putting your app on google Play, which I am not. Also, my friends haven't really received any mail so far (Ik this as I put my normal mail account also a tester).
 
-[Widget two](https://i.imgur.com/jtrqsjU.jpg)
-
-[Github link](https://github.com/123vipulj/CoronaTrackerWidget)
-## [7][Questions I have before I start building a complete app](https://www.reddit.com/r/androiddev/comments/fz32x4/questions_i_have_before_i_start_building_a/)
-- url: https://www.reddit.com/r/androiddev/comments/fz32x4/questions_i_have_before_i_start_building_a/
----
-So, I somewhat know android development and I've made a couple of apps.
-
-But these have never been published and to be very honest, they are quite messy not following any architecture or guidelines.
-
-So, that brings me here.. I have an app idea which I want to stick to till the end and publish it, and I have some questions..
-
-&amp;#x200B;
-
-1. What architecture should I follow? I heard MVI is good, but I can't find a good resource to learn how to use it, I somewhat know MVVM.
-2. What type of layout is best for fitting the most amount of screens, ig constraint layout, but I could be wrong.
-3. What is a good website or app to track everything, like features, to-do, etc
-## [8][Prevent NFC app pop up when scanning tag](https://www.reddit.com/r/androiddev/comments/fz2sz4/prevent_nfc_app_pop_up_when_scanning_tag/)
-- url: https://www.reddit.com/r/androiddev/comments/fz2sz4/prevent_nfc_app_pop_up_when_scanning_tag/
----
-I'm developing a simple app that reads an NFC tag and just prints the contents out as a toast, but every time I scan the code I get a pop up for the built-in NFC application on my phone. Is there any way to disable this?
-## [9][It bothers me that most tutorials and or architectural guides don’t include any kind of automated testing](https://www.reddit.com/r/androiddev/comments/fychih/it_bothers_me_that_most_tutorials_and_or/)
-- url: https://www.reddit.com/r/androiddev/comments/fychih/it_bothers_me_that_most_tutorials_and_or/
----
-No unit tests, no UI tests, nothing. It seems nobody cares :-(
-
-It also makes it hard to learn more about the subject and I don’t know about you guys but I feel like knowing how to test stuff is what separates you from a median developer.
-## [10][Android central controller?](https://www.reddit.com/r/androiddev/comments/fz15h9/android_central_controller/)
-- url: https://www.reddit.com/r/androiddev/comments/fz15h9/android_central_controller/
----
-What can map text to commands..I was looking for any software or service that enables the parts of a system to communicate and manage data. It is the software that handles communication between components and input/output, so developers can focus on the specific purpose of their application.
-## [11][Where I can purchase a template?](https://www.reddit.com/r/androiddev/comments/fz4feo/where_i_can_purchase_a_template/)
-- url: https://www.reddit.com/r/androiddev/comments/fz4feo/where_i_can_purchase_a_template/
----
-I there:  
-Does somebody know where I can purchase a template for Android? (native code).  
-
-  
-Personally, I like to develop for Android (practically all my code is adapter/ list horizontal and vertical), but I'm having trouble with the layout (I am not comfy with my layout).  Right now, I am working with Material, that it is a big step ahead of working with vanilla-xml-layout, and it's okay, but I wish to know if there is some more ready-made template.
-
-  
-Thanks.
-
-ps: I don't want to hire anybody but I want to hear some recommendations.
-## [12][Model naming throughout your project layers](https://www.reddit.com/r/androiddev/comments/fyq59c/model_naming_throughout_your_project_layers/)
-- url: https://www.reddit.com/r/androiddev/comments/fyq59c/model_naming_throughout_your_project_layers/
----
-What names for models do you prefer in the data, domain, and presentation layers of a project?  
-
-
-\*Entity  
-\*DbModel  
-\*NetworkResponse  
-\*ApiObject  
-\*Domain  
-\*Presentation
+Have I done something wrong somewhere? Did I press some wrong buttons by mistake? Any help will be much appreciated! Thanks.

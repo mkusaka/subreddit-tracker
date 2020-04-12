@@ -119,51 +119,62 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Modern CMake tutorials, part2: Customization points](https://www.reddit.com/r/cpp/comments/fyoy4l/modern_cmake_tutorials_part2_customization_points/)
+## [3][GitHub actions: run-vcpkg and get-cmake with automatic caching](https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/)
+- url: https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/
+---
+Released [get-cmake](https://github.com/marketplace/actions/get-cmake) and [run-vcpkg](https://github.com/marketplace/actions/run-vcpkg) GitHub actions with automatic caching of binary artifacts, useful to any C++ build workflows, enjoy!
+## [4][Adventures In Game Engine Programming](https://www.reddit.com/r/cpp/comments/fzukqv/adventures_in_game_engine_programming/)
+- url: https://medium.com/@fwsgonzo/adventures-in-game-engine-programming-a3ab1e96dbde
+---
+
+## [5][Creating multiple objects using for loop](https://www.reddit.com/r/cpp/comments/fzwtax/creating_multiple_objects_using_for_loop/)
+- url: https://www.reddit.com/r/cpp/comments/fzwtax/creating_multiple_objects_using_for_loop/
+---
+My method was " for (int I; I&lt;100;1++){ myClass Ci;} but it doesn't work well 
+Any suggestions?
+## [6][Do compilers document how much they follow the C++ standard when they implement it?](https://www.reddit.com/r/cpp/comments/fzwsiw/do_compilers_document_how_much_they_follow_the_c/)
+- url: https://www.reddit.com/r/cpp/comments/fzwsiw/do_compilers_document_how_much_they_follow_the_c/
+---
+When another user asked the logic purpose of unions, many answers where given and then someone asked if GCC/Clang/MSVC documented the type-punning behaviour to be defined.
+
+I wanted to answer him/her, but couldn't find anything.
+
+Now, my curiosity wants to know if it's possible to find what's defined or not at the compiler level.
+
+I understand that if I don't want surprises, I need to rely on the ISO C++ Standard, but I suppose that some people rely on techniques like type-punning that are UB at the language level, but defined at the compiler level.
+
+So, do you know if this documentation exists?
+
+If yes, would you so kind to share it?
+## [7][Precedence of a proposed |&gt; operator](https://www.reddit.com/r/cpp/comments/fz5qtp/precedence_of_a_proposed_operator/)
+- url: https://quuxplusone.github.io/blog/2020/04/10/pipeline-operator-examples/
+---
+
+## [8][Introducing cpprouter: A small, header-only request-router](https://www.reddit.com/r/cpp/comments/fzuq5k/introducing_cpprouter_a_small_headeronly/)
+- url: https://www.reddit.com/r/cpp/comments/fzuq5k/introducing_cpprouter_a_small_headeronly/
+---
+[https://github.com/omartijn/cpprouter](https://github.com/omartijn/cpprouter)
+
+&amp;#x200B;
+
+This library is created for routing HTTP requests to callbacks. It's designed to be generic (the callback signature can be chosen by the user), so that it's not limited to a single HTTP implementation.
+
+Callbacks can be either free- or member functions. If the path contains slugs (embedded regular expressions), the matched data can be provided to the given callback.
+
+It's still in early stages, there are probably more features to be added, there's some more optimizations to be done, a lot of documentation to be written and the unit tests are very basic. I still wanted to share it to see what people think and if anybody has any suggestions (whether they like it or not).
+## [9][Logic behind C++ Unions](https://www.reddit.com/r/cpp/comments/fzapi0/logic_behind_c_unions/)
+- url: https://www.reddit.com/r/cpp/comments/fzapi0/logic_behind_c_unions/
+---
+Why would you ever want to use unions, does anyhone have any practical scenarios where unions were the best solution? 🤔
+## [10][Modern CMake tutorials, part2: Customization points](https://www.reddit.com/r/cpp/comments/fyoy4l/modern_cmake_tutorials_part2_customization_points/)
 - url: https://www.siliceum.com/en/blog/post/cmake_02_customization-points
 ---
 
-## [4][I Accidentaly Wrote A Compile Time Executable State Machine • memdump](https://www.reddit.com/r/cpp/comments/fyibob/i_accidentaly_wrote_a_compile_time_executable/)
+## [11][The code_report Blog: CppCast Ep242 is AWESOME!](https://www.reddit.com/r/cpp/comments/fzavtk/the_code_report_blog_cppcast_ep242_is_awesome/)
+- url: https://codereport.github.io/CppCastEpisode242IsAwesome/
+---
+
+## [12][I Accidentaly Wrote A Compile Time Executable State Machine • memdump](https://www.reddit.com/r/cpp/comments/fyibob/i_accidentaly_wrote_a_compile_time_executable/)
 - url: https://philippegroarke.com/posts/2020/constexpr_fsm/
 ---
 
-## [5][Qt and Open Source (Qt company declaration)](https://www.reddit.com/r/cpp/comments/fyamc6/qt_and_open_source_qt_company_declaration/)
-- url: https://www.qt.io/blog/qt-and-open-source
----
-
-## [6][I want to get started with C++ during the pandemic. What are some of the best free tutorials out there?](https://www.reddit.com/r/cpp/comments/fz1xh3/i_want_to_get_started_with_c_during_the_pandemic/)
-- url: https://www.reddit.com/r/cpp/comments/fz1xh3/i_want_to_get_started_with_c_during_the_pandemic/
----
-
-## [7][Programming challenges](https://www.reddit.com/r/cpp/comments/fz12td/programming_challenges/)
-- url: https://www.reddit.com/r/cpp/comments/fz12td/programming_challenges/
----
-I was thinking of some new projects to work on. I have over 10yrs of programming experience in various languages.
-
-I was wondering whether people are interested in using coding challenges apps? The idea would be to show short cryptic snippets (from easy to hard of course) and let people figure out the answer.
-
-It's mobile friendly since it requires only code reading, interpretation, logic and math.
-
-It might be useful to both novice as advanced programmers. But also people who want to start programming by learning logical thinking.
-## [8][CLion dev team will host an AMA on may 7](https://www.reddit.com/r/cpp/comments/fxzrxp/clion_dev_team_will_host_an_ama_on_may_7/)
-- url: https://blog.jetbrains.com/clion/2020/04/live-webinar-clion-ama/
----
-
-## [9][C++ equivalent to wasm-pack?](https://www.reddit.com/r/cpp/comments/fyi8u0/c_equivalent_to_wasmpack/)
-- url: https://www.reddit.com/r/cpp/comments/fyi8u0/c_equivalent_to_wasmpack/
----
-I am aware of Rust and wasm-pack, and Emscripten for compiling C++ to webassembly. Is there any progress or proposals towards "native" webassembly tooling for C++?
-## [10][CppCast: Making Nu Languages](https://www.reddit.com/r/cpp/comments/fy87r5/cppcast_making_nu_languages/)
-- url: https://cppcast.com/nu-programming-languages-jonathan-turner/
----
-
-## [11][How I installed FLTK for use with Visual C++. FLTK is a library for windows and graphics used in Bjarne Stroustrup’s “Programming: Principles and Practice Using C++”.](https://www.reddit.com/r/cpp/comments/fy5cgj/how_i_installed_fltk_for_use_with_visual_c_fltk/)
-- url: https://alf-p-steinbach.github.io/Install-FLTK-for-use-with-Visual-C-/
----
-
-## [12][Making VisualStudio less clunky for text editing](https://www.reddit.com/r/cpp/comments/fy9szi/making_visualstudio_less_clunky_for_text_editing/)
-- url: https://www.reddit.com/r/cpp/comments/fy9szi/making_visualstudio_less_clunky_for_text_editing/
----
-I've been using VS because it'd rock solid IDE for C++ and using VSCode for everything else. I just hate the clunkyness of VS compared to VSCode for text editing. All the text shortcuts are different, no fuzzy search, everytime I hunt where I left writing the code because IDE keeps opening internal libraries and then I have to hunt the file I've been editing prior...   
-Are there any good plugins to overcome my hurdles and make it more like VSCode in that regard?  
-For a while now I've been writing code in VSCode and compiling in VS but that's an additional step I would like to skip.

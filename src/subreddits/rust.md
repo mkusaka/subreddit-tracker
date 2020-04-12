@@ -23,51 +23,99 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/04/07/this-week-in-rust-333/
 ---
 
-## [3][Intermodal: A nice torrent creator written in Rust](https://www.reddit.com/r/rust/comments/fytczt/intermodal_a_nice_torrent_creator_written_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/fytczt/intermodal_a_nice_torrent_creator_written_in_rust/
+## [3][Flutter RS - Build desktop apps in Flutter (using Rust backend) on stable branch](https://www.reddit.com/r/rust/comments/fzvojh/flutter_rs_build_desktop_apps_in_flutter_using/)
+- url: https://github.com/flutter-rs/flutter-rs
 ---
-Hi everyone!
 
-I just finished the first release of a project I've been working on for a while, Intermodal.
-
-Intermodal is a command-line BitTorrent `.torrent` file utility. The binary is called `imdl`, and at the moment, it can create, verify, and display the contents of torrents.
-
-It has a whole bunch of nice features, like cute progress bars, file inclusion and exclusion and exclusion with globs, and an automatic piece length picker that will chose a good piece length for torrents based on the size of their contents.
-
-This is the first step in a much larger project to try to improve the state of decentralized content creation, distribution, and consumption. I go into a lot of detail about the current state of the project, and where I hope to take it in the future, in a blog post [here](https://rodarmor.com/blog/intermodal/).
-
-The current version of Intermodal would not be nearly as good if it wasn't for the Rust language, and all the wonderful crates that the community has created.
-
-In particular, I want to thank the creators of `globset`, `regex`, `indicatif`, `ansi_term`, `serde`, `snafu`, `tempfile`, `walkdir`, `structopt`, `clap`, and `bendy`. (Although I honestly feel bad leaving out all the little guys in my `Cargo.toml`, like `atty`. What would I do without `atty`!)
-
-[`bendy`](https://github.com/P3KI/bendy), an excellent crate for encoding and decoding bencode, which is the encoding format that BitTorrent uses for `.torrent` files, didn't initially have Serde support. The maintainers were supportive of the idea of adding it, and were super friendly and and responsive, which made contributing a breeze. So thanks to @thequux and @0ndorio on GitHub!
-
-Development is hosted [here](https://github.com/casey/intermodal), and there are a bunch of good first issues if you're interested in contributing:
-
-- [Setting up code coverage on CI.](https://github.com/casey/intermodal/issues/9)
-- [Adding web seeds to torrents.](https://github.com/casey/intermodal/issues/92).
-- [Adding another kind of web seeds to torrents.](https://github.com/casey/intermodal/issues/93)
-- [Supporting the addition of arbitrary keys to created torrents.](https://github.com/casey/intermodal/issues/23)
-- [Adding a config file containing profiles to use for torrent file creation.](https://github.com/casey/intermodal/issues/36)
-- [Adding support for generating file padding.](https://github.com/casey/intermodal/issues/99)
-- [Adding a  whole new subcommand to edit existing `.torrent` files.](https://github.com/casey/intermodal/issues/124)
-- [Fixing a no-doubt silly bug causing tests to leave behind `.torrent` files in `/tmp`.](https://github.com/casey/intermodal/issues/344)
-- [Adding file selections to magnet links.](https://github.com/casey/intermodal/issues/245)
-- [Creating `.torrent` files from magnet links.](https://github.com/casey/intermodal/issues/255)
-- [Verifying multiple `.torrent` files at a time.](https://github.com/casey/intermodal/issues/165)
-- [Showing nonstandard fields in `imdl torrent show`.](https://github.com/casey/intermodal/issues/168)
-- [Adding a `--quiet` flag to `imdl torrent create`.](https://github.com/casey/intermodal/issues/174)
-- [Showing corrupted piece information during verification.](https://github.com/casey/intermodal/issues/192)
-- [Supporting BitTorrent V2 torrents.](https://github.com/casey/intermodal/issues/101)
-
-If you need to create a torrent, definitely give it a shot!
-## [4][Programming Servo: My own private runtime.](https://www.reddit.com/r/rust/comments/fywv7n/programming_servo_my_own_private_runtime/)
-- url: https://www.reddit.com/r/rust/comments/fywv7n/programming_servo_my_own_private_runtime/
+## [4][What's the idiomatic way to handle functions which mix different result types and optionals?](https://www.reddit.com/r/rust/comments/fzrvi1/whats_the_idiomatic_way_to_handle_functions_which/)
+- url: https://www.reddit.com/r/rust/comments/fzrvi1/whats_the_idiomatic_way_to_handle_functions_which/
 ---
-An overview of how Servo, a large parallel, concurrent, and multiprocess web engine written in Rust, embeds a JS/Wasm VM.
+For instance, I want to get a value which can either be pulled from:
 
-[https://medium.com/programming-servo/programming-servo-my-own-private-runtime-8a5ba74c63c8](https://medium.com/programming-servo/programming-servo-my-own-private-runtime-8a5ba74c63c8)
-## [5][Is there something I don't understand here ?](https://www.reddit.com/r/rust/comments/fz40nu/is_there_something_i_dont_understand_here/)
+1. a command line arg
+
+2. read from a JSON config file
+
+3. a default value
+
+Here I have something which looks like this (pseudocode):
+
+
+
+    use serde::{Deserialize};
+
+    fn get_arg() -&gt; Option&lt;String&gt; { ... }
+ 
+    #[derive(Deserialize)]
+    struct Config {
+        arg: Option&lt;String&gt;
+    }
+
+    fn my_function() -&gt; String {
+        let arg: Option&lt;String&gt; = get_arg()
+
+        match arg {
+            Some(value) =&gt; return value.clone(),
+            None =&gt; println!("no option from command line, parsing config")
+        };
+
+        let config_string = fs::read_to_string("path/to/config.json");
+        match config_string {
+            Ok(json) =&gt; {
+                let config: Option&lt;Config&gt; = serde_json::from_str(&amp;json).unwrap_or( Config { arg: "default" } ); // unwrapping a Serde error
+                return config.arg.unwrap_or("default");
+            },
+            Err(_) =&gt; return  "default"; // This would be an IO error
+        };
+    }
+
+
+If these were all optionals, or the same type of error, it would be easy to do it with the `?` operator.  Is there a cleaner way to handle situations like this?
+
+edit: formatting
+## [5][How often does Rust change?](https://www.reddit.com/r/rust/comments/fz8mwm/how_often_does_rust_change/)
+- url: https://words.steveklabnik.com/how-often-does-rust-change
+---
+
+## [6][I ripgrepped all crates on crates.io for profanity](https://www.reddit.com/r/rust/comments/fzc9fo/i_ripgrepped_all_crates_on_cratesio_for_profanity/)
+- url: https://www.reddit.com/r/rust/comments/fzc9fo/i_ripgrepped_all_crates_on_cratesio_for_profanity/
+---
+Following [the recent article](https://www.reddit.com/r/rust/comments/fxxued/) on how to download all of crates.io I and did that and used `ripgrep` to search for profanity. It has unearthed things ranging from passionate rants about cryptography standards to insulting chat bots to TODOs on unsafe code.
+
+Results:
+
+[`rg --iglob '*.rs' -i fuck | awk 'length &lt;= 2048' fuck | grep -vi 'brainfuck' | grep -vi 'THE FUCK YOU WANT TO PUBLIC LICENSE' | grep -v 'DO WHAT THE FUCK YOU WANT TO'`](https://pastebin.com/4MaNZzyv)
+
+[`rg --iglob '*.rs' -i shit | awk 'length &lt;= 2048' shit | grep -vi 'hashit' | grep -vi MATSUSHITA | grep -vi isHit`](https://pastebin.com/1w0JZF5W)
+## [7][RFC: a practical mechanism for applying Machine Learning for optimization policies in LLVM](https://www.reddit.com/r/rust/comments/fzjf2d/rfc_a_practical_mechanism_for_applying_machine/)
+- url: http://lists.llvm.org/pipermail/llvm-dev/2020-April/140763.html
+---
+
+## [8][My first Rust project. An RSA implementation. There's a lot left to do, but I was too thrilled to put it out there!](https://www.reddit.com/r/rust/comments/fzkcs1/my_first_rust_project_an_rsa_implementation/)
+- url: https://github.com/rsarky/og-rsa
+---
+
+## [9][Introducing Dors -- makefiles for cargo that treat workspaces as first-class citizens](https://www.reddit.com/r/rust/comments/fzj945/introducing_dors_makefiles_for_cargo_that_treat/)
+- url: https://www.reddit.com/r/rust/comments/fzj945/introducing_dors_makefiles_for_cargo_that_treat/
+---
+If you've ever tried to use cargo-make in a cargo workspace before, you'll know how frustrating it is to get working. Running tasks on all members of a workspace involves setting environment variables, you run into a circular dependency trying to later issue those same tasks on just one crate. Lastly, cargo-make implements a bunch of default behavior that can be hard to track down and work around.
+
+So, I'd like to introduce an alternative: [https://github.com/aklitzke/dors](https://github.com/aklitzke/dors) . It's a task runner for cargo, but without a lot of those problems. I'm trying to make something that is easy to predict, read, use, and integrates well with cargo workspaces. It has:
+
+\- Workspace support  
+\- Autocompletion  
+\- The ability to pass command-line arguments to your task  
+\- The ability to set workspace-wide or crate-specific environment variables  
+\- And a whole host more!
+
+It's very new, so any feedback or feature requests would be welcome!
+
+Thanks!
+## [10][Programming Generic Interrupt Controller and Timer Interrupt for my AArch64 OS in Rust](https://www.reddit.com/r/rust/comments/fzj4vq/programming_generic_interrupt_controller_and/)
+- url: https://lowenware.com/blog/osdev/aarch64-gic-and-timer-interrupt/
+---
+
+## [11][Is there something I don't understand here ?](https://www.reddit.com/r/rust/comments/fz40nu/is_there_something_i_dont_understand_here/)
 - url: https://www.reddit.com/r/rust/comments/fz40nu/is_there_something_i_dont_understand_here/
 ---
 Note that I'm just giving a quick thought about Ok wrapping and try blocks from an end user perspective. Not sorry for another post on the subject.
@@ -76,116 +124,41 @@ Rust is the most attractive language for me for many reasons, including the fact
 
 What is the problem with Ok(\_) ? Nothing has yet convinced me that there was a problem with this, and I can't see what is the advantage of going the mainstream way... and I hate JS, why would I want to see JS style try blocks ? or remove the Ok wrapping that makes my code feel clear ? Maybe I'm not informed well enough or not experienced enough, I don't know, but my first thought about this thing is this.
 
-tl;dr, Try blocks are ugly and make me feel like I'm writing JS and I hate it, and Ok(\_) looks good to me.
-## [6][The differences between Ok-wrapping, try blocks, and function level try](https://www.reddit.com/r/rust/comments/fyj43p/the_differences_between_okwrapping_try_blocks_and/)
-- url: https://yaah.dev/try-blocks
+tl;dr, \[Edit: I think\] Try blocks are ugly and make me feel like I'm writing JS and I hate it, and Ok(\_) looks good to me.
+## [12][jlrs v0.2 has been released](https://www.reddit.com/r/rust/comments/fzhdvh/jlrs_v02_has_been_released/)
+- url: https://www.reddit.com/r/rust/comments/fzhdvh/jlrs_v02_has_been_released/
 ---
+Some time ago I released the first version of `jlrs`, a crate that provides (mostly) safe bindings to the Julia C API. This first version works, but introduces a lot of unnecessary overhead, complexity and unnecessary distinctions. The second version is a major rewrite, but addresses many of those shortcomings.
 
-## [7][native Android app with Kotlin and Rust](https://www.reddit.com/r/rust/comments/fywgwj/native_android_app_with_kotlin_and_rust/)
-- url: https://gitlab.com/dpezely/native-android-kotlin-rust
----
+If you've used the first version, you'll know that version includes different contexts that separate allocating data and calling functions and data is exposed through handles. That has changed in v0.2; the different contexts have been replaced with frames that let you freely mix allocating data and calling functions, handles have been replaced by values which expose the data directly but safely. In general, things have been renamed to better reflect their names in the C API.  
 
-## [8][A new programming language for malayalees,based on malayalam memes,written completely in rust](https://www.reddit.com/r/rust/comments/fyvl10/a_new_programming_language_for_malayaleesbased_on/)
-- url: https://github.com/Sreyas-Sreelal/malluscript
----
+There's only one new feature, really. You can now check whether some value is (an array) of a specific type with the methods `Value::is&lt;T&gt;`, `Value::is_array`, and `Values::is_array_of&lt;T&gt;` respectively.
 
-## [9][Using struct method on other thread?](https://www.reddit.com/r/rust/comments/fz2pmi/using_struct_method_on_other_thread/)
-- url: https://www.reddit.com/r/rust/comments/fz2pmi/using_struct_method_on_other_thread/
----
-I have seen questions like this before, but I don't get my head around the answers.  
-So, please, could someone tell me why my code is not working and how to get this piece of code working.  
+As an example, this is how you can add two numbers with a dynamically growing frame:
 
+    // Initialize Julia. Read the documentation to learn
+    // more about the details
+    let mut julia = unsafe { Julia::init(16).unwrap() };
 
-    use std::thread;
-    use std::thread::JoinHandle;
-    
-    pub struct TestStruct {
-        string_vec: Vec&lt;String&gt;
-    }
-    
-    impl TestStruct {
-    
-        pub fn new() -&gt; Self {
-            TestStruct {
-                string_vec: Vec::new()
-            }
-        }
-    
-        pub fn vec_push(&amp;mut self) {
-            self.string_vec.push(String::from("+1"));
-        }
-    
-        pub fn spawn_thread(&amp;mut self) -&gt; JoinHandle&lt;()&gt; {
-            thread::spawn(move || {
-                self.vec_push();
-            })
-        }
-    
-    }
-## [10][Create HashMap of Rust struct properties](https://www.reddit.com/r/rust/comments/fz345k/create_hashmap_of_rust_struct_properties/)
-- url: https://www.reddit.com/r/rust/comments/fz345k/create_hashmap_of_rust_struct_properties/
----
-I want to create a HashMap of a Rust struct. The key is the name of the property and the value is the value of the property. This is my current attempt:
+    // We can only do things when we have access to a frame
+    let x = julia.dynamic_frame(|frame| {
+        // Create the two arguments
+        let i = Value::new(frame, 2u64)?;
+        let j = Value::new(frame, 1u32)?;
 
-    pub fn into_query_values(self) -&gt; cdrs::query::QueryValues {
-        use std::collections::HashMap;
-        let mut values: HashMap&lt;String, cdrs::types::value::Value&gt; = HashMap::new();
-    
-        #(
-            values.insert(stringify!(#idents), self.#idents);
-        )*
-    
-        cdrs::query::QueryValues::NamedValues(values)
-    }
+        // We can find the addition-function in the base 
+        // module
+        let func = Module::base(frame).function("+")?;
 
-This code (and the other code) can be cloned from this repo:  [https://github.com/Jasperav/cdrs-helpers-derive/tree/auto\_into\_query\_values](https://github.com/Jasperav/cdrs-helpers-derive/tree/auto_into_query_values). Trying to cargo expend the 'SomeStruct' inside examples/src/main.rs will reproduce the compile time error.
+        // Call the function and unbox the result
+        let output = func.call2(frame, i, j)?;
+        output.try_unbox::&lt;u64&gt;()
+    }).unwrap();
 
-I expect it will do something like this:
+    assert_eq!(x, 3);
 
-    values.insert("pk", self.pk);
-    values.insert("name", self.name);
-## [11][Why can’t you ? inside a let x = {} block?](https://www.reddit.com/r/rust/comments/fyx8va/why_cant_you_inside_a_let_x_block/)
-- url: https://www.reddit.com/r/rust/comments/fyx8va/why_cant_you_inside_a_let_x_block/
----
-I'm trying to avoid using a ton of `if let`'s  inside of each other here. So I thought I could do this:
+[Crate](https://crates.io/crates/jlrs)
 
-	let x: Option&lt;type&gt; = {
-		let a = someFunctionThatReturnsOption()?;
-		let b = someOtherOptionFunction()?;
-		Some(a + b)
-	}
+[Documentation](https://docs.rs/jlrs)
 
-Why can't I do this?
-
-Instead of doing something elegant like that I've had to do:
-
-    let dist: Option&lt;f32&gt; = {
-        if let Some(mouse_position) = input.mouse_position() {
-            if let ActiveCamera(Some(camera_ent)) = *active_camera {
-                if let Some(camera) = camera_comp.get(camera_ent) {
-                    if let Some(camera_transform) = transforms.get(camera_ent) {
-                        let camera_trans = camera_transform.translation();
-                        Some(
-                            ((camera_trans.x - mouse_position.0).powi(2)
-                                + (camera_trans.y - mouse_position.1).powi(2))
-                            .sqrt(),
-                        )
-                    } else {
-                        None
-                    }
-                } else {
-                    None
-                }
-            } else {
-                None
-            }
-        } else {
-            None
-        }
-    };
-
-It’s horrible.
-## [12][Swift: Google's bet on differentiable programming](https://www.reddit.com/r/rust/comments/fyt1ou/swift_googles_bet_on_differentiable_programming/)
-- url: https://tryolabs.com/blog/2020/04/02/swift-googles-bet-on-differentiable-programming/
----
-
+[Repo](https://github.com/Taaitaaiger/jlrs)

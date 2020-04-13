@@ -22,186 +22,172 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How to add relay to Create-React-App with Typescript](https://www.reddit.com/r/typescript/comments/fzr1jm/how_to_add_relay_to_createreactapp_with_typescript/)
+## [2][Been building my first TypeScript project for 3 months, was going well. Updated all NPM packages and everything Broke...](https://www.reddit.com/r/typescript/comments/g08pum/been_building_my_first_typescript_project_for_3/)
+- url: https://www.reddit.com/r/typescript/comments/g08pum/been_building_my_first_typescript_project_for_3/
+---
+So I've given most of my Express middleware this type: [https://pastebin.com/kCnjfUex](https://pastebin.com/kCnjfUex)
+
+But now, after updating all of my NPM packages to the latest I have 100+ errors all saying something like this:`TS2322: Type 'RequestHandler&lt;ParamsDictionary, any, any, any&gt;' is not assignable to type 'Middleware'.   Type 'RequestHandler&lt;ParamsDictionary, any, any, any&gt;' provides no match for the signature '(req: RequestExtended, res: Response&lt;any&gt;, next: NextFunction): void | Promise&lt;Response&lt;any&gt;&gt;'`
+
+Any ideas on what I'm doing wrong?  
+
+
+EDIT: Fixed, I deleted node\_modules and package.lock.json and then used command `npm i`  
+@ Types/express needed to be at version 4.17.0, and so changed that in package.json  
+Found this information here: [https://github.com/DefinitelyTyped/DefinitelyTyped/issues/40138](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/40138)
+## [3][Help understanding type inference and utility types](https://www.reddit.com/r/typescript/comments/g0f5em/help_understanding_type_inference_and_utility/)
+- url: https://www.reddit.com/r/typescript/comments/g0f5em/help_understanding_type_inference_and_utility/
+---
+That's how `Extract` utility type is defined in TS lib:
+
+    /**
+     * Extract from T those types that are assignable to U
+     */
+    type Extract&lt;T, U&gt; = T extends U ? T : never;
+
+I understand that when `T` is say `'a'` and `U` is say `'a' | 'b'` it'll return `'a'` because `'a'` is the subtype (“extends“) of `'a' | 'b'`. But I cannot understand how does it work when `T` is not a subtype of `U` but have common types with it. Here's an example:
+
+    type AB = 'a' | 'b'
+    type BC = 'b' | 'c'
+    type E = Extract&lt;AB, BC&gt;
+    const e: E = 'b'
+
+This works, though `AB` is not a subtype of `BC` (which I don't understand). Okay, but what if I inline `Extract`?
+
+    type AB = 'a' | 'b'
+    type BC = 'b' | 'c'
+    type E = AB extends BC ? AB : never;
+    const e: E = 'b'    // Does not work, E is never
+
+Nope, does not work (which I understand). But how does it happen that, if `Extract` is defined as in lib, it works?
+## [4][Yupress: combining Yup and Express](https://www.reddit.com/r/typescript/comments/g07r7l/yupress_combining_yup_and_express/)
+- url: https://www.reddit.com/r/typescript/comments/g07r7l/yupress_combining_yup_and_express/
+---
+The [`yupress` library](https://github.com/Malvolio/yupress) harnesses the power of Yup to make writing Express-based applications in Typescript simpler, more reliable, and more secure.
+
+I'm posting it here before releasing it as an NPM module because I wanted to see whether people wanted significant changes (and even understood it at all).  All comments welcome.
+## [5][Moving to Typescript from JS on express site. Do you guys know the Typescript equivalent of module.exports?](https://www.reddit.com/r/typescript/comments/g0475a/moving_to_typescript_from_js_on_express_site_do/)
+- url: https://www.reddit.com/r/typescript/comments/g0475a/moving_to_typescript_from_js_on_express_site_do/
+---
+
+I use module.exports to export a function in a file and the Typescript compiler is telling me that it isn't exporting the functions in my file.
+
+Here is the file
+
+    // @ts-nocheck
+    import db from "../psql-con";
+    
+    module.exports = {
+      // returns true if the input inserted by the user meets the requirements in the form.
+      validUser: (email, username, password) =&gt; {
+        const emailRegEx = /^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const validEmail = emailRegEx.test(email);
+    
+        const validUsername =
+          typeof username == "string" &amp;&amp; username.trim().length &gt; 2;
+    
+        // minimum eight characters, at least one uppercase letter, one lowercase letter and one number
+        const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        const validPassword = passwordRegEx.test(password);
+        return validEmail &amp;&amp; validUsername &amp;&amp; validPassword;
+      },
+    
+      // returns true if email exists
+      emailExists: async (email) =&gt; {
+        const { rows } = await db.query(
+          "SELECT email FROM users WHERE email = $1",
+          [email]
+        );
+        if (rows.length === 0) {
+          return false;
+        }
+        return true;
+      },
+    
+      // returns true if username exists
+      usernameExists: async (username) =&gt; {
+        const {
+          rows,
+        } = await db.query("SELECT username FROM users WHERE username = $1", [
+          username,
+        ]);
+        if (rows.length === 0) {
+          return false;
+        }
+        return true;
+      },
+    };
+
+
+Do you guys know the Typescript equivalent of module.exports?
+## [6][How to setup Typescript, Eslint, Prettier and React in 5 minutes](https://www.reddit.com/r/typescript/comments/g0e3hw/how_to_setup_typescript_eslint_prettier_and_react/)
+- url: https://medium.com/@carljohan.kihl/how-to-setup-typescript-eslint-prettier-and-react-in-5-minutes-44cfe8af5081?source=friends_link&amp;sk=a46f3a9158870daa7887dcf4cf34cc5b
+---
+
+## [7][I am developing a new JavaScript library to add keyboard shortcuts. Would you use it?](https://www.reddit.com/r/typescript/comments/g0gsn4/i_am_developing_a_new_javascript_library_to_add/)
+- url: https://www.reddit.com/r/typescript/comments/g0gsn4/i_am_developing_a_new_javascript_library_to_add/
+---
+
+
+[View Poll](https://www.reddit.com/poll/g0gsn4)
+## [8][Typed function to recursively access object properties?](https://www.reddit.com/r/typescript/comments/fzx6e8/typed_function_to_recursively_access_object/)
+- url: https://www.reddit.com/r/typescript/comments/fzx6e8/typed_function_to_recursively_access_object/
+---
+Is there a good way in typescript to type a function that will recursively access object properties? Here's a hand-coded example of going two levels deep:
+
+```
+function deepProp&lt;T, K extends keyof T&gt;(obj: T, prop1: K, prop2: keyof T[K]) {
+    return obj[prop1][prop2];
+}
+
+// Example use
+const obj = {
+    user: {
+        pets: [{
+            toys: [{
+                name: "Toughy",
+                price: 1999
+            }]
+        }]
+    }
+} as const
+deepProp(obj, "user", "pets");
+```
+
+But I'm looking for a good way to take any number of `props` in the `deepProp` function to dive down as deep as necessary. I imagine that function's signature would be something like `function deepProp(obj, ...props) {  }`. Is there a good way to do this? Thanks!
+## [9][Getting correct props on a generic form field in React](https://www.reddit.com/r/typescript/comments/g03equ/getting_correct_props_on_a_generic_form_field_in/)
+- url: https://www.reddit.com/r/typescript/comments/g03equ/getting_correct_props_on_a_generic_form_field_in/
+---
+I'm using Formik to generate some forms. I have a generic `Form.Field` component that has a `component` prop. The component passed in here could be of any type - `Form.Input.Text`, `Form.Input.Select`, `Form.Input.Date`, etc.
+
+When using the `Form.Field` component, I want it to know the required props for the component it's rendering it. How can I do this?
+
+[Here's an example of what I'm asking for in Code Sandbox](https://codesandbox.io/s/quirky-river-b7p35?file=/src/App.tsx) (excuse the handful of shortcuts I made to make this.) See the comments inside of `src/App.tsx`. Intellisense says the `data` property on the 2nd form component doesn't fit there but the page still renders as expected. If you remove the `data` property, the compiler throws an error because `data.map(...)` inside of `src/Form/Select.tsx` doesn't handle when data is null elegantly. I know I can handle that better, but `data` is a required property, so I shouldn't ever need to do that in this simple example.
+
+The reason for this structure is re-usability, so I can import just 1 component and build an entire Form from it. I'm not looking to directly import form fields separately, but I'm willing to change how this code is written. Again, the end goal of the structure I want is to import 1 Form component that can let me build an entire form.
+## [10][Help with understanding a function signature](https://www.reddit.com/r/typescript/comments/g01fyg/help_with_understanding_a_function_signature/)
+- url: https://www.reddit.com/r/typescript/comments/g01fyg/help_with_understanding_a_function_signature/
+---
+Hi everyone, 
+I'm fairly new to Typescript and I was wondering if you could help me.
+
+In my project im using React and Typescript and I have the following component:
+```
+&lt;Chip key={chipData.key} label={chipData.label} className={classes.chip} onClick={handleChipClick(chipData)} /&gt;
+```
+My onClick event handler looks like this: 
+```
+const handleChipClick = (chipToDelete: ChipData) =&gt; () =&gt; {}
+```
+My question to you is:
+```
+= (chipToDelete: ChipData) =&gt; () 
+```
+what does this function signature mean and why does it work, but this one doesnt?
+```
+= (chipToDelete: ChipData) =&gt; {}
+```
+## [11][How to add relay to Create-React-App with Typescript](https://www.reddit.com/r/typescript/comments/fzr1jm/how_to_add_relay_to_createreactapp_with_typescript/)
 - url: https://medium.com/@ricardojgonzlez/how-to-add-relay-to-create-react-app-with-typescript-b6daacea21dd
 ---
 
-## [3][Isotope - fast, simple &amp; lightweight UI library](https://www.reddit.com/r/typescript/comments/fykjph/isotope_fast_simple_lightweight_ui_library/)
-- url: https://github.com/Isotope-js/core
----
-
-## [4][What's the best practice for data modeling, shared by both front-end and back-end?](https://www.reddit.com/r/typescript/comments/fyj2u6/whats_the_best_practice_for_data_modeling_shared/)
-- url: https://www.reddit.com/r/typescript/comments/fyj2u6/whats_the_best_practice_for_data_modeling_shared/
----
-Hi,
-
-I wonder what's the best way of sharing the same data types between the client (React) and the server (Express + Socket.IO).
-
-In my game I have different rooms, each room saves the current status, something like:
-
-```js
-class GameRoom {
-    players: Player[];
-    started: boolean;
-    currentPlayerTurn; Player;
-    dices: [number, number];
-
-    constructor({players = [], started = false, currentPlayerTurn = null, dices = [1,1]) {
-        this.players = players;
-        this.started = started;
-        this.currentPlayerTurn = currentPlayerTurn;
-        this.dices = dices;
-    }
-
-    startGame() {
-        this.currentPlayerTurn = this.players[0];
-        this.started = true;
-    }
-    
-    // etc..
-}
-```
-
-The room is being generated in the server, being sent to the client as JSON, and then rebuilt in the client. I sync the data with socket events, and everything's perfect.
-
-But there's a problem with the React side of the story: changing `GameRoom` properties won't cause a rerender. That means I have to `forceRerender()` each time something is edited, or listen to class changes. Both options are a mess and I [described it deeply on Stack Overflow](https://stackoverflow.com/questions/61142978/make-a-react-component-rerender-when-data-class-property-change/).
-
-This mess made me think maybe classes are not the best way to go. Using interface will solve this problem entirely, but I do lose instance functions like `GameRoom.startGame()`, that will have to be turned into utility functions, like:
-
-```js
-export function startGame(gameRoom: GameRoom) {
-    gameRoom.currentPlayerTurn = gameRoom.players[0];
-    gameRoom.started = true;
-}
-```
-
-which is another mess, since they're hidden in code, and the developer **needs to know they exist**, and not edit `gameRoom` directly.
-
-If you guys have any idea on how to model my data types, I'd be more than happy to hear.\
-Thanks!
-## [5][If x has a type of T, then what's the type of JSON.parse(JSON.stringify(x))?](https://www.reddit.com/r/typescript/comments/fxub0f/if_x_has_a_type_of_t_then_whats_the_type_of/)
-- url: https://effectivetypescript.com/2020/04/09/jsonify/
----
-
-## [6][Porting to TypeScript Solved Our API Woes](https://www.reddit.com/r/typescript/comments/fy37h9/porting_to_typescript_solved_our_api_woes/)
-- url: https://www.executeprogram.com/blog/porting-to-typescript-solved-our-api-woes
----
-
-## [7][typescript object literal problem](https://www.reddit.com/r/typescript/comments/fy5v3r/typescript_object_literal_problem/)
-- url: https://www.reddit.com/r/typescript/comments/fy5v3r/typescript_object_literal_problem/
----
-Hi,
-
-so in typescript, once we define an object like this 
-
-```
-const parsedData = {
-            serviceType,
-            stops,
-            deliveries,
-            requesterContact: {
-                name: pickup.personInChargeName,
-                phone: merchantPhoneValidator(pickup.personInChargePhoneNum),
-            },
-            specialRequests,
-        };
-```
-Then we cannot dynamically add more fields like javascript
-```
-// error 
-if (isPreOrder) {
-       parsedData.scheduleAt = new Date(pickup.startAt).toISOString();
-}
-```
-Nor we can add dummy field just letting typescript know we have this field
-```
-const parsedData = {
-            scheduleAt : undefined  // error
-            serviceType,
-            stops,
-            deliveries,
-            requesterContact: {
-                name: pickup.personInChargeName,
-                phone: merchantPhoneValidator(pickup.personInChargePhoneNum),
-            },
-            specialRequests,
-        };
-```
-
-Any better way to get around with this except disabling typescript? Thanks!
-## [8][Linkdash - Generate a handy dashboard of links in seconds!](https://www.reddit.com/r/typescript/comments/fxpx9q/linkdash_generate_a_handy_dashboard_of_links_in/)
-- url: https://i.redd.it/3mgoes21prr41.gif
----
-
-## [9][Debugging typescript dependencies from a non typescript node project](https://www.reddit.com/r/typescript/comments/fy81ch/debugging_typescript_dependencies_from_a_non/)
-- url: https://www.reddit.com/r/typescript/comments/fy81ch/debugging_typescript_dependencies_from_a_non/
----
-I've seen setups for debugging Frontend code with source maps, and complex configurations for debugging entire typescript projects in vscode with sourcemaps.  
-
-
-However, what if I have a project that is in Vanilla Node.js, but some of my dependencies are in Typescript? How do I debug those in vscode or chrome?
-## [10][Typescript problem using GraphQL Nexus](https://www.reddit.com/r/typescript/comments/fxz4f6/typescript_problem_using_graphql_nexus/)
-- url: https://www.reddit.com/r/typescript/comments/fxz4f6/typescript_problem_using_graphql_nexus/
----
-So I just started using GraphQL Nexus today and I'm just doing some basic setup and noodling around with some stuff. I coded a simple registerUser mutation like so:
-
-`export const Mutation = objectType({`  
-  `name: 'Mutation',`  
- `definition(t) {`  
- `t.boolean('register', {`  
-`args: {`  
-`email: stringArg({ required: true }),`  
-`password: stringArg({ required: true }),`  
- `},`  
-`async resolve(_, { email, password }) {`  
- `console.log(password, email)`  
-`return true`  
- `},`  
- `})`  
- `},`  
-`})`
-
-But when I replaced the arguments to 'register' with a RegisterInput input like so:
-
-`export const RegisterInput = inputObjectType({`  
-  `name: 'RegisterInput',`  
- `definition(t) {`  
- `t.string('email', { required: true })`  
- `t.string('password', { required: true })`  
- `},`  
-`})`  
-
-
-`export const Mutation = objectType({`  
-  `name: 'Mutation',`  
- `definition(t) {`  
- `t.boolean('register', {`  
-`args: {`  
-`input: arg({ type: RegisterInput }),`  
- `},`  
-`async resolve(_, { input: { email, password } }) {`  
- `console.log(password, email)`  
-`return true`  
- `},`  
- `})`  
- `},`  
-`})`
-
-Everything works, but he resolver input argument `{ input: { email, password } }` gets typescript a little complain - Property 'email'/'password' does not exist on type '{ email: string; password: string; } | null | undefined'? How do I get those annoying red squiggles to go away?
-## [11][Typescript problem with a GraphQl Nexus resolver](https://www.reddit.com/r/typescript/comments/fy1iaz/typescript_problem_with_a_graphql_nexus_resolver/)
-- url: https://www.reddit.com/r/typescript/comments/fy1iaz/typescript_problem_with_a_graphql_nexus_resolver/
----
-I'm creating a new MongoDB document in a GraphQL Nexus resolver:
-
-`async resolve(_, { input: { email, password } }, { userData }) {`  
- `const hashedPassword = await bcrypt.hash(password, 10)`  
- `let newUser = {`  
-  `email,`  
-  `password: hashedPassword,`  
- `}`  
- `const { insertedId } = await userData.insertOne(newUser)`  
- `newUser._id = insertedId`  
-  `return newUser`  
- `},`
-
-but typescript says property '\_id' does not exist on type '{ email: string; password: string; }'. I'm stuck because this is how I create a new document in mongo using plain JS. What is the proper way to add the insertedId?

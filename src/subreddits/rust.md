@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (15/2020)!](https://www.reddit.com/r/rust/comments/fw2hd8/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/fw2hd8/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (16/2020)!](https://www.reddit.com/r/rust/comments/g0erq1/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/g0erq1/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,149 +16,81 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/frfduy/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/fw2hd8/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 333](https://www.reddit.com/r/rust/comments/fxqdrs/this_week_in_rust_333/)
-- url: https://this-week-in-rust.org/blog/2020/04/07/this-week-in-rust-333/
+## [2][What's everyone working on this week (16/2020)?](https://www.reddit.com/r/rust/comments/g0es99/whats_everyone_working_on_this_week_162020/)
+- url: https://www.reddit.com/r/rust/comments/g0es99/whats_everyone_working_on_this_week_162020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-16-2020/40880)!
+## [3][Blog Post: Simple but Powerful Pratt Parsing](https://www.reddit.com/r/rust/comments/g0eusf/blog_post_simple_but_powerful_pratt_parsing/)
+- url: https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html
 ---
 
-## [3][Flutter RS - Build desktop apps in Flutter (using Rust backend) on stable branch](https://www.reddit.com/r/rust/comments/fzvojh/flutter_rs_build_desktop_apps_in_flutter_using/)
-- url: https://github.com/flutter-rs/flutter-rs
+## [4][Hyper Traps](https://www.reddit.com/r/rust/comments/g0gmn1/hyper_traps/)
+- url: https://vorner.github.io/2020/04/13/hyper-traps.html
 ---
 
-## [4][What's the idiomatic way to handle functions which mix different result types and optionals?](https://www.reddit.com/r/rust/comments/fzrvi1/whats_the_idiomatic_way_to_handle_functions_which/)
-- url: https://www.reddit.com/r/rust/comments/fzrvi1/whats_the_idiomatic_way_to_handle_functions_which/
+## [5][A Week of Experiencing Rust](https://www.reddit.com/r/rust/comments/g04rq9/a_week_of_experiencing_rust/)
+- url: https://www.reddit.com/r/rust/comments/g04rq9/a_week_of_experiencing_rust/
 ---
-For instance, I want to get a value which can either be pulled from:
-
-1. a command line arg
-
-2. read from a JSON config file
-
-3. a default value
-
-Here I have something which looks like this (pseudocode):
+I grew up as a C developer, and switched to Java a couple decades ago. A few years ago I decided to retool and chose Go instead of Rust. With my other hobbies on hold, I decided to poke around Rust. Here are 13 things I experienced:  
 
 
+1. "`?`". This operator is great. It's just the right amount of syntax to say "I can't deal with this, give it to my caller." This is what I want, not Go's "`obj, err := doThing(..`" with pages of if statements. The syntax makes much more sense than Java's very verbose try/catch/throw exception handling. Make the syntax for error handling easy and I'll handle errors more often. So easy that:
+2. `Option&lt;&gt;`, `Result&lt;&gt;`, and `?`. I discovered, like a lot of new people new to Rust, that "?" doesn't work on Option&lt;&gt;'s. I 100% understand why, but that doesn't change my desire that it did. That said, there's an issue to improve the compiler error message to direct people to using `ok_or_else`. Speaking of error messages:
+3. `Result&lt;Thing,Box&lt;dyn Error&gt;&gt;`. I still don't know if this is the correct syntax, but it's what the compiler told me to do. I haven't read about "`dyn`" yet or why it's important.
+4. `io::Error`. After figuring out Results and ?, io::Error was really confusing; I *think* it was this type. There's some type somewhere called Error that **is a** Result&lt;&gt;.
+5. `Ok`, `Err`, `Some`, `None`. I discovered when navigating into the code of other crates that these make the flow of code quite readable and I enjoy using and reading them. Seeing "Some" says "it's possible for this function to not return the thing I'm looking for". Seeing "Err" says "this function can fail" - it doesn't matter how far away the function signature is, or how buried in generics-scoping-line noise that I don't understand yet it is.
+6. Cross compiling. In Go, to compile an OSX binary on Linux, I set two environment variables: `GOOS=darwin` `GOARCH=amd64` and I'm set. I can do the same for Windows, and a handful of BSDs. The Rust tooling to cross-compile is still not there yet. If I `rustup target add foo`, then `cargo build --target foo`, I expect a binary that runs on **foo**. Right now I get errors about missing helpers (archiver/linkers). I know there are *reasons*, but I don't want reasons, I just want it to work. Even the `cross` dropin for Cargo seemed to not work in all cases.
+7. Explicit allocation. I read somewhere that Rust forces the developer to be explicit about when it's allocating memory and passing it around. Of course, this is totally foreign to me. While I don't have an RFC-level detail solution to this, I do wish there was some sort of very shorthand syntax to say "it's okay to do whatever you need to make this work". If `my_foo.bar().baz().qux()` needs a few interim of allocations, then go for it. If you don't know the size of my type, then go ahead and autobox it for me. Maybe after I've been programming in Rust for a few months, I'll change my mind on this.
+8. Matching variants. I'm using CLion, and I love the "autocomplete missing variants" and the compiler errors when I added new variants to enums. It felt like the tooling was making my life easier.
+9. Lifetimes and ownership. Coming from garbage collected languages, I knew this was going to be tough. Two things I wish I found: 1) a code-free set of examples of different ways that lifetimes show up, maybe with diagrams / pictures and how to handle it. 2) Some sort of linter that would tell me if I'm making bad life choices. Right now I'm wrapping things in `Arc&lt;&gt;`, and cloning them as I need to give out copies. I have no idea the performance impact of doing this, nor reasonably what my alternatives would be. In fact:
+10. Am I Rust Yet? In general, I'd love something that could check for common bad-practice idioms and suggest alternatives. Even if it was just a book of "if you do pattern X, because you want to do Y, here is the impact, and here is Z which has a similar outcome but isn't bad / is more idiomatic". Is my `Optional&lt;Vec&lt;Arc&lt;Thing&gt;&gt;&gt;` "right" / "fast" - no idea, I kept wrapping it in things until my code worked.
+11. Strings. You probably know what I'm going to say. I've avoided putting references in my structs so far (because I'm not ready to tackle lifetimes). Converting between `String`, `&amp;String`, `&amp;str`, (and then I discovered there's also `OsString`) is a disappointing experience. I *know* I'm doing the wrong thing, but I'm not yet ready to invest in really understanding what, so instead I'm wrapping/unwrapping with `String::from` and `as_str`.
+12. `pub(crate)` At one point CLion said "hey, this thing you're trying to access is private, can I make it visible for you?" and this is what it did. This syntax is really nice, it's clear what's going on with the scoping. Conversely:
+13. Imports. It's 2020, and while CLion will reformat my imports, it won't remove unused ones, nor does it try to be helpful in bringing in the imports for traits I'm using. It's a bit disappointing and tedious. I feel like it's so close.
 
-    use serde::{Deserialize};
+It may not sound this way, but my experience overall pretty positive. Rust's management of transitive dependencies is the perfect tradeoff (Go is still figuring itself out, and Java solved this (differently) a decade ago). Cargo being the defacto build tool is nice. I like that --test and --example are actual concepts. Obviously I wish compiling was faster, but I also think one of my dependencies is doing something clever in its `build.rs`. I'm also swallowing a two megabyte file with `RustEmbed` which I'm told stresses things out.
+## [6][Anybody up for a code review?](https://www.reddit.com/r/rust/comments/g0gfoz/anybody_up_for_a_code_review/)
+- url: https://www.reddit.com/r/rust/comments/g0gfoz/anybody_up_for_a_code_review/
+---
+I've been working on a tool called `dirsync` for synchronizing a local directory with one on a remote host.  It's built in Rust on top of `rsync` and `ssh`, and the source code is [here](https://github.com/spencerkohan/dirsync).
 
-    fn get_arg() -&gt; Option&lt;String&gt; { ... }
- 
-    #[derive(Deserialize)]
-    struct Config {
-        arg: Option&lt;String&gt;
-    }
+I'm still pretty new to Rust, and I am sure I am doing a lot of things in a non-optimal way, particularly it feels like I am unwrapping to often, and cloning too many strings.  It's only a handful of files, If anyone feels like talking a look and offering any constructive criticism I would be much obliged :)
+## [7][Why does everyone recommend diesel when it's so confusing to use?](https://www.reddit.com/r/rust/comments/g07t7a/why_does_everyone_recommend_diesel_when_its_so/)
+- url: https://www.reddit.com/r/rust/comments/g07t7a/why_does_everyone_recommend_diesel_when_its_so/
+---
+I'm not a fan of ORMs in general. I'd rather craft my own SQL queries (that way SQL stays fresh in my mind as well). But I'm a freshman when it comes to connecting my rust code to postgres so I decide to look up tutorials on how to do it.
 
-    fn my_function() -&gt; String {
-        let arg: Option&lt;String&gt; = get_arg()
+Most of the tutorials I found use diesel to perform the schema translation. However, after about 3 hours of wrestling with diesel I just gave up and decided to switch to vanilla rust::postgres and manage my schema and migrations separately.
 
-        match arg {
-            Some(value) =&gt; return value.clone(),
-            None =&gt; println!("no option from command line, parsing config")
-        };
+Why is diesel so popular amongst this community? The documentation is woefully inadequate. The `table!` macro hides way too much complexity and prevents any kind of intellisense. And ultimately, it is an ORM.
 
-        let config_string = fs::read_to_string("path/to/config.json");
-        match config_string {
-            Ok(json) =&gt; {
-                let config: Option&lt;Config&gt; = serde_json::from_str(&amp;json).unwrap_or( Config { arg: "default" } ); // unwrapping a Serde error
-                return config.arg.unwrap_or("default");
-            },
-            Err(_) =&gt; return  "default"; // This would be an IO error
-        };
-    }
-
-
-If these were all optionals, or the same type of error, it would be easy to do it with the `?` operator.  Is there a cleaner way to handle situations like this?
-
-edit: formatting
-## [5][How often does Rust change?](https://www.reddit.com/r/rust/comments/fz8mwm/how_often_does_rust_change/)
-- url: https://words.steveklabnik.com/how-often-does-rust-change
+I'm not lamenting the presence of the crate by the way. I'm more lamenting so many "tutorials" and documentation using it. Even the rocket_contrib databases doco demonstrates diesel connectivity rather than vanilla dB connections.
+## [8][Ruma is dead, long live Ruma!](https://www.reddit.com/r/rust/comments/g01iuh/ruma_is_dead_long_live_ruma/)
+- url: https://www.ruma.io/news/ruma-is-dead-long-live-ruma-2020-04-10/
 ---
 
-## [6][I ripgrepped all crates on crates.io for profanity](https://www.reddit.com/r/rust/comments/fzc9fo/i_ripgrepped_all_crates_on_cratesio_for_profanity/)
-- url: https://www.reddit.com/r/rust/comments/fzc9fo/i_ripgrepped_all_crates_on_cratesio_for_profanity/
----
-Following [the recent article](https://www.reddit.com/r/rust/comments/fxxued/) on how to download all of crates.io I and did that and used `ripgrep` to search for profanity. It has unearthed things ranging from passionate rants about cryptography standards to insulting chat bots to TODOs on unsafe code.
-
-Results:
-
-[`rg --iglob '*.rs' -i fuck | awk 'length &lt;= 2048' fuck | grep -vi 'brainfuck' | grep -vi 'THE FUCK YOU WANT TO PUBLIC LICENSE' | grep -v 'DO WHAT THE FUCK YOU WANT TO'`](https://pastebin.com/4MaNZzyv)
-
-[`rg --iglob '*.rs' -i shit | awk 'length &lt;= 2048' shit | grep -vi 'hashit' | grep -vi MATSUSHITA | grep -vi isHit`](https://pastebin.com/1w0JZF5W)
-## [7][RFC: a practical mechanism for applying Machine Learning for optimization policies in LLVM](https://www.reddit.com/r/rust/comments/fzjf2d/rfc_a_practical_mechanism_for_applying_machine/)
-- url: http://lists.llvm.org/pipermail/llvm-dev/2020-April/140763.html
+## [9][Valora: a graphics library and CLI focused on generative fine art for print](https://www.reddit.com/r/rust/comments/g05pnp/valora_a_graphics_library_and_cli_focused_on/)
+- url: https://paytonturnage.gitbook.io/valora/
 ---
 
-## [8][My first Rust project. An RSA implementation. There's a lot left to do, but I was too thrilled to put it out there!](https://www.reddit.com/r/rust/comments/fzkcs1/my_first_rust_project_an_rsa_implementation/)
-- url: https://github.com/rsarky/og-rsa
+## [10][Split Vec&lt;T&gt; into Option&lt;(T, Vec&lt;T&gt;)&gt;](https://www.reddit.com/r/rust/comments/g0ezfp/split_vect_into_optiont_vect/)
+- url: https://www.reddit.com/r/rust/comments/g0ezfp/split_vect_into_optiont_vect/
+---
+I'm trying to transform a `Vec&lt;T&gt;` into a tuple of `Option&lt;(T, Vec&lt;T&gt;)&gt;` where the tuple represents the `(head, tail)` of the `Vec` in the usual way.
+
+The `[T]` (slice) type provides `[T]::split_first()` (and `split_first_mut` variant) but that of course returns `Option&lt;(&amp;T, &amp;[T])&gt;` rather than the owned items.
+
+This is easy enough to implement using an extension trait using `Vec::swap_remove(usize)` (see [playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=ce980de8198ed313ba2de32f80063136)) but I feel like i'm missing an obviously better solution here?
+
+If not then is there a case to be made for having `split_xxx_into()` methods on `Vec` directly or via some `SplitInto` extension trait with an impl for `Vec` similar to the playground example?
+## [11][Any good GUI programming libraries for Rust?](https://www.reddit.com/r/rust/comments/g0g758/any_good_gui_programming_libraries_for_rust/)
+- url: https://www.reddit.com/r/rust/comments/g0g758/any_good_gui_programming_libraries_for_rust/
+---
+I want to get into rust but could not any info on GUI programming/the info is really old. Currently, what are some good libraries I can use with Rust for desktop app development?
+## [12][Trust-DNS 0.19.4 released, now with async-std support.](https://www.reddit.com/r/rust/comments/g04fxo/trustdns_0194_released_now_with_asyncstd_support/)
+- url: https://github.com/bluejekyll/trust-dns/releases/tag/0.19.4
 ---
 
-## [9][Introducing Dors -- makefiles for cargo that treat workspaces as first-class citizens](https://www.reddit.com/r/rust/comments/fzj945/introducing_dors_makefiles_for_cargo_that_treat/)
-- url: https://www.reddit.com/r/rust/comments/fzj945/introducing_dors_makefiles_for_cargo_that_treat/
----
-If you've ever tried to use cargo-make in a cargo workspace before, you'll know how frustrating it is to get working. Running tasks on all members of a workspace involves setting environment variables, you run into a circular dependency trying to later issue those same tasks on just one crate. Lastly, cargo-make implements a bunch of default behavior that can be hard to track down and work around.
-
-So, I'd like to introduce an alternative: [https://github.com/aklitzke/dors](https://github.com/aklitzke/dors) . It's a task runner for cargo, but without a lot of those problems. I'm trying to make something that is easy to predict, read, use, and integrates well with cargo workspaces. It has:
-
-\- Workspace support  
-\- Autocompletion  
-\- The ability to pass command-line arguments to your task  
-\- The ability to set workspace-wide or crate-specific environment variables  
-\- And a whole host more!
-
-It's very new, so any feedback or feature requests would be welcome!
-
-Thanks!
-## [10][Programming Generic Interrupt Controller and Timer Interrupt for my AArch64 OS in Rust](https://www.reddit.com/r/rust/comments/fzj4vq/programming_generic_interrupt_controller_and/)
-- url: https://lowenware.com/blog/osdev/aarch64-gic-and-timer-interrupt/
----
-
-## [11][Is there something I don't understand here ?](https://www.reddit.com/r/rust/comments/fz40nu/is_there_something_i_dont_understand_here/)
-- url: https://www.reddit.com/r/rust/comments/fz40nu/is_there_something_i_dont_understand_here/
----
-Note that I'm just giving a quick thought about Ok wrapping and try blocks from an end user perspective. Not sorry for another post on the subject.
-
-Rust is the most attractive language for me for many reasons, including the fact that it's not \*too much\* magic, clear enough and obviously all the reasons it's Rust. But I want to emphasize the fact that it's clear and readable, I always felt comfortable writing Ok and Err, I know what it means and it gives a good look to my code, there is a good amount of helper methods in std that makes it bearable and I know when I look at the end of my function and I see Ok(thing) that at this moment everything went well, it's easy to write, I don't want to save 3 keystrokes if it makes my code looks bad and I really think it's gonna make my code look bad.
-
-What is the problem with Ok(\_) ? Nothing has yet convinced me that there was a problem with this, and I can't see what is the advantage of going the mainstream way... and I hate JS, why would I want to see JS style try blocks ? or remove the Ok wrapping that makes my code feel clear ? Maybe I'm not informed well enough or not experienced enough, I don't know, but my first thought about this thing is this.
-
-tl;dr, \[Edit: I think\] Try blocks are ugly and make me feel like I'm writing JS and I hate it, and Ok(\_) looks good to me.
-## [12][jlrs v0.2 has been released](https://www.reddit.com/r/rust/comments/fzhdvh/jlrs_v02_has_been_released/)
-- url: https://www.reddit.com/r/rust/comments/fzhdvh/jlrs_v02_has_been_released/
----
-Some time ago I released the first version of `jlrs`, a crate that provides (mostly) safe bindings to the Julia C API. This first version works, but introduces a lot of unnecessary overhead, complexity and unnecessary distinctions. The second version is a major rewrite, but addresses many of those shortcomings.
-
-If you've used the first version, you'll know that version includes different contexts that separate allocating data and calling functions and data is exposed through handles. That has changed in v0.2; the different contexts have been replaced with frames that let you freely mix allocating data and calling functions, handles have been replaced by values which expose the data directly but safely. In general, things have been renamed to better reflect their names in the C API.  
-
-There's only one new feature, really. You can now check whether some value is (an array) of a specific type with the methods `Value::is&lt;T&gt;`, `Value::is_array`, and `Values::is_array_of&lt;T&gt;` respectively.
-
-As an example, this is how you can add two numbers with a dynamically growing frame:
-
-    // Initialize Julia. Read the documentation to learn
-    // more about the details
-    let mut julia = unsafe { Julia::init(16).unwrap() };
-
-    // We can only do things when we have access to a frame
-    let x = julia.dynamic_frame(|frame| {
-        // Create the two arguments
-        let i = Value::new(frame, 2u64)?;
-        let j = Value::new(frame, 1u32)?;
-
-        // We can find the addition-function in the base 
-        // module
-        let func = Module::base(frame).function("+")?;
-
-        // Call the function and unbox the result
-        let output = func.call2(frame, i, j)?;
-        output.try_unbox::&lt;u64&gt;()
-    }).unwrap();
-
-    assert_eq!(x, 3);
-
-[Crate](https://crates.io/crates/jlrs)
-
-[Documentation](https://docs.rs/jlrs)
-
-[Repo](https://github.com/Taaitaaiger/jlrs)

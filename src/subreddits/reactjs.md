@@ -84,63 +84,203 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][How to build bulletproof react components](https://www.reddit.com/r/reactjs/comments/fzv5ky/how_to_build_bulletproof_react_components/)
+## [3][Introducing Signum, an open-source communication tool for your website.](https://www.reddit.com/r/reactjs/comments/g04x9z/introducing_signum_an_opensource_communication/)
+- url: https://v.redd.it/o79ire05dgs41
+---
+
+## [4][Don't useEffect as callback!](https://www.reddit.com/r/reactjs/comments/g0hrqw/dont_useeffect_as_callback/)
+- url: https://jkettmann.com/dont-useeffect-as-callback/
+---
+
+## [5][Correctly handling async/await in React components](https://www.reddit.com/r/reactjs/comments/g0ijpl/correctly_handling_asyncawait_in_react_components/)
+- url: https://www.reddit.com/r/reactjs/comments/g0ijpl/correctly_handling_asyncawait_in_react_components/
+---
+[https://dev.to/alexandrudanpop/correctly-handling-async-await-in-react-components-4h74](https://dev.to/alexandrudanpop/correctly-handling-async-await-in-react-components-4h74)
+
+&amp;#x200B;
+## [6][How to build bulletproof react components](https://www.reddit.com/r/reactjs/comments/fzv5ky/how_to_build_bulletproof_react_components/)
 - url: https://dev.to/jsco/how-to-build-bulletproof-react-components-mo7
 ---
 
-## [4][Built a virtual quiz app with React &amp; Node to play along with YouTube pub quizzes during the quarantine](https://www.reddit.com/r/reactjs/comments/fzd4fb/built_a_virtual_quiz_app_with_react_node_to_play/)
-- url: https://v.redd.it/9ptni891f8s41
+## [7][GH-pages deploy SPA react app](https://www.reddit.com/r/reactjs/comments/g0j0q3/ghpages_deploy_spa_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/g0j0q3/ghpages_deploy_spa_react_app/
+---
+Hello Im trying to deploy my react portfolio to the web using GH-pages but so far it's been a nightmare , really need some help since this is my portfolio and I'm in need for a job, 
+
+my package.json looks like this 
+
+    {
+      "name": "reactportfolio",
+      "version": "0.1.0",
+      "private": true,
+      "dependencies": {
+        "gh-pages": "^2.2.0",
+        "homepage": "https://Nerfi.github.io",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-mdl": "^2.1.0",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "3.2.0"
+      },
+      "scripts": {
+         "predeploy": "npm run build",
+        "deploy": "gh-pages -b master -d build",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+      },
+      "eslintConfig": {
+        "extends": "react-app"
+      },
+      "browserslist": {
+        "production": [
+          "&gt;0.2%",
+          "not dead",
+          "not op_mini all"
+        ],
+        "development": [
+          "last 1 chrome version",
+          "last 1 firefox version",
+          "last 1 safari version"
+        ]
+      },
+      "devDependencies": {
+        "json-loader": "^0.5.7",
+        "webpack-cli": "^3.3.11"
+      }
+    }
+    
+
+Here is my main folder ,where I have my routes 
+
+    import React from 'react';
+    import { Switch, Route , HashRouter} from 'react-router-dom';
+    import LandingPage from './landingpage';
+    import Projects from './projects';
+    import Contact from './contact';
+    
+    function Main() {
+      return(
+        &lt;HashRouter basename="/"&gt;
+          &lt;Switch&gt;
+    
+          &lt;Route exact path="/" component={LandingPage} /&gt;
+          &lt;Route exact path="/Projects" component={Projects} /&gt;
+          &lt;Route exact path="/Contact" component={Contact} /&gt;
+    
+        &lt;/Switch&gt;
+      &lt;/HashRouter&gt;
+        )
+    
+    
+    }
+    
+    
+    
+    
+    
+    export default Main;
+    
+
+and here is my App.js file where I have all my link and the layout of the navbar Idk if is useful but I'll posted it in case someone need it 
+
+    function App() {
+      return (
+        &lt;div&gt;
+        &lt;div className="demo-big-content"&gt;
+    
+          &lt;Layout&gt;
+              &lt;Header className="header-color" title={&lt;Link style={{textDecoration: 'none', color: 'white'}} to="/"&gt; MyPortfolio &lt;/Link&gt;} scroll&gt;
+                  &lt;Navigation&gt;
+    
+                      &lt;Link to="/Projects"&gt;Projects&lt;/Link&gt;
+                      &lt;Link to="/Contact"&gt;Contact&lt;/Link&gt;
+    
+                  &lt;/Navigation&gt;
+              &lt;/Header&gt;
+              &lt;Drawer title="Tit"&gt;
+                  &lt;Navigation&gt;
+    
+                      &lt;Link to="/Projects"&gt;Projects&lt;/Link&gt;
+                      &lt;Link to="/Contact"&gt;Contact&lt;/Link&gt;
+    
+                  &lt;/Navigation&gt;
+              &lt;/Drawer&gt;
+              &lt;Content&gt;
+                  &lt;div className="page-content" /&gt;
+                  &lt;Main/&gt;
+              &lt;/Content&gt;
+          &lt;/Layout&gt;
+    
+    &lt;/div&gt;
+    
+    
+        &lt;/div&gt;
+         );
+    }
+    
+
+I really need help on this, thanks in advance fellow devs.
+## [8][Generate and update value inside useEffect](https://www.reddit.com/r/reactjs/comments/g0iwwf/generate_and_update_value_inside_useeffect/)
+- url: https://www.reddit.com/r/reactjs/comments/g0iwwf/generate_and_update_value_inside_useeffect/
+---
+My problem is
+
+I have two states
+
+    const [firstValue, setFirstValue] = useState([]);
+const [secondValue, setSecondValue] = useState([]);
+    
+
+and here is a function that generate random number (the value that I want twice)
+
+      const random = (num, length) =&gt; {
+        var arr = [];
+        while (arr.length &lt; num) {
+          var r = Math.floor(Math.random() * length) + 1;
+          if (arr.indexOf(r) === -1) arr.push(r);
+        }
+        return arr;
+      };
+
+and after updating the firstValue inside useEffect i want the second value get the first value generated
+
+    useEffect(() =&gt; {
+    setFirstValue(random(5, 9));
+    setSecondValue(firstValue);
+ }, []);
+    
+
+but the `secondValue` remains empty, how can I update the `secondValue` **INSIDE** useEffect ?
+
+here is the code  
+ [https://codesandbox.io/s/twilight-wood-iywpu?file=/src/App.js](https://codesandbox.io/s/twilight-wood-iywpu?file=/src/App.js)
+## [9][I created this website to help people on the front lines and to help increase social distancing: tp-report.com](https://www.reddit.com/r/reactjs/comments/g0iqa3/i_created_this_website_to_help_people_on_the/)
+- url: https://www.reddit.com/r/reactjs/comments/g0iqa3/i_created_this_website_to_help_people_on_the/
+---
+I created this website to help people on the front lines and to help increase social distancing: [**tp-report.com**](http://tp-report.com/)   Send it to anyone you know working at a grocery or supermarket or store so they can make a report. Check it to see if a place has toilet paper in stock.   It was super fun to build. I learned a lot. For the front end I used React, React hooks/redux, Apollo/GraphQL, Material Ui, and custom CSS. For the back end I used NodeJS, Express, Mongoose, Mongo DB Atlas, and GraphQL.
+## [10]["Flatten the Curve" — a social distancing game built with React (and my first Gatsby app!) Check it out and let me know what you think!](https://www.reddit.com/r/reactjs/comments/g0hz0b/flatten_the_curve_a_social_distancing_game_built/)
+- url: https://flattenthecurve.zaklaughton.dev/
 ---
 
-## [5][What front-end logging systems do you use?](https://www.reddit.com/r/reactjs/comments/fzsuac/what_frontend_logging_systems_do_you_use/)
-- url: https://www.reddit.com/r/reactjs/comments/fzsuac/what_frontend_logging_systems_do_you_use/
+## [11][Delete button is deleteing everything](https://www.reddit.com/r/reactjs/comments/g0he2j/delete_button_is_deleteing_everything/)
+- url: https://www.reddit.com/r/reactjs/comments/g0he2j/delete_button_is_deleteing_everything/
 ---
-Hello all,
+Hello everyone
 
-For Nodejs I am using Morgan + Winston. However, I would like to get in place a logging system in my front-end, where I only show console.log during development and if there is an error then I can send an email or make an API query to log the state of the front-end at the error time.
+i am new in react and trying to learn in my way. i coded something with little change but when i press delete button....it just delete everything. seems like reactjs is very sensitive to {} and \[\] type variables. i thin i messed something up in this case..... but i dun know why...
 
-Therefore, I would like to know what are the common solutions that people use in real-world or whether this is a homemade solution normally.  
-
-
-Ideally free.  
-
-
-Thank you in advance and regards.
-## [6][I have created a React component designed for displaying HTML e-mail contents safely, matching Gmail's rendering and support for HTML/CSS features. Other features include first-class TypeScript support and no extra dependencies.](https://www.reddit.com/r/reactjs/comments/fz5hua/i_have_created_a_react_component_designed_for/)
-- url: https://github.com/mat-sz/react-letter
+[Here is the code](https://codesandbox.io/s/bold-moon-30gbc?file=/src/App.js)
+## [12][Should i store firebase data, or redo the request?](https://www.reddit.com/r/reactjs/comments/g0hd9z/should_i_store_firebase_data_or_redo_the_request/)
+- url: https://www.reddit.com/r/reactjs/comments/g0hd9z/should_i_store_firebase_data_or_redo_the_request/
 ---
+Aight as the title states. Lets say you have a authentication app with services.
 
-## [7][Modern React Redux Tutorials with Redux toolkit - 2020](https://www.reddit.com/r/reactjs/comments/fzwjbt/modern_react_redux_tutorials_with_redux_toolkit/)
-- url: https://cloudnweb.dev/2020/04/modern-react-redux-tutotials-redux-toolkit
----
+So you log in, and you fetch the services. Then what is best practise? Refretch every refresh, and if you go to a single item, refetcht that single item from firebase.
 
-## [8][How to use react with nodejs backend](https://www.reddit.com/r/reactjs/comments/fzry1p/how_to_use_react_with_nodejs_backend/)
-- url: https://www.reddit.com/r/reactjs/comments/fzry1p/how_to_use_react_with_nodejs_backend/
----
-Sorry if this is very basic and has been asked before, but I've started learning react for the past few days during Easter while stuck in quarantine :)
+Or is it best to save it in redux for example and only refresh on a change in firebase.
 
-I've been using react starting with the default "npx create-react-app", to build some UI's, I've also gone through the react documentation and tutorial on the official website, and I am now familiar with rendering components with JSX and using state/props. 
+&amp;#x200B;
 
-I've used nodejs, express, pugjs before, and want to rewrite an application to use nodejs + react. How do I implement the backend nodejs code to hook into react? Do I just start adding nodejs/express code into the default App.js or index.js of my react app? 
-
-If I write some simple javascript or do something like "console.log()" in these files, I am not getting any output. 
-
-The default package.json file has a start script "react-scripts start", does this need to be changed so that nodejs/express start first before using react? Similar to: "node server.js" then somehow call react components later?
-## [9][I created an ecommerce website using React and having trouble getting the order confirmation email to work for when customers complete their order. Can anyone point me in the right direction?](https://www.reddit.com/r/reactjs/comments/fzvfvr/i_created_an_ecommerce_website_using_react_and/)
-- url: https://www.reddit.com/r/reactjs/comments/fzvfvr/i_created_an_ecommerce_website_using_react_and/
----
-Also, would I be able to host the website on a hosting service such as Siteground? Sorry for the basic questions, this is my first web development project!
-
-Thanks in advance!
-## [10][Authentication and Authorization are often used interchangeably which leads to confusion. In this blog it has been explained very nicely.](https://www.reddit.com/r/reactjs/comments/fzrut2/authentication_and_authorization_are_often_used/)
-- url: https://afteracademy.com/blog/authentication-vs-authorization
----
-
-## [11][React Hooks Tutorial | Build Yelp in React #25 | adding networking logic by using the fetch API](https://www.reddit.com/r/reactjs/comments/fztuge/react_hooks_tutorial_build_yelp_in_react_25/)
-- url: https://www.youtube.com/watch?v=TtctqhLzfDo
----
-
-## [12][Built a newsletter referral app for my company (react + firebase)](https://www.reddit.com/r/reactjs/comments/fzwlru/built_a_newsletter_referral_app_for_my_company/)
-- url: https://share.coffeeandmotivation.com/
----
-
+I think it doesn tmatter, because in both causes you do 1 firebase request right? So cost/request it doesnt matter

@@ -38,7 +38,7 @@ Event | Location | Original Dates | Status | New Dates
 [Core C++](https://corecpp.org) | Tel Aviv, Israel | 05-25 to 05-27 | [Postponed](https://twitter.com/corecpp/status/1238373483501010944) | Autumn
 [Total Chaos](https://www.chaosgroup.com/total-chaos) | Sofia, Bulgaria | 05-29 to 05-31 | [Cancelled](https://www.chaosgroup.com/total-chaos) |
 [Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | [Postponed](https://cpponsea.uk/news/2020-conference-rethink.html) |
-[Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | No Date Changes Yet |
+[Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | [Virtual](https://www.italiancpp.org/event/itcppcon20/) |
 [CPPP](https://cppp.fr) | Paris, France | 06-22 to 06-23 | [Cancelled](https://cppp.fr/blog/canceled) |
 [CppCon](https://cppcon.org) | Aurora, CO, US | 09-13 to 09-18 | No Date Changes Yet |
 [Meeting C++](https://meetingcpp.com) | Berlin, Germany | 11-12 to 11-14 | No Date Changes Yet |
@@ -119,62 +119,113 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][GitHub actions: run-vcpkg and get-cmake with automatic caching](https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/)
-- url: https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/
+## [3][Making an app to get a job](https://www.reddit.com/r/cpp/comments/g0c6m3/making_an_app_to_get_a_job/)
+- url: https://www.reddit.com/r/cpp/comments/g0c6m3/making_an_app_to_get_a_job/
 ---
-Released [get-cmake](https://github.com/marketplace/actions/get-cmake) and [run-vcpkg](https://github.com/marketplace/actions/run-vcpkg) GitHub actions with automatic caching of binary artifacts, useful to any C++ build workflows, enjoy!
-## [4][Adventures In Game Engine Programming](https://www.reddit.com/r/cpp/comments/fzukqv/adventures_in_game_engine_programming/)
+Let me give you a short version of my background.
+
+My major is Master's in Chem eng &amp; Chemistry. I frankly didn't want to go to chemistry/chem eng field but I was kind of forced to go to this industry since my dad was so adamant on it.
+
+I always wanted to do something with computer software development or games. Now that I have a job, I really do not want to stay in this field for the rest of my life. Even though I'm in my 30's I want to change my career. I'm learning C++ on my own and my plan in near future is to make a simple game or an app and using that as my resume. 
+
+In your professional field, is this enough to get you a job? or do you need much more than that? 
+
+And also, how would you rate the importance of optimization like in terms of Olog(n)? 
+
+Any inputs are appreciated. Happy coding!
+## [4][Has there been any work towards supporting type erasure in constexpr for C++23?](https://www.reddit.com/r/cpp/comments/g0hik6/has_there_been_any_work_towards_supporting_type/)
+- url: https://www.reddit.com/r/cpp/comments/g0hik6/has_there_been_any_work_towards_supporting_type/
+---
+I am curious to know if there has been any conversations about supporting type erasure in constexpr for C++23. Specifically, we need a way to support std::function in a constexpr, or something similar (delegate?). We have everything we need minus type erasure.
+## [5][I made a package manager using CMake](https://www.reddit.com/r/cpp/comments/g003er/i_made_a_package_manager_using_cmake/)
+- url: https://gracicot.github.io/cmake/2020/04/09/i-made-a-package-manager-using-cmake.html
+---
+
+## [6][Probably dumb question about std::sort](https://www.reddit.com/r/cpp/comments/g0iuqp/probably_dumb_question_about_stdsort/)
+- url: https://www.reddit.com/r/cpp/comments/g0iuqp/probably_dumb_question_about_stdsort/
+---
+According to cppreference.com, std::sort "Sorts the elements in the range in ascending order".
+
+Why then, does it give different results depending on whether begin()/end() is used over rbegin()/rend()? The first sorts ascending and the second sorts descending.
+
+Why does the direction of iterating over the elements in the range matter?
+## [7][Job Security In Conrona Virus.](https://www.reddit.com/r/cpp/comments/g0inng/job_security_in_conrona_virus/)
+- url: https://www.reddit.com/r/cpp/comments/g0inng/job_security_in_conrona_virus/
+---
+Who's interested to hear how our industry is being affected by the virus. Has anyone been put out of work? how are freelancers fairing in this market? Lets start a conversation for all!
+## [8][Memory leaks hunter in C++ Builder](https://www.reddit.com/r/cpp/comments/g0i3y6/memory_leaks_hunter_in_c_builder/)
+- url: https://ahmedabdelghaffar.wordpress.com/2020/04/11/deleaker-to-the-rescue/
+---
+
+## [9][C2x Proposal: A Common C/C++ Core](https://www.reddit.com/r/cpp/comments/g02pex/c2x_proposal_a_common_cc_core/)
+- url: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2494.pdf
+---
+
+## [10][`std::unique_ptr` and braced initialization](https://www.reddit.com/r/cpp/comments/g05m1r/stdunique_ptr_and_braced_initialization/)
+- url: https://www.reddit.com/r/cpp/comments/g05m1r/stdunique_ptr_and_braced_initialization/
+---
+I was wondering if I am reinventing the wheel, or if this utility already exists. It seems easy to make something like `std::make_unique()` work with all forms of C++ initialization.
+
+Today, it works only with parenthesis. For instance, consider `vector&lt;int&gt;(4,0)` vs `vector&lt;int&gt;{1,2,3,4}`.
+
+    return std::make_unique&lt;std::vector&lt;int&gt;&gt;(4, 0);  // works fine.
+    // vs.
+    return std::make_unique(std::vector&lt;int&gt;{1, 2, 3, 4});  // error
+
+[Godbolt link](https://godbolt.org/z/m33HJT).
+
+C++20 designated initializers are also incompatible with `std::make_unique()` (e.g. `MyType{.foo = ...}`). We can directly use `std::unique_ptr&lt;T&gt;(new T{...})` directly, but that has obvious verbosity issues with the type having to be specified twice. It seems this all can be solved by simply using a non-variadic version of `std::make_unique()`:
+
+    template &lt;class T&gt;
+    std::unique_ptr&lt;T&gt; move_to_unique(T&amp; t) {
+      return std::make_unique&lt;T&gt;(std::move(t));
+    }
+    
+    template &lt;class T&gt;
+    std::unique_ptr&lt;T&gt; move_to_unique(T&amp;&amp; t) {
+      return std::make_unique&lt;T&gt;(std::move(t));
+    }
+
+Now all of the following works pretty uniformly:
+
+    return move_to_unique(std::vector&lt;int&gt;(4, 0));
+    return move_to_unique(std::vector&lt;int&gt;{1, 2, 3, 4});
+    return move_to_unique(MyType{.foo = 3, .bar = "hello world"});
+
+[Godbolt link](https://godbolt.org/z/KUWbaZ)
+
+Does this utility already exist? Am I missing some corner case, or is there a case where this will have surprising behavior?
+
+If it doesn't exist, and given how *really* short it is, can I do something to get it into the standard library?
+
+I would love some feedback!
+
+## Addendum1
+
+I suppose something like this can also be achieved by using template deduction guides for `std::unique_ptr`, but I didn't try it (since it's harder to experiment in Godbolt).
+
+## Addendum2
+
+The reason I have an l-value reference type as well is because I wanted to use it in these situations:
+
+    // We are forced to use unique_ptr for recursive sum types.
+    using AstNode = std::variant&lt;
+       std::unique_ptr&lt;Expr&gt;,
+       std::unique_ptr&lt;Stmt&gt;,
+       ...&gt;;
+    
+    AstNode parseExpr(std::string input) {
+       Expr result;
+       // Modify result based on input.
+       return move_to_unique(result);
+    }
+
+To reduce my own cognitive load, I didn't want to have to think about when to use an r-value-ref-only function with `std::move()` vs. not using `std::move()`.
+## [11][Adventures In Game Engine Programming](https://www.reddit.com/r/cpp/comments/fzukqv/adventures_in_game_engine_programming/)
 - url: https://medium.com/@fwsgonzo/adventures-in-game-engine-programming-a3ab1e96dbde
 ---
 
-## [5][Creating multiple objects using for loop](https://www.reddit.com/r/cpp/comments/fzwtax/creating_multiple_objects_using_for_loop/)
-- url: https://www.reddit.com/r/cpp/comments/fzwtax/creating_multiple_objects_using_for_loop/
+## [12][GitHub actions: run-vcpkg and get-cmake with automatic caching](https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/)
+- url: https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/
 ---
-My method was " for (int I; I&lt;100;1++){ myClass Ci;} but it doesn't work well 
-Any suggestions?
-## [6][Do compilers document how much they follow the C++ standard when they implement it?](https://www.reddit.com/r/cpp/comments/fzwsiw/do_compilers_document_how_much_they_follow_the_c/)
-- url: https://www.reddit.com/r/cpp/comments/fzwsiw/do_compilers_document_how_much_they_follow_the_c/
----
-When another user asked the logic purpose of unions, many answers where given and then someone asked if GCC/Clang/MSVC documented the type-punning behaviour to be defined.
-
-I wanted to answer him/her, but couldn't find anything.
-
-Now, my curiosity wants to know if it's possible to find what's defined or not at the compiler level.
-
-I understand that if I don't want surprises, I need to rely on the ISO C++ Standard, but I suppose that some people rely on techniques like type-punning that are UB at the language level, but defined at the compiler level.
-
-So, do you know if this documentation exists?
-
-If yes, would you so kind to share it?
-## [7][Precedence of a proposed |&gt; operator](https://www.reddit.com/r/cpp/comments/fz5qtp/precedence_of_a_proposed_operator/)
-- url: https://quuxplusone.github.io/blog/2020/04/10/pipeline-operator-examples/
----
-
-## [8][Introducing cpprouter: A small, header-only request-router](https://www.reddit.com/r/cpp/comments/fzuq5k/introducing_cpprouter_a_small_headeronly/)
-- url: https://www.reddit.com/r/cpp/comments/fzuq5k/introducing_cpprouter_a_small_headeronly/
----
-[https://github.com/omartijn/cpprouter](https://github.com/omartijn/cpprouter)
-
-&amp;#x200B;
-
-This library is created for routing HTTP requests to callbacks. It's designed to be generic (the callback signature can be chosen by the user), so that it's not limited to a single HTTP implementation.
-
-Callbacks can be either free- or member functions. If the path contains slugs (embedded regular expressions), the matched data can be provided to the given callback.
-
-It's still in early stages, there are probably more features to be added, there's some more optimizations to be done, a lot of documentation to be written and the unit tests are very basic. I still wanted to share it to see what people think and if anybody has any suggestions (whether they like it or not).
-## [9][Logic behind C++ Unions](https://www.reddit.com/r/cpp/comments/fzapi0/logic_behind_c_unions/)
-- url: https://www.reddit.com/r/cpp/comments/fzapi0/logic_behind_c_unions/
----
-Why would you ever want to use unions, does anyhone have any practical scenarios where unions were the best solution? 🤔
-## [10][Modern CMake tutorials, part2: Customization points](https://www.reddit.com/r/cpp/comments/fyoy4l/modern_cmake_tutorials_part2_customization_points/)
-- url: https://www.siliceum.com/en/blog/post/cmake_02_customization-points
----
-
-## [11][The code_report Blog: CppCast Ep242 is AWESOME!](https://www.reddit.com/r/cpp/comments/fzavtk/the_code_report_blog_cppcast_ep242_is_awesome/)
-- url: https://codereport.github.io/CppCastEpisode242IsAwesome/
----
-
-## [12][I Accidentaly Wrote A Compile Time Executable State Machine • memdump](https://www.reddit.com/r/cpp/comments/fyibob/i_accidentaly_wrote_a_compile_time_executable/)
-- url: https://philippegroarke.com/posts/2020/constexpr_fsm/
----
-
+Released [get-cmake](https://github.com/marketplace/actions/get-cmake) and [run-vcpkg](https://github.com/marketplace/actions/run-vcpkg) GitHub actions with automatic caching of binary artifacts, useful to any C++ build workflows, enjoy!

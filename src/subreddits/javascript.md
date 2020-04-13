@@ -5,70 +5,51 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][Hegel: An advanced static type checker for javascript](https://www.reddit.com/r/javascript/comments/fzowq2/hegel_an_advanced_static_type_checker_for/)
-- url: https://jsmonk.github.io/hegel/
+## [2][The Algebraic Structure of Functions, illustrated using React components](https://www.reddit.com/r/javascript/comments/g0gd6y/the_algebraic_structure_of_functions_illustrated/)
+- url: https://jrsinclair.com/articles/2020/algebraic-structure-of-functions-illustrated-with-react-components/
 ---
 
-## [3][What's new in ECMAScript 2020 | Strict Mode](https://www.reddit.com/r/javascript/comments/fzuidn/whats_new_in_ecmascript_2020_strict_mode/)
+## [3][5 Front-End Interview Coding Challenges](https://www.reddit.com/r/javascript/comments/fzycj8/5_frontend_interview_coding_challenges/)
+- url: https://medium.com/@vdeantoni/5-front-end-interview-coding-challenges-6cd9f31d1169?source=friends_link&amp;sk=5a02ae1cd3b19b69db70a1e9c6d2947f
+---
+
+## [4][Parse HTML from a string with DOMParser and return array objects](https://www.reddit.com/r/javascript/comments/g0enjc/parse_html_from_a_string_with_domparser_and/)
+- url: https://stackoverflow.com/questions/61179758/parse-html-from-a-string-with-domparser-and-return-array-of-objects
+---
+
+## [5][[AskJS] Building a new project, am I over engineering or did I make the right decisions?](https://www.reddit.com/r/javascript/comments/g0gq5c/askjs_building_a_new_project_am_i_over/)
+- url: https://www.reddit.com/r/javascript/comments/g0gq5c/askjs_building_a_new_project_am_i_over/
+---
+I’m building a new project and I want to use the best options possible from 2020.  It is important to me that this project scales and is performant.
+
+I’m thinking it’s Next using Apollo to call GraphQL that has endpoints available from an express server that points to ElasticSearch queries.
+
+The part I’m concerned I might be over complicating is from Apollo to Express I know I have to use ElasticSearch.  I also know that I’ll be making multiple endpoint calls from the frontend and think GraphQL would solve this problem.  I’m most worried about GraphQL instead of using just REST endpoints because it seems like GRaphQL still requires those REST endpoints for it to get the data from ElasticSearch.  Is this the way I should be using it?
+## [6][A fully-featured JS WebAuthn server running in the browser (and written in Go!)](https://www.reddit.com/r/javascript/comments/g0hayr/a_fullyfeatured_js_webauthn_server_running_in_the/)
+- url: https://medium.com/@varunpp2/a-js-webauthn-server-running-in-the-browser-written-in-go-143f672ad085
+---
+
+## [7][What's new in ECMAScript 2020 | Strict Mode](https://www.reddit.com/r/javascript/comments/fzuidn/whats_new_in_ecmascript_2020_strict_mode/)
 - url: https://www.strictmode.io/articles/whats-new-es2020/
 ---
 
-## [4][[AskJS] Tool for automatically reorganizing code files and directories](https://www.reddit.com/r/javascript/comments/fzwqod/askjs_tool_for_automatically_reorganizing_code/)
-- url: https://www.reddit.com/r/javascript/comments/fzwqod/askjs_tool_for_automatically_reorganizing_code/
----
-I hope someone can help me remember. I've found a tool recently (the tool itself might not be as recent) which made an attempt to reorganize your project's file/directory structure based on what file imported what. I've forgotten the tool's name and haven't recorded it either. Apparently, anything I put into Google doesn't yield any usable results.
-
-Does this one ring a bell? What was it called? Thanks.
-## [5][Covid-19 timeline prediction with Gaussian curve](https://www.reddit.com/r/javascript/comments/fz2xk2/covid19_timeline_prediction_with_gaussian_curve/)
-- url: https://covid-gauss.site
+## [8][Would somebody be able to optimize my Codepen? (not a beginner code)](https://www.reddit.com/r/javascript/comments/g0h4v6/would_somebody_be_able_to_optimize_my_codepen_not/)
+- url: https://codepen.io/franksLaboratory/pen/zYvGWMY
 ---
 
-## [6][Made a SPA that reads out your workout routine](https://www.reddit.com/r/javascript/comments/fzw5gj/made_a_spa_that_reads_out_your_workout_routine/)
-- url: https://www.fitteller.com/?l=en&amp;d=0&amp;t=Hello%20Reddit%20JavaScript%20Community%0A10s%20Squats%0A10s%20Push-ups
+## [9][[AskJS] Setting up Prettier / ESLint / Typescript in monorepo-like folder structure](https://www.reddit.com/r/javascript/comments/g0frew/askjs_setting_up_prettier_eslint_typescript_in/)
+- url: https://www.reddit.com/r/javascript/comments/g0frew/askjs_setting_up_prettier_eslint_typescript_in/
+---
+Hi all!
+
+I'm  preparing the folder structure of a React/Node web app and I decided I  want to structure the repository to have a folder for the server and a  folder for the client, both with their own package.json file. I have  some trouble figuring out how to best integrate Prettier, ESLint and  Typescript, especially regarding to integrating them with VSCode. Would  it be better to have global configuration for both of them in the root  folder? Or would it be better to have seperate configuration files for  the server and the client?
+
+Right now I'm leaning towards configuring Prettier globally and configuring ESLint and Typescript per package. Any advise?
+## [10][How to Make a Fetch Proxy in Javascript to Avoid CORS Errors with APIs](https://www.reddit.com/r/javascript/comments/g08j2l/how_to_make_a_fetch_proxy_in_javascript_to_avoid/)
+- url: https://medium.com/@kennethscoggins/how-to-make-a-fetch-proxy-in-javascript-to-avoid-cors-errors-with-apis-2b93c4ed0e78?sk=6c916e038762be8a6a3edb1a2abb2284
 ---
 
-## [7][Modern JavaScript Packaging](https://www.reddit.com/r/javascript/comments/fzocjy/modern_javascript_packaging/)
-- url: https://ramantehlan.github.io/blog/post/2020/modern-javascript-packaging/
----
-
-## [8][[AskJS] read csv locally](https://www.reddit.com/r/javascript/comments/fzqnlm/askjs_read_csv_locally/)
-- url: https://www.reddit.com/r/javascript/comments/fzqnlm/askjs_read_csv_locally/
----
-my code upload csv file then parse it
-
-can i know how to read them directly from data/anything.csv
-
-    &lt;div class="file-field input-field col s12 m1 right" style="margin-top:5px; width:1
-     &lt;div class="btn blue lighten-2" style="height:36px; line-height:2.5rem"&gt;
-       &lt;span&gt;Pick CSV&lt;/span&gt;
-        &lt;input id="uploadcsv" type="file"&gt;
-     &lt;/div&gt;
-    &lt;/div&gt;
-
-then
-
-    var csv, config = buildConfig();
-    $('#uploadcsv').change(function() {
-        csv = null;
-        file = document.getElementById('uploadcsv');
-        if ($(this).val().search('.csv') &lt;= 0) {
-            $(this).val('');
-            Materialize.toast('Only support CSV', 4000);
-            return
-        }
-        $(this).parse({
-            config: config
-        })
-    })
-## [9][multicopy - VS Code extension to copy and paste multiple snippets of code in your workspace.](https://www.reddit.com/r/javascript/comments/fz0zzu/multicopy_vs_code_extension_to_copy_and_paste/)
-- url: https://github.com/adoi/multicopy
----
-
-## [10][🚀 I made a peer-to-peer video calling website to call my friends during the pandemic!](https://www.reddit.com/r/javascript/comments/fyiay3/i_made_a_peertopeer_video_calling_website_to_call/)
-- url: https://zipcall.io
----
-
-## [11][Pixel - Accessibility First Design System (MIT License)](https://www.reddit.com/r/javascript/comments/fzacrx/pixel_accessibility_first_design_system_mit/)
-- url: https://github.com/themesberg/pixel-bootstrap-ui-kit
+## [11][Tutorial on how to permanently change the code of one of your dependencies in node modules so that it will be applied on each package download.](https://www.reddit.com/r/javascript/comments/fzzli4/tutorial_on_how_to_permanently_change_the_code_of/)
+- url: https://medium.com/@charlottevermandel/permanently-change-code-in-node-modules-4b55e3f6e65b
 ---
 

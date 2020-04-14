@@ -31,189 +31,133 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I just published ✍️ "Working with In-App Updates in Android"](https://www.reddit.com/r/androiddev/comments/g0ft3w/i_just_published_working_with_inapp_updates_in/)
-- url: https://droidchef.dev/working-with-in-app-updates-in-android/
+## [3][I 🏗️ made these free responsive themes to help Android devs create websites for their mobile apps](https://www.reddit.com/r/androiddev/comments/g0nw1d/i_made_these_free_responsive_themes_to_help/)
+- url: https://www.reddit.com/r/androiddev/comments/g0nw1d/i_made_these_free_responsive_themes_to_help/
+---
+Hey,
+
+I'm an Android dev, but recently I started looking into web dev. I found some nice CSS framework, Tailwind, and I played with it, by creating these beautiful themes. I attached a video with all themes.
+
+You can download any theme for free, edit it and upload it on your server.
+
+I'm not sure if I'm allowed to post the website, but if you like them I can give you a link.
+
+Btw, If you want to create a website, but don't have a design tool to create your app preview I can help. Send me screenshot of your app and I will create a beautiful mock-up for Android or iOS.
+
+Let me know if you find them useful. Thanks!
+
+EDIT: They can be found here [LPFMA - landing pages for mobile apps](https://landingpagesformobileapps.com/)
+
+https://reddit.com/link/g0nw1d/video/2mh22dgngms41/player
+## [4][Modern User Storage on Android](https://www.reddit.com/r/androiddev/comments/g11lbb/modern_user_storage_on_android/)
+- url: https://medium.com/androiddevelopers/modern-user-storage-on-android-e9469e8624f9
 ---
 
-## [4][Advice needed](https://www.reddit.com/r/androiddev/comments/g062rw/advice_needed/)
-- url: https://www.reddit.com/r/androiddev/comments/g062rw/advice_needed/
----
-I'll try not to waffle too much as I have a habit of doing so when making posts like this...
-
-Last summer I got *obsessed* with Android launchers. I tried probably 50 of the most popular ones but none of them felt 'right' to me. I'll admit I probably have some form of OCD or Aspergers or something in between.
-
-I decided I wanted to make my own launcher, despite very little experience with app development. While looking at reviews of the [Palm phone](https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/palm-palm-phone-1541433790.jpg) (a tiny Android phone that didn't sell very well), I took a liking to the launcher/homescreen and its design became inspiration for my own app, with the intention that it would just be for me and anyone else that stumbled across the project.
-
-Hundreds of hours of coding, designing and a bunch of other challenges later, and I had a working launcher on the Play Store. I got really lucky and some websites/YouTube channels brought attention to it and I started getting a lot of unexpected downloads. I decided to add an in-app upgrade for a couple quid so I could start earning for my work, although I felt a bit reluctant to do so when the app wasn't 100% my original idea. I didn't think anybody would really buy it but it actually started making me more money than my old part-time job did. I kept working on it, taking onboard pretty much any feedback I got, and... long story short I think I burnt myself out with it. I was coding for like 8+ hours a day in my bedroom for 2 or 3 months straight, and I got absolutely fixated over some of its issues. Eventually I took a break from the project, life/studies took over and I no longer have the passion I did when I first started it.
-
-That would be fine, but I feel an overwhelming sense of guilt now. The app is generating quite a lot of money each month despite 0 effort on my part and it's just recently surpassed 150,000 downloads which is absurd. I make it clear all over that it's not a finished product but with the attention now, I feel enormous pressure to keep working on it. I've had a few emails along the lines of "What happened? No update in 6 months..."
-
-I don't have an excuse to *not* work on it now, other than the fact that I don't remember what half of my code does. It's really stressing me out. I'm 19, so I have no idea how really to handle this. My conscious wouldn't let me just take these people's money and run with it, but I also don't know how to go about continuing it. My mental health is shoddy at the best of times and the eat-sleep-code cycle I had last summer didn't do it any favours. The idea of selling the app to another developer/company has crossed my mind but I don't know if that's viable or possible.
-
-Any advice or wisdom regarding this would be super appreciated. Thank you :)
-## [5][Where to begin with building a survey app with a database on no budget?](https://www.reddit.com/r/androiddev/comments/g0gw87/where_to_begin_with_building_a_survey_app_with_a/)
-- url: https://www.reddit.com/r/androiddev/comments/g0gw87/where_to_begin_with_building_a_survey_app_with_a/
----
-Hi all,
-
-Hope you're all keeping well, especially in these particular times.
-
-I want to try building my first app from scratch that will require a user database as well as list of media (initially I had this in mind as a spreadsheet but thinking it would make more sense as a separate database, too), but have no idea where to start to try to do this all for free and by myself (this is a pet project for myself to use with my friends). I've had a look online and keep find myself pointed towards Airtable, which looks like it'd do the job but, given this is more for me just to tinker around and try out app-development, I don't want to actually invest any money into this project...
-
-Any recommendations? on viable solutions for what I want to do (bit more context below)? Thanks in advance :) 
-
-The idea being the app will survey people on media they like and don't like (e.g. songs, shows, films, etc.) and fill out each media item's response accordingly. However, rather than doing it all in one go (it's a *long* list), this can be done in batches, say 10 items per survey or something, meaning a person can come back and carry on with the remaining items (as well as go back and update previous responses). I have a lot more features in mind but these are the barebone essentials.
-## [6][Connectivity State on Android 10 and Above](https://www.reddit.com/r/androiddev/comments/g0gvc9/connectivity_state_on_android_10_and_above/)
-- url: https://proandroiddev.com/connectivity-network-internet-state-change-on-android-10-and-above-311fb761925
+## [5][COVID 19 app will leverage Google Play infrastructure for broad implementation as it seems, supporting Android versions down to Marshmallow Android 6.0](https://www.reddit.com/r/androiddev/comments/g0v3mp/covid_19_app_will_leverage_google_play/)
+- url: https://www.theverge.com/2020/4/13/21220033/android-covid-19-tracking-updates-google-play-contact-tracing
 ---
 
-## [7][Featured videos on app listing page now plays within the PS app instead of opening the YT app](https://www.reddit.com/r/androiddev/comments/fzu07d/featured_videos_on_app_listing_page_now_plays/)
-- url: https://i.redd.it/obfi2oqzzcs41.png
+## [6][I want following functionality in an Android fragment. Stuck on choosing between different views](https://www.reddit.com/r/androiddev/comments/g14n2y/i_want_following_functionality_in_an_android/)
+- url: https://www.reddit.com/r/androiddev/comments/g14n2y/i_want_following_functionality_in_an_android/
 ---
+   
 
-## [8][Problem with reading text files from assets folder (Unmarshaling error, Parcelable class)](https://www.reddit.com/r/androiddev/comments/g0g2uv/problem_with_reading_text_files_from_assets/)
-- url: https://www.reddit.com/r/androiddev/comments/g0g2uv/problem_with_reading_text_files_from_assets/
+I have created a fragment and two tabs (hence two other fragments) in  it. I want following functionality from each tab. I have a list of items in the following way inside a tab fragment. A  button will be present at end. (Outside below the two Tab fragment)
+
+    CustomerName1 Phone_Number Amount
+           Product_1 Quantity Number CheckBox
+           Product_2 Quantity Number CheckBox
+           Product_3 Quantity Number CheckBox
+    CustomerName2 Phone_Number Amount 
+           Product_2 Quantity Number CheckBox
+           Product_3 Quantity Number CheckBox
+    CustomerName3 Phone_Number Amount
+           Product_1 Quantity Number CheckBox
+
+The functionality I'm searching for is
+
+1.) You can add as many customer as you want (I tried it with ListView)
+
+2.) There can be any number of products that a customer wants (Variable products length) 
+
+3.) One clicking the checkbox and pressing the button below at the bottom, that product should be removed from list.
+
+4.) After the last product for a customer is removed, the customer entry should also be gone.
+
+I implemented each row of Customer-product combo using listView. Then  for the products I created a linearLayout (I don't want products inside  a specific customer to be scrollable) But I seem to have hit the dead  end and feels like it's the wrong way to implement the functionality.
+## [7][Share .PDF is not working on android](https://www.reddit.com/r/androiddev/comments/g14hv5/share_pdf_is_not_working_on_android/)
+- url: https://www.reddit.com/r/androiddev/comments/g14hv5/share_pdf_is_not_working_on_android/
 ---
-Hi everyone,
+Hello Every one. I'm trying to share a  PDF file on android. The file are in assets and I have no idea but follow content provider example is not working. Works with text and maybe with image files but when is a .PDF I just received the message no data found. The code to know more about are here:  [GitHub code](https://github.com/nicconicco/AndroidPdfExamples/tree/master/app/src/main)
 
-I developed my first android app, so i will describe it and the problem briefly...
+Anyone have a real example? Thanks for your advices
+## [8][Emulator sound noise. Is anyone else experiencing this?](https://www.reddit.com/r/androiddev/comments/g14guq/emulator_sound_noise_is_anyone_else_experiencing/)
+- url: https://www.reddit.com/r/androiddev/comments/g14guq/emulator_sound_noise_is_anyone_else_experiencing/
+---
+Recently, the audio (e.g., the voice from the Google Translate app, or a local MP3 file sound from Google Play Music) coming out from an AVD randomly has FM-radio-like noise. Is anyone else experiencing this?
 
-It's a song book app. The app reads lines from text file that contains numbers and tile of the song then puts that data to an `ArrayList` that is used to set up the `RecyclerView`. When the certain item is clicked it checks for the song number that is in array list item and then based on that opens and reads text from a file that is named for example `23.txt`. I have three languages (menu items) that can be checked in navigation menu, they have click listeners that change the current list for the `RecyclerView.` The problem is that when the third language (menu item) is checked whatever the first item is in the RecyclerView it throws an exception that the file doesn't exist (while it exists in the assets folder, and works for all other items in the list) and occasionally it says (on Samsung Galaxy A8):
+I am not sure about the exact condition, but if I start an AVD and play the voice in the Google Translate, the sound is noisy. If I keep pressing the voice button, the noise gradually gets reduced up to the level that I am not sure if there is a noise or not. Then, if I play mp3 in Play Music, there is no or minimal noise, too. If I do the same thing with Google Translate and Google Music reversed, the same thing happens. That is, Google Music has initially noisy, then I keep stop/play, the noise gradually disappears, and then if I start the voice in Google Translate, there is no or minimal noise.
 
-    Class not found when unmarshalling: ....
-    java.lang.ClassNotFoundException
-
-I tried these solutions on stackoverflow but none of them seem to solve the problem:
-
-[https://stackoverflow.com/questions/13997550/unmarshalling-errors-in-android-app-with-custom-parcelable-classes](https://stackoverflow.com/questions/13997550/unmarshalling-errors-in-android-app-with-custom-parcelable-classes)
-
-[https://stackoverflow.com/questions/28589509/android-e-parcel-class-not-found-when-unmarshalling-only-on-samsung-tab3](https://stackoverflow.com/questions/28589509/android-e-parcel-class-not-found-when-unmarshalling-only-on-samsung-tab3)
-
-So I was wondering if someone would be kind enough to check my code and maybe see what did I do wrong. (Having in mind this is my first "serious" app, a lot of things could be done wrong...)
-
-[https://bitbucket.org/andrejtomas/christiansongbookapp/src/master/](https://bitbucket.org/andrejtomas/christiansongbookapp/src/master/)
-
-Song text files are in: app/src/main/assets
+* Emulator version: 30.0.5-6306047
+* AVD: Google Play API 28,29,R
+* Sound hardware: On-board Realtek ALC887
+* OS: Windows 10 (1909)
+## [9][How I check if record exists on database list view before added?](https://www.reddit.com/r/androiddev/comments/g12pzm/how_i_check_if_record_exists_on_database_list/)
+- url: https://www.reddit.com/r/androiddev/comments/g12pzm/how_i_check_if_record_exists_on_database_list/
+---
+How I check before add on database if record exists on database? And popup a message to user if record is on database?
 
 &amp;#x200B;
 
-Other errors:
+When click button to put data on database :
 
-    2020-04-13 13:49:18.057 3566-5661/? E/WindowManager: win=Window{14b96a8 u0 com.andrejtomas.hriscanskapesmarica/com.andrejtomas.hriscanskapesmarica.SongOpened} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=false win.mRemoveOnExit=false win.mViewVisibility=8 caller=com.android.server.wm.WindowManagerService.tryStartExitingAnimation:2759 com.android.server.wm.WindowManagerService.relayoutWindow:2456 com.android.server.wm.Session.relayoutForTranslate:302 android.view.IWindowSession$Stub.onTransact:518 com.android.server.wm.Session.onTransact:186 android.os.Binder.execTransact:739 &lt;bottom of call stack&gt;
-    
-    2020-04-13 13:49:18.451 3566-5661/? E/Parcel: Class not found when unmarshalling: com.andrejtomas.hriscanskapesmarica.ExampleSong
-    java.lang.ClassNotFoundException: com.andrejtomas.hriscanskapesmarica.ExampleSong
-    at java.lang.Class.classForName(Native Method)
-    at java.lang.Class.forName(Class.java:453)
-    at android.os.Parcel.readParcelableCreator(Parcel.java:2827)
-    at android.os.Parcel.readParcelable(Parcel.java:2781)
-    at android.os.Parcel.readValue(Parcel.java:2684)
-    at android.os.Parcel.readArrayMapInternal(Parcel.java:3053)
-    at android.os.BaseBundle.initializeFromParcelLocked(BaseBundle.java:288)
-    at android.os.BaseBundle.unparcel(BaseBundle.java:232)
-    at android.os.BaseBundle.getString(BaseBundle.java:1155)
-    at android.content.Intent.getStringExtra(Intent.java:8114)
-    at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:727)
-    at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:665)
-    at com.android.server.am.ActivityStarter.startActivityMayWait(ActivityStarter.java:1542)
-    at com.android.server.am.ActivityStarter.execute(ActivityStarter.java:606)
-    at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:6695)
-    at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:6586)
-    at com.android.server.am.ActivityManagerService.startActivity(ActivityManagerService.java:6577)
-    at android.app.IActivityManager$Stub.onTransact$startActivity$(IActivityManager.java:10833)
-    at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:111)
-    at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:4162)
-    at android.os.Binder.execTransact(Binder.java:739)
-    Caused by: java.lang.ClassNotFoundException: com.andrejtomas.hriscanskapesmarica.ExampleSong
-    at java.lang.Class.classForName(Native Method)
-    at java.lang.BootClassLoader.findClass(ClassLoader.java:1346)
-    at java.lang.BootClassLoader.loadClass(ClassLoader.java:1406)
-    at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
-    at java.lang.Class.classForName(Native Method) 
-    at java.lang.Class.forName(Class.java:453) 
-    at android.os.Parcel.readParcelableCreator(Parcel.java:2827) 
-    at android.os.Parcel.readParcelable(Parcel.java:2781) 
-    at android.os.Parcel.readValue(Parcel.java:2684) 
-    at android.os.Parcel.readArrayMapInternal(Parcel.java:3053) 
-    at android.os.BaseBundle.initializeFromParcelLocked(BaseBundle.java:288) 
-    at android.os.BaseBundle.unparcel(BaseBundle.java:232) 
-    at android.os.BaseBundle.getString(BaseBundle.java:1155) 
-    at android.content.Intent.getStringExtra(Intent.java:8114) 
-    at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:727) 
-    at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:665) 
-    at com.android.server.am.ActivityStarter.startActivityMayWait(ActivityStarter.java:1542) 
-    at com.android.server.am.ActivityStarter.execute(ActivityStarter.java:606) 
-    at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:6695) 
-    at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:6586) 
-    at com.android.server.am.ActivityManagerService.startActivity(ActivityManagerService.java:6577) 
-    at android.app.IActivityManager$Stub.onTransact$startActivity$(IActivityManager.java:10833) 
-    at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:111) 
-    at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:4162) 
-    at android.os.Binder.execTransact(Binder.java:739) 
-    Caused by: java.lang.NoClassDefFoundError: Class not found using the boot class loader; no stack trace available
-    2020-04-13 13:49:18.452 3566-5661/? W/Bundle: Failed to parse Bundle, but defusing quietly
-    android.os.BadParcelableException: ClassNotFoundException when unmarshalling: com.andrejtomas.hriscanskapesmarica.ExampleSong
-    at android.os.Parcel.readParcelableCreator(Parcel.java:2855)
-    at android.os.Parcel.readParcelable(Parcel.java:2781)
-    at android.os.Parcel.readValue(Parcel.java:2684)
-    at android.os.Parcel.readArrayMapInternal(Parcel.java:3053)
-    at android.os.BaseBundle.initializeFromParcelLocked(BaseBundle.java:288)
-    at android.os.BaseBundle.unparcel(BaseBundle.java:232)
-    at android.os.BaseBundle.getString(BaseBundle.java:1155)
-    at android.content.Intent.getStringExtra(Intent.java:8114)
-    at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:727)
-    at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:665)
-    at com.android.server.am.ActivityStarter.startActivityMayWait(ActivityStarter.java:1542)
-    at com.android.server.am.ActivityStarter.execute(ActivityStarter.java:606)
-    at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:6695)
-    at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:6586)
-    at com.android.server.am.ActivityManagerService.startActivity(ActivityManagerService.java:6577)
-    at android.app.IActivityManager$Stub.onTransact$startActivity$(IActivityManager.java:10833)
-    at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:111)
-    at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:4162)
-    at android.os.Binder.execTransact(Binder.java:739)
+`btn_ok_add.setOnClickListener(new View.OnClickListener() {`  
+ `u/Override`  
+ `public void onClick(View v) {`  
+
+
+ `EditText region = (EditText) popup.findViewById(R.id.field_region);`  
+ `EditText code = (EditText) popup.findViewById(R.id.field_connected_code);`  
+ `SQLiteDatabase database = context.pdfDatabaseManager.getWritableDatabase();`  
+ `ContentValues newValues = new ContentValues();`  
+`}`  
+ `newValues.put(PDFDatabaseManager.KEY_REGION, region.getText().toString());`  
+ `newValues.put(PDFDatabaseManager.KEY_CODE, code.getText().toString());`  
+`long found = database.insert(PDFDatabaseManager.DATABASE_REGION_TABLE, null, newValues);`  
+ `database.close();`  
+ `a.dismiss();`  
+ `Toast.makeText(context, "insert correct!", Toast.LENGTH_SHORT).show();`  
+ `}`
 
 &amp;#x200B;
 
-&amp;#x200B;
-
-&amp;#x200B;
-## [9][Is it possible for a calling app to be completely untraceable?](https://www.reddit.com/r/androiddev/comments/g0itp4/is_it_possible_for_a_calling_app_to_be_completely/)
-- url: https://www.reddit.com/r/androiddev/comments/g0itp4/is_it_possible_for_a_calling_app_to_be_completely/
----
-I am currently considering making an app where two people can call completely anonymoussly and without a trace. Is this possible with the android calls API? I'm not sure if this would be possible so please lmk
-## [10][Having an architecture problem using MVVM ?](https://www.reddit.com/r/androiddev/comments/g0iswm/having_an_architecture_problem_using_mvvm/)
-- url: https://www.reddit.com/r/androiddev/comments/g0iswm/having_an_architecture_problem_using_mvvm/
----
-I have a hard problem, I think, I already explained it in stackoverflow few secondes ago, any help.
-
-It is aout architecture not code, ofc I provided some code to explain, and code looks way better there in Stack.
-
-here is the link :  [https://stackoverflow.com/questions/61188657/mvvm-architecture-problem-when-trying-to-get-my-item-details](https://stackoverflow.com/questions/61188657/mvvm-architecture-problem-when-trying-to-get-my-item-details) 
-
-Any help or thought would be much appreciated.
-## [11][Admob GDPR multilanguage](https://www.reddit.com/r/androiddev/comments/g0im9b/admob_gdpr_multilanguage/)
-- url: https://www.reddit.com/r/androiddev/comments/g0im9b/admob_gdpr_multilanguage/
----
-Can't find anything in the web, but how i can translate the admob gdpr popup ?
-## [12][Question on Portuguese localization](https://www.reddit.com/r/androiddev/comments/g0fifo/question_on_portuguese_localization/)
-- url: https://www.reddit.com/r/androiddev/comments/g0fifo/question_on_portuguese_localization/
----
-Currently, I have 2 set of resources (Strings, Images, ...)
+on database class :
 
 &amp;#x200B;
 
-* Portugal Portuguese localization
-* Brazil Portuguese localization
+`final String  QUERY_CREATE_REGION_DATABASE = "CREATE TABLE " +`  
+ `DATABASE_REGION_TABLE + " (" +`  
+ `COLUMN_ID_REGIONS + " INTEGER PRIMARY KEY AUTOINCREMENT, " +`  
+ `KEY_REGION + " TEXT NOT NULL, " +`  
+ `KEY_CODE + " TEXT NOT NULL, " + " BIT Default 0 NOT NULL"+`  
+ `");";`
+## [10][How to achieve effect like Twitter splash screen animation (from iOS Twitter version) in Android application?](https://www.reddit.com/r/androiddev/comments/g15kkp/how_to_achieve_effect_like_twitter_splash_screen/)
+- url: https://www.reddit.com/r/androiddev/comments/g15kkp/how_to_achieve_effect_like_twitter_splash_screen/
+---
 
-I plan to have the following folder
+## [11][started learning android studio 5 minutes ago and I'm stuck](https://www.reddit.com/r/androiddev/comments/g142fy/started_learning_android_studio_5_minutes_ago_and/)
+- url: https://www.reddit.com/r/androiddev/comments/g142fy/started_learning_android_studio_5_minutes_ago_and/
+---
+I'm not sure if it's a problem or not but it's got me confused. The internet tutorials and books I've seen show that there are two xml files in res&gt;layout folder (activity\_main and content\_main) in a basic template. But I've got two extra files(first\_fragment and second\_fragment) and even the text view is in first fragment with an extra "next" button (extra because it's not in the tutorials) are there in the "first\_fragment" file.  I'm pretty sure I sound like an idiot and it's not a big deal but I'm a little afraid that it might get in my way later
+## [12][1.3 million lines of code, for bumble + badoo, what?? Am I missing something?](https://www.reddit.com/r/androiddev/comments/g13w7d/13_million_lines_of_code_for_bumble_badoo_what_am/)
+- url: https://www.reddit.com/r/androiddev/comments/g13w7d/13_million_lines_of_code_for_bumble_badoo_what_am/
+---
+Thanks to the team at bumble for doing this AMA, but when I read 1.3million lines of code, I couldnt help but this what in the world is needing all that the client is using?
 
-* values-pt-rPT (Contains Portugal Portuguese files)
-* values-pt-rBR (Contains Brazil Portuguese files)
+[https://www.reddit.com/r/androiddev/comments/fsuwr2/ask\_us\_anything\_were\_the\_bumble\_android/](https://www.reddit.com/r/androiddev/comments/fsuwr2/ask_us_anything_were_the_bumble_android/)
 
-But, how about?
+&amp;#x200B;
 
-1. Do I need to have a folder named "values-pt" ?
-2. Should the folder hold Portugal Portuguese files, or Brazil Portuguese files?
-
-Thanks.
+Is this normal, from those who have been working in apps with this scale?   
+Been working at a large startup/scale up and since we decided the backend/gateway will compute and the app is only rendering most things, I can't stop thinking of all these lines of code.   
+Even assuming half, thats 700k for each app.

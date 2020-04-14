@@ -119,113 +119,167 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Making an app to get a job](https://www.reddit.com/r/cpp/comments/g0c6m3/making_an_app_to_get_a_job/)
+## [3][ModernCppStarter - Kick-start your C++! A template for modern C++ projects using CMake, CI, code coverage, clang-format and reproducible dependency management.](https://www.reddit.com/r/cpp/comments/g14e7l/moderncppstarter_kickstart_your_c_a_template_for/)
+- url: https://github.com/TheLartians/ModernCppStarter
+---
+
+## [4][New version of booleval, small C++17 library for evaluating logical expressions](https://www.reddit.com/r/cpp/comments/g10cxt/new_version_of_booleval_small_c17_library_for/)
+- url: https://www.reddit.com/r/cpp/comments/g10cxt/new_version_of_booleval_small_c17_library_for/
+---
+Hi there,
+
+Few weeks ago, I created a [post](https://www.reddit.com/r/cpp/comments/fnhmcr/evaluating_user_defined_logical_expressions/) about [booleval](https://github.com/m-peko/booleval), small C++17 library for evaluating logical expressions.
+
+My main goal with that post was **to receive some** **valuable feedback** (which I did and I am very thankful for that) and **to** **show my library to the world** so people can start to use it (which I hope someone will do in the future).
+
+Now, what is changed in the new version:
+
+* use member function pointers instead of key-value map
+
+Before, user of the library needed to create a key-value map each time he wanted to evaluate a certain object, like:
+
+    evaluator eval;
+    eval.expression("field_a foo and field_b 123");
+    
+    evaluator.evaluate({
+        { "field_a", obj_1.field_a() },
+        { "field_b", obj_1.field_b() }
+    });
+    
+    evaluator.evaluate({
+        { "field_a", obj_2.field_a() },
+        { "field_b", obj_2.field_b() }
+    });
+    
+    // ...
+    
+    evaluator.evaluate({
+        { "field_a", obj_n.field_a() },
+        { "field_b", obj_n.field_b() }
+    });
+
+Now, with the current version, user specifies the class member function pointers instead of the key-value map, like:
+
+    evaluator eval;
+    eval.expression("field_a foo and field_b 123");
+    
+    evaluator.map({
+        { "field_a", &amp;obj::field_a },
+        { "field_b", &amp;obj::field_b }
+    });
+    
+    evaluator.evaluate(obj_1);
+    evaluator.evaluate(obj_2);
+    
+    // ...
+    
+    evaluator.evaluate(obj_n);
+
+It looks much prettier, don't you think so?
+
+&amp;#x200B;
+
+* multi-compiler support
+   * GCC 8.4.0
+   * CLANG 7.0.0
+   * MSVC 19.16
+* switch from Appveyor CI to Travis CI
+* add code coverage reporting
+* fix several bugs and improve library stability
+* more unit tests
+
+&amp;#x200B;
+
+What do you think about my changes:
+
+* is there something I can improve more?
+* if you like my library, don't forget to give it a star on Github :)
+* feel free to contribute
+* any feedback is welcome
+
+Thanks in advance!!!
+## [5][Minimal open-source library for cross-platform 2D graphics?](https://www.reddit.com/r/cpp/comments/g13alk/minimal_opensource_library_for_crossplatform_2d/)
+- url: https://www.reddit.com/r/cpp/comments/g13alk/minimal_opensource_library_for_crossplatform_2d/
+---
+I need to create a basic, mainly retained-mode GUI with minimal functionality (text, custom widgets like rotary knobs and some interactive graph displays). I already have an embeddable window and input management library for X11, Windows and macOS (Wayland, WebGL, Android, iOS and RasPi fb in the future) and was originally planning on just using plain OpenGL/ES but now I read that OpenGL is deprecated on macOS and people say it's already supported worse with each update...
+
+So I was thinking about using a 2D graphics library that I can link statically and that's really lightweight (low memory and CPU use). I don't even need raster image support as all the widgets should be vector-based and scalable for Hi-DPI displays.
+
+Also Vulkan support would be great.
+
+So far I was looking into:
+
+* [NanoVG](https://github.com/memononen/nanovg) (my current favorite wrt simplicity), but it lacks proper Vulkan support and I couldn't find any working Android examples
+* SDL2 or SFML would probably be overkill for my needs, just like the popular GUI toolkits (FLTK, wxWidgets or even ImGui...)
+* [sokol](https://github.com/floooh/sokol)\-gfx isn't really a 2d library but does the abstraction quite well
+* [LLGL](https://github.com/LukasBanana/LLGL) neither but is probably really efficient
+* [JUCE](https://github.com/WeAreROLI/JUCE) is more like a big framework and doesn't have permissive open-source licensing, but does some cool OpenGL stuff
+
+Do you have any other recommendations or experience with lightweight 2D graphics libraries? It's hard to find somethings that's not almost a whole game engine :D
+## [6][Making a STL-compatible hash map from scratch, Part 2: - Growth Policies &amp; The Schrodinger std::pair](https://www.reddit.com/r/cpp/comments/g0kvsm/making_a_stlcompatible_hash_map_from_scratch_part/)
+- url: https://jguegant.github.io/blogs/tech/dense-hash-map2.html
+---
+
+## [7][Dumb Question: Static Library containing static libraries?](https://www.reddit.com/r/cpp/comments/g13356/dumb_question_static_library_containing_static/)
+- url: https://www.reddit.com/r/cpp/comments/g13356/dumb_question_static_library_containing_static/
+---
+I'm sorry if this is inappropriate for this subreddit!  
+
+
+I'm authoring my first library, and I'm trying to get my head around some of the finer points of authoring a user-friendly lib. I want to provide options to use my library as either static or dynamic.  
+
+
+My library depends on two other libraries, and the CMake for my library will compile those into the dynamic library file happily. But if I build a static library and attempt to use it, I appear to need to link to the dependent libraries as well, which is less user-friendly than I hoped.   
+
+
+Is there a nice strategy for achieving what I want, which is a .lib file which contains its' dependent .lib files compiled-in? Or another efficient strategy?
+## [8][What PIMPL pointer are you using?](https://www.reddit.com/r/cpp/comments/g0ok96/what_pimpl_pointer_are_you_using/)
+- url: https://www.reddit.com/r/cpp/comments/g0ok96/what_pimpl_pointer_are_you_using/
+---
+I've been getting some questions lately from colleagues about [the destructor trick](https://stackoverflow.com/questions/6012157/is-stdunique-ptrt-required-to-know-the-full-definition-of-t) when using `std::unique_ptr` to implement the PIMPL idiom. That's a minor issue with a straight-forward workaround, but it got me thinking that we should probably be pushing internally for a more purpose-built smart pointer for this.
+
+Having taken a look around I'm favouring [Herb's split header`pimpl` pointer](https://herbsutter.com/gotw/_101/), although I think I'd add `const`-preserving dereferencing operators. But that got me wondering if there were other strong contenders out there or maybe even a _de facto_ standard I wasn't aware of.
+
+So what type are you using for your PIMPL pointers? Why did you choose that one? If you're using your own open source solution, a link to source would also be appreciated. And if you don't use the PIMPL idiom, lucky you!
+## [9][ApprovalTests.cpp v.8.6.0 supports Boosts.Test](https://www.reddit.com/r/cpp/comments/g0s1gx/approvaltestscpp_v860_supports_booststest/)
+- url: https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.8.6.0
+---
+
+## [10][what is the difference between using std::cout &lt;&lt; "" and PrintLine(""); ?](https://www.reddit.com/r/cpp/comments/g14qkl/what_is_the_difference_between_using_stdcout_and/)
+- url: https://www.reddit.com/r/cpp/comments/g14qkl/what_is_the_difference_between_using_stdcout_and/
+---
+Title. I'm extremely new to learning c++ and just found that I can print lines to the terminal in both the ways mentioned in the title : 
+
+`std::cout &lt;&lt; " Name " ;` 
+
+`PrintLine(" Name ") ;` 
+
+What are their differences and which one should I use ?
+## [11][Has there been any work towards supporting type erasure in constexpr for C++23?](https://www.reddit.com/r/cpp/comments/g0hik6/has_there_been_any_work_towards_supporting_type/)
+- url: https://www.reddit.com/r/cpp/comments/g0hik6/has_there_been_any_work_towards_supporting_type/
+---
+I am curious to know if there has been any conversations about supporting type erasure in constexpr for C++23. Specifically, we need a way to support std::function in a constexpr, or something similar (delegate?). We have everything we need minus type erasure.
+## [12][Making an app to get a job](https://www.reddit.com/r/cpp/comments/g0c6m3/making_an_app_to_get_a_job/)
 - url: https://www.reddit.com/r/cpp/comments/g0c6m3/making_an_app_to_get_a_job/
 ---
 Let me give you a short version of my background.
 
 My major is Master's in Chem eng &amp; Chemistry. I frankly didn't want to go to chemistry/chem eng field but I was kind of forced to go to this industry since my dad was so adamant on it.
 
-I always wanted to do something with computer software development or games. Now that I have a job, I really do not want to stay in this field for the rest of my life. Even though I'm in my 30's I want to change my career. I'm learning C++ on my own and my plan in near future is to make a simple game or an app and using that as my resume. 
+I always wanted to do something with computer software development or games. Now that I have a job, I really do not want to stay in this field for the rest of my life. Even though I'm in my 30's I want to change my career. I'm learning C++ on my own and my plan in near future is to make a simple game or an app and using that as my resume.
 
-In your professional field, is this enough to get you a job? or do you need much more than that? 
+In your professional field, is this enough to get you a job? or do you need much more than that?
 
-And also, how would you rate the importance of optimization like in terms of Olog(n)? 
+And also, how would you rate the importance of optimization like in terms of Olog(n)?
 
 Any inputs are appreciated. Happy coding!
-## [4][Has there been any work towards supporting type erasure in constexpr for C++23?](https://www.reddit.com/r/cpp/comments/g0hik6/has_there_been_any_work_towards_supporting_type/)
-- url: https://www.reddit.com/r/cpp/comments/g0hik6/has_there_been_any_work_towards_supporting_type/
----
-I am curious to know if there has been any conversations about supporting type erasure in constexpr for C++23. Specifically, we need a way to support std::function in a constexpr, or something similar (delegate?). We have everything we need minus type erasure.
-## [5][I made a package manager using CMake](https://www.reddit.com/r/cpp/comments/g003er/i_made_a_package_manager_using_cmake/)
-- url: https://gracicot.github.io/cmake/2020/04/09/i-made-a-package-manager-using-cmake.html
----
 
-## [6][Probably dumb question about std::sort](https://www.reddit.com/r/cpp/comments/g0iuqp/probably_dumb_question_about_stdsort/)
-- url: https://www.reddit.com/r/cpp/comments/g0iuqp/probably_dumb_question_about_stdsort/
----
-According to cppreference.com, std::sort "Sorts the elements in the range in ascending order".
+&amp;#x200B;
 
-Why then, does it give different results depending on whether begin()/end() is used over rbegin()/rend()? The first sorts ascending and the second sorts descending.
+edit: Holy crap! Thank you so much for your opinions. I see why I'm learning C++ particularly. Well.. because I heard it's powerful and the knowledge can easily be transferred to other languages since it both offers procedural programming and OOP. Also, I heard that a lot of game engines are built on C++ like Unity and my end goal is to become a game dev. 
 
-Why does the direction of iterating over the elements in the range matter?
-## [7][Job Security In Conrona Virus.](https://www.reddit.com/r/cpp/comments/g0inng/job_security_in_conrona_virus/)
-- url: https://www.reddit.com/r/cpp/comments/g0inng/job_security_in_conrona_virus/
----
-Who's interested to hear how our industry is being affected by the virus. Has anyone been put out of work? how are freelancers fairing in this market? Lets start a conversation for all!
-## [8][Memory leaks hunter in C++ Builder](https://www.reddit.com/r/cpp/comments/g0i3y6/memory_leaks_hunter_in_c_builder/)
-- url: https://ahmedabdelghaffar.wordpress.com/2020/04/11/deleaker-to-the-rescue/
----
+I heard a lot of Java and very interested in learning the language. However, since I already started learning C++, I'd like to finish one small project with it and learn java after. I feel like picking up java after C++ won't be too hard. I do have a brief history of using Python and Matlab to code many mathematical formulas in Univ classes such as solving Schrodinger's equations, multiple differential equations. Of course, many hours of writing code in reaction engineering classes as well. I loved the classes where I had to code. It was fun.
 
-## [9][C2x Proposal: A Common C/C++ Core](https://www.reddit.com/r/cpp/comments/g02pex/c2x_proposal_a_common_cc_core/)
-- url: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2494.pdf
----
+I thought about integrating programming to my field and will be actively looking for the opportunity when I have enough experience in my current job, at least an year (I started this job a few months ago). Unfortunately, my work is more related to process side of chem eng and it is already automated and I believe we outsourced the all the software stuff to a different company.
 
-## [10][`std::unique_ptr` and braced initialization](https://www.reddit.com/r/cpp/comments/g05m1r/stdunique_ptr_and_braced_initialization/)
-- url: https://www.reddit.com/r/cpp/comments/g05m1r/stdunique_ptr_and_braced_initialization/
----
-I was wondering if I am reinventing the wheel, or if this utility already exists. It seems easy to make something like `std::make_unique()` work with all forms of C++ initialization.
-
-Today, it works only with parenthesis. For instance, consider `vector&lt;int&gt;(4,0)` vs `vector&lt;int&gt;{1,2,3,4}`.
-
-    return std::make_unique&lt;std::vector&lt;int&gt;&gt;(4, 0);  // works fine.
-    // vs.
-    return std::make_unique(std::vector&lt;int&gt;{1, 2, 3, 4});  // error
-
-[Godbolt link](https://godbolt.org/z/m33HJT).
-
-C++20 designated initializers are also incompatible with `std::make_unique()` (e.g. `MyType{.foo = ...}`). We can directly use `std::unique_ptr&lt;T&gt;(new T{...})` directly, but that has obvious verbosity issues with the type having to be specified twice. It seems this all can be solved by simply using a non-variadic version of `std::make_unique()`:
-
-    template &lt;class T&gt;
-    std::unique_ptr&lt;T&gt; move_to_unique(T&amp; t) {
-      return std::make_unique&lt;T&gt;(std::move(t));
-    }
-    
-    template &lt;class T&gt;
-    std::unique_ptr&lt;T&gt; move_to_unique(T&amp;&amp; t) {
-      return std::make_unique&lt;T&gt;(std::move(t));
-    }
-
-Now all of the following works pretty uniformly:
-
-    return move_to_unique(std::vector&lt;int&gt;(4, 0));
-    return move_to_unique(std::vector&lt;int&gt;{1, 2, 3, 4});
-    return move_to_unique(MyType{.foo = 3, .bar = "hello world"});
-
-[Godbolt link](https://godbolt.org/z/KUWbaZ)
-
-Does this utility already exist? Am I missing some corner case, or is there a case where this will have surprising behavior?
-
-If it doesn't exist, and given how *really* short it is, can I do something to get it into the standard library?
-
-I would love some feedback!
-
-## Addendum1
-
-I suppose something like this can also be achieved by using template deduction guides for `std::unique_ptr`, but I didn't try it (since it's harder to experiment in Godbolt).
-
-## Addendum2
-
-The reason I have an l-value reference type as well is because I wanted to use it in these situations:
-
-    // We are forced to use unique_ptr for recursive sum types.
-    using AstNode = std::variant&lt;
-       std::unique_ptr&lt;Expr&gt;,
-       std::unique_ptr&lt;Stmt&gt;,
-       ...&gt;;
-    
-    AstNode parseExpr(std::string input) {
-       Expr result;
-       // Modify result based on input.
-       return move_to_unique(result);
-    }
-
-To reduce my own cognitive load, I didn't want to have to think about when to use an r-value-ref-only function with `std::move()` vs. not using `std::move()`.
-## [11][Adventures In Game Engine Programming](https://www.reddit.com/r/cpp/comments/fzukqv/adventures_in_game_engine_programming/)
-- url: https://medium.com/@fwsgonzo/adventures-in-game-engine-programming-a3ab1e96dbde
----
-
-## [12][GitHub actions: run-vcpkg and get-cmake with automatic caching](https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/)
-- url: https://www.reddit.com/r/cpp/comments/fzt7a5/github_actions_runvcpkg_and_getcmake_with/
----
-Released [get-cmake](https://github.com/marketplace/actions/get-cmake) and [run-vcpkg](https://github.com/marketplace/actions/run-vcpkg) GitHub actions with automatic caching of binary artifacts, useful to any C++ build workflows, enjoy!
+Again, thank you for your valuable opinions!

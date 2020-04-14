@@ -84,203 +84,55 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][Introducing Signum, an open-source communication tool for your website.](https://www.reddit.com/r/reactjs/comments/g04x9z/introducing_signum_an_opensource_communication/)
-- url: https://v.redd.it/o79ire05dgs41
+## [3][We made a website where people can talk to others in a small group - hopefully this helps with isolation!](https://www.reddit.com/r/reactjs/comments/g0qjxc/we_made_a_website_where_people_can_talk_to_others/)
+- url: https://dotdot.im
 ---
 
-## [4][Don't useEffect as callback!](https://www.reddit.com/r/reactjs/comments/g0hrqw/dont_useeffect_as_callback/)
-- url: https://jkettmann.com/dont-useeffect-as-callback/
+## [4][Some ADVANCED React resources (any type) that you would like to recommend?](https://www.reddit.com/r/reactjs/comments/g13nq0/some_advanced_react_resources_any_type_that_you/)
+- url: https://www.reddit.com/r/reactjs/comments/g13nq0/some_advanced_react_resources_any_type_that_you/
+---
+After reading main concepts on React docs and finished The road to React book of Robin Wieruch. I would like to deep dive into React environment and get my hand dirty also.
+## [5][Prerendering vs static site generators](https://www.reddit.com/r/reactjs/comments/g11tnl/prerendering_vs_static_site_generators/)
+- url: https://www.reddit.com/r/reactjs/comments/g11tnl/prerendering_vs_static_site_generators/
+---
+I want to achieve SEO visibility for my React application. It consists of a few HTML pages which content doesn't change and is not dynamic. I can use [server side rendering (SSR), pre-rendering and static site generators (SSG)](https://github.com/brillout/awesome-universal-rendering).
+
+In this case, SSR would be an overkill and I can choose between pre-rendering or SSG. Which one should I choose?
+
+When is it better to use [react-snap](https://github.com/stereobooster/react-snap) instead of [react-static](https://github.com/react-static/react-static) or [gatsby](https://www.gatsbyjs.org/)?
+## [6][CSS Variables for React Developers](https://www.reddit.com/r/reactjs/comments/g0ko78/css_variables_for_react_developers/)
+- url: https://joshwcomeau.com/css/css-variables-for-react-devs/
 ---
 
-## [5][Correctly handling async/await in React components](https://www.reddit.com/r/reactjs/comments/g0ijpl/correctly_handling_asyncawait_in_react_components/)
-- url: https://www.reddit.com/r/reactjs/comments/g0ijpl/correctly_handling_asyncawait_in_react_components/
----
-[https://dev.to/alexandrudanpop/correctly-handling-async-await-in-react-components-4h74](https://dev.to/alexandrudanpop/correctly-handling-async-await-in-react-components-4h74)
-
-&amp;#x200B;
-## [6][How to build bulletproof react components](https://www.reddit.com/r/reactjs/comments/fzv5ky/how_to_build_bulletproof_react_components/)
-- url: https://dev.to/jsco/how-to-build-bulletproof-react-components-mo7
+## [7][I created a guide on how to publish a React component to npm. Check it out! Would love to hear feedback from you guys.](https://www.reddit.com/r/reactjs/comments/g13gpq/i_created_a_guide_on_how_to_publish_a_react/)
+- url: https://medium.com/groftware/how-to-publish-your-react-component-on-npm-9cf48d91944d
 ---
 
-## [7][GH-pages deploy SPA react app](https://www.reddit.com/r/reactjs/comments/g0j0q3/ghpages_deploy_spa_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/g0j0q3/ghpages_deploy_spa_react_app/
+## [8][Learning ReactJS](https://www.reddit.com/r/reactjs/comments/g14mcy/learning_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/g14mcy/learning_reactjs/
 ---
-Hello Im trying to deploy my react portfolio to the web using GH-pages but so far it's been a nightmare , really need some help since this is my portfolio and I'm in need for a job, 
+As a total beginner I want to use React to build a data visualization interface, which I can share directly with my clients. Any feedback is appreciated!
 
-my package.json looks like this 
+1) What's the best way to learn React? Textbooks, Youtube, other sources? 
 
-    {
-      "name": "reactportfolio",
-      "version": "0.1.0",
-      "private": true,
-      "dependencies": {
-        "gh-pages": "^2.2.0",
-        "homepage": "https://Nerfi.github.io",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "react-mdl": "^2.1.0",
-        "react-router-dom": "^5.1.2",
-        "react-scripts": "3.2.0"
-      },
-      "scripts": {
-         "predeploy": "npm run build",
-        "deploy": "gh-pages -b master -d build",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-      },
-      "eslintConfig": {
-        "extends": "react-app"
-      },
-      "browserslist": {
-        "production": [
-          "&gt;0.2%",
-          "not dead",
-          "not op_mini all"
-        ],
-        "development": [
-          "last 1 chrome version",
-          "last 1 firefox version",
-          "last 1 safari version"
-        ]
-      },
-      "devDependencies": {
-        "json-loader": "^0.5.7",
-        "webpack-cli": "^3.3.11"
-      }
-    }
-    
+2) How long does it take to become proficient in React assuming prior intermediate level coding knowledge? 
 
-Here is my main folder ,where I have my routes 
-
-    import React from 'react';
-    import { Switch, Route , HashRouter} from 'react-router-dom';
-    import LandingPage from './landingpage';
-    import Projects from './projects';
-    import Contact from './contact';
-    
-    function Main() {
-      return(
-        &lt;HashRouter basename="/"&gt;
-          &lt;Switch&gt;
-    
-          &lt;Route exact path="/" component={LandingPage} /&gt;
-          &lt;Route exact path="/Projects" component={Projects} /&gt;
-          &lt;Route exact path="/Contact" component={Contact} /&gt;
-    
-        &lt;/Switch&gt;
-      &lt;/HashRouter&gt;
-        )
-    
-    
-    }
-    
-    
-    
-    
-    
-    export default Main;
-    
-
-and here is my App.js file where I have all my link and the layout of the navbar Idk if is useful but I'll posted it in case someone need it 
-
-    function App() {
-      return (
-        &lt;div&gt;
-        &lt;div className="demo-big-content"&gt;
-    
-          &lt;Layout&gt;
-              &lt;Header className="header-color" title={&lt;Link style={{textDecoration: 'none', color: 'white'}} to="/"&gt; MyPortfolio &lt;/Link&gt;} scroll&gt;
-                  &lt;Navigation&gt;
-    
-                      &lt;Link to="/Projects"&gt;Projects&lt;/Link&gt;
-                      &lt;Link to="/Contact"&gt;Contact&lt;/Link&gt;
-    
-                  &lt;/Navigation&gt;
-              &lt;/Header&gt;
-              &lt;Drawer title="Tit"&gt;
-                  &lt;Navigation&gt;
-    
-                      &lt;Link to="/Projects"&gt;Projects&lt;/Link&gt;
-                      &lt;Link to="/Contact"&gt;Contact&lt;/Link&gt;
-    
-                  &lt;/Navigation&gt;
-              &lt;/Drawer&gt;
-              &lt;Content&gt;
-                  &lt;div className="page-content" /&gt;
-                  &lt;Main/&gt;
-              &lt;/Content&gt;
-          &lt;/Layout&gt;
-    
-    &lt;/div&gt;
-    
-    
-        &lt;/div&gt;
-         );
-    }
-    
-
-I really need help on this, thanks in advance fellow devs.
-## [8][Generate and update value inside useEffect](https://www.reddit.com/r/reactjs/comments/g0iwwf/generate_and_update_value_inside_useeffect/)
-- url: https://www.reddit.com/r/reactjs/comments/g0iwwf/generate_and_update_value_inside_useeffect/
----
-My problem is
-
-I have two states
-
-    const [firstValue, setFirstValue] = useState([]);
-const [secondValue, setSecondValue] = useState([]);
-    
-
-and here is a function that generate random number (the value that I want twice)
-
-      const random = (num, length) =&gt; {
-        var arr = [];
-        while (arr.length &lt; num) {
-          var r = Math.floor(Math.random() * length) + 1;
-          if (arr.indexOf(r) === -1) arr.push(r);
-        }
-        return arr;
-      };
-
-and after updating the firstValue inside useEffect i want the second value get the first value generated
-
-    useEffect(() =&gt; {
-    setFirstValue(random(5, 9));
-    setSecondValue(firstValue);
- }, []);
-    
-
-but the `secondValue` remains empty, how can I update the `secondValue` **INSIDE** useEffect ?
-
-here is the code  
- [https://codesandbox.io/s/twilight-wood-iywpu?file=/src/App.js](https://codesandbox.io/s/twilight-wood-iywpu?file=/src/App.js)
-## [9][I created this website to help people on the front lines and to help increase social distancing: tp-report.com](https://www.reddit.com/r/reactjs/comments/g0iqa3/i_created_this_website_to_help_people_on_the/)
-- url: https://www.reddit.com/r/reactjs/comments/g0iqa3/i_created_this_website_to_help_people_on_the/
----
-I created this website to help people on the front lines and to help increase social distancing: [**tp-report.com**](http://tp-report.com/)   Send it to anyone you know working at a grocery or supermarket or store so they can make a report. Check it to see if a place has toilet paper in stock.   It was super fun to build. I learned a lot. For the front end I used React, React hooks/redux, Apollo/GraphQL, Material Ui, and custom CSS. For the back end I used NodeJS, Express, Mongoose, Mongo DB Atlas, and GraphQL.
-## [10]["Flatten the Curve" — a social distancing game built with React (and my first Gatsby app!) Check it out and let me know what you think!](https://www.reddit.com/r/reactjs/comments/g0hz0b/flatten_the_curve_a_social_distancing_game_built/)
-- url: https://flattenthecurve.zaklaughton.dev/
+3) Can I accomplish my goal without learning React? I came across Plotly Dash but it's not free for commercial use. How is your experience with plotly Dash? Are there any other similar products out there?
+## [9][How Deploy React In 60 Seconds](https://www.reddit.com/r/reactjs/comments/g13z74/how_deploy_react_in_60_seconds/)
+- url: https://www.youtube.com/watch?v=musUjHY7AXQ
 ---
 
-## [11][Delete button is deleteing everything](https://www.reddit.com/r/reactjs/comments/g0he2j/delete_button_is_deleteing_everything/)
-- url: https://www.reddit.com/r/reactjs/comments/g0he2j/delete_button_is_deleteing_everything/
+## [10][Why cant hooks be called conditionally?](https://www.reddit.com/r/reactjs/comments/g0wyst/why_cant_hooks_be_called_conditionally/)
+- url: https://www.reddit.com/r/reactjs/comments/g0wyst/why_cant_hooks_be_called_conditionally/
 ---
-Hello everyone
+Hi,
 
-i am new in react and trying to learn in my way. i coded something with little change but when i press delete button....it just delete everything. seems like reactjs is very sensitive to {} and \[\] type variables. i thin i messed something up in this case..... but i dun know why...
-
-[Here is the code](https://codesandbox.io/s/bold-moon-30gbc?file=/src/App.js)
-## [12][Should i store firebase data, or redo the request?](https://www.reddit.com/r/reactjs/comments/g0hd9z/should_i_store_firebase_data_or_redo_the_request/)
-- url: https://www.reddit.com/r/reactjs/comments/g0hd9z/should_i_store_firebase_data_or_redo_the_request/
+I am just curious why hooks can not be called conditionally. I have started using hooks in my components and have not had issues following the rules. I would like to understand better why the rules are the way they are. Thanks.
+## [11][Stop using client-side route redirects - Kent C. Dodds](https://www.reddit.com/r/reactjs/comments/g15kf4/stop_using_clientside_route_redirects_kent_c_dodds/)
+- url: https://kentcdodds.com/blog/stop-using-client-side-route-redirects
 ---
-Aight as the title states. Lets say you have a authentication app with services.
 
-So you log in, and you fetch the services. Then what is best practise? Refretch every refresh, and if you go to a single item, refetcht that single item from firebase.
-
-Or is it best to save it in redux for example and only refresh on a change in firebase.
-
-&amp;#x200B;
-
-I think it doesn tmatter, because in both causes you do 1 firebase request right? So cost/request it doesnt matter
+## [12][Electron (builded) app failing to initiate on "/" route](https://www.reddit.com/r/reactjs/comments/g1548k/electron_builded_app_failing_to_initiate_on_route/)
+- url: https://www.reddit.com/r/reactjs/comments/g1548k/electron_builded_app_failing_to_initiate_on_route/
+---
+When on development server, or when using the builded version through the browser, my electron app works properly, but when launching the app  through the .exe it always starts in the 404 route (actually in no route at all). Do I have to set up some kind of initial route parameter or something like that? I'm using react-router-dom v5.

@@ -1,97 +1,75 @@
 # aws
-## [1][Is there a relational database with DynamoDB type pricing?](https://www.reddit.com/r/aws/comments/g12o01/is_there_a_relational_database_with_dynamodb_type/)
+## [1][AWS Dev Support is actually quite good](https://www.reddit.com/r/aws/comments/g1d06w/aws_dev_support_is_actually_quite_good/)
+- url: https://www.reddit.com/r/aws/comments/g1d06w/aws_dev_support_is_actually_quite_good/
+---
+Well worth the $29/month while you're learning AWS, IMO. Their response time can take a good 10+ hours, but the responses are never template/off mark as I read about when researching. 
+
+I'm posting an example response below so you see what I mean. I was trying to figure out why a Lambda function was erring.
+
+[https://nimbusweb.me/box/attachment/4091230/pt90k9p2fg6v0xas2zal/HcLxl2v15YhMyawu/Screenshot\_2020-04-15\_03.15.10.jpg](https://nimbusweb.me/box/attachment/4091230/pt90k9p2fg6v0xas2zal/HcLxl2v15YhMyawu/Screenshot_2020-04-15_03.15.10.jpg)
+## [2][Former Mod asking for r/aws's blessing on becoming a limited mod again](https://www.reddit.com/r/aws/comments/g179da/former_mod_asking_for_rawss_blessing_on_becoming/)
+- url: https://www.reddit.com/r/aws/comments/g179da/former_mod_asking_for_rawss_blessing_on_becoming/
+---
+Hello /r/aws 
+
+I was a mod here for a few years and (humble brag) I helped implement many things: post flair, chat room, AMAs with AWS, re:Invent "event" posts and collections, weekly "What are you working on/What do you need help with/Cert Discussons/Favorite AWS Tip discussions etc., subreddit logo and more. 
+
+I took a job at AWS a few months ago and decided to step down in the spirit of transparency while I adjusted. ([https://www.reddit.com/r/aws/comments/ec1t04/fyi\_in\_the\_spirit\_of\_transparency\_stepping\_down/](https://www.reddit.com/r/aws/comments/ec1t04/fyi_in_the_spirit_of_transparency_stepping_down/)) - 
+
+I'd like to ask the community if it would be alright if I became a limited mod again. I intend to use mod privs to do things like pin posts and organize AMAs where appropriate. My job at AWS is NOT in marketing, I am in a technical role. I don't want to get involved with approving posts/comments unless they are egregious.
+
+What are you thoughts?
+## [3][EC2 Windows Server 2019 Nvida AMI problems(?)](https://www.reddit.com/r/aws/comments/g1onp2/ec2_windows_server_2019_nvida_ami_problems/)
+- url: https://www.reddit.com/r/aws/comments/g1onp2/ec2_windows_server_2019_nvida_ami_problems/
+---
+Hi, I'm not familiar to remote PC and server configurations as most people are here, and please correct me if I'm doing anything wrong.
+
+I'm trying to launch some games I installed on my EC2 machine from Nvdia's gaming PC AMI
+
+g4dn.2xlarge (Windows Server 2019)
+
+ found here:  [https://aws.amazon.com/marketplace/pp/NVIDIA-NVIDIA-Gaming-PC-Windows-Server-2019/B07STLTHM8#pdp-pricing](https://aws.amazon.com/marketplace/pp/NVIDIA-NVIDIA-Gaming-PC-Windows-Server-2019/B07STLTHM8#pdp-pricing) 
+
+It says it has pre-loaded basic drivers for graphics cards and things for gaming. The first time I attempted to load a newer driver:  **Version:442.50  WHQL** (Tesla T4), and when I rebooted the machine the graphics card stopped showing up in Task Manager. 
+
+So I got another instance, same settings. I installed steam and installed Rocket League, which runs on DX11. When launching the game it would show in the task bar :\[DX11,Cooked\], but shortly after a second the window does not appear and it terminates itself without an error. Similar things also happened to CS:GO, where it started at first, I changed the setting in the game so it would be full screen. It froze and when I tried to turn it back on it would give me a DirectXError. I'm not sure if I'm missing some drivers for them, what should I do?
+## [4][Lambda HTTP trigger?](https://www.reddit.com/r/aws/comments/g1psf1/lambda_http_trigger/)
+- url: https://www.reddit.com/r/aws/comments/g1psf1/lambda_http_trigger/
+---
+With Azure Functions, you can trigger it via a straight HTTP call, without having to set up (and pay for) an API Gateway.   Why can't we do that with Lambda?
+## [5][Is there a way to check service usage through the AWS API?](https://www.reddit.com/r/aws/comments/g1oq5q/is_there_a_way_to_check_service_usage_through_the/)
+- url: https://www.reddit.com/r/aws/comments/g1oq5q/is_there_a_way_to_check_service_usage_through_the/
+---
+I am currently using Boto3 with python to call Amazon Polly TTS. I do not want to exceed the free tier limit and was wondering if I could get my current character count usage through the API?
+## [6][GSuite as IdP for AWS SSO](https://www.reddit.com/r/aws/comments/g1mf3p/gsuite_as_idp_for_aws_sso/)
+- url: https://www.reddit.com/r/aws/comments/g1mf3p/gsuite_as_idp_for_aws_sso/
+---
+Anyone had any luck setting up [AWS SSO](https://aws.amazon.com/single-sign-on/) (Not IAM, not Cognito) to use GSuite as an IdP? 
+
+Aside from [one forum post last year](https://forums.aws.amazon.com/thread.jspa?messageID=913518) requesting it as a feature, all the results seem to be about using it through either Cognito or IAM.  Which isn't what I'm after. 
+
+I've got the flow working where either you can do the initiation from either the IDP or SP side, but AWS just comes back with 
+
+&gt; An unexpected error has occurred  
+&gt; Please try signing in again. If the error persists, please contact your administrator
+
+
+Checking in my browser, the SAML response from GSuite seems to be completely successful, so I suspect there's probably just an attribute mapping issue or something - but I can't figure out what the problem is. 
+
+There's no Cloudwatch logs or anything that I can find, so I'm not sure where to go from here.
+## [7][What is the best way to learn AWS and PostgreSQL](https://www.reddit.com/r/aws/comments/g1j5ne/what_is_the_best_way_to_learn_aws_and_postgresql/)
+- url: https://www.reddit.com/r/aws/comments/g1j5ne/what_is_the_best_way_to_learn_aws_and_postgresql/
+---
+We have been a Microsoft /Azure shop for quite a long long time and I was told to learn AWS and PostgreSQL for a new project we are doing. I have decent experience with Azure and SQL server. I am not looking for any specific resources, but wanted to check what would be the best way to learn both together ?
+## [8][Voice echo on Skype/Microsoft Teams meetings while using AWS workspaces](https://www.reddit.com/r/aws/comments/g1m88z/voice_echo_on_skypemicrosoft_teams_meetings_while/)
+- url: https://www.reddit.com/r/aws/comments/g1m88z/voice_echo_on_skypemicrosoft_teams_meetings_while/
+---
+I have been using AWS workspaces for past two weeks due to a business exigency. While I am attending meetings on VOIP clients, other participants are constantly hearing an echo in the background. Kindly let me know if this is a known issue and if there is any solution to it.
+## [9][Is there a relational database with DynamoDB type pricing?](https://www.reddit.com/r/aws/comments/g12o01/is_there_a_relational_database_with_dynamodb_type/)
 - url: https://www.reddit.com/r/aws/comments/g12o01/is_there_a_relational_database_with_dynamodb_type/
 ---
 As per question. DynamoDB is fully managed and charged by read/writes, so for a hobby application that gets used say once a day or once per week the monthly cost is virtually NIL. The closest relational database product I could find on AWS is Aurora Serverless, but that is charged per hour so relies on the database going to sleep when not in use to keep the cost down. And that in turn causes a 30 second delay for the database to restart each time the application is accessed. So is that it or is there another relational database product on AWS, which is also charged on read/writes/storage that I can look at for a hobby application that would have a sub $5/month cost?
-## [2][Set up an alert for malware detected on AWS WorkSpace](https://www.reddit.com/r/aws/comments/g14rd6/set_up_an_alert_for_malware_detected_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/g14rd6/set_up_an_alert_for_malware_detected_on_aws/
+## [10][Get-ec2InstanceMetadata IMDSv1 or IMDSv2](https://www.reddit.com/r/aws/comments/g1d502/getec2instancemetadata_imdsv1_or_imdsv2/)
+- url: https://www.reddit.com/r/aws/comments/g1d502/getec2instancemetadata_imdsv1_or_imdsv2/
 ---
-Hi there, for the life of me I can't figure this one out. I basically want a Cloudwatch alert to be generated if one of my AWS WorkSpaces detects malware. I'm using Windows Defender.
-
-The Windows event ID for malware detected is  **Event ID: 1007**  so essentially all I'd like is an alert in AWS if that event is ever generated.
-
-Can some please let me know the easiest way to do this?
-
-Many thanks :).
-## [3][Best practice for upgrading EKS cluster?](https://www.reddit.com/r/aws/comments/g0wp5j/best_practice_for_upgrading_eks_cluster/)
-- url: https://www.reddit.com/r/aws/comments/g0wp5j/best_practice_for_upgrading_eks_cluster/
----
-Hey everyone. Just wondering what are best practices to upgrade a cluster version. I currently am super behind and its time. Is it best to just create a new cluster completely and deploy to that while moving everything off or upgrading workers and master? Also does anyone have any reliable resources for this? There is virtually nothing I can see so far that has really helped me get a solution.
-
-Any help is welcomed! EKSctl, ETC is an option!
-## [4][Assume a role in another account from an assumed role behind autoscaling group](https://www.reddit.com/r/aws/comments/g13lmq/assume_a_role_in_another_account_from_an_assumed/)
-- url: https://www.reddit.com/r/aws/comments/g13lmq/assume_a_role_in_another_account_from_an_assumed/
----
-I have an autoscaling group of CI/CD servers in ACCOUNT_A which deploys to an s3 server in ACCOUNT_B. I want the servers in ACCOUNT_A to be able to assume a role in ACCOUNT_B to do the upload. I have attached an instance profile to the ACCOUNT_A servers. I can't find a way of doing it as AWS Principals in assumed role policy documents don't support wildcards. It would be fine if the instances never changed as I could add their assumed-role users to the principal in the assume role policy document, however as they change, I can't do that.
-
-The only way I can think of doing it is to add ACCOUNT_A's ID as the principal in ACCOUNT_B but that seems really insecure.
-
-Am I going about this the wrong way or have I missed something?
-
-    $ aws sts assume-role --role-arn arn:aws:iam::ACCOUNT_B:role/deployment --role-session-name test
-    An error occurred (AccessDenied) when calling the AssumeRole operation: User: arn:aws:sts::ACCOUNT_A:assumed-role/cicd/INSTANCE_ID is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::ACCOUNT_B:role/deployment
-## [5][Cloud Partner Programs: A Numbers Game](https://www.reddit.com/r/aws/comments/g135wu/cloud_partner_programs_a_numbers_game/)
-- url: https://fika.works/blog/cloud-partner-programs/
----
-
-## [6][Cant pass aws sign up using Debit card EPS by BPI](https://www.reddit.com/r/aws/comments/g117kg/cant_pass_aws_sign_up_using_debit_card_eps_by_bpi/)
-- url: https://www.reddit.com/r/aws/comments/g117kg/cant_pass_aws_sign_up_using_debit_card_eps_by_bpi/
----
-Im having trouble making an account in AWS. I have money on my Debit Card. Is there any workaround for this? Anyone got this problem before? Is it probably because I have an EPS card instead of the MasterCard?
-## [7][Q: how do you keep up with AWS new announcements?](https://www.reddit.com/r/aws/comments/g0itdu/q_how_do_you_keep_up_with_aws_new_announcements/)
-- url: https://www.reddit.com/r/aws/comments/g0itdu/q_how_do_you_keep_up_with_aws_new_announcements/
----
-I am almost sure that at some point you have all joked about how many new products are launched by AWS every year.
-
-As people using AWS products at work, how do you guys keep up with news that are relevant to what you are using?
-
-I found this to be really challenging. I have tried feedly and following up over Twitter but I can't say this was effective.
-## [8][Lambda User Experience Survey With Open Results](https://www.reddit.com/r/aws/comments/g151lz/lambda_user_experience_survey_with_open_results/)
-- url: https://www.reddit.com/r/aws/comments/g151lz/lambda_user_experience_survey_with_open_results/
----
-I'm trying to understand peoples' opinions on AWS Lambda as part of my research on serverless technologies and filling out this survey would help enormously.
-
-The results are open so we can all learn something and I'll post them back here once the responses stop coming in. Plus, you get a programming joke if you complete it.
-
-Thanks everyone! The link is here: [https://forms.gle/FDeg2geN1JgvXnUZ9](https://forms.gle/FDeg2geN1JgvXnUZ9)
-## [9][How to automate response to Workspace is ready/available or unhealthy?](https://www.reddit.com/r/aws/comments/g14ee5/how_to_automate_response_to_workspace_is/)
-- url: https://www.reddit.com/r/aws/comments/g14ee5/how_to_automate_response_to_workspace_is/
----
-We're close to being able to deploy workspaces to a bunch of remote workers but are hitting a snag on  automate the provisioning of it -
-
-&amp;#x200B;
-
-* We're looking to provision a bunch of workspaces using a custom image. 
-* We have a simple approval workflow setup in servicenow
-* We know how to kick off the createworkspaces part - yay!
-* That works most of the time, but fails enough (workspace goes to unhealthy) to be annoying
-* so, how do we know when a build is unhealthy or when it successful in an automated manner?
-* We were going to use describeworkspace and notify the client when its "available"
-* This is OK, but is there a better way than continually polling and then reacting if it's unhealthy?
-* Can we use cloudwatch, sqs, lambda, etc.? So, Workspaces sends a healthy or unhealthy event to CloudWatch, on "unhealthy" it kicks off a lambda function that destroys the workspaces and rebuilds it... on healthy (the first time) sends an email to the user saying the unit is ready.
-
-I've been googling around and the available docs are confusing.
-## [10][Question about AWS Security Groups and IPv6](https://www.reddit.com/r/aws/comments/g0vc9n/question_about_aws_security_groups_and_ipv6/)
-- url: https://www.reddit.com/r/aws/comments/g0vc9n/question_about_aws_security_groups_and_ipv6/
----
-Here's a curious question.  I ran into a scenario where a friend spun up an RDS (we split an amazon account).  I typically lock down resources by nat'd IP address, just to play it safe.  I saw his was IPv6, came up with a rule to allow only is... and no dice.
-
-Came across this document:
-
-https://aws.amazon.com/premiumsupport/knowledge-center/rds-ipv6/
-
-Looks like IPv6 connections are blocked.  Okay, fair enough.  Did a bit of testing.  Tried a few workarounds... but eventually I added back in 0.0.0.0/0 to create a few tables for him.
-
-Friend: "Hey it works.  What did you do."
-
-Me: "I added a rule for 0.0.0.0/0."
-
-Friend: "Uh... what?  Why did that work."
-
-I have no idea why that worked.  My only thoughts are:
-
-* Is local connection is IPv4.  But his WAN connection is IPv6.  So AWS is respecting his local IPv4 address.  Which kind of breaks my understanding of security rules.
-
-* Something along the way is translating IPv6 to IPv4.  Will need to do a bit of research for this one.
-
-I'm a bit stumped on this issue.  It's not something I've come across before.  Anyone know why his connection to rds works?
+Does anyone know off hand if the powershell Get-ec2InstanceMetadata uses IMDSv1 or has transitioned to IMDSv2? I'm not able to spin up a ec2 to check the token status cloudwatch metric when running the command, so asking here.

@@ -22,7 +22,56 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Open-sourced a complex desktop application written entirely in Typescript: Server, cli, native-like frontend](https://www.reddit.com/r/typescript/comments/g0ri8q/opensourced_a_complex_desktop_application_written/)
+## [2][Intro to Game development with Typescript and PixieJS](https://www.reddit.com/r/typescript/comments/g1j93n/intro_to_game_development_with_typescript_and/)
+- url: https://nosleepjavascript.com/intro-to-gamedev/
+---
+
+## [3][Opinions on strongly typed Reflect.getMetadata or better practices](https://www.reddit.com/r/typescript/comments/g1rlcf/opinions_on_strongly_typed_reflectgetmetadata_or/)
+- url: https://www.reddit.com/r/typescript/comments/g1rlcf/opinions_on_strongly_typed_reflectgetmetadata_or/
+---
+Hi everyone, I'm playing a bit with `reflect-metatada` but something that's annoying me a lot is all the `any's` that are in the type definitions. For example:
+
+    const value = Reflect.getMetadata('key', Object)
+
+How do we know `key` is a valid metadata key? And `value` would be any, what if it could be also `undefined`?
+
+I'm not saying that TypeScript should be automatically able to infer which `keys` and `values` are valid metadata in `Object` (even tho that'd be great) but at least, I think we should be able to do something like:
+
+    interface UserMetadata {
+      name: string;
+      age: number;
+    }
+    
+    const name = Reflect.getMetadata&lt;UserMetadata&gt;('name', Object);  // name is recognized as a valid key and is a string
+    const age = Reflect.getMetadata&lt;UserMetadata&gt;('age', Object);  // age is recognized as a valid key an is a number
+    const firstName = Reflect.getMetadata&lt;UserMetadata&gt;('firstName', Object);  // It complains because firstName is not a a valid key
+
+Or am I missing something and this is possible? So far, I tried to improve the default typings for `getMetadata` but even tho I got the `key` validation part right, it's still returning `any`.
+
+    function getMetadata&lt;T, K extends keyof T = keyof T&gt;(metadataKey: K, target: Object): T[K];
+
+What do you think?
+## [4][People who import their (global) types, where do you put them?](https://www.reddit.com/r/typescript/comments/g165mn/people_who_import_their_global_types_where_do_you/)
+- url: https://www.reddit.com/r/typescript/comments/g165mn/people_who_import_their_global_types_where_do_you/
+---
+Having not felt like I've settled on an approach I like yet, I'm curious how other people organize their projects in regard to their type definitions.
+
+Edit: by 'global' I meant more like 'common' or 'shared' or whatever. Bad Ben, Bad!
+## [5][Conditional types change behaviour if under type alias](https://www.reddit.com/r/typescript/comments/g14n1c/conditional_types_change_behaviour_if_under_type/)
+- url: https://www.reddit.com/r/typescript/comments/g14n1c/conditional_types_change_behaviour_if_under_type/
+---
+I recently wanted to make sure that an array of strings contained all the strings of a string union.
+
+I found a simple way, but when attempting to generalize the pattern, I came across some behaviour I cannot explain. Perhaps someone has an idea? (disclaimer: I may be missing something obvious)
+
+&amp;#x200B;
+
+    type UnionEquality&lt;A, B&gt; = A extends B ? (B extends A ? true : never) : never;
+    type Foo = UnionEquality&lt;"foo" | "bar", "foo"&gt;; // true
+    type Foo2 = "foo" extends "foo" | "bar" ? ("foo" | "bar" extends "foo" ? true : never) : never; // never
+
+I'd expect \`Foo\` and \`Foo2\` to evaluate to the same type (`never`), since one is just an expansion of the other.
+## [6][Open-sourced a complex desktop application written entirely in Typescript: Server, cli, native-like frontend](https://www.reddit.com/r/typescript/comments/g0ri8q/opensourced_a_complex_desktop_application_written/)
 - url: https://www.reddit.com/r/typescript/comments/g0ri8q/opensourced_a_complex_desktop_application_written/
 ---
 [https://github.com/deepkit/deepkit](https://github.com/deepkit/deepkit)
@@ -43,25 +92,11 @@ Some notes:
 
 * Package management with Lerna
 * oclif for cli (with custom build), Angular 9+ for GUI, Electron 8+, custom client-server framework using Glut.ts, Mongo DB
-* Development time roughly 1 year (80h/week, total EUR \~450k), a single developer (for the main product + those OSS libs)
+* Development time roughly 1.5 year (80h/week, total EUR \~450k), a single developer (for the main product + those OSS libs)
 * multi component build based on classic Makefile and webpack
 
 I post it here to give people the opportunity to look how such a complex product is organised, that it is possible to write something like that in TS as a solo developer, and to ask questions about the development process and the like.
-## [3][Conditional types change behaviour if under type alias](https://www.reddit.com/r/typescript/comments/g14n1c/conditional_types_change_behaviour_if_under_type/)
-- url: https://www.reddit.com/r/typescript/comments/g14n1c/conditional_types_change_behaviour_if_under_type/
----
-I recently wanted to make sure that an array of strings contained all the strings of a string union.
-
-I found a simple way, but when attempting to generalize the pattern, I came across some behaviour I cannot explain. Perhaps someone has an idea? (disclaimer: I may be missing something obvious)
-
-&amp;#x200B;
-
-    type UnionEquality&lt;A, B&gt; = A extends B ? (B extends A ? true : never) : never;
-    type Foo = UnionEquality&lt;"foo" | "bar", "foo"&gt;; // true
-    type Foo2 = "foo" extends "foo" | "bar" ? ("foo" | "bar" extends "foo" ? true : never) : never; // never
-
-I'd expect \`Foo\` and \`Foo2\` to evaluate to the same type (`never`), since one is just an expansion of the other.
-## [4][Type-hinted object initializer in parent constructor?](https://www.reddit.com/r/typescript/comments/g13okd/typehinted_object_initializer_in_parent/)
+## [7][Type-hinted object initializer in parent constructor?](https://www.reddit.com/r/typescript/comments/g13okd/typehinted_object_initializer_in_parent/)
 - url: https://www.reddit.com/r/typescript/comments/g13okd/typehinted_object_initializer_in_parent/
 ---
 Is it possible to have a type-hinted object initializer inside a constructor on a parent class? Ex:
@@ -98,13 +133,7 @@ const user = User.new({
 ```
 
 I tried to use the same parameters inside the constructor but TS is telling me that the `this` keyword cannot be used in a `constructor` not generics can be used there.
-## [5][migrating code from javascript](https://www.reddit.com/r/typescript/comments/g0zyqv/migrating_code_from_javascript/)
-- url: https://www.reddit.com/r/typescript/comments/g0zyqv/migrating_code_from_javascript/
----
-does all my logic, classes, async/await code stay and work the same? Im just concerned that some of the stuff I wrote in javascript may not work in ts.
-
-thanks!!
-## [6][Utility function to fix type widening?](https://www.reddit.com/r/typescript/comments/g10np6/utility_function_to_fix_type_widening/)
+## [8][Utility function to fix type widening?](https://www.reddit.com/r/typescript/comments/g10np6/utility_function_to_fix_type_widening/)
 - url: https://www.reddit.com/r/typescript/comments/g10np6/utility_function_to_fix_type_widening/
 ---
 I (or rather, a library I'm using) have a lot of interfaces for various options where a lot is optional.
@@ -154,11 +183,17 @@ How can I write this identity function so I only need to specify `T`, and have T
 
 
 [Playground Link](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgPIAczAPYgM7IDeAsAFDLJwD8AXMiAK4C2ARtANxkUu33NtRO5ZAl6NW0MgF8yZAPRzkAITgATOgAVsePMBYAbAJ7IGIVRBigIqsglx4wybAAY6GLPeQBeIpToBGZBlSFwA6OFCwbAAxYAAPawAKZwBKWVIFZTU6ADlsZDBDdBQEAAsIBABrUABzW3tHbECfQj9kQOCm8MiY+KTU9MyAcWxsVQByYDxSuiUGRxAIawL8hCgIOEgnRacYAvK8FBhsKGQIADdoY0Li+vxHNY3Idxx8b2QAHlQzuMgzAhe9gAfIlsJhXng3Ck3N4gU5wfY7g4nAAmd6PTYQQH4RKtOABIJpEIo7pRWIJVTJInyRQqdTIABKEAAjgxgOsCEwUFFkHhighgDBjGibhA8EiHutMe8PgAVAA0yAAqj8-qoCLKQdgWAArOhK6HK2FOXUSpwAZnRUsgXwR+BBeIJUhSQmw5tJvQpVLIQA)
-## [7][Are Tests Necessary in TypeScript?](https://www.reddit.com/r/typescript/comments/g0qpxe/are_tests_necessary_in_typescript/)
+## [9][migrating code from javascript](https://www.reddit.com/r/typescript/comments/g0zyqv/migrating_code_from_javascript/)
+- url: https://www.reddit.com/r/typescript/comments/g0zyqv/migrating_code_from_javascript/
+---
+does all my logic, classes, async/await code stay and work the same? Im just concerned that some of the stuff I wrote in javascript may not work in ts.
+
+thanks!!
+## [10][Are Tests Necessary in TypeScript?](https://www.reddit.com/r/typescript/comments/g0qpxe/are_tests_necessary_in_typescript/)
 - url: https://www.executeprogram.com/blog/are-tests-necessary-in-typescript
 ---
 
-## [8][Typescript type cast](https://www.reddit.com/r/typescript/comments/g0ldya/typescript_type_cast/)
+## [11][Typescript type cast](https://www.reddit.com/r/typescript/comments/g0ldya/typescript_type_cast/)
 - url: https://www.reddit.com/r/typescript/comments/g0ldya/typescript_type_cast/
 ---
 I could do 
@@ -184,131 +219,3 @@ const riderInfos = await partners[claimedPartner] as &lt;ILalamove&gt;
 Do we have better way to do this casting?
 
 Thanks
-## [9][Help w/nested Object processing](https://www.reddit.com/r/typescript/comments/g0or4r/help_wnested_object_processing/)
-- url: https://www.reddit.com/r/typescript/comments/g0or4r/help_wnested_object_processing/
----
-Trying to get more comfortable with TS, but this "I know this works - why isn't this working" is killing me! Any insight is appreciated...
-
-I need to process data from one nested JSON object into another form of nested objects, but when I am using a `for...in` w/a nested `for...in` to cycle through objects/properties the ts-compiler says that a string can't be used to index my json object even though the keys are all strings? 
-
-Given a keys array and a json data obj{} I import
-
-    const keysArr = ['A','B','C'];
-    const jsonData = {
-      A: { A: '0', B: '0', C: '1' },
-      B: { A: '1', B: '0', C: '-1' },
-      C: { A: '-1', B: '1', C: '-1' },
-    };
-
-I'm trying to cycle through the key/vals of each "JsonLetter" to evaluate and create a dictionary-object:
-
-    dictionary = {   // &lt;~~Desired outcome
-        A: { isPos: ['B'], isNeg: ['C'] },
-        B: { isPos: ['C'], isNeg: [] },
-        C: { isPos: ['A'], isNeg: ['B', 'C'] },
-    };
-
-But I can NOT get the process to work: 
-First looping through the properties of `jsonData` to get each JsonLetterObj. Then looping through the properties of each JsonLetterObj to process the values while still referring to the key that got me there...
-
-In *non*-TS code, I want to do is the following - 
-
-    for (let key in jsonData) {
-      const letterObj = jsonData[key];  // &lt;~~ where I have my implicit `any` ERROR
-      for (let subKey in letterObj) {
-        const val = parseInt( letterObj[subKey] );
-        if (val &gt; 0) {  dictionary[subKey].isPos.push(key); }
-        if (val &lt; 0) {  dictionary[subKey].isNeg.push(key); }
-      }
-    }
-    
-I *think* I need these defined, but I'm not sure how\where to use them
-
-    interface JsonLetterObj { [key: string]: string; }        
-    interface JsonData { [key: string]: JsonLetterObj; } 
-
-
-On the upside, I did manage to create the empty `dictionary` obj{} above by defining an interface and reducing through my keys array (though I'm not sure if this is "right"?)...
-    
-    interface Dictionary {
-      [key: string]: {
-        isPos: string[];
-        isNeg: string[];
-      };
-    }
-    function makeDictionary(keysArr: string[]): Dictionary {
-      return keysArr.reduce((obj: Dictionary, key): Dictionary =&gt; {
-        obj[key] = { isPos: [], isNeg: [] };
-        return obj;
-      }, {});
-    }
-    let dictionary = makeDictionary(keysArr);
-
-However, I don't understand my error with the looping process. 
-
-Should I just not be using for-in loops and instead reduce twice through my keys array? That is doable but would seem too brittle/"declarative" to me.
-
-Any help would be greatly appreciated and thanks in advance!
-## [10][Typescript class extends implements?](https://www.reddit.com/r/typescript/comments/g0lik3/typescript_class_extends_implements/)
-- url: https://www.reddit.com/r/typescript/comments/g0lik3/typescript_class_extends_implements/
----
-I have a base class
-```
-export class Partner {
-    constructor() {}
-
-    /* Return success - { id, status, deliveryFee, trackingId, trackingUrl, startAt, expireAt }
-              failed  - { error }
-    */
-    CreateJob(data: any, options: LogisticOptions) {}
-
-    /* Return success - { id, status, deliveryFee, trackingId, trackingUrl, startAt, expireAt }
-              failed  - { error }
-    */
-    GetJob(id: string, options: LogisticOptions) {}
-
-    /* Return success - { status: string }
-              failed  - { error }
-    */
-    GetStatus(id: string, options: LogisticOptions) {}
-
-    /* Return success - { success: boolean }
-              failed  - { error }
-    */
-    CancelJob(id: string, options: LogisticOptions) {}
-}
-```
-
-And a class and an interface
-
-```
-class Lalamove extends Partner implements ILalamove {
-   
-    ...base class
-
-    GetDriver() {}
-
-}
-
-interface ILalamove {
-    GetDriver(id: string, riderId: string, options: LogisticOptions): DriverDetailResponse;
-}
-```
-
-I want to ILalamove to define the additional functions that the base class doesn't have.Is it the intended way to use "implement interface" on class?
-Otherwise, could you give me an example on how to use the implement &amp; extends for classes?
-
-Thanks for the help~
-## [11][Been building my first TypeScript project for 3 months, was going well. Updated all NPM packages and everything Broke...](https://www.reddit.com/r/typescript/comments/g08pum/been_building_my_first_typescript_project_for_3/)
-- url: https://www.reddit.com/r/typescript/comments/g08pum/been_building_my_first_typescript_project_for_3/
----
-So I've given most of my Express middleware this type: [https://pastebin.com/kCnjfUex](https://pastebin.com/kCnjfUex)
-
-But now, after updating all of my NPM packages to the latest I have 100+ errors all saying something like this:`TS2322: Type 'RequestHandler&lt;ParamsDictionary, any, any, any&gt;' is not assignable to type 'Middleware'.   Type 'RequestHandler&lt;ParamsDictionary, any, any, any&gt;' provides no match for the signature '(req: RequestExtended, res: Response&lt;any&gt;, next: NextFunction): void | Promise&lt;Response&lt;any&gt;&gt;'`
-
-Any ideas on what I'm doing wrong?  
-
-
-EDIT: Fixed, I deleted node\_modules and package.lock.json and then used command `npm i`  
-@ Types/express needed to be at version 4.17.0, and so changed that in package.json  
-Found this information here: [https://github.com/DefinitelyTyped/DefinitelyTyped/issues/40138](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/40138)

@@ -85,60 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Cypress now supports typescript for test files without using special preprocessors plugins](https://www.reddit.com/r/javascript/comments/g107vs/cypress_now_supports_typescript_for_test_files/)
+## [3][Writing an Emulator in JavaScript (and Interfacing with Multiple UIs)](https://www.reddit.com/r/javascript/comments/g1lcnp/writing_an_emulator_in_javascript_and_interfacing/)
+- url: https://www.taniarascia.com/writing-an-emulator-in-javascript-chip8/
+---
+
+## [4][Although JSON Web Tokens have become incredibly popular, its use for authenticating users sessions is controversial. Here's an attempt to demonstrate the pros and cons of using JWT for this context.](https://www.reddit.com/r/javascript/comments/g1naew/although_json_web_tokens_have_become_incredibly/)
+- url: https://supertokens.io/blog/are-you-using-jwts-for-user-sessions-in-the-correct-way?utm_source=Reddit
+---
+
+## [5][Any fans of JavaScript on hardware? I wanted to share an IoT device I made that tells me when my next bus will arrive](https://www.reddit.com/r/javascript/comments/g1qmfg/any_fans_of_javascript_on_hardware_i_wanted_to/)
+- url: https://medium.com/@robert.mcgui/onetesselaway-public-transit-status-iot-device-70b80ab8475b
+---
+
+## [6][Building A Digital Circuit Simulator In JavaScript: How To Be Like Ben Eater, But Without All The Breadboards](https://www.reddit.com/r/javascript/comments/g1mqwz/building_a_digital_circuit_simulator_in/)
+- url: https://youtube.com/watch?v=anZPHeA0WKU
+---
+
+## [7][[Feedback] elementumjs/template: Simple HTML template engine for vanilla WebComponents](https://www.reddit.com/r/javascript/comments/g1nxnl/feedback_elementumjstemplate_simple_html_template/)
+- url: https://github.com/elementumjs/template
+---
+
+## [8][I created Parasite, a NodeJS Library for easily debugging Rest APIs by recording and replaying incoming requests. It's also available as a standalone binary.](https://www.reddit.com/r/javascript/comments/g1lhqe/i_created_parasite_a_nodejs_library_for_easily/)
+- url: https://medium.com/@shivanshvij/using-parasite-to-debug-nodejs-applications-8c9445358708
+---
+
+## [9][WebStorm 2020.1 has been released](https://www.reddit.com/r/javascript/comments/g17jir/webstorm_20201_has_been_released/)
+- url: https://blog.jetbrains.com/webstorm/2020/04/webstorm-2020-1/
+---
+
+## [10][Hegel - An advanced static type checker (alternative for TypeScript/Flow)](https://www.reddit.com/r/javascript/comments/g1ponj/hegel_an_advanced_static_type_checker_alternative/)
+- url: https://github.com/JSMonk/hegel
+---
+
+## [11][Cypress now supports typescript for test files without using special preprocessors plugins](https://www.reddit.com/r/javascript/comments/g107vs/cypress_now_supports_typescript_for_test_files/)
 - url: https://github.com/cypress-io/cypress/issues/1859
 ---
 
-## [4][A webinar on Business Continuity Planning in times of COVID-19](https://www.reddit.com/r/javascript/comments/g14gu3/a_webinar_on_business_continuity_planning_in/)
-- url: /r/techsupport/comments/g14aii/a_webinar_on_business_continuity_planning_in/
+## [12][jQuery 3.5.0 Released! | Official jQuery Blog](https://www.reddit.com/r/javascript/comments/g1p7j4/jquery_350_released_official_jquery_blog/)
+- url: https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/
 ---
 
-## [5][jQuery 3.5.0 Released](https://www.reddit.com/r/javascript/comments/g0jwlu/jquery_350_released/)
-- url: http://blog.jquery.com/2020/04/10/jquery-3-5-0-released/
----
-
-## [6][How to debug full-stack Serverless JS apps](https://www.reddit.com/r/javascript/comments/g153ui/how_to_debug_fullstack_serverless_js_apps/)
-- url: https://serverless-stack.com/chapters/debugging-full-stack-serverless-apps.html
----
-
-## [7][Random/Cool success interjections for your app](https://www.reddit.com/r/javascript/comments/g13mn4/randomcool_success_interjections_for_your_app/)
-- url: https://github.com/dimitrisraptis96/interjection-js
----
-
-## [8][The Algebraic Structure of Functions, illustrated using React components](https://www.reddit.com/r/javascript/comments/g0gd6y/the_algebraic_structure_of_functions_illustrated/)
-- url: https://jrsinclair.com/articles/2020/algebraic-structure-of-functions-illustrated-with-react-components/
----
-
-## [9][Continuous Development - Building an Angular application](https://www.reddit.com/r/javascript/comments/g12763/continuous_development_building_an_angular/)
-- url: https://www.hackdoor.io/articles/86pwo9py/continuous-development-building-an-angular-application
----
-
-## [10][Open-sourced COVID Heroes!](https://www.reddit.com/r/javascript/comments/g0uk3l/opensourced_covid_heroes/)
-- url: https://github.com/camasscioly/covidheroes.net/stargazers
----
-
-## [11][[AskJS] Any good material I can use to learn about DASH and livestreams?](https://www.reddit.com/r/javascript/comments/g14d3d/askjs_any_good_material_i_can_use_to_learn_about/)
-- url: https://www.reddit.com/r/javascript/comments/g14d3d/askjs_any_good_material_i_can_use_to_learn_about/
----
-So I'm currently working on a small project to learn how to write a very basic livestream video player using DASH from the Instagram API. I'm running out of resources to use and it's still not working (I feel like I'm pretty close though), so I'm wondering if there's something more out there that I can read upon to further understand the concept of dash/livestream. I'm currently struggling to get the video to play. Downloading the mpd and the audio/video chunks, buffering them, etc. is all working.
-
-Does anyone recommended any material I can read upon?
-
-Or maybe even better, if there's someone on here that has (extended) knowledge about this subject and has time to answer some questions I'd greatly appreciate that.
-## [12][[AskJS] r/HTML &amp; r/javascript - I need your help - offline paper friendly learning resources?](https://www.reddit.com/r/javascript/comments/g1439k/askjs_rhtml_rjavascript_i_need_your_help_offline/)
-- url: https://www.reddit.com/r/javascript/comments/g1439k/askjs_rhtml_rjavascript_i_need_your_help_offline/
----
-Hi all,  
-I work as an instructor in a prison helping to deliver a coding curriculum to inmates. Unfortunately, prison regimes are heavily reduced and the class is currently no longer running due to the Corona pandemic.   
-
-
-We're looking to give the guys some material to keep them busy and learning. Problem is, they have no access to a laptop/tablet etc. so everything for the time being must be purely paper based. 
-
-The curriculum is fairly self led, and begins with HTML and CSS before moving on to JavaScript, with later stages being more open to individual preferences and specialisation. For the time being, everyone is operating within the HTML/CSS/JS part of the curriculum.   
-
-
-We're looking for good reading material, and offline exercises we can give them, be it wireframing, psuedo-code sort of stuff, or looking at general programming principles and best practices. 
-
-Anyone aware of good material that fits within the offline limitations?
-
-Thanks!

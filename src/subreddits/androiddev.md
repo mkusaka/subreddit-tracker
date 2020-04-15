@@ -31,133 +31,75 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I 🏗️ made these free responsive themes to help Android devs create websites for their mobile apps](https://www.reddit.com/r/androiddev/comments/g0nw1d/i_made_these_free_responsive_themes_to_help/)
-- url: https://www.reddit.com/r/androiddev/comments/g0nw1d/i_made_these_free_responsive_themes_to_help/
----
-Hey,
-
-I'm an Android dev, but recently I started looking into web dev. I found some nice CSS framework, Tailwind, and I played with it, by creating these beautiful themes. I attached a video with all themes.
-
-You can download any theme for free, edit it and upload it on your server.
-
-I'm not sure if I'm allowed to post the website, but if you like them I can give you a link.
-
-Btw, If you want to create a website, but don't have a design tool to create your app preview I can help. Send me screenshot of your app and I will create a beautiful mock-up for Android or iOS.
-
-Let me know if you find them useful. Thanks!
-
-EDIT: They can be found here [LPFMA - landing pages for mobile apps](https://landingpagesformobileapps.com/)
-
-https://reddit.com/link/g0nw1d/video/2mh22dgngms41/player
-## [4][Modern User Storage on Android](https://www.reddit.com/r/androiddev/comments/g11lbb/modern_user_storage_on_android/)
-- url: https://medium.com/androiddevelopers/modern-user-storage-on-android-e9469e8624f9
+## [3][Understanding the android build process, what is Dalvik(JIT),ART(AOT),D8,R8?](https://www.reddit.com/r/androiddev/comments/g1q7om/understanding_the_android_build_process_what_is/)
+- url: https://www.freshbytelabs.com/2020/03/understanding-android-build-process.html
 ---
 
-## [5][COVID 19 app will leverage Google Play infrastructure for broad implementation as it seems, supporting Android versions down to Marshmallow Android 6.0](https://www.reddit.com/r/androiddev/comments/g0v3mp/covid_19_app_will_leverage_google_play/)
-- url: https://www.theverge.com/2020/4/13/21220033/android-covid-19-tracking-updates-google-play-contact-tracing
+## [4][Modern Android Development with Zhuinden - Gabor Varadi](https://www.reddit.com/r/androiddev/comments/g18icm/modern_android_development_with_zhuinden_gabor/)
+- url: https://www.youtube.com/watch?v=exCslL9i1Bk
 ---
 
-## [6][I want following functionality in an Android fragment. Stuck on choosing between different views](https://www.reddit.com/r/androiddev/comments/g14n2y/i_want_following_functionality_in_an_android/)
-- url: https://www.reddit.com/r/androiddev/comments/g14n2y/i_want_following_functionality_in_an_android/
----
-   
-
-I have created a fragment and two tabs (hence two other fragments) in  it. I want following functionality from each tab. I have a list of items in the following way inside a tab fragment. A  button will be present at end. (Outside below the two Tab fragment)
-
-    CustomerName1 Phone_Number Amount
-           Product_1 Quantity Number CheckBox
-           Product_2 Quantity Number CheckBox
-           Product_3 Quantity Number CheckBox
-    CustomerName2 Phone_Number Amount 
-           Product_2 Quantity Number CheckBox
-           Product_3 Quantity Number CheckBox
-    CustomerName3 Phone_Number Amount
-           Product_1 Quantity Number CheckBox
-
-The functionality I'm searching for is
-
-1.) You can add as many customer as you want (I tried it with ListView)
-
-2.) There can be any number of products that a customer wants (Variable products length) 
-
-3.) One clicking the checkbox and pressing the button below at the bottom, that product should be removed from list.
-
-4.) After the last product for a customer is removed, the customer entry should also be gone.
-
-I implemented each row of Customer-product combo using listView. Then  for the products I created a linearLayout (I don't want products inside  a specific customer to be scrollable) But I seem to have hit the dead  end and feels like it's the wrong way to implement the functionality.
-## [7][Share .PDF is not working on android](https://www.reddit.com/r/androiddev/comments/g14hv5/share_pdf_is_not_working_on_android/)
-- url: https://www.reddit.com/r/androiddev/comments/g14hv5/share_pdf_is_not_working_on_android/
----
-Hello Every one. I'm trying to share a  PDF file on android. The file are in assets and I have no idea but follow content provider example is not working. Works with text and maybe with image files but when is a .PDF I just received the message no data found. The code to know more about are here:  [GitHub code](https://github.com/nicconicco/AndroidPdfExamples/tree/master/app/src/main)
-
-Anyone have a real example? Thanks for your advices
-## [8][Emulator sound noise. Is anyone else experiencing this?](https://www.reddit.com/r/androiddev/comments/g14guq/emulator_sound_noise_is_anyone_else_experiencing/)
-- url: https://www.reddit.com/r/androiddev/comments/g14guq/emulator_sound_noise_is_anyone_else_experiencing/
----
-Recently, the audio (e.g., the voice from the Google Translate app, or a local MP3 file sound from Google Play Music) coming out from an AVD randomly has FM-radio-like noise. Is anyone else experiencing this?
-
-I am not sure about the exact condition, but if I start an AVD and play the voice in the Google Translate, the sound is noisy. If I keep pressing the voice button, the noise gradually gets reduced up to the level that I am not sure if there is a noise or not. Then, if I play mp3 in Play Music, there is no or minimal noise, too. If I do the same thing with Google Translate and Google Music reversed, the same thing happens. That is, Google Music has initially noisy, then I keep stop/play, the noise gradually disappears, and then if I start the voice in Google Translate, there is no or minimal noise.
-
-* Emulator version: 30.0.5-6306047
-* AVD: Google Play API 28,29,R
-* Sound hardware: On-board Realtek ALC887
-* OS: Windows 10 (1909)
-## [9][How I check if record exists on database list view before added?](https://www.reddit.com/r/androiddev/comments/g12pzm/how_i_check_if_record_exists_on_database_list/)
-- url: https://www.reddit.com/r/androiddev/comments/g12pzm/how_i_check_if_record_exists_on_database_list/
----
-How I check before add on database if record exists on database? And popup a message to user if record is on database?
-
-&amp;#x200B;
-
-When click button to put data on database :
-
-`btn_ok_add.setOnClickListener(new View.OnClickListener() {`  
- `u/Override`  
- `public void onClick(View v) {`  
-
-
- `EditText region = (EditText) popup.findViewById(R.id.field_region);`  
- `EditText code = (EditText) popup.findViewById(R.id.field_connected_code);`  
- `SQLiteDatabase database = context.pdfDatabaseManager.getWritableDatabase();`  
- `ContentValues newValues = new ContentValues();`  
-`}`  
- `newValues.put(PDFDatabaseManager.KEY_REGION, region.getText().toString());`  
- `newValues.put(PDFDatabaseManager.KEY_CODE, code.getText().toString());`  
-`long found = database.insert(PDFDatabaseManager.DATABASE_REGION_TABLE, null, newValues);`  
- `database.close();`  
- `a.dismiss();`  
- `Toast.makeText(context, "insert correct!", Toast.LENGTH_SHORT).show();`  
- `}`
-
-&amp;#x200B;
-
-on database class :
-
-&amp;#x200B;
-
-`final String  QUERY_CREATE_REGION_DATABASE = "CREATE TABLE " +`  
- `DATABASE_REGION_TABLE + " (" +`  
- `COLUMN_ID_REGIONS + " INTEGER PRIMARY KEY AUTOINCREMENT, " +`  
- `KEY_REGION + " TEXT NOT NULL, " +`  
- `KEY_CODE + " TEXT NOT NULL, " + " BIT Default 0 NOT NULL"+`  
- `");";`
-## [10][How to achieve effect like Twitter splash screen animation (from iOS Twitter version) in Android application?](https://www.reddit.com/r/androiddev/comments/g15kkp/how_to_achieve_effect_like_twitter_splash_screen/)
-- url: https://www.reddit.com/r/androiddev/comments/g15kkp/how_to_achieve_effect_like_twitter_splash_screen/
+## [5][Server-driven UI using jetpack compose](https://www.reddit.com/r/androiddev/comments/g1iqav/serverdriven_ui_using_jetpack_compose/)
+- url: https://link.medium.com/gjd9XNX0G5
 ---
 
-## [11][started learning android studio 5 minutes ago and I'm stuck](https://www.reddit.com/r/androiddev/comments/g142fy/started_learning_android_studio_5_minutes_ago_and/)
-- url: https://www.reddit.com/r/androiddev/comments/g142fy/started_learning_android_studio_5_minutes_ago_and/
+## [6][native Android app with Kotlin and Rust - code review request](https://www.reddit.com/r/androiddev/comments/g1k5zh/native_android_app_with_kotlin_and_rust_code/)
+- url: https://www.reddit.com/r/androiddev/comments/g1k5zh/native_android_app_with_kotlin_and_rust_code/
 ---
-I'm not sure if it's a problem or not but it's got me confused. The internet tutorials and books I've seen show that there are two xml files in res&gt;layout folder (activity\_main and content\_main) in a basic template. But I've got two extra files(first\_fragment and second\_fragment) and even the text view is in first fragment with an extra "next" button (extra because it's not in the tutorials) are there in the "first\_fragment" file.  I'm pretty sure I sound like an idiot and it's not a big deal but I'm a little afraid that it might get in my way later
-## [12][1.3 million lines of code, for bumble + badoo, what?? Am I missing something?](https://www.reddit.com/r/androiddev/comments/g13w7d/13_million_lines_of_code_for_bumble_badoo_what_am/)
-- url: https://www.reddit.com/r/androiddev/comments/g13w7d/13_million_lines_of_code_for_bumble_badoo_what_am/
+[native-android-kotlin-rust](https://gitlab.com/dpezely/native-android-kotlin-rust) is an example project intended to be sufficiently complete for those crossing over from either Rust to Android development or vice-versa.
+
+Although I had been using Rust for a few years, this was my first Android app of any kind whatsoever, learning Kotlin along the way, etc.
+
+How might this code be improved beyond known issues noted in the various READMEs?
+
+Thanks!
+
+PS - There's an equivalent [thread in the Rust sub](https://www.reddit.com/r/rust/comments/fywgwj/native_android_app_with_kotlin_and_rust/).
+## [7]["Prioritizing the review of apps published, commissioned, or authorized by official government entities" - what does this mean in practice?](https://www.reddit.com/r/androiddev/comments/g1my26/prioritizing_the_review_of_apps_published/)
+- url: https://www.reddit.com/r/androiddev/comments/g1my26/prioritizing_the_review_of_apps_published/
 ---
-Thanks to the team at bumble for doing this AMA, but when I read 1.3million lines of code, I couldnt help but this what in the world is needing all that the client is using?
+According to [Google's COVID-19 policy](https://android-developers.googleblog.com/2020/04/google-play-updates-and-information.html):
 
-[https://www.reddit.com/r/androiddev/comments/fsuwr2/ask\_us\_anything\_were\_the\_bumble\_android/](https://www.reddit.com/r/androiddev/comments/fsuwr2/ask_us_anything_were_the_bumble_android/)
+&gt;At the same time, in order to help ensure we are providing users with accurate and timely information relating to COVID-19, we also are prioritizing the review of apps published, commissioned, or authorized by official government entities and public health organizations.
 
-&amp;#x200B;
+However can someone elaborate on this? Specifically for financial / banking apps. We **have to be** authorized and approved by government to be a bank so does that count? 
 
-Is this normal, from those who have been working in apps with this scale?   
-Been working at a large startup/scale up and since we decided the backend/gateway will compute and the app is only rendering most things, I can't stop thinking of all these lines of code.   
-Even assuming half, thats 700k for each app.
+If so what's the process for telling Google this? Is there a form or a box we tick and upload a document or something? Google are less than helpful in their blog post.
+## [8][Activity and Fragment](https://www.reddit.com/r/androiddev/comments/g1oy7s/activity_and_fragment/)
+- url: https://www.reddit.com/r/androiddev/comments/g1oy7s/activity_and_fragment/
+---
+Hi. I'm creating an app. My idea is to use just one Activity as the base container for various Fragments. Here are some questions:
+
+- if I want to add a listener on a button placed on a fragment, should I put the onClick method in the Activity or in the Fragment?
+
+- if I declare some variables in the Activity, can I pass them to the Fragments through constructors?
+
+- should I initialize my ViewModel in the Activity or in a Fragment? 
+
+Thank you.
+## [9][Room, Retrofit and LiveData tutorial?](https://www.reddit.com/r/androiddev/comments/g1rxu4/room_retrofit_and_livedata_tutorial/)
+- url: https://www.reddit.com/r/androiddev/comments/g1rxu4/room_retrofit_and_livedata_tutorial/
+---
+Can anyone here recommend me an up to date tutorial going through the process of getting and sending data from a rest api, caching it locally and presenting it to the user? I assume it would include the technologies mentioned in the title of this post but I'm open to suggestions
+## [10][How to give text in a button a drop shadow?](https://www.reddit.com/r/androiddev/comments/g1okbz/how_to_give_text_in_a_button_a_drop_shadow/)
+- url: https://www.reddit.com/r/androiddev/comments/g1okbz/how_to_give_text_in_a_button_a_drop_shadow/
+---
+Beginner here. I'm having a tough time figuring this one out and my Google searches just keep coming up with adding a shadow to the button OR text but not text that's in a button. 
+
+I'm trying to have yellow text with a black shadow. Am I missing something obvious? Any ideas what I should be looking up? Thanks!
+## [11][App reviews and the coronavirus outbreak. Is there a way to tell if my app needs manual review?](https://www.reddit.com/r/androiddev/comments/g1quwr/app_reviews_and_the_coronavirus_outbreak_is_there/)
+- url: https://www.reddit.com/r/androiddev/comments/g1quwr/app_reviews_and_the_coronavirus_outbreak_is_there/
+---
+Recently our app has been suspended by the play store because it contained the "coronavirus" keyword in the store listing, no mentions of the virus in the app, just the store listing.
+
+We offer a service to avoid queues outside places by obtaining a virtual ticket so the user can go to the place when her turn comes, our government endorsed us because we avoid gatherings, we're offering the service for free for the time being to help population.
+
+The suspension was a misunderstanding and we've been brought back online on the play store in matter of hours, after deleting the "coronavirus" word from the store listing, however, we've rolled an update and, although the google play console communicates a 100% rollout (it was a staged rollout from 20% to 40% and then to 100%), the users aren't able to download the latest version, but just the one before the app suspension.
+
+There's a big popup saying to expect 7 days or more of review time due to the coronavirus outbreak, so I'm starting to think that even if the google play console says so, we've not actually rolled out our update, but are instead in a queue, waiting for manual review and approval, because we might have been somehow "blacklisted" for the previous (erroneous) suspension.
+
+All the other apps we own get released right away, it's just the suspended one that doesn't go live (despite what the google play console says). We've already contacted support to know what's going on, and I'll update with an answer as soon as we receive one, but in the meantime I'd like to know if there is a way to tell if our app, which previously didn't require manual review, is in some sort of manual review list.
+## [12][Is it possible to take an exported Whatsapp.txt and convert back into a chat via backup?](https://www.reddit.com/r/androiddev/comments/g1q9mx/is_it_possible_to_take_an_exported_whatsapptxt/)
+- url: https://www.reddit.com/r/androiddev/comments/g1q9mx/is_it_possible_to_take_an_exported_whatsapptxt/
+---
+

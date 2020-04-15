@@ -84,55 +84,61 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fbn65q/whos_hiring_march_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [3][We made a website where people can talk to others in a small group - hopefully this helps with isolation!](https://www.reddit.com/r/reactjs/comments/g0qjxc/we_made_a_website_where_people_can_talk_to_others/)
-- url: https://dotdot.im
+## [3][React Router 6 Tutorial](https://www.reddit.com/r/reactjs/comments/g1ppx2/react_router_6_tutorial/)
+- url: https://www.youtube.com/watch?v=Z89iY7xwBSU
 ---
 
-## [4][Some ADVANCED React resources (any type) that you would like to recommend?](https://www.reddit.com/r/reactjs/comments/g13nq0/some_advanced_react_resources_any_type_that_you/)
+## [4][Don't `import React from "react"`; also, new JSX transform will eliminate need for import altogether - Sebastian Markbåge on Twitter](https://www.reddit.com/r/reactjs/comments/g1lirn/dont_import_react_from_react_also_new_jsx/)
+- url: https://twitter.com/sebmarkbage/status/1250284377138802689?s=20
+---
+
+## [5][I created a game using react-three-fiber](https://www.reddit.com/r/reactjs/comments/g1b4rd/i_created_a_game_using_reactthreefiber/)
+- url: https://snake-cubed.tk/
+---
+
+## [6][My first project a covid-19 screening tool with global and local stats built with react.](https://www.reddit.com/r/reactjs/comments/g1p8iz/my_first_project_a_covid19_screening_tool_with/)
+- url: https://covidlk.live/
+---
+
+## [7][is inline styling bad when working with a component library?](https://www.reddit.com/r/reactjs/comments/g1qt1s/is_inline_styling_bad_when_working_with_a/)
+- url: https://www.reddit.com/r/reactjs/comments/g1qt1s/is_inline_styling_bad_when_working_with_a/
+---
+i am learning react and i am using AntDesign, the problem i have is that i don't know (i don't want to work with) less, so is inline styling bad, and if so; can you tell me a better option to use?
+## [8][Redux Course Lesson #7: a custom middleware for async actions](https://www.reddit.com/r/reactjs/comments/g1opyl/redux_course_lesson_7_a_custom_middleware_for/)
+- url: https://youtu.be/wNpph6YbO7Q
+---
+
+## [9][Please help me find out why this is not a DOM element?](https://www.reddit.com/r/reactjs/comments/g1rumd/please_help_me_find_out_why_this_is_not_a_dom/)
+- url: https://www.reddit.com/r/reactjs/comments/g1rumd/please_help_me_find_out_why_this_is_not_a_dom/
+---
+    const mapStateFromProps = state =&gt; ({
+      isLoading: state.user.isLoading
+    });
+    
+    const RootWithAuth = withRouter(
+      connect(
+        mapStateFromProps,
+        { setUser, clearUser }
+      )(Root)
+    );
+    
+    ReactDOM.render(
+      &lt;Provider store={store}&gt;
+        &lt;Router&gt;
+          &lt;RootWithAuth /&gt;
+        &lt;/Router&gt;
+      &lt;/Provider&gt;,
+      document.getElementById("root")
+    );
+## [10][Made a DJ name generator using React-Spring and Apollo GQL.](https://www.reddit.com/r/reactjs/comments/g1rmgz/made_a_dj_name_generator_using_reactspring_and/)
+- url: https://cueup.io/dj-name-generator
+---
+
+## [11][Phelia - Build Slack apps with React](https://www.reddit.com/r/reactjs/comments/g1ab70/phelia_build_slack_apps_with_react/)
+- url: https://github.com/maxchehab/phelia
+---
+
+## [12][Some ADVANCED React resources (any type) that you would like to recommend?](https://www.reddit.com/r/reactjs/comments/g13nq0/some_advanced_react_resources_any_type_that_you/)
 - url: https://www.reddit.com/r/reactjs/comments/g13nq0/some_advanced_react_resources_any_type_that_you/
 ---
 After reading main concepts on React docs and finished The road to React book of Robin Wieruch. I would like to deep dive into React environment and get my hand dirty also.
-## [5][Prerendering vs static site generators](https://www.reddit.com/r/reactjs/comments/g11tnl/prerendering_vs_static_site_generators/)
-- url: https://www.reddit.com/r/reactjs/comments/g11tnl/prerendering_vs_static_site_generators/
----
-I want to achieve SEO visibility for my React application. It consists of a few HTML pages which content doesn't change and is not dynamic. I can use [server side rendering (SSR), pre-rendering and static site generators (SSG)](https://github.com/brillout/awesome-universal-rendering).
-
-In this case, SSR would be an overkill and I can choose between pre-rendering or SSG. Which one should I choose?
-
-When is it better to use [react-snap](https://github.com/stereobooster/react-snap) instead of [react-static](https://github.com/react-static/react-static) or [gatsby](https://www.gatsbyjs.org/)?
-## [6][CSS Variables for React Developers](https://www.reddit.com/r/reactjs/comments/g0ko78/css_variables_for_react_developers/)
-- url: https://joshwcomeau.com/css/css-variables-for-react-devs/
----
-
-## [7][I created a guide on how to publish a React component to npm. Check it out! Would love to hear feedback from you guys.](https://www.reddit.com/r/reactjs/comments/g13gpq/i_created_a_guide_on_how_to_publish_a_react/)
-- url: https://medium.com/groftware/how-to-publish-your-react-component-on-npm-9cf48d91944d
----
-
-## [8][Learning ReactJS](https://www.reddit.com/r/reactjs/comments/g14mcy/learning_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/g14mcy/learning_reactjs/
----
-As a total beginner I want to use React to build a data visualization interface, which I can share directly with my clients. Any feedback is appreciated!
-
-1) What's the best way to learn React? Textbooks, Youtube, other sources? 
-
-2) How long does it take to become proficient in React assuming prior intermediate level coding knowledge? 
-
-3) Can I accomplish my goal without learning React? I came across Plotly Dash but it's not free for commercial use. How is your experience with plotly Dash? Are there any other similar products out there?
-## [9][How Deploy React In 60 Seconds](https://www.reddit.com/r/reactjs/comments/g13z74/how_deploy_react_in_60_seconds/)
-- url: https://www.youtube.com/watch?v=musUjHY7AXQ
----
-
-## [10][Why cant hooks be called conditionally?](https://www.reddit.com/r/reactjs/comments/g0wyst/why_cant_hooks_be_called_conditionally/)
-- url: https://www.reddit.com/r/reactjs/comments/g0wyst/why_cant_hooks_be_called_conditionally/
----
-Hi,
-
-I am just curious why hooks can not be called conditionally. I have started using hooks in my components and have not had issues following the rules. I would like to understand better why the rules are the way they are. Thanks.
-## [11][Stop using client-side route redirects - Kent C. Dodds](https://www.reddit.com/r/reactjs/comments/g15kf4/stop_using_clientside_route_redirects_kent_c_dodds/)
-- url: https://kentcdodds.com/blog/stop-using-client-side-route-redirects
----
-
-## [12][Electron (builded) app failing to initiate on "/" route](https://www.reddit.com/r/reactjs/comments/g1548k/electron_builded_app_failing_to_initiate_on_route/)
-- url: https://www.reddit.com/r/reactjs/comments/g1548k/electron_builded_app_failing_to_initiate_on_route/
----
-When on development server, or when using the builded version through the browser, my electron app works properly, but when launching the app  through the .exe it always starts in the 404 route (actually in no route at all). Do I have to set up some kind of initial route parameter or something like that? I'm using react-router-dom v5.

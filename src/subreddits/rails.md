@@ -39,196 +39,91 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Beginner Friendly Guided Project - Building a Link Shortener with Rails 6](https://www.reddit.com/r/rails/comments/g0uvsg/beginner_friendly_guided_project_building_a_link/)
-- url: https://www.reddit.com/r/rails/comments/g0uvsg/beginner_friendly_guided_project_building_a_link/
+## [3][Looking for a sales/demand forecasting gem/API](https://www.reddit.com/r/rails/comments/g1qu36/looking_for_a_salesdemand_forecasting_gemapi/)
+- url: https://www.reddit.com/r/rails/comments/g1qu36/looking_for_a_salesdemand_forecasting_gemapi/
 ---
-Hi there. 
+I have to build a product that does some sales forecasting. Currently the client is doing it in Excel with the Excel stat functions. I was wondering if anyone knew any gems that could do something similar where you feed it in a series of data and it forecasts how much sales will happen in the future. 
 
-I've been building Rails apps for a long time, but I never fully embraced TDD. Now that I've got a bit more time on my hands thanks to all this COVID business, I decided to give it more of a go.
+If no well maintained gem is available I am also open to a third party app that do something similar with an API I can connect to.
 
-I'm recording a series on Youtube of me building a simple link shortener from scratch with TDD. It's pretty beginner friendly, and if you go through the whole thing with me, you'll have a real project to show for it at the end.
+Thanks in advance.
+## [4][Grid-based document creation tools/gems/solutions?](https://www.reddit.com/r/rails/comments/g1pm4j/gridbased_document_creation_toolsgemssolutions/)
+- url: https://www.reddit.com/r/rails/comments/g1pm4j/gridbased_document_creation_toolsgemssolutions/
+---
+Excel is a grid-based document creation application. But it requires a lot of upfront planning because users can't split any cell into multiple cells to make sure the contents inside are aligned (only merge is allowed).
 
-Just thought I'd drop this here in case it helps someone: [https://www.youtube.com/playlist?list=PLjItgYqIzJ9WGy9WMf-44DXHB\_7aWwJMc](https://www.youtube.com/playlist?list=PLjItgYqIzJ9WGy9WMf-44DXHB_7aWwJMc)
+Is there anything else out there?
+## [5][Choice of System test drivers](https://www.reddit.com/r/rails/comments/g1p7di/choice_of_system_test_drivers/)
+- url: https://www.reddit.com/r/rails/comments/g1p7di/choice_of_system_test_drivers/
+---
+TLDR: I would like to know how you choose which driver you use in System Tests (or End-to-End).
 
-If you watch the playlist and have any questions, just ask in the comments of the video and I'll give you the best answer I can.
+When you are writing system tests the default is selenium (slow but controlling a real browser) but another common option is rack\_test (fast but it 'fakes'^(1) a browser). [The choice of Selenium was because it was zero setup and supported JavaScript out the box.](https://github.com/rails/rails/pull/26703#issuecomment-251649333)
 
-Hope everyone is well.
+&amp;#x200B;
 
-Peace.
-## [4][Rails 6 CSS organization](https://www.reddit.com/r/rails/comments/g14b3n/rails_6_css_organization/)
+What I have done: 
+
+I have used rack\_test for most of my end to end testing unless I am writing JavaScript in which case I used Selenium (or one of the other JavaScript aware drivers).
+
+Is rack\_test first common or should I be using Selenium more often? I guess I'm wondering if there's times when you reach for Selenium first (other than JS).
+
+&amp;#x200B;
+
+^(1)  \- not sure of the right term it is not a browser but is parses the HTML but doesn't know about JavaScript?
+## [6][Authentication for both web app and mobile app](https://www.reddit.com/r/rails/comments/g1g1ne/authentication_for_both_web_app_and_mobile_app/)
+- url: https://www.reddit.com/r/rails/comments/g1g1ne/authentication_for_both_web_app_and_mobile_app/
+---
+I have a Rails app in API mode serving both a JS web app and a mobile app. I did some research on authentication and went with JWT implementation with Sorcery.  I'm aware of Devise for authentication but since it's more for MVC Rails app instead. Now, everything works pretty well for both platforms for creating users, logging in etc.
+
+However, now I have to implement token refreshing mechanism and I found this post [https://stackoverflow.com/questions/55486341/how-to-secure-a-refresh-token](https://stackoverflow.com/questions/55486341/how-to-secure-a-refresh-token) saying that storing a refresh token in a browser is not a good idea but for mobile devices it's ok.  So, if using JWT for web apps is not a good idea and storing the refresh token in a browser is a no no then I wonder if I should have both cookie-based auth for traffic from the web app and JWT-based auth for the mobile app instead. Any one has done something similar?
+
+&amp;#x200B;
+
+For JWT implementation I followed this [tutorial](https://qiita.com/kaishuu0123/items/27ba55e774ac1b7a94fc) (it's in Japanese but I mainly just followed the github)
+
+&amp;#x200B;
+
+PS. I'm not using OAuth at the moment since I didn't want 3rd party auth service
+## [7][React: Handling associations from Rails API in state?](https://www.reddit.com/r/rails/comments/g1rdj4/react_handling_associations_from_rails_api_in/)
+- url: https://www.reddit.com/r/rails/comments/g1rdj4/react_handling_associations_from_rails_api_in/
+---
+So hopefully this question will make sense, but lets say I have a Rails API serving JSON to a React front-end.
+
+Lets say I also have a model: \`widget\`, and \`widget\` has a bunch of different associations (like has\_one \`widget\_type\` among other associations.
+
+On the React end in my "Table" component I want to have a table that has all the \`widget\` attributes on a table row (and state in this case is just an array of objects). But lets say I also want to include some data from \`widgets\` associations on each row as well?
+
+Whats the best way to do that? (Sidenote: Lets pretend I am using fetch/axios to make the call to the Rails API on the table component load).
+
+I imagine I maybe use some sort of json serializer/builder to include the extra data? I can't find a distinct answer unfortunately.
+## [8][Struggling with Rails api social logins using Devise.](https://www.reddit.com/r/rails/comments/g1dthu/struggling_with_rails_api_social_logins_using/)
+- url: https://www.reddit.com/r/rails/comments/g1dthu/struggling_with_rails_api_social_logins_using/
+---
+I need to allow for signing up and logging in using Apple, Google and Facebook.  I've done it on a full stack Rails project years ago, but never with an api only setup.  My understanding is that the front end app will handle logging in, and then will pass a token to the server where I will then have to verify it.  I've seen tutorials, but they seem to be all over the place.  Is there a good starting point where I can see the correct way to implement this in rails?
+## [9][Junior dev just recently got first job looking for good resources and advice](https://www.reddit.com/r/rails/comments/g1l1kn/junior_dev_just_recently_got_first_job_looking/)
+- url: https://www.reddit.com/r/rails/comments/g1l1kn/junior_dev_just_recently_got_first_job_looking/
+---
+Hello all, I just recently got my first job as a rails developer and I was hoping to get some resources (could be books, sites, whatever) or advice on things you wish you would have known about when you first started or something that helped you as a junior now. This could be for rails, ruby in general, front end stuff, just kinda whatever really. 
+
+Just as background, before getting the job I hadn't had any prior experience with ruby or rails, except a codecademy course in 7th grade because its what RPG maker used lol. In school we used alot of Java and C++ and of course SQL. I have expierence with other languages but mainly those. I feel comfortable in HTML and I like bootstrap alot, I want to improve my CSS skills I'd say that's my weakest point. I do enjoy JS, but I wouldnt say I'm great at it or anything.
+## [10][Rails 6 CSS organization](https://www.reddit.com/r/rails/comments/g14b3n/rails_6_css_organization/)
 - url: https://www.reddit.com/r/rails/comments/g14b3n/rails_6_css_organization/
 ---
 I'm finally toying around Ruby-on-Rails 6 (better later than never), JavaScript has finally evolved with webpack, which is a good thing, but I'm quite surprised to see that "The CSS Rails way" didn't changed. It's \*\*still\*\* old-fashioned CSS by default (where is SASS ? BEM ?), using the "=require" directive. This is a bit annoying when setting up new rails project with the "rails new" command. Moreover, this is not consistent with using webpacker, this makes 2 front-end builds (webpack + sprockets) running side-by-side. Finally, it do not encourage "componentization of the front-end", unless you choose a "full JS Framework" like React or Vue that you may not need anyway... So my question is : why is CSS default organization \*\*still\*\* so old-fashioned after all these years ?
-## [5][Cleaning up my messy gem environment](https://www.reddit.com/r/rails/comments/g13r2s/cleaning_up_my_messy_gem_environment/)
-- url: https://www.reddit.com/r/rails/comments/g13r2s/cleaning_up_my_messy_gem_environment/
+## [11][My new gem: Heya is a campaign mailer for Rails](https://www.reddit.com/r/rails/comments/g1hslx/my_new_gem_heya_is_a_campaign_mailer_for_rails/)
+- url: /r/ruby/comments/g1ezhp/my_new_gem_heya_is_a_campaign_mailer_for_rails/
 ---
-I am half way through a udemy course on Rails, and in that course, they recommended the installing of rvm, and a whole bunch of gems. When I run rails routes, it now looks a mess of different options! Also, when I run `rails generate controller Articles` I get this error:
 
-&gt;The dependency tzinfo-data (&gt;= 0) will be unused by any of the platforms Bundler is installing for
-
-And Terminal just freezes.
-
-So, with this in mind, I was thinking it would be nice to have a cleaner environment where I just have rails installed, as I repeatedly go through the Getting Started with Rails tutorial on [rubyonrails.org](https://rubyonrails.org).
-
-With this goal in mind, what is the best way to go about it? I don't want to uninstall all the gems I added, because I want to finish the course at udemy. But while going through the [rubonrails.org](https://rubonrails.org) tutorials, I want to keep things a bit cleaner.
-
-What would you recommend?
-## [6][turbolinks + early hints + localstorage = pseudo SPA?](https://www.reddit.com/r/rails/comments/g0xz7v/turbolinks_early_hints_localstorage_pseudo_spa/)
-- url: https://www.reddit.com/r/rails/comments/g0xz7v/turbolinks_early_hints_localstorage_pseudo_spa/
+## [12][How do you approach client editable page layouts with multiple sections and varying columns?](https://www.reddit.com/r/rails/comments/g181yx/how_do_you_approach_client_editable_page_layouts/)
+- url: https://www.reddit.com/r/rails/comments/g181yx/how_do_you_approach_client_editable_page_layouts/
 ---
-Just wondering if anyones managed to set up something like this for their reactive front ends? I'm mainly thinking of this for a standard react-rails and normal rails doing the server rendering a la `&lt;%= react_component "thing" %&gt;`. Also with some front end cache invalidation/refetching?
-## [7][Docker - Failed to open TCP connection to localhost:35729 (Cannot assign requested address](https://www.reddit.com/r/rails/comments/g0x7ax/docker_failed_to_open_tcp_connection_to/)
-- url: https://www.reddit.com/r/rails/comments/g0x7ax/docker_failed_to_open_tcp_connection_to/
----
-Trying to get my Rails 5.2 app running on a Docker host on Windows10 and I feel that I'm 90% of the way there:
+I fell in love with Rails years ago but for quite some time I have been busy with long-term PHP projects the last few years, but I am now looking to make a return.
 
-The app container error that I get when visiting `localhost:3000`
+A common content management requirement I face is for clients to be able to manage their own page layouts. For example, a page may have sections that are styled differently - some full width, different colours, number of columns. While classes can solve the styling challenges, column management is harder to do.
 
-    Started GET "/" for 192.168.240.1 at 2020-04-14 02:29:21 +0000
-    app_1  | Cannot render console from 192.168.240.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-    app_1  |
-    app_1  | PG::ConnectionBad (could not connect to server: Connection refused
-    app_1  |        Is the server running on host "127.0.0.1" and accepting
-    app_1  |        TCP/IP connections on port 5432?
-    app_1  | ):
-    app_1  |
+In PHP land I have used Craft, Statamic, WP (Gutenberg, ACF, Elementor and Divi) which all solve this problem in different ways with their own pros/cons.
 
-My Dockerfile:
+I'm not really looking for a visual builder, more a way of assigning pre-defined section templates, e.g. two-thirds &amp; one-third, two halves, full width column. But there needs to be a good way for the user to pick which section they want, populate and re-order as needed in the admin panel.
 
-    FROM ruby:2.6.1
-    RUN apt-get update -qq &amp;&amp; apt-get install -y nodejs postgresql-client
-    RUN mkdir /usr/src/app
-    WORKDIR /usr/src/app
-    COPY . /usr/src/app
-    RUN gem update --system &amp;&amp; gem install bundler &amp;&amp; bundler update --bundler
-    RUN bundle install
-    
-    # Add a script to be executed every time the container starts.
-    COPY docker_entrypoint.sh /usr/bin/
-    RUN chmod +x /usr/bin/docker_entrypoint.sh
-    ENTRYPOINT ["docker_entrypoint.sh"]
-    EXPOSE 3000
-    
-    # Start the main process.
-    CMD ["rails", "server", "-b", "0.0.0.0"]
-
-My docker-compose.yml:
-
-    version: '3'
-    services:
-      app:
-        build: .
-        command: bash -c "rm -f tmp/pids/server.pid &amp;&amp; bundle exec rails s -p 3000 -b '0.0.0.0'"
-        environment:
-          - POSTGRES_HOST=db
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=password
-        volumes:
-          - app:/usr/src/app
-        ports:
-          - 127.0.0.1:3000:3000
-        links:
-          - db
-        depends_on:
-          - db
-      db:
-        image: postgres
-        volumes:
-          - postgres:/var/lib/postgresql/data
-        environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=password
-    volumes:
-      postgres:
-      app:
-
-My understanding is that `app` and `db` should be open binded together with `links:` but doesn't appear be so. A similar error requires me to have named volumes instead of relative as the two containers cannot communicate with each other (a windows specific permissions issue).
-
-Am I close? Any suggestions? Thank you
-## [8][Issue with deleting active storage image attachment](https://www.reddit.com/r/rails/comments/g0n04i/issue_with_deleting_active_storage_image/)
-- url: https://www.reddit.com/r/rails/comments/g0n04i/issue_with_deleting_active_storage_image/
----
- 
-
-I have a products page in the admin namespace. I have image attachments for each product via active storage. I am trying to have a link to remove the images but I can't seem to get it to work.
-
-link:
-
-    &lt;% admin_product.images.each do |image| %&gt;
-    
-    &lt;%= image_tag url_for(image), :class =&gt; 'img-fluid' %&gt;
-    
-    &lt;%= link_to 'Remove', delete_image_attachment_admin_product(image.id), method: :delete, data: { confirm: 'Are you sure?' } %&gt;
-    
-    &lt;% end %&gt;
-
-Admin/products controller method:
-
-    def delete_image_attachment
-      @image = ActiveStorage::Attachment.find(params[:id]) 
-      @image.purge     
-      redirect_back(fallback_location: request.referer) 
-    end
-
-I keep getting errors saying there is no method in products/edit. I'm sure I have the URL wrong to hit the delete\_image\_attachment method but can't seem to get it straight.
-
-Any suggestions are appreciated!
-## [9][How Do You Organize Your Stylesheets?](https://www.reddit.com/r/rails/comments/g0oohy/how_do_you_organize_your_stylesheets/)
-- url: https://www.reddit.com/r/rails/comments/g0oohy/how_do_you_organize_your_stylesheets/
----
-My stylesheets have grown to one big monolith and have incurred a lot of code debt. I am going to reorganize everything. How do you guys organize and structure your stylesheets?
-## [10][RVM/Bundler : gem uninstall -aIX fails. -- Why are there two different directories for gems that are being used?](https://www.reddit.com/r/rails/comments/g0pubd/rvmbundler_gem_uninstall_aix_fails_why_are_there/)
-- url: https://www.reddit.com/r/rails/comments/g0pubd/rvmbundler_gem_uninstall_aix_fails_why_are_there/
----
-Hi everyone,
-
-I'm gonna start with telling you what is the goal.
-
-**Goal:**
-
-1. Uninstalling everything related to rvm, bundler, and gems. Literally making things gone.
-2. Then re-installing everything back again as if this is a new fresh server.
-3. Installing gems after becoming a correct system user through bundler to avoid any permission related errors on any ruby on rails app.
-4. This should work on any system regardless of how f\*\*\*ed up the rvm/ruby/gem configuration.
-
-**The problem:**
-
-Hi, gem uninstall -aIX fails (Goal #1) because turns out the gems are installed in different directories etc.
-
-And the error log tells me to go to a different directory and run the commands over there.
-
-$GEM\_PATH: /usr/local/rvm/gems/ruby-2.6.3:/usr/local/rvm/gems/ruby-2.6.3@global
-
-$GEM\_HOME: /usr/local/rvm/gems/ruby-2.6.3
-
-**Error log:**
-
-**$ gem uninstall -aIX**
-
-ERROR: While executing gem ... (Gem::InstallError)
-
-bundler-unload is not installed in GEM\_HOME, try:
-
-gem uninstall -i /usr/local/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0 bundler-unload
-
-**The question:**
-
-Why the second path exists for some of the gems? (and why the second directory ends with 2.6.0)
-
-\- /usr/local/rvm/gems/ruby-2.6.3/gems/
-
-\- /usr/local/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0
-## [11][Using Atom IDE with Rails - package removal and additions](https://www.reddit.com/r/rails/comments/g0jz0a/using_atom_ide_with_rails_package_removal_and/)
-- url: https://www.reddit.com/r/rails/comments/g0jz0a/using_atom_ide_with_rails_package_removal_and/
----
-I am using Atom as my IDE for Rails, and it says I have 82 installed packages. That seems rather a lot! I think most came as default. For example, it has C# language support that I never use.
-
-Do you remove any of these?
-
-I am thinking that when you get the popup list of options when you type your code, many won't be relevant if you have package installs for Go Language etc. Or have I got that wrong?
-
-What else do you add if you are using HTML, CDD, Ruby and Rails?
-## [12][Is @ option or not in link_to?](https://www.reddit.com/r/rails/comments/g0hgo8/is_option_or_not_in_link_to/)
-- url: https://www.reddit.com/r/rails/comments/g0hgo8/is_option_or_not_in_link_to/
----
-I am a little confused on link\_to method. Let's say you have link\_to 'article', article\_path(@article). Do I have to use the @? Or is the @ only used in earlier Ruby versions?
+From my initial research Locomotive CMS seems to have a nice section concept. I'm not sure how easy it would be to combine with a wider Rails app yet. I wonder if any of the admin gems like active admin or administrate are capable of doing something similar or lay some of the foundations? I'd like to avoid reinventing the wheel if possible!

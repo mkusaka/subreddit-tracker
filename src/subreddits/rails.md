@@ -39,91 +39,323 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Looking for a sales/demand forecasting gem/API](https://www.reddit.com/r/rails/comments/g1qu36/looking_for_a_salesdemand_forecasting_gemapi/)
-- url: https://www.reddit.com/r/rails/comments/g1qu36/looking_for_a_salesdemand_forecasting_gemapi/
+## [3][Rails 6 + docker-compose : simplest possible Hello World project™](https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/)
+- url: https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/
 ---
-I have to build a product that does some sales forecasting. Currently the client is doing it in Excel with the Excel stat functions. I was wondering if anyone knew any gems that could do something similar where you feed it in a series of data and it forecasts how much sales will happen in the future. 
+Hello mates, I spend some time to find the simplest possible configuration to start a Rails project using Docker.
 
-If no well maintained gem is available I am also open to a third party app that do something similar with an API I can connect to.
+[https://github.com/bdavidxyz/simplest-rails-docker](https://github.com/bdavidxyz/simplest-rails-docker)
 
-Thanks in advance.
-## [4][Grid-based document creation tools/gems/solutions?](https://www.reddit.com/r/rails/comments/g1pm4j/gridbased_document_creation_toolsgemssolutions/)
-- url: https://www.reddit.com/r/rails/comments/g1pm4j/gridbased_document_creation_toolsgemssolutions/
+I picked some ideas from other projects from GitHub, trying to remove as much files and as much lines per file as possible.
+
+With Ruby-on-Rails, you can't start a project without a properly initialized, configured, and started database. You also can't start the local server without a webpack dev server running (from Rails 6 I guess). So that's make 3 services running at least before even to print a "hello world" page.
+
+This kind of project is extremely useful to test various tools and versions without polluting your local machine. I find it also more professional to use Docker instead of brittle, quickly-too-old documentation. So it could be a starting point for a more serious configuration.
+
+What do you think ? What could be simplified ? Do you have more simple examples ? How do you test tools in isolation ? Thanks for your returns, and stay safe :)
+## [4][From Agency Life to Software Development: Q&amp;A with Steve Polito](https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/)
+- url: https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/
 ---
-Excel is a grid-based document creation application. But it requires a lot of upfront planning because users can't split any cell into multiple cells to make sure the contents inside are aligned (only merge is allowed).
-
-Is there anything else out there?
-## [5][Choice of System test drivers](https://www.reddit.com/r/rails/comments/g1p7di/choice_of_system_test_drivers/)
-- url: https://www.reddit.com/r/rails/comments/g1p7di/choice_of_system_test_drivers/
+The Remote Ruby crew is joined by Steve Polito, a developer working at an agency, to have a Q&amp;A about transitioning into being a full-time software developer working on products. If you’re a junior developer or in a similar situation, [give this episode of Remote Ruby a listen!](https://remoteruby.transistor.fm/74)
+## [5][GraphQL: making an order management system, trying to add many to many](https://www.reddit.com/r/rails/comments/g2cfrk/graphql_making_an_order_management_system_trying/)
+- url: https://www.reddit.com/r/rails/comments/g2cfrk/graphql_making_an_order_management_system_trying/
 ---
-TLDR: I would like to know how you choose which driver you use in System Tests (or End-to-End).
+Oh hi, it's me again! :)
 
-When you are writing system tests the default is selenium (slow but controlling a real browser) but another common option is rack\_test (fast but it 'fakes'^(1) a browser). [The choice of Selenium was because it was zero setup and supported JavaScript out the box.](https://github.com/rails/rails/pull/26703#issuecomment-251649333)
+Still trying to do a GraphQL api with rails, but I've hit a snag. I am doing an order management system, and it's not going to be worth much unless I can add products to an order. I have set them up with a Product model and an Order model with a has\_and\_belongs\_to\_many relationship. ie. Product has\_many orders and Order has\_many products. that part seems to be working fine, I made a join table and as far as I can see it works.
+
+The problem arrises when I am using GraphQL. The documentation is hard to find once you move away from the most basic queries and mutations. alas, I am in the process for doing the CreateOrder mutation for my api, as I need to add products on creation, i.e whatever the user orders.
 
 &amp;#x200B;
 
-What I have done: 
+https://preview.redd.it/yyt09xqjo5t41.png?width=1240&amp;format=png&amp;auto=webp&amp;s=a12f18a5b1f13e8642952ba88aef2d7a04930caf
 
-I have used rack\_test for most of my end to end testing unless I am writing JavaScript in which case I used Selenium (or one of the other JavaScript aware drivers).
-
-Is rack\_test first common or should I be using Selenium more often? I guess I'm wondering if there's times when you reach for Selenium first (other than JS).
+first I had the ProductType for an argument, but I realized that's a non starter and found out I need to create an input type for it, so I did:
 
 &amp;#x200B;
 
-^(1)  \- not sure of the right term it is not a browser but is parses the HTML but doesn't know about JavaScript?
-## [6][Authentication for both web app and mobile app](https://www.reddit.com/r/rails/comments/g1g1ne/authentication_for_both_web_app_and_mobile_app/)
-- url: https://www.reddit.com/r/rails/comments/g1g1ne/authentication_for_both_web_app_and_mobile_app/
----
-I have a Rails app in API mode serving both a JS web app and a mobile app. I did some research on authentication and went with JWT implementation with Sorcery.  I'm aware of Devise for authentication but since it's more for MVC Rails app instead. Now, everything works pretty well for both platforms for creating users, logging in etc.
+https://preview.redd.it/l4shn61uo5t41.png?width=1148&amp;format=png&amp;auto=webp&amp;s=65a980bee0b3c47d68aa12e49a7fb103592c0c87
 
-However, now I have to implement token refreshing mechanism and I found this post [https://stackoverflow.com/questions/55486341/how-to-secure-a-refresh-token](https://stackoverflow.com/questions/55486341/how-to-secure-a-refresh-token) saying that storing a refresh token in a browser is not a good idea but for mobile devices it's ok.  So, if using JWT for web apps is not a good idea and storing the refresh token in a browser is a no no then I wonder if I should have both cookie-based auth for traffic from the web app and JWT-based auth for the mobile app instead. Any one has done something similar?
+At this point this, I don't know if this is even the correct way of doing it, because I wasn't able to find a Ruby example online. Either way, GraphQL isn't complaining at least. So I try calling the mutation like so:
 
 &amp;#x200B;
 
-For JWT implementation I followed this [tutorial](https://qiita.com/kaishuu0123/items/27ba55e774ac1b7a94fc) (it's in Japanese but I mainly just followed the github)
+https://preview.redd.it/svajfnw6p5t41.png?width=438&amp;format=png&amp;auto=webp&amp;s=27b074ad895e58763f2c990ed948ca579dedb00b
+
+and it is at this point that everything falls apart as rails gives me the error:
+
+    Product(#375140) expected, got #&lt;Types::ProductInputType:0x00007fb1a791b8c8 u/context=#&lt;Query::Context ...&gt;, u/ruby_style_hash={:id=&gt;1}, u/arguments_by_keyword={:id=&gt;#&lt;Types::BaseArgument:0x00007fb1aa96ec00 u/name="id", u/type_expr=Integer, u/description=nil, u/null=false, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:id, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=#&lt;GraphQL::Schema::NonNull u/of_type=GraphQL::Types::Int&gt;&gt;, :name=&gt;#&lt;Types::BaseArgument:0x00007fb1aa96d3c8 u/name="name", u/type_expr=String, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:name, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::String&gt;, :organization_id=&gt;#&lt;Types::BaseArgument:0x00007fb1aa96c6f8 u/name="organizationId", u/type_expr=Integer, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:organization_id, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::Int&gt;, :description=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c734b8 u/name="description", u/type_expr=String, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:description, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::String&gt;, :inventory=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c72400 u/name="inventory", u/type_expr=Integer, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:inventory, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::Int&gt;, :images=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c712f8 u/name="images", u/type_expr=String, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:images, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::String&gt;, :price=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c70128 u/name="price", u/type_expr=Float, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:price, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::Float&gt;}&gt; which is an instance of Types::ProductInputType(#372160)
 
 &amp;#x200B;
 
-PS. I'm not using OAuth at the moment since I didn't want 3rd party auth service
-## [7][React: Handling associations from Rails API in state?](https://www.reddit.com/r/rails/comments/g1rdj4/react_handling_associations_from_rails_api_in/)
-- url: https://www.reddit.com/r/rails/comments/g1rdj4/react_handling_associations_from_rails_api_in/
+it would be nice if someone in this awesome community could give me a pointer in the right direction, either by telling me what's wrong here, or by sharing a tutorial that covers something similar, because I haven't been able to find one on my own :/
+
+&amp;#x200B;
+
+Best Regards
+## [6][How do you break out of a for loop that has nested? My attributes?](https://www.reddit.com/r/rails/comments/g2c38b/how_do_you_break_out_of_a_for_loop_that_has/)
+- url: https://www.reddit.com/r/rails/comments/g2c38b/how_do_you_break_out_of_a_for_loop_that_has/
 ---
-So hopefully this question will make sense, but lets say I have a Rails API serving JSON to a React front-end.
+My code looks like this
 
-Lets say I also have a model: \`widget\`, and \`widget\` has a bunch of different associations (like has\_one \`widget\_type\` among other associations.
+&lt;% for @leads in @leads.nested_lead %&gt;
+      &lt;%= @leads.contact %&gt;
+&lt;% end %&gt;
 
-On the React end in my "Table" component I want to have a table that has all the \`widget\` attributes on a table row (and state in this case is just an array of objects). But lets say I also want to include some data from \`widgets\` associations on each row as well?
+---------- This is where my error comes in - - - - - - - -
+When I do
+&lt;%= @leads.count %&gt;
 
-Whats the best way to do that? (Sidenote: Lets pretend I am using fetch/axios to make the call to the Rails API on the table component load).
-
-I imagine I maybe use some sort of json serializer/builder to include the extra data? I can't find a distinct answer unfortunately.
-## [8][Struggling with Rails api social logins using Devise.](https://www.reddit.com/r/rails/comments/g1dthu/struggling_with_rails_api_social_logins_using/)
-- url: https://www.reddit.com/r/rails/comments/g1dthu/struggling_with_rails_api_social_logins_using/
+I'm getting an error for undefined method for .count
+Or any over method I call that exists in the @leads table. 🤔
+## [7][Event Members](https://www.reddit.com/r/rails/comments/g27vbr/event_members/)
+- url: https://www.reddit.com/r/rails/comments/g27vbr/event_members/
 ---
-I need to allow for signing up and logging in using Apple, Google and Facebook.  I've done it on a full stack Rails project years ago, but never with an api only setup.  My understanding is that the front end app will handle logging in, and then will pass a token to the server where I will then have to verify it.  I've seen tutorials, but they seem to be all over the place.  Is there a good starting point where I can see the correct way to implement this in rails?
-## [9][Junior dev just recently got first job looking for good resources and advice](https://www.reddit.com/r/rails/comments/g1l1kn/junior_dev_just_recently_got_first_job_looking/)
-- url: https://www.reddit.com/r/rails/comments/g1l1kn/junior_dev_just_recently_got_first_job_looking/
+Hey all,   
+
+
+My Events page is up and running, I'm looking to add member to the event now.
+
+I would like to have a group created when the event is created allocating the event creator as a group member, group admin(bool) and link the event to the group.
+
+  
+The event has many users and should be indicated via a event group.
+
+Looking for the best/easiest way to implement this.  
+
+
+All idea's/comments welcome.  
+
+
+Thanks
+## [8][Are there any *recent* Doorkeeper+Devise tutorials to make a Oauth2 server provider?](https://www.reddit.com/r/rails/comments/g23ewp/are_there_any_recent_doorkeeperdevise_tutorials/)
+- url: https://www.reddit.com/r/rails/comments/g23ewp/are_there_any_recent_doorkeeperdevise_tutorials/
 ---
-Hello all, I just recently got my first job as a rails developer and I was hoping to get some resources (could be books, sites, whatever) or advice on things you wish you would have known about when you first started or something that helped you as a junior now. This could be for rails, ruby in general, front end stuff, just kinda whatever really. 
+I've been struggling a lot to put together an Oauth2 provider. The tutorials I've found are either from 2015-2016 (with code that needs adjustments), or make some substantial assumptions (such as building on top of previous code from a previous guide).
 
-Just as background, before getting the job I hadn't had any prior experience with ruby or rails, except a codecademy course in 7th grade because its what RPG maker used lol. In school we used alot of Java and C++ and of course SQL. I have expierence with other languages but mainly those. I feel comfortable in HTML and I like bootstrap alot, I want to improve my CSS skills I'd say that's my weakest point. I do enjoy JS, but I wouldnt say I'm great at it or anything.
-## [10][Rails 6 CSS organization](https://www.reddit.com/r/rails/comments/g14b3n/rails_6_css_organization/)
-- url: https://www.reddit.com/r/rails/comments/g14b3n/rails_6_css_organization/
+I tried to follow these guides:
+
+https://dev.mikamai.com/2015/02/11/oauth2-on-rails/  
+https://dev.mikamai.com/2015/03/02/oauth2-on-rails-the-client-application/
+
+But I get some errors about missing parameters. As I am totally new to this topic I've no idea what exactly I'm supposed to look for, or what to change.
+
+My intention is to make an oauth2 provider for my Rails and Node applications.
+
+Any tutorials you may know? Or perhaps somewhere I could investigate further?
+## [9][Using Optimizer Hints in Rails](https://www.reddit.com/r/rails/comments/g1xxys/using_optimizer_hints_in_rails/)
+- url: https://blog.saeloun.com/2020/04/14/using-optimizer-hints-in-rails-6
 ---
-I'm finally toying around Ruby-on-Rails 6 (better later than never), JavaScript has finally evolved with webpack, which is a good thing, but I'm quite surprised to see that "The CSS Rails way" didn't changed. It's \*\*still\*\* old-fashioned CSS by default (where is SASS ? BEM ?), using the "=require" directive. This is a bit annoying when setting up new rails project with the "rails new" command. Moreover, this is not consistent with using webpacker, this makes 2 front-end builds (webpack + sprockets) running side-by-side. Finally, it do not encourage "componentization of the front-end", unless you choose a "full JS Framework" like React or Vue that you may not need anyway... So my question is : why is CSS default organization \*\*still\*\* so old-fashioned after all these years ?
-## [11][My new gem: Heya is a campaign mailer for Rails](https://www.reddit.com/r/rails/comments/g1hslx/my_new_gem_heya_is_a_campaign_mailer_for_rails/)
-- url: /r/ruby/comments/g1ezhp/my_new_gem_heya_is_a_campaign_mailer_for_rails/
+
+## [10][Dealing with uniqueness constraint updates using PostgresQL](https://www.reddit.com/r/rails/comments/g255cs/dealing_with_uniqueness_constraint_updates_using/)
+- url: https://www.reddit.com/r/rails/comments/g255cs/dealing_with_uniqueness_constraint_updates_using/
 ---
-
-## [12][How do you approach client editable page layouts with multiple sections and varying columns?](https://www.reddit.com/r/rails/comments/g181yx/how_do_you_approach_client_editable_page_layouts/)
-- url: https://www.reddit.com/r/rails/comments/g181yx/how_do_you_approach_client_editable_page_layouts/
+Hey guys. I have a few , uuid, string-based columns that have uniqueness constraints. Sometimes the uuid needs to be removed on update. Since there are objects that do not yet have a uuid (i.e. an empty string). I get hit with a database error. Is there any way to keep the uniqueness uniqueness constraint with this in mind?
+## [11][Technical interview](https://www.reddit.com/r/rails/comments/g1w9op/technical_interview/)
+- url: https://www.reddit.com/r/rails/comments/g1w9op/technical_interview/
 ---
-I fell in love with Rails years ago but for quite some time I have been busy with long-term PHP projects the last few years, but I am now looking to make a return.
+I m thinking to apply volunteer work but not sure if my technical skills in programming is great. What should I do? How to prepare for technical interview. I can’t solve the question but I can understand the solution after looking at it. Any suggestions in this regards will be great.
+## [12][Deploy to Heroku: assets:precompile error on Heroku but can't reproduce locally](https://www.reddit.com/r/rails/comments/g1xtqy/deploy_to_heroku_assetsprecompile_error_on_heroku/)
+- url: https://www.reddit.com/r/rails/comments/g1xtqy/deploy_to_heroku_assetsprecompile_error_on_heroku/
+---
+Hi,
 
-A common content management requirement I face is for clients to be able to manage their own page layouts. For example, a page may have sections that are styled differently - some full width, different colours, number of columns. While classes can solve the styling challenges, column management is harder to do.
+I've just finished this feature but I am getting an assets:precompile error that I can't figure out.  On Heroku, the error is:
 
-In PHP land I have used Craft, Statamic, WP (Gutenberg, ACF, Elementor and Divi) which all solve this problem in different ways with their own pros/cons.
+`----&gt; Preparing app for Rails asset pipeline`
 
-I'm not really looking for a visual builder, more a way of assigning pre-defined section templates, e.g. two-thirds &amp; one-third, two halves, full width column. But there needs to be a good way for the user to pick which section they want, populate and re-order as needed in the admin panel.
+`Running: rake assets:precompile`
 
-From my initial research Locomotive CMS seems to have a nice section concept. I'm not sure how easy it would be to combine with a wider Rails app yet. I wonder if any of the admin gems like active admin or administrate are capable of doing something similar or lay some of the foundations? I'd like to avoid reinventing the wheel if possible!
+`rake aborted!`
+
+`\`NoMethodError: undefined method []' for nil:NilClass\`\``
+
+`\`/tmp/build_26e19a2ff8e992cdff1a9b487057f4a3/config/initializers/shrine.rb:4:in &lt;main&gt;'\`\``
+
+&amp;#x200B;
+
+I tried to reproduce locally with RAILS\_ENV=production rake assets:precompile --trace.Maybe one of you can notice something:
+
+`** Invoke assets:precompile (first_time)`
+
+`** Invoke assets:environment (first_time)`
+
+`** Execute assets:environment`
+
+`** Invoke environment (first_time)`
+
+`** Execute environment`
+
+`** Invoke yarn:install (first_time)`
+
+`** Invoke webpacker:yarn_install (first_time)`
+
+`** Execute webpacker:yarn_install`
+
+`yarn install v1.21.1`
+
+`[1/4] Resolving packages...`
+
+`success Already up-to-date.`
+
+`Done in 0.97s.`
+
+`** Execute yarn:install`
+
+`yarn install v1.21.1`
+
+`[1/4] Resolving packages...`
+
+`[2/4] Fetching packages...`
+
+`info fsevents@1.2.12: The platform "linux" is incompatible with this module.`
+
+`info "fsevents@1.2.12" is an optional dependency and failed compatibility check. Excluding it from installation.`
+
+`[3/4] Linking dependencies...`
+
+`warning " &gt; webpack-dev-server@3.10.3" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".`
+
+`warning "webpack-dev-server &gt; webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".`
+
+`[4/4] Building fresh packages...`
+
+`Done in 252.40s.`
+
+`** Execute assets:precompile`
+
+`I, [2020-04-15T13:23:44.967735 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js`
+
+`I, [2020-04-15T13:23:44.969095 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js.gz`
+
+`I, [2020-04-15T13:23:44.969485 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/application-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css`
+
+`I, [2020-04-15T13:23:44.969644 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/application-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz`
+
+`I, [2020-04-15T13:23:44.969801 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/notes-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css`
+
+`I, [2020-04-15T13:23:44.969933 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/notes-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz`
+
+`I, [2020-04-15T13:23:44.970108 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/scaffolds-d06093ee516fe24cb3fe95eb72cd21d1cddaec3bfa31d359826f6e6cafd43bd2.css`
+
+`I, [2020-04-15T13:23:44.970236 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/scaffolds-d06093ee516fe24cb3fe95eb72cd21d1cddaec3bfa31d359826f6e6cafd43bd2.css.gz`
+
+`** Invoke webpacker:compile (first_time)`
+
+`** Invoke webpacker:verify_install (first_time)`
+
+`** Invoke webpacker:check_node (first_time)`
+
+`** Execute webpacker:check_node`
+
+`** Invoke webpacker:check_yarn (first_time)`
+
+`** Execute webpacker:check_yarn`
+
+`** Invoke webpacker:check_binstubs (first_time)`
+
+`** Execute webpacker:check_binstubs`
+
+`** Execute webpacker:verify_install`
+
+`** Invoke environment`
+
+`** Execute webpacker:compile`
+
+`Compiling...`
+
+`Compiled all packs in /vagrant/Rails/ink/public/packs`
+
+`Hash: 26849029fbedbedced37`
+
+`Version: webpack 4.42.1`
+
+`Time: 24098ms`
+
+`Built at: 2020-04-15 13:24:14`
+
+`Asset Size Chunks Chunk Names`
+
+`css/application-7891a208.css 826 KiB 0, 1 [emitted] [immutable] [big] application`
+
+`css/application-7891a208.css.gz 106 KiB [emitted]`
+
+`js/application-7da76fec4ff71205bb73.js 157 KiB 0, 1 [emitted] [immutable] application`
+
+`js/application-7da76fec4ff71205bb73.js.LICENSE.txt 489 bytes [emitted]`
+
+`js/application-7da76fec4ff71205bb73.js.gz 47.6 KiB [emitted]`
+
+`js/application-7da76fec4ff71205bb73.js.map 657 KiB 0, 1 [emitted] [dev] application`
+
+`js/application-7da76fec4ff71205bb73.js.map.gz 186 KiB [emitted]`
+
+`js/notes-aa3d2eba82abbbda5606.js 89.4 KiB 1 [emitted] [immutable] notes`
+
+`js/notes-aa3d2eba82abbbda5606.js.LICENSE.txt 489 bytes [emitted]`
+
+`js/notes-aa3d2eba82abbbda5606.js.gz 31.1 KiB [emitted]`
+
+`js/notes-aa3d2eba82abbbda5606.js.map 457 KiB 1 [emitted] [dev] notes`
+
+`js/notes-aa3d2eba82abbbda5606.js.map.gz 139 KiB [emitted]`
+
+`manifest.json 791 bytes [emitted]`
+
+`manifest.json.gz 220 bytes [emitted]`
+
+`Entrypoint application [big] = css/application-7891a208.css js/application-7da76fec4ff71205bb73.js js/application-7da76fec4ff71205bb73.js.map`
+
+`Entrypoint notes = js/notes-aa3d2eba82abbbda5606.js js/notes-aa3d2eba82abbbda5606.js.map`
+
+`[1] (webpack)/buildin/module.js 552 bytes {0} {1} [built]`
+
+`[2] ./app/javascript/packs/notes.js 2.53 KiB {0} {1} [built]`
+
+`[3] ./app/javascript/packs/application.js 850 bytes {0} [built]`
+
+`[7] ./app/javascript/channels/index.js 205 bytes {0} [built]`
+
+`[8] ./app/javascript/channels sync _channel\.js$ 160 bytes {0} [built]`
+
+`[9] ./app/javascript/stylesheets/application.scss 39 bytes {0} [built]`
+
+`+ 5 hidden modules`
+
+&amp;#x200B;
+
+`WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).`
+
+`This can impact web performance.`
+
+`Assets:`
+
+`css/application-7891a208.css (826 KiB)`
+
+&amp;#x200B;
+
+`WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.`
+
+`Entrypoints:`
+
+`application (983 KiB)`
+
+`css/application-7891a208.css`
+
+`js/application-7da76fec4ff71205bb73.js`
+
+`WARNING in webpack performance recommendations:`
+
+`You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.`
+
+`For more info visit` [`https://webpack.js.org/guides/code-splitting/`](https://webpack.js.org/guides/code-splitting/)
+
+`Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!app/javascript/stylesheets/application.scss:`
+
+`Entrypoint mini-css-extract-plugin = *`
+
+`[0] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/stylesheets/application.scss 1.45 MiB {0} [built]`
+
+`+ 1 hidden module`
+
+Thanks in advance!

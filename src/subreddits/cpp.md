@@ -119,85 +119,57 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Using locks in real-time audio processing, safely](https://www.reddit.com/r/cpp/comments/g1o5el/using_locks_in_realtime_audio_processing_safely/)
+## [3][Named arguments in fmt do not require dynamic allocations anymore.](https://www.reddit.com/r/cpp/comments/g2asdu/named_arguments_in_fmt_do_not_require_dynamic/)
+- url: https://twitter.com/vzverovich/status/1250411654568800258?s=21
+---
+
+## [4][C++ Compile Health: Comparison of various headers on build times](https://www.reddit.com/r/cpp/comments/g2acf3/c_compile_health_comparison_of_various_headers_on/)
+- url: https://artificial-mind.net/projects/compile-health/
+---
+
+## [5][Apple porting native C++ and Objective-C to WebAssembly for iWork apps in the browser](https://www.reddit.com/r/cpp/comments/g2c25a/apple_porting_native_c_and_objectivec_to/)
+- url: https://twitter.com/lrz/status/1250453967957561344
+---
+
+## [6][CodeLite IDE 14 Released!](https://www.reddit.com/r/cpp/comments/g2eei3/codelite_ide_14_released/)
+- url: https://wiki.codelite.org/pmwiki.php/Main/ReleaseNotesCodeLite14
+---
+
+## [7][Results summary: 2020 Global Developer Survey "Lite" : Standard C++](https://www.reddit.com/r/cpp/comments/g1yjhp/results_summary_2020_global_developer_survey_lite/)
+- url: https://isocpp.org/blog/2020/04/results-summary-2020-global-developer-survey-lite
+---
+
+## [8][Version-less CMake targets (Qt 5.15)](https://www.reddit.com/r/cpp/comments/g2e3ud/versionless_cmake_targets_qt_515/)
+- url: https://www.qt.io/blog/versionless-cmake-targets-qt-5.15
+---
+
+## [9][GCC's libstdc++ Continues Landing C++20 Changes Around The Spaceship Operator](https://www.reddit.com/r/cpp/comments/g2cpx8/gccs_libstdc_continues_landing_c20_changes_around/)
+- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=GCC10-libstdcpp-More-Cpp20
+---
+
+## [10][Cloudy. A media/video indexing and streaming server.](https://www.reddit.com/r/cpp/comments/g2dwjp/cloudy_a_mediavideo_indexing_and_streaming_server/)
+- url: https://www.reddit.com/r/cpp/comments/g2dwjp/cloudy_a_mediavideo_indexing_and_streaming_server/
+---
+[https://github.com/tigrangh/cloudy](https://github.com/tigrangh/cloudy)
+
+&amp;#x200B;
+
+This is an early preview of what I've been working on during last two weeks. I'd like to hear opinions of those who are interested in this or similar concept.
+## [11][Flashlight morse encoder/decoder system in C++.](https://www.reddit.com/r/cpp/comments/g2co2i/flashlight_morse_encoderdecoder_system_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/g2co2i/flashlight_morse_encoderdecoder_system_in_c/
+---
+ 
+
+Hello everyone
+
+I've recently started reading [The Hidden Language of Computer Hardware and Software](https://medium.com/tech-book-reviews/code-the-hidden-language-of-computer-hardware-and-software-bab8de93220e) by Charles Petzold. Yesterday, one idea stuck me and I think it's pretty cool.
+
+My idea is to create a telecommunication system ala Telegraph, based on binary code - Morse, but with one exception, it would be much more faster than a human in converting human language to Morse and decoding it to human language.
+
+It would be based on flashllights and cameras system with vision algorithms which would detect flashes in a dark environment and decode them to human language. I opt for &lt;1 second performance to exchange messages fast.
+
+Which libraries and boards would you recommend for building it? Any thoughts about core improvements?
+## [12][Using locks in real-time audio processing, safely](https://www.reddit.com/r/cpp/comments/g1o5el/using_locks_in_realtime_audio_processing_safely/)
 - url: https://timur.audio/using-locks-in-real-time-audio-processing-safely
 ---
 
-## [4][Profiting from the Folly of Others](https://www.reddit.com/r/cpp/comments/g1m1g0/profiting_from_the_folly_of_others/)
-- url: https://accu.org/index.php/journals/2776
----
-
-## [5][CLion 2020.1: CUDA, more embedded, clang-cl, and dozens of improvements across the IDE](https://www.reddit.com/r/cpp/comments/g1or6l/clion_20201_cuda_more_embedded_clangcl_and_dozens/)
-- url: https://blog.jetbrains.com/clion/2020/04/clion-2020-1-cuda-clang-embedded/
----
-
-## [6][To humbly present a wishlist for C++23](https://www.reddit.com/r/cpp/comments/g1qzh0/to_humbly_present_a_wishlist_for_c23/)
-- url: https://cor3ntin.github.io/posts/humble_wishlist/
----
-
-## [7][ModernCppStarter - Kick-start your C++! A template for modern C++ projects using CMake, CI, code coverage, clang-format and reproducible dependency management.](https://www.reddit.com/r/cpp/comments/g14e7l/moderncppstarter_kickstart_your_c_a_template_for/)
-- url: https://github.com/TheLartians/ModernCppStarter
----
-
-## [8][Overload magazine 156](https://www.reddit.com/r/cpp/comments/g1jtdn/overload_magazine_156/)
-- url: https://www.reddit.com/r/cpp/comments/g1jtdn/overload_magazine_156/
----
-[This month's issue of Overload magazine (#156)](https://accu.org/var/uploads/journals/Overload156.pdf) had not one but two thought-provoking articles:
-1. Profiting from the Folly of Others: a look at accessing private members of C++ classes by investigating a header called UninitializedMemoryHacks.h (from Facebook's Folly)
-2. Deconstructing Inheritance: a critical look at implementation inheritance from the angle of LSP.
-## [9][Which place do you prefer for auto with const qualifier?](https://www.reddit.com/r/cpp/comments/g1rzf0/which_place_do_you_prefer_for_auto_with_const/)
-- url: https://www.reddit.com/r/cpp/comments/g1rzf0/which_place_do_you_prefer_for_auto_with_const/
----
-
-
-[View Poll](https://www.reddit.com/poll/g1rzf0)
-## [10][Current iostream status in C++?](https://www.reddit.com/r/cpp/comments/g187t6/current_iostream_status_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/g187t6/current_iostream_status_in_c/
----
-**TL;DR**:
-
-What is the status of the current iostreams in C++, in particular:
-
-* are they discouraged from being used?
-* what are the alternatives?
-* is there an ongoing work in the committee to replace/fix them?
-
-&amp;#x200B;
-
-I have been actively working with standard stream just for a couple of days, so excuse me if I am missing something, but here is a list of questions I have got:
-
-* Where is `fsync()` in std::? Or, in a more general wording, what are the guarantees the standard provides that a file/stream will actually write my data to disk? You **do** need to call this function [if you want to write a file to disk](https://lwn.net/Articles/457667/) (not just pretend).
-* 2^(3) combinations of various state flags ([iostate](https://en.cppreference.com/w/cpp/io/ios_base/iostate)) give rise to a whole host of checking functions: `good()`, `eof()`, `fail()`, `bad()`, `operator!()`, `operator bool()`. Is not it too much? Suppose your are using a stream, would you know without documentation which one and when to use?
-* Why are the names of methods so cryptic: `btowc`, `sbumpc`, `xalloc`, `showmanyc`, `epptr`, `sungetc`?
-* Are they ZeroCopy streams?
-   * Why `stringstream::str()` cannot return (or set) an underlying string/buffer by rvalue? It requires copying.
-   * Imagine a have a stream (let's consider two cases: based on a file or on a string) and I want to write a function that calculates md5 sum. How can I write it in such a way that it do not require **any** copying in case the stream is based on a string (that is a legitimate requirement, since C++ has always had [this tenet](http://www.stroustrup.com/ETAPS-corrected-draft.pdf): "*What you don’t use, you don’t pay for \[BS94\]. And further: What you do use, you couldn’t hand code any better*")? As far as I understand, any stream implementation has an internal continuous buffer. In the case of string, this buffer could be the string itself, in case of file it could be either chunk of the file, or even entire `mmap()`'ed file. How do I get access directly to the buffer in the current C++ streams?
-* All operations by one? The closest I managed to get to the buffer is [`streambuf`](https://en.cppreference.com/w/cpp/io/basic_streambuf), but the problem is that all its public functions work only with one(!) character at a time: "reads one character from the input..." and so on...
-
-Just in case you want to know how it can be implemented otherwise, have a look at Google's [ZeroCopyInputStream](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.io.zero_copy_stream#ZeroCopyInputStream).
-
-**Finally, my question**:
-
-Can please anyone rebut/debunk what I have pointed out above, or tell the status of the current iostreams:
-
-* are they discouraged from being used?
-* what are the alternatives?
-* is there an ongoing work in the committee?
-
-&amp;#x200B;
-
-P.S. Just made a quick grep for "fsync" in the sources of postgres and got nearly [80(!) occurrences](https://gist.github.com/DimanNe/3a3e520569af5ff09e15125538c706b7) - does it mean that it is even dangerous to use current streams?
-## [11][RESTinio 0.6.6: an embedded async HTTP server gets an experimental type-safe router as an alternative to express-router](https://www.reddit.com/r/cpp/comments/g1719f/restinio_066_an_embedded_async_http_server_gets/)
-- url: https://github.com/Stiffstream/restinio/releases/tag/v.0.6.6
----
-
-## [12][Any reviews on "C++ Programming for Embedded Systems" Dolous course?](https://www.reddit.com/r/cpp/comments/g1ek2t/any_reviews_on_c_programming_for_embedded_systems/)
-- url: https://www.reddit.com/r/cpp/comments/g1ek2t/any_reviews_on_c_programming_for_embedded_systems/
----
-I am thinking of taking this course:
-
-[https://www.doulos.com/content/training/embedded\_cpp.php](https://www.doulos.com/content/training/embedded_cpp.php)
-
-&amp;#x200B;
-
-Anyone had experience taking Dolous classes before?

@@ -31,75 +31,112 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Understanding the android build process, what is Dalvik(JIT),ART(AOT),D8,R8?](https://www.reddit.com/r/androiddev/comments/g1q7om/understanding_the_android_build_process_what_is/)
-- url: https://www.freshbytelabs.com/2020/03/understanding-android-build-process.html
+## [3][FastLayout: An android library for making row, column interface quickly](https://www.reddit.com/r/androiddev/comments/g297il/fastlayout_an_android_library_for_making_row/)
+- url: https://www.reddit.com/r/androiddev/comments/g297il/fastlayout_an_android_library_for_making_row/
+---
+I was making a suduko game on android and had lots of issues in making suduko buttons.So I made a library with which you can quickly build any tabular/Table layout with equal cells.Here is a [link](https://github.com/alihamuh/fastLayout) to my github repo.I would very much appreciate your comments or if you think the library has any issues or needs improvement I am open to suggestions.This is my first ever library in any language.
+## [4][Venom - a lightweight tool that simplifies testing of the process death scenario.](https://www.reddit.com/r/androiddev/comments/g2cdid/venom_a_lightweight_tool_that_simplifies_testing/)
+- url: https://github.com/YarikSOffice/venom
 ---
 
-## [4][Modern Android Development with Zhuinden - Gabor Varadi](https://www.reddit.com/r/androiddev/comments/g18icm/modern_android_development_with_zhuinden_gabor/)
-- url: https://www.youtube.com/watch?v=exCslL9i1Bk
+## [5][Jetpack Compose 0.1.0-dev09 is released](https://www.reddit.com/r/androiddev/comments/g2ajja/jetpack_compose_010dev09_is_released/)
+- url: https://www.reddit.com/r/androiddev/comments/g2ajja/jetpack_compose_010dev09_is_released/
+---
+Release notes:
+
+* Jetpack Compose: [https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev09](https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev09)
+* Compose UI: [https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev09](https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev09)
+
+Other than these, the most interesting stuff is that they also added RxJava and LiveData adapters for Compose. Here are some examples
+
+* [LiveData usage example](https://android-review.googlesource.com/c/platform/frameworks/support/+/1278632/11/ui/ui-livedata/samples/src/main/java/androidx/ui/livedata/samples/Samples.kt)
+* [RxJava example](https://android-review.googlesource.com/c/platform/frameworks/support/+/1279164/8/ui/ui-rxjava2/samples/src/main/java/androidx/ui/rxjava2/samples/Samples.kt)
+
+There is an open issues for adding Kotlin coroutine Flow support as well so I suppose we can expect an adapter for that soon.
+## [6][Why more than two android flavor dimensions don't work properly?](https://www.reddit.com/r/androiddev/comments/g2eay6/why_more_than_two_android_flavor_dimensions_dont/)
+- url: https://www.reddit.com/r/androiddev/comments/g2eay6/why_more_than_two_android_flavor_dimensions_dont/
+---
+There is a powerful mechanism in Gradle for android that allows the developer to create application flavors and split code, configurations and override resources. I use it in more than two years in different applications, but all that time I had only one or two flavor dimensions. Today I tried t add the third dimension to my project and still can't build it.
+
+  
+Here is a problem, for example, I need the next three dimensions for my app: "brand", "environment", "market". The configuration will look like this: 
+
+    flavorDimensions "brand", "environment", "market"
+    
+    productFlavors {
+        // brand
+        nike{
+            dimension "brand"
+            applicationId "com.android.nike"
+        }
+        adidas{
+            dimension "brand"
+            applicationId "com.android.adidas"
+        }
+    
+        // environment
+        test{
+            dimension "environment"
+            applicationIdSuffix ".test"
+        }
+        prod {
+            dimension "environment"
+        }
+    
+        // market
+        google {
+            dimension "market"
+        }
+        amazon {
+            dimension "services"
+        }
+    }
+
+As a result, I can build the next 8 applications (I ignoring build types in this example):
+
+    nikeTestGoogle
+    nikeTestAmazon
+    nikeProdGoogle
+    nikeProdAmazon
+    adidasTestGoogle
+    adidasTestAmazon
+    adidasProdGoogle
+    adidasProdAmazon
+
+As I understand documentation about flavor dimensions, application nikeTestGoogle use files from the next folders: main, nike, test, google, nikeTest, nikeTestGoogle. But it doesn't work, Android studio sees only files in main, nike, test, google, and nikeTestGoogle. Files in nikeTest ignored and even doesn't mark as currently active.
+
+Does anyone know why it happened? Am I missing something?
+
+P/S/ Sorry for my bad English, I suppose you understand my main thought
+## [7][Coroutines: First things first](https://www.reddit.com/r/androiddev/comments/g2bxfl/coroutines_first_things_first/)
+- url: https://medium.com/androiddevelopers/coroutines-first-things-first-e6187bf3bb21
 ---
 
-## [5][Server-driven UI using jetpack compose](https://www.reddit.com/r/androiddev/comments/g1iqav/serverdriven_ui_using_jetpack_compose/)
-- url: https://link.medium.com/gjd9XNX0G5
+## [8][Multidexing, methods counts, is it still a thing?](https://www.reddit.com/r/androiddev/comments/g2eo7z/multidexing_methods_counts_is_it_still_a_thing/)
+- url: https://www.reddit.com/r/androiddev/comments/g2eo7z/multidexing_methods_counts_is_it_still_a_thing/
+---
+I've been out of touch on multidexing lately, is it still a thing for minSdk above 21? How about methods counting, are we still counting, if yes, how?
+## [9][Refactoring an old app](https://www.reddit.com/r/androiddev/comments/g2eepq/refactoring_an_old_app/)
+- url: https://www.reddit.com/r/androiddev/comments/g2eepq/refactoring_an_old_app/
+---
+I am wondering if there is any solid advice for refactoring android apps. My company inherited a project and the clients app is very very buggy and unstable. The code is in java/MVP - but they didn't use the presenters to do anything other than make HTTP requests and hand that data to the activity/fragment. The activity/fragments are gigantic and have tons of business logic in them. The application class is also bigger than any of the ones I have written with tons of services instantiated and managed there. Dagger present - but not injecting anything. A lot of libraries in the gradle file that aren't being used. Null Pointer Exceptions everywhere due to life cycle stuff. I can't really say more than that - but where do you start for this type of refactor where throwing everything out is not an option.
+## [10][Android Jetpack: CameraX Beta](https://www.reddit.com/r/androiddev/comments/g1v2kl/android_jetpack_camerax_beta/)
+- url: https://www.youtube.com/watch?v=HGSj-JRpuxo
 ---
 
-## [6][native Android app with Kotlin and Rust - code review request](https://www.reddit.com/r/androiddev/comments/g1k5zh/native_android_app_with_kotlin_and_rust_code/)
-- url: https://www.reddit.com/r/androiddev/comments/g1k5zh/native_android_app_with_kotlin_and_rust_code/
+## [11][Android API version where app shortcuts are required to be supported by launchers?](https://www.reddit.com/r/androiddev/comments/g2exgz/android_api_version_where_app_shortcuts_are/)
+- url: https://www.reddit.com/r/androiddev/comments/g2exgz/android_api_version_where_app_shortcuts_are/
 ---
-[native-android-kotlin-rust](https://gitlab.com/dpezely/native-android-kotlin-rust) is an example project intended to be sufficiently complete for those crossing over from either Rust to Android development or vice-versa.
+I am developing an app where its main feature is to create pinned shortcuts.
 
-Although I had been using Rust for a few years, this was my first Android app of any kind whatsoever, learning Kotlin along the way, etc.
+However, not all launchers support shortcuts. The problem is that since I cannot know this before the user installs the app, some users will get an error message that "Shortcuts are not supported by your launcher".
 
-How might this code be improved beyond known issues noted in the various READMEs?
-
-Thanks!
-
-PS - There's an equivalent [thread in the Rust sub](https://www.reddit.com/r/rust/comments/fywgwj/native_android_app_with_kotlin_and_rust/).
-## [7]["Prioritizing the review of apps published, commissioned, or authorized by official government entities" - what does this mean in practice?](https://www.reddit.com/r/androiddev/comments/g1my26/prioritizing_the_review_of_apps_published/)
-- url: https://www.reddit.com/r/androiddev/comments/g1my26/prioritizing_the_review_of_apps_published/
+Is there an API version (e.g. Android 10 - API 29), where all launchers are required to support shortcuts?
+## [12][I have an app idea that solves a common local problem, but I can't code or design. Any ideas? Also discuss what else could be in this app.](https://www.reddit.com/r/androiddev/comments/g2eop1/i_have_an_app_idea_that_solves_a_common_local/)
+- url: https://www.reddit.com/r/androiddev/comments/g2eop1/i_have_an_app_idea_that_solves_a_common_local/
 ---
-According to [Google's COVID-19 policy](https://android-developers.googleblog.com/2020/04/google-play-updates-and-information.html):
+So my app idea is dependent on Google Maps, and some math.
 
-&gt;At the same time, in order to help ensure we are providing users with accurate and timely information relating to COVID-19, we also are prioritizing the review of apps published, commissioned, or authorized by official government entities and public health organizations.
+So, here's the concept. There is a friend group of X people, and they want to minimize the travel time to go to a gathering. So this app would choose a venue using specifications by the user (cost, type of venue) and mathematical optimization techniques (that I have yet to fully learn)
 
-However can someone elaborate on this? Specifically for financial / banking apps. We **have to be** authorized and approved by government to be a bank so does that count? 
-
-If so what's the process for telling Google this? Is there a form or a box we tick and upload a document or something? Google are less than helpful in their blog post.
-## [8][Activity and Fragment](https://www.reddit.com/r/androiddev/comments/g1oy7s/activity_and_fragment/)
-- url: https://www.reddit.com/r/androiddev/comments/g1oy7s/activity_and_fragment/
----
-Hi. I'm creating an app. My idea is to use just one Activity as the base container for various Fragments. Here are some questions:
-
-- if I want to add a listener on a button placed on a fragment, should I put the onClick method in the Activity or in the Fragment?
-
-- if I declare some variables in the Activity, can I pass them to the Fragments through constructors?
-
-- should I initialize my ViewModel in the Activity or in a Fragment? 
-
-Thank you.
-## [9][Room, Retrofit and LiveData tutorial?](https://www.reddit.com/r/androiddev/comments/g1rxu4/room_retrofit_and_livedata_tutorial/)
-- url: https://www.reddit.com/r/androiddev/comments/g1rxu4/room_retrofit_and_livedata_tutorial/
----
-Can anyone here recommend me an up to date tutorial going through the process of getting and sending data from a rest api, caching it locally and presenting it to the user? I assume it would include the technologies mentioned in the title of this post but I'm open to suggestions
-## [10][How to give text in a button a drop shadow?](https://www.reddit.com/r/androiddev/comments/g1okbz/how_to_give_text_in_a_button_a_drop_shadow/)
-- url: https://www.reddit.com/r/androiddev/comments/g1okbz/how_to_give_text_in_a_button_a_drop_shadow/
----
-Beginner here. I'm having a tough time figuring this one out and my Google searches just keep coming up with adding a shadow to the button OR text but not text that's in a button. 
-
-I'm trying to have yellow text with a black shadow. Am I missing something obvious? Any ideas what I should be looking up? Thanks!
-## [11][App reviews and the coronavirus outbreak. Is there a way to tell if my app needs manual review?](https://www.reddit.com/r/androiddev/comments/g1quwr/app_reviews_and_the_coronavirus_outbreak_is_there/)
-- url: https://www.reddit.com/r/androiddev/comments/g1quwr/app_reviews_and_the_coronavirus_outbreak_is_there/
----
-Recently our app has been suspended by the play store because it contained the "coronavirus" keyword in the store listing, no mentions of the virus in the app, just the store listing.
-
-We offer a service to avoid queues outside places by obtaining a virtual ticket so the user can go to the place when her turn comes, our government endorsed us because we avoid gatherings, we're offering the service for free for the time being to help population.
-
-The suspension was a misunderstanding and we've been brought back online on the play store in matter of hours, after deleting the "coronavirus" word from the store listing, however, we've rolled an update and, although the google play console communicates a 100% rollout (it was a staged rollout from 20% to 40% and then to 100%), the users aren't able to download the latest version, but just the one before the app suspension.
-
-There's a big popup saying to expect 7 days or more of review time due to the coronavirus outbreak, so I'm starting to think that even if the google play console says so, we've not actually rolled out our update, but are instead in a queue, waiting for manual review and approval, because we might have been somehow "blacklisted" for the previous (erroneous) suspension.
-
-All the other apps we own get released right away, it's just the suspended one that doesn't go live (despite what the google play console says). We've already contacted support to know what's going on, and I'll update with an answer as soon as we receive one, but in the meantime I'd like to know if there is a way to tell if our app, which previously didn't require manual review, is in some sort of manual review list.
-## [12][Is it possible to take an exported Whatsapp.txt and convert back into a chat via backup?](https://www.reddit.com/r/androiddev/comments/g1q9mx/is_it_possible_to_take_an_exported_whatsapptxt/)
-- url: https://www.reddit.com/r/androiddev/comments/g1q9mx/is_it_possible_to_take_an_exported_whatsapptxt/
----
-
+It will be a while before I learn these, so I wonder what I should do for now. Should I have this patented or should I try finding people to help in making this idea into a reality?

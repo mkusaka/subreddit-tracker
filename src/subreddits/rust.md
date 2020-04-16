@@ -19,25 +19,45 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/fw2hd8/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (16/2020)?](https://www.reddit.com/r/rust/comments/g0es99/whats_everyone_working_on_this_week_162020/)
-- url: https://www.reddit.com/r/rust/comments/g0es99/whats_everyone_working_on_this_week_162020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-16-2020/40880)!
-## [3][Better stack fixing for Firefox](https://www.reddit.com/r/rust/comments/g1iw6q/better_stack_fixing_for_firefox/)
-- url: https://blog.mozilla.org/nnethercote/2020/04/15/better-stack-fixing-for-firefox/
+## [2][This Week in Rust 334](https://www.reddit.com/r/rust/comments/g1fj7p/this_week_in_rust_334/)
+- url: https://this-week-in-rust.org/blog/2020/04/14/this-week-in-rust-334/
 ---
 
-## [4][rust-analyzer Q&amp;A](https://www.reddit.com/r/rust/comments/g1qlrs/rustanalyzer_qa/)
-- url: https://www.reddit.com/r/rust/comments/g1qlrs/rustanalyzer_qa/
+## [3][μfmt - a smaller, faster and panic-free alternative to core::fmt](https://www.reddit.com/r/rust/comments/g242r1/μfmt_a_smaller_faster_and_panicfree_alternative/)
+- url: https://github.com/japaric/ufmt
 ---
-Hey, I'll be doing an webinar/Q&amp;A session about rust-analyzer later today (18:00 CEST, roughly four hours from know). It will be held on zoom, and a recording would be available afterwards. 
 
-Find the link here:
+## [4][regex2fat: convert regexes to FAT32, with regex-automata and a few lines of safe Rust](https://www.reddit.com/r/rust/comments/g2dxpw/regex2fat_convert_regexes_to_fat32_with/)
+- url: https://github.com/8051Enthusiast/regex2fat
+---
 
-https://rust-experts.com/#qna-ide-1
+## [5][Which mqtt rust library do you recommend?](https://www.reddit.com/r/rust/comments/g2c75e/which_mqtt_rust_library_do_you_recommend/)
+- url: https://www.reddit.com/r/rust/comments/g2c75e/which_mqtt_rust_library_do_you_recommend/
+---
+These three crates seem to be the best right now:
 
-If you won't be able to participate, but have question, ask it hear and I'll try to answer it later today.
-## [5][aeron-rs - efficient reliable UDP and IPC message transport for Rust](https://www.reddit.com/r/rust/comments/g1qrpb/aeronrs_efficient_reliable_udp_and_ipc_message/)
+* [https://github.com/eclipse/paho.mqtt.rust](https://github.com/eclipse/paho.mqtt.rust)
+* [https://github.com/zonyitoo/mqtt-rs](https://github.com/zonyitoo/mqtt-rs)
+* [https://github.com/tekjar/rumq](https://github.com/tekjar/rumq)
+
+Which one do you recommend? Thanks!
+## [6][mini-redis: A Redis client and server implementation using Tokio. Includes extensive comments for learning.](https://www.reddit.com/r/rust/comments/g1vpo9/miniredis_a_redis_client_and_server/)
+- url: https://github.com/tokio-rs/mini-redis
+---
+
+## [7][New Crate: Interactive Chord Diagrams (+ Rust Notebook Support)](https://www.reddit.com/r/rust/comments/g2cvqt/new_crate_interactive_chord_diagrams_rust/)
+- url: https://shahinrostami.com/posts/programming/rust-notebooks/chord-diagrams/
+---
+
+## [8][Governance Working Group Update: Meeting 09 April 2020 | Inside Rust Blog](https://www.reddit.com/r/rust/comments/g2ch1q/governance_working_group_update_meeting_09_april/)
+- url: https://blog.rust-lang.org/inside-rust/2020/04/14/Governance-WG-updated.html
+---
+
+## [9][Reliable benchmarks](https://www.reddit.com/r/rust/comments/g29kz8/reliable_benchmarks/)
+- url: https://www.reddit.com/r/rust/comments/g29kz8/reliable_benchmarks/
+---
+I'm working to optimize some code using Criterion to benchmark, and I'm finding the benchmark results difficult to make sense of. The same comparison yields improvement one time, regression another. I'm finding this even after fixing my CPU frequency and killing most other processes. Code paths that haven't changed in years are getting "significant" performance differences. Do you all have any other tips on how to make benchmarks reliable? I'm hoping to commandeer a system dedicated to benchmarking soon, so I'll have a lot of flexibility in how things are configured.
+## [10][aeron-rs - efficient reliable UDP and IPC message transport for Rust](https://www.reddit.com/r/rust/comments/g1qrpb/aeronrs_efficient_reliable_udp_and_ipc_message/)
 - url: https://www.reddit.com/r/rust/comments/g1qrpb/aeronrs_efficient_reliable_udp_and_ipc_message/
 ---
 Hi, all!
@@ -53,41 +73,71 @@ As of today aeron-rs 0.1.0 is tested (200+ unit tests, 6 integration test, numbe
 Comparative performance tests show that (on the same machine) with messages of 32 bytes length C++ Aeron client gives throughput of 6-8 millions messages per second, while aeron-rs just 1-2 millions. On 1K sized message C++ version delivers 500K msgs/sec and aeron-rs 250K msgs/sec. So from performance perspective we also need to catch up and overtake С++ :-)
 
 Thanks!
-## [6][Blog Post: From Pratt to Dijkstra](https://www.reddit.com/r/rust/comments/g1p1mn/blog_post_from_pratt_to_dijkstra/)
-- url: https://matklad.github.io/2020/04/15/from-pratt-to-dijkstra.html
+## [11][erupt Vulkan API bindings v0.1.0 released!](https://www.reddit.com/r/rust/comments/g1tqh3/erupt_vulkan_api_bindings_v010_released/)
+- url: https://www.reddit.com/r/rust/comments/g1tqh3/erupt_vulkan_api_bindings_v010_released/
 ---
+erupt provides bindings to the Vulkan API
 
-## [7][A Possible New Backend for Rust](https://www.reddit.com/r/rust/comments/g16aje/a_possible_new_backend_for_rust/)
-- url: https://jason-williams.co.uk/a-possible-new-backend-for-rust
+Links: [docs.rs](https://docs.rs/erupt/0.1.0/erupt/) [Repository](https://gitlab.com/Friz64/erupt)
+
+While other good bindings to Vulkan exist (most prominently ash), I just released my own! My motivations were getting to know what it's like to write Vulkan bindings and trying to improve on features where ash falls behind.
+
+**Features of erupt**
+
+* Full Vulkan API coverage
+* First-class support for all extensions
+* High quality auto-generated function wrappers
+* A [utility module](https://docs.rs/erupt/*/erupt/utils/index.html) aiding your use of the Vulkan API
+   * [VulkanResult](https://docs.rs/erupt/*/erupt/utils/struct.VulkanResult.html): Idiomatic wrapper around a Vulkan Result
+   * [surface](https://docs.rs/erupt/*/erupt/utils/surface/index.html): Create a [SurfaceKHR](https://docs.rs/erupt/*/erupt/extensions/khr_surface/struct.SurfaceKHR.html) using a [RawWindowHandle](https://docs.rs/raw-window-handle/*/raw_window_handle/enum.RawWindowHandle.html) (adapted from [ash-window](https://crates.io/crates/ash-window))
+* Generated code distributed into multiple modules
+* Function loading ([CoreLoader](https://docs.rs/erupt/*/erupt/struct.CoreLoader.html), [InstanceLoader](https://docs.rs/erupt/*/erupt/struct.CoreLoader.html), [DeviceLoader](https://docs.rs/erupt/*/erupt/struct.CoreLoader.html))
+* Seperate Flags and FlagBits types
+* A high level Builder for every struct
+* Type-safe pointer chain support
+* Default and Debug implementation for every type
+* Complete auto-generation of everything except [utils](https://docs.rs/erupt/*/erupt/utils/index.html)
+
+**Example: Instance Creation**
+
+    use erupt::{vk1_0::*, CoreLoader, InstanceLoader};
+    
+    let mut core = CoreLoader::new()?;
+    core.load_vk1_0()?;
+    
+    let app_info = ApplicationInfoBuilder::new().api_version(erupt::make_version(1, 0, 0));
+    let instance_info = InstanceCreateInfoBuilder::new().application_info(&amp;app_info);
+    let instance_handle = core
+        .create_instance(&amp;instance_info, None, None)
+        .expect("Failed to create instance");
+    
+    let mut instance = InstanceLoader::new(&amp;core, instance_handle)?;
+    instance.load_vk1_0()?;
+    
+    // ...
+    
+    instance.destroy_instance(None);
+
+**Other examples**
+
+* [triangle](https://gitlab.com/Friz64/erupt/-/blob/master/erupt-examples/src/triangle.rs)
+* [pointer-chain](https://gitlab.com/Friz64/erupt/-/blob/master/erupt-examples/src/pointer_chain.rs)
+* [version](https://gitlab.com/Friz64/erupt/-/blob/master/erupt-examples/src/version.rs)
+
+**Thank you**
+
+* [vk-parse](https://crates.io/crates/vk-parse) for helping parse vk.xml in the [generator](https://gitlab.com/Friz64/erupt/-/tree/master/generator)
+* [ash](https://crates.io/crates/ash) for helping inspiring and making this crate
+* [libloading](https://crates.io/crates/libloading) for providing symbol loading
+* [ash-window](https://crates.io/crates/ash-window) for providing a base for the [surface](https://docs.rs/erupt/*/erupt/utils/surface/index.html) module
+* [bitflags](https://crates.io/crates/bitflags) for providing a perfect bitflag macro
+* The Vulkan Community ❤️
+* The Rust Community ❤️
+
+I plan on adding more features to the [utils](https://docs.rs/erupt/*/erupt/utils/index.html) module, for example a basic Vulkan Memory Allocator to help you in write your Vulkan code.
+
+Fun fact: This is my first crate. I released it almost exactly 2 years after starting to learn Rust :)
+## [12][how to use hashmaps like this in Rust map[pos]+=elem?](https://www.reddit.com/r/rust/comments/g27vi0/how_to_use_hashmaps_like_this_in_rust_mapposelem/)
+- url: https://www.reddit.com/r/rust/comments/g27vi0/how_to_use_hashmaps_like_this_in_rust_mapposelem/
 ---
-
-## [8][This Week in Rust 334](https://www.reddit.com/r/rust/comments/g1fj7p/this_week_in_rust_334/)
-- url: https://this-week-in-rust.org/blog/2020/04/14/this-week-in-rust-334/
----
-
-## [9][literally... just std::collections literals](https://www.reddit.com/r/rust/comments/g1k2da/literally_just_stdcollections_literals/)
-- url: https://www.reddit.com/r/rust/comments/g1k2da/literally_just_stdcollections_literals/
----
-Introducing [literally](https://github.com/estk/literally)
-
-I had these macros in many projects, I finally took the time to extract them into a crate. I hope someone else gets some use here.
-## [10][Error handling's performance impact on the happy path, the stack, and the heap](https://www.reddit.com/r/rust/comments/g1hj02/error_handlings_performance_impact_on_the_happy/)
-- url: https://www.reddit.com/r/rust/comments/g1hj02/error_handlings_performance_impact_on_the_happy/
----
-I am currently tuning the performance of a Rust application and have started looking at my error handling code.  My use case for errors is one that I imagine is fairly typical: the overwhelming majority of code paths should not trigger any errors, but nearly all code paths involve some operations that _could_ error.  Based on that, I'm not especially focused on the performance of the program when it encounters an error, but I am _very_ focused on any performance impact the error handling code has on the happy path.
-
-My initial understanding was that the biggest performance pitfall with Rust error handling was with `Box&lt;dyn Error&gt;` – or, more specifically, with the extra allocations that come along with dynamic error types (including, e.g., `anyhow::Error`).  Based on that understanding and a desire to match on many of my error types, I have created custom types for my application's errors in more-or-less the [standard way](https://blog.burntsushi.net/rust-error-handling/#error-handling-with-a-custom-type).
-
-However, Clippy has started to tell me that my Error enums [are too large](https://rust-lang.github.io/rust-clippy/stable/index.html#large_enum_variant).  It suggests boxing them as a way to _improve_ performance (when here I was, thinking that I was being efficient by _not_ allocating them to the heap).  So my specific question is whether I'd be better off following Clippy's advice, better off keeping things as they are, or better off changing my error handling strategy in some other way.
-
-More generally, I'm also curious about how to conceptualize the performance impacts allocating on the heap more broadly.  Before programming in Rust, I mostly worked in JavaScript – I've learned a lot since then, but I'm sure I still have a to learn.  I know that, in general, variables on the stack [will be faster](https://gist.github.com/jFransham/369a86eff00e5f280ed25121454acec1#keep-as-much-as-possible-in-registers) than heap-allocated ones (better cache hit rates, more use of registers, etc).  But Clippy (and logic) seem to suggest that, at some size, allocating to the heap might be more efficient.  For example, I deal with a fairly large data structure (serialized from JSON, ~2kb according to `mem::size_of`) in my program.  Is that the sort of thing that's large enough that I should be storing it on the heap (again, in an effort to prioritize performance, I've been keeping it stack-allocated as much as possible).  I'm less interested in _specific_ answers to these questions than I am on guidance about how to approach these sorts of questions conceptually.
-
-(I know that a big part of the answer is "test and profile" and I'm working on that too.  But I'd like to keep this thread focused, as much as possible, on how to think through these ideas, with the understanding that I'll still need to profile afterwords)
-## [11][compress-tools: A Swiss Army Knife for handling compressed data in Rust](https://www.reddit.com/r/rust/comments/g1r2ek/compresstools_a_swiss_army_knife_for_handling/)
-- url: https://medium.com/os-systems/compress-tools-a-swiss-army-knife-for-handling-compressed-data-in-rust-9a3c3a75b6b3
----
-
-## [12][Snapshot Testing with Insta 0.16 [Screencast]](https://www.reddit.com/r/rust/comments/g1e0e5/snapshot_testing_with_insta_016_screencast/)
-- url: https://www.youtube.com/watch?v=rCHrMqE4JOY
----
-
+how can I use hashmaps like this in Rust map\[pos\]+=elem? I know that I can use map.insert(pos, elem) which is equivalent to map\[pos\]=elem.

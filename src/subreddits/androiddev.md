@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/g0i9da/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/g0i9da/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/g318lw/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/g318lw/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - April 13, 2020](https://www.reddit.com/r/androiddev/comments/g0grat/weekly_questions_thread_april_13_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/g0grat/weekly_questions_thread_april_13_2020/
 ---
@@ -31,112 +25,79 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][FastLayout: An android library for making row, column interface quickly](https://www.reddit.com/r/androiddev/comments/g297il/fastlayout_an_android_library_for_making_row/)
-- url: https://www.reddit.com/r/androiddev/comments/g297il/fastlayout_an_android_library_for_making_row/
----
-I was making a suduko game on android and had lots of issues in making suduko buttons.So I made a library with which you can quickly build any tabular/Table layout with equal cells.Here is a [link](https://github.com/alihamuh/fastLayout) to my github repo.I would very much appreciate your comments or if you think the library has any issues or needs improvement I am open to suggestions.This is my first ever library in any language.
-## [4][Venom - a lightweight tool that simplifies testing of the process death scenario.](https://www.reddit.com/r/androiddev/comments/g2cdid/venom_a_lightweight_tool_that_simplifies_testing/)
-- url: https://github.com/YarikSOffice/venom
+## [3][Google at it's finest :)](https://www.reddit.com/r/androiddev/comments/g2wzn0/google_at_its_finest/)
+- url: https://i.redd.it/30xp0x53vbt41.png
 ---
 
-## [5][Jetpack Compose 0.1.0-dev09 is released](https://www.reddit.com/r/androiddev/comments/g2ajja/jetpack_compose_010dev09_is_released/)
-- url: https://www.reddit.com/r/androiddev/comments/g2ajja/jetpack_compose_010dev09_is_released/
----
-Release notes:
-
-* Jetpack Compose: [https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev09](https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev09)
-* Compose UI: [https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev09](https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev09)
-
-Other than these, the most interesting stuff is that they also added RxJava and LiveData adapters for Compose. Here are some examples
-
-* [LiveData usage example](https://android-review.googlesource.com/c/platform/frameworks/support/+/1278632/11/ui/ui-livedata/samples/src/main/java/androidx/ui/livedata/samples/Samples.kt)
-* [RxJava example](https://android-review.googlesource.com/c/platform/frameworks/support/+/1279164/8/ui/ui-rxjava2/samples/src/main/java/androidx/ui/rxjava2/samples/Samples.kt)
-
-There is an open issues for adding Kotlin coroutine Flow support as well so I suppose we can expect an adapter for that soon.
-## [6][Why more than two android flavor dimensions don't work properly?](https://www.reddit.com/r/androiddev/comments/g2eay6/why_more_than_two_android_flavor_dimensions_dont/)
-- url: https://www.reddit.com/r/androiddev/comments/g2eay6/why_more_than_two_android_flavor_dimensions_dont/
----
-There is a powerful mechanism in Gradle for android that allows the developer to create application flavors and split code, configurations and override resources. I use it in more than two years in different applications, but all that time I had only one or two flavor dimensions. Today I tried t add the third dimension to my project and still can't build it.
-
-  
-Here is a problem, for example, I need the next three dimensions for my app: "brand", "environment", "market". The configuration will look like this: 
-
-    flavorDimensions "brand", "environment", "market"
-    
-    productFlavors {
-        // brand
-        nike{
-            dimension "brand"
-            applicationId "com.android.nike"
-        }
-        adidas{
-            dimension "brand"
-            applicationId "com.android.adidas"
-        }
-    
-        // environment
-        test{
-            dimension "environment"
-            applicationIdSuffix ".test"
-        }
-        prod {
-            dimension "environment"
-        }
-    
-        // market
-        google {
-            dimension "market"
-        }
-        amazon {
-            dimension "services"
-        }
-    }
-
-As a result, I can build the next 8 applications (I ignoring build types in this example):
-
-    nikeTestGoogle
-    nikeTestAmazon
-    nikeProdGoogle
-    nikeProdAmazon
-    adidasTestGoogle
-    adidasTestAmazon
-    adidasProdGoogle
-    adidasProdAmazon
-
-As I understand documentation about flavor dimensions, application nikeTestGoogle use files from the next folders: main, nike, test, google, nikeTest, nikeTestGoogle. But it doesn't work, Android studio sees only files in main, nike, test, google, and nikeTestGoogle. Files in nikeTest ignored and even doesn't mark as currently active.
-
-Does anyone know why it happened? Am I missing something?
-
-P/S/ Sorry for my bad English, I suppose you understand my main thought
-## [7][Coroutines: First things first](https://www.reddit.com/r/androiddev/comments/g2bxfl/coroutines_first_things_first/)
-- url: https://medium.com/androiddevelopers/coroutines-first-things-first-e6187bf3bb21
+## [4][Migrating to Material Components for Android](https://www.reddit.com/r/androiddev/comments/g2s4h0/migrating_to_material_components_for_android/)
+- url: https://medium.com/androiddevelopers/migrating-to-material-components-for-android-ec6757795351
 ---
 
-## [8][Multidexing, methods counts, is it still a thing?](https://www.reddit.com/r/androiddev/comments/g2eo7z/multidexing_methods_counts_is_it_still_a_thing/)
-- url: https://www.reddit.com/r/androiddev/comments/g2eo7z/multidexing_methods_counts_is_it_still_a_thing/
----
-I've been out of touch on multidexing lately, is it still a thing for minSdk above 21? How about methods counting, are we still counting, if yes, how?
-## [9][Refactoring an old app](https://www.reddit.com/r/androiddev/comments/g2eepq/refactoring_an_old_app/)
-- url: https://www.reddit.com/r/androiddev/comments/g2eepq/refactoring_an_old_app/
----
-I am wondering if there is any solid advice for refactoring android apps. My company inherited a project and the clients app is very very buggy and unstable. The code is in java/MVP - but they didn't use the presenters to do anything other than make HTTP requests and hand that data to the activity/fragment. The activity/fragments are gigantic and have tons of business logic in them. The application class is also bigger than any of the ones I have written with tons of services instantiated and managed there. Dagger present - but not injecting anything. A lot of libraries in the gradle file that aren't being used. Null Pointer Exceptions everywhere due to life cycle stuff. I can't really say more than that - but where do you start for this type of refactor where throwing everything out is not an option.
-## [10][Android Jetpack: CameraX Beta](https://www.reddit.com/r/androiddev/comments/g1v2kl/android_jetpack_camerax_beta/)
-- url: https://www.youtube.com/watch?v=HGSj-JRpuxo
+## [5][How can I achieve that kind of motion?](https://www.reddit.com/r/androiddev/comments/g2tjfg/how_can_i_achieve_that_kind_of_motion/)
+- url: https://i.redd.it/46vzulc2lat41.gif
 ---
 
-## [11][Android API version where app shortcuts are required to be supported by launchers?](https://www.reddit.com/r/androiddev/comments/g2exgz/android_api_version_where_app_shortcuts_are/)
-- url: https://www.reddit.com/r/androiddev/comments/g2exgz/android_api_version_where_app_shortcuts_are/
+## [6][Kotlin Coroutines - Use Cases on Android](https://www.reddit.com/r/androiddev/comments/g30lhq/kotlin_coroutines_use_cases_on_android/)
+- url: https://github.com/LukasLechnerDev/Kotlin-Coroutine-Use-Cases-on-Android
 ---
-I am developing an app where its main feature is to create pinned shortcuts.
 
-However, not all launchers support shortcuts. The problem is that since I cannot know this before the user installs the app, some users will get an error message that "Shortcuts are not supported by your launcher".
-
-Is there an API version (e.g. Android 10 - API 29), where all launchers are required to support shortcuts?
-## [12][I have an app idea that solves a common local problem, but I can't code or design. Any ideas? Also discuss what else could be in this app.](https://www.reddit.com/r/androiddev/comments/g2eop1/i_have_an_app_idea_that_solves_a_common_local/)
-- url: https://www.reddit.com/r/androiddev/comments/g2eop1/i_have_an_app_idea_that_solves_a_common_local/
+## [7][Play Store app policy changes go after misleading subscriptions, prep for Android 11 location permissions](https://www.reddit.com/r/androiddev/comments/g2ki7u/play_store_app_policy_changes_go_after_misleading/)
+- url: https://www.androidpolice.com/2020/04/16/play-store-app-policy-changes-misleading-subscriptions-android-11-location/
 ---
-So my app idea is dependent on Google Maps, and some math.
 
-So, here's the concept. There is a friend group of X people, and they want to minimize the travel time to go to a gathering. So this app would choose a venue using specifications by the user (cost, type of venue) and mathematical optimization techniques (that I have yet to fully learn)
+## [8][OneDevice! Finally an android Phone that makes sense!!](https://www.reddit.com/r/androiddev/comments/g31yom/onedevice_finally_an_android_phone_that_makes/)
+- url: https://www.onedevice.eu/?mref=leorioki
+---
 
-It will be a while before I learn these, so I wonder what I should do for now. Should I have this patented or should I try finding people to help in making this idea into a reality?
+## [9][Kotlin Multiplatform last news](https://www.reddit.com/r/androiddev/comments/g31k9k/kotlin_multiplatform_last_news/)
+- url: https://www.reddit.com/r/androiddev/comments/g31k9k/kotlin_multiplatform_last_news/
+---
+Hi guys,   
+There are a few last articles and topics considering Kotlin Multiplatform projects and technology. 
+
+1. Arkadii Ivanov finally published the article "MVI in Kotlin Multiplatform — part 1 (1 of 3)" [https://badootech.badoo.com/mvi-in-kotlin-multiplatform-part-1-1-of-3-205c6feb4ac7](https://dev.us19.list-manage.com/track/click?u=3ea091e34ae9d2624f2ead271&amp;id=962fe153ea&amp;e=f12b2fb10a) 
+2. New post from Javier Arroyo Espallargas on [ProAndroidDev.com](https://dev.us19.list-manage.com/track/click?u=3ea091e34ae9d2624f2ead271&amp;id=f96e89e570&amp;e=f12b2fb10a)! In this case, how to use Firestore in your KotlinMultiplatform project!
+3. Migration from Room to SQLDelight ([https://medium.com/xorum-io/migration-from-room-to-sqldelight-28d6f4aaf31e](https://dev.us19.list-manage.com/track/click?u=3ea091e34ae9d2624f2ead271&amp;id=9f3168c372&amp;e=f12b2fb10a)) – small guide how to migrate from Room to SQLDelight.
+4. A State Machine for Multi-Threaded Coroutines in Kotlin Multiplatform [http://brendanweinstein.com/a-statemachine-for-multithreaded-coroutines-in-kotlin-multiplatform](https://dev.us19.list-manage.com/track/click?u=3ea091e34ae9d2624f2ead271&amp;id=391666c7d2&amp;e=f12b2fb10a)
+5. Great talk with Jesse and Egor from CashApp (Square) to discuss how they decided to port OKio and OKHttp to Kotlin Multiplatform [https://talkingkotlin.com/going-full-kotlin-multiplatform/](https://dev.us19.list-manage.com/track/click?u=3ea091e34ae9d2624f2ead271&amp;id=11687cdd92&amp;e=f12b2fb10a)
+
+Follow us on [Twitter](https://twitter.com/KotlinMPP)!
+## [10][ViewModelFactory injection with Dagger](https://www.reddit.com/r/androiddev/comments/g31hmy/viewmodelfactory_injection_with_dagger/)
+- url: https://www.reddit.com/r/androiddev/comments/g31hmy/viewmodelfactory_injection_with_dagger/
+---
+Have been out of touch with the topic lately, have I missed anything about the most elegant way of injecting a ViewModel into Fragment/Activity using Dagger 2?
+## [11][What to use to send network requests in the background](https://www.reddit.com/r/androiddev/comments/g31b33/what_to_use_to_send_network_requests_in_the/)
+- url: https://www.reddit.com/r/androiddev/comments/g31b33/what_to_use_to_send_network_requests_in_the/
+---
+I want to set network requests on periodic interval to see if any notifications come from my server. Currently I am using job service for this but it didn't seem to be periodically running.
+
+For example: 
+
+1st time it sent the request after 15 minutes
+
+2nd time it sent the request after 15 minutes after the 1st
+
+3rd time it sent the request after 60 minutes after the 2nd
+
+4th time it sent the request after 15 minutes after the 3rd
+
+5th time it sent the request after 15 minutes after the 4th
+
+Here is my code:
+
+JobScheduler scheduler = (JobScheduler) getSystemService(*JOB\_SCHEDULER\_SERVICE*);  
+ComponentName componentName = new ComponentName(this,NotificationService.class);  
+JobInfo info = new JobInfo.Builder(1,componentName).setPeriodic(1000 \* 60 \* 15).setPersisted(true).build();  
+scheduler.schedule(info);
+
+&amp;#x200B;
+
+I am very new to android so i think i'm missing something here. What should i do?
+## [12][Getting Google Play App To Show Up In Google Search](https://www.reddit.com/r/androiddev/comments/g2y92a/getting_google_play_app_to_show_up_in_google/)
+- url: https://www.reddit.com/r/androiddev/comments/g2y92a/getting_google_play_app_to_show_up_in_google/
+---
+I have two apps published on the play store. If i search on the play store I can find both apps without any issues. If i go to google search and search for the app, it doesn't find anything. I can see competitor apps show up in search engine results. Why is my app not showing up when i perform a Google search?
+
+&amp;#x200B;
+
+Both apps were published in December 2019. Both appear if you search the play store but neither show up in traditional [google.com](https://google.com) searches.

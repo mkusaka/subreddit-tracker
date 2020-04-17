@@ -1,125 +1,156 @@
 # aws
-## [1][API gateway scenario](https://www.reddit.com/r/aws/comments/g28pe6/api_gateway_scenario/)
-- url: https://www.reddit.com/r/aws/comments/g28pe6/api_gateway_scenario/
----
-Hi all, my team is currently trying to figure out a design to satisfy our requirements.
-
-At the moment we have a web service hosted in IIS that our clients currently connect directly to and send data.  
-
-We have a few problems that we would like to resolve and we think API gateway would help
-
-1) we would like to log all incoming requests and the response code
-
-2) currently if our service is not operating / cannot activate / IIS or the server is down we can’t detect it without adding additional monitors, having API gateway we’d like to send cloud watch events 
-
-
-Our original plan was to have an API gateway with a lambda backing it, the lambda would store the incoming request (maybe S3 or Dynamo), forward the call through to the actual web service and then pass the response back.
-
-Of note is most of the incoming data packets are quite large, usually between 1-5mb which was a limiting factor for the internal logging support.
-
-A key consideration here is we wanted a completely severless and highly available receiving gateway for the requests.
-
-Is this the right way to go about it?
-## [2][Optimizing ECS resource allocation](https://www.reddit.com/r/aws/comments/g27vf0/optimizing_ecs_resource_allocation/)
-- url: https://www.reddit.com/r/aws/comments/g27vf0/optimizing_ecs_resource_allocation/
----
-Suppose you have a service on ECS with significantly low cpu utilization and/or memory utilization. What do you look at to decide between lowering the minimum task count or lowering the cpu and/or memory allocation for the container?
-
-In other words, if CloudWatch is telling me my ECS service is over provisioned , how do I know when it is best to decrease min tasks vs when it is best to decrease resources per container?
-## [3][Don't Forget to Set Budgets Monitoring in Cost Explorer! How to Detect AWS Cost Anomalies Before They Spiral Out of Control.](https://www.reddit.com/r/aws/comments/g1vaql/dont_forget_to_set_budgets_monitoring_in_cost/)
-- url: https://www.cloudforecast.io/blog/how-to-detect-aws-cost-anomalies-before-they-spiral-out-of-control/
+## [1][AWS IQ waives fees until June 30, 2020, to help you stand up and scale remote work initiatives](https://www.reddit.com/r/aws/comments/g2prcr/aws_iq_waives_fees_until_june_30_2020_to_help_you/)
+- url: https://aws.amazon.com/blogs/machine-learning/aws-iq-waives-fees-until-june-30-2020-to-help-you-stand-up-and-scale-remote-work-initiatives/
 ---
 
-## [4][Deploying a Flask App with Elastic Beanstalk Gives ModuleNotFoundError](https://www.reddit.com/r/aws/comments/g2abdg/deploying_a_flask_app_with_elastic_beanstalk/)
-- url: https://www.reddit.com/r/aws/comments/g2abdg/deploying_a_flask_app_with_elastic_beanstalk/
+## [2][Elastic Beanstalk: Can I deploy using Dockerfiles instead of a Dockerrun.aws.json (v2) file when using a multicontainer Docker setup?](https://www.reddit.com/r/aws/comments/g2xzww/elastic_beanstalk_can_i_deploy_using_dockerfiles/)
+- url: https://www.reddit.com/r/aws/comments/g2xzww/elastic_beanstalk_can_i_deploy_using_dockerfiles/
 ---
-This is my first time making a Flask App with Elastic Beanstalk so I probably have something configured wrong. [This](https://gist.github.com/jaredgoodman03/cbf54ae38120b21142a573b0ffe4b3d4) is my error log. I have application.py in my directory, and it works on my local machine.
-## [5][Use Reserved Instances within an Auto Scaling Group?](https://www.reddit.com/r/aws/comments/g2arog/use_reserved_instances_within_an_auto_scaling/)
-- url: https://www.reddit.com/r/aws/comments/g2arog/use_reserved_instances_within_an_auto_scaling/
----
-Is it possible to utilise RIs within an ASG?  There doesn't seem to be an option to reference them directly but does it "just work" if the instance types of your RIs and launch template match up?
+In Elastic Beanstalk in Single Container Docker configuration, it is possible to deploy without a `Dockerrun.aws.json` (v1) file as long as a Dockerfile is supplied.
 
-Example scenario: ASG with a minimum of 3 instances (ideally all reserved) split across 3 AZs.
+Is this also possible in Multicontainer Docker setups? I prefer not to build the Docker images on my own. I just want to supply the required Dockerfiles and let Amazon build the images for me, just like what is possible in the case of Single Container Docker configuration.
+
+Does anyone know?
+## [3][Direct connect (DX) vs T1 internet provider](https://www.reddit.com/r/aws/comments/g2ywa8/direct_connect_dx_vs_t1_internet_provider/)
+- url: https://www.reddit.com/r/aws/comments/g2ywa8/direct_connect_dx_vs_t1_internet_provider/
+---
+Hi folks,
+
+We're currently investigating wether or not it's useful to invest in to DX. Currently the company I work for has a nice multi-gb internet connection through a T1 ISP. Bandwidth is not really the issue.
+
+Traffic is secured using VPN's where possible.
+
+Besides the guarantees you get on bandwidth and latency, and the lower cost of egress pricing, I'm not finding that many incentives to go this route.... or am I missing something?
+
+Is there any difference in how AWS handles traffic coming from DX vs Internet?
+## [4][How to "snapshot" a patch status with Systems Manager?](https://www.reddit.com/r/aws/comments/g31vo2/how_to_snapshot_a_patch_status_with_systems/)
+- url: https://www.reddit.com/r/aws/comments/g31vo2/how_to_snapshot_a_patch_status_with_systems/
+---
+So we're looking to implement patching with Systems Manager. Technically it seems fine, but I'm struggling with figuring out the best way to implement what I think is a seemingly simple pattern.
+
+1. Manually or automatically (e.g. scheduled for a specific day of the month) approve the latest group of patches for a set of non-production systems.
+2. Kick of automated testing of non-production systems.
+3. Assuming testing doesn't reveal any issues, approve the **same** updates that were installed on non-production systems to be installed on production systems.
+
+The only thing I can come up with so far is running AWS-RunPatchBaseline on non-production systems on a specific day of the month (with a patch baseline configured to install all patches released up to that day), and then run AWS-RunPatchBaseline on production systems some number of days later and specify to install patches released up to the same date that AWS-RunPatchBaseline was run in non-production. This seems somewhat error prone and less than ideal.
+
+I was able to implement a similar pattern in the past with Linux repo mirrors (and aptly) by just creating a snapshot, release it to non-prod, waiting for testing, and then releasing the same snapshot of patches to prod (and just waiting for nightly patch installation to pick up the newly released packages). Is there any way to implement something similar with Systems Manager that I'm missing?
+
+Thanks!
+## [5][Lambda function not able to handle load tests.](https://www.reddit.com/r/aws/comments/g30ty0/lambda_function_not_able_to_handle_load_tests/)
+- url: https://www.reddit.com/r/aws/comments/g30ty0/lambda_function_not_able_to_handle_load_tests/
+---
+I am trying to load test my lambda function (connected to gateway) using JMeter. On the function, I have set the concurrency to "Use unreserved account concurrency" (default 1000 for my account).
+
+I have set the following config in JMeter thread worker:
+
+* Number of Threads (users): 1000
+
+- Ramp Up Time: 0 secs (Because I want all the requests to hit at once. Please correct me if I'm wrong here)
+
+- Input: I have provided a CSV with 4000 rows, so it will make 4000 requests in total
+
+Most of my requests are failing. [Here is a screenshot showing how many requests fail along with the response received](https://imgur.com/GT72QQJ).
+
+In production, I will have to handle such amount of concurrent requests. What can I do to make this work?
+
+The lambda function is not compute heavy - all it does is reads a dynamo table and pushes the event payload to a SQS queue. So I don't think there is any space left to optimize there
 ## [6][Data Transfer Out (DTO) 40% Price Reduction in South America (São Paulo) Region](https://www.reddit.com/r/aws/comments/g2esea/data_transfer_out_dto_40_price_reduction_in_south/)
 - url: https://aws.amazon.com/blogs/aws/aws-data-transfer-out-dto-40-price-reduction-in-south-america-sao-paulo-region/
 ---
 
-## [7][Getting started on AWS? A Beginner Roadmap](https://www.reddit.com/r/aws/comments/g2eqyy/getting_started_on_aws_a_beginner_roadmap/)
-- url: https://www.reddit.com/r/aws/comments/g2eqyy/getting_started_on_aws_a_beginner_roadmap/
+## [7][AWS Forecast error saying filter id is missing or invalid](https://www.reddit.com/r/aws/comments/g2zep1/aws_forecast_error_saying_filter_id_is_missing_or/)
+- url: https://www.reddit.com/r/aws/comments/g2zep1/aws_forecast_error_saying_filter_id_is_missing_or/
 ---
-Hi everyone,
+Whenever I want to do a Forecast lookup I get the following error message:
 
-I've been noticing quite a few topics lately about folks looking to get started on AWS, but not knowing where to start. I decided to put together a video outlining a beginner roadmap for those of you just beginning your journey on AWS.
+&gt;Bad request ResourceNotFoundException : The query did not return any forecast results as the required filter id is either missing or is invalid. 
 
-The video is available here: https://youtu.be/lTyqzyk86f8
+I'm clueless about why I get this error. I checked my Forecast key (which is item\_id) and value (which is F11) and they fit with the .csv I used for my dataset. I also checked for the order of my attributes that I set for my dataset and they also fit with my .csv.
 
-Hopefully some newer folks find this helpful. I'm curious to hear anyone else's thoughts regarding resources for getting started/better on AWS.
-## [8][IAM policy for managing network ACL](https://www.reddit.com/r/aws/comments/g29b5p/iam_policy_for_managing_network_acl/)
-- url: https://www.reddit.com/r/aws/comments/g29b5p/iam_policy_for_managing_network_acl/
----
-I'm trying to create a policy to allow a user to manage network ACLs.  I have:
+An example line in my csv looks like this:
+
+    2016-12-07, 2, LAE, F11, 190, 190, 215, 58, 58, 79, 0, 23, **** 
+
+And my data schema looks like this:
 
     {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "ManageNetworkAcl",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:CreateNetworkAclEntry",
-                    "ec2:ReplaceNetworkAclEntry",
-                    "ec2:DeleteNetworkAclEntry"
-                ],
-                "Resource": "*"
-            }
-        ]
+    	"Attributes": [
+    		{
+    			"AttributeName": "timestamp",
+    			"AttributeType": "timestamp"
+    		},
+    		{
+    			"AttributeName": "werk",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "messpunkt",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "item_id",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "PL_atag",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "SO_atag",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "demand",
+    			"AttributeType": "float"
+    		},
+    		{
+    			"AttributeName": "plumlauf",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "sumlauf",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "umlauf",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "diff_mpp",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "diff_rp",
+    			"AttributeType": "string"
+    		},
+    		{
+    			"AttributeName": "fst_fber",
+    			"AttributeType": "string"
+    		}
+    	]
     }
 
-I would like to set the condition to match on a resource Project tag, e.g.
-
-         "Condition": {
-                "StringEquals": {
-                      "ec2:ResourceTag/Project": "my-project"
-                }
-         }
-
-But when I run the policy in the IAM Simulator, I get access denied?
-
-How I can set a condition to match on a tag, or object id such as nacl id, or vpc id?
-## [9][Glacier Vault or S3 Bucker Glacier Class](https://www.reddit.com/r/aws/comments/g2cos5/glacier_vault_or_s3_bucker_glacier_class/)
-- url: https://www.reddit.com/r/aws/comments/g2cos5/glacier_vault_or_s3_bucker_glacier_class/
+So where is the mistake here?
+## [8][Amazon Chime: max participants with two way video?](https://www.reddit.com/r/aws/comments/g2jsv1/amazon_chime_max_participants_with_two_way_video/)
+- url: https://www.reddit.com/r/aws/comments/g2jsv1/amazon_chime_max_participants_with_two_way_video/
 ---
-I'm really trying to understand what the difference between uploading to Glacier vault and uploading to S3 bucket with Glacier class. Obiously the later is prefer because I can see the files actually in the S3 buckets.
+Hello, was going through the docs to consider this solution for an upcoming opportunity and was not clear on the above point.
 
-I know that transition of object from S3 standard to Glacier cost per-object, but what if I upload directly to Glacier ?
+It says a user can host meeting with upto 250 attendees, but doesn't explicitly say whether all 250 can have interactive video or is it more like viewers with only upto x panelists/two-way speakers in the meeting. There are references of upto 16 video streams on first come basis, but it's not clear whether they only allow 16 users with a camera or its 16 can be displayed on the screen at a time and it wd dynamically switch to active ones/speaking ones i.e. all 250 can have two way video&amp;audio, but on the screen one can view upto recent 16 active users at any time. Similarly, on the SDK front, it talks about 100 attendees per meeting with 100 audio streams n 16 video streams.
 
- aws s3 cp test.mov s3://test-videos-raw/ --storage-class DEEP\_ARCHIVE
-## [10][I am charged ~$60K on AWS, without using anything](https://www.reddit.com/r/aws/comments/g1ve18/i_am_charged_60k_on_aws_without_using_anything/)
-- url: https://www.reddit.com/r/aws/comments/g1ve18/i_am_charged_60k_on_aws_without_using_anything/
+So, if I am a paid user who is hosting a  video meeting, how many participants (with video) can I have in my meeting? Bluntly put, if I subscribe to $15/month as a host, what are rhe limits on the video conf participants for my meetings?
+
+Can someone please clarify as to how many simultaneous participants (with two way audio n video) can join a meeting on chime? What are the other limitations / charges for a web based video conferencing / webinar solution (without any external pstn based voice etc)?
+
+Thanks
+## [9][Leveraging ULIDs to create order in unordered datastores (like S3)](https://www.reddit.com/r/aws/comments/g2mh01/leveraging_ulids_to_create_order_in_unordered/)
+- url: https://www.trek10.com/blog/leveraging-ulids-to-create-order-in-unordered-datastores
 ---
-So here is what's going on.
 
-I am web developer and my employer gave me a task one day. It was "Create reductant setup of a \*website\*".
+## [10][Anyway to tag nodes in ASG set differently in CloudFormation?](https://www.reddit.com/r/aws/comments/g2jtko/anyway_to_tag_nodes_in_asg_set_differently_in/)
+- url: https://www.reddit.com/r/aws/comments/g2jtko/anyway_to_tag_nodes_in_asg_set_differently_in/
+---
+I am using ASG w/ LaunchTemplate to create 3 systems in CloudFormation Script.  Is there a way I can tag these differently as alpha1, alpha2, alpha3, or add other tags, such a role tag?
 
-So at first glance I don't have a clue and start reading comments. They were debating whether they should pay higher to a AWS guy to do it or just leave one of the guys research and do it. So they end up giving the task to me.
-
-Long story short, I end up on a page about reductant setup with amazon AWS RDS. I go to AWS, follow the instructions briefly to see what happens. After an hour or so, I got switched to a higher prio task and totally forgot about this, UNTIL TODAY.
-
-I open my email and see bunch of emails up to 3 months prior, stating that they could not c bill my card, with the amount of \~$5,000. I was "WTF is this joke" and closed the email. Deleted all from AWS, threatening to terminate my account. (Edit: After acknowledging they were not scam, I restored them on the SAME day)
-
-After a while(Edit: 3-4hrs) I opened the deleted mails and they were even stating I owe $32,000 ... WTF...
-
-For this month I have \~$24k and I don't even know how to stop this service! I wrote to the support and hope they do something in order to help me, because $60k is not something I will be able to pay EVER.
-
-Have you guys experience something like this, I am very very concerned about my well being right now..
-
-TL;DR;
-
-Got charged \~$60,000 by AWS for a test task I worked on at my job 3 months ago.  
-
-
-Edit: I am going to throw some clarifications, as I might have mislead many people with some of my words above.   
-\- I was not ignoring AWS email and deleting them for months.  
-\- Saying I deleted emails, only meant to express my disbelief for the mails   
-\- I contacted AWS on the same day (something like 3 hours after I read the first one). I logged into the console and created a case  
-\- I am not ranting against AWS, I just want to explain clearly and sincerely all my actions, as I believe it will help throw better light on this story.
+I have a cluster, i have to configure nodes differently in the user data script, where one is a instance is a leader, while other instances are peers.  Additionally, on one of the systems, I would like to put a small management web service on it to reduce costs.

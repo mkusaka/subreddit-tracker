@@ -39,7 +39,59 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Rails 6 + docker-compose : simplest possible Hello World project™](https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/)
+## [3][Need some help with getting started](https://www.reddit.com/r/rails/comments/g2y98l/need_some_help_with_getting_started/)
+- url: https://www.reddit.com/r/rails/comments/g2y98l/need_some_help_with_getting_started/
+---
+Hey! I'm interested in getting into Ruby on Rails, and I'm wondering whether any of you might be able to point me in the direction of some good resources.
+
+I have active subscriptions to [Lynda.com](https://lynda.com/) and [GoRails.com](https://gorails.com/), and I have the GitHub Student Developer Pack. My end-goal is to build a basic social-networking site for my school, not to become a paid web developer!
+
+I have loads of experience in Python, HTML, JS and CSS, and I launched myself into a Basics of Ruby course on Lynda, so I have enough experience there too.
+
+I was watching this free Udemy course, which looked perfect; [https://www.udemy.com/course/8-beautiful-ruby-on-rails-apps-in-30-days/learn/lecture/4336792?start=240](https://www.udemy.com/course/8-beautiful-ruby-on-rails-apps-in-30-days/learn/lecture/4336792?start=240), but in the Announcements section it was apparently severely outdated. Does anyone know of something similar? I honestly prefer video content to reading (with the exception of books).
+
+And I'd prefer to not spend heaps. I've looked at The Odin Project and the Essential RoR Training courses on Lynda but the RoR course seems far too theoretical. I want to get creating ASAP.
+
+Many thanks!
+## [4][You're not stubbing, stupid!](https://www.reddit.com/r/rails/comments/g2zi9v/youre_not_stubbing_stupid/)
+- url: https://www.reddit.com/r/rails/comments/g2zi9v/youre_not_stubbing_stupid/
+---
+Hi, I've been struggling with writing a passing cucumber that deletes a resource and shows a confirmation dialog to the user. The controller sends a request to an external API, so I stubbed this request. I finally found out what was going wrong and wrote this blog post about it. Hope it'll help some (some day).
+
+[https://www.theguild.nl/youre-not-stubbing-stupid/](https://www.theguild.nl/youre-not-stubbing-stupid/)
+## [5][Why is it not saving nested attributes?](https://www.reddit.com/r/rails/comments/g2r7z6/why_is_it_not_saving_nested_attributes/)
+- url: https://www.reddit.com/r/rails/comments/g2r7z6/why_is_it_not_saving_nested_attributes/
+---
+I have created a model called lead and it `has_many text_field` and `text_field has_many text_value` , I have been testing it in the rails console with, `text.update(text_value: [value])`  and it saves!
+
+but within the views it does not, please help.
+
+[The is the new.html.erb \(Highlighted text is my nested attribute text\_value\)](https://preview.redd.it/g26ixzm9s9t41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=ca6d6aec6a4ba94e82afa5507d6d08299a135010)
+
+&amp;#x200B;
+
+[lead controller \(highlighted with test\_value nested within text\_field\)](https://preview.redd.it/22zlxyxns9t41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=e7013fc36e26e34ee34f3ba696a37f0d4fdac42a)
+
+&amp;#x200B;
+
+[text\_field model](https://preview.redd.it/xj6slas3t9t41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=af00c1b59eb256d4d50dbe831204e2e3697d3f9e)
+
+&amp;#x200B;
+
+[text\_value model](https://preview.redd.it/7tznnyw6t9t41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=aa2b886bbbc3f3da9aa702e4e7a81d721a6ed59d)
+
+&amp;#x200B;
+
+[lead model](https://preview.redd.it/o4xykotbt9t41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=cdd985669de13803e45edff0488a31ba0b5bcf1e)
+
+&amp;#x200B;
+
+[schema.rb \(highlighted red is text\_value and text\_field\)](https://preview.redd.it/cznrrv0kt9t41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=f4f01465109a77d3b4674f31ee6d5b7c37a7676a)
+## [6][The Ruby Blend: ViewComponent at GitHub with Joel Hawksley](https://www.reddit.com/r/rails/comments/g2gy1t/the_ruby_blend_viewcomponent_at_github_with_joel/)
+- url: https://www.reddit.com/r/rails/comments/g2gy1t/the_ruby_blend_viewcomponent_at_github_with_joel/
+---
+Joel Hawksley is the guest on today’s episode. He is a Software Engineer at GitHub and works on the design system team, leading development on ViewComponent, formerly known as ActionView::Component. Joel is a very encouraging, uplifting, and inviting guest who tells it like it is. Andrew even throws in a little “homework” for those of you listening! If you want to learn more about how GitHub is leveraging ViewComponent, [give this episode a listen!](https://fireside.fm/s/ouBAUjGy+8JZwBXVx)
+## [7][Rails 6 + docker-compose : simplest possible Hello World project™](https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/)
 - url: https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/
 ---
 Hello mates, I spend some time to find the simplest possible configuration to start a Rails project using Docker.
@@ -53,13 +105,26 @@ With Ruby-on-Rails, you can't start a project without a properly initialized, co
 This kind of project is extremely useful to test various tools and versions without polluting your local machine. I find it also more professional to use Docker instead of brittle, quickly-too-old documentation. So it could be a starting point for a more serious configuration.
 
 What do you think ? What could be simplified ? Do you have more simple examples ? How do you test tools in isolation ? Thanks for your returns, and stay safe :)
-## [4][From Agency Life to Software Development: Q&amp;A with Steve Polito](https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/)
-- url: https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/
+## [8][Rails consulting: running multiple versions of everything](https://www.reddit.com/r/rails/comments/g2j07y/rails_consulting_running_multiple_versions_of/)
+- url: https://www.reddit.com/r/rails/comments/g2j07y/rails_consulting_running_multiple_versions_of/
 ---
-The Remote Ruby crew is joined by Steve Polito, a developer working at an agency, to have a Q&amp;A about transitioning into being a full-time software developer working on products. If you’re a junior developer or in a similar situation, [give this episode of Remote Ruby a listen!](https://remoteruby.transistor.fm/74)
-## [5][GraphQL: making an order management system, trying to add many to many](https://www.reddit.com/r/rails/comments/g2cfrk/graphql_making_an_order_management_system_trying/)
+I often need to run super old ruby/rails projects alongside new ones on my Mac.  Besides Docker is there a sane way to pull this off? I've noticed a ton of problems with running old + new ruby (things like ssl libs) and multiple versions of Postgres are a headache. But using docker with a non-docker team can also be a hassle. So just wondering what others are doing.
+## [9][How to get the correct time.](https://www.reddit.com/r/rails/comments/g2fu0i/how_to_get_the_correct_time/)
+- url: https://www.reddit.com/r/rails/comments/g2fu0i/how_to_get_the_correct_time/
+---
+I have a column in my leads table called
+future_call_back_time, which is saved as time in the migration:
+ t.time "future_call_back_time" 
+
+The problem I'm having is when I do:
+@leads.future_call_back_time.to_time
+
+It gives me the full date and time 🤔, what is the right method please?
+## [10][GraphQL: making an order management system, trying to add many to many](https://www.reddit.com/r/rails/comments/g2cfrk/graphql_making_an_order_management_system_trying/)
 - url: https://www.reddit.com/r/rails/comments/g2cfrk/graphql_making_an_order_management_system_trying/
 ---
+Edit: this has been solved, scroll down to see my solution
+
 Oh hi, it's me again! :)
 
 Still trying to do a GraphQL api with rails, but I've hit a snag. I am doing an order management system, and it's not going to be worth much unless I can add products to an order. I have set them up with a Product model and an Order model with a has\_and\_belongs\_to\_many relationship. ie. Product has\_many orders and Order has\_many products. that part seems to be working fine, I made a join table and as far as I can see it works.
@@ -93,7 +158,11 @@ it would be nice if someone in this awesome community could give me a pointer in
 &amp;#x200B;
 
 Best Regards
-## [6][How do you break out of a for loop that has nested? My attributes?](https://www.reddit.com/r/rails/comments/g2c38b/how_do_you_break_out_of_a_for_loop_that_has/)
+## [11][From Agency Life to Software Development: Q&amp;A with Steve Polito](https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/)
+- url: https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/
+---
+The Remote Ruby crew is joined by Steve Polito, a developer working at an agency, to have a Q&amp;A about transitioning into being a full-time software developer working on products. If you’re a junior developer or in a similar situation, [give this episode of Remote Ruby a listen!](https://remoteruby.transistor.fm/74)
+## [12][How do you break out of a for loop that has nested? My attributes?](https://www.reddit.com/r/rails/comments/g2c38b/how_do_you_break_out_of_a_for_loop_that_has/)
 - url: https://www.reddit.com/r/rails/comments/g2c38b/how_do_you_break_out_of_a_for_loop_that_has/
 ---
 My code looks like this
@@ -108,254 +177,3 @@ When I do
 
 I'm getting an error for undefined method for .count
 Or any over method I call that exists in the @leads table. 🤔
-## [7][Event Members](https://www.reddit.com/r/rails/comments/g27vbr/event_members/)
-- url: https://www.reddit.com/r/rails/comments/g27vbr/event_members/
----
-Hey all,   
-
-
-My Events page is up and running, I'm looking to add member to the event now.
-
-I would like to have a group created when the event is created allocating the event creator as a group member, group admin(bool) and link the event to the group.
-
-  
-The event has many users and should be indicated via a event group.
-
-Looking for the best/easiest way to implement this.  
-
-
-All idea's/comments welcome.  
-
-
-Thanks
-## [8][Are there any *recent* Doorkeeper+Devise tutorials to make a Oauth2 server provider?](https://www.reddit.com/r/rails/comments/g23ewp/are_there_any_recent_doorkeeperdevise_tutorials/)
-- url: https://www.reddit.com/r/rails/comments/g23ewp/are_there_any_recent_doorkeeperdevise_tutorials/
----
-I've been struggling a lot to put together an Oauth2 provider. The tutorials I've found are either from 2015-2016 (with code that needs adjustments), or make some substantial assumptions (such as building on top of previous code from a previous guide).
-
-I tried to follow these guides:
-
-https://dev.mikamai.com/2015/02/11/oauth2-on-rails/  
-https://dev.mikamai.com/2015/03/02/oauth2-on-rails-the-client-application/
-
-But I get some errors about missing parameters. As I am totally new to this topic I've no idea what exactly I'm supposed to look for, or what to change.
-
-My intention is to make an oauth2 provider for my Rails and Node applications.
-
-Any tutorials you may know? Or perhaps somewhere I could investigate further?
-## [9][Using Optimizer Hints in Rails](https://www.reddit.com/r/rails/comments/g1xxys/using_optimizer_hints_in_rails/)
-- url: https://blog.saeloun.com/2020/04/14/using-optimizer-hints-in-rails-6
----
-
-## [10][Dealing with uniqueness constraint updates using PostgresQL](https://www.reddit.com/r/rails/comments/g255cs/dealing_with_uniqueness_constraint_updates_using/)
-- url: https://www.reddit.com/r/rails/comments/g255cs/dealing_with_uniqueness_constraint_updates_using/
----
-Hey guys. I have a few , uuid, string-based columns that have uniqueness constraints. Sometimes the uuid needs to be removed on update. Since there are objects that do not yet have a uuid (i.e. an empty string). I get hit with a database error. Is there any way to keep the uniqueness uniqueness constraint with this in mind?
-## [11][Technical interview](https://www.reddit.com/r/rails/comments/g1w9op/technical_interview/)
-- url: https://www.reddit.com/r/rails/comments/g1w9op/technical_interview/
----
-I m thinking to apply volunteer work but not sure if my technical skills in programming is great. What should I do? How to prepare for technical interview. I can’t solve the question but I can understand the solution after looking at it. Any suggestions in this regards will be great.
-## [12][Deploy to Heroku: assets:precompile error on Heroku but can't reproduce locally](https://www.reddit.com/r/rails/comments/g1xtqy/deploy_to_heroku_assetsprecompile_error_on_heroku/)
-- url: https://www.reddit.com/r/rails/comments/g1xtqy/deploy_to_heroku_assetsprecompile_error_on_heroku/
----
-Hi,
-
-I've just finished this feature but I am getting an assets:precompile error that I can't figure out.  On Heroku, the error is:
-
-`----&gt; Preparing app for Rails asset pipeline`
-
-`Running: rake assets:precompile`
-
-`rake aborted!`
-
-`\`NoMethodError: undefined method []' for nil:NilClass\`\``
-
-`\`/tmp/build_26e19a2ff8e992cdff1a9b487057f4a3/config/initializers/shrine.rb:4:in &lt;main&gt;'\`\``
-
-&amp;#x200B;
-
-I tried to reproduce locally with RAILS\_ENV=production rake assets:precompile --trace.Maybe one of you can notice something:
-
-`** Invoke assets:precompile (first_time)`
-
-`** Invoke assets:environment (first_time)`
-
-`** Execute assets:environment`
-
-`** Invoke environment (first_time)`
-
-`** Execute environment`
-
-`** Invoke yarn:install (first_time)`
-
-`** Invoke webpacker:yarn_install (first_time)`
-
-`** Execute webpacker:yarn_install`
-
-`yarn install v1.21.1`
-
-`[1/4] Resolving packages...`
-
-`success Already up-to-date.`
-
-`Done in 0.97s.`
-
-`** Execute yarn:install`
-
-`yarn install v1.21.1`
-
-`[1/4] Resolving packages...`
-
-`[2/4] Fetching packages...`
-
-`info fsevents@1.2.12: The platform "linux" is incompatible with this module.`
-
-`info "fsevents@1.2.12" is an optional dependency and failed compatibility check. Excluding it from installation.`
-
-`[3/4] Linking dependencies...`
-
-`warning " &gt; webpack-dev-server@3.10.3" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".`
-
-`warning "webpack-dev-server &gt; webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".`
-
-`[4/4] Building fresh packages...`
-
-`Done in 252.40s.`
-
-`** Execute assets:precompile`
-
-`I, [2020-04-15T13:23:44.967735 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js`
-
-`I, [2020-04-15T13:23:44.969095 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js.gz`
-
-`I, [2020-04-15T13:23:44.969485 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/application-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css`
-
-`I, [2020-04-15T13:23:44.969644 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/application-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz`
-
-`I, [2020-04-15T13:23:44.969801 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/notes-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css`
-
-`I, [2020-04-15T13:23:44.969933 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/notes-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz`
-
-`I, [2020-04-15T13:23:44.970108 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/scaffolds-d06093ee516fe24cb3fe95eb72cd21d1cddaec3bfa31d359826f6e6cafd43bd2.css`
-
-`I, [2020-04-15T13:23:44.970236 #5912] INFO -- : Writing /vagrant/Rails/ink/public/assets/scaffolds-d06093ee516fe24cb3fe95eb72cd21d1cddaec3bfa31d359826f6e6cafd43bd2.css.gz`
-
-`** Invoke webpacker:compile (first_time)`
-
-`** Invoke webpacker:verify_install (first_time)`
-
-`** Invoke webpacker:check_node (first_time)`
-
-`** Execute webpacker:check_node`
-
-`** Invoke webpacker:check_yarn (first_time)`
-
-`** Execute webpacker:check_yarn`
-
-`** Invoke webpacker:check_binstubs (first_time)`
-
-`** Execute webpacker:check_binstubs`
-
-`** Execute webpacker:verify_install`
-
-`** Invoke environment`
-
-`** Execute webpacker:compile`
-
-`Compiling...`
-
-`Compiled all packs in /vagrant/Rails/ink/public/packs`
-
-`Hash: 26849029fbedbedced37`
-
-`Version: webpack 4.42.1`
-
-`Time: 24098ms`
-
-`Built at: 2020-04-15 13:24:14`
-
-`Asset Size Chunks Chunk Names`
-
-`css/application-7891a208.css 826 KiB 0, 1 [emitted] [immutable] [big] application`
-
-`css/application-7891a208.css.gz 106 KiB [emitted]`
-
-`js/application-7da76fec4ff71205bb73.js 157 KiB 0, 1 [emitted] [immutable] application`
-
-`js/application-7da76fec4ff71205bb73.js.LICENSE.txt 489 bytes [emitted]`
-
-`js/application-7da76fec4ff71205bb73.js.gz 47.6 KiB [emitted]`
-
-`js/application-7da76fec4ff71205bb73.js.map 657 KiB 0, 1 [emitted] [dev] application`
-
-`js/application-7da76fec4ff71205bb73.js.map.gz 186 KiB [emitted]`
-
-`js/notes-aa3d2eba82abbbda5606.js 89.4 KiB 1 [emitted] [immutable] notes`
-
-`js/notes-aa3d2eba82abbbda5606.js.LICENSE.txt 489 bytes [emitted]`
-
-`js/notes-aa3d2eba82abbbda5606.js.gz 31.1 KiB [emitted]`
-
-`js/notes-aa3d2eba82abbbda5606.js.map 457 KiB 1 [emitted] [dev] notes`
-
-`js/notes-aa3d2eba82abbbda5606.js.map.gz 139 KiB [emitted]`
-
-`manifest.json 791 bytes [emitted]`
-
-`manifest.json.gz 220 bytes [emitted]`
-
-`Entrypoint application [big] = css/application-7891a208.css js/application-7da76fec4ff71205bb73.js js/application-7da76fec4ff71205bb73.js.map`
-
-`Entrypoint notes = js/notes-aa3d2eba82abbbda5606.js js/notes-aa3d2eba82abbbda5606.js.map`
-
-`[1] (webpack)/buildin/module.js 552 bytes {0} {1} [built]`
-
-`[2] ./app/javascript/packs/notes.js 2.53 KiB {0} {1} [built]`
-
-`[3] ./app/javascript/packs/application.js 850 bytes {0} [built]`
-
-`[7] ./app/javascript/channels/index.js 205 bytes {0} [built]`
-
-`[8] ./app/javascript/channels sync _channel\.js$ 160 bytes {0} [built]`
-
-`[9] ./app/javascript/stylesheets/application.scss 39 bytes {0} [built]`
-
-`+ 5 hidden modules`
-
-&amp;#x200B;
-
-`WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).`
-
-`This can impact web performance.`
-
-`Assets:`
-
-`css/application-7891a208.css (826 KiB)`
-
-&amp;#x200B;
-
-`WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.`
-
-`Entrypoints:`
-
-`application (983 KiB)`
-
-`css/application-7891a208.css`
-
-`js/application-7da76fec4ff71205bb73.js`
-
-`WARNING in webpack performance recommendations:`
-
-`You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.`
-
-`For more info visit` [`https://webpack.js.org/guides/code-splitting/`](https://webpack.js.org/guides/code-splitting/)
-
-`Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!app/javascript/stylesheets/application.scss:`
-
-`Entrypoint mini-css-extract-plugin = *`
-
-`[0] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/stylesheets/application.scss 1.45 MiB {0} [built]`
-
-`+ 1 hidden module`
-
-Thanks in advance!

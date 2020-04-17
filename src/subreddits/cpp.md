@@ -119,57 +119,75 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Named arguments in fmt do not require dynamic allocations anymore.](https://www.reddit.com/r/cpp/comments/g2asdu/named_arguments_in_fmt_do_not_require_dynamic/)
+## [3][ReSharper C++ 2020.1: New C++20 Features, Rearrange Code, HLSL Support, Enum Refactorings, and More](https://www.reddit.com/r/cpp/comments/g2yw74/resharper_c_20201_new_c20_features_rearrange_code/)
+- url: https://blog.jetbrains.com/rscpp/resharper-cpp-2020-1/
+---
+
+## [4][Sign Up For Pure Virtual C++ Conference 2020](https://www.reddit.com/r/cpp/comments/g2q4hh/sign_up_for_pure_virtual_c_conference_2020/)
+- url: https://devblogs.microsoft.com/cppblog/sign-up-for-pure-virtual-c-conference-2020/
+---
+
+## [5][CppCast: Rosetta](https://www.reddit.com/r/cpp/comments/g30tp1/cppcast_rosetta/)
+- url: https://cppcast.com/rosetta-andrew-jack/
+---
+
+## [6][MSVC Backend Updates in Visual Studio 2019 Version 16.5](https://www.reddit.com/r/cpp/comments/g2snnt/msvc_backend_updates_in_visual_studio_2019/)
+- url: https://devblogs.microsoft.com/cppblog/msvc-backend-updates-in-visual-studio-2019-version-16-5/
+---
+
+## [7][Microsoft GSL v3.0.0 Released Today](https://www.reddit.com/r/cpp/comments/g2kht8/microsoft_gsl_v300_released_today/)
+- url: https://www.reddit.com/r/cpp/comments/g2kht8/microsoft_gsl_v300_released_today/
+---
+Microsoft GSL v3.0.0 has been released today. 
+
+Here are some highlights:
+
+* New unsigned implementation of `gsl::span`
+* New implementation of `gsl::span_iterator`
+* Contract violations result in termination
+* Additional CMake support
+
+See the blog and release for more information, links below:
+
+[C++ Team Blog Post](https://devblogs.microsoft.com/cppblog/gsl-3-0-0-release/) 
+
+[Microsoft/GSL Github Releases page](https://github.com/microsoft/GSL/releases/tag/v3.0.0)
+## [8][Advanced Apply, metaprogramming experiment](https://www.reddit.com/r/cpp/comments/g2r411/advanced_apply_metaprogramming_experiment/)
+- url: https://www.reddit.com/r/cpp/comments/g2r411/advanced_apply_metaprogramming_experiment/
+---
+Got an idea for a different and more ergonomic variation of the apply function where you query the types with the lamda parameters, don't know if this has been done before. Would like to know what you think and if there's anything I can improve upon.
+
+Where the tuples has a multiple of the same type the apply function gets the first occurence, if theres another lambda paramter with the same type it gets the second occurence in the tuple.
+
+    
+    auto x = std::make_tuple(1, 2, 3, 4, 5, 6, 7, 8.0, 9, 10, 11, 33, 13, 14, 15.f, 16, 17, 18, 2);
+    
+    std::cout &lt;&lt; adv::apply(x, [](float a, double b, int c, int d) {
+    
+    	std::cout &lt;&lt; a &lt;&lt; std::endl;
+    	std::cout &lt;&lt; b &lt;&lt; std::endl;
+    	std::cout &lt;&lt; c &lt;&lt; std::endl;
+    	std::cout &lt;&lt; d &lt;&lt; std::endl;
+    
+    	return d;
+    }
+
+    // Output: 15.0, 8.0, 1, 2, 2
+
+https://ideone.com/hJgGhy
+## [9][Named arguments in fmt do not require dynamic allocations anymore.](https://www.reddit.com/r/cpp/comments/g2asdu/named_arguments_in_fmt_do_not_require_dynamic/)
 - url: https://twitter.com/vzverovich/status/1250411654568800258?s=21
 ---
 
-## [4][C++ Compile Health: Comparison of various headers on build times](https://www.reddit.com/r/cpp/comments/g2acf3/c_compile_health_comparison_of_various_headers_on/)
+## [10][Is Template Metaprogramming maintainable?](https://www.reddit.com/r/cpp/comments/g2oxzq/is_template_metaprogramming_maintainable/)
+- url: https://www.reddit.com/r/cpp/comments/g2oxzq/is_template_metaprogramming_maintainable/
+---
+I feel like to implement this in our codebase we have to build up a whole type structure just to then be able to use template metaprogramming. Granted it does seem to reduce the number of lines of code, but is it really worth it?
+## [11][Should move assignment implementation allow for x = move(x)?](https://www.reddit.com/r/cpp/comments/g2wrtj/should_move_assignment_implementation_allow_for_x/)
+- url: https://www.reddit.com/r/cpp/comments/g2wrtj/should_move_assignment_implementation_allow_for_x/
+---
+At a class in college the professor said that the mentioned usage should work (and by work I mean it should have no effect, noop). But often to support that I needed to wrap the usual logic in an if that checks if they have the same address, which seems wasteful to me. What are some of the non-trivial pitfalls if I choose to not support `x = move(x)`? Does anything in the STL depend on it?
+## [12][C++ Compile Health: Comparison of various headers on build times](https://www.reddit.com/r/cpp/comments/g2acf3/c_compile_health_comparison_of_various_headers_on/)
 - url: https://artificial-mind.net/projects/compile-health/
----
-
-## [5][Apple porting native C++ and Objective-C to WebAssembly for iWork apps in the browser](https://www.reddit.com/r/cpp/comments/g2c25a/apple_porting_native_c_and_objectivec_to/)
-- url: https://twitter.com/lrz/status/1250453967957561344
----
-
-## [6][CodeLite IDE 14 Released!](https://www.reddit.com/r/cpp/comments/g2eei3/codelite_ide_14_released/)
-- url: https://wiki.codelite.org/pmwiki.php/Main/ReleaseNotesCodeLite14
----
-
-## [7][Results summary: 2020 Global Developer Survey "Lite" : Standard C++](https://www.reddit.com/r/cpp/comments/g1yjhp/results_summary_2020_global_developer_survey_lite/)
-- url: https://isocpp.org/blog/2020/04/results-summary-2020-global-developer-survey-lite
----
-
-## [8][Version-less CMake targets (Qt 5.15)](https://www.reddit.com/r/cpp/comments/g2e3ud/versionless_cmake_targets_qt_515/)
-- url: https://www.qt.io/blog/versionless-cmake-targets-qt-5.15
----
-
-## [9][GCC's libstdc++ Continues Landing C++20 Changes Around The Spaceship Operator](https://www.reddit.com/r/cpp/comments/g2cpx8/gccs_libstdc_continues_landing_c20_changes_around/)
-- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=GCC10-libstdcpp-More-Cpp20
----
-
-## [10][Cloudy. A media/video indexing and streaming server.](https://www.reddit.com/r/cpp/comments/g2dwjp/cloudy_a_mediavideo_indexing_and_streaming_server/)
-- url: https://www.reddit.com/r/cpp/comments/g2dwjp/cloudy_a_mediavideo_indexing_and_streaming_server/
----
-[https://github.com/tigrangh/cloudy](https://github.com/tigrangh/cloudy)
-
-&amp;#x200B;
-
-This is an early preview of what I've been working on during last two weeks. I'd like to hear opinions of those who are interested in this or similar concept.
-## [11][Flashlight morse encoder/decoder system in C++.](https://www.reddit.com/r/cpp/comments/g2co2i/flashlight_morse_encoderdecoder_system_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/g2co2i/flashlight_morse_encoderdecoder_system_in_c/
----
- 
-
-Hello everyone
-
-I've recently started reading [The Hidden Language of Computer Hardware and Software](https://medium.com/tech-book-reviews/code-the-hidden-language-of-computer-hardware-and-software-bab8de93220e) by Charles Petzold. Yesterday, one idea stuck me and I think it's pretty cool.
-
-My idea is to create a telecommunication system ala Telegraph, based on binary code - Morse, but with one exception, it would be much more faster than a human in converting human language to Morse and decoding it to human language.
-
-It would be based on flashllights and cameras system with vision algorithms which would detect flashes in a dark environment and decode them to human language. I opt for &lt;1 second performance to exchange messages fast.
-
-Which libraries and boards would you recommend for building it? Any thoughts about core improvements?
-## [12][Using locks in real-time audio processing, safely](https://www.reddit.com/r/cpp/comments/g1o5el/using_locks_in_realtime_audio_processing_safely/)
-- url: https://timur.audio/using-locks-in-real-time-audio-processing-safely
 ---
 

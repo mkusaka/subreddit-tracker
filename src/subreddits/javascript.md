@@ -13,49 +13,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Crank.js - An alternative to React.js with built in support for promises and generator functions for state.](https://www.reddit.com/r/javascript/comments/g1zj87/crankjs_an_alternative_to_reactjs_with_built_in/)
-- url: https://github.com/bikeshaving/crank
+## [3][console.log Tips &amp; Tricks](https://www.reddit.com/r/javascript/comments/g2yz4f/consolelog_tips_tricks/)
+- url: https://medium.com/nmc-techblog/advanced-console-log-tips-tricks-fa3762930bca
 ---
 
-## [4][Any fans of JavaScript on hardware? I wanted to share an IoT device I made that tells me when my next bus will arrive](https://www.reddit.com/r/javascript/comments/g1qmfg/any_fans_of_javascript_on_hardware_i_wanted_to/)
-- url: https://medium.com/@robert.mcgui/onetesselaway-public-transit-status-iot-device-70b80ab8475b
+## [4][Simpsons: Hit &amp; Run API - This is a library to automate the abandonware game Simpsons: Hit &amp; Run with JavaScript. It uses frida to access internal state, and exposes JavaScript classes that can be used to query and control the game](https://www.reddit.com/r/javascript/comments/g2nov4/simpsons_hit_run_api_this_is_a_library_to/)
+- url: https://github.com/taviso/sharapi
 ---
 
-## [5][[AskJS] Resources on building an API as a service with Express.js](https://www.reddit.com/r/javascript/comments/g2cl7e/askjs_resources_on_building_an_api_as_a_service/)
-- url: https://www.reddit.com/r/javascript/comments/g2cl7e/askjs_resources_on_building_an_api_as_a_service/
----
-Hey everyone!
-
-I'm building an API solution to offer dynamically generated og-images. My server uses express js and I want to apply an X requests/month limitation. I'll implement a user authentication system and possibly use Stripe API as well. However, I could find any resource/guide on how to set up everything properly.
-
-Do you have any advice or recommended service/library to suggest?
-## [6][Pixelbox.js - Create 2D games in JavaScript](https://www.reddit.com/r/javascript/comments/g1sn73/pixelboxjs_create_2d_games_in_javascript/)
-- url: https://pixwlk.itch.io/pixelbox
+## [5][Puppeteer 3.0.0 now supports Firefox out of the box](https://www.reddit.com/r/javascript/comments/g2hmj6/puppeteer_300_now_supports_firefox_out_of_the_box/)
+- url: https://github.com/puppeteer/puppeteer/releases/tag/v3.0.0
 ---
 
-## [7][A blog post about cors](https://www.reddit.com/r/javascript/comments/g2b03e/a_blog_post_about_cors/)
-- url: https://medium.com/better-programming/react-with-cors-the-how-and-the-why-163ecf10035f
+## [6][Redaxios | Axios API in 800 bytes using native fetch](https://www.reddit.com/r/javascript/comments/g2ym2w/redaxios_axios_api_in_800_bytes_using_native_fetch/)
+- url: https://github.com/developit/redaxios
 ---
 
-## [8][[AskJS] Can someone help me how does this website store the final answer to the game? I did inspect element on the webpage but coming short...](https://www.reddit.com/r/javascript/comments/g2atg2/askjs_can_someone_help_me_how_does_this_website/)
-- url: https://www.reddit.com/r/javascript/comments/g2atg2/askjs_can_someone_help_me_how_does_this_website/
----
-https://skribbl.io/ is the website. The game is that 1 of the players draws a word &amp; then others have to guess what the word is. So i thought it would be cool to dig into the website using the Chrome browser console using "Inspect Element" &amp; try to find the answer to mess with my friends! However, i couldn't find the answer anywhere after "ctl+f"ing a lot inside the console. Can someone help me to check if there indeed IS a way to find out the answer by doing Inspect Element? Any ideas are appreciated, thanks!
-
-TBH i don't even know JS, but have been practising Python &amp; Ruby since the past 4 months so trying to dig around things now and then.
-## [9][Writing an Emulator in JavaScript (and Interfacing with Multiple UIs)](https://www.reddit.com/r/javascript/comments/g1lcnp/writing_an_emulator_in_javascript_and_interfacing/)
-- url: https://www.taniarascia.com/writing-an-emulator-in-javascript-chip8/
+## [7][Do you know a lot of JS open-source games ? Climb the mountain in the 3D platformer coded with Three.js, and make your own fork.](https://www.reddit.com/r/javascript/comments/g2ynhn/do_you_know_a_lot_of_js_opensource_games_climb/)
+- url: https://github.com/felixmariotto/Edelweiss
 ---
 
-## [10][Although JSON Web Tokens have become incredibly popular, its use for authenticating users sessions is controversial. Here's an attempt to demonstrate the pros and cons of using JWT for this context.](https://www.reddit.com/r/javascript/comments/g1naew/although_json_web_tokens_have_become_incredibly/)
-- url: https://supertokens.io/blog/are-you-using-jwts-for-user-sessions-in-the-correct-way?utm_source=Reddit
+## [8][Userscripts are fun and are very much still relevant](https://www.reddit.com/r/javascript/comments/g2tji3/userscripts_are_fun_and_are_very_much_still/)
+- url: https://dutzi.party/userscripts-are-fun/
 ---
 
-## [11][privacy.js — the SDK for data privacy](https://www.reddit.com/r/javascript/comments/g1s3tz/privacyjs_the_sdk_for_data_privacy/)
-- url: https://devervault.substack.com/p/privacyjs-the-sdk-for-data-privacy
+## [9][Use JavaScript and HTML5 to Code a Fractal Tree](https://www.reddit.com/r/javascript/comments/g2nldh/use_javascript_and_html5_to_code_a_fractal_tree/)
+- url: https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/
 ---
 
-## [12][react-tater - a React component to add annotations to any element on a page](https://www.reddit.com/r/javascript/comments/g1sp0k/reacttater_a_react_component_to_add_annotations/)
-- url: https://github.com/localjo/react-tater
+## [10][Fixing the "dark mode flash" issue on server rendered websites](https://www.reddit.com/r/javascript/comments/g2fazd/fixing_the_dark_mode_flash_issue_on_server/)
+- url: https://blog.maximeheckel.com/posts/switching-off-the-lights-part-2-fixing-dark-mode-flashing-on-servered-rendered-website
+---
+
+## [11][keen-slider - The HTML touch slider carousel with the most native feeling you will get.](https://www.reddit.com/r/javascript/comments/g2ktdw/keenslider_the_html_touch_slider_carousel_with/)
+- url: https://github.com/rcbyr/keen-slider
+---
+
+## [12][javascript | Jitsi Meet -- ask me anything about js : learnjavascript](https://www.reddit.com/r/javascript/comments/g2suwu/javascript_jitsi_meet_ask_me_anything_about_js/)
+- url: https://www.reddit.com/r/learnjavascript/comments/g2npwx/javascript_jitsi_meet_ask_me_anything_about_js/
 ---
 

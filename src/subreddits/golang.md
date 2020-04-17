@@ -1,178 +1,153 @@
 # golang
-## [1][I created a golang package to fetching coronavirus information from John Hopkins university API](https://www.reddit.com/r/golang/comments/g2btln/i_created_a_golang_package_to_fetching/)
-- url: https://www.reddit.com/r/golang/comments/g2btln/i_created_a_golang_package_to_fetching/
+## [1][Rate limit http middleware with few algorithms (Sliding Window, Leaky Bucket)](https://www.reddit.com/r/golang/comments/g308cp/rate_limit_http_middleware_with_few_algorithms/)
+- url: https://www.reddit.com/r/golang/comments/g308cp/rate_limit_http_middleware_with_few_algorithms/
 ---
-check the documentation here
+Hi, if you need rate limit [library](https://github.com/Shareed2k/go_limiter) or middleware for rate limit with algorithms like (Sliding Window, Leaky Bucket) , redis as store, you welcome to try test and give me a feedback... thanks ;)
 
-[https://ahmednafies.github.io/go-covid/](https://ahmednafies.github.io/go-covid/)
+[fiber framework middleware](https://github.com/Shareed2k/fiber_limiter)
 
-&amp;#x200B;
+[echo framework middleware](https://github.com/Shareed2k/echo_limiter)
 
-https://preview.redd.it/9tczj5cng5t41.jpg?width=1489&amp;format=pjpg&amp;auto=webp&amp;s=47f0cbb152de0319c750800dc1b549579ee041c1
-## [2][Gotopus: a minimalistic tool that runs arbitrary commands concurrently](https://www.reddit.com/r/golang/comments/g25rf5/gotopus_a_minimalistic_tool_that_runs_arbitrary/)
-- url: https://www.reddit.com/r/golang/comments/g25rf5/gotopus_a_minimalistic_tool_that_runs_arbitrary/
----
-# [Gotopus](https://github.com/lherman-cs/gotopus)
-
-Github: [https://github.com/lherman-cs/gotopus](https://github.com/lherman-cs/gotopus)
-
-You define your commands with their dependencies and Gotopus will take care of the rest, running them concurrently when possible.
-
-# Features
-
-* \[X\] Concurrently run steps, speeding up running time
-* \[X\] Local or remote configs
-* \[X\] Easy to install
-* \[X\] Circular dependency detection
-* \[X\] Clean step definition with [YAML](https://en.wikipedia.org/wiki/YAML)
-* \[X\] [Builtin and user environment variables](https://github.com/lherman-cs/gotopus/blob/master/README.md#environment-variables)
-
-# Installation
-
-    curl -sf https://gobinaries.com/lherman-cs/gotopus | sh
-
-# Basic Usage
-
-    Usage: gotopus &lt;url or filepath&gt; ...
-    
-      -max_workers uint
-        	limits the number of workers that can run concurrently (default 0 or limitless)
-
-examples/basic.yaml:
-
-    jobs:
-      job1:
-        steps:
-          - run: sleep 1 &amp;&amp; echo "job1"
-      job2:
-        needs:
-          - job1
-        steps:
-          - run: echo "job2"
-      job3:
-        steps:
-          - run: echo "job3"
-
-To use `basic.yaml` above, you can run the following command:
-
-    gotopus basic.yaml
-
-Or you can simply give a URL to this file:
-
-    gotopus https://raw.githubusercontent.com/lherman-cs/gotopus/master/examples/basic.yaml
-## [3][processman: A thin layer around os/exec to run processes and manage their life cycle in your Go program](https://www.reddit.com/r/golang/comments/g2book/processman_a_thin_layer_around_osexec_to_run/)
-- url: https://github.com/buraksezer/processman/
+[http middleware](https://github.com/Shareed2k/http_limiter)
+## [2][Search and copy lyrics from the terminal (First go program)](https://www.reddit.com/r/golang/comments/g2vh9j/search_and_copy_lyrics_from_the_terminal_first_go/)
+- url: https://github.com/asvvvad/cply
 ---
 
-## [4][Code Golf now supports Go :-)](https://www.reddit.com/r/golang/comments/g1xvd9/code_golf_now_supports_go/)
-- url: https://code-golf.io
----
-
-## [5][Webapps with Golang the Anti-Textbook](https://www.reddit.com/r/golang/comments/g23okb/webapps_with_golang_the_antitextbook/)
-- url: https://www.reddit.com/r/golang/comments/g23okb/webapps_with_golang_the_antitextbook/
----
-Found this gitbook, thought some others would find it useful.
-
-[https://thewhitetulip.gitbooks.io/webapp-with-golang-anti-textbook/content/](https://thewhitetulip.gitbooks.io/webapp-with-golang-anti-textbook/content/)
-## [6][How do you find the "right" library version?](https://www.reddit.com/r/golang/comments/g2c5tf/how_do_you_find_the_right_library_version/)
-- url: https://www.reddit.com/r/golang/comments/g2c5tf/how_do_you_find_the_right_library_version/
----
-When looking for Go packages, I frequently have the problem that I cannot find the original or most maintained version, because there are dozens of clones and not all of them are forked.
-
-How do you do that? Is there a search engine that ranks results by level of maintenance (e.g. commits on Github)? How do you evaluate different versions of the same library? Apart from licensing requirements, are there any showstoppers that immediately make you not use a library?
-## [7][How I write an opensource cloud gaming service with WebRTC and Golang](https://www.reddit.com/r/golang/comments/g2e88k/how_i_write_an_opensource_cloud_gaming_service/)
+## [3][How I write an opensource cloud gaming service with WebRTC and Golang](https://www.reddit.com/r/golang/comments/g2e88k/how_i_write_an_opensource_cloud_gaming_service/)
 - url: https://webrtchacks.com/open-source-cloud-gaming-with-webrtc/
 ---
 
-## [8][Windows CMD and PowerShell color rendering by golang](https://www.reddit.com/r/golang/comments/g2dqsh/windows_cmd_and_powershell_color_rendering_by/)
-- url: https://medium.com/@inhereat/windows-cmd-and-powershell-color-rendering-by-golang-54bddc2d25d1
+## [4][Highly concurrent access to map?](https://www.reddit.com/r/golang/comments/g31vx8/highly_concurrent_access_to_map/)
+- url: https://www.reddit.com/r/golang/comments/g31vx8/highly_concurrent_access_to_map/
+---
+Hi, i'm trying to build an efficient port scanner in Go.
+
+Full code: [https://gist.github.com/hazcod/00af72341a5347e90673785ff02efd0d](https://gist.github.com/hazcod/00af72341a5347e90673785ff02efd0d)
+
+However, how I would aggregate returns from a lot of goroutines? Use blocking channels to feed results back to the function?
+
+    	ps.lock = semaphore.NewWeighted(maxDesc)
+    
+    	wg := sync.WaitGroup{}
+    	defer wg.Wait()
+    
+    	results := map[uint]bool{}
+    
+    	for port := firstPort; port &lt;= lastPort; port++ {
+    		if err := ps.lock.Acquire(context.TODO(), 1); err != nil {
+    			return errors.Wrap(err, "could not acquire lock")
+    		}
+    
+    		wg.Add(1)
+    		go func(port uint) {
+    			defer ps.lock.Release(1)
+    			defer wg.Done()
+    			fmt.Println(ScanPort(address, port, timeout))
+    			results[port] = ScanPort(address, port, timeout)
+    		}(port)
+    	}
+## [5][I want to make my own webrtc gateway sorts, in golang, is there anything like article or guide around it?](https://www.reddit.com/r/golang/comments/g30xde/i_want_to_make_my_own_webrtc_gateway_sorts_in/)
+- url: https://www.reddit.com/r/golang/comments/g30xde/i_want_to_make_my_own_webrtc_gateway_sorts_in/
+---
+I do know about janus but i was wondering if there any more articles or guide around it.
+## [6][Is there prominent pros in cobra over urfave/cli ?](https://www.reddit.com/r/golang/comments/g2v2yy/is_there_prominent_pros_in_cobra_over_urfavecli/)
+- url: https://www.reddit.com/r/golang/comments/g2v2yy/is_there_prominent_pros_in_cobra_over_urfavecli/
+---
+I'm on situation that have to select one of two.
+
+1. [https://github.com/spf13/cobra](https://github.com/spf13/cobra) 
+2. [https://github.com/urfave/cli](https://github.com/urfave/cli)
+
+In my short-term eyes, both project is alive.
+## [7][How hard is this language for beginners from a scale to 1 to 10](https://www.reddit.com/r/golang/comments/g304f1/how_hard_is_this_language_for_beginners_from_a/)
+- url: https://www.reddit.com/r/golang/comments/g304f1/how_hard_is_this_language_for_beginners_from_a/
+---
+apologies if i asked the same question but i think no one responded, so i am here yet again.
+
+also i never programmed (well technically i watched some tutorials about some programming languages but meh)
+
+so is this language hard? 
+
+Thanks for anwsering!.
+## [8][Tag search suggestions for my project](https://www.reddit.com/r/golang/comments/g2zyjc/tag_search_suggestions_for_my_project/)
+- url: https://www.reddit.com/r/golang/comments/g2zyjc/tag_search_suggestions_for_my_project/
+---
+Hello guys, I am working on a project where I need to search the results based on user-defined tags. I believe the tags will be too much, thus causing performance issues when I search from a tag in my BoltDB.   
+I would love to hear any suggestions from the community as to how should I implement the same. Its a CLI tool.
+## [9][Generate GraphQL API from a postgres database](https://www.reddit.com/r/golang/comments/g2zhp3/generate_graphql_api_from_a_postgres_database/)
+- url: https://blog.graphqleditor.com/graphqlize-instant-graphql-api-from-postgresql-mysql/
 ---
 
-## [9][GeoDB - A Persistent Geospatial Database with Geofencing &amp; Google Maps Support 🌎](https://www.reddit.com/r/golang/comments/g1yycz/geodb_a_persistent_geospatial_database_with/)
-- url: https://www.reddit.com/r/golang/comments/g1yycz/geodb_a_persistent_geospatial_database_with/
+## [10][SDL2: How to make my program quit after 5 seconds and keep the application responding?](https://www.reddit.com/r/golang/comments/g2zbmw/sdl2_how_to_make_my_program_quit_after_5_seconds/)
+- url: https://www.reddit.com/r/golang/comments/g2zbmw/sdl2_how_to_make_my_program_quit_after_5_seconds/
 ---
-[GeoDB](https://github.com/autom8ter/geodb) is a persistent geospatial database built using [Badger](https://github.com/dgraph-io/badger) gRPC, and the Google Maps API
+I am currently learning SDL2 binding for Go and Goroutines (I am a beginner in those two).
 
-## Features
+I would like my app to display a screen with ANYTHING, and close when either I click the close button of the window or the window has been displayed for 5 seconds. 
 
-- [x] Zero External Service Dependencies(Except a Google Maps API key(optional))
-- [x] Concurrent ACID transactions
-- [x] Real-Time Server-Client Object Geolocation Streaming
-- [x] Persistent Object Geolocation
-- [x] Geolocation Expiration
-- [x] Geolocation Boundary Scanning
-- [x] Targeted Geofencing- Track objects in relation to others using object "trackers"
-- [x] Google Maps Integration(see environmental variables) - Enhance Object Tracking Features 
-- [x] Google Maps Response Caching - GeoDB can save you money 
-- [x] gRPC Protocol
-- [x] Prometheus Metrics (/metrics endpoint)
-- [x] Object Geolocation time-series exposed with Prometheus metrics
-- [x] Configurable(12-factor)
-- [x] Basic Authentication
-- [x] Docker Image
-- [x] Sample Docker Compose File
-- [x] MIT License
-- [ ] Kubernetes Manifests
-- [ ] REST Translation Layer
-- [ ] Horizontal Scaleability(Raft Protocol)
+Let's say my code looks like this:
 
-## Methodology
+    package main
+    
+    import (
+    	"fmt"
+    
+    	"github.com/veandco/go-sdl2/sdl"
+    )
+    
+    const windowWidth = 800
+    const windowHeight = 600
+    
+    func main() {
+    	if err := sdl.Init(sdl.INIT_EVERYTHING); err != nil {
+    		panic(err)
+    	}
+    	defer sdl.Quit()
+    
+    	window, err := sdl.CreateWindow("Testing SLD2", sdl.WINDOWPOS_UNDEFINED, sdl.WINDOWPOS_UNDEFINED,
+    		int32(windowWidth), int32(windowHeight), sdl.WINDOW_SHOWN)
+    	if err != nil {
+    		fmt.Println(err)
+    		return
+    	}
+    	defer window.Destroy()
+    
+    	renderer, err := sdl.CreateRenderer(window, -1, sdl.RENDERER_ACCELERATED)
+    	if err != nil {
+    		fmt.Println(err)
+    		return
+    	}
+    	defer renderer.Destroy()
+    
+    	running := true
+    	for running {
+    		for event := sdl.PollEvent(); event != nil; event = sdl.PollEvent()             {
+    			switch event.(type) {
+    			case *sdl.QuitEvent:
+    				println("Quit")
+    				running = false
+    				break
+    			}
+    		}
+    	}
+    }
 
-- Clients may query the database in three ways keys(unique ids), prefix-scanning, or regex 
-- Clients can open and execute logic on object geolocation streams that can be filtered by keys(unique ids), prefix-scanning, or regex
-- Clients can manage object-centric, dynamic geofences(trackers) that can be used to track an objects location in relation to other registered objects
-- Haversine formula is used to calculate whether objects are overlapping using object coordinates and their radius.
-- If the server has a google maps api key present in its environmental variables, all geofencing(trackers) will be enhanced with html directions, estimated time of arrival, and more.
+What I have managed to find out:
 
-## Use Cases
-- Ride Sharing
-- Food Delivery
-- Asset Tracking
+\- I could rewrite the last paragraph to wait for 5 seconds like this:
 
-## Clint SDKs
+    	running := true
+    	for running {
+    		select {
+    		case &lt;-time.Tick(5 * time.Second):
+    			println("Quit")
+    			running = false
+    			break
+    		}
+    	}
 
-Please refer to a client SDK for **examples and code-snippets** to get started connecting to GeoDB
-- [Golang](https://github.com/autom8ter/geodb-go)
+But then my application is showing as "not responding" before it shuts down. It's not something that's happening in the tutorials I have checked, not sure if it's something related to the current version of the SDL2 binding module (github.com/veandco/go-sdl2 v0.4.1) or my OS (Mac OS X Catalina 10.15.2). My SDL binary version is 2.0.12.
 
-## Sample Docker Compose
+\- To avoid the issue mentioned above, I would need to have a channel that polls the events all the time. However, it looks like the package does not allow to poll events in the goroutines.
 
-```yaml
-version: '3.7'
-services:
-  db:
-    image: colemanword/geodb:latest
-    env_file:
-      - geodb.env
-    ports:
-      - "8080:8080"
-    volumes:
-      - default:/tmp/geodb
-    networks:
-      default:
-        aliases:
-          - geodb
-networks:
-  default:
-
-volumes:
-  default:
-
-```
-geodb.env:
-
-```.env
-GEODB_PORT (optional) default: :8080
-GEODB_PATH (optional) default: /tmp/geodb
-GEODB_GC_INTERVAL (optional) default: 5m
-GEODB_PASSWORD (optional) 
-GEODB_GMAPS_KEY (optional)
-
-```
-
-## API REF
-
-[Protobuf Contract](https://github.com/autom8ter/geodb/blob/master/api.proto)
-## [10][Keep just one instance of your program.](https://www.reddit.com/r/golang/comments/g2ccjx/keep_just_one_instance_of_your_program/)
-- url: https://github.com/Miguel-Dorta/si
----
-
+Please help, I would really appreciate a piece of working code.

@@ -109,137 +109,141 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Router v6 Preview](https://www.reddit.com/r/reactjs/comments/g20xlv/react_router_v6_preview/)
-- url: https://reacttraining.com/blog/react-router-v6-pre/
+## [3][Crank.js | Introducting Crank](https://www.reddit.com/r/reactjs/comments/g2u135/crankjs_introducting_crank/)
+- url: https://crank.js.org/blog/introducing-crank
 ---
 
-## [4][React Hooks Tutorial | Build Yelp in React #26 | create custom hook to fetch data from Yelp API](https://www.reddit.com/r/reactjs/comments/g2dimu/react_hooks_tutorial_build_yelp_in_react_26/)
-- url: https://youtu.be/3lPJ4sNiJxg
+## [4][Redaxios | Axios API in 800 bytes using native fetch](https://www.reddit.com/r/reactjs/comments/g2ylrd/redaxios_axios_api_in_800_bytes_using_native_fetch/)
+- url: https://github.com/developit/redaxios
 ---
 
-## [5][Simple way to create a popup modal using react hooks!](https://www.reddit.com/r/reactjs/comments/g2dh03/simple_way_to_create_a_popup_modal_using_react/)
-- url: https://www.youtube.com/watch?v=1q-a-Sdz6mw
+## [5][Free tickets available: Attend the biggest React conf in the cloud – April 17, 2020](https://www.reddit.com/r/reactjs/comments/g2fqci/free_tickets_available_attend_the_biggest_react/)
+- url: https://remote.reactsummit.com
 ---
 
-## [6][Programming with React on a Macbook Air (2020) with 8gb of ram.](https://www.reddit.com/r/reactjs/comments/g26a1y/programming_with_react_on_a_macbook_air_2020_with/)
-- url: https://www.reddit.com/r/reactjs/comments/g26a1y/programming_with_react_on_a_macbook_air_2020_with/
+## [6][Understanding the useState hook in React](https://www.reddit.com/r/reactjs/comments/g31320/understanding_the_usestate_hook_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/g31320/understanding_the_usestate_hook_in_react/
 ---
-I recently bought the new Macbook Air with the 1.1GHz Quad-Core Core i5 and 8gb of ram. I am used to working on a top of the line MBP but was unfortunately let go recently due to the pandemic and wanted to pick up a machine to be able to continue developing.
-
-My question is, do you think I may have undercut myself by choosing only 8gb of ram? The deciding factor was being able to get it in 2 days instead of 2 weeks, but I am wondering if anyone have experience with React specifically on 8gb of ram and if I should return it and upgrade.
-
-Side note, React developer available for remote hire :)
-## [7][React Router 6 Tutorial](https://www.reddit.com/r/reactjs/comments/g1ppx2/react_router_6_tutorial/)
-- url: https://www.youtube.com/watch?v=Z89iY7xwBSU
+“Understanding the useState hook in React” by Ashok Choudhary https://link.medium.com/BGLNgtHFJ5
+This is my first blog post. So let me know any tips or suggestions :)
+## [7][The online course "Learn React by Building a Hacker News Clone" is Free this week.](https://www.reddit.com/r/reactjs/comments/g310ue/the_online_course_learn_react_by_building_a/)
+- url: https://v.redd.it/07dxb12xfdt41
 ---
 
-## [8][Publishing Visual Studio Project to IIS](https://www.reddit.com/r/reactjs/comments/g2ekt1/publishing_visual_studio_project_to_iis/)
-- url: https://www.reddit.com/r/reactjs/comments/g2ekt1/publishing_visual_studio_project_to_iis/
+## [8][reactjs docker development Develop your reactjs app using docker container and no need of node in your local system](https://www.reddit.com/r/reactjs/comments/g3233r/reactjs_docker_development_develop_your_reactjs/)
+- url: https://youtu.be/ldZClweupOo
 ---
-Hi,
 
-I've been working on a Visual Studio NetCore Entity Framework project that contains a React client side.
-
-
-Does anyone know the best way to publish something like this to an IIS Server?  Would you just publish normally or would you need to go and setup the React side manually and then publish?
-
-
-Thanks!
-## [9][GatsbyJS: How to intercept hash part of url change event properly?](https://www.reddit.com/r/reactjs/comments/g2e4ie/gatsbyjs_how_to_intercept_hash_part_of_url_change/)
-- url: https://www.reddit.com/r/reactjs/comments/g2e4ie/gatsbyjs_how_to_intercept_hash_part_of_url_change/
+## [9][I really like animation on deepmind.com website, but I have no idea how it can be implemented in react.](https://www.reddit.com/r/reactjs/comments/g2ytj5/i_really_like_animation_on_deepmindcom_website/)
+- url: https://www.reddit.com/r/reactjs/comments/g2ytj5/i_really_like_animation_on_deepmindcom_website/
 ---
-I am building a site based on GatsbyJS.
-
-There is a page with a sub-component that renders dynamically based on state change. Think of a widget with tabs. Switching between tabs is not really a problem: changing state and url on tab title click.
-
-The initial tab (state) is defined by url hash. If there is no any hash the state defaults to the first tab.
-
-The problem is with site navigation side bar that is basically is a list of `&lt;Link&gt;`s. A simplified example of component output:
-
-    &lt;Link to="/companies"&gt;Companies&lt;/Link&gt;
-    &lt;Link to="/companies#annual-income"&gt;- by annual income&lt;/Link&gt;
-    &lt;Link to="/companies#staff"&gt;- by operational staff&lt;/Link&gt;
-    &lt;Link to="/individuals"&gt;People&lt;/Link&gt;
-    &lt;Link to="/individuals#annual-income"&gt;- by annual income&lt;/Link&gt;
-    &lt;Link to="/individuals#list"&gt;- by last name&lt;/Link&gt;
-
-When current page is, say, `/companies` navigation to any of the links under `/individuals` produces expected result. However click on any `/companies#..` link changes the url as expected but doesn't activates relevant tab.
-
-I'd like to keep it that simple and avoid introducing any global app state.
-
-I also do not like an idea of patching routing part of the site as in Gatsby it's kinda hidden in backstage and this might affect further development and maintenance.
-
-I also thought of listening to the location change event. This means that I need to unsubscribe event listener when user navigates away to a different page. And I didn't find an elegant way to handle this (I do not use classy components with `ComponentWillUnmount` method).
-
-Will appreciate any ideas.
-## [10][Will React Hooks ever get a useSelector type update to use with context?](https://www.reddit.com/r/reactjs/comments/g2e06n/will_react_hooks_ever_get_a_useselector_type/)
-- url: https://www.reddit.com/r/reactjs/comments/g2e06n/will_react_hooks_ever_get_a_useselector_type/
+I want to make custom animations like the one the Deepmind website. I have no idea how to get started with animation. Can anyone here share some pointers.
+## [10][How I built a remote-first consultancy company while having a full time job as a developer (Generating ~ € 100.000 a year) | Assim's Blog](https://www.reddit.com/r/reactjs/comments/g318md/how_i_built_a_remotefirst_consultancy_company/)
+- url: https://www.assim.me/how-I-built-a-remote-first-consultancy-company-while-having-a-full-time-job-as-a-developer/
 ---
-Does anyone know if react hooks will eventually get an implementation that works like useSelector in redux? I feel that's the only thing really missing that's needed to become a proper redux alternative
-## [11][Update multiple components based on action in child component](https://www.reddit.com/r/reactjs/comments/g2dnbi/update_multiple_components_based_on_action_in/)
-- url: https://www.reddit.com/r/reactjs/comments/g2dnbi/update_multiple_components_based_on_action_in/
+
+## [11][Help creating a 'NotificationBadge' component](https://www.reddit.com/r/reactjs/comments/g30sg3/help_creating_a_notificationbadge_component/)
+- url: https://www.reddit.com/r/reactjs/comments/g30sg3/help_creating_a_notificationbadge_component/
 ---
-I am currently in a situation where I need to update multiple parent components based on a button submit that happens in a child component.
+As the title suggests, I've been trying to create a component which serves as a wrapper around its children, and will render a badge in the top right corner of its top-level child.
 
-The situation is as follows:
+The component so far, and an [example of what I'm trying to achieve](https://www.smartlauncher.net/wp-content/uploads/2017/06/rect4559.png):
 
-[imgur.com/a/72L0ReM](https://imgur.com/a/72L0ReM)
+    export interface IndicatorProps {
+        text?: string;
+        children: React.ReactNode;
+        containerClassName?: string;
+        indicatorClassName?: string;
+        indicatorStyle?: React.CSSProperties;
+    }
+    
+    export const Indicator = (props: IndicatorProps) =&gt; {
+        const { children, indicatorClassName, indicatorStyle, containerClassName, text } = props;
+        const containerClass = classnames("relative", containerClassName);
+        const indicatorClass = classnames("indicator z-10 absolute", indicatorClassName);
+    
+        return (
+            &lt;div className={containerClass}&gt;
+                {children}
+                &lt;i style={indicatorStyle} className={indicatorClass}&gt;
+                    {text}
+                &lt;/i&gt;
+            &lt;/div&gt;
+        );
+    };        
 
-Now for point 1 I could pass the handleRefetch option through all the components until it reaches the Section component. And could do the same for point 2 which should ultimately trigger the refetch in the List component. But it feels like it’s kinda getting out of control.
 
-One thing to note is that a similar situation will occur in the application for other sections as well.
+Style:
 
-What I was thinking of was either create a separate [context](https://reactjs.org/docs/context.html) component which handles the data fetching for both. Or go for [RXJS](https://rxjs-dev.firebaseapp.com/guide/overview) which has observables.
+    .indicator {
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        color: white;
+        font-size: 10px;
+        line-height: 1rem;
+        height: 1rem;
+        width: 1rem;
+        top: -20%;
+        right: -20%;
+        text-align: center;
+    }
 
-Any recommendations?
-## [12][Forwarding requests to external sources - sanity check](https://www.reddit.com/r/reactjs/comments/g2apyu/forwarding_requests_to_external_sources_sanity/)
-- url: https://www.reddit.com/r/reactjs/comments/g2apyu/forwarding_requests_to_external_sources_sanity/
+The code so far is a bit misleading, but it's as far as I've gotten in trying to achieve my goal component.
+
+Ideally I'd like to be able to do as follows: `&lt;Indicator someProps={...}&gt;&lt;div&gt;I have a notification badge in my top-right corner&lt;/div&gt;&lt;/Indicator&gt;`
+
+Unfortunately as it stands my current code breaks when the child div is absolutely positioned, and requires that I pass any of the classnames/styling to the child div to the Indicator instead.
+
+If what I've written isn't very coherent or requires further explaining, please let me know I understand that I've gone on a bit of a ramble here.
+
+Thank you for any help you can give me.
+## [12][need help building this phonebook app and i am new to react. acn someone help to prevent adding duplicate names in this phonebook app](https://www.reddit.com/r/reactjs/comments/g2xu8j/need_help_building_this_phonebook_app_and_i_am/)
+- url: https://www.reddit.com/r/reactjs/comments/g2xu8j/need_help_building_this_phonebook_app_and_i_am/
 ---
-Hello there,
-
-I have a ReactJS application being served from an ExpressJS server and CRA scripts. Part of the application is to parse an RSS feed, however when I try to request the feed I get:
-
-```
-Access to XMLHttpRequest at X from origin Y has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-```
-
-After searching for it, I found out that in order to solve it I need to set up a proxy. So I created an endpoint in the server (eg. `/feed`) using `express-http-proxy` library to proxy the requests and append `Access-Control-Allow-Origin` in the response.
-
-My code looks like:
-
-```js
-app.get('/feed', proxy(function(req, res){
-    return getHostname(req.headers['feed-url']);
-},
-{
-            proxyReqPathResolver: function(req){
-                return getPath(req.headers['feed-url']);
-            },
-            userResDecorator: (proxyRes, proxyResData, userReq, userRes) =&gt; {
-                proxyRes.set('Access-Control-Allow-Origin', '*');
-                data = JSON.parse(proxyResData.toString('utf8'));
-                return JSON.stringify(data);
-            }
+    import React, { useState } from 'react'
+    import PhoneBook from './PhoneBook'
+    
+    const App = () =&gt; {
+      const [ persons, setPersons] = useState([
+        { name: 'Arto Hellas' },
+        {name:'keyur'}
+      ]) 
+      const [ newName, setNewName ] = useState('')
+    
+    
+      const addPerson =(event)=&gt;{
+        event.preventDefault()
+       
+        const personObject={
+          name :newName
         }
-));
-
-```
-When I query the server from the React application using `axios`, I still get the error message.
-
-```javascript
-axios.get('/feed', postConfig).then(r =&gt; {
-
-// parse data etc.
-
-});
-
-```
-
-- Is there something very visible that I am doing wrong?
-
-- I also tried adding `app.use(cors())` but didn't work
-
-- The library I am using (`express-http-proxy`) does not look very much maintained. Do you have an alternative to propose?
-
-
-Thank you in advance
+        setPersons(persons.concat(personObject))
+        setNewName('')
+      }
+        
+    
+      const handleOnChange=(event)=&gt;{
+        console.log(event.target.value)
+        setNewName(event.target.value)
+    
+      }
+    
+      return (
+        &lt;div&gt;
+          &lt;h2&gt;Phonebook&lt;/h2&gt;
+          &lt;form onSubmit={addPerson}  &gt;
+            &lt;div&gt;
+              name: &lt;input value={newName} onChange={handleOnChange}/&gt;     
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;button type="submit"&gt;add&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+          &lt;h2&gt;Numbers&lt;/h2&gt;
+          {persons.map(person =&gt; &lt;PhoneBook key={person.name} person={person} /&gt;)}
+          
+        &lt;/div&gt;
+      )
+    }
+    
+    export default App

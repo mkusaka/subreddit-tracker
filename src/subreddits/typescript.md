@@ -22,105 +22,118 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][A generic middleware pattern in Typescript](https://www.reddit.com/r/typescript/comments/g1wzl6/a_generic_middleware_pattern_in_typescript/)
+## [2][A friend sent me this comic. Had to add it to the internal TypeScript guide I wrote for the team](https://www.reddit.com/r/typescript/comments/g2ve22/a_friend_sent_me_this_comic_had_to_add_it_to_the/)
+- url: https://i.imgur.com/YMo4iC0.jpg
+---
+
+## [3][Strategies for migrating to TypeScript](https://www.reddit.com/r/typescript/comments/g31q57/strategies_for_migrating_to_typescript/)
+- url: https://2ality.com/2020/04/migrating-to-typescript.html
+---
+
+## [4][Best approach to share a module with types definition between personal projects](https://www.reddit.com/r/typescript/comments/g2yiua/best_approach_to_share_a_module_with_types/)
+- url: https://www.reddit.com/r/typescript/comments/g2yiua/best_approach_to_share_a_module_with_types/
+---
+Hello to everyone :)  
+I've started a personal project a few months ago that consisted in a simple Angular app and a few cloud functions on Firebase.
+
+Time has passed and now I'm struggling to keep all my type definitions synced between projects. 
+
+Is there any best practice to share type definitions between projects without publish any package on npm?
+## [5][Is there a more idiomatic way to do this in TypeScript?](https://www.reddit.com/r/typescript/comments/g2uro9/is_there_a_more_idiomatic_way_to_do_this_in/)
+- url: https://www.reddit.com/r/typescript/comments/g2uro9/is_there_a_more_idiomatic_way_to_do_this_in/
+---
+Hi y'all, I was recently reading the wikipedia page on [Tagged Unions](https://en.wikipedia.org/wiki/Tagged_union), and under the TS example it showed this block of code as an example:
+
+    type Tree = {
+        type:
+        | ["node", {
+            left: Tree,
+            right: Tree
+        }]
+        | ["leaf", {
+            value: string
+        }]
+    }
+
+    function visit(t: Tree) {
+        switch (t.type[0]) {
+            case "leaf": {
+                const s = t.type[1]
+                console.log(s.value)
+                break
+            }
+            case "node": {
+                const s = t.type[1]
+                visit(s.left)
+                visit(s.right)
+                break
+            }
+            default:
+                assertUnreachable(t.type[0])
+        }
+    }
+Is this really the idimotic to define/visit a tree or is there a better way? It looks especially clunky especially since TS has the ability to differentiate types and do exhaustivness checking.
+## [6][Introducing List Comprehension for TypeScript](https://www.reddit.com/r/typescript/comments/g2mnqp/introducing_list_comprehension_for_typescript/)
+- url: https://medium.com/@wim.jongeneel1/introducing-list-comprehension-for-typescript-6204d9b1003e?source=friends_link&amp;sk=09d35f8af4313c7dafde2c8131391a9d
+---
+
+## [7][Why is redux's combine reducer complaining about method overload when using typescript and react-redux-firebase?](https://www.reddit.com/r/typescript/comments/g2yr2q/why_is_reduxs_combine_reducer_complaining_about/)
+- url: https://www.reddit.com/r/typescript/comments/g2yr2q/why_is_reduxs_combine_reducer_complaining_about/
+---
+**The problem**
+
+I have a basic project with just a minimal boilerplate, because I wanted to try out `react-redux-firebase`. So I set everything up according to the typescript example from here: https://github.com/prescottprue/react-redux-firebase/tree/master/examples/complete/typescript
+
+But this part:
+
+    const rootReducer = combineReducers&lt;RootState&gt;({
+      firebase: firebaseReducer,
+      firestore: firestoreReducer
+    });
+
+Is complaining:
+
+    &gt; firestore: Reducer&lt;FirestoreReducer.Reducer, any&gt; No overload matches
+    &gt; this call. Overload 1 of 3,
+
+I made a minimal codesandbox demo to reproduce the problem:
+
+https://codesandbox.io/s/great-perlman-p6g7p?file=/src/store/index.ts
+
+You can see the error on line `54` altough the app is running just fine. On my local client it won't render, I just see the error in the browser (overload...). 
+
+What am I doing wrong here? It has to be something about typescript, I'm a real beginner when it comes to typescript.
+## [8][Made this earlier today and thought it was a pretty cool pattern: Implicitly type the second item of a tuple (action payload) based off the first item of a tuple (action type)](https://www.reddit.com/r/typescript/comments/g2sgtj/made_this_earlier_today_and_thought_it_was_a/)
+- url: https://gist.github.com/tvler/ccbb3136b0d8c6c48ca53d98382dcb05
+---
+
+## [9][How to override node module type declaration](https://www.reddit.com/r/typescript/comments/g2gr9k/how_to_override_node_module_type_declaration/)
+- url: https://www.reddit.com/r/typescript/comments/g2gr9k/how_to_override_node_module_type_declaration/
+---
+Trying to override express.js Request.query type. Have this setup where I can add a type for new attribute, but cant override existing one.
+
+    declare namespace Express { 
+        export interface Request {         
+            attr1: string, // this is working         
+            query: any      // this is not working, query is still type of Query 
+        } 
+    }
+
+ts.config
+
+    "typeRoots" : [
+         "./src/types",
+         "node_modules/@types"        
+    ]
+
+Am I doing something wrong or is there a different approach?
+## [10][A generic middleware pattern in Typescript](https://www.reddit.com/r/typescript/comments/g1wzl6/a_generic_middleware_pattern_in_typescript/)
 - url: https://evertpot.com/generic-middleware/
 ---
 
-## [3][GitHub Action: Typescript compile failsafe](https://www.reddit.com/r/typescript/comments/g26o6y/github_action_typescript_compile_failsafe/)
+## [11][GitHub Action: Typescript compile failsafe](https://www.reddit.com/r/typescript/comments/g26o6y/github_action_typescript_compile_failsafe/)
 - url: https://www.reddit.com/r/typescript/comments/g26o6y/github_action_typescript_compile_failsafe/
 ---
 I got annoyed that I kept forgetting to compile my TS before pushing. So I made a GitHub action to compile it for me and make another commit if I ever forget to compile it. I'm posting a link to the action here if you guys ever need that failsafe in the background for anything.
 
 https://github.com/marketplace/actions/typescript-tsc-build-push
-## [4][Is there a way to convert dynamic array to static type assertion?](https://www.reddit.com/r/typescript/comments/g1txjl/is_there_a_way_to_convert_dynamic_array_to_static/)
-- url: https://www.reddit.com/r/typescript/comments/g1txjl/is_there_a_way_to_convert_dynamic_array_to_static/
----
-is there a way to dynamically generate a const assertion in typescript ?
-
-I know you can create a `readonlyArray` assertion based on a staticly typed array, eg.
-
-     const staticTyped = [1, 2, 3] as const // readonly [1, 2, 3]
-     type TypeStatic = typeof staticTyped[number] // 1 | 2 | 3
-    
-
-Now that works as expected and elegantly. However, I need to create a large readonly array that's generated dynamically.
-
-    const generateNumRange = (from: number, to: number): number[] =&gt; {
-      const arr = []
-      for (let i = from; i &lt;= to; i++) {
-         arr.push(i)
-      }
-      return arr
-    }
-    
-    const dynamicTyped = [...generateNumRange(0, 255)] as const // readonly number[]
-    type TypeDynamic = typeof dynamicTyped[number] // number (oof)
-
-Now I do understand where the issue lies, however I can't think of a way, that would allow me to return the `dyanmicTyped` as `[0, 1, 2, ..., 255]` rather than `number[]`.
-
-Is there any way to do this / perhaps even more elegant solution to the problem altogether?
-## [5][Intro to Game development with Typescript and PixieJS](https://www.reddit.com/r/typescript/comments/g1j93n/intro_to_game_development_with_typescript_and/)
-- url: https://nosleepjavascript.com/intro-to-gamedev/
----
-
-## [6][Hook into TSC to perform a check at compile time?](https://www.reddit.com/r/typescript/comments/g1z4bj/hook_into_tsc_to_perform_a_check_at_compile_time/)
-- url: https://www.reddit.com/r/typescript/comments/g1z4bj/hook_into_tsc_to_perform_a_check_at_compile_time/
----
-I have some strings that form a query in my project, and I can check those strings for validity at run-time when they're being used.
-
-It would be nice to catch any errors in the query strings at compile time. Is there a way I can hook into the compiler so that something I write is run when I execute `tsc`? If I can emit errors along with line information that would be helpful.
-
-If anyone has any resources on creating something like this that would be awesome.
-## [7][Due to Covid, my company have asked me to learn Angular/Typescript. Any thoughts on where to start would be much appreciated.](https://www.reddit.com/r/typescript/comments/g20u5m/due_to_covid_my_company_have_asked_me_to_learn/)
-- url: https://www.reddit.com/r/typescript/comments/g20u5m/due_to_covid_my_company_have_asked_me_to_learn/
----
-
-## [8][Opinions on strongly typed Reflect.getMetadata or better practices](https://www.reddit.com/r/typescript/comments/g1rlcf/opinions_on_strongly_typed_reflectgetmetadata_or/)
-- url: https://www.reddit.com/r/typescript/comments/g1rlcf/opinions_on_strongly_typed_reflectgetmetadata_or/
----
-Hi everyone, I'm playing a bit with `reflect-metatada` but something that's annoying me a lot is all the `any's` that are in the type definitions. For example:
-
-    const value = Reflect.getMetadata('key', Object)
-
-How do we know `key` is a valid metadata key? And `value` would be any, what if it could be also `undefined`?
-
-I'm not saying that TypeScript should be automatically able to infer which `keys` and `values` are valid metadata in `Object` (even tho that'd be great) but at least, I think we should be able to do something like:
-
-    interface UserMetadata {
-      name: string;
-      age: number;
-    }
-    
-    const name = Reflect.getMetadata&lt;UserMetadata&gt;('name', Object);  // name is recognized as a valid key and is a string
-    const age = Reflect.getMetadata&lt;UserMetadata&gt;('age', Object);  // age is recognized as a valid key an is a number
-    const firstName = Reflect.getMetadata&lt;UserMetadata&gt;('firstName', Object);  // It complains because firstName is not a a valid key
-
-Or am I missing something and this is possible? So far, I tried to improve the default typings for `getMetadata` but even tho I got the `key` validation part right, it's still returning `any`.
-
-    function getMetadata&lt;T, K extends keyof T = keyof T&gt;(metadataKey: K, target: Object): T[K];
-
-What do you think?
-## [9][I created Cantara - A CLI tool to create (Serverless) Fullstack React apps with TypeScript](https://www.reddit.com/r/typescript/comments/g1p4m6/i_created_cantara_a_cli_tool_to_create_serverless/)
-- url: https://dev.to/scriptify/cantara-a-cli-tool-to-create-serverless-fullstack-react-apps-in-minutes-23g
----
-
-## [10][People who import their (global) types, where do you put them?](https://www.reddit.com/r/typescript/comments/g165mn/people_who_import_their_global_types_where_do_you/)
-- url: https://www.reddit.com/r/typescript/comments/g165mn/people_who_import_their_global_types_where_do_you/
----
-Having not felt like I've settled on an approach I like yet, I'm curious how other people organize their projects in regard to their type definitions.
-
-Edit: by 'global' I meant more like 'common' or 'shared' or whatever. Bad Ben, Bad!
-## [11][Conditional types change behaviour if under type alias](https://www.reddit.com/r/typescript/comments/g14n1c/conditional_types_change_behaviour_if_under_type/)
-- url: https://www.reddit.com/r/typescript/comments/g14n1c/conditional_types_change_behaviour_if_under_type/
----
-I recently wanted to make sure that an array of strings contained all the strings of a string union.
-
-I found a simple way, but when attempting to generalize the pattern, I came across some behaviour I cannot explain. Perhaps someone has an idea? (disclaimer: I may be missing something obvious)
-
-&amp;#x200B;
-
-    type UnionEquality&lt;A, B&gt; = A extends B ? (B extends A ? true : never) : never;
-    type Foo = UnionEquality&lt;"foo" | "bar", "foo"&gt;; // true
-    type Foo2 = "foo" extends "foo" | "bar" ? ("foo" | "bar" extends "foo" ? true : never) : never; // never
-
-I'd expect \`Foo\` and \`Foo2\` to evaluate to the same type (`never`), since one is just an expansion of the other.

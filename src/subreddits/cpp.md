@@ -119,23 +119,107 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][ReSharper C++ 2020.1: New C++20 Features, Rearrange Code, HLSL Support, Enum Refactorings, and More](https://www.reddit.com/r/cpp/comments/g2yw74/resharper_c_20201_new_c20_features_rearrange_code/)
+## [3][I wrote a lightweight Web Socket library for Qt5. Unlike QWebSocket, I feel this is easier to use with existing code (offers a class that inherits QTcpSocket).](https://www.reddit.com/r/cpp/comments/g3jwu3/i_wrote_a_lightweight_web_socket_library_for_qt5/)
+- url: https://github.com/cculianu/WebSocket
+---
+
+## [4][Preview of my second library, ESeed Window, window management library currently supporting Win32 and Vulkan, more to come](https://www.reddit.com/r/cpp/comments/g3iae9/preview_of_my_second_library_eseed_window_window/)
+- url: https://www.reddit.com/r/cpp/comments/g3iae9/preview_of_my_second_library_eseed_window_window/
+---
+Good day reddit folks! I hope everyone is safe! Not too long ago I posted my first library [ESeed Math](https://www.reddit.com/r/cpp/comments/fpum4g/eseed_math_my_first_c_library/)  on r/cpp, which got a greater response than I expected for such a small project! I was quite happy.
+
+In any case, my second library [ESeed Window (GitHub)](https://github.com/elijaharita/eseed-window) has been in the works since then, and is finally in a functioning state! It's a C++ window management library designed for uniform cross-platform use with a variety of rendering APIs. The first supported API is Vulkan, as the platform-specific code is pretty simple. Thanks Vulkan! =) The first platform is Win32.
+
+Why did I make a window library when we have GLFW and SDL? And SFML? And Qt? You know, that's a good question. I only have 1 and a half brain cells and I make myself do everything from scratch! In any case, although each of these libraries will accomplish the job they're designed for, I'm not quite happy with any of them. GLFW's Vulkan support is a lil hacky, and GLFW and SDL are both written in C, which does awkwardly stand out in C++ code. On the other side of the spectrum, SFML and Qt are much larger libraries. I just wanted a simple light weight C++ window library. If there is a library out there that's like what I'm looking for, that I just happened not to find... well, haha. hahahaha :')))))
+
+A small list of supported features --
+
+* Platform-agnostic window construction
+* No nasty windows.h in the library's header files! yay!
+* Title management
+* Keyboard and mouse input (getters and callbacks)
+* Cursor control
+* Position and size management
+* Fullscreen
+* Unicode support
+* Platform-agnostic Vulkan surface creation
+* Event polling and waiting
+
+Here is a code example to run a minimal window --
+
+    #include &lt;eseed/window/window.hpp&gt;
+    
+    int main() {
+        esd::wnd::Window window("Window!", { 1366, 768 });
+        while (!window.isCloseRequested()) {
+            window.waitEvents();
+        }
+    }
+
+Creating a Vulkan surface is also very simple!
+
+    #include &lt;vulkan/vulkan.hpp&gt;
+    #include &lt;eseed/window/vulkanwindow.hpp&gt;
+    
+    int main() {
+        esd::wnd::VulkanWindow window("Vulkan Window!" { 1366, 768 });
+        
+        // Get required instance extensions for surface creation
+        std::vector&lt;const char*&gt; extensions = 
+            window.getRequiredSurfaceInstanceExtensions();
+        
+        vk::InstanceCreateInfo instanceCreateInfo;
+        ...
+        instanceCreateInfo.setEnabledExtensionCount((uint32_t)extensions.size());
+        instanceCreateInfo.setPpEnabledExtensions(extensions.data());
+        ...
+        vk::Instance instance = vk::createInstance(instanceCreateInfo);
+    
+        // C VkSurfaceKHR is also supported, if you're into that kinda stuff : )
+        vk::SurfaceKHR surface = window.createSurface(instance);
+    
+        ...
+    
+        while (!window.isCloseRequested()) {
+    
+            ...
+          
+            window.poll();
+        }
+    
+        ...
+    }
+
+So, this is just a preview release. While I see no reason that it couldn't used in production code, it will currently only run on Windows. However, I'd like to change that! Adding additional platforms like MacOS and Wayland is going to be a lot of work for me, and I'm willing to do it. However, if anybody else finds this concept interesting, and would like to collaborate on adding additional platforms, let me know! If this library can make it to a more developed state, I'm sure there'll be plenty of people to benefit from it.
+
+I am 17. I don't have much experience with writing open source libraries. I've done my best to create a useful piece of technology, but of course, for a large project such as this, assistance is very much appreciated &lt;3 Whatever the result, I'm proud of starting to be able to stay focused on a project without giving up. Everyone, thanks for reading, and enjoy your day!
+
+More details are available on the [GitHub page](https://github.com/elijaharita/eseed-window)
+## [5][ReSharper C++ 2020.1: New C++20 Features, Rearrange Code, HLSL Support, Enum Refactorings, and More](https://www.reddit.com/r/cpp/comments/g2yw74/resharper_c_20201_new_c20_features_rearrange_code/)
 - url: https://blog.jetbrains.com/rscpp/resharper-cpp-2020-1/
 ---
 
-## [4][Sign Up For Pure Virtual C++ Conference 2020](https://www.reddit.com/r/cpp/comments/g2q4hh/sign_up_for_pure_virtual_c_conference_2020/)
-- url: https://devblogs.microsoft.com/cppblog/sign-up-for-pure-virtual-c-conference-2020/
+## [6][GTC 2020: CUDA C++ in Jupyter: Adding CUDA Runtime Support to Cling](https://www.reddit.com/r/cpp/comments/g3l8fl/gtc_2020_cuda_c_in_jupyter_adding_cuda_runtime/)
+- url: https://developer.nvidia.com/gtc/2020/video/s21588
 ---
 
-## [5][CppCast: Rosetta](https://www.reddit.com/r/cpp/comments/g30tp1/cppcast_rosetta/)
+## [7][xmake-gradle v1.0.7 released, Integrate xmake to quickly build Android C++/JNI program](https://www.reddit.com/r/cpp/comments/g3hn4d/xmakegradle_v107_released_integrate_xmake_to/)
+- url: https://tboox.org/2020/04/17/xmake-gradle-v1.0.7/
+---
+
+## [8][CppCast: Rosetta](https://www.reddit.com/r/cpp/comments/g30tp1/cppcast_rosetta/)
 - url: https://cppcast.com/rosetta-andrew-jack/
 ---
 
-## [6][MSVC Backend Updates in Visual Studio 2019 Version 16.5](https://www.reddit.com/r/cpp/comments/g2snnt/msvc_backend_updates_in_visual_studio_2019/)
+## [9][Sign Up For Pure Virtual C++ Conference 2020](https://www.reddit.com/r/cpp/comments/g2q4hh/sign_up_for_pure_virtual_c_conference_2020/)
+- url: https://devblogs.microsoft.com/cppblog/sign-up-for-pure-virtual-c-conference-2020/
+---
+
+## [10][MSVC Backend Updates in Visual Studio 2019 Version 16.5](https://www.reddit.com/r/cpp/comments/g2snnt/msvc_backend_updates_in_visual_studio_2019/)
 - url: https://devblogs.microsoft.com/cppblog/msvc-backend-updates-in-visual-studio-2019-version-16-5/
 ---
 
-## [7][Microsoft GSL v3.0.0 Released Today](https://www.reddit.com/r/cpp/comments/g2kht8/microsoft_gsl_v300_released_today/)
+## [11][Microsoft GSL v3.0.0 Released Today](https://www.reddit.com/r/cpp/comments/g2kht8/microsoft_gsl_v300_released_today/)
 - url: https://www.reddit.com/r/cpp/comments/g2kht8/microsoft_gsl_v300_released_today/
 ---
 Microsoft GSL v3.0.0 has been released today. 
@@ -152,42 +236,7 @@ See the blog and release for more information, links below:
 [C++ Team Blog Post](https://devblogs.microsoft.com/cppblog/gsl-3-0-0-release/) 
 
 [Microsoft/GSL Github Releases page](https://github.com/microsoft/GSL/releases/tag/v3.0.0)
-## [8][Advanced Apply, metaprogramming experiment](https://www.reddit.com/r/cpp/comments/g2r411/advanced_apply_metaprogramming_experiment/)
-- url: https://www.reddit.com/r/cpp/comments/g2r411/advanced_apply_metaprogramming_experiment/
----
-Got an idea for a different and more ergonomic variation of the apply function where you query the types with the lamda parameters, don't know if this has been done before. Would like to know what you think and if there's anything I can improve upon.
-
-Where the tuples has a multiple of the same type the apply function gets the first occurence, if theres another lambda paramter with the same type it gets the second occurence in the tuple.
-
-    
-    auto x = std::make_tuple(1, 2, 3, 4, 5, 6, 7, 8.0, 9, 10, 11, 33, 13, 14, 15.f, 16, 17, 18, 2);
-    
-    std::cout &lt;&lt; adv::apply(x, [](float a, double b, int c, int d) {
-    
-    	std::cout &lt;&lt; a &lt;&lt; std::endl;
-    	std::cout &lt;&lt; b &lt;&lt; std::endl;
-    	std::cout &lt;&lt; c &lt;&lt; std::endl;
-    	std::cout &lt;&lt; d &lt;&lt; std::endl;
-    
-    	return d;
-    }
-
-    // Output: 15.0, 8.0, 1, 2, 2
-
-https://ideone.com/hJgGhy
-## [9][Named arguments in fmt do not require dynamic allocations anymore.](https://www.reddit.com/r/cpp/comments/g2asdu/named_arguments_in_fmt_do_not_require_dynamic/)
-- url: https://twitter.com/vzverovich/status/1250411654568800258?s=21
----
-
-## [10][Is Template Metaprogramming maintainable?](https://www.reddit.com/r/cpp/comments/g2oxzq/is_template_metaprogramming_maintainable/)
-- url: https://www.reddit.com/r/cpp/comments/g2oxzq/is_template_metaprogramming_maintainable/
----
-I feel like to implement this in our codebase we have to build up a whole type structure just to then be able to use template metaprogramming. Granted it does seem to reduce the number of lines of code, but is it really worth it?
-## [11][Should move assignment implementation allow for x = move(x)?](https://www.reddit.com/r/cpp/comments/g2wrtj/should_move_assignment_implementation_allow_for_x/)
+## [12][Should move assignment implementation allow for x = move(x)?](https://www.reddit.com/r/cpp/comments/g2wrtj/should_move_assignment_implementation_allow_for_x/)
 - url: https://www.reddit.com/r/cpp/comments/g2wrtj/should_move_assignment_implementation_allow_for_x/
 ---
 At a class in college the professor said that the mentioned usage should work (and by work I mean it should have no effect, noop). But often to support that I needed to wrap the usual logic in an if that checks if they have the same address, which seems wasteful to me. What are some of the non-trivial pitfalls if I choose to not support `x = move(x)`? Does anything in the STL depend on it?
-## [12][C++ Compile Health: Comparison of various headers on build times](https://www.reddit.com/r/cpp/comments/g2acf3/c_compile_health_comparison_of_various_headers_on/)
-- url: https://artificial-mind.net/projects/compile-health/
----
-

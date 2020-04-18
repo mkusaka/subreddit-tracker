@@ -1,45 +1,124 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/foqc07/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/foqc07/personal_projects_show_off_your_own_project_andor/
+## [1][Has anyone ever had extremely high response times on the ActionCable endpoint?](https://www.reddit.com/r/rails/comments/g3hq8q/has_anyone_ever_had_extremely_high_response_times/)
+- url: https://www.reddit.com/r/rails/comments/g3hq8q/has_anyone_ever_had_extremely_high_response_times/
 ---
-In this thread you can showcase your personal pet project to other redditors.
+On localhost, inspector's network tab either shows these /cable requests with *absurd* times:
 
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+https://preview.redd.it/q1vjzezt8it41.png?width=2704&amp;format=png&amp;auto=webp&amp;s=08bd5f10b2737ead8ef6cb0af3c9ada16b3d3f69
 
-A suggested format to get you started:
+...or it gives me this nanoscale domino stack of pending requests:
 
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
+https://preview.redd.it/skp07rw39it41.png?width=2718&amp;format=png&amp;auto=webp&amp;s=4c001441853c3c680129f8f1ffeca02148f57ab8
 
- 
+I have a similar problem with Heroku. I'll be the only user on the site, I'll be doing *nothing*, and the logentries addon will bombard my email with consecutive High Response Time Alerts:
 
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/fx6je4/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/fx6je4/personal_projects_show_off_your_own_project_andor/
+    25 Dec 2019 14:13:31.061299 &lt;158&gt;1 2019-12-25T22:13:28.421009+00:00 heroku router - - at=info method=GET path="/cable" host=www.######.com request_id=#### fwd="####" dyno=web.1 connect=1ms service=531114ms status=101 bytes=174 protocol=https High Response Time
+
+I'm using Ruby version 2.5.0, Rails version 5.2.0, and Puma version: 4.3.1. I've tried both Iodine and AnyCable, and neither fixes this problem. Leading me to believe that the problem is elsewhere. But my ActionCable setup is very standard - an almost exact copy+paste of the setups suggested in docs and tutorials everywhere.
+
+I've found a very small handful of people experiencing a similar issue, but none of them have had any luck. So I'm trying here. Have you experienced this, and did you fix it? If so - how? If not - what could possibly be causing this? Thank you so much!
+## [2][Webpack on aws Cloud9](https://www.reddit.com/r/rails/comments/g3fw6w/webpack_on_aws_cloud9/)
+- url: https://www.reddit.com/r/rails/comments/g3fw6w/webpack_on_aws_cloud9/
 ---
-In this thread you can showcase your personal pet project to other redditors.
+I thought i installed webpack properly in my app but im missing folders and files in my file tree.
 
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+I am missing the webpack folder that is suppose to be under the config folder.
 
-A suggested format to get you started:
+Its suppose to look like this I believe:
 
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
+&amp;#x200B;
 
- 
+[This is not what my file tree looks like](https://preview.redd.it/hlydr97emht41.png?width=193&amp;format=png&amp;auto=webp&amp;s=a9c242ea6756c29f142c1a91ca6cacf77317b25d)
 
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Need some help with getting started](https://www.reddit.com/r/rails/comments/g2y98l/need_some_help_with_getting_started/)
+I'm using aws cloud9 environment.
+
+I followed the instructions here:  [https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/webpack.html](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/webpack.html) 
+
+How do I get webpack to integrate/work properly with aws cloud9?
+
+Ive installed nod.js and nvm.
+
+Thanks
+## [3][Questions about scaling workers with customers](https://www.reddit.com/r/rails/comments/g3dquq/questions_about_scaling_workers_with_customers/)
+- url: https://www.reddit.com/r/rails/comments/g3dquq/questions_about_scaling_workers_with_customers/
+---
+Hi guys,
+
+Need some advice about scaling the use of workers with my rails app. Right now, for each customer that kicks off a task, it creates about 20 workers for that one particular task, and each of those workers can take approximately 10-15 minutes to run. However, I feel like this may become a problem as the list of customers grow and may not be the best practice for growth.
+
+I have two queues at the moment as well -- developer, and production -- and the purpose is just so that I can manage sidekiq workers in both production and developer independently without any confusion.
+
+Is this something that should be OK as it grows to, say, 500 workers running simultaneously? In my credentials file I do have the pool set to 200 for now, but wasn't sure how much higher I could raise it without having issues unless it just really depends on system resources.
+
+I should also make it known that I am not a professional by any means and have just used rails in the last few years to get by.
+
+Any help or advice would be greatly appreciated
+## [4][How to setup PostgreSQL database with models and controllers](https://www.reddit.com/r/rails/comments/g3gybz/how_to_setup_postgresql_database_with_models_and/)
+- url: https://www.reddit.com/r/rails/comments/g3gybz/how_to_setup_postgresql_database_with_models_and/
+---
+I am rather new to Rails but I have gone through the tutorial on their website. I want to make something similar to PCPartPicker. I have gone ahead an planned out my structure for the tables in the database. They go something like this:
+
+    build
+      id title
+      1  My dream desktop
+    
+    build_component
+      build_id component_id count
+      1        1            1   (1 ryzen9 cpu)
+      1        2            2   (2 hyper-x 8G memory sticks)
+      
+    
+    component
+      id   type_id  name           price   (all components have name and a price)
+       1   1            Ryzen 9 3900X  400
+       2   2            Hyper-X DDR4   89
+       
+    component_attribute
+      component_id attribute_id value
+      1            2            3900
+      1            4            AM4
+      2            1            8000
+      2            2            3000
+           
+    
+    component_type 
+      id      name
+       1      CPU
+       2      Memory Stick
+       3      Motherboard
+       4      Storage
+    
+    type_attribute (not strictly necessary, but would make creating forms and list easier)
+      id_type  id_attribute
+      1            2
+      1            4  (cpu has speed, socket type)
+      2            1
+      2            2
+      2            5 (memory has speed, size and memory_type)
+       
+    attribute
+      id      name
+      1       size_mbytes
+      2       speed_mhz
+      4       cpu_socket
+      5       memory_type
+
+So each of those are an individual table. Now for the question. In the example provide by the website. One would create a model for each table and then that model was assigned or worked with a controller. In this case, if I want to have something similar to the articles example where my parts are just listed out, would I make multiple models and all assign them to the same controller? 
+
+My second question is: Would I create these tables in PostgreSQL and then just use Rails to read and write to them or would I create just an empty database and use Rails to add all the tables?
+## [5][Eager Loads + Calculations (.pluck, .sum, etc) gotcha that we just ran into.](https://www.reddit.com/r/rails/comments/g338xm/eager_loads_calculations_pluck_sum_etc_gotcha/)
+- url: https://www.reddit.com/r/rails/comments/g338xm/eager_loads_calculations_pluck_sum_etc_gotcha/
+---
+If you eager-load a has\_many associations your .sum or .calculate or .pluck will return duplicate values.
+
+So:
+
+`@products.sum(:price) != @products.includes(:reviews).sum(:price)`
+
+Even this returns a wrong value:
+
+`@products.includes(:reviews).pluck(:price).sum # this will include duplicate price values`
+## [6][Need some help with getting started](https://www.reddit.com/r/rails/comments/g2y98l/need_some_help_with_getting_started/)
 - url: https://www.reddit.com/r/rails/comments/g2y98l/need_some_help_with_getting_started/
 ---
 Hey! I'm interested in getting into Ruby on Rails, and I'm wondering whether any of you might be able to point me in the direction of some good resources.
@@ -53,13 +132,13 @@ I was watching this free Udemy course, which looked perfect; [https://www.udemy.
 And I'd prefer to not spend heaps. I've looked at The Odin Project and the Essential RoR Training courses on Lynda but the RoR course seems far too theoretical. I want to get creating ASAP.
 
 Many thanks!
-## [4][You're not stubbing, stupid!](https://www.reddit.com/r/rails/comments/g2zi9v/youre_not_stubbing_stupid/)
+## [7][You're not stubbing, stupid!](https://www.reddit.com/r/rails/comments/g2zi9v/youre_not_stubbing_stupid/)
 - url: https://www.reddit.com/r/rails/comments/g2zi9v/youre_not_stubbing_stupid/
 ---
 Hi, I've been struggling with writing a passing cucumber that deletes a resource and shows a confirmation dialog to the user. The controller sends a request to an external API, so I stubbed this request. I finally found out what was going wrong and wrote this blog post about it. Hope it'll help some (some day).
 
 [https://www.theguild.nl/youre-not-stubbing-stupid/](https://www.theguild.nl/youre-not-stubbing-stupid/)
-## [5][Why is it not saving nested attributes?](https://www.reddit.com/r/rails/comments/g2r7z6/why_is_it_not_saving_nested_attributes/)
+## [8][Why is it not saving nested attributes?](https://www.reddit.com/r/rails/comments/g2r7z6/why_is_it_not_saving_nested_attributes/)
 - url: https://www.reddit.com/r/rails/comments/g2r7z6/why_is_it_not_saving_nested_attributes/
 ---
 I have created a model called lead and it `has_many text_field` and `text_field has_many text_value` , I have been testing it in the rails console with, `text.update(text_value: [value])`  and it saves!
@@ -87,11 +166,11 @@ but within the views it does not, please help.
 &amp;#x200B;
 
 [schema.rb \(highlighted red is text\_value and text\_field\)](https://preview.redd.it/cznrrv0kt9t41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=f4f01465109a77d3b4674f31ee6d5b7c37a7676a)
-## [6][The Ruby Blend: ViewComponent at GitHub with Joel Hawksley](https://www.reddit.com/r/rails/comments/g2gy1t/the_ruby_blend_viewcomponent_at_github_with_joel/)
+## [9][The Ruby Blend: ViewComponent at GitHub with Joel Hawksley](https://www.reddit.com/r/rails/comments/g2gy1t/the_ruby_blend_viewcomponent_at_github_with_joel/)
 - url: https://www.reddit.com/r/rails/comments/g2gy1t/the_ruby_blend_viewcomponent_at_github_with_joel/
 ---
 Joel Hawksley is the guest on today’s episode. He is a Software Engineer at GitHub and works on the design system team, leading development on ViewComponent, formerly known as ActionView::Component. Joel is a very encouraging, uplifting, and inviting guest who tells it like it is. Andrew even throws in a little “homework” for those of you listening! If you want to learn more about how GitHub is leveraging ViewComponent, [give this episode a listen!](https://fireside.fm/s/ouBAUjGy+8JZwBXVx)
-## [7][Rails 6 + docker-compose : simplest possible Hello World project™](https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/)
+## [10][Rails 6 + docker-compose : simplest possible Hello World project™](https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/)
 - url: https://www.reddit.com/r/rails/comments/g2c48p/rails_6_dockercompose_simplest_possible_hello/
 ---
 Hello mates, I spend some time to find the simplest possible configuration to start a Rails project using Docker.
@@ -105,75 +184,3 @@ With Ruby-on-Rails, you can't start a project without a properly initialized, co
 This kind of project is extremely useful to test various tools and versions without polluting your local machine. I find it also more professional to use Docker instead of brittle, quickly-too-old documentation. So it could be a starting point for a more serious configuration.
 
 What do you think ? What could be simplified ? Do you have more simple examples ? How do you test tools in isolation ? Thanks for your returns, and stay safe :)
-## [8][Rails consulting: running multiple versions of everything](https://www.reddit.com/r/rails/comments/g2j07y/rails_consulting_running_multiple_versions_of/)
-- url: https://www.reddit.com/r/rails/comments/g2j07y/rails_consulting_running_multiple_versions_of/
----
-I often need to run super old ruby/rails projects alongside new ones on my Mac.  Besides Docker is there a sane way to pull this off? I've noticed a ton of problems with running old + new ruby (things like ssl libs) and multiple versions of Postgres are a headache. But using docker with a non-docker team can also be a hassle. So just wondering what others are doing.
-## [9][How to get the correct time.](https://www.reddit.com/r/rails/comments/g2fu0i/how_to_get_the_correct_time/)
-- url: https://www.reddit.com/r/rails/comments/g2fu0i/how_to_get_the_correct_time/
----
-I have a column in my leads table called
-future_call_back_time, which is saved as time in the migration:
- t.time "future_call_back_time" 
-
-The problem I'm having is when I do:
-@leads.future_call_back_time.to_time
-
-It gives me the full date and time 🤔, what is the right method please?
-## [10][GraphQL: making an order management system, trying to add many to many](https://www.reddit.com/r/rails/comments/g2cfrk/graphql_making_an_order_management_system_trying/)
-- url: https://www.reddit.com/r/rails/comments/g2cfrk/graphql_making_an_order_management_system_trying/
----
-Edit: this has been solved, scroll down to see my solution
-
-Oh hi, it's me again! :)
-
-Still trying to do a GraphQL api with rails, but I've hit a snag. I am doing an order management system, and it's not going to be worth much unless I can add products to an order. I have set them up with a Product model and an Order model with a has\_and\_belongs\_to\_many relationship. ie. Product has\_many orders and Order has\_many products. that part seems to be working fine, I made a join table and as far as I can see it works.
-
-The problem arrises when I am using GraphQL. The documentation is hard to find once you move away from the most basic queries and mutations. alas, I am in the process for doing the CreateOrder mutation for my api, as I need to add products on creation, i.e whatever the user orders.
-
-&amp;#x200B;
-
-https://preview.redd.it/yyt09xqjo5t41.png?width=1240&amp;format=png&amp;auto=webp&amp;s=a12f18a5b1f13e8642952ba88aef2d7a04930caf
-
-first I had the ProductType for an argument, but I realized that's a non starter and found out I need to create an input type for it, so I did:
-
-&amp;#x200B;
-
-https://preview.redd.it/l4shn61uo5t41.png?width=1148&amp;format=png&amp;auto=webp&amp;s=65a980bee0b3c47d68aa12e49a7fb103592c0c87
-
-At this point this, I don't know if this is even the correct way of doing it, because I wasn't able to find a Ruby example online. Either way, GraphQL isn't complaining at least. So I try calling the mutation like so:
-
-&amp;#x200B;
-
-https://preview.redd.it/svajfnw6p5t41.png?width=438&amp;format=png&amp;auto=webp&amp;s=27b074ad895e58763f2c990ed948ca579dedb00b
-
-and it is at this point that everything falls apart as rails gives me the error:
-
-    Product(#375140) expected, got #&lt;Types::ProductInputType:0x00007fb1a791b8c8 u/context=#&lt;Query::Context ...&gt;, u/ruby_style_hash={:id=&gt;1}, u/arguments_by_keyword={:id=&gt;#&lt;Types::BaseArgument:0x00007fb1aa96ec00 u/name="id", u/type_expr=Integer, u/description=nil, u/null=false, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:id, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=#&lt;GraphQL::Schema::NonNull u/of_type=GraphQL::Types::Int&gt;&gt;, :name=&gt;#&lt;Types::BaseArgument:0x00007fb1aa96d3c8 u/name="name", u/type_expr=String, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:name, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::String&gt;, :organization_id=&gt;#&lt;Types::BaseArgument:0x00007fb1aa96c6f8 u/name="organizationId", u/type_expr=Integer, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:organization_id, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::Int&gt;, :description=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c734b8 u/name="description", u/type_expr=String, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:description, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::String&gt;, :inventory=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c72400 u/name="inventory", u/type_expr=Integer, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:inventory, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::Int&gt;, :images=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c712f8 u/name="images", u/type_expr=String, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:images, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::String&gt;, :price=&gt;#&lt;Types::BaseArgument:0x00007fb1a6c70128 u/name="price", u/type_expr=Float, u/description=nil, u/null=true, u/default_value=:__no_default__, u/owner=Types::ProductInputType, u/as=nil, u/loads=nil, u/keyword=:price, u/prepare=nil, u/ast_node=nil, u/from_resolver=false, u/method_access=true, u/type=GraphQL::Types::Float&gt;}&gt; which is an instance of Types::ProductInputType(#372160)
-
-&amp;#x200B;
-
-it would be nice if someone in this awesome community could give me a pointer in the right direction, either by telling me what's wrong here, or by sharing a tutorial that covers something similar, because I haven't been able to find one on my own :/
-
-&amp;#x200B;
-
-Best Regards
-## [11][From Agency Life to Software Development: Q&amp;A with Steve Polito](https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/)
-- url: https://www.reddit.com/r/rails/comments/g25cia/from_agency_life_to_software_development_qa_with/
----
-The Remote Ruby crew is joined by Steve Polito, a developer working at an agency, to have a Q&amp;A about transitioning into being a full-time software developer working on products. If you’re a junior developer or in a similar situation, [give this episode of Remote Ruby a listen!](https://remoteruby.transistor.fm/74)
-## [12][How do you break out of a for loop that has nested? My attributes?](https://www.reddit.com/r/rails/comments/g2c38b/how_do_you_break_out_of_a_for_loop_that_has/)
-- url: https://www.reddit.com/r/rails/comments/g2c38b/how_do_you_break_out_of_a_for_loop_that_has/
----
-My code looks like this
-
-&lt;% for @leads in @leads.nested_lead %&gt;
-      &lt;%= @leads.contact %&gt;
-&lt;% end %&gt;
-
----------- This is where my error comes in - - - - - - - -
-When I do
-&lt;%= @leads.count %&gt;
-
-I'm getting an error for undefined method for .count
-Or any over method I call that exists in the @leads table. 🤔

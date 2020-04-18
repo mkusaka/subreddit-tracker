@@ -19,137 +19,185 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/fw2hd8/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 334](https://www.reddit.com/r/rust/comments/g1fj7p/this_week_in_rust_334/)
-- url: https://this-week-in-rust.org/blog/2020/04/14/this-week-in-rust-334/
+## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.42]](https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/)
+- url: https://www.reddit.com/r/rust/comments/fjsj1l/official_rrust_whos_hiring_thread_for_jobseekers/
+---
+Welcome once again to the official /r/rust Who's Hiring thread!
+
+Before we begin, job-seekers should also remember to peruse [the prior thread](https://en.reddit.com/r/rust/comments/eyw94s/official_rrust_whos_hiring_thread_for_jobseekers/).
+
+This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+
+Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
+
+#### Rules for individuals:
+
+* Don't create top-level comments; those are for employers.
+* Feel free to reply to top-level comments with on-topic questions.
+* I will create a stickied top-level comment for individuals looking for work.
+* I will create an additional top-level comment for meta discussion.
+
+#### Rules for employers:
+
+* To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
+* To make a top-level comment you must be hiring directly; no third-party recruiters.
+* One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
+* Proofread your comment after posting it and edit it if necessary to correct mistakes.
+* Please base your comment on the following template:
+
+COMPANY: *[Company name; please link to your company's website or careers page.]*
+
+TYPE: *[Full time, part time, internship, contract, etc.]*
+
+DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+
+LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+
+REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+
+VISA: *[Does your company sponsor visas?]*
+
+CONTACT: *[How can someone get in touch with you?]*
+## [3][Writing Python inside Rust](https://www.reddit.com/r/rust/comments/g3kxid/writing_python_inside_rust/)
+- url: https://blog.m-ou.se/writing-python-inside-rust-1/
 ---
 
-## [3][A thank-you to the people who make all of this possible.](https://www.reddit.com/r/rust/comments/g2r23k/a_thankyou_to_the_people_who_make_all_of_this/)
-- url: https://www.reddit.com/r/rust/comments/g2r23k/a_thankyou_to_the_people_who_make_all_of_this/
+## [4][Rust Survey 2019 Results](https://www.reddit.com/r/rust/comments/g3bikn/rust_survey_2019_results/)
+- url: https://blog.rust-lang.org/2020/04/17/Rust-survey-2019.html
 ---
-I'm in the middle of writing a chess engine in Rust as an exercise in a class I'm taking. As I build and refactor it, I've also been inspecting the generated assembly with \`cargo asm\` and comparing it to the examples given on the [chess programming wiki](https://www.chessprogramming.org/General_Setwise_Operations#Shifting_Bitboards), and I'm constantly surprised at how much I don't have to worry about manually optimizing it at the instruction level. I can write general-purpose code and the compiler can tell when I'm using a special case and automatically apply optimizations to it.
 
-As an example, here's a general-purpose, direction-independent \`shift\` that moves the bits in a bitboard one square in the given direction:
+## [5][Boa releases v0.7 with a much faster parser](https://www.reddit.com/r/rust/comments/g3m5i7/boa_releases_v07_with_a_much_faster_parser/)
+- url: https://github.com/jasonwilliams/boa/blob/master/CHANGELOG.md
+---
 
-    const NOT_8: u64 = 0x00ffffffffffffff;
-    const NOT_1: u64 = 0xffffffffffffff00;
-    const NOT_A: u64 = 0xfefefefefefefefe;
-    const NOT_H: u64 = 0x7f7f7f7f7f7f7f7f;
+## [6][Zinc Framework: the ZK circuit programming language and VM](https://www.reddit.com/r/rust/comments/g3m2xb/zinc_framework_the_zk_circuit_programming/)
+- url: https://github.com/matter-labs/zinc
+---
+
+## [7][Why does this lifetime mismatch occur? (expected enum `Node&lt;'a&gt;` - found enum `Node&lt;'static&gt;`)](https://www.reddit.com/r/rust/comments/g3kbje/why_does_this_lifetime_mismatch_occur_expected/)
+- url: https://www.reddit.com/r/rust/comments/g3kbje/why_does_this_lifetime_mismatch_occur_expected/
+---
+The following code results in the error
+
+    error[E0308]: mismatched types
+     --&gt; src/lib.rs:5:9
+      |
+    5 |         br(),
+      |         ^^^^ lifetime mismatch
+      |
+      = note: expected enum `Node&lt;'a&gt;`
+                 found enum `Node&lt;'static&gt;`
+    note: [...]
+
+[Playground link](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=acdac6bbf31b657d3d53ec86c9018c9b)
+
+    use std::borrow::Cow;
     
-    pub fn shift(x: u64, direction: Direction) -&gt; u64 {
-        // look up rotate offset, and a mask 
-        // to prevent wrap-around on ranks and files.
-        let (offset, mask) = match direction {
-            Direction::North =&gt; (8, NOT_8),
-            Direction::South =&gt; (64 - 8, NOT_1),
-            Direction::East =&gt; (1, NOT_H),
-            Direction::West =&gt; (64 - 1, NOT_A),
-            Direction::NorthEast =&gt; (9, NOT_8 &amp; NOT_H),
-            Direction::NorthWest =&gt; (7, NOT_8 &amp; NOT_A),
-            Direction::SouthEast =&gt; (64 - 7, NOT_1 &amp; NOT_H),
-            Direction::SouthWest =&gt; (64 - 9, NOT_1 &amp; NOT_A),
+    fn vec&lt;'a&gt;(text: &amp;'a str) -&gt; Vec&lt;Node&lt;'a&gt;&gt; {
+        vec![
+            br(),
+            p(text),
+        ]
+    }
+    
+    fn br() -&gt; Node&lt;'static&gt; {
+        Node::Text("".into())
+    }
+    
+    fn p(text: &amp;str) -&gt; Node {
+        Node::Text(text.into())
+    }
+    
+    #[derive(Clone)]
+    enum Node&lt;'a&gt; {
+        Element(Cow&lt;'a, Element&lt;'a&gt;&gt;),
+        Text(Cow&lt;'a, str&gt;),
+    }
+    
+    #[derive(Clone)]
+    struct Element&lt;'a&gt; {
+        children: Vec&lt;Node&lt;'a&gt;&gt;,
+    }
+
+I can actually resolve the error by replacing `Element(Cow&lt;'a, Element&lt;'a&gt;&gt;)` with `Element(Element&lt;'a)` or `Element(Cow&lt;'a, Element&lt;'static&gt;&gt;)` in `enum Node&lt;'a&gt;`. But I still don't understand what the problem is. Could you explain why the error occurs?
+
+My understanding would be that any type with a `'static` lifetime could be assigned to any other type with a shorter lifetime.
+
+Thanks in advance for any help :)
+## [8][Crates implementing FromIterator&lt;&gt; for std collection types, best practices](https://www.reddit.com/r/rust/comments/g3iqan/crates_implementing_fromiterator_for_std/)
+- url: https://www.reddit.com/r/rust/comments/g3iqan/crates_implementing_fromiterator_for_std/
+---
+I recently decided to add a new dependency into a crate. However, I started noticing that a downstream crate dependent on mine would break simply by \`use\`ing the new crate:
+
+    use the_new_package; // All that was needed to trigger the downstream crate to fail
+
+After some digging, I was able to reproduce the following, which simulates what was going on:
+
+    // The crate I was importing had something like this...
+    pub struct Test;
+    
+    impl FromIterator&lt;Test&gt; for Vec&lt;u8&gt; {
+        fn from_iter&lt;I: IntoIterator&lt;Item = Test&gt;&gt;(iter: I) -&gt; Self {
+            let v: Vec&lt;u8&gt; = iter.into_iter().skip(2).collect();
+            v
         }
-        (x &amp; mask).rotate_left(offset)
     }
     
-    pub fn shift_north(x: u64) -&gt; u64
-        shift(x, Direction::North)
+    // The downstream crate that broke had something like this...
+    use rand::thread_rng;
+    use rand::distributions::{Distribution, Standard};
+    
+    fn main() {
+      let mut rng = thread_rng();
+      let v: Vec&lt;u8&gt; = Standard.sample_iter(&amp;mut rng).take(5).collect();
+      println!("{:}", v);
     }
 
-Now, if I generate code for \`shift\_north\`, the applied optimizations are incredible:
+The error message became:
 
-    shift_north:
-        mov rax, rdi
-        shl rax, 8
-        ret
+    error[E0282]: type annotations needed
+      --&gt; src/main.rs:16:31
+       |
+    16 |     let v: Vec&lt;u8&gt; = Standard.sample_iter(&amp;mut rng).take(5).collect();
+       |                               ^^^^^^^^^^^
+       |                               |
+       |                               cannot infer type for type parameter `T`
+       |                               help: consider specifying the type argument in the method call: `sample_iter::&lt;R&gt;`
 
-I expected to at least get constant propagation with the \`Direction\` lookup, but what's this?!  The compiler was able to statically infer that rotating 8 bits up with a pre-mask of 0x00ffff... is equivalent to a left shift by 8 bits, and completely dropped the pre-mask calculation.
+I now understand that the problem is that in trying to infer how to convert the `Iterator&lt;Item=T&gt;` that `take(5)` will return, there are now two options: std's definition of `FromIterator&lt;u8&gt; for &lt;Vec&lt;u8&gt;&gt;`, and the new `FromIterator&lt;Test&gt; for Vec&lt;u8&gt;`. Since `sample_iter` has its iterator item type generic, it's impossible for the type checker to infer  what type of items the iterator returned from `sample_iter` will have.
 
-The level of detail in both high-level and low-level optimizers is astounding. I've never realized just how much they're able to do, and all of it is the result of countless hours of work from others. I'm impressed, and truly grateful for how much they improve the performance and readability/maintainability of code. Imagine if I needed to manually write and optimize eight functions for every direction-dependent operation, instead of the one I have now.
+So, my question:
 
-So, to those of you who work endlessly at making compilers better: Thank you very much. Even though I love taking on big challenges, I can't imagine how much effort it has taken for us to come this far.
-## [4][Upgrade Rust's Android SDK to API level 16 (from 14)](https://www.reddit.com/r/rust/comments/g30bpg/upgrade_rusts_android_sdk_to_api_level_16_from_14/)
+I believe that the `let v: Vec&lt;u8&gt; = ...;` is idiomatic Rust, and yet this crate was able to break that code simply by including it. Is the way that the crate did this considered an okay practice and this is something that sometimes just happens? Or would it be considered bad form for a crate to do something like this, and I should consider not using that crate or requesting a change? Or is this pretty contextual? [Here is the crate implementing FromIterator](https://github.com/tormol/encode_unicode/blob/ca2e5fc3393d440e6c933e3bdb094680241ddc93/src/utf8_char.rs#L127-L142), where it is seems to be trying to convert u8 iterators into utf8-aware iterators.
+
+Thanks
+## [9][Should I pass by immutable move or just by value](https://www.reddit.com/r/rust/comments/g3jsrz/should_i_pass_by_immutable_move_or_just_by_value/)
+- url: https://www.reddit.com/r/rust/comments/g3jsrz/should_i_pass_by_immutable_move_or_just_by_value/
+---
+So I'm learning Rust now. When I was learning C/C++ in school, teachers were always telling us to pass by constant reference whenever we could because it was kinda safe and took less memory.
+
+Should I do the same in rust? All other things equal, should I prefer to
+
+    fn cool_function(cool_parameter: &amp;thing::one)
+
+over
+
+    fn cool_function(cool_parameter: thing::one)
+
+I don't know a lot about how borrowing and changing ownership is implemented. If someone could explain that in the comments that would be much appreciated!!
+## [10][yet another batch rename utility written in async Rust](https://www.reddit.com/r/rust/comments/g3729g/yet_another_batch_rename_utility_written_in_async/)
+- url: https://github.com/yaa110/nomino
+---
+
+## [11][Guidance to learn Rust](https://www.reddit.com/r/rust/comments/g3k9xq/guidance_to_learn_rust/)
+- url: https://www.reddit.com/r/rust/comments/g3k9xq/guidance_to_learn_rust/
+---
+Howdy Rustaceans! 
+
+Hope everyone is safe and sound! I work at a major fintech as a Platform software engineer. We use Golang to manage our K8S abstraction layer and java/python for Jenkins-related utils. I'm a Java developer primarily. However, a colleague got me into Rust and since then I've joined this sub. To learn and understand this language, I've started reading [The Rust book](https://doc.rust-lang.org/book/). However, in order to get my hands, is there anything else I should do? Either/both on personal and professional front? Should I start writing some utils in Rust? I wish to grow in this domain (systems/platform programming) as I'm just 3 years into this profession. 
+
+Thanks in advance!
+## [12][Upgrade Rust's Android SDK to API level 16 (from 14)](https://www.reddit.com/r/rust/comments/g30bpg/upgrade_rusts_android_sdk_to_api_level_16_from_14/)
 - url: https://github.com/rust-lang/rust/pull/71123
----
-
-## [5][Announcing Spair, a framework for Single Page Application in Rust](https://www.reddit.com/r/rust/comments/g2xzip/announcing_spair_a_framework_for_single_page/)
-- url: https://www.reddit.com/r/rust/comments/g2xzip/announcing_spair_a_framework_for_single_page/
----
-Hi crustaceans! I am very happy to share with you my library: A framework for Single Page Application in Rust.
-
-https://github.com/aclueless/spair
-
-Spair directly modifies its current vDOM (starts as an empty vDOM - instead of re-rendering a new vDOM + diffing vs old vDOM + patching). You can build an SPA site in pure Rust with Spair (without using macros. That said, macros can be added in the future for convenience).
-
-I am sorry that there is no document yet.
-## [6][Convert strings between kebab-case, snake_case, camelCase, and much more: convert_case released](https://www.reddit.com/r/rust/comments/g30frh/convert_strings_between_kebabcase_snake_case/)
-- url: https://www.reddit.com/r/rust/comments/g30frh/convert_strings_between_kebabcase_snake_case/
----
-I'd like to share `convert_case`, [a library](https://docs.rs/convert_case/0.1.0/convert_case/index.html) and binary that allows you to convert the casing of strings.  Installing the `convert_case` crate will give you an executable for changing the case of strings called `ccase`.  For example
-```
-$ ccase -t title super_mario_64
-Super Mario 64
-
-$ ccase -f snake -t title 2020-04-15_my_cat_cali
-2020-04-16 My Cat Cali
-
-$ ccase -t camel "convert to case"
-convertToCase
-```
-`ccase` converts the input into a new case from the `--to -t` option.  It will determine word boundaries automatically, but you can supply a `--from -f` option to convert from a specific case.  Likewise you can use the library in your rust code.
-```
-use convert_case::{Case, Casing};
-
-assert_eq!("Super Mario 64", "super_mario_64".to_case(Case::Title));
-assert_eq!(
-    "2020-04-15 My Cat Cali",
-    "2020-04-15_my_cat_cali".from_case(Case::Snake).to_case(Case::Title)
-);
-assert_eq!("convertToCase", "convert to case".to_case(Case::Camel));
-```
-Works for a [great variety of cases](https://docs.rs/convert_case/0.1.0/convert_case/enum.Case.html), including kebab and train case!
-
-This is my first crate.  I'd love some feedback!  I hope this serves useful.  I couldn't find a good CLI for converting cases and knew Rust was the right tool for the job.
-## [7][5800 line program takes 3 minutes to compile](https://www.reddit.com/r/rust/comments/g2xxhj/5800_line_program_takes_3_minutes_to_compile/)
-- url: https://www.reddit.com/r/rust/comments/g2xxhj/5800_line_program_takes_3_minutes_to_compile/
----
-I have a fairly small program (5762 lines of Rust code according to Tokei), that takes 3 minutes to compile. This is an incremental release build, so it isn't recompiling any dependencies.
-
-I haven't written any macros but use Serde derive quite a lot. Even so, this seems *very* slow! It's even worse in my case because I have to cross-compile too, so every change takes 6 minutes to build. Is there any way to profile which parts of my code are causing the slow-down? How do people with 100k-line programs deal with hour-long compile times?
-## [8][Tutorial, Hash lookups without allocating](https://www.reddit.com/r/rust/comments/g2x6td/tutorial_hash_lookups_without_allocating/)
-- url: https://github.com/sunshowers/borrow-complex-key-example/blob/master/README.md
----
-
-## [9][What would you use to build 3D CAD software?](https://www.reddit.com/r/rust/comments/g30nel/what_would_you_use_to_build_3d_cad_software/)
-- url: https://www.reddit.com/r/rust/comments/g30nel/what_would_you_use_to_build_3d_cad_software/
----
-Hi everyone,
-
-Not sure to ever start such a project, as I don't have a lot of time, know nothing about 3D, not much about GUI, but I was looking for what would be the best 3D rendering library to build a CAD software.
-
-Lots of 3d libraries seem to be used for games, but I think they can do the job for other 3D needs too. 
-
-What might differ is the ergonomics, yet at a lower level it must be the same, but as I said, I know nothing about 3D.
-
-Another type of underrepresented apps in Rust right now are GUI  (I might be wrong, feel free to correct me), but I know bindings exist to GUI libraries and work well. But I don't know what would be a wise choice for a cross platform app.
-
-So what would you use to start such a project ? gfx-rs + gtk-rs? something higher level than gfx-rs? Use electron for the GUI part (if possible)?
-
-Thanks in advance for the time you'll take to answer this post
-## [10][How do I get an image from a url?](https://www.reddit.com/r/rust/comments/g2zeps/how_do_i_get_an_image_from_a_url/)
-- url: https://www.reddit.com/r/rust/comments/g2zeps/how_do_i_get_an_image_from_a_url/
----
-Hey I am new to rust. I want to download am image from a url. If anyone could point me in the right direction it would be appreciated.
-
-Here is the python equivalent just so that it's clear:
-
-    def download_image(url):
-        response = requests.get(url)
-        return Image.open(BytesIO(response.content))
-## [11][regex2fat: convert regexes to FAT32, with regex-automata and a few lines of safe Rust](https://www.reddit.com/r/rust/comments/g2dxpw/regex2fat_convert_regexes_to_fat32_with/)
-- url: https://github.com/8051Enthusiast/regex2fat
----
-
-## [12][My blog series about making a web browser from scratch is Rust is finally done.](https://www.reddit.com/r/rust/comments/g2g2gl/my_blog_series_about_making_a_web_browser_from/)
-- url: https://joshondesign.com/2020/04/15/next-steps
 ---
 

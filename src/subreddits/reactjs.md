@@ -109,141 +109,130 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Crank.js | Introducting Crank](https://www.reddit.com/r/reactjs/comments/g2u135/crankjs_introducting_crank/)
+## [3][I've started a mini-series where I try to replicate popular UI's. The first episode is Spotify (I cover the basic styling &amp; setup). Follow along if you like!](https://www.reddit.com/r/reactjs/comments/g34vqr/ive_started_a_miniseries_where_i_try_to_replicate/)
+- url: https://www.youtube.com/watch?v=rkZEWuMRY28
+---
+
+## [4][Hacking Next.js for better PageSpeed scores](https://www.reddit.com/r/reactjs/comments/g3nh6v/hacking_nextjs_for_better_pagespeed_scores/)
+- url: https://medium.com/medwing-engineering-product-design/hacking-next-js-for-better-pagespeed-scores-6c651d19f218
+---
+
+## [5][Can't create react app](https://www.reddit.com/r/reactjs/comments/g3n7q1/cant_create_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/g3n7q1/cant_create_react_app/
+---
+Hi, there seems to be a problem when I run npx create react app on my terminal. I get bunch of errors.
+
+    Installing packages. This might take a couple of minutes.
+    Installing react, react-dom, and react-scripts with cra-template...
+    
+    ➤ YN0000: ┌ Resolution step
+    ➤ YN0032: │ fsevents@npm:2.1.2: Implicit dependencies on node-gyp are discouraged
+    ➤ YN0032: │ fsevents@npm:2.1.2: Implicit dependencies on node-gyp are discouraged
+    ➤ YN0032: │ fsevents@npm:1.2.12: Implicit dependencies on node-gyp are discouraged    
+
+and more errors.
+
+I have the latest node installed on my pc.
+
+I'd appreciate any help. Thanks!
+## [6][Property undefined](https://www.reddit.com/r/reactjs/comments/g3mneq/property_undefined/)
+- url: https://www.reddit.com/r/reactjs/comments/g3mneq/property_undefined/
+---
+I am able to console.log and view an array of objects. I am also able to access a seperate element of the array. But when i try to access a property, i get an error saying property undefined. How do i solve this?
+
+&amp;#x200B;
+
+       console.log(familyMembers);
+       const [fields, setFields] = useState(familyMembers);
+
+This is what im trying to do. familyMembers is an array of objects from mongoDB.
+
+But fields is always empty.
+
+&amp;#x200B;
+
+     const {  name, address, phone, email, familyMembers } = state;
+    
+        useEffect(() =&gt; {
+            axios
+                .get(`${process.env.REACT_APP_API}/post/${props.match.params.id}`)
+                .then(response =&gt; {
+                    const { name, phone, email, address, familyMembers } = response.data;
+                    setState({ ...state, name, phone, email, address, familyMembers })
+                })
+                .catch(error =&gt; alert('Error loading single post'));
+                
+        }, []
+        );
+
+I get this when I console.log familyMembers:
+
+    (3) [{…}, {…}, {…}]
+
+&amp;#x200B;
+## [7][getting the sum of a number in the array](https://www.reddit.com/r/reactjs/comments/g3mfcd/getting_the_sum_of_a_number_in_the_array/)
+- url: https://www.reddit.com/r/reactjs/comments/g3mfcd/getting_the_sum_of_a_number_in_the_array/
+---
+const number = movies.map((movie) =&gt; movie.price);  
+ const sum = number.reduce(function(a, b) {  
+ return a + b;  
+ }, 0);
+
+&amp;#x200B;
+
+I have 2 inputs one for the movie name and other for the price I'm trying to get the total price on the nav... I get the total price but when a add something it doubles the total number
+
+this is the  exercise I'm studying from
+
+[https://www.youtube.com/watch?v=35lXWvCuM8o](https://www.youtube.com/watch?v=35lXWvCuM8o)
+## [8][Built a minimalist PWA for monitoring air quality levels in your current location using Next.js and Zeit Now](https://www.reddit.com/r/reactjs/comments/g3imu9/built_a_minimalist_pwa_for_monitoring_air_quality/)
+- url: https://airhealth.now.sh
+---
+
+## [9][Which library?](https://www.reddit.com/r/reactjs/comments/g3m5l7/which_library/)
+- url: https://www.reddit.com/r/reactjs/comments/g3m5l7/which_library/
+---
+Frontend is not my strongest suite, I've seen mostly the backend dude when working on projects. The most I've used is bootstrap and materialize.
+
+&amp;#x200B;
+
+What are some popular libraries that are used along with react for beautiful design and mobile responsive?
+
+&amp;#x200B;
+
+Thanks
+## [10][Crank.js | Introducting Crank](https://www.reddit.com/r/reactjs/comments/g2u135/crankjs_introducting_crank/)
 - url: https://crank.js.org/blog/introducing-crank
 ---
 
-## [4][Redaxios | Axios API in 800 bytes using native fetch](https://www.reddit.com/r/reactjs/comments/g2ylrd/redaxios_axios_api_in_800_bytes_using_native_fetch/)
-- url: https://github.com/developit/redaxios
+## [11][Error with "npm start"](https://www.reddit.com/r/reactjs/comments/g3ln59/error_with_npm_start/)
+- url: https://www.reddit.com/r/reactjs/comments/g3ln59/error_with_npm_start/
 ---
+ Hello everyone, i'm having few problems using node.js, i've done this procedure:
 
-## [5][Free tickets available: Attend the biggest React conf in the cloud – April 17, 2020](https://www.reddit.com/r/reactjs/comments/g2fqci/free_tickets_available_attend_the_biggest_react/)
-- url: https://remote.reactsummit.com
+* Download Node LTS
+* In the bash shell i wrote " npm install -g create-react-app "
+* Then i've moved to a project directory that i've called "node" and i made the app writing " create-react-app myapp"
+* So far no errors, then i've moved to the project directory and wrote "npm start", and this was the resut: [LINK](https://i.imgur.com/0hYSmOc.png)
+
+How can i fix this? I've already tried to delete package.JSON and node\_modules and reinstall them with "npm install" without any success.
+
+Also two users on r/node told me to use " npx create-react-app myapp " instead of " npm install -g create-react-app", i've executed " npm uninstall -g create-react-app " before that and i still have the samae error.
+
+Thanks!
+## [12][Help with flexbox/css styling](https://www.reddit.com/r/reactjs/comments/g3lhyb/help_with_flexboxcss_styling/)
+- url: https://www.reddit.com/r/reactjs/comments/g3lhyb/help_with_flexboxcss_styling/
 ---
-
-## [6][Understanding the useState hook in React](https://www.reddit.com/r/reactjs/comments/g31320/understanding_the_usestate_hook_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/g31320/understanding_the_usestate_hook_in_react/
----
-“Understanding the useState hook in React” by Ashok Choudhary https://link.medium.com/BGLNgtHFJ5
-This is my first blog post. So let me know any tips or suggestions :)
-## [7][The online course "Learn React by Building a Hacker News Clone" is Free this week.](https://www.reddit.com/r/reactjs/comments/g310ue/the_online_course_learn_react_by_building_a/)
-- url: https://v.redd.it/07dxb12xfdt41
----
-
-## [8][reactjs docker development Develop your reactjs app using docker container and no need of node in your local system](https://www.reddit.com/r/reactjs/comments/g3233r/reactjs_docker_development_develop_your_reactjs/)
-- url: https://youtu.be/ldZClweupOo
----
-
-## [9][I really like animation on deepmind.com website, but I have no idea how it can be implemented in react.](https://www.reddit.com/r/reactjs/comments/g2ytj5/i_really_like_animation_on_deepmindcom_website/)
-- url: https://www.reddit.com/r/reactjs/comments/g2ytj5/i_really_like_animation_on_deepmindcom_website/
----
-I want to make custom animations like the one the Deepmind website. I have no idea how to get started with animation. Can anyone here share some pointers.
-## [10][How I built a remote-first consultancy company while having a full time job as a developer (Generating ~ € 100.000 a year) | Assim's Blog](https://www.reddit.com/r/reactjs/comments/g318md/how_i_built_a_remotefirst_consultancy_company/)
-- url: https://www.assim.me/how-I-built-a-remote-first-consultancy-company-while-having-a-full-time-job-as-a-developer/
----
-
-## [11][Help creating a 'NotificationBadge' component](https://www.reddit.com/r/reactjs/comments/g30sg3/help_creating_a_notificationbadge_component/)
-- url: https://www.reddit.com/r/reactjs/comments/g30sg3/help_creating_a_notificationbadge_component/
----
-As the title suggests, I've been trying to create a component which serves as a wrapper around its children, and will render a badge in the top right corner of its top-level child.
-
-The component so far, and an [example of what I'm trying to achieve](https://www.smartlauncher.net/wp-content/uploads/2017/06/rect4559.png):
-
-    export interface IndicatorProps {
-        text?: string;
-        children: React.ReactNode;
-        containerClassName?: string;
-        indicatorClassName?: string;
-        indicatorStyle?: React.CSSProperties;
-    }
-    
-    export const Indicator = (props: IndicatorProps) =&gt; {
-        const { children, indicatorClassName, indicatorStyle, containerClassName, text } = props;
-        const containerClass = classnames("relative", containerClassName);
-        const indicatorClass = classnames("indicator z-10 absolute", indicatorClassName);
-    
-        return (
-            &lt;div className={containerClass}&gt;
-                {children}
-                &lt;i style={indicatorStyle} className={indicatorClass}&gt;
-                    {text}
-                &lt;/i&gt;
-            &lt;/div&gt;
-        );
-    };        
+My temp website is here: https://gm-stats.netlify.app/
 
 
-Style:
 
-    .indicator {
-        border-radius: 50%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        color: white;
-        font-size: 10px;
-        line-height: 1rem;
-        height: 1rem;
-        width: 1rem;
-        top: -20%;
-        right: -20%;
-        text-align: center;
-    }
+Now the two problems are...
 
-The code so far is a bit misleading, but it's as far as I've gotten in trying to achieve my goal component.
+1) There is an unwanted gap between the 1st and 2nd row when the flexbox is in a 5 x 2 formation. I only want the gap between the two rows to be 10px but I can't figure out why it keeps generating a large gap in the middle, when I inspect it the margins look small.
 
-Ideally I'd like to be able to do as follows: `&lt;Indicator someProps={...}&gt;&lt;div&gt;I have a notification badge in my top-right corner&lt;/div&gt;&lt;/Indicator&gt;`
 
-Unfortunately as it stands my current code breaks when the child div is absolutely positioned, and requires that I pass any of the classnames/styling to the child div to the Indicator instead.
+2) When I zoom in or shrink the page and more than 2 rows are created the cards flow off the page and the background image won't cover everything. How do I ensure that the background image is always stretching to cover the entire view?
 
-If what I've written isn't very coherent or requires further explaining, please let me know I understand that I've gone on a bit of a ramble here.
 
-Thank you for any help you can give me.
-## [12][need help building this phonebook app and i am new to react. acn someone help to prevent adding duplicate names in this phonebook app](https://www.reddit.com/r/reactjs/comments/g2xu8j/need_help_building_this_phonebook_app_and_i_am/)
-- url: https://www.reddit.com/r/reactjs/comments/g2xu8j/need_help_building_this_phonebook_app_and_i_am/
----
-    import React, { useState } from 'react'
-    import PhoneBook from './PhoneBook'
-    
-    const App = () =&gt; {
-      const [ persons, setPersons] = useState([
-        { name: 'Arto Hellas' },
-        {name:'keyur'}
-      ]) 
-      const [ newName, setNewName ] = useState('')
-    
-    
-      const addPerson =(event)=&gt;{
-        event.preventDefault()
-       
-        const personObject={
-          name :newName
-        }
-        setPersons(persons.concat(personObject))
-        setNewName('')
-      }
-        
-    
-      const handleOnChange=(event)=&gt;{
-        console.log(event.target.value)
-        setNewName(event.target.value)
-    
-      }
-    
-      return (
-        &lt;div&gt;
-          &lt;h2&gt;Phonebook&lt;/h2&gt;
-          &lt;form onSubmit={addPerson}  &gt;
-            &lt;div&gt;
-              name: &lt;input value={newName} onChange={handleOnChange}/&gt;     
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;button type="submit"&gt;add&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/form&gt;
-          &lt;h2&gt;Numbers&lt;/h2&gt;
-          {persons.map(person =&gt; &lt;PhoneBook key={person.name} person={person} /&gt;)}
-          
-        &lt;/div&gt;
-      )
-    }
-    
-    export default App
+I apologize if these are pretty basic questions but I'm having a hard time trying to figure this out and would appreciate any help.

@@ -22,62 +22,76 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][A friend sent me this comic. Had to add it to the internal TypeScript guide I wrote for the team](https://www.reddit.com/r/typescript/comments/g2ve22/a_friend_sent_me_this_comic_had_to_add_it_to_the/)
+## [2][Implicit inferencing of generic type in class through constructor property does not work](https://www.reddit.com/r/typescript/comments/g3lftr/implicit_inferencing_of_generic_type_in_class/)
+- url: https://www.reddit.com/r/typescript/comments/g3lftr/implicit_inferencing_of_generic_type_in_class/
+---
+Here is my [Code on TypeScript playground](https://www.typescriptlang.org/v2/en/play?#code/KYDwDg9gTgLgBASwHY2FAZgQwMbDgFVBgAUoIw0YFgBnOAbwCg4W4ByG4GKpAcxoB0IAJ4AvfMIpsAXHCQBXALYAjNAG5mrBDQCSKNFlwB5JLOUQIAG2CYkGgL6NGoSLDjYISGvDBkKsYT0AE1B8CABlGCh5bBh5KGAgo2UAKwBZTDBZejgAbWQQkEQkOABrYGEIdAIiUnJKahoAXVkFFTQ4ezgAXgZNFg4uHn4hMQkpWQAGABp+xF19DBxgE1kAJkZHZ3BoeGxLTBo6AHFgJDQEbD1UJdwAHlPzqEu6-ypaAD4+1ndPb2jYtAABS+BAAN0wqDgvnqAWCoQiURicQSyXSmWyeQKoGKZQqVTgjwu2FeDVoLTkSlUUE6AEoGFsfmB5MpLJc4LwuKTYI0gfSmD8fgB6IX0LraOAwCx44BgSUACwlNCQCDAFHgNHluwEcAASjZLHAAO7QSxBX4hY0QeRmuAJFElTDQvwdCCpYCxARzH72+IlMVwQ6Es7E7nvGgaH6OLYigCi4DZ2AQqEswjg8hoyF4NRAJBdPNocHQ0GDTxe+fDVqgpRojA8XngLkTyZ6cmARtLxOuBmWd0IubDjQ+IIrgSQhTCkQBKMSaIyYFpGnr3jgTYQydedF6a6TMAEnLzsPDfLUcBF8qDMEkeH7h7ejScIp0ijAzZTaeQ6AufE7zxJFcaBUyHkXh5QVPA3RSD0fDIMEEBCc1kHA34G2nEsgggQskAgeATWrOs-ngBAXzfVtzg7Ik-27W5gBHI8xwnRFp3iWdUnnRcCIbRASMuDc-C3bjX14vcD0HWgTzPIULzoK8KAYQZuCzQQRHEa8ZHTJBSmwo0kGmeZqMMFZTA0rSIB0+wgA) for interactive debugging
+
+Here a Text version of my code:
+
+    export interface TextProperties {
+        'settings.xyzType': number;
+        isInterfaceOn: boolean;
+    }
+    
+    export const propertyIndexToStructuredObjMap: { [index in keyof TextProperties]: number } = {
+        'settings.xyzType': 0,
+        isInterfaceOn: 2
+    }
+    
+    export class GenericInterface&lt;GenericProperties&gt; {
+        constructor(private propertyIndexToStructureObjMap: { [index in keyof GenericProperties]: number }) {}
+    
+        public getProperties() {
+            //{} is too keep this snippet short. Real world code would return a proper object.
+            return {} as GenericProperties;
+        }
+    }
+    
+    //Explicitely using TextProperties for GenericProperties works
+    const explicit = new GenericInterface&lt;TextProperties&gt;(propertyIndexToStructuredObjMap);
+    const expliitProps = explicit.getProperties(); //has type TextProperties
+    
+    //Implicitely infering GenericProperties through the object provided in the constructor does not work
+    const implicit = new GenericInterface(propertyIndexToStructuredObjMap);
+    const implicitProps = implicit.getProperties(); //has type {'settings.xyzType': unknown, isInterfaceOn: unknown}
+
+As described in the comments, submitting the type for the generic in the class explicitly makes it work like a charm and the getProperties function returns the correct type.
+
+Implicit inferencing does not work completely. It returns an Object with the correct keys, but the types of it's values are all unknown.
+
+Is there a way to make the implicit inferencing work in my case, so I don't have to explicitly state the type all the time?
+## [3][Fancy Emitter - A new take on JavaScript's EventEmitter class. Strongly Typed and makes use of the newest features offered in ES6+](https://www.reddit.com/r/typescript/comments/g3nhha/fancy_emitter_a_new_take_on_javascripts/)
+- url: https://github.com/mothepro/fancy-emitter
+---
+
+## [4][A friend sent me this comic. Had to add it to the internal TypeScript guide I wrote for the team](https://www.reddit.com/r/typescript/comments/g2ve22/a_friend_sent_me_this_comic_had_to_add_it_to_the/)
 - url: https://i.imgur.com/YMo4iC0.jpg
 ---
 
-## [3][Strategies for migrating to TypeScript](https://www.reddit.com/r/typescript/comments/g31q57/strategies_for_migrating_to_typescript/)
-- url: https://2ality.com/2020/04/migrating-to-typescript.html
+## [5][Gact Store White Paper](https://www.reddit.com/r/typescript/comments/g3m9ts/gact_store_white_paper/)
+- url: https://github.com/gactjs/store/blob/master/docs/white-paper.md
 ---
 
-## [4][Best approach to share a module with types definition between personal projects](https://www.reddit.com/r/typescript/comments/g2yiua/best_approach_to_share_a_module_with_types/)
-- url: https://www.reddit.com/r/typescript/comments/g2yiua/best_approach_to_share_a_module_with_types/
----
-Hello to everyone :)  
-I've started a personal project a few months ago that consisted in a simple Angular app and a few cloud functions on Firebase.
-
-Time has passed and now I'm struggling to keep all my type definitions synced between projects. 
-
-Is there any best practice to share type definitions between projects without publish any package on npm?
-## [5][Is there a more idiomatic way to do this in TypeScript?](https://www.reddit.com/r/typescript/comments/g2uro9/is_there_a_more_idiomatic_way_to_do_this_in/)
-- url: https://www.reddit.com/r/typescript/comments/g2uro9/is_there_a_more_idiomatic_way_to_do_this_in/
----
-Hi y'all, I was recently reading the wikipedia page on [Tagged Unions](https://en.wikipedia.org/wiki/Tagged_union), and under the TS example it showed this block of code as an example:
-
-    type Tree = {
-        type:
-        | ["node", {
-            left: Tree,
-            right: Tree
-        }]
-        | ["leaf", {
-            value: string
-        }]
-    }
-
-    function visit(t: Tree) {
-        switch (t.type[0]) {
-            case "leaf": {
-                const s = t.type[1]
-                console.log(s.value)
-                break
-            }
-            case "node": {
-                const s = t.type[1]
-                visit(s.left)
-                visit(s.right)
-                break
-            }
-            default:
-                assertUnreachable(t.type[0])
-        }
-    }
-Is this really the idimotic to define/visit a tree or is there a better way? It looks especially clunky especially since TS has the ability to differentiate types and do exhaustivness checking.
-## [6][Introducing List Comprehension for TypeScript](https://www.reddit.com/r/typescript/comments/g2mnqp/introducing_list_comprehension_for_typescript/)
-- url: https://medium.com/@wim.jongeneel1/introducing-list-comprehension-for-typescript-6204d9b1003e?source=friends_link&amp;sk=09d35f8af4313c7dafde2c8131391a9d
+## [6][Gact Store React Bindings](https://www.reddit.com/r/typescript/comments/g3mbxj/gact_store_react_bindings/)
+- url: https://github.com/gactjs/react-store
 ---
 
-## [7][Why is redux's combine reducer complaining about method overload when using typescript and react-redux-firebase?](https://www.reddit.com/r/typescript/comments/g2yr2q/why_is_reduxs_combine_reducer_complaining_about/)
+## [7][Gact Store](https://www.reddit.com/r/typescript/comments/g3mbkf/gact_store/)
+- url: https://github.com/gactjs/store
+---
+
+## [8][ts lerna boilerplate](https://www.reddit.com/r/typescript/comments/g399q5/ts_lerna_boilerplate/)
+- url: https://www.reddit.com/r/typescript/comments/g399q5/ts_lerna_boilerplate/
+---
+Hi,
+
+I've created typescript (project reference, path mapping, ts-node-dev) + lerna + yarn workspace + jest (ts-jest) + eslint (\`overrides\` for supporting difference rules against js and ts) + etc boilerplate with explanation.
+
+[https://github.com/jjangga0214/ts-yarn-lerna-boilerplate](https://github.com/jjangga0214/ts-yarn-lerna-boilerplate)
+
+Hope it can be helpful to someone.
+## [9][Why is redux's combine reducer complaining about method overload when using typescript and react-redux-firebase?](https://www.reddit.com/r/typescript/comments/g2yr2q/why_is_reduxs_combine_reducer_complaining_about/)
 - url: https://www.reddit.com/r/typescript/comments/g2yr2q/why_is_reduxs_combine_reducer_complaining_about/
 ---
 **The problem**
@@ -103,37 +117,16 @@ https://codesandbox.io/s/great-perlman-p6g7p?file=/src/store/index.ts
 You can see the error on line `54` altough the app is running just fine. On my local client it won't render, I just see the error in the browser (overload...). 
 
 What am I doing wrong here? It has to be something about typescript, I'm a real beginner when it comes to typescript.
-## [8][Made this earlier today and thought it was a pretty cool pattern: Implicitly type the second item of a tuple (action payload) based off the first item of a tuple (action type)](https://www.reddit.com/r/typescript/comments/g2sgtj/made_this_earlier_today_and_thought_it_was_a/)
-- url: https://gist.github.com/tvler/ccbb3136b0d8c6c48ca53d98382dcb05
+## [10][Strategies for migrating to TypeScript](https://www.reddit.com/r/typescript/comments/g31q57/strategies_for_migrating_to_typescript/)
+- url: https://2ality.com/2020/04/migrating-to-typescript.html
 ---
 
-## [9][How to override node module type declaration](https://www.reddit.com/r/typescript/comments/g2gr9k/how_to_override_node_module_type_declaration/)
-- url: https://www.reddit.com/r/typescript/comments/g2gr9k/how_to_override_node_module_type_declaration/
+## [11][Best approach to share a module with types definition between personal projects](https://www.reddit.com/r/typescript/comments/g2yiua/best_approach_to_share_a_module_with_types/)
+- url: https://www.reddit.com/r/typescript/comments/g2yiua/best_approach_to_share_a_module_with_types/
 ---
-Trying to override express.js Request.query type. Have this setup where I can add a type for new attribute, but cant override existing one.
+Hello to everyone :)  
+I've started a personal project a few months ago that consisted in a simple Angular app and a few cloud functions on Firebase.
 
-    declare namespace Express { 
-        export interface Request {         
-            attr1: string, // this is working         
-            query: any      // this is not working, query is still type of Query 
-        } 
-    }
+Time has passed and now I'm struggling to keep all my type definitions synced between projects. 
 
-ts.config
-
-    "typeRoots" : [
-         "./src/types",
-         "node_modules/@types"        
-    ]
-
-Am I doing something wrong or is there a different approach?
-## [10][A generic middleware pattern in Typescript](https://www.reddit.com/r/typescript/comments/g1wzl6/a_generic_middleware_pattern_in_typescript/)
-- url: https://evertpot.com/generic-middleware/
----
-
-## [11][GitHub Action: Typescript compile failsafe](https://www.reddit.com/r/typescript/comments/g26o6y/github_action_typescript_compile_failsafe/)
-- url: https://www.reddit.com/r/typescript/comments/g26o6y/github_action_typescript_compile_failsafe/
----
-I got annoyed that I kept forgetting to compile my TS before pushing. So I made a GitHub action to compile it for me and make another commit if I ever forget to compile it. I'm posting a link to the action here if you guys ever need that failsafe in the background for anything.
-
-https://github.com/marketplace/actions/typescript-tsc-build-push
+Is there any best practice to share type definitions between projects without publish any package on npm?

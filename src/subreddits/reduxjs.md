@@ -1,5 +1,17 @@
 # reduxjs
-## [1][Keeping the userActions DRY in redux](https://www.reddit.com/r/reduxjs/comments/g2wey8/keeping_the_useractions_dry_in_redux/)
+## [1][Normalized Reducer: an easier way to read and write normalized relational reducer state](https://www.reddit.com/r/reduxjs/comments/g3jdjv/normalized_reducer_an_easier_way_to_read_and/)
+- url: https://www.reddit.com/r/reduxjs/comments/g3jdjv/normalized_reducer_an_easier_way_to_read_and/
+---
+[**Normalized Reducer**](https://github.com/brietsparks/normalized-reducer) helps you manage normalized relational state without requiring any reducer/action boilerplate.
+
+You simply feed in a schema of the relationships, and it gives you the reducers, actions, and selectors to read and write state according to that schema. The [**docs quick start**](https://github.com/brietsparks/normalized-reducer#quick-start) shows how easy it is to set up and use. Check out the [**demo app**](https://brietsparks.github.io/normalized-reducer-demo/) to see its features in action.
+
+Additionally, it integrates with Normalizr. First denormalize your data with Normalizr's [`normalize`](https://github.com/paularmstrong/normalizr/blob/master/docs/api.md#normalizedata-schema), and then pass that output into Normalized Reducer's [`fromNormalizr`](https://github.com/brietsparks/normalized-reducer#normalizr-integration). The final result will be normalized state that the reducer can handle. See the demo's Normalizr example to see shapes of the transformation.
+
+To help decide whether this library is right for you, there is a [comparison to Redux ORM and Redux Toolkit's entity adapter](https://github.com/brietsparks/normalized-reducer#comparison-to-alternatives). Key points: Relational Reducer is lighter, zero dep, framework agnostic, and covers some important use-cases the others are missing. However, it (currently) has fewer selector features than Redux ORM and is less mature than both.
+
+Thanks for reading, and I hope this helps build stuff faster!
+## [2][Keeping the userActions DRY in redux](https://www.reddit.com/r/reduxjs/comments/g2wey8/keeping_the_useractions_dry_in_redux/)
 - url: https://www.reddit.com/r/reduxjs/comments/g2wey8/keeping_the_useractions_dry_in_redux/
 ---
 So, I've defined userActions and I see the same pattern over and over again. So, just wanted to know if that's the correct way of writing action creators and thunks. Also, I've defined all the actions in a single file and wondering if I should separate them or not. The code works fine but clean code is always better. 
@@ -223,7 +235,7 @@ export const getUserPosts = (id) =&gt; {
   }
 }
 ```
-## [2][How do we try to get data directly under streams? why does it has undefined and data?](https://www.reddit.com/r/reduxjs/comments/g304ob/how_do_we_try_to_get_data_directly_under_streams/)
+## [3][How do we try to get data directly under streams? why does it has undefined and data?](https://www.reddit.com/r/reduxjs/comments/g304ob/how_do_we_try_to_get_data_directly_under_streams/)
 - url: https://www.reddit.com/r/reduxjs/comments/g304ob/how_do_we_try_to_get_data_directly_under_streams/
 ---
 The problem is when I bring the data from backend, There will be undefined under streams reducer, but if I same data and act as fake backend, I wont get undefined.
@@ -233,13 +245,13 @@ The problem is when I bring the data from backend, There will be undefined under
 &amp;#x200B;
 
 [When bringing data from fake backend](https://preview.redd.it/h8ayi9705dt41.png?width=1192&amp;format=png&amp;auto=webp&amp;s=63e32e08a66f8e725e1b7b555b2b29a51eb31356)
-## [3][What is the difference between time travel and undo/redo functionality ?](https://www.reddit.com/r/reduxjs/comments/g2qf27/what_is_the_difference_between_time_travel_and/)
+## [4][What is the difference between time travel and undo/redo functionality ?](https://www.reddit.com/r/reduxjs/comments/g2qf27/what_is_the_difference_between_time_travel_and/)
 - url: https://www.reddit.com/r/reduxjs/comments/g2qf27/what_is_the_difference_between_time_travel_and/
 ---
 Is time travel just capturing a whole snapshot of the state just for debugging purposes during development stage ?
 
 Is undo/redo functionality a more efficient (cpu and RAM wise) version of time traveling that is supposed to be used by users ?
-## [4][Tools for creating a client side database diagram .](https://www.reddit.com/r/reduxjs/comments/g0n3zg/tools_for_creating_a_client_side_database_diagram/)
+## [5][Tools for creating a client side database diagram .](https://www.reddit.com/r/reduxjs/comments/g0n3zg/tools_for_creating_a_client_side_database_diagram/)
 - url: https://www.reddit.com/r/reduxjs/comments/g0n3zg/tools_for_creating_a_client_side_database_diagram/
 ---
 I am trying to make an app in which the state is a little bit complex so I have to make it be like a normalized client side database as suggested in the redux docs  \[[1](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/)\] .
@@ -255,11 +267,11 @@ Also it would be extremely helpful if that tool would allow me to save my work .
 It really feel painful defining my normalized client side database in a d.ts file , I think a tool like the one I described will boost productivity .
 
 I am really noob regarding all that database thing , so sorry what I am asking sounds stupid .
-## [5][Modern React Redux Tutorials with Redux toolkit - 2020](https://www.reddit.com/r/reduxjs/comments/fzx905/modern_react_redux_tutorials_with_redux_toolkit/)
+## [6][Modern React Redux Tutorials with Redux toolkit - 2020](https://www.reddit.com/r/reduxjs/comments/fzx905/modern_react_redux_tutorials_with_redux_toolkit/)
 - url: https://cloudnweb.dev/2020/04/modern-react-redux-tutotials-redux-toolkit/
 ---
 
-## [6][Designing a normalized state : Arrays of ids should be used to indicate ordering .](https://www.reddit.com/r/reduxjs/comments/fz6fyl/designing_a_normalized_state_arrays_of_ids_should/)
+## [7][Designing a normalized state : Arrays of ids should be used to indicate ordering .](https://www.reddit.com/r/reduxjs/comments/fz6fyl/designing_a_normalized_state_arrays_of_ids_should/)
 - url: https://www.reddit.com/r/reduxjs/comments/fz6fyl/designing_a_normalized_state_arrays_of_ids_should/
 ---
 This is mentioned [here](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/#designing-a-normalized-state) . What I do not understand is :
@@ -267,7 +279,7 @@ This is mentioned [here](https://redux.js.org/recipes/structuring-reducers/norma
 1. why arrays of ids should indicate ordering for the ids ? why cant the ids themselves represent ordering ?
 2. what is the profit/best practice that we get from creating one more nest in the state to just add the `allIds` property ?
 3. how are the unique ids produced ?
-## [7][Constantly updating in background](https://www.reddit.com/r/reduxjs/comments/fyb1pz/constantly_updating_in_background/)
+## [8][Constantly updating in background](https://www.reddit.com/r/reduxjs/comments/fyb1pz/constantly_updating_in_background/)
 - url: https://www.reddit.com/r/reduxjs/comments/fyb1pz/constantly_updating_in_background/
 ---
 Totally new to react and redux, so please excuse my dumb questions.
@@ -276,7 +288,7 @@ I already managed to write a component, that opens a webcam and displays it, I a
 Now I would like to do the following: I would like to write a page, that grabs a pic from the webcam, sends it via fetch to a server - waits for the reply and after the reply came does the same again. I’m currently still lost how to do that within the React - redux(-toolkit) framework.
 
 Would love to get hints on it.
-## [8][Difference between storing data in localStorage vs the state](https://www.reddit.com/r/reduxjs/comments/fy14l4/difference_between_storing_data_in_localstorage/)
+## [9][Difference between storing data in localStorage vs the state](https://www.reddit.com/r/reduxjs/comments/fy14l4/difference_between_storing_data_in_localstorage/)
 - url: https://www.reddit.com/r/reduxjs/comments/fy14l4/difference_between_storing_data_in_localstorage/
 ---
 I currently have an application using redux and I have it set that every time the app loads it checks the JWT token is valid and adds the user data to the state.
@@ -313,15 +325,7 @@ export const getUserData = () =&gt; async dispatch =&gt; {
   ...
 };
 ```
-## [9][Is there any difference b/w these two redux saga effects takeEvery() and while(true) { take() } ?](https://www.reddit.com/r/reduxjs/comments/fsd1cn/is_there_any_difference_bw_these_two_redux_saga/)
+## [10][Is there any difference b/w these two redux saga effects takeEvery() and while(true) { take() } ?](https://www.reddit.com/r/reduxjs/comments/fsd1cn/is_there_any_difference_bw_these_two_redux_saga/)
 - url: https://www.reddit.com/r/reduxjs/comments/fsd1cn/is_there_any_difference_bw_these_two_redux_saga/
 ---
 What are the pros and cons of these saga effects?
-## [10][Dynadux, an alternative to Redux, simpler and powerful](https://www.reddit.com/r/reduxjs/comments/frlhpu/dynadux_an_alternative_to_redux_simpler_and/)
-- url: https://www.reddit.com/r/reduxjs/comments/frlhpu/dynadux_an_alternative_to_redux_simpler_and/
----
-Hello fellows
-
-I have created a new alternative to the Redux library. It is much simpler and powerful. [https://github.com/aneldev/dynadux](https://github.com/aneldev/dynadux)
-
-I would appreciate having your feedback!

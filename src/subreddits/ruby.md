@@ -1,5 +1,23 @@
 # ruby
-## [1][Starting with Rails](https://www.reddit.com/r/ruby/comments/g2ya9n/starting_with_rails/)
+## [1][Ruby Hash Default Values](https://www.reddit.com/r/ruby/comments/g33oyz/ruby_hash_default_values/)
+- url: https://www.reddit.com/r/ruby/comments/g33oyz/ruby_hash_default_values/
+---
+I've written a new doc section about Hash default values.  It has been merged into Ruby's [hash.c](https://github.com/ruby/ruby/commit/39c965f2306d29524feae04ff6e710b32702851a#diff-eff9999082c8ce7d8ba1fc1d79f439cf), but not yet released.
+
+I wrote it over at my doc project [AboutRuby](https://github.com/BurdetteLamar/AboutRuby/blob/master/core/Hash/api/markdown.md#hash-api), then PRed it over to Ruby. (Thanks, @nobu, for the review and merge.)
+## [2][Processing high volume of unique messages exactly once while preserving order in a queue using SQS and Ruby-on-Rails](https://www.reddit.com/r/ruby/comments/g37ygs/processing_high_volume_of_unique_messages_exactly/)
+- url: https://medium.com/@rcdexta/processing-high-volume-of-unique-messages-exactly-once-while-preserving-order-in-a-queue-d8d6184ded01
+---
+
+## [3][About Hash Keys](https://www.reddit.com/r/ruby/comments/g36d0g/about_hash_keys/)
+- url: https://www.reddit.com/r/ruby/comments/g36d0g/about_hash_keys/
+---
+I've written about [Hash Keys](https://github.com/BurdetteLamar/AboutRuby/blob/master/core/Hash/api/markdown.md#hash-keys).  (This is not yet merged into the Ruby code base.)
+## [4][Three Examples of DTOs in Ruby](https://www.reddit.com/r/ruby/comments/g32yva/three_examples_of_dtos_in_ruby/)
+- url: https://medium.com/@minghz42/three-examples-of-dtos-in-ruby-df22853ea128
+---
+
+## [5][Starting with Rails](https://www.reddit.com/r/ruby/comments/g2ya9n/starting_with_rails/)
 - url: https://www.reddit.com/r/ruby/comments/g2ya9n/starting_with_rails/
 ---
 Hey! I'm interested in getting into Ruby on Rails, and I'm wondering whether any of you might be able to point me in the direction of some good resources.
@@ -13,15 +31,11 @@ I was watching this free Udemy course, which looked perfect; [https://www.udemy.
 And I'd prefer to not spend heaps. I've looked at The Odin Project and the Essential RoR Training courses on Lynda but the RoR course seems far too theoretical. I want to get creating ASAP.
 
 Many thanks!
-## [2][Full Text Search in Milliseconds with Rails and PostgreSQL](https://www.reddit.com/r/ruby/comments/g2gnlb/full_text_search_in_milliseconds_with_rails_and/)
-- url: https://pganalyze.com/blog/full-text-search-ruby-rails-postgres
+## [6][About Hash](https://www.reddit.com/r/ruby/comments/g39a34/about_hash/)
+- url: https://www.reddit.com/r/ruby/comments/g39a34/about_hash/
 ---
-
-## [3][The Ruby Blend: ViewComponent at GitHub with Joel Hawksley](https://www.reddit.com/r/ruby/comments/g2givv/the_ruby_blend_viewcomponent_at_github_with_joel/)
-- url: https://www.reddit.com/r/ruby/comments/g2givv/the_ruby_blend_viewcomponent_at_github_with_joel/
----
-Joel Hawksley is the guest on today’s episode. He is a Software Engineer at GitHub and works on the design system team, leading development on ViewComponent, formerly known as ActionView::Component. Joel is a very encouraging, uplifting, and inviting guest who tells it like it is. Andrew even throws in a little “homework” for those of you listening! If you want to learn more about how GitHub is leveraging ViewComponent, [give this episode a listen!](https://fireside.fm/s/ouBAUjGy+8JZwBXVx)
-## [4][Irb and Visual Code wierd act](https://www.reddit.com/r/ruby/comments/g2wd30/irb_and_visual_code_wierd_act/)
+And I've written [About Hash](https://github.com/BurdetteLamar/AboutRuby/blob/master/core/Hash/about/markdown.md#about-hash), also not yet merged into the Ruby core. This is everything that's not actually API-spec.
+## [7][Irb and Visual Code wierd act](https://www.reddit.com/r/ruby/comments/g2wd30/irb_and_visual_code_wierd_act/)
 - url: https://www.reddit.com/r/ruby/comments/g2wd30/irb_and_visual_code_wierd_act/
 ---
 when I am calling irb from regular terminal I get:
@@ -63,7 +77,15 @@ But when it's called from vs code nothing wrong goes on:
 I have an idea that solargraph gem which is my language server for ruby in vs code has some kind of permissions to block another irb starts rather than in vs integrated terminal.
 
 Any ideas how to fix it?
-## [5][How to Elicit Exception for Flatten Reentered?](https://www.reddit.com/r/ruby/comments/g2mxvj/how_to_elicit_exception_for_flatten_reentered/)
+## [8][Full Text Search in Milliseconds with Rails and PostgreSQL](https://www.reddit.com/r/ruby/comments/g2gnlb/full_text_search_in_milliseconds_with_rails_and/)
+- url: https://pganalyze.com/blog/full-text-search-ruby-rails-postgres
+---
+
+## [9][The Ruby Blend: ViewComponent at GitHub with Joel Hawksley](https://www.reddit.com/r/ruby/comments/g2givv/the_ruby_blend_viewcomponent_at_github_with_joel/)
+- url: https://www.reddit.com/r/ruby/comments/g2givv/the_ruby_blend_viewcomponent_at_github_with_joel/
+---
+Joel Hawksley is the guest on today’s episode. He is a Software Engineer at GitHub and works on the design system team, leading development on ViewComponent, formerly known as ActionView::Component. Joel is a very encouraging, uplifting, and inviting guest who tells it like it is. Andrew even throws in a little “homework” for those of you listening! If you want to learn more about how GitHub is leveraging ViewComponent, [give this episode a listen!](https://fireside.fm/s/ouBAUjGy+8JZwBXVx)
+## [10][How to Elicit Exception for Flatten Reentered?](https://www.reddit.com/r/ruby/comments/g2mxvj/how_to_elicit_exception_for_flatten_reentered/)
 - url: https://www.reddit.com/r/ruby/comments/g2mxvj/how_to_elicit_exception_for_flatten_reentered/
 ---
 The C code for Array#flatten raises RuntimeError ("flatten reentered") for a certain condition.
@@ -71,35 +93,3 @@ The C code for Array#flatten raises RuntimeError ("flatten reentered") for a cer
 The C-coded test tests this, but the Ruby-coded spec does not.
 
 What Ruby code would cause this error?
-## [6][Aliases and unary operators](https://www.reddit.com/r/ruby/comments/g2m7vn/aliases_and_unary_operators/)
-- url: https://www.reddit.com/r/ruby/comments/g2m7vn/aliases_and_unary_operators/
----
-```ruby
-class String
-  alias !@ reverse
-end
-
-!"abc" # =&gt; "cba"
-## [7][Ruby/Rails in NY](https://www.reddit.com/r/ruby/comments/g2fj11/rubyrails_in_ny/)
-- url: https://www.reddit.com/r/ruby/comments/g2fj11/rubyrails_in_ny/
----
-Hi Guys, perhaps some of you are located in NY or you cooperate with companies there. I wonder how is the situation for Ruby devs now? Is it the same case as in EU that there are too many devs currently on the market due to the reductions? 
-Thanks in advance for your help!
-## [8][What do you use for keeping track of your API?](https://www.reddit.com/r/ruby/comments/g2lijc/what_do_you_use_for_keeping_track_of_your_api/)
-- url: https://www.reddit.com/r/ruby/comments/g2lijc/what_do_you_use_for_keeping_track_of_your_api/
----
-Hey!
-
-JSON Schema, Swagger, RAML to name a few. I wonder how do you *document* API HTTP endpoints in your applications?
-## [9][Can this be built in ruby easily?](https://www.reddit.com/r/ruby/comments/g2wzuc/can_this_be_built_in_ruby_easily/)
-- url: https://www.reddit.com/r/ruby/comments/g2wzuc/can_this_be_built_in_ruby_easily/
----
-Hi All
-
-i am new to web development and trying to build a project of a client portal to submit jobs to us, as per these images &gt;  [https://imgur.com/a/1fMaNOj](https://imgur.com/a/1fMaNOj) 
-
-What would the easiest framework to use to achieve this? or is there something pre-existing i can modify?
-## [10][Don't add database index if it already exists in Rails](https://www.reddit.com/r/ruby/comments/g2drmb/dont_add_database_index_if_it_already_exists_in/)
-- url: https://prathamesh.tech/2020/04/16/dont-add-database-index-if-it-already-exists/
----
-

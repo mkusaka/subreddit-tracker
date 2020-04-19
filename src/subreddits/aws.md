@@ -1,156 +1,184 @@
 # aws
-## [1][AWS IQ waives fees until June 30, 2020, to help you stand up and scale remote work initiatives](https://www.reddit.com/r/aws/comments/g2prcr/aws_iq_waives_fees_until_june_30_2020_to_help_you/)
-- url: https://aws.amazon.com/blogs/machine-learning/aws-iq-waives-fees-until-june-30-2020-to-help-you-stand-up-and-scale-remote-work-initiatives/
+## [1][Let's do AWS whiteboard sessions](https://www.reddit.com/r/aws/comments/g3d6yg/lets_do_aws_whiteboard_sessions/)
+- url: https://www.reddit.com/r/aws/comments/g3d6yg/lets_do_aws_whiteboard_sessions/
 ---
+Hey guys if you're interested in Tech subscribe to my YouTube channel. I'll be talking about tech, in general, with a huge concentration on AWS. I already have a couple of videos there. 
 
-## [2][Elastic Beanstalk: Can I deploy using Dockerfiles instead of a Dockerrun.aws.json (v2) file when using a multicontainer Docker setup?](https://www.reddit.com/r/aws/comments/g2xzww/elastic_beanstalk_can_i_deploy_using_dockerfiles/)
-- url: https://www.reddit.com/r/aws/comments/g2xzww/elastic_beanstalk_can_i_deploy_using_dockerfiles/
+I will be releasing a video every week so if you have a topic you'd like me to dive-deep into let me know. I'd also be interested in having tech discussions with field professionals -- I can whiteboard and architect solutions based on your requirements. Subscribe and reach out! 
+
+[https://www.youtube.com/channel/UCBl-ENwdTlUsLY05yGgXyxw](https://www.youtube.com/channel/UCBl-ENwdTlUsLY05yGgXyxw)
+
+&amp;#x200B;
+
+Here's one I did recently on the topic of Serverless Photo Recognition:
+
+[https://www.youtube.com/watch?v=GIdJz7VnP58&amp;t=259s](https://www.youtube.com/watch?v=GIdJz7VnP58&amp;t=259s)
+
+&amp;#x200B;
+
+This isn't sponsored by AWS and all of the opinions are my own.
+## [2][Lambda Logs to ANYTHING ELSE but CloudWatch](https://www.reddit.com/r/aws/comments/g3k1zr/lambda_logs_to_anything_else_but_cloudwatch/)
+- url: https://www.reddit.com/r/aws/comments/g3k1zr/lambda_logs_to_anything_else_but_cloudwatch/
 ---
-In Elastic Beanstalk in Single Container Docker configuration, it is possible to deploy without a `Dockerrun.aws.json` (v1) file as long as a Dockerfile is supplied.
+Hi guys,
 
-Is this also possible in Multicontainer Docker setups? I prefer not to build the Docker images on my own. I just want to supply the required Dockerfiles and let Amazon build the images for me, just like what is possible in the case of Single Container Docker configuration.
+I don't know about you but CloudWatch PutLog events are f**king killing me.
 
-Does anyone know?
-## [3][Direct connect (DX) vs T1 internet provider](https://www.reddit.com/r/aws/comments/g2ywa8/direct_connect_dx_vs_t1_internet_provider/)
-- url: https://www.reddit.com/r/aws/comments/g2ywa8/direct_connect_dx_vs_t1_internet_provider/
+I have highly-intensive (and highly-invoked) Lambda functions running for a Serverless SaaS platform that does load testing (https://rungutan.com).
+
+While the platform is still in beta, and I'm just testing it myself, I realized that my AWS Bill is going wild for these type of events, sometimes amounting to about 300 USD/day when doing some simple tests.
+
+I've realized that there are 2 ways that this is happening:
+1) StepFunctions EXPRESS puts logs into CloudWatch
+2) Lambda functions itself do that
+
+I've stopped the StepFunctions from putting logs into CloudWatch, but I STILL COULD use the logs from Lambda themselves in order to be able to push them into Thundra (https://www.thundra.io/) so that I can analyse them properly on a per-invocation type of thing.
+
+So my question is:
+
+-&gt;
+
+Have you guys found any other way of pushing logs from Lambda to ANYTHING ELSE besides CloudWatch ?
+
+I've even considered writing a Lambda function to process logs (by simply being invoked) and push them to somewhere else (aka ElasticSearch) but that makes me lose the nice logs-per-invocation logic from Thundra.
+
+Follow-up question:
+
+-&gt;
+
+Is there maybe a way to limit those default log lines that Lambda pushes?
+I'm talking about "START RequestId: adae3789-2dd8-4c6a-8c05-3c4e17d26d2e Version: $LATEST" and "END RequestId: adae3789-2dd8-4c6a-8c05-3c4e17d26d2e Version: $LATEST"
+## [3][SAM/Cloudformation template syntax - multiple Authorizers](https://www.reddit.com/r/aws/comments/g3luo6/samcloudformation_template_syntax_multiple/)
+- url: https://www.reddit.com/r/aws/comments/g3luo6/samcloudformation_template_syntax_multiple/
 ---
-Hi folks,
+Hi AWS!  
+I am currently using an AWS SAM template to provision a serverless API.  
 
-We're currently investigating wether or not it's useful to invest in to DX. Currently the company I work for has a nice multi-gb internet connection through a T1 ISP. Bandwidth is not really the issue.
 
-Traffic is secured using VPN's where possible.
+Using paramters/Conditions I would like to modify the Authorizers on the `AWS::Serverless::Api`  
 
-Besides the guarantees you get on bandwidth and latency, and the lower cost of egress pricing, I'm not finding that many incentives to go this route.... or am I missing something?
 
-Is there any difference in how AWS handles traffic coming from DX vs Internet?
-## [4][How to "snapshot" a patch status with Systems Manager?](https://www.reddit.com/r/aws/comments/g31vo2/how_to_snapshot_a_patch_status_with_systems/)
-- url: https://www.reddit.com/r/aws/comments/g31vo2/how_to_snapshot_a_patch_status_with_systems/
+      MyApi:
+        Type: AWS::Serverless::Api
+        Properties:
+          StageName: Prod
+          Auth:
+            Authorizers:
+    # if MyCondition is true
+              MyCognitoAuthorizer1:
+                UserPoolArn: !GetAtt MyUserPool1.Arn
+    # else
+              MyCognitoAuthorizer2:
+                UserPoolArn: !GetAtt MyUserPool2.Arn
+              MyCognitoAuthorizer3:
+                UserPoolArn: !GetAtt MyUserPool3.Arn
+    # fi
+
+I have tried using the `Condition` keyword on the Authorizer object as you would on a `Resource` but it takes no effect.
+
+I cant find a way to get the template to achieve this outcome - does anyone have any advice?
+## [4][OS storage type for t3a.nano](https://www.reddit.com/r/aws/comments/g3k8rr/os_storage_type_for_t3anano/)
+- url: https://www.reddit.com/r/aws/comments/g3k8rr/os_storage_type_for_t3anano/
 ---
-So we're looking to implement patching with Systems Manager. Technically it seems fine, but I'm struggling with figuring out the best way to implement what I think is a seemingly simple pattern.
+I'm interested in the EC2 t3a.nano instance type but can't find anywhere what kind of storage (and how much) this instance type comes with. So I'm talking about the default (included in the price) storage that the OS is installed on.
 
-1. Manually or automatically (e.g. scheduled for a specific day of the month) approve the latest group of patches for a set of non-production systems.
-2. Kick of automated testing of non-production systems.
-3. Assuming testing doesn't reveal any issues, approve the **same** updates that were installed on non-production systems to be installed on production systems.
+Does anyone know if it's a HDD or SSD and if it's local or EBS?
+## [5][How to best architect a live video streaming platform using MediaLive, MediaPackage, and CloudFront?](https://www.reddit.com/r/aws/comments/g36gup/how_to_best_architect_a_live_video_streaming/)
+- url: https://www.reddit.com/r/aws/comments/g36gup/how_to_best_architect_a_live_video_streaming/
+---
+Hi there,
 
-The only thing I can come up with so far is running AWS-RunPatchBaseline on non-production systems on a specific day of the month (with a patch baseline configured to install all patches released up to that day), and then run AWS-RunPatchBaseline on production systems some number of days later and specify to install patches released up to the same date that AWS-RunPatchBaseline was run in non-production. This seems somewhat error prone and less than ideal.
+I am building a live video streaming platform (users can push video streams via RTMP). I have gone through the AWS Live Video Streaming solution guide ([https://aws.amazon.com/solutions/live-streaming-on-aws/](https://aws.amazon.com/solutions/live-streaming-on-aws/)) and the CloudFormation template. I understand how inputs and channels work on MediaLive and I'm planning to use MediaPackage and CloudFront to distribute the video feed (HLS).
 
-I was able to implement a similar pattern in the past with Linux repo mirrors (and aptly) by just creating a snapshot, release it to non-prod, waiting for testing, and then releasing the same snapshot of patches to prod (and just waiting for nightly patch installation to pick up the newly released packages). Is there any way to implement something similar with Systems Manager that I'm missing?
+On my platform, when people create a new stream, I want to provide them with an RTMP URL and stream key (will be on MediaLive) to push their feed. Should I programmatically (via i.e. JS SDK) create a new input and channel for every user stream? And then should I create a new channel and endpoint for MediaPackage and CloudFront as well? Is this the best/recommended approach?
+
+I understand that there is a minimal cost incurred by idle MediaLive inputs/channels (is there for MediaPackage as well?), and I know that I could start the MediaLive channels only when/as needed. However, I know that starting a channel takes time, and ideally, I would like my users to be able to start pushing video content right away after they set up their stream. How long does it take for a channel to start? And is there any event I can subscribe to (or create on SNS) to know when the channel is ready?
+
+I can also see that there are specific quotas and limits ([https://docs.aws.amazon.com/medialive/latest/ug/limits.html](https://docs.aws.amazon.com/medialive/latest/ug/limits.html)). In my case, I might need to have tens if not hundreds of channels (if I do need a channel for every user indeed). Can I just apply to lift the quotas, same way it works for SES for example?
+
+Last but not least, I see that the params object for the MediaLive createChannel function (JS: [https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/MediaLive.html#createChannel-property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/MediaLive.html#createChannel-property)) is quite extensive. Is there a shorter template I can use that contains the most important parameters?
+
+Does my approach overall make sense or is there a better way (from an operational and cost perspective) to achieve what I have in mind?
+
+&amp;#x200B;
+
+Thanks in advance!
+## [6][Python HTTP server on EC2 gives empty response](https://www.reddit.com/r/aws/comments/g3n8sg/python_http_server_on_ec2_gives_empty_response/)
+- url: https://www.reddit.com/r/aws/comments/g3n8sg/python_http_server_on_ec2_gives_empty_response/
+---
+I have created a Python aiohttp server that runs on 0.0.0.0:80. It only has one single page /hook which will show basic Hello text.
+
+When I run the server on my laptop and check with my browser it works.
+
+Then I uploaded my code to my EC2 instance and configured the Security Group such that it allows all sources (0.0.0.0/0) inbound HTTP.
+
+Now when I type &lt;instance public ip&gt;/hook, my browser says it has given an empty response.
+Running curl http://localhost/hook when SSH into the instance also gives this empty response.
+
+I don't think my server is running in HTTPS as I didn't configure the Python code to do so.
+## [7][Stopped lightsail instances still incur charges?](https://www.reddit.com/r/aws/comments/g37d40/stopped_lightsail_instances_still_incur_charges/)
+- url: https://www.reddit.com/r/aws/comments/g37d40/stopped_lightsail_instances_still_incur_charges/
+---
+If I understand this correctly. stopped lightsail instances are still charged as if they are active. Why would you stop a lightsail instance if they still get charged?
+
+Edit: I’m dumb
+## [8][Do you need any help with Devops work ?](https://www.reddit.com/r/aws/comments/g3m6tj/do_you_need_any_help_with_devops_work/)
+- url: https://www.reddit.com/r/aws/comments/g3m6tj/do_you_need_any_help_with_devops_work/
+---
+Hey Guys
+
+Hope you are doing good !!
+
+Due to this Pandemic situation, we have a lot of free time on our hands.
+
+If anybody needs any kind of help in Devops, Please DM me. We are a team of 2.
+
+We can help you out  with below mentioned technologies :
+
+Cloud : AWS &amp; Google Cloud 
+
+Iac  : Terraform
+
+Configuration Management   : Ansible
+
+Container : Docker
+
+Container Orchestration : Kubernetes
+
+Monitoring : Prometheus &amp; Grafana
+
+Centralized logging : ELK stack
+
+Databases : MongoDB, Mysql
+## [9][regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB](https://www.reddit.com/r/aws/comments/g3hjq7/regional_data_transfer_inoutbetween_ec2_azs_or/)
+- url: https://www.reddit.com/r/aws/comments/g3hjq7/regional_data_transfer_inoutbetween_ec2_azs_or/
+---
+Hello. I was looking at our AWS bill and noticed 500GB of
+
+" regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB "
+
+I pretty much figured out that we have two servers talking to each other using their public DNS names that resolve to their elastic IPs.
+
+I had two questions
+
+1) Would the simple fix be to have their public dns addresses resolve to internal IPs? So on the servers themselves, if they ping [example.domain.com](https://example.domain.com) it would resolve to internal IP instead of going out to a DNS server and finding the real public IP?
+
+I could do this either by adding the A reconds into the DNS servers the EC2 servers point to, or by manually adding hosts records on the servers.
+
+2) Would doing this give us a performance gain? I'm not sure if the servers are currently going up to a router and back down each time they talk? When using the elastic IP?
+
+So would having them talk to each other using internal IPs actually speed stuff up?
+
+&amp;#x200B;
 
 Thanks!
-## [5][Lambda function not able to handle load tests.](https://www.reddit.com/r/aws/comments/g30ty0/lambda_function_not_able_to_handle_load_tests/)
-- url: https://www.reddit.com/r/aws/comments/g30ty0/lambda_function_not_able_to_handle_load_tests/
+## [10][Ecommerce website architecture](https://www.reddit.com/r/aws/comments/g3f24l/ecommerce_website_architecture/)
+- url: https://www.reddit.com/r/aws/comments/g3f24l/ecommerce_website_architecture/
 ---
-I am trying to load test my lambda function (connected to gateway) using JMeter. On the function, I have set the concurrency to "Use unreserved account concurrency" (default 1000 for my account).
+Hi all, just want to get your opinion about how a simple ecommerce stack should look like.
 
-I have set the following config in JMeter thread worker:
+The website will be quite simple showing a few products and has a cart that allows the customers to pay for what they've added to it. The site will be created with React and in the future will add authentication and profiles.
 
-* Number of Threads (users): 1000
+The stack in mind was host the content in S3, connect to dynamodb to fetch product details, lambda would handle the requests for the payments and triggered through api gateway. Also, route53 to direct to my domain name.
 
-- Ramp Up Time: 0 secs (Because I want all the requests to hit at once. Please correct me if I'm wrong here)
-
-- Input: I have provided a CSV with 4000 rows, so it will make 4000 requests in total
-
-Most of my requests are failing. [Here is a screenshot showing how many requests fail along with the response received](https://imgur.com/GT72QQJ).
-
-In production, I will have to handle such amount of concurrent requests. What can I do to make this work?
-
-The lambda function is not compute heavy - all it does is reads a dynamo table and pushes the event payload to a SQS queue. So I don't think there is any space left to optimize there
-## [6][Data Transfer Out (DTO) 40% Price Reduction in South America (São Paulo) Region](https://www.reddit.com/r/aws/comments/g2esea/data_transfer_out_dto_40_price_reduction_in_south/)
-- url: https://aws.amazon.com/blogs/aws/aws-data-transfer-out-dto-40-price-reduction-in-south-america-sao-paulo-region/
----
-
-## [7][AWS Forecast error saying filter id is missing or invalid](https://www.reddit.com/r/aws/comments/g2zep1/aws_forecast_error_saying_filter_id_is_missing_or/)
-- url: https://www.reddit.com/r/aws/comments/g2zep1/aws_forecast_error_saying_filter_id_is_missing_or/
----
-Whenever I want to do a Forecast lookup I get the following error message:
-
-&gt;Bad request ResourceNotFoundException : The query did not return any forecast results as the required filter id is either missing or is invalid. 
-
-I'm clueless about why I get this error. I checked my Forecast key (which is item\_id) and value (which is F11) and they fit with the .csv I used for my dataset. I also checked for the order of my attributes that I set for my dataset and they also fit with my .csv.
-
-An example line in my csv looks like this:
-
-    2016-12-07, 2, LAE, F11, 190, 190, 215, 58, 58, 79, 0, 23, **** 
-
-And my data schema looks like this:
-
-    {
-    	"Attributes": [
-    		{
-    			"AttributeName": "timestamp",
-    			"AttributeType": "timestamp"
-    		},
-    		{
-    			"AttributeName": "werk",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "messpunkt",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "item_id",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "PL_atag",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "SO_atag",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "demand",
-    			"AttributeType": "float"
-    		},
-    		{
-    			"AttributeName": "plumlauf",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "sumlauf",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "umlauf",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "diff_mpp",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "diff_rp",
-    			"AttributeType": "string"
-    		},
-    		{
-    			"AttributeName": "fst_fber",
-    			"AttributeType": "string"
-    		}
-    	]
-    }
-
-So where is the mistake here?
-## [8][Amazon Chime: max participants with two way video?](https://www.reddit.com/r/aws/comments/g2jsv1/amazon_chime_max_participants_with_two_way_video/)
-- url: https://www.reddit.com/r/aws/comments/g2jsv1/amazon_chime_max_participants_with_two_way_video/
----
-Hello, was going through the docs to consider this solution for an upcoming opportunity and was not clear on the above point.
-
-It says a user can host meeting with upto 250 attendees, but doesn't explicitly say whether all 250 can have interactive video or is it more like viewers with only upto x panelists/two-way speakers in the meeting. There are references of upto 16 video streams on first come basis, but it's not clear whether they only allow 16 users with a camera or its 16 can be displayed on the screen at a time and it wd dynamically switch to active ones/speaking ones i.e. all 250 can have two way video&amp;audio, but on the screen one can view upto recent 16 active users at any time. Similarly, on the SDK front, it talks about 100 attendees per meeting with 100 audio streams n 16 video streams.
-
-So, if I am a paid user who is hosting a  video meeting, how many participants (with video) can I have in my meeting? Bluntly put, if I subscribe to $15/month as a host, what are rhe limits on the video conf participants for my meetings?
-
-Can someone please clarify as to how many simultaneous participants (with two way audio n video) can join a meeting on chime? What are the other limitations / charges for a web based video conferencing / webinar solution (without any external pstn based voice etc)?
-
-Thanks
-## [9][Leveraging ULIDs to create order in unordered datastores (like S3)](https://www.reddit.com/r/aws/comments/g2mh01/leveraging_ulids_to_create_order_in_unordered/)
-- url: https://www.trek10.com/blog/leveraging-ulids-to-create-order-in-unordered-datastores
----
-
-## [10][Anyway to tag nodes in ASG set differently in CloudFormation?](https://www.reddit.com/r/aws/comments/g2jtko/anyway_to_tag_nodes_in_asg_set_differently_in/)
-- url: https://www.reddit.com/r/aws/comments/g2jtko/anyway_to_tag_nodes_in_asg_set_differently_in/
----
-I am using ASG w/ LaunchTemplate to create 3 systems in CloudFormation Script.  Is there a way I can tag these differently as alpha1, alpha2, alpha3, or add other tags, such a role tag?
-
-I have a cluster, i have to configure nodes differently in the user data script, where one is a instance is a leader, while other instances are peers.  Additionally, on one of the systems, I would like to put a small management web service on it to reduce costs.
+Thoughts?

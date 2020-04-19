@@ -1,81 +1,75 @@
 # Kotlin
-## [1][Coroutines and exceptions: things to know](https://www.reddit.com/r/Kotlin/comments/g3mbju/coroutines_and_exceptions_things_to_know/)
-- url: https://www.rockandnull.com/coroutines-and-exceptions/
+## [1][Does literally anyone besides me use Kotlin for development outside of Android? (JVM Kotlin).](https://www.reddit.com/r/Kotlin/comments/g3r6yr/does_literally_anyone_besides_me_use_kotlin_for/)
+- url: https://www.reddit.com/r/Kotlin/comments/g3r6yr/does_literally_anyone_besides_me_use_kotlin_for/
 ---
-
-## [2][MVI in Kotlin Multiplatform — part 1](https://www.reddit.com/r/Kotlin/comments/g35sle/mvi_in_kotlin_multiplatform_part_1/)
-- url: https://badootech.badoo.com/mvi-in-kotlin-multiplatform-part-1-1-of-3-205c6feb4ac7
----
-
-## [3][[Newbie-question] [Kotlin/Android] ListView + setOnItemClickListener -&gt; how to get value?](https://www.reddit.com/r/Kotlin/comments/g3bths/newbiequestion_kotlinandroid_listview/)
-- url: https://www.reddit.com/r/Kotlin/comments/g3bths/newbiequestion_kotlinandroid_listview/
----
-I'm new to Android/Kotlin and try to understand ListView:
-
-let say my App shows:
-
-yellow
-
-blue
-
-orange
-
-....
-
-in a ListView.
-
-\-&gt; when I use:
-
-mylist.setOnItemClickListener **{** parent, **view**, position, id **-&gt;**  
- Toast.makeText(this, "Clicked item/fruit is **:"**\+**" "**\+position+**view**,Toast.*LENGTH\_SHORT*).show()  
-}
+Anytime I look for new libraries in Kotlin or fixes, they always have fixes for Android Studio or the android library system. I love Kotlin, as I know both Java and Kotlin, Kotlin in every way is better than Java. But, I feel like Kotlin is just used for Android.
 
 &amp;#x200B;
 
-I get the position (0/1/2/3/...) + the view as an array from the clicked item.
-
-How can I get the text-value that is shown  (e.g. "yellow", "blue" or "orange")  of the item?
-
-thx
-## [4][In march, the german government started a hackathon to develop solutions for the corona crisis. We are one of the top 20 solutions and are in need of volunteers for Kotlin development!](https://www.reddit.com/r/Kotlin/comments/g2jwq3/in_march_the_german_government_started_a/)
-- url: https://www.reddit.com/r/Kotlin/comments/g2jwq3/in_march_the_german_government_started_a/
----
-Hi, I'm on the volunteer team for one of the top 20 projects in the German government's Wir Vs Virus Hackathon. We (nexd) are developing a platform to coordinate grocery shopping helpers for all those who cannot leave the house at the moment. The twist here is that even people without a smartphone and technical knowledge can submit their shopping list via a simple phone call. This way, we reach the people most affected by the crisis: seniors.
-
-We are about to launch the beta test but are in dire need of Kotlin developers. If you are interested in helping (our slack is in English) please contact mail@nexd.app More information about the project (German only, sadly): https://www.youtube.com/watch?v=0PmuLrq4Hno
-
-Thank you and stay healthy!
-## [5][Gradle &amp; Kotlin — create tests artifact](https://www.reddit.com/r/Kotlin/comments/g2ygpq/gradle_kotlin_create_tests_artifact/)
-- url: https://medium.com//gradle-kotlin-create-tests-artifact-1e22bb00b1e1?source=friends_link&amp;sk=5bc717c40eb14b24c190e686d2834f21
+Edit: I obviously know Kotlin is used heavily, it was more I was curious of where in the real world Kotlin is being used outside of Android. Most everyone understood this and replied with their experiences &amp; thoughts on Kotlin.   
+## [2][VKUG - Fight Complexity With Functional Programming](https://www.reddit.com/r/Kotlin/comments/g457o1/vkug_fight_complexity_with_functional_programming/)
+- url: https://youtu.be/uGxx01yYAgk
 ---
 
-## [6][gRPC, meet Kotlin | Google Cloud Blog](https://www.reddit.com/r/Kotlin/comments/g2mbe9/grpc_meet_kotlin_google_cloud_blog/)
-- url: https://cloud.google.com/blog/products/application-development/use-grpc-with-kotlin
+## [3][Some improvements in Eclipse Kotlin Plugin](https://www.reddit.com/r/Kotlin/comments/g46ngy/some_improvements_in_eclipse_kotlin_plugin/)
+- url: https://www.reddit.com/r/Kotlin/comments/g46ngy/some_improvements_in_eclipse_kotlin_plugin/
+---
+Usually if I open .kt file in eclipse, mostly it will hang
+
+But the new version  [https://marketplace.eclipse.org/content/kotlin-plugin-eclipse](https://marketplace.eclipse.org/content/kotlin-plugin-eclipse) 
+
+Seems to improved a bit and the files are opening without much hanging
+## [4][Coroutines and exceptions: things to know](https://www.reddit.com/r/Kotlin/comments/g3mbju/coroutines_and_exceptions_things_to_know/)
+- url: https://www.rockandnull.com/coroutines-and-exceptions/
 ---
 
-## [7][My first Kotlin Project: ServerNeat - a standalone Mock/Stub server that is able to generate dynamic data](https://www.reddit.com/r/Kotlin/comments/g2hhxd/my_first_kotlin_project_serverneat_a_standalone/)
-- url: https://github.com/nomemory/serverneat
+## [5][Kotlin Microservices With Spring Boot And Spring Cloud: Part 1 - Intro to Spring Boot](https://www.reddit.com/r/Kotlin/comments/g3wpdz/kotlin_microservices_with_spring_boot_and_spring/)
+- url: https://www.youtube.com/watch?v=KnbH4hOswLA
 ---
 
-## [8][A comparison between Kotlin Native approach and native solutions by Marek Multarzyński](https://www.reddit.com/r/Kotlin/comments/g2memo/a_comparison_between_kotlin_native_approach_and/)
-- url: https://www.youtube.com/watch?v=u6u_MaQBxAs
+## [6][JSON library](https://www.reddit.com/r/Kotlin/comments/g3p86q/json_library/)
+- url: https://www.reddit.com/r/Kotlin/comments/g3p86q/json_library/
+---
+Hello you all, I have done a library for json manipulation [https://github.com/Barddo/kson](https://github.com/Barddo/kson) it's a Kotlin friendly fork of the org.json. Feel free to open issues and pull requests.
+## [7][DDD Domain entity as data class?](https://www.reddit.com/r/Kotlin/comments/g3tghh/ddd_domain_entity_as_data_class/)
+- url: https://www.reddit.com/r/Kotlin/comments/g3tghh/ddd_domain_entity_as_data_class/
+---
+As I understand the primary use case for data classes is DTOs, classes which represent API response or a response of an external service, etc. These classes are simply data holders and they don't need any behavior attached to them. This is an obvious use case.
+
+What about domain entities? They are supposed to have both data and behavior. Is it okay to define them as data class or that's semantically incorrect?
+
+(same question could stand for Java 14 records, although they are more limited, so maybe not a proper comparison...)
+
+EDIT1:
+
+Example:
+
+    data class Person(
+        private var name: String,
+        val age: Int
+    ) {
+        fun isAdult() = age &gt;= 18
+    
+        fun changeName(newName: String) {
+            this.name = newName
+        }
+    }
+
+EDIT2:
+
+Actually, there is a detekt rule which should fail on data classes which have custom functions (if I understand correctly):  [https://arturbosch.github.io/detekt/style.html#dataclasscontainsfunctions](https://arturbosch.github.io/detekt/style.html#dataclasscontainsfunctions)
+## [8][Multiple Kotlin Frameworks in an Application](https://www.reddit.com/r/Kotlin/comments/g3ssyv/multiple_kotlin_frameworks_in_an_application/)
+- url: https://touchlab.co/multiple-kotlin-frameworks-in-application/
 ---
 
-## [9][Implementing Retrofit in Android | Request methods | Part 6](https://www.reddit.com/r/Kotlin/comments/g2l4z8/implementing_retrofit_in_android_request_methods/)
-- url: https://www.youtube.com/watch?v=Bke3kmujg_A
+## [9][Micronaut JWT auth mock](https://www.reddit.com/r/Kotlin/comments/g3opms/micronaut_jwt_auth_mock/)
+- url: https://www.reddit.com/r/Kotlin/comments/g3opms/micronaut_jwt_auth_mock/
+---
+It took me several hours to figure out how to mock the JWT authorization in my Micronaut application tests, but finally I found a way to do it. So that you don't waste too much time on the same problem I have published a sample project on Github. I hope there are some people I can help with this :)   
+
+
+[https://github.com/lstoeferle/micronaut-jwt-auth-mock](https://github.com/lstoeferle/micronaut-jwt-auth-mock)
+## [10][MVI in Kotlin Multiplatform — part 1](https://www.reddit.com/r/Kotlin/comments/g35sle/mvi_in_kotlin_multiplatform_part_1/)
+- url: https://badootech.badoo.com/mvi-in-kotlin-multiplatform-part-1-1-of-3-205c6feb4ac7
 ---
 
-## [10][Question about nullable generics](https://www.reddit.com/r/Kotlin/comments/g2e4mh/question_about_nullable_generics/)
-- url: https://www.reddit.com/r/Kotlin/comments/g2e4mh/question_about_nullable_generics/
----
-Let's say I have a class with a single type parameter, T.
-
-In this class, I can use T? when I want a value of type T to be nullable.
-
-But T could already be a nullable type. 
-
-My question is, how do I do the opposite, i.e. safely represent that a member function that returns type T is NOT nullable even if T happens to be nullable?
-
-Or if that is confusing let me phrase it in another way: given intended construction like MyClass&lt;MyType?&gt;(), how could I write a function inside MyClass that returns a (MyType) instead of a (MyType?)
-
-Thanks for your help

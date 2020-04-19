@@ -109,130 +109,103 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I've started a mini-series where I try to replicate popular UI's. The first episode is Spotify (I cover the basic styling &amp; setup). Follow along if you like!](https://www.reddit.com/r/reactjs/comments/g34vqr/ive_started_a_miniseries_where_i_try_to_replicate/)
-- url: https://www.youtube.com/watch?v=rkZEWuMRY28
+## [3][React Router Crash Course | Part#1 | Build Navbar, Home component &amp; Footer | React Bootstrap](https://www.reddit.com/r/reactjs/comments/g44scy/react_router_crash_course_part1_build_navbar_home/)
+- url: https://youtu.be/mBU_qu9r1AQ
 ---
 
-## [4][Hacking Next.js for better PageSpeed scores](https://www.reddit.com/r/reactjs/comments/g3nh6v/hacking_nextjs_for_better_pagespeed_scores/)
-- url: https://medium.com/medwing-engineering-product-design/hacking-next-js-for-better-pagespeed-scores-6c651d19f218
+## [4][I've recently finished my first react project, a MERN stack restaurant finder(using google map) and multi-user recipe sharing website "clone".](https://www.reddit.com/r/reactjs/comments/g3z0pk/ive_recently_finished_my_first_react_project_a/)
+- url: https://www.reddit.com/r/reactjs/comments/g3z0pk/ive_recently_finished_my_first_react_project_a/
+---
+Project URL: [https://mealternative.com/](https://mealternative.com/).
+
+Hello everyone! First time posting, if I violate any rules please let me know and I'll change it up.
+
+I would like to share my first react project (first as in not following any tutorial, original concept and project). any suggestions would also be great to hear. 
+
+The website is not for production but rather an example website. It demonstrates the MERN stack implementation, redux, redux-saga, material UI, react-google map integration and much more. I've built this project initially because I want to build a restaurant finder for my personal use. I then realize this might be a good project for me to also implement the MERN stack for some MERN knowledge revision (well, it took way longer than I expected).
+
+I've documented the complete google map integration inside the project Frontend GitHub [repo](https://github.com/kazhala/mealternative), including setting up google map token, address auto-complete and restaurant searching. The repo also contains instructions and Cloudformation templates about how this entire MERN stack project is hosted on AWS. It also explains how the folder structures are set up for easy navigation and understanding. I've also documented some of the backend implementation details in the project Backend Github [repo](https://github.com/kazhala/mealternative-backend).
+
+Some of the implementations might not be best practice and I would like to hear feedback to improve it. Thanks, everyone.
+## [5][React Performance Optimization with React.memo()](https://www.reddit.com/r/reactjs/comments/g3ojg7/react_performance_optimization_with_reactmemo/)
+- url: https://felixgerschau.com/react-performance-react-memo
 ---
 
-## [5][Can't create react app](https://www.reddit.com/r/reactjs/comments/g3n7q1/cant_create_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/g3n7q1/cant_create_react_app/
+## [6][If you're not using framer-motion on your project you should seriously stop and look at it!](https://www.reddit.com/r/reactjs/comments/g3wozc/if_youre_not_using_framermotion_on_your_project/)
+- url: https://www.reddit.com/r/reactjs/comments/g3wozc/if_youre_not_using_framermotion_on_your_project/
 ---
-Hi, there seems to be a problem when I run npx create react app on my terminal. I get bunch of errors.
+Like really, it's a wonderful lib. It makes animations great and sometimes even magical.
 
-    Installing packages. This might take a couple of minutes.
-    Installing react, react-dom, and react-scripts with cra-template...
-    
-    ➤ YN0000: ┌ Resolution step
-    ➤ YN0032: │ fsevents@npm:2.1.2: Implicit dependencies on node-gyp are discouraged
-    ➤ YN0032: │ fsevents@npm:2.1.2: Implicit dependencies on node-gyp are discouraged
-    ➤ YN0032: │ fsevents@npm:1.2.12: Implicit dependencies on node-gyp are discouraged    
+If you don't believe me, check this out: [https://codesandbox.io/s/framer-motion-animatesharedlayout-menu-underline-demo-zxsmv?file=/src/App.js](https://codesandbox.io/s/framer-motion-animatesharedlayout-menu-underline-demo-zxsmv?file=/src/App.js)
 
-and more errors.
-
-I have the latest node installed on my pc.
-
-I'd appreciate any help. Thanks!
-## [6][Property undefined](https://www.reddit.com/r/reactjs/comments/g3mneq/property_undefined/)
-- url: https://www.reddit.com/r/reactjs/comments/g3mneq/property_undefined/
+I love this lib, for me it could easily become the de facto go-to animation lib on react, hands down.
+## [7][rt.live - tracking Covid reproduction numbers by state in the US. Built with React](https://www.reddit.com/r/reactjs/comments/g454o5/rtlive_tracking_covid_reproduction_numbers_by/)
+- url: https://rt.live/
 ---
-I am able to console.log and view an array of objects. I am also able to access a seperate element of the array. But when i try to access a property, i get an error saying property undefined. How do i solve this?
+
+## [8][ReactJS API call best practice](https://www.reddit.com/r/reactjs/comments/g40vpr/reactjs_api_call_best_practice/)
+- url: https://www.reddit.com/r/reactjs/comments/g40vpr/reactjs_api_call_best_practice/
+---
+Hey champs, currently developing a ReactJS project with thunk, redux.. bangs and gold cupcakes. I'm having a slight misunderstanding - heres the rundown.
 
 &amp;#x200B;
 
-       console.log(familyMembers);
-       const [fields, setFields] = useState(familyMembers);
+Im creating an ecommerce website that has bookings etc. Each user has a page that displays a list of  their bookings for items, which includes data from different  database tables - item, user etc. This is all presented within the list item, what is the best practice for retrieving the data? a chained action in redux using thunk that gets the users bookings, then accesses the item db to get the item info? Bit lost in my own head lol, just wondering how others would do such a task. Keep in mind this happens all throughout the app so trying to make the functions decoupled if you will.
 
-This is what im trying to do. familyMembers is an array of objects from mongoDB.
+Bit of a shit explanation, let me know if you need more info..
 
-But fields is always empty.
-
-&amp;#x200B;
-
-     const {  name, address, phone, email, familyMembers } = state;
-    
-        useEffect(() =&gt; {
-            axios
-                .get(`${process.env.REACT_APP_API}/post/${props.match.params.id}`)
-                .then(response =&gt; {
-                    const { name, phone, email, address, familyMembers } = response.data;
-                    setState({ ...state, name, phone, email, address, familyMembers })
-                })
-                .catch(error =&gt; alert('Error loading single post'));
-                
-        }, []
-        );
-
-I get this when I console.log familyMembers:
-
-    (3) [{…}, {…}, {…}]
-
-&amp;#x200B;
-## [7][getting the sum of a number in the array](https://www.reddit.com/r/reactjs/comments/g3mfcd/getting_the_sum_of_a_number_in_the_array/)
-- url: https://www.reddit.com/r/reactjs/comments/g3mfcd/getting_the_sum_of_a_number_in_the_array/
----
-const number = movies.map((movie) =&gt; movie.price);  
- const sum = number.reduce(function(a, b) {  
- return a + b;  
- }, 0);
-
-&amp;#x200B;
-
-I have 2 inputs one for the movie name and other for the price I'm trying to get the total price on the nav... I get the total price but when a add something it doubles the total number
-
-this is the  exercise I'm studying from
-
-[https://www.youtube.com/watch?v=35lXWvCuM8o](https://www.youtube.com/watch?v=35lXWvCuM8o)
-## [8][Built a minimalist PWA for monitoring air quality levels in your current location using Next.js and Zeit Now](https://www.reddit.com/r/reactjs/comments/g3imu9/built_a_minimalist_pwa_for_monitoring_air_quality/)
-- url: https://airhealth.now.sh
+Cheers
+## [9][Creating dynamic themes with React &amp; TailwindCSS](https://www.reddit.com/r/reactjs/comments/g479d3/creating_dynamic_themes_with_react_tailwindcss/)
+- url: https://dev.to/ohitslaurence/creating-dynamic-themes-with-react-tailwindcss-59cl
 ---
 
-## [9][Which library?](https://www.reddit.com/r/reactjs/comments/g3m5l7/which_library/)
-- url: https://www.reddit.com/r/reactjs/comments/g3m5l7/which_library/
----
-Frontend is not my strongest suite, I've seen mostly the backend dude when working on projects. The most I've used is bootstrap and materialize.
-
-&amp;#x200B;
-
-What are some popular libraries that are used along with react for beautiful design and mobile responsive?
-
-&amp;#x200B;
-
-Thanks
-## [10][Crank.js | Introducting Crank](https://www.reddit.com/r/reactjs/comments/g2u135/crankjs_introducting_crank/)
-- url: https://crank.js.org/blog/introducing-crank
+## [10][React js Project Netflix Website Clone](https://www.reddit.com/r/reactjs/comments/g46mc9/react_js_project_netflix_website_clone/)
+- url: https://www.youtube.com/playlist?list=PL6jnTQwFvrdbccPErnd5AsCY3dkYUk3e5
 ---
 
-## [11][Error with "npm start"](https://www.reddit.com/r/reactjs/comments/g3ln59/error_with_npm_start/)
-- url: https://www.reddit.com/r/reactjs/comments/g3ln59/error_with_npm_start/
+## [11][Can someone tell me what I did wrong in my axios API call?](https://www.reddit.com/r/reactjs/comments/g46cyd/can_someone_tell_me_what_i_did_wrong_in_my_axios/)
+- url: https://www.reddit.com/r/reactjs/comments/g46cyd/can_someone_tell_me_what_i_did_wrong_in_my_axios/
 ---
- Hello everyone, i'm having few problems using node.js, i've done this procedure:
+Hey I've been trying to get axios to work for like 2 hours, and I finally found a solution which works, but I don't understand why my initial code didn't work, so if anyone could tell me what I was doing wrong here?
 
-* Download Node LTS
-* In the bash shell i wrote " npm install -g create-react-app "
-* Then i've moved to a project directory that i've called "node" and i made the app writing " create-react-app myapp"
-* So far no errors, then i've moved to the project directory and wrote "npm start", and this was the resut: [LINK](https://i.imgur.com/0hYSmOc.png)
+Here' my code: 
 
-How can i fix this? I've already tried to delete package.JSON and node\_modules and reinstall them with "npm install" without any success.
+		axios({
+			url: "https://accounts.spotify.com/api/token",
+			method: "POST",
+			params: {
+				grant_type: "client_credentials",
+			},
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
+			auth: {
+				username: "private",
+				password: "private",
+			},
+		}).then((res) =&gt; console.log(res));
 
-Also two users on r/node told me to use " npx create-react-app myapp " instead of " npm install -g create-react-app", i've executed " npm uninstall -g create-react-app " before that and i still have the samae error.
+Here's the code that I found online that actually works: 
 
-Thanks!
-## [12][Help with flexbox/css styling](https://www.reddit.com/r/reactjs/comments/g3lhyb/help_with_flexboxcss_styling/)
-- url: https://www.reddit.com/r/reactjs/comments/g3lhyb/help_with_flexboxcss_styling/
+		axios
+			.post("https://accounts.spotify.com/api/token", null, {
+				params: {
+					grant_type: "client_credentials",
+				},
+				headers: {
+					Accept: "application/json",
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+				auth: {
+					username: "private",
+					password: "private",
+				},
+			})
+			.then((res) =&gt; console.log(res));
+
+When using my code, the server was just giving me a "server_error" response and nothing else...
+## [12][React node MSSQL file storage.](https://www.reddit.com/r/reactjs/comments/g45lo7/react_node_mssql_file_storage/)
+- url: https://www.reddit.com/r/reactjs/comments/g45lo7/react_node_mssql_file_storage/
 ---
-My temp website is here: https://gm-stats.netlify.app/
-
-
-
-Now the two problems are...
-
-1) There is an unwanted gap between the 1st and 2nd row when the flexbox is in a 5 x 2 formation. I only want the gap between the two rows to be 10px but I can't figure out why it keeps generating a large gap in the middle, when I inspect it the margins look small.
-
-
-2) When I zoom in or shrink the page and more than 2 rows are created the cards flow off the page and the background image won't cover everything. How do I ensure that the background image is always stretching to cover the entire view?
-
-
-I apologize if these are pretty basic questions but I'm having a hard time trying to figure this out and would appreciate any help.
+I am working on a small project using node express react and sql server. I have files to be stored currently I am uploding all sorts of file to firebase from front end and storing the links to them on sql server. Is it a good practice to do so?

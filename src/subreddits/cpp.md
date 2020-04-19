@@ -119,11 +119,89 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][I wrote a lightweight Web Socket library for Qt5. Unlike QWebSocket, I feel this is easier to use with existing code (offers a class that inherits QTcpSocket).](https://www.reddit.com/r/cpp/comments/g3jwu3/i_wrote_a_lightweight_web_socket_library_for_qt5/)
+## [3][Default function arguments are the devil](https://www.reddit.com/r/cpp/comments/g3yjuc/default_function_arguments_are_the_devil/)
+- url: https://quuxplusone.github.io/blog/2020/04/18/default-function-arguments-are-the-devil/
+---
+
+## [4][Why FBThrift has so little documentation/tutorials?](https://www.reddit.com/r/cpp/comments/g47pn2/why_fbthrift_has_so_little_documentationtutorials/)
+- url: https://www.reddit.com/r/cpp/comments/g47pn2/why_fbthrift_has_so_little_documentationtutorials/
+---
+I am not sure if my google setting is wrong. But I cannot find much useful tutorials/examples for facebook Thrift .
+
+Is FBThrift widely used in the industry outside of FB? Does anyone have any insights?
+## [5][Working implementation of executors proposal with clang](https://www.reddit.com/r/cpp/comments/g3zco9/working_implementation_of_executors_proposal_with/)
+- url: https://www.reddit.com/r/cpp/comments/g3zco9/working_implementation_of_executors_proposal_with/
+---
+I'm trying to setup `experimental::executor` preferably with clang-10 but two of the implementations ([this](https://github.com/chriskohlhoff/executors) and [that](https://github.com/executors/executors-impl)) that I've tried, failed to build. The first implementation doesn't even offer CMake support, and is incompatible with current latest implementation of `std::future`.
+
+Is there an available implementation which builds with clang-9 or clang-10? If not, then what's the best way to go about compiling and successful running a basic example of `experimental::executor`?
+## [6][I wrote a lightweight Web Socket library for Qt5. Unlike QWebSocket, I feel this is easier to use with existing code (offers a class that inherits QTcpSocket).](https://www.reddit.com/r/cpp/comments/g3jwu3/i_wrote_a_lightweight_web_socket_library_for_qt5/)
 - url: https://github.com/cculianu/WebSocket
 ---
 
-## [4][Preview of my second library, ESeed Window, window management library currently supporting Win32 and Vulkan, more to come](https://www.reddit.com/r/cpp/comments/g3iae9/preview_of_my_second_library_eseed_window_window/)
+## [7][Padding in structs and classes with exactly one member](https://www.reddit.com/r/cpp/comments/g437oc/padding_in_structs_and_classes_with_exactly_one/)
+- url: https://www.reddit.com/r/cpp/comments/g437oc/padding_in_structs_and_classes_with_exactly_one/
+---
+I am wondering if there is any situation in which a struct or class with one member would have a different size (using sizeof()) than the size of its member, assuming that the struct is not inheriting from any other class. Is this undefined behavior, or is it something that the standard guarantees to be true?
+
+On a second note, I am also wondering if there is a portable way to determine at compile-time whether or not a struct has a single member or not, given that I know the name of that member and its size. Thanks for your help.
+## [8][GTC 2020: CUDA C++ in Jupyter: Adding CUDA Runtime Support to Cling](https://www.reddit.com/r/cpp/comments/g3l8fl/gtc_2020_cuda_c_in_jupyter_adding_cuda_runtime/)
+- url: https://developer.nvidia.com/gtc/2020/video/s21588
+---
+
+## [9][Move variadic template arguments from a template structure to another template structure](https://www.reddit.com/r/cpp/comments/g3ntqs/move_variadic_template_arguments_from_a_template/)
+- url: https://www.reddit.com/r/cpp/comments/g3ntqs/move_variadic_template_arguments_from_a_template/
+---
+I'm in a bottomless pit of over-engineering that I don't want to get our out because it's way too much fun. Also, you can't go outside so what else is there to do. Here is a really cool thing I found.
+
+I wanted to use my fancy compile-time alias for calculating summary byte size of multiple structures:
+
+    template&lt;class ... Descriptions&gt;
+    using summary_byte_size = std::integral_constant&lt;size_t, (Descriptions::byte_size::value + ...)&gt;;
+
+It's not `sizeof()` because it's a description of data, not actual data. It carries no data, ok? Basically there are types that have required `byte_size` defined which is an `integral_constant` as well.
+
+Problem is, I wanted to use it with a subset (first N actually) of variadic template arguments that I had. So I couldn't simply `Args...` them to this structure :( In moments like this you really want to think `std::tuple` so I did that. I made `std::tuple&lt;Args...&gt;`, then I put it into thing below to get `std::tuple` of only N first types from initial tuple:
+
+    template&lt;std::size_t Count, typename Head, typename ... Rest&gt;
+    struct tuple_of_first_n {
+        using type = decltype(std::tuple_cat(std::declval&lt;Head&gt;(), std::tuple_cat(std::declval&lt;Rest&gt;()...)));
+    };
+    
+    template&lt;typename Head, typename ... Rest&gt;
+    struct tuple_of_first_n&lt;0, Head, Rest...&gt; {
+        using type = Head;
+    };
+
+Now - the actual core of this whole thing. How do I extract tuple types and push it to my `summary_byte_size&lt;&gt;` struct?
+
+How to get `Ts...` from `Something&lt;Ts...&gt;`?
+
+Introducing - *this abomination*:
+
+    template&lt;typename Source, template &lt;typename...&gt; typename Target&gt;
+    struct extract_types_and_apply{};
+    
+    template&lt;template &lt;typename...&gt; typename Source, template &lt;typename...&gt; typename Target, typename ... Ts&gt;
+    struct extract_types_and_apply&lt;Source&lt;Ts...&gt;, Target&gt; {
+        using type = Target&lt;Ts...&gt;;
+    };
+
+Basically we force it to pick *specialized* version so that `Ts...` is deduced and I can freely push it to anything I want that can accept these given `Ts...` args. And there we go!
+
+    auto totalSize = extract_types_and_apply&lt;std::tuple&lt;Vec3, Vec3, Vec2&gt;, summary_byte_size&gt;::type::value;
+
+Here's another example how you can use it. It can be used to take a container and create another container with same type! Here I made `std::list&lt;int&gt;` from `std::vector&lt;int&gt;`:
+
+    auto actualList = extract_types_and_apply&lt;std::vector&lt;int&gt;, std::list&gt;::type();
+
+Here's Godbolt link if you want - [https://godbolt.org/z/zO711Q](https://godbolt.org/z/zO711Q)
+
+If you want to pass values through template args like `std::size_t` then it's whole different story, because  neither `typename` nor `class` is `std::size_t`... but it works for types! Also, this is C++17. In C++20 you can basically do the same using single line templated lambda:  
+`[&amp;]&lt;class ... Types&gt;(std::tuple&lt;Types...&gt;){ /* use Types... however pleased */ }(tuple_of_first_n&lt;2, std::tuple&lt;int, char, int, int&gt;&gt;::type{});`
+
+I hope you like it :D
+## [10][Preview of my second library, ESeed Window, window management library currently supporting Win32 and Vulkan, more to come](https://www.reddit.com/r/cpp/comments/g3iae9/preview_of_my_second_library_eseed_window_window/)
 - url: https://www.reddit.com/r/cpp/comments/g3iae9/preview_of_my_second_library_eseed_window_window/
 ---
 Good day reddit folks! I hope everyone is safe! Not too long ago I posted my first library [ESeed Math](https://www.reddit.com/r/cpp/comments/fpum4g/eseed_math_my_first_c_library/)  on r/cpp, which got a greater response than I expected for such a small project! I was quite happy.
@@ -195,48 +273,22 @@ So, this is just a preview release. While I see no reason that it couldn't used 
 I am 17. I don't have much experience with writing open source libraries. I've done my best to create a useful piece of technology, but of course, for a large project such as this, assistance is very much appreciated &lt;3 Whatever the result, I'm proud of starting to be able to stay focused on a project without giving up. Everyone, thanks for reading, and enjoy your day!
 
 More details are available on the [GitHub page](https://github.com/elijaharita/eseed-window)
-## [5][ReSharper C++ 2020.1: New C++20 Features, Rearrange Code, HLSL Support, Enum Refactorings, and More](https://www.reddit.com/r/cpp/comments/g2yw74/resharper_c_20201_new_c20_features_rearrange_code/)
+## [11][Ssh2 client based on QTcpSocket and libssh2](https://www.reddit.com/r/cpp/comments/g3o01j/ssh2_client_based_on_qtcpsocket_and_libssh2/)
+- url: https://www.reddit.com/r/cpp/comments/g3o01j/ssh2_client_based_on_qtcpsocket_and_libssh2/
+---
+For implementation ssh2 protocol in my [my open source](https://github.com/synacker/daggy) project I created [class for ssh2 connection](https://github.com/synacker/daggy/blob/master/src/DaggyCore/Ssh2Client.h).
+
+This class supports:
+
+1. Async signal slot interface
+2. Ssh2 channels/processes
+
+I searched any async C++ wrappers for ssh2 before and did't found.
+
+Is there sense for implementing separate lib for ssh2 wrapper?
+
+Thank you for attention!
+## [12][ReSharper C++ 2020.1: New C++20 Features, Rearrange Code, HLSL Support, Enum Refactorings, and More](https://www.reddit.com/r/cpp/comments/g2yw74/resharper_c_20201_new_c20_features_rearrange_code/)
 - url: https://blog.jetbrains.com/rscpp/resharper-cpp-2020-1/
 ---
 
-## [6][GTC 2020: CUDA C++ in Jupyter: Adding CUDA Runtime Support to Cling](https://www.reddit.com/r/cpp/comments/g3l8fl/gtc_2020_cuda_c_in_jupyter_adding_cuda_runtime/)
-- url: https://developer.nvidia.com/gtc/2020/video/s21588
----
-
-## [7][xmake-gradle v1.0.7 released, Integrate xmake to quickly build Android C++/JNI program](https://www.reddit.com/r/cpp/comments/g3hn4d/xmakegradle_v107_released_integrate_xmake_to/)
-- url: https://tboox.org/2020/04/17/xmake-gradle-v1.0.7/
----
-
-## [8][CppCast: Rosetta](https://www.reddit.com/r/cpp/comments/g30tp1/cppcast_rosetta/)
-- url: https://cppcast.com/rosetta-andrew-jack/
----
-
-## [9][Sign Up For Pure Virtual C++ Conference 2020](https://www.reddit.com/r/cpp/comments/g2q4hh/sign_up_for_pure_virtual_c_conference_2020/)
-- url: https://devblogs.microsoft.com/cppblog/sign-up-for-pure-virtual-c-conference-2020/
----
-
-## [10][MSVC Backend Updates in Visual Studio 2019 Version 16.5](https://www.reddit.com/r/cpp/comments/g2snnt/msvc_backend_updates_in_visual_studio_2019/)
-- url: https://devblogs.microsoft.com/cppblog/msvc-backend-updates-in-visual-studio-2019-version-16-5/
----
-
-## [11][Microsoft GSL v3.0.0 Released Today](https://www.reddit.com/r/cpp/comments/g2kht8/microsoft_gsl_v300_released_today/)
-- url: https://www.reddit.com/r/cpp/comments/g2kht8/microsoft_gsl_v300_released_today/
----
-Microsoft GSL v3.0.0 has been released today. 
-
-Here are some highlights:
-
-* New unsigned implementation of `gsl::span`
-* New implementation of `gsl::span_iterator`
-* Contract violations result in termination
-* Additional CMake support
-
-See the blog and release for more information, links below:
-
-[C++ Team Blog Post](https://devblogs.microsoft.com/cppblog/gsl-3-0-0-release/) 
-
-[Microsoft/GSL Github Releases page](https://github.com/microsoft/GSL/releases/tag/v3.0.0)
-## [12][Should move assignment implementation allow for x = move(x)?](https://www.reddit.com/r/cpp/comments/g2wrtj/should_move_assignment_implementation_allow_for_x/)
-- url: https://www.reddit.com/r/cpp/comments/g2wrtj/should_move_assignment_implementation_allow_for_x/
----
-At a class in college the professor said that the mentioned usage should work (and by work I mean it should have no effect, noop). But often to support that I needed to wrap the usual logic in an if that checks if they have the same address, which seems wasteful to me. What are some of the non-trivial pitfalls if I choose to not support `x = move(x)`? Does anything in the STL depend on it?

@@ -40,66 +40,66 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Why is colorPrimary, colorPrimaryDark, colorAccent in res/colors in camelcase when other default values is in underscore case? Should colors then be named in camel case or should one stick to name everything in /res folders in underscore?](https://www.reddit.com/r/androiddev/comments/g3kydw/why_is_colorprimary_colorprimarydark_coloraccent/)
-- url: https://www.reddit.com/r/androiddev/comments/g3kydw/why_is_colorprimary_colorprimarydark_coloraccent/
+## [3][QR Scanning using CameraX](https://www.reddit.com/r/androiddev/comments/g44xh2/qr_scanning_using_camerax/)
+- url: https://sasikanth.dev/posts/camerax-qr-scanning
 ---
 
-## [4][Google shenanigans](https://www.reddit.com/r/androiddev/comments/g33cx7/google_shenanigans/)
-- url: https://i.redd.it/4zorclc05et41.jpg
+## [4][kiwibrowser/src-Source-code used in Kiwi Browser for Android](https://www.reddit.com/r/androiddev/comments/g464mu/kiwibrowsersrcsourcecode_used_in_kiwi_browser_for/)
+- url: https://github.com/kiwibrowser/src
 ---
 
-## [5][Database Inspector in Android Studio 4.1 Canary version](https://www.reddit.com/r/androiddev/comments/g3aqx6/database_inspector_in_android_studio_41_canary/)
-- url: https://goo.gle/34xvGDP
+## [5][I hate this so much...](https://www.reddit.com/r/androiddev/comments/g3pwiz/i_hate_this_so_much/)
+- url: https://i.redd.it/3e0zzx6wnlt41.png
 ---
 
-## [6][Flutter Countdown Timer](https://www.reddit.com/r/androiddev/comments/g3mijm/flutter_countdown_timer/)
-- url: https://youtu.be/uPhhEgpyVY8
+## [6][Kotlin Native android](https://www.reddit.com/r/androiddev/comments/g47d1s/kotlin_native_android/)
+- url: https://www.reddit.com/r/androiddev/comments/g47d1s/kotlin_native_android/
 ---
-
-## [7][Coroutines and exceptions: things to know](https://www.reddit.com/r/androiddev/comments/g3mbpo/coroutines_and_exceptions_things_to_know/)
-- url: https://www.rockandnull.com/coroutines-and-exceptions/
+What benefits Kotlin Native will bring to Android ecosystem, any chance to remove Java?
+## [7]["Action Required: Your app is not compliant with Google Play Policies" - What action?](https://www.reddit.com/r/androiddev/comments/g44xxj/action_required_your_app_is_not_compliant_with/)
+- url: https://www.reddit.com/r/androiddev/comments/g44xxj/action_required_your_app_is_not_compliant_with/
 ---
+My app got rejected as it's not compliant with Google Play Policies. That's fine, but I would like to know exactly what is wrong with it so I can address it. Instead, this is what I get:
 
-## [8][Android Studio 3.6.3 available](https://www.reddit.com/r/androiddev/comments/g36s3v/android_studio_363_available/)
-- url: https://androidstudio.googleblog.com/2020/04/android-studio-363-available.html
+&amp;#x200B;
+
+https://preview.redd.it/jk6qkq8yuqt41.png?width=827&amp;format=png&amp;auto=webp&amp;s=eb0af0ecf1bdb9c2c8c0d154070759f9d5bd5ecf
+
+...a very generic email that tells me nothing. How difficult is for them to write the **exact** reason(s)?
+
+I have filed an appeal and hopefully a real person will have a look into it.
+## [8][ExoPlayer on ViewPager](https://www.reddit.com/r/androiddev/comments/g460zh/exoplayer_on_viewpager/)
+- url: https://www.reddit.com/r/androiddev/comments/g460zh/exoplayer_on_viewpager/
 ---
+I'm using a viewpager to show videos using ExoPlayer, which I have one fragment which is creating multiple instances for every swipe and data, on swipe of that it should ideally play the one which is currently visible but that's not happening.
 
-## [9][Code review](https://www.reddit.com/r/androiddev/comments/g3n9dx/code_review/)
-- url: https://www.reddit.com/r/androiddev/comments/g3n9dx/code_review/
+The previous fragment video is not stopping. How to handle this?
+## [9][Is it possible to convert personal Google Play account to a business one?](https://www.reddit.com/r/androiddev/comments/g430ur/is_it_possible_to_convert_personal_google_play/)
+- url: https://www.reddit.com/r/androiddev/comments/g430ur/is_it_possible_to_convert_personal_google_play/
 ---
-For the last week I've been trying to brush up on my Android skills. It's been a few years since I last did any mobile development.
+Currently I have my personal Google account with a possibility to publish on the Google Play.
 
-I've created the following app for the sake of learning. The idea is to present the user with a list of exercises which can be edited and updated with new exercises. The exercises are retrieved from a restful api which can be found [here](https://github.com/tonsV2/fitlog-api). And cached locally using SQLite.
-
-https://github.com/tonsV2/my-koin-application
-
-I'm interested in all the feedback you have. I'm fairly new to Kotlin as well. But mainly feedback of the architectural design is of interest. Please let me know what you think.
-## [10][Securing Room DB](https://www.reddit.com/r/androiddev/comments/g3n616/securing_room_db/)
-- url: https://www.reddit.com/r/androiddev/comments/g3n616/securing_room_db/
+1. Can I convert it to a business account without creating a new Google account?
+2. The other scenario: if I create a merchant account on the top of my personal account, will I be able to convert it to a business one with previously and personally created merchant account?
+## [10][org.threeten.bp.LocalDateTime and java.time.LocalDateTime from 3rd party lib?](https://www.reddit.com/r/androiddev/comments/g42hf0/orgthreetenbplocaldatetime_and/)
+- url: https://www.reddit.com/r/androiddev/comments/g42hf0/orgthreetenbplocaldatetime_and/
 ---
-Hey, any hints on securing/encrypting Room DB? Link to a tutorial/example would be great.
-## [11][I'm new to server side programming: How can I avoid storing user credential such as email and password and still have that functionality ?](https://www.reddit.com/r/androiddev/comments/g3ez7w/im_new_to_server_side_programming_how_can_i_avoid/)
-- url: https://www.reddit.com/r/androiddev/comments/g3ez7w/im_new_to_server_side_programming_how_can_i_avoid/
+I'm developing an Android app using a 3rd party library which uses LocalDataTime. I'm want to support API 23 so I'm using ThreeTenABP but the library isn't. Any suggestions about how to deal with that?
+
+Full disclosure: I'm also the author of the 3rd part library. But changing that would require making changes in other places too. So I'd rather not do that.
+
+One solution would be to use unix timestamps for dates in transit... But I thought we were past that. Anyway, how are you guys dealing with it?
+## [11][Need help getting an Android app developed.](https://www.reddit.com/r/androiddev/comments/g47kun/need_help_getting_an_android_app_developed/)
+- url: https://www.reddit.com/r/androiddev/comments/g47kun/need_help_getting_an_android_app_developed/
 ---
-I've created a small confession style app where users can confess whatever they want. This is based in Firebase realtime database with authentication. I store both username and email in server.
-
-But now I am porting the backend to php/mysql and I don't' want to store user's email and password, and use something else instead so that even if the data is breached (remember I'm only learning right now), there would not be big repercussion.
-
-How can I do that?
-## [12][Implementing clean architecture in android application](https://www.reddit.com/r/androiddev/comments/g3j3vm/implementing_clean_architecture_in_android/)
-- url: https://www.reddit.com/r/androiddev/comments/g3j3vm/implementing_clean_architecture_in_android/
+I have an app idea that I want to pursue getting developed. I already have an outline of its functions and have even gotten an interactive mock-up created of it. I'm looking for a person or company who would be willing to help me continue this process in creating a beta version.
+## [12][Late Career Change Advice?](https://www.reddit.com/r/androiddev/comments/g3wcet/late_career_change_advice/)
+- url: https://www.reddit.com/r/androiddev/comments/g3wcet/late_career_change_advice/
 ---
-Hey guys! I would love to get your feedback on two approaches i have seen while implementing clean architecture in android. While there are multiple ways one can implement clean architecture in android when in comes to making different modules or keeping everything in the app itself and rather slicing the project both vertically, as in feature, and horizontally, as in layers, the approach we will take is rather converting these features into android libraries themselves.
+I work in the construction industry and although the money is relatively good, the job is very stressful, keeps me up at night, the hours are ridiculous and it just doesn't fit well with my character.  I've always loved tech and wanted to work in IT and this COVID lockdown was the perfect opportunity for me to invest all this free time into seriously working to make the move.  I've been using all my free time to study Java in the hopes I can eventually make a few apps that will provide a good income or even manage a complete career change.
 
-So here are the two approaches:
-1. [Approach 1](https://github.com/igorwojda/android-showcase)
-:APP(com.android.application), :BASE(com.android.library), :FEATURE1(com.android.library), :FEATURE2(com.android.library)
+It's been three weeks and I'm going through the MOOC course, I've bought a few courses on Udemy, the Head First book (although I'm yet to open that) and have been using youtube extensively.  I'm obviously still a beginner but I'm a bit concerned if this is all a bit futile.  
 
-In this case, :APP is dependent on :BASE and :FEATURE1 and :FEATURE2 are dependent on :APP module.
+Is a few months enough to get your head around Java or do you need a few years to actually be proficient enough to make money from this (either with getting a job as a Java developer or making a half decent app)?  Does anyone know if developing Android apps actually do provide an income that will pay the bills - what's ad revenue like?  Any middle-aged men make a late career change into Java and it paid off?
 
-2. [Approach 2](https://youtu.be/TWLkswxjSr0?t=1437)
-:APP(com.android.application), :BASE(com.android.library), :FEATURE1(com.android.library), :FEATURE2(com.android.library)
-
-In this case, :APP is **NOT** dependent on :BASE. Rather :FEATURE1 and :FEATURE2 are dependent on :BASE and :APP is dependent on the feature modules.
-
-I personally like approach 2. Do let me know which one you prefer and why. I am building an android application and want to do it with clean architecture, however can't see beyond the lines of which approach is better than which. Thank you.
+I'm sorry if this post is not allowed.

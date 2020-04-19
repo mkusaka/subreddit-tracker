@@ -58,146 +58,119 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Writing Python inside Rust](https://www.reddit.com/r/rust/comments/g3kxid/writing_python_inside_rust/)
-- url: https://blog.m-ou.se/writing-python-inside-rust-1/
+## [3][Yew developer survey](https://www.reddit.com/r/rust/comments/g43ld4/yew_developer_survey/)
+- url: https://www.reddit.com/r/rust/comments/g43ld4/yew_developer_survey/
+---
+Hello, the Yew framework is looking for feedback from devs who are familiar with the framework and have a few minutes to share their thoughts anonymously. Link here: [https://yewstack.typeform.com/to/OR5rQG](https://yewstack.typeform.com/to/OR5rQG)
+
+*(If you're not familiar,* [Yew](https://github.com/yewstack/yew) *is a framework for building client web apps with Rust &amp; WebAssembly!)*
+
+The main goals of this survey are:
+
+1. Prioritize upcoming features
+2. Get feedback on progress and management of the project
+3. Learn more about why devs decide to use Yew for a project
+
+Thank you!!
+## [4][Wired Logic - a pixel-based digital circuit simulator running in a browser (Rust compiled into WASM).](https://www.reddit.com/r/rust/comments/g478yt/wired_logic_a_pixelbased_digital_circuit/)
+- url: https://iostapyshyn.github.io/wired-logic/
 ---
 
-## [4][Rust Survey 2019 Results](https://www.reddit.com/r/rust/comments/g3bikn/rust_survey_2019_results/)
-- url: https://blog.rust-lang.org/2020/04/17/Rust-survey-2019.html
+## [5][tide 0.7.0 introduces a new http-types](https://www.reddit.com/r/rust/comments/g43wxh/tide_070_introduces_a_new_httptypes/)
+- url: https://www.reddit.com/r/rust/comments/g43wxh/tide_070_introduces_a_new_httptypes/
+---
+I updated from [tide](https://crates.io/crates/tide) 0.6.0 to 0.7.0 and was sad to find that they have switched out from the somewhat de-facto standard [http](https://crates.io/crates/http) crate to roll their own [http-types](https://crates.io/crates/http-types).
+
+As a consumer of these crates, I think the split in the eco-system is sad. There's also some frustration in having to deal with yet another type called `Request` and `Response`. I'm sure the creators have their reasons, and I was hunting around their git repo for a motivation, but can't find any.
+
+What is the reason? Does others also find the http crate lacking?
+## [6][OsStr Bytes is now completely safe!](https://www.reddit.com/r/rust/comments/g3v5jc/osstr_bytes_is_now_completely_safe/)
+- url: https://www.reddit.com/r/rust/comments/g3v5jc/osstr_bytes_is_now_completely_safe/
+---
+[Documentation](https://docs.rs/os_str_bytes) | [Repository](https://github.com/dylni/os_str_bytes) | [crates.io](https://crates.io/crates/os_str_bytes)
+
+Except for testing, the newest version of OsStr Bytes doesn't use any unsafe code and has no dependencies!
+
+Frequently, [`mem::transmute`](https://doc.rust-lang.org/std/mem/fn.transmute.html) is used to convert between [`OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) and [`[u8]`](https://doc.rust-lang.org/std/slice/), but that's [incredibly unsafe](https://doc.rust-lang.org/std/mem/fn.transmute.html). It assumes [`OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) has only one field and is annotated with [`repr(C)`](https://doc.rust-lang.org/nomicon/other-reprs.html), which [it isn't](https://github.com/rust-lang/rust/pull/49456). Using it this way is undefined behavior.
+
+This crate doesn't make any of those assumptions but can still convert losslessly. It's meant to help make [`OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) and similar structs easier to use safely.
+## [7][The cost of `Borrow`](https://www.reddit.com/r/rust/comments/g42tnz/the_cost_of_borrow/)
+- url: https://www.reddit.com/r/rust/comments/g42tnz/the_cost_of_borrow/
+---
+The `Borrow` trait abstracts over different "borrowable" datatypes. I'm interested in it as a way of speeding up cloning of my game's state during AI training---the clone is needed by the learning framework, and accounts for something like 75% of the runtime of training. I'd like to use a copy-on-write approach to speed this up, since in most iterations of learning most map tiles are unchanged. So I've been looking at wrapping values inside `Cow`.
+
+But I don't need this cloning to be so fast during normal gameplay where it is used rarely, and it seems using `Cow` in all cases will put a drag on performance. So I got interested in `Borrow` and `BorrowMut` as a way of abstracting over owned map tiles vs. `Cow` map tiles. Use the owned version in normal gameplay, and use the `Cow` version during AI training for faster cloning.
+
+But I wondered whether `Borrow` itself has a cost and, sadly, it seems it does, even when the compiler could know statically it's an owned value and not a `Cow`.
+
+I used `cargo-asm` to see how much code each of the following functions generated:
+
+```
+pub fn do_thing_normal&lt;T:fmt::Debug&gt;(t: &amp;T) {
+    println!("{:?}", t);
+}
+
+pub fn do_thing_borrow&lt;T:fmt::Debug+Borrow&lt;T&gt;&gt;(t: T) {
+    println!("{:?}", t.borrow());
+}
+
+pub fn actually_do_thing_normal() {
+    let x = String::from("hi");
+    do_thing_normal(&amp;x);
+}
+
+pub fn actually_do_thing_borrow_cow() {
+    let x: Cow&lt;String&gt; = Cow::Owned(String::from("hi"));
+    do_thing_borrow(x);
+}
+
+pub fn actually_do_thing_borrow_owned() {
+    let x = String::from("hi");
+    do_thing_borrow(x);
+}
+```
+
+The number of lines of asm code generated:
+
+* actually\_do\_thing\_normal: 36
+* actually\_do\_thing\_borrow\_owned: 42
+* actually\_do\_thing\_borrow\_cow: 43
+
+So even used on owned values, `Borrow` incurs a real cost. This was disappointing to see. Is there some reason that the compiler couldn't (in theory) optimize this so that owned values are borrowed using the exact same borrowing mechanism used when borrowing statically? Or is there some other approach I might use?
+## [8][Logos 0.11 is out: Iterators, callbacks, and stateful tokens](https://www.reddit.com/r/rust/comments/g3pfaw/logos_011_is_out_iterators_callbacks_and_stateful/)
+- url: https://github.com/maciejhirsz/logos/releases/tag/v0.11.0
 ---
 
-## [5][Boa releases v0.7 with a much faster parser](https://www.reddit.com/r/rust/comments/g3m5i7/boa_releases_v07_with_a_much_faster_parser/)
-- url: https://github.com/jasonwilliams/boa/blob/master/CHANGELOG.md
+## [9][I feel stupid, but where does the Rand trait come from?](https://www.reddit.com/r/rust/comments/g4789z/i_feel_stupid_but_where_does_the_rand_trait_come/)
+- url: https://www.reddit.com/r/rust/comments/g4789z/i_feel_stupid_but_where_does_the_rand_trait_come/
 ---
+I want to implement the Rand trait for a custom type. But I can't figure out how to get the trait in scope. `std::rand` does not exist (rust stable), and the `rand` crate only provides the `Rng` trait.
 
-## [6][Zinc Framework: the ZK circuit programming language and VM](https://www.reddit.com/r/rust/comments/g3m2xb/zinc_framework_the_zk_circuit_programming/)
-- url: https://github.com/matter-labs/zinc
+I found [https://doc.rust-lang.org/1.0.0/rand/index.html](https://doc.rust-lang.org/1.0.0/rand/index.html), which only states 
+
+&gt;It is not recommended to use this library directly, but rather the official interface through `std::rand`.
+
+But rustc says
+
+&gt;could not find \`rand\` in \`std\`
+
+Where can I import Rand from???
+## [10][Book recommendation needed please!](https://www.reddit.com/r/rust/comments/g45ax0/book_recommendation_needed_please/)
+- url: https://www.reddit.com/r/rust/comments/g45ax0/book_recommendation_needed_please/
 ---
+The textbook should be such that it contains a problem set after every chapter, about that chapter. This is the university style learning that I prefer.  
 
-## [7][Why does this lifetime mismatch occur? (expected enum `Node&lt;'a&gt;` - found enum `Node&lt;'static&gt;`)](https://www.reddit.com/r/rust/comments/g3kbje/why_does_this_lifetime_mismatch_occur_expected/)
-- url: https://www.reddit.com/r/rust/comments/g3kbje/why_does_this_lifetime_mismatch_occur_expected/
+
+ It should also be self contained in explaining concepts unlike for people who know C++. 
+## [11][How to make a Text Editor in Rust!](https://www.reddit.com/r/rust/comments/g45bim/how_to_make_a_text_editor_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/g45bim/how_to_make_a_text_editor_in_rust/
 ---
-The following code results in the error
-
-    error[E0308]: mismatched types
-     --&gt; src/lib.rs:5:9
-      |
-    5 |         br(),
-      |         ^^^^ lifetime mismatch
-      |
-      = note: expected enum `Node&lt;'a&gt;`
-                 found enum `Node&lt;'static&gt;`
-    note: [...]
-
-[Playground link](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=acdac6bbf31b657d3d53ec86c9018c9b)
-
-    use std::borrow::Cow;
-    
-    fn vec&lt;'a&gt;(text: &amp;'a str) -&gt; Vec&lt;Node&lt;'a&gt;&gt; {
-        vec![
-            br(),
-            p(text),
-        ]
-    }
-    
-    fn br() -&gt; Node&lt;'static&gt; {
-        Node::Text("".into())
-    }
-    
-    fn p(text: &amp;str) -&gt; Node {
-        Node::Text(text.into())
-    }
-    
-    #[derive(Clone)]
-    enum Node&lt;'a&gt; {
-        Element(Cow&lt;'a, Element&lt;'a&gt;&gt;),
-        Text(Cow&lt;'a, str&gt;),
-    }
-    
-    #[derive(Clone)]
-    struct Element&lt;'a&gt; {
-        children: Vec&lt;Node&lt;'a&gt;&gt;,
-    }
-
-I can actually resolve the error by replacing `Element(Cow&lt;'a, Element&lt;'a&gt;&gt;)` with `Element(Element&lt;'a)` or `Element(Cow&lt;'a, Element&lt;'static&gt;&gt;)` in `enum Node&lt;'a&gt;`. But I still don't understand what the problem is. Could you explain why the error occurs?
-
-My understanding would be that any type with a `'static` lifetime could be assigned to any other type with a shorter lifetime.
-
-Thanks in advance for any help :)
-## [8][Crates implementing FromIterator&lt;&gt; for std collection types, best practices](https://www.reddit.com/r/rust/comments/g3iqan/crates_implementing_fromiterator_for_std/)
-- url: https://www.reddit.com/r/rust/comments/g3iqan/crates_implementing_fromiterator_for_std/
+I want to make text editor in rust, but first I want to learn rust. I will learn rust then how shall I begin to proceed with making of text editor. I am web developer, iOS developer but I haven’t developed apps for desktop. How shall I do it? How to proceed? I want it to be like vim as well as gvim. What shall I do?
+## [12][Install Latest Rust Diesel in Windows 10 and Fix Issue](https://www.reddit.com/r/rust/comments/g44xae/install_latest_rust_diesel_in_windows_10_and_fix/)
+- url: https://www.reddit.com/r/rust/comments/g44xae/install_latest_rust_diesel_in_windows_10_and_fix/
 ---
-I recently decided to add a new dependency into a crate. However, I started noticing that a downstream crate dependent on mine would break simply by \`use\`ing the new crate:
+Today I have faced plenty of issues in installing Diesel CLI in windows 10. Some alternative like changing my Windows language back to English, install Visual Studio C++ tools and re-installing rust is not worked.
 
-    use the_new_package; // All that was needed to trigger the downstream crate to fail
+Finally, I found a way to solve it (i use Postgres database) and documented it here: [https://www.yodiw.com/install-rust-diesel-in-windows-10-and-fix-issue/](https://www.yodiw.com/install-rust-diesel-in-windows-10-and-fix-issue/) 
 
-After some digging, I was able to reproduce the following, which simulates what was going on:
-
-    // The crate I was importing had something like this...
-    pub struct Test;
-    
-    impl FromIterator&lt;Test&gt; for Vec&lt;u8&gt; {
-        fn from_iter&lt;I: IntoIterator&lt;Item = Test&gt;&gt;(iter: I) -&gt; Self {
-            let v: Vec&lt;u8&gt; = iter.into_iter().skip(2).collect();
-            v
-        }
-    }
-    
-    // The downstream crate that broke had something like this...
-    use rand::thread_rng;
-    use rand::distributions::{Distribution, Standard};
-    
-    fn main() {
-      let mut rng = thread_rng();
-      let v: Vec&lt;u8&gt; = Standard.sample_iter(&amp;mut rng).take(5).collect();
-      println!("{:}", v);
-    }
-
-The error message became:
-
-    error[E0282]: type annotations needed
-      --&gt; src/main.rs:16:31
-       |
-    16 |     let v: Vec&lt;u8&gt; = Standard.sample_iter(&amp;mut rng).take(5).collect();
-       |                               ^^^^^^^^^^^
-       |                               |
-       |                               cannot infer type for type parameter `T`
-       |                               help: consider specifying the type argument in the method call: `sample_iter::&lt;R&gt;`
-
-I now understand that the problem is that in trying to infer how to convert the `Iterator&lt;Item=T&gt;` that `take(5)` will return, there are now two options: std's definition of `FromIterator&lt;u8&gt; for &lt;Vec&lt;u8&gt;&gt;`, and the new `FromIterator&lt;Test&gt; for Vec&lt;u8&gt;`. Since `sample_iter` has its iterator item type generic, it's impossible for the type checker to infer  what type of items the iterator returned from `sample_iter` will have.
-
-So, my question:
-
-I believe that the `let v: Vec&lt;u8&gt; = ...;` is idiomatic Rust, and yet this crate was able to break that code simply by including it. Is the way that the crate did this considered an okay practice and this is something that sometimes just happens? Or would it be considered bad form for a crate to do something like this, and I should consider not using that crate or requesting a change? Or is this pretty contextual? [Here is the crate implementing FromIterator](https://github.com/tormol/encode_unicode/blob/ca2e5fc3393d440e6c933e3bdb094680241ddc93/src/utf8_char.rs#L127-L142), where it is seems to be trying to convert u8 iterators into utf8-aware iterators.
-
-Thanks
-## [9][Should I pass by immutable move or just by value](https://www.reddit.com/r/rust/comments/g3jsrz/should_i_pass_by_immutable_move_or_just_by_value/)
-- url: https://www.reddit.com/r/rust/comments/g3jsrz/should_i_pass_by_immutable_move_or_just_by_value/
----
-So I'm learning Rust now. When I was learning C/C++ in school, teachers were always telling us to pass by constant reference whenever we could because it was kinda safe and took less memory.
-
-Should I do the same in rust? All other things equal, should I prefer to
-
-    fn cool_function(cool_parameter: &amp;thing::one)
-
-over
-
-    fn cool_function(cool_parameter: thing::one)
-
-I don't know a lot about how borrowing and changing ownership is implemented. If someone could explain that in the comments that would be much appreciated!!
-## [10][yet another batch rename utility written in async Rust](https://www.reddit.com/r/rust/comments/g3729g/yet_another_batch_rename_utility_written_in_async/)
-- url: https://github.com/yaa110/nomino
----
-
-## [11][Guidance to learn Rust](https://www.reddit.com/r/rust/comments/g3k9xq/guidance_to_learn_rust/)
-- url: https://www.reddit.com/r/rust/comments/g3k9xq/guidance_to_learn_rust/
----
-Howdy Rustaceans! 
-
-Hope everyone is safe and sound! I work at a major fintech as a Platform software engineer. We use Golang to manage our K8S abstraction layer and java/python for Jenkins-related utils. I'm a Java developer primarily. However, a colleague got me into Rust and since then I've joined this sub. To learn and understand this language, I've started reading [The Rust book](https://doc.rust-lang.org/book/). However, in order to get my hands, is there anything else I should do? Either/both on personal and professional front? Should I start writing some utils in Rust? I wish to grow in this domain (systems/platform programming) as I'm just 3 years into this profession. 
-
-Thanks in advance!
-## [12][Upgrade Rust's Android SDK to API level 16 (from 14)](https://www.reddit.com/r/rust/comments/g30bpg/upgrade_rusts_android_sdk_to_api_level_16_from_14/)
-- url: https://github.com/rust-lang/rust/pull/71123
----
-
+I hope it's helping someone who faces the same issue.

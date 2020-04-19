@@ -1,74 +1,94 @@
 # golang
-## [1][I wrote a terminal UI for npm in Go!](https://www.reddit.com/r/golang/comments/g3fkci/i_wrote_a_terminal_ui_for_npm_in_go/)
-- url: https://github.com/jesseduffield/lazynpm
+## [1][qrcp: transfer files over wifi from your computer to your mobile device by scanning a QR code without leaving the terminal.](https://www.reddit.com/r/golang/comments/g45e7z/qrcp_transfer_files_over_wifi_from_your_computer/)
+- url: https://github.com/claudiodangelis/qrcp
 ---
 
-## [2][Why slice hasn't default '==' operator?](https://www.reddit.com/r/golang/comments/g3mmp0/why_slice_hasnt_default_operator/)
-- url: https://www.reddit.com/r/golang/comments/g3mmp0/why_slice_hasnt_default_operator/
+## [2][Go is 1 of 5 "meaningful languages" at Apple for Machine Learning positions](https://www.reddit.com/r/golang/comments/g41bb2/go_is_1_of_5_meaningful_languages_at_apple_for/)
+- url: https://www.reddit.com/r/golang/comments/g41bb2/go_is_1_of_5_meaningful_languages_at_apple_for/
 ---
-Is there any design decision for this?
-## [3][Go reflections deep dive— from structs and interfaces](https://www.reddit.com/r/golang/comments/g3lvg0/go_reflections_deep_dive_from_structs_and/)
-- url: https://medium.com/@snird/go-reflections-deep-dive-from-structs-and-interfaces-e1931f0c99af?sk=0f430b8906e583630bdcd4ce9a452943
----
+I just ran across this Apple job req for "[Software Engineer - Machine Learning Platform](https://stackoverflow.com/jobs/226569/software-engineer-machine-learning-platform-apple?so_medium=Internal&amp;so_source=JobListing)".
 
-## [4][tinysms Simple SMS sending library for small projects or prototyping using SMTP](https://www.reddit.com/r/golang/comments/g3dn7l/tinysms_simple_sms_sending_library_for_small/)
-- url: https://www.reddit.com/r/golang/comments/g3dn7l/tinysms_simple_sms_sending_library_for_small/
----
-I wasn't too happy with the current SMS libraries out there. They largely lacked GoLang standards (or they just didn't work at all) So I wrote one in a few hours for a trading bot I'm working on to let me know if any eventful happened while away and I didn't want to pay for SMS service or worry about getting cut off for using a demo API token. You just need an SMTP server (which most of you have available for free by your email provider) and you are all set!
+Of note, it lists Go as the first of 5 "meaningful languages"
 
-  
-[https://github.com/ajm113/go-tinysms](https://github.com/ajm113/go-tinysms)  
+&gt; Strong software development skills, with proficiency in meaningful languages (ex. Go, Python, Java, Scala, C++).
 
-
- Let me know if there is anything I can improve on or if you just want to let me know it works out for your project. I'm always open to PR requests!
-## [5][I have created a Golang tool to scale persistent volume in Kubernetes dynamically](https://www.reddit.com/r/golang/comments/g3lt9g/i_have_created_a_golang_tool_to_scale_persistent/)
-- url: https://www.reddit.com/r/golang/comments/g3lt9g/i_have_created_a_golang_tool_to_scale_persistent/
----
-[https://github.com/opstree/dynamic-pv-scaler](https://github.com/opstree/dynamic-pv-scaler)
-## [6][tdewolff/minify - Go minifiers for web formats](https://www.reddit.com/r/golang/comments/g3ljn8/tdewolffminify_go_minifiers_for_web_formats/)
-- url: https://github.com/tdewolff/minify
+Does anyone know about use of Go at Apple for Machine Learning? Is it a primary language as one could infer from its placement in the list?
+## [3][Wrote my first ever Go CLI tool - Generate ASCII art from any image](https://www.reddit.com/r/golang/comments/g46kb7/wrote_my_first_ever_go_cli_tool_generate_ascii/)
+- url: https://github.com/prdpx7/magrrite
 ---
 
-## [7][Build a custom blockchain in Go from scratch](https://www.reddit.com/r/golang/comments/g3m2uk/build_a_custom_blockchain_in_go_from_scratch/)
-- url: https://github.com/web3coach/the-blockchain-way-of-programming-newsletter-edition
+## [4][I'm writing a modern version of Go Playground using Go, React and gRPC](https://www.reddit.com/r/golang/comments/g3pzdg/im_writing_a_modern_version_of_go_playground/)
+- url: https://www.reddit.com/r/golang/comments/g3pzdg/im_writing_a_modern_version_of_go_playground/
+---
+Hi,
+
+I'm trying to learn the fullstack life cycle of a software project. Thus I chose to re-design and develop Go Playground with modern stack. 
+
+It's still WIP.
+
+&amp;#x200B;
+
+You can see the UI prototype here: [https://www.figma.com/proto/4A8v6n2GJetccFEzGg5Z49/Go-Playground-Revamped-v0.1?scaling=min-zoom&amp;node-id=2%3A2](https://www.figma.com/proto/4A8v6n2GJetccFEzGg5Z49/Go-Playground-Revamped-v0.1?scaling=min-zoom&amp;node-id=2%3A2)
+
+&amp;#x200B;
+
+And the code here: [https://github.com/cyantarek/go-playground-revamped](https://github.com/cyantarek/go-playground-revamped)
+
+&amp;#x200B;
+
+Any suggestions, comments, criticisms will be much appreciated
+## [5][rabbitroutine — a lightweight library that handles RabbitMQ auto-reconnect and publishing retry routine for you.](https://www.reddit.com/r/golang/comments/g44hgi/rabbitroutine_a_lightweight_library_that_handles/)
+- url: https://github.com/furdarius/rabbitroutine
 ---
 
-## [8][Rate limit http middleware with few algorithms (Sliding Window, Leaky Bucket)](https://www.reddit.com/r/golang/comments/g308cp/rate_limit_http_middleware_with_few_algorithms/)
-- url: https://www.reddit.com/r/golang/comments/g308cp/rate_limit_http_middleware_with_few_algorithms/
+## [6][Recommend a book/online course for server side coding](https://www.reddit.com/r/golang/comments/g41qz1/recommend_a_bookonline_course_for_server_side/)
+- url: https://www.reddit.com/r/golang/comments/g41qz1/recommend_a_bookonline_course_for_server_side/
 ---
-Hi, if you need rate limit [library](https://github.com/Shareed2k/go_limiter) or middleware for rate limit with algorithms like (Sliding Window, Leaky Bucket) , redis as store, you welcome to try test and give me a feedback... thanks ;)
+I am a frontend developer willing to master server side programming. Go is my first option but i am not able to find good resources which covers only server side stuff. Please suggest a course or book
 
-[fiber framework middleware](https://github.com/Shareed2k/fiber_limiter)
-
-[echo framework middleware](https://github.com/Shareed2k/echo_limiter)
-
-[http middleware](https://github.com/Shareed2k/http_limiter)
-## [9][Best practice for calling multiple API’s](https://www.reddit.com/r/golang/comments/g3jwyo/best_practice_for_calling_multiple_apis/)
-- url: https://www.reddit.com/r/golang/comments/g3jwyo/best_practice_for_calling_multiple_apis/
+Thank you!
+## [7][What is this pattern called?](https://www.reddit.com/r/golang/comments/g44y4z/what_is_this_pattern_called/)
+- url: https://www.reddit.com/r/golang/comments/g44y4z/what_is_this_pattern_called/
 ---
-Hi, I am new at golang, I worked with other languages such as Java, Ruby or rails, now I am doing a project where I need to call different api's but all serve the same thing. but I can't figure out what is the best practice to do it
+I'm learning go and trying to understand what's happening here but I'm not sure what the right terminology is so it's difficult to look things up.
 
-what I have basically is API's for pharmacies all of them serve 3 things
+`ExportAppStateAndValidators` is what gets exported and called externally, so what's going on with the`func (app *NewApp)` right in front of it? 
 
-get stock for medicine
-order certain medicine
-list all available medicines
-you should know, some of them is XML some is SOAP and others JSON, each of them different structure .. etc
+Also, what is `app` in `app *NewApp`? A pointer to a new object of type NewApp?
 
-but all of them I need to retain unified api structure for the 3 methods.
+Thanks!
 
-What I would do in different language is to build it using repository design pattern
+&amp;#x200B;
 
-any tips could be helpful Thanks
-## [10][Start an ssh session with Golang!](https://www.reddit.com/r/golang/comments/g3jcsm/start_an_ssh_session_with_golang/)
-- url: https://www.reddit.com/r/golang/comments/g3jcsm/start_an_ssh_session_with_golang/
+`func (app *NewApp) ExportAppStateAndValidators(`  
+`forZeroHeight bool, jailWhiteList []string,`  
+`) (appState json.RawMessage, validators []tmtypes.GenesisValidator, err error) {`  
+ `// as if they could withdraw from the start of the next block`  
+ `ctx := app.NewContext(true, abci.Header{Height: app.LastBlockHeight()})`  
+ `if forZeroHeight {`  
+`app.prepForZeroHeightGenesis(ctx, jailWhiteList)`  
+`}`  
+ `genState := app.mm.ExportGenesis(ctx)`  
+ `appState, err = codec.MarshalJSONIndent(app.cdc, genState)`  
+ `if err != nil {`  
+ `return nil, nil, err`  
+`}`  
+ `validators = staking.WriteValidators(ctx, app.stakingKeeper)`  
+ `return appState, validators, nil`  
+`}`
+## [8][is it possible to create a package with just globally accessible maps without a main functon in golang](https://www.reddit.com/r/golang/comments/g469j9/is_it_possible_to_create_a_package_with_just/)
+- url: https://www.reddit.com/r/golang/comments/g469j9/is_it_possible_to_create_a_package_with_just/
 ---
-Hi I have a bunch of servers and a bunch of keys to ssh into the server.
+I am parsing a .h file that contains some values and putting those into golang maps. This is part of a port from python. in python basically a file with dicts is created and later accessed as simple as it gets.  
 
- I have implemented a basic functionality using the **promptui** library where I can select a server from the list.
+I am wondering if the same can be done in go by simply auto generating a file that contains the maps and their data ? otherwise the solution i have come up with is to have the maps in the parsing file itself and access them from there or something of that sort or simply write this out to a json file.
 
-But I am unable to figure out how to ssh to that server. Here is what I have tried:
+Edit : So basically i have a make file that runs the functions that parses the .h file and puts the appropriate values into a different file which contains the maps.basically in the maps package. Now do these statically generated maps stay put like with python dictionaries. or do i have to run the map generating file always when i run the program ? what i want are static one time generated key val pairs that's it.
+## [9][Go playground now running inside of a multithread Linux container](https://www.reddit.com/r/golang/comments/g3tl86/go_playground_now_running_inside_of_a_multithread/)
+- url: https://twitter.com/goinggodotnet/status/1251589726806708227?s=21
+---
 
-Using os/exec to run the command: **ssh -i &lt;path to key&gt; user@ip.**
-
-But the program just exits with some code. Can anyone guide me on this?
+## [10][Q: What's the best way of translating python implemented math calculations in Go](https://www.reddit.com/r/golang/comments/g3z6o8/q_whats_the_best_way_of_translating_python/)
+- url: https://www.reddit.com/r/golang/comments/g3z6o8/q_whats_the_best_way_of_translating_python/
+---
+I have some python implemented math calculations, such as a \* b / c \* d\^2. I want to serialize it in some format such that I can read it in Golang and do the exact calculations. The calculation could have  up to 10 variables and basic operators (+, -, \*, /, \^ etc.). Is there any available tools for this kind of problems?

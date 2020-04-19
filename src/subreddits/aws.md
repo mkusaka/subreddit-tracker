@@ -1,184 +1,294 @@
 # aws
-## [1][Let's do AWS whiteboard sessions](https://www.reddit.com/r/aws/comments/g3d6yg/lets_do_aws_whiteboard_sessions/)
-- url: https://www.reddit.com/r/aws/comments/g3d6yg/lets_do_aws_whiteboard_sessions/
+## [1][How to trigger AWS Lambda by SMS?](https://www.reddit.com/r/aws/comments/g44lju/how_to_trigger_aws_lambda_by_sms/)
+- url: https://www.reddit.com/r/aws/comments/g44lju/how_to_trigger_aws_lambda_by_sms/
 ---
-Hey guys if you're interested in Tech subscribe to my YouTube channel. I'll be talking about tech, in general, with a huge concentration on AWS. I already have a couple of videos there. 
+&amp;#x200B;
 
-I will be releasing a video every week so if you have a topic you'd like me to dive-deep into let me know. I'd also be interested in having tech discussions with field professionals -- I can whiteboard and architect solutions based on your requirements. Subscribe and reach out! 
+https://preview.redd.it/usueom39oqt41.png?width=1599&amp;format=png&amp;auto=webp&amp;s=e02ffd69108b4cb8268bd7526d0a8b321e1f272a
 
-[https://www.youtube.com/channel/UCBl-ENwdTlUsLY05yGgXyxw](https://www.youtube.com/channel/UCBl-ENwdTlUsLY05yGgXyxw)
+In my last article I have placed a teaser that whether you can trigger Lambda by SMS. Today, We are going to do that! I am really excited to share this with you.
 
 &amp;#x200B;
 
-Here's one I did recently on the topic of Serverless Photo Recognition:
-
-[https://www.youtube.com/watch?v=GIdJz7VnP58&amp;t=259s](https://www.youtube.com/watch?v=GIdJz7VnP58&amp;t=259s)
+*NOTE: This article resources are not fully covered in the* **free tier***. Also, you cannot do it directly as there are some resources you will have to raise a ticket to get and adjust services limitations.*
 
 &amp;#x200B;
 
-This isn't sponsored by AWS and all of the opinions are my own.
-## [2][Lambda Logs to ANYTHING ELSE but CloudWatch](https://www.reddit.com/r/aws/comments/g3k1zr/lambda_logs_to_anything_else_but_cloudwatch/)
-- url: https://www.reddit.com/r/aws/comments/g3k1zr/lambda_logs_to_anything_else_but_cloudwatch/
----
-Hi guys,
+So, I have been waiting for over a month to finish this article and I postponed it because of the workload that we faced with working remotely and waiting to get the ticket resolved by AWS support team. Which by the way, they were really helpful even in the free plan support.
 
-I don't know about you but CloudWatch PutLog events are f**king killing me.
+# What are the involved parts?
 
-I have highly-intensive (and highly-invoked) Lambda functions running for a Serverless SaaS platform that does load testing (https://rungutan.com).
+There are three main involved part in this event, Customer Engagement, Application Integration and compute services to make this happen.
 
-While the platform is still in beta, and I'm just testing it myself, I realized that my AWS Bill is going wild for these type of events, sometimes amounting to about 300 USD/day when doing some simple tests.
+**Customer Engagement:**
 
-I've realized that there are 2 ways that this is happening:
-1) StepFunctions EXPRESS puts logs into CloudWatch
-2) Lambda functions itself do that
+Since we want to trigger a function via SMS, you will need a service or tool to get information from the user. Otherwise, how the function will get triggered?
 
-I've stopped the StepFunctions from putting logs into CloudWatch, but I STILL COULD use the logs from Lambda themselves in order to be able to push them into Thundra (https://www.thundra.io/) so that I can analyse them properly on a per-invocation type of thing.
+In this part, we will use AWS Pinpoint. This service enables you to engage with customers through different channels like emails and transactional SMSs. Also, you can validate phone numbers if they are real too!
 
-So my question is:
+**Application Integration:**
 
--&gt;
+We are working with SMS, which leads us to work with SNS. SNS is a service that enables you to organize and manage SMS process. Also, it can trigger Lambda too. You got the idea right?
 
-Have you guys found any other way of pushing logs from Lambda to ANYTHING ELSE besides CloudWatch ?
+**Compute**:
 
-I've even considered writing a Lambda function to process logs (by simply being invoked) and push them to somewhere else (aka ElasticSearch) but that makes me lose the nice logs-per-invocation logic from Thundra.
+Since we want to do some computing processes for the SMS content, we will need a computing unit. The best and cheapest option is Lambda. Which is the reason for this article.
 
-Follow-up question:
-
--&gt;
-
-Is there maybe a way to limit those default log lines that Lambda pushes?
-I'm talking about "START RequestId: adae3789-2dd8-4c6a-8c05-3c4e17d26d2e Version: $LATEST" and "END RequestId: adae3789-2dd8-4c6a-8c05-3c4e17d26d2e Version: $LATEST"
-## [3][SAM/Cloudformation template syntax - multiple Authorizers](https://www.reddit.com/r/aws/comments/g3luo6/samcloudformation_template_syntax_multiple/)
-- url: https://www.reddit.com/r/aws/comments/g3luo6/samcloudformation_template_syntax_multiple/
----
-Hi AWS!  
-I am currently using an AWS SAM template to provision a serverless API.  
-
-
-Using paramters/Conditions I would like to modify the Authorizers on the `AWS::Serverless::Api`  
-
-
-      MyApi:
-        Type: AWS::Serverless::Api
-        Properties:
-          StageName: Prod
-          Auth:
-            Authorizers:
-    # if MyCondition is true
-              MyCognitoAuthorizer1:
-                UserPoolArn: !GetAtt MyUserPool1.Arn
-    # else
-              MyCognitoAuthorizer2:
-                UserPoolArn: !GetAtt MyUserPool2.Arn
-              MyCognitoAuthorizer3:
-                UserPoolArn: !GetAtt MyUserPool3.Arn
-    # fi
-
-I have tried using the `Condition` keyword on the Authorizer object as you would on a `Resource` but it takes no effect.
-
-I cant find a way to get the template to achieve this outcome - does anyone have any advice?
-## [4][OS storage type for t3a.nano](https://www.reddit.com/r/aws/comments/g3k8rr/os_storage_type_for_t3anano/)
-- url: https://www.reddit.com/r/aws/comments/g3k8rr/os_storage_type_for_t3anano/
----
-I'm interested in the EC2 t3a.nano instance type but can't find anywhere what kind of storage (and how much) this instance type comes with. So I'm talking about the default (included in the price) storage that the OS is installed on.
-
-Does anyone know if it's a HDD or SSD and if it's local or EBS?
-## [5][How to best architect a live video streaming platform using MediaLive, MediaPackage, and CloudFront?](https://www.reddit.com/r/aws/comments/g36gup/how_to_best_architect_a_live_video_streaming/)
-- url: https://www.reddit.com/r/aws/comments/g36gup/how_to_best_architect_a_live_video_streaming/
----
-Hi there,
-
-I am building a live video streaming platform (users can push video streams via RTMP). I have gone through the AWS Live Video Streaming solution guide ([https://aws.amazon.com/solutions/live-streaming-on-aws/](https://aws.amazon.com/solutions/live-streaming-on-aws/)) and the CloudFormation template. I understand how inputs and channels work on MediaLive and I'm planning to use MediaPackage and CloudFront to distribute the video feed (HLS).
-
-On my platform, when people create a new stream, I want to provide them with an RTMP URL and stream key (will be on MediaLive) to push their feed. Should I programmatically (via i.e. JS SDK) create a new input and channel for every user stream? And then should I create a new channel and endpoint for MediaPackage and CloudFront as well? Is this the best/recommended approach?
-
-I understand that there is a minimal cost incurred by idle MediaLive inputs/channels (is there for MediaPackage as well?), and I know that I could start the MediaLive channels only when/as needed. However, I know that starting a channel takes time, and ideally, I would like my users to be able to start pushing video content right away after they set up their stream. How long does it take for a channel to start? And is there any event I can subscribe to (or create on SNS) to know when the channel is ready?
-
-I can also see that there are specific quotas and limits ([https://docs.aws.amazon.com/medialive/latest/ug/limits.html](https://docs.aws.amazon.com/medialive/latest/ug/limits.html)). In my case, I might need to have tens if not hundreds of channels (if I do need a channel for every user indeed). Can I just apply to lift the quotas, same way it works for SES for example?
-
-Last but not least, I see that the params object for the MediaLive createChannel function (JS: [https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/MediaLive.html#createChannel-property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/MediaLive.html#createChannel-property)) is quite extensive. Is there a shorter template I can use that contains the most important parameters?
-
-Does my approach overall make sense or is there a better way (from an operational and cost perspective) to achieve what I have in mind?
+# Diagram:
 
 &amp;#x200B;
 
-Thanks in advance!
-## [6][Python HTTP server on EC2 gives empty response](https://www.reddit.com/r/aws/comments/g3n8sg/python_http_server_on_ec2_gives_empty_response/)
-- url: https://www.reddit.com/r/aws/comments/g3n8sg/python_http_server_on_ec2_gives_empty_response/
----
-I have created a Python aiohttp server that runs on 0.0.0.0:80. It only has one single page /hook which will show basic Hello text.
+https://preview.redd.it/f6e66i4ioqt41.png?width=602&amp;format=png&amp;auto=webp&amp;s=cd5b2de8550c352bf44f8c643fb6a103a4c11508
 
-When I run the server on my laptop and check with my browser it works.
+Straight forward scenario, We will contact Pinpoint through SMS, the message will be passed to SNS, which will be responsible for triggering Lambda. No rocket science here.
 
-Then I uploaded my code to my EC2 instance and configured the Security Group such that it allows all sources (0.0.0.0/0) inbound HTTP.
+I am here to show you how-to not to describe the theory behind it. So, shall be begin?
 
-Now when I type &lt;instance public ip&gt;/hook, my browser says it has given an empty response.
-Running curl http://localhost/hook when SSH into the instance also gives this empty response.
+# 1- Request a long/short code from Pinpoint:
 
-I don't think my server is running in HTTPS as I didn't configure the Python code to do so.
-## [7][Stopped lightsail instances still incur charges?](https://www.reddit.com/r/aws/comments/g37d40/stopped_lightsail_instances_still_incur_charges/)
-- url: https://www.reddit.com/r/aws/comments/g37d40/stopped_lightsail_instances_still_incur_charges/
----
-If I understand this correctly. stopped lightsail instances are still charged as if they are active. Why would you stop a lightsail instance if they still get charged?
+Since we want to send an SMS to Pinpoint, it is required to have a code. To obtain one, Please follow the steps from the documentation [here](https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-long-code.html).
 
-Edit: I’m dumb
-## [8][Do you need any help with Devops work ?](https://www.reddit.com/r/aws/comments/g3m6tj/do_you_need_any_help_with_devops_work/)
-- url: https://www.reddit.com/r/aws/comments/g3m6tj/do_you_need_any_help_with_devops_work/
----
-Hey Guys
+One point I want to bring attention to is some countries has both short and long code. But, as happened for me, which living in Kingdom of Bahrain, we have only long code, so far.
 
-Hope you are doing good !!
+&gt;*NOTE: It took a while for me to get the code as I was a basic support plan user and there is no default, fast way to obtain this code in my region. Apply for it in advance.*
 
-Due to this Pandemic situation, we have a lot of free time on our hands.
+# 2- Create SNS topic to handle Pinpoint messages:
 
-If anybody needs any kind of help in Devops, Please DM me. We are a team of 2.
+As we mentioned in the beginning, there is no way to invoke Lambda directly from Pinpoint, creating SNS topic is a must for this purpose.
 
-We can help you out  with below mentioned technologies :
-
-Cloud : AWS &amp; Google Cloud 
-
-Iac  : Terraform
-
-Configuration Management   : Ansible
-
-Container : Docker
-
-Container Orchestration : Kubernetes
-
-Monitoring : Prometheus &amp; Grafana
-
-Centralized logging : ELK stack
-
-Databases : MongoDB, Mysql
-## [9][regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB](https://www.reddit.com/r/aws/comments/g3hjq7/regional_data_transfer_inoutbetween_ec2_azs_or/)
-- url: https://www.reddit.com/r/aws/comments/g3hjq7/regional_data_transfer_inoutbetween_ec2_azs_or/
----
-Hello. I was looking at our AWS bill and noticed 500GB of
-
-" regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB "
-
-I pretty much figured out that we have two servers talking to each other using their public DNS names that resolve to their elastic IPs.
-
-I had two questions
-
-1) Would the simple fix be to have their public dns addresses resolve to internal IPs? So on the servers themselves, if they ping [example.domain.com](https://example.domain.com) it would resolve to internal IP instead of going out to a DNS server and finding the real public IP?
-
-I could do this either by adding the A reconds into the DNS servers the EC2 servers point to, or by manually adding hosts records on the servers.
-
-2) Would doing this give us a performance gain? I'm not sure if the servers are currently going up to a router and back down each time they talk? When using the elastic IP?
-
-So would having them talk to each other using internal IPs actually speed stuff up?
+* From Services, look for SNS and click on it.
+* Open SNS console and from the left panel, select topics.
 
 &amp;#x200B;
 
-Thanks!
-## [10][Ecommerce website architecture](https://www.reddit.com/r/aws/comments/g3f24l/ecommerce_website_architecture/)
-- url: https://www.reddit.com/r/aws/comments/g3f24l/ecommerce_website_architecture/
+[s](https://preview.redd.it/wabveswloqt41.png?width=2876&amp;format=png&amp;auto=webp&amp;s=d797efa6c7879f4e27597b717cd6e31568a88984)
+
+* Click on create topic.
+* Fill the name for the topic and keep the default values the same.
+
+&amp;#x200B;
+
+https://preview.redd.it/j0x764vooqt41.png?width=2120&amp;format=png&amp;auto=webp&amp;s=f7e758baa2b16fef8cbc0ce18a8c6bc707e23759
+
+* We are done with SNS!
+
+# 3- Prepare IAM role for Lambda:
+
+We will work with Lambda, and for that reason, let us make a proper role to consume SNS messages.
+
+* Open IAM console and click on Roles.
+* Click on Create Role.
+* Select Lambda from the use cases list and click next.
+
+&amp;#x200B;
+
+https://preview.redd.it/cr7hvgdtoqt41.png?width=2879&amp;format=png&amp;auto=webp&amp;s=3ec774647ac36b729641a81a6e485b6b225b75e6
+
+* In attach permission policies, search for SNS.
+* Choose Read Only Access from the list.
+
+&amp;#x200B;
+
+https://preview.redd.it/9x0bg41woqt41.png?width=2062&amp;format=png&amp;auto=webp&amp;s=853fe24c83a31ecefaa7f9d8f25c4e6ce646aa17
+
+* Finish the steps by given the role a descriptive name.
+
+# 4- Lambda Time!!:
+
+Now, we can prepare the function that will consume the received SMS. Let’s start:
+
+* From Services, click on Lambda
+* In Dashboard, click on Create Function button.
+* Fill the needed information and do not forget to select an existing role, which is the one we created.
+
+&amp;#x200B;
+
+https://preview.redd.it/mw765awyoqt41.png?width=2594&amp;format=png&amp;auto=webp&amp;s=815a3a33682da600d0ca9f26b2ca9099d974a569
+
+* In designer part, click on Add Trigger.
+
+&amp;#x200B;
+
+https://preview.redd.it/bznhouo1pqt41.png?width=2612&amp;format=png&amp;auto=webp&amp;s=70e13a419e95c2b358d9d82e906f96059fa32edf
+
+* In trigger configuration, search for SNS and then look for the SNS topic we created earlier.
+
+&amp;#x200B;
+
+https://preview.redd.it/07ij37m6pqt41.png?width=1646&amp;format=png&amp;auto=webp&amp;s=5bc32d7e8aa20ca13709bdf5937b6e8e0c4ba445
+
+* Done! This function will be triggered whenever SNS topic receives messages.
+
+# 5- Pinpoint Configuration:
+
+So, last step is here. Since we prepared all the resources, we need to configure the part the will trigger all the previous configurations.
+
+* From Services, click on Pinpoint.
+* In Pinpoint main page, click on Manage Projects.
+
+&amp;#x200B;
+
+https://preview.redd.it/g3g5io5cpqt41.png?width=2780&amp;format=png&amp;auto=webp&amp;s=2d19bce7cc351ee2e820a9fb81e727c547f821e0
+
+* Create a new project.
+* Skip Project Features for now.
+* In Project Dashboard, click on Settings -&gt; SMS and Voice.
+
+&amp;#x200B;
+
+https://preview.redd.it/b9v4ne0fpqt41.png?width=2876&amp;format=png&amp;auto=webp&amp;s=bee125da3d3cb214e478e37f58dfc20242dc1b2b
+
+* In SMS and voice page, under Number settings, click on the long/short code you have.
+
+&gt;*NOTE: This is the code you will get after you asked for in the first step.*
+
+&amp;#x200B;
+
+https://preview.redd.it/ymx28kshpqt41.png?width=2282&amp;format=png&amp;auto=webp&amp;s=9332dc47a96d12ca4ee4504b5d2ef40e1d875ae4
+
+* Go all the way down until you see Two-way SMS. Click on it.
+* First thing, enable it.
+* In incoming messages destination, choose an existing SNS topic, and select the one we created earlier.
+
+&amp;#x200B;
+
+https://preview.redd.it/fnzrcxmkpqt41.png?width=2296&amp;format=png&amp;auto=webp&amp;s=372462306c26763ad227e62704df958bfa805ad4
+
+* Done! easy right?
+
+# How to test?
+
+So, you have everything in place and we need to trigger the function. Just send an SMS to the long/short code you have.
+
+&amp;#x200B;
+
+https://preview.redd.it/977vrkzmpqt41.jpg?width=1125&amp;format=pjpg&amp;auto=webp&amp;s=db34d147fdb35566c84684d2f365346e7c97fbc1
+
+To validate that the function got triggered, check Lambda logs.
+
+&amp;#x200B;
+
+https://preview.redd.it/2lm21hnppqt41.png?width=2878&amp;format=png&amp;auto=webp&amp;s=d4b7098f657edebdbb0d1be77412f14a20527274
+
+# Any useful use-case for this event?
+
+I was thinking, what benefit I will get from triggering Lambda this way, and I guess I have a pretty good reason.
+
+Imagine that you have a marketing dashboard in an EC2 that it gets turned off after working hours. One day, a colleague from marketing department called you and asked you to turn it on for few hours as he has something urgent. Imagine with me opening your laptop if you have it with you, connect it to Wify, open the console, login, don’t forget you enabled MFA, ext… Why can’t you have a Lambda function that when you send a short SMS, will do the job for you! Of course, you can validate the number is yours when you try to trigger it.
+
+# Summary:
+
+AWS Lambda is really great innovation. It amaze me every time I try a new thing to do with. Triggering a computing unit via SMS opens a whole new world of options and possibilities for sys admins, businesses and who like fun projects like me.
+
+Until the next time, don’t forget to wash your hand and stay safe..
+## [2][Vault on AWS - A Terraform Project for Secrets Management Anywhere](https://www.reddit.com/r/aws/comments/g3t4ay/vault_on_aws_a_terraform_project_for_secrets/)
+- url: https://github.com/jcolemorrison/vault-on-aws
 ---
-Hi all, just want to get your opinion about how a simple ecommerce stack should look like.
 
-The website will be quite simple showing a few products and has a cart that allows the customers to pay for what they've added to it. The site will be created with React and in the future will add authentication and profiles.
+## [3][Avoiding ECR costs (NAT/PrivateLink)](https://www.reddit.com/r/aws/comments/g47lj5/avoiding_ecr_costs_natprivatelink/)
+- url: https://www.reddit.com/r/aws/comments/g47lj5/avoiding_ecr_costs_natprivatelink/
+---
+Hi,
 
-The stack in mind was host the content in S3, connect to dynamodb to fetch product details, lambda would handle the requests for the payments and triggered through api gateway. Also, route53 to direct to my domain name.
+I'm trying to deploy a basic app. One container running in a fargate ECS task. I have pushed my container to ECR, everything is configured but the container was failing to start as it couldn't pull the container from ECR.
 
-Thoughts?
+I thought fargate running in a private subnet without NAT (I don't need NAT) could pull from ECR, but apparently not.
+
+It appears that if you don't have NAT then you need to set up PrivateLink VPN connection from fargate to ECR.
+
+Looking at NAT vs PrivateLink, these two options both cost roughly the same, starting at around $36 per month just to have it running 24/7, plus more for data transfer. 
+
+My app is small and I won't be deploying/scaling very often.
+
+It seems crazy that I need to pay for NAT or a VPN to just pull from another internal aws service.
+
+Do I just need to suck it up and pay, or are there any other options?
+
+Thanks in advance.
+## [4][AWS CLI :: increase quota](https://www.reddit.com/r/aws/comments/g43vmt/aws_cli_increase_quota/)
+- url: https://www.reddit.com/r/aws/comments/g43vmt/aws_cli_increase_quota/
+---
+I tried to dig the AWS CLI documentation on how do I increase a specific account quota limit  
+but the seems like I can't define in the call \`account-id\` or something similar.
+
+[https://docs.aws.amazon.com/cli/latest/reference/service-quotas/request-service-quota-increase.html](https://docs.aws.amazon.com/cli/latest/reference/service-quotas/request-service-quota-increase.html)
+
+suggestions?
+
+Thanks
+## [5][Amazon's JEDI lawsuit is on hold until mid-August](https://www.reddit.com/r/aws/comments/g426dy/amazons_jedi_lawsuit_is_on_hold_until_midaugust/)
+- url: https://www.engadget.com/amazons-jedi-lawsuit-is-on-hold-until-mid-august-181403851.html
+---
+
+## [6][Best way to use Redis srever and DynamoDb from a single Lambda function?](https://www.reddit.com/r/aws/comments/g3y0fd/best_way_to_use_redis_srever_and_dynamodb_from_a/)
+- url: https://www.reddit.com/r/aws/comments/g3y0fd/best_way_to_use_redis_srever_and_dynamodb_from_a/
+---
+I want to connect to a Redis server in my Lambda function.  I also want to connect to DyanmoDb.  My Lambda function is used to serve HTTP requests for a REST API.  A single Lambda function handles all requests.  My application does not need to scale right now, but I do want to be able to plan ahead.
+
+**Option 1**:  Use ElastiCache as my Redis server.  The problem with that is it requires my Lambda function to use VPC.  I have heard that VPC and Lambda is not a good combination.  I also know that my function will need to access the internet in order to use DynamoDb normally.  So to make this work I could:
+
+* **Option 1.1**. Set up a managed NAT Gateway for my lambda.
+   * Pros: Not hard to do
+   * Cons:  Will cost me $40 a month.  I don't really want to pay that for this project until I really need it.
+* **Option 1.2**. Set up a NAT instance and use that
+   * Pros: Fits into free tier of EC2
+   * Cons:  More complicated, and I have read it's not a good idea for production?
+* **Option 1.3**. Configure DynamoDb work with VPC
+   * Pros: Would not need to set up a NAT gateway.  No cost.
+   * Cons: Still using VPC for my Lambda function which might cause cold start problems?  Lambda can no longer access internet, but I don't need it to right now.
+
+**Option 2:** Run Redis on an EC2 instance.
+
+* Pros: I don't think this needs a VPC for my Lambda function to connect, which is a plus.  Also fits into the free tier of EC2.
+* Cons: Harder to set up than ElastiCache, less robust.  Maybe not good for production?  Security issues?
+
+**Option 3:** Use Redis Enterprise Cloud
+
+* Pros: Easy setup, also has a free tier
+* Cons: Hosted on a different cloud provider which I imagine adds some latency?  Might defeat the purpose of Redis if we have to tack on like 30ms for each operation.
+
+&amp;#x200B;
+
+So I'm wondering if anyone else has dealt with this before and how they solved it.  I'm leaning towards **Option 1.3:** Make DynamoDb work with VPC, but then I'm wondering if VPC/Lambda cold start problems are still a problem.   If there is virtually no penalty for VPC in Lambda, I'll just do that.  Otherwise I might do **Option 2:** Run Redis on an EC2 instance, but it sounds like that requires a lot of time and effort to do it right.
+
+**tl;dr** Does VPC on lambda still suck?  Should I host my own Redis instance on EC2?
+
+Edit: I'm 2/2 on screwing up post titles in this sub
+## [7][Agnita: Authentication for Create React App using AWS Cognito](https://www.reddit.com/r/aws/comments/g3qhlg/agnita_authentication_for_create_react_app_using/)
+- url: https://github.com/bartw/agnita
+---
+
+## [8][Optional approvals CodePipeline](https://www.reddit.com/r/aws/comments/g3qweb/optional_approvals_codepipeline/)
+- url: https://www.reddit.com/r/aws/comments/g3qweb/optional_approvals_codepipeline/
+---
+Happy Saturday! I'm considering having optional approvals workflows in CodePipeline. They can be less priority tests, non functional tests that need not be run for all changes, but should be when needed automatically.
+
+There's some ways of getting this done, I could add a static file to the build artifact, based on the contents of the file, those approval flows can skip or run. It's kinda clumsy. I also prefer to not update the CodePipeline once setup. I'm curious to know how the community has tackled this, it's not an uncommon problem.
+
+Edit: Case in point, performance tests. Running them in an ideal world on test environments regularly is trivial. But it usually isn't. Test environments are flaky, running tests that push them need more coordination, and not all changes need to be perf tested. It takes time, effort, sometimes isn't just possible. There could be some applications that can be load tested whenever, legacy systems with many dependencies are typically not in the list.
+## [9][Using SQLite with Elastic Beanstalk?](https://www.reddit.com/r/aws/comments/g3tebl/using_sqlite_with_elastic_beanstalk/)
+- url: https://www.reddit.com/r/aws/comments/g3tebl/using_sqlite_with_elastic_beanstalk/
+---
+I wrote a Flask application following [this](https://flask.palletsprojects.com/en/1.1.x/tutorial/) tutorial, which uses SQLite and recommended Elastic Beanstalk as an option for deployment. However, I can't find any documentation that uses SQLite with EB. How do I initialize my SQLite database on my EB app, and is there good documentation for using these tools together?
+## [10][Confusion regarding EBS gp2 throughput calculation](https://www.reddit.com/r/aws/comments/g3rxvm/confusion_regarding_ebs_gp2_throughput_calculation/)
+- url: https://www.reddit.com/r/aws/comments/g3rxvm/confusion_regarding_ebs_gp2_throughput_calculation/
+---
+Reference: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
+
+For gp2, it says:
+
+T = VIR
+
+Where V = volume size, I = I/O size, R = I/O rate, and T = throughput.
+
+Then it gives an example calculating the smallest volume to reach 250 MiB/s throughput:
+
+        250 MiB/s
+    =  ---------------------
+        (256 KiB)(3 IOPS/GiB)
+
+I assume 256 KiB here is the I/O size, how does it arrive at that value?  Earlier in the document  however (the Volume Characteristics table), for gp2, max IOPS per volume, it says:
+
+&gt; 16,000 (16 KiB I/O)
+
+so 16 KiB seems to be the I/O size, where does 256 come from?

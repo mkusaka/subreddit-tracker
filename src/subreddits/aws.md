@@ -1,5 +1,123 @@
 # aws
-## [1][How to trigger AWS Lambda by SMS?](https://www.reddit.com/r/aws/comments/g44lju/how_to_trigger_aws_lambda_by_sms/)
+## [1][AWS security groups feel extremely limited &amp; restrictive](https://www.reddit.com/r/aws/comments/g4q6wh/aws_security_groups_feel_extremely_limited/)
+- url: https://www.reddit.com/r/aws/comments/g4q6wh/aws_security_groups_feel_extremely_limited/
+---
+Hi,
+
+We have been looking at automating the creation &amp; management of our security groups. We quickly hit the limits, of 5x SGs per machine &amp; 60x rules per SG.
+
+These can be amended &amp; increased, but AWS maximums still fall short of our requirements.
+
+We have AWS hosted Domain controllers (EC2 instances), and 20+ on-premise domain controllers.
+
+For a successful trust, we need to open upwards of 20 ports inbound per domain controller.
+
+&amp;#x200B;
+
+A regular firewall would allow us to create an alias of ports, and an alias containing all the on-premise DC IPs. One rule would conquer them all in this setting. However AWS security groups doesn't seem to allow this. Instead each port &amp; IP must be added individually.
+
+We have explored referencing a security group inside another security group, but this only appears to work with EC2 instances assigned to the group, not remote IP addresses.
+
+We thought about splitting UDP &amp; TCP into their own ruleset, but with 25x DCs and 13x TCP ports, we're already over the max of 300:
+
+[https://aws.amazon.com/premiumsupport/knowledge-center/increase-security-group-rule-limit/](https://aws.amazon.com/premiumsupport/knowledge-center/increase-security-group-rule-limit/)
+
+&amp;#x200B;
+
+We don't want to open any from on-premise, this needs to be extremely granular and controlled on a per-port basis.
+
+&amp;#x200B;
+
+How would you guys usually approach this scenario? I can't see how any of this would work for a large enterprise.
+
+&amp;#x200B;
+
+Thanks
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Edit: So far people have only been able to advise use "any" rules, or "reduce the amount of DCs you communicate with".
+
+How do either of these fit into the AWS security model? As quoted from the "Introduction to AWS security":
+
+&gt;\&gt; All AWS customers benefit from a data center and network architecture built to satisfy the requirements of our most security-sensitive customers.  
+&gt;  
+&gt;\&gt; AWS and its partners offer a wide range of tools and features to help you to meet your security objectives. These tools mirror the familiar controls you deploy within your on-premises environments.
+
+Following the model described above, without the use of aliases, the most security-sensitive customers will need tens of thousands of "rules".
+
+The tools do not mirror familiar controls, all firewalls I know support aliases or named groups of ports &amp; IPs.  *Edit: I stand corrected by* /r/azz_kikkr\*, AWS\* ***and its partners*** *is a catchall clause.*
+
+My scenario isn't a one off case either, what if we have VPN clients connecting in from hundreds or thousands of locations around the world?
+
+We are either missing something major within AWS security, or AWS doesn't natively support scaling up to a very large enterprise.
+
+&amp;#x200B;
+
+Edit2:
+
+Thanks everyone for your input.  So the general consensus seems to be "you'd buy a firewall to do this on-premise, so you should buy one to do it in the cloud".
+
+We expected AWS to support this functionality natively, without the need to employ 3rd party tools.
+## [2][Should I stop or terminate ec2 instances to save money overnight?](https://www.reddit.com/r/aws/comments/g4fj9w/should_i_stop_or_terminate_ec2_instances_to_save/)
+- url: https://www.reddit.com/r/aws/comments/g4fj9w/should_i_stop_or_terminate_ec2_instances_to_save/
+---
+Hi,
+We have dev ec2 instances where containers are deployed with ecs. The instances are using autoscalling groups. I wrote the lambda function that sets asg capacity to 0 in the evening and back to 1 in the morning. However, I'm thinking is it a good approach or would it be better to simply suspend autoscalligh healthchecks and stop instances?
+
+Edit: sorry for poor english I was typing on my phone
+## [3][How to schedule and run sending emails with AWS ?](https://www.reddit.com/r/aws/comments/g4pbyx/how_to_schedule_and_run_sending_emails_with_aws/)
+- url: https://www.reddit.com/r/aws/comments/g4pbyx/how_to_schedule_and_run_sending_emails_with_aws/
+---
+So i have this project in which i can assign multiple users to an onboarding task and each of them will have a diffrent **start\_date** what i want to do is when a set period of time has passed from the users **start\_date** each user should recive a mail with some instructions.   
+
+
+how can i do this kind of scheduling and email sending with AWS in rails. i know that i can spin up an worker mahine and do this king of things there. is there any way that i could do this without any kind of dedicated  instance ? like lambdas + SNS + SES for email delivery ?
+## [4][Help network noob: ssh rule for DMZ home setup?](https://www.reddit.com/r/aws/comments/g4sjpj/help_network_noob_ssh_rule_for_dmz_home_setup/)
+- url: https://www.reddit.com/r/aws/comments/g4sjpj/help_network_noob_ssh_rule_for_dmz_home_setup/
+---
+Hello!  
+  
+I've changed my home network setup recently, and the ole 'my IP' rule for Inbound SSH isn't doing the trick anymore for getting into my EC2.  
+  
+LTE Hotspot is 192.168.1.1   
+connected to a  
+Home Router is 192.168.2.1   
+  
+LTE Hotspot has a DMZ setup for 192.168.1.22, and Port Forwarding enabled. Internet works great. 
+  
+The 'My IP' setting sets it to the actual IP of the LTE Hotspot. Are there any other rules I need to set up? Thank you, this is preventing me from teleworking.
+## [5][automate silent msi install](https://www.reddit.com/r/aws/comments/g4qjn4/automate_silent_msi_install/)
+- url: https://www.reddit.com/r/aws/comments/g4qjn4/automate_silent_msi_install/
+---
+Hey, 
+
+I'm currently running into the following issue:
+
+We set up a Windows Server EC2 to be used with a third party service. They sent us an msi which needs to be installed on the machine to connect to their service - manually this works just fine. 
+
+&amp;#x200B;
+
+We now would like to automate this - but I'm having trouble to set up the silent install. 
+
+Our current approach is to use a powershell script that will be called from user data that will download the msi from s3 (works) and then use msiexec to install it. 
+
+We used Orca to have a look at the msi and were able to make things like accepting terms and conditions work but in the end and will not install . 
+
+&amp;#x200B;
+
+My question is - is there an easier way to do this in general or is this the right path and it just needs more work? 
+
+If it is the right path, I  can share the current error .
+## [6][Possible to automate uploading Lex slot values?](https://www.reddit.com/r/aws/comments/g4qaz7/possible_to_automate_uploading_lex_slot_values/)
+- url: https://www.reddit.com/r/aws/comments/g4qaz7/possible_to_automate_uploading_lex_slot_values/
+---
+I noticed if you want to upload a massive set of slot values you have to upload a .zip that has a correct json object and format for Lex to use.
+
+Is there a way to automate this? Say I want to use a 3rd party script to take a table that’s csv, translate that to a json object that fits the Lex requirements. It needs to be a .zip as far as I know.
+## [7][How to trigger AWS Lambda by SMS?](https://www.reddit.com/r/aws/comments/g44lju/how_to_trigger_aws_lambda_by_sms/)
 - url: https://www.reddit.com/r/aws/comments/g44lju/how_to_trigger_aws_lambda_by_sms/
 ---
 &amp;#x200B;
@@ -181,114 +299,27 @@ Imagine that you have a marketing dashboard in an EC2 that it gets turned off af
 AWS Lambda is really great innovation. It amaze me every time I try a new thing to do with. Triggering a computing unit via SMS opens a whole new world of options and possibilities for sys admins, businesses and who like fun projects like me.
 
 Until the next time, don’t forget to wash your hand and stay safe..
-## [2][Vault on AWS - A Terraform Project for Secrets Management Anywhere](https://www.reddit.com/r/aws/comments/g3t4ay/vault_on_aws_a_terraform_project_for_secrets/)
-- url: https://github.com/jcolemorrison/vault-on-aws
+## [8][How to deal with ALB+EC2 and an SSL](https://www.reddit.com/r/aws/comments/g4ilur/how_to_deal_with_albec2_and_an_ssl/)
+- url: https://www.reddit.com/r/aws/comments/g4ilur/how_to_deal_with_albec2_and_an_ssl/
 ---
-
-## [3][Avoiding ECR costs (NAT/PrivateLink)](https://www.reddit.com/r/aws/comments/g47lj5/avoiding_ecr_costs_natprivatelink/)
-- url: https://www.reddit.com/r/aws/comments/g47lj5/avoiding_ecr_costs_natprivatelink/
+We have an ALB set up with an SSL certificate coming from ACM.
+How do we force using only HTTPS traffic from our ALB to our EC2s ? (i.e. "propagate" the SSL encryption)
+## [9][AWS ProServe Travel/lifestyle?](https://www.reddit.com/r/aws/comments/g4bwuk/aws_proserve_travellifestyle/)
+- url: https://www.reddit.com/r/aws/comments/g4bwuk/aws_proserve_travellifestyle/
 ---
-Hi,
+I'm interviewing for a Cloud Infrastructure Architect role with AWS Professional Services (also called "ProServe"). They told me it would be 50% travel in my terrritory. However, no travel for the foreseeable future due to COVID obviously.
 
-I'm trying to deploy a basic app. One container running in a fargate ECS task. I have pushed my container to ECR, everything is configured but the container was failing to start as it couldn't pull the container from ECR.
+Has anyone here been in this role before? If so, what does the travel / work life balance look like? I'm curious how accurate that 50% really is, or if it's more like 75%.  
 
-I thought fargate running in a private subnet without NAT (I don't need NAT) could pull from ECR, but apparently not.
 
-It appears that if you don't have NAT then you need to set up PrivateLink VPN connection from fargate to ECR.
-
-Looking at NAT vs PrivateLink, these two options both cost roughly the same, starting at around $36 per month just to have it running 24/7, plus more for data transfer. 
-
-My app is small and I won't be deploying/scaling very often.
-
-It seems crazy that I need to pay for NAT or a VPN to just pull from another internal aws service.
-
-Do I just need to suck it up and pay, or are there any other options?
-
-Thanks in advance.
-## [4][AWS CLI :: increase quota](https://www.reddit.com/r/aws/comments/g43vmt/aws_cli_increase_quota/)
-- url: https://www.reddit.com/r/aws/comments/g43vmt/aws_cli_increase_quota/
+Thank you in advance for any insight you can provide! 
+## [10][Cloning EC2, Security Groups, Gateway &amp; Subnet?](https://www.reddit.com/r/aws/comments/g4mm7a/cloning_ec2_security_groups_gateway_subnet/)
+- url: https://www.reddit.com/r/aws/comments/g4mm7a/cloning_ec2_security_groups_gateway_subnet/
 ---
-I tried to dig the AWS CLI documentation on how do I increase a specific account quota limit  
-but the seems like I can't define in the call \`account-id\` or something similar.
+I'm wondering if it's possible to make a copy of a topology I have made in AWS?
 
-[https://docs.aws.amazon.com/cli/latest/reference/service-quotas/request-service-quota-increase.html](https://docs.aws.amazon.com/cli/latest/reference/service-quotas/request-service-quota-increase.html)
+I have 2 x EC2 Instances which are on a private network, they are both assigned to the same subset with separate security groups. I guess you could say this is an experimental network that will be used for local security testing. 
 
-suggestions?
+What I would like to essentially do, is copy the whole topology probably 5 times so that each topology will be on their own private network. 
 
-Thanks
-## [5][Amazon's JEDI lawsuit is on hold until mid-August](https://www.reddit.com/r/aws/comments/g426dy/amazons_jedi_lawsuit_is_on_hold_until_midaugust/)
-- url: https://www.engadget.com/amazons-jedi-lawsuit-is-on-hold-until-mid-august-181403851.html
----
-
-## [6][Best way to use Redis srever and DynamoDb from a single Lambda function?](https://www.reddit.com/r/aws/comments/g3y0fd/best_way_to_use_redis_srever_and_dynamodb_from_a/)
-- url: https://www.reddit.com/r/aws/comments/g3y0fd/best_way_to_use_redis_srever_and_dynamodb_from_a/
----
-I want to connect to a Redis server in my Lambda function.  I also want to connect to DyanmoDb.  My Lambda function is used to serve HTTP requests for a REST API.  A single Lambda function handles all requests.  My application does not need to scale right now, but I do want to be able to plan ahead.
-
-**Option 1**:  Use ElastiCache as my Redis server.  The problem with that is it requires my Lambda function to use VPC.  I have heard that VPC and Lambda is not a good combination.  I also know that my function will need to access the internet in order to use DynamoDb normally.  So to make this work I could:
-
-* **Option 1.1**. Set up a managed NAT Gateway for my lambda.
-   * Pros: Not hard to do
-   * Cons:  Will cost me $40 a month.  I don't really want to pay that for this project until I really need it.
-* **Option 1.2**. Set up a NAT instance and use that
-   * Pros: Fits into free tier of EC2
-   * Cons:  More complicated, and I have read it's not a good idea for production?
-* **Option 1.3**. Configure DynamoDb work with VPC
-   * Pros: Would not need to set up a NAT gateway.  No cost.
-   * Cons: Still using VPC for my Lambda function which might cause cold start problems?  Lambda can no longer access internet, but I don't need it to right now.
-
-**Option 2:** Run Redis on an EC2 instance.
-
-* Pros: I don't think this needs a VPC for my Lambda function to connect, which is a plus.  Also fits into the free tier of EC2.
-* Cons: Harder to set up than ElastiCache, less robust.  Maybe not good for production?  Security issues?
-
-**Option 3:** Use Redis Enterprise Cloud
-
-* Pros: Easy setup, also has a free tier
-* Cons: Hosted on a different cloud provider which I imagine adds some latency?  Might defeat the purpose of Redis if we have to tack on like 30ms for each operation.
-
-&amp;#x200B;
-
-So I'm wondering if anyone else has dealt with this before and how they solved it.  I'm leaning towards **Option 1.3:** Make DynamoDb work with VPC, but then I'm wondering if VPC/Lambda cold start problems are still a problem.   If there is virtually no penalty for VPC in Lambda, I'll just do that.  Otherwise I might do **Option 2:** Run Redis on an EC2 instance, but it sounds like that requires a lot of time and effort to do it right.
-
-**tl;dr** Does VPC on lambda still suck?  Should I host my own Redis instance on EC2?
-
-Edit: I'm 2/2 on screwing up post titles in this sub
-## [7][Agnita: Authentication for Create React App using AWS Cognito](https://www.reddit.com/r/aws/comments/g3qhlg/agnita_authentication_for_create_react_app_using/)
-- url: https://github.com/bartw/agnita
----
-
-## [8][Optional approvals CodePipeline](https://www.reddit.com/r/aws/comments/g3qweb/optional_approvals_codepipeline/)
-- url: https://www.reddit.com/r/aws/comments/g3qweb/optional_approvals_codepipeline/
----
-Happy Saturday! I'm considering having optional approvals workflows in CodePipeline. They can be less priority tests, non functional tests that need not be run for all changes, but should be when needed automatically.
-
-There's some ways of getting this done, I could add a static file to the build artifact, based on the contents of the file, those approval flows can skip or run. It's kinda clumsy. I also prefer to not update the CodePipeline once setup. I'm curious to know how the community has tackled this, it's not an uncommon problem.
-
-Edit: Case in point, performance tests. Running them in an ideal world on test environments regularly is trivial. But it usually isn't. Test environments are flaky, running tests that push them need more coordination, and not all changes need to be perf tested. It takes time, effort, sometimes isn't just possible. There could be some applications that can be load tested whenever, legacy systems with many dependencies are typically not in the list.
-## [9][Using SQLite with Elastic Beanstalk?](https://www.reddit.com/r/aws/comments/g3tebl/using_sqlite_with_elastic_beanstalk/)
-- url: https://www.reddit.com/r/aws/comments/g3tebl/using_sqlite_with_elastic_beanstalk/
----
-I wrote a Flask application following [this](https://flask.palletsprojects.com/en/1.1.x/tutorial/) tutorial, which uses SQLite and recommended Elastic Beanstalk as an option for deployment. However, I can't find any documentation that uses SQLite with EB. How do I initialize my SQLite database on my EB app, and is there good documentation for using these tools together?
-## [10][Confusion regarding EBS gp2 throughput calculation](https://www.reddit.com/r/aws/comments/g3rxvm/confusion_regarding_ebs_gp2_throughput_calculation/)
-- url: https://www.reddit.com/r/aws/comments/g3rxvm/confusion_regarding_ebs_gp2_throughput_calculation/
----
-Reference: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
-
-For gp2, it says:
-
-T = VIR
-
-Where V = volume size, I = I/O size, R = I/O rate, and T = throughput.
-
-Then it gives an example calculating the smallest volume to reach 250 MiB/s throughput:
-
-        250 MiB/s
-    =  ---------------------
-        (256 KiB)(3 IOPS/GiB)
-
-I assume 256 KiB here is the I/O size, how does it arrive at that value?  Earlier in the document  however (the Volume Characteristics table), for gp2, max IOPS per volume, it says:
-
-&gt; 16,000 (16 KiB I/O)
-
-so 16 KiB seems to be the I/O size, where does 256 come from?
+I know I can create a snapshot of the EC2, but is there an easy way to clone the security groups &amp; network setup? Preferably I'd like to keep the same internal IP's for all services too.

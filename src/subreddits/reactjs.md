@@ -109,103 +109,67 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Router Crash Course | Part#1 | Build Navbar, Home component &amp; Footer | React Bootstrap](https://www.reddit.com/r/reactjs/comments/g44scy/react_router_crash_course_part1_build_navbar_home/)
-- url: https://youtu.be/mBU_qu9r1AQ
+## [3][How to IDE-ify your GitHub](https://www.reddit.com/r/reactjs/comments/g4d7gw/how_to_ideify_your_github/)
+- url: https://www.youtube.com/watch?v=JQsmSwbvPD8&amp;feature=share
 ---
 
-## [4][I've recently finished my first react project, a MERN stack restaurant finder(using google map) and multi-user recipe sharing website "clone".](https://www.reddit.com/r/reactjs/comments/g3z0pk/ive_recently_finished_my_first_react_project_a/)
-- url: https://www.reddit.com/r/reactjs/comments/g3z0pk/ive_recently_finished_my_first_react_project_a/
----
-Project URL: [https://mealternative.com/](https://mealternative.com/).
-
-Hello everyone! First time posting, if I violate any rules please let me know and I'll change it up.
-
-I would like to share my first react project (first as in not following any tutorial, original concept and project). any suggestions would also be great to hear. 
-
-The website is not for production but rather an example website. It demonstrates the MERN stack implementation, redux, redux-saga, material UI, react-google map integration and much more. I've built this project initially because I want to build a restaurant finder for my personal use. I then realize this might be a good project for me to also implement the MERN stack for some MERN knowledge revision (well, it took way longer than I expected).
-
-I've documented the complete google map integration inside the project Frontend GitHub [repo](https://github.com/kazhala/mealternative), including setting up google map token, address auto-complete and restaurant searching. The repo also contains instructions and Cloudformation templates about how this entire MERN stack project is hosted on AWS. It also explains how the folder structures are set up for easy navigation and understanding. I've also documented some of the backend implementation details in the project Backend Github [repo](https://github.com/kazhala/mealternative-backend).
-
-Some of the implementations might not be best practice and I would like to hear feedback to improve it. Thanks, everyone.
-## [5][React Performance Optimization with React.memo()](https://www.reddit.com/r/reactjs/comments/g3ojg7/react_performance_optimization_with_reactmemo/)
-- url: https://felixgerschau.com/react-performance-react-memo
+## [4][Interactive map of Los Angeles coronavirus cases by neighborhood with React](https://www.reddit.com/r/reactjs/comments/g4o1xk/interactive_map_of_los_angeles_coronavirus_cases/)
+- url: https://www.covid-la.com/?rre
 ---
 
-## [6][If you're not using framer-motion on your project you should seriously stop and look at it!](https://www.reddit.com/r/reactjs/comments/g3wozc/if_youre_not_using_framermotion_on_your_project/)
-- url: https://www.reddit.com/r/reactjs/comments/g3wozc/if_youre_not_using_framermotion_on_your_project/
----
-Like really, it's a wonderful lib. It makes animations great and sometimes even magical.
-
-If you don't believe me, check this out: [https://codesandbox.io/s/framer-motion-animatesharedlayout-menu-underline-demo-zxsmv?file=/src/App.js](https://codesandbox.io/s/framer-motion-animatesharedlayout-menu-underline-demo-zxsmv?file=/src/App.js)
-
-I love this lib, for me it could easily become the de facto go-to animation lib on react, hands down.
-## [7][rt.live - tracking Covid reproduction numbers by state in the US. Built with React](https://www.reddit.com/r/reactjs/comments/g454o5/rtlive_tracking_covid_reproduction_numbers_by/)
-- url: https://rt.live/
+## [5][JSCasts ep17 - build an entire startup in Node.js part2 - hooks and authentication with adminbro (which written in React)](https://www.reddit.com/r/reactjs/comments/g4ptf9/jscasts_ep17_build_an_entire_startup_in_nodejs/)
+- url: https://www.youtube.com/watch?v=wOSPDtvJcyQ
 ---
 
-## [8][ReactJS API call best practice](https://www.reddit.com/r/reactjs/comments/g40vpr/reactjs_api_call_best_practice/)
-- url: https://www.reddit.com/r/reactjs/comments/g40vpr/reactjs_api_call_best_practice/
+## [6][I made my first React web app: An engine for finding similar movies!](https://www.reddit.com/r/reactjs/comments/g4k5br/i_made_my_first_react_web_app_an_engine_for/)
+- url: https://www.reddit.com/r/reactjs/comments/g4k5br/i_made_my_first_react_web_app_an_engine_for/
 ---
-Hey champs, currently developing a ReactJS project with thunk, redux.. bangs and gold cupcakes. I'm having a slight misunderstanding - heres the rundown.
+Link: [flicka.app](https://www.flicka.app/)
 
 &amp;#x200B;
 
-Im creating an ecommerce website that has bookings etc. Each user has a page that displays a list of  their bookings for items, which includes data from different  database tables - item, user etc. This is all presented within the list item, what is the best practice for retrieving the data? a chained action in redux using thunk that gets the users bookings, then accesses the item db to get the item info? Bit lost in my own head lol, just wondering how others would do such a task. Keep in mind this happens all throughout the app so trying to make the functions decoupled if you will.
+Hi guys, I'd like to share a project I just finished called Flicka. It's a simple web app for finding similar movies to groups of movies. For example, you can add a romance movie and a comedy movie, and it'll show a bunch of rom coms. I learned React for the first time while working on it, and I think it's really awesome! I really like how modular it is and it makes everything so much easier. It's a lot different from what I'm used to but I think I'm going to use it for a long time. For the backend, I used Flask and Python because my app does a lot of data manipulation and needs Pandas. I ended up hosting it on Heroku, having the flask server serve the static frontend build in addition to the api endpoints.
 
-Bit of a shit explanation, let me know if you need more info..
+&amp;#x200B;
 
-Cheers
-## [9][Creating dynamic themes with React &amp; TailwindCSS](https://www.reddit.com/r/reactjs/comments/g479d3/creating_dynamic_themes_with_react_tailwindcss/)
-- url: https://dev.to/ohitslaurence/creating-dynamic-themes-with-react-tailwindcss-59cl
+It would be awesome if you guys could check out my app and tell me what you think. It's just a small project for me to get back into web dev and I'd like to know if I'm on the right track and how I can improve.
+## [7][Inside a dev's mind - How do you plan a UI feature?](https://www.reddit.com/r/reactjs/comments/g4rdm2/inside_a_devs_mind_how_do_you_plan_a_ui_feature/)
+- url: https://jkettmann.com/how-do-you-plan-a-ui-feature/
 ---
 
-## [10][React js Project Netflix Website Clone](https://www.reddit.com/r/reactjs/comments/g46mc9/react_js_project_netflix_website_clone/)
-- url: https://www.youtube.com/playlist?list=PL6jnTQwFvrdbccPErnd5AsCY3dkYUk3e5
+## [8][The Quest for the Perfect Dark Mode](https://www.reddit.com/r/reactjs/comments/g4sn5r/the_quest_for_the_perfect_dark_mode/)
+- url: https://joshwcomeau.com/gatsby/dark-mode/
 ---
 
-## [11][Can someone tell me what I did wrong in my axios API call?](https://www.reddit.com/r/reactjs/comments/g46cyd/can_someone_tell_me_what_i_did_wrong_in_my_axios/)
-- url: https://www.reddit.com/r/reactjs/comments/g46cyd/can_someone_tell_me_what_i_did_wrong_in_my_axios/
+## [9][How can I export a javascript knockout component and use it in ReactJS?](https://www.reddit.com/r/reactjs/comments/g4shpg/how_can_i_export_a_javascript_knockout_component/)
+- url: https://www.reddit.com/r/reactjs/comments/g4shpg/how_can_i_export_a_javascript_knockout_component/
 ---
-Hey I've been trying to get axios to work for like 2 hours, and I finally found a solution which works, but I don't understand why my initial code didn't work, so if anyone could tell me what I was doing wrong here?
+How can I export a javascript knockout component and use it in ReactJS?
 
-Here' my code: 
+&amp;#x200B;
 
-		axios({
-			url: "https://accounts.spotify.com/api/token",
-			method: "POST",
-			params: {
-				grant_type: "client_credentials",
-			},
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/x-www-form-urlencoded",
-			},
-			auth: {
-				username: "private",
-				password: "private",
-			},
-		}).then((res) =&gt; console.log(res));
+I tried to search on internet, but couldn't find anything that is relevant.
 
-Here's the code that I found online that actually works: 
+&amp;#x200B;
 
-		axios
-			.post("https://accounts.spotify.com/api/token", null, {
-				params: {
-					grant_type: "client_credentials",
-				},
-				headers: {
-					Accept: "application/json",
-					"Content-Type": "application/x-www-form-urlencoded",
-				},
-				auth: {
-					username: "private",
-					password: "private",
-				},
-			})
-			.then((res) =&gt; console.log(res));
-
-When using my code, the server was just giving me a "server_error" response and nothing else...
-## [12][React node MSSQL file storage.](https://www.reddit.com/r/reactjs/comments/g45lo7/react_node_mssql_file_storage/)
-- url: https://www.reddit.com/r/reactjs/comments/g45lo7/react_node_mssql_file_storage/
+Is it possible to use it as custom element?
+## [10][I18n with arrays (React-Intl)](https://www.reddit.com/r/reactjs/comments/g4sait/i18n_with_arrays_reactintl/)
+- url: https://www.reddit.com/r/reactjs/comments/g4sait/i18n_with_arrays_reactintl/
 ---
-I am working on a small project using node express react and sql server. I have files to be stored currently I am uploding all sorts of file to firebase from front end and storing the links to them on sql server. Is it a good practice to do so?
+Using React-Intl:
+
+  
+I am currently working on a website which reads its data out of two json files (de.json and en.json).  
+Now there is also a page where I need to read data either out of an english array or a german array depending on what language is selected (Each array is currently a simple js file with just the array inside of it and it just gets imported into the file where I need to read its data). The way it is working right now is by me checking if the locale is english and then using that array, however that solution is not clean.
+
+const mediaArray = locale === "en" ? ResourcesMediaEn : ResourcesMedia
+
+ Is there a way to just store both arrays in either the en.json or de.json file and read out the data depending which language is selected. If not could you approach that in any other way?
+## [11][How to create your own global state hook in 30 lines of code](https://www.reddit.com/r/reactjs/comments/g4s4b7/how_to_create_your_own_global_state_hook_in_30/)
+- url: https://codesandbox.io/s/global-state-hook-x0z1m?file=/src/store.ts
+---
+
+## [12][React Router Crash Course | Part#1 | Build Navbar, Home component &amp; Footer | React Bootstrap](https://www.reddit.com/r/reactjs/comments/g44scy/react_router_crash_course_part1_build_navbar_home/)
+- url: https://youtu.be/mBU_qu9r1AQ
+---
+

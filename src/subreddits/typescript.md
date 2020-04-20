@@ -22,110 +22,149 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Death of Component State](https://www.reddit.com/r/typescript/comments/g45jk8/death_of_component_state/)
-- url: https://github.com/gactjs/store/blob/master/docs/death-of-component-state.md
+## [2][Deonify: For NPM module authors that would like to support Deno but do not want to write and maintain a port.](https://www.reddit.com/r/typescript/comments/g4op75/deonify_for_npm_module_authors_that_would_like_to/)
+- url: https://github.com/garronej/denoify
 ---
 
-## [3][Fancy Emitter - A new take on JavaScript's EventEmitter class. Strongly Typed and makes use of the newest features offered in ES6+](https://www.reddit.com/r/typescript/comments/g3nhha/fancy_emitter_a_new_take_on_javascripts/)
-- url: https://github.com/mothepro/fancy-emitter
+## [3][a TypeScript library that helps you build normalized state faster](https://www.reddit.com/r/typescript/comments/g4obby/a_typescript_library_that_helps_you_build/)
+- url: https://www.reddit.com/r/typescript/comments/g4obby/a_typescript_library_that_helps_you_build/
 ---
+If you've have ever worked with [normalized reducer state](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/) (e.g. Redux or React's `useReducer`), you'll know that relational state updates involve boilerplate and [complexity](https://github.com/brietsparks/normalized-reducer#the-problem).
 
-## [4][Use Vim as a TypeScript IDE](https://www.reddit.com/r/typescript/comments/g3pb1a/use_vim_as_a_typescript_ide/)
-- url: https://spacevim.org/use-vim-as-a-typescript-ide/#.Xpsb7HnFIw0.reddit
----
+To save you time, try using [Normalized Reducer](https://github.com/brietsparks/normalized-reducer).
 
-## [5][Implicit inferencing of generic type in class through constructor property does not work](https://www.reddit.com/r/typescript/comments/g3lftr/implicit_inferencing_of_generic_type_in_class/)
-- url: https://www.reddit.com/r/typescript/comments/g3lftr/implicit_inferencing_of_generic_type_in_class/
----
-Here is my [Code on TypeScript playground](https://www.typescriptlang.org/v2/en/play?#code/KYDwDg9gTgLgBASwHY2FAZgQwMbDgFVBgAUoIw0YFgBnOAbwCg4W4ByG4GKpAcxoB0IAJ4AvfMIpsAXHCQBXALYAjNAG5mrBDQCSKNFlwB5JLOUQIAG2CYkGgL6NGoSLDjYISGvDBkKsYT0AE1B8CABlGCh5bBh5KGAgo2UAKwBZTDBZejgAbWQQkEQkOABrYGEIdAIiUnJKahoAXVkFFTQ4ezgAXgZNFg4uHn4hMQkpWQAGABp+xF19DBxgE1kAJkZHZ3BoeGxLTBo6AHFgJDQEbD1UJdwAHlPzqEu6-ypaAD4+1ndPb2jYtAABS+BAAN0wqDgvnqAWCoQiURicQSyXSmWyeQKoGKZQqVTgjwu2FeDVoLTkSlUUE6AEoGFsfmB5MpLJc4LwuKTYI0gfSmD8fgB6IX0LraOAwCx44BgSUACwlNCQCDAFHgNHluwEcAASjZLHAAO7QSxBX4hY0QeRmuAJFElTDQvwdCCpYCxARzH72+IlMVwQ6Es7E7nvGgaH6OLYigCi4DZ2AQqEswjg8hoyF4NRAJBdPNocHQ0GDTxe+fDVqgpRojA8XngLkTyZ6cmARtLxOuBmWd0IubDjQ+IIrgSQhTCkQBKMSaIyYFpGnr3jgTYQydedF6a6TMAEnLzsPDfLUcBF8qDMEkeH7h7ejScIp0ijAzZTaeQ6AufE7zxJFcaBUyHkXh5QVPA3RSD0fDIMEEBCc1kHA34G2nEsgggQskAgeATWrOs-ngBAXzfVtzg7Ik-27W5gBHI8xwnRFp3iWdUnnRcCIbRASMuDc-C3bjX14vcD0HWgTzPIULzoK8KAYQZuCzQQRHEa8ZHTJBSmwo0kGmeZqMMFZTA0rSIB0+wgA) for interactive debugging
+It is a zero-boilerplate higher-order-reducer that takes a schema of data relationships and returns the reducers, actions, and selectors to manage the normalized state. It [integrates with normalizr](https://github.com/brietsparks/normalized-reducer#normalizr-integration) and supports many common use-cases for relational data. To see its features in action, check out its [demo app](https://brietsparks.github.io/normalized-reducer-demo/).
 
-Here a Text version of my code:
+Here is an example from the [doc's quick start](https://github.com/brietsparks/normalized-reducer#quick-start) to show its simplicity:
 
-    export interface TextProperties {
-        'settings.xyzType': number;
-        isInterfaceOn: boolean;
+    import makeNormalizedSlice from 'normalized-reducer'
+    
+    const mySchema = {
+      list: {
+        'itemIds': { type: 'item', cardinality: 'many', reciprocal: 'listId' }
+      },
+      item: {
+        'listId': { type: 'list', cardinality: 'one', reciprocal: 'itemIds' },
+        'tagIds': { type: 'tag', cardinality: 'many', reciprocal: 'itemIds'}
+      },
+      tag: {
+        'itemIds': { type: 'item', cardinality: 'many', reciprocal: 'tagIds' }
+      }
     }
     
-    export const propertyIndexToStructuredObjMap: { [index in keyof TextProperties]: number } = {
-        'settings.xyzType': 0,
-        isInterfaceOn: 2
+    const {
+      reducer,
+      actionCreators,
+      actionTypes,
+      selectors,
+      emptyState,
+    } = makeNormalizedSlice(mySchema)
+
+Thanks for reading, and I hope this helps build things faster!
+## [4][Why does this generic constructor not seem to get type checked at all? Can it be?](https://www.reddit.com/r/typescript/comments/g4rcdz/why_does_this_generic_constructor_not_seem_to_get/)
+- url: https://www.reddit.com/r/typescript/comments/g4rcdz/why_does_this_generic_constructor_not_seem_to_get/
+---
+Hi I am trying to use a generic factory like class to create 1 type many times with the same passed in arguments. My issue is that the passed in arguments don't seem to be type checked against the generic type's constructor that is being created. I tried to boil it down to as simple as possible example:
+
+&amp;#x200B;
+
+    abstract class SharedBaseClass {
+        constructor(public name: string) {}
+        abstract sayHi(): void;
     }
+    interface IConstructor&lt;T&gt;
+    {
+        new (...args: any[]): T;
+    }
+    class Creator&lt;InputType extends SharedBaseClass&gt; extends SharedBaseClass
+    {
+        inputs: Array&lt;InputType&gt;;
     
-    export class GenericInterface&lt;GenericProperties&gt; {
-        constructor(private propertyIndexToStructureObjMap: { [index in keyof GenericProperties]: number }) {}
-    
-        public getProperties() {
-            //{} is too keep this snippet short. Real world code would return a proper object.
-            return {} as GenericProperties;
+        constructor(private inputNames: string[],
+                    inputConstructor: IConstructor&lt;InputType&gt;,
+                    ...params: ConstructorParameters&lt;IConstructor&lt;InputType&gt;&gt;) {
+            super("Creator");
+            this.inputs = new Array&lt;InputType&gt;(this.inputNames.length);
+            this.inputNames.forEach((name: string, idx: number) =&gt; {
+                this.inputs[idx] = new inputConstructor(name, ...params);
+            });
+        }
+        runAll() {
+            this.inputs.forEach((input: InputType, idx: number) =&gt; {
+                input.sayHi();
+            });
+        }
+        sayHi() {
+            console.log("Hi from Creator");
         }
     }
     
-    //Explicitely using TextProperties for GenericProperties works
-    const explicit = new GenericInterface&lt;TextProperties&gt;(propertyIndexToStructuredObjMap);
-    const expliitProps = explicit.getProperties(); //has type TextProperties
+    class Input1 extends SharedBaseClass {
+        constructor(name: string, public age: number, public otherArg: number) {
+            super(name);
+        }
+        sayHi() {
+            console.log("Hi from ", this.name, " ", this.age, " ", this.otherArg);
+        }
+    }
+
+Allowed invocations:
+
+     let c = new Creator&lt;Input1&gt;(["a", "b"], Input1); // no args
+     let c = new Creator&lt;Input1&gt;(["a", "b"], Input1, 11); // too few args
+     let c = new Creator&lt;Input1&gt;(["a", "b"], Input1, 11, 14); // correct # args
+     let c = new Creator&lt;Input1&gt;(["a", "b"], Input1, 11, 14, 15); // too many args 
     
-    //Implicitely infering GenericProperties through the object provided in the constructor does not work
-    const implicit = new GenericInterface(propertyIndexToStructuredObjMap);
-    const implicitProps = implicit.getProperties(); //has type {'settings.xyzType': unknown, isInterfaceOn: unknown}
+     c.runAll();
 
-As described in the comments, submitting the type for the generic in the class explicitly makes it work like a charm and the getProperties function returns the correct type.
+&amp;#x200B;
 
-Implicit inferencing does not work completely. It returns an Object with the correct keys, but the types of it's values are all unknown.
+Is there anyway I can have the generic type's constructor arguments actually validated correctly here?
 
-Is there a way to make the implicit inferencing work in my case, so I don't have to explicitly state the type all the time?
-## [6][Infer the returned type of a function and use it as a parameter for another function .](https://www.reddit.com/r/typescript/comments/g3nvli/infer_the_returned_type_of_a_function_and_use_it/)
-- url: https://www.reddit.com/r/typescript/comments/g3nvli/infer_the_returned_type_of_a_function_and_use_it/
----
-Is this possible to be done with TS and how ?
-## [7][A friend sent me this comic. Had to add it to the internal TypeScript guide I wrote for the team](https://www.reddit.com/r/typescript/comments/g2ve22/a_friend_sent_me_this_comic_had_to_add_it_to_the/)
-- url: https://i.imgur.com/YMo4iC0.jpg
+&amp;#x200B;
+
+Thanks!
+## [5][Decoupled State Interface](https://www.reddit.com/r/typescript/comments/g4nwag/decoupled_state_interface/)
+- url: https://github.com/gactjs/store/blob/master/docs/decoupled-state-interface.md
 ---
 
-## [8][ts lerna boilerplate](https://www.reddit.com/r/typescript/comments/g399q5/ts_lerna_boilerplate/)
-- url: https://www.reddit.com/r/typescript/comments/g399q5/ts_lerna_boilerplate/
+## [6][Need some clarification on generics](https://www.reddit.com/r/typescript/comments/g4bivi/need_some_clarification_on_generics/)
+- url: https://www.reddit.com/r/typescript/comments/g4bivi/need_some_clarification_on_generics/
 ---
-Hi,
+Let's say that I have a function like this (taken from the handbook on the official website):
 
-I've created typescript (project reference, path mapping, ts-node-dev) + lerna + yarn workspace + jest (ts-jest) + eslint (\`overrides\` for supporting different rules against js and ts) + etc boilerplate with explanation.
+    function identity&lt;T&gt;(arg: T): T {
+      return arg;
+    }
 
-[https://github.com/jjangga0214/ts-yarn-lerna-boilerplate](https://github.com/jjangga0214/ts-yarn-lerna-boilerplate)
+What's going on here, exactly? I get that we don't want to use `arg: any` here because we lose all context on the actual type of the argument, so the above is a solution to that. I'm wondering what's going on here, exactly, though. Here's my guess; please tell me if I'm right or wrong. If I'm wrong, please correct me:
 
-Hope it can be helpful to someone.
-## [9][A typescript language service plugin that gives superpowers to SQL tagged template literals.](https://www.reddit.com/r/typescript/comments/g38bb7/a_typescript_language_service_plugin_that_gives/)
-- url: https://www.reddit.com/r/typescript/comments/g38bb7/a_typescript_language_service_plugin_that_gives/
+1. You pass in an argument into the `identity` function (let's say it's a string)
+2. `&lt;T&gt;` *captures* the argument's type (i.e. string)
+3. Thanks to `&lt;T&gt;` capturing the type (string), the function now knows that it should return a string
+
+In other words, the order of operations here is:
+
+1. A type is passed in through `(arg: T)`
+2. The type is captured by `&lt;T&gt;` so that you can reuse that type context (i.e. string) throughout the function
+3. The one (and only) instance, where we're reusing the type context captured by `&lt;T&gt;` in this function is when we're typing the return value of the function `:T`. In other words, the way we type the return value of the function here is an example of how we can utilize a generic `&lt;T&gt;` to improve our experience with typing.
+## [7][Made a Sengled smart light api wrapper for nodeJS](https://www.reddit.com/r/typescript/comments/g4jnil/made_a_sengled_smart_light_api_wrapper_for_nodejs/)
+- url: https://www.reddit.com/r/typescript/comments/g4jnil/made_a_sengled_smart_light_api_wrapper_for_nodejs/
 ---
-Hey folks,
-
-At Segment, we often write our MySQL queries in SQL tagged template literals, rather than using a query builder. We found that it was pretty easy for invalid queries to make it to production. I built this plugin to ensure that a) We validate the MySQL queries for syntax, and b) We check types against the actual schema. There's also other helpful tools like hover documentation for keywords, tables, and columns. I hope the community finds this helpful :)
-
-[https://github.com/segmentio/ts-mysql-plugin](https://github.com/segmentio/ts-mysql-plugin)
-## [10][Why is redux's combine reducer complaining about method overload when using typescript and react-redux-firebase?](https://www.reddit.com/r/typescript/comments/g2yr2q/why_is_reduxs_combine_reducer_complaining_about/)
-- url: https://www.reddit.com/r/typescript/comments/g2yr2q/why_is_reduxs_combine_reducer_complaining_about/
+So I made a wrapper for Sengled devices. You can control both rooms and devices individually. Setting brightness, power and viewing usage statistics. Hope this helps with your smart home adventures! [https://github.com/callmekory/sengled-api](https://github.com/callmekory/sengled-api)
+## [8][Death of Component State](https://www.reddit.com/r/typescript/comments/g45jk8/death_of_component_state/)
+- url: https://github.com/gactjs/store/blob/master/docs/death-of-component-state.md
 ---
-**The problem**
 
-I have a basic project with just a minimal boilerplate, because I wanted to try out `react-redux-firebase`. So I set everything up according to the typescript example from here: https://github.com/prescottprue/react-redux-firebase/tree/master/examples/complete/typescript
+## [9][10 less known Angular features you've probably never used - W3Radar](https://www.reddit.com/r/typescript/comments/g4gncq/10_less_known_angular_features_youve_probably/)
+- url: https://blog.w3radar.com/less-known-angular-features-probably-never-used/
+---
 
-But this part:
+## [10][Fancy Emitter - A new take on JavaScript's EventEmitter class. Strongly Typed and makes use of the newest features offered in ES6+](https://www.reddit.com/r/typescript/comments/g3nhha/fancy_emitter_a_new_take_on_javascripts/)
+- url: https://github.com/mothepro/fancy-emitter
+---
 
-    const rootReducer = combineReducers&lt;RootState&gt;({
-      firebase: firebaseReducer,
-      firestore: firestoreReducer
-    });
-
-Is complaining:
-
-    &gt; firestore: Reducer&lt;FirestoreReducer.Reducer, any&gt; No overload matches
-    &gt; this call. Overload 1 of 3,
-
-I made a minimal codesandbox demo to reproduce the problem:
-
-https://codesandbox.io/s/great-perlman-p6g7p?file=/src/store/index.ts
-
-You can see the error on line `54` altough the app is running just fine. On my local client it won't render, I just see the error in the browser (overload...). 
-
-What am I doing wrong here? It has to be something about typescript, I'm a real beginner when it comes to typescript.
-## [11][Strategies for migrating to TypeScript](https://www.reddit.com/r/typescript/comments/g31q57/strategies_for_migrating_to_typescript/)
-- url: https://2ality.com/2020/04/migrating-to-typescript.html
+## [11][Use Vim as a TypeScript IDE](https://www.reddit.com/r/typescript/comments/g3pb1a/use_vim_as_a_typescript_ide/)
+- url: https://spacevim.org/use-vim-as-a-typescript-ide/#.Xpsb7HnFIw0.reddit
 ---
 

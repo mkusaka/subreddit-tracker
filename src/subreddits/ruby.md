@@ -1,5 +1,39 @@
 # ruby
-## [1][Simple game engine with Ruby + Rust (help and feedback requested)](https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/)
+## [1][Ruby Structure](https://www.reddit.com/r/ruby/comments/g4sieh/ruby_structure/)
+- url: https://www.reddit.com/r/ruby/comments/g4sieh/ruby_structure/
+---
+Hi Guy and Girls,
+
+I have a beginner question I find really hard to find the right answer for, how do you structure in Ruby.
+
+I have a very bad habit of writing all my code in 1 file, after creating a gem with bundle. 
+
+I will write almost all of my code in the main file in the lib folder, but how do you know what to split up in different files, is where some kind of rule you follow then you split the code up in different files. ?
+
+And is it best practice to write all your projects in a gem structure format if its only for private use and not to ever be published or is where a better structure for not creating gems but just a project?
+## [2][I find it surprising (in the pejorative sense) that Enumerator#next can't take an argument. Is there some good reason for that, or has it just kinda slipped through the cracks?](https://www.reddit.com/r/ruby/comments/g4ples/i_find_it_surprising_in_the_pejorative_sense_that/)
+- url: https://www.reddit.com/r/ruby/comments/g4ples/i_find_it_surprising_in_the_pejorative_sense_that/
+---
+I have an infinite sequence (`Enumerator.new { |yielder| ... loop { yielder &lt;&lt; ... } }`) that I know will continue producing values, and I'd like to grab two at a time. `a, b = enum.next, enum.next` works, of course, but `enum.next(2)` would be even better.
+
+I [dug around](https://github.com/ruby/ruby/blob/bfe706716f7692f0a672a15a261ffffa25526cb1/enumerator.c#L903-L908) and found that `Enumerator#next` specifically makes sure it's returning a single value (the "sv" in `ary2sv()`, presumably), though that value is permitted to be an `Array`. It wouldn't make sense to rewrite this particular enumeration to yield a two-element array, so I won't pursue that avenue.
+
+There's [this feature request](https://bugs.ruby-lang.org/issues/9557) from many moons ago that wanted `#next`'s argument to skip forward in the enumeration, but nothing much came of it, so I wouldn't know where to begin tacking this on without breaking things. Would it even be a good idea, or is there something I'm missing?
+## [3][Reactive, realtime web apps in Ruby on Rails without JS using Stimulus Reflex](https://www.reddit.com/r/ruby/comments/g48g4b/reactive_realtime_web_apps_in_ruby_on_rails/)
+- url: https://www.reddit.com/r/ruby/comments/g48g4b/reactive_realtime_web_apps_in_ruby_on_rails/
+---
+Thought you guys would be interested in this.
+
+Stimulus Reflex lets you build realtime, reactive apps in Rails similar to Phoenix LiveView. You don't have to write any Javascript and it will use Rails to render all the HTML updates server-side. It uses ActionCable to trigger updates and then tells Rails to render the current page again and send that back over the websocket. It'll then use DOM diffing to update the page automatically for you.
+
+Definitely one of the coolest projects going on right now in the Rails world I'd say. It looks like we might see some similar things in Turbolinks 6 when that comes out too which is exciting.
+
+[https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1](https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1)
+## [4][Optimizing Ruby Lazy Initialization in TruffleRuby with Deoptimization](https://www.reddit.com/r/ruby/comments/g465y7/optimizing_ruby_lazy_initialization_in/)
+- url: https://engineering.shopify.com/blogs/engineering/optimizing-ruby-lazy-initialization-in-truffleruby-with-deoptimization
+---
+
+## [5][Simple game engine with Ruby + Rust (help and feedback requested)](https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/)
 - url: https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/
 ---
 [Dathos Game Engine](https://github.com/BrianMWest/dathos-game-engine)
@@ -27,43 +61,25 @@ Here is a link to the engine and the Slack-based game I made with it:
 [Dathos Game Engine](https://github.com/BrianMWest/dathos-game-engine)
 
 [Melody Madness / Chordal Catastrophe](https://github.com/BrianMWest/melody-madness)
-## [2][RSS as RESTful API](https://www.reddit.com/r/ruby/comments/g4532n/rss_as_restful_api/)
+## [6][RSS as RESTful API](https://www.reddit.com/r/ruby/comments/g4532n/rss_as_restful_api/)
 - url: https://github.com/davidesantangelo/feedirss-api
 ---
 
-## [3][Optimizing Ruby Lazy Initialization in TruffleRuby with Deoptimization](https://www.reddit.com/r/ruby/comments/g465y7/optimizing_ruby_lazy_initialization_in/)
-- url: https://engineering.shopify.com/blogs/engineering/optimizing-ruby-lazy-initialization-in-truffleruby-with-deoptimization
----
-
-## [4][Over 700 Malicious Typosquatted Libraries Found On RubyGems Repository](https://www.reddit.com/r/ruby/comments/g3qwx3/over_700_malicious_typosquatted_libraries_found/)
+## [7][Over 700 Malicious Typosquatted Libraries Found On RubyGems Repository](https://www.reddit.com/r/ruby/comments/g3qwx3/over_700_malicious_typosquatted_libraries_found/)
 - url: https://thehackernews.com/2020/04/rubygem-typosquatting-malware.html
 ---
 
-## [5][Having trouble with API pagination with HTTParty.](https://www.reddit.com/r/ruby/comments/g40jct/having_trouble_with_api_pagination_with_httparty/)
+## [8][Having trouble with API pagination with HTTParty.](https://www.reddit.com/r/ruby/comments/g40jct/having_trouble_with_api_pagination_with_httparty/)
 - url: https://www.reddit.com/r/ruby/comments/g40jct/having_trouble_with_api_pagination_with_httparty/
 ---
 I am using an api and it says there are 120 pages, only 25 items displayed per page, but not sure how to pull all the pages. Ive been searching for a while now cant find anything useful. If I cant figure this out I will have to scrap this and start over but only have a few more days left to turn in a project.
 
 Thanks for your help!
-## [6][Ruby "main"](https://www.reddit.com/r/ruby/comments/g3px8i/ruby_main/)
+## [9][Ruby "main"](https://www.reddit.com/r/ruby/comments/g3px8i/ruby_main/)
 - url: https://medium.com/@igor04/ruby-main-789ff58320f
 ---
 
-## [7][Play around with Bezier curves in the browser using Ruby (source code link in the comments).](https://www.reddit.com/r/ruby/comments/g3wmy9/play_around_with_bezier_curves_in_the_browser/)
+## [10][Play around with Bezier curves in the browser using Ruby (source code link in the comments).](https://www.reddit.com/r/ruby/comments/g3wmy9/play_around_with_bezier_curves_in_the_browser/)
 - url: https://v.redd.it/koobj5vpmnt41
----
-
-## [8][Ruby Bitwise Operators](https://www.reddit.com/r/ruby/comments/g3oecm/ruby_bitwise_operators/)
-- url: https://medium.com/rubycademy/ruby-bitwise-operators-da57763fa368
----
-
-## [9][Ruby Hash Default Values](https://www.reddit.com/r/ruby/comments/g33oyz/ruby_hash_default_values/)
-- url: https://www.reddit.com/r/ruby/comments/g33oyz/ruby_hash_default_values/
----
-I've written a new doc section about Hash default values.  It has been merged into Ruby's [hash.c](https://github.com/ruby/ruby/commit/39c965f2306d29524feae04ff6e710b32702851a#diff-eff9999082c8ce7d8ba1fc1d79f439cf), but not yet released.
-
-I wrote it over at my doc project [AboutRuby](https://github.com/BurdetteLamar/AboutRuby/blob/master/core/Hash/api/markdown.md#hash-api), then PRed it over to Ruby. (Thanks, @nobu, for the review and merge.)
-## [10][Processing high volume of unique messages exactly once while preserving order in a queue using SQS and Ruby-on-Rails](https://www.reddit.com/r/ruby/comments/g37ygs/processing_high_volume_of_unique_messages_exactly/)
-- url: https://medium.com/@rcdexta/processing-high-volume-of-unique-messages-exactly-once-while-preserving-order-in-a-queue-d8d6184ded01
 ---
 

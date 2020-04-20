@@ -119,176 +119,99 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Default function arguments are the devil](https://www.reddit.com/r/cpp/comments/g3yjuc/default_function_arguments_are_the_devil/)
+## [3][Notes on C++ SFINAE, Modern C++ and C++20 Concepts](https://www.reddit.com/r/cpp/comments/g4oeer/notes_on_c_sfinae_modern_c_and_c20_concepts/)
+- url: https://www.bfilipek.com/2016/02/notes-on-c-sfinae.html?m=1
+---
+
+## [4][The STL Algorithm Cheat Sheet](https://www.reddit.com/r/cpp/comments/g4e2uj/the_stl_algorithm_cheat_sheet/)
+- url: https://youtu.be/LMmFpOhcQhA
+---
+
+## [5][A C++ GitHub Template Repository utilizing CircleCI, CMAKE, Docker and Doxygen](https://www.reddit.com/r/cpp/comments/g4mvk8/a_c_github_template_repository_utilizing_circleci/)
+- url: https://thoughts-on-coding.com/2020/04/20/a-cpp-github-template-repository-utilizing-circleci-cmake-docker-and-doxygen/
+---
+
+## [6][shared_ptr initialized with nullptr is null or empty?](https://www.reddit.com/r/cpp/comments/g4m1x6/shared_ptr_initialized_with_nullptr_is_null_or/)
+- url: https://www.nextptr.com/question/qa1372136808/shared_ptr-initialized-with-nullptr-is-null-or-empty
+---
+
+## [7][Question about uniform/braced initialization](https://www.reddit.com/r/cpp/comments/g4fidx/question_about_uniformbraced_initialization/)
+- url: https://www.reddit.com/r/cpp/comments/g4fidx/question_about_uniformbraced_initialization/
+---
+I tend to prefer using braces. From effective C++ :
+
+&gt;Braced initialization is the most widely usable initialization syntax, it prevents  
+&gt;  
+&gt;narrowing conversions, and it’s immune to C++’s most vexing parse.
+
+But there is the infamous subtlety of std::initializer\_list :
+
+&gt;During constructor overload resolution, braced initializers are matched to  
+&gt;  
+&gt;std::initializer\_list parameters if at all possible, even if other constructors  
+&gt;  
+&gt;offer seemingly better matches.
+
+The book has this example :
+
+    Widget w4({}); // calls std::initializer_list ctor
+                   // with empty list
+    Widget w5{{}}; // ditto
+
+Here goes the question :
+
+why was it decided to have
+
+    std::vector&lt;int&gt; vec{1, 2, 3};
+
+interpreted as an initialization with an initializer\_list when the empty list initialization above suggest it could be (and in fact can be) done with :
+
+    std::vector&lt;int&gt; vec{{1, 2, 3}};
+
+?
+
+Would it just move the problem a little farther by shadowing single argument constructors ?
+
+Am I missing the point completely ?
+
+Godbolt to play with : [https://godbolt.org/z/mCnJdz](https://godbolt.org/z/mCnJdz)
+
+Sorry if it is a recurring (or straightforward) question, it does not seem straightforward to me yet. I just find it odd to have this arguably annoying behavior when there seems to be a way to construct an object with an initializer\_list without (?) the downside mentioned above.
+
+Cheers
+## [8][Generating code to pick sparsely-distributed bits from a massive bit set known at compile-time](https://www.reddit.com/r/cpp/comments/g4f555/generating_code_to_pick_sparselydistributed_bits/)
+- url: https://www.reddit.com/r/cpp/comments/g4f555/generating_code_to_pick_sparselydistributed_bits/
+---
+During the development of [toml++](https://marzer.github.io/tomlplusplus/) I've been forced to contend with Unicode. Not knowing much about Unicode before this project, combined with C++'s, er, _varied_ text handling utilities, has meant it's been quite an education.  
+
+One of the challenges I needed to solve was being able to quickly determine if a code point belongs to one of a set of 'categories' so I could answer questions like "is this a letter?" in a unicode-aware way. Turns out that while the amount of meaningful unicode code points is relatively small (100,000-ish), they're very sparsely and unevenly distributed over a much larger range. Typically I'd use a lookup table for this sort of thing but since the data is so sparse it would be horrendously wasteful, so I figured some sort of static binary search tree solution would be a good way to go.  
+
+The solution I ultimately went with was to write a [python script](https://github.com/marzer/tomlplusplus/blob/master/python/generate_unicode_functions.py) that downloads the unicode database and uses it to generate C++ functions by iteratively:
+- Reducing a codepoint range to a single expression if possible (relops, bitmask, modulo, etc), or
+- Reducing a codepoint range to a local not-too-large-or-sparse bitmask lookup table if possible, or
+- Emitting a switch statement consisting of a small number of the above, or
+- Subdividing the range into smaller ranges and trying again.
+
+The output looks [like this](https://godbolt.org/z/PFqsWB). That function is for identifying 'combining marks'; codepoints from the Mn and Mc categories. There's only about 2000 of those but they're spread out over a range of around 900,000. You can see the assembly is pretty lean, with it mostly just being about the bitmask lookup tables (earlier versions of the algorithm sans-bitmask lookup tables generated about 4x more assembly, [like this example](https://godbolt.org/z/SGfczK)).  
+
+This post is partly about "hey I did a fun weird thing involving C++", but also partly inquisitive: is this an insane way of solving this problem? Is there something fundamentally obvious I'm missing?
+## [9][Default function arguments are the devil](https://www.reddit.com/r/cpp/comments/g3yjuc/default_function_arguments_are_the_devil/)
 - url: https://quuxplusone.github.io/blog/2020/04/18/default-function-arguments-are-the-devil/
 ---
 
-## [4][Why FBThrift has so little documentation/tutorials?](https://www.reddit.com/r/cpp/comments/g47pn2/why_fbthrift_has_so_little_documentationtutorials/)
-- url: https://www.reddit.com/r/cpp/comments/g47pn2/why_fbthrift_has_so_little_documentationtutorials/
----
-I am not sure if my google setting is wrong. But I cannot find much useful tutorials/examples for facebook Thrift .
-
-Is FBThrift widely used in the industry outside of FB? Does anyone have any insights?
-## [5][Working implementation of executors proposal with clang](https://www.reddit.com/r/cpp/comments/g3zco9/working_implementation_of_executors_proposal_with/)
+## [10][Working implementation of executors proposal with clang](https://www.reddit.com/r/cpp/comments/g3zco9/working_implementation_of_executors_proposal_with/)
 - url: https://www.reddit.com/r/cpp/comments/g3zco9/working_implementation_of_executors_proposal_with/
 ---
 I'm trying to setup `experimental::executor` preferably with clang-10 but two of the implementations ([this](https://github.com/chriskohlhoff/executors) and [that](https://github.com/executors/executors-impl)) that I've tried, failed to build. The first implementation doesn't even offer CMake support, and is incompatible with current latest implementation of `std::future`.
 
 Is there an available implementation which builds with clang-9 or clang-10? If not, then what's the best way to go about compiling and successful running a basic example of `experimental::executor`?
-## [6][I wrote a lightweight Web Socket library for Qt5. Unlike QWebSocket, I feel this is easier to use with existing code (offers a class that inherits QTcpSocket).](https://www.reddit.com/r/cpp/comments/g3jwu3/i_wrote_a_lightweight_web_socket_library_for_qt5/)
-- url: https://github.com/cculianu/WebSocket
----
-
-## [7][Padding in structs and classes with exactly one member](https://www.reddit.com/r/cpp/comments/g437oc/padding_in_structs_and_classes_with_exactly_one/)
+## [11][Padding in structs and classes with exactly one member](https://www.reddit.com/r/cpp/comments/g437oc/padding_in_structs_and_classes_with_exactly_one/)
 - url: https://www.reddit.com/r/cpp/comments/g437oc/padding_in_structs_and_classes_with_exactly_one/
 ---
 I am wondering if there is any situation in which a struct or class with one member would have a different size (using sizeof()) than the size of its member, assuming that the struct is not inheriting from any other class. Is this undefined behavior, or is it something that the standard guarantees to be true?
 
 On a second note, I am also wondering if there is a portable way to determine at compile-time whether or not a struct has a single member or not, given that I know the name of that member and its size. Thanks for your help.
-## [8][GTC 2020: CUDA C++ in Jupyter: Adding CUDA Runtime Support to Cling](https://www.reddit.com/r/cpp/comments/g3l8fl/gtc_2020_cuda_c_in_jupyter_adding_cuda_runtime/)
-- url: https://developer.nvidia.com/gtc/2020/video/s21588
----
-
-## [9][Move variadic template arguments from a template structure to another template structure](https://www.reddit.com/r/cpp/comments/g3ntqs/move_variadic_template_arguments_from_a_template/)
-- url: https://www.reddit.com/r/cpp/comments/g3ntqs/move_variadic_template_arguments_from_a_template/
----
-I'm in a bottomless pit of over-engineering that I don't want to get our out because it's way too much fun. Also, you can't go outside so what else is there to do. Here is a really cool thing I found.
-
-I wanted to use my fancy compile-time alias for calculating summary byte size of multiple structures:
-
-    template&lt;class ... Descriptions&gt;
-    using summary_byte_size = std::integral_constant&lt;size_t, (Descriptions::byte_size::value + ...)&gt;;
-
-It's not `sizeof()` because it's a description of data, not actual data. It carries no data, ok? Basically there are types that have required `byte_size` defined which is an `integral_constant` as well.
-
-Problem is, I wanted to use it with a subset (first N actually) of variadic template arguments that I had. So I couldn't simply `Args...` them to this structure :( In moments like this you really want to think `std::tuple` so I did that. I made `std::tuple&lt;Args...&gt;`, then I put it into thing below to get `std::tuple` of only N first types from initial tuple:
-
-    template&lt;std::size_t Count, typename Head, typename ... Rest&gt;
-    struct tuple_of_first_n {
-        using type = decltype(std::tuple_cat(std::declval&lt;Head&gt;(), std::tuple_cat(std::declval&lt;Rest&gt;()...)));
-    };
-    
-    template&lt;typename Head, typename ... Rest&gt;
-    struct tuple_of_first_n&lt;0, Head, Rest...&gt; {
-        using type = Head;
-    };
-
-Now - the actual core of this whole thing. How do I extract tuple types and push it to my `summary_byte_size&lt;&gt;` struct?
-
-How to get `Ts...` from `Something&lt;Ts...&gt;`?
-
-Introducing - *this abomination*:
-
-    template&lt;typename Source, template &lt;typename...&gt; typename Target&gt;
-    struct extract_types_and_apply{};
-    
-    template&lt;template &lt;typename...&gt; typename Source, template &lt;typename...&gt; typename Target, typename ... Ts&gt;
-    struct extract_types_and_apply&lt;Source&lt;Ts...&gt;, Target&gt; {
-        using type = Target&lt;Ts...&gt;;
-    };
-
-Basically we force it to pick *specialized* version so that `Ts...` is deduced and I can freely push it to anything I want that can accept these given `Ts...` args. And there we go!
-
-    auto totalSize = extract_types_and_apply&lt;std::tuple&lt;Vec3, Vec3, Vec2&gt;, summary_byte_size&gt;::type::value;
-
-Here's another example how you can use it. It can be used to take a container and create another container with same type! Here I made `std::list&lt;int&gt;` from `std::vector&lt;int&gt;`:
-
-    auto actualList = extract_types_and_apply&lt;std::vector&lt;int&gt;, std::list&gt;::type();
-
-Here's Godbolt link if you want - [https://godbolt.org/z/zO711Q](https://godbolt.org/z/zO711Q)
-
-If you want to pass values through template args like `std::size_t` then it's whole different story, because  neither `typename` nor `class` is `std::size_t`... but it works for types! Also, this is C++17. In C++20 you can basically do the same using single line templated lambda:  
-`[&amp;]&lt;class ... Types&gt;(std::tuple&lt;Types...&gt;){ /* use Types... however pleased */ }(tuple_of_first_n&lt;2, std::tuple&lt;int, char, int, int&gt;&gt;::type{});`
-
-I hope you like it :D
-## [10][Preview of my second library, ESeed Window, window management library currently supporting Win32 and Vulkan, more to come](https://www.reddit.com/r/cpp/comments/g3iae9/preview_of_my_second_library_eseed_window_window/)
-- url: https://www.reddit.com/r/cpp/comments/g3iae9/preview_of_my_second_library_eseed_window_window/
----
-Good day reddit folks! I hope everyone is safe! Not too long ago I posted my first library [ESeed Math](https://www.reddit.com/r/cpp/comments/fpum4g/eseed_math_my_first_c_library/)  on r/cpp, which got a greater response than I expected for such a small project! I was quite happy.
-
-In any case, my second library [ESeed Window (GitHub)](https://github.com/elijaharita/eseed-window) has been in the works since then, and is finally in a functioning state! It's a C++ window management library designed for uniform cross-platform use with a variety of rendering APIs. The first supported API is Vulkan, as the platform-specific code is pretty simple. Thanks Vulkan! =) The first platform is Win32.
-
-Why did I make a window library when we have GLFW and SDL? And SFML? And Qt? You know, that's a good question. I only have 1 and a half brain cells and I make myself do everything from scratch! In any case, although each of these libraries will accomplish the job they're designed for, I'm not quite happy with any of them. GLFW's Vulkan support is a lil hacky, and GLFW and SDL are both written in C, which does awkwardly stand out in C++ code. On the other side of the spectrum, SFML and Qt are much larger libraries. I just wanted a simple light weight C++ window library. If there is a library out there that's like what I'm looking for, that I just happened not to find... well, haha. hahahaha :')))))
-
-A small list of supported features --
-
-* Platform-agnostic window construction
-* No nasty windows.h in the library's header files! yay!
-* Title management
-* Keyboard and mouse input (getters and callbacks)
-* Cursor control
-* Position and size management
-* Fullscreen
-* Unicode support
-* Platform-agnostic Vulkan surface creation
-* Event polling and waiting
-
-Here is a code example to run a minimal window --
-
-    #include &lt;eseed/window/window.hpp&gt;
-    
-    int main() {
-        esd::wnd::Window window("Window!", { 1366, 768 });
-        while (!window.isCloseRequested()) {
-            window.waitEvents();
-        }
-    }
-
-Creating a Vulkan surface is also very simple!
-
-    #include &lt;vulkan/vulkan.hpp&gt;
-    #include &lt;eseed/window/vulkanwindow.hpp&gt;
-    
-    int main() {
-        esd::wnd::VulkanWindow window("Vulkan Window!" { 1366, 768 });
-        
-        // Get required instance extensions for surface creation
-        std::vector&lt;const char*&gt; extensions = 
-            window.getRequiredSurfaceInstanceExtensions();
-        
-        vk::InstanceCreateInfo instanceCreateInfo;
-        ...
-        instanceCreateInfo.setEnabledExtensionCount((uint32_t)extensions.size());
-        instanceCreateInfo.setPpEnabledExtensions(extensions.data());
-        ...
-        vk::Instance instance = vk::createInstance(instanceCreateInfo);
-    
-        // C VkSurfaceKHR is also supported, if you're into that kinda stuff : )
-        vk::SurfaceKHR surface = window.createSurface(instance);
-    
-        ...
-    
-        while (!window.isCloseRequested()) {
-    
-            ...
-          
-            window.poll();
-        }
-    
-        ...
-    }
-
-So, this is just a preview release. While I see no reason that it couldn't used in production code, it will currently only run on Windows. However, I'd like to change that! Adding additional platforms like MacOS and Wayland is going to be a lot of work for me, and I'm willing to do it. However, if anybody else finds this concept interesting, and would like to collaborate on adding additional platforms, let me know! If this library can make it to a more developed state, I'm sure there'll be plenty of people to benefit from it.
-
-I am 17. I don't have much experience with writing open source libraries. I've done my best to create a useful piece of technology, but of course, for a large project such as this, assistance is very much appreciated &lt;3 Whatever the result, I'm proud of starting to be able to stay focused on a project without giving up. Everyone, thanks for reading, and enjoy your day!
-
-More details are available on the [GitHub page](https://github.com/elijaharita/eseed-window)
-## [11][Ssh2 client based on QTcpSocket and libssh2](https://www.reddit.com/r/cpp/comments/g3o01j/ssh2_client_based_on_qtcpsocket_and_libssh2/)
-- url: https://www.reddit.com/r/cpp/comments/g3o01j/ssh2_client_based_on_qtcpsocket_and_libssh2/
----
-For implementation ssh2 protocol in my [my open source](https://github.com/synacker/daggy) project I created [class for ssh2 connection](https://github.com/synacker/daggy/blob/master/src/DaggyCore/Ssh2Client.h).
-
-This class supports:
-
-1. Async signal slot interface
-2. Ssh2 channels/processes
-
-I searched any async C++ wrappers for ssh2 before and did't found.
-
-Is there sense for implementing separate lib for ssh2 wrapper?
-
-Thank you for attention!
-## [12][ReSharper C++ 2020.1: New C++20 Features, Rearrange Code, HLSL Support, Enum Refactorings, and More](https://www.reddit.com/r/cpp/comments/g2yw74/resharper_c_20201_new_c20_features_rearrange_code/)
-- url: https://blog.jetbrains.com/rscpp/resharper-cpp-2020-1/
+## [12][I wrote a lightweight Web Socket library for Qt5. Unlike QWebSocket, I feel this is easier to use with existing code (offers a class that inherits QTcpSocket).](https://www.reddit.com/r/cpp/comments/g3jwu3/i_wrote_a_lightweight_web_socket_library_for_qt5/)
+- url: https://github.com/cculianu/WebSocket
 ---
 

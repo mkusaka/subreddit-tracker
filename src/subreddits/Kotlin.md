@@ -1,13 +1,27 @@
 # Kotlin
-## [1][New release of MockK](https://www.reddit.com/r/Kotlin/comments/g4h4x7/new_release_of_mockk/)
-- url: https://i.redd.it/ikg2bwkmsut41.png
+## [1][Firebase Kotlin SDK (with multiplatform support) version 0.10 released - looking for feedback / early adopters](https://www.reddit.com/r/Kotlin/comments/g52v0b/firebase_kotlin_sdk_with_multiplatform_support/)
+- url: https://github.com/GitLiveApp/firebase-kotlin-sdk
 ---
 
-## [2][Kotlin Microservices With Spring Boot And Spring Cloud: Part 2 - Distributed Configuration &amp; Service Discovery](https://www.reddit.com/r/Kotlin/comments/g4m8og/kotlin_microservices_with_spring_boot_and_spring/)
-- url: https://youtu.be/laI2yxthk3c
+## [2][Can a novice skip Java and learn Kotlin directly?](https://www.reddit.com/r/Kotlin/comments/g5a5wu/can_a_novice_skip_java_and_learn_kotlin_directly/)
+- url: https://www.reddit.com/r/Kotlin/comments/g5a5wu/can_a_novice_skip_java_and_learn_kotlin_directly/
+---
+I heard that the biggest reason to choose Kotlin is not because it is a "new language", but because it is a "better java"! 
+
+So I think I need some advice
+## [3][kotlin discord server because why not?](https://www.reddit.com/r/Kotlin/comments/g5f3ry/kotlin_discord_server_because_why_not/)
+- url: https://discord.gg/yrabuRp
 ---
 
-## [3][KVision 3.7.0 is released (Object oriented web framework for Kotlin/JS)](https://www.reddit.com/r/Kotlin/comments/g4sla6/kvision_370_is_released_object_oriented_web/)
+## [4][Android Official Spans All-In-One](https://www.reddit.com/r/Kotlin/comments/g5ane5/android_official_spans_allinone/)
+- url: https://medium.com//android-official-spans-all-in-one-6d23167b1bb9?source=friends_link&amp;sk=7b70af51f23ed2e031eead0d42972548
+---
+
+## [5][Kotlin: IsNotEmpty() is not !IsNullOrEmpty()](https://www.reddit.com/r/Kotlin/comments/g5arls/kotlin_isnotempty_is_not_isnullorempty/)
+- url: https://medium.com/@elye.project/kotlin-isnotempty-is-not-isnullorempty-3760db54939a?source=friends_link&amp;sk=aa3be0c742a36f5e9bc2931f08a0d318
+---
+
+## [6][KVision 3.7.0 is released (Object oriented web framework for Kotlin/JS)](https://www.reddit.com/r/Kotlin/comments/g4sla6/kvision_370_is_released_object_oriented_web/)
 - url: https://www.reddit.com/r/Kotlin/comments/g4sla6/kvision_370_is_released_object_oriented_web/
 ---
 [KVision](https://github.com/rjaros/kvision) is an open source web framework created for Kotlin/JS. It allows developers to build modern web applications with the Kotlin language.
@@ -27,64 +41,24 @@ For more details about this release see the [changelog](https://github.com/rjaro
 Don't forget to ⭐️ my [project](https://github.com/rjaros/kvision) if you like it!
 
 Any feedback is appreciated!
-## [4][Some trick with functions](https://www.reddit.com/r/Kotlin/comments/g4p61j/some_trick_with_functions/)
-- url: https://www.reddit.com/r/Kotlin/comments/g4p61j/some_trick_with_functions/
+## [7][Learning Kotlin by Writing an ElasticSearch Query DSL](https://www.reddit.com/r/Kotlin/comments/g51a4z/learning_kotlin_by_writing_an_elasticsearch_query/)
+- url: https://www.reddit.com/r/Kotlin/comments/g51a4z/learning_kotlin_by_writing_an_elasticsearch_query/
 ---
-During writing some project which heavily uses dsl builders I found out about equality of functions signatures or at least their ability to substitute each other:
+Hello everyone. I've recently decided to learn Kotlin for fun, and I'm currently writing an [Elastic Query DSL](https://github.com/melvic-ybanez/archia) for that purpose. I have chosen this project because Kotlin's DSL programming support was one of the major features that initially got me interested in the language. And I gotta say, as a full-time Scala developer, I'm actually pretty impressed by Kotlin and how easy it is to build DSLs without even resorting to features such as `implicits`. I find it to be a well-balanced language that resides somewhere between Java and Scala. 
 
-    fun Type.() -&gt; Unit 
+Here is the code: https://github.com/melvic-ybanez/archia.
 
-and
-
-    fun(type: Type): Unit
-
-This allows some handy tricks, the example below: 
-
-    class Example(val someField:Int = 1,
-                  val someOther:String = "hello")
-        fun writeTo(sb: StringBuilder) {
-            sb.append(someField).append(" ").append(someOther)
-        }
-    }
-    val e = Example()
-    val string = buildString(e::writeTo)
-    
-    println(string)
-
-This code successfully writes object to the StringBuilder, and stdlib function buildString properly returns written string.
-## [5][Kotlin Multiplatform With JVM for IOS and Android](https://www.reddit.com/r/Kotlin/comments/g4azee/kotlin_multiplatform_with_jvm_for_ios_and_android/)
-- url: https://www.reddit.com/r/Kotlin/comments/g4azee/kotlin_multiplatform_with_jvm_for_ios_and_android/
+It's still not complete but I'll appreciate early feedbacks.
+## [8][Kotlin JVM REST framework](https://www.reddit.com/r/Kotlin/comments/g55r80/kotlin_jvm_rest_framework/)
+- url: https://www.reddit.com/r/Kotlin/comments/g55r80/kotlin_jvm_rest_framework/
 ---
-Okay just looking for any clarification, and I'm sure there are places I could google but nothing has been straight forward. Is it possible to use Java/JVM libraries in a Multiplatform Project, and have the application run on Android &amp; IOS?
-
-&amp;#x200B;
-
-Feel free to post links and give personal experience on this topic.
-## [6][Does literally anyone besides me use Kotlin for development outside of Android? (JVM Kotlin).](https://www.reddit.com/r/Kotlin/comments/g3r6yr/does_literally_anyone_besides_me_use_kotlin_for/)
-- url: https://www.reddit.com/r/Kotlin/comments/g3r6yr/does_literally_anyone_besides_me_use_kotlin_for/
----
-Anytime I look for new libraries in Kotlin or fixes, they always have fixes for Android Studio or the android library system. I love Kotlin, as I know both Java and Kotlin, Kotlin in every way is better than Java. But, I feel like Kotlin is just used for Android.
-
-&amp;#x200B;
-
-Edit: I obviously know Kotlin is used heavily, it was more I was curious of where in the real world Kotlin is being used outside of Android. Most everyone understood this and replied with their experiences &amp; thoughts on Kotlin.   
-## [7][VKUG - Fight Complexity With Functional Programming](https://www.reddit.com/r/Kotlin/comments/g457o1/vkug_fight_complexity_with_functional_programming/)
-- url: https://youtu.be/uGxx01yYAgk
+Which rest framework should I use?
+I looking for a simple lightweight framework. I thought it could be Micronaut, or Ktor, what do you recommend?
+## [9][New release of MockK](https://www.reddit.com/r/Kotlin/comments/g4h4x7/new_release_of_mockk/)
+- url: https://i.redd.it/ikg2bwkmsut41.png
 ---
 
-## [8][Some improvements in Eclipse Kotlin Plugin](https://www.reddit.com/r/Kotlin/comments/g46ngy/some_improvements_in_eclipse_kotlin_plugin/)
-- url: https://www.reddit.com/r/Kotlin/comments/g46ngy/some_improvements_in_eclipse_kotlin_plugin/
----
-Usually if I open .kt file in eclipse, mostly it will hang
-
-But the new version  [https://marketplace.eclipse.org/content/kotlin-plugin-eclipse](https://marketplace.eclipse.org/content/kotlin-plugin-eclipse) 
-
-Seems to improved a bit and the files are opening without much hanging
-## [9][Kotlin Microservices With Spring Boot And Spring Cloud: Part 1 - Intro to Spring Boot](https://www.reddit.com/r/Kotlin/comments/g3wpdz/kotlin_microservices_with_spring_boot_and_spring/)
-- url: https://www.youtube.com/watch?v=KnbH4hOswLA
----
-
-## [10][Coroutines and exceptions: things to know](https://www.reddit.com/r/Kotlin/comments/g3mbju/coroutines_and_exceptions_things_to_know/)
-- url: https://www.rockandnull.com/coroutines-and-exceptions/
+## [10][Kotlin Microservices With Spring Boot And Spring Cloud: Part 2 - Distributed Configuration &amp; Service Discovery](https://www.reddit.com/r/Kotlin/comments/g4m8og/kotlin_microservices_with_spring_boot_and_spring/)
+- url: https://youtu.be/laI2yxthk3c
 ---
 

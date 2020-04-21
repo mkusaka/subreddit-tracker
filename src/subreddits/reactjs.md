@@ -109,67 +109,61 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][How to IDE-ify your GitHub](https://www.reddit.com/r/reactjs/comments/g4d7gw/how_to_ideify_your_github/)
-- url: https://www.youtube.com/watch?v=JQsmSwbvPD8&amp;feature=share
+## [3][React: the basics in 20 min | Learn React | Basics for beginners](https://www.reddit.com/r/reactjs/comments/g5a7o5/react_the_basics_in_20_min_learn_react_basics_for/)
+- url: https://www.youtube.com/watch?v=FNnhEBDYBr8&amp;feature=share
 ---
 
-## [4][Interactive map of Los Angeles coronavirus cases by neighborhood with React](https://www.reddit.com/r/reactjs/comments/g4o1xk/interactive_map_of_los_angeles_coronavirus_cases/)
-- url: https://www.covid-la.com/?rre
+## [4][Static Sites with Next.js 9.3 and Prisma](https://www.reddit.com/r/reactjs/comments/g57kw7/static_sites_with_nextjs_93_and_prisma/)
+- url: https://www.youtube.com/watch?v=wk-dUsLUADg
 ---
 
-## [5][JSCasts ep17 - build an entire startup in Node.js part2 - hooks and authentication with adminbro (which written in React)](https://www.reddit.com/r/reactjs/comments/g4ptf9/jscasts_ep17_build_an_entire_startup_in_nodejs/)
-- url: https://www.youtube.com/watch?v=wOSPDtvJcyQ
+## [5][ZEIT is now Vercel, announces $21m Series A including Accel, CRV, Naval Ravikant, Nat Friedman, and... Jordan Walke](https://www.reddit.com/r/reactjs/comments/g5cjoe/zeit_is_now_vercel_announces_21m_series_a/)
+- url: https://vercel.com/blog/zeit-is-now-vercel
 ---
 
-## [6][I made my first React web app: An engine for finding similar movies!](https://www.reddit.com/r/reactjs/comments/g4k5br/i_made_my_first_react_web_app_an_engine_for/)
-- url: https://www.reddit.com/r/reactjs/comments/g4k5br/i_made_my_first_react_web_app_an_engine_for/
----
-Link: [flicka.app](https://www.flicka.app/)
-
-&amp;#x200B;
-
-Hi guys, I'd like to share a project I just finished called Flicka. It's a simple web app for finding similar movies to groups of movies. For example, you can add a romance movie and a comedy movie, and it'll show a bunch of rom coms. I learned React for the first time while working on it, and I think it's really awesome! I really like how modular it is and it makes everything so much easier. It's a lot different from what I'm used to but I think I'm going to use it for a long time. For the backend, I used Flask and Python because my app does a lot of data manipulation and needs Pandas. I ended up hosting it on Heroku, having the flask server serve the static frontend build in addition to the api endpoints.
-
-&amp;#x200B;
-
-It would be awesome if you guys could check out my app and tell me what you think. It's just a small project for me to get back into web dev and I'd like to know if I'm on the right track and how I can improve.
-## [7][Inside a dev's mind - How do you plan a UI feature?](https://www.reddit.com/r/reactjs/comments/g4rdm2/inside_a_devs_mind_how_do_you_plan_a_ui_feature/)
-- url: https://jkettmann.com/how-do-you-plan-a-ui-feature/
+## [6][Reinventing Hooks with React Easy State](https://www.reddit.com/r/reactjs/comments/g5b3wl/reinventing_hooks_with_react_easy_state/)
+- url: https://blog.risingstack.com/reinventing-hooks-with-react-easy-state/
 ---
 
-## [8][The Quest for the Perfect Dark Mode](https://www.reddit.com/r/reactjs/comments/g4sn5r/the_quest_for_the_perfect_dark_mode/)
+## [7][Hi everyone, I am creating a tutorial for building our own React Blog. I will keep updating the content.](https://www.reddit.com/r/reactjs/comments/g5alsf/hi_everyone_i_am_creating_a_tutorial_for_building/)
+- url: https://www.youtube.com/watch?v=xDZH6WckYC4&amp;list=PLc_uiDBU7n2rP-5wOAoMnCE_bAzMe8_ty&amp;index=2&amp;t=0s
+---
+
+## [8][React Hooks | Context and useContext](https://www.reddit.com/r/reactjs/comments/g5bl77/react_hooks_context_and_usecontext/)
+- url: https://youtu.be/WAYQR0JneE8
+---
+
+## [9][Rename ZEIT to Vercel by timneutkens · Pull Request #12075 · zeit/next.js](https://www.reddit.com/r/reactjs/comments/g5cpmr/rename_zeit_to_vercel_by_timneutkens_pull_request/)
+- url: https://github.com/zeit/next.js/pull/12075
+---
+
+## [10][How to create a React Hook to make AJAX calls](https://www.reddit.com/r/reactjs/comments/g5edyy/how_to_create_a_react_hook_to_make_ajax_calls/)
+- url: https://medium.com/@marassi/how-to-create-a-react-hook-to-make-ajax-calls-5d5052e08269?source=friends_link&amp;sk=c91f5f1e74b2adb74ad1802909a1639f
+---
+
+## [11][The Quest for the Perfect Dark Mode](https://www.reddit.com/r/reactjs/comments/g4sn5r/the_quest_for_the_perfect_dark_mode/)
 - url: https://joshwcomeau.com/gatsby/dark-mode/
 ---
 
-## [9][How can I export a javascript knockout component and use it in ReactJS?](https://www.reddit.com/r/reactjs/comments/g4shpg/how_can_i_export_a_javascript_knockout_component/)
-- url: https://www.reddit.com/r/reactjs/comments/g4shpg/how_can_i_export_a_javascript_knockout_component/
+## [12][A resume builder built with React.js (Hooks, Context API, and Router) [Second project]](https://www.reddit.com/r/reactjs/comments/g5a5bx/a_resume_builder_built_with_reactjs_hooks_context/)
+- url: https://www.reddit.com/r/reactjs/comments/g5a5bx/a_resume_builder_built_with_reactjs_hooks_context/
 ---
-How can I export a javascript knockout component and use it in ReactJS?
+Hey, devs! :)
 
-&amp;#x200B;
+I've been learning React for a few weeks now and I just finished my second project (the [first one](https://github.com/lucasmrl/findheroes) I created to learn about Components and API requests):  
+**A resume builder.**
 
-I tried to search on internet, but couldn't find anything that is relevant.
+Link: [https://resumiapp.herokuapp.com/](https://resumiapp.herokuapp.com/)  
 
-&amp;#x200B;
 
-Is it possible to use it as custom element?
-## [10][I18n with arrays (React-Intl)](https://www.reddit.com/r/reactjs/comments/g4sait/i18n_with_arrays_reactintl/)
-- url: https://www.reddit.com/r/reactjs/comments/g4sait/i18n_with_arrays_reactintl/
----
-Using React-Intl:
+Github repo: [https://github.com/lucasmrl/resumi](https://github.com/lucasmrl/resumi)
 
-  
-I am currently working on a website which reads its data out of two json files (de.json and en.json).  
-Now there is also a page where I need to read data either out of an english array or a german array depending on what language is selected (Each array is currently a simple js file with just the array inside of it and it just gets imported into the file where I need to read its data). The way it is working right now is by me checking if the locale is english and then using that array, however that solution is not clean.
 
-const mediaArray = locale === "en" ? ResourcesMediaEn : ResourcesMedia
+I got inspired by [https://flowcv.io/](https://flowcv.io/app/content) where I created my resume a few months ago and then I saw here the work from [u/AmruthPillai](https://www.reddit.com/user/AmruthPillai/) [(link)](https://www.reddit.com/r/reactjs/comments/fp88n0/i_made_a_free_and_opensource_resume_builder_using/) Since I am new, I was not completely able to understand all the code/logic he used, so I decided to put in practice what I have been studying about React and also to learn about Hooks, Context API, and React Router.  
 
- Is there a way to just store both arrays in either the en.json or de.json file and read out the data depending which language is selected. If not could you approach that in any other way?
-## [11][How to create your own global state hook in 30 lines of code](https://www.reddit.com/r/reactjs/comments/g4s4b7/how_to_create_your_own_global_state_hook_in_30/)
-- url: https://codesandbox.io/s/global-state-hook-x0z1m?file=/src/store.ts
----
 
-## [12][React Router Crash Course | Part#1 | Build Navbar, Home component &amp; Footer | React Bootstrap](https://www.reddit.com/r/reactjs/comments/g44scy/react_router_crash_course_part1_build_navbar_home/)
-- url: https://youtu.be/mBU_qu9r1AQ
----
+After finishing this, "I know that I know nothing". :P
 
+Please, **any feedback** will be much appreciated.
+
+PS: Not mobile-friendly yet.

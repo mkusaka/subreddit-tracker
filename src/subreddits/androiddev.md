@@ -31,70 +31,88 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][It's just a makeup kit. Had to learn and use flutter for company project (from Dec 2018). This is what I feel now.](https://www.reddit.com/r/androiddev/comments/g4m6w2/its_just_a_makeup_kit_had_to_learn_and_use/)
+## [3][What are we supposed to use instead of AsyncTask ?](https://www.reddit.com/r/androiddev/comments/g59hoh/what_are_we_supposed_to_use_instead_of_asynctask/)
+- url: https://www.reddit.com/r/androiddev/comments/g59hoh/what_are_we_supposed_to_use_instead_of_asynctask/
+---
+The documentation for [AsynchTask](https://developer.android.com/reference/android/os/AsyncTask) is crystal clear: 
+
+This class was deprecated in API level R.  
+Use the standard java.util.concurrent or Kotlin concurrency utilities instead.  
+
+
+However in other articles in the documentation on processes and threading such as [here](https://developer.android.com/guide/components/processes-and-threads#AsyncTask) and [here](https://developer.android.com/topic/performance/threads#asynctask) we are still referred to AsynchTask. What is the recommended way to do some processing in the background telling the UI thread to update every now and then?
+## [4][Will anyone be interested to use a Open API that emulates some of the functionality of some social media app to create app for learning?](https://www.reddit.com/r/androiddev/comments/g58i54/will_anyone_be_interested_to_use_a_open_api_that/)
+- url: https://www.reddit.com/r/androiddev/comments/g58i54/will_anyone_be_interested_to_use_a_open_api_that/
+---
+I am thinking to create an API that emulates FB or Instagrams basic feature so mobile or frontend devs can use that API to learn about JWT auth flows and create practice apps to add into their portofolio. Once I am done with the basic functionality I would not mind if someone wanna pitch in their time help me maintain it.
+## [5][Kotlin Discord Server, because why not?](https://www.reddit.com/r/androiddev/comments/g5f6jh/kotlin_discord_server_because_why_not/)
+- url: https://discord.gg/yrabuRp
+---
+
+## [6][Best native Android Development learning resource](https://www.reddit.com/r/androiddev/comments/g5c6q1/best_native_android_development_learning_resource/)
+- url: https://www.reddit.com/r/androiddev/comments/g5c6q1/best_native_android_development_learning_resource/
+---
+Here we go again.
+I messed with android studio, java and kotlin before. But soon I got to the point where it just wasn't fun anymore. I have a bit of knowledge and experience in many fields all from web dev, to game dev... Recently I've been messing around with Flutter, but honestly, I don't see future with it. There zero job opportunities in my country with flutter.. So I would like to once more give chance to native Android dev. I've seen jetpack compose, and as I always struggled with making UI in Android Studio and all the constraints and making everything look good on all screen sizes, I think Compose would make difference in that field? To cut the story short, I'm interested in some Udemy course which covers everything and is up to date with the new stuff. Of course I searched myself, but they all look kinda outdated to me. So I need recommendations. Also is Kotlin the right way to go these days? I think most of the companies still use Java? Anyway recommend something you know for sure is good, and it possibly helped you.
+## [7][JetNews, a small open-source Jetpack(AndroidX) news app](https://www.reddit.com/r/androiddev/comments/g5bz4p/jetnews_a_small_opensource_jetpackandroidx_news/)
+- url: https://www.reddit.com/r/androiddev/comments/g5bz4p/jetnews_a_small_opensource_jetpackandroidx_news/
+---
+When quarantine takes away your sleep, might as well make something.
+
+It's basically the AndroidX news site in the bottom navigation view.
+
+Why did I make it?CBA to open the web, if you're like me you've come to the right place, plus you might learn a thing or two.
+
+[Github](https://github.com/CraZyLegenD/JetNews)
+
+&amp;#x200B;
+
+Edit: this isn't a compose app nor anyhow related to [https://github.com/android/compose-samples/tree/master/JetNews](https://github.com/android/compose-samples/tree/master/JetNews)
+## [8][Button Image Tint change possible?](https://www.reddit.com/r/androiddev/comments/g5enua/button_image_tint_change_possible/)
+- url: https://www.reddit.com/r/androiddev/comments/g5enua/button_image_tint_change_possible/
+---
+Greetings,
+
+Im working on an Android app.  I have a Button that is just using a black vector SVG image on line `android:drawableTop="@drawable/main_report"`. It is colored by a tint in the XML layout.
+
+
+        &lt;Button
+        android:id="@+id/buttonstage6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/main_report"
+        android:drawableTint="#3F51B5" &gt;
+
+
+Im trying to use the OnClick listener event to change the *drawableTint* value to something like red (#FF0000) from within the MainActivity java file.
+
+ I cant figure out how to do this and I've tried and not been able to get it to work. I think I read that once certain values are defined in the XML that it becomes non-changeable. Is that the case?  If not, how should I implement?
+## [9][It's just a makeup kit. Had to learn and use flutter for company project (from Dec 2018). This is what I feel now.](https://www.reddit.com/r/androiddev/comments/g4m6w2/its_just_a_makeup_kit_had_to_learn_and_use/)
 - url: https://i.redd.it/ffavl8dphwt41.jpg
 ---
 
-## [4][What is something you wish you knew when you started monetizing your app(s)?](https://www.reddit.com/r/androiddev/comments/g4hkts/what_is_something_you_wish_you_knew_when_you/)
-- url: https://www.reddit.com/r/androiddev/comments/g4hkts/what_is_something_you_wish_you_knew_when_you/
+## [10][Problem with loading text from assets file (Problem with reading text files from assets folder (Unmarshaling error, Parcelable class)](https://www.reddit.com/r/androiddev/comments/g5dzz8/problem_with_loading_text_from_assets_file/)
+- url: https://www.reddit.com/r/androiddev/comments/g5dzz8/problem_with_loading_text_from_assets_file/
 ---
-I’ll be publishing my first app soon and I am still thinking about if I should monetize it.
+ 
 
-I am not expecting many downloads so I am aware I am not making much money with it if I decide to monetize it, but I’d like to know from your experience, fellow developers, what have you learned with your apps regarding monetization?
+I developed my first android app, so i will describe it and the problem briefly...
 
-I’ve been doing a little research on my own and found about Admob and Mopub, but I am still not sure which one would be better to use while getting started.
+It's a song book app. The app reads lines from text file that contains numbers and tile of the song then puts that data to an ArrayList  
+ that is used to set up the RecyclerView  
+.  When the certain item is clicked it checks for the song number that is  in array list item and then based on that opens and reads text from a  file that is named for example 23.txt  
+.  I have three languages (menu items) that can be checked in navigation  menu, they have click listeners that change the current list for the RecyclerView.  
+  The problem is that when the third language (menu item) is checked  whatever the first item is in the RecyclerView it throws an exception  that the file doesn't exist (while it exists in the assets folder, and  works for all other items in the list) and occasionally it says (on  Samsung Galaxy A8):
 
-Also I’ve seen many people suggest using IAP instead because ad revenue tends to be much lower.
-
-Would really appreciate your opinion/advise on this :)
-## [5][Looking for Beta Testers, is someone interested?](https://www.reddit.com/r/androiddev/comments/g4sd64/looking_for_beta_testers_is_someone_interested/)
-- url: https://www.reddit.com/r/androiddev/comments/g4sd64/looking_for_beta_testers_is_someone_interested/
----
-I recently changed a lot in my app and because the approval takes days, I don't want to publish a new release without having it tested by multiple users. Is someone interested in it? I imagine I could also test others, so it like an exchange via apks. Please contact me via levion.software@gmail.com if you're interested 🤙
-## [6][Designing a webapp for an Android developer](https://www.reddit.com/r/androiddev/comments/g4nm92/designing_a_webapp_for_an_android_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/g4nm92/designing_a_webapp_for_an_android_developer/
----
-Last time I wrote a public-facing web front end was 10 years ago. At that time I used jQuery and the bootstrap CSS framework.
-
-I know it's a total different world right now. And I'd like to know what's the state of the art as of today.
-
-
- I got used and now love the ConstraintLayout's way of building my UI. I'm scared to go back to editing CSS file and googling my way to know how to vertically center a div, like I used to do 10 years ago. Also, now everything has to be mobile-ready as well which wasn't the case back then.
-
-As an Android dev, what's your way of designing beautiful web front ends?
-
-Thanks for your help, I can't be the only one in that situation :)
-## [7][Want to connect Database to an App!](https://www.reddit.com/r/androiddev/comments/g4rq46/want_to_connect_database_to_an_app/)
-- url: https://www.reddit.com/r/androiddev/comments/g4rq46/want_to_connect_database_to_an_app/
----
-Hello I want to create an App that's connected to a Database. But I cant find anything on Youtube or trough Google searches that helps me ! Has anyone some advice were I can find good resources to tackle that task ?
-## [8][20 Android Studio Shortcuts To Accelerate Your Workflow](https://www.reddit.com/r/androiddev/comments/g4rgaq/20_android_studio_shortcuts_to_accelerate_your/)
-- url: https://medium.com/better-programming/20-android-studio-shortcuts-to-accelerate-your-workflow-4642cb335a96
+i have shared my code here [https://answiz.com/questions/90319/problem-with-loading-text-from-assets-file-problem-with-reading-text-files-from-assets-folder-unmarshaling-error-parcelable-class](https://answiz.com/questions/90319/problem-with-loading-text-from-assets-file-problem-with-reading-text-files-from-assets-folder-unmarshaling-error-parcelable-class)
+## [11][Question: How to remove / customise top row of 'share with' contacts (blurred on the picture). Android 10, Pixel 2 XL. Don't want the contacts who are always appearing there.](https://www.reddit.com/r/androiddev/comments/g5dwfp/question_how_to_remove_customise_top_row_of_share/)
+- url: https://i.redd.it/1fn3h8pru5u41.jpg
 ---
 
-## [9][Room advice: String or Char array?](https://www.reddit.com/r/androiddev/comments/g4qczf/room_advice_string_or_char_array/)
-- url: https://www.reddit.com/r/androiddev/comments/g4qczf/room_advice_string_or_char_array/
+## [12][Google Play Developer Subscription Age Policy Question](https://www.reddit.com/r/androiddev/comments/g5dkv6/google_play_developer_subscription_age_policy/)
+- url: https://www.reddit.com/r/androiddev/comments/g5dkv6/google_play_developer_subscription_age_policy/
 ---
-I've never used SQLite before, only MySQL/Maria &amp; Postgres. I'm trying to make a table with a two-letter country code in one column:
+I know, and I'm sure that many know, that Google Play has a policy where you must be at least 18 years of age to have a developer account. I'm 13, and i would want to post on Google Play in the future, so would it be ok if i had an account but my dad controls everything when it comes to payment and receiving money, as in, I have an account, but we buy the Developer options for the account through his card, and if i were to make some kind of income it would be received on his card, would that be ok with Google Play, or would we have to post everything on his account, as in I make a game, but he buys developer options for his account, instead of mine, and then if I were to make a game, we would have to post it on his account and in general do everything on his account? My dad told me that he would be happy to help me, and that we could simply just do everything on his account, but i would prefer if we could do it on mine cause i would have a little bit more accessibility and could modify my account, as in for example, if i would want to change my picture for my account, more easily.
 
-    data class Foo(
-        @PrimaryKey(autoGenerate = true)
-        val id: Long = 0L,
-        val countryCode: String?,
-        val somethingElse: Int?
-    )
-
-I should be using `CharArray(2),` like I would for a normal DB, right? That won't compile, unfortunately (*"Expecting comma or ')'*"). What's wrong with CharArray here, and how do I declare it in this example?
-## [10][kiwibrowser/src-Source-code used in Kiwi Browser for Android](https://www.reddit.com/r/androiddev/comments/g464mu/kiwibrowsersrcsourcecode_used_in_kiwi_browser_for/)
-- url: https://github.com/kiwibrowser/src
----
-
-## [11][What are the steps you take when building apps?](https://www.reddit.com/r/androiddev/comments/g48ydl/what_are_the_steps_you_take_when_building_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/g48ydl/what_are_the_steps_you_take_when_building_apps/
----
-Do you first design the layout, then code, then polish etc?
-## [12][What is the best Linux distro for Android Studio?](https://www.reddit.com/r/androiddev/comments/g4owml/what_is_the_best_linux_distro_for_android_studio/)
-- url: https://www.reddit.com/r/androiddev/comments/g4owml/what_is_the_best_linux_distro_for_android_studio/
----
-On the official site it says " GNOME or KDE desktop. *Tested on gLinux based on Debian."*   
-Can you guys tell me the best Linux distro for this?
+TL;DR I'm 13 and would want to upload games on Google Play, so could my dad and i manage to do everything on my account, or would we have to do it on his, and not interfere with Google Play's policy?

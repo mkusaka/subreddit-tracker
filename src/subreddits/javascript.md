@@ -87,53 +87,43 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][New MDJS Markup Language Adds JavaScript to Markdown for Interactive Documentation](https://www.reddit.com/r/javascript/comments/g4lk6z/new_mdjs_markup_language_adds_javascript_to/)
-- url: https://www.infoq.com/news/2020/04/mdjs-markdown-web-components/
+## [3][The next release of create-react-app will include experimental support for React Fast Refresh](https://www.reddit.com/r/javascript/comments/g5a8bi/the_next_release_of_createreactapp_will_include/)
+- url: https://github.com/facebook/create-react-app/pull/8582
 ---
 
-## [4][[AskJS] Am I missing out on anything truly important by avoiding classes entirely?](https://www.reddit.com/r/javascript/comments/g4f8ca/askjs_am_i_missing_out_on_anything_truly/)
-- url: https://www.reddit.com/r/javascript/comments/g4f8ca/askjs_am_i_missing_out_on_anything_truly/
+## [4][Dark mode plugin for Next.js with auto mode and without page load glitch](https://www.reddit.com/r/javascript/comments/g50myw/dark_mode_plugin_for_nextjs_with_auto_mode_and/)
+- url: https://github.com/xeoneux/next-dark-mode
 ---
-I've been working with Javascript full time for about 3 years now. I maintain an internal application for a small company. I try to spend a fair amount of time reading about Javascript and keeping up with the latest stuff, and I feel like class-based code still dominates so many discussions. So many threads about people trying to keep up with different contexts of `this`.
 
-In something like 100k lines of code I don't think I've ever felt the need to create a class, or even make reference to `this` at any point.
+## [5][Tower Stack - A satisfying &amp; mobile friendly tower building game | Let me know what you think! If you like it maybe share with a friend! :) It would be a blessing](https://www.reddit.com/r/javascript/comments/g537yv/tower_stack_a_satisfying_mobile_friendly_tower/)
+- url: https://3pic.github.io/tower
+---
 
-Am I really missing out on anything by avoiding classes and this? I'm very comfortable with this pattern, I just mostly want to probe the community to understand whether it's a something I should look to adopt, or whether it really is just a matter of personal preference of programming patterns.
+## [6][I tried offloading my typescript compilation to a remote machine](https://www.reddit.com/r/javascript/comments/g5bk9e/i_tried_offloading_my_typescript_compilation_to_a/)
+- url: http://iostreamer.me/caas/2020/04/19/caas.html
+---
 
-For reference the stack I work with is Typescript/Node/Express/GraphQL/React. I often see Typescript used as an example of preferring the class based approach, but I still haven't encountered a scenario where I felt limited to that where I couldn't either infer a type automatically, or supplement with an interface when needed.
+## [7][Memory game with some basics functionality and 2 breakpoints that needs to be fixed](https://www.reddit.com/r/javascript/comments/g5cz15/memory_game_with_some_basics_functionality_and_2/)
+- url: https://github.com/morphy80/Memory-Game/blob/master/assets/js/script.js
+---
 
-Appreciate any discussion at all on the matter. Cheers!
+## [8][[AskJS] Caniuse but automated by scanning the script?](https://www.reddit.com/r/javascript/comments/g5drjr/askjs_caniuse_but_automated_by_scanning_the_script/)
+- url: https://www.reddit.com/r/javascript/comments/g5drjr/askjs_caniuse_but_automated_by_scanning_the_script/
+---
+Is this a thing? I'm curious on how well my code runs on old browsers in theory by doing static analysis on the code.
+## [9][How to Build a Slack App that Sends Automated Birthday Messages to a Channel 🎂 🎉](https://www.reddit.com/r/javascript/comments/g5af1k/how_to_build_a_slack_app_that_sends_automated/)
+- url: https://github.com/JanethL/BirthdaySlackApp/blob/master/README.md
+---
 
-Edit: Thanks for all the great responses everyone.  I've read 'em all (so far).
-## [5][I made a Spreadsheet engine in Javascript - super-powered spreadsheet engine with objects, arrays, and async support out-of-the-box — comments and suggestions are welcome](https://www.reddit.com/r/javascript/comments/g4o075/i_made_a_spreadsheet_engine_in_javascript/)
+## [10][Crystals: I built this infinitely generated open world map that you can fly around in. (Share with a friend! How to make mobile friendly?)](https://www.reddit.com/r/javascript/comments/g532o8/crystals_i_built_this_infinitely_generated_open/)
+- url: https://3pic.github.io/crystal
+---
+
+## [11][I made a Spreadsheet engine in Javascript - super-powered spreadsheet engine with objects, arrays, and async support out-of-the-box — comments and suggestions are welcome](https://www.reddit.com/r/javascript/comments/g4o075/i_made_a_spreadsheet_engine_in_javascript/)
 - url: https://github.com/elis/djit
 ---
 
-## [6][Understanding (all) JavaScript module formats and tools](https://www.reddit.com/r/javascript/comments/g4ehm7/understanding_all_javascript_module_formats_and/)
-- url: https://weblogs.asp.net/dixin/understanding-all-javascript-module-formats-and-tools
----
-
-## [7][10 less known Angular features you've probably never used - W3Radar](https://www.reddit.com/r/javascript/comments/g4gm1t/10_less_known_angular_features_youve_probably/)
-- url: https://blog.w3radar.com/less-known-angular-features-probably-never-used/
----
-
-## [8][Building Vue Enterprise Application: Part 4. UI components](https://www.reddit.com/r/javascript/comments/g4bal0/building_vue_enterprise_application_part_4_ui/)
-- url: https://medium.com/@gregsolo/building-vue-enterprise-application-part-4-ui-components-21a45b3067a4
----
-
-## [9][Introducting Crank - Modelling the Component lifecycle with Generators and Promises](https://www.reddit.com/r/javascript/comments/g4hia2/introducting_crank_modelling_the_component/)
-- url: https://crank.js.org/blog/introducing-crank
----
-
-## [10][You Can't Call Hooks Inside Conditions? Yes you can](https://www.reddit.com/r/javascript/comments/g4r4nl/you_cant_call_hooks_inside_conditions_yes_you_can/)
-- url: https://goodguydaniel.com/blog/call-react-hooks-inside-condition/
----
-
-## [11][Notorious RGB - Color Models in Javascript](https://www.reddit.com/r/javascript/comments/g47iz1/notorious_rgb_color_models_in_javascript/)
-- url: https://medium.com/@srmullen13/notorious-rgb-756f19f3e462
----
-
-## [12][How to use Stimulus.js ––&gt;](https://www.reddit.com/r/javascript/comments/g4q720/how_to_use_stimulusjs/)
-- url: https://www.thatweeklytech.com/posts/15-how-to-use-stimulus-js
+## [12][I created a word-guessing game you can play online with friends and family](https://www.reddit.com/r/javascript/comments/g53jzq/i_created_a_wordguessing_game_you_can_play_online/)
+- url: https://github.com/tomanagle/codenames
 ---
 

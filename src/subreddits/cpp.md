@@ -119,99 +119,104 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Notes on C++ SFINAE, Modern C++ and C++20 Concepts](https://www.reddit.com/r/cpp/comments/g4oeer/notes_on_c_sfinae_modern_c_and_c20_concepts/)
+## [3][TheLartians/StaticTypeInfo - A small library for compile-time type names and type indices](https://www.reddit.com/r/cpp/comments/g5f0ol/thelartiansstatictypeinfo_a_small_library_for/)
+- url: https://github.com/TheLartians/StaticTypeInfo
+---
+
+## [4][Towards a fast single-threaded CSV parser written in C++17](https://www.reddit.com/r/cpp/comments/g4sw1z/towards_a_fast_singlethreaded_csv_parser_written/)
+- url: https://www.reddit.com/r/cpp/comments/g4sw1z/towards_a_fast_singlethreaded_csv_parser_written/
+---
+## Link
+
+GitHub: https://github.com/p-ranav/csv2
+
+## Introduction/Motivation
+
+1. I wrote a csv library last year and it turned out like crap.
+   - Got some good feedback from Reddit. But, the library was poorly designed, became buggy, and was generally hard to maintain.
+2. I've used [fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser) in the past. It's great (and fast!) but requires the user to know a lot at compile time, e.g., `column_count`, `column_names` etc.
+3. I wanted to see what performance could be achieved by parsing single-threaded and managing internal objects with `std::string_view`.
+
+It seems to be pretty hard to find benchmarks for (or comparisons between) existing CSV parsers in C++.
+
+* Each CSV parser (including this one) provides a different interface to read files and access rows.
+* Some CSV parsers are lenient w.r.t [RFC-4180](https://www.rfc-editor.org/rfc/rfc4180.txt) compliance while others perform strict checking, sometimes throwing exceptions on compliance failures.
+* Some CSV parsers provide performance measurements on either programmatically generated data or simple (now unavailable) test CSV files.
+  - For this library, I decided to use publicly available datasets from Kaggle.com
+
+I'd love your feedback on this library. Specifically, I'd like to know if the performance measurements (see below) are competitive. Any tips on how to improve `ifstream` read speeds or tokenization would also be greatly appreciated. Following [this](https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/) blog post by Daniel Lemire, I haven't bothered with mmap. 
+
+## Highlights
+
+* Single-threaded - No additional worker threads.
+* Lazy evaluated - Tokenization is not performed until the row is read using `read_row()`.
+* Single header file - Just include `&lt;csv2/reader.hpp&gt;`
+* MIT License.
+
+## Performance Benchmark
+
+The benchmarks program measures two execution times:
+
+* **Measurement 1 (M1)**: Load input CSV file and build the list of lines (`std::vector&lt;std::string&gt;`).
+* **Measurement 2 (M2)**: Iterate over all the lines, tokenize each line and construct a `std::vector&lt;std::vector&lt;std::string_view&gt;&gt;` rows list.
+
+### Hardware 
+
+    MacBook Pro (15-inch, 2019)
+    Processor: 2.4 GHz 8-Core Intel Core i9
+    Memory: 32 GB 2400 MHz DDR4
+    Operating System: macOS Catalina version 10.15.3
+
+### Results
+
+| Dataset | File Size | Rows | Cols | M1 | M2 | Total Time |
+|:---     |       ---:|  ---:|  ---:|  ---:|  ---:|  ---:|
+| [Denver Crime Data](https://www.kaggle.com/paultimothymooney/denver-crime-data) | 111 MB | 479,100 | 19 | 0.166s | 0.768s | 0.934s |
+| [AirBnb Paris Listings](https://www.kaggle.com/juliatb/airbnb-paris) | 196 MB | 141,730 | 96 | 0.236s | 0.512s | 0.749s |
+| [2015 Flight Delays and Cancellations](https://www.kaggle.com/usdot/flight-delays) | 574 MB | 5,819,079 | 31 | 1.071s | 9.316s | 10.387s |
+| [StackLite: Stack Overflow questions](https://www.kaggle.com/stackoverflow/stacklite) | 870 MB | 17,203,824 | 7 | 2.459s | 14.532s | 16.991s |
+| [Used Cars Dataset](https://www.kaggle.com/austinreese/craigslist-carstrucks-data) | 1.4 GB | 539,768 | 25 | 1.597s | 1.999s | 3.596s |
+| [Title-Based Semantic Subject Indexing](https://www.kaggle.com/hsrobo/titlebased-semantic-subject-indexing) | 3.7 GB | 12,834,026 | 4 | 4.869s | 10.133s | 15.002s |
+| [Bitcoin tweets - 16M tweets](https://www.kaggle.com/alaix14/bitcoin-tweets-20160101-to-20190329) | 4 GB | 47,478,748 | 9 | 7.431s | 10.456s | 17.887s |
+| [DDoS Balanced Dataset](https://www.kaggle.com/devendra416/ddos-datasets) | 6.3 GB | 12,794,627 | 85 | 7.938s | 42.951s | 50.890s |
+| [Seattle Checkouts by Title](https://www.kaggle.com/city-of-seattle/seattle-checkouts-by-title) | 7.1 GB | 34,892,623 | 11 | 11.118s | 48.818s | 59.937s |
+| [SHA-1 password hash dump](https://www.kaggle.com/urvishramaiya/have-i-been-pwnd) | 11 GB | 2,62,974,240 | 2 | 32.370s | 107.985s | 140.356s |
+| [DOHUI NOH scaled_data](https://www.kaggle.com/seaa0612/scaled-data) | 16 GB | 504,779 | 3213 | 21.121s | 59.328s | 80.450s |
+## [5][Notes on C++ SFINAE, Modern C++ and C++20 Concepts](https://www.reddit.com/r/cpp/comments/g4oeer/notes_on_c_sfinae_modern_c_and_c20_concepts/)
 - url: https://www.bfilipek.com/2016/02/notes-on-c-sfinae.html?m=1
 ---
 
-## [4][The STL Algorithm Cheat Sheet](https://www.reddit.com/r/cpp/comments/g4e2uj/the_stl_algorithm_cheat_sheet/)
-- url: https://youtu.be/LMmFpOhcQhA
+## [6][[PDF] Debug Information Validation for Optimized Code](https://www.reddit.com/r/cpp/comments/g4wz6o/pdf_debug_information_validation_for_optimized/)
+- url: https://helloqirun.github.io/papers/pldi20_yuanbo1.pdf
 ---
 
-## [5][A C++ GitHub Template Repository utilizing CircleCI, CMAKE, Docker and Doxygen](https://www.reddit.com/r/cpp/comments/g4mvk8/a_c_github_template_repository_utilizing_circleci/)
+## [7][Fast Static Symbol Table (FSST): efficient random-access string compression](https://www.reddit.com/r/cpp/comments/g4tsvm/fast_static_symbol_table_fsst_efficient/)
+- url: https://github.com/cwida/fsst
+---
+
+## [8][Announcing Meeting C++ 2020!](https://www.reddit.com/r/cpp/comments/g4swlh/announcing_meeting_c_2020/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Announcing-Meeting-Cpp-2020-.html
+---
+
+## [9][A C++ GitHub Template Repository utilizing CircleCI, CMAKE, Docker and Doxygen](https://www.reddit.com/r/cpp/comments/g4mvk8/a_c_github_template_repository_utilizing_circleci/)
 - url: https://thoughts-on-coding.com/2020/04/20/a-cpp-github-template-repository-utilizing-circleci-cmake-docker-and-doxygen/
 ---
 
-## [6][shared_ptr initialized with nullptr is null or empty?](https://www.reddit.com/r/cpp/comments/g4m1x6/shared_ptr_initialized_with_nullptr_is_null_or/)
+## [10][The STL Algorithm Cheat Sheet](https://www.reddit.com/r/cpp/comments/g4e2uj/the_stl_algorithm_cheat_sheet/)
+- url: https://youtu.be/LMmFpOhcQhA
+---
+
+## [11][shared_ptr initialized with nullptr is null or empty?](https://www.reddit.com/r/cpp/comments/g4m1x6/shared_ptr_initialized_with_nullptr_is_null_or/)
 - url: https://www.nextptr.com/question/qa1372136808/shared_ptr-initialized-with-nullptr-is-null-or-empty
 ---
 
-## [7][Question about uniform/braced initialization](https://www.reddit.com/r/cpp/comments/g4fidx/question_about_uniformbraced_initialization/)
-- url: https://www.reddit.com/r/cpp/comments/g4fidx/question_about_uniformbraced_initialization/
+## [12][Looking for couple of good .emacs.d configuration files for C/C++ (lsp-mode, langd, cmake) with use-package](https://www.reddit.com/r/cpp/comments/g4wlxe/looking_for_couple_of_good_emacsd_configuration/)
+- url: https://www.reddit.com/r/cpp/comments/g4wlxe/looking_for_couple_of_good_emacsd_configuration/
 ---
-I tend to prefer using braces. From effective C++ :
+I am setting up **GNU Emacs as C/C++ IDE with lsp-mode, langd, and cmake, using use-package**.
 
-&gt;Braced initialization is the most widely usable initialization syntax, it prevents  
-&gt;  
-&gt;narrowing conversions, and it’s immune to C++’s most vexing parse.
+I do have the lists:  [https://github.com/caisah/emacs.dz](https://github.com/caisah/emacs.dz), and  [https://github.com/topics/emacs-configuration](https://github.com/topics/emacs-configuration).
 
-But there is the infamous subtlety of std::initializer\_list :
+But, I am unable to identify a ***class C++ configuration by a seasoned professional***, using the said packages/ tools.
 
-&gt;During constructor overload resolution, braced initializers are matched to  
-&gt;  
-&gt;std::initializer\_list parameters if at all possible, even if other constructors  
-&gt;  
-&gt;offer seemingly better matches.
-
-The book has this example :
-
-    Widget w4({}); // calls std::initializer_list ctor
-                   // with empty list
-    Widget w5{{}}; // ditto
-
-Here goes the question :
-
-why was it decided to have
-
-    std::vector&lt;int&gt; vec{1, 2, 3};
-
-interpreted as an initialization with an initializer\_list when the empty list initialization above suggest it could be (and in fact can be) done with :
-
-    std::vector&lt;int&gt; vec{{1, 2, 3}};
-
-?
-
-Would it just move the problem a little farther by shadowing single argument constructors ?
-
-Am I missing the point completely ?
-
-Godbolt to play with : [https://godbolt.org/z/mCnJdz](https://godbolt.org/z/mCnJdz)
-
-Sorry if it is a recurring (or straightforward) question, it does not seem straightforward to me yet. I just find it odd to have this arguably annoying behavior when there seems to be a way to construct an object with an initializer\_list without (?) the downside mentioned above.
-
-Cheers
-## [8][Generating code to pick sparsely-distributed bits from a massive bit set known at compile-time](https://www.reddit.com/r/cpp/comments/g4f555/generating_code_to_pick_sparselydistributed_bits/)
-- url: https://www.reddit.com/r/cpp/comments/g4f555/generating_code_to_pick_sparselydistributed_bits/
----
-During the development of [toml++](https://marzer.github.io/tomlplusplus/) I've been forced to contend with Unicode. Not knowing much about Unicode before this project, combined with C++'s, er, _varied_ text handling utilities, has meant it's been quite an education.  
-
-One of the challenges I needed to solve was being able to quickly determine if a code point belongs to one of a set of 'categories' so I could answer questions like "is this a letter?" in a unicode-aware way. Turns out that while the amount of meaningful unicode code points is relatively small (100,000-ish), they're very sparsely and unevenly distributed over a much larger range. Typically I'd use a lookup table for this sort of thing but since the data is so sparse it would be horrendously wasteful, so I figured some sort of static binary search tree solution would be a good way to go.  
-
-The solution I ultimately went with was to write a [python script](https://github.com/marzer/tomlplusplus/blob/master/python/generate_unicode_functions.py) that downloads the unicode database and uses it to generate C++ functions by iteratively:
-- Reducing a codepoint range to a single expression if possible (relops, bitmask, modulo, etc), or
-- Reducing a codepoint range to a local not-too-large-or-sparse bitmask lookup table if possible, or
-- Emitting a switch statement consisting of a small number of the above, or
-- Subdividing the range into smaller ranges and trying again.
-
-The output looks [like this](https://godbolt.org/z/PFqsWB). That function is for identifying 'combining marks'; codepoints from the Mn and Mc categories. There's only about 2000 of those but they're spread out over a range of around 900,000. You can see the assembly is pretty lean, with it mostly just being about the bitmask lookup tables (earlier versions of the algorithm sans-bitmask lookup tables generated about 4x more assembly, [like this example](https://godbolt.org/z/SGfczK)).  
-
-This post is partly about "hey I did a fun weird thing involving C++", but also partly inquisitive: is this an insane way of solving this problem? Is there something fundamentally obvious I'm missing?
-## [9][Default function arguments are the devil](https://www.reddit.com/r/cpp/comments/g3yjuc/default_function_arguments_are_the_devil/)
-- url: https://quuxplusone.github.io/blog/2020/04/18/default-function-arguments-are-the-devil/
----
-
-## [10][Working implementation of executors proposal with clang](https://www.reddit.com/r/cpp/comments/g3zco9/working_implementation_of_executors_proposal_with/)
-- url: https://www.reddit.com/r/cpp/comments/g3zco9/working_implementation_of_executors_proposal_with/
----
-I'm trying to setup `experimental::executor` preferably with clang-10 but two of the implementations ([this](https://github.com/chriskohlhoff/executors) and [that](https://github.com/executors/executors-impl)) that I've tried, failed to build. The first implementation doesn't even offer CMake support, and is incompatible with current latest implementation of `std::future`.
-
-Is there an available implementation which builds with clang-9 or clang-10? If not, then what's the best way to go about compiling and successful running a basic example of `experimental::executor`?
-## [11][Padding in structs and classes with exactly one member](https://www.reddit.com/r/cpp/comments/g437oc/padding_in_structs_and_classes_with_exactly_one/)
-- url: https://www.reddit.com/r/cpp/comments/g437oc/padding_in_structs_and_classes_with_exactly_one/
----
-I am wondering if there is any situation in which a struct or class with one member would have a different size (using sizeof()) than the size of its member, assuming that the struct is not inheriting from any other class. Is this undefined behavior, or is it something that the standard guarantees to be true?
-
-On a second note, I am also wondering if there is a portable way to determine at compile-time whether or not a struct has a single member or not, given that I know the name of that member and its size. Thanks for your help.
-## [12][I wrote a lightweight Web Socket library for Qt5. Unlike QWebSocket, I feel this is easier to use with existing code (offers a class that inherits QTcpSocket).](https://www.reddit.com/r/cpp/comments/g3jwu3/i_wrote_a_lightweight_web_socket_library_for_qt5/)
-- url: https://github.com/cculianu/WebSocket
----
-
+Can someone help me, please?

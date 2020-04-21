@@ -1,5 +1,13 @@
 # ruby
-## [1][Ruby Structure](https://www.reddit.com/r/ruby/comments/g4sieh/ruby_structure/)
+## [1][Testing migrations from sandboxed Rails console](https://www.reddit.com/r/ruby/comments/g5amj3/testing_migrations_from_sandboxed_rails_console/)
+- url: https://shime.sh/til/testing-migrations-from-sandboxed-rails-console
+---
+
+## [2][Monitoring your Rails application - how to pick from over 40 tools to do the job.](https://www.reddit.com/r/ruby/comments/g4xntv/monitoring_your_rails_application_how_to_pick/)
+- url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-application-monitoring/
+---
+
+## [3][Ruby Structure](https://www.reddit.com/r/ruby/comments/g4sieh/ruby_structure/)
 - url: https://www.reddit.com/r/ruby/comments/g4sieh/ruby_structure/
 ---
 Hi Guy and Girls,
@@ -11,7 +19,15 @@ I have a very bad habit of writing all my code in 1 file, after creating a gem w
 I will write almost all of my code in the main file in the lib folder, but how do you know what to split up in different files, is where some kind of rule you follow then you split the code up in different files. ?
 
 And is it best practice to write all your projects in a gem structure format if its only for private use and not to ever be published or is where a better structure for not creating gems but just a project?
-## [2][I find it surprising (in the pejorative sense) that Enumerator#next can't take an argument. Is there some good reason for that, or has it just kinda slipped through the cracks?](https://www.reddit.com/r/ruby/comments/g4ples/i_find_it_surprising_in_the_pejorative_sense_that/)
+## [4][Riddle with Ruby](https://www.reddit.com/r/ruby/comments/g4uod2/riddle_with_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/g4uod2/riddle_with_ruby/
+---
+This little riddle was floating around social media, and I thought I'd be clever and solve it with Ruby. I still got it wrong, because my solution represented the same flawed methodology most people used to get it wrong without Ruby... Which is a long way of saying, this is fun without programming, but even more fun with it :) You can get the right answer with a simple one-liner, but you can also get the wrong one. Try your luck!
+
+&amp;#x200B;
+
+&gt;In a new hotel containing 100 rooms, Tom was hired to paint the numbers from 1-100 on the doors. How many times will Tom have to paint the number 8?
+## [5][I find it surprising (in the pejorative sense) that Enumerator#next can't take an argument. Is there some good reason for that, or has it just kinda slipped through the cracks?](https://www.reddit.com/r/ruby/comments/g4ples/i_find_it_surprising_in_the_pejorative_sense_that/)
 - url: https://www.reddit.com/r/ruby/comments/g4ples/i_find_it_surprising_in_the_pejorative_sense_that/
 ---
 I have an infinite sequence (`Enumerator.new { |yielder| ... loop { yielder &lt;&lt; ... } }`) that I know will continue producing values, and I'd like to grab two at a time. `a, b = enum.next, enum.next` works, of course, but `enum.next(2)` would be even better.
@@ -19,7 +35,7 @@ I have an infinite sequence (`Enumerator.new { |yielder| ... loop { yielder &lt;
 I [dug around](https://github.com/ruby/ruby/blob/bfe706716f7692f0a672a15a261ffffa25526cb1/enumerator.c#L903-L908) and found that `Enumerator#next` specifically makes sure it's returning a single value (the "sv" in `ary2sv()`, presumably), though that value is permitted to be an `Array`. It wouldn't make sense to rewrite this particular enumeration to yield a two-element array, so I won't pursue that avenue.
 
 There's [this feature request](https://bugs.ruby-lang.org/issues/9557) from many moons ago that wanted `#next`'s argument to skip forward in the enumeration, but nothing much came of it, so I wouldn't know where to begin tacking this on without breaking things. Would it even be a good idea, or is there something I'm missing?
-## [3][Reactive, realtime web apps in Ruby on Rails without JS using Stimulus Reflex](https://www.reddit.com/r/ruby/comments/g48g4b/reactive_realtime_web_apps_in_ruby_on_rails/)
+## [6][Reactive, realtime web apps in Ruby on Rails without JS using Stimulus Reflex](https://www.reddit.com/r/ruby/comments/g48g4b/reactive_realtime_web_apps_in_ruby_on_rails/)
 - url: https://www.reddit.com/r/ruby/comments/g48g4b/reactive_realtime_web_apps_in_ruby_on_rails/
 ---
 Thought you guys would be interested in this.
@@ -29,11 +45,11 @@ Stimulus Reflex lets you build realtime, reactive apps in Rails similar to Phoen
 Definitely one of the coolest projects going on right now in the Rails world I'd say. It looks like we might see some similar things in Turbolinks 6 when that comes out too which is exciting.
 
 [https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1](https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1)
-## [4][Optimizing Ruby Lazy Initialization in TruffleRuby with Deoptimization](https://www.reddit.com/r/ruby/comments/g465y7/optimizing_ruby_lazy_initialization_in/)
+## [7][Optimizing Ruby Lazy Initialization in TruffleRuby with Deoptimization](https://www.reddit.com/r/ruby/comments/g465y7/optimizing_ruby_lazy_initialization_in/)
 - url: https://engineering.shopify.com/blogs/engineering/optimizing-ruby-lazy-initialization-in-truffleruby-with-deoptimization
 ---
 
-## [5][Simple game engine with Ruby + Rust (help and feedback requested)](https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/)
+## [8][Simple game engine with Ruby + Rust (help and feedback requested)](https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/)
 - url: https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/
 ---
 [Dathos Game Engine](https://github.com/BrianMWest/dathos-game-engine)
@@ -61,25 +77,11 @@ Here is a link to the engine and the Slack-based game I made with it:
 [Dathos Game Engine](https://github.com/BrianMWest/dathos-game-engine)
 
 [Melody Madness / Chordal Catastrophe](https://github.com/BrianMWest/melody-madness)
-## [6][RSS as RESTful API](https://www.reddit.com/r/ruby/comments/g4532n/rss_as_restful_api/)
+## [9][RSS as RESTful API](https://www.reddit.com/r/ruby/comments/g4532n/rss_as_restful_api/)
 - url: https://github.com/davidesantangelo/feedirss-api
 ---
 
-## [7][Over 700 Malicious Typosquatted Libraries Found On RubyGems Repository](https://www.reddit.com/r/ruby/comments/g3qwx3/over_700_malicious_typosquatted_libraries_found/)
+## [10][Over 700 Malicious Typosquatted Libraries Found On RubyGems Repository](https://www.reddit.com/r/ruby/comments/g3qwx3/over_700_malicious_typosquatted_libraries_found/)
 - url: https://thehackernews.com/2020/04/rubygem-typosquatting-malware.html
----
-
-## [8][Having trouble with API pagination with HTTParty.](https://www.reddit.com/r/ruby/comments/g40jct/having_trouble_with_api_pagination_with_httparty/)
-- url: https://www.reddit.com/r/ruby/comments/g40jct/having_trouble_with_api_pagination_with_httparty/
----
-I am using an api and it says there are 120 pages, only 25 items displayed per page, but not sure how to pull all the pages. Ive been searching for a while now cant find anything useful. If I cant figure this out I will have to scrap this and start over but only have a few more days left to turn in a project.
-
-Thanks for your help!
-## [9][Ruby "main"](https://www.reddit.com/r/ruby/comments/g3px8i/ruby_main/)
-- url: https://medium.com/@igor04/ruby-main-789ff58320f
----
-
-## [10][Play around with Bezier curves in the browser using Ruby (source code link in the comments).](https://www.reddit.com/r/ruby/comments/g3wmy9/play_around_with_bezier_curves_in_the_browser/)
-- url: https://v.redd.it/koobj5vpmnt41
 ---
 

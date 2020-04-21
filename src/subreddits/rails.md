@@ -1,15 +1,97 @@
 # rails
-## [1][I've published a new post about how to use Stimulus.js](https://www.reddit.com/r/rails/comments/g4pwp6/ive_published_a_new_post_about_how_to_use/)
-- url: https://www.reddit.com/r/rails/comments/g4pwp6/ive_published_a_new_post_about_how_to_use/
+## [1][Looking for a rails front-end framework](https://www.reddit.com/r/rails/comments/g5ch3n/looking_for_a_rails_frontend_framework/)
+- url: https://www.reddit.com/r/rails/comments/g5ch3n/looking_for_a_rails_frontend_framework/
 ---
-I wrote a new post about how you can integrate Stimulus into your application.
+I am developing a new app from scratch in rails 6 and I'm looking for a simple frontend framework to:
 
-How to use Stimulus.js ––&gt;
+1.  Allow users to access the app offline and
+2.  Access some native features of the phone: like Geolocation, Camera and Bluetooth.*
 
-[https://www.thatweeklytech.com/posts/15-how-to-use-stimulus-js](https://www.thatweeklytech.com/posts/15-how-to-use-stimulus-js)
+Indeed, I'm looking for a frontend framework to keep the architecture as simple as possible and avoid having two code-bases.
 
-Thanks for reading!
-## [2][Webpacker : how to hot-reload HTML ?](https://www.reddit.com/r/rails/comments/g4p458/webpacker_how_to_hotreload_html/)
+The app itself is not very complex (think of a "listing app", similar to AirBnb) but given the targeted users, I would like to have strong control over the design. 
+
+I should underline that I am a hobbyist developer (in my last project I used rails 3 --yep, that's a long time ago! ; ) so I would prefer to avoid learning "yet another framework". For that reason, I would like to use html 5 / css as much as possible, in order to keep the development experience as close as possible to a simple web-app.
+
+
+Question: what frontend framework and / or approach would answer to these requirement?
+## [2][would appreciate hearing your thoughts](https://www.reddit.com/r/rails/comments/g5f59c/would_appreciate_hearing_your_thoughts/)
+- url: https://www.reddit.com/r/rails/comments/g5f59c/would_appreciate_hearing_your_thoughts/
+---
+I have database where i think it not well designed and many problems will show up in future, it like that : a polymorphic relation between "Claim" and "wgclaim" and "rtaclaim" they are a types of this claim so the claim is the father and wgclaim, rtaclaims are sons and soon future we can add more sons.
+example : 
+rtaclaim : has relation with : police, policy, car, passenger ...
+wgclaim: has relation with : plan 
+and both share claimable : reference , status, user, team ...
+do you think the polymorphic is the right path ? or there another way ??
+## [3][Controller is not creating my ActiveRecord models](https://www.reddit.com/r/rails/comments/g5b5i4/controller_is_not_creating_my_activerecord_models/)
+- url: https://www.reddit.com/r/rails/comments/g5b5i4/controller_is_not_creating_my_activerecord_models/
+---
+Hi all, I am having troubles creating a model in my payments controller for a stripe checkout. Some background info, I am just testing around with the stripe integration and I want to create a PaymentSession model which is a regular ActiveRecord model right before creating my Stripe Checkout session. This is to confirm payments are completed via stripe webhooks. Everything is working fine except for creating this PaymentSession record. Can someone explain how this works, probably has something do with the create method, right? 
+
+This is my code in the controller and this line does not work: 
+
+    @paymentsession = @product.payment_sessions.build(stripe_checkout_session_id: "1234")
+
+&amp;#x200B;
+
+    class PaymentsController &lt; ApplicationController
+    
+        def create
+          @product = Product.find(params[:id])
+          ---- Below is not working------
+          @paymentsession = @product.payment_sessions.build(stripe_checkout_session_id: "1234")
+          -------------------------------
+          application_fee = ((@product.price / 100) * 8 + 0.30).round
+          @session = Stripe::Checkout::Session.create({
+            payment_method_types: ['card', 'ideal'],
+            line_items: [{
+              name: @product.title,
+              amount: @product.price,
+              images: ['https://picsum.photos/400'],
+              currency: 'eur',
+              quantity: 1,
+              
+            }],
+            payment_intent_data: {
+              application_fee_amount: application_fee,
+            },
+            success_url: payments_success_url,
+            cancel_url: 'https://example.com/cancel',
+          }, {stripe_account: @product.user.stripe_user_id})
+            
+            respond_to do |format| 
+              format.js
+            end
+    
+        end
+    
+        def success
+        end
+    
+        def cancel
+        end
+    
+    end
+## [4][update_without_password send re-confirmation email](https://www.reddit.com/r/rails/comments/g4w8sw/update_without_password_send_reconfirmation_email/)
+- url: https://www.reddit.com/r/rails/comments/g4w8sw/update_without_password_send_reconfirmation_email/
+---
+I would like to resend a confirmation e-mail, if the user change the email,  after call update\_without\_password.
+
+Today, i make this in code:
+
+ `def update_resource(resource, params)`  
+ `if params[:password].present? &amp;&amp; params[:password_confirmation].present?`  
+ `if params[:password] == params[:password_confirmation]`  
+        `resource.update(password: params[:password])`  
+        `resource.save`  
+ `end`  
+      `edit_user_registration_path(resource)`  
+ `else`  
+      `result = resource.update_without_password(params)`  
+ `end`  
+ `end`
+## [5][Webpacker : how to hot-reload HTML ?](https://www.reddit.com/r/rails/comments/g4p458/webpacker_how_to_hotreload_html/)
 - url: https://www.reddit.com/r/rails/comments/g4p458/webpacker_how_to_hotreload_html/
 ---
 With Docker +  Webpacker, it is possible to hot-reload JS, it is as simple as set hmr: true in the webpacker.yml file.
@@ -17,7 +99,7 @@ With Docker +  Webpacker, it is possible to hot-reload JS, it is as simple as se
 It is also possible to hot-reload CSS, even if they are sprockets-generated : a few configuration in development.js (as some listed here [https://github.com/rails/webpacker/issues/1879](https://github.com/rails/webpacker/issues/1879)) and you're done.
 
 But I'm still struggling to hot-reload HTML (in .html.erb files). In old days it was achieved thanks to guard, but I'm looking for a solution with webpacker to avoid a tool-stacking nightmare. How can it be achieved ?
-## [3][Realtime, reactive web apps without Javascript using Stimulus Reflex](https://www.reddit.com/r/rails/comments/g48fm2/realtime_reactive_web_apps_without_javascript/)
+## [6][Realtime, reactive web apps without Javascript using Stimulus Reflex](https://www.reddit.com/r/rails/comments/g48fm2/realtime_reactive_web_apps_without_javascript/)
 - url: https://www.reddit.com/r/rails/comments/g48fm2/realtime_reactive_web_apps_without_javascript/
 ---
 Thought you guys would be interested in this.
@@ -27,7 +109,7 @@ Stimulus Reflex lets you build realtime, reactive apps in Rails similar to Phoen
 Definitely one of the coolest projects going on right now in the Rails world I'd say. It looks like we might see some similar things in Turbolinks 6 when that comes out too which is exciting.
 
 [https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1](https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1)
-## [4][Having difficulty understanding `has_many :something, through: :something_else, source: :another_thing`, here is a good brief lesson](https://www.reddit.com/r/rails/comments/g4dgsj/having_difficulty_understanding_has_many/)
+## [7][Having difficulty understanding `has_many :something, through: :something_else, source: :another_thing`, here is a good brief lesson](https://www.reddit.com/r/rails/comments/g4dgsj/having_difficulty_understanding_has_many/)
 - url: https://www.reddit.com/r/rails/comments/g4dgsj/having_difficulty_understanding_has_many/
 ---
 primarily recommend reading this lesson
@@ -86,7 +168,7 @@ In `Physician`, the `has_many :patients, through: :appointments, source: :patien
 3. the `source: :physician` is using an _existing_ association/method that is already declared too, namely, the join model `Appointments#physician` method/association in the `Appointments` model.
 
 I struggle sometime to conceptualize this, above is a very brief synopsis, but I recommend going to the lesson, it's free.
-## [5][GitHub - styd/pry-diff-routes: Inspect routes changes in Rails console.](https://www.reddit.com/r/rails/comments/g45csl/github_stydprydiffroutes_inspect_routes_changes/)
+## [8][GitHub - styd/pry-diff-routes: Inspect routes changes in Rails console.](https://www.reddit.com/r/rails/comments/g45csl/github_stydprydiffroutes_inspect_routes_changes/)
 - url: https://www.reddit.com/r/rails/comments/g45csl/github_stydprydiffroutes_inspect_routes_changes/
 ---
 Hi fellow Rails developer,
@@ -102,52 +184,10 @@ IMHO, when we talk about an endpoint, what we really meant usually is a specific
 
 I hope it is useful for you and let me know what you think about it.
 Happy weekend!
-## [6][Can I use Active Storage to store files in a user's personal storage service?](https://www.reddit.com/r/rails/comments/g4c9se/can_i_use_active_storage_to_store_files_in_a/)
+## [9][Can I use Active Storage to store files in a user's personal storage service?](https://www.reddit.com/r/rails/comments/g4c9se/can_i_use_active_storage_to_store_files_in_a/)
 - url: https://www.reddit.com/r/rails/comments/g4c9se/can_i_use_active_storage_to_store_files_in_a/
 ---
 I would like to entertain the idea of "not owning" the users' uploaded files. Some applications store the data or files related to your account in your own Google Drive etc. Is this possible with Active Storage?
-## [7][How do you organise your request specs?](https://www.reddit.com/r/rails/comments/g4anq7/how_do_you_organise_your_request_specs/)
-- url: https://www.reddit.com/r/rails/comments/g4anq7/how_do_you_organise_your_request_specs/
----
-I only have experience with rspec controller specs for testing my  controllers. These are typically organised with 1 spec file per controller, and then a describe block per method/action, such as:
-
-```
-describe UsersController do
-  describe 'GET #show' do
-    it 'is successful' do
-      ....
-    end
-  end
-end
-```
-
-People who have experience writing request specs, do you organise them in a similar way? 1 file per controller? 1 describe block per action?  What naming conventions do you use for the describe blocks and files?
-
-Thanks
-## [8][Rails Associations best practices?](https://www.reddit.com/r/rails/comments/g46rgf/rails_associations_best_practices/)
-- url: https://www.reddit.com/r/rails/comments/g46rgf/rails_associations_best_practices/
----
-So this is something i've been curious about for awhile, and that is the best way to structure associations. Specifically when it comes to chaining has\_many down a tree or using a more spread out hierarchy.
-
-For example:
-
-Lets say I have a User that can leave comments. Comments can also have likes. I could say that a User has\_many comments and that a Comment has\_many likes and that a User has\_many Likes through comments.
-
-OR
-
-I Could say a User has\_many Likes and has\_many Comments (and I suppose also could say a Comment has\_many Likes as well).
-
-Is one way strictly better than the other? And when we can avoid join tables should we?
-## [9][How to seek a rails dev?](https://www.reddit.com/r/rails/comments/g492s2/how_to_seek_a_rails_dev/)
-- url: https://www.reddit.com/r/rails/comments/g492s2/how_to_seek_a_rails_dev/
----
-Hello all,
-
-So, for a few years now, i have been thinking about an app. And i feel, now is the time to have it realized. For the backend i decided to go with rails, because, well, thats what i know. Unfortunatly, i am not yet this good in rails that i feel confident i could build it all on my own. With that in mind we decided to look for a crowdfunding project, and hire a dev.
-
-But where does one start?? 
-
-I was thinking, i should first find a dev before setting up crowdfunding, because i would need to know the pricetag. I have never hired anyone, let alone a dev that could be somewhere on the world.. so i wonder what anyone here thinks?
 ## [10][Need help properly configuring my database.yml](https://www.reddit.com/r/rails/comments/g4gzth/need_help_properly_configuring_my_databaseyml/)
 - url: https://www.reddit.com/r/rails/comments/g4gzth/need_help_properly_configuring_my_databaseyml/
 ---

@@ -1,152 +1,105 @@
 # golang
-## [1][Code golfing in Go: Tips and Tricks](https://www.reddit.com/r/golang/comments/g4iwzl/code_golfing_in_go_tips_and_tricks/)
-- url: https://www.reddit.com/r/golang/comments/g4iwzl/code_golfing_in_go_tips_and_tricks/
----
-A few days ago there was an announcement that [code-golf.io](https://code-golf.io/) added Go support. For those of you unfamiliar with "code golf" the goal is to write a program to solve a given problem with the fewest characters possible. You can track you scores on the leaderboards and try to fight for the top spot.
-
-Since the announcement I've been golfing away in Go and have found a few tricks I'd like to share. Hoping others can share their own tricks too!
-
-Minimum program
-===
-
-Here is the minimum amount of code you need every single time. It's 39 characters.
-
-    package main
-    import."fmt"
-    func main(){}
-
-You need the `"fmt"` package because you will have to print something to stdout at some point, so you'll need to call Print/Printf/Println. As far as I can tell there is no shorter method for printing. Using a function in `io` package seems to always be longer. Calling the built-in `print` goes to stderr, but the requirements are to print to stdout.
-
-Because you have to at least call `Print()` and that's another 7 characters, you're looking at a minimum of 46 characters before you even add any logic or data. This is a good number to keep in mind, so that when you're looking at scores you want to beat, you can subtract this number and it gives you an idea of how many characters you have to work with to actually solve the problem.
-
-
-Assign functions that you use often to shorter variable names
-===
-
-    P:=Printf
-    P("calling once")
-    P("calling twice")
-
-
-Never use "\n"
-===
-
-Instead of using `"\n"`, use backticks and a newline to save a character.
-
-    // this
-    Print(`
-    `)
-    
-    // not this
-    Print("\n")
-
-Use assignment to multiple variables
-===
-
-    // 8 chars
-    a,b:=0,1
-    
-    // 9 chars (because of required newline or semicolon)
-    a:=0
-    b:=1
-
-Sometimes there are opportunities to do this in loops too.
-
-    // 34 chars
-    P:=Println
-    for i:=0;i&lt;20;i++{P(i)}
-    
-    // 33 chars if we assign 'i' along with P
-    P,i:=Println,0
-    for i&lt;20{P(i);i++}
-
-
-Import packages in the global namespace
-===
-
-You can import packages into the global namespace so you don't have to prefix calls with the package name.
-
-    import(."fmt"
-    ."strings")
-    func main(){Println(ToUpper("xyz"))}
-
-Notice you don't have to write `fmt.Println` or `strings.ToUpper`.
-
-
-Compare many values with switch
-===
-
-    // 37 chars
-    if x==3||x==6||x==8||x==9{Println(x)}
-    
-    // 33 chars
-    switch x{case 3,6,8,9:Println(x)}
-
-
-Use the unused index variable in a loop for something else
-===
-
-You often need to loop with `range` and only care about the elements of the slice or string but not the indexes. Imagine a scenario where you're looping over `Args` and you need to do a map lookup on each one to get an integer.
-
-Normally you would do something like this:
-
-    // 78 chars
-    m:=map[string]int{'arg1':1,'arg2':2,'arg3':5}
-    for _,a:=range Args[1:]{x:=m[a]}
-
-But you can save a character by taking advantage of the fact that there's that free assignment operator in the loop you can use.
-
-    // 77 chars
-    m:=map[string]int{'arg1':1,'arg2':2,'arg3':5}
-    for x,a:=range Args[1:]{x=m[a]}
-
-Notice we can remove the colon from `x:=m[a]` since we initialized the variable in the for loop to an index value we don't care about and can just throw away immediately.
-
-More Tips?
-===
-
-Anyone have some more tips specific to Go?
-## [2][Thanos Metrics - Coding Style Guide](https://www.reddit.com/r/golang/comments/g4plmy/thanos_metrics_coding_style_guide/)
-- url: https://thanos.io/contributing/coding-style-guide.md/
+## [1][How to Manage Database Timeouts and Cancellations in Go](https://www.reddit.com/r/golang/comments/g59fdv/how_to_manage_database_timeouts_and_cancellations/)
+- url: https://www.alexedwards.net/blog/how-to-manage-database-timeouts-and-cancellations-in-go
 ---
 
-## [3][how to convert AST of toy language to Golang's AST?](https://www.reddit.com/r/golang/comments/g4pyve/how_to_convert_ast_of_toy_language_to_golangs_ast/)
-- url: https://www.reddit.com/r/golang/comments/g4pyve/how_to_convert_ast_of_toy_language_to_golangs_ast/
----
-so I am working through Writing an Interpreter in Go. 
-
-I was wondering if it possible to parse some toy language and convert it into Go's code? 
-
-And would it be possible at runtime (not at compile time)? like I would have a go webserver running, to which I will send my code and server would send me back the results.
-## [4][week 4 from my learning go series is up! this week I cover Slices and Maps 👍🏻](https://www.reddit.com/r/golang/comments/g4hq56/week_4_from_my_learning_go_series_is_up_this_week/)
-- url: https://www.martincartledge.io/learning-go-week-4/
+## [2][a library for creating ISO disk images in Go](https://www.reddit.com/r/golang/comments/g5c9ut/a_library_for_creating_iso_disk_images_in_go/)
+- url: https://github.com/kdomanski/iso9660
 ---
 
-## [5][qrcp: transfer files over wifi from your computer to your mobile device by scanning a QR code without leaving the terminal.](https://www.reddit.com/r/golang/comments/g45e7z/qrcp_transfer_files_over_wifi_from_your_computer/)
-- url: https://github.com/claudiodangelis/qrcp
+## [3][WebRTC For Gophers: Learn to build sub-second decentralized real-time communications software](https://www.reddit.com/r/golang/comments/g4xsws/webrtc_for_gophers_learn_to_build_subsecond/)
+- url: https://www.youtube.com/watch?v=FdgoOrJH8ok&amp;feature=youtu.be&amp;t=989
 ---
 
-## [6][elk - 🦌 Minimalist yaml based task runner](https://www.reddit.com/r/golang/comments/g4lslg/elk_minimalist_yaml_based_task_runner/)
-- url: https://github.com/jjzcru/elk
+## [4][Go 2019 Survey Results - The Go Blog](https://www.reddit.com/r/golang/comments/g4z83u/go_2019_survey_results_the_go_blog/)
+- url: https://blog.golang.org/survey2019-results
 ---
 
-## [7][OpenCensus Prometheus's push gateway exporter](https://www.reddit.com/r/golang/comments/g4sk2t/opencensus_prometheuss_push_gateway_exporter/)
-- url: https://github.com/hqt/opencensus-pushgateway-exporter
+## [5][What exactly is/was the overhead of defer?](https://www.reddit.com/r/golang/comments/g5bghz/what_exactly_iswas_the_overhead_of_defer/)
+- url: https://www.reddit.com/r/golang/comments/g5bghz/what_exactly_iswas_the_overhead_of_defer/
+---
+In the release notes for Go 1.14 I found this:
+
+&gt; This release improves the performance of most uses of defer to incur almost zero overhead compared to calling the deferred function directly. As a result, defer can now be used in performance-critical code without overhead concerns. As a result, defer can now be used in performance-critical code without overhead concerns.
+
+I don't have a CS background but I know what defer does. What I don't understand is why does defer have overhead. And not just overhead, but enough overhead so that it used to be a somewhat significant performance disadvantage, as the last sentence seems to imply.
+
+In other words: How exactly is `defer fmt.Println("Done")` more overhead intensive than `fmt.Println("Done)` and where does the overhead come from?
+
+Can this be explained in a somewhat layman friendly way?
+## [6][It's a map ... it's a heap ... no! It's a non-blocking, persistent treap!](https://www.reddit.com/r/golang/comments/g56pe8/its_a_map_its_a_heap_no_its_a_nonblocking/)
+- url: https://www.reddit.com/r/golang/comments/g56pe8/its_a_map_its_a_heap_no_its_a_nonblocking/
+---
+Hi everyone,
+
+I've been working on a peer-to-peer project that presented me with an interesting problem.  I need to maintain a large collection of structs that look like this:
+
+    type Entry struct {
+        TTL time.Time
+        SomeData interface{}
+    }
+
+The object of the game is:
+
+1. to update the TTLs as messages from peers arrive
+2. to expire entries if the TTL is exceeded
+
+TTL updates come in the form of a `(peer.ID, TTL)` tuple, so I needed a datastructure that provides:
+
+1. Fast keyed lookups (like a map)
+2. Fast sorting ... but by *TTL*, not by key!
+
+Oh, and the whole damn thing is highly concurrent ...
+
+After fiddling around with some ugly lock-based solutions, I discovered the wonderful world of treaps!  More specifically, the wonderful world of purely-functional, immutable treaps.  After a spectacular performance gain in my project, I decided to move this treap implementation into its own library.
+
+Please let me know if you spot any bugs!
+
+Also, if anyone here is an expert on treaps, I'd really like to optimize this a bit.  Most of the performance benefits I'm getting are related to improvements in time-complexity over my previous approach, as well as the fact that readers no longer wait for writers.  That said, I've done _zero_ code optimization, so I suspect there's some low-hanging fruit.  For example, I'm wondering if the the `upsert` function be re-written iteratively to shave off a few allocations.  Here are my current benchmarks (which are probably shakey):
+
+    $ go test -benchmem github.com/lthibault/treap -bench .
+    goos: darwin
+    goarch: amd64
+    pkg: github.com/lthibault/treap
+    BenchmarkInsertSync-4             306808              7915 ns/op            2090 B/op         35 allocs/op
+    BenchmarkSplitSync-4              125773              9926 ns/op            4403 B/op         69 allocs/op
+    BenchmarkMergeSync-4              621154              6757 ns/op            1627 B/op         25 allocs/op
+    BenchmarkDeleteSync-4             162746             12557 ns/op            6115 B/op         96 allocs/op
+    BenchmarkPopSync-4                832798              4344 ns/op            1369 B/op         21 allocs/op
+    BenchmarkSetWeightSync-4          383072              8460 ns/op            1772 B/op         29 allocs/op
+    BenchmarkIterSync-4              2912358               430 ns/op             128 B/op          1 allocs/op
+    PASS
+    ok      github.com/lthibault/treap      48.998s
+
+
+# TL;DR
+
+[Here's the GitHub repo](https://github.com/lthibault/treap)!
+## [7][Use Anonymous Structs For JSON Marshalling in Go](https://www.reddit.com/r/golang/comments/g5evlp/use_anonymous_structs_for_json_marshalling_in_go/)
+- url: https://qvault.io/2020/04/21/use-anonymous-structs-for-json-marshalling-in-go/
 ---
 
-## [8][golang - docker client image operations](https://www.reddit.com/r/golang/comments/g4rybv/golang_docker_client_image_operations/)
-- url: https://www.reddit.com/r/golang/comments/g4rybv/golang_docker_client_image_operations/
+## [8][In ear monitors](https://www.reddit.com/r/golang/comments/g5e3q1/in_ear_monitors/)
+- url: https://www.reddit.com/r/golang/comments/g5e3q1/in_ear_monitors/
 ---
-Even if the content is in Turkish language, the code is clear and understandable.
+Almost a year ago I tried to create something like audiofusion in ear system in go. I got there almost. From computer to computer I got a working prototype with almost unnoticeable latency. But I tried computer to mobile using react native and a custom plugin to handle all of the audio buffers and UDP but I got some weird sounds and a big latency so I stopped working on this project. But now i thought let's just trow it on reddit maybe someone is liking it and wants to develop it's further or maybe it gives me more motivation to develop it further
 
-[Golang - Docker Client Image Operations](https://medium.com/trendyol-tech/golang-docker-client-ile-container-i%CC%87%C5%9Flemleri-6417884f4dbb)
-## [9][Go CLI for real world container numbers - Good model/template for other Go CLI projects?](https://www.reddit.com/r/golang/comments/g4p6g6/go_cli_for_real_world_container_numbers_good/)
-- url: https://www.reddit.com/r/golang/comments/g4p6g6/go_cli_for_real_world_container_numbers_good/
+Why do i use UDP? It's faster than TCP.
+
+Why did you use react native with custom plugin? I'm not very into developing apps and react native is almost the same as ReactJS that i'm familiar with
+
+[https://github.com/davisnando/in\_ear\_system](https://github.com/davisnando/in_ear_system)
+
+&amp;#x200B;
+
+Not so clean repo because I was too lazy to clean this. It wasn't on git when developing
+
+[https://github.com/davisnando/in\_ear\_system\_app](https://github.com/davisnando/in_ear_system_app)
+## [9][Go assignment by slice, array unpacking or destructuring](https://www.reddit.com/r/golang/comments/g5dv1q/go_assignment_by_slice_array_unpacking_or/)
+- url: https://github.com/thedevsaddam/unpack
 ---
-This CLI for real world container numbers was build to fulfill technical and UI expectations. What am I missing? Criticism is welcome!
 
-[https://github.com/meyermarcel/icm](https://github.com/meyermarcel/icm)
-## [10][Pxy – A Go server that proxies websocket livestreams to RTMP servers](https://www.reddit.com/r/golang/comments/g4r5gj/pxy_a_go_server_that_proxies_websocket/)
-- url: https://github.com/chuabingquan/pxy
+## [10][Making a multiplayer game with Go and gRPC](https://www.reddit.com/r/golang/comments/g4z1u1/making_a_multiplayer_game_with_go_and_grpc/)
+- url: https://mortenson.coffee/blog/making-multiplayer-game-go-and-grpc/
 ---
 

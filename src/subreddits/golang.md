@@ -1,105 +1,117 @@
 # golang
-## [1][How to Manage Database Timeouts and Cancellations in Go](https://www.reddit.com/r/golang/comments/g59fdv/how_to_manage_database_timeouts_and_cancellations/)
-- url: https://www.alexedwards.net/blog/how-to-manage-database-timeouts-and-cancellations-in-go
+## [1][Coming from Javascript and I'm on a Go project now. I'm flummoxed by pointers and references and so on. Anyone got a good blog post that will help?](https://www.reddit.com/r/golang/comments/g5o3k4/coming_from_javascript_and_im_on_a_go_project_now/)
+- url: https://www.reddit.com/r/golang/comments/g5o3k4/coming_from_javascript_and_im_on_a_go_project_now/
+---
+Did the tour, read Effective Go, still perplexed. I'm slow to learn new languages. My background is Node and C#. Last time I did C++ was 15 years ago in college.
+## [2][linfangrong/redismodule-ratelimit: Redis module that provides ratelimit in Go](https://www.reddit.com/r/golang/comments/g60012/linfangrongredismoduleratelimit_redis_module_that/)
+- url: https://github.com/linfangrong/redismodule-ratelimit
 ---
 
-## [2][a library for creating ISO disk images in Go](https://www.reddit.com/r/golang/comments/g5c9ut/a_library_for_creating_iso_disk_images_in_go/)
+## [3][What is the future of the Golang programming language for 2020-2021?](https://www.reddit.com/r/golang/comments/g5zm8u/what_is_the_future_of_the_golang_programming/)
+- url: https://www.reddit.com/r/golang/comments/g5zm8u/what_is_the_future_of_the_golang_programming/
+---
+ 
+
+# What is the future of the Golang programming language for 2020-2021? Does it make sense to learn it as the first language for backend development? Can I find a job as a junior in the USA?
+## [4][Using 'Go Generate' To Deploy Multi-Process Apps](https://www.reddit.com/r/golang/comments/g613zk/using_go_generate_to_deploy_multiprocess_apps/)
+- url: https://qvault.io/2020/04/22/using-go-generate-to-deploy-multi-process-apps/
+---
+
+## [5][Image uploading with go?](https://www.reddit.com/r/golang/comments/g5zir7/image_uploading_with_go/)
+- url: https://www.reddit.com/r/golang/comments/g5zir7/image_uploading_with_go/
+---
+Hello guys!
+
+I'm creating a REST API with go for an iOS application and I want the option to upload and download images.
+
+I saw one GitHub repo but it was about 4 years old.
+
+I thought about uploading the image to Google's Firebase from the client, and when I get the url to send a request to the server, and save the url I got in the database so I can have the url whenever I need it.
+
+One problem I got with it is that for one image upload, I need two network calls, and that does not seem so efficient.
+## [6][a library for creating ISO disk images in Go](https://www.reddit.com/r/golang/comments/g5c9ut/a_library_for_creating_iso_disk_images_in_go/)
 - url: https://github.com/kdomanski/iso9660
 ---
 
-## [3][WebRTC For Gophers: Learn to build sub-second decentralized real-time communications software](https://www.reddit.com/r/golang/comments/g4xsws/webrtc_for_gophers_learn_to_build_subsecond/)
-- url: https://www.youtube.com/watch?v=FdgoOrJH8ok&amp;feature=youtu.be&amp;t=989
+## [7][Ebook for backend](https://www.reddit.com/r/golang/comments/g5s2jq/ebook_for_backend/)
+- url: https://www.reddit.com/r/golang/comments/g5s2jq/ebook_for_backend/
 ---
-
-## [4][Go 2019 Survey Results - The Go Blog](https://www.reddit.com/r/golang/comments/g4z83u/go_2019_survey_results_the_go_blog/)
-- url: https://blog.golang.org/survey2019-results
+Hi everyone! I'm learning go and I wanna use it for backend so I wonder if there's a free ebook for using go with mySQL and mongoDB
+## [8][How to handle unsafe pointers when recursively generate a hash key string for caching?](https://www.reddit.com/r/golang/comments/g5vixh/how_to_handle_unsafe_pointers_when_recursively/)
+- url: https://www.reddit.com/r/golang/comments/g5vixh/how_to_handle_unsafe_pointers_when_recursively/
 ---
+So maybe I'm doing this wrong, but I need to cache queries to Redis before the actual query is called. At the moment I wrote this function which works completely fine until it's given an unsafe pointer. Triggers `reflect: call of reflect.Value.Elem on unsafe.Pointer Value` when I use the `v.Elem()` with it. I need it to nest through the value type it finds and converts it to a string which then I call MD5 hash function on.
 
-## [5][What exactly is/was the overhead of defer?](https://www.reddit.com/r/golang/comments/g5bghz/what_exactly_iswas_the_overhead_of_defer/)
-- url: https://www.reddit.com/r/golang/comments/g5bghz/what_exactly_iswas_the_overhead_of_defer/
----
-In the release notes for Go 1.14 I found this:
-
-&gt; This release improves the performance of most uses of defer to incur almost zero overhead compared to calling the deferred function directly. As a result, defer can now be used in performance-critical code without overhead concerns. As a result, defer can now be used in performance-critical code without overhead concerns.
-
-I don't have a CS background but I know what defer does. What I don't understand is why does defer have overhead. And not just overhead, but enough overhead so that it used to be a somewhat significant performance disadvantage, as the last sentence seems to imply.
-
-In other words: How exactly is `defer fmt.Println("Done")` more overhead intensive than `fmt.Println("Done)` and where does the overhead come from?
-
-Can this be explained in a somewhat layman friendly way?
-## [6][It's a map ... it's a heap ... no! It's a non-blocking, persistent treap!](https://www.reddit.com/r/golang/comments/g56pe8/its_a_map_its_a_heap_no_its_a_nonblocking/)
-- url: https://www.reddit.com/r/golang/comments/g56pe8/its_a_map_its_a_heap_no_its_a_nonblocking/
----
-Hi everyone,
-
-I've been working on a peer-to-peer project that presented me with an interesting problem.  I need to maintain a large collection of structs that look like this:
-
-    type Entry struct {
-        TTL time.Time
-        SomeData interface{}
+    func GenerateQueryCacheKey(args ...interface{}) string {
+    	var argumentString = ""
+    
+    	for _, arg := range args {
+    		argumentString += generateRawValueKey(reflect.ValueOf(arg))
+    	}
+    
+    	h := md5.New()
+    	io.WriteString(h, argumentString)
+    
+    	return fmt.Sprintf("%x", h.Sum(nil))
+    }
+    
+    func generateRawValueKey(v reflect.Value) string {
+    
+    	fmt.Println("generateRawValueKey", v.Kind())
+    	switch v.Kind() {
+    	case reflect.Bool:
+    		return strconv.FormatBool(v.Bool())
+    	case reflect.String:
+    		return v.String()
+    	case reflect.Int, reflect.Int32, reflect.Int64:
+    		return strconv.Itoa(int(v.Int()))
+    	case reflect.Uint, reflect.Uint64, reflect.Uint8, reflect.Uint32:
+    		return strconv.Itoa(int(v.Uint()))
+    	case reflect.Float64, reflect.Float32:
+    		return strconv.FormatFloat(v.Float(), 'E', -1, 32)
+    	case reflect.Struct:
+    		token := ""
+    		for i := 0; i &lt; v.NumField(); i++ {
+    			token += generateRawValueKey(v.Field(i))
+    		}
+    
+    		return token
+    	case reflect.Ptr, reflect.UnsafePointer:
+    		if v.IsNil() {
+    			return "null"
+    		}
+    
+    		return generateRawValueKey(v.Elem()) // &lt;&lt;&lt; [PANIC RECOVER] reflect: call of reflect.Value.Elem on unsafe.Pointer Value
+    	case reflect.Array, reflect.Slice:
+    		token := ""
+    
+    		for i := 0; i &lt; v.Len(); i++ {
+    			token += generateRawValueKey(v.Field(i))
+    		}
+    
+    		fmt.Println("Array token:", token)
+    		return token
+    	case reflect.Map:
+    		token := ""
+    		for _, key := range v.MapKeys() {
+    			token += generateRawValueKey(key)
+    			token += generateRawValueKey(v.MapIndex(key))
+    		}
+    
+    		return token
+    	case reflect.Func:
+    		return ""
+    	default:
+    		return "nil"
+    	}
     }
 
-The object of the game is:
-
-1. to update the TTLs as messages from peers arrive
-2. to expire entries if the TTL is exceeded
-
-TTL updates come in the form of a `(peer.ID, TTL)` tuple, so I needed a datastructure that provides:
-
-1. Fast keyed lookups (like a map)
-2. Fast sorting ... but by *TTL*, not by key!
-
-Oh, and the whole damn thing is highly concurrent ...
-
-After fiddling around with some ugly lock-based solutions, I discovered the wonderful world of treaps!  More specifically, the wonderful world of purely-functional, immutable treaps.  After a spectacular performance gain in my project, I decided to move this treap implementation into its own library.
-
-Please let me know if you spot any bugs!
-
-Also, if anyone here is an expert on treaps, I'd really like to optimize this a bit.  Most of the performance benefits I'm getting are related to improvements in time-complexity over my previous approach, as well as the fact that readers no longer wait for writers.  That said, I've done _zero_ code optimization, so I suspect there's some low-hanging fruit.  For example, I'm wondering if the the `upsert` function be re-written iteratively to shave off a few allocations.  Here are my current benchmarks (which are probably shakey):
-
-    $ go test -benchmem github.com/lthibault/treap -bench .
-    goos: darwin
-    goarch: amd64
-    pkg: github.com/lthibault/treap
-    BenchmarkInsertSync-4             306808              7915 ns/op            2090 B/op         35 allocs/op
-    BenchmarkSplitSync-4              125773              9926 ns/op            4403 B/op         69 allocs/op
-    BenchmarkMergeSync-4              621154              6757 ns/op            1627 B/op         25 allocs/op
-    BenchmarkDeleteSync-4             162746             12557 ns/op            6115 B/op         96 allocs/op
-    BenchmarkPopSync-4                832798              4344 ns/op            1369 B/op         21 allocs/op
-    BenchmarkSetWeightSync-4          383072              8460 ns/op            1772 B/op         29 allocs/op
-    BenchmarkIterSync-4              2912358               430 ns/op             128 B/op          1 allocs/op
-    PASS
-    ok      github.com/lthibault/treap      48.998s
-
-
-# TL;DR
-
-[Here's the GitHub repo](https://github.com/lthibault/treap)!
-## [7][Use Anonymous Structs For JSON Marshalling in Go](https://www.reddit.com/r/golang/comments/g5evlp/use_anonymous_structs_for_json_marshalling_in_go/)
-- url: https://qvault.io/2020/04/21/use-anonymous-structs-for-json-marshalling-in-go/
+I'm not sure if it means anything, but the struct that is being passed into this also has a `reflect.Value` inside which keeps that unsafe pointer I assume which is giving me issues. [https://github.com/go-pg/pg/blob/master/types/array.go#L9](https://github.com/go-pg/pg/blob/master/types/array.go#L9)
+## [9][How to Manage Database Timeouts and Cancellations in Go](https://www.reddit.com/r/golang/comments/g59fdv/how_to_manage_database_timeouts_and_cancellations/)
+- url: https://www.alexedwards.net/blog/how-to-manage-database-timeouts-and-cancellations-in-go
 ---
 
-## [8][In ear monitors](https://www.reddit.com/r/golang/comments/g5e3q1/in_ear_monitors/)
-- url: https://www.reddit.com/r/golang/comments/g5e3q1/in_ear_monitors/
----
-Almost a year ago I tried to create something like audiofusion in ear system in go. I got there almost. From computer to computer I got a working prototype with almost unnoticeable latency. But I tried computer to mobile using react native and a custom plugin to handle all of the audio buffers and UDP but I got some weird sounds and a big latency so I stopped working on this project. But now i thought let's just trow it on reddit maybe someone is liking it and wants to develop it's further or maybe it gives me more motivation to develop it further
-
-Why do i use UDP? It's faster than TCP.
-
-Why did you use react native with custom plugin? I'm not very into developing apps and react native is almost the same as ReactJS that i'm familiar with
-
-[https://github.com/davisnando/in\_ear\_system](https://github.com/davisnando/in_ear_system)
-
-&amp;#x200B;
-
-Not so clean repo because I was too lazy to clean this. It wasn't on git when developing
-
-[https://github.com/davisnando/in\_ear\_system\_app](https://github.com/davisnando/in_ear_system_app)
-## [9][Go assignment by slice, array unpacking or destructuring](https://www.reddit.com/r/golang/comments/g5dv1q/go_assignment_by_slice_array_unpacking_or/)
-- url: https://github.com/thedevsaddam/unpack
----
-
-## [10][Making a multiplayer game with Go and gRPC](https://www.reddit.com/r/golang/comments/g4z1u1/making_a_multiplayer_game_with_go_and_grpc/)
-- url: https://mortenson.coffee/blog/making-multiplayer-game-go-and-grpc/
+## [10][WebRTC For Gophers: Learn to build sub-second decentralized real-time communications software](https://www.reddit.com/r/golang/comments/g4xsws/webrtc_for_gophers_learn_to_build_subsecond/)
+- url: https://www.youtube.com/watch?v=FdgoOrJH8ok&amp;feature=youtu.be&amp;t=989
 ---
 

@@ -119,104 +119,95 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][TheLartians/StaticTypeInfo - A small library for compile-time type names and type indices](https://www.reddit.com/r/cpp/comments/g5f0ol/thelartiansstatictypeinfo_a_small_library_for/)
+## [3][Hard-to-test patterns in C++ and how to refactor them](https://www.reddit.com/r/cpp/comments/g5x3ze/hardtotest_patterns_in_c_and_how_to_refactor_them/)
+- url: https://www.reddit.com/r/cpp/comments/g5x3ze/hardtotest_patterns_in_c_and_how_to_refactor_them/
+---
+[GitHub repo](https://github.com/platisd/refactoring-for-testability-cpp)
+
+I am looking for feedback on my collection of examples/"patterns" of hard-to-test code in C++ and how you could refactor them to make them easily *testable*.
+Please note the *difficulty* in this case does not imply complexity. Instead the focus is on code that:
+
+* Requires irrelevant software to be tested too
+  * E.g.: 3rd party libraries, classes other than the one under test
+* Delays the test execution
+  * E.g.: sleeps inside code under test
+* Requires intricate structures to be copied or written from scratch
+  * E.g.: Fakes containing (a lot of) logic
+* Requires test details to be included in the production code
+  * E.g.: `#ifdef UNIT_TESTS`
+* Makes changes and/or is dependent on the runtime environment
+  * E.g.: Creating or reading from files
+
+Let me know what you think! :)
+## [4][C++2100 Main (for fun)](https://www.reddit.com/r/cpp/comments/g60fp9/c2100_main_for_fun/)
+- url: https://www.reddit.com/r/cpp/comments/g60fp9/c2100_main_for_fun/
+---
+    constexpr
+    lockable
+    std::execution_policy::parallel_execution_t &lt;
+       std::execution_policy::parallel_execution_t::constrains::no_maximum_threads,
+       std::execution_policy::parallel_execution_t::debug::find_deadlocks &gt;
+    std::execution_type::quantum_t&lt;
+       std::execution_type::quantum_t::experimental_features, 
+       std::execution_type::quantum_t::enable_black_holes &gt;
+    std::synchronized_parallel_t&lt;
+       std::synchronization_model::use_machine_favourable_lock&gt;
+    std::type_traits::readonly_t&lt;
+       std::ts2102::experimental::fast_readonly_register_enable&gt;
+    std::function_traits::partial&lt; 
+       std::function_traits::partial_function::search_external_linkage&gt;
+    std::arguments::no_argument::disable_warning
+    std::int1024_t&lt;
+        std::types::minimum_size&lt;1024&gt;,
+        std::types::maximum_size&lt;1024&gt; &gt;
+    main() {
+
+Can you see the future, can you improve it?
+
+Note: this was created purely for fun
+## [5][Constexpr SQL: a compile time SQL library](https://www.reddit.com/r/cpp/comments/g5l2nt/constexpr_sql_a_compile_time_sql_library/)
+- url: https://www.reddit.com/r/cpp/comments/g5l2nt/constexpr_sql_a_compile_time_sql_library/
+---
+GitHub link: [https://github.com/mkitzan/constexpr-sql](https://github.com/mkitzan/constexpr-sql)
+
+For my honors project at UVic, I wrote a library which parses string literal SQL queries into relational algebra expression trees at compile time. Using Constexpr SQL and modern C++ programming idioms you can query containers of `std::tuple`-like objects as you would query tables in SQL. The repo's README has information on [features](https://github.com/mkitzan/constexpr-sql#library-features-and-compiler-support) and an [example](https://github.com/mkitzan/constexpr-sql#example) which demonstrates the core library features. The README also has implementation details with references into the code base for folks interested in learning about TMP and `constexpr` parsing techniques.
+
+The goal of Constexpr SQL is to eliminate the need for hand-written SQL-like data processing code, and the need to use a DBMS backend in light weight data processing contexts. I'm happy to answer questions and would love some feedback about the project. Feel free to submit issues and pull requests to the repo as needed.
+## [6][The New Clang _ExtInt Feature Provides Exact Bitwidth Integer Types](https://www.reddit.com/r/cpp/comments/g5r3sg/the_new_clang_extint_feature_provides_exact/)
+- url: http://blog.llvm.org/2020/04/the-new-clang-extint-feature-provides.html
+---
+
+## [7][fatal error: 'std_lib_facilities.h' file not found](https://www.reddit.com/r/cpp/comments/g60x06/fatal_error_std_lib_facilitiesh_file_not_found/)
+- url: https://www.reddit.com/r/cpp/comments/g60x06/fatal_error_std_lib_facilitiesh_file_not_found/
+---
+Hello good people of r/cpp!
+
+I am a newbie trying my way around Bjarne Stroustrup's book "Programming Principles and Practices Using C++"
+
+An excellent book except for one thing: the very first example of *Hello World* has this std\_lib\_facilities.h and a macOS user myself I have no idea what I should do with this. I've read it's a file that I have to save somewhere but I am still clueless. Could a kind person please help me with this? Really wanna use this book but I am stuck at this. Also: how do you compile cpp files in terminal? Any input is welcome!
+## [8][CppCon 2020 Call for Submissions](https://www.reddit.com/r/cpp/comments/g5ue6p/cppcon_2020_call_for_submissions/)
+- url: https://cppcon.org/cppcon-2020-call-for-submissions/
+---
+
+## [9][C++ Error: ld returned 1 exit status](https://www.reddit.com/r/cpp/comments/g60kzf/c_error_ld_returned_1_exit_status/)
+- url: https://www.reddit.com/r/cpp/comments/g60kzf/c_error_ld_returned_1_exit_status/
+---
+I have a project where I have the main file **main.cpp** and I'm including other 9 **.cpp** files and 1 **.h** file in it.
+
+In all my .cpp and .h files, I have **#ifndef** and **#define.**
+
+When I try to build it, it throws the error **ld returned 1 exit status**.
+
+Any idea what could be causing it? Thanks in advance!
+## [10][TheLartians/StaticTypeInfo - A small library for compile-time type names and type indices](https://www.reddit.com/r/cpp/comments/g5f0ol/thelartiansstatictypeinfo_a_small_library_for/)
 - url: https://github.com/TheLartians/StaticTypeInfo
 ---
 
-## [4][Towards a fast single-threaded CSV parser written in C++17](https://www.reddit.com/r/cpp/comments/g4sw1z/towards_a_fast_singlethreaded_csv_parser_written/)
-- url: https://www.reddit.com/r/cpp/comments/g4sw1z/towards_a_fast_singlethreaded_csv_parser_written/
+## [11][Request for Comment on C++ Port of Rust's Mutex Class](https://www.reddit.com/r/cpp/comments/g5mo37/request_for_comment_on_c_port_of_rusts_mutex_class/)
+- url: https://www.reddit.com/r/cpp/comments/g5mo37/request_for_comment_on_c_port_of_rusts_mutex_class/
 ---
-## Link
-
-GitHub: https://github.com/p-ranav/csv2
-
-## Introduction/Motivation
-
-1. I wrote a csv library last year and it turned out like crap.
-   - Got some good feedback from Reddit. But, the library was poorly designed, became buggy, and was generally hard to maintain.
-2. I've used [fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser) in the past. It's great (and fast!) but requires the user to know a lot at compile time, e.g., `column_count`, `column_names` etc.
-3. I wanted to see what performance could be achieved by parsing single-threaded and managing internal objects with `std::string_view`.
-
-It seems to be pretty hard to find benchmarks for (or comparisons between) existing CSV parsers in C++.
-
-* Each CSV parser (including this one) provides a different interface to read files and access rows.
-* Some CSV parsers are lenient w.r.t [RFC-4180](https://www.rfc-editor.org/rfc/rfc4180.txt) compliance while others perform strict checking, sometimes throwing exceptions on compliance failures.
-* Some CSV parsers provide performance measurements on either programmatically generated data or simple (now unavailable) test CSV files.
-  - For this library, I decided to use publicly available datasets from Kaggle.com
-
-I'd love your feedback on this library. Specifically, I'd like to know if the performance measurements (see below) are competitive. Any tips on how to improve `ifstream` read speeds or tokenization would also be greatly appreciated. Following [this](https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/) blog post by Daniel Lemire, I haven't bothered with mmap. 
-
-## Highlights
-
-* Single-threaded - No additional worker threads.
-* Lazy evaluated - Tokenization is not performed until the row is read using `read_row()`.
-* Single header file - Just include `&lt;csv2/reader.hpp&gt;`
-* MIT License.
-
-## Performance Benchmark
-
-The benchmarks program measures two execution times:
-
-* **Measurement 1 (M1)**: Load input CSV file and build the list of lines (`std::vector&lt;std::string&gt;`).
-* **Measurement 2 (M2)**: Iterate over all the lines, tokenize each line and construct a `std::vector&lt;std::vector&lt;std::string_view&gt;&gt;` rows list.
-
-### Hardware 
-
-    MacBook Pro (15-inch, 2019)
-    Processor: 2.4 GHz 8-Core Intel Core i9
-    Memory: 32 GB 2400 MHz DDR4
-    Operating System: macOS Catalina version 10.15.3
-
-### Results
-
-| Dataset | File Size | Rows | Cols | M1 | M2 | Total Time |
-|:---     |       ---:|  ---:|  ---:|  ---:|  ---:|  ---:|
-| [Denver Crime Data](https://www.kaggle.com/paultimothymooney/denver-crime-data) | 111 MB | 479,100 | 19 | 0.166s | 0.768s | 0.934s |
-| [AirBnb Paris Listings](https://www.kaggle.com/juliatb/airbnb-paris) | 196 MB | 141,730 | 96 | 0.236s | 0.512s | 0.749s |
-| [2015 Flight Delays and Cancellations](https://www.kaggle.com/usdot/flight-delays) | 574 MB | 5,819,079 | 31 | 1.071s | 9.316s | 10.387s |
-| [StackLite: Stack Overflow questions](https://www.kaggle.com/stackoverflow/stacklite) | 870 MB | 17,203,824 | 7 | 2.459s | 14.532s | 16.991s |
-| [Used Cars Dataset](https://www.kaggle.com/austinreese/craigslist-carstrucks-data) | 1.4 GB | 539,768 | 25 | 1.597s | 1.999s | 3.596s |
-| [Title-Based Semantic Subject Indexing](https://www.kaggle.com/hsrobo/titlebased-semantic-subject-indexing) | 3.7 GB | 12,834,026 | 4 | 4.869s | 10.133s | 15.002s |
-| [Bitcoin tweets - 16M tweets](https://www.kaggle.com/alaix14/bitcoin-tweets-20160101-to-20190329) | 4 GB | 47,478,748 | 9 | 7.431s | 10.456s | 17.887s |
-| [DDoS Balanced Dataset](https://www.kaggle.com/devendra416/ddos-datasets) | 6.3 GB | 12,794,627 | 85 | 7.938s | 42.951s | 50.890s |
-| [Seattle Checkouts by Title](https://www.kaggle.com/city-of-seattle/seattle-checkouts-by-title) | 7.1 GB | 34,892,623 | 11 | 11.118s | 48.818s | 59.937s |
-| [SHA-1 password hash dump](https://www.kaggle.com/urvishramaiya/have-i-been-pwnd) | 11 GB | 2,62,974,240 | 2 | 32.370s | 107.985s | 140.356s |
-| [DOHUI NOH scaled_data](https://www.kaggle.com/seaa0612/scaled-data) | 16 GB | 504,779 | 3213 | 21.121s | 59.328s | 80.450s |
-## [5][Notes on C++ SFINAE, Modern C++ and C++20 Concepts](https://www.reddit.com/r/cpp/comments/g4oeer/notes_on_c_sfinae_modern_c_and_c20_concepts/)
-- url: https://www.bfilipek.com/2016/02/notes-on-c-sfinae.html?m=1
+Rust has a pretty nice std::sync::Mutex class that wraps the value the mutex protects. I thought it would be edifying to myself as well as potentially useful to implement something similar in C++. Well, [here](https://gitlab.com/Seosaidh/synchronized-value) it is. Any comments are welcome, as it's the first time I've written any sort of a serious template library. Nearly all of my experience is in application development.
+## [12][Favorite feature of C++?](https://www.reddit.com/r/cpp/comments/g5vx9q/favorite_feature_of_c/)
+- url: https://www.reddit.com/r/cpp/comments/g5vx9q/favorite_feature_of_c/
 ---
-
-## [6][[PDF] Debug Information Validation for Optimized Code](https://www.reddit.com/r/cpp/comments/g4wz6o/pdf_debug_information_validation_for_optimized/)
-- url: https://helloqirun.github.io/papers/pldi20_yuanbo1.pdf
----
-
-## [7][Fast Static Symbol Table (FSST): efficient random-access string compression](https://www.reddit.com/r/cpp/comments/g4tsvm/fast_static_symbol_table_fsst_efficient/)
-- url: https://github.com/cwida/fsst
----
-
-## [8][Announcing Meeting C++ 2020!](https://www.reddit.com/r/cpp/comments/g4swlh/announcing_meeting_c_2020/)
-- url: https://meetingcpp.com/meetingcpp/news/items/Announcing-Meeting-Cpp-2020-.html
----
-
-## [9][A C++ GitHub Template Repository utilizing CircleCI, CMAKE, Docker and Doxygen](https://www.reddit.com/r/cpp/comments/g4mvk8/a_c_github_template_repository_utilizing_circleci/)
-- url: https://thoughts-on-coding.com/2020/04/20/a-cpp-github-template-repository-utilizing-circleci-cmake-docker-and-doxygen/
----
-
-## [10][The STL Algorithm Cheat Sheet](https://www.reddit.com/r/cpp/comments/g4e2uj/the_stl_algorithm_cheat_sheet/)
-- url: https://youtu.be/LMmFpOhcQhA
----
-
-## [11][shared_ptr initialized with nullptr is null or empty?](https://www.reddit.com/r/cpp/comments/g4m1x6/shared_ptr_initialized_with_nullptr_is_null_or/)
-- url: https://www.nextptr.com/question/qa1372136808/shared_ptr-initialized-with-nullptr-is-null-or-empty
----
-
-## [12][Looking for couple of good .emacs.d configuration files for C/C++ (lsp-mode, langd, cmake) with use-package](https://www.reddit.com/r/cpp/comments/g4wlxe/looking_for_couple_of_good_emacsd_configuration/)
-- url: https://www.reddit.com/r/cpp/comments/g4wlxe/looking_for_couple_of_good_emacsd_configuration/
----
-I am setting up **GNU Emacs as C/C++ IDE with lsp-mode, langd, and cmake, using use-package**.
-
-I do have the lists:  [https://github.com/caisah/emacs.dz](https://github.com/caisah/emacs.dz), and  [https://github.com/topics/emacs-configuration](https://github.com/topics/emacs-configuration).
-
-But, I am unable to identify a ***class C++ configuration by a seasoned professional***, using the said packages/ tools.
-
-Can someone help me, please?
+C++ has tons of cool an amazing features especially with the addition of C++20. What’s your favorite?

@@ -1,5 +1,119 @@
 # rails
-## [1][Looking for a rails front-end framework](https://www.reddit.com/r/rails/comments/g5ch3n/looking_for_a_rails_frontend_framework/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/g616hm/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/g616hm/personal_projects_show_off_your_own_project_andor/
+---
+In this thread you can showcase your personal pet project to other redditors.
+
+Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+
+A suggested format to get you started:
+
+1. **Name of your project**
+2. **A short description**
+3. **Application stack**
+4. **Link to Live app**
+5. **Link to GitHub**
+6. **You experience level**
+7. **Other information or areas that you would like advice on**
+
+ 
+
+^(Many thanks to Kritnc for getting the ball rolling.)
+## [2][How good is good enough for finding a rails job?](https://www.reddit.com/r/rails/comments/g5s5yd/how_good_is_good_enough_for_finding_a_rails_job/)
+- url: https://www.reddit.com/r/rails/comments/g5s5yd/how_good_is_good_enough_for_finding_a_rails_job/
+---
+I started learning Rails a few years ago because I wanted to build an application that could automate a good chunk of someone's job in the company I work for. 
+
+I started with very little programming knowledge. Fast forward 2 years later (not all build time) and I have an application with tests using RSpec, integrations with several API's, background jobs, role-based authorization, data secured at the application level and hosted on a HIPAA-compliant platform. 
+
+I wanted to use this project as a launchpad into a Rails job. I haven't had the success I expected from a job search. I thought a robust (for a beginner) project and my background in marketing tech and project management would make me an attractive candidate for an entry level rails job.
+
+I haven't been able to break past the technical interviews, and the interviewers haven't asked any followup questions about it when I mention my relevant experience.
+
+Am I even close to qualified for getting a Rails job, or should I change course and go into something else like Product Management?
+## [3][Rails pimped to look modern](https://www.reddit.com/r/rails/comments/g5zk0f/rails_pimped_to_look_modern/)
+- url: https://www.reddit.com/r/rails/comments/g5zk0f/rails_pimped_to_look_modern/
+---
+I am relatively new to Ruby and Rails, but studying hard! Yet I don't want to go down a dead end so thought I better ask some pertinent questions regarding how companies do certain types of apps.
+
+I am using apps like todoist and TickTick. They have nice slick interfaces, with drag and drop etc. Now I am worried that perhaps Rails cannot achieve such loveliness. Or is it a case of me needing some kind of front-end type layer that has many of these functionalities built in?
+
+Could someone enlighten me on this foggy area for me?
+
+Thanks.
+## [4][Rails 6 + webpacker + yarn + jquery.fancytree + less](https://www.reddit.com/r/rails/comments/g5xmxw/rails_6_webpacker_yarn_jqueryfancytree_less/)
+- url: https://www.reddit.com/r/rails/comments/g5xmxw/rails_6_webpacker_yarn_jqueryfancytree_less/
+---
+We had to migrate a gem from using fancytree-rails as a ruby gem to a  new rails 6 gem using webpacker and jquery.fancytree coming from npm.  On top of that jquery.fancytree is using LESS (CSS) and you have to do a  few configurations.
+
+App is available at [https://github.com/thebravoman/rails6\_webpacker\_fancytree\_less](https://github.com/thebravoman/rails6_webpacker_fancytree_less)
+
+Here is how to do it it a few simple commands. Hope you find it useful.
+
+[https://kmitov.com/posts/rails-6-webpacker-yarn-fancytree-less/](https://kmitov.com/posts/rails-6-webpacker-yarn-fancytree-less/)
+## [5][Try out Cloud 66 for rails developement!!](https://www.reddit.com/r/rails/comments/g5xbhx/try_out_cloud_66_for_rails_developement/)
+- url: https://www.reddit.com/r/rails/comments/g5xbhx/try_out_cloud_66_for_rails_developement/
+---
+Hey everyone, I am part of a new organization which offer cheap and great services for developers to deploy their rails application! Check our product and give me some review. If you are interested just comment below and I will send you a code for 1 month free. Thank you! 
+
+ [https://www.cloud66.com/rails/](https://www.cloud66.com/rails/)
+## [6][Cache-control header is getting ignored](https://www.reddit.com/r/rails/comments/g5mrfw/cachecontrol_header_is_getting_ignored/)
+- url: https://www.reddit.com/r/rails/comments/g5mrfw/cachecontrol_header_is_getting_ignored/
+---
+Hey!
+
+I've some problems dealing with the static assets on my site.  I've managed to get the assets served via Cloudfront but I would also like to have them cached but that doesn't seem to work. I've placed config.static\_cache\_control = "public, max-age=31536000" in production.rb but it seems like it's getting ignored 
+
+The response header in chrome looks like this
+
+1. **age:** 41777
+2. **content-encoding:** gzip
+3. **content-type:** image/svg+xml
+4. **date:** Tue, 21 Apr 2020 08:30:39 GMT
+5. **last-modified:** Tue, 23 Oct 2018 06:20:26 GMT
+6. **server:** Cowboy
+7. **status:** 200
+8. **strict-transport-security:** max-age=31536000; includeSubDomains
+9. **vary:** Accept-Encoding
+10. **via:** 1.1 vegur, 1.1 8b82a0c44466382daf259dbb61c8f23c.cloudfront.net (CloudFront)
+11. **x-amz-cf-id:** FiTQR0j9SCWMtt5SJzazhyLkW9pg2TB0XltWdygkjQM-ZIkwKQC95w==
+12. **x-amz-cf-pop:** ARN1-C1
+13. **x-cache:** Hit from cloudfront
+
+I expect a line like "**Cache-control:** Public, max-age=31536000" but it's nowhere to be found.
+
+&amp;#x200B;
+
+My production.rb looks like this as a whole
+
+* config.cache\_classes = true
+* config.eager\_load = true
+* config.consider\_all\_requests\_local = false
+* config.action\_controller.perform\_caching = true
+* config.public\_file\_server.enabled = ENV\["RAILS\_SERVE\_STATIC\_FILES"\].present?
+* config.assets.js\_compressor = *Uglifier*.new(harmony: true)
+* config.assets.compile = false
+* config.action\_controller.asset\_host = "1a2b3c4d5e.cloudfront.net"
+* config.static\_cache\_control = "public, max-age=31536000"
+* config.active\_storage.service = :local
+* config.force\_ssl = true
+* config.log\_level = :debug
+* config.log\_tags = \[:request\_id\]
+* config.action\_mailer.perform\_caching = false
+* config.i18n.fallbacks = true
+* config.active\_support.deprecation = :notify
+* config.log\_formatter = ::*Logger*::*Formatter*.new
+* if ENV\["RAILS\_LOG\_TO\_STDOUT"\].present?  
+logger           = *ActiveSupport*::*Logger*.new(STDOUT)  
+logger.formatter = config.log\_formatter  
+config.logger = *ActiveSupport*::*TaggedLogging*.new(logger)  
+ end
+* config.active\_record.dump\_schema\_after\_migration = false
+
+&amp;#x200B;
+
+Can you guys see if there is something I'm missing or if there is something overriding my cache-control?
+## [7][Looking for a rails front-end framework](https://www.reddit.com/r/rails/comments/g5ch3n/looking_for_a_rails_frontend_framework/)
 - url: https://www.reddit.com/r/rails/comments/g5ch3n/looking_for_a_rails_frontend_framework/
 ---
 I am developing a new app from scratch in rails 6 and I'm looking for a simple frontend framework to:
@@ -15,7 +129,37 @@ I should underline that I am a hobbyist developer (in my last project I used rai
 
 
 Question: what frontend framework and / or approach would answer to these requirement?
-## [2][would appreciate hearing your thoughts](https://www.reddit.com/r/rails/comments/g5f59c/would_appreciate_hearing_your_thoughts/)
+## [8][Rails database creation issue](https://www.reddit.com/r/rails/comments/g5fm8e/rails_database_creation_issue/)
+- url: https://www.reddit.com/r/rails/comments/g5fm8e/rails_database_creation_issue/
+---
+Hi I am having an issue with the database, whenever I create a database, I get this error below:
+
+&amp;#x200B;
+
+rails db:create
+
+rails aborted!
+
+TypeError: no implicit conversion of Array into Hash
+
+/Users/muhammadkhan/Desktop/DevcampPortfolio/config/environment.rb:5:in \`&lt;main&gt;'
+
+/Users/muhammadkhan/Desktop/DevcampPortfolio/bin/rails:9:in \`&lt;top (required)&gt;'
+
+/Users/muhammadkhan/Desktop/DevcampPortfolio/bin/spring:15:in \`&lt;top (required)&gt;'
+
+bin/rails:3:in \`load'
+
+bin/rails:3:in \`&lt;main&gt;'
+
+Tasks: TOP =&gt; db:create =&gt; db:load\_config =&gt; environment
+
+(See full trace by running task with --trace)
+
+&amp;#x200B;
+
+If someone can be able to help that would be great as I really don't know which file I need to go and fix which function.
+## [9][would appreciate hearing your thoughts](https://www.reddit.com/r/rails/comments/g5f59c/would_appreciate_hearing_your_thoughts/)
 - url: https://www.reddit.com/r/rails/comments/g5f59c/would_appreciate_hearing_your_thoughts/
 ---
 I have database where i think it not well designed and many problems will show up in future, it like that : a polymorphic relation between "Claim" and "wgclaim" and "rtaclaim" they are a types of this claim so the claim is the father and wgclaim, rtaclaims are sons and soon future we can add more sons.
@@ -24,7 +168,7 @@ rtaclaim : has relation with : police, policy, car, passenger ...
 wgclaim: has relation with : plan 
 and both share claimable : reference , status, user, team ...
 do you think the polymorphic is the right path ? or there another way ??
-## [3][Controller is not creating my ActiveRecord models](https://www.reddit.com/r/rails/comments/g5b5i4/controller_is_not_creating_my_activerecord_models/)
+## [10][Controller is not creating my ActiveRecord models](https://www.reddit.com/r/rails/comments/g5b5i4/controller_is_not_creating_my_activerecord_models/)
 - url: https://www.reddit.com/r/rails/comments/g5b5i4/controller_is_not_creating_my_activerecord_models/
 ---
 Hi all, I am having troubles creating a model in my payments controller for a stripe checkout. Some background info, I am just testing around with the stripe integration and I want to create a PaymentSession model which is a regular ActiveRecord model right before creating my Stripe Checkout session. This is to confirm payments are completed via stripe webhooks. Everything is working fine except for creating this PaymentSession record. Can someone explain how this works, probably has something do with the create method, right? 
@@ -73,7 +217,7 @@ This is my code in the controller and this line does not work:
         end
     
     end
-## [4][update_without_password send re-confirmation email](https://www.reddit.com/r/rails/comments/g4w8sw/update_without_password_send_reconfirmation_email/)
+## [11][update_without_password send re-confirmation email](https://www.reddit.com/r/rails/comments/g4w8sw/update_without_password_send_reconfirmation_email/)
 - url: https://www.reddit.com/r/rails/comments/g4w8sw/update_without_password_send_reconfirmation_email/
 ---
 I would like to resend a confirmation e-mail, if the user change the email,  after call update\_without\_password.
@@ -91,114 +235,3 @@ Today, i make this in code:
       `result = resource.update_without_password(params)`  
  `end`  
  `end`
-## [5][Webpacker : how to hot-reload HTML ?](https://www.reddit.com/r/rails/comments/g4p458/webpacker_how_to_hotreload_html/)
-- url: https://www.reddit.com/r/rails/comments/g4p458/webpacker_how_to_hotreload_html/
----
-With Docker +  Webpacker, it is possible to hot-reload JS, it is as simple as set hmr: true in the webpacker.yml file.
-
-It is also possible to hot-reload CSS, even if they are sprockets-generated : a few configuration in development.js (as some listed here [https://github.com/rails/webpacker/issues/1879](https://github.com/rails/webpacker/issues/1879)) and you're done.
-
-But I'm still struggling to hot-reload HTML (in .html.erb files). In old days it was achieved thanks to guard, but I'm looking for a solution with webpacker to avoid a tool-stacking nightmare. How can it be achieved ?
-## [6][Realtime, reactive web apps without Javascript using Stimulus Reflex](https://www.reddit.com/r/rails/comments/g48fm2/realtime_reactive_web_apps_without_javascript/)
-- url: https://www.reddit.com/r/rails/comments/g48fm2/realtime_reactive_web_apps_without_javascript/
----
-Thought you guys would be interested in this.
-
-Stimulus Reflex lets you build realtime, reactive apps in Rails similar to Phoenix LiveView. You don't have to write any Javascript and it will use Rails to render all the HTML updates server-side. It uses ActionCable to trigger updates and then tells Rails to render the current page again and send that back over the websocket. It'll then use DOM diffing to update the page automatically for you.
-
-Definitely one of the coolest projects going on right now in the Rails world I'd say. It looks like we might see some similar things in Turbolinks 6 when that comes out too which is exciting.
-
-[https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1](https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1)
-## [7][Having difficulty understanding `has_many :something, through: :something_else, source: :another_thing`, here is a good brief lesson](https://www.reddit.com/r/rails/comments/g4dgsj/having_difficulty_understanding_has_many/)
-- url: https://www.reddit.com/r/rails/comments/g4dgsj/having_difficulty_understanding_has_many/
----
-primarily recommend reading this lesson
-
-https://open.appacademy.io/learn/full-stack-online/sql/associations--has_many--through
-
-What's important is to note that _existing associations_ are what is being referred to in the `through` and `source` parts of the association, and they are not references to a particular model, but to associations/methods already declared.
-
-take this code:
-
-    class Physician &lt; ApplicationRecord
-      has_many(
-        :appointments,
-        class_name: 'Appointment',
-        foreign_key: :physician_id,
-        primary_key: :id
-      )
-
-      has_many :patients, through: :appointments, source: :patient
-    end
-
-    class Appointment &lt; ApplicationRecord
-      belongs_to(
-        :physician,
-        class_name: 'Physician',
-        foreign_key: :physician_id,
-        primary_key: :id
-      )
-
-      belongs_to(
-        :patient,
-        class_name: 'Patient',
-        foreign_key: :patient_id,
-        primary_key: :id
-      )
-    end
-
-    class Patient &lt; ApplicationRecord
-      has_many(
-        :appointments
-        class_name: 'Appointment',
-        foreign_key: :patient_id,
-        primary_key: :id
-      )
-
-      has_many :physicians, through: :appointments, source: :physician
-    end
-
-
-In `Physician`, the `has_many :patients, through: :appointments, source: :patient`:
-
-1. the `:patients` will be a new method for your `Physician` model, `Physician#patients`.  
-
-2. the `through: :appointments` is using your existing `Physician#appointments` method/association already declared in the `Physician` model of course.
-
-3. the `source: :physician` is using an _existing_ association/method that is already declared too, namely, the join model `Appointments#physician` method/association in the `Appointments` model.
-
-I struggle sometime to conceptualize this, above is a very brief synopsis, but I recommend going to the lesson, it's free.
-## [8][GitHub - styd/pry-diff-routes: Inspect routes changes in Rails console.](https://www.reddit.com/r/rails/comments/g45csl/github_stydprydiffroutes_inspect_routes_changes/)
-- url: https://www.reddit.com/r/rails/comments/g45csl/github_stydprydiffroutes_inspect_routes_changes/
----
-Hi fellow Rails developer,
-
-First of all, let's keep being safe and healthy and enjoy staying at home. Secondly, I want to say thank you to those of you who have contributed to my older gem, [ApexCharts.RB](https://github.com/styd/apexcharts.rb), by using, reporting issues, sending pull requests, or just giving the repo a star (I couldn't believe it at first but even [Chartkick](https://chartkick.com) author Andrew Kane and [ApexCharts](https://apexcharts.com) author Juned Chhipa also gave a star. Thank you!). I sincerely appreciate all of your efforts.
-
-Today, I want to tell you about a new gem that I've been working on since last month called [PryDiffRoutes](https://github.com/styd/pry-diff-routes). It's a Pry plugin that works in Rails console to see the route changes that we make.
-
-The way it works is that it would save the current routes as Rails console is starting and then from that point on the routes you change -- don't forget to save the route file -- is comparable with the routes when you started the Rails console. When you type the Pry command `diff-routes`, it will output your changes as removed, modified, or new routes.
-
-What's "modified"? And why don't I just display the **before** and the **after**?
-IMHO, when we talk about an endpoint, what we really meant usually is a specific combination of a _verb_ and a _path_. When they don't change, we consider it as the same endpoint. By changing either the _verb_ or the _path_, we can say that we are removing the old route and creating a new route. When we just change where it routes to, we are modifying the route. So, what I'm doing is just group routes changes based on our intention for those changes.
-
-I hope it is useful for you and let me know what you think about it.
-Happy weekend!
-## [9][Can I use Active Storage to store files in a user's personal storage service?](https://www.reddit.com/r/rails/comments/g4c9se/can_i_use_active_storage_to_store_files_in_a/)
-- url: https://www.reddit.com/r/rails/comments/g4c9se/can_i_use_active_storage_to_store_files_in_a/
----
-I would like to entertain the idea of "not owning" the users' uploaded files. Some applications store the data or files related to your account in your own Google Drive etc. Is this possible with Active Storage?
-## [10][Need help properly configuring my database.yml](https://www.reddit.com/r/rails/comments/g4gzth/need_help_properly_configuring_my_databaseyml/)
-- url: https://www.reddit.com/r/rails/comments/g4gzth/need_help_properly_configuring_my_databaseyml/
----
-Aloha new rails jr dev here. Ive been stressing for days trying to run this repo: [https://github.com/chinweenie/Full-Stack-Project-Etsy](https://github.com/chinweenie/Full-Stack-Project-Etsy)
-
-i have learned A LOT so far , but i am struggling to with my database.yml configuration, here is my code : [https://pastebin.com/YkhkhYwb](https://pastebin.com/YkhkhYwb)
-
-and here is the error im getting in the browser: Puma caught this error: Cannot load database configuration: undefined method \`each' for "gem 'pg'":String (NoMethodError)
-
-ive busted my as to get this far, here is the guide that helped me the most : [https://vitux.com/how-to-install-latest-ruby-on-rails-on-ubuntu/](https://vitux.com/how-to-install-latest-ruby-on-rails-on-ubuntu/)
-
-i know im close  can anyone take the time and patience to help me run this app ? 
-
-mahalo

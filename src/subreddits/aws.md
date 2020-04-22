@@ -1,96 +1,93 @@
 # aws
-## [1][Is it fair to say Oracle is ~3x more expensive than Aurora?](https://www.reddit.com/r/aws/comments/g5anrh/is_it_fair_to_say_oracle_is_3x_more_expensive/)
-- url: https://www.reddit.com/r/aws/comments/g5anrh/is_it_fair_to_say_oracle_is_3x_more_expensive/
+## [1][AWS Africa (Cape Town) region goes live](https://www.reddit.com/r/aws/comments/g5xch0/aws_africa_cape_town_region_goes_live/)
+- url: https://mybroadband.co.za/news/cloud-hosting/349001-aws-cape-town-region-goes-live.html
 ---
-Comparing Multi-AZ RDS between MySQL Aurora and Oracle SE2 Multi-AZ https://s.natalian.org/2020-04-21/oracle.png
 
-Or are there better rules of thumbs here to better make sense of the AWS database landscape?
-## [2][AWS Elastic Kubernetes Service: running ALB Ingress controller](https://www.reddit.com/r/aws/comments/g5du9t/aws_elastic_kubernetes_service_running_alb/)
-- url: https://www.reddit.com/r/aws/comments/g5du9t/aws_elastic_kubernetes_service_running_alb/
+## [2][AWS launches machine learning enabled search capabilities for COVID-19 dataset](https://www.reddit.com/r/aws/comments/g5jj4t/aws_launches_machine_learning_enabled_search/)
+- url: https://aws.amazon.com/blogs/publicsector/aws-launches-machine-learning-enabled-search-capabilities-covid-19-dataset/
 ---
-A Kubernetes controller which actually controls AWS Application Load Balancers (ALB) in an AWS account when an Ingress resource with the kubernetes.io/ingress.class: alb annotation is created in a Kubernetes cluster.
 
-Article: https://medium.com/setevoy4/aws-elastic-kubernetes-service-running-alb-ingress-controller-8d0d457615fa?source=friends_link&amp;sk=f68ab36f4a1e0f4398a406109a303068
-## [3][Migrate Unix to AWS?](https://www.reddit.com/r/aws/comments/g5dbqo/migrate_unix_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/g5dbqo/migrate_unix_to_aws/
+## [3][How to remove S3 bucket with period character in name?](https://www.reddit.com/r/aws/comments/g5yp0f/how_to_remove_s3_bucket_with_period_character_in/)
+- url: https://www.reddit.com/r/aws/comments/g5yp0f/how_to_remove_s3_bucket_with_period_character_in/
 ---
-How are people approaching a UNIX workload conversion to cloud infrastructure?
+Hello!
 
-Context: a customer called my firm asking about cloud infra migration and it includes x86/x64 as well as Unix (not sure if aix/ FreeBSD).
+I am a teacher and my student somehow created a bucket with a period in name.
 
-Is it always Unix —&gt; Linux (app port /rebuild)—&gt; cloud ?
-## [4][Urgently need to blacklist an IP from my API Gateway/Lambda](https://www.reddit.com/r/aws/comments/g4wf4p/urgently_need_to_blacklist_an_ip_from_my_api/)
-- url: https://www.reddit.com/r/aws/comments/g4wf4p/urgently_need_to_blacklist_an_ip_from_my_api/
+I have tried remove it using AWS web console:
+
+&gt;Unknown Error. An unexpected error occurred.
+
+I have tried AWS CLI:
+
+&gt;aws s3 rb s3://bucket-name22.04... blah-blah-blah ...An error occurred (NoSuchBucket) when calling the ListObjectsV2 operation: The specified bucket does not exist
+
+After that I realized how great was sin that my student just done (｡•́︿•̀｡)
+
+Please help me to earn  forgiveness of AWS gods and remove this bucket!
+## [4][Main things to consider when comparing RDS to Aurora](https://www.reddit.com/r/aws/comments/g5t8l7/main_things_to_consider_when_comparing_rds_to/)
+- url: https://www.reddit.com/r/aws/comments/g5t8l7/main_things_to_consider_when_comparing_rds_to/
 ---
-Someone is spamming my services and it's beginning to incur costs. I shut down my services for now, to the dismay of my users, until I can blacklist this jerk's IP address.
+Hi all,
 
-However, I have one of those weird Lambda/API Gateway proxy setups, and it's not matching any of the documentation on how to do this. Can anyone help me out?
-
-&amp;#x200B;
-
-EDIT:
-
-Unfortunately, my lambda is an HTTP API, which does not support Resource Policies NOR WAF, according to Amazon themselves.
-
-I need to take a step back and re-think security. It's secure as is, just vulnerable to spamming. I may use a REST API with API Keys and/or WAF. Thanks all for the suggestions, I'm still welcome to more.
-## [5][Hooks/Test cases for Athena queries before pushing to Github](https://www.reddit.com/r/aws/comments/g5edt8/hookstest_cases_for_athena_queries_before_pushing/)
-- url: https://www.reddit.com/r/aws/comments/g5edt8/hookstest_cases_for_athena_queries_before_pushing/
+What are the main things to take into consideration when choosing between RDS and Aurora ? Is the price difference between having a completely managed service in Aurora versus managing your RDS yourself worth it ? It's been years since I've had to discuss relational databases so I need a bit of insight ... Thanks !
+## [5][Creating your AWS resources in a declarative and programmatic way with AWS CDK](https://www.reddit.com/r/aws/comments/g5fpco/creating_your_aws_resources_in_a_declarative_and/)
+- url: https://www.reddit.com/r/aws/comments/g5fpco/creating_your_aws_resources_in_a_declarative_and/
 ---
-Hi all!
+Hey guys, 
 
+Here's my latest video on a topic that impacts almost anyone in this group: Infrastructure as Code. 
 
-Is there a way to add tests cases to see if Athena Queries are parsed properly before pushing to Github?
+[https://youtu.be/zSwwwTupoAk](https://youtu.be/zSwwwTupoAk)
 
-Wanted to make sure the query has no errors before pushing to Github.
-## [6][EBS which volume type for ECS cluster](https://www.reddit.com/r/aws/comments/g5ecdn/ebs_which_volume_type_for_ecs_cluster/)
-- url: https://www.reddit.com/r/aws/comments/g5ecdn/ebs_which_volume_type_for_ecs_cluster/
+The idea is simple -- you can use multiple frameworks to create your AWS services in a repeatable and idempotent way, but I found CDK to be most robust and easy to learn. 
+
+BTW, I still prefer the [Serverless framework](https://serverless.com/framework/docs/providers/aws/guide/intro/) and [SAM](https://aws.amazon.com/serverless/sam/) for my simple, de-coupled, Lambda functions, but when it comes to more complex coupling then CDK is the go-to framework for me. As an example, check out the [Cognito + Lambda functions usage here](https://github.com/vbudilov/aws-cdk-starter/blob/master/src/main/java/com/budilov/cdk/CognitoStack.java#L37). 
+
+Let me know if you have topic recommendations for me for my next explainer video, although I have an itch to scratch when it comes to streaming data ingestion. 
+
+Vladimir
+## [6][Question about Cost Categories (aka wtf are cost categories)](https://www.reddit.com/r/aws/comments/g616dc/question_about_cost_categories_aka_wtf_are_cost/)
+- url: https://www.reddit.com/r/aws/comments/g616dc/question_about_cost_categories_aka_wtf_are_cost/
 ---
-Hi, we have ecs cluster that run stateless web application containers. I created ecs cluster with terraform and it uses standard ebs volume time by default however I looked that there are also other volume types available. How can I pick the best type or calculate what i need? We actually only need 5 Gib of storage but ECS optimized ami requires at least 30. We plan to have at least 6 ecs clusters so it's important for to understand how to optimize ECS cluster storage
-## [7][Kinesis streaming to multiple lambdas, will all of them receive the same message?](https://www.reddit.com/r/aws/comments/g5ayjd/kinesis_streaming_to_multiple_lambdas_will_all_of/)
-- url: https://www.reddit.com/r/aws/comments/g5ayjd/kinesis_streaming_to_multiple_lambdas_will_all_of/
+Every time I read the [intro page](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html) for Cost Categories, I feel like I understand what it's saying, but I can't figure out how it's different than what already exists.
+
+Like the example they give about creating a **Team** category, and then defining values for `Team123` and `Team456`. I can do that already in Cost Explorer on the fly, what do I gain by doing it as a Cost Category? It actually seems _more_ cumbersome to have to pre-define it. Are they basically just a way to save Cost Explorer queries, or is there something else that I'm missing?
+## [7][Security group with rules for both public and private IP adress possible?](https://www.reddit.com/r/aws/comments/g614zk/security_group_with_rules_for_both_public_and/)
+- url: https://www.reddit.com/r/aws/comments/g614zk/security_group_with_rules_for_both_public_and/
 ---
-I have 3 Lambdas subscribed to a same Kinesis data stream. When that single Kinesis stream sends out `MessageA`, will all the 3 Lambdas that are subscribed to it receive a copy of `MessageA` too? 
+I have an EC2 behind an NLB. I want the public IP of the EC2 only to be accessible on port 22, and on the private IP which is used by the NLB illl use port 80 and 443. Is this possible to do in a Security Group?
 
-Or will only one of the Lambdas receive `MessageA`?
-## [8][Handling binary uploads using AWS Lambda](https://www.reddit.com/r/aws/comments/g56q6l/handling_binary_uploads_using_aws_lambda/)
-- url: https://www.reddit.com/r/aws/comments/g56q6l/handling_binary_uploads_using_aws_lambda/
+Eg  
+SG:  
+Ingress port 22 Destination: PublicIP
+
+Ingress port 80, 443: Destination: PrivateIP
+
+Or something like that.
+## [8][Lambda - Secrets Manager - VPC Endpoint](https://www.reddit.com/r/aws/comments/g60sde/lambda_secrets_manager_vpc_endpoint/)
+- url: https://www.reddit.com/r/aws/comments/g60sde/lambda_secrets_manager_vpc_endpoint/
 ---
-Background: I'm implementing a script that sends some analytics from a website to our server. Because of the size, I used zlib to compress the logs to around 30KB or so. The uncompressed JSON is about 1-2MB.
+I have a Lambda running in a VPC (Account A), and want to access Secrets Manager from Account B. There's an Interface VPC Endpoint for Secrets Manager in Account B (some other services in Account B VPC uses Secrets Manager as well). Currently all calls to Secrets Manager endpoint times out from Lambda.
 
-Problem: What's the best approach to let AWS Lambda read the compressed file? Implementing it via traditional EC2 is easy, but if I use Lambda, most of the online articles suggest that I upload the files to S3. Is there a better way to do this? Can I upload files to Lambda directly?
-## [9][Recent review or experiences with Amazon Connect](https://www.reddit.com/r/aws/comments/g562r9/recent_review_or_experiences_with_amazon_connect/)
-- url: https://www.reddit.com/r/aws/comments/g562r9/recent_review_or_experiences_with_amazon_connect/
+Do I need an Interface VPC Endpoint for Secrets Manager in Account A as well for Lambda to work?
+## [9][Deep-learning AMI nvidia drivers not talking to the hardware](https://www.reddit.com/r/aws/comments/g60jby/deeplearning_ami_nvidia_drivers_not_talking_to/)
+- url: https://www.reddit.com/r/aws/comments/g60jby/deeplearning_ami_nvidia_drivers_not_talking_to/
 ---
-I saw some older reviews of Connect from a year or two back, but wondering if anyone is using it for a production call center and can comment on their experience. I'm curious in general experiences, but also if you feel the product has been continuously improving as I know there's some things AWS just "tries out" and then doesn't really invest in. I want to make sure it's a product I can grow with.
+I have been getting the following error when I look at the GPU i.e. input using
 
-For context:
+    nvidia-smi
 
-\- I have an outsourced call center I run with 12 agents today. We are growing fast though so I'd like something that can easily scale to 100+ in a year or so.-
+`NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.`
 
-\- I have a few other services running in AWS (lightsail for a POS server and AWS workspaces for agent terminals in the cloud) but not sure how much that makes a difference having it all in one place.
-## [10][Getting "cannot open shared object file: No such file or directory - /var/task/vendor/bundle/ruby/2.7.0/gems/pg-1.2.3/lib/pg_ext.so" when trying to run ruby code on AWS lambda.](https://www.reddit.com/r/aws/comments/g4zn8b/getting_cannot_open_shared_object_file_no_such/)
-- url: https://www.reddit.com/r/aws/comments/g4zn8b/getting_cannot_open_shared_object_file_no_such/
+Looking into this it turns out that they did an update of the AMI I amusing in [March](https://slack-redir.net/link?url=https%3A%2F%2Fforums.aws.amazon.com%2Fann.jspa%3FannID%3D7521) and I had not noticed.
+
+I made a new instance with the updated AMI like suggested here ([https://docs.aws.amazon.com/dlami/latest/devguide/upgrading-dlami.html](https://slack-redir.net/link?url=https%3A%2F%2Fdocs.aws.amazon.com%2Fdlami%2Flatest%2Fdevguide%2Fupgrading-dlami.html)), but I am still getting the same problem.
+
+Does anyone have any ideas?
+## [10][AWS Lambda and Go](https://www.reddit.com/r/aws/comments/g5zyb8/aws_lambda_and_go/)
+- url: https://www.reddit.com/r/aws/comments/g5zyb8/aws_lambda_and_go/
 ---
-i zipped all my code and uploaded it to AWS lambda, when i try running test i am getting this error. its  almost a week now since i have been stuck on this issue.
+We have a Go application with Mux as the router wrapped in Apex/Gateway all zipped and deployed as a lambda and incoming requests gets routed to the appropriate function, but as I understand this is more of a hack and that each function should have its own Lambda. In refactoring this, would I need to init the DB, SQS, and other required things in each function that needs those or is there a better way of handling this? Or is our way of zipping up the whole application and using it with the Mux router fine?
 
-    {
-      "errorMessage": "libldap_r-2.4.so.2: cannot open shared object file: No such file or directory - /var/task/vendor/bundle/ruby/2.7.0/gems/pg-1.2.3/lib/pg_ext.so",
-      "errorType": "Init&lt;LoadError&gt;",
-      "stackTrace": [
-        "/var/lang/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'",
-        "/var/lang/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'",
-        "/var/task/vendor/bundle/ruby/2.7.0/gems/pg-1.2.3/lib/pg.rb:5:in `&lt;top (required)&gt;'",
-        "/var/lang/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'",
-        "/var/lang/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'",
-        "/var/task/lambda_function.rb:2:in `&lt;top (required)&gt;'",
-        "/var/lang/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'",
-        "/var/lang/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'"
-      ]
-    }
-
-i tried deploying the \`vendor\` and \`lib\` as a layer on lambda and i still get the same error.
-
-i tried this answer too but no help [https://www.reddit.com/r/ruby/comments/a3e7a1/postgresql\_on\_aws\_lambda\_ruby/](https://www.reddit.com/r/ruby/comments/a3e7a1/postgresql_on_aws_lambda_ruby/)this is my repo is you want to give it a try [https://bitbucket.org/nijeeshjoshy/aws-lambda-ruby-postgres](https://bitbucket.org/nijeeshjoshy/aws-lambda-ruby-postgres)  
-
-
-i added this repo [https://github.com/mphsi/ruby\_lambda\_pg\_layer](https://github.com/mphsi/ruby_lambda_pg_layer)  as a layer and then it fixed all the errors related to \`postgres\` but now it says active\_record not found.
+I'm fairly new to working with AWS so I want to make sure I set this up correctly.

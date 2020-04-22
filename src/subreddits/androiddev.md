@@ -31,88 +31,82 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][What are we supposed to use instead of AsyncTask ?](https://www.reddit.com/r/androiddev/comments/g59hoh/what_are_we_supposed_to_use_instead_of_asynctask/)
-- url: https://www.reddit.com/r/androiddev/comments/g59hoh/what_are_we_supposed_to_use_instead_of_asynctask/
+## [3][Fortnite for Android arrives on Play Store after Epic Games gives in to Google cut](https://www.reddit.com/r/androiddev/comments/g5xfx2/fortnite_for_android_arrives_on_play_store_after/)
+- url: https://www.reddit.com/r/androiddev/comments/g5xfx2/fortnite_for_android_arrives_on_play_store_after/
 ---
-The documentation for [AsynchTask](https://developer.android.com/reference/android/os/AsyncTask) is crystal clear: 
+"Epic Games provided the following statement on Fortnite’s arrival on the Play Store to [*Polygon*](https://www.polygon.com/2020/4/21/21229930/fortnite-available-on-google-play-android-mobile-devices):
 
-This class was deprecated in API level R.  
-Use the standard java.util.concurrent or Kotlin concurrency utilities instead.  
+After 18 months of operating *Fortnite* on  Android outside of the Google Play Store, we’ve come to a basic  realization:Google puts software downloadable outside of Google Play  at  a disadvantage, through technical and business measures such as  scary,  repetitive security pop-ups for downloaded and updated software,   restrictive manufacturer and carrier agreements and dealings, Google   public relations characterizing third party software sources as malware,   and new efforts such as Google Play Protect to outright block software   obtained outside the Google Play store.
 
+Because of this, we’ve  launched *Fortnite* for Android on the Google Play Store. We’ll continue to operate the Epic Games App and *Fortnite* outside  of Google Play, too.
 
-However in other articles in the documentation on processes and threading such as [here](https://developer.android.com/guide/components/processes-and-threads#AsyncTask) and [here](https://developer.android.com/topic/performance/threads#asynctask) we are still referred to AsynchTask. What is the recommended way to do some processing in the background telling the UI thread to update every now and then?
-## [4][Will anyone be interested to use a Open API that emulates some of the functionality of some social media app to create app for learning?](https://www.reddit.com/r/androiddev/comments/g58i54/will_anyone_be_interested_to_use_a_open_api_that/)
-- url: https://www.reddit.com/r/androiddev/comments/g58i54/will_anyone_be_interested_to_use_a_open_api_that/
+We hope that Google will revise its policies and  business  dealings in the near future, so that all developers are free  to reach  and engage in commerce with customers on Android and in the  Play Store  through open services, including payment services, that can  compete on a  level playing field."
+
+[https://9to5google.com/2020/04/21/fortnite-android-play-store/](https://9to5google.com/2020/04/21/fortnite-android-play-store/)
+## [4][Business owner removed my access to Developer console, refused to pay. can I report Google to unpublish the app at least?](https://www.reddit.com/r/androiddev/comments/g5imal/business_owner_removed_my_access_to_developer/)
+- url: https://www.reddit.com/r/androiddev/comments/g5imal/business_owner_removed_my_access_to_developer/
 ---
-I am thinking to create an API that emulates FB or Instagrams basic feature so mobile or frontend devs can use that API to learn about JWT auth flows and create practice apps to add into their portofolio. Once I am done with the basic functionality I would not mind if someone wanna pitch in their time help me maintain it.
-## [5][Kotlin Discord Server, because why not?](https://www.reddit.com/r/androiddev/comments/g5f6jh/kotlin_discord_server_because_why_not/)
-- url: https://discord.gg/yrabuRp
+I just finished an An Android app as a contractor developer, and as soon as I published the app in Google play and it gaind downloads and users, they removed me from console, refuse to pay and don’t answer me anywhere. 
+all I have is the source code, which they don’t have access to. 
+
+going through legal processes can be so long, and probably useless here in my country.
+
+I don’t know, I’m so pissed off, just need to do something about it. 
+
+I was wondering if there’s a way to report this to Google, and they unpublish the app?
+## [5][Dev team size](https://www.reddit.com/r/androiddev/comments/g5wfyg/dev_team_size/)
+- url: https://www.reddit.com/r/androiddev/comments/g5wfyg/dev_team_size/
 ---
-
-## [6][Best native Android Development learning resource](https://www.reddit.com/r/androiddev/comments/g5c6q1/best_native_android_development_learning_resource/)
-- url: https://www.reddit.com/r/androiddev/comments/g5c6q1/best_native_android_development_learning_resource/
----
-Here we go again.
-I messed with android studio, java and kotlin before. But soon I got to the point where it just wasn't fun anymore. I have a bit of knowledge and experience in many fields all from web dev, to game dev... Recently I've been messing around with Flutter, but honestly, I don't see future with it. There zero job opportunities in my country with flutter.. So I would like to once more give chance to native Android dev. I've seen jetpack compose, and as I always struggled with making UI in Android Studio and all the constraints and making everything look good on all screen sizes, I think Compose would make difference in that field? To cut the story short, I'm interested in some Udemy course which covers everything and is up to date with the new stuff. Of course I searched myself, but they all look kinda outdated to me. So I need recommendations. Also is Kotlin the right way to go these days? I think most of the companies still use Java? Anyway recommend something you know for sure is good, and it possibly helped you.
-## [7][JetNews, a small open-source Jetpack(AndroidX) news app](https://www.reddit.com/r/androiddev/comments/g5bz4p/jetnews_a_small_opensource_jetpackandroidx_news/)
-- url: https://www.reddit.com/r/androiddev/comments/g5bz4p/jetnews_a_small_opensource_jetpackandroidx_news/
----
-When quarantine takes away your sleep, might as well make something.
-
-It's basically the AndroidX news site in the bottom navigation view.
-
-Why did I make it?CBA to open the web, if you're like me you've come to the right place, plus you might learn a thing or two.
-
-[Github](https://github.com/CraZyLegenD/JetNews)
-
-&amp;#x200B;
-
-Edit: this isn't a compose app nor anyhow related to [https://github.com/android/compose-samples/tree/master/JetNews](https://github.com/android/compose-samples/tree/master/JetNews)
-## [8][Button Image Tint change possible?](https://www.reddit.com/r/androiddev/comments/g5enua/button_image_tint_change_possible/)
-- url: https://www.reddit.com/r/androiddev/comments/g5enua/button_image_tint_change_possible/
----
-Greetings,
-
-Im working on an Android app.  I have a Button that is just using a black vector SVG image on line `android:drawableTop="@drawable/main_report"`. It is colored by a tint in the XML layout.
-
-
-        &lt;Button
-        android:id="@+id/buttonstage6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:drawableTop="@drawable/main_report"
-        android:drawableTint="#3F51B5" &gt;
-
-
-Im trying to use the OnClick listener event to change the *drawableTint* value to something like red (#FF0000) from within the MainActivity java file.
-
- I cant figure out how to do this and I've tried and not been able to get it to work. I think I read that once certain values are defined in the XML that it becomes non-changeable. Is that the case?  If not, how should I implement?
-## [9][It's just a makeup kit. Had to learn and use flutter for company project (from Dec 2018). This is what I feel now.](https://www.reddit.com/r/androiddev/comments/g4m6w2/its_just_a_makeup_kit_had_to_learn_and_use/)
-- url: https://i.redd.it/ffavl8dphwt41.jpg
+What is the Android/iOS dev team size at your company? How many apps does the team own? I feel like 5-7 are enough for an average app. Trying to understand what do bigger teams do?
+## [6][Early work on Desktop UI with Jetpack Compose.](https://www.reddit.com/r/androiddev/comments/g5l3of/early_work_on_desktop_ui_with_jetpack_compose/)
+- url: https://android-review.googlesource.com/c/platform/frameworks/support/+/1290729
 ---
 
-## [10][Problem with loading text from assets file (Problem with reading text files from assets folder (Unmarshaling error, Parcelable class)](https://www.reddit.com/r/androiddev/comments/g5dzz8/problem_with_loading_text_from_assets_file/)
-- url: https://www.reddit.com/r/androiddev/comments/g5dzz8/problem_with_loading_text_from_assets_file/
+## [7][Strange error when trying to read file from apk instead of androidstudio-emulator](https://www.reddit.com/r/androiddev/comments/g601u8/strange_error_when_trying_to_read_file_from_apk/)
+- url: https://www.reddit.com/r/androiddev/comments/g601u8/strange_error_when_trying_to_read_file_from_apk/
 ---
- 
+I have an Android /Kotlin App that reads JSON from: [https://www.androdocs.com/files/uploads/original/sample-json-data-1567767983.txt](https://www.androdocs.com/files/uploads/original/sample-json-data-1567767983.txt)
 
-I developed my first android app, so i will describe it and the problem briefly...
+When I use the exact same app and read from: [http://www.makumaku.de/test.txt](http://www.makumaku.de/test.txt)
 
-It's a song book app. The app reads lines from text file that contains numbers and tile of the song then puts that data to an ArrayList  
- that is used to set up the RecyclerView  
-.  When the certain item is clicked it checks for the song number that is  in array list item and then based on that opens and reads text from a  file that is named for example 23.txt  
-.  I have three languages (menu items) that can be checked in navigation  menu, they have click listeners that change the current list for the RecyclerView.  
-  The problem is that when the third language (menu item) is checked  whatever the first item is in the RecyclerView it throws an exception  that the file doesn't exist (while it exists in the assets folder, and  works for all other items in the list) and occasionally it says (on  Samsung Galaxy A8):
+it works from Android Studio Emulator. But if I test the apk from my mobile, I can read only from the first txt-file. The second -txt files results in a white screen.
 
-i have shared my code here [https://answiz.com/questions/90319/problem-with-loading-text-from-assets-file-problem-with-reading-text-files-from-assets-folder-unmarshaling-error-parcelable-class](https://answiz.com/questions/90319/problem-with-loading-text-from-assets-file-problem-with-reading-text-files-from-assets-folder-unmarshaling-error-parcelable-class)
-## [11][Question: How to remove / customise top row of 'share with' contacts (blurred on the picture). Android 10, Pixel 2 XL. Don't want the contacts who are always appearing there.](https://www.reddit.com/r/androiddev/comments/g5dwfp/question_how_to_remove_customise_top_row_of_share/)
-- url: https://i.redd.it/1fn3h8pru5u41.jpg
+\-&gt; why is that/how can i make the second .txt-file be readable on mobile, too? thx
+## [8][Intersted in learning Android Development](https://www.reddit.com/r/androiddev/comments/g5zmu3/intersted_in_learning_android_development/)
+- url: https://www.reddit.com/r/androiddev/comments/g5zmu3/intersted_in_learning_android_development/
+---
+Im 22m and right now Im deciding what path to take. Theres a local site offering free course about android development but in Android 4.0. The pro is I might get a certificate. Con is why should I learn outdated version of Android? Can I ask you guys your opinion?
+## [9][Coroutines flow with Kotlin](https://www.reddit.com/r/androiddev/comments/g5ziv5/coroutines_flow_with_kotlin/)
+- url: https://www.youtube.com/watch?v=CIvjwIfOG5A
 ---
 
-## [12][Google Play Developer Subscription Age Policy Question](https://www.reddit.com/r/androiddev/comments/g5dkv6/google_play_developer_subscription_age_policy/)
-- url: https://www.reddit.com/r/androiddev/comments/g5dkv6/google_play_developer_subscription_age_policy/
+## [10][App update still processing, 14 days after submission. Anyone else facing this issue ?](https://www.reddit.com/r/androiddev/comments/g5zbko/app_update_still_processing_14_days_after/)
+- url: https://www.reddit.com/r/androiddev/comments/g5zbko/app_update_still_processing_14_days_after/
 ---
-I know, and I'm sure that many know, that Google Play has a policy where you must be at least 18 years of age to have a developer account. I'm 13, and i would want to post on Google Play in the future, so would it be ok if i had an account but my dad controls everything when it comes to payment and receiving money, as in, I have an account, but we buy the Developer options for the account through his card, and if i were to make some kind of income it would be received on his card, would that be ok with Google Play, or would we have to post everything on his account, as in I make a game, but he buys developer options for his account, instead of mine, and then if I were to make a game, we would have to post it on his account and in general do everything on his account? My dad told me that he would be happy to help me, and that we could simply just do everything on his account, but i would prefer if we could do it on mine cause i would have a little bit more accessibility and could modify my account, as in for example, if i would want to change my picture for my account, more easily.
+We submitted an update on 9th April and its still processing.
 
-TL;DR I'm 13 and would want to upload games on Google Play, so could my dad and i manage to do everything on my account, or would we have to do it on his, and not interfere with Google Play's policy?
+Our app targets minors, so we expect a longer review time, but 14 days is still unacceptable.
+
+Before covid-19, our updates went live, as fast as 4 hours.
+
+Neither we changed anything related to app's target audience, nor did google update any policies in the meantime.
+
+Also according Google's policy, if we submit a new update, while an update is processing, they start the review process all over again.
+
+We are a fast growing startup, and such long review times, the hurt us, as we cannot quickly ship features that users ask for.
+
+Anyone else facing the same issue, or has any tips for us ?
+## [11][How to play different audio files for different position in a RecyclerView, please help!](https://www.reddit.com/r/androiddev/comments/g5y9ta/how_to_play_different_audio_files_for_different/)
+- url: https://www.reddit.com/r/androiddev/comments/g5y9ta/how_to_play_different_audio_files_for_different/
+---
+Hi, I've been struggling with one thing for too long that it's delaying my project. I'm fairly new so please be patient with me.
+
+I am making a phrasebook for a certain language and I use RecyclerView to show the list of phrases. Upon clicking every listitem, it should play a local audio recording of the same phrase.
+
+So how do I achieve that? How can I assign different audio files to different positions in a RecyclerView? I'm assuming after setting an OnClickListener to the CardView I'm using, I may have to link it with a folder or class that contains my audio files?
+
+Or please point me to some tutorials.
+## [12][Is it worth it learning Java in 2020 for android development?](https://www.reddit.com/r/androiddev/comments/g5k2b8/is_it_worth_it_learning_java_in_2020_for_android/)
+- url: https://www.reddit.com/r/androiddev/comments/g5k2b8/is_it_worth_it_learning_java_in_2020_for_android/
+---
+Hi guys I'm a 2020 passout and i was wondering if is still worth it learning Java or should i head straight to Kotlin any advice or suggestions would be appreciated.

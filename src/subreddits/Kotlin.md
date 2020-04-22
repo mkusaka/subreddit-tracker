@@ -1,64 +1,58 @@
 # Kotlin
-## [1][Firebase Kotlin SDK (with multiplatform support) version 0.10 released - looking for feedback / early adopters](https://www.reddit.com/r/Kotlin/comments/g52v0b/firebase_kotlin_sdk_with_multiplatform_support/)
-- url: https://github.com/GitLiveApp/firebase-kotlin-sdk
+## [1][Coroutines flow with Kotlin](https://www.reddit.com/r/Kotlin/comments/g5zjmg/coroutines_flow_with_kotlin/)
+- url: https://www.youtube.com/watch?v=CIvjwIfOG5A
 ---
 
-## [2][Can a novice skip Java and learn Kotlin directly?](https://www.reddit.com/r/Kotlin/comments/g5a5wu/can_a_novice_skip_java_and_learn_kotlin_directly/)
+## [2][Is it necessary to learn all the Kotlin-specific advanced features if I am learning it for Android development ?](https://www.reddit.com/r/Kotlin/comments/g5vdgj/is_it_necessary_to_learn_all_the_kotlinspecific/)
+- url: https://www.reddit.com/r/Kotlin/comments/g5vdgj/is_it_necessary_to_learn_all_the_kotlinspecific/
+---
+I have been following the [Kotlin Bootcamp for Programmers ](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011) course to learn Kotlin for Android development but after using C++ for quite some time but not really taking advantage of lamdas, generics and other modern features there are several features like interface delegation that don’t appear to be immediately relevant.
+
+So is it worth trying to learn them at the beginning for Android development or can they be conveniently ignored until the need arises ?
+## [3][Properties and nested properties](https://www.reddit.com/r/Kotlin/comments/g5wz3o/properties_and_nested_properties/)
+- url: https://www.reddit.com/r/Kotlin/comments/g5wz3o/properties_and_nested_properties/
+---
+Hi, recently I've been struggling to find a nice way to do my property system on a private project.  
+The idea is to have a delegated property for example:
+
+    val myBoolean by Property("Property name", true)
+
+The problem is, I need to have sub property, contained inside of the delegation object (Property) and it should be easily accessible. The only workaround I found at the time is
+
+    val subProperty by ::myBoolean.property("Sub property name", false)
+
+But, I'm not a big fan of it... If you have any recommandations please tell me!
+## [4][Thanks for helping to get Alpas over the 100 star mark!](https://www.reddit.com/r/Kotlin/comments/g5jm32/thanks_for_helping_to_get_alpas_over_the_100_star/)
+- url: https://www.reddit.com/r/Kotlin/comments/g5jm32/thanks_for_helping_to_get_alpas_over_the_100_star/
+---
+[Alpas](https://alpas.dev) just got past the 100 star milestone on [GitHub](https://github.com/alpas/alpas) and I wanted to send a big thank you out to this community, as I know a lot of people discovered and starred because of this subreddit. Thank you so much for your support! [🙏](https://github.com/alpas/alpas)
+## [5][How to quickly search the first 1024 bytes in a ByteArray?](https://www.reddit.com/r/Kotlin/comments/g5iz54/how_to_quickly_search_the_first_1024_bytes_in_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/g5iz54/how_to_quickly_search_the_first_1024_bytes_in_a/
+---
+I need to search for a short ByteArray in the first 1024 bytes of a longer ByteArray, in a situation where performance is important.
+
+For context, this is a Burp extension. It uses the IHttpListener interface to monitor every request/response. A small number of requests contain a particular header and need further processing. Because this touches every request and response, performance is important. I'd say that converting the ByteArray to a String or copying is definitely out. Ideally I'd like to invoke a native function.
+
+Any ideas would be welcome!
+## [6][gRPC for Kotlin released, with integration with coroutines and the Flow API](https://www.reddit.com/r/Kotlin/comments/g5n3hj/grpc_for_kotlin_released_with_integration_with/)
+- url: https://cloud.google.com/blog/products/application-development/use-grpc-with-kotlin
+---
+
+## [7][Kotlin mapOf Tutorial with Examples](https://www.reddit.com/r/Kotlin/comments/g5sv84/kotlin_mapof_tutorial_with_examples/)
+- url: https://kotlin-android.com/kotlin-mapof-examples/
+---
+
+## [8][Can a novice skip Java and learn Kotlin directly?](https://www.reddit.com/r/Kotlin/comments/g5a5wu/can_a_novice_skip_java_and_learn_kotlin_directly/)
 - url: https://www.reddit.com/r/Kotlin/comments/g5a5wu/can_a_novice_skip_java_and_learn_kotlin_directly/
 ---
 I heard that the biggest reason to choose Kotlin is not because it is a "new language", but because it is a "better java"! 
 
 So I think I need some advice
-## [3][kotlin discord server because why not?](https://www.reddit.com/r/Kotlin/comments/g5f3ry/kotlin_discord_server_because_why_not/)
-- url: https://discord.gg/yrabuRp
+## [9][Ktor Jobs](https://www.reddit.com/r/Kotlin/comments/g5oajt/ktor_jobs/)
+- url: https://www.reddit.com/r/Kotlin/comments/g5oajt/ktor_jobs/
 ---
-
-## [4][Android Official Spans All-In-One](https://www.reddit.com/r/Kotlin/comments/g5ane5/android_official_spans_allinone/)
-- url: https://medium.com//android-official-spans-all-in-one-6d23167b1bb9?source=friends_link&amp;sk=7b70af51f23ed2e031eead0d42972548
----
-
-## [5][Kotlin: IsNotEmpty() is not !IsNullOrEmpty()](https://www.reddit.com/r/Kotlin/comments/g5arls/kotlin_isnotempty_is_not_isnullorempty/)
-- url: https://medium.com/@elye.project/kotlin-isnotempty-is-not-isnullorempty-3760db54939a?source=friends_link&amp;sk=aa3be0c742a36f5e9bc2931f08a0d318
----
-
-## [6][KVision 3.7.0 is released (Object oriented web framework for Kotlin/JS)](https://www.reddit.com/r/Kotlin/comments/g4sla6/kvision_370_is_released_object_oriented_web/)
-- url: https://www.reddit.com/r/Kotlin/comments/g4sla6/kvision_370_is_released_object_oriented_web/
----
-[KVision](https://github.com/rjaros/kvision) is an open source web framework created for Kotlin/JS. It allows developers to build modern web applications with the Kotlin language.
-
-I have released KVision 3.7.0. The highlights of this release include:
-
-* new server-side module with full support for the [Vert.x](https://vertx.io) backend (with examples and documentation)
-* support for awesome toast messages based on [Toastr library](https://codeseven.github.io/toastr/)
-* support for method annotations for compiler plugin code generation
-* many dependencies upgraded (including Kotlin 1.3.72, Jooby 2.8.1 and Tabulator 4.6.2)
-* bugfixes and improvements for different components
-
-This version contains also some workarounds for [jQuery breaking issue with 3.5.0](https://github.com/jquery/jquery/issues/4665).
-
-For more details about this release see the [changelog](https://github.com/rjaros/kvision/releases/tag/3.7.0). There are also some new fullstack example apps for Vert.x server in the [examples repository](https://github.com/rjaros/kvision-examples).
-
-Don't forget to ⭐️ my [project](https://github.com/rjaros/kvision) if you like it!
-
-Any feedback is appreciated!
-## [7][Learning Kotlin by Writing an ElasticSearch Query DSL](https://www.reddit.com/r/Kotlin/comments/g51a4z/learning_kotlin_by_writing_an_elasticsearch_query/)
-- url: https://www.reddit.com/r/Kotlin/comments/g51a4z/learning_kotlin_by_writing_an_elasticsearch_query/
----
-Hello everyone. I've recently decided to learn Kotlin for fun, and I'm currently writing an [Elastic Query DSL](https://github.com/melvic-ybanez/archia) for that purpose. I have chosen this project because Kotlin's DSL programming support was one of the major features that initially got me interested in the language. And I gotta say, as a full-time Scala developer, I'm actually pretty impressed by Kotlin and how easy it is to build DSLs without even resorting to features such as `implicits`. I find it to be a well-balanced language that resides somewhere between Java and Scala. 
-
-Here is the code: https://github.com/melvic-ybanez/archia.
-
-It's still not complete but I'll appreciate early feedbacks.
-## [8][Kotlin JVM REST framework](https://www.reddit.com/r/Kotlin/comments/g55r80/kotlin_jvm_rest_framework/)
-- url: https://www.reddit.com/r/Kotlin/comments/g55r80/kotlin_jvm_rest_framework/
----
-Which rest framework should I use?
-I looking for a simple lightweight framework. I thought it could be Micronaut, or Ktor, what do you recommend?
-## [9][New release of MockK](https://www.reddit.com/r/Kotlin/comments/g4h4x7/new_release_of_mockk/)
-- url: https://i.redd.it/ikg2bwkmsut41.png
----
-
-## [10][Kotlin Microservices With Spring Boot And Spring Cloud: Part 2 - Distributed Configuration &amp; Service Discovery](https://www.reddit.com/r/Kotlin/comments/g4m8og/kotlin_microservices_with_spring_boot_and_spring/)
-- url: https://youtu.be/laI2yxthk3c
+When I look at Linkedin, there are no job related to ktor. What do you think is the reason?
+## [10][Firebase Kotlin SDK (with multiplatform support) version 0.10 released - looking for feedback / early adopters](https://www.reddit.com/r/Kotlin/comments/g52v0b/firebase_kotlin_sdk_with_multiplatform_support/)
+- url: https://github.com/GitLiveApp/firebase-kotlin-sdk
 ---
 

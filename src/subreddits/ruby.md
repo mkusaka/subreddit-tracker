@@ -1,87 +1,95 @@
 # ruby
-## [1][Testing migrations from sandboxed Rails console](https://www.reddit.com/r/ruby/comments/g5amj3/testing_migrations_from_sandboxed_rails_console/)
-- url: https://shime.sh/til/testing-migrations-from-sandboxed-rails-console
+## [1][Current progress on a tech demo for a game engine written in Ruby.](https://www.reddit.com/r/ruby/comments/g5iueu/current_progress_on_a_tech_demo_for_a_game_engine/)
+- url: https://v.redd.it/j3sxe8w0b7u41
 ---
 
-## [2][Monitoring your Rails application - how to pick from over 40 tools to do the job.](https://www.reddit.com/r/ruby/comments/g4xntv/monitoring_your_rails_application_how_to_pick/)
-- url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-application-monitoring/
+## [2][Passing Rails controller params to Sidekiq](https://www.reddit.com/r/ruby/comments/g5zgvz/passing_rails_controller_params_to_sidekiq/)
+- url: https://prathamesh.tech/2020/04/21/passing-rails-controller-params-to-sidekiq/
 ---
 
-## [3][Ruby Structure](https://www.reddit.com/r/ruby/comments/g4sieh/ruby_structure/)
-- url: https://www.reddit.com/r/ruby/comments/g4sieh/ruby_structure/
+## [3][Looking Inside a Ruby Gem](https://www.reddit.com/r/ruby/comments/g5odz3/looking_inside_a_ruby_gem/)
+- url: https://piotrmurach.com/articles/looking-inside-a-ruby-gem/
 ---
-Hi Guy and Girls,
 
-I have a beginner question I find really hard to find the right answer for, how do you structure in Ruby.
-
-I have a very bad habit of writing all my code in 1 file, after creating a gem with bundle. 
-
-I will write almost all of my code in the main file in the lib folder, but how do you know what to split up in different files, is where some kind of rule you follow then you split the code up in different files. ?
-
-And is it best practice to write all your projects in a gem structure format if its only for private use and not to ever be published or is where a better structure for not creating gems but just a project?
-## [4][Riddle with Ruby](https://www.reddit.com/r/ruby/comments/g4uod2/riddle_with_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/g4uod2/riddle_with_ruby/
+## [4][Please help! I am new beginner for Ruby. I just need to understand three lines!](https://www.reddit.com/r/ruby/comments/g5rt42/please_help_i_am_new_beginner_for_ruby_i_just/)
+- url: https://www.reddit.com/r/ruby/comments/g5rt42/please_help_i_am_new_beginner_for_ruby_i_just/
 ---
-This little riddle was floating around social media, and I thought I'd be clever and solve it with Ruby. I still got it wrong, because my solution represented the same flawed methodology most people used to get it wrong without Ruby... Which is a long way of saying, this is fun without programming, but even more fun with it :) You can get the right answer with a simple one-liner, but you can also get the wrong one. Try your luck!
+Right, so I am trying to customise my receipt on Stripe website, they have [a template](https://stripe.com/docs/recipes/sending-custom-email-receipts) to make this but I am stuck in following lines,
+
+By the way, I successfully installed Ruby, Rubygems and Sinatra framework as they seemed to be needed.
 
 &amp;#x200B;
 
-&gt;In a new hotel containing 100 rooms, Tom was hired to paint the numbers from 1-100 on the doors. How many times will Tom have to paint the number 8?
-## [5][I find it surprising (in the pejorative sense) that Enumerator#next can't take an argument. Is there some good reason for that, or has it just kinda slipped through the cracks?](https://www.reddit.com/r/ruby/comments/g4ples/i_find_it_surprising_in_the_pejorative_sense_that/)
-- url: https://www.reddit.com/r/ruby/comments/g4ples/i_find_it_surprising_in_the_pejorative_sense_that/
----
-I have an infinite sequence (`Enumerator.new { |yielder| ... loop { yielder &lt;&lt; ... } }`) that I know will continue producing values, and I'd like to grab two at a time. `a, b = enum.next, enum.next` works, of course, but `enum.next(2)` would be even better.
+[Screenshot from Stripe](https://preview.redd.it/ej8nsydoq9u41.jpg?width=959&amp;format=pjpg&amp;auto=webp&amp;s=ebdec831225f2e180604bd464294c62e3dfac7bf)
 
-I [dug around](https://github.com/ruby/ruby/blob/bfe706716f7692f0a672a15a261ffffa25526cb1/enumerator.c#L903-L908) and found that `Enumerator#next` specifically makes sure it's returning a single value (the "sv" in `ary2sv()`, presumably), though that value is permitted to be an `Array`. It wouldn't make sense to rewrite this particular enumeration to yield a two-element array, so I won't pursue that avenue.
+&amp;#x200B;
 
-There's [this feature request](https://bugs.ruby-lang.org/issues/9557) from many moons ago that wanted `#next`'s argument to skip forward in the enumeration, but nothing much came of it, so I wouldn't know where to begin tacking this on without breaking things. Would it even be a good idea, or is there something I'm missing?
-## [6][Reactive, realtime web apps in Ruby on Rails without JS using Stimulus Reflex](https://www.reddit.com/r/ruby/comments/g48g4b/reactive_realtime_web_apps_in_ruby_on_rails/)
-- url: https://www.reddit.com/r/ruby/comments/g48g4b/reactive_realtime_web_apps_in_ruby_on_rails/
----
-Thought you guys would be interested in this.
+and when i request the first line, it gives me an error, saying
 
-Stimulus Reflex lets you build realtime, reactive apps in Rails similar to Phoenix LiveView. You don't have to write any Javascript and it will use Rails to render all the HTML updates server-side. It uses ActionCable to trigger updates and then tells Rails to render the current page again and send that back over the websocket. It'll then use DOM diffing to update the page automatically for you.
+&amp;#x200B;
 
-Definitely one of the coolest projects going on right now in the Rails world I'd say. It looks like we might see some similar things in Turbolinks 6 when that comes out too which is exciting.
+[Error from Interactive Ruby](https://preview.redd.it/1cmsj7tgr9u41.jpg?width=1061&amp;format=pjpg&amp;auto=webp&amp;s=eb60708aeaea180663c5a04cd47c9e6c3d8ff1b7)
 
-[https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1](https://gorails.com/episodes/stimulus-reflex-basics?autoplay=1)
-## [7][Optimizing Ruby Lazy Initialization in TruffleRuby with Deoptimization](https://www.reddit.com/r/ruby/comments/g465y7/optimizing_ruby_lazy_initialization_in/)
-- url: https://engineering.shopify.com/blogs/engineering/optimizing-ruby-lazy-initialization-in-truffleruby-with-deoptimization
----
+&amp;#x200B;
 
-## [8][Simple game engine with Ruby + Rust (help and feedback requested)](https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/)
-- url: https://www.reddit.com/r/ruby/comments/g42b12/simple_game_engine_with_ruby_rust_help_and/
----
-[Dathos Game Engine](https://github.com/BrianMWest/dathos-game-engine)
+I am not sure what to do! Please help!
 
-## Background
+&amp;#x200B;
 
-I've been working on a game over the past several months and eventually needed to incorporate a dynamic language to make it easier to iterate over features and mechanics. I chose Ruby because I've been infatuated with it for awhile but hadn't been able to work with it much. I feel that there are many idioms in Ruby that have inspired the syntax of Rust. After the COVID-19 spread and subsequent lockdown, I put together a small Slack-based game for a community orchestra I am a part of so that we could keep hanging out even though we couldn't meet. When I did that, I took the code I had been using and have been modularizing it into a game engine that could be used for other games. Ideally, I'd like to see this be something that others could use for game jams and small games.
+&amp;#x200B;
 
-## Engine
+Edit: Further error
 
-The game engine is a combination of Ruby and Rust. The intention is that the game objects would live in Ruby and the behavior logic would exist in Ruby classes. Rust can be used to extend the game with extra functionality by creating Ruby modules and hooking into lifecycle events for `init`, `pre_update`, `update`, and `post_update`. Examples would be a collision system, tilemap system, Slack integration module or a Twitch integration module.
-
-## Help I need
-
-I've created some GitHub issues of things I _know_ I need. Some of these are more Rust-centric. I know this community is a Ruby community, and a lot of the engine is written in Rust, but I could use help in a few different ways from the Ruby community.
-
-1. idiomatic feedback. I've created a few GitHub issues around this, but I'd like to get feedback from Ruby users on keeping the usage of Ruby consistent with the language's best practices.
-2. Ruby packaging. If there are any Ruby users who are exceptionally good at packaging Ruby applications, some feedback on how we might create a utility to package a game with the Ruby runtime and any gems would be greatly appreciated. This is especially a concern given that I'd like to be able to support as many target operating systems / architectures as possible.
-3. Ruby modules. Not everything in the game engine needs to exist in Rust. If there are any additional features, utilities, modules, etc. that can be included that don't require Rust (file loading utilities, game math or physics utilities?), I'm perfectly happy to include plain Ruby in the engine (I did this with a `GameUtils` module, for example.
-4. Users! I would love to just get people to try this out to find problems with it and see where things break down or users run into roadblocks.
-5. Editor? Bit of a pipe dream, but if any enterprising individuals wanted to make some sort of interface to work with this to make it easier to set up a new project or add game objects, that'd be super cool.
-
-Here is a link to the engine and the Slack-based game I made with it:
-
-[Dathos Game Engine](https://github.com/BrianMWest/dathos-game-engine)
-
-[Melody Madness / Chordal Catastrophe](https://github.com/BrianMWest/melody-madness)
-## [9][RSS as RESTful API](https://www.reddit.com/r/ruby/comments/g4532n/rss_as_restful_api/)
-- url: https://github.com/davidesantangelo/feedirss-api
+https://preview.redd.it/hmuhmw4fs9u41.jpg?width=993&amp;format=pjpg&amp;auto=webp&amp;s=457d27b25e6a9a421c22f7c0cbdea01fa8504737
+## [5][Introducing Bridgetown, a "reimagined" fork of Jekyll with Webpack integration](https://www.reddit.com/r/ruby/comments/g5neym/introducing_bridgetown_a_reimagined_fork_of/)
+- url: https://www.bridgetownrb.com
 ---
 
-## [10][Over 700 Malicious Typosquatted Libraries Found On RubyGems Repository](https://www.reddit.com/r/ruby/comments/g3qwx3/over_700_malicious_typosquatted_libraries_found/)
-- url: https://thehackernews.com/2020/04/rubygem-typosquatting-malware.html
+## [6][Super Bombinhas v0.2.0](https://www.reddit.com/r/ruby/comments/g5iwx5/super_bombinhas_v020/)
+- url: https://www.reddit.com/r/ruby/comments/g5iwx5/super_bombinhas_v020/
+---
+Hi!
+
+I've released a new version of my platformer game Super Bombinhas, featuring:
+
+* Joystick support
+* Save full screen setting
+* Sound effects
+* New item: Shield
+* New features: Star and startup item
+* Adjustments to stage 1-1 making it a bit easier.
+* Revamped stage 1-2.
+
+[https://github.com/victords/super-bombinhas/releases/tag/v0.2.0](https://github.com/victords/super-bombinhas/releases/tag/v0.2.0)
+
+There is a DEB package for Debian-based Linux and an EXE for Windows.
+
+Hope you guys enjoy. As before, I'm open to feedback.
+## [7][Testing migrations from sandboxed Rails console](https://www.reddit.com/r/ruby/comments/g5amj3/testing_migrations_from_sandboxed_rails_console/)
+- url: https://shime.sh/til/testing-migrations-from-sandboxed-rails-console
+---
+
+## [8][Running Ruby on Rails apps on OpenBSD's httpd - the simplest, most secure web server ever made?](https://www.reddit.com/r/ruby/comments/g5rxqb/running_ruby_on_rails_apps_on_openbsds_httpd_the/)
+- url: https://www.reddit.com/r/ruby/comments/g5rxqb/running_ruby_on_rails_apps_on_openbsds_httpd_the/
+---
+[https://www.openbsd.org/papers/httpd-asiabsdcon2015.pdf](https://www.openbsd.org/papers/httpd-asiabsdcon2015.pdf) \-- is this possible? If so, are there anybody here I could hire to help me set up a working config?
+
+I want to prove to the world that it is indeed possible to combine the greatest programming language and web framework ever made with the simplest, most secure web server ever made.
+
+So far all I got to go on is that it \_\_might\_\_ be possible using [Rack::Handler:FastCGI](https://www.rubydoc.info/gems/rack/Rack/Handler/FastCGI)?
+
+Thanks, 0N ([www.motherfuckingwebsite.com](https://www.motherfuckingwebsite.com) | Linux vs. OpenBSD: [pastebin.com/SuQPPfwK](https://pastebin.com/SuQPPfwK))
+## [9][Is Ruby falling in popularity (not trolling, I swear)?](https://www.reddit.com/r/ruby/comments/g5qys1/is_ruby_falling_in_popularity_not_trolling_i_swear/)
+- url: https://www.reddit.com/r/ruby/comments/g5qys1/is_ruby_falling_in_popularity_not_trolling_i_swear/
+---
+Hey, Folks.
+
+I want to preface this with saying that I use Ruby, and will likely continue to do so until it's killed or I find something better.  For my own use, I don't really care if it's dying or not.
+
+The real reason I'm asking is because I've been slowly trying to convince my team to try it out for some of our projects.  While I think it's a great language, I would really hate to steer them in a bad direction and make it harder to find devs because everyone is off learning the hip, cool languages like Go (or god-forbid, JavaScript).
+
+So, in your experience, have you noticed any significant decrease in Ruby job postings or things along those lines?
+## [10][Monitoring your Rails application - how to pick from over 40 tools to do the job.](https://www.reddit.com/r/ruby/comments/g4xntv/monitoring_your_rails_application_how_to_pick/)
+- url: https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-application-monitoring/
 ---
 

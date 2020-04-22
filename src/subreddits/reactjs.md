@@ -109,61 +109,87 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React: the basics in 20 min | Learn React | Basics for beginners](https://www.reddit.com/r/reactjs/comments/g5a7o5/react_the_basics_in_20_min_learn_react_basics_for/)
-- url: https://www.youtube.com/watch?v=FNnhEBDYBr8&amp;feature=share
+## [3][I rebuilt my personal portfolio using GatsbyJS, and I'm loving it!](https://www.reddit.com/r/reactjs/comments/g5uyrt/i_rebuilt_my_personal_portfolio_using_gatsbyjs/)
+- url: https://www.reddit.com/r/reactjs/comments/g5uyrt/i_rebuilt_my_personal_portfolio_using_gatsbyjs/
+---
+It's been about 4 years since I started my project, Resume on the Web, where I created a website that portrays who I am and my ever-changing personality. Every once in a while, I revamp the whole thing using new technologies so that I keep myself updated with the latest and greatest, and also gives me a creative outlet to experiment with new design ideas.
+
+This year, I kicked it up a notch by revamping the design of the old boring two-column resume look, to something a lot more vibrant, responsive and effective. I'll keep my words to a minimum and let the website do the talking :)
+
+**Introducing, the brand-new, Resume on the Web:**   
+**https://amruthpillai.com/**
+
+For those who want the technical deets, this version is built with GatsbyJS, a static-site React framework that I wanted to explore recently, as well as Tailwind CSS for the uber-cool utility classes.
+
+As always, the source code for the project is available on GitHub here: https://github.com/AmruthPillai/ResumeOnTheWeb-Gatsby
+
+Please do let me know if you liked it as much as I enjoyed making it! :)
+## [4][6 Awesome Chrome Extension for Github](https://www.reddit.com/r/reactjs/comments/g5jwri/6_awesome_chrome_extension_for_github/)
+- url: https://www.youtube.com/watch?v=0r2JwANUZwo
 ---
 
-## [4][Static Sites with Next.js 9.3 and Prisma](https://www.reddit.com/r/reactjs/comments/g57kw7/static_sites_with_nextjs_93_and_prisma/)
-- url: https://www.youtube.com/watch?v=wk-dUsLUADg
+## [5][What exactly is the definition of a hook?](https://www.reddit.com/r/reactjs/comments/g5zxkp/what_exactly_is_the_definition_of_a_hook/)
+- url: https://www.reddit.com/r/reactjs/comments/g5zxkp/what_exactly_is_the_definition_of_a_hook/
 ---
+I've been using hooks for a month or so now and while I can use them, I couldn't give a definition of what they are which covers all of them.
 
-## [5][ZEIT is now Vercel, announces $21m Series A including Accel, CRV, Naval Ravikant, Nat Friedman, and... Jordan Walke](https://www.reddit.com/r/reactjs/comments/g5cjoe/zeit_is_now_vercel_announces_21m_series_a/)
+The documentation is pretty unhelpful. It describes them as "a special function that lets you “hook into” React features." That doesn't really tell you anything.
+
+Often they are explained in terms of what they replace, the componentDidMount etc lifecycle methods. But for people like me who learned hooks before learning those, that's also unhelpful.
+
+What exactly do useState and useEffect have in common? What exactly is a hook?
+## [6][React App on same server vs. different server from backend](https://www.reddit.com/r/reactjs/comments/g5ztle/react_app_on_same_server_vs_different_server_from/)
+- url: https://www.reddit.com/r/reactjs/comments/g5ztle/react_app_on_same_server_vs_different_server_from/
+---
+What's the recommended way of handling the React frontend and the backend? What are the advantages and disadvantages of keeping one server for running both?
+
+I am planning to develop a project running Django and React but I am unsure about the best practices here. Also, I wouldn't know how to deploy an app that is requires two different servers, how would that work?
+## [7][Is a React component supposed to look this ugly? Or am I just bad? Sorry I'm new here.](https://www.reddit.com/r/reactjs/comments/g5zyt8/is_a_react_component_supposed_to_look_this_ugly/)
+- url: https://www.reddit.com/r/reactjs/comments/g5zyt8/is_a_react_component_supposed_to_look_this_ugly/
+---
+https://imgur.com/a/t5VCCIQ  
+I made a screenshot of a portion of my code. Conditional properties look so ugly to me and I'm wondering if I'm missing something.
+## [8][Dashboard UI Kit - React Component Library - Open source, Typescript](https://www.reddit.com/r/reactjs/comments/g5zppq/dashboard_ui_kit_react_component_library_open/)
+- url: https://www.reddit.com/r/reactjs/comments/g5zppq/dashboard_ui_kit_react_component_library_open/
+---
+Hey guys, we've been working for quite some time on this library, the focus is really mainly on design, how pretty it is as well as development usability, simple and intuitive API and so on. We'll add more components soon that are missing, such as dialogs etc. Please feel free to drop any feedback!
+
+Screen previews: [https://preview.dashboard-ui.com/](https://preview.dashboard-ui.com/)  
+Docs: [https://developer.dashboard-ui.com/](https://developer.dashboard-ui.com/)  
+Github: [https://github.com/march08/dashboard-ui-kit](https://github.com/march08/dashboard-ui-kit)
+## [9][Just started learning NextJS. What are the tips you wish you know before using on your actual project?](https://www.reddit.com/r/reactjs/comments/g5xgov/just_started_learning_nextjs_what_are_the_tips/)
+- url: https://www.reddit.com/r/reactjs/comments/g5xgov/just_started_learning_nextjs_what_are_the_tips/
+---
+1. Was researching about NextJS and was told to not use database logic in serverless functions. 
+2. The first point contradicts the official documents. Official documents strongly advise you to not have a custom server unless really needed but in which scenario would you really need to do to use the custom server?
+3. Do you really need nginx if you have a serverless function using NextJS?
+## [10][ZEIT is now Vercel, announces $21m Series A including Accel, CRV, Naval Ravikant, Nat Friedman, and... Jordan Walke](https://www.reddit.com/r/reactjs/comments/g5cjoe/zeit_is_now_vercel_announces_21m_series_a/)
 - url: https://vercel.com/blog/zeit-is-now-vercel
 ---
 
-## [6][Reinventing Hooks with React Easy State](https://www.reddit.com/r/reactjs/comments/g5b3wl/reinventing_hooks_with_react_easy_state/)
-- url: https://blog.risingstack.com/reinventing-hooks-with-react-easy-state/
+## [11][I created a simple command-line tool to make a react flask app](https://www.reddit.com/r/reactjs/comments/g5t93e/i_created_a_simple_commandline_tool_to_make_a/)
+- url: https://www.reddit.com/r/reactjs/comments/g5t93e/i_created_a_simple_commandline_tool_to_make_a/
 ---
+&amp;#x200B;
 
-## [7][Hi everyone, I am creating a tutorial for building our own React Blog. I will keep updating the content.](https://www.reddit.com/r/reactjs/comments/g5alsf/hi_everyone_i_am_creating_a_tutorial_for_building/)
-- url: https://www.youtube.com/watch?v=xDZH6WckYC4&amp;list=PLc_uiDBU7n2rP-5wOAoMnCE_bAzMe8_ty&amp;index=2&amp;t=0s
+[demo makeflaskreact](https://reddit.com/link/g5t93e/video/hj2uq9da9au41/player)
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+I made a simple python command-line tool that creates a flask and react application boilerplate to build off of. I had to rebuild my flask and react apps a lot with work and personal projects, so I made it easier for myself. Hope others can find use in it.
+
+&amp;#x200B;
+
+[https://github.com/greysonevins/makeflaskreact](https://github.com/greysonevins/makeflaskreact)
+## [12][[Help] How to drag a scaled element](https://www.reddit.com/r/reactjs/comments/g60bfe/help_how_to_drag_a_scaled_element/)
+- url: https://www.reddit.com/r/reactjs/comments/g60bfe/help_how_to_drag_a_scaled_element/
 ---
+Hi guys. I'm making a dragged image. It works as it should. I also have buttons that scale the image. after scaling, the drug works but it cuts the position. I can't find the right words to describe this behavior.At the first movement the image changes its position slightly
 
-## [8][React Hooks | Context and useContext](https://www.reddit.com/r/reactjs/comments/g5bl77/react_hooks_context_and_usecontext/)
-- url: https://youtu.be/WAYQR0JneE8
----
+what calculations do I need to do too. to get a smooth drag, after scaling an element.
 
-## [9][Rename ZEIT to Vercel by timneutkens · Pull Request #12075 · zeit/next.js](https://www.reddit.com/r/reactjs/comments/g5cpmr/rename_zeit_to_vercel_by_timneutkens_pull_request/)
-- url: https://github.com/zeit/next.js/pull/12075
----
+[https://codesandbox.io/s/laughing-tree-1zqhf?file=/src/App.js](https://codesandbox.io/s/laughing-tree-1zqhf?file=/src/App.js)
 
-## [10][How to create a React Hook to make AJAX calls](https://www.reddit.com/r/reactjs/comments/g5edyy/how_to_create_a_react_hook_to_make_ajax_calls/)
-- url: https://medium.com/@marassi/how-to-create-a-react-hook-to-make-ajax-calls-5d5052e08269?source=friends_link&amp;sk=c91f5f1e74b2adb74ad1802909a1639f
----
-
-## [11][The Quest for the Perfect Dark Mode](https://www.reddit.com/r/reactjs/comments/g4sn5r/the_quest_for_the_perfect_dark_mode/)
-- url: https://joshwcomeau.com/gatsby/dark-mode/
----
-
-## [12][A resume builder built with React.js (Hooks, Context API, and Router) [Second project]](https://www.reddit.com/r/reactjs/comments/g5a5bx/a_resume_builder_built_with_reactjs_hooks_context/)
-- url: https://www.reddit.com/r/reactjs/comments/g5a5bx/a_resume_builder_built_with_reactjs_hooks_context/
----
-Hey, devs! :)
-
-I've been learning React for a few weeks now and I just finished my second project (the [first one](https://github.com/lucasmrl/findheroes) I created to learn about Components and API requests):  
-**A resume builder.**
-
-Link: [https://resumiapp.herokuapp.com/](https://resumiapp.herokuapp.com/)  
-
-
-Github repo: [https://github.com/lucasmrl/resumi](https://github.com/lucasmrl/resumi)
-
-
-I got inspired by [https://flowcv.io/](https://flowcv.io/app/content) where I created my resume a few months ago and then I saw here the work from [u/AmruthPillai](https://www.reddit.com/user/AmruthPillai/) [(link)](https://www.reddit.com/r/reactjs/comments/fp88n0/i_made_a_free_and_opensource_resume_builder_using/) Since I am new, I was not completely able to understand all the code/logic he used, so I decided to put in practice what I have been studying about React and also to learn about Hooks, Context API, and React Router.  
-
-
-After finishing this, "I know that I know nothing". :P
-
-Please, **any feedback** will be much appreciated.
-
-PS: Not mobile-friendly yet.
+Thank you in advance

@@ -87,43 +87,49 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][The next release of create-react-app will include experimental support for React Fast Refresh](https://www.reddit.com/r/javascript/comments/g5a8bi/the_next_release_of_createreactapp_will_include/)
+## [3][[AskJS] Why Javascript is your favorite language ?](https://www.reddit.com/r/javascript/comments/g5xti2/askjs_why_javascript_is_your_favorite_language/)
+- url: https://www.reddit.com/r/javascript/comments/g5xti2/askjs_why_javascript_is_your_favorite_language/
+---
+**1)** Why Javascript is your favorite language ?
+
+**2)** Do you plan in going in another programming speciality / language in the future ? (e.g. C++ 3d graphics, legacy Java, database, something else etc)
+
+**3)** Do you think that Javascrip is more cutting edge than C# or Java or is cannibalizing most of the business programming done by C#, Java etc since 1 language can do backend and frontend now and growing in popularity with frameworks like React / Electron etc ?
+## [4][Node.js v14 released](https://www.reddit.com/r/javascript/comments/g5har3/nodejs_v14_released/)
+- url: https://medium.com/@nodejs/node-js-version-14-available-now-8170d384567e
+---
+
+## [5][Codedoc: Easily create beautiful and modern docs/wiki for your software projects](https://www.reddit.com/r/javascript/comments/g60fmg/codedoc_easily_create_beautiful_and_modern/)
+- url: https://codedoc.cc
+---
+
+## [6][I rebuilt my website using GatsbyJS, and I'm loving it!](https://www.reddit.com/r/javascript/comments/g5x6ry/i_rebuilt_my_website_using_gatsbyjs_and_im_loving/)
+- url: https://amruthpillai.com/
+---
+
+## [7][The Misunderstood Roots of FRP Can Save Programming](https://www.reddit.com/r/javascript/comments/g5wp69/the_misunderstood_roots_of_frp_can_save/)
+- url: https://futureofcoding.org/essays/dctp
+---
+
+## [8][JavaScript under the hood: Execution Context](https://www.reddit.com/r/javascript/comments/g5zxss/javascript_under_the_hood_execution_context/)
+- url: https://www.hackdoor.io/articles/zDJjBJMY/javascript-under-the-hood-execution-context
+---
+
+## [9][[AskJS] IDE for development](https://www.reddit.com/r/javascript/comments/g60zl4/askjs_ide_for_development/)
+- url: https://www.reddit.com/r/javascript/comments/g60zl4/askjs_ide_for_development/
+---
+Which IDE is better? Visual Studio or Webstorm. I have been using VS for almost over a year now, and it seems pretty comfortable to work on. But I came across a post few days ago, where people are of the opinion that WebStorm is even better than VS when it comes to web development.
+
+Now I have used Pycharm for python development, so I know how extremely good IntelliJ editors can be. But I dont want to install something and be disappointed later. So I would like to gather opinions
+## [10][Let is the new Var](https://www.reddit.com/r/javascript/comments/g5zxla/let_is_the_new_var/)
+- url: https://www.hackdoor.io/articles/DoNKGN9k/let-is-the-new-var
+---
+
+## [11][My thoughts on the best tools to document js projects out there (mainly focussed on Vue). What's yours?](https://www.reddit.com/r/javascript/comments/g5ywe2/my_thoughts_on_the_best_tools_to_document_js/)
+- url: https://medium.com/thron-tech/choosing-between-vuepress-storybook-and-vuestyleguidist-102ef7fa6382
+---
+
+## [12][The next release of create-react-app will include experimental support for React Fast Refresh](https://www.reddit.com/r/javascript/comments/g5a8bi/the_next_release_of_createreactapp_will_include/)
 - url: https://github.com/facebook/create-react-app/pull/8582
----
-
-## [4][Dark mode plugin for Next.js with auto mode and without page load glitch](https://www.reddit.com/r/javascript/comments/g50myw/dark_mode_plugin_for_nextjs_with_auto_mode_and/)
-- url: https://github.com/xeoneux/next-dark-mode
----
-
-## [5][Tower Stack - A satisfying &amp; mobile friendly tower building game | Let me know what you think! If you like it maybe share with a friend! :) It would be a blessing](https://www.reddit.com/r/javascript/comments/g537yv/tower_stack_a_satisfying_mobile_friendly_tower/)
-- url: https://3pic.github.io/tower
----
-
-## [6][I tried offloading my typescript compilation to a remote machine](https://www.reddit.com/r/javascript/comments/g5bk9e/i_tried_offloading_my_typescript_compilation_to_a/)
-- url: http://iostreamer.me/caas/2020/04/19/caas.html
----
-
-## [7][Memory game with some basics functionality and 2 breakpoints that needs to be fixed](https://www.reddit.com/r/javascript/comments/g5cz15/memory_game_with_some_basics_functionality_and_2/)
-- url: https://github.com/morphy80/Memory-Game/blob/master/assets/js/script.js
----
-
-## [8][[AskJS] Caniuse but automated by scanning the script?](https://www.reddit.com/r/javascript/comments/g5drjr/askjs_caniuse_but_automated_by_scanning_the_script/)
-- url: https://www.reddit.com/r/javascript/comments/g5drjr/askjs_caniuse_but_automated_by_scanning_the_script/
----
-Is this a thing? I'm curious on how well my code runs on old browsers in theory by doing static analysis on the code.
-## [9][How to Build a Slack App that Sends Automated Birthday Messages to a Channel 🎂 🎉](https://www.reddit.com/r/javascript/comments/g5af1k/how_to_build_a_slack_app_that_sends_automated/)
-- url: https://github.com/JanethL/BirthdaySlackApp/blob/master/README.md
----
-
-## [10][Crystals: I built this infinitely generated open world map that you can fly around in. (Share with a friend! How to make mobile friendly?)](https://www.reddit.com/r/javascript/comments/g532o8/crystals_i_built_this_infinitely_generated_open/)
-- url: https://3pic.github.io/crystal
----
-
-## [11][I made a Spreadsheet engine in Javascript - super-powered spreadsheet engine with objects, arrays, and async support out-of-the-box — comments and suggestions are welcome](https://www.reddit.com/r/javascript/comments/g4o075/i_made_a_spreadsheet_engine_in_javascript/)
-- url: https://github.com/elis/djit
----
-
-## [12][I created a word-guessing game you can play online with friends and family](https://www.reddit.com/r/javascript/comments/g53jzq/i_created_a_wordguessing_game_you_can_play_online/)
-- url: https://github.com/tomanagle/codenames
 ---
 

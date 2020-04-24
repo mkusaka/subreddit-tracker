@@ -19,78 +19,62 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/g0erq1/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (17/2020)?](https://www.reddit.com/r/rust/comments/g4nupj/whats_everyone_working_on_this_week_172020/)
-- url: https://www.reddit.com/r/rust/comments/g4nupj/whats_everyone_working_on_this_week_172020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-17-2020/41247?u=llogiq)!
-## [3][Georgia Tech CS-3210: Write an OS for the Raspberry Pi in Rust](https://www.reddit.com/r/rust/comments/g5poww/georgia_tech_cs3210_write_an_os_for_the_raspberry/)
-- url: https://tc.gts3.org/cs3210/2020/spring/lab.html
+## [2][This Week in Rust 335](https://www.reddit.com/r/rust/comments/g6d0ac/this_week_in_rust_335/)
+- url: https://this-week-in-rust.org/blog/2020/04/21/this-week-in-rust-335/
 ---
 
-## [4][wgpu-rs on the web](https://www.reddit.com/r/rust/comments/g5sfth/wgpurs_on_the_web/)
-- url: https://gfx-rs.github.io/2020/04/21/wgpu-web.html
+## [3][How to speed up the Rust compiler in 2020](https://www.reddit.com/r/rust/comments/g70gro/how_to_speed_up_the_rust_compiler_in_2020/)
+- url: https://blog.mozilla.org/nnethercote/2020/04/24/how-to-speed-up-the-rust-compiler-in-2020/
 ---
 
-## [5][Thank you for ron (Rusty Object Notation)!](https://www.reddit.com/r/rust/comments/g5rlt5/thank_you_for_ron_rusty_object_notation/)
-- url: https://www.reddit.com/r/rust/comments/g5rlt5/thank_you_for_ron_rusty_object_notation/
----
-Quick shout out to the creators of [ron](https://crates.io/crates/ron) (and `serde`, while we're at it). In my hobby project, I've been bitten by JSON's restrictions:
-
-* Keys in maps must be strings.
-* No commenting.
-* Trailing commas are not permitted for when a given element is last in a list/map/object.
-
-`ron` washes its hands of these unpleasant constraints. It's a very pleasant config language to work with. Many thanks to its creators and maintainers.
-## [6][OrbTk 0.3.1-alpha2 release](https://www.reddit.com/r/rust/comments/g60b03/orbtk_031alpha2_release/)
-- url: https://www.reddit.com/r/rust/comments/g60b03/orbtk_031alpha2_release/
----
-Next version of OrbTk is released on [crates.io](https://crates.io)
-
-**Release**
-
-[https://crates.io/crates/orbtk/0.3.1-alpha2](https://crates.io/crates/orbtk/0.3.1-alpha2)
-
-**Changelog**
-
-[https://github.com/redox-os/orbtk/blob/develop/CHANGELOG.md](https://github.com/redox-os/orbtk/blob/develop/CHANGELOG.md)  
-
-
-**Focus next release**  
-
-
-* Better performance
-* Mutli-Window support 
-* Improvements state api
-* More use of async (under the hood and for users)
-## [7][Nushell 0.13.0 - now with aliases, math, startup commands, and more](https://www.reddit.com/r/rust/comments/g5lvct/nushell_0130_now_with_aliases_math_startup/)
-- url: https://www.nushell.sh/blog/2020/04/21/nushell_0_13_0.html
+## [4][Announcing Rust 1.43.0](https://www.reddit.com/r/rust/comments/g6ojnb/announcing_rust_1430/)
+- url: https://blog.rust-lang.org/2020/04/23/Rust-1.43.0.html
 ---
 
-## [8][projects ideas?](https://www.reddit.com/r/rust/comments/g5y1g8/projects_ideas/)
-- url: https://www.reddit.com/r/rust/comments/g5y1g8/projects_ideas/
----
-hey rustaceans, just completed the rust programming language book, can anyone suggest few projects i can add my first contribution to or some project idea i should work on to become more efficient at rust?
-## [9][Pathfinder (Rust GPU vector graphics renderer) is now on crates.io](https://www.reddit.com/r/rust/comments/g5htil/pathfinder_rust_gpu_vector_graphics_renderer_is/)
-- url: https://twitter.com/pcwalton/status/1251254942611849219
+## [5][A Taste of WebGPU in Firefox – Mozilla Hacks - the Web developer blog](https://www.reddit.com/r/rust/comments/g7432k/a_taste_of_webgpu_in_firefox_mozilla_hacks_the/)
+- url: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
 ---
 
-## [10][RFC: Transition to rust-analyzer as our official LSP implementation](https://www.reddit.com/r/rust/comments/g5ckqi/rfc_transition_to_rustanalyzer_as_our_official/)
-- url: https://github.com/rust-lang/rfcs/pull/2912
+## [6][I made optimized game of life in Rust + WASM](https://www.reddit.com/r/rust/comments/g744qu/i_made_optimized_game_of_life_in_rust_wasm/)
+- url: https://deedone.github.io/posts/rust-wasm/
 ---
 
-## [11][Show me the most illegal Rust code you've ever seen/written!](https://www.reddit.com/r/rust/comments/g5rsuh/show_me_the_most_illegal_rust_code_youve_ever/)
-- url: https://www.reddit.com/r/rust/comments/g5rsuh/show_me_the_most_illegal_rust_code_youve_ever/
+## [7][Learning Rust by improving documentation](https://www.reddit.com/r/rust/comments/g768l8/learning_rust_by_improving_documentation/)
+- url: https://www.reddit.com/r/rust/comments/g768l8/learning_rust_by_improving_documentation/
+---
+Newbie here. Still working through The Book. Good stuff.
+
+I'm interested in adding Spanish translations to Rust documentation to increase adoption of Rust.
+
+Is this a good idea? What is the minimum Rust competency level I should achieve in order to start productively translating documentation?
+
+I have never contributed to an open source project and my programming experience is limited to basic Python scripting, so any input would be much appreciated.
+
+Muchas gracias, Rustacean Comrades!
+## [8][I made a clone of Microsoft's classic Minesweeper, because why not](https://www.reddit.com/r/rust/comments/g710ii/i_made_a_clone_of_microsofts_classic_minesweeper/)
+- url: https://github.com/windy1/minswpr
 ---
 
-## [12][Emulsion is a 100% Rust image viewer.](https://www.reddit.com/r/rust/comments/g5d5j9/emulsion_is_a_100_rust_image_viewer/)
-- url: https://www.reddit.com/r/rust/comments/g5d5j9/emulsion_is_a_100_rust_image_viewer/
+## [9]["Unpacking Serde": a series of presentations I made about using Serde](https://www.reddit.com/r/rust/comments/g6ubuv/unpacking_serde_a_series_of_presentations_i_made/)
+- url: https://www.reddit.com/r/rust/comments/g6ubuv/unpacking_serde_a_series_of_presentations_i_made/
 ---
-Emulsion is fast, small, displays transparency properly, and uses GPU acceleration. It's also minimalistic with the design philosophy of being nothing more than an image viewer but being very good at that.
+Hey all, just wanted to share a little series of introductory presentations for Serde I originally wrote for the Utah Rust meetup. It doesn't go into a ton of depth, but it was a lot of fun to write, and I hope somebody finds it helpful or wants to show some of what Rust can do to others with it! There's bound to be mistakes or ways to improve the presentations, and I'd love to hear them too. Links:
 
-Check out the website [https://arturkovacs.github.io/emulsion-website/](https://arturkovacs.github.io/emulsion-website/)
+1. https://docs.google.com/presentation/d/1B3n6iioXYzYZ7WP9yq7l2_eyHOTsr6jUSOU2nfgGPMY/edit#slide=id.p
+2. https://docs.google.com/presentation/d/1nQxbBkHYOAXAcodVk-14th5nXhIYaOaa0cK7UG1bgxk/edit#slide=id.p
+3. https://docs.google.com/presentation/d/16n62-XZ1kpF-lkb2j-jRVnaYeYWZf5EyVy4eBcs0ANc/edit#slide=id.p
+## [10][Why are the binaries so big?](https://www.reddit.com/r/rust/comments/g736sv/why_are_the_binaries_so_big/)
+- url: https://www.reddit.com/r/rust/comments/g736sv/why_are_the_binaries_so_big/
+---
+After compiling my first "hello world" program, I noticed that it had massive 24mb. Then I gave cargo the --release flag, and it dropped to 4. Still, why are these binaries this big? I would expect a few kb for the same program in C.
+Am I missing something?
+## [11][Warp vs Actix Web 2.0](https://www.reddit.com/r/rust/comments/g76dxa/warp_vs_actix_web_20/)
+- url: https://www.reddit.com/r/rust/comments/g76dxa/warp_vs_actix_web_20/
+---
+Hello, right now I have a actix Web 1.0 running in production but I will refactor it to something newer. But because the refactoring is maybe too dramatic changing the framework would be about the same work.
 
-Below are some measurements that measure the time from pressing enter on the image file and having the image shown in the Emulsion window. These were made relying on my reflexes and a stopwatch. Originally I intended to make measurements for Windows' Photos but it's suprisingly difficult to get comparable values because the Photos app on my machine takes around 4-5 seconds to start up after a reboot while emulsion is around half of that. But then Photos takes around 1.3 seconds consistently to load almost any image, large and small alike. Photos loads images progressively which Emulsion doesn't do yet so Emulsion falls short in load time for very high resolutions.
+So thats why I come here to ask you guys, should I upgrade to actix Web 2.0 or change to warp instead ?
+## [12][Discussion on reducing Tokio's "runtime not found" panic confusion.](https://www.reddit.com/r/rust/comments/g6vocl/discussion_on_reducing_tokios_runtime_not_found/)
+- url: https://github.com/tokio-rs/tokio/issues/2435
+---
 
-    4798 * 4798 JPG    1.07 sec
-    2880 * 1800 JPG    0.85 sec
-    194 * 255 PNG      &lt;0.5 sec

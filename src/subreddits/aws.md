@@ -1,93 +1,78 @@
 # aws
-## [1][AWS Africa (Cape Town) region goes live](https://www.reddit.com/r/aws/comments/g5xch0/aws_africa_cape_town_region_goes_live/)
-- url: https://mybroadband.co.za/news/cloud-hosting/349001-aws-cape-town-region-goes-live.html
+## [1][boto3 users, I've built a (hopefully) better reference site for us](https://www.reddit.com/r/aws/comments/g74giy/boto3_users_ive_built_a_hopefully_better/)
+- url: https://www.reddit.com/r/aws/comments/g74giy/boto3_users_ive_built_a_hopefully_better/
+---
+[https://botodocs.com](https://botodocs.com)
+
+&amp;#x200B;
+
+I've released an open-source doc site for boto3. It focuses on making the doc more navigable and clearer docs. Let me know what you think!
+
+It solves some frustrations with the current doc site, e.g:
+
+1. opening some pages like ec2 freezes the page and I have to wait to use it. (terrible for usability)
+2. redundant pseudocode and documentation that make pages extremely long (print preview ec2 shows it's 1700+ pages!)
+3. unclear what parameters are required or optional (unless you like to scroll a lot)
+4. with full refreshes, pages are often slow to load (which disrupts my flow)
+
+Leveraging docsify, it caches pages, have offline search and a great default UI.
+
+It's has full coverage of the boto3 features, viz clients, resources, paginators, etc and it will be deployed frequently so that you can enjoy up-to-date docs.
+
+&amp;#x200B;
+
+Let me know what you think. It's also on github if you want to contribute (or give a star, much appreciated!)
+
+[https://github.com/jeshan/botodocs](https://github.com/jeshan/botodocs)
+## [2][issues with resetting MFA in order to access AWS console](https://www.reddit.com/r/aws/comments/g75t11/issues_with_resetting_mfa_in_order_to_access_aws/)
+- url: https://www.reddit.com/r/aws/comments/g75t11/issues_with_resetting_mfa_in_order_to_access_aws/
+---
+Hi,
+
+its a pity AWS doesnt offer support for multiple U2F keys or at least to have two options available at the same time TOTP and U2F, or even recovery codes option..
+
+but I was trying to do some tests and bypass my MFA with resetting it with e-mail &amp; phone verification, the problem is that even though I have added phone to the "contact information " section in account settings, after step 1(e-mail) on step 2 (phone) i have the following error: "Phone verification could not be completed", no matter what number and country code I put there,
+
+did you also have such issue ?
+
+BR
+## [3][My visual notes on the AWS Transfer Family w/support for FTP, FTPS &amp; SFTP](https://www.reddit.com/r/aws/comments/g6uzsk/my_visual_notes_on_the_aws_transfer_family/)
+- url: https://www.awsgeek.com/AWS-Transfer-Family/
 ---
 
-## [2][AWS launches machine learning enabled search capabilities for COVID-19 dataset](https://www.reddit.com/r/aws/comments/g5jj4t/aws_launches_machine_learning_enabled_search/)
-- url: https://aws.amazon.com/blogs/publicsector/aws-launches-machine-learning-enabled-search-capabilities-covid-19-dataset/
+## [4][CloudWatch Synthetics - Monitor Sites, API Endpoints, Web Workflows, and More](https://www.reddit.com/r/aws/comments/g6u4kc/cloudwatch_synthetics_monitor_sites_api_endpoints/)
+- url: https://aws.amazon.com/blogs/aws/new-use-cloudwatch-synthetics-to-monitor-sites-api-endpoints-web-workflows-and-more/
 ---
 
-## [3][How to remove S3 bucket with period character in name?](https://www.reddit.com/r/aws/comments/g5yp0f/how_to_remove_s3_bucket_with_period_character_in/)
-- url: https://www.reddit.com/r/aws/comments/g5yp0f/how_to_remove_s3_bucket_with_period_character_in/
+## [5][Route my home traffic through AWS, too expensive?](https://www.reddit.com/r/aws/comments/g6sqvt/route_my_home_traffic_through_aws_too_expensive/)
+- url: https://www.reddit.com/r/aws/comments/g6sqvt/route_my_home_traffic_through_aws_too_expensive/
 ---
-Hello!
-
-I am a teacher and my student somehow created a bucket with a period in name.
-
-I have tried remove it using AWS web console:
-
-&gt;Unknown Error. An unexpected error occurred.
-
-I have tried AWS CLI:
-
-&gt;aws s3 rb s3://bucket-name22.04... blah-blah-blah ...An error occurred (NoSuchBucket) when calling the ListObjectsV2 operation: The specified bucket does not exist
-
-After that I realized how great was sin that my student just done (｡•́︿•̀｡)
-
-Please help me to earn  forgiveness of AWS gods and remove this bucket!
-## [4][Main things to consider when comparing RDS to Aurora](https://www.reddit.com/r/aws/comments/g5t8l7/main_things_to_consider_when_comparing_rds_to/)
-- url: https://www.reddit.com/r/aws/comments/g5t8l7/main_things_to_consider_when_comparing_rds_to/
+Im thinking about routing my home networks trafic through an AWS hostet EC2 which runs analysis on my trafic. RIght now i have some security applications on-prem(at home) like Pfsense and the ELK stack, id like to have this in AWS and have my traffic run through it there, however im not sure how expensive something like this would be considering it would be a fuckton of traffic as i play games, stream, download frequently. Anyone who has more knowledge on AWS traffic cost than me who has some input on this?
+## [6][RDS Postgres IAM Authentication w/ Password for users](https://www.reddit.com/r/aws/comments/g77tl7/rds_postgres_iam_authentication_w_password_for/)
+- url: https://www.reddit.com/r/aws/comments/g77tl7/rds_postgres_iam_authentication_w_password_for/
 ---
-Hi all,
+Hi everyone, 
 
-What are the main things to take into consideration when choosing between RDS and Aurora ? Is the price difference between having a completely managed service in Aurora versus managing your RDS yourself worth it ? It's been years since I've had to discuss relational databases so I need a bit of insight ... Thanks !
-## [5][Creating your AWS resources in a declarative and programmatic way with AWS CDK](https://www.reddit.com/r/aws/comments/g5fpco/creating_your_aws_resources_in_a_declarative_and/)
-- url: https://www.reddit.com/r/aws/comments/g5fpco/creating_your_aws_resources_in_a_declarative_and/
+I would like to know if it is possible to set up a Postgres RDS to use IAM users so that users can login to the database as they normally would, just with the IAM username and password? 
+
+I have made an attempt, but I feel something is missing. I created an IAM user with a password. I enabled IAM users on the database. I then added a new user in the database with the same name as the IAM user and gave it the role iam\_user. When I try to login, it says the password is incorrect. 
+
+PS: I want to use passwords instead of the token that expires every 15 minutes because the database clients do not accept the security keys and secrets, they are username/password only.
+## [7][Using Amazon CloudWatch Synthetics and Service Lens | Caylent](https://www.reddit.com/r/aws/comments/g77tgc/using_amazon_cloudwatch_synthetics_and_service/)
+- url: https://caylent.com/using-amazon-cloudwatch-synthetics-and-service-lens
 ---
-Hey guys, 
 
-Here's my latest video on a topic that impacts almost anyone in this group: Infrastructure as Code. 
-
-[https://youtu.be/zSwwwTupoAk](https://youtu.be/zSwwwTupoAk)
-
-The idea is simple -- you can use multiple frameworks to create your AWS services in a repeatable and idempotent way, but I found CDK to be most robust and easy to learn. 
-
-BTW, I still prefer the [Serverless framework](https://serverless.com/framework/docs/providers/aws/guide/intro/) and [SAM](https://aws.amazon.com/serverless/sam/) for my simple, de-coupled, Lambda functions, but when it comes to more complex coupling then CDK is the go-to framework for me. As an example, check out the [Cognito + Lambda functions usage here](https://github.com/vbudilov/aws-cdk-starter/blob/master/src/main/java/com/budilov/cdk/CognitoStack.java#L37). 
-
-Let me know if you have topic recommendations for me for my next explainer video, although I have an itch to scratch when it comes to streaming data ingestion. 
-
-Vladimir
-## [6][Question about Cost Categories (aka wtf are cost categories)](https://www.reddit.com/r/aws/comments/g616dc/question_about_cost_categories_aka_wtf_are_cost/)
-- url: https://www.reddit.com/r/aws/comments/g616dc/question_about_cost_categories_aka_wtf_are_cost/
+## [8][Is there a kinda “factory reset” option for Lightsail?](https://www.reddit.com/r/aws/comments/g6xqqn/is_there_a_kinda_factory_reset_option_for/)
+- url: https://www.reddit.com/r/aws/comments/g6xqqn/is_there_a_kinda_factory_reset_option_for/
 ---
-Every time I read the [intro page](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html) for Cost Categories, I feel like I understand what it's saying, but I can't figure out how it's different than what already exists.
-
-Like the example they give about creating a **Team** category, and then defining values for `Team123` and `Team456`. I can do that already in Cost Explorer on the fly, what do I gain by doing it as a Cost Category? It actually seems _more_ cumbersome to have to pre-define it. Are they basically just a way to save Cost Explorer queries, or is there something else that I'm missing?
-## [7][Security group with rules for both public and private IP adress possible?](https://www.reddit.com/r/aws/comments/g614zk/security_group_with_rules_for_both_public_and/)
-- url: https://www.reddit.com/r/aws/comments/g614zk/security_group_with_rules_for_both_public_and/
+I’ve messed my site up and want to just start over. I have a backup but a lot of the backend stuff is broken so I just need to set it up as new. I still own the domain through AWS.
+## [9][Amazon Appflow](https://www.reddit.com/r/aws/comments/g6u4yy/amazon_appflow/)
+- url: https://www.reddit.com/r/aws/comments/g6u4yy/amazon_appflow/
 ---
-I have an EC2 behind an NLB. I want the public IP of the EC2 only to be accessible on port 22, and on the private IP which is used by the NLB illl use port 80 and 443. Is this possible to do in a Security Group?
+ [https://techcrunch.com/2020/04/22/aws-launches-amazon-appflow-its-new-saas-integration-service/](https://techcrunch.com/2020/04/22/aws-launches-amazon-appflow-its-new-saas-integration-service/) 
 
-Eg  
-SG:  
-Ingress port 22 Destination: PublicIP
-
-Ingress port 80, 443: Destination: PrivateIP
-
-Or something like that.
-## [8][Lambda - Secrets Manager - VPC Endpoint](https://www.reddit.com/r/aws/comments/g60sde/lambda_secrets_manager_vpc_endpoint/)
-- url: https://www.reddit.com/r/aws/comments/g60sde/lambda_secrets_manager_vpc_endpoint/
+Is this a direct attack against companies like [Segment.io](https://Segment.io) and [Funnel.Io](https://Funnel.Io)?
+## [10][Amazon Keyspaces (Managed Cassandra) Now GA](https://www.reddit.com/r/aws/comments/g70w93/amazon_keyspaces_managed_cassandra_now_ga/)
+- url: https://aws.amazon.com/blogs/aws/new-amazon-keyspaces-for-apache-cassandra-is-now-generally-available/
 ---
-I have a Lambda running in a VPC (Account A), and want to access Secrets Manager from Account B. There's an Interface VPC Endpoint for Secrets Manager in Account B (some other services in Account B VPC uses Secrets Manager as well). Currently all calls to Secrets Manager endpoint times out from Lambda.
 
-Do I need an Interface VPC Endpoint for Secrets Manager in Account A as well for Lambda to work?
-## [9][Deep-learning AMI nvidia drivers not talking to the hardware](https://www.reddit.com/r/aws/comments/g60jby/deeplearning_ami_nvidia_drivers_not_talking_to/)
-- url: https://www.reddit.com/r/aws/comments/g60jby/deeplearning_ami_nvidia_drivers_not_talking_to/
----
-I have been getting the following error when I look at the GPU i.e. input using
-
-    nvidia-smi
-
-`NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.`
-
-Looking into this it turns out that they did an update of the AMI I amusing in [March](https://slack-redir.net/link?url=https%3A%2F%2Fforums.aws.amazon.com%2Fann.jspa%3FannID%3D7521) and I had not noticed.
-
-I made a new instance with the updated AMI like suggested here ([https://docs.aws.amazon.com/dlami/latest/devguide/upgrading-dlami.html](https://slack-redir.net/link?url=https%3A%2F%2Fdocs.aws.amazon.com%2Fdlami%2Flatest%2Fdevguide%2Fupgrading-dlami.html)), but I am still getting the same problem.
-
-Does anyone have any ideas?
-## [10][AWS Lambda and Go](https://www.reddit.com/r/aws/comments/g5zyb8/aws_lambda_and_go/)
-- url: https://www.reddit.com/r/aws/comments/g5zyb8/aws_lambda_and_go/
----
-We have a Go application with Mux as the router wrapped in Apex/Gateway all zipped and deployed as a lambda and incoming requests gets routed to the appropriate function, but as I understand this is more of a hack and that each function should have its own Lambda. In refactoring this, would I need to init the DB, SQS, and other required things in each function that needs those or is there a better way of handling this? Or is our way of zipping up the whole application and using it with the Mux router fine?
-
-I'm fairly new to working with AWS so I want to make sure I set this up correctly.

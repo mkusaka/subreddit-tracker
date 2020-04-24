@@ -1,5 +1,41 @@
 # reduxjs
-## [1][Fully Offline Progressive Web App Journal](https://www.reddit.com/r/reduxjs/comments/g5pdlv/fully_offline_progressive_web_app_journal/)
+## [1][Condition rendering failing in React Native Redux App](https://www.reddit.com/r/reduxjs/comments/g70svq/condition_rendering_failing_in_react_native_redux/)
+- url: https://www.reddit.com/r/reduxjs/comments/g70svq/condition_rendering_failing_in_react_native_redux/
+---
+ I'm trying to conditionally render my **redux app** based on if the user is logged in. The relevant &amp; condensed version of my code is below:
+
+    let isLoggedIn = false;
+    
+    export default function App() {
+      console.log('App Executing...');
+      console.log('isLoggedIn: ', isLoggedIn);
+      return (
+        &lt;Provider store={store}&gt;
+          &lt;NavigationContainer&gt;
+            {isLoggedIn ? ContactsTab() : Login()}
+          &lt;/NavigationContainer&gt;
+        &lt;/Provider&gt;
+      );
+    }
+    
+    store.subscribe(() =&gt; {
+      // Set isLoggedIn to true if token is received and reinvoke App()
+      if (store.getState().user.token) {
+        isLoggedIn = true;
+        App();
+      }
+    });
+
+The app starts with console logging **isLoggedIn: false** and displaying **Login()**(as expected). When I login on my phone using the correct credentials, **App()** is re-invoked console logging **isLoggedIn: true**(as expected) but it's still displaying **Login()**. If I set **isLoggedIn = true** inside the app function, the app successfully starts displaying the **ContactsTab()**.
+
+What is happening here? Why is my app not moving to **ContactsTab()** when the value of **isLoggedIn** successfully changes to **true**? How can I fix this?
+
+Thank you for reading along. I have been trying to debug this for the past 2 days with no success so any help would be greatly appreciated!
+## [2][Redux in Worker: Off-main-thread Redux Reducers and Middleware](https://www.reddit.com/r/reduxjs/comments/g6idzp/redux_in_worker_offmainthread_redux_reducers_and/)
+- url: https://medium.com/@dai_shi/redux-in-worker-off-main-thread-redux-reducers-and-middleware-508e0cad8ac6?source=friends_link&amp;sk=e54dee252862e02d6a8a22c527547542
+---
+
+## [3][Fully Offline Progressive Web App Journal](https://www.reddit.com/r/reduxjs/comments/g5pdlv/fully_offline_progressive_web_app_journal/)
 - url: https://www.reddit.com/r/reduxjs/comments/g5pdlv/fully_offline_progressive_web_app_journal/
 ---
 Built with React / Redux on the Frontend and Django Rest on the backend. I have been keeping a journal since I was a kid. Sheltering in place has afforded me some extra time to develop an app to support my hobby of journaling. You don't have to sign up to start using it. I use the localStorage API to cache things locally. If you want to use the Django backend to sync journal entries between devices then that will require you to sign up. I hope you guys / gals enjoy! Stay safe out there!
@@ -9,7 +45,7 @@ Frontend Source Code: [https://github.com/strap8/llexicon](https://github.com/st
 Backend Source Code: [https://github.com/strap8/llexicon-db](https://github.com/strap8/llexicon-db)
 
 Production link: [https://www.astraltree.com](https://www.astraltree.com/)
-## [2][Redux-toolkit is the quickest and easiest way to write reducers and keep store state I’ve found so far](https://www.reddit.com/r/reduxjs/comments/g4tdqe/reduxtoolkit_is_the_quickest_and_easiest_way_to/)
+## [4][Redux-toolkit is the quickest and easiest way to write reducers and keep store state I’ve found so far](https://www.reddit.com/r/reduxjs/comments/g4tdqe/reduxtoolkit_is_the_quickest_and_easiest_way_to/)
 - url: https://www.reddit.com/r/reduxjs/comments/g4tdqe/reduxtoolkit_is_the_quickest_and_easiest_way_to/
 ---
 It is now the standard for writing redux logic.
@@ -19,11 +55,11 @@ I've been using redux-toolkit for 3 months and I am enjoying it so much! it simp
 It makes your code shorter and easier to understand and enforces you to follow best practice (normalizing, selectors, typing, etc… )
 
 👇🏽You'll find concrete examples and code in the article below 👇🏽[https://blog.theodo.com/2020/01/reduce-redux-boilerplate/](https://blog.theodo.com/2020/01/reduce-redux-boilerplate/)
-## [3][Decoupled State Interface](https://www.reddit.com/r/reduxjs/comments/g4nxu4/decoupled_state_interface/)
+## [5][Decoupled State Interface](https://www.reddit.com/r/reduxjs/comments/g4nxu4/decoupled_state_interface/)
 - url: https://github.com/gactjs/store/blob/master/docs/decoupled-state-interface.md
 ---
 
-## [4][Normalized Reducer: an easier way to read and write normalized relational reducer state](https://www.reddit.com/r/reduxjs/comments/g3jdjv/normalized_reducer_an_easier_way_to_read_and/)
+## [6][Normalized Reducer: an easier way to read and write normalized relational reducer state](https://www.reddit.com/r/reduxjs/comments/g3jdjv/normalized_reducer_an_easier_way_to_read_and/)
 - url: https://www.reddit.com/r/reduxjs/comments/g3jdjv/normalized_reducer_an_easier_way_to_read_and/
 ---
 [**Normalized Reducer**](https://github.com/brietsparks/normalized-reducer) helps you manage normalized relational state without requiring any reducer/action boilerplate.
@@ -35,11 +71,11 @@ Additionally, it integrates with Normalizr. First denormalize your data with Nor
 To help decide whether this library is right for you, there is a [comparison to Redux ORM and Redux Toolkit's entity adapter](https://github.com/brietsparks/normalized-reducer#comparison-to-alternatives). Key points: Relational Reducer is lighter, zero dep, framework agnostic, and covers some important use-cases the others are missing. However, it (currently) has fewer selector features than Redux ORM and is less mature than both.
 
 Thanks for reading, and I hope this helps build stuff faster!
-## [5][Gact Store White Paper](https://www.reddit.com/r/reduxjs/comments/g3q2lj/gact_store_white_paper/)
+## [7][Gact Store White Paper](https://www.reddit.com/r/reduxjs/comments/g3q2lj/gact_store_white_paper/)
 - url: https://github.com/gactjs/store/blob/master/docs/white-paper.md
 ---
 
-## [6][Keeping the userActions DRY in redux](https://www.reddit.com/r/reduxjs/comments/g2wey8/keeping_the_useractions_dry_in_redux/)
+## [8][Keeping the userActions DRY in redux](https://www.reddit.com/r/reduxjs/comments/g2wey8/keeping_the_useractions_dry_in_redux/)
 - url: https://www.reddit.com/r/reduxjs/comments/g2wey8/keeping_the_useractions_dry_in_redux/
 ---
 So, I've defined userActions and I see the same pattern over and over again. So, just wanted to know if that's the correct way of writing action creators and thunks. Also, I've defined all the actions in a single file and wondering if I should separate them or not. The code works fine but clean code is always better. 
@@ -263,7 +299,7 @@ export const getUserPosts = (id) =&gt; {
   }
 }
 ```
-## [7][How do we try to get data directly under streams? why does it has undefined and data?](https://www.reddit.com/r/reduxjs/comments/g304ob/how_do_we_try_to_get_data_directly_under_streams/)
+## [9][How do we try to get data directly under streams? why does it has undefined and data?](https://www.reddit.com/r/reduxjs/comments/g304ob/how_do_we_try_to_get_data_directly_under_streams/)
 - url: https://www.reddit.com/r/reduxjs/comments/g304ob/how_do_we_try_to_get_data_directly_under_streams/
 ---
 The problem is when I bring the data from backend, There will be undefined under streams reducer, but if I same data and act as fake backend, I wont get undefined.
@@ -273,29 +309,9 @@ The problem is when I bring the data from backend, There will be undefined under
 &amp;#x200B;
 
 [When bringing data from fake backend](https://preview.redd.it/h8ayi9705dt41.png?width=1192&amp;format=png&amp;auto=webp&amp;s=63e32e08a66f8e725e1b7b555b2b29a51eb31356)
-## [8][What is the difference between time travel and undo/redo functionality ?](https://www.reddit.com/r/reduxjs/comments/g2qf27/what_is_the_difference_between_time_travel_and/)
+## [10][What is the difference between time travel and undo/redo functionality ?](https://www.reddit.com/r/reduxjs/comments/g2qf27/what_is_the_difference_between_time_travel_and/)
 - url: https://www.reddit.com/r/reduxjs/comments/g2qf27/what_is_the_difference_between_time_travel_and/
 ---
 Is time travel just capturing a whole snapshot of the state just for debugging purposes during development stage ?
 
 Is undo/redo functionality a more efficient (cpu and RAM wise) version of time traveling that is supposed to be used by users ?
-## [9][Tools for creating a client side database diagram .](https://www.reddit.com/r/reduxjs/comments/g0n3zg/tools_for_creating_a_client_side_database_diagram/)
-- url: https://www.reddit.com/r/reduxjs/comments/g0n3zg/tools_for_creating_a_client_side_database_diagram/
----
-I am trying to make an app in which the state is a little bit complex so I have to make it be like a normalized client side database as suggested in the redux docs  \[[1](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/)\] .
-
-It would be extremely helpful for me if there is any kind of tool/app that allows me to create a client side normalized database diagram , like for example [this](https://erdplus.com/standalone) tool .
-
-Unfortunately this tool does not provide me with types that exists in JS (array for example). I want the tool to allow me to define types like I do in typescript .
-
-Since my database is a single object it would be nice for that tool to make a d.ts file for that object .
-
-Also it would be extremely helpful if that tool would allow me to save my work .
-
-It really feel painful defining my normalized client side database in a d.ts file , I think a tool like the one I described will boost productivity .
-
-I am really noob regarding all that database thing , so sorry what I am asking sounds stupid .
-## [10][Modern React Redux Tutorials with Redux toolkit - 2020](https://www.reddit.com/r/reduxjs/comments/fzx905/modern_react_redux_tutorials_with_redux_toolkit/)
-- url: https://cloudnweb.dev/2020/04/modern-react-redux-tutotials-redux-toolkit/
----
-

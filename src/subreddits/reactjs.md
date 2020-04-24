@@ -109,87 +109,109 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I rebuilt my personal portfolio using GatsbyJS, and I'm loving it!](https://www.reddit.com/r/reactjs/comments/g5uyrt/i_rebuilt_my_personal_portfolio_using_gatsbyjs/)
-- url: https://www.reddit.com/r/reactjs/comments/g5uyrt/i_rebuilt_my_personal_portfolio_using_gatsbyjs/
----
-It's been about 4 years since I started my project, Resume on the Web, where I created a website that portrays who I am and my ever-changing personality. Every once in a while, I revamp the whole thing using new technologies so that I keep myself updated with the latest and greatest, and also gives me a creative outlet to experiment with new design ideas.
-
-This year, I kicked it up a notch by revamping the design of the old boring two-column resume look, to something a lot more vibrant, responsive and effective. I'll keep my words to a minimum and let the website do the talking :)
-
-**Introducing, the brand-new, Resume on the Web:**   
-**https://amruthpillai.com/**
-
-For those who want the technical deets, this version is built with GatsbyJS, a static-site React framework that I wanted to explore recently, as well as Tailwind CSS for the uber-cool utility classes.
-
-As always, the source code for the project is available on GitHub here: https://github.com/AmruthPillai/ResumeOnTheWeb-Gatsby
-
-Please do let me know if you liked it as much as I enjoyed making it! :)
-## [4][6 Awesome Chrome Extension for Github](https://www.reddit.com/r/reactjs/comments/g5jwri/6_awesome_chrome_extension_for_github/)
-- url: https://www.youtube.com/watch?v=0r2JwANUZwo
+## [3][Forms in React Native, The right way 💪💪](https://www.reddit.com/r/reactjs/comments/g6yybh/forms_in_react_native_the_right_way/)
+- url: https://v.redd.it/12ydp3f00ou41
 ---
 
-## [5][What exactly is the definition of a hook?](https://www.reddit.com/r/reactjs/comments/g5zxkp/what_exactly_is_the_definition_of_a_hook/)
-- url: https://www.reddit.com/r/reactjs/comments/g5zxkp/what_exactly_is_the_definition_of_a_hook/
----
-I've been using hooks for a month or so now and while I can use them, I couldn't give a definition of what they are which covers all of them.
-
-The documentation is pretty unhelpful. It describes them as "a special function that lets you “hook into” React features." That doesn't really tell you anything.
-
-Often they are explained in terms of what they replace, the componentDidMount etc lifecycle methods. But for people like me who learned hooks before learning those, that's also unhelpful.
-
-What exactly do useState and useEffect have in common? What exactly is a hook?
-## [6][React App on same server vs. different server from backend](https://www.reddit.com/r/reactjs/comments/g5ztle/react_app_on_same_server_vs_different_server_from/)
-- url: https://www.reddit.com/r/reactjs/comments/g5ztle/react_app_on_same_server_vs_different_server_from/
----
-What's the recommended way of handling the React frontend and the backend? What are the advantages and disadvantages of keeping one server for running both?
-
-I am planning to develop a project running Django and React but I am unsure about the best practices here. Also, I wouldn't know how to deploy an app that is requires two different servers, how would that work?
-## [7][Is a React component supposed to look this ugly? Or am I just bad? Sorry I'm new here.](https://www.reddit.com/r/reactjs/comments/g5zyt8/is_a_react_component_supposed_to_look_this_ugly/)
-- url: https://www.reddit.com/r/reactjs/comments/g5zyt8/is_a_react_component_supposed_to_look_this_ugly/
----
-https://imgur.com/a/t5VCCIQ  
-I made a screenshot of a portion of my code. Conditional properties look so ugly to me and I'm wondering if I'm missing something.
-## [8][Dashboard UI Kit - React Component Library - Open source, Typescript](https://www.reddit.com/r/reactjs/comments/g5zppq/dashboard_ui_kit_react_component_library_open/)
-- url: https://www.reddit.com/r/reactjs/comments/g5zppq/dashboard_ui_kit_react_component_library_open/
----
-Hey guys, we've been working for quite some time on this library, the focus is really mainly on design, how pretty it is as well as development usability, simple and intuitive API and so on. We'll add more components soon that are missing, such as dialogs etc. Please feel free to drop any feedback!
-
-Screen previews: [https://preview.dashboard-ui.com/](https://preview.dashboard-ui.com/)  
-Docs: [https://developer.dashboard-ui.com/](https://developer.dashboard-ui.com/)  
-Github: [https://github.com/march08/dashboard-ui-kit](https://github.com/march08/dashboard-ui-kit)
-## [9][Just started learning NextJS. What are the tips you wish you know before using on your actual project?](https://www.reddit.com/r/reactjs/comments/g5xgov/just_started_learning_nextjs_what_are_the_tips/)
-- url: https://www.reddit.com/r/reactjs/comments/g5xgov/just_started_learning_nextjs_what_are_the_tips/
----
-1. Was researching about NextJS and was told to not use database logic in serverless functions. 
-2. The first point contradicts the official documents. Official documents strongly advise you to not have a custom server unless really needed but in which scenario would you really need to do to use the custom server?
-3. Do you really need nginx if you have a serverless function using NextJS?
-## [10][ZEIT is now Vercel, announces $21m Series A including Accel, CRV, Naval Ravikant, Nat Friedman, and... Jordan Walke](https://www.reddit.com/r/reactjs/comments/g5cjoe/zeit_is_now_vercel_announces_21m_series_a/)
-- url: https://vercel.com/blog/zeit-is-now-vercel
+## [4][Announcing the Blitz Alpha Release! A Rails-like framework built on Next.js](https://www.reddit.com/r/reactjs/comments/g77pg1/announcing_the_blitz_alpha_release_a_railslike/)
+- url: https://github.com/blitz-js/blitz
 ---
 
-## [11][I created a simple command-line tool to make a react flask app](https://www.reddit.com/r/reactjs/comments/g5t93e/i_created_a_simple_commandline_tool_to_make_a/)
-- url: https://www.reddit.com/r/reactjs/comments/g5t93e/i_created_a_simple_commandline_tool_to_make_a/
+## [5][React and AJAX - The Art of Fetching Data in React](https://www.reddit.com/r/reactjs/comments/g751ri/react_and_ajax_the_art_of_fetching_data_in_react/)
+- url: https://blog.soshace.com/react-and-ajax-the-art-of-fetching-data-in-react/
 ---
-&amp;#x200B;
 
-[demo makeflaskreact](https://reddit.com/link/g5t93e/video/hj2uq9da9au41/player)
+## [6][[Beginners Tutorial] React Hooks: How to set parent component state from within child](https://www.reddit.com/r/reactjs/comments/g6ki1d/beginners_tutorial_react_hooks_how_to_set_parent/)
+- url: https://www.youtube.com/watch?v=-N7auOijZts
+---
+
+## [7][Feature flags — an explainer and interactive demo using React and Mavo](https://www.reddit.com/r/reactjs/comments/g74nin/feature_flags_an_explainer_and_interactive_demo/)
+- url: https://medium.com//feature-flags-an-explainer-and-interactive-demo-using-react-and-mavo-5f84eed3d111?source=friends_link&amp;sk=f5ed799266d6a2e968a8c988573eb3e1
+---
+
+## [8][My take on how to store variables](https://www.reddit.com/r/reactjs/comments/g733fx/my_take_on_how_to_store_variables/)
+- url: https://www.reddit.com/r/reactjs/comments/g733fx/my_take_on_how_to_store_variables/
+---
+I see a lot of questions on how to store variables, when to use useMemo or useState, etc..., so here is my simplified view on their use case.
+
+1: useState
+
+Expect Change: YES
+
+Change Type: Proactive
+
+Trigger hooks/renders on change: YES
 
 &amp;#x200B;
 
+2: useMemo (storing a variable) / useCallback (storing a function)
+
+Expect Potential Change: YES
+
+Change Type: Reactive
+
+Trigger hooks/renders on change: YES
+
+Computing cost: Heavy (thus use dependencies for reevaluation)
+
 &amp;#x200B;
 
-I made a simple python command-line tool that creates a flask and react application boilerplate to build off of. I had to rebuild my flask and react apps a lot with work and personal projects, so I made it easier for myself. Hope others can find use in it.
+3: variable declaration inside a react component without any hook
+
+Expect Potential Change: YES
+
+Change Type: Reactive
+
+Trigger hooks/renders on change: YES
+
+Computing cost: low (thus it's better to reevaluate at each rerender)
 
 &amp;#x200B;
 
-[https://github.com/greysonevins/makeflaskreact](https://github.com/greysonevins/makeflaskreact)
-## [12][[Help] How to drag a scaled element](https://www.reddit.com/r/reactjs/comments/g60bfe/help_how_to_drag_a_scaled_element/)
-- url: https://www.reddit.com/r/reactjs/comments/g60bfe/help_how_to_drag_a_scaled_element/
+4: useRef
+
+Expect Change: YES/NO
+
+Change Type: Proactive
+
+Trigger Hooks/renders on change: NO
+
+Specific to component: YES
+
+&amp;#x200B;
+
+5: variable declaration in outer scope.
+
+Expect Change: IRRELEVANT
+
+Trigger Hooks/renders on change: NO
+
+Specific to component: NO
+## [9][Custom Hooks in React: The Ultimate UI Abstraction Layer - Tanner Linsley | JSConf Hawaii 2020](https://www.reddit.com/r/reactjs/comments/g72tn0/custom_hooks_in_react_the_ultimate_ui_abstraction/)
+- url: https://www.youtube.com/watch?v=J-g9ZJha8FE&amp;feature=youtu.be
 ---
-Hi guys. I'm making a dragged image. It works as it should. I also have buttons that scale the image. after scaling, the drug works but it cuts the position. I can't find the right words to describe this behavior.At the first movement the image changes its position slightly
 
-what calculations do I need to do too. to get a smooth drag, after scaling an element.
+## [10][How to add CKEditor to React Js](https://www.reddit.com/r/reactjs/comments/g76oes/how_to_add_ckeditor_to_react_js/)
+- url: https://www.youtube.com/watch?v=ju2e4wIkfB0&amp;feature=share
+---
 
-[https://codesandbox.io/s/laughing-tree-1zqhf?file=/src/App.js](https://codesandbox.io/s/laughing-tree-1zqhf?file=/src/App.js)
+## [11][react-use-sticky-header – Published my first hook](https://www.reddit.com/r/reactjs/comments/g72ecl/reactusestickyheader_published_my_first_hook/)
+- url: https://www.reddit.com/r/reactjs/comments/g72ecl/reactusestickyheader_published_my_first_hook/
+---
+Like the title says, I published my first React hook a couple of days ago. I built the same sticky header twice in a couple of weeks so I decided I should build something I could reuse. 
 
-Thank you in advance
+Im mainly looking for what I could have done better here, or any way to improve the package. 
+
+
+https://www.npmjs.com/package/react-use-sticky-header
+## [12][Using anchors with React: use ref or use querySelector?](https://www.reddit.com/r/reactjs/comments/g764hy/using_anchors_with_react_use_ref_or_use/)
+- url: https://www.reddit.com/r/reactjs/comments/g764hy/using_anchors_with_react_use_ref_or_use/
+---
+Hey all!
+
+I want anchor links in a React page and see two solutions but I hesitate between both:
+
+1. Using classic anchors with the id attribute and, in a useEffect hook, get the target from the URL with document.querySelector
+2. Using refs, placing the ref on the target div and then, in a useEffect hook, scroll to the ref
+
+Both violate the DOM encapsulation at some point so I wonder why not use the simplest solution (the first)? I consider it simpler because using a ref means conditionally setting that ref to the target div while the first solution only requires to use static ids on each div.

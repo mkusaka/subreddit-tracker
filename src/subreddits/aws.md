@@ -1,78 +1,96 @@
 # aws
-## [1][boto3 users, I've built a (hopefully) better reference site for us](https://www.reddit.com/r/aws/comments/g74giy/boto3_users_ive_built_a_hopefully_better/)
-- url: https://www.reddit.com/r/aws/comments/g74giy/boto3_users_ive_built_a_hopefully_better/
+## [1][Is it allowed in ToS to discuss enterprise support cases online?](https://www.reddit.com/r/aws/comments/g7qbd4/is_it_allowed_in_tos_to_discuss_enterprise/)
+- url: https://www.reddit.com/r/aws/comments/g7qbd4/is_it_allowed_in_tos_to_discuss_enterprise/
 ---
-[https://botodocs.com](https://botodocs.com)
+I find myself asking a lot of questions to support for stuff that I can't find already-existing info on, and so I probably open a support case at least once every two weeks or so.
 
-&amp;#x200B;
+The responses are always amazing, and I want to share the info I get online.  In a recent example, I found an flaw (not a security flaw) in one of the AWS provided default IAM policies, and when I wrote to support, they were like, "indeed, we tested it too, the policy is mistaken, we've escalated this to the IAM team, and to work around it here are some ways you can fill in the gaps." It seems like a shame that info is just sitting in my inbox and not on a forum somewhere.
 
-I've released an open-source doc site for boto3. It focuses on making the doc more navigable and clearer docs. Let me know what you think!
-
-It solves some frustrations with the current doc site, e.g:
-
-1. opening some pages like ec2 freezes the page and I have to wait to use it. (terrible for usability)
-2. redundant pseudocode and documentation that make pages extremely long (print preview ec2 shows it's 1700+ pages!)
-3. unclear what parameters are required or optional (unless you like to scroll a lot)
-4. with full refreshes, pages are often slow to load (which disrupts my flow)
-
-Leveraging docsify, it caches pages, have offline search and a great default UI.
-
-It's has full coverage of the boto3 features, viz clients, resources, paginators, etc and it will be deployed frequently so that you can enjoy up-to-date docs.
-
-&amp;#x200B;
-
-Let me know what you think. It's also on github if you want to contribute (or give a star, much appreciated!)
-
-[https://github.com/jeshan/botodocs](https://github.com/jeshan/botodocs)
-## [2][issues with resetting MFA in order to access AWS console](https://www.reddit.com/r/aws/comments/g75t11/issues_with_resetting_mfa_in_order_to_access_aws/)
-- url: https://www.reddit.com/r/aws/comments/g75t11/issues_with_resetting_mfa_in_order_to_access_aws/
----
-Hi,
-
-its a pity AWS doesnt offer support for multiple U2F keys or at least to have two options available at the same time TOTP and U2F, or even recovery codes option..
-
-but I was trying to do some tests and bypass my MFA with resetting it with e-mail &amp; phone verification, the problem is that even though I have added phone to the "contact information " section in account settings, after step 1(e-mail) on step 2 (phone) i have the following error: "Phone verification could not be completed", no matter what number and country code I put there,
-
-did you also have such issue ?
-
-BR
-## [3][My visual notes on the AWS Transfer Family w/support for FTP, FTPS &amp; SFTP](https://www.reddit.com/r/aws/comments/g6uzsk/my_visual_notes_on_the_aws_transfer_family/)
-- url: https://www.awsgeek.com/AWS-Transfer-Family/
+Can I copy paste those responses somewhere?  Do I have to redact the agents name?  Or do I have to reword the issue and solution in my own words?
+## [2][The Extended AWS Security Ramp-Up Guide](https://www.reddit.com/r/aws/comments/g7orbm/the_extended_aws_security_rampup_guide/)
+- url: https://research.nccgroup.com/2020/04/24/the-extended-aws-security-ramp-up-guide/
 ---
 
-## [4][CloudWatch Synthetics - Monitor Sites, API Endpoints, Web Workflows, and More](https://www.reddit.com/r/aws/comments/g6u4kc/cloudwatch_synthetics_monitor_sites_api_endpoints/)
-- url: https://aws.amazon.com/blogs/aws/new-use-cloudwatch-synthetics-to-monitor-sites-api-endpoints-web-workflows-and-more/
+## [3][Making real time dashboard (website) using API gateway, s3 and lambda?](https://www.reddit.com/r/aws/comments/g7spzt/making_real_time_dashboard_website_using_api/)
+- url: https://www.reddit.com/r/aws/comments/g7spzt/making_real_time_dashboard_website_using_api/
 ---
+I am currently making a website that monitors my raspberry pi data (which is stored in dynamoDB) and show it in real time. My aws design goal is to create a serverless realtime web app. So from what I have heard, I can add my static site (I am using vueJS) in S3 and then use the help of API gateway and lambda to get the data. The problem is I am not familiar with websockets. So please forgive me if I say something stupid; So my biggest question is the client side code. Once I have created a websocket API gateway, what should I add in my client side to make it work? I know I can use rest api instead, but since I want the site to be in realtime, I would need to call the API every few second (which is not cost effective).
 
-## [5][Route my home traffic through AWS, too expensive?](https://www.reddit.com/r/aws/comments/g6sqvt/route_my_home_traffic_through_aws_too_expensive/)
-- url: https://www.reddit.com/r/aws/comments/g6sqvt/route_my_home_traffic_through_aws_too_expensive/
+If you have any advice regarding my project or implementation please feel free to give suggestions.
+
+Thank you!
+## [4][We are the AWS AI / ML Team - Ask the Experts - May 18th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/g7gjgg/we_are_the_aws_ai_ml_team_ask_the_experts_may/)
+- url: https://www.reddit.com/r/aws/comments/g7gjgg/we_are_the_aws_ai_ml_team_ask_the_experts_may/
 ---
-Im thinking about routing my home networks trafic through an AWS hostet EC2 which runs analysis on my trafic. RIght now i have some security applications on-prem(at home) like Pfsense and the ELK stack, id like to have this in AWS and have my traffic run through it there, however im not sure how expensive something like this would be considering it would be a fuckton of traffic as i play games, stream, download frequently. Anyone who has more knowledge on AWS traffic cost than me who has some input on this?
-## [6][RDS Postgres IAM Authentication w/ Password for users](https://www.reddit.com/r/aws/comments/g77tl7/rds_postgres_iam_authentication_w_password_for/)
-- url: https://www.reddit.com/r/aws/comments/g77tl7/rds_postgres_iam_authentication_w_password_for/
+Hey [r/aws](https://www.reddit.com/r/aws)! u/AmazonWebServices here.
+
+The AWS AI/ML team will be hosting an Ask the Experts session here **in this thread** to answer any questions you may have about building and training machine learning models with [Amazon SageMaker](https://aws.amazon.com/sagemaker/), as well as any questions you might have about machine learning in general.
+
+Already have questions? Post them below and we'll answer them starting at 9AM PT on May 18, 2020!
+## [5][Architecture deep-dive: How a news aggregator collects and serves up news articles](https://www.reddit.com/r/aws/comments/g7smug/architecture_deepdive_how_a_news_aggregator/)
+- url: https://www.reddit.com/r/aws/comments/g7smug/architecture_deepdive_how_a_news_aggregator/
 ---
-Hi everyone, 
+Hey guys, 
 
-I would like to know if it is possible to set up a Postgres RDS to use IAM users so that users can login to the database as they normally would, just with the IAM username and password? 
+For today's AWS Deep Dive I've interviewed the creators of a news aggregator and conducted an architecture review of their design.  
 
-I have made an attempt, but I feel something is missing. I created an IAM user with a password. I enabled IAM users on the database. I then added a new user in the database with the same name as the IAM user and gave it the role iam\_user. When I try to login, it says the password is incorrect. 
+[https://www.youtube.com/watch?v=XaO8BBgBRH0](https://www.youtube.com/watch?v=XaO8BBgBRH0)
 
-PS: I want to use passwords instead of the token that expires every 15 minutes because the database clients do not accept the security keys and secrets, they are username/password only.
-## [7][Using Amazon CloudWatch Synthetics and Service Lens | Caylent](https://www.reddit.com/r/aws/comments/g77tgc/using_amazon_cloudwatch_synthetics_and_service/)
-- url: https://caylent.com/using-amazon-cloudwatch-synthetics-and-service-lens
+Thanks,
+
+Vladimir
+
+P.S. Subscribe if you find it useful and let me know what else you'd like me to make
+## [6][AWS Amplify - How do I allow federated identity users to only access data that belongs to them via GraphQL queries?](https://www.reddit.com/r/aws/comments/g7nu6y/aws_amplify_how_do_i_allow_federated_identity/)
+- url: https://www.reddit.com/r/aws/comments/g7nu6y/aws_amplify_how_do_i_allow_federated_identity/
 ---
+Hi folks, I've got a mobile app where users sign up/sign in with 'Sign In With Apple' in which a federated identity is created upon sign in. I need to store and fetch data that is only accessible by the user.
 
-## [8][Is there a kinda “factory reset” option for Lightsail?](https://www.reddit.com/r/aws/comments/g6xqqn/is_there_a_kinda_factory_reset_option_for/)
-- url: https://www.reddit.com/r/aws/comments/g6xqqn/is_there_a_kinda_factory_reset_option_for/
----
-I’ve messed my site up and want to just start over. I have a backup but a lot of the backend stuff is broken so I just need to set it up as new. I still own the domain through AWS.
-## [9][Amazon Appflow](https://www.reddit.com/r/aws/comments/g6u4yy/amazon_appflow/)
-- url: https://www.reddit.com/r/aws/comments/g6u4yy/amazon_appflow/
----
- [https://techcrunch.com/2020/04/22/aws-launches-amazon-appflow-its-new-saas-integration-service/](https://techcrunch.com/2020/04/22/aws-launches-amazon-appflow-its-new-saas-integration-service/) 
+How can I make it so users can only access their own data when the app makes GraphQL queries? Which value can I extract from their federated identities that is reliable? Is there a better way to do this?
 
-Is this a direct attack against companies like [Segment.io](https://Segment.io) and [Funnel.Io](https://Funnel.Io)?
-## [10][Amazon Keyspaces (Managed Cassandra) Now GA](https://www.reddit.com/r/aws/comments/g70w93/amazon_keyspaces_managed_cassandra_now_ga/)
-- url: https://aws.amazon.com/blogs/aws/new-amazon-keyspaces-for-apache-cassandra-is-now-generally-available/
+Thanks in advance, I've searched quite hard for this but I can't find a clear cut answer.
+## [7][Possible to point a domain to both an S3 static website and a ELB fronted service?](https://www.reddit.com/r/aws/comments/g7th9c/possible_to_point_a_domain_to_both_an_s3_static/)
+- url: https://www.reddit.com/r/aws/comments/g7th9c/possible_to_point_a_domain_to_both_an_s3_static/
 ---
+So how would this scenario be pulled off?  I've got a static website hosted at www.domain.com.  I've got a service running behind an ELB that I want accessed from www.domain.com/api.  Is this possible? Or is the only way to pull this off is by use of another subdomain such as api.domain.com?
+## [8][How to secure API gateway with PingFederate?](https://www.reddit.com/r/aws/comments/g7suut/how_to_secure_api_gateway_with_pingfederate/)
+- url: https://www.reddit.com/r/aws/comments/g7suut/how_to_secure_api_gateway_with_pingfederate/
+---
+Has anyone integrated REST APIs deployed to AWS API Gateway with PingFederate to implement OAuth 2.0 protocol?
+## [9][Advice with my S3 strategy](https://www.reddit.com/r/aws/comments/g7o36k/advice_with_my_s3_strategy/)
+- url: https://www.reddit.com/r/aws/comments/g7o36k/advice_with_my_s3_strategy/
+---
+This is my first experience with S3 so bear with me.
 
+I'm looking to use S3 to store all the user assets for an app I'm building.  The assets would mostly just include videos and photos, and maybe user avatars.
+
+Since the server I'm hosting the back end on has a slow upstream connection, I was hoping I could offload the work to the client.
+
+So my idea is
+
+1. Client hits my API with a request to upload some content
+2. My server would validate the user, and validate they are a member of the group they are trying to upload too. Then return a temporary signed POST url
+3. Client would then upload to that url
+4. Once they complete the upload, they hit my API again so I can record the asset in my database. 
+
+Then to fetch the data they would:
+
+1. Hit my API for a download link
+2. Server verifies they are authenticated, and are a member of the group
+3. Generate a signed temporary download link, then redirect the client to the URL
+
+Does that make sense?
+
+I'm assuming I can't skip a step and just pipe the request straight to AWS through my server right? As that would still require my severs bandwidth?
+
+In case it matters, the back end is written in Kotlin using the ktor framework, and I'm using the Java SDK 2
+## [10][Cannot ssh to an ecs ec2 instance](https://www.reddit.com/r/aws/comments/g7qq3c/cannot_ssh_to_an_ecs_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/g7qq3c/cannot_ssh_to_an_ecs_ec2_instance/
+---
+I cannot ssh into my ecs ec2 instance even there's a ssh on the ssg inbound rules.
+
+SSH TCP 22 [0.0.0.0/0](https://0.0.0.0/0)
+
+SSH TCP 22 ::/0
+
+Does anyone able to fix this? I can ssh to an ec2 instance not created through ecs though.

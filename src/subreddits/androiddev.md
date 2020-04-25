@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/g77oez/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/g77oez/weekly_anything_goes_thread/
+## [1][App Feedback Thread - April 25, 2020](https://www.reddit.com/r/androiddev/comments/g7sq25/app_feedback_thread_april_25_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/g7sq25/app_feedback_thread_april_25_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - April 20, 2020](https://www.reddit.com/r/androiddev/comments/g4qoms/weekly_questions_thread_april_20_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/g4qoms/weekly_questions_thread_april_20_2020/
 ---
@@ -25,144 +40,242 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android 11 DP3 new function summary: automatically cancel application permissions / share recent apps / Ethernet hotspot / ...](https://www.reddit.com/r/androiddev/comments/g75le9/android_11_dp3_new_function_summary_automatically/)
+## [3][Github Template for starting an Android app project with: 100% Kotlin + Github Actions + ktlint + Detekt + Gradle Kotlin DSL + buildSrc dependencies already set up.](https://www.reddit.com/r/androiddev/comments/g7rhi8/github_template_for_starting_an_android_app/)
+- url: https://github.com/cortinico/kotlin-android-template
+---
+
+## [4][AsyncAndroid - "Be Together even When We're Apart". A new YouTube channel gathering collections of developer-created content from just some of the amazing members of the Android community and publishes them in drops so that we all can share, teach, learn, and connect remotely.](https://www.reddit.com/r/androiddev/comments/g7ncez/asyncandroid_be_together_even_when_were_apart_a/)
+- url: http://youtube.com/asyncandroid
+---
+
+## [5][How to decouple threading and execution (e.g: RxJava, Coroutine) from repositories and use cases?](https://www.reddit.com/r/androiddev/comments/g7qgab/how_to_decouple_threading_and_execution_eg_rxjava/)
+- url: https://www.reddit.com/r/androiddev/comments/g7qgab/how_to_decouple_threading_and_execution_eg_rxjava/
+---
+Decoupling the dependencies into modules will help you to easily maintain the code, test and **replace** dependencies. That's cool, but all the tutorials that I'm watching they are implementing directly RxJava and Coroutine directly into the modules.
+
+High level modules will look something like this:
+
+RxJava:
+
+    fun getUsers(): Observable&lt;List&lt;User&gt;&gt;
+
+Coroutine:
+
+    suspend fun getUsers() = suspendCancellableCoroutine { continuation -&gt;
+       if (!continuation.isCancelled) {
+        ....
+
+And in order to interrupt or cancel the execution, we need to store the RxJava's disposable into a CompositeDisposable and for the Coroutine a list of jobs that we can cancel.
+
+Let's say we're having a RegisterUserUseCase within our ViewModel, and when the onCleared is called we call the use case's class dispose function: 
+
+    fun dispose() {
+       // Rx Java
+       this.compositeDisposable().dispose()
+    
+       // Coroutine
+       this.jobs.forEach { job -&gt; job.cancel() }
+    }
+
+What if in the future I want to replace RxJava or Coroutine with something else? Let's say I want to use Realm/Firebase or some other 3rd party library. Realm and firebase are using their own observable pattern/callbacks and if I remove RxJava or Coroutine I need to refactor the whole module(s), because I directly used RxJava and Coroutine (all functions are declared suspend and I need to remove the suspend name; etc).
+
+Declaring RxJava or Coroutines directly doesn't contradict with the ideaology of clean architecture/S.O.L.I.D? All I can think now is having another layer of abstraction where the interface class are having the basic CRUD operations and lifecycle calls (create/destroy) and within this layer to implement the data storing logic.
+## [6][Dagger SPI - Extending Dagger with custom Dependency Graph validations](https://www.reddit.com/r/androiddev/comments/g7rec1/dagger_spi_extending_dagger_with_custom/)
+- url: https://arunkumar.dev/dagger-spi-building-custom-validations-for-dependency-graphs/
+---
+
+## [7][[Flutter] Google Sign in with Firebase Authentication Tutorial](https://www.reddit.com/r/androiddev/comments/g7oy8c/flutter_google_sign_in_with_firebase/)
+- url: https://youtu.be/FmD1c5DIMYI
+---
+
+## [8][Android 11 DP3 new function summary: automatically cancel application permissions / share recent apps / Ethernet hotspot / ...](https://www.reddit.com/r/androiddev/comments/g75le9/android_11_dp3_new_function_summary_automatically/)
 - url: https://i.redd.it/zfpsc763mqu41.png
 ---
 
-## [4][What was the hardest concept to learn when you started Android?](https://www.reddit.com/r/androiddev/comments/g7093j/what_was_the_hardest_concept_to_learn_when_you/)
-- url: https://www.reddit.com/r/androiddev/comments/g7093j/what_was_the_hardest_concept_to_learn_when_you/
+## [9][Anyone know a way to snoop on creative ad assets (ads under which they advertise) from competitors?](https://www.reddit.com/r/androiddev/comments/g7th1o/anyone_know_a_way_to_snoop_on_creative_ad_assets/)
+- url: https://www.reddit.com/r/androiddev/comments/g7th1o/anyone_know_a_way_to_snoop_on_creative_ad_assets/
 ---
-Noob here, just wanted to see what tripped up the veterans in your early days. I think the initial listview, recyclerview adapter thing tripped me up the most
-## [5][Google Maps SDK Error started popping on last hour](https://www.reddit.com/r/androiddev/comments/g6t8fu/google_maps_sdk_error_started_popping_on_last_hour/)
-- url: https://www.reddit.com/r/androiddev/comments/g6t8fu/google_maps_sdk_error_started_popping_on_last_hour/
+
+## [10][Anyone who Android development with WSL 2 and a real Android device? How do you get the USB to be recognized by Ubuntu?](https://www.reddit.com/r/androiddev/comments/g7szca/anyone_who_android_development_with_wsl_2_and_a/)
+- url: https://www.reddit.com/r/androiddev/comments/g7szca/anyone_who_android_development_with_wsl_2_and_a/
 ---
-    :com.google.android.gms.dynamite_mapsdynamite@201216046@20.12.16 (040306-0) line 9
-    com.google.maps.api.android.lib6.gmm6.vector.ct.&lt;init&gt;
 
-This error started happening on random devices. Does anyone have the same issue?
+## [11][In App Purchases implementation](https://www.reddit.com/r/androiddev/comments/g7swm9/in_app_purchases_implementation/)
+- url: https://www.reddit.com/r/androiddev/comments/g7swm9/in_app_purchases_implementation/
+---
+New to android development and I'm trying to implement a simple non - consumable one time in app purchase for my app, specifically to remove the ads. I have added the managed product in google play console and the 'com.android.billingclient:billing:2.2.0' on my gradle file. After lots of research and random YouTube videos i ended up with this piece of code:
 
-I didn't release anything, didn't change anything about the app.
-
-&amp;#x200B;
-
-My map fragment XML:
-
-    &lt;fragment
-    android:id="@+id/map_stops" android:name="com.google.android.gms.maps.SupportMapFragment" android:layout_width="match_parent" android:layout_height="match_parent" tools:context="com.comprovei.entregas.fragments.TabTripsMapFragment" /&gt;
-
-&amp;#x200B;
-
-The fragment code:
-
-    public class TabTripsMapFragment extends Fragment implements OnMapReadyCallback {
+    public class MainActivity extends AppCompatActivity implements PurchasesUpdatedListener {
     
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        private BillingClient billingClient;
+        private List skuList = new ArrayList();
+        private String sku = "remove_ads";
+        private Button buyBtn;
+       
+       Boolean b = getBoolFromPref(this, "myPref", sku);
+            if (b) {
+    		
+                buyBtn = findViewById(R.id.buyBtn);
+                buyBtn.setVisibility(View.INVISIBLE);
+                buyBtn.setEnabled(false)
+    		
+    		// remove ads here
+    		
+    		} else {
     
-            View view = inflater.inflate(R.layout.tab_fragment_stops_map, null, false);
     
-            ChildFragmentManager()
-                    .findFragmentById(R.id.map_stops);
-            mapFragment.getMapAsync(this);
+                buyBtn = findViewById(R.id.buyBtn);
+                buyBtn.setVisibility(View.VISIBLE);
+                buyBtn.setEnabled(true)
     
-            return view;
-        }
-    
-        @Override
-        public void onMapReady(final GoogleMap googleMap) {
-    
-            ...
-    
-        }
+                        // enable the ads here
     
     }
-
-\---
-
-I'm trying to gather info here:
-
-[https://stackoverflow.com/questions/61395654/google-maps-sdk-error-started-popping-on-last-hour](https://stackoverflow.com/questions/61395654/google-maps-sdk-error-started-popping-on-last-hour)
-
-[https://issuetracker.google.com/issues?q=maps](https://issuetracker.google.com/issues?q=maps)
-
-\--- edit: answer by google
-
-Our engineering team continues to investigate the issue.We will provide an update by Thursday, 2020-04-23 14:30 US/Pacific with current details.Diagnosis: If you see a stack dump starting with the lines:    java.lang.ArrayIndexOutOfBoundsException: length=1; index=12          at com.google.maps.api.android.lib6.gmm6.vector.ct.&lt;init&gt;  ... you are affected by this error.Workaround: None at this time
-
-[https://issuetracker.google.com/issues/154855417](https://issuetracker.google.com/issues/154855417)
-
-\--- update
-
-    ah...@google.com ah...@google.com #5823-04-2020 23:48
-    Update: We have identified a possible root cause for the crash and are undoing the change.
-
-**--- "solution" update**
-
-    en...@google.com&lt;en...@google.com&gt; #201Apr 23, 2020 10:30PM
-    10:30PMSummary: Google Maps SDK is crashing; partially resolved  
-    Description: We believe the root cause of the crashes of Google Maps SDK has been fixed. The fix is being propagated to the affected applications and it is continuing toward resolution at the expected pace. Full resolution is expected to complete by Thursday, 2020-04-23 19:45 US/Pacific.  Customers for whom clearing application data is safe can recommend their users clear data for the applications (not just the cache). 
-    If there is uncertainty about the safety of clearing application data, users can wait for new data to be fetched within 3 hours (many users will see resolution of the problem sooner than this).  
+       
+       
+        private void setupBillingClient() {
     
-    We will provide an update by Thursday, 2020-04-23 19:30 US/Pacific with current details.  
+            billingClient = BillingClient.newBuilder(this).enablePendingPurchases().setListener(this).build();
+            billingClient.startConnection(new BillingClientStateListener() {
+                @Override
+                public void onBillingSetupFinished(BillingResult billingResult) {
     
-    Workaround: Clear application data (not just the cache).
+                    if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+    
+                        loadAllSkus();
+                        
+                    }
+    
+                }
+    
+                @Override
+                public void onBillingServiceDisconnected() {
+    			
+    
+                }
+            });
+        }
+    
+        private void loadAllSkus() {
+    
+            if (billingClient.isReady()) {
+                final SkuDetailsParams params = SkuDetailsParams.newBuilder().setSkusList(skuList).setType(BillingClient.SkuType.INAPP).build();
+    
+                billingClient.querySkuDetailsAsync(params, new SkuDetailsResponseListener() {
+                    @Override
+                    public void onSkuDetailsResponse(BillingResult billingResult, List&lt;SkuDetails&gt; skuDetailsList) {
+                        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+    
+                            for (Object skuDetailsObject : skuDetailsList) {
+    
+                                final SkuDetails skuDetails = (SkuDetails) skuDetailsObject;
+                                if (skuDetails.getSku().equals(sku)) {
+    
+                                    buyBtn = findViewById(R.id.buyBtn);
+                                    buyBtn.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            BillingFlowParams params = BillingFlowParams.newBuilder().setSkuDetails(skuDetails).build();
+                                            billingClient.launchBillingFlow(MainActivity.this, params);
+                                        }
+                                    });
+    
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    
+        @Override
+        public void onPurchasesUpdated(BillingResult billingResult, @Nullable List&lt;Purchase&gt; purchases) {
+    
+            int responseCode = billingResult.getResponseCode();
+    
+            if (responseCode == BillingClient.BillingResponseCode.OK &amp;&amp; purchases != null) {
+    
+                for (Purchase purchase : purchases) {
+    
+                    handlePurchase(purchase);
+    
+                }
+    
+    
+            } else if (responseCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
+    
+                setBoolInPref(this, "myPref", sku, true);
+    			
+            } else if (responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
+    		
+    
+            }
+    
+        }
+    
+        private Boolean getBoolFromPref(Context context, String prefName, String constantName) {
+            SharedPreferences pref = context.getSharedPreferences(prefName, 0); // 0 - for private mode
+    
+            return pref.getBoolean(constantName, false);
+    
+        }
+    
+        private void handlePurchase(Purchase purchase) {
+    
+            if (purchase.getSku().equals(sku) &amp;&amp; purchase.getPurchaseState() == Purchase.PurchaseState.PURCHASED) {
+    
+                setBoolInPref(this, "myPref", sku, true);
+    
+                AcknowledgePurchaseParams acknowledgePurchaseParams =
+                        AcknowledgePurchaseParams.newBuilder()
+                                .setPurchaseToken(purchase.getPurchaseToken())
+                                .build();
+    
+                AcknowledgePurchaseResponseListener acknowledgePurchaseResponseListener = new AcknowledgePurchaseResponseListener() {
+                    @Override
+                    public void onAcknowledgePurchaseResponse(BillingResult billingResult) {
+    
+                       
+    					
+                    }
+    
+                };
+    
+                billingClient.acknowledgePurchase(acknowledgePurchaseParams, acknowledgePurchaseResponseListener);
+    
+                Toast.makeText(this, "Thanks for buying. Ads are now removed. Enjoy.", Toast.LENGTH_SHORT).show();
+    
+    
+            } else if (purchase.getPurchaseState() == Purchase.PurchaseState.PENDING) {
+    		
+                // Here you can confirm to the user that they've started the pending
+                // purchase, and to complete it, they should follow instructions that
+                // are given to them. You can also choose to remind the user in the
+                // future to complete the purchase if you detect that it is still
+                // pending.
+    			
+            }
+    
+        }
+    
+    
+        private void setBoolInPref(Context context, String prefName, String constantName, Boolean val) {
+            SharedPreferences pref = context.getSharedPreferences(prefName, 0); // 0 - for private mode
+    
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean(constantName, val);
+            editor.commit();
+    		
+        }
 
-&amp;#x200B;
-## [6][Which is better on Android: divide by 2 or shift by 1? – Jake Wharton](https://www.reddit.com/r/androiddev/comments/g6npe8/which_is_better_on_android_divide_by_2_or_shift/)
-- url: https://jakewharton.com/which-is-better-on-android-divide-by-two-or-shift-by-one/
+Using the test purchase with myself it seems to work fine. It launches the billing flow fine and after the purchase the ads are removed and also the buyBtn disappears.
+
+However there is a small weird problem.
+
+If i uninstall and then install the app again, the ads re appear, as well the buyBtn. 
+
+But, (and this is where I am really confused) if I click on the buyBtn and restart the app, the ads are removed together with the buyBtn. The billing flow doesn't launch nor there is any other notification.
+## [12][Android 11 Toast Updates](https://www.reddit.com/r/androiddev/comments/g7anno/android_11_toast_updates/)
+- url: https://medium.com/@myrickchow32/android-11-toast-updates-7f1cd2245bc4?source=friends_link&amp;sk=231403e77b7409125b8398c9246b7eb7
 ---
 
-## [7][How do alarm clock apps work?](https://www.reddit.com/r/androiddev/comments/g728hu/how_do_alarm_clock_apps_work/)
-- url: https://www.reddit.com/r/androiddev/comments/g728hu/how_do_alarm_clock_apps_work/
----
-I feel like I’ve read a thousand posts just like [this one](https://stackoverflow.com/questions/29299470/alarmmanager-rtc-wakeup-not-wakes-up-my-android-devices-when-it-is-switched-off) or [this one](https://proandroiddev.com/android-alarmmanager-as-deep-as-possible-909bd5b64792). I certainly have tried both `AlarmManager.setExactAndAllowWhileIdle` and `AlarmManager.setAlarmClock` after reading [the only documentation that exists](https://stackoverflow.com/questions/34699662/how-does-alarmmanager-alarmclockinfos-pendingintent-work) for `setAlarmClock`. You may also rest assured that on Android 10 I tried scheduling consecutive alarms that fire a notification with a full screen intent for a full-screen activity and the `USE_FULL_SCREEN_INTENT` manifest permission, as described by [the missing manual](https://android.jlelse.eu/full-screen-intent-notifications-android-85ea2f5b5dc1) to full-screen intent notifications.
-
-None of that allows subsequent alarms to turn the screen on from a screen-off state after the first alarm within a 9-minute time period. 
-
-All of my test devices ranging from Android 6 to Android 10 have a built-in Clock app that is capable of setting two alarms, one minute apart. Both alarms wake up the screen within milliseconds of the minute I wished it to fire. Both alarms appear to turn the screen on and draw a full-screen activity over the lock screen and gives me a snooze/dismiss affordance, otherwise keeping the phone locked. Amazingly, the alarm I scheduled for a minute after the first one provides the exact same experience as the first one: it too wakes up the phone while the screen is off.
-
-I don't understand how the clock apps' alarm features could possibly be driven by any of the `AlarmManager.set...` methods, if there are power restrictions inhibiting wake behavior on subsequent `AlarmManager.set...` fires [within 9 minutes](https://developer.android.com/training/monitoring-device-state/doze-standby). So what are they doing instead?
-## [8][How to test my app on my computer](https://www.reddit.com/r/androiddev/comments/g75iy3/how_to_test_my_app_on_my_computer/)
-- url: https://www.reddit.com/r/androiddev/comments/g75iy3/how_to_test_my_app_on_my_computer/
----
-Hi all, I'm building an Android app using Python/Kivy (and then pushing it to my phone using Buildozer).
-
-All my code seems to work fine, however I noticed that when I put the app on my phone, there are a few things that the Android environment does, which don't show up on my laptop. One example is the hidden keyboard that will pop up whenever you try and type something, causing things to move.
-
-Instead of constantly making one tweak, then loading it to my phone to check, and then doing it again, I was wandering if there was something I can download that mimics my phone on my laptop, so I can run my testing there?
-
-If it helps, I am pushing my app to my phone using Ubuntu from a virtual box, so I will most likely download this there.
-
-&amp;#x200B;
-
-Thanks all!
-## [9][The ProtonMail Android app is open source](https://www.reddit.com/r/androiddev/comments/g6rd0d/the_protonmail_android_app_is_open_source/)
-- url: https://protonmail.com/blog/android-open-source/
----
-
-## [10][What is your FCM delivery ratio?](https://www.reddit.com/r/androiddev/comments/g716i9/what_is_your_fcm_delivery_ratio/)
-- url: https://www.reddit.com/r/androiddev/comments/g716i9/what_is_your_fcm_delivery_ratio/
----
-Hey - anybody track their FCM delivery ratio? We've been trying for a couple of years to get it close to 100% but the highest we've had it hit is 89%. 
-
-&amp;#x200B;
-
-We randomly get users complaining about not having received a notification, even though we sent it to the FCM server and get an OK response back. It just doesn't seem to make it to the device for those 11%.
-## [11][Seems like Google Maps API is down and causes crashes.](https://www.reddit.com/r/androiddev/comments/g6uq37/seems_like_google_maps_api_is_down_and_causes/)
-- url: https://outage.report/google-maps
----
-
-## [12][PrivacyBreacher - an app showcasing the privacy issues in Android operating system!](https://www.reddit.com/r/androiddev/comments/g73bct/privacybreacher_an_app_showcasing_the_privacy/)
-- url: https://www.reddit.com/r/androiddev/comments/g73bct/privacybreacher_an_app_showcasing_the_privacy/
----
-This Android app can access the following information from your phone *without requesting any permissions*:
-
-1. **Figure out at what time your phone screen turned on/off.**
-2. **Figure out at what time you plugged in or removed your phone charger and wired headphones.**
-3. **Figure out at what time you switched on/off your phone (i.e., it captures the device uptime and ACTION\_SHUTDOWN broadcasts).**
-4. **Access most of your device related information like your phone model, manufacturer etc.**
-5. **Keep track of your WiFi/Mobile data usage.**
-6. **Get a list of all the apps installed on your phone.**
-7. **Construct a 3D visualization of your body movements.**
-
-**Check out more on here:** [**https://github.com/databurn-in/PrivacyBreacher**](https://github.com/databurn-in/PrivacyBreacher)

@@ -119,19 +119,98 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Else Before If](https://www.reddit.com/r/cpp/comments/g76xmg/else_before_if/)
-- url: https://www.fluentcpp.com/2020/04/24/else-before-if/
+## [3][Cefal: library of functional typeclasses using C++20 concepts](https://www.reddit.com/r/cpp/comments/g7mluk/cefal_library_of_functional_typeclasses_using_c20/)
+- url: https://www.reddit.com/r/cpp/comments/g7mluk/cefal_library_of_functional_typeclasses_using_c20/
 ---
+Hi folks,
 
-## [4][2020-04 WG21 mailing is out](https://www.reddit.com/r/cpp/comments/g75uab/202004_wg21_mailing_is_out/)
+Can I get some feedback on pet project I recently worked on?
+
+Here is the link - [https://github.com/dkormalev/cefal](https://github.com/dkormalev/cefal) .
+
+It is kinda a COVID child :) , I started it when switched to WFH due to virus and was working in the evenings for last 5 weeks or so.
+
+I wanted to discover what C++ concepts can give me and I have a soft spot for functional programming idioms, so I decided to create a library with typeclasses a-la Haskell (not the whole Prelude and few of them are modified), but for C++. And it also should provide Range-like operations. And should have performance at least comparable to std algorithms. And should be easy to use. And should have a strange name (cefal is grey mullet in Polish language).
+
+It provides basic set of typeclasses and number of instances for them. You could find examples at [this section of README.md](https://github.com/dkormalev/cefal#examples). Instances are provided for std containers, range views, std optional and also for any class that has proper methods. Of course they build kind of hierarchy, so it is not necessary to provide all instances for your class. Most of them can be derived from basic ones (foldable and monoid).
+
+I took care of performance as well and did some benchmarks. In almost all cases it is not worse than std algorithms and it can as well efficiently use move semantics, if it is supported by types passed to it (results for part of them could be found in README file as well).
+## [4][[UPDATE] Towards a fast single-threaded CSV parser in C++11](https://www.reddit.com/r/cpp/comments/g7aflx/update_towards_a_fast_singlethreaded_csv_parser/)
+- url: https://www.reddit.com/r/cpp/comments/g7aflx/update_towards_a_fast_singlethreaded_csv_parser/
+---
+I made [this](https://www.reddit.com/r/cpp/comments/g4sw1z/towards_a_fast_singlethreaded_csv_parser_written/) post a few days ago asking for advise regarding my implementation of a single-threaded CSV parser. 
+
+GitHub link: https://github.com/p-ranav/csv2
+
+Thanks for all your feedback. Now, this parser:
+
+* Memory maps the input CSV file (or parses from string if content already in memory)
+* Parses without allocations
+* Provides iterators for rows and cells
+
+It's much faster now:
+
+This benchmark measures the average execution time (of 5 runs after 3 warmup runs) for `csv2` to memory-map the input CSV file and iterate over every cell in the CSV.
+
+    MacBook Pro (15-inch, 2019)
+    Processor: 2.4 GHz 8-Core Intel Core i9
+    Memory: 32 GB 2400 MHz DDR4
+    Operating System: macOS Catalina version 10.15.3
+
+### Results (as of 23 APR 2020)
+
+| Dataset | File Size | Rows | Cols | Time |
+|:---     |       ---:|  ---:|  ---:|  ---:|
+| [Denver Crime Data](https://www.kaggle.com/paultimothymooney/denver-crime-data) | 111 MB | 479,100 | 19 | 0.198s |
+| [AirBnb Paris Listings](https://www.kaggle.com/juliatb/airbnb-paris) | 196 MB | 141,730 | 96 | 0.345s |
+| [2015 Flight Delays and Cancellations](https://www.kaggle.com/usdot/flight-delays) | 574 MB | 5,819,079 | 31 | 0.994s |
+| [StackLite: Stack Overflow questions](https://www.kaggle.com/stackoverflow/stacklite) | 870 MB | 17,203,824 | 7 | 1.547s |
+| [Used Cars Dataset](https://www.kaggle.com/austinreese/craigslist-carstrucks-data) | 1.4 GB | 539,768 | 25 | 2.381s |
+| [Title-Based Semantic Subject Indexing](https://www.kaggle.com/hsrobo/titlebased-semantic-subject-indexing) | 3.7 GB | 12,834,026 | 4 | 6.965s|
+| [Bitcoin tweets - 16M tweets](https://www.kaggle.com/alaix14/bitcoin-tweets-20160101-to-20190329) | 4 GB | 47,478,748 | 9 | 7.945s |
+| [DDoS Balanced Dataset](https://www.kaggle.com/devendra416/ddos-datasets) | 6.3 GB | 12,794,627 | 85 | 13.578s |
+| [Seattle Checkouts by Title](https://www.kaggle.com/city-of-seattle/seattle-checkouts-by-title) | 7.1 GB | 34,892,623 | 11 | 15.350s |
+| [SHA-1 password hash dump](https://www.kaggle.com/urvishramaiya/have-i-been-pwnd) | 11 GB | 2,62,974,241 | 2 | 22.069s |
+| [DOHUI NOH scaled_data](https://www.kaggle.com/seaa0612/scaled-data) | 16 GB | 496,782 | 3213 | 34.923s | 
+
+Thanks again for your feedback. This has been fun.
+
+Regards
+## [5][State of UTF-8 support on Windows?](https://www.reddit.com/r/cpp/comments/g7tkd7/state_of_utf8_support_on_windows/)
+- url: https://www.reddit.com/r/cpp/comments/g7tkd7/state_of_utf8_support_on_windows/
+---
+Two years ago, Windows 10 version 1803 started to add support for setting the locale to UTF-8. This enabled the ANSI versions of APIs such as CreateFileA, MessageBoxA, CreateWindowA to use UTF8 instead of the normally used wide-character versions like CreateFileW, MessageBoxW or CreateWindowW.
+
+Since [UTF-8](http://UTF-8everywhere.org/) is widely regarded as the best text encoding I was rejoiced about this update. However, recently I've found out that ReadConsoleA does not handle UTF-8 properly, while the above mentioned APIs (CreateFileA, MessageBoxA, CreateWindowA) do which rose some suspicion in me. To their defense the feature is still in "beta", but I'd like to know whether it makes sense to incorporate using ANSI apis for unicode into new projects. 
+
+So what I'm wondering is... Does it make sense to support ANSI and Unicode in the compilation process (in hopes of a future potential complete UTF-8 implementation)?
+
+From what I know the internal data structures that Microsoft uses are largely UTF-16 and I doubt they changed them to implement this change, what seems more likely to me is dependent on whether the user has 65001 (UTF-8) as their active code page, it converts UTF-8 to UTF-16 and then simply calls the wide character version of that API. I've never seen any official wording on this. So is this just a compatibility hack or a real architectural change under the hood?
+## [6][enum class bitflag](https://www.reddit.com/r/cpp/comments/g7pgq9/enum_class_bitflag/)
+- url: https://www.reddit.com/r/cpp/comments/g7pgq9/enum_class_bitflag/
+---
+So overall, I've been liking the use of enum classes over plain old enums... but going forward, when I want to use them as bit flags, I now get annoyed with having to write the operators overloads for each enum classes that act as bitflags.... I've tried various things so I could implement them easier, but by far the macros seems to be the way to go, and I hate them as much as the next guy
+
+I was thinking though, why not have a varient of enum classes, with bit operators implicitly made and by default, increments its enum values in powers of 2. Life would be a bit more simple...
+
+Side note: Another thing that came to mind as I tried being able to implement the operators, cause of course I've naively tried to just make templated operator overloads that requires the type to be an enum... which didn't go well, which got me thinking, imagine being able to define a template function, but is enabled via "using". Though this is the only case where I saw value in such a thing if it existed
+## [7][Cartesian Tree Container Library](https://www.reddit.com/r/cpp/comments/g7m2m9/cartesian_tree_container_library/)
+- url: https://www.reddit.com/r/cpp/comments/g7m2m9/cartesian_tree_container_library/
+---
+Hello CPP users,
+
+Can I get inputs on a container library I have been working on for a few months. It's on https://github.com/ghochee/predicated_tree. It is an implementation of a https://en.wikipedia.org/wiki/Cartesian_tree. Having never heard of this structure before, I ended up calling it predicated tree / dual predicate tree (and working a lot more to redo the algorithms).
+
+It is built on top of yet another implementation of a tree data structure at https://github.com/ghochee/tree. This container is implemented specifically so I could build requisite iteration and mutation semantics needed by predicated_tree. The container is called raw_tree because both were part of the same git repository earlier.
+
+I am looking for suggestions to improve the template structure and on general usability of the container. Please also let me know if you have problems with processing the documentation.
+
+[Edit: for more detailed notes]
+## [8][2020-04 WG21 mailing is out](https://www.reddit.com/r/cpp/comments/g75uab/202004_wg21_mailing_is_out/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-04
 ---
 
-## [5][CppCast: Postmodern C++ Revisited](https://www.reddit.com/r/cpp/comments/g70agh/cppcast_postmodern_c_revisited/)
-- url: https://cppcast.com/postmodern-cpp-revisted/
----
-
-## [6][Why are C++ trigonometric functions fast, but not that fast ?](https://www.reddit.com/r/cpp/comments/g75r2j/why_are_c_trigonometric_functions_fast_but_not/)
+## [9][Why are C++ trigonometric functions fast, but not that fast ?](https://www.reddit.com/r/cpp/comments/g75r2j/why_are_c_trigonometric_functions_fast_but_not/)
 - url: https://www.reddit.com/r/cpp/comments/g75r2j/why_are_c_trigonometric_functions_fast_but_not/
 ---
 When people try to optimize numerical algorithms, there is a point when the profiler says a significant part of time is spent computing sin, cos, tan, sqrt, etc.
@@ -141,15 +220,15 @@ Re-implementing custom versions is often beneficial in term of CPU time (with tr
 In videogames too, people like to implement faster (but less accurate version alas) of these functions.
 
 So why is std::sin not the fastest possible version ? Is it a matter of branch vs branchless like for std::floor (managing temporary value overflowing has a cost) ? Something else ?
-## [7][WxWidgets or ImGui?](https://www.reddit.com/r/cpp/comments/g77isk/wxwidgets_or_imgui/)
-- url: https://www.reddit.com/r/cpp/comments/g77isk/wxwidgets_or_imgui/
----
-I want to make a calculator. Can't decide which one to use. I think ImGui is some kind of lightweight library. Also, are any of these two good for making 2d games? I'm thinking of using SFML for that.
-## [8][Finding build bottlenecks with C++ Build Insights](https://www.reddit.com/r/cpp/comments/g770xz/finding_build_bottlenecks_with_c_build_insights/)
-- url: https://devblogs.microsoft.com/cppblog/finding-build-bottlenecks-with-cpp-build-insights/
+## [10][CppCast: Postmodern C++ Revisited](https://www.reddit.com/r/cpp/comments/g70agh/cppcast_postmodern_c_revisited/)
+- url: https://cppcast.com/postmodern-cpp-revisted/
 ---
 
-## [9][My cross-platform C++17 window library ESeed Window is now the real deal! Vulkan support on Win32 and now X11!](https://www.reddit.com/r/cpp/comments/g6hg2h/my_crossplatform_c17_window_library_eseed_window/)
+## [11][Else Before If](https://www.reddit.com/r/cpp/comments/g76xmg/else_before_if/)
+- url: https://www.fluentcpp.com/2020/04/24/else-before-if/
+---
+
+## [12][My cross-platform C++17 window library ESeed Window is now the real deal! Vulkan support on Win32 and now X11!](https://www.reddit.com/r/cpp/comments/g6hg2h/my_crossplatform_c17_window_library_eseed_window/)
 - url: https://www.reddit.com/r/cpp/comments/g6hg2h/my_crossplatform_c17_window_library_eseed_window/
 ---
 *Hah, I tried to post this a lil earlier and was wondering why nothing was happening, but I had accidentally posted it to my own profile B) so many intellect!!*
@@ -229,19 +308,3 @@ MacOS is next on the implementation list. I hope to finish it before too long.
 As usual, more details can be found on the [Github Page](https://github.com/elijaharita/eseed-window). If you're interested in the project and updates, consider starring and following me on GitHub! More documentation is on the way after the MacOS implementation is complete &lt;3
 
 I think that's all for this time. Hope everyone is well, have a great day!
-## [10][C++ Fork?](https://www.reddit.com/r/cpp/comments/g72teo/c_fork/)
-- url: https://www.reddit.com/r/cpp/comments/g72teo/c_fork/
----
-Let me start by simply saying that I am fairly new to C++ and this is the first time I am posting to this sub-Reddit. I hope I am not breaking any rules here. 
-
-I have a question:
-
-Would it be possible for C++ to be forked into a newer more modern version like the way Python went from version 2.x to 3.x? Maybe clean-up the language a bit, remove some redundant features etc.
-## [11][TheLartians/Observe - A simple and thread-safe event-listener system for C++17](https://www.reddit.com/r/cpp/comments/g6q844/thelartiansobserve_a_simple_and_threadsafe/)
-- url: https://github.com/TheLartians/Observe
----
-
-## [12][Good C++ source for learning basic code?](https://www.reddit.com/r/cpp/comments/g72ov6/good_c_source_for_learning_basic_code/)
-- url: https://www.reddit.com/r/cpp/comments/g72ov6/good_c_source_for_learning_basic_code/
----
-I’m enrolled in a C++ beginners course, however I get stuck in the teachers lecture notes or sometimes it more than what we actually apply and I get sidetracked. Any website/ source good for learning basic code? I’m stuck on Vectors/Arrays and functions. Any recommendations?

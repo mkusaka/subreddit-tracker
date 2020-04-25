@@ -109,109 +109,65 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Forms in React Native, The right way 💪💪](https://www.reddit.com/r/reactjs/comments/g6yybh/forms_in_react_native_the_right_way/)
-- url: https://v.redd.it/12ydp3f00ou41
+## [3][Morphing Visualizations in React &amp; D3.js - YouTube](https://www.reddit.com/r/reactjs/comments/g7rgny/morphing_visualizations_in_react_d3js_youtube/)
+- url: https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa
 ---
 
-## [4][Announcing the Blitz Alpha Release! A Rails-like framework built on Next.js](https://www.reddit.com/r/reactjs/comments/g77pg1/announcing_the_blitz_alpha_release_a_railslike/)
-- url: https://github.com/blitz-js/blitz
+## [4][I took a look at how useEffect works under the hood](https://www.reddit.com/r/reactjs/comments/g7s4ep/i_took_a_look_at_how_useeffect_works_under_the/)
+- url: https://www.bussieck.com/useeffect-under-the-hood/
 ---
 
-## [5][React and AJAX - The Art of Fetching Data in React](https://www.reddit.com/r/reactjs/comments/g751ri/react_and_ajax_the_art_of_fetching_data_in_react/)
-- url: https://blog.soshace.com/react-and-ajax-the-art-of-fetching-data-in-react/
+## [5][Next.js | Environment Variables and Runtime Configuration](https://www.reddit.com/r/reactjs/comments/g7kb9n/nextjs_environment_variables_and_runtime/)
+- url: https://www.youtube.com/watch?v=Mh9BJNfAVsM&amp;feature=share
 ---
 
-## [6][[Beginners Tutorial] React Hooks: How to set parent component state from within child](https://www.reddit.com/r/reactjs/comments/g6ki1d/beginners_tutorial_react_hooks_how_to_set_parent/)
-- url: https://www.youtube.com/watch?v=-N7auOijZts
+## [6][There are way too many UI libraries. How do you choose one vs another?](https://www.reddit.com/r/reactjs/comments/g7ifjl/there_are_way_too_many_ui_libraries_how_do_you/)
+- url: https://www.reddit.com/r/reactjs/comments/g7ifjl/there_are_way_too_many_ui_libraries_how_do_you/
+---
+I saw Chakra-UI, Theme-UI, Rebass, Ant Design, Priceline one, Semantic UI, Carbon, Microsoft Fluent, Google Material, Reakit, Gestalt and others, including Tailwind CSS.. The list is endless, but how do you choose between them? Most of them follow the same structure AND have the same components (Box, Flex, Card, Spinner, etc) with the same custom attributes (p={2}, mr={2}, etc) but some changes, like css={} or sx={}.
+
+\[Personally\] I'm using React, Typescript and Emotion. I just want an easier way to deal with flexbox/css, I spent one afternoon trying to make it work for a relatively complex responsive layout, without success. I only need a few of these components, so it doesn't make a difference, all libs have them.
+
+\[As a good Reddit user\] I also hope to help anyone having the same question in the future, so feel free to say anything, even if it doesn't fit in my specific scenario.
+## [7][Free Course: Morphing Visualizations in React &amp; D3.js](https://www.reddit.com/r/reactjs/comments/g7r2rm/free_course_morphing_visualizations_in_react_d3js/)
+- url: https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsE
 ---
 
-## [7][Feature flags — an explainer and interactive demo using React and Mavo](https://www.reddit.com/r/reactjs/comments/g74nin/feature_flags_an_explainer_and_interactive_demo/)
-- url: https://medium.com//feature-flags-an-explainer-and-interactive-demo-using-react-and-mavo-5f84eed3d111?source=friends_link&amp;sk=f5ed799266d6a2e968a8c988573eb3e1
+## [8][I made the same web app in Gatsby and Next.js and found Gatsby performed better](https://www.reddit.com/r/reactjs/comments/g79s4e/i_made_the_same_web_app_in_gatsby_and_nextjs_and/)
+- url: https://medium.com/@sidneyalcantara/gatsby-won-against-next-js-in-this-head-to-head-7d446569ec57?source=friends_link&amp;sk=7702bb95b3f2d5f033e9c33bf56ed43a
 ---
 
-## [8][My take on how to store variables](https://www.reddit.com/r/reactjs/comments/g733fx/my_take_on_how_to_store_variables/)
-- url: https://www.reddit.com/r/reactjs/comments/g733fx/my_take_on_how_to_store_variables/
+## [9][Why do people say Gatsby is best suited for "static" sites?](https://www.reddit.com/r/reactjs/comments/g7rjy3/why_do_people_say_gatsby_is_best_suited_for/)
+- url: https://www.reddit.com/r/reactjs/comments/g7rjy3/why_do_people_say_gatsby_is_best_suited_for/
 ---
-I see a lot of questions on how to store variables, when to use useMemo or useState, etc..., so here is my simplified view on their use case.
+I'm making a new site, and I had to choose between Gatsby and Nextjs. I came to the conclusion that, while Gatsby is great, Nextjs is more popular, and more used by "the community", so I thought it would be best. I also thought SSR would have an advantage over Gatsby when serving dynamic content.
 
-1: useState
+However.. in the updated Nextjs docs, it says you should use static rendering whenever possible.. and then it made me wonder why I don't just use Gatsby from the start.
 
-Expect Change: YES
+Even though Gatsby is static, you can still make regular React async api calls from within components, so what's the issue with dynamic in Gatsby?
+## [10][CSS hack: How to set a React Component or dom element as a background image.](https://www.reddit.com/r/reactjs/comments/g7r7bq/css_hack_how_to_set_a_react_component_or_dom/)
+- url: https://medium.com/@ashudeshwal999/css-hack-how-to-set-a-react-component-or-dom-element-as-a-background-image-7b2628662544
+---
 
-Change Type: Proactive
+## [11][Does anyone else's browser go through the "page unresponsive: wait/cancel" routine on Formik's CodeSandbox?](https://www.reddit.com/r/reactjs/comments/g7tfvo/does_anyone_elses_browser_go_through_the_page/)
+- url: https://www.reddit.com/r/reactjs/comments/g7tfvo/does_anyone_elses_browser_go_through_the_page/
+---
+My Chrome (latest stable Chrome on Ubuntu 19.10, i5 cpu, 16gb RAM) browser keeps coming up with the "Page unresponsive" dialog box, asking if I wish to exit, or wait for the page to become responsive.
 
-Trigger hooks/renders on change: YES
+Formik is pretty damn popular, so I'm thinking something is wrong on my end. If not, something is wrong with the tutorial, with Formik, or with CodeSandbox (all unlikely, I know).
+
+[https://codesandbox.io/s/formik-v2-tutorial-final-bq0li](https://codesandbox.io/s/formik-v2-tutorial-final-bq0li) is the link for the "Final Result," as it appears on this page: [https://jaredpalmer.com/formik/docs/tutorial](https://jaredpalmer.com/formik/docs/tutorial)
+
+Anyone that checks this out is greatly appreciated. An answer as to what the cause is, or where the problem lies is even more appreciated!
 
 &amp;#x200B;
 
-2: useMemo (storing a variable) / useCallback (storing a function)
-
-Expect Potential Change: YES
-
-Change Type: Reactive
-
-Trigger hooks/renders on change: YES
-
-Computing cost: Heavy (thus use dependencies for reevaluation)
-
-&amp;#x200B;
-
-3: variable declaration inside a react component without any hook
-
-Expect Potential Change: YES
-
-Change Type: Reactive
-
-Trigger hooks/renders on change: YES
-
-Computing cost: low (thus it's better to reevaluate at each rerender)
-
-&amp;#x200B;
-
-4: useRef
-
-Expect Change: YES/NO
-
-Change Type: Proactive
-
-Trigger Hooks/renders on change: NO
-
-Specific to component: YES
-
-&amp;#x200B;
-
-5: variable declaration in outer scope.
-
-Expect Change: IRRELEVANT
-
-Trigger Hooks/renders on change: NO
-
-Specific to component: NO
-## [9][Custom Hooks in React: The Ultimate UI Abstraction Layer - Tanner Linsley | JSConf Hawaii 2020](https://www.reddit.com/r/reactjs/comments/g72tn0/custom_hooks_in_react_the_ultimate_ui_abstraction/)
-- url: https://www.youtube.com/watch?v=J-g9ZJha8FE&amp;feature=youtu.be
+Thanks in advance redditors! :)
+## [12][Game Engine for ReactJS and portability to React Native](https://www.reddit.com/r/reactjs/comments/g7t0rb/game_engine_for_reactjs_and_portability_to_react/)
+- url: https://www.reddit.com/r/reactjs/comments/g7t0rb/game_engine_for_reactjs_and_portability_to_react/
 ---
-
-## [10][How to add CKEditor to React Js](https://www.reddit.com/r/reactjs/comments/g76oes/how_to_add_ckeditor_to_react_js/)
-- url: https://www.youtube.com/watch?v=ju2e4wIkfB0&amp;feature=share
----
-
-## [11][react-use-sticky-header – Published my first hook](https://www.reddit.com/r/reactjs/comments/g72ecl/reactusestickyheader_published_my_first_hook/)
-- url: https://www.reddit.com/r/reactjs/comments/g72ecl/reactusestickyheader_published_my_first_hook/
----
-Like the title says, I published my first React hook a couple of days ago. I built the same sticky header twice in a couple of weeks so I decided I should build something I could reuse. 
-
-Im mainly looking for what I could have done better here, or any way to improve the package. 
-
-
-https://www.npmjs.com/package/react-use-sticky-header
-## [12][Using anchors with React: use ref or use querySelector?](https://www.reddit.com/r/reactjs/comments/g764hy/using_anchors_with_react_use_ref_or_use/)
-- url: https://www.reddit.com/r/reactjs/comments/g764hy/using_anchors_with_react_use_ref_or_use/
----
-Hey all!
-
-I want anchor links in a React page and see two solutions but I hesitate between both:
-
-1. Using classic anchors with the id attribute and, in a useEffect hook, get the target from the URL with document.querySelector
-2. Using refs, placing the ref on the target div and then, in a useEffect hook, scroll to the ref
-
-Both violate the DOM encapsulation at some point so I wonder why not use the simplest solution (the first)? I consider it simpler because using a ref means conditionally setting that ref to the target div while the first solution only requires to use static ids on each div.
+Hi everyone,  
+I'm a web developer and I recently learned good bases for using ReactJS. I did from the past some games using C and CSFML library at school, and I wanted to know if ReactJS can be good techno to create games (I'm of course not talking about 3D FPS or something like that, more old school game-oriented 2D or a simulation of a 3D).  
+And I also want to know if it will be hard to transfer the ReactJS game to React Native to make usable on the phone?  
+Did not yet learn React Native so don't know.  
+Thanks!

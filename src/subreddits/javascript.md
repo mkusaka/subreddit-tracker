@@ -7,43 +7,64 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][I create a website to play Uno with your friends in the browser! Built with javascript and socket.io](https://www.reddit.com/r/javascript/comments/g6xvtm/i_create_a_website_to_play_uno_with_your_friends/)
-- url: https://www.playuno.net
+## [2][Showoff Saturday (April 25, 2020)](https://www.reddit.com/r/javascript/comments/g7s8h6/showoff_saturday_april_25_2020/)
+- url: https://www.reddit.com/r/javascript/comments/g7s8h6/showoff_saturday_april_25_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][Browser screenshots in JavaScript](https://www.reddit.com/r/javascript/comments/g7nm5x/browser_screenshots_in_javascript/)
+- url: https://github.com/gripeless/pico#readme
 ---
 
-## [3][I trained a recurrent neural network in JavaScript trained to draw dick doodles](https://www.reddit.com/r/javascript/comments/g6opsc/i_trained_a_recurrent_neural_network_in/)
-- url: /r/MachineLearning/comments/g6og9l/p_i_trained_a_recurrent_neural_network_trained_to/
+## [4][I rewrote my Web Extension (60k users) with clean-architecture, typescript, redux-observable](https://www.reddit.com/r/javascript/comments/g7q274/i_rewrote_my_web_extension_60k_users_with/)
+- url: https://github.com/puemos/hls-downloader-web-extension
 ---
 
-## [4][As a learning project, I made an app to view just images/videos from Reddit subs. Filters out text posts and then displays the posts in a neat grid.](https://www.reddit.com/r/javascript/comments/g71n1r/as_a_learning_project_i_made_an_app_to_view_just/)
-- url: https://viewittapp.netlify.app/art
+## [5][[AskJS] Using console.time to calculate the time it takes a block of code to execute](https://www.reddit.com/r/javascript/comments/g7rfga/askjs_using_consoletime_to_calculate_the_time_it/)
+- url: https://www.reddit.com/r/javascript/comments/g7rfga/askjs_using_consoletime_to_calculate_the_time_it/
+---
+Hi All,
+
+I have recently become interested in the web performance side of web development. I'm wondering if the way I'm calculating the amount of time it takes a block of code to run correct and trustworthy?
+
+Essentially what I do is wrap a console.time(), and a console.timeEnd around a block of code like so.
+
+    function copyToClipboard1(e) {
+        console.time('Exec #1');
+        const clipboard = emailInput;
+        clipboard.value = this.value;
+        clipboard.select();
+        document.execCommand("copy");
+        console.timeEnd('Exec #1');
+    }
+
+This then returns something like this `Navigator #1:` [`0.0869140625ms`](https://0.0869140625ms.Is)`.` Is this an efficient way of calculating the speed of a code block. The result each time are usually similar enough?
+## [6][I made the same web app in Gatsby and Next.js and found Gatsby performed better](https://www.reddit.com/r/javascript/comments/g7aiqn/i_made_the_same_web_app_in_gatsby_and_nextjs_and/)
+- url: https://medium.com/@sidneyalcantara/gatsby-won-against-next-js-in-this-head-to-head-7d446569ec57?source=friends_link&amp;sk=7702bb95b3f2d5f033e9c33bf56ed43a
 ---
 
-## [5][js-this! a little utility to edit any text using JS](https://www.reddit.com/r/javascript/comments/g75ruw/jsthis_a_little_utility_to_edit_any_text_using_js/)
-- url: https://github.com/idobh2/node-js-this
+## [7][JavaScript Style Guide: Key takeaways from Google’s Style Guide](https://www.reddit.com/r/javascript/comments/g7qgjl/javascript_style_guide_key_takeaways_from_googles/)
+- url: https://blog.w3radar.com/key-takeaways-google-javascript-style-guide/
 ---
 
-## [6][They Told Me They Wanted a Mobile App. I Said No You Don’t Need That.](https://www.reddit.com/r/javascript/comments/g75ahk/they_told_me_they_wanted_a_mobile_app_i_said_no/)
-- url: https://medium.com/javascript-in-plain-english/they-told-me-they-wanted-a-mobile-app-i-said-no-you-dont-need-that-c3abbf2148f4?source=friends_link&amp;sk=22104bb1711e6079ecd0d75a2486d68d
+## [8][I created a JAMStack template / service for generating portfolio from your JSON Resume](https://www.reddit.com/r/javascript/comments/g7l554/i_created_a_jamstack_template_service_for/)
+- url: https://github.com/jkga/me
 ---
 
-## [7][Finally V1.0 release of Terrain Builder - my fully browser based Procedural Terrain Generator with Hydraulic Erosion. Written entirely in JavaScript using Three.js. Looking for feedback/feature requests. :)](https://www.reddit.com/r/javascript/comments/g6k4v7/finally_v10_release_of_terrain_builder_my_fully/)
-- url: https://github.com/FarazzShaikh/Terrain-Builder
+## [9][CSS hack: How to set a React Component or dom element as a background image.](https://www.reddit.com/r/javascript/comments/g7r6q1/css_hack_how_to_set_a_react_component_or_dom/)
+- url: https://medium.com/@ashudeshwal999/css-hack-how-to-set-a-react-component-or-dom-element-as-a-background-image-7b2628662544
 ---
 
-## [8][Currency internationalization](https://www.reddit.com/r/javascript/comments/g74kns/currency_internationalization/)
-- url: https://eo-locale.netlify.app/blog/money
+## [10][Can JavaScript Detect the Browser's Zoom Level?](https://www.reddit.com/r/javascript/comments/g795aq/can_javascript_detect_the_browsers_zoom_level/)
+- url: https://css-tricks.com/can-javascript-detect-the-browsers-zoom-level/
 ---
 
-## [9][Practical React &amp; Redux - Part 1](https://www.reddit.com/r/javascript/comments/g78dwc/practical_react_redux_part_1/)
-- url: https://www.codegram.com/blog/practical-react-and-redux-part-1
+## [11][Animate style properties of dom elements](https://www.reddit.com/r/javascript/comments/g7tduw/animate_style_properties_of_dom_elements/)
+- url: https://github.com/diwsi/Zump
 ---
 
-## [10][A quick front end starter repo for Typescript, Next.js and TailwindCSS](https://www.reddit.com/r/javascript/comments/g6zfkc/a_quick_front_end_starter_repo_for_typescript/)
-- url: /r/nextjs/comments/g6zen7/a_quick_front_end_starter_repo_for_typescript/
----
-
-## [11][I've had so much fun creating this little real time chat app using GUN (a decentralized database) and Svelte.js. I think it's amazing what you can create in just a few hours using modern web technology!](https://www.reddit.com/r/javascript/comments/g6vhu9/ive_had_so_much_fun_creating_this_little_real/)
-- url: https://phrassed.com/
+## [12][How to set up a CI/CD Pipeline for a node.js app with Github Actions](https://www.reddit.com/r/javascript/comments/g7rnys/how_to_set_up_a_cicd_pipeline_for_a_nodejs_app/)
+- url: https://chathula.dev/how-to-set-up-a-ci-cd-pipeline-for-a-node-js-app-with-github-actions/
 ---
 

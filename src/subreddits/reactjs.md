@@ -109,65 +109,122 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Morphing Visualizations in React &amp; D3.js - YouTube](https://www.reddit.com/r/reactjs/comments/g7rgny/morphing_visualizations_in_react_d3js_youtube/)
-- url: https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa
+## [3][I made a Donald Trump press conference simulator in react.js (create-react-app)](https://www.reddit.com/r/reactjs/comments/g7x8ii/i_made_a_donald_trump_press_conference_simulator/)
+- url: https://www.asktrump.co
 ---
 
-## [4][I took a look at how useEffect works under the hood](https://www.reddit.com/r/reactjs/comments/g7s4ep/i_took_a_look_at_how_useeffect_works_under_the/)
-- url: https://www.bussieck.com/useeffect-under-the-hood/
+## [4][Hey redditors, this is a Material UI guide playlist.. if you wanna learn how to use Material UI in your react app check this out.](https://www.reddit.com/r/reactjs/comments/g8b12p/hey_redditors_this_is_a_material_ui_guide/)
+- url: https://www.youtube.com/playlist?list=PLjLxL3k3_mXiZaWdIg7qi-q6CWUZ92jGt
 ---
 
-## [5][Next.js | Environment Variables and Runtime Configuration](https://www.reddit.com/r/reactjs/comments/g7kb9n/nextjs_environment_variables_and_runtime/)
-- url: https://www.youtube.com/watch?v=Mh9BJNfAVsM&amp;feature=share
+## [5][Using the React Context API for scalable state management](https://www.reddit.com/r/reactjs/comments/g8buzi/using_the_react_context_api_for_scalable_state/)
+- url: https://twitter.com/vorillaz/status/1243306438459564038
 ---
 
-## [6][There are way too many UI libraries. How do you choose one vs another?](https://www.reddit.com/r/reactjs/comments/g7ifjl/there_are_way_too_many_ui_libraries_how_do_you/)
-- url: https://www.reddit.com/r/reactjs/comments/g7ifjl/there_are_way_too_many_ui_libraries_how_do_you/
+## [6][front end first or MERN stack?](https://www.reddit.com/r/reactjs/comments/g8e9wv/front_end_first_or_mern_stack/)
+- url: https://www.reddit.com/r/reactjs/comments/g8e9wv/front_end_first_or_mern_stack/
 ---
-I saw Chakra-UI, Theme-UI, Rebass, Ant Design, Priceline one, Semantic UI, Carbon, Microsoft Fluent, Google Material, Reakit, Gestalt and others, including Tailwind CSS.. The list is endless, but how do you choose between them? Most of them follow the same structure AND have the same components (Box, Flex, Card, Spinner, etc) with the same custom attributes (p={2}, mr={2}, etc) but some changes, like css={} or sx={}.
+Hey, i have a question,  right now i'm following a front end track using react
 
-\[Personally\] I'm using React, Typescript and Emotion. I just want an easier way to deal with flexbox/css, I spent one afternoon trying to make it work for a relatively complex responsive layout, without success. I only need a few of these components, so it doesn't make a difference, all libs have them.
+and my main final goal is MERN stack,
 
-\[As a good Reddit user\] I also hope to help anyone having the same question in the future, so feel free to say anything, even if it doesn't fit in my specific scenario.
-## [7][Free Course: Morphing Visualizations in React &amp; D3.js](https://www.reddit.com/r/reactjs/comments/g7r2rm/free_course_morphing_visualizations_in_react_d3js/)
-- url: https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsE
----
+and i've done many react tutorials and already finished some projects (only front end)
 
-## [8][I made the same web app in Gatsby and Next.js and found Gatsby performed better](https://www.reddit.com/r/reactjs/comments/g79s4e/i_made_the_same_web_app_in_gatsby_and_nextjs_and/)
-- url: https://medium.com/@sidneyalcantara/gatsby-won-against-next-js-in-this-head-to-head-7d446569ec57?source=friends_link&amp;sk=7702bb95b3f2d5f033e9c33bf56ed43a
----
+should i just focus on react and frontend in general and apply for frontend jobs now and learn the backend with node while i'm working
 
-## [9][Why do people say Gatsby is best suited for "static" sites?](https://www.reddit.com/r/reactjs/comments/g7rjy3/why_do_people_say_gatsby_is_best_suited_for/)
-- url: https://www.reddit.com/r/reactjs/comments/g7rjy3/why_do_people_say_gatsby_is_best_suited_for/
----
-I'm making a new site, and I had to choose between Gatsby and Nextjs. I came to the conclusion that, while Gatsby is great, Nextjs is more popular, and more used by "the community", so I thought it would be best. I also thought SSR would have an advantage over Gatsby when serving dynamic content.
-
-However.. in the updated Nextjs docs, it says you should use static rendering whenever possible.. and then it made me wonder why I don't just use Gatsby from the start.
-
-Even though Gatsby is static, you can still make regular React async api calls from within components, so what's the issue with dynamic in Gatsby?
-## [10][CSS hack: How to set a React Component or dom element as a background image.](https://www.reddit.com/r/reactjs/comments/g7r7bq/css_hack_how_to_set_a_react_component_or_dom/)
-- url: https://medium.com/@ashudeshwal999/css-hack-how-to-set-a-react-component-or-dom-element-as-a-background-image-7b2628662544
----
-
-## [11][Does anyone else's browser go through the "page unresponsive: wait/cancel" routine on Formik's CodeSandbox?](https://www.reddit.com/r/reactjs/comments/g7tfvo/does_anyone_elses_browser_go_through_the_page/)
-- url: https://www.reddit.com/r/reactjs/comments/g7tfvo/does_anyone_elses_browser_go_through_the_page/
----
-My Chrome (latest stable Chrome on Ubuntu 19.10, i5 cpu, 16gb RAM) browser keeps coming up with the "Page unresponsive" dialog box, asking if I wish to exit, or wait for the page to become responsive.
-
-Formik is pretty damn popular, so I'm thinking something is wrong on my end. If not, something is wrong with the tutorial, with Formik, or with CodeSandbox (all unlikely, I know).
-
-[https://codesandbox.io/s/formik-v2-tutorial-final-bq0li](https://codesandbox.io/s/formik-v2-tutorial-final-bq0li) is the link for the "Final Result," as it appears on this page: [https://jaredpalmer.com/formik/docs/tutorial](https://jaredpalmer.com/formik/docs/tutorial)
-
-Anyone that checks this out is greatly appreciated. An answer as to what the cause is, or where the problem lies is even more appreciated!
+or just get into node now and finish some full stack projects and apply for a MERN full stack jobs.
 
 &amp;#x200B;
 
-Thanks in advance redditors! :)
-## [12][Game Engine for ReactJS and portability to React Native](https://www.reddit.com/r/reactjs/comments/g7t0rb/game_engine_for_reactjs_and_portability_to_react/)
-- url: https://www.reddit.com/r/reactjs/comments/g7t0rb/game_engine_for_reactjs_and_portability_to_react/
+thanks :)
+## [7][React developers to follow on Twitter](https://www.reddit.com/r/reactjs/comments/g879nz/react_developers_to_follow_on_twitter/)
+- url: https://www.reddit.com/r/reactjs/comments/g879nz/react_developers_to_follow_on_twitter/
 ---
-Hi everyone,  
-I'm a web developer and I recently learned good bases for using ReactJS. I did from the past some games using C and CSFML library at school, and I wanted to know if ReactJS can be good techno to create games (I'm of course not talking about 3D FPS or something like that, more old school game-oriented 2D or a simulation of a 3D).  
-And I also want to know if it will be hard to transfer the ReactJS game to React Native to make usable on the phone?  
-Did not yet learn React Native so don't know.  
-Thanks!
+Hope this isn't breaking any rules, I've been working with React for a while but just started trying to become a part of the community. 
+
+I was wondering if there are people that tweet about related stuff that I can follow or if there are any other places where React developers talk (other than this sub, of course).
+## [8][Beginner Reactjs - Help wanted on the best approach to get the data from API and display in the Page](https://www.reddit.com/r/reactjs/comments/g8ch8z/beginner_reactjs_help_wanted_on_the_best_approach/)
+- url: https://www.reddit.com/r/reactjs/comments/g8ch8z/beginner_reactjs_help_wanted_on_the_best_approach/
+---
+Hello Everyone,
+
+I am an Angular developer and started to learn the React and I have started with a very small piece of code to display the information from the API and I am successfully able to get the What I wished.
+
+But since I have just started and there are many experienced folks out there, Can you please suggest to me If I need to improve something here.
+
+My Objective is very simple there is an API that returns the Array of users and I wanted to iterate over it and display in the HTML.
+
+What I need help is
+
+1. Should I use state inside constructor are there any disadvantages over it, is there anything I can improve here
+2. Where should I fetch the API, is `componentDidMount`  is the best place to invoke the API
+3. Is there any chance that I can improve the performance of my page-load in the below code
+
+Thanks in advance all the experts out there :)
+
+    import React from 'react';
+    
+    interface IUser {
+      userId: number;
+      id: number;
+      title: string;
+      completed: boolean;
+    }
+    
+    export default class Comments extends React.Component&lt;{}, { users: IUser[] }&gt; {
+      constructor(props) {
+        super(props);
+        this.state = {
+          users: [],
+        };
+      }
+    
+      componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/todos')
+          .then((response) =&gt; response.json())
+          .then((users: IUser[]) =&gt; this.setState({ users }));
+      }
+    
+      render() {
+        const { users } = this.state;
+        return (
+          &lt;div&gt;
+            {users.map((user) =&gt; (
+              &lt;div key={user.id}&gt;
+                &lt;h1&gt;{user.title}&lt;/h1&gt;
+              &lt;/div&gt;
+            ))}
+          &lt;/div&gt;
+        );
+      }
+    }
+    
+
+&amp;#x200B;
+## [9][Looking for practice test questions](https://www.reddit.com/r/reactjs/comments/g8ce60/looking_for_practice_test_questions/)
+- url: https://www.reddit.com/r/reactjs/comments/g8ce60/looking_for_practice_test_questions/
+---
+Hi /r/reactjs, I hope this is the right place for this. 
+
+I have got a job technical test next week and would like to get some practice in first.
+
+Can anybody suggest some practice tests I can complete in the mean time?
+
+It is for a senior role so ideally tests that focus on the advanced aspects.
+
+Thanks in advance.
+## [10][Women of React 2020 livestream](https://www.reddit.com/r/reactjs/comments/g8dgo6/women_of_react_2020_livestream/)
+- url: https://www.youtube.com/watch?v=K8MF3aDg-bM
+---
+
+## [11][What is your approach to a dark theme toggler?](https://www.reddit.com/r/reactjs/comments/g88yan/what_is_your_approach_to_a_dark_theme_toggler/)
+- url: https://www.reddit.com/r/reactjs/comments/g88yan/what_is_your_approach_to_a_dark_theme_toggler/
+---
+I know of 3 ways, css variables, conditional classes in components and with a framework like styled components. Not sure which one to choose. I feel like css variables would allow me to write less code because it takes one action to toggle everything, instead of checking for theme in every component.
+## [12][Official website (reactjs.org) is enough to start learning as beginner?](https://www.reddit.com/r/reactjs/comments/g8dzse/official_website_reactjsorg_is_enough_to_start/)
+- url: https://www.reddit.com/r/reactjs/comments/g8dzse/official_website_reactjsorg_is_enough_to_start/
+---
+Hi I'm angular developer, I want to learn reactjs. 
+I want to know is official  website is enough to start learning.
+Are there any suggestions And recommendations.
+Please help me by sharing your thoughts and experience.

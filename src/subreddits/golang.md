@@ -1,51 +1,59 @@
 # golang
-## [1][How We Created a Realtime Patient Monitoring System With Go and Vue in 3 days - kasvith.me](https://www.reddit.com/r/golang/comments/g7px4d/how_we_created_a_realtime_patient_monitoring/)
+## [1][What's coming in Go 1.15 — Slides By Daniel Martí (mvdan)](https://www.reddit.com/r/golang/comments/g8d8jk/whats_coming_in_go_115_slides_by_daniel_martí/)
+- url: https://docs.google.com/presentation/d/1veyF0y6Ynr6AFzd9gXi4foaURlgbMxM-tmB4StDrdAM/edit#slide=id.g550f852d27_228_0
+---
+
+## [2][Chat with Go, React and k8s](https://www.reddit.com/r/golang/comments/g84yg2/chat_with_go_react_and_k8s/)
+- url: https://www.reddit.com/r/golang/comments/g84yg2/chat_with_go_react_and_k8s/
+---
+Hey everybody! 
+I built this simple chat in Golang and React and hosted it in a Kubernetes cluster in AWS. 
+Though it might be useful to share a project with the full CI/CD pipeline.
+
+[github repo](https://github.com/leartgjoni/go-chat-api)
+## [3][[discussion] Why I'm hesitant / afraid of adopting go as main language](https://www.reddit.com/r/golang/comments/g8aujj/discussion_why_im_hesitant_afraid_of_adopting_go/)
+- url: https://www.reddit.com/r/golang/comments/g8aujj/discussion_why_im_hesitant_afraid_of_adopting_go/
+---
+Is this normal behavior in Golang community? [https://i.imgur.com/wu9NAOb.png](https://i.imgur.com/wu9NAOb.png)
+
+What's wrong with that framework? I'd love to use only stdlib but it feel too low level. Are we really expected for each project to manually parse the URL paths and map requests to their handlers? Or do we end up anyway making our own "framework" that we just keep private due to this kind of remarks?
+
+What's wrong with having nice APIs like:
+
+    app.Get("/", func (c *fiber.Ctx) {
+        c.Send("Hello, World!")
+    })
+
+vs. needing to manually parse URL paths and their params?
+
+Why don't we have a better router/mux in the stdlib if people hate so much on these frameworks?
+## [4][How We Created a Realtime Patient Monitoring System With Go and Vue in 3 days - kasvith.me](https://www.reddit.com/r/golang/comments/g7px4d/how_we_created_a_realtime_patient_monitoring/)
 - url: https://kasvith.me/posts/how-we-created-a-realtime-patient-monitoring-system-with-go-and-vue
 ---
 
-## [2][COVID-19 Gophers made by my GF](https://www.reddit.com/r/golang/comments/g79py7/covid19_gophers_made_by_my_gf/)
-- url: https://i.redd.it/84e8h6x74su41.jpg
+## [5][Noise Gate - Golang test runner to get faster test results](https://www.reddit.com/r/golang/comments/g8b4br/noise_gate_golang_test_runner_to_get_faster_test/)
+- url: https://github.com/go-noisegate/noisegate
 ---
 
-## [3][Inlining optimisations in Go by Dave Cheney](https://www.reddit.com/r/golang/comments/g7pvp3/inlining_optimisations_in_go_by_dave_cheney/)
+## [6][GoRemoteFest April 26th 10:00 14:00 GMT](https://www.reddit.com/r/golang/comments/g7u7xc/goremotefest_april_26th_1000_1400_gmt/)
+- url: https://www.reddit.com/r/golang/comments/g7u7xc/goremotefest_april_26th_1000_1400_gmt/
+---
+[https://goremotefest.com/](https://goremotefest.com/)
+## [7][Proper testing pattern a la Python custom testing classes](https://www.reddit.com/r/golang/comments/g81hc0/proper_testing_pattern_a_la_python_custom_testing/)
+- url: https://www.reddit.com/r/golang/comments/g81hc0/proper_testing_pattern_a_la_python_custom_testing/
+---
+I'll just duck in advance, but I'm having a hard time searching for this and getting a positive/negative answer.
+
+Is there a pattern where it's acceptable to embed testing.T in a custom type in order to add common helpers for setup, assertions, etc?
+## [8][Inlining optimisations in Go by Dave Cheney](https://www.reddit.com/r/golang/comments/g7pvp3/inlining_optimisations_in_go_by_dave_cheney/)
 - url: https://dave.cheney.net/2020/04/25/inlining-optimisations-in-go
 ---
 
-## [4][Software to manage redis set/list field expirations](https://www.reddit.com/r/golang/comments/g7teeu/software_to_manage_redis_setlist_field_expirations/)
-- url: https://www.reddit.com/r/golang/comments/g7teeu/software_to_manage_redis_setlist_field_expirations/
----
-I don't know if it's appropriate to post this here or not, I just created a software on go that manages expiration for sets/list fields. Redis doesn't add such functionality (I researched about that and found out that it's because they don't want to add more complexity, I might be wrong on my research tho). I needed such functionality in a project I was working on and made such a microservice and made it open source for everyone's use. It's not documented yet and doesn't even have a license yet but you can probably understand how it works by looking at code and the proto file. It uses gRPC for communication. It's my first open source project so I'd appreciate any comments about that. [Here is the code](https://gitlab.com/ShapedHorizon/redis-set-list-expiration-manager)
-## [5][New (video tutorial) series creating small GO projects](https://www.reddit.com/r/golang/comments/g7t5t2/new_video_tutorial_series_creating_small_go/)
-- url: https://www.reddit.com/r/golang/comments/g7t5t2/new_video_tutorial_series_creating_small_go/
----
-Hi GO community! This is my first attempt at recording a GO tutorial series [you can find the playlist here](https://www.youtube.com/playlist?list=PLxFwlLOncxFILf0gyA7CE1g6uuwxfImpe). 
-
-The plan is to create a series of small projects roughly 10minutes each in length (no more than 20mins) which will leave you with a working application at the end of the video. I will be releasing a video every other week, 3 videos staged and ready to go. The projects will usually leave some loose ends so that you can improve and/or expand on the project yourself, I will discuss some ideas at the end of each video.
-
-I understand this level of teaching will probably be below most members of this subreddit but hopefully, you might pick up a few ideas along the way or fill some time during the lockdown. 
-
-The first video shows you how to [convert a text file to a PDF file using GO](https://youtu.be/STS1Oy1hUFc). The skills shown should give you enough knowledge to create PDF files from other data sources.
-
-If anyone can provide any feedback on improvements or ideas for more projects that will be most helpful.
-
-You can also [follow me on twitter](https://twitter.com/pDigitalUK) if you wish where I will tweet out updates when new GO projects videos are added.
-## [6][Building a Go REST API using Gorm and Fiber!](https://www.reddit.com/r/golang/comments/g7sc47/building_a_go_rest_api_using_gorm_and_fiber/)
-- url: https://www.youtube.com/watch?v=Iq2qT0fRhAA&amp;feature=youtu.be
+## [9][Why for-range behave differently depending on the size of the element](https://www.reddit.com/r/golang/comments/g7wgir/why_forrange_behave_differently_depending_on_the/)
+- url: https://labs.yulrizka.com/en/why-for-range-behave-differently-depending-on-the-size-of-the-element/
 ---
 
-## [7][A way to organize http handler functions and dependencies (inspired by Django's class based views)](https://www.reddit.com/r/golang/comments/g7r85p/a_way_to_organize_http_handler_functions_and/)
-- url: https://github.com/gabrielhora/views/
----
-
-## [8][When you have your git and go commands confused](https://www.reddit.com/r/golang/comments/g7a3z4/when_you_have_your_git_and_go_commands_confused/)
-- url: https://i.redd.it/6e7ycj388su41.jpg
----
-
-## [9][Birthday Gopher Inspired by Another Post](https://www.reddit.com/r/golang/comments/g7dtz9/birthday_gopher_inspired_by_another_post/)
-- url: https://i.redd.it/pp6svyt28tu41.jpg
----
-
-## [10][Leader election for Go apps](https://www.reddit.com/r/golang/comments/g7ok0n/leader_election_for_go_apps/)
-- url: https://github.com/obsidiandynamics/goneli
+## [10][COVID-19 Gophers made by my GF](https://www.reddit.com/r/golang/comments/g79py7/covid19_gophers_made_by_my_gf/)
+- url: https://i.redd.it/84e8h6x74su41.jpg
 ---
 

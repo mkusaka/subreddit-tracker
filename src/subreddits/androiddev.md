@@ -40,242 +40,83 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Github Template for starting an Android app project with: 100% Kotlin + Github Actions + ktlint + Detekt + Gradle Kotlin DSL + buildSrc dependencies already set up.](https://www.reddit.com/r/androiddev/comments/g7rhi8/github_template_for_starting_an_android_app/)
+## [3][SoundSpice, An open-source music player for Android](https://www.reddit.com/r/androiddev/comments/g81olh/soundspice_an_opensource_music_player_for_android/)
+- url: https://i.redd.it/exe6h5wf71v41.png
+---
+
+## [4][Just published my second Medium article, showing you how to create way better logs that show you where a log was made and has a hyperlink so you can jump to it's location, just like with Exceptions. Any Feedback is appreciated.](https://www.reddit.com/r/androiddev/comments/g8bo9k/just_published_my_second_medium_article_showing/)
+- url: https://medium.com/@.me./android-logging-on-steroids-clickable-logs-with-location-info-de1a5c16e86f
+---
+
+## [5][My first app with Kotlin: Coronavirus Stats. Any reviews? (Source code in comments)](https://www.reddit.com/r/androiddev/comments/g7zyn2/my_first_app_with_kotlin_coronavirus_stats_any/)
+- url: https://v.redd.it/r5kap8w8p0v41
+---
+
+## [6][Android 11 interface adjustment: add fast screen capture, multi-tasking to keep up with domestic ROM. After adjustment, the new multitasking management page will display a larger App card.](https://www.reddit.com/r/androiddev/comments/g8adxp/android_11_interface_adjustment_add_fast_screen/)
+- url: https://i.redd.it/0advtsch94v41.png
+---
+
+## [7][Github Template for starting an Android app project with: 100% Kotlin + Github Actions + ktlint + Detekt + Gradle Kotlin DSL + buildSrc dependencies already set up.](https://www.reddit.com/r/androiddev/comments/g7rhi8/github_template_for_starting_an_android_app/)
 - url: https://github.com/cortinico/kotlin-android-template
 ---
 
-## [4][AsyncAndroid - "Be Together even When We're Apart". A new YouTube channel gathering collections of developer-created content from just some of the amazing members of the Android community and publishes them in drops so that we all can share, teach, learn, and connect remotely.](https://www.reddit.com/r/androiddev/comments/g7ncez/asyncandroid_be_together_even_when_were_apart_a/)
-- url: http://youtube.com/asyncandroid
+## [8][Free/Paid Obfuscator](https://www.reddit.com/r/androiddev/comments/g8e9xb/freepaid_obfuscator/)
+- url: https://www.reddit.com/r/androiddev/comments/g8e9xb/freepaid_obfuscator/
 ---
+I need a obfuscator for my app, I dont want that ppl can mod my apk.
 
-## [5][How to decouple threading and execution (e.g: RxJava, Coroutine) from repositories and use cases?](https://www.reddit.com/r/androiddev/comments/g7qgab/how_to_decouple_threading_and_execution_eg_rxjava/)
-- url: https://www.reddit.com/r/androiddev/comments/g7qgab/how_to_decouple_threading_and_execution_eg_rxjava/
+&amp;#x200B;
+
+Anyone knows a cheap and simple solution?
+## [9][Alternatives for (Turn Based) Multiplayer](https://www.reddit.com/r/androiddev/comments/g8e3vo/alternatives_for_turn_based_multiplayer/)
+- url: https://www.reddit.com/r/androiddev/comments/g8e3vo/alternatives_for_turn_based_multiplayer/
 ---
-Decoupling the dependencies into modules will help you to easily maintain the code, test and **replace** dependencies. That's cool, but all the tutorials that I'm watching they are implementing directly RxJava and Coroutine directly into the modules.
+Hey fellow android devs!
 
-High level modules will look something like this:
+Since google has shutdown its multiplayer APIs, I'm looking for a (free) alternative. Currently looking at  [https://playerio.com/](https://playerio.com/) . Does anyone have some experience or other suggestions?
 
-RxJava:
+Just some context: In my game players have a "preparation" phase where they make some strategic decisions and then a "fighting" phase where they cannot interact but just watch how the fight plays out. Some gameplay can be found here:  [https://www.youtube.com/watch?v=s05HF9LPITA](https://www.youtube.com/watch?v=s05HF9LPITA) 
 
-    fun getUsers(): Observable&lt;List&lt;User&gt;&gt;
+So I guess it would be enough if i send the result of the "preparation" phase and then wait for the other player to respond.
 
-Coroutine:
-
-    suspend fun getUsers() = suspendCancellableCoroutine { continuation -&gt;
-       if (!continuation.isCancelled) {
-        ....
-
-And in order to interrupt or cancel the execution, we need to store the RxJava's disposable into a CompositeDisposable and for the Coroutine a list of jobs that we can cancel.
-
-Let's say we're having a RegisterUserUseCase within our ViewModel, and when the onCleared is called we call the use case's class dispose function: 
-
-    fun dispose() {
-       // Rx Java
-       this.compositeDisposable().dispose()
-    
-       // Coroutine
-       this.jobs.forEach { job -&gt; job.cancel() }
-    }
-
-What if in the future I want to replace RxJava or Coroutine with something else? Let's say I want to use Realm/Firebase or some other 3rd party library. Realm and firebase are using their own observable pattern/callbacks and if I remove RxJava or Coroutine I need to refactor the whole module(s), because I directly used RxJava and Coroutine (all functions are declared suspend and I need to remove the suspend name; etc).
-
-Declaring RxJava or Coroutines directly doesn't contradict with the ideaology of clean architecture/S.O.L.I.D? All I can think now is having another layer of abstraction where the interface class are having the basic CRUD operations and lifecycle calls (create/destroy) and within this layer to implement the data storing logic.
-## [6][Dagger SPI - Extending Dagger with custom Dependency Graph validations](https://www.reddit.com/r/androiddev/comments/g7rec1/dagger_spi_extending_dagger_with_custom/)
-- url: https://arunkumar.dev/dagger-spi-building-custom-validations-for-dependency-graphs/
+Any suggestions/feedback is very much appreciated.
+## [10][I can't get my PC to recognize my phone](https://www.reddit.com/r/androiddev/comments/g8dhpi/i_cant_get_my_pc_to_recognize_my_phone/)
+- url: https://www.reddit.com/r/androiddev/comments/g8dhpi/i_cant_get_my_pc_to_recognize_my_phone/
 ---
+Hey guys!
 
-## [7][[Flutter] Google Sign in with Firebase Authentication Tutorial](https://www.reddit.com/r/androiddev/comments/g7oy8c/flutter_google_sign_in_with_firebase/)
-- url: https://youtu.be/FmD1c5DIMYI
+So as the topic says I can't get my PC to recognize my phone..
+
+I have a Xiaomi Redmi Note 4 (Snapdragon) with MIUI 11 Android 7.0 
+
+The problem is that I connect my phone to the PC and nothing happens, doesn't even give me a connect sound and the phone just charges, not giving me any actions to choose from (mtp, ptp, etc). I have USB debugging turned On and still nothing, USB tethering is also grayed out for me. 
+I would love to unlock my bootloader but can't due to this, it doesn't even show up in the device manager at all. I have also never connected my phone to the PC before.
+
+I have tried:
+- A billion different drivers, installing, reinstalling, and so. Sometimes I get a code error 10 (donno if it means anything at all)
+- Restarting my PC and phone a zillion times
+- I tried manually installing "wpdmtp.inf" (C:\Windows\inf)
+- Different USB Cables and Ports (USB 2.0 and 3.0) (although all of them work for my brother's Sony phone except for mine) 
+- Disabled Driver Signature Enforcement (I got a warning sign when installing drivers but it seems it did nothing)
+- Tried multiple PCs (my PC (Win 10) and my dad's PC (Win 7)) 
+- Installed MI suite, MiFlash and such but not even those recognize the phone, it just charged when I connect it to a USB.
+- I enter Fastboot mode and the phone just automatically restarts itself after like 7-10 seconds
+- Recovery mode is stable, doesn't restart but I don't have much options to choose (restart into phone, wipe data, connect to MIassistant)
+
+I am completely lost and trying to figure out WHY it doesn't recognize my phone and only charges. 
+I would appreciate any help and would be grateful for it.
+Thanks in advanced!
+## [11][Question about fragments and activities](https://www.reddit.com/r/androiddev/comments/g8d8o0/question_about_fragments_and_activities/)
+- url: https://www.reddit.com/r/androiddev/comments/g8d8o0/question_about_fragments_and_activities/
 ---
+Hi, I'm in the process of making an Android app for my final year coursework at uni and I've been having trouble using fragments. 
 
-## [8][Android 11 DP3 new function summary: automatically cancel application permissions / share recent apps / Ethernet hotspot / ...](https://www.reddit.com/r/androiddev/comments/g75le9/android_11_dp3_new_function_summary_automatically/)
-- url: https://i.redd.it/zfpsc763mqu41.png
----
+I wanted a navigation drawer and was unsure of how to make one work without using fragments so I've been forced to make every screen of my app a fragment and this has been making my life rather difficult... 
 
-## [9][Anyone know a way to snoop on creative ad assets (ads under which they advertise) from competitors?](https://www.reddit.com/r/androiddev/comments/g7th1o/anyone_know_a_way_to_snoop_on_creative_ad_assets/)
-- url: https://www.reddit.com/r/androiddev/comments/g7th1o/anyone_know_a_way_to_snoop_on_creative_ad_assets/
----
+Every tutorial I look at online creates its examples in an Activity rather than a fragment and then when I try to translate the logic over to a fragment things end up not working. Currently I'm trying to get SQLite working within a fragment. I have managed to get it working within an Activity but cannot for the life of me work out how to get it working in a Fragment. I've found having to use fragments a real boundary to me making any progress with many aspects of my app and I don't really know how to get around it. Is there any kind of set of rules for translating code written in an activity to a fragment? 
 
-## [10][Anyone who Android development with WSL 2 and a real Android device? How do you get the USB to be recognized by Ubuntu?](https://www.reddit.com/r/androiddev/comments/g7szca/anyone_who_android_development_with_wsl_2_and_a/)
-- url: https://www.reddit.com/r/androiddev/comments/g7szca/anyone_who_android_development_with_wsl_2_and_a/
----
-
-## [11][In App Purchases implementation](https://www.reddit.com/r/androiddev/comments/g7swm9/in_app_purchases_implementation/)
-- url: https://www.reddit.com/r/androiddev/comments/g7swm9/in_app_purchases_implementation/
----
-New to android development and I'm trying to implement a simple non - consumable one time in app purchase for my app, specifically to remove the ads. I have added the managed product in google play console and the 'com.android.billingclient:billing:2.2.0' on my gradle file. After lots of research and random YouTube videos i ended up with this piece of code:
-
-    public class MainActivity extends AppCompatActivity implements PurchasesUpdatedListener {
-    
-        private BillingClient billingClient;
-        private List skuList = new ArrayList();
-        private String sku = "remove_ads";
-        private Button buyBtn;
-       
-       Boolean b = getBoolFromPref(this, "myPref", sku);
-            if (b) {
-    		
-                buyBtn = findViewById(R.id.buyBtn);
-                buyBtn.setVisibility(View.INVISIBLE);
-                buyBtn.setEnabled(false)
-    		
-    		// remove ads here
-    		
-    		} else {
-    
-    
-                buyBtn = findViewById(R.id.buyBtn);
-                buyBtn.setVisibility(View.VISIBLE);
-                buyBtn.setEnabled(true)
-    
-                        // enable the ads here
-    
-    }
-       
-       
-        private void setupBillingClient() {
-    
-            billingClient = BillingClient.newBuilder(this).enablePendingPurchases().setListener(this).build();
-            billingClient.startConnection(new BillingClientStateListener() {
-                @Override
-                public void onBillingSetupFinished(BillingResult billingResult) {
-    
-                    if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-    
-                        loadAllSkus();
-                        
-                    }
-    
-                }
-    
-                @Override
-                public void onBillingServiceDisconnected() {
-    			
-    
-                }
-            });
-        }
-    
-        private void loadAllSkus() {
-    
-            if (billingClient.isReady()) {
-                final SkuDetailsParams params = SkuDetailsParams.newBuilder().setSkusList(skuList).setType(BillingClient.SkuType.INAPP).build();
-    
-                billingClient.querySkuDetailsAsync(params, new SkuDetailsResponseListener() {
-                    @Override
-                    public void onSkuDetailsResponse(BillingResult billingResult, List&lt;SkuDetails&gt; skuDetailsList) {
-                        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-    
-                            for (Object skuDetailsObject : skuDetailsList) {
-    
-                                final SkuDetails skuDetails = (SkuDetails) skuDetailsObject;
-                                if (skuDetails.getSku().equals(sku)) {
-    
-                                    buyBtn = findViewById(R.id.buyBtn);
-                                    buyBtn.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            BillingFlowParams params = BillingFlowParams.newBuilder().setSkuDetails(skuDetails).build();
-                                            billingClient.launchBillingFlow(MainActivity.this, params);
-                                        }
-                                    });
-    
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-        }
-    
-        @Override
-        public void onPurchasesUpdated(BillingResult billingResult, @Nullable List&lt;Purchase&gt; purchases) {
-    
-            int responseCode = billingResult.getResponseCode();
-    
-            if (responseCode == BillingClient.BillingResponseCode.OK &amp;&amp; purchases != null) {
-    
-                for (Purchase purchase : purchases) {
-    
-                    handlePurchase(purchase);
-    
-                }
-    
-    
-            } else if (responseCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
-    
-                setBoolInPref(this, "myPref", sku, true);
-    			
-            } else if (responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
-    		
-    
-            }
-    
-        }
-    
-        private Boolean getBoolFromPref(Context context, String prefName, String constantName) {
-            SharedPreferences pref = context.getSharedPreferences(prefName, 0); // 0 - for private mode
-    
-            return pref.getBoolean(constantName, false);
-    
-        }
-    
-        private void handlePurchase(Purchase purchase) {
-    
-            if (purchase.getSku().equals(sku) &amp;&amp; purchase.getPurchaseState() == Purchase.PurchaseState.PURCHASED) {
-    
-                setBoolInPref(this, "myPref", sku, true);
-    
-                AcknowledgePurchaseParams acknowledgePurchaseParams =
-                        AcknowledgePurchaseParams.newBuilder()
-                                .setPurchaseToken(purchase.getPurchaseToken())
-                                .build();
-    
-                AcknowledgePurchaseResponseListener acknowledgePurchaseResponseListener = new AcknowledgePurchaseResponseListener() {
-                    @Override
-                    public void onAcknowledgePurchaseResponse(BillingResult billingResult) {
-    
-                       
-    					
-                    }
-    
-                };
-    
-                billingClient.acknowledgePurchase(acknowledgePurchaseParams, acknowledgePurchaseResponseListener);
-    
-                Toast.makeText(this, "Thanks for buying. Ads are now removed. Enjoy.", Toast.LENGTH_SHORT).show();
-    
-    
-            } else if (purchase.getPurchaseState() == Purchase.PurchaseState.PENDING) {
-    		
-                // Here you can confirm to the user that they've started the pending
-                // purchase, and to complete it, they should follow instructions that
-                // are given to them. You can also choose to remind the user in the
-                // future to complete the purchase if you detect that it is still
-                // pending.
-    			
-            }
-    
-        }
-    
-    
-        private void setBoolInPref(Context context, String prefName, String constantName, Boolean val) {
-            SharedPreferences pref = context.getSharedPreferences(prefName, 0); // 0 - for private mode
-    
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean(constantName, val);
-            editor.commit();
-    		
-        }
-
-Using the test purchase with myself it seems to work fine. It launches the billing flow fine and after the purchase the ads are removed and also the buyBtn disappears.
-
-However there is a small weird problem.
-
-If i uninstall and then install the app again, the ads re appear, as well the buyBtn. 
-
-But, (and this is where I am really confused) if I click on the buyBtn and restart the app, the ads are removed together with the buyBtn. The billing flow doesn't launch nor there is any other notification.
-## [12][Android 11 Toast Updates](https://www.reddit.com/r/androiddev/comments/g7anno/android_11_toast_updates/)
-- url: https://medium.com/@myrickchow32/android-11-toast-updates-7f1cd2245bc4?source=friends_link&amp;sk=231403e77b7409125b8398c9246b7eb7
+Also if anyone has any resources specifically about working SQLite inside a fragment it'd be much appreciated because I can't find anything useful online. Thank you for reading.
+## [12][Creating a plugin to trigger builds on Bitrise.io](https://www.reddit.com/r/androiddev/comments/g8d3ve/creating_a_plugin_to_trigger_builds_on_bitriseio/)
+- url: https://ayusch.com/intellij-plugin-development-tutorial-pt-3-persisting-state-storage/
 ---
 

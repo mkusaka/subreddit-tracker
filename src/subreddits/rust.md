@@ -23,10 +23,12 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/04/21/this-week-in-rust-335/
 ---
 
-## [3][3D graphics, Rust, Vulkan, ash](https://www.reddit.com/r/rust/comments/g7pypb/3d_graphics_rust_vulkan_ash/)
-- url: https://hoj-senna.github.io/ashen-aetna/
+## [3][Rust concurrency: five easy pieces.](https://www.reddit.com/r/rust/comments/g8b46i/rust_concurrency_five_easy_pieces/)
+- url: https://www.reddit.com/r/rust/comments/g8b46i/rust_concurrency_five_easy_pieces/
 ---
+How to structure concurrent workflows in Rust, via five simple examples.         
 
+[https://medium.com/@polyglot\_factotum/rust-concurrency-five-easy-pieces-871f1c62906a](https://medium.com/@polyglot_factotum/rust-concurrency-five-easy-pieces-871f1c62906a)
 ## [4][Rust needs a wiki](https://www.reddit.com/r/rust/comments/g7s4ss/rust_needs_a_wiki/)
 - url: https://www.reddit.com/r/rust/comments/g7s4ss/rust_needs_a_wiki/
 ---
@@ -60,97 +62,174 @@ This would fix so many problems current Rust has:
 Of course the book, docs.rs and the official documentation should stay as they are. The wiki and the official rust website should just cross-reference each other to make sure everything is consistent. But there are so, so many topics that can be in a wiki, it really feels like there is a strong need for one. Look at me in the eyes and tell me [this awesome github repo](https://github.com/johnthagen/min-sized-rust) doesn't have the format of a wiki page.
 
 What are your toughts on this? Any other points I might have missed? I don't know where to submit this as a serious proposal to the rust teams (I don't even know if I can!), but I do intend to make sure this idea gets discussed thoroughly and hopefully approved.
-## [5][How feasible is it to write kernel modules in Rust ?](https://www.reddit.com/r/rust/comments/g7rag0/how_feasible_is_it_to_write_kernel_modules_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/g7rag0/how_feasible_is_it_to_write_kernel_modules_in_rust/
----
-I am currently working on a PCIE FPGA, and I'll soon have to write a linux driver for it.
-Is the ecosystem mature enough to write complicated kernel modules in Rust ? Is there really anything to gain from it, or do you spend your time doing FFI calls with C ?
-## [6][What is the history of Ferris?](https://www.reddit.com/r/rust/comments/g7nmxs/what_is_the_history_of_ferris/)
-- url: https://www.reddit.com/r/rust/comments/g7nmxs/what_is_the_history_of_ferris/
----
-I am a Marylander and I love crabs.  Hello!  
-
-
-I was wondering where Ferris came from.  I started programming rust because I saw that it was a language that loved crabs.  I noticed that Brendan Eich was from Maryland, as well, so I was wondering if that may have factored into it at all.  
-
-
-Here's a picture of a crab.
-
-https://imgur.com/K3E9PcK
-## [7][Is there a build service for cargo to {deb,rpm,...}?](https://www.reddit.com/r/rust/comments/g7qxaw/is_there_a_build_service_for_cargo_to_debrpm/)
-- url: https://www.reddit.com/r/rust/comments/g7qxaw/is_there_a_build_service_for_cargo_to_debrpm/
----
-I would like to offer by crate (a linux binary) as packages for Ubunut, RedHat, CentOS, etc.
-
-Is there a build service or a similar tool that make this easy?
-## [8][Embedded Rust pattern: Zero Sized References](https://www.reddit.com/r/rust/comments/g79ib1/embedded_rust_pattern_zero_sized_references/)
-- url: https://ferrous-systems.com/blog/zero-sized-references/
+## [5][Proof Of Concept: Error Return Traces in Rust aka lightweight backtraces](https://www.reddit.com/r/rust/comments/g80c4h/proof_of_concept_error_return_traces_in_rust_aka/)
+- url: https://twitter.com/yaahc_/status/1253771822920634369?s=19
 ---
 
-## [9][WIP UF2 bootloader in rust (also USB mass storage/scsi)](https://www.reddit.com/r/rust/comments/g7rlc6/wip_uf2_bootloader_in_rust_also_usb_mass/)
-- url: https://www.reddit.com/r/rust/comments/g7rlc6/wip_uf2_bootloader_in_rust_also_usb_mass/
+## [6][Debugging on windows with the msvc toolchain?](https://www.reddit.com/r/rust/comments/g8c53a/debugging_on_windows_with_the_msvc_toolchain/)
+- url: https://www.reddit.com/r/rust/comments/g8c53a/debugging_on_windows_with_the_msvc_toolchain/
 ---
-Thought I'd share this [rust UF2 Bootloader](https://github.com/cs2dsb/stm32-usb.rs/tree/master/firmware/usb_bootloader) I've been working on. 
+AHoy!
 
-It's basically a port of this [Bluepill UF2 Bootloader](https://github.com/lupyuen/bluepill-bootloader) but I've attempted to make the USB mass storage class, USB bulk-only transport protocol and USB scsi sub-class usable for proper FAT or anything else you might want to implement as MSC/BOT/SCSI over USB.
+I'm wondering what folks are using to debug on Windows. LLDB doesn't seem to work for me at all, I don't think there is an MSVC compatible GDB, I've had some early luck with remedybg (but lacks visualizers for Rust currently).
 
-The above bootloader crate works for the bluepill board but could work with any embedded-hal that implements [usb-device](https://github.com/mvirkkunen/usb-device) without much extra work - the main thing you'd have to check is the `impl Flash for FlashWrapper` in usb\_bootloader/src/bin/msc.rs. I think eventually the Flash trait or something similar could be moved into embedded-hal so that you can read/write slices of bytes to your flash without worrying about page size and the other stuff you need to do to unlock/etc. 
+WinDBG was an issue for me because I need to have an environment setup that I didn't easily find a way to configure. So I don't know how well it works.
 
-The various usb layers I've implemented are here (links to crates.io &amp; docs.rs in readmes):
-
-* [Mass storage class](https://github.com/cs2dsb/stm32-usb.rs/tree/master/firmware/usbd_mass_storage)
-* [Bulk only transport protocol](https://github.com/cs2dsb/stm32-usb.rs/tree/master/firmware/usbd_bulk_only_transport)
-* [SCSI transparent command set subclass](https://github.com/cs2dsb/stm32-usb.rs/tree/master/firmware/usbd_scsi)
-
-There's also [uf2\_util](https://github.com/cs2dsb/stm32-usb.rs/tree/master/firmware/uf2_util) which will convert ELF/BIN to UF2. There's an example of the commands to do it in [build\_uf2](https://github.com/cs2dsb/stm32-usb.rs/blob/master/firmware/blink/build_uf2).
+Visual Studio seems ok-ish... but yeah, not exactly awesome.
 
 &amp;#x200B;
 
-The rationale behind developing the bootloader was I was considering selling some PCB kits with a preflashed bootloader so people could update the firmware over USB rather than having to get a debug probe and getting the whole lot configured. I could have just used the C UF2 bootloader or similar but why make things easy? I also wanted to develop some application firmware that used USB mass storage for config/data transfer and a USB bootloader seemed like a concrete way to get started with lots of working open source examples to crib off.
+What's everyone else using?
+## [7][[pre-release]: Introducing color-eyre, a custom context for for colorful error reports via the eyre crate](https://www.reddit.com/r/rust/comments/g7xf1r/prerelease_introducing_coloreyre_a_custom_context/)
+- url: https://raw.githubusercontent.com/yaahc/color-eyre/master/pictures/full.png
+---
+
+## [8][Building a simple JIT in Rust](https://www.reddit.com/r/rust/comments/g83aan/building_a_simple_jit_in_rust/)
+- url: https://www.jonathanturner.org/2015/12/building-a-simple-jit-in-rust.html
+---
+
+## [9][Simple snake game using SDL2](https://www.reddit.com/r/rust/comments/g84zvk/simple_snake_game_using_sdl2/)
+- url: https://www.reddit.com/r/rust/comments/g84zvk/simple_snake_game_using_sdl2/
+---
+I wrote a simple snake game in rust using sdl2. Am a newbie rustacean and haven't been programming for long. I just program as a hobby. Feedback is very much appreciated :D 
+
+[https://github.com/Whity25/Rust-Snake-sdl2](https://github.com/Whity25/Rust-Snake-sdl2)
+## [10][A full stack application written in Rust (yew, yew-router, stdweb)](https://www.reddit.com/r/rust/comments/g7ztre/a_full_stack_application_written_in_rust_yew/)
+- url: https://www.reddit.com/r/rust/comments/g7ztre/a_full_stack_application_written_in_rust_yew/
+---
+Hey r/rust! 
+
+My friend and I wrote a simple full stack application in Rust, to showcase what can be done using Rust and wanted to share it with the community. 
+
+Rusty Connect 4 is a full-stack project written completely in Rust. It uses:
+
+* rocket on the backend
+* yew for creating front-end webapps with WebAssembly (yew is a great component-based framework!)
+* yew-router for routing
+* stdweb to provide Rust bindings for Web APIs
+
+The backend is only used for requests and saving your progress. You can still play the game with just the frontend.
+
+Any feedback is welcome! Also feel free to fork or create any pull request.
+
+repo can be found [here](https://github.com/ahmedelgohary/rusty-connect4)
+## [11][Shipyard 0.4 release](https://www.reddit.com/r/rust/comments/g82tza/shipyard_04_release/)
+- url: https://www.reddit.com/r/rust/comments/g82tza/shipyard_04_release/
+---
+[Shipyard](https://crates.io/crates/shipyard) is an Entity Component System crate. ECS is a pattern mostly used in games but not only. It fits really well with Rust, allowing easy composition and lifetime management.
+
+**What's new**
+
+* Rework of systems and types used to borrow storage
+* Workloads had to be reworked to handle this change
+* Workloads can now return errors
+* `Iterator` and `IntoIterator` are now supported
+
+For 0.3 users there's a [migration guide](https://leudz.github.io/shipyard/book/recipes/0.4-migration.html) to help with all the changes.
+
+**Example:**
+
+    use shipyard::*;
+
+    struct Health(f32);
+    struct Position {
+        _x: f32,
+        _y: f32,
+    }
+
+    fn in_acid(positions: View&lt;Position&gt;, mut healths: ViewMut&lt;Health&gt;) {
+        for (_, mut health) in (&amp;positions, &amp;mut healths)
+            .iter()
+            .filter(|(pos, _)| is_in_acid(pos))
+        {
+            health.0 -= 1.0;
+        }
+    }
+
+    fn is_in_acid(_: &amp;Position) -&gt; bool {
+        // it's wet season
+        true
+    }
+
+    fn main() {
+        let world = World::new();
+
+        world.run(
+            |mut entities: EntitiesViewMut,
+            mut positions: ViewMut&lt;Position&gt;,
+            mut healths: ViewMut&lt;Health&gt;| {
+                entities.add_entity(
+                    (&amp;mut positions, &amp;mut healths),
+                    (Position { _x: 0.0, _y: 0.0 }, Health(1000.0)),
+                );
+            },
+        );
+
+        world.run(in_acid);
+    }
+## [12][Help cross-compiling for Raspberry Pi Zero W](https://www.reddit.com/r/rust/comments/g86tc1/help_crosscompiling_for_raspberry_pi_zero_w/)
+- url: https://www.reddit.com/r/rust/comments/g86tc1/help_crosscompiling_for_raspberry_pi_zero_w/
+---
+Hello! 
+
+If this isn't the right place for this question, my apologies!
+
+Background: I built a head-mounted computer. For lightness' sake, it's a Raspberry Pi Zero W. 
+
+I have a project that I'm trying to cross-compile to run on the Pi, but I'm having trouble. My understanding is that the Pi Zero W has an Arm V6 processor. When I cross-compile my code and upload the executable, I get "\[1\]    2044 illegal hardware instruction" 
+
+Compiling the project directly on the Pi *was* working, right up until I started getting out of memory errors trying to compile my most recent commit.
+
+I'm new to Rust (and cross-compiling, come to that) and still trying to sort this all out. I'm not sure what I'm doing wrong, or what information might be relevant. So here's an info dump of everything I can think of.work
+
+I'm using [https://github.com/rust-embedded/cross](https://github.com/rust-embedded/cross) to build a basic cross-compiling container, which I then extend to actually perform the compilation. I'm extending the base image because I also need a cross-compiled OpenSSL.
 
 &amp;#x200B;
 
-Any feedback/suggestions/comments gratefully received :)
-## [10][Announcing Tide 0.8.0!](https://www.reddit.com/r/rust/comments/g79gag/announcing_tide_080/)
-- url: https://github.com/http-rs/tide/releases/tag/v0.8.0
----
+* Project: [https://github.com/swordsmanluke/todor/](https://github.com/swordsmanluke/todor/)
+* Cross Compilation container base: rustembedded/cross:arm-unknown-linux-gnueabihf-0.2.0
+* Host: Ubuntu 18.04
+* RustC: 1.43
+* GCC: 5.4.0
+* Cross.toml:
 
-## [11][Struggling with arithmetic overflow checking](https://www.reddit.com/r/rust/comments/g7ryba/struggling_with_arithmetic_overflow_checking/)
-- url: https://www.reddit.com/r/rust/comments/g7ryba/struggling_with_arithmetic_overflow_checking/
----
-I want to rewrite Jenkins hash function in Rust, in particular \`hashword\`: [https://android.googlesource.com/platform/external/jenkins-hash/+/75dbeadebd95869dd623a29b720678c5c5c55630/lookup3.c#173](https://android.googlesource.com/platform/external/jenkins-hash/+/75dbeadebd95869dd623a29b720678c5c5c55630/lookup3.c#173)
+&amp;#8203;
 
-The problem I'm facing is that these assignments causes an arithmetic overflow:  
-[https://android.googlesource.com/platform/external/jenkins-hash/+/75dbeadebd95869dd623a29b720678c5c5c55630/lookup3.c#181](https://android.googlesource.com/platform/external/jenkins-hash/+/75dbeadebd95869dd623a29b720678c5c5c55630/lookup3.c#181)
+    [target.arm-unknown-linux-gnueabihf]
+    image = "my/pi-build:latest"
 
-For instance, this is a statement I wrote:
+* DockerFile:
 
-    let a: u32 = 0xdeadbeef + (5&lt;&lt;2) + 4271423877;
+&amp;#8203;
 
-and obviously rust compiler is complaining:
-
-    error: this arithmetic operation will overflow
-      --&gt; src/main.rs:34:18
-       |
-    34 |     let a: u32 = 0xdeadbeef + (5&lt;&lt;2) + 4271423877;
-       |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to add with overflow
-       |
-       = note: `#[deny(arithmetic_overflow)]` on by default
-
-I tried to use \`std::num::Wrapper\` and disabling overflow checks and I still get the same error:
-
-    rustc -Z force-overflow-checks=no src/main.rs
+    FROM rustembedded/cross:arm-unknown-linux-gnueabihf-0.2.0
+    ENV DEBIAN_FRONTEND=noninteractive
+    ENV PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig
+    ENV RPI_TOOLS=/rpi_tools
+    ENV MACHINE=armv6
+    ENV ARCH=armv6
+    ENV CC=gcc
+    ENV OPENSSL_DIR=/openssl
+    ENV CROSSCOMP_DIR=/rpi_tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin
     
-    error: this arithmetic operation will overflow
-      --&gt; src/main.rs:34:18
-       |
-    34 |     let a: u32 = 0xdeadbeef + (5&lt;&lt;2) + 4271423877;
-       |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to add with overflow
-       |
-       = note: `#[deny(arithmetic_overflow)]` on by default
-
-Any clue about how to fix that? Thanks!
-## [12][Advanced Beginners Rust: Ownership with Threads and Closures [video]](https://www.reddit.com/r/rust/comments/g7aww2/advanced_beginners_rust_ownership_with_threads/)
-- url: https://www.youtube.com/watch?v=2mwwYbBRJSo
----
-
+    RUN dpkg --add-architecture armhf
+    RUN apt-get update &amp;&amp;\
+        apt-get install -y wget openssl:armhf libssl-dev:armhf pkg-config libudev-dev:armhf
+    
+    # Get Raspberry Pi cross-compiler tools
+    RUN git -C "/" clone -q --depth=1 https://github.com/raspberrypi/tools.git "${RPI_TOOLS}"
+    
+    # Manually cross-compile OpenSSL to link with
+    
+    # 1) Download OpenSSL 1.1.0
+    RUN mkdir -p $OPENSSL_DIR
+    RUN cd /tmp &amp;&amp;\
+        wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.0h.tar.gz &amp;&amp;\
+        tar xzf openssl-1.1.0h.tar.gz
+    
+    # 2) Compile
+    RUN cd /tmp/openssl-1.1.0h &amp;&amp;\
+        ./Configure linux-generic32 shared\
+          --prefix=$INSTALL_DIR --openssldir=$OPENSSL_DIR/openssl\
+          --cross-compile-prefix=$CROSSCOMP_DIR/arm-linux-gnueabihf- &amp;&amp;\
+          make depend &amp;&amp; make &amp;&amp; make install

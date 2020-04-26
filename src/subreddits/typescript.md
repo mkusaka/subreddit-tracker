@@ -22,7 +22,76 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][6 ways to marry C# with TypeScript](https://www.reddit.com/r/typescript/comments/g7stb9/6_ways_to_marry_c_with_typescript/)
+## [2][Problem Solving with the TypeScript Compiler (Recorded Meetup/Webinar talk)](https://www.reddit.com/r/typescript/comments/g8dlhy/problem_solving_with_the_typescript_compiler/)
+- url: https://www.youtube.com/watch?v=ZHiT33F11mk&amp;feature=youtu.be
+---
+
+## [3][How to correctly make type files for a typescript module](https://www.reddit.com/r/typescript/comments/g8d2cr/how_to_correctly_make_type_files_for_a_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/g8d2cr/how_to_correctly_make_type_files_for_a_typescript/
+---
+Hello. 
+
+So I'm making a typescript module that will be used by other project (ts and js). And **I CANNOT** make the declaration file work the way it is supposed to.
+
+My module is made out of 3 files :
+
+```
+- mainclass.ts
+- otherclass.ts
+- types.d.ts
+```
+All my types are generated in the `types.d.ts` like this at top level.
+```javascript
+export type mainClassConstructor = new (
+  config: Config,
+) =&gt; void
+
+export interface mainClassInterface {
+  config: Config
+  getIndex(indexUid: string): Index
+  ...
+}
+```
+
+in my `mainClass.ts` which is the entry point of my module my class is like this: 
+```javascript
+
+const mainClass: Types.mainClassConstructor = class implements Types.mainClassInterface {
+  config: Types.Config
+  constructor(config: Types.Config) {
+    this.config = config
+  }
+  getIndex(indexUid: string): Index {
+     return new Index(indexUid);
+  }
+}
+```
+
+Now, when I add this module to another typescript project using `types.d.ts` as typing in `package.json`. Upon creating my first object I receive this error:
+
+```javascript
+const myClass = new MainClass(config);
+```
+
+&gt; Type 'typeof import("/mymodule-js/src/types")' has no construct signatures.  TS2351
+
+
+but when I generate the declaration files with the typescript module of rollup and 
+use `mainClass.d.ts` as typing file in package.json
+
+Although I can finally use my MainClass, I cannot import any type that is found in types.d.ts 
+
+```
+import MainClass, { IndexObject } from 'mymodule';
+```
+I get this error:
+
+&gt; Module '"/mymodule-js/dist/types/mainclass"' has no exported member 'IndexObject'. Did you mean to use 'import IndexObject from "/mymodule-js/dist/types/meilisearch"'
+
+So my question is: How do I create a proper declaration file that  
+- recognizes all types
+- Lets you import all types
+## [4][6 ways to marry C# with TypeScript](https://www.reddit.com/r/typescript/comments/g7stb9/6_ways_to_marry_c_with_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/g7stb9/6_ways_to_marry_c_with_typescript/
 ---
 A popular bundle of .NET + SPA framework written in TypeScript has a notorious problem of enforcing contracts between the back-end and the front-end. 
@@ -30,15 +99,42 @@ A popular bundle of .NET + SPA framework written in TypeScript has a n
 [Here is my analysis of 6 options](https://alex-klaus.com/marry-csharp-typescript/) to generate TypeScript code from C#: NSwag, Swagger Codegen, OpenAPI Generator, AutoRest, WebApiClientGen and TypeWriter.
 
 Have you used any of these tools, did you try others? Any feedback welcome
-## [3][Browser screenshots library written with fp-ts and Fluture](https://www.reddit.com/r/typescript/comments/g7nm1d/browser_screenshots_library_written_with_fpts_and/)
+## [5][Using fetch with Typescript and the Todoist API](https://www.reddit.com/r/typescript/comments/g7vfkz/using_fetch_with_typescript_and_the_todoist_api/)
+- url: https://medium.com/@ricardo.trindade743/using-fetch-with-typescript-and-the-todoist-api-5203c5177ed5
+---
+
+## [6][expect-type - intuitive compile-time test assertions, inspired by jest's expect API](https://www.reddit.com/r/typescript/comments/g7uk48/expecttype_intuitive_compiletime_test_assertions/)
+- url: https://www.reddit.com/r/typescript/comments/g7uk48/expecttype_intuitive_compiletime_test_assertions/
+---
+I wrote a small library for validating typescript types: https://github.com/mmkal/ts/blob/master/packages/expect-type/readme.md
+
+I had previously used both `dtslint` and `ts-expect` but found them lacking for a few reasons - dtslint depends on the deprecated tslint, and the assertions are quite crude and comment-based. ts-expect is good but involves a fair amount of boilerplate, making anything but very basic assertions hard to read - and it doesn't support "negative" assertions out of the box. 
+
+- a fluent, jest-inspired API, making the difference between `actual` and `expected` clear. This is helpful with complex types and assertions.
+- inverting assertions intuitively and easily via `expectType(...).not`
+- first-class support for:
+    - `any` (as well as `unknown` and `never`).
+      - This can be especially useful in combination with `not`, to protect against functions returning too-permissive types. For example, `const parseFile = (filename: string) =&gt; JSON.parse(readFileSync(filename).toString())` returns `any`, which could lead to errors. After giving it a proper return-type, you can add a test for this with `expect(parseFile).returns.not.toBeAny()`
+    - object properties
+    - function parameters
+    - function return values
+    - array item values
+    - nullable types
+    - assertions on types "matching" rather than exact type equality, for "is-a" relationships e.g. `expectTypeOf(square).toMatchTypeOf&lt;Shape&gt;()`
+- built into existing tooling with no dependencies. No extra build step, cli tool, or lint plugin is needed. Just import the function and start writing tests.
+## [7][Browser screenshots library written with fp-ts and Fluture](https://www.reddit.com/r/typescript/comments/g7nm1d/browser_screenshots_library_written_with_fpts_and/)
 - url: https://github.com/gripeless/pico
 ---
 
-## [4][A terminal emulator built with TS &amp; React.](https://www.reddit.com/r/typescript/comments/g7hfvy/a_terminal_emulator_built_with_ts_react/)
+## [8][A terminal emulator built with TS &amp; React.](https://www.reddit.com/r/typescript/comments/g7hfvy/a_terminal_emulator_built_with_ts_react/)
 - url: https://github.com/ctaylo21/termy-the-terminal/
 ---
 
-## [5][Compilation error driving me nuts. Any help would be appreciated.](https://www.reddit.com/r/typescript/comments/g7o385/compilation_error_driving_me_nuts_any_help_would/)
+## [9][Angular Components with Extracted Immutable State](https://www.reddit.com/r/typescript/comments/g7pu6s/angular_components_with_extracted_immutable_state/)
+- url: https://medium.com/@0x1000000/angular-components-with-extracted-immutable-state-86ae1a4c9237?source=friends_link&amp;sk=3d9422a57d8ac49a4b1c8de39d6fc0b3
+---
+
+## [10][Compilation error driving me nuts. Any help would be appreciated.](https://www.reddit.com/r/typescript/comments/g7o385/compilation_error_driving_me_nuts_any_help_would/)
 - url: https://www.reddit.com/r/typescript/comments/g7o385/compilation_error_driving_me_nuts_any_help_would/
 ---
 I set up a project recently and I'm having issues compiling it and it seems to be because of my tsconfig file and node\_modules. As of now, my project contains a tsconfig file that looks like this:
@@ -64,11 +160,7 @@ as well as a `package.json` and a `package-lock.json` file. Because I installed 
     16     placeholderWhitelist?: Set&lt;string&gt;;
 
 I've searched the entire internet for a solution but none seem to work. Any suggestions would be really appreciated.
-## [6][Angular Components with Extracted Immutable State](https://www.reddit.com/r/typescript/comments/g7pu6s/angular_components_with_extracted_immutable_state/)
-- url: https://medium.com/@0x1000000/angular-components-with-extracted-immutable-state-86ae1a4c9237?source=friends_link&amp;sk=3d9422a57d8ac49a4b1c8de39d6fc0b3
----
-
-## [7][Yarn workspaces, create-react-app and express](https://www.reddit.com/r/typescript/comments/g7eq4k/yarn_workspaces_createreactapp_and_express/)
+## [11][Yarn workspaces, create-react-app and express](https://www.reddit.com/r/typescript/comments/g7eq4k/yarn_workspaces_createreactapp_and_express/)
 - url: https://www.reddit.com/r/typescript/comments/g7eq4k/yarn_workspaces_createreactapp_and_express/
 ---
 Has anyone gotten yarn workspaces to work well for a single frontend + backend project? I want to have a structure like:
@@ -85,47 +177,3 @@ Has anyone gotten yarn workspaces to work well for a single frontend + backend p
 &amp;#x200B;
 
 But, I don't know how to have the "static files" generated by the client/ "create-react-app" be included as static files in the server/ "express" app. Do I have to do some kind of manual "cp" to get them over? I don't really understand how to configure the "static file" exports on the "client/" project so that the "server/" project can somehow include them and serve them.
-## [8][Conflicting TypeScript rules, how to best deal with them?](https://www.reddit.com/r/typescript/comments/g7iv5x/conflicting_typescript_rules_how_to_best_deal/)
-- url: https://www.reddit.com/r/typescript/comments/g7iv5x/conflicting_typescript_rules_how_to_best_deal/
----
-I'm working on a typing test app in Angular, and in order to get the random list of words I store the result into a property. However it complains when I put a property at the beginning of the class that it is being used before declaration, look here to see where it's declared.  Then when I put it after the function declaration it tells me I should put the thing at the top of the file.  My application doesn't work if I put it at the top of the file. I don't like having warnings or errors in my code, so what's a good solution here? For now I've just stuck the property where it works and ignored the TS lint error.
-## [9][Best RESTful framework with good TypeScript support?](https://www.reddit.com/r/typescript/comments/g74vn8/best_restful_framework_with_good_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/g74vn8/best_restful_framework_with_good_typescript/
----
-I'm used to working with Python backends; what I'm looking for is something like [FastAPI](https://github.com/tiangolo/fastapi) which uses type annotations to validate requests/response structures among other things. It's very handy. I've done a lot of looking but can't find a TypeScript-first API framework with similar features. Anyone have any recommendations?
-## [10][I got sick of constantly configuring packages, especially in mono repos, so I created a tool that takes away a lot of the configuration. ts-engine provides build, lint, test and typechecking support via single dependency 😁](https://www.reddit.com/r/typescript/comments/g6uphc/i_got_sick_of_constantly_configuring_packages/)
-- url: https://ts-engine.dev
----
-
-## [11][FREE Udemy Bestseller - NestJS Zero to Hero - Modern Back-end Development with TypeScript](https://www.reddit.com/r/typescript/comments/g763ik/free_udemy_bestseller_nestjs_zero_to_hero_modern/)
-- url: https://www.reddit.com/r/typescript/comments/g763ik/free_udemy_bestseller_nestjs_zero_to_hero_modern/
----
-**TL;DR - free copy, unlimited claims, for three days. Stay home and learn something new! &lt;3**
-
-**Why are you doing this every month?**
-
-In short - my course is a bestseller and I noticed that when I give out my course for free, it *does not* hurt my sales.
-
-\--
-
-Hey there!
-
-Approximately six months ago, I published my Udemy course "NestJS Zero to Hero - Modern Back-end Development with TypeScript". The community here has received it very well. Within two weeks, the course became a bestseller.
-
-NestJS has become incredibly popular. With over 250k downloads per week on NPM, it is the #1 framework in terms of growth.
-
-&amp;#x200B;
-
-https://preview.redd.it/fijeecc2uqu41.png?width=2252&amp;format=png&amp;auto=webp&amp;s=58704767833c8d94d6558d098f1a77e2391e5451
-
-Today, the course is a best seller with a solid 4.7-star rating and over 20,000 students. \*\*I want to give back to the community and give you the course for free (its yours forever). This is a great time to invest in yourself and learn something new.
-
-P.S. A new GraphQL + MongoDB has been added, adding one more hour to the course.
-
-[https://www.udemy.com/course/nestjs-zero-to-hero/?couponCode=RDD\_FR\_2020\_APRIL](https://www.udemy.com/course/nestjs-zero-to-hero/?couponCode=RDD_FR_2020_APRIL)
-
-If you wish to purchase the course anyway, please use [this link](https://www.udemy.com/course/nestjs-zero-to-hero/?couponCode=REDDIT_APRIL_2020). **You do not have to do this.**
-
-Feel free to send the coupon out to any Juniors or students who might need it.
-
-\#spreadtheknowledge #keeplearning

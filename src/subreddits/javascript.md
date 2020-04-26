@@ -13,15 +13,41 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Browser screenshots in JavaScript](https://www.reddit.com/r/javascript/comments/g7nm5x/browser_screenshots_in_javascript/)
-- url: https://github.com/gripeless/pico#readme
+## [3][create-react-app breaks due to dependency on one-liner package](https://www.reddit.com/r/javascript/comments/g83evc/createreactapp_breaks_due_to_dependency_on/)
+- url: https://github.com/then/is-promise/issues/13#issuecomment-619402307
 ---
 
-## [4][I rewrote my Web Extension (60k users) with clean-architecture, typescript, redux-observable](https://www.reddit.com/r/javascript/comments/g7q274/i_rewrote_my_web_extension_60k_users_with/)
+## [4][Cain-Stack a Full-Stack JS template to quickly build native cross platform applications with web technologies. Based on CouchDB, Angular, Ionic &amp; NestJS. Offline Storage, native APIs and authentication included.](https://www.reddit.com/r/javascript/comments/g8c7gc/cainstack_a_fullstack_js_template_to_quickly/)
+- url: https://git.heichling.xyz/max/cain-stack
+---
+
+## [5][I rewrote my Web Extension (60k users) with clean-architecture, typescript, redux-observable](https://www.reddit.com/r/javascript/comments/g7q274/i_rewrote_my_web_extension_60k_users_with/)
 - url: https://github.com/puemos/hls-downloader-web-extension
 ---
 
-## [5][[AskJS] Using console.time to calculate the time it takes a block of code to execute](https://www.reddit.com/r/javascript/comments/g7rfga/askjs_using_consoletime_to_calculate_the_time_it/)
+## [6][I've developed a site where people can share ideas for projects](https://www.reddit.com/r/javascript/comments/g84ubb/ive_developed_a_site_where_people_can_share_ideas/)
+- url: https://codingideas.now.sh
+---
+
+## [7][Browser screenshots in JavaScript](https://www.reddit.com/r/javascript/comments/g7nm5x/browser_screenshots_in_javascript/)
+- url: https://github.com/gripeless/pico#readme
+---
+
+## [8][Convert a Website into an API: Building a Serverless Web Scraper with the AWS Cloud Development Kit](https://www.reddit.com/r/javascript/comments/g7uy4t/convert_a_website_into_an_api_building_a/)
+- url: https://www.martinmck.com/posts/convert-a-website-into-an-api-building-a-serverless-web-scraper-with-the-aws-cloud-development-kit/
+---
+
+## [9][[AskJS] I made a manga web scraper](https://www.reddit.com/r/javascript/comments/g811q0/askjs_i_made_a_manga_web_scraper/)
+- url: https://www.reddit.com/r/javascript/comments/g811q0/askjs_i_made_a_manga_web_scraper/
+---
+[https://www.npmjs.com/package/@pepeenv/manganelo](https://www.npmjs.com/package/@pepeenv/manganelo) 
+
+This is my first project, hope this will help me to be a better developer
+## [10][What excites you the most about the future of React Native?](https://www.reddit.com/r/javascript/comments/g86lj3/what_excites_you_the_most_about_the_future_of/)
+- url: /r/expojs/comments/g86k3i/what_excites_you_the_most_about_the_future_of/
+---
+
+## [11][[AskJS] Using console.time to calculate the time it takes a block of code to execute](https://www.reddit.com/r/javascript/comments/g7rfga/askjs_using_consoletime_to_calculate_the_time_it/)
 - url: https://www.reddit.com/r/javascript/comments/g7rfga/askjs_using_consoletime_to_calculate_the_time_it/
 ---
 Hi All,
@@ -40,31 +66,7 @@ Essentially what I do is wrap a console.time(), and a console.timeEnd around a b
     }
 
 This then returns something like this `Navigator #1:` [`0.0869140625ms`](https://0.0869140625ms.Is)`.` Is this an efficient way of calculating the speed of a code block. The result each time are usually similar enough?
-## [6][I made the same web app in Gatsby and Next.js and found Gatsby performed better](https://www.reddit.com/r/javascript/comments/g7aiqn/i_made_the_same_web_app_in_gatsby_and_nextjs_and/)
-- url: https://medium.com/@sidneyalcantara/gatsby-won-against-next-js-in-this-head-to-head-7d446569ec57?source=friends_link&amp;sk=7702bb95b3f2d5f033e9c33bf56ed43a
----
-
-## [7][JavaScript Style Guide: Key takeaways from Google’s Style Guide](https://www.reddit.com/r/javascript/comments/g7qgjl/javascript_style_guide_key_takeaways_from_googles/)
-- url: https://blog.w3radar.com/key-takeaways-google-javascript-style-guide/
----
-
-## [8][I created a JAMStack template / service for generating portfolio from your JSON Resume](https://www.reddit.com/r/javascript/comments/g7l554/i_created_a_jamstack_template_service_for/)
-- url: https://github.com/jkga/me
----
-
-## [9][CSS hack: How to set a React Component or dom element as a background image.](https://www.reddit.com/r/javascript/comments/g7r6q1/css_hack_how_to_set_a_react_component_or_dom/)
-- url: https://medium.com/@ashudeshwal999/css-hack-how-to-set-a-react-component-or-dom-element-as-a-background-image-7b2628662544
----
-
-## [10][Can JavaScript Detect the Browser's Zoom Level?](https://www.reddit.com/r/javascript/comments/g795aq/can_javascript_detect_the_browsers_zoom_level/)
-- url: https://css-tricks.com/can-javascript-detect-the-browsers-zoom-level/
----
-
-## [11][Animate style properties of dom elements](https://www.reddit.com/r/javascript/comments/g7tduw/animate_style_properties_of_dom_elements/)
-- url: https://github.com/diwsi/Zump
----
-
-## [12][How to set up a CI/CD Pipeline for a node.js app with Github Actions](https://www.reddit.com/r/javascript/comments/g7rnys/how_to_set_up_a_cicd_pipeline_for_a_nodejs_app/)
-- url: https://chathula.dev/how-to-set-up-a-ci-cd-pipeline-for-a-node-js-app-with-github-actions/
+## [12][Monty Hall Problem - my first "game" implementation from a long time ago](https://www.reddit.com/r/javascript/comments/g84uat/monty_hall_problem_my_first_game_implementation/)
+- url: https://github.com/victorqribeiro/montyhall
 ---
 

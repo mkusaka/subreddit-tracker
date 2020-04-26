@@ -1,38 +1,32 @@
 # aws
-## [1][Is it allowed in ToS to discuss enterprise support cases online?](https://www.reddit.com/r/aws/comments/g7qbd4/is_it_allowed_in_tos_to_discuss_enterprise/)
-- url: https://www.reddit.com/r/aws/comments/g7qbd4/is_it_allowed_in_tos_to_discuss_enterprise/
+## [1][Help me find that blog with nice AWS diagrams...](https://www.reddit.com/r/aws/comments/g82rue/help_me_find_that_blog_with_nice_aws_diagrams/)
+- url: https://www.reddit.com/r/aws/comments/g82rue/help_me_find_that_blog_with_nice_aws_diagrams/
 ---
-I find myself asking a lot of questions to support for stuff that I can't find already-existing info on, and so I probably open a support case at least once every two weeks or so.
-
-The responses are always amazing, and I want to share the info I get online.  In a recent example, I found an flaw (not a security flaw) in one of the AWS provided default IAM policies, and when I wrote to support, they were like, "indeed, we tested it too, the policy is mistaken, we've escalated this to the IAM team, and to work around it here are some ways you can fill in the gaps." It seems like a shame that info is just sitting in my inbox and not on a forum somewhere.
-
-Can I copy paste those responses somewhere?  Do I have to redact the agents name?  Or do I have to reword the issue and solution in my own words?
-## [2][The Extended AWS Security Ramp-Up Guide](https://www.reddit.com/r/aws/comments/g7orbm/the_extended_aws_security_rampup_guide/)
-- url: https://research.nccgroup.com/2020/04/24/the-extended-aws-security-ramp-up-guide/
+Hi guys, I'm not able to find a blog I saw some time ago. Its articles were about AWS technologies and services, explained with nice hand drawn diagrams. They were very thorough and detailed, and explained complex stuff like VPCs with just a glance! Help!
+## [2][Coordinating resource creation and modification in a small team](https://www.reddit.com/r/aws/comments/g8bx6i/coordinating_resource_creation_and_modification/)
+- url: https://www.reddit.com/r/aws/comments/g8bx6i/coordinating_resource_creation_and_modification/
 ---
+I'm the AWS coordinator for our small company and I'm having a little trouble making sure that our usage is well coordinated.There are a few team members who are responsible for creating and configuring EC2 servers and other resources and often not enough thought goes into resource creation.I'm not directly in their chain of command, so I'm not always part of the discussion of what's required.
 
-## [3][Making real time dashboard (website) using API gateway, s3 and lambda?](https://www.reddit.com/r/aws/comments/g7spzt/making_real_time_dashboard_website_using_api/)
-- url: https://www.reddit.com/r/aws/comments/g7spzt/making_real_time_dashboard_website_using_api/
----
-I am currently making a website that monitors my raspberry pi data (which is stored in dynamoDB) and show it in real time. My aws design goal is to create a serverless realtime web app. So from what I have heard, I can add my static site (I am using vueJS) in S3 and then use the help of API gateway and lambda to get the data. The problem is I am not familiar with websockets. So please forgive me if I say something stupid; So my biggest question is the client side code. Once I have created a websocket API gateway, what should I add in my client side to make it work? I know I can use rest api instead, but since I want the site to be in realtime, I would need to call the API every few second (which is not cost effective).
+I'd like to have some oversight when servers are created or significantly modified, so that I can discuss requirements before the server is created and when it needs to be modified.
 
-If you have any advice regarding my project or implementation please feel free to give suggestions.
+I'm imagining a system where a team member can create a request that represents a potential resource with a number of config options selected.They then pass it to me for approval and then I can make suggestions and have a discussion.It would also be good if this system could be a place for us to notify each other of changes that we made that were too minor to require a discussion.
 
-Thank you!
-## [4][We are the AWS AI / ML Team - Ask the Experts - May 18th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/g7gjgg/we_are_the_aws_ai_ml_team_ask_the_experts_may/)
-- url: https://www.reddit.com/r/aws/comments/g7gjgg/we_are_the_aws_ai_ml_team_ask_the_experts_may/
----
-Hey [r/aws](https://www.reddit.com/r/aws)! u/AmazonWebServices here.
+A feed of events would also make sense.
 
-The AWS AI/ML team will be hosting an Ask the Experts session here **in this thread** to answer any questions you may have about building and training machine learning models with [Amazon SageMaker](https://aws.amazon.com/sagemaker/), as well as any questions you might have about machine learning in general.
+Any insights here of how you're doing things or what processes or products you would suggest?  
 
-Already have questions? Post them below and we'll answer them starting at 9AM PT on May 18, 2020!
-## [5][Architecture deep-dive: How a news aggregator collects and serves up news articles](https://www.reddit.com/r/aws/comments/g7smug/architecture_deepdive_how_a_news_aggregator/)
+
+Edit:   
+We're not yet using CloudFormation or CI/CD.  
+We're pretty new to the cloud, until now we were distributing software packages to customers to install on prem.  
+For now almost all our interaction with AWS is via the GUI.
+## [3][Architecture deep-dive: How a news aggregator collects and serves up news articles](https://www.reddit.com/r/aws/comments/g7smug/architecture_deepdive_how_a_news_aggregator/)
 - url: https://www.reddit.com/r/aws/comments/g7smug/architecture_deepdive_how_a_news_aggregator/
 ---
-Hey guys, 
+Hey guys,
 
-For today's AWS Deep Dive I've interviewed the creators of a news aggregator and conducted an architecture review of their design.  
+For today's AWS Deep Dive I've interviewed the creators of a news aggregator and conducted an architecture review of their design.
 
 [https://www.youtube.com/watch?v=XaO8BBgBRH0](https://www.youtube.com/watch?v=XaO8BBgBRH0)
 
@@ -40,57 +34,58 @@ Thanks,
 
 Vladimir
 
-P.S. Subscribe if you find it useful and let me know what else you'd like me to make
-## [6][AWS Amplify - How do I allow federated identity users to only access data that belongs to them via GraphQL queries?](https://www.reddit.com/r/aws/comments/g7nu6y/aws_amplify_how_do_i_allow_federated_identity/)
-- url: https://www.reddit.com/r/aws/comments/g7nu6y/aws_amplify_how_do_i_allow_federated_identity/
+P.S. Let me know what else you'd like me to make
+## [4][Scaling Our AWS Infrastructure](https://www.reddit.com/r/aws/comments/g80yg0/scaling_our_aws_infrastructure/)
+- url: https://medium.com/swlh/scaling-our-aws-infrastructure-9e64e6817b8c
 ---
-Hi folks, I've got a mobile app where users sign up/sign in with 'Sign In With Apple' in which a federated identity is created upon sign in. I need to store and fetch data that is only accessible by the user.
 
-How can I make it so users can only access their own data when the app makes GraphQL queries? Which value can I extract from their federated identities that is reliable? Is there a better way to do this?
-
-Thanks in advance, I've searched quite hard for this but I can't find a clear cut answer.
-## [7][Possible to point a domain to both an S3 static website and a ELB fronted service?](https://www.reddit.com/r/aws/comments/g7th9c/possible_to_point_a_domain_to_both_an_s3_static/)
-- url: https://www.reddit.com/r/aws/comments/g7th9c/possible_to_point_a_domain_to_both_an_s3_static/
+## [5][EC2 Import rejected kernel version](https://www.reddit.com/r/aws/comments/g86qju/ec2_import_rejected_kernel_version/)
+- url: https://www.reddit.com/r/aws/comments/g86qju/ec2_import_rejected_kernel_version/
 ---
-So how would this scenario be pulled off?  I've got a static website hosted at www.domain.com.  I've got a service running behind an ELB that I want accessed from www.domain.com/api.  Is this possible? Or is the only way to pull this off is by use of another subdomain such as api.domain.com?
-## [8][How to secure API gateway with PingFederate?](https://www.reddit.com/r/aws/comments/g7suut/how_to_secure_api_gateway_with_pingfederate/)
-- url: https://www.reddit.com/r/aws/comments/g7suut/how_to_secure_api_gateway_with_pingfederate/
+I created recently an EC2 instance of Gentoo running kernel 5.4.28 and it's working just fine. I did an export of this instance to my local server and started under VirtualBox, did some few updates and changes to export back as new instance but surprisingly I got an error saying that "Kernel version 5.4.28 is not supported".
+
+Considering that I have already an instance running on 5.4.28, what am I doing wrong?
+## [6][AWS Macie and cloudformation](https://www.reddit.com/r/aws/comments/g85y5l/aws_macie_and_cloudformation/)
+- url: https://www.reddit.com/r/aws/comments/g85y5l/aws_macie_and_cloudformation/
 ---
-Has anyone integrated REST APIs deployed to AWS API Gateway with PingFederate to implement OAuth 2.0 protocol?
-## [9][Advice with my S3 strategy](https://www.reddit.com/r/aws/comments/g7o36k/advice_with_my_s3_strategy/)
-- url: https://www.reddit.com/r/aws/comments/g7o36k/advice_with_my_s3_strategy/
+I have been doing some research on using cloudformation to turn on macie and integrating member accounts in macie but cannot get any clear documentation of achieving this with cloudformation. I know I can turn it on via console but want to do this via iac(cloudformation or terraform). Anyone have experience or documentation on this?
+## [7][Is it allowed in ToS to discuss enterprise support cases online?](https://www.reddit.com/r/aws/comments/g7qbd4/is_it_allowed_in_tos_to_discuss_enterprise/)
+- url: https://www.reddit.com/r/aws/comments/g7qbd4/is_it_allowed_in_tos_to_discuss_enterprise/
 ---
-This is my first experience with S3 so bear with me.
+I find myself asking a lot of questions to support for stuff that I can't find already-existing info on, and so I probably open a support case at least once every two weeks or so.
 
-I'm looking to use S3 to store all the user assets for an app I'm building.  The assets would mostly just include videos and photos, and maybe user avatars.
+The responses are always amazing, and I want to share the info I get online.  In a recent example, I found an flaw (not a security flaw) in one of the AWS provided default IAM policies, and when I wrote to support, they were like, "indeed, we tested it too, the policy is mistaken, we've escalated this to the IAM team, and to work around it here are some ways you can fill in the gaps." It seems like a shame that info is just sitting in my inbox and not on a forum somewhere.
 
-Since the server I'm hosting the back end on has a slow upstream connection, I was hoping I could offload the work to the client.
-
-So my idea is
-
-1. Client hits my API with a request to upload some content
-2. My server would validate the user, and validate they are a member of the group they are trying to upload too. Then return a temporary signed POST url
-3. Client would then upload to that url
-4. Once they complete the upload, they hit my API again so I can record the asset in my database. 
-
-Then to fetch the data they would:
-
-1. Hit my API for a download link
-2. Server verifies they are authenticated, and are a member of the group
-3. Generate a signed temporary download link, then redirect the client to the URL
-
-Does that make sense?
-
-I'm assuming I can't skip a step and just pipe the request straight to AWS through my server right? As that would still require my severs bandwidth?
-
-In case it matters, the back end is written in Kotlin using the ktor framework, and I'm using the Java SDK 2
-## [10][Cannot ssh to an ecs ec2 instance](https://www.reddit.com/r/aws/comments/g7qq3c/cannot_ssh_to_an_ecs_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/g7qq3c/cannot_ssh_to_an_ecs_ec2_instance/
+Can I copy paste those responses somewhere?  Do I have to redact the agents name?  Or do I have to reword the issue and solution in my own words?
+## [8][Can I embed Python snippets that run on lambda on my website](https://www.reddit.com/r/aws/comments/g83a2x/can_i_embed_python_snippets_that_run_on_lambda_on/)
+- url: https://www.reddit.com/r/aws/comments/g83a2x/can_i_embed_python_snippets_that_run_on_lambda_on/
 ---
-I cannot ssh into my ecs ec2 instance even there's a ssh on the ssg inbound rules.
+Hi,
 
-SSH TCP 22 [0.0.0.0/0](https://0.0.0.0/0)
+&amp;#x200B;
 
-SSH TCP 22 ::/0
+I want to embed Python code snippets that the reader can edit and run like programming websites.
 
-Does anyone able to fix this? I can ssh to an ec2 instance not created through ecs though.
+Some people recommend using AWS lambda.
+
+Can I achieve that in WordPress? Is there any tutorial or any material that can help?
+
+&amp;#x200B;
+
+Regards,
+## [9][Convert AWS EC2 Reserved instance to EC2 Spot instance. Possible?](https://www.reddit.com/r/aws/comments/g82nq8/convert_aws_ec2_reserved_instance_to_ec2_spot/)
+- url: https://www.reddit.com/r/aws/comments/g82nq8/convert_aws_ec2_reserved_instance_to_ec2_spot/
+---
+ 
+
+Hello everyone,
+
+I'm running an application developed in-house for a research project, in an EC2 instance (c5d.4xlarge). I have used a Reserve Instance to manage the billing, as this project was supported by AWS credits. But I would like to optimize the instance due to shortage of credits we're facing right now. I want to switch from a reserved instance to a EC2 Spot instance. However, I cannot sell my instance on the AWS marketplace because the research lab is Non-profit and part of an educational institution.   Is there a way to convert my reserved instance to a spot instance, so that I can save up on my credits? The credits are set to expire in September, but with the on-going speed of credits spent, I will be out of credit balance by July.   #ec2 #spot-instance #reserved-instance #help #amazon-web-services
+## [10][Making real time dashboard (website) using API gateway, s3 and lambda?](https://www.reddit.com/r/aws/comments/g7spzt/making_real_time_dashboard_website_using_api/)
+- url: https://www.reddit.com/r/aws/comments/g7spzt/making_real_time_dashboard_website_using_api/
+---
+I am currently making a website that monitors my raspberry pi data (which is stored in dynamoDB) and show it in real time. My aws design goal is to create a serverless realtime web app. So from what I have heard, I can add my static site (I am using vueJS) in S3 and then use the help of API gateway and lambda to get the data. The problem is I am not familiar with websockets. So please forgive me if I say something stupid; So my biggest question is the client side code. Once I have created a websocket API gateway, what should I add in my client side to make it work? I know I can use rest api instead, but since I want the site to be in realtime, I would need to call the API every few second (which is not cost effective).
+
+If you have any advice regarding my project or implementation please feel free to give suggestions.
+
+Thank you!

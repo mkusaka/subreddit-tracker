@@ -19,153 +19,161 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Beefing security of Rails API](https://www.reddit.com/r/rails/comments/g7zhjp/beefing_security_of_rails_api/)
+## [2][Beginning with Rails and I have a few questions](https://www.reddit.com/r/rails/comments/g8xv6i/beginning_with_rails_and_i_have_a_few_questions/)
+- url: https://www.reddit.com/r/rails/comments/g8xv6i/beginning_with_rails_and_i_have_a_few_questions/
+---
+Hi everyone, I started to learn Rails last week, and I am so happy with it. I managed to get from a "hello world" level, to an actually usable app in less than a week, great experience.
+That said, I have plenty of questions, and I can't really find some clear answers online. I read a lot of threads here, and learned a lot, so I was hoping some of you might help answer these questions.
+
+First, some context:
+I'm an artist manager, and my rails app is basically a CRM for my business (a team of 4 people). It has some basic CRUD features + a calendar, and allows me to create invoices etc. There is not a tons of datas (few hundred of entries on each table) but there is a lot of relations between these datas (e.g: a manager has many artists, an artist has many performances, a performance has many events (rehearsals, setup, travel), a performance has an invoice etc.).
+
+I would like to actually use this project for my business, but before involving all my team, it would help a lot to have some answers to the following questions:
+
+
+1 - For my database I use SQLite3. Being file-based, I think it is perfect for a beginner like who might benefit from having this file under version control, and in case of problem I could just revert to the previous version. I'm not that confident in doing this easily and quickly with MySQL. So is there a real benefit from using a better database for my small business ? Will I really see some better performances given that there is not a lof of entries, and 4 simultaneous user maximum ?
+
+2 - What is the best strategy for assets, should I manage these on a per-page basis or should I just send the whole pack on the first page load ?
+
+3 - I installed a few gems, and now my JS asset file is around 3Mb. Is that considered normal for a rails app (there is not a tons of gems: wicked_pdf, shrine, materializejs, jquery, actioncable, cocoon) ?
+
+4 - I plan to add to my app a "settings" page where I can define some settings such as menu color etc. Basically, it is an array of settings. 
+What is the best way to store this kind of datas ? It feels weird to create a table given that I will only use the first entry of this table. What do you think?
+
+Edit:
+5 - For my app I made a dashboard which display some general statistics. In order to display all the required values, I need to pass to this view all my datas (e.g: Artist.all, Performance.all, Invoice.all etc.).
+Does this affect performance ? 
+
+Many thanks in advance !
+## [3][What is the explanation of blob in ActiveStorage?](https://www.reddit.com/r/rails/comments/g8y2cj/what_is_the_explanation_of_blob_in_activestorage/)
+- url: https://www.reddit.com/r/rails/comments/g8y2cj/what_is_the_explanation_of_blob_in_activestorage/
+---
+I have a model named document. In the migration of document model, I have a column named t.blob :file. There is an error about blob ib my model migration. "Unknown method". How do you implement my model document to activestorage?
+## [4][Validates. Removing the url video.](https://www.reddit.com/r/rails/comments/g8xplp/validates_removing_the_url_video/)
+- url: https://www.reddit.com/r/rails/comments/g8xplp/validates_removing_the_url_video/
+---
+Hi guys, I added this lines to validate the youtube video id.
+
+It check only if the video is added and the length of the video is of 11 characters. Very easy.
+
+        validate :check_videos_url!
+    
+        def check_videos_url!
+          errors.add(
+            :videos, :wrong_youtube_id
+          ) if videos.any? &amp;&amp; videos.first.try(:url).length != 11
+        end
+
+But now the users reported me a bug.
+
+If I create a page and I don't add any video -&gt; It works and creates the page.
+
+If I create a page and I add a video of only 5 characters -&gt; It works, reporting me the error.
+
+If I create a page and I add a video with 11 characters -&gt; It works and creates the page.
+
+If I edit the page with no video, adding a new video -&gt; It works and edits the page.
+
+If I edit the page with a video, adding a new video -&gt; It works and edits the page.
+
+**If I edit the page with a video and I want to remove it -&gt; BUG. It say "it should be 11 characters" and I can't remove it.**
+
+&amp;#x200B;
+
+How to solve?
+## [5][Optimal way to define Chrome + Capybara integration in 2020?](https://www.reddit.com/r/rails/comments/g8m0xb/optimal_way_to_define_chrome_capybara_integration/)
+- url: https://www.reddit.com/r/rails/comments/g8m0xb/optimal_way_to_define_chrome_capybara_integration/
+---
+Hey guys!
+
+I'm working on redoing some of  my company's feature test suite, and I wanted to update our Capybara  &amp; Webdriver configuration to match the latest recommended standards by the Capybara team.
+
+I'm trying to define three types of drivers for my suite:
+
+1. Local, regular driver that will be able to spin up Chrome sessions and test in the same GUI/window server as normal
+2. Same thing as #1, but headless
+3. Completely remote setup where we can run our feature tests on a  separate Selenium-Chrome node in the same network (for CI usage).
+
+Our old preferences can be seen here: [https://github.com/arman000/marty/blob/master/spec/support/chromedriver.rb](https://github.com/arman000/marty/blob/master/spec/support/chromedriver.rb)
+
+Now,  it's a bit all over the place, but one of the main things I wanted to  ask is what's the difference between using `add_preference` &amp;  `add_argument` to using  `Selenium::WebDriver::Remote::Capabilities.chrome`? Should I be using  that option set for locally running feature specs as well or just for setups #2 and #3?
+
+Appreciate any help/feedback!
+## [6][Social Login + Rails API + Mobile Client](https://www.reddit.com/r/rails/comments/g8g69p/social_login_rails_api_mobile_client/)
+- url: https://www.reddit.com/r/rails/comments/g8g69p/social_login_rails_api_mobile_client/
+---
+I'm making this post in response to the last one I made where I was stuck on figuring out how to get social login working when dealing with a RoR backend and a native mobile app. ([https://www.reddit.com/r/rails/comments/g3s0v7/devise\_token\_auth\_omniauth/](https://www.reddit.com/r/rails/comments/g3s0v7/devise_token_auth_omniauth/))
+
+I tried working with Omniauth but things got quite messy considering the number of redirects required to get everything going so I decided to go DIY and try write up my own solution.
+
+The result is [https://gist.github.com/jesster2k10/ff96b5adbce72abae5fc603bd17c1843](https://gist.github.com/jesster2k10/ff96b5adbce72abae5fc603bd17c1843)
+
+I go into a good bit of detail in the gist of the code and how everything works but to summarise it here:
+
+* The user signs in with the native sdks on the mobile client
+* The mobile SDK generates an access/id token
+* A POST /identities/:provider request is sent with the token in the body
+* The server fetches the user info from the token
+* A new user is created based on that user info
+
+The main benefit of this is that it's a much simpler implementation on the native side than setting up a web view and dealing with it the "traditional" way. However, if you are working with a Rails application or even an SPA, there's not much benefit to this over Omniauth so I would go with that.
+
+I've written specs for about 65% of the code right now but just testing it with Postman shows it's working. I'll update the gist with the new specs as I write more of them
+
+Hope this can help somebody as frustrated as I was.
+## [7][Heroku Deploy Error Message](https://www.reddit.com/r/rails/comments/g8vxbl/heroku_deploy_error_message/)
+- url: https://www.reddit.com/r/rails/comments/g8vxbl/heroku_deploy_error_message/
+---
+Just completed this tutorial app which was running near flawless, but heroku is being a jerk and not actually running it and instead asking me if I'm the owner of the app. What did I do wrong? (no it's not a carbon copy of the tutorial app).
+
+  
+
+# "We're sorry, but something went wrong.
+
+If you are the application owner check the logs for more information."
+## [8][profit loss graph in rails](https://www.reddit.com/r/rails/comments/g8vu2f/profit_loss_graph_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/g8vu2f/profit_loss_graph_in_rails/
+---
+ have income,expense, user controller i want to plot a graph of currrent user profit i calculated it in model.  
+def total\_expense  
+expenses.pluck(:amount).sum  
+end  
+def total\_incomes  
+incomes.pluck(:amount).sum  
+end  
+def profit\_loss  
+total\_incomes - total\_expense  
+end  
+how i plot a graph of profit\_loss its value is not save in data base
+## [9][Naming convention: folder containing algorithms that look up and/or calculate values](https://www.reddit.com/r/rails/comments/g8skfa/naming_convention_folder_containing_algorithms/)
+- url: https://www.reddit.com/r/rails/comments/g8skfa/naming_convention_folder_containing_algorithms/
+---
+Do any of you contain such a folder? For example, I want to write an algorithm that determines the nearest year a vehicle could be based on VIN number (so an amateur decoder of sorts). Where would I put this logic? So far I only intend to use this method in multiple controllers, so is it simply a controller concern?
+
+Edit: Or maybe I should just make a folder named "decoders" and name the file "vin\_decoder.rb"?
+## [10][Storing Videos For My Rails Application](https://www.reddit.com/r/rails/comments/g8hbmy/storing_videos_for_my_rails_application/)
+- url: https://www.reddit.com/r/rails/comments/g8hbmy/storing_videos_for_my_rails_application/
+---
+Hello!
+
+A quick question regarding **storing videos** that I created for my rails application.
+
+I'm wondering how I would be able to store videos in a database. From what I gathered, I saw that a lot of people are saying to store the media in the "filesystem" rather than in the database directly.
+
+I'm wondering if the right way of doing this is by storing my videos on a server and then copying the path to that file into the database.
+
+Also, I saw that Amazon S3 offers buckets. I only have about 1TB of videos that need to be uploaded. Would this be a better alternative?
+
+**The services I'm considering are:**  
+\- Amazon S3  
+\- Digital Ocean Spaces Object Storage
+
+Am I on the right path here? Or am I way off?
+
+Thanks in advance guys!
+## [11][Beefing security of Rails API](https://www.reddit.com/r/rails/comments/g7zhjp/beefing_security_of_rails_api/)
 - url: https://www.reddit.com/r/rails/comments/g7zhjp/beefing_security_of_rails_api/
 ---
 What are the best ways to make a rails API secure?
 
 I'm considering whitelisting my client's IP address. How useful is hashing or encrypting the json data? Any other ideas?
-## [3][what do you think about my ruby/js coding?](https://www.reddit.com/r/rails/comments/g8crzn/what_do_you_think_about_my_rubyjs_coding/)
-- url: https://www.reddit.com/r/rails/comments/g8crzn/what_do_you_think_about_my_rubyjs_coding/
----
-&amp;#x200B;
-
-im trying to get a code review done for [this code i wrote](https://codereview.stackexchange.com/q/241237/152349)   
-can pay $ if thats what it takes
-## [4][Another way to handle complexity in Rails application](https://www.reddit.com/r/rails/comments/g7tkzq/another_way_to_handle_complexity_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/g7tkzq/another_way_to_handle_complexity_in_rails/
----
- [https://github.com/andriy-baran/steel\_wheel/wiki/Getting-started-on-Rails](https://github.com/andriy-baran/steel_wheel/wiki/Getting-started-on-Rails)
-## [5][[Newbie] Help Rails 6](https://www.reddit.com/r/rails/comments/g7x236/newbie_help_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/g7x236/newbie_help_rails_6/
----
-Hi,
-
-First giving a bit of introduction, thanks to Corona have enough time to start learning rails and its components.
-
-&amp;#x200B;
-
-I'm trying to incorporate ajax calls into my rails 6 newbie app ( but wans't able to understand this instruction [here](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript) )
-
-&amp;#x200B;
-
-Was able to play with:
-
-format.html
-
-format.js
-
-    respond_to do |format|
-            if @problem.save
-              format.html { redirect_to :root
-                flash[:success] = "Added #{@problem.description}}
-              format.json { render :show, status: :created, location: @ticket }
-              format.js   { render :js =&gt; "window.location='#{ problems_path }'"  
-              flash[:success] = "Added #{@problem.description} by #{current_user.email}" } 
-            else
-              format.js {}
-              format.html { render 'problems/new' }
-              format.json { render json: @problem.errors, status: :unprocessable_entity }          
-            end
-          end 
-
-I understood know how html/js works when the request is being process from views and how to create a proper response from server.
-
-Now, I want to completely understand as well the ajax processing.
-
-&amp;#x200B;
-
-As per link, when form\_with model:@model sets the processing as AJAX but I think it's just the same as JS, now, it's a bit cloudy on my side how can I exacly integrate AJAX scripts.
-
-&amp;#x200B;
-
-Any newbie help?
-## [6][Creating Recipient model before payment session](https://www.reddit.com/r/rails/comments/g7wirm/creating_recipient_model_before_payment_session/)
-- url: https://www.reddit.com/r/rails/comments/g7wirm/creating_recipient_model_before_payment_session/
----
-Hi all, I have created a simple checkout for my rails application. For now, it works like this. A customer clicks the button below:
-
-    &lt;div class="buynow-wrapper has-text-centered"&gt;
-        &lt;%= button_to payments_create_path, params: { id: @product.id}, remote: true,        class: 'button is-info button-shadow' do %&gt;
-        &lt;span class="icon"&gt;
-            &lt;i class="fas fa-check"&gt;&lt;/i&gt;
-        &lt;/span&gt;
-        &lt;span&gt;Pay&lt;/span&gt;
-        &lt;% end %&gt;
-    &lt;/div&gt;
-
-This will create a payment session(stripe), created in my Payments Controller. Now I want have a form with an e-mail just before submitting this all to my payment session create action. Can a button\_to go to two post paths? Im kinda stuck where and how to do this.  
-Would it be possible to send the form data, in this case en e-mailadress, directly to my create action in some variable? Main goal is having the e-mailadres available from the person who pressen 'Pay'.
-## [7][AuthTrail is a gem for tracking Devise login activity](https://www.reddit.com/r/rails/comments/g7e20w/authtrail_is_a_gem_for_tracking_devise_login/)
-- url: https://www.reddit.com/r/rails/comments/g7e20w/authtrail_is_a_gem_for_tracking_devise_login/
----
-I was looking for a way how to provide my users with an add additional level of visibility into their login activity and came across [AuthTrail](https://github.com/ankane/authtrail). Brilliant gem , opensourced by Instacart, that add to your db new table \`LoginActivity\` and record is created every time a user tries to login. You can then use this information to detect suspicious behavior.
-## [8][a better way to do git commit -m "wip"](https://www.reddit.com/r/rails/comments/g7dj8g/a_better_way_to_do_git_commit_m_wip/)
-- url: https://www.reddit.com/r/rails/comments/g7dj8g/a_better_way_to_do_git_commit_m_wip/
----
-&gt;git commit -m "wip"
-
-I find myself doing that \^ a lot, specially after I starting cleanup up a of branch that was put together rather hastily.
-
-Using this function
-
-    function c() {
-      str="$*" # https://unix.stackexchange.com/a/197794
-      git add --all
-      git commit -m "$str"
-      git log --oneline -n2
-    }
-
-I can commit like this:
-
-    c wip
-
-c stands for commit,  
-no quotes needed around the commit message, and git add is done for you already.,  
-and you can use multiple words obviously
-## [9][Whats the best way to send a series of emails to users given each mail must be sent at a given time](https://www.reddit.com/r/rails/comments/g77lfv/whats_the_best_way_to_send_a_series_of_emails_to/)
-- url: https://www.reddit.com/r/rails/comments/g77lfv/whats_the_best_way_to_send_a_series_of_emails_to/
----
-I am trying to find a solution on how could this be best handled
-
-I wanted to send emails to users at different times on a day and each user will be receiving multiple emails on the same day. I could have a background job and send an email but as far as I know I should run some check every few minutes to see whether an email should be sent to the user now and send it  but thats will query the db multiple times to find how many users should receive a mail now and then process all those users data to send a mail.
-
-The other option would be run every few times and take the next few mails to be sent and schedule it to be sent but the problem here is when I make a change in the time on email to be sent for a user. I should be able to cancel that enqueued one and add it newly and once we fetch a list and enqueue there can be new user coming in at later point and I should also enqueue them
-
-So trying to find what are the other options with which this can be done.
-## [10][Developing Rails/React app on remote ubuntu machine?](https://www.reddit.com/r/rails/comments/g7gp5n/developing_railsreact_app_on_remote_ubuntu_machine/)
-- url: https://www.reddit.com/r/rails/comments/g7gp5n/developing_railsreact_app_on_remote_ubuntu_machine/
----
-I have everything setup and built on an AWS EC2 Ubuntu 18.04 machine for remote development/testing/production. On my local development I'm using foreman to combine \`rails s\` and \`bin/webpack-dev-server\` on port 5000. How does this work using a remote machine and having an accessible URL to view app in browser? I'm using ssh to access the remote machine. 
-## [11][Whats the optimal maintainable &amp; cost-efficient way to setup a cronjob for alerts for a todo app?](https://www.reddit.com/r/rails/comments/g7detz/whats_the_optimal_maintainable_costefficient_way/)
-- url: https://www.reddit.com/r/rails/comments/g7detz/whats_the_optimal_maintainable_costefficient_way/
----
-I'm building a simple todo app in rails 6.
-
-I have work_item that has a title, deadline and finished_at. I want to send an alert on 0, 5 and 15 minutes from the deadline, if finished_at is nil. I've looked at using ActiveJob with Sidekiq + Redis. Now looking at the whenever gem like this:
-```
-every 1.minute do 
-  rake work_item:alert
-end
-```
-
-```
-namespace :work_item do
-  task :alert do
-
-     // Some pseudo code
-    minutes = [0, 5, 15]
-    time_left = work_item.deadline - DateTime.current
-    if work_item.finished_at.nil?
-      minutes.each do |number|
-        if time_left == number.minutes
-          AlertJob.perform_later(work_item)
-        end
-      end
-    end
-  end
-end
-```
-
-
-Is this the optimal maintainable &amp; cost-efficient way to setup a cronjob for a todo app?

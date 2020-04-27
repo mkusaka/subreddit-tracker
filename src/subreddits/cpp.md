@@ -119,7 +119,42 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Foundations of C++ Type System](https://www.reddit.com/r/cpp/comments/g8bkt5/foundations_of_c_type_system/)
+## [3][Online SYCL tutorial this Monday 15:00 GMT](https://www.reddit.com/r/cpp/comments/g8tk2f/online_sycl_tutorial_this_monday_1500_gmt/)
+- url: https://www.reddit.com/r/cpp/comments/g8tk2f/online_sycl_tutorial_this_monday_1500_gmt/
+---
+Registration is still open. SYCL is an open standard for heterogeneous programming in C++. 
+
+[https://www.iwocl.org/iwocl-2020/conference-program/](https://www.iwocl.org/iwocl-2020/conference-program/)
+## [4][Software Architecture done Right (?)](https://www.reddit.com/r/cpp/comments/g8jf3h/software_architecture_done_right/)
+- url: https://www.reddit.com/r/cpp/comments/g8jf3h/software_architecture_done_right/
+---
+Hey guys!
+
+I hope I'm not asking a regularly answered question. At least I didn't find anything matching in this sub. So here goes:
+
+Are any of you aware of some kind of series (blog posts, YouTube videos, ...) that cover examples of "excellently designed" C++ libraries or applications and discuss what makes them so good?
+I'm aware of various books on software architecture etc, but personally learn a lot from "real" examples as well. 
+
+Maybe some of you also have suggestions for libraries to look at and some bullet points about what you think makes them well-designed. 
+
+Thank you for your time in advance!
+## [5][C++20 Feature Complete - LAST REVISION - that can be used as reference](https://www.reddit.com/r/cpp/comments/g903ra/c20_feature_complete_last_revision_that_can_be/)
+- url: https://www.reddit.com/r/cpp/comments/g903ra/c20_feature_complete_last_revision_that_can_be/
+---
+Hi there!
+
+Does anyone can inform whether N4861 is the last C++20 draft that we can use as reference on what was approved as FEATURE COMPLETE?
+
+Tks!
+## [6][Sutter's Mill: When the hot loop’s done: Four quick tips for high throughput](https://www.reddit.com/r/cpp/comments/g8owxr/sutters_mill_when_the_hot_loops_done_four_quick/)
+- url: https://herbsutter.com/2020/04/01/when-the-hot-loops-done/
+---
+
+## [7][[ANN] QxOrm 1.4.7 and QxEntityEditor 1.2.5 released : the Qt ORM/ODM improve MongoDB integration and fix macOS Catalina](https://www.reddit.com/r/cpp/comments/g8xvs3/ann_qxorm_147_and_qxentityeditor_125_released_the/)
+- url: https://forum.qt.io/topic/114124/ann-qxorm-1-4-7-and-qxentityeditor-1-2-5-released-the-qt-orm-odm-improve-mongodb-integration-and-fix-macos-catalina
+---
+
+## [8][Foundations of C++ Type System](https://www.reddit.com/r/cpp/comments/g8bkt5/foundations_of_c_type_system/)
 - url: https://www.reddit.com/r/cpp/comments/g8bkt5/foundations_of_c_type_system/
 ---
 C++ has a very powerful type system that allows to express a lot of concepts at compile time. In particular, with generics and constexpr, you can achieve some sort of dependent typing like the following:
@@ -132,100 +167,21 @@ I was wondering where can I find information about how these parts of the type s
 Finally, if by any chance somone knows other languages that offer these sort of integer generics I would also be interested (I only know "const generics" in Rust and is still under development).
 
 Thanks!
-## [4][Correctly implementing a spinlock in C++](https://www.reddit.com/r/cpp/comments/g84bzv/correctly_implementing_a_spinlock_in_c/)
+## [9][How to Use C++ for Azure Storage](https://www.reddit.com/r/cpp/comments/g8wgp3/how_to_use_c_for_azure_storage/)
+- url: https://www.bfilipek.com/2020/04/azure-storage-cpp.html
+---
+
+## [10][Cpp-Taskflow: A General-purpose Parallel and Heterogeneous Task Programming System at Scale](https://www.reddit.com/r/cpp/comments/g8ebnj/cpptaskflow_a_generalpurpose_parallel_and/)
+- url: https://arxiv.org/abs/2004.10908
+---
+
+## [11][Correctly implementing a spinlock in C++](https://www.reddit.com/r/cpp/comments/g84bzv/correctly_implementing_a_spinlock_in_c/)
 - url: https://rigtorp.se/spinlock/
 ---
 
-## [5][CppCon 2015: Kate Gregory "Stop teaching C"](https://www.reddit.com/r/cpp/comments/g7u18r/cppcon_2015_kate_gregory_stop_teaching_c/)
-- url: https://youtu.be/YnWhqhNdYyk
----
-
-## [6][Game engines in C++17?](https://www.reddit.com/r/cpp/comments/g86pzl/game_engines_in_c17/)
+## [12][Game engines in C++17?](https://www.reddit.com/r/cpp/comments/g86pzl/game_engines_in_c17/)
 - url: https://www.reddit.com/r/cpp/comments/g86pzl/game_engines_in_c17/
 ---
 Are there any decent game engines where the source code is available to look at and that are in C++17?
 
 (Urho3D and UnrealEngine are both still on C++11/14, right?). Thanks for any pointers! 
-## [7][uvw 2.5.0 is out: a header-only wrapper for libuv written in modern C++ - now available as also shared/static library!](https://www.reddit.com/r/cpp/comments/g7u6us/uvw_250_is_out_a_headeronly_wrapper_for_libuv/)
-- url: https://github.com/skypjack/uvw
----
-
-## [8][Cpp-Taskflow: A General-purpose Parallel and Heterogeneous Task Programming System at Scale](https://www.reddit.com/r/cpp/comments/g8ebnj/cpptaskflow_a_generalpurpose_parallel_and/)
-- url: https://arxiv.org/abs/2004.10908
----
-
-## [9][State of UTF-8 support on Windows?](https://www.reddit.com/r/cpp/comments/g7tkd7/state_of_utf8_support_on_windows/)
-- url: https://www.reddit.com/r/cpp/comments/g7tkd7/state_of_utf8_support_on_windows/
----
-Two years ago, Windows 10 version 1803 started to add support for setting the locale to UTF-8. This enabled the ANSI versions of APIs such as CreateFileA, MessageBoxA, CreateWindowA to use UTF8 instead of the normally used wide-character versions like CreateFileW, MessageBoxW or CreateWindowW.
-
-Since [UTF-8](http://UTF-8everywhere.org/) is widely regarded as the best text encoding I was rejoiced about this update. However, recently I've found out that ReadConsoleA does not handle UTF-8 properly, while the above mentioned APIs (CreateFileA, MessageBoxA, CreateWindowA) do which rose some suspicion in me. To their defense the feature is still in "beta", but I'd like to know whether it makes sense to incorporate using ANSI apis for unicode into new projects. 
-
-So what I'm wondering is... Does it make sense to support ANSI and Unicode in the compilation process (in hopes of a future potential complete UTF-8 implementation)?
-
-From what I know the internal data structures that Microsoft uses are largely UTF-16 and I doubt they changed them to implement this change, what seems more likely to me is dependent on whether the user has 65001 (UTF-8) as their active code page, it converts UTF-8 to UTF-16 and then simply calls the wide character version of that API. I've never seen any official wording on this. So is this just a compatibility hack or a real architectural change under the hood?
-## [10][Cefal: library of functional typeclasses using C++20 concepts](https://www.reddit.com/r/cpp/comments/g7mluk/cefal_library_of_functional_typeclasses_using_c20/)
-- url: https://www.reddit.com/r/cpp/comments/g7mluk/cefal_library_of_functional_typeclasses_using_c20/
----
-Hi folks,
-
-Can I get some feedback on pet project I recently worked on?
-
-Here is the link - [https://github.com/dkormalev/cefal](https://github.com/dkormalev/cefal) .
-
-It is kinda a COVID child :) , I started it when switched to WFH due to virus and was working in the evenings for last 5 weeks or so.
-
-I wanted to discover what C++ concepts can give me and I have a soft spot for functional programming idioms, so I decided to create a library with typeclasses a-la Haskell (not the whole Prelude and few of them are modified), but for C++. And it also should provide Range-like operations. And should have performance at least comparable to std algorithms. And should be easy to use. And should have a strange name (cefal is grey mullet in Polish language).
-
-It provides basic set of typeclasses and number of instances for them. You could find examples at [this section of README.md](https://github.com/dkormalev/cefal#examples). Instances are provided for std containers, range views, std optional and also for any class that has proper methods. Of course they build kind of hierarchy, so it is not necessary to provide all instances for your class. Most of them can be derived from basic ones (foldable and monoid).
-
-I took care of performance as well and did some benchmarks. In almost all cases it is not worse than std algorithms and it can as well efficiently use move semantics, if it is supported by types passed to it (results for part of them could be found in README file as well).
-## [11][enum class bitflag](https://www.reddit.com/r/cpp/comments/g7pgq9/enum_class_bitflag/)
-- url: https://www.reddit.com/r/cpp/comments/g7pgq9/enum_class_bitflag/
----
-So overall, I've been liking the use of enum classes over plain old enums... but going forward, when I want to use them as bit flags, I now get annoyed with having to write the operators overloads for each enum classes that act as bitflags.... I've tried various things so I could implement them easier, but by far the macros seems to be the way to go, and I hate them as much as the next guy
-
-I was thinking though, why not have a varient of enum classes, with bit operators implicitly made and by default, increments its enum values in powers of 2. Life would be a bit more simple...
-
-Side note: Another thing that came to mind as I tried being able to implement the operators, cause of course I've naively tried to just make templated operator overloads that requires the type to be an enum... which didn't go well, which got me thinking, imagine being able to define a template function, but is enabled via "using". Though this is the only case where I saw value in such a thing if it existed
-## [12][[UPDATE] Towards a fast single-threaded CSV parser in C++11](https://www.reddit.com/r/cpp/comments/g7aflx/update_towards_a_fast_singlethreaded_csv_parser/)
-- url: https://www.reddit.com/r/cpp/comments/g7aflx/update_towards_a_fast_singlethreaded_csv_parser/
----
-I made [this](https://www.reddit.com/r/cpp/comments/g4sw1z/towards_a_fast_singlethreaded_csv_parser_written/) post a few days ago asking for advise regarding my implementation of a single-threaded CSV parser. 
-
-GitHub link: https://github.com/p-ranav/csv2
-
-Thanks for all your feedback. Now, this parser:
-
-* Memory maps the input CSV file (or parses from string if content already in memory)
-* Parses without allocations
-* Provides iterators for rows and cells
-
-It's much faster now:
-
-This benchmark measures the average execution time (of 5 runs after 3 warmup runs) for `csv2` to memory-map the input CSV file and iterate over every cell in the CSV.
-
-    MacBook Pro (15-inch, 2019)
-    Processor: 2.4 GHz 8-Core Intel Core i9
-    Memory: 32 GB 2400 MHz DDR4
-    Operating System: macOS Catalina version 10.15.3
-
-### Results (as of 23 APR 2020)
-
-| Dataset | File Size | Rows | Cols | Time |
-|:---     |       ---:|  ---:|  ---:|  ---:|
-| [Denver Crime Data](https://www.kaggle.com/paultimothymooney/denver-crime-data) | 111 MB | 479,100 | 19 | 0.198s |
-| [AirBnb Paris Listings](https://www.kaggle.com/juliatb/airbnb-paris) | 196 MB | 141,730 | 96 | 0.345s |
-| [2015 Flight Delays and Cancellations](https://www.kaggle.com/usdot/flight-delays) | 574 MB | 5,819,079 | 31 | 0.994s |
-| [StackLite: Stack Overflow questions](https://www.kaggle.com/stackoverflow/stacklite) | 870 MB | 17,203,824 | 7 | 1.547s |
-| [Used Cars Dataset](https://www.kaggle.com/austinreese/craigslist-carstrucks-data) | 1.4 GB | 539,768 | 25 | 2.381s |
-| [Title-Based Semantic Subject Indexing](https://www.kaggle.com/hsrobo/titlebased-semantic-subject-indexing) | 3.7 GB | 12,834,026 | 4 | 6.965s|
-| [Bitcoin tweets - 16M tweets](https://www.kaggle.com/alaix14/bitcoin-tweets-20160101-to-20190329) | 4 GB | 47,478,748 | 9 | 7.945s |
-| [DDoS Balanced Dataset](https://www.kaggle.com/devendra416/ddos-datasets) | 6.3 GB | 12,794,627 | 85 | 13.578s |
-| [Seattle Checkouts by Title](https://www.kaggle.com/city-of-seattle/seattle-checkouts-by-title) | 7.1 GB | 34,892,623 | 11 | 15.350s |
-| [SHA-1 password hash dump](https://www.kaggle.com/urvishramaiya/have-i-been-pwnd) | 11 GB | 2,62,974,241 | 2 | 22.069s |
-| [DOHUI NOH scaled_data](https://www.kaggle.com/seaa0612/scaled-data) | 16 GB | 496,782 | 3213 | 34.923s | 
-
-Thanks again for your feedback. This has been fun.
-
-Regards

@@ -23,213 +23,83 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/04/21/this-week-in-rust-335/
 ---
 
-## [3][Rust concurrency: five easy pieces.](https://www.reddit.com/r/rust/comments/g8b46i/rust_concurrency_five_easy_pieces/)
-- url: https://www.reddit.com/r/rust/comments/g8b46i/rust_concurrency_five_easy_pieces/
----
-How to structure concurrent workflows in Rust, via five simple examples.         
-
-[https://medium.com/@polyglot\_factotum/rust-concurrency-five-easy-pieces-871f1c62906a](https://medium.com/@polyglot_factotum/rust-concurrency-five-easy-pieces-871f1c62906a)
-## [4][Rust needs a wiki](https://www.reddit.com/r/rust/comments/g7s4ss/rust_needs_a_wiki/)
-- url: https://www.reddit.com/r/rust/comments/g7s4ss/rust_needs_a_wiki/
----
-Rust needs a wiki, or at least a hub for community documentation and other miscellaneous knowledge about the Rust language.
-
-Currently when using the Rust language, it's quite easy to be efficient if you already know what you should be using, thanks to many things: cargo-doc which generates the documentation locally or online on docs.rs, the extensive book and docs for the standard library, and the community which often won't leave your questions answered on github/discord/IRC.
-
-However, it's been really, really difficult over the last few years to start and get to that point where your Cargo.toml is stable and you start iterating quickly. Often, there will be a long process of trial and error where a user might try several crates for a given problem, or search extensively for a feature that might exist in rustc/cargo/other tool, but they just didn't know where to find it.
-
-Some examples:
-
-* The async story. What's the difference between tokio and async-std again? Do I need to read a blog post for that? Do I need to read a reddit post from a year ago that might already be outdated?
-* The HTTP Server / Client story. Hyper ? Reqwest ? Iron ? Actix-web ? Rocket ? Tide ? What is the difference between all of those, what do they do?
-* The 2D / 3D graphics story. I want to make a pong game. Piston? gfx? lyon? glium? What are the difference between all of these? By the way, I have this weird thing on windows where the command line still pops when I run my game on windows, what's up with that?
-* Many other stories: Embedded, WASM, GUI, ... Even the IDE experience is a mess! RLS, rust-analyzer? When I want to know what are the recommended stuff for vim/nvim on google, I only find a post from a year ago, and even then there are multiple answers!
-
-(Note that for most of the questions above, I did manage to answer them, but it took quite a bit of time that I wish I didn't spend. As we speak, some people might be struggling to understand those topics as well)
-
-There have been attempts to alleviate the problem. http://www.arewewebyet.org/ https://areweguiyet.com/ https://arewegameyet.com/ those are great to know the rough state for each of those topics, but it stops there. Want to know which ones of those crates you should use together? Well, you could try to see if there is a real-life example that uses the crate you intend to use, if you're lucky it's been updated less than 2 years ago.
-
-**The real solution is to have a community wiki**, akin to the one the Arch Linux community has. For reference, the Arch Linux wiki is the best tech-related hub of documentation linux users might even encounter, period. It is sober in design, and does its job. You need something? Look at the wiki, you'll probably find your answer there. You know something? Since it's overall maintained by the community, anyone can fix outdated stuff in a snap.
-
-This would fix so many problems current Rust has:
-
-* Comparative lists / tables of crates (or frameworks) to help new users find their way, without making a new website (website... that might not even be known by new rust users)
-* Common issues within the rust community would be almost always up-to-date. Up-to-date "embedded" page, up-to-date "IDE Experience" page, up-to-date "GUI" page, ect.
-* Community-driven: no risk of a useful blogpost being shutdown by its author. No risk of an important but outdated piece of info being on a website everyone knows the fix to, but nobody has the rights to change them.
-* One unique source of knowledge, no more juggling between multiple blog posts to get what you want. (Bonus: backup friendly, less risk to lose something forever).
-
-
-Of course the book, docs.rs and the official documentation should stay as they are. The wiki and the official rust website should just cross-reference each other to make sure everything is consistent. But there are so, so many topics that can be in a wiki, it really feels like there is a strong need for one. Look at me in the eyes and tell me [this awesome github repo](https://github.com/johnthagen/min-sized-rust) doesn't have the format of a wiki page.
-
-What are your toughts on this? Any other points I might have missed? I don't know where to submit this as a serious proposal to the rust teams (I don't even know if I can!), but I do intend to make sure this idea gets discussed thoroughly and hopefully approved.
-## [5][Proof Of Concept: Error Return Traces in Rust aka lightweight backtraces](https://www.reddit.com/r/rust/comments/g80c4h/proof_of_concept_error_return_traces_in_rust_aka/)
-- url: https://twitter.com/yaahc_/status/1253771822920634369?s=19
+## [3][Teleforking a process onto a different computer!](https://www.reddit.com/r/rust/comments/g8v041/teleforking_a_process_onto_a_different_computer/)
+- url: https://thume.ca/2020/04/18/telefork-forking-a-process-onto-a-different-computer/
 ---
 
-## [6][Debugging on windows with the msvc toolchain?](https://www.reddit.com/r/rust/comments/g8c53a/debugging_on_windows_with_the_msvc_toolchain/)
-- url: https://www.reddit.com/r/rust/comments/g8c53a/debugging_on_windows_with_the_msvc_toolchain/
----
-AHoy!
-
-I'm wondering what folks are using to debug on Windows. LLDB doesn't seem to work for me at all, I don't think there is an MSVC compatible GDB, I've had some early luck with remedybg (but lacks visualizers for Rust currently).
-
-WinDBG was an issue for me because I need to have an environment setup that I didn't easily find a way to configure. So I don't know how well it works.
-
-Visual Studio seems ok-ish... but yeah, not exactly awesome.
-
-&amp;#x200B;
-
-What's everyone else using?
-## [7][[pre-release]: Introducing color-eyre, a custom context for for colorful error reports via the eyre crate](https://www.reddit.com/r/rust/comments/g7xf1r/prerelease_introducing_coloreyre_a_custom_context/)
-- url: https://raw.githubusercontent.com/yaahc/color-eyre/master/pictures/full.png
+## [4][First official release of rust-analyzer](https://www.reddit.com/r/rust/comments/g8zzdy/first_official_release_of_rustanalyzer/)
+- url: https://rust-analyzer.github.io/blog/2020/04/20/first-release.html
 ---
 
-## [8][Building a simple JIT in Rust](https://www.reddit.com/r/rust/comments/g83aan/building_a_simple_jit_in_rust/)
-- url: https://www.jonathanturner.org/2015/12/building-a-simple-jit-in-rust.html
+## [5][Cargo Bloat Action: Track Rust binary sizes across builds/pull requests using Github Actions](https://www.reddit.com/r/rust/comments/g8xgoh/cargo_bloat_action_track_rust_binary_sizes_across/)
+- url: https://github.com/orf/cargo-bloat-action/
 ---
 
-## [9][Simple snake game using SDL2](https://www.reddit.com/r/rust/comments/g84zvk/simple_snake_game_using_sdl2/)
-- url: https://www.reddit.com/r/rust/comments/g84zvk/simple_snake_game_using_sdl2/
+## [6][(Almost) Lockless Stream Buffering](https://www.reddit.com/r/rust/comments/g8qgkj/almost_lockless_stream_buffering/)
+- url: https://mcfelix.me/blog/shared-buffers/
 ---
-I wrote a simple snake game in rust using sdl2. Am a newbie rustacean and haven't been programming for long. I just program as a hobby. Feedback is very much appreciated :D 
 
-[https://github.com/Whity25/Rust-Snake-sdl2](https://github.com/Whity25/Rust-Snake-sdl2)
-## [10][A full stack application written in Rust (yew, yew-router, stdweb)](https://www.reddit.com/r/rust/comments/g7ztre/a_full_stack_application_written_in_rust_yew/)
-- url: https://www.reddit.com/r/rust/comments/g7ztre/a_full_stack_application_written_in_rust_yew/
+## [7][Maximum Sum of Subarrays (Leetcode) in Rust (+ benchmarking)](https://www.reddit.com/r/rust/comments/g8y2w8/maximum_sum_of_subarrays_leetcode_in_rust/)
+- url: https://www.youtube.com/watch?v=G1deF4Rehlw
 ---
-Hey r/rust! 
 
-My friend and I wrote a simple full stack application in Rust, to showcase what can be done using Rust and wanted to share it with the community. 
-
-Rusty Connect 4 is a full-stack project written completely in Rust. It uses:
-
-* rocket on the backend
-* yew for creating front-end webapps with WebAssembly (yew is a great component-based framework!)
-* yew-router for routing
-* stdweb to provide Rust bindings for Web APIs
-
-The backend is only used for requests and saving your progress. You can still play the game with just the frontend.
-
-Any feedback is welcome! Also feel free to fork or create any pull request.
-
-repo can be found [here](https://github.com/ahmedelgohary/rusty-connect4)
-## [11][Shipyard 0.4 release](https://www.reddit.com/r/rust/comments/g82tza/shipyard_04_release/)
-- url: https://www.reddit.com/r/rust/comments/g82tza/shipyard_04_release/
+## [8][Rust Wiki: Slack workspace for coordination](https://www.reddit.com/r/rust/comments/g8j871/rust_wiki_slack_workspace_for_coordination/)
+- url: https://www.reddit.com/r/rust/comments/g8j871/rust_wiki_slack_workspace_for_coordination/
 ---
-[Shipyard](https://crates.io/crates/shipyard) is an Entity Component System crate. ECS is a pattern mostly used in games but not only. It fits really well with Rust, allowing easy composition and lifetime management.
+~~This is in response to [this](https://www.reddit.com/r/rust/comments/g7s4ss/rust_needs_a_wiki/) post where people expressed support for creating a Rust wiki.~~
 
-**What's new**
+~~For anyone that is interested in helping us create this wiki, please join the new [Slack workspace](https://join.slack.com/t/rustwiki/shared_invite/zt-e674kvf4-vIHNSAG3nTLbG4ef7ECnhA) so we can discuss options and coordinate efforts.~~
 
-* Rework of systems and types used to borrow storage
-* Workloads had to be reworked to handle this change
-* Workloads can now return errors
-* `Iterator` and `IntoIterator` are now supported
+We've moved to the community Discord under the #wiki channel: https://discord.gg/fwSRAx
 
-For 0.3 users there's a [migration guide](https://leudz.github.io/shipyard/book/recipes/0.4-migration.html) to help with all the changes.
-
-**Example:**
-
-    use shipyard::*;
-
-    struct Health(f32);
-    struct Position {
-        _x: f32,
-        _y: f32,
-    }
-
-    fn in_acid(positions: View&lt;Position&gt;, mut healths: ViewMut&lt;Health&gt;) {
-        for (_, mut health) in (&amp;positions, &amp;mut healths)
-            .iter()
-            .filter(|(pos, _)| is_in_acid(pos))
-        {
-            health.0 -= 1.0;
-        }
-    }
-
-    fn is_in_acid(_: &amp;Position) -&gt; bool {
-        // it's wet season
-        true
-    }
-
-    fn main() {
-        let world = World::new();
-
-        world.run(
-            |mut entities: EntitiesViewMut,
-            mut positions: ViewMut&lt;Position&gt;,
-            mut healths: ViewMut&lt;Health&gt;| {
-                entities.add_entity(
-                    (&amp;mut positions, &amp;mut healths),
-                    (Position { _x: 0.0, _y: 0.0 }, Health(1000.0)),
-                );
-            },
-        );
-
-        world.run(in_acid);
-    }
-## [12][Help cross-compiling for Raspberry Pi Zero W](https://www.reddit.com/r/rust/comments/g86tc1/help_crosscompiling_for_raspberry_pi_zero_w/)
-- url: https://www.reddit.com/r/rust/comments/g86tc1/help_crosscompiling_for_raspberry_pi_zero_w/
+Thank you!
+## [9][Do vec![0; n] and Vec::with_capacity(n) sometimes not allocate?](https://www.reddit.com/r/rust/comments/g8o113/do_vec0_n_and_vecwith_capacityn_sometimes_not/)
+- url: https://www.reddit.com/r/rust/comments/g8o113/do_vec0_n_and_vecwith_capacityn_sometimes_not/
 ---
-Hello! 
+My understanding was that initializing a vector with `vec!` or `Vec::with_capacity` performed an initial allocation and guaranteed that no other allocations would take place so long as the Vector's length stays below that initial capacity.
 
-If this isn't the right place for this question, my apologies!
+However, I have been running some tests, and the actual memory use of my program isn't consistent with that understanding.  As a test, I initialized a Vector in three different ways:
 
-Background: I built a head-mounted computer. For lightness' sake, it's a Raspberry Pi Zero W. 
+1) `Vec::with_capacity(0x4_000_000)`
 
-I have a project that I'm trying to cross-compile to run on the Pi, but I'm having trouble. My understanding is that the Pi Zero W has an Arm V6 processor. When I cross-compile my code and upload the executable, I get "\[1\]    2044 illegal hardware instruction" 
+2) `vec![0_u8; 0x4_000_000]`
 
-Compiling the project directly on the Pi *was* working, right up until I started getting out of memory errors trying to compile my most recent commit.
+3) `vec![47_u8; 0x4_000_000]`
 
-I'm new to Rust (and cross-compiling, come to that) and still trying to sort this all out. I'm not sure what I'm doing wrong, or what information might be relevant. So here's an info dump of everything I can think of.work
+In each case, I complied my program in release mode, ran it, and measured its total memory use with [ps_mem](https://github.com/pixelb/ps_mem).  When I'd initialized the Vector in either of the first two ways, my program's memory use was unchanged from not creating the large Vector at all, but when I initialized it using #3, my program's memory use increased by the expected amount (~67 MiB).
 
-I'm using [https://github.com/rust-embedded/cross](https://github.com/rust-embedded/cross) to build a basic cross-compiling container, which I then extend to actually perform the compilation. I'm extending the base image because I also need a cross-compiled OpenSSL.
+Does that mean that `with_capacity` does *not* actually allocate the full capacity (and thus could still require subsequent allocations to reach that capacity)?  Or is it allocating that memory, but not in a way that ps_mem is counting as used (which seems odd – it the memory has been allocated, it's not available for other programs, which seems like use to me).
 
-&amp;#x200B;
+(Before anyone says anything, my *actual* use case will not involve allocating a 67 MiB Vector!  I'm just testing with large numbers because they make the effects more obvious :)  But I would like to understand how I need to initialize a vector to guarantee that I can subsequently use it without triggering any allocations)
+## [10][Creating a buffer with specific indices for UDP messaging](https://www.reddit.com/r/rust/comments/g8v7xi/creating_a_buffer_with_specific_indices_for_udp/)
+- url: https://www.reddit.com/r/rust/comments/g8v7xi/creating_a_buffer_with_specific_indices_for_udp/
+---
+Hey there! Hope we're all keeping healthy and happy.
 
-* Project: [https://github.com/swordsmanluke/todor/](https://github.com/swordsmanluke/todor/)
-* Cross Compilation container base: rustembedded/cross:arm-unknown-linux-gnueabihf-0.2.0
-* Host: Ubuntu 18.04
-* RustC: 1.43
-* GCC: 5.4.0
-* Cross.toml:
+I'm looking to implement a torrenting client just for experience. As part of that, I need to create a buffer that is looks like this [(from BEP)](http://www.bittorrent.org/beps/bep_0015.html):
 
-&amp;#8203;
+| Offset | Size           | Name           | Value                           |   |
+|--------|----------------|----------------|---------------------------------|---|
+| 0      | 64-bit integer | protocol_id    | 0x41727101980 // magic constant |   |
+| 8      | 32-bit integer | action         | 0 // connect                    |   |
+| 12     | 32-bit integer | transaction_id | // Randomised ID                |   |
+| 16     |                |                |                                 |   |
 
-    [target.arm-unknown-linux-gnueabihf]
-    image = "my/pi-build:latest"
+The thing is, I can't find a library that specifically allows me to set offsets for these buffer elements. Has anyone used something similar?
 
-* DockerFile:
+Thanks for your time with this, it's super appreciated!
+Jake.
+## [11][Educational Rust live coding - Building a git CLI [video]](https://www.reddit.com/r/rust/comments/g8z0xg/educational_rust_live_coding_building_a_git_cli/)
+- url: https://youtu.be/YFzF1AHYjes?t=301
+---
 
-&amp;#8203;
+## [12][Confused with how 'any()' works on an iterator.](https://www.reddit.com/r/rust/comments/g8xp17/confused_with_how_any_works_on_an_iterator/)
+- url: https://www.reddit.com/r/rust/comments/g8xp17/confused_with_how_any_works_on_an_iterator/
+---
+I'm screwing around with Rust now and learning iterators. All other iterator methods like filter, find and map have worked exactly as I'd expect them to, but I can't use 'any' properly. My current implementation is like this:
 
-    FROM rustembedded/cross:arm-unknown-linux-gnueabihf-0.2.0
-    ENV DEBIAN_FRONTEND=noninteractive
-    ENV PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig
-    ENV RPI_TOOLS=/rpi_tools
-    ENV MACHINE=armv6
-    ENV ARCH=armv6
-    ENV CC=gcc
-    ENV OPENSSL_DIR=/openssl
-    ENV CROSSCOMP_DIR=/rpi_tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin
-    
-    RUN dpkg --add-architecture armhf
-    RUN apt-get update &amp;&amp;\
-        apt-get install -y wget openssl:armhf libssl-dev:armhf pkg-config libudev-dev:armhf
-    
-    # Get Raspberry Pi cross-compiler tools
-    RUN git -C "/" clone -q --depth=1 https://github.com/raspberrypi/tools.git "${RPI_TOOLS}"
-    
-    # Manually cross-compile OpenSSL to link with
-    
-    # 1) Download OpenSSL 1.1.0
-    RUN mkdir -p $OPENSSL_DIR
-    RUN cd /tmp &amp;&amp;\
-        wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.0h.tar.gz &amp;&amp;\
-        tar xzf openssl-1.1.0h.tar.gz
-    
-    # 2) Compile
-    RUN cd /tmp/openssl-1.1.0h &amp;&amp;\
-        ./Configure linux-generic32 shared\
-          --prefix=$INSTALL_DIR --openssldir=$OPENSSL_DIR/openssl\
-          --cross-compile-prefix=$CROSSCOMP_DIR/arm-linux-gnueabihf- &amp;&amp;\
-          make depend &amp;&amp; make &amp;&amp; make install
+`for i in subscriptions.iter().any(|&amp;x| x.price &lt; 10.0) {`  
+   
+    `}`
+
+Where 'subscriptions' is a vector of custom structs. This throws a `bool is not an iterator` error, which sounds odd considering that every other operation I've done on an iterator has resolved to a bool at some point. I can't tell exactly why this particular method isn't working like the others, but I have to use it for an assignment, so any help is greatly appreciated.

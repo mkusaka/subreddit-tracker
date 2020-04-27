@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - April 25, 2020](https://www.reddit.com/r/androiddev/comments/g7sq25/app_feedback_thread_april_25_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/g7sq25/app_feedback_thread_april_25_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/g900i2/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/g900i2/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - April 20, 2020](https://www.reddit.com/r/androiddev/comments/g4qoms/weekly_questions_thread_april_20_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/g4qoms/weekly_questions_thread_april_20_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - April 27, 2020](https://www.reddit.com/r/androiddev/comments/g8yltx/weekly_questions_thread_april_27_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/g8yltx/weekly_questions_thread_april_27_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,83 +31,78 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][SoundSpice, An open-source music player for Android](https://www.reddit.com/r/androiddev/comments/g81olh/soundspice_an_opensource_music_player_for_android/)
-- url: https://i.redd.it/exe6h5wf71v41.png
+## [3][6,000 free Android CI minutes / month on Bitrise right now - COVID 19 support](https://www.reddit.com/r/androiddev/comments/g8vt8f/6000_free_android_ci_minutes_month_on_bitrise/)
+- url: https://blog.bitrise.io/changes-to-bitrise-covid-19-support
 ---
 
-## [4][Just published my second Medium article, showing you how to create way better logs that show you where a log was made and has a hyperlink so you can jump to it's location, just like with Exceptions. Any Feedback is appreciated.](https://www.reddit.com/r/androiddev/comments/g8bo9k/just_published_my_second_medium_article_showing/)
+## [4][Building Android from source](https://www.reddit.com/r/androiddev/comments/g8z6qz/building_android_from_source/)
+- url: https://www.reddit.com/r/androiddev/comments/g8z6qz/building_android_from_source/
+---
+Hi everyone!
+I would like to start building Android ROMs. I have read about it, however I have a few questions. Please bear with me as I'm still a beginner and would like to learn something new during lockdown.
+
+1) Can I build an Android 10 ROM for a 7 year old Xperia SP(which is the device I have lying around)?
+
+2)I have a slow internet connection, around 10 Mbps. I have read that Android source is around 120 GB. Is it possible to download the source part by part everyday? Just like you can pause download through a download manager, is it possible even on my machine running Kali Linux?
+
+3) Can you suggest some good tutorials to learn from? Currently, I know C, C++, Python and a bit of Java and have experience in using the command line.
+
+4) My machine specs are: Intel Core i5-4440, 16GB RAM, 500GB HDD(dedicated to Linux). Will this be okay to build a ROM in a reasonable amount of time?
+
+I'm sorry if this is the wrong subreddit, but can anyone please point to the right one if this is wrong?
+## [5][Encryption on Android with Jetpack Security](https://www.reddit.com/r/androiddev/comments/g8xgj5/encryption_on_android_with_jetpack_security/)
+- url: https://www.reddit.com/r/androiddev/comments/g8xgj5/encryption_on_android_with_jetpack_security/
+---
+[https://five.agency/encryption-on-android-with-jetpack-security/](https://five.agency/encryption-on-android-with-jetpack-security/)
+## [6][Is Android Studio very difficult to learn or am I doing something wrong?](https://www.reddit.com/r/androiddev/comments/g8ouxe/is_android_studio_very_difficult_to_learn_or_am_i/)
+- url: https://www.reddit.com/r/androiddev/comments/g8ouxe/is_android_studio_very_difficult_to_learn_or_am_i/
+---
+I'm still a beginner in java. But I am able to create useful java programs and I really enjoy it. I recently wanted to port these programs to android and I'm finding it really hard.Something as simple as displaying a list seems very complicated.Does it get easier? Are there any tips I need to know or good tutorials/courses I should follow?
+## [7][Android 11 update schedule - Road map](https://www.reddit.com/r/androiddev/comments/g90iqa/android_11_update_schedule_road_map/)
+- url: https://www.revick.net/news/android-11-update-schedule/
+---
+
+## [8][Just published my second Medium article, showing you how to create way better logs that show you where a log was made and has a hyperlink so you can jump to it's location, just like with Exceptions. Any Feedback is appreciated.](https://www.reddit.com/r/androiddev/comments/g8bo9k/just_published_my_second_medium_article_showing/)
 - url: https://medium.com/@.me./android-logging-on-steroids-clickable-logs-with-location-info-de1a5c16e86f
 ---
 
-## [5][My first app with Kotlin: Coronavirus Stats. Any reviews? (Source code in comments)](https://www.reddit.com/r/androiddev/comments/g7zyn2/my_first_app_with_kotlin_coronavirus_stats_any/)
-- url: https://v.redd.it/r5kap8w8p0v41
+## [9][Are there plans for supporting java versions beyond JDK 8 for android development?](https://www.reddit.com/r/androiddev/comments/g8zx54/are_there_plans_for_supporting_java_versions/)
+- url: https://www.reddit.com/r/androiddev/comments/g8zx54/are_there_plans_for_supporting_java_versions/
 ---
 
-## [6][Android 11 interface adjustment: add fast screen capture, multi-tasking to keep up with domestic ROM. After adjustment, the new multitasking management page will display a larger App card.](https://www.reddit.com/r/androiddev/comments/g8adxp/android_11_interface_adjustment_add_fast_screen/)
-- url: https://i.redd.it/0advtsch94v41.png
+## [10][Learning from Zero](https://www.reddit.com/r/androiddev/comments/g8zpe6/learning_from_zero/)
+- url: https://www.reddit.com/r/androiddev/comments/g8zpe6/learning_from_zero/
 ---
+Hello there, 
+So I have no real experience in programming or coding at all, just finished some intro level courses(cs 50, C intro).
+However, I find app development very interesting and want to get Into business.my only option is self learning I can't afford to pay much for now,but I am willing to put effort and time into it.
+Should I start by Java then Android studio? Or should I learn using a program that doesn't require coding as (app inventor/React native or unity for games)?
+Are both equal in job opportunities (as a freelancer) or which is better?
 
-## [7][Github Template for starting an Android app project with: 100% Kotlin + Github Actions + ktlint + Detekt + Gradle Kotlin DSL + buildSrc dependencies already set up.](https://www.reddit.com/r/androiddev/comments/g7rhi8/github_template_for_starting_an_android_app/)
-- url: https://github.com/cortinico/kotlin-android-template
+Sorry if my English is annoying.I'd really appreciate any help.
+## [11][How do I start with Android again?](https://www.reddit.com/r/androiddev/comments/g8uq1d/how_do_i_start_with_android_again/)
+- url: https://www.reddit.com/r/androiddev/comments/g8uq1d/how_do_i_start_with_android_again/
 ---
-
-## [8][Free/Paid Obfuscator](https://www.reddit.com/r/androiddev/comments/g8e9xb/freepaid_obfuscator/)
-- url: https://www.reddit.com/r/androiddev/comments/g8e9xb/freepaid_obfuscator/
+So i did learn Android Development with Java about a year ago. But I have no idea about architecture and Kotlin etc. I shifted to Flutter for some projects and I really love Flutter, but I wanted to start building native apps again just for the experience. Where should I start with? I'm quite overwhelmed at seeing all the new things such as Jetpack Compose etc.
+## [12][How to share data between two fragments? Having trouble with the MVVM architecture](https://www.reddit.com/r/androiddev/comments/g8t4jw/how_to_share_data_between_two_fragments_having/)
+- url: https://www.reddit.com/r/androiddev/comments/g8t4jw/how_to_share_data_between_two_fragments_having/
 ---
-I need a obfuscator for my app, I dont want that ppl can mod my apk.
+Currently I have two fragments, one that shows the weather for a place and another that let's you select a point in a map and redirects you to the other fragment showing the weather for that point.
 
-&amp;#x200B;
+What I want to achieve is to have by default the user's location and give the option to the user by going to the map of selecting any other place. So I would like to:  
+\- Get lat/lng via GPS and then "upload" it to somewhere that would share those values between this fragment and the map fragment (The activity maybe?)  
+\- If a point in the map is selected update those values- Both fragments can read at any time, only map fragment can update
 
-Anyone knows a cheap and simple solution?
-## [9][Alternatives for (Turn Based) Multiplayer](https://www.reddit.com/r/androiddev/comments/g8e3vo/alternatives_for_turn_based_multiplayer/)
-- url: https://www.reddit.com/r/androiddev/comments/g8e3vo/alternatives_for_turn_based_multiplayer/
----
-Hey fellow android devs!
+I believe I can do this sketchily adding getters/setters to my activity and then in the fragments cast the activity to my particular activity. But this just seems bad. What would be the correct way to do it?
 
-Since google has shutdown its multiplayer APIs, I'm looking for a (free) alternative. Currently looking at  [https://playerio.com/](https://playerio.com/) . Does anyone have some experience or other suggestions?
+What I have now:  
+\- MainActivity (connects both fragments through a bottom navigation bar)  
+\- ForecastFragment (Shows the weather for lat/lng)  
+\- ForecastViewModel  
+\- MapFragment  
+\- MapViewModel  
+\- WeatherRepository  
+\- WeatherAPI (through RetroFit updates values)  
+I'm using dagger and kotlin.
 
-Just some context: In my game players have a "preparation" phase where they make some strategic decisions and then a "fighting" phase where they cannot interact but just watch how the fight plays out. Some gameplay can be found here:  [https://www.youtube.com/watch?v=s05HF9LPITA](https://www.youtube.com/watch?v=s05HF9LPITA) 
-
-So I guess it would be enough if i send the result of the "preparation" phase and then wait for the other player to respond.
-
-Any suggestions/feedback is very much appreciated.
-## [10][I can't get my PC to recognize my phone](https://www.reddit.com/r/androiddev/comments/g8dhpi/i_cant_get_my_pc_to_recognize_my_phone/)
-- url: https://www.reddit.com/r/androiddev/comments/g8dhpi/i_cant_get_my_pc_to_recognize_my_phone/
----
-Hey guys!
-
-So as the topic says I can't get my PC to recognize my phone..
-
-I have a Xiaomi Redmi Note 4 (Snapdragon) with MIUI 11 Android 7.0 
-
-The problem is that I connect my phone to the PC and nothing happens, doesn't even give me a connect sound and the phone just charges, not giving me any actions to choose from (mtp, ptp, etc). I have USB debugging turned On and still nothing, USB tethering is also grayed out for me. 
-I would love to unlock my bootloader but can't due to this, it doesn't even show up in the device manager at all. I have also never connected my phone to the PC before.
-
-I have tried:
-- A billion different drivers, installing, reinstalling, and so. Sometimes I get a code error 10 (donno if it means anything at all)
-- Restarting my PC and phone a zillion times
-- I tried manually installing "wpdmtp.inf" (C:\Windows\inf)
-- Different USB Cables and Ports (USB 2.0 and 3.0) (although all of them work for my brother's Sony phone except for mine) 
-- Disabled Driver Signature Enforcement (I got a warning sign when installing drivers but it seems it did nothing)
-- Tried multiple PCs (my PC (Win 10) and my dad's PC (Win 7)) 
-- Installed MI suite, MiFlash and such but not even those recognize the phone, it just charged when I connect it to a USB.
-- I enter Fastboot mode and the phone just automatically restarts itself after like 7-10 seconds
-- Recovery mode is stable, doesn't restart but I don't have much options to choose (restart into phone, wipe data, connect to MIassistant)
-
-I am completely lost and trying to figure out WHY it doesn't recognize my phone and only charges. 
-I would appreciate any help and would be grateful for it.
-Thanks in advanced!
-## [11][Question about fragments and activities](https://www.reddit.com/r/androiddev/comments/g8d8o0/question_about_fragments_and_activities/)
-- url: https://www.reddit.com/r/androiddev/comments/g8d8o0/question_about_fragments_and_activities/
----
-Hi, I'm in the process of making an Android app for my final year coursework at uni and I've been having trouble using fragments. 
-
-I wanted a navigation drawer and was unsure of how to make one work without using fragments so I've been forced to make every screen of my app a fragment and this has been making my life rather difficult... 
-
-Every tutorial I look at online creates its examples in an Activity rather than a fragment and then when I try to translate the logic over to a fragment things end up not working. Currently I'm trying to get SQLite working within a fragment. I have managed to get it working within an Activity but cannot for the life of me work out how to get it working in a Fragment. I've found having to use fragments a real boundary to me making any progress with many aspects of my app and I don't really know how to get around it. Is there any kind of set of rules for translating code written in an activity to a fragment? 
-
-Also if anyone has any resources specifically about working SQLite inside a fragment it'd be much appreciated because I can't find anything useful online. Thank you for reading.
-## [12][Creating a plugin to trigger builds on Bitrise.io](https://www.reddit.com/r/androiddev/comments/g8d3ve/creating_a_plugin_to_trigger_builds_on_bitriseio/)
-- url: https://ayusch.com/intellij-plugin-development-tutorial-pt-3-persisting-state-storage/
----
-
+Thanks!!

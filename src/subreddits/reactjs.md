@@ -109,122 +109,77 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I made a Donald Trump press conference simulator in react.js (create-react-app)](https://www.reddit.com/r/reactjs/comments/g7x8ii/i_made_a_donald_trump_press_conference_simulator/)
-- url: https://www.asktrump.co
+## [3][Using React's Key Attribute to remount a Component](https://www.reddit.com/r/reactjs/comments/g8wmwi/using_reacts_key_attribute_to_remount_a_component/)
+- url: https://www.nikgraf.com/blog/using-reacts-key-attribute-to-remount-a-component
 ---
 
-## [4][Hey redditors, this is a Material UI guide playlist.. if you wanna learn how to use Material UI in your react app check this out.](https://www.reddit.com/r/reactjs/comments/g8b12p/hey_redditors_this_is_a_material_ui_guide/)
-- url: https://www.youtube.com/playlist?list=PLjLxL3k3_mXiZaWdIg7qi-q6CWUZ92jGt
+## [4][MERN stack user authentication: Part 1 | User accounts with JWT, bcrypt, react hooks, context API](https://www.reddit.com/r/reactjs/comments/g8grge/mern_stack_user_authentication_part_1_user/)
+- url: https://www.youtube.com/watch?v=4_ZiJGY5F38
 ---
 
-## [5][Using the React Context API for scalable state management](https://www.reddit.com/r/reactjs/comments/g8buzi/using_the_react_context_api_for_scalable_state/)
-- url: https://twitter.com/vorillaz/status/1243306438459564038
+## [5][How to export a React Component to PDF?](https://www.reddit.com/r/reactjs/comments/g8ygox/how_to_export_a_react_component_to_pdf/)
+- url: https://www.reddit.com/r/reactjs/comments/g8ygox/how_to_export_a_react_component_to_pdf/
+---
+I am trying to export a table from React to PDF. But all solutions convert the HTML to an image and place it in the PDF file. 
+
+I need a real PDF with selectable text. Does anyone has suggestions for me?
+## [6][I made a SpaceX website with information about missions, rockets, stats and more 🚀](https://www.reddit.com/r/reactjs/comments/g8qgz5/i_made_a_spacex_website_with_information_about/)
+- url: https://www.reddit.com/r/reactjs/comments/g8qgz5/i_made_a_spacex_website_with_information_about/
+---
+It is using the API made by u/jakewmeyer from r/spacex! There's possibility to browse upcoming and past missions, see info about them, see rocket information and various stats from the program :)  
+It is still in development so any ideas on how to improve it/what to add are very welcome!!
+
+The website: [https://spacex.prutkowski.tech](https://spacex.prutkowski.tech/)
+
+GitHub Repo: [https://github.com/PiotrRut/SpaceX-Launches](https://github.com/PiotrRut/SpaceX-Launches)
+## [7][React tree reconciliation takes a lot of time](https://www.reddit.com/r/reactjs/comments/g8umix/react_tree_reconciliation_takes_a_lot_of_time/)
+- url: https://www.reddit.com/r/reactjs/comments/g8umix/react_tree_reconciliation_takes_a_lot_of_time/
+---
+I am developing a react redux application. There are places where a single operation does multiple store dispatches. Every dispatch updates the store and even though it only updates one or two react components, it's getting expensive because React tree reconciliation on the entire app is taking a lot of time. Any changes I can make to make reconciliation faster? Thanks in advance.
+
+Edit:
+
+Link to timing graph:  [https://i.stack.imgur.com/6WBLL.png](https://i.stack.imgur.com/6WBLL.png) 
+## [8][Write clean(er) Components &amp; JSX](https://www.reddit.com/r/reactjs/comments/g90hue/write_cleaner_components_jsx/)
+- url: https://medium.com//write-clean-er-components-jsx-1e70491baded?source=friends_link&amp;sk=ae39a323391d1374451f8375a8c88337
 ---
 
-## [6][front end first or MERN stack?](https://www.reddit.com/r/reactjs/comments/g8e9wv/front_end_first_or_mern_stack/)
-- url: https://www.reddit.com/r/reactjs/comments/g8e9wv/front_end_first_or_mern_stack/
+## [9][I made a library to make API calls a little more declarative](https://www.reddit.com/r/reactjs/comments/g8q4u7/i_made_a_library_to_make_api_calls_a_little_more/)
+- url: https://www.reddit.com/r/reactjs/comments/g8q4u7/i_made_a_library_to_make_api_calls_a_little_more/
 ---
-Hey, i have a question,  right now i'm following a front end track using react
+[https://github.com/iKrushYou/use-axios-api-call](https://github.com/iKrushYou/use-axios-api-call)
 
-and my main final goal is MERN stack,
+I've been using this code that I've written across a handful of apps that I've made over the last year or so and I finally decided to wrap all the code up into a package. I tried to clean things up but there's definitely some room for improvement here. The inspiration started from a tutorial I had watched a while ago where the guy made a hook-based API call so I expanded upon it by adding cancellations, transformations, and handling of outcomes.
 
-and i've done many react tutorials and already finished some projects (only front end)
-
-should i just focus on react and frontend in general and apply for frontend jobs now and learn the backend with node while i'm working
-
-or just get into node now and finish some full stack projects and apply for a MERN full stack jobs.
-
-&amp;#x200B;
-
-thanks :)
-## [7][React developers to follow on Twitter](https://www.reddit.com/r/reactjs/comments/g879nz/react_developers_to_follow_on_twitter/)
-- url: https://www.reddit.com/r/reactjs/comments/g879nz/react_developers_to_follow_on_twitter/
----
-Hope this isn't breaking any rules, I've been working with React for a while but just started trying to become a part of the community. 
-
-I was wondering if there are people that tweet about related stuff that I can follow or if there are any other places where React developers talk (other than this sub, of course).
-## [8][Beginner Reactjs - Help wanted on the best approach to get the data from API and display in the Page](https://www.reddit.com/r/reactjs/comments/g8ch8z/beginner_reactjs_help_wanted_on_the_best_approach/)
-- url: https://www.reddit.com/r/reactjs/comments/g8ch8z/beginner_reactjs_help_wanted_on_the_best_approach/
----
-Hello Everyone,
-
-I am an Angular developer and started to learn the React and I have started with a very small piece of code to display the information from the API and I am successfully able to get the What I wished.
-
-But since I have just started and there are many experienced folks out there, Can you please suggest to me If I need to improve something here.
-
-My Objective is very simple there is an API that returns the Array of users and I wanted to iterate over it and display in the HTML.
-
-What I need help is
-
-1. Should I use state inside constructor are there any disadvantages over it, is there anything I can improve here
-2. Where should I fetch the API, is `componentDidMount`  is the best place to invoke the API
-3. Is there any chance that I can improve the performance of my page-load in the below code
-
-Thanks in advance all the experts out there :)
-
-    import React from 'react';
-    
-    interface IUser {
-      userId: number;
-      id: number;
-      title: string;
-      completed: boolean;
-    }
-    
-    export default class Comments extends React.Component&lt;{}, { users: IUser[] }&gt; {
-      constructor(props) {
-        super(props);
-        this.state = {
-          users: [],
-        };
-      }
-    
-      componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/todos')
-          .then((response) =&gt; response.json())
-          .then((users: IUser[]) =&gt; this.setState({ users }));
-      }
-    
-      render() {
-        const { users } = this.state;
-        return (
-          &lt;div&gt;
-            {users.map((user) =&gt; (
-              &lt;div key={user.id}&gt;
-                &lt;h1&gt;{user.title}&lt;/h1&gt;
-              &lt;/div&gt;
-            ))}
-          &lt;/div&gt;
-        );
-      }
-    }
-    
-
-&amp;#x200B;
-## [9][Looking for practice test questions](https://www.reddit.com/r/reactjs/comments/g8ce60/looking_for_practice_test_questions/)
-- url: https://www.reddit.com/r/reactjs/comments/g8ce60/looking_for_practice_test_questions/
----
-Hi /r/reactjs, I hope this is the right place for this. 
-
-I have got a job technical test next week and would like to get some practice in first.
-
-Can anybody suggest some practice tests I can complete in the mean time?
-
-It is for a senior role so ideally tests that focus on the advanced aspects.
-
-Thanks in advance.
-## [10][Women of React 2020 livestream](https://www.reddit.com/r/reactjs/comments/g8dgo6/women_of_react_2020_livestream/)
-- url: https://www.youtube.com/watch?v=K8MF3aDg-bM
+Let me know what you think
+## [10][Printing page specific output on PDF document](https://www.reddit.com/r/reactjs/comments/g8ufvy/printing_page_specific_output_on_pdf_document/)
+- url: https://www.reddit.com/r/reactjs/comments/g8ufvy/printing_page_specific_output_on_pdf_document/
 ---
 
-## [11][What is your approach to a dark theme toggler?](https://www.reddit.com/r/reactjs/comments/g88yan/what_is_your_approach_to_a_dark_theme_toggler/)
-- url: https://www.reddit.com/r/reactjs/comments/g88yan/what_is_your_approach_to_a_dark_theme_toggler/
+HI I am struggling to find a way to have a webpage output on pDF printable page.. I tried JSreact but it looks like it prints the complete page (including buttons etc) while I just need specifica output to be printed..Any solution? thanks
+## [11][Interview preparation advice](https://www.reddit.com/r/reactjs/comments/g8ygz3/interview_preparation_advice/)
+- url: https://www.reddit.com/r/reactjs/comments/g8ygz3/interview_preparation_advice/
 ---
-I know of 3 ways, css variables, conditional classes in components and with a framework like styled components. Not sure which one to choose. I feel like css variables would allow me to write less code because it takes one action to toggle everything, instead of checking for theme in every component.
-## [12][Official website (reactjs.org) is enough to start learning as beginner?](https://www.reddit.com/r/reactjs/comments/g8dzse/official_website_reactjsorg_is_enough_to_start/)
-- url: https://www.reddit.com/r/reactjs/comments/g8dzse/official_website_reactjsorg_is_enough_to_start/
+I have an interview tomorrow guys and [here's the JD](https://imgur.com/a/dChpZsj). How best can I prepare for this? Based on the points in the JD, what or which concepts should I focus on? I only have about 18 hours to get ready.
+
+For number 3 of job requirements, is it OK to tout the Context API? I know many fans swear by Redux but I'm not a fan and haven't used it. But I'm very much familiar with the built in Context API and can describe it fully. How should I tackle point 4 of the job requirements? Otherwise, in the job requirements, 1, 5 and 6 are quite straightforward for me. What should one who "masters" React know, or be capable of? That's for point 2.
+
+As for the bonus points: I'm also an Angular guy too so that covers the TypeScript part. Pretty much little to no knowledge of GraphQL, but I'm aware of the hype around it. As for point 3, I can visualize data with Chart.js, so hope that helps. Nothing for the last point, but I do have my GitHub username on my resume.
+## [12][React app + web server + api backends with docker](https://www.reddit.com/r/reactjs/comments/g8xfpy/react_app_web_server_api_backends_with_docker/)
+- url: https://www.reddit.com/r/reactjs/comments/g8xfpy/react_app_web_server_api_backends_with_docker/
 ---
-Hi I'm angular developer, I want to learn reactjs. 
-I want to know is official  website is enough to start learning.
-Are there any suggestions And recommendations.
-Please help me by sharing your thoughts and experience.
+So I've created my react app using CRA and I can create a docker image with nginx+static html files since its the defacto standard from every site I've found.
+
+If you run that with multiple backend/api servers/microservices. Would it be ideal to split off the docker react/nginx into two images? As a separate webserver. 
+
+(Or even run another separate nginx in front, but I don't want to introduce complexity with 2 nginx's).
+
+It would be nice to have nginx serve both the CRA and redirect "/api" endpoints over 443/80.
+
+Otherwise the alternative is:
+
+1. Have nginx (from the CRA docker image) handle proxying all /api calls, which means upgrading the frontend results in the all the backend apis going down.
+
+2. Leave CRA+nginx and serve the "/api" directly over another port say 8090, but I would like to have that api behind an nginx image.
+
+This nginx image would also handle SSL termination and reverse proxying for the react app + "/api" endpoints.

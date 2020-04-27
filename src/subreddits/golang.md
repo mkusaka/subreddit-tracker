@@ -1,9 +1,47 @@
 # golang
-## [1][What's coming in Go 1.15 — Slides By Daniel Martí (mvdan)](https://www.reddit.com/r/golang/comments/g8d8jk/whats_coming_in_go_115_slides_by_daniel_martí/)
+## [1][Telebot V2.1 released: Telegram bot framework in Go](https://www.reddit.com/r/golang/comments/g8xw2u/telebot_v21_released_telegram_bot_framework_in_go/)
+- url: https://github.com/tucnak/telebot/releases/tag/v2.1
+---
+
+## [2][grobotstxt: A native Go port of Google's robots.txt parser and matcher C++ library.](https://www.reddit.com/r/golang/comments/g8v0to/grobotstxt_a_native_go_port_of_googles_robotstxt/)
+- url: https://github.com/jimsmart/grobotstxt
+---
+
+## [3][What's coming in Go 1.15 — Slides By Daniel Martí (mvdan)](https://www.reddit.com/r/golang/comments/g8d8jk/whats_coming_in_go_115_slides_by_daniel_martí/)
 - url: https://docs.google.com/presentation/d/1veyF0y6Ynr6AFzd9gXi4foaURlgbMxM-tmB4StDrdAM/edit#slide=id.g550f852d27_228_0
 ---
 
-## [2][Chat with Go, React and k8s](https://www.reddit.com/r/golang/comments/g84yg2/chat_with_go_react_and_k8s/)
+## [4][Whats the correct way to refer to an instantiated struct in documentation?](https://www.reddit.com/r/golang/comments/g8scow/whats_the_correct_way_to_refer_to_an_instantiated/)
+- url: https://www.reddit.com/r/golang/comments/g8scow/whats_the_correct_way_to_refer_to_an_instantiated/
+---
+For example, "This function takes a pointer to an instantiated x struct and does y".
+
+Is this the right term? would it be wrong to refer to it as an object? or an instance?
+## [5][packagemain #18: Writing REST API Client in Go](https://www.reddit.com/r/golang/comments/g8nkhz/packagemain_18_writing_rest_api_client_in_go/)
+- url: https://youtu.be/evorkFq3Y5k
+---
+
+## [6][Golang CMS and blog engines](https://www.reddit.com/r/golang/comments/g8unwf/golang_cms_and_blog_engines/)
+- url: https://www.reddit.com/r/golang/comments/g8unwf/golang_cms_and_blog_engines/
+---
+Are there any good resources for golang available? I was looking for CMSes and blog engines written in go. Found ponzu and kabukky, but both seem a little dated. Any *go*to resources that you guys can recommend?
+## [7][Code Review - Learning microservices](https://www.reddit.com/r/golang/comments/g8m9u7/code_review_learning_microservices/)
+- url: https://www.reddit.com/r/golang/comments/g8m9u7/code_review_learning_microservices/
+---
+Hello,
+
+I am a 19-year-old comp sci student from Montreal with a strong passion for the Go language.
+
+I have recently been interested in learning more about microservices and have come across the go-kit library. I created a small test microservice that lists products from a database. 
+
+I want to make sure I'm following best practices and that my code stays idiomatic. I am also unsure what the general opinion on go-kit is as I have seen mixed responses online.
+
+I also would like maybe to make some friends here as I don't have people around me that share my interests. :)
+
+Here is my source: https://github.com/sergiosegrera/go-kit-product
+
+Thank you guys.
+## [8][Chat with Go, React and k8s](https://www.reddit.com/r/golang/comments/g84yg2/chat_with_go_react_and_k8s/)
 - url: https://www.reddit.com/r/golang/comments/g84yg2/chat_with_go_react_and_k8s/
 ---
 Hey everybody! 
@@ -11,7 +49,7 @@ I built this simple chat in Golang and React and hosted it in a Kubernetes clust
 Though it might be useful to share a project with the full CI/CD pipeline.
 
 [github repo](https://github.com/leartgjoni/go-chat-api)
-## [3][[discussion] Why I'm hesitant / afraid of adopting go as main language](https://www.reddit.com/r/golang/comments/g8aujj/discussion_why_im_hesitant_afraid_of_adopting_go/)
+## [9][[discussion] Why I'm hesitant / afraid of adopting go as main language](https://www.reddit.com/r/golang/comments/g8aujj/discussion_why_im_hesitant_afraid_of_adopting_go/)
 - url: https://www.reddit.com/r/golang/comments/g8aujj/discussion_why_im_hesitant_afraid_of_adopting_go/
 ---
 Is this normal behavior in Golang community? [https://i.imgur.com/wu9NAOb.png](https://i.imgur.com/wu9NAOb.png)
@@ -27,33 +65,72 @@ What's wrong with having nice APIs like:
 vs. needing to manually parse URL paths and their params?
 
 Why don't we have a better router/mux in the stdlib if people hate so much on these frameworks?
-## [4][How We Created a Realtime Patient Monitoring System With Go and Vue in 3 days - kasvith.me](https://www.reddit.com/r/golang/comments/g7px4d/how_we_created_a_realtime_patient_monitoring/)
-- url: https://kasvith.me/posts/how-we-created-a-realtime-patient-monitoring-system-with-go-and-vue
+## [10][Crud API Generator tool (gen)](https://www.reddit.com/r/golang/comments/g8oul9/crud_api_generator_tool_gen/)
+- url: https://www.reddit.com/r/golang/comments/g8oul9/crud_api_generator_tool_gen/
 ---
+I am looking for suggestions on a tool that I am contributing to on github. https://github.com/smallnest/gen 
 
-## [5][Noise Gate - Golang test runner to get faster test results](https://www.reddit.com/r/golang/comments/g8b4br/noise_gate_golang_test_runner_to_get_faster_test/)
-- url: https://github.com/go-noisegate/noisegate
----
+The gen tool produces a CRUD (Create, read, update and delete) REST api project template from a given database. The gen tool will connect to the db connection string analyze the database and generate the code based on the flags provided. 
 
-## [6][GoRemoteFest April 26th 10:00 14:00 GMT](https://www.reddit.com/r/golang/comments/g7u7xc/goremotefest_april_26th_1000_1400_gmt/)
-- url: https://www.reddit.com/r/golang/comments/g7u7xc/goremotefest_april_26th_1000_1400_gmt/
----
-[https://goremotefest.com/](https://goremotefest.com/)
-## [7][Proper testing pattern a la Python custom testing classes](https://www.reddit.com/r/golang/comments/g81hc0/proper_testing_pattern_a_la_python_custom_testing/)
-- url: https://www.reddit.com/r/golang/comments/g81hc0/proper_testing_pattern_a_la_python_custom_testing/
----
-I'll just duck in advance, but I'm having a hard time searching for this and getting a positive/negative answer.
+The code will be annotated with Swagger tags, for a Gin server.
 
-Is there a pattern where it's acceptable to embed testing.T in a custom type in order to add common helpers for setup, assertions, etc?
-## [8][Inlining optimisations in Go by Dave Cheney](https://www.reddit.com/r/golang/comments/g7pvp3/inlining_optimisations_in_go_by_dave_cheney/)
-- url: https://dave.cheney.net/2020/04/25/inlining-optimisations-in-go
----
+The generated project will contain the following code under the `./example` directory.
 
-## [9][Why for-range behave differently depending on the size of the element](https://www.reddit.com/r/golang/comments/g7wgir/why_forrange_behave_differently_depending_on_the/)
-- url: https://labs.yulrizka.com/en/why-for-range-behave-differently-depending-on-the-size-of-the-element/
----
 
-## [10][COVID-19 Gophers made by my GF](https://www.reddit.com/r/golang/comments/g79py7/covid19_gophers_made_by_my_gf/)
-- url: https://i.redd.it/84e8h6x74su41.jpg
----
+  - Makefile
+    - useful Makefile for installing tools building project etc. Issue `make` to display help output.
+  - .gitignore
+    - git ignore for go project
+  - go.mod
+    - go module setup, pass `--module` flag for setting the project module default `example.com/example` 
+  - README.md
+    - Project readme
+  - app/server/main.go
+    - Sample Gin Server, with swagger init and comments
+  - api/*.go
+    - REST crud controllers
+  - dao/*.go
+    - DAO functions providing CRUD access to database
+  - model/*.go
+    - Structs representing a row for each database table
 
+
+I am looking for suggestions for improvement for the generated code as well as the project. Here are some simple steps to get started.
+
+
+    ## install gen tool (should be installed to ~/go/bin, make sure ~/go/bin is in your path.
+    $ go get -u github.com/smallnest/gen
+
+    ## download sample sqlite database
+    $ wget https://github.com/smallnest/gen/raw/master/example/sample.db
+
+    ## generate code based on the sqlite database (project will be contained within the ./example dir)
+    $ gen --sqltype=sqlite3 \
+        --connstr "./sample.db" \
+        --database main  \
+        --json \
+        --gorm \
+        --guregu \
+        --rest \
+        --out ./example \
+        --module example.com/rest/example \
+        --mod \
+        --server \
+        --makefile \
+        --json-fmt=snake \
+        --overwrite
+
+    ## build example code (build process will install packr2 if not installed)
+    $ cd ./example
+    $ make example
+
+    ## binary will be located at ./bin/example
+    ## when launching make sure that the sqlite file sample.db is located in the same dir as the binary 
+    $ cp ../../sample.db  .
+    $ ./example 
+
+    ## Open a browser to http://localhost:8080/swagger/index.html
+
+    ## Use wget/curl/httpie to fetch via command line
+    http http://localhost:8080/albums
+    curl http://localhost:8080/artists

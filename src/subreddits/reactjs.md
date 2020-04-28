@@ -109,77 +109,106 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Using React's Key Attribute to remount a Component](https://www.reddit.com/r/reactjs/comments/g8wmwi/using_reacts_key_attribute_to_remount_a_component/)
-- url: https://www.nikgraf.com/blog/using-reacts-key-attribute-to-remount-a-component
+## [3][Declarative Magnet Animation w/ Framer Motion](https://www.reddit.com/r/reactjs/comments/g98ads/declarative_magnet_animation_w_framer_motion/)
+- url: https://v.redd.it/5a3q9q653fv41
 ---
 
-## [4][MERN stack user authentication: Part 1 | User accounts with JWT, bcrypt, react hooks, context API](https://www.reddit.com/r/reactjs/comments/g8grge/mern_stack_user_authentication_part_1_user/)
-- url: https://www.youtube.com/watch?v=4_ZiJGY5F38
+## [4][I made a crowdsourced whiskey tasting database with a minimal UX.](https://www.reddit.com/r/reactjs/comments/g9izbu/i_made_a_crowdsourced_whiskey_tasting_database/)
+- url: https://www.whiskeyleague.app/home
 ---
 
-## [5][How to export a React Component to PDF?](https://www.reddit.com/r/reactjs/comments/g8ygox/how_to_export_a_react_component_to_pdf/)
-- url: https://www.reddit.com/r/reactjs/comments/g8ygox/how_to_export_a_react_component_to_pdf/
+## [5][Has anyone used reactstudio.com?](https://www.reddit.com/r/reactjs/comments/g9l7t4/has_anyone_used_reactstudiocom/)
+- url: https://www.reddit.com/r/reactjs/comments/g9l7t4/has_anyone_used_reactstudiocom/
 ---
-I am trying to export a table from React to PDF. But all solutions convert the HTML to an image and place it in the PDF file. 
-
-I need a real PDF with selectable text. Does anyone has suggestions for me?
-## [6][I made a SpaceX website with information about missions, rockets, stats and more 🚀](https://www.reddit.com/r/reactjs/comments/g8qgz5/i_made_a_spacex_website_with_information_about/)
-- url: https://www.reddit.com/r/reactjs/comments/g8qgz5/i_made_a_spacex_website_with_information_about/
----
-It is using the API made by u/jakewmeyer from r/spacex! There's possibility to browse upcoming and past missions, see info about them, see rocket information and various stats from the program :)  
-It is still in development so any ideas on how to improve it/what to add are very welcome!!
-
-The website: [https://spacex.prutkowski.tech](https://spacex.prutkowski.tech/)
-
-GitHub Repo: [https://github.com/PiotrRut/SpaceX-Launches](https://github.com/PiotrRut/SpaceX-Launches)
-## [7][React tree reconciliation takes a lot of time](https://www.reddit.com/r/reactjs/comments/g8umix/react_tree_reconciliation_takes_a_lot_of_time/)
-- url: https://www.reddit.com/r/reactjs/comments/g8umix/react_tree_reconciliation_takes_a_lot_of_time/
----
-I am developing a react redux application. There are places where a single operation does multiple store dispatches. Every dispatch updates the store and even though it only updates one or two react components, it's getting expensive because React tree reconciliation on the entire app is taking a lot of time. Any changes I can make to make reconciliation faster? Thanks in advance.
-
-Edit:
-
-Link to timing graph:  [https://i.stack.imgur.com/6WBLL.png](https://i.stack.imgur.com/6WBLL.png) 
-## [8][Write clean(er) Components &amp; JSX](https://www.reddit.com/r/reactjs/comments/g90hue/write_cleaner_components_jsx/)
-- url: https://medium.com//write-clean-er-components-jsx-1e70491baded?source=friends_link&amp;sk=ae39a323391d1374451f8375a8c88337
+I stumbled upon https://reactstudio.com/
+Has anyone used this software? Is it worth a try?
+## [6][Blitz.js - Rails-like framework for monolithic, full-stack React apps, built on Next.js](https://www.reddit.com/r/reactjs/comments/g91gzx/blitzjs_railslike_framework_for_monolithic/)
+- url: https://blitzjs.com/
 ---
 
-## [9][I made a library to make API calls a little more declarative](https://www.reddit.com/r/reactjs/comments/g8q4u7/i_made_a_library_to_make_api_calls_a_little_more/)
-- url: https://www.reddit.com/r/reactjs/comments/g8q4u7/i_made_a_library_to_make_api_calls_a_little_more/
+## [7][A Visual Guide To React Mental Models](https://www.reddit.com/r/reactjs/comments/g9n686/a_visual_guide_to_react_mental_models/)
+- url: https://www.reddit.com/r/reactjs/comments/g9n686/a_visual_guide_to_react_mental_models/
 ---
-[https://github.com/iKrushYou/use-axios-api-call](https://github.com/iKrushYou/use-axios-api-call)
+👋 Hey guys. I wrote an article explaining React through visual mental models. I think it's a great way to have an intuitive grasp of React. 
 
-I've been using this code that I've written across a handful of apps that I've made over the last year or so and I finally decided to wrap all the code up into a package. I tried to clean things up but there's definitely some room for improvement here. The inspiration started from a tutorial I had watched a while ago where the guy made a hook-based API call so I expanded upon it by adding cancellations, transformations, and handling of outcomes.
+I’ve learned that the biggest difference between someone that has mastered a language, framework, or tool and someone who hasn’t lies in the *mental models* they use. One person will have a clear and advanced one and the other will not.
 
-Let me know what you think
-## [10][Printing page specific output on PDF document](https://www.reddit.com/r/reactjs/comments/g8ufvy/printing_page_specific_output_on_pdf_document/)
-- url: https://www.reddit.com/r/reactjs/comments/g8ufvy/printing_page_specific_output_on_pdf_document/
+[https://obedparla.com/code/a-visual-guide-to-react-mental-models/](https://obedparla.com/code/a-visual-guide-to-react-mental-models/)  
+
+
+If you have any questions, feedback or anything at all let me know!
+## [8][Federated login - Google Authentication with react](https://www.reddit.com/r/reactjs/comments/g9n26j/federated_login_google_authentication_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/g9n26j/federated_login_google_authentication_with_react/
+---
+HELP!!!
+
+The sign in with Google was redirecting back to the sign-in page and the id token was being printed to the console
+
+1.Need you to send the id\_token to /api/users/google/
+
+2. id\_token is the parameter
+
+3. The response should be jwt tokens and user data
+
+&amp;#x200B;
+
+sorry this is my code
+
+&amp;#x200B;
+
+onGoogleSignIn =async (googleUser) =&gt; {
+
+const id\_token = googleUser.getAuthResponse().id\_token;
+
+
+
+if (id\_token === true){
+
+const response = 
+
+await [axiosInstance.post](https://axiosInstance.post)(' /api/users/google/', {
+
+email:this.state.email,
+
+password: this.state.password,
+
+});
+
+ const responseData = response.googleUser;  
+ axiosInstance.defaults.headers\['Authorization'\] = "JWT " + id\_token;  
+ localStorage.setItem('access\_token', responseData.access);  
+ localStorage.setItem('refresh\_token', responseData.refresh);  
+ return googleUser;
+
+}
+
+else {
+
+return alert("ID token not found")
+
+}
+
+  }
+## [9][React contexts (slow?)...](https://www.reddit.com/r/reactjs/comments/g9mygb/react_contexts_slow/)
+- url: https://www.reddit.com/r/reactjs/comments/g9mygb/react_contexts_slow/
+---
+I am writting an app and I am using reactjs, now I leveraged a lot of react context and empty components, there's no centralized state, the application code is amazingly clean; everything is so reactive and clean, it really feels like you are just building an UI.
+
+But the thing is slow to render, it seems to work just fine once it has rendered a view, but heavy view changes (page to page) clog the main thread, it takes 1200ms to render the initial view, 500ms in production, and I am talking with all the shouldComponentUpdate and PureComponent optimizations; the render takes only one single pass, and only one single pass, yet it takes that much time.
+
+Subsequent renders go fast, but the initial render for some reason is really slow; I can see all the clogging comes in the fiber reconciler of react-dom; heck I can see the interface itself choking, adding divs and spans in real time. It doesn't look to bad because stuff is happening; all the colored boxes appear first creating a skeleton view (with the right width and height to contain the text), then text appears in those boxes, then all the data pops in the inputs; then console gives a warning, render took 1200ms, 500ms in production.
+## [10][Testing](https://www.reddit.com/r/reactjs/comments/g9ietv/testing/)
+- url: https://www.reddit.com/r/reactjs/comments/g9ietv/testing/
+---
+Hello, do you have any recommendations for resources for testing ? I have experience in react but not in testing it . Any good online course  ?
+## [11][Hi, everyone! Just want to ask if a React plugin to recreate this awesome wave patterns exist or I really need to learn to edit and make svg? Thanks!](https://www.reddit.com/r/reactjs/comments/g9js90/hi_everyone_just_want_to_ask_if_a_react_plugin_to/)
+- url: https://blog.prototypr.io/how-to-add-svg-waves-to-your-next-web-project-b720efe1c692
 ---
 
-HI I am struggling to find a way to have a webpage output on pDF printable page.. I tried JSreact but it looks like it prints the complete page (including buttons etc) while I just need specifica output to be printed..Any solution? thanks
-## [11][Interview preparation advice](https://www.reddit.com/r/reactjs/comments/g8ygz3/interview_preparation_advice/)
-- url: https://www.reddit.com/r/reactjs/comments/g8ygz3/interview_preparation_advice/
+## [12][How to make an iPhone mockup with React?](https://www.reddit.com/r/reactjs/comments/g9mcx6/how_to_make_an_iphone_mockup_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/g9mcx6/how_to_make_an_iphone_mockup_with_react/
 ---
-I have an interview tomorrow guys and [here's the JD](https://imgur.com/a/dChpZsj). How best can I prepare for this? Based on the points in the JD, what or which concepts should I focus on? I only have about 18 hours to get ready.
+Any idea how one can make a mockup generator with React? Something like this: [https://prnt.sc/s7dcwm](https://prnt.sc/s7dcwm)  
 
-For number 3 of job requirements, is it OK to tout the Context API? I know many fans swear by Redux but I'm not a fan and haven't used it. But I'm very much familiar with the built in Context API and can describe it fully. How should I tackle point 4 of the job requirements? Otherwise, in the job requirements, 1, 5 and 6 are quite straightforward for me. What should one who "masters" React know, or be capable of? That's for point 2.
 
-As for the bonus points: I'm also an Angular guy too so that covers the TypeScript part. Pretty much little to no knowledge of GraphQL, but I'm aware of the hype around it. As for point 3, I can visualize data with Chart.js, so hope that helps. Nothing for the last point, but I do have my GitHub username on my resume.
-## [12][React app + web server + api backends with docker](https://www.reddit.com/r/reactjs/comments/g8xfpy/react_app_web_server_api_backends_with_docker/)
-- url: https://www.reddit.com/r/reactjs/comments/g8xfpy/react_app_web_server_api_backends_with_docker/
----
-So I've created my react app using CRA and I can create a docker image with nginx+static html files since its the defacto standard from every site I've found.
-
-If you run that with multiple backend/api servers/microservices. Would it be ideal to split off the docker react/nginx into two images? As a separate webserver. 
-
-(Or even run another separate nginx in front, but I don't want to introduce complexity with 2 nginx's).
-
-It would be nice to have nginx serve both the CRA and redirect "/api" endpoints over 443/80.
-
-Otherwise the alternative is:
-
-1. Have nginx (from the CRA docker image) handle proxying all /api calls, which means upgrading the frontend results in the all the backend apis going down.
-
-2. Leave CRA+nginx and serve the "/api" directly over another port say 8090, but I would like to have that api behind an nginx image.
-
-This nginx image would also handle SSL termination and reverse proxying for the react app + "/api" endpoints.
+Is there any easy way to do this?

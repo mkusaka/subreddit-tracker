@@ -119,69 +119,66 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Online SYCL tutorial this Monday 15:00 GMT](https://www.reddit.com/r/cpp/comments/g8tk2f/online_sycl_tutorial_this_monday_1500_gmt/)
+## [3][Boost 1.73 Released](https://www.reddit.com/r/cpp/comments/g9hn0j/boost_173_released/)
+- url: https://www.boost.org/users/history/version_1_73_0.html
+---
+
+## [4][Using weak_ptr for circular references](https://www.reddit.com/r/cpp/comments/g9mod3/using_weak_ptr_for_circular_references/)
+- url: https://www.nextptr.com/tutorial/ta1382183122/using-weak_ptr-for-circular-references
+---
+
+## [5][C++ Source code as graph ?!](https://www.reddit.com/r/cpp/comments/g9dkqd/c_source_code_as_graph/)
+- url: https://www.reddit.com/r/cpp/comments/g9dkqd/c_source_code_as_graph/
+---
+Is there any way to visualize a c++ project as call graph and class graph ?! 
+
+That helps to undertand what is going on.
+## [6][I re-implemented the paper "Sorting nine inputs requires twenty-five comparisons" in c++, what do you guys think?](https://www.reddit.com/r/cpp/comments/g9630p/i_reimplemented_the_paper_sorting_nine_inputs/)
+- url: https://www.reddit.com/r/cpp/comments/g9630p/i_reimplemented_the_paper_sorting_nine_inputs/
+---
+https://github.com/andersfylling/sorting-nine-inputs-requires-twenty-five-comparisons
+
+For my master thesis, I'm working on the problem of finding a sorting network of the smallest size that can sort a sequence of N elements. One of the tasks were to re-implement the original code in c++, to make it a more viable reference point for my upcoming findings/improvements.
+
+Since I only did a tiny amount of poor c++ a few years ago, I kinda started out as a beginner. There are some obvious improvements to be made like the loops, pre-conditions for subsumption, IO dead time, clustering, etc. Which I have implemented in my main project I'll be release in a month or so along with my paper - this is just a baseline reference.
+
+Edit: note that this isn't another sorting algorithm. The paper regards proving the minimum size of a sorting networks for sequences of N elements. So essentially you can state you want to find the answer for a sequence of 9 elements and will output the answer =)
+## [7][Rider for Unreal Engine EAP with all the C++ and Unreal Engine features that come from ReSharper C++.](https://www.reddit.com/r/cpp/comments/g9ibil/rider_for_unreal_engine_eap_with_all_the_c_and/)
+- url: https://blog.jetbrains.com/dotnet/2020/04/22/rider-unreal-engine-eap/
+---
+
+## [8][Filesystem path good practice](https://www.reddit.com/r/cpp/comments/g97ywn/filesystem_path_good_practice/)
+- url: https://www.reddit.com/r/cpp/comments/g97ywn/filesystem_path_good_practice/
+---
+When building a path with `std::filesystem` I was wondering what is considered good practice in the community. Let's say I have an absolute path `root` and I want to use it to access a file in a subfolder.
+
+ `using fs = std::filesystem;`
+
+`const auto root = fs::path{"/root/user"};`
+
+`const auto path1 = root / "folder0/folder1/file.ext";`
+
+`const auto path2 = root / "folder0" / "folder1" / "file.ext";`
+## [9][decomposition declaration not permitted in this context](https://www.reddit.com/r/cpp/comments/g9hvr4/decomposition_declaration_not_permitted_in_this/)
+- url: https://www.reddit.com/r/cpp/comments/g9hvr4/decomposition_declaration_not_permitted_in_this/
+---
+Currently, this does not work in C++17, under a global scope.
+
+constexpr static auto           \[ offset\_list\_v, size\_of\_one\_v \] = \[\]() constexpr { ... return std::tuple{...}; }();
+
+Anyone can have an excuse why this should not be part of the standard?
+## [10][P2P file sharing app](https://www.reddit.com/r/cpp/comments/g9jpj4/p2p_file_sharing_app/)
+- url: https://www.reddit.com/r/cpp/comments/g9jpj4/p2p_file_sharing_app/
+---
+is there any P2P c++ library which can help me to create P2P file sharing project.  
+thanks a ton /&gt;
+## [11][Online SYCL tutorial this Monday 15:00 GMT](https://www.reddit.com/r/cpp/comments/g8tk2f/online_sycl_tutorial_this_monday_1500_gmt/)
 - url: https://www.reddit.com/r/cpp/comments/g8tk2f/online_sycl_tutorial_this_monday_1500_gmt/
 ---
 Registration is still open. SYCL is an open standard for heterogeneous programming in C++. 
 
 [https://www.iwocl.org/iwocl-2020/conference-program/](https://www.iwocl.org/iwocl-2020/conference-program/)
-## [4][Software Architecture done Right (?)](https://www.reddit.com/r/cpp/comments/g8jf3h/software_architecture_done_right/)
-- url: https://www.reddit.com/r/cpp/comments/g8jf3h/software_architecture_done_right/
----
-Hey guys!
-
-I hope I'm not asking a regularly answered question. At least I didn't find anything matching in this sub. So here goes:
-
-Are any of you aware of some kind of series (blog posts, YouTube videos, ...) that cover examples of "excellently designed" C++ libraries or applications and discuss what makes them so good?
-I'm aware of various books on software architecture etc, but personally learn a lot from "real" examples as well. 
-
-Maybe some of you also have suggestions for libraries to look at and some bullet points about what you think makes them well-designed. 
-
-Thank you for your time in advance!
-## [5][C++20 Feature Complete - LAST REVISION - that can be used as reference](https://www.reddit.com/r/cpp/comments/g903ra/c20_feature_complete_last_revision_that_can_be/)
-- url: https://www.reddit.com/r/cpp/comments/g903ra/c20_feature_complete_last_revision_that_can_be/
----
-Hi there!
-
-Does anyone can inform whether N4861 is the last C++20 draft that we can use as reference on what was approved as FEATURE COMPLETE?
-
-Tks!
-## [6][Sutter's Mill: When the hot loop’s done: Four quick tips for high throughput](https://www.reddit.com/r/cpp/comments/g8owxr/sutters_mill_when_the_hot_loops_done_four_quick/)
-- url: https://herbsutter.com/2020/04/01/when-the-hot-loops-done/
+## [12][C++ Tutorial 01 | First hello World Program](https://www.reddit.com/r/cpp/comments/g9ir2f/c_tutorial_01_first_hello_world_program/)
+- url: https://youtu.be/yiG1E_ikFm4
 ---
 
-## [7][[ANN] QxOrm 1.4.7 and QxEntityEditor 1.2.5 released : the Qt ORM/ODM improve MongoDB integration and fix macOS Catalina](https://www.reddit.com/r/cpp/comments/g8xvs3/ann_qxorm_147_and_qxentityeditor_125_released_the/)
-- url: https://forum.qt.io/topic/114124/ann-qxorm-1-4-7-and-qxentityeditor-1-2-5-released-the-qt-orm-odm-improve-mongodb-integration-and-fix-macos-catalina
----
-
-## [8][Foundations of C++ Type System](https://www.reddit.com/r/cpp/comments/g8bkt5/foundations_of_c_type_system/)
-- url: https://www.reddit.com/r/cpp/comments/g8bkt5/foundations_of_c_type_system/
----
-C++ has a very powerful type system that allows to express a lot of concepts at compile time. In particular, with generics and constexpr, you can achieve some sort of dependent typing like the following:
-
-`template&lt;size_t A, size_t B&gt;`  
-`String&lt;A+B&gt; concat(String&lt;A&gt;, String&lt;B&gt;) //Where String&lt;N&gt; is a string of N chars`
-
-I was wondering where can I find information about how these parts of the type system have been built (e.g. RFCs, design documents, committees). Moreover, I am also looking for (although I don't know if they exist) theoretical papers that correspond to the type system of C++.
-
-Finally, if by any chance somone knows other languages that offer these sort of integer generics I would also be interested (I only know "const generics" in Rust and is still under development).
-
-Thanks!
-## [9][How to Use C++ for Azure Storage](https://www.reddit.com/r/cpp/comments/g8wgp3/how_to_use_c_for_azure_storage/)
-- url: https://www.bfilipek.com/2020/04/azure-storage-cpp.html
----
-
-## [10][Cpp-Taskflow: A General-purpose Parallel and Heterogeneous Task Programming System at Scale](https://www.reddit.com/r/cpp/comments/g8ebnj/cpptaskflow_a_generalpurpose_parallel_and/)
-- url: https://arxiv.org/abs/2004.10908
----
-
-## [11][Correctly implementing a spinlock in C++](https://www.reddit.com/r/cpp/comments/g84bzv/correctly_implementing_a_spinlock_in_c/)
-- url: https://rigtorp.se/spinlock/
----
-
-## [12][Game engines in C++17?](https://www.reddit.com/r/cpp/comments/g86pzl/game_engines_in_c17/)
-- url: https://www.reddit.com/r/cpp/comments/g86pzl/game_engines_in_c17/
----
-Are there any decent game engines where the source code is available to look at and that are in C++17?
-
-(Urho3D and UnrealEngine are both still on C++11/14, right?). Thanks for any pointers! 

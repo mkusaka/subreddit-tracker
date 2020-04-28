@@ -1,5 +1,36 @@
 # ruby
-## [1][Just released sequel-activerecord-adapter gem](https://www.reddit.com/r/ruby/comments/g8z5iv/just_released_sequelactiverecordadapter_gem/)
+## [1][Ruby adds experimental support for end-less method definition](https://www.reddit.com/r/ruby/comments/g9hlar/ruby_adds_experimental_support_for_endless_method/)
+- url: https://www.reddit.com/r/ruby/comments/g9hlar/ruby_adds_experimental_support_for_endless_method/
+---
+[https://blog.saeloun.com/2020/04/27/ruby-adds-endless-method-definition-experimental](https://blog.saeloun.com/2020/04/27/ruby-adds-endless-method-definition-experimental)
+
+&amp;#x200B;
+
+PS: Do not shoot the messenger. I come in peace.
+## [2][Redis connection pool in Rails](https://www.reddit.com/r/ruby/comments/g9i2oy/redis_connection_pool_in_rails/)
+- url: https://tejasbubane.github.io/posts/2020-04-22-redis-connection-pool-in-rails/
+---
+
+## [3][Code walkthrough - concurrent writes, race conditions and other fun stuff when you need to rename stream with zero downtime.](https://www.reddit.com/r/ruby/comments/g9k6nx/code_walkthrough_concurrent_writes_race/)
+- url: https://blog.arkency.com/rename-stream-in-rails-event-store-with-zero-downtime/
+---
+
+## [4][Rails - Added sub seconds to Time inspect](https://www.reddit.com/r/ruby/comments/g9iey4/rails_added_sub_seconds_to_time_inspect/)
+- url: https://blog.saeloun.com/2020/04/27/rails-time-subseconds
+---
+
+## [5][New to programming. This code works. I want to know if I am thinking about it right.](https://www.reddit.com/r/ruby/comments/g9ibqd/new_to_programming_this_code_works_i_want_to_know/)
+- url: https://www.reddit.com/r/ruby/comments/g9ibqd/new_to_programming_this_code_works_i_want_to_know/
+---
+https://github.com/Ubuntu19019/learnruby/blob/master/abbreviate_sentence
+
+This is a practice problem from the app academy open website. I spent way too long solving this problem. I want to make sure my comments reflect what is actually going on. I don't think I understand line 27 and line 7.
+
+Line 7 wasn't working, because I was doing
+&gt; no_vowels = new_word
+
+To understand line 7 I think I need to understand line 27. This is what I think, but I think it's wrong. In the array in the first function let's say we have the word "elephant" that the computer is checking. It has more than 4 letters so it goes to the second function. The second function checks each letter of elephant and adds the non vowels to new_word. Return new_word is the answer function 1 gets back from function 2. Function 1 repeats the process of sending it to function 2 until it's looped through every word. If you don't do return new_word it doesn't work, because you have all the non vowels in a string, but the program hasn't been told to send it back to function 1.
+## [6][Just released sequel-activerecord-adapter gem](https://www.reddit.com/r/ruby/comments/g8z5iv/just_released_sequelactiverecordadapter_gem/)
 - url: https://www.reddit.com/r/ruby/comments/g8z5iv/just_released_sequelactiverecordadapter_gem/
 ---
 As some of you might know, I'm a big advocate for the [Sequel](https://github.com/jeremyevans/sequel) database library. However, it can be difficult to use it an app that's already using ActiveRecord, because Sequel requires its own database connection.
@@ -20,8 +51,22 @@ So I've created the [sequel-activerecord-adapter](https://github.com/janko/seque
 
 This means you can now easily use Sequel in parts of your app that might be more performance-sensitive or require more advanced database queries that ActiveRecord doesn't support.
 
-It also means you can use libraries like [Rodauth](https://github.com/jeremyevans/rodauth) that use Sequel under-the-hood without increased performance and mental overhead that would come with separate database connections.
-## [2][Idiomatic way to check if object responds to method, otherwise return blank string](https://www.reddit.com/r/ruby/comments/g8zydx/idiomatic_way_to_check_if_object_responds_to/)
+It also means you can use libraries like [Rodauth](https://github.com/jeremyevans/rodauth) that use Sequel under-the-hood without the performance impact and mental overhead that would come with dealing with separate database connections.
+## [7][IDE for JRuby?](https://www.reddit.com/r/ruby/comments/g95jl0/ide_for_jruby/)
+- url: https://www.reddit.com/r/ruby/comments/g95jl0/ide_for_jruby/
+---
+I'd like to try JRuby for development for the JVM. It looks pretty nice, but I'm used to use VSCode for all of my development stuff and VSCode doesn't seem to have a good Ruby plugin. Is there a good and free IDE for JRuby development I could use? Obvioisly I know about RubyMine, but I'd prefer some free and not java based IDE. Thanks!
+## [8][Dig](https://www.reddit.com/r/ruby/comments/g92d0v/dig/)
+- url: https://www.reddit.com/r/ruby/comments/g92d0v/dig/
+---
+I'm working on project to enhance the rdoc for Ruby.  It's gradually being merged into the Ruby project.
+
+Recently I was surprised by my research into dig.  Some of you may be, too.
+
+\- My proposed rdoc:  [https://github.com/BurdetteLamar/AboutRuby/blob/master/core/Hash/api/markdown.md#dig](https://github.com/BurdetteLamar/AboutRuby/blob/master/core/Hash/api/markdown.md#dig)
+
+\- The existing rdoc:  [https://ruby-doc.org/core-2.7.0/Hash.html#method-i-dig](https://ruby-doc.org/core-2.7.0/Hash.html#method-i-dig)
+## [9][Idiomatic way to check if object responds to method, otherwise return blank string](https://www.reddit.com/r/ruby/comments/g8zydx/idiomatic_way_to_check_if_object_responds_to/)
 - url: https://www.reddit.com/r/ruby/comments/g8zydx/idiomatic_way_to_check_if_object_responds_to/
 ---
 I have a web scraper that's parses rows, and sometimes it cannot find elements and throws an exception.  I've added a check to see if the query returns nill object, and if so return a blank string instead.
@@ -47,79 +92,7 @@ I was curious if there's a better way to do this in general or more idiomatic wa
       views:     views ? views.text : ""
     )
  end
-## [3][Proper objects for CSV headers and rows, convert column values, filter columns and rows, small(-ish) perfomance overhead, no dependencies other than Ruby stdlib.](https://www.reddit.com/r/ruby/comments/g8o50r/proper_objects_for_csv_headers_and_rows_convert/)
-- url: https://github.com/buren/honey_format
+## [10][LOOKING FOR A MENTOR](https://www.reddit.com/r/ruby/comments/g91gjq/looking_for_a_mentor/)
+- url: https://www.reddit.com/r/ruby/comments/g91gjq/looking_for_a_mentor/
 ---
-
-## [4][Looking for a Ruby content writer](https://www.reddit.com/r/ruby/comments/g8xi30/looking_for_a_ruby_content_writer/)
-- url: https://www.reddit.com/r/ruby/comments/g8xi30/looking_for_a_ruby_content_writer/
----
-Hey everyone,   
-
-
-I'm looking for a freelance Ruby content writer to write one or more blog posts about the Ruby web scraping ecosystem for my company blog. 
-
-Ideally, I'd like the article to be about to be an introduction to web scraping with Ruby, starting with "low-level" things like HTTP clients and HTML parsing gems, up to Selenium and frameworks that handle many things. 
-
-\- HTTP clients like HTTParty / Faraday
-
-\- Nokogiri
-
-\- Selenium
-
-\- "Scrapy-like" frameworks such as Kimurai
-
-Do you have recommendations about where I can find someone for this?   
-
-
-Cheers
-## [5][Alt::BrightonRuby — A slightly odd, quasi-conference for strange times](https://www.reddit.com/r/ruby/comments/g8ey7w/altbrightonruby_a_slightly_odd_quasiconference/)
-- url: https://www.reddit.com/r/ruby/comments/g8ey7w/altbrightonruby_a_slightly_odd_quasiconference/
----
-I've just launched the online version of my normally in-person conference. I'll miss the 'regular' version, but I think this might be fun.
-
-[https://alt.brightonruby.com](https://alt.brightonruby.com)
-
-There's a video here that gives a bit more detail of what it is.
-
-[https://www.youtube.com/watch?v=oXpfMGNFFYs](https://www.youtube.com/watch?v=oXpfMGNFFYs)
-
-If you've got any questions, happy to answer them.
-## [6][Is rubygems download real?](https://www.reddit.com/r/ruby/comments/g8l5vn/is_rubygems_download_real/)
-- url: https://www.reddit.com/r/ruby/comments/g8l5vn/is_rubygems_download_real/
----
-Hello guys I hope you are doing fine.
-
-In the past week I had some of my projects wrapped in Gem and sent them to [rubygems.org](https://rubygems.org).
-
-The odd is that this gems are very specific. The functions that I created are for a very specific job and are only applied to a specific geographical region.  The first gem got instantly 107 downloads so i thought that this might be some crawlers or other repositories pulling from rubygem but the second one that I made has now double the downloads of the first. 
-
-So is the rubygems download counter valid?
-## [7][PSA: net-sftp v3.0.0.rc1 is available for testing](https://www.reddit.com/r/ruby/comments/g8aj5m/psa_netsftp_v300rc1_is_available_for_testing/)
-- url: https://www.reddit.com/r/ruby/comments/g8aj5m/psa_netsftp_v300rc1_is_available_for_testing/
----
-"net-sftp" last official release was in 2013. The current maintainer (Miklós Fazekas) has issued a release candidate today.
-
-I believe it is important for a language like Ruby to have a well maintained library for this protocol (which is widely used in mid/large companies for low-tech data exchange).
-
-If you have some use of it, please go test it and provide feedback!
-
-[https://github.com/net-ssh/net-sftp/issues/92](https://github.com/net-ssh/net-sftp/issues/92)
-
-Have a safe day.
-## [8][Shouldn't it show nothing because I did not print anything?](https://www.reddit.com/r/ruby/comments/g8e2rq/shouldnt_it_show_nothing_because_i_did_not_print/)
-- url: https://i.redd.it/qusc8o5yv5v41.jpg
----
-
-## [9][RoR JWT Encryption from Scratch](https://www.reddit.com/r/ruby/comments/g8iwpq/ror_jwt_encryption_from_scratch/)
-- url: https://link.medium.com/i4VbElle05
----
-
-## [10][Gmail API. Error 400: redirect_uri_mismatch](https://www.reddit.com/r/ruby/comments/g8hiz6/gmail_api_error_400_redirect_uri_mismatch/)
-- url: https://www.reddit.com/r/ruby/comments/g8hiz6/gmail_api_error_400_redirect_uri_mismatch/
----
-Hey,
-
-So I was following this guide for Gmail API, but keep on getting 'Error 400: redirect\_uri\_mismatch'  when trying to authorize. Was unable to find any info googling about this. any thoughts? :)
-
-https://imgur.com/D9JCsxq
+Hey ! just like the title states , I’m looking for a ruby/rails mentor for the next month or so until I get hired. I’ve taught myself ruby and rails but I know I need a little help gaining a better understanding of advanced concepts. Unfortunately code-mentor and similar sites charge up the arse and I really can’t afford it just yet. I’m extremely hard working and persistent, loyal and dedicated. If anyone could spare some time I would be forever grateful.

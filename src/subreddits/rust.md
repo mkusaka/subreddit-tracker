@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (17/2020)!](https://www.reddit.com/r/rust/comments/g4nu6j/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/g4nu6j/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (18/2020)!](https://www.reddit.com/r/rust/comments/g9a5sn/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/g9a5sn/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,90 +16,102 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/g0erq1/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/g4nu6/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 335](https://www.reddit.com/r/rust/comments/g6d0ac/this_week_in_rust_335/)
-- url: https://this-week-in-rust.org/blog/2020/04/21/this-week-in-rust-335/
+## [2][What’s everyone working on this week (18/2020)?](https://www.reddit.com/r/rust/comments/g9a7d1/whats_everyone_working_on_this_week_182020/)
+- url: https://www.reddit.com/r/rust/comments/g9a7d1/whats_everyone_working_on_this_week_182020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-18-2020/41671?u=llogiq)!
+## [3][List of Rust streamers](https://www.reddit.com/r/rust/comments/g9ibs9/list_of_rust_streamers/)
+- url: https://github.com/jamesmunns/awesome-rust-streaming
 ---
 
-## [3][Teleforking a process onto a different computer!](https://www.reddit.com/r/rust/comments/g8v041/teleforking_a_process_onto_a_different_computer/)
-- url: https://thume.ca/2020/04/18/telefork-forking-a-process-onto-a-different-computer/
+## [4][Rust 1.0 T-Shirt](https://www.reddit.com/r/rust/comments/g9lnlj/rust_10_tshirt/)
+- url: https://i.redd.it/u078didrpjv41.png
 ---
 
-## [4][First official release of rust-analyzer](https://www.reddit.com/r/rust/comments/g8zzdy/first_official_release_of_rustanalyzer/)
+## [5][One-liner to (correctly) list all uses of`unsafe` in the entire crate graph](https://www.reddit.com/r/rust/comments/g9mw57/oneliner_to_correctly_list_all_uses_ofunsafe_in/)
+- url: https://www.reddit.com/r/rust/comments/g9mw57/oneliner_to_correctly_list_all_uses_ofunsafe_in/
+---
+`env RUSTFLAGS="-Funsafe-code --cap-lints=warn" cargo check -vv --message-format=json-diagnostic-rendered-ansi 2&gt;/dev/null | grep '^\{' | jq -r 'select(.message?.code?.code? == "unsafe_code").message?.rendered?'`
+
+You may also want to use a temporary `CARGO_TARGET_DIR` that you remove afterwards, to both prevent Cargo from having to rebuild all your deps when using normal `cargo check`, and to re-print all the warnings every time you run the command.
+
+And/or wrap this in something caching the results (presumably some of the Cargo messages tell you which crates are not getting rebuilt because they haven't changed).
+
+A Rust program like `cargo-geiger` could use this method with very little effort, as well, while still retaining the ability to collect various kinds of statistics.
+
+While I have no use for this (at least at the moment, I do however use `#![forbid(unsafe_code)]` everywhere I can in my own projects), I suspect there are other people who do.
+
+Please stay safe ^(and avoid ad-hoc analyses of source code)
+
+(PS: you can use this technique with arbitrary lints, including clippy ones! so the easiest way to have a custom analysis is to add it to clippy as an off-by-default lint then run a command like this)
+## [6][First official release of rust-analyzer](https://www.reddit.com/r/rust/comments/g8zzdy/first_official_release_of_rustanalyzer/)
 - url: https://rust-analyzer.github.io/blog/2020/04/20/first-release.html
 ---
 
-## [5][Cargo Bloat Action: Track Rust binary sizes across builds/pull requests using Github Actions](https://www.reddit.com/r/rust/comments/g8xgoh/cargo_bloat_action_track_rust_binary_sizes_across/)
-- url: https://github.com/orf/cargo-bloat-action/
+## [7][filter_map() slower then filter() then map()](https://www.reddit.com/r/rust/comments/g9lug6/filter_map_slower_then_filter_then_map/)
+- url: https://www.reddit.com/r/rust/comments/g9lug6/filter_map_slower_then_filter_then_map/
+---
+Anyone have comments on the following problem I have outlined in a stackoverflow post?
+
+https://stackoverflow.com/questions/61471978/is-there-a-way-of-making-filter-map-quicker-then-filter-then-map-currentl
+## [8][smol (@stjepang) - A small and fast async runtime for Rust](https://www.reddit.com/r/rust/comments/g917ad/smol_stjepang_a_small_and_fast_async_runtime_for/)
+- url: https://github.com/stjepang/smol
 ---
 
-## [6][(Almost) Lockless Stream Buffering](https://www.reddit.com/r/rust/comments/g8qgkj/almost_lockless_stream_buffering/)
-- url: https://mcfelix.me/blog/shared-buffers/
+## [9][Ranges: a generic addition to or replacement of core ranges](https://www.reddit.com/r/rust/comments/g9mjx5/ranges_a_generic_addition_to_or_replacement_of/)
+- url: https://www.reddit.com/r/rust/comments/g9mjx5/ranges_a_generic_addition_to_or_replacement_of/
+---
+Hello!
+
+I've been working on this for some time now and I think it's time to spread the word and get some feedback.
+
+&amp;#x200B;
+
+Ranges' most important component is the generic alternative to core/std ranges, aptly named GenericRange. It works mostly the same as the ranges you're used to, but has two requirements to make the generic part work: The start is always less or equal to the end and the type being stored implements the Domain trait, which requires Ord. I think these requirements are reasonable, and the goal is to implement Domain for as many core/std types as possible anyway, so for most use cases it can be used directly without any additional code. By the way, "generic" is a bit of a wordplay. It is of course generic like the already existing ranges are, but it is also "range-generic" and can store all range variants existing in core and even the unimplemented ones like open ranges.
+
+Using the aforementioned GenericRange, Ranges (as in RangeSet) is a vector-backed interval/range set which stores inserted ranges in the most space efficient way possible by unionizing inserted with existing ones. The plan is to also build multi-dimensional versions of this so it works, for example, in 3D space and above.
+
+&amp;#x200B;
+
+There's also 3 feature gates so far:
+
+arbitrary - allowing fuzzers and alike to create random ranges and rangesets which still uphold the main guarantees
+
+noisy\_float - adds implementations of Domain for all 4 noisy\_float variants so now you can have float ranges!
+
+num-bigint - adds implementations of Domain for arbitrary large integers. These showcase truly unbound domains.
+
+&amp;#x200B;
+
+Generally, I plan to make this crate as compatible as possible with core/std to integrate it seamlessly. Maybe even cause some discussion about replacing the existing implementations with it or something close. Additionally I want to support as many custom types as possible (like I already do with noisy-float and bigint).
+
+&amp;#x200B;
+
+Apart from that, please have fun taking the documentation and underlying code to bits - I hope to improve it even more with the feedback I'll get here. Also, this is my first ever release and accompanied post on reddit, so if there's anything I can change to make this even more interesting for potential users, please don't hesitate to tell me :)
+
+&amp;#x200B;
+
+[https://docs.rs/ranges](https://docs.rs/ranges)
+
+[https://lib.rs/crates/ranges](https://lib.rs/crates/ranges)
+
+[https://crates.io/crates/ranges](https://crates.io/crates/ranges)
+## [10][A lightweight implementation of 2048, leveraging the expectimax algorithm](https://www.reddit.com/r/rust/comments/g9mjf1/a_lightweight_implementation_of_2048_leveraging/)
+- url: https://github.com/adrienball/2048-rs
 ---
 
-## [7][Maximum Sum of Subarrays (Leetcode) in Rust (+ benchmarking)](https://www.reddit.com/r/rust/comments/g8y2w8/maximum_sum_of_subarrays_leetcode_in_rust/)
-- url: https://www.youtube.com/watch?v=G1deF4Rehlw
+## [11][rust-analyzer Changelog #22](https://www.reddit.com/r/rust/comments/g94g76/rustanalyzer_changelog_22/)
+- url: https://rust-analyzer.github.io/thisweek/2020/04/27/changelog-22.html
 ---
 
-## [8][Rust Wiki: Slack workspace for coordination](https://www.reddit.com/r/rust/comments/g8j871/rust_wiki_slack_workspace_for_coordination/)
-- url: https://www.reddit.com/r/rust/comments/g8j871/rust_wiki_slack_workspace_for_coordination/
+## [12][flatzinc parser 0.1](https://www.reddit.com/r/rust/comments/g9n4du/flatzinc_parser_01/)
+- url: https://www.reddit.com/r/rust/comments/g9n4du/flatzinc_parser_01/
 ---
-~~This is in response to [this](https://www.reddit.com/r/rust/comments/g7s4ss/rust_needs_a_wiki/) post where people expressed support for creating a Rust wiki.~~
+# A parser for the [FlatZinc](https://www.minizinc.org/doc-2.4.1/en/fzn-spec.html#specification-of-flatzinc) modelling language
 
-~~For anyone that is interested in helping us create this wiki, please join the new [Slack workspace](https://join.slack.com/t/rustwiki/shared_invite/zt-e674kvf4-vIHNSAG3nTLbG4ef7ECnhA) so we can discuss options and coordinate efforts.~~
+[https://github.com/sthiele/flatzinc-parser](https://github.com/sthiele/flatzinc-parser)
 
-We've moved to the community Discord under the #wiki channel: https://discord.gg/fwSRAx
-
-Thank you!
-## [9][Do vec![0; n] and Vec::with_capacity(n) sometimes not allocate?](https://www.reddit.com/r/rust/comments/g8o113/do_vec0_n_and_vecwith_capacityn_sometimes_not/)
-- url: https://www.reddit.com/r/rust/comments/g8o113/do_vec0_n_and_vecwith_capacityn_sometimes_not/
----
-My understanding was that initializing a vector with `vec!` or `Vec::with_capacity` performed an initial allocation and guaranteed that no other allocations would take place so long as the Vector's length stays below that initial capacity.
-
-However, I have been running some tests, and the actual memory use of my program isn't consistent with that understanding.  As a test, I initialized a Vector in three different ways:
-
-1) `Vec::with_capacity(0x4_000_000)`
-
-2) `vec![0_u8; 0x4_000_000]`
-
-3) `vec![47_u8; 0x4_000_000]`
-
-In each case, I complied my program in release mode, ran it, and measured its total memory use with [ps_mem](https://github.com/pixelb/ps_mem).  When I'd initialized the Vector in either of the first two ways, my program's memory use was unchanged from not creating the large Vector at all, but when I initialized it using #3, my program's memory use increased by the expected amount (~67 MiB).
-
-Does that mean that `with_capacity` does *not* actually allocate the full capacity (and thus could still require subsequent allocations to reach that capacity)?  Or is it allocating that memory, but not in a way that ps_mem is counting as used (which seems odd – it the memory has been allocated, it's not available for other programs, which seems like use to me).
-
-(Before anyone says anything, my *actual* use case will not involve allocating a 67 MiB Vector!  I'm just testing with large numbers because they make the effects more obvious :)  But I would like to understand how I need to initialize a vector to guarantee that I can subsequently use it without triggering any allocations)
-## [10][Creating a buffer with specific indices for UDP messaging](https://www.reddit.com/r/rust/comments/g8v7xi/creating_a_buffer_with_specific_indices_for_udp/)
-- url: https://www.reddit.com/r/rust/comments/g8v7xi/creating_a_buffer_with_specific_indices_for_udp/
----
-Hey there! Hope we're all keeping healthy and happy.
-
-I'm looking to implement a torrenting client just for experience. As part of that, I need to create a buffer that is looks like this [(from BEP)](http://www.bittorrent.org/beps/bep_0015.html):
-
-| Offset | Size           | Name           | Value                           |   |
-|--------|----------------|----------------|---------------------------------|---|
-| 0      | 64-bit integer | protocol_id    | 0x41727101980 // magic constant |   |
-| 8      | 32-bit integer | action         | 0 // connect                    |   |
-| 12     | 32-bit integer | transaction_id | // Randomised ID                |   |
-| 16     |                |                |                                 |   |
-
-The thing is, I can't find a library that specifically allows me to set offsets for these buffer elements. Has anyone used something similar?
-
-Thanks for your time with this, it's super appreciated!
-Jake.
-## [11][Educational Rust live coding - Building a git CLI [video]](https://www.reddit.com/r/rust/comments/g8z0xg/educational_rust_live_coding_building_a_git_cli/)
-- url: https://youtu.be/YFzF1AHYjes?t=301
----
-
-## [12][Confused with how 'any()' works on an iterator.](https://www.reddit.com/r/rust/comments/g8xp17/confused_with_how_any_works_on_an_iterator/)
-- url: https://www.reddit.com/r/rust/comments/g8xp17/confused_with_how_any_works_on_an_iterator/
----
-I'm screwing around with Rust now and learning iterators. All other iterator methods like filter, find and map have worked exactly as I'd expect them to, but I can't use 'any' properly. My current implementation is like this:
-
-`for i in subscriptions.iter().any(|&amp;x| x.price &lt; 10.0) {`  
-   
-    `}`
-
-Where 'subscriptions' is a vector of custom structs. This throws a `bool is not an iterator` error, which sounds odd considering that every other operation I've done on an iterator has resolved to a bool at some point. I can't tell exactly why this particular method isn't working like the others, but I have to use it for an assignment, so any help is greatly appreciated.
+I made this parser for one of my projects and maybe it can be useful for others. Also thanks to everybody working on nom.

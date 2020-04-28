@@ -19,7 +19,159 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Beginning with Rails and I have a few questions](https://www.reddit.com/r/rails/comments/g8xv6i/beginning_with_rails_and_i_have_a_few_questions/)
+## [2][Ruby adds experimental support for end-less method definition](https://www.reddit.com/r/rails/comments/g9hmac/ruby_adds_experimental_support_for_endless_method/)
+- url: /r/ruby/comments/g9hlar/ruby_adds_experimental_support_for_endless_method/
+---
+
+## [3][Markdown redcarpet and link_to](https://www.reddit.com/r/rails/comments/g9iik3/markdown_redcarpet_and_link_to/)
+- url: https://www.reddit.com/r/rails/comments/g9iik3/markdown_redcarpet_and_link_to/
+---
+ I'm improving my markdown render.   
+
+    class MarkdownRenderer &lt; Redcarpet::Render::HTML
+       def paragraph(text)
+         text.gsub! (/@(\w+)/) do |match|
+           %(&lt;a target="_blank" href="/users/#{match[1..-1]}"&gt;#{match}&lt;/a&gt;)
+         end
+         text
+       end
+
+One question... as you can see I used an html code 
+
+    %(&lt;a target="_blank" href="/users/#{match[1..-1]}"&gt;etc. etc.
+
+ **I want to turn it in link\_to. Is it possible?** I tried with 
+
+       text.gsub! (/@(\w+)/) do |match|
+           &lt;%= link_to match, user_path(match) %&gt;
+         end
+
+ but it doesn't work.
+
+It said  No method for class match
+
+So I   used `#{1}`
+
+    &lt;%= link_to match, user_path($1) %&gt;
+
+But it said : `syntax error "&lt;"`
+
+I tried to add directly `link_to match, user_path($1)` but it says me `undefined method 'user_path'` 
+
+How to solve?!
+## [4][HTTParty, converting curl command into a ruby request and general API confusion](https://www.reddit.com/r/rails/comments/g95gjd/httparty_converting_curl_command_into_a_ruby/)
+- url: https://www.reddit.com/r/rails/comments/g95gjd/httparty_converting_curl_command_into_a_ruby/
+---
+Hi everyone,
+
+I'm pretty confused right now, and I've been chasing my tail for a while now trying to do something and just getting further and further away from resolving it. People in this group have been extremely helpful in the past so I'm hoping I can get some guidance on my current hangup.
+
+I think the best way to explain my current confusion is to start at my original problem to demonstrate how I got to where I am now.
+
+Original problem:I'm trying to hit the Algolia Places API, but need to hide my API key
+
+So I know how to work with a basic API when it comes to the Javascript fetch API, and normally the JS documentation is very easy so I can just copy their code, but since I need to hide my API key, I need to do it in the back end of my rails app.
+
+Ok, so the last time I did this, this is is how I did it in my controller:
+
+    response = open(url).read
+    @response_json = JSON.parse(response)
+    render json: @response_json
+
+I don't know where "open" or ".read" actually come from, because I can't recall where I learned how to do a request this way, and I can't seem to find any rails documentation on this, so my first question is where are these methods coming from and where can I read the documentation?Now for this particular api call the documentation gives clear instructions on how to structure the URL, and it is only a GET request, so all I am giving this "open" method is a URL string. Nice and simple.
+
+However Algolia places requires a POST request, and also the documentation don't demonstrate with a simple URL string (if that's even possible with a post request?), they show how to make the request with a curl command like so:
+
+    $ curl -X POST 'https://places-dsn.algolia.net/1/places/query' \
+      -H 'X-Algolia-Application-Id: YourApplicationId' \
+      -H 'X-Algolia-API-Key: YourAPIKey' \
+      --data '{"query": "Paris"}'
+
+Now, I'm not going to be doing this request in my terminal, so I need to somehow convert this to something I can do in my controller.
+
+This brings me to HTTParty. After doing some googling it seems like a popular tool for making API requests. Most of the tutorials seem to show HTTParty integrating with a class (as does the documentation). This seems like overkill to me. All I want to do is hit the api with a query, I don't see why that can't just happen in my controller? So question number 2 is what is the point in having a class just to do a seemingly basic thing of hitting a URL and getting some data?
+
+However I did discover [this article](https://www.rubyguides.com/2018/08/ruby-http-request/) which seems to simplify HTTParty a bit.
+
+So I've tried to convert that curl command to using HTTParty similar to what is demonstrated in that article, and this is how far I've gotten:
+
+    HTTParty.post("https://places-dsn.algolia.net/1/places/query",
+        :query =&gt; { :query =&gt; "paris" },
+        :headers =&gt; {
+          "X-Algolia-Application-Id" =&gt; ENV["PLACES_APP_ID"],
+          "X-Algolia-API-Key" =&gt; ENV["FOURSQUARE_CLIENT_ID"]
+        })
+
+However when I try this in the console I get (and I don't know where to begin debugging..)
+
+    {"message"=&gt;"No content in POST request", "status"=&gt;400}
+
+If you've read this far then thanks for sticking with me. I appreciate this is a rather convoluted post with a series of questions, but I think there's something I'm just fundamentally not understanding about how to hit APIs and work with sending/receiving data, because I just seem to be hitting walls all over the place.
+
+I've done my share of googling but I just can't seem to demystify any of this, so any help would be hugely appreciated.  
+
+
+Edit: I've managed to get it working using a class now, however I can't seem to translate that curl request into a HTTParty request. Here's what I could figure after looking at the examples in the documentation:  
+
+
+    def initialize(query)
+        @options = {
+          headers: {
+          "X-Algolia-Application-Id" =&gt; ENV["PLACES_APP_ID"],
+            "X-Algolia-API-Key" =&gt; ENV["FOURSQUARE_CLIENT_ID"]
+          },
+          query: {
+            query: query
+          }
+        }
+      end
+
+This results in the error:
+
+    Failed to open TCP connection to places-dsn.algolia.net:443 (getaddrinfo: nodename nor servname provided, or not known)
+
+&amp;#x200B;
+## [5][Graph in rails](https://www.reddit.com/r/rails/comments/g9hoer/graph_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/g9hoer/graph_in_rails/
+---
+I have income, expense and user controller i want to plot graph of profit loss of current user i have following code in user model.
+
+    class User &lt; ApplicationRecord   has_many :incomes   has_many :expenses    def total_expense     expenses.pluck(:amount).sum   end def total_incomes     incomes.pluck(:amount).sum   end def profit_loss     total_incomes - total_expense   end # Include default devise modules. Others available are: # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable end
+
+but proft\_loss  
+ is not saved in database.
+## [6][how to write a very basic rails 5 api](https://www.reddit.com/r/rails/comments/g99h69/how_to_write_a_very_basic_rails_5_api/)
+- url: https://www.reddit.com/r/rails/comments/g99h69/how_to_write_a_very_basic_rails_5_api/
+---
+how to write a **Rails 5 (or 6) API that is so simple** it has no database and all it does is  that it gets two parameters and run a method on them to return a value.
+
+all tutorials i found had database, or involve testing which make things complicated for me. I just need to a finish a little project then i will learn rails api the right way. I have very little experience with Rails. 
+
+But writing a little guide for my task will help me a lot. to understand the basics, including where to put the method..etc
+## [7][Junior Dev Question: How do you approach database/model redesign?](https://www.reddit.com/r/rails/comments/g98zri/junior_dev_question_how_do_you_approach/)
+- url: https://www.reddit.com/r/rails/comments/g98zri/junior_dev_question_how_do_you_approach/
+---
+I'm a new dev (roughly 6 months) on a rails project that the team has deemed in need of a back-end overhaul: expanding the scope of some models, reducing the scope of others, adding new relations, etc. As the requirements are being developed, I've tried to start formulating a high level outline of "things I need to do/consider before a major backend refactor," and I feel like I'm hitting that plateau of "not knowing what I need to know." Do you have any recommendations/resources to consider when refactoring your models/databases? Things to look out for, easy performance improvements, etc?  
+
+
+TLDR: I'm a n00b that doesn't know what search terms I should be using when considering refactoring our rails models.
+## [8][Removing routes that I didn't specify](https://www.reddit.com/r/rails/comments/g91wbq/removing_routes_that_i_didnt_specify/)
+- url: https://www.reddit.com/r/rails/comments/g91wbq/removing_routes_that_i_didnt_specify/
+---
+I'm using Rails 6.0.2.2, and I added a route inside of config/routes.rb.  When I ran the 'rake routes' command, a bunch of routes appeared that I didn't specify.
+
+They are:
+
+/rails/action_mailbox/...
+
+/rails/conductor/action_mailbox/inbound_emails/...
+
+/rails/active_storage/...
+
+I can't find any way to remove these, or prevent rails from generating these routes.  From what I've read on them, I don't need them for my intended website to work as I want it.  
+
+How can these routes be removed / not-generated?
+## [9][Beginning with Rails and I have a few questions](https://www.reddit.com/r/rails/comments/g8xv6i/beginning_with_rails_and_i_have_a_few_questions/)
 - url: https://www.reddit.com/r/rails/comments/g8xv6i/beginning_with_rails_and_i_have_a_few_questions/
 ---
 Hi everyone, I started to learn Rails last week, and I am so happy with it. I managed to get from a "hello world" level, to an actually usable app in less than a week, great experience.
@@ -45,11 +197,11 @@ Edit:
 Does this affect performance ? 
 
 Many thanks in advance !
-## [3][What is the explanation of blob in ActiveStorage?](https://www.reddit.com/r/rails/comments/g8y2cj/what_is_the_explanation_of_blob_in_activestorage/)
-- url: https://www.reddit.com/r/rails/comments/g8y2cj/what_is_the_explanation_of_blob_in_activestorage/
+## [10][am rendering a partial from a custom controller action, but now it is only showing html and not erb](https://www.reddit.com/r/rails/comments/g9417v/am_rendering_a_partial_from_a_custom_controller/)
+- url: https://www.reddit.com/r/rails/comments/g9417v/am_rendering_a_partial_from_a_custom_controller/
 ---
-I have a model named document. In the migration of document model, I have a column named t.blob :file. There is an error about blob ib my model migration. "Unknown method". How do you implement my model document to activestorage?
-## [4][Validates. Removing the url video.](https://www.reddit.com/r/rails/comments/g8xplp/validates_removing_the_url_video/)
+so I have made a controller custom action and have the route for it, and it routes properly(I've checked using the Rails Panel chrome plugin), but if put _only_ html tags like `&lt;p&gt;what's up&lt;/p&gt;` those work, but if I try to use erb like `&lt;% %&gt;` or `&lt;%= %&gt;` things don't render any more - even html tags. I'm not sure the reason for that and was wondering if anyone may have an idea as to why
+## [11][Validates. Removing the url video.](https://www.reddit.com/r/rails/comments/g8xplp/validates_removing_the_url_video/)
 - url: https://www.reddit.com/r/rails/comments/g8xplp/validates_removing_the_url_video/
 ---
 Hi guys, I added this lines to validate the youtube video id.
@@ -81,99 +233,3 @@ If I edit the page with a video, adding a new video -&gt; It works and edits the
 &amp;#x200B;
 
 How to solve?
-## [5][Optimal way to define Chrome + Capybara integration in 2020?](https://www.reddit.com/r/rails/comments/g8m0xb/optimal_way_to_define_chrome_capybara_integration/)
-- url: https://www.reddit.com/r/rails/comments/g8m0xb/optimal_way_to_define_chrome_capybara_integration/
----
-Hey guys!
-
-I'm working on redoing some of  my company's feature test suite, and I wanted to update our Capybara  &amp; Webdriver configuration to match the latest recommended standards by the Capybara team.
-
-I'm trying to define three types of drivers for my suite:
-
-1. Local, regular driver that will be able to spin up Chrome sessions and test in the same GUI/window server as normal
-2. Same thing as #1, but headless
-3. Completely remote setup where we can run our feature tests on a  separate Selenium-Chrome node in the same network (for CI usage).
-
-Our old preferences can be seen here: [https://github.com/arman000/marty/blob/master/spec/support/chromedriver.rb](https://github.com/arman000/marty/blob/master/spec/support/chromedriver.rb)
-
-Now,  it's a bit all over the place, but one of the main things I wanted to  ask is what's the difference between using `add_preference` &amp;  `add_argument` to using  `Selenium::WebDriver::Remote::Capabilities.chrome`? Should I be using  that option set for locally running feature specs as well or just for setups #2 and #3?
-
-Appreciate any help/feedback!
-## [6][Social Login + Rails API + Mobile Client](https://www.reddit.com/r/rails/comments/g8g69p/social_login_rails_api_mobile_client/)
-- url: https://www.reddit.com/r/rails/comments/g8g69p/social_login_rails_api_mobile_client/
----
-I'm making this post in response to the last one I made where I was stuck on figuring out how to get social login working when dealing with a RoR backend and a native mobile app. ([https://www.reddit.com/r/rails/comments/g3s0v7/devise\_token\_auth\_omniauth/](https://www.reddit.com/r/rails/comments/g3s0v7/devise_token_auth_omniauth/))
-
-I tried working with Omniauth but things got quite messy considering the number of redirects required to get everything going so I decided to go DIY and try write up my own solution.
-
-The result is [https://gist.github.com/jesster2k10/ff96b5adbce72abae5fc603bd17c1843](https://gist.github.com/jesster2k10/ff96b5adbce72abae5fc603bd17c1843)
-
-I go into a good bit of detail in the gist of the code and how everything works but to summarise it here:
-
-* The user signs in with the native sdks on the mobile client
-* The mobile SDK generates an access/id token
-* A POST /identities/:provider request is sent with the token in the body
-* The server fetches the user info from the token
-* A new user is created based on that user info
-
-The main benefit of this is that it's a much simpler implementation on the native side than setting up a web view and dealing with it the "traditional" way. However, if you are working with a Rails application or even an SPA, there's not much benefit to this over Omniauth so I would go with that.
-
-I've written specs for about 65% of the code right now but just testing it with Postman shows it's working. I'll update the gist with the new specs as I write more of them
-
-Hope this can help somebody as frustrated as I was.
-## [7][Heroku Deploy Error Message](https://www.reddit.com/r/rails/comments/g8vxbl/heroku_deploy_error_message/)
-- url: https://www.reddit.com/r/rails/comments/g8vxbl/heroku_deploy_error_message/
----
-Just completed this tutorial app which was running near flawless, but heroku is being a jerk and not actually running it and instead asking me if I'm the owner of the app. What did I do wrong? (no it's not a carbon copy of the tutorial app).
-
-  
-
-# "We're sorry, but something went wrong.
-
-If you are the application owner check the logs for more information."
-## [8][profit loss graph in rails](https://www.reddit.com/r/rails/comments/g8vu2f/profit_loss_graph_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/g8vu2f/profit_loss_graph_in_rails/
----
- have income,expense, user controller i want to plot a graph of currrent user profit i calculated it in model.  
-def total\_expense  
-expenses.pluck(:amount).sum  
-end  
-def total\_incomes  
-incomes.pluck(:amount).sum  
-end  
-def profit\_loss  
-total\_incomes - total\_expense  
-end  
-how i plot a graph of profit\_loss its value is not save in data base
-## [9][Naming convention: folder containing algorithms that look up and/or calculate values](https://www.reddit.com/r/rails/comments/g8skfa/naming_convention_folder_containing_algorithms/)
-- url: https://www.reddit.com/r/rails/comments/g8skfa/naming_convention_folder_containing_algorithms/
----
-Do any of you contain such a folder? For example, I want to write an algorithm that determines the nearest year a vehicle could be based on VIN number (so an amateur decoder of sorts). Where would I put this logic? So far I only intend to use this method in multiple controllers, so is it simply a controller concern?
-
-Edit: Or maybe I should just make a folder named "decoders" and name the file "vin\_decoder.rb"?
-## [10][Storing Videos For My Rails Application](https://www.reddit.com/r/rails/comments/g8hbmy/storing_videos_for_my_rails_application/)
-- url: https://www.reddit.com/r/rails/comments/g8hbmy/storing_videos_for_my_rails_application/
----
-Hello!
-
-A quick question regarding **storing videos** that I created for my rails application.
-
-I'm wondering how I would be able to store videos in a database. From what I gathered, I saw that a lot of people are saying to store the media in the "filesystem" rather than in the database directly.
-
-I'm wondering if the right way of doing this is by storing my videos on a server and then copying the path to that file into the database.
-
-Also, I saw that Amazon S3 offers buckets. I only have about 1TB of videos that need to be uploaded. Would this be a better alternative?
-
-**The services I'm considering are:**  
-\- Amazon S3  
-\- Digital Ocean Spaces Object Storage
-
-Am I on the right path here? Or am I way off?
-
-Thanks in advance guys!
-## [11][Beefing security of Rails API](https://www.reddit.com/r/rails/comments/g7zhjp/beefing_security_of_rails_api/)
-- url: https://www.reddit.com/r/rails/comments/g7zhjp/beefing_security_of_rails_api/
----
-What are the best ways to make a rails API secure?
-
-I'm considering whitelisting my client's IP address. How useful is hashing or encrypting the json data? Any other ideas?

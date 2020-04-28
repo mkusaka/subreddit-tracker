@@ -31,78 +31,59 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][6,000 free Android CI minutes / month on Bitrise right now - COVID 19 support](https://www.reddit.com/r/androiddev/comments/g8vt8f/6000_free_android_ci_minutes_month_on_bitrise/)
-- url: https://blog.bitrise.io/changes-to-bitrise-covid-19-support
+## [3][Was my game hacked? What can I do?](https://www.reddit.com/r/androiddev/comments/g99pla/was_my_game_hacked_what_can_i_do/)
+- url: https://www.reddit.com/r/androiddev/comments/g99pla/was_my_game_hacked_what_can_i_do/
+---
+I have a game developed in Unity that is currently in the Google Play Store.
+
+Today, when I looked on Firebase Console in Latest Release, unexpectedly, I see a newly released version which I don't recognize! According to Firebase, the Latest Release is version 17.1.1701, but the latest version which I published myself is version 2.3! Looking further, it appears that these rogue installs have started to appear in the past week, and evidently there have been 4 releases like this in total.
+
+Currently, this latest version which I do not recognize is almost 10% of my active users. I checked my Google Play Publish Console to make sure I wasn't hacked there, and everything looks good. It is showing that version 2.3 is indeed my latest official release.
+
+I did some checking in Google Analytics, and it appears that these installs are almost exclusively in China.
+
+So my questions are, where are these installs coming from (I mean specifically is there a website dedicated to this type of thing)? Was my game somehow hacked / hijacked? How is this possible and is there anything I can do about it? Does anyone else have any experience with this?
+## [4][High refresh rate rendering on Android](https://www.reddit.com/r/androiddev/comments/g96kmb/high_refresh_rate_rendering_on_android/)
+- url: https://android-developers.googleblog.com/2020/04/high-refresh-rate-rendering-on-android.html
 ---
 
-## [4][Building Android from source](https://www.reddit.com/r/androiddev/comments/g8z6qz/building_android_from_source/)
-- url: https://www.reddit.com/r/androiddev/comments/g8z6qz/building_android_from_source/
+## [5][Is it true that the Android Keystore can at best protect the keys but not the data?](https://www.reddit.com/r/androiddev/comments/g9ilc5/is_it_true_that_the_android_keystore_can_at_best/)
+- url: https://www.reddit.com/r/androiddev/comments/g9ilc5/is_it_true_that_the_android_keystore_can_at_best/
 ---
-Hi everyone!
-I would like to start building Android ROMs. I have read about it, however I have a few questions. Please bear with me as I'm still a beginner and would like to learn something new during lockdown.
+I've been reading up on the benefits of protecting sensitive data using the Android Keystore. So far, what I've understood is that the Keystore, when hardware backed, will safe guard my keys, preventing extraction. However, it cannot guard against an attacker using them to decrypt the data. A root user would be able to impersonate the app that owns the keys, and thereby use them to decrypt data without the need for extraction. The user won't be able to benefit outside of the device however, as extraction is not possible.
 
-1) Can I build an Android 10 ROM for a 7 year old Xperia SP(which is the device I have lying around)?
+So then, what is the point of encrypting data that is anyway not accessible without root, given that with root it is possible to decrypt without the need to extract the key. I'm looking at this from the angle of safeguarding things like API keys, etc. that are not user specific, and when leaked, could be used outside of the user's scope.
 
-2)I have a slow internet connection, around 10 Mbps. I have read that Android source is around 120 GB. Is it possible to download the source part by part everyday? Just like you can pause download through a download manager, is it possible even on my machine running Kali Linux?
-
-3) Can you suggest some good tutorials to learn from? Currently, I know C, C++, Python and a bit of Java and have experience in using the command line.
-
-4) My machine specs are: Intel Core i5-4440, 16GB RAM, 500GB HDD(dedicated to Linux). Will this be okay to build a ROM in a reasonable amount of time?
-
-I'm sorry if this is the wrong subreddit, but can anyone please point to the right one if this is wrong?
-## [5][Encryption on Android with Jetpack Security](https://www.reddit.com/r/androiddev/comments/g8xgj5/encryption_on_android_with_jetpack_security/)
-- url: https://www.reddit.com/r/androiddev/comments/g8xgj5/encryption_on_android_with_jetpack_security/
+For reference, [here](https://security.stackexchange.com/questions/201068/android-what-are-the-practical-security-benefits-of-using-a-hardware-backed-ke)'s a post I read on stack exchange. There's also [this research](https://cypherpunk.nl/papers/spsm14.pdf) that seems to back up the claim.
+## [6][PSA: Google Play appears to be down-ranking my app while it's under review](https://www.reddit.com/r/androiddev/comments/g9mbpe/psa_google_play_appears_to_be_downranking_my_app/)
+- url: https://www.reddit.com/r/androiddev/comments/g9mbpe/psa_google_play_appears_to_be_downranking_my_app/
 ---
-[https://five.agency/encryption-on-android-with-jetpack-security/](https://five.agency/encryption-on-android-with-jetpack-security/)
-## [6][Is Android Studio very difficult to learn or am I doing something wrong?](https://www.reddit.com/r/androiddev/comments/g8ouxe/is_android_studio_very_difficult_to_learn_or_am_i/)
-- url: https://www.reddit.com/r/androiddev/comments/g8ouxe/is_android_studio_very_difficult_to_learn_or_am_i/
----
-I'm still a beginner in java. But I am able to create useful java programs and I really enjoy it. I recently wanted to port these programs to android and I'm finding it really hard.Something as simple as displaying a list seems very complicated.Does it get easier? Are there any tips I need to know or good tutorials/courses I should follow?
-## [7][Android 11 update schedule - Road map](https://www.reddit.com/r/androiddev/comments/g90iqa/android_11_update_schedule_road_map/)
-- url: https://www.revick.net/news/android-11-update-schedule/
+I have good reason to believe that whenever my app is listed as "We are currently reviewing your app." (in the popup that appears when you click the info button next to your app name at the top of the Console) my app is severely penalized in the search results on Play Store. This may be some feature Google is experimenting with or already implemented.
+
+This "under review" status happens even when I increase the staged rollout percentage, so limiting this activity may be prudent to keep installs and revenue up. Also, I'd be concerned if my app got flagged for manual review on updates, right now my updates go live in the store in a couple hours, and the "under review" flag disappears after a couple more. 
+
+This is following years of my app being stably ranked #1 for a few search terms, a couple of them such as the name of the app it will even give half the screen space with the app screenshots instead of a list of apps. Within some minutes of submitting an update, I lose #1 in every search term dropping to #4 or 6 for some of them. As soon as the flag is cleared, within minutes it recovers. I've checked the listing from different devices from different accounts and from devices and accounts not associated with me in any way and located in different geographic region even.
+## [7][Mobile Game Playtime Increases By 62% Due To Coronavirus](https://www.reddit.com/r/androiddev/comments/g9m6bi/mobile_game_playtime_increases_by_62_due_to/)
+- url: https://mobilemarketingreads.com/mobile-game-playtime-increases-by-62-due-to-coronavirus/
 ---
 
-## [8][Just published my second Medium article, showing you how to create way better logs that show you where a log was made and has a hyperlink so you can jump to it's location, just like with Exceptions. Any Feedback is appreciated.](https://www.reddit.com/r/androiddev/comments/g8bo9k/just_published_my_second_medium_article_showing/)
-- url: https://medium.com/@.me./android-logging-on-steroids-clickable-logs-with-location-info-de1a5c16e86f
+## [8][Sealed classes + RecyclerView with headers = ❤️](https://www.reddit.com/r/androiddev/comments/g9a52n/sealed_classes_recyclerview_with_headers/)
+- url: https://medium.com/@patxi/sealed-classes-recyclerview-with-headers-%EF%B8%8F-14b87d41deb6?source=friends_link&amp;sk=2cb3fac8e2bce1ecbb8488d36fe1cf24
 ---
 
-## [9][Are there plans for supporting java versions beyond JDK 8 for android development?](https://www.reddit.com/r/androiddev/comments/g8zx54/are_there_plans_for_supporting_java_versions/)
-- url: https://www.reddit.com/r/androiddev/comments/g8zx54/are_there_plans_for_supporting_java_versions/
+## [9][Google Bots back from lockdown &amp; now just showing notifications from last week](https://www.reddit.com/r/androiddev/comments/g9n5ma/google_bots_back_from_lockdown_now_just_showing/)
+- url: https://imgur.com/a/z7SXBB1
 ---
 
-## [10][Learning from Zero](https://www.reddit.com/r/androiddev/comments/g8zpe6/learning_from_zero/)
-- url: https://www.reddit.com/r/androiddev/comments/g8zpe6/learning_from_zero/
+## [10][Droidcon Online 2020: Become A Composer](https://www.reddit.com/r/androiddev/comments/g9mxp6/droidcon_online_2020_become_a_composer/)
+- url: https://www.droidcon.com/media-detail?video=412304809
 ---
-Hello there, 
-So I have no real experience in programming or coding at all, just finished some intro level courses(cs 50, C intro).
-However, I find app development very interesting and want to get Into business.my only option is self learning I can't afford to pay much for now,but I am willing to put effort and time into it.
-Should I start by Java then Android studio? Or should I learn using a program that doesn't require coding as (app inventor/React native or unity for games)?
-Are both equal in job opportunities (as a freelancer) or which is better?
 
-Sorry if my English is annoying.I'd really appreciate any help.
-## [11][How do I start with Android again?](https://www.reddit.com/r/androiddev/comments/g8uq1d/how_do_i_start_with_android_again/)
-- url: https://www.reddit.com/r/androiddev/comments/g8uq1d/how_do_i_start_with_android_again/
+## [11][Make art with Android Development](https://www.reddit.com/r/androiddev/comments/g9m38d/make_art_with_android_development/)
+- url: https://medium.com/@elye.project/make-art-with-android-development-598fe21afaae?source=friends_link&amp;sk=3bcfee75c8f2451a667a94acafbc60d6
 ---
-So i did learn Android Development with Java about a year ago. But I have no idea about architecture and Kotlin etc. I shifted to Flutter for some projects and I really love Flutter, but I wanted to start building native apps again just for the experience. Where should I start with? I'm quite overwhelmed at seeing all the new things such as Jetpack Compose etc.
-## [12][How to share data between two fragments? Having trouble with the MVVM architecture](https://www.reddit.com/r/androiddev/comments/g8t4jw/how_to_share_data_between_two_fragments_having/)
-- url: https://www.reddit.com/r/androiddev/comments/g8t4jw/how_to_share_data_between_two_fragments_having/
+
+## [12][How Much Will It Cost to Design a Mobile App in 2020? Let us look at these questions by estimating the mobile application design cost of Uber and Instagram](https://www.reddit.com/r/androiddev/comments/g9lqaz/how_much_will_it_cost_to_design_a_mobile_app_in/)
+- url: https://kodytechnolab.com//cost-to-design-mobile-application
 ---
-Currently I have two fragments, one that shows the weather for a place and another that let's you select a point in a map and redirects you to the other fragment showing the weather for that point.
 
-What I want to achieve is to have by default the user's location and give the option to the user by going to the map of selecting any other place. So I would like to:  
-\- Get lat/lng via GPS and then "upload" it to somewhere that would share those values between this fragment and the map fragment (The activity maybe?)  
-\- If a point in the map is selected update those values- Both fragments can read at any time, only map fragment can update
-
-I believe I can do this sketchily adding getters/setters to my activity and then in the fragments cast the activity to my particular activity. But this just seems bad. What would be the correct way to do it?
-
-What I have now:  
-\- MainActivity (connects both fragments through a bottom navigation bar)  
-\- ForecastFragment (Shows the weather for lat/lng)  
-\- ForecastViewModel  
-\- MapFragment  
-\- MapViewModel  
-\- WeatherRepository  
-\- WeatherAPI (through RetroFit updates values)  
-I'm using dagger and kotlin.
-
-Thanks!!

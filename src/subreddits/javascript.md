@@ -87,52 +87,45 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Eloquent JavaScript, 3rd Edition. Full text available online.](https://www.reddit.com/r/javascript/comments/g8rniy/eloquent_javascript_3rd_edition_full_text/)
+## [3][[AskJS] Why are getters and setters so underused?](https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/)
+- url: https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/
+---
+Why people still use Java style getThing and setThing, when you have a beautiful language feature?
+## [4][is-promise Post Mortem](https://www.reddit.com/r/javascript/comments/g94pg7/ispromise_post_mortem/)
+- url: https://medium.com/@forbeslindesay/is-promise-post-mortem-cab807f18dcc
+---
+
+## [5][Improve UX of your Next.js App in 3 minutes with Page Loading Indicator](https://www.reddit.com/r/javascript/comments/g9mfpq/improve_ux_of_your_nextjs_app_in_3_minutes_with/)
+- url: https://medium.com/@vladymyr.pylypchatin/improve-ux-of-your-next-js-app-in-3-minutes-with-page-loading-indicator-3a422113304d?source=friends_link&amp;sk=9dfec202c257903910160d9b2d5e846b
+---
+
+## [6][Execute Program courses (Modern JS, TypeScript, JS regexes, JS arrays) are free for April](https://www.reddit.com/r/javascript/comments/g9bnuf/execute_program_courses_modern_js_typescript_js/)
+- url: https://www.executeprogram.com
+---
+
+## [7][A Critique of React Hooks](https://www.reddit.com/r/javascript/comments/g98k5d/a_critique_of_react_hooks/)
+- url: https://dillonshook.com/a-critique-of-react-hooks/
+---
+
+## [8][Writing Runtime Safe JavaScript](https://www.reddit.com/r/javascript/comments/g9mdcd/writing_runtime_safe_javascript/)
+- url: https://www.hackdoor.io/articles/wEQZLNPj/writing-runtime-safe-javascript
+---
+
+## [9][Eloquent JavaScript, 3rd Edition. Full text available online.](https://www.reddit.com/r/javascript/comments/g8rniy/eloquent_javascript_3rd_edition_full_text/)
 - url: https://eloquentjavascript.net/
 ---
 
-## [4][Svelte Web Component (5.4KB) &amp; Angular Web Component (51KB)](https://www.reddit.com/r/javascript/comments/g8k54m/svelte_web_component_54kb_angular_web_component/)
-- url: https://medium.com/@gogakoreli/svelte-web-component-5-4kb-4afe46590d99
+## [10][[AskJS] Looking for suggestions on aligning the items that are on separate div.](https://www.reddit.com/r/javascript/comments/g9kjxw/askjs_looking_for_suggestions_on_aligning_the/)
+- url: https://www.reddit.com/r/javascript/comments/g9kjxw/askjs_looking_for_suggestions_on_aligning_the/
+---
+I have two separate div. Each div contains one or multiple items. The width of the item is calculated from the duration of item i.e. width = (durationInSecond \* 1.0) / 15) \* 130. So my main concern is if I add two items each of duration 15 in DIV1 and another item of duration 30 in DIV2, I expect the item in DIV2 to be aligned with the end of the second item of DIV1. But in this case, it doesn't appear so. That's because of the space between the two items in the DIV1. I need the space between the two items as they are resizable and my cursor shows a resize icon while hovering the item. So if I eliminate the space between the item, there would be confusion while resizing the item. Any suggestions on how to get the expected output?
+
+https://preview.redd.it/uwv0n8zu3jv41.png?width=323&amp;format=png&amp;auto=webp&amp;s=e4d1f3dbcd24007b06cd6648fc6fec180f6a9c90
+## [11][Treebox: a weekend side-project of mine that displays programmatically navigable views](https://www.reddit.com/r/javascript/comments/g9epfc/treebox_a_weekend_sideproject_of_mine_that/)
+- url: https://github.com/jaredgorski/treebox
 ---
 
-## [5][JavaScript's ecosystem is uniquely paranoid](https://www.reddit.com/r/javascript/comments/g8vp35/javascripts_ecosystem_is_uniquely_paranoid/)
-- url: https://listed.to/@crabmusket/14061/javascript-s-ecosystem-is-uniquely-paranoid
+## [12][I made NoPaste, a paste service which works with no database and no back-end](https://www.reddit.com/r/javascript/comments/g938f5/i_made_nopaste_a_paste_service_which_works_with/)
+- url: https://nopaste.ml/XQAAAQA6AAAAAAAAAAAxm8oZxjYXvI7mX76e7T5sNYYyCnqhOB4fWuJ8CcN9Ygp7Qow1/KKphtg/eaAA6S2zVZW45YgXenwzq//2QIAA?lang=javascript
 ---
 
-## [6][How to build your first Micro Frontend with SSR in minutes](https://www.reddit.com/r/javascript/comments/g8y5rt/how_to_build_your_first_micro_frontend_with_ssr/)
-- url: https://medium.com/@vlad.fedosov/how-to-build-your-first-micro-frontend-with-ssr-in-minutes-95cd57788529
----
-
-## [7][Static VS dynamic website with JAM stack website in between](https://www.reddit.com/r/javascript/comments/g8zfsl/static_vs_dynamic_website_with_jam_stack_website/)
-- url: https://www.hackdoor.io/articles/8MNPxzNV/static-vs-dynamic-website-with-jam-stack-website-in-between
----
-
-## [8][JS/TS package for using Kotlin's Scope Function Extensions (with Optional Chaining support)](https://www.reddit.com/r/javascript/comments/g8o011/jsts_package_for_using_kotlins_scope_function/)
-- url: https://github.com/TheDavidDelta/scope-extensions-js
----
-
-## [9][JavaScript funny dancing emoticons - js console animation with basic trigonometry functions](https://www.reddit.com/r/javascript/comments/g8g0lx/javascript_funny_dancing_emoticons_js_console/)
-- url: https://dirask.com/posts/JavaScript-how-to-make-animated-sinus-in-console-with-VanillaJS-VjvxlD
----
-
-## [10][Free Testing Consulting for Javascript projects (React, Vue, Node &amp; Vanilla)](https://www.reddit.com/r/javascript/comments/g8v6s4/free_testing_consulting_for_javascript_projects/)
-- url: https://softwaretesting.agency
----
-
-## [11][create-react-app breaks due to dependency on one-liner package](https://www.reddit.com/r/javascript/comments/g83evc/createreactapp_breaks_due_to_dependency_on/)
-- url: https://github.com/then/is-promise/issues/13#issuecomment-619402307
----
-
-## [12][[AskJS] What is the best way to make my JS library as hard to reverse engineer as possible? (50k lines of raw JS)](https://www.reddit.com/r/javascript/comments/g8q13l/askjs_what_is_the_best_way_to_make_my_js_library/)
-- url: https://www.reddit.com/r/javascript/comments/g8q13l/askjs_what_is_the_best_way_to_make_my_js_library/
----
-First off, let's get this out of the way - pretty much any client side code running in the browser can be reverse engineered (as far as I know). What I'm interested in is making it challenging enough that a skilled developer is just better off recreating my work than copying chunks of it.
-
-My motivation by the way, is I have spent about 1 year working on a JS application, which is heavily optimized. Inside it are algorithms I spent a lot of time working out how to run efficiently and they work well... so well in fact it's my "secret sauce" as according to my tests my library is about 4 to 5 times more performant than my competitors.
-
-Ideas I have to help:
-
-1. Simply minify all the JS code... function names and variables names becoming random letters will make it somewhat hard to understand.
-2. Re-write the most important parts in Rust, minify the Rust, then compile to WASM. Because WASM is lower level I'm hoping it's harder to reverse engineer. Of course there are WASM decompilers but it seems like if you minify your Rust code before compiling to WASM it makes the decompiled output harder to read.
-
-Are there any approaches, tools or libraries people can recommend to help protect my code as much as possible?

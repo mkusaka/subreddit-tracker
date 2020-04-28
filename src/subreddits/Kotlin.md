@@ -1,13 +1,70 @@
 # Kotlin
-## [1][Should I use lambda here or not ?](https://www.reddit.com/r/Kotlin/comments/g8wroh/should_i_use_lambda_here_or_not/)
+## [1][How to properly define REST resources in kottpd](https://www.reddit.com/r/Kotlin/comments/g9kbpd/how_to_properly_define_rest_resources_in_kottpd/)
+- url: https://www.reddit.com/r/Kotlin/comments/g9kbpd/how_to_properly_define_rest_resources_in_kottpd/
+---
+I'm working on a REST-Server in Kotlin using [kottpd](https://github.com/gimlet2/kottpd)
+
+Here's an excerpt of the resources / URIs I've defined:
+
+    get("/patients") {req, res -&gt; PatientHandler.doGetAll(req, res)} 
+    post("/patients") {req, res -&gt; PatientHandler.doPost(req, res)} 
+    get("/patients/.*") {req, res -&gt; PatientHandler.doGetOne(req, res)} 
+    post("/patients/.*") {req, res -&gt; PatientHandler.doPatch(req, res)} 
+    get("/patients/.*/cases") {req, res -&gt; CaseHandler.doGetAll(req, res)} 
+    post("/patients/.*/cases") {req, res -&gt; CaseHandler.doPost(req, res)}
+
+`/patients` and `/patients/.*` have been working fine so far: e.g.`POST: /patients` adds a patient to the list and`GET: /patients/1` retrieves the patient with ID 1.
+
+However, when calling `POST: /patients/1/cases` to add a case to patient 1, the functions attached to `POST: /patients/.*` are executed.
+
+I assume(!) that `.*` is a wildcard and thus there's no distinction between there being an ID, some more path or just whatever.
+
+How can I define my resources / URIs to distinguish between these cases? Or, in case my assumptions isn't correct: what am i doing wrong?Also asked that on [stackoverflow](https://stackoverflow.com/questions/61462028/how-to-properly-define-rest-resources-in-kottpd), but no answer
+## [2][Understanding hash map basics by building one in Kotlin](https://www.reddit.com/r/Kotlin/comments/g91k9g/understanding_hash_map_basics_by_building_one_in/)
+- url: https://medium.com/@ocallaghan.donal/building-a-hash-map-in-kotlin-73c9b23d19ba
+---
+
+## [3][Should I use lambda here or not ?](https://www.reddit.com/r/Kotlin/comments/g8wroh/should_i_use_lambda_here_or_not/)
 - url: https://i.redd.it/xe9hw3csmbv41.png
 ---
 
-## [2][JS/TS package for using Kotlin's Scope Function Extensions (with Optional Chaining support)](https://www.reddit.com/r/Kotlin/comments/g8o2c1/jsts_package_for_using_kotlins_scope_function/)
+## [4][Pass web request context in Ktor](https://www.reddit.com/r/Kotlin/comments/g98k2s/pass_web_request_context_in_ktor/)
+- url: https://www.reddit.com/r/Kotlin/comments/g98k2s/pass_web_request_context_in_ktor/
+---
+In Go it is possible to pass the context of a web request to functions and go routines. This context may contain data such as authorization details but also a deadline which can be used by the receiver to decide whether there is enough time left to start a long operation which may complete after the deadline expires. It is also possible to cancel the context in the event such as client closing the connection before the request finishes processing which results in wasted resources because the client is no longer there to receive the result. Database query functions in Go’s standard library accept context. I was wondering if there is anything comparable in Ktor or elsewhere in the Kotlin universe?
+## [5][Kotlin Multiplatform from the android project?](https://www.reddit.com/r/Kotlin/comments/g95asx/kotlin_multiplatform_from_the_android_project/)
+- url: https://www.reddit.com/r/Kotlin/comments/g95asx/kotlin_multiplatform_from_the_android_project/
+---
+Hi All,
+
+I have a completed android project, I have seen that Kotlin multiplatform can share business logic across platforms.
+
+So I decided to use a multiplatform concept to share my network layer from my android app to the IOS app.
+
+We haven't started working on the IOS app. 
+
+ I'm aware that I need to do some rework on replacing Retrofit with Ktor-Client. I can do that.
+
+I want to know is it possible to **add multiplatform concept in my existing Android project**?
+
+If we can do this, can anyone share your thoughts with me?
+## [6][Detailed information about OOP](https://www.reddit.com/r/Kotlin/comments/g94ksc/detailed_information_about_oop/)
+- url: https://www.reddit.com/r/Kotlin/comments/g94ksc/detailed_information_about_oop/
+---
+I want to learn more about kotlin oop to better understand. Is there any document you can share?
+## [7][JS/TS package for using Kotlin's Scope Function Extensions (with Optional Chaining support)](https://www.reddit.com/r/Kotlin/comments/g8o2c1/jsts_package_for_using_kotlins_scope_function/)
 - url: https://github.com/TheDavidDelta/scope-extensions-js
 ---
 
-## [3][Reactor Flux timeouts](https://www.reddit.com/r/Kotlin/comments/g8zp0k/reactor_flux_timeouts/)
+## [8][Flutter-web-Music-UI](https://www.reddit.com/r/Kotlin/comments/g984x0/flutterwebmusicui/)
+- url: https://www.reddit.com/r/Kotlin/comments/g984x0/flutterwebmusicui/
+---
+**Flutter-web-Music-UI**
+
+[Github](https://github.com/imSanjaySoni/Flutter-web-Music-UI)
+
+https://preview.redd.it/t9qq8f3x1fv41.png?width=2560&amp;format=png&amp;auto=webp&amp;s=8cd461e6fce334e5cb60ca1415da6a62181943bb
+## [9][Reactor Flux timeouts](https://www.reddit.com/r/Kotlin/comments/g8zp0k/reactor_flux_timeouts/)
 - url: https://www.reddit.com/r/Kotlin/comments/g8zp0k/reactor_flux_timeouts/
 ---
 Sometimes it's necessary to listen to a Reactor `Flux`, handle messages in it and then propagate them to a downstream consumer. Besides you probably want to send some 'timeout' messages if your upstream keeps silence for a too long time. Project Reactor has special series of methods for such timeouts which predictably called `timeout`, but in my case those methods turned out to be a little bit useless. I wished to propagate timeouts when the upstream is silent for a too long period, but then I wished to continue listening. Moreover, I wanted to be ready for further timeouts when I returned to a listening of the upstream.
@@ -38,83 +95,7 @@ Anyway, I successfully used another approach. I just merge my regular stream and
     	val heartbeat = emptyList&lt;Moment&gt;()
     	return Flux.interval(Duration.ofMillis(500)).map { heartbeat }
     }
-## [4][Android Custom Toast in Kotlin with Example](https://www.reddit.com/r/Kotlin/comments/g8zi66/android_custom_toast_in_kotlin_with_example/)
+## [10][Android Custom Toast in Kotlin with Example](https://www.reddit.com/r/Kotlin/comments/g8zi66/android_custom_toast_in_kotlin_with_example/)
 - url: https://kotlin-android.com/android-custom-toast-kotlin/
----
-
-## [5][Best way to learn kotlin?](https://www.reddit.com/r/Kotlin/comments/g8qv91/best_way_to_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/g8qv91/best_way_to_learn_kotlin/
----
-Just trying to get into something new and was wondering the best way to learn kotlin. Would it be books or courses or what? Any advice would be great.
-## [6][Fastest Matrix Library for Android](https://www.reddit.com/r/Kotlin/comments/g8vq0e/fastest_matrix_library_for_android/)
-- url: https://www.reddit.com/r/Kotlin/comments/g8vq0e/fastest_matrix_library_for_android/
----
-Hello all,
-
-I was working on an Android app that requires some linear algebra with matrices. The matrices will be somewhat medium-sized as they are not too small or too big. I was originally using jBlas because of the benchmarks I have seen online but after visiting multiple forums, they have all said that jBlas would be nowhere near as fast as what the benchmarks originally state. I have also heard about the Snapdragon Math Library to help improve the speed but I have not heard too much about it. From the general community, what linear-algebra libraries do you recommend that will be the fastest to use on Android? All help is greatly appreciated!
-## [7][Learn, practice &amp; master the basics of Kotlin - The Android Language by registering to a FREE course in Sparkle - https://sparkle.adroitcorp.com.au](https://www.reddit.com/r/Kotlin/comments/g8wkc2/learn_practice_master_the_basics_of_kotlin_the/)
-- url: https://i.redd.it/57cbc5lrjbv41.jpg
----
-
-## [8][Deep recursion with coroutines](https://www.reddit.com/r/Kotlin/comments/g819ai/deep_recursion_with_coroutines/)
-- url: https://medium.com/@elizarov/deep-recursion-with-coroutines-7c53e15993e3
----
-
-## [9][Generic repository/service method](https://www.reddit.com/r/Kotlin/comments/g8ae4n/generic_repositoryservice_method/)
-- url: https://www.reddit.com/r/Kotlin/comments/g8ae4n/generic_repositoryservice_method/
----
-For this application my weapon of choice is Micronaut but I'm pretty sure the issue would be the same had I used Spring.
-
-I have a lot entities that I want to synchronize with various clients.
-
-All the entities are exposed through a repository and on top of that a service.
-
-Each repository implements a method as illustrated below
-
-    interface EntityRepository {
-        fun findByUpdatedAfter(updatedDateTime: LocalDateTime): Iterable&lt;Entity&gt;
-    }
-
-And then in the service a similar (entity specific) method is implemented.
-
-Since this is duplicated for all repositories and services I thought I'd make it a bit more generic.
-
-So I created an interface for my entities to ensure that a property called `updated` would exists
-
-    interface DateUpdatedEntity&lt;T&gt; {
-        val updated: T
-    }
-
-A generic repository
-
-    interface UpdatedAfterRepository&lt;E : DateUpdatedEntity&lt;T&gt;, T&gt; {
-        fun findByUpdatedAfter(updatedDateTime: T): Iterable&lt;E&gt;
-    }
-
-And a service interface with a default implementation of a method called `findAllAfter` as illustrated below
-
-    interface UpdatedAfterService&lt;E : DateUpdatedEntity&lt;T&gt;, T&gt; {
-        val updatedAfterRepository: UpdatedAfterRepository&lt;E, T&gt;
-        fun findAllAfter(updatedDateTime: T): Iterable&lt;E&gt; = updatedAfterRepository.findByUpdatedAfter(updatedDateTime)
-    }
-
-However when I try to implement the above in one of my services as illustrated below
-
-    @Singleton
-    @Transactional
-    class ExerciseServiceImpl(
-            override val updatedAfterRepository: UpdatedAfterRepository&lt;Exercise, LocalDateTime&gt;,
-            ...
-    ) : ExerciseService {
-    ...
-    }
-
-I get the following error message telling me that dependency injection has failed.
-
-    Message: Multiple possible bean candidates found: [dk.fitfit.fitlog.repository.WorkoutRepository$Intercepted, dk.fitfit.fitlog.repository.VideoRepository$Intercepted, dk.fitfit.fitlog.repository.SessionExerciseRepository$Intercepted, dk.fitfit.fitlog.repository.PictureRepository$Intercepted, dk.fitfit.fitlog.repository.SessionRepository$Intercepted, dk.fitfit.fitlog.repository.SessionRoundRepository$Intercepted, dk.fitfit.fitlog.repository.RoundRepository$Intercepted, dk.fitfit.fitlog.repository.RoundExerciseRepository$Intercepted, dk.fitfit.fitlog.repository.ExerciseRepository$Intercepted]
-
-I'm guessing it's because of type erasure but is there anything I can do about it? Or can anyone here suggest me an alternative approach? So I don't have to have repeating code in all my repositories and services
-## [10][Preview of Harmony: A multi-process safe SharedPreference](https://www.reddit.com/r/Kotlin/comments/g838so/preview_of_harmony_a_multiprocess_safe/)
-- url: /r/androiddev/comments/g835oy/preview_of_harmony_a_multiprocess_safe/
 ---
 

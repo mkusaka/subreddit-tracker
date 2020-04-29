@@ -87,45 +87,43 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][[AskJS] Why are getters and setters so underused?](https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/)
+## [3][Battleship game in browser! Using vanilla JS ❤️ and Node.js](https://www.reddit.com/r/javascript/comments/g9u433/battleship_game_in_browser_using_vanilla_js_and/)
+- url: https://battleship-game-online.herokuapp.com/
+---
+
+## [4][Mosaic - multiplayer board game similar to Azul created with React, boardgame.io, Node.js](https://www.reddit.com/r/javascript/comments/ga6i87/mosaic_multiplayer_board_game_similar_to_azul/)
+- url: https://playmosaic.online
+---
+
+## [5][🚀 I made a website to help developers create their own portfolio! The quarantine might be a good reason to create one for yourself!](https://www.reddit.com/r/javascript/comments/ga8iaa/i_made_a_website_to_help_developers_create_their/)
+- url: https://techstax.dev/
+---
+
+## [6][MeiliSearch search engine wrapper in JS made with typescript.](https://www.reddit.com/r/javascript/comments/ga9ckd/meilisearch_search_engine_wrapper_in_js_made_with/)
+- url: https://github.com/meilisearch/meilisearch-js
+---
+
+## [7][[AskJS] Why are getters and setters so underused?](https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/)
 - url: https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/
 ---
 Why people still use Java style getThing and setThing, when you have a beautiful language feature?
-## [4][is-promise Post Mortem](https://www.reddit.com/r/javascript/comments/g94pg7/ispromise_post_mortem/)
-- url: https://medium.com/@forbeslindesay/is-promise-post-mortem-cab807f18dcc
+## [8][ES6/ECMAScript 2015 Features you should be using right now - W3Radar](https://www.reddit.com/r/javascript/comments/ga8prd/es6ecmascript_2015_features_you_should_be_using/)
+- url: https://blog.w3radar.com/javascript-es6-features-should-be-using/
 ---
 
-## [5][Improve UX of your Next.js App in 3 minutes with Page Loading Indicator](https://www.reddit.com/r/javascript/comments/g9mfpq/improve_ux_of_your_nextjs_app_in_3_minutes_with/)
-- url: https://medium.com/@vladymyr.pylypchatin/improve-ux-of-your-next-js-app-in-3-minutes-with-page-loading-indicator-3a422113304d?source=friends_link&amp;sk=9dfec202c257903910160d9b2d5e846b
+## [9][JavaScript vs Unix tools](https://www.reddit.com/r/javascript/comments/ga7znt/javascript_vs_unix_tools/)
+- url: https://herebeseaswines.net/essays/2020-04-29-javascript-vs-unix-tools
 ---
 
-## [6][Execute Program courses (Modern JS, TypeScript, JS regexes, JS arrays) are free for April](https://www.reddit.com/r/javascript/comments/g9bnuf/execute_program_courses_modern_js_typescript_js/)
-- url: https://www.executeprogram.com
+## [10][[AskJS] How popular is RXJS outside of Angular?](https://www.reddit.com/r/javascript/comments/ga7gbo/askjs_how_popular_is_rxjs_outside_of_angular/)
+- url: https://www.reddit.com/r/javascript/comments/ga7gbo/askjs_how_popular_is_rxjs_outside_of_angular/
+---
+I absolutely love RXJS and have been using it in angular for 3 years now. I was just wondering how popular it is outside of angular. Anyone using it in production extensively?
+## [11][ES2020 - Optional chaining and nullish coalescing operators](https://www.reddit.com/r/javascript/comments/g9r8n6/es2020_optional_chaining_and_nullish_coalescing/)
+- url: https://mariosfakiolas.com/blog/es2020-optional-chaining-and-nullish-coalescing-operators
 ---
 
-## [7][A Critique of React Hooks](https://www.reddit.com/r/javascript/comments/g98k5d/a_critique_of_react_hooks/)
-- url: https://dillonshook.com/a-critique-of-react-hooks/
+## [12][[AskJS] Resources for High Performance JS](https://www.reddit.com/r/javascript/comments/g9xw42/askjs_resources_for_high_performance_js/)
+- url: https://www.reddit.com/r/javascript/comments/g9xw42/askjs_resources_for_high_performance_js/
 ---
-
-## [8][Writing Runtime Safe JavaScript](https://www.reddit.com/r/javascript/comments/g9mdcd/writing_runtime_safe_javascript/)
-- url: https://www.hackdoor.io/articles/wEQZLNPj/writing-runtime-safe-javascript
----
-
-## [9][Eloquent JavaScript, 3rd Edition. Full text available online.](https://www.reddit.com/r/javascript/comments/g8rniy/eloquent_javascript_3rd_edition_full_text/)
-- url: https://eloquentjavascript.net/
----
-
-## [10][[AskJS] Looking for suggestions on aligning the items that are on separate div.](https://www.reddit.com/r/javascript/comments/g9kjxw/askjs_looking_for_suggestions_on_aligning_the/)
-- url: https://www.reddit.com/r/javascript/comments/g9kjxw/askjs_looking_for_suggestions_on_aligning_the/
----
-I have two separate div. Each div contains one or multiple items. The width of the item is calculated from the duration of item i.e. width = (durationInSecond \* 1.0) / 15) \* 130. So my main concern is if I add two items each of duration 15 in DIV1 and another item of duration 30 in DIV2, I expect the item in DIV2 to be aligned with the end of the second item of DIV1. But in this case, it doesn't appear so. That's because of the space between the two items in the DIV1. I need the space between the two items as they are resizable and my cursor shows a resize icon while hovering the item. So if I eliminate the space between the item, there would be confusion while resizing the item. Any suggestions on how to get the expected output?
-
-https://preview.redd.it/uwv0n8zu3jv41.png?width=323&amp;format=png&amp;auto=webp&amp;s=e4d1f3dbcd24007b06cd6648fc6fec180f6a9c90
-## [11][Treebox: a weekend side-project of mine that displays programmatically navigable views](https://www.reddit.com/r/javascript/comments/g9epfc/treebox_a_weekend_sideproject_of_mine_that/)
-- url: https://github.com/jaredgorski/treebox
----
-
-## [12][I made NoPaste, a paste service which works with no database and no back-end](https://www.reddit.com/r/javascript/comments/g938f5/i_made_nopaste_a_paste_service_which_works_with/)
-- url: https://nopaste.ml/XQAAAQA6AAAAAAAAAAAxm8oZxjYXvI7mX76e7T5sNYYyCnqhOB4fWuJ8CcN9Ygp7Qow1/KKphtg/eaAA6S2zVZW45YgXenwzq//2QIAA?lang=javascript
----
-
+This is tough topic because JS is a spec and implementations, both of which are continuously changing/improving.  So maybe it's helpful to narrow this down somewhat: V8 engine.  What's out there as far as best of breed books, blogs, videos or courses.  Google turns up some, but it's difficult to separate the wheat from the chaff.

@@ -119,21 +119,53 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Boost 1.73 Released](https://www.reddit.com/r/cpp/comments/g9hn0j/boost_173_released/)
+## [3][Professional CMake: A Practical Guide 6th Edition - Crascit](https://www.reddit.com/r/cpp/comments/ga82io/professional_cmake_a_practical_guide_6th_edition/)
+- url: https://crascit.com/professional-cmake/release-notes/6th-edition/
+---
+
+## [4][C++ London goes online](https://www.reddit.com/r/cpp/comments/ga8yhs/c_london_goes_online/)
+- url: https://www.reddit.com/r/cpp/comments/ga8yhs/c_london_goes_online/
+---
+Like many meet-ups, C++ London is responding to the lockdown and social distancing measures by moving online. In fact it's a little late to the party as, early on, I felt that an online meet-up would miss too much of what makes an in person meet-up so valuable. After all, you can watch many of the same talks on YouTube anyway.
+
+In-person meet-ups are all about getting people together in one place, giving them something to talk about - then giving space for that to happen. It's also about interaction with speakers - whether in the talk itself, or afterwards.
+
+I wanted to try and recapture as much of that as possible. It's never going to be the same, but I think we can still make it worthwhile.
+
+So, for the [next C++ London (tonight - 19:00 BST)](https://www.meetup.com/CppLondon/events/270022408/) we have three components:
+
+1. A live YouTube stream of the presentations.
+2. A [sli.do](https://sli.do) site for asking (and voting on) questions, as well as polls.
+3. A set of video conferencing rooms (on [Jitsi](https://meet.jit.si/)) for the audience (and later the speaker(s)) to hang out, network, start discussions, etc. Drinks are optional.
+
+The last part is the biggest part of the experiment. video conferenced social discussions don't tend to scale very well with large numbers of people (even in a business environment they need to be strictly hosted). Technologically, the free Jitsi instance doesn't cope well with lots of people in a room either. I've found that 8-10 is about the max. That's why I'm providing multiple parallel rooms. If one is too crowded, or you don't think the discussion of interesting, hop to another. Will that work? I don't know. Let's try it!
+
+I've tried to make this all as easy as possible[. I've created a single page](https://live.cpplondon.org) that aggregates all these services together (just using iframes). So you go to one place and can follow the whole thing there. To jump between Jitsi rooms you just press a room number!
+
+If you do want to follow one of the services on the first party site, I've made that easy too, with an "open externally" button on each section.
+
+For best results put your browser full screen, then zoom out (or in) until you get the bottom two frames side-by-side (or, if you have multiple monitors, use the external sites feature for a more custom arrangement).
+
+As I say, this is a big experiment, so I'm keen to hear what you think. [Do join us if you can](https://www.meetup.com/CppLondon/events/270022408/). I'm happy to share any of what I'm doing behind the scenes with any other group organisers who want to try something similar.
+## [5][Full Proof that C++ Grammar is Undecidable](https://www.reddit.com/r/cpp/comments/g9nvmj/full_proof_that_c_grammar_is_undecidable/)
+- url: https://medium.com/@mujjingun_23509/full-proof-that-c-grammar-is-undecidable-34e22dd8b664
+---
+
+## [6][Boost 1.73 Released](https://www.reddit.com/r/cpp/comments/g9hn0j/boost_173_released/)
 - url: https://www.boost.org/users/history/version_1_73_0.html
 ---
 
-## [4][Using weak_ptr for circular references](https://www.reddit.com/r/cpp/comments/g9mod3/using_weak_ptr_for_circular_references/)
+## [7][Using weak_ptr for circular references](https://www.reddit.com/r/cpp/comments/g9mod3/using_weak_ptr_for_circular_references/)
 - url: https://www.nextptr.com/tutorial/ta1382183122/using-weak_ptr-for-circular-references
 ---
 
-## [5][C++ Source code as graph ?!](https://www.reddit.com/r/cpp/comments/g9dkqd/c_source_code_as_graph/)
+## [8][C++ Source code as graph ?!](https://www.reddit.com/r/cpp/comments/g9dkqd/c_source_code_as_graph/)
 - url: https://www.reddit.com/r/cpp/comments/g9dkqd/c_source_code_as_graph/
 ---
 Is there any way to visualize a c++ project as call graph and class graph ?! 
 
 That helps to undertand what is going on.
-## [6][I re-implemented the paper "Sorting nine inputs requires twenty-five comparisons" in c++, what do you guys think?](https://www.reddit.com/r/cpp/comments/g9630p/i_reimplemented_the_paper_sorting_nine_inputs/)
+## [9][I re-implemented the paper "Sorting nine inputs requires twenty-five comparisons" in c++, what do you guys think?](https://www.reddit.com/r/cpp/comments/g9630p/i_reimplemented_the_paper_sorting_nine_inputs/)
 - url: https://www.reddit.com/r/cpp/comments/g9630p/i_reimplemented_the_paper_sorting_nine_inputs/
 ---
 https://github.com/andersfylling/sorting-nine-inputs-requires-twenty-five-comparisons
@@ -143,11 +175,11 @@ For my master thesis, I'm working on the problem of finding a sorting network of
 Since I only did a tiny amount of poor c++ a few years ago, I kinda started out as a beginner. There are some obvious improvements to be made like the loops, pre-conditions for subsumption, IO dead time, clustering, etc. Which I have implemented in my main project I'll be release in a month or so along with my paper - this is just a baseline reference.
 
 Edit: note that this isn't another sorting algorithm. The paper regards proving the minimum size of a sorting networks for sequences of N elements. So essentially you can state you want to find the answer for a sequence of 9 elements and will output the answer =)
-## [7][Rider for Unreal Engine EAP with all the C++ and Unreal Engine features that come from ReSharper C++.](https://www.reddit.com/r/cpp/comments/g9ibil/rider_for_unreal_engine_eap_with_all_the_c_and/)
-- url: https://blog.jetbrains.com/dotnet/2020/04/22/rider-unreal-engine-eap/
+## [10][How did you become a C++ developer?](https://www.reddit.com/r/cpp/comments/g9o3jk/how_did_you_become_a_c_developer/)
+- url: https://www.reddit.com/r/cpp/comments/g9o3jk/how_did_you_become_a_c_developer/
 ---
-
-## [8][Filesystem path good practice](https://www.reddit.com/r/cpp/comments/g97ywn/filesystem_path_good_practice/)
+Hey, I have been learning C++ for a few months now and I am comfortable with the language, although I have lots more to learn. Is it unrealistic to aim to become a C++ dev by the end of the year?
+## [11][Filesystem path good practice](https://www.reddit.com/r/cpp/comments/g97ywn/filesystem_path_good_practice/)
 - url: https://www.reddit.com/r/cpp/comments/g97ywn/filesystem_path_good_practice/
 ---
 When building a path with `std::filesystem` I was wondering what is considered good practice in the community. Let's say I have an absolute path `root` and I want to use it to access a file in a subfolder.
@@ -159,26 +191,7 @@ When building a path with `std::filesystem` I was wondering what is considered g
 `const auto path1 = root / "folder0/folder1/file.ext";`
 
 `const auto path2 = root / "folder0" / "folder1" / "file.ext";`
-## [9][decomposition declaration not permitted in this context](https://www.reddit.com/r/cpp/comments/g9hvr4/decomposition_declaration_not_permitted_in_this/)
-- url: https://www.reddit.com/r/cpp/comments/g9hvr4/decomposition_declaration_not_permitted_in_this/
----
-Currently, this does not work in C++17, under a global scope.
-
-constexpr static auto           \[ offset\_list\_v, size\_of\_one\_v \] = \[\]() constexpr { ... return std::tuple{...}; }();
-
-Anyone can have an excuse why this should not be part of the standard?
-## [10][P2P file sharing app](https://www.reddit.com/r/cpp/comments/g9jpj4/p2p_file_sharing_app/)
-- url: https://www.reddit.com/r/cpp/comments/g9jpj4/p2p_file_sharing_app/
----
-is there any P2P c++ library which can help me to create P2P file sharing project.  
-thanks a ton /&gt;
-## [11][Online SYCL tutorial this Monday 15:00 GMT](https://www.reddit.com/r/cpp/comments/g8tk2f/online_sycl_tutorial_this_monday_1500_gmt/)
-- url: https://www.reddit.com/r/cpp/comments/g8tk2f/online_sycl_tutorial_this_monday_1500_gmt/
----
-Registration is still open. SYCL is an open standard for heterogeneous programming in C++. 
-
-[https://www.iwocl.org/iwocl-2020/conference-program/](https://www.iwocl.org/iwocl-2020/conference-program/)
-## [12][C++ Tutorial 01 | First hello World Program](https://www.reddit.com/r/cpp/comments/g9ir2f/c_tutorial_01_first_hello_world_program/)
-- url: https://youtu.be/yiG1E_ikFm4
+## [12][Rider for Unreal Engine EAP with all the C++ and Unreal Engine features that come from ReSharper C++.](https://www.reddit.com/r/cpp/comments/g9ibil/rider_for_unreal_engine_eap_with_all_the_c_and/)
+- url: https://blog.jetbrains.com/dotnet/2020/04/22/rider-unreal-engine-eap/
 ---
 

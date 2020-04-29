@@ -1,62 +1,57 @@
 # golang
-## [1][facebookincubator/ntp: Collection of Facebook's NTP libraries in Go](https://www.reddit.com/r/golang/comments/g9hyyc/facebookincubatorntp_collection_of_facebooks_ntp/)
-- url: https://github.com/facebookincubator/ntp
+## [1][A compiler for a small language into x86-64 assembly, written in Go](https://www.reddit.com/r/golang/comments/ga68l2/a_compiler_for_a_small_language_into_x8664/)
+- url: https://github.com/MauriceGit/compiler
 ---
 
-## [2][Ultimate Go study guide for beginning and mid-level software engineers](https://www.reddit.com/r/golang/comments/g918ul/ultimate_go_study_guide_for_beginning_and/)
-- url: https://github.com/hoanhan101/ultimate-go
+## [2][My journey optimizing the Go compiler](https://www.reddit.com/r/golang/comments/g9to88/my_journey_optimizing_the_go_compiler/)
+- url: https://dev.to/segflow/my-journey-optimizing-the-go-compiler-46jc
 ---
 
-## [3][XML is Golang is not that difficult](https://www.reddit.com/r/golang/comments/g9l2k1/xml_is_golang_is_not_that_difficult/)
-- url: https://www.reddit.com/r/golang/comments/g9l2k1/xml_is_golang_is_not_that_difficult/
+## [3][Writing MySQL Proxy in GO for self-learning: Part 2 — decoding handshake packet](https://www.reddit.com/r/golang/comments/ga6k4v/writing_mysql_proxy_in_go_for_selflearning_part_2/)
+- url: https://medium.com/@alexanderravikovich/writing-mysql-proxy-in-go-for-learning-purposes-part-2-decoding-connection-phase-server-response-7091d87e877e?source=friends_link&amp;sk=c2efb5dfe76e5e061b0679c48e224f2b
 ---
-[https://medium.com/@dgrripoll/xml-in-go-is-not-that-difficult-61e7f1fde124](https://medium.com/@dgrripoll/xml-in-go-is-not-that-difficult-61e7f1fde124)
-## [4][Managing licenses with go modules](https://www.reddit.com/r/golang/comments/g9mrtn/managing_licenses_with_go_modules/)
-- url: https://www.reddit.com/r/golang/comments/g9mrtn/managing_licenses_with_go_modules/
+
+## [4][Real question about this community](https://www.reddit.com/r/golang/comments/g9zyva/real_question_about_this_community/)
+- url: https://www.reddit.com/r/golang/comments/g9zyva/real_question_about_this_community/
 ---
-Hi, I am curious how the gophers in here are managing their license checks after migrating to go modules (most preferably I would stay away from vendoring, but will do if I have to).
-## [5][Not sure if related job postings all allowed here. Hiring for 2+ years Product Engg. - Pune/Bengaluru](https://www.reddit.com/r/golang/comments/g9lxrc/not_sure_if_related_job_postings_all_allowed_here/)
-- url: https://www.reddit.com/r/golang/comments/g9lxrc/not_sure_if_related_job_postings_all_allowed_here/
+Why are most of the question posts down voted? I'm new to the community and I notice the trend that any post that asks a question, even legitimate and good, is down voted.
+
+I see a lot of them at 0 votes and a few at - 1 or - 2. Is there a bot that's down voting them? Are there a handful of people who are doing it?
+
+Normally I wouldn't really think anything of it, but it seems like it's every one. Not flaming the community, just asking from the perspective of an outsider if there's some rules or guidelines about how to ask questions or what questions to ask. I'd appreciate anyone who could help me (and probably several others) understand how to be relevant in your reddit community.
+
+If it's a bot, or a handful of people, that's fine. Haters gonna hate. I just want to make sure I'm not missing something.
+## [5][How do I Structure my Go Projects?](https://www.reddit.com/r/golang/comments/ga6b3b/how_do_i_structure_my_go_projects/)
+- url: https://www.wolfe.id.au/2020/03/10/how-do-i-structure-my-go-project/
 ---
-To apply, send your resume at [ta@infracloud.io](mailto:ta@infracloud.io)
+
+## [6][Why Doesn't Go Have an Ordered Map Implementation?](https://www.reddit.com/r/golang/comments/ga688z/why_doesnt_go_have_an_ordered_map_implementation/)
+- url: https://www.reddit.com/r/golang/comments/ga688z/why_doesnt_go_have_an_ordered_map_implementation/
+---
+Is there a reason Go doesn't have a standard implementation for an ordered map (similar to a C++ `map`, which I believe is implemented as a red-black tree)? I would think it's a common enough data structure to warrant this. Or is there something about the Go language or design philosophy that goes against this? I've just started learning Go, so I'm sorry if this is a dumb question.
+## [7][A batch process using transfer-wise API to automatically track, detect and book transfers for you at better rates. Also sends a reminder when your best-booked transfer is about to expire. Just an attempt to solve a personal itch, let me know what do you guys think?](https://www.reddit.com/r/golang/comments/ga8uq1/a_batch_process_using_transferwise_api_to/)
+- url: https://github.com/anuragdhingra/transferwisely
+---
+
+## [8][Google Drive Linux CLI client](https://www.reddit.com/r/golang/comments/g9ub4c/google_drive_linux_cli_client/)
+- url: https://www.reddit.com/r/golang/comments/g9ub4c/google_drive_linux_cli_client/
+---
+Created a [client](https://github.com/svetlyi/gdriveapp) for Google Drive and I'd like to hear some advice on how to improve it and especially how to mock API calls like AboutGetCall and cover it with tests. Because things like AboutGetCall use recursive calls and it is [not possible](https://github.com/golang/go/issues/1074) to use interfaces to mock them.
+## [9][Golang best high-performance packages](https://www.reddit.com/r/golang/comments/ga6xun/golang_best_highperformance_packages/)
+- url: https://www.reddit.com/r/golang/comments/ga6xun/golang_best_highperformance_packages/
+---
+Hello,
+
+I created [this](https://github.com/gohp/) org as a collection of the best high-performance packages. I would like to hear suggestions of packages not present in the org, tags for the repos, etc...
 
 &amp;#x200B;
 
-https://preview.redd.it/5o7irv2qtjv41.png?width=1200&amp;format=png&amp;auto=webp&amp;s=a1dd6c9246e6b73f2ca040670fa72799cd4c4e39
-## [6][Extending pflag with environment variables - Tit Petric](https://www.reddit.com/r/golang/comments/g9k1dg/extending_pflag_with_environment_variables_tit/)
-- url: https://scene-si.org/2020/04/28/extending-pflag-with-environment-variables/
+Thanks.
+## [10][lithdew/seq: A fast sequence buffer implementation in Go.](https://www.reddit.com/r/golang/comments/ga6p85/lithdewseq_a_fast_sequence_buffer_implementation/)
+- url: https://www.reddit.com/r/golang/comments/ga6p85/lithdewseq_a_fast_sequence_buffer_implementation/
 ---
+I've been writing reliability layers on top of unreliable network transport protocols like UDP and decided to write tests and open-source a key portion of it into a Go module: sequence buffers.
 
-## [7][Lightweight package for parsing PromQL and MetricsQL queries](https://www.reddit.com/r/golang/comments/g9n21e/lightweight_package_for_parsing_promql_and/)
-- url: https://github.com/VictoriaMetrics/metricsql
----
+[https://github.com/lithdew/seq](https://github.com/lithdew/seq)
 
-## [8][vim-breakline. An easy line splitter plugin.](https://www.reddit.com/r/golang/comments/g9grhc/vimbreakline_an_easy_line_splitter_plugin/)
-- url: https://www.reddit.com/r/golang/comments/g9grhc/vimbreakline_an_easy_line_splitter_plugin/
----
-[https://github.com/hiroakis/vim-breakline](https://github.com/hiroakis/vim-breakline)
-
-Run `:Break , 4` in visual mode.
-
-    bindata := []byte{0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b, 0x1c,
-     0x1d, 0x1e, 0x1f, 0x20, 0x21}
-
-The results are as follows.
-
-    bindata := []byte{0x01, 0x02, 0x03, 0x04,
-     0x05, 0x06, 0x07, 0x08,
-     0x09, 0x0a, 0x0b, 0x0c,
-     0x0d, 0x0e, 0x0f, 0x10,
-     0x11, 0x12, 0x13, 0x14,
-     0x15, 0x16, 0x17, 0x18,
-     0x19, 0x1a, 0x1b, 0x1c
-     0x1d, 0x1e, 0x1f, 0x20,
-     0x21}
-## [9][MOSN - the Cloud Native proxy for edge or Service Mesh v0.12 released](https://www.reddit.com/r/golang/comments/g9lxzz/mosn_the_cloud_native_proxy_for_edge_or_service/)
-- url: https://www.reddit.com/r/golang/comments/g9lxzz/mosn_the_cloud_native_proxy_for_edge_or_service/
----
-Modular Smart Network Proxy(MOSN), the Cloud Native proxy for edge or Service Mesh, v0.12.0 released. https://mosn.io/blog/releases/v0.12.0/
-## [10][notes-cli: A simple CLI app to take notes on markdown files.](https://www.reddit.com/r/golang/comments/g99q39/notescli_a_simple_cli_app_to_take_notes_on/)
-- url: https://github.com/prdpx7/notes-cli
----
-
+For a good description of the data structure, check it out here in the context of building a reliable UDP protocol for games: [https://gafferongames.com/post/reliable\_ordered\_messages/](https://gafferongames.com/post/reliable_ordered_messages/)

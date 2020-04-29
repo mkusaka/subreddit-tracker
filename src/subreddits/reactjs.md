@@ -109,24 +109,24 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Declarative Magnet Animation w/ Framer Motion](https://www.reddit.com/r/reactjs/comments/g98ads/declarative_magnet_animation_w_framer_motion/)
-- url: https://v.redd.it/5a3q9q653fv41
+## [3][I want to teach you React!](https://www.reddit.com/r/reactjs/comments/g9w9v5/i_want_to_teach_you_react/)
+- url: https://www.reddit.com/r/reactjs/comments/g9w9v5/i_want_to_teach_you_react/
 ---
+Hi! I am Mo, and I am a professional React Programmer since early 2015.  
 
-## [4][I made a crowdsourced whiskey tasting database with a minimal UX.](https://www.reddit.com/r/reactjs/comments/g9izbu/i_made_a_crowdsourced_whiskey_tasting_database/)
-- url: https://www.whiskeyleague.app/home
----
+Since I am off for two months now, and due to the current situation I don't have many activities to do, maybe I could help out some people who are trying to learn React. 
 
-## [5][Has anyone used reactstudio.com?](https://www.reddit.com/r/reactjs/comments/g9l7t4/has_anyone_used_reactstudiocom/)
-- url: https://www.reddit.com/r/reactjs/comments/g9l7t4/has_anyone_used_reactstudiocom/
----
-I stumbled upon https://reactstudio.com/
-Has anyone used this software? Is it worth a try?
-## [6][Blitz.js - Rails-like framework for monolithic, full-stack React apps, built on Next.js](https://www.reddit.com/r/reactjs/comments/g91gzx/blitzjs_railslike_framework_for_monolithic/)
-- url: https://blitzjs.com/
----
+My idea is to get together 3-4 people, and come up with a (fake) react project, and code this up together. This way you would learn it in a "real-world" setting, with similar flows and standards as a professional project. I would be a mixture of project manager and mentor. I would answer any questions you have, help you if you're stuck, review your code, give feedback, and always point you in the right direction. Afterward, you would hopefully have a decent understanding of react and the most common react patterns. Plus something for your portfolio. 
 
-## [7][A Visual Guide To React Mental Models](https://www.reddit.com/r/reactjs/comments/g9n686/a_visual_guide_to_react_mental_models/)
+To join, all you need is some (demonstratable) understanding of JS, HTML, and CSS. Knowing git would also help.
+
+[Let me know if you're interested!](https://585353ecb81346acb74dafed66d2.typeform.com/to/lDVqOi)
+
+Edit: if you already have some code and/or a github profile, please share, so I can get a better picture of where you stand right now :)
+
+Edit2: Really happy that there is a substantial interest! To keep track of all of you guys who'd like to participate, I added a small form to fill out. 
+You can find it [here](https://585353ecb81346acb74dafed66d2.typeform.com/to/lDVqOi)!
+## [4][A Visual Guide To React Mental Models](https://www.reddit.com/r/reactjs/comments/g9n686/a_visual_guide_to_react_mental_models/)
 - url: https://www.reddit.com/r/reactjs/comments/g9n686/a_visual_guide_to_react_mental_models/
 ---
 👋 Hey guys. I wrote an article explaining React through visual mental models. I think it's a great way to have an intuitive grasp of React. 
@@ -137,78 +137,55 @@ I’ve learned that the biggest difference between someone that has mastered a l
 
 
 If you have any questions, feedback or anything at all let me know!
-## [8][Federated login - Google Authentication with react](https://www.reddit.com/r/reactjs/comments/g9n26j/federated_login_google_authentication_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/g9n26j/federated_login_google_authentication_with_react/
+## [5][jordwalke/FaxJs - the original prototype for React](https://www.reddit.com/r/reactjs/comments/ga51eu/jordwalkefaxjs_the_original_prototype_for_react/)
+- url: https://github.com/jordwalke/FaxJs
 ---
-HELP!!!
 
-The sign in with Google was redirecting back to the sign-in page and the id token was being printed to the console
+## [6][What's new in TypeScript 3.9 RC version](https://www.reddit.com/r/reactjs/comments/ga9331/whats_new_in_typescript_39_rc_version/)
+- url: https://blog.graphqleditor.com/typescript-39-rc/
+---
 
-1.Need you to send the id\_token to /api/users/google/
+## [7][ByteConf React 2020 on May 1st - (Online React conference)](https://www.reddit.com/r/reactjs/comments/g9zvhi/byteconf_react_2020_on_may_1st_online_react/)
+- url: https://www.bytesized.xyz/react-2020
+---
 
-2. id\_token is the parameter
+## [8][How to share actions?](https://www.reddit.com/r/reactjs/comments/ga6kv5/how_to_share_actions/)
+- url: https://www.reddit.com/r/reactjs/comments/ga6kv5/how_to_share_actions/
+---
+So I have an app focused around sensors. I have a couple of pages with 1 major one being the `&lt;Dashboard /&gt;`. On my dashboard I show data from all the sensors in my system. I also allow users to take actions against sensors for example: add feedback comments.
 
-3. The response should be jwt tokens and user data
+I have used redux-toolkit and created a `dashboardSlice` with a bunch of thunks to achieve what I want. The key one being `addCommentToSensor`. 
+
+Now I want to introduce the concept of a watch-list. This is basically a dedicated area on all pages of the app where you can see certain flagged sensors, even when you are not on the dashboard.
+
+I will obviously create a new slice for this but the problem I am facing is how to keep comments synced between both the dashboard slices and the watch list slice. 
+
+A user can add a comment from the dashboard in which case I'd like to update the watchlist slice data with the comment as well, so it is shown in the watchlist. A user can also add a comment using the watch list while on the dashboard page, in which case I'd like to update the dashboard data.
+
+What is the idiomatic way of going about something like this?
+## [9][React Futures - manipulate asynchronous data synchronously](https://www.reddit.com/r/reactjs/comments/ga8au7/react_futures_manipulate_asynchronous_data/)
+- url: https://github.com/achung89/react-futures
+---
+
+## [10][Understanding cons of react context for state management](https://www.reddit.com/r/reactjs/comments/g9yuto/understanding_cons_of_react_context_for_state/)
+- url: https://www.reddit.com/r/reactjs/comments/g9yuto/understanding_cons_of_react_context_for_state/
+---
+So I watched [this](https://www.youtube.com/watch?v=35lXWvCuM8o) video where the guy explained why and how to use context to manage state. Everything went well until he said following at [32:40](https://youtu.be/35lXWvCuM8o?t=1960)
 
 &amp;#x200B;
 
-sorry this is my code
+&gt;the problem is every time we updates the code in our use context (I think he meant updating the state) all the components that uses this context are gonna re render
 
-&amp;#x200B;
-
-onGoogleSignIn =async (googleUser) =&gt; {
-
-const id\_token = googleUser.getAuthResponse().id\_token;
-
-
-
-if (id\_token === true){
-
-const response = 
-
-await [axiosInstance.post](https://axiosInstance.post)(' /api/users/google/', {
-
-email:this.state.email,
-
-password: this.state.password,
-
-});
-
- const responseData = response.googleUser;  
- axiosInstance.defaults.headers\['Authorization'\] = "JWT " + id\_token;  
- localStorage.setItem('access\_token', responseData.access);  
- localStorage.setItem('refresh\_token', responseData.refresh);  
- return googleUser;
-
-}
-
-else {
-
-return alert("ID token not found")
-
-}
-
-  }
-## [9][React contexts (slow?)...](https://www.reddit.com/r/reactjs/comments/g9mygb/react_contexts_slow/)
-- url: https://www.reddit.com/r/reactjs/comments/g9mygb/react_contexts_slow/
+I don't get what he mean by that. Isn't that why we used `state` as context value. He mentioned `redux` as the better solution in the beginning of this video. Does that mean `redux` already have solved what ever the problem he is saying?
+## [11][How can I disable copy and paste in a react component](https://www.reddit.com/r/reactjs/comments/ga7mun/how_can_i_disable_copy_and_paste_in_a_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ga7mun/how_can_i_disable_copy_and_paste_in_a_react/
 ---
-I am writting an app and I am using reactjs, now I leveraged a lot of react context and empty components, there's no centralized state, the application code is amazingly clean; everything is so reactive and clean, it really feels like you are just building an UI.
-
-But the thing is slow to render, it seems to work just fine once it has rendered a view, but heavy view changes (page to page) clog the main thread, it takes 1200ms to render the initial view, 500ms in production, and I am talking with all the shouldComponentUpdate and PureComponent optimizations; the render takes only one single pass, and only one single pass, yet it takes that much time.
-
-Subsequent renders go fast, but the initial render for some reason is really slow; I can see all the clogging comes in the fiber reconciler of react-dom; heck I can see the interface itself choking, adding divs and spans in real time. It doesn't look to bad because stuff is happening; all the colored boxes appear first creating a skeleton view (with the right width and height to contain the text), then text appears in those boxes, then all the data pops in the inputs; then console gives a warning, render took 1200ms, 500ms in production.
-## [10][Testing](https://www.reddit.com/r/reactjs/comments/g9ietv/testing/)
-- url: https://www.reddit.com/r/reactjs/comments/g9ietv/testing/
+I'm using Slate.js to make a docs clone for my site. However, I want to disable copying and pasting on the doc. I googled this but nothing for react came up and I fiddled around with onCopy, onSelect but couldn't get it to disable copying and pasting. How do I get this functionality in React?
+## [12][React and SEO](https://www.reddit.com/r/reactjs/comments/ga7hl9/react_and_seo/)
+- url: https://www.reddit.com/r/reactjs/comments/ga7hl9/react_and_seo/
 ---
-Hello, do you have any recommendations for resources for testing ? I have experience in react but not in testing it . Any good online course  ?
-## [11][Hi, everyone! Just want to ask if a React plugin to recreate this awesome wave patterns exist or I really need to learn to edit and make svg? Thanks!](https://www.reddit.com/r/reactjs/comments/g9js90/hi_everyone_just_want_to_ask_if_a_react_plugin_to/)
-- url: https://blog.prototypr.io/how-to-add-svg-waves-to-your-next-web-project-b720efe1c692
----
+Hello everyone.
 
-## [12][How to make an iPhone mockup with React?](https://www.reddit.com/r/reactjs/comments/g9mcx6/how_to_make_an_iphone_mockup_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/g9mcx6/how_to_make_an_iphone_mockup_with_react/
----
-Any idea how one can make a mockup generator with React? Something like this: [https://prnt.sc/s7dcwm](https://prnt.sc/s7dcwm)  
+I'm currently building a website using React and I've noticed that some SEO tools (such as Alexa or Seositecheckup) don't pick up my header tags and various keywords throughout the app. I've done some research and found that react-snap is a good way to convert your single-page app into multiple static HTML files. Is this necessary? Are search engines such as Google or Bing unable to distinguish keywords on a react site?
 
-
-Is there any easy way to do this?
+Thanks in advance

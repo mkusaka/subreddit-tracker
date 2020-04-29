@@ -19,11 +19,73 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Ruby adds experimental support for end-less method definition](https://www.reddit.com/r/rails/comments/g9hmac/ruby_adds_experimental_support_for_endless_method/)
+## [2][Is my understanding of Delayed Job and Sidekiq correct?](https://www.reddit.com/r/rails/comments/g9yy6q/is_my_understanding_of_delayed_job_and_sidekiq/)
+- url: https://www.reddit.com/r/rails/comments/g9yy6q/is_my_understanding_of_delayed_job_and_sidekiq/
+---
+I've used [Sidekiq](https://github.com/mperham/sidekiq) in the past, but am taking a look at [Delayed Job](https://github.com/collectiveidea/delayed_job/tree/v4.1.8). 
+
+Below is how I understand the two. Please let me know if this is correct.
+
+## Sidekiq
+* Performs jobs created by [Active Job](https://guides.rubyonrails.org/active_job_basics.html#creating-a-job)
+* Requires Redis
+
+## Delayed Job
+* Used primarily to [call methods](https://github.com/collectiveidea/delayed_job/tree/v4.1.8#queuing-jobs) directly on models, rather than calling an [Active Job](https://guides.rubyonrails.org/active_job_basics.html#creating-a-job)
+* Saves jobs to the database.
+## [3][Where can you find most of the Rails/Ruby community?](https://www.reddit.com/r/rails/comments/g9r5d4/where_can_you_find_most_of_the_railsruby_community/)
+- url: https://www.reddit.com/r/rails/comments/g9r5d4/where_can_you_find_most_of_the_railsruby_community/
+---
+I’ve been learning Rails recently and would really love to see more of the community. I really enjoy the Rail and Ruby conference talks on YouTube (even if some are over my head) but would enjoy getting to interact with the community more. 
+
+Where can I find it? Is there a forum, discord, etc? I’d also appreciate any other related media (i.e. podcast recommendations, news outlets, etc.)
+## [4][How to handle multiple User types with completely different access rights?](https://www.reddit.com/r/rails/comments/ga5sdk/how_to_handle_multiple_user_types_with_completely/)
+- url: https://www.reddit.com/r/rails/comments/ga5sdk/how_to_handle_multiple_user_types_with_completely/
+---
+I have 3 `User` types: a `Customer`, a `Vendor` and an `Admin`. I also have a couple of models, one of them being `Shipment`. Now I want to create an index action to list all the shipments that a user can see. However, because every user type has access to different shipments I am wondering about the best way to achieve that. Here's the problem:
+
+A customer has access to all the shipments that he created (something like `current_customer.shipments`). An admin has access to all shipments that all the customers that he "controls" created (something like `current_admin.customers.shipments`). A vendor is even more specialized, as he can access the shipments for a user by passing in a user_id (something like `User.find(params[:user_id].shipments`). There is a little bit more logic to a vendor but that is the rough idea.
+
+I basically see two ways to solve this problem:
+
+1. I could either create a `ShipmentsController#index` action together with Pundit Scopes like they are demonstrating [here](https://github.com/varvet/pundit#scopes). That would mean that the index action only has a single line (`@shipments = policy_scope(Shipment)`) and all the authorization logic would happen inside Pundit. This would be nice because I would only need to create a single controller but with the downside that I think this controller wouldn't really adhere to the single responsibilty principle as it would essentially do way more. 
+
+2. The other solution would be to create a `User::`, `Vendor::` and `Admin::` namespace and then create a `ShipmentsController` in each of them. This would be nice because each controller would have a clear cut responsibility but at the cost that if a change with Shipment happens I might need to change three different files which doesn't feel all to DRY.
+
+I have this problem in multiple models, not just shipments. What would be the best way to handle this? Put everything inside one controller with Pundit or create multiple namespaces?
+## [5][Ruby adds experimental support for end-less method definition](https://www.reddit.com/r/rails/comments/g9hmac/ruby_adds_experimental_support_for_endless_method/)
 - url: /r/ruby/comments/g9hlar/ruby_adds_experimental_support_for_endless_method/
 ---
 
-## [3][Markdown redcarpet and link_to](https://www.reddit.com/r/rails/comments/g9iik3/markdown_redcarpet_and_link_to/)
+## [6][[Inquiry] Rails Way of Response](https://www.reddit.com/r/rails/comments/g9sunp/inquiry_rails_way_of_response/)
+- url: https://www.reddit.com/r/rails/comments/g9sunp/inquiry_rails_way_of_response/
+---
+Hi Everyone,
+
+Maybe you read my previous post (maybe not) as a beginner I'm trying to read as much as possible and adapt on the concept before doing the hard-coding part.
+
+&amp;#x200B;
+
+I've really learn alot thanks to this community (as a silent reader and sometimes answer on some that I think relevant ) .
+
+&amp;#x200B;
+
+I've tried searching for an answer my self different forums/google answer etc.
+
+Hoping you can give some advise on what's the considered 'rails-way' on sending back to response.
+
+&amp;#x200B;
+
+Note: I understood it will be base on what kind of application but if you can give some pro tips on pro's n cons, it will be really helpful.
+
+&amp;#x200B;
+
+Thanks!!!
+
+&amp;#x200B;
+
+[View Poll](https://www.reddit.com/poll/g9sunp)
+## [7][Markdown redcarpet and link_to](https://www.reddit.com/r/rails/comments/g9iik3/markdown_redcarpet_and_link_to/)
 - url: https://www.reddit.com/r/rails/comments/g9iik3/markdown_redcarpet_and_link_to/
 ---
  I'm improving my markdown render.   
@@ -59,7 +121,7 @@ But it said : `syntax error "&lt;"`
 I tried to add directly `link_to match, user_path($1)` but it says me `undefined method 'user_path'` 
 
 How to solve?!
-## [4][HTTParty, converting curl command into a ruby request and general API confusion](https://www.reddit.com/r/rails/comments/g95gjd/httparty_converting_curl_command_into_a_ruby/)
+## [8][HTTParty, converting curl command into a ruby request and general API confusion](https://www.reddit.com/r/rails/comments/g95gjd/httparty_converting_curl_command_into_a_ruby/)
 - url: https://www.reddit.com/r/rails/comments/g95gjd/httparty_converting_curl_command_into_a_ruby/
 ---
 Hi everyone,
@@ -131,7 +193,7 @@ This results in the error:
     Failed to open TCP connection to places-dsn.algolia.net:443 (getaddrinfo: nodename nor servname provided, or not known)
 
 &amp;#x200B;
-## [5][Graph in rails](https://www.reddit.com/r/rails/comments/g9hoer/graph_in_rails/)
+## [9][Graph in rails](https://www.reddit.com/r/rails/comments/g9hoer/graph_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/g9hoer/graph_in_rails/
 ---
 I have income, expense and user controller i want to plot graph of profit loss of current user i have following code in user model.
@@ -140,7 +202,7 @@ I have income, expense and user controller i want to plot graph of profit loss o
 
 but proft\_loss  
  is not saved in database.
-## [6][how to write a very basic rails 5 api](https://www.reddit.com/r/rails/comments/g99h69/how_to_write_a_very_basic_rails_5_api/)
+## [10][how to write a very basic rails 5 api](https://www.reddit.com/r/rails/comments/g99h69/how_to_write_a_very_basic_rails_5_api/)
 - url: https://www.reddit.com/r/rails/comments/g99h69/how_to_write_a_very_basic_rails_5_api/
 ---
 how to write a **Rails 5 (or 6) API that is so simple** it has no database and all it does is  that it gets two parameters and run a method on them to return a value.
@@ -148,88 +210,10 @@ how to write a **Rails 5 (or 6) API that is so simple** it has no database and a
 all tutorials i found had database, or involve testing which make things complicated for me. I just need to a finish a little project then i will learn rails api the right way. I have very little experience with Rails. 
 
 But writing a little guide for my task will help me a lot. to understand the basics, including where to put the method..etc
-## [7][Junior Dev Question: How do you approach database/model redesign?](https://www.reddit.com/r/rails/comments/g98zri/junior_dev_question_how_do_you_approach/)
+## [11][Junior Dev Question: How do you approach database/model redesign?](https://www.reddit.com/r/rails/comments/g98zri/junior_dev_question_how_do_you_approach/)
 - url: https://www.reddit.com/r/rails/comments/g98zri/junior_dev_question_how_do_you_approach/
 ---
 I'm a new dev (roughly 6 months) on a rails project that the team has deemed in need of a back-end overhaul: expanding the scope of some models, reducing the scope of others, adding new relations, etc. As the requirements are being developed, I've tried to start formulating a high level outline of "things I need to do/consider before a major backend refactor," and I feel like I'm hitting that plateau of "not knowing what I need to know." Do you have any recommendations/resources to consider when refactoring your models/databases? Things to look out for, easy performance improvements, etc?  
 
 
 TLDR: I'm a n00b that doesn't know what search terms I should be using when considering refactoring our rails models.
-## [8][Removing routes that I didn't specify](https://www.reddit.com/r/rails/comments/g91wbq/removing_routes_that_i_didnt_specify/)
-- url: https://www.reddit.com/r/rails/comments/g91wbq/removing_routes_that_i_didnt_specify/
----
-I'm using Rails 6.0.2.2, and I added a route inside of config/routes.rb.  When I ran the 'rake routes' command, a bunch of routes appeared that I didn't specify.
-
-They are:
-
-/rails/action_mailbox/...
-
-/rails/conductor/action_mailbox/inbound_emails/...
-
-/rails/active_storage/...
-
-I can't find any way to remove these, or prevent rails from generating these routes.  From what I've read on them, I don't need them for my intended website to work as I want it.  
-
-How can these routes be removed / not-generated?
-## [9][Beginning with Rails and I have a few questions](https://www.reddit.com/r/rails/comments/g8xv6i/beginning_with_rails_and_i_have_a_few_questions/)
-- url: https://www.reddit.com/r/rails/comments/g8xv6i/beginning_with_rails_and_i_have_a_few_questions/
----
-Hi everyone, I started to learn Rails last week, and I am so happy with it. I managed to get from a "hello world" level, to an actually usable app in less than a week, great experience.
-That said, I have plenty of questions, and I can't really find some clear answers online. I read a lot of threads here, and learned a lot, so I was hoping some of you might help answer these questions.
-
-First, some context:
-I'm an artist manager, and my rails app is basically a CRM for my business (a team of 4 people). It has some basic CRUD features + a calendar, and allows me to create invoices etc. There is not a tons of datas (few hundred of entries on each table) but there is a lot of relations between these datas (e.g: a manager has many artists, an artist has many performances, a performance has many events (rehearsals, setup, travel), a performance has an invoice etc.).
-
-I would like to actually use this project for my business, but before involving all my team, it would help a lot to have some answers to the following questions:
-
-
-1 - For my database I use SQLite3. Being file-based, I think it is perfect for a beginner like who might benefit from having this file under version control, and in case of problem I could just revert to the previous version. I'm not that confident in doing this easily and quickly with MySQL. So is there a real benefit from using a better database for my small business ? Will I really see some better performances given that there is not a lof of entries, and 4 simultaneous user maximum ?
-
-2 - What is the best strategy for assets, should I manage these on a per-page basis or should I just send the whole pack on the first page load ?
-
-3 - I installed a few gems, and now my JS asset file is around 3Mb. Is that considered normal for a rails app (there is not a tons of gems: wicked_pdf, shrine, materializejs, jquery, actioncable, cocoon) ?
-
-4 - I plan to add to my app a "settings" page where I can define some settings such as menu color etc. Basically, it is an array of settings. 
-What is the best way to store this kind of datas ? It feels weird to create a table given that I will only use the first entry of this table. What do you think?
-
-Edit:
-5 - For my app I made a dashboard which display some general statistics. In order to display all the required values, I need to pass to this view all my datas (e.g: Artist.all, Performance.all, Invoice.all etc.).
-Does this affect performance ? 
-
-Many thanks in advance !
-## [10][am rendering a partial from a custom controller action, but now it is only showing html and not erb](https://www.reddit.com/r/rails/comments/g9417v/am_rendering_a_partial_from_a_custom_controller/)
-- url: https://www.reddit.com/r/rails/comments/g9417v/am_rendering_a_partial_from_a_custom_controller/
----
-so I have made a controller custom action and have the route for it, and it routes properly(I've checked using the Rails Panel chrome plugin), but if put _only_ html tags like `&lt;p&gt;what's up&lt;/p&gt;` those work, but if I try to use erb like `&lt;% %&gt;` or `&lt;%= %&gt;` things don't render any more - even html tags. I'm not sure the reason for that and was wondering if anyone may have an idea as to why
-## [11][Validates. Removing the url video.](https://www.reddit.com/r/rails/comments/g8xplp/validates_removing_the_url_video/)
-- url: https://www.reddit.com/r/rails/comments/g8xplp/validates_removing_the_url_video/
----
-Hi guys, I added this lines to validate the youtube video id.
-
-It check only if the video is added and the length of the video is of 11 characters. Very easy.
-
-        validate :check_videos_url!
-    
-        def check_videos_url!
-          errors.add(
-            :videos, :wrong_youtube_id
-          ) if videos.any? &amp;&amp; videos.first.try(:url).length != 11
-        end
-
-But now the users reported me a bug.
-
-If I create a page and I don't add any video -&gt; It works and creates the page.
-
-If I create a page and I add a video of only 5 characters -&gt; It works, reporting me the error.
-
-If I create a page and I add a video with 11 characters -&gt; It works and creates the page.
-
-If I edit the page with no video, adding a new video -&gt; It works and edits the page.
-
-If I edit the page with a video, adding a new video -&gt; It works and edits the page.
-
-**If I edit the page with a video and I want to remove it -&gt; BUG. It say "it should be 11 characters" and I can't remove it.**
-
-&amp;#x200B;
-
-How to solve?

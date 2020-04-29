@@ -22,7 +22,59 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][If you had to teach 30+ JS devs TypeScript, what resources would you give them?](https://www.reddit.com/r/typescript/comments/g9j5rb/if_you_had_to_teach_30_js_devs_typescript_what/)
+## [2][What's the point of this isArray function?](https://www.reddit.com/r/typescript/comments/ga4a70/whats_the_point_of_this_isarray_function/)
+- url: https://www.reddit.com/r/typescript/comments/ga4a70/whats_the_point_of_this_isarray_function/
+---
+So I'm in a project where one of the developers added this function:
+
+  
+`export const isArray = &lt;A&gt;(a: A): boolean =&gt; Array.isArray(a);`  
+
+
+What's the point of it?  
+Why?
+## [3][Thoughts on event emitter library design](https://www.reddit.com/r/typescript/comments/ga1svd/thoughts_on_event_emitter_library_design/)
+- url: https://www.reddit.com/r/typescript/comments/ga1svd/thoughts_on_event_emitter_library_design/
+---
+I'm working on a [library](https://github.com/badgateway/ketting), and I will have to implement a feature to subscribe to state changes.
+
+The obvious go-to for this is Node's EventEmitter, but I'm curious if this is still what people will want in a newly developed api.
+
+One idea was to use [for await (...of..)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) as a way to process events. This has some nice benefits for trickling down exceptions. I don't really know what to do with an exception in an EventEmitter callback.
+
+I guess I'm looking for some opinions. How would you ideally work with a library that exposes events? I need to support multiple subscribers and would like to do something that's close to the 2020 frontend meta-game, but does not require a lock-in into a larger ecosystem/framework.
+## [4][Defining a function that has as a parameter a single object that has initial values.](https://www.reddit.com/r/typescript/comments/ga97kq/defining_a_function_that_has_as_a_parameter_a/)
+- url: https://www.reddit.com/r/typescript/comments/ga97kq/defining_a_function_that_has_as_a_parameter_a/
+---
+Lets suppose I have this function :
+
+    function foo({ a = 1, b }) {
+    	/*some code*/
+    }
+
+I want property `a` to be optional.When no value is provided for `a` then `a` will be equal to `1`, regardless of whether a value was provided to `b`.Correct me if I am wrong but as far as I understand,for that to happen I have to manually code it inside the function body.
+
+Can I at least write something in typescript (or JSDoc comment) so my IDE(vscode) understands what I want to do?More specifically I want when I type `foo` and hover over it,my IDE will show me that `a` has default value `1` and is supposed to be a number if I give a different value.
+
+Is it possible to add also some comments about the functionality of the parameter `a` that will also be visible when I hover over the function (and not just when I hover over the parameter)?
+
+This is what I have done so far :
+
+    /**
+     * @param {object} obj
+     * @param {number} [obj.a=1]
+     * @param {number} obj.b
+    */
+    function foo({ a = 1, b }) {
+    	/*some code*/
+    }
+
+In vscode it does not show me initial value. For the comment about each parameter I have to hover over each individual parameter.
+## [5][When should you write a type and when should you let it be inferred?](https://www.reddit.com/r/typescript/comments/g9olpy/when_should_you_write_a_type_and_when_should_you/)
+- url: https://effectivetypescript.com/2020/04/28/avoid-inferable/
+---
+
+## [6][If you had to teach 30+ JS devs TypeScript, what resources would you give them?](https://www.reddit.com/r/typescript/comments/g9j5rb/if_you_had_to_teach_30_js_devs_typescript_what/)
 - url: https://www.reddit.com/r/typescript/comments/g9j5rb/if_you_had_to_teach_30_js_devs_typescript_what/
 ---
 Hello!
@@ -41,127 +93,40 @@ For those 15+ JS devs that haven't used TypeScript before, we need some resource
 What resources would you all recommend to get JS devs up to speed as quickly as possible? Right now we front-end masters, which has a decent TypeScript course, and I've also suggested the TS Handbook on the docs site.
 
 Thanks!
-## [3][Infer types from object properties?](https://www.reddit.com/r/typescript/comments/g9i0r7/infer_types_from_object_properties/)
-- url: https://www.reddit.com/r/typescript/comments/g9i0r7/infer_types_from_object_properties/
----
-I am trying to use return type of an object's property as input for another property function:
-
-    type XDefinitions = object;
-    type YDefinitions = object;
-    
-    type SomeObject = {
-    	create: (X: XDefinitions, Y: YDefinitions) =&gt; any;
-    	getXDefinitions: (configuration: object) =&gt; XDefinitions;
-    	getYDefinitions: (configuration: object) =&gt; YDefinitions;
-    };
-
-In the best case, I would like to create SomeObject with the X and Y Definitions specified in the according \`getX/YDefinitions\` as input for the the \`create\` function.
-
-I *could* do something like:
-
-    type SomeObject&lt;X, Y&gt; = {
-    	create: (X: X, Y: Y) =&gt; any;
-    	getXDefinitions: (configuration: object) =&gt; X;
-    	getYDefinitions: (configuration: object) =&gt; Y;
-    };
-
-And then instantiate my object:
-
-    const myObject = {
-    	create: (x, y) =&gt; "someResult",
-    	getXDefinitions: (configuration) =&gt; ({
-    		"Ax": null,
-    		"Bx": null,
-    	}),
-    	getYDefinitions: (configuration) =&gt; ({
-    		"Ay": null,
-    		"By": null,
-    	}),
-    };
-
-But to have myObject correctly typed to \`SomeObject\`, I would have to specify X and Y on creation, but I would like TypeScript to infer those Generics from \`getXDefinitions\` and \`getYDefinitions\`. Is this at all possible, and if so, can anybody explain how?
-## [4][Exploring TypeScript from a Business and Software Development Perspective](https://www.reddit.com/r/typescript/comments/g9lg1m/exploring_typescript_from_a_business_and_software/)
-- url: https://www.monterail.com/blog/typescript-business-development?utm_medium=social&amp;utm_source=reddit&amp;utm_campaign=typescript
+## [7][Tribute to Kurt Godel](https://www.reddit.com/r/typescript/comments/g9pxbg/tribute_to_kurt_godel/)
+- url: https://medium.com/@damodharanjay/logic-verification-and-god-el-3849d1724275
 ---
 
-## [5][Using async/await to avoid stack overflow error.](https://www.reddit.com/r/typescript/comments/g9kml7/using_asyncawait_to_avoid_stack_overflow_error/)
+## [8][Using async/await to avoid stack overflow error.](https://www.reddit.com/r/typescript/comments/g9kml7/using_asyncawait_to_avoid_stack_overflow_error/)
 - url: https://gist.github.com/Jason5Lee/938b451b62e47f52806f5d24b9820644
 ---
 
-## [6][Job Alerts for Programmers from Reddit and Hacker News (free service)](https://www.reddit.com/r/typescript/comments/g9k5gs/job_alerts_for_programmers_from_reddit_and_hacker/)
-- url: https://tryjobalerts.com/?utm_source=reddit&amp;utm_medium=post&amp;utm_campaign=typescript
+## [9][Needed some reference project](https://www.reddit.com/r/typescript/comments/g9nvpy/needed_some_reference_project/)
+- url: https://www.reddit.com/r/typescript/comments/g9nvpy/needed_some_reference_project/
 ---
+Hi everyone, 
 
-## [7][Is it possible to alias @apollo/react-components QueryResult?](https://www.reddit.com/r/typescript/comments/g958qs/is_it_possible_to_alias_apolloreactcomponents/)
-- url: https://www.reddit.com/r/typescript/comments/g958qs/is_it_possible_to_alias_apolloreactcomponents/
+We are writing a library in typescript. So can you guys give us reference to some popular typescript projects to look into?
+## [10][Object["unsafe Key"] type?](https://www.reddit.com/r/typescript/comments/g9pqhj/objectunsafe_key_type/)
+- url: https://www.reddit.com/r/typescript/comments/g9pqhj/objectunsafe_key_type/
 ---
-I am pretty much a newbie to Typescript, overhauling my codebase from .js to .ts/.tsx.
+    class Example {
+        unsafe(data: Array&lt;string&gt;): void {
+            //
+        }
+    }
+    new Example().unsafe(JSON.parse('')["whoGivesAF"])
 
-My code is this: -
-
-`interface IQueryResultData {`  
- `currentUser: {`  
- `id: string`  
- `};`  
-`};`
-
-`&lt;Query&lt;IQueryResultData&gt; query={ currentUserQuery }&gt;`  
-  `{({ data: userData } : IQueryResultData) =&gt; ( &lt;div&gt;[...]&lt;/div&gt; )}`  
-`&lt;/Query&gt;`
-
-And I get the following error: -
-
-`TS2322: Type '({ data: userData }: IQueryResultData) =&gt; JSX.Element' is not assignable to type '(result: QueryResult&lt;IQueryResultData, Record&lt;string, any&gt;&gt;) =&gt; Element | null'.   Types of parameters '__0' and 'result' are incompatible.     Property 'currentUser' is missing in type 'QueryResult&lt;IQueryResultData, Record&lt;string, any&gt;&gt;' but required in type 'IQueryResultData'.  MyComponent.tsx(24, 5): 'currentUser' is declared here. types.d.ts(6, 5): The expected type comes from property 'children' which is declared here on type 'IntrinsicAttributes &amp; Pick&lt;QueryComponentOptions&lt;IQueryResultData, Record&lt;string, any&gt;&gt;, "children" | ...`
-
-Is there anything that can be done to remedy this? Thanks.
-## [8][Can i import variables from a file to another file?](https://www.reddit.com/r/typescript/comments/g97jfo/can_i_import_variables_from_a_file_to_another_file/)
-- url: https://www.reddit.com/r/typescript/comments/g97jfo/can_i_import_variables_from_a_file_to_another_file/
----
-Hello,so all im trying is to do a little sign up thing with Typescript. I can import variables and get the stuff from the other file. What im trying to do is:For example i try to use readline to type "name: myname123" and i want in a file called "data.ts/data.txt/data.js idk which one doesnt matter" to be imported. So in short: When i type something with readline i want this thing to be exported in another file and have this line of code there, so i can use it for later.
-
-Sorry if it was kinda bad explaining, im not that good at stuff like this.
-
-Just type something with readline and i want the thing i have written to appear in another file. Thanks in advance! :)
+According to my linter and current version of tsc; this is grand. Fine. Got me thinking though...
 
 &amp;#x200B;
 
-EDIT: Thanks to everyone for helping me! Much appreciated!   
-Solution: fs.writeFile(), fs.appendFile()
-## [9][TypeScript doesn't understand url imports](https://www.reddit.com/r/typescript/comments/g9317v/typescript_doesnt_understand_url_imports/)
-- url: https://www.reddit.com/r/typescript/comments/g9317v/typescript_doesnt_understand_url_imports/
----
-Let's say you want to build a simple app with just ESModules and no transpile step. To do this you can use a CDN like \`unpkg.com\` or \`cdn.pika.dev\` (if you've not tried these you should, it's liberating!). Since you aren't transpiling anymore you aren't using local npm modules, so TypeScript in VS Code starts to throw errors like this:
+Was there a documented discussion from the lang devs about why TS would allow such dirty, typeless assertion as this to be valid? I would (naïvely) presume that it was to allow us to take data from AJAX calls and not have to check types for every property (definitely a potential for runtime exceptions)?
 
-[Stupid TypeScript](https://preview.redd.it/zym029twqdv41.png?width=549&amp;format=png&amp;auto=webp&amp;s=46ee77a67d63ff41ce20ff3f331d1f0cc17666b4)
+&amp;#x200B;
 
-Can anything be done to tell TypeScript where to find type definitions for modules like these, or is TypeScript limited to being used as part of a local build process? My gut tells me there ought to be a config property like \`definition-alias: '[https://cdn.pika.dev/@types/'\`](https://cdn.pika.dev/@types/'`) or something to that effect, but I can't seem to find anything.
-## [10][Problem Solving with the TypeScript Compiler (Recorded Meetup/Webinar talk)](https://www.reddit.com/r/typescript/comments/g8dlhy/problem_solving_with_the_typescript_compiler/)
-- url: https://www.youtube.com/watch?v=ZHiT33F11mk&amp;feature=youtu.be
+Would love to get a wee bit more of an insight as to where, specifically, the borders are, on this one.
+## [11][Exploring TypeScript from a Business and Software Development Perspective](https://www.reddit.com/r/typescript/comments/g9lg1m/exploring_typescript_from_a_business_and_software/)
+- url: https://www.monterail.com/blog/typescript-business-development?utm_medium=social&amp;utm_source=reddit&amp;utm_campaign=typescript
 ---
 
-## [11][Class pattern matching library useful in useReducer](https://www.reddit.com/r/typescript/comments/g8j92q/class_pattern_matching_library_useful_in/)
-- url: https://www.reddit.com/r/typescript/comments/g8j92q/class_pattern_matching_library_useful_in/
----
-Hi all, I have written my first npm library  https://www.npmjs.com/package/@neal83/typeswitch it's only small at 53 lines of code in the main function including type definitions. github.com/neal83/TypeSwitch
-
-But having used redux then moving over to hooks this is my own way of reducing boiler plate while making the data the action type.
-
-You're able to match on class types with the option of using a "when" in combination with default. Like this:
-
-    class MyOwnMarkerClass
-    {
-        public someProperty: string = "some property value"
-    }
-    
-    const result = TypeSwitch(new MyOwnMarkerClass())(
-        Case(Number, When(n: number =&gt; n === 36))
-            ((n: Number) =&gt; `you gave me a number and it was 36`),
-        Case(Number, When(n: number =&gt; n &gt; 0))
-            ((n: Number) =&gt; `you gave me a number and it was positive`),
-        Case(String)
-            ((s: String) =&gt; `you gave me a string ${s}`),
-        Case(MyOwnMarkerClass, When(m =&gt; m.someProperty === "some property value")) //the type is inferred
-            ((m: MyOwnMarkerClass) =&gt; `you gave me MyOwnClass with value ${m.someProperty}`)
-    );
-
-Hope someone likes it and finds it useful. Thanks

@@ -119,11 +119,50 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Professional CMake: A Practical Guide 6th Edition - Crascit](https://www.reddit.com/r/cpp/comments/ga82io/professional_cmake_a_practical_guide_6th_edition/)
+## [3][Microsoft - Pure Virtual C++ Conference 2020 starting in 3h](https://www.reddit.com/r/cpp/comments/gatmwj/microsoft_pure_virtual_c_conference_2020_starting/)
+- url: https://www.youtube.com/watch?v=c1ThUFISDF4
+---
+
+## [4][We're welcoming you to CoreCpp!](https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/)
+- url: https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/
+---
+Our next ONLINE meetup is taking place on Tuesday the 5.5.20 16:00 UTC,
+
+and we welcome you all to join us!
+
+We will start with a great talk about std::tuple by Noam Weiss, followed by a Show and Tell lightning talks section, in which you will be able to present.
+
+  
+Meetup event: [https://www.meetup.com/CoreCpp/events/270021047/](https://www.meetup.com/CoreCpp/events/270021047/)
+
+Zoom link: [https://zoom.us/j/385718143](https://zoom.us/j/385718143)
+
+&amp;#x200B;
+
+JOIN US! :)
+
+&amp;#x200B;
+## [5][Real time 101 - David Rowland &amp; Fabian Renn Giles - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gatcll/real_time_101_david_rowland_fabian_renn_giles/)
+- url: https://youtu.be/ndeN983j_GQ
+---
+
+## [6][Combining C++ with JavaScript](https://www.reddit.com/r/cpp/comments/gamm54/combining_c_with_javascript/)
+- url: https://www.syntaxsuccess.com/viewarticle/combining-c-plus-plus-with-javascript
+---
+
+## [7][Professional CMake: A Practical Guide 6th Edition - Crascit](https://www.reddit.com/r/cpp/comments/ga82io/professional_cmake_a_practical_guide_6th_edition/)
 - url: https://crascit.com/professional-cmake/release-notes/6th-edition/
 ---
 
-## [4][C++ London goes online](https://www.reddit.com/r/cpp/comments/ga8yhs/c_london_goes_online/)
+## [8][A proof of concept C++20 type-safe variadic argument array creation function (using C++20 Concepts and Variadic Templates):](https://www.reddit.com/r/cpp/comments/gaj1u1/a_proof_of_concept_c20_typesafe_variadic_argument/)
+- url: https://gist.github.com/richardrobinson0924/f8a845af530e13f026353eb5a17f6e85
+---
+
+## [9][xmake v2.3.3 released, Support for building iOS MacOS Framework and App](https://www.reddit.com/r/cpp/comments/galzio/xmake_v233_released_support_for_building_ios/)
+- url: https://github.com/xmake-io/xmake/wiki/xmake-v2.3.3-released,-Support-for-building-iOS-MacOS-Framework-and-App
+---
+
+## [10][C++ London goes online](https://www.reddit.com/r/cpp/comments/ga8yhs/c_london_goes_online/)
 - url: https://www.reddit.com/r/cpp/comments/ga8yhs/c_london_goes_online/
 ---
 Like many meet-ups, C++ London is responding to the lockdown and social distancing measures by moving online. In fact it's a little late to the party as, early on, I felt that an online meet-up would miss too much of what makes an in person meet-up so valuable. After all, you can watch many of the same talks on YouTube anyway.
@@ -147,51 +186,29 @@ If you do want to follow one of the services on the first party site, I've made 
 For best results put your browser full screen, then zoom out (or in) until you get the bottom two frames side-by-side (or, if you have multiple monitors, use the external sites feature for a more custom arrangement).
 
 As I say, this is a big experiment, so I'm keen to hear what you think. [Do join us if you can](https://www.meetup.com/CppLondon/events/270022408/). I'm happy to share any of what I'm doing behind the scenes with any other group organisers who want to try something similar.
-## [5][Full Proof that C++ Grammar is Undecidable](https://www.reddit.com/r/cpp/comments/g9nvmj/full_proof_that_c_grammar_is_undecidable/)
-- url: https://medium.com/@mujjingun_23509/full-proof-that-c-grammar-is-undecidable-34e22dd8b664
+## [11][List vs array](https://www.reddit.com/r/cpp/comments/gatj53/list_vs_array/)
+- url: https://www.reddit.com/r/cpp/comments/gatj53/list_vs_array/
 ---
-
-## [6][Boost 1.73 Released](https://www.reddit.com/r/cpp/comments/g9hn0j/boost_173_released/)
-- url: https://www.boost.org/users/history/version_1_73_0.html
+I don't quite understand the idea behind difference of lists &amp; arrays. For me they are the same bunches of variables. Every time I try to google it I find comparisons of vectors and linked lists and so on, but these things I actually understand. I don't understand why you name some bunches of variables lists and some arrays.  
+Also I thought that dynamic array is any bunch of variables that can change it's size, but it turns out that it's a very specific bunch of variables, and vectors are not dynamic arrays. Why?
+## [12][cpp reading material on template meta-programming for c+17](https://www.reddit.com/r/cpp/comments/gafxv3/cpp_reading_material_on_template_metaprogramming/)
+- url: https://www.reddit.com/r/cpp/comments/gafxv3/cpp_reading_material_on_template_metaprogramming/
 ---
+I'm wanting to learn more about c++ template metaprogramming.
 
-## [7][Using weak_ptr for circular references](https://www.reddit.com/r/cpp/comments/g9mod3/using_weak_ptr_for_circular_references/)
-- url: https://www.nextptr.com/tutorial/ta1382183122/using-weak_ptr-for-circular-references
----
+I'm aware of these two books:
 
-## [8][C++ Source code as graph ?!](https://www.reddit.com/r/cpp/comments/g9dkqd/c_source_code_as_graph/)
-- url: https://www.reddit.com/r/cpp/comments/g9dkqd/c_source_code_as_graph/
----
-Is there any way to visualize a c++ project as call graph and class graph ?! 
+[Modern C++ Design: Generic Programming and Design Patterns Applied
+](https://www.amazon.ca/Modern-Design-Generic-Programming-Patterns/dp/0201704315)
 
-That helps to undertand what is going on.
-## [9][I re-implemented the paper "Sorting nine inputs requires twenty-five comparisons" in c++, what do you guys think?](https://www.reddit.com/r/cpp/comments/g9630p/i_reimplemented_the_paper_sorting_nine_inputs/)
-- url: https://www.reddit.com/r/cpp/comments/g9630p/i_reimplemented_the_paper_sorting_nine_inputs/
----
-https://github.com/andersfylling/sorting-nine-inputs-requires-twenty-five-comparisons
+[C++ Templates: The Complete Guide \(2nd Edition\)](https://www.amazon.ca/C-Templates-Complete-Guide-2nd/dp/0321714121)
 
-For my master thesis, I'm working on the problem of finding a sorting network of the smallest size that can sort a sequence of N elements. One of the tasks were to re-implement the original code in c++, to make it a more viable reference point for my upcoming findings/improvements.
+I also found this post:
 
-Since I only did a tiny amount of poor c++ a few years ago, I kinda started out as a beginner. There are some obvious improvements to be made like the loops, pre-conditions for subsumption, IO dead time, clustering, etc. Which I have implemented in my main project I'll be release in a month or so along with my paper - this is just a baseline reference.
+https://www.reddit.com/r/cpp/comments/52fqhk/someone_needs_to_write_a_book_on_modern_c/
 
-Edit: note that this isn't another sorting algorithm. The paper regards proving the minimum size of a sorting networks for sequences of N elements. So essentially you can state you want to find the answer for a sequence of 9 elements and will output the answer =)
-## [10][How did you become a C++ developer?](https://www.reddit.com/r/cpp/comments/g9o3jk/how_did_you_become_a_c_developer/)
-- url: https://www.reddit.com/r/cpp/comments/g9o3jk/how_did_you_become_a_c_developer/
----
-Hey, I have been learning C++ for a few months now and I am comfortable with the language, although I have lots more to learn. Is it unrealistic to aim to become a C++ dev by the end of the year?
-## [11][Filesystem path good practice](https://www.reddit.com/r/cpp/comments/g97ywn/filesystem_path_good_practice/)
-- url: https://www.reddit.com/r/cpp/comments/g97ywn/filesystem_path_good_practice/
----
-When building a path with `std::filesystem` I was wondering what is considered good practice in the community. Let's say I have an absolute path `root` and I want to use it to access a file in a subfolder.
+But it's 3 years old.
 
- `using fs = std::filesystem;`
+I'm asking here because my concern is I read the two books above, and big chunks of them will be obsolete because the language evolved to remove the need for "hacks" not present at the time of writing. I may be wrong in this, if so, please set me straight. If you agree, please let me know what you think the best course of action is.
 
-`const auto root = fs::path{"/root/user"};`
-
-`const auto path1 = root / "folder0/folder1/file.ext";`
-
-`const auto path2 = root / "folder0" / "folder1" / "file.ext";`
-## [12][Rider for Unreal Engine EAP with all the C++ and Unreal Engine features that come from ReSharper C++.](https://www.reddit.com/r/cpp/comments/g9ibil/rider_for_unreal_engine_eap_with_all_the_c_and/)
-- url: https://blog.jetbrains.com/dotnet/2020/04/22/rider-unreal-engine-eap/
----
-
+I appreciate I may not always work on &gt; c+17, and that the historical context is useful, however time is finite and I want to try to learn the most applicable stuff.

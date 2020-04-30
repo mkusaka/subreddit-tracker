@@ -109,83 +109,111 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I want to teach you React!](https://www.reddit.com/r/reactjs/comments/g9w9v5/i_want_to_teach_you_react/)
-- url: https://www.reddit.com/r/reactjs/comments/g9w9v5/i_want_to_teach_you_react/
----
-Hi! I am Mo, and I am a professional React Programmer since early 2015.  
-
-Since I am off for two months now, and due to the current situation I don't have many activities to do, maybe I could help out some people who are trying to learn React. 
-
-My idea is to get together 3-4 people, and come up with a (fake) react project, and code this up together. This way you would learn it in a "real-world" setting, with similar flows and standards as a professional project. I would be a mixture of project manager and mentor. I would answer any questions you have, help you if you're stuck, review your code, give feedback, and always point you in the right direction. Afterward, you would hopefully have a decent understanding of react and the most common react patterns. Plus something for your portfolio. 
-
-To join, all you need is some (demonstratable) understanding of JS, HTML, and CSS. Knowing git would also help.
-
-[Let me know if you're interested!](https://585353ecb81346acb74dafed66d2.typeform.com/to/lDVqOi)
-
-Edit: if you already have some code and/or a github profile, please share, so I can get a better picture of where you stand right now :)
-
-Edit2: Really happy that there is a substantial interest! To keep track of all of you guys who'd like to participate, I added a small form to fill out. 
-You can find it [here](https://585353ecb81346acb74dafed66d2.typeform.com/to/lDVqOi)!
-## [4][A Visual Guide To React Mental Models](https://www.reddit.com/r/reactjs/comments/g9n686/a_visual_guide_to_react_mental_models/)
-- url: https://www.reddit.com/r/reactjs/comments/g9n686/a_visual_guide_to_react_mental_models/
----
-👋 Hey guys. I wrote an article explaining React through visual mental models. I think it's a great way to have an intuitive grasp of React. 
-
-I’ve learned that the biggest difference between someone that has mastered a language, framework, or tool and someone who hasn’t lies in the *mental models* they use. One person will have a clear and advanced one and the other will not.
-
-[https://obedparla.com/code/a-visual-guide-to-react-mental-models/](https://obedparla.com/code/a-visual-guide-to-react-mental-models/)  
-
-
-If you have any questions, feedback or anything at all let me know!
-## [5][jordwalke/FaxJs - the original prototype for React](https://www.reddit.com/r/reactjs/comments/ga51eu/jordwalkefaxjs_the_original_prototype_for_react/)
-- url: https://github.com/jordwalke/FaxJs
+## [3][Performance Optimization in React Context](https://www.reddit.com/r/reactjs/comments/garr85/performance_optimization_in_react_context/)
+- url: https://saul-mirone.github.io/performance-optimization-in-react-context/
 ---
 
-## [6][What's new in TypeScript 3.9 RC version](https://www.reddit.com/r/reactjs/comments/ga9331/whats_new_in_typescript_39_rc_version/)
-- url: https://blog.graphqleditor.com/typescript-39-rc/
+## [4][How to use React Ref](https://www.reddit.com/r/reactjs/comments/garf15/how_to_use_react_ref/)
+- url: https://www.robinwieruch.de/react-ref
 ---
 
-## [7][ByteConf React 2020 on May 1st - (Online React conference)](https://www.reddit.com/r/reactjs/comments/g9zvhi/byteconf_react_2020_on_may_1st_online_react/)
-- url: https://www.bytesized.xyz/react-2020
+## [5][Is there demand for React developers?](https://www.reddit.com/r/reactjs/comments/gasb2z/is_there_demand_for_react_developers/)
+- url: https://www.reddit.com/r/reactjs/comments/gasb2z/is_there_demand_for_react_developers/
+---
+Hi guys, I am a newbie in webdev. I've covered the basics of HTML, CSS and JS. And now I am trying to find some practice projects. I am seeing that it's hard to find projects with this "Level 2" skillset.  
+
+
+I am feeling the need to start learning one of the frameworks. React seems like a logical choice. 
+
+Could you please help me understand whether there's good demand for Junior React devs? 
+
+(I currently work as a copywriter in IT/webdev and make around 30$/day. I work around 5-6 hours. I pla to study React for 2-3 months and start looking for unpaid apprenticeships to continue growing.)
+## [6][The easiest way to learn &amp; practice modern JavaScript step by step !](https://www.reddit.com/r/reactjs/comments/gaah7u/the_easiest_way_to_learn_practice_modern/)
+- url: https://learnjavascript.online
 ---
 
-## [8][How to share actions?](https://www.reddit.com/r/reactjs/comments/ga6kv5/how_to_share_actions/)
-- url: https://www.reddit.com/r/reactjs/comments/ga6kv5/how_to_share_actions/
----
-So I have an app focused around sensors. I have a couple of pages with 1 major one being the `&lt;Dashboard /&gt;`. On my dashboard I show data from all the sensors in my system. I also allow users to take actions against sensors for example: add feedback comments.
-
-I have used redux-toolkit and created a `dashboardSlice` with a bunch of thunks to achieve what I want. The key one being `addCommentToSensor`. 
-
-Now I want to introduce the concept of a watch-list. This is basically a dedicated area on all pages of the app where you can see certain flagged sensors, even when you are not on the dashboard.
-
-I will obviously create a new slice for this but the problem I am facing is how to keep comments synced between both the dashboard slices and the watch list slice. 
-
-A user can add a comment from the dashboard in which case I'd like to update the watchlist slice data with the comment as well, so it is shown in the watchlist. A user can also add a comment using the watch list while on the dashboard page, in which case I'd like to update the dashboard data.
-
-What is the idiomatic way of going about something like this?
-## [9][React Futures - manipulate asynchronous data synchronously](https://www.reddit.com/r/reactjs/comments/ga8au7/react_futures_manipulate_asynchronous_data/)
-- url: https://github.com/achung89/react-futures
+## [7][How to build a Gatsby website with Google Sheets](https://www.reddit.com/r/reactjs/comments/gaspg5/how_to_build_a_gatsby_website_with_google_sheets/)
+- url: https://medium.com/@iliashaddad/how-to-build-a-gatsby-website-with-google-sheets-7dc292af537e
 ---
 
-## [10][Understanding cons of react context for state management](https://www.reddit.com/r/reactjs/comments/g9yuto/understanding_cons_of_react_context_for_state/)
-- url: https://www.reddit.com/r/reactjs/comments/g9yuto/understanding_cons_of_react_context_for_state/
+## [8][Ontario Services](https://www.reddit.com/r/reactjs/comments/gavoc3/ontario_services/)
+- url: https://ontario-services.herokuapp.com
 ---
-So I watched [this](https://www.youtube.com/watch?v=35lXWvCuM8o) video where the guy explained why and how to use context to manage state. Everything went well until he said following at [32:40](https://youtu.be/35lXWvCuM8o?t=1960)
 
-&amp;#x200B;
-
-&gt;the problem is every time we updates the code in our use context (I think he meant updating the state) all the components that uses this context are gonna re render
-
-I don't get what he mean by that. Isn't that why we used `state` as context value. He mentioned `redux` as the better solution in the beginning of this video. Does that mean `redux` already have solved what ever the problem he is saying?
-## [11][How can I disable copy and paste in a react component](https://www.reddit.com/r/reactjs/comments/ga7mun/how_can_i_disable_copy_and_paste_in_a_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ga7mun/how_can_i_disable_copy_and_paste_in_a_react/
+## [9][Refresh Token workflow + Saga?](https://www.reddit.com/r/reactjs/comments/gavc0o/refresh_token_workflow_saga/)
+- url: https://www.reddit.com/r/reactjs/comments/gavc0o/refresh_token_workflow_saga/
 ---
-I'm using Slate.js to make a docs clone for my site. However, I want to disable copying and pasting on the doc. I googled this but nothing for react came up and I fiddled around with onCopy, onSelect but couldn't get it to disable copying and pasting. How do I get this functionality in React?
-## [12][React and SEO](https://www.reddit.com/r/reactjs/comments/ga7hl9/react_and_seo/)
-- url: https://www.reddit.com/r/reactjs/comments/ga7hl9/react_and_seo/
+Hello all,
+
+I'm in charge of updating a medium sized Angular project, but after some years working on Angular, I decided to replace all for React, as we'll need to support some mobile apps in React Native, and I think that is good to have a team focused in one library/framework.
+
+I'm using React with typescript, redux and saga and axios for communication with the backend. Everything is flowing fast and better than Angular, but now I have some problems implementing a refresh of a session token, as I can't (or can I?) access the dispatch inside the axios's response interceptor. Maybe I misunderstood some concept or I'm trying to do something wrong.
+
+Today my architecture is based on sagas that receive actions and call "services" that use axios to communicate with the API. So any axios request is done inside sagas.
+
+The flow I'm using for the session refresh is as shown in [this article](https://www.techynovice.com/setting-up-JWT-token-refresh-mechanism-with-axios/), but the problem is that when the refresh throws an error, I want to logout the user and redirect to login.  
+The authentication flow is done on the saga, and I don't known any way to dispatch the action from the axios interceptor, so I have a /logout route that I use to display nothing but send the action for me (shame).  
+Someone know if is possible to intercept this api errors in saga and do the refresh flow there, or any other way more correct?
+
+Thank you!
+## [10][Can't setup my jsconfig.json to make relative path to be working](https://www.reddit.com/r/reactjs/comments/gauopi/cant_setup_my_jsconfigjson_to_make_relative_path/)
+- url: https://www.reddit.com/r/reactjs/comments/gauopi/cant_setup_my_jsconfigjson_to_make_relative_path/
 ---
-Hello everyone.
+So I followed those docs but it's not working...
 
-I'm currently building a website using React and I've noticed that some SEO tools (such as Alexa or Seositecheckup) don't pick up my header tags and various keywords throughout the app. I've done some research and found that react-snap is a good way to convert your single-page app into multiple static HTML files. Is this necessary? Are search engines such as Google or Bing unable to distinguish keywords on a react site?
+[https://create-react-app.dev/docs/importing-a-component/#absolute-imports](https://create-react-app.dev/docs/importing-a-component/#absolute-imports)
 
-Thanks in advance
+[https://code.visualstudio.com/docs/languages/jsconfig](https://code.visualstudio.com/docs/languages/jsconfig)
+
+\-&gt; Firstly I still don't understand if i need to put my **jsconfig.json** file under:
+
+1. **/project\_folder/jsconfig.json** (same level as **node\_modules**)  
+or
+2. **/project\_folder/src/jsconfig.json** (sale level as main **index.js**)
+
+Here is the content of my file:
+
+`{`  
+ `"compilerOptions": {`  
+ `"baseUrl": "src"`  
+`},`  
+ `"include": ["src"]`  
+`}`
+
+When it's set up in my **project\_folder (1.)**, I have this error in vscode:
+
+**File '\[BASE PATH FROM ROOT MACHINE\]/project\_folder/node\_modules/dropbox/src/index.js' not found.** (it does exists though...)
+
+If i put it in the **src** folder **(2.)** i have no syntax error but it's just not working when trying to import with relative path.
+
+What I have done wrong ?
+## [11][What is the industry standard for creating admin panels in React applications?](https://www.reddit.com/r/reactjs/comments/gafk3g/what_is_the_industry_standard_for_creating_admin/)
+- url: https://www.reddit.com/r/reactjs/comments/gafk3g/what_is_the_industry_standard_for_creating_admin/
+---
+Fairly new to building apps, especially their backend. I just got started with my first React/Firebase app.
+
+My app will be a platform where clients can book services and merchants can offer their services. Before allowing merchants to offer their services, I'd like to create an admin panel so that I can approve or reject merchants.
+
+So far I already have an app with two different UI, one for the client and another for the merchant. I am now in doubt about the admin panel.
+
+So far I've thought of 3 different solutions, but I am not sure they go in line with industry standards:
+
+1. Build, in the same app, another route for an admin panel?
+2. Use another domain name to log in as the admin?
+3. Build a differente react app that uses the same database to approve/reject merchants?
+
+Examples are welcome. I am not very familiar with how to deal with domain names too, but I see a lot of, e.g. 'bbc.co.uk' and something like 'admin.bbc.co.uk', and thought that could be a solution
+## [12][How to get my first ReactJS job?](https://www.reddit.com/r/reactjs/comments/gau7v1/how_to_get_my_first_reactjs_job/)
+- url: https://www.reddit.com/r/reactjs/comments/gau7v1/how_to_get_my_first_reactjs_job/
+---
+I'm in Singapore, with over 20 years of IT experience from the days of C/C++ to Java (enterprise softwares, embedded devices, Android, etc) until recently to JavaScript and web programming. I haven't been able to get a programming job in Singapore for years (got tiny projects from overseas).
+
+Yes, it's my own fault for not spending time publishing to GitHub. I will change that. But I need some guidance desperately. However, I am very experienced with build tools, DevOps and anything technical like that. **I just don't have the public credentials, nor the practice now!**
+
+I'm running out of money to even study up on ReactJS now, let alone to build my own pet project with ReactJS.
+
+How do I get my first job doing ReactJS? I don't care if it's an internship. I want it. I've applied to Facebook Singapore, but I'm real about *not* being able to get it.
+
+If I *am* to starve to death, I would rather die trying. **Where do I contribute ReactJS codes to at least die doing ReactJS?**
+
+**UPDATE**: I'm currently blazing through freecodecamp.org. Hopefully it could land me in Microsoft or something.

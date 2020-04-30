@@ -22,37 +22,130 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][What's the point of this isArray function?](https://www.reddit.com/r/typescript/comments/ga4a70/whats_the_point_of_this_isarray_function/)
-- url: https://www.reddit.com/r/typescript/comments/ga4a70/whats_the_point_of_this_isarray_function/
+## [2][Announcing TypeScript 3.9 RC](https://www.reddit.com/r/typescript/comments/gaecct/announcing_typescript_39_rc/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-rc/
 ---
-So I'm in a project where one of the developers added this function:
 
-  
-`export const isArray = &lt;A&gt;(a: A): boolean =&gt; Array.isArray(a);`  
-
-
-What's the point of it?  
-Why?
-## [3][Thoughts on event emitter library design](https://www.reddit.com/r/typescript/comments/ga1svd/thoughts_on_event_emitter_library_design/)
-- url: https://www.reddit.com/r/typescript/comments/ga1svd/thoughts_on_event_emitter_library_design/
+## [3][A collection of challenging TypeScript exercises](https://www.reddit.com/r/typescript/comments/gabb46/a_collection_of_challenging_typescript_exercises/)
+- url: https://github.com/mdevils/typescript-exercises
 ---
-I'm working on a [library](https://github.com/badgateway/ketting), and I will have to implement a feature to subscribe to state changes.
 
-The obvious go-to for this is Node's EventEmitter, but I'm curious if this is still what people will want in a newly developed api.
+## [4][Restore mock of imported class function in ts-jest while testing](https://www.reddit.com/r/typescript/comments/gav2w0/restore_mock_of_imported_class_function_in_tsjest/)
+- url: https://www.reddit.com/r/typescript/comments/gav2w0/restore_mock_of_imported_class_function_in_tsjest/
+---
+**Issue**
 
-One idea was to use [for await (...of..)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) as a way to process events. This has some nice benefits for trickling down exceptions. I don't really know what to do with an exception in an EventEmitter callback.
+I am mocking a function (only one) which is imported from another class which is being called inside the main class. I am able to mock the function and return the values which I provide. But I am not able to restore the mocked function back to normal for the subsequent tests.
 
-I guess I'm looking for some opinions. How would you ideally work with a library that exposes events? I need to support multiple subscribers and would like to do something that's close to the 2020 frontend meta-game, but does not require a lock-in into a larger ecosystem/framework.
-## [4][Defining a function that has as a parameter a single object that has initial values.](https://www.reddit.com/r/typescript/comments/ga97kq/defining_a_function_that_has_as_a_parameter_a/)
+Any help would be appreciated!
+
+Framework Using: jest + ts-jest
+
+**Code**
+
+\~main.ts
+
+\`\`\`
+
+import {SubClass} from './subclass.ts' 
+
+export class MainClass { 
+
+let sub: SubClass = new SubClass() 
+
+public async Car(){ 
+
+let start = await sub.key(); 
+
+return start } }
+
+\`\`\`
+
+\~sub.ts
+
+\`\`\`
+
+export class SubClass{ 
+
+public async key(){ return "you can start the car" } }
+
+\`\`\`
+
+\`\`\`  
+import {SubClass} from './subclass.ts' 
+
+import {MainClass} from './mainclass.ts' 
+
+import {mocked} from 'ts-jest/utils'  
+
+jest.mock(./subclass.ts) 
+
+let main = new MainClass() 
+
+let sub = new SubClass() 
+
+let mockedFn = mocked(sub,true)  
+
+mockedFn.key = jest.fn().mockImplementation(() =&gt; console.log('mocking succesfull'))  
+
+afterEach(()=&gt;{ mockedFn.key.mockRestore() // tried mockClear(), mockReset() })
+
+  it('test for main func mocked result',async ()=&gt;{ 
+
+const result = await main.car()  
+
+expect(result).toEqual("mocking succesfull") } 
+
+it('test for main func result',async ()=&gt;{ 
+
+const result = await main.car()  
+
+expect(result).toEqual("you can start the car") // getting result as undefined 
+
+}
+
+\`\`\`
+## [5][How can I have intellisense for a dictionary object but also type definition.](https://www.reddit.com/r/typescript/comments/gakqj5/how_can_i_have_intellisense_for_a_dictionary/)
+- url: https://www.reddit.com/r/typescript/comments/gakqj5/how_can_i_have_intellisense_for_a_dictionary/
+---
+    /**
+     * @type {{[x:string] : (type1) =&gt; type2}}
+    */
+    const obj;
+
+This does not give me intellisense for the properties of the `obj`.
+## [6][Converting Elements from Script Element?](https://www.reddit.com/r/typescript/comments/gafg9l/converting_elements_from_script_element/)
+- url: https://www.reddit.com/r/typescript/comments/gafg9l/converting_elements_from_script_element/
+---
+I'm starting a new React project in my company and the lead has decided to use TypeScript.  However, there are a TON of standardized company-wide HTML tags (generated using the browser.createElement API) that are imported via the index.html file through a script tag.  This worked well when we had just plain React, but now adding TypeScript is forcing us to add each of these elements individually to the JSX namespace (we have to add to an interface called IntrinsicElements with a type of 'any', though I think we can extend this out a bit with more specific types) and this seems like a kind of hacky fix.  I think I understand is happening (in that TypeScript doesn't like undefined elements), but I am wondering if there's any kind of library or configuration that can help here.
+
+I've read the TS docs for converting from  JavaScript, but the suggestion seems to be mostly rewriting existing code.  Are there any solutions for converting existing elements from a repo and getting them to work with TS?
+## [7][Is there a VSCode extension that displays all properties (inherited or not) of a given type?](https://www.reddit.com/r/typescript/comments/gabieg/is_there_a_vscode_extension_that_displays_all/)
+- url: https://www.reddit.com/r/typescript/comments/gabieg/is_there_a_vscode_extension_that_displays_all/
+---
+The title says it all.
+
+OutlinedTextFieldProps extends BaseTextFieldProps, which extends StandardProps, which is a generic receiving FormControlProps, and so on and on. 
+
+It would be nice to have a list of all properties available without hacks (like creating an empty element to explore its props).
+
+https://preview.redd.it/150l682fyrv41.png?width=608&amp;format=png&amp;auto=webp&amp;s=f2bc88c452f3a7ae8ae014a270f70fd6a4c02b62
+## [8][RxJs for 5 minutes or The Little Engine that Could…](https://www.reddit.com/r/typescript/comments/gad6kh/rxjs_for_5_minutes_or_the_little_engine_that_could/)
+- url: https://www.reddit.com/r/typescript/comments/gad6kh/rxjs_for_5_minutes_or_the_little_engine_that_could/
+---
+RxJS is everywhere in Angular. So whether you are a junior developer or not, let's consider data transformation, combining the data from two streams and discuss Hot and Cold Observables.
+
+[RxJs for 5 minutes or The Little Engine that Could…](https://2muchcoffee.com/blog/rxjs-for-5-minutes-or-the-little-engine-that-could/)
+## [9][Defining a function that has as a parameter a single object that has initial values.](https://www.reddit.com/r/typescript/comments/ga97kq/defining_a_function_that_has_as_a_parameter_a/)
 - url: https://www.reddit.com/r/typescript/comments/ga97kq/defining_a_function_that_has_as_a_parameter_a/
 ---
 Lets suppose I have this function :
 
-    function foo({ a = 1, b }) {
+    function foo(obj/*has property a and b*/) {
     	/*some code*/
     }
 
-I want property `a` to be optional.When no value is provided for `a` then `a` will be equal to `1`, regardless of whether a value was provided to `b`.Correct me if I am wrong but as far as I understand,for that to happen I have to manually code it inside the function body.
+I want property `a` to be optional.When no value is provided for `a` then `a` will be equal to `1`, regardless of whether a value was provided to `b`.Correct me if I am wrong but as far as I understand,for that to happen ,and also have all the parameters gathered in `obj` , I have to manually code it inside the function body.
 
 Can I at least write something in typescript (or JSDoc comment) so my IDE(vscode) understands what I want to do?More specifically I want when I type `foo` and hover over it,my IDE will show me that `a` has default value `1` and is supposed to be a number if I give a different value.
 
@@ -62,71 +155,19 @@ This is what I have done so far :
 
     /**
      * @param {object} obj
-     * @param {number} [obj.a=1]
+     * @param {number} [obj.a=1] - some comment about the functionality of the parameter
      * @param {number} obj.b
     */
-    function foo({ a = 1, b }) {
+    function foo(obj) {
     	/*some code*/
     }
 
 In vscode it does not show me initial value. For the comment about each parameter I have to hover over each individual parameter.
-## [5][When should you write a type and when should you let it be inferred?](https://www.reddit.com/r/typescript/comments/g9olpy/when_should_you_write_a_type_and_when_should_you/)
-- url: https://effectivetypescript.com/2020/04/28/avoid-inferable/
+## [10][TypeScript VS Flow: Type Checking Front End JavaScript](https://www.reddit.com/r/typescript/comments/gaguon/typescript_vs_flow_type_checking_front_end/)
+- url: https://blog.bitsrc.io/should-you-use-typescript-or-flow-abb2716b68e5
 ---
 
-## [6][If you had to teach 30+ JS devs TypeScript, what resources would you give them?](https://www.reddit.com/r/typescript/comments/g9j5rb/if_you_had_to_teach_30_js_devs_typescript_what/)
-- url: https://www.reddit.com/r/typescript/comments/g9j5rb/if_you_had_to_teach_30_js_devs_typescript_what/
----
-Hello!
-
-My company is currently in the architectural stage of building the new version of our web app. For that, our stack is now:
-
-- Next.js
-- preact
-- Apollo
-- mobx
-
-As a way for us to ease our development process and get some assurances about our data structures, we're moving to TypeScript as well. We ran a poll recently, and about half have our JS devs used TypeScript before, and would like to use it again. The other half have heard of it and want to learn. 
-
-For those 15+ JS devs that haven't used TypeScript before, we need some resources for teaching them. For the most part, they have at least 2 years of experience with JS each, and potentially more development experience. 
-
-What resources would you all recommend to get JS devs up to speed as quickly as possible? Right now we front-end masters, which has a decent TypeScript course, and I've also suggested the TS Handbook on the docs site.
-
-Thanks!
-## [7][Tribute to Kurt Godel](https://www.reddit.com/r/typescript/comments/g9pxbg/tribute_to_kurt_godel/)
-- url: https://medium.com/@damodharanjay/logic-verification-and-god-el-3849d1724275
----
-
-## [8][Using async/await to avoid stack overflow error.](https://www.reddit.com/r/typescript/comments/g9kml7/using_asyncawait_to_avoid_stack_overflow_error/)
-- url: https://gist.github.com/Jason5Lee/938b451b62e47f52806f5d24b9820644
----
-
-## [9][Needed some reference project](https://www.reddit.com/r/typescript/comments/g9nvpy/needed_some_reference_project/)
-- url: https://www.reddit.com/r/typescript/comments/g9nvpy/needed_some_reference_project/
----
-Hi everyone, 
-
-We are writing a library in typescript. So can you guys give us reference to some popular typescript projects to look into?
-## [10][Object["unsafe Key"] type?](https://www.reddit.com/r/typescript/comments/g9pqhj/objectunsafe_key_type/)
-- url: https://www.reddit.com/r/typescript/comments/g9pqhj/objectunsafe_key_type/
----
-    class Example {
-        unsafe(data: Array&lt;string&gt;): void {
-            //
-        }
-    }
-    new Example().unsafe(JSON.parse('')["whoGivesAF"])
-
-According to my linter and current version of tsc; this is grand. Fine. Got me thinking though...
-
-&amp;#x200B;
-
-Was there a documented discussion from the lang devs about why TS would allow such dirty, typeless assertion as this to be valid? I would (naïvely) presume that it was to allow us to take data from AJAX calls and not have to check types for every property (definitely a potential for runtime exceptions)?
-
-&amp;#x200B;
-
-Would love to get a wee bit more of an insight as to where, specifically, the borders are, on this one.
-## [11][Exploring TypeScript from a Business and Software Development Perspective](https://www.reddit.com/r/typescript/comments/g9lg1m/exploring_typescript_from_a_business_and_software/)
-- url: https://www.monterail.com/blog/typescript-business-development?utm_medium=social&amp;utm_source=reddit&amp;utm_campaign=typescript
+## [11][I made a simple TypeScript REST API boilerplate with integration tests and deployment setup](https://www.reddit.com/r/typescript/comments/gaf5wt/i_made_a_simple_typescript_rest_api_boilerplate/)
+- url: https://github.com/nya1/rest-api-boilerplate
 ---
 

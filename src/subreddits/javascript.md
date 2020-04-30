@@ -1,13 +1,5 @@
 # javascript
-## [1][WTF Wednesday (April 22, 2020)](https://www.reddit.com/r/javascript/comments/g63tt9/wtf_wednesday_april_22_2020/)
-- url: https://www.reddit.com/r/javascript/comments/g63tt9/wtf_wednesday_april_22_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/g8x6ie/your_weekly_rjavascript_recap/)
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/g8x6ie/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/g8x6ie/your_weekly_rjavascript_recap/
 ---
 **Monday, April 20 - Sunday, April 26**
@@ -87,43 +79,57 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Battleship game in browser! Using vanilla JS ❤️ and Node.js](https://www.reddit.com/r/javascript/comments/g9u433/battleship_game_in_browser_using_vanilla_js_and/)
-- url: https://battleship-game-online.herokuapp.com/
+## [2][WTF Wednesday (April 29, 2020)](https://www.reddit.com/r/javascript/comments/gac6sk/wtf_wednesday_april_29_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gac6sk/wtf_wednesday_april_29_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][A collection of challenging TypeScript exercises](https://www.reddit.com/r/javascript/comments/gac6az/a_collection_of_challenging_typescript_exercises/)
+- url: https://github.com/mdevils/typescript-exercises
 ---
 
-## [4][Mosaic - multiplayer board game similar to Azul created with React, boardgame.io, Node.js](https://www.reddit.com/r/javascript/comments/ga6i87/mosaic_multiplayer_board_game_similar_to_azul/)
+## [4][I made my website to look like Windows 95 using FOS, a open source framework.](https://www.reddit.com/r/javascript/comments/gaifhe/i_made_my_website_to_look_like_windows_95_using/)
+- url: https://victorribeiro.com/
+---
+
+## [5][Migrating from Promise chains to Async/Await](https://www.reddit.com/r/javascript/comments/gaqo1e/migrating_from_promise_chains_to_asyncawait/)
+- url: https://afteracademy.com/blog/migrating-from-promise-chains-to-async-await
+---
+
+## [6][Learn about Mirage JS Associations and Model](https://www.reddit.com/r/javascript/comments/gavift/learn_about_mirage_js_associations_and_model/)
+- url: https://www.smashingmagazine.com/2020/04/miraje-js-models-associations/
+---
+
+## [7][ZzFX - Zuper Zmall Zound Zynth](https://www.reddit.com/r/javascript/comments/gamvud/zzfx_zuper_zmall_zound_zynth/)
+- url: https://github.com/KilledByAPixel/ZzFX
+---
+
+## [8][I've tried to create the tiniest state-based component renderer. Final product: 100 lines of code.](https://www.reddit.com/r/javascript/comments/gaiqpb/ive_tried_to_create_the_tiniest_statebased/)
+- url: https://github.com/MathiasWP/TeroyJS
+---
+
+## [9][Mosaic - multiplayer board game similar to Azul created with React, boardgame.io, Node.js](https://www.reddit.com/r/javascript/comments/ga6i87/mosaic_multiplayer_board_game_similar_to_azul/)
 - url: https://playmosaic.online
 ---
 
-## [5][🚀 I made a website to help developers create their own portfolio! The quarantine might be a good reason to create one for yourself!](https://www.reddit.com/r/javascript/comments/ga8iaa/i_made_a_website_to_help_developers_create_their/)
-- url: https://techstax.dev/
+## [10][My favorite Puppeteer function: page.$eval(selector, fn)](https://www.reddit.com/r/javascript/comments/ga9lt7/my_favorite_puppeteer_function_pageevalselector_fn/)
+- url: https://areweoutofmasks.com/blog/how-to-scrape-dhgate-with-puppeteer#jquery-esque-parsing
 ---
 
-## [6][MeiliSearch search engine wrapper in JS made with typescript.](https://www.reddit.com/r/javascript/comments/ga9ckd/meilisearch_search_engine_wrapper_in_js_made_with/)
-- url: https://github.com/meilisearch/meilisearch-js
+## [11][Battleship game in browser! Using vanilla JS ❤️ and Node.js](https://www.reddit.com/r/javascript/comments/g9u433/battleship_game_in_browser_using_vanilla_js_and/)
+- url: https://battleship-game-online.herokuapp.com/
 ---
 
-## [7][[AskJS] Why are getters and setters so underused?](https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/)
-- url: https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/
+## [12][[AskJS] Best way to put my app on a Javascript diet? Too many includes!](https://www.reddit.com/r/javascript/comments/gajdma/askjs_best_way_to_put_my_app_on_a_javascript_diet/)
+- url: https://www.reddit.com/r/javascript/comments/gajdma/askjs_best_way_to_put_my_app_on_a_javascript_diet/
 ---
-Why people still use Java style getThing and setThing, when you have a beautiful language feature?
-## [8][ES6/ECMAScript 2015 Features you should be using right now - W3Radar](https://www.reddit.com/r/javascript/comments/ga8prd/es6ecmascript_2015_features_you_should_be_using/)
-- url: https://blog.w3radar.com/javascript-es6-features-should-be-using/
----
+My app has become too bloated and it's taking 3 seconds to load. I'm trying to track this down and it looks like it's all script evaluation and includes.
 
-## [9][JavaScript vs Unix tools](https://www.reddit.com/r/javascript/comments/ga7znt/javascript_vs_unix_tools/)
-- url: https://herebeseaswines.net/essays/2020-04-29-javascript-vs-unix-tools
----
+I'd like to build a tree of the includes to see which libraries and includes/requires take up the most time.
 
-## [10][[AskJS] How popular is RXJS outside of Angular?](https://www.reddit.com/r/javascript/comments/ga7gbo/askjs_how_popular_is_rxjs_outside_of_angular/)
-- url: https://www.reddit.com/r/javascript/comments/ga7gbo/askjs_how_popular_is_rxjs_outside_of_angular/
----
-I absolutely love RXJS and have been using it in angular for 3 years now. I was just wondering how popular it is outside of angular. Anyone using it in production extensively?
-## [11][ES2020 - Optional chaining and nullish coalescing operators](https://www.reddit.com/r/javascript/comments/g9r8n6/es2020_optional_chaining_and_nullish_coalescing/)
-- url: https://mariosfakiolas.com/blog/es2020-optional-chaining-and-nullish-coalescing-operators
----
+I'm sure some of this is due to just stupid includes of entire libraries rather than smaller components.
 
-## [12][[AskJS] Resources for High Performance JS](https://www.reddit.com/r/javascript/comments/g9xw42/askjs_resources_for_high_performance_js/)
-- url: https://www.reddit.com/r/javascript/comments/g9xw42/askjs_resources_for_high_performance_js/
----
-This is tough topic because JS is a spec and implementations, both of which are continuously changing/improving.  So maybe it's helpful to narrow this down somewhat: V8 engine.  What's out there as far as best of breed books, blogs, videos or courses.  Google turns up some, but it's difficult to separate the wheat from the chaff.
+I just need a way to quantify where the time is being wasted.

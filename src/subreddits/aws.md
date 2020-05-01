@@ -1,67 +1,73 @@
 # aws
-## [1][New – Amazon Simple Email Service (SES) for VPC Endpoints](https://www.reddit.com/r/aws/comments/gai57v/new_amazon_simple_email_service_ses_for_vpc/)
-- url: https://aws.amazon.com/blogs/aws/new-amazon-simple-email-service-ses-for-vpc-endpoints/
+## [1][Anyone having acquired Outposts, and willing to share some feedback on usage, so far?](https://www.reddit.com/r/aws/comments/gbh5aj/anyone_having_acquired_outposts_and_willing_to/)
+- url: https://www.reddit.com/r/aws/comments/gbh5aj/anyone_having_acquired_outposts_and_willing_to/
+---
+Among things of interest:
+
+- reason for acquisition &amp; expectations being met?!?
+
+- performance compared to the region, both vis-a-vis on-prem
+
+- LGW - w/CoIP, or else?!?
+
+- services on-prem delivered for workloads in Outposts (e.g. are you load balancing with on-prem devices like Citrix, F5, A10?)
+
+- ... anything else that comes to mind ...
+## [2][Can't pass and pull values from Mysql to AWS](https://www.reddit.com/r/aws/comments/gbg61q/cant_pass_and_pull_values_from_mysql_to_aws/)
+- url: https://www.reddit.com/r/aws/comments/gbg61q/cant_pass_and_pull_values_from_mysql_to_aws/
+---
+I have the connection established from Mysql to AWS RDS, or I think I do at least. The connection seems to be working on both sides. However, I can't pass or pull values from my website using PHP, it just comes back as a connection error when I try to pull them or nothing gets passed when I try to push them.
+## [3][FORMULA 1 DeepRacer ProAm Special Event](https://www.reddit.com/r/aws/comments/gb6rwq/formula_1_deepracer_proam_special_event/)
+- url: https://aws.amazon.com/blogs/aws/join-the-formula-1-deepracer-proam-special-event/
 ---
 
-## [2][Pen-test company says our serverless API's (APIGateway+Lambda) are vulnerable to http desync / request smuggling. AWS says cloudfront protects against that. I am lost here.](https://www.reddit.com/r/aws/comments/gaoj9k/pentest_company_says_our_serverless_apis/)
-- url: https://www.reddit.com/r/aws/comments/gaoj9k/pentest_company_says_our_serverless_apis/
+## [4][AWS Workmail - Who uses it?](https://www.reddit.com/r/aws/comments/gbapw9/aws_workmail_who_uses_it/)
+- url: https://www.reddit.com/r/aws/comments/gbapw9/aws_workmail_who_uses_it/
 ---
-I am having a very painful back and forth with AWS about this. I keep being told that Cloudfront which sits infront of API Gateway will protect against these kinds of attacks. Great.
-
-However i have a pen-test company with results that says the opposite. Unfortunately this pen-test company isn't working on our dime and instead the pen-test is being done by a customer as part of their technical vetting. 
-
-This leaves me in a really akward position. Can anyone give me insight?
-## [3][Why is SES still not available in most of the regions?](https://www.reddit.com/r/aws/comments/gavfmm/why_is_ses_still_not_available_in_most_of_the/)
-- url: https://www.reddit.com/r/aws/comments/gavfmm/why_is_ses_still_not_available_in_most_of_the/
+I know they have their sample companies on the website... but I haven’t heard of any of them before. Are there any major name companies that use workmail?
+## [5][Accessing multiple APIs from the same base URL](https://www.reddit.com/r/aws/comments/gbfz4l/accessing_multiple_apis_from_the_same_base_url/)
+- url: https://www.reddit.com/r/aws/comments/gbfz4l/accessing_multiple_apis_from_the_same_base_url/
 ---
- I posted this as a comment in another thread earlier. 
+I would like to split my template with all the lambda functions into several templates for each domain (products, users etc). The lambdas are supposed to be accessed from an API. I cannot create a single API for these, CloudFormation arouses issues on that (ApiEvents should be intruduced in the same template as the API itself). So my approach would be that each template has its own API from which the lambdas are accessible. But each API naturally has its own URL when CF deploys them. 
 
-SES has been around since 2011, it's a very basic service,  and probably every customer can find a use case with it. But why is it only available in few regions? 
+Obviously I would like to access all the lambdas from the same base URL. How could this be done, should I use AWS::ApiGateway::DomainName and AWS::ApiGateway::BasePathMapping? Have I understood correctly that those could be used in that way? So [test.myproject.com/products](https://test.myproject.com/products) would access functions in products template via its API and [test.myproject.com/users](https://test.myproject.com/users) would access functions in users teamplate via its API.  
 
-Anyone have any insights about this ? Any technical limitations that could cause this ?
-## [4][Fargate ECS task takes ages to stop in step function](https://www.reddit.com/r/aws/comments/gauuqm/fargate_ecs_task_takes_ages_to_stop_in_step/)
-- url: https://www.reddit.com/r/aws/comments/gauuqm/fargate_ecs_task_takes_ages_to_stop_in_step/
+
+[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html)
+## [6][How to handle over 200 lambdas with Cloud Formation?](https://www.reddit.com/r/aws/comments/gb4ht8/how_to_handle_over_200_lambdas_with_cloud/)
+- url: https://www.reddit.com/r/aws/comments/gb4ht8/how_to_handle_over_200_lambdas_with_cloud/
 ---
-I wonder if I'm doing something wrong, since my simple docker container in ECS takes up to 30 seconds to move from stopping to stopped. It just runs a test python script which runs in 1 second, but then the task in the step function takes about a minute to complete due to the task not stopping.
+I have a few stacks, one for the network, another for database and such. And then I have a stack for all the Serverless::Api and the Serverless::Functions. 
 
-I can't modify any kind of stop timeout afaik since it's a fargate task. Any ideas?
-## [5][CodePipeline and Cloudformation stack limits](https://www.reddit.com/r/aws/comments/gauq1i/codepipeline_and_cloudformation_stack_limits/)
-- url: https://www.reddit.com/r/aws/comments/gauq1i/codepipeline_and_cloudformation_stack_limits/
+I have rached the limit of 200 resources in that stack. I tried to separate some of the functions to a different stack and referencing to the Api with "!ImportValue MyApi" where needed, ie. function events. But when trying to deploy, I get: "Api Event must reference an Api in the same template". So this cannot be done.
+
+I cannot introduce all the api events in one stack with the api since I would hit the 200 limit again. How about nesting stacks? If I have api in one stack and two stacks for functions that depend on the api stack, would that help me or would I get the same error again (events in the same temolate as the api)?
+
+What would be the best approach here?
+
+Edit: The title is wrong, there aren't over 200 lambdas but over 200 resources. I have about 80 lambdas in the template but CF creates AWS::Lamda::Permission for each lambda when deployed. I know that is too much and that is why I'm seeking help to how to resolve this and split it into smaller stacks and not getting the "Api Event must reference an Api in the same template" error.
+
+Edit2: When trying to nest stacks so that the Api is in one stack and some of the lambdas in another, nested stack, I get error: "The REST API doesn't contain any methods". I tried adding one lamda to the same template as the Api is in and nest the other functions in other templates. But then I still get that "Api Event must reference an Api in the same template. So either I have to introduce all the api events in the same template as the api is in (pretty cumbersome) OR have several templates with lambdas and each having its own api, but I would need a way to access all the endpoints via the same base URL.
+## [7][AWS Lambda occasional 500 error](https://www.reddit.com/r/aws/comments/gbdn5t/aws_lambda_occasional_500_error/)
+- url: https://www.reddit.com/r/aws/comments/gbdn5t/aws_lambda_occasional_500_error/
 ---
-I'm doing some experimenting on using CodePipeline for CI/CD of our microservices (as well as moving some of them over to Lambda with SAM).    My assumption is that each codebase (i.e. microservice as we don't use monorepos) needs it's own pipeline and therefore it's own stack.   Right now we have maybe 80 microservices but that number is only going to increase as well as we are going to be using CF stacks for other parts of our infrastructure it seems we'll hit the 200 stack per account limit sooner than later.
+For past few months I have a strange problem. Sometimes (maybe once in 10 days) all of my Lambda functions show 500 or 502 errors. This lasts only for a few minutes, so I can't properly diagnose the problem. When this error occurs I check cloudwatch logs, but it seems that API calls don't even reach the code. During this errors, software works on a local machine and database seems to be fine. Runtime for all of the code is Node.js10.x.
 
-Am I missing something?  Is the answer as simple as just contacting AWS to increase the limit and I don't need to think about this?   Nested stacks for CI/CD sounds weird on the face of it but is that an approach?   I've found no information about hitting this limit from CodePipeline stacks over the last day of searching.
+Does anybody have this kind of problem?
 
-Thanks for any advice.
-## [6][Service and price estimate for AWS](https://www.reddit.com/r/aws/comments/gauoa4/service_and_price_estimate_for_aws/)
-- url: https://www.reddit.com/r/aws/comments/gauoa4/service_and_price_estimate_for_aws/
+What can be the possible solution?
+## [8][Best way to programmatically get authorization to hit an AWS endpoint?](https://www.reddit.com/r/aws/comments/gb66gf/best_way_to_programmatically_get_authorization_to/)
+- url: https://www.reddit.com/r/aws/comments/gb66gf/best_way_to_programmatically_get_authorization_to/
 ---
-I am working on a E-commerce website project and need to come up with accurate estimates for a budget. 
-
-We are hosting 3 servers on AWS: a Web server, database server, and API. Which AWS services would I need? AWS RDS Cloud Database, Amazon EC2Cloud Server, API Gateway or just Lightsail? I am confused as to what each do
-
-How could I get a price estimate for custom e-commerce site selling less than 5 products using AWS? 
-
- Thank you!
-## [7][Best way to separate Dev and Prod](https://www.reddit.com/r/aws/comments/gacoju/best_way_to_separate_dev_and_prod/)
-- url: https://www.reddit.com/r/aws/comments/gacoju/best_way_to_separate_dev_and_prod/
+I'm familiar with writing nodejs scripts to test endpoints, usually with a bearer token, but I'm not familiar with hitting an AWS endpoint. What's the best way to generate a token in nodejs?
+## [9][Stopping RDS via Lambda](https://www.reddit.com/r/aws/comments/gbeu5r/stopping_rds_via_lambda/)
+- url: https://www.reddit.com/r/aws/comments/gbeu5r/stopping_rds_via_lambda/
 ---
-Took on a new client who has both Dev and Prod instances, all in the same VPC and Subnet.  I feel this needs to be split out.  Where Dev is in one place and Prod another.  Is the best approach to this, to create an entirely different AWS account, a Sub Account or maybe just on a different VPC?
+Hi I am learning how to stop my RDS via Lambda and I came across this  [https://dzone.com/articles/create-an-aws-lambda-function-to-stop-and-start-an](https://dzone.com/articles/create-an-aws-lambda-function-to-stop-and-start-an) 
 
-One of the issues, is the people creating the Dev environment should not be able to touch Prod.
-## [8][Best Serverless Solution for Handling User Notification State](https://www.reddit.com/r/aws/comments/gar4fd/best_serverless_solution_for_handling_user/)
-- url: https://www.reddit.com/r/aws/comments/gar4fd/best_serverless_solution_for_handling_user/
+I followed the instruction to configure but when I ran the Lambda function, there is an error "Task timed out after 3.00 second" I am unable to determine why.  Is the Python script correct?
+## [10][How to do RDS PostgreSQL point in time recovery ?](https://www.reddit.com/r/aws/comments/gbed54/how_to_do_rds_postgresql_point_in_time_recovery/)
+- url: https://www.reddit.com/r/aws/comments/gbed54/how_to_do_rds_postgresql_point_in_time_recovery/
 ---
-I have an iOS app that sends push notifications when users post,like,comment. I have a lambda that handles the logic of that new activity, create list of users I want to send a push notification to and sends it.
-
-What I want to do next is send the amount of pending notifications (the badge number) with each  push. As my system is now I store notifications in a dynamo table, which works okay when pulling from the client every so often to render the notification view, but I'm not sure that's going to work out too well when sending notifications. I first create the notification records in dynamo for every user that's going to get one. I then get every user record (for device token), \*I would then need do a GSI query on the notifications table and get a pending count\*. I feel like that's going to add a lot of each time inside the lambda especially since the amount of users can be variable. I can separate the sending notifications into a new lambda and process async from the activity post, which I plan on doing, but I want to make sure I'm not going down the wrong path before I make that change.
-
-I'm wondering if an in memory data store may work best for user notifications and possible their device token, that way I don't have to make so many reads and write to the DB in a single workflow. I am also looking into DAX but I'm not sure if the eventually consistent data would be a problem or not in this case.
-## [9][Lambda to download on premisses bitbucket](https://www.reddit.com/r/aws/comments/gar1fr/lambda_to_download_on_premisses_bitbucket/)
-- url: https://www.reddit.com/r/aws/comments/gar1fr/lambda_to_download_on_premisses_bitbucket/
----
- Currently I have a vpc with a vpg connecting to my on-premises tolls, I need to download from the bitbucket hosted there but when i do i receive connection time out. Following some links lead me to here [https://aws.amazon.com/pt/premiumsupport/knowledge-center/internet-access-lambda-function/](https://aws.amazon.com/pt/premiumsupport/knowledge-center/internet-access-lambda-function/) , do I need a nat associated with the vpg?
-## [10][Any way to remove queued AWS Lambda requests on throttled function?](https://www.reddit.com/r/aws/comments/gaqoqx/any_way_to_remove_queued_aws_lambda_requests_on/)
-- url: https://www.reddit.com/r/aws/comments/gaqoqx/any_way_to_remove_queued_aws_lambda_requests_on/
----
-So, I have a Lambda function that has a lot of requests queued. The requests contain bad data and I no longer want to process them. So, I have throttled the function, but when I un-throttle it, the queued requests continue processing. Is there any way to remove these queued requests completely before I un-throttle the function? There are too many requests and I feel it would take a long time to wait it out.
+You can go and do a PITR in Actions&gt;Restore to point in time , but you can do this up to a certain period, like up until 10 minutes ago. 
+Is there a way to make it available to be recovered until 1 minute ago ?

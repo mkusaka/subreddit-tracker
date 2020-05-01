@@ -87,49 +87,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][A collection of challenging TypeScript exercises](https://www.reddit.com/r/javascript/comments/gac6az/a_collection_of_challenging_typescript_exercises/)
-- url: https://github.com/mdevils/typescript-exercises
+## [3][After they gave 100k scholarships to students, Codecademy is now giving away their pro membership to anyone whose work is affected due to the pandemic! Also, I had started learning JS from Codecademy about a month ago when they were giving student scholarship, and it's going pretty good!](https://www.reddit.com/r/javascript/comments/gazu2f/after_they_gave_100k_scholarships_to_students/)
+- url: https://aabhusanaryal.com.np/codecademy-pro/
 ---
 
-## [4][I made my website to look like Windows 95 using FOS, a open source framework.](https://www.reddit.com/r/javascript/comments/gaifhe/i_made_my_website_to_look_like_windows_95_using/)
-- url: https://victorribeiro.com/
+## [4][0 dependency dev server, supporting live reloading and single page apps.](https://www.reddit.com/r/javascript/comments/gbc6mc/0_dependency_dev_server_supporting_live_reloading/)
+- url: https://github.com/outwalk-studios/jolt-server
 ---
 
-## [5][Migrating from Promise chains to Async/Await](https://www.reddit.com/r/javascript/comments/gaqo1e/migrating_from_promise_chains_to_asyncawait/)
-- url: https://afteracademy.com/blog/migrating-from-promise-chains-to-async-await
+## [5][How to refactor a Promise chain to async functions](https://www.reddit.com/r/javascript/comments/gbfuji/how_to_refactor_a_promise_chain_to_async_functions/)
+- url: https://advancedweb.hu/how-to-refactor-a-promise-chain-to-async-functions/
 ---
 
-## [6][Learn about Mirage JS Associations and Model](https://www.reddit.com/r/javascript/comments/gavift/learn_about_mirage_js_associations_and_model/)
-- url: https://www.smashingmagazine.com/2020/04/miraje-js-models-associations/
+## [6][Battletest- An Express-js testing suite autogenerator](https://www.reddit.com/r/javascript/comments/gay8z5/battletest_an_expressjs_testing_suite/)
+- url: https://github.com/oslabs-beta/battletest
 ---
 
-## [7][ZzFX - Zuper Zmall Zound Zynth](https://www.reddit.com/r/javascript/comments/gamvud/zzfx_zuper_zmall_zound_zynth/)
-- url: https://github.com/KilledByAPixel/ZzFX
+## [7][JExcel v4 - Javascript Spreadsheet for web-based applications - New version just released!](https://www.reddit.com/r/javascript/comments/gb21zk/jexcel_v4_javascript_spreadsheet_for_webbased/)
+- url: https://www.github.com/paulhodel/jexcel
 ---
 
-## [8][I've tried to create the tiniest state-based component renderer. Final product: 100 lines of code.](https://www.reddit.com/r/javascript/comments/gaiqpb/ive_tried_to_create_the_tiniest_statebased/)
-- url: https://github.com/MathiasWP/TeroyJS
+## [8][i18n-cloud-sync a restful api for syncing translations across projects.](https://www.reddit.com/r/javascript/comments/gawnx2/i18ncloudsync_a_restful_api_for_syncing/)
+- url: https://github.com/EvanBurbidge/i18n-cloud-sync
 ---
 
-## [9][Mosaic - multiplayer board game similar to Azul created with React, boardgame.io, Node.js](https://www.reddit.com/r/javascript/comments/ga6i87/mosaic_multiplayer_board_game_similar_to_azul/)
-- url: https://playmosaic.online
+## [9][Ways to manage config in frontend and their tradeoffs](https://www.reddit.com/r/javascript/comments/gbd1j6/ways_to_manage_config_in_frontend_and_their/)
+- url: http://www.sheshbabu.com/posts/frontend-config-management/
 ---
 
-## [10][My favorite Puppeteer function: page.$eval(selector, fn)](https://www.reddit.com/r/javascript/comments/ga9lt7/my_favorite_puppeteer_function_pageevalselector_fn/)
-- url: https://areweoutofmasks.com/blog/how-to-scrape-dhgate-with-puppeteer#jquery-esque-parsing
+## [10][Byteconf React.js, a free, two day remote React conference airs tomorrow on YouTube](https://www.reddit.com/r/javascript/comments/gb2g7k/byteconf_reactjs_a_free_two_day_remote_react/)
+- url: https://www.bytesized.xyz/react-2020
 ---
 
-## [11][Battleship game in browser! Using vanilla JS ❤️ and Node.js](https://www.reddit.com/r/javascript/comments/g9u433/battleship_game_in_browser_using_vanilla_js_and/)
-- url: https://battleship-game-online.herokuapp.com/
+## [11][Is a Redux Store Observable?](https://www.reddit.com/r/javascript/comments/gbb1g1/is_a_redux_store_observable/)
+- url: https://frontarm.com/james-k-nelson/is-a-redux-store-observable/
 ---
 
-## [12][[AskJS] Best way to put my app on a Javascript diet? Too many includes!](https://www.reddit.com/r/javascript/comments/gajdma/askjs_best_way_to_put_my_app_on_a_javascript_diet/)
-- url: https://www.reddit.com/r/javascript/comments/gajdma/askjs_best_way_to_put_my_app_on_a_javascript_diet/
+## [12][Fade In/Out Electron Window](https://www.reddit.com/r/javascript/comments/gb4zf5/fade_inout_electron_window/)
+- url: https://medium.com/@victoraremu/fade-in-out-electron-window-6d81c5eaf835
 ---
-My app has become too bloated and it's taking 3 seconds to load. I'm trying to track this down and it looks like it's all script evaluation and includes.
 
-I'd like to build a tree of the includes to see which libraries and includes/requires take up the most time.
-
-I'm sure some of this is due to just stupid includes of entire libraries rather than smaller components.
-
-I just need a way to quantify where the time is being wasted.

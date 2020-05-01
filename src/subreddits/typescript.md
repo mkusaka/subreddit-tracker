@@ -1,6 +1,6 @@
 # typescript
-## [1][Who's hiring Typescript developers - April](https://www.reddit.com/r/typescript/comments/fsojx3/whos_hiring_typescript_developers_april/)
-- url: https://www.reddit.com/r/typescript/comments/fsojx3/whos_hiring_typescript_developers_april/
+## [1][Who's hiring Typescript developers - May](https://www.reddit.com/r/typescript/comments/gb7km3/whos_hiring_typescript_developers_may/)
+- url: https://www.reddit.com/r/typescript/comments/gb7km3/whos_hiring_typescript_developers_may/
 ---
 The monthly thread for people to post openings at their companies.
 
@@ -22,15 +22,158 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Announcing TypeScript 3.9 RC](https://www.reddit.com/r/typescript/comments/gaecct/announcing_typescript_39_rc/)
+## [2][Purify 0.15 released! - A Functional programming library for TypeScript](https://www.reddit.com/r/typescript/comments/gb0qhw/purify_015_released_a_functional_programming/)
+- url: https://www.reddit.com/r/typescript/comments/gb0qhw/purify_015_released_a_functional_programming/
+---
+Changelog: [https://gigobyte.github.io/purify/changelog/0.15](https://gigobyte.github.io/purify/changelog/0.15)
+
+**If you are not familiar with functional programming practices please take a look at the documentation, otherwise read below.**
+
+I've finalized the API for async error handling, I feel like this might be best DX for this kind of thing (working with Either and Maybe inside Promises). I'd very much appreciate any feedback on how easy it is to use on the back-end, especially in complicated async flows.
+
+I've already compared purify to fp-ts a [couple](https://www.reddit.com/r/functionalprogramming/comments/ebg4pc/purify_014_released_a_functional_programming/fb5uv16/) of [times](https://www.reddit.com/r/typescript/comments/8y20no/pure_010_released_a_functional_programming/e29e4yl/).
+## [3][Uncovered lines in test when using `foo || []` - guidance from experienced devs needed](https://www.reddit.com/r/typescript/comments/gbd0fm/uncovered_lines_in_test_when_using_foo_guidance/)
+- url: https://www.reddit.com/r/typescript/comments/gbd0fm/uncovered_lines_in_test_when_using_foo_guidance/
+---
+Dear Friends of TypeScript,
+
+Even though I have quite some experience with other languages I'm fairly new to TS and don't get all the parts just yet. I just wrote a function that checks if the value of an entry in a map is an array with more than one element and would like to get some feedback, especially since when testing, one particular line of code is marked as 'uncovered'. My question is if there's any other way to write that function to make sure that there are no uncovered lines?
+
+Here is the function:
+
+    /**
+     *
+     * @param wordMap - map with sorted word as index and array of words as value
+     */
+    function filterAnagrams(wordMap: Map&lt;string, string[]&gt;): string[] {
+      let anagrams: string[] = [];
+      for (let key of wordMap.keys()) {
+        let words: string[] = wordMap.get(key) || [];
+        if (words.length &gt; 1) {
+          anagrams.push(...words);
+        }
+      }
+      return anagrams;
+    }
+
+Here is the test:
+
+    describe("filterAnagrams", function () {
+      it("should return the values from the map where elements &gt; 1", function () {
+        let tempMap = new Map();
+        tempMap.set("foo", ["foo1", "foo2"]);
+        tempMap.set("bar", ["bar1"]);
+        let filteredValues: string[] = filterAnagrams(tempMap);
+        expect(filteredValues).toEqual(["foo1", "foo2"]);
+      });
+    
+      it("should return empty array since map is empty", function () {
+        let tempMap = new Map();
+        let filteredValues: string[] = filterAnagrams(tempMap);
+        expect(filteredValues).toEqual([]);
+      });
+    });
+
+The empty array at the end of line 3 in the \`filterAnagrams\` function  is marked as uncovered by jest:
+
+    let words: string[] = wordMap.get(key) || [];
+
+If I remove the || \[\] part I receive the error
+
+    Type 'string[] | undefined' is not assignable to type 'string[]'.
+    Type 'undefined' is not assignable to type 'string[]'.ts(2322)
+## [4][Using fetch with Typescript and the Todoist API](https://www.reddit.com/r/typescript/comments/gb66fp/using_fetch_with_typescript_and_the_todoist_api/)
+- url: https://medium.com//using-fetch-with-typescript-and-the-todoist-api-5203c5177ed5?source=friends_link&amp;sk=a16444467bf3dcfca20b102972fe8b43
+---
+
+## [5][Typescript generics 'lens' to constrain a type to selected fields?](https://www.reddit.com/r/typescript/comments/gb81fz/typescript_generics_lens_to_constrain_a_type_to/)
+- url: https://www.reddit.com/r/typescript/comments/gb81fz/typescript_generics_lens_to_constrain_a_type_to/
+---
+... I don't think this is possible in typescript.  Maybe I'm wrong.
+
+I have an API I'm trying to ship that I need a 'lens' to listen to a subscribe map and only update when specific fields have changed.
+
+I want it to return a synthetic type contrained on the input.
+
+the input API is simple. 
+
+I can use fields: ReadonlyArray&lt;keyof Foo&gt;
+
+... the problem I'm having is how to constrain the output to a map which only contains those input values.  
+
+So if the map has keys name, address, city, state, zip, and the user specifies just city, state, and zip, I want a map with only city, state and zip.
+
+I want name and address to be removed so that the caller doesn't attempt to read from name and address which could be stale.
+## [6][Easiest way to return an interface/map with a collection of functions ?](https://www.reddit.com/r/typescript/comments/gaywkz/easiest_way_to_return_an_interfacemap_with_a/)
+- url: https://www.reddit.com/r/typescript/comments/gaywkz/easiest_way_to_return_an_interfacemap_with_a/
+---
+I'm working on something in react and can't use classes as 'this' keeps being thrown away.  I want to avoid constantly having to avoid foo.bind(myInstance) too.
+
+So instead I'm returning an interface with callbacks in it ... they're just functions.
+
+so I'll have:
+
+    interface MyInterface {
+        myCallback1: () =&gt; void;
+        myCallback2: () =&gt; void;
+
+        ... etc
+  }
+
+
+and the way I'm returning this now is:
+
+    function myCallback1() {
+        // ... impl
+    } 
+
+    function myCallback2() {
+        // ... impl
+    } 
+
+    return {
+        myCallback1, myCallback2, etc...
+    } 
+
+... but this yields a ton of boilerplate.  Is there a cleaner way to return / organize everything better?  I was thinking namespaces but you can't return one as an object.  Maybe a static class? Not sure you can return one though... will have to play with that.
+
+... EDIT.  Returning a static class seems to work but curious if that's the best strategy.
+
+... EDIT2. It actually won't work because this is discarded and there's the need to call other functions. Without 'this' they're all in the same namespace.
+
+.... EDIT3. It works if you give it a name like Foo then return Foo and only access functions by Foo and not 'this'
+## [7][class-transformer as RxJS operator](https://www.reddit.com/r/typescript/comments/gaxnp9/classtransformer_as_rxjs_operator/)
+- url: https://www.reddit.com/r/typescript/comments/gaxnp9/classtransformer_as_rxjs_operator/
+---
+I want to wrap `plainToClass` from `class-transformer` into an RxJS operator function so that I can use it in `pipe` to map a plain object to a class.
+
+The original signature of `plainToClass` is:
+
+    function plainToClass&lt;T, V&gt;(cls: ClassType&lt;T&gt;, plain: V[], options?: ClassTransformOptions): T[];
+    function plainToClass&lt;T, V&gt;(cls: ClassType&lt;T&gt;, plain: V, options?: ClassTransformOptions): T;
+
+My function would be:
+
+    const toClass = cls =&gt; map(plain =&gt; plainToClass(cls, plain));
+
+Simply, `plainToClass` takes a constructor and a literal object and uses that object to create an instance of your class. My function just wraps this in an RxJS `map` operator.
+
+How should I write the type annotations for this, so that when `v` is a single object, it's return type will be a single instance, and when `v` is an array, the return type will be an array of instances?
+
+E.g.:
+
+    const toClass = &lt;T, V&gt;(cls: new() =&gt; T) =&gt; map&lt;V, T[] when V is Array else T&gt;((plain: V) =&gt; plainToClass(cls, plain));
+
+&amp;#x200B;
+## [8][Announcing TypeScript 3.9 RC](https://www.reddit.com/r/typescript/comments/gaecct/announcing_typescript_39_rc/)
 - url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-rc/
 ---
 
-## [3][A collection of challenging TypeScript exercises](https://www.reddit.com/r/typescript/comments/gabb46/a_collection_of_challenging_typescript_exercises/)
+## [9][A collection of challenging TypeScript exercises](https://www.reddit.com/r/typescript/comments/gabb46/a_collection_of_challenging_typescript_exercises/)
 - url: https://github.com/mdevils/typescript-exercises
 ---
 
-## [4][Restore mock of imported class function in ts-jest while testing](https://www.reddit.com/r/typescript/comments/gav2w0/restore_mock_of_imported_class_function_in_tsjest/)
+## [10][Restore mock of imported class function in ts-jest while testing](https://www.reddit.com/r/typescript/comments/gav2w0/restore_mock_of_imported_class_function_in_tsjest/)
 - url: https://www.reddit.com/r/typescript/comments/gav2w0/restore_mock_of_imported_class_function_in_tsjest/
 ---
 **Issue**
@@ -105,7 +248,7 @@ expect(result).toEqual("you can start the car") // getting result as undefined
 }
 
 \`\`\`
-## [5][How can I have intellisense for a dictionary object but also type definition.](https://www.reddit.com/r/typescript/comments/gakqj5/how_can_i_have_intellisense_for_a_dictionary/)
+## [11][How can I have intellisense for a dictionary object but also type definition.](https://www.reddit.com/r/typescript/comments/gakqj5/how_can_i_have_intellisense_for_a_dictionary/)
 - url: https://www.reddit.com/r/typescript/comments/gakqj5/how_can_i_have_intellisense_for_a_dictionary/
 ---
     /**
@@ -114,60 +257,3 @@ expect(result).toEqual("you can start the car") // getting result as undefined
     const obj;
 
 This does not give me intellisense for the properties of the `obj`.
-## [6][Converting Elements from Script Element?](https://www.reddit.com/r/typescript/comments/gafg9l/converting_elements_from_script_element/)
-- url: https://www.reddit.com/r/typescript/comments/gafg9l/converting_elements_from_script_element/
----
-I'm starting a new React project in my company and the lead has decided to use TypeScript.  However, there are a TON of standardized company-wide HTML tags (generated using the browser.createElement API) that are imported via the index.html file through a script tag.  This worked well when we had just plain React, but now adding TypeScript is forcing us to add each of these elements individually to the JSX namespace (we have to add to an interface called IntrinsicElements with a type of 'any', though I think we can extend this out a bit with more specific types) and this seems like a kind of hacky fix.  I think I understand is happening (in that TypeScript doesn't like undefined elements), but I am wondering if there's any kind of library or configuration that can help here.
-
-I've read the TS docs for converting from  JavaScript, but the suggestion seems to be mostly rewriting existing code.  Are there any solutions for converting existing elements from a repo and getting them to work with TS?
-## [7][Is there a VSCode extension that displays all properties (inherited or not) of a given type?](https://www.reddit.com/r/typescript/comments/gabieg/is_there_a_vscode_extension_that_displays_all/)
-- url: https://www.reddit.com/r/typescript/comments/gabieg/is_there_a_vscode_extension_that_displays_all/
----
-The title says it all.
-
-OutlinedTextFieldProps extends BaseTextFieldProps, which extends StandardProps, which is a generic receiving FormControlProps, and so on and on. 
-
-It would be nice to have a list of all properties available without hacks (like creating an empty element to explore its props).
-
-https://preview.redd.it/150l682fyrv41.png?width=608&amp;format=png&amp;auto=webp&amp;s=f2bc88c452f3a7ae8ae014a270f70fd6a4c02b62
-## [8][RxJs for 5 minutes or The Little Engine that Could…](https://www.reddit.com/r/typescript/comments/gad6kh/rxjs_for_5_minutes_or_the_little_engine_that_could/)
-- url: https://www.reddit.com/r/typescript/comments/gad6kh/rxjs_for_5_minutes_or_the_little_engine_that_could/
----
-RxJS is everywhere in Angular. So whether you are a junior developer or not, let's consider data transformation, combining the data from two streams and discuss Hot and Cold Observables.
-
-[RxJs for 5 minutes or The Little Engine that Could…](https://2muchcoffee.com/blog/rxjs-for-5-minutes-or-the-little-engine-that-could/)
-## [9][Defining a function that has as a parameter a single object that has initial values.](https://www.reddit.com/r/typescript/comments/ga97kq/defining_a_function_that_has_as_a_parameter_a/)
-- url: https://www.reddit.com/r/typescript/comments/ga97kq/defining_a_function_that_has_as_a_parameter_a/
----
-Lets suppose I have this function :
-
-    function foo(obj/*has property a and b*/) {
-    	/*some code*/
-    }
-
-I want property `a` to be optional.When no value is provided for `a` then `a` will be equal to `1`, regardless of whether a value was provided to `b`.Correct me if I am wrong but as far as I understand,for that to happen ,and also have all the parameters gathered in `obj` , I have to manually code it inside the function body.
-
-Can I at least write something in typescript (or JSDoc comment) so my IDE(vscode) understands what I want to do?More specifically I want when I type `foo` and hover over it,my IDE will show me that `a` has default value `1` and is supposed to be a number if I give a different value.
-
-Is it possible to add also some comments about the functionality of the parameter `a` that will also be visible when I hover over the function (and not just when I hover over the parameter)?
-
-This is what I have done so far :
-
-    /**
-     * @param {object} obj
-     * @param {number} [obj.a=1] - some comment about the functionality of the parameter
-     * @param {number} obj.b
-    */
-    function foo(obj) {
-    	/*some code*/
-    }
-
-In vscode it does not show me initial value. For the comment about each parameter I have to hover over each individual parameter.
-## [10][TypeScript VS Flow: Type Checking Front End JavaScript](https://www.reddit.com/r/typescript/comments/gaguon/typescript_vs_flow_type_checking_front_end/)
-- url: https://blog.bitsrc.io/should-you-use-typescript-or-flow-abb2716b68e5
----
-
-## [11][I made a simple TypeScript REST API boilerplate with integration tests and deployment setup](https://www.reddit.com/r/typescript/comments/gaf5wt/i_made_a_simple_typescript_rest_api_boilerplate/)
-- url: https://github.com/nya1/rest-api-boilerplate
----
-

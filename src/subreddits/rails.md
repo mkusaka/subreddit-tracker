@@ -27,13 +27,47 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Bye, Rails Assets](https://www.reddit.com/r/rails/comments/gaefn2/bye_rails_assets/)
+## [3][[Podcast] The Ruby Blend: Parentheses and typosquatting](https://www.reddit.com/r/rails/comments/gbf5ag/podcast_the_ruby_blend_parentheses_and/)
+- url: https://www.reddit.com/r/rails/comments/gbf5ag/podcast_the_ruby_blend_parentheses_and/
+---
+In this episode, Nate has to check his emails, Andrew uses parentheses, and Ron drowns in the DigitalOcean. We also find out why Nate was right (again). Also, what happened with typosquatting? Nate dives into the Manager vs. Maker's schedule. And why does Andrew have "needless paranoia?" \[Listen to this week's episode to find out about all these and more\]([https://fireside.fm/s/ouBAUjGy+4ZxpTNPN](https://fireside.fm/s/ouBAUjGy+4ZxpTNPN)).
+## [4][Slightly Confused about Bundler](https://www.reddit.com/r/rails/comments/gb41qc/slightly_confused_about_bundler/)
+- url: https://www.reddit.com/r/rails/comments/gb41qc/slightly_confused_about_bundler/
+---
+I mainly work with Elixir/Phoenix and there seems to be some similarities with how they handle dependencies but the more I worked in Rails it became evident that's not exactly the case.
+
+In Phoenix you add dependencies to a mix file then run a command to install that dependency to your project.
+
+In Rails you add dependencies to your gem file then run a command to install that dependency to your project but when working with a legacy rails project I had to install an older version of bundler directly in my project. When I run gem ls on my global directory(not project) I see they are all installed globally. What am I missing here? In phoenix everything is self contained like a virtual environment. In rails I have bundler installed globally and also in projects. Any clarification would be great. Thanks,
+## [5][Where is rails generate?](https://www.reddit.com/r/rails/comments/gbakw3/where_is_rails_generate/)
+- url: https://www.reddit.com/r/rails/comments/gbakw3/where_is_rails_generate/
+---
+Noob here, I've created a hello world app and ran it with webrick dev server BUT I want to host a webpage with a ruby app on nginx webserver ubuntu...
+
+&amp;#x200B;
+
+why dont I have rails generate? 
+
+I can execute 'rails' but generate is not a switch for my rails command
+
+&amp;#x200B;
+
+how do I get my app.rb to show up on nginx webserver so I can execute if from the world wide webs?
+
+&amp;#x200B;
+
+Hetzner virtual cloud server dual cpu cores super smokin dawg
+## [6][Twitter-bootstrap-rails](https://www.reddit.com/r/rails/comments/gb5myl/twitterbootstraprails/)
+- url: https://www.reddit.com/r/rails/comments/gb5myl/twitterbootstraprails/
+---
+I know it's a bit of an outdated gem, but I tried it anyways on rails 6 to see if I could cheat my way through some stuff (also miss the sidebars). Looks absolutely retarded. You guys found any alternatives?
+## [7][Bye, Rails Assets](https://www.reddit.com/r/rails/comments/gaefn2/bye_rails_assets/)
 - url: https://www.reddit.com/r/rails/comments/gaefn2/bye_rails_assets/
 ---
 Remove rails-assets.org dependencies from your Gemfile and move on.
 
 [https://www.ramblingcode.dev/posts/bye\_rails\_assets/](https://www.ramblingcode.dev/posts/bye_rails_assets/)
-## [4][Deploy a new Rails app to AWS Lambda using Lamby (my notes)](https://www.reddit.com/r/rails/comments/gafh0n/deploy_a_new_rails_app_to_aws_lambda_using_lamby/)
+## [8][Deploy a new Rails app to AWS Lambda using Lamby (my notes)](https://www.reddit.com/r/rails/comments/gafh0n/deploy_a_new_rails_app_to_aws_lambda_using_lamby/)
 - url: https://www.reddit.com/r/rails/comments/gafh0n/deploy_a_new_rails_app_to_aws_lambda_using_lamby/
 ---
 Link: [https://gist.github.com/joshuap/4ab915f6b94366f570fcb63f38660262](https://gist.github.com/joshuap/4ab915f6b94366f570fcb63f38660262)
@@ -47,7 +81,7 @@ A few unanswered questions I have:
 3. Why is Docker so slow on macOS 😭
 
 Am I missing anything?
-## [5][Rails 5.2 to 6 migration could be more challenging than you think. Let's talk about it.](https://www.reddit.com/r/rails/comments/gab35q/rails_52_to_6_migration_could_be_more_challenging/)
+## [9][Rails 5.2 to 6 migration could be more challenging than you think. Let's talk about it.](https://www.reddit.com/r/rails/comments/gab35q/rails_52_to_6_migration_could_be_more_challenging/)
 - url: https://www.reddit.com/r/rails/comments/gab35q/rails_52_to_6_migration_could_be_more_challenging/
 ---
 You know how migrating to a new version of rails is taking away resource and time from answering customer needs. It is not just the framework but all the gems and dependencies  now with rails  6 and webpacker as defualt packing it is even more time consuming. I've been on a rails6+webpack+rails ujs migration for the last 8-9 days for a not very small app. We were postponing migrations for a few months. We are far from finish.
@@ -67,35 +101,15 @@ We've already lost about 120 hours on this and we are far from finish. Many peop
 This is what I thought I could help with. You might need to talk with somebody, or you might need to work with somebody or to delegate to someone to resolve it and give you a new branch for you to just merge and then go over all the problems. 
 
 Message me if you are feeling the pain. Share a comment here to discuss.
-## [6][Help getting this recently create app with rails 4.2.3 getting deployed on heroku](https://www.reddit.com/r/rails/comments/gap36j/help_getting_this_recently_create_app_with_rails/)
-- url: https://www.reddit.com/r/rails/comments/gap36j/help_getting_this_recently_create_app_with_rails/
+## [10][Interesting article](https://www.reddit.com/r/rails/comments/gawia2/interesting_article/)
+- url: https://www.reddit.com/r/rails/comments/gawia2/interesting_article/
 ---
-Before anything, I'm a newbie in rails or anything related to web development. I'm taking this course about rails and its kind outdated this current section. Its an app that uses milia and devise. Unfortunately, milia only works with rails 5.1 and the course I'm taking is uses rails 4.2.3 and their outdated versions of milia and devise gems. I tried before to do things with Rails 5.1 but I had some many problems that I restarted things so many times and now I trying to code with the downgrade of things. Its not the best choice I know, but I'm feeling that wasting time struggling everyday to get things worked out and nothing change.
-
-So, I wanna give it a shot doing this with rails 4 and get the better from the course. And if nothing works out, I'll try again with rails 5...
-
-The app I'm trying to deploy on heroku I hadn't code any functionality yet. It just a new app and I just set a home page. Nothing else.
-
-I had to downgrade the rails to 4.3.2 and ruby to 2.2.10 to get this at least deployed to heroku. The things works fine in the local environment (using aws cloud9) but I have and error on heroku. Does not show anything, just say to check the logs which I couldnt trace the error. 
-
-You can check out [here](https://imgur.com/a/Itt5nuz) the heroku logs 
-
-My [github repo](https://github.com/Gregory280/saas-project) 
-
-Important informations:
-
-I set puma as my web server. I followed the heroku instructions and seems fine this.
-
-In my gem file I have a group production with gem pg 0.18.4 version and rails\_12factor 
-
-For development I'm using sqlite3.
-
-I kind think I had traced where the error might be, I think it is something with the pg gem and activerecord, but I don't have a clue how to solve it.
-## [7][Lightweight Auth solution for Rails/React/Redux app?](https://www.reddit.com/r/rails/comments/gac0qd/lightweight_auth_solution_for_railsreactredux_app/)
+ [https://blog.cloud66.com/home-buying-selling-platform-orchard-deploys-kubernetes-to-aws-with-maestro/](https://blog.cloud66.com/home-buying-selling-platform-orchard-deploys-kubernetes-to-aws-with-maestro/)
+## [11][Lightweight Auth solution for Rails/React/Redux app?](https://www.reddit.com/r/rails/comments/gac0qd/lightweight_auth_solution_for_railsreactredux_app/)
 - url: https://www.reddit.com/r/rails/comments/gac0qd/lightweight_auth_solution_for_railsreactredux_app/
 ---
 I'm building a dashboard using Rails 6 and using the included webpacker to build the frontend in React and Redux for state. This app will have a logon but no sign up. The admin will maintain user access since it's an internal application. However, there will be a front public facing aspect of the app but no sign up or CRUD action. My goto would be Devise but wondering if this is too 'heavy handed' Or should I just use it and take what I need?
-## [8][How do I handle bot requests?](https://www.reddit.com/r/rails/comments/ga9teg/how_do_i_handle_bot_requests/)
+## [12][How do I handle bot requests?](https://www.reddit.com/r/rails/comments/ga9teg/how_do_i_handle_bot_requests/)
 - url: https://www.reddit.com/r/rails/comments/ga9teg/how_do_i_handle_bot_requests/
 ---
 So, I have this VPS with my Rails application that is open to internet, and I keep receiving a lot of requests from bots that are trying to find loopholes, for example:
@@ -119,73 +133,3 @@ They keep coming from random IP's, so I though I could create a rule on my nginx
 So, how do you guys handle this bruteforce?
 
 I'm using Nginx + Passenger, but I'm no expert on configuring it.
-## [9][App that responds and to API requests and send requests to an external API](https://www.reddit.com/r/rails/comments/gacrrt/app_that_responds_and_to_api_requests_and_send/)
-- url: https://www.reddit.com/r/rails/comments/gacrrt/app_that_responds_and_to_api_requests_and_send/
----
-I’ve just started a new project that will be mostly API-based but with a weird twist because the app will act as a client and server: it respond to requests and it sends the same requests to an external end-point, using the same protocol.
-
-The app will be an intermediary between a shop and a wholesaler and it will forward orders.   
-Simplifying things, it will be something like this:
-
-    Request: shop -&gt; myapp -&gt; wholesaler
-    Response: wholesaler -&gt; myapp -&gt; shop
-
-The shop will be authenticated on myapp using JWT and myapp will be authenticated on the wholesaler also with JWT.
-
-The API used is the same and I would almost be able to do a “forward” (if that's possible) because I would just need to manipulate the token and add a string for the order number.
-
-Example
-
-    # From shop to myapp
-    POST /api/orders
-    Authorization: Bearer &lt;shop_jwt&gt;
-    { order_number: "1234"
-      order_items: [...] }
-    
-    # From myapp to wholesaler
-    POST /api/orders
-    Authorization: Bearer &lt;mayapp_jwt&gt;
-    { order_number: "MYAPP-1234"
-      order_items: [...] }
-
-This is something new for me and I don't know how to approach this kind of problem. Could you point me in some direction?
-
-I should also add that I'll need to store the orders that will pass back and forth through myapp, although that's the easy part
-## [10][Rails 6 MiniTest &amp; FactoryBot: extra records existing in my tests](https://www.reddit.com/r/rails/comments/gadsy0/rails_6_minitest_factorybot_extra_records/)
-- url: https://www.reddit.com/r/rails/comments/gadsy0/rails_6_minitest_factorybot_extra_records/
----
-Hey all, I'm pretty new to MiniTest and figured I'd give it a shot with a new codebase. I keep running into having additional records in my test database at random.
-
-I've double checked my factories, I don't use any setup blocks, and I haven't disabled transactional tests.
-
-I'm honestly kind of at a loss.
-
-Anyone have any ideas as to what my cause the test DB to have mystery guests like this?
-## [11][Working around a library that doesn't have direct Ruby support](https://www.reddit.com/r/rails/comments/gaat92/working_around_a_library_that_doesnt_have_direct/)
-- url: https://www.reddit.com/r/rails/comments/gaat92/working_around_a_library_that_doesnt_have_direct/
----
-
-
-I'm currently building an API in Rails to control devices registered with an Azure IoT Hub.
-
-Now, in the Azure documentation, I only see Python/Node/.Net guides to control the end devices.
-
-I require Rails for certain libraries, and hence used it to build my API. But now I've hit this road block.
-
- I don't see any official Rails support. I only require c2d messaging 
-
-The only other way I can think of with my limited knowledge is to deploy a small Python/Flask app on the same server and have my Rails code make HTTP requests to it, locally. 
-
-My question : Is this a bad approach? If yes, is there a better one? 
-
-Because I imagine this being a common problem, where some small functionality doesn't have a gem, and is only available in other languages officially.
-## [12][How to read in .gifv files into Active Storage](https://www.reddit.com/r/rails/comments/gaeg79/how_to_read_in_gifv_files_into_active_storage/)
-- url: https://www.reddit.com/r/rails/comments/gaeg79/how_to_read_in_gifv_files_into_active_storage/
----
-I'm trying to load a bunch of .gifv files into Active storage, but I can't seem to figure out how to go about doing this.  I have a solution for .gif:
-
-    image.picture_img.attach(io: open(img_picture), filename: "#{img_name}.gif", content_type: "image/gif")
-
-But the same thing doesn't work when I change .gif to .gifv
-
-Any ideas?

@@ -1,6 +1,54 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (April 2020)](https://www.reddit.com/r/reactjs/comments/fsqgep/beginners_thread_easy_questions_april_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/fsqgep/beginners_thread_easy_questions_april_2020/
+## [1][Who's Available? [April 2020]](https://www.reddit.com/r/reactjs/comments/g24x22/whos_available_april_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/g24x22/whos_available_april_2020/
+---
+We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
+If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
+
+---
+
+If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
+because Automods bot is not perfect :)
+
+---
+
+Top Level comments must be Agencies and React Devs available for contract/permanent work.
+
+Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+
+## (Fulltime | Contract | USA | Remote)
+
+or
+
+## (Agency | Europe | Remote)
+
+Then we recommend adding a 2-3 sentence bio as well.
+
+Not required, but may help:
+
+- Link to Github/Portfolio
+- Notable [r/reactjs][r/reactjs] submissions
+- Preferred stack
+- Former companies or clients
+- Design or backend dev experience
+- anything else you consider relevant. Put on your best show!
+- Listing years of experience NOT required, it's a poor metric
+
+If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
+**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
+
+For more ideas on what to include, look at the [last Who's Available posts][available:last month].
+
+If you just want some portfolio feedback, check the stickied post below.
+
+Good luck! #WriteOnceApplyEverywhere
+
+[r/reactjs]: https://www.reddit.com/r/reactjs/
+[available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
+[hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
+[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
+## [2][Beginner's Thread / Easy Questions (May 2020)](https://www.reddit.com/r/reactjs/comments/gb541i/beginners_thread_easy_questions_may_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/gb541i/beginners_thread_easy_questions_may_2020/
 ---
 You can find [previous threads][wiki previous threads] in the wiki.
 
@@ -61,159 +109,147 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Available? [April 2020]](https://www.reddit.com/r/reactjs/comments/g24x22/whos_available_april_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/g24x22/whos_available_april_2020/
----
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
-
+## [3][Twitter clone using the RPG🚀stack](https://www.reddit.com/r/reactjs/comments/gbg0k2/twitter_clone_using_the_rpgstack/)
+- url: https://v.redd.it/ipkotxrqw4w41
 ---
 
-If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
-because Automods bot is not perfect :)
-
+## [4][I'v made this Facebook-like reaction bar using ReactJS](https://www.reddit.com/r/reactjs/comments/gb02e4/iv_made_this_facebooklike_reaction_bar_using/)
+- url: https://v.redd.it/r42cx2w3pzv41
 ---
 
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
+## [5][react-style-system - my NEW CSS-in-JS lib with static CSS support!](https://www.reddit.com/r/reactjs/comments/gbh53t/reactstylesystem_my_new_cssinjs_lib_with_static/)
+- url: https://www.reddit.com/r/reactjs/comments/gbh53t/reactstylesystem_my_new_cssinjs_lib_with_static/
+---
+Today I released the initial version of my CSS-in-JS lib!
 
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+I've been working on this in my free time since early February and I would love your feedback on it!
 
-## (Fulltime | Contract | USA | Remote)
+Disclaimer: this project is still very young.
 
-or
+Links:
 
-## (Agency | Europe | Remote)
+- [repo + README](https://github.com/ricokahler/react-style-system)
+- [Why another CSS-in-JS lib?](https://github.com/ricokahler/react-style-system/blob/master/why-another-css-in-js-lib.md)
 
-Then we recommend adding a 2-3 sentence bio as well.
+Features:
 
-Not required, but may help:
+- 🎣 hooks API
+- 👩‍🎨 theming
+- 🎨 advanced color context features including dark mode
+- 🧩 composable styles by default
+- 📦 small size, 6.7kB
 
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
+Experimental features:
 
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-If you just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
-[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Performance Optimization in React Context](https://www.reddit.com/r/reactjs/comments/garr85/performance_optimization_in_react_context/)
-- url: https://saul-mirone.github.io/performance-optimization-in-react-context/
+- static and extracted CSS
+- SSR support
+- much smaller bundle 1.8kB
+## [6][A visual guide to React Mental models](https://www.reddit.com/r/reactjs/comments/gbhtep/a_visual_guide_to_react_mental_models/)
+- url: https://obedparla.com/code/a-visual-guide-to-react-mental-models/
 ---
 
-## [4][How to use React Ref](https://www.reddit.com/r/reactjs/comments/garf15/how_to_use_react_ref/)
-- url: https://www.robinwieruch.de/react-ref
+## [7][Passing context info after server request](https://www.reddit.com/r/reactjs/comments/gbfu1a/passing_context_info_after_server_request/)
+- url: https://www.reddit.com/r/reactjs/comments/gbfu1a/passing_context_info_after_server_request/
+---
+**Let's say I have a context component that sets the isLoggedIn state to true if the server request was successful, and it wraps the App component**
+
+    function Context(){
+      const [isLoggedIn, setIsLoggedIn] = useState(false)
+        useEffect(() =&gt; {
+         // server request
+        setIsLoggedIn(true) // if successful request
+        }, [])
+    }
+
+**The App component receives isLoggedIn from context and displays users profile component if the user is logged in and if not it redirects to "/"**
+ 
+    function App() {
+
+      const {isLoggedIn} = useContext(Context)
+
+      return (
+        &lt;div&gt;
+
+         &lt;Switch&gt;
+           &lt;Route exact path="/profile&gt; {isLoggedIn ? &lt;MyProfile /&gt; : &lt;Redirect to="/" /&gt;} &lt;/Route&gt;
+         &lt;/Switch&gt;
+        
+       &lt;/div&gt;
+      )
+    }
+
+**However because the server request takes a while it will never display the profile page, how can I make it wait or solve this problem another way?**
+## [8][Learn how to build appbar/navigation bar with Material UI](https://www.reddit.com/r/reactjs/comments/gbg7kw/learn_how_to_build_appbarnavigation_bar_with/)
+- url: https://youtu.be/3v-TBbvgZLg
 ---
 
-## [5][Is there demand for React developers?](https://www.reddit.com/r/reactjs/comments/gasb2z/is_there_demand_for_react_developers/)
-- url: https://www.reddit.com/r/reactjs/comments/gasb2z/is_there_demand_for_react_developers/
----
-Hi guys, I am a newbie in webdev. I've covered the basics of HTML, CSS and JS. And now I am trying to find some practice projects. I am seeing that it's hard to find projects with this "Level 2" skillset.  
-
-
-I am feeling the need to start learning one of the frameworks. React seems like a logical choice. 
-
-Could you please help me understand whether there's good demand for Junior React devs? 
-
-(I currently work as a copywriter in IT/webdev and make around 30$/day. I work around 5-6 hours. I pla to study React for 2-3 months and start looking for unpaid apprenticeships to continue growing.)
-## [6][The easiest way to learn &amp; practice modern JavaScript step by step !](https://www.reddit.com/r/reactjs/comments/gaah7u/the_easiest_way_to_learn_practice_modern/)
-- url: https://learnjavascript.online
+## [9][How Our Stack Evolved in 10 Years](https://www.reddit.com/r/reactjs/comments/gb1l22/how_our_stack_evolved_in_10_years/)
+- url: https://stack-stack-stack.s3.ca-central-1.amazonaws.com/stack.htm
 ---
 
-## [7][How to build a Gatsby website with Google Sheets](https://www.reddit.com/r/reactjs/comments/gaspg5/how_to_build_a_gatsby_website_with_google_sheets/)
-- url: https://medium.com/@iliashaddad/how-to-build-a-gatsby-website-with-google-sheets-7dc292af537e
+## [10][Private Route with Redux](https://www.reddit.com/r/reactjs/comments/gbfu9v/private_route_with_redux/)
+- url: https://www.reddit.com/r/reactjs/comments/gbfu9v/private_route_with_redux/
+---
+I am trying to create a private route which checks user authentication. But the Private route renders before data from redux Is updated. The component has like isauthenticated variable which eventually updates to true but the component renders &lt;Redirect to="/login" /&gt; first before it gets updated.
+As the redux has its value as false at 1st render.
+
+            
+const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) =&gt;{
+    return(
+        
+        &lt;Route {...rest} render={
+            (props) =&gt; {
+                if(isAuthenticated) { 
+                 return &lt;Component {...props}/&gt;
+                }else{
+                    return &lt;Redirect to="/login"/&gt;
+                }
+                
+            }
+        }/&gt;
+    )
+}
+
+const mapStateToProps = state =&gt;{
+    return{
+        isAuthenticated: state.token !== null
+    }
+}
+
+export default connect(mapStateToProps, null)(PrivateRoute)
+
+
+my private route component above
+## [11][I recently learnt Redux and wanted to build something interesting using it. So I made this Memeter app where people can rate and share memes. Hope you guys like it. I am just a beginner right now.](https://www.reddit.com/r/reactjs/comments/gbh2o3/i_recently_learnt_redux_and_wanted_to_build/)
+- url: http://memeterapp.web.app
 ---
 
-## [8][Ontario Services](https://www.reddit.com/r/reactjs/comments/gavoc3/ontario_services/)
-- url: https://ontario-services.herokuapp.com
+## [12][Displaying embedded html in string with FormattedMessage](https://www.reddit.com/r/reactjs/comments/gbh25q/displaying_embedded_html_in_string_with/)
+- url: https://www.reddit.com/r/reactjs/comments/gbh25q/displaying_embedded_html_in_string_with/
 ---
+We have recently updated our websites's npm packages (react-intl version 4.5.1). The problem is, that we used FormattedHTMLMessage to display embedded html in the string. However, this doesn't seem to be working anymore. Now I was wondering if you could accomplish something similar in another way or if it it somehow possible to do with the FormattedMessage component instead of the FormattedHTMLMessage component.
 
-## [9][Refresh Token workflow + Saga?](https://www.reddit.com/r/reactjs/comments/gavc0o/refresh_token_workflow_saga/)
-- url: https://www.reddit.com/r/reactjs/comments/gavc0o/refresh_token_workflow_saga/
----
-Hello all,
+This is the code:
 
-I'm in charge of updating a medium sized Angular project, but after some years working on Angular, I decided to replace all for React, as we'll need to support some mobile apps in React Native, and I think that is good to have a team focused in one library/framework.
+ 
 
-I'm using React with typescript, redux and saga and axios for communication with the backend. Everything is flowing fast and better than Angular, but now I have some problems implementing a refresh of a session token, as I can't (or can I?) access the dispatch inside the axios's response interceptor. Maybe I misunderstood some concept or I'm trying to do something wrong.
+    import React from "react";
+    import { FormattedMessage as FM, FormattedHTMLMessage as FHM } from "react-intl";
+    
+    export default props =&gt; { 
+        return(
+        	...
+            &lt;p className="fs-18 white-space-pre-line"&gt;
+                &lt;FM id={props.descriptionKey} /&gt;
+            &lt;/p&gt;
+            ...
+        );
+    };
 
-Today my architecture is based on sagas that receive actions and call "services" that use axios to communicate with the API. So any axios request is done inside sagas.
+&amp;#x200B;
 
-The flow I'm using for the session refresh is as shown in [this article](https://www.techynovice.com/setting-up-JWT-token-refresh-mechanism-with-axios/), but the problem is that when the refresh throws an error, I want to logout the user and redirect to login.  
-The authentication flow is done on the saga, and I don't known any way to dispatch the action from the axios interceptor, so I have a /logout route that I use to display nothing but send the action for me (shame).  
-Someone know if is possible to intercept this api errors in saga and do the refresh flow there, or any other way more correct?
+The json file looks something like this: 
 
-Thank you!
-## [10][Can't setup my jsconfig.json to make relative path to be working](https://www.reddit.com/r/reactjs/comments/gauopi/cant_setup_my_jsconfigjson_to_make_relative_path/)
-- url: https://www.reddit.com/r/reactjs/comments/gauopi/cant_setup_my_jsconfigjson_to_make_relative_path/
----
-So I followed those docs but it's not working...
+    textDescription: "Sometext &lt;span class='font-tilde-bold h3'&gt;Sometext&lt;/span&gt; Sometext"
 
-[https://create-react-app.dev/docs/importing-a-component/#absolute-imports](https://create-react-app.dev/docs/importing-a-component/#absolute-imports)
-
-[https://code.visualstudio.com/docs/languages/jsconfig](https://code.visualstudio.com/docs/languages/jsconfig)
-
-\-&gt; Firstly I still don't understand if i need to put my **jsconfig.json** file under:
-
-1. **/project\_folder/jsconfig.json** (same level as **node\_modules**)  
-or
-2. **/project\_folder/src/jsconfig.json** (sale level as main **index.js**)
-
-Here is the content of my file:
-
-`{`  
- `"compilerOptions": {`  
- `"baseUrl": "src"`  
-`},`  
- `"include": ["src"]`  
-`}`
-
-When it's set up in my **project\_folder (1.)**, I have this error in vscode:
-
-**File '\[BASE PATH FROM ROOT MACHINE\]/project\_folder/node\_modules/dropbox/src/index.js' not found.** (it does exists though...)
-
-If i put it in the **src** folder **(2.)** i have no syntax error but it's just not working when trying to import with relative path.
-
-What I have done wrong ?
-## [11][What is the industry standard for creating admin panels in React applications?](https://www.reddit.com/r/reactjs/comments/gafk3g/what_is_the_industry_standard_for_creating_admin/)
-- url: https://www.reddit.com/r/reactjs/comments/gafk3g/what_is_the_industry_standard_for_creating_admin/
----
-Fairly new to building apps, especially their backend. I just got started with my first React/Firebase app.
-
-My app will be a platform where clients can book services and merchants can offer their services. Before allowing merchants to offer their services, I'd like to create an admin panel so that I can approve or reject merchants.
-
-So far I already have an app with two different UI, one for the client and another for the merchant. I am now in doubt about the admin panel.
-
-So far I've thought of 3 different solutions, but I am not sure they go in line with industry standards:
-
-1. Build, in the same app, another route for an admin panel?
-2. Use another domain name to log in as the admin?
-3. Build a differente react app that uses the same database to approve/reject merchants?
-
-Examples are welcome. I am not very familiar with how to deal with domain names too, but I see a lot of, e.g. 'bbc.co.uk' and something like 'admin.bbc.co.uk', and thought that could be a solution
-## [12][How to get my first ReactJS job?](https://www.reddit.com/r/reactjs/comments/gau7v1/how_to_get_my_first_reactjs_job/)
-- url: https://www.reddit.com/r/reactjs/comments/gau7v1/how_to_get_my_first_reactjs_job/
----
-I'm in Singapore, with over 20 years of IT experience from the days of C/C++ to Java (enterprise softwares, embedded devices, Android, etc) until recently to JavaScript and web programming. I haven't been able to get a programming job in Singapore for years (got tiny projects from overseas).
-
-Yes, it's my own fault for not spending time publishing to GitHub. I will change that. But I need some guidance desperately. However, I am very experienced with build tools, DevOps and anything technical like that. **I just don't have the public credentials, nor the practice now!**
-
-I'm running out of money to even study up on ReactJS now, let alone to build my own pet project with ReactJS.
-
-How do I get my first job doing ReactJS? I don't care if it's an internship. I want it. I've applied to Facebook Singapore, but I'm real about *not* being able to get it.
-
-If I *am* to starve to death, I would rather die trying. **Where do I contribute ReactJS codes to at least die doing ReactJS?**
-
-**UPDATE**: I'm currently blazing through freecodecamp.org. Hopefully it could land me in Microsoft or something.
+Now I am just passing the string of the json file to the component and inserting it and it will just display the html elements in the text.

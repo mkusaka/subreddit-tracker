@@ -119,11 +119,47 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Microsoft - Pure Virtual C++ Conference 2020 starting in 3h](https://www.reddit.com/r/cpp/comments/gatmwj/microsoft_pure_virtual_c_conference_2020_starting/)
+## [3][Useful tools for checking and fixing C/C++ code](https://www.reddit.com/r/cpp/comments/gb3gdy/useful_tools_for_checking_and_fixing_cc_code/)
+- url: https://github.com/qarmin/Instrukcje-i-Tutoriale/blob/master/AnalizatoryCC%2B%2BENG.md#useful-tools-for-checking-and-fixing-cc-code-and-others-languages-too
+---
+
+## [4][CppCast: Envoy Proxy](https://www.reddit.com/r/cpp/comments/gbbcnt/cppcast_envoy_proxy/)
+- url: https://cppcast.com/matt-klein-envoy/
+---
+
+## [5][Microsoft - Pure Virtual C++ Conference 2020 starting in 3h](https://www.reddit.com/r/cpp/comments/gatmwj/microsoft_pure_virtual_c_conference_2020_starting/)
 - url: https://www.youtube.com/watch?v=c1ThUFISDF4
 ---
 
-## [4][We're welcoming you to CoreCpp!](https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/)
+## [6][U++ vs wxWidgets vs Qt. Best C++ GUI.](https://www.reddit.com/r/cpp/comments/gb5shc/u_vs_wxwidgets_vs_qt_best_c_gui/)
+- url: https://www.reddit.com/r/cpp/comments/gb5shc/u_vs_wxwidgets_vs_qt_best_c_gui/
+---
+Hello, I've been trying to figure out which is better, wxWidgets, U++ or Qt. I'm using C++ and I really think U++ is better but I'm not sure and would love any info. I prefer a fully open source GUI library. Also is there a/more of a learning curve to any in particular?
+
+Thank you for your time.
+## [7][Creating Node Addons with C++ and Bazel](https://www.reddit.com/r/cpp/comments/gbbzq1/creating_node_addons_with_c_and_bazel/)
+- url: https://www.syntaxsuccess.com/viewarticle/creating-node-addons-with-c-plus-plus-and-bazel
+---
+
+## [8][Convert bytes to object - memcpy vs reinterpret_cast: which is preferred?](https://www.reddit.com/r/cpp/comments/gb2oz1/convert_bytes_to_object_memcpy_vs_reinterpret/)
+- url: https://www.reddit.com/r/cpp/comments/gb2oz1/convert_bytes_to_object_memcpy_vs_reinterpret/
+---
+I'm refactoring some code which reads from a binary file straight into C++ objects.  Already not how I would do things (I'd use a defined file format, not dependent on class memory layout), but I'm stuck with how they did things.  What I can do is refactor to separate the "reads from a file" concern from the "parses a binary format" and unit test the latter on mock buffers.
+
+So the original code did stuff like:  `file.read(&amp;file_header_obj, sizeof(FILE_HEADER_OBJ));` and I want to change it to read out of an in-memory buffer of bytes instead.
+
+What is the more correct replacement in modern C++?
+
+    memcpy(&amp;file_header_obj, &amp;buffer[0], sizeof(FILE_HEADER_OBJ));
+
+or
+
+    file_header_obj = *reinterpret_cast&lt;FILE_HEADER_OBJ*&gt;(&amp;buffer[0]);
+## [9][Interview about Qt open source licenses with KDAB CEO](https://www.reddit.com/r/cpp/comments/gaz9d7/interview_about_qt_open_source_licenses_with_kdab/)
+- url: https://www.youtube.com/watch?v=PG0zCoK2X6o
+---
+
+## [10][We're welcoming you to CoreCpp!](https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/)
 - url: https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/
 ---
 Our next ONLINE meetup is taking place on Tuesday the 5.5.20 16:00 UTC,
@@ -142,73 +178,11 @@ Zoom link: [https://zoom.us/j/385718143](https://zoom.us/j/385718143)
 JOIN US! :)
 
 &amp;#x200B;
-## [5][Real time 101 - David Rowland &amp; Fabian Renn Giles - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gatcll/real_time_101_david_rowland_fabian_renn_giles/)
+## [11][Real time 101 - David Rowland &amp; Fabian Renn Giles - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gatcll/real_time_101_david_rowland_fabian_renn_giles/)
 - url: https://youtu.be/ndeN983j_GQ
 ---
 
-## [6][Combining C++ with JavaScript](https://www.reddit.com/r/cpp/comments/gamm54/combining_c_with_javascript/)
-- url: https://www.syntaxsuccess.com/viewarticle/combining-c-plus-plus-with-javascript
+## [12][Freud: a tool to create Performance Annotations for C &amp; C++ programs](https://www.reddit.com/r/cpp/comments/gazrz8/freud_a_tool_to_create_performance_annotations/)
+- url: https://github.com/usi-systems/freud
 ---
 
-## [7][Professional CMake: A Practical Guide 6th Edition - Crascit](https://www.reddit.com/r/cpp/comments/ga82io/professional_cmake_a_practical_guide_6th_edition/)
-- url: https://crascit.com/professional-cmake/release-notes/6th-edition/
----
-
-## [8][A proof of concept C++20 type-safe variadic argument array creation function (using C++20 Concepts and Variadic Templates):](https://www.reddit.com/r/cpp/comments/gaj1u1/a_proof_of_concept_c20_typesafe_variadic_argument/)
-- url: https://gist.github.com/richardrobinson0924/f8a845af530e13f026353eb5a17f6e85
----
-
-## [9][xmake v2.3.3 released, Support for building iOS MacOS Framework and App](https://www.reddit.com/r/cpp/comments/galzio/xmake_v233_released_support_for_building_ios/)
-- url: https://github.com/xmake-io/xmake/wiki/xmake-v2.3.3-released,-Support-for-building-iOS-MacOS-Framework-and-App
----
-
-## [10][C++ London goes online](https://www.reddit.com/r/cpp/comments/ga8yhs/c_london_goes_online/)
-- url: https://www.reddit.com/r/cpp/comments/ga8yhs/c_london_goes_online/
----
-Like many meet-ups, C++ London is responding to the lockdown and social distancing measures by moving online. In fact it's a little late to the party as, early on, I felt that an online meet-up would miss too much of what makes an in person meet-up so valuable. After all, you can watch many of the same talks on YouTube anyway.
-
-In-person meet-ups are all about getting people together in one place, giving them something to talk about - then giving space for that to happen. It's also about interaction with speakers - whether in the talk itself, or afterwards.
-
-I wanted to try and recapture as much of that as possible. It's never going to be the same, but I think we can still make it worthwhile.
-
-So, for the [next C++ London (tonight - 19:00 BST)](https://www.meetup.com/CppLondon/events/270022408/) we have three components:
-
-1. A live YouTube stream of the presentations.
-2. A [sli.do](https://sli.do) site for asking (and voting on) questions, as well as polls.
-3. A set of video conferencing rooms (on [Jitsi](https://meet.jit.si/)) for the audience (and later the speaker(s)) to hang out, network, start discussions, etc. Drinks are optional.
-
-The last part is the biggest part of the experiment. video conferenced social discussions don't tend to scale very well with large numbers of people (even in a business environment they need to be strictly hosted). Technologically, the free Jitsi instance doesn't cope well with lots of people in a room either. I've found that 8-10 is about the max. That's why I'm providing multiple parallel rooms. If one is too crowded, or you don't think the discussion of interesting, hop to another. Will that work? I don't know. Let's try it!
-
-I've tried to make this all as easy as possible[. I've created a single page](https://live.cpplondon.org) that aggregates all these services together (just using iframes). So you go to one place and can follow the whole thing there. To jump between Jitsi rooms you just press a room number!
-
-If you do want to follow one of the services on the first party site, I've made that easy too, with an "open externally" button on each section.
-
-For best results put your browser full screen, then zoom out (or in) until you get the bottom two frames side-by-side (or, if you have multiple monitors, use the external sites feature for a more custom arrangement).
-
-As I say, this is a big experiment, so I'm keen to hear what you think. [Do join us if you can](https://www.meetup.com/CppLondon/events/270022408/). I'm happy to share any of what I'm doing behind the scenes with any other group organisers who want to try something similar.
-## [11][List vs array](https://www.reddit.com/r/cpp/comments/gatj53/list_vs_array/)
-- url: https://www.reddit.com/r/cpp/comments/gatj53/list_vs_array/
----
-I don't quite understand the idea behind difference of lists &amp; arrays. For me they are the same bunches of variables. Every time I try to google it I find comparisons of vectors and linked lists and so on, but these things I actually understand. I don't understand why you name some bunches of variables lists and some arrays.  
-Also I thought that dynamic array is any bunch of variables that can change it's size, but it turns out that it's a very specific bunch of variables, and vectors are not dynamic arrays. Why?
-## [12][cpp reading material on template meta-programming for c+17](https://www.reddit.com/r/cpp/comments/gafxv3/cpp_reading_material_on_template_metaprogramming/)
-- url: https://www.reddit.com/r/cpp/comments/gafxv3/cpp_reading_material_on_template_metaprogramming/
----
-I'm wanting to learn more about c++ template metaprogramming.
-
-I'm aware of these two books:
-
-[Modern C++ Design: Generic Programming and Design Patterns Applied
-](https://www.amazon.ca/Modern-Design-Generic-Programming-Patterns/dp/0201704315)
-
-[C++ Templates: The Complete Guide \(2nd Edition\)](https://www.amazon.ca/C-Templates-Complete-Guide-2nd/dp/0321714121)
-
-I also found this post:
-
-https://www.reddit.com/r/cpp/comments/52fqhk/someone_needs_to_write_a_book_on_modern_c/
-
-But it's 3 years old.
-
-I'm asking here because my concern is I read the two books above, and big chunks of them will be obsolete because the language evolved to remove the need for "hacks" not present at the time of writing. I may be wrong in this, if so, please set me straight. If you agree, please let me know what you think the best course of action is.
-
-I appreciate I may not always work on &gt; c+17, and that the historical context is useful, however time is finite and I want to try to learn the most applicable stuff.

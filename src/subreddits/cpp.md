@@ -119,70 +119,129 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Useful tools for checking and fixing C/C++ code](https://www.reddit.com/r/cpp/comments/gb3gdy/useful_tools_for_checking_and_fixing_cc_code/)
+## [3][Friend, private function, template alias, and decltype… is clang correct in rejecting this?](https://www.reddit.com/r/cpp/comments/gc54yi/friend_private_function_template_alias_and/)
+- url: https://www.reddit.com/r/cpp/comments/gc54yi/friend_private_function_template_alias_and/
+---
+*Disclaimer: this is a question I submitted to Stack Overflow a week ago [see here](https://stackoverflow.com/q/61410959/147192), and for which I am surprised not to have received any answer yet.*
+
+The following code compiles with GCC 7.x, 8.x, and 9.x, but fails to compile with Clang:
+
+    #include &lt;utility&gt;
+
+    struct Friend {
+        class Inner {
+            friend struct Friend;
+
+            int function() { return 0; }
+        };
+
+        using DirectResult = decltype(std::declval&lt;Inner&gt;().function());
+
+        template &lt;typename T&gt;
+        using IndirectResult = decltype(std::declval&lt;T&gt;().function());
+    };
+
+    int main() {
+        Friend::DirectResult direct{};
+        Friend::IndirectResult&lt;Friend::Inner&gt; indirect{};
+        return direct + indirect;
+    }
+
+You can view the failure [on godbolt](https://godbolt.org/z/uy-zVs):
+
+    &lt;source&gt;:13:55: error: 'function' is a private member of 'Friend::Inner'    
+        using IndirectResult = decltype(std::declval&lt;T&gt;().function());
+                                                          ^
+    &lt;source&gt;:18:13: note: in instantiation of template type alias 'IndirectResult' requested here
+        Friend::IndirectResult&lt;Friend::Inner&gt; indirect{};
+                ^
+
+Clang does not complain about `DirectResult` accessing the privates of `Inner`, but complains about `IndirectResult` doing so. Various variations lead to different results.
+
+It was brought to my attention that this seems similar to [this Clang bug](https://bugs.llvm.org/show_bug.cgi?id=25334), filed 5 years ago, and still unanswered.
+
+As a result, I still haven't figured out whether my code is **correct or not** according to the standard, and I would appreciate help in elucidating this mystery.
+## [4][CrustyAuklet/bitpacker - type safe and low-boilerplate bit level serialization using modern C++. Compatible with python bitstruct.](https://www.reddit.com/r/cpp/comments/gbxuym/crustyaukletbitpacker_type_safe_and/)
+- url: https://github.com/CrustyAuklet/bitpacker
+---
+
+## [5][fuser: ultra-minimal single-file header-only library for automatic (de)serialization of C++ types to/from JSON using boost fusion pseudo-reflection](https://www.reddit.com/r/cpp/comments/gbj5wu/fuser_ultraminimal_singlefile_headeronly_library/)
+- url: https://github.com/Xeverous/fuser
+---
+
+## [6][Making a STL-compatible hash map from scratch - Part 3 - The wonderful world of iterators and allocators](https://www.reddit.com/r/cpp/comments/gbm4v8/making_a_stlcompatible_hash_map_from_scratch_part/)
+- url: https://jguegant.github.io/blogs/tech/dense-hash-map3.html
+---
+
+## [7][Backtracking Algorithm Roster/Competition football games in Premier League](https://www.reddit.com/r/cpp/comments/gc6auz/backtracking_algorithm_rostercompetition_football/)
+- url: https://www.reddit.com/r/cpp/comments/gc6auz/backtracking_algorithm_rostercompetition_football/
+---
+Hello fellow Computer Scientists,  
+
+
+I need some insights, pseudocode, or general help with my algorithm for making a competition for a football league. For example Premier League. Every week clubs play each other. I am responsible for making an algorithm that succesfully makes a roster for all these clubs so that every club plays each other once, and every club plays the same amount of homegames and outgames.  
+
+
+It also has a few constrains that for example 2 clubs that come from the same city aren't allowed to play 2 homegames in the same week. For example Manchester City and Manchester United aren't allowed to play 2 home-games in Week 7. I have to take this into account in my algorithm.  
+
+
+The algorithm should be a backtracking algorithm. Anyone wants to help me out a bit? I have started but I think I'm doing it way to complicated.
+## [8][Renaming *_default_init to *_for_overwrite](https://www.reddit.com/r/cpp/comments/gc2vox/renaming_default_init_to_for_overwrite/)
+- url: https://wg21.link/P1973R1
+---
+
+## [9][Simple command-line task prioritizer](https://www.reddit.com/r/cpp/comments/gc4t2m/simple_commandline_task_prioritizer/)
+- url: https://github.com/hoang-khoi/tksort
+---
+
+## [10][Bug in Clang &amp; MSVC regarding initializer_list](https://www.reddit.com/r/cpp/comments/gbntov/bug_in_clang_msvc_regarding_initializer_list/)
+- url: https://www.reddit.com/r/cpp/comments/gbntov/bug_in_clang_msvc_regarding_initializer_list/
+---
+Original thread: [https://www.reddit.com/r/cpp\_questions/comments/gbjikq/a\_piece\_of\_code\_is\_accepted\_by\_clang\_but\_not\_by](https://www.reddit.com/r/cpp_questions/comments/gbjikq/a_piece_of_code_is_accepted_by_clang_but_not_by)
+
+I now played around a bit with the code and it looks like that Clang and MSVC don't select the right constructor when using braced initialization lists with non-aggregates (see code below).
+
+But this also makes me wonder how can it be that there is such a bug in the first place. initializer\_list has been around for a good while and the code below should be rather common based on the assumption that people actually use initializer\_list and braced init lists. I'm curious, do you use std::intializer\_list in your APIs? Are you satisfied with this feature?
+
+I don't use it. Tried it once it became available and never found a use case that would give initializer\_list enough relevance to incorporate it in an API. As for the second question: No idea as I don't really use it. The rules surrounding it are at least quirky I find.
+
+[https://gcc.godbolt.org/z/K78QJk](https://gcc.godbolt.org/z/K78QJk)
+
+    #include &lt;vector&gt;
+    
+    using namespace std;
+    
+    struct foo
+    {
+        template&lt;class F&gt;
+        foo(F f)
+        {
+            /*
+            Aggregates copy/move initialize directly from single-element
+            braced-init-lists of the same type, but non-aggregates consider
+            initializer_list constructors first.
+            
+            So the compiler should fail here.
+            */
+            static_assert(!is_same&lt;F,vector&lt;foo&gt;&gt;::value);
+        }
+    };
+    
+    vector&lt;foo&gt; v{vector&lt;foo&gt;()}; // triggers static_assert in gcc only, not in clang, msvc
+    
+    struct bar
+    {
+        vector&lt;foo&gt; v;
+    
+        bar(bar &amp;other) 
+        :   v{other.v} // triggers static_assert in gcc and msvc, not in clang
+        {}
+    };
+## [11][tfds - fast data structures in C++ (actually working this time)](https://www.reddit.com/r/cpp/comments/gbyujn/tfds_fast_data_structures_in_c_actually_working/)
+- url: https://github.com/Ginxss/tfds
+---
+
+## [12][Useful tools for checking and fixing C/C++ code](https://www.reddit.com/r/cpp/comments/gb3gdy/useful_tools_for_checking_and_fixing_cc_code/)
 - url: https://github.com/qarmin/Instrukcje-i-Tutoriale/blob/master/AnalizatoryCC%2B%2BENG.md#useful-tools-for-checking-and-fixing-cc-code-and-others-languages-too
----
-
-## [4][CppCast: Envoy Proxy](https://www.reddit.com/r/cpp/comments/gbbcnt/cppcast_envoy_proxy/)
-- url: https://cppcast.com/matt-klein-envoy/
----
-
-## [5][Microsoft - Pure Virtual C++ Conference 2020 starting in 3h](https://www.reddit.com/r/cpp/comments/gatmwj/microsoft_pure_virtual_c_conference_2020_starting/)
-- url: https://www.youtube.com/watch?v=c1ThUFISDF4
----
-
-## [6][U++ vs wxWidgets vs Qt. Best C++ GUI.](https://www.reddit.com/r/cpp/comments/gb5shc/u_vs_wxwidgets_vs_qt_best_c_gui/)
-- url: https://www.reddit.com/r/cpp/comments/gb5shc/u_vs_wxwidgets_vs_qt_best_c_gui/
----
-Hello, I've been trying to figure out which is better, wxWidgets, U++ or Qt. I'm using C++ and I really think U++ is better but I'm not sure and would love any info. I prefer a fully open source GUI library. Also is there a/more of a learning curve to any in particular?
-
-Thank you for your time.
-## [7][Creating Node Addons with C++ and Bazel](https://www.reddit.com/r/cpp/comments/gbbzq1/creating_node_addons_with_c_and_bazel/)
-- url: https://www.syntaxsuccess.com/viewarticle/creating-node-addons-with-c-plus-plus-and-bazel
----
-
-## [8][Convert bytes to object - memcpy vs reinterpret_cast: which is preferred?](https://www.reddit.com/r/cpp/comments/gb2oz1/convert_bytes_to_object_memcpy_vs_reinterpret/)
-- url: https://www.reddit.com/r/cpp/comments/gb2oz1/convert_bytes_to_object_memcpy_vs_reinterpret/
----
-I'm refactoring some code which reads from a binary file straight into C++ objects.  Already not how I would do things (I'd use a defined file format, not dependent on class memory layout), but I'm stuck with how they did things.  What I can do is refactor to separate the "reads from a file" concern from the "parses a binary format" and unit test the latter on mock buffers.
-
-So the original code did stuff like:  `file.read(&amp;file_header_obj, sizeof(FILE_HEADER_OBJ));` and I want to change it to read out of an in-memory buffer of bytes instead.
-
-What is the more correct replacement in modern C++?
-
-    memcpy(&amp;file_header_obj, &amp;buffer[0], sizeof(FILE_HEADER_OBJ));
-
-or
-
-    file_header_obj = *reinterpret_cast&lt;FILE_HEADER_OBJ*&gt;(&amp;buffer[0]);
-## [9][Interview about Qt open source licenses with KDAB CEO](https://www.reddit.com/r/cpp/comments/gaz9d7/interview_about_qt_open_source_licenses_with_kdab/)
-- url: https://www.youtube.com/watch?v=PG0zCoK2X6o
----
-
-## [10][We're welcoming you to CoreCpp!](https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/)
-- url: https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/
----
-Our next ONLINE meetup is taking place on Tuesday the 5.5.20 16:00 UTC,
-
-and we welcome you all to join us!
-
-We will start with a great talk about std::tuple by Noam Weiss, followed by a Show and Tell lightning talks section, in which you will be able to present.
-
-  
-Meetup event: [https://www.meetup.com/CoreCpp/events/270021047/](https://www.meetup.com/CoreCpp/events/270021047/)
-
-Zoom link: [https://zoom.us/j/385718143](https://zoom.us/j/385718143)
-
-&amp;#x200B;
-
-JOIN US! :)
-
-&amp;#x200B;
-## [11][Real time 101 - David Rowland &amp; Fabian Renn Giles - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gatcll/real_time_101_david_rowland_fabian_renn_giles/)
-- url: https://youtu.be/ndeN983j_GQ
----
-
-## [12][Freud: a tool to create Performance Annotations for C &amp; C++ programs](https://www.reddit.com/r/cpp/comments/gazrz8/freud_a_tool_to_create_performance_annotations/)
-- url: https://github.com/usi-systems/freud
 ---
 

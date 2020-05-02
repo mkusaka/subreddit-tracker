@@ -22,7 +22,101 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Purify 0.15 released! - A Functional programming library for TypeScript](https://www.reddit.com/r/typescript/comments/gb0qhw/purify_015_released_a_functional_programming/)
+## [2][I reverse engineered a npm registry from scratch. It is written entirely in TypeScript and has a low amount of dependencies.](https://www.reddit.com/r/typescript/comments/gc3q61/i_reverse_engineered_a_npm_registry_from_scratch/)
+- url: https://github.com/Tanuel/baggy
+---
+
+## [3][Using Typescript in a Javascript React app](https://www.reddit.com/r/typescript/comments/gc6h9o/using_typescript_in_a_javascript_react_app/)
+- url: https://www.reddit.com/r/typescript/comments/gc6h9o/using_typescript_in_a_javascript_react_app/
+---
+I have a React app written entirely in Javascript. I want to start using Typescript but I don't want to go back and convert any of my old code to TS. The app is too large. I'd like to only use TS moving forward.
+
+Are there any guides on how I can set this up? I use webpack.
+## [4][Why am I getting this TS error?](https://www.reddit.com/r/typescript/comments/gbpqiy/why_am_i_getting_this_ts_error/)
+- url: https://i.redd.it/un2hvbg4r7w41.png
+---
+
+## [5][Open Source Typescript Express projects](https://www.reddit.com/r/typescript/comments/gc4xe3/open_source_typescript_express_projects/)
+- url: https://www.reddit.com/r/typescript/comments/gc4xe3/open_source_typescript_express_projects/
+---
+Hello, I've been learning Typescript recently and decided to try to implement what I've learning in a new project.
+
+I would like to have a look at some major projects in Typescript Express so that I can catch some best practices, design patterns, etc.
+
+I'd appreciate if anyone could share links to some open source projects/companies that used these technologies for their product.
+## [6][The Jupiter (YC S19) Stack - From TypeScript to Kubernetes and back — how we write, build, and push code at Jupiter](https://www.reddit.com/r/typescript/comments/gbl21c/the_jupiter_yc_s19_stack_from_typescript_to/)
+- url: https://starship.jupiter.co/jupiter-stack/
+---
+
+## [7][Dynamic import performance evaluation](https://www.reddit.com/r/typescript/comments/gbt5k3/dynamic_import_performance_evaluation/)
+- url: https://www.reddit.com/r/typescript/comments/gbt5k3/dynamic_import_performance_evaluation/
+---
+Hello everyone.
+In order to reduce cold start time of my serverless functions, I was thinking about using dynamic imports inside each function in order to avoid initialization of dependencies I may not use.
+I know that once a module is normally imported, it is preserved in the global scope and I can use it without any overhead. 
+Is the same for dynamic imports? 
+I know that it could be a silly question but I feel like I'm missing a piece of the puzzle here.
+## [8][Why are these functions not declared as private methods?](https://www.reddit.com/r/typescript/comments/gbify9/why_are_these_functions_not_declared_as_private/)
+- url: https://www.reddit.com/r/typescript/comments/gbify9/why_are_these_functions_not_declared_as_private/
+---
+I'm looking at the source code for the Angular Material website ([https://github.com/angular/material.angular.io](https://github.com/angular/material.angular.io)).
+
+In this example:
+
+    import {Injectable} from '@angular/core';
+    
+    
+    /**
+     * Class for managing stylesheets. Stylesheets are loaded into named slots so that they can be
+     * removed or changed later.
+     */
+    @Injectable()
+    export class StyleManager {
+      /**
+       * Set the stylesheet with the specified key.
+       */
+      setStyle(key: string, href: string) {
+        getLinkElementForKey(key).setAttribute('href', href);
+      }
+    
+      /**
+       * Remove the stylesheet with the specified key.
+       */
+      removeStyle(key: string) {
+        const existingLinkElement = getExistingLinkElementByKey(key);
+        if (existingLinkElement) {
+          document.head.removeChild(existingLinkElement);
+        }
+      }
+    }
+    
+    function getLinkElementForKey(key: string) {
+      return getExistingLinkElementByKey(key) || createLinkElementWithKey(key);
+    }
+    
+    function getExistingLinkElementByKey(key: string) {
+      return document.head.querySelector(`link[rel="stylesheet"].${getClassNameForKey(key)}`);
+    }
+    
+    function createLinkElementWithKey(key: string) {
+      const linkEl = document.createElement('link');
+      linkEl.setAttribute('rel', 'stylesheet');
+      linkEl.classList.add(getClassNameForKey(key));
+      document.head.appendChild(linkEl);
+      return linkEl;
+    }
+    
+    function getClassNameForKey(key: string) {
+      return `style-manager-${key}`;
+    }
+    
+
+The last 4 functions getLinkElementForKey, getExistingLinkElementByKey, createLinkElementWithKey and getClassNameForKey are defined outside of the class StyleManager. They aren't used anywhere else besides this class.
+
+What is the reason for doing this over defining them as private method inside the class?
+
+I can't test it out because the project doesn't start on Windows as it calls a bash script in yarn start.
+## [9][Purify 0.15 released! - A Functional programming library for TypeScript](https://www.reddit.com/r/typescript/comments/gb0qhw/purify_015_released_a_functional_programming/)
 - url: https://www.reddit.com/r/typescript/comments/gb0qhw/purify_015_released_a_functional_programming/
 ---
 Changelog: [https://gigobyte.github.io/purify/changelog/0.15](https://gigobyte.github.io/purify/changelog/0.15)
@@ -32,7 +126,7 @@ Changelog: [https://gigobyte.github.io/purify/changelog/0.15](https://gigobyte.g
 I've finalized the API for async error handling, I feel like this might be best DX for this kind of thing (working with Either and Maybe inside Promises). I'd very much appreciate any feedback on how easy it is to use on the back-end, especially in complicated async flows.
 
 I've already compared purify to fp-ts a [couple](https://www.reddit.com/r/functionalprogramming/comments/ebg4pc/purify_014_released_a_functional_programming/fb5uv16/) of [times](https://www.reddit.com/r/typescript/comments/8y20no/pure_010_released_a_functional_programming/e29e4yl/).
-## [3][Uncovered lines in test when using `foo || []` - guidance from experienced devs needed](https://www.reddit.com/r/typescript/comments/gbd0fm/uncovered_lines_in_test_when_using_foo_guidance/)
+## [10][Uncovered lines in test when using `foo || []` - guidance from experienced devs needed](https://www.reddit.com/r/typescript/comments/gbd0fm/uncovered_lines_in_test_when_using_foo_guidance/)
 - url: https://www.reddit.com/r/typescript/comments/gbd0fm/uncovered_lines_in_test_when_using_foo_guidance/
 ---
 Dear Friends of TypeScript,
@@ -82,178 +176,7 @@ If I remove the || \[\] part I receive the error
 
     Type 'string[] | undefined' is not assignable to type 'string[]'.
     Type 'undefined' is not assignable to type 'string[]'.ts(2322)
-## [4][Using fetch with Typescript and the Todoist API](https://www.reddit.com/r/typescript/comments/gb66fp/using_fetch_with_typescript_and_the_todoist_api/)
+## [11][Using fetch with Typescript and the Todoist API](https://www.reddit.com/r/typescript/comments/gb66fp/using_fetch_with_typescript_and_the_todoist_api/)
 - url: https://medium.com//using-fetch-with-typescript-and-the-todoist-api-5203c5177ed5?source=friends_link&amp;sk=a16444467bf3dcfca20b102972fe8b43
 ---
 
-## [5][Typescript generics 'lens' to constrain a type to selected fields?](https://www.reddit.com/r/typescript/comments/gb81fz/typescript_generics_lens_to_constrain_a_type_to/)
-- url: https://www.reddit.com/r/typescript/comments/gb81fz/typescript_generics_lens_to_constrain_a_type_to/
----
-... I don't think this is possible in typescript.  Maybe I'm wrong.
-
-I have an API I'm trying to ship that I need a 'lens' to listen to a subscribe map and only update when specific fields have changed.
-
-I want it to return a synthetic type contrained on the input.
-
-the input API is simple. 
-
-I can use fields: ReadonlyArray&lt;keyof Foo&gt;
-
-... the problem I'm having is how to constrain the output to a map which only contains those input values.  
-
-So if the map has keys name, address, city, state, zip, and the user specifies just city, state, and zip, I want a map with only city, state and zip.
-
-I want name and address to be removed so that the caller doesn't attempt to read from name and address which could be stale.
-## [6][Easiest way to return an interface/map with a collection of functions ?](https://www.reddit.com/r/typescript/comments/gaywkz/easiest_way_to_return_an_interfacemap_with_a/)
-- url: https://www.reddit.com/r/typescript/comments/gaywkz/easiest_way_to_return_an_interfacemap_with_a/
----
-I'm working on something in react and can't use classes as 'this' keeps being thrown away.  I want to avoid constantly having to avoid foo.bind(myInstance) too.
-
-So instead I'm returning an interface with callbacks in it ... they're just functions.
-
-so I'll have:
-
-    interface MyInterface {
-        myCallback1: () =&gt; void;
-        myCallback2: () =&gt; void;
-
-        ... etc
-  }
-
-
-and the way I'm returning this now is:
-
-    function myCallback1() {
-        // ... impl
-    } 
-
-    function myCallback2() {
-        // ... impl
-    } 
-
-    return {
-        myCallback1, myCallback2, etc...
-    } 
-
-... but this yields a ton of boilerplate.  Is there a cleaner way to return / organize everything better?  I was thinking namespaces but you can't return one as an object.  Maybe a static class? Not sure you can return one though... will have to play with that.
-
-... EDIT.  Returning a static class seems to work but curious if that's the best strategy.
-
-... EDIT2. It actually won't work because this is discarded and there's the need to call other functions. Without 'this' they're all in the same namespace.
-
-.... EDIT3. It works if you give it a name like Foo then return Foo and only access functions by Foo and not 'this'
-## [7][class-transformer as RxJS operator](https://www.reddit.com/r/typescript/comments/gaxnp9/classtransformer_as_rxjs_operator/)
-- url: https://www.reddit.com/r/typescript/comments/gaxnp9/classtransformer_as_rxjs_operator/
----
-I want to wrap `plainToClass` from `class-transformer` into an RxJS operator function so that I can use it in `pipe` to map a plain object to a class.
-
-The original signature of `plainToClass` is:
-
-    function plainToClass&lt;T, V&gt;(cls: ClassType&lt;T&gt;, plain: V[], options?: ClassTransformOptions): T[];
-    function plainToClass&lt;T, V&gt;(cls: ClassType&lt;T&gt;, plain: V, options?: ClassTransformOptions): T;
-
-My function would be:
-
-    const toClass = cls =&gt; map(plain =&gt; plainToClass(cls, plain));
-
-Simply, `plainToClass` takes a constructor and a literal object and uses that object to create an instance of your class. My function just wraps this in an RxJS `map` operator.
-
-How should I write the type annotations for this, so that when `v` is a single object, it's return type will be a single instance, and when `v` is an array, the return type will be an array of instances?
-
-E.g.:
-
-    const toClass = &lt;T, V&gt;(cls: new() =&gt; T) =&gt; map&lt;V, T[] when V is Array else T&gt;((plain: V) =&gt; plainToClass(cls, plain));
-
-&amp;#x200B;
-## [8][Announcing TypeScript 3.9 RC](https://www.reddit.com/r/typescript/comments/gaecct/announcing_typescript_39_rc/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-rc/
----
-
-## [9][A collection of challenging TypeScript exercises](https://www.reddit.com/r/typescript/comments/gabb46/a_collection_of_challenging_typescript_exercises/)
-- url: https://github.com/mdevils/typescript-exercises
----
-
-## [10][Restore mock of imported class function in ts-jest while testing](https://www.reddit.com/r/typescript/comments/gav2w0/restore_mock_of_imported_class_function_in_tsjest/)
-- url: https://www.reddit.com/r/typescript/comments/gav2w0/restore_mock_of_imported_class_function_in_tsjest/
----
-**Issue**
-
-I am mocking a function (only one) which is imported from another class which is being called inside the main class. I am able to mock the function and return the values which I provide. But I am not able to restore the mocked function back to normal for the subsequent tests.
-
-Any help would be appreciated!
-
-Framework Using: jest + ts-jest
-
-**Code**
-
-\~main.ts
-
-\`\`\`
-
-import {SubClass} from './subclass.ts' 
-
-export class MainClass { 
-
-let sub: SubClass = new SubClass() 
-
-public async Car(){ 
-
-let start = await sub.key(); 
-
-return start } }
-
-\`\`\`
-
-\~sub.ts
-
-\`\`\`
-
-export class SubClass{ 
-
-public async key(){ return "you can start the car" } }
-
-\`\`\`
-
-\`\`\`  
-import {SubClass} from './subclass.ts' 
-
-import {MainClass} from './mainclass.ts' 
-
-import {mocked} from 'ts-jest/utils'  
-
-jest.mock(./subclass.ts) 
-
-let main = new MainClass() 
-
-let sub = new SubClass() 
-
-let mockedFn = mocked(sub,true)  
-
-mockedFn.key = jest.fn().mockImplementation(() =&gt; console.log('mocking succesfull'))  
-
-afterEach(()=&gt;{ mockedFn.key.mockRestore() // tried mockClear(), mockReset() })
-
-  it('test for main func mocked result',async ()=&gt;{ 
-
-const result = await main.car()  
-
-expect(result).toEqual("mocking succesfull") } 
-
-it('test for main func result',async ()=&gt;{ 
-
-const result = await main.car()  
-
-expect(result).toEqual("you can start the car") // getting result as undefined 
-
-}
-
-\`\`\`
-## [11][How can I have intellisense for a dictionary object but also type definition.](https://www.reddit.com/r/typescript/comments/gakqj5/how_can_i_have_intellisense_for_a_dictionary/)
-- url: https://www.reddit.com/r/typescript/comments/gakqj5/how_can_i_have_intellisense_for_a_dictionary/
----
-    /**
-     * @type {{[x:string] : (type1) =&gt; type2}}
-    */
-    const obj;
-
-This does not give me intellisense for the properties of the `obj`.

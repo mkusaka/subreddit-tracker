@@ -79,51 +79,51 @@
 
 
 &amp;nbsp;
-## [2][WTF Wednesday (April 29, 2020)](https://www.reddit.com/r/javascript/comments/gac6sk/wtf_wednesday_april_29_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gac6sk/wtf_wednesday_april_29_2020/
+## [2][Showoff Saturday (May 02, 2020)](https://www.reddit.com/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][After they gave 100k scholarships to students, Codecademy is now giving away their pro membership to anyone whose work is affected due to the pandemic! Also, I had started learning JS from Codecademy about a month ago when they were giving student scholarship, and it's going pretty good!](https://www.reddit.com/r/javascript/comments/gazu2f/after_they_gave_100k_scholarships_to_students/)
-- url: https://aabhusanaryal.com.np/codecademy-pro/
+Show us here!
+## [3][[AskJS] Has anyone used GraphQL for a large project and regretted it?](https://www.reddit.com/r/javascript/comments/gbpc6l/askjs_has_anyone_used_graphql_for_a_large_project/)
+- url: https://www.reddit.com/r/javascript/comments/gbpc6l/askjs_has_anyone_used_graphql_for_a_large_project/
 ---
+I'm a proponent of GraphQL and believe that it has been a successful tool in projects that I've worked on.
 
-## [4][0 dependency dev server, supporting live reloading and single page apps.](https://www.reddit.com/r/javascript/comments/gbc6mc/0_dependency_dev_server_supporting_live_reloading/)
-- url: https://github.com/outwalk-studios/jolt-server
----
-
-## [5][How to refactor a Promise chain to async functions](https://www.reddit.com/r/javascript/comments/gbfuji/how_to_refactor_a_promise_chain_to_async_functions/)
-- url: https://advancedweb.hu/how-to-refactor-a-promise-chain-to-async-functions/
+I'm discussing with an architect about a new product, and was curious if anyone has come to regret GraphQL and why?
+## [4][Rendering One Million Datapoints with D3 and WebGL](https://www.reddit.com/r/javascript/comments/gc25rn/rendering_one_million_datapoints_with_d3_and_webgl/)
+- url: https://blog.scottlogic.com/2020/05/01/rendering-one-million-points-with-d3.html
 ---
 
-## [6][Battletest- An Express-js testing suite autogenerator](https://www.reddit.com/r/javascript/comments/gay8z5/battletest_an_expressjs_testing_suite/)
-- url: https://github.com/oslabs-beta/battletest
+## [5][I built a tax calculator for freelancers using JavaScript](https://www.reddit.com/r/javascript/comments/gc41ph/i_built_a_tax_calculator_for_freelancers_using/)
+- url: https://www.taxmygig.com/
 ---
 
-## [7][JExcel v4 - Javascript Spreadsheet for web-based applications - New version just released!](https://www.reddit.com/r/javascript/comments/gb21zk/jexcel_v4_javascript_spreadsheet_for_webbased/)
-- url: https://www.github.com/paulhodel/jexcel
+## [6][Lerna Workflow Example](https://www.reddit.com/r/javascript/comments/gc2vlg/lerna_workflow_example/)
+- url: https://github.com/customcommander/lerna-workflow-example
 ---
 
-## [8][i18n-cloud-sync a restful api for syncing translations across projects.](https://www.reddit.com/r/javascript/comments/gawnx2/i18ncloudsync_a_restful_api_for_syncing/)
-- url: https://github.com/EvanBurbidge/i18n-cloud-sync
+## [7][I made a clone of Battle City (1985) in TypeScript](https://www.reddit.com/r/javascript/comments/gc3gsc/i_made_a_clone_of_battle_city_1985_in_typescript/)
+- url: https://dogballs.github.io/cattle-bity/
 ---
 
-## [9][Ways to manage config in frontend and their tradeoffs](https://www.reddit.com/r/javascript/comments/gbd1j6/ways_to_manage_config_in_frontend_and_their/)
-- url: http://www.sheshbabu.com/posts/frontend-config-management/
+## [8][[Showoff Saturday] neo.mjs - The webworkers driven UI framework (MIT licensed)](https://www.reddit.com/r/javascript/comments/gbzzcg/showoff_saturday_neomjs_the_webworkers_driven_ui/)
+- url: https://github.com/neomjs/neo
 ---
 
-## [10][Byteconf React.js, a free, two day remote React conference airs tomorrow on YouTube](https://www.reddit.com/r/javascript/comments/gb2g7k/byteconf_reactjs_a_free_two_day_remote_react/)
-- url: https://www.bytesized.xyz/react-2020
+## [9][Trends of Coronavirus (Covid-19) Total and Daily Cases of Each County in the US](https://www.reddit.com/r/javascript/comments/gc2euf/trends_of_coronavirus_covid19_total_and_daily/)
+- url: https://observablehq.com/@jeantimex/coronavirus-covid-19-total-cases-of-each-county-in-the-us
 ---
 
-## [11][Is a Redux Store Observable?](https://www.reddit.com/r/javascript/comments/gbb1g1/is_a_redux_store_observable/)
-- url: https://frontarm.com/james-k-nelson/is-a-redux-store-observable/
+## [10][[ShowOff Saturday] I built a dashboard for live corona updates and self diagnose chat bot](https://www.reddit.com/r/javascript/comments/gc5s9s/showoff_saturday_i_built_a_dashboard_for_live/)
+- url: https://coronadaily.org/dashboard
 ---
 
-## [12][Fade In/Out Electron Window](https://www.reddit.com/r/javascript/comments/gb4zf5/fade_inout_electron_window/)
-- url: https://medium.com/@victoraremu/fade-in-out-electron-window-6d81c5eaf835
+## [11][Free Javascript book, absolutely massive compendium of everything JS](https://www.reddit.com/r/javascript/comments/gbrrlc/free_javascript_book_absolutely_massive/)
+- url: https://eloquentjavascript.net/Eloquent_JavaScript.pdf
+---
+
+## [12][Launch Your Own Face Recognition Algorithm(Real Time)In Browser Within Minutes](https://www.reddit.com/r/javascript/comments/gbju2g/launch_your_own_face_recognition_algorithmreal/)
+- url: https://medium.com/@billyfong2007/launch-your-own-real-time-face-recognition-algorithm-in-your-browser-in-minutes-beginner-guide-a8f2e6fd505c
 ---
 

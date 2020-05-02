@@ -1,5 +1,81 @@
 # aws
-## [1][Anyone having acquired Outposts, and willing to share some feedback on usage, so far?](https://www.reddit.com/r/aws/comments/gbh5aj/anyone_having_acquired_outposts_and_willing_to/)
+## [1][[CloudFormation] - Using export and cross referencing stacks in templates](https://www.reddit.com/r/aws/comments/gc1rav/cloudformation_using_export_and_cross_referencing/)
+- url: https://www.reddit.com/r/aws/comments/gc1rav/cloudformation_using_export_and_cross_referencing/
+---
+Greetings,
+
+I'm in a project that requires us to build a serverless application in AWS. For this purpose, we have chosen SAM.
+
+I made 2 resources of type \`\`\`Serverless\`\`\` within the SAM template, referencing other templates. That was fine until I had to configure networking and ElastiCache.  
+
+
+**The problem**
+
+I'm looking to cross reference templates **at deploy time for a new region bootstrapping**. I found that for me to use Export/Import of resources, the template (stack) that has to do the export must be created first in AWS. Both nested stacks can't be created at the same time, which made me do a dumb solution to comment out the other stack, deploy the networking, uncomment, re-deploy so it gets the exported values.  
+
+
+I've read around the subreddit and people seem to dislike nested stacks? What would be a good approach to tackle this situation?  
+
+
+I don't mind deploying each stack individually (Not sure if the exports will work between independent stacks tho) but It'd be nice to just reference a single template that references the rest.
+## [2][How can I make sure that EC2 instances with dynamic IPs are available through stable subdomains?](https://www.reddit.com/r/aws/comments/gc552p/how_can_i_make_sure_that_ec2_instances_with/)
+- url: https://www.reddit.com/r/aws/comments/gc552p/how_can_i_make_sure_that_ec2_instances_with/
+---
+Hello!
+
+Imagine I have a host of EC2 instances with dynamic IPs. Every day, at the end of office hours, most of them are turned off. In the morning of every business day, they are turned on again. This means that their IP addresses change every day.
+
+I want to have subdomains which do not change and always point to the right EC2 instance. For example, in the image below `inst-1.mydomain.com` should always point to `EC2 instance 1`, regardless of its IP address.
+
+[Here](https://i.imgur.com/UTxXeS1.png) is a sketch showing what I mean.
+
+These domains must work for all ports, including, but not limited to SSH, HTTP, HTTPS.
+
+Buying static IPs from Amazon is not an option.
+
+**How can I implement it in the best way?**
+
+One obvious solution is this: Take the script that turns the instances on and off again, and modify it so that it updates the subdomain DNS records. That is, whenever the instances are started, the script would take their new IP address and then update the DNS record of `inst-1.mydomain.com` so that it points to the new IP address. Some providers allow you to update DNS via an API (here is an [example](https://help.dreamhost.com/hc/en-us/articles/217555707-DNS-API-commands)).
+
+Are there other, better ways to achieve the same result?
+
+Thanks in advance
+## [3][[Blog post] Tracking Amazonians (AWS) on Twitter](https://www.reddit.com/r/aws/comments/gc3pfl/blog_post_tracking_amazonians_aws_on_twitter/)
+- url: https://zoph.me/posts/2020-04-19-tracking-amazonian-on-twitter/
+---
+
+## [4][Secret Manager - RDS Password Rotation](https://www.reddit.com/r/aws/comments/gbrorb/secret_manager_rds_password_rotation/)
+- url: https://www.reddit.com/r/aws/comments/gbrorb/secret_manager_rds_password_rotation/
+---
+Good evening, 
+
+I have "stored" the master password for a Postgres RDS instance in Secret Manager. I know it is working correctly as I can access the secret from an EC2 instance to connect to the database. I have tried enabling the rotate secret feature, but it does not seem to be working. It created a lambda but I cannot find a way to look at the logs to see what went wrong. When I click "Rotate Secret Immediately", it says: "Fail to rotate the secret "master\_password\_prod" A  previous rotation isn't complete. That rotation will be reattempted." It doesn't matter how long I wait, it never succeeds. 
+
+Any advice would be appreciated :)
+## [5][Terminate idle EC2 instances which have a specific tag?](https://www.reddit.com/r/aws/comments/gc2atq/terminate_idle_ec2_instances_which_have_a/)
+- url: https://www.reddit.com/r/aws/comments/gc2atq/terminate_idle_ec2_instances_which_have_a/
+---
+I want to do something like the one described here https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html but the instances are not in an ASG. Instead they'll have a common tag.
+## [6][Unable to login to console on Chrome](https://www.reddit.com/r/aws/comments/gbrnif/unable_to_login_to_console_on_chrome/)
+- url: https://www.reddit.com/r/aws/comments/gbrnif/unable_to_login_to_console_on_chrome/
+---
+Anyone else have this issue? I can use safari and Firefox but using chrome it days “bad request”.
+
+I presume I must’ve some bad cookies or something
+## [7][Serverless Thought Leaders Converge Online on May 21 &amp; May 28](https://www.reddit.com/r/aws/comments/gbuhaj/serverless_thought_leaders_converge_online_on_may/)
+- url: https://www.reddit.com/r/aws/comments/gbuhaj/serverless_thought_leaders_converge_online_on_may/
+---
+Hi, r/aws!
+
+The first-ever AWS Serverless-First Function is a free, virtual event intended to help you learn the latest about serverless approaches on AWS. The event occurs over two Thursdays, May 21 and May 28, and each day focuses on specific topics.
+
+* May 21: Learn about adopting serverless across your organization
+* May 28: Learn about building serverless into your applications
+
+Live chat is included on both days – so bring all of your questions to be answered by serverless experts!
+
+You can check out the full session agenda and speaker and event details on the info page [here](https://pages.awscloud.com/GLOBAL-event-OE-serverless-first-function-2020-reg-event.html).
+## [8][Anyone having acquired Outposts, and willing to share some feedback on usage, so far?](https://www.reddit.com/r/aws/comments/gbh5aj/anyone_having_acquired_outposts_and_willing_to/)
 - url: https://www.reddit.com/r/aws/comments/gbh5aj/anyone_having_acquired_outposts_and_willing_to/
 ---
 Among things of interest:
@@ -13,61 +89,84 @@ Among things of interest:
 - services on-prem delivered for workloads in Outposts (e.g. are you load balancing with on-prem devices like Citrix, F5, A10?)
 
 - ... anything else that comes to mind ...
-## [2][Can't pass and pull values from Mysql to AWS](https://www.reddit.com/r/aws/comments/gbg61q/cant_pass_and_pull_values_from_mysql_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/gbg61q/cant_pass_and_pull_values_from_mysql_to_aws/
+
+**Edit#2**: ~~the amount of reminders and~~ quite a few downvotes (AWS bots?!?), with no true feedback to the points I've asked about, tells me something, already ... + just marketing and re:invent re:peats. Isn't anyone having one of these in production???
+## [9][Healthcheck for UDP app in ECS using dynamic port routing](https://www.reddit.com/r/aws/comments/gc0lyj/healthcheck_for_udp_app_in_ecs_using_dynamic_port/)
+- url: https://www.reddit.com/r/aws/comments/gc0lyj/healthcheck_for_udp_app_in_ecs_using_dynamic_port/
 ---
-I have the connection established from Mysql to AWS RDS, or I think I do at least. The connection seems to be working on both sides. However, I can't pass or pull values from my website using PHP, it just comes back as a connection error when I try to pull them or nothing gets passed when I try to push them.
-## [3][FORMULA 1 DeepRacer ProAm Special Event](https://www.reddit.com/r/aws/comments/gb6rwq/formula_1_deepracer_proam_special_event/)
-- url: https://aws.amazon.com/blogs/aws/join-the-formula-1-deepracer-proam-special-event/
+So I am working on a udp application running in docker. I created an ECS service and am able to connect to it, but it quickly fail it's healthcheck and be terminated by the Network Load Balancer.
+
+I created an HTTP endpoint on port 80 for the healthcheck and can confirm it runs properly in the image (via hitting when running locally).
+
+Things I've tried:
+
+1. Manually set the healthcheck port, it return false due to using dynamic routing
+2. Setting the protocol to just UDP and removing the tcp port mapping. Still failed.
+
+I can work around this by not using dynamic routing, but I would really prefer to have it.
+
+Currently, the target group is just setup as following:
+
+`NlbTargetGroup:`  
+ `Type: AWS::ElasticLoadBalancingV2::TargetGroup`  
+ `Properties:`  
+ `Port: 7777`  
+ `Protocol: TCP_UDP`  
+ `TargetGroupAttributes:`  
+`- Key: deregistration_delay.timeout_seconds`  
+ `Value: '20'`  
+ `VpcId: !Ref 'VpcId'`
+
+The task looks like this:
+
+`TaskDefinition:`  
+ `Type: AWS::ECS::TaskDefinition`  
+ `Properties:`  
+   `ContainerDefinitions:`  
+   `- Name: main`  
+`Essential: 'true'`  
+`Image: !Ref DockerImage`  
+`MemoryReservation: 250`  
+`PortMappings:`  
+`- HostPort: 0`  
+`ContainerPort: 7777`  
+`Protocol: udp`  
+`- HostPort: 0`  
+`ContainerPort: 80`  
+`Protocol: tcp`  
+   `LogConfiguration:`  
+`LogDriver: awslogs`  
+`Options:`  
+`awslogs-region:`  
+`Ref: AWS::Region`  
+`awslogs-group:`  
+`Ref: LogGroup`
+
+Thanks for your time, I appreciate it!
+## [10][Cfn import Route43::RecordSet records](https://www.reddit.com/r/aws/comments/gbygn6/cfn_import_route43recordset_records/)
+- url: https://www.reddit.com/r/aws/comments/gbygn6/cfn_import_route43recordset_records/
 ---
+Hello,
 
-## [4][AWS Workmail - Who uses it?](https://www.reddit.com/r/aws/comments/gbapw9/aws_workmail_who_uses_it/)
-- url: https://www.reddit.com/r/aws/comments/gbapw9/aws_workmail_who_uses_it/
----
-I know they have their sample companies on the website... but I haven’t heard of any of them before. Are there any major name companies that use workmail?
-## [5][Accessing multiple APIs from the same base URL](https://www.reddit.com/r/aws/comments/gbfz4l/accessing_multiple_apis_from_the_same_base_url/)
-- url: https://www.reddit.com/r/aws/comments/gbfz4l/accessing_multiple_apis_from_the_same_base_url/
----
-I would like to split my template with all the lambda functions into several templates for each domain (products, users etc). The lambdas are supposed to be accessed from an API. I cannot create a single API for these, CloudFormation arouses issues on that (ApiEvents should be intruduced in the same template as the API itself). So my approach would be that each template has its own API from which the lambdas are accessible. But each API naturally has its own URL when CF deploys them. 
+I have a template that is comprised of a hosted zone and many record sets. The template/stackname was created with the wrong name.
 
-Obviously I would like to access all the lambdas from the same base URL. How could this be done, should I use AWS::ApiGateway::DomainName and AWS::ApiGateway::BasePathMapping? Have I understood correctly that those could be used in that way? So [test.myproject.com/products](https://test.myproject.com/products) would access functions in products template via its API and [test.myproject.com/users](https://test.myproject.com/users) would access functions in users teamplate via its API.  
+What’s the best way to fix this without changing name servers away from Route53? All of the RecordSets have DependsOn hosted zone.
 
+I was thinking this, but it sounds risky.
 
-[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html)
-## [6][How to handle over 200 lambdas with Cloud Formation?](https://www.reddit.com/r/aws/comments/gb4ht8/how_to_handle_over_200_lambdas_with_cloud/)
-- url: https://www.reddit.com/r/aws/comments/gb4ht8/how_to_handle_over_200_lambdas_with_cloud/
----
-I have a few stacks, one for the network, another for database and such. And then I have a stack for all the Serverless::Api and the Serverless::Functions. 
+1.	Add DeletionPolicy of Retain to HostedZone and all record sets.
+2.	Remove DependsOn from all resources in template.
+3.	Delete hosted zone record from the template.
+4.	Create new hosted zone record in correctly named template.
+5.	Change TTL for all record sets in original template to 60 seconds.
+6.	Delete records during off hours.
+7.	Run new template with the records readded.
 
-I have rached the limit of 200 resources in that stack. I tried to separate some of the functions to a different stack and referencing to the Api with "!ImportValue MyApi" where needed, ie. function events. But when trying to deploy, I get: "Api Event must reference an Api in the same template". So this cannot be done.
+I’m not really a fan of doing this or using another DNS provider to migrate away and back.
 
-I cannot introduce all the api events in one stack with the api since I would hit the 200 limit again. How about nesting stacks? If I have api in one stack and two stacks for functions that depend on the api stack, would that help me or would I get the same error again (events in the same temolate as the api)?
+Support for one or both of the following would be amazing.
 
-What would be the best approach here?
+1.	Support to rename cfn stack
+2.	Cfn import resource Route53::RecordSet
 
-Edit: The title is wrong, there aren't over 200 lambdas but over 200 resources. I have about 80 lambdas in the template but CF creates AWS::Lamda::Permission for each lambda when deployed. I know that is too much and that is why I'm seeking help to how to resolve this and split it into smaller stacks and not getting the "Api Event must reference an Api in the same template" error.
-
-Edit2: When trying to nest stacks so that the Api is in one stack and some of the lambdas in another, nested stack, I get error: "The REST API doesn't contain any methods". I tried adding one lamda to the same template as the Api is in and nest the other functions in other templates. But then I still get that "Api Event must reference an Api in the same template. So either I have to introduce all the api events in the same template as the api is in (pretty cumbersome) OR have several templates with lambdas and each having its own api, but I would need a way to access all the endpoints via the same base URL.
-## [7][AWS Lambda occasional 500 error](https://www.reddit.com/r/aws/comments/gbdn5t/aws_lambda_occasional_500_error/)
-- url: https://www.reddit.com/r/aws/comments/gbdn5t/aws_lambda_occasional_500_error/
----
-For past few months I have a strange problem. Sometimes (maybe once in 10 days) all of my Lambda functions show 500 or 502 errors. This lasts only for a few minutes, so I can't properly diagnose the problem. When this error occurs I check cloudwatch logs, but it seems that API calls don't even reach the code. During this errors, software works on a local machine and database seems to be fine. Runtime for all of the code is Node.js10.x.
-
-Does anybody have this kind of problem?
-
-What can be the possible solution?
-## [8][Best way to programmatically get authorization to hit an AWS endpoint?](https://www.reddit.com/r/aws/comments/gb66gf/best_way_to_programmatically_get_authorization_to/)
-- url: https://www.reddit.com/r/aws/comments/gb66gf/best_way_to_programmatically_get_authorization_to/
----
-I'm familiar with writing nodejs scripts to test endpoints, usually with a bearer token, but I'm not familiar with hitting an AWS endpoint. What's the best way to generate a token in nodejs?
-## [9][Stopping RDS via Lambda](https://www.reddit.com/r/aws/comments/gbeu5r/stopping_rds_via_lambda/)
-- url: https://www.reddit.com/r/aws/comments/gbeu5r/stopping_rds_via_lambda/
----
-Hi I am learning how to stop my RDS via Lambda and I came across this  [https://dzone.com/articles/create-an-aws-lambda-function-to-stop-and-start-an](https://dzone.com/articles/create-an-aws-lambda-function-to-stop-and-start-an) 
-
-I followed the instruction to configure but when I ran the Lambda function, there is an error "Task timed out after 3.00 second" I am unable to determine why.  Is the Python script correct?
-## [10][How to do RDS PostgreSQL point in time recovery ?](https://www.reddit.com/r/aws/comments/gbed54/how_to_do_rds_postgresql_point_in_time_recovery/)
-- url: https://www.reddit.com/r/aws/comments/gbed54/how_to_do_rds_postgresql_point_in_time_recovery/
----
-You can go and do a PITR in Actions&gt;Restore to point in time , but you can do this up to a certain period, like up until 10 minutes ago. 
-Is there a way to make it available to be recovered until 1 minute ago ?
+Thanks!

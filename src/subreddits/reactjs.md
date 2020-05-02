@@ -109,147 +109,81 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Twitter clone using the RPG🚀stack](https://www.reddit.com/r/reactjs/comments/gbg0k2/twitter_clone_using_the_rpgstack/)
+## [3][Lifelike - the cellular automata browser toy I've always wanted (first React app)](https://www.reddit.com/r/reactjs/comments/gc5ag6/lifelike_the_cellular_automata_browser_toy_ive/)
+- url: https://www.reddit.com/r/reactjs/comments/gc5ag6/lifelike_the_cellular_automata_browser_toy_ive/
+---
+I've been learning React whilst holed up for the quarantine and made the cellular automata browser toy I've always wanted but never had. It's my first React app, and second non-trivial javascript app. Built with Chakra UI, Redux, and HTML Canvas.
+
+https://lifelike.psychedelicio.us/
+
+You can change the rules and other settings while the app is running, draw on the grid, save the grid as an image or record it running as video, save the current state as a "bookmark" in localstorage, plus a range of other interesting features.
+
+It is also mobile-friendly! Well, it's as friendly as I could make it, given the nature of the app.
+
+It's taken me about around month to build as I worked through Stephen Grider's and Tyler McGinnis's React courses. 
+
+A brief write-up is on github, as well as a guide to using the thing: https://github.com/psychedelicious/lifelike
+
+I greatly appreciate any critical feedback on the design or code. I know I have huge room for improvement in both areas. Suggestions and feedback for the app itself are also appreciated, of course! 
+
+Thank you for taking the time to use and/or review the app!
+## [4][✨ Introducing react-cool-inview - React hook to monitor an element enters or leaves the viewport. (GitHub: https://github.com/wellyshen/react-cool-inview)](https://www.reddit.com/r/reactjs/comments/gbixbc/introducing_reactcoolinview_react_hook_to_monitor/)
+- url: https://v.redd.it/fvuich0pw5w41
+---
+
+## [5][I created a before and after image slider for React](https://www.reddit.com/r/reactjs/comments/gc5800/i_created_a_before_and_after_image_slider_for/)
+- url: https://www.youtube.com/watch?v=MJIe7ygCeDQ
+---
+
+## [6][Twitter clone using the RPG🚀stack](https://www.reddit.com/r/reactjs/comments/gbg0k2/twitter_clone_using_the_rpgstack/)
 - url: https://v.redd.it/ipkotxrqw4w41
 ---
 
-## [4][I'v made this Facebook-like reaction bar using ReactJS](https://www.reddit.com/r/reactjs/comments/gb02e4/iv_made_this_facebooklike_reaction_bar_using/)
-- url: https://v.redd.it/r42cx2w3pzv41
+## [7][A small online browser game built in React. No registration demo available.](https://www.reddit.com/r/reactjs/comments/gc3pbp/a_small_online_browser_game_built_in_react_no/)
+- url: https://4upgrade.now.sh
 ---
 
-## [5][react-style-system - my NEW CSS-in-JS lib with static CSS support!](https://www.reddit.com/r/reactjs/comments/gbh53t/reactstylesystem_my_new_cssinjs_lib_with_static/)
-- url: https://www.reddit.com/r/reactjs/comments/gbh53t/reactstylesystem_my_new_cssinjs_lib_with_static/
+## [8][Had a time to work on React/Redux App with TMDB API. Looking for opinions!](https://www.reddit.com/r/reactjs/comments/gbrbhc/had_a_time_to_work_on_reactredux_app_with_tmdb/)
+- url: https://www.reddit.com/r/reactjs/comments/gbrbhc/had_a_time_to_work_on_reactredux_app_with_tmdb/
 ---
-Today I released the initial version of my CSS-in-JS lib!
+Hi there guys!  
+First of all I'm relatively new to reactjs channel and reddit in general, so just wanted to say hello!
 
-I've been working on this in my free time since early February and I would love your feedback on it!
+Recently I've had some time ("thanks" to coronavirus) to work on React/Redux project. Truth be told quite simple one - basic CRUD. Had some issues, learnt a lot. There's still quite a lot of things to add in a meantime.  
 
-Disclaimer: this project is still very young.
 
-Links:
+I would more than appreciate if you had a time to check and play with it.   
+Any opinions and tips more than welcome!  
 
-- [repo + README](https://github.com/ricokahler/react-style-system)
-- [Why another CSS-in-JS lib?](https://github.com/ricokahler/react-style-system/blob/master/why-another-css-in-js-lib.md)
 
-Features:
+* repo: [https://github.com/paldave/movie-explorer](https://github.com/paldave/movie-explorer)
+* demo: [https://paldave.github.io/movie-explorer/](https://paldave.github.io/movie-explorer/)
 
-- 🎣 hooks API
-- 👩‍🎨 theming
-- 🎨 advanced color context features including dark mode
-- 🧩 composable styles by default
-- 📦 small size, 6.7kB
-
-Experimental features:
-
-- static and extracted CSS
-- SSR support
-- much smaller bundle 1.8kB
-## [6][A visual guide to React Mental models](https://www.reddit.com/r/reactjs/comments/gbhtep/a_visual_guide_to_react_mental_models/)
-- url: https://obedparla.com/code/a-visual-guide-to-react-mental-models/
+Stay safe y'all!
+## [9][🚀 I made a site to help developers and CS students create their own portfolio! The quarantine is a good reason to create one for yourself!](https://www.reddit.com/r/reactjs/comments/gc60l3/i_made_a_site_to_help_developers_and_cs_students/)
+- url: https://techstax.dev/
 ---
 
-## [7][Passing context info after server request](https://www.reddit.com/r/reactjs/comments/gbfu1a/passing_context_info_after_server_request/)
-- url: https://www.reddit.com/r/reactjs/comments/gbfu1a/passing_context_info_after_server_request/
+## [10][React for beginners start point](https://www.reddit.com/r/reactjs/comments/gbzmap/react_for_beginners_start_point/)
+- url: https://www.reddit.com/r/reactjs/comments/gbzmap/react_for_beginners_start_point/
 ---
-**Let's say I have a context component that sets the isLoggedIn state to true if the server request was successful, and it wraps the App component**
+Where is the best place to learn Reactjs for beginners?
+YouTube videos are old and things have changed.  Some of the websites are all over the place.  So where is a good place to start and build some knowledge.
 
-    function Context(){
-      const [isLoggedIn, setIsLoggedIn] = useState(false)
-        useEffect(() =&gt; {
-         // server request
-        setIsLoggedIn(true) // if successful request
-        }, [])
-    }
+Thanks in advance for your input.
+## [11][Best approach to increment number each X milliseconds [React Native]](https://www.reddit.com/r/reactjs/comments/gc3cne/best_approach_to_increment_number_each_x/)
+- url: https://www.reddit.com/r/reactjs/comments/gc3cne/best_approach_to_increment_number_each_x/
+---
+Good morning,
 
-**The App component receives isLoggedIn from context and displays users profile component if the user is logged in and if not it redirects to "/"**
- 
-    function App() {
+Im trying to create an incremental number ( 0% to 100%) that moves forward every X ms, but with the current approach I think its too heavy on performance,  it slows down my Android emulator too much.
 
-      const {isLoggedIn} = useContext(Context)
+I've tried with the classic setInterval inside useEffect, and now with some promises and custom awaits, but it is still making my android emulator lag.
 
-      return (
-        &lt;div&gt;
+Is there something that im missing, if it was React web i'll modify directly the dom instead of updating the state for each increment, but I can't do that with React Native (Or I don't know how).
 
-         &lt;Switch&gt;
-           &lt;Route exact path="/profile&gt; {isLoggedIn ? &lt;MyProfile /&gt; : &lt;Redirect to="/" /&gt;} &lt;/Route&gt;
-         &lt;/Switch&gt;
-        
-       &lt;/div&gt;
-      )
-    }
-
-**However because the server request takes a while it will never display the profile page, how can I make it wait or solve this problem another way?**
-## [8][Learn how to build appbar/navigation bar with Material UI](https://www.reddit.com/r/reactjs/comments/gbg7kw/learn_how_to_build_appbarnavigation_bar_with/)
-- url: https://youtu.be/3v-TBbvgZLg
+Help will be much apreciated.
+## [12][Build a Gender/Age prediction Application with React and Clarifai](https://www.reddit.com/r/reactjs/comments/gc37mk/build_a_genderage_prediction_application_with/)
+- url: https://codesource.io/build-a-gender-age-prediction-application-with-react-and-clarifai/
 ---
 
-## [9][How Our Stack Evolved in 10 Years](https://www.reddit.com/r/reactjs/comments/gb1l22/how_our_stack_evolved_in_10_years/)
-- url: https://stack-stack-stack.s3.ca-central-1.amazonaws.com/stack.htm
----
-
-## [10][Private Route with Redux](https://www.reddit.com/r/reactjs/comments/gbfu9v/private_route_with_redux/)
-- url: https://www.reddit.com/r/reactjs/comments/gbfu9v/private_route_with_redux/
----
-I am trying to create a private route which checks user authentication. But the Private route renders before data from redux Is updated. The component has like isauthenticated variable which eventually updates to true but the component renders &lt;Redirect to="/login" /&gt; first before it gets updated.
-As the redux has its value as false at 1st render.
-
-            
-const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) =&gt;{
-    return(
-        
-        &lt;Route {...rest} render={
-            (props) =&gt; {
-                if(isAuthenticated) { 
-                 return &lt;Component {...props}/&gt;
-                }else{
-                    return &lt;Redirect to="/login"/&gt;
-                }
-                
-            }
-        }/&gt;
-    )
-}
-
-const mapStateToProps = state =&gt;{
-    return{
-        isAuthenticated: state.token !== null
-    }
-}
-
-export default connect(mapStateToProps, null)(PrivateRoute)
-
-
-my private route component above
-## [11][I recently learnt Redux and wanted to build something interesting using it. So I made this Memeter app where people can rate and share memes. Hope you guys like it. I am just a beginner right now.](https://www.reddit.com/r/reactjs/comments/gbh2o3/i_recently_learnt_redux_and_wanted_to_build/)
-- url: http://memeterapp.web.app
----
-
-## [12][Displaying embedded html in string with FormattedMessage](https://www.reddit.com/r/reactjs/comments/gbh25q/displaying_embedded_html_in_string_with/)
-- url: https://www.reddit.com/r/reactjs/comments/gbh25q/displaying_embedded_html_in_string_with/
----
-We have recently updated our websites's npm packages (react-intl version 4.5.1). The problem is, that we used FormattedHTMLMessage to display embedded html in the string. However, this doesn't seem to be working anymore. Now I was wondering if you could accomplish something similar in another way or if it it somehow possible to do with the FormattedMessage component instead of the FormattedHTMLMessage component.
-
-This is the code:
-
- 
-
-    import React from "react";
-    import { FormattedMessage as FM, FormattedHTMLMessage as FHM } from "react-intl";
-    
-    export default props =&gt; { 
-        return(
-        	...
-            &lt;p className="fs-18 white-space-pre-line"&gt;
-                &lt;FM id={props.descriptionKey} /&gt;
-            &lt;/p&gt;
-            ...
-        );
-    };
-
-&amp;#x200B;
-
-The json file looks something like this: 
-
-    textDescription: "Sometext &lt;span class='font-tilde-bold h3'&gt;Sometext&lt;/span&gt; Sometext"
-
-Now I am just passing the string of the json file to the component and inserting it and it will just display the html elements in the text.

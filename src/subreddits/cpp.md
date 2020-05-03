@@ -119,7 +119,31 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Friend, private function, template alias, and decltype… is clang correct in rejecting this?](https://www.reddit.com/r/cpp/comments/gc54yi/friend_private_function_template_alias_and/)
+## [3][TheLartians/Glue - A simple and generic API for C++ to other language bindings supporting bidirectional communication, inheritance and automatic declarations.](https://www.reddit.com/r/cpp/comments/gcnsjd/thelartiansglue_a_simple_and_generic_api_for_c_to/)
+- url: https://github.com/TheLartians/Glue
+---
+
+## [4][Modules are coming - Bryce Adelstein Lelbach - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gc82rc/modules_are_coming_bryce_adelstein_lelbach/)
+- url: https://www.youtube.com/watch?v=yee9i2rUF3s
+---
+
+## [5][Why Refactor? Let’s Refactor the 3D Polygon Renderer (C++20)](https://www.reddit.com/r/cpp/comments/gch7t1/why_refactor_lets_refactor_the_3d_polygon/)
+- url: https://www.youtube.com/watch?v=GnKh8Eb1zU8
+---
+
+## [6][Modules: The Beginner’s Guide - Meeting C++ 2019 - Daniela Engert](https://www.reddit.com/r/cpp/comments/gcd2m0/modules_the_beginners_guide_meeting_c_2019/)
+- url: https://www.youtube.com/watch?v=Kqo-jIq4V3I
+---
+
+## [7][Learn C Programming Basic to Advance Part 2](https://www.reddit.com/r/cpp/comments/gcq79s/learn_c_programming_basic_to_advance_part_2/)
+- url: https://www.youtube.com/watch?v=wIcW3JCykig
+---
+
+## [8][Print debugging workflow?](https://www.reddit.com/r/cpp/comments/gcq041/print_debugging_workflow/)
+- url: https://www.reddit.com/r/cpp/comments/gcq041/print_debugging_workflow/
+---
+I use visual studio and the debugger is pretty fantastic but in some edge cases it would be handy to use print debugging. What is your favourite way to employ print debugging? Do you keep the print statements in a separate git branch to keep them from polluting the code?
+## [9][Friend, private function, template alias, and decltype… is clang correct in rejecting this?](https://www.reddit.com/r/cpp/comments/gc54yi/friend_private_function_template_alias_and/)
 - url: https://www.reddit.com/r/cpp/comments/gc54yi/friend_private_function_template_alias_and/
 ---
 *Disclaimer: this is a question I submitted to Stack Overflow a week ago [see here](https://stackoverflow.com/q/61410959/147192), and for which I am surprised not to have received any answer yet.*
@@ -161,87 +185,21 @@ Clang does not complain about `DirectResult` accessing the privates of `Inner`, 
 It was brought to my attention that this seems similar to [this Clang bug](https://bugs.llvm.org/show_bug.cgi?id=25334), filed 5 years ago, and still unanswered.
 
 As a result, I still haven't figured out whether my code is **correct or not** according to the standard, and I would appreciate help in elucidating this mystery.
-## [4][CrustyAuklet/bitpacker - type safe and low-boilerplate bit level serialization using modern C++. Compatible with python bitstruct.](https://www.reddit.com/r/cpp/comments/gbxuym/crustyaukletbitpacker_type_safe_and/)
+## [10][Using C++ as a scripting language, part 2](https://www.reddit.com/r/cpp/comments/gc7vnv/using_c_as_a_scripting_language_part_2/)
+- url: https://medium.com/@fwsgonzo/using-c-as-a-scripting-language-part-2-7726f8e13e3
+---
+
+## [11][example: FetchContent and conan to install C++ project deps](https://www.reddit.com/r/cpp/comments/gc6pwb/example_fetchcontent_and_conan_to_install_c/)
+- url: https://www.reddit.com/r/cpp/comments/gc6pwb/example_fetchcontent_and_conan_to_install_c/
+---
+Hi. I want to share code snippet that helps me to auto install conan deps during cmake configure step for C++ project.
+
+Useful if you want to use IDE that auto-creates build and configure directories (like QT).
+
+https://github.com/blockspacer/conan_auto_install
+
+I hope it will be useful to someone.
+## [12][CrustyAuklet/bitpacker - type safe and low-boilerplate bit level serialization using modern C++. Compatible with python bitstruct.](https://www.reddit.com/r/cpp/comments/gbxuym/crustyaukletbitpacker_type_safe_and/)
 - url: https://github.com/CrustyAuklet/bitpacker
----
-
-## [5][fuser: ultra-minimal single-file header-only library for automatic (de)serialization of C++ types to/from JSON using boost fusion pseudo-reflection](https://www.reddit.com/r/cpp/comments/gbj5wu/fuser_ultraminimal_singlefile_headeronly_library/)
-- url: https://github.com/Xeverous/fuser
----
-
-## [6][Making a STL-compatible hash map from scratch - Part 3 - The wonderful world of iterators and allocators](https://www.reddit.com/r/cpp/comments/gbm4v8/making_a_stlcompatible_hash_map_from_scratch_part/)
-- url: https://jguegant.github.io/blogs/tech/dense-hash-map3.html
----
-
-## [7][Backtracking Algorithm Roster/Competition football games in Premier League](https://www.reddit.com/r/cpp/comments/gc6auz/backtracking_algorithm_rostercompetition_football/)
-- url: https://www.reddit.com/r/cpp/comments/gc6auz/backtracking_algorithm_rostercompetition_football/
----
-Hello fellow Computer Scientists,  
-
-
-I need some insights, pseudocode, or general help with my algorithm for making a competition for a football league. For example Premier League. Every week clubs play each other. I am responsible for making an algorithm that succesfully makes a roster for all these clubs so that every club plays each other once, and every club plays the same amount of homegames and outgames.  
-
-
-It also has a few constrains that for example 2 clubs that come from the same city aren't allowed to play 2 homegames in the same week. For example Manchester City and Manchester United aren't allowed to play 2 home-games in Week 7. I have to take this into account in my algorithm.  
-
-
-The algorithm should be a backtracking algorithm. Anyone wants to help me out a bit? I have started but I think I'm doing it way to complicated.
-## [8][Renaming *_default_init to *_for_overwrite](https://www.reddit.com/r/cpp/comments/gc2vox/renaming_default_init_to_for_overwrite/)
-- url: https://wg21.link/P1973R1
----
-
-## [9][Simple command-line task prioritizer](https://www.reddit.com/r/cpp/comments/gc4t2m/simple_commandline_task_prioritizer/)
-- url: https://github.com/hoang-khoi/tksort
----
-
-## [10][Bug in Clang &amp; MSVC regarding initializer_list](https://www.reddit.com/r/cpp/comments/gbntov/bug_in_clang_msvc_regarding_initializer_list/)
-- url: https://www.reddit.com/r/cpp/comments/gbntov/bug_in_clang_msvc_regarding_initializer_list/
----
-Original thread: [https://www.reddit.com/r/cpp\_questions/comments/gbjikq/a\_piece\_of\_code\_is\_accepted\_by\_clang\_but\_not\_by](https://www.reddit.com/r/cpp_questions/comments/gbjikq/a_piece_of_code_is_accepted_by_clang_but_not_by)
-
-I now played around a bit with the code and it looks like that Clang and MSVC don't select the right constructor when using braced initialization lists with non-aggregates (see code below).
-
-But this also makes me wonder how can it be that there is such a bug in the first place. initializer\_list has been around for a good while and the code below should be rather common based on the assumption that people actually use initializer\_list and braced init lists. I'm curious, do you use std::intializer\_list in your APIs? Are you satisfied with this feature?
-
-I don't use it. Tried it once it became available and never found a use case that would give initializer\_list enough relevance to incorporate it in an API. As for the second question: No idea as I don't really use it. The rules surrounding it are at least quirky I find.
-
-[https://gcc.godbolt.org/z/K78QJk](https://gcc.godbolt.org/z/K78QJk)
-
-    #include &lt;vector&gt;
-    
-    using namespace std;
-    
-    struct foo
-    {
-        template&lt;class F&gt;
-        foo(F f)
-        {
-            /*
-            Aggregates copy/move initialize directly from single-element
-            braced-init-lists of the same type, but non-aggregates consider
-            initializer_list constructors first.
-            
-            So the compiler should fail here.
-            */
-            static_assert(!is_same&lt;F,vector&lt;foo&gt;&gt;::value);
-        }
-    };
-    
-    vector&lt;foo&gt; v{vector&lt;foo&gt;()}; // triggers static_assert in gcc only, not in clang, msvc
-    
-    struct bar
-    {
-        vector&lt;foo&gt; v;
-    
-        bar(bar &amp;other) 
-        :   v{other.v} // triggers static_assert in gcc and msvc, not in clang
-        {}
-    };
-## [11][tfds - fast data structures in C++ (actually working this time)](https://www.reddit.com/r/cpp/comments/gbyujn/tfds_fast_data_structures_in_c_actually_working/)
-- url: https://github.com/Ginxss/tfds
----
-
-## [12][Useful tools for checking and fixing C/C++ code](https://www.reddit.com/r/cpp/comments/gb3gdy/useful_tools_for_checking_and_fixing_cc_code/)
-- url: https://github.com/qarmin/Instrukcje-i-Tutoriale/blob/master/AnalizatoryCC%2B%2BENG.md#useful-tools-for-checking-and-fixing-cc-code-and-others-languages-too
 ---
 

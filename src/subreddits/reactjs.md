@@ -1,52 +1,27 @@
 # reactjs
-## [1][Who's Available? [April 2020]](https://www.reddit.com/r/reactjs/comments/g24x22/whos_available_april_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/g24x22/whos_available_april_2020/
+## [1][Who's Hiring? [May 2020]](https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 ---
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
 
----
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
 
-If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
-because Automods bot is not perfect :)
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
 
----
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
 
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
+examples:
 
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
 
-## (Fulltime | Contract | USA | Remote)
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
 
-or
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
 
-## (Agency | Europe | Remote)
-
-Then we recommend adding a 2-3 sentence bio as well.
-
-Not required, but may help:
-
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
-
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-If you just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
-[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/fsqgf9/whos_hiring_april_2020/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/g24x22/whos_available_april_2020/
+[format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
 ## [2][Beginner's Thread / Easy Questions (May 2020)](https://www.reddit.com/r/reactjs/comments/gb541i/beginners_thread_easy_questions_may_2020/)
 - url: https://www.reddit.com/r/reactjs/comments/gb541i/beginners_thread_easy_questions_may_2020/
 ---
@@ -109,7 +84,189 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Lifelike - the cellular automata browser toy I've always wanted (first React app)](https://www.reddit.com/r/reactjs/comments/gc5ag6/lifelike_the_cellular_automata_browser_toy_ive/)
+## [3][What the heck is React Fast Refresh](https://www.reddit.com/r/reactjs/comments/gcnowt/what_the_heck_is_react_fast_refresh/)
+- url: https://mariosfakiolas.com/blog/what-the-heck-is-react-fast-refresh
+---
+
+## [4][How to pass an html element as a prop?](https://www.reddit.com/r/reactjs/comments/gcjp39/how_to_pass_an_html_element_as_a_prop/)
+- url: https://www.reddit.com/r/reactjs/comments/gcjp39/how_to_pass_an_html_element_as_a_prop/
+---
+I have six components that are very similar to each other, because there is one for each heading tag (h1, h2 . . . h6).  And even though they are pretty simple, each time I am going to change something on one of them I need to modify all of them.
+
+At this moment I have this
+
+    // renderNode is an object passed to a component as options from a library I am using.
+    renderNode: {
+        [BLOCKS.HEADING_1]: (node, children) =&gt; (
+          &lt;h1 className="text-6xl leading-tight mb-2"&gt;{children}&lt;/h1&gt;
+        ),
+        [BLOCKS.HEADING_2]: (node, children) =&gt; (
+          &lt;h2 className="text-5xl leading-tight mb-2"&gt;{children}&lt;/h2&gt;
+        ),
+        [BLOCKS.HEADING_3]: (node, children) =&gt; (
+          &lt;h3 className="text-4xl leading-tight mb-2"&gt;{children}&lt;/h3&gt;
+        ),
+        [BLOCKS.HEADING_4]: (node, children) =&gt; (
+          &lt;h4 className="text-3xl leading-tight mb-2"&gt;{children}&lt;/h4&gt;
+        ),
+        [BLOCKS.HEADING_5]: (node, children) =&gt; (
+          &lt;h5 className="text-2xl leading-tight mb-2"&gt;{children}&lt;/h5&gt;
+        ),
+        [BLOCKS.HEADING_6]: (node, children) =&gt; (
+          &lt;h6 className="text-xl leading-tight mb-2"&gt;{children}&lt;/h6&gt;
+        ),
+    }
+
+What I'd like to achieve is to have a component like this
+
+    const Heading = ({el, className, children}) =&gt; {
+        return &lt;el className={`leading tight mb-2 ${className}`}&gt;{children}&lt;/el&gt;
+    }
+
+So I can call it doing something like this
+
+    &lt;Heading el={h1} className="text-6xl"&gt; Hello World&lt;/Heading&gt;
+
+I know that for my specific use case this can be achieved applying the common styles to every heading from css,  but I am just curious if what I stated before can be achieved at all using React or if this is the wrong way of approaching the problem.
+## [5][How to display an array of objects row-by-row using React Table?](https://www.reddit.com/r/reactjs/comments/gcl7ht/how_to_display_an_array_of_objects_rowbyrow_using/)
+- url: https://www.reddit.com/r/reactjs/comments/gcl7ht/how_to_display_an_array_of_objects_rowbyrow_using/
+---
+I want to display movies row-by-row without changing the `data` model.
+
+Here's my code:
+
+```js
+import * as React from "react";
+import { useTable } from "react-table";
+
+const borderStyle = {
+  border: "1px dashed navy"
+};
+
+export default function App() {
+  const data = React.useMemo(
+    () =&gt; [
+      {
+        actor: "Johnny Depp",
+        movies: [
+          {
+            name: "Pirates of the Carribean 1"
+          },
+          {
+            name: "Pirates of the Carribean 2"
+          },
+          {
+            name: "Pirates of the Carribean 3"
+          },
+          {
+            name: "Pirates of the Carribean 4"
+          }
+        ]
+      }
+    ],
+    []
+  );
+  const columns = React.useMemo(
+    () =&gt; [
+      {
+        Header: "Actor",
+        accessor: "actor",
+      },
+      {
+        Header: "Movies",
+        accessor: (row, index) =&gt; {
+          console.log({ row });
+          // i want to display this row-by-row instead of in 1-row without changing data model
+          return row.movies.map(movie =&gt; movie.name);
+        }
+      }
+    ],
+    []
+  );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow
+  } = useTable({ columns, data });
+  return (
+    &lt;table {...getTableProps()}&gt;
+      &lt;thead&gt;
+        {headerGroups.map(headerGroup =&gt; (
+          &lt;tr {...headerGroup.getHeaderGroupProps()}&gt;
+            {headerGroup.headers.map(column =&gt; (
+              &lt;th {...column.getHeaderProps()} style={borderStyle}&gt;
+                {column.render("Header")}
+              &lt;/th&gt;
+            ))}
+          &lt;/tr&gt;
+        ))}
+      &lt;/thead&gt;
+      &lt;tbody {...getTableBodyProps()}&gt;
+        {rows.map((row, i) =&gt; {
+          prepareRow(row);
+          if (i == 0) {
+            console.log({ row });
+          }
+          return (
+            &lt;tr {...row.getRowProps()}&gt;
+              {row.cells.map((cell, j) =&gt; {
+                if (i == 0 &amp;&amp; j &lt; 2) {
+                  console.log({ cell, i, j });
+                }
+                return (
+                  &lt;td
+                    {...cell.getCellProps()}
+                    style={borderStyle}
+                  &gt;
+                    {cell.render("Cell")}
+                  &lt;/td&gt;
+                );
+              })}
+            &lt;/tr&gt;
+          );
+        })}
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  );
+}
+```
+
+It currently looks like:
+
+
+https://user-images.githubusercontent.com/16436270/80309485-00e48380-87f3-11ea-8040-9c08f4c2e866.PNG
+
+Here's the direct link to it: https://codesandbox.io/s/modest-sanderson-z0keq?file=/src/App.tsx
+
+My movie list is an array of objects so how will I display it beside actor name? So it looks like:
+
+https://i.stack.imgur.com/xZBcJ.png
+## [6][Finished my first Full stack project :) with mern](https://www.reddit.com/r/reactjs/comments/gcb44l/finished_my_first_full_stack_project_with_mern/)
+- url: https://www.reddit.com/r/reactjs/comments/gcb44l/finished_my_first_full_stack_project_with_mern/
+---
+I have made this todo app in about 2 months. I learnt by doing so it took time.. but now that I'm finnaly done with it I feel amazing to do such more projects with data handling and routing and api services.. 
+
+[tods app](http://todo.graylogic.net)
+
+Use 123q 
+123q as uname and pass to see how it looks with data .
+ 
+I'd be happy to get some users :)
+
+Edit:
+Thanks for the suggestions guys and being supportive. I'm really glad that you guys liked my starter website.  I'll try to fix a few issues and update. People have been asking me about the git , it's linked in the site footer. 
+
+I'm 20 yo student from india studying mechanical engineering but I'm interested in coding. So I learnt python, ml,dl and web dev from youtube mostly . And took a dl course on Coursera. 
+
+ Links that helped me learn webdev and make this website were a two part series on how to make an expense tracker with mern by traversy media. I would really recommend to watch the two hours and follow along. You'll be a very quick learner when u see the output and compare your code to understand.  
+
+It took me 2 weeks to get the site working completely and 2 weeks to design the website (PS I felt lazy with html and css and didnt do nothing for weeks.) 
+
+Now that I learnt the full stack I'm guessing I'll be way faster in making a full stack website. I'll be streaming on twitch a 10 hr live coding stream on a buisness idea I recently got. Mostly tmr. I'll be using the same stack. Thank you for the read and being supportive on my first post here. 
+  :)
+## [7][Lifelike - the cellular automata browser toy I've always wanted (first React app)](https://www.reddit.com/r/reactjs/comments/gc5ag6/lifelike_the_cellular_automata_browser_toy_ive/)
 - url: https://www.reddit.com/r/reactjs/comments/gc5ag6/lifelike_the_cellular_automata_browser_toy_ive/
 ---
 I've been learning React whilst holed up for the quarantine and made the cellular automata browser toy I've always wanted but never had. It's my first React app, and second non-trivial javascript app. Built with Chakra UI, Redux, and HTML Canvas.
@@ -127,63 +284,48 @@ A brief write-up is on github, as well as a guide to using the thing: https://gi
 I greatly appreciate any critical feedback on the design or code. I know I have huge room for improvement in both areas. Suggestions and feedback for the app itself are also appreciated, of course! 
 
 Thank you for taking the time to use and/or review the app!
-## [4][✨ Introducing react-cool-inview - React hook to monitor an element enters or leaves the viewport. (GitHub: https://github.com/wellyshen/react-cool-inview)](https://www.reddit.com/r/reactjs/comments/gbixbc/introducing_reactcoolinview_react_hook_to_monitor/)
-- url: https://v.redd.it/fvuich0pw5w41
+## [8][I built a Chrome Extension in React for saving your favorite CSS styles](https://www.reddit.com/r/reactjs/comments/gcorll/i_built_a_chrome_extension_in_react_for_saving/)
+- url: https://www.reddit.com/r/reactjs/comments/gcorll/i_built_a_chrome_extension_in_react_for_saving/
+---
+Hey /Reactjs!
+
+I've always wanted a quick and easy way to save CSS styles when I'm browsing the web and I see a style I really like or a button that makes me go "ohhhhhhhh, niceeee".
+
+So, I spent the last 6 months building a browser extension using React for just that!
+
+It's called StyleStash and I built it completely in React (which was a challenge in itself). You can download StyleStash here:
+
+[https://stylestash.dev](https://stylestash.dev)
+## [9][How to show a spinner while doing an expensive calculation? A sort of async useMemo?](https://www.reddit.com/r/reactjs/comments/gcqlm9/how_to_show_a_spinner_while_doing_an_expensive/)
+- url: https://www.reddit.com/r/reactjs/comments/gcqlm9/how_to_show_a_spinner_while_doing_an_expensive/
+---
+I have a dashboard with a few charts. Once the data is loaded via API it needs to be transformed, and that's an expensive and unavoidable pass. In my render method I have something like:
+
+```ts
+const parsedVisits = useMemo(() =&gt; mapVisits(visits), [visits]);
+```
+
+The "mapVisits" function is very expensive, CPU-wise.
+
+How can I show the user a spinner while we wait for it to be done? It can take 1 to 5 seconds on older PCs, during which the screen is unresponsive...
+## [10][react-apollo + react-beautiful-dnd](https://www.reddit.com/r/reactjs/comments/gcqi8b/reactapollo_reactbeautifuldnd/)
+- url: https://www.reddit.com/r/reactjs/comments/gcqi8b/reactapollo_reactbeautifuldnd/
+---
+Has anyone gotten this working correctly?
+
+Were you able to do it using regular queries and a update/writeQuery in the mutation (which runs in onDragEnd)
+
+This thing has given me the run around for half a day.  
+
+
+My local cache doesn't seem to update fast enough for react-beautiful-dnd (I move a card to a new column and it jumps back to the original then the updated cache works and it disappears from the source column)
+## [11][actions-cli - Real time github actions on your terminal](https://www.reddit.com/r/reactjs/comments/gc8uuu/actionscli_real_time_github_actions_on_your/)
+- url: https://v.redd.it/l5lt3y06kdw41
 ---
 
-## [5][I created a before and after image slider for React](https://www.reddit.com/r/reactjs/comments/gc5800/i_created_a_before_and_after_image_slider_for/)
-- url: https://www.youtube.com/watch?v=MJIe7ygCeDQ
+## [12][Store file from a server's response locally](https://www.reddit.com/r/reactjs/comments/gchjv3/store_file_from_a_servers_response_locally/)
+- url: https://www.reddit.com/r/reactjs/comments/gchjv3/store_file_from_a_servers_response_locally/
 ---
+Hello, as a server response I am getting PDF file which I need to display and make available to download if user would like to.
 
-## [6][Twitter clone using the RPG🚀stack](https://www.reddit.com/r/reactjs/comments/gbg0k2/twitter_clone_using_the_rpgstack/)
-- url: https://v.redd.it/ipkotxrqw4w41
----
-
-## [7][A small online browser game built in React. No registration demo available.](https://www.reddit.com/r/reactjs/comments/gc3pbp/a_small_online_browser_game_built_in_react_no/)
-- url: https://4upgrade.now.sh
----
-
-## [8][Had a time to work on React/Redux App with TMDB API. Looking for opinions!](https://www.reddit.com/r/reactjs/comments/gbrbhc/had_a_time_to_work_on_reactredux_app_with_tmdb/)
-- url: https://www.reddit.com/r/reactjs/comments/gbrbhc/had_a_time_to_work_on_reactredux_app_with_tmdb/
----
-Hi there guys!  
-First of all I'm relatively new to reactjs channel and reddit in general, so just wanted to say hello!
-
-Recently I've had some time ("thanks" to coronavirus) to work on React/Redux project. Truth be told quite simple one - basic CRUD. Had some issues, learnt a lot. There's still quite a lot of things to add in a meantime.  
-
-
-I would more than appreciate if you had a time to check and play with it.   
-Any opinions and tips more than welcome!  
-
-
-* repo: [https://github.com/paldave/movie-explorer](https://github.com/paldave/movie-explorer)
-* demo: [https://paldave.github.io/movie-explorer/](https://paldave.github.io/movie-explorer/)
-
-Stay safe y'all!
-## [9][🚀 I made a site to help developers and CS students create their own portfolio! The quarantine is a good reason to create one for yourself!](https://www.reddit.com/r/reactjs/comments/gc60l3/i_made_a_site_to_help_developers_and_cs_students/)
-- url: https://techstax.dev/
----
-
-## [10][React for beginners start point](https://www.reddit.com/r/reactjs/comments/gbzmap/react_for_beginners_start_point/)
-- url: https://www.reddit.com/r/reactjs/comments/gbzmap/react_for_beginners_start_point/
----
-Where is the best place to learn Reactjs for beginners?
-YouTube videos are old and things have changed.  Some of the websites are all over the place.  So where is a good place to start and build some knowledge.
-
-Thanks in advance for your input.
-## [11][Best approach to increment number each X milliseconds [React Native]](https://www.reddit.com/r/reactjs/comments/gc3cne/best_approach_to_increment_number_each_x/)
-- url: https://www.reddit.com/r/reactjs/comments/gc3cne/best_approach_to_increment_number_each_x/
----
-Good morning,
-
-Im trying to create an incremental number ( 0% to 100%) that moves forward every X ms, but with the current approach I think its too heavy on performance,  it slows down my Android emulator too much.
-
-I've tried with the classic setInterval inside useEffect, and now with some promises and custom awaits, but it is still making my android emulator lag.
-
-Is there something that im missing, if it was React web i'll modify directly the dom instead of updating the state for each increment, but I can't do that with React Native (Or I don't know how).
-
-Help will be much apreciated.
-## [12][Build a Gender/Age prediction Application with React and Clarifai](https://www.reddit.com/r/reactjs/comments/gc37mk/build_a_genderage_prediction_application_with/)
-- url: https://codesource.io/build-a-gender-age-prediction-application-with-react-and-clarifai/
----
-
+Is it possible to store this file somehow locally?

@@ -40,125 +40,71 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][A reminder that Single Activity App Architecture has been the official Google recommendation since 2 years ago (May 9, 2018)](https://www.reddit.com/r/androiddev/comments/gc0yw3/a_reminder_that_single_activity_app_architecture/)
-- url: https://www.reddit.com/r/androiddev/comments/8i73ic/its_official_google_officially_recommends_single/
+## [3][Paid app refunded thrice??? I thought you could only refund once.](https://www.reddit.com/r/androiddev/comments/gcpkih/paid_app_refunded_thrice_i_thought_you_could_only/)
+- url: https://i.redd.it/f8n6e7zmjjw41.png
 ---
 
-## [4][Play console just stopped counting downloads yesterday at 11 PM, ok I guess?](https://www.reddit.com/r/androiddev/comments/gc38hc/play_console_just_stopped_counting_downloads/)
-- url: https://i.redd.it/9smwxmtgebw41.jpg
+## [4]["It's a virus I hope you burn in hell!" is a valid Google Play Store review](https://www.reddit.com/r/androiddev/comments/gc6ran/its_a_virus_i_hope_you_burn_in_hell_is_a_valid/)
+- url: https://i.redd.it/6ddld1yovcw41.png
 ---
 
-## [5][After 2¾ years, today is my last day at @Google](https://www.reddit.com/r/androiddev/comments/gbhtum/after_2¾_years_today_is_my_last_day_at_google/)
-- url: https://twitter.com/JakeWharton/status/1256207195957575681
+## [5][Play console weird stats - Part N](https://www.reddit.com/r/androiddev/comments/gco9x6/play_console_weird_stats_part_n/)
+- url: https://www.reddit.com/r/androiddev/comments/gco9x6/play_console_weird_stats_part_n/
+---
+So I have seen many weird play console posts here but I found something bizarre with one of my apps today. In one of my app, Total number of installs (Lifetime) is 167k and Total number of uninstalls(Lifetime) 168k. Also, Active devices (Lifetime) is 43k. Numbers don't quite add up. 
+
+[Installs](https://imgur.com/a/CBJ9LFB)   
+[Uninstalls](https://imgur.com/a/BAPTTVG)  
+[Devices](https://imgur.com/a/CBdb6U6)  
+
+
+Has anybody faced/seen this in any of your apps before? was just curious if I'm the only one.
+## [6][Today we celebrate 1 year since we release the first version of our app and this is the active devices stats evolution (organic, ph and google ads)](https://www.reddit.com/r/androiddev/comments/gcoxf0/today_we_celebrate_1_year_since_we_release_the/)
+- url: https://i.redd.it/3qoweewcajw41.jpg
 ---
 
-## [6][With the Android Development world moving so fast, how do you cope up with fear of getting left behind? Are you always catching up on new libs/frameworks, feeling burned out and wondering you don't know enough?](https://www.reddit.com/r/androiddev/comments/gc2p3s/with_the_android_development_world_moving_so_fast/)
-- url: https://www.reddit.com/r/androiddev/comments/gc2p3s/with_the_android_development_world_moving_so_fast/
+## [7][Google AdMob duplicate account issues.](https://www.reddit.com/r/androiddev/comments/gcn8f6/google_admob_duplicate_account_issues/)
+- url: https://www.reddit.com/r/androiddev/comments/gcn8f6/google_admob_duplicate_account_issues/
+---
+I am getting duplicate account issue even though I haven't created any other account. My adsense account is still in the process of getting setup, payments page in admob shows only one user (me). I'm not understanding which account are they referring to and I still haven't even linked my app from admob.
+PS - Using separate email ID for admob account now cz I had got same error on my developer account i used on play store, hence cancelled it and created a new one.
+## [8][I'm trying to get install apks and run them, something in the os is blocking.](https://www.reddit.com/r/androiddev/comments/gckprs/im_trying_to_get_install_apks_and_run_them/)
+- url: http://imgur.com/gallery/YMYAdu8
 ---
 
-## [7][I want to publish an app that uses SEND_SMS, READ_PHONE_STATE, RECEIVE_SMS permissions for alarms kit automation](https://www.reddit.com/r/androiddev/comments/gc3zp7/i_want_to_publish_an_app_that_uses_send_sms_read/)
-- url: https://www.reddit.com/r/androiddev/comments/gc3zp7/i_want_to_publish_an_app_that_uses_send_sms_read/
+## [9][Deep Dive into Activity Results API — No More onActivityResult()](https://www.reddit.com/r/androiddev/comments/gcha6u/deep_dive_into_activity_results_api_no_more/)
+- url: https://link.medium.com/FyLIbTf
 ---
-Hi
 
-I have developed an android application that sends and receive SMS for control some alarms kit. I need READ\_PHONE\_STATE to be able to receive a call from the alarms kit.
-
-On the play store exists some similar application that has the same functions ( [https://play.google.com/store/apps/details?id=com.sicurit.sicuritsms&amp;hl=en](https://play.google.com/store/apps/details?id=com.sicurit.sicuritsms&amp;hl=en) ), but when I try to publish mine Google always reject the update.
-
-I have contacted via email the Google developer support, but I receive always the same standard reply: see our documentation, remove the permissions, see our policy, etc.
-
-But my app for works correctly needs that permissions, I don't use this permission for stole or get personal information of the users, and I don't understand how the other app that sends SMS have resolved this issue!!
-
-Initially, when I have published the first version of the apps I have filled a little questionnaire about why I want to use these permissions, but now, when I try to submit an update, this questionnaire is not shown.
-
-Does someone have experience with those problems? Google support is terrible about this thematic!!
-## [8][Google play console stats acting weird.](https://www.reddit.com/r/androiddev/comments/gc5t0h/google_play_console_stats_acting_weird/)
-- url: https://www.reddit.com/r/androiddev/comments/gc5t0h/google_play_console_stats_acting_weird/
+## [10][Android distribution dashboards are updated!](https://www.reddit.com/r/androiddev/comments/gcpaic/android_distribution_dashboards_are_updated/)
+- url: https://developer.android.com/about/dashboards
 ---
-Today all installs are touched zero. I guess something is wrong with stats or counting. Anyone having same issue?
-## [9][Should we use Navigation Component?](https://www.reddit.com/r/androiddev/comments/gc5ceh/should_we_use_navigation_component/)
-- url: https://www.reddit.com/r/androiddev/comments/gc5ceh/should_we_use_navigation_component/
+
+## [11][Multiple Publisher accounts on Play Store.](https://www.reddit.com/r/androiddev/comments/gcoic4/multiple_publisher_accounts_on_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/gcoic4/multiple_publisher_accounts_on_play_store/
 ---
-Hi, I just wanted to have your opinion on Navigation Component.
+I have an account where I publish an app. I cannot change the name of app and publisher account because I only want to associate that account with apps related to a single product.
 
-I read some Medium explaining how great it is and some other explaining how some companies that implemented it went back to traditional navigation with activities.
+So, I want to create another publisher account ofcourse with another email id for some other ideas that I have but my doubts:
 
-So I am curious to know your opinion about it, do you recommend it?
+\- Will using the same PC for developing and publishing apps for separate accounts a good idea.
 
-Thanks everyone!
-## [10][How should I merge multiple Async UseCases into a single one?](https://www.reddit.com/r/androiddev/comments/gc2o9z/how_should_i_merge_multiple_async_usecases_into_a/)
-- url: https://www.reddit.com/r/androiddev/comments/gc2o9z/how_should_i_merge_multiple_async_usecases_into_a/
+\- If one of the publisher account gets suspended, can it affect other account's presence/apps?
+## [12][Can someone explain to me these stats?](https://www.reddit.com/r/androiddev/comments/gcnux7/can_someone_explain_to_me_these_stats/)
+- url: https://www.reddit.com/r/androiddev/comments/gcnux7/can_someone_explain_to_me_these_stats/
 ---
-Hello, I am refactoring parts of our code and feel unsure about my reasoning for a specific problem. Our business requirements are the following:
-
-* We have to call 4 network requests separately from different views.
-* We have to wait for 4 network requests **to finish** and **start a new network request**.
-
-Previously all that was handled in a single class, which was shared among 4 different views. However, I am unsure if my reasoning was correct. I did it in the following way:
-
-1. I would initialize **4 replay subjects** for each network request to track when network requests will be finished. (I know I could use RxRelay for this kind of logic, but it is not currently an issue to me)
-
-&amp;#8203;
-
-    fun init(){
-        firstTrigger : ReplaySubject&lt;Boolean&gt; = ReplaySubject.create()
-        secondTrigger : ReplaySubject&lt;Boolean&gt; = ReplaySubject.create()
-        thirdTrigger :  ReplaySubject&lt;Boolean&gt; = ReplaySubject.create()
-        forthTrigger : ReplaySubject&lt;Boolean&gt; = ReplaySubject.create()
-    }
+I was just exploring the Android Vitals and realized that my app warm startup time is 21% more than the median. So I went into further details and came across this graph.
 
 &amp;#x200B;
 
-2. Here is an example code of a one from 4 network requests. I trigger the subject after success.
+https://preview.redd.it/ct3qmqgvriw41.png?width=1516&amp;format=png&amp;auto=webp&amp;s=f38d7de4cf533b0974c14507121e99e69148a219
+
+The Y-axis shows sessions (which I don't know what Google is calling a session) and on the X-axis it shows startup time. Which is given in milliseconds. 
+
+Now the problem is, if I hover over any bar, it shows me the time span in milliseconds that my app took to start but what are those sessions?  Is it telling me that 4136 of the **total sessions** took 750-875 milliseconds to start? If so then total sessions of how many days? There is no option/anything like that. 
+
+Can someone untangle this, please?
 
 &amp;#x200B;
 
-    fun networkRequestNrOne() { 
-        firstObservable = apiService.networkRequestNrOne() 
-    
-        compositeDisposable.add(firstObservable
-        .retryWhenError(5, 1)
-        .subscribeOn(Schedulers.io()) 
-        .observeOn(AndroidSchedulers.mainThread()) 
-        .subscribe({ 
-            success -&gt; first.onNext(true) }, 
-            { throwable -&gt; handleError(throwable) })
-        ) 
-    }
-
-&amp;#x200B;
-
-3. Then I have a method, which is called in init of this class. It uses zip operator from RxJava to combine all network requests
-
-    fun observeWhenToFire(): Observable&lt;Boolean&gt; {
-            return Observable.zip(firstTrigger, secondTrigger, thirdTrigger,
-                    forthTrigger,
-                    Function4&lt;Boolean, Boolean, Boolean, Boolean, Boolean&gt; { first, second, third,
-                    forth -&gt;
-                        //handle checking if all are true for example.
-                    })
-        }
-
-Now I would like to refactor it and create 4 different UseCases for such cases and a new one UseCase, which would include all 4 UseCases and return a merged response.
-
-However, I would still need to use Rx Subjects to handle such a scenario. Every UseCase would take a subject tied to that UseCase **as a parameter**, while UseCase, **which zips all other** UseCases, would **include 4\*1 subjects**.
-
-Is there any better way? I even thought about using regular callbacks and it might be even more readable code.  I do use coroutines as well, however this time I don't want to refactor this logic to coroutines, because of our c**ustom retryWhenError extension**, which is quite unique :)
-## [11][Can I use python on my app?](https://www.reddit.com/r/androiddev/comments/gc165y/can_i_use_python_on_my_app/)
-- url: https://www.reddit.com/r/androiddev/comments/gc165y/can_i_use_python_on_my_app/
----
-Here's the thing, I considero myself a decent python coder and a beginer in kotlin, I have the app idea, I know how I want it to work but I want to use more what i already know to get an MVP faster.
-
-Is There a way to write some python 3 modules with the functionality i need and compile it with the rest of the app?
-## [12][SocialDistance - BLE Contact Tracing](https://www.reddit.com/r/androiddev/comments/gbzyjw/socialdistance_ble_contact_tracing/)
-- url: https://www.reddit.com/r/androiddev/comments/gbzyjw/socialdistance_ble_contact_tracing/
----
-Two weeks before google and apple announced that they were working on a contact tracing app using Bluetooth Low Energy, I was working on the same.
-
-My app was denied to the play store the day after it was announced by them. I decided to make it open source.
-
-[https://github.com/rufolangus/SocialDistance](https://github.com/rufolangus/SocialDistance)
-
-&amp;#x200B;
-
-I have not had time to refactor. It uses firebase as a database and google AdMob, I removed all the keys so it probably will not build. If it gets traction I will do proper refactoring.
+Thanks

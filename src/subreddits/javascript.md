@@ -85,45 +85,66 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][[AskJS] Has anyone used GraphQL for a large project and regretted it?](https://www.reddit.com/r/javascript/comments/gbpc6l/askjs_has_anyone_used_graphql_for_a_large_project/)
-- url: https://www.reddit.com/r/javascript/comments/gbpc6l/askjs_has_anyone_used_graphql_for_a_large_project/
+## [3][[AskJS] Today I learned of the text/speech apis.](https://www.reddit.com/r/javascript/comments/gckiuc/askjs_today_i_learned_of_the_textspeech_apis/)
+- url: https://www.reddit.com/r/javascript/comments/gckiuc/askjs_today_i_learned_of_the_textspeech_apis/
 ---
-I'm a proponent of GraphQL and believe that it has been a successful tool in projects that I've worked on.
+Browser JavaScript has a couple APIs that, as far as I know, are lesser-known. Just thought I'd share them since they're kind of interesting.
 
-I'm discussing with an architect about a new product, and was curious if anyone has come to regret GraphQL and why?
-## [4][Rendering One Million Datapoints with D3 and WebGL](https://www.reddit.com/r/javascript/comments/gc25rn/rendering_one_million_datapoints_with_d3_and_webgl/)
-- url: https://blog.scottlogic.com/2020/05/01/rendering-one-million-points-with-d3.html
----
+SpeechSynthesis is a text-to-speech API.
 
-## [5][I built a tax calculator for freelancers using JavaScript](https://www.reddit.com/r/javascript/comments/gc41ph/i_built_a_tax_calculator_for_freelancers_using/)
-- url: https://www.taxmygig.com/
----
+SpeechSynthesis.getVoices() returns an array of voice objects. When tested on Chrome in my browser, I got 21 different voices with assorted genders and accents. MS Edge only had 3.
 
-## [6][Lerna Workflow Example](https://www.reddit.com/r/javascript/comments/gc2vlg/lerna_workflow_example/)
-- url: https://github.com/customcommander/lerna-workflow-example
----
+SpeechSynthesisUtterance instances hold your text and chosen voice. You use the whole api like this:
 
-## [7][I made a clone of Battle City (1985) in TypeScript](https://www.reddit.com/r/javascript/comments/gc3gsc/i_made_a_clone_of_battle_city_1985_in_typescript/)
-- url: https://dogballs.github.io/cattle-bity/
----
+    let u = new SpeechSynthesisUtterance("Some text to speak");
+    u.voice = SpeechSynthesis.getVoices()[0];
+    SpeechSynthesis.speak(u); 
 
-## [8][[Showoff Saturday] neo.mjs - The webworkers driven UI framework (MIT licensed)](https://www.reddit.com/r/javascript/comments/gbzzcg/showoff_saturday_neomjs_the_webworkers_driven_ui/)
-- url: https://github.com/neomjs/neo
----
+And then there's also speech to text. Firefox calls it SpeechRecognition, while Chrome calls it webkitSpeechRecognition. You can look it up for more information, especially its onerror event handler, but the basic method works like this:
 
-## [9][Trends of Coronavirus (Covid-19) Total and Daily Cases of Each County in the US](https://www.reddit.com/r/javascript/comments/gc2euf/trends_of_coronavirus_covid19_total_and_daily/)
-- url: https://observablehq.com/@jeantimex/coronavirus-covid-19-total-cases-of-each-county-in-the-us
+    let sr = new webkitSpeechRecognition();
+    let textOutput = "";
+    sr.onresult = function(e){textOutput = e.results[0][0].transcript;};
+    sr.start(); 
+
+I can see these being useful as accessibility features or things for users to play with, but as a webdev, I've never had to use either of these. Is this the first time you've heard of it? If not, have you ever had to use it before?
+## [4][Favorite JavaScript utilities in a single line of code! No more!](https://www.reddit.com/r/javascript/comments/gcok1a/favorite_javascript_utilities_in_a_single_line_of/)
+- url: https://1loc.dev/
 ---
 
-## [10][[ShowOff Saturday] I built a dashboard for live corona updates and self diagnose chat bot](https://www.reddit.com/r/javascript/comments/gc5s9s/showoff_saturday_i_built_a_dashboard_for_live/)
-- url: https://coronadaily.org/dashboard
+## [5][Neutralinojs v1.4.0 released!](https://www.reddit.com/r/javascript/comments/gck0n8/neutralinojs_v140_released/)
+- url: https://github.com/neutralinojs/neutralinojs/releases/tag/v1.4.0
 ---
 
-## [11][Free Javascript book, absolutely massive compendium of everything JS](https://www.reddit.com/r/javascript/comments/gbrrlc/free_javascript_book_absolutely_massive/)
-- url: https://eloquentjavascript.net/Eloquent_JavaScript.pdf
+## [6][ES2020 - Promise.any](https://www.reddit.com/r/javascript/comments/gcb4ki/es2020_promiseany/)
+- url: https://mariosfakiolas.com/blog/es2020-promise-any
 ---
 
-## [12][Launch Your Own Face Recognition Algorithm(Real Time)In Browser Within Minutes](https://www.reddit.com/r/javascript/comments/gbju2g/launch_your_own_face_recognition_algorithmreal/)
-- url: https://medium.com/@billyfong2007/launch-your-own-real-time-face-recognition-algorithm-in-your-browser-in-minutes-beginner-guide-a8f2e6fd505c
+## [7][App like native share for mobile websites with Web Share API](https://www.reddit.com/r/javascript/comments/gc7m3c/app_like_native_share_for_mobile_websites_with/)
+- url: https://medium.com/@aksteps/adding-app-like-share-to-your-website-on-mobile-and-social-share-urls-on-desktop-560b2b687d9e
+---
+
+## [8][Test.io - Online tool to test your Socket.io project](https://www.reddit.com/r/javascript/comments/gch57v/testio_online_tool_to_test_your_socketio_project/)
+- url: https://GitHub.com/yavrumian/test.io
+---
+
+## [9][[AskJS] New to Javascript. What's cool ?](https://www.reddit.com/r/javascript/comments/gcpkbe/askjs_new_to_javascript_whats_cool/)
+- url: https://www.reddit.com/r/javascript/comments/gcpkbe/askjs_new_to_javascript_whats_cool/
+---
+Hi guys!
+
+I'm going to pick up Javascript now, and just want to look forward to things to excite myself with. What are some cool things that can only be done with Javascript?
+
+I've been putting this aside for the longest time, having started off (and back then, content) with Python. But I've come across some Flask functionalities that necessitate JavaScript (dependent dropdowns), and thought I'd bite the bullet and pick it up!
+## [10][I built a little script to add a kaleidoscope background effect](https://www.reddit.com/r/javascript/comments/gccpzj/i_built_a_little_script_to_add_a_kaleidoscope/)
+- url: https://github.com/dpet/kaleido
+---
+
+## [11][Appear DOM elements when they are visible in window's frame.](https://www.reddit.com/r/javascript/comments/gcpgcd/appear_dom_elements_when_they_are_visible_in/)
+- url: https://github.com/arianbahreman/appear
+---
+
+## [12][I created an extendible javascript library for building creative brainstorming boards, on top of diagram-js. Check it out!](https://www.reddit.com/r/javascript/comments/gcpeb5/i_created_an_extendible_javascript_library_for/)
+- url: https://github.com/pinussilvestrus/postit-js
 ---
 

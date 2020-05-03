@@ -1,70 +1,126 @@
 # golang
-## [1][Mid stack inlining in Go](https://www.reddit.com/r/golang/comments/gc23ed/mid_stack_inlining_in_go/)
-- url: https://dave.cheney.net/2020/05/02/mid-stack-inlining-in-go
+## [1][A (toy) web browser written from scratch entirely in golang](https://www.reddit.com/r/golang/comments/gcge4k/a_toy_web_browser_written_from_scratch_entirely/)
+- url: https://www.reddit.com/r/golang/comments/gcge4k/a_toy_web_browser_written_from_scratch_entirely/
+---
+I've started this project to learn GO and to learn how web browsers work.
+
+https://preview.redd.it/rnf59t1ktfw41.png?width=614&amp;format=png&amp;auto=webp&amp;s=0641365d5fdcfd349a9d0569a96be4badfa9014d
+
+This is the project link:
+
+[https://github.com/danfragoso/thdwb](https://github.com/danfragoso/thdwb)
+
+I tried to not use any dependency on this project, and write everything myself.
+
+I wrote the following components:
+
+* ketchup (html parser and DOM Tree builder)
+* mayo (css parser and Render Tree builder)
+* mustard (UI Toolkit, events and OpenGL)
+* sauce (requests, cache and filesystem)
+* bun (css layout calculator)
+
+The dependencies are:
+
+* [https://github.com/fogleman/gg](https://github.com/fogleman/gg) (fork)
+* [https://github.com/go-gl/gl](https://github.com/go-gl/gl)
+* [https://github.com/go-gl/glfw](https://github.com/go-gl/glfw)
+
+It builds and runs on Linux and macOS.
+
+It's is for the most part completely broken. But I would love any kind of feedback and suggestions on the features I should work next.
+## [2][Beginners Guide to gRPC in Go!](https://www.reddit.com/r/golang/comments/gc9k6s/beginners_guide_to_grpc_in_go/)
+- url: https://youtu.be/BdzYdN_Zd9Q
 ---
 
-## [2][A lib to make web scraping and automation easy](https://www.reddit.com/r/golang/comments/gc3gue/a_lib_to_make_web_scraping_and_automation_easy/)
-- url: https://www.reddit.com/r/golang/comments/gc3gue/a_lib_to_make_web_scraping_and_automation_easy/
----
-[Project Repo](https://github.com/ysmood/rod)
-
-Rod is a High-level Chrome Devtools driver directly based on [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/).
-
-* Fluent interface design to reduce verbose code
-* Chained context design, intuitive to timeout or cancel the long-running task
-* Debugging friendly, auto input tracing, remote monitoring headless browser
-* Automatically find or download [chrome](https://github.com/ysmood/rod/blob/master/lib/launcher)
-* No external dependencies, [CI](https://github.com/ysmood/rod/actions) tested on Linux, Mac, and Windows
-* High-level helpers like WaitStable, WaitRequestIdle, GetDownloadFile, Resource
-* Two-step WaitEvent design, never miss an event
-* Correctly handles nested iframes
-* No zombie chrome process after the crash ([how it works](https://github.com/ysmood/leakless))
-## [3][Go GraphQL: Introduction to building GraphQL API in Golang #1 [7 Chapter Tutorial Series ]](https://www.reddit.com/r/golang/comments/gc3j12/go_graphql_introduction_to_building_graphql_api/)
-- url: https://ednsquare.com/story/go-graphql-introduction-to-building-graphql-api-in-golang------QhS1oC
+## [3][Building a REST API with Go Gin - Part 1](https://www.reddit.com/r/golang/comments/gci9nf/building_a_rest_api_with_go_gin_part_1/)
+- url: https://youtu.be/CzxEUDq9xiQ
 ---
 
-## [4][InfoMark - a real-world app with Docker, Postgres, Elm, Swagger, ...](https://www.reddit.com/r/golang/comments/gc3fax/infomark_a_realworld_app_with_docker_postgres_elm/)
-- url: https://www.reddit.com/r/golang/comments/gc3fax/infomark_a_realworld_app_with_docker_postgres_elm/
----
-Maybe this app is interesting for some of you. It is a combination of GO for the backend and ELM for the frontend using RESTful JSON.
-
-[https://infomark.org/](https://infomark.org/)
-
-The system allows university students in a course to upload their home programming assignments to the system. These uploads are then tested automatically within a docker sandbox. And the results are visible to students and teaching assistants.
-
-Why this might be interesting for you?
-
-It has unit-tests in the CI process against a full PostgreSQL database (no mocked functions), it generates the Swagger API documentation automatically (with each release), the build process checks if even the comments are correct, it has background workers that act like a docker client to spawn processes within a "sandbox", there are some cronjobs within the app, database migration, database backup/restore, server console, email, Prometheus, Grafana ... and ... and ...  and. And everything is packed into a single binary! That's what I really enjoy when using GO (a previous version written in RoR exists).
-## [5][Question about gqlgen testing.](https://www.reddit.com/r/golang/comments/gc64y0/question_about_gqlgen_testing/)
-- url: https://www.reddit.com/r/golang/comments/gc64y0/question_about_gqlgen_testing/
----
-Does anyone know how to test authentication with [gqlgen](https://gqlgen.com/) client? There is a [recipe](https://gqlgen.com/recipes/authentication/) from their document and says we can get user's information from the context then check authentication, it works fine in the real api, but  when I write some unit testing for the api, I don't konw where to put the user's information to the client's context.
-
-Is there something I was doing wrong or missing? Thanks.
-## [6][Writing a protoc plugin with google.golang.org/protobuf](https://www.reddit.com/r/golang/comments/gc4r2f/writing_a_protoc_plugin_with/)
-- url: https://medium.com/@tim.r.coulson/writing-a-protoc-plugin-with-google-golang-org-protobuf-cd5aa75f5777
+## [4][A nice simple thread-safe progress bar / spinner (v3)](https://www.reddit.com/r/golang/comments/gc7j0a/a_nice_simple_threadsafe_progress_bar_spinner_v3/)
+- url: https://github.com/schollz/progressbar
 ---
 
-## [7][Go: Asynchronous Preemption](https://www.reddit.com/r/golang/comments/gbhnk1/go_asynchronous_preemption/)
-- url: https://medium.com/a-journey-with-go/go-asynchronous-preemption-b5194227371c
+## [5][How to check whether a struct implements an interface in GoLang](https://www.reddit.com/r/golang/comments/gcqhby/how_to_check_whether_a_struct_implements_an/)
+- url: https://www.pixelstech.net/article/1588481241-How-to-check-whether-a-struct-implements-an-interface-in-GoLang
 ---
 
-## [8][Elver, a small Advent of Code utility tool for running your solutions](https://www.reddit.com/r/golang/comments/gc3z5a/elver_a_small_advent_of_code_utility_tool_for/)
-- url: https://github.com/aod/elver
+## [6][Blimp: Cloud Docker Compose Written in Go](https://www.reddit.com/r/golang/comments/gcczf5/blimp_cloud_docker_compose_written_in_go/)
+- url: https://www.reddit.com/r/golang/comments/gcczf5/blimp_cloud_docker_compose_written_in_go/
+---
+I was struggling with how slow my laptop gets when I run Docker with a lot of microservices, so I built a Docker Compose alternative that runs in the cloud rather than on my local machine. It's called Blimp: [https://kelda.io/blimp/](https://kelda.io/blimp/)
+
+* Written entirely in Go: we took advantage of the recently released [Go Docker-Compose spec](https://github.com/compose-spec/compose-go)
+* Runs on Kubernetes under the hood. I thought we could just use Kompose, but ends up there’s tons of subtle differences between Kube and Docker Compose that aren't captured in the yaml
+* We use an encrypted GRPC tunnel to forward localhost to the cloud environment. It was important to us that it *just worked* without having to change the workflow at all.
+* For most volumes, we just use standard Kube volumes. But for bind mounts [we automatically use Syncthing](https://kelda.io/blimp/docs/compose-diff/#syncthing). Traditional volume mounts don't perform well over the WAN, and aren't necessary anyways.
+
+Would love feedback, what do you think??
+## [7][OpenCodenames: a Jackbox-style version of Codenames made with React &amp; Go!](https://www.reddit.com/r/golang/comments/gcbgig/opencodenames_a_jackboxstyle_version_of_codenames/)
+- url: https://github.com/rodohanna/OpenCodenames
 ---
 
-## [9][I'm going to start learning Go, is this resource still valid? I only ask because in JS, books from 5 years ago are pretty useless](https://www.reddit.com/r/golang/comments/gblhly/im_going_to_start_learning_go_is_this_resource/)
-- url: https://www.reddit.com/r/golang/comments/gblhly/im_going_to_start_learning_go_is_this_resource/
----
-When uni finished next month, I want to learn Go by using the book **The Go Programming Language** [https://www.gopl.io/](https://www.gopl.io/) which seems to be a really popular resource
-
-Is it considered 'up to date'? I ask this because I attempted to learn JS a few years ago with books. This was a bad move in my opinion. When I tried to install libraries and use them in my code, they were effectively out of date and they wouldn't work, it felt like a waste of money.
-
-So how do gophers here feel this book would be for someone looking to start Go (in particularly get into server side development for the web). 
-
-**Bonus question**  
-How is the Go ecosystem in general? Does it move as fast as JS? One of the key reasons I am asking this is because I recently attempted to create a REST API in node, but my knowledge of Express was a few years old. This made me run into a lot more problems than I expected.
-## [10][Accelerating aggregate MD5 hashing up to 800% with AVX512](https://www.reddit.com/r/golang/comments/gbll24/accelerating_aggregate_md5_hashing_up_to_800_with/)
-- url: https://blog.min.io/accelerating-aggregate-md5-hashing-up-to-800-with-avx512-2/
+## [8][Four Steps to Daemonize Your Go Programs](https://www.reddit.com/r/golang/comments/gcgzwo/four_steps_to_daemonize_your_go_programs/)
+- url: https://ieftimov.com/post/daemonizing-golang-programs-by-example/
 ---
 
+## [9][Connecting ZMQ microservices within AWS using Fargate](https://www.reddit.com/r/golang/comments/gcnn6d/connecting_zmq_microservices_within_aws_using/)
+- url: https://www.reddit.com/r/golang/comments/gcnn6d/connecting_zmq_microservices_within_aws_using/
+---
+I am attempting to use ZeroMQ ([https://github.com/pebbe/zmq4](https://github.com/pebbe/zmq4)) within ECS running on Fargate in awsvpc mode. I have 2 different services, each running its own task and service discovery enabled.
+
+I create my Router and Dealer in a microservice called broker.
+
+        front, _ := zmq.NewSocket(zmq.ROUTER)
+        defer front.Close()
+        front.Bind("tcp://*:4070")
+        
+        back, _ := zmq.NewSocket(zmq.DEALER)
+        defer back.Close()
+        back.Bind("tcp://*:4080")
+
+I then add these 2 sockets to a poller and have a for loop that waits for messages. 
+
+I have a separate microservice that connects to the socket and attempts to send a message to the dealer. I have set service discovery so I assume the address I connect to would be: 
+
+&amp;#x200B;
+
+    &gt; "tcp://broker:4070"
+    
+    Below is the code from 'serviceA'
+    
+        func New(ZMQ models.ZMQ) *Requester {
+        	s, err := zmq.NewSocket(zmq.REQ)
+        	if err != nil {
+        		log.Fatalln("shareholder/requester zmq.NewSocket", err)
+        	}
+        	p := zmq.NewPoller()
+        	p.Add(s, zmq.POLLIN)
+        
+        	log.Println("Requester", ZMQ.Req)
+        	err = s.Connect("tcp://broker:4070")
+        	if err != nil {
+        		log.Print(fmt.Errorf("err is %w", err))
+        	}
+        
+        	req := &amp;Requester{
+        		Poller:  p,
+        		Retries: 2,
+        		Socket:  s,
+        		Timeout: time.Duration(time.Minute),
+        	}
+        	runtime.SetFinalizer(req, (*Requester).Close)
+        	return req
+        }
+
+I then use the above code to send a message with my socket connection
+
+        _, err := r.Socket.SendMessage(req)
+
+However, my message is never received within my broker service. I can hit my REST APIs on the network with their hostnames I register during service discovery, is there something I am missing here with Fargate/ECS/ZeroMQ???
+## [10][Go Cheatsheet / repo](https://www.reddit.com/r/golang/comments/gch6ov/go_cheatsheet_repo/)
+- url: https://www.reddit.com/r/golang/comments/gch6ov/go_cheatsheet_repo/
+---
+Hi. I have made a small repository with a bunch of code sample showcasing Go. Personally sometimes when I want to learn something new, I just want to see a bunch of code samples and compare them to what I already know, from other languages I have mastered. The link is right here: [https://github.com/TopSwagCode/Go.CheatRepo](https://github.com/TopSwagCode/Go.CheatRepo) 
+
+I would love all the feedback that I can get. I am totally new to Go myself and just wanted to make this CheatRepo public, so others also could benefit it. I already have a Roadmap with some ideas to grow the repository with more content.

@@ -1,218 +1,103 @@
 # aws
-## [1][I would like to build and deploy a full-stack service (frontend, backend, DB) on AWS. Which are the current best practice? Which AWS service should I use? How to configure them? (details in post)](https://www.reddit.com/r/aws/comments/gcnw4e/i_would_like_to_build_and_deploy_a_fullstack/)
-- url: https://www.reddit.com/r/aws/comments/gcnw4e/i_would_like_to_build_and_deploy_a_fullstack/
+## [1][Webscraper on steroids, using 2,000 Lambda invokes to scan 1,000,000 websites in under 7 minutes.](https://www.reddit.com/r/aws/comments/gd6xss/webscraper_on_steroids_using_2000_lambda_invokes/)
+- url: /r/Python/comments/gcq18f/a_serverless_web_scraper_built_on_the_lambda/
 ---
-Hi everyone, I'm totally new to the AWS world and I would like to understand how I could start deploying and managing apps. In this scenario, I would like to understand how I could easily start but at the same time be ready to scale. I'm willing to read a lot of resources, that's not an issue.
 
-At the moment I find AWS really overwhelming because you have a lot of options but not a real best practice if you need to build a full-stack architecture with X, Y, Z technology (and maybe this is all because I'm new to this).
-
-My current stack would be
-
-* \[Frontend\] VueJS for the frontend (with Nuxt)
-* \[Backend\] Express on the backend (willing to understand how to properly use lambdas with express)
-* \[DB\] DynamoDB as a backend (if I don't see any limitations I would love to learn how to use it properly)
-
-So I need to start from scratch everything on AWS. I would like to understand which services should I use for this architecture, how I should configure them (is there a framework/tool to manage them), and how I can configure a CI/CD for both the frontend and backend part.
-
-I saw a lot of tutorials and a lot of technologies out there (like Amplify) but I didn't see the real best-practice I should follow, something that is a de-facto standard that will be maintained by AWS/community over the time.
-
-I try to go into some details about my doubts
-
-# Frontend
-
-* should I host it on S3? I think that this is the common way to host Vue/React/AngularJS apps
-* what should I do in order to set up a proper CI/CD env and not manually upload files on the S3 bucket?
-* what should I do in order to be ready (something that could eventually never happen but I would like to understand best practice) in order to scale?
-* how should the frontend connect with the backend (API Gateway?)? Are there some configurations that I should do?
-
-# Backend
-
-I used Lambda (single function, nothing complex, only for an Alexa skill) in the past and I really like it. I don't know if it's a good fit for every project (compared to EC2) but I would like to understand which are its limitation and where and when to use it.
-
-So my backend would handle everything from user sign in, the user signs up and all the API endpoints to manage my DB entities. I saw that you can use express with lambda thanks to [AWS Serverless Express](https://github.com/awslabs/aws-serverless-express).
-
-* Is express a good solution with lambda or should I use something else in order to use all the lambda's power?
-* Which should be the best way in order to manage API Gateway / Lambda configuration in order to be exposed to my frontend?
-* Which should be the best way to handle the CI / CD of my backend?
-* How should I architecture my system in order to be ready to scale to different regions?
-* I saw that many posts refer to ClaudiaJS. Is this still used or has AWS developed something to be used internally?
-
-Maybe I'm just overthinking but I know that I need to understand how things work and how to manage them in order to not be error-prone or go crazy to manually do stuff (because that's the way to make things not scalable).
-## [2][I need your help!!! Just charged for EC2 but I haven't touched AWS in years.](https://www.reddit.com/r/aws/comments/gcizgm/i_need_your_help_just_charged_for_ec2_but_i/)
-- url: https://www.reddit.com/r/aws/comments/gcizgm/i_need_your_help_just_charged_for_ec2_but_i/
+## [2][I unknowingly left EC2 instances running on an old account last year and accumulated $3,700 in charges. Does Amazon pursue/sell these debts? Do they file it against your credit report?](https://www.reddit.com/r/aws/comments/gcxbar/i_unknowingly_left_ec2_instances_running_on_an/)
+- url: https://www.reddit.com/r/aws/comments/gcxbar/i_unknowingly_left_ec2_instances_running_on_an/
 ---
-I honestly haven't touched AWS in years. But I just received a $400 bill for using EC2 last month, AWS is now saying that I may receive around $500 bill this month if I don't get it resolved, and honestly I'm dead broke, I can't afford that! I checked EC2 and it says there aren't any instances running. What should I do????
+So yes I know I messed up here. I was using AWS sometime last year to mess with linux VMs on higher end hardware than I have available, and messing with Plex on there.
 
-Edit: I sent a request to support, but they aren't getting back to me. Cost Management won't show me anything since it's the first time i'm accessing it (says it needs 24 hours).
-## [3][Anybody using Config Engine for Compliance as code?](https://www.reddit.com/r/aws/comments/gcpxb4/anybody_using_config_engine_for_compliance_as_code/)
-- url: https://www.reddit.com/r/aws/comments/gcpxb4/anybody_using_config_engine_for_compliance_as_code/
+I stopped messing with it maybe around ~10 months ago due to other unrelated reasons. Before I switched it off I was having trouble encoding on t3 small and similar instances on plex, and was periodically switching them to e.g. the larger m5 machines.
+
+Anyway it looks (well this is what I guess) like I must have left an instance on a  much more powerful machine before the last time I stopped using it for ~10 months. At this time I also changed my email address to a custom domain, so any email notifications didn't get to me. They didn't bother sending any actual real life mail.
+
+I wanted to use AWS again today and signed in, only to find my account has been suspended with $3,700 worth of bills. These were accumulating at around $700/month. I don't know why they didn't suspend the account sooner, and let the debt reach $3,700 over several months,, but they did.
+
+I have spoke to support and submitted a request to have the bill amended/dropped, but am obviously worried it will not.
+
+My question is, if they don't drop them, do they actually try to chase these debts, and at this value? Do they take people to court, or sell their debt to 3rd party companies?
+
+Also do they file the unpaid bills on your credit report?
+## [3][How to deploy web apps to AWS using S3 &amp; CloudFront](https://www.reddit.com/r/aws/comments/gdbihm/how_to_deploy_web_apps_to_aws_using_s3_cloudfront/)
+- url: https://www.reddit.com/r/aws/comments/gdbihm/how_to_deploy_web_apps_to_aws_using_s3_cloudfront/
 ---
-Is anyone using the below CF template/s and able to deploy Config rules successfully to other AWS accounts from the master account?
+In this article you can learn how to deploy your website and frontend applications on AWS using AWS S3, CloudFront and Route 53. We’re going to be using S3 to store our source code and assets, CloudFront as a CDN to distribute our website and provide HTTPS support, and Route53 to create a custom DNS record that points to CloudFront distribution. Lets jump right through it:
 
-[AWS Config Engine as Code](https://github.com/awslabs/aws-config-engine-for-compliance-as-code)
-
-Everything seems to be setup okay but when I follow the instructions on how to update the rule set in my master account, they don’t get pushed to my application accounts.
-## [4][AWS Lambda + SSM - how to properly handle SSM value change?](https://www.reddit.com/r/aws/comments/gcneer/aws_lambda_ssm_how_to_properly_handle_ssm_value/)
-- url: https://www.reddit.com/r/aws/comments/gcneer/aws_lambda_ssm_how_to_properly_handle_ssm_value/
+[https://medium.com/@khaledosman/deploying-a-web-app-on-aws-using-s3-cloudfront-45f77cd652c6](https://medium.com/@khaledosman/deploying-a-web-app-on-aws-using-s3-cloudfront-45f77cd652c6)
+## [4][Is it recommended to use Docker with AWS Elastic beanstalk?](https://www.reddit.com/r/aws/comments/gdbhmd/is_it_recommended_to_use_docker_with_aws_elastic/)
+- url: https://www.reddit.com/r/aws/comments/gdbhmd/is_it_recommended_to_use_docker_with_aws_elastic/
 ---
-Basically, I wan't to pass some easily-configurable parameters to the Lambda. This Lambda will consume quite a lot of traffic so I don't want to query SSM every time a request is handled. I thought about loading the param when the Lambda is initialized, outside the handler. 
+I'm deciding how to deploy my Nodejs API to AWS Elastic beanstalk. I have 2 options: deploy it as a normal nodejs service or deploy the api dockerized.
 
-I have found this article which does exactly it:
-
-https://aws.amazon.com/blogs/compute/sharing-secrets-with-aws-lambda-using-aws-systems-manager-parameter-store/
-
-However, when the SSM configuration changes, warm Lambdas will never get an update. This article mentions that:
-
-&gt;  For more advanced use cases where configuration changes need to be received immediately, you could implement an expiry policy for your configuration entries or push notifications to your function.
-
-I could just persist something like "last update date" in the "local configuration"(outside the handler) and whenever Lambda runs, it first checks if the date is older than lets say 5 minutes - if that is the case, it re-queries the SSM and saves the new param. This would basically be the "expiry policy" they're talking about and wouldn't cost that much.
-
-Where can I find any examples of implementing "push notification to the function" though? Would that reconfigure the Lambda near real time?
-
-Perhaps there's an easier way to achieve all that? Thanks.
-## [5][AWS Combination Best Option for Django + React](https://www.reddit.com/r/aws/comments/gcpqcd/aws_combination_best_option_for_django_react/)
-- url: https://www.reddit.com/r/aws/comments/gcpqcd/aws_combination_best_option_for_django_react/
+In which situations is it more recomendable to use docker over a normal nodejs service? (Giving the fact that I will use Elastic beanstalk)
+## [5][Setting up a CI/CD pipeline for a ReactJS app using GitLab and AWS CDK](https://www.reddit.com/r/aws/comments/gd0lj8/setting_up_a_cicd_pipeline_for_a_reactjs_app/)
+- url: https://www.reddit.com/r/aws/comments/gd0lj8/setting_up_a_cicd_pipeline_for_a_reactjs_app/
 ---
- I have my backend written in django. I researched and understand that  AWS EC2 or AWS lightsail are cost effective solutions for me.
+Created a sample CI/CD ReactJS + AWS CDK project to deploy a website to S3, fronted by CloudFront. All of the resources are created with CDK (including Cognito and lambda functions). I'm using GitLab for the repo and CI/CD. The link to the project is in the description of the video.
 
-What I am confused is about frontend. Should I use the same instance or create a container and use Amazon Container services ?
-
-The concerns I have is flexible load of containers during multiple  users coming to website, CORS/Same origin issues when deployed in same  instance, security issues when deployed in same instance, cost  effectiveness
-
-Please help how do you decide in this situation
-
-  
-Other points -
-
-I estimate very small load on both backend and frontend \~ 2000 visits per month with each visit having not more than 5 api calls to backend with each calls not more than 15kb of data transfer.
-
-For my static media files, I will be using S3 storage.
-## [6][EMR Cluster Config typo?](https://www.reddit.com/r/aws/comments/gcp3ic/emr_cluster_config_typo/)
-- url: https://www.reddit.com/r/aws/comments/gcp3ic/emr_cluster_config_typo/
+https://youtu.be/6OC6AqF-IMc
+## [6][Confused on how to go e my IAM user permissions without access to using my credit card](https://www.reddit.com/r/aws/comments/gdaoug/confused_on_how_to_go_e_my_iam_user_permissions/)
+- url: https://www.reddit.com/r/aws/comments/gdaoug/confused_on_how_to_go_e_my_iam_user_permissions/
 ---
-I'm just wondering if this is a typo:  
-
-[From AWS Docs on EMR Cluster Configuration](https://preview.redd.it/9eq3garncjw41.png?width=1579&amp;format=png&amp;auto=webp&amp;s=15fb9983095eb9163eaf670f7e128c29ddf226d4)
-
-  
-Taken from: [https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html)
-## [7][Issue with deployment of node app to Elastic Beanstalk](https://www.reddit.com/r/aws/comments/gcm9q7/issue_with_deployment_of_node_app_to_elastic/)
-- url: https://www.reddit.com/r/aws/comments/gcm9q7/issue_with_deployment_of_node_app_to_elastic/
+Hello, I am towards the end of completing an application and the company has access to my aws account, I was charged a dollar when opening it and today was charged a dollar for another server in Mumbai where they're based off of. What permission can I remove to not give them ny access for purchases as I do not want to worry about receiving an expensive bill. Thank you!
+## [7][Trigger Appsync mutation from lambda function](https://www.reddit.com/r/aws/comments/gdangk/trigger_appsync_mutation_from_lambda_function/)
+- url: https://www.reddit.com/r/aws/comments/gdangk/trigger_appsync_mutation_from_lambda_function/
 ---
-OS of my PC: Windows 10
+Trigger Appsync mutation from lambda function
 
-I am a beginner in AWS and have a node Application uses RDS and DynamoDB
+Hi,
 
-When the app was deployed to ec2 , there was an error when running the app which said something on the lines of No credentials provider available, credentials are missing.
+so  I keep getting this error message when I try to trigger a mutation  through lambda when I add/modify/delete items from DynamoDB : "message" :  "Invalid request, \`query\` can't be null.",
 
-So I created a file called aws\_config.json at the root folder level, and added the accessKeyId, secretAccessKey and region and in the RDS Store js file retrieve the credentials from the path
+So  what  i am trying to do is whenever a modification is done directly on  dynamodb, the subscribed users will be notified with the changes.
 
-const AWS = require('aws-sdk')
+I have created the new mutation with None type data source. I tested it out directly on the query console and it works fine.
 
-AWS.config.loadFromPath('/home/ec2-user/pizza-luvrs/aws\_config.json')
+I  have also created the lambda function based on Python that is able to  retrieve the dynamodb streams and have tested it out with cloudwatch.
 
-This solved the credentials error. 
+Now the issue is when I try to do a http post request from the lambda, i get:
 
-Then when I deployed the application to Elastic Beanstalk, I am getting 502 error. 
+error: MalformedHttpRequestException
 
-When I check the logs for the reason behind the error, I see this log: 
+message: invalid request, \`query\` can't be null.
 
-&amp;#x200B;
+\-----------------------------------------------------------------------------------------------------------------------------------------------------
 
-May  2 18:33:53 ip-10-0-1-209 web: Error: EACCES: permission denied, open '/home/ec2-user/pizza-luvrs/aws\_config.json'
+name of mutation: addTodo
 
-May  2 18:33:53 ip-10-0-1-209 web: at Object.openSync (fs.js:458:3)
+the data i am sending over post:
 
-May  2 18:33:53 ip-10-0-1-209 web: at Object.readFileSync (fs.js:360:35)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Object.readFileSync (/var/app/current/node\_modules/aws-sdk/lib/util.js:95:26)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Config.loadFromPath (/var/app/current/node\_modules/aws-sdk/lib/config.js:436:39)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Object.&lt;anonymous&gt; (/var/app/current/data/pizzaStore.js:16:12)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.\_compile (internal/modules/cjs/loader.js:1156:30)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Object.Module.\_extensions..js (internal/modules/cjs/loader.js:1176:10)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.load (internal/modules/cjs/loader.js:1000:32)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Function.Module.\_load (internal/modules/cjs/loader.js:899:14)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.require (internal/modules/cjs/loader.js:1042:19)
-
-May  2 18:33:53 ip-10-0-1-209 web: at require (internal/modules/cjs/helpers.js:77:18)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Object.&lt;anonymous&gt; (/var/app/current/data/pizzas.js:5:20)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.\_compile (internal/modules/cjs/loader.js:1156:30)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Object.Module.\_extensions..js (internal/modules/cjs/loader.js:1176:10)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.load (internal/modules/cjs/loader.js:1000:32)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Function.Module.\_load (internal/modules/cjs/loader.js:899:14)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.require (internal/modules/cjs/loader.js:1042:19)
-
-May  2 18:33:53 ip-10-0-1-209 web: at require (internal/modules/cjs/helpers.js:77:18)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Object.&lt;anonymous&gt; (/var/app/current/data/mock.js:1:16)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.\_compile (internal/modules/cjs/loader.js:1156:30)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Object.Module.\_extensions..js (internal/modules/cjs/loader.js:1176:10)
-
-May  2 18:33:53 ip-10-0-1-209 web: at Module.load (internal/modules/cjs/loader.js:1000:32) {
-
-May  2 18:33:53 ip-10-0-1-209 web: errno: -13,
-
-May  2 18:33:53 ip-10-0-1-209 web: syscall: 'open',
-
-&amp;#x200B;
-
-I tried to resolve this issue by creating .ebextensions folder and adding a config file there which has the contents:
-
-&amp;#x200B;
-
-files:
-
-  "/opt/elasticbeanstalk/hooks/appdeploy/post/99\_fix\_node\_permissions.sh":
-
-mode: "000755"
-
-owner: root
-
-group: root
-
-content: |
-
-\#!/bin/bash
-
-chown root:root /home/ec2-user/pizza-luvrs/aws\_config.json
-
-&amp;#x200B;
-
-Still getting 502 Bad Gateway error. I have also tried rebooting the servers in beanstalk, and have used the eb deploy command line method of deployment too.
-
-&amp;#x200B;
-
-What could be the solution to this?
-## [8][IAM authentication with Postgres on RDS](https://www.reddit.com/r/aws/comments/gcfvjj/iam_authentication_with_postgres_on_rds/)
-- url: https://www.reddit.com/r/aws/comments/gcfvjj/iam_authentication_with_postgres_on_rds/
+{'operationName':  'addTodo', 'variables': {'id': '400', 'name': 'some name',   'description': 'some description', 'query': 'mutation addTodo($id:  ID,$name: String,  $description: String) {addTodo(id: $id, name: $name,  description:  $description) {id name description}}'}}
+## [8][AD Connector with third party vpn?](https://www.reddit.com/r/aws/comments/gda6vs/ad_connector_with_third_party_vpn/)
+- url: https://www.reddit.com/r/aws/comments/gda6vs/ad_connector_with_third_party_vpn/
 ---
-Just curious, has anyone here used it and does it work well? There are some warnings about connection limitations in the doc. Also, does anyone know if this works with Aurora Postgres too?
-## [9][API Gateway Custom Domain Names not working](https://www.reddit.com/r/aws/comments/gcb2iu/api_gateway_custom_domain_names_not_working/)
-- url: https://www.reddit.com/r/aws/comments/gcb2iu/api_gateway_custom_domain_names_not_working/
+I have a VPN tunnel using ec2 vms to establish communication from on prem (where ad is located) to AWS.
+
+Can i use AD connector without having to configure the AWS vpn?
+## [9][Amazon S3 permissions question](https://www.reddit.com/r/aws/comments/gd548h/amazon_s3_permissions_question/)
+- url: https://www.reddit.com/r/aws/comments/gd548h/amazon_s3_permissions_question/
 ---
-I followed the documentation and the Custom Domain Names feature for API Gateway is not working. When I hit the URL (the auto-generated custom domain from AWS) OR the pretty domain I pointed it at, the page refuses to connect.
-
-I followed these instructions for a REST API and Regional.
-
- [https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html)
-## [10][After WorkSpaces upgrade, Alt+Tab no longer works](https://www.reddit.com/r/aws/comments/gc8p1h/after_workspaces_upgrade_alttab_no_longer_works/)
-- url: https://www.reddit.com/r/aws/comments/gc8p1h/after_workspaces_upgrade_alttab_no_longer_works/
+I'm a beginner developer and I have a basic question that I can't seem to find a concrete answer to online. Let's say I allow users to upload images and each image has a series of users who are allowed to view it. What is the best practice in node for securing these images to allow only the permitted users to view them? Should I just add my AWS credentials to the server and request the correct image and pass the entire image from the server to the client? Or should I generate a time-limited, publicly accessible URL and pass that down to the client so that the entire image object doesn't pass through my server? Just a bit confused on how node interacts with S3 when users are allowed to upload private photos that are only to be accessed by certain users.
+## [10][Lambda provisioned concurrency with Aurora Serverless - should I use the Data API?](https://www.reddit.com/r/aws/comments/gcwtqt/lambda_provisioned_concurrency_with_aurora/)
+- url: https://www.reddit.com/r/aws/comments/gcwtqt/lambda_provisioned_concurrency_with_aurora/
 ---
-After months of putting it off, I clicked to allow my Amazon WorkSpaces client to upgrade to version 3.0.6.1437. Now when I login, Alt+Tab no longer cycles through applications on my cloud PC; it cycles through them on my LOCAL PC. I find this immensely irritating, just as much as not being able to find any settings that allow me to change it.
+I'm researching using an AWS serverless stack instead of Heroku.  I'm building an API that's called synchronously, so I'd like to make architecture decisions that result in consistently fast responses.
 
-Does anyone know how I can get my previous functionality back so when I Alt+Tab, it cycles through apps on my AWS cloud machine? Thank you!
+My budget supports provisioned concurrency and never pausing Aurora Serverless.
+
+My understanding is:
+
+* With Aurora Serverless, I don't need to worry about my lambdas exceeding a connection limit.
+* With Provisioned Concurrency, I don't need to worry about the time it takes to establish a database connection.
+* If I can pre-establish a database connection, running queries directly will always be faster than using the Data API.
+
+Putting together all these points, I believe I should use traditional database connections to Aurora Serverless instead of the Data API.  This should be fastest, and provisioned concurrency will allow me to avoid any cold starts.
+
+Am I thinking about this right?
+
+Also - it appears I can do all of this with High Availability, with the exception that Aurora Serverless has an unknown failover delay: [https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.failover](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.failover)
+
+Is that the primary caveat?
+
+thank you!

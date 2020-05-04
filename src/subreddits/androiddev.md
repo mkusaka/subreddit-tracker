@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - May 02, 2020](https://www.reddit.com/r/androiddev/comments/gc5ncv/app_feedback_thread_may_02_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/gc5ncv/app_feedback_thread_may_02_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/gdaxq5/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/gdaxq5/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - April 27, 2020](https://www.reddit.com/r/androiddev/comments/g8yltx/weekly_questions_thread_april_27_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/g8yltx/weekly_questions_thread_april_27_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - May 04, 2020](https://www.reddit.com/r/androiddev/comments/gd9hik/weekly_questions_thread_may_04_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/gd9hik/weekly_questions_thread_may_04_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,71 +31,84 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Paid app refunded thrice??? I thought you could only refund once.](https://www.reddit.com/r/androiddev/comments/gcpkih/paid_app_refunded_thrice_i_thought_you_could_only/)
-- url: https://i.redd.it/f8n6e7zmjjw41.png
+## [3][Google In-App Update: Keep your users up-to-date](https://www.reddit.com/r/androiddev/comments/gd7xv7/google_inapp_update_keep_your_users_uptodate/)
+- url: https://medium.com/yudiz-solutions/google-in-app-update-keep-your-users-up-to-date-2b284ca079e7
 ---
 
-## [4]["It's a virus I hope you burn in hell!" is a valid Google Play Store review](https://www.reddit.com/r/androiddev/comments/gc6ran/its_a_virus_i_hope_you_burn_in_hell_is_a_valid/)
-- url: https://i.redd.it/6ddld1yovcw41.png
+## [4][Update only took 12h to be published.](https://www.reddit.com/r/androiddev/comments/gd85kh/update_only_took_12h_to_be_published/)
+- url: https://www.reddit.com/r/androiddev/comments/gd85kh/update_only_took_12h_to_be_published/
+---
+I don't know what changed but my last update before this one took 6 days so it is moving in the right direction!
+## [5][Android Notification As Deep As Possible](https://www.reddit.com/r/androiddev/comments/gcwkre/android_notification_as_deep_as_possible/)
+- url: https://www.reddit.com/r/androiddev/comments/gcwkre/android_notification_as_deep_as_possible/
+---
+A series of articles about Android notification:
+
+* [Android Notification Channel](https://medium.com/@myrickchow32/android-notification-channel-as-deep-as-possible-1a5b08538c87?source=friends_link&amp;sk=89f2249c2ecd5d4baeb67a18ab9032a3)
+ 
+* [Android Custom Notification](https://medium.com/@myrickchow32/android-custom-notification-in-6-mins-c2e7e2ddadab?source=friends_link&amp;sk=1d157d143c877d03370e311f2206e230)
+ 
+* [Android Notification Styling](https://medium.com/@myrickchow32/android-notification-styling-cc6b0bb86021?source=friends_link&amp;sk=ab3d86094fab93a897968444fe56f062)
+ 
+* [Android InboxStyle Notification](https://medium.com/@myrickchow32/android-inboxstyle-notification-as-deep-as-possible-4d74c0c725f1?source=friends_link&amp;sk=989abc1355e9e2b7cf8b868e2cbbeb35)
+ 
+* [Android Notification BigPictureStyle](https://medium.com/@myrickchow32/android-notification-bigpicturestyle-1f293e6cabaf?source=friends_link&amp;sk=d760eea0b5e5fb27af137332f6871da6)
+ 
+* [Android Notification BigTextStyle](https://medium.com/@myrickchow32/android-notification-bigtextstyle-bd35f7530eae?source=friends_link&amp;sk=b7a41e84e63133210edb6713a52c056a)
+## [6][Create Retrofit CallAdapter for Coroutines to handle response as states](https://www.reddit.com/r/androiddev/comments/gd8o9i/create_retrofit_calladapter_for_coroutines_to/)
+- url: https://medium.com/@melegy/create-retrofit-calladapter-for-coroutines-to-handle-response-as-states-c102440de37a
 ---
 
-## [5][Play console weird stats - Part N](https://www.reddit.com/r/androiddev/comments/gco9x6/play_console_weird_stats_part_n/)
-- url: https://www.reddit.com/r/androiddev/comments/gco9x6/play_console_weird_stats_part_n/
----
-So I have seen many weird play console posts here but I found something bizarre with one of my apps today. In one of my app, Total number of installs (Lifetime) is 167k and Total number of uninstalls(Lifetime) 168k. Also, Active devices (Lifetime) is 43k. Numbers don't quite add up. 
-
-[Installs](https://imgur.com/a/CBJ9LFB)   
-[Uninstalls](https://imgur.com/a/BAPTTVG)  
-[Devices](https://imgur.com/a/CBdb6U6)  
-
-
-Has anybody faced/seen this in any of your apps before? was just curious if I'm the only one.
-## [6][Today we celebrate 1 year since we release the first version of our app and this is the active devices stats evolution (organic, ph and google ads)](https://www.reddit.com/r/androiddev/comments/gcoxf0/today_we_celebrate_1_year_since_we_release_the/)
-- url: https://i.redd.it/3qoweewcajw41.jpg
+## [7][Kotlin’s Elvis better than Swift’s Guard](https://www.reddit.com/r/androiddev/comments/gdb8qb/kotlins_elvis_better_than_swifts_guard/)
+- url: https://medium.com/@elye.project/kotlins-elvis-better-than-swift-s-guard-53030d403c3f?source=friends_link&amp;sk=bf7fced446cc161095a9d281054fb927
 ---
 
-## [7][Google AdMob duplicate account issues.](https://www.reddit.com/r/androiddev/comments/gcn8f6/google_admob_duplicate_account_issues/)
-- url: https://www.reddit.com/r/androiddev/comments/gcn8f6/google_admob_duplicate_account_issues/
----
-I am getting duplicate account issue even though I haven't created any other account. My adsense account is still in the process of getting setup, payments page in admob shows only one user (me). I'm not understanding which account are they referring to and I still haven't even linked my app from admob.
-PS - Using separate email ID for admob account now cz I had got same error on my developer account i used on play store, hence cancelled it and created a new one.
-## [8][I'm trying to get install apks and run them, something in the os is blocking.](https://www.reddit.com/r/androiddev/comments/gckprs/im_trying_to_get_install_apks_and_run_them/)
-- url: http://imgur.com/gallery/YMYAdu8
+## [8][Fixing the dreaded “… is unknown to this NavController”](https://www.reddit.com/r/androiddev/comments/gd7cw3/fixing_the_dreaded_is_unknown_to_this/)
+- url: https://medium.com/@ffvanderlaan/fixing-the-dreaded-is-unknown-to-this-navcontroller-68c4003824ce
 ---
 
-## [9][Deep Dive into Activity Results API — No More onActivityResult()](https://www.reddit.com/r/androiddev/comments/gcha6u/deep_dive_into_activity_results_api_no_more/)
-- url: https://link.medium.com/FyLIbTf
+## [9][Keyword rankings and initial downloads](https://www.reddit.com/r/androiddev/comments/gd7yrt/keyword_rankings_and_initial_downloads/)
+- url: https://www.reddit.com/r/androiddev/comments/gd7yrt/keyword_rankings_and_initial_downloads/
 ---
+Hey all,
 
-## [10][Android distribution dashboards are updated!](https://www.reddit.com/r/androiddev/comments/gcpaic/android_distribution_dashboards_are_updated/)
-- url: https://developer.android.com/about/dashboards
+One of my apps has been on the Play Store for about 3 months now. Since then I've been trying to get my app ranked in searches but have been mostly unsuccessful as it seems trapped in a bit of a loop.
+
+My understanding is that in order to rank for certain keywords you need to have people search for that word and then download your app, which makes sense.
+
+But how do you do this when your app isn't ranking in the top 100 for that keyword in the first place?
+
+I've seen people recommend running ad campaigns, but as an indie developer my budget is quite limited. Also seen people recommend paid download services, but this feels like a blackhat tactic that might bite me in the ass in the long run.
+
+The little funds that I had have been spent on ASO services, as I've been told that would have the biggest impact, but it has not significantly improved the results.
+
+Can anyone offer some insight into what a low budget launch strategy looks like in order to get your app ranked?
+## [10][Update App after substantial changes have been made](https://www.reddit.com/r/androiddev/comments/gdbn3a/update_app_after_substantial_changes_have_been/)
+- url: https://www.reddit.com/r/androiddev/comments/gdbn3a/update_app_after_substantial_changes_have_been/
 ---
+Hello.
 
-## [11][Multiple Publisher accounts on Play Store.](https://www.reddit.com/r/androiddev/comments/gcoic4/multiple_publisher_accounts_on_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/gcoic4/multiple_publisher_accounts_on_play_store/
+Iv made a large amount of changes to my current released game, pretty much everything has changed except the screen-touch code and what happens when condition is met and maybe 2% of original graphics remain. Although the game is still the same subject and games name, everything else has been reworked and improved.
+
+My concern is the update process , i have only made little fixes and added small amounts of content in previous updates so im unsure how google update process works when updating a game that could be considered a new game.
+
+So my question to the experienced devs , Will this just update original file with new one or will google flag me and tell me to make a new release ? or any other pitfalls i can expect ?
+## [11][Build: failed with no errors/warnings, how to fix?](https://www.reddit.com/r/androiddev/comments/gdbmi8/build_failed_with_no_errorswarnings_how_to_fix/)
+- url: https://www.reddit.com/r/androiddev/comments/gdbmi8/build_failed_with_no_errorswarnings_how_to_fix/
 ---
-I have an account where I publish an app. I cannot change the name of app and publisher account because I only want to associate that account with apps related to a single product.
-
-So, I want to create another publisher account ofcourse with another email id for some other ideas that I have but my doubts:
-
-\- Will using the same PC for developing and publishing apps for separate accounts a good idea.
-
-\- If one of the publisher account gets suspended, can it affect other account's presence/apps?
-## [12][Can someone explain to me these stats?](https://www.reddit.com/r/androiddev/comments/gcnux7/can_someone_explain_to_me_these_stats/)
-- url: https://www.reddit.com/r/androiddev/comments/gcnux7/can_someone_explain_to_me_these_stats/
----
-I was just exploring the Android Vitals and realized that my app warm startup time is 21% more than the median. So I went into further details and came across this graph.
-
 &amp;#x200B;
 
-https://preview.redd.it/ct3qmqgvriw41.png?width=1516&amp;format=png&amp;auto=webp&amp;s=f38d7de4cf533b0974c14507121e99e69148a219
+[I just got this issue today and i tried to search for a fix including updating my android studio to the latest version but nothing helped resolve the issue, and this is my first time posting in a subreddit for help, IDE versions is 3.6.3, if i miss any details, please do tell](https://preview.redd.it/bfkt3sv82rw41.png?width=582&amp;format=png&amp;auto=webp&amp;s=2bf562f26104e47506ea1a4ab6433d41608fb518)
+## [12][LiveData .postValue vs .subscribeOn(AndroidSchedulers.mainThread())](https://www.reddit.com/r/androiddev/comments/gdb84w/livedata_postvalue_vs/)
+- url: https://www.reddit.com/r/androiddev/comments/gdb84w/livedata_postvalue_vs/
+---
+In my view models I have a lot of RxJava streams which almost always end with
 
-The Y-axis shows sessions (which I don't know what Google is calling a session) and on the X-axis it shows startup time. Which is given in milliseconds. 
+```
+.observeOn(AndroidSchedulers.mainThread())
+.subscribe({
+    liveData.value = it
+} , {...})
+```
 
-Now the problem is, if I hover over any bar, it shows me the time span in milliseconds that my app took to start but what are those sessions?  Is it telling me that 4136 of the **total sessions** took 750-875 milliseconds to start? If so then total sessions of how many days? There is no option/anything like that. 
-
-Can someone untangle this, please?
-
-&amp;#x200B;
-
-Thanks
+Would there be any value of using `postValue` instead and not switching the observing thread? Would one potentially be more efficient than the other or is it negligable?

@@ -22,7 +22,55 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Typescript and react conditional render](https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/)
+## [2][Phaser Integration with Angular and Electron](https://www.reddit.com/r/typescript/comments/gd3z69/phaser_integration_with_angular_and_electron/)
+- url: https://www.reddit.com/r/typescript/comments/gd3z69/phaser_integration_with_angular_and_electron/
+---
+Hello, I'm new to this sub. I'm starting to do some work with Phaser, as I am pretty familiar with typescript, html, and css. I started a project and got some work done before figuring I should strip back the assets and some implementation to provide a clean little template. I have a repo for it and thought I might share:
+
+&amp;#x200B;
+
+[https://github.com/TBosak/game-template](https://github.com/TBosak/game-template)
+
+&amp;#x200B;
+
+Enjoy! Feel free to fork and improve my mess.
+## [3][Calling ReasonML from TypeScript (or Flow), the easy way.](https://www.reddit.com/r/typescript/comments/gdaoab/calling_reasonml_from_typescript_or_flow_the_easy/)
+- url: https://www.hackdoor.io/articles/myNBk3px/calling-reasonml-from-typescript-or-flow-the-easy-way
+---
+
+## [4][Retturn type of a function that creates nth-dimensional arrays](https://www.reddit.com/r/typescript/comments/gd9hem/retturn_type_of_a_function_that_creates/)
+- url: https://www.reddit.com/r/typescript/comments/gd9hem/retturn_type_of_a_function_that_creates/
+---
+I'm writing a function that will create and return an Nth-dimensional array, where N is set by a parameter, and the array can be filled with an initial value. I'm struggling to think of the correct return type for this function and would love some help.
+
+Something like is what I'm after:
+
+    const createNthDimensionalArray = &lt;T&gt;(
+        NDimensions: number,
+        initialValues?: T
+    ): T[][] =&gt; {
+        // Array creation happens here
+    }
+
+But the return type of the above function (`T[][]`) will only work for 2-dimensional arrays. Ideally I need a type that can ensure the arrays are only filled with the same type as the `initialValues` parameter, while being able to support however many dimensions the user needs, if such a thing exists!
+
+&amp;#x200B;
+
+Currently I'm using `any[]` as the return type, but I'm sure there's a better way.
+## [5][Learning typescript as a junior developer](https://www.reddit.com/r/typescript/comments/gd23ti/learning_typescript_as_a_junior_developer/)
+- url: https://www.reddit.com/r/typescript/comments/gd23ti/learning_typescript_as_a_junior_developer/
+---
+**TL;DR: is it common for junior developers to learn Typescript at work / trough a course offered by a company?**  
+
+
+I'm a self taught developer and currently still in the process of learning. Currently I'm working on some more advanced topics, including Typescript. I feel the industry is not always expecting a junior to write TS compared to more experienced developers.  
+
+
+The current course I'm following is not very good in terms of learning TS. Therefore I'm considering following a course fully dedicated to Typescript.  
+
+
+I'd like to hear your thoughts on this: do you recommend to take such a course or shouldn't it hurt to start working without being comfortable with it (and waiting for a company to introduce me to it with either a course or something else)?
+## [6][Typescript and react conditional render](https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/)
 - url: https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/
 ---
 I am new to typescript and not an expert in FE development. I've encountered issue that seems pretty basic, but I failed to found any solution. Maybe I just don't know how to google it properly.
@@ -126,11 +174,43 @@ As I said, I am not a FE expert so there is a high chance I am wrong about what 
 &amp;#x200B;
 
 Here is a [playground](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDGMA0cDeBhCcCAOyWJgF84AzKQuAcilQwYG4BYAKG5gE8wSOABEoKajALgUxPnAC8ubnBVxgAEwBccYgFcANvuWriKEEm0BnGFGDEA5pm4VOPLv0FwpYGXMUB5EGAYAB5RcUlCH1lsBg0GAD44ADIlLlU1LR1dEAAjJChXF25eASEABTowSwU0jLQo321vXzgAHxExCRaY4xUSYSR9JBgkHr5tAAoG6VkASSy9PIKASgUkgDcIDScuChKuNH0USxrxhAgAdzgkAA9R4nUzqJIyeBDKiGqknD64AAsZOphoNhqNxrVJmt5D8-hkYP9gJYAHRgKoogZDEZjRqySYIpGo9HImbRPjIjQrVwZYpuDLMR4FSHQ2HpDKqZgwXRQYhwSZw9kqELqYAbBICwUZYWihI4AkotFfFGk3zI0zmCghAD0IrFEslQt14rZBtNcBCuV0MBgJDgIssKFyw3U8jliIVxJVsgp6gU8kUekMVBIeH0wDQAGtXfLkYDHiCseDcXwKFrjWbBdqjfqpTqZfqVn99nsDndILA7UhqCgDPBzlc2EA)
-## [3][I reverse engineered a npm registry from scratch. It is written entirely in TypeScript and has a low amount of dependencies.](https://www.reddit.com/r/typescript/comments/gc3q61/i_reverse_engineered_a_npm_registry_from_scratch/)
+## [7][[QUESTION] typeorm mysql one-to-one relation](https://www.reddit.com/r/typescript/comments/gcwzis/question_typeorm_mysql_onetoone_relation/)
+- url: https://www.reddit.com/r/typescript/comments/gcwzis/question_typeorm_mysql_onetoone_relation/
+---
+Membership Entity:
+
+    @Entity() 
+    export default class Membership extends BaseEntity {
+         @PrimaryColumn("uuid")
+         id: string;
+    
+         @OneToOne(type =&gt; Member, member =&gt; member.membership)
+         member: Member 
+    } 
+
+Member Entity:
+
+    @Entity() 
+    export default class Membership extends BaseEntity {
+         @PrimaryColumn("uuid")
+         id: string;
+    
+         @OneToOne(type =&gt; Membership, membership =&gt; membership.member)
+         @JoinColumn()
+         membership: Membership 
+    } 
+
+This setup works fine when I create a member (A) and hook it up to a membership (M). However, I get a `Duplicate Entry Error`  
+ when I try to add another member (B) and hook it up to the same membership (M).
+
+Can anyone please help me out. I'm pretty new to typeorm and mysql and would love to have your opinion on the issue.
+
+Thanks!
+## [8][I reverse engineered a npm registry from scratch. It is written entirely in TypeScript and has a low amount of dependencies.](https://www.reddit.com/r/typescript/comments/gc3q61/i_reverse_engineered_a_npm_registry_from_scratch/)
 - url: https://github.com/Tanuel/baggy
 ---
 
-## [4][Error in Typed Method Decorator](https://www.reddit.com/r/typescript/comments/gccnh3/error_in_typed_method_decorator/)
+## [9][Error in Typed Method Decorator](https://www.reddit.com/r/typescript/comments/gccnh3/error_in_typed_method_decorator/)
 - url: https://www.reddit.com/r/typescript/comments/gccnh3/error_in_typed_method_decorator/
 ---
 In my use case of method decorators I wanted them to work like a abstract method constraint.
@@ -173,7 +253,7 @@ This is the code I came up with:
     }
 
 I also created a REPL [here](https://repl.it/repls/BossyConsiderateDistributionsoftware).
-## [5][Emited code is ignoring nullable return value](https://www.reddit.com/r/typescript/comments/gcats8/emited_code_is_ignoring_nullable_return_value/)
+## [10][Emited code is ignoring nullable return value](https://www.reddit.com/r/typescript/comments/gcats8/emited_code_is_ignoring_nullable_return_value/)
 - url: https://www.reddit.com/r/typescript/comments/gcats8/emited_code_is_ignoring_nullable_return_value/
 ---
 I have a method declared with this signature on my TypeScript file:
@@ -207,41 +287,9 @@ https://preview.redd.it/m7fsrspb4ew41.png?width=907&amp;format=png&amp;auto=webp
 I don't know exactly what's wrong with this. I've searched across Google and haven't found anything. I've also tried with full nullable (T | null | undefined) on the return type but still doesn't work.
 
 Note: Obviously, I can't mark neither "this" nor return type as optional ("?").
-## [6][Script unsigned error](https://www.reddit.com/r/typescript/comments/gchpqz/script_unsigned_error/)
-- url: https://www.reddit.com/r/typescript/comments/gchpqz/script_unsigned_error/
----
-I recently reinstalled Windows. Before I did, my TS files compiled fine from the command line with tsc.
-
-Now, when I try to compile a TS file with tsc, I get an error that the script can't be run because it's unsigned (tsc.ps1 cannot be loaded).
-
-Any idea why the before and after behavior is different?
-## [7][Using Typescript in a Javascript React app](https://www.reddit.com/r/typescript/comments/gc6h9o/using_typescript_in_a_javascript_react_app/)
+## [11][Using Typescript in a Javascript React app](https://www.reddit.com/r/typescript/comments/gc6h9o/using_typescript_in_a_javascript_react_app/)
 - url: https://www.reddit.com/r/typescript/comments/gc6h9o/using_typescript_in_a_javascript_react_app/
 ---
 I have a React app written entirely in Javascript. I want to start using Typescript but I don't want to go back and convert any of my old code to TS. The app is too large. I'd like to only use TS moving forward.
 
 Are there any guides on how I can set this up? I use webpack.
-## [8][Open Source Typescript Express projects](https://www.reddit.com/r/typescript/comments/gc4xe3/open_source_typescript_express_projects/)
-- url: https://www.reddit.com/r/typescript/comments/gc4xe3/open_source_typescript_express_projects/
----
-Hello, I've been learning Typescript recently and decided to try to implement what I've learning in a new project.
-
-I would like to have a look at some major projects in Typescript Express so that I can catch some best practices, design patterns, etc.
-
-I'd appreciate if anyone could share links to some open source projects/companies that used these technologies for their product.
-## [9][Why am I getting this TS error?](https://www.reddit.com/r/typescript/comments/gbpqiy/why_am_i_getting_this_ts_error/)
-- url: https://i.redd.it/un2hvbg4r7w41.png
----
-
-## [10][The Jupiter (YC S19) Stack - From TypeScript to Kubernetes and back — how we write, build, and push code at Jupiter](https://www.reddit.com/r/typescript/comments/gbl21c/the_jupiter_yc_s19_stack_from_typescript_to/)
-- url: https://starship.jupiter.co/jupiter-stack/
----
-
-## [11][Dynamic import performance evaluation](https://www.reddit.com/r/typescript/comments/gbt5k3/dynamic_import_performance_evaluation/)
-- url: https://www.reddit.com/r/typescript/comments/gbt5k3/dynamic_import_performance_evaluation/
----
-Hello everyone.
-In order to reduce cold start time of my serverless functions, I was thinking about using dynamic imports inside each function in order to avoid initialization of dependencies I may not use.
-I know that once a module is normally imported, it is preserved in the global scope and I can use it without any overhead. 
-Is the same for dynamic imports? 
-I know that it could be a silly question but I feel like I'm missing a piece of the puzzle here.

@@ -1,126 +1,66 @@
 # golang
-## [1][A (toy) web browser written from scratch entirely in golang](https://www.reddit.com/r/golang/comments/gcge4k/a_toy_web_browser_written_from_scratch_entirely/)
-- url: https://www.reddit.com/r/golang/comments/gcge4k/a_toy_web_browser_written_from_scratch_entirely/
----
-I've started this project to learn GO and to learn how web browsers work.
-
-https://preview.redd.it/rnf59t1ktfw41.png?width=614&amp;format=png&amp;auto=webp&amp;s=0641365d5fdcfd349a9d0569a96be4badfa9014d
-
-This is the project link:
-
-[https://github.com/danfragoso/thdwb](https://github.com/danfragoso/thdwb)
-
-I tried to not use any dependency on this project, and write everything myself.
-
-I wrote the following components:
-
-* ketchup (html parser and DOM Tree builder)
-* mayo (css parser and Render Tree builder)
-* mustard (UI Toolkit, events and OpenGL)
-* sauce (requests, cache and filesystem)
-* bun (css layout calculator)
-
-The dependencies are:
-
-* [https://github.com/fogleman/gg](https://github.com/fogleman/gg) (fork)
-* [https://github.com/go-gl/gl](https://github.com/go-gl/gl)
-* [https://github.com/go-gl/glfw](https://github.com/go-gl/glfw)
-
-It builds and runs on Linux and macOS.
-
-It's is for the most part completely broken. But I would love any kind of feedback and suggestions on the features I should work next.
-## [2][Beginners Guide to gRPC in Go!](https://www.reddit.com/r/golang/comments/gc9k6s/beginners_guide_to_grpc_in_go/)
-- url: https://youtu.be/BdzYdN_Zd9Q
+## [1][Olric v0.2.0 is out: Distributed cache and in-memory key/value data store. It can be used both as an embedded Go library and as a language-independent service.](https://www.reddit.com/r/golang/comments/gd7v1s/olric_v020_is_out_distributed_cache_and_inmemory/)
+- url: https://github.com/buraksezer/olric#olric-
 ---
 
-## [3][Building a REST API with Go Gin - Part 1](https://www.reddit.com/r/golang/comments/gci9nf/building_a_rest_api_with_go_gin_part_1/)
-- url: https://youtu.be/CzxEUDq9xiQ
+## [2][I try to create a minimalistic and flexible Go repository template. Feedback is more than welcome.](https://www.reddit.com/r/golang/comments/gdajt5/i_try_to_create_a_minimalistic_and_flexible_go/)
+- url: https://github.com/golang-templates/seed
 ---
 
-## [4][A nice simple thread-safe progress bar / spinner (v3)](https://www.reddit.com/r/golang/comments/gc7j0a/a_nice_simple_threadsafe_progress_bar_spinner_v3/)
-- url: https://github.com/schollz/progressbar
+## [3][Wrote a Chip-8 emulator in Go. It is a WIP and has no tests written yet, but so far everything seems to work except for some audio bugs.](https://www.reddit.com/r/golang/comments/gcvy16/wrote_a_chip8_emulator_in_go_it_is_a_wip_and_has/)
+- url: https://github.com/bradford-hamilton/chippy
 ---
 
-## [5][How to check whether a struct implements an interface in GoLang](https://www.reddit.com/r/golang/comments/gcqhby/how_to_check_whether_a_struct_implements_an/)
-- url: https://www.pixelstech.net/article/1588481241-How-to-check-whether-a-struct-implements-an-interface-in-GoLang
+## [4][Building a REST API With Go Gin - Part 2: Login/Register/Authentication](https://www.reddit.com/r/golang/comments/gd04vj/building_a_rest_api_with_go_gin_part_2/)
+- url: https://www.youtube.com/watch?v=XxCr4QOD5Hs
 ---
 
-## [6][Blimp: Cloud Docker Compose Written in Go](https://www.reddit.com/r/golang/comments/gcczf5/blimp_cloud_docker_compose_written_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gcczf5/blimp_cloud_docker_compose_written_in_go/
+## [5][Convert time.Minute to seconds(int)](https://www.reddit.com/r/golang/comments/gd8go8/convert_timeminute_to_secondsint/)
+- url: https://www.reddit.com/r/golang/comments/gd8go8/convert_timeminute_to_secondsint/
 ---
-I was struggling with how slow my laptop gets when I run Docker with a lot of microservices, so I built a Docker Compose alternative that runs in the cloud rather than on my local machine. It's called Blimp: [https://kelda.io/blimp/](https://kelda.io/blimp/)
+I have a constant of type time.Duration: **Time\_Min = 10 \* time.Minute** (this holds value 10m). I want to convert this value to seconds (10\*60 = 600s) and store it as integer(int and not int64). 
 
-* Written entirely in Go: we took advantage of the recently released [Go Docker-Compose spec](https://github.com/compose-spec/compose-go)
-* Runs on Kubernetes under the hood. I thought we could just use Kompose, but ends up there’s tons of subtle differences between Kube and Docker Compose that aren't captured in the yaml
-* We use an encrypted GRPC tunnel to forward localhost to the cloud environment. It was important to us that it *just worked* without having to change the workflow at all.
-* For most volumes, we just use standard Kube volumes. But for bind mounts [we automatically use Syncthing](https://kelda.io/blimp/docs/compose-diff/#syncthing). Traditional volume mounts don't perform well over the WAN, and aren't necessary anyways.
+for eg, Time\_Sec = Time\_Min \* 60 
 
-Would love feedback, what do you think??
-## [7][OpenCodenames: a Jackbox-style version of Codenames made with React &amp; Go!](https://www.reddit.com/r/golang/comments/gcbgig/opencodenames_a_jackboxstyle_version_of_codenames/)
-- url: https://github.com/rodohanna/OpenCodenames
+OR Time\_Sec = Time\_Min \* time.Second
+
+Where, Time\_sec should be of type int.
+
+I am unable to find a way to perform type conversion for time.Duration. Any help will be highly appreciated.
+
+Thanks
+## [6][Supporting gRPC and HTTP Side by Side](https://www.reddit.com/r/golang/comments/gd0s9n/supporting_grpc_and_http_side_by_side/)
+- url: https://www.reddit.com/r/golang/comments/gd0s9n/supporting_grpc_and_http_side_by_side/
+---
+Our organization is currently evaluating moving to gRPC for our microservices, and eventually moving to gRPC exclusively with the exception of services that are consumed from a web browser. We will have services that will need to continue support HTTP / JSON long term, but even in the interim we are being asked to support gRPC and HTTP side by side on all services that adopt gRPC. Most of our code bases are using GoKit with the HTTP transport. Adding gRPC shouldn't be a heavy lift but in many of the examples I've seen for GoKit gRPC services there are two sets of models being maintained, one for protobuf that is auto generated from protoc, and one for the application which the GoKit endpoints and services receive and return. This seems to lead to duplication as the gRPC transport ends up mapping the protobuf model to another set of very similar models. While being trivial this adds duplicative effort and begs the question what is the canonical source of truth for the models, the proto file, or the models the service expects.
+
+What are the best practices around supporting gRPC and HTTP, particularly with GoKit? Should we maintain two sets of models and just do the mapping? Or can we just use the protobuf generated models through the endpoint and services?
+## [7][Command line tool that runs a local local web server for facilitating bash script execution](https://www.reddit.com/r/golang/comments/gdbnlz/command_line_tool_that_runs_a_local_local_web/)
+- url: https://github.com/atye/go-swizard
 ---
 
-## [8][Four Steps to Daemonize Your Go Programs](https://www.reddit.com/r/golang/comments/gcgzwo/four_steps_to_daemonize_your_go_programs/)
-- url: https://ieftimov.com/post/daemonizing-golang-programs-by-example/
+## [8][Handling MongoDB Errors](https://www.reddit.com/r/golang/comments/gdblea/handling_mongodb_errors/)
+- url: https://www.reddit.com/r/golang/comments/gdblea/handling_mongodb_errors/
 ---
-
-## [9][Connecting ZMQ microservices within AWS using Fargate](https://www.reddit.com/r/golang/comments/gcnn6d/connecting_zmq_microservices_within_aws_using/)
-- url: https://www.reddit.com/r/golang/comments/gcnn6d/connecting_zmq_microservices_within_aws_using/
+How can I differentiate timeout error from not found error when I am calling collection.FindOne()? Thank you.
+## [9][I'm a noob, here a Eshop Cli I made, any suggestions?](https://www.reddit.com/r/golang/comments/gdavow/im_a_noob_here_a_eshop_cli_i_made_any_suggestions/)
+- url: https://www.reddit.com/r/golang/comments/gdavow/im_a_noob_here_a_eshop_cli_i_made_any_suggestions/
 ---
-I am attempting to use ZeroMQ ([https://github.com/pebbe/zmq4](https://github.com/pebbe/zmq4)) within ECS running on Fargate in awsvpc mode. I have 2 different services, each running its own task and service discovery enabled.
+Hello there,
+here's a simple CLI I made to put together a couple of things I learned:
 
-I create my Router and Dealer in a microservice called broker.
+https://github.com/marcodenisi/eshop-tracker
 
-        front, _ := zmq.NewSocket(zmq.ROUTER)
-        defer front.Close()
-        front.Bind("tcp://*:4070")
-        
-        back, _ := zmq.NewSocket(zmq.DEALER)
-        defer back.Close()
-        back.Bind("tcp://*:4080")
+It's a CLI retrieving and showing Italian Nintendo Eshop games with related prices. I've used boltdb to manage a key-value store and promptui to enrich a little bit the terminal UI. The idea was to write something that could be easily extended to be consumed via REST API as well.
 
-I then add these 2 sockets to a poller and have a for loop that waits for messages. 
+I'd really like to get some advice on how I can improve my style. In fact, I can't really understand if there's some kind of naming conventions for files and folders and my directory structure seems a little odd.
 
-I have a separate microservice that connects to the socket and attempts to send a message to the dealer. I have set service discovery so I assume the address I connect to would be: 
+I come from Java and I think my project somehow shows it, it's all a little bit to jav-ish, I'd really like to write more idiomatic Go code.
 
-&amp;#x200B;
-
-    &gt; "tcp://broker:4070"
-    
-    Below is the code from 'serviceA'
-    
-        func New(ZMQ models.ZMQ) *Requester {
-        	s, err := zmq.NewSocket(zmq.REQ)
-        	if err != nil {
-        		log.Fatalln("shareholder/requester zmq.NewSocket", err)
-        	}
-        	p := zmq.NewPoller()
-        	p.Add(s, zmq.POLLIN)
-        
-        	log.Println("Requester", ZMQ.Req)
-        	err = s.Connect("tcp://broker:4070")
-        	if err != nil {
-        		log.Print(fmt.Errorf("err is %w", err))
-        	}
-        
-        	req := &amp;Requester{
-        		Poller:  p,
-        		Retries: 2,
-        		Socket:  s,
-        		Timeout: time.Duration(time.Minute),
-        	}
-        	runtime.SetFinalizer(req, (*Requester).Close)
-        	return req
-        }
-
-I then use the above code to send a message with my socket connection
-
-        _, err := r.Socket.SendMessage(req)
-
-However, my message is never received within my broker service. I can hit my REST APIs on the network with their hostnames I register during service discovery, is there something I am missing here with Fargate/ECS/ZeroMQ???
-## [10][Go Cheatsheet / repo](https://www.reddit.com/r/golang/comments/gch6ov/go_cheatsheet_repo/)
-- url: https://www.reddit.com/r/golang/comments/gch6ov/go_cheatsheet_repo/
+Thanks to all!
+## [10][How does a Go WebAPI look like today?](https://www.reddit.com/r/golang/comments/gdarfm/how_does_a_go_webapi_look_like_today/)
+- url: https://www.reddit.com/r/golang/comments/gdarfm/how_does_a_go_webapi_look_like_today/
 ---
-Hi. I have made a small repository with a bunch of code sample showcasing Go. Personally sometimes when I want to learn something new, I just want to see a bunch of code samples and compare them to what I already know, from other languages I have mastered. The link is right here: [https://github.com/TopSwagCode/Go.CheatRepo](https://github.com/TopSwagCode/Go.CheatRepo) 
+Hi. I started to learn Go and got most of the basics now. Now it would be awesome to know how Go is used out in the big wide world. How does your workplace Go look like? What packages are you using to built your WebAPI's? Would love to hear what problems companies tackle with Go and how they do it.
 
-I would love all the feedback that I can get. I am totally new to Go myself and just wanted to make this CheatRepo public, so others also could benefit it. I already have a Roadmap with some ideas to grow the repository with more content.
+Is there any "realistic" opensource projects out there to learn from? How does the structure look like? Hope anyone has the time to share something :) Don't be afraid to get down and dirty with details.

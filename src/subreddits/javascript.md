@@ -79,72 +79,123 @@
 
 
 &amp;nbsp;
-## [2][Showoff Saturday (May 02, 2020)](https://www.reddit.com/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/
+## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/gd847d/your_weekly_rjavascript_recap/)
+- url: https://www.reddit.com/r/javascript/comments/gd847d/your_weekly_rjavascript_recap/
 ---
-Did you find or create something cool this week in javascript? 
+**Monday, April 27 - Sunday, May 03**
 
-Show us here!
-## [3][[AskJS] Today I learned of the text/speech apis.](https://www.reddit.com/r/javascript/comments/gckiuc/askjs_today_i_learned_of_the_textspeech_apis/)
-- url: https://www.reddit.com/r/javascript/comments/gckiuc/askjs_today_i_learned_of_the_textspeech_apis/
+###Top Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 567  | [69 comments](https://www.reddit.com/r/javascript/comments/gazu2f/after_they_gave_100k_scholarships_to_students/) | [After they gave 100k scholarships to students, Codecademy is now giving away their pro membership to anyone whose work is affected due to the pandemic! Also, I had started learning JS from Codecademy about a month ago when they were giving student scholarship, and it's going pretty good!](https://aabhusanaryal.com.np/codecademy-pro/)|
+| 361  | [97 comments](https://www.reddit.com/r/javascript/comments/gcok1a/favorite_javascript_utilities_in_a_single_line_of/) | [Favorite JavaScript utilities in a single line of code! No more!](https://1loc.dev/)|
+| 351  | [31 comments](https://www.reddit.com/r/javascript/comments/gac6az/a_collection_of_challenging_typescript_exercises/) | [A collection of challenging TypeScript exercises](https://github.com/mdevils/typescript-exercises)|
+| 239  | [137 comments](https://www.reddit.com/r/javascript/comments/gbpc6l/askjs_has_anyone_used_graphql_for_a_large_project/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Has anyone used GraphQL for a large project and regretted it?|
+| 226  | [124 comments](https://www.reddit.com/r/javascript/comments/g9u433/battleship_game_in_browser_using_vanilla_js_and/) | [Battleship game in browser! Using vanilla JS ❤️ and Node.js](https://battleship-game-online.herokuapp.com/)|
+| 212  | [147 comments](https://www.reddit.com/r/javascript/comments/g94pg7/ispromise_post_mortem/) | [is-promise Post Mortem](https://medium.com/@forbeslindesay/is-promise-post-mortem-cab807f18dcc)|
+| 179  | [21 comments](https://www.reddit.com/r/javascript/comments/gckiuc/askjs_today_i_learned_of_the_textspeech_apis/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Today I learned of the text/speech apis.|
+| 156  | [107 comments](https://www.reddit.com/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Why are getters and setters so underused?|
+| 147  | [51 comments](https://www.reddit.com/r/javascript/comments/gaifhe/i_made_my_website_to_look_like_windows_95_using/) | [I made my website to look like Windows 95 using FOS, a open source framework.](https://victorribeiro.com/)|
+| 141  | [10 comments](https://www.reddit.com/r/javascript/comments/gc7m3c/app_like_native_share_for_mobile_websites_with/) | [App like native share for mobile websites with Web Share API](https://medium.com/@aksteps/adding-app-like-share-to-your-website-on-mobile-and-social-share-urls-on-desktop-560b2b687d9e)|
+
+
+
+
+&amp;nbsp;
+
+###Most Commented Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 127  | [56 comments](https://www.reddit.com/r/javascript/comments/gbc6mc/0_dependency_dev_server_supporting_live_reloading/) | [0 dependency dev server, supporting live reloading and single page apps.](https://github.com/outwalk-studios/jolt-server)|
+| 32  | [54 comments](https://www.reddit.com/r/javascript/comments/g98k5d/a_critique_of_react_hooks/) | [A Critique of React Hooks](https://dillonshook.com/a-critique-of-react-hooks/)|
+| 14  | [35 comments](https://www.reddit.com/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/) | `[Showoff Saturday]` Showoff Saturday &amp;#40;May 02, 2020&amp;#41;|
+| 134  | [34 comments](https://www.reddit.com/r/javascript/comments/gcb4ki/es2020_promiseany/) | [ES2020 - Promise.any](https://mariosfakiolas.com/blog/es2020-promise-any)|
+| 22  | [25 comments](https://www.reddit.com/r/javascript/comments/g9bnuf/execute_program_courses_modern_js_typescript_js/) | [Execute Program courses &amp;#40;Modern JS, TypeScript, JS regexes, JS arrays&amp;#41; are free for April](https://www.executeprogram.com)|
+
+
+
+
+&amp;nbsp;
+
+###Top Ask JS
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 9  | [19 comments](https://www.reddit.com/r/javascript/comments/g96nl8/askjs_looking_for_practical_uses_of_symbol_and/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Looking for practical uses of Symbol and Iterators|
+| 6  | [12 comments](https://www.reddit.com/r/javascript/comments/gd178v/askjs_how_much_knowledge_to_start_freelancing/) | `[AskJS]` &amp;#91;AskJS&amp;#93; How much knowledge to start freelancing?|
+| 6  | [3 comments](https://www.reddit.com/r/javascript/comments/gc7x54/askjs_library_to_parse_one_line_query_strings_to/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Library to parse one line query strings to work with lists like Visual Studio Code or github?|
+
+
+
+
+&amp;nbsp;
+
+###Top Showoffs
+
+| score  |  comment  |
+|--|--|
+| 9  |  /u/DistChicken said [I created this color guesser for the course I’m working on www.shane-williams.tech, nothing impressive but my first working creation](/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/fp9hf19/?context=5) |
+| 4  |  /u/Benuuts said [I made this &amp;#91;simple calendar&amp;#93;&amp;#40;https://github.com/brospars/simple-calendar#simple-calendar&amp;#41; 5 years ago and updated it recently because I found out it was my most starred project](/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/fp9nfv2/?context=5) |
+| 3  |  /u/Programmer1130 said [Registered my first domain name just for a simple tool I hope to get ads on soon, &amp;#91;pdfpaste.com&amp;#93;&amp;#40;www.pdfpaste.com&amp;#41;](/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/fp9tp6g/?context=5) |
+
+
+
+
+&amp;nbsp;
+
+###Top Comments
+
+| score  |  comment  |
+|--|--|
+| 211  |  /u/cannotbecensored said [getters, setters and proxies are super cool, and they create super clean public apis.... the only problem is they create 10x more complexity, obfuscation and spaghetti code for your internal apis.  Ju...](/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/fou2utw/?context=5) |
+| 162  |  /u/everlong241 said [fuck medium](/r/javascript/comments/g94pg7/ispromise_post_mortem/fork37u/?context=5) |
+| 118  |  /u/schteppe said [That’s a lot of drama for a single line of code](/r/javascript/comments/g94pg7/ispromise_post_mortem/formmt5/?context=5) |
+| 109  |  /u/filipdanic said [I think there’s a lot of fear around the idea that you as a programmer don’t know whether you’ve assigned a value to a property or invoked a setter function. Similarly, you don’t know if you’ve just i...](/r/javascript/comments/g9kg0g/askjs_why_are_getters_and_setters_so_underused/fotwvpv/?context=5) |
+| 104  |  /u/zsombro said [Someone is already working on a script that publishes each of them into a separate NPM package](/r/javascript/comments/gcok1a/favorite_javascript_utilities_in_a_single_line_of/fpd4d65/?context=5) |
+
+
+
+
+&amp;nbsp;
+## [3][DarkMode: A micro library (~360B) for handling dark mode on browsers.](https://www.reddit.com/r/javascript/comments/gd0dw9/darkmode_a_micro_library_360b_for_handling_dark/)
+- url: https://github.com/kazzkiq/darkmode
 ---
-Browser JavaScript has a couple APIs that, as far as I know, are lesser-known. Just thought I'd share them since they're kind of interesting.
 
-SpeechSynthesis is a text-to-speech API.
+## [4][Next.js Tips collection](https://www.reddit.com/r/javascript/comments/gd7bzj/nextjs_tips_collection/)
+- url: https://nextjstips.com
+---
 
-SpeechSynthesis.getVoices() returns an array of voice objects. When tested on Chrome in my browser, I got 21 different voices with assorted genders and accents. MS Edge only had 3.
+## [5][Interactive Blog Posts About Creating a Gauge in React](https://www.reddit.com/r/javascript/comments/gd84lb/interactive_blog_posts_about_creating_a_gauge_in/)
+- url: https://wattenberger.com/blog/gauge
+---
 
-SpeechSynthesisUtterance instances hold your text and chosen voice. You use the whole api like this:
+## [6][V1.2 Release of Terrain Builder - my Fully Browser Based procedural Terrain Generator with Hydraulic erosion. Many new changes with a new UI Including fully rewritten and easer to understand code, finer control and Pie Menus. Full change-log in comments. Demo in GitHub Readme. Thank you :)](https://www.reddit.com/r/javascript/comments/gczeo6/v12_release_of_terrain_builder_my_fully_browser/)
+- url: https://github.com/FarazzShaikh/Terrain-Builder/
+---
 
-    let u = new SpeechSynthesisUtterance("Some text to speak");
-    u.voice = SpeechSynthesis.getVoices()[0];
-    SpeechSynthesis.speak(u); 
-
-And then there's also speech to text. Firefox calls it SpeechRecognition, while Chrome calls it webkitSpeechRecognition. You can look it up for more information, especially its onerror event handler, but the basic method works like this:
-
-    let sr = new webkitSpeechRecognition();
-    let textOutput = "";
-    sr.onresult = function(e){textOutput = e.results[0][0].transcript;};
-    sr.start(); 
-
-I can see these being useful as accessibility features or things for users to play with, but as a webdev, I've never had to use either of these. Is this the first time you've heard of it? If not, have you ever had to use it before?
-## [4][Favorite JavaScript utilities in a single line of code! No more!](https://www.reddit.com/r/javascript/comments/gcok1a/favorite_javascript_utilities_in_a_single_line_of/)
+## [7][Favorite JavaScript utilities in a single line of code! No more!](https://www.reddit.com/r/javascript/comments/gcok1a/favorite_javascript_utilities_in_a_single_line_of/)
 - url: https://1loc.dev/
 ---
 
-## [5][Neutralinojs v1.4.0 released!](https://www.reddit.com/r/javascript/comments/gck0n8/neutralinojs_v140_released/)
-- url: https://github.com/neutralinojs/neutralinojs/releases/tag/v1.4.0
+## [8][Debug anything: blog series about debugging JavaScript, Node, React, TypeScript in VS Code - 6 parts published so far](https://www.reddit.com/r/javascript/comments/gd93uj/debug_anything_blog_series_about_debugging/)
+- url: https://charlesagile.com/debug-series-nodejs-browser-javascript
 ---
 
-## [6][ES2020 - Promise.any](https://www.reddit.com/r/javascript/comments/gcb4ki/es2020_promiseany/)
-- url: https://mariosfakiolas.com/blog/es2020-promise-any
+## [9][[video talk] npm install servitude - The 6 Hidden Costs of Software Dependencies](https://www.reddit.com/r/javascript/comments/gd69m8/video_talk_npm_install_servitude_the_6_hidden/)
+- url: https://www.semicolonandsons.com/episode/The-Hidden-Costs-of-Software-Dependencies
 ---
 
-## [7][App like native share for mobile websites with Web Share API](https://www.reddit.com/r/javascript/comments/gc7m3c/app_like_native_share_for_mobile_websites_with/)
-- url: https://medium.com/@aksteps/adding-app-like-share-to-your-website-on-mobile-and-social-share-urls-on-desktop-560b2b687d9e
+## [10][Add dark mode to your website with Javascript using Corvid by Wix](https://www.reddit.com/r/javascript/comments/gdb57v/add_dark_mode_to_your_website_with_javascript/)
+- url: https://www.wix.com/corvid/example/dark-mode
 ---
 
-## [8][Test.io - Online tool to test your Socket.io project](https://www.reddit.com/r/javascript/comments/gch57v/testio_online_tool_to_test_your_socketio_project/)
-- url: https://GitHub.com/yavrumian/test.io
+## [11][Understanding Express.js: Creating Your Own Node HTTP Request Router](https://www.reddit.com/r/javascript/comments/gdaqx9/understanding_expressjs_creating_your_own_node/)
+- url: https://typeofnan.dev/understanding-expressjs-creating-your-own-node-http-router/
 ---
 
-## [9][[AskJS] New to Javascript. What's cool ?](https://www.reddit.com/r/javascript/comments/gcpkbe/askjs_new_to_javascript_whats_cool/)
-- url: https://www.reddit.com/r/javascript/comments/gcpkbe/askjs_new_to_javascript_whats_cool/
----
-Hi guys!
-
-I'm going to pick up Javascript now, and just want to look forward to things to excite myself with. What are some cool things that can only be done with Javascript?
-
-I've been putting this aside for the longest time, having started off (and back then, content) with Python. But I've come across some Flask functionalities that necessitate JavaScript (dependent dropdowns), and thought I'd bite the bullet and pick it up!
-## [10][I built a little script to add a kaleidoscope background effect](https://www.reddit.com/r/javascript/comments/gccpzj/i_built_a_little_script_to_add_a_kaleidoscope/)
-- url: https://github.com/dpet/kaleido
----
-
-## [11][Appear DOM elements when they are visible in window's frame.](https://www.reddit.com/r/javascript/comments/gcpgcd/appear_dom_elements_when_they_are_visible_in/)
-- url: https://github.com/arianbahreman/appear
----
-
-## [12][I created an extendible javascript library for building creative brainstorming boards, on top of diagram-js. Check it out!](https://www.reddit.com/r/javascript/comments/gcpeb5/i_created_an_extendible_javascript_library_for/)
-- url: https://github.com/pinussilvestrus/postit-js
+## [12][Calling ReasonML from TypeScript (or Flow), the easy way.](https://www.reddit.com/r/javascript/comments/gdaoio/calling_reasonml_from_typescript_or_flow_the_easy/)
+- url: https://www.hackdoor.io/articles/myNBk3px/calling-reasonml-from-typescript-or-flow-the-easy-way
 ---
 

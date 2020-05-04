@@ -119,87 +119,66 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][TheLartians/Glue - A simple and generic API for C++ to other language bindings supporting bidirectional communication, inheritance and automatic declarations.](https://www.reddit.com/r/cpp/comments/gcnsjd/thelartiansglue_a_simple_and_generic_api_for_c_to/)
+## [3][13 (valuable?) things I learned using CMake](https://www.reddit.com/r/cpp/comments/gd25z0/13_valuable_things_i_learned_using_cmake/)
+- url: https://gist.github.com/GuillaumeDua/a2e9cdeaf1a26906e2a92ad07137366f#file-13_valuable_things_i_learned_using_cmake-pdf
+---
+
+## [4][Task Parallel Library (Tpl) for C++ - coroutines in action.](https://www.reddit.com/r/cpp/comments/gd5313/task_parallel_library_tpl_for_c_coroutines_in/)
+- url: https://www.reddit.com/r/cpp/comments/gd5313/task_parallel_library_tpl_for_c_coroutines_in/
+---
+Hi, maybe the result of my experimentation with coroutines may be interesting for someone else. 
+
+The RStein.AsyncCpp library (early unoptimized alpha) is a set of types that should be familiar for anyone who knows the Task Parallel Library (TPL) for .NET (C#). In addition, this library contains simple DataFlow, functional combinators for the Task class, useful async primitives (AsyncSemaphore, AsyncProducerConsumerCollection, CancellationToken, CancellationTokenSource ...).
+
+The library is my playground for testing coroutine support in C++.
+
+The library supports compilation in the VS 2019. Support for other compilers is planned.
+
+More info. 
+https://github.com/renestein/Rstein.AsyncCpp
+## [5][FASTBuild 1.00 has been released](https://www.reddit.com/r/cpp/comments/gd7cy4/fastbuild_100_has_been_released/)
+- url: https://fastbuild.org/docs/changelog.html
+---
+
+## [6][Would you consider building a Web app with C++ based WebAssembly?](https://www.reddit.com/r/cpp/comments/gczry8/would_you_consider_building_a_web_app_with_c/)
+- url: https://www.syntaxsuccess.com/viewarticle/using-webassembly-with-web-components
+---
+
+## [7][Spaceship Generator for May the 4th in C++ - Enter The Game!](https://www.reddit.com/r/cpp/comments/gd724n/spaceship_generator_for_may_the_4th_in_c_enter/)
+- url: https://www.bfilipek.com/2020/05/spaceshipgen.html
+---
+
+## [8][TheLartians/Glue - A simple and generic API for C++ to other language bindings supporting bidirectional communication, inheritance and automatic declarations.](https://www.reddit.com/r/cpp/comments/gcnsjd/thelartiansglue_a_simple_and_generic_api_for_c_to/)
 - url: https://github.com/TheLartians/Glue
 ---
 
-## [4][Modules are coming - Bryce Adelstein Lelbach - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gc82rc/modules_are_coming_bryce_adelstein_lelbach/)
+## [9][Adding two uint16_t s without -Wconversion warning?](https://www.reddit.com/r/cpp/comments/gctyw5/adding_two_uint16_t_s_without_wconversion_warning/)
+- url: https://www.reddit.com/r/cpp/comments/gctyw5/adding_two_uint16_t_s_without_wconversion_warning/
+---
+        uint16_t val1 = 10U;    // these initialisations are OK
+        uint16_t val2 = 12U;
+        uint16_t val3 = 0U;
+
+        // g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0 (in WSL)
+        // warning: conversion to ‘uint16_t{ aka short unsigned int }’
+        // from ‘int’ may alter its value[-Wconversion]
+        val3 = val1 + val2; // how to avoid the warning?
+## [10][Concurrency coding exercise ideas](https://www.reddit.com/r/cpp/comments/gcrp6f/concurrency_coding_exercise_ideas/)
+- url: https://www.reddit.com/r/cpp/comments/gcrp6f/concurrency_coding_exercise_ideas/
+---
+I'm reading the C++ Concurrency in Action book, which is quite nice but lacks any kind of practices or exercises. Looked up a dozen of coding challenge websites and none of them offers anything related to concurrency, threading, locking, memory models, etc.
+
+Is there such a site that collects some, or if not, what would be a good challenge to solve? (And potentially what are the good practices to verify their success other that some luck self made tests?)
+
+I can think of some trivial ones, such as:
+
+- concurrent queue or stack
+- some custom atomic data structures maybe (?)
+## [11][Why I Chose Cryengine and C++/Lua](https://www.reddit.com/r/cpp/comments/gd67ea/why_i_chose_cryengine_and_clua/)
+- url: https://rewoolationstudio.com/why-i-chose-cryengine-and-c-lua/
+---
+
+## [12][Modules are coming - Bryce Adelstein Lelbach - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gc82rc/modules_are_coming_bryce_adelstein_lelbach/)
 - url: https://www.youtube.com/watch?v=yee9i2rUF3s
----
-
-## [5][Why Refactor? Let’s Refactor the 3D Polygon Renderer (C++20)](https://www.reddit.com/r/cpp/comments/gch7t1/why_refactor_lets_refactor_the_3d_polygon/)
-- url: https://www.youtube.com/watch?v=GnKh8Eb1zU8
----
-
-## [6][Modules: The Beginner’s Guide - Meeting C++ 2019 - Daniela Engert](https://www.reddit.com/r/cpp/comments/gcd2m0/modules_the_beginners_guide_meeting_c_2019/)
-- url: https://www.youtube.com/watch?v=Kqo-jIq4V3I
----
-
-## [7][Learn C Programming Basic to Advance Part 2](https://www.reddit.com/r/cpp/comments/gcq79s/learn_c_programming_basic_to_advance_part_2/)
-- url: https://www.youtube.com/watch?v=wIcW3JCykig
----
-
-## [8][Print debugging workflow?](https://www.reddit.com/r/cpp/comments/gcq041/print_debugging_workflow/)
-- url: https://www.reddit.com/r/cpp/comments/gcq041/print_debugging_workflow/
----
-I use visual studio and the debugger is pretty fantastic but in some edge cases it would be handy to use print debugging. What is your favourite way to employ print debugging? Do you keep the print statements in a separate git branch to keep them from polluting the code?
-## [9][Friend, private function, template alias, and decltype… is clang correct in rejecting this?](https://www.reddit.com/r/cpp/comments/gc54yi/friend_private_function_template_alias_and/)
-- url: https://www.reddit.com/r/cpp/comments/gc54yi/friend_private_function_template_alias_and/
----
-*Disclaimer: this is a question I submitted to Stack Overflow a week ago [see here](https://stackoverflow.com/q/61410959/147192), and for which I am surprised not to have received any answer yet.*
-
-The following code compiles with GCC 7.x, 8.x, and 9.x, but fails to compile with Clang:
-
-    #include &lt;utility&gt;
-
-    struct Friend {
-        class Inner {
-            friend struct Friend;
-
-            int function() { return 0; }
-        };
-
-        using DirectResult = decltype(std::declval&lt;Inner&gt;().function());
-
-        template &lt;typename T&gt;
-        using IndirectResult = decltype(std::declval&lt;T&gt;().function());
-    };
-
-    int main() {
-        Friend::DirectResult direct{};
-        Friend::IndirectResult&lt;Friend::Inner&gt; indirect{};
-        return direct + indirect;
-    }
-
-You can view the failure [on godbolt](https://godbolt.org/z/uy-zVs):
-
-    &lt;source&gt;:13:55: error: 'function' is a private member of 'Friend::Inner'    
-        using IndirectResult = decltype(std::declval&lt;T&gt;().function());
-                                                          ^
-    &lt;source&gt;:18:13: note: in instantiation of template type alias 'IndirectResult' requested here
-        Friend::IndirectResult&lt;Friend::Inner&gt; indirect{};
-                ^
-
-Clang does not complain about `DirectResult` accessing the privates of `Inner`, but complains about `IndirectResult` doing so. Various variations lead to different results.
-
-It was brought to my attention that this seems similar to [this Clang bug](https://bugs.llvm.org/show_bug.cgi?id=25334), filed 5 years ago, and still unanswered.
-
-As a result, I still haven't figured out whether my code is **correct or not** according to the standard, and I would appreciate help in elucidating this mystery.
-## [10][Using C++ as a scripting language, part 2](https://www.reddit.com/r/cpp/comments/gc7vnv/using_c_as_a_scripting_language_part_2/)
-- url: https://medium.com/@fwsgonzo/using-c-as-a-scripting-language-part-2-7726f8e13e3
----
-
-## [11][example: FetchContent and conan to install C++ project deps](https://www.reddit.com/r/cpp/comments/gc6pwb/example_fetchcontent_and_conan_to_install_c/)
-- url: https://www.reddit.com/r/cpp/comments/gc6pwb/example_fetchcontent_and_conan_to_install_c/
----
-Hi. I want to share code snippet that helps me to auto install conan deps during cmake configure step for C++ project.
-
-Useful if you want to use IDE that auto-creates build and configure directories (like QT).
-
-https://github.com/blockspacer/conan_auto_install
-
-I hope it will be useful to someone.
-## [12][CrustyAuklet/bitpacker - type safe and low-boilerplate bit level serialization using modern C++. Compatible with python bitstruct.](https://www.reddit.com/r/cpp/comments/gbxuym/crustyaukletbitpacker_type_safe_and/)
-- url: https://github.com/CrustyAuklet/bitpacker
 ---
 

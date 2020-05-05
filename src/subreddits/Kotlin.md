@@ -1,13 +1,72 @@
 # Kotlin
-## [1][Kotlin’s Elvis better than Swift’s Guard](https://www.reddit.com/r/Kotlin/comments/gd9c4k/kotlins_elvis_better_than_swifts_guard/)
+## [1][For people like me who are into listening music while coding... [off]](https://www.reddit.com/r/Kotlin/comments/gdpgmf/for_people_like_me_who_are_into_listening_music/)
+- url: https://www.reddit.com/r/Kotlin/comments/gdpgmf/for_people_like_me_who_are_into_listening_music/
+---
+... check out the [list](https://spoti.fi/3cPiDAs) I use when I’m coding: 8+ hours of retro synth music inspired by Stranger Things.
+
+Also curious to know what kind of stuff do you listen to, if any.
+## [2][(Advice) What after Head First Kotlin?](https://www.reddit.com/r/Kotlin/comments/gdvfzo/advice_what_after_head_first_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/gdvfzo/advice_what_after_head_first_kotlin/
+---
+I just finished the book ' Head First Kotlin ' and have no prior java experience. However I do have some python and C++ experience.
+
+*Question*  :  I am looking to get started in Android dev. Should I learn Java or just brush up on the abstraction Kotlin provides? Also please include some resources, if you have any, for the same.
+
+Ps: books preferably
+
+Thank you for your time.
+## [3][Free Kotlin course for beginners by Donn Felker](https://www.reddit.com/r/Kotlin/comments/gdffkk/free_kotlin_course_for_beginners_by_donn_felker/)
+- url: https://www.reddit.com/r/Kotlin/comments/gdffkk/free_kotlin_course_for_beginners_by_donn_felker/
+---
+Links:  
+[https://twitter.com/donnfelker/status/1257341939109842944](https://twitter.com/donnfelker/status/1257341939109842944)
+
+[https://caster.io/courses/kotlin-programming-language](https://caster.io/courses/kotlin-programming-language)
+## [4][Kotlin’s Elvis better than Swift’s Guard](https://www.reddit.com/r/Kotlin/comments/gd9c4k/kotlins_elvis_better_than_swifts_guard/)
 - url: https://medium.com/@elye.project/kotlins-elvis-better-than-swift-s-guard-53030d403c3f?source=friends_link&amp;sk=bf7fced446cc161095a9d281054fb927
 ---
 
-## [2][Create Retrofit CallAdapter for Coroutines to handle response as states](https://www.reddit.com/r/Kotlin/comments/gd8p84/create_retrofit_calladapter_for_coroutines_to/)
+## [5][Kotlin/Native can't use a class reference in a lambda passed to a class constructor or in a method of an object extending that class](https://www.reddit.com/r/Kotlin/comments/gdg1dd/kotlinnative_cant_use_a_class_reference_in_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/gdg1dd/kotlinnative_cant_use_a_class_reference_in_a/
+---
+I have an instance of a class [here](https://github.com/DeflatedPickle/ducknroll/blob/map-command/src/commonMain/kotlin/example/main.kt#L27), which if I throw `println(player)` under it, it'll rightly print the instance. However, either of these [calls](https://github.com/DeflatedPickle/ducknroll/commit/374f72de259d4606e20dc0369f9c2fcf72ca9cbb#diff-9f158b81a446ad38bfadaa041350dda7L37), both throw a non-sense error.
+
+What's the error? Why `finished with non-zero exit value -1073741571`, of course!
+
+Now, I can comment out that `print`, and it'll run fine. Until I run the [map command](https://github.com/DeflatedPickle/ducknroll/blob/map-command/src/commonMain/kotlin/com/deflatedpickle/ducknroll/common/command/MapCommand.kt#L20), which takes in the player, where (for testing), it `prints` out the executor. If, in the command, I take out the `print`, again, it works perfectly fine. I can pass around `player`, but not use it.
+
+&amp;#x200B;
+
+Now, to test if it was a scoping issue, I moved it into its own `ThreadLocal` tagged `object`, but the same error was thrown. Note: You could still `print` it fine outside of the lambda or extended class update method.
+
+&amp;#x200B;
+
+I've never encountered an error that's like this, where I can't use an object in a nested scope, even if it's static. Is it a problem with Kotlin/Native or am I being an idiot?
+
+&amp;#x200B;
+
+**Edit**: I don't have the ultimate version of IDEA, so I can't debug it (if anyone can, that'd be great!).
+
+&amp;#x200B;
+
+**Edit 2**: One of my friends has ultimate, they cloned the repo, downloaded all the LLVM stuff, ran it in debug with breakpoints and... got the same result. Debugging is no help here. Either in doing something wrong (which we spent awhile looking for) or it's a bug.
+## [6][Kotlin: Sealed Classes (enum 2.0)](https://www.reddit.com/r/Kotlin/comments/gdqm5q/kotlin_sealed_classes_enum_20/)
+- url: https://flutteryapps.com/blogs/kotlin/sealed-classes.html
+---
+
+## [7][Kotlin tutorial 01 for beginners - Introduction](https://www.reddit.com/r/Kotlin/comments/gdiw9z/kotlin_tutorial_01_for_beginners_introduction/)
+- url: https://youtu.be/cQSRB_exCGM
+---
+
+## [8][The one and only object](https://www.reddit.com/r/Kotlin/comments/gdcw2h/the_one_and_only_object/)
+- url: https://medium.com/androiddevelopers/the-one-and-only-object-5dfd2cf7ab9b
+---
+
+## [9][Create Retrofit CallAdapter for Coroutines to handle response as states](https://www.reddit.com/r/Kotlin/comments/gd8p84/create_retrofit_calladapter_for_coroutines_to/)
 - url: https://medium.com/@melegy/create-retrofit-calladapter-for-coroutines-to-handle-response-as-states-c102440de37a
 ---
 
-## [3][GraphQL API integration tests in a Spring Boot 2.x Kotlin application](https://www.reddit.com/r/Kotlin/comments/gd7ff5/graphql_api_integration_tests_in_a_spring_boot_2x/)
+## [10][GraphQL API integration tests in a Spring Boot 2.x Kotlin application](https://www.reddit.com/r/Kotlin/comments/gd7ff5/graphql_api_integration_tests_in_a_spring_boot_2x/)
 - url: https://www.reddit.com/r/Kotlin/comments/gd7ff5/graphql_api_integration_tests_in_a_spring_boot_2x/
 ---
 In order to test end-to-end scenarios, the author wanted an easy way to…
@@ -18,41 +77,3 @@ In order to test end-to-end scenarios, the author wanted an easy way to…
 * prepare &amp; send GraphQL HTTP queries
 
 In this post, the author assumes that you’re already using graphql-java and exposing it using graphql-java-servlet or equivalent means: https://medium.com/dSebastien/graphql-api-integration-tests-in-a-spring-boot-2-x-kotlin-application-5840d3c5d66f?source=friends_link&amp;sk=9f22a7426e83f8ae02ace369174c2b62
-## [4][Kotlin 4 vs. Scala 3](https://www.reddit.com/r/Kotlin/comments/gdafzp/kotlin_4_vs_scala_3/)
-- url: https://youtu.be/sIL4mduqHe0?list=PLEx5khR4g7PI57l4MJvLlhOJIKHLKghos
----
-
-## [5][Learning Kotlin](https://www.reddit.com/r/Kotlin/comments/gd9b79/learning_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/gd9b79/learning_kotlin/
----
-Hi, there is a job opportunity programming Kotlin but I've never learned it. I program C, C++ and JavaScript. How long you think would take someone with that background to learn Kotlin.
-
-I want to now if that job is a loose battle even before starting or I have a chance.
-## [6][Custom Kotlin Coroutine Context Uses Cases](https://www.reddit.com/r/Kotlin/comments/gd3t2i/custom_kotlin_coroutine_context_uses_cases/)
-- url: https://codingwithmohit.com/coroutines/custom-coroutine-context-uses-cases/
----
-
-## [7][Which wrapper should I use for a Kotlin Discord Bot ?](https://www.reddit.com/r/Kotlin/comments/gcsq3u/which_wrapper_should_i_use_for_a_kotlin_discord/)
-- url: https://www.reddit.com/r/Kotlin/comments/gcsq3u/which_wrapper_should_i_use_for_a_kotlin_discord/
----
-It's actually my first time creating a Discord Bot. I checked out the basics of how to make one with JS but...well...JS. So I searched for Java/Kotlin wrapper alternatives and actually found JDA, Diskord and Kord. The first one was developed for Java (but is obviously Kotlin compatible), and the others for Kotlin. JDA is already pretty API complete and has been used by many, but it unfortunately doesn't use all of Kotlin's power, as opposed to Diskord or Kord. Though, these two are still young. (I should mention that I do not plan to use Discord Voice (which those two can't do anyway))
-
-It would be great if you guys could give me some advice on this ! Thank you in advance !
-## [8][looking for a very beginner to be my learning mate](https://www.reddit.com/r/Kotlin/comments/gd2dg1/looking_for_a_very_beginner_to_be_my_learning_mate/)
-- url: https://www.reddit.com/r/Kotlin/comments/gd2dg1/looking_for_a_very_beginner_to_be_my_learning_mate/
----
- 
-
-i started watching this tutorial [https://www.udemy.com/share/101WaoAkEZdVZUTXo=/](https://www.udemy.com/share/101WaoAkEZdVZUTXo=/)
-
-which is very good and explained and got almost 100k student so i hope i can find one person or more to learn and practice with me so we can help each other.
-
-if you have a better way of learning i will be happy to join you.
-## [9][Kotlin and Spring](https://www.reddit.com/r/Kotlin/comments/gcvi8h/kotlin_and_spring/)
-- url: https://www.reddit.com/r/Kotlin/comments/gcvi8h/kotlin_and_spring/
----
-Does anyone know a good source where to learn Kotlin with Spring, I can only find Spring with Java?
-## [10][is there any subreddit for Beginner Kotlin learners ?](https://www.reddit.com/r/Kotlin/comments/gd0rng/is_there_any_subreddit_for_beginner_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/gd0rng/is_there_any_subreddit_for_beginner_kotlin/
----
-

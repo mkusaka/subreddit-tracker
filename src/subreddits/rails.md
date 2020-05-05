@@ -27,7 +27,83 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][PigCI Now Is Open Source 🎁🎉🥳](https://www.reddit.com/r/rails/comments/gcwvv4/pigci_now_is_open_source/)
+## [3][Anyone here using tailwindui? Thinking of pulling the trigger](https://www.reddit.com/r/rails/comments/gdn2w7/anyone_here_using_tailwindui_thinking_of_pulling/)
+- url: https://www.reddit.com/r/rails/comments/gdn2w7/anyone_here_using_tailwindui_thinking_of_pulling/
+---
+I really like tailwindcss, and im thinking of getting tailwindui. It would save me alot of time in the design process. Anyone working with tailwindui? How has it changed your productivity?
+## [4][Testing testing testing](https://www.reddit.com/r/rails/comments/gdo3kx/testing_testing_testing/)
+- url: https://www.reddit.com/r/rails/comments/gdo3kx/testing_testing_testing/
+---
+Hi all, I'm fairly new to Rails but experienced in other languages.
+
+Something I'm finding difficult is testing in Rails. Out of the box there are just so many types of tests and so I have so many questions.
+
+1) MiniTest or RSpec? Every project I've seen in my career has used RSpec, do I really need to learn both?
+
+2) Why so many types of spec? Request specs, controller specs, model specs, job specs, service specs, I've probably missed some! Do I need to learn them all? 
+
+How? 
+
+Not to sound petty but the RSpec documentation website is one of the worst websites I've ever encountered with regards to the volume of information on there (not much). I say this as someone who has had to learn and digest other testing frameworks in other languages such as PHP and JS.
+
+3) Shoulda? Or shouldn't? I keep seeing Shoulda popup in projects but then friends tell me "DON'T USE THAT CRAP". Is it good to use or not? If not, why not?
+
+4) Factory bot? Is this bad? Similar to Shoudla, people seem to dislike it.
+
+5) Are there any decent resources out there with plenty of examples of how to write good tests, in the most recent syntax with modern tools? I keep seeing examples online with "the old RSpec syntax" showing something like `obj.stub()`
+
+6) Do you all really, actually T,D,D? As in, you honestly, 100%, seriously write tests first, then code, then refractor, etc? Everyone I've met in my Rails career journey says they like to TDD but then in practice when pairing or whatever, they go guns blazing writing or debugging code without even looking at the tests until later.
+
+7) Any other wisdom you can offer with regards to being a testing ninja? It's already confusing enough with all of the various _types_ of tests (unit, integration, feature, end to end, etc) but then Rails adds another level of complexity for me with all of the various styles and syntaxes and stuff.
+
+Thanks in advance!
+## [5][Verify identity of user](https://www.reddit.com/r/rails/comments/gdr2sq/verify_identity_of_user/)
+- url: https://www.reddit.com/r/rails/comments/gdr2sq/verify_identity_of_user/
+---
+Hey guys... I’ve been trying to integrate an authentication system to verify if a given user is in fact a student from my university. I’m having a really hard time finding a good documentation on it. 
+
+I looked into omniauth and it seems like the way to go but I’m super confused on how to integrate it with my university login. Does anyone here have any experience with integrating such a custom verification system?
+## [6][How to Build a Twitter Clone with rails, ActionCable and React](https://www.reddit.com/r/rails/comments/gdjgd6/how_to_build_a_twitter_clone_with_rails/)
+- url: https://www.reddit.com/r/rails/comments/gdjgd6/how_to_build_a_twitter_clone_with_rails/
+---
+A week or so ago, a video about making a Twitter Clone with Rails CableReady and StimulusReflex hit the web. While I think it is really cool what those teams are doing, I am a little more old school (in JS years &lt;/sarcasm&gt;) and just use React.
+
+&amp;#x200B;
+
+I figured you all would like to see a tutorial on a clone of the clone with React and bare ActionCable
+
+[https://robrace.dev/build-a-twitter-clone-with-rails-actioncable-and-react/](https://robrace.dev/build-a-twitter-clone-with-rails-actioncable-and-react/)
+## [7][Similar solution like Django ContentTypes](https://www.reddit.com/r/rails/comments/gde1ea/similar_solution_like_django_contenttypes/)
+- url: https://www.reddit.com/r/rails/comments/gde1ea/similar_solution_like_django_contenttypes/
+---
+Hi Everyone.
+
+I am currently trying to implement acts\_as\_votable in generic controller. (VotesController)
+
+I am planning to send contentType and contentId parameters to votes controller.  First, i'll find the model class by using contentType parameter, then ContentTypeResultModel.find(contentId). Everntually will get the original model I need, 
+
+Then i'll implement the voting.
+
+Is there any solution in Rails to accomplish this, or do I need to create controller method for each content type?
+
+Hope I explained clearly.
+## [8][How do you get an attachment url from active storage?](https://www.reddit.com/r/rails/comments/gdihs8/how_do_you_get_an_attachment_url_from_active/)
+- url: https://www.reddit.com/r/rails/comments/gdihs8/how_do_you_get_an_attachment_url_from_active/
+---
+Rails.application.routes.url_helpers.rails_blob_path(self.avatar, only_path: true) is giving me this error:
+
+*** NoMethodError Exception: undefined method `signed_id' for #&lt;ActiveStorage::Attached::One:0x00007f8bc3fea0c8&gt;
+
+Can someone explain the error?
+## [9][Anyone know of a Rails/Ruby Discord?](https://www.reddit.com/r/rails/comments/gd38tl/anyone_know_of_a_railsruby_discord/)
+- url: https://www.reddit.com/r/rails/comments/gd38tl/anyone_know_of_a_railsruby_discord/
+---
+Anyone apart of any discord server that’s about Rails or Ruby? I think that’s be a fun place to connect!
+## [10][How do you check type of file in ActiveStorage ?](https://www.reddit.com/r/rails/comments/gd9q4g/how_do_you_check_type_of_file_in_activestorage/)
+- url: https://www.reddit.com/r/rails/comments/gd9q4g/how_do_you_check_type_of_file_in_activestorage/
+---
+Hey anyone, do you use ActiveStorage for multiple type files? How do you check that type ? In my case I jus want to check if that is images or videos
+## [11][PigCI Now Is Open Source 🎁🎉🥳](https://www.reddit.com/r/rails/comments/gcwvv4/pigci_now_is_open_source/)
 - url: https://www.reddit.com/r/rails/comments/gcwvv4/pigci_now_is_open_source/
 ---
 Main Website: [https://pigci.com/](https://pigci.com/)
@@ -35,15 +111,7 @@ Main Website: [https://pigci.com/](https://pigci.com/)
 Source Code : [https://github.com/PigCI/App](https://github.com/PigCI/App)
 
 video : [https://youtu.be/uodK1rY8J2c](https://youtu.be/uodK1rY8J2c)
-## [4][Anyone know of a Rails/Ruby Discord?](https://www.reddit.com/r/rails/comments/gd38tl/anyone_know_of_a_railsruby_discord/)
-- url: https://www.reddit.com/r/rails/comments/gd38tl/anyone_know_of_a_railsruby_discord/
----
-Anyone apart of any discord server that’s about Rails or Ruby? I think that’s be a fun place to connect!
-## [5][How do you check type of file in ActiveStorage ?](https://www.reddit.com/r/rails/comments/gd9q4g/how_do_you_check_type_of_file_in_activestorage/)
-- url: https://www.reddit.com/r/rails/comments/gd9q4g/how_do_you_check_type_of_file_in_activestorage/
----
-Hey anyone, do you use ActiveStorage for multiple type files? How do you check that type ? In my case I jus want to check if that is images or videos
-## [6][Query Problem Possible on ActiveRecord or Low Level Query?](https://www.reddit.com/r/rails/comments/gd4rap/query_problem_possible_on_activerecord_or_low/)
+## [12][Query Problem Possible on ActiveRecord or Low Level Query?](https://www.reddit.com/r/rails/comments/gd4rap/query_problem_possible_on_activerecord_or_low/)
 - url: https://www.reddit.com/r/rails/comments/gd4rap/query_problem_possible_on_activerecord_or_low/
 ---
 I have table A, B and C.
@@ -55,84 +123,3 @@ Let's say I want to query all A's and its corresponding B's based on selected C'
 A with id 1 has 2 B records (1, 2) with dates January 2020 and February 2020 as well as the same C\_id 1. If I select C with id 1, it should give me record A with id 1 and only B with id 2 since it has the latest date value.
 
 Wondering if this is possible with ActiveRecord or do I have to do a manual query?
-## [7][Ruby on Rails authorization using CanCanCan](https://www.reddit.com/r/rails/comments/gcoxya/ruby_on_rails_authorization_using_cancancan/)
-- url: https://www.reddit.com/r/rails/comments/gcoxya/ruby_on_rails_authorization_using_cancancan/
----
-Hi ruby family,
-
-As an initiative to give back to the community, I have started writing a series of blogs on ruby and ruby on rails. Planning to create more content in the future to help share the knowledge. I just published a post about Authorization on Ruby on Rails using CanCanCan. Do check it out and let me know your thoughts.
-
-[https://addytalks.tech/2020/05/03/ruby-on-rails-authorization-with-cancancan/](https://addytalks.tech/2020/05/03/ruby-on-rails-authorization-with-cancancan/)
-## [8][Markdown redcarpet and user tag (with link_to)](https://www.reddit.com/r/rails/comments/gcs4ms/markdown_redcarpet_and_user_tag_with_link_to/)
-- url: https://www.reddit.com/r/rails/comments/gcs4ms/markdown_redcarpet_and_user_tag_with_link_to/
----
-Hi guys, I improved my markdown in this way to create a link to the user page
-
-&amp;#x200B;
-
-    class MarkdownRenderer &lt; Redcarpet::Render::HTML
-      include Rails.application.routes.url_helpers
-    
-      def paragraph(text)
-        text.gsub! (/@(\w+)/) do |match|
-          user = User.find_by_username($1)
-          if user != nil
-            link_to match, user_path($1)
-          else
-            link_to match, search_path(search: { author: $1 })
-          end
-        end
-        text
-      end
-
-But it says me 
-
-     No route marches {: action=&gt;"show", : controller=&gt;"users", :locale=&gt;"Freank"} missing required keys: [:id]
-
-how is it possible? `$1` is my username.
-
-I also tried to replace 
-
-            link_to match, user_path($1)
-
-with 
-
-            link_to match, user_path(user.username)
-
-but I have the same problem.
-
-How to fix?
-## [9][How do I make my rails app run smoothly while mongodb isn't available?](https://www.reddit.com/r/rails/comments/gcoijo/how_do_i_make_my_rails_app_run_smoothly_while/)
-- url: https://www.reddit.com/r/rails/comments/gcoijo/how_do_i_make_my_rails_app_run_smoothly_while/
----
-Is there a better way to handle situations where the mongodb server goes down? I have a monolithic rails application that uses mongoid for certain tasks. 
-
-However, from keeping my web app from failing/lagging, is there a better way I could handle the scenarios where mongo isn't available? 
-
-Right now, all I could come up with was reducing the server selection timeout and handling the exception in every single place individually.
-## [10][Crucial Resources](https://www.reddit.com/r/rails/comments/gcjze8/crucial_resources/)
-- url: https://www.reddit.com/r/rails/comments/gcjze8/crucial_resources/
----
-Hey everyone! I'm somewhat new to programming (8 months in). Learning rails and so far its awesome! I had a bunch of local files and was told to put them in a repo for others to use. They have helped me tremendously. They are also great when I'm traveling or without internet as they are local. Feel free to use and would love if you had any helpful so called "cheat sheets" you would want to throw in there.
-
-Cheers!
-
-Heres the repo
-
-[https://github.com/tylertomlinson/crucial\_resources](https://github.com/tylertomlinson/crucial_resources)
-## [11][Blob column of model in Rails 6 with ActiveStorage](https://www.reddit.com/r/rails/comments/gciqy3/blob_column_of_model_in_rails_6_with_activestorage/)
-- url: https://www.reddit.com/r/rails/comments/gciqy3/blob_column_of_model_in_rails_6_with_activestorage/
----
-Hello there, how to generate a model with a column of blob. I have a db design of table "document" with the column of id:int, file:blob, status:enum and exp\_date:datetime. I am using postgresql
-## [12][Question about React and Rails.](https://www.reddit.com/r/rails/comments/gcjx1i/question_about_react_and_rails/)
-- url: https://www.reddit.com/r/rails/comments/gcjx1i/question_about_react_and_rails/
----
-I'm fairly new to Rails so bear with me!
-
-I saw that you can create routes using React inside of a Rails application using the react-router-dom.
-
-I know that a Rails app without React you usually create routes in routes.rb, but I'm seeing you can do all that inside of a App.js file and using the line `match '*path', to: 'pages#index', via: :all` within the routes.rb file.
-
-What's the difference? Does creating routes using React allow for your app to be more dynamic? Is this way preferred when using React with Rails?
-
-Thanks!

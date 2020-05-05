@@ -119,66 +119,53 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][13 (valuable?) things I learned using CMake](https://www.reddit.com/r/cpp/comments/gd25z0/13_valuable_things_i_learned_using_cmake/)
-- url: https://gist.github.com/GuillaumeDua/a2e9cdeaf1a26906e2a92ad07137366f#file-13_valuable_things_i_learned_using_cmake-pdf
+## [3][What libraries are typically used for developing GUI for software like Photoshop, Premiere, Blender etc...](https://www.reddit.com/r/cpp/comments/gdvbgd/what_libraries_are_typically_used_for_developing/)
+- url: https://www.reddit.com/r/cpp/comments/gdvbgd/what_libraries_are_typically_used_for_developing/
+---
+I know most of those apps are written in C++ but I was wondering If someone knows what kind of libraries do these companies use to develop the GUI?
+## [4][Nifty Fold Expression Tricks](https://www.reddit.com/r/cpp/comments/gdvqiq/nifty_fold_expression_tricks/)
+- url: https://foonathan.net/2020/05/fold-tricks/#content
 ---
 
-## [4][Task Parallel Library (Tpl) for C++ - coroutines in action.](https://www.reddit.com/r/cpp/comments/gd5313/task_parallel_library_tpl_for_c_coroutines_in/)
-- url: https://www.reddit.com/r/cpp/comments/gd5313/task_parallel_library_tpl_for_c_coroutines_in/
----
-Hi, maybe the result of my experimentation with coroutines may be interesting for someone else. 
-
-The RStein.AsyncCpp library (early unoptimized alpha) is a set of types that should be familiar for anyone who knows the Task Parallel Library (TPL) for .NET (C#). In addition, this library contains simple DataFlow, functional combinators for the Task class, useful async primitives (AsyncSemaphore, AsyncProducerConsumerCollection, CancellationToken, CancellationTokenSource ...).
-
-The library is my playground for testing coroutine support in C++.
-
-The library supports compilation in the VS 2019. Support for other compilers is planned.
-
-More info. 
-https://github.com/renestein/Rstein.AsyncCpp
-## [5][FASTBuild 1.00 has been released](https://www.reddit.com/r/cpp/comments/gd7cy4/fastbuild_100_has_been_released/)
-- url: https://fastbuild.org/docs/changelog.html
+## [5][C++Now 2020: Arthur O'Dwyer "A C++20 Magic Trick"](https://www.reddit.com/r/cpp/comments/gddv8z/cnow_2020_arthur_odwyer_a_c20_magic_trick/)
+- url: https://www.youtube.com/watch?v=XO0p9zNCCDE
 ---
 
-## [6][Would you consider building a Web app with C++ based WebAssembly?](https://www.reddit.com/r/cpp/comments/gczry8/would_you_consider_building_a_web_app_with_c/)
-- url: https://www.syntaxsuccess.com/viewarticle/using-webassembly-with-web-components
+## [6][The inevitable demise of Qt? (Qt, Open Source and corona)](https://www.reddit.com/r/cpp/comments/gdwk64/the_inevitable_demise_of_qt_qt_open_source_and/)
+- url: https://mail.kde.org/pipermail/kde-community/2020q2/006098.html
 ---
 
-## [7][Spaceship Generator for May the 4th in C++ - Enter The Game!](https://www.reddit.com/r/cpp/comments/gd724n/spaceship_generator_for_may_the_4th_in_c_enter/)
-- url: https://www.bfilipek.com/2020/05/spaceshipgen.html
+## [7][Using MessagePack to Share complex Types Between C++ and JavaScript](https://www.reddit.com/r/cpp/comments/gdppyf/using_messagepack_to_share_complex_types_between/)
+- url: https://www.syntaxsuccess.com/viewarticle/sharing-complex-types-between-c++-webassembly-and-javascript
 ---
 
-## [8][TheLartians/Glue - A simple and generic API for C++ to other language bindings supporting bidirectional communication, inheritance and automatic declarations.](https://www.reddit.com/r/cpp/comments/gcnsjd/thelartiansglue_a_simple_and_generic_api_for_c_to/)
-- url: https://github.com/TheLartians/Glue
+## [8][Pure Virtual C++ 2020 - Videos](https://www.reddit.com/r/cpp/comments/gdfmve/pure_virtual_c_2020_videos/)
+- url: https://www.youtube.com/playlist?list=PLReL099Y5nRdHYz4JwB0bq1kaVw2yGDag&amp;disable_polymer=1
 ---
 
-## [9][Adding two uint16_t s without -Wconversion warning?](https://www.reddit.com/r/cpp/comments/gctyw5/adding_two_uint16_t_s_without_wconversion_warning/)
-- url: https://www.reddit.com/r/cpp/comments/gctyw5/adding_two_uint16_t_s_without_wconversion_warning/
----
-        uint16_t val1 = 10U;    // these initialisations are OK
-        uint16_t val2 = 12U;
-        uint16_t val3 = 0U;
-
-        // g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0 (in WSL)
-        // warning: conversion to ‘uint16_t{ aka short unsigned int }’
-        // from ‘int’ may alter its value[-Wconversion]
-        val3 = val1 + val2; // how to avoid the warning?
-## [10][Concurrency coding exercise ideas](https://www.reddit.com/r/cpp/comments/gcrp6f/concurrency_coding_exercise_ideas/)
-- url: https://www.reddit.com/r/cpp/comments/gcrp6f/concurrency_coding_exercise_ideas/
----
-I'm reading the C++ Concurrency in Action book, which is quite nice but lacks any kind of practices or exercises. Looked up a dozen of coding challenge websites and none of them offers anything related to concurrency, threading, locking, memory models, etc.
-
-Is there such a site that collects some, or if not, what would be a good challenge to solve? (And potentially what are the good practices to verify their success other that some luck self made tests?)
-
-I can think of some trivial ones, such as:
-
-- concurrent queue or stack
-- some custom atomic data structures maybe (?)
-## [11][Why I Chose Cryengine and C++/Lua](https://www.reddit.com/r/cpp/comments/gd67ea/why_i_chose_cryengine_and_clua/)
-- url: https://rewoolationstudio.com/why-i-chose-cryengine-and-c-lua/
+## [9][std::find() and memchr() Optimizations](https://www.reddit.com/r/cpp/comments/gdd1mn/stdfind_and_memchr_optimizations/)
+- url: https://gms.tf/stdfind-and-memchr-optimizations.html
 ---
 
-## [12][Modules are coming - Bryce Adelstein Lelbach - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/gc82rc/modules_are_coming_bryce_adelstein_lelbach/)
-- url: https://www.youtube.com/watch?v=yee9i2rUF3s
+## [10][CppDepend v2020.1 Released! - Dependency Graph Completely Rebuilt, new Linux version, CUDA support](https://www.reddit.com/r/cpp/comments/gdvwvf/cppdepend_v20201_released_dependency_graph/)
+- url: https://isocpp.org/blog/2020/05/cppdepend-v2020.1-released-dependency-graph-completely-rebuilt-cppdepend-on
 ---
 
+## [11][CoreCpp Online meetup today](https://www.reddit.com/r/cpp/comments/gdux6s/corecpp_online_meetup_today/)
+- url: https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/?utm_source=share&amp;utm_medium=web2x
+---
+
+## [12][Challenge yourself and socialize in a positive environment](https://www.reddit.com/r/cpp/comments/gdwggg/challenge_yourself_and_socialize_in_a_positive/)
+- url: https://www.reddit.com/r/cpp/comments/gdwggg/challenge_yourself_and_socialize_in_a_positive/
+---
+ 
+
+Hello, I'm happy to introduce our community to you. We are a programming Discord Community that focuses on intensively helping (mentoring) beginner, intermediate and experienced developers.  
+We answer questions, discuss the latest technologies and debate about the best software architectures. We do not only limit ourselves to programming: also mathematics and other computer science topics (such as hardware and networking) are something we talk about on a daily basis.
+
+Our passionate, professional developers try to answer all your questions as well as possible.  
+We do also host numerous events in which you can compete or collaborate to get to your desired result.
+
+(Obviously, we are a community, not a company: we do not charge any money for our services and are in no way planning to earn any money.)
+
+We hope to see you in our community :) Invitation link: [https://discordapp.com/invite/aJwTAgS](https://discordapp.com/invite/aJwTAgS)

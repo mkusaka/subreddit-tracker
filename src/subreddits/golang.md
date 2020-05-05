@@ -1,66 +1,73 @@
 # golang
-## [1][Olric v0.2.0 is out: Distributed cache and in-memory key/value data store. It can be used both as an embedded Go library and as a language-independent service.](https://www.reddit.com/r/golang/comments/gd7v1s/olric_v020_is_out_distributed_cache_and_inmemory/)
+## [1][Caddy 2 is released](https://www.reddit.com/r/golang/comments/gdfnlj/caddy_2_is_released/)
+- url: https://caddyserver.com/v2
+---
+
+## [2][mathetake/gasm: A WASM Virtual Machine for Gophers](https://www.reddit.com/r/golang/comments/gdwpow/mathetakegasm_a_wasm_virtual_machine_for_gophers/)
+- url: https://www.reddit.com/r/golang/comments/gdwpow/mathetakegasm_a_wasm_virtual_machine_for_gophers/
+---
+Hi all,
+
+I've just published my homemade WASM virtual machine purely written in Go. I did this just for fun and for leaning WASM specification.  [https://github.com/mathetake/gasm](https://github.com/mathetake/gasm)
+
+With gasm, you can embed VMs in your go programs without any dependencies like cgo. Calling host functions from WASM modules and execution of exported functions in WASM modules are supported.
+
+Although it seems to have tons of bugs, I would like to share this personal project as it works fine with basic examples.
+
+Thanks!
+## [3][Fairly seasoned developer, interested in the multithreading performance benefits of golang over C++.](https://www.reddit.com/r/golang/comments/gdrm71/fairly_seasoned_developer_interested_in_the/)
+- url: https://www.reddit.com/r/golang/comments/gdrm71/fairly_seasoned_developer_interested_in_the/
+---
+Hi, 
+
+I'm part of a team that maintains a large-ish "AI" service which executes hundreds of thousands of queries every minute. The service is fairly modern, managed and deployed on Azure with Kubernetes and docker containers in datacenters over the world.
+
+The individual backend microservice containers are built in C++ on top of gRPC. Every backend container handles many concurrent requests. 
+
+We place quite a bit of emphasis on performance, and routinely deploy updates that improve scale, which directly impacts our bottom line in terms of margin, or sometimes we pass those savings onto the customer. I myself have optimized some of the core pieces with intrisics that we do have available on some of the high-end azure VMs just to squeeze some 5% more perf. This is to say that we ***do*** spend the 80% extra effort to get the 20% extra benefit.
+
+That said, the multithreading aspect of the service has not been given too much attention. Since each microservice handles many requests, our concurrency is handled by a barebones threadpool which distributes the work to those independent requests. So we have a simple threadpool that puts very optimized tasks on threads. I should also say that like most "AI" stuff, the processing is memory bound, and not CPU bound. 
+
+I'm wondering if I'd get some efficiency out of golang compared to a fairly optimized service written in C++. I might just protoype the service these days just to have some numbers to compare, but wanted to gut check with people first, especially since I'm new to go. I'm also not really sure how much effort this prototyping would be, given the above parameters (e.g. it needs to talk gRPC, and call some very optimized C++ code).
+
+Hoping for a positive answer given that from the little I've read, it looks like golang was designed for my use case.
+
+Thanks!
+
+P.S. Also, as a bonus, could you recommend a good in-depth book coming from a C/C++ backgroud?
+## [4][dSock – Distributed WebSocket broker](https://www.reddit.com/r/golang/comments/gdnzzs/dsock_distributed_websocket_broker/)
+- url: https://github.com/Cretezy/dSock
+---
+
+## [5][Handling Colossal Conditions in Go](https://www.reddit.com/r/golang/comments/gdva0j/handling_colossal_conditions_in_go/)
+- url: https://link.medium.com/VtsANFKEd6
+---
+
+## [6][Go modules and .proto](https://www.reddit.com/r/golang/comments/gdv1ah/go_modules_and_proto/)
+- url: https://www.reddit.com/r/golang/comments/gdv1ah/go_modules_and_proto/
+---
+Hi everyone, what is the proper way to generate .go files from third-party library, which doesn't contain any .go source code. For example, i want to generate .proto files from [https://github.com/tensorflow/serving/tree/master/tensorflow\_serving/apis](https://github.com/tensorflow/serving/tree/master/tensorflow_serving/apis)
+
+But as i get it, `go mod vendor` doesn't copy this repository to vendor as there are no .go files, and i only can get it to modules using `go get -d` [`github.com/tensorflow/serving`](https://github.com/tensorflow/serving)
+
+So i don't understand how to generate .proto that are located in modules.. Any suggestions?
+## [7][I wrote a compiler and VM language with a similar syntax to Javascript in Go](https://www.reddit.com/r/golang/comments/gdfkuu/i_wrote_a_compiler_and_vm_language_with_a_similar/)
+- url: https://github.com/actuallyachraf/monkey-giggle
+---
+
+## [8][Why `github.com/pkg/errors` is not a golden standard in "Effective Go" ?](https://www.reddit.com/r/golang/comments/gdq6f4/why_githubcompkgerrors_is_not_a_golden_standard/)
+- url: https://www.reddit.com/r/golang/comments/gdq6f4/why_githubcompkgerrors_is_not_a_golden_standard/
+---
+I am doing a deep dive in to Go, on my journey I am currently exploring error handling in Go. I was particularity interested in stack traces. There is very useful package [`github.com/pkg/errors`](https://github.com/pkg/errors`) which nicely handles it.
+
+Why [`github.com/pkg/errors`](https://github.com/pkg/errors`) is not a recommended package to handle errors in "[Effective Go](https://golang.org/doc/effective_go.html)"  ?
+
+I know what pain it is to debug an error with no stack trace. Shouldn't it be encouraged if not forced to always add stack trace ?
+## [9][Olric v0.2.0 is out: Distributed cache and in-memory key/value data store. It can be used both as an embedded Go library and as a language-independent service.](https://www.reddit.com/r/golang/comments/gd7v1s/olric_v020_is_out_distributed_cache_and_inmemory/)
 - url: https://github.com/buraksezer/olric#olric-
 ---
 
-## [2][I try to create a minimalistic and flexible Go repository template. Feedback is more than welcome.](https://www.reddit.com/r/golang/comments/gdajt5/i_try_to_create_a_minimalistic_and_flexible_go/)
-- url: https://github.com/golang-templates/seed
+## [10][Micro Server - a distributed systems runtime for the Cloud and beyond](https://www.reddit.com/r/golang/comments/gdpmv7/micro_server_a_distributed_systems_runtime_for/)
+- url: https://micro.mu/blog/2020/05/04/introducing-micro-server.html
 ---
 
-## [3][Wrote a Chip-8 emulator in Go. It is a WIP and has no tests written yet, but so far everything seems to work except for some audio bugs.](https://www.reddit.com/r/golang/comments/gcvy16/wrote_a_chip8_emulator_in_go_it_is_a_wip_and_has/)
-- url: https://github.com/bradford-hamilton/chippy
----
-
-## [4][Building a REST API With Go Gin - Part 2: Login/Register/Authentication](https://www.reddit.com/r/golang/comments/gd04vj/building_a_rest_api_with_go_gin_part_2/)
-- url: https://www.youtube.com/watch?v=XxCr4QOD5Hs
----
-
-## [5][Convert time.Minute to seconds(int)](https://www.reddit.com/r/golang/comments/gd8go8/convert_timeminute_to_secondsint/)
-- url: https://www.reddit.com/r/golang/comments/gd8go8/convert_timeminute_to_secondsint/
----
-I have a constant of type time.Duration: **Time\_Min = 10 \* time.Minute** (this holds value 10m). I want to convert this value to seconds (10\*60 = 600s) and store it as integer(int and not int64). 
-
-for eg, Time\_Sec = Time\_Min \* 60 
-
-OR Time\_Sec = Time\_Min \* time.Second
-
-Where, Time\_sec should be of type int.
-
-I am unable to find a way to perform type conversion for time.Duration. Any help will be highly appreciated.
-
-Thanks
-## [6][Supporting gRPC and HTTP Side by Side](https://www.reddit.com/r/golang/comments/gd0s9n/supporting_grpc_and_http_side_by_side/)
-- url: https://www.reddit.com/r/golang/comments/gd0s9n/supporting_grpc_and_http_side_by_side/
----
-Our organization is currently evaluating moving to gRPC for our microservices, and eventually moving to gRPC exclusively with the exception of services that are consumed from a web browser. We will have services that will need to continue support HTTP / JSON long term, but even in the interim we are being asked to support gRPC and HTTP side by side on all services that adopt gRPC. Most of our code bases are using GoKit with the HTTP transport. Adding gRPC shouldn't be a heavy lift but in many of the examples I've seen for GoKit gRPC services there are two sets of models being maintained, one for protobuf that is auto generated from protoc, and one for the application which the GoKit endpoints and services receive and return. This seems to lead to duplication as the gRPC transport ends up mapping the protobuf model to another set of very similar models. While being trivial this adds duplicative effort and begs the question what is the canonical source of truth for the models, the proto file, or the models the service expects.
-
-What are the best practices around supporting gRPC and HTTP, particularly with GoKit? Should we maintain two sets of models and just do the mapping? Or can we just use the protobuf generated models through the endpoint and services?
-## [7][Command line tool that runs a local local web server for facilitating bash script execution](https://www.reddit.com/r/golang/comments/gdbnlz/command_line_tool_that_runs_a_local_local_web/)
-- url: https://github.com/atye/go-swizard
----
-
-## [8][Handling MongoDB Errors](https://www.reddit.com/r/golang/comments/gdblea/handling_mongodb_errors/)
-- url: https://www.reddit.com/r/golang/comments/gdblea/handling_mongodb_errors/
----
-How can I differentiate timeout error from not found error when I am calling collection.FindOne()? Thank you.
-## [9][I'm a noob, here a Eshop Cli I made, any suggestions?](https://www.reddit.com/r/golang/comments/gdavow/im_a_noob_here_a_eshop_cli_i_made_any_suggestions/)
-- url: https://www.reddit.com/r/golang/comments/gdavow/im_a_noob_here_a_eshop_cli_i_made_any_suggestions/
----
-Hello there,
-here's a simple CLI I made to put together a couple of things I learned:
-
-https://github.com/marcodenisi/eshop-tracker
-
-It's a CLI retrieving and showing Italian Nintendo Eshop games with related prices. I've used boltdb to manage a key-value store and promptui to enrich a little bit the terminal UI. The idea was to write something that could be easily extended to be consumed via REST API as well.
-
-I'd really like to get some advice on how I can improve my style. In fact, I can't really understand if there's some kind of naming conventions for files and folders and my directory structure seems a little odd.
-
-I come from Java and I think my project somehow shows it, it's all a little bit to jav-ish, I'd really like to write more idiomatic Go code.
-
-Thanks to all!
-## [10][How does a Go WebAPI look like today?](https://www.reddit.com/r/golang/comments/gdarfm/how_does_a_go_webapi_look_like_today/)
-- url: https://www.reddit.com/r/golang/comments/gdarfm/how_does_a_go_webapi_look_like_today/
----
-Hi. I started to learn Go and got most of the basics now. Now it would be awesome to know how Go is used out in the big wide world. How does your workplace Go look like? What packages are you using to built your WebAPI's? Would love to hear what problems companies tackle with Go and how they do it.
-
-Is there any "realistic" opensource projects out there to learn from? How does the structure look like? Hope anyone has the time to share something :) Don't be afraid to get down and dirty with details.

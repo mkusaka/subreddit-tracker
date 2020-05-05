@@ -31,84 +31,54 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google In-App Update: Keep your users up-to-date](https://www.reddit.com/r/androiddev/comments/gd7xv7/google_inapp_update_keep_your_users_uptodate/)
-- url: https://medium.com/yudiz-solutions/google-in-app-update-keep-your-users-up-to-date-2b284ca079e7
+## [3][Android Studio Emulator killed by Riot Vanguard](https://www.reddit.com/r/androiddev/comments/gdr6pj/android_studio_emulator_killed_by_riot_vanguard/)
+- url: https://www.reddit.com/r/androiddev/comments/gdr6pj/android_studio_emulator_killed_by_riot_vanguard/
+---
+Just an FYI to anyone who has Riot Vanguard installed as a part of Valorant-- When Vanguard is active it will immediatly terminate your Android Emulation even with a Cold Boot. 
+
+I spent 4 hours pulling my hair out and ultimately uninstalled every package as well as all of Android Studio and didn't see any fix. My emulator was being killed with an error code 0 and no other logs.
+
+I finally randomly disabled Riot Vanguard because I remembered reading it had kernel level permissions to block certain drivers and the second that I disabled it, my emulation worked perfectly normal.
+
+If anyone is seeing their emulation randomly die who also has Vanguard installed, please give this a shot and let me know if it works.
+## [4][The Best Android UI Testing Tool (v2)](https://www.reddit.com/r/androiddev/comments/gdux39/the_best_android_ui_testing_tool_v2/)
+- url: https://i.redd.it/24wlhj2k5xw41.jpg
 ---
 
-## [4][Update only took 12h to be published.](https://www.reddit.com/r/androiddev/comments/gd85kh/update_only_took_12h_to_be_published/)
-- url: https://www.reddit.com/r/androiddev/comments/gd85kh/update_only_took_12h_to_be_published/
----
-I don't know what changed but my last update before this one took 6 days so it is moving in the right direction!
-## [5][Android Notification As Deep As Possible](https://www.reddit.com/r/androiddev/comments/gcwkre/android_notification_as_deep_as_possible/)
-- url: https://www.reddit.com/r/androiddev/comments/gcwkre/android_notification_as_deep_as_possible/
----
-A series of articles about Android notification:
-
-* [Android Notification Channel](https://medium.com/@myrickchow32/android-notification-channel-as-deep-as-possible-1a5b08538c87?source=friends_link&amp;sk=89f2249c2ecd5d4baeb67a18ab9032a3)
- 
-* [Android Custom Notification](https://medium.com/@myrickchow32/android-custom-notification-in-6-mins-c2e7e2ddadab?source=friends_link&amp;sk=1d157d143c877d03370e311f2206e230)
- 
-* [Android Notification Styling](https://medium.com/@myrickchow32/android-notification-styling-cc6b0bb86021?source=friends_link&amp;sk=ab3d86094fab93a897968444fe56f062)
- 
-* [Android InboxStyle Notification](https://medium.com/@myrickchow32/android-inboxstyle-notification-as-deep-as-possible-4d74c0c725f1?source=friends_link&amp;sk=989abc1355e9e2b7cf8b868e2cbbeb35)
- 
-* [Android Notification BigPictureStyle](https://medium.com/@myrickchow32/android-notification-bigpicturestyle-1f293e6cabaf?source=friends_link&amp;sk=d760eea0b5e5fb27af137332f6871da6)
- 
-* [Android Notification BigTextStyle](https://medium.com/@myrickchow32/android-notification-bigtextstyle-bd35f7530eae?source=friends_link&amp;sk=b7a41e84e63133210edb6713a52c056a)
-## [6][Create Retrofit CallAdapter for Coroutines to handle response as states](https://www.reddit.com/r/androiddev/comments/gd8o9i/create_retrofit_calladapter_for_coroutines_to/)
-- url: https://medium.com/@melegy/create-retrofit-calladapter-for-coroutines-to-handle-response-as-states-c102440de37a
+## [5][Restore RecyclerView scroll position - Android Developers](https://www.reddit.com/r/androiddev/comments/gde44i/restore_recyclerview_scroll_position_android/)
+- url: https://medium.com/androiddevelopers/restore-recyclerview-scroll-position-a8fbdc9a9334
 ---
 
-## [7][Kotlin’s Elvis better than Swift’s Guard](https://www.reddit.com/r/androiddev/comments/gdb8qb/kotlins_elvis_better_than_swifts_guard/)
-- url: https://medium.com/@elye.project/kotlins-elvis-better-than-swift-s-guard-53030d403c3f?source=friends_link&amp;sk=bf7fced446cc161095a9d281054fb927
+## [6][Some good explanations regarding the use of brand names.](https://www.reddit.com/r/androiddev/comments/gdv1w1/some_good_explanations_regarding_the_use_of_brand/)
+- url: https://i.redd.it/bp8di9sg7xw41.png
 ---
 
-## [8][Fixing the dreaded “… is unknown to this NavController”](https://www.reddit.com/r/androiddev/comments/gd7cw3/fixing_the_dreaded_is_unknown_to_this/)
-- url: https://medium.com/@ffvanderlaan/fixing-the-dreaded-is-unknown-to-this-navcontroller-68c4003824ce
+## [7][Huawei Mobile Services](https://www.reddit.com/r/androiddev/comments/gdtmfc/huawei_mobile_services/)
+- url: https://www.reddit.com/r/androiddev/comments/gdtmfc/huawei_mobile_services/
+---
+So my company would like us to try and implement these services on a parallel build to target users which don't have the Google Play Services on their devices. Anyone has any feedback on using them? What should I expect? Is it worth the effort?  
+
+
+[https://developer.huawei.com/consumer/en/hms](https://developer.huawei.com/consumer/en/hms)
+## [8][My first Medium article: Refactoring my backup and restore feature to comply with Scoped Storage](https://www.reddit.com/r/androiddev/comments/gdvka1/my_first_medium_article_refactoring_my_backup_and/)
+- url: https://medium.com/@gavingt/refactoring-my-backup-and-restore-feature-to-comply-with-scoped-storage-e2b6c792c3b?source=friends_link&amp;sk=2e2128901645fcc550464d79b2766e6f
 ---
 
-## [9][Keyword rankings and initial downloads](https://www.reddit.com/r/androiddev/comments/gd7yrt/keyword_rankings_and_initial_downloads/)
-- url: https://www.reddit.com/r/androiddev/comments/gd7yrt/keyword_rankings_and_initial_downloads/
+## [9][Keep up to Date With Your Best On-Demand Food Delivery App!](https://www.reddit.com/r/androiddev/comments/gdx5vh/keep_up_to_date_with_your_best_ondemand_food/)
+- url: https://celadonsoft.com/best-practices/on-demand-food-delivery-app
 ---
-Hey all,
 
-One of my apps has been on the Play Store for about 3 months now. Since then I've been trying to get my app ranked in searches but have been mostly unsuccessful as it seems trapped in a bit of a loop.
-
-My understanding is that in order to rank for certain keywords you need to have people search for that word and then download your app, which makes sense.
-
-But how do you do this when your app isn't ranking in the top 100 for that keyword in the first place?
-
-I've seen people recommend running ad campaigns, but as an indie developer my budget is quite limited. Also seen people recommend paid download services, but this feels like a blackhat tactic that might bite me in the ass in the long run.
-
-The little funds that I had have been spent on ASO services, as I've been told that would have the biggest impact, but it has not significantly improved the results.
-
-Can anyone offer some insight into what a low budget launch strategy looks like in order to get your app ranked?
-## [10][Update App after substantial changes have been made](https://www.reddit.com/r/androiddev/comments/gdbn3a/update_app_after_substantial_changes_have_been/)
-- url: https://www.reddit.com/r/androiddev/comments/gdbn3a/update_app_after_substantial_changes_have_been/
+## [10][How do I handle Fragment Navigation with a Bottom Navigation Drawer using Navigation component?](https://www.reddit.com/r/androiddev/comments/gdwsea/how_do_i_handle_fragment_navigation_with_a_bottom/)
+- url: https://www.reddit.com/r/androiddev/comments/gdwsea/how_do_i_handle_fragment_navigation_with_a_bottom/
 ---
-Hello.
+The menu items can be clicked again after navigating to the destination fragment. This just ends up recreating that fragment.
 
-Iv made a large amount of changes to my current released game, pretty much everything has changed except the screen-touch code and what happens when condition is met and maybe 2% of original graphics remain. Although the game is still the same subject and games name, everything else has been reworked and improved.
-
-My concern is the update process , i have only made little fixes and added small amounts of content in previous updates so im unsure how google update process works when updating a game that could be considered a new game.
-
-So my question to the experienced devs , Will this just update original file with new one or will google flag me and tell me to make a new release ? or any other pitfalls i can expect ?
-## [11][Build: failed with no errors/warnings, how to fix?](https://www.reddit.com/r/androiddev/comments/gdbmi8/build_failed_with_no_errorswarnings_how_to_fix/)
-- url: https://www.reddit.com/r/androiddev/comments/gdbmi8/build_failed_with_no_errorswarnings_how_to_fix/
+Once I am on the destination fragment how do I disable the menu item for this fragment on the navigation drawer?
+## [11][We've just release AppIntro v6.0.0 - Now 100% Kotlin with a lot of new animations &amp; features to help you build introduction for your app in just some seconds](https://www.reddit.com/r/androiddev/comments/gdhuf7/weve_just_release_appintro_v600_now_100_kotlin/)
+- url: https://github.com/AppIntro/AppIntro/releases/tag/6.0.0
 ---
-&amp;#x200B;
 
-[I just got this issue today and i tried to search for a fix including updating my android studio to the latest version but nothing helped resolve the issue, and this is my first time posting in a subreddit for help, IDE versions is 3.6.3, if i miss any details, please do tell](https://preview.redd.it/bfkt3sv82rw41.png?width=582&amp;format=png&amp;auto=webp&amp;s=2bf562f26104e47506ea1a4ab6433d41608fb518)
-## [12][LiveData .postValue vs .subscribeOn(AndroidSchedulers.mainThread())](https://www.reddit.com/r/androiddev/comments/gdb84w/livedata_postvalue_vs/)
-- url: https://www.reddit.com/r/androiddev/comments/gdb84w/livedata_postvalue_vs/
+## [12][What are some good GitHub apps for Android?](https://www.reddit.com/r/androiddev/comments/gdvg9n/what_are_some_good_github_apps_for_android/)
+- url: https://www.reddit.com/r/androiddev/comments/gdvg9n/what_are_some_good_github_apps_for_android/
 ---
-In my view models I have a lot of RxJava streams which almost always end with
-
-```
-.observeOn(AndroidSchedulers.mainThread())
-.subscribe({
-    liveData.value = it
-} , {...})
-```
-
-Would there be any value of using `postValue` instead and not switching the observing thread? Would one potentially be more efficient than the other or is it negligable?
+I am looking for some good 3rd party GitHub apps to improve my workflow. Something which catches sudden increase in apk size, addition of unoptimized images, missing string translations, and lint checks. I have faced all these issues before. Any recommendations?

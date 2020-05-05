@@ -1,84 +1,10 @@
 # javascript
-## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/g8x6ie/your_weekly_rjavascript_recap/)
-- url: https://www.reddit.com/r/javascript/comments/g8x6ie/your_weekly_rjavascript_recap/
+## [1][Showoff Saturday (May 02, 2020)](https://www.reddit.com/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gc55vc/showoff_saturday_may_02_2020/
 ---
-**Monday, April 20 - Sunday, April 26**
+Did you find or create something cool this week in javascript? 
 
-###Top Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 541  | [42 comments](https://www.reddit.com/r/javascript/comments/g6opsc/i_trained_a_recurrent_neural_network_in/) | [I trained a recurrent neural network in JavaScript trained to draw dick doodles](/r/MachineLearning/comments/g6og9l/p_i_trained_a_recurrent_neural_network_trained_to/)|
-| 410  | [82 comments](https://www.reddit.com/r/javascript/comments/g5har3/nodejs_v14_released/) | [Node.js v14 released](https://medium.com/@nodejs/node-js-version-14-available-now-8170d384567e)|
-| 334  | [50 comments](https://www.reddit.com/r/javascript/comments/g60fmg/codedoc_easily_create_beautiful_and_modern/) | [Codedoc: Easily create beautiful and modern docs/wiki for your software projects](https://codedoc.cc)|
-| 286  | [64 comments](https://www.reddit.com/r/javascript/comments/g83evc/createreactapp_breaks_due_to_dependency_on/) | [create-react-app breaks due to dependency on one-liner package](https://github.com/then/is-promise/issues/13#issuecomment-619402307)|
-| 249  | [74 comments](https://www.reddit.com/r/javascript/comments/g6xvtm/i_create_a_website_to_play_uno_with_your_friends/) | [I create a website to play Uno with your friends in the browser! Built with javascript and socket.io](https://www.playuno.net)|
-| 246  | [21 comments](https://www.reddit.com/r/javascript/comments/g8rniy/eloquent_javascript_3rd_edition_full_text/) | [Eloquent JavaScript, 3rd Edition. Full text available online.](https://eloquentjavascript.net/)|
-| 217  | [18 comments](https://www.reddit.com/r/javascript/comments/g7q274/i_rewrote_my_web_extension_60k_users_with/) | [I rewrote my Web Extension &amp;#40;60k users&amp;#41; with clean-architecture, typescript, redux-observable](https://github.com/puemos/hls-downloader-web-extension)|
-| 189  | [26 comments](https://www.reddit.com/r/javascript/comments/g6k4v7/finally_v10_release_of_terrain_builder_my_fully/) | [Finally V1.0 release of Terrain Builder - my fully browser based Procedural Terrain Generator with Hydraulic Erosion. Written entirely in JavaScript using Three.js. Looking for feedback/feature requests. :&amp;#41;](https://github.com/FarazzShaikh/Terrain-Builder)|
-| 168  | [69 comments](https://www.reddit.com/r/javascript/comments/g5a8bi/the_next_release_of_createreactapp_will_include/) | [The next release of create-react-app will include experimental support for React Fast Refresh](https://github.com/facebook/create-react-app/pull/8582)|
-| 160  | [21 comments](https://www.reddit.com/r/javascript/comments/g7nm5x/browser_screenshots_in_javascript/) | [Browser screenshots in JavaScript](https://github.com/gripeless/pico#readme)|
-
-
-
-
-&amp;nbsp;
-
-###Most Commented Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 38  | [109 comments](https://www.reddit.com/r/javascript/comments/g5xti2/askjs_why_javascript_is_your_favorite_language/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Why Javascript is your favorite language ?|
-| 76  | [61 comments](https://www.reddit.com/r/javascript/comments/g8k54m/svelte_web_component_54kb_angular_web_component/) | [Svelte Web Component &amp;#40;5.4KB&amp;#41; &amp;amp; Angular Web Component &amp;#40;51KB&amp;#41;](https://medium.com/@gogakoreli/svelte-web-component-5-4kb-4afe46590d99)|
-| 42  | [37 comments](https://www.reddit.com/r/javascript/comments/g5x6ry/i_rebuilt_my_website_using_gatsbyjs_and_im_loving/) | [I rebuilt my website using GatsbyJS, and I'm loving it!](https://amruthpillai.com/)|
-| 97  | [26 comments](https://www.reddit.com/r/javascript/comments/g4o075/i_made_a_spreadsheet_engine_in_javascript/) | [I made a Spreadsheet engine in Javascript - super-powered spreadsheet engine with objects, arrays, and async support out-of-the-box — comments and suggestions are welcome](https://github.com/elis/djit)|
-| 69  | [24 comments](https://www.reddit.com/r/javascript/comments/g795aq/can_javascript_detect_the_browsers_zoom_level/) | [Can JavaScript Detect the Browser's Zoom Level?](https://css-tricks.com/can-javascript-detect-the-browsers-zoom-level/)|
-
-
-
-
-&amp;nbsp;
-
-###Top Ask JS
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 16  | [7 comments](https://www.reddit.com/r/javascript/comments/g7rfga/askjs_using_consoletime_to_calculate_the_time_it/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Using console.time to calculate the time it takes a block of code to execute|
-| 5  | [2 comments](https://www.reddit.com/r/javascript/comments/g4x96o/askjs_any_tipsresources_for_building_a_playpause/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Any tips/resources for building a play/pause image slides for a noob?|
-| 3  | [11 comments](https://www.reddit.com/r/javascript/comments/g8q13l/askjs_what_is_the_best_way_to_make_my_js_library/) | `[AskJS]` &amp;#91;AskJS&amp;#93; What is the best way to make my JS library as hard to reverse engineer as possible? &amp;#40;50k lines of raw JS&amp;#41;|
-
-
-
-
-&amp;nbsp;
-
-###Top Showoffs
-
-| score  |  comment  |
-|--|--|
-| 5  |  /u/amor-me-pls said [One - Uno card game playable completely in the browser  &amp;#91;https://www.onegame.us&amp;#93;&amp;#40;https://www.onegame.us&amp;#41;  &amp;#91;https://github.com/VietLongTran/UnoOnlineBackEnd&amp;#93;&amp;#40;https://github....](/r/javascript/comments/g7s8h6/showoff_saturday_april_25_2020/fojcns9/?context=5) |
-| 3  |  /u/MarsJr said [A terminal simulator built in Typescript/React.   Given a JSON "filesystem", it supports many core terminal commands like `cd`, `pwd`, `mkdir`, `ls`, `cat`, and more. It supports using `&amp;lt;tab&amp;gt;` t...](/r/javascript/comments/g7s8h6/showoff_saturday_april_25_2020/fojwd3z/?context=5) |
-| 2  |  /u/nomrah said [Hi Folks,  I am a JS + &amp;#91;Elixir&amp;#93;&amp;#40;https://elixir-lang.org/&amp;#41; dev who loves React on the front-end, but much prefer the robustness and scalability offered from Elixir/Erlang on the back-en...](/r/javascript/comments/g7s8h6/showoff_saturday_april_25_2020/foofqsm/?context=5) |
-
-
-
-
-&amp;nbsp;
-
-###Top Comments
-
-| score  |  comment  |
-|--|--|
-| 135  |  /u/mastermind202 said [Looks like we finally get optional chaining and null coalescing!](/r/javascript/comments/g5har3/nodejs_v14_released/fo3ghvz/?context=5) |
-| 112  |  /u/LAC-Tech said [You know I was just thinking the other day "gee create-react-app is great and all, but it only installs 1373 libraries and 49 executables. Couldn't they add more?"](/r/javascript/comments/g5a8bi/the_next_release_of_createreactapp_will_include/fo2i9sn/?context=5) |
-| 89  |  /u/crabmusket said [99% of NPM packages should be either an IDE snippet, or a short tutorial explaining why `instanceof Array` doesn't always work.](/r/javascript/comments/g83evc/createreactapp_breaks_due_to_dependency_on/fol9jut/?context=5) |
-| 87  |  /u/AiexReddit said [Whenever I see stuff like this I always wonder where all these developers are who are so incredible and proficient and large scale project architecture, that the difference in a few KBs of the raw lib...](/r/javascript/comments/g8k54m/svelte_web_component_54kb_angular_web_component/foo3s6b/?context=5) |
-| 82  |  /u/DrRavenSable said [Upvoted cause palindrome!](/r/javascript/comments/g60fmg/codedoc_easily_create_beautiful_and_modern/fo6n5yv/?context=5) |
-
-
-
-
-&amp;nbsp;
+Show us here!
 ## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/gd847d/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/gd847d/your_weekly_rjavascript_recap/
 ---
@@ -159,43 +85,49 @@
 
 
 &amp;nbsp;
-## [3][DarkMode: A micro library (~360B) for handling dark mode on browsers.](https://www.reddit.com/r/javascript/comments/gd0dw9/darkmode_a_micro_library_360b_for_handling_dark/)
-- url: https://github.com/kazzkiq/darkmode
+## [3][I made a website, which compares the most popular Javascript frameworks in terms of Github development activities and is updated daily](https://www.reddit.com/r/javascript/comments/gdwj1u/i_made_a_website_which_compares_the_most_popular/)
+- url: https://gitgitlog.com/compare/js-frontend
 ---
 
-## [4][Next.js Tips collection](https://www.reddit.com/r/javascript/comments/gd7bzj/nextjs_tips_collection/)
-- url: https://nextjstips.com
+## [4][ES2020: Everything You Need to Know](https://www.reddit.com/r/javascript/comments/gdvqil/es2020_everything_you_need_to_know/)
+- url: https://www.martinmck.com/posts/es2020-everything-you-need-to-know/
 ---
 
-## [5][Interactive Blog Posts About Creating a Gauge in React](https://www.reddit.com/r/javascript/comments/gd84lb/interactive_blog_posts_about_creating_a_gauge_in/)
-- url: https://wattenberger.com/blog/gauge
+## [5][My quarantine project: Coverify - Create your own custom cover art for Spotify playlists.](https://www.reddit.com/r/javascript/comments/gdejhb/my_quarantine_project_coverify_create_your_own/)
+- url: http://coverify.now.sh/
 ---
 
-## [6][V1.2 Release of Terrain Builder - my Fully Browser Based procedural Terrain Generator with Hydraulic erosion. Many new changes with a new UI Including fully rewritten and easer to understand code, finer control and Pie Menus. Full change-log in comments. Demo in GitHub Readme. Thank you :)](https://www.reddit.com/r/javascript/comments/gczeo6/v12_release_of_terrain_builder_my_fully_browser/)
-- url: https://github.com/FarazzShaikh/Terrain-Builder/
+## [6][A lightweight custom hook use-key-capture](https://www.reddit.com/r/javascript/comments/gdwers/a_lightweight_custom_hook_usekeycapture/)
+- url: https://github.com/pranesh239/use-key-capture
 ---
 
-## [7][Favorite JavaScript utilities in a single line of code! No more!](https://www.reddit.com/r/javascript/comments/gcok1a/favorite_javascript_utilities_in_a_single_line_of/)
-- url: https://1loc.dev/
+## [7][[AskJS] Anybody use Cypress for UI testing ?](https://www.reddit.com/r/javascript/comments/gdq3v6/askjs_anybody_use_cypress_for_ui_testing/)
+- url: https://www.reddit.com/r/javascript/comments/gdq3v6/askjs_anybody_use_cypress_for_ui_testing/
+---
+Is there a way to share JS modules between tests and commands ? I am struggling to find a way.  Reference : [https://github.com/cypress-io/cypress/issues/6966](https://github.com/cypress-io/cypress/issues/6966)Thanks !
+## [8][I made a little audio player with Soundcloud-esque interactive waveforms with canvas](https://www.reddit.com/r/javascript/comments/gdras6/i_made_a_little_audio_player_with_soundcloudesque/)
+- url: https://dylanbussone.github.io/happy-little-sound-clouds/
 ---
 
-## [8][Debug anything: blog series about debugging JavaScript, Node, React, TypeScript in VS Code - 6 parts published so far](https://www.reddit.com/r/javascript/comments/gd93uj/debug_anything_blog_series_about_debugging/)
-- url: https://charlesagile.com/debug-series-nodejs-browser-javascript
+## [9][Patterns for async programming and async function optimization in JavaScript](https://www.reddit.com/r/javascript/comments/gdxsak/patterns_for_async_programming_and_async_function/)
+- url: https://medium.com/javascript-in-plain-english/patterns-for-async-programming-and-async-function-optimization-in-javascript-931cf49cadcd?source=friends_link&amp;sk=d176e777f509cad86d6fa1bee05b3068
 ---
 
-## [9][[video talk] npm install servitude - The 6 Hidden Costs of Software Dependencies](https://www.reddit.com/r/javascript/comments/gd69m8/video_talk_npm_install_servitude_the_6_hidden/)
-- url: https://www.semicolonandsons.com/episode/The-Hidden-Costs-of-Software-Dependencies
+## [10][Simple and lightweight quadtree implementation to deal with 2D objects. For node/typescript/browser/...](https://www.reddit.com/r/javascript/comments/gdx1nf/simple_and_lightweight_quadtree_implementation_to/)
+- url: https://github.com/CorentinTh/quadtree-js
 ---
 
-## [10][Add dark mode to your website with Javascript using Corvid by Wix](https://www.reddit.com/r/javascript/comments/gdb57v/add_dark_mode_to_your_website_with_javascript/)
-- url: https://www.wix.com/corvid/example/dark-mode
+## [11][Building a Simple Static Site with Parcel and Stimulus](https://www.reddit.com/r/javascript/comments/gdu7ju/building_a_simple_static_site_with_parcel_and/)
+- url: https://happyvalley.dev/building-a-simple-static-site-with-parcel-and-stimulus/
 ---
 
-## [11][Understanding Express.js: Creating Your Own Node HTTP Request Router](https://www.reddit.com/r/javascript/comments/gdaqx9/understanding_expressjs_creating_your_own_node/)
-- url: https://typeofnan.dev/understanding-expressjs-creating-your-own-node-http-router/
+## [12][[AskJS] Chances of landing an entry remote position?](https://www.reddit.com/r/javascript/comments/gdqsk2/askjs_chances_of_landing_an_entry_remote_position/)
+- url: https://www.reddit.com/r/javascript/comments/gdqsk2/askjs_chances_of_landing_an_entry_remote_position/
 ---
+Hey guys, so I recently had a question regarding how much knowledge I should have before trying to freelance and got some great feedback.
 
-## [12][Calling ReasonML from TypeScript (or Flow), the easy way.](https://www.reddit.com/r/javascript/comments/gdaoio/calling_reasonml_from_typescript_or_flow_the_easy/)
-- url: https://www.hackdoor.io/articles/myNBk3px/calling-reasonml-from-typescript-or-flow-the-easy-way
----
+[https://www.reddit.com/r/javascript/comments/gd178v/askjs\_how\_much\_knowledge\_to\_start\_freelancing/](https://www.reddit.com/r/javascript/comments/gd178v/askjs_how_much_knowledge_to_start_freelancing/)
 
+There's the link if anyone is interested in that. From everyone's responses I've gathered that as a newby it would probably be a good idea to look for a job in-house at a company to get some experience under my belt before I attempt to start freelancing.
+
+That being said, I'm curious about what the job market is looking like right now? How likely is it for me to land an entry level position that is also remote? Also how has the COVID-19 situation affected the job market. I'm definitely open to working in an office, but I figure currently that may not really be an option.

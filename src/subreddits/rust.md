@@ -23,57 +23,116 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/gd6gvk/whats_everyone_working_on_this_week_192020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-19-2020/42034?u=llogiq)!
-## [3][Created a renderer following Vulkan Tutorial](https://www.reddit.com/r/rust/comments/gd7c0u/created_a_renderer_following_vulkan_tutorial/)
-- url: https://www.reddit.com/r/rust/comments/gd7c0u/created_a_renderer_following_vulkan_tutorial/
----
-https://crates.io/crates/sarekt
-
-* The renderer is designed to be extensible to multithreading, multiple pipelines, have more backends (D3D, etc nothing in the user interface depends on vulkan/ash directly) and be more fleshed out.
-
-* Due to this it isn't so similar to the code in Vulkan Tutorial, but I feel like it's a reasonable first renderer architecture that can be reused in other projects (which I plan to do shortly).
-
-* If you check the tags, however, I tagged when I finished implementing and creating an example of each chapter in the tutorial (numbered and named, eg 17_vertex_buffer_creation).
-
-* There's still a lot wrong with it, and I have tons of issues filed on myself, but I'm really happy I got through it all :)
-
-Special thanks to the whole community and all these fantastic libraries i have leveraged, this would not have been possible without everyone's contribution.  The readme has called out a few libraries in particular.
-## [4][Tour of Rust](https://www.reddit.com/r/rust/comments/gcu5l2/tour_of_rust/)
-- url: https://richardanaya.github.io/tour_of_rust/
+## [3][An experimental asynchronous runtime based on io-uring](https://www.reddit.com/r/rust/comments/gdrrl0/an_experimental_asynchronous_runtime_based_on/)
+- url: https://github.com/quininer/ritsu
 ---
 
-## [5][Rust in an instant](https://www.reddit.com/r/rust/comments/gd0hay/rust_in_an_instant/)
-- url: https://fnordig.de/2020/05/02/rust-in-an-instant/
+## [4][SuckIT, a fast, multithreaded website downloader](https://www.reddit.com/r/rust/comments/gdwuat/suckit_a_fast_multithreaded_website_downloader/)
+- url: https://www.reddit.com/r/rust/comments/gdwuat/suckit_a_fast_multithreaded_website_downloader/
+---
+## Introduction 
+[SuckIT](https://github.com/skallwar/suckit) is a multithreaded, open source web downloader written in Rust. It aims to recursively download webpages and allow offline browsing.
+
+## Benchmark
+As of right now, it's a _little_ faster (about 3460%) than HTTrack on a single core, 60 second run on http://book.toscrape.com/
+
+name    | pages downloaded
+------- | ----------------
+suckit  |             2422
+httrack |               70
+
+http://book.toscrape.com/ is downloaded in 75s for 1 thread, 37s for 2 threads and 19s for 4 threads. It's more or less a linear time reduction
+
+## Future
+
+Some features are missing, such as a random delay between downloads (to avoid IP ban) or user agent support but they will come soon.
+
+Any feedback, reviews or PRs are welcome !
+
+Enjoy :)
+## [5][Microsoft wants Rust instead of Go in the cloud](https://www.reddit.com/r/rust/comments/gdwxw1/microsoft_wants_rust_instead_of_go_in_the_cloud/)
+- url: https://www.reddit.com/r/rust/comments/gdwxw1/microsoft_wants_rust_instead_of_go_in_the_cloud/
+---
+ [https://www.en24.news/en/2020/05/secure-programming-language-microsoft-wants-rust-instead-of-go-in-the-cloudhtml](https://www.en24.news/en/2020/05/secure-programming-language-microsoft-wants-rust-instead-of-go-in-the-cloudhtml)
+## [6][Restart accel project, GPGPU Framework for Rust: 0.3.0 Release](https://www.reddit.com/r/rust/comments/gdmhoq/restart_accel_project_gpgpu_framework_for_rust/)
+- url: https://users.rust-lang.org/t/restart-accel-project-gpgpu-framework-for-rust-0-3-0-release/42087
 ---
 
-## [6][Point of WebGPU on native](https://www.reddit.com/r/rust/comments/gdbgoc/point_of_webgpu_on_native/)
+## [7][rust-analyzer Changelog #23](https://www.reddit.com/r/rust/comments/gdbrht/rustanalyzer_changelog_23/)
+- url: https://rust-analyzer.github.io/thisweek/2020/05/04/changelog-23.html
+---
+
+## [8][Reinventing Asynchronous Rust](https://www.reddit.com/r/rust/comments/gdocgk/reinventing_asynchronous_rust/)
+- url: https://www.reddit.com/r/rust/comments/gdocgk/reinventing_asynchronous_rust/
+---
+[https://aldaronlau.com/reinventing-async-rust/](https://aldaronlau.com/reinventing-async-rust/)
+## [9][cargo crev and cargo audit 🦀 the second online meetup ☁](https://www.reddit.com/r/rust/comments/gdmlp6/cargo_crev_and_cargo_audit_the_second_online/)
+- url: https://estada.ch/2020/4/30/cargo-crev-and-cargo-audit-the-second-online-meetup/
+---
+
+## [10][Point of WebGPU on native](https://www.reddit.com/r/rust/comments/gdbgoc/point_of_webgpu_on_native/)
 - url: http://kvark.github.io/web/gpu/native/2020/05/03/point-of-webgpu-native.html
 ---
 
-## [7][What's the state of Rust in iOS and Android?](https://www.reddit.com/r/rust/comments/gcym93/whats_the_state_of_rust_in_ios_and_android/)
-- url: https://www.reddit.com/r/rust/comments/gcym93/whats_the_state_of_rust_in_ios_and_android/
----
-I'm thinking of developing a cross-platform application that covers all 4 main platforms (mac, windows, iOS and Android). The UI would be done in the native technology for those platforms while the business logic would be implemented as a library.
-
-I now need to choose between C++ and Rust. What is the state of the Rust compiler on iOS and Android? Is it safe to go down the Rust road for these platforms or things work because they just happen to work?
-## [8][Would you use rust if it weren't as fast as C?](https://www.reddit.com/r/rust/comments/gd8jdd/would_you_use_rust_if_it_werent_as_fast_as_c/)
-- url: https://www.reddit.com/r/rust/comments/gd8jdd/would_you_use_rust_if_it_werent_as_fast_as_c/
+## [11][An ESP8266/ESP32 Over The Air (OTA) firmware server, written in Rust!](https://www.reddit.com/r/rust/comments/gdd030/an_esp8266esp32_over_the_air_ota_firmware_server/)
+- url: https://github.com/Evander12345/rota
 ---
 
-## [9][Magnifying Glasses for Rust Assembly](https://www.reddit.com/r/rust/comments/gd1wtd/magnifying_glasses_for_rust_assembly/)
-- url: https://www.justanotherdot.com/posts/magnifying-glasses-for-rust-assembly.html
+## [12][I made a hashmap that is keyed by types and maps vectors of the key-types](https://www.reddit.com/r/rust/comments/gdwmp1/i_made_a_hashmap_that_is_keyed_by_types_and_maps/)
+- url: https://www.reddit.com/r/rust/comments/gdwmp1/i_made_a_hashmap_that_is_keyed_by_types_and_maps/
 ---
+I was surprised I didn't need to use any unsafe code.
 
-## [10][Rust concurrency: a streaming workflow, served with a side of back-pressure.](https://www.reddit.com/r/rust/comments/gda8gr/rust_concurrency_a_streaming_workflow_served_with/)
-- url: https://www.reddit.com/r/rust/comments/gda8gr/rust_concurrency_a_streaming_workflow_served_with/
----
-How to write concurrent streaming work pipelines in Rust, with back-pressure.
+    use core::any::TypeId;
+    use std::any::Any;
+    use std::collections::hash_map::HashMap;
 
-[https://medium.com/@polyglot\_factotum/rust-concurrency-a-streaming-workflow-served-with-a-side-of-back-pressure-955bdf0266b5](https://medium.com/@polyglot_factotum/rust-concurrency-a-streaming-workflow-served-with-a-side-of-back-pressure-955bdf0266b5)
-## [11][rlua is now part of the Amethyst organisation](https://www.reddit.com/r/rust/comments/gcoipo/rlua_is_now_part_of_the_amethyst_organisation/)
-- url: https://github.com/amethyst/rlua/issues/174
----
+    struct VecStorage {
+        vecs: HashMap&lt;TypeId, Box&lt;dyn Any&gt;&gt;
+    }
 
-## [12][An unescaped \ immediately before a line-break causes the line-break and all whitespace at the beginning of the next line to be ignored](https://www.reddit.com/r/rust/comments/gcw8yn/an_unescaped_immediately_before_a_linebreak/)
-- url: https://doc.rust-lang.org/stable/reference/tokens.html?highlight=esc#string-literals
----
+    impl VecStorage {
+        pub fn new() -&gt; Self {
+            VecStorage {
+                vecs: HashMap::new(),
+            }
+        }
 
+        pub fn push&lt;T: 'static&gt;(&amp;mut self, val: T) {
+            let key = (&amp;val as &amp;dyn Any).type_id();
+            let vec: Option&lt;&amp;mut Vec&lt;T&gt;&gt; = self.vecs.get_mut(&amp;key).map(|x| {
+                x.as_mut()
+                    .downcast_mut::&lt;Vec&lt;T&gt;&gt;()
+                    .expect("failed to downcast")
+            });
+            match vec {
+                Some(v) =&gt; v.push(val),
+                None =&gt; {
+                    let mut v = Vec::new();
+                    v.push(val);
+                    self.vecs.insert(key, Box::new(v));
+                }
+            }
+        }
+
+        pub fn get&lt;T: 'static&gt;(&amp;mut self, index: usize) -&gt; Option&lt;&amp;mut T&gt; {
+            let key = TypeId::of::&lt;T&gt;();
+            let vec: &amp;mut Vec&lt;T&gt; = self.vecs.get_mut(&amp;key)?.as_mut().downcast_mut::&lt;Vec&lt;T&gt;&gt;()?;
+            vec.get_mut(index)
+        }
+    }
+
+    fn main() {
+        let mut storage = VecStorage::new();
+        storage.push(100);
+        storage.push("Hello world".to_owned());
+        storage.push(200);
+        println!("{:?}", storage.get::&lt;i32&gt;(0));
+        println!("{:?}", storage.get::&lt;String&gt;(0));
+        println!("{:?}", storage.get::&lt;i32&gt;(1));
+        println!("{:?}", storage.get::&lt;i32&gt;(2));
+        // Some(100)
+        // Some("Hello world")
+        // Some(200)
+        // None
+    }

@@ -22,7 +22,53 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Phaser Integration with Angular and Electron](https://www.reddit.com/r/typescript/comments/gd3z69/phaser_integration_with_angular_and_electron/)
+## [2][Ultimate Vim TypeScript Setup](https://www.reddit.com/r/typescript/comments/gdv3al/ultimate_vim_typescript_setup/)
+- url: https://pragmaticpineapple.com/ultimate-vim-typescript-setup/
+---
+
+## [3][Just shipped @ts-engine/cli 1.4.0, it now supports Jest config and generates sourcemaps for every build](https://www.reddit.com/r/typescript/comments/gdcias/just_shipped_tsenginecli_140_it_now_supports_jest/)
+- url: https://ts-engine.dev
+---
+
+## [4][Finding a balance between code refactoring and new code addition](https://www.reddit.com/r/typescript/comments/gdew7d/finding_a_balance_between_code_refactoring_and/)
+- url: https://www.reddit.com/r/typescript/comments/gdew7d/finding_a_balance_between_code_refactoring_and/
+---
+At work, everyone has some reviewers through the workplace.  However, if you are self employed or unemployed, it is hard. I suppose everyone adds value to their knowledge through peer commenting on their code. 
+
+&amp;#x200B;
+
+I work on my own. The project has been for just two months. After implementing 25% of the planned Front-end,  I find myself mostly refactoring for code reuse. The code quality improves but also seems that refactoring stalls the progress. 
+
+&amp;#x200B;
+
+\*\*How do you guys find your own balance?\*\*
+## [5][Is it possible to do "anonymous maps" like in plain javascript?](https://www.reddit.com/r/typescript/comments/gddggs/is_it_possible_to_do_anonymous_maps_like_in_plain/)
+- url: https://www.reddit.com/r/typescript/comments/gddggs/is_it_possible_to_do_anonymous_maps_like_in_plain/
+---
+I've seem some people in react use function / component definitions like this:
+
+    function myFunction({foo, bar}) 
+
+... and then they can pass a map which gets destructured.
+
+I'd like do so something like this in typescript where I don't have to define an interface first.
+
+Something like
+
+    function myFunction({foo: string, bar: number}) 
+
+... so that I don't have to constantly define a named interface for each function.  
+
+Some are small and I don't want to have to pick a name for the props interface.
+
+Is this possible?
+
+I was thinking of maybe using Pick and having a main interface that I'm taking variables from.
+## [6][Calling ReasonML from TypeScript (or Flow), the easy way.](https://www.reddit.com/r/typescript/comments/gdaoab/calling_reasonml_from_typescript_or_flow_the_easy/)
+- url: https://www.hackdoor.io/articles/myNBk3px/calling-reasonml-from-typescript-or-flow-the-easy-way
+---
+
+## [7][Phaser Integration with Angular and Electron](https://www.reddit.com/r/typescript/comments/gd3z69/phaser_integration_with_angular_and_electron/)
 - url: https://www.reddit.com/r/typescript/comments/gd3z69/phaser_integration_with_angular_and_electron/
 ---
 Hello, I'm new to this sub. I'm starting to do some work with Phaser, as I am pretty familiar with typescript, html, and css. I started a project and got some work done before figuring I should strip back the assets and some implementation to provide a clean little template. I have a repo for it and thought I might share:
@@ -34,11 +80,7 @@ Hello, I'm new to this sub. I'm starting to do some work with Phaser, as I am pr
 &amp;#x200B;
 
 Enjoy! Feel free to fork and improve my mess.
-## [3][Calling ReasonML from TypeScript (or Flow), the easy way.](https://www.reddit.com/r/typescript/comments/gdaoab/calling_reasonml_from_typescript_or_flow_the_easy/)
-- url: https://www.hackdoor.io/articles/myNBk3px/calling-reasonml-from-typescript-or-flow-the-easy-way
----
-
-## [4][Retturn type of a function that creates nth-dimensional arrays](https://www.reddit.com/r/typescript/comments/gd9hem/retturn_type_of_a_function_that_creates/)
+## [8][Retturn type of a function that creates nth-dimensional arrays](https://www.reddit.com/r/typescript/comments/gd9hem/retturn_type_of_a_function_that_creates/)
 - url: https://www.reddit.com/r/typescript/comments/gd9hem/retturn_type_of_a_function_that_creates/
 ---
 I'm writing a function that will create and return an Nth-dimensional array, where N is set by a parameter, and the array can be filled with an initial value. I'm struggling to think of the correct return type for this function and would love some help.
@@ -57,7 +99,7 @@ But the return type of the above function (`T[][]`) will only work for 2-dimensi
 &amp;#x200B;
 
 Currently I'm using `any[]` as the return type, but I'm sure there's a better way.
-## [5][Learning typescript as a junior developer](https://www.reddit.com/r/typescript/comments/gd23ti/learning_typescript_as_a_junior_developer/)
+## [9][Learning typescript as a junior developer](https://www.reddit.com/r/typescript/comments/gd23ti/learning_typescript_as_a_junior_developer/)
 - url: https://www.reddit.com/r/typescript/comments/gd23ti/learning_typescript_as_a_junior_developer/
 ---
 **TL;DR: is it common for junior developers to learn Typescript at work / trough a course offered by a company?**  
@@ -70,7 +112,7 @@ The current course I'm following is not very good in terms of learning TS. There
 
 
 I'd like to hear your thoughts on this: do you recommend to take such a course or shouldn't it hurt to start working without being comfortable with it (and waiting for a company to introduce me to it with either a course or something else)?
-## [6][Typescript and react conditional render](https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/)
+## [10][Typescript and react conditional render](https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/)
 - url: https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/
 ---
 I am new to typescript and not an expert in FE development. I've encountered issue that seems pretty basic, but I failed to found any solution. Maybe I just don't know how to google it properly.
@@ -174,7 +216,7 @@ As I said, I am not a FE expert so there is a high chance I am wrong about what 
 &amp;#x200B;
 
 Here is a [playground](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDGMA0cDeBhCcCAOyWJgF84AzKQuAcilQwYG4BYAKG5gE8wSOABEoKajALgUxPnAC8ubnBVxgAEwBccYgFcANvuWriKEEm0BnGFGDEA5pm4VOPLv0FwpYGXMUB5EGAYAB5RcUlCH1lsBg0GAD44ADIlLlU1LR1dEAAjJChXF25eASEABTowSwU0jLQo321vXzgAHxExCRaY4xUSYSR9JBgkHr5tAAoG6VkASSy9PIKASgUkgDcIDScuChKuNH0USxrxhAgAdzgkAA9R4nUzqJIyeBDKiGqknD64AAsZOphoNhqNxrVJmt5D8-hkYP9gJYAHRgKoogZDEZjRqySYIpGo9HImbRPjIjQrVwZYpuDLMR4FSHQ2HpDKqZgwXRQYhwSZw9kqELqYAbBICwUZYWihI4AkotFfFGk3zI0zmCghAD0IrFEslQt14rZBtNcBCuV0MBgJDgIssKFyw3U8jliIVxJVsgp6gU8kUekMVBIeH0wDQAGtXfLkYDHiCseDcXwKFrjWbBdqjfqpTqZfqVn99nsDndILA7UhqCgDPBzlc2EA)
-## [7][[QUESTION] typeorm mysql one-to-one relation](https://www.reddit.com/r/typescript/comments/gcwzis/question_typeorm_mysql_onetoone_relation/)
+## [11][[QUESTION] typeorm mysql one-to-one relation](https://www.reddit.com/r/typescript/comments/gcwzis/question_typeorm_mysql_onetoone_relation/)
 - url: https://www.reddit.com/r/typescript/comments/gcwzis/question_typeorm_mysql_onetoone_relation/
 ---
 Membership Entity:
@@ -206,90 +248,3 @@ This setup works fine when I create a member (A) and hook it up to a membership 
 Can anyone please help me out. I'm pretty new to typeorm and mysql and would love to have your opinion on the issue.
 
 Thanks!
-## [8][I reverse engineered a npm registry from scratch. It is written entirely in TypeScript and has a low amount of dependencies.](https://www.reddit.com/r/typescript/comments/gc3q61/i_reverse_engineered_a_npm_registry_from_scratch/)
-- url: https://github.com/Tanuel/baggy
----
-
-## [9][Error in Typed Method Decorator](https://www.reddit.com/r/typescript/comments/gccnh3/error_in_typed_method_decorator/)
-- url: https://www.reddit.com/r/typescript/comments/gccnh3/error_in_typed_method_decorator/
----
-In my use case of method decorators I wanted them to work like a abstract method constraint.
-
-So i want a method decorator to "force" a function signature but allow fewer arguments. Now to do that, simply adding a function as a type in the method decorator doesn't work. Adding the possible function types also doesn't work. So if anyone has a correction, feel free to comment it.
-
-This is the code I came up with:  
-
-
-    class Test {
-      // works
-      @Decorator('abc')
-      test0(): string {
-        return '';
-      }
-    
-      // fails
-      @Decorator('abc')
-      test1({abc}: {abc: string}): string {
-        return '';
-      }
-    
-      // fails
-      @Decorator('abc')
-      test2({abc}: {abc: string}, context: any): string {
-        return '';
-      }
-    }
-    
-    interface Signature&lt;T&gt; extends Function {
-      (args: T, context: any): any;
-      (args: T): any;
-      (): any;
-    }
-    
-    function Decorator&lt;T&gt;(...args: Array&lt;keyof T&gt;) {
-      return function (target: any, key: string, descriptor: TypedPropertyDescriptor&lt;Signature&lt;T&gt;&gt;) {
-        // do something
-      }
-    }
-
-I also created a REPL [here](https://repl.it/repls/BossyConsiderateDistributionsoftware).
-## [10][Emited code is ignoring nullable return value](https://www.reddit.com/r/typescript/comments/gcats8/emited_code_is_ignoring_nullable_return_value/)
-- url: https://www.reddit.com/r/typescript/comments/gcats8/emited_code_is_ignoring_nullable_return_value/
----
-I have a method declared with this signature on my TypeScript file:
-
-https://preview.redd.it/3qmjo8gk3ew41.png?width=728&amp;format=png&amp;auto=webp&amp;s=174f3d04f08004df3be6f9dc44ca9990bc8bee4d
-
-And when I compile this to JS+D.TS, it suddenly lose nullability in all types:
-
-&amp;#x200B;
-
-https://preview.redd.it/njmzewnv3ew41.png?width=770&amp;format=png&amp;auto=webp&amp;s=cd4fa11a8c584e1196766f5bec47ac81b305c24a
-
-And TypeScript thinks I'm returning a non-nullable T (String in this case):
-
-&amp;#x200B;
-
-https://preview.redd.it/vx8uwmlf5ew41.png?width=162&amp;format=png&amp;auto=webp&amp;s=d3df21438004a7fbbac59ac0b35a4734ec682017
-
-The d.ts file is generated correctly, but if hover over method's name, it also shows incorrect typing:
-
-&amp;#x200B;
-
-https://preview.redd.it/gybtbmh44ew41.png?width=739&amp;format=png&amp;auto=webp&amp;s=74e2bb369bc9e640152814a48fcb6a372fbb5b89
-
-On the original TS file, it shows the correct typings:
-
-&amp;#x200B;
-
-https://preview.redd.it/m7fsrspb4ew41.png?width=907&amp;format=png&amp;auto=webp&amp;s=c624d027adc1813362623c4f177a3f2f3561598f
-
-I don't know exactly what's wrong with this. I've searched across Google and haven't found anything. I've also tried with full nullable (T | null | undefined) on the return type but still doesn't work.
-
-Note: Obviously, I can't mark neither "this" nor return type as optional ("?").
-## [11][Using Typescript in a Javascript React app](https://www.reddit.com/r/typescript/comments/gc6h9o/using_typescript_in_a_javascript_react_app/)
-- url: https://www.reddit.com/r/typescript/comments/gc6h9o/using_typescript_in_a_javascript_react_app/
----
-I have a React app written entirely in Javascript. I want to start using Typescript but I don't want to go back and convert any of my old code to TS. The app is too large. I'd like to only use TS moving forward.
-
-Are there any guides on how I can set this up? I use webpack.

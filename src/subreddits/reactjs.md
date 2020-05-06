@@ -84,176 +84,95 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Next.js Building a Car Trader App: Introduction and FAQ Page](https://www.reddit.com/r/reactjs/comments/gdufm6/nextjs_building_a_car_trader_app_introduction_and/)
-- url: https://www.youtube.com/watch?v=Hy4Por0yfqE&amp;feature=share
+## [3][[WIP] two-way WYSIWYG editing](https://www.reddit.com/r/reactjs/comments/gegg2x/wip_twoway_wysiwyg_editing/)
+- url: https://v.redd.it/noc65fmn04x41
 ---
 
-## [4][Using GraphQL with React, should I use Apollo Cache or Context?](https://www.reddit.com/r/reactjs/comments/gdv3em/using_graphql_with_react_should_i_use_apollo/)
-- url: https://www.reddit.com/r/reactjs/comments/gdv3em/using_graphql_with_react_should_i_use_apollo/
+## [4][Is anyone else frustrated by the state of React documentation, before and after the introduction of hooks?](https://www.reddit.com/r/reactjs/comments/ge8fkg/is_anyone_else_frustrated_by_the_state_of_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ge8fkg/is_anyone_else_frustrated_by_the_state_of_react/
 ---
-So I've been using React Context for a while now and find it very easy to work with, for example, holding information on whether a user is authenticated or not is very easy to share between components/pages.
+I frequently read tutorials, articles about React, etc., and I feel like the introduction of hooks made a barely functional situation totally dysfunctional.
 
-I then started looking into GraphQL and have made a backend server using it. I'm now discovering Apollo Client and learned that there is an in-memory-cache feature that seems to be quite popular/one of the reasons for using Apollo. For me I'm using Apollo primarily as a way of executing the queries/mutations via the hooks they provide. 
+To people who may have learned React before this split happened - in which case, you wouldn't have noticed - here's a summary.
 
-So when it came to writing my frontend I decided to try out the Apollo cache system for sharing the authentication data (holds the info about the user). When the user logs in I make a request to the server that gets the user information. Then when I want to get user information in other components I have to make the same request, but this time it doesn't hit the server and takes the user info directly from cache. 
+Once upon a time, React was released. A bunch of tutorials and explanations about it were written, often centered on classes. They rose to the top of the Google search results.
 
-This sounds great, but I have no end of problems using this. I implemented a logout button that clears the cache but get 'Can't perform a React state update on an unmounted component' constantly for every page. I also find it very cumbersome when trying to update the cache system as you have to write a lot of code which was easier with react context.
+Then hooks debuted. It was recommended that, if you could write your component using only hooks, you should. If you're starting a green field project - which includes every beginner - hooks first, classes second! People wrote some articles that put hooks first, that basically respected this philosophy.
 
-So I was wondering what is best practice when using Apollo Client (not what feels best for me). Would it be wrong to disable the cache entirely and go back to using reacts context api? Does it go against everything apollo is there for? How many people completely ignore the cache system as well?
+But... the search results never caught up.
 
-I learn primarily via videos and I'm finding it hard to find some that explain the cache system and how it works so this may also be a problem, I may have a limited understanding of it.
+Instead of replacing "Beginning with React: Learning Classes" with "React Starter Kit: Introducing Hooks", the search results stayed stale. It's like everything written with classes had an ironclad grip on all the beginning with React search results, which only a few tutorials about hooks were able to break loose.
 
-Any thoughts would be great.
-## [5][I made a quick React and Redux interview cheat sheet for 2020](https://www.reddit.com/r/reactjs/comments/gdbua0/i_made_a_quick_react_and_redux_interview_cheat/)
-- url: https://www.reddit.com/r/reactjs/comments/gdbua0/i_made_a_quick_react_and_redux_interview_cheat/
+So now the search results are an unholy mess of tutorials and articles written about classes before hooks existed, and a few with hooks, with hooks now looking like this newfangled optional later add-on, or "advanced material" instead of, you know, the easier-to-understand less-boilerplate default.
+
+All the time now, I feel like I see beginners saying on Twitter, "I'm about to learn React - starting this tutorial about classes! Wish me luck..." and then, only much later - possibly never - saying something like, "Hmm, decided to tackle hooks, finally feeling ready for this."
+
+Instead of being a simplifier, it feels like (in the perception of many people) hooks are actually a complicator, becoming 'one more difficult thing to learn' instead of 'an easier more intuitive path to learning.'
+
+The message that hooks are an easier way to do all of this, and you can bypass classes entirely, that in fact you should start learning hooks and not the other way around - totally lost.
+
+Not at all clear from the search results, either. I just checked the top 10 returned in my browser, and I got this representative example:
+
+\&gt; To get started you should at least know the following features:&gt; 1. Let&gt; 2. Const&gt; 3. Arrow functions&gt; 4. Imports and Exports&gt; 5. Classes
+
+Finally, I know you could say: Why does this matter? Shouldn't you learn both?
+
+Well, one problem is, if you're trying to learn something that straddles React classes and hooks - say, Typescript - good luck!
+
+Instead of just seeing tutorials that begin with hooks and continue from there, it's another clusterjunk of class based tutorials, with some code using hooks randomly sprinkled in. It's a mess!
+
+That content I'm searching for may exist, but it's damn hard to find through search engines, which seem to have failed dismally to updating to hooks-using content.
+
+And beginners have no idea that hooks are supposed to make life easier for them, rather than being 'advanced' or 'Google interview question' React.
+
+Hooks make learning and writing React easier, but you'd never know that from the average search result being returned online.
+## [5][React devs needed for solving COVID-19 problems](https://www.reddit.com/r/reactjs/comments/ge6wsb/react_devs_needed_for_solving_covid19_problems/)
+- url: https://www.reddit.com/r/reactjs/comments/ge6wsb/react_devs_needed_for_solving_covid19_problems/
 ---
-Link is [here](https://medium.com/@stevenjinyi/study-sheet-for-react-interview-questions-2020-2fe25b8fa316)
-
-I've been brushing up on my basic for interviewing in react/redux and found many interview question sources to be a bit out of date and obscure. So as part of my preparation process, I went through many interview question sources as well as the ReactJS/Redux official documentation to put together a cheat sheet for the questions and topics I saw repeatedly. Answers to questions are in bullet form with further in-depth readings cited as part of each question. I hope this helps those that are preparing or need a refresher! 
-
-Please note that questions are meant to cover basics and fundamentals. I did my best to be as unopinionated as possible citing exact areas of the documentation where I paraphrased from. I've linked in the bottom my primary sources for interview questions, many of them being the cream of the crop of interview questions that I've come across. If you see anywhere that I made a mistake or could use improvement, please let me know! Thank you.
-## [6][Should I write my Frontend or Backend first?](https://www.reddit.com/r/reactjs/comments/gdu6qr/should_i_write_my_frontend_or_backend_first/)
-- url: https://www.reddit.com/r/reactjs/comments/gdu6qr/should_i_write_my_frontend_or_backend_first/
+[Helpful Engineering](https://helpfulengineering.org) is crowd-sourcing open-source solutions for COVID-19 problems and we need volunteer React developers for an urgent project. Contact me for more information.
+## [6][What is your preferred ReactJS UI Framework and why?](https://www.reddit.com/r/reactjs/comments/gecnys/what_is_your_preferred_reactjs_ui_framework_and/)
+- url: https://www.reddit.com/r/reactjs/comments/gecnys/what_is_your_preferred_reactjs_ui_framework_and/
 ---
-Hi everyone, I am an aspiring react developer who has been learning the react framework for the past several months. I've written a few apps that have both a frontend and a backend, yet I am still trying to decide the best way to approach a new project. I was hoping I could ask a few questions that would help me improve my workflow. 
+Hi! I am new to React and I’ve discovered that there are quite a few options when choosing a UI Framework. One of the options that popped out to me was Bootstrap for React, as I’ve used Bootstrap in many of my simple html/css/js projects. 
 
-What is your process for creating your react applications? Do you start with the backend then create a frontend that satisfies all your API endpoints? What is the most time-efficient?
-## [7][How to create different bundles with different features from one src using create-react-app](https://www.reddit.com/r/reactjs/comments/gdx6rc/how_to_create_different_bundles_with_different/)
-- url: https://www.reddit.com/r/reactjs/comments/gdx6rc/how_to_create_different_bundles_with_different/
+I have two questions regarding UI Frameworks:
+
+How popular are UI frameworks in real-world React Development? 
+
+What is your preferred framework and why?
+## [7][ReasonReact 0.8.0 🎉 BuckleScript Upgrade &amp; More! · ReasonReact](https://www.reddit.com/r/reactjs/comments/gedipr/reasonreact_080_bucklescript_upgrade_more/)
+- url: https://www.reddit.com/r/reactjs/comments/gedipr/reasonreact_080_bucklescript_upgrade_more/
 ---
-I have a complex application created with create-react-app with the structure like:
+New ReasonReact version released today! Lots of features/fixes. 
 
-\-src
-
-\--apps
-
-\--components
-
-\--utils
-
-\--other directories with features
-
-Also, I have some script in package.json "npm build"
-
-`"build": "react-app-rewired --max_old_space_size=4096 build"`
-
-as you can see, in the project also using react-app-rewired. So, when I ran this script I got a build of the whole application and that's ok. But now I want to create the second script in the package.json with the name **"feature1"**, and when I will run script **feature1** I should get only feature from src/app/app1 and that's all. So, after the **feature1** script running I should get a new bundle only with the feature from src/app/app1 directory. Help to implement this stuff, please.
-## [8][Displaying data React/Axios](https://www.reddit.com/r/reactjs/comments/gdx2uq/displaying_data_reactaxios/)
-- url: https://www.reddit.com/r/reactjs/comments/gdx2uq/displaying_data_reactaxios/
----
- 
-
-`const IzlazniRacuni = () =&gt; {`  
- `const [racuniIzlazniFinancijski, setRacuniIzlazniFinancijski] = useState([]);`  
- `const [operateri, setOperateri] = useState([]);`  
- `const [robnoArtikli, setRobnoArtikli] = useState([]);`  
- `const [poslovneJedinice, setPoslovneJedinice] = useState([]);`  
- `const [poslovniPartneri, setPoslovniPartneri] = useState([]);`  
- `const fetchData = () =&gt; {`  
- `const racuniIzlazniFinancijskiAPI = 'http://127.0.0.1:8000/api/Racuniizlaznifinancijski';`  
- `const operateriAPI = 'http://127.0.0.1:8000/api/Operateri';`  
- `const robnoArtikliAPI = 'http://127.0.0.1:8000/api/Robnoartikli';`  
- `const poslovneJediniceAPI = 'http://127.0.0.1:8000/api/Poslovnejedinice';`  
- `const poslovniPartneriAPI = 'http://127.0.0.1:8000/api/Poslovnipartneri';`  
- `const getRacuniIzlazniFinancijski = axios.get(racuniIzlazniFinancijskiAPI)`  
- `const getOperateri = axios.get(operateriAPI)`  
- `const getRobnoArtikli = axios.get(robnoArtikliAPI)`  
- `const getPoslovneJedinice = axios.get(poslovneJediniceAPI)`  
- `const getPoslovniPartneri = axios.get(poslovniPartneriAPI)`  
- `axios.all([getRacuniIzlazniFinancijski, getOperateri, getRobnoArtikli, getPoslovneJedinice, getPoslovniPartneri]).then(`  
- `axios.spread((...allData) =&gt; {`  
- `const allRacuniIzlazniFinancijski = allData[0]`  
- `const allOperateri = allData[1]`  
- `const allRobnoArtikli = allData[2]`  
- `const allPoslovneJedinice = allData[3]`  
- `const allPoslovniPartneri = allData[4]`  
- `setRacuniIzlazniFinancijski(allRacuniIzlazniFinancijski)`  
- `setOperateri(allOperateri)`  
- `setRobnoArtikli(allRobnoArtikli)`  
- `setPoslovneJedinice(allPoslovneJedinice)`  
- `setPoslovniPartneri(allPoslovniPartneri)`  
-            `})`  
-        `)`  
-    `}`  
- `useEffect(() =&gt; {`  
- `fetchData()`  
-    `}, [])`
-
-&amp;#x200B;
-
-How to show my data inside the table. Consider that e.g. racuniizlaznifinancijski have multiple instances that I want to show off..
-## [9][Is it considered okay (best practice) to access a child's state?](https://www.reddit.com/r/reactjs/comments/gdwb8y/is_it_considered_okay_best_practice_to_access_a/)
-- url: https://www.reddit.com/r/reactjs/comments/gdwb8y/is_it_considered_okay_best_practice_to_access_a/
----
-I have a parent component which has many child components (the child component is an empty div with a coloured background).
-
-&amp;#x200B;
-
-I want to change the child's colour but want to make sure I'm making it a different colour than it already is - eg. if the child is blue, I want to change it to another colour that isn't blue.
-
-&amp;#x200B;
-
-To do this I am using a prop to set the inital colour and saving this prop to the child's state.
-
-&amp;#x200B;
-
-When I then click on the div to change the colour I want to access the current colour of the div so that I can exclude it from the selection to of course to choose from
-
-&amp;#x200B;
-
-1) Is this considered okay to do in react? 2) If it is - can someone please explain how I can access a child's state? 3) If this isn't a great approach how should I tackle this problem?
-
-&amp;#x200B;
-
-// Parent Component
-
-`class ColourBoxes extends Component {`  
- `constructor(props) {`  
- `super(props)`  
- `this.state = {`  
- `}`  
-   
- `this.newColour = this.newColour.bind(this)`  
- `}`  
- `static defaultProps = {`  
- `colours: ['#ff3860', '#498afb', '#fa8142', '#09c372', '#9166cc', '#ffdd57', '#ff4088']`  
- `}`  
- `newColour(oldColour) {`  
- `}`  
- `render() {`  
- `return(`  
- `&lt;div&gt;`  
- `&lt;Box colour={'#09c372'}/&gt;`  
- `&lt;/div&gt;`  
-        `)`  
- `}`  
-`}`
-
-// Child Component
-
-`class Box extends Component {`  
- `constructor(props) {`  
- `super(props)`  
- `this.state = {currColour: this.props.colour}`  
- `}`  
- `render() {`  
- `return(`  
- `&lt;div className="Box" style={{backgroundColor: this.props.colour}}&gt;&lt;/div&gt;`  
-        `)`  
- `}`  
-`}`
-## [10][Whats the correct way of cloud hosting mutliple react apps with express?](https://www.reddit.com/r/reactjs/comments/gdp3zs/whats_the_correct_way_of_cloud_hosting_mutliple/)
-- url: https://www.reddit.com/r/reactjs/comments/gdp3zs/whats_the_correct_way_of_cloud_hosting_mutliple/
----
-Should I be building the apps into min \`min\` files and serve it with the html from express, or should I be hosting the frontend apps and the backend separately like I do in my local enviroment?
-
-I'm using kamatera, and plan to host multiple of my apps on this same server, using one  express instance for the routes for each.
-## [11][How would I create a blogging site with Reactjs to replace my Wordpress site? (Dashboard with UI to make easier to post).](https://www.reddit.com/r/reactjs/comments/gdw0qf/how_would_i_create_a_blogging_site_with_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/gdw0qf/how_would_i_create_a_blogging_site_with_reactjs/
----
-I am learning react and I want to create a site to replace my current website for learning purpouses and I know how to proceed but I want to know if there are tools or projects that would help on my task to add a dashboard/editor area to make posting easier.
-Sites like [decrypt.co](https://decrypt.co) or any blog with daily/hourly content do have features like that for their editors, right?
-## [12][How to build a full stack serverless application with React and Amplify](https://www.reddit.com/r/reactjs/comments/gduk4l/how_to_build_a_full_stack_serverless_application/)
-- url: https://blog.soshace.com/how-to-build-a-full-stack-serverless-application-with-react-and-amplify/
+[link](https://reasonml.github.io/reason-react/blog/2020/05/05/080-release)
+## [8][How to get started testing React applications](https://www.reddit.com/r/reactjs/comments/ge6ke4/how_to_get_started_testing_react_applications/)
+- url: https://joaoforja.com/blog/how-to-get-started-testing-react-applications/
 ---
 
+## [9][Most of react developer must at least made todo app once, so I made one too, with Firebase stack, react-beautiful-dnd, and PWA with offline capability](https://www.reddit.com/r/reactjs/comments/gek0fk/most_of_react_developer_must_at_least_made_todo/)
+- url: https://littletodos.web.app/
+---
+
+## [10][Import {component} vs extends react.component?](https://www.reddit.com/r/reactjs/comments/gejj6k/import_component_vs_extends_reactcomponent/)
+- url: https://www.reddit.com/r/reactjs/comments/gejj6k/import_component_vs_extends_reactcomponent/
+---
+I’m sure this has some obvious answer that I’m missing but I can’t find anything solid online. 
+
+Are there any performance differences between importing component with react vs using React.Component when creating your class?
+## [11][Game I made exclusively using React (pokemon + slay the spire)](https://www.reddit.com/r/reactjs/comments/gejgeb/game_i_made_exclusively_using_react_pokemon_slay/)
+- url: https://ldd.itch.io/nu
+---
+
+## [12][Cant get react-image-crop Component to work](https://www.reddit.com/r/reactjs/comments/geixue/cant_get_reactimagecrop_component_to_work/)
+- url: https://www.reddit.com/r/reactjs/comments/geixue/cant_get_reactimagecrop_component_to_work/
+---
+I have an working component where I can add and upload images to a backend. I recently noticed that I also need to be able to resize the images and found a great looking component called [react-image-crop](https://www.npmjs.com/package/react-image-crop).
+
+I tried the [example](https://codesandbox.io/s/beautiful-wildflower-kobkt) and it works perfectly. But when I try to insert the example-code in my own component it does not work. I was expecting the image and imagePreview to show after selecting a single image. But I only get the original image rendered
+
+ I copy/pasted the whole example changing only the `onSelectFile` to `fileHandler.`
+
+In the useStates `imgRef` I get "&lt;img /&gt;" and in `previewUrl` I get "undefined"
+
+What am I doing wrong ?

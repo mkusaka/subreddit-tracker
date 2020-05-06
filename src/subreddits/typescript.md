@@ -22,229 +22,150 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Ultimate Vim TypeScript Setup](https://www.reddit.com/r/typescript/comments/gdv3al/ultimate_vim_typescript_setup/)
+## [2][importing with "@"](https://www.reddit.com/r/typescript/comments/gef6u2/importing_with/)
+- url: https://www.reddit.com/r/typescript/comments/gef6u2/importing_with/
+---
+I'm trying to find a best practice here. What's best?
+Importing like this:  
+`import { collectionRef} from '@mycoolpackage/prelude/control/function/collection';`  
+When I run the `tsc` transpiler and importing like above, it doesn't find the import.
+
+or like this:  
+`import { collectionRef } from '../../prelude/control/function/collection';`  
+This works when I run the `tsc` transpiler.
+
+Are there any advantages?
+## [3][How Our Stack Evolved in 10 Years](https://www.reddit.com/r/typescript/comments/gek2mm/how_our_stack_evolved_in_10_years/)
+- url: https://typescript-open-source-resources.s3.us-east-2.amazonaws.com/the-stack-evolution.htm
+---
+
+## [4][ts-transformer-properties-rename - a custom transfomer for TypeScript which renames all private and internal properties, so you can mangle them with uglify-js/terser and reduce size of your bundles](https://www.reddit.com/r/typescript/comments/ge56dn/tstransformerpropertiesrename_a_custom_transfomer/)
+- url: https://github.com/timocov/ts-transformer-properties-rename
+---
+
+## [5][Foal TS - May release (version 1.8) - Dependency injection with interfaces, permission management, service initialization](https://www.reddit.com/r/typescript/comments/geg8up/foal_ts_may_release_version_18_dependency/)
+- url: https://www.reddit.com/r/typescript/comments/geg8up/foal_ts_may_release_version_18_dependency/
+---
+Foal TS framework version 1.8 is officially released!
+
+[Foal TS - May release \(version 1.8\)](https://preview.redd.it/xm3t9m4ev3x41.png?width=1606&amp;format=png&amp;auto=webp&amp;s=d9e0d848c980f799c5e0d25ffa1370a6c4b79a9b)
+
+This version brings mainly **three new features**.
+
+1. **Interfaces and generic classes** (such as TypeORM repositories) **can** now **be injected** into services and controllers using FoalTS dependency injection system.
+
+[Example of service](https://preview.redd.it/umiskrw6w3x41.png?width=746&amp;format=png&amp;auto=webp&amp;s=b1d61cab00658afdfcf41891acaf9725358edd0b)
+
+[Injection of the concrete instances.](https://preview.redd.it/jevwe7q8w3x41.png?width=747&amp;format=png&amp;auto=webp&amp;s=0f01dbc77d59ab54155884e308d9d90bdbf5a2ce)
+
+Documentation : [https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#usage-with-interfaces-and-generic-classes](https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#usage-with-interfaces-and-generic-classes)
+
+2. **Services** accept an optional `boot` **method for initialization**
+
+[Example of \\"boot\\" method](https://preview.redd.it/68sm4vmqw3x41.png?width=745&amp;format=png&amp;auto=webp&amp;s=c0fa86820f28abe83d37158d3adcc203f515137e)
+
+Documentation: [https://foalts.gitbook.io/docs/topic-guides/architecture/initialization#the-services-boot-method](https://foalts.gitbook.io/docs/topic-guides/architecture/initialization#the-services-boot-method)
+
+3. `Group`, `Permission` and `UserWithPermissions` extend `BaseEntity` (TypeORM) so as to add new methods (find, save, etc) and `UserWithPermissions` has a new method `withPerm` which allows to retrieve all users with a given permission.
+
+[Permission extends BaseEntity](https://preview.redd.it/8uzmpoq9x3x41.png?width=745&amp;format=png&amp;auto=webp&amp;s=5bf024e17155b16aeb4a6162b27d19787650a54c)
+
+[Retrieve all users with the permission \\"perm1\\"](https://preview.redd.it/u9kqau8bx3x41.png?width=748&amp;format=png&amp;auto=webp&amp;s=6e8b612834a836fdf3e86d71d71d18587ad17955)
+
+Documentation: [https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/groups-and-permissions#baseentity-inheritance](https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/groups-and-permissions#baseentity-inheritance)
+
+&amp;#x200B;
+
+Foal, in a few words, it's a Node.js framework:
+
+* written in TypeScript
+* provided with batteries included (Auth, OpenAPI, GraphQL, ORM, CLI, scripts, file storage)
+* and with a simple and intuitive architecture (no magic, no over-engineering).
+
+And the must: it has more than 11,000 lines of documentation.
+
+[https://foalts.org](https://foalts.org/)
+
+[https://github.com/FoalTS/foal](https://github.com/FoalTS/foal)
+
+[https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
+
+\#TypeScript #JavaScript #NodeJS #FoalTS #DI #JWT #permissions
+## [6][How do you declare a variable of type T that extends type U without "losing" type T?](https://www.reddit.com/r/typescript/comments/ge96nf/how_do_you_declare_a_variable_of_type_t_that/)
+- url: https://www.reddit.com/r/typescript/comments/ge96nf/how_do_you_declare_a_variable_of_type_t_that/
+---
+e.g. I want to declare some record `foo`, where the values are all of a certain type `Bar`, so `foo` must extend `Record&lt;string, Bar&gt;` (`{ [ key: string ]: Bar}`).
+
+I can simply write `const foo: Record&lt;string, Bar&gt; = { fooKeyA: bar1, fooKeyB: bar2 };` but now all that I can extract from the declared `foo` is that it is of type `Record&lt;string, Bar&gt;`, which means I only know that its keys are `string`, i.e. I have lost the key names `fooKeyA` and `fooKeyB`.
+
+Here is a workaround:
+
+&gt;Declare a function that does nothing other than return its argument, and ensure that its argument extends a certain type. Anytime we declare something like foo, wrap the actual value we want to use in this function. i.e   
+`function iAmTotallyUselessAtRuntime&lt;T extends Record&lt;string, Bar&gt;&gt;(foo: Foo): Foo { return foo; }`  
+`const foo = iamTotallyUselessAtRuntime({ fooKeyA: bar1, fooKeyB: bar2 });`  
+Now foo has maintained its original type with its unique keys, and also we can be sure that it also extends the type it needs to extend.  
+However, (as I made clear in the function name) we are declaring a totally useless function that does nothing meaningful at run time. 
+
+I feel that there must be a better way.
+
+This seems like it should be so simple, but I can't really think of an efficient way to do it.
+## [7][Ultimate Vim TypeScript Setup](https://www.reddit.com/r/typescript/comments/gdv3al/ultimate_vim_typescript_setup/)
 - url: https://pragmaticpineapple.com/ultimate-vim-typescript-setup/
 ---
 
-## [3][Just shipped @ts-engine/cli 1.4.0, it now supports Jest config and generates sourcemaps for every build](https://www.reddit.com/r/typescript/comments/gdcias/just_shipped_tsenginecli_140_it_now_supports_jest/)
-- url: https://ts-engine.dev
+## [8][Incorrect module resolution causing type errors](https://www.reddit.com/r/typescript/comments/ge8bqd/incorrect_module_resolution_causing_type_errors/)
+- url: https://www.reddit.com/r/typescript/comments/ge8bqd/incorrect_module_resolution_causing_type_errors/
 ---
+Hi all, I'm trying to import a package ([filestack-js](https://github.com/filestack/filestack-js)) into my typescript code which has multiple entry points defined in its `package.json` file.
 
-## [4][Finding a balance between code refactoring and new code addition](https://www.reddit.com/r/typescript/comments/gdew7d/finding_a_balance_between_code_refactoring_and/)
-- url: https://www.reddit.com/r/typescript/comments/gdew7d/finding_a_balance_between_code_refactoring_and/
----
-At work, everyone has some reviewers through the workplace.  However, if you are self employed or unemployed, it is hard. I suppose everyone adds value to their knowledge through peer commenting on their code. 
+When trying to run the typescript compiler i get type errors relating to not being able to find  '`@types/node'` (which I've excluded from the project as it causes other type problems with our browser typings).
 
 &amp;#x200B;
 
-I work on my own. The project has been for just two months. After implementing 25% of the planned Front-end,  I find myself mostly refactoring for code reuse. The code quality improves but also seems that refactoring stalls the progress. 
+I did some digging and saw that the typescript compiler is using the '`main`' entry point as described in the `package.json` file. However, the package authors only intend this entry point to be used in a node js environment. I see that they have defined a '`browser`' entry point that doesn't have these problems but the compiler is favoring main instead. Anyway I can force this resolution?
 
 &amp;#x200B;
 
-\*\*How do you guys find your own balance?\*\*
-## [5][Is it possible to do "anonymous maps" like in plain javascript?](https://www.reddit.com/r/typescript/comments/gddggs/is_it_possible_to_do_anonymous_maps_like_in_plain/)
-- url: https://www.reddit.com/r/typescript/comments/gddggs/is_it_possible_to_do_anonymous_maps_like_in_plain/
----
-I've seem some people in react use function / component definitions like this:
-
-    function myFunction({foo, bar}) 
-
-... and then they can pass a map which gets destructured.
-
-I'd like do so something like this in typescript where I don't have to define an interface first.
-
-Something like
-
-    function myFunction({foo: string, bar: number}) 
-
-... so that I don't have to constantly define a named interface for each function.  
-
-Some are small and I don't want to have to pick a name for the props interface.
-
-Is this possible?
-
-I was thinking of maybe using Pick and having a main interface that I'm taking variables from.
-## [6][Calling ReasonML from TypeScript (or Flow), the easy way.](https://www.reddit.com/r/typescript/comments/gdaoab/calling_reasonml_from_typescript_or_flow_the_easy/)
-- url: https://www.hackdoor.io/articles/myNBk3px/calling-reasonml-from-typescript-or-flow-the-easy-way
----
-
-## [7][Phaser Integration with Angular and Electron](https://www.reddit.com/r/typescript/comments/gd3z69/phaser_integration_with_angular_and_electron/)
-- url: https://www.reddit.com/r/typescript/comments/gd3z69/phaser_integration_with_angular_and_electron/
----
-Hello, I'm new to this sub. I'm starting to do some work with Phaser, as I am pretty familiar with typescript, html, and css. I started a project and got some work done before figuring I should strip back the assets and some implementation to provide a clean little template. I have a repo for it and thought I might share:
+I imagine this isn't a unique problem, how do others resolve these conflicts?
 
 &amp;#x200B;
 
-[https://github.com/TBosak/game-template](https://github.com/TBosak/game-template)
-
-&amp;#x200B;
-
-Enjoy! Feel free to fork and improve my mess.
-## [8][Retturn type of a function that creates nth-dimensional arrays](https://www.reddit.com/r/typescript/comments/gd9hem/retturn_type_of_a_function_that_creates/)
-- url: https://www.reddit.com/r/typescript/comments/gd9hem/retturn_type_of_a_function_that_creates/
+If I set `skipLibCheck` to `true` the errors go away but that feels like overkill to me. I'm also using webpack to bundle my compiled js files and that happily resolves to the correct source code.
+## [9][I have just released Jackson-js: Powerful JavaScript decorators to serialize/deserialize objects into JSON and vice versa](https://www.reddit.com/r/typescript/comments/ge1jth/i_have_just_released_jacksonjs_powerful/)
+- url: https://medium.com/@pichillilorenzo/df952454cf?source=friends_link&amp;sk=a65bd247eca2f95fdfddda34447a6db6
 ---
-I'm writing a function that will create and return an Nth-dimensional array, where N is set by a parameter, and the array can be filled with an initial value. I'm struggling to think of the correct return type for this function and would love some help.
 
-Something like is what I'm after:
+## [10][VIM Users: ale vs tsuquyomi?](https://www.reddit.com/r/typescript/comments/ge7y2d/vim_users_ale_vs_tsuquyomi/)
+- url: https://vi.stackexchange.com/questions/25111/typescript-ale-vs-tsuquyomi
+---
 
-    const createNthDimensionalArray = &lt;T&gt;(
-        NDimensions: number,
-        initialValues?: T
-    ): T[][] =&gt; {
-        // Array creation happens here
+## [11][Difference between property and method in Typescript](https://www.reddit.com/r/typescript/comments/ge7evn/difference_between_property_and_method_in/)
+- url: https://www.reddit.com/r/typescript/comments/ge7evn/difference_between_property_and_method_in/
+---
+What is the difference between a property and method in Typescript? I am trying to add a property to each of my functions in a class. It works fine with anonymous functions but with methods tsserver doesn't display the correct type. Any help would be appreciated here is a [stackblitz](https://stackblitz.com/edit/typescript-1jgdjg)
+
+    type Func = (...args: any[]) =&gt; any;
+    
+    /** Add a property to the function */
+    interface Spy&lt;Fn extends Func&gt; {
+      (...params: Parameters&lt;Fn&gt;): ReturnType&lt;Fn&gt;;
+      extraProperty: string;
     }
-
-But the return type of the above function (`T[][]`) will only work for 2-dimensional arrays. Ideally I need a type that can ensure the arrays are only filled with the same type as the `initialValues` parameter, while being able to support however many dimensions the user needs, if such a thing exists!
-
-&amp;#x200B;
-
-Currently I'm using `any[]` as the return type, but I'm sure there's a better way.
-## [9][Learning typescript as a junior developer](https://www.reddit.com/r/typescript/comments/gd23ti/learning_typescript_as_a_junior_developer/)
-- url: https://www.reddit.com/r/typescript/comments/gd23ti/learning_typescript_as_a_junior_developer/
----
-**TL;DR: is it common for junior developers to learn Typescript at work / trough a course offered by a company?**  
-
-
-I'm a self taught developer and currently still in the process of learning. Currently I'm working on some more advanced topics, including Typescript. I feel the industry is not always expecting a junior to write TS compared to more experienced developers.  
-
-
-The current course I'm following is not very good in terms of learning TS. Therefore I'm considering following a course fully dedicated to Typescript.  
-
-
-I'd like to hear your thoughts on this: do you recommend to take such a course or shouldn't it hurt to start working without being comfortable with it (and waiting for a company to introduce me to it with either a course or something else)?
-## [10][Typescript and react conditional render](https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/)
-- url: https://www.reddit.com/r/typescript/comments/gcqdmt/typescript_and_react_conditional_render/
----
-I am new to typescript and not an expert in FE development. I've encountered issue that seems pretty basic, but I failed to found any solution. Maybe I just don't know how to google it properly.
-
-In react component I have a button, that is disabled on some condition, which triggers a component's function:
-
-    import React, {Component} from 'react';
+    /** Loop through all properties of T, if the property is a function, make it a spy */
+    type MakeSpys&lt;T&gt; = { [x in keyof T]: T[x] extends Func ? Spy&lt;T[x]&gt; : false };
     
-    type DraftCompany = {
-        id: null
-        name: string,
-    };
-    
-    type Company = Omit&lt;DraftCompany, 'id'&gt; &amp; {
-        id: number;
-    };
-    
-    type Props = {
-        company: Company | DraftCompany,
-        onDeleteCompany: (companyId: number) =&gt; void,
+    class Class {
+      method(): null {
+        return null;
+      }
+      property = (): null =&gt; null;
     }
     
-    class CompanyRow extends Component &lt;Props&gt; {
-        handleDeleteCompany = () =&gt; {
-            this.props.onDeleteCompany(this.props.company.id);
-        };
-    
-        render = () =&gt; {
-            return (
-                &lt;div&gt;
-                    &lt;div&gt;{this.props.company.name}&lt;/div&gt;
-                    &lt;div&gt;
-                        &lt;button disabled={this.props.company.id === null} onClick={this.handleDeleteCompany}/&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            )
-        }
-    }
-    
-    export default CompanyRow;
+    let _: Class['method']; // type: () =&gt; null (expected)
+    let __: Class['property']; //type : () =&gt; null (expected)
+    let spyObj: MakeSpys&lt;Class&gt;;
+    spyObj.property; // type: Spy&lt;() =&gt; null&gt; (expected)
+    spyObj.method; // type: method(): null (why?????)
+    const method = spyObj.method; // type: Spy&lt;() =&gt; null&gt; (expected)
 
-I am getting typescript error on calling `this.props.onDeleteCompany(this.props.company.id);` that says that there is a chance I will pass `null` as a parameter. I fully understand why typescript gives me this error, the question is: **what would be the best way to deal with this error?**
-
-&amp;#x200B;
-
-I have found multiple ways:
-
-&amp;#x200B;
-
-1 ) Add `if` guard:
-
-    handleDeleteCompany = () =&gt; {
-            if (this.props.company.id) {
-                this.props.onDeleteCompany(this.props.company.id);
-            }
-        };
-
-It works, but I don't like the idea of adding such guards into every function, if someone removes `disabled` logic, I want to receive console error telling me about it immediately, not to have it be silently swallowed. In my project I have a lot of such code that relies on render, I doubt it is a best practice to add such checks everywhere. Correct me pls if I am wrong.
-
-&amp;#x200B;
-
-2) Apply `as` operator  to field :
-
-     handleDeleteCompany = () =&gt; {
-            this.props.onDeleteCompany(this.props.company.id as number);
-        };
-
-It works, but looks kinda hacky.
-
-&amp;#x200B;
-
-3) Apply `!` operator to field:
-
-     handleDeleteCompany = () =&gt; {
-            this.props.onDeleteCompany(this.props.company.id!);
-        };
-
-It works, but looks kinda hacky too.
-
-&amp;#x200B;
-
-4) Apply `as` operator to whole object and pass it to function:
-
-     &lt;button disabled={this.props.company.id === null} 
-             onClick={() =&gt; this.handleDeleteCompany(this.props.company as Company)}/&gt;
-
-and
-
-     handleDeleteCompany = (company: Company) =&gt; {
-            this.props.onDeleteCompany(company.id as number);
-        };
-
-It works, but it looks like I am unnecessary passing the value I could have grabbed in function itself from props. I am not sure it is best practice to do such things.
-
-&amp;#x200B;
-
-I am sure there should be some pure typescript solution like defining Props type as a union or using conditional types with some combination of `any` and `never`. But I haven't figured it out.
-
-As I said, I am not a FE expert so there is a high chance I am wrong about what is considered best practice. Help me please.
-
-&amp;#x200B;
-
-Here is a [playground](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDGMA0cDeBhCcCAOyWJgF84AzKQuAcilQwYG4BYAKG5gE8wSOABEoKajALgUxPnAC8ubnBVxgAEwBccYgFcANvuWriKEEm0BnGFGDEA5pm4VOPLv0FwpYGXMUB5EGAYAB5RcUlCH1lsBg0GAD44ADIlLlU1LR1dEAAjJChXF25eASEABTowSwU0jLQo321vXzgAHxExCRaY4xUSYSR9JBgkHr5tAAoG6VkASSy9PIKASgUkgDcIDScuChKuNH0USxrxhAgAdzgkAA9R4nUzqJIyeBDKiGqknD64AAsZOphoNhqNxrVJmt5D8-hkYP9gJYAHRgKoogZDEZjRqySYIpGo9HImbRPjIjQrVwZYpuDLMR4FSHQ2HpDKqZgwXRQYhwSZw9kqELqYAbBICwUZYWihI4AkotFfFGk3zI0zmCghAD0IrFEslQt14rZBtNcBCuV0MBgJDgIssKFyw3U8jliIVxJVsgp6gU8kUekMVBIeH0wDQAGtXfLkYDHiCseDcXwKFrjWbBdqjfqpTqZfqVn99nsDndILA7UhqCgDPBzlc2EA)
-## [11][[QUESTION] typeorm mysql one-to-one relation](https://www.reddit.com/r/typescript/comments/gcwzis/question_typeorm_mysql_onetoone_relation/)
-- url: https://www.reddit.com/r/typescript/comments/gcwzis/question_typeorm_mysql_onetoone_relation/
----
-Membership Entity:
-
-    @Entity() 
-    export default class Membership extends BaseEntity {
-         @PrimaryColumn("uuid")
-         id: string;
-    
-         @OneToOne(type =&gt; Member, member =&gt; member.membership)
-         member: Member 
-    } 
-
-Member Entity:
-
-    @Entity() 
-    export default class Membership extends BaseEntity {
-         @PrimaryColumn("uuid")
-         id: string;
-    
-         @OneToOne(type =&gt; Membership, membership =&gt; membership.member)
-         @JoinColumn()
-         membership: Membership 
-    } 
-
-This setup works fine when I create a member (A) and hook it up to a membership (M). However, I get a `Duplicate Entry Error`  
- when I try to add another member (B) and hook it up to the same membership (M).
-
-Can anyone please help me out. I'm pretty new to typeorm and mysql and would love to have your opinion on the issue.
-
-Thanks!
+spyObj.method should be of type Spy&lt;() =&gt; null&gt; so that the reader is aware that there was a property added to the function

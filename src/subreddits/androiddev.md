@@ -31,54 +31,69 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android Studio Emulator killed by Riot Vanguard](https://www.reddit.com/r/androiddev/comments/gdr6pj/android_studio_emulator_killed_by_riot_vanguard/)
-- url: https://www.reddit.com/r/androiddev/comments/gdr6pj/android_studio_emulator_killed_by_riot_vanguard/
+## [3][Android dynamic feature modules + Navigation Component is finally solved 😁](https://www.reddit.com/r/androiddev/comments/geg22f/android_dynamic_feature_modules_navigation/)
+- url: https://www.reddit.com/r/androiddev/comments/geg22f/android_dynamic_feature_modules_navigation/
 ---
-Just an FYI to anyone who has Riot Vanguard installed as a part of Valorant-- When Vanguard is active it will immediatly terminate your Android Emulation even with a Cold Boot. 
+Navigation Component + Dynamic feature was a very painful combination for a long time.  Fortunately, the new 2.3.x version of the navigation library (still alpha) solves dynamic module navigation by introducing `DynamicNavHostFragment` and `&lt;include-dynamic...` tag.
 
-I spent 4 hours pulling my hair out and ultimately uninstalled every package as well as all of Android Studio and didn't see any fix. My emulator was being killed with an error code 0 and no other logs.
+&amp;#x200B;
 
-I finally randomly disabled Riot Vanguard because I remembered reading it had kernel level permissions to block certain drivers and the second that I disabled it, my emulation worked perfectly normal.
+Check this PR for concrete implementation [https://github.com/igorwojda/android-showcase/pull/98/files](https://github.com/igorwojda/android-showcase/pull/98/files) (`NavHostFragment` \-&gt; `DynamicNavHostFragment`)
 
-If anyone is seeing their emulation randomly die who also has Vanguard installed, please give this a shot and let me know if it works.
-## [4][The Best Android UI Testing Tool (v2)](https://www.reddit.com/r/androiddev/comments/gdux39/the_best_android_ui_testing_tool_v2/)
-- url: https://i.redd.it/24wlhj2k5xw41.jpg
----
+&amp;#x200B;
 
-## [5][Restore RecyclerView scroll position - Android Developers](https://www.reddit.com/r/androiddev/comments/gde44i/restore_recyclerview_scroll_position_android/)
-- url: https://medium.com/androiddevelopers/restore-recyclerview-scroll-position-a8fbdc9a9334
----
+More info:
 
-## [6][Some good explanations regarding the use of brand names.](https://www.reddit.com/r/androiddev/comments/gdv1w1/some_good_explanations_regarding_the_use_of_brand/)
-- url: https://i.redd.it/bp8di9sg7xw41.png
+[https://developer.android.com/guide/navigation/navigation-dynamic](https://developer.android.com/guide/navigation/navigation-dynamic)
+## [4][All Permission in android displayed neatly.](https://www.reddit.com/r/androiddev/comments/ge0642/all_permission_in_android_displayed_neatly/)
+- url: https://i.redd.it/pk8ncoasjvw41.png
 ---
 
-## [7][Huawei Mobile Services](https://www.reddit.com/r/androiddev/comments/gdtmfc/huawei_mobile_services/)
-- url: https://www.reddit.com/r/androiddev/comments/gdtmfc/huawei_mobile_services/
+## [5][My app has been suspended. Any advice on what I can do?](https://www.reddit.com/r/androiddev/comments/gehub1/my_app_has_been_suspended_any_advice_on_what_i/)
+- url: https://www.reddit.com/r/androiddev/comments/gehub1/my_app_has_been_suspended_any_advice_on_what_i/
 ---
-So my company would like us to try and implement these services on a parallel build to target users which don't have the Google Play Services on their devices. Anyone has any feedback on using them? What should I expect? Is it worth the effort?  
+ We’ve had our app suspended since we sell tobacco products. We were selling tobacco products in a legal and local law complaint way for many years, we warn the user that it is prohibited to sell tobacco to anyone under the age of 21, and we require the driver to check the customer’s ID when delivering the tobacco products.
 
+Right now we’re removed all our tobacco products on our app and are trying to appeal the suspension. Google suggests that we reupload the app under a new app and package name, but we’ll be going through the hassle of informing the existing users who have the original to download a new app, and might have to accept that some users will refuse to download the new app.
 
-[https://developer.huawei.com/consumer/en/hms](https://developer.huawei.com/consumer/en/hms)
-## [8][My first Medium article: Refactoring my backup and restore feature to comply with Scoped Storage](https://www.reddit.com/r/androiddev/comments/gdvka1/my_first_medium_article_refactoring_my_backup_and/)
-- url: https://medium.com/@gavingt/refactoring-my-backup-and-restore-feature-to-comply-with-scoped-storage-e2b6c792c3b?source=friends_link&amp;sk=2e2128901645fcc550464d79b2766e6f
----
-
-## [9][Keep up to Date With Your Best On-Demand Food Delivery App!](https://www.reddit.com/r/androiddev/comments/gdx5vh/keep_up_to_date_with_your_best_ondemand_food/)
-- url: https://celadonsoft.com/best-practices/on-demand-food-delivery-app
+Since the issue was a content issue, we’ve already taken the measure to remove all tobacco products and this should be reflected on existing users. Is there a chance for us to retain our existing package name and app name?
+## [6][Join us for #Android11: The Beta Launch Show!](https://www.reddit.com/r/androiddev/comments/gejz31/join_us_for_android11_the_beta_launch_show/)
+- url: https://www.youtube.com/watch?v=gqJEcy57hA8
 ---
 
-## [10][How do I handle Fragment Navigation with a Bottom Navigation Drawer using Navigation component?](https://www.reddit.com/r/androiddev/comments/gdwsea/how_do_i_handle_fragment_navigation_with_a_bottom/)
-- url: https://www.reddit.com/r/androiddev/comments/gdwsea/how_do_i_handle_fragment_navigation_with_a_bottom/
----
-The menu items can be clicked again after navigating to the destination fragment. This just ends up recreating that fragment.
-
-Once I am on the destination fragment how do I disable the menu item for this fragment on the navigation drawer?
-## [11][We've just release AppIntro v6.0.0 - Now 100% Kotlin with a lot of new animations &amp; features to help you build introduction for your app in just some seconds](https://www.reddit.com/r/androiddev/comments/gdhuf7/weve_just_release_appintro_v600_now_100_kotlin/)
-- url: https://github.com/AppIntro/AppIntro/releases/tag/6.0.0
+## [7][I experience issues with Play Console downloads counting from yesterday 11AM. Anyone else?](https://www.reddit.com/r/androiddev/comments/gef99j/i_experience_issues_with_play_console_downloads/)
+- url: https://i.redd.it/r6joafrph3x41.jpg
 ---
 
-## [12][What are some good GitHub apps for Android?](https://www.reddit.com/r/androiddev/comments/gdvg9n/what_are_some_good_github_apps_for_android/)
-- url: https://www.reddit.com/r/androiddev/comments/gdvg9n/what_are_some_good_github_apps_for_android/
+## [8][AsyncAndroid YouTube - new channel containing short videos about various Android dev topics](https://www.reddit.com/r/androiddev/comments/gejvxl/asyncandroid_youtube_new_channel_containing_short/)
+- url: https://www.reddit.com/r/androiddev/comments/gejvxl/asyncandroid_youtube_new_channel_containing_short/
 ---
-I am looking for some good 3rd party GitHub apps to improve my workflow. Something which catches sudden increase in apk size, addition of unoptimized images, missing string translations, and lint checks. I have faced all these issues before. Any recommendations?
+If you are looking for interesting content about various topics, please check out a new channel we created.
+
+We have videos about a varied set of topics (content about Room, Motion Layout, Dagger, View Binding, Biometric prompt, Material Design and much more).
+
+We are planning on releasing new content every week.
+
+Hope everyone is doing well. We hope these short videos are useful and interesting for the community.
+
+https://www.youtube.com/channel/UC-qBi3QVQ8ow-QrIBeJi9ig
+
+@AsyncAndroid
+## [9][GDPR compliance for Android apps](https://www.reddit.com/r/androiddev/comments/gehpiy/gdpr_compliance_for_android_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/gehpiy/gdpr_compliance_for_android_apps/
+---
+Anyone who added GDPR compliance to his app, which steps did you take for this? Is it worth the hassle to create a brand of trust?
+## [10][ViewModel scopes cheatsheet](https://www.reddit.com/r/androiddev/comments/gejsye/viewmodel_scopes_cheatsheet/)
+- url: https://www.reddit.com/r/androiddev/comments/gejsye/viewmodel_scopes_cheatsheet/
+---
+[https://twitter.com/igorwojda/status/1245583711006896128](https://twitter.com/igorwojda/status/1245583711006896128)
+## [11][Android app design book](https://www.reddit.com/r/androiddev/comments/gej3im/android_app_design_book/)
+- url: https://www.reddit.com/r/androiddev/comments/gej3im/android_app_design_book/
+---
+Hi all,
+
+is there any book / pdf / article about the design and implementation of some Android app?  possibly linked with C++ libraries
+## [12][Will you recommend to use Navigation Architecture components for a new project? Any gotchas to be aware of ?](https://www.reddit.com/r/androiddev/comments/geg3ib/will_you_recommend_to_use_navigation_architecture/)
+- url: https://www.reddit.com/r/androiddev/comments/geg3ib/will_you_recommend_to_use_navigation_architecture/
+---
+I am planning to use nav components in a new [project](https://project.Is) .  Is it scalable ? Did you find any gotchas that need to be aware of ?

@@ -85,49 +85,49 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][I made a website, which compares the most popular Javascript frameworks in terms of Github development activities and is updated daily](https://www.reddit.com/r/javascript/comments/gdwj1u/i_made_a_website_which_compares_the_most_popular/)
+## [3][Modern JavaScript Cheatsheet](https://www.reddit.com/r/javascript/comments/geajlx/modern_javascript_cheatsheet/)
+- url: https://www.cyanhall.com/posts/notes/8.javascript-cheatsheet/
+---
+
+## [4][I made a website, which compares the most popular Javascript frameworks in terms of Github development activities and is updated daily](https://www.reddit.com/r/javascript/comments/gdwj1u/i_made_a_website_which_compares_the_most_popular/)
 - url: https://gitgitlog.com/compare/js-frontend
 ---
 
-## [4][ES2020: Everything You Need to Know](https://www.reddit.com/r/javascript/comments/gdvqil/es2020_everything_you_need_to_know/)
+## [5][[AskJS] Does anyone use generators? Why?](https://www.reddit.com/r/javascript/comments/gecx2j/askjs_does_anyone_use_generators_why/)
+- url: https://www.reddit.com/r/javascript/comments/gecx2j/askjs_does_anyone_use_generators_why/
+---
+Hi, I’ve been using javascript professionally for years, keeping up with the latest language updates and still  I’ve never used a generator function. I know how they work, but I don’t believe I’ve come across a reason where they are useful—but they must be there for a reason.
+
+Can someone provide me with a case where they’ve been useful? Would love to hear some real world examples.
+## [6][I made a client-side encryption wrapper for AWS S3](https://www.reddit.com/r/javascript/comments/gejmr4/i_made_a_clientside_encryption_wrapper_for_aws_s3/)
+- url: https://github.com/yyyyaaa/s3-encrypt-client.git
+---
+
+## [7][I published a patch release (v0.1.1) of the brainstorming-board library postit-js which fixes a nasty bug when deleting newly created elements.](https://www.reddit.com/r/javascript/comments/gejcml/i_published_a_patch_release_v011_of_the/)
+- url: https://postit-js-demo.netlify.app/
+---
+
+## [8][We open sourced React Flow: A library for rendering interactive flow-based graphs](https://www.reddit.com/r/javascript/comments/ge7uww/we_open_sourced_react_flow_a_library_for/)
+- url: https://webkid.io/blog/react-flow-node-based-graph-library/
+---
+
+## [9][Countable.js (Used for counting paragraphs, words)](https://www.reddit.com/r/javascript/comments/geir9s/countablejs_used_for_counting_paragraphs_words/)
+- url: https://theflowingfact.blogspot.com/2020/04/javascript-countablejs.ht
+---
+
+## [10][ES2020: Everything You Need to Know](https://www.reddit.com/r/javascript/comments/gdvqil/es2020_everything_you_need_to_know/)
 - url: https://www.martinmck.com/posts/es2020-everything-you-need-to-know/
 ---
 
-## [5][My quarantine project: Coverify - Create your own custom cover art for Spotify playlists.](https://www.reddit.com/r/javascript/comments/gdejhb/my_quarantine_project_coverify_create_your_own/)
-- url: http://coverify.now.sh/
+## [11][wtfjs v.1.9.0 is published with French translation!](https://www.reddit.com/r/javascript/comments/gehsu0/wtfjs_v190_is_published_with_french_translation/)
+- url: https://github.com/denysdovhan/wtfjs/blob/master/README-fr-fr.md
 ---
 
-## [6][A lightweight custom hook use-key-capture](https://www.reddit.com/r/javascript/comments/gdwers/a_lightweight_custom_hook_usekeycapture/)
-- url: https://github.com/pranesh239/use-key-capture
+## [12][[AskJS] Using JavaScript for technical interviews?](https://www.reddit.com/r/javascript/comments/ge3snv/askjs_using_javascript_for_technical_interviews/)
+- url: https://www.reddit.com/r/javascript/comments/ge3snv/askjs_using_javascript_for_technical_interviews/
 ---
+I have a technical interview coming up soon, and I'm planning on using JavaScript because I feel the most comfortable with it. Now, my concern is that do I need to avoiding over using some of the built-in linear time functions (i.e. splice, unshift, etc.), if there is a more optimized implementation without abusing the built-in functions.
 
-## [7][[AskJS] Anybody use Cypress for UI testing ?](https://www.reddit.com/r/javascript/comments/gdq3v6/askjs_anybody_use_cypress_for_ui_testing/)
-- url: https://www.reddit.com/r/javascript/comments/gdq3v6/askjs_anybody_use_cypress_for_ui_testing/
----
-Is there a way to share JS modules between tests and commands ? I am struggling to find a way.  Reference : [https://github.com/cypress-io/cypress/issues/6966](https://github.com/cypress-io/cypress/issues/6966)Thanks !
-## [8][I made a little audio player with Soundcloud-esque interactive waveforms with canvas](https://www.reddit.com/r/javascript/comments/gdras6/i_made_a_little_audio_player_with_soundcloudesque/)
-- url: https://dylanbussone.github.io/happy-little-sound-clouds/
----
+I was told by a senior software engineer/technical interviewer that if your solution isn't the most optimized, you're out. Is that also the case using JavaScript because I also heard that people who use JavaScript in real world projects, they rarely encounter performance issues, nor do they worry about what's the time complexity of the algo they implemented. (Ofc, if one's hitting it with double or triple for loops everywhere, that's a different story.)
 
-## [9][Patterns for async programming and async function optimization in JavaScript](https://www.reddit.com/r/javascript/comments/gdxsak/patterns_for_async_programming_and_async_function/)
-- url: https://medium.com/javascript-in-plain-english/patterns-for-async-programming-and-async-function-optimization-in-javascript-931cf49cadcd?source=friends_link&amp;sk=d176e777f509cad86d6fa1bee05b3068
----
-
-## [10][Simple and lightweight quadtree implementation to deal with 2D objects. For node/typescript/browser/...](https://www.reddit.com/r/javascript/comments/gdx1nf/simple_and_lightweight_quadtree_implementation_to/)
-- url: https://github.com/CorentinTh/quadtree-js
----
-
-## [11][Building a Simple Static Site with Parcel and Stimulus](https://www.reddit.com/r/javascript/comments/gdu7ju/building_a_simple_static_site_with_parcel_and/)
-- url: https://happyvalley.dev/building-a-simple-static-site-with-parcel-and-stimulus/
----
-
-## [12][[AskJS] Chances of landing an entry remote position?](https://www.reddit.com/r/javascript/comments/gdqsk2/askjs_chances_of_landing_an_entry_remote_position/)
-- url: https://www.reddit.com/r/javascript/comments/gdqsk2/askjs_chances_of_landing_an_entry_remote_position/
----
-Hey guys, so I recently had a question regarding how much knowledge I should have before trying to freelance and got some great feedback.
-
-[https://www.reddit.com/r/javascript/comments/gd178v/askjs\_how\_much\_knowledge\_to\_start\_freelancing/](https://www.reddit.com/r/javascript/comments/gd178v/askjs_how_much_knowledge_to_start_freelancing/)
-
-There's the link if anyone is interested in that. From everyone's responses I've gathered that as a newby it would probably be a good idea to look for a job in-house at a company to get some experience under my belt before I attempt to start freelancing.
-
-That being said, I'm curious about what the job market is looking like right now? How likely is it for me to land an entry level position that is also remote? Also how has the COVID-19 situation affected the job market. I'm definitely open to working in an office, but I figure currently that may not really be an option.
+All in all, any advice/tips for using JavaScript in technical interviews is appreciated!

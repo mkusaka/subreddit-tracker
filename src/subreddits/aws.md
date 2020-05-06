@@ -1,82 +1,93 @@
 # aws
-## [1][AWS VP &amp; Distinguished Engineer Tim Bray resigns over worker treatment](https://www.reddit.com/r/aws/comments/gde37f/aws_vp_distinguished_engineer_tim_bray_resigns/)
-- url: https://www.tbray.org/ongoing/When/202x/2020/04/29/Leaving-Amazon
+## [1][Live Stream Today: Building Serverless Fullstack Applications (AWS Lambda, Express, React &amp; More)](https://www.reddit.com/r/aws/comments/ge2knj/live_stream_today_building_serverless_fullstack/)
+- url: https://www.reddit.com/r/aws/comments/ge2knj/live_stream_today_building_serverless_fullstack/
 ---
+Hi all,
 
-## [2][Cache for JSON data?](https://www.reddit.com/r/aws/comments/gdwx9h/cache_for_json_data/)
-- url: https://www.reddit.com/r/aws/comments/gdwx9h/cache_for_json_data/
+I'm doing a live stream w/ AWS today on building serverless fullstack applications today at 2pm PT if you'd like to join!
+
+* **Stream:** [https://www.twitch.tv/aws](https://www.twitch.tv/aws)
+* **Project:** [https://github.com/serverless-components/fullstack-app](https://github.com/serverless-components/fullstack-app)
+## [2][Building AWS environment documentation](https://www.reddit.com/r/aws/comments/geiuhv/building_aws_environment_documentation/)
+- url: https://www.reddit.com/r/aws/comments/geiuhv/building_aws_environment_documentation/
 ---
-I am developing an app and one of the processes (which is critical) is invoking a web service which returns JSON information. Every invocation of this JSON service involves a cost (say 10p).
-
-The information returned (about a vehicle) I want to cache in AWS. If a customer returns to the app with the same vehicle details, then it can be retrieved from the cache and avoid the company being charged the fee.
-
-Is there a suitable service for this that would also be more performant? I was/am looking at something like S3 or Dynamo DB.
-
-Thanks!
-## [3][AWS ELB in two AZ's costs](https://www.reddit.com/r/aws/comments/gdwrt7/aws_elb_in_two_azs_costs/)
-- url: https://www.reddit.com/r/aws/comments/gdwrt7/aws_elb_in_two_azs_costs/
+Does anyone have a nice way of building some sort of documentation of a new environment? Like you walked into a new place and there was no documentation type of deal? Basically looking for a starting point vs reinventing the wheel here.
+## [3][AWS Lambda - Chalice/Zappa equivalents in other languages?](https://www.reddit.com/r/aws/comments/gek11y/aws_lambda_chalicezappa_equivalents_in_other/)
+- url: https://www.reddit.com/r/aws/comments/gek11y/aws_lambda_chalicezappa_equivalents_in_other/
 ---
-In Simply Month calculator i can type the number of ALB's that i want to calculate. Is ALB with a NIC in AZ1 and  a NIC in AZ2 for Multi AZ one ALB Loadbalancer regarding calculations or counts this as 2 ALBs?
-## [4][NoSQL Workbench for DynamoDB adds support for Linux--data modeling, querying, testing](https://www.reddit.com/r/aws/comments/gdm9ok/nosql_workbench_for_dynamodb_adds_support_for/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/05/nosql-workbench-for-dynamodb-adds-support-for-linux/
+Hi.
+
+Are there any equivalents of Zappa or Chalice frameworks in other languages, namely TypeScript or Java?
+
+
+
+
+(Zappa/Chalice are Python web app building frameworks. Instead of multiple Lambda functions, you only have one monolithic Lambda, which also contains the routing part inside. You target your "one-to-rule-them-all" function with ALB or API Gateway and voila. If you swap `zappa` for `flask` in your app and transform it into container, you can quickly make it run on ECS. This is useful if you'd like for example to start your project on Lambdas then easily migrate to containers when costs are too high/traffic patterns of your customers are known)
+## [4][How and when to use IAM for new services?](https://www.reddit.com/r/aws/comments/ge7qka/how_and_when_to_use_iam_for_new_services/)
+- url: https://www.reddit.com/r/aws/comments/ge7qka/how_and_when_to_use_iam_for_new_services/
 ---
+This is a dumb question, but I'm asking because I don't feel confident in how I should be using IAM. I feel like I understand the technical nature of IAM, just not the practical implementation of it in my day to day use of AWS.
 
-## [5][Having Trouble Mounting S3 Bucket to EC2 Instance Using s3fs](https://www.reddit.com/r/aws/comments/gdxgh3/having_trouble_mounting_s3_bucket_to_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/gdxgh3/having_trouble_mounting_s3_bucket_to_ec2_instance/
+Today I wanted to launch a third party cloud formation script. It created a lambda function, sns topic, and other small things.
+
+I feel like I should be using IAM to create a user with a minimum policy, and launch this script under that user. I'm not sure if this is really a practical use of IAM.
+
+I am curious how people typically use IAM/users when launching new services. Are there any general guidelines I should follow for "this is a situation I need a new IAM user/policy for"?
+## [5][New AL2 Elastic Beanstalk python environments use pipenv?](https://www.reddit.com/r/aws/comments/ge6y8w/new_al2_elastic_beanstalk_python_environments_use/)
+- url: https://www.reddit.com/r/aws/comments/ge6y8w/new_al2_elastic_beanstalk_python_environments_use/
 ---
-* Ubuntu 18.04 (ARM)
-* s3fs v1.86
-* I've double checked to ensure the user has a policy that allows access to the S3 bucket (I've actually given the account admin while I try to work through this)
-* EC2 instance has a role that allows access to the S3 bucket (again admin as I try to resolve this)
-* I created the password file with my access key ID and secret access key and CHMOD 600 for the password file
-* I run **sudo s3fs my-bucket /home/ubuntu/efs\_uploads -o passwd\_file=${HOME}/.passwd-s3fs -o dbglevel=info -f -o curldbg** and it runs until it hangs up after the following two lines 
+Just noticed this in the release notes: [https://i.imgur.com/1laNVXK.png](https://i.imgur.com/1laNVXK.png)
 
-\[INF\]  curl.cpp:RequestPerform(2455): HTTP response code 200
+I haven't really used pipenv, but from the occasional headlines/chatter I see, it sounds like a shitshow (and possibly dead?). So it's pretty surprising to find that the next gen EB platform is using it over pip (though I assume/hope pip is still available).
 
-\[INF\] curl.cpp:ReturnHandler(318): Pool full: destroy the oldest handler
-
-* In version 1.84 of s3fs it stopped on the first line and never reached the line about curl.cpp.ReturnHandler(318)...
-
-I've seen others post about this on GitHub but I haven't seen any solutions
-## [6][Clarity on EBS Incremental Snapshots &amp; Cross-Region Copy Pricing](https://www.reddit.com/r/aws/comments/gdxge4/clarity_on_ebs_incremental_snapshots_crossregion/)
-- url: https://www.reddit.com/r/aws/comments/gdxge4/clarity_on_ebs_incremental_snapshots_crossregion/
----
-Let's say I have a 10GB EBS volume, using 5GB of capacity. I take daily backups, where there is negligible change to the disk, and I copy these backups from Singapore to Sydney.
-
-Assumption #1: The original snapshot size is \~5GB as it only takes consumed data.
-
-Assumption #2: My daily Singapore snapshots, all together, consume only \~5GB as no changes are being made.
-
-Assumption #3: My daily Sydney snapshot copies, all together, consume only \~5GB as no changes are made **and** I'm only charged \~5GB of transfer to Sydney as all future backups have no change.
-
-I'm fairly confident in #1 and #2, and I'm completely unsure of #3.
-
-Any assistance would be wonderful, thanks!
-## [7][AWS VPC for Software Engineers](https://www.reddit.com/r/aws/comments/gdv6kv/aws_vpc_for_software_engineers/)
-- url: https://blog.deleu.dev/aws-vpc-for-software-engineers/
----
-
-## [8][Question on cost effective exporting of CloudWatch Logs to S3](https://www.reddit.com/r/aws/comments/gdo6mj/question_on_cost_effective_exporting_of/)
-- url: https://www.reddit.com/r/aws/comments/gdo6mj/question_on_cost_effective_exporting_of/
+I couldn't find any discussion on this. What are everyone's thoughts on this?
+## [6][How can I know what is the size of /tmp for MySQL in an RDS instance?](https://www.reddit.com/r/aws/comments/ge1jdc/how_can_i_know_what_is_the_size_of_tmp_for_mysql/)
+- url: https://www.reddit.com/r/aws/comments/ge1jdc/how_can_i_know_what_is_the_size_of_tmp_for_mysql/
 ---
 Hello,
 
-I setup a new service that has to write it's logs to AWS CloudWatch in order to be ingested into our SIEM.  I don't want to keep them inside CloudWatch for more than a few days due to the sheer size of the logs, so I want to automate exporting them to S3 for long term storage.
+We are trying to do a big query in one of our RDS instances, but we keep getting errors regarding a table being locked. I have searched high and low but seem to be hitting a wall (probably due to my knowledge or lack thereof). First, we had this error showing up in the logs:
 
-I know there are several methods to do this, with the following coming to mind:
+    09:09:08 UTC - mysqld got signal 11 ;
+    This could be because you hit a bug. It is also possible that this binary
+    or one of the libraries it was linked against is corrupt, improperly built,
+    or misconfigured. This error can also be caused by malfunctioning hardware.
+    We will try our best to scrape up some info that will hopefully help
+    diagnose the problem, but since we have already crashed,
+    something is definitely wrong and this may fail.
 
-* Lambda/Step Function to automate exporting to S3.
-* Kinesis Firehose
+Which only info I found was: [https://dba.stackexchange.com/questions/86915/mysqld-got-signal-11-its-my-fault-but-how-do-i-fix-it](https://dba.stackexchange.com/questions/86915/mysqld-got-signal-11-its-my-fault-but-how-do-i-fix-it) but, we are can't apply its fix.
 
-Which option is the most cost effective, at about \~200 events per second on average and growing?
+After that, we thought the query (which is doing a massive temp table with all the selects/joins) might be causing the storage to fall (we had less than 2% free). We've now fixed that, along some optimization in the query, and see the following error:
 
-  
+    [ERROR] /rdsdbbin/mysql/bin/mysqld: Incorrect key file for table '/rdsdbdata/tmp/#sql_616d_2'; try to repair it
+
+There's still plenty of free storage, so according to some other people facing the same problems, like for example [http://www.mysqlperformancetuning.com/a-fix-for-incorrect-key-file-for-table-mysql](http://www.mysqlperformancetuning.com/a-fix-for-incorrect-key-file-for-table-mysql) it's down to the free space of the /tmp dir.
+
+Which brings me to my original question. How do I know what is the size of /tmp? Is it possible to increase? Do we need to raise a ticket with AWS?
+
 Thanks!
-## [9][Webscraper on steroids, using 2,000 Lambda invokes to scan 1,000,000 websites in under 7 minutes.](https://www.reddit.com/r/aws/comments/gd6xss/webscraper_on_steroids_using_2000_lambda_invokes/)
-- url: /r/Python/comments/gcq18f/a_serverless_web_scraper_built_on_the_lambda/
+## [7][Concern of running SQL statements over network vs importing a dump?](https://www.reddit.com/r/aws/comments/ge15k4/concern_of_running_sql_statements_over_network_vs/)
+- url: https://www.reddit.com/r/aws/comments/ge15k4/concern_of_running_sql_statements_over_network_vs/
 ---
+I have an RDS instance (t4 large, provisioned IOPs up to 2500) where I'll have an application connect to. This application will run Flyway migrations against the database. The initial setup, these migrations could be up to almost 8 or 9 million lines or sql over a spam of a couple days. Is there a concern that with so much sql going at a high rate that some things could get "lost" over the network? Would it be safer to create the database as a localhost on some server then dump/import into RDS?
+## [8][How would you dynamically generate a gatsby site &amp; deploy it programmatically to s3?](https://www.reddit.com/r/aws/comments/ge85q1/how_would_you_dynamically_generate_a_gatsby_site/)
+- url: https://www.reddit.com/r/aws/comments/ge85q1/how_would_you_dynamically_generate_a_gatsby_site/
+---
+Lets say I have a web app with a form, that form contains data that I want to use to generate a simple gatsby page. How would I generate the gatsby sites on AWS?  
 
-## [10][Allowing external users to query redshift in browser](https://www.reddit.com/r/aws/comments/gdt8uh/allowing_external_users_to_query_redshift_in/)
-- url: https://www.reddit.com/r/aws/comments/gdt8uh/allowing_external_users_to_query_redshift_in/
+
+Right now i'm thinking I could pass the data to a lambda, and generate the site there, then save all of the output to s3. I just can't wrap my head around how I would generate the site in a lambda function?
+## [9][Stopping Cloudwatch Billing](https://www.reddit.com/r/aws/comments/ge3w57/stopping_cloudwatch_billing/)
+- url: https://www.reddit.com/r/aws/comments/ge3w57/stopping_cloudwatch_billing/
 ---
-We have our data stored in Redshift but recently were asked to find a solution to allow clients to query their own databases that we host (read access). Are there any  browser tools that allow this direct querying where we don't need to pay per query? (since we're already paying for redshift...) Let me know if I need to provide any additional information.
+Hello, I'm new to AWS, so I wasn't sure where to look. I created an endpoint from a sagemaker model that I then connected to the API gateway to do POST requests. I am not currently using the endpoint right now but will do so later, and in the meantime, Cloudwatch continues to log api requests, which results in me being billed. How can I stop Cloudwatch from logging these api requests?
+## [10][cal on lightsail](https://www.reddit.com/r/aws/comments/gebf70/cal_on_lightsail/)
+- url: https://www.reddit.com/r/aws/comments/gebf70/cal_on_lightsail/
+---
+greetings guys.   
+it seems lightsail only lets 2 users to rdp in.we require 3 NON ADMIN users to rdp simultaneously. so i need 1 cal or 3 cal ?  
+and where can i buy cal online?is it a permanent license or monthly or yearly ?   
+
+
+thank you for your time !

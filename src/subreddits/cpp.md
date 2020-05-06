@@ -119,53 +119,59 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][What libraries are typically used for developing GUI for software like Photoshop, Premiere, Blender etc...](https://www.reddit.com/r/cpp/comments/gdvbgd/what_libraries_are_typically_used_for_developing/)
+## [3][Statically checking C/C++ for unused return values](https://www.reddit.com/r/cpp/comments/geelbi/statically_checking_cc_for_unused_return_values/)
+- url: https://pmeerw.net/blog/programming/unused-return.html
+---
+
+## [4][Learning path for game development?Am I missing something?](https://www.reddit.com/r/cpp/comments/geh18v/learning_path_for_game_developmentam_i_missing/)
+- url: https://www.reddit.com/r/cpp/comments/geh18v/learning_path_for_game_developmentam_i_missing/
+---
+I have decided this path for game development.
+
+1) choose an engine. I am comfortable with c++. So, i have decided to learn unreal engine. 
+
+2) First I want to learn the algorithms used in game development. For that I am buying broquard books "game programming theory in c++".
+
+3) after that, i will dive into any good unreal engine course.
+
+4) make games.
+
+Can I add something else in this learning path?
+## [5][TheLartians/EmGlue - Glue C++ to your browser! Universal bindings for JavaScript using Glue and Embind.](https://www.reddit.com/r/cpp/comments/geitd1/thelartiansemglue_glue_c_to_your_browser/)
+- url: https://github.com/TheLartians/EmGlue
+---
+
+## [6][What libraries are typically used for developing GUI for software like Photoshop, Premiere, Blender etc...](https://www.reddit.com/r/cpp/comments/gdvbgd/what_libraries_are_typically_used_for_developing/)
 - url: https://www.reddit.com/r/cpp/comments/gdvbgd/what_libraries_are_typically_used_for_developing/
 ---
 I know most of those apps are written in C++ but I was wondering If someone knows what kind of libraries do these companies use to develop the GUI?
-## [4][Nifty Fold Expression Tricks](https://www.reddit.com/r/cpp/comments/gdvqiq/nifty_fold_expression_tricks/)
+## [7][C++ Development with Visual Studio Code (C++ extension, CMake Tools extension)](https://www.reddit.com/r/cpp/comments/gegthx/c_development_with_visual_studio_code_c_extension/)
+- url: https://youtu.be/_dXKSi70vJ0
+---
+
+## [8][Nifty Fold Expression Tricks](https://www.reddit.com/r/cpp/comments/gdvqiq/nifty_fold_expression_tricks/)
 - url: https://foonathan.net/2020/05/fold-tricks/#content
 ---
 
-## [5][C++Now 2020: Arthur O'Dwyer "A C++20 Magic Trick"](https://www.reddit.com/r/cpp/comments/gddv8z/cnow_2020_arthur_odwyer_a_c20_magic_trick/)
+## [9][What Are Your Speed Optimization Secrets?](https://www.reddit.com/r/cpp/comments/gefh4r/what_are_your_speed_optimization_secrets/)
+- url: https://www.reddit.com/r/cpp/comments/gefh4r/what_are_your_speed_optimization_secrets/
+---
+I know you. You've been coding C++ for a while now and have your tricks for how to make C++ run faster. I want to know your secrets to speed like tricks like C-style/C++ input reading desynchronization to make reading input faster. That's really the only one I know.
+
+**Please wise C++ masters, share your secret knowledge.**
+## [10][IDE providing autocompletion without a compilation database](https://www.reddit.com/r/cpp/comments/geeyu8/ide_providing_autocompletion_without_a/)
+- url: https://www.reddit.com/r/cpp/comments/geeyu8/ide_providing_autocompletion_without_a/
+---
+I often write code that uses non-standard C++ headers that are on my distro's PATH - implying that if I compiled the code it would execute perfectly. But, none of the editors/IDEs I use (vim, CLion, etc) properly highlight or provide autocompletions for the code provided by those header files - probably because I am not providing a compilation database. 
+
+I do not want to setup a CMake build to generate a compilation database for one-off scripts. 
+
+Are there any IDEs providing linting and autocompletions for header files on the PATH without having to provide a manually built compilation database?
+## [11][C++Now 2020: Arthur O'Dwyer "A C++20 Magic Trick"](https://www.reddit.com/r/cpp/comments/gddv8z/cnow_2020_arthur_odwyer_a_c20_magic_trick/)
 - url: https://www.youtube.com/watch?v=XO0p9zNCCDE
 ---
 
-## [6][The inevitable demise of Qt? (Qt, Open Source and corona)](https://www.reddit.com/r/cpp/comments/gdwk64/the_inevitable_demise_of_qt_qt_open_source_and/)
-- url: https://mail.kde.org/pipermail/kde-community/2020q2/006098.html
----
-
-## [7][Using MessagePack to Share complex Types Between C++ and JavaScript](https://www.reddit.com/r/cpp/comments/gdppyf/using_messagepack_to_share_complex_types_between/)
+## [12][Using MessagePack to Share complex Types Between C++ and JavaScript](https://www.reddit.com/r/cpp/comments/gdppyf/using_messagepack_to_share_complex_types_between/)
 - url: https://www.syntaxsuccess.com/viewarticle/sharing-complex-types-between-c++-webassembly-and-javascript
 ---
 
-## [8][Pure Virtual C++ 2020 - Videos](https://www.reddit.com/r/cpp/comments/gdfmve/pure_virtual_c_2020_videos/)
-- url: https://www.youtube.com/playlist?list=PLReL099Y5nRdHYz4JwB0bq1kaVw2yGDag&amp;disable_polymer=1
----
-
-## [9][std::find() and memchr() Optimizations](https://www.reddit.com/r/cpp/comments/gdd1mn/stdfind_and_memchr_optimizations/)
-- url: https://gms.tf/stdfind-and-memchr-optimizations.html
----
-
-## [10][CppDepend v2020.1 Released! - Dependency Graph Completely Rebuilt, new Linux version, CUDA support](https://www.reddit.com/r/cpp/comments/gdvwvf/cppdepend_v20201_released_dependency_graph/)
-- url: https://isocpp.org/blog/2020/05/cppdepend-v2020.1-released-dependency-graph-completely-rebuilt-cppdepend-on
----
-
-## [11][CoreCpp Online meetup today](https://www.reddit.com/r/cpp/comments/gdux6s/corecpp_online_meetup_today/)
-- url: https://www.reddit.com/r/cpp/comments/gaqdxq/were_welcoming_you_to_corecpp/?utm_source=share&amp;utm_medium=web2x
----
-
-## [12][Challenge yourself and socialize in a positive environment](https://www.reddit.com/r/cpp/comments/gdwggg/challenge_yourself_and_socialize_in_a_positive/)
-- url: https://www.reddit.com/r/cpp/comments/gdwggg/challenge_yourself_and_socialize_in_a_positive/
----
- 
-
-Hello, I'm happy to introduce our community to you. We are a programming Discord Community that focuses on intensively helping (mentoring) beginner, intermediate and experienced developers.  
-We answer questions, discuss the latest technologies and debate about the best software architectures. We do not only limit ourselves to programming: also mathematics and other computer science topics (such as hardware and networking) are something we talk about on a daily basis.
-
-Our passionate, professional developers try to answer all your questions as well as possible.  
-We do also host numerous events in which you can compete or collaborate to get to your desired result.
-
-(Obviously, we are a community, not a company: we do not charge any money for our services and are in no way planning to earn any money.)
-
-We hope to see you in our community :) Invitation link: [https://discordapp.com/invite/aJwTAgS](https://discordapp.com/invite/aJwTAgS)

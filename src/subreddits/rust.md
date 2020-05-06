@@ -23,25 +23,91 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/gd6gvk/whats_everyone_working_on_this_week_192020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-19-2020/42034?u=llogiq)!
-## [3][An experimental asynchronous runtime based on io-uring](https://www.reddit.com/r/rust/comments/gdrrl0/an_experimental_asynchronous_runtime_based_on/)
-- url: https://github.com/quininer/ritsu
+## [3][Notes on io-uring](https://www.reddit.com/r/rust/comments/gehh0q/notes_on_iouring/)
+- url: https://boats.gitlab.io/blog/post/io-uring/
 ---
 
-## [4][SuckIT, a fast, multithreaded website downloader](https://www.reddit.com/r/rust/comments/gdwuat/suckit_a_fast_multithreaded_website_downloader/)
+## [4][This Week in Rust 337](https://www.reddit.com/r/rust/comments/geagy0/this_week_in_rust_337/)
+- url: https://this-week-in-rust.org/blog/2020/05/05/this-week-in-rust-337/
+---
+
+## [5][Rust + Webassembly is dope](https://www.reddit.com/r/rust/comments/gecfvq/rust_webassembly_is_dope/)
+- url: https://github.com/justinmimbs/rs-asteroids
+---
+
+## [6][This Month in Rust OSDev (April 2020)](https://www.reddit.com/r/rust/comments/gefxh7/this_month_in_rust_osdev_april_2020/)
+- url: https://rust-osdev.com/this-month/2020-04/
+---
+
+## [7][no_std async/await - soon on stable](https://www.reddit.com/r/rust/comments/ge0pwz/no_std_asyncawait_soon_on_stable/)
+- url: https://ferrous-systems.com/blog/stable-async-on-embedded/
+---
+
+## [8][MeiliSearch in production: taking it to the next level](https://www.reddit.com/r/rust/comments/gehtao/meilisearch_in_production_taking_it_to_the_next/)
+- url: https://blog.meilisearch.com/meilisearch-in-production-taking-it-to-the-next-level/
+---
+
+## [9][lz-fear: a pure-Rust no-unsafe LZ4 implementation](https://www.reddit.com/r/rust/comments/ge3kee/lzfear_a_purerust_nounsafe_lz4_implementation/)
+- url: https://www.reddit.com/r/rust/comments/ge3kee/lzfear_a_purerust_nounsafe_lz4_implementation/
+---
+https://github.com/main--/rust-lz-fear
+
+* no unsafe code
+* blazingly fast decompression (as fast as the C implementation)
+* byte-perfect compressor output (except for some weird edge cases where it's still correct but slightly larger)
+* MIT license
+* simple and relatively high-level implementation, much easier to read than the heavily optimized C code
+
+Posting here because I wrote this library out of covid-induced boredom and now I don't really know what to do with it. If this sounds like something you would either want to use or work on (or both), here you go.
+
+TODOs:
+
+* add more compression algorithms (LZ4-HC and maybe an even heavier approach like https://create.stephan-brumme.com/smallz4/)
+* API work (ergonomics and documentation)
+* no_std support? The implementation currently allocates a few `Vec&lt;u8&gt;` buffers, but all of those are basically constant.
+* 1.0 release
+## [10][Setting up a Rust Dev Environment in 2020?](https://www.reddit.com/r/rust/comments/gegrep/setting_up_a_rust_dev_environment_in_2020/)
+- url: https://www.reddit.com/r/rust/comments/gegrep/setting_up_a_rust_dev_environment_in_2020/
+---
+Hi!
+
+I've recently started my Rust journey and have discovered that many of the tutorials etc. on the internet about setting up the dev environment are quite dated (from 2017/2018) and thus make no mention of new tools and changes (we have rust-analyzer now, some tools have become deprecated etc.)
+
+I noticed that the [Rust-lang Community wiki](https://runrust.miraheze.org/wiki/Main_Page) has a space for a page on "Setup your workspace for Rust" but the page does not currently exist.
+
+Therefore, I thought I'd ask the community about their preferred modern Rust dev environments so I can learn more and set-up my env and also contribute it to the wiki.
+
+**tl;dr:**  
+
+* What is your recommended Rust set-up in 2020?   
+* How would one go about setting it up?  
+
+I'll curate the responses and contribute them to the wiki.
+## [11][[post] The problems with implementing an async Mutex](https://www.reddit.com/r/rust/comments/ge9qqp/post_the_problems_with_implementing_an_async_mutex/)
+- url: https://github.com/Diggsey/posts/tree/master/async-mutexes
+---
+
+## [12][SuckIT, a fast, multithreaded website downloader](https://www.reddit.com/r/rust/comments/gdwuat/suckit_a_fast_multithreaded_website_downloader/)
 - url: https://www.reddit.com/r/rust/comments/gdwuat/suckit_a_fast_multithreaded_website_downloader/
 ---
-## Introduction 
-[SuckIT](https://github.com/skallwar/suckit) is a multithreaded, open source web downloader written in Rust. It aims to recursively download webpages and allow offline browsing.
+## 
+
+https://preview.redd.it/8bc45135fyw41.png?width=640&amp;format=png&amp;auto=webp&amp;s=a9d830daf5959817be553e09b91e13727221f020
+
+## Introduction
+
+[SuckIT](https://github.com/skallwar/suckit) is a multithreaded, open source web downloader written in Rust. It aims to recursively download webpages and allow offline browsing. Offered by u/Skallwar and u/Arcanin14
 
 ## Benchmark
-As of right now, it's a _little_ faster (about 3460%) than HTTrack on a single core, 60 second run on http://book.toscrape.com/
 
-name    | pages downloaded
-------- | ----------------
-suckit  |             2422
-httrack |               70
+As of right now, it's a *little* faster (about 3460%) than HTTrack on a single core, 60 second run on [http://books.toscrape.com/](http://books.toscrape.com/)
 
-http://book.toscrape.com/ is downloaded in 75s for 1 thread, 37s for 2 threads and 19s for 4 threads. It's more or less a linear time reduction
+|name|pages downloaded|
+|:-|:-|
+|suckit|2422|
+|httrack --disable-security-limits|70|
+
+[http://books.toscrape.com/](http://books.toscrape.com/) is downloaded in 75s for 1 thread, 37s for 2 threads and 19s for 4 threads. It's more or less a linear time reduction
 
 ## Future
 
@@ -50,89 +116,3 @@ Some features are missing, such as a random delay between downloads (to avoid IP
 Any feedback, reviews or PRs are welcome !
 
 Enjoy :)
-## [5][Microsoft wants Rust instead of Go in the cloud](https://www.reddit.com/r/rust/comments/gdwxw1/microsoft_wants_rust_instead_of_go_in_the_cloud/)
-- url: https://www.reddit.com/r/rust/comments/gdwxw1/microsoft_wants_rust_instead_of_go_in_the_cloud/
----
- [https://www.en24.news/en/2020/05/secure-programming-language-microsoft-wants-rust-instead-of-go-in-the-cloudhtml](https://www.en24.news/en/2020/05/secure-programming-language-microsoft-wants-rust-instead-of-go-in-the-cloudhtml)
-## [6][Restart accel project, GPGPU Framework for Rust: 0.3.0 Release](https://www.reddit.com/r/rust/comments/gdmhoq/restart_accel_project_gpgpu_framework_for_rust/)
-- url: https://users.rust-lang.org/t/restart-accel-project-gpgpu-framework-for-rust-0-3-0-release/42087
----
-
-## [7][rust-analyzer Changelog #23](https://www.reddit.com/r/rust/comments/gdbrht/rustanalyzer_changelog_23/)
-- url: https://rust-analyzer.github.io/thisweek/2020/05/04/changelog-23.html
----
-
-## [8][Reinventing Asynchronous Rust](https://www.reddit.com/r/rust/comments/gdocgk/reinventing_asynchronous_rust/)
-- url: https://www.reddit.com/r/rust/comments/gdocgk/reinventing_asynchronous_rust/
----
-[https://aldaronlau.com/reinventing-async-rust/](https://aldaronlau.com/reinventing-async-rust/)
-## [9][cargo crev and cargo audit 🦀 the second online meetup ☁](https://www.reddit.com/r/rust/comments/gdmlp6/cargo_crev_and_cargo_audit_the_second_online/)
-- url: https://estada.ch/2020/4/30/cargo-crev-and-cargo-audit-the-second-online-meetup/
----
-
-## [10][Point of WebGPU on native](https://www.reddit.com/r/rust/comments/gdbgoc/point_of_webgpu_on_native/)
-- url: http://kvark.github.io/web/gpu/native/2020/05/03/point-of-webgpu-native.html
----
-
-## [11][An ESP8266/ESP32 Over The Air (OTA) firmware server, written in Rust!](https://www.reddit.com/r/rust/comments/gdd030/an_esp8266esp32_over_the_air_ota_firmware_server/)
-- url: https://github.com/Evander12345/rota
----
-
-## [12][I made a hashmap that is keyed by types and maps vectors of the key-types](https://www.reddit.com/r/rust/comments/gdwmp1/i_made_a_hashmap_that_is_keyed_by_types_and_maps/)
-- url: https://www.reddit.com/r/rust/comments/gdwmp1/i_made_a_hashmap_that_is_keyed_by_types_and_maps/
----
-I was surprised I didn't need to use any unsafe code.
-
-    use core::any::TypeId;
-    use std::any::Any;
-    use std::collections::hash_map::HashMap;
-
-    struct VecStorage {
-        vecs: HashMap&lt;TypeId, Box&lt;dyn Any&gt;&gt;
-    }
-
-    impl VecStorage {
-        pub fn new() -&gt; Self {
-            VecStorage {
-                vecs: HashMap::new(),
-            }
-        }
-
-        pub fn push&lt;T: 'static&gt;(&amp;mut self, val: T) {
-            let key = (&amp;val as &amp;dyn Any).type_id();
-            let vec: Option&lt;&amp;mut Vec&lt;T&gt;&gt; = self.vecs.get_mut(&amp;key).map(|x| {
-                x.as_mut()
-                    .downcast_mut::&lt;Vec&lt;T&gt;&gt;()
-                    .expect("failed to downcast")
-            });
-            match vec {
-                Some(v) =&gt; v.push(val),
-                None =&gt; {
-                    let mut v = Vec::new();
-                    v.push(val);
-                    self.vecs.insert(key, Box::new(v));
-                }
-            }
-        }
-
-        pub fn get&lt;T: 'static&gt;(&amp;mut self, index: usize) -&gt; Option&lt;&amp;mut T&gt; {
-            let key = TypeId::of::&lt;T&gt;();
-            let vec: &amp;mut Vec&lt;T&gt; = self.vecs.get_mut(&amp;key)?.as_mut().downcast_mut::&lt;Vec&lt;T&gt;&gt;()?;
-            vec.get_mut(index)
-        }
-    }
-
-    fn main() {
-        let mut storage = VecStorage::new();
-        storage.push(100);
-        storage.push("Hello world".to_owned());
-        storage.push(200);
-        println!("{:?}", storage.get::&lt;i32&gt;(0));
-        println!("{:?}", storage.get::&lt;String&gt;(0));
-        println!("{:?}", storage.get::&lt;i32&gt;(1));
-        println!("{:?}", storage.get::&lt;i32&gt;(2));
-        // Some(100)
-        // Some("Hello world")
-        // Some(200)
-        // None
-    }

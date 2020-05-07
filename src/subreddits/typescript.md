@@ -22,7 +22,49 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][importing with "@"](https://www.reddit.com/r/typescript/comments/gef6u2/importing_with/)
+## [2][Auto generate type-checker from Typescript types?](https://www.reddit.com/r/typescript/comments/ges5r9/auto_generate_typechecker_from_typescript_types/)
+- url: https://www.reddit.com/r/typescript/comments/ges5r9/auto_generate_typechecker_from_typescript_types/
+---
+Does a library exist that automatically generates code to validate your Typescript types. I'm pretty sure the answer is no, but just wanna confirm before I build a babel-macro that does this.
+
+Would people find such a tool useful?
+
+Example:
+
+`interface Foo {`
+
+`bar: string`
+
+`}`
+
+`const validator = createValidator("Foo") // compile time babel macro`
+
+`// validator is now a function that can be called at runtime to check whether an object matches the Foo interface`
+## [3][Documenting API responses](https://www.reddit.com/r/typescript/comments/gewoym/documenting_api_responses/)
+- url: https://www.reddit.com/r/typescript/comments/gewoym/documenting_api_responses/
+---
+Curious how other people handle API responses. The apps I develop the front end for are built with mostly API integrations. 
+
+Sometimes I think it's easier to just do 
+
+```
+{ [key: string]: any; }
+```
+
+I have built out the response types for the convenience of intellicense.
+## [4][How to handle async restful response return ?](https://www.reddit.com/r/typescript/comments/gf0jnr/how_to_handle_async_restful_response_return/)
+- url: https://www.reddit.com/r/typescript/comments/gf0jnr/how_to_handle_async_restful_response_return/
+---
+I have a case where request comes in trigger some processing, but the processing is async, and I do want to response return the result(success or not) from the processing. How can I handle this case?
+
+  
+Here I cannot simply use await to stop for processing, because the piece of code in the req &amp; res level is just sending a message to message queue and actually it needs to wait the consumer to fully process it.  
+
+
+My thought is to add eventemitter and listen on event in the req &amp; res level, and emit the event after the consumer processed it. (My service and consumer are in same node process). But How can I handle different requests? There could be racing problems, any better ideas?
+
+Thanks
+## [5][importing with "@"](https://www.reddit.com/r/typescript/comments/gef6u2/importing_with/)
 - url: https://www.reddit.com/r/typescript/comments/gef6u2/importing_with/
 ---
 I'm trying to find a best practice here. What's best?
@@ -35,15 +77,40 @@ or like this:
 This works when I run the `tsc` transpiler.
 
 Are there any advantages?
-## [3][How Our Stack Evolved in 10 Years](https://www.reddit.com/r/typescript/comments/gek2mm/how_our_stack_evolved_in_10_years/)
-- url: https://typescript-open-source-resources.s3.us-east-2.amazonaws.com/the-stack-evolution.htm
+## [6][Which is the preferred way to write a function? And can I mark one as pure somehow?](https://www.reddit.com/r/typescript/comments/gekwdq/which_is_the_preferred_way_to_write_a_function/)
+- url: https://www.reddit.com/r/typescript/comments/gekwdq/which_is_the_preferred_way_to_write_a_function/
 ---
+The TypeScript docs present functions in the style
 
-## [4][ts-transformer-properties-rename - a custom transfomer for TypeScript which renames all private and internal properties, so you can mangle them with uglify-js/terser and reduce size of your bundles](https://www.reddit.com/r/typescript/comments/ge56dn/tstransformerpropertiesrename_a_custom_transfomer/)
-- url: https://github.com/timocov/ts-transformer-properties-rename
----
+    const add: (x: number, y: number) =&gt; number = function (
+      x: number,
+      y: number
+    ): number {
+      return x + y;
+    };
 
-## [5][Foal TS - May release (version 1.8) - Dependency injection with interfaces, permission management, service initialization](https://www.reddit.com/r/typescript/comments/geg8up/foal_ts_may_release_version_18_dependency/)
+or as an arrow function
+
+    const add: (x: number, y: number) =&gt; number = (x: number, y: number): number =&gt;
+      x + y;
+
+`add` is declared with a type signature (if that's the correct term, I'm new to this), then a function is assigned with its own type signature.
+
+But this doesn't seem to add any information over the much more readable options of either letting `add`'s type be inferred from a function literal that's already got fully specified types
+
+    const add = (x: number, y: number): number =&gt; x + y;
+
+Or declaring a type on `add` and then giving it a function literal without specified types
+
+    const add: (x: number, y: number) =&gt; number = (x, y) =&gt; x + y;
+
+My questions:
+
+- Is there any reason to use the more verbose example #1 over my preference #3?
+- Is there any way I can have the TypeScript compiler guarantee that my function is pure and doesn't refer to or modify any outside data? I couldn't see this in the docs but I also don't fully understand everything I can see, so I thought I might be missing features or not understanding the power of it.
+
+Thanks to anyone who can offer advice!
+## [7][Foal TS - May release (version 1.8) - Dependency injection with interfaces, permission management, service initialization](https://www.reddit.com/r/typescript/comments/geg8up/foal_ts_may_release_version_18_dependency/)
 - url: https://www.reddit.com/r/typescript/comments/geg8up/foal_ts_may_release_version_18_dependency/
 ---
 Foal TS framework version 1.8 is officially released!
@@ -91,7 +158,31 @@ And the must: it has more than 11,000 lines of documentation.
 [https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
 
 \#TypeScript #JavaScript #NodeJS #FoalTS #DI #JWT #permissions
-## [6][How do you declare a variable of type T that extends type U without "losing" type T?](https://www.reddit.com/r/typescript/comments/ge96nf/how_do_you_declare_a_variable_of_type_t_that/)
+## [8][Convert string to enum values](https://www.reddit.com/r/typescript/comments/gekbfj/convert_string_to_enum_values/)
+- url: https://www.reddit.com/r/typescript/comments/gekbfj/convert_string_to_enum_values/
+---
+In my database, I have a string saved like this: `"[Value 1, Value 2, Value 3]"`    
+
+In my frontend I have an enum that looks like this:    
+
+    export enum Values {
+        Value1 = 'Value 1',
+        Value2 = 'Value 2',
+        Value3 = 'Value 3'
+    }
+
+My question is when I get this string from my backend, how can I convert it into my enum? Is this possible?
+## [9][Has anyone written a Typescript to Documentation generator?](https://www.reddit.com/r/typescript/comments/geo0ih/has_anyone_written_a_typescript_to_documentation/)
+- url: https://www.reddit.com/r/typescript/comments/geo0ih/has_anyone_written_a_typescript_to_documentation/
+---
+This has been a big point of frustration for me. Typescript has all of the parameters, types &amp; 95% of what you need to automatically generate documentation. But... I can't find a tool that actually reads the types &amp; generates documentation from them.
+
+Does something like this exist?
+## [10][ts-transformer-properties-rename - a custom transfomer for TypeScript which renames all private and internal properties, so you can mangle them with uglify-js/terser and reduce size of your bundles](https://www.reddit.com/r/typescript/comments/ge56dn/tstransformerpropertiesrename_a_custom_transfomer/)
+- url: https://github.com/timocov/ts-transformer-properties-rename
+---
+
+## [11][How do you declare a variable of type T that extends type U without "losing" type T?](https://www.reddit.com/r/typescript/comments/ge96nf/how_do_you_declare_a_variable_of_type_t_that/)
 - url: https://www.reddit.com/r/typescript/comments/ge96nf/how_do_you_declare_a_variable_of_type_t_that/
 ---
 e.g. I want to declare some record `foo`, where the values are all of a certain type `Bar`, so `foo` must extend `Record&lt;string, Bar&gt;` (`{ [ key: string ]: Bar}`).
@@ -109,63 +200,3 @@ However, (as I made clear in the function name) we are declaring a totally usele
 I feel that there must be a better way.
 
 This seems like it should be so simple, but I can't really think of an efficient way to do it.
-## [7][Ultimate Vim TypeScript Setup](https://www.reddit.com/r/typescript/comments/gdv3al/ultimate_vim_typescript_setup/)
-- url: https://pragmaticpineapple.com/ultimate-vim-typescript-setup/
----
-
-## [8][Incorrect module resolution causing type errors](https://www.reddit.com/r/typescript/comments/ge8bqd/incorrect_module_resolution_causing_type_errors/)
-- url: https://www.reddit.com/r/typescript/comments/ge8bqd/incorrect_module_resolution_causing_type_errors/
----
-Hi all, I'm trying to import a package ([filestack-js](https://github.com/filestack/filestack-js)) into my typescript code which has multiple entry points defined in its `package.json` file.
-
-When trying to run the typescript compiler i get type errors relating to not being able to find  '`@types/node'` (which I've excluded from the project as it causes other type problems with our browser typings).
-
-&amp;#x200B;
-
-I did some digging and saw that the typescript compiler is using the '`main`' entry point as described in the `package.json` file. However, the package authors only intend this entry point to be used in a node js environment. I see that they have defined a '`browser`' entry point that doesn't have these problems but the compiler is favoring main instead. Anyway I can force this resolution?
-
-&amp;#x200B;
-
-I imagine this isn't a unique problem, how do others resolve these conflicts?
-
-&amp;#x200B;
-
-If I set `skipLibCheck` to `true` the errors go away but that feels like overkill to me. I'm also using webpack to bundle my compiled js files and that happily resolves to the correct source code.
-## [9][I have just released Jackson-js: Powerful JavaScript decorators to serialize/deserialize objects into JSON and vice versa](https://www.reddit.com/r/typescript/comments/ge1jth/i_have_just_released_jacksonjs_powerful/)
-- url: https://medium.com/@pichillilorenzo/df952454cf?source=friends_link&amp;sk=a65bd247eca2f95fdfddda34447a6db6
----
-
-## [10][VIM Users: ale vs tsuquyomi?](https://www.reddit.com/r/typescript/comments/ge7y2d/vim_users_ale_vs_tsuquyomi/)
-- url: https://vi.stackexchange.com/questions/25111/typescript-ale-vs-tsuquyomi
----
-
-## [11][Difference between property and method in Typescript](https://www.reddit.com/r/typescript/comments/ge7evn/difference_between_property_and_method_in/)
-- url: https://www.reddit.com/r/typescript/comments/ge7evn/difference_between_property_and_method_in/
----
-What is the difference between a property and method in Typescript? I am trying to add a property to each of my functions in a class. It works fine with anonymous functions but with methods tsserver doesn't display the correct type. Any help would be appreciated here is a [stackblitz](https://stackblitz.com/edit/typescript-1jgdjg)
-
-    type Func = (...args: any[]) =&gt; any;
-    
-    /** Add a property to the function */
-    interface Spy&lt;Fn extends Func&gt; {
-      (...params: Parameters&lt;Fn&gt;): ReturnType&lt;Fn&gt;;
-      extraProperty: string;
-    }
-    /** Loop through all properties of T, if the property is a function, make it a spy */
-    type MakeSpys&lt;T&gt; = { [x in keyof T]: T[x] extends Func ? Spy&lt;T[x]&gt; : false };
-    
-    class Class {
-      method(): null {
-        return null;
-      }
-      property = (): null =&gt; null;
-    }
-    
-    let _: Class['method']; // type: () =&gt; null (expected)
-    let __: Class['property']; //type : () =&gt; null (expected)
-    let spyObj: MakeSpys&lt;Class&gt;;
-    spyObj.property; // type: Spy&lt;() =&gt; null&gt; (expected)
-    spyObj.method; // type: method(): null (why?????)
-    const method = spyObj.method; // type: Spy&lt;() =&gt; null&gt; (expected)
-
-spyObj.method should be of type Spy&lt;() =&gt; null&gt; so that the reader is aware that there was a property added to the function

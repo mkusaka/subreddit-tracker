@@ -39,258 +39,129 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][RSpec and Minitest](https://www.reddit.com/r/rails/comments/gedoal/rspec_and_minitest/)
+## [3][Notes from DHH's RailsConf keynote interview](https://www.reddit.com/r/rails/comments/geyr61/notes_from_dhhs_railsconf_keynote_interview/)
+- url: https://www.reddit.com/r/rails/comments/geyr61/notes_from_dhhs_railsconf_keynote_interview/
+---
+For those of you who haven't had the chance to watch yet:
+
+https://www.joshuawood.net/notes/2020-railsconf-dhh-keynote
+
+One of the parts I liked best was this comment on repeating history as an industry:
+
+&gt; The amnesia is partially caused by so many new people entering the industry. They haven’t experienced it any other way.
+
+There are a ton of new people who haven’t been exposed to the joy of Rails because JavaScript is mainstream and/or someone told them not to bother.
+
+The “Rails Way” is completely foreign to many of the new JavaScript developers I’ve met. Don’t assume people get it just because it’s been around forever. Spread the word:
+
+&gt; Ruby is great because you can know a little JavaScript and then jump to Ruby, understand it, and own the full stack.
+
+What do y'all think about the state of Ruby and Rails in 2020?
+## [4][Please help. Running out of hairs to pull.](https://www.reddit.com/r/rails/comments/geza8v/please_help_running_out_of_hairs_to_pull/)
+- url: https://www.reddit.com/r/rails/comments/geza8v/please_help_running_out_of_hairs_to_pull/
+---
+This is likely more of an OS issue than it is a dev/coding  issue, but I trust you guys' judgement. I am constantly having to reboot my terminal (running on zsh since apple forced it) to run the devise:install and all other gem variants. 
+
+Here's what happens: 
+
+I do something, whatever on the terminal. Then, I run one of the install operators. It works fine. Next time I try it - just finished running the simple\_forms install and now doing devise views - it just freezes up and does nothing. Opening a new tab and running it there doesn't work. Need to cmd + Q out of that b\*\*\*\* and reopen the terimnal, then cd back into the app, then it works fine. I've done this now 6 times in the last 45 minutes. I will be bald by the end of the night if I can't fix this nuance.
+## [5][Where should decorator methods that don't belong to a model go?](https://www.reddit.com/r/rails/comments/gf5r1v/where_should_decorator_methods_that_dont_belong/)
+- url: https://www.reddit.com/r/rails/comments/gf5r1v/where_should_decorator_methods_that_dont_belong/
+---
+Hi all,
+
+I've got pretty familiar with using the draper gem now to store decorator methods for my models in order to clean up my views.  
+
+
+But now I have the following method in my home controller:
+
+    request.location.city ? @location = request.location.city : @location = "..."
+
+And this is how I'm calling it in my home page:
+
+    placeholder: "Search for results in #{@location}",
+
+The controller seems like the wrong place to put logic purely related to the view.  
+
+
+I can't see anything in the draper documentation about decorator methods for views. It's all about decorator methods for models.  
+
+
+So I'm wondering, where should I be putting a method like the one just mentioned?  
+
+
+Thanks
+## [6][Is Everyday Rails Testing with RSpec a Good Read for a Mid-Level Developer?](https://www.reddit.com/r/rails/comments/gf4gqo/is_everyday_rails_testing_with_rspec_a_good_read/)
+- url: https://www.reddit.com/r/rails/comments/gf4gqo/is_everyday_rails_testing_with_rspec_a_good_read/
+---
+As it says on the tin, I'd be keen to hear from developers with, say, 2+ years of experience on whether they would recommend the book?
+
+I appreciate there will be many elements that are for juniors but if it also caters beyond that then I'll be purchasing a copy.
+
+Thanks!
+## [7][Should I use multi-tenancy in my project ?](https://www.reddit.com/r/rails/comments/geo7h6/should_i_use_multitenancy_in_my_project/)
+- url: https://www.reddit.com/r/rails/comments/geo7h6/should_i_use_multitenancy_in_my_project/
+---
+So, I was taking this course in which  you code a SaaS Management Project. This app uses milia gem for multi tenenacy. There is two types of user. Company and Employee. A company can create a project and then invite employees to be part of this project. And in the projects you can upload files, texts., etc...
+
+Unfortunately I couldn’t get through this course's section due the very outdated content such as milia gem and rails 4.
+
+I was looking forward to code this app because I could imagine my undergraduate thesis project being built using the very bases of this SaaS management project app. 
+
+I’m trying to code a simple video sharing plataform where a professor could have their own private “YouTube channel” where their could invite their students to participate and watch the lectures. 
+
+So Insted of Employee and Company, my models would be Professors and Students.
+
+So, I’m looking for this “privacy” characteristic. That you only would be able to see the content if you were invited or something like that. 
+
+The multi tenancy for my project is the correct approach?
+## [8][How do you allow users to select between multiple currencies?](https://www.reddit.com/r/rails/comments/gepybq/how_do_you_allow_users_to_select_between_multiple/)
+- url: https://www.reddit.com/r/rails/comments/gepybq/how_do_you_allow_users_to_select_between_multiple/
+---
+We have an app with ~5 languages but we would like to support more currencies.
+
+So someone in the Netherlands could choose the Euro as the currency and have the app in English etc.
+
+No need to convert between currencies, basically just the symbol + the correct formatting.
+
+We are looking for a way to add multiple languages into a `select` field, and still be able to use formatting.
+
+This is how we control which languages are available
+
+```ruby
+# config/application.rb
+config.i18n.available_locales = [:en, :de, :is, :fr, :es, :'en-GB']
+```
+
+`&lt;%= number_to_currency(123456, locale: 'en') %&gt;`
+
+`&lt;%= Money.from_amount(123456, 'USD').format %&gt;`
+
+I thought this was a trivial thing but searching for hours gave me nothing concrete, I must be missing something, therefor I am asking here.
+
+Do we need gems like Money or `currency_select` for this?
+## [9][New to Rails and MVC, looking for understanding about where certain logic should live?](https://www.reddit.com/r/rails/comments/gep01i/new_to_rails_and_mvc_looking_for_understanding/)
+- url: https://www.reddit.com/r/rails/comments/gep01i/new_to_rails_and_mvc_looking_for_understanding/
+---
+I'm a newb dev...most of the work I've done has been in PHP (I used to work at a WordPress company).  
+
+
+When I tried to create my first app in Rails, it was incredibly confusing.  I ended up using Sinatra instead at the suggestion of a colleague since it's more forgiving of bad practices, and that helped me understand how controllers, routes, and views work (I don't have a DB so I've not used models yet).  
+
+
+Now I'm trying in Rails again and even though I know roughly how things are working now, I still don't really understand best practices.  What/How much logic should live in a view vs a model?  
+
+
+I guess I understand roughly what Rails is doing technically, but not best practices/theory.  Where might I go to better understand what should live where?
+## [10][RSpec and Minitest](https://www.reddit.com/r/rails/comments/gedoal/rspec_and_minitest/)
 - url: https://www.reddit.com/r/rails/comments/gedoal/rspec_and_minitest/
 ---
 Do you create RSpec and Minitest in your app? or you choose only one?
-## [4][Database design for rails application](https://www.reddit.com/r/rails/comments/gefv84/database_design_for_rails_application/)
+## [11][Database design for rails application](https://www.reddit.com/r/rails/comments/gefv84/database_design_for_rails_application/)
 - url: https://www.reddit.com/r/rails/comments/gefv84/database_design_for_rails_application/
 ---
 This is my [database design](https://dbdiagram.io/d/5ea1b31e39d18f5553fe19e6). I am not sure if my associations are correct. Should I use composite keys or foreign keys? Can you guys tell me what is wrong with my database design. Thankss
-## [5][Creating model to controller to view or create another model and make associations](https://www.reddit.com/r/rails/comments/geatl7/creating_model_to_controller_to_view_or_create/)
+## [12][Creating model to controller to view or create another model and make associations](https://www.reddit.com/r/rails/comments/geatl7/creating_model_to_controller_to_view_or_create/)
 - url: https://www.reddit.com/r/rails/comments/geatl7/creating_model_to_controller_to_view_or_create/
 ---
 Hello there, I am done creating my unit testing for my first created model. What to do next? Do I need to create the next model and associations of each or I will continue build my model until controller and view?
-## [6][Saving JSON data from shopify_app Webhook?](https://www.reddit.com/r/rails/comments/ge4wzn/saving_json_data_from_shopify_app_webhook/)
-- url: https://www.reddit.com/r/rails/comments/ge4wzn/saving_json_data_from_shopify_app_webhook/
----
-Hi -
-
-I am somewhat of a novice as it relates to API's and JSON.
-
-**MY Goal:**
-
-I am playing around with the shopify\_app gem, and am having trouble saving JSON data to my local db.
-
-**For some background on my setup:**
-
-1. Created an embeddable shopify app using the [shopify\_app gem](https://github.com/shopify/shopify_app)
-2. Have a webhook for orders/create that I generated in the config/initializers/shopify\_app.rb file
-3. Created a job that works with the webhook. Whereas whenever a shopify store that has my app creates an order, shopify sends over the order data via JSON to my webhook
-
-app/controllers/webhooks\_controller.rb
-
-    class WebhooksController &lt; ApplicationController
-        include ShopifyApp::WebhookVerification
-        skip_before_action :verify_authenticity_token, raise: false
-    
-        def orders_create
-          params.permit!
-          OrdersCreateJob.perform_now(shop_domain: shop_domain, webhook: webhook_params.to_h)
-          head :no_content
-        end
-    
-        def orders_create_save
-          @order = Order.new(shopify_order_id: webhook_params[:webhook][:id])
-          @order.save
-        end
-    
-        private
-          def webhook_params
-            params.except(:controller, :action, :type)
-          end
-    end
-
-app/jobs/orders\_create\_job.rb
-
-    class OrdersCreateJob &lt; ActiveJob::Base
-      def perform(shop_domain:, webhook:)
-        shop = Shop.find_by(shopify_domain: shop_domain)
-    
-        if shop.nil?
-          logger.error("#{self.class} failed: cannot find shop with domain '#{shop_domain}'")
-          return
-        end
-    
-        shop.with_shopify_session do
-        end
-      end
-    end
-
-config/initializers/shopify\_app.rb
-
-    ShopifyApp.configure do |config|
-      config.application_name = "My Shopify App"
-      config.api_key = ENV['SHOPIFY_API_KEY']
-      config.secret = ENV['SHOPIFY_API_SECRET']
-      config.old_secret = ""
-      config.scope = "read_products, read_orders, read_customers" 
-      config.embedded_app = true
-      config.after_authenticate_job = false
-      config.api_version = "2020-04"
-      config.shop_session_repository = 'Shop'
-      config.webhooks = [
-        {topic: 'orders/create', address: 'https://12345.ngrok.io/webhooks/orders_create', format: 'json'},
-        # {topic: 'orders/paid', address: 'https://12345.ngrok.io/webhooks/orders_paid', format: 'json'},
-        # {topic: 'orders/create', address: 'https://12345.ngrok.io/webhooks/orders_create'}
-      ]
-    end
-    
-    ShopifyApp::Utils.fetch_known_api_versions                        # Uncomment to fetch known api versions from shopify servers on boot
-    ShopifyAPI::ApiVersion.version_lookup_mode = :raise_on_unknown    # Uncomment to raise an error if attempting to use an api version that was not previously known
-
-config/routes.rb
-
-    Rails.application.routes.draw do
-      mount ShopifyApp::Engine, at: '/'
-    
-      root :to =&gt; 'home#index'
-      post '/webhooks/orders_create', :to =&gt; 'webhooks#orders_create'
-      get '/webhooks/orders_create', to: 'webhooks#orders_create_save'
-    end
-
-Any thoughts on this would be helpful. Thank you very much!
-
-**Edit:**
-
-Order (belongs\_to :shop) schema:
-
-      create_table "orders", force: :cascade do |t|
-        t.string "shopify_order_id", null: false
-        t.string "shopify_order_name", default: ""
-        t.datetime "shopify_order_created_at"
-        t.integer "shop_id"
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.index ["shop_id"], name: "index_orders_on_shop_id"
-        t.index ["shopify_order_id"], name: "index_orders_on_shopify_order_id", unique: true
-      end
-
-&amp;#x200B;
-## [7][Nested form not showing up.](https://www.reddit.com/r/rails/comments/ge3imk/nested_form_not_showing_up/)
-- url: https://www.reddit.com/r/rails/comments/ge3imk/nested_form_not_showing_up/
----
-Hi, I'm currently working on a project and possible employee is using to see if they'll hire me. I've pretty much finished the test with time to spare and am just trying to add some extra fluff.
-
-The whole codebase is [here](https://github.com/Kutomore/music-event-application) but I'll write the relevant info now.
-
-Basically I'm trying to setup the registration form so the user will both create his account and his profile at the same time, which in theory should be pretty simple.
-
-But no matter what I do, I can't get the "profile" for to show up on the registration form.
-
-&lt;h2&gt;Sign up&lt;/h2&gt;    
-
-
-    &lt;%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %&gt;
-      &lt;%= render "devise/shared/error_messages", resource: resource %&gt;
-      &lt;div class="field"&gt;
-        &lt;%= f.label :email %&gt;&lt;br /&gt;
-        &lt;%= f.email_field :email, autofocus: true, autocomplete: "email" %&gt;
-      &lt;/div&gt;
-      &lt;div class="field"&gt;
-        &lt;%= f.label :password %&gt;
-        &lt;% if u/minimum_password_length %&gt;
-        &lt;em&gt;(&lt;%= u/minimum_password_length %&gt; characters minimum)&lt;/em&gt;
-        &lt;% end %&gt;&lt;br /&gt;
-        &lt;%= f.password_field :password, autocomplete: "new-password" %&gt;
-      &lt;/div&gt;
-      &lt;div class="field"&gt;
-        &lt;%= f.label :password_confirmation %&gt;&lt;br /&gt;
-        &lt;%= f.password_field :password_confirmation, autocomplete: "new-password" %&gt;
-      &lt;/div&gt;
-      &lt;%= f.fields_for :profile_attributes,@profile = Profile.new do |ff|%&gt;
-        &lt;div class="field"&gt;
-          &lt;%= ff.text_field :name, placeholder: 'Name' %&gt;
-        &lt;/div&gt;
-        &lt;div class="field second-step"&gt;
-          &lt;%= ff.text_field :email, placeholder: 'Email' %&gt;
-        &lt;/div&gt;
-        &lt;div class="field second-step"&gt;
-          &lt;%= ff.text_field :phone, placeholder: 'Phone' %&gt;
-        &lt;/div&gt;
-        &lt;div class="field second-step"&gt;
-          &lt;%= ff.number_field :gender, placeholder: 'Gender' %&gt;
-        &lt;/div&gt;
-        &lt;div class="field second-step mb-5"&gt;
-          &lt;%= ff.text_field :birthdate, placeholder: 'Birthdate' %&gt;
-        &lt;/div&gt;
-      &lt;% end %&gt;
-      &lt;div class="actions"&gt;
-        &lt;%= f.submit "Sign up" %&gt;
-      &lt;/div&gt;
-    &lt;% end %&gt;
-    
-    &lt;%= render "devise/shared/links" %&gt;
-
-This is the whole code for the view. User belongs\_to profile and accepts\_nested\_attributes for it. I've tried building the relationship with `.build_profile` by overriding the devise controller in the routes. I've tried setting it up as it currently is `@profile =` [`Profile.new`](https://Profile.new). But the problem persists, no matter what I do the form won't show up, only the user fields are visible.
-
-Anyone got any ideas what might be causing this? (Ruby 2.6.3 with Rails 6.0.2)
-
-&amp;#x200B;
-
-edit 1 - I've again tried with the `resource.build_profile` setup, to no avail, but with a pry in the controller I was able to confirm that the profile is indeed being built on the controller, but still, it doesn't show up.
-
-&amp;#x200B;
-
-edit 2 - Found the issue, basically the controller was setup like 
-
-      def new
-        super
-        resource.build_profile
-      end
-
-Which was rendering the view before I was able to build the profile, I was using super since I didn't want to overwrite the default behaviour, but it seems that I had to, anyway, thanks ppl.
-## [8][How do you make the routing as private?](https://www.reddit.com/r/rails/comments/geawq5/how_do_you_make_the_routing_as_private/)
-- url: https://www.reddit.com/r/rails/comments/geawq5/how_do_you_make_the_routing_as_private/
----
-Hello, I have a case here 
-User has many Rooms , and Roms belongs to User
-In the Rooms table I have a column PIN 
-So when people into that room, people must insert the PIN into that Room
-In my routes.rb I put resources :rooms 
-
-So it gonna have route "localhost:3000/rooms/:id"
-
-If user know the Id of the rooms or just put dummy I'd in that routes, they might be able to access that Room 
-
-So how to make that Room only be able if people insert PIN into that Rooms ?
-
-Should we add more PIN params =  "localhost:3000/rooms/:id/:pin"  ? 
-
-Would it gonna make SQL injection ? To believe of that params on that routes,?
-## [9][Anyone here using tailwindui? Thinking of pulling the trigger](https://www.reddit.com/r/rails/comments/gdn2w7/anyone_here_using_tailwindui_thinking_of_pulling/)
-- url: https://www.reddit.com/r/rails/comments/gdn2w7/anyone_here_using_tailwindui_thinking_of_pulling/
----
-I really like tailwindcss, and im thinking of getting tailwindui. It would save me alot of time in the design process. Anyone working with tailwindui? How has it changed your productivity?
-## [10][Testing testing testing](https://www.reddit.com/r/rails/comments/gdo3kx/testing_testing_testing/)
-- url: https://www.reddit.com/r/rails/comments/gdo3kx/testing_testing_testing/
----
-Hi all, I'm fairly new to Rails but experienced in other languages.
-
-Something I'm finding difficult is testing in Rails. Out of the box there are just so many types of tests and so I have so many questions.
-
-1) MiniTest or RSpec? Every project I've seen in my career has used RSpec, do I really need to learn both?
-
-2) Why so many types of spec? Request specs, controller specs, model specs, job specs, service specs, I've probably missed some! Do I need to learn them all? 
-
-How? 
-
-Not to sound petty but the RSpec documentation website is one of the worst websites I've ever encountered with regards to the volume of information on there (not much). I say this as someone who has had to learn and digest other testing frameworks in other languages such as PHP and JS.
-
-3) Shoulda? Or shouldn't? I keep seeing Shoulda popup in projects but then friends tell me "DON'T USE THAT CRAP". Is it good to use or not? If not, why not?
-
-4) Factory bot? Is this bad? Similar to Shoudla, people seem to dislike it.
-
-5) Are there any decent resources out there with plenty of examples of how to write good tests, in the most recent syntax with modern tools? I keep seeing examples online with "the old RSpec syntax" showing something like `obj.stub()`
-
-6) Do you all really, actually T,D,D? As in, you honestly, 100%, seriously write tests first, then code, then refractor, etc? Everyone I've met in my Rails career journey says they like to TDD but then in practice when pairing or whatever, they go guns blazing writing or debugging code without even looking at the tests until later.
-
-7) Any other wisdom you can offer with regards to being a testing ninja? It's already confusing enough with all of the various _types_ of tests (unit, integration, feature, end to end, etc) but then Rails adds another level of complexity for me with all of the various styles and syntaxes and stuff.
-
-Thanks in advance!
-## [11][Verify identity of user](https://www.reddit.com/r/rails/comments/gdr2sq/verify_identity_of_user/)
-- url: https://www.reddit.com/r/rails/comments/gdr2sq/verify_identity_of_user/
----
-Hey guys... I’ve been trying to integrate an authentication system to verify if a given user is in fact a student from my university. I’m having a really hard time finding a good documentation on it. 
-
-I looked into omniauth and it seems like the way to go but I’m super confused on how to integrate it with my university login. Does anyone here have any experience with integrating such a custom verification system?
-## [12][How to Build a Twitter Clone with rails, ActionCable and React](https://www.reddit.com/r/rails/comments/gdjgd6/how_to_build_a_twitter_clone_with_rails/)
-- url: https://www.reddit.com/r/rails/comments/gdjgd6/how_to_build_a_twitter_clone_with_rails/
----
-A week or so ago, a video about making a Twitter Clone with Rails CableReady and StimulusReflex hit the web. While I think it is really cool what those teams are doing, I am a little more old school (in JS years &lt;/sarcasm&gt;) and just use React.
-
-&amp;#x200B;
-
-I figured you all would like to see a tutorial on a clone of the clone with React and bare ActionCable
-
-[https://robrace.dev/build-a-twitter-clone-with-rails-actioncable-and-react/](https://robrace.dev/build-a-twitter-clone-with-rails-actioncable-and-react/)

@@ -19,100 +19,139 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/g9a5sn/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (19/2020)?](https://www.reddit.com/r/rust/comments/gd6gvk/whats_everyone_working_on_this_week_192020/)
-- url: https://www.reddit.com/r/rust/comments/gd6gvk/whats_everyone_working_on_this_week_192020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-19-2020/42034?u=llogiq)!
-## [3][Notes on io-uring](https://www.reddit.com/r/rust/comments/gehh0q/notes_on_iouring/)
-- url: https://boats.gitlab.io/blog/post/io-uring/
----
-
-## [4][This Week in Rust 337](https://www.reddit.com/r/rust/comments/geagy0/this_week_in_rust_337/)
+## [2][This Week in Rust 337](https://www.reddit.com/r/rust/comments/geagy0/this_week_in_rust_337/)
 - url: https://this-week-in-rust.org/blog/2020/05/05/this-week-in-rust-337/
 ---
 
-## [5][Rust + Webassembly is dope](https://www.reddit.com/r/rust/comments/gecfvq/rust_webassembly_is_dope/)
-- url: https://github.com/justinmimbs/rs-asteroids
+## [3][Buttplug Sex Toy Control Project](https://www.reddit.com/r/rust/comments/gezz84/buttplug_sex_toy_control_project/)
+- url: https://buttplug.io/
 ---
 
-## [6][This Month in Rust OSDev (April 2020)](https://www.reddit.com/r/rust/comments/gefxh7/this_month_in_rust_osdev_april_2020/)
-- url: https://rust-osdev.com/this-month/2020-04/
+## [4][Look who made it front and center for a new Microsoft/GitHub announcement!](https://www.reddit.com/r/rust/comments/geoaf8/look_who_made_it_front_and_center_for_a_new/)
+- url: https://i.redd.it/3n5mzytqh6x41.png
 ---
 
-## [7][no_std async/await - soon on stable](https://www.reddit.com/r/rust/comments/ge0pwz/no_std_asyncawait_soon_on_stable/)
-- url: https://ferrous-systems.com/blog/stable-async-on-embedded/
+## [5][KAS GUI 0.4 release](https://www.reddit.com/r/rust/comments/gf42ip/kas_gui_04_release/)
+- url: https://github.com/kas-gui/kas
 ---
 
-## [8][MeiliSearch in production: taking it to the next level](https://www.reddit.com/r/rust/comments/gehtao/meilisearch_in_production_taking_it_to_the_next/)
-- url: https://blog.meilisearch.com/meilisearch-in-production-taking-it-to-the-next-level/
+## [6][Embedded async/await in the real world: The Polymer Keyboard](https://www.reddit.com/r/rust/comments/geuzk0/embedded_asyncawait_in_the_real_world_the_polymer/)
+- url: https://www.reddit.com/r/rust/comments/geuzk0/embedded_asyncawait_in_the_real_world_the_polymer/
+---
+I've had this in the works for far too long. It stalled a bit when I took a ~8 month break from it, but it's finally complete(ish)! At any rate, it's complete enough to have supplanted the ErgoDox as my daily driver.
+
+Overall, my experience has been extremely positive! Being able to abstract the core logic over familiar `Read`, `Write`, `Sink`, and `Stream` traits helps immensely for being able to test and reason about the code. I suspect that my IO/Timer Future abstractions have some flaws, but they work well enough until someone who actually knows what they're doing builds some better ones. The beauty of having an abstract core is that it should allow for a drop-in replacement of the IO backend!
+
+Overview blog post:
+[The Rest of the Keyboard](https://josh.robsonchase.com/rest-of-the-keyboard)
+
+It's a little light on actual Rust stuff, but I got a little overwhelmed with everything I could have gone into more detail about.
+## [7][has anyone used this (rust notebooks) for projects in the real world?](https://www.reddit.com/r/rust/comments/gf28is/has_anyone_used_this_rust_notebooks_for_projects/)
+- url: https://shahinrostami.com/posts/programming/rust-notebooks/setup-anaconda-jupyter-and-rust/
 ---
 
-## [9][lz-fear: a pure-Rust no-unsafe LZ4 implementation](https://www.reddit.com/r/rust/comments/ge3kee/lzfear_a_purerust_nounsafe_lz4_implementation/)
-- url: https://www.reddit.com/r/rust/comments/ge3kee/lzfear_a_purerust_nounsafe_lz4_implementation/
+## [8][Rust Analyzer is now in official Arch repos](https://www.reddit.com/r/rust/comments/gejsho/rust_analyzer_is_now_in_official_arch_repos/)
+- url: https://www.reddit.com/r/rust/comments/gejsho/rust_analyzer_is_now_in_official_arch_repos/
 ---
-https://github.com/main--/rust-lz-fear
+I'd been maintaining Rust Analyzer AUR (Arch User Repository) packages since the [first binary release](https://www.reddit.com/r/rust/comments/eo5bs2/rustanalyzer_changelog_7_with_binary_releases/fe9gxu2) in January, but since today it's in official repos:
 
-* no unsafe code
-* blazingly fast decompression (as fast as the C implementation)
-* byte-perfect compressor output (except for some weird edge cases where it's still correct but slightly larger)
-* MIT license
-* simple and relatively high-level implementation, much easier to read than the heavily optimized C code
+&gt; polyzen [1] filed a deletion request for rust-analyzer [2]:
 
-Posting here because I wrote this library out of covid-induced boredom and now I don't really know what to do with it. If this sounds like something you would either want to use or work on (or both), here you go.
+&gt; This package has been added to the repos. Thank you.
 
-TODOs:
+&gt; [1] https://aur.archlinux.org/account/polyzen  
+&gt; [2] https://aur.archlinux.org/pkgbase/rust-analyzer
 
-* add more compression algorithms (LZ4-HC and maybe an even heavier approach like https://create.stephan-brumme.com/smallz4/)
-* API work (ergonomics and documentation)
-* no_std support? The implementation currently allocates a few `Vec&lt;u8&gt;` buffers, but all of those are basically constant.
-* 1.0 release
-## [10][Setting up a Rust Dev Environment in 2020?](https://www.reddit.com/r/rust/comments/gegrep/setting_up_a_rust_dev_environment_in_2020/)
-- url: https://www.reddit.com/r/rust/comments/gegrep/setting_up_a_rust_dev_environment_in_2020/
----
-Hi!
+To install it or replace AUR package:
 
-I've recently started my Rust journey and have discovered that many of the tutorials etc. on the internet about setting up the dev environment are quite dated (from 2017/2018) and thus make no mention of new tools and changes (we have rust-analyzer now, some tools have become deprecated etc.)
+    pacman -S rust-analyzer
 
-I noticed that the [Rust-lang Community wiki](https://runrust.miraheze.org/wiki/Main_Page) has a space for a page on "Setup your workspace for Rust" but the page does not currently exist.
+and you're good to go.
 
-Therefore, I thought I'd ask the community about their preferred modern Rust dev environments so I can learn more and set-up my env and also contribute it to the wiki.
-
-**tl;dr:**  
-
-* What is your recommended Rust set-up in 2020?   
-* How would one go about setting it up?  
-
-I'll curate the responses and contribute them to the wiki.
-## [11][[post] The problems with implementing an async Mutex](https://www.reddit.com/r/rust/comments/ge9qqp/post_the_problems_with_implementing_an_async_mutex/)
-- url: https://github.com/Diggsey/posts/tree/master/async-mutexes
 ---
 
-## [12][SuckIT, a fast, multithreaded website downloader](https://www.reddit.com/r/rust/comments/gdwuat/suckit_a_fast_multithreaded_website_downloader/)
-- url: https://www.reddit.com/r/rust/comments/gdwuat/suckit_a_fast_multithreaded_website_downloader/
+edit: [relevant PR](https://github.com/rust-analyzer/rust-analyzer/pull/4333)
+## [9][my first time programming ever...question about something that doesnt matter...](https://www.reddit.com/r/rust/comments/gf4nu1/my_first_time_programming_everquestion_about/)
+- url: https://www.reddit.com/r/rust/comments/gf4nu1/my_first_time_programming_everquestion_about/
 ---
-## 
+so, i made my first attempt at learning programming...after i successfully compiled and ran it, i wondered how big the compiled application actually was...so i just made an empty .rs file and tried to compile it, and it didnt work...so i just did this:
 
-https://preview.redd.it/8bc45135fyw41.png?width=640&amp;format=png&amp;auto=webp&amp;s=a9d830daf5959817be553e09b91e13727221f020
+fn main () {
 
-## Introduction
+}
 
-[SuckIT](https://github.com/skallwar/suckit) is a multithreaded, open source web downloader written in Rust. It aims to recursively download webpages and allow offline browsing. Offered by u/Skallwar and u/Arcanin14
+&amp;#x200B;
 
-## Benchmark
+and after i compiled it, it was 2.6 Mb...my question is, what does a compiled application actually have in it? like, did rust compile nothing, and it has built in safechecks and error codes that it spits out even if nothing is in the actual code i wrote? just curious...thanks!!!
+## [10][color-eyre: a colorful error reporter based on color-backtrace and eyre is now available on crates.io](https://www.reddit.com/r/rust/comments/gf69mv/coloreyre_a_colorful_error_reporter_based_on/)
+- url: https://crates.io/crates/color-eyre
+---
 
-As of right now, it's a *little* faster (about 3460%) than HTTrack on a single core, 60 second run on [http://books.toscrape.com/](http://books.toscrape.com/)
+## [11][Many of Herb Sutter's C++ talks are surprisingly relevant to Rust](https://www.reddit.com/r/rust/comments/geqfhi/many_of_herb_sutters_c_talks_are_surprisingly/)
+- url: https://www.reddit.com/r/rust/comments/geqfhi/many_of_herb_sutters_c_talks_are_surprisingly/
+---
+I don't write much C++ myself, but I find that listening to Herb Sutter's talks about the language's evolution (past, present, and future) is extremely informative. What C++ I know, I learned more than a decade ago. It turns out that a lot of things have changed since then, often in ways that bear a striking similarity to Rust. I wanted to make a list of some highlights that I've noticed:
 
-|name|pages downloaded|
-|:-|:-|
-|suckit|2422|
-|httrack --disable-security-limits|70|
+**[Essentials of Modern C++ Style (2014)](https://youtu.be/xnqTKD8uD64)**: There are several parallels to Rust in this talk. At 27m45s, there's a slide that explicitly discusses "lifetimes" and "ownership". There's also a long discussion of move semantics, which works somewhat differently in C++ but addresses similar problems.
 
-[http://books.toscrape.com/](http://books.toscrape.com/) is downloaded in 75s for 1 thread, 37s for 2 threads and 19s for 4 threads. It's more or less a linear time reduction
+**[Making Exceptions More Affordable and Usable (2019)](https://youtu.be/ARYP83yNAWk)**: Discusses a proposal for a new exception throwing mechanism. These errors would be statically typed, and at 1h4m35s there's a slide describing a hypothetical explicit `try` syntax that would visually highlight function calls that could fail. Sutter explicitly calls out the similarity to Rust's `Result` type, though he doesn't mention the `?` operator. There's also a long discussion of how memory allocation failure is handled in C++, and how that might change in the future, which has also been a tricky topic in Rust since before 1.0.
 
-## Future
+**[Writing Good C++14... By Default (2015)](https://youtu.be/hEx5DNLWGgA)**: Discusses a proposal for defining "safe" and "unsafe" subsets of C++. At 41m42s there's a demo of a static analysis tool that's very similar to Rust's borrow checker, and then there's a high level discussion of lifetime inference and annotations.
 
-Some features are missing, such as a random delay between downloads (to avoid IP ban) or user agent support but they will come soon.
+**[Atomic Weapons (2012)](https://youtu.be/A8eCGOqgvH4)**: Rust atomics and C++ atomics are very similar. This talk is a deep dive into what the different atomic orderings mean and why they're defined the way they are. If you hear the term "memory model" and feel like you kinda sorta know what that means, but maybe not very concretely, this talk is extremely clarifying.
+## [12][Init large array of struct and mutable static](https://www.reddit.com/r/rust/comments/gf5eww/init_large_array_of_struct_and_mutable_static/)
+- url: https://www.reddit.com/r/rust/comments/gf5eww/init_large_array_of_struct_and_mutable_static/
+---
+Hello everyone,  
+with the purpose of learning rust I've decided to develop a simple address book but I'm facing some issues and I'd like to know which can be a good approach to write this code.  
+Please see my code below:
 
-Any feedback, reviews or PRs are welcome !
+    struct Contact {
+        name: String,
+        id: u32,
+        phone: u32,
+    }
+    
+    impl&lt;'a&gt; Contact {
+        fn new() -&gt; &amp;'a Contact {
+            let c = &amp;mut address_book[idx];
+    
+            c.id = id as u32;
+            c.phone = 0123456789;
+            id += 1;
+            c
+        }
+    }
+    
+    static mut address_book: [Contact; 2] = [
+        Contact {name:"Unknown".to_string(), id:0, phone:0},
+        Contact {name:"Unknown".to_string(), id:0, phone:0},
+    ];
+    static mut id: usize = 0
 
-Enjoy :)
+
+I've declared a simple Contact structure with few fields, declared an array of contacts and a function that should update some fields of a contact through its reference and return it.
+
+What's unclear to me is how I can declare a large array without initializing every element.  
+I was expecting to be able something like:
+
+    static mut address_book: [Contact; 128] = [
+        Default::default()
+    ]
+
+The only solution I found is to use the \`Vec&lt;T&gt;\` type but I'd prefer to allocate this array on the stack.
+
+Another issue is that, as the compiler says, the use of mutable static is unsafe and require an unsafe block:
+
+    error[E0133]: use of mutable static is unsafe and requires unsafe function or block
+      --&gt; src/main.rs:10:35
+       |
+    10 |         let c = &amp;mut address_book[id];
+       |                                   ^^^ use of mutable static
+       |
+       = note: mutable statics can be mutated by multiple threads: aliasing violations or data races will cause undefined behavior
+    
+
+I think that I should use a box here, but not sure becase I haven't tried yet.
+
+I'm looking forward to reading your clarifications, thanks!

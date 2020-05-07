@@ -31,41 +31,79 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android dynamic feature modules + Navigation Component is finally solved 😁](https://www.reddit.com/r/androiddev/comments/geg22f/android_dynamic_feature_modules_navigation/)
-- url: https://www.reddit.com/r/androiddev/comments/geg22f/android_dynamic_feature_modules_navigation/
----
-Navigation Component + Dynamic feature was a very painful combination for a long time.  Fortunately, the new 2.3.x version of the navigation library (still alpha) solves dynamic module navigation by introducing `DynamicNavHostFragment` and `&lt;include-dynamic...` tag.
-
-&amp;#x200B;
-
-Check this PR for concrete implementation [https://github.com/igorwojda/android-showcase/pull/98/files](https://github.com/igorwojda/android-showcase/pull/98/files) (`NavHostFragment` \-&gt; `DynamicNavHostFragment`)
-
-&amp;#x200B;
-
-More info:
-
-[https://developer.android.com/guide/navigation/navigation-dynamic](https://developer.android.com/guide/navigation/navigation-dynamic)
-## [4][All Permission in android displayed neatly.](https://www.reddit.com/r/androiddev/comments/ge0642/all_permission_in_android_displayed_neatly/)
-- url: https://i.redd.it/pk8ncoasjvw41.png
+## [3][Circular Determinate Progress View - A highly customizable progress view with built in animations, gradient support and more](https://www.reddit.com/r/androiddev/comments/gew4o4/circular_determinate_progress_view_a_highly/)
+- url: https://gfycat.com/softgargantuancaecilian
 ---
 
-## [5][My app has been suspended. Any advice on what I can do?](https://www.reddit.com/r/androiddev/comments/gehub1/my_app_has_been_suspended_any_advice_on_what_i/)
-- url: https://www.reddit.com/r/androiddev/comments/gehub1/my_app_has_been_suspended_any_advice_on_what_i/
+## [4][Implementing Dark Theme in Android](https://www.reddit.com/r/androiddev/comments/gf5cg5/implementing_dark_theme_in_android/)
+- url: https://infinum.com/the-capsized-eight/implementing-dark-theme-in-android
 ---
- We’ve had our app suspended since we sell tobacco products. We were selling tobacco products in a legal and local law complaint way for many years, we warn the user that it is prohibited to sell tobacco to anyone under the age of 21, and we require the driver to check the customer’s ID when delivering the tobacco products.
 
-Right now we’re removed all our tobacco products on our app and are trying to appeal the suspension. Google suggests that we reupload the app under a new app and package name, but we’ll be going through the hassle of informing the existing users who have the original to download a new app, and might have to accept that some users will refuse to download the new app.
-
-Since the issue was a content issue, we’ve already taken the measure to remove all tobacco products and this should be reflected on existing users. Is there a chance for us to retain our existing package name and app name?
-## [6][Join us for #Android11: The Beta Launch Show!](https://www.reddit.com/r/androiddev/comments/gejz31/join_us_for_android11_the_beta_launch_show/)
+## [5][Join us for #Android11: The Beta Launch Show!](https://www.reddit.com/r/androiddev/comments/gejz31/join_us_for_android11_the_beta_launch_show/)
 - url: https://www.youtube.com/watch?v=gqJEcy57hA8
 ---
 
-## [7][I experience issues with Play Console downloads counting from yesterday 11AM. Anyone else?](https://www.reddit.com/r/androiddev/comments/gef99j/i_experience_issues_with_play_console_downloads/)
-- url: https://i.redd.it/r6joafrph3x41.jpg
+## [6][Gradle 6.4 Released](https://www.reddit.com/r/androiddev/comments/gertht/gradle_64_released/)
+- url: https://docs.gradle.org/6.4/release-notes.html
 ---
 
-## [8][AsyncAndroid YouTube - new channel containing short videos about various Android dev topics](https://www.reddit.com/r/androiddev/comments/gejvxl/asyncandroid_youtube_new_channel_containing_short/)
+## [7][Is it good practice to hardcoding width and height in ImageView?](https://www.reddit.com/r/androiddev/comments/gf3kmc/is_it_good_practice_to_hardcoding_width_and/)
+- url: https://www.reddit.com/r/androiddev/comments/gf3kmc/is_it_good_practice_to_hardcoding_width_and/
+---
+Is it good practice to hardcoding width and height in ImageView? 
+
+Like max/minWidth and max/minHeight not working in my case.   
+
+
+`&lt;androidx.appcompat.widget.AppCompatImageView`  
+ `android:id="@+id/imv_icon"`  
+ `android:layout_width="wrap_content"`  
+ `android:layout_height="wrap_content"`  
+ `android:adjustViewBounds="true"`  
+ `android:background="@drawable/background"`  
+ `android:maxWidth="143dp"`  
+ `android:maxHeight="143dp"`  
+ `android:minWidth="143dp"`  
+ `android:minHeight="143dp"`  
+ `android:scaleType="fitXY"`  
+ `tools:srcCompat="@drawable/icon" /&gt;`
+## [8][Did you know, you can have CMS (Content Management System) like Wordpress for Firebase too? Learn More here](https://www.reddit.com/r/androiddev/comments/gf61pk/did_you_know_you_can_have_cms_content_management/)
+- url: https://firebasetutorials.com/firebase-cms-flamelink/
+---
+
+## [9][Our app was removed from store for "Covid-19" related text](https://www.reddit.com/r/androiddev/comments/gem317/our_app_was_removed_from_store_for_covid19/)
+- url: https://www.reddit.com/r/androiddev/comments/gem317/our_app_was_removed_from_store_for_covid19/
+---
+Hey guys,
+
+Our app, Deepstash ([cache link](https://webcache.googleusercontent.com/search?q=cache:YhxxyuS9ERcJ:https://play.google.com/store/apps/details%3Fid%3Dcom.deepstash%26hl%3Den+&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us))  was suspended from Play a few hours ago, because it apparently contains texts related to Covid-19.
+
+Being suspended, we cannot update it so we have submitted an appeal.
+
+Now I know some other users (like u/Smive) here have had issues in the past month with this and managed to get back from this.
+
+Our app isn't a news app, nor do we engage in communicating specific Covid related news or information. It's possible that Play's algo classified us as fake news or similar.
+
+Deepstash is a self-improvement app, where we curate articles on self-development from reputable authors all over the web and create ideas that our users use to better themselves and grow.
+
+We pinged this subreddit while we were just starting out, months ago, and we have great feedback from users.
+
+Our topics are about remote work or productivity or other support areas. It's clear that in recent months, some articles also mention the current pandemic amidst the good advices.
+
+We don't share statistics on the pandemic nor are we "a tracker" or anything remotely similar. We also do not have any mention of Corona or Covid in any of our store listing.
+
+The support from our users was awesome and we are close to 1M installs in Play, with a 4.8 steady rating (14k reviews).
+
+Do you guys have any suggestions? 
+
+We did contact some people at Google by mail and Twitter DMs, sent some tweets to our users that wanted to share the app but couldn't find it and removed any articles and ideas that mention any words sorrounding "corona" or "covid".
+
+It's such a bummer and we're just scrambling to get ourselves back in Play.
+## [10][Firestore query where only one conditional statement has to be true?](https://www.reddit.com/r/androiddev/comments/gf36el/firestore_query_where_only_one_conditional/)
+- url: https://www.reddit.com/r/androiddev/comments/gf36el/firestore_query_where_only_one_conditional/
+---
+my query looks like this: db.collection(*CONVERSATION\_REFERENCE*).whereEqualTo(*firstUser*, myUserId).whereEqualTo(*secondUser*, myUserId).get(). However my query only needs for one of the fields to be equal. Can you somehow do that in firebase without using 2 queries?
+## [11][AsyncAndroid YouTube - new channel containing short videos about various Android dev topics](https://www.reddit.com/r/androiddev/comments/gejvxl/asyncandroid_youtube_new_channel_containing_short/)
 - url: https://www.reddit.com/r/androiddev/comments/gejvxl/asyncandroid_youtube_new_channel_containing_short/
 ---
 If you are looking for interesting content about various topics, please check out a new channel we created.
@@ -79,21 +117,15 @@ Hope everyone is doing well. We hope these short videos are useful and interesti
 https://www.youtube.com/channel/UC-qBi3QVQ8ow-QrIBeJi9ig
 
 @AsyncAndroid
-## [9][GDPR compliance for Android apps](https://www.reddit.com/r/androiddev/comments/gehpiy/gdpr_compliance_for_android_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/gehpiy/gdpr_compliance_for_android_apps/
+## [12][Noob question: Do I need a "real" app to get a simple widget?](https://www.reddit.com/r/androiddev/comments/gf2eld/noob_question_do_i_need_a_real_app_to_get_a/)
+- url: https://www.reddit.com/r/androiddev/comments/gf2eld/noob_question_do_i_need_a_real_app_to_get_a/
 ---
-Anyone who added GDPR compliance to his app, which steps did you take for this? Is it worth the hassle to create a brand of trust?
-## [10][ViewModel scopes cheatsheet](https://www.reddit.com/r/androiddev/comments/gejsye/viewmodel_scopes_cheatsheet/)
-- url: https://www.reddit.com/r/androiddev/comments/gejsye/viewmodel_scopes_cheatsheet/
----
-[https://twitter.com/igorwojda/status/1245583711006896128](https://twitter.com/igorwojda/status/1245583711006896128)
-## [11][Android app design book](https://www.reddit.com/r/androiddev/comments/gej3im/android_app_design_book/)
-- url: https://www.reddit.com/r/androiddev/comments/gej3im/android_app_design_book/
----
-Hi all,
+Hi folks
 
-is there any book / pdf / article about the design and implementation of some Android app?  possibly linked with C++ libraries
-## [12][Will you recommend to use Navigation Architecture components for a new project? Any gotchas to be aware of ?](https://www.reddit.com/r/androiddev/comments/geg3ib/will_you_recommend_to_use_navigation_architecture/)
-- url: https://www.reddit.com/r/androiddev/comments/geg3ib/will_you_recommend_to_use_navigation_architecture/
----
-I am planning to use nav components in a new [project](https://project.Is) .  Is it scalable ? Did you find any gotchas that need to be aware of ?
+I'm not into android/mobile development, so sorry if this is extremely basic.
+
+I want to get a widget on my screen that displays a couple of values retrieved by polling a specific URL every X minutes. There's nothing more than that really, except some formatting.
+
+Question: whats the easiest way for me to accomplish this? I don't really want/need to get too much into android development, and this widget is just for my personal use so no problems with code quality, security, etc.
+
+Thanks in advance for any advice!

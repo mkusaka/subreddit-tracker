@@ -84,117 +84,72 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][REACT TRELLO CLONE --&gt; https://react-trello.app/](https://www.reddit.com/r/reactjs/comments/gf2veh/react_trello_clone_httpsreacttrelloapp/)
+## [3][My React components render twice and drive me crazy](https://www.reddit.com/r/reactjs/comments/gfqidi/my_react_components_render_twice_and_drive_me/)
+- url: https://mariosfakiolas.com/blog/my-react-components-render-twice-and-drive-me-crazy
+---
+
+## [4][Test-Driven Development 101 with jest](https://www.reddit.com/r/reactjs/comments/gfoxon/testdriven_development_101_with_jest/)
+- url: https://medium.com//test-driven-development-101-with-jest-a6e666d090a5?source=friends_link&amp;sk=f994d7ba527eca1d7b84aaf7999d12d3
+---
+
+## [5][Question to experienced devs: If you join a new team and see areas of code that are poorly coded, when do you suggest improving/refactoring it?](https://www.reddit.com/r/reactjs/comments/gfmw0p/question_to_experienced_devs_if_you_join_a_new/)
+- url: https://www.reddit.com/r/reactjs/comments/gfmw0p/question_to_experienced_devs_if_you_join_a_new/
+---
+You change your job, you join a new team, everything is fine. You set up your env, jump around the codebase. Then you see some important parts of the codebase that are pretty messy and you've got some ideas about improving it. Let's say those parts are quite important and have a significant impact on the speed of development and you believe the way it's done makes the app more bug-prone etc.
+
+How would you approach it?
+
+&amp;#x200B;
+
+My thoughts:
+
+If you start right away, team might be worried that you're crazy beast and they have to keep an eye on you. If you'll fail - it might undermine their trust from the start.
+
+If you do it and succeed - you'll have more trust and freedom to improve the project and if you're really good - it might have great impact on the way you'll improve the project in the long run
+
+If you don't do it - it might be harder to do it later as you might hit the wall called 'lets not change it now' that will be hard to change.
+## [6][tannerlinsley/react-virtual - Hooks for virtualizing scrollable elements in React](https://www.reddit.com/r/reactjs/comments/gfower/tannerlinsleyreactvirtual_hooks_for_virtualizing/)
+- url: https://github.com/tannerlinsley/react-virtual
+---
+
+## [7][Next.js Building a Car Trader App #2: Car Details Page using getServerSideProps](https://www.reddit.com/r/reactjs/comments/gfqj92/nextjs_building_a_car_trader_app_2_car_details/)
+- url: https://www.youtube.com/watch?v=QnGLMLFjk9Q&amp;feature=share
+---
+
+## [8][REACT TRELLO CLONE --&gt; https://react-trello.app/](https://www.reddit.com/r/reactjs/comments/gf2veh/react_trello_clone_httpsreacttrelloapp/)
 - url: https://v.redd.it/7f9nedls2bx41
 ---
 
-## [4][react-notion: A fast React renderer for Notion pages](https://www.reddit.com/r/reactjs/comments/gf3u5m/reactnotion_a_fast_react_renderer_for_notion_pages/)
-- url: https://github.com/splitbee/react-notion
+## [9][Help: A lot of state bugs with App using context API as reducer, how do we resolve?](https://www.reddit.com/r/reactjs/comments/gfs5el/help_a_lot_of_state_bugs_with_app_using_context/)
+- url: https://www.reddit.com/r/reactjs/comments/gfs5el/help_a_lot_of_state_bugs_with_app_using_context/
+---
+Hey there,   
+
+
+We are using React context with the reducer pattern to manage our state.   
+However, we keep running into a ton of state bugs.  
+We have each action unit tested but we have very large and deeply nested state so lots of edge cases crop up.   
+
+
+The actions themsleves are very complex and hard to reasonabout as well.  
+
+
+Any advice on testing, architecture, or other that can help us reduce these bugs?
+## [10][I'm so confused as to whether I should be using the Context API or Redux](https://www.reddit.com/r/reactjs/comments/gfrrry/im_so_confused_as_to_whether_i_should_be_using/)
+- url: https://www.reddit.com/r/reactjs/comments/gfrrry/im_so_confused_as_to_whether_i_should_be_using/
+---
+I honestly can't/don't know how to decide between the two. There are sources saying that the Context API is better than Redux, while other sources say the opposite. All I want to know is this:
+
+1. ***What are the advantages the Context API has over Redux, and what are the advantages Redux has over the Context API?*** 
+2. ***Are they interchangeable?*** 
+3. ***Does one perform better than the other or is performance more about "it depends on your use case"?***
+
+From my personal experience, the only reason why I'd opt for the Context API over Redux is because it uses up much less lines of code and is less all over the place, but I don't think that that's an excuse for strictly choosing it over Redux. Again, *I don't know*. I'm so confused.
+## [11][Got accepted in GSOC for Open Observatory Explorer!!](https://www.reddit.com/r/reactjs/comments/gfptxg/got_accepted_in_gsoc_for_open_observatory_explorer/)
+- url: https://summerofcode.withgoogle.com/projects/#4714428131442688
 ---
 
-## [5][react-uploady - a new way to upload files in React](https://www.reddit.com/r/reactjs/comments/gesxsh/reactuploady_a_new_way_to_upload_files_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/gesxsh/reactuploady_a_new_way_to_upload_files_in_react/
----
-Over the last few months I've been working on a new library -  
-
-[**react-uploady**](https://github.com/rpldy/react-uploady) \- *Modern file uploading - components &amp; hooks for React*         
-
-I finally feel it's ready to be shared and used so I'm happy to tell people about it. 
-
-react-uploady is a monorepo with several packages built on top of each other to provide a very comprehensive library of file-upload related functionality.
-
-It's small, easy to use, configurable and extensible and it contains a lot of functionality. 
-
-It supports queuing and concurrent uploads, uploads can be cancelled or aborted. It has retry functionality. As well as several UI components such as [upload-button](https://github.com/rpldy/react-uploady/blob/master/packages/ui/upload-button), [upload-preview](https://github.com/rpldy/react-uploady/blob/master/packages/ui/upload-preview) and [upload-drop-zone](https://github.com/rpldy/react-uploady/blob/master/packages/ui/upload-drop-zone). And hooks, lots of hooks!
-
-&amp;#x200B;
-
-https://reddit.com/link/gesxsh/video/g2v5akawn7x41/player
-
-Checkout out the [storybook page](https://react-uploady-storybook.netlify.com/), it has a lot of examples of simple and advanced use-cases.
-
-So the next time you need to add file uploading functionality to your React application, consider [**react-uploady**](https://github.com/rpldy/react-uploady) :)
-## [6][Portfolio Website Feedback](https://www.reddit.com/r/reactjs/comments/gewn58/portfolio_website_feedback/)
-- url: https://www.reddit.com/r/reactjs/comments/gewn58/portfolio_website_feedback/
----
-Hi! I just finished creating my first React project. Since we're still on lockdown here in the Philippines, I made some productive use of my time.
-
-Enhanced Community Quarantine Project
-Portfolio Website
-https://johnerisvillanueva.com/
-
-- Created using React.js
-- Statically exported using Next.js
-- Freely hosted at Github Pages ❤️
-
-It's a simple app but I would love to hear your feedback. Thanks!
-## [7][A 1kb Promise based popup library for react, an easiest and best way to use popups (modal/confirm) with less code and more readability.](https://www.reddit.com/r/reactjs/comments/gereti/a_1kb_promise_based_popup_library_for_react_an/)
-- url: https://aadil.dev/react-async-popup
+## [12][How to implement Instant Search within 5 minutes in your React App!](https://www.reddit.com/r/reactjs/comments/gfsoj1/how_to_implement_instant_search_within_5_minutes/)
+- url: https://blog.meilisearch.com/how-to-implement-instant-search-within-5-minutes-in-your-react-app/
 ---
 
-## [8][From Complete Noob to Building an Entire Platform with React](https://www.reddit.com/r/reactjs/comments/gf6gtg/from_complete_noob_to_building_an_entire_platform/)
-- url: https://www.reddit.com/r/reactjs/comments/gf6gtg/from_complete_noob_to_building_an_entire_platform/
----
-So like many others, I once often found developers who shared their stories to be inspiring and help motivate me to work on my own projects. So I figured I'd share how I went from Graduating in Business Administration, to becoming a self-taught full stack web developer who launched his own platform (that uses React).
-
-During college I was always interested in developing my own businesses/projects, but software engineering/computer science just seemed like out of the realm of possibility. By the time I graduated, I realized that I definitely wanted to launch my own business, and that the best way to do so would be to build my own tools/services/products that could actually help people. So, I started to learn HTML5 and CSS3. I had worked on different platforms/sites throughout the past (WordPress, Joomla, phpBB, vBulletin, etc.), using built-in tools to edit and modify things, but developing something from the ground up was new to me.
-
-So I started my journey of learning HTML and CSS by watching tutorials and taking some courses on Udemy. By the time I finished the first course, I figured I'd start applying to freelance jobs and landed my first contract. After completing the first freelancer gig, I realized I wanted to take this more seriously, and I soon realized how if I pursued it... I could build the tools and features that people really need in their lives.
-
-So, I tried to figure out if I should learn Python or JavaScript. I kept flip-flopping between the two. I got about 13 hours into a Python Course and I was still doing basic things like adding items to a list or removing them from a list. It was incredibly frustrating because I "wanted to build things that I could actually see". So I switched to JavaScript. I took a 46 hour course on Udemy, took over 60 pages of notes... and then got to the end of the course and panicked because I felt like I didn't LEARN anything. So I stopped. I felt like programming was out of my wheelhouse and I wouldn't be able to do anything with it.
-
-Several months went by and I signed up for Treehouse. I had heard good things about it and I liked how they would reinforce learning through projects and quizzes. So I signed up and made a plan to take at least an hour or two hour each day to complete lessons/courses, and take notes at the same time. While taking the notes, I also made sure to reinforce how I could USE the examples/things I was learning in the video in real world scenarios. This parallel helped me remember things a little bit more because I would run scenarios in my head about things I could do now - which also helped motivate me to continue the class/videos.
-
-After completing Treehouse, the next thing was to start building a project to reinforce and tie everything together. So... when I was in school taking Entrepreneurship classes, one of the things we were constantly told when looking to start our own business was to solve pain points. Solve problems that people had. So... I looked to myself for inspiration.
-
-Like many of the millions around the world who are now faced with unemployment and beginning their job search once again (or for the first time during these difficult times), I struggled in my own job search years ago. I would submit my resume to employers, forward it to recruiters, attach it to job applications or job postings, and then.... I wouldn't hear back. So, I did my research like everyone always says and the two most common answers I could find and relied upon were, "It's a numbers game," and "It takes time. Job postings can be open for a month or longer before they start to review candidates."
-
-Well, I continued to be patient and continued to submit my resume and applications to dozens of other jobs. When it got close to the hundred mark, I began to grow frustrated. Questions began to creep in like, "Is there something wrong with my resume?", "Am I including the right sections on my resume?", "Is it formatted properly?", "Is there something I can do to stand out more?"
-
-As I began to take a deep dive in figuring out ways to improve my resume and increase my chances of securing a job interview, I soon realized that it appeared to be a common problem for many job seekers and professionals. So, several years later, I decided to build a platform from the ground up that would help job seekers and professionals identify weaknesses within their resume and give them the tools they need to build and perfect their resume on [ResumeCompass](https://www.resumecompass.co/). On ResumeCompass, we provide the most comprehensive free resume review which evaluates your resume against over 45 metrics, and a free resume builder with over 285 resume templates to choose from.
-
-Take a look at our [Product Hunt Launch](https://www.producthunt.com/posts/resumecompass) as well!
-
-I built the platform using the MERN Stack (MongoDB, Express, React, and Node). And I can honestly say that my journey to continue learning hasn't stopped and it can't stop in this industry.
-
-But hopefully, you can take something from my story and the key points which are: 1.) True learning requires dedication and a desire to increase that knowledge if only for a couple of minutes each day, 2.) Stopping and starting is fine (taking a break), as long as it's just a break and you continue on your journey, 3.) It's just that... a journey. You shouldn't expect to wake up tomorrow and know everything there is to do in the industry. We're all in different stages of our programming/developer journey, and it's ok to feel like you're so far behind, and 4.) (MOST IMPORTANTLY), You can do it! There are tens to hundreds of thousands of developers who were exactly where you are now (or even less experienced), and they were able to do it as well.
-
-Remember, every step forward is progress, even if it takes two steps back for you to realize you need to re-assess the next jump forward.
-
-I'd be happy to answer any questions any of you might have regarding my dev journey, how I built my platform that I just launched, or any other questions you might have. Thanks for taking the time to read my story, and we're all rooting you on!
-## [9][Why use useCallback when passing function to children?](https://www.reddit.com/r/reactjs/comments/gf3oha/why_use_usecallback_when_passing_function_to/)
-- url: https://www.reddit.com/r/reactjs/comments/gf3oha/why_use_usecallback_when_passing_function_to/
----
-Articles say use useCallback when passing to children so you can put them in array dependency like in useEffect. But what if I'm not using those hooks. Just using the function when an if statement is satisfied. Do I need to make the function wrapped in useCallback? Thanks in advance.
-## [10][[WIP] two-way WYSIWYG editing](https://www.reddit.com/r/reactjs/comments/gegg2x/wip_twoway_wysiwyg_editing/)
-- url: https://v.redd.it/noc65fmn04x41
----
-
-## [11][How are you organizing Links in React Router v6?](https://www.reddit.com/r/reactjs/comments/geurco/how_are_you_organizing_links_in_react_router_v6/)
-- url: https://www.reddit.com/r/reactjs/comments/geurco/how_are_you_organizing_links_in_react_router_v6/
----
-Before v6, I had a `routes.js` file with absolute paths to each page. However, it seems like React Router v6 `&lt;Link /&gt;` components use [relative paths](https://reacttraining.com/blog/react-router-v6-pre/#relative-route-path-and-link-to). I can't imagine it's best practice to manually type the links into each `&lt;Link /&gt;` component, but I'm not sure of any other way to organize my links?
-
-For example, if a user was at the path `/profiles/user-1` and wanted to go to `/resources/new`, is there a better way than just hardcoding the path into link `&lt;Link to='../../resources/new' /&gt;`?
-## [12][Waiting inside of a loop ?](https://www.reddit.com/r/reactjs/comments/gf6ml9/waiting_inside_of_a_loop/)
-- url: https://www.reddit.com/r/reactjs/comments/gf6ml9/waiting_inside_of_a_loop/
----
-I am using an component called react-image-crop which crops a selected image interactivly. The code works great but I would like to add the possibility to select multiple image-files and crop them one at a time and add them to a useState after each crop.
-
-But I can't figure out how to create a loop which waits for the previous action to complete before trying to load/crop the next image.
-
-&amp;#x200B;
-
-CodeSandbox:
-
-(Not finished/working)
-
-[cropping multiple files](https://codesandbox.io/s/react-image-crop-demo-with-react-hooks-es426?file=/src/App.js)
-
-(Working example for one image)
-
-[cropping one file](https://codesandbox.io/s/react-image-crop-demo-with-react-hooks-2ujlw?file=/src/App.js)
-
-&amp;#x200B;
-
-Can anyone help me understand how I should get this to work ?

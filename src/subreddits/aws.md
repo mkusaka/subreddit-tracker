@@ -1,90 +1,95 @@
 # aws
-## [1][Problems with Pearson Proctoring](https://www.reddit.com/r/aws/comments/gf0g5p/problems_with_pearson_proctoring/)
-- url: https://www.reddit.com/r/aws/comments/gf0g5p/problems_with_pearson_proctoring/
+## [1][90% Price cut for AWS IoT Core Jobs](https://www.reddit.com/r/aws/comments/gfq14z/90_price_cut_for_aws_iot_core_jobs/)
+- url: https://www.reddit.com/r/aws/comments/gfq14z/90_price_cut_for_aws_iot_core_jobs/
 ---
-Has anyone experienced problems with the Pearson online proctoring system? I can't seem to pass the internet test. My speedtest results look fine
+AWS just announced a 90% price reduction for their IoT Core Jobs service. While price reductions from AWS are common, the magnitude of this one is not. I wrote a bit about that this week plus other DevOps relevant news in the weekly roundup for [This Week in DevOps](https://thisweekindevops.com/2020/05/08/weekly-roundup-may-8th-2020/).
 
-https://www.speedtest.net/result/9398879276
-
-But it still fails the internet test. Has anyone had this issue and tried to resolve it?
-
-Update: still no luck on the internet test and my exam is in 5 mins. I even documented the experience in a video to show Pearson I was using the same machine. I hope they refund me. 
-
-https://youtu.be/XWK_ul36B5M
-## [2][When will AWS Backup support Aurora RDS PostgreSQL, if ever? In the meantime, which solution would you recommend for daily/weekly/monthly backup archival on S3?](https://www.reddit.com/r/aws/comments/geqhor/when_will_aws_backup_support_aurora_rds/)
-- url: https://www.reddit.com/r/aws/comments/geqhor/when_will_aws_backup_support_aurora_rds/
----
-It's disappointing for such a major AWS service to be missing proper backup support.
-
-What solution would you recommend to perform daily/weekly/monthly backup rotation and archival on S3? Preferably without significant additional cost on top of S3.
-
-Edit, to clarify:
-
-We're already making use of native tools (pg_dump) to execute daily backups, which are then sent to S3, but it's not a very resilient solution currently.
-
-
-I was looking for a managed way to deal with backups instead of improving our in-house scripts. The feature set in AWS Backup would be a perfect fit, alas it doesn't support Aurora.
-
-
-We're already making use of snapshots. This backup to S3 is our second backup set (you can never be too careful!), which is archived to Glacier. This is in case we ever need to figure out what happened in the distant past, or restore data that a client deleted and now wants.
-## [3][Route 53 forward inbound to local homelab](https://www.reddit.com/r/aws/comments/getoef/route_53_forward_inbound_to_local_homelab/)
-- url: https://www.reddit.com/r/aws/comments/getoef/route_53_forward_inbound_to_local_homelab/
----
-I'm just really getting into AWS after years of occasionally spinning up an EC2 instance or so. I'll be taking the exam for the Cloud Practitioner cert in a couple weeks!
-
-So I have a local homelab that runs many different webapps. I have registered a domain with Route 53. I want some addresses like blah.blahblah.com to go to EC2 instances while others like blah2.blahblah.com to be forwarded to my homelab. What's the best way to go about this, or any resources I can read to be more familiar?
-## [4][Cognito UserPool Sub or IdentityPool ID as the User ID?](https://www.reddit.com/r/aws/comments/gf660d/cognito_userpool_sub_or_identitypool_id_as_the/)
-- url: /r/serverless/comments/gei5kp/cognito_userpool_sub_or_identitypool_id_as_the/
+Has anyone here used IoT Jobs or have any idea why they reduced prices so drastically?
+## [2][AWS: CloudFormation — using lists in Parameters](https://www.reddit.com/r/aws/comments/gfondy/aws_cloudformation_using_lists_in_parameters/)
+- url: https://medium.com//aws-cloudformation-using-lists-in-parameters-52982e78384f?source=friends_link&amp;sk=e2bcf0b78581010200e619e8da7c016f
 ---
 
-## [5][Connecton issues using aws cli on eu-central-1](https://www.reddit.com/r/aws/comments/gf5blf/connecton_issues_using_aws_cli_on_eucentral1/)
-- url: https://www.reddit.com/r/aws/comments/gf5blf/connecton_issues_using_aws_cli_on_eucentral1/
+## [3][What's the best way to clean up abandoned resources on multiple region/services?](https://www.reddit.com/r/aws/comments/gfre80/whats_the_best_way_to_clean_up_abandoned/)
+- url: https://www.reddit.com/r/aws/comments/gfre80/whats_the_best_way_to_clean_up_abandoned/
 ---
-Holla,
-
-since today, I regurarily get 'connection reset by peer' errors using aws cli commands...
-
-Anyone else?
-
-Greetings
-M
-## [6][Allowing web and SSH access from hundreds of hosts?](https://www.reddit.com/r/aws/comments/geuwzd/allowing_web_and_ssh_access_from_hundreds_of_hosts/)
-- url: https://www.reddit.com/r/aws/comments/geuwzd/allowing_web_and_ssh_access_from_hundreds_of_hosts/
+Well, I don't know nearly 90% of the resources and its usage (ec2, ebs, rds, ecs, etc...) and trying to find a way to determine if they are still actively using.
+Can anyone recommend me any software/practice to handle this?
+## [4][How to manage multiple aws cli config ?](https://www.reddit.com/r/aws/comments/gfp3xp/how_to_manage_multiple_aws_cli_config/)
+- url: https://www.reddit.com/r/aws/comments/gfp3xp/how_to_manage_multiple_aws_cli_config/
 ---
-My company is switching from a straightforward corporate VPN for which we have a single CIDR-friendly IP range to add to our security groups, to a janky one with hundreds of randomly assigned possible egress points.
-
-I'm told that there's no way we can reduce the number of egress points for this new VPN. Since there are way too many possible source addresses we would need to allow in, it looks like traditional security groups are out the window, and NACLs can handle even fewer rules.
-
-I could theoretically ask for a limit increase for rules per SG or manage multiple SGs, but we don't want to face possible performance degradation from having so many rules. We also maintain many VPCs with overlapping address space, so establishing a site-to-site tunnel to each of them would be burdensome.
-
-If this was only for web traffic to ALBs/CF, AWS WAF would be the obvious choice, but we need something for more general traffic, mostly web with CLB/NLB and SSH. I also looked into Firewall Manager, but it has to be managed at the organization level, which I don't have.
-
-I'm at a bit of a loss. Assuming I can't push back on our VPN operators, what other choices do I have?
-## [7][Will pay someone to help me turn my python script into a lambda function](https://www.reddit.com/r/aws/comments/gepesz/will_pay_someone_to_help_me_turn_my_python_script/)
-- url: https://www.reddit.com/r/aws/comments/gepesz/will_pay_someone_to_help_me_turn_my_python_script/
+I have access to 3 AWS accounts and using profile in aws config we can manage multiple keys . But I am trying for something like creating a source file for each profile instead of hardcoding them  and source the required file whenever required in bash , so no need to hardcode these values in .aws/credentials . Once I exit the current shell the access keys shouldn't be available until I source them again .
+## [5][Running a scheduled fargate task](https://www.reddit.com/r/aws/comments/gfp29y/running_a_scheduled_fargate_task/)
+- url: https://www.reddit.com/r/aws/comments/gfp29y/running_a_scheduled_fargate_task/
 ---
-I have a python script that monitors twitter for specific keywords, and I would like it to run every minute and scan twitter. Right now I have it on a virtual machine in AWS and it's scheduled every minute but because the machine is always running it's costing me a lot monthly. I am very new to this sort of stuff, but from my research it looks like converting it to a lambda function would be better. If interested DM me
-## [8][Filter pattern contain both OR and exclude?](https://www.reddit.com/r/aws/comments/gf3k40/filter_pattern_contain_both_or_and_exclude/)
-- url: https://www.reddit.com/r/aws/comments/gf3k40/filter_pattern_contain_both_or_and_exclude/
+Hi,
+
+I’m having a problem running a scheduled fargate task. What I want to happen is for the task to run to completion once, then wait for the next execution time and run again.
+
+What happens is that the task runs once and gets restarted by fargate immediately because the container exited.
+
+What is the secret to letting it complete the first time, get unloaded, and then run again later?
+## [6][How is Reddit hosted on S3 when it's clearly a dynamic and not static website?](https://www.reddit.com/r/aws/comments/gf9obs/how_is_reddit_hosted_on_s3_when_its_clearly_a/)
+- url: https://www.reddit.com/r/aws/comments/gf9obs/how_is_reddit_hosted_on_s3_when_its_clearly_a/
 ---
-I have filter pattern as below:
-
-    ?Pattern1 ?pattern2 - "exclude me"
-
-I want to match "Pattern1" OR "pattern2" that not contain "exclude me"
-
-I tried but it didn't work, so I believe aws cloudwatch doesn't support it yet, correct?
-
-How can I achieve the goal?
-## [9][Building AWS environment documentation](https://www.reddit.com/r/aws/comments/geiuhv/building_aws_environment_documentation/)
-- url: https://www.reddit.com/r/aws/comments/geiuhv/building_aws_environment_documentation/
+From my understanding, S3 can only host static websites, so how is Reddit supposedly hosted on S3? It uses JavaScript and other dynamic website features.
+## [7][Method to maintain absolute least privileged automatically?](https://www.reddit.com/r/aws/comments/gft779/method_to_maintain_absolute_least_privileged/)
+- url: https://www.reddit.com/r/aws/comments/gft779/method_to_maintain_absolute_least_privileged/
 ---
-Does anyone have a nice way of building some sort of documentation of a new environment? Like you walked into a new place and there was no documentation type of deal? Basically looking for a starting point vs reinventing the wheel here.
-## [10][When will AWS ec2 support AMD Epyc Rome instances?](https://www.reddit.com/r/aws/comments/gf2f2h/when_will_aws_ec2_support_amd_epyc_rome_instances/)
-- url: https://www.reddit.com/r/aws/comments/gf2f2h/when_will_aws_ec2_support_amd_epyc_rome_instances/
+I was wondering what the best way would be to remove a role or policy from a user on say a 90 day or just a X time basis automatically. The goal is say User was granted read S3, but that user only needed it one time and doesn't use read S3 for say 90 days, then I would want to revoke that policy automatically. Anyone know an efficient way to go about this?
+
+&amp;#x200B;
+
+My idea was to have a script that runs once a day to scan logs for users to see the last day they have done that action and if it is greater then the cut off point then revoke the role. This seems like it would take alot of time and processing to do this though.
+
+&amp;#x200B;
+
+Just looking for some ideas to get me going in the right direction thanks!
+## [8][Can you use both DTMF and Lex in a Connect Flow?](https://www.reddit.com/r/aws/comments/gft51o/can_you_use_both_dtmf_and_lex_in_a_connect_flow/)
+- url: https://www.reddit.com/r/aws/comments/gft51o/can_you_use_both_dtmf_and_lex_in_a_connect_flow/
 ---
-When will AWS ec2 support AMD Epyc Rome instances?
+We have a lex bot that handles 1 lookup based on speech input from the customer. It works well.
 
-t3a sizes ?
+Our connect flow has a few text-to-speech responses. 
 
-Please forward this to Jeff B.
+We have one get customer input block that’s handling all of this... 
+
+Press 1 starts the Lex
+Press 2, 3, 4 plays a prompt
+
+Looks like 2, 3, and 4 go through lex even though there’s not for lex to do.
+
+Is there a way to separate these so DTMF doesn’t have to go through lex.
+
+Thx!
+## [9][AWS Architecture idea](https://www.reddit.com/r/aws/comments/gfcpnv/aws_architecture_idea/)
+- url: https://www.reddit.com/r/aws/comments/gfcpnv/aws_architecture_idea/
+---
+Hi all,
+
+I recently joined a company as an intern/junior Python Developer and I am working on an internal project. They want to use AWS and app need to be serverless. The app itself is pretty simple, they want an 'address-book' type of program, so they can track their clients. In short, I need to make a CRUD app and my idea is to use: S3 for the fronted, Lambda for the computing/code, DynamoDB as a database and Cognito for authentication and also a Gateway API for the communication. Do you think it is a good idea? If not, why?
+
+I am still very new to AWS, around 2 weeks of experience and there is too much choice, so I wanted to share this and hear thoughts of more experienced people here.
+
+Thanks in advance!
+
+Edit: I wrote verification instead of authentication.
+
+Edit2: First of all, thank you all for the constructive answers! You're awesome! Some people mentioned that it would be like reinventing the wheel and that there are already cheap/free solutions for the problem, which I am aware of and I agree, but I probably needed to mention that one of the main goals of the project, besides its use, will be me gaining an actual experience by going through the whole process of working on a real-world project. Hope it helps!
+## [10][Lightsail instance firewall now supports sourceIP rules...and also PING!](https://www.reddit.com/r/aws/comments/gfe0ti/lightsail_instance_firewall_now_supports_sourceip/)
+- url: https://www.reddit.com/r/aws/comments/gfe0ti/lightsail_instance_firewall_now_supports_sourceip/
+---
+Hello redditors,
+
+Hope y'all are keeping safe. We released a few enhancements to Lightsail instance firewall which many of you requested. Lightsail firewall rules now support source IP conditions and also, ICMP-PING. So, you can now open PING to your Lightsail instances.
+
+Here's a blog to get started - [https://aws.amazon.com/blogs/compute/enhancing-site-security-with-new-lightsail-firewall-features/](https://aws.amazon.com/blogs/compute/enhancing-site-security-with-new-lightsail-firewall-features/)
+
+As always, please keep the feedback coming. Thank you! 
+
+&amp;#x200B;
+
+PS: Some resources that may come in handy if you haven't used Lightsail yet-
+
+Bunch of getting started guides - [https://aws.amazon.com/lightsail/resources/](https://aws.amazon.com/lightsail/resources/)
+
+Lightsail pricing- [https://aws.amazon.com/lightsail/pricing/ ](https://aws.amazon.com/lightsail/pricing/)

@@ -1,91 +1,48 @@
 # Kotlin
-## [1][Publishing Kotlin Multiplatform Artifacts to Artifactory (Maven)](https://www.reddit.com/r/Kotlin/comments/gexgie/publishing_kotlin_multiplatform_artifacts_to/)
+## [1][Asynchronous streams and callbacks in Java &amp; Kotlin](https://www.reddit.com/r/Kotlin/comments/gfrzuz/asynchronous_streams_and_callbacks_in_java_kotlin/)
+- url: https://matthisk.com/asynchronous-streams-and-callbacks/
+---
+
+## [2][Experiment Inline classes](https://www.reddit.com/r/Kotlin/comments/gfogmu/experiment_inline_classes/)
+- url: https://www.reddit.com/r/Kotlin/comments/gfogmu/experiment_inline_classes/
+---
+Is there any plan when Inline classes going to be out of Experimental state as Kotlin Time library also depends on it and it is also in Experimental state.
+## [3][Atomic Kotlin on Leanpub](https://www.reddit.com/r/Kotlin/comments/gf9j6p/atomic_kotlin_on_leanpub/)
+- url: https://www.reddit.com/r/Kotlin/comments/gf9j6p/atomic_kotlin_on_leanpub/
+---
+ Just published an 80%-completed Atomic Kotlin book on Leanpub: https://leanpub.com/AtomicKotlin, including an extensive free sample in PDF/MOBI/EPUB/read-online formats.
+## [4][Kotlin (1.)4 vs. Scala 3](https://www.reddit.com/r/Kotlin/comments/gfp6y0/kotlin_14_vs_scala_3/)
+- url: https://www.youtube.com/watch?v=sIL4mduqHe0
+---
+
+## [5][Where to Start for Research Project App?](https://www.reddit.com/r/Kotlin/comments/gfgskx/where_to_start_for_research_project_app/)
+- url: https://www.reddit.com/r/Kotlin/comments/gfgskx/where_to_start_for_research_project_app/
+---
+Hi all,
+I’m an undergrad researcher at a university and have been given a project developing an android app, despite having little programming experience. 
+Kotlin seems to be the language I should start learning as it looks to be fitted for exactly my task. I’m a pretty fast learner, but I haven’t found many good resources for really STARTING (such as installation/SDKs). Could someone point me in the right direction, preferably free resources?
+## [6][Publishing Kotlin Multiplatform Artifacts to Artifactory (Maven)](https://www.reddit.com/r/Kotlin/comments/gexgie/publishing_kotlin_multiplatform_artifacts_to/)
 - url: https://medium.com/vmware-end-user-computing/publishing-kotlin-multiplatform-artifacts-to-artifactory-maven-a283ae5912d6
 ---
 
-## [2][Kotlin Illustrated Guide - Conditionals: When and If](https://www.reddit.com/r/Kotlin/comments/geizkn/kotlin_illustrated_guide_conditionals_when_and_if/)
+## [7][Parsing Optional Values with Jackson and Kotlin](https://www.reddit.com/r/Kotlin/comments/gf9e46/parsing_optional_values_with_jackson_and_kotlin/)
+- url: https://proandroiddev.com/parsing-optional-values-with-jackson-and-kotlin-36f6f63868ef
+---
+
+## [8][Is it recommended to know java before learning kotlin?](https://www.reddit.com/r/Kotlin/comments/gf86tj/is_it_recommended_to_know_java_before_learning/)
+- url: https://www.reddit.com/r/Kotlin/comments/gf86tj/is_it_recommended_to_know_java_before_learning/
+---
+I study space engineering so coding is not my main thing actually, but I like it as hobby.
+As of now I can code decently in c, c++ and Lua. 
+I would like to start coding my own apps  and I've seen that Kotlin became the official language for Android.
+I've already tried doing something and I really enjoy how Kotlin works.
+However I was told that it would be better if I learned Java before learning Kotlin, is that true?
+Any advice for a newbie?
+## [9][Kotlin Illustrated Guide - Conditionals: When and If](https://www.reddit.com/r/Kotlin/comments/geizkn/kotlin_illustrated_guide_conditionals_when_and_if/)
 - url: https://typealias.com/start/kotlin-conditionals/
 ---
 
-## [3][Machine Learning in Kotlin](https://www.reddit.com/r/Kotlin/comments/gejbo7/machine_learning_in_kotlin/)
+## [10][Machine Learning in Kotlin](https://www.reddit.com/r/Kotlin/comments/gejbo7/machine_learning_in_kotlin/)
 - url: http://haifengl.github.io/api/kotlin/smile-kotlin/index.html
 ---
 
-## [4][Ok, I found something weird](https://www.reddit.com/r/Kotlin/comments/geeto3/ok_i_found_something_weird/)
-- url: https://www.reddit.com/r/Kotlin/comments/geeto3/ok_i_found_something_weird/
----
-I was just playing around with enum classes, and I noticed that you can declare a method inside a enum (please note, not overriding an abstract method, just a adding a regular method) 
-
-sample:
-
-    enum class MyEnum {
-        GREEN {
-            fun action(): String {
-                return "I'm green"
-            }
-        },
-        RED {
-            fun anotherAction(): String {
-                return "I'm red"
-            }
-        }
-    }
-
-Kotlin has no problem compiling this code, and decompiled bytecode looks okay:
-
-    static final class GREEN extends MyEnum {
-          @NotNull
-          public final String action() {
-             return "I'm green";
-          }
-    
-          GREEN(String $enum_name_or_ordinal$0, int $enum_name_or_ordinal$1) {
-             super((DefaultConstructorMarker)null);
-          }
-       }
-
-However, if I try to call the method:
-
-    MyEnum.GREEN.action() 
-
-I get: \`Unresolved reference: action\`
-
-&amp;#x200B;
-
-Is this a bug in compiler? Should it not compile the these functions in the enum entry? Or there is another way to call the \`action\` function?
-## [5][HBPE – Histogram Based Percentile Estimator (New Kotlin Library)](https://www.reddit.com/r/Kotlin/comments/gegri6/hbpe_histogram_based_percentile_estimator_new/)
-- url: https://www.reddit.com/r/Kotlin/comments/gegri6/hbpe_histogram_based_percentile_estimator_new/
----
-[https://github.com/IBM/HBPE](https://github.com/IBM/HBPE)
-## [6][MultiRecycleView](https://www.reddit.com/r/Kotlin/comments/gen59x/multirecycleview/)
-- url: https://www.reddit.com/r/Kotlin/comments/gen59x/multirecycleview/
----
-Someone's friends experience using
- Has MultiRecyclerView?
- Is this possible?
- I have a list of headlines, whenever it is clicked on any of them, it will be shown under the same heading, under its chapter, but it will be taken from the local database without side libraries and information.
- And one more thing, the title is in one table and the subheading is in another table
- The reason for this is due to the nunNull error in Rome, whatever I did I couldn't make a mock table.
- Now I'm using two adapters, one for the main list and every time I click on the item, send the text of the title to it so that the processing can be done so that its subset comes from the database.
-
-Please help me how to do this????
-## [7][Swift vs. Kotlin: The Similarities and Differences You Should Know](https://www.reddit.com/r/Kotlin/comments/gek1gq/swift_vs_kotlin_the_similarities_and_differences/)
-- url: https://medium.com/better-programming/swift-vs-kotlin-the-similarities-and-differences-you-should-know-b2f1be201888?source=friends_link&amp;sk=7e9202d4766b9d72a3a5fc44aebbd134
----
-
-## [8][The Kotlin Programming Language - Free Course](https://www.reddit.com/r/Kotlin/comments/gdzied/the_kotlin_programming_language_free_course/)
-- url: https://caster.io/courses/kotlin-programming-language
----
-
-## [9][Kotlin chat server or community for quick questions?](https://www.reddit.com/r/Kotlin/comments/geifq6/kotlin_chat_server_or_community_for_quick/)
-- url: https://www.reddit.com/r/Kotlin/comments/geifq6/kotlin_chat_server_or_community_for_quick/
----
-Hi All,
-
-I'm learning Kotlin and have a background in C#. I was wondering if there is an IRC channel / Slack / Discord or some other \*active\* community where I can ask questions? I have a background in C# and sometimes Kotlin's syntax confuses me a little.
-## [10][TornadoFX - How to distribute an app](https://www.reddit.com/r/Kotlin/comments/ge26qn/tornadofx_how_to_distribute_an_app/)
-- url: https://www.reddit.com/r/Kotlin/comments/ge26qn/tornadofx_how_to_distribute_an_app/
----
-I'm a beginner. What are some ways to distribute this application that I've written? I know that I can just create a `.jar` file but is there anyway to make an installer or something like that? And how would I go about integrating that into my gradle build?
-
-I am using grade/kotlin/IntelliJ IDEA

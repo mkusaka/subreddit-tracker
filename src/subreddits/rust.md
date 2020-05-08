@@ -23,135 +23,169 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/05/this-week-in-rust-337/
 ---
 
-## [3][Buttplug Sex Toy Control Project](https://www.reddit.com/r/rust/comments/gezz84/buttplug_sex_toy_control_project/)
-- url: https://buttplug.io/
+## [3][grout | A very simple tiling window manager for Windows](https://www.reddit.com/r/rust/comments/gfieg2/grout_a_very_simple_tiling_window_manager_for/)
+- url: https://www.reddit.com/r/rust/comments/gfieg2/grout_a_very_simple_tiling_window_manager_for/
 ---
+[https://github.com/tarkah/grout](https://github.com/tarkah/grout)
 
-## [4][Look who made it front and center for a new Microsoft/GitHub announcement!](https://www.reddit.com/r/rust/comments/geoaf8/look_who_made_it_front_and_center_for_a_new/)
-- url: https://i.redd.it/3n5mzytqh6x41.png
----
-
-## [5][KAS GUI 0.4 release](https://www.reddit.com/r/rust/comments/gf42ip/kas_gui_04_release/)
-- url: https://github.com/kas-gui/kas
----
-
-## [6][Embedded async/await in the real world: The Polymer Keyboard](https://www.reddit.com/r/rust/comments/geuzk0/embedded_asyncawait_in_the_real_world_the_polymer/)
-- url: https://www.reddit.com/r/rust/comments/geuzk0/embedded_asyncawait_in_the_real_world_the_polymer/
----
-I've had this in the works for far too long. It stalled a bit when I took a ~8 month break from it, but it's finally complete(ish)! At any rate, it's complete enough to have supplanted the ErgoDox as my daily driver.
-
-Overall, my experience has been extremely positive! Being able to abstract the core logic over familiar `Read`, `Write`, `Sink`, and `Stream` traits helps immensely for being able to test and reason about the code. I suspect that my IO/Timer Future abstractions have some flaws, but they work well enough until someone who actually knows what they're doing builds some better ones. The beauty of having an abstract core is that it should allow for a drop-in replacement of the IO backend!
-
-Overview blog post:
-[The Rest of the Keyboard](https://josh.robsonchase.com/rest-of-the-keyboard)
-
-It's a little light on actual Rust stuff, but I got a little overwhelmed with everything I could have gone into more detail about.
-## [7][has anyone used this (rust notebooks) for projects in the real world?](https://www.reddit.com/r/rust/comments/gf28is/has_anyone_used_this_rust_notebooks_for_projects/)
-- url: https://shahinrostami.com/posts/programming/rust-notebooks/setup-anaconda-jupyter-and-rust/
----
-
-## [8][Rust Analyzer is now in official Arch repos](https://www.reddit.com/r/rust/comments/gejsho/rust_analyzer_is_now_in_official_arch_repos/)
-- url: https://www.reddit.com/r/rust/comments/gejsho/rust_analyzer_is_now_in_official_arch_repos/
----
-I'd been maintaining Rust Analyzer AUR (Arch User Repository) packages since the [first binary release](https://www.reddit.com/r/rust/comments/eo5bs2/rustanalyzer_changelog_7_with_binary_releases/fe9gxu2) in January, but since today it's in official repos:
-
-&gt; polyzen [1] filed a deletion request for rust-analyzer [2]:
-
-&gt; This package has been added to the repos. Thank you.
-
-&gt; [1] https://aur.archlinux.org/account/polyzen  
-&gt; [2] https://aur.archlinux.org/pkgbase/rust-analyzer
-
-To install it or replace AUR package:
-
-    pacman -S rust-analyzer
-
-and you're good to go.
-
----
-
-edit: [relevant PR](https://github.com/rust-analyzer/rust-analyzer/pull/4333)
-## [9][my first time programming ever...question about something that doesnt matter...](https://www.reddit.com/r/rust/comments/gf4nu1/my_first_time_programming_everquestion_about/)
-- url: https://www.reddit.com/r/rust/comments/gf4nu1/my_first_time_programming_everquestion_about/
----
-so, i made my first attempt at learning programming...after i successfully compiled and ran it, i wondered how big the compiled application actually was...so i just made an empty .rs file and tried to compile it, and it didnt work...so i just did this:
-
-fn main () {
-
-}
+demo: [https://i.imgur.com/ugPMvlA.mp4](https://i.imgur.com/ugPMvlA.mp4)
 
 &amp;#x200B;
 
-and after i compiled it, it was 2.6 Mb...my question is, what does a compiled application actually have in it? like, did rust compile nothing, and it has built in safechecks and error codes that it spits out even if nothing is in the actual code i wrote? just curious...thanks!!!
-## [10][color-eyre: a colorful error reporter based on color-backtrace and eyre is now available on crates.io](https://www.reddit.com/r/rust/comments/gf69mv/coloreyre_a_colorful_error_reporter_based_on/)
-- url: https://crates.io/crates/color-eyre
+I love Budgie's Window Shuffler grid functionality for quickly and easily tiling windows and I really wanted to have this on my Window's machine, so I decided to take a stab at building it. Going into this I knew basically nothing about the Windows API and overall this program feels super hacky, but it works! 
+
+Hope others will find this as useful as me. I've currently only tested it on a single monitor, but it shouldn't be hard to get it working over any number of them. In the coming days, I plan to add a multi-monitor support, a system tray icon, simple settings page, and the ability to autostart, all of which should make it as familiar to use as any windows program.
+## [4][An overview of foreign language interop libraries for Rust](https://www.reddit.com/r/rust/comments/gfp7dd/an_overview_of_foreign_language_interop_libraries/)
+- url: https://www.hobofan.com/rust-interop
 ---
 
-## [11][Many of Herb Sutter's C++ talks are surprisingly relevant to Rust](https://www.reddit.com/r/rust/comments/geqfhi/many_of_herb_sutters_c_talks_are_surprisingly/)
-- url: https://www.reddit.com/r/rust/comments/geqfhi/many_of_herb_sutters_c_talks_are_surprisingly/
+## [5][Announcing Rust 1.43.1](https://www.reddit.com/r/rust/comments/gf8om1/announcing_rust_1431/)
+- url: https://blog.rust-lang.org/2020/05/07/Rust.1.43.1.html
 ---
-I don't write much C++ myself, but I find that listening to Herb Sutter's talks about the language's evolution (past, present, and future) is extremely informative. What C++ I know, I learned more than a decade ago. It turns out that a lot of things have changed since then, often in ways that bear a striking similarity to Rust. I wanted to make a list of some highlights that I've noticed:
 
-**[Essentials of Modern C++ Style (2014)](https://youtu.be/xnqTKD8uD64)**: There are several parallels to Rust in this talk. At 27m45s, there's a slide that explicitly discusses "lifetimes" and "ownership". There's also a long discussion of move semantics, which works somewhat differently in C++ but addresses similar problems.
-
-**[Making Exceptions More Affordable and Usable (2019)](https://youtu.be/ARYP83yNAWk)**: Discusses a proposal for a new exception throwing mechanism. These errors would be statically typed, and at 1h4m35s there's a slide describing a hypothetical explicit `try` syntax that would visually highlight function calls that could fail. Sutter explicitly calls out the similarity to Rust's `Result` type, though he doesn't mention the `?` operator. There's also a long discussion of how memory allocation failure is handled in C++, and how that might change in the future, which has also been a tricky topic in Rust since before 1.0.
-
-**[Writing Good C++14... By Default (2015)](https://youtu.be/hEx5DNLWGgA)**: Discusses a proposal for defining "safe" and "unsafe" subsets of C++. At 41m42s there's a demo of a static analysis tool that's very similar to Rust's borrow checker, and then there's a high level discussion of lifetime inference and annotations.
-
-**[Atomic Weapons (2012)](https://youtu.be/A8eCGOqgvH4)**: Rust atomics and C++ atomics are very similar. This talk is a deep dive into what the different atomic orderings mean and why they're defined the way they are. If you hear the term "memory model" and feel like you kinda sorta know what that means, but maybe not very concretely, this talk is extremely clarifying.
-## [12][Init large array of struct and mutable static](https://www.reddit.com/r/rust/comments/gf5eww/init_large_array_of_struct_and_mutable_static/)
-- url: https://www.reddit.com/r/rust/comments/gf5eww/init_large_array_of_struct_and_mutable_static/
+## [6][Benchmarking slotmap, slab, stable_vec etc.](https://www.reddit.com/r/rust/comments/gfo1uw/benchmarking_slotmap_slab_stable_vec_etc/)
+- url: https://www.reddit.com/r/rust/comments/gfo1uw/benchmarking_slotmap_slab_stable_vec_etc/
 ---
-Hello everyone,  
-with the purpose of learning rust I've decided to develop a simple address book but I'm facing some issues and I'd like to know which can be a good approach to write this code.  
-Please see my code below:
+I made a small and simple implementation of a slotmap/slab whatever you want to call it. I wanted to see how the performance would be if you use a union instead of an enum for the slots and store the tag (occupied or not) in a bitvec. I did this because of curiosity, not because I actually needed performance. Then I started adding benchmarks to compare with existing implementations of such a container. I've added all the competitors that I could find on [crates.io](https://crates.io). The benchmark is probably of limited usefulness, anybody choosing which of these to use should probably make initial choice based on API/features/use of unsafe, etc.
 
-    struct Contact {
-        name: String,
-        id: u32,
-        phone: u32,
-    }
-    
-    impl&lt;'a&gt; Contact {
-        fn new() -&gt; &amp;'a Contact {
-            let c = &amp;mut address_book[idx];
-    
-            c.id = id as u32;
-            c.phone = 0123456789;
-            id += 1;
-            c
-        }
-    }
-    
-    static mut address_book: [Contact; 2] = [
-        Contact {name:"Unknown".to_string(), id:0, phone:0},
-        Contact {name:"Unknown".to_string(), id:0, phone:0},
-    ];
-    static mut id: usize = 0
+The benchmarking code is available at [github](https://github.com/spersson/bvmap/). My prototype is called BvMap. All times in microseconds.
 
+**Insert 10 000 usize into newly created container**
 
-I've declared a simple Contact structure with few fields, declared an array of contacts and a function that should update some fields of a contact through its reference and return it.
+1. ExternStableVec	49.10
+2. IdVec	56.77
+3. BvMap	65.18
+4. BeachMap	67.66
+5. CompactMap	88.38
+6. Slab	92.69
+7. Stash	93.26
+8. InlineStableVec	114.25
+9. SlotMap	118.23
+10. UniqueStash	126.58
+11. HopSlotMap	156.29
+12. DenseSlotMap	177.05
+13. Froggy	222.66
 
-What's unclear to me is how I can declare a large array without initializing every element.  
-I was expecting to be able something like:
+**Remove 10 000 usize**
 
-    static mut address_book: [Contact; 128] = [
-        Default::default()
-    ]
+1. CompactMap	14.11
+2. InlineStableVec	14.16
+3. ExternStableVec	14.63
+4. Slab	15.60
+5. Stash	17.32
+6. UniqueStash	25.98
+7. BvMap	37.99
+8. SlotMap	40.92
+9. BeachMap	52.83
+10. HopSlotMap	61.23
+11. DenseSlotMap	69.14
+12. Froggy	201.56
+13. IdVec	465.20
 
-The only solution I found is to use the \`Vec&lt;T&gt;\` type but I'd prefer to allocate this array on the stack.
+**Re-insert 10 000 usize**
 
-Another issue is that, as the compiler says, the use of mutable static is unsafe and require an unsafe block:
+1. UniqueStash	28.30
+2. Slab	29.35
+3. Stash	29.72
+4. BvMap	32.34
+5. SlotMap	57.70
+6. BeachMap	59.10
+7. HopSlotMap	63.68
+8. CompactMap	71.25
+9. ExternStableVec	103.13
+10. InlineStableVec	134.73
+11. DenseSlotMap	151.28
+12. Froggy	213.28
+13. IdVec	5234.30
 
-    error[E0133]: use of mutable static is unsafe and requires unsafe function or block
-      --&gt; src/main.rs:10:35
-       |
-    10 |         let c = &amp;mut address_book[id];
-       |                                   ^^^ use of mutable static
-       |
-       = note: mutable statics can be mutated by multiple threads: aliasing violations or data races will cause undefined behavior
-    
+**Get 10 000 random items from collection of size 10 000**
 
-I think that I should use a box here, but not sure becase I haven't tried yet.
+1. ExternStableVec	169.28
+2. Slab	177.15
+3. BvMap	177.70
+4. Stash	178.64
+5. CompactMap	181.87
+6. DenseSlotMap	186.79
+7. InlineStableVec	190.80
+8. SlotMap	210.83
+9. HopSlotMap	217.73
+10. UniqueStash	223.76
+11. BeachMap	241.17
+12. IdVec	316.86
+13. Froggy	362.39
 
-I'm looking forward to reading your clarifications, thanks!
+**Iterate over all 10 000 items**
+
+1. ExternStableVec	10.85
+2. Stash	11.10
+3. InlineStableVec	12.02
+4. CompactMap	12.71
+5. DenseSlotMap	12.75
+6. Slab	13.04
+7. BeachMap	13.94
+8. UniqueStash	16.40
+9. BvMap	20.47
+10. HopSlotMap	27.82
+11. SlotMap	29.38
+12. IdVec	158.04
+13. Froggy	164.22
+
+**Iterate over 5 000 items after 5 000 random items have been removed**
+
+1. DenseSlotMap	6.48
+2. BeachMap	16.72
+3. CompactMap	34.60
+4. Slab	35.24
+5. Stash	35.41
+6. HopSlotMap	35.61
+7. InlineStableVec	35.87
+8. ExternStableVec	37.17
+9. UniqueStash	38.51
+10. SlotMap	43.56
+11. BvMap	49.79
+12. Froggy	119.40
+13. IdVec	212.02
+
+&amp;#x200B;
+
+**Observations**
+
+Not much. IdVec stands out for its bad performance while it doesn't seem to offer any advantage to motivate it (although the idea to return Id&lt;T&gt; index type is interesting). The thing that caught my eye was that iterating over a full container was such a difference between UniqueStash and SlotMap. They have almost identical implementations but UniqueStash was almost double speed. Could be something for slotmap author to look into.
+## [7][Rust-like language with static memory management and no ownership](https://www.reddit.com/r/rust/comments/gfgt1b/rustlike_language_with_static_memory_management/)
+- url: https://www.reddit.com/r/rust/comments/gfgt1b/rustlike_language_with_static_memory_management/
+---
+[https://github.com/doctorn/micro-mitten](https://github.com/doctorn/micro-mitten)
+
+This may be of interest - a fragment of Rust developed as a research language to support static memory management without ownership. The compiler for the language is also written in Rust!
+## [8][Verco | A simple Git/Hg tui client focused on keyboard shortcuts](https://www.reddit.com/r/rust/comments/gfspio/verco_a_simple_githg_tui_client_focused_on/)
+- url: https://www.reddit.com/r/rust/comments/gfspio/verco_a_simple_githg_tui_client_focused_on/
+---
+https://github.com/matheuslessarodrigues/verco
+
+After many years being frustrated with slow gui clients for git/hg, I switched to using them from the command line.
+However, I found myself also frustrated with having to type the same mundane commands everytime (even with aliases).
+Also, having used SourceTree for some time, I liked the idea of a single interface for both git and mercurial.
+
+So here I am now after writing my own tui client. My workflow is leaving verco open and when I need to quickly
+push, pull, commit, update/checkout, I just need to type a single key (two at most) to execute a command.
+
+Some keybindings: `p`: pull, `P`: push, `cc`: commit all, `u`: update/checkout, more at the repository page.
+
+Verco has been my daily driver for quite some time and now I think it's stable enough to share with the internet.
+Hope you find it useful as well :) Thanks!
+## [9][Google Summer of Code 2020 project to integrate Pathfinder into Inkscape](https://www.reddit.com/r/rust/comments/gffhnx/google_summer_of_code_2020_project_to_integrate/)
+- url: https://summerofcode.withgoogle.com/projects/#5859756641615872
+---
+
+## [10][Cow in a Box &amp; Friends [Rust Wrocław Webinar, 29.04.2020]](https://www.reddit.com/r/rust/comments/gfpefn/cow_in_a_box_friends_rust_wrocław_webinar_29042020/)
+- url: https://www.youtube.com/watch?v=EjbfoOCL2to
+---
+
+## [11][color-eyre: a custom context for eyre which provides colorful error reports and backtraces on stable is now available on crates.io 🎉🥳🎉](https://www.reddit.com/r/rust/comments/gf6z3x/coloreyre_a_custom_context_for_eyre_which/)
+- url: https://i.imgur.com/ZDVN9sf.png
+---
+
+## [12][v0.8 of Gleam, a statically typed language written in Rust for the Erlang VM, is out](https://www.reddit.com/r/rust/comments/gfe4n7/v08_of_gleam_a_statically_typed_language_written/)
+- url: https://lpil.uk/blog/gleam-v0.8-released/
+---
+

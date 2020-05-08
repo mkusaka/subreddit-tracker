@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/gdaxq5/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/gdaxq5/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/gfsh9z/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/gfsh9z/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - May 04, 2020](https://www.reddit.com/r/androiddev/comments/gd9hik/weekly_questions_thread_may_04_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/gd9hik/weekly_questions_thread_may_04_2020/
 ---
@@ -31,101 +25,105 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Circular Determinate Progress View - A highly customizable progress view with built in animations, gradient support and more](https://www.reddit.com/r/androiddev/comments/gew4o4/circular_determinate_progress_view_a_highly/)
-- url: https://gfycat.com/softgargantuancaecilian
+## [3][ConstraintLayout 2.0.0 beta 5](https://www.reddit.com/r/androiddev/comments/gfimrf/constraintlayout_200_beta_5/)
+- url: https://androidstudio.googleblog.com/2020/05/constraintlayout-200-beta-5.html
 ---
 
-## [4][Implementing Dark Theme in Android](https://www.reddit.com/r/androiddev/comments/gf5cg5/implementing_dark_theme_in_android/)
-- url: https://infinum.com/the-capsized-eight/implementing-dark-theme-in-android
+## [4][NHS Covid-19 android app source code](https://www.reddit.com/r/androiddev/comments/gffnou/nhs_covid19_android_app_source_code/)
+- url: https://github.com/nhsx/COVID-19-app-Android-BETA
 ---
 
-## [5][Join us for #Android11: The Beta Launch Show!](https://www.reddit.com/r/androiddev/comments/gejz31/join_us_for_android11_the_beta_launch_show/)
-- url: https://www.youtube.com/watch?v=gqJEcy57hA8
+## [5][My app indexing government bills was suspended - thinking of replacing with a "censored by google" message - looking for other suggestions too](https://www.reddit.com/r/androiddev/comments/gfgm2s/my_app_indexing_government_bills_was_suspended/)
+- url: https://www.reddit.com/r/androiddev/comments/gfgm2s/my_app_indexing_government_bills_was_suspended/
+---
+(this relates to the recent policy change around apps _mentioning_ coronavirus)
+
+I'm working on an app that shows upcoming, ongoing, and past bills before parliament (in Australia), and going through the process for getting a closed pre-alpha distributed for testers. An unfinished part of this is allowing verified electors/voters to securely cast an (unofficial, nonbinding, etc) vote on whether they support a bill.
+
+Part of this is, of course, showing the title of bills, and since there are 4+ bills with "coronavirus" in the title the app's not only been denied the _first_ review it went through **it was also suspended** (this was just for alpha release channel - tho not sure if a review here would let us publish this version).
+
+Anyway, given this is meant to accurately show what's going on in a *democracy*, simply hiding the solution isn't a long term solution since the user isn't notified of something being hidden.
+
+My idea currently is for this (and any future censorship 🤔) to show a red card with white text saying something like "This bill has been censored by &lt;Google&gt;. Tap for more info", and then replace the description-esq info with a similar message also including
+
+* a censorship ID (i.e. would be the same for all coronavirus censorships)
+* a reason, in this case something like "displaying this bill violates Google's policies for app distribution."
+* a link to a website that explains the censorship and quotes the Developer Distribution Agreement.
+* A link to a website that indexes the same information sans censorship.
+
+That said, it might not elicit the best response from google, so I'm curious if anyone has any suggestions.
+
+&gt; Another interesting thing is that this app (or a very related app) would be an interface between represented (non-government) parliamentarians and voters, which raises an interesting dilemma because we would not fall into any of the exemptions (similarly to how the Democrats in the US wouldn't be exempt)
+&gt;
+&gt; Furthermore, YouTube and all news apps should be removed since they aren't exempt either 😡
+
+###### Screenshots
+
+- [screenshot library](https://imgur.com/a/7kqdwde) on iOS showing an example
+- [email I got](https://i.imgur.com/uLw1XO2.png)
+## [6][Open Source: Medium Unlimited - Android App (Unlock articles behind paywall)](https://www.reddit.com/r/androiddev/comments/gfrn5b/open_source_medium_unlimited_android_app_unlock/)
+- url: https://www.reddit.com/r/androiddev/comments/gfrn5b/open_source_medium_unlimited_android_app_unlock/
+---
+I developed a small application "Medium Unlimited" for Android, which lets you unlock articles behind the pay wall. You can also login and clap the unlocked articles.
+
+Link: [https://github.com/firefinchdev/medium-unlimited-android/](https://github.com/firefinchdev/medium-unlimited-android/)
+
+I am open to suggestions for improving the app. You can open issues suggesting improvements, bugs and feature requests. Would welcome PRs for the same. I will be actively working on them.
+
+Also, please star the repo for updates.
+
+&amp;#x200B;
+
+P.S: For those who can afford, please consider buying a subscription from the official app. It involves a lot of efforts to maintain a platform like Medium, and writers deserve to be awarded for their excellent content.
+## [7][MIUI 12 has a smooth screen rotation animation, so why don't Google fix this for Android?](https://www.reddit.com/r/androiddev/comments/gfhk20/miui_12_has_a_smooth_screen_rotation_animation_so/)
+- url: https://twitter.com/xiaomishka/status/1254657208538869761?s=20
 ---
 
-## [6][Gradle 6.4 Released](https://www.reddit.com/r/androiddev/comments/gertht/gradle_64_released/)
-- url: https://docs.gradle.org/6.4/release-notes.html
+## [8][Beyond Basic RxJava Error Handling](https://www.reddit.com/r/androiddev/comments/gfsrbf/beyond_basic_rxjava_error_handling/)
+- url: https://medium.com/@elye.project/beyond-basic-rxjava-error-handling-b0875d3877e0?source=friends_link&amp;sk=093e868bb0a77ae4cdf8de771fb3efab
 ---
 
-## [7][Is it good practice to hardcoding width and height in ImageView?](https://www.reddit.com/r/androiddev/comments/gf3kmc/is_it_good_practice_to_hardcoding_width_and/)
-- url: https://www.reddit.com/r/androiddev/comments/gf3kmc/is_it_good_practice_to_hardcoding_width_and/
----
-Is it good practice to hardcoding width and height in ImageView? 
-
-Like max/minWidth and max/minHeight not working in my case.   
-
-
-`&lt;androidx.appcompat.widget.AppCompatImageView`  
- `android:id="@+id/imv_icon"`  
- `android:layout_width="wrap_content"`  
- `android:layout_height="wrap_content"`  
- `android:adjustViewBounds="true"`  
- `android:background="@drawable/background"`  
- `android:maxWidth="143dp"`  
- `android:maxHeight="143dp"`  
- `android:minWidth="143dp"`  
- `android:minHeight="143dp"`  
- `android:scaleType="fitXY"`  
- `tools:srcCompat="@drawable/icon" /&gt;`
-## [8][Did you know, you can have CMS (Content Management System) like Wordpress for Firebase too? Learn More here](https://www.reddit.com/r/androiddev/comments/gf61pk/did_you_know_you_can_have_cms_content_management/)
-- url: https://firebasetutorials.com/firebase-cms-flamelink/
+## [9][GeckoView for Android](https://www.reddit.com/r/androiddev/comments/gf8cy8/geckoview_for_android/)
+- url: https://mozilla.github.io/geckoview/
 ---
 
-## [9][Our app was removed from store for "Covid-19" related text](https://www.reddit.com/r/androiddev/comments/gem317/our_app_was_removed_from_store_for_covid19/)
-- url: https://www.reddit.com/r/androiddev/comments/gem317/our_app_was_removed_from_store_for_covid19/
+## [10][Android MessagingStyle Notification As Clear As Possible](https://www.reddit.com/r/androiddev/comments/gfouni/android_messagingstyle_notification_as_clear_as/)
+- url: https://medium.com//android-messagingstyle-notification-as-clear-as-possible-1847f809ad59?source=friends_link&amp;sk=1beb3f9bc94ab3c1ad53232c9e18ab61
 ---
-Hey guys,
 
-Our app, Deepstash ([cache link](https://webcache.googleusercontent.com/search?q=cache:YhxxyuS9ERcJ:https://play.google.com/store/apps/details%3Fid%3Dcom.deepstash%26hl%3Den+&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us))  was suspended from Play a few hours ago, because it apparently contains texts related to Covid-19.
-
-Being suspended, we cannot update it so we have submitted an appeal.
-
-Now I know some other users (like u/Smive) here have had issues in the past month with this and managed to get back from this.
-
-Our app isn't a news app, nor do we engage in communicating specific Covid related news or information. It's possible that Play's algo classified us as fake news or similar.
-
-Deepstash is a self-improvement app, where we curate articles on self-development from reputable authors all over the web and create ideas that our users use to better themselves and grow.
-
-We pinged this subreddit while we were just starting out, months ago, and we have great feedback from users.
-
-Our topics are about remote work or productivity or other support areas. It's clear that in recent months, some articles also mention the current pandemic amidst the good advices.
-
-We don't share statistics on the pandemic nor are we "a tracker" or anything remotely similar. We also do not have any mention of Corona or Covid in any of our store listing.
-
-The support from our users was awesome and we are close to 1M installs in Play, with a 4.8 steady rating (14k reviews).
-
-Do you guys have any suggestions? 
-
-We did contact some people at Google by mail and Twitter DMs, sent some tweets to our users that wanted to share the app but couldn't find it and removed any articles and ideas that mention any words sorrounding "corona" or "covid".
-
-It's such a bummer and we're just scrambling to get ourselves back in Play.
-## [10][Firestore query where only one conditional statement has to be true?](https://www.reddit.com/r/androiddev/comments/gf36el/firestore_query_where_only_one_conditional/)
-- url: https://www.reddit.com/r/androiddev/comments/gf36el/firestore_query_where_only_one_conditional/
+## [11][How do you manage your application's preferences?](https://www.reddit.com/r/androiddev/comments/gfmful/how_do_you_manage_your_applications_preferences/)
+- url: https://www.reddit.com/r/androiddev/comments/gfmful/how_do_you_manage_your_applications_preferences/
 ---
-my query looks like this: db.collection(*CONVERSATION\_REFERENCE*).whereEqualTo(*firstUser*, myUserId).whereEqualTo(*secondUser*, myUserId).get(). However my query only needs for one of the fields to be equal. Can you somehow do that in firebase without using 2 queries?
-## [11][AsyncAndroid YouTube - new channel containing short videos about various Android dev topics](https://www.reddit.com/r/androiddev/comments/gejvxl/asyncandroid_youtube_new_channel_containing_short/)
-- url: https://www.reddit.com/r/androiddev/comments/gejvxl/asyncandroid_youtube_new_channel_containing_short/
+Hi, Android devs!
+
+So the other day I was asking myself this question: how do you manage your preferences? I mean, not if using the SharedPreferences API, an encrypted Json or a plan text file in the user's internal storage, but in the application, the activity of handling the settings (e.g. notifications, colors, etc.).
+
+Do you use a library? Do you make the activity manually and the a java class where you save the changes?
+
+I'd be glad to know how you manage this!
+
+Thanks!
+## [12][How do you experiment with new features in mobile apps?](https://www.reddit.com/r/androiddev/comments/gfe733/how_do_you_experiment_with_new_features_in_mobile/)
+- url: https://www.reddit.com/r/androiddev/comments/gfe733/how_do_you_experiment_with_new_features_in_mobile/
 ---
-If you are looking for interesting content about various topics, please check out a new channel we created.
+Hey r/androiddev,
 
-We have videos about a varied set of topics (content about Room, Motion Layout, Dagger, View Binding, Biometric prompt, Material Design and much more).
+I'm Carmine, a researcher at the University of Zurich. Together with other researchers from Canada, The Netherlands, and Spain, I'm currently investigating how mobile app developers are experimenting with new features in their products.
 
-We are planning on releasing new content every week.
+For developers, it is hard to predict the success of a feature. For example, they cannot discover all defects during the testing phase and some defects will only appear after products are deployed to production. To mitigate the risk of delivering buggy features to users, developers often adopt incremental releasing strategies, such as Continuous Experimentation (CE). CE also helps developers to determine if the new features are successful in serving the business goals and refine or revert them if needed. 
 
-Hope everyone is doing well. We hope these short videos are useful and interesting for the community.
+Rather than delivering content directly through the web browser, mobile app users install applications on their mobile devices (e.g., smartphones, tablets). Mobile app developers need to deliver new releases from a software organization to app stores that curate mobile apps and make them available to users. In such a scenario, app stores might act as a bottleneck between software organizations and users, which may impose delays in the release process.
 
-https://www.youtube.com/channel/UC-qBi3QVQ8ow-QrIBeJi9ig
+To better support mobile app developers, we ask you to share your expertise and experience by answering a few questions in the following survey: [http://tiny.uzh.ch/131](http://tiny.uzh.ch/131)
 
-@AsyncAndroid
-## [12][Noob question: Do I need a "real" app to get a simple widget?](https://www.reddit.com/r/androiddev/comments/gf2eld/noob_question_do_i_need_a_real_app_to_get_a/)
-- url: https://www.reddit.com/r/androiddev/comments/gf2eld/noob_question_do_i_need_a_real_app_to_get_a/
----
-Hi folks
+Our ultimate goal is to understand the state-of-the-art in applying CE in mobile apps. We are going to share the anonymized answers together with the analysis of the results with your community.
 
-I'm not into android/mobile development, so sorry if this is extremely basic.
+Comments and feedback to this post are very welcome!
 
-I want to get a widget on my screen that displays a couple of values retrieved by polling a specific URL every X minutes. There's nothing more than that really, except some formatting.
+&amp;#x200B;
 
-Question: whats the easiest way for me to accomplish this? I don't really want/need to get too much into android development, and this widget is just for my personal use so no problems with code quality, security, etc.
+Best regards,
 
-Thanks in advance for any advice!
+Carmine Vassallo
+
+Doctoral Student at the University of Zurich, Switzerland

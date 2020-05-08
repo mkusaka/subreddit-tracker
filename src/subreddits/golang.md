@@ -1,130 +1,71 @@
 # golang
-## [1][Is there a good GraphQL client for go?](https://www.reddit.com/r/golang/comments/gez4h1/is_there_a_good_graphql_client_for_go/)
-- url: https://www.reddit.com/r/golang/comments/gez4h1/is_there_a_good_graphql_client_for_go/
----
-I looked around but couldn't find anything useful. Do we not consume GraphQL apis from go? Or do we simply use raw HTTP requests?
-## [2][smex - a cli app to extract and convert sitemaps](https://www.reddit.com/r/golang/comments/gf43cd/smex_a_cli_app_to_extract_and_convert_sitemaps/)
-- url: https://github.com/hbish/smex
+## [1][Developers say Google's Go is 'most sought after' programming language of 2020 | ZDNet](https://www.reddit.com/r/golang/comments/gflyyn/developers_say_googles_go_is_most_sought_after/)
+- url: https://www.zdnet.com/article/developers-say-googles-go-is-most-sought-after-programming-language-of-2020/
 ---
 
-## [3][Are there are Go bindings to libosrm or any high performance routing alternatives?](https://www.reddit.com/r/golang/comments/gf45ae/are_there_are_go_bindings_to_libosrm_or_any_high/)
-- url: https://www.reddit.com/r/golang/comments/gf45ae/are_there_are_go_bindings_to_libosrm_or_any_high/
+## [2][TermBackTime - Terminal Recorder](https://www.reddit.com/r/golang/comments/gfjw8j/termbacktime_terminal_recorder/)
+- url: https://www.reddit.com/r/golang/comments/gfjw8j/termbacktime_terminal_recorder/
 ---
-I need to get road direction data into my go project. I'm using http requests to OSRM but it is a bottleneck and wanted to bring it into the application as a library. As OSRM is written in C++14 it seems challenging to integrate into Go with SWIG for example.
+I started a project a while back called [TermBackTime](https://termbackti.me/). This allows for PTY terminal recordings to be uploaded to [Gist](https://gist.github.com/) for later playback. While I took a break on this project I plan on starting back up, implementing live terminal streaming via WebRTC.
 
-Need to make a large number of requests as part of a pre processing pass for a web service. The faster the better.
+*Example on Windows 10 using WSL:*
 
-On a related note if I was to tackle the bindings is SWIG the right approach for C++ libraries in Go?
-## [4][Rob Pike interview: “Go has indeed become the language of cloud infrastructure“](https://www.reddit.com/r/golang/comments/gegxe4/rob_pike_interview_go_has_indeed_become_the/)
-- url: https://evrone.com/rob-pike-interview
+Gist: [https://gist.github.com/LouisT/1fc1b6cd6317180d01f60b3011490e75](https://gist.github.com/LouisT/1fc1b6cd6317180d01f60b3011490e75)
+
+Playback: [https://termbackti.me/p/1fc1b6cd6317180d01f60b3011490e75](https://termbackti.me/p/1fc1b6cd6317180d01f60b3011490e75)
+
+CLI:  `termbacktime play 1fc1b6cd6317180d01f60b3011490e75`
+
+[Recording Playback](https://i.redd.it/0g04f3g53gx41.gif)
+
+The web playback version supports some experimental features such as converting to GIF and WebM. So far I've tested on Windows 10 via WSL, OSX 10.12 to 10.14, Ubuntu 14.04.6 to 18.04.4. This was my first "major" project in Go so I'm sure parts are pretty rough. Any feedback would be greatly appreciated.
+## [3][Web Application Firewall written in Go](https://www.reddit.com/r/golang/comments/gfsns4/web_application_firewall_written_in_go/)
+- url: https://github.com/asalih/guardian
 ---
 
-## [5][Learn go with tests: HTTP handlers revisited](https://www.reddit.com/r/golang/comments/gf6d3u/learn_go_with_tests_http_handlers_revisited/)
+## [4][demoinfocs-golang v2.0.0 released - CS:GO Demo Parser Library for Go](https://www.reddit.com/r/golang/comments/gfrtdq/demoinfocsgolang_v200_released_csgo_demo_parser/)
+- url: https://github.com/markus-wa/demoinfocs-golang
+---
+
+## [5][Tello drone remotely controlled via WebRTC (featuring pion &amp; gobot)](https://www.reddit.com/r/golang/comments/gfrqj0/tello_drone_remotely_controlled_via_webrtc/)
+- url: https://www.reddit.com/r/golang/comments/gfrqj0/tello_drone_remotely_controlled_via_webrtc/
+---
+[https://github.com/oliverpool/tello-webrtc-fpv](https://github.com/oliverpool/tello-webrtc-fpv)
+
+I connected the pion and gobot libraries to let my little Tello drone be remotely controlled (from everywhere on earth).
+
+&amp;#x200B;
+
+https://preview.redd.it/3baoid874jx41.png?width=1919&amp;format=png&amp;auto=webp&amp;s=cc318b088f73c3f29bfeb4e5612fcdf591694c8e
+
+The latency is surprisingly small (clearly under 500ms round-trip).
+
+I managed to have a pure-go program by reading and buffering the h264 frames manually (more info in the README).
+## [6][Learn go with tests: HTTP handlers revisited](https://www.reddit.com/r/golang/comments/gf6d3u/learn_go_with_tests_http_handlers_revisited/)
 - url: https://quii.gitbook.io/learn-go-with-tests/questions-and-answers/http-handlers-revisited
 ---
 
-## [6][ent: a graph-based ORM for Go, from Facebook](https://www.reddit.com/r/golang/comments/gem8el/ent_a_graphbased_orm_for_go_from_facebook/)
-- url: https://entgo.io
+## [7][Functional testing with your database in Go](https://www.reddit.com/r/golang/comments/gfk3od/functional_testing_with_your_database_in_go/)
+- url: https://terrastruct.com/blog/functional-testing-database-go/
 ---
 
-## [7][Packing args into a type for passing data into functions easily?](https://www.reddit.com/r/golang/comments/gf4vzz/packing_args_into_a_type_for_passing_data_into/)
-- url: https://www.reddit.com/r/golang/comments/gf4vzz/packing_args_into_a_type_for_passing_data_into/
+## [8][Live browser sessions](https://www.reddit.com/r/golang/comments/gfpk6k/live_browser_sessions/)
+- url: https://www.reddit.com/r/golang/comments/gfpk6k/live_browser_sessions/
 ---
-Hi guys.
+So I'm doing the classic thing of a webserver in go. I'm sure you're all bored to tears of that by now but please humour me.
 
-I've been working professionally for about 4 months (as a backend developer working primarily on Rails), and I've been looking into Golang lately.
+For context, I'm very deliberately reinventing the wheel in a lot of places, as a learning exercise. I'm not necessarily looking for code solutions - although those are fine - but tips on general approach and languages or technologies I might need to look into.
 
-I thought I'd try building a simple LRU Cache as a pet project. In the process, I realised how the flexibility Ruby offers you can be extremely helpful. The ability to pass named arguments into a function, and then retrieve them easily, or choose a default value if the value is absent is pretty cool. For instance: -
+I've managed to set up a postgres database, user login, account creation, persistent sessions via cookies, POST actions, etc. I'm interested in how you'd go about handling the more active data exchange that might need to happen for interactive pages. My understanding is that go is very much a server-side operation, and javascript, html etc. are client side. How do you begin to communicate without leaving a page, e.g. for a games that might require a continuous stream of information?
 
-&amp;#x200B;
+I realise this isn't necessarily a go question per se, but I've made the assumption there would be methods the go community might prefer.
 
-    def initialize(name, **args): 
-
-args is basically a Hash (hash map). All named arguments after the first argument to initialize() will be a part of the Hash.
-
-Assign 'name' to instance variable '@name'
-
-        @name = name 
-
-If 'height' is present in args, assign it to '@height'. Else args\[:height\]  will evaluate to nil, and DEFAULT\_HEIGHT is assigned to '@height' instead.
-
-        @height = args[:height] || DEFAULT_HEIGHT
-
-&amp;#x200B;
-
-I thought I'd build a small package that allows me to at least come close to this and this resulted in: [https://github.com/dannypz97/arghpacker](https://github.com/dannypz97/arghpacker). I can create a variable of type *ArgPacker* (which is basically a map) and can then add/modify values, or retrieve values  by key (or a default value if the key is not present in ArgPacker).
-
-The code itself is very small - about 30 lines.
-
-I plan to use this in my projects. I want to know if it's a bad idea since I don't want any weird ideas (or too many weird ideas) in my projects. I understand that this might have some overhead of its own, but I think this might have some benefits as well.
-
-I want to know what you guys think. Constructive criticism is appreciated.
-## [8][GOTTY error opening terminal: unknow](https://www.reddit.com/r/golang/comments/gf4onq/gotty_error_opening_terminal_unknow/)
-- url: https://www.reddit.com/r/golang/comments/gf4onq/gotty_error_opening_terminal_unknow/
----
-Hello everyone!
-
-I have this problem and I am not able to solve it and I want to discuss it with you in case someone can give me another point of view.
-
-I usually have a remote terminal open against one of the servers where I run the dnstop command to get query statistics to DNS.
-
-So far everything is clear, but as my head never stops I began to think that instead of having a terminal it would be practical to be able to consult or run the dnstop but via the website. And well ... I got down to work, I searched ..... I documented ... and in the end I found what for me was the most suitable solution, which was to use GoTTY.
-
-The idea itself was good, from the console it executed `gotty dnstop -4 -6 -Q -R l3 eth0`and automatically had on the web page [`http://xxx.xxx.xxx.xxx:8080`](http://xxx.xxx.xxx.xxx:8080/) the command dnstop showing me statistics.
-
-So far fantastic, but my desire for perfectionism led me to automate it, in reality a not complex process and I solved it as follows by creating this script:
-
-`#! / bin / bash`
-
-`set -e`
-
-`set -x`
-
-`TERM = linux`
-
-`echo "Executing GoTTY for DNStop ..."`
-
-`/ usr / local / go_projects / bin / gotty --term xterm dnstop -4 -6 -Q -R -l 3 eth0`
-
-then with crontab -e create the cron:
-
-`@ reboot (sleep 30 ; /usr/local/execute_gotty.sh)`
-
-If I manually launch the script it works, but if I let it auto-run after a reboot, when accessing via web, this is the result.
-
-**error opening terminal: unknow**
-
-Does anyone come up with a solution?
-
-Thanks for the help
-## [9][Could golang be a good alternative to rails in terms of occupying 80%+ of a backend of a livestreaming webapp](https://www.reddit.com/r/golang/comments/gevbmd/could_golang_be_a_good_alternative_to_rails_in/)
-- url: https://www.reddit.com/r/golang/comments/gevbmd/could_golang_be_a_good_alternative_to_rails_in/
+Thanks for you help.
+## [9][Kubeless - Build advanced applications with FaaS on top of Kubernetes](https://www.reddit.com/r/golang/comments/gfb2ne/kubeless_build_advanced_applications_with_faas_on/)
+- url: https://kubeless.io/
 ---
 
-## [10][[question] How to properly manage common constants for a project in Go?](https://www.reddit.com/r/golang/comments/geyqwl/question_how_to_properly_manage_common_constants/)
-- url: https://www.reddit.com/r/golang/comments/geyqwl/question_how_to_properly_manage_common_constants/
+## [10][Anyone making a game?](https://www.reddit.com/r/golang/comments/gficdn/anyone_making_a_game/)
+- url: https://www.reddit.com/r/golang/comments/gficdn/anyone_making_a_game/
 ---
-So a software project has strings/integers/other type constants that need to be referenced all over the place. Whats the best practice for handling this in go? 
-
-Say for example you're rebuilding an application like [Plaid](https://plaid.com/?utm_source=google&amp;utm_medium=search&amp;utm_campaign=Search_G_Brand_Exact&amp;utm_content=Com&amp;utm_term=plaid&amp;utm_creative=205872015494) and you have several banks you need to store the name of and reference later
-
-Is creating a single "const" package a bad practice here ?
-
-    package const
-    
-    type BankName string
-    
-    const (
-      BOA BankName = "bank of america"
-      HSBC BankName = "the hongkong and shanghai banking corporation"
-      BangkokBank BankName = "bangkok bank"  
-      ...
-    )
-    
-    // elsewhere
-    func DebitAccount(bank BankName) error{
-      switch bank {
-       case: BOA
-       // ...
-      }
-    }
+This might be a far-fetched question, but I was wondering if there is a video game project that is looking for a contributor. These days I find myself with a lot of time in my hands and I wanted to try something new. Thanks.

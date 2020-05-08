@@ -13,53 +13,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Esbuild - An extremely fast JavaScript bundler and minifier](https://www.reddit.com/r/javascript/comments/gescea/esbuild_an_extremely_fast_javascript_bundler_and/)
-- url: https://github.com/evanw/esbuild
+## [3][Visual Studio Code April 2020](https://www.reddit.com/r/javascript/comments/gfcoi0/visual_studio_code_april_2020/)
+- url: https://code.visualstudio.com/updates/v1_45
 ---
 
-## [4][Working with GitHub Issues in Visual Studio Code](https://www.reddit.com/r/javascript/comments/gevm5f/working_with_github_issues_in_visual_studio_code/)
-- url: https://code.visualstudio.com/blogs/2020/05/06/github-issues-integration
+## [4]["Under-the-hood of type systems (e.g. TypeScript)" - I look to shine a light on some of the fundamentals at work in a type system compiler.](https://www.reddit.com/r/javascript/comments/gfrhjk/underthehood_of_type_systems_eg_typescript_i_look/)
+- url: https://medium.com/@tabu_craig/under-the-hood-of-type-systems-e-g-typescript-b3b0b5c18963
 ---
 
-## [5][How to Create a JavaScript Choropleth Map Data Visualization (Tutorial on COVID-19 Data)](https://www.reddit.com/r/javascript/comments/gf36vo/how_to_create_a_javascript_choropleth_map_data/)
-- url: https://medium.com/javascript-in-plain-english/create-choropleth-map-data-visualization-with-javascript-8788c98d46e5
+## [5][Comparing Ember Octane and React](https://www.reddit.com/r/javascript/comments/gfk64s/comparing_ember_octane_and_react/)
+- url: https://www.pzuraq.com/comparing-ember-octane-and-react/
 ---
 
-## [6][I'm making a video series building a 16-bit Virtual Machine. This episode is all about parsing nested expressions in the assembly language, and disambiguating the Order Of Operations](https://www.reddit.com/r/javascript/comments/gek5ir/im_making_a_video_series_building_a_16bit_virtual/)
-- url: https://www.youtube.com/watch?v=EaUBBDESWCY
+## [6][How Our Stack Evolved in 10 Years](https://www.reddit.com/r/javascript/comments/gfcxhu/how_our_stack_evolved_in_10_years/)
+- url: https://open-source-network-resources.s3.amazonaws.com/stack.htm
 ---
 
-## [7][Stopwatch app fit for embedding or full-screen display](https://www.reddit.com/r/javascript/comments/gexuug/stopwatch_app_fit_for_embedding_or_fullscreen/)
-- url: https://github.com/haggen/stopwatch
+## [7][MIDI.js - Sequencing in Javascript](https://www.reddit.com/r/javascript/comments/gf7btz/midijs_sequencing_in_javascript/)
+- url: https://galactic.ink/midi-js/
 ---
 
-## [8][[AskJS] - What do you think about my first npm module ?](https://www.reddit.com/r/javascript/comments/gf4ii1/askjs_what_do_you_think_about_my_first_npm_module/)
-- url: https://www.reddit.com/r/javascript/comments/gf4ii1/askjs_what_do_you_think_about_my_first_npm_module/
----
-Happy to have made **my first Npm module** 🎉, I would like to share it with you.
-
-I present to you **Fitext**.
-
-This module adapts the text elements so that they are always contained in their parents without ever exceeding whatever the height and width of the parents, even if the amount of text varies.
-
-**I'm interested by any return or advices on it**, have a nice days devs 😃 !
-
-The module link :  [https://github.com/pierredarrieutort/fitext](https://github.com/pierredarrieutort/fitext)
-
-https://reddit.com/link/gf4ii1/video/c70izj98sbx41/player
-## [9][Why does your browser limit the number of concurrent network calls?](https://www.reddit.com/r/javascript/comments/geyaa9/why_does_your_browser_limit_the_number_of/)
-- url: https://medium.com/@ishwar.rimal/why-does-your-browser-limit-the-number-of-concurrent-network-calls-1ae5d50863dd?sk=6cf6ed1802e9b96294d795d0641518c8
+## [8][I created a minimalistic Linux server dashboard](https://www.reddit.com/r/javascript/comments/gfe6yf/i_created_a_minimalistic_linux_server_dashboard/)
+- url: https://github.com/B-Software/Ward
 ---
 
-## [10][Modern JavaScript without the complicated compilation](https://www.reddit.com/r/javascript/comments/gf69q5/modern_javascript_without_the_complicated/)
-- url: https://blog.j-n.me.uk/#build-less
+## [9][Javascript Closures, Partial functions and Currying](https://www.reddit.com/r/javascript/comments/gflway/javascript_closures_partial_functions_and_currying/)
+- url: https://aparnajoshi.netlify.app//javascript-closures-partial-functions-and-currying
 ---
 
-## [11][Best way to make Http request in Angular 8?](https://www.reddit.com/r/javascript/comments/gf4cei/best_way_to_make_http_request_in_angular_8/)
-- url: /r/angular/comments/gf4c9z/best_way_to_make_http_request_in_angular_8/
+## [10][A Critique of React Hooks Addendum](https://www.reddit.com/r/javascript/comments/gf9uxh/a_critique_of_react_hooks_addendum/)
+- url: https://dillonshook.com/a-critique-of-react-hooks-addendum/
 ---
 
-## [12][Modern JavaScript Cheatsheet](https://www.reddit.com/r/javascript/comments/geajlx/modern_javascript_cheatsheet/)
-- url: https://www.cyanhall.com/posts/notes/8.javascript-cheatsheet/
+## [11][Reducing Development Costs With Webix. Staying Afloat During the Coronavirus Outbreak](https://www.reddit.com/r/javascript/comments/gfokas/reducing_development_costs_with_webix_staying/)
+- url: https://xbsoftware.com/blog/reducing-development-costs-with-webix/
+---
+
+## [12][Vue JS Form Package ~ Doesn't Care About UI Library You're Using, Zero Dev Dependencies, Test Coverage](https://www.reddit.com/r/javascript/comments/gfn8cr/vue_js_form_package_doesnt_care_about_ui_library/)
+- url: https://github.com/zhorton34/vuejs-form
 ---
 

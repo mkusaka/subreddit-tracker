@@ -1,5 +1,49 @@
 # ruby
-## [1][Rodauth 2.0 and rodauth-rails released](https://www.reddit.com/r/ruby/comments/gf32hn/rodauth_20_and_rodauthrails_released/)
+## [1][Rails team wants to know (really!) about frustrations and roadblocks you have with Rails](https://www.reddit.com/r/ruby/comments/gfdbxk/rails_team_wants_to_know_really_about/)
+- url: https://weblog.rubyonrails.org/2020/5/7/A-May-of-WTFs/
+---
+
+## [2][Interesting behavior of Hash.new](https://www.reddit.com/r/ruby/comments/gfoc59/interesting_behavior_of_hashnew/)
+- url: https://www.reddit.com/r/ruby/comments/gfoc59/interesting_behavior_of_hashnew/
+---
+Hello,
+
+&amp;#x200B;
+
+I was building a script to format some hashes and I had something similar to this:
+
+    data = { monday: { start: '08:00', end: '18:00' }, thuesday: { start: '08:00', end: '15:00' }}
+    
+    result = data.each_with_object(Hash.new([])) do |(day, schedule), result|
+      result[schedule[:start]] &lt;&lt; day
+    end
+
+Nothing fancy, but I noticed that my result variable seemed empty, but if I tried to access a key, it was there.
+
+See the following screenshot:
+
+&amp;#x200B;
+
+https://preview.redd.it/6kl2xkpgqhx41.png?width=472&amp;format=png&amp;auto=webp&amp;s=77d2f3a8c166fe4ef6c1e70b99834cac670e7275
+
+I know how to fix it, I replaced [`Hash.new`](https://Hash.new)`([])` with `Hash.new { |hash, key| hash[key] = [] }` and it works as expected.
+
+&amp;#x200B;
+
+But I was still curious why it happens and how come I can access the keys. Any thoughts?
+
+&amp;#x200B;
+
+Thanks
+## [3][Ruby Association -&gt; 2019 Grant Accomplishment Report](https://www.reddit.com/r/ruby/comments/gfo8bh/ruby_association_2019_grant_accomplishment_report/)
+- url: https://www.ruby.or.jp/en/news/20200508
+---
+
+## [4][Gems like laravel's live wire for rails?](https://www.reddit.com/r/ruby/comments/gfrjwx/gems_like_laravels_live_wire_for_rails/)
+- url: /r/rubyonrails/comments/gfr7qh/any_alternatives_with_httpslaravellivewirecom/
+---
+
+## [5][Rodauth 2.0 and rodauth-rails released](https://www.reddit.com/r/ruby/comments/gf32hn/rodauth_20_and_rodauthrails_released/)
 - url: https://www.reddit.com/r/ruby/comments/gf32hn/rodauth_20_and_rodauthrails_released/
 ---
 Jeremy Evans has recently released Rodauth 2.0, which revamps the multifactor authentication flow, adds [active sessions](http://rodauth.jeremyevans.net/rdoc/files/doc/active_sessions_rdoc.html) and [audit logging](http://rodauth.jeremyevans.net/rdoc/files/doc/audit_logging_rdoc.html) features, and brings numerous other improvements. See the [release notes](http://rodauth.jeremyevans.net/rdoc/files/doc/release_notes/2_0_0_txt.html) for the full list of changes.
@@ -12,7 +56,7 @@ For those who are not familiar, **[Rodauth](https://github.com/jeremyevans/rodau
 * features are contained in a [single file](https://github.com/jeremyevans/rodauth/blob/master/lib/rodauth/features/remember.rb), instead of being [spread](https://github.com/heartcombo/devise/blob/master/lib/devise/models/rememberable.rb) [across](https://github.com/heartcombo/devise/blob/master/lib/devise/controllers/rememberable.rb) [many](https://github.com/heartcombo/devise/blob/master/lib/devise/strategies/rememberable.rb) [different](https://github.com/heartcombo/devise/blob/master/lib/devise/hooks/rememberable.rb) [places](https://github.com/heartcombo/devise/blob/master/lib/devise/hooks/forgetable.rb)
 * authentication behaviour is configured in a one place (your Rodauth app), and each setting can be configured statically or dynamically based on request context and account record
 
-In order to bring Rodauth closer to the Rails community, I've created the **[rodauth-rails](https://github.com/janko/rodauth-rails)** gem, which provides the Rails glue that I needed for my own Rails app at work (see the [demo app](https://github.com/janko/rodauth-demo-rails/)). It brings the following features:
+In order to bring Rodauth closer to the Rails community, I've created **[rodauth-rails](https://github.com/janko/rodauth-rails)**, which provides the Rails glue I needed for my own Rails app at work (see the [demo app](https://github.com/janko/rodauth-demo-rails/)). It provides the following features:
 
 * generators for Active Record migration, views and emails
 * configures Sequel to [reuse Active Record's connection](https://github.com/janko/sequel-activerecord_connection)
@@ -22,7 +66,29 @@ In order to bring Rodauth closer to the Rails community, I've created the **[rod
 * easier set of Rodauth defaults and other niceties
 
 On a personal note, Rodauth is one of these projects that keep me genuinely interested in web development with Ruby. I'm thoroughly impressed by its design, and I feel like contributing to it has made me grow as a developer. I'm curious to hear your thoughts :)
-## [2][My notes from Aaron Patterson's RailsConf 2020 keynote](https://www.reddit.com/r/ruby/comments/gexsq2/my_notes_from_aaron_pattersons_railsconf_2020/)
+## [6][Intro to JRuby article and interview with project co-lead](https://www.reddit.com/r/ruby/comments/gfd0ts/intro_to_jruby_article_and_interview_with_project/)
+- url: https://www.hostingadvice.com/blog/charles-nutter-on-jruby/
+---
+
+## [7][Anyone using Best Buy APIs?](https://www.reddit.com/r/ruby/comments/gfb8ez/anyone_using_best_buy_apis/)
+- url: https://github.com/rootstrap/best_buy_ruby/
+---
+
+## [8][Ruby Gem for Speech recognition](https://www.reddit.com/r/ruby/comments/gfa38l/ruby_gem_for_speech_recognition/)
+- url: https://www.reddit.com/r/ruby/comments/gfa38l/ruby_gem_for_speech_recognition/
+---
+I have a ruby script that runs on the CLI.
+
+Accepts several commands via Standard Input.
+
+I want to make some of the commands executable via voice commands.
+
+Which speech recognition gem do you recommend?
+
+&amp;#x200B;
+
+It looks like there are a few but they are all pretty dated.
+## [9][My notes from Aaron Patterson's RailsConf 2020 keynote](https://www.reddit.com/r/ruby/comments/gexsq2/my_notes_from_aaron_pattersons_railsconf_2020/)
 - url: https://www.reddit.com/r/ruby/comments/gexsq2/my_notes_from_aaron_pattersons_railsconf_2020/
 ---
 Aaron's talk was very Aaron: 20 minutes of jokes, 40 minutes of brain bending Rails performance show-and-tell. His goal: to teach you how to profile your Rails app. If you haven't watched his keynote yet, here's the gist:
@@ -37,55 +103,131 @@ A few takeaways:
 Miss Aaron's talk? In THIS economy?
 
 👌
-## [3][Understanding complex Ruby application with profiling tools](https://www.reddit.com/r/ruby/comments/genzmb/understanding_complex_ruby_application_with/)
-- url: https://katafrakt.me/2020/05/03/understanding-ruby-app-with-profiling/
+## [10][Improve my mental model of metaclasses](https://www.reddit.com/r/ruby/comments/gf7nbm/improve_my_mental_model_of_metaclasses/)
+- url: https://www.reddit.com/r/ruby/comments/gf7nbm/improve_my_mental_model_of_metaclasses/
 ---
+Here’s my mental model.
 
-## [4][Using Interactors in Rails](https://www.reddit.com/r/ruby/comments/gf24fk/using_interactors_in_rails/)
-- url: https://blog.saeloun.com/2020/05/06/rails-using-interactor-gem
----
+It’s probably not completely correct. (i’m still kinda confused)
 
-## [5][For people like me who are into listening music while coding... [off]](https://www.reddit.com/r/ruby/comments/geqz8q/for_people_like_me_who_are_into_listening_music/)
-- url: https://www.reddit.com/r/ruby/comments/geqz8q/for_people_like_me_who_are_into_listening_music/
----
-... check out the [list](https://spoti.fi/3cPiDAs) I use when I’m coding: 8+ hours of retro synth music inspired by Stranger Things.
+These are all equivalent:
 
-Also curious to know what kind of stuff do you listen to, if any.
-## [6][Custom scalar in GraphQL-ruby](https://www.reddit.com/r/ruby/comments/geqjx5/custom_scalar_in_graphqlruby/)
-- url: https://www.abhaynikam.me/posts/custom-scalar-in-graphql-ruby/
----
+    class A
+      def greet
+        puts 'Hi'
+      end
+    end
+    
+    class A
+      self.define_method(:greet) do
+        puts 'Hi'
+      end
+    end
+    
+    class A
+      A.define_method(:greet) do
+        puts 'Hi'
+      end
+    end
+    
+    class A;end
+    A.define_method(:greet) do
+      puts 'Hi'
+    end
 
-## [7][Anybody else dislike the idea of "endless" methods?](https://www.reddit.com/r/ruby/comments/geku74/anybody_else_dislike_the_idea_of_endless_methods/)
-- url: https://www.reddit.com/r/ruby/comments/geku74/anybody_else_dislike_the_idea_of_endless_methods/
----
-I'll be perfectly up front here in my opinion that we Rubyists are far too obsessed with keeping our code as "minimalist" as possible.  Far too much reliance on implied operators and a focus bordering on obsession on using method chains pack a ton of functionality into a small space.  As someone who has studied psychology extensively I find that a lot of what is in the style guides makes code harder to parse by a human and thus harder to work with.
+`A` is an object
 
-And now there is a proposal to add "endless" methods into Ruby, so you can stick single line method literally onto one or two lines and dispense with the "end" keyword.  I'm sorry, but from my perspective this is a bad idea.  Is requiring a clear demarcation of the end of a method really such a bad thing?  These statements make it very clear where something terminates, and the next person reading the code doesn't have to spend mental energy figuring it out.  And yeah, for one liners it's rather trivial, but will this be where it stops?  What about multi-line methods down the road?  No disrespect to Python users, but we're not writing Python here and delineating code blocks using white space isn't what we signed up for.  Coffeescript used that philosophy and I think we're all glad CS is going away.  Do we really need another method definition syntax to consider?
+`A` has some internal blueprint for making new copies (instances) of itself
 
-Understand I'm not going to tell anyone else that they're right or wrong here, this is just my opinion on this change.  If there are benefits here I'm not seeing I'm happy to consider them, but from what I see so far this looks like trying to fix what ain't broken.  If you're going to up or downvote that's fine but let me know your reasons why, I'd like to hear other peoples thoughts, and thank you for listening to mine.
+`define_method` says: add this method to the blueprint `A` is keeping track of
 
-Edit:  From reading the comments and perspective of others I'm more comfortable with this as it seems that it won't be that big of a change.  Thank you to all for your input.
-## [8][I'm so new and bad at this it's not even funny.](https://www.reddit.com/r/ruby/comments/geyitf/im_so_new_and_bad_at_this_its_not_even_funny/)
-- url: https://www.reddit.com/r/ruby/comments/geyitf/im_so_new_and_bad_at_this_its_not_even_funny/
----
-Hello, I am a student studying to become a networking technician and have fallen upon Programming and a huge issue where I am at the end of my studies, and because of complications have to create a pong game that uses gosu, yaml comfigs and UDPSocket for x,y cooridnates data. This is of course in ruby and I'm looking around and it doesn't seem that complicated all though I am having minor panic attacks..
+&amp;#x200B;
 
-Due to my inexperience in programming I need to re-learn and remember how even the basics works and I'm looking at: [https://docs.ruby-lang.org/en/2.2.0/UDPSocket.html](https://docs.ruby-lang.org/en/2.2.0/UDPSocket.html)  
+this special syntax of `def`
 
+    def self.greet
+      puts 'Hello'
+    end
 
-And want to use it, test it out in like irb. But I honestly don't know how to even get it to start working since gem install doesn't work? I'm sorry I've got three weeks to make something out of this in an OOP manner and I've forgotten even the basics of how to use stuff like this and I don't know where to ask or check.
-## [9][Has anyone here used DRb in the last few years? What was your experience?](https://www.reddit.com/r/ruby/comments/geihqa/has_anyone_here_used_drb_in_the_last_few_years/)
-- url: https://www.reddit.com/r/ruby/comments/geihqa/has_anyone_here_used_drb_in_the_last_few_years/
----
-I ended up browsing DRb's docs today. There isn't much written about it. Hence the curiosity whether anybody is using it.
+translates to
 
-I need a kind of micro-service that's part of the Rails app. A micro-service in the light that all puma/web-server/sidekiq instances talk to the same Class. I can imagine something like Redis but being part of Rails that I don't have to provision as a separate service. That would be straight-forward in Elixir/Phoenix, but there isn't a clear path in Ruby/Rails.
+    self's_meta_class.define_method(:greet) do
+      puts 'Hello'
+    end
 
-That's how I ended up reading about DRb... this obscure ruby tech.
-## [10][Crystal yay or nay?](https://www.reddit.com/r/ruby/comments/ge4h03/crystal_yay_or_nay/)
-- url: https://www.reddit.com/r/ruby/comments/ge4h03/crystal_yay_or_nay/
----
-Just wondering what my fellow rubyists think of Crystal.
-Do you see some potential in Crystal or you very much prefer the way Ruby works?
+an example:
 
-Crystal is young and full of flaws but that does not mean those cant be fixed.
+    class A
+      def self.greet
+        'Hello'
+      end
+    end
+
+is a shorthand for:
+
+    class A
+      a_metaclass = class &lt;&lt; self; self; end
+    
+      a_metaclass.define_method(:greet) do
+        'Hello'
+      end
+    end
+
+`A's_metaclass` is an object
+
+we added `greet` to it’s internal *make new copies of myself* blueprint
+
+**but**, a metaclass can’t make new instances of itself
+
+\--despite this, `A` the object *is* an instance of `A's_metaclass`
+
+if you do `A.ancestors` you get:
+
+    =&gt; [A, Object, Kernel, BasicObject]
+
+but i think the metaclass sits magically in front
+
+    =&gt; [#&lt;Class:A&gt;, A, Object, Kernel, BasicObject]
+
+&amp;#x200B;
+
+before I couldn't figure out why this wouldn't work
+
+    class Dog;end
+    
+    def Dog.bark
+      puts 'Bark!'
+    end
+    
+    
+    dog_metaclass = class &lt;&lt; Dog; self; end
+    
+    dog_metaclass.bark # exception
+
+If you take what I said earlier, then when we did
+
+    def Dog.bark
+      puts 'Bark!'
+    end
+
+that was acting on the metaclass.
+
+effectively:
+
+    dog_metaclass.define_method(:bark) do
+      puts 'Bark!'
+    end
+
+but! remember -- `define_method` says, add this to your new instance blueprint
+
+so `dog_metaclass.bark` doesn't work
+
+but `dog_metaclass.new.bark` would work (if a metaclass could do new)
+
+&amp;#x200B;
+
+so `bark` *is* on the `dog_metaclass` object, it's just in `dog_metaclass`'s new instance blueprint
+
+    dog_metaclass.instance_methods.first # :bark
+
+and, because the object `Dog` is effectively an instance created by `dog_metaclass`, `Dog.bark` works

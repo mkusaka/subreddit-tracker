@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/gfsh9z/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/gfsh9z/weekly_anything_goes_thread/
+## [1][App Feedback Thread - May 09, 2020](https://www.reddit.com/r/androiddev/comments/ggemd1/app_feedback_thread_may_09_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/ggemd1/app_feedback_thread_may_09_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - May 04, 2020](https://www.reddit.com/r/androiddev/comments/gd9hik/weekly_questions_thread_may_04_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/gd9hik/weekly_questions_thread_may_04_2020/
 ---
@@ -25,105 +40,79 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][ConstraintLayout 2.0.0 beta 5](https://www.reddit.com/r/androiddev/comments/gfimrf/constraintlayout_200_beta_5/)
-- url: https://androidstudio.googleblog.com/2020/05/constraintlayout-200-beta-5.html
+## [3][Sudden extreme decrease in number of users. Anyone else having the same issue?](https://www.reddit.com/r/androiddev/comments/gg8zgk/sudden_extreme_decrease_in_number_of_users_anyone/)
+- url: https://i.redd.it/s39z98yl5ox41.png
 ---
 
-## [4][NHS Covid-19 android app source code](https://www.reddit.com/r/androiddev/comments/gffnou/nhs_covid19_android_app_source_code/)
-- url: https://github.com/nhsx/COVID-19-app-Android-BETA
+## [4][I have made an open source PDF editor that works cooperatively like Google Docs (Github in comments)](https://www.reddit.com/r/androiddev/comments/ggdu3m/i_have_made_an_open_source_pdf_editor_that_works/)
+- url: https://v.redd.it/dwt0aydy4qx41
 ---
 
-## [5][My app indexing government bills was suspended - thinking of replacing with a "censored by google" message - looking for other suggestions too](https://www.reddit.com/r/androiddev/comments/gfgm2s/my_app_indexing_government_bills_was_suspended/)
-- url: https://www.reddit.com/r/androiddev/comments/gfgm2s/my_app_indexing_government_bills_was_suspended/
+## [5][[Rant] Whoever is working on Firebase does not USE it, i'm pretty sure...](https://www.reddit.com/r/androiddev/comments/gg754z/rant_whoever_is_working_on_firebase_does_not_use/)
+- url: https://www.reddit.com/r/androiddev/comments/gg754z/rant_whoever_is_working_on_firebase_does_not_use/
 ---
-(this relates to the recent policy change around apps _mentioning_ coronavirus)
-
-I'm working on an app that shows upcoming, ongoing, and past bills before parliament (in Australia), and going through the process for getting a closed pre-alpha distributed for testers. An unfinished part of this is allowing verified electors/voters to securely cast an (unofficial, nonbinding, etc) vote on whether they support a bill.
-
-Part of this is, of course, showing the title of bills, and since there are 4+ bills with "coronavirus" in the title the app's not only been denied the _first_ review it went through **it was also suspended** (this was just for alpha release channel - tho not sure if a review here would let us publish this version).
-
-Anyway, given this is meant to accurately show what's going on in a *democracy*, simply hiding the solution isn't a long term solution since the user isn't notified of something being hidden.
-
-My idea currently is for this (and any future censorship 🤔) to show a red card with white text saying something like "This bill has been censored by &lt;Google&gt;. Tap for more info", and then replace the description-esq info with a similar message also including
-
-* a censorship ID (i.e. would be the same for all coronavirus censorships)
-* a reason, in this case something like "displaying this bill violates Google's policies for app distribution."
-* a link to a website that explains the censorship and quotes the Developer Distribution Agreement.
-* A link to a website that indexes the same information sans censorship.
-
-That said, it might not elicit the best response from google, so I'm curious if anyone has any suggestions.
-
-&gt; Another interesting thing is that this app (or a very related app) would be an interface between represented (non-government) parliamentarians and voters, which raises an interesting dilemma because we would not fall into any of the exemptions (similarly to how the Democrats in the US wouldn't be exempt)
-&gt;
-&gt; Furthermore, YouTube and all news apps should be removed since they aren't exempt either 😡
-
-###### Screenshots
-
-- [screenshot library](https://imgur.com/a/7kqdwde) on iOS showing an example
-- [email I got](https://i.imgur.com/uLw1XO2.png)
-## [6][Open Source: Medium Unlimited - Android App (Unlock articles behind paywall)](https://www.reddit.com/r/androiddev/comments/gfrn5b/open_source_medium_unlimited_android_app_unlock/)
-- url: https://www.reddit.com/r/androiddev/comments/gfrn5b/open_source_medium_unlimited_android_app_unlock/
+https://gfycat.com/costlyelaboratefinnishspitz
+## [6][Kotlin vs React Native vs Flutter vs Ionic](https://www.reddit.com/r/androiddev/comments/ggd7yw/kotlin_vs_react_native_vs_flutter_vs_ionic/)
+- url: https://www.reddit.com/r/androiddev/comments/ggd7yw/kotlin_vs_react_native_vs_flutter_vs_ionic/
 ---
-I developed a small application "Medium Unlimited" for Android, which lets you unlock articles behind the pay wall. You can also login and clap the unlocked articles.
+Hey guys. My friend and I have been thinking about developing an app. He's much more into Hybrid technologies like Ionic or Cordova and I think native app would be better as it is only for Android. I decided to research it a bit.
 
-Link: [https://github.com/firefinchdev/medium-unlimited-android/](https://github.com/firefinchdev/medium-unlimited-android/)
+**React Native:** Amazing GUI with Native look, performance similar to Native apps,  biggest market and community.
 
-I am open to suggestions for improving the app. You can open issues suggesting improvements, bugs and feature requests. Would welcome PRs for the same. I will be actively working on them.
+**FLutter:** Best user interface, still new and market/community not as big as others, performance is outstanding.
 
-Also, please star the repo for updates.
+**Ionic:** UI using HTML and CSS, second most popular community after React native, loses in performance when compared to others.
 
-&amp;#x200B;
+**Kotlin:** Native UI, market is growing fast, performs better than Java with better security, syntax and compatibility.
 
-P.S: For those who can afford, please consider buying a subscription from the official app. It involves a lot of efforts to maintain a platform like Medium, and writers deserve to be awarded for their excellent content.
-## [7][MIUI 12 has a smooth screen rotation animation, so why don't Google fix this for Android?](https://www.reddit.com/r/androiddev/comments/gfhk20/miui_12_has_a_smooth_screen_rotation_animation_so/)
-- url: https://twitter.com/xiaomishka/status/1254657208538869761?s=20
+What do you guys suggest?
+
+Edit: The major focus is on UI and it will have network calls but might eventually grow bigger with time as lot of features might be added.
+## [7][Haven't developed Android apps in a while, trying to get up to date is a nightmare](https://www.reddit.com/r/androiddev/comments/gfv8ae/havent_developed_android_apps_in_a_while_trying/)
+- url: https://www.reddit.com/r/androiddev/comments/gfv8ae/havent_developed_android_apps_in_a_while_trying/
+---
+The last Android app I developed was about 3 or 4 years ago: I used Java, Butterknife, Retrofit, and Objectbox for persistence.
+Now I'm trying to get up to date to develop a new app using Kotlin, but trying to find out what I should use is a nightmare:
+
+- Butterknife is deprecated, but with Kotlin I can use something called synthetics. But wait, that is no longer recommended. Maybe I should use this DataBinding thing. But there is an even newer thing called ViewBinding!
+
+- I heard that with Kotlin I can use Anko to make things easier. But that is deprecated, now I can use Kotlin Extensions. But the official link about Kotlin Extensions redirects to a different web that talks about something called KTX. Is that the same thing?
+
+- AsyncTask task is no longer recommended. What should I use instead? Coroutines?
+
+- Coroutines are supposed to make working with callbacks (in Retrofit, for example) easier, but boy, after watching youtube tutorials I think I'll stick with callbacks.
+
+Anyway, my main complaint is that there are dozens of ways and tools to do the same thing, every couple of months there is a newer one, and every tutorial/course/book I check uses different methodologies (even official Google tutorials), so I don't know what I should use.
+Can you recommend me sources that are up to date so that I can learn what are the current de facto practices, tools, libraries, etc?
+## [8][Kotlin Coroutines 1.3.6 with the new StateFlow 🎉](https://www.reddit.com/r/androiddev/comments/gg1dtx/kotlin_coroutines_136_with_the_new_stateflow/)
+- url: https://www.reddit.com/r/androiddev/comments/gg1dtx/kotlin_coroutines_136_with_the_new_stateflow/
+---
+https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.3.6
+
+StateFlow is here, the new "BehaviorSubject" (in RxJava world) for Coroutines, I can't wait to get rid of all the `ConflatedBroadcastChannel`s in my codebase 😀
+
+https://github.com/Kotlin/kotlinx.coroutines/issues/1973
+## [9][A week since Covid suspension.](https://www.reddit.com/r/androiddev/comments/ggb3s7/a_week_since_covid_suspension/)
+- url: https://www.reddit.com/r/androiddev/comments/ggb3s7/a_week_since_covid_suspension/
+---
+So it's been a week now since Google suspended my app because a news article pulled from an RSS feed contained the word Covid19. I appealed on day 1 and removed any mention of Covid.
+
+I get why they are doing it but surely there has to be a better way. I'm losing customers and potential customers because of this. Trying to find anyone to contact is impossible from what I can see, I thought I might get somewhere by messaging @googleplaydev on twitter but no luck.
+
+It has been a stressful week so far, I've hardly slept through trying to get it resolved but it looks like it will be a case of hoping it will be resolved. 
+
+Do Google work on appeals on weekends? 
+
+I really feel for anyone else going through the same thing.
+## [10][How to handle these type of reviews? I am getting these quite frequently now and rating has gone down to 4.2 from 4.4. User liked the app still gave it one star. Does google help in removing these reviews?](https://www.reddit.com/r/androiddev/comments/ggeg7p/how_to_handle_these_type_of_reviews_i_am_getting/)
+- url: https://i.redd.it/9e4ujph5eqx41.jpg
 ---
 
-## [8][Beyond Basic RxJava Error Handling](https://www.reddit.com/r/androiddev/comments/gfsrbf/beyond_basic_rxjava_error_handling/)
-- url: https://medium.com/@elye.project/beyond-basic-rxjava-error-handling-b0875d3877e0?source=friends_link&amp;sk=093e868bb0a77ae4cdf8de771fb3efab
+## [11][What are some great open source apps every Android developer could use/learn from?](https://www.reddit.com/r/androiddev/comments/gg8pro/what_are_some_great_open_source_apps_every/)
+- url: https://www.reddit.com/r/androiddev/comments/gg8pro/what_are_some_great_open_source_apps_every/
+---
+Especially written in Java because that's where I'm personally trying to improve as a junior dev, but Kotlin would be great too.
+## [12][Strange stats from playstore](https://www.reddit.com/r/androiddev/comments/ggdmi5/strange_stats_from_playstore/)
+- url: https://i.redd.it/x7c0kj412qx41.png
 ---
 
-## [9][GeckoView for Android](https://www.reddit.com/r/androiddev/comments/gf8cy8/geckoview_for_android/)
-- url: https://mozilla.github.io/geckoview/
----
-
-## [10][Android MessagingStyle Notification As Clear As Possible](https://www.reddit.com/r/androiddev/comments/gfouni/android_messagingstyle_notification_as_clear_as/)
-- url: https://medium.com//android-messagingstyle-notification-as-clear-as-possible-1847f809ad59?source=friends_link&amp;sk=1beb3f9bc94ab3c1ad53232c9e18ab61
----
-
-## [11][How do you manage your application's preferences?](https://www.reddit.com/r/androiddev/comments/gfmful/how_do_you_manage_your_applications_preferences/)
-- url: https://www.reddit.com/r/androiddev/comments/gfmful/how_do_you_manage_your_applications_preferences/
----
-Hi, Android devs!
-
-So the other day I was asking myself this question: how do you manage your preferences? I mean, not if using the SharedPreferences API, an encrypted Json or a plan text file in the user's internal storage, but in the application, the activity of handling the settings (e.g. notifications, colors, etc.).
-
-Do you use a library? Do you make the activity manually and the a java class where you save the changes?
-
-I'd be glad to know how you manage this!
-
-Thanks!
-## [12][How do you experiment with new features in mobile apps?](https://www.reddit.com/r/androiddev/comments/gfe733/how_do_you_experiment_with_new_features_in_mobile/)
-- url: https://www.reddit.com/r/androiddev/comments/gfe733/how_do_you_experiment_with_new_features_in_mobile/
----
-Hey r/androiddev,
-
-I'm Carmine, a researcher at the University of Zurich. Together with other researchers from Canada, The Netherlands, and Spain, I'm currently investigating how mobile app developers are experimenting with new features in their products.
-
-For developers, it is hard to predict the success of a feature. For example, they cannot discover all defects during the testing phase and some defects will only appear after products are deployed to production. To mitigate the risk of delivering buggy features to users, developers often adopt incremental releasing strategies, such as Continuous Experimentation (CE). CE also helps developers to determine if the new features are successful in serving the business goals and refine or revert them if needed. 
-
-Rather than delivering content directly through the web browser, mobile app users install applications on their mobile devices (e.g., smartphones, tablets). Mobile app developers need to deliver new releases from a software organization to app stores that curate mobile apps and make them available to users. In such a scenario, app stores might act as a bottleneck between software organizations and users, which may impose delays in the release process.
-
-To better support mobile app developers, we ask you to share your expertise and experience by answering a few questions in the following survey: [http://tiny.uzh.ch/131](http://tiny.uzh.ch/131)
-
-Our ultimate goal is to understand the state-of-the-art in applying CE in mobile apps. We are going to share the anonymized answers together with the analysis of the results with your community.
-
-Comments and feedback to this post are very welcome!
-
-&amp;#x200B;
-
-Best regards,
-
-Carmine Vassallo
-
-Doctoral Student at the University of Zurich, Switzerland

@@ -1,25 +1,5 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/g616hm/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/g616hm/personal_projects_show_off_your_own_project_andor/
----
-In this thread you can showcase your personal pet project to other redditors.
-
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
-
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/gek2rk/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/gek2rk/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/gek2rk/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -39,147 +19,133 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][react-rails vs rails-api and react app](https://www.reddit.com/r/rails/comments/gfo0vg/reactrails_vs_railsapi_and_react_app/)
+## [2][Profiling Rails app that uses websockets](https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/)
+- url: https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/
+---
+Hi. I'm new to Ruby and I am trying to profile a Rails app that uses websockets for streaming audio packets and other messages. I am interested in CPU time and wall clock time taken by all the methods in the app. Most of the tracing gems I see show the information for a single HTTP request, but it doesn't help in the case of websockets, since they remain alive even after a request. If it helps, 
+
+How would you do this? How do I profile arbitrary points in code, like just do a "start" in the websocket open and "stop" in the websocket close, and generate a report? I tried ruby-prof, but it crashes with cryptic errors...
+## [3][Good places to start with IOS development?](https://www.reddit.com/r/rails/comments/ggeq6a/good_places_to_start_with_ios_development/)
+- url: https://www.reddit.com/r/rails/comments/ggeq6a/good_places_to_start_with_ios_development/
+---
+Hey everyone! 
+
+I have recently completed a full stack development course (Rails 6, Ruby, HTML, CSS, SQL, simple JavaScript) and feel relatively comfortable creating simple websites and hosting them on Heroku. 
+
+I now wanted to look into IOS development, as I really want my next project (time management software) to also have a mobile application for users. 
+
+Do you think React Native is the right way to go? I was unsure if it was wise to venture to far from the skills I recently learned, as I hoped this project would allow me to build upon and strengthen them.
+
+Are there any good books / guides or tutorials that I could follow to get a coherent understanding?
+
+Looking forward to reading your responses, thanks a lot in advance and have a great weekend! :)
+## [4][link_to without the &lt;a&gt;. To add in the &lt;head&gt;](https://www.reddit.com/r/rails/comments/ggd97p/link_to_without_the_a_to_add_in_the_head/)
+- url: https://www.reddit.com/r/rails/comments/ggd97p/link_to_without_the_a_to_add_in_the_head/
+---
+Hi guys,
+
+in the "structured data" area of my website, I added a potentialAction, SearchAction,
+
+in this way
+
+    	"potentialAction": {
+    		"@type": "SearchAction",
+    		"target": "https://www.mywebsite.com/search?utf8=%E2%9C%93&amp;amp;search%5Bq%5D={search_term_string}",
+    		"query-input": "required name=search_term_string"
+    	}
+
+the link/target is not the best thing to see. I want to replace it with a link\_to, but if I should add
+
+    &lt;%= link_to search_path(search: { q: #{search_term_string} }) %&gt;
+
+obviously I will have the &lt;a&gt; tag. **How to put it without the &lt;a&gt;?**
+
+Just to create the url
+## [5][Best course resource for ruby and rails?](https://www.reddit.com/r/rails/comments/gfx93d/best_course_resource_for_ruby_and_rails/)
+- url: https://www.reddit.com/r/rails/comments/gfx93d/best_course_resource_for_ruby_and_rails/
+---
+TL;DR - what course website should I get my company to pay for that has best rails content?
+
+
+I’ve been using Rails for about a year. The purpose is business applications which is based around CRUD plus sometimes tricky client reqs. I get along fine in Rails but I feel there are some fundamentals and good habits which may be missing.  Also looking at improving things such as DRY, refactoring, StimulusReflex, and generally beautiful but maintainable code. 
+
+I read this article and found it also interesting http://jeromedalbert.com/how-dhh-organizes-his-rails-controllers/. 
+
+It wouldn’t hurt to improve my JS, HTML5, Bootstrap, etc. 
+
+So looking for a nice resource which will cover these and be somewhat relevant to rails. 
+
+I currently have access to a friends pluralsight. They also have a sale going on. Should I just get the company to purchase that?
+
+Any other recommendations? Thanks.
+## [6][Best way to convert data from a view or model into a spreadsheet](https://www.reddit.com/r/rails/comments/gfxr5k/best_way_to_convert_data_from_a_view_or_model/)
+- url: https://www.reddit.com/r/rails/comments/gfxr5k/best_way_to_convert_data_from_a_view_or_model/
+---
+haven't done this before, was wondering if anyone had a nice article or video for using caxlsx to do so
+## [7][Webpacker and CSS image calls](https://www.reddit.com/r/rails/comments/gg05c9/webpacker_and_css_image_calls/)
+- url: https://www.reddit.com/r/rails/comments/gg05c9/webpacker_and_css_image_calls/
+---
+I am still new to a non asset pipeline world. I am working on transitioning my app from 4 to 6. I have a number of image calls in my CSS that webpack without error, but do not load. 
+
+    .logo {
+    background: image-url("../images/seal.png") no-repeat scroll 0 0 transparent;
+    background-size: 45px auto;
+        ...
+    }
+      .page-header a {
+        background: image-url("../images/neuro_banner_w.jpg") no-repeat scroll 0px 0 transparent;
+    background-size: 100% auto;
+       ... 
+        }
+
+My images now all reside in the app/javascript/images folder (with subfolders included, but neither of these images are in a subfolder.
+
+When I load my page, no images appear. When I open the inspector the I see:
+
+    background: image-url(/packs/media/images/seal-275a0ac1ae6079ecad8e70e483ffbfee.png) no-repeat scroll 0 0 transparent;
+
+The line is crossed out with the error: Invalid Property value. 
+
+Also the following two lines are also crossed out (background size and height)
+
+What am I doing wrong?
+
+I am not sure what files you need to see code from, so call out if there is something that I need to show.
+## [8][[Question/help] Shopify + GraphQL](https://www.reddit.com/r/rails/comments/gfxjz3/questionhelp_shopify_graphql/)
+- url: https://www.reddit.com/r/rails/comments/gfxjz3/questionhelp_shopify_graphql/
+---
+I am new to building shopify applications, and am a bit confused regarding GraphQL.
+
+Currently:
+
+I have built a super simple Shopify application using the shopify_app gem. The application has some webhooks associated with orders. When a shop creates an order, I receive the JSON from the order, run a job in my code and submit the data I want to my local database.
+
+What I am trying to do:
+
+I need to access all orders from a shopify store that installs my application, and store all orders for that store. I would want to fetch all orders every 4-months or so. Shopify gave my application permission to fetch all orders.
+
+My issue/question:
+
+It appears the best course of action here is to use GraphQL. What I am confused with is do I need to use the shopify_api gem in addition to the shopify_app gem to get GraphQL to work?
+## [9][Tailwind form question.](https://www.reddit.com/r/rails/comments/gg022m/tailwind_form_question/)
+- url: https://www.reddit.com/r/rails/comments/gg022m/tailwind_form_question/
+---
+Using tailwind on Rails 6 with Webpack and all that good stuff. It's my first time with tailwind so I'm just stumbling through just how "Open Source" this framework is in nature. Could almost be called option paralysis if I'm being honest. Now, unto the question:
+
+&amp;#x200B;
+
+I have a sign-up &amp; new post form that I'm very happy with so far. However, I am thoroughly disappointed that the text box looks absolutely retarded (really small initially) and has to be manually resized. Is there a way that I can make it start at a designated size and have it self-adjust as needed? Or is this something tailwind's out-of-the-box CSS doesn't care for?
+## [10][react-rails vs rails-api and react app](https://www.reddit.com/r/rails/comments/gfo0vg/reactrails_vs_railsapi_and_react_app/)
 - url: https://www.reddit.com/r/rails/comments/gfo0vg/reactrails_vs_railsapi_and_react_app/
 ---
 
 
 [View Poll](https://www.reddit.com/poll/gfo0vg)
-## [4][Help deciding where to host an app.](https://www.reddit.com/r/rails/comments/gfmlwu/help_deciding_where_to_host_an_app/)
-- url: https://www.reddit.com/r/rails/comments/gfmlwu/help_deciding_where_to_host_an_app/
----
-Hi folks, I want to know your opinions on where should I host a react rails-application. This project is currently a rails api and a react frontend, they're in separate repos(for now but I could have one repo if you think it is better). This will be a small app used by 10-15 users, so I believe traffic is not an issue.
-
-What would you suggest to host the app, users won't likely grow, but my biggest unknown is the pricing, this is my first freelance project. I don't want anything fancy, since I don't think this is going to scale.
-
-I'm no devops expert and I don't think I want to be setting up everything manually, so I would like a hosting solution where I  wont have to be constantly turning on/off things, in order to not be billed a lot of money for charges I'm not even using at full. What would you suggest?
-
-For example the company I'm working on now uses AWS but seeing what the infrastructure team does, it does not seems like an easy task. I also have used heroku free plans to host college projects and I actually like it, but I don't know how the non free projects work(or if is even worth it to pay for it).
-
-Any other hosting solutions are welcome, keep in mind that this is a very small project and I also have a react frontend which lives in another repo, but I believe I can make it live inside the rails repo if that something you guys recommend.
-## [5][How to set variable on page load?](https://www.reddit.com/r/rails/comments/gft14w/how_to_set_variable_on_page_load/)
+## [11][How to set variable on page load?](https://www.reddit.com/r/rails/comments/gft14w/how_to_set_variable_on_page_load/)
 - url: https://www.reddit.com/r/rails/comments/gft14w/how_to_set_variable_on_page_load/
 ---
 So I have a hidden form field that gets set with a value onclick from a couple of links. Depending on what link is clicked a different value gets set. The form field is called activeselector.
 
-What I want to do is set an `@activeselctor` variable to the form param if it is there, but set it to '12345' or something if it is not so the page loads with a default value. 
+What I want to do is set an `@activeselector` variable to the form param if it is there, but set it to '12345' or something if it is not so the page loads with a default value.
 
 Whats the best way to do this? I have the onclick set up and setting the value, but I'm not sure the best  way to return it back to the page on submit and default it on first page load.
-## [6][dynamic query builder (help!)](https://www.reddit.com/r/rails/comments/gfhdcn/dynamic_query_builder_help/)
-- url: https://www.reddit.com/r/rails/comments/gfhdcn/dynamic_query_builder_help/
----
-Hi everybody!
-
-I have been trying to figure it out how to create a model for `report` that dynamically allows the following things:
-
-1. Could call any model in DB
-2. Create nested joins with N-levels (as many as needed, there are cases with 8 nested tables or more!!)
-3. Avoid collitions with polymorphic relations
-4. Filter the table with dynamic `where()`
-
-&amp;#x200B;
-
-For better understanding this is an example of a daily basis use:
-
-`Isa.includes({funding_option: [{application: [{funding_opportunity_from_resource: [{fund: :company}]}]}]}).where(.....`
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Any idea?
-## [7][Advice on finding technical advisors?](https://www.reddit.com/r/rails/comments/gf7gzv/advice_on_finding_technical_advisors/)
-- url: https://www.reddit.com/r/rails/comments/gf7gzv/advice_on_finding_technical_advisors/
----
-Hi /rails !
-
-Question:
-
-To anyone who has written a technical book or contributed to one before: 
-
-* Did you get technical advisors to edit / or read before publishing? 
-* If so how did you find those individuals / did you find it added value to the book?
-
-Context:
-
-I'm currently writing a book which explains how to build a project that bridges several technologies major ones being Sinatra / Rails (others being go, vuejs).
-
-I'd like to think I know my way around a Rails app but am certainly no Ultra-Rails-Architecture-BestPractice-Guru™️©, so I'd love to hear from the community!
-
-Thanks y'all!
-## [8][Notes from DHH's RailsConf keynote interview](https://www.reddit.com/r/rails/comments/geyr61/notes_from_dhhs_railsconf_keynote_interview/)
-- url: https://www.reddit.com/r/rails/comments/geyr61/notes_from_dhhs_railsconf_keynote_interview/
----
-For those of you who haven't had the chance to watch yet:
-
-https://www.joshuawood.net/notes/2020-railsconf-dhh-keynote
-
-One of the parts I liked best was this comment on repeating history as an industry:
-
-&gt; The amnesia is partially caused by so many new people entering the industry. They haven’t experienced it any other way.
-
-There are a ton of new people who haven’t been exposed to the joy of Rails because JavaScript is mainstream and/or someone told them not to bother.
-
-The “Rails Way” is completely foreign to many of the new JavaScript developers I’ve met. Don’t assume people get it just because it’s been around forever. Spread the word:
-
-&gt; Ruby is great because you can know a little JavaScript and then jump to Ruby, understand it, and own the full stack.
-
-What do y'all think about the state of Ruby and Rails in 2020?
-## [9][Where should decorator methods that don't belong to a model go?](https://www.reddit.com/r/rails/comments/gf5r1v/where_should_decorator_methods_that_dont_belong/)
-- url: https://www.reddit.com/r/rails/comments/gf5r1v/where_should_decorator_methods_that_dont_belong/
----
-Hi all,
-
-I've got pretty familiar with using the draper gem now to store decorator methods for my models in order to clean up my views.  
-
-
-But now I have the following method in my home controller:
-
-    request.location.city ? @location = request.location.city : @location = "..."
-
-And this is how I'm calling it in my home page:
-
-    placeholder: "Search for results in #{@location}",
-
-The controller seems like the wrong place to put logic purely related to the view.  
-
-
-I can't see anything in the draper documentation about decorator methods for views. It's all about decorator methods for models.  
-
-
-So I'm wondering, where should I be putting a method like the one just mentioned?  
-
-
-Thanks
-## [10][Is Everyday Rails Testing with RSpec a Good Read for a Mid-Level Developer?](https://www.reddit.com/r/rails/comments/gf4gqo/is_everyday_rails_testing_with_rspec_a_good_read/)
-- url: https://www.reddit.com/r/rails/comments/gf4gqo/is_everyday_rails_testing_with_rspec_a_good_read/
----
-As it says on the tin, I'd be keen to hear from developers with, say, 2+ years of experience on whether they would recommend the book?
-
-I appreciate there will be many elements that are for juniors but if it also caters beyond that then I'll be purchasing a copy.
-
-Thanks!
-## [11][Please help. Running out of hairs to pull.](https://www.reddit.com/r/rails/comments/geza8v/please_help_running_out_of_hairs_to_pull/)
-- url: https://www.reddit.com/r/rails/comments/geza8v/please_help_running_out_of_hairs_to_pull/
----
-This is likely more of an OS issue than it is a dev/coding  issue, but I trust you guys' judgement. I am constantly having to reboot my terminal (running on zsh since apple forced it) to run the devise:install and all other gem variants. 
-
-Here's what happens: 
-
-I do something, whatever on the terminal. Then, I run one of the install operators. It works fine. Next time I try it - just finished running the simple\_forms install and now doing devise views - it just freezes up and does nothing. Opening a new tab and running it there doesn't work. Need to cmd + Q out of that b\*\*\*\* and reopen the terimnal, then cd back into the app, then it works fine. I've done this now 6 times in the last 45 minutes. I will be bald by the end of the night if I can't fix this nuance.
-## [12][Should I use multi-tenancy in my project ?](https://www.reddit.com/r/rails/comments/geo7h6/should_i_use_multitenancy_in_my_project/)
-- url: https://www.reddit.com/r/rails/comments/geo7h6/should_i_use_multitenancy_in_my_project/
----
-So, I was taking this course in which  you code a SaaS Management Project. This app uses milia gem for multi tenenacy. There is two types of user. Company and Employee. A company can create a project and then invite employees to be part of this project. And in the projects you can upload files, texts., etc...
-
-Unfortunately I couldn’t get through this course's section due the very outdated content such as milia gem and rails 4.
-
-I was looking forward to code this app because I could imagine my undergraduate thesis project being built using the very bases of this SaaS management project app. 
-
-I’m trying to code a simple video sharing plataform where a professor could have their own private “YouTube channel” where their could invite their students to participate and watch the lectures. 
-
-So Insted of Employee and Company, my models would be Professors and Students.
-
-So, I’m looking for this “privacy” characteristic. That you only would be able to see the content if you were invited or something like that. 
-
-The multi tenancy for my project is the correct approach?

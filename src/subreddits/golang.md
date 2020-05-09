@@ -1,71 +1,86 @@
 # golang
-## [1][Developers say Google's Go is 'most sought after' programming language of 2020 | ZDNet](https://www.reddit.com/r/golang/comments/gflyyn/developers_say_googles_go_is_most_sought_after/)
-- url: https://www.zdnet.com/article/developers-say-googles-go-is-most-sought-after-programming-language-of-2020/
+## [1][immudb: A lightweight, high-speed immutable database for systems and applications in Go.](https://www.reddit.com/r/golang/comments/ggds5c/immudb_a_lightweight_highspeed_immutable_database/)
+- url: https://github.com/codenotary/immudb
 ---
 
-## [2][TermBackTime - Terminal Recorder](https://www.reddit.com/r/golang/comments/gfjw8j/termbacktime_terminal_recorder/)
-- url: https://www.reddit.com/r/golang/comments/gfjw8j/termbacktime_terminal_recorder/
+## [2][I made a CSVtoJSON CLI tool with Golang](https://www.reddit.com/r/golang/comments/gg5m7f/i_made_a_csvtojson_cli_tool_with_golang/)
+- url: https://www.reddit.com/r/golang/comments/gg5m7f/i_made_a_csvtojson_cli_tool_with_golang/
 ---
-I started a project a while back called [TermBackTime](https://termbackti.me/). This allows for PTY terminal recordings to be uploaded to [Gist](https://gist.github.com/) for later playback. While I took a break on this project I plan on starting back up, implementing live terminal streaming via WebRTC.
+Hi!
 
-*Example on Windows 10 using WSL:*
+After 7 years of working with Javascript, I decided that it was time to try a new programming language. During the last weeks, I've been learning Golang using this website as my main learning resource: [https://gobyexample.com/](https://gobyexample.com/) .  I thought that the best way to challenge my recently acquired skills was to create a simple program without following any tutorial or course. That's the reason I made this CLI tool that you can check here:
 
-Gist: [https://gist.github.com/LouisT/1fc1b6cd6317180d01f60b3011490e75](https://gist.github.com/LouisT/1fc1b6cd6317180d01f60b3011490e75)
+ [https://github.com/Andrew4d3/go-csv2json](https://github.com/Andrew4d3/go-csv2json)
 
-Playback: [https://termbackti.me/p/1fc1b6cd6317180d01f60b3011490e75](https://termbackti.me/p/1fc1b6cd6317180d01f60b3011490e75)
+Bear in mind that I'm a complete beginner using Go. So probably the code you're gonna see is not the best out there. *But hey! At least I tried*... I'll be writing a Medium article in the future explaining what I did, but first I want to read your opinions. To see if there's something where I can improve myself.
 
-CLI:  `termbacktime play 1fc1b6cd6317180d01f60b3011490e75`
+Any suggestion, advice, or feedback you want to give me is completely welcome. :)
+## [3][godoc-static - Generate static Go documentation](https://www.reddit.com/r/golang/comments/gg91mm/godocstatic_generate_static_go_documentation/)
+- url: https://gitlab.com/tslocum/godoc-static
+---
 
-[Recording Playback](https://i.redd.it/0g04f3g53gx41.gif)
+## [4][Communicate between grpc microservices with jwt](https://www.reddit.com/r/golang/comments/gg99xe/communicate_between_grpc_microservices_with_jwt/)
+- url: https://www.reddit.com/r/golang/comments/gg99xe/communicate_between_grpc_microservices_with_jwt/
+---
+How can we communicate between microservices with jwt? I want to communicate between two microservices first takes care of the username login and password and second microservices should get username and other information of the user.
+## [5][[Question] How does `cancel()` result in`&lt;-ctx.Done()` to be the case chosen in a "select" statement?](https://www.reddit.com/r/golang/comments/ggdueg/question_how_does_cancel_result_inctxdone_to_be/)
+- url: https://www.reddit.com/r/golang/comments/ggdueg/question_how_does_cancel_result_inctxdone_to_be/
+---
+I'm trying to understand "select" statements of the following kind:
+```go
+select {
+	case &lt;-ctx.Done():
+	...
+	// Timeout
+	case r:= &lt;-time.After(...):
+	...
+}
+```
 
-The web playback version supports some experimental features such as converting to GIF and WebM. So far I've tested on Windows 10 via WSL, OSX 10.12 to 10.14, Ubuntu 14.04.6 to 18.04.4. This was my first "major" project in Go so I'm sure parts are pretty rough. Any feedback would be greatly appreciated.
-## [3][Web Application Firewall written in Go](https://www.reddit.com/r/golang/comments/gfsns4/web_application_firewall_written_in_go/)
+Because of how "select" statements work, the channel operands of these two receive operations are evaluated exactly once. i.e., ctx.Done() and time.After(...) are evaluated exactly once. The result is a set of channels to receive from and the corresponding values to send. Since there is no default "case", the "select" statement blocks until at least one of the communications can proceed.
+
+From [here](https://golang.org/pkg/time/#After), I understand that `time.After(...)` will be the case chosen to proceed, if the specified duration has elapsed.
+
+What I've already read but do not completely understand:
+
+From [here](https://golang.org/src/context/context.go?s=2460:6019#L357), I see that `Done()` returns a channel with elements of type `struct{}`.
+
+From [here](https://golang.org/src/context/context.go?s=2460:6019#L389) I see that `cancel()` closes `c.done`.
+
+I know that closing a channel causes receive operations to return the zero value for the channel's element type without blocking. I also know that receiving from a "nil" channel blocks forever; I have a feeling that this fact fits into this picture somehow because I see `if c.done == nil` in the code. 
+
+I can't see the whole 'chain' of how a `cancel()` results in causing `ctx.Done()` to proceed first in the "select" statement.
+
+Please do correct me if I have any misunderstandings.
+## [6][HTTP client and REST API](https://www.reddit.com/r/golang/comments/ggf2h6/http_client_and_rest_api/)
+- url: https://www.reddit.com/r/golang/comments/ggf2h6/http_client_and_rest_api/
+---
+There was a question about go vs python for REST services. That was geared toward servers. My question is about client.
+
+Our organization introduced a tool which supports REST. There is language support of Python/NodeJs/Java/C#. But not Go. I would like to write the Go implementation for internal use.
+
+I have it working with Go's standard library net/http client. It works but I would like to make it easier on the user.  I would like to abstract net/http client from the user. Is that a good idea?
+
+Are there any good examples I can refer to?
+
+I looked at this, [https://www.scaledrone.com/blog/creating-an-api-client-in-go/](https://www.scaledrone.com/blog/creating-an-api-client-in-go/). Is this a good idea?
+## [7][Web Application Firewall written in Go](https://www.reddit.com/r/golang/comments/gfsns4/web_application_firewall_written_in_go/)
 - url: https://github.com/asalih/guardian
 ---
 
-## [4][demoinfocs-golang v2.0.0 released - CS:GO Demo Parser Library for Go](https://www.reddit.com/r/golang/comments/gfrtdq/demoinfocsgolang_v200_released_csgo_demo_parser/)
-- url: https://github.com/markus-wa/demoinfocs-golang
+## [8][Open sourced my Github App](https://www.reddit.com/r/golang/comments/ggdfr8/open_sourced_my_github_app/)
+- url: https://www.reddit.com/r/golang/comments/ggdfr8/open_sourced_my_github_app/
+---
+Hi All, I am still learning Golang, but I have just released the source code of my Github Application ([https://pullassistant.com/](https://pullassistant.com/)) 
+
+Repository: [https://github.com/pullassistant/PA-Monorepo](https://github.com/pullassistant/PA-Monorepo)
+
+If someone wants to build a similar stuff, it might be useful! Thanks!
+## [9][Checksum validation in goose](https://www.reddit.com/r/golang/comments/ggadj4/checksum_validation_in_goose/)
+- url: https://www.reddit.com/r/golang/comments/ggadj4/checksum_validation_in_goose/
+---
+ Hi , I just started with golang , have couple of doubts regarding DB  migration , we are using goose for db migration , What I noticed is that  it does not do the checksum validation while running the migration like  done in flyway(java) , suppose for example I have a migration file  which is ran before now if I make any change or update to it , it does  not run the migration or throw any error, for every migration I have to  modify the name of the file or create a new file , is there any thing goose provide out of the box to do this ?
+## [10][Developers say Google's Go is 'most sought after' programming language of 2020 | ZDNet](https://www.reddit.com/r/golang/comments/gflyyn/developers_say_googles_go_is_most_sought_after/)
+- url: https://www.zdnet.com/article/developers-say-googles-go-is-most-sought-after-programming-language-of-2020/
 ---
 
-## [5][Tello drone remotely controlled via WebRTC (featuring pion &amp; gobot)](https://www.reddit.com/r/golang/comments/gfrqj0/tello_drone_remotely_controlled_via_webrtc/)
-- url: https://www.reddit.com/r/golang/comments/gfrqj0/tello_drone_remotely_controlled_via_webrtc/
----
-[https://github.com/oliverpool/tello-webrtc-fpv](https://github.com/oliverpool/tello-webrtc-fpv)
-
-I connected the pion and gobot libraries to let my little Tello drone be remotely controlled (from everywhere on earth).
-
-&amp;#x200B;
-
-https://preview.redd.it/3baoid874jx41.png?width=1919&amp;format=png&amp;auto=webp&amp;s=cc318b088f73c3f29bfeb4e5612fcdf591694c8e
-
-The latency is surprisingly small (clearly under 500ms round-trip).
-
-I managed to have a pure-go program by reading and buffering the h264 frames manually (more info in the README).
-## [6][Learn go with tests: HTTP handlers revisited](https://www.reddit.com/r/golang/comments/gf6d3u/learn_go_with_tests_http_handlers_revisited/)
-- url: https://quii.gitbook.io/learn-go-with-tests/questions-and-answers/http-handlers-revisited
----
-
-## [7][Functional testing with your database in Go](https://www.reddit.com/r/golang/comments/gfk3od/functional_testing_with_your_database_in_go/)
-- url: https://terrastruct.com/blog/functional-testing-database-go/
----
-
-## [8][Live browser sessions](https://www.reddit.com/r/golang/comments/gfpk6k/live_browser_sessions/)
-- url: https://www.reddit.com/r/golang/comments/gfpk6k/live_browser_sessions/
----
-So I'm doing the classic thing of a webserver in go. I'm sure you're all bored to tears of that by now but please humour me.
-
-For context, I'm very deliberately reinventing the wheel in a lot of places, as a learning exercise. I'm not necessarily looking for code solutions - although those are fine - but tips on general approach and languages or technologies I might need to look into.
-
-I've managed to set up a postgres database, user login, account creation, persistent sessions via cookies, POST actions, etc. I'm interested in how you'd go about handling the more active data exchange that might need to happen for interactive pages. My understanding is that go is very much a server-side operation, and javascript, html etc. are client side. How do you begin to communicate without leaving a page, e.g. for a games that might require a continuous stream of information?
-
-I realise this isn't necessarily a go question per se, but I've made the assumption there would be methods the go community might prefer.
-
-Thanks for you help.
-## [9][Kubeless - Build advanced applications with FaaS on top of Kubernetes](https://www.reddit.com/r/golang/comments/gfb2ne/kubeless_build_advanced_applications_with_faas_on/)
-- url: https://kubeless.io/
----
-
-## [10][Anyone making a game?](https://www.reddit.com/r/golang/comments/gficdn/anyone_making_a_game/)
-- url: https://www.reddit.com/r/golang/comments/gficdn/anyone_making_a_game/
----
-This might be a far-fetched question, but I was wondering if there is a video game project that is looking for a contributor. These days I find myself with a lot of time in my hands and I wanted to try something new. Thanks.

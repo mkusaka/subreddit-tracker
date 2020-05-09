@@ -119,11 +119,39 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Folding over operator=](https://www.reddit.com/r/cpp/comments/gfo023/folding_over_operator/)
-- url: https://quuxplusone.github.io/blog/2020/05/07/assignment-operator-fold-expression/
+## [3][High Performance Graphics and Text Rendering on the GPU - Barbara Geller &amp; Ansel Sermersheim - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/ggbxx4/high_performance_graphics_and_text_rendering_on/)
+- url: https://www.youtube.com/watch?v=p6350LmMDkE
 ---
 
-## [4][Why you don't use Boost](https://www.reddit.com/r/cpp/comments/gfowpq/why_you_dont_use_boost/)
+## [4][The C++ preprocessor doesn't understand anything about C++, and certainly not templates](https://www.reddit.com/r/cpp/comments/ggeer7/the_c_preprocessor_doesnt_understand_anything/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200508-52/?p=103735
+---
+
+## [5][[Tooling] Memcheck-cover: A valgrind's memcheck tool wrapper and HTML report generator](https://www.reddit.com/r/cpp/comments/gfzk60/tooling_memcheckcover_a_valgrinds_memcheck_tool/)
+- url: https://www.reddit.com/r/cpp/comments/gfzk60/tooling_memcheckcover_a_valgrinds_memcheck_tool/
+---
+Hello,
+
+I initially added a valgrind memcheck build, a few years ago, on my professional project.As the years passed, I started to create an HTML report so the developers could analyze valgrind's memcheck tool report with more ease. I added colored highlights for that.
+
+A few month ago I thought "Hey that might interest other people !". So I started the memcheck-cover project.My goal was to start from scratch and improve the ideas I put on my professional build.
+
+I decided to create two scripts.The first one would be a helper to make it easy to run a binary under Vilgrind's memcheck tool and get the report.The second one would be the more complicated one: the HTML report generator.
+
+I went trough Valgrind 3.15.0 sources to find as much information as I can and started to build the scripts.
+
+I'm proud (if I may) to present you the 1st release of my project.Here is the link : [https://github.com/Farigh/memcheck-cover/releases/tag/release-1.0](https://github.com/Farigh/memcheck-cover/releases/tag/release-1.0)
+
+Here is a demo : [https://david-garcin.github.io/demos/memcheck-cover/index.html](https://david-garcin.github.io/demos/memcheck-cover/index.html)
+
+Don't hesitate to try it, share it, suggest improvements to it and open issues :)
+
+Thanks,
+## [6][c++ framework for mobile games](https://www.reddit.com/r/cpp/comments/gg3q1p/c_framework_for_mobile_games/)
+- url: https://www.reddit.com/r/cpp/comments/gg3q1p/c_framework_for_mobile_games/
+---
+ is there a c ++ framework for making games for android? like terraria, Zelda Snes, metroid, starbound etc. sorry my english i'm using google translator.
+## [7][Why you don't use Boost](https://www.reddit.com/r/cpp/comments/gfowpq/why_you_dont_use_boost/)
 - url: https://www.reddit.com/r/cpp/comments/gfowpq/why_you_dont_use_boost/
 ---
 I have a question for you: If you have decided not to use any of Boost, or are prohibited from doing so in your company/project, I would like to know why.
@@ -131,7 +159,15 @@ I have a question for you: If you have decided not to use any of Boost, or are p
 This thread is not meant to judge your reasons, and I won't engage into any kind of criticism about them: I'm merely trying to understand what the barriers are to adoption of Boost. It would be great if we could keep the conversation non judgemental. Thank you!
 
 Conflict of interest: I am a Boost author of three.
-## [5][Why you trust in Boost](https://www.reddit.com/r/cpp/comments/gfr46l/why_you_trust_in_boost/)
+## [8][Faster builds with PCH suggestions from C++ Build Insights | C++ Team Blog](https://www.reddit.com/r/cpp/comments/gfwzsd/faster_builds_with_pch_suggestions_from_c_build/)
+- url: https://devblogs.microsoft.com/cppblog/faster-builds-with-pch-suggestions-from-c-build-insights/
+---
+
+## [9][Shadesmar - Fast C++ IPC using shared memory](https://www.reddit.com/r/cpp/comments/gfwhwv/shadesmar_fast_c_ipc_using_shared_memory/)
+- url: https://github.com/Squadrick/shadesmar
+---
+
+## [10][Why you trust in Boost](https://www.reddit.com/r/cpp/comments/gfr46l/why_you_trust_in_boost/)
 - url: https://www.reddit.com/r/cpp/comments/gfr46l/why_you_trust_in_boost/
 ---
 You may have noticed the ongoing discussion on [why people don't use Boost](https://www.reddit.com/r/cpp/comments/gfowpq/why_you_dont_use_boost/). Now for the opposite question.
@@ -143,47 +179,26 @@ If you are using Boost in your project(s)/company, why have you/your company dec
 I won't delve into commenting/criticizing your answers, it's info I'm looking for, particularly in comparison to the "negative" thread going on in parallel. Please keep the conversation neutral, thank you!
 
 Conflict of interest: I am a Boost author of three.
-## [6][Using 'auto' and '-&gt;' as function return signature over regular types](https://www.reddit.com/r/cpp/comments/gfs3gr/using_auto_and_as_function_return_signature_over/)
-- url: https://www.reddit.com/r/cpp/comments/gfs3gr/using_auto_and_as_function_return_signature_over/
----
-What could go wrong with `'auto'` and `'-&gt;'` notation as function return types like   
-"`auto function() -&gt; void;`" over this "`void function();`".  
-
-
-I'm using them in all places because this makes my function declarations left aligned, but facing lot of disapprobations.
-## [7][GCC 10.1 Released](https://www.reddit.com/r/cpp/comments/gf6ovp/gcc_101_released/)
-- url: https://gcc.gnu.org/pipermail/gcc/2020-May/232334.html
+## [11][Folding over operator=](https://www.reddit.com/r/cpp/comments/gfo023/folding_over_operator/)
+- url: https://quuxplusone.github.io/blog/2020/05/07/assignment-operator-fold-expression/
 ---
 
-## [8][Modules in VC++ 2019 16.5](https://www.reddit.com/r/cpp/comments/gff92x/modules_in_vc_2019_165/)
-- url: https://mariusbancila.ro/blog/2020/05/07/modules-in-vc-2019-16-5/
+## [12][Is This A Better Way For A Boost Library?](https://www.reddit.com/r/cpp/comments/gfvdxl/is_this_a_better_way_for_a_boost_library/)
+- url: https://www.reddit.com/r/cpp/comments/gfvdxl/is_this_a_better_way_for_a_boost_library/
 ---
+We are always looking for ways to improve the utility of the libraries and code that we publish. In my latest project, Boost.JSON (not yet part of Boost) I have incorporated positive and negative feedback about Boost to structure the library in a way that users may find compelling. I'm interested to know what folks think about these design choices:
 
-## [9][CppCast: MSVC's STL and Vcpkg](https://www.reddit.com/r/cpp/comments/gfllwz/cppcast_msvcs_stl_and_vcpkg/)
-- url: https://cppcast.com/msvc-stl-vcpkg-billy-oneal/
----
+* The library only requires C++11
+* The library is statically or dynamically linked by default.
+* Build scripts are provided for both CMake and Bjam/B2 (Boost.Build)
+* None of containers (`json::value`, `json::object`, `json::array`, and `json::string`) are class templates. This allows the function definitions to go into the compile library and reduce compile times (since the function definitions are not seen in users' translation units).
+* The library may be used as a header-only library by defining `BOOST_JSON_HEADER_ONLY` and simply including the desired header files.
+* The library normally uses `boost::string_view`, `boost::error_code`, and other Boost versions of C++ facilities. However, the library can be used completely independently of Boost simply by defining `BOOST_JSON_STANDALONE`. In this configuration, C++17 or later is required, and the std equivalents (such as `std::string_view`) will be used instead of the Boost ones.
+* Another way to link with this library is to just include `&lt;boost/json/src.hpp&gt;` in any one of your .cpp files (including an empty .cpp file). You can use this to easily set up your own build script for generating a static or dynamic library.
+* To support allocators, the containers use a smart pointer container that holds a `boost::container::memory_resource` (or `std::pmr::memory_resource` if standalone). This allows user-defined allocators without turning everything into a class template.
 
-## [10][Does your IDE suggest types that are not (yet) included in your source file?](https://www.reddit.com/r/cpp/comments/gft4bj/does_your_ide_suggest_types_that_are_not_yet/)
-- url: https://www.reddit.com/r/cpp/comments/gft4bj/does_your_ide_suggest_types_that_are_not_yet/
----
-Hi all,
+These changes are designed to address the most common complaints of Boost libraries: fast build times, easy to integrate into a project, works with regular std types, does not require the rest of Boost in order to work, easy to use.
 
-Just wanted to spawn a little discussion here. I'm working with C++ purely on a hobby basis. Also I've been using TS and Kotlin for a while now. Professionally I've only worked with Java, C#, JS and a little Python. Recently I started trying out some alternatives to NetBeans for C++ development (because code assistance is a little buggy from time to time).
+The library is here: [https://github.com/CPPAlliance/json](https://github.com/CPPAlliance/json)
 
-I'm accustomed to being able to declare variables and get suggestions for types, even though the type I want to use is not (yet) included in the current source file. As demonstrated here in NetBeans:
-
-[https://user-images.githubusercontent.com/5260237/71239041-da26b580-2305-11ea-9c25-b93b3519f9a1.png](https://user-images.githubusercontent.com/5260237/71239041-da26b580-2305-11ea-9c25-b93b3519f9a1.png)
-
-Anyways, in my voyage to test some other IDEs I gave VS Code a go, and saw that this was not a feature. I made a [suggestion to the VSCode C++ extension developers](https://github.com/microsoft/vscode-cpptools/issues/4776) that this feature should be implemented (as it is in NetBeans). I got the response that "it's not a feature in Visual Studio so probably not going to add it to Visual Studio Code". And honestly, I'm a little surprised to find out that (perhaps) **the** most popular C++ IDE doesn't have this feature. Then it dawned on me that maybe most C++ devs don't have and don't use this feature. I haven't tested CLion but working with other Jetbrains IDEs I'm going to assume it is a feature in CLion. Eclipse CDT? Probably yes.
-
-I guess it could be **my** workflow that is flawed, but I can't stand the idea of not getting `mtype` suggested just because I didn't add `#include "mytype.h"` first. I **need** this feature in my IDE. Not just for C++, but for any language.
-
-So I'm curios. Does your IDE suggest types that are not (yet) included in your source file? Wouldn't you like to have it do so? Do you think it's an unnecessary feature?
-## [11][Ordering by constraints](https://www.reddit.com/r/cpp/comments/gfhoj5/ordering_by_constraints/)
-- url: https://akrzemi1.wordpress.com/2020/05/07/ordering-by-constraints/
----
-
-## [12][What is your favourite Xcode c++ extension?](https://www.reddit.com/r/cpp/comments/gfq8bt/what_is_your_favourite_xcode_c_extension/)
-- url: https://www.reddit.com/r/cpp/comments/gfq8bt/what_is_your_favourite_xcode_c_extension/
----
-
+Glad to answer any questions, thanks for listening!

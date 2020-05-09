@@ -5,51 +5,49 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][WTF Wednesday (May 06, 2020)](https://www.reddit.com/r/javascript/comments/gemt8x/wtf_wednesday_may_06_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gemt8x/wtf_wednesday_may_06_2020/
+## [2][Showoff Saturday (May 09, 2020)](https://www.reddit.com/r/javascript/comments/gge40y/showoff_saturday_may_09_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gge40y/showoff_saturday_may_09_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Visual Studio Code April 2020](https://www.reddit.com/r/javascript/comments/gfcoi0/visual_studio_code_april_2020/)
-- url: https://code.visualstudio.com/updates/v1_45
+Show us here!
+## [3][I've created an educational page to teach students the structure of a URL](https://www.reddit.com/r/javascript/comments/ggcvly/ive_created_an_educational_page_to_teach_students/)
+- url: https://howurls.work
 ---
 
-## [4]["Under-the-hood of type systems (e.g. TypeScript)" - I look to shine a light on some of the fundamentals at work in a type system compiler.](https://www.reddit.com/r/javascript/comments/gfrhjk/underthehood_of_type_systems_eg_typescript_i_look/)
+## [4][How to build a Resume Builder using Angular Reactive Forms (+ GitHub Repo )](https://www.reddit.com/r/javascript/comments/gg7qnd/how_to_build_a_resume_builder_using_angular/)
+- url: https://medium.com/@rasha.essam/build-a-r%C3%A9sum%C3%A9-builder-using-angular-reactive-forms-61af6653fa45?source=---------2------------------
+---
+
+## [5][2 KB PWA that handles notes, can export to txt](https://www.reddit.com/r/javascript/comments/ggc4o9/2_kb_pwa_that_handles_notes_can_export_to_txt/)
+- url: https://github.com/jedzoka/jedzotes/
+---
+
+## [6]["Under-the-hood of type systems (e.g. TypeScript)" - I look to shine a light on some of the fundamentals at work in a type system compiler.](https://www.reddit.com/r/javascript/comments/gfrhjk/underthehood_of_type_systems_eg_typescript_i_look/)
 - url: https://medium.com/@tabu_craig/under-the-hood-of-type-systems-e-g-typescript-b3b0b5c18963
 ---
 
-## [5][Comparing Ember Octane and React](https://www.reddit.com/r/javascript/comments/gfk64s/comparing_ember_octane_and_react/)
-- url: https://www.pzuraq.com/comparing-ember-octane-and-react/
+## [7][A lightweight react library to create fullpage websites](https://www.reddit.com/r/javascript/comments/ggbq7j/a_lightweight_react_library_to_create_fullpage/)
+- url: https://github.com/FaisalST32/fullpage-react-fs
 ---
 
-## [6][How Our Stack Evolved in 10 Years](https://www.reddit.com/r/javascript/comments/gfcxhu/how_our_stack_evolved_in_10_years/)
-- url: https://open-source-network-resources.s3.amazonaws.com/stack.htm
+## [8][Abstracting functionality to classes (Part 1) - Handling different component states](https://www.reddit.com/r/javascript/comments/ggeds3/abstracting_functionality_to_classes_part_1/)
+- url: https://bangjelkoski.com/blog/handling-different-component-states-with-a-status-class/
 ---
 
-## [7][MIDI.js - Sequencing in Javascript](https://www.reddit.com/r/javascript/comments/gf7btz/midijs_sequencing_in_javascript/)
-- url: https://galactic.ink/midi-js/
+## [9][How to configure meta tags in react app dynamically (react-helmet is not the perfect solution)](https://www.reddit.com/r/javascript/comments/ggdoi8/how_to_configure_meta_tags_in_react_app/)
+- url: https://dillionmegida.com/p/how-to-configure-meta-tags-in-react-app-dynamically/
 ---
 
-## [8][I created a minimalistic Linux server dashboard](https://www.reddit.com/r/javascript/comments/gfe6yf/i_created_a_minimalistic_linux_server_dashboard/)
-- url: https://github.com/B-Software/Ward
+## [10][Cheap and basic resizer written in JS](https://www.reddit.com/r/javascript/comments/ggd3ms/cheap_and_basic_resizer_written_in_js/)
+- url: https://github.com/beast911/resizer
 ---
 
-## [9][Javascript Closures, Partial functions and Currying](https://www.reddit.com/r/javascript/comments/gflway/javascript_closures_partial_functions_and_currying/)
-- url: https://aparnajoshi.netlify.app//javascript-closures-partial-functions-and-currying
+## [11][Learn how to set up a simple free CD pipeline using GitHub actions and Surge.sh in 30 minutes.](https://www.reddit.com/r/javascript/comments/ggczet/learn_how_to_set_up_a_simple_free_cd_pipeline/)
+- url: https://medium.com/@m.b.davis/continuous-deployment-in-30-minutes-with-cra-github-actions-and-surge-sh-b9787867c4d4
 ---
 
-## [10][A Critique of React Hooks Addendum](https://www.reddit.com/r/javascript/comments/gf9uxh/a_critique_of_react_hooks_addendum/)
-- url: https://dillonshook.com/a-critique-of-react-hooks-addendum/
----
-
-## [11][Reducing Development Costs With Webix. Staying Afloat During the Coronavirus Outbreak](https://www.reddit.com/r/javascript/comments/gfokas/reducing_development_costs_with_webix_staying/)
-- url: https://xbsoftware.com/blog/reducing-development-costs-with-webix/
----
-
-## [12][Vue JS Form Package ~ Doesn't Care About UI Library You're Using, Zero Dev Dependencies, Test Coverage](https://www.reddit.com/r/javascript/comments/gfn8cr/vue_js_form_package_doesnt_care_about_ui_library/)
-- url: https://github.com/zhorton34/vuejs-form
+## [12][A NodeJS and TypeScript wrapper for the macOS Reminders App](https://www.reddit.com/r/javascript/comments/gfy65u/a_nodejs_and_typescript_wrapper_for_the_macos/)
+- url: https://github.com/caroso1222/node-reminders
 ---
 

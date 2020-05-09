@@ -23,169 +23,60 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/05/this-week-in-rust-337/
 ---
 
-## [3][grout | A very simple tiling window manager for Windows](https://www.reddit.com/r/rust/comments/gfieg2/grout_a_very_simple_tiling_window_manager_for/)
-- url: https://www.reddit.com/r/rust/comments/gfieg2/grout_a_very_simple_tiling_window_manager_for/
----
-[https://github.com/tarkah/grout](https://github.com/tarkah/grout)
-
-demo: [https://i.imgur.com/ugPMvlA.mp4](https://i.imgur.com/ugPMvlA.mp4)
-
-&amp;#x200B;
-
-I love Budgie's Window Shuffler grid functionality for quickly and easily tiling windows and I really wanted to have this on my Window's machine, so I decided to take a stab at building it. Going into this I knew basically nothing about the Windows API and overall this program feels super hacky, but it works! 
-
-Hope others will find this as useful as me. I've currently only tested it on a single monitor, but it shouldn't be hard to get it working over any number of them. In the coming days, I plan to add a multi-monitor support, a system tray icon, simple settings page, and the ability to autostart, all of which should make it as familiar to use as any windows program.
-## [4][An overview of foreign language interop libraries for Rust](https://www.reddit.com/r/rust/comments/gfp7dd/an_overview_of_foreign_language_interop_libraries/)
-- url: https://www.hobofan.com/rust-interop
+## [3][async-std now using smol runtime](https://www.reddit.com/r/rust/comments/gg7gnl/asyncstd_now_using_smol_runtime/)
+- url: https://github.com/async-rs/async-std/pull/757
 ---
 
-## [5][Announcing Rust 1.43.1](https://www.reddit.com/r/rust/comments/gf8om1/announcing_rust_1431/)
-- url: https://blog.rust-lang.org/2020/05/07/Rust.1.43.1.html
+## [4][A practical introduction to async programming in Rust](https://www.reddit.com/r/rust/comments/ggdw7p/a_practical_introduction_to_async_programming_in/)
+- url: http://jamesmcm.github.io/blog/2020/05/06/a-practical-introduction-to-async-programming-in-rust/#en
 ---
 
-## [6][Benchmarking slotmap, slab, stable_vec etc.](https://www.reddit.com/r/rust/comments/gfo1uw/benchmarking_slotmap_slab_stable_vec_etc/)
-- url: https://www.reddit.com/r/rust/comments/gfo1uw/benchmarking_slotmap_slab_stable_vec_etc/
----
-I made a small and simple implementation of a slotmap/slab whatever you want to call it. I wanted to see how the performance would be if you use a union instead of an enum for the slots and store the tag (occupied or not) in a bitvec. I did this because of curiosity, not because I actually needed performance. Then I started adding benchmarks to compare with existing implementations of such a container. I've added all the competitors that I could find on [crates.io](https://crates.io). The benchmark is probably of limited usefulness, anybody choosing which of these to use should probably make initial choice based on API/features/use of unsafe, etc.
-
-The benchmarking code is available at [github](https://github.com/spersson/bvmap/). My prototype is called BvMap. All times in microseconds.
-
-**Insert 10 000 usize into newly created container**
-
-1. ExternStableVec	49.10
-2. IdVec	56.77
-3. BvMap	65.18
-4. BeachMap	67.66
-5. CompactMap	88.38
-6. Slab	92.69
-7. Stash	93.26
-8. InlineStableVec	114.25
-9. SlotMap	118.23
-10. UniqueStash	126.58
-11. HopSlotMap	156.29
-12. DenseSlotMap	177.05
-13. Froggy	222.66
-
-**Remove 10 000 usize**
-
-1. CompactMap	14.11
-2. InlineStableVec	14.16
-3. ExternStableVec	14.63
-4. Slab	15.60
-5. Stash	17.32
-6. UniqueStash	25.98
-7. BvMap	37.99
-8. SlotMap	40.92
-9. BeachMap	52.83
-10. HopSlotMap	61.23
-11. DenseSlotMap	69.14
-12. Froggy	201.56
-13. IdVec	465.20
-
-**Re-insert 10 000 usize**
-
-1. UniqueStash	28.30
-2. Slab	29.35
-3. Stash	29.72
-4. BvMap	32.34
-5. SlotMap	57.70
-6. BeachMap	59.10
-7. HopSlotMap	63.68
-8. CompactMap	71.25
-9. ExternStableVec	103.13
-10. InlineStableVec	134.73
-11. DenseSlotMap	151.28
-12. Froggy	213.28
-13. IdVec	5234.30
-
-**Get 10 000 random items from collection of size 10 000**
-
-1. ExternStableVec	169.28
-2. Slab	177.15
-3. BvMap	177.70
-4. Stash	178.64
-5. CompactMap	181.87
-6. DenseSlotMap	186.79
-7. InlineStableVec	190.80
-8. SlotMap	210.83
-9. HopSlotMap	217.73
-10. UniqueStash	223.76
-11. BeachMap	241.17
-12. IdVec	316.86
-13. Froggy	362.39
-
-**Iterate over all 10 000 items**
-
-1. ExternStableVec	10.85
-2. Stash	11.10
-3. InlineStableVec	12.02
-4. CompactMap	12.71
-5. DenseSlotMap	12.75
-6. Slab	13.04
-7. BeachMap	13.94
-8. UniqueStash	16.40
-9. BvMap	20.47
-10. HopSlotMap	27.82
-11. SlotMap	29.38
-12. IdVec	158.04
-13. Froggy	164.22
-
-**Iterate over 5 000 items after 5 000 random items have been removed**
-
-1. DenseSlotMap	6.48
-2. BeachMap	16.72
-3. CompactMap	34.60
-4. Slab	35.24
-5. Stash	35.41
-6. HopSlotMap	35.61
-7. InlineStableVec	35.87
-8. ExternStableVec	37.17
-9. UniqueStash	38.51
-10. SlotMap	43.56
-11. BvMap	49.79
-12. Froggy	119.40
-13. IdVec	212.02
-
-&amp;#x200B;
-
-**Observations**
-
-Not much. IdVec stands out for its bad performance while it doesn't seem to offer any advantage to motivate it (although the idea to return Id&lt;T&gt; index type is interesting). The thing that caught my eye was that iterating over a full container was such a difference between UniqueStash and SlotMap. They have almost identical implementations but UniqueStash was almost double speed. Could be something for slotmap author to look into.
-## [7][Rust-like language with static memory management and no ownership](https://www.reddit.com/r/rust/comments/gfgt1b/rustlike_language_with_static_memory_management/)
-- url: https://www.reddit.com/r/rust/comments/gfgt1b/rustlike_language_with_static_memory_management/
----
-[https://github.com/doctorn/micro-mitten](https://github.com/doctorn/micro-mitten)
-
-This may be of interest - a fragment of Rust developed as a research language to support static memory management without ownership. The compiler for the language is also written in Rust!
-## [8][Verco | A simple Git/Hg tui client focused on keyboard shortcuts](https://www.reddit.com/r/rust/comments/gfspio/verco_a_simple_githg_tui_client_focused_on/)
-- url: https://www.reddit.com/r/rust/comments/gfspio/verco_a_simple_githg_tui_client_focused_on/
----
-https://github.com/matheuslessarodrigues/verco
-
-After many years being frustrated with slow gui clients for git/hg, I switched to using them from the command line.
-However, I found myself also frustrated with having to type the same mundane commands everytime (even with aliases).
-Also, having used SourceTree for some time, I liked the idea of a single interface for both git and mercurial.
-
-So here I am now after writing my own tui client. My workflow is leaving verco open and when I need to quickly
-push, pull, commit, update/checkout, I just need to type a single key (two at most) to execute a command.
-
-Some keybindings: `p`: pull, `P`: push, `cc`: commit all, `u`: update/checkout, more at the repository page.
-
-Verco has been my daily driver for quite some time and now I think it's stable enough to share with the internet.
-Hope you find it useful as well :) Thanks!
-## [9][Google Summer of Code 2020 project to integrate Pathfinder into Inkscape](https://www.reddit.com/r/rust/comments/gffhnx/google_summer_of_code_2020_project_to_integrate/)
-- url: https://summerofcode.withgoogle.com/projects/#5859756641615872
+## [5][Auto-currying Rust Functions: A guide to proc-macros](https://www.reddit.com/r/rust/comments/ggaetv/autocurrying_rust_functions_a_guide_to_procmacros/)
+- url: https://peppe.rs/posts/auto-currying_rust_functions/
 ---
 
-## [10][Cow in a Box &amp; Friends [Rust Wrocław Webinar, 29.04.2020]](https://www.reddit.com/r/rust/comments/gfpefn/cow_in_a_box_friends_rust_wrocław_webinar_29042020/)
-- url: https://www.youtube.com/watch?v=EjbfoOCL2to
+## [6][Async-GraphQL: A GraphQL Server Framework](https://www.reddit.com/r/rust/comments/gg71es/asyncgraphql_a_graphql_server_framework/)
+- url: https://github.com/async-graphql/async-graphql
 ---
 
-## [11][color-eyre: a custom context for eyre which provides colorful error reports and backtraces on stable is now available on crates.io 🎉🥳🎉](https://www.reddit.com/r/rust/comments/gf6z3x/coloreyre_a_custom_context_for_eyre_which/)
-- url: https://i.imgur.com/ZDVN9sf.png
+## [7][noob looking for a code review](https://www.reddit.com/r/rust/comments/ggde80/noob_looking_for_a_code_review/)
+- url: https://www.reddit.com/r/rust/comments/ggde80/noob_looking_for_a_code_review/
+---
+the crux of the matter: [https://gitlab.com/jgtaylor/clusterman](https://gitlab.com/jgtaylor/clusterman)
+
+Hello Rustaceans - I am very new with Rust. I completed the first 3/4 of the Rust Book (the online one) - before they get into advanced traits, macro stuff, etc. As a practice, I wanted to try to build a kind of "cluster manager" via ZMQ.
+
+As I started, I realized how much "patterns" helped me learn Python/NodeJS. I also realized that I'm not able to quickly see these patterns in rust (yet). Anyway, I tried for a "Factory pattern" or "constructor pattern" - not sure what to call it in Rustean.
+
+One of the things I was curious about - (maybe i'm an idiot because i'm thinking in terms of dicts (py) or Object (js)) - I'd wanted a structure with a vec!\[\] of cluster members, and one of them would be a "master", such that the "master" was just a reference to one of the cluster members in the Vec. I couldn't make it work because - ultimately, I kind of realized that the "master" member entry could be deleted resulting in the "master" being a dangling pointer. Was/is my conclusion correct?
+
+This kind of leads me to architecture questions - would it be better to just leave the "master" field out of the struct, make it a method that finds a member of the Vec w/ a master flag set to true?, so something like: cluster.master() would basicaly implement cluster.members.iter().find(|m| m.master)  - where m.master would be  bool?  
+
+
+actually, I have lots of questions about my code - lots of choices where I thought, "i have no idea, so I'll just try this and see." and when it compiled, I was happy. But, I'd like it to be "right", or, as I've noticed in Rust circles, "correct". Any help is much appreciated. Also, it doesn't actually do anything yet - it just prints out the data structures.
+## [8][Simd Library Plans](https://www.reddit.com/r/rust/comments/gfyta3/simd_library_plans/)
+- url: https://vorner.github.io/2020/05/08/simd-library-plans.html
 ---
 
-## [12][v0.8 of Gleam, a statically typed language written in Rust for the Erlang VM, is out](https://www.reddit.com/r/rust/comments/gfe4n7/v08_of_gleam_a_statically_typed_language_written/)
-- url: https://lpil.uk/blog/gleam-v0.8-released/
+## [9][serde-select: Query serde documents where you don't know the schema at compiletime](https://www.reddit.com/r/rust/comments/ggcdef/serdeselect_query_serde_documents_where_you_dont/)
+- url: https://beyermatthias.de/blog/2020/05/09/serde-select/
+---
+
+## [10][Is there any asynchronous multipart/form-data implementation for Rust?](https://www.reddit.com/r/rust/comments/ggaj0k/is_there_any_asynchronous_multipartformdata/)
+- url: https://www.reddit.com/r/rust/comments/ggaj0k/is_there_any_asynchronous_multipartformdata/
+---
+I know other web frameworks e.g. **Rocket**, **actix-web** etc have their own version of multipart/form-data implementation. But, I am looking for something which **will take a stream of bytes and allow to read each field as a stream of bytes** and It should work on any asynchronous stream and should be pluggable into any Rust asynchronous environment.
+
+I also checked out [https://docs.rs/multipart-async/0.0.2/multipart\_async/](https://docs.rs/multipart-async/0.0.2/multipart_async/), but, its dependencies are very old and not working with the new version of **futures::stream::Stream**.
+## [11][Read until EOF but not more then N bytes](https://www.reddit.com/r/rust/comments/ggdfrs/read_until_eof_but_not_more_then_n_bytes/)
+- url: https://www.reddit.com/r/rust/comments/ggdfrs/read_until_eof_but_not_more_then_n_bytes/
+---
+Hello there,
+
+I want to read from a source that implements std::io::Read trait until EOF but limiting to N bytes. There are helpful methods like read\_exact() and read\_to\_end(), but I has nothing found to limit the amount of bytes. In case there are more bytes than N, it must return an error.
+
+Before I start to write a small helper function on my own, I want to ask if there is already a good solution available by the standard library.
+## [12][Rust verification tools](https://www.reddit.com/r/rust/comments/gfz4gh/rust_verification_tools/)
+- url: https://alastairreid.github.io/rust-verification-tools/
 ---
 

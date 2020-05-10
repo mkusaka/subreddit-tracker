@@ -1,5 +1,9 @@
 # aws
-## [1][Best Practice Guide for Setting a Company Up on AWS For The First Time](https://www.reddit.com/r/aws/comments/ggebgn/best_practice_guide_for_setting_a_company_up_on/)
+## [1][Is using AWS Organisations the best way structure side projects?](https://www.reddit.com/r/aws/comments/ggza9m/is_using_aws_organisations_the_best_way_structure/)
+- url: https://www.reddit.com/r/aws/comments/ggza9m/is_using_aws_organisations_the_best_way_structure/
+---
+I've got a bunch of projects and ideas I'm working on. Is using a single master account that I log into and then creating Orgs from inside there the best way to structure things rather than set up the same 'org' level billing alerts and accounts each time?
+## [2][Best Practice Guide for Setting a Company Up on AWS For The First Time](https://www.reddit.com/r/aws/comments/ggebgn/best_practice_guide_for_setting_a_company_up_on/)
 - url: https://www.reddit.com/r/aws/comments/ggebgn/best_practice_guide_for_setting_a_company_up_on/
 ---
 I am a senior AWS DevOps engineer and have just gotten a contract with a company to move their private cloud infrastructure to AWS. This company has a DevOps and TechSecOps team but no AWS experience. Aside from the migration itself, can anyone send me a link to a webpage, book, or other, that details a step-by-step best practices of setting a company up on AWS please? This company is ISO-27001 security compliant. I am thinking of stuff like this:
@@ -27,95 +31,99 @@ I am a senior AWS DevOps engineer and have just gotten a contract with a company
 And finally getting sample Terraform code to do all the above. Does anyone know of a comprehensive resource with at least all the above information as well as other basic stuff? If so, I'd be grateful for any information/suggestions/watch outs etc.
 
 Thanks.
-## [2][EC2 Price Reduction – For EC2 Instance Saving Plans and Standard Reserved Instances](https://www.reddit.com/r/aws/comments/gfznd6/ec2_price_reduction_for_ec2_instance_saving_plans/)
-- url: https://aws.amazon.com/blogs/aws/ec2-price-reduction-for-ec2-instance-saving-plans-and-standard-reserved-instances/
+## [3][Is WEBDAV request allowed via AWS CloudFront?](https://www.reddit.com/r/aws/comments/gguwym/is_webdav_request_allowed_via_aws_cloudfront/)
+- url: https://www.reddit.com/r/aws/comments/gguwym/is_webdav_request_allowed_via_aws_cloudfront/
 ---
+Hello All,
 
-## [3][Alternative to ECS Container Insights?](https://www.reddit.com/r/aws/comments/ggegmc/alternative_to_ecs_container_insights/)
-- url: https://www.reddit.com/r/aws/comments/ggegmc/alternative_to_ecs_container_insights/
+&amp;#x200B;
+
+WebDAV request (Port 443) is not working for me to pass through AWS CloudFront.
+
+WEBSITE access via the INTERNET on port 443 with request flowing through CloudFront is working fine.
+
+Looking for suggestions if WEBDAV is allowed.
+
+&amp;#x200B;
+
+Thanks in advance for advice.
+## [4][Where are AWS Published Lambda Layers, I am looking for Numpy, Scipy and Pandas Lambda Layer published by AWS? Are there one?](https://www.reddit.com/r/aws/comments/gh1cge/where_are_aws_published_lambda_layers_i_am/)
+- url: https://www.reddit.com/r/aws/comments/gh1cge/where_are_aws_published_lambda_layers_i_am/
 ---
-Anyone using something else to get some insights into performance / running count etc then Container Insights? The pricing for this is relatively high, and by the looks of it is 10% of our spending with AWS.
+Hello AWS Fellows, I have been searching for AWS Published layers with Numpy, SciPy, and Pandas, are there layers published by AWS? or do we have to create one ourselves? In the documentation for Lambda layers, it is mentioned that you can either create your own, use one provided by other customers or published by AWS but sadly I couldn't find the AWS ones.   
 
-Any suggestions?
-## [4][AWS for practice on a budget](https://www.reddit.com/r/aws/comments/ggc8fe/aws_for_practice_on_a_budget/)
-- url: https://www.reddit.com/r/aws/comments/ggc8fe/aws_for_practice_on_a_budget/
+
+Would be great gesture if you can guide me through.   
+
+
+Thanks
+## [5][(amplify) How to use share data with ownerField](https://www.reddit.com/r/aws/comments/ggwqrz/amplify_how_to_use_share_data_with_ownerfield/)
+- url: https://www.reddit.com/r/aws/comments/ggwqrz/amplify_how_to_use_share_data_with_ownerfield/
 ---
-I want to try out AWS, mostly for practice so it will be used by myself and will probably have no traffic. I only have a debit card so I was wondering if its possible to minimize expenditure or set some kind of limit on my account so that the budget is not exceeded
-## [5][Best searchable DB for car data](https://www.reddit.com/r/aws/comments/ggb6al/best_searchable_db_for_car_data/)
-- url: https://www.reddit.com/r/aws/comments/ggb6al/best_searchable_db_for_car_data/
----
-Hello,
+How do I structure a data type to be accessible by multiple users based on their email addresses? 
 
-For a project I've been tasked to store data of cars for dealerships. The model is this data is something as:
+Say for example a todo-app; I want to be able to invite additional email addresses to have access to the data. I use cognition user pools with email signup. 
 
-{
+Something like this where the `owners` field would be an array with email addresses but I can't wrap my head around it yet
 
-Vehicle Identification Number ,Color,Brand,type,dealership,...
-
+```
+type SharableData @model @auth(rules: [{ allow: owner, ownerField: "owners" }]) {
+  owners: [String!]!
 }
-
-From this data, only the dealership field may change over time.
-
-The user should be able to text search in any field, get all yellow cars, get all Ford cars,...
-
-In the current prototype, I'm using dynamoDB. At this point, all the data (100 entries) can still be fetched by a combination of GSI s and sorted in the front end.
-
-However, once this application is launched, the data sets might reach 10.000-100.000 . At this point, DynamoDB queries would require a GSI for each field, or per dealership have a LSI per field. The query limit of 1MB might be
-
-After some googling, I've found that some combine dynamoDB and elastisearch. Why not use only elastisearch then? Is a SQL DB like Aurora better suited for this?
-
-All advice is welcome
-## [6][Suggestions on what to do with credits that are about to expire](https://www.reddit.com/r/aws/comments/gfu8f6/suggestions_on_what_to_do_with_credits_that_are/)
-- url: https://www.reddit.com/r/aws/comments/gfu8f6/suggestions_on_what_to_do_with_credits_that_are/
+```
+## [6][Remote desktop software on ec2 instance for access?](https://www.reddit.com/r/aws/comments/ggrj10/remote_desktop_software_on_ec2_instance_for_access/)
+- url: https://www.reddit.com/r/aws/comments/ggrj10/remote_desktop_software_on_ec2_instance_for_access/
 ---
-I have about $500 in credits that will expire by the end of this month. I have been trying to think of something interesting to do with it before it goes away.
+Hi Still learning AWS
 
-Any suggestions of interesting short-term projects that I could use this credits with ?
+Would team viewer or log me in be safe to put on a ec2 instance?  I know RDP is not encrypted would ideally not like to use it.
 
-Thanks.
-## [7][Is anyone else having troubles paying AWS with a check during the pandemic?](https://www.reddit.com/r/aws/comments/gg29vb/is_anyone_else_having_troubles_paying_aws_with_a/)
-- url: /r/startup/comments/gg1xjw/is_anyone_else_having_troubles_paying_aws_with_a/
----
+I am looking at two ways to access my ec2
 
-## [8][Elastic beanstalk with 404 API not found](https://www.reddit.com/r/aws/comments/gg2979/elastic_beanstalk_with_404_api_not_found/)
-- url: https://www.reddit.com/r/aws/comments/gg2979/elastic_beanstalk_with_404_api_not_found/
----
-Hi- I'm relatively new to AWS. My elastic beanstalk server just stopped working despite server being health listed as ok. Nothing was changed and the app has been the same and deployed since 2018. I have re-deployed several times without success. Now when I try to load the application URL I get
+1) Setup a site to site vpn between my  router and VPC and then access it via rdp 
 
-{"status":404,"message":"Api not found"}  
+(would a remote vpn setup work here? rather then a site to site)
 
 &amp;#x200B;
 
-Here is the elastic beanstalk console 
+2) Setup log me in( or team viewer) to the ec2 instance.
 
 &amp;#x200B;
 
-Any tips appreciated! Thanks
-
-https://preview.redd.it/hf06efw21mx41.png?width=1520&amp;format=png&amp;auto=webp&amp;s=4e8313400238c0d5cbb29c9c81fdc48d7c645345
-## [9][Which AWS Service should I use for processing (like batch) something with consuming Rest API that will be triggering from another AWS Service?](https://www.reddit.com/r/aws/comments/gg1tp4/which_aws_service_should_i_use_for_processing/)
-- url: https://www.reddit.com/r/aws/comments/gg1tp4/which_aws_service_should_i_use_for_processing/
+Would either of those be acceptable?
+## [7][Question about signing in through remote desktop](https://www.reddit.com/r/aws/comments/ggut0c/question_about_signing_in_through_remote_desktop/)
+- url: https://www.reddit.com/r/aws/comments/ggut0c/question_about_signing_in_through_remote_desktop/
 ---
-Which AWS Service should I use for processing (like batch) something with consuming Rest API that will be triggering from another AWS Service? In fact, My first concern is to get a minimum cost to achieve that.
-
-Short Explanation: think about there is an app and the app will spin up with some conditions to consume a Rest API. The app will be triggered in some cases from another AWS Service that might host a simple Java app, But that Java app may trigger this consuming app multiple times before this consuming app don't end up previous processing job/task. So at this point, There might be consuming app more than one simultaneously and I think the consuming job/task will take max 3 hours in one shot.
-## [10][AWS Beanstalk and Laravel - Mac vs Windows Upload](https://www.reddit.com/r/aws/comments/gg15u2/aws_beanstalk_and_laravel_mac_vs_windows_upload/)
-- url: https://www.reddit.com/r/aws/comments/gg15u2/aws_beanstalk_and_laravel_mac_vs_windows_upload/
+Welp, I messed up pretty bad I guess. Im taking a windows 2016 server class and we use AWS for out machines. I changed my administrator password through AD, and go to sign out and log back in but now whenever I log in through remote desktop its saying "User has to change password on next login" Well this is an issue I cant get to the windows login screen to change my password. I know this is a very stupid mistake and I really don't want to message my teacher telling her I fucked up this badly, is there anything I can do to sign into my machine?
+## [8][Data Pipeline Scheduling](https://www.reddit.com/r/aws/comments/ggt2fa/data_pipeline_scheduling/)
+- url: https://www.reddit.com/r/aws/comments/ggt2fa/data_pipeline_scheduling/
 ---
-I'm still new to AWS, and I think I might be having file permission issues on Beanstalk.
+Hello, 
 
-I've seen that file permissions are automatically set by Beanstalk. When you upload a new zip with new directories and files in it, are those permissions run again to apply to the new files?
+&amp;#x200B;
 
-I'm working with an existing Beanstalk app that was previously uploaded from a Mac, but when I upload my Windows zip with new files, they aren't found when I load the Laravel application in the browser.
+I want to automate the starting of some of their instances from monday to friday, so I set up a simple data pipeline on a daily schedule that runs an AWS CLI command similar to this:
 
-Initially, the new pages files were loading fine. Certain new images weren't rendering on the new pages that I created on Windows. So it was finding the page files fine, but not the images.
+`test $(date +"%u") -lt 6 &amp;&amp; aws ec2 stop-instances --instance-ids &lt;instance&gt; --region us-east-1`
 
-Now, I pointed the images to an S3 bucket and it won't even load the page file when I upload a new zip. Laravel responds with an error saying it cannot find the view file, which it was able to find previously.
+When I checked it today, I saw there was an ERROR message, which I assume that it is that the day check failed (since it's Saturday) so it couldn't complete successfully. Will that stop the pipeline from running tomorrow or Monday?
 
-When I download the uploaded zip from AWS, the new files and images do exist there, so they are being processed. 
+Thanks for your time
+## [9][AWS forecast ignores feature-attribute when making a prediction](https://www.reddit.com/r/aws/comments/ggpd0v/aws_forecast_ignores_featureattribute_when_making/)
+- url: https://www.reddit.com/r/aws/comments/ggpd0v/aws_forecast_ignores_featureattribute_when_making/
+---
+Hey  fellows, 
 
-I don't think it matters, but there aren't any .gitignore files that would cause it to ignore the new files.
+I defined a TARGET dataset with 4 attributes (item\_id, store, date, demand) and need to forecast each item per day per shop. The model trains well, but when casting a prediction, the aws forecast service aggregates all items per day with disregards to the store attribute.
 
-Does this sound like a permissions issue from Windows, and is there a way to refresh the permissions without connecting to the EC2 via SSH? Can I include a config file of some way to force the permissions to set correctly every time a new zip is deployed?
+Has anyone ever had the same issue with AWS Forecast...?
+## [10][ECS task cannot resolve hostnames](https://www.reddit.com/r/aws/comments/ggpaxs/ecs_task_cannot_resolve_hostnames/)
+- url: https://www.reddit.com/r/aws/comments/ggpaxs/ecs_task_cannot_resolve_hostnames/
+---
+A colleague reached out me recently for help troubleshooting an issue with ECS, where when the host EC2 instance is in a certain VPC/subnet, the tasks cannot resolve hostnames when attempting to make requests to our company website, which is behind Akamai. This is a problem because the ECS cluster is running automated tests, and needs to be able to resolve our company site.
 
-I'm working on getting a Linux machine running so I can develop on that instead of Windows, but I'm trying to understand what's happening.
+To be clear, the host EC2 instance has no issues resolving the same hostnames, just the containers.
+
+What's strange is that an identical cluster running in another VPC/subnet does not have the same problem. Unfortunately, for reasons known only to our networking team, that subnet has a tiny CIDR block allocated, so the cluster cannot spin up enough tasks to get through the automation in a reasonable time.
+
+I'm not much of a docker expert, so I haven't got a clear idea of how to debug this. The cluster is running in network\_mode "host" if that's useful information.

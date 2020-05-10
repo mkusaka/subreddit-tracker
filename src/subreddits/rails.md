@@ -19,13 +19,62 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Profiling Rails app that uses websockets](https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/)
-- url: https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/
+## [2][Setting up an Automatic Book reader with Devise + Rails - 1](https://www.reddit.com/r/rails/comments/ggzr52/setting_up_an_automatic_book_reader_with_devise/)
+- url: https://www.reddit.com/r/rails/comments/ggzr52/setting_up_an_automatic_book_reader_with_devise/
 ---
-Hi. I'm new to Ruby and I am trying to profile a Rails app that uses websockets for streaming audio packets and other messages. I am interested in CPU time and wall clock time taken by all the methods in the app. Most of the tracing gems I see show the information for a single HTTP request, but it doesn't help in the case of websockets, since they remain alive even after a request. If it helps, 
+Hey guys,
 
-How would you do this? How do I profile arbitrary points in code, like just do a "start" in the websocket open and "stop" in the websocket close, and generate a report? I tried ruby-prof, but it crashes with cryptic errors...
-## [3][Good places to start with IOS development?](https://www.reddit.com/r/rails/comments/ggeq6a/good_places_to_start_with_ios_development/)
+I hate how much coding channels focus on a basic 'ToDo list / blog' so  i wanted wanted to share my progress in building an automatic book reader (not that good in making vids but meh). Probably will do several more videos until the end goal of having a tracker for how many books I've read.
+
+&amp;#x200B;
+
+ [https://www.youtube.com/watch?v=AnDLaaTXeWg&amp;feature=youtu.be](https://www.youtube.com/watch?v=AnDLaaTXeWg&amp;feature=youtu.be) 
+
+&amp;#x200B;
+
+Thx!
+## [3][What is the most pleasant frontend stack of your choice?](https://www.reddit.com/r/rails/comments/gglkff/what_is_the_most_pleasant_frontend_stack_of_your/)
+- url: https://www.reddit.com/r/rails/comments/gglkff/what_is_the_most_pleasant_frontend_stack_of_your/
+---
+
+## [4][Rails with React](https://www.reddit.com/r/rails/comments/ggvbcn/rails_with_react/)
+- url: https://www.reddit.com/r/rails/comments/ggvbcn/rails_with_react/
+---
+Hi just learnt to build things rails as back end. Is there any good tut where I can learn front end with rails? I want to learn react and node js with rails.
+## [5][How to add "{" and "}" in an url](https://www.reddit.com/r/rails/comments/ggn5t6/how_to_add_and_in_an_url/)
+- url: https://www.reddit.com/r/rails/comments/ggn5t6/how_to_add_and_in_an_url/
+---
+Hi guys.
+
+In my structured\_data (in &lt;head&gt;), I have this
+
+    "potentialAction": {
+     "@type": "SearchAction",
+     "target": "&lt;%= search_url(search: {q: "{search_term_string}" }) %&gt;",
+     "query-input": "required name=search_term_string"
+     }
+
+ 
+
+Watch "target". It show me the link in this way
+
+It show me `https://www.mywebsite.com/search?utf8=%E2%9C%93&amp;search%5Bq%5D=%7Bsearch_term_string%7D`
+
+It doesn't show { or } but %7B and %7D
+
+I need to have this link `https://www.mywebsite.com/search?utf8=%E2%9C%93&amp;search%5Bq%5D={search_term_string}`
+
+(following the [Google Guide](https://developers.google.com/search/docs/data-types/sitelinks-searchbox))
+
+**How how to solve?**
+
+I already try to fix using
+
+`"{search_term_string}".html_safe` or `"&amp;#123;search_term_string&amp;#125;".html_safe` or `%({search_term_string})` or `%(&amp;#123;search_term_string&amp;#125;).html_safe`
+
+**but nothing.**   
+I was  thinking that there is the bug because it is an URL. So I should that I have to use URI.encode, but I'm not still sure about this (and the tests didn't go very well...).
+## [6][Good places to start with IOS development?](https://www.reddit.com/r/rails/comments/ggeq6a/good_places_to_start_with_ios_development/)
 - url: https://www.reddit.com/r/rails/comments/ggeq6a/good_places_to_start_with_ios_development/
 ---
 Hey everyone! 
@@ -39,29 +88,61 @@ Do you think React Native is the right way to go? I was unsure if it was wise to
 Are there any good books / guides or tutorials that I could follow to get a coherent understanding?
 
 Looking forward to reading your responses, thanks a lot in advance and have a great weekend! :)
-## [4][link_to without the &lt;a&gt;. To add in the &lt;head&gt;](https://www.reddit.com/r/rails/comments/ggd97p/link_to_without_the_a_to_add_in_the_head/)
-- url: https://www.reddit.com/r/rails/comments/ggd97p/link_to_without_the_a_to_add_in_the_head/
+## [7][Rspec: running certain tests without transaction](https://www.reddit.com/r/rails/comments/ggfxjj/rspec_running_certain_tests_without_transaction/)
+- url: https://www.reddit.com/r/rails/comments/ggfxjj/rspec_running_certain_tests_without_transaction/
 ---
-Hi guys,
+I really don't want to go back to database_cleaner but I currently have the issue that I cannot test a critical part that changes the transaction isolation level. It works in dev/prod but since rspec wraps all the tests in transactions I get `ActiveRecord::TransactionIsolationError: cannot set transaction isolation in a nested transaction`.
 
-in the "structured data" area of my website, I added a potentialAction, SearchAction,
+I'm afraid there is no way to not wrap tests in transactions on a selective basis or is there?
 
-in this way
+Alternatively I could move the transaction to a little wrapper class which I then don't test and just test the process under test conditions.
 
-    	"potentialAction": {
-    		"@type": "SearchAction",
-    		"target": "https://www.mywebsite.com/search?utf8=%E2%9C%93&amp;amp;search%5Bq%5D={search_term_string}",
-    		"query-input": "required name=search_term_string"
-    	}
+Any ideas on what to do in this case?
 
-the link/target is not the best thing to see. I want to replace it with a link\_to, but if I should add
+Cheers
+## [8][How do I set up this ActiveRecord association where a model has both a "owner" and a "user"?](https://www.reddit.com/r/rails/comments/ggjwsa/how_do_i_set_up_this_activerecord_association/)
+- url: https://www.reddit.com/r/rails/comments/ggjwsa/how_do_i_set_up_this_activerecord_association/
+---
+Hi all,
 
-    &lt;%= link_to search_path(search: { q: #{search_term_string} }) %&gt;
+I've just created the following migration to allow a Venue to have an owner (by association with the users table) according to [these instructions](https://stackoverflow.com/questions/27809342/rails-migration-add-reference-to-table-but-different-column-name-for-foreign-ke).
 
-obviously I will have the &lt;a&gt; tag. **How to put it without the &lt;a&gt;?**
+    class AddOwnerToVenue &lt; ActiveRecord::Migration[6.0]
+      def change
+        add_reference :venues, :owner, foreign_key: { to_table: :users }
+      end
+    end
 
-Just to create the url
-## [5][Best course resource for ruby and rails?](https://www.reddit.com/r/rails/comments/gfx93d/best_course_resource_for_ruby_and_rails/)
+&amp; I have the following association set up in venue.rb:
+
+    class Venue &lt; ApplicationRecord
+      has_one :owner belongs_to :user
+    end
+
+Now for User, I have the corresponding association:
+
+    class User &lt; ApplicationRecord
+      has_many :venues
+    end
+
+But in order for my new owner association to work, I need to do something similar to this, but for it to look in the venue.owner column, not the venue.user.
+
+Something like:
+
+    class User &lt; ApplicationRecord
+      has_many :venues, as: owner
+    end
+
+I can't find a way to do this. Hopefully someone has come across this kind of association before and can help me out?
+
+Thanks.
+## [9][Profiling Rails app that uses websockets](https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/)
+- url: https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/
+---
+Hi. I'm new to Ruby and I am trying to profile a Rails app that uses websockets for streaming audio packets and other messages. I am interested in CPU time and wall clock time taken by all the methods in the app. Most of the tracing gems I see show the information for a single HTTP request, but it doesn't help in the case of websockets, since they remain alive even after a request. If it helps, 
+
+How would you do this? How do I profile arbitrary points in code, like just do a "start" in the websocket open and "stop" in the websocket close, and generate a report? I tried ruby-prof, but it crashes with cryptic errors...
+## [10][Best course resource for ruby and rails?](https://www.reddit.com/r/rails/comments/gfx93d/best_course_resource_for_ruby_and_rails/)
 - url: https://www.reddit.com/r/rails/comments/gfx93d/best_course_resource_for_ruby_and_rails/
 ---
 TL;DR - what course website should I get my company to pay for that has best rails content?
@@ -78,74 +159,7 @@ So looking for a nice resource which will cover these and be somewhat relevant t
 I currently have access to a friends pluralsight. They also have a sale going on. Should I just get the company to purchase that?
 
 Any other recommendations? Thanks.
-## [6][Best way to convert data from a view or model into a spreadsheet](https://www.reddit.com/r/rails/comments/gfxr5k/best_way_to_convert_data_from_a_view_or_model/)
+## [11][Best way to convert data from a view or model into a spreadsheet](https://www.reddit.com/r/rails/comments/gfxr5k/best_way_to_convert_data_from_a_view_or_model/)
 - url: https://www.reddit.com/r/rails/comments/gfxr5k/best_way_to_convert_data_from_a_view_or_model/
 ---
 haven't done this before, was wondering if anyone had a nice article or video for using caxlsx to do so
-## [7][Webpacker and CSS image calls](https://www.reddit.com/r/rails/comments/gg05c9/webpacker_and_css_image_calls/)
-- url: https://www.reddit.com/r/rails/comments/gg05c9/webpacker_and_css_image_calls/
----
-I am still new to a non asset pipeline world. I am working on transitioning my app from 4 to 6. I have a number of image calls in my CSS that webpack without error, but do not load. 
-
-    .logo {
-    background: image-url("../images/seal.png") no-repeat scroll 0 0 transparent;
-    background-size: 45px auto;
-        ...
-    }
-      .page-header a {
-        background: image-url("../images/neuro_banner_w.jpg") no-repeat scroll 0px 0 transparent;
-    background-size: 100% auto;
-       ... 
-        }
-
-My images now all reside in the app/javascript/images folder (with subfolders included, but neither of these images are in a subfolder.
-
-When I load my page, no images appear. When I open the inspector the I see:
-
-    background: image-url(/packs/media/images/seal-275a0ac1ae6079ecad8e70e483ffbfee.png) no-repeat scroll 0 0 transparent;
-
-The line is crossed out with the error: Invalid Property value. 
-
-Also the following two lines are also crossed out (background size and height)
-
-What am I doing wrong?
-
-I am not sure what files you need to see code from, so call out if there is something that I need to show.
-## [8][[Question/help] Shopify + GraphQL](https://www.reddit.com/r/rails/comments/gfxjz3/questionhelp_shopify_graphql/)
-- url: https://www.reddit.com/r/rails/comments/gfxjz3/questionhelp_shopify_graphql/
----
-I am new to building shopify applications, and am a bit confused regarding GraphQL.
-
-Currently:
-
-I have built a super simple Shopify application using the shopify_app gem. The application has some webhooks associated with orders. When a shop creates an order, I receive the JSON from the order, run a job in my code and submit the data I want to my local database.
-
-What I am trying to do:
-
-I need to access all orders from a shopify store that installs my application, and store all orders for that store. I would want to fetch all orders every 4-months or so. Shopify gave my application permission to fetch all orders.
-
-My issue/question:
-
-It appears the best course of action here is to use GraphQL. What I am confused with is do I need to use the shopify_api gem in addition to the shopify_app gem to get GraphQL to work?
-## [9][Tailwind form question.](https://www.reddit.com/r/rails/comments/gg022m/tailwind_form_question/)
-- url: https://www.reddit.com/r/rails/comments/gg022m/tailwind_form_question/
----
-Using tailwind on Rails 6 with Webpack and all that good stuff. It's my first time with tailwind so I'm just stumbling through just how "Open Source" this framework is in nature. Could almost be called option paralysis if I'm being honest. Now, unto the question:
-
-&amp;#x200B;
-
-I have a sign-up &amp; new post form that I'm very happy with so far. However, I am thoroughly disappointed that the text box looks absolutely retarded (really small initially) and has to be manually resized. Is there a way that I can make it start at a designated size and have it self-adjust as needed? Or is this something tailwind's out-of-the-box CSS doesn't care for?
-## [10][react-rails vs rails-api and react app](https://www.reddit.com/r/rails/comments/gfo0vg/reactrails_vs_railsapi_and_react_app/)
-- url: https://www.reddit.com/r/rails/comments/gfo0vg/reactrails_vs_railsapi_and_react_app/
----
-
-
-[View Poll](https://www.reddit.com/poll/gfo0vg)
-## [11][How to set variable on page load?](https://www.reddit.com/r/rails/comments/gft14w/how_to_set_variable_on_page_load/)
-- url: https://www.reddit.com/r/rails/comments/gft14w/how_to_set_variable_on_page_load/
----
-So I have a hidden form field that gets set with a value onclick from a couple of links. Depending on what link is clicked a different value gets set. The form field is called activeselector.
-
-What I want to do is set an `@activeselector` variable to the form param if it is there, but set it to '12345' or something if it is not so the page loads with a default value.
-
-Whats the best way to do this? I have the onclick set up and setting the value, but I'm not sure the best  way to return it back to the page on submit and default it on first page load.

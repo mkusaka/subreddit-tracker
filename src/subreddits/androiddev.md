@@ -40,79 +40,100 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Sudden extreme decrease in number of users. Anyone else having the same issue?](https://www.reddit.com/r/androiddev/comments/gg8zgk/sudden_extreme_decrease_in_number_of_users_anyone/)
-- url: https://i.redd.it/s39z98yl5ox41.png
+## [3][An open source minimalistic notes app (Link in comments)](https://www.reddit.com/r/androiddev/comments/ggz0ul/an_open_source_minimalistic_notes_app_link_in/)
+- url: https://i.redd.it/7tk00j8sywx41.png
 ---
 
-## [4][I have made an open source PDF editor that works cooperatively like Google Docs (Github in comments)](https://www.reddit.com/r/androiddev/comments/ggdu3m/i_have_made_an_open_source_pdf_editor_that_works/)
+## [4][I published a sample Android App repository with MVVM, Clean Architecture, Modularization, Repository Pattern](https://www.reddit.com/r/androiddev/comments/gglb2q/i_published_a_sample_android_app_repository_with/)
+- url: https://www.reddit.com/r/androiddev/comments/gglb2q/i_published_a_sample_android_app_repository_with/
+---
+I published a repository might be a starting point for building Android interview tasks.
+
+[https://github.com/ibrahimsn98/web-dev-tools-android](https://github.com/ibrahimsn98/web-dev-tools-android)
+
+**Tech Stack**
+
+    - Kotlin
+    - MVVM
+    - Modularization
+    - Repository Pattern
+    - Coroutines
+    - Koin
+    - Architecture Components
+    - Navigation Component
+    - LiveData
+    - Paging
+    - Kotlin DSL 
+    - OkHttp3
+
+&amp;#x200B;
+
+https://preview.redd.it/in6yqnowesx41.jpg?width=1076&amp;format=pjpg&amp;auto=webp&amp;s=b3eae77a0463df97f5a3148fa246b6250677ca34
+## [5][Australian government publishes source code of COVIDSafe app on Github](https://www.reddit.com/r/androiddev/comments/ggznh5/australian_government_publishes_source_code_of/)
+- url: https://github.com/AU-COVIDSafe/mobile-android
+---
+
+## [6][Need advice - Correct Architecture for Bottom Nav?](https://www.reddit.com/r/androiddev/comments/ggzw60/need_advice_correct_architecture_for_bottom_nav/)
+- url: https://www.reddit.com/r/androiddev/comments/ggzw60/need_advice_correct_architecture_for_bottom_nav/
+---
+I want to make a music app, very simple, using ExoPlayer. It will have a bottom nav with "songs" as the landing page, a recycler view of all songs in the library, with a player at the bottom of the view. Other areas of the app will be "albums", "artists" and "playlists". These again will be recycler views, but you click on something in these recycler views, and instead of playing, like in "songs", you will be taken to a recycler view of songs contained within that item i.e. I select Artist "Daft Punk", I get a list of Daft Punk songs with the player at the bottom, I click a song in that list and it plays.
+
+So my decision is how to architect this and as I am new to android I honestly don't know the right way. I have done some reading and thing I am right in saying that I would have 1 activity (the nav bar activity). From this, I would have 4 fragments, one for each of the items in the bottom nav. I would then pass a list of all songs to the songs fragment on opening the app, or tapping the "Songs" nav item. But I would pass a different list of songs to the "Songs" fragment if I were navigating through one of the other areas.
+
+Is this the correct approach? I haven't worked much with fragments so am a little wary that this might be a bit dumb... The alternative I though of was to have one child fragment each off of artists, playlists and albums which are essentially a copy of the songs fragment, but this seems like too much duplication. A little guidance here would be appreciated.
+
+I have drawn something simple here to explain what I mean.
+
+https://preview.redd.it/crezrdedbxx41.png?width=1430&amp;format=png&amp;auto=webp&amp;s=095129dc7dafd244a367e8a5e7beeeb03d4bc863
+## [7][Admob Banner placement policy on scrolling list?](https://www.reddit.com/r/androiddev/comments/ggyj4a/admob_banner_placement_policy_on_scrolling_list/)
+- url: https://www.reddit.com/r/androiddev/comments/ggyj4a/admob_banner_placement_policy_on_scrolling_list/
+---
+Hi,
+
+Came across this confusing admob banner placement policy over scrolling content saying it should have a clear border between the banner and scrolling content.
+
+&gt; Banner ads that remain on the screen while a user scrolls through other content may be placed at the top or the bottom of the screen, as long as there are appropriate borders and/or sufficient separation from the app content, especially from navigational elements such as menu bars   
+&gt;  
+&gt;src:  [https://support.google.com/admob/answer/6275335?hl=en&amp;ref\_topic=2936214](https://support.google.com/admob/answer/6275335?hl=en&amp;ref_topic=2936214) 
+
+ This seems like an awful UI experience for the user. Does anyone know any popular apps with banner at the bottom with scrolling content? Are they really forcing this policy?
+
+Seems like its bit unnecessary since, while scrolling, user usually performs action in the middle of the screen and there is no risk of accidental clicks at the bottom of the page? Understand that it might be important to clearly separate ad content from app content in that case but are there any apps really adhering to that policy? Dont think I have ever seen an app providing extra border between recycler view and bottom banner...
+
+&amp;#x200B;
+
+https://preview.redd.it/jntjboxypwx41.png?width=250&amp;format=png&amp;auto=webp&amp;s=911f03c8fba62cfbce940c5b0fd21dfbe2e0c395
+## [8][[GooglePlay Console] Would my approach fall into "Repetitive Content" policy by google.](https://www.reddit.com/r/androiddev/comments/ggz9st/googleplay_console_would_my_approach_fall_into/)
+- url: https://www.reddit.com/r/androiddev/comments/ggz9st/googleplay_console_would_my_approach_fall_into/
+---
+I build an app which provide two main features, let call them FeatureA and FeatureB. I plan to publish three app from the same set of source code:  
+\- App A -&gt; Only provide FeatureA and it's free
+
+\- App B -&gt; Only provide FeatureB and it's free
+
+\- App C -&gt; Provide FeatureA &amp; FeatureB, and it's a paid version.   
+My question is, would this approach fall into "Repetitive Content" policy from Google.
+
+[https://play.google.com/about/spam-min-functionality/#!?zippy\_activeEl=repetitive-content#repetitive-content](https://play.google.com/about/spam-min-functionality/#!?zippy_activeEl=repetitive-content#repetitive-content)
+
+Anyone have experience, please help to advice. 
+
+Thanks.
+## [9][RenderScript](https://www.reddit.com/r/androiddev/comments/gh0u95/renderscript/)
+- url: https://www.reddit.com/r/androiddev/comments/gh0u95/renderscript/
+---
+I understand that RenderScript is a way to speed up SIMD operations by parallelizing computation across multiple CPU and GPU cores and there is also JNI which allows you to accelerate code by running it in C instead. 
+
+My question is do you use it in production applications and if so what's been your experience with it and if you have ever worked on JNI and how these two approaches are different in your experience
+## [10][How was your experience using apps like appEnhancer, and is Google really okay with them?](https://www.reddit.com/r/androiddev/comments/gh0cfu/how_was_your_experience_using_apps_like/)
+- url: https://www.reddit.com/r/androiddev/comments/gh0cfu/how_was_your_experience_using_apps_like/
+---
+I'm talking about apps, which for every review you give to other random apps, your apps also receive a review from a random developer. I've been using it for about half an hour and gave three opinions and already received two. However it's apparent that people don't even bother playing your games and just give them five stars, but does it help Google to reccomend my games?
+## [11][How to have fragment add behaviour using Navigation Components? The fragment is always recreated when visiting back to it, which leads to re-query of data and re-rendering of data.](https://www.reddit.com/r/androiddev/comments/ggym39/how_to_have_fragment_add_behaviour_using/)
+- url: https://www.reddit.com/r/androiddev/comments/ggym39/how_to_have_fragment_add_behaviour_using/
+---
+Does navigation components currently only support fragment replacement? Due to this whole screen is rebuild every time fragment is revisited again rather than just the 'onResume' being called in activity scenario.
+## [12][I have made an open source PDF editor that works cooperatively like Google Docs (Github in comments)](https://www.reddit.com/r/androiddev/comments/ggdu3m/i_have_made_an_open_source_pdf_editor_that_works/)
 - url: https://v.redd.it/dwt0aydy4qx41
----
-
-## [5][[Rant] Whoever is working on Firebase does not USE it, i'm pretty sure...](https://www.reddit.com/r/androiddev/comments/gg754z/rant_whoever_is_working_on_firebase_does_not_use/)
-- url: https://www.reddit.com/r/androiddev/comments/gg754z/rant_whoever_is_working_on_firebase_does_not_use/
----
-https://gfycat.com/costlyelaboratefinnishspitz
-## [6][Kotlin vs React Native vs Flutter vs Ionic](https://www.reddit.com/r/androiddev/comments/ggd7yw/kotlin_vs_react_native_vs_flutter_vs_ionic/)
-- url: https://www.reddit.com/r/androiddev/comments/ggd7yw/kotlin_vs_react_native_vs_flutter_vs_ionic/
----
-Hey guys. My friend and I have been thinking about developing an app. He's much more into Hybrid technologies like Ionic or Cordova and I think native app would be better as it is only for Android. I decided to research it a bit.
-
-**React Native:** Amazing GUI with Native look, performance similar to Native apps,  biggest market and community.
-
-**FLutter:** Best user interface, still new and market/community not as big as others, performance is outstanding.
-
-**Ionic:** UI using HTML and CSS, second most popular community after React native, loses in performance when compared to others.
-
-**Kotlin:** Native UI, market is growing fast, performs better than Java with better security, syntax and compatibility.
-
-What do you guys suggest?
-
-Edit: The major focus is on UI and it will have network calls but might eventually grow bigger with time as lot of features might be added.
-## [7][Haven't developed Android apps in a while, trying to get up to date is a nightmare](https://www.reddit.com/r/androiddev/comments/gfv8ae/havent_developed_android_apps_in_a_while_trying/)
-- url: https://www.reddit.com/r/androiddev/comments/gfv8ae/havent_developed_android_apps_in_a_while_trying/
----
-The last Android app I developed was about 3 or 4 years ago: I used Java, Butterknife, Retrofit, and Objectbox for persistence.
-Now I'm trying to get up to date to develop a new app using Kotlin, but trying to find out what I should use is a nightmare:
-
-- Butterknife is deprecated, but with Kotlin I can use something called synthetics. But wait, that is no longer recommended. Maybe I should use this DataBinding thing. But there is an even newer thing called ViewBinding!
-
-- I heard that with Kotlin I can use Anko to make things easier. But that is deprecated, now I can use Kotlin Extensions. But the official link about Kotlin Extensions redirects to a different web that talks about something called KTX. Is that the same thing?
-
-- AsyncTask task is no longer recommended. What should I use instead? Coroutines?
-
-- Coroutines are supposed to make working with callbacks (in Retrofit, for example) easier, but boy, after watching youtube tutorials I think I'll stick with callbacks.
-
-Anyway, my main complaint is that there are dozens of ways and tools to do the same thing, every couple of months there is a newer one, and every tutorial/course/book I check uses different methodologies (even official Google tutorials), so I don't know what I should use.
-Can you recommend me sources that are up to date so that I can learn what are the current de facto practices, tools, libraries, etc?
-## [8][Kotlin Coroutines 1.3.6 with the new StateFlow 🎉](https://www.reddit.com/r/androiddev/comments/gg1dtx/kotlin_coroutines_136_with_the_new_stateflow/)
-- url: https://www.reddit.com/r/androiddev/comments/gg1dtx/kotlin_coroutines_136_with_the_new_stateflow/
----
-https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.3.6
-
-StateFlow is here, the new "BehaviorSubject" (in RxJava world) for Coroutines, I can't wait to get rid of all the `ConflatedBroadcastChannel`s in my codebase 😀
-
-https://github.com/Kotlin/kotlinx.coroutines/issues/1973
-## [9][A week since Covid suspension.](https://www.reddit.com/r/androiddev/comments/ggb3s7/a_week_since_covid_suspension/)
-- url: https://www.reddit.com/r/androiddev/comments/ggb3s7/a_week_since_covid_suspension/
----
-So it's been a week now since Google suspended my app because a news article pulled from an RSS feed contained the word Covid19. I appealed on day 1 and removed any mention of Covid.
-
-I get why they are doing it but surely there has to be a better way. I'm losing customers and potential customers because of this. Trying to find anyone to contact is impossible from what I can see, I thought I might get somewhere by messaging @googleplaydev on twitter but no luck.
-
-It has been a stressful week so far, I've hardly slept through trying to get it resolved but it looks like it will be a case of hoping it will be resolved. 
-
-Do Google work on appeals on weekends? 
-
-I really feel for anyone else going through the same thing.
-## [10][How to handle these type of reviews? I am getting these quite frequently now and rating has gone down to 4.2 from 4.4. User liked the app still gave it one star. Does google help in removing these reviews?](https://www.reddit.com/r/androiddev/comments/ggeg7p/how_to_handle_these_type_of_reviews_i_am_getting/)
-- url: https://i.redd.it/9e4ujph5eqx41.jpg
----
-
-## [11][What are some great open source apps every Android developer could use/learn from?](https://www.reddit.com/r/androiddev/comments/gg8pro/what_are_some_great_open_source_apps_every/)
-- url: https://www.reddit.com/r/androiddev/comments/gg8pro/what_are_some_great_open_source_apps_every/
----
-Especially written in Java because that's where I'm personally trying to improve as a junior dev, but Kotlin would be great too.
-## [12][Strange stats from playstore](https://www.reddit.com/r/androiddev/comments/ggdmi5/strange_stats_from_playstore/)
-- url: https://i.redd.it/x7c0kj412qx41.png
 ---
 

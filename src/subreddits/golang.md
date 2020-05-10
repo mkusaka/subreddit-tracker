@@ -1,86 +1,61 @@
 # golang
-## [1][immudb: A lightweight, high-speed immutable database for systems and applications in Go.](https://www.reddit.com/r/golang/comments/ggds5c/immudb_a_lightweight_highspeed_immutable_database/)
+## [1][I know we have these constantly, but I’m new to Go (thankfully feel like I’ve found my feet though) AND I made this myself.](https://www.reddit.com/r/golang/comments/ggm46a/i_know_we_have_these_constantly_but_im_new_to_go/)
+- url: https://i.redd.it/3o9v21qjlsx41.jpg
+---
+
+## [2][Best API practices](https://www.reddit.com/r/golang/comments/ggwyqh/best_api_practices/)
+- url: https://www.reddit.com/r/golang/comments/ggwyqh/best_api_practices/
+---
+Hey r/golang , I've been looking at writing an API recently, and I'm wondering what your go to project structure, specifically I've been struggling with a good integration between database and models. I've looked at a whole bunch of articles dating back to 2015, but I'm wondering if there is an overall consensus in the community in 2020 for best practices. Feel free to just drop article or blog links. Thanks all!
+## [3][Budding Go Dev](https://www.reddit.com/r/golang/comments/ggzq7s/budding_go_dev/)
+- url: https://www.reddit.com/r/golang/comments/ggzq7s/budding_go_dev/
+---
+Hi guys and gals!
+
+So I’ve been learning go for a while now, and my hope in the future is to score a junior role. I was wondering if anyone had any tips or project ideas for me to create and add to my github to help improve my chances
+
+Thank you!
+## [4][`go fmt` made my OCD so less of a problem working as a developer... Hehehe...](https://www.reddit.com/r/golang/comments/ggwufe/go_fmt_made_my_ocd_so_less_of_a_problem_working/)
+- url: https://i.redd.it/mej3noux0wx41.jpg
+---
+
+## [5][Best way to expose/track custom application metrics with metric beat?](https://www.reddit.com/r/golang/comments/gh1f2a/best_way_to_exposetrack_custom_application/)
+- url: https://www.reddit.com/r/golang/comments/gh1f2a/best_way_to_exposetrack_custom_application/
+---
+I'm looking to define and collect custom application metrics in my Go code. I'll most likely be using metricbeats as my agent. It appears that the standard way to do this is to use the expvar package. I haven't found a lot of links/example online though, wondering if anyone here has a better idea or example repos which do this.
+
+FWIW, my services are all written in Go and run on Kubernetes (EKS) in AWS. I'd like to also collect host, container and cluster level metrics as well. I will also be collecting CloudWatch metrics but I will probably do that outside of my K8s clusters. I'm using Coralogix for my log and metrics backend.
+## [6][diffy: Print colored diff more readable](https://www.reddit.com/r/golang/comments/gh0811/diffy_print_colored_diff_more_readable/)
+- url: https://github.com/ynqa/diffy
+---
+
+## [7][immudb: A lightweight, high-speed immutable database for systems and applications in Go.](https://www.reddit.com/r/golang/comments/ggds5c/immudb_a_lightweight_highspeed_immutable_database/)
 - url: https://github.com/codenotary/immudb
 ---
 
-## [2][I made a CSVtoJSON CLI tool with Golang](https://www.reddit.com/r/golang/comments/gg5m7f/i_made_a_csvtojson_cli_tool_with_golang/)
-- url: https://www.reddit.com/r/golang/comments/gg5m7f/i_made_a_csvtojson_cli_tool_with_golang/
+## [8][Crypto.com Exchange API (Wrapper in GO)](https://www.reddit.com/r/golang/comments/ggy431/cryptocom_exchange_api_wrapper_in_go/)
+- url: https://www.reddit.com/r/golang/comments/ggy431/cryptocom_exchange_api_wrapper_in_go/
 ---
-Hi!
+[Crypto.com](https://crypto.com/) is getting better each day and its Exchange Platform (Beta) offers many handy features that the App does not. If you were to explore, you should surely sign up the app and link you your [crypto.com](https://crypto.com/) exchange account (If you do not have it: check for Referral code below).
 
-After 7 years of working with Javascript, I decided that it was time to try a new programming language. During the last weeks, I've been learning Golang using this website as my main learning resource: [https://gobyexample.com/](https://gobyexample.com/) .  I thought that the best way to challenge my recently acquired skills was to create a simple program without following any tutorial or course. That's the reason I made this CLI tool that you can check here:
+[Crypto.com Exchange](https://crypto.com/exchange) is a platform you should explore if you are a [Crypto.com](https://crypto.com/) user. The Web UI is easy to navigate and you have more tools to improve your crypto trading experience even though it is still in Beta. However, you were to check out their [API Official Docs](https://crypto.com/exchange-doc), you might find it rather lacking and not much information were given.
 
- [https://github.com/Andrew4d3/go-csv2json](https://github.com/Andrew4d3/go-csv2json)
+You can check out my examples and wrapper for this. It is in active development and anyone is welcome to contribute.
 
-Bear in mind that I'm a complete beginner using Go. So probably the code you're gonna see is not the best out there. *But hey! At least I tried*... I'll be writing a Medium article in the future explaining what I did, but first I want to read your opinions. To see if there's something where I can improve myself.
+For Golang: [https://github.com/metarsit/go-crypto-exchange](https://github.com/metarsit/go-crypto-exchange)
 
-Any suggestion, advice, or feedback you want to give me is completely welcome. :)
-## [3][godoc-static - Generate static Go documentation](https://www.reddit.com/r/golang/comments/gg91mm/godocstatic_generate_static_go_documentation/)
-- url: https://gitlab.com/tslocum/godoc-static
+If you are new, you can use my referral link [https://platinum.crypto.com/r/2xpsp2nndv](https://platinum.crypto.com/r/2xpsp2nndv)to sign up for [Crypto.com](https://crypto.com/) and we both get $50 USD.
+## [9][Parsing git log output in go](https://www.reddit.com/r/golang/comments/ggqumb/parsing_git_log_output_in_go/)
+- url: https://www.reddit.com/r/golang/comments/ggqumb/parsing_git_log_output_in_go/
 ---
+I was playing around recently with an idea to use git history to try to determine "experts" in a codebase, by subdirectory or file type, etc. and one of the "subproblems" of that project was a little package for parsing git log output: https://github.com/augmentable-dev/gitpert/tree/master/pkg/gitlog and I thought it might be worth sharing here in case folks are interested or have feedback! Perhaps there's a better approach?
 
-## [4][Communicate between grpc microservices with jwt](https://www.reddit.com/r/golang/comments/gg99xe/communicate_between_grpc_microservices_with_jwt/)
-- url: https://www.reddit.com/r/golang/comments/gg99xe/communicate_between_grpc_microservices_with_jwt/
+thanks!
+## [10][Twitch streaming Go/networking/IPv6 content](https://www.reddit.com/r/golang/comments/gghsg7/twitch_streaming_gonetworkingipv6_content/)
+- url: https://www.reddit.com/r/golang/comments/gghsg7/twitch_streaming_gonetworkingipv6_content/
 ---
-How can we communicate between microservices with jwt? I want to communicate between two microservices first takes care of the username login and password and second microservices should get username and other information of the user.
-## [5][[Question] How does `cancel()` result in`&lt;-ctx.Done()` to be the case chosen in a "select" statement?](https://www.reddit.com/r/golang/comments/ggdueg/question_how_does_cancel_result_inctxdone_to_be/)
-- url: https://www.reddit.com/r/golang/comments/ggdueg/question_how_does_cancel_result_inctxdone_to_be/
----
-I'm trying to understand "select" statements of the following kind:
-```go
-select {
-	case &lt;-ctx.Done():
-	...
-	// Timeout
-	case r:= &lt;-time.After(...):
-	...
-}
-```
+Hey all! I recently started Twitch streaming at https://twitch.tv/mdlayher and figured some folks here might be interested.
 
-Because of how "select" statements work, the channel operands of these two receive operations are evaluated exactly once. i.e., ctx.Done() and time.After(...) are evaluated exactly once. The result is a set of channels to receive from and the corresponding values to send. Since there is no default "case", the "select" statement blocks until at least one of the communications can proceed.
+On stream, I'm working a project called CoreRAD (https://github.com/mdlayher/corerad) which is my take on a modernized IPv6 router advertisement daemon, and radvd alternative. If you want to know more, check out: https://mdlayher.com/blog/corerad-a-new-ipv6-router-advertisement-daemon/
 
-From [here](https://golang.org/pkg/time/#After), I understand that `time.After(...)` will be the case chosen to proceed, if the specified duration has elapsed.
-
-What I've already read but do not completely understand:
-
-From [here](https://golang.org/src/context/context.go?s=2460:6019#L357), I see that `Done()` returns a channel with elements of type `struct{}`.
-
-From [here](https://golang.org/src/context/context.go?s=2460:6019#L389) I see that `cancel()` closes `c.done`.
-
-I know that closing a channel causes receive operations to return the zero value for the channel's element type without blocking. I also know that receiving from a "nil" channel blocks forever; I have a feeling that this fact fits into this picture somehow because I see `if c.done == nil` in the code. 
-
-I can't see the whole 'chain' of how a `cancel()` results in causing `ctx.Done()` to proceed first in the "select" statement.
-
-Please do correct me if I have any misunderstandings.
-## [6][HTTP client and REST API](https://www.reddit.com/r/golang/comments/ggf2h6/http_client_and_rest_api/)
-- url: https://www.reddit.com/r/golang/comments/ggf2h6/http_client_and_rest_api/
----
-There was a question about go vs python for REST services. That was geared toward servers. My question is about client.
-
-Our organization introduced a tool which supports REST. There is language support of Python/NodeJs/Java/C#. But not Go. I would like to write the Go implementation for internal use.
-
-I have it working with Go's standard library net/http client. It works but I would like to make it easier on the user.  I would like to abstract net/http client from the user. Is that a good idea?
-
-Are there any good examples I can refer to?
-
-I looked at this, [https://www.scaledrone.com/blog/creating-an-api-client-in-go/](https://www.scaledrone.com/blog/creating-an-api-client-in-go/). Is this a good idea?
-## [7][Web Application Firewall written in Go](https://www.reddit.com/r/golang/comments/gfsns4/web_application_firewall_written_in_go/)
-- url: https://github.com/asalih/guardian
----
-
-## [8][Open sourced my Github App](https://www.reddit.com/r/golang/comments/ggdfr8/open_sourced_my_github_app/)
-- url: https://www.reddit.com/r/golang/comments/ggdfr8/open_sourced_my_github_app/
----
-Hi All, I am still learning Golang, but I have just released the source code of my Github Application ([https://pullassistant.com/](https://pullassistant.com/)) 
-
-Repository: [https://github.com/pullassistant/PA-Monorepo](https://github.com/pullassistant/PA-Monorepo)
-
-If someone wants to build a similar stuff, it might be useful! Thanks!
-## [9][Checksum validation in goose](https://www.reddit.com/r/golang/comments/ggadj4/checksum_validation_in_goose/)
-- url: https://www.reddit.com/r/golang/comments/ggadj4/checksum_validation_in_goose/
----
- Hi , I just started with golang , have couple of doubts regarding DB  migration , we are using goose for db migration , What I noticed is that  it does not do the checksum validation while running the migration like  done in flyway(java) , suppose for example I have a migration file  which is ran before now if I make any change or update to it , it does  not run the migration or throw any error, for every migration I have to  modify the name of the file or create a new file , is there any thing goose provide out of the box to do this ?
-## [10][Developers say Google's Go is 'most sought after' programming language of 2020 | ZDNet](https://www.reddit.com/r/golang/comments/gflyyn/developers_say_googles_go_is_most_sought_after/)
-- url: https://www.zdnet.com/article/developers-say-googles-go-is-most-sought-after-programming-language-of-2020/
----
-
+I'll be live in about 1 hour at 1pm US Eastern on Saturday, May 9! I would love to see some of you there, and I welcome chat participation, questions, and code review! Thanks for your time!

@@ -84,67 +84,204 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][How one CSS-in-JS library cut 56 KB from my bundle](https://www.reddit.com/r/reactjs/comments/ggypb4/how_one_cssinjs_library_cut_56_kb_from_my_bundle/)
-- url: https://dev.to/rozenmd/how-one-css-in-js-library-cut-56-kb-from-my-bundle-3a8o
+## [3][Synchronized YouTube Player built in react](https://www.reddit.com/r/reactjs/comments/gh76ez/synchronized_youtube_player_built_in_react/)
+- url: https://v.redd.it/ooxd2r7gizx41
 ---
 
-## [4][Dan Abramov on marketing your OSS - deep in the comments of CRA's issues in 2016](https://www.reddit.com/r/reactjs/comments/ggkrrf/dan_abramov_on_marketing_your_oss_deep_in_the/)
-- url: https://github.com/facebook/create-react-app/pull/489#issuecomment-244574463
+## [4][A VS-Code extension to refactor HTML-Tags with style-props to styled components](https://www.reddit.com/r/reactjs/comments/ghmrbg/a_vscode_extension_to_refactor_htmltags_with/)
+- url: https://raw.githubusercontent.com/Agreon/styco/master/demo.gif
 ---
 
-## [5][Deployed my first React project!](https://www.reddit.com/r/reactjs/comments/ggn633/deployed_my_first_react_project/)
-- url: https://www.reddit.com/r/reactjs/comments/ggn633/deployed_my_first_react_project/
+## [5][Created an online multiplayer version of the popular Cards Against Humanity game in React](https://www.reddit.com/r/reactjs/comments/ghdk7i/created_an_online_multiplayer_version_of_the/)
+- url: https://v.redd.it/iabno6vda1y41
 ---
-Took this quarantine time to learn React and have fallen in love! I have been a front end developer for about 5 years and have never had the time or need to use React, but took this time to learn it and so far it's been awesome! Took my love of video games and streaming and created a React app called Shuffle. Takes all of the streams under 50 viewers from a game and puts them in an array and then selects a random one to show! Would love some feedback on the code and design. Thanks!
 
-https://shuffle-gg.web.app/
+## [6][The Best Alternatives for Selenium](https://www.reddit.com/r/reactjs/comments/ghkzxl/the_best_alternatives_for_selenium/)
+- url: https://open-source-developer-universe-resources-docs.s3-eu-west-1.amazonaws.com/selenium-alternatives.htm
+---
 
-https://github.com/joeynylund/Shuffle.gg
-## [6][ReactSS - One tab to rule them all](https://www.reddit.com/r/reactjs/comments/gh0hnw/reactss_one_tab_to_rule_them_all/)
+## [7][Client-side-only React is not sustainable.](https://www.reddit.com/r/reactjs/comments/ghcct3/clientsideonly_react_is_not_sustainable/)
+- url: https://twitter.com/dan_abramov/status/1259614150386425858
+---
+
+## [8][ReactSS - One tab to rule them all](https://www.reddit.com/r/reactjs/comments/gh0hnw/reactss_one_tab_to_rule_them_all/)
 - url: https://v.redd.it/ghjioqpsixx41
 ---
 
-## [7][Letterpad — CMS for personal blogs developed with Typeescript, reactjs, graphql and is highly performant.](https://www.reddit.com/r/reactjs/comments/gh0fc5/letterpad_cms_for_personal_blogs_developed_with/)
-- url: https://medium.com/@ajaxtown/letterpad-cms-for-personal-blogs-d3f24487325b
+## [9][mst-gql - The best GraphQL client you've never heard of](https://www.reddit.com/r/reactjs/comments/ghmupz/mstgql_the_best_graphql_client_youve_never_heard/)
+- url: https://www.youtube.com/watch?v=N4ni8u47XVs
 ---
 
-## [8][I Built a 4 Player Cards Against Humanity like Game in React &amp; Socket.io](https://www.reddit.com/r/reactjs/comments/gh0amx/i_built_a_4_player_cards_against_humanity_like/)
-- url: https://www.reddit.com/r/reactjs/comments/gh0amx/i_built_a_4_player_cards_against_humanity_like/
+## [10][How to add image src to the state in multi step form in react](https://www.reddit.com/r/reactjs/comments/ghlaym/how_to_add_image_src_to_the_state_in_multi_step/)
+- url: https://www.reddit.com/r/reactjs/comments/ghlaym/how_to_add_image_src_to_the_state_in_multi_step/
 ---
-Hey all,
+**TLDR**
 
-I spent the last two weeks building a 4 player browser-based game similar to Cards Against Humanity in React and Socket.io, and I'm launching it today!
+I'm making an multiStep form for my project that is inspired from [Brad Traversy's Tutorial of making Multi-Step form in React](https://github.com/bradtraversy/react_step_form). So as per the basic structure of this form
 
-It's called Gameslap: [https://gameslap.io](https://gameslap.io)
+&amp;#x200B;
 
-You and up to three of your friends &amp; family can play together remotely. It's played 100% in your browser, and it's real-time, thanks to the awesome power of [Socket.io](https://Socket.io).
+[structure of multi step form](https://reddit.com/link/ghlaym/video/6lh6fui784y41/player)
 
-If you have any questions on how I built it, please ask away!
-## [9][How to integrate Stripe with React, Redux and Express in an E-commerce app](https://www.reddit.com/r/reactjs/comments/ggyker/how_to_integrate_stripe_with_react_redux_and/)
-- url: https://www.reddit.com/r/reactjs/comments/ggyker/how_to_integrate_stripe_with_react_redux_and/
+I made a main Parent component called `Multistep` as below
+
+    import React, { Component } from 'react'
+    import StepOne from './StepOne'
+    export class Multiform extends Component {
+        state={
+            step:1,
+            input:'',
+            select:''
+        }
+         // Proceed to next step
+      nextStep = () =&gt; {
+        const { step } = this.state;
+        this.setState({
+          step: step + 1
+        });
+      };
+    
+      // Go back to prev step
+      prevStep = () =&gt; {
+        const { step } = this.state;
+        this.setState({
+          step: step - 1
+        });
+      };
+    
+      // Handle fields change
+      handleChange = input =&gt; e =&gt; {
+        this.setState({ [input]: e.target.value });
+      };
+        render() {
+            const { step } = this.state;
+            const {  input, countryFlag, select } = this.state;
+            const values = { input, countryFlag, select };
+            switch(step){
+              case 1:
+                return(
+                  &lt;StepOne
+                  nextStep={this.nextStep}
+                  handleChange={this.handleChange}
+                  values={values}
+                    /&gt;
+                )
+        }
+    }
+    
+    export default Multiform
+
+and a child component `StepOne` as below
+
+    import React, { Component } from 'react'
+        export class StepOne extends Component {
+            continue = (e) =&gt; {
+                e.preventDefault();
+                this.props.nextStep();
+            };
+    
+            back = (e) =&gt; {
+                e.preventDefault();
+                this.props.prevStep();
+            };
+            state = {
+                countryFlag: 'https://raw.githubusercontent.com/MeRahulAhire/country-calling-code-html/master/phone_icon.png',
+            };
+            render() {
+                const selectCountryChange = () =&gt; {
+                    const img = document.querySelector('#img');
+                    const select = document.querySelector('#country');
+                    img.src = `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`;
+    
+                    this.setState({
+                        countryFlag: `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`
+                    });
+                };
+                const { values, handleChange, } = this.props;
+                return (
+                    &lt;div&gt;
+                    &lt;button onClick={this.back} className="col-form-prev"&gt;
+                    &lt;input
+                        type="email"
+                        placeholder="your-email@example.com"
+                        onChange={handleChange('input')}
+                        defaultValue={values.input}
+                    /&gt;
+                    &lt;div class="image" onChange={selectCountryChange}&gt;  
+                        &lt;img src={this.state.countryFlag} id="img"/&gt;  
+                     &lt;/div&gt;
+                     &lt;select id="country" onChange={handleChange('select')} defaultValue={values.select}&gt;  
+                        &lt;option data-countryCode="IN" value="91"&gt;India&lt;/option&gt;  
+                        &lt;option data-countryCode="US" value="1"&gt;US&lt;/option&gt;  
+                        &lt;option data-countryCode="GB" value="44"&gt;UK&lt;/option&gt;  
+                     &lt;/select&gt;  
+                    &lt;/div&gt;
+                )
+            }
+        }
+    
+        export default StepOne
+
+according to that tutorial, everything for text input field the state management was working absolutely fine. Even when i tried to go next step and come back, the data was still accessible and persisted in that `&lt;input/&gt;` and `&lt;select/&gt;` field.
+
+I also tried to store the image source in Multiform state but with an another `onChange` handler but i wasnt able to figure out exactly how to do that.
+
+The `img.src` is manipulated by the `selectCountryChange` in `stepOne` as below
+
+    state = {
+            countryFlag: 'https://raw.githubusercontent.com/MeRahulAhire/country-calling-code-html/master/phone_icon.png',
+        };
+    
+    const selectCountryChange = () =&gt; {
+                const img = document.querySelector('#img');
+                const select = document.querySelector('#country');
+                img.src = `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`;
+    
+                this.setState({
+                    countryFlag: `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`
+                })
+    
+    &lt;div class="image" onChange={selectCountryChange}&gt;  
+                    &lt;img src={this.state.countryFlag} id="img"/&gt;
+    
+                 &lt;/div&gt;
+
+Can anyone please guide me on how to add the img.src to the state of Multiform and make it persistent even when i go back and forth of the form just the `&lt;input/&gt;` and `&lt;select/&gt;`. [You can also checkout my project repo for more info.](https://github.com/MeRahulAhire/cfm-dev-refined/tree/master/src/public/form)
+## [11][How to use Suspense with axios?](https://www.reddit.com/r/reactjs/comments/ghnj65/how_to_use_suspense_with_axios/)
+- url: https://www.reddit.com/r/reactjs/comments/ghnj65/how_to_use_suspense_with_axios/
 ---
-Hi all, I've created this demo app and step by step tutorial on how to integrate Stripe with React, Redux and Express in an E-commerce app. [https://github.com/gabycasper007/react-stripe](https://github.com/gabycasper007/react-stripe)
+Hi,
 
-Feel free to use and give feedback.
-## [10][Built a recipe generator for all your random ingredients](https://www.reddit.com/r/reactjs/comments/gh0mr7/built_a_recipe_generator_for_all_your_random/)
-- url: https://www.reddit.com/r/reactjs/comments/gh0mr7/built_a_recipe_generator_for_all_your_random/
+I've read the doc about React.Suspense, it seems great, but how can I use it while performing an api call, with axios for example?
+
+To be more specific, why this code doesn't work? 
+
+    export default Foo(){
+    const [state, setState] = useState()
+    
+    useEffect(()=&gt; {
+        axios.get("url")
+        .then(res=&gt; setState(res.data))
+        .catch(_=&gt; setState(null)
+    }, [])
+    
+    return (
+        &lt;Suspense fallback="loading data"&gt;
+           &lt;div&gt;hello {state.name}&lt;/div&gt;
+        &lt;/Suspense&gt;
+    )
+    }
+
+Thanks!
+## [12][Is Stephen Grinder's courses are good?](https://www.reddit.com/r/reactjs/comments/ghn30q/is_stephen_grinders_courses_are_good/)
+- url: https://www.reddit.com/r/reactjs/comments/ghn30q/is_stephen_grinders_courses_are_good/
 ---
-[https://fridgecop.com](https://fridgecop.com)
+Hey, 
 
-So it turns out I've been wasting a lot of time watching TV during quarantine.
+I've recently enrolled in Stephen Grinder's React-Redux course and I can say I'm quite pleased with it. After that I was hoping to get Node.js, Express and MongoDB course of his. I've also enrolled in it but seems like methods he uses in this one are deprecated and I'm not sure if I should continue getting the course. 
 
-So to capitalize, I decided to start a personal project this week and this is what I've been able to do so far! It's a working product but there are a lot of things I'm looking to add over the next few weeks.
+What do you think about this course? Should I complete it or just find a new one?
 
-It's my first time dealing with hooks and animations but I think I'm slowly catching on. 
+And which one I should be enrolling?
 
-Let me know what you think!
-
-https://i.imgur.com/aEdIu9J.png
-## [11][How to do Multiple API Requests in ReactJS Using Axios](https://www.reddit.com/r/reactjs/comments/ggvaxl/how_to_do_multiple_api_requests_in_reactjs_using/)
-- url: https://youtu.be/Mt3kxUvHORA
----
-
-## [12][Improved Next.js and Gatsby page load performance with granular chunking](https://www.reddit.com/r/reactjs/comments/ggebb9/improved_nextjs_and_gatsby_page_load_performance/)
-- url: https://web.dev/granular-chunking-nextjs/
----
-
+Here is the [course](https://www.udemy.com/course/node-with-react-fullstack-web-development/).

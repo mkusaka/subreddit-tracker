@@ -19,7 +19,117 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Setting up an Automatic Book reader with Devise + Rails - 1](https://www.reddit.com/r/rails/comments/ggzr52/setting_up_an_automatic_book_reader_with_devise/)
+## [2][How to handle multiple required strong params](https://www.reddit.com/r/rails/comments/ghhnkv/how_to_handle_multiple_required_strong_params/)
+- url: https://www.reddit.com/r/rails/comments/ghhnkv/how_to_handle_multiple_required_strong_params/
+---
+Hello, what should params for a structure like the following look like?
+
+\`{"person": {"first\_name": "Bob"}, "address": {"street": "123 Main St."}}\`
+
+I've tried several different options based on different posts, including the array form of \`params.require()\`, but ran into different issues no matter which version I used (including 'last permit wins' for one of the two entity's attributes).
+
+So there are two (or more) entities defined in parallel--not one top-level entity that can nest everything beneath itself. Anybody have an example of that?
+
+For the array form, API docs show a parallel assignment, but then trying to \`permit()\` on each one of those param set variables "worked," but I ended up with the "last permit wins" issue mentioned above: only one set of attributes arrived, the other entity's were discarded.
+## [3][sending an automated email that has an xlsx attachment through a scheduler job](https://www.reddit.com/r/rails/comments/ghnizc/sending_an_automated_email_that_has_an_xlsx/)
+- url: https://www.reddit.com/r/rails/comments/ghnizc/sending_an_automated_email_that_has_an_xlsx/
+---
+So I've been going over documentation/articles on it.  It's scheduler job and I want to get a list of say all the products from the Product model and various aspects/data related to it, and send it off every X day/s to recipients via the scheduler job.
+
+Will be using caxlsx:
+
+https://github.com/caxlsx/caxlsx_rails
+
+So say I have a Product model, will I be having most of the logic in the controller for building the xlsx sheet such as the below, or since nothing is needed for rendering(it's simply data sent out in an automated email attachment), is it going to just be a Product class method that I call in the scheduler job?
+
+    # products_controller.rb 
+
+    def product_listing
+      @products = Product.all
+
+      respond_to do |format| # is this even necessary, does all my code just need to be in a model since I'm not rendering anything?
+        format.xlsx
+      end
+
+      wb = xlsx_package.workbook #create excel book
+      wb.add_worksheet(name: "Product List")
+      sheet.add_row ["Product Name ", "Product Price", "Product Inventory Date"]
+      @products.each to |product|
+        sheet.add_row [product.name, product.price, product.inventory_date]
+      end
+    end
+
+I guess thinking this out further, regardless of whether it will be in the model or the controller, I will need a method/action in a mailer model to kick off an email, and in that need to use the controller action or model class method, correct?  Just trying to conceptually understand how to do the email along with the xlsx attachment, and I guess focusing on building out the xlsx sheet primarily to start.  And I guess I'll need that mailer method/action to be kicked off in the scheduler job as well.
+## [4][Create Your First Rails Template For Devise + Bootstrap](https://www.reddit.com/r/rails/comments/gh6leo/create_your_first_rails_template_for_devise/)
+- url: https://www.reddit.com/r/rails/comments/gh6leo/create_your_first_rails_template_for_devise/
+---
+Hey everyone, Deanin here!
+
+I've been working on this 20 projects in 20 weeks challenge where I learn to build something new every week and then make a tutorial covering it.
+
+For week 8 I finally snapped and couldn't take adding usernames for Devise accounts to login with and bootstrap anymore, so I set out to learn how to build a template that I could run with one command. 
+
+After you create the template you can host it somewhere and use a link to the raw file to run your command, meaning no download necessary. You could also use my template if you like, just to see how it works.
+
+The rails command from my blog uses a bit.ly link shortened URL. I'll include that command so you can test drive what it does:
+
+`rails new app_name -m bit.ly/deanin_template`
+
+I created both a text version of the tutorial on my blog that you can find here, allowing you to just get up and running faster, as well as a YouTube tutorial if you'd like things explained by me a bit more.
+
+Hopefully either of these resources will help at least one of you. I definitely learned a lot making from doing this project, for what it's worth.
+
+[Blog Post](https://deandehart.com/blog/rails-template-for-devise-and-bootstrap/)
+
+[YouTube Tutorial](https://youtu.be/JR8u5gfmDxU)
+## [5][Confusion over push notification](https://www.reddit.com/r/rails/comments/gha4p8/confusion_over_push_notification/)
+- url: https://www.reddit.com/r/rails/comments/gha4p8/confusion_over_push_notification/
+---
+Hi guys, I come here in hope for clarification.
+
+I would like to implement in my app push notifications (the one that appear in your phone when you get a new whatsapp). Originally, I did some research and saw that people are using firebase, in what seems to me a very complex sets of step, but I also found a gem, rpush, which seems to be the standard. Are these notifications like a post to a specific routes with params?  
+
+
+To be honest, after reading all that I am not even sure of what I need of if I have to rely on third services. In mi case I am working toward a rails backend appi and a mobile app with Ionic or similar. Can you help me through?
+## [6][why does moving my ActionCable broadcast to a background worker prevent the client side received method from executing?](https://www.reddit.com/r/rails/comments/ghbkka/why_does_moving_my_actioncable_broadcast_to_a/)
+- url: https://www.reddit.com/r/rails/comments/ghbkka/why_does_moving_my_actioncable_broadcast_to_a/
+---
+If I do it the bad way, and run the broadcast from the model's `after_create_commit` directly, the client side `received` method is called, and my browser goes like `alert("wow hey there")`
+
+    class Message &lt; ApplicationRecord
+      after_create_commit { ActionCable.server.broadcast("messages_channel", message: self) }
+    end
+
+But if I delegate that code to a background worker....suddenly `received` is no longer called:
+
+    class Message &lt; ApplicationRecord
+      after_create_commit { MessageBroadcastWorker.perform_async self.id }
+      #the self.id isn't the issue - you shouldn't be passing whole objects to sidekiq
+    end
+
+This is the background worker:
+
+    class MessageBroadcastWorker
+      include Sidekiq::Worker
+    	
+      def perform(message_id)
+        message = Message.find message_id
+        ActionCable.server.broadcast("messages_channel", message: render_message(message))
+      end
+    
+      private
+      def render_message(message)
+        ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
+      end
+    end
+
+The worker runs, it just doesn't execute the code:
+
+    2020-05-10T22:23:34.679Z pid=35945 tid=owo1k87ct class=MessageBroadcastWorker jid=5d0fac3c80268538d582b7b4 INFO: start
+    2020-05-10T22:23:34.883Z pid=35945 tid=owo1k87ct class=MessageBroadcastWorker jid=5d0fac3c80268538d582b7b4 elapsed=0.203 INFO: done
+
+What gives?
+## [7][Setting up an Automatic Book reader with Devise + Rails - 1](https://www.reddit.com/r/rails/comments/ggzr52/setting_up_an_automatic_book_reader_with_devise/)
 - url: https://www.reddit.com/r/rails/comments/ggzr52/setting_up_an_automatic_book_reader_with_devise/
 ---
 Hey guys,
@@ -33,74 +143,23 @@ I hate how much coding channels focus on a basic 'ToDo list / blog' so  i wanted
 &amp;#x200B;
 
 Thx!
-## [3][What is the most pleasant frontend stack of your choice?](https://www.reddit.com/r/rails/comments/gglkff/what_is_the_most_pleasant_frontend_stack_of_your/)
+## [8][How do you boost speed for upload multi files in Active Storage?](https://www.reddit.com/r/rails/comments/gh8p9b/how_do_you_boost_speed_for_upload_multi_files_in/)
+- url: https://www.reddit.com/r/rails/comments/gh8p9b/how_do_you_boost_speed_for_upload_multi_files_in/
+---
+I am using Active Storage wit GCP, it takes times usually to upload multi files for me, and sometimes it was uploaded but I got respond Cant build URI ; it seems like that the files already on my Bucket, and it saved also on database, but it said my attachment from database zero, I saw my reford_id on active_storage_blobs always zero, why his happened?
+
+- how do you Boost upload with Active storage?
+- why my record_id is zero ??
+- how to speed to remove files also with .purge?
+## [9][What is the most pleasant frontend stack of your choice?](https://www.reddit.com/r/rails/comments/gglkff/what_is_the_most_pleasant_frontend_stack_of_your/)
 - url: https://www.reddit.com/r/rails/comments/gglkff/what_is_the_most_pleasant_frontend_stack_of_your/
 ---
 
-## [4][Rails with React](https://www.reddit.com/r/rails/comments/ggvbcn/rails_with_react/)
+## [10][Rails with React](https://www.reddit.com/r/rails/comments/ggvbcn/rails_with_react/)
 - url: https://www.reddit.com/r/rails/comments/ggvbcn/rails_with_react/
 ---
 Hi just learnt to build things rails as back end. Is there any good tut where I can learn front end with rails? I want to learn react and node js with rails.
-## [5][How to add "{" and "}" in an url](https://www.reddit.com/r/rails/comments/ggn5t6/how_to_add_and_in_an_url/)
-- url: https://www.reddit.com/r/rails/comments/ggn5t6/how_to_add_and_in_an_url/
----
-Hi guys.
-
-In my structured\_data (in &lt;head&gt;), I have this
-
-    "potentialAction": {
-     "@type": "SearchAction",
-     "target": "&lt;%= search_url(search: {q: "{search_term_string}" }) %&gt;",
-     "query-input": "required name=search_term_string"
-     }
-
- 
-
-Watch "target". It show me the link in this way
-
-It show me `https://www.mywebsite.com/search?utf8=%E2%9C%93&amp;search%5Bq%5D=%7Bsearch_term_string%7D`
-
-It doesn't show { or } but %7B and %7D
-
-I need to have this link `https://www.mywebsite.com/search?utf8=%E2%9C%93&amp;search%5Bq%5D={search_term_string}`
-
-(following the [Google Guide](https://developers.google.com/search/docs/data-types/sitelinks-searchbox))
-
-**How how to solve?**
-
-I already try to fix using
-
-`"{search_term_string}".html_safe` or `"&amp;#123;search_term_string&amp;#125;".html_safe` or `%({search_term_string})` or `%(&amp;#123;search_term_string&amp;#125;).html_safe`
-
-**but nothing.**   
-I was  thinking that there is the bug because it is an URL. So I should that I have to use URI.encode, but I'm not still sure about this (and the tests didn't go very well...).
-## [6][Good places to start with IOS development?](https://www.reddit.com/r/rails/comments/ggeq6a/good_places_to_start_with_ios_development/)
-- url: https://www.reddit.com/r/rails/comments/ggeq6a/good_places_to_start_with_ios_development/
----
-Hey everyone! 
-
-I have recently completed a full stack development course (Rails 6, Ruby, HTML, CSS, SQL, simple JavaScript) and feel relatively comfortable creating simple websites and hosting them on Heroku. 
-
-I now wanted to look into IOS development, as I really want my next project (time management software) to also have a mobile application for users. 
-
-Do you think React Native is the right way to go? I was unsure if it was wise to venture to far from the skills I recently learned, as I hoped this project would allow me to build upon and strengthen them.
-
-Are there any good books / guides or tutorials that I could follow to get a coherent understanding?
-
-Looking forward to reading your responses, thanks a lot in advance and have a great weekend! :)
-## [7][Rspec: running certain tests without transaction](https://www.reddit.com/r/rails/comments/ggfxjj/rspec_running_certain_tests_without_transaction/)
-- url: https://www.reddit.com/r/rails/comments/ggfxjj/rspec_running_certain_tests_without_transaction/
----
-I really don't want to go back to database_cleaner but I currently have the issue that I cannot test a critical part that changes the transaction isolation level. It works in dev/prod but since rspec wraps all the tests in transactions I get `ActiveRecord::TransactionIsolationError: cannot set transaction isolation in a nested transaction`.
-
-I'm afraid there is no way to not wrap tests in transactions on a selective basis or is there?
-
-Alternatively I could move the transaction to a little wrapper class which I then don't test and just test the process under test conditions.
-
-Any ideas on what to do in this case?
-
-Cheers
-## [8][How do I set up this ActiveRecord association where a model has both a "owner" and a "user"?](https://www.reddit.com/r/rails/comments/ggjwsa/how_do_i_set_up_this_activerecord_association/)
+## [11][How do I set up this ActiveRecord association where a model has both a "owner" and a "user"?](https://www.reddit.com/r/rails/comments/ggjwsa/how_do_i_set_up_this_activerecord_association/)
 - url: https://www.reddit.com/r/rails/comments/ggjwsa/how_do_i_set_up_this_activerecord_association/
 ---
 Hi all,
@@ -136,30 +195,3 @@ Something like:
 I can't find a way to do this. Hopefully someone has come across this kind of association before and can help me out?
 
 Thanks.
-## [9][Profiling Rails app that uses websockets](https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/)
-- url: https://www.reddit.com/r/rails/comments/gg7dpw/profiling_rails_app_that_uses_websockets/
----
-Hi. I'm new to Ruby and I am trying to profile a Rails app that uses websockets for streaming audio packets and other messages. I am interested in CPU time and wall clock time taken by all the methods in the app. Most of the tracing gems I see show the information for a single HTTP request, but it doesn't help in the case of websockets, since they remain alive even after a request. If it helps, 
-
-How would you do this? How do I profile arbitrary points in code, like just do a "start" in the websocket open and "stop" in the websocket close, and generate a report? I tried ruby-prof, but it crashes with cryptic errors...
-## [10][Best course resource for ruby and rails?](https://www.reddit.com/r/rails/comments/gfx93d/best_course_resource_for_ruby_and_rails/)
-- url: https://www.reddit.com/r/rails/comments/gfx93d/best_course_resource_for_ruby_and_rails/
----
-TL;DR - what course website should I get my company to pay for that has best rails content?
-
-
-I’ve been using Rails for about a year. The purpose is business applications which is based around CRUD plus sometimes tricky client reqs. I get along fine in Rails but I feel there are some fundamentals and good habits which may be missing.  Also looking at improving things such as DRY, refactoring, StimulusReflex, and generally beautiful but maintainable code. 
-
-I read this article and found it also interesting http://jeromedalbert.com/how-dhh-organizes-his-rails-controllers/. 
-
-It wouldn’t hurt to improve my JS, HTML5, Bootstrap, etc. 
-
-So looking for a nice resource which will cover these and be somewhat relevant to rails. 
-
-I currently have access to a friends pluralsight. They also have a sale going on. Should I just get the company to purchase that?
-
-Any other recommendations? Thanks.
-## [11][Best way to convert data from a view or model into a spreadsheet](https://www.reddit.com/r/rails/comments/gfxr5k/best_way_to_convert_data_from_a_view_or_model/)
-- url: https://www.reddit.com/r/rails/comments/gfxr5k/best_way_to_convert_data_from_a_view_or_model/
----
-haven't done this before, was wondering if anyone had a nice article or video for using caxlsx to do so

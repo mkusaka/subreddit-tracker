@@ -1,88 +1,162 @@
 # ruby
-## [1][[Another] An alternative Ruby implementation by Rust.](https://www.reddit.com/r/ruby/comments/ggy0ew/another_an_alternative_ruby_implementation_by_rust/)
-- url: https://github.com/sisshiki1969/ruruby
+## [1][ELI5: The dry Gems](https://www.reddit.com/r/ruby/comments/ghjhi4/eli5_the_dry_gems/)
+- url: https://www.reddit.com/r/ruby/comments/ghjhi4/eli5_the_dry_gems/
 ---
+I keep seeing the dry gems pop up and have read the documentation for them so I have a loose understanding of what they do.
 
-## [2][Project on Software development.](https://www.reddit.com/r/ruby/comments/gh0whe/project_on_software_development/)
-- url: https://www.reddit.com/r/ruby/comments/gh0whe/project_on_software_development/
----
-Looking forward for some software development project to work on.
-## [3][Interesting ruby twitter accounts to follow?](https://www.reddit.com/r/ruby/comments/ggly5g/interesting_ruby_twitter_accounts_to_follow/)
-- url: https://www.reddit.com/r/ruby/comments/ggly5g/interesting_ruby_twitter_accounts_to_follow/
----
+I was hoping someone could flesh that understanding out for me a bit. Specifically, what is the use case for reaching for the set of dry gems? When do you reach for them and why? Those sorts of questions and probably more I'm not even capable of conceptualising to the point of asking them.
 
-## [4][Setting up an Automatic Book reader with Devise + Rails - 1](https://www.reddit.com/r/ruby/comments/ggzscb/setting_up_an_automatic_book_reader_with_devise/)
-- url: https://www.reddit.com/r/ruby/comments/ggzscb/setting_up_an_automatic_book_reader_with_devise/
+Thanks!
+## [2][Ruby on Rails: Add `gem 'sqlite3'` to your Gemfile](https://www.reddit.com/r/ruby/comments/ghe8xd/ruby_on_rails_add_gem_sqlite3_to_your_gemfile/)
+- url: https://www.reddit.com/r/ruby/comments/ghe8xd/ruby_on_rails_add_gem_sqlite3_to_your_gemfile/
 ---
  
 
-Hey guys,
+I've been working on a project for a term paper over MVC architecture and have been trying to set up the blog template suggested by 'Getting Started with Rails' webpage ( [https://guides.rubyonrails.org/getting\_started.html](https://guides.rubyonrails.org/getting_started.html) ). After fighting with tireless amounts of version issues, I have finally got the server starting through the command, 'ruby bin\\rails server'. However, now the Localhost:3000 is providing an error of:
 
-I hate how much coding channels focus on a basic 'ToDo list / blog' so i wanted wanted to share my progress in building an automatic book reader (not that good in making vids but meh). Probably will do several more videos until the end goal of having a tracker for how many books I've read.
+Specified 'sqlite3' for database adapter, but the gem is not loaded. Add gem 'sqlite3' to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).
 
-[https://www.youtube.com/watch?v=AnDLaaTXeWg&amp;feature=youtu.be](https://www.youtube.com/watch?v=AnDLaaTXeWg&amp;feature=youtu.be)
+I have tried all suggestions from the thread listed here ( [https://stackoverflow.com/questions/17350837/ruby-on-rails-add-gem-sqlite3-to-your-gemfile](https://stackoverflow.com/questions/17350837/ruby-on-rails-add-gem-sqlite3-to-your-gemfile) ), and here ( [http://www.ruby-forum.com/topic/4415126](http://www.ruby-forum.com/topic/4415126) ) to no avail. After seeing countless mentions about switching from Windows to Linux, I did. But that only proved to be more of a headache with more version issues, etc. I am on a Windows 10 OS and would greatly appreciate any suggestions or help.
 
-Thx!
-## [5][What GUI library would you recommend for a simple to do ruby app?](https://www.reddit.com/r/ruby/comments/gg5ff5/what_gui_library_would_you_recommend_for_a_simple/)
-- url: https://www.reddit.com/r/ruby/comments/gg5ff5/what_gui_library_would_you_recommend_for_a_simple/
+&amp;#x200B;
+
+Here is my Gemfile for reference:
+
+source '[https://rubygems.org](https://rubygems.org)'
+
+&amp;#x200B;
+
+`git_source(:github) do |repo_name|`
+
+  `repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")`
+
+  `"`[`https://github.com/#{repo_name}.git`](https://github.com/#{repo_name}.git)`"`
+
+`end`
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+`# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'`
+
+`gem 'rails', '~&gt; 5.0.7', '&gt;=` [`5.0.7.1`](https://5.0.7.1)`'`
+
+`# Use sqlite3 as the database for Active Record`
+
+`gem 'sqlite3'`
+
+`# Use Puma as the app server`
+
+`gem 'puma', '~&gt; 3.0'`
+
+`# Use SCSS for stylesheets`
+
+`gem 'sass-rails', '~&gt; 5.0'`
+
+`# Use Uglifier as compressor for JavaScript assets`
+
+`gem 'uglifier', '&gt;= 1.3.0'`
+
+`# Use CoffeeScript for .coffee assets and views`
+
+`gem 'coffee-rails', '~&gt; 4.2'`
+
+`# See` [`https://github.com/rails/execjs#readme`](https://github.com/rails/execjs#readme) `for more supported runtimes`
+
+`# gem 'therubyracer', platforms: :ruby`
+
+&amp;#x200B;
+
+`# Use jquery as the JavaScript library`
+
+`gem 'jquery-rails'`
+
+`# Turbolinks makes navigating your web application faster. Read more:` [`https://github.com/turbolinks/turbolinks`](https://github.com/turbolinks/turbolinks)
+
+`gem 'turbolinks', '~&gt; 5'`
+
+`# Build JSON APIs with ease. Read more:` [`https://github.com/rails/jbuilder`](https://github.com/rails/jbuilder)
+
+`gem 'jbuilder', '~&gt; 2.5'`
+
+`# Use Redis adapter to run Action Cable in production`
+
+`# gem 'redis', '~&gt; 3.0'`
+
+`# Use ActiveModel has_secure_password`
+
+`# gem 'bcrypt', '~&gt; 3.1.7'`
+
+&amp;#x200B;
+
+`# Use Capistrano for deployment`
+
+`# gem 'capistrano-rails', group: :development`
+
+&amp;#x200B;
+
+`group :development, :test do`
+
+  `# Call 'byebug' anywhere in the code to stop execution and get a debugger console`
+
+  `gem 'byebug', platform: :mri`
+
+`end`
+
+&amp;#x200B;
+
+`group :development do`
+
+  `# Access an IRB console on exception pages or by using &lt;%= console %&gt; anywhere in the code.`
+
+  `gem 'web-console', '&gt;= 3.3.0'`
+
+`end`
+
+&amp;#x200B;
+
+`# Windows does not include zoneinfo files, so bundle the tzinfo-data gem`
+
+`gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]`
+## [3][Assignments in Conditional Expressions](https://www.reddit.com/r/ruby/comments/ghfrau/assignments_in_conditional_expressions/)
+- url: https://julienchien.com/posts/assignments-in-conditional-expressions/
 ---
-I am not using Ruby on Rails as it will be just for pc
-## [6][Is Ruby a good choice here?](https://www.reddit.com/r/ruby/comments/gg7774/is_ruby_a_good_choice_here/)
-- url: https://www.reddit.com/r/ruby/comments/gg7774/is_ruby_a_good_choice_here/
+
+## [4][What is a good Ruby book for an experienced non-Ruby developer?](https://www.reddit.com/r/ruby/comments/gh7mhb/what_is_a_good_ruby_book_for_an_experienced/)
+- url: https://www.reddit.com/r/ruby/comments/gh7mhb/what_is_a_good_ruby_book_for_an_experienced/
 ---
-I need to automate gathering certain data from Microsoft's reference pages and turn that into a neat C++ wrapper for parts of WinAPI. I could do it manually but at the current pace it would take me a better part of this year to finish it so I think it's time for me to learn how to work with the internet for once.
+Hi all. I was wondering if anyone could help provide some suggestions for a good Ruby book. I'm an experienced developer and have mostly worked in Java and Python over the last 10 years. Now I'm learning Ruby, but I'm finding that the online tutorials only cover the surface level syntax. I'm looking for a book that does a quick but comprehensive overview of the basics, but also focuses on teaching how to write good Ruby code and apply Ruby-isms and good Ruby conventions. Also, I'm not looking to learn Rails for now, though I'm open to a book that covers it at a high level.
 
-I've heard that Ruby is much better suited for dealing with this type of web stuff than Python. Is that true? If so, are there any tutorials from the "X for Y programmers" category? (I mean the ones that are at least serviceable, I tend to die a little bit inside every time someone explains to me what a variable is).
-## [7][Looping thru Nested Arrays](https://www.reddit.com/r/ruby/comments/gg4lnf/looping_thru_nested_arrays/)
-- url: https://www.reddit.com/r/ruby/comments/gg4lnf/looping_thru_nested_arrays/
----
-Hi! Really new at this. About to start a bootcamp and need to complete some pre-work.
+Here are the three I'm debating between so far:
 
-My current task is as follows: I have a nested array, all with integers, and **I must loop through** each array to iterate and return an array of the smallest numbers of each array.
+1. Practical Object-Oriented Design: An Agile Primer Using Ruby (2nd Edition)
+2. Eloquent Ruby (1st Edition)
+3. The Well-Grounded Rubyist (3rd Edition)
 
-I know of the map method, but have no idea how to use it. We haven't covered it yet.
-
-Ideas?
-
-**UPDATE:** solved! Thank you everyone for being so dope and helping me. I really appreciate it :)  
-I ended up being stuck in an infinite loop. Had to do some screen sharing to figure it out. 
-## [8][I'm supposed to find someone who has 10 years experience consistently using Chef - I'm wondering if that is that even possible? Do people even use it anymore and could they have used it that long?](https://www.reddit.com/r/ruby/comments/gfv7d3/im_supposed_to_find_someone_who_has_10_years/)
-- url: https://www.reddit.com/r/ruby/comments/gfv7d3/im_supposed_to_find_someone_who_has_10_years/
+Do folks have any recommendations for which of these would be good for someone who has a lot of experience in other languages but is having trouble grokking Ruby? Thanks!
+## [5][RSS Search Engine](https://www.reddit.com/r/ruby/comments/ghigs0/rss_search_engine/)
+- url: https://github.com/davidesantangelo/feedirss-api
 ---
 
-## [9][Ruby Association -&gt; 2019 Grant Accomplishment Report](https://www.reddit.com/r/ruby/comments/gfo8bh/ruby_association_2019_grant_accomplishment_report/)
-- url: https://www.ruby.or.jp/en/news/20200508
+## [6][Ruby client for Factom blockchain](https://www.reddit.com/r/ruby/comments/gh4dlb/ruby_client_for_factom_blockchain/)
+- url: https://github.com/kompendium-ano/factom-ruby-client
 ---
 
-## [10][Interesting behavior of Hash.new](https://www.reddit.com/r/ruby/comments/gfoc59/interesting_behavior_of_hashnew/)
-- url: https://www.reddit.com/r/ruby/comments/gfoc59/interesting_behavior_of_hashnew/
+## [7][football.db gem family (2020.5.10 update) - zero-config (pre-packaged) open football datasets / catalogs for countries, leagues &amp; cups, clubs and more](https://www.reddit.com/r/ruby/comments/gh5wou/footballdb_gem_family_2020510_update_zeroconfig/)
+- url: https://github.com/sportdb/football.db
+---
+
+## [8][Book with exercises](https://www.reddit.com/r/ruby/comments/gh6ua5/book_with_exercises/)
+- url: https://www.reddit.com/r/ruby/comments/gh6ua5/book_with_exercises/
 ---
 Hello,
+I am currently trying to learn ruby with "learning Ruby" by P.Cooper, however i am missing the format of books that have exercises at the end of chapters, in order to consolidate learning of the content of the chapter.Is there any such book for Ruby?
+## [9][[Another] An alternative Ruby implementation by Rust.](https://www.reddit.com/r/ruby/comments/ggy0ew/another_an_alternative_ruby_implementation_by_rust/)
+- url: https://github.com/sisshiki1969/ruruby
+---
 
-&amp;#x200B;
-
-I was building a script to format some hashes and I had something similar to this:
-
-    data = { monday: { start: '08:00', end: '18:00' }, thuesday: { start: '08:00', end: '15:00' }}
-    
-    result = data.each_with_object(Hash.new([])) do |(day, schedule), result|
-      result[schedule[:start]] &lt;&lt; day
-    end
-
-Nothing fancy, but I noticed that my result variable seemed empty, but if I tried to access a key, it was there.
-
-See the following screenshot:
-
-&amp;#x200B;
-
-https://preview.redd.it/6kl2xkpgqhx41.png?width=472&amp;format=png&amp;auto=webp&amp;s=77d2f3a8c166fe4ef6c1e70b99834cac670e7275
-
-I know how to fix it, I replaced [`Hash.new`](https://Hash.new)`([])` with `Hash.new { |hash, key| hash[key] = [] }` and it works as expected.
-
-&amp;#x200B;
-
-But I was still curious why it happens and how come I can access the keys. Any thoughts?
-
-&amp;#x200B;
-
-Thanks
+## [10][Project on Software development.](https://www.reddit.com/r/ruby/comments/gh0whe/project_on_software_development/)
+- url: https://www.reddit.com/r/ruby/comments/gh0whe/project_on_software_development/
+---
+Looking forward for some software development project to work on.

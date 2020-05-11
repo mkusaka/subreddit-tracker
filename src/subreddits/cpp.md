@@ -12,6 +12,8 @@ I think it will be helpful to everyone to collect information about C++ events t
 
 **This is intended to be a living document. Please help by suggesting changes or additions.**
 
+**Last Updated: 2020-05-10 - Email, Tweet or Slack Bryce to request updates.**
+
 # Lexicon
 
 Term | Meaning
@@ -23,25 +25,27 @@ Term | Meaning
 
 # 2020 Conferences
 
-Event | Location | Original Dates | Status | New Dates
+Event | Location | Original Dates | Status | Current Dates
 -|-|-|-|-
-[QtDay](https://www.qtday.it) | Florence, Italy | 03-13 to 03-14 | [Postponed](https://www.qtday.it) | 11-20 to 11-21
-[emBO++](https://www.embo.io) | Bochum, Germany | 03-13 to 03-15 | No Date Changes Yet | 
-[ConanDays](https://conandays.conan.io) | Madrid, Spain | 03-19 to 03-20 | [Postponed](https://conandays.conan.io) | Autumn
-[ACCU](https://conference.accu.org) | Bristol, UK | 03-25 to 03-28 | [Cancelled](https://conference.accu.org/news/2020/202003121205_accu2020cancelled.html)
-[C++ CoreHard](https://conference.corehard.by) | Minsk, Belarus | 04-10 to 04-11 | [Postponed](https://conference.corehard.by) | 10-30 to 10-31
-[using std::cpp](https://usingstdcpp.org) | Madrid, Spain | 04-16 | [Postponed](https://eventos.uc3m.es/40350/detail/using-std_cpp-2020.html) | October
-[C++ Russia Moscow](https://cppconf-moscow.ru/en) | Moscow, Russia | 04-27 to 04-28 | [Postponed](https://twitter.com/timur_audio/status/1238544415876096000) | June
-[C++Now](https://cppnow.org) | Aspen, CO, US | 05-03 to 05-08 | [Cancelled](http://cppnow.org/announcements/2020/03/Canceled) |
+[emBO++](https://www.embo.io) | Bochum, Germany | 03-13 to 03-15 | No Date Changes Yet | 03-13 to 03-15
+[ACCU](https://conference.accu.org) | Bristol, UK | 03-25 to 03-28 | [Cancelled](https://conference.accu.org/news/2020/202003121205_accu2020cancelled.html) | 03-25 to 03-28
+[Pure Virtual C++](https://visualstudio.microsoft.com/pure-virtual-cpp-event) | Virtual | 04-30 | [Virtual](https://visualstudio.microsoft.com/pure-virtual-cpp-event)
+[C++Now](https://cppnow.org) | Aspen, CO, US | 05-03 to 05-08 | [Cancelled](http://cppnow.org/announcements/2020/03/Canceled) | 05-03 to 05-08
+[Total Chaos](https://www.chaosgroup.com/total-chaos) | Sofia, Bulgaria | 05-29 to 05-31 | [Cancelled](https://www.chaosgroup.com/total-chaos) | 05-29 to 05-31
+[Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | [Virtual](https://www.italiancpp.org/event/itcppcon20/) | 06-13
+[CPPP](https://cppp.fr) | Paris, France | 06-22 to 06-23 | [Cancelled](https://cppp.fr/blog/canceled) | 06-22 to 06-23
+[C++ Russia Moscow](https://cppconf-moscow.ru/en) | Moscow, Russia | 04-27 to 04-28 | [Virtual](https://cppconf-moscow.ru/en/) | 06-29 to 07-02
+[Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | [Virtual](https://cpponsea.uk/news/cpp-on-sea-online.html) | 07
+[CppCon](https://cppcon.org) | Aurora, CO, US | 09-13 to 09-18 | [No Date Changes Yet](https://cppcon.org/cppcon-2020-call-for-submissions/) | 09-13 to 09-17
 [ADC++](https://adcpp.de/20) | Regensburg, Germany | 05-04 to 05-06 | [Postponed](https://adcpp.de/20) | 10-13 to 10-14
 [Qt World Summit](https://www.qt.io/qtws20) | Palm Springs, California, US | 05-12 to 05-14 | [Postponed](https://www.qt.io/blog/qt-world-summit-20-postponed-to-october) | 10-20 to 10-22
+[C++ CoreHard](https://conference.corehard.by) | Minsk, Belarus | 04-10 to 04-11 | [Postponed](https://conference.corehard.by) | 10-30 to 10-31
+[using std::cpp](https://usingstdcpp.org) | Madrid, Spain | 04-16 | [Postponed](https://eventos.uc3m.es/40350/detail/using-std_cpp-2020.html) | 10
 [Core C++](https://corecpp.org) | Tel Aviv, Israel | 05-25 to 05-27 | [Postponed](https://twitter.com/corecpp/status/1238373483501010944) | Autumn
-[Total Chaos](https://www.chaosgroup.com/total-chaos) | Sofia, Bulgaria | 05-29 to 05-31 | [Cancelled](https://www.chaosgroup.com/total-chaos) |
-[Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | [Postponed](https://cpponsea.uk/news/2020-conference-rethink.html) |
-[Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | [Virtual](https://www.italiancpp.org/event/itcppcon20/) |
-[CPPP](https://cppp.fr) | Paris, France | 06-22 to 06-23 | [Cancelled](https://cppp.fr/blog/canceled) |
-[CppCon](https://cppcon.org) | Aurora, CO, US | 09-13 to 09-18 | No Date Changes Yet |
-[Meeting C++](https://meetingcpp.com) | Berlin, Germany | 11-12 to 11-14 | No Date Changes Yet |
+[ConanDays](https://conandays.conan.io) | Madrid, Spain | 03-19 to 03-20 | [Postponed](https://conandays.conan.io) | Autumn
+[Meeting C++](https://meetingcpp.com) | Berlin, Germany | 11-12 to 11-14 | No Date Changes Yet | 11-12 to 11-14
+[code::dive](https://codedive.pl/) | Wrocław, Poland | 11-18 | No Date Changes Yet | 11-18
+[QtDay](https://www.qtday.it) | Florence, Italy | 03-13 to 03-14 | [Postponed](https://www.qtday.it) | 11-20 to 11-21
 
 # 2020 ISO C++ Committee Meetings
 
@@ -54,12 +58,14 @@ Location | Original Dates | Status | New Dates
 
 Group | Location | Status | Until
 -|-|-|-
-[ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Postponed](https://meetup.com/ACCU-Bay-Area) | Indefinitely
+[ACCU Bay Area](https://meetup.com/ACCU-Bay-Area) | San Francisco Bay Area, California, US | [Virtual](https://meetup.com/ACCU-Bay-Area) | Indefinitely
 [PDXCPP](https://www.meetup.com/pdxcpp) | Portland, Oregon, US | [Postponed](https://www.meetup.com/pdxcpp/events/xgjlqrybcfbwb/) | Indefinitely
 [Denver Metro C++ Meetup](https://www.meetup.com/North-Denver-Metro-C-Meetup) | Denver, Colorado, US | [Postponed](https://www.meetup.com/North-Denver-Metro-C-Meetup/) | Indefinitely
 [C++TO](https://www.meetup.com/CPPTORONTO/) | Toronto, Ontario, Canada | [Postponed](https://www.meetup.com/CPPTORONTO/) | Indefinitely
 [C++ Montréal](https://www.meetup.com/CppMtl/) | Montréal, Québec, Canada | [Virtual](https://www.meetup.com/CppMtl/events/269770766/) | Indefinitely
 [Bulgaria C++ Meetup](https://dev.bg/groups/c-c-plus-plus/) | Sofia, Bulgaria | [Virtual](https://dev.bg/groups/c-c-plus-plus/) | Indefinitely
+[C++ London](https://www.meetup.com/CppLondon) | London, UK | [Virtual](https://www.meetup.com/CppLondon) | Indefinitely
+[Core C++](https://www.meetup.com/CoreCpp/) | Israel | [Virtual](https://www.meetup.com/CoreCpp/) | Indefinitely
 ## [2][C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
 - url: https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/
 ---
@@ -119,11 +125,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][ImPlot: Advanced 2D Plotting for Dear ImGui](https://www.reddit.com/r/cpp/comments/ggnjvd/implot_advanced_2d_plotting_for_dear_imgui/)
-- url: https://github.com/epezent/implot
+## [3][A novel way to build SIMD library](https://www.reddit.com/r/cpp/comments/ghh63z/a_novel_way_to_build_simd_library/)
+- url: https://github.com/eatingtomatoes/pure_simd
 ---
 
-## [4][Accelerated C++ , Take Two?](https://www.reddit.com/r/cpp/comments/gh0fbn/accelerated_c_take_two/)
+## [4][Make LLVM fast again](https://www.reddit.com/r/cpp/comments/gh3huh/make_llvm_fast_again/)
+- url: https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html
+---
+
+## [5]["The Complete Guide to return x;" - Arthur O'Dwyer [MUC++]](https://www.reddit.com/r/cpp/comments/gh4o78/the_complete_guide_to_return_x_arthur_odwyer_muc/)
+- url: https://www.youtube.com/watch?v=80TXwV_sdCY
+---
+
+## [6][Linear algebra libraries (eigen, blaze,..)](https://www.reddit.com/r/cpp/comments/ghhf5j/linear_algebra_libraries_eigen_blaze/)
+- url: https://www.reddit.com/r/cpp/comments/ghhf5j/linear_algebra_libraries_eigen_blaze/
+---
+Hi all. 
+I'm an embedded developer that uses eigen as the go to library for linear algebra things. It helped me a lot in the last years (bar terrible buil times).
+
+They have not released anything since 2k18 so I'm a bit worried about the project health.
+I've seen blaze but afaik it miss vectorization support on Arm targets.
+
+What do you think of linerar algebra landscape? Are there newer libraries I should consider?
+## [7][Why is removing Dead Stores in C++ hard](https://www.reddit.com/r/cpp/comments/ghmjpt/why_is_removing_dead_stores_in_c_hard/)
+- url: https://www.reddit.com/r/cpp/comments/ghmjpt/why_is_removing_dead_stores_in_c_hard/
+---
+Hi all,
+
+In Herb Sutters talk (Herb Sutter: Quantifying Accidental Complexity: An Empirical Look at Teaching and Using C++ \[1\]) He mentioned MS have struggled to remove dead writes (/ dead stores) when optimising C++ code.
+
+Does anyone have any specific technical details on this problem and why its become a difficult problem to solve?
+
+\[1\] [https://www.youtube.com/watch?v=qx22oxlQmKc&amp;t=9s](https://www.youtube.com/watch?v=qx22oxlQmKc&amp;t=9s)
+## [8][cpp.chat : episode 72 - 'The Problem Is, They Expect Answers'](https://www.reddit.com/r/cpp/comments/ghbptz/cppchat_episode_72_the_problem_is_they_expect/)
+- url: https://cpp.chat/72/
+---
+
+## [9][Accelerated C++ , Take Two?](https://www.reddit.com/r/cpp/comments/gh0fbn/accelerated_c_take_two/)
 - url: https://www.reddit.com/r/cpp/comments/gh0fbn/accelerated_c_take_two/
 ---
 Pearson [lists](https://www.pearson.com/us/higher-education/program/PGM2060260.html) the second edition of Koenig and Moo classic.
@@ -136,102 +174,19 @@ The "buy" link leads to a [product page](https://www.informit.com/store/accelera
 There is the ISBN, but no cover image or table of contents or anything more specific. There is no other information anywhere. 
 
 Can we hope that this will eventually materialize?
-## [5][Which subsumes which? Movable subsumes swappable, or vice versa?](https://www.reddit.com/r/cpp/comments/ggvpj5/which_subsumes_which_movable_subsumes_swappable/)
-- url: https://www.reddit.com/r/cpp/comments/ggvpj5/which_subsumes_which_movable_subsumes_swappable/
----
-I always have an impression that swapping is defined in terms of moving (or copying). A typical unspecialized swap function would looks like:
-
-	template &lt;class T&gt;
-	constexpr void swap(T&amp; lhs, T&amp; rhs) noexcept( /* some type traits */ )
-	{
-		T tmp(std::move(lhs));
-		lhs = std::move(rhs);
-		rhs = std::move(tmp);
-	}
-
-The swappable requirement of the standard requires either specialized ADL-`swap` or unspecialized `std::swap` ( [eel.is](http://eel.is/c++draft/swappable.requirements) ). And the general version of `std::swap` requires `std::is_move_constructible_v&lt;T&gt; &amp;&amp; std::is_move_assignable_v&lt;T&gt;` ( [cppreference](https://en.cppreference.com/w/cpp/algorithm/swap) ). This makes me further believe swapping is in terms of moving.
-
-But then, I find the definition of C++20 `std::movable` concept. ( [cppreference](https://en.cppreference.com/w/cpp/concepts/movable) )
-
-	template &lt; class T &gt;
-	concept movable =
-		std::is_object_v&lt;T&gt; &amp;&amp;
-		std::move_constructible&lt;T&gt; &amp;&amp;
-		std::assignable_from&lt;T&amp;, T&gt; &amp;&amp;
-		std::swappable&lt;T&gt;;
-
-What have I missed?
-
-1. Why is `movable` defined in terms of `swappable`? Why does `movable` subsumes `swappable`? 
-2. Would the other way round work? Can we define `swappable` in terms of `movable`?
-3. I have the intuition that "A is defined in terms of B" implies "A subsumes B". Have I been wrong all along?
-## [6][EnTT v3.4.0 is out: Gaming meets Modern C++](https://www.reddit.com/r/cpp/comments/ggpnq6/entt_v340_is_out_gaming_meets_modern_c/)
-- url: https://www.reddit.com/r/cpp/comments/ggpnq6/entt_v340_is_out_gaming_meets_modern_c/
----
-# What's EnTT
-
-[`EnTT`](https://github.com/skypjack/entt) is a header-only library written in **modern C++**.
-
-It's mainly known for its [entity-component-system](https://en.wikipedia.org/wiki/Entity_component_system) (ECS) model. However, it offers also [many other things](https://github.com/skypjack/entt#introduction) useful during development, from flexible tools for managing signals to an integrated reflection system and so on.
-
-`EnTT` is also a production-ready, fully documented and battle-tested library with a 100% coverage. [Among others](https://github.com/skypjack/entt/wiki/EnTT-in-Action), It's currently used in **Minecraft** by Mojang and the **ArcGIS Runtime SDK** by Esri.
-
-# Why it's important for you
-
-I think it can matter because the **best feedback** I've ever received is perhaps when someone told me that this library was a great source for studying modern C++. Maybe he was right, maybe not. It's not for me to say, but it may still interest you.
-
-In any case, I hope I've given other material to those interested in it in this sense and I'm open to any feedback, because ours is a language in which you never stop learning. So, go for it!
-
-# What else
-
-In my free time I'm running the [ECS back and forth](https://skypjack.github.io/tags/#ecs) series (along with [other posts](https://skypjack.github.io/)).  
-I also started working on a project based on `EnTT` and a series of accompanying articles to be released on GH, as anticipated with the last post. However, the lockdown is slowing everything down in my life and made things much more complicated. I hope to be able to resume soon also on this project.
-
-If you are using `EnTT` and want to tell me *hello* or which of your products relies on it, do not hesitate to [contact me](https://github.com/skypjack)! For everyone else interested in the library, the [wiki](https://github.com/skypjack/entt/wiki) contains more than what I've said here and the [gitter](https://gitter.im/skypjack/entt) channel is a great place to come and ask your first question!  
-Oh, right, we have also a [Discord channel](https://discord.gg/5BjPWBd) now! Hurry up!
-
-I'm looking forward to hearing from you. :)
-## [7][The C++ preprocessor doesn't understand anything about C++, and certainly not templates](https://www.reddit.com/r/cpp/comments/ggeer7/the_c_preprocessor_doesnt_understand_anything/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200508-52/?p=103735
+## [10][MemLock: Memory Usage Guided Fuzzing](https://www.reddit.com/r/cpp/comments/gh7z3w/memlock_memory_usage_guided_fuzzing/)
+- url: https://wcventure.github.io/MemLock/
 ---
 
-## [8][High Performance Graphics and Text Rendering on the GPU - Barbara Geller &amp; Ansel Sermersheim - Meeting C++ 2019](https://www.reddit.com/r/cpp/comments/ggbxx4/high_performance_graphics_and_text_rendering_on/)
-- url: https://www.youtube.com/watch?v=p6350LmMDkE
+## [11][ImPlot: Advanced 2D Plotting for Dear ImGui](https://www.reddit.com/r/cpp/comments/ggnjvd/implot_advanced_2d_plotting_for_dear_imgui/)
+- url: https://github.com/epezent/implot
 ---
 
-## [9][New section with detailed introduction to Concepts in the C++ Annotations](https://www.reddit.com/r/cpp/comments/gggnev/new_section_with_detailed_introduction_to/)
-- url: http://www.icce.rug.nl/documents/cplusplus/cplusplus23.html#an3235
+## [12][Move fallback to normal Copy](https://www.reddit.com/r/cpp/comments/ghaapv/move_fallback_to_normal_copy/)
+- url: https://www.reddit.com/r/cpp/comments/ghaapv/move_fallback_to_normal_copy/
 ---
+Wanted to fallback to copy- if copy-move is not noexcept;
+Is that a correct workflow ?
+[https://godbolt.org/z/_usaKx](https://godbolt.org/z/_usaKx)
 
-## [10][Curious About The Performance Of Static Methods.](https://www.reddit.com/r/cpp/comments/ggz660/curious_about_the_performance_of_static_methods/)
-- url: https://www.reddit.com/r/cpp/comments/ggz660/curious_about_the_performance_of_static_methods/
----
-I am one of those programmers that care a lot abut performance. So I was wondering whether static methods are faster. As I always do in such a case, I create a simple test setup. The results can be find in my bog posts linked below.
-
-[https://cvesters.wordpress.com/2020/04/26/c-are-static-methods-faster/](https://cvesters.wordpress.com/2020/04/26/c-are-static-methods-faster/)
-
-[https://cvesters.wordpress.com/2020/05/10/c-are-static-methods-faster-pt-ii/](https://cvesters.wordpress.com/2020/05/10/c-are-static-methods-faster-pt-ii/)
-## [11][[Tooling] Memcheck-cover: A valgrind's memcheck tool wrapper and HTML report generator](https://www.reddit.com/r/cpp/comments/gfzk60/tooling_memcheckcover_a_valgrinds_memcheck_tool/)
-- url: https://www.reddit.com/r/cpp/comments/gfzk60/tooling_memcheckcover_a_valgrinds_memcheck_tool/
----
-Hello,
-
-I initially added a valgrind memcheck build, a few years ago, on my professional project.As the years passed, I started to create an HTML report so the developers could analyze valgrind's memcheck tool report with more ease. I added colored highlights for that.
-
-A few month ago I thought "Hey that might interest other people !". So I started the memcheck-cover project.My goal was to start from scratch and improve the ideas I put on my professional build.
-
-I decided to create two scripts.The first one would be a helper to make it easy to run a binary under Vilgrind's memcheck tool and get the report.The second one would be the more complicated one: the HTML report generator.
-
-I went trough Valgrind 3.15.0 sources to find as much information as I can and started to build the scripts.
-
-I'm proud (if I may) to present you the 1st release of my project.Here is the link : [https://github.com/Farigh/memcheck-cover/releases/tag/release-1.0](https://github.com/Farigh/memcheck-cover/releases/tag/release-1.0)
-
-Here is a demo : [https://david-garcin.github.io/demos/memcheck-cover/index.html](https://david-garcin.github.io/demos/memcheck-cover/index.html)
-
-Don't hesitate to try it, share it, suggest improvements to it and open issues :)
-
-Thanks,
-## [12][c++ framework for mobile games](https://www.reddit.com/r/cpp/comments/gg3q1p/c_framework_for_mobile_games/)
-- url: https://www.reddit.com/r/cpp/comments/gg3q1p/c_framework_for_mobile_games/
----
- is there a c ++ framework for making games for android? like terraria, Zelda Snes, metroid, starbound etc. sorry my english i'm using google translator.
+Wanted to use some enable_if but I don't think it's viable ?

@@ -1,129 +1,88 @@
 # aws
-## [1][Is using AWS Organisations the best way structure side projects?](https://www.reddit.com/r/aws/comments/ggza9m/is_using_aws_organisations_the_best_way_structure/)
-- url: https://www.reddit.com/r/aws/comments/ggza9m/is_using_aws_organisations_the_best_way_structure/
+## [1][Awesome AWS Workshops](https://www.reddit.com/r/aws/comments/ghfgx7/awesome_aws_workshops/)
+- url: https://www.reddit.com/r/aws/comments/ghfgx7/awesome_aws_workshops/
 ---
-I've got a bunch of projects and ideas I'm working on. Is using a single master account that I log into and then creating Orgs from inside there the best way to structure things rather than set up the same 'org' level billing alerts and accounts each time?
-## [2][Best Practice Guide for Setting a Company Up on AWS For The First Time](https://www.reddit.com/r/aws/comments/ggebgn/best_practice_guide_for_setting_a_company_up_on/)
-- url: https://www.reddit.com/r/aws/comments/ggebgn/best_practice_guide_for_setting_a_company_up_on/
+Following the idea of Awesome Lists, I went about our public workshops that we could find and created this weekend project to help the community. Feel free to add your own workshops, guides, and walkthroughs.
+
+[https://awesome-aws-workshops.com/](https://awesome-aws-workshops.com/)
+## [2][What does engineering for region-failure mean?](https://www.reddit.com/r/aws/comments/ghfai8/what_does_engineering_for_regionfailure_mean/)
+- url: https://www.reddit.com/r/aws/comments/ghfai8/what_does_engineering_for_regionfailure_mean/
 ---
-I am a senior AWS DevOps engineer and have just gotten a contract with a company to move their private cloud infrastructure to AWS. This company has a DevOps and TechSecOps team but no AWS experience. Aside from the migration itself, can anyone send me a link to a webpage, book, or other, that details a step-by-step best practices of setting a company up on AWS please? This company is ISO-27001 security compliant. I am thinking of stuff like this:
+Correct me if I say something wrong, but here's my understanding:
 
-\- Create AWS Organizations, ie have a parent account and a couple of initial child accounts
+When you engineer for multiple regions, you might have active/active or active/passive or whatever. Say you've got an API on both ends, you're running EKS/ECS/Whatever in each region. You've got a Primary DB that's multi AZ in one region, and a replica in the other. 
 
-\- Create a couple of IAM users
+When you engineer for multi-regions and DR, what's supposed to...go down? Are you assuming literally every single boto3 call, LB-&gt;Container request, DB connection, everything fails in a region?  
 
-\- Turn on Cloud Trail
+So then your engineering involves both regions checking the other region for downtime? Are there assumptions you're making on how you know to fail the app layer and db layer over completely to the other region? (Automated, I'm sure, but still). 
 
-\- Configure AWS Config
+What about services you use to perform DR? Lambda is scoped to a region, EC2 is scoped to a region. RDS scoped to a region. Is everyone architecting solutions that constantly ping the other region for any signs of an outage to immediately promote itself?
+## [3][Any reason *not* to deploy an S3 gateway in a VPC?](https://www.reddit.com/r/aws/comments/gh7lml/any_reason_not_to_deploy_an_s3_gateway_in_a_vpc/)
+- url: https://www.reddit.com/r/aws/comments/gh7lml/any_reason_not_to_deploy_an_s3_gateway_in_a_vpc/
+---
+We're looking into making our S3 buckets only accessible from inside a VPC in the same account, and arrived at the (obvious) VPC Privatelink solution of deploying an S3 Gateway in the account and working and modifying the bucket policy for said S3 buckets.
 
-\- Configure Billing Alerts
+Then we were reading more about the S3 Gateway, and started realizing "why don't we just dump an S3 gateway in all our VPC's?"
 
-\- Maybe configure VPC endpoints?
+Given that there is no cost to an S3 Gateway, and that you're eliminating some internet traffic costs, is there any reason \*not\* to deploy an S3 Gateway in all our accounts? It seems like such a no-brainer we must be missing something.
 
-\- Create a few Cost Allocation Tags
+(Note that it's easier for use to just dump one in all our VPC's instead of targeted VPC's actually using S3 given the way we manage our AWS Organisation.)
 
-\- Create a standard VPC configuration with public and private subnets 
+Thanks!
+## [4][Ireland availability zone locations](https://www.reddit.com/r/aws/comments/ghnd4y/ireland_availability_zone_locations/)
+- url: https://www.reddit.com/r/aws/comments/ghnd4y/ireland_availability_zone_locations/
+---
+Does anyone know in which town or city the availability zones in Ireland are located? All other regions are named after a city but Ireland is just named Ireland. I want to know because there is a policy in my company to name machines by which city they are in and we have EC2 instances in each of the availability zones in Ireland.
+## [5][Could AWS Artifical Intelligence services be used to categorise financial transactions in a simple accounting app?](https://www.reddit.com/r/aws/comments/ghl6bk/could_aws_artifical_intelligence_services_be_used/)
+- url: https://www.reddit.com/r/aws/comments/ghl6bk/could_aws_artifical_intelligence_services_be_used/
+---
+I'm developing a very simple web app for logging financial transactions. The next feature I want to add is for transactions entered by user (or imported from bank via open-banking API) to be automatically categorised. I could do this by coming up with a simple set of rules, which look at how previus transactions made at the same merchant were categorised. Eg if 90% of transactions made at Tesco's were categorised as Shopping, then future transactions made at Tesco's could automatically be categorised as Shopping.
 
-\- Anything else I have missed
+Are there any AWS AI services that could do this more cleverly? The whole project is for self learning, so even if AI is not the best solution, it could be a learning opportunity for me.
+## [6][RDS vs Aurora big price difference](https://www.reddit.com/r/aws/comments/gh1nqw/rds_vs_aurora_big_price_difference/)
+- url: https://www.reddit.com/r/aws/comments/gh1nqw/rds_vs_aurora_big_price_difference/
+---
+Difference between RDS and Aurora, when hosting Java application with PostgreSQL database. 
 
 &amp;#x200B;
 
-And finally getting sample Terraform code to do all the above. Does anyone know of a comprehensive resource with at least all the above information as well as other basic stuff? If so, I'd be grateful for any information/suggestions/watch outs etc.
+https://preview.redd.it/nniyg3hdxxx41.png?width=1737&amp;format=png&amp;auto=webp&amp;s=ff09d0ba6e32beb6e3a313eb88495439a9a6adf7
 
-Thanks.
-## [3][Is WEBDAV request allowed via AWS CloudFront?](https://www.reddit.com/r/aws/comments/gguwym/is_webdav_request_allowed_via_aws_cloudfront/)
-- url: https://www.reddit.com/r/aws/comments/gguwym/is_webdav_request_allowed_via_aws_cloudfront/
----
-Hello All,
+Here i have my estimated pricing for using RDS. I suppose this is a separate server for actually hosting the database (hence the price) I found this alternative *Aurora*, which seemed a little bit better in regards to pricing. 
 
 &amp;#x200B;
 
-WebDAV request (Port 443) is not working for me to pass through AWS CloudFront.
+https://preview.redd.it/oo6b3f4mxxx41.png?width=1748&amp;format=png&amp;auto=webp&amp;s=1bb1d730d97b83474b536a3c8dfa247829c6269e
 
-WEBSITE access via the INTERNET on port 443 with request flowing through CloudFront is working fine.
-
-Looking for suggestions if WEBDAV is allowed.
+This is much cheaper and also allows for almost the same amount of data (and up 1 million requests). 
 
 &amp;#x200B;
 
-Thanks in advance for advice.
-## [4][Where are AWS Published Lambda Layers, I am looking for Numpy, Scipy and Pandas Lambda Layer published by AWS? Are there one?](https://www.reddit.com/r/aws/comments/gh1cge/where_are_aws_published_lambda_layers_i_am/)
-- url: https://www.reddit.com/r/aws/comments/gh1cge/where_are_aws_published_lambda_layers_i_am/
+Can anyone explain to me the major differences in regards to these two services?
+## [7][Adding conditions to lambda policy](https://www.reddit.com/r/aws/comments/ghjlfh/adding_conditions_to_lambda_policy/)
+- url: https://www.reddit.com/r/aws/comments/ghjlfh/adding_conditions_to_lambda_policy/
 ---
-Hello AWS Fellows, I have been searching for AWS Published layers with Numpy, SciPy, and Pandas, are there layers published by AWS? or do we have to create one ourselves? In the documentation for Lambda layers, it is mentioned that you can either create your own, use one provided by other customers or published by AWS but sadly I couldn't find the AWS ones.   
+Hello! I'm trying to add a condition to my lambda policy. Seeing that to do this I have to use CLI rather than console, I'm having a hard time modifying my lambda policy. 
 
+I've read the docs and it seems that there is no explicitly stated way to add conditions, like adding principals, to my policy.
 
-Would be great gesture if you can guide me through.   
-
-
-Thanks
-## [5][(amplify) How to use share data with ownerField](https://www.reddit.com/r/aws/comments/ggwqrz/amplify_how_to_use_share_data_with_ownerfield/)
-- url: https://www.reddit.com/r/aws/comments/ggwqrz/amplify_how_to_use_share_data_with_ownerfield/
+Is there something I'm missing here?
+## [8][Unable to SSH into an EC2 instance](https://www.reddit.com/r/aws/comments/ghiz5s/unable_to_ssh_into_an_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/ghiz5s/unable_to_ssh_into_an_ec2_instance/
 ---
-How do I structure a data type to be accessible by multiple users based on their email addresses? 
+I'm in a bit of a bind. I have a Linux EC2 instance that I need to SSH into. I am stuck because the person who had the private key left the company. I tried using EC2 Instance Connect but SSM is not installed on this instance.  
+Is there any way for me to get around this?
 
-Say for example a todo-app; I want to be able to invite additional email addresses to have access to the data. I use cognition user pools with email signup. 
-
-Something like this where the `owners` field would be an array with email addresses but I can't wrap my head around it yet
-
-```
-type SharableData @model @auth(rules: [{ allow: owner, ownerField: "owners" }]) {
-  owners: [String!]!
-}
-```
-## [6][Remote desktop software on ec2 instance for access?](https://www.reddit.com/r/aws/comments/ggrj10/remote_desktop_software_on_ec2_instance_for_access/)
-- url: https://www.reddit.com/r/aws/comments/ggrj10/remote_desktop_software_on_ec2_instance_for_access/
+TIA
+## [9][Changing display name when using AWS SSO?](https://www.reddit.com/r/aws/comments/ghihrr/changing_display_name_when_using_aws_sso/)
+- url: https://www.reddit.com/r/aws/comments/ghihrr/changing_display_name_when_using_aws_sso/
 ---
-Hi Still learning AWS
+We're just about to roll out AWS SSO via Azure AD, and one of the things I'll miss the most about our current method of IAM/switch roles is the display name in the upper right corner of the screen, when we use the AWS Extend Switch Roles plugin.
 
-Would team viewer or log me in be safe to put on a ec2 instance?  I know RDP is not encrypted would ideally not like to use it.
-
-I am looking at two ways to access my ec2
-
-1) Setup a site to site vpn between my  router and VPC and then access it via rdp 
-
-(would a remote vpn setup work here? rather then a site to site)
-
-&amp;#x200B;
-
-2) Setup log me in( or team viewer) to the ec2 instance.
-
-&amp;#x200B;
-
-Would either of those be acceptable?
-## [7][Question about signing in through remote desktop](https://www.reddit.com/r/aws/comments/ggut0c/question_about_signing_in_through_remote_desktop/)
-- url: https://www.reddit.com/r/aws/comments/ggut0c/question_about_signing_in_through_remote_desktop/
+Has anyone found a similar plugin or method to change to a friendly display name when logging in via AWS SSO? AWSReservedSSO_XXXXXXXXX_XXXXXXXXXXXXXXX isn't the most friendly of names when easily trying to determine account I left off on.
+## [10][Packagemanager for ECS?](https://www.reddit.com/r/aws/comments/ghibwb/packagemanager_for_ecs/)
+- url: https://www.reddit.com/r/aws/comments/ghibwb/packagemanager_for_ecs/
 ---
-Welp, I messed up pretty bad I guess. Im taking a windows 2016 server class and we use AWS for out machines. I changed my administrator password through AD, and go to sign out and log back in but now whenever I log in through remote desktop its saying "User has to change password on next login" Well this is an issue I cant get to the windows login screen to change my password. I know this is a very stupid mistake and I really don't want to message my teacher telling her I fucked up this badly, is there anything I can do to sign into my machine?
-## [8][Data Pipeline Scheduling](https://www.reddit.com/r/aws/comments/ggt2fa/data_pipeline_scheduling/)
-- url: https://www.reddit.com/r/aws/comments/ggt2fa/data_pipeline_scheduling/
----
-Hello, 
+Hello!
 
-&amp;#x200B;
-
-I want to automate the starting of some of their instances from monday to friday, so I set up a simple data pipeline on a daily schedule that runs an AWS CLI command similar to this:
-
-`test $(date +"%u") -lt 6 &amp;&amp; aws ec2 stop-instances --instance-ids &lt;instance&gt; --region us-east-1`
-
-When I checked it today, I saw there was an ERROR message, which I assume that it is that the day check failed (since it's Saturday) so it couldn't complete successfully. Will that stop the pipeline from running tomorrow or Monday?
-
-Thanks for your time
-## [9][AWS forecast ignores feature-attribute when making a prediction](https://www.reddit.com/r/aws/comments/ggpd0v/aws_forecast_ignores_featureattribute_when_making/)
-- url: https://www.reddit.com/r/aws/comments/ggpd0v/aws_forecast_ignores_featureattribute_when_making/
----
-Hey  fellows, 
-
-I defined a TARGET dataset with 4 attributes (item\_id, store, date, demand) and need to forecast each item per day per shop. The model trains well, but when casting a prediction, the aws forecast service aggregates all items per day with disregards to the store attribute.
-
-Has anyone ever had the same issue with AWS Forecast...?
-## [10][ECS task cannot resolve hostnames](https://www.reddit.com/r/aws/comments/ggpaxs/ecs_task_cannot_resolve_hostnames/)
-- url: https://www.reddit.com/r/aws/comments/ggpaxs/ecs_task_cannot_resolve_hostnames/
----
-A colleague reached out me recently for help troubleshooting an issue with ECS, where when the host EC2 instance is in a certain VPC/subnet, the tasks cannot resolve hostnames when attempting to make requests to our company website, which is behind Akamai. This is a problem because the ECS cluster is running automated tests, and needs to be able to resolve our company site.
-
-To be clear, the host EC2 instance has no issues resolving the same hostnames, just the containers.
-
-What's strange is that an identical cluster running in another VPC/subnet does not have the same problem. Unfortunately, for reasons known only to our networking team, that subnet has a tiny CIDR block allocated, so the cluster cannot spin up enough tasks to get through the automation in a reasonable time.
-
-I'm not much of a docker expert, so I haven't got a clear idea of how to debug this. The cluster is running in network\_mode "host" if that's useful information.
+Is there a package manager for Amazon ECS similar to how Helm works with Kubernetes? If not, is there another way to use templates, charts or similar to configure and manage ECS, preferably from the command line?

@@ -85,43 +85,71 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Second-guessing the modern web](https://www.reddit.com/r/javascript/comments/ghfyd2/secondguessing_the_modern_web/)
-- url: https://macwright.org/2020/05/10/spa-fatigue.html
+## [3][OAuth 2.0 implementation for various providers in one place.](https://www.reddit.com/r/javascript/comments/gi40mo/oauth_20_implementation_for_various_providers_in/)
+- url: https://github.com/atulmy/oauth
 ---
 
-## [4][8 Books I recommend to learn Javascript](https://www.reddit.com/r/javascript/comments/ghcctr/8_books_i_recommend_to_learn_javascript/)
-- url: https://juanmanuelalloron.com/2020/05/03/weekly-digest-7-on-javascript-books/
+## [4][ESLint v7.0.0 released](https://www.reddit.com/r/javascript/comments/ghpnh5/eslint_v700_released/)
+- url: https://eslint.org/blog/2020/05/eslint-v7.0.0-released
 ---
 
-## [5][AngularJS Migration War Story](https://www.reddit.com/r/javascript/comments/gh48sl/angularjs_migration_war_story/)
-- url: https://codingwithjs.rocks/blog/angular-js-migration-war-story
+## [5][Get free tickets for JSNation, the #1 remote JavaScript conference](https://www.reddit.com/r/javascript/comments/ght98g/get_free_tickets_for_jsnation_the_1_remote/)
+- url: https://sfree.life/jsnation-javascript-live-conference-2020-free/
 ---
 
-## [6][10 Practical JavaScript Tricks](https://www.reddit.com/r/javascript/comments/ghk6dg/10_practical_javascript_tricks/)
-- url: https://developer-open-source-javascript-resources.s3.us-east-2.amazonaws.com/practical-js.htm
+## [6][[AskJS] How do you create an a blob from an existing element?](https://www.reddit.com/r/javascript/comments/gi5iv7/askjs_how_do_you_create_an_a_blob_from_an/)
+- url: https://www.reddit.com/r/javascript/comments/gi5iv7/askjs_how_do_you_create_an_a_blob_from_an/
+---
+I found some tips from stackoverflow, but they use the fetch api which loads the sound file again. The sound file already exists in my cache, so I don't want to load it twice. Any tips?
+## [7][Basket.js (Can you this in wordpress sites and library is really small also do check the comments)](https://www.reddit.com/r/javascript/comments/gib5h2/basketjs_can_you_this_in_wordpress_sites_and/)
+- url: https://theflowingfact.blogspot.com/2020/05/javascript-basketjs.html
 ---
 
-## [7][I wrote a tutorial on how to use JavaScript on some IoT devices with Espruino](https://www.reddit.com/r/javascript/comments/ghmk3g/i_wrote_a_tutorial_on_how_to_use_javascript_on/)
-- url: https://medium.com/javascript-in-plain-english/rock-the-iot-world-with-javascript-and-espruino-a955a9b2ddd
+## [8][Why the Inversion of Control pattern could help you write better sharable react components? I wrote an article about how you can make your components cleaner and a lot more reusable.](https://www.reddit.com/r/javascript/comments/gi9pem/why_the_inversion_of_control_pattern_could_help/)
+- url: https://www.lorenzweiss.de/inversion_of_control_with_react_components/
 ---
 
-## [8][Tiny Package Manager for the Web, using the modern WICG import-maps spec. Pika is the default registry, the aim is to let you configure which registry you want to get your package and how. Looking for feedbacks !](https://www.reddit.com/r/javascript/comments/ghfjwx/tiny_package_manager_for_the_web_using_the_modern/)
-- url: https://github.com/nestarz/heritage
+## [9][[AskJS] Bundling an extension](https://www.reddit.com/r/javascript/comments/gi6scb/askjs_bundling_an_extension/)
+- url: https://www.reddit.com/r/javascript/comments/gi6scb/askjs_bundling_an_extension/
+---
+I am creating an extension, with the following structure
+
+```
+extension/
+         - index.html
+         - index.js
+         - src/
+               utils.js
+```
+
+The index.html looks like this
+```
+....
+&lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+....
+```
+Here app.js is the name of the output bundle file
+
+And the index.js looks like
+```
+....
+chrome.tabs.executeScript(tabs[0].id, {
+    file: 'src/utils.js'
+});
+...
+```
+
+When I bundle this with webpack, with index.js as entrypoint, the bundle is successfull. However when I load the extension, it says cannot find 'utils.js'. Directly referencing index.js in index.html works. Is there any other tool which is used for extensions, or am I doing something wrong?
+## [10][Generating accessible color combinations for the web - Kartik Nair](https://www.reddit.com/r/javascript/comments/gi9g12/generating_accessible_color_combinations_for_the/)
+- url: https://kartikn.me/writing/accessible-combos
 ---
 
-## [9][Don't trust default timeouts](https://www.reddit.com/r/javascript/comments/ghmz40/dont_trust_default_timeouts/)
-- url: https://robertovitillo.com/default-timeouts/
+## [11][Javascript understanding `this`](https://www.reddit.com/r/javascript/comments/gi8tx3/javascript_understanding_this/)
+- url: https://aparnajoshi.netlify.app//javascript-understanding-this
 ---
 
-## [10][GliGli's TileMotion video codec: online decoder demo (Javascript/Canvas2D)](https://www.reddit.com/r/javascript/comments/ghmw87/gliglis_tilemotion_video_codec_online_decoder/)
-- url: https://gligli.github.io/tiler/demo/
----
-
-## [11][After been MIA for several months due to repeated surgeries I finally had the time to piece together something with my little knowledge, convert USD to any currency and vice versa, feedback would be appreciated.](https://www.reddit.com/r/javascript/comments/ghjxkq/after_been_mia_for_several_months_due_to_repeated/)
-- url: https://usdtocurrency.netlify.app
----
-
-## [12][Jest 26: Released!](https://www.reddit.com/r/javascript/comments/ghmh7a/jest_26_released/)
-- url: https://jestjs.io/blog/2020/05/05/jest-26
+## [12][Rebuilding our tech stack for a new Facebook.com - Facebook Engineering](https://www.reddit.com/r/javascript/comments/ghx8aq/rebuilding_our_tech_stack_for_a_new_facebookcom/)
+- url: https://engineering.fb.com/web/facebook-redesign/
 ---
 

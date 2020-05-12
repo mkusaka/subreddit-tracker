@@ -84,204 +84,98 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Synchronized YouTube Player built in react](https://www.reddit.com/r/reactjs/comments/gh76ez/synchronized_youtube_player_built_in_react/)
-- url: https://v.redd.it/ooxd2r7gizx41
+## [3][Interactive pay-card using react hooks](https://www.reddit.com/r/reactjs/comments/gi1rsc/interactive_paycard_using_react_hooks/)
+- url: https://v.redd.it/3asa3gccr8y41
 ---
 
 ## [4][A VS-Code extension to refactor HTML-Tags with style-props to styled components](https://www.reddit.com/r/reactjs/comments/ghmrbg/a_vscode_extension_to_refactor_htmltags_with/)
 - url: https://raw.githubusercontent.com/Agreon/styco/master/demo.gif
 ---
 
-## [5][Created an online multiplayer version of the popular Cards Against Humanity game in React](https://www.reddit.com/r/reactjs/comments/ghdk7i/created_an_online_multiplayer_version_of_the/)
-- url: https://v.redd.it/iabno6vda1y41
+## [5][7 Amazing HTML Tricks](https://www.reddit.com/r/reactjs/comments/gi8aul/7_amazing_html_tricks/)
+- url: https://react-open-source-resources-and-articles.s3.ca-central-1.amazonaws.com/html-tricks.htm
 ---
 
-## [6][The Best Alternatives for Selenium](https://www.reddit.com/r/reactjs/comments/ghkzxl/the_best_alternatives_for_selenium/)
-- url: https://open-source-developer-universe-resources-docs.s3-eu-west-1.amazonaws.com/selenium-alternatives.htm
+## [6][Next.js Building a Car Trader App #3: Filters Page](https://www.reddit.com/r/reactjs/comments/gi8gxk/nextjs_building_a_car_trader_app_3_filters_page/)
+- url: https://www.youtube.com/watch?v=b7XLYkqJ5uY&amp;feature=share
 ---
 
-## [7][Client-side-only React is not sustainable.](https://www.reddit.com/r/reactjs/comments/ghcct3/clientsideonly_react_is_not_sustainable/)
-- url: https://twitter.com/dan_abramov/status/1259614150386425858
+## [7][Why you should use MobX State Tree in your next React project](https://www.reddit.com/r/reactjs/comments/gi7n08/why_you_should_use_mobx_state_tree_in_your_next/)
+- url: https://dev.to/lloyds-digital/why-you-should-use-mobx-state-tree-in-your-next-react-project-l3
 ---
 
-## [8][ReactSS - One tab to rule them all](https://www.reddit.com/r/reactjs/comments/gh0hnw/reactss_one_tab_to_rule_them_all/)
-- url: https://v.redd.it/ghjioqpsixx41
+## [8][useRef as a toggler ? No rerender. Your opinion on that ?](https://www.reddit.com/r/reactjs/comments/gi8kkh/useref_as_a_toggler_no_rerender_your_opinion_on/)
+- url: https://www.reddit.com/r/reactjs/comments/gi8kkh/useref_as_a_toggler_no_rerender_your_opinion_on/
+---
+Here's a hook that takes a component's ref, and has its own boolean ref  (consider current = isOpen).
+
+     function useHideShow(ref) {
+        let { current } = useRef(false)
+        function hideShow() {
+        	if (current) {
+    	    current = false
+    	    ref.current.style.display = 'none'
+    	} else {
+    	    current = true
+    	    ref.current.style.display = 'block'
+            }
+        }
+        return hideShow
+    }
+
+How to use it :
+
+    const Dropdown = () =&gt; {
+        const down = useRef()
+        const hideShow = useHideShow(down)
+        return (
+    	&lt;div&gt;
+    	    &lt;div id="drop" onClick={hideShow}&gt;Drop&lt;/div&gt;
+    	    &lt;div id="down" ref={down}&gt;Down&lt;/div&gt;
+    	&lt;/div&gt;
+        )
+    }
+
+Is it bad practice to interact with the dom like this ? What's your opinion on this hook ?
+## [9][Interactive animations framer motion](https://www.reddit.com/r/reactjs/comments/gi4znl/interactive_animations_framer_motion/)
+- url: https://v.redd.it/61mt4qqrt9y41
 ---
 
-## [9][mst-gql - The best GraphQL client you've never heard of](https://www.reddit.com/r/reactjs/comments/ghmupz/mstgql_the_best_graphql_client_youve_never_heard/)
-- url: https://www.youtube.com/watch?v=N4ni8u47XVs
+## [10][Too many Udemy courses?](https://www.reddit.com/r/reactjs/comments/giatrz/too_many_udemy_courses/)
+- url: https://www.reddit.com/r/reactjs/comments/giatrz/too_many_udemy_courses/
+---
+Udemy is having a promo at the moment and wanted to get a react course. 
+
+Looked on the sub which ones were most recommended and there looked to be a tie between Stephen Grider and Maximilian Schwarzmüller.
+
+Leaning towards Grider right now but both look good. 
+
+Anyway, my question is if getting 3 courses right off the bat is overkill, wanted to get them now during the promo. These are the ones that I was looking at, wanted a base for react but also one to help me connect node and react in a proper manner. Have already played around with create-react-app and published it on Heroku and got it working but need more meat on my bones and learn how to properly do things. 
+
+With my own project, I got stuck when I needed to create user sign up and log in and do it properly. 
+
+ [https://www.udemy.com/course/react-the-complete-guide-incl-redux/](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 
+
+ [https://www.udemy.com/course/node-with-react-fullstack-web-development/](https://www.udemy.com/course/node-with-react-fullstack-web-development/) 
+
+ [https://www.udemy.com/course/react-redux/](https://www.udemy.com/course/react-redux/)
+## [11][#3 Styling the NavBar | react-redux-firebase](https://www.reddit.com/r/reactjs/comments/giatcd/3_styling_the_navbar_reactreduxfirebase/)
+- url: https://youtu.be/v2Grz2MHAnw
 ---
 
-## [10][How to add image src to the state in multi step form in react](https://www.reddit.com/r/reactjs/comments/ghlaym/how_to_add_image_src_to_the_state_in_multi_step/)
-- url: https://www.reddit.com/r/reactjs/comments/ghlaym/how_to_add_image_src_to_the_state_in_multi_step/
+## [12][How do I make a request with each new URL change?!](https://www.reddit.com/r/reactjs/comments/giarft/how_do_i_make_a_request_with_each_new_url_change/)
+- url: https://www.reddit.com/r/reactjs/comments/giarft/how_do_i_make_a_request_with_each_new_url_change/
 ---
-**TLDR**
+Hello,
 
-I'm making an multiStep form for my project that is inspired from [Brad Traversy's Tutorial of making Multi-Step form in React](https://github.com/bradtraversy/react_step_form). So as per the basic structure of this form
+This seems like such an easy thing, but I have not been able to figure it out for the past couple of days. 
+
+I want to make a HTTP request each time the user lands at a URL/view, say '/forum-messages', so they can get the latest messages. However, I only want it to be called once when they are on this view. 
+
+I know I can use useEffect and only have it be called once, but the problem is it's only being called once during the entire life of the application session. If I add the request outside of useEffect, then obviously it's called every single time the app refreshes. 
+
+So how do you make a call only once during the views life, but each time it's visited by the user (each NEW visit)?
 
 &amp;#x200B;
 
-[structure of multi step form](https://reddit.com/link/ghlaym/video/6lh6fui784y41/player)
-
-I made a main Parent component called `Multistep` as below
-
-    import React, { Component } from 'react'
-    import StepOne from './StepOne'
-    export class Multiform extends Component {
-        state={
-            step:1,
-            input:'',
-            select:''
-        }
-         // Proceed to next step
-      nextStep = () =&gt; {
-        const { step } = this.state;
-        this.setState({
-          step: step + 1
-        });
-      };
-    
-      // Go back to prev step
-      prevStep = () =&gt; {
-        const { step } = this.state;
-        this.setState({
-          step: step - 1
-        });
-      };
-    
-      // Handle fields change
-      handleChange = input =&gt; e =&gt; {
-        this.setState({ [input]: e.target.value });
-      };
-        render() {
-            const { step } = this.state;
-            const {  input, countryFlag, select } = this.state;
-            const values = { input, countryFlag, select };
-            switch(step){
-              case 1:
-                return(
-                  &lt;StepOne
-                  nextStep={this.nextStep}
-                  handleChange={this.handleChange}
-                  values={values}
-                    /&gt;
-                )
-        }
-    }
-    
-    export default Multiform
-
-and a child component `StepOne` as below
-
-    import React, { Component } from 'react'
-        export class StepOne extends Component {
-            continue = (e) =&gt; {
-                e.preventDefault();
-                this.props.nextStep();
-            };
-    
-            back = (e) =&gt; {
-                e.preventDefault();
-                this.props.prevStep();
-            };
-            state = {
-                countryFlag: 'https://raw.githubusercontent.com/MeRahulAhire/country-calling-code-html/master/phone_icon.png',
-            };
-            render() {
-                const selectCountryChange = () =&gt; {
-                    const img = document.querySelector('#img');
-                    const select = document.querySelector('#country');
-                    img.src = `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`;
-    
-                    this.setState({
-                        countryFlag: `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`
-                    });
-                };
-                const { values, handleChange, } = this.props;
-                return (
-                    &lt;div&gt;
-                    &lt;button onClick={this.back} className="col-form-prev"&gt;
-                    &lt;input
-                        type="email"
-                        placeholder="your-email@example.com"
-                        onChange={handleChange('input')}
-                        defaultValue={values.input}
-                    /&gt;
-                    &lt;div class="image" onChange={selectCountryChange}&gt;  
-                        &lt;img src={this.state.countryFlag} id="img"/&gt;  
-                     &lt;/div&gt;
-                     &lt;select id="country" onChange={handleChange('select')} defaultValue={values.select}&gt;  
-                        &lt;option data-countryCode="IN" value="91"&gt;India&lt;/option&gt;  
-                        &lt;option data-countryCode="US" value="1"&gt;US&lt;/option&gt;  
-                        &lt;option data-countryCode="GB" value="44"&gt;UK&lt;/option&gt;  
-                     &lt;/select&gt;  
-                    &lt;/div&gt;
-                )
-            }
-        }
-    
-        export default StepOne
-
-according to that tutorial, everything for text input field the state management was working absolutely fine. Even when i tried to go next step and come back, the data was still accessible and persisted in that `&lt;input/&gt;` and `&lt;select/&gt;` field.
-
-I also tried to store the image source in Multiform state but with an another `onChange` handler but i wasnt able to figure out exactly how to do that.
-
-The `img.src` is manipulated by the `selectCountryChange` in `stepOne` as below
-
-    state = {
-            countryFlag: 'https://raw.githubusercontent.com/MeRahulAhire/country-calling-code-html/master/phone_icon.png',
-        };
-    
-    const selectCountryChange = () =&gt; {
-                const img = document.querySelector('#img');
-                const select = document.querySelector('#country');
-                img.src = `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`;
-    
-                this.setState({
-                    countryFlag: `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`
-                })
-    
-    &lt;div class="image" onChange={selectCountryChange}&gt;  
-                    &lt;img src={this.state.countryFlag} id="img"/&gt;
-    
-                 &lt;/div&gt;
-
-Can anyone please guide me on how to add the img.src to the state of Multiform and make it persistent even when i go back and forth of the form just the `&lt;input/&gt;` and `&lt;select/&gt;`. [You can also checkout my project repo for more info.](https://github.com/MeRahulAhire/cfm-dev-refined/tree/master/src/public/form)
-## [11][How to use Suspense with axios?](https://www.reddit.com/r/reactjs/comments/ghnj65/how_to_use_suspense_with_axios/)
-- url: https://www.reddit.com/r/reactjs/comments/ghnj65/how_to_use_suspense_with_axios/
----
-Hi,
-
-I've read the doc about React.Suspense, it seems great, but how can I use it while performing an api call, with axios for example?
-
-To be more specific, why this code doesn't work? 
-
-    export default Foo(){
-    const [state, setState] = useState()
-    
-    useEffect(()=&gt; {
-        axios.get("url")
-        .then(res=&gt; setState(res.data))
-        .catch(_=&gt; setState(null)
-    }, [])
-    
-    return (
-        &lt;Suspense fallback="loading data"&gt;
-           &lt;div&gt;hello {state.name}&lt;/div&gt;
-        &lt;/Suspense&gt;
-    )
-    }
-
-Thanks!
-## [12][Is Stephen Grinder's courses are good?](https://www.reddit.com/r/reactjs/comments/ghn30q/is_stephen_grinders_courses_are_good/)
-- url: https://www.reddit.com/r/reactjs/comments/ghn30q/is_stephen_grinders_courses_are_good/
----
-Hey, 
-
-I've recently enrolled in Stephen Grinder's React-Redux course and I can say I'm quite pleased with it. After that I was hoping to get Node.js, Express and MongoDB course of his. I've also enrolled in it but seems like methods he uses in this one are deprecated and I'm not sure if I should continue getting the course. 
-
-What do you think about this course? Should I complete it or just find a new one?
-
-And which one I should be enrolling?
-
-Here is the [course](https://www.udemy.com/course/node-with-react-fullstack-web-development/).
+Any help would be greatly aprpeciated!

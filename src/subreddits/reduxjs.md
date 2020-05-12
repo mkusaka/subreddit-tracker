@@ -1,5 +1,37 @@
 # reduxjs
-## [1][tsrux: Typesafe and painless action creators and reducers for redux.](https://www.reddit.com/r/reduxjs/comments/ggi41k/tsrux_typesafe_and_painless_action_creators_and/)
+## [1][At this point should my state (store) be viewable in the Redux dev tools? I am seeing Reddit's store there which is strange](https://www.reddit.com/r/reduxjs/comments/gi1cxi/at_this_point_should_my_state_store_be_viewable/)
+- url: https://www.reddit.com/r/reduxjs/comments/gi1cxi/at_this_point_should_my_state_store_be_viewable/
+---
+Just refactoring a small app to use Redux and hooks and noticing something strange. In index.js I have:   
+
+
+    ...
+    
+    import { createStore } from 'redux';
+    import { Provider } from 'react-redux';
+    import { rootReducer } from './reducers/rootReducer.js';
+    const store = createStore(rootReducer);
+    
+    ReactDOM.render(
+      &lt;Provider store={store}&gt;
+        &lt;React.StrictMode&gt;
+          &lt;App /&gt;
+        &lt;/React.StrictMode&gt;
+      &lt;/Provider&gt;,
+      document.getElementById('root')
+    );
+
+My root reducer is defined in another file I am importing and I have confirmed that is firing in the console. Yet for some reason when I inspect the redux dev tools I see a bunch of data related to my reddit user acccount oddly enough and not the initial state I defined in rootReducer which is passed to createStore  
+
+
+At this point should I not be able to see my store in redux dev tools?
+## [2][Is it ok to make actions creators to depend of other reducers?](https://www.reddit.com/r/reduxjs/comments/ghu3wx/is_it_ok_to_make_actions_creators_to_depend_of/)
+- url: https://www.reddit.com/r/reduxjs/comments/ghu3wx/is_it_ok_to_make_actions_creators_to_depend_of/
+---
+I have an application with two reducers, both with tons of action creators, and 99% of the actions creators have to use data from another reducer to do some logic. I feel comfortable doing it, but I don't know if it is a bad or good pattern.
+
+(Sorry guys, my English is bad)
+## [3][tsrux: Typesafe and painless action creators and reducers for redux.](https://www.reddit.com/r/reduxjs/comments/ggi41k/tsrux_typesafe_and_painless_action_creators_and/)
 - url: https://www.reddit.com/r/reduxjs/comments/ggi41k/tsrux_typesafe_and_painless_action_creators_and/
 ---
 I created a new library for use with redux: [https://lusito.github.io/tsrux/](https://lusito.github.io/tsrux/)
@@ -11,7 +43,7 @@ Previously I used [deox](https://deox.js.org/) (which inspired this library), bu
 Full documentation, unit-tests with 100% code-coverage and type-tests already included.
 
 Let me know what you think.
-## [2][How do you organize your file structure with Redux, Redux-Toolkit, react-router, and Redux-Saga?](https://www.reddit.com/r/reduxjs/comments/gf9eo7/how_do_you_organize_your_file_structure_with/)
+## [4][How do you organize your file structure with Redux, Redux-Toolkit, react-router, and Redux-Saga?](https://www.reddit.com/r/reduxjs/comments/gf9eo7/how_do_you_organize_your_file_structure_with/)
 - url: https://www.reddit.com/r/reduxjs/comments/gf9eo7/how_do_you_organize_your_file_structure_with/
 ---
 Hello,
@@ -30,7 +62,7 @@ pages (individual pages that are imported into the router, contain components lo
 services, helpers, hooks and the like up there.
 
 If I do a more feature style, should I encompass a page and a Navbar under a /features folder? Or how have projects you've worked on done it?
-## [3][Question about initializing state in the store](https://www.reddit.com/r/reduxjs/comments/gem4gj/question_about_initializing_state_in_the_store/)
+## [5][Question about initializing state in the store](https://www.reddit.com/r/reduxjs/comments/gem4gj/question_about_initializing_state_in_the_store/)
 - url: https://www.reddit.com/r/reduxjs/comments/gem4gj/question_about_initializing_state_in_the_store/
 ---
 Hi,
@@ -41,7 +73,7 @@ Any suggestion will be appreciated!
 
 Thanks,  
 Guoliang Cao
-## [4][Im trying to figure out what '...' means in return{... x, y, x}](https://www.reddit.com/r/reduxjs/comments/geajse/im_trying_to_figure_out_what_means_in_return_x_y_x/)
+## [6][Im trying to figure out what '...' means in return{... x, y, x}](https://www.reddit.com/r/reduxjs/comments/geajse/im_trying_to_figure_out_what_means_in_return_x_y_x/)
 - url: https://www.reddit.com/r/reduxjs/comments/geajse/im_trying_to_figure_out_what_means_in_return_x_y_x/
 ---
 Ive been struggling to find a good answer/explanation to this.  
@@ -65,7 +97,7 @@ EXAMPLE:
 `default: return state; }` 
 
 `}`
-## [5][Dispatching to non-Axios Actions?](https://www.reddit.com/r/reduxjs/comments/gdzzhn/dispatching_to_nonaxios_actions/)
+## [7][Dispatching to non-Axios Actions?](https://www.reddit.com/r/reduxjs/comments/gdzzhn/dispatching_to_nonaxios_actions/)
 - url: https://www.reddit.com/r/reduxjs/comments/gdzzhn/dispatching_to_nonaxios_actions/
 ---
 Up until now I've only used Axios (fetch) requests from an API in my actions. What if I just want to change the Redux state from a React component like \`logout\`? If my function to \`logout()\` looks like this:
@@ -98,11 +130,11 @@ and my Reducer looks like this:
 &amp;#x200B;
 
 How do I write this in an \`action\`?
-## [6][Do anyone have open source project that use Typescript and Redux-toolkit?](https://www.reddit.com/r/reduxjs/comments/gcktxf/do_anyone_have_open_source_project_that_use/)
+## [8][Do anyone have open source project that use Typescript and Redux-toolkit?](https://www.reddit.com/r/reduxjs/comments/gcktxf/do_anyone_have_open_source_project_that_use/)
 - url: https://www.reddit.com/r/reduxjs/comments/gcktxf/do_anyone_have_open_source_project_that_use/
 ---
 Please share the github link for learning
-## [7][When should I use redux? Pros cons?](https://www.reddit.com/r/reduxjs/comments/gbs1o2/when_should_i_use_redux_pros_cons/)
+## [9][When should I use redux? Pros cons?](https://www.reddit.com/r/reduxjs/comments/gbs1o2/when_should_i_use_redux_pros_cons/)
 - url: https://www.reddit.com/r/reduxjs/comments/gbs1o2/when_should_i_use_redux_pros_cons/
 ---
 Hello,
@@ -126,65 +158,9 @@ Should I be using redux if I want to communicate between D and E?  Also, what ar
 &amp;#x200B;
 
 Thanks for all the comments in advance
-## [8][Why use separate constants for action types?](https://www.reddit.com/r/reduxjs/comments/g9pb5n/why_use_separate_constants_for_action_types/)
+## [10][Why use separate constants for action types?](https://www.reddit.com/r/reduxjs/comments/g9pb5n/why_use_separate_constants_for_action_types/)
 - url: https://www.reddit.com/r/reduxjs/comments/g9pb5n/why_use_separate_constants_for_action_types/
 ---
 Relatively new to Redux. I'm familiar with the points as [why to use action creators](https://blog.isquaredsoftware.com/2016/10/idiomatic-redux-why-use-action-creators/), but I often see action types set up as a separate set of constants ([here's a basic example from a tutorial](https://github.com/rhysdavies1994/koa-react-todo-tutorial/blob/master/frontend/src/actions/todos.js)) rather than just declared directly in the action creator. The logic of why this is needed is less clear to me - I've heard it is to minimize typos, but as far as I can tell, it's just a bunch more typing and importing and exporting things, without fundamentally affecting what an action creator is doing.
 
 Can someone explain, ideally with an example, why it is considered a good practice to do this? Or, in what situations is it important / not-so-important?
-## [9][Simplify your usage of Redux with redux-path](https://www.reddit.com/r/reduxjs/comments/g8xqru/simplify_your_usage_of_redux_with_reduxpath/)
-- url: https://www.reddit.com/r/reduxjs/comments/g8xqru/simplify_your_usage_of_redux_with_reduxpath/
----
-No action, connection or other boilerplates with [redux-path](https://github.com/beauvaisbruno/redux-path).
-~~~~
-dispatchTo('foo/sub', value);
-getFrom('foo/sub');
-~~~~
-
-## Basic example
-~~~~
-const Component = () =&gt; {
-  const sub = useSelector(state =&gt; state.foo.sub);
-  return &lt;div&gt;
-    &lt;div onClick={() =&gt; dispatchTo('foo/sub', sub + 1)}&gt;
-      Click to increment
-    &lt;/div&gt;
-    &lt;div onClick={() =&gt; dispatchTo('foo', {sub: getFrom('foo/sub') + 1})}&gt;
-      Click to increment
-    &lt;/div&gt;
-    foo.sub: &lt;&gt;{sub}&lt;/&gt;
-  &lt;/div&gt;
-}
-~~~~
-## [10][Condition rendering failing in React Native Redux App](https://www.reddit.com/r/reduxjs/comments/g70svq/condition_rendering_failing_in_react_native_redux/)
-- url: https://www.reddit.com/r/reduxjs/comments/g70svq/condition_rendering_failing_in_react_native_redux/
----
- I'm trying to conditionally render my **redux app** based on if the user is logged in. The relevant &amp; condensed version of my code is below:
-
-    let isLoggedIn = false;
-    
-    export default function App() {
-      console.log('App Executing...');
-      console.log('isLoggedIn: ', isLoggedIn);
-      return (
-        &lt;Provider store={store}&gt;
-          &lt;NavigationContainer&gt;
-            {isLoggedIn ? ContactsTab() : Login()}
-          &lt;/NavigationContainer&gt;
-        &lt;/Provider&gt;
-      );
-    }
-    
-    store.subscribe(() =&gt; {
-      // Set isLoggedIn to true if token is received and reinvoke App()
-      if (store.getState().user.token) {
-        isLoggedIn = true;
-        App();
-      }
-    });
-
-The app starts with console logging **isLoggedIn: false** and displaying **Login()**(as expected). When I login on my phone using the correct credentials, **App()** is re-invoked console logging **isLoggedIn: true**(as expected) but it's still displaying **Login()**. If I set **isLoggedIn = true** inside the app function, the app successfully starts displaying the **ContactsTab()**.
-
-What is happening here? Why is my app not moving to **ContactsTab()** when the value of **isLoggedIn** successfully changes to **true**? How can I fix this?
-
-Thank you for reading along. I have been trying to debug this for the past 2 days with no success so any help would be greatly appreciated!

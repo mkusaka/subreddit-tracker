@@ -22,119 +22,154 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Mdx](https://www.reddit.com/r/typescript/comments/ghlxt0/mdx/)
-- url: https://www.reddit.com/r/typescript/comments/ghlxt0/mdx/
+## [2][Return type of a function that takes any number of functions as argument, and return the array of returned values](https://www.reddit.com/r/typescript/comments/gi84kp/return_type_of_a_function_that_takes_any_number/)
+- url: https://www.reddit.com/r/typescript/comments/gi84kp/return_type_of_a_function_that_takes_any_number/
 ---
-Have any of you use mdx with typescript before?
-## [3][`ts-audio` is an agnostic and easy-to-use library to work with the AudioContext API](https://www.reddit.com/r/typescript/comments/gh2udm/tsaudio_is_an_agnostic_and_easytouse_library_to/)
-- url: https://github.com/EvandroLG/ts-audio
----
+Not sure if my title makes sense, here is my problem:
 
-## [4][I wish TypeScript to support publishing npm module with "ts" files](https://www.reddit.com/r/typescript/comments/ggxwn9/i_wish_typescript_to_support_publishing_npm/)
-- url: https://github.com/microsoft/TypeScript/issues/38452
----
+I have a function that runs multiple functions concurrently, and returns the array of results (ignore the absence of promises in what follows, I'm using coroutines).
 
-## [5][Confused what to learn](https://www.reddit.com/r/typescript/comments/gh176y/confused_what_to_learn/)
-- url: https://www.reddit.com/r/typescript/comments/gh176y/confused_what_to_learn/
----
-Hello guys, i am really interested in front end development and i am a beginner,  i am really confused how to start learning and what to learn first 
-Can you guys help me with that ?
-Thanks
-## [6][[Showoff Saturday] PWA Store written in TypeScript](https://www.reddit.com/r/typescript/comments/ggnrby/showoff_saturday_pwa_store_written_in_typescript/)
-- url: https://v.redd.it/sav4v1jh1tx41
----
+    parrallel(() =&gt; 'a', () =&gt; 1, () =&gt; [0, 1, 2]);
+    // Returns ['a', 1, [0, 1, 2]]
 
-## [7][How should I type a function, which takes a function as an argument and returns a new function with the identical type.](https://www.reddit.com/r/typescript/comments/ggy2q6/how_should_i_type_a_function_which_takes_a/)
-- url: https://www.reddit.com/r/typescript/comments/ggy2q6/how_should_i_type_a_function_which_takes_a/
----
-Hey  there, I wonder if some typescript wiz can help me with this. I'm  writing a React hook basically which takes a function as its first  argument:
+As of now, I'm using the following type declaration that handles calling this function with up to 7 arguments while keeping type-safety:
 
-`type Callback&lt;T&gt; = (args: T) =&gt; Promise&lt;void&gt;`
+    type Fn&lt;T&gt; = () =&gt; T;
+    export function parallel&lt;T&gt;(fcts: Fn&lt;T&gt;[]): T[]; 
+    export function parallel&lt;T&gt;(fcts: [Fn&lt;T&gt;]): [T]; 
+    export function parallel&lt;T, U&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;]): [T, U]; 
+    export function parallel&lt;T, U, V&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;]): [T, U, V]; 
+    export function parallel&lt;T, U, V, W&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;]): [T, U, V, W]; 
+    export function parallel&lt;T, U, V, W, X&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;, Fn&lt;X&gt;]): [T, U, V, W, X]; 
+    export function parallel&lt;T, U, V, W, X, Y&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;, Fn&lt;X&gt;, Fn&lt;Y&gt;]): [T, U, V, W, X, Y]; 
+    export function parallel&lt;T, U, V, W, X, Y, Z&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;, Fn&lt;X&gt;, Fn&lt;Y&gt;, Fn&lt;Z&gt;]): [T, U, V, W, X, Y, Z];
 
-It then returns an array containing an object, and a new function which takes the same args
-
-`type ReturnType&lt;T&gt; = [State, (args: T) =&gt; Promise&lt;void&gt;]`
-
-I'm then combining them for my main function definition:
-
-`function myFunction&lt;T&gt;(cb: Callback&lt;T&gt;): ReturnType&lt;T&gt; { ... }`
-
-Now,  this works fine for functions which take arguments. However I also want  it to work for functions which take no arguments, i.e.
-
-`() =&gt; Promise&lt;void&gt;`
-
-Currently it returns me the type:
-
-`(args: unknown) =&gt; Promise&lt;void&gt;`
-
-which doesnt match. Any help would be amazing!! &lt;3
-## [8][Developing polymorphism feature for TypeORM](https://www.reddit.com/r/typescript/comments/ggpj3y/developing_polymorphism_feature_for_typeorm/)
-- url: https://www.reddit.com/r/typescript/comments/ggpj3y/developing_polymorphism_feature_for_typeorm/
----
-Any one interested to work on developing polymorphism feature for TypeORM?
-
-[https://github.com/pirate-lp/typeorm-polymorphism](https://github.com/pirate-lp/typeorm-polymorphism)
-
-**Background**
-
-I understand that we can hack our way around it and that there is no plan from original maintainer to develop the feature, but I really miss this functionality in the Node.JS community and as far as I searched, there is no functional library that supports this design. Even bookshelf.js runs into a lot of bugs and issues when it comes to working with polymorphic relationships!
-## [9][Prepare your Angular interview with this quick and complete outline](https://www.reddit.com/r/typescript/comments/ggecix/prepare_your_angular_interview_with_this_quick/)
-- url: https://medium.com//prepare-your-angular-interview-with-this-quick-and-complete-outline-1e9b5d761166?source=friends_link&amp;sk=8a4d78eadeeae8aa9b10a0f9e7c47f29
+I did not find any way to find a type declaration that work for any number of arguments, is it even possible ?
+## [3][Get a better grip on TS at JSNation, the largest remote JavaScript conf](https://www.reddit.com/r/typescript/comments/giau0e/get_a_better_grip_on_ts_at_jsnation_the_largest/)
+- url: https://sfree.life/jsnation-javascript-live-conference-2020-free/
 ---
 
-## [10][Strongly-typed "array of function pointers"](https://www.reddit.com/r/typescript/comments/ggq60f/stronglytyped_array_of_function_pointers/)
-- url: https://www.reddit.com/r/typescript/comments/ggq60f/stronglytyped_array_of_function_pointers/
+## [4][Polymorphic TypeScript - Function overloading with rest parameters](https://www.reddit.com/r/typescript/comments/gi7ljb/polymorphic_typescript_function_overloading_with/)
+- url: https://tane.dev/2020/05/polymorphic-typescript-function-overloading-with-rest-parameters/
 ---
-**UPDATED: Solved using intersection instead of union**
 
-I'm building the write-side of a CQRS from scratch for the purpose of learning, and what I am trying to type is the command handlers. Just to be clear, I really don't want an array of function pointers, I'm just speaking in a comfortable, an ancient tongue.  In JS, I would
+## [5][Prototope - TailwindCSS-inspired CSS-in-JS library](https://www.reddit.com/r/typescript/comments/gi5zen/prototope_tailwindcssinspired_cssinjs_library/)
+- url: https://github.com/Isotope-js/isotope/tree/master/packages/prototope
+---
 
-    const handlers = {
-      FooCreated: (payload) =&gt; { ...foo created handler },
-      BarAssigned: (payload) =&gt; { ..bar assigned handler },
+## [6][Whats the benefit of declaring a functions argument types as ({arg1, arg2} : {arg1: string, arg2: number}) rather than just ({arg1: string, arg2: number})](https://www.reddit.com/r/typescript/comments/ghwggh/whats_the_benefit_of_declaring_a_functions/)
+- url: https://www.reddit.com/r/typescript/comments/ghwggh/whats_the_benefit_of_declaring_a_functions/
+---
+Why did the typescript programmers add this complexity to the language?In my opinion, being able to declare a function like
+
+`const func = ({arg1: string, arg2: number}) =&gt; {}`
+
+is way cleaner and more intuitive, so why would they make it the default that to declare a functions argument types you would have to do something like
+
+`const func = ({arg1, arg2} : {arg1: string, arg2: number}) =&gt; {}`
+## [7][mockzilla: Yet another mocking library for TypeScript and jest.](https://www.reddit.com/r/typescript/comments/ghv6q5/mockzilla_yet_another_mocking_library_for/)
+- url: https://www.reddit.com/r/typescript/comments/ghv6q5/mockzilla_yet_another_mocking_library_for/
+---
+I'm well aware that there are many mocking libraries out there, but I went ahead and created another one (for use with jest): [https://lusito.github.io/mockzilla/](https://lusito.github.io/mockzilla/)
+
+My main focus was to be able to easily write and verify mocks of a deeply nested API like the webextensions browser object.
+
+In webextensions you would have code like this one:
+
+    browser.webRequest.onBeforeRedirect.addListener(callback, filter);
+
+But you don't have access to an actual implementation of this API, which is why some libraries already didn't work for my use-case. Other libraries would require a lot of typing and I loathe that.
+
+With [mockzilla](https://lusito.github.io/mockzilla), I can now just write a simple line like this:
+
+    mockBrowser.webRequest.onBeforeRedirect.addListener.expect(listener, expect.anything());
+
+This contains types for auto-completion and type-safety. It is auto-verified, so no need to call verify() at the end of a test.
+
+Another possibility is to assimilate an actual instance to become partially ~~borg~~ mock:
+
+    const myInstance = new MyClass();
+    const mock = mockAssimilate(myInstance, "myInstance", {
+        mock: ["runA"],
+        whitelist: ["run", "someProp"],
+    });
+    mock.runA.expect(expect.anything(), true).andReturn(true);
+
+mockAssimilate works with types as well, even on private methods.
+
+There are a few more things included. Take a look at the documentation.
+
+I am still working on the API design, looking for some feedback and ideas.
+## [8][Castellated: An Adaptable, Robust Password Storage System for Node.js](https://www.reddit.com/r/typescript/comments/ghx52r/castellated_an_adaptable_robust_password_storage/)
+- url: http://www.wumpus-cave.net/2020/05/11/castellated-an-adaptable-robust-password-storage-system-for-node-js/
+---
+
+## [9][Question about the Pick utility type](https://www.reddit.com/r/typescript/comments/ghwpyr/question_about_the_pick_utility_type/)
+- url: https://www.reddit.com/r/typescript/comments/ghwpyr/question_about_the_pick_utility_type/
+---
+I've been using utility types like [Pick](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktk) and [Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittk) for some time now to reduce type repetition. I just stumbled across a scenario that struck me as odd though and would appreciate some explanation.
+
+Say I have an interface like so:
+
+    interface ComponentState {
+       user?: User;
+       loading: boolean;
+       error: Error | null;
     }
-    ...
-    const handler = handlers[body.command];
 
-I am seeking a TS solution with the fewest keystroke touches on the text "FooCreated", et. al.  I'll have hundreds of commands (and events, which will probably face the same issue).  What I have so far:
+And then I want to define a discriminated union that references properties from that interface:
 
-    type CommandMeta = {
-      userId: string;
-    };
-    type Command =
-      | {
-          CreateFoo: {
-            meta: CommandMeta;
-            payload: {
-              id: string;
-              name: string;
-              baz?: string;
-            };
-          };
-        }
-      | {
-          AssignBar: {
-            meta: CommandMeta;
-            payload: { 
-              id: string; 
-              fizzbang: string; 
-            };
-          };
-        };
-    type CommandHandlers = {
-      [C in keyof Command]: (meta: CommandMeta, payload: Command[C]) =&gt; Promise&lt;any&gt;
-    };
-    const handlers: CommandHandlers = {
-      CreateFoo: (meta, payload) =&gt; {
-        // meta &amp; payload is "any", I would like it to be typeof CommandMeta &amp; payload type for CreateFoo
-      },
-      // No complaint about missing "AssignBar" handler
-    };
+    type ComponentActionTypes = 
+    | {
+        type: ComponentActions.SET_USER,
+        payload: Pick&lt;ComponentState, 'user'&gt; //I would expect User | undefined
+      }
+    | {
+       type: ComponentActions.SET_LOADING,
+       payload: Pick&lt;ComponentState, 'loading'&gt; //I would expect boolean
+      }
+    | {
+       type: ComponentActions.SET_ERROR,
+       payload: Pick&lt;ComponentState, 'error'&gt; //I would expect Error | null
+      }
 
-As noted in the commends in the command handler implementation, I am getting "any's' for the meta and payload parameters.  Furthermore, I am not getting any error for missing the "AssignBar" handler, and I can also put any old garbage name in there.
+I would expect the `payload` in each of the above `ComponentActionTypes` scenarios to conform to whatever the property type is for the `ComponentState` interface but the compiler interprets each of the payloads as objects with a key being that of the respective interface property and the value being the respective type. So the `payload` for `ComponentActionTypes` type `ComponentActions.SET_USER` is actually
 
-I'm not married to the above approach, so any quick boosts would be appreciated.  I'm not a big fan of spreading types across hundreds of files and typing (via keyboard, not TS) their names in lots and lots of places.  So I put a premium on an implementation that is less clean than most prefer.
-## [11][Code Review Please: Modeling profit/loss of a time series of financial position state changes](https://www.reddit.com/r/typescript/comments/ggi6qs/code_review_please_modeling_profitloss_of_a_time/)
-- url: https://codereview.stackexchange.com/questions/242009/model-profit-loss-of-a-time-series-of-financial-position-state-changes
+    { user: User | undefined } //I want action.payload to be User | undefined
+
+Clearly I misunderstood how `Pick` works. Any suggestions on how I can achieve what I'm after without having to just replicate each of the types defined in the `ComponentState` interface?
+
+&amp;#x200B;
+
+Much appreciated
+## [10][Make a defined interface property optional](https://www.reddit.com/r/typescript/comments/ghwcjb/make_a_defined_interface_property_optional/)
+- url: https://www.reddit.com/r/typescript/comments/ghwcjb/make_a_defined_interface_property_optional/
+---
+I have type:
+
+\`\`\`ts  
+interface INameType {  
+   name: string;  
+   typeId: number  
+   ...
+
+}
+
+\`\`\`
+
+And I want to have a second type which takes all of the first interface properties but makes the ones I specify optional, like: 
+
+\`\`\`ts  
+interface INameType {  
+   name: string;  
+   typeId?: number  
+   ...
+
+}
+
+\`\`\`  
+How can I accomplish this? Thank you
+## [11][TypeScript alias for asserting value type for keyof](https://www.reddit.com/r/typescript/comments/ghx4tg/typescript_alias_for_asserting_value_type_for/)
+- url: https://stackoverflow.com/questions/61739893/typescript-alias-for-asserting-value-type-for-keyof
 ---
 

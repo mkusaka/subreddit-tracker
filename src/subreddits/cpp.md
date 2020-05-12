@@ -12,7 +12,7 @@ I think it will be helpful to everyone to collect information about C++ events t
 
 **This is intended to be a living document. Please help by suggesting changes or additions.**
 
-**Last Updated: 2020-05-10 - Email, Tweet or Slack Bryce to request updates.**
+**Last Updated: 2020-05-11 - Email, Tweet or Slack Bryce to request updates.**
 
 # Lexicon
 
@@ -35,7 +35,7 @@ Event | Location | Original Dates | Status | Current Dates
 [Italian C++ Conference](https://www.italiancpp.org/event/itcppcon20) | Rome, Italy | 06-13 | [Virtual](https://www.italiancpp.org/event/itcppcon20/) | 06-13
 [CPPP](https://cppp.fr) | Paris, France | 06-22 to 06-23 | [Cancelled](https://cppp.fr/blog/canceled) | 06-22 to 06-23
 [C++ Russia Moscow](https://cppconf-moscow.ru/en) | Moscow, Russia | 04-27 to 04-28 | [Virtual](https://cppconf-moscow.ru/en/) | 06-29 to 07-02
-[Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | [Virtual](https://cpponsea.uk/news/cpp-on-sea-online.html) | 07
+[Cpp On Sea](https://cpponsea.uk) | Folkestone, UK | 06-07 to 06-10 | [Virtual](https://cpponsea.uk/news/cpp-on-sea-online.html) | 07-15 to 07-17
 [CppCon](https://cppcon.org) | Aurora, CO, US | 09-13 to 09-18 | [No Date Changes Yet](https://cppcon.org/cppcon-2020-call-for-submissions/) | 09-13 to 09-17
 [ADC++](https://adcpp.de/20) | Regensburg, Germany | 05-04 to 05-06 | [Postponed](https://adcpp.de/20) | 10-13 to 10-14
 [Qt World Summit](https://www.qt.io/qtws20) | Palm Springs, California, US | 05-12 to 05-14 | [Postponed](https://www.qt.io/blog/qt-world-summit-20-postponed-to-october) | 10-20 to 10-22
@@ -125,68 +125,74 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][A novel way to build SIMD library](https://www.reddit.com/r/cpp/comments/ghh63z/a_novel_way_to_build_simd_library/)
+## [3][How does GCC implement vector containers in C++? A blog series on diving deeper into the source code of vectors!](https://www.reddit.com/r/cpp/comments/gi2m0i/how_does_gcc_implement_vector_containers_in_c_a/)
+- url: https://www.reddit.com/r/cpp/comments/gi2m0i/how_does_gcc_implement_vector_containers_in_c_a/
+---
+Hi everyone!
+
+I've always loved reading source codes of the libraries I would use, and just recently - I started taking a look at how GCC implements some of the core methods for vector containers in C++. I'm happy to share the series of blogs (total 3 blog posts) which explain:
+
+1. The base struct (\_Vector\_base and \_Vector\_impl) and it's methods.
+2. Memory allocation and deallocation of vectors.
+3. What happens when a vector constructor is called?
+4. How are method functions like \`push\_back\`, \`pull\_back\` etc. implemented under the good?
+
+and more!
+
+Here are the links to the blog posts:
+
+1. [Understanding how Vectors work in C++ (Part-1): How does push\_back work?](https://krshrimali.github.io/How-Vectors-Work-in-C++-Part-1/)
+2. [Understanding how Vectors work in C++ (Part-2): What happens when you initialize a vector?](https://krshrimali.github.io/How-Vectors-Work-in-C++-Part-2/)
+3. [Understanding how Vectors work in C++ (Part-3): Diving deep into mostly used methods of Vectors](https://krshrimali.github.io/How-Vectors-Work-in-C++-Part-3/)
+
+I must confess that I'm still learning, and I am looking *actively* for any constructive feedback on my blogs. It has been a great learning for me, to be able to understand and share the design pattners used in the source code.
+## [4][TheLartians/modern-wasm-starter - Run C++ code on web! A starter template to easily create WebAssembly projects using type-safe C++ code and automatic TypeScript declarations.](https://www.reddit.com/r/cpp/comments/gi8rdd/thelartiansmodernwasmstarter_run_c_code_on_web_a/)
+- url: https://github.com/TheLartians/modern-wasm-starter
+---
+
+## [5][Enforcing locking with C++ nonmovable types](https://www.reddit.com/r/cpp/comments/ghr35m/enforcing_locking_with_c_nonmovable_types/)
+- url: https://nibblestew.blogspot.com/2020/05/enforcing-locking-with-c-nonmovable.html
+---
+
+## [6][Are coroutines and FSMs equivalent?](https://www.reddit.com/r/cpp/comments/gi6c1g/are_coroutines_and_fsms_equivalent/)
+- url: https://www.reddit.com/r/cpp/comments/gi6c1g/are_coroutines_and_fsms_equivalent/
+---
+I have started trying to understand C++20 coroutines,  and the subject seems rather complicated. I've never used coroutines in any language, but have implemented a great many finite state machines, and I get the impression that's all coroutines really are, but with some details hidden by compiler support.
+
+I guess FSMs have to explicitly switch on their previous state to continue execution, which might be considered ugly, but this seems a lot clearer than a whole bunch of automagically maintained state, new keywords and auto generated code to return a promise or whatever. Plus the business of implementing the promise or resumable or whatsit. Tutorial sites appear to be of the form "Hello, Coroutines. Don't panic!", followed by a long panic inducing text. This is not encouraging.
+
+Couldn't I implement a generator as a simple stateful class with a get_next() method? I could even throw in operator overloading to make it callable. I'm sure I'm missing something here...
+
+So I guess my question is: are coroutines and FSMs formally equivalent?
+## [7][Another inside look at a vector; Part 2 in the Don't Try This at Work series.](https://www.reddit.com/r/cpp/comments/gia5hz/another_inside_look_at_a_vector_part_2_in_the/)
+- url: https://unparalleledadventure.com/2020/05/12/dont-try-this-at-work-vector-pt-2/
+---
+
+## [8][A Common C/C++ Core Specification rev 2](https://www.reddit.com/r/cpp/comments/ghr5s5/a_common_cc_core_specification_rev_2/)
+- url: https://gustedt.wordpress.com/2020/05/11/a-common-c-c-core-specification-rev-2/
+---
+
+## [9][A novel way to build SIMD library](https://www.reddit.com/r/cpp/comments/ghh63z/a_novel_way_to_build_simd_library/)
 - url: https://github.com/eatingtomatoes/pure_simd
 ---
 
-## [4][Make LLVM fast again](https://www.reddit.com/r/cpp/comments/gh3huh/make_llvm_fast_again/)
-- url: https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html
+## [10][Are namespaces for taxonomies?](https://www.reddit.com/r/cpp/comments/ghyyp6/are_namespaces_for_taxonomies/)
+- url: https://www.reddit.com/r/cpp/comments/ghyyp6/are_namespaces_for_taxonomies/
+---
+Arthur O’Dwyer has one short [post](https://quuxplusone.github.io/blog/2020/01/07/namespaces-are-for-preventing-name-collisions/) about his opinions on the use of namespaces in C++. However, I find it hard to completely agree with his opinion. While namespaces can be abused, it is still perfectly reasonable to use them to create taxonomies.
+
+I will turn to the standard library for example. The well-known `std::vector` class, are not vectors in the math notion. It has never been an issue so far since the standard library doesn't have a class for vectors in linear algebra. However, there are proposals to add some basic linear algebra abilities to the standard library, their solution is to add it under `namespace std::math` (or something similar). Yet to avoid name collision, we have created taxonomies. If all current containers are in `namespace std::cont`, both can be called vector with a clear distinction. As the standard library becomes ever and ever larger, not all things can go into `std` directly, for instance, the new ranges algorithms and `std::chrono`.
+
+It is true that namespaces are there to avoid name collisions but in the process of trying to prevent it, the namespaces we create are usually taxonomies. The approach of splitting things early, for example, use `std::cont` even if a math vector does not exist allows the ability to add new things while maintaining a consistent style and avoid name collisions.
+
+[View Poll](https://www.reddit.com/poll/ghyyp6)
+## [11][TFProf: Profiling Cpp-Taskflow Programs through Visualization](https://www.reddit.com/r/cpp/comments/ghxuse/tfprof_profiling_cpptaskflow_programs_through/)
+- url: https://cpp-taskflow.github.io/tfprof/
 ---
 
-## [5]["The Complete Guide to return x;" - Arthur O'Dwyer [MUC++]](https://www.reddit.com/r/cpp/comments/gh4o78/the_complete_guide_to_return_x_arthur_odwyer_muc/)
-- url: https://www.youtube.com/watch?v=80TXwV_sdCY
+## [12][emplace_back vs push_back](https://www.reddit.com/r/cpp/comments/ghuh4k/emplace_back_vs_push_back/)
+- url: https://www.reddit.com/r/cpp/comments/ghuh4k/emplace_back_vs_push_back/
 ---
+I have ran into the issue of whether one should use emplace\_back to push data into a vector several times down. I documented my current views here [https://gumeo.github.io/post/emplace-back/](https://gumeo.github.io/post/emplace-back/)
 
-## [6][Linear algebra libraries (eigen, blaze,..)](https://www.reddit.com/r/cpp/comments/ghhf5j/linear_algebra_libraries_eigen_blaze/)
-- url: https://www.reddit.com/r/cpp/comments/ghhf5j/linear_algebra_libraries_eigen_blaze/
----
-Hi all. 
-I'm an embedded developer that uses eigen as the go to library for linear algebra things. It helped me a lot in the last years (bar terrible buil times).
-
-They have not released anything since 2k18 so I'm a bit worried about the project health.
-I've seen blaze but afaik it miss vectorization support on Arm targets.
-
-What do you think of linerar algebra landscape? Are there newer libraries I should consider?
-## [7][Why is removing Dead Stores in C++ hard](https://www.reddit.com/r/cpp/comments/ghmjpt/why_is_removing_dead_stores_in_c_hard/)
-- url: https://www.reddit.com/r/cpp/comments/ghmjpt/why_is_removing_dead_stores_in_c_hard/
----
-Hi all,
-
-In Herb Sutters talk (Herb Sutter: Quantifying Accidental Complexity: An Empirical Look at Teaching and Using C++ \[1\]) He mentioned MS have struggled to remove dead writes (/ dead stores) when optimising C++ code.
-
-Does anyone have any specific technical details on this problem and why its become a difficult problem to solve?
-
-\[1\] [https://www.youtube.com/watch?v=qx22oxlQmKc&amp;t=9s](https://www.youtube.com/watch?v=qx22oxlQmKc&amp;t=9s)
-## [8][cpp.chat : episode 72 - 'The Problem Is, They Expect Answers'](https://www.reddit.com/r/cpp/comments/ghbptz/cppchat_episode_72_the_problem_is_they_expect/)
-- url: https://cpp.chat/72/
----
-
-## [9][Accelerated C++ , Take Two?](https://www.reddit.com/r/cpp/comments/gh0fbn/accelerated_c_take_two/)
-- url: https://www.reddit.com/r/cpp/comments/gh0fbn/accelerated_c_take_two/
----
-Pearson [lists](https://www.pearson.com/us/higher-education/program/PGM2060260.html) the second edition of Koenig and Moo classic.
-
-The "buy" link leads to a [product page](https://www.informit.com/store/accelerated-c-plus-plus-practical-programming-by-example-9780135166789) that says:
-
-- Published May 2, 2020 by Addison-Wesley Professional
-- This product currently is not for sale
-
-There is the ISBN, but no cover image or table of contents or anything more specific. There is no other information anywhere. 
-
-Can we hope that this will eventually materialize?
-## [10][MemLock: Memory Usage Guided Fuzzing](https://www.reddit.com/r/cpp/comments/gh7z3w/memlock_memory_usage_guided_fuzzing/)
-- url: https://wcventure.github.io/MemLock/
----
-
-## [11][ImPlot: Advanced 2D Plotting for Dear ImGui](https://www.reddit.com/r/cpp/comments/ggnjvd/implot_advanced_2d_plotting_for_dear_imgui/)
-- url: https://github.com/epezent/implot
----
-
-## [12][Move fallback to normal Copy](https://www.reddit.com/r/cpp/comments/ghaapv/move_fallback_to_normal_copy/)
-- url: https://www.reddit.com/r/cpp/comments/ghaapv/move_fallback_to_normal_copy/
----
-Wanted to fallback to copy- if copy-move is not noexcept;
-Is that a correct workflow ?
-[https://godbolt.org/z/_usaKx](https://godbolt.org/z/_usaKx)
-
-Wanted to use some enable_if but I don't think it's viable ?
+Do you guys have any other views on this? Do you generally use emplace\_back and the how and why?

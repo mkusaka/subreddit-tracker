@@ -1,5 +1,47 @@
 # ruby
-## [1][ELI5: The dry Gems](https://www.reddit.com/r/ruby/comments/ghjhi4/eli5_the_dry_gems/)
+## [1][render_async 2.1.6 released](https://www.reddit.com/r/ruby/comments/gi8xuf/render_async_216_released/)
+- url: https://pragmaticpineapple.com/render-async-2-1-6-released/
+---
+
+## [2][TruffleRuby is now the first implementation besides CRuby to pass all of the 2180 #RubyGems' tests, no exclusions!](https://www.reddit.com/r/ruby/comments/giabdw/truffleruby_is_now_the_first_implementation/)
+- url: https://www.reddit.com/r/ruby/comments/giabdw/truffleruby_is_now_the_first_implementation/
+---
+[https://github.com/rubygems/rubygems/pull/2797#issuecomment-626150446](https://github.com/rubygems/rubygems/pull/2797#issuecomment-626150446)
+
+&amp;#x200B;
+
+Hopefully we are much much closer to running Rails. 
+## [3][sportdb-readers v1.0 - sport.db readers for leagues, seasons, clubs, match schedules and results, and more](https://www.reddit.com/r/ruby/comments/gi885t/sportdbreaders_v10_sportdb_readers_for_leagues/)
+- url: https://github.com/sportdb/sport.db/tree/master/sportdb-readers
+---
+
+## [4][I'm creating a Ruby on Rails 6 course. What would you like to see it it?](https://www.reddit.com/r/ruby/comments/gi9wcg/im_creating_a_ruby_on_rails_6_course_what_would/)
+- url: https://www.reddit.com/r/ruby/comments/gi9wcg/im_creating_a_ruby_on_rails_6_course_what_would/
+---
+I don't want to focus on the basic things like "what is Ruby, what is Rails, rails new, scaffolding, devise", - rather more advanced and interesting topics. What would you like to hear/learn more about?
+
+[View Poll](https://www.reddit.com/poll/gi9wcg)
+## [5][Books or video tutorials on how to use dry-CLI?](https://www.reddit.com/r/ruby/comments/gi6jlf/books_or_video_tutorials_on_how_to_use_drycli/)
+- url: https://www.reddit.com/r/ruby/comments/gi6jlf/books_or_video_tutorials_on_how_to_use_drycli/
+---
+Looking to expand the things I know about dry in ruby, starting with dry-CLI. Any direction would be of help. Thanks.
+## [6][Why hasn't Opal Native taken off?](https://www.reddit.com/r/ruby/comments/ghs1zm/why_hasnt_opal_native_taken_off/)
+- url: https://www.reddit.com/r/ruby/comments/ghs1zm/why_hasnt_opal_native_taken_off/
+---
+https://github.com/zetachang/opal-native
+
+While frameworks like hyperstack and volt let you write ruby on the frontend using opal, there seems to me to exist a use case to develop mobile apps quickly from a rails (or similar) backend, using only ruby on the backend and mobile fronted. Any ideas why this hasn't taken off? Currently if we want to develop mobile apps using ruby we have to start from scratch with RubyMotion. A monolithic full-ruby stack sounds very appealing to me.
+
+Edit: maybe I should have used a different title. I’m not so fussed about this Opal Native repo in particular, rather I’m wondering why there isn’t a ruby framework to develop cross platform apps. There’s clearly a need for it considering what’s going on in the JS world, but ruby has significant advantages over JS, one of them being rapid web app development.
+## [7][Adding an exclamation point to each element in an array](https://www.reddit.com/r/ruby/comments/ghve61/adding_an_exclamation_point_to_each_element_in_an/)
+- url: https://www.reddit.com/r/ruby/comments/ghve61/adding_an_exclamation_point_to_each_element_in_an/
+---
+Hi!
+
+I'm trying to add an exclamation point to each element in an array. Not to `.join` them, but to literally add ! to each element. For example, my array is `["a","b","c"]` and I want it to be `["a!", "b!", "c!"]`
+
+Is there a Ruby enumerable to do this? I've surfed the web but it keeps leading me back to `bang`, which isn't what I want.
+## [8][ELI5: The dry Gems](https://www.reddit.com/r/ruby/comments/ghjhi4/eli5_the_dry_gems/)
 - url: https://www.reddit.com/r/ruby/comments/ghjhi4/eli5_the_dry_gems/
 ---
 I keep seeing the dry gems pop up and have read the documentation for them so I have a loose understanding of what they do.
@@ -7,7 +49,7 @@ I keep seeing the dry gems pop up and have read the documentation for them so I 
 I was hoping someone could flesh that understanding out for me a bit. Specifically, what is the use case for reaching for the set of dry gems? When do you reach for them and why? Those sorts of questions and probably more I'm not even capable of conceptualising to the point of asking them.
 
 Thanks!
-## [2][Ruby on Rails: Add `gem 'sqlite3'` to your Gemfile](https://www.reddit.com/r/ruby/comments/ghe8xd/ruby_on_rails_add_gem_sqlite3_to_your_gemfile/)
+## [9][Ruby on Rails: Add `gem 'sqlite3'` to your Gemfile](https://www.reddit.com/r/ruby/comments/ghe8xd/ruby_on_rails_add_gem_sqlite3_to_your_gemfile/)
 - url: https://www.reddit.com/r/ruby/comments/ghe8xd/ruby_on_rails_add_gem_sqlite3_to_your_gemfile/
 ---
  
@@ -119,44 +161,7 @@ source '[https://rubygems.org](https://rubygems.org)'
 `# Windows does not include zoneinfo files, so bundle the tzinfo-data gem`
 
 `gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]`
-## [3][Assignments in Conditional Expressions](https://www.reddit.com/r/ruby/comments/ghfrau/assignments_in_conditional_expressions/)
-- url: https://julienchien.com/posts/assignments-in-conditional-expressions/
----
-
-## [4][What is a good Ruby book for an experienced non-Ruby developer?](https://www.reddit.com/r/ruby/comments/gh7mhb/what_is_a_good_ruby_book_for_an_experienced/)
-- url: https://www.reddit.com/r/ruby/comments/gh7mhb/what_is_a_good_ruby_book_for_an_experienced/
----
-Hi all. I was wondering if anyone could help provide some suggestions for a good Ruby book. I'm an experienced developer and have mostly worked in Java and Python over the last 10 years. Now I'm learning Ruby, but I'm finding that the online tutorials only cover the surface level syntax. I'm looking for a book that does a quick but comprehensive overview of the basics, but also focuses on teaching how to write good Ruby code and apply Ruby-isms and good Ruby conventions. Also, I'm not looking to learn Rails for now, though I'm open to a book that covers it at a high level.
-
-Here are the three I'm debating between so far:
-
-1. Practical Object-Oriented Design: An Agile Primer Using Ruby (2nd Edition)
-2. Eloquent Ruby (1st Edition)
-3. The Well-Grounded Rubyist (3rd Edition)
-
-Do folks have any recommendations for which of these would be good for someone who has a lot of experience in other languages but is having trouble grokking Ruby? Thanks!
-## [5][RSS Search Engine](https://www.reddit.com/r/ruby/comments/ghigs0/rss_search_engine/)
+## [10][RSS Search Engine](https://www.reddit.com/r/ruby/comments/ghigs0/rss_search_engine/)
 - url: https://github.com/davidesantangelo/feedirss-api
 ---
 
-## [6][Ruby client for Factom blockchain](https://www.reddit.com/r/ruby/comments/gh4dlb/ruby_client_for_factom_blockchain/)
-- url: https://github.com/kompendium-ano/factom-ruby-client
----
-
-## [7][football.db gem family (2020.5.10 update) - zero-config (pre-packaged) open football datasets / catalogs for countries, leagues &amp; cups, clubs and more](https://www.reddit.com/r/ruby/comments/gh5wou/footballdb_gem_family_2020510_update_zeroconfig/)
-- url: https://github.com/sportdb/football.db
----
-
-## [8][Book with exercises](https://www.reddit.com/r/ruby/comments/gh6ua5/book_with_exercises/)
-- url: https://www.reddit.com/r/ruby/comments/gh6ua5/book_with_exercises/
----
-Hello,
-I am currently trying to learn ruby with "learning Ruby" by P.Cooper, however i am missing the format of books that have exercises at the end of chapters, in order to consolidate learning of the content of the chapter.Is there any such book for Ruby?
-## [9][[Another] An alternative Ruby implementation by Rust.](https://www.reddit.com/r/ruby/comments/ggy0ew/another_an_alternative_ruby_implementation_by_rust/)
-- url: https://github.com/sisshiki1969/ruruby
----
-
-## [10][Project on Software development.](https://www.reddit.com/r/ruby/comments/gh0whe/project_on_software_development/)
-- url: https://www.reddit.com/r/ruby/comments/gh0whe/project_on_software_development/
----
-Looking forward for some software development project to work on.

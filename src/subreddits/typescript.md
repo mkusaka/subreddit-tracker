@@ -22,154 +22,149 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Return type of a function that takes any number of functions as argument, and return the array of returned values](https://www.reddit.com/r/typescript/comments/gi84kp/return_type_of_a_function_that_takes_any_number/)
-- url: https://www.reddit.com/r/typescript/comments/gi84kp/return_type_of_a_function_that_takes_any_number/
----
-Not sure if my title makes sense, here is my problem:
-
-I have a function that runs multiple functions concurrently, and returns the array of results (ignore the absence of promises in what follows, I'm using coroutines).
-
-    parrallel(() =&gt; 'a', () =&gt; 1, () =&gt; [0, 1, 2]);
-    // Returns ['a', 1, [0, 1, 2]]
-
-As of now, I'm using the following type declaration that handles calling this function with up to 7 arguments while keeping type-safety:
-
-    type Fn&lt;T&gt; = () =&gt; T;
-    export function parallel&lt;T&gt;(fcts: Fn&lt;T&gt;[]): T[]; 
-    export function parallel&lt;T&gt;(fcts: [Fn&lt;T&gt;]): [T]; 
-    export function parallel&lt;T, U&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;]): [T, U]; 
-    export function parallel&lt;T, U, V&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;]): [T, U, V]; 
-    export function parallel&lt;T, U, V, W&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;]): [T, U, V, W]; 
-    export function parallel&lt;T, U, V, W, X&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;, Fn&lt;X&gt;]): [T, U, V, W, X]; 
-    export function parallel&lt;T, U, V, W, X, Y&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;, Fn&lt;X&gt;, Fn&lt;Y&gt;]): [T, U, V, W, X, Y]; 
-    export function parallel&lt;T, U, V, W, X, Y, Z&gt;(fcts: [Fn&lt;T&gt;, Fn&lt;U&gt;, Fn&lt;V&gt;, Fn&lt;W&gt;, Fn&lt;X&gt;, Fn&lt;Y&gt;, Fn&lt;Z&gt;]): [T, U, V, W, X, Y, Z];
-
-I did not find any way to find a type declaration that work for any number of arguments, is it even possible ?
-## [3][Get a better grip on TS at JSNation, the largest remote JavaScript conf](https://www.reddit.com/r/typescript/comments/giau0e/get_a_better_grip_on_ts_at_jsnation_the_largest/)
-- url: https://sfree.life/jsnation-javascript-live-conference-2020-free/
+## [2][Announcing TypeScript 3.9](https://www.reddit.com/r/typescript/comments/gilb3e/announcing_typescript_39/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9/
 ---
 
-## [4][Polymorphic TypeScript - Function overloading with rest parameters](https://www.reddit.com/r/typescript/comments/gi7ljb/polymorphic_typescript_function_overloading_with/)
-- url: https://tane.dev/2020/05/polymorphic-typescript-function-overloading-with-rest-parameters/
+## [3][Can someone explain the need for an awaited type?](https://www.reddit.com/r/typescript/comments/gistgu/can_someone_explain_the_need_for_an_awaited_type/)
+- url: https://www.reddit.com/r/typescript/comments/gistgu/can_someone_explain_the_need_for_an_awaited_type/
+---
+Title. It seems like the current type definition of the promise works as expected for all of my applications. What problem does `awaited T` solve?
+
+I've read through the issue, and it still isn't making very much sense. Await seems to correctly resolve these types to what is expected, at least in my experience.
+
+Any help would be appreciated, thank you!
+## [4][Anyway to have a any type but still force the compiler to give the 'could be undefined' warning?](https://www.reddit.com/r/typescript/comments/giyaao/anyway_to_have_a_any_type_but_still_force_the/)
+- url: https://www.reddit.com/r/typescript/comments/giyaao/anyway_to_have_a_any_type_but_still_force_the/
 ---
 
-## [5][Prototope - TailwindCSS-inspired CSS-in-JS library](https://www.reddit.com/r/typescript/comments/gi5zen/prototope_tailwindcssinspired_cssinjs_library/)
-- url: https://github.com/Isotope-js/isotope/tree/master/packages/prototope
+## [5][I am working on a "node typescript architecture" project which suggests a structure for Node TS apps. It's WIP but any feedback is appreciated.](https://www.reddit.com/r/typescript/comments/gixr3e/i_am_working_on_a_node_typescript_architecture/)
+- url: https://www.reddit.com/r/typescript/comments/gixr3e/i_am_working_on_a_node_typescript_architecture/
 ---
+This is still in quite an early stage, and the docs are very incomplete, but I've been working on a suggested Node Typescript Architecture example over on Github. It is based on what I've picked up over the last two or three years of writing Node apps.
 
-## [6][Whats the benefit of declaring a functions argument types as ({arg1, arg2} : {arg1: string, arg2: number}) rather than just ({arg1: string, arg2: number})](https://www.reddit.com/r/typescript/comments/ghwggh/whats_the_benefit_of_declaring_a_functions/)
-- url: https://www.reddit.com/r/typescript/comments/ghwggh/whats_the_benefit_of_declaring_a_functions/
+The idea is, as concisely as I can make it: use IOC in your domain code, and functional programming to replace a DI container. Write a set of adapters that partially apply you domain functions at runtime to provide 'context'. These adapters can wrap the function to implement things like transactions, resource spinup / teardowns etc.
+
+The project is here: [https://github.com/jbreckmckye/node-typescript-architecture](https://github.com/jbreckmckye/node-typescript-architecture)
+
+There is example code which implements a simple app using Postgres (with transactions) and RabbitMQ events, and Express.js bindings. It is runnable if you have Docker installed (at least Docker for Mac, I have no idea about Docker for windows).
+
+There is also the beginning of a gitbook (but it's still very incomplete).
+
+Any feedback would be invaluable.
+## [6][Is using an assertion function to validate a number fits a range valid use? Is there a library of assertion functions?](https://www.reddit.com/r/typescript/comments/gisvg1/is_using_an_assertion_function_to_validate_a/)
+- url: https://www.reddit.com/r/typescript/comments/gisvg1/is_using_an_assertion_function_to_validate_a/
 ---
-Why did the typescript programmers add this complexity to the language?In my opinion, being able to declare a function like
+... so, I'm really new to TypeScript, but I was thinking, there's not really a way to validate a numerical range in typescript directly (without using something like a potentially massive union) ..  but is there a reason why you shouldn't use assertion function to validate that a number fits a specific range?  My current use case is just to validate that a number is zero or positive.  
 
-`const func = ({arg1: string, arg2: number}) =&gt; {}`
-
-is way cleaner and more intuitive, so why would they make it the default that to declare a functions argument types you would have to do something like
-
-`const func = ({arg1, arg2} : {arg1: string, arg2: number}) =&gt; {}`
-## [7][mockzilla: Yet another mocking library for TypeScript and jest.](https://www.reddit.com/r/typescript/comments/ghv6q5/mockzilla_yet_another_mocking_library_for/)
-- url: https://www.reddit.com/r/typescript/comments/ghv6q5/mockzilla_yet_another_mocking_library_for/
+Secondly, does anyone out here know of any useful libraries of assertion functions?  This seems like a feature that could be quite useful to use to build up quite a suite of things with.
+## [7][ncdc - a typescript consumer driven contract tool](https://www.reddit.com/r/typescript/comments/giiukv/ncdc_a_typescript_consumer_driven_contract_tool/)
+- url: https://www.reddit.com/r/typescript/comments/giiukv/ncdc_a_typescript_consumer_driven_contract_tool/
 ---
-I'm well aware that there are many mocking libraries out there, but I went ahead and created another one (for use with jest): [https://lusito.github.io/mockzilla/](https://lusito.github.io/mockzilla/)
+I think I've made some good progress on my first npm package, [ncdc](https://github.com/tamj0rd2/ncdc). ncdc (node cdc) is a tool that takes a consumer contract (written in yaml) and tests the specified endpoints against a producer. You can also run a single command to mock those endpoints.
 
-My main focus was to be able to easily write and verify mocks of a deeply nested API like the webextensions browser object.
+The point of using this tool is to ensure that each endpoint you use in development is called in the same way and responds with the same data that you expect from your live environment. There's not much point in testing against mock APIs that don't strongly resemble your live APIs.
 
-In webextensions you would have code like this one:
+It easily integrates with typescript to prevent you from having to write JSON schemas for your already defined Typescript interfaces, types and enums. With this, you're guaranteed that your code, mock API endpoints and real endpoints are all consistent with each other.
 
-    browser.webRequest.onBeforeRedirect.addListener(callback, filter);
+I made this after struggling for a while with another CDC tool we were using at work. It wasn't great at handling optional fields, so making a tool that can validate using JSON schemas without us having to basically duplicate our contracts seemed like a great solution.
 
-But you don't have access to an actual implementation of this API, which is why some libraries already didn't work for my use-case. Other libraries would require a lot of typing and I loathe that.
+https://github.com/tamj0rd2/ncdc
 
-With [mockzilla](https://lusito.github.io/mockzilla), I can now just write a simple line like this:
-
-    mockBrowser.webRequest.onBeforeRedirect.addListener.expect(listener, expect.anything());
-
-This contains types for auto-completion and type-safety. It is auto-verified, so no need to call verify() at the end of a test.
-
-Another possibility is to assimilate an actual instance to become partially ~~borg~~ mock:
-
-    const myInstance = new MyClass();
-    const mock = mockAssimilate(myInstance, "myInstance", {
-        mock: ["runA"],
-        whitelist: ["run", "someProp"],
-    });
-    mock.runA.expect(expect.anything(), true).andReturn(true);
-
-mockAssimilate works with types as well, even on private methods.
-
-There are a few more things included. Take a look at the documentation.
-
-I am still working on the API design, looking for some feedback and ideas.
-## [8][Castellated: An Adaptable, Robust Password Storage System for Node.js](https://www.reddit.com/r/typescript/comments/ghx52r/castellated_an_adaptable_robust_password_storage/)
-- url: http://www.wumpus-cave.net/2020/05/11/castellated-an-adaptable-robust-password-storage-system-for-node-js/
+https://www.npmjs.com/package/ncdc
+## [8][Noob question but how would you type a code like this?](https://www.reddit.com/r/typescript/comments/gipmo7/noob_question_but_how_would_you_type_a_code_like/)
+- url: https://www.reddit.com/r/typescript/comments/gipmo7/noob_question_but_how_would_you_type_a_code_like/
 ---
+I'm using Inertia.js which is why I even needed this snippet. How can I type the hook so it works just like `useState`?
 
-## [9][Question about the Pick utility type](https://www.reddit.com/r/typescript/comments/ghwpyr/question_about_the_pick_utility_type/)
-- url: https://www.reddit.com/r/typescript/comments/ghwpyr/question_about_the_pick_utility_type/
----
-I've been using utility types like [Pick](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktk) and [Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittk) for some time now to reduce type repetition. I just stumbled across a scenario that struck me as odd though and would appreciate some explanation.
+```
+import { useEffect, useRef, useState } from "react";
 
-Say I have an interface like so:
+export default function useStateIfMounted(initialState: any) {
+    const isMounted = useRef(true);
 
-    interface ComponentState {
-       user?: User;
-       loading: boolean;
-       error: Error | null;
+    useEffect(() =&gt; {
+        return () =&gt; {
+            isMounted.current = false;
+        };
+    }, []);
+
+    const [state, setState] = useState(initialState);
+
+    function setStateIfMounted(newState: any) {
+        if (isMounted.current) {
+            setState(newState);
+        }
     }
 
-And then I want to define a discriminated union that references properties from that interface:
-
-    type ComponentActionTypes = 
-    | {
-        type: ComponentActions.SET_USER,
-        payload: Pick&lt;ComponentState, 'user'&gt; //I would expect User | undefined
-      }
-    | {
-       type: ComponentActions.SET_LOADING,
-       payload: Pick&lt;ComponentState, 'loading'&gt; //I would expect boolean
-      }
-    | {
-       type: ComponentActions.SET_ERROR,
-       payload: Pick&lt;ComponentState, 'error'&gt; //I would expect Error | null
-      }
-
-I would expect the `payload` in each of the above `ComponentActionTypes` scenarios to conform to whatever the property type is for the `ComponentState` interface but the compiler interprets each of the payloads as objects with a key being that of the respective interface property and the value being the respective type. So the `payload` for `ComponentActionTypes` type `ComponentActions.SET_USER` is actually
-
-    { user: User | undefined } //I want action.payload to be User | undefined
-
-Clearly I misunderstood how `Pick` works. Any suggestions on how I can achieve what I'm after without having to just replicate each of the types defined in the `ComponentState` interface?
-
-&amp;#x200B;
-
-Much appreciated
-## [10][Make a defined interface property optional](https://www.reddit.com/r/typescript/comments/ghwcjb/make_a_defined_interface_property_optional/)
-- url: https://www.reddit.com/r/typescript/comments/ghwcjb/make_a_defined_interface_property_optional/
+    return [state, setStateIfMounted];
+}
+```
+## [9][Question about conditional types.](https://www.reddit.com/r/typescript/comments/gino4p/question_about_conditional_types/)
+- url: https://www.reddit.com/r/typescript/comments/gino4p/question_about_conditional_types/
 ---
-I have type:
+I'm trying to write a function for automatic handling of HTTP responses of certain response codes. Though, the context doesn't matter. Essentially, I have a type with some kind of discriminator, named `code`. If code is equal to a given value, call one function, otherwise call another function. The hard part is getting the called functions to have the correct types. Explaining it is pretty hard, but I think the code will do the question more justice. 
 
-\`\`\`ts  
-interface INameType {  
-   name: string;  
-   typeId: number  
-   ...
+I've written what I'd expect to work, but I can't get it to compile. Interestingly, Typescript infers the types correctly for the parameters to the passed-in functions. Enough talk. The code: 
 
-}
+    const ifOne = &lt;R extends {code: 1 | 2 | 3 }&gt;(
+        param: R, 
+        oneHandler: (result: R extends {code : 1} ? R : never) =&gt; void,
+        otherHandler: (result: R extends {code : 1} ? never : R) =&gt; void,
+    ) =&gt; {
+        if (param.code === 1) {
+            oneHandler(param);
+        } else {
+            otherHandler(param);
+        }
+    }
+    
+    type Type = {
+        code: 1;
+        value: "Hello";
+    } | {
+        code: 2;
+        value: "Red";
+    } | {
+        code: 3;
+        value: "Dit";
+    }
+    
+    const param: Type = {
+        code: 2,
+        value: "Red"
+    };
+    
+    ifOne&lt;Type&gt;(param, 
+        one =&gt; {
+    
+        },
+        other=&gt; {
+            // I'd expect this function to be called. 
+        }
+    );
 
-\`\`\`
+So If I write this in vscode, the types of `one` and `other` are correctly inferred. It knows `one` is of type `{code: 1, value: "Hello"}`, and `other` is of  type `{code: 2, value: "Red"} | {code: 3, value: "Dit"}`. But, the compilation error is in the function `ifOne`. It refuses to call `oneHandler` and `twoHandler` with the parameter `param`. With the error: 
 
-And I want to have a second type which takes all of the first interface properties but makes the ones I specify optional, like: 
+" Argument of type 'R' is not assignable to parameter of type 'R extends { code: 1; } ? R : never'.
+  Type '{ code: 1 | 2 | 3; }' is not assignable to type 'R extends { code: 1; } ? R : never'"
 
-\`\`\`ts  
-interface INameType {  
-   name: string;  
-   typeId?: number  
-   ...
+Perhaps this is not possible, in which case I can find another way to do what I need, but I'm curious if I'm missing something obvious here, or if this is something Typescript doesn't support. 
 
-}
+Thanks
+## [10][Noob question about type declaration files: a package I'm writing a file for default exports an object literal, how do I declare that in the .d.ts file?](https://www.reddit.com/r/typescript/comments/gihrne/noob_question_about_type_declaration_files_a/)
+- url: https://www.reddit.com/r/typescript/comments/gihrne/noob_question_about_type_declaration_files_a/
+---
+Declaring it as a class or function works but adds extra props and methods to the imported object (such as `arguments`, `prototype` etc). I'd like it where the imported object is used like so:
 
-\`\`\`  
-How can I accomplish this? Thank you
-## [11][TypeScript alias for asserting value type for keyof](https://www.reddit.com/r/typescript/comments/ghx4tg/typescript_alias_for_asserting_value_type_for/)
-- url: https://stackoverflow.com/questions/61739893/typescript-alias-for-asserting-value-type-for-keyof
+    import foo from 'fooLibrary';
+
+    foo.validMethod();
+
+So it has 'static' methods but is not written out like an actual class. I can't export an object literal in the .d.ts file. Exporting it as an interface doesn't work as the IDE complains that `foo` is being used as a value when it should be used as a type. Thanks in advance to any respondents.
+
+EDIT: I *think* I've worked it out. Just need to use and approach `declare module 'fooLibrary'` like it is an object literal from the start. So `declare module 'fooLibrary' { export function validMethod(): string; }` would produce the desired result above.
+## [11][Unionize and Objectify: a trick to bring conditional types to objects](https://www.reddit.com/r/typescript/comments/gif63z/unionize_and_objectify_a_trick_to_bring/)
+- url: https://effectivetypescript.com/2020/05/12/unionize-objectify/
 ---
 

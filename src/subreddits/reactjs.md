@@ -84,98 +84,59 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Interactive pay-card using react hooks](https://www.reddit.com/r/reactjs/comments/gi1rsc/interactive_paycard_using_react_hooks/)
+## [3][I created a set of Free React UI Templates &amp; Components (52 UI Components, 7 Landing Pages, 8 Inner Pages, Fully Responsive) for creating Beautiful Landing Pages easily](https://www.reddit.com/r/reactjs/comments/gih6xv/i_created_a_set_of_free_react_ui_templates/)
+- url: https://v.redd.it/lkps72rjndy41
+---
+
+## [4][Create a stunning Documentation with Docusaurus](https://www.reddit.com/r/reactjs/comments/gixh0u/create_a_stunning_documentation_with_docusaurus/)
+- url: https://react-open-source-topics-and-tutorials.s3.eu-central-1.amazonaws.com/docusaurus.htm
+---
+
+## [5][React Router v6 migrated to TypeScript](https://www.reddit.com/r/reactjs/comments/gixv6s/react_router_v6_migrated_to_typescript/)
+- url: https://github.com/ReactTraining/react-router/releases/tag/v6.0.0-alpha.4
+---
+
+## [6][Interactive pay-card using react hooks](https://www.reddit.com/r/reactjs/comments/gi1rsc/interactive_paycard_using_react_hooks/)
 - url: https://v.redd.it/3asa3gccr8y41
 ---
 
-## [4][A VS-Code extension to refactor HTML-Tags with style-props to styled components](https://www.reddit.com/r/reactjs/comments/ghmrbg/a_vscode_extension_to_refactor_htmltags_with/)
-- url: https://raw.githubusercontent.com/Agreon/styco/master/demo.gif
+## [7][The hidden magic of Main Thread Scheduling](https://www.reddit.com/r/reactjs/comments/givphn/the_hidden_magic_of_main_thread_scheduling/)
+- url: https://dev.to/nielsen-tlv/the-hidden-magic-of-main-thread-scheduling-16i9
 ---
 
-## [5][7 Amazing HTML Tricks](https://www.reddit.com/r/reactjs/comments/gi8aul/7_amazing_html_tricks/)
-- url: https://react-open-source-resources-and-articles.s3.ca-central-1.amazonaws.com/html-tricks.htm
+## [8][Insert Sort Algorithm Visualization](https://www.reddit.com/r/reactjs/comments/gipkw2/insert_sort_algorithm_visualization/)
+- url: https://v.redd.it/3vce4vpkvfy41
 ---
 
-## [6][Next.js Building a Car Trader App #3: Filters Page](https://www.reddit.com/r/reactjs/comments/gi8gxk/nextjs_building_a_car_trader_app_3_filters_page/)
-- url: https://www.youtube.com/watch?v=b7XLYkqJ5uY&amp;feature=share
+## [9][Webpage works in chrome but not in IE](https://www.reddit.com/r/reactjs/comments/gixf56/webpage_works_in_chrome_but_not_in_ie/)
+- url: https://www.reddit.com/r/reactjs/comments/gixf56/webpage_works_in_chrome_but_not_in_ie/
+---
+I have an application made of different react components. One webpage of the application I'm trying to open is showing a blank page in IE (VERSION 11)  but the same webpage when I open in chrome is showing up fine. I don't understand what the issue is.
+
+I'm using web pack library as well.
+
+Edit: package.json has es6: true under "env" object
+## [10][I created an Electron React app. SVG Splash - a beautifully simple SVG painting application.](https://www.reddit.com/r/reactjs/comments/gixbvr/i_created_an_electron_react_app_svg_splash_a/)
+- url: https://www.svgsplash.com
 ---
 
-## [7][Why you should use MobX State Tree in your next React project](https://www.reddit.com/r/reactjs/comments/gi7n08/why_you_should_use_mobx_state_tree_in_your_next/)
-- url: https://dev.to/lloyds-digital/why-you-should-use-mobx-state-tree-in-your-next-react-project-l3
+## [11][When to use React](https://www.reddit.com/r/reactjs/comments/giwm9u/when_to_use_react/)
+- url: https://www.reddit.com/r/reactjs/comments/giwm9u/when_to_use_react/
 ---
+I hope this is the right place this post mostly focuses on gatsby and NextJS.
 
-## [8][useRef as a toggler ? No rerender. Your opinion on that ?](https://www.reddit.com/r/reactjs/comments/gi8kkh/useref_as_a_toggler_no_rerender_your_opinion_on/)
-- url: https://www.reddit.com/r/reactjs/comments/gi8kkh/useref_as_a_toggler_no_rerender_your_opinion_on/
+I've been looking into frameworks to redo my personal website which currently is powered by just HTML and CSS and at most 200 lines of JS. I've been getting a bit into react (through gatsby and NextJS) and even after just coding up a small little demo I'm just devastated by the performance overhead react / webpack generates. It might be because I'm still very bad at writing react components, but something feels wrong when I audit a site with Lighthouse and I get a performance rating of 70. Main Thread Execution time sits at 4 seconds already and when looking at bigger sites that use these technologies auditing them yields even worse stats.
+
+Am I not meant to audit a website built on react through Lighthouse? I always focused to getting 100 points on performance or at least as close as possible to it on my website. I really think that the link preloading of both frameworks are amazing, building websites through components seems super intuitive and some other things.
+
+How would one approach this? Is it wrong for me to use React to build a simple website with little Javascript interaction, is it truly only meant for apps when you really want to see a difference? And especially how would I go about accurately auditing a react based website?
+## [12][Most affordable platform for hosting React app with Postgres backend?](https://www.reddit.com/r/reactjs/comments/giq0ai/most_affordable_platform_for_hosting_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/giq0ai/most_affordable_platform_for_hosting_react_app/
 ---
-Here's a hook that takes a component's ref, and has its own boolean ref  (consider current = isOpen).
+My family owns a small business and is finally able to do curbside pickup. My dad asked me if I could make him a site that's basically an online store without actually paying - all it will do is display items (picture, price, etc.) and put items in a cart. For checkout, it will send the store an email of the items for pickup and a confirmation page for the customer.
 
-     function useHideShow(ref) {
-        let { current } = useRef(false)
-        function hideShow() {
-        	if (current) {
-    	    current = false
-    	    ref.current.style.display = 'none'
-    	} else {
-    	    current = true
-    	    ref.current.style.display = 'block'
-            }
-        }
-        return hideShow
-    }
+I've been exploring AWS Amplify to deploy and host this, but I've heard AWS can get pretty expensive. I don't anticipate many people to be logging into this site, but I want to stay pretty budget if possible.
 
-How to use it :
+I'm stuck on a platform that can hold a good number of images, have a database for items, and also host the frontend. I've made React apps with a postgres backend before and it was easy to make changes and develop locally since I could just run an express server in the back while making changes to my app. 
 
-    const Dropdown = () =&gt; {
-        const down = useRef()
-        const hideShow = useHideShow(down)
-        return (
-    	&lt;div&gt;
-    	    &lt;div id="drop" onClick={hideShow}&gt;Drop&lt;/div&gt;
-    	    &lt;div id="down" ref={down}&gt;Down&lt;/div&gt;
-    	&lt;/div&gt;
-        )
-    }
-
-Is it bad practice to interact with the dom like this ? What's your opinion on this hook ?
-## [9][Interactive animations framer motion](https://www.reddit.com/r/reactjs/comments/gi4znl/interactive_animations_framer_motion/)
-- url: https://v.redd.it/61mt4qqrt9y41
----
-
-## [10][Too many Udemy courses?](https://www.reddit.com/r/reactjs/comments/giatrz/too_many_udemy_courses/)
-- url: https://www.reddit.com/r/reactjs/comments/giatrz/too_many_udemy_courses/
----
-Udemy is having a promo at the moment and wanted to get a react course. 
-
-Looked on the sub which ones were most recommended and there looked to be a tie between Stephen Grider and Maximilian Schwarzmüller.
-
-Leaning towards Grider right now but both look good. 
-
-Anyway, my question is if getting 3 courses right off the bat is overkill, wanted to get them now during the promo. These are the ones that I was looking at, wanted a base for react but also one to help me connect node and react in a proper manner. Have already played around with create-react-app and published it on Heroku and got it working but need more meat on my bones and learn how to properly do things. 
-
-With my own project, I got stuck when I needed to create user sign up and log in and do it properly. 
-
- [https://www.udemy.com/course/react-the-complete-guide-incl-redux/](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 
-
- [https://www.udemy.com/course/node-with-react-fullstack-web-development/](https://www.udemy.com/course/node-with-react-fullstack-web-development/) 
-
- [https://www.udemy.com/course/react-redux/](https://www.udemy.com/course/react-redux/)
-## [11][#3 Styling the NavBar | react-redux-firebase](https://www.reddit.com/r/reactjs/comments/giatcd/3_styling_the_navbar_reactreduxfirebase/)
-- url: https://youtu.be/v2Grz2MHAnw
----
-
-## [12][How do I make a request with each new URL change?!](https://www.reddit.com/r/reactjs/comments/giarft/how_do_i_make_a_request_with_each_new_url_change/)
-- url: https://www.reddit.com/r/reactjs/comments/giarft/how_do_i_make_a_request_with_each_new_url_change/
----
-Hello,
-
-This seems like such an easy thing, but I have not been able to figure it out for the past couple of days. 
-
-I want to make a HTTP request each time the user lands at a URL/view, say '/forum-messages', so they can get the latest messages. However, I only want it to be called once when they are on this view. 
-
-I know I can use useEffect and only have it be called once, but the problem is it's only being called once during the entire life of the application session. If I add the request outside of useEffect, then obviously it's called every single time the app refreshes. 
-
-So how do you make a call only once during the views life, but each time it's visited by the user (each NEW visit)?
-
-&amp;#x200B;
-
-Any help would be greatly aprpeciated!
+Any guidance or suggestion is much appreciated!

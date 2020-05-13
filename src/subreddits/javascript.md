@@ -85,71 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][OAuth 2.0 implementation for various providers in one place.](https://www.reddit.com/r/javascript/comments/gi40mo/oauth_20_implementation_for_various_providers_in/)
+## [3][Tiny (1kb less) but very powerful React Google Map](https://www.reddit.com/r/javascript/comments/gixknp/tiny_1kb_less_but_very_powerful_react_google_map/)
+- url: https://github.com/realadvisor/rgm
+---
+
+## [4][Announcing TypeScript 3.9](https://www.reddit.com/r/javascript/comments/gila7n/announcing_typescript_39/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9/
+---
+
+## [5][Kite launches a free ai powered autocomplete for JavaScript](https://www.reddit.com/r/javascript/comments/giffcx/kite_launches_a_free_ai_powered_autocomplete_for/)
+- url: https://venturebeat.com/2020/05/12/kite-pro-ai-powered-python-javascript-code-completions/
+---
+
+## [6][The Deno Handbook: a concise introduction to Deno](https://www.reddit.com/r/javascript/comments/gif1u8/the_deno_handbook_a_concise_introduction_to_deno/)
+- url: https://flaviocopes.com/deno/
+---
+
+## [7][NPM 7 Introduction](https://www.reddit.com/r/javascript/comments/gilf0d/npm_7_introduction/)
+- url: https://blog.npmjs.org/post/617484925547986944/npm-v7-series-introduction
+---
+
+## [8][About reduce in JavaScript (es5 &amp; es6 methods done with reduce)](https://www.reddit.com/r/javascript/comments/gixc76/about_reduce_in_javascript_es5_es6_methods_done/)
+- url: https://herebeseaswines.net/essays/2020-05-13-about-reduce-in-javascript
+---
+
+## [9][micro html is a ~2.5K lighterhtml subset to build declarative and reactive UI via template literals tags.](https://www.reddit.com/r/javascript/comments/gix6bi/micro_html_is_a_25k_lighterhtml_subset_to_build/)
+- url: https://github.com/WebReflection/uhtml
+---
+
+## [10][OAuth 2.0 implementation for various providers in one place.](https://www.reddit.com/r/javascript/comments/gi40mo/oauth_20_implementation_for_various_providers_in/)
 - url: https://github.com/atulmy/oauth
 ---
 
-## [4][ESLint v7.0.0 released](https://www.reddit.com/r/javascript/comments/ghpnh5/eslint_v700_released/)
-- url: https://eslint.org/blog/2020/05/eslint-v7.0.0-released
+## [11][Unified storage interface for files from any provider including AWS, Azure, GCP](https://www.reddit.com/r/javascript/comments/gibt96/unified_storage_interface_for_files_from_any/)
+- url: https://github.com/datatorch/node-storage
 ---
 
-## [5][Get free tickets for JSNation, the #1 remote JavaScript conference](https://www.reddit.com/r/javascript/comments/ght98g/get_free_tickets_for_jsnation_the_1_remote/)
-- url: https://sfree.life/jsnation-javascript-live-conference-2020-free/
----
-
-## [6][[AskJS] How do you create an a blob from an existing element?](https://www.reddit.com/r/javascript/comments/gi5iv7/askjs_how_do_you_create_an_a_blob_from_an/)
-- url: https://www.reddit.com/r/javascript/comments/gi5iv7/askjs_how_do_you_create_an_a_blob_from_an/
----
-I found some tips from stackoverflow, but they use the fetch api which loads the sound file again. The sound file already exists in my cache, so I don't want to load it twice. Any tips?
-## [7][Basket.js (Can you this in wordpress sites and library is really small also do check the comments)](https://www.reddit.com/r/javascript/comments/gib5h2/basketjs_can_you_this_in_wordpress_sites_and/)
-- url: https://theflowingfact.blogspot.com/2020/05/javascript-basketjs.html
----
-
-## [8][Why the Inversion of Control pattern could help you write better sharable react components? I wrote an article about how you can make your components cleaner and a lot more reusable.](https://www.reddit.com/r/javascript/comments/gi9pem/why_the_inversion_of_control_pattern_could_help/)
-- url: https://www.lorenzweiss.de/inversion_of_control_with_react_components/
----
-
-## [9][[AskJS] Bundling an extension](https://www.reddit.com/r/javascript/comments/gi6scb/askjs_bundling_an_extension/)
-- url: https://www.reddit.com/r/javascript/comments/gi6scb/askjs_bundling_an_extension/
----
-I am creating an extension, with the following structure
-
-```
-extension/
-         - index.html
-         - index.js
-         - src/
-               utils.js
-```
-
-The index.html looks like this
-```
-....
-&lt;script src="app.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-....
-```
-Here app.js is the name of the output bundle file
-
-And the index.js looks like
-```
-....
-chrome.tabs.executeScript(tabs[0].id, {
-    file: 'src/utils.js'
-});
-...
-```
-
-When I bundle this with webpack, with index.js as entrypoint, the bundle is successfull. However when I load the extension, it says cannot find 'utils.js'. Directly referencing index.js in index.html works. Is there any other tool which is used for extensions, or am I doing something wrong?
-## [10][Generating accessible color combinations for the web - Kartik Nair](https://www.reddit.com/r/javascript/comments/gi9g12/generating_accessible_color_combinations_for_the/)
-- url: https://kartikn.me/writing/accessible-combos
----
-
-## [11][Javascript understanding `this`](https://www.reddit.com/r/javascript/comments/gi8tx3/javascript_understanding_this/)
-- url: https://aparnajoshi.netlify.app//javascript-understanding-this
----
-
-## [12][Rebuilding our tech stack for a new Facebook.com - Facebook Engineering](https://www.reddit.com/r/javascript/comments/ghx8aq/rebuilding_our_tech_stack_for_a_new_facebookcom/)
-- url: https://engineering.fb.com/web/facebook-redesign/
+## [12][Feel like you're sending a wasteful amount of code to the browser? Maybe there's a better way.](https://www.reddit.com/r/javascript/comments/gig7ak/feel_like_youre_sending_a_wasteful_amount_of_code/)
+- url: https://medium.com/@mlrawlings/maybe-you-dont-need-that-spa-f2c659bc7fec
 ---
 

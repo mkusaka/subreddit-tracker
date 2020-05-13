@@ -1,46 +1,56 @@
 # Kotlin
-## [1][From Zero to Lambda with Kotless](https://www.reddit.com/r/Kotlin/comments/giba53/from_zero_to_lambda_with_kotless/)
+## [1][Firebase updates UI after completion](https://www.reddit.com/r/Kotlin/comments/gisbe4/firebase_updates_ui_after_completion/)
+- url: https://www.reddit.com/r/Kotlin/comments/gisbe4/firebase_updates_ui_after_completion/
+---
+I am using Kotlin to create an Android App. The problem I am having is I’m trying to use a ViewModel to create an user in Firebase. After the user is created, something should be returned to the UI Fragment to let the fragment know to move forward to the next line of execution. The trouble I’m having is Firebase operations are done asynchronously, so there’s no way for me the front end to know the operation is done executing in the view model. Is there a way to create a callback or fix this?
+## [2][Project ideas to build portfolio (not android)](https://www.reddit.com/r/Kotlin/comments/gixuca/project_ideas_to_build_portfolio_not_android/)
+- url: https://www.reddit.com/r/Kotlin/comments/gixuca/project_ideas_to_build_portfolio_not_android/
+---
+Hello peeps,
+
+I’m new to programming and kotlin and I was told that I will get better if I build something on my own. I did something similar with JavaScript from an online Udemy course and I made a simple website. Do you have any suggestions for projects that are not android? 
+
+Thank you :)
+## [3][First Look at Kotlin 1.4-M2: Standard Library Improvements](https://www.reddit.com/r/Kotlin/comments/gibyqn/first_look_at_kotlin_14m2_standard_library/)
+- url: https://blog.jetbrains.com/kotlin/2020/05/1-4-m2-standard-library/
+---
+
+## [4][From Zero to Lambda with Kotless](https://www.reddit.com/r/Kotlin/comments/giba53/from_zero_to_lambda_with_kotless/)
 - url: https://hadihariri.com/2020/05/12/from-zero-to-lamda-with-kotless/
 ---
 
-## [2][What's the point of Lambda Expressions?](https://www.reddit.com/r/Kotlin/comments/ght7um/whats_the_point_of_lambda_expressions/)
-- url: https://www.reddit.com/r/Kotlin/comments/ght7um/whats_the_point_of_lambda_expressions/
----
-When would you use it over a normal function?
-## [3][About learning](https://www.reddit.com/r/Kotlin/comments/gi4k0q/about_learning/)
-- url: https://www.reddit.com/r/Kotlin/comments/gi4k0q/about_learning/
----
-Hello, 
-I am new to Kotlin (with no experience of java n don't want to have)  i am currently learning from head first Kotlin and i wanna develop android apps using Kotlin so my question is where should i start to learn amdroid app development using Kotlin and is "Head First Kotlin" enough for app development.
-## [4][kscript-template - Github template to kickoff a kscript repo with some handy features such as parameter parsing, colored output and github actions as CI.](https://www.reddit.com/r/Kotlin/comments/ghqnzf/kscripttemplate_github_template_to_kickoff_a/)
-- url: https://github.com/cortinico/kscript-template
+## [5][A Deep Dive Into Spring Cloud Load Balancer](https://www.reddit.com/r/Kotlin/comments/giuv6b/a_deep_dive_into_spring_cloud_load_balancer/)
+- url: https://piotrminkowski.com/2020/05/13/a-deep-dive-into-spring-cloud-load-balancer/
 ---
 
-## [5][If I write a web app using Kotlin/JS, will the compiled code work on a Chromebook?](https://www.reddit.com/r/Kotlin/comments/ghqx1f/if_i_write_a_web_app_using_kotlinjs_will_the/)
-- url: https://www.reddit.com/r/Kotlin/comments/ghqx1f/if_i_write_a_web_app_using_kotlinjs_will_the/
+## [6][How to convert emoji to binary representation?](https://www.reddit.com/r/Kotlin/comments/girejp/how_to_convert_emoji_to_binary_representation/)
+- url: https://www.reddit.com/r/Kotlin/comments/girejp/how_to_convert_emoji_to_binary_representation/
 ---
-In case it matters, my Chromebook has no Android app support, but I do have a web server app that can serve HTML pages.
-
-Thanks!
-## [6][I spotted a pretty dangerous bug in coroutines put some emojis to push fixing it faster](https://www.reddit.com/r/Kotlin/comments/gh4rak/i_spotted_a_pretty_dangerous_bug_in_coroutines/)
-- url: https://github.com/Kotlin/kotlinx.coroutines/issues/2003
+I was trying to convert a string to binary and I was able to do so using text.*toByteArray*().*joinToString*(separator = " ") and then I would convert the integers to binary. But when I try to convert an emoji to binary, the integers are negative. Why does this happen and can someone tell me how to fix it?
+## [7][Kotlin withContext vs Async-await](https://www.reddit.com/r/Kotlin/comments/giblao/kotlin_withcontext_vs_asyncawait/)
+- url: https://blog.mindorks.com/kotlin-withcontext-vs-async-await
 ---
 
-## [7][What are the pros of Kotlin over Java in pc developing?](https://www.reddit.com/r/Kotlin/comments/ghjrbp/what_are_the_pros_of_kotlin_over_java_in_pc/)
-- url: https://www.reddit.com/r/Kotlin/comments/ghjrbp/what_are_the_pros_of_kotlin_over_java_in_pc/
+## [8][Spring boot kotlin issue](https://www.reddit.com/r/Kotlin/comments/gih09e/spring_boot_kotlin_issue/)
+- url: https://www.reddit.com/r/Kotlin/comments/gih09e/spring_boot_kotlin_issue/
 ---
-I as a Java developer see no real difference as for the usage of the two languages in projects
+Hi friends I’m new to kotlin, I just develop simple kotlin application with spring boot. Development process was done. Now I’m trying to deploy the application so I get deployment file (Jar/War) by using gradle bootWar command , I successfully get that file but I’m not able run that file using java -jar application.jar
 
-EDIT: thanks for all the insights, Kotlin seems actually worth for me to learn now!
-## [8][I submitted KEEP 213, which aims to bring pattern matching to the language. Consider dropping an emoji to show your vote!](https://www.reddit.com/r/Kotlin/comments/ggxe2x/i_submitted_keep_213_which_aims_to_bring_pattern/)
-- url: https://github.com/Kotlin/KEEP/pull/213
+I’m getting some error I don’t know what is the error.?
+
+Error details and code available in this below stackoverflow Link please help me to fix this issue. Thanks in advance
+
+
+https://stackoverflow.com/questions/61754163/spring-boot-application-deployment-issue[Stackoverflow link](https://stackoverflow.com/questions/61754163/spring-boot-application-deployment-issue)
+## [9][Cookies with Kotlin on Android](https://www.reddit.com/r/Kotlin/comments/gig2sl/cookies_with_kotlin_on_android/)
+- url: https://www.reddit.com/r/Kotlin/comments/gig2sl/cookies_with_kotlin_on_android/
 ---
+Is there a way how can I work with cookies on android, store them and send them to server with the other reqests when asking the REST API server to check the session in the db/redis.
 
-## [9][Phantom of the Coroutine](https://www.reddit.com/r/Kotlin/comments/gh22ab/phantom_of_the_coroutine/)
-- url: https://medium.com/@elizarov/phantom-of-the-coroutine-afc63b03a131
----
+I don't want to use tokens. Sessions and cookies work great.
 
-## [10][Kotlin has 4 ways to access the collection element!](https://www.reddit.com/r/Kotlin/comments/gh24c3/kotlin_has_4_ways_to_access_the_collection_element/)
-- url: https://medium.com/@elye.project/kotlin-has-4-ways-to-access-the-collection-element-1cf20cfdd0ed?source=friends_link&amp;sk=4374eee797b4acd35a034089637c05a3
+However I cant find any example how to use cookies to cycle between the server and android client app.
+## [10][Kotlin collection asReversed() vs reversed()](https://www.reddit.com/r/Kotlin/comments/gibzzs/kotlin_collection_asreversed_vs_reversed/)
+- url: https://medium.com/@elye.project/kotlin-collection-asreversed-vs-reversed-6fb0e01f1dd4?source=friends_link&amp;sk=8dbaa1423cdbbb314f81d26b358efdd8
 ---
 

@@ -1,18 +1,66 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/ghmv5w/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/ghmv5w/weekly_whos_hiring_thread/
+## [1][Mod Announcements: Updated Rules](https://www.reddit.com/r/androiddev/comments/gj7xr4/mod_announcements_updated_rules/)
+- url: https://www.reddit.com/r/androiddev/comments/gj7xr4/mod_announcements_updated_rules/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Hello everyone! It's been a while since we had a moderation update, so we've recently started taking a closer look at some things we can do to improve things around here.
 
-Here is a suggested posting template:
+One thing that has come up often is that the subreddit is seen as a dead-end. This comes in a few different facets, but namely:
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
+* High number of low-quality tech support posts creating a low signal to noise ratio
+* Certain types of posts becoming a honeypot for anti-Google vents, witch hunts, or other strange conspiracy theories.
+* A high volume of bad faith engagement in comments that discourages people from contributing/returning.
 
-Feel free to include any other information about the job.
+Historically, we’ve taken a pretty hands-off approach to the subreddit other than a few ground rules. To try to address some of these friction points though, we’re announcing some updates to the subreddit rules today.
+
+Details are sectioned, changes highlighted in bold where appropriate in the quoted descriptions.
+
+---
+
+**Rule 1: Must be related to Android Development**
+
+No real change, but clarify in the description that this doesn’t include custom ROM development (should head to XDA)
+
+&gt; You may post about code, design, distribution, marketing, hiring, etc. as long as it does not conflict with any other rules. We only ask that it has something to do with Android development. **Please note that this is not the place for ROM development, and should be taken to more appropriate venues like https://xda-developers.com/**
+
+---
+
+**Rule 2: No “help me” posts**
+
+Previously: “No easily searched/specific dev questions”
+
+This is to simplify the rule, but also broaden it. Asking for technical help with your specific problem does not merit a dedicated thread, nor do quick questions.
+
+&gt; Soliciting general discussion about architecture, performance optimizations, or design is fine. **Asking for technical help with your specific problem is not** and you must redirect them to StackOverflow or the Daily Questions Thread stickied to the subreddit. **This also includes “which/what/how should I learn/do” threads.**
+
+---
+
+**Rule 4: No app takedown/Play Store vent posts**
+
+Previously: “No “app takedown posts without desc of app”
+
+We realize this will be unpopular with a vocal minority, but we feel this is for the best (detailed in the rule wording below).
+
+&gt; **We’re sorry your app was taken down or your account was suspended or you couldn’t get a bad review removed. This subreddit cannot help you. We tried allowing these in the past under certain conditions, but in practice these threads were unproductive, often omitting key details showing they were justified, and often just became vent threads.**
+
+---
+
+**Rule 8: No paywalled submissions**
+
+No title change, but we’ve ha’ a number of posts that try to advertise paywalled medium posts and use “friend links” as a copout.
+
+&gt; Any posts linking paywalled articles are not allowed. **This includes private URLs, such as “friend” links on paywalled Medium articles**
+
+---
+
+**Rule 10: Be respectful and engage in good faith**
+
+This is new, and usually one that doesn’t need writing but needs to be written now. Reasonable people can disagree and you can articulate your thoughts without condescending to others. We’re not here to be the word police, but we’re also not going to be welcoming hosts to those that would regularly break this rule.
+
+&gt; The Android developer community is a warm and friendly field and /r/androiddev strives to continue this. Engage in good-faith discussion and be respectful of others’ opinions, privacy, and intentions. Threads that violate this will be removed at mods’ discretion. This rule is intentionally broad, as toxic behavior comes in a variety of different forms. Examples: ad hominem, [sealioning](https://twitter.com/sbarolo/status/1036782685547622401), targeted attacks on others’ work, edgelording, and other keyboard warrior behavior.
+
+---
+
+We hope these changes help. We have more ideas in the pipeline too (particularly around how to implement these changes meaningfully, possibly with more moderation hands on deck) and will keep you all posted when we have more to share!
 ## [2][Weekly Questions Thread - May 11, 2020](https://www.reddit.com/r/androiddev/comments/ghlel5/weekly_questions_thread_may_11_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/ghlel5/weekly_questions_thread_may_11_2020/
 ---
@@ -31,174 +79,136 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Gradle migration to Kotlin DSL](https://www.reddit.com/r/androiddev/comments/giv28v/gradle_migration_to_kotlin_dsl/)
-- url: https://www.reddit.com/r/androiddev/comments/giv28v/gradle_migration_to_kotlin_dsl/
----
-I recently migrated Gradle to Kotlin DSL scripts in my side project to check it out. So I thought I will share a link to commit diff, maybe someone will find it useful in case of doing that.    
-[Commit on GitHub](https://github.com/OMIsie11/CovidNow/commit/760afeef1f90dc0199146d27b379a43ba3788f34)
-## [4][High performance graphing/plotting library](https://www.reddit.com/r/androiddev/comments/giwdrl/high_performance_graphingplotting_library/)
-- url: https://www.reddit.com/r/androiddev/comments/giwdrl/high_performance_graphingplotting_library/
----
-I am developing an android app that is in part displaying measurements from several sensors (e.g. acceleration). I want to display the last seconds of measurements by using some kind of plotting library. Right now Im using AndroidPlot which is a nice library and gives me ok-ish results. I usually have up to 2000 datapoints and want to refresh 1-4 plots with a refreshrate somewhere between 10-30 Hz. On my mid-range device this results in UI lags when using AndroidPlot.
-
-
-Things I have tried so far or thought about:
-
-- Using GraphView -&gt; Performance was worse
-- Webview and Plot.ly -&gt; Great performance when just having one plot, but much worse when I had more than one
-- MPAndroidChart -&gt; Havent tried it, but does not seem to be optimized for dynamic plots 
-- Downsampling -&gt; Not trivial to do it right, complex algorithms take to much computation time, simple ones to produce adequate results
-- AAChartKit-kotlin -&gt; Havent tried it, but seems to be using Webviews as well, so I expect same performance as with plot.ly
-
-Does anyone maybe know a library that might be more performant or has some tips what could improve the performance of the graphs?
-
-I started Android-development half a year ago (part-time) so I do not feel experienced enough and do not have the resources to develop something on my own (e.g. using OpenGL). I also do not want to use a commercial library.
-## [5][Earth Imagery App following Jetpack](https://www.reddit.com/r/androiddev/comments/giwvg2/earth_imagery_app_following_jetpack/)
-- url: https://github.com/nomanr/earth-imagery-android
+## [3][It is not just us! None can escape vague terms of Google policies.](https://www.reddit.com/r/androiddev/comments/gj4t26/it_is_not_just_us_none_can_escape_vague_terms_of/)
+- url: https://blog.pushbullet.com/2020/05/13/lets-guess-what-google-requires-in-14-days-or-they-kill-our-extension
 ---
 
-## [6][Massive Android Ecosystem Cheat Sheet 2020](https://www.reddit.com/r/androiddev/comments/giheiy/massive_android_ecosystem_cheat_sheet_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/giheiy/massive_android_ecosystem_cheat_sheet_2020/
+## [4][Create stunning Google Play screenshots - What features do you need for your app?](https://www.reddit.com/r/androiddev/comments/gjlcti/create_stunning_google_play_screenshots_what/)
+- url: https://www.reddit.com/r/androiddev/comments/gjlcti/create_stunning_google_play_screenshots_what/
 ---
+I [shared our initial tool](https://www.reddit.com/r/androiddev/comments/fp98il/create_awesome_app_screenshots_for_playstore/) over a month ago, and received a lot of positive feedback. Tbh, I've never had so much upvote karma, so decided to spend every evening of the next month re-writing &amp; improving the tool. Hence, I'm ready to share the new version, and ask you to **flood me with features requests**. 
+
+Link: [https://previewed.app/screenshots/googleplay](https://previewed.app/screenshots/googleplay)
+
+We decided to do a weekend Hackathon, where we implement all of the requests (Realistically possible). This could be:
+
+* Adding different designs
+* Devices
+* Anything that comes to your mind!
+
+\------------------ Question for Devs -----------------
+
+We had a problem of adding new devices. Since people have different devices and a lot of Android phones with custom screenshot dimensions, there is no phone that fits all. So we decided to create a variable frame, which kinda resembles the phone. Do you think it's a good idea? Or do you prefer to have a set phone instead? E.g. Samsung galaxy s20 / Google Pixel etc.? 
+
+\------------------ End of Question --------------------
+
+**TL DR:**
+
+Simple tool, to create app visuals for Google Play. In a few clicks, you can get something like this:
+
 &amp;#x200B;
 
-https://i.redd.it/mhhz4m3xtdy41.gif
-
-Link to repo [https://github.com/igorwojda/android-ecosystem-cheat-sheet](https://github.com/igorwojda/android-ecosystem-cheat-sheet)
-
-Link to retweet [https://twitter.com/igorwojda/status/1260275259107835905](https://twitter.com/igorwojda/status/1260275259107835905)
-
-Feedback highly welcome
-
-Enjoy
-## [7][Tutorial: Intro Slider with pretty animations, state management and usage of architecture components](https://www.reddit.com/r/androiddev/comments/giy43x/tutorial_intro_slider_with_pretty_animations/)
-- url: https://www.reddit.com/r/androiddev/comments/giy43x/tutorial_intro_slider_with_pretty_animations/
----
-Recently had to develop an intro slider for one of the projects and decided to write an article on how to build one from ground. In my opinion it serves as a nice real life example of architecture components usage and state management.
-
-[Link for part 1](https://medium.com/@alexandr.zhurkov/android-intro-slider-with-state-management-using-androidx-architecture-components-part-1-caeba1db7a32)
-
-[Link for part 2](https://medium.com/@alexandr.zhurkov/android-intro-slider-with-state-management-using-androidx-architecture-components-part-2-2e927211b9a5)
-
-[Link to GitHub](https://github.com/xzhorikx/slider-intro)
-## [8][Android Studio 4.0 Release Candidate 1 available](https://www.reddit.com/r/androiddev/comments/gig7r8/android_studio_40_release_candidate_1_available/)
-- url: https://androidstudio.googleblog.com/2020/05/android-studio-40-release-candidate-1.html
----
-
-## [9][First Look at Kotlin 1.4-M2: Standard Library Improvements](https://www.reddit.com/r/androiddev/comments/gicmd3/first_look_at_kotlin_14m2_standard_library/)
-- url: https://blog.jetbrains.com/kotlin/2020/05/1-4-m2-standard-library/
+https://preview.redd.it/nczspbux3qy41.png?width=1776&amp;format=png&amp;auto=webp&amp;s=3f24888e590d435e8d5b18028951f2f485318ec4
+## [5][ConstraintLayout 2.0.0 beta 6](https://www.reddit.com/r/androiddev/comments/gjbbls/constraintlayout_200_beta_6/)
+- url: https://androidstudio.googleblog.com/2020/05/constraintlayout-200-beta-6.html
 ---
 
-## [10][Struck with Firestore Query in Android](https://www.reddit.com/r/androiddev/comments/giwsbl/struck_with_firestore_query_in_android/)
-- url: https://www.reddit.com/r/androiddev/comments/giwsbl/struck_with_firestore_query_in_android/
+## [6][getting frames from usb camera](https://www.reddit.com/r/androiddev/comments/gjmcxv/getting_frames_from_usb_camera/)
+- url: https://www.reddit.com/r/androiddev/comments/gjmcxv/getting_frames_from_usb_camera/
 ---
-I have Firestore DB structure like this. In this app, I'm able to display all Time slots of Lynda to the Customer.
+[https://developer.android.com/guide/topics/connectivity/usb/host](https://developer.android.com/guide/topics/connectivity/usb/host)
 
-&amp;#x200B;
+There are questions about this all over the place, but thought I'd try here. I'm trying to use a usb camera in my app. I can connect to it, see that it USB\_CLASS\_VIDEO interface. I just don't know how to ask it for frames. The Android tutorial really falls short with how to communicate with the device. It says to use UsbDeviceConnection.bulkTransfer, but I'm not getting anything out of it.
 
-[Customer Collection ](https://preview.redd.it/385xntj8hiy41.png?width=956&amp;format=png&amp;auto=webp&amp;s=40070d66edccfd30f1878b7436fa2e1f81850bcc)
-
-&amp;#x200B;
-
-[Timeslots Collection for User \(which means Service provider\)](https://preview.redd.it/k1a4udqchiy41.png?width=875&amp;format=png&amp;auto=webp&amp;s=c200734161f1c4aa81ae7b6165aad3564345b235)
-
-&amp;#x200B;
-
-[User Collection](https://preview.redd.it/lqfwc58ghiy41.png?width=905&amp;format=png&amp;auto=webp&amp;s=4c6d61ea758624dd1cda535e2fba1c86ebdc6fea)
-
-&amp;#x200B;
-
-[User Appointments by Date](https://preview.redd.it/89fhglcjhiy41.png?width=955&amp;format=png&amp;auto=webp&amp;s=5b7efcd0a2504fa4f312ea5769042cfe5ff61fe4)
-
-&amp;#x200B;
-
-**The query for getting all Timeslots of Lynda1102**
-
-`// get all time slots`
-
-`override fun getAllSlots(): MutableLiveData&lt;List&lt;Slots&gt;&gt; {`
-
-`remoteDB.collection("Timeslots").whereEqualTo("id", "Lynda1102")`
-
-`.addSnapshotListener { querySnapshot, e -&gt;`
-
-&amp;#x200B;
-
-`// check if null`
-
-`if (e != null) {`
-
-`Timber.e("Listen failed. $e")`
-
-`savedAllTimeSlots.value = null`
-
-`}`
-
-`val saveTimeSlots: MutableList&lt;Slots&gt; = mutableListOf()`
-
-`for (doc in querySnapshot!!) {`
-
-`val slotItem = doc.toObject(RemoteTimeSlots::class.java).apply { id =` [`doc.id`](https://doc.id) `}`
-
-`.mapToTimeSlots()`
-
-`saveTimeSlots.add(slotItem)`
-
-`}`
-
-`// Post value`
-
-`savedAllTimeSlots.value = saveTimeSlots`
-
-`}`
-
-`return savedAllTimeSlots`
-
-`}`
-
-&amp;#x200B;
-
-**Slots.kt (Model class)**
-
-`data class Slots(val id:String,val slot:Long)`
-
-`data class RemoteTimeSlots(var id: String = "",var slot: Long = 0)`
-
-`fun RemoteTimeSlots.mapToTimeSlots(): Slots {`
-
-`return Slots(id,slot)`
-
-`}`
-
-&amp;#x200B;
-
-**Observering Data in MainActivity**
-
-`// observe for service changes`
-
-`viewModel.getAllSlots().observe(this,` [`androidx.lifecycle.Observer`](https://androidx.lifecycle.Observer) `{`
-
-`timeSlotsAdapter.differ.submitList(it)`
-
-&amp;#x200B;
-
-`})`
-
-&amp;#x200B;
-
-I'm trying to figure out solution for 2 days 😢. Your small advice or suggestion can motivate me to finish off this things. Thanks in advance 🙏.
-
-1. How to query &amp; show available slots for customer on a particular date.
-2. Ex- On 13-05-2020 Lynda has a total of three slots. The customer booked slot no - 2. So now the other customers will have to see only the remaining two slots(slot1 &amp; slot3) on 13-05-2020.
-## [11][Any way to remove an unpublished app from 'All Applications' in Google Play Console?](https://www.reddit.com/r/androiddev/comments/giya6b/any_way_to_remove_an_unpublished_app_from_all/)
-- url: https://www.reddit.com/r/androiddev/comments/giya6b/any_way_to_remove_an_unpublished_app_from_all/
+Is this possible without getting into libraries like libuvc?
+## [7][A lightweight Android network response API for handling data and error response with transformation extensions.](https://www.reddit.com/r/androiddev/comments/gjlroh/a_lightweight_android_network_response_api_for/)
+- url: https://github.com/skydoves/Sandwich
 ---
-Is there any way to remove an unpublished app from 'All Applications' in Google Play Console? 
 
-I have 1 unpublished app listed in my Console since 2014. Have emailed Google about it, and their advice is that it cannot be removed due to a very low number of downloads (which was done by our team for testing purposes). 
-
-I am wondering if there are any possible way at all, as it really clutters my 'All Applications' section.
-## [12][My admob account will immediately get suspended, what can I do ?](https://www.reddit.com/r/androiddev/comments/gilyp7/my_admob_account_will_immediately_get_suspended/)
-- url: https://www.reddit.com/r/androiddev/comments/gilyp7/my_admob_account_will_immediately_get_suspended/
+## [8][Room crash: "Pre-packaged database has an invalid schema"](https://www.reddit.com/r/androiddev/comments/gjlqpg/room_crash_prepackaged_database_has_an_invalid/)
+- url: https://www.reddit.com/r/androiddev/comments/gjlqpg/room_crash_prepackaged_database_has_an_invalid/
 ---
-Today, I noticed that my admob clicks and estimated revenues are growing very quickly (1$ to 90$) and I don't know the reason, I'm really afraid of my account getting blocked, can I get some help please ?
+Hi :)  
+After upgrading from room 2.1.0 to 2.2.5 my app crashes generating this stacktrace:   
+
+
+&gt; java.lang.IllegalStateException: Pre-packaged database has an invalid schema: MyTestTable(com.testcomponent.room.entities.MyTestTable).  
+&gt;  
+&gt;Expected:  
+&gt;  
+&gt;TableInfo{name='MyTestTable', columns={Params=Column{name='Params', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=2, defaultValue='null'}, Rank=Column{name='Rank', type='INTEGER', affinity='3', notNull=false, primaryKeyPosition=0, defaultValue='null'}, Id=Column{name='Id', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=1, defaultValue='null'}, Date=Column{name='Date', type='TEXT', affinity='2', notNull=false, primaryKeyPosition=0, defaultValue='null'}}, foreignKeys=\[\], indices=\[\]}  
+&gt;  
+&gt;Found:  
+&gt;  
+&gt;TableInfo{name='MyTestTable', columns={Params=Column{name='Params', type='NVARCHAR', affinity='2', notNull=true, primaryKeyPosition=2, defaultValue='null'}, Rank=Column{name='Rank', type='INT', affinity='3', notNull=false, primaryKeyPosition=0, defaultValue='null'}, Id=Column{name='Id', type='BIGINT', affinity='3', notNull=true, primaryKeyPosition=1, defaultValue='null'}, Date=Column{name='Date', type='DATETIME', affinity='1', notNull=false, primaryKeyPosition=0, defaultValue='null'}}, foreignKeys=\[\], indices=\[\]}
+
+  
+I'm wondering: Can room handles a prepackaged db containing a DATETIME column ?  
+This is the SQL create statement:
+
+    CREATE TABLE "MyTestTable" (
+    	"Id"	[BIGINT] NOT NULL,
+    	"Params"	[NVARCHAR](250) NOT NULL,
+    	"Rank"	[INT],
+    	"Date"	[DATETIME],
+    	PRIMARY KEY("Id","Params")
+    )
+
+And i'm loaded an example project on this [github repo](https://github.com/aeroxr1/room-sample-project.git) on master branch
+## [9][How to create resizing handles on ImageView](https://www.reddit.com/r/androiddev/comments/gjlmjg/how_to_create_resizing_handles_on_imageview/)
+- url: https://www.reddit.com/r/androiddev/comments/gjlmjg/how_to_create_resizing_handles_on_imageview/
+---
+https://i.imgur.com/Rm9cgQ0.png
+
+How would I go on creating these resizing squares? Is there a library that Android has?
+## [10][Can someone please explain to me the "right way" to use MutableLiveData and coroutines outside of Main scope to do internet API requests?](https://www.reddit.com/r/androiddev/comments/gjla8q/can_someone_please_explain_to_me_the_right_way_to/)
+- url: https://www.reddit.com/r/androiddev/comments/gjla8q/can_someone_please_explain_to_me_the_right_way_to/
+---
+I'm trying to learn how all the pieces fit together to request a list of `Foo` in JSON from a public API (with Moshi) and get it into a `MutableLiveData&lt;List&gt;`. Here's the basic outline of what I've got so far, and a list of questions follow below the code:
+
+    private var job = Job()
+    private val fooScope = CoroutineScope(job + Dispatchers.IO)
+    private val fooSerializedList = MutableLiveData&lt;List&lt;FooSerialized&gt;&gt;()
+    
+    // Caller must handle any exceptions this function throws (eg network errors)
+    private fun getFooSerialized(): List&lt;FooSerialized&gt; {
+        val getFooDeferred = FooApi.retrofitService.getFoo()
+        var listResult: List&lt;FooSerialized&gt;
+        fooScope.async {
+            // await the completion of our Retrofit request
+            listResult = getFooDeferred.await()
+            if(listResult.isEmpty()) Log.wtf(TAG, "Empty listResult")
+        }
+        return listResult
+    }
+
+And the caller call this function inside a try/catch block to handle network errors:
+
+    fooScope.async {
+        try {
+            fooSerializedList.postValue(getFooSerialized())
+            // should I do stuff with fooSerializedList here or outside coroutine?
+        } catch (e: Exception) {
+            // handle error
+        }
+    }
+    // Should I do stuff with fooSerializedList here and will it be populated?
+
+**Questions:**
+
+1. `getFooSerialized` doesn't work because `listResult` isn't initialized, what's The Right Way to handle this?
+2. Coroutines in IO scope: I keep having to use `postValue` for LiveData, rather than `setValue` (i.e. the `.value` property) because it doesn't work when not in Main scope. In my second code block, where should I access `fooSerializedList`, and how do I access it in a way such that it will be correctly populated by the time I access it?
+3. Any other advice on how I could be doing this better + example code?
+## [11][Android Dialogs: Android Makers 2020](https://www.reddit.com/r/androiddev/comments/gjaufy/android_dialogs_android_makers_2020/)
+- url: https://youtu.be/hl_Br5wiLhY
+---
+
+## [12][Recap: ASO CONFERENCE 2020](https://www.reddit.com/r/androiddev/comments/gjk0wc/recap_aso_conference_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/gjk0wc/recap_aso_conference_2020/
+---
+Hi guys! 👋
+
+Yesterday the ASO conference 2020 was held, a conference by ASO practitioners for ASO practitioners. If you missed this event, we have collected key points from the speeches for you.
+
+Read all the details here 👇  
+[https://asodesk.com/blog/recap-aso-conference-2020/](https://asodesk.com/blog/recap-aso-conference-2020/)

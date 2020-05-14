@@ -22,149 +22,176 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Announcing TypeScript 3.9](https://www.reddit.com/r/typescript/comments/gilb3e/announcing_typescript_39/)
+## [2][Deno 1.0 Released](https://www.reddit.com/r/typescript/comments/gja7lo/deno_10_released/)
+- url: https://deno.land/v1
+---
+
+## [3][Microsoft announces TypeScript 3.9](https://www.reddit.com/r/typescript/comments/gj89g2/microsoft_announces_typescript_39/)
 - url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9/
 ---
 
-## [3][Can someone explain the need for an awaited type?](https://www.reddit.com/r/typescript/comments/gistgu/can_someone_explain_the_need_for_an_awaited_type/)
-- url: https://www.reddit.com/r/typescript/comments/gistgu/can_someone_explain_the_need_for_an_awaited_type/
+## [4][tsdotnet/linq - v1.0.0-preview](https://www.reddit.com/r/typescript/comments/gjhumz/tsdotnetlinq_v100preview/)
+- url: https://www.reddit.com/r/typescript/comments/gjhumz/tsdotnetlinq_v100preview/
 ---
-Title. It seems like the current type definition of the promise works as expected for all of my applications. What problem does `awaited T` solve?
+[www.npmjs.com/package/@tsdotnet/linq](https://www.npmjs.com/package/@tsdotnet/linq)
 
-I've read through the issue, and it still isn't making very much sense. Await seems to correctly resolve these types to what is expected, at least in my experience.
+[github.com/tsdotnet/linq](https://github.com/tsdotnet/linq)
 
-Any help would be appreciated, thank you!
-## [4][Anyway to have a any type but still force the compiler to give the 'could be undefined' warning?](https://www.reddit.com/r/typescript/comments/giyaao/anyway_to_have_a_any_type_but_still_force_the/)
-- url: https://www.reddit.com/r/typescript/comments/giyaao/anyway_to_have_a_any_type_but_still_force_the/
+[tsdotnet.github.io/linq](https://tsdotnet.github.io/linq/)
+
+No readme or examples yet but JS docs are complete.
+
+Check out the core `Linq&lt;T&gt;` class for creating the chain here:[https://github.com/tsdotnet/linq/blob/master/src/linq.ts](https://github.com/tsdotnet/linq/blob/master/src/linq.ts)
+
+Feedback wanted, encouraged, and welcomed.
+## [5][Question: How to structure an NPM package with general utilities](https://www.reddit.com/r/typescript/comments/gjmf3y/question_how_to_structure_an_npm_package_with/)
+- url: https://stackoverflow.com/q/61798645/39321
 ---
 
-## [5][I am working on a "node typescript architecture" project which suggests a structure for Node TS apps. It's WIP but any feedback is appreciated.](https://www.reddit.com/r/typescript/comments/gixr3e/i_am_working_on_a_node_typescript_architecture/)
-- url: https://www.reddit.com/r/typescript/comments/gixr3e/i_am_working_on_a_node_typescript_architecture/
+## [6][Understanding Typescript](https://www.reddit.com/r/typescript/comments/gjmbph/understanding_typescript/)
+- url: https://www.youtube.com/watch?v=gs0lpdB9okM
 ---
-This is still in quite an early stage, and the docs are very incomplete, but I've been working on a suggested Node Typescript Architecture example over on Github. It is based on what I've picked up over the last two or three years of writing Node apps.
 
-The idea is, as concisely as I can make it: use IOC in your domain code, and functional programming to replace a DI container. Write a set of adapters that partially apply you domain functions at runtime to provide 'context'. These adapters can wrap the function to implement things like transactions, resource spinup / teardowns etc.
-
-The project is here: [https://github.com/jbreckmckye/node-typescript-architecture](https://github.com/jbreckmckye/node-typescript-architecture)
-
-There is example code which implements a simple app using Postgres (with transactions) and RabbitMQ events, and Express.js bindings. It is runnable if you have Docker installed (at least Docker for Mac, I have no idea about Docker for windows).
-
-There is also the beginning of a gitbook (but it's still very incomplete).
-
-Any feedback would be invaluable.
-## [6][Is using an assertion function to validate a number fits a range valid use? Is there a library of assertion functions?](https://www.reddit.com/r/typescript/comments/gisvg1/is_using_an_assertion_function_to_validate_a/)
-- url: https://www.reddit.com/r/typescript/comments/gisvg1/is_using_an_assertion_function_to_validate_a/
+## [7][Some articles mention how TypeScript is slower than JavaScript. Why does it matter when it's compiled anyway?](https://www.reddit.com/r/typescript/comments/gjhgku/some_articles_mention_how_typescript_is_slower/)
+- url: https://www.reddit.com/r/typescript/comments/gjhgku/some_articles_mention_how_typescript_is_slower/
 ---
-... so, I'm really new to TypeScript, but I was thinking, there's not really a way to validate a numerical range in typescript directly (without using something like a potentially massive union) ..  but is there a reason why you shouldn't use assertion function to validate that a number fits a specific range?  My current use case is just to validate that a number is zero or positive.  
+&amp;#x200B;
 
-Secondly, does anyone out here know of any useful libraries of assertion functions?  This seems like a feature that could be quite useful to use to build up quite a suite of things with.
-## [7][ncdc - a typescript consumer driven contract tool](https://www.reddit.com/r/typescript/comments/giiukv/ncdc_a_typescript_consumer_driven_contract_tool/)
-- url: https://www.reddit.com/r/typescript/comments/giiukv/ncdc_a_typescript_consumer_driven_contract_tool/
+So I've seen in some places that mention JavaScript as being faster. But when TypeScript will just become JavaScript in production, does this matter at all, and wont they just be the same speed in the end.
+
+&amp;#x200B;
+
+[src](https://jaxenter.com/energy-efficient-programming-languages-137264.html)
+## [8][exporting typescript types in a package](https://www.reddit.com/r/typescript/comments/gjlumo/exporting_typescript_types_in_a_package/)
+- url: https://www.reddit.com/r/typescript/comments/gjlumo/exporting_typescript_types_in_a_package/
 ---
-I think I've made some good progress on my first npm package, [ncdc](https://github.com/tamj0rd2/ncdc). ncdc (node cdc) is a tool that takes a consumer contract (written in yaml) and tests the specified endpoints against a producer. You can also run a single command to mock those endpoints.
+***Outline***
 
-The point of using this tool is to ensure that each endpoint you use in development is called in the same way and responds with the same data that you expect from your live environment. There's not much point in testing against mock APIs that don't strongly resemble your live APIs.
+I'm writing a package (let's call it myPackage) for shared react components and their corresponding typescript types. I'm using npm symlink to link myPackage to a typescript/react app I'm working on.
 
-It easily integrates with typescript to prevent you from having to write JSON schemas for your already defined Typescript interfaces, types and enums. With this, you're guaranteed that your code, mock API endpoints and real endpoints are all consistent with each other.
+the structure of myPackage is as follows:
 
-I made this after struggling for a while with another CDC tool we were using at work. It wasn't great at handling optional fields, so making a tool that can validate using JSON schemas without us having to basically duplicate our contracts seemed like a great solution.
+    multilist
+    --index.tsx
+    --types.d.ts
+    index.tx 
 
-https://github.com/tamj0rd2/ncdc
+this is the content of the multilist/types.d.ts file
 
-https://www.npmjs.com/package/ncdc
-## [8][Noob question but how would you type a code like this?](https://www.reddit.com/r/typescript/comments/gipmo7/noob_question_but_how_would_you_type_a_code_like/)
-- url: https://www.reddit.com/r/typescript/comments/gipmo7/noob_question_but_how_would_you_type_a_code_like/
----
-I'm using Inertia.js which is why I even needed this snippet. How can I type the hook so it works just like `useState`?
-
-```
-import { useEffect, useRef, useState } from "react";
-
-export default function useStateIfMounted(initialState: any) {
-    const isMounted = useRef(true);
-
-    useEffect(() =&gt; {
-        return () =&gt; {
-            isMounted.current = false;
-        };
-    }, []);
-
-    const [state, setState] = useState(initialState);
-
-    function setStateIfMounted(newState: any) {
-        if (isMounted.current) {
-            setState(newState);
-        }
-    }
-
-    return [state, setStateIfMounted];
-}
-```
-## [9][Question about conditional types.](https://www.reddit.com/r/typescript/comments/gino4p/question_about_conditional_types/)
-- url: https://www.reddit.com/r/typescript/comments/gino4p/question_about_conditional_types/
----
-I'm trying to write a function for automatic handling of HTTP responses of certain response codes. Though, the context doesn't matter. Essentially, I have a type with some kind of discriminator, named `code`. If code is equal to a given value, call one function, otherwise call another function. The hard part is getting the called functions to have the correct types. Explaining it is pretty hard, but I think the code will do the question more justice. 
-
-I've written what I'd expect to work, but I can't get it to compile. Interestingly, Typescript infers the types correctly for the parameters to the passed-in functions. Enough talk. The code: 
-
-    const ifOne = &lt;R extends {code: 1 | 2 | 3 }&gt;(
-        param: R, 
-        oneHandler: (result: R extends {code : 1} ? R : never) =&gt; void,
-        otherHandler: (result: R extends {code : 1} ? never : R) =&gt; void,
-    ) =&gt; {
-        if (param.code === 1) {
-            oneHandler(param);
-        } else {
-            otherHandler(param);
-        }
-    }
-    
-    type Type = {
-        code: 1;
-        value: "Hello";
-    } | {
-        code: 2;
-        value: "Red";
-    } | {
-        code: 3;
-        value: "Dit";
-    }
-    
-    const param: Type = {
-        code: 2,
-        value: "Red"
+    type ILookup = {
+      readonly id: number;
+      readonly text: string;
     };
     
-    ifOne&lt;Type&gt;(param, 
-        one =&gt; {
+    export type MultilistProps = {
+      readonly isEditing: boolean;
+      readonly id: string;
+      readonly labelText: string;
+      readonly value: ILookup | undefined;
+      readonly responseOptions: ILookup[];
+      readonly singleSelect: boolean;
+      readonly invalid: boolean;
+      readonly onChangeHandler: (value: any) =&gt; void;
+    };
+
+this is the content of the index.ts file
+
+    import { Multilist } from './multilist';
+    import { MultilistProps as _MultilistProps } from './multilist/types';
+    export { Multilist };
+    export type MultilistProps = _MultilistProps;
+
+***Problem***
+
+When I import from myPackage, the type MultilistPropsdoesn't retain it's type structure. A mouseover in VSCode looks like: type MulitlistProps: Any.
+
+If I declare and export the MultilistProps type directly in myPackage/index.ts file; the problem is resolved.
+
+If anybody has any idea's I would be very grateful!  
+
+
+edit: formatting
+## [9][I have made a test type to check if there are any collisions in keys of obj1 &amp; obj2 . How to get a more helpful error message?](https://www.reddit.com/r/typescript/comments/gjlkse/i_have_made_a_test_type_to_check_if_there_are_any/)
+- url: https://www.reddit.com/r/typescript/comments/gjlkse/i_have_made_a_test_type_to_check_if_there_are_any/
+---
+First of all is there such a thing as test types in TS or are they just a hack?
+
+With the help of these two posts\[[1](https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/)\]\[[2](https://www.reddit.com/r/typescript/comments/gab4ic/how_to_make_ts_or_eslint_or_vscode_warn_me_about/)\] and after getting a little bit more comfortable with typescript I managed to do this :
+
+    type obj1 = {
+    	a : string,
+    	b : number,
+    }
     
-        },
-        other=&gt; {
-            // I'd expect this function to be called. 
-        }
-    );
+    type obj2 = {
+    	a : number,
+    	c : string
+    }
+    
+    type MustBeNever&lt;T extends never&gt; = T;
+    
+    type TestNoCollisionsInMixin = MustBeNever&lt;keyof obj1 &amp; keyof obj2&gt;;
 
-So If I write this in vscode, the types of `one` and `other` are correctly inferred. It knows `one` is of type `{code: 1, value: "Hello"}`, and `other` is of  type `{code: 2, value: "Red"} | {code: 3, value: "Dit"}`. But, the compilation error is in the function `ifOne`. It refuses to call `oneHandler` and `twoHandler` with the parameter `param`. With the error: 
+to check whether the mixin of two objects (merging one object into another) has any key collision.
 
-" Argument of type 'R' is not assignable to parameter of type 'R extends { code: 1; } ? R : never'.
-  Type '{ code: 1 | 2 | 3; }' is not assignable to type 'R extends { code: 1; } ? R : never'"
-
-Perhaps this is not possible, in which case I can find another way to do what I need, but I'm curious if I'm missing something obvious here, or if this is something Typescript doesn't support. 
-
-Thanks
-## [10][Noob question about type declaration files: a package I'm writing a file for default exports an object literal, how do I declare that in the .d.ts file?](https://www.reddit.com/r/typescript/comments/gihrne/noob_question_about_type_declaration_files_a/)
-- url: https://www.reddit.com/r/typescript/comments/gihrne/noob_question_about_type_declaration_files_a/
+You can see that the error message I get is not really helpful . Is there any way to make the error message or the code more helpful ?
+## [10][Some useful classes/modules I've retooled for modern times.](https://www.reddit.com/r/typescript/comments/gj7phf/some_useful_classesmodules_ive_retooled_for/)
+- url: https://www.reddit.com/r/typescript/comments/gj7phf/some_useful_classesmodules_ive_retooled_for/
 ---
-Declaring it as a class or function works but adds extra props and methods to the imported object (such as `arguments`, `prototype` etc). I'd like it where the imported object is used like so:
+[https://github.com/tsdotnet](https://github.com/tsdotnet)
 
-    import foo from 'fooLibrary';
+Originally called the "TypeScript .NET Library", this has gone through a lot of iterations and now has arrived as individual modules that have minimal dependencies and work well with tree-shaking.
 
-    foo.validMethod();
+I'm proud to release this now as the foundational classes are rock solid and now have full API docs.
 
-So it has 'static' methods but is not written out like an actual class. I can't export an object literal in the .d.ts file. Exporting it as an interface doesn't work as the IDE complains that `foo` is being used as a value when it should be used as a type. Thanks in advance to any respondents.
+The end goal is to release a new version of LINQ for TypeScript which I've been curating for years now.
 
-EDIT: I *think* I've worked it out. Just need to use and approach `declare module 'fooLibrary'` like it is an object literal from the start. So `declare module 'fooLibrary' { export function validMethod(): string; }` would produce the desired result above.
-## [11][Unionize and Objectify: a trick to bring conditional types to objects](https://www.reddit.com/r/typescript/comments/gif63z/unionize_and_objectify_a_trick_to_bring/)
-- url: https://effectivetypescript.com/2020/05/12/unionize-objectify/
+# LINQ and Iterables
+
+[https://github.com/tsdotnet/linq/tree/dev/src](https://github.com/tsdotnet/linq/tree/dev/src)
+
+Currently still in development, I realized that extensions weren't gonna be a thing in TS or JS for some time or never.  So switching to a `pipe(filter, filter, filter)` style pattern would not only be more flexible, but would ensure consumers only import what they need.
+
+About 95% of the filters (LINQ methods) are done, and with the intention that they can stand alone or be used with other filters.  Currently working on an API to handle better type inferrence and simplify building a query.
+
+# Queue&lt;T&gt;
+
+[https://github.com/tsdotnet/queue](https://github.com/tsdotnet/queue)
+
+A solid example of a class missing from JS that needs to be simple and fast.
+
+JavaScript arrays are terrible at behaving like queues as `.shift()` is slow.  This queue beats the performance of both arrays and other linked lists.
+
+# LinkedNodeList&lt;T&gt;
+
+[https://github.com/tsdotnet/linked-node-list](https://github.com/tsdotnet/linked-node-list)
+
+Simple, flexible, and reasonably light weight.  Nodes are defined by the consumer and can contain any properties outside of `previous` and `next`.
+
+I'm surprised how often I look to use a linked list to do things that JavaScript arrays are terrible at.
+
+# LinkedList&lt;T&gt;
+
+[https://github.com/tsdotnet/linked-list](https://github.com/tsdotnet/linked-list)
+
+Robust with familiar API.  Uses `LinkedNodeList&lt;T&gt;` under the hood.
+
+TypeScript will likely prevent any slip-ups and inappropriate modifications of the link chain of a `LinkedNodeList&lt;T&gt;.`  `LinkedList&lt;T&gt;` adds more features similar to .NET that allow for working directly with nodes without breaking the chain.
+
+...
+
+Enjoy, hopefully someone finds these fully typed and documented classes useful.  More to come.
+## [11][I have troubles understanding IsNever.](https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/)
+- url: https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/
 ---
+Why does this work :
 
+    type IsNever&lt;A&gt; = (A extends never ? never : false) extends never ? true : false;
+
+while this :
+
+    type IsNever&lt;A&gt; = A extends never ? true : false
+
+does not.
+
+Edit : [Here](https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/fqleyy5?utm_source=share&amp;utm_medium=web2x) is how I understand the issue is solved .

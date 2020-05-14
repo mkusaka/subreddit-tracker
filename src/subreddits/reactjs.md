@@ -84,59 +84,160 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][I created a set of Free React UI Templates &amp; Components (52 UI Components, 7 Landing Pages, 8 Inner Pages, Fully Responsive) for creating Beautiful Landing Pages easily](https://www.reddit.com/r/reactjs/comments/gih6xv/i_created_a_set_of_free_react_ui_templates/)
-- url: https://v.redd.it/lkps72rjndy41
+## [3][JSNation Live: Get free tickets for the largest remote JavaScript conference](https://www.reddit.com/r/reactjs/comments/gj1s6f/jsnation_live_get_free_tickets_for_the_largest/)
+- url: https://sfree.life/jsnation-javascript-live-conference-2020-free/
 ---
 
-## [4][Create a stunning Documentation with Docusaurus](https://www.reddit.com/r/reactjs/comments/gixh0u/create_a_stunning_documentation_with_docusaurus/)
-- url: https://react-open-source-topics-and-tutorials.s3.eu-central-1.amazonaws.com/docusaurus.htm
+## [4][Become a better godfather for your React components](https://www.reddit.com/r/reactjs/comments/gjilrt/become_a_better_godfather_for_your_react/)
+- url: https://mariosfakiolas.com/blog/become-a-better-godfather-for-your-react-components
 ---
 
 ## [5][React Router v6 migrated to TypeScript](https://www.reddit.com/r/reactjs/comments/gixv6s/react_router_v6_migrated_to_typescript/)
 - url: https://github.com/ReactTraining/react-router/releases/tag/v6.0.0-alpha.4
 ---
 
-## [6][Interactive pay-card using react hooks](https://www.reddit.com/r/reactjs/comments/gi1rsc/interactive_paycard_using_react_hooks/)
-- url: https://v.redd.it/3asa3gccr8y41
+## [6][Help wanted: How does Kea compare to other state management frameworks?](https://www.reddit.com/r/reactjs/comments/gjildq/help_wanted_how_does_kea_compare_to_other_state/)
+- url: https://www.reddit.com/r/reactjs/comments/gjildq/help_wanted_how_does_kea_compare_to_other_state/
+---
+Hi all, I'm linking to an issue with a question: [https://github.com/keajs/kea/issues/106](https://github.com/keajs/kea/issues/106)
+
+The text from the issue is copied below. Reply either here or in Github, as you prefer.
+
+\----
+
+Hi everyone! I get often asked to compare Kea with X, where X is some other approach to managing state in React. Be it [easy-peasy](https://easy-peasy.now.sh/), [redux-toolkit](https://redux-toolkit.js.org/), [mobx](https://mobx.js.org/), [dva](https://github.com/dvajs/dva), react context + hooks, etc. (incomplete list)
+
+Unfortunately I never have a good answer, as I haven't used any of them extensively and for big projects. I have just read the readmes, which is not enough for a smart comparison.
+
+I believe Kea is something special in the react world and that it strikes a beautiful balance between simplicity vs flexibility vs joy vs power. However, while many people I've spoken to also seem to agree with this, I'm obviously really biased here.
+
+Thus, I'm asking the internet: please share if you have any experiences with any of the other frameworks... and especially with how they compare to Kea when writing large real world applications, where state management gets pretty complex. I'm not interested in TodoMVC.
+
+Your answers can be anything from "Kea rocks" to "Functional programming is the scourge of the earth and you're better off burning coal for heat" to "In a huge app with X state trees, we ran into issues X, Y, Z with framework B after we did Q, N and K".
+
+Please keep it civil though!
+
+My hope for this thread is that I can either: 1) learn something new to make Kea even better... or 2) prove that it really is as awesome as it seems!
+
+I'll leave you with two quotes:
+
+* "A complex system that works is invariably found to have evolved from a simple system that worked." [John Gall](https://en.wikiquote.org/wiki/John_Gall)
+* "The best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer" [Ward Cunningham](https://en.wikipedia.org/wiki/Ward_Cunningham)
+
+Kea is a complex system that works as well as it does because it rose out of a simpler system over time. Kea 2.0 made this complex system much simpler to use and as a result, I think it's the best way to manage state in the React ecosystem.
+
+Prove me wrong!
+
+\----
+
+Learn more about Kea here: [https://kea.js.org/](https://kea.js.org/)
+## [7][Looking for a first job mentor](https://www.reddit.com/r/reactjs/comments/gjjcfu/looking_for_a_first_job_mentor/)
+- url: https://www.reddit.com/r/reactjs/comments/gjjcfu/looking_for_a_first_job_mentor/
+---
+Hey dear community, as the title says, I am looking for my first react job. I have spent year and half learning and working with it and I am very confident in it. 
+
+I would need someone to guide me what can I do to land my first job, portfolio mistakes, new project ideas, way to talk to the firm, all that important stuff.
+
+I must say, I don't have cash to pay for this so this is just a friendly help Im looking for.
+
+Thanks!
+## [8][Expo Google Fonts release announcement](https://www.reddit.com/r/reactjs/comments/gj6z6i/expo_google_fonts_release_announcement/)
+- url: https://www.reddit.com/r/reactjs/comments/gj6z6i/expo_google_fonts_release_announcement/
+---
+I've been working on this library in my spare time for the last two weeks and just released it!
+
+**Expo Google Fonts**
+
+Use any font from Google Fonts in your Expo app
+
+* Support for 991 fonts &amp; 3000+ variants
+* Works across Web, Native iOS, and Android
+* Install and Use in seconds
+* Free to Use and Open Source (both the library and the fonts)
+* Available now
+
+[https://github.com/expo/google-fonts#readme](https://github.com/expo/google-fonts#readme)
+
+**Usage**
+
+Install the package for the font you want
+
+    expo install @expo-google-fonts/inter expo-font
+
+## In your app
+
+    import React, { useState, useEffect } from 'react';
+    
+    import { Text, View, StyleSheet } from 'react-native';
+    import { AppLoading } from 'expo';
+    import {
+      useFonts,
+      Inter_900Black,
+    } from '@expo-google-fonts/inter';
+    
+    export default () =&gt; {
+      let [fontsLoaded] = useFonts({
+        Inter_900Black,
+      });
+    
+      if (!fontsLoaded) {
+        return &lt;AppLoading /&gt;;
+      } else {
+        return (
+          &lt;View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}&gt;
+    
+            &lt;Text style={{ fontFamily: 'Inter_900Black' }}&gt;
+              Inter Black
+            &lt;/Text&gt;
+    
+          &lt;/View&gt;
+        );
+      }
+    };
+
+There is a list of all the available font packages here: [https://github.com/expo/google-fonts/blob/master/GALLERY.md#readme](https://github.com/expo/google-fonts/blob/master/GALLERY.md#readme)  
+
+
+But you can mostly just go to [https://fonts.google.com/](https://fonts.google.com/) and find a font you like and then the package to install will just be a simple transform of the font family name. Ex. For Source Sans Pro, the font package you would need is just `@expo-google-fonts/source-sans-pro`
+
+I made this so I could use more fonts more quickly in my projects. The Google Fonts library is really great resource because all the fonts in it are open source and free and can be used in basically any project without concern.
+
+When you install a font package, it will include the font assets in your project, so when you submit to app stores, the font assets will be delivered along with the binary.
+
+There is also an `@expo-google-fonts/dev` package that lets you load any of the fonts over the network. This is super convenient during development (and may have some production applications as well, if you are doing something very dynamic).  
+
+
+Some of my favorite fonts from Google Fonts are Inter, Manrope, Balsamiq Sans, and Bangers.
+## [9][ReactEurope 2020 Livestream - Day 1](https://www.reddit.com/r/reactjs/comments/gjieym/reacteurope_2020_livestream_day_1/)
+- url: https://www.youtube.com/watch?v=41Ia291KIvI&amp;feature=emb_title
 ---
 
-## [7][The hidden magic of Main Thread Scheduling](https://www.reddit.com/r/reactjs/comments/givphn/the_hidden_magic_of_main_thread_scheduling/)
-- url: https://dev.to/nielsen-tlv/the-hidden-magic-of-main-thread-scheduling-16i9
+## [10][Would anyone consider giving me a code review?](https://www.reddit.com/r/reactjs/comments/gjhx08/would_anyone_consider_giving_me_a_code_review/)
+- url: https://www.reddit.com/r/reactjs/comments/gjhx08/would_anyone_consider_giving_me_a_code_review/
+---
+Only a basic practice project,  but I would love to hear about anything I could do better. 
+
+This is a social stats dashboard with theme toggle made over the past couple of days, whilst taking a break from  my current main project.  I'm a self teaching student - no bootcamp / university connections so I'm out here in my own little bubble and would love any feedback you could give.
+
+Thanks in advance to anyone taking the time to have a look, it really is appreciated.
+
+[Hosted here (http)](http://88.80.191.153:3999)
+
+[Code here (Github)](https://github.com/boothscript/social-dashboard-with-theme-toggle)
+## [11][A Map checkbox](https://www.reddit.com/r/reactjs/comments/gjjgz0/a_map_checkbox/)
+- url: https://www.reddit.com/r/reactjs/comments/gjjgz0/a_map_checkbox/
+---
+Hi all,
+
+I am trying to a build a shared Dropdown component with checkboxes, since the items length is not defined I am using map functions to iterate items. 
+I want that if I select a checkbox, the item that is selected is to be pushed to an array. 
+
+I am not clear how to do that with every click to the checkbox .. also I am confused with checked and defaultchecked property. 
+
+Help!!
+
+Thanks in advance.
+## [12][Hacker News Reader in React](https://www.reddit.com/r/reactjs/comments/gjibjv/hacker_news_reader_in_react/)
+- url: https://hackernews-reader-react.netlify.app/
 ---
 
-## [8][Insert Sort Algorithm Visualization](https://www.reddit.com/r/reactjs/comments/gipkw2/insert_sort_algorithm_visualization/)
-- url: https://v.redd.it/3vce4vpkvfy41
----
-
-## [9][Webpage works in chrome but not in IE](https://www.reddit.com/r/reactjs/comments/gixf56/webpage_works_in_chrome_but_not_in_ie/)
-- url: https://www.reddit.com/r/reactjs/comments/gixf56/webpage_works_in_chrome_but_not_in_ie/
----
-I have an application made of different react components. One webpage of the application I'm trying to open is showing a blank page in IE (VERSION 11)  but the same webpage when I open in chrome is showing up fine. I don't understand what the issue is.
-
-I'm using web pack library as well.
-
-Edit: package.json has es6: true under "env" object
-## [10][I created an Electron React app. SVG Splash - a beautifully simple SVG painting application.](https://www.reddit.com/r/reactjs/comments/gixbvr/i_created_an_electron_react_app_svg_splash_a/)
-- url: https://www.svgsplash.com
----
-
-## [11][When to use React](https://www.reddit.com/r/reactjs/comments/giwm9u/when_to_use_react/)
-- url: https://www.reddit.com/r/reactjs/comments/giwm9u/when_to_use_react/
----
-I hope this is the right place this post mostly focuses on gatsby and NextJS.
-
-I've been looking into frameworks to redo my personal website which currently is powered by just HTML and CSS and at most 200 lines of JS. I've been getting a bit into react (through gatsby and NextJS) and even after just coding up a small little demo I'm just devastated by the performance overhead react / webpack generates. It might be because I'm still very bad at writing react components, but something feels wrong when I audit a site with Lighthouse and I get a performance rating of 70. Main Thread Execution time sits at 4 seconds already and when looking at bigger sites that use these technologies auditing them yields even worse stats.
-
-Am I not meant to audit a website built on react through Lighthouse? I always focused to getting 100 points on performance or at least as close as possible to it on my website. I really think that the link preloading of both frameworks are amazing, building websites through components seems super intuitive and some other things.
-
-How would one approach this? Is it wrong for me to use React to build a simple website with little Javascript interaction, is it truly only meant for apps when you really want to see a difference? And especially how would I go about accurately auditing a react based website?
-## [12][Most affordable platform for hosting React app with Postgres backend?](https://www.reddit.com/r/reactjs/comments/giq0ai/most_affordable_platform_for_hosting_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/giq0ai/most_affordable_platform_for_hosting_react_app/
----
-My family owns a small business and is finally able to do curbside pickup. My dad asked me if I could make him a site that's basically an online store without actually paying - all it will do is display items (picture, price, etc.) and put items in a cart. For checkout, it will send the store an email of the items for pickup and a confirmation page for the customer.
-
-I've been exploring AWS Amplify to deploy and host this, but I've heard AWS can get pretty expensive. I don't anticipate many people to be logging into this site, but I want to stay pretty budget if possible.
-
-I'm stuck on a platform that can hold a good number of images, have a database for items, and also host the frontend. I've made React apps with a postgres backend before and it was easy to make changes and develop locally since I could just run an express server in the back while making changes to my app. 
-
-Any guidance or suggestion is much appreciated!

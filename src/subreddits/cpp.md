@@ -125,92 +125,51 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Proposal for an epoch-based organization of Boost libraries](https://www.reddit.com/r/cpp/comments/giu6xg/proposal_for_an_epochbased_organization_of_boost/)
+## [3][Cheerp 2.5: C++ to WebAssembly/JavaScript compiler, now with anyref support](https://www.reddit.com/r/cpp/comments/gjl6ix/cheerp_25_c_to_webassemblyjavascript_compiler_now/)
+- url: https://medium.com/leaningtech/cheerp-2-5-released-1b888058e242
+---
+
+## [4][Inside std::function, part 1: The basic idea](https://www.reddit.com/r/cpp/comments/gj3fok/inside_stdfunction_part_1_the_basic_idea/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200513-00/?p=103745
+---
+
+## [5][std::unique_ptr::operator!= deprecated in c++20](https://www.reddit.com/r/cpp/comments/gjmbrl/stdunique_ptroperator_deprecated_in_c20/)
+- url: https://www.reddit.com/r/cpp/comments/gjmbrl/stdunique_ptroperator_deprecated_in_c20/
+---
+What crime has operator!= commit against us through unique\_ptr?
+## [6][Judge0 IDE adds support for MPI](https://www.reddit.com/r/cpp/comments/gjktsg/judge0_ide_adds_support_for_mpi/)
+- url: https://ide.judge0.com/?R4Bc
+---
+
+## [7][unicode_display_width: Displayed width of UTF-8 strings in Modern C++](https://www.reddit.com/r/cpp/comments/gjlwqz/unicode_display_width_displayed_width_of_utf8/)
+- url: https://github.com/p-ranav/unicode_display_width
+---
+
+## [8][Solving Uninitialized Stack Memory on Windows](https://www.reddit.com/r/cpp/comments/gj437f/solving_uninitialized_stack_memory_on_windows/)
+- url: https://msrc-blog.microsoft.com/2020/05/13/solving-uninitialized-stack-memory-on-windows/
+---
+
+## [9][Richard’s April Update C++ Asio async musings](https://www.reddit.com/r/cpp/comments/gj7lmh/richards_april_update_c_asio_async_musings/)
+- url: https://cppalliance.org/richard/2020/04/30/RichardsAprilUpdate.html
+---
+
+## [10][Proposal for an epoch-based organization of Boost libraries](https://www.reddit.com/r/cpp/comments/giu6xg/proposal_for_an_epochbased_organization_of_boost/)
 - url: https://github.com/joaquintides/boost_epoch/blob/master/README.md
 ---
 
-## [4][C++ Coroutines: Understanding Symmetric Transfer](https://www.reddit.com/r/cpp/comments/giisb6/c_coroutines_understanding_symmetric_transfer/)
-- url: https://lewissbaker.github.io/2020/05/11/understanding_symmetric_transfer
+## [11][Need feedback to improve a Compile-Time Test Framework](https://www.reddit.com/r/cpp/comments/gjecdt/need_feedback_to_improve_a_compiletime_test/)
+- url: https://github.com/vickoza/CompilerTestFramework
 ---
 
-## [5][Rvalue Ranges and Views in C++20](https://www.reddit.com/r/cpp/comments/ginnrf/rvalue_ranges_and_views_in_c20/)
-- url: https://tristanbrindle.com/posts/rvalue-ranges-and-views
+## [12][Small vector with simple custom allocator](https://www.reddit.com/r/cpp/comments/gj87gs/small_vector_with_simple_custom_allocator/)
+- url: https://www.reddit.com/r/cpp/comments/gj87gs/small_vector_with_simple_custom_allocator/
 ---
+I played around with allocators quite recently and wondered why I have basically never seen a small buffered std::vector. ~~The implementation seems simple enough.~~  EDIT: The implementation is rather short, but getting it correct proved to be quite the challenge. With the help of some of the answers I was able to fix issues with the move constructor not working. 
 
-## [6][Status of "Structured Bindings With Explicit Types" ?](https://www.reddit.com/r/cpp/comments/gilhcr/status_of_structured_bindings_with_explicit_types/)
-- url: https://www.reddit.com/r/cpp/comments/gilhcr/status_of_structured_bindings_with_explicit_types/
----
-[https://isocpp.org/files/papers/p0480r1.html](https://isocpp.org/files/papers/p0480r1.html)
+[https://godbolt.org/z/MPbRpt](https://godbolt.org/z/MPbRpt)
 
-I'm having a hard time finding any information on this paper, or a successor. Is there a chance of being able to mark specific members of a decomposition declaration as being const?
+EDIT: new link [https://godbolt.org/z/UMBTuJ](https://godbolt.org/z/UMBTuJ)
 
-From the paper:
+~~If implemented like that the one huge disadvantage is that the move semantics are broken while the small buffer is active~~. 
 
-```
-struct B {}; struct D : B {};
-struct X {D a; D b;};
-auto [D x, D y] = X(); // this should be relatively non-controversial
-auto [B x, B y] = X(); // this seems reasonable
-auto [const D x, const D y] = X(); // this seems very reasonable
-auto [const B x, const B y] = X(); // this seems reasonable
-```
-## [7][tabulate: Table Maker for Modern C++ - v1.3 released!](https://www.reddit.com/r/cpp/comments/gifycg/tabulate_table_maker_for_modern_c_v13_released/)
-- url: https://www.reddit.com/r/cpp/comments/gifycg/tabulate_table_maker_for_modern_c_v13_released/
----
-Hello, 
-
-  A few months ago, I posted [here](https://www.reddit.com/r/cpp/comments/ehmcal/tabulate_table_maker_for_modern_c/) a library called `tabulate` for building pretty tables with modern C++. 
-
-* GitHub: https://github.com/p-ranav/tabulate
-
-Now, I'm happy to announce that [v1.3](https://github.com/p-ranav/tabulate/releases/tag/v1.3) is out with the following updates:
-
-* C++11 support - Used to be C++17 but now using variant-lite and optional-lite as fallback data structures
-* Improved compatibility with Mac SDK 10.9
-* Various Exporters:
-  * Markdown
-  * AsciiDoc
-  * LaTeX (very basic)
-* Some useful helper methods like `table.shape()`
-
-Thanks for your feedback. 
-Regards
-
-**EDIT**: Now includes a single header version
-## [8][CPP Optimizations: practical and simple examples I used in production and OSS contributions.](https://www.reddit.com/r/cpp/comments/gim6y9/cpp_optimizations_practical_and_simple_examples_i/)
-- url: https://github.com/facontidavide/CPP_Optimizations_Diary
----
-
-## [9][TheLartians/modern-wasm-starter - Run C++ code on web! A starter template to easily create WebAssembly projects using type-safe C++ code and automatic TypeScript declarations.](https://www.reddit.com/r/cpp/comments/gi8rdd/thelartiansmodernwasmstarter_run_c_code_on_web_a/)
-- url: https://github.com/TheLartians/modern-wasm-starter
----
-
-## [10][Discord?](https://www.reddit.com/r/cpp/comments/givlgy/discord/)
-- url: https://www.reddit.com/r/cpp/comments/givlgy/discord/
----
-Hi guys, the C# community reddit has a Discord with several thousand members, im wondering if C++ has a similar one?
-## [11][How does GCC implement vector containers in C++? A blog series on diving deeper into the source code of vectors!](https://www.reddit.com/r/cpp/comments/gi2m0i/how_does_gcc_implement_vector_containers_in_c_a/)
-- url: https://www.reddit.com/r/cpp/comments/gi2m0i/how_does_gcc_implement_vector_containers_in_c_a/
----
-Hi everyone!
-
-I've always loved reading source codes of the libraries I would use, and just recently - I started taking a look at how GCC implements some of the core methods for vector containers in C++. I'm happy to share the series of blogs (total 3 blog posts) which explain:
-
-1. The base struct (\_Vector\_base and \_Vector\_impl) and it's methods.
-2. Memory allocation and deallocation of vectors.
-3. What happens when a vector constructor is called?
-4. How are method functions like \`push\_back\`, \`pull\_back\` etc. implemented under the good?
-
-and more!
-
-Here are the links to the blog posts:
-
-1. [Understanding how Vectors work in C++ (Part-1): How does push\_back work?](https://krshrimali.github.io/How-Vectors-Work-in-C++-Part-1/)
-2. [Understanding how Vectors work in C++ (Part-2): What happens when you initialize a vector?](https://krshrimali.github.io/How-Vectors-Work-in-C++-Part-2/)
-3. [Understanding how Vectors work in C++ (Part-3): Diving deep into mostly used methods of Vectors](https://krshrimali.github.io/How-Vectors-Work-in-C++-Part-3/)
-
-I must confess that I'm still learning, and I am looking *actively* for any constructive feedback on my blogs. It has been a great learning for me, to be able to understand and share the design pattners used in the source code.
-## [12][Zug: Clojure-style transducers for C++ (higher order push/pull sequence transformations)](https://www.reddit.com/r/cpp/comments/giccxi/zug_clojurestyle_transducers_for_c_higher_order/)
-- url: https://sinusoid.es/zug/
----
-
+I have seen plenty of custom pool allocators, but they were all stateless. So I guess there is a good reason for that?

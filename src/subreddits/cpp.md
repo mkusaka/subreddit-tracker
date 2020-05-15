@@ -125,51 +125,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Cheerp 2.5: C++ to WebAssembly/JavaScript compiler, now with anyref support](https://www.reddit.com/r/cpp/comments/gjl6ix/cheerp_25_c_to_webassemblyjavascript_compiler_now/)
+## [3]["Ask Me Anything" with Bjarne Stroustrup (PLDI 2020 Live Q&amp;A with Special Guests): Wed 17 Jun 2020](https://www.reddit.com/r/cpp/comments/gjxcjn/ask_me_anything_with_bjarne_stroustrup_pldi_2020/)
+- url: https://pldi20.sigplan.org/details/pldi-2020-ask-me-anything/4/-Ask-Me-Anything-with-Bjarne-Stroustrup
+---
+
+## [4][CUDA Toolkit 11 will support C++17](https://www.reddit.com/r/cpp/comments/gk33wo/cuda_toolkit_11_will_support_c17/)
+- url: https://news.developer.nvidia.com/cuda-11-toolkit/
+---
+
+## [5][Adding peephole optimization to Clang](https://www.reddit.com/r/cpp/comments/gk7vvx/adding_peephole_optimization_to_clang/)
+- url: https://egorbo.com/opt-for-llvm-guide.html
+---
+
+## [6][Runtime Polymorphism Without Objects or Virtual Functions](https://www.reddit.com/r/cpp/comments/gk3isf/runtime_polymorphism_without_objects_or_virtual/)
+- url: https://www.fluentcpp.com/2020/05/15/runtime-polymorphism-without-virtual-functions/
+---
+
+## [7][CppCast: Physical Units](https://www.reddit.com/r/cpp/comments/gk0ux3/cppcast_physical_units/)
+- url: https://cppcast.com/physical-units-mateusz-pusz/
+---
+
+## [8][w64devkit: a Portable C and C++ Development Kit for Windows](https://www.reddit.com/r/cpp/comments/gk3i8h/w64devkit_a_portable_c_and_c_development_kit_for/)
+- url: https://nullprogram.com/blog/2020/05/15/
+---
+
+## [9][Inside std::function, part 2: Storage optimization](https://www.reddit.com/r/cpp/comments/gjs84d/inside_stdfunction_part_2_storage_optimization/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200514-00/?p=103749
+---
+
+## [10][Catch2 v3.0.0 preview2: Catch2 now uses statically compiled library as its distribution model.](https://www.reddit.com/r/cpp/comments/gjp548/catch2_v300_preview2_catch2_now_uses_statically/)
+- url: https://github.com/catchorg/Catch2/releases/tag/v3.0.0-preview2
+---
+
+## [11][What open-source videogame is good for C++ learning?](https://www.reddit.com/r/cpp/comments/gk8tn8/what_opensource_videogame_is_good_for_c_learning/)
+- url: https://www.reddit.com/r/cpp/comments/gk8tn8/what_opensource_videogame_is_good_for_c_learning/
+---
+
+## [12][Cheerp 2.5: C++ to WebAssembly/JavaScript compiler, now with anyref support](https://www.reddit.com/r/cpp/comments/gjl6ix/cheerp_25_c_to_webassemblyjavascript_compiler_now/)
 - url: https://medium.com/leaningtech/cheerp-2-5-released-1b888058e242
 ---
 
-## [4][Inside std::function, part 1: The basic idea](https://www.reddit.com/r/cpp/comments/gj3fok/inside_stdfunction_part_1_the_basic_idea/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200513-00/?p=103745
----
-
-## [5][std::unique_ptr::operator!= deprecated in c++20](https://www.reddit.com/r/cpp/comments/gjmbrl/stdunique_ptroperator_deprecated_in_c20/)
-- url: https://www.reddit.com/r/cpp/comments/gjmbrl/stdunique_ptroperator_deprecated_in_c20/
----
-What crime has operator!= commit against us through unique\_ptr?
-## [6][Judge0 IDE adds support for MPI](https://www.reddit.com/r/cpp/comments/gjktsg/judge0_ide_adds_support_for_mpi/)
-- url: https://ide.judge0.com/?R4Bc
----
-
-## [7][unicode_display_width: Displayed width of UTF-8 strings in Modern C++](https://www.reddit.com/r/cpp/comments/gjlwqz/unicode_display_width_displayed_width_of_utf8/)
-- url: https://github.com/p-ranav/unicode_display_width
----
-
-## [8][Solving Uninitialized Stack Memory on Windows](https://www.reddit.com/r/cpp/comments/gj437f/solving_uninitialized_stack_memory_on_windows/)
-- url: https://msrc-blog.microsoft.com/2020/05/13/solving-uninitialized-stack-memory-on-windows/
----
-
-## [9][Richard’s April Update C++ Asio async musings](https://www.reddit.com/r/cpp/comments/gj7lmh/richards_april_update_c_asio_async_musings/)
-- url: https://cppalliance.org/richard/2020/04/30/RichardsAprilUpdate.html
----
-
-## [10][Proposal for an epoch-based organization of Boost libraries](https://www.reddit.com/r/cpp/comments/giu6xg/proposal_for_an_epochbased_organization_of_boost/)
-- url: https://github.com/joaquintides/boost_epoch/blob/master/README.md
----
-
-## [11][Need feedback to improve a Compile-Time Test Framework](https://www.reddit.com/r/cpp/comments/gjecdt/need_feedback_to_improve_a_compiletime_test/)
-- url: https://github.com/vickoza/CompilerTestFramework
----
-
-## [12][Small vector with simple custom allocator](https://www.reddit.com/r/cpp/comments/gj87gs/small_vector_with_simple_custom_allocator/)
-- url: https://www.reddit.com/r/cpp/comments/gj87gs/small_vector_with_simple_custom_allocator/
----
-I played around with allocators quite recently and wondered why I have basically never seen a small buffered std::vector. ~~The implementation seems simple enough.~~  EDIT: The implementation is rather short, but getting it correct proved to be quite the challenge. With the help of some of the answers I was able to fix issues with the move constructor not working. 
-
-[https://godbolt.org/z/MPbRpt](https://godbolt.org/z/MPbRpt)
-
-EDIT: new link [https://godbolt.org/z/UMBTuJ](https://godbolt.org/z/UMBTuJ)
-
-~~If implemented like that the one huge disadvantage is that the move semantics are broken while the small buffer is active~~. 
-
-I have seen plenty of custom pool allocators, but they were all stateless. So I guess there is a good reason for that?

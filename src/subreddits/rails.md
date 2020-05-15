@@ -19,7 +19,152 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Database-driven authorization in Rails using CanCanCan - Abilities in DB and MetaProgramming](https://www.reddit.com/r/rails/comments/gjkha1/databasedriven_authorization_in_rails_using/)
+## [2][How to Fix Slow Code in Ruby](https://www.reddit.com/r/rails/comments/gjwyl9/how_to_fix_slow_code_in_ruby/)
+- url: https://engineering.shopify.com/blogs/engineering/how-fix-slow-code-ruby
+---
+
+## [3][Design Rails JSON API with performance in mind](https://www.reddit.com/r/rails/comments/gk5yzg/design_rails_json_api_with_performance_in_mind/)
+- url: https://www.reddit.com/r/rails/comments/gk5yzg/design_rails_json_api_with_performance_in_mind/
+---
+[https://jtway.co/design-rails-json-api-with-performance-in-mind-427e0f0e6f04](https://jtway.co/design-rails-json-api-with-performance-in-mind-427e0f0e6f04)
+## [4][301 redirect](https://www.reddit.com/r/rails/comments/gk6soo/301_redirect/)
+- url: https://www.reddit.com/r/rails/comments/gk6soo/301_redirect/
+---
+I'm using Nginx and I would like to do a 301 redirect to one domain as I have 4. I'm using the word example as my domain example in this cry for help 😥. 
+
+I don't understand why it is not going to the root file path when I use 301 redirect, can someone help please? 
+
+Inside the server block I have this:
+
+server_name www.example.com example.com www.example.co.uk;
+
+return 301 example.co.uk;
+
+root /var/www/example;
+## [5][Generating and storing reports](https://www.reddit.com/r/rails/comments/gk933x/generating_and_storing_reports/)
+- url: https://www.reddit.com/r/rails/comments/gk933x/generating_and_storing_reports/
+---
+Let's say you have multiple models with different kind of data and you want to create daily, monthly or weekly reports for a data range.  
+
+
+The model tables can have millions of rows so the report should be saved for quick access and/or download.  
+
+
+I'm wondering if you have some tips or design patterns on how to implement this.  I need to save the reports somehow in the database, but not sure what's the best way to handle this. What's sure is that the result is not instant and the query might take a while to compute.
+## [6][Creating a Quiz in Rails](https://www.reddit.com/r/rails/comments/gk5aiv/creating_a_quiz_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/gk5aiv/creating_a_quiz_in_rails/
+---
+Hey everyone! 
+
+I am currently trying to build a little mental math trainer in rails, that will throw random math questions (e.g. add two numbers, subtract two numbers, multiply, square etc...) at me. My main motivation behind this is that for each question I want to record the number of try's and time taken to get it correct, so that I can alter analyse these to see my improvement (hopefully). 
+
+Right now I am terribly stuck at implementing this though. I have created a Question model that contains a try and time taken field. My idea was that I would create a random question on the home page, display a simple\_form\_for underneath and use its input to check whether the question is correct. in the Questions create method.
+
+My simple form for looks like this:
+
+    &lt;% @question = Question.new() %&gt;
+    
+    &lt;% num1, num2, answ = @question.add_two_numbers %&gt;
+    &lt;h3&gt;&lt;%= num1 %&gt; + &lt;%= num2 %&gt;&lt;/h3&gt;
+    
+    &lt;p&gt;Trys: &lt;%= @question.trys %&gt;&lt;/p&gt;
+    
+    &lt;%= simple_form_for @question do |f| %&gt;
+      &lt;%= f.hidden_field :trys, :value =&gt; @question.trys || 1 %&gt;
+      &lt;%= f.hidden_field :answ, :value =&gt; answ %&gt;
+      &lt;%= f.input :user_answ, input_html: {value: ''}  %&gt;
+      &lt;%= f.button :submit %&gt;
+    &lt;% end %&gt;
+
+My Questions create method:
+
+    def create
+        @question = Question.new(trys: question_params["trys"], time: question_params["time"])
+        @question.user_id = current_user.id
+        respond_to do |format|
+          if @question.save &amp;&amp; (question_params["answ"] == question_params["user_answ"])
+            format.html { render :new, notice: 'Correct!' }
+            format.json { render :show, status: :created, location: @question }
+          else
+            format.html { render :new, notice: 'Thats wrong' }
+            format.json { render json: @question.errors, status: :unprocessable_entity }
+          end
+        end
+      end
+
+Whenever I hit the point where question\_params\["answ"\] == question\_params\["user\_answ"\], meaning that the user gave a wrong answer, I would like to increment the try's count by one and redirect him to the same question. As of right now, I can not get this to work however.
+
+I would be super glad I somebody could point me in the right direction, as I would really love to get this to work :)
+## [7][Serializing/Deserializing Data between Model and Various JSON Responses](https://www.reddit.com/r/rails/comments/gk0mzk/serializingdeserializing_data_between_model_and/)
+- url: https://www.reddit.com/r/rails/comments/gk0mzk/serializingdeserializing_data_between_model_and/
+---
+Suppose, we have multiple APIs that returns a JSON response. Both APIs correspond to the same ActiveRecord model(s).
+
+
+For example, given the
+JSON response A:
+
+    { 
+       'model': 'Volvo',
+       'wheels': 4,
+       'drivers': ['John', 'Mary', 'Kelly'],
+       ....
+    }
+
+
+and the JSON response B:
+
+    { 
+       'producer': 'Volvo',
+       'size': 4,
+       'names': ['John', 'Mary', 'Kelly'],
+       ....
+    }
+
+
+
+and lastly, the models: `Car(id, make, wheels), Driver(id, name), CarDriver(car_id, driver_id)`
+
+---
+
+
+What would be the most idiomatic-Railsy way to go about implementing serialization and deserialization between the Car model and the various JSON responses? In my real use-case, these responses are not trivial and have significant nesting.
+
+
+Currently, I'm using POROs with a format similar to DB migrations: `to_json`, `from_json`. I don't really want to put this logic in the model because these JSON responses are dependent on various services and have no impact on my internal representation. 
+
+Thank you!
+## [8][Application Search Feature more that ActiveRecord](https://www.reddit.com/r/rails/comments/gjxym1/application_search_feature_more_that_activerecord/)
+- url: https://www.reddit.com/r/rails/comments/gjxym1/application_search_feature_more_that_activerecord/
+---
+Is there a way to add in a search feature to an app that will not only search your ActiveRecords, but also your static pages? My higher ups want to be able to search everything and they do not understand the significant differences between the two, nor do they care. I am working at creating this in Rails 6 with Bootstrap 4. Any pointers or gem references would be greatly appreciated.
+## [9][React /Rails API dependent destroy?](https://www.reddit.com/r/rails/comments/gjwxty/react_rails_api_dependent_destroy/)
+- url: https://www.reddit.com/r/rails/comments/gjwxty/react_rails_api_dependent_destroy/
+---
+Hey, first time posting and trying to wrap my head around some stuff.  
+
+
+Working with:   
+Rails 6.0.3  
+React 16.13.1  
+Postgresql 12
+
+Created a couple of models and controllers with rails g scaffold api/{name of thing goes here}  
+
+
+in this case I have a Session and its child is Attendees. Now when I delete a session the regular "  
+
+
+has\_many :attendees, dependent: :destroy or  
+has\_many :api\_attendees, dependent: :destroy  
+doesn't work  
+
+
+Any thoughts on directions to go or maybe a good article to read on the subject? Haven't been able to find anything.  
+
+
+I guess I'm trying to figure out how rails associations work(or the specific syntax) when setting up as API only and through scaffolds.
+## [10][Database-driven authorization in Rails using CanCanCan - Abilities in DB and MetaProgramming](https://www.reddit.com/r/rails/comments/gjkha1/databasedriven_authorization_in_rails_using/)
 - url: https://www.reddit.com/r/rails/comments/gjkha1/databasedriven_authorization_in_rails_using/
 ---
 Hi ruby family,
@@ -40,137 +185,9 @@ If you think this can be extrapolated and be made into a gem, let me know, and l
 You check out my previous post here - 
 
 [https://addytalks.tech/2020/05/03/ruby-on-rails-authorization-with-cancancan/](https://addytalks.tech/2020/05/03/ruby-on-rails-authorization-with-cancancan/)
-## [3][using database cleaner gem to clean doesn't save the objects to database](https://www.reddit.com/r/rails/comments/gjfsrj/using_database_cleaner_gem_to_clean_doesnt_save/)
-- url: https://www.reddit.com/r/rails/comments/gjfsrj/using_database_cleaner_gem_to_clean_doesnt_save/
+## [11][Avoid coupling between Bounded Contexts using Weak Schema](https://www.reddit.com/r/rails/comments/gjo1hw/avoid_coupling_between_bounded_contexts_using/)
+- url: https://www.reddit.com/r/rails/comments/gjo1hw/avoid_coupling_between_bounded_contexts_using/
 ---
-I am running minitests and I want to use database cleaner gem with transaction strategy to clean up items I created during the tests. I'm using MySQL btw. 
+See how to avoid accidental coupling on many levels while developing modular monolith application using event driven approach.
 
-I followed this snippet [https://stackoverflow.com/questions/15675125/database-cleaner-not-working-in-minitest-rails](https://stackoverflow.com/questions/15675125/database-cleaner-not-working-in-minitest-rails) and set my code something like this. 
-
-    module AroundEachTest
-      def before_setup
-        super
-        DatabaseCleaner.start
-      end
-    
-      def after_teardown
-        super
-        DatabaseCleaner.clean
-      end
-    end
-    
-    class Minitest::Test
-      include AroundEachTest
-      def test_index
-        # create 5 articles in the database
-        # call index action
-        # assert the response has five objects
-      end
-    end
-
-The trouble I'm facing is in the test I'm able to get all 5 objects. but when I hit the index action and try to query for all objects I get 0 records. And none of the records is actually being saved in the database. 
-
-And hence the tests fails. 
-
-My question is
-
-1. why isn't the record being saved in the database in the first place?
-2. And why isn't it available in the index action 
-
-My guesses are 
-
-Since we started a transaction in the before\_setup method it doesn't get saved? I'm not sure though.
-## [4][I have a CLI-tool which downloads content from a website...How could I run (localhost) this in an app?](https://www.reddit.com/r/rails/comments/gjgsuq/i_have_a_clitool_which_downloads_content_from_a/)
-- url: https://www.reddit.com/r/rails/comments/gjgsuq/i_have_a_clitool_which_downloads_content_from_a/
----
-I’m messing around with a CLI-tool crunchyroll download from this [repo](https://github.com/DasKraken/CR-dl/blob/master/README.md) which allows me to login in my crunchyroll and download the video from given URL.
-
-I’m having hard time to figure it out how things will work. I mean, it’s not like the blog app or finnacial tracker I have done so far. I don’t wanna make a crud or store anything.
-
-I actually don’t know if this is possible. Just because I can download from my shell doesn’t mean I could in an app, right ?
-
-I tried making a Download model with a “url” column, a form to submit the URL and in my create action calling the “system” ruby command to execute my CLI-tool.
-The command to login into my account works fine but the command to download does not. 
-
-I would like to understand what is missing. If the problem is the CLI-tool that actually does not work for this kind of finality or there is something that I should be doing in my app.
-## [5][Standalone ActiveAdmin app](https://www.reddit.com/r/rails/comments/gj1vhk/standalone_activeadmin_app/)
-- url: https://www.reddit.com/r/rails/comments/gj1vhk/standalone_activeadmin_app/
----
-Hi, I'm working on rails API app as a backend for mobile app, I've deployed an app on AWS ECS, and it's work. Now I want to add an admin panel as a separate service, I decided to use ActiveAdmin because I'm know that framework, now I'm thinking how to set up active admin as a separate app, I have to share models between apps? If so which is the best way to do this, separate git repo for models? Or maybe there is some Smart way to do this?
-## [6][How do you handle input data for service objects (or more specifically Interactors/Organizers)](https://www.reddit.com/r/rails/comments/gj10xm/how_do_you_handle_input_data_for_service_objects/)
-- url: https://www.reddit.com/r/rails/comments/gj10xm/how_do_you_handle_input_data_for_service_objects/
----
-Like the title suggests I'm currently using the [Interactor gem](https://github.com/collectiveidea/interactor) in my project. For those who are new to this gem, Interactors are simple, single-purpose objects (basically like service objects with some extra stuff, so I think this question applies to service objects as well). The interactor gem also has this concept of Organizers, objects which single purpose is to run other interactors. 
-
-Now to my problem: I have an `Orders` controller with a corresponding model and an `#update` method. Each Order also has multiple `Shipments`. This #update method calls an Organizer which in turn calls multiple interactors to handle the business logic. However, before any of this happens I need to find the Order and it's Shipments via the provided `id` and need to check whether they can be updated (not every shipment and order can be). This is pretty easy as I just need to do two queries:
-
-* For the Order: `order = current_user.orders.where(id: params[:id], status: :finalized)`
-* For the shipment: `shipments = order.shipments.where(status: :pending)`
-
-Because these queries essentially represent some "logic" I want to test them (for example, does it correctly fail when there are no pending shipments in an order). Now I'm wondering: where do I put these queries?
-
-My first idea was to put them in the Organizer because this is the part that calls all other interactors but then again I'm not sure whether this is still within the purpose of the Organizer. And even if, then I would need to create organizer specs, something that isn't mentioned anywhere in the Interactor gem's docs and makes me wonder whether this is the correct place for these queries. 
-
-My second idea was to create another Interactor which "sets up" all the input for the following interactors. However, since these queries are quite specialized and aren't going to be use elsewhere I'm wondering if this makes sense.
-
-My last idea was to put them in the controller and let the controller pass this data into the Organizer. But this doesn't seem all to clean with the controller and would I then test this with controller tests or system tests?
-
-What do you guys think? Should I test these queries with unit-tests or should they be part of my system tests and where should I put these queries in the first place?
-## [7][How to handle social login from a react native app to rails api](https://www.reddit.com/r/rails/comments/givaz1/how_to_handle_social_login_from_a_react_native/)
-- url: https://www.reddit.com/r/rails/comments/givaz1/how_to_handle_social_login_from_a_react_native/
----
-Hi guys
-
-I'm trying to set up social login for my react native app which has a rails backend.
-
-I've read a lot of tutorials but most of them focus on rails as a web app solution, not so much as an api. For example, I think I might be needing the omniauth gem but I'm not sure if I also need devise when I'm not making use of most of its features (views, controllers, ...) and when I'm just issuing JWT's.  
-
-
-So I'm not sure what else I need or how best to approach this.
-
-I was also contemplating using something like auth0 if using something like omniauth is not secure/scalable enough.
-
-&amp;#x200B;
-
-Any thoughts or help would be greatly appreciated!  
-Stay safe!
-## [8][How do sites like Freecodecamp work?](https://www.reddit.com/r/rails/comments/gixx9u/how_do_sites_like_freecodecamp_work/)
-- url: https://www.reddit.com/r/rails/comments/gixx9u/how_do_sites_like_freecodecamp_work/
----
-How do I go about building a coding challenge site like freecodecamp. I know how to embed code editors using code mirror or ace.c9. But these editors don’t compile the code and I also don’t know how to add the “run the tests” button.
-
-Where can I learn to implement a site like this (preferably using ruby on rails)? Is there anything I need to learn or is there any API or ruby gem I can use?
-## [9][Transacted db:migrate:redo rake task](https://www.reddit.com/r/rails/comments/givoeb/transacted_dbmigrateredo_rake_task/)
-- url: https://www.reddit.com/r/rails/comments/givoeb/transacted_dbmigrateredo_rake_task/
----
-If you are familiar with the `db:migrate:redo` rake task you've probably noticed how it's convenient for fixing one migration, usually that's latest one.
-
-If run without params, at first the task rolls back the latest applied migration, i.e. runs `down` , and then immediately migrates it, i.e. runs `up`. Now, guess what happens if `up` step fails? Right, the `down` step remains performed, what means the latest applied migration now is not the one was a moment ago but the previous one. Next `db:migrate:redo` run, usually after the latest migration fix, surprisingly tries to run the previous migration. That's something unexpected, drives made, and makes the task useless in the scenario when a migration is being fixed that usually requires numerous of changes and `redo`'ing it several times.
-
-I promote a [fix](https://github.com/rails/rails/pull/39026) for that problem. That wraps entire `db:migrate:redo` task into a transaction. It won't change current migration to the previous one when `down` step fails as in the scenario above. That makes fixing a certain migration with more comfort since redo task is idempotent and can run as many times as needed.
-
-This post aims to gather feedback on the specified problem and the [pull request](https://github.com/rails/rails/pull/39026).
-
-All participants, thank you for your attention!
-## [10][How to create file(output.pdf) to table database in rails console?](https://www.reddit.com/r/rails/comments/givqm5/how_to_create_fileoutputpdf_to_table_database_in/)
-- url: https://www.reddit.com/r/rails/comments/givqm5/how_to_create_fileoutputpdf_to_table_database_in/
----
-I have Document table having a column of file:binary status:integer and expiration\_date:datetime.   
-Document.create(file: Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/files/testing\_file\_#{rand(100)}.csv", 'application/csv'), status: 0, expiration\_date= "2020-05-13 16:48:21")  
-After that, when i want to see the record the file is nil and the rest column has a record.
-## [11][Deploying Rails 6 w/ Webpacker to Nginx VPS](https://www.reddit.com/r/rails/comments/gitcbu/deploying_rails_6_w_webpacker_to_nginx_vps/)
-- url: https://www.reddit.com/r/rails/comments/gitcbu/deploying_rails_6_w_webpacker_to_nginx_vps/
----
-I have a Rails 6 project that uses webpacker to manage its assets which I'm trying to deploy in a VPS w/ nginx + passenger as my application server. However, the css assets won't seem to display properly. JS files seem to be working ok.
-
-What I tried to do:
-
-```
-
-$ RAILS_ENV=production bundle exec rails assets:precompile
-
-$ RAILS_ENV=production RACK_ENV=production NODE_ENV=production ./bin/webpack
-
-```
-
-Why won't my css load correctly?
+[https://blog.arkency.com/avoid-coupling-between-bounded-contexts-using-weak-schema/](https://blog.arkency.com/avoid-coupling-between-bounded-contexts-using-weak-schema/)

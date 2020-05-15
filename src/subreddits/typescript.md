@@ -22,47 +22,88 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Deno 1.0 Released](https://www.reddit.com/r/typescript/comments/gja7lo/deno_10_released/)
+## [2][Making GraphQL Magic with Sqlmancer](https://www.reddit.com/r/typescript/comments/gk2jby/making_graphql_magic_with_sqlmancer/)
+- url: https://www.reddit.com/r/typescript/comments/gk2jby/making_graphql_magic_with_sqlmancer/
+---
+The official beta version of Sqlmancer has been released! Sqlmancer is a Node.js library that empowers you to effortlessly and efficiently translate GraphQL queries into SQL statements. I just wrote up a brief article that shows how to get started and showcases some basic features.
+
+[https://medium.com/@danielrearden/making-graphql-magic-with-sqlmancer-d69c8203c087?sk=e4a66985889eee34f0b67d39f3bd5741](https://medium.com/@danielrearden/making-graphql-magic-with-sqlmancer-d69c8203c087?sk=e4a66985889eee34f0b67d39f3bd5741)
+
+I also put together a CodeSandbox container with the code from the article. You can see the library in action without forking or installing anything :)
+
+The library's still in development, so any feedback is always welcome. If you're interested in contributing, let me know or just open an issue. And if you like the library, please star it on GitHub!
+## [3][How to I type a function that it has to not contain return ?](https://www.reddit.com/r/typescript/comments/gk63ea/how_to_i_type_a_function_that_it_has_to_not/)
+- url: https://www.reddit.com/r/typescript/comments/gk63ea/how_to_i_type_a_function_that_it_has_to_not/
+---
+I thought that this :
+
+    const foo:() =&gt; void = function() {
+    	return true;
+    }
+    foo();
+
+would lint error,but it does not.Am I doing something wrong with the type?How to make it lint error ?
+## [4][TypeScript v3.9 has a problem when parsing recursive generic type maybe.](https://www.reddit.com/r/typescript/comments/gk5nfm/typescript_v39_has_a_problem_when_parsing/)
+- url: https://github.com/samchon/tgrid/issues/34
+---
+
+## [5][Using any in TypeScript gives us a false sense of safety](https://www.reddit.com/r/typescript/comments/gk5lit/using_any_in_typescript_gives_us_a_false_sense_of/)
+- url: https://mariosfakiolas.com/blog/using-any-in-typescript-gives-us-a-false-sense-of-safety
+---
+
+## [6][ts-engine 1.5.0 released with new-package command to bootstrap packages even more quickly, ESLint 7 other some quality of life fixes](https://www.reddit.com/r/typescript/comments/gjvh31/tsengine_150_released_with_newpackage_command_to/)
+- url: https://github.com/ts-engine/ts-engine/blob/master/packages/cli/README.md
+---
+
+## [7][How do you guys lint a ts file while you are coding it in vscode ?](https://www.reddit.com/r/typescript/comments/gk5lrz/how_do_you_guys_lint_a_ts_file_while_you_are/)
+- url: https://www.reddit.com/r/typescript/comments/gk5lrz/how_do_you_guys_lint_a_ts_file_while_you_are/
+---
+It seems to take way much more time than needed for me to figure it out . I have installed eslint extension in vscode I have also done `npx eslint --init;` . Here is my `eslintrc.json` file :
+
+    {
+        "env": {
+            "browser": true,
+            "es6": true,
+    		"node": true
+        },
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/eslint-recommended"
+        ],
+        "globals": {
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly"
+        },
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+            "ecmaVersion": 11,
+            "sourceType": "module"
+        },
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "rules": {
+    	}
+    }
+
+But I do not get all linting in errors that I should in a ts file . For example lets say I have a file with this code :
+
+    let a;
+
+Since I do not use `a` anywhere it should be red highlighted but it is not . When I hover over `a` I can see the error about not being used anywhere;
+## [8][Deno 1.0 Released](https://www.reddit.com/r/typescript/comments/gja7lo/deno_10_released/)
 - url: https://deno.land/v1
 ---
 
-## [3][Microsoft announces TypeScript 3.9](https://www.reddit.com/r/typescript/comments/gj89g2/microsoft_announces_typescript_39/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-3-9/
----
-
-## [4][tsdotnet/linq - v1.0.0-preview](https://www.reddit.com/r/typescript/comments/gjhumz/tsdotnetlinq_v100preview/)
-- url: https://www.reddit.com/r/typescript/comments/gjhumz/tsdotnetlinq_v100preview/
----
-[www.npmjs.com/package/@tsdotnet/linq](https://www.npmjs.com/package/@tsdotnet/linq)
-
-[github.com/tsdotnet/linq](https://github.com/tsdotnet/linq)
-
-[tsdotnet.github.io/linq](https://tsdotnet.github.io/linq/)
-
-No readme or examples yet but JS docs are complete.
-
-Check out the core `Linq&lt;T&gt;` class for creating the chain here:[https://github.com/tsdotnet/linq/blob/master/src/linq.ts](https://github.com/tsdotnet/linq/blob/master/src/linq.ts)
-
-Feedback wanted, encouraged, and welcomed.
-## [5][Question: How to structure an NPM package with general utilities](https://www.reddit.com/r/typescript/comments/gjmf3y/question_how_to_structure_an_npm_package_with/)
+## [9][Question: How to structure an NPM package with general utilities](https://www.reddit.com/r/typescript/comments/gjmf3y/question_how_to_structure_an_npm_package_with/)
 - url: https://stackoverflow.com/q/61798645/39321
 ---
 
-## [6][Understanding Typescript](https://www.reddit.com/r/typescript/comments/gjmbph/understanding_typescript/)
-- url: https://www.youtube.com/watch?v=gs0lpdB9okM
+## [10][How to get the JSON type of an object type .](https://www.reddit.com/r/typescript/comments/gjpxk9/how_to_get_the_json_type_of_an_object_type/)
+- url: https://www.reddit.com/r/typescript/comments/gjpxk9/how_to_get_the_json_type_of_an_object_type/
 ---
-
-## [7][Some articles mention how TypeScript is slower than JavaScript. Why does it matter when it's compiled anyway?](https://www.reddit.com/r/typescript/comments/gjhgku/some_articles_mention_how_typescript_is_slower/)
-- url: https://www.reddit.com/r/typescript/comments/gjhgku/some_articles_mention_how_typescript_is_slower/
----
-&amp;#x200B;
-
-So I've seen in some places that mention JavaScript as being faster. But when TypeScript will just become JavaScript in production, does this matter at all, and wont they just be the same speed in the end.
-
-&amp;#x200B;
-
-[src](https://jaxenter.com/energy-efficient-programming-languages-137264.html)
-## [8][exporting typescript types in a package](https://www.reddit.com/r/typescript/comments/gjlumo/exporting_typescript_types_in_a_package/)
+i.e. I have an object type and I want to get the same type without the keys that have function values.
+## [11][exporting typescript types in a package](https://www.reddit.com/r/typescript/comments/gjlumo/exporting_typescript_types_in_a_package/)
 - url: https://www.reddit.com/r/typescript/comments/gjlumo/exporting_typescript_types_in_a_package/
 ---
 ***Outline***
@@ -111,87 +152,3 @@ If anybody has any idea's I would be very grateful!
 
 
 edit: formatting
-## [9][I have made a test type to check if there are any collisions in keys of obj1 &amp; obj2 . How to get a more helpful error message?](https://www.reddit.com/r/typescript/comments/gjlkse/i_have_made_a_test_type_to_check_if_there_are_any/)
-- url: https://www.reddit.com/r/typescript/comments/gjlkse/i_have_made_a_test_type_to_check_if_there_are_any/
----
-First of all is there such a thing as test types in TS or are they just a hack?
-
-With the help of these two posts\[[1](https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/)\]\[[2](https://www.reddit.com/r/typescript/comments/gab4ic/how_to_make_ts_or_eslint_or_vscode_warn_me_about/)\] and after getting a little bit more comfortable with typescript I managed to do this :
-
-    type obj1 = {
-    	a : string,
-    	b : number,
-    }
-    
-    type obj2 = {
-    	a : number,
-    	c : string
-    }
-    
-    type MustBeNever&lt;T extends never&gt; = T;
-    
-    type TestNoCollisionsInMixin = MustBeNever&lt;keyof obj1 &amp; keyof obj2&gt;;
-
-to check whether the mixin of two objects (merging one object into another) has any key collision.
-
-You can see that the error message I get is not really helpful . Is there any way to make the error message or the code more helpful ?
-## [10][Some useful classes/modules I've retooled for modern times.](https://www.reddit.com/r/typescript/comments/gj7phf/some_useful_classesmodules_ive_retooled_for/)
-- url: https://www.reddit.com/r/typescript/comments/gj7phf/some_useful_classesmodules_ive_retooled_for/
----
-[https://github.com/tsdotnet](https://github.com/tsdotnet)
-
-Originally called the "TypeScript .NET Library", this has gone through a lot of iterations and now has arrived as individual modules that have minimal dependencies and work well with tree-shaking.
-
-I'm proud to release this now as the foundational classes are rock solid and now have full API docs.
-
-The end goal is to release a new version of LINQ for TypeScript which I've been curating for years now.
-
-# LINQ and Iterables
-
-[https://github.com/tsdotnet/linq/tree/dev/src](https://github.com/tsdotnet/linq/tree/dev/src)
-
-Currently still in development, I realized that extensions weren't gonna be a thing in TS or JS for some time or never.  So switching to a `pipe(filter, filter, filter)` style pattern would not only be more flexible, but would ensure consumers only import what they need.
-
-About 95% of the filters (LINQ methods) are done, and with the intention that they can stand alone or be used with other filters.  Currently working on an API to handle better type inferrence and simplify building a query.
-
-# Queue&lt;T&gt;
-
-[https://github.com/tsdotnet/queue](https://github.com/tsdotnet/queue)
-
-A solid example of a class missing from JS that needs to be simple and fast.
-
-JavaScript arrays are terrible at behaving like queues as `.shift()` is slow.  This queue beats the performance of both arrays and other linked lists.
-
-# LinkedNodeList&lt;T&gt;
-
-[https://github.com/tsdotnet/linked-node-list](https://github.com/tsdotnet/linked-node-list)
-
-Simple, flexible, and reasonably light weight.  Nodes are defined by the consumer and can contain any properties outside of `previous` and `next`.
-
-I'm surprised how often I look to use a linked list to do things that JavaScript arrays are terrible at.
-
-# LinkedList&lt;T&gt;
-
-[https://github.com/tsdotnet/linked-list](https://github.com/tsdotnet/linked-list)
-
-Robust with familiar API.  Uses `LinkedNodeList&lt;T&gt;` under the hood.
-
-TypeScript will likely prevent any slip-ups and inappropriate modifications of the link chain of a `LinkedNodeList&lt;T&gt;.`  `LinkedList&lt;T&gt;` adds more features similar to .NET that allow for working directly with nodes without breaking the chain.
-
-...
-
-Enjoy, hopefully someone finds these fully typed and documented classes useful.  More to come.
-## [11][I have troubles understanding IsNever.](https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/)
-- url: https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/
----
-Why does this work :
-
-    type IsNever&lt;A&gt; = (A extends never ? never : false) extends never ? true : false;
-
-while this :
-
-    type IsNever&lt;A&gt; = A extends never ? true : false
-
-does not.
-
-Edit : [Here](https://www.reddit.com/r/typescript/comments/gj7pah/i_have_troubles_understanding_isnever/fqleyy5?utm_source=share&amp;utm_medium=web2x) is how I understand the issue is solved .

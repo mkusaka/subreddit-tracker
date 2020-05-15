@@ -23,61 +23,141 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/12/this-week-in-rust-338/
 ---
 
-## [3][My team at Nike just open-sourced our Rust wrappers around the AWS Greengrass SDK](https://www.reddit.com/r/rust/comments/gjcsi8/my_team_at_nike_just_opensourced_our_rust/)
-- url: https://github.com/Nike-Inc/aws-greengrass-core-sdk-rust
+## [3][Five Years of Rust | Rust Blog](https://www.reddit.com/r/rust/comments/gk77zt/five_years_of_rust_rust_blog/)
+- url: https://blog.rust-lang.org/2020/05/15/five-years-of-rust.html
 ---
 
-## [4][Deno 1.0 - A Secure TypeScript/JavaScript Runtime Built In Rust](https://www.reddit.com/r/rust/comments/gja35o/deno_10_a_secure_typescriptjavascript_runtime/)
-- url: https://deno.land/v1
+## [4][What's New in IntelliJ Rust](https://www.reddit.com/r/rust/comments/gk8sbp/whats_new_in_intellij_rust/)
+- url: https://blog.jetbrains.com/clion/2020/05/whats-new-in-intellij-rust/
 ---
 
-## [5][Benefits of full-stack Rust (My experience from implementing a browser game)](https://www.reddit.com/r/rust/comments/gjilkn/benefits_of_fullstack_rust_my_experience_from/)
-- url: https://www.jakobmeier.ch/blogging/Paddlers_4.html
+## [5][NuShell: the shell where traditional Unix meets modern development, written in Rust - An interview with its creators](https://www.reddit.com/r/rust/comments/gjp2xo/nushell_the_shell_where_traditional_unix_meets/)
+- url: https://notamonadtutorial.com/nushell-the-shell-where-traditional-unix-meets-modern-development-written-in-rust-caf92c2c7c98
 ---
 
-## [6][Kudos to Rust](https://www.reddit.com/r/rust/comments/gj4uei/kudos_to_rust/)
-- url: https://www.reddit.com/r/rust/comments/gj4uei/kudos_to_rust/
+## [6][Is it undefined behavior to mem::transmute between const-generic types? If so, Why? If not, why not?](https://www.reddit.com/r/rust/comments/gk3qaw/is_it_undefined_behavior_to_memtransmute_between/)
+- url: https://www.reddit.com/r/rust/comments/gk3qaw/is_it_undefined_behavior_to_memtransmute_between/
 ---
-Hello friends,
+**Answer**
 
-Today we ([Wasmer.io](https://Wasmer.io)) are announcing [the first Java library to run WebAssembly, named Wasmer JNI](https://medium.com/wasmer/announcing-the-first-java-library-to-run-webassembly-wasmer-jni-89e319d2ac7c). I know it's the Rust subreddit, but I wanted to thank the Rust community for the maturity of the tooling. Wasmer itself is written in Rust, same for Wasmer JNI which is based on [jni-rs](https://github.com/jni-rs/jni-rs/). There is Java code for the sake of simplicity, but this project would not have been that easy without jni-rs. Kudos!
+* If you **do not use** `#[repr(C)]` then this **is** undefined behavior.
+* If you **do use** `#[repr(C)]` then this **is not** undefined behavior.
+* `#[repr(C)]` \[[docs](https://doc.rust-lang.org/nomicon/other-reprs.html)\]
 
-I take this post as an opportunity to also salute [Pyo3](https://pyo3.rs/) (which we use for our [Python integration](https://github.com/wasmerio/python-ext-wasm)), [Rutie](https://github.com/danielpclark/rutie) (which we use for our [Ruby integration](https://github.com/wasmerio/ruby-ext-wasm)), and [pg-extend](https://github.com/bluejekyll/pg-extend-rs/) (which we use for our [PostgreSQL integration](https://github.com/wasmerio/postgres-ext-wasm)). To be clear, it's not a hidden marketing message: I'm just amazed how easy it is to embed Rust in very various environments. Wasmer is also available in C, [PHP](https://github.com/wasmerio/php-ext-wasm) and so on. How crazy that is!
+**Original Post**
 
-The Rust teams are doing an amazing job to keep Rust awesome whist being aligned with many standards, making it easy to use or embed it everywhere. The tooling and the ecosystem around Rust is simply absolutely awesome.
+Here is a simple, minimal example: \[[playground](https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=c433eeb8f746ab0f0df2e5ebc5fd0116)\]
 
-I'm programming in Rust full time since a year and a month now. It has changed my life as a developer. Thank you for that.
-## [7][Rust: Structuring and handling errors in 2020](https://www.reddit.com/r/rust/comments/gj8inf/rust_structuring_and_handling_errors_in_2020/)
-- url: https://nick.groenen.me/posts/rust-error-handling/
+Using const generics, we can split the implementation of `Point`
+
+* only a `Point&lt;{ Type::HasGetX }&gt;` can call `get_x()`
+* only a `Point&lt;{ Type::HasGetY }&gt;` can call `get_y()`
+
+We can then create a function, `get_xy_from()` which takes a `Point&lt;const T: Type&gt;` and transmutes it as needed in order to invoke the relevant functions.
+
+This example appears to provide the correct outputs, which is encouraging, but that doesn't prove anything. The behavior could still be undefined and only appear to be correct in this one instance running in the playground.
+
+Could someone with more knowledge about const generics shed some light on whether or not this is okay, and maybe try to explain a bit more about why it is or is not?
+## [7][c-closures hits 1.0!](https://www.reddit.com/r/rust/comments/gjz6h5/cclosures_hits_10/)
+- url: https://www.reddit.com/r/rust/comments/gjz6h5/cclosures_hits_10/
 ---
+Hi everyone, I've just released version 1.0 of [`c-closures-build`](https://crates.io/crates/c-closures-build) along with [a new tutorial!](https://github.com/Xaeroxe/c-closures-rs/tree/master/example)
 
-## [8][Castor: A Browser for the small internet (Gemini, Gopher, Finger)](https://www.reddit.com/r/rust/comments/gizchb/castor_a_browser_for_the_small_internet_gemini/)
-- url: https://sr.ht/~julienxx/Castor/
----
+`c-closures-build` generates C/C++ FFI compatible `*Closure` structures from rust closures, useful for cross language functional programming.
 
-## [9][iron-oxide: new Rust bindings to Metal](https://www.reddit.com/r/rust/comments/gje8eu/ironoxide_new_rust_bindings_to_metal/)
-- url: https://www.reddit.com/r/rust/comments/gje8eu/ironoxide_new_rust_bindings_to_metal/
----
-[Repository](https://github.com/Lonsdaleiter/iron-oxide) and [crate](https://crates.io/crates/iron-oxide).
-
-Vulkan and OpenGL are represented well in Rust with many bindings and wrappers (Vulkano, ash, erupt, luminance,  gl, etc), but there is only one Metal crate: metal-rs. I figured the time was ripe for an alternative crate for programming with Metal in Rust.
-
-Why Metal? It's an elegant, understandable low-level library that perfectly fits the role of a graphics abstraction one would build atop something like Vulkan.
-
-Why iron-oxide and not metal-rs? iron-oxide doesn't use macros for its types, so auto-complete still works. Also, unsafety is used properly. Hence, unsafe rusty metal.
-## [10][Mun struct Hot Reloading embedded in Rust](https://www.reddit.com/r/rust/comments/gj2s4s/mun_struct_hot_reloading_embedded_in_rust/)
-- url: https://v.redd.it/3lmib1vdaky41
----
-
-## [11][Beginner question please help me understand Rust async, its libraries and history](https://www.reddit.com/r/rust/comments/gjj6tw/beginner_question_please_help_me_understand_rust/)
-- url: https://www.reddit.com/r/rust/comments/gjj6tw/beginner_question_please_help_me_understand_rust/
----
-I understand that starting with 1.39 Rust has async / await keywords in the language. Before this version, one has to use a library for async programming in Rust. Does it mean I need only Rust standard library for async programming from 1.39 onwards without the need of any third party library? 
-
-There is this "futures" crate under official rust-lang Github repos. Is this crate meant to be used for Rust before 1.39 or it is build for modern rust async?
-
-And then there is tokio and async-std libraries.  Apparently many async frameworks is build on top of either one of these. Why the need of additional library as there is an official "futures" crate? Is it for historical reason? If you were to write a brand new async web framework (like warp or tide), can you just use "futures" crate?
-## [12][Loops in Rust; Breaking From Nested Loops](https://www.reddit.com/r/rust/comments/gjlrg7/loops_in_rust_breaking_from_nested_loops/)
-- url: https://qvault.io/2020/05/14/loops-in-rust-breaking-from-nested-loops/
+If you saw my last post about this crate then you should probably look again, a lot of enhancements and improvements have been made to the crate. Also, the `c-closures` crate itself is now deprecated.
+## [8][What, *exactly*, are lifetimes, in the mind of Rustc?](https://www.reddit.com/r/rust/comments/gk7aqh/what_exactly_are_lifetimes_in_the_mind_of_rustc/)
+- url: https://users.rust-lang.org/t/what-exactly-are-lifetimes-in-the-mind-of-rustc/42662
 ---
 
+## [9][2x slower cli performance with Clap](https://www.reddit.com/r/rust/comments/gk8q05/2x_slower_cli_performance_with_clap/)
+- url: https://www.reddit.com/r/rust/comments/gk8q05/2x_slower_cli_performance_with_clap/
+---
+Does anyone know why my example command line app would be 2x as slow when I use clap's new derive feature (which is basically just structopt, available on the master branch) when compared to manual command line parsing? Both are build with `--release`
+
+For a 1.2GB csv-like file with 8 columns, two each of float, int, bool, and String, (10M rows), manual command line args parsing makes the example run at [~450MB/s](https://i.imgur.com/jF5IlE3.png) on my machine. With clap, it runs at [~180 MB/s](https://i.imgur.com/0Cu52VS.png).
+
+It also looks like the maximum memory consumed is increased by 700MB
+
+
+You can see the code with manual command line parsing [here on the master branch](https://github.com/samedhg/sorer) and [here with clap](https://github.com/SamedhG/sorer/tree/clap). The code is in `examples/sorer.rs`.
+
+
+(By the way, this was a class project so that's the reason for the weird file format that this parses)
+## [10][Surprising performance implications of match](https://www.reddit.com/r/rust/comments/gjt98e/surprising_performance_implications_of_match/)
+- url: https://www.reddit.com/r/rust/comments/gjt98e/surprising_performance_implications_of_match/
+---
+An enum can have fake lifetime parameters (and/or type parameters) by using `PhantomData` in one of its variants.  Such an enum can be safely be mapped from one lifetime (and/or type) to another using `match`, giving the `PhantomData` variant a new `PhantomData` value and keeping the original value within any other variant.  One would expect the enum with lifetime `'a` would have the same data layout as the same enum with lifetime `'b`, and as such, a `match` should perform the same function as `mem::transmute`.
+
+However, the code produced by `match` is significantly more complex than the code produced by `mem::transmute`:
+
+    use std::marker::PhantomData;
+    use std::mem;
+    
+    pub enum Foo&lt;'a&gt; {
+        Bar(usize),
+        Baz(u32),
+        Qux(String),
+        Quux(Vec&lt;u8&gt;),
+        Quuz(PhantomData&lt;&amp;'a str&gt;),
+    }
+    
+    impl&lt;'a&gt; Foo&lt;'a&gt; {
+        pub fn match_to_static(self) -&gt; Foo&lt;'static&gt; {
+            match self {
+                Foo::Bar(v) =&gt; Foo::Bar(v),
+                Foo::Baz(v) =&gt; Foo::Baz(v),
+                Foo::Qux(v) =&gt; Foo::Qux(v),
+                Foo::Quux(v) =&gt; Foo::Quux(v),
+                Foo::Quuz(..) =&gt; Foo::Quuz(PhantomData),
+            }
+        }
+    
+        pub fn transmute_to_static(self) -&gt; Foo&lt;'static&gt; {
+            unsafe { mem::transmute(self) }
+        }
+    }
+
+`transmute_to_static` is more verbose than I expected but still compact:
+
+    example::Foo::transmute_to_static:
+            mov     rax, rdi
+            movups  xmm0, xmmword ptr [rsi]
+            movups  xmm1, xmmword ptr [rsi + 16]
+            movups  xmmword ptr [rdi + 16], xmm1
+            movups  xmmword ptr [rdi], xmm0
+            ret
+
+When inlined, it becomes a no-op afaik.
+
+However, `map_to_static` produces a lot of code and even a jump table, even on `-C opt-level=3`.  It's probably too long to paste here, so here's a compiler explorer link: https://godbolt.org/z/v44kdG
+
+Is `mem::transmute` doing something evil here, or is the optimizer just not noticing what the `match` is doing?
+## [11][Rx 5600 xt problem in Rust.](https://www.reddit.com/r/rust/comments/gk95cq/rx_5600_xt_problem_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/gk95cq/rx_5600_xt_problem_in_rust/
+---
+I just got an rx 5600 xt, and it runs really well when playing Rust. But when I enter the inventory or the menu it seems to be running in 60 hz. But in the game itself, it runs with 144 hz. Does anyone know why?
+## [12][[Noob question] Cannot assign to reference](https://www.reddit.com/r/rust/comments/gk46eq/noob_question_cannot_assign_to_reference/)
+- url: https://www.reddit.com/r/rust/comments/gk46eq/noob_question_cannot_assign_to_reference/
+---
+\[Solved, make categories and products mutable\]
+
+I've a product category which contains multiple products. The pictures of the products come from another source.
+
+    pub fn get_categories() -&gt; Result&lt;Vec&lt;Category&gt;, String&gt;
+    {
+        let categories = get_all();
+        
+        for category in &amp;categories
+        {
+            for mut product in &amp;category.products
+            {
+                let picture_ids: Vec&lt;i32&gt; = ...
+                product.picture_ids = picture_ids; // &lt;-- error
+            }
+        }
+    
+        return Ok(categories);
+    }
+
+This example will give an error `cannot assign to'product.pictures'which is behind a'&amp;'reference'product'is a'&amp;'reference, so the data it refers to cannot be written`. However when I remove the Result and directly return the categories array the error wont popup. How can I solve this error or what am I missing?

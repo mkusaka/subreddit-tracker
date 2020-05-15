@@ -13,49 +13,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Deno 1.0 released!](https://www.reddit.com/r/javascript/comments/gj9a07/deno_10_released/)
+## [3][Resolving common technical debt to speed up Angular development](https://www.reddit.com/r/javascript/comments/gk425v/resolving_common_technical_debt_to_speed_up/)
+- url: https://www.devbridge.com/articles/resolving-common-technical-debt-to-speed-up-angular-development/
+---
+
+## [4][What happens when you call console.log…](https://www.reddit.com/r/javascript/comments/gju3am/what_happens_when_you_call_consolelog/)
+- url: https://keleshev.com/standard-io-under-the-hood
+---
+
+## [5][What is Deno.js &amp; is it time to move on Deno over Node.js?](https://www.reddit.com/r/javascript/comments/gk95zf/what_is_denojs_is_it_time_to_move_on_deno_over/)
+- url: https://www.freesourcecodes.in/index.html
+---
+
+## [6][WebAssembly COBOL Pong](https://www.reddit.com/r/javascript/comments/gk5ubd/webassembly_cobol_pong/)
+- url: https://moxon6.github.io/cobol-js-emscripten/
+---
+
+## [7][Super-fast TypeScript / JavaScript compiler written in Rust](https://www.reddit.com/r/javascript/comments/gjuz0g/superfast_typescript_javascript_compiler_written/)
+- url: https://github.com/swc-project/swc
+---
+
+## [8][CSS in JS with support for static / atomic CSS extraction.](https://www.reddit.com/r/javascript/comments/gk7vv1/css_in_js_with_support_for_static_atomic_css/)
+- url: https://github.com/matvp91/stylemug
+---
+
+## [9][A case study of complex table design](https://www.reddit.com/r/javascript/comments/gjuwny/a_case_study_of_complex_table_design/)
+- url: https://jlongster.com/case-study-complex-table-design
+---
+
+## [10][Blackprint: A node to node visual scripting](https://www.reddit.com/r/javascript/comments/gk3xw9/blackprint_a_node_to_node_visual_scripting/)
+- url: https://github.com/Blackprint/Blackprint
+---
+
+## [11][Using any in TypeScript gives us a false sense of safety](https://www.reddit.com/r/javascript/comments/gk5lzq/using_any_in_typescript_gives_us_a_false_sense_of/)
+- url: https://mariosfakiolas.com/blog/using-any-in-typescript-gives-us-a-false-sense-of-safety
+---
+
+## [12][Deno 1.0 released!](https://www.reddit.com/r/javascript/comments/gj9a07/deno_10_released/)
 - url: https://github.com/denoland/deno/issues/2473
----
-
-## [4][Tiny (1kb less) but very powerful React Google Map](https://www.reddit.com/r/javascript/comments/gixknp/tiny_1kb_less_but_very_powerful_react_google_map/)
-- url: https://github.com/realadvisor/rgm
----
-
-## [5][New Discord JS Server for Online Classes jsClass()](https://www.reddit.com/r/javascript/comments/gjilty/new_discord_js_server_for_online_classes_jsclass/)
-- url: http://jsclass.online/index.html
----
-
-## [6][Deno 1.0 release](https://www.reddit.com/r/javascript/comments/gj9oy9/deno_10_release/)
-- url: https://deno.land/v1
----
-
-## [7][JavaScript Growing Pains: From 0 to 13,000 Dependencies](https://www.reddit.com/r/javascript/comments/gjlws9/javascript_growing_pains_from_0_to_13000/)
-- url: https://blog.appsignal.com/2020/05/14/javascript-growing-pains-from-0-to-13000-dependencies.html
----
-
-## [8][Tools that use machine learning to help developers write better code](https://www.reddit.com/r/javascript/comments/gjltm4/tools_that_use_machine_learning_to_help/)
-- url: https://www.reddit.com/r/javascript/comments/gjltm4/tools_that_use_machine_learning_to_help/
----
-Do You use tools that use machine learning to help developers write better code?  
-I've found:
-
-* Kite is the AI assistant giving developers superpowers - [https://kite.com/javascript/](https://kite.com/javascript/)
-* TabNine uses deep learning to help you write code faster - [https://www.tabnine.com/](https://www.tabnine.com/)
-
-[View Poll](https://www.reddit.com/poll/gjltm4)
-## [9][🦖Todo list rest API using deno runtime!](https://www.reddit.com/r/javascript/comments/gjeyqg/todo_list_rest_api_using_deno_runtime/)
-- url: https://github.com/gokulkrishh/rest-api-deno
----
-
-## [10][JavaScript Features To Forget](https://www.reddit.com/r/javascript/comments/gj8oyj/javascript_features_to_forget/)
-- url: https://davidflanagan.com/2020/05/12/javascript-to-forget.html
----
-
-## [11][Deno FAQ: linking to third-party code](https://www.reddit.com/r/javascript/comments/gjfbfw/deno_faq_linking_to_thirdparty_code/)
-- url: https://deno.land/manual/linking_to_external_code
----
-
-## [12][Deno 1.0 Cheatsheet](https://www.reddit.com/r/javascript/comments/gjd4bp/deno_10_cheatsheet/)
-- url: https://www.cyanhall.com/posts/notes/11.deno-cheatsheet/
 ---
 

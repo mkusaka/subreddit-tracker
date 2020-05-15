@@ -1,97 +1,105 @@
 # aws
-## [1][I wrote a guide on building your own resume site using AWS S3, CloudFront, and Route53. Its almost free to host and looks great on a resume.](https://www.reddit.com/r/aws/comments/gjl5wi/i_wrote_a_guide_on_building_your_own_resume_site/)
+## [1][Diagrams as code (Python) with AWS icon support](https://www.reddit.com/r/aws/comments/gjxil2/diagrams_as_code_python_with_aws_icon_support/)
+- url: https://diagrams.mingrammer.com/docs/getting-started/examples
+---
+
+## [2][I wrote a guide on building your own resume site using AWS S3, CloudFront, and Route53. Its almost free to host and looks great on a resume.](https://www.reddit.com/r/aws/comments/gjl5wi/i_wrote_a_guide_on_building_your_own_resume_site/)
 - url: https://seanjziegler.com/how-to-build-a-free-static-resume-site-with-aws-s3-cloudfront-and-route-53/
 ---
 
-## [2][I made an app that lets user stores images (I´m using S3 buckets for that), how can I prevent users to upload too many GB of photos so I don´t get charged a lot in my account?](https://www.reddit.com/r/aws/comments/gj904w/i_made_an_app_that_lets_user_stores_images_im/)
-- url: https://www.reddit.com/r/aws/comments/gj904w/i_made_an_app_that_lets_user_stores_images_im/
+## [3][Has anyone tried using the new, revamped Macie?](https://www.reddit.com/r/aws/comments/gk95tq/has_anyone_tried_using_the_new_revamped_macie/)
+- url: https://www.reddit.com/r/aws/comments/gk95tq/has_anyone_tried_using_the_new_revamped_macie/
 ---
-Is there any option to prevent this? My intent when doing the app was as a showcase for my portfolio (trying to get my first job as a dev) so the link will be "out there" in public for everyone to see and I would like to have some sort of control regarding how much my users write data in the AWS services I´m using (my particular concern is S3, since photos nowdays are so heavy).
-## [3][RRAS begins AWS ELB](https://www.reddit.com/r/aws/comments/gjmbkd/rras_begins_aws_elb/)
-- url: https://www.reddit.com/r/aws/comments/gjmbkd/rras_begins_aws_elb/
+I set up the new Macie yesterday and tested it by throwing some documents with a bunch of (fake) PII into a bucket: a CSV, a DOCX, and an XLSX. It appears when I create a job that the job is only scanning the CSV file because that's the only finding that's coming back. No mention of any findings from the other file types. Am I doing something wrong? I don't see how I could be as the new interface seems very, very simple. Thanks for any help!
+## [4][I made a dedicated site for the Cloud Resume Challenge - an AWS project you can do to level up your skills and get noticed](https://www.reddit.com/r/aws/comments/gk94vd/i_made_a_dedicated_site_for_the_cloud_resume/)
+- url: https://cloudresumechallenge.dev/
 ---
-Hi all, 
 
-Currently rolling out RRAS for an always on VPN in AWS. I currently have one server behind a network load balancer and that works, but I will need to load balancer a couple of RRAS servers, but I know typical round robin can cause issues. 
+## [5][S3 Bucket Configured As Browsable Folders?](https://www.reddit.com/r/aws/comments/gk8x5m/s3_bucket_configured_as_browsable_folders/)
+- url: https://www.reddit.com/r/aws/comments/gk8x5m/s3_bucket_configured_as_browsable_folders/
+---
+Hello Everyone:
 
-using normal load balancers requires Port Following, or what might be called sticky ports where a client connection will only subsequently connect to the same server, and this needs to be able to forward UDP 500 and UDP 4500 to same box to complete the tunnel. 
+First time posting here and I hope someone can help me out.
 
-Does the elastic load balancer/Network load balancer in AWS allow this?
-## [4][How to deploy an AWS EKS cluster with Terraform?](https://www.reddit.com/r/aws/comments/gjm6pa/how_to_deploy_an_aws_eks_cluster_with_terraform/)
-- url: https://www.reddit.com/r/aws/comments/gjm6pa/how_to_deploy_an_aws_eks_cluster_with_terraform/
----
-If you are looking to learn about how to deploy an [EKS cluster on AWS, this tutorial](https://www.padok.fr/en/blog/aws-eks-cluster-terraform) will help you. It explains a simple way to create an AWS EKS cluster with Terraform.
-## [5][Question about managing Windows WorkSpaces](https://www.reddit.com/r/aws/comments/gjm6o7/question_about_managing_windows_workspaces/)
-- url: https://www.reddit.com/r/aws/comments/gjm6o7/question_about_managing_windows_workspaces/
----
-I am deploying some Windows 10 WorkSpaces.   With physical PCs, after imaging I need to log on as admin to install some software that cannot be included in an image, like our enterprise AV.  
+My company currently creates hardware solutions and provides firmware updates for said hardware via a public ftp server.  We're deprecating this server for a variety of reasons and we're thinking of moving it to an S3 bucket.  I've setup buckets before, but have always put up a web server or something in front where folks are not hitting the bucket directly.
 
-Is there a way to do the same for a WorkSpace?   Ours are integrated with our domain, and as far as I can tell I can’t even turn them on without logging in as the domain user they are assigned to, which obviously I cannot do.   I would like to be able to log-in as a local or domain admin before handing it over to the user.
-## [6][Kinesis to S3 vs direct writes to S3](https://www.reddit.com/r/aws/comments/gjm2uf/kinesis_to_s3_vs_direct_writes_to_s3/)
-- url: https://www.reddit.com/r/aws/comments/gjm2uf/kinesis_to_s3_vs_direct_writes_to_s3/
----
-We are working with an application which is responding to user clicks on the front end. Based on every user click, an average of 3 events are generated in the backend. We need to store all of these events into a S3 as a JSON file.  
-As a team our idea was to directly create the JSON object on the application itself and then write it to S3. However we spoke with someone from AWS and he said we should put the data into a Kinesis and then stream it into S3. We are not really sure about the advantage of this process. Has anyone here faced a similar challenge? What would you suggest?
-## [7][Web developer says they're developing on m3 (which has been phased out?)](https://www.reddit.com/r/aws/comments/gja4w5/web_developer_says_theyre_developing_on_m3_which/)
-- url: https://www.reddit.com/r/aws/comments/gja4w5/web_developer_says_theyre_developing_on_m3_which/
----
-Hi, my company is working with a web developer contractor to create an ecommerce site. They said they would use a m3.medium EC2 instance to for hosting. But I'm searching this up and it looks like these instances can't be started up anymore. What could be going on?
-## [8][Cloudfront not updating files through origin domain name](https://www.reddit.com/r/aws/comments/gjlvzs/cloudfront_not_updating_files_through_origin/)
-- url: https://www.reddit.com/r/aws/comments/gjlvzs/cloudfront_not_updating_files_through_origin/
----
-Can anyone help me with explaining how can I see my updated files on cloudfront when using origin domain?
+The need here, because we have thousands of customers and don't want to manage usernames/passwords, is to setup an S3 bucket where someone can browse the folders, find the appropriate firmware for their particular hardware device and download it.
 
-Thank you!
-## [9][Create Security group with Self ref - Not working](https://www.reddit.com/r/aws/comments/gjlm1l/create_security_group_with_self_ref_not_working/)
-- url: https://www.reddit.com/r/aws/comments/gjlm1l/create_security_group_with_self_ref_not_working/
+Is this doable with just and S3 bucket or should we be thinking of this differently?
+## [6][Passing api token and properykey value with python 3 to the API gateway using GET.](https://www.reddit.com/r/aws/comments/gk8n5c/passing_api_token_and_properykey_value_with/)
+- url: https://www.reddit.com/r/aws/comments/gk8n5c/passing_api_token_and_properykey_value_with/
 ---
-I am trying to create a security group with cloudformation and this is my code
+I have the basic API call figured out, I can create an API and make calls to it. 
+
+But for the life of me I can not figure out what the proper way to pass a propertykey value and API token to get a valid response from AWS API.
+
+Can someone shine some light on this?
+## [7][SSL for many customer whitelabel domains pointing to Elastic Beanstalk app?](https://www.reddit.com/r/aws/comments/gk8cz1/ssl_for_many_customer_whitelabel_domains_pointing/)
+- url: https://www.reddit.com/r/aws/comments/gk8cz1/ssl_for_many_customer_whitelabel_domains_pointing/
+---
+We're considering deploying an app (maybe two) via Elastic Beanstalk. The complication is that the app is served via multiple (whitelabel) domains. We own most of the domain registrations - some customers own theirs and configure A records based on our instructions (we need to move them to CNAMES...).
+
+  
+**My question: What's the best way to generate and manage SSL certificates in such a setup?**  
+
+
+My first thought was, for each customer:
+
+* Move DNS hosting to Route 53 to use ACM DNS validation
+* Delete existing A record and change to alias to point at Elastic Beanstalk load balancer
+* Generate SSL certificate for domain, or add domain to existing SSL certificate(\*)
+
+(\*) We have relatively large numbers of domains, let's say \~200 pointing at a serviceְ. Given that the load balancer has a limit of 25 SSL certificates, we might create an SSL certificate for each starting letter of the alphabet, and add domains to each as necessary. Is this possible? How would Elastic Beanstalk / Application Load Balancers cope with such a scenario.
+
+  
+We add domains all the time as customers join, and occasionally remove them as they leave. Currently everything is manual, but we do have an internal onboarding system for creating new customer platforms, and it would be relatively easy to use the AWS SDK to create domains and SSL certificates as needed.
 
 &amp;#x200B;
 
-Scenario1:
+Someone mentioned doing SSL termination using nginx / letsencrypt in a Docker instance with something like [https://github.com/linuxserver/docker-letsencrypt](https://github.com/linuxserver/docker-letsencrypt) and a NLB rather than ALB that Elastic Beanstalk provides, but  I'm not altogether excited about that because:
 
-      XXXX:
-        Type: AWS::EC2::SecurityGroup
-        Properties:
-          GroupName: XX-XX
-          GroupDescription: Allow ssh traffic
-          SecurityGroupIngress:
-          - IpProtocol: tcp
-            FromPort: 22
-            ToPort: 22
-            SourceSecurityGroupName: !Ref ZZZZ
-      SGAPIGWIngress:
-        Type: AWS::EC2::SecurityGroupIngress
-        Properties:
-          Description: XXXX inbound rule
-          GroupId: !Ref XXXX
-          IpProtocol: tcp
-          FromPort: -1
-          ToPort: -1
-          SourceSecurityGroupId: !Ref XXXX
+* We don't have any Docker infrastructure at the moment, so I have to learn ECS or similar and get all that infrastructure running.
+* Would I need to run one container per domain? That could be \~1000 nginx processes, I'm not sure how that would scale. NB My Docker-fu is rubbish, mostly things I've read and forgotten, because I've never had to use it in production.
+* Not sure how our internal onboarding system would spin containers up and down based on adding and removing domain names. Perhaps the ECS API? I'm really green here.
 
-According to the documentation, it should work. But I get a reply with the Group name in the error
-
-    Invalid id: "XX-XX" (expecting "sg-...") (Service: AmazonEC2; Status Code: 400; Error Code: InvalidGroupId.Malformed; Request ID: 6e2f50fe-1fbf-484c-8d7c-5dc13f4b12ca)
-
-In the resources tab in cloudformation, i see the Group name instead of the group id.
-
-When i try to get the GroupId with !GetAtt XXXX.GroupId, i still get the group name.
-
-Scenario 2:
-
-The same code, but the security group also has a VPCId property specified. Now, it simply gets stuck when it tries to create the security group.
-
-In the resources tab, the security groups with VPCId specified get their Physical ID as sg-... and the Security groups without their VPCId specified get their Group name as Physical ID.
-
-Am i missing something? or has aws made recent updates that is not in the documentation?
-
-Update: In Scenario2, the CFN fails to find the security groups. Fails with sg..does not exist in VPC. I only have one VPC and all the sgs are created in this vpc. 
-## [10][Policy help](https://www.reddit.com/r/aws/comments/gjlfd9/policy_help/)
-- url: https://www.reddit.com/r/aws/comments/gjlfd9/policy_help/
+Happy to clarify if anything isn't clear, look forward to your feedback.
+## [8][Change CloudWatch log interval for AWS Batch](https://www.reddit.com/r/aws/comments/gk6lgf/change_cloudwatch_log_interval_for_aws_batch/)
+- url: https://www.reddit.com/r/aws/comments/gk6lgf/change_cloudwatch_log_interval_for_aws_batch/
 ---
-Im writing a Service Control Policy that needs to apply to everyone EXCEPT those using a specific admin role. How would one go about writing such a condition?  
+I have an AWS Batch job that's running and having it's CloudWatch log under the `/aws/batch/job` log group. But what I've noticed is that my log events gets compiled and dumped all the same time every 25-30 minutes. Is there anyway to change the interval for it?
+## [9][Amazon Lex with Discord bot, any idea?](https://www.reddit.com/r/aws/comments/gk6it9/amazon_lex_with_discord_bot_any_idea/)
+- url: https://www.reddit.com/r/aws/comments/gk6it9/amazon_lex_with_discord_bot_any_idea/
+---
+So I have a task using AWS services and since I did spent a lot of time on discord, I'm thinking of making a chat-bot and deploy it as discord bot. Sadly there's not a lot of tutorial available out there. Does anyone has a clue if this is possible and what would the infrastructure from discord to amazon lex looks like? Thank you
+## [10][IAM policy with tags to restrict access to the certain resources in the organisation](https://www.reddit.com/r/aws/comments/gk5p7t/iam_policy_with_tags_to_restrict_access_to_the/)
+- url: https://www.reddit.com/r/aws/comments/gk5p7t/iam_policy_with_tags_to_restrict_access_to_the/
+---
+Hey guys,
 
+&amp;#x200B;
 
-I have everything else done, which currently means im denying everyone some given actions, however i want to allow those with this role to perform the action.
+so here's the situation. I have the IAM policy which supposed to deny access to the resources marked with the tag. The policy looks like this:
+
+        {
+          "Effect": "Deny",
+          "Action": "*",
+          "Resource": "*",
+          "Condition": {
+            "StringEquals": {
+              "aws:ResourceTag/Project": "EMS"
+            }
+          }
+        }
+
+It looks like the policy should deny all actions on the resource with the \`Project=EMS\` tag. 
+
+However, when I tag the bucket, EC2 instance, etc I can still see and execute actions (with a test user) on those particular resources just like on the others without the tag.
+
+&amp;#x200B;
+
+What am I doing wrong here?
+
+&amp;#x200B;
+
+Thanks!

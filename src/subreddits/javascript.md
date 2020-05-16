@@ -5,51 +5,57 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][WTF Wednesday (May 13, 2020)](https://www.reddit.com/r/javascript/comments/gj1vfm/wtf_wednesday_may_13_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gj1vfm/wtf_wednesday_may_13_2020/
+## [2][Showoff Saturday (May 16, 2020)](https://www.reddit.com/r/javascript/comments/gktdbw/showoff_saturday_may_16_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gktdbw/showoff_saturday_may_16_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Resolving common technical debt to speed up Angular development](https://www.reddit.com/r/javascript/comments/gk425v/resolving_common_technical_debt_to_speed_up/)
-- url: https://www.devbridge.com/articles/resolving-common-technical-debt-to-speed-up-angular-development/
+Show us here!
+## [3][Hello, everyone. I have spent sometime learning javascript and I am kind of learning by sharing guy so I have summarised all the new feature of JavaScript since ES6 - ES11. I hope you find it useful.](https://www.reddit.com/r/javascript/comments/gkmvnj/hello_everyone_i_have_spent_sometime_learning/)
+- url: https://sambat-tech.netlify.app/modern-javascript-what-new/
 ---
 
-## [4][What happens when you call console.log…](https://www.reddit.com/r/javascript/comments/gju3am/what_happens_when_you_call_consolelog/)
-- url: https://keleshev.com/standard-io-under-the-hood
+## [4][Getting Started With Deno.js](https://www.reddit.com/r/javascript/comments/gkthsu/getting_started_with_denojs/)
+- url: http://freesourcecodes.in/?getting-start-deno
 ---
 
-## [5][What is Deno.js &amp; is it time to move on Deno over Node.js?](https://www.reddit.com/r/javascript/comments/gk95zf/what_is_denojs_is_it_time_to_move_on_deno_over/)
-- url: https://www.freesourcecodes.in/index.html
+## [5][Why don't we write PropTypes before the component?](https://www.reddit.com/r/javascript/comments/gkfasc/why_dont_we_write_proptypes_before_the_component/)
+- url: /r/reactjs/comments/gkfaa0/why_dont_we_write_proptypes_before_the_component/
 ---
 
-## [6][WebAssembly COBOL Pong](https://www.reddit.com/r/javascript/comments/gk5ubd/webassembly_cobol_pong/)
-- url: https://moxon6.github.io/cobol-js-emscripten/
+## [6][How do I build the reddit-like feed ?](https://www.reddit.com/r/javascript/comments/gkpn7r/how_do_i_build_the_redditlike_feed/)
+- url: /r/node/comments/gkomu7/how_do_i_build_the_redditlike_feed/
 ---
 
-## [7][Super-fast TypeScript / JavaScript compiler written in Rust](https://www.reddit.com/r/javascript/comments/gjuz0g/superfast_typescript_javascript_compiler_written/)
-- url: https://github.com/swc-project/swc
+## [7][Snowpack: this looks like ParcelJS, but embracing ES2015+ code](https://www.reddit.com/r/javascript/comments/gkqj1a/snowpack_this_looks_like_parceljs_but_embracing/)
+- url: https://www.snowpack.dev/#install-snowpack
 ---
 
-## [8][CSS in JS with support for static / atomic CSS extraction.](https://www.reddit.com/r/javascript/comments/gk7vv1/css_in_js_with_support_for_static_atomic_css/)
-- url: https://github.com/matvp91/stylemug
+## [8][[AskJS] Why is Deno's only concern killing Node and not his own product? NodeJS has the coronavirus?](https://www.reddit.com/r/javascript/comments/gkuate/askjs_why_is_denos_only_concern_killing_node_and/)
+- url: https://www.reddit.com/r/javascript/comments/gkuate/askjs_why_is_denos_only_concern_killing_node_and/
+---
+I'm serious, I'm just looking at some articles with the intention of killing NodeJS, it's a little worrying that only NodeJS hate is focused.
+
+Someone can tell me what's wrong with NodeJS, I think it's powerful enough to last a lifetime.
+
+If it's by Typescript, I already use a framework in NodeJS that uses Typescript.
+## [9][chat application](https://www.reddit.com/r/javascript/comments/gktlr0/chat_application/)
+- url: https://github.com/rubenfunda/snyder
 ---
 
-## [9][A case study of complex table design](https://www.reddit.com/r/javascript/comments/gjuwny/a_case_study_of_complex_table_design/)
-- url: https://jlongster.com/case-study-complex-table-design
+## [10][new-error: A production-grade error creation / serialization library built for Typescript](https://www.reddit.com/r/javascript/comments/gkg1r0/newerror_a_productiongrade_error_creation/)
+- url: https://www.npmjs.com/package/new-error
 ---
 
-## [10][Blackprint: A node to node visual scripting](https://www.reddit.com/r/javascript/comments/gk3xw9/blackprint_a_node_to_node_visual_scripting/)
-- url: https://github.com/Blackprint/Blackprint
+## [11][[AskJS] How would you stream audio files in Node to play in the browser, and why?](https://www.reddit.com/r/javascript/comments/gkqytk/askjs_how_would_you_stream_audio_files_in_node_to/)
+- url: https://www.reddit.com/r/javascript/comments/gkqytk/askjs_how_would_you_stream_audio_files_in_node_to/
 ---
+I am aware that HTMLAudioElement can consume files or streams. But we could also use HLS, RMTP or websockets to send chunks. What do you prefer and why?
 
-## [11][Using any in TypeScript gives us a false sense of safety](https://www.reddit.com/r/javascript/comments/gk5lzq/using_any_in_typescript_gives_us_a_false_sense_of/)
-- url: https://mariosfakiolas.com/blog/using-any-in-typescript-gives-us-a-false-sense-of-safety
+&amp;#x200B;
+
+\[AskJS\]
+## [12][[AskJS] what is asynchronous javascript and synchronous javascript ? and what role does event loop play in all this ? eli5](https://www.reddit.com/r/javascript/comments/gks9dd/askjs_what_is_asynchronous_javascript_and/)
+- url: https://www.reddit.com/r/javascript/comments/gks9dd/askjs_what_is_asynchronous_javascript_and/
 ---
-
-## [12][Deno 1.0 released!](https://www.reddit.com/r/javascript/comments/gj9a07/deno_10_released/)
-- url: https://github.com/denoland/deno/issues/2473
----
-
+which one is blocking the code ? why do we have both ?

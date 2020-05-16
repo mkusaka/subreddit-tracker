@@ -23,141 +23,85 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/12/this-week-in-rust-338/
 ---
 
-## [3][Five Years of Rust | Rust Blog](https://www.reddit.com/r/rust/comments/gk77zt/five_years_of_rust_rust_blog/)
+## [3][Taking Advantage of Auto-Vectorization in Rust](https://www.reddit.com/r/rust/comments/gkq0op/taking_advantage_of_autovectorization_in_rust/)
+- url: https://nickwilcox.github.io/blog/autovec/
+---
+
+## [4][Jonathan Turner teaches Jason Turner (the C++ expert) Rust](https://www.reddit.com/r/rust/comments/gkr311/jonathan_turner_teaches_jason_turner_the_c_expert/)
+- url: https://www.youtube.com/watch?v=EzQ7YIIo1rY
+---
+
+## [5][A new server-side GraphQL library.](https://www.reddit.com/r/rust/comments/gkokke/a_new_serverside_graphql_library/)
+- url: https://www.reddit.com/r/rust/comments/gkokke/a_new_serverside_graphql_library/
+---
+`Async-graphql` is a GraphQL server-side library implemented in Rust. It is fully compatible with the GraphQL specification and most of its extensions, and offers type safety and high performance, easy to use and contains everything you need about GraphQL.
+
+Repo: [https://github.com/async-graphql/async-graphql](https://github.com/async-graphql/async-graphql)
+
+Examples: [https://github.com/async-graphql/examples](https://github.com/async-graphql/examples)
+
+Benchmark: [https://github.com/async-graphql/benchmark](https://github.com/async-graphql/benchmark)
+
+## Features
+
+* Fully support async/await
+* Type safety
+* Rustfmt friendly (Procedural Macro)
+* Custom scalar
+* Minimal overhead
+* Easy integration (hyper, actix\_web, tide ...)
+* Upload files (Multipart request)
+* Subscription (WebSocket transport)
+* Custom extension
+* Apollo Tracing extension
+* Limit query complexity/depth
+* Error Extensions
+* Apollo Federation
+
+I am a faithful believer of rust. I think rust can change the world! The improvement of ecosystem requires everyone to work together, this is my first small contribution to the rust world, and I am making it better every week and every day.
+
+I hope it will become the best GraphQL library for rust, and I have been working hard!
+## [6][Developing a small Windows CLI app using WinRT APIs, with full of rust-analyzer support and quick recompiles](https://www.reddit.com/r/rust/comments/gkiha8/developing_a_small_windows_cli_app_using_winrt/)
+- url: https://youtu.be/oLohY8-nKcA
+---
+
+## [7][KeePwn: check a KeePass database passwords against "Have I Been Pwned?"](https://www.reddit.com/r/rust/comments/gktqoc/keepwn_check_a_keepass_database_passwords_against/)
+- url: https://www.reddit.com/r/rust/comments/gktqoc/keepwn_check_a_keepass_database_passwords_against/
+---
+Link to KeePwn: https://github.com/gsurrel/keepwn
+
+I wanted to build a small tool that checks a KeePass database against *Have I Been Pwned?* for a long time, but this morning, I got the motivation to finally do it.
+
+Picking up the crates that I felt appropriate, I glued everything together, only to discover late that the [checkpwn](https://crates.io/crates/checkpwn) one is actually a binary crate, rather than a library. For now, I copied the code in a submodule to use it the way I want, but ultimately, it's better to de-couple everything.
+
+Here is the high-level overview of the software: KeePwn opens the database (as read-only), iterate over all entries, retrieve the password, hashes it, get the first chars of the hash to query the HIBP password API, check if the remaining of the hash is present in the API's response, and prints to the terminal the result.
+
+Slow? Yes, because there is a rate-limiting from the API, enforcing a 1.5s delay between requests.
+
+It is not strictly speaking my first Rust code, but maybe the first one that can be interesting to a bigger audience. It's been done in almost exactly 3h of time. Any comments, tips, or debate is welcome :)
+
+*Note:* I've not reviewed the code at all of the used crates, but I *assume* they are safe to use. Yes, it's dealing with passwords and that's sensitive, but it should be OK.
+## [8][Five Years of Rust | Rust Blog](https://www.reddit.com/r/rust/comments/gk77zt/five_years_of_rust_rust_blog/)
 - url: https://blog.rust-lang.org/2020/05/15/five-years-of-rust.html
 ---
 
-## [4][What's New in IntelliJ Rust](https://www.reddit.com/r/rust/comments/gk8sbp/whats_new_in_intellij_rust/)
-- url: https://blog.jetbrains.com/clion/2020/05/whats-new-in-intellij-rust/
+## [9][cargo-wipe](https://www.reddit.com/r/rust/comments/gktc58/cargowipe/)
+- url: https://github.com/mihai-dinculescu/cargo-wipe
 ---
 
-## [5][NuShell: the shell where traditional Unix meets modern development, written in Rust - An interview with its creators](https://www.reddit.com/r/rust/comments/gjp2xo/nushell_the_shell_where_traditional_unix_meets/)
-- url: https://notamonadtutorial.com/nushell-the-shell-where-traditional-unix-meets-modern-development-written-in-rust-caf92c2c7c98
+## [10][State of Web Routing in Rust](https://www.reddit.com/r/rust/comments/gks14y/state_of_web_routing_in_rust/)
+- url: https://pksunkara.com/posts/state-of-routing-in-rust/
 ---
 
-## [6][Is it undefined behavior to mem::transmute between const-generic types? If so, Why? If not, why not?](https://www.reddit.com/r/rust/comments/gk3qaw/is_it_undefined_behavior_to_memtransmute_between/)
-- url: https://www.reddit.com/r/rust/comments/gk3qaw/is_it_undefined_behavior_to_memtransmute_between/
----
-**Answer**
-
-* If you **do not use** `#[repr(C)]` then this **is** undefined behavior.
-* If you **do use** `#[repr(C)]` then this **is not** undefined behavior.
-* `#[repr(C)]` \[[docs](https://doc.rust-lang.org/nomicon/other-reprs.html)\]
-
-**Original Post**
-
-Here is a simple, minimal example: \[[playground](https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=c433eeb8f746ab0f0df2e5ebc5fd0116)\]
-
-Using const generics, we can split the implementation of `Point`
-
-* only a `Point&lt;{ Type::HasGetX }&gt;` can call `get_x()`
-* only a `Point&lt;{ Type::HasGetY }&gt;` can call `get_y()`
-
-We can then create a function, `get_xy_from()` which takes a `Point&lt;const T: Type&gt;` and transmutes it as needed in order to invoke the relevant functions.
-
-This example appears to provide the correct outputs, which is encouraging, but that doesn't prove anything. The behavior could still be undefined and only appear to be correct in this one instance running in the playground.
-
-Could someone with more knowledge about const generics shed some light on whether or not this is okay, and maybe try to explain a bit more about why it is or is not?
-## [7][c-closures hits 1.0!](https://www.reddit.com/r/rust/comments/gjz6h5/cclosures_hits_10/)
-- url: https://www.reddit.com/r/rust/comments/gjz6h5/cclosures_hits_10/
----
-Hi everyone, I've just released version 1.0 of [`c-closures-build`](https://crates.io/crates/c-closures-build) along with [a new tutorial!](https://github.com/Xaeroxe/c-closures-rs/tree/master/example)
-
-`c-closures-build` generates C/C++ FFI compatible `*Closure` structures from rust closures, useful for cross language functional programming.
-
-If you saw my last post about this crate then you should probably look again, a lot of enhancements and improvements have been made to the crate. Also, the `c-closures` crate itself is now deprecated.
-## [8][What, *exactly*, are lifetimes, in the mind of Rustc?](https://www.reddit.com/r/rust/comments/gk7aqh/what_exactly_are_lifetimes_in_the_mind_of_rustc/)
-- url: https://users.rust-lang.org/t/what-exactly-are-lifetimes-in-the-mind-of-rustc/42662
+## [11][Tour of Rust: Chapter 3 on data structures released, Spanish translations kickstarted, looking for translator](https://www.reddit.com/r/rust/comments/gku5ds/tour_of_rust_chapter_3_on_data_structures/)
+- url: https://tourofrust.com/22_en.html
 ---
 
-## [9][2x slower cli performance with Clap](https://www.reddit.com/r/rust/comments/gk8q05/2x_slower_cli_performance_with_clap/)
-- url: https://www.reddit.com/r/rust/comments/gk8q05/2x_slower_cli_performance_with_clap/
+## [12][Function pointer type inference: Is this a bug?](https://www.reddit.com/r/rust/comments/gkikzt/function_pointer_type_inference_is_this_a_bug/)
+- url: https://www.reddit.com/r/rust/comments/gkikzt/function_pointer_type_inference_is_this_a_bug/
 ---
-Does anyone know why my example command line app would be 2x as slow when I use clap's new derive feature (which is basically just structopt, available on the master branch) when compared to manual command line parsing? Both are build with `--release`
+When using total type inference for function pointer parameters, the borrow checker incorrectly evaluates the lifetime of reference parameters, artificially extending their purported lifetimes.
 
-For a 1.2GB csv-like file with 8 columns, two each of float, int, bool, and String, (10M rows), manual command line args parsing makes the example run at [~450MB/s](https://i.imgur.com/jF5IlE3.png) on my machine. With clap, it runs at [~180 MB/s](https://i.imgur.com/0Cu52VS.png).
+https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=6b7520cf86fd5606987dfb5b7435d2b9
 
-It also looks like the maximum memory consumed is increased by 700MB
-
-
-You can see the code with manual command line parsing [here on the master branch](https://github.com/samedhg/sorer) and [here with clap](https://github.com/SamedhG/sorer/tree/clap). The code is in `examples/sorer.rs`.
-
-
-(By the way, this was a class project so that's the reason for the weird file format that this parses)
-## [10][Surprising performance implications of match](https://www.reddit.com/r/rust/comments/gjt98e/surprising_performance_implications_of_match/)
-- url: https://www.reddit.com/r/rust/comments/gjt98e/surprising_performance_implications_of_match/
----
-An enum can have fake lifetime parameters (and/or type parameters) by using `PhantomData` in one of its variants.  Such an enum can be safely be mapped from one lifetime (and/or type) to another using `match`, giving the `PhantomData` variant a new `PhantomData` value and keeping the original value within any other variant.  One would expect the enum with lifetime `'a` would have the same data layout as the same enum with lifetime `'b`, and as such, a `match` should perform the same function as `mem::transmute`.
-
-However, the code produced by `match` is significantly more complex than the code produced by `mem::transmute`:
-
-    use std::marker::PhantomData;
-    use std::mem;
-    
-    pub enum Foo&lt;'a&gt; {
-        Bar(usize),
-        Baz(u32),
-        Qux(String),
-        Quux(Vec&lt;u8&gt;),
-        Quuz(PhantomData&lt;&amp;'a str&gt;),
-    }
-    
-    impl&lt;'a&gt; Foo&lt;'a&gt; {
-        pub fn match_to_static(self) -&gt; Foo&lt;'static&gt; {
-            match self {
-                Foo::Bar(v) =&gt; Foo::Bar(v),
-                Foo::Baz(v) =&gt; Foo::Baz(v),
-                Foo::Qux(v) =&gt; Foo::Qux(v),
-                Foo::Quux(v) =&gt; Foo::Quux(v),
-                Foo::Quuz(..) =&gt; Foo::Quuz(PhantomData),
-            }
-        }
-    
-        pub fn transmute_to_static(self) -&gt; Foo&lt;'static&gt; {
-            unsafe { mem::transmute(self) }
-        }
-    }
-
-`transmute_to_static` is more verbose than I expected but still compact:
-
-    example::Foo::transmute_to_static:
-            mov     rax, rdi
-            movups  xmm0, xmmword ptr [rsi]
-            movups  xmm1, xmmword ptr [rsi + 16]
-            movups  xmmword ptr [rdi + 16], xmm1
-            movups  xmmword ptr [rdi], xmm0
-            ret
-
-When inlined, it becomes a no-op afaik.
-
-However, `map_to_static` produces a lot of code and even a jump table, even on `-C opt-level=3`.  It's probably too long to paste here, so here's a compiler explorer link: https://godbolt.org/z/v44kdG
-
-Is `mem::transmute` doing something evil here, or is the optimizer just not noticing what the `match` is doing?
-## [11][Rx 5600 xt problem in Rust.](https://www.reddit.com/r/rust/comments/gk95cq/rx_5600_xt_problem_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/gk95cq/rx_5600_xt_problem_in_rust/
----
-I just got an rx 5600 xt, and it runs really well when playing Rust. But when I enter the inventory or the menu it seems to be running in 60 hz. But in the game itself, it runs with 144 hz. Does anyone know why?
-## [12][[Noob question] Cannot assign to reference](https://www.reddit.com/r/rust/comments/gk46eq/noob_question_cannot_assign_to_reference/)
-- url: https://www.reddit.com/r/rust/comments/gk46eq/noob_question_cannot_assign_to_reference/
----
-\[Solved, make categories and products mutable\]
-
-I've a product category which contains multiple products. The pictures of the products come from another source.
-
-    pub fn get_categories() -&gt; Result&lt;Vec&lt;Category&gt;, String&gt;
-    {
-        let categories = get_all();
-        
-        for category in &amp;categories
-        {
-            for mut product in &amp;category.products
-            {
-                let picture_ids: Vec&lt;i32&gt; = ...
-                product.picture_ids = picture_ids; // &lt;-- error
-            }
-        }
-    
-        return Ok(categories);
-    }
-
-This example will give an error `cannot assign to'product.pictures'which is behind a'&amp;'reference'product'is a'&amp;'reference, so the data it refers to cannot be written`. However when I remove the Result and directly return the categories array the error wont popup. How can I solve this error or what am I missing?
+Is this a real bug in type inference or the borrow checker, or just a quirk of the type system?

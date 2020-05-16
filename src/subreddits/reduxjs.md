@@ -1,10 +1,14 @@
 # reduxjs
-## [1][Recomendations for Enterprise-scale Nextjs(React)/Redux/Typescript arquitecture](https://www.reddit.com/r/reduxjs/comments/gjrykm/recomendations_for_enterprisescale/)
+## [1][Experimental state management lib for React from Facebook](https://www.reddit.com/r/reduxjs/comments/gkahrf/experimental_state_management_lib_for_react_from/)
+- url: https://blog.graphqleditor.com/recoil-react-state-management-library/
+---
+
+## [2][Recomendations for Enterprise-scale Nextjs(React)/Redux/Typescript arquitecture](https://www.reddit.com/r/reduxjs/comments/gjrykm/recomendations_for_enterprisescale/)
 - url: https://www.reddit.com/r/reduxjs/comments/gjrykm/recomendations_for_enterprisescale/
 ---
 I want to know useful patterns/arquitecture for big enterprise projects used in nextjs(react) with redux. 
 i've seen some recomendations like [this](https://laniewski.me/javascript/react/redux/2019/02/28/enterprise-scale-react-redux-project-architecture.html) or [this](https://www.pluralsight.com/guides/how-to-organize-your-react-+-redux-codebase)  where application is split in `modules` that encapsulates all related things with it, Redux(actions, reducers, sagas), utils, ts-types, and jsx|tsx components and have one folder for shared things. I like this concept because it is easy to identify the related elements between the store and the ui layer inside modules, but I don't know if it's really scalable for big enterprise projects. I would like to hear recommendations and/or suggested articles.
-## [2][[HELP] Redux store/mapping not available on init](https://www.reddit.com/r/reduxjs/comments/gitfgq/help_redux_storemapping_not_available_on_init/)
+## [3][[HELP] Redux store/mapping not available on init](https://www.reddit.com/r/reduxjs/comments/gitfgq/help_redux_storemapping_not_available_on_init/)
 - url: https://www.reddit.com/r/reduxjs/comments/gitfgq/help_redux_storemapping_not_available_on_init/
 ---
 So I have this component in React.  The {props.size} and {props.algorithm} only show up after I have submitted them. Upon init, my component's props are `options`, and `dispatch`, as opposed to `size` and `algorithm` as specified in `mapStateToProps`. 
@@ -80,7 +84,7 @@ Reducer and createStore:
     export default combineReducers({options}); &lt;--- Root Reducer
     
     export default createStore(rootReducer);
-## [3][At this point should my state (store) be viewable in the Redux dev tools? I am seeing Reddit's store there which is strange](https://www.reddit.com/r/reduxjs/comments/gi1cxi/at_this_point_should_my_state_store_be_viewable/)
+## [4][At this point should my state (store) be viewable in the Redux dev tools? I am seeing Reddit's store there which is strange](https://www.reddit.com/r/reduxjs/comments/gi1cxi/at_this_point_should_my_state_store_be_viewable/)
 - url: https://www.reddit.com/r/reduxjs/comments/gi1cxi/at_this_point_should_my_state_store_be_viewable/
 ---
 Just refactoring a small app to use Redux and hooks and noticing something strange. In index.js I have:   
@@ -106,13 +110,13 @@ My root reducer is defined in another file I am importing and I have confirmed t
 
 
 At this point should I not be able to see my store in redux dev tools?
-## [4][Is it ok to make actions creators to depend of other reducers?](https://www.reddit.com/r/reduxjs/comments/ghu3wx/is_it_ok_to_make_actions_creators_to_depend_of/)
+## [5][Is it ok to make actions creators to depend of other reducers?](https://www.reddit.com/r/reduxjs/comments/ghu3wx/is_it_ok_to_make_actions_creators_to_depend_of/)
 - url: https://www.reddit.com/r/reduxjs/comments/ghu3wx/is_it_ok_to_make_actions_creators_to_depend_of/
 ---
 I have an application with two reducers, both with tons of action creators, and 99% of the actions creators have to use data from another reducer to do some logic. I feel comfortable doing it, but I don't know if it is a bad or good pattern.
 
 (Sorry guys, my English is bad)
-## [5][tsrux: Typesafe and painless action creators and reducers for redux.](https://www.reddit.com/r/reduxjs/comments/ggi41k/tsrux_typesafe_and_painless_action_creators_and/)
+## [6][tsrux: Typesafe and painless action creators and reducers for redux.](https://www.reddit.com/r/reduxjs/comments/ggi41k/tsrux_typesafe_and_painless_action_creators_and/)
 - url: https://www.reddit.com/r/reduxjs/comments/ggi41k/tsrux_typesafe_and_painless_action_creators_and/
 ---
 I created a new library for use with redux: [https://lusito.github.io/tsrux/](https://lusito.github.io/tsrux/)
@@ -124,7 +128,7 @@ Previously I used [deox](https://deox.js.org/) (which inspired this library), bu
 Full documentation, unit-tests with 100% code-coverage and type-tests already included.
 
 Let me know what you think.
-## [6][How do you organize your file structure with Redux, Redux-Toolkit, react-router, and Redux-Saga?](https://www.reddit.com/r/reduxjs/comments/gf9eo7/how_do_you_organize_your_file_structure_with/)
+## [7][How do you organize your file structure with Redux, Redux-Toolkit, react-router, and Redux-Saga?](https://www.reddit.com/r/reduxjs/comments/gf9eo7/how_do_you_organize_your_file_structure_with/)
 - url: https://www.reddit.com/r/reduxjs/comments/gf9eo7/how_do_you_organize_your_file_structure_with/
 ---
 Hello,
@@ -143,7 +147,7 @@ pages (individual pages that are imported into the router, contain components lo
 services, helpers, hooks and the like up there.
 
 If I do a more feature style, should I encompass a page and a Navbar under a /features folder? Or how have projects you've worked on done it?
-## [7][Question about initializing state in the store](https://www.reddit.com/r/reduxjs/comments/gem4gj/question_about_initializing_state_in_the_store/)
+## [8][Question about initializing state in the store](https://www.reddit.com/r/reduxjs/comments/gem4gj/question_about_initializing_state_in_the_store/)
 - url: https://www.reddit.com/r/reduxjs/comments/gem4gj/question_about_initializing_state_in_the_store/
 ---
 Hi,
@@ -154,7 +158,7 @@ Any suggestion will be appreciated!
 
 Thanks,  
 Guoliang Cao
-## [8][Im trying to figure out what '...' means in return{... x, y, x}](https://www.reddit.com/r/reduxjs/comments/geajse/im_trying_to_figure_out_what_means_in_return_x_y_x/)
+## [9][Im trying to figure out what '...' means in return{... x, y, x}](https://www.reddit.com/r/reduxjs/comments/geajse/im_trying_to_figure_out_what_means_in_return_x_y_x/)
 - url: https://www.reddit.com/r/reduxjs/comments/geajse/im_trying_to_figure_out_what_means_in_return_x_y_x/
 ---
 Ive been struggling to find a good answer/explanation to this.  
@@ -178,7 +182,7 @@ EXAMPLE:
 `default: return state; }` 
 
 `}`
-## [9][Dispatching to non-Axios Actions?](https://www.reddit.com/r/reduxjs/comments/gdzzhn/dispatching_to_nonaxios_actions/)
+## [10][Dispatching to non-Axios Actions?](https://www.reddit.com/r/reduxjs/comments/gdzzhn/dispatching_to_nonaxios_actions/)
 - url: https://www.reddit.com/r/reduxjs/comments/gdzzhn/dispatching_to_nonaxios_actions/
 ---
 Up until now I've only used Axios (fetch) requests from an API in my actions. What if I just want to change the Redux state from a React component like \`logout\`? If my function to \`logout()\` looks like this:
@@ -211,7 +215,3 @@ and my Reducer looks like this:
 &amp;#x200B;
 
 How do I write this in an \`action\`?
-## [10][Do anyone have open source project that use Typescript and Redux-toolkit?](https://www.reddit.com/r/reduxjs/comments/gcktxf/do_anyone_have_open_source_project_that_use/)
-- url: https://www.reddit.com/r/reduxjs/comments/gcktxf/do_anyone_have_open_source_project_that_use/
----
-Please share the github link for learning

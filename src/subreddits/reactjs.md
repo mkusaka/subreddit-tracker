@@ -109,144 +109,87 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Facebook has open sourced an experimental state management library for React called Recoil if anyone is interested.](https://www.reddit.com/r/reactjs/comments/gjpbjc/facebook_has_open_sourced_an_experimental_state/)
-- url: https://recoiljs.org/
+## [3][Modern React From The Beginning - Excursus: Strapi As Back-End](https://www.reddit.com/r/reactjs/comments/gksalu/modern_react_from_the_beginning_excursus_strapi/)
+- url: https://youtu.be/CyaCQ3Qcbvw
 ---
 
-## [4][React/Full stack projects to learn from](https://www.reddit.com/r/reactjs/comments/gk6fji/reactfull_stack_projects_to_learn_from/)
-- url: https://www.reddit.com/r/reactjs/comments/gk6fji/reactfull_stack_projects_to_learn_from/
----
-Hello, I've been going through the University of Helsinki Full stack course which teaches React and Node, I'm about half way through the course and starting to build my own stuff to reinforce the knowledge. I'm not sure however if the structure of the components is good, if my app is well designed and I would like to see how the pros do it. If you can help me by recommending some projects that are considered to have good code and adhere to best practices i would be grateful.
-## [5]["Next time we rewrite, likely we’ll go the Deno route: Rust core, TypeScript shell." - Andrew Clark on Twitter](https://www.reddit.com/r/reactjs/comments/gjn7ts/next_time_we_rewrite_likely_well_go_the_deno/)
-- url: https://twitter.com/acdlite/status/1260935390258593793?s=20
+## [4][Don't know what to test on your React App? Learn how to make a test list.](https://www.reddit.com/r/reactjs/comments/gkd9l3/dont_know_what_to_test_on_your_react_app_learn/)
+- url: https://joaoforja.com/blog/learn-how-to-make-a-test-list/
 ---
 
-## [6][&lt;PrivateRoute/&gt; HOC question: Somehow i get redirected to login no matter what?](https://www.reddit.com/r/reactjs/comments/gk8w1g/privateroute_hoc_question_somehow_i_get/)
-- url: https://www.reddit.com/r/reactjs/comments/gk8w1g/privateroute_hoc_question_somehow_i_get/
+## [5][Any reason not to cache all my functional components that don't take any props?](https://www.reddit.com/r/reactjs/comments/gklyyf/any_reason_not_to_cache_all_my_functional/)
+- url: https://www.reddit.com/r/reactjs/comments/gklyyf/any_reason_not_to_cache_all_my_functional/
 ---
-I'm in the process of making a simple Todo app. Currently I'm trying to implement a HOC *Private Route*, to protect some routes, in this case the todo routes displaying all todos.
+I've been noticing that ~60% of my components don't even take any props, and some of them get re-rendered all the time just because their parent re-render. Doing some tests with memoization with a handful of components I can totally see a noticeable difference when profiling the app if I start memoizing those components.
 
-However, eventough the App.js state `isAuth` changes between true and false, the HOC always redirects to the Login page.
+So the question is: is there any reason whatsoever why I shouldn't be wrapping all my functional components that don't take any props with the following wrapper?
 
-Is there maybe something wrong with my lifecycle?
-
-```js
-import React, { useState } from "react";
-//Import BrowserRoute to enclose the components and Route for path declaration
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-
-import Todo from "./components/Todo/Todo";
-import Login from "./components/Login/Login";
-
-export default function App() {
-  const [isAuth, setIsAuth] = useState(false); // initially set to false. Only initialIsAuthenticated() or &lt;Login&gt; can set it to true
-
-  // Ask the server if there is an existing session for the user
-  function initialIsAuthenticated() {
-    fetch("http://localhost:8080/api/users/is-authenticated/", {
-      credentials: "include",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    }).then(res =&gt; {
-      setAuthenticating(false);
-      if (res.ok) {
-        setIsAuth(true);
-      }
-    });
-  }
-
-  // Run the initialIsAuthenticated() on component mount
-  useEffect(() =&gt; {
-    initialIsAuthenticated();
-  }, []);
-
-  return (
-    &lt;BrowserRouter&gt;
-      &lt;div id="app"&gt;
-        &lt;main&gt;
-          &lt;Switch&gt;
-            &lt;PrivateRoute exact path="/" component={Todo} isAuth={isAuth} /&gt;
-            &lt;Route
-              path="/login"
-              render={props =&gt; &lt;Login {...props} setIsAuth={setIsAuth} /&gt;}
-            /&gt;
-          &lt;/Switch&gt;
-        &lt;/main&gt;
-      &lt;/div&gt;
-    &lt;/BrowserRouter&gt;
-  );
-}
-
-const PrivateRoute = ({ component: Component, isAuth }) =&gt; {
-  // Here, no matter if isAuth is true or false, it always redirects to Login
-  // I know this because replacing &lt;Redirect to="/login" /&gt; to null does not redirect.
-  // I also tried switching  &lt;Redirect to="/login" /&gt; : &lt;Component {...props} /&gt; just to see the effect, and it still does a Redirect.
-  return (
-    &lt;Route
-      render={props =&gt;
-        isAuth ? &lt;Component {...props} /&gt; : &lt;Redirect to="/login" /&gt;
-      }
-    /&gt;
-  );
-};
+```
+const memoAlways = component =&gt; React.memo ( component, () =&gt; true );
 ```
 
-## Edit
-I included a video (as a gif) where you can see the issue in action.
-https://i.imgur.com/GphlOlX.gifv
-## [7][Digital product store with React - how to distribute products?](https://www.reddit.com/r/reactjs/comments/gk8fi3/digital_product_store_with_react_how_to/)
-- url: https://www.reddit.com/r/reactjs/comments/gk8fi3/digital_product_store_with_react_how_to/
 ---
-I'm building a simple ecommerce site in React to put some downloadable products up for sale.
 
-I want to keep things as simple and light as possible, so the plan is to host the site statically and avoid using/paying for a CMS.
-
-For payments, I'm deciding between Stripe and Paypal (this decision isn't obvious because my country is an emerging market, so I have to jump through some hoops to set things up).
-
-**Question 1:** Do I need a third party CMS to store, track sales of and distribute my digital products, or is Stripe/Paypal capable of doing this for me (even if they do a very simple job of it)? When I say distribute, I mean "email the customer a download link to the file", "show a download link on the page after checkout" or anything similar.
-
-**Question 2:** If Stripe/Paypal can't distribute my digital products for me, should I use something like SendOwl or GumRoad? 
-
-**Question 3:** What are my options for building this functionality myself? Is it enough to just setup a Lambda function which emails customers a link to the product they paid for? I'm not too attracted to this because I'd like to have at least some primitive sales/customer metrics.
-
-Thanks!
-## [8][React + canvas](https://www.reddit.com/r/reactjs/comments/gk6nte/react_canvas/)
-- url: https://www.reddit.com/r/reactjs/comments/gk6nte/react_canvas/
+Edit: if you think this question is about whether one should memoize all the things please read the question again more carefully. I'm talking about components with no props and a ~0 cost comparator function: `() =&gt; true`.
+## [6][Creating module for API calls.](https://www.reddit.com/r/reactjs/comments/gkt84x/creating_module_for_api_calls/)
+- url: https://www.reddit.com/r/reactjs/comments/gkt84x/creating_module_for_api_calls/
 ---
-Hi, I'm developing JavaScript arcade vertical shooter style game and I've been thinking about using react and canvas for it, but don't really know how to best use them together. Can you recommend me some tutorials about that? I've also been thinking about incorporating redux for game state management.
-## [9][How would you use context to wrap you app.tsx and render if it is authenticated or not?](https://www.reddit.com/r/reactjs/comments/gk6fg2/how_would_you_use_context_to_wrap_you_apptsx_and/)
-- url: https://www.reddit.com/r/reactjs/comments/gk6fg2/how_would_you_use_context_to_wrap_you_apptsx_and/
+I was wondering if you should create module / class for handling the API. The class would contain all the api calls etc.  Would this be good approach?
+## [7][Hey Guys, Check out this new react components library that i have created.](https://www.reddit.com/r/reactjs/comments/gkpqy5/hey_guys_check_out_this_new_react_components/)
+- url: https://github.com/sha-el/sha-el-design
 ---
-How would you use context to wrap you app.tsx and render if it is authenticated or not?
 
-I'm having a token which I'm sending to authenficiation server and get a user token back if token is valid, and if not, I'm  redirecting the user to the authentification page.
+## [8][How to redirect react app to another localhost port to authenticate on load page if user not logged in?](https://www.reddit.com/r/reactjs/comments/gkr5id/how_to_redirect_react_app_to_another_localhost/)
+- url: https://www.reddit.com/r/reactjs/comments/gkr5id/how_to_redirect_react_app_to_another_localhost/
+---
+React Route with windos.location.href = external url causes infinity reload and screen flickering on load page.
+
+What I'm doing is that on load of the react page, I'm either returning a the following router under if "user object" is not defined, or the component if the user is logged in.
+
+The code under works fine if I put it on a button and load the whole component, but on load of the page, when it returns this component automatically, it starts reload infinity.
+
+React Route with windos.location.href = external url / port to another app causes infinity reload and screen flickering. in this case config.serverPort is 9000, and my react app is running on port 3000.
+
+    return ( &lt;Router&gt; &lt;Route component={() =&gt; {             window.location.href = `http://localhost:${config.serverPort}/login`; return null; }} /&gt; &lt;/Router&gt;
+
+meanwhile this works:
+
+    return ( &lt;Router&gt; &lt;Route component={() =&gt; {             window.location.href = `http://www.vg.no`; return null; }} /&gt;
+
+Is seems like as long as I have localhost in the url, it causes this infinity reload, even if I set port to the same as the app 3000. This is happening during rendering as I try to redirect the user to oath external login page if iser object is empty instead of rendering the app. Does anyone know how I can fix this?
+
+It is worth to mention that the login service is on another external localhost port, so it is not a part of the react app.
+## [9][background perspective effect](https://www.reddit.com/r/reactjs/comments/gkunes/background_perspective_effect/)
+- url: https://www.reddit.com/r/reactjs/comments/gkunes/background_perspective_effect/
+---
+Hi, 
+
+I am trying to implement an effect, that translates the background based on the mouse move. 
+
+I got pretty close, but for some reason, the animation is a bit _laggy_. I thought it has something to do with the `requestAnimationFrame()`, but it did not solve the problem, it's still not smooth, and it seems I am failing to figure out why. 
+
+I have wrapped this example into a [codesandbox](https://codesandbox.io/s/competent-mclaren-8vrg1?file=/src/components/Background/index.js), if someone could tell me how to fix this, it would be highly appreciated. :) 
+
+Thank you!
+## [10][Fakebooker - Universal Facebook Clone](https://www.reddit.com/r/reactjs/comments/gkiiic/fakebooker_universal_facebook_clone/)
+- url: https://www.reddit.com/r/reactjs/comments/gkiiic/fakebooker_universal_facebook_clone/
+---
+Hey react devs! I've been developing this portfolio project for quite a few months and I would like you to check it out and tell me your opinion or any constructive critisism about it. Sadly I do not have the opportunity to create a video showcasing it so more people can see it but i guess it's alright. I truly believe that it's worth looking it up it would mean a lot to me. I've tried my best to make it pop out from the other usual clones so enjoy the app!
 
 &amp;#x200B;
 
-How can I in App.tsx use context to define if the user exist or not?
+Github repo:  [https://github.com/KristianWEB/fakebooker-frontend](https://github.com/KristianWEB/fakebooker-frontend)
+
+live website:  [https://fakebooker.com/](https://fakebooker.com/)
 
 &amp;#x200B;
 
-What is the best way of doing it?
-## [10][From JavaScript to TypeScript](https://www.reddit.com/r/reactjs/comments/gk5udh/from_javascript_to_typescript/)
-- url: https://afteracademy.com/blog/from-javascript-to-typescript
+If you have any personal questions or whatever here's my twitter:  [https://twitter.com/KristianWEB7](https://twitter.com/KristianWEB7)
+## [11][Recoil - state management lib for React](https://www.reddit.com/r/reactjs/comments/gka9x0/recoil_state_management_lib_for_react/)
+- url: https://blog.graphqleditor.com/recoil-react-state-management-library/
 ---
 
-## [11][Hey guys i just made this website with Gatsbyjs and ReactJS i would like some feedback!](https://www.reddit.com/r/reactjs/comments/gk5rxi/hey_guys_i_just_made_this_website_with_gatsbyjs/)
-- url: https://www.reddit.com/r/reactjs/comments/gk5rxi/hey_guys_i_just_made_this_website_with_gatsbyjs/
----
-[http://cantabriadigital.es/](http://cantabriadigital.es/)
-
-Me and my cousin saw all the websites of the business around us and they are all wordpress templates taking 5 seconds to load , so we wanted to help them out and make some profit while doing it!
-
-We just made our landing page and wanted to see how it was since we want to provide as much quality as we can.
-
-also we plan to offer something like 5 free websites (excluding maintenance) for some business around us to get some testimonials , do you thing thats a good idea?
-
-thanks for the feedback i really appreciate it
-## [12][ReactEurope 2020 Livestream - Day 2](https://www.reddit.com/r/reactjs/comments/gk4wa0/reacteurope_2020_livestream_day_2/)
-- url: https://www.youtube.com/watch?v=vULQgfiQvrw
+## [12][In defense of the modern web - Rich Harris](https://www.reddit.com/r/reactjs/comments/gkjsfx/in_defense_of_the_modern_web_rich_harris/)
+- url: https://dev.to/richharris/in-defense-of-the-modern-web-2nia
 ---
 

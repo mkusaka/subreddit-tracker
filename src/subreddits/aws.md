@@ -1,105 +1,93 @@
 # aws
-## [1][Diagrams as code (Python) with AWS icon support](https://www.reddit.com/r/aws/comments/gjxil2/diagrams_as_code_python_with_aws_icon_support/)
+## [1][EC2 inside a private subnet and S3](https://www.reddit.com/r/aws/comments/gkrtz0/ec2_inside_a_private_subnet_and_s3/)
+- url: https://www.reddit.com/r/aws/comments/gkrtz0/ec2_inside_a_private_subnet_and_s3/
+---
+How is it possible for an ec2 inside a private subnet to use boto3 in order to save or load objects on S3? 
+
+Thanks
+## [2][a1.metal experience](https://www.reddit.com/r/aws/comments/gks1tv/a1metal_experience/)
+- url: https://www.reddit.com/r/aws/comments/gks1tv/a1metal_experience/
+---
+Hi,
+I am currently on AWS a1.metal and trying to see some SPE events,
+given the core is a Neoverse one.
+
+$ perf record -e arm_spe/ts_enable=1,pa_enable=1/ dd
+event syntax error: 'arm_spe/ts_enable=1,pa_enable=1/'
+                     \___ Cannot find PMU `arm_spe'. Missing kernel support?
+Run 'perf list' for a list of valid events
+
+ Usage: perf record [&lt;options&gt;] [&lt;command&gt;]
+    or: perf record [&lt;options&gt;] -- &lt;command&gt; [&lt;options&gt;]
+
+    -e, --event &lt;event&gt;   event selector. use 'perf list' to list available events
+
+I'm using Ubuntu 20.4 LTS server, so I think the support is included, no?
+## [3][Premium Support, quarantine feelings and the importance of saying thank you](https://www.reddit.com/r/aws/comments/gkazht/premium_support_quarantine_feelings_and_the/)
+- url: https://www.reddit.com/r/aws/comments/gkazht/premium_support_quarantine_feelings_and_the/
+---
+Hello guys,
+
+Probably a few of you could find this post stupid, but this is something that I had on my mind the whole week and I would like to share it.
+
+I'm part of Premium Support on AWS and the other day I saw a post here about how awesome we are, well, not al of us but most, you know.
+
+Maybe is the pandemic that is making us more emotional in general but this week I received 3 messages from customers saying how great my answer and my help was and I can't explain how happy that made me feel.
+
+I know that is my job and I shouldn't expect this because basically there is someone paying me for doing an activity. Fair, capitalism is that and is completely reasonable. But as you may be already aware, the level of quality and customer obsession that Amazon expect from us is too high, and we can end up dealing with a lot of stress trying to provide the best solutions for other people. 
+
+At the end sometimes, we are going out of scope, reviewing things about we didn't have any idea till 10 minutes ago, googling errors on behalf others and reading documentation to try to explain the same things as simple as possible. 
+
+In my case, I was so afraid at the beginning and I suffered a lot the pressure of not having the same level of knowledge when I just started than a \~3 years user of a service.
+
+Summarizing, because I believe I wrote more than I expected and the point of this was only say that if you consider that the answer really made your work easier and really helped you, if you have a minute please let us know. For me at least is very rewarding when I feel that I'm not just doing my job because someone else is paying me for doing it. I like to know that the users that I'm helping are not just numbers and they really appreciate the work.
+
+If you read this all the way, thank you.
+
+PS: Sorry if there are mistakes on my English, I'm not a native speaker.
+
+—————————————
+
+Edited: I would like to say thank you to everyone that took a few minutes to answer this post.  
+
+I wasn’t expecting at all such a nice impact and good feedback, I only wanted to write this just to share a few feelings.
+
+Makes me very happy read all your nice comments. 
+
+Thank YOU for the support guys, is very rewarding and means a lot ⭐️⭐️⭐️⭐️⭐️
+## [4][Central ingress point for all traffic in a mostly serverless environment with multiple accounts](https://www.reddit.com/r/aws/comments/gkrdk3/central_ingress_point_for_all_traffic_in_a_mostly/)
+- url: https://www.reddit.com/r/aws/comments/gkrdk3/central_ingress_point_for_all_traffic_in_a_mostly/
+---
+In traditional environments, it is a common practice to put a perimeter security services around the whole environment. Is it possible to do something similar in a multi account serverless environment ?
+
+If we use mostly VPC based services, I think I can put one VPC as the ingress point from the internet, and put my thirdparty firewalls and other perimeter security services, and then route them to multiple VPCs in multiple accounts using TGWs/Peering. But how would someone does this in a centralized manner for serverless applications ? Mostly lambdas, API GW that does not sit in VPCs ?
+
+I think that even if it is possible to do it, it is not a scalable approach, and puts a lot of limitations to the developers. So, do you think that in this scenario, a centralized approach or decentralized approach will be better ? By decentralization, I mean that the public facing endpoints can sit in any account, but they must adhere certain policies that are enforced automatically by the central IT team - eg, all API GWs must have a WAF that sits in front. But then what if I need to inspect the packets that are coming from outside ? 
+
+Sorry, so many questions, I am just brainstorming on what would be a better approach for standardization of a messy environment.
+## [5][difference between cloudwatch and cloudtrail?](https://www.reddit.com/r/aws/comments/gksla8/difference_between_cloudwatch_and_cloudtrail/)
+- url: https://www.reddit.com/r/aws/comments/gksla8/difference_between_cloudwatch_and_cloudtrail/
+---
+i noticed you can send api gateway logs to both cloudtrail and cloudwatch. is there any difference in the logs sent to either service?
+## [6][Db migration in master slave db scenario](https://www.reddit.com/r/aws/comments/gku2t7/db_migration_in_master_slave_db_scenario/)
+- url: https://www.reddit.com/r/aws/comments/gku2t7/db_migration_in_master_slave_db_scenario/
+---
+ I am planning to have a AWS aurora deployement in master slave setup . The AWS infra for aurora db  is setup from azure devops pipelines. Now what strategy should I follow for schema creation or update on these db instances. Will db migration that happen as part of the backend application startup work in these master slave scenario . My backend app is a .net api app running as fargate services .
+## [7][m6g](https://www.reddit.com/r/aws/comments/gkraal/m6g/)
+- url: https://www.reddit.com/r/aws/comments/gkraal/m6g/
+---
+Is it possible for a Free Tier user launch a bare metal m6g instance? I am still not sure if it is okay or not.
+## [8][CloudFront: Is it not possible to route different CNAMEs to different paths within the same distribution?](https://www.reddit.com/r/aws/comments/gkpdjj/cloudfront_is_it_not_possible_to_route_different/)
+- url: https://www.reddit.com/r/aws/comments/gkpdjj/cloudfront_is_it_not_possible_to_route_different/
+---
+Let's say I have a single distribution with S3 bucket as origin with folders such as /env1/files... and /env2/files....   Then I have [env1.somedomain.com](https://env1.somedomain.com) and [env2.somedomain.com](https://env2.somedomain.com) as the CNAMEs in the distribution.   Why can't I specify that env1. routes to S3/env1 and env2. routes to S3/env2?  Seems that you can only specify behavior based on path, not CNAME.
+## [9][Is there any reason not to have awscli on an instance?](https://www.reddit.com/r/aws/comments/gkh9lw/is_there_any_reason_not_to_have_awscli_on_an/)
+- url: https://www.reddit.com/r/aws/comments/gkh9lw/is_there_any_reason_not_to_have_awscli_on_an/
+---
+I'm setting up an ECS cluster using the AWS ECS optimized AMI, and I noticed awscli isn't on there.
+
+Is there a particular reason?  Our standard bootstrap involves copying some stuff out of S3.
+## [10][Diagrams as code (Python) with AWS icon support](https://www.reddit.com/r/aws/comments/gjxil2/diagrams_as_code_python_with_aws_icon_support/)
 - url: https://diagrams.mingrammer.com/docs/getting-started/examples
 ---
 
-## [2][I wrote a guide on building your own resume site using AWS S3, CloudFront, and Route53. Its almost free to host and looks great on a resume.](https://www.reddit.com/r/aws/comments/gjl5wi/i_wrote_a_guide_on_building_your_own_resume_site/)
-- url: https://seanjziegler.com/how-to-build-a-free-static-resume-site-with-aws-s3-cloudfront-and-route-53/
----
-
-## [3][Has anyone tried using the new, revamped Macie?](https://www.reddit.com/r/aws/comments/gk95tq/has_anyone_tried_using_the_new_revamped_macie/)
-- url: https://www.reddit.com/r/aws/comments/gk95tq/has_anyone_tried_using_the_new_revamped_macie/
----
-I set up the new Macie yesterday and tested it by throwing some documents with a bunch of (fake) PII into a bucket: a CSV, a DOCX, and an XLSX. It appears when I create a job that the job is only scanning the CSV file because that's the only finding that's coming back. No mention of any findings from the other file types. Am I doing something wrong? I don't see how I could be as the new interface seems very, very simple. Thanks for any help!
-## [4][I made a dedicated site for the Cloud Resume Challenge - an AWS project you can do to level up your skills and get noticed](https://www.reddit.com/r/aws/comments/gk94vd/i_made_a_dedicated_site_for_the_cloud_resume/)
-- url: https://cloudresumechallenge.dev/
----
-
-## [5][S3 Bucket Configured As Browsable Folders?](https://www.reddit.com/r/aws/comments/gk8x5m/s3_bucket_configured_as_browsable_folders/)
-- url: https://www.reddit.com/r/aws/comments/gk8x5m/s3_bucket_configured_as_browsable_folders/
----
-Hello Everyone:
-
-First time posting here and I hope someone can help me out.
-
-My company currently creates hardware solutions and provides firmware updates for said hardware via a public ftp server.  We're deprecating this server for a variety of reasons and we're thinking of moving it to an S3 bucket.  I've setup buckets before, but have always put up a web server or something in front where folks are not hitting the bucket directly.
-
-The need here, because we have thousands of customers and don't want to manage usernames/passwords, is to setup an S3 bucket where someone can browse the folders, find the appropriate firmware for their particular hardware device and download it.
-
-Is this doable with just and S3 bucket or should we be thinking of this differently?
-## [6][Passing api token and properykey value with python 3 to the API gateway using GET.](https://www.reddit.com/r/aws/comments/gk8n5c/passing_api_token_and_properykey_value_with/)
-- url: https://www.reddit.com/r/aws/comments/gk8n5c/passing_api_token_and_properykey_value_with/
----
-I have the basic API call figured out, I can create an API and make calls to it. 
-
-But for the life of me I can not figure out what the proper way to pass a propertykey value and API token to get a valid response from AWS API.
-
-Can someone shine some light on this?
-## [7][SSL for many customer whitelabel domains pointing to Elastic Beanstalk app?](https://www.reddit.com/r/aws/comments/gk8cz1/ssl_for_many_customer_whitelabel_domains_pointing/)
-- url: https://www.reddit.com/r/aws/comments/gk8cz1/ssl_for_many_customer_whitelabel_domains_pointing/
----
-We're considering deploying an app (maybe two) via Elastic Beanstalk. The complication is that the app is served via multiple (whitelabel) domains. We own most of the domain registrations - some customers own theirs and configure A records based on our instructions (we need to move them to CNAMES...).
-
-  
-**My question: What's the best way to generate and manage SSL certificates in such a setup?**  
-
-
-My first thought was, for each customer:
-
-* Move DNS hosting to Route 53 to use ACM DNS validation
-* Delete existing A record and change to alias to point at Elastic Beanstalk load balancer
-* Generate SSL certificate for domain, or add domain to existing SSL certificate(\*)
-
-(\*) We have relatively large numbers of domains, let's say \~200 pointing at a serviceְ. Given that the load balancer has a limit of 25 SSL certificates, we might create an SSL certificate for each starting letter of the alphabet, and add domains to each as necessary. Is this possible? How would Elastic Beanstalk / Application Load Balancers cope with such a scenario.
-
-  
-We add domains all the time as customers join, and occasionally remove them as they leave. Currently everything is manual, but we do have an internal onboarding system for creating new customer platforms, and it would be relatively easy to use the AWS SDK to create domains and SSL certificates as needed.
-
-&amp;#x200B;
-
-Someone mentioned doing SSL termination using nginx / letsencrypt in a Docker instance with something like [https://github.com/linuxserver/docker-letsencrypt](https://github.com/linuxserver/docker-letsencrypt) and a NLB rather than ALB that Elastic Beanstalk provides, but  I'm not altogether excited about that because:
-
-* We don't have any Docker infrastructure at the moment, so I have to learn ECS or similar and get all that infrastructure running.
-* Would I need to run one container per domain? That could be \~1000 nginx processes, I'm not sure how that would scale. NB My Docker-fu is rubbish, mostly things I've read and forgotten, because I've never had to use it in production.
-* Not sure how our internal onboarding system would spin containers up and down based on adding and removing domain names. Perhaps the ECS API? I'm really green here.
-
-Happy to clarify if anything isn't clear, look forward to your feedback.
-## [8][Change CloudWatch log interval for AWS Batch](https://www.reddit.com/r/aws/comments/gk6lgf/change_cloudwatch_log_interval_for_aws_batch/)
-- url: https://www.reddit.com/r/aws/comments/gk6lgf/change_cloudwatch_log_interval_for_aws_batch/
----
-I have an AWS Batch job that's running and having it's CloudWatch log under the `/aws/batch/job` log group. But what I've noticed is that my log events gets compiled and dumped all the same time every 25-30 minutes. Is there anyway to change the interval for it?
-## [9][Amazon Lex with Discord bot, any idea?](https://www.reddit.com/r/aws/comments/gk6it9/amazon_lex_with_discord_bot_any_idea/)
-- url: https://www.reddit.com/r/aws/comments/gk6it9/amazon_lex_with_discord_bot_any_idea/
----
-So I have a task using AWS services and since I did spent a lot of time on discord, I'm thinking of making a chat-bot and deploy it as discord bot. Sadly there's not a lot of tutorial available out there. Does anyone has a clue if this is possible and what would the infrastructure from discord to amazon lex looks like? Thank you
-## [10][IAM policy with tags to restrict access to the certain resources in the organisation](https://www.reddit.com/r/aws/comments/gk5p7t/iam_policy_with_tags_to_restrict_access_to_the/)
-- url: https://www.reddit.com/r/aws/comments/gk5p7t/iam_policy_with_tags_to_restrict_access_to_the/
----
-Hey guys,
-
-&amp;#x200B;
-
-so here's the situation. I have the IAM policy which supposed to deny access to the resources marked with the tag. The policy looks like this:
-
-        {
-          "Effect": "Deny",
-          "Action": "*",
-          "Resource": "*",
-          "Condition": {
-            "StringEquals": {
-              "aws:ResourceTag/Project": "EMS"
-            }
-          }
-        }
-
-It looks like the policy should deny all actions on the resource with the \`Project=EMS\` tag. 
-
-However, when I tag the bucket, EC2 instance, etc I can still see and execute actions (with a test user) on those particular resources just like on the others without the tag.
-
-&amp;#x200B;
-
-What am I doing wrong here?
-
-&amp;#x200B;
-
-Thanks!

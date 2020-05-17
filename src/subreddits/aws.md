@@ -1,93 +1,119 @@
 # aws
-## [1][EC2 inside a private subnet and S3](https://www.reddit.com/r/aws/comments/gkrtz0/ec2_inside_a_private_subnet_and_s3/)
-- url: https://www.reddit.com/r/aws/comments/gkrtz0/ec2_inside_a_private_subnet_and_s3/
+## [1][My understanding of Aurora serverless](https://www.reddit.com/r/aws/comments/glb7pk/my_understanding_of_aurora_serverless/)
+- url: https://www.reddit.com/r/aws/comments/glb7pk/my_understanding_of_aurora_serverless/
 ---
-How is it possible for an ec2 inside a private subnet to use boto3 in order to save or load objects on S3? 
+* You're just given an endpoint to which your application is supposed to connect to
+* You set a few extra parameters while creating the instance like min, max size, etc
+* Everything else is taken care of from aws side
+* There's no concept of instances (at least from our side). There's no instance/replica/reader/writer creation/management from our side. Only things we can modify from our end are the cluster parameter groups,etc.
 
-Thanks
-## [2][a1.metal experience](https://www.reddit.com/r/aws/comments/gks1tv/a1metal_experience/)
-- url: https://www.reddit.com/r/aws/comments/gks1tv/a1metal_experience/
+Can anyone confirm these? Also, I'm not sure how backups are done in serverless. Thanks :)
+## [2][VPC desgin studio](https://www.reddit.com/r/aws/comments/gkz23i/vpc_desgin_studio/)
+- url: https://houqp.github.io/vpcstudio/
 ---
-Hi,
-I am currently on AWS a1.metal and trying to see some SPE events,
-given the core is a Neoverse one.
 
-$ perf record -e arm_spe/ts_enable=1,pa_enable=1/ dd
-event syntax error: 'arm_spe/ts_enable=1,pa_enable=1/'
-                     \___ Cannot find PMU `arm_spe'. Missing kernel support?
-Run 'perf list' for a list of valid events
-
- Usage: perf record [&lt;options&gt;] [&lt;command&gt;]
-    or: perf record [&lt;options&gt;] -- &lt;command&gt; [&lt;options&gt;]
-
-    -e, --event &lt;event&gt;   event selector. use 'perf list' to list available events
-
-I'm using Ubuntu 20.4 LTS server, so I think the support is included, no?
-## [3][Premium Support, quarantine feelings and the importance of saying thank you](https://www.reddit.com/r/aws/comments/gkazht/premium_support_quarantine_feelings_and_the/)
-- url: https://www.reddit.com/r/aws/comments/gkazht/premium_support_quarantine_feelings_and_the/
+## [3][How to monitor a Node.js Express API running on an EB.](https://www.reddit.com/r/aws/comments/gld7ar/how_to_monitor_a_nodejs_express_api_running_on_an/)
+- url: https://www.reddit.com/r/aws/comments/gld7ar/how_to_monitor_a_nodejs_express_api_running_on_an/
 ---
-Hello guys,
+Hi redditors, 
 
-Probably a few of you could find this post stupid, but this is something that I had on my mind the whole week and I would like to share it.
+**TL;DR**
 
-I'm part of Premium Support on AWS and the other day I saw a post here about how awesome we are, well, not al of us but most, you know.
+Asking for advice on how to monitor an Node.js Express API running on an Elastic Beanstalk.
 
-Maybe is the pandemic that is making us more emotional in general but this week I received 3 messages from customers saying how great my answer and my help was and I can't explain how happy that made me feel.
+I'm a mobile engineering. I'm writing this post because my apps are growing and we start having a decent amount of traffic. I'm new to AWS and devops related stuff and I'm lost in all the options available. I would like to introduce my use case to get your advice if possible. Thanks in advance!
 
-I know that is my job and I shouldn't expect this because basically there is someone paying me for doing an activity. Fair, capitalism is that and is completely reasonable. But as you may be already aware, the level of quality and customer obsession that Amazon expect from us is too high, and we can end up dealing with a lot of stress trying to provide the best solutions for other people. 
+**The Infrastructure**
 
-At the end sometimes, we are going out of scope, reviewing things about we didn't have any idea till 10 minutes ago, googling errors on behalf others and reading documentation to try to explain the same things as simple as possible. 
+* I have 4 mobile apps relaying on one server.
+* The server is a Node.js backend running on an Elastic Beanstalk behind a Load Balancer with autoscale enabled. There is usually 2  (*t2.micro*) machines running.
+* The server has an API built on express. 
+* I'm using the AWS free tier whenever is possible.
 
-In my case, I was so afraid at the beginning and I suffered a lot the pressure of not having the same level of knowledge when I just started than a \~3 years user of a service.
+**The Problem**
 
-Summarizing, because I believe I wrote more than I expected and the point of this was only say that if you consider that the answer really made your work easier and really helped you, if you have a minute please let us know. For me at least is very rewarding when I feel that I'm not just doing my job because someone else is paying me for doing it. I like to know that the users that I'm helping are not just numbers and they really appreciate the work.
+I need to start monitoring my API calls. I'm interested on: 
 
-If you read this all the way, thank you.
+* Amount of request segmented by time *(I wanna understand when my servers are more active)*
+* Amount of request segmented by API endpoint. *(I wanna know the distribution of my requests by endpoint)*
+* Average time to respond by endpoint.
+* Response status code by endpoint.
 
-PS: Sorry if there are mistakes on my English, I'm not a native speaker.
+**The Requirements**
 
-—————————————
+* I would like to do everything without using third party services if possible.
+* I would like to keep the monitoring as cheap as possible.
 
-Edited: I would like to say thank you to everyone that took a few minutes to answer this post.  
+**Questions**
 
-I wasn’t expecting at all such a nice impact and good feedback, I only wanted to write this just to share a few feelings.
+* What is the standard way to do this?
+* Should I need to add something at code level or just using cloud-watch metrics (*for example*) I will be able to achieve this?
 
-Makes me very happy read all your nice comments. 
+  
+Thanks for your time, 
 
-Thank YOU for the support guys, is very rewarding and means a lot ⭐️⭐️⭐️⭐️⭐️
-## [4][Central ingress point for all traffic in a mostly serverless environment with multiple accounts](https://www.reddit.com/r/aws/comments/gkrdk3/central_ingress_point_for_all_traffic_in_a_mostly/)
-- url: https://www.reddit.com/r/aws/comments/gkrdk3/central_ingress_point_for_all_traffic_in_a_mostly/
+Marcos.
+## [4][How can I make the best of the AWS free tier?](https://www.reddit.com/r/aws/comments/gl7ijs/how_can_i_make_the_best_of_the_aws_free_tier/)
+- url: https://www.reddit.com/r/aws/comments/gl7ijs/how_can_i_make_the_best_of_the_aws_free_tier/
 ---
-In traditional environments, it is a common practice to put a perimeter security services around the whole environment. Is it possible to do something similar in a multi account serverless environment ?
+Just starting to learn AWS and was wondering how can I get the most out of it with getting that hands-on experience and common use situations you’d be doing. Should I just be doing projects? Thanks all.
+## [5][Route 53 costs for studying](https://www.reddit.com/r/aws/comments/gldo5a/route_53_costs_for_studying/)
+- url: https://www.reddit.com/r/aws/comments/gldo5a/route_53_costs_for_studying/
+---
+Hi
 
-If we use mostly VPC based services, I think I can put one VPC as the ingress point from the internet, and put my thirdparty firewalls and other perimeter security services, and then route them to multiple VPCs in multiple accounts using TGWs/Peering. But how would someone does this in a centralized manner for serverless applications ? Mostly lambdas, API GW that does not sit in VPCs ?
+I'm considering purchasing a domain via Route 53 to use for AWS cert studying.
 
-I think that even if it is possible to do it, it is not a scalable approach, and puts a lot of limitations to the developers. So, do you think that in this scenario, a centralized approach or decentralized approach will be better ? By decentralization, I mean that the public facing endpoints can sit in any account, but they must adhere certain policies that are enforced automatically by the central IT team - eg, all API GWs must have a WAF that sits in front. But then what if I need to inspect the packets that are coming from outside ? 
+I was wondering whether anyone would have any experience on the kind of cost I could expect in these circumstance? Is it worth doing for cert studies?
 
-Sorry, so many questions, I am just brainstorming on what would be a better approach for standardization of a messy environment.
-## [5][difference between cloudwatch and cloudtrail?](https://www.reddit.com/r/aws/comments/gksla8/difference_between_cloudwatch_and_cloudtrail/)
-- url: https://www.reddit.com/r/aws/comments/gksla8/difference_between_cloudwatch_and_cloudtrail/
----
-i noticed you can send api gateway logs to both cloudtrail and cloudwatch. is there any difference in the logs sent to either service?
-## [6][Db migration in master slave db scenario](https://www.reddit.com/r/aws/comments/gku2t7/db_migration_in_master_slave_db_scenario/)
-- url: https://www.reddit.com/r/aws/comments/gku2t7/db_migration_in_master_slave_db_scenario/
----
- I am planning to have a AWS aurora deployement in master slave setup . The AWS infra for aurora db  is setup from azure devops pipelines. Now what strategy should I follow for schema creation or update on these db instances. Will db migration that happen as part of the backend application startup work in these master slave scenario . My backend app is a .net api app running as fargate services .
-## [7][m6g](https://www.reddit.com/r/aws/comments/gkraal/m6g/)
-- url: https://www.reddit.com/r/aws/comments/gkraal/m6g/
----
-Is it possible for a Free Tier user launch a bare metal m6g instance? I am still not sure if it is okay or not.
-## [8][CloudFront: Is it not possible to route different CNAMEs to different paths within the same distribution?](https://www.reddit.com/r/aws/comments/gkpdjj/cloudfront_is_it_not_possible_to_route_different/)
-- url: https://www.reddit.com/r/aws/comments/gkpdjj/cloudfront_is_it_not_possible_to_route_different/
----
-Let's say I have a single distribution with S3 bucket as origin with folders such as /env1/files... and /env2/files....   Then I have [env1.somedomain.com](https://env1.somedomain.com) and [env2.somedomain.com](https://env2.somedomain.com) as the CNAMEs in the distribution.   Why can't I specify that env1. routes to S3/env1 and env2. routes to S3/env2?  Seems that you can only specify behavior based on path, not CNAME.
-## [9][Is there any reason not to have awscli on an instance?](https://www.reddit.com/r/aws/comments/gkh9lw/is_there_any_reason_not_to_have_awscli_on_an/)
-- url: https://www.reddit.com/r/aws/comments/gkh9lw/is_there_any_reason_not_to_have_awscli_on_an/
----
-I'm setting up an ECS cluster using the AWS ECS optimized AMI, and I noticed awscli isn't on there.
+I doubt I'll be using it for much other than getting hands-on with Certificate Manager (just the free public certs).
 
-Is there a particular reason?  Our standard bootstrap involves copying some stuff out of S3.
-## [10][Diagrams as code (Python) with AWS icon support](https://www.reddit.com/r/aws/comments/gjxil2/diagrams_as_code_python_with_aws_icon_support/)
-- url: https://diagrams.mingrammer.com/docs/getting-started/examples
+I notice that in the Route 53 pricing, there is a $0.125 per ENI / hour charge for a Resolver and that a minimum of two ENIs a required. Am I correct in thinking that I would only use the Route 53 Resolver if I wanted to offload DNS queries to Route 53 from any EC2 instances?
+
+Sorry if this is kind of vague but I don't want to be lumped with a $182 monthly bill that the price calculator says I'd get charged for the Resolver.
+## [6][Using a Load Balancer as a reverse proxy.](https://www.reddit.com/r/aws/comments/gl9uuk/using_a_load_balancer_as_a_reverse_proxy/)
+- url: https://www.reddit.com/r/aws/comments/gl9uuk/using_a_load_balancer_as_a_reverse_proxy/
+---
+Hi folks,
+
+I am putting a licensing server into AWS for our organisation. Our prod environment is heavily federated and we are only allowed to create or update new resources via CloudFormation. 
+
+I have written a CloudFormation script that spins up an EC2, auto licenses the licensing server by downloading some config files, creates the security group, creates a Route 53 based off the name of the server and sets up an instance profile. It works great.
+
+One of the goals of the project was to add HTTPS, as the server doesn't natively support it, but it can be configured [via reverse proxy](https://www.jetbrains.com/help/license_server/configuring_secure_connection.html)  
+
+
+I asked around to see if I could get the certificates for our internal tools domain (it doesn't need to be accessible from the internet) but was told that these are Amazon certificates and the best way to secure this connection is by creating a Load Balancer in front of my single EC2 (I have been told by the manufacturer of the server that it won't work in any kind of multi-node configuration) and secure this connection using the built in certificate tools.   
+
+
+I have never done this before and it is confusing me a little. Am I right in thinking that I would need to:  
+
+
+* Create a Application Load Balancer that depends on my EC2 Instance
+* Create a Load Balancer Listener that listens for https requests on my custom port with an SSL Rule and the ARN of my certificate
+* Set my Route53 to create a record based on the name of my Load Balancer and to point at it's IP, when created.  
+
+
+Is that about right? Any feedback appreciated.
+## [7][Updating an existing EC2's AMI ID --- why?](https://www.reddit.com/r/aws/comments/glb2ei/updating_an_existing_ec2s_ami_id_why/)
+- url: https://www.reddit.com/r/aws/comments/glb2ei/updating_an_existing_ec2s_ami_id_why/
+---
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
+
+*For example, if you have a stack with an EC2 instance, you can update the stack to change the instance's AMI ID.*
+
+For what reason / purpose would you update an instance's AMI ID?  AMI's are only ever used at instance launch time, right?  Would this result in an implicit Terminate --&gt; Launch with the new AMI?
+## [8][Are the exams being held online now?](https://www.reddit.com/r/aws/comments/gla3hm/are_the_exams_being_held_online_now/)
+- url: https://www.reddit.com/r/aws/comments/gla3hm/are_the_exams_being_held_online_now/
+---
+I’m thinking of signing up for the AWS Solutions Architect Exam but don’t know if it’ll be in person or online. Anyone know?
+## [9][Connecting to mongodb in EC2 from Lambda functions](https://www.reddit.com/r/aws/comments/gl8dgr/connecting_to_mongodb_in_ec2_from_lambda_functions/)
+- url: https://www.reddit.com/r/aws/comments/gl8dgr/connecting_to_mongodb_in_ec2_from_lambda_functions/
+---
+Hi, I tried connecting to mongodb in Ec2 from my lambda function using private ip, that works fine but if I connect using public ip, its not. Every port is open in security group. And both lambda and ec2 are in same vpc.
+What is it that I am doing wrong.
+Lambda logs is giving connection timed out.
+## [10][Does AWS Savings Plan apply to spot instances?](https://www.reddit.com/r/aws/comments/gl4l3t/does_aws_savings_plan_apply_to_spot_instances/)
+- url: https://www.reddit.com/r/aws/comments/gl4l3t/does_aws_savings_plan_apply_to_spot_instances/
 ---
 

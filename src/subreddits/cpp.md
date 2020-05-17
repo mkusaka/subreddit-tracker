@@ -125,11 +125,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][modern c++ gamedev - thoughts &amp; misconceptions](https://www.reddit.com/r/cpp/comments/gkrquo/modern_c_gamedev_thoughts_misconceptions/)
+## [3][Willing to teach C++ to new programmers for free!](https://www.reddit.com/r/cpp/comments/gl4p3q/willing_to_teach_c_to_new_programmers_for_free/)
+- url: https://www.reddit.com/r/cpp/comments/gl4p3q/willing_to_teach_c_to_new_programmers_for_free/
+---
+Hello everyone,
+
+A group of fellow CS students and I have created a platform on which we can teach people the fundamentals of a variety of programming languages for free (Python, C++, Go, HTML/CSS, Java, etc.). We have free, live programming classes through Discord at many different times for anyone around the world to join and learn, regardless of age. If you are interested in learning, here's our discord: [https://discord.gg/EzQSWzd](https://discord.gg/EzQSWzd) and our website: [http://codetheuniverse.org/](http://codetheuniverse.org/). If you might like to teach a class on a programming language/topic we do not cover yet, please DM me!
+
+EDIT: Here's a copy of a lecture of ours on Python if you kind of want to see how things work: [https://notes.codetheuniverse.org/python/lecture1.pdf](https://notes.codetheuniverse.org/python/lecture1.pdf)
+## [4][Virtual Italian C++ Conference 2020: registrations, schedule and setup](https://www.reddit.com/r/cpp/comments/glcqvo/virtual_italian_c_conference_2020_registrations/)
+- url: https://isocpp.org/blog/2020/05/itcppcon20
+---
+
+## [5][modern c++ gamedev - thoughts &amp; misconceptions](https://www.reddit.com/r/cpp/comments/gkrquo/modern_c_gamedev_thoughts_misconceptions/)
 - url: https://vittorioromeo.info/index/blog/gamedev_modern_cpp_thoughts.html
 ---
 
-## [4][Why can't compilers use name mangling to manage an ABI break?](https://www.reddit.com/r/cpp/comments/gkkhpu/why_cant_compilers_use_name_mangling_to_manage_an/)
+## [6][C++: The Next Seismic Shift](https://www.reddit.com/r/cpp/comments/gle6y0/c_the_next_seismic_shift/)
+- url: https://rdmp.org/dmbcs/seismic-c++
+---
+
+## [7][Polymorphism Decision Table](https://www.reddit.com/r/cpp/comments/gktyqw/polymorphism_decision_table/)
+- url: https://ukilele.github.io//2020/05/11/polymorphism-decision-table.html
+---
+
+## [8][Clash of Code - Dare to join me!](https://www.reddit.com/r/cpp/comments/glejr1/clash_of_code_dare_to_join_me/)
+- url: https://www.codingame.com/clashofcode/clash/1223912a316e03a521b4e5f65281fa389b82896?utm_source=reddit&amp;utm_medium=clash%20of%20code&amp;utm_content=3626792&amp;utm_campaign=Share%20options
+---
+
+## [9][Clash of Code](https://www.reddit.com/r/cpp/comments/glejj7/clash_of_code/)
+- url: https://www.codingame.com/multiplayer/clashofcode?utm_source=reddit&amp;utm_medium=detail_page&amp;utm_content=/multiplayer/clashofcode&amp;utm_campaign=Share%20options
+---
+
+## [10][Optimizing UTC → Unix Time Conversion For Size And Speed](https://www.reddit.com/r/cpp/comments/gksc1s/optimizing_utc_unix_time_conversion_for_size_and/)
+- url: https://blog.reverberate.org/2020/05/12/optimizing-date-algorithms.html
+---
+
+## [11][Why can't compilers use name mangling to manage an ABI break?](https://www.reddit.com/r/cpp/comments/gkkhpu/why_cant_compilers_use_name_mangling_to_manage_an/)
 - url: https://www.reddit.com/r/cpp/comments/gkkhpu/why_cant_compilers_use_name_mangling_to_manage_an/
 ---
 There has been a lot of talk about ABI breaks lately, criticism that the committee’s unwillingness to break the ABI is holding back improvements to the language, or that the ABI means unique_ptr has more overhead than a raw pointer. I'm pretty ignorant on these things, so maybe someone smarter than me can explain how this is a really dumb idea?
@@ -139,55 +171,7 @@ Where there is an ABI break (say with unique_ptr) why can't the compiler produce
 The duplicate definitions would only need to stay around for a few years, after which point it'd be safe to assume that everybody has had more than enough time to build against the new ABI. It'd provide a nice migration path between ABI's, that doesn't exist at the moment. Sure size would be ever so slightly larger for libraries, but I don't think this would be that significant?
 
 Please somebody smarter than me explain why this wouldn't actually work. Because if we have a migration path between ABI's, what's all the hoohaa about breaking them?
-## [5][Qt Virtual Tech Con 2020 Videos Available Now](https://www.reddit.com/r/cpp/comments/gktyt9/qt_virtual_tech_con_2020_videos_available_now/)
+## [12][Qt Virtual Tech Con 2020 Videos Available Now](https://www.reddit.com/r/cpp/comments/gktyt9/qt_virtual_tech_con_2020_videos_available_now/)
 - url: https://resources.qt.io/qt-virtual-tech-con-2020
 ---
 
-## [6][gcl - a tiny graph concurrent library](https://www.reddit.com/r/cpp/comments/gkoboj/gcl_a_tiny_graph_concurrent_library/)
-- url: https://www.reddit.com/r/cpp/comments/gkoboj/gcl_a_tiny_graph_concurrent_library/
----
-[https://github.com/bloomen/gcl](https://github.com/bloomen/gcl)
-
-The goal of this library is to provide a minimal interface for building a computational graph where each node can be executed asynchronously. I am looking for feedback in terms of code quality, potential features, uses cases, etc. Cheers!
-## [7][Optimizing UTC → Unix Time Conversion For Size And Speed](https://www.reddit.com/r/cpp/comments/gksc1s/optimizing_utc_unix_time_conversion_for_size_and/)
-- url: https://blog.reverberate.org/2020/05/12/optimizing-date-algorithms.html
----
-
-## [8][spdlog 1.6.0 released](https://www.reddit.com/r/cpp/comments/gk99fk/spdlog_160_released/)
-- url: https://github.com/gabime/spdlog/releases/tag/v1.6.0
----
-
-## [9][Polymorphism Decision Table](https://www.reddit.com/r/cpp/comments/gktyqw/polymorphism_decision_table/)
-- url: https://ukilele.github.io//2020/05/11/polymorphism-decision-table.html
----
-
-## [10][Windows Implementation Libraries (WIL)](https://www.reddit.com/r/cpp/comments/gke5oi/windows_implementation_libraries_wil/)
-- url: https://github.com/microsoft/wil
----
-
-## [11][Intermediate C++ programmer looking for development opportunities](https://www.reddit.com/r/cpp/comments/gksw9l/intermediate_c_programmer_looking_for_development/)
-- url: https://www.reddit.com/r/cpp/comments/gksw9l/intermediate_c_programmer_looking_for_development/
----
-Hey everyone
-
-Im looking for new challenges to prepare me to work as a C++ programmer in the future. So far I have completed Udemy's course in advanced C++ programming and worked up my skill set on sites like hackerrank. Now I need to get to the next level while I have time during the quarantine.
-
-&amp;#x200B;
-
-Id be open to online jobs, further course work, project suggestions or other things that I have no idea about. Im also considering paying for the 4 month Udacity course  
-
-
-Any thoughts?  
-
-
-Many thanks!
-
-&amp;#x200B;
-
-Completed Udemy course:  [https://www.udemy.com/course/learn-advanced-c-programming/](https://www.udemy.com/course/learn-advanced-c-programming/) 
-
-#
-## [12][Starting C++ today with a strong Java background, and solid experience in Languages like Scala and Haskell. What habits should I break from the offset, because I'm currently going in using the language as if it were Java with different syntax.](https://www.reddit.com/r/cpp/comments/gkizd4/starting_c_today_with_a_strong_java_background/)
-- url: https://www.reddit.com/r/cpp/comments/gkizd4/starting_c_today_with_a_strong_java_background/
----
-I should probably be a bit clearer about what I mean. I'm currently learning the syntax for C++, and plan to write a compiler that I've already written in Java, in order to gain competence with the language. However I'm hesitant to go straight in, and effectively copy the whole class structure and logic across, because I reckon C++ probably has some very nice features that give it an advantage over Java, and I want to make sure I'm utilizing the language effectively

@@ -1,61 +1,55 @@
 # javascript
-## [1][Showoff Saturday (May 09, 2020)](https://www.reddit.com/r/javascript/comments/gge40y/showoff_saturday_may_09_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gge40y/showoff_saturday_may_09_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Showoff Saturday (May 16, 2020)](https://www.reddit.com/r/javascript/comments/gktdbw/showoff_saturday_may_16_2020/)
+## [1][Showoff Saturday (May 16, 2020)](https://www.reddit.com/r/javascript/comments/gktdbw/showoff_saturday_may_16_2020/)
 - url: https://www.reddit.com/r/javascript/comments/gktdbw/showoff_saturday_may_16_2020/
 ---
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Hello, everyone. I have spent sometime learning javascript and I am kind of learning by sharing guy so I have summarised all the new feature of JavaScript since ES6 - ES11. I hope you find it useful.](https://www.reddit.com/r/javascript/comments/gkmvnj/hello_everyone_i_have_spent_sometime_learning/)
+## [2][Building your First Chrome Extension : IMDb Lookup](https://www.reddit.com/r/javascript/comments/gl7fcu/building_your_first_chrome_extension_imdb_lookup/)
+- url: https://www.arbazsiddiqui.me/building-your-first-chrome-extension-imdb-lookup/
+---
+
+## [3][A (Mostly) Complete Guide to React Rendering Behavior](https://www.reddit.com/r/javascript/comments/gkxsg1/a_mostly_complete_guide_to_react_rendering/)
+- url: https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/
+---
+
+## [4][Treact - A set of Free UI Templates &amp; Components (52 UI Components, 7 Landing Pages, 8 Inner Pages, Fully Responsive) for creating Beautiful Landing Pages easily using React](https://www.reddit.com/r/javascript/comments/gkvrw6/treact_a_set_of_free_ui_templates_components_52/)
+- url: https://treact.owaiskhan.me/
+---
+
+## [5][A GitHub template featuring automation that makes it pretty darn easy to publish and maintain high-standard NPM modules.](https://www.reddit.com/r/javascript/comments/gl0065/a_github_template_featuring_automation_that_makes/)
+- url: https://github.com/garronej/ts_ci
+---
+
+## [6][Want to build cool projects over the summer, but no internship? Hack your own!](https://www.reddit.com/r/javascript/comments/gl0zol/want_to_build_cool_projects_over_the_summer_but/)
+- url: https://www.reddit.com/r/csMajors/comments/gl0841/no_summer_internship_lined_up_yet_hack_your_own/
+---
+
+## [7][I made a chrome extension that allows you to watch netflix &amp; chat to others around the world in genre themed chatrooms](https://www.reddit.com/r/javascript/comments/glfhfx/i_made_a_chrome_extension_that_allows_you_to/)
+- url: https://chrome.google.com/webstore/detail/csociety/nikpkakmbeifhhoechfnjnoaiiegnhak/
+---
+
+## [8][[AskJS] Floating point representation yields 100.00001? How to avoid this bug elegantly?](https://www.reddit.com/r/javascript/comments/glfg7n/askjs_floating_point_representation_yields/)
+- url: https://www.reddit.com/r/javascript/comments/glfg7n/askjs_floating_point_representation_yields/
+---
+I'm getting some math errors when trying to determine the coverage of a box in Javascript.
+
+Obviously the issue above is that there's a slight overflow in one direction when the floating point representation yields slightly greater than the original value.
+
+I can't control those values though as they're given to me by another library.  They're represented as just numbers. If I could represent all of them as BigInt 
+
+I COULD hack it and round the value down if &gt; 100 BUT the issue there is by how much?   If the result were say 105 then there's more likely another bug and I would want to throw an error.  Even something like 100.1 is probably a bug.
+
+Thoughts?
+## [9][Javascript : Throttling just 2min read .](https://www.reddit.com/r/javascript/comments/gle612/javascript_throttling_just_2min_read/)
+- url: https://theflowingfact.blogspot.com/2020/05/javascript-throttling.html
+---
+
+## [10][A simple example of drawing bar chart with label using d3.js](https://www.reddit.com/r/javascript/comments/gla24w/a_simple_example_of_drawing_bar_chart_with_label/)
+- url: https://www.pixelstech.net/article/1589685639-A-simple-example-of-drawing-bar-chart-with-label-using-d3-js
+---
+
+## [11][Hello, everyone. I have spent sometime learning javascript and I am kind of learning by sharing guy so I have summarised all the new feature of JavaScript since ES6 - ES11. I hope you find it useful.](https://www.reddit.com/r/javascript/comments/gkmvnj/hello_everyone_i_have_spent_sometime_learning/)
 - url: https://sambat-tech.netlify.app/modern-javascript-what-new/
 ---
 
-## [4][Getting Started With Deno.js](https://www.reddit.com/r/javascript/comments/gkthsu/getting_started_with_denojs/)
-- url: http://freesourcecodes.in/?getting-start-deno
----
-
-## [5][Why don't we write PropTypes before the component?](https://www.reddit.com/r/javascript/comments/gkfasc/why_dont_we_write_proptypes_before_the_component/)
-- url: /r/reactjs/comments/gkfaa0/why_dont_we_write_proptypes_before_the_component/
----
-
-## [6][How do I build the reddit-like feed ?](https://www.reddit.com/r/javascript/comments/gkpn7r/how_do_i_build_the_redditlike_feed/)
-- url: /r/node/comments/gkomu7/how_do_i_build_the_redditlike_feed/
----
-
-## [7][Snowpack: this looks like ParcelJS, but embracing ES2015+ code](https://www.reddit.com/r/javascript/comments/gkqj1a/snowpack_this_looks_like_parceljs_but_embracing/)
-- url: https://www.snowpack.dev/#install-snowpack
----
-
-## [8][[AskJS] Why is Deno's only concern killing Node and not his own product? NodeJS has the coronavirus?](https://www.reddit.com/r/javascript/comments/gkuate/askjs_why_is_denos_only_concern_killing_node_and/)
-- url: https://www.reddit.com/r/javascript/comments/gkuate/askjs_why_is_denos_only_concern_killing_node_and/
----
-I'm serious, I'm just looking at some articles with the intention of killing NodeJS, it's a little worrying that only NodeJS hate is focused.
-
-Someone can tell me what's wrong with NodeJS, I think it's powerful enough to last a lifetime.
-
-If it's by Typescript, I already use a framework in NodeJS that uses Typescript.
-## [9][chat application](https://www.reddit.com/r/javascript/comments/gktlr0/chat_application/)
-- url: https://github.com/rubenfunda/snyder
----
-
-## [10][new-error: A production-grade error creation / serialization library built for Typescript](https://www.reddit.com/r/javascript/comments/gkg1r0/newerror_a_productiongrade_error_creation/)
-- url: https://www.npmjs.com/package/new-error
----
-
-## [11][[AskJS] How would you stream audio files in Node to play in the browser, and why?](https://www.reddit.com/r/javascript/comments/gkqytk/askjs_how_would_you_stream_audio_files_in_node_to/)
-- url: https://www.reddit.com/r/javascript/comments/gkqytk/askjs_how_would_you_stream_audio_files_in_node_to/
----
-I am aware that HTMLAudioElement can consume files or streams. But we could also use HLS, RMTP or websockets to send chunks. What do you prefer and why?
-
-&amp;#x200B;
-
-\[AskJS\]
-## [12][[AskJS] what is asynchronous javascript and synchronous javascript ? and what role does event loop play in all this ? eli5](https://www.reddit.com/r/javascript/comments/gks9dd/askjs_what_is_asynchronous_javascript_and/)
-- url: https://www.reddit.com/r/javascript/comments/gks9dd/askjs_what_is_asynchronous_javascript_and/
----
-which one is blocking the code ? why do we have both ?

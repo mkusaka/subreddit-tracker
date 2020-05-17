@@ -109,87 +109,83 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Modern React From The Beginning - Excursus: Strapi As Back-End](https://www.reddit.com/r/reactjs/comments/gksalu/modern_react_from_the_beginning_excursus_strapi/)
+## [3][A (Mostly) Complete Guide to React Rendering Behavior](https://www.reddit.com/r/reactjs/comments/gkxs7g/a_mostly_complete_guide_to_react_rendering/)
+- url: https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/
+---
+
+## [4][How to get rid of unnecessary props in React.js](https://www.reddit.com/r/reactjs/comments/gldakj/how_to_get_rid_of_unnecessary_props_in_reactjs/)
+- url: https://dev.to/andrzejewsky/how-to-get-rid-of-unnecessary-props-in-react-js-13pj
+---
+
+## [5][Presenting Pocket Radio, My first react app. Listen to 90,000+ radio stations for free!](https://www.reddit.com/r/reactjs/comments/gl5vnu/presenting_pocket_radio_my_first_react_app_listen/)
+- url: https://pocketradio.live
+---
+
+## [6][Issue with material ui tabs](https://www.reddit.com/r/reactjs/comments/glf2z0/issue_with_material_ui_tabs/)
+- url: https://www.reddit.com/r/reactjs/comments/glf2z0/issue_with_material_ui_tabs/
+---
+Hey I'm trying to render a table inside of a &lt;TabPanel&gt; &lt;/ TabPanel&gt; and I'm getting an error because the table is rendering inside of a &lt;p&gt;&lt;/p&gt;
+
+Is there any ways to force the TabPanel to render as a &lt;div&gt;? Thanks!
+## [7][See twitter trending topics (react web app)](https://www.reddit.com/r/reactjs/comments/glayhy/see_twitter_trending_topics_react_web_app/)
+- url: https://www.reddit.com/r/reactjs/comments/glayhy/see_twitter_trending_topics_react_web_app/
+---
+I believe that one of the best ways to use twitter is by browsing its trending topics, so I made an app showing them directly.
+
+[https://twittertrendingtopics.herokuapp.com/](https://twittertrendingtopics.herokuapp.com/)
+
+&amp;#x200B;
+
+github repo:
+
+[https://github.com/GuilhermeSND/twittertrendingtopics](https://github.com/GuilhermeSND/twittertrendingtopics)
+
+any criticism or tips?
+## [8][Modern React From The Beginning - Excursus: Strapi As Back-End](https://www.reddit.com/r/reactjs/comments/gksalu/modern_react_from_the_beginning_excursus_strapi/)
 - url: https://youtu.be/CyaCQ3Qcbvw
 ---
 
-## [4][Don't know what to test on your React App? Learn how to make a test list.](https://www.reddit.com/r/reactjs/comments/gkd9l3/dont_know_what_to_test_on_your_react_app_learn/)
-- url: https://joaoforja.com/blog/learn-how-to-make-a-test-list/
+## [9][Hey Folks, we have used purely ReactJS to implement an Animal Crossing Design Tool](https://www.reddit.com/r/reactjs/comments/gl4ih9/hey_folks_we_have_used_purely_reactjs_to/)
+- url: https://www.reddit.com/r/reactjs/comments/gl4ih9/hey_folks_we_have_used_purely_reactjs_to/
 ---
+We are a group of two Canadian developers who are new to front end development, so we decided to learn ReactJS and ended up building a cute Animal Crossing Tool Web App :) ([https://acislove.com/](https://acislove.com/))
 
-## [5][Any reason not to cache all my functional components that don't take any props?](https://www.reddit.com/r/reactjs/comments/gklyyf/any_reason_not_to_cache_all_my_functional/)
-- url: https://www.reddit.com/r/reactjs/comments/gklyyf/any_reason_not_to_cache_all_my_functional/
+We spent total of 2 weeks to build it from scratch and it was a blast \^\_\^
+
+Feel free to ask us any questions with ! We would love to hear about your feedback as well.
+## [10][Change an element when it leaves the viewport - A question on How.](https://www.reddit.com/r/reactjs/comments/gl76kq/change_an_element_when_it_leaves_the_viewport_a/)
+- url: https://www.reddit.com/r/reactjs/comments/gl76kq/change_an_element_when_it_leaves_the_viewport_a/
 ---
-I've been noticing that ~60% of my components don't even take any props, and some of them get re-rendered all the time just because their parent re-render. Doing some tests with memoization with a handful of components I can totally see a noticeable difference when profiling the app if I start memoizing those components.
+      const [scroll, setScroll] = useState(false)
+    
+      useEffect(() =&gt; {
+        window.addEventListener("scroll", () =&gt; {
+          window.scrollY &gt; 5 ? setScroll(!scroll) : setScroll(!scroll)
+        })
+        return () =&gt; {
+          setScroll(false)
+        }
+      }, [scroll])
+    
 
-So the question is: is there any reason whatsoever why I shouldn't be wrapping all my functional components that don't take any props with the following wrapper?
+So I have the used the above code to create a Header/Navigation to change on scroll, but this doesn't do what I want. I have a select element with 2 buttons under it. When this select element and buttons leave the viewport, I want to create a FAB for navigation, but I'm sort of stuck.
 
-```
-const memoAlways = component =&gt; React.memo ( component, () =&gt; true );
-```
+Before I go forward: The code above doesn't work because I have a scroll event attached to the container the select element is in (it's needed because of layout and spacing)
 
+I'm not really sure how to move forward here, I've come across several code snippets similar to what I gave above, and none work. I *thought* I'd be able to use intersection observer, but I don't have enough information about or on it to move forward without a working example.
+
+Could someone possible help me out or point me in the right direction?
+## [11][React-Router, Link urgent help needed.](https://www.reddit.com/r/reactjs/comments/glbu1t/reactrouter_link_urgent_help_needed/)
+- url: https://www.reddit.com/r/reactjs/comments/glbu1t/reactrouter_link_urgent_help_needed/
 ---
-
-Edit: if you think this question is about whether one should memoize all the things please read the question again more carefully. I'm talking about components with no props and a ~0 cost comparator function: `() =&gt; true`.
-## [6][Creating module for API calls.](https://www.reddit.com/r/reactjs/comments/gkt84x/creating_module_for_api_calls/)
-- url: https://www.reddit.com/r/reactjs/comments/gkt84x/creating_module_for_api_calls/
+I have a protected route. And a Link is trying to go that route and it has search params. When in the development env it works fine but when i make the build and deploy it it says page not found 404. Any kind of help is appreciated as its a little urgent. Thanks
+## [12][Weekend project: ZipStash - Cannabis Dispensary Inventory tracker (Next.js + express.js + Redis + mongo + heroku + terraform)](https://www.reddit.com/r/reactjs/comments/gl23k4/weekend_project_zipstash_cannabis_dispensary/)
+- url: https://www.reddit.com/r/reactjs/comments/gl23k4/weekend_project_zipstash_cannabis_dispensary/
 ---
-I was wondering if you should create module / class for handling the API. The class would contain all the api calls etc.  Would this be good approach?
-## [7][Hey Guys, Check out this new react components library that i have created.](https://www.reddit.com/r/reactjs/comments/gkpqy5/hey_guys_check_out_this_new_react_components/)
-- url: https://github.com/sha-el/sha-el-design
----
+[http://www.zipstash.com/](http://www.zipstash.com/)
 
-## [8][How to redirect react app to another localhost port to authenticate on load page if user not logged in?](https://www.reddit.com/r/reactjs/comments/gkr5id/how_to_redirect_react_app_to_another_localhost/)
-- url: https://www.reddit.com/r/reactjs/comments/gkr5id/how_to_redirect_react_app_to_another_localhost/
----
-React Route with windos.location.href = external url causes infinity reload and screen flickering on load page.
+Something I pulled together quickly after getting frustrated having to navigate multiple pages + dropdowns and losing history if closing the wrong tab on a certain website.
 
-What I'm doing is that on load of the react page, I'm either returning a the following router under if "user object" is not defined, or the component if the user is logged in.
+Turns out this took is actually much faster and I might continue working on it.
 
-The code under works fine if I put it on a button and load the whole component, but on load of the page, when it returns this component automatically, it starts reload infinity.
-
-React Route with windos.location.href = external url / port to another app causes infinity reload and screen flickering. in this case config.serverPort is 9000, and my react app is running on port 3000.
-
-    return ( &lt;Router&gt; &lt;Route component={() =&gt; {             window.location.href = `http://localhost:${config.serverPort}/login`; return null; }} /&gt; &lt;/Router&gt;
-
-meanwhile this works:
-
-    return ( &lt;Router&gt; &lt;Route component={() =&gt; {             window.location.href = `http://www.vg.no`; return null; }} /&gt;
-
-Is seems like as long as I have localhost in the url, it causes this infinity reload, even if I set port to the same as the app 3000. This is happening during rendering as I try to redirect the user to oath external login page if iser object is empty instead of rendering the app. Does anyone know how I can fix this?
-
-It is worth to mention that the login service is on another external localhost port, so it is not a part of the react app.
-## [9][background perspective effect](https://www.reddit.com/r/reactjs/comments/gkunes/background_perspective_effect/)
-- url: https://www.reddit.com/r/reactjs/comments/gkunes/background_perspective_effect/
----
-Hi, 
-
-I am trying to implement an effect, that translates the background based on the mouse move. 
-
-I got pretty close, but for some reason, the animation is a bit _laggy_. I thought it has something to do with the `requestAnimationFrame()`, but it did not solve the problem, it's still not smooth, and it seems I am failing to figure out why. 
-
-I have wrapped this example into a [codesandbox](https://codesandbox.io/s/competent-mclaren-8vrg1?file=/src/components/Background/index.js), if someone could tell me how to fix this, it would be highly appreciated. :) 
-
-Thank you!
-## [10][Fakebooker - Universal Facebook Clone](https://www.reddit.com/r/reactjs/comments/gkiiic/fakebooker_universal_facebook_clone/)
-- url: https://www.reddit.com/r/reactjs/comments/gkiiic/fakebooker_universal_facebook_clone/
----
-Hey react devs! I've been developing this portfolio project for quite a few months and I would like you to check it out and tell me your opinion or any constructive critisism about it. Sadly I do not have the opportunity to create a video showcasing it so more people can see it but i guess it's alright. I truly believe that it's worth looking it up it would mean a lot to me. I've tried my best to make it pop out from the other usual clones so enjoy the app!
-
-&amp;#x200B;
-
-Github repo:  [https://github.com/KristianWEB/fakebooker-frontend](https://github.com/KristianWEB/fakebooker-frontend)
-
-live website:  [https://fakebooker.com/](https://fakebooker.com/)
-
-&amp;#x200B;
-
-If you have any personal questions or whatever here's my twitter:  [https://twitter.com/KristianWEB7](https://twitter.com/KristianWEB7)
-## [11][Recoil - state management lib for React](https://www.reddit.com/r/reactjs/comments/gka9x0/recoil_state_management_lib_for_react/)
-- url: https://blog.graphqleditor.com/recoil-react-state-management-library/
----
-
-## [12][In defense of the modern web - Rich Harris](https://www.reddit.com/r/reactjs/comments/gkjsfx/in_defense_of_the_modern_web_rich_harris/)
-- url: https://dev.to/richharris/in-defense-of-the-modern-web-2nia
----
-
+If anyone here is interested once it's a bit more polished I might write up a tutorial since it was surprisingly easier than expected. This was my first time using Next.js and the heroku service.

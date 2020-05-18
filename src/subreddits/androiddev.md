@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - May 16, 2020](https://www.reddit.com/r/androiddev/comments/gktvl9/app_feedback_thread_may_16_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/gktvl9/app_feedback_thread_may_16_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/gm0rsw/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/gm0rsw/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - May 11, 2020](https://www.reddit.com/r/androiddev/comments/ghlel5/weekly_questions_thread_may_11_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/ghlel5/weekly_questions_thread_may_11_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - May 18, 2020](https://www.reddit.com/r/androiddev/comments/glzbpr/weekly_questions_thread_may_18_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/glzbpr/weekly_questions_thread_may_18_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,82 +31,87 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Freelancer Vs Client 🤣🤣🤣](https://www.reddit.com/r/androiddev/comments/glfcrq/freelancer_vs_client/)
-- url: https://v.redd.it/309lp8gltbz41
+## [3][Google bans Podcast Addict app after 9 years for letting users play podcasts that reference COVID-19](https://www.reddit.com/r/androiddev/comments/glx7q2/google_bans_podcast_addict_app_after_9_years_for/)
+- url: https://reclaimthenet.org/google-play-suspends-podcast-addict/
 ---
 
-## [4][Is Sceneform dead?](https://www.reddit.com/r/androiddev/comments/glduwe/is_sceneform_dead/)
-- url: https://www.reddit.com/r/androiddev/comments/glduwe/is_sceneform_dead/
+## [4][AVD Query](https://www.reddit.com/r/androiddev/comments/gm0826/avd_query/)
+- url: https://www.reddit.com/r/androiddev/comments/gm0826/avd_query/
 ---
-Shortly after publishing the sources on March 20 the [Sceneform GitHub repository](https://github.com/google-ar/sceneform-android-sdk) has been archived and the documentation states it will no longer be published but one has to copy the sources to the own project. That's an... interesting step. Also Sceneform no longer uses `SFA` and `SFB` files which is also an interesting decision to change that in a minor release (1.15 -&gt; 1.16).
-
-Has anybody insights on that? Does this mean the project is dead? 
-
-Since I do not use ARCore, but only the `SceneView` should I transition to [Filament](https://github.com/google/filament) (which seems to be developed more actively anyway) directly?
-## [5][Best resources to get back to android development](https://www.reddit.com/r/androiddev/comments/glf40l/best_resources_to_get_back_to_android_development/)
-- url: https://www.reddit.com/r/androiddev/comments/glf40l/best_resources_to_get_back_to_android_development/
----
-I've got an internship, which will start in two months for native android development. But the last time I've written an android app is already nearly a year ago. During the last year, I've worked only with flutter. I now want to make two to three small apps during this time, to get to know android development better than I ever have, but I don't really know which resources/tutorials would be the best to learn.
-
-What do you recommend?
-## [6][Selling google play store reviews. Can google do something about it?](https://www.reddit.com/r/androiddev/comments/glemtd/selling_google_play_store_reviews_can_google_do/)
-- url: https://www.reddit.com/r/androiddev/comments/glemtd/selling_google_play_store_reviews_can_google_do/
----
-I've just received this email. Someone wants to make a serious business out of selling fake review.   
-Can we do something about it? 
-
-https://preview.redd.it/n9qc7hk8kbz41.jpg?width=1482&amp;format=pjpg&amp;auto=webp&amp;s=23d01aede89c959e920f1661d721dff2122120e0
-## [7][What is your preferred implementation of MVI design pattern ?](https://www.reddit.com/r/androiddev/comments/gldp2m/what_is_your_preferred_implementation_of_mvi/)
-- url: https://www.reddit.com/r/androiddev/comments/gldp2m/what_is_your_preferred_implementation_of_mvi/
----
-As we all know, design patterns existed for solving common software problem and we adapt the pattern to fit more with our projects and the way we work like changing the layers, creating some helper base classes, extension functions, your best way of implementing the machine state, frameworks that help you, snippets and so on.  
-It would be great to share your implementations or reference article.
-## [8][What is your opinion on using data binding?](https://www.reddit.com/r/androiddev/comments/gld5du/what_is_your_opinion_on_using_data_binding/)
-- url: https://www.reddit.com/r/androiddev/comments/gld5du/what_is_your_opinion_on_using_data_binding/
----
-I haven't used data binding before but from what I have read I think using data binding in projects is overkill.
-
-With view binding and code in activity classes populating views, I think it is more understandable and much easier to get someone new involved in a project.
-
-Are there any benifits to it I am missing? Can you share why you prefer using it?
-## [9][Get Started with Flutter on Surface Duo](https://www.reddit.com/r/androiddev/comments/gl7640/get_started_with_flutter_on_surface_duo/)
-- url: https://devblogs.microsoft.com/surface-duo/get-started-with-flutter-on-surface-duo/
+What to choose for hardware acceleration for your android emulator when you don't have a graphics card installed in your computer? GLES hardware or Software?
+## [5][Kevin Lynch (now VP of Technology at Apple) in 2010 on cross-platform apps](https://www.reddit.com/r/androiddev/comments/glxh5e/kevin_lynch_now_vp_of_technology_at_apple_in_2010/)
+- url: https://www.youtube.com/watch?v=Z512TwwyRWM
 ---
 
-## [10][30 days of Kotlin - Seminar 1 - Kotlin 101](https://www.reddit.com/r/androiddev/comments/gkqmzk/30_days_of_kotlin_seminar_1_kotlin_101/)
-- url: https://www.reddit.com/r/androiddev/comments/gkqmzk/30_days_of_kotlin_seminar_1_kotlin_101/
+## [6][Migrating paid app users to free app](https://www.reddit.com/r/androiddev/comments/glt218/migrating_paid_app_users_to_free_app/)
+- url: https://www.reddit.com/r/androiddev/comments/glt218/migrating_paid_app_users_to_free_app/
 ---
-Some asked for it here. So here it is.
+Hi, i hope to get advise here.  i have decided to just have one app from a paid app and free app version before and new users will use iap to make it ad free.
 
-[Youtube Link (I don't know if it works for others)](https://www.youtube.com/watch?v=YLSLaQ7gQEE)
+how did you guys manager to detect paid app users and unlock them in the free version?
 
-[GDrive Link (10sec video lag at 1:24, sorry)](https://drive.google.com/file/d/1rXC-BZNB9AvUeX2h96jR24m2fpsOPgc8/view?usp=sharing)
+there does not seem to be any api in the billing api that does it since it involves only iap.
 
-Resources :
+i had read about forcing the user to install the pro version so the free version can detect if the paid version is installed. this is not an ideal approach though since it forces the user to have 2 installed apps (free and paid) even if it is only a 1 time step to verify that the paid version is installed.
 
-* CodeLabs by Google:
-
-1. [Kotlin Bootcamp Course](https://developer.android.com/courses/kotlin-bootcamp/overview)
-2. [Android Kotlin Fundamentals Course](https://developer.android.com/courses/kotlin-android-fundamentals/overview)
-3. [Android Advanced in Kotlin Course](https://developer.android.com/courses/kotlin-android-advanced/overview) 
-
-* Udacity Courses:
-
-1.  [Kotlin Bootcamp for Programmers](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
-2.  [Developing Android Apps with Kotlin](https://www.udacity.com/course/developing-android-apps-with-kotlin--ud9012)
-
-Helpful Links :
-
-*  [kotlinlang.org](https://kotlinlang.org/)
-*  [Kotlin-Java Interop Guide](https://developer.android.com/kotlin/interop) 
-*  [Add Kotlin to an existing app](https://developer.android.com/kotlin/add-kotlin)
-*  [Android KTX](https://developer.android.com/kotlin/ktx)
-*  [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines)
-## [11][Automatic bridging from C++ to Java](https://www.reddit.com/r/androiddev/comments/gl192f/automatic_bridging_from_c_to_java/)
-- url: https://www.reddit.com/r/androiddev/comments/gl192f/automatic_bridging_from_c_to_java/
----
-I've created a project for automatic bridging from C++ to Java (among other languages). Please take a look: [Scapix](https://github.com/scapix-com/scapix). If you try the project, I would love to hear your opinions and suggestions. Thanks!
-## [12][CodePush in action](https://www.reddit.com/r/androiddev/comments/gku7m2/codepush_in_action/)
-- url: https://medium.com/@deepakjha14.ex/codepush-in-action-3cc97d6affa5?source=friends_link&amp;sk=7cd7d8d9f02fdfd8b33176073855790b
+thoughts?
+## [7][Dear Developers, there is a big difference % wise in earnings on AdMob in this month, compared to the last. Can you help me figure what's the problem?](https://www.reddit.com/r/androiddev/comments/gly9kf/dear_developers_there_is_a_big_difference_wise_in/)
+- url: https://i.redd.it/8vy7qx99shz41.png
 ---
 
+## [8][Hey, this is my first android app please have a look and give me suggestions. https://play.google.com/store/apps/details?id=com.aniket.randomize](https://www.reddit.com/r/androiddev/comments/gm12l9/hey_this_is_my_first_android_app_please_have_a/)
+- url: https://i.redd.it/n6rczolzuiz41.png
+---
+
+## [9][Type com.github.ybq.android.spinkit.R is defined multiple times, because of aar library](https://www.reddit.com/r/androiddev/comments/gm11pa/type_comgithubybqandroidspinkitr_is_defined/)
+- url: https://www.reddit.com/r/androiddev/comments/gm11pa/type_comgithubybqandroidspinkitr_is_defined/
+---
+Hello, I have integrated a third party SDK (aar file), which uses com.github.ybq.android.spinkit inside of it. This aar library, does not declare com.github.ybq.android.spinkit as gradle depency and this causes an issue, when we **try to create a release version of our app:**
+
+**Type com.github.ybq.android.spinkit.R is defined multiple times**
+
+Debug builds work without any issues. 
+
+What I have tried:
+
+1. Exclude a com.github.ybq.android.spinkit from this aar file. This did not worked, because it seems that it does not support **aar files**. Here is my code:
+
+&amp;#8203;
+
+     implementation ('example.library@aar') {
+            exclude group: 'com.github.ybq', module: 'Android-SpinKit'
+        }
+
+I know that it is a fault of library creator to build **a fat aar** with compiled library additionally. However, I can't just force them to change it... 
+
+Perhaps there is a way to somehow **exclude Android-SpinKit from that AAR library**?
+## [10][Client/server CRUD application with client side cache](https://www.reddit.com/r/androiddev/comments/gm118e/clientserver_crud_application_with_client_side/)
+- url: https://www.reddit.com/r/androiddev/comments/gm118e/clientserver_crud_application_with_client_side/
+---
+Recently I've been hacking away on a few different applications. The common denominator is that the Android applications are clients for RESTful backends. The way I've implemented it so far is by synchronizing the backend to local storage on the client. Specifically I'm using Retrofit and Room for that task.
+
+The applications mostly consist of CRUD functionality and the business logic mostly consist of the way the data is structured and its relations.
+
+The problem is that I feel I'm coding the application twice. I'm pretty much duplicating the database layout both client- and server-side. With the limitations of Room versus JPA and Postgresql.
+
+To some extend I feel that Room/Sqlite is overkill and I could do with a simple key value store.
+
+Any comments?
+## [11][How to protect my personal play store account as a freelancer?](https://www.reddit.com/r/androiddev/comments/gm10b2/how_to_protect_my_personal_play_store_account_as/)
+- url: https://www.reddit.com/r/androiddev/comments/gm10b2/how_to_protect_my_personal_play_store_account_as/
+---
+I will be mostly working with companies who never had an app. I will be building apps for them and guiding them through the process of publishing it on play store.
+
+What are things I should keep in mind so that if in future if they get their account ban, my personal account is not affected by it?
+
+If you have any other tips for someone starting freelancing please share them as well.
+
+Thanks.
+
+P.s. I am asking this because I have heard stories where a company got their account ban because a developer who was banned had access to it and google associated the company's account with his. I just want to be sure that I am not affected by it the other way round.
+## [12][Someone modified my app and uploaded it to some app store](https://www.reddit.com/r/androiddev/comments/gm0zse/someone_modified_my_app_and_uploaded_it_to_some/)
+- url: https://www.reddit.com/r/androiddev/comments/gm0zse/someone_modified_my_app_and_uploaded_it_to_some/
+---
+Hi all. Few days ago I was looking in Google Analytics at the most frequently viewed activities in my app. I noticed that there are many views of "TencentActivity". I'm sure that there's no class with that name in my app. I looked further and it seems that it's used by users in Thailand and Malaysia on Oppo devices. It also uses an app version that I didn't set. I'm curious about this modification. Did anyone had similar case?
+
+I tried downloading an apk of the Oppo app store, but it's all in Chinese on my phone, and I couldn't find my app there (probably the name is changed).

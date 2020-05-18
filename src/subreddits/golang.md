@@ -1,10 +1,34 @@
 # golang
-## [1][The best description on when to use a pointer and when to pass by value in GO I've seen!!!](https://www.reddit.com/r/golang/comments/gldrek/the_best_description_on_when_to_use_a_pointer_and/)
+## [1][I wrote a tutorial on how we use Go, Twilio and GCP to enable remote fax processes](https://www.reddit.com/r/golang/comments/glym06/i_wrote_a_tutorial_on_how_we_use_go_twilio_and/)
+- url: https://www.reddit.com/r/golang/comments/glym06/i_wrote_a_tutorial_on_how_we_use_go_twilio_and/
+---
+Hi all,
+
+Hopefully, this might help some people. I'm doing consulting in a 25 years old credit bureau were faxes and printed document were the standard and unchangeable processes.
+
+Circumstances forced for some adaptation. To ensure employees continue to work from home, I've built a remote-friendly replacement for all the fax machines and printed document processes.
+
+We are using QR-Code detection via a Google Cloud Run container to dispatch incoming faxes to the right employee.
+
+I've shared as much code as I could. If you need to replace a physical fax machine and prevent manual processing of printed documents, this will certainly help you get started.
+
+Here's the link to the article: https://dominicstpierre.com/paperless-go-twilio-fax-email
+
+Thanks
+## [2][1000+ Hand-Crafted Go Examples, Exercises, and Quizzes](https://www.reddit.com/r/golang/comments/gm0nk9/1000_handcrafted_go_examples_exercises_and_quizzes/)
+- url: https://github.com/inancgumus/learngo
+---
+
+## [3][Mocking time and testing event loops in Go](https://www.reddit.com/r/golang/comments/gm01cc/mocking_time_and_testing_event_loops_in_go/)
+- url: https://dmitryfrank.com/articles/mocking_time_in_go
+---
+
+## [4][The best description on when to use a pointer and when to pass by value in GO I've seen!!!](https://www.reddit.com/r/golang/comments/gldrek/the_best_description_on_when_to_use_a_pointer_and/)
 - url: https://www.reddit.com/r/golang/comments/gldrek/the_best_description_on_when_to_use_a_pointer_and/
 ---
 A massive shout out to sacado2 on hackernews
 
- Imagine we're working together and I have some text document I want you to work on and update. If I send you the text by email, I send a *copy* of it (the original text is still on my computer). If you modify that copy and keep it for you, I won't ever know what you did. I just used a function
+Imagine we're working together and I have some text document I want you to work on and update. If I send you the text by email, I send a *copy* of it (the original text is still on my computer). If you modify that copy and keep it for you, I won't ever know what you did. I just used a function
 
        func (c Coworker) SendForUpdates(d Document) {         ...     } 
 
@@ -24,129 +48,47 @@ You don't only use "pass-by-reference" just to be able to check updates on the d
 
        func (c Coworker) InformText(d Document) // d is small: pass-by-value      func (c Coworker) InformBigVideo(v *Video) // videos are huge: pass-by-reference 
 
-Why not use pointers everywhere by default, they seem easier, right? That's basically what java and python do. Well, they can be tricky too. I gave you the URL to the link and you could work on it. Once you're done, I don't want you to modify the document anymore. I want to send it to our boss. But, how could I know you didn't keep the URL somewhere in your bookmarks? How do I know, of all the coworkers I sent the URL to, one of them doesn't keep on updating that document even when I don't want to anymore? With copies, I'm safe, do whatever the hell you want with your copy, I don't care anymore. But a reference to the original document? That can be dangerous.   
+Why not use pointers everywhere by default, they seem easier, right? That's basically what java and python do. Well, they can be tricky too. I gave you the URL to the link and you could work on it. Once you're done, I don't want you to modify the document anymore. I want to send it to our boss. But, how could I know you didn't keep the URL somewhere in your bookmarks? How do I know, of all the coworkers I sent the URL to, one of them doesn't keep on updating that document even when I don't want to anymore? With copies, I'm safe, do whatever the hell you want with your copy, I don't care anymore. But a reference to the original document? That can be dangerous.
+
+Link to full discussion:  [https://news.ycombinator.com/item?id=23206440](https://news.ycombinator.com/item?id=23206440)  
 
 
-Link to full discussion:  [https://news.ycombinator.com/item?id=23206440](https://news.ycombinator.com/item?id=23206440)
-## [2][Learn Go: 1000+ Hand-crafted Go exercises and examples](https://www.reddit.com/r/golang/comments/gl1jo2/learn_go_1000_handcrafted_go_exercises_and/)
-- url: https://github.com/inancgumus/learngo
+Edit: Thanks for the Gold kind stranger
+## [5][Writing an NES emulator in Go, Part 1](https://www.reddit.com/r/golang/comments/gljdy7/writing_an_nes_emulator_in_go_part_1/)
+- url: https://nwidger.github.io/blog/post/writing-an-nes-emulator-in-go-part-1/
 ---
 
-## [3][Go: AWS Lambda Project Structure Using Golang](https://www.reddit.com/r/golang/comments/glf3n3/go_aws_lambda_project_structure_using_golang/)
-- url: https://medium.com/dm03514-tech-blog/go-aws-lambda-project-structure-using-golang-98b6c0a5339d
+## [6][config files or ENV vars for configuration of services](https://www.reddit.com/r/golang/comments/glv3cy/config_files_or_env_vars_for_configuration_of/)
+- url: https://www.reddit.com/r/golang/comments/glv3cy/config_files_or_env_vars_for_configuration_of/
 ---
+In the old days, it was quite common to use xml (and then later json) configuration for various environments. I found an example loading json for config data as well. That is what I am doing now. But as I know these sorts of things will be in docker containers and eventually deploy to the cloud... would it make more sense to embrace the use of ENV vars for all configuration, and remove the need to load various .json files for different environments? 
 
-## [4][Capture SAML Response (HTTP-Post) / Forward Auth for Traefik?](https://www.reddit.com/r/golang/comments/glc9uw/capture_saml_response_httppost_forward_auth_for/)
-- url: https://www.reddit.com/r/golang/comments/glc9uw/capture_saml_response_httppost_forward_auth_for/
+How common is it to specify say, a dozen or more config values via ENV variables per service (obviously each service has a varying number of config properties).
+
+In the case of using ENV vars.. I assume then have sensible defaults should be applied? Assuming also that the defaults would be production defaults.. and dev/qa/sandbox/etc would pass specific ENV vars for those ENVs?
+## [7][Passing []string through channel?](https://www.reddit.com/r/golang/comments/glz1wl/passing_string_through_channel/)
+- url: https://www.reddit.com/r/golang/comments/glz1wl/passing_string_through_channel/
 ---
-Hi guys,
-
-I'm relatively new to SAML. I am using gosaml2, which seems to be the easiest to use and understand.
-
-I have basic HTTP-Redirect working just fine, but I wanted to use Traefik's forwardAuth facility. I thought about using HTTP-POST instead to send a POST form to the IdP (using KeyCloak at home to test), and hopefully getting a response back. Then using a 2XX series answer, send the result for Traefik to proxy or auth.
-
-At the moment, when I do a POST, I get a "saml\_token\_not\_found" in the IdP events (Invalid Request).
-
-Any idea if this can be done using POST? I would use the Redirect method, except I don't know how to capture the response back from the IdP in the same request. "traefik-forward-auth" seems to be able to do this for Oauth, which I believe also does a redirect, but I am not sure. I will look at this source again to see what's going on.
-
-I would appreciate the help. I've been hitting my head on this for over a week now...
-
-Edit: Replace "Vouch" with "traefik-forward-auth."
-
-Edit 1: I posted the form from the browser, which did work, so I have been trying to replicate the complicated methods traefik-forward-auth uses.
-## [5][Avoiding repetition in a REST API?](https://www.reddit.com/r/golang/comments/glekya/avoiding_repetition_in_a_rest_api/)
-- url: https://www.reddit.com/r/golang/comments/glekya/avoiding_repetition_in_a_rest_api/
----
-I've been working with go for a bit now, but this is my first time creating a rest API. I found that I had a lot of repetition when it came to returning JSON error responses (I know that error handling in go can be repetitive, which I generally like coming from the python world). 
-
-Let's say my method validates the request, and then does a few database queries, does a computation, and then some other work, all of which can fail.
-
-I register my routes like
-
-    srv.r.HandleFunc("/api/foo/", srv.getFoo).Methods("GET")
-
-and then I created a helper function to reduce the amount of repetition. This helped clean up my code a bit.
-
-    func createError(w http.ResponseWriter, code int, msg string) {
-    	w.WriteHeader(code)
-    	json.NewEncoder(w).Encode(myError{Msg: msg})
-    }
-    
-    type myError struct {
-    	Msg string `json:"msg"`
-    }
-    
-
-And then one of the methods might look something like 
-
-    func (srv *Server) getFoo(w http.ResponseWriter, r *http.Request) {
-    	w.Header().Set("Content-Type", "application/json")
-    	req := Foo{FooID: r.Header.Get("foo_id")}
-    	_, err := govalidator.ValidateStruct(&amp;req)
-    	if err != nil {
-    		// log error
-    		createError(w, http.StatusBadRequest, err.Error())
-    		return
-    	}
-            ...
-            fooInfo, err := srv.getFooDetailsFromDB(req)
-            if err != nil {
-                createError(w, http.StatusInternalServerError, "unexpected error")
-                return
-            }
-            
-            fooValue, err := srv.calculateFooValue(fooInfo)
-            if err != nil {
-                createError(w, http.StatusInternalServerError, "unexpected error")
-                return
-            }
-            // etc etc
-            response, err := srv.generateFooResponse(fooValue, fooInfo)
-            if err != nil {
-                createError(w, http.StatusInternalServerError, "unexpected error")
-                return
-            }
-            json.NewEncoder(w).Encode(response)
-    }
-
-Is there a better way to do this? I find it isn't as bad with my \`createError\` function, but it still feels a bit clunky.
-
-I suppose I could combine all of my methods into something like \`doWorkForFoo()\`, and then call all of these methods from there, passing the appropriate HTTP status code to \`createError\` if any of those fail. But it still results in the same amount of repetition.
-
-Alternatively, I could return one error from \`doWorkForFoo()\`, and then check what the error is, and set the appropriate status code/message there.
-
-Any thoughts/ideas would be greatly appreciated!
-## [6][Gorched is terminal based game written in GO inspired by "The Mother of all games" Scorched Earth](https://www.reddit.com/r/golang/comments/gku4i7/gorched_is_terminal_based_game_written_in_go/)
-- url: https://github.com/zladovan/gorched
----
-
-## [7][What the co-designer of Go thinks of Gophers](https://www.reddit.com/r/golang/comments/glcz3v/what_the_codesigner_of_go_thinks_of_gophers/)
-- url: https://www.reddit.com/r/golang/comments/glcz3v/what_the_codesigner_of_go_thinks_of_gophers/
----
-“The key point here is our programmers are Googlers, they’re not researchers. They’re typically fairly young, fresh out of school, probably learned Java, maybe learned C or C++, probably learned Python. They’re not capable of understanding a brilliant language but we want to use them to build good software. So, the language that we give them has to be easy for them to understand and easy to adopt.”
-
--- Rob Pike
-
-[https://youtube.com/watch?v=uwajp0g-bY4]
-## [8][Representing JSON structures in Go](https://www.reddit.com/r/golang/comments/gkwxka/representing_json_structures_in_go/)
-- url: https://eli.thegreenplace.net/2020/representing-json-structures-in-go/
----
-
-## [9][functional options pattern using by Google API.](https://www.reddit.com/r/golang/comments/gl5bkn/functional_options_pattern_using_by_google_api/)
-- url: https://www.reddit.com/r/golang/comments/gl5bkn/functional_options_pattern_using_by_google_api/
----
-It's functional options pattern with appliance in #Go.☺️
-
-This design pattern is used by Google API.
+Hi!
 
 &amp;#x200B;
 
-https://preview.redd.it/s5l5ejh5v7z41.png?width=476&amp;format=png&amp;auto=webp&amp;s=f46aa7972c6ca4f29b0a475740c80ca9fc35b858
+Is it possible to return an entire \[\]string slice, of say, 10000 entries, through a channel?
+## [8][Project Management Tool research](https://www.reddit.com/r/golang/comments/glyjct/project_management_tool_research/)
+- url: https://www.reddit.com/r/golang/comments/glyjct/project_management_tool_research/
+---
+Hi Go community!
 
-https://preview.redd.it/8qvmurh5v7z41.png?width=779&amp;format=png&amp;auto=webp&amp;s=2b8f1fe2c92809fbf0acf74ba3a17dcd2c6ee4d3
+I’m a computer science student from berlin and part of a research project where we want to understand how project management tools are used in software-development teams.  
+That is why I am asking you: What are your opinions on your tools? Help me with my research by filling out the survey below!  
+Thank you!
 
-https://preview.redd.it/twb1vqh5v7z41.png?width=284&amp;format=png&amp;auto=webp&amp;s=c68bc97c42126ce366664f39b719cf32b90ad63e
-## [10][A little history and legacy on Go](https://www.reddit.com/r/golang/comments/gl5439/a_little_history_and_legacy_on_go/)
-- url: https://youtu.be/k0VsfTAqqEA?t=8
+[Click here to start survey](https://pmtoolstudy.typeform.com/to/sdzA6D)
+## [9][Happy 2nd Birthday Pion!](https://www.reddit.com/r/golang/comments/glo339/happy_2nd_birthday_pion/)
+- url: https://twitter.com/_pion/status/1262135198029758464
+---
+
+## [10][So you think you know Go?](https://www.reddit.com/r/golang/comments/gm0mbz/so_you_think_you_know_go/)
+- url: https://medium.com/@gotzmann/so-you-think-you-know-go-c5164b0d0511
 ---
 

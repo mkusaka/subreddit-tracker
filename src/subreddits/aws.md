@@ -1,119 +1,154 @@
 # aws
-## [1][My understanding of Aurora serverless](https://www.reddit.com/r/aws/comments/glb7pk/my_understanding_of_aurora_serverless/)
-- url: https://www.reddit.com/r/aws/comments/glb7pk/my_understanding_of_aurora_serverless/
+## [1][TIL AWS has tooling to stop/start instances - Scheduler CLI](https://www.reddit.com/r/aws/comments/gls34w/til_aws_has_tooling_to_stopstart_instances/)
+- url: https://www.reddit.com/r/aws/comments/gls34w/til_aws_has_tooling_to_stopstart_instances/
 ---
-* You're just given an endpoint to which your application is supposed to connect to
-* You set a few extra parameters while creating the instance like min, max size, etc
-* Everything else is taken care of from aws side
-* There's no concept of instances (at least from our side). There's no instance/replica/reader/writer creation/management from our side. Only things we can modify from our end are the cluster parameter groups,etc.
+https://docs.aws.amazon.com/solutions/latest/instance-scheduler/appendix-a.html
 
-Can anyone confirm these? Also, I'm not sure how backups are done in serverless. Thanks :)
-## [2][VPC desgin studio](https://www.reddit.com/r/aws/comments/gkz23i/vpc_desgin_studio/)
-- url: https://houqp.github.io/vpcstudio/
+I can't help but think this is perhaps only useful for dev/staging environments.
+## [2][CDK for production workloads](https://www.reddit.com/r/aws/comments/glm4k0/cdk_for_production_workloads/)
+- url: https://www.reddit.com/r/aws/comments/glm4k0/cdk_for_production_workloads/
 ---
+I was recently getting into learning the AWS CDK and I am super excited about it. The elegant approach to provision infrastructure from python code is amazing.
 
-## [3][How to monitor a Node.js Express API running on an EB.](https://www.reddit.com/r/aws/comments/gld7ar/how_to_monitor_a_nodejs_express_api_running_on_an/)
-- url: https://www.reddit.com/r/aws/comments/gld7ar/how_to_monitor_a_nodejs_express_api_running_on_an/
+But since it is pretty new and maybe does not offer all features, I was wondering: is the CDK actually used by organizations for real production environments?
+## [3][[HELP] Cannot connect to RDS from Fargate](https://www.reddit.com/r/aws/comments/gm0ps5/help_cannot_connect_to_rds_from_fargate/)
+- url: https://www.reddit.com/r/aws/comments/gm0ps5/help_cannot_connect_to_rds_from_fargate/
 ---
-Hi redditors, 
+Hi, I'm new to AWS and I'm stuck with this issue for 2 weeks now.
 
-**TL;DR**
+[https://stackoverflow.com/questions/61869022/cannot-connect-to-rds-from-fargate](https://stackoverflow.com/questions/61869022/cannot-connect-to-rds-from-fargate)
 
-Asking for advice on how to monitor an Node.js Express API running on an Elastic Beanstalk.
-
-I'm a mobile engineering. I'm writing this post because my apps are growing and we start having a decent amount of traffic. I'm new to AWS and devops related stuff and I'm lost in all the options available. I would like to introduce my use case to get your advice if possible. Thanks in advance!
-
-**The Infrastructure**
-
-* I have 4 mobile apps relaying on one server.
-* The server is a Node.js backend running on an Elastic Beanstalk behind a Load Balancer with autoscale enabled. There is usually 2  (*t2.micro*) machines running.
-* The server has an API built on express. 
-* I'm using the AWS free tier whenever is possible.
-
-**The Problem**
-
-I need to start monitoring my API calls. I'm interested on: 
-
-* Amount of request segmented by time *(I wanna understand when my servers are more active)*
-* Amount of request segmented by API endpoint. *(I wanna know the distribution of my requests by endpoint)*
-* Average time to respond by endpoint.
-* Response status code by endpoint.
-
-**The Requirements**
-
-* I would like to do everything without using third party services if possible.
-* I would like to keep the monitoring as cheap as possible.
-
-**Questions**
-
-* What is the standard way to do this?
-* Should I need to add something at code level or just using cloud-watch metrics (*for example*) I will be able to achieve this?
-
-  
-Thanks for your time, 
-
-Marcos.
-## [4][How can I make the best of the AWS free tier?](https://www.reddit.com/r/aws/comments/gl7ijs/how_can_i_make_the_best_of_the_aws_free_tier/)
-- url: https://www.reddit.com/r/aws/comments/gl7ijs/how_can_i_make_the_best_of_the_aws_free_tier/
+Can someone please help me with this?
+## [4][AWS tutorials from an ex-AWS engineer](https://www.reddit.com/r/aws/comments/glzvt5/aws_tutorials_from_an_exaws_engineer/)
+- url: https://www.reddit.com/r/aws/comments/glzvt5/aws_tutorials_from_an_exaws_engineer/
 ---
-Just starting to learn AWS and was wondering how can I get the most out of it with getting that hands-on experience and common use situations you’d be doing. Should I just be doing projects? Thanks all.
-## [5][Route 53 costs for studying](https://www.reddit.com/r/aws/comments/gldo5a/route_53_costs_for_studying/)
-- url: https://www.reddit.com/r/aws/comments/gldo5a/route_53_costs_for_studying/
+Hi everyone,
+
+I'm an ex-AWS software engineer (moved on to try something different).
+
+I've been thinking of writing up some tutorials on using AWS to do things which I think far more people should be aware (and not scared) of. For example, hosting a static site on S3 + Cloudfront.
+
+Is there a specific tutorial you'd be interested in?
+## [5][MediaConvert Server Side Encryption of HLS Stream](https://www.reddit.com/r/aws/comments/gly5ym/mediaconvert_server_side_encryption_of_hls_stream/)
+- url: https://www.reddit.com/r/aws/comments/gly5ym/mediaconvert_server_side_encryption_of_hls_stream/
 ---
-Hi
+Here's the MediaConvert code that encrypts the segments:
 
-I'm considering purchasing a domain via Route 53 to use for AWS cert studying.
+&amp;#x200B;
 
-I was wondering whether anyone would have any experience on the kind of cost I could expect in these circumstance? Is it worth doing for cert studies?
+'Encryption' =&gt; \[
 
-I doubt I'll be using it for much other than getting hands-on with Certificate Manager (just the free public certs).
+	'EncryptionMethod' =&gt; 'AES128',
 
-I notice that in the Route 53 pricing, there is a $0.125 per ENI / hour charge for a Resolver and that a minimum of two ENIs a required. Am I correct in thinking that I would only use the Route 53 Resolver if I wanted to offload DNS queries to Route 53 from any EC2 instances?
+	'InitializationVectorInManifest' =&gt; 'EXCLUDE',
 
-Sorry if this is kind of vague but I don't want to be lumped with a $182 monthly bill that the price calculator says I'd get charged for the Resolver.
-## [6][Using a Load Balancer as a reverse proxy.](https://www.reddit.com/r/aws/comments/gl9uuk/using_a_load_balancer_as_a_reverse_proxy/)
-- url: https://www.reddit.com/r/aws/comments/gl9uuk/using_a_load_balancer_as_a_reverse_proxy/
+	'OfflineEncrypted' =&gt; 'DISABLED',
+
+	'StaticKeyProvider' =&gt; \[
+
+		'StaticKeyValue' =&gt; 'ecd0d06eaf884d8226c33928e87efa33',
+
+		'Url' =&gt; '[https://Example.com/keyinfo](https://Example.com/keyinfo)',
+
+	\],
+
+	'Type' =&gt; 'STATIC\_KEY', //'SPEKE'|'STATIC\_KEY'
+
+\],
+
+&amp;#x200B;
+
+[Example.com/keyinfo](https://Example.com/keyinfo) is a text file with ONLY the following 2 lines of text:
+
+&amp;#x200B;
+
+[https://Example.com/key](https://Example.com/key)
+
+key
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Then, at [Example.com/key](https://Example.com/key) is a text file containing just 1 single line of text:
+
+&amp;#x200B;
+
+ecd0d06eaf884d8226c33928e87efa33
+
+&amp;#x200B;
+
+(and that's the same as "StaticKeyValue" from the earlier MediaConvert job)
+
+&amp;#x200B;
+
+And when I play this video using VideoJS, it is able to get to the main playlist (.m3u8), it is able to locate the keyinfo file (I can see it in the browser logs), but then it fails when trying to open the first .ts segment which is part 1 of the encrypted video.
+
+&amp;#x200B;
+
+So what do you think is wrong here? I am happy to pay someone to troubleshoot this for me.
+
+&amp;#x200B;
+
+Thanks in advance for your help!
+## [6][LightSail instance suddenly stopped working](https://www.reddit.com/r/aws/comments/gly4tj/lightsail_instance_suddenly_stopped_working/)
+- url: https://www.reddit.com/r/aws/comments/gly4tj/lightsail_instance_suddenly_stopped_working/
 ---
-Hi folks,
+Seems like there is a recently undocumented introduction of the [bursting "feature"](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-frequently-asked-questions-faq) for LightSail that completely render my VPS useless?
 
-I am putting a licensing server into AWS for our organisation. Our prod environment is heavily federated and we are only allowed to create or update new resources via CloudFormation. 
+Does someone else get into the same situation or It's only my VPS that is faulty?
 
-I have written a CloudFormation script that spins up an EC2, auto licenses the licensing server by downloading some config files, creates the security group, creates a Route 53 based off the name of the server and sets up an instance profile. It works great.
+https://preview.redd.it/d3g7wi0uphz41.png?width=912&amp;format=png&amp;auto=webp&amp;s=54f29f97fb3b67c7a426467f083dbad8a77d53a6
 
-One of the goals of the project was to add HTTPS, as the server doesn't natively support it, but it can be configured [via reverse proxy](https://www.jetbrains.com/help/license_server/configuring_secure_connection.html)  
+&amp;#x200B;
 
+https://preview.redd.it/9nl3gfdeqhz41.png?width=909&amp;format=png&amp;auto=webp&amp;s=9f0df67f5a096c8defe69cd9601ca483ff391821
 
-I asked around to see if I could get the certificates for our internal tools domain (it doesn't need to be accessible from the internet) but was told that these are Amazon certificates and the best way to secure this connection is by creating a Load Balancer in front of my single EC2 (I have been told by the manufacturer of the server that it won't work in any kind of multi-node configuration) and secure this connection using the built in certificate tools.   
-
-
-I have never done this before and it is confusing me a little. Am I right in thinking that I would need to:  
-
-
-* Create a Application Load Balancer that depends on my EC2 Instance
-* Create a Load Balancer Listener that listens for https requests on my custom port with an SSL Rule and the ARN of my certificate
-* Set my Route53 to create a record based on the name of my Load Balancer and to point at it's IP, when created.  
-
-
-Is that about right? Any feedback appreciated.
-## [7][Updating an existing EC2's AMI ID --- why?](https://www.reddit.com/r/aws/comments/glb2ei/updating_an_existing_ec2s_ami_id_why/)
-- url: https://www.reddit.com/r/aws/comments/glb2ei/updating_an_existing_ec2s_ami_id_why/
+Edit : Seems like they always behaved that way. ( Like a burstable T2. It's just now that they decided to include their metric calculation into the metric dashboard ). Wierd thing that I never experienced instances being taken down before but now they do...
+## [7][AWS: CloudFormation — using Conditions, Fn::Equals, and Fn::If — an example](https://www.reddit.com/r/aws/comments/gly2s1/aws_cloudformation_using_conditions_fnequals_and/)
+- url: https://www.reddit.com/r/aws/comments/gly2s1/aws_cloudformation_using_conditions_fnequals_and/
 ---
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
+The author has aCloudFormation stack with VPC Peerings.
 
-*For example, if you have a stack with an EC2 instance, you can update the stack to change the instance's AMI ID.*
+The task: add an ability to chose if CloudFormation have to create the peering mentioned above — or skip this step.
 
-For what reason / purpose would you update an instance's AMI ID?  AMI's are only ever used at instance launch time, right?  Would this result in an implicit Terminate --&gt; Launch with the new AMI?
-## [8][Are the exams being held online now?](https://www.reddit.com/r/aws/comments/gla3hm/are_the_exams_being_held_online_now/)
-- url: https://www.reddit.com/r/aws/comments/gla3hm/are_the_exams_being_held_online_now/
----
-I’m thinking of signing up for the AWS Solutions Architect Exam but don’t know if it’ll be in person or online. Anyone know?
-## [9][Connecting to mongodb in EC2 from Lambda functions](https://www.reddit.com/r/aws/comments/gl8dgr/connecting_to_mongodb_in_ec2_from_lambda_functions/)
-- url: https://www.reddit.com/r/aws/comments/gl8dgr/connecting_to_mongodb_in_ec2_from_lambda_functions/
----
-Hi, I tried connecting to mongodb in Ec2 from my lambda function using private ip, that works fine but if I connect using public ip, its not. Every port is open in security group. And both lambda and ec2 are in same vpc.
-What is it that I am doing wrong.
-Lambda logs is giving connection timed out.
-## [10][Does AWS Savings Plan apply to spot instances?](https://www.reddit.com/r/aws/comments/gl4l3t/does_aws_savings_plan_apply_to_spot_instances/)
-- url: https://www.reddit.com/r/aws/comments/gl4l3t/does_aws_savings_plan_apply_to_spot_instances/
----
+The solution: use the AWS CloudFormation Conditions: will add a new parameter VPCPeeringCreate which will accept a true value false from a Jenkins job and then depending on this value CloudFormation will decide if need to create such a peering and related resources - the peering itself and two Routes.
 
+The article: https://medium.com/setevoy4/aws-cloudformation-using-conditions-fn-equals-and-fn-if-an-example-bf147336a25f?source=friends_link&amp;sk=30143435f35dc77da8a400e49a7190fe
+## [8][When does Lambda@Edge stop being counted as running for billing purposes?](https://www.reddit.com/r/aws/comments/gltr1g/when_does_lambdaedge_stop_being_counted_as/)
+- url: https://www.reddit.com/r/aws/comments/gltr1g/when_does_lambdaedge_stop_being_counted_as/
+---
+Let's say I'm using Lambda@Edge in front of an S3 Bucket that is used for streaming large videos or large file downloads.  Would the Lambda@Edge function be counted as running for the full duration of the streaming video or large download?  Or is it only considered running while it's doing it's initial run to determine the origin and once the origin is set, it stops running at that point (for purposes of billing)?
+
+I hope its not considered running for the duration of the data transfer.  That could get insanely expensive.
+## [9][Glue Crawler creating thousands of tables](https://www.reddit.com/r/aws/comments/glr75g/glue_crawler_creating_thousands_of_tables/)
+- url: https://www.reddit.com/r/aws/comments/glr75g/glue_crawler_creating_thousands_of_tables/
+---
+I'm struggling a bit with AWS Glue Crawler and wondering if anyone can help set me in the right direction. I have thousands of xml files on S3 that are daily snapshots of data that I'm trying to convert to 2 partitioned parquet tables (to query with Athena).
+
+**Example S3 files:**
+
+* s3://bucketname/2020/04/26/07/31/index.xml
+* s3://bucketname/2020/04/26/08/08/records/491.xml
+* s3://bucketname/2020/05/17/05/00/index.xml
+* s3://bucketname/2020/05/17/05/53/records/116.xml
+* s3://bucketname/2020/05/17/05/14/records/45.xml
+
+**General pattern:**
+
+* s3://bucketname/yyyy/MM/dd/HH/mm/index.xml
+* s3://bucketname/yyyy/MM/dd/HH/mm/records/&lt;recordId&gt;.xml
+
+&amp;#x200B;
+
+I hoped the default Crawler would discover there are two schemas (index &amp; records), identify the partitions, and create only 2 tables. But when I run it with include\_path = s3://bucketname/2020, it creates thousands of tables, one for each file I think.
+
+Should I be structuring my files differently? Or is there context I should be providing to the Crawler?
+## [10][renaming Elastic Beanstalk Windows host &amp; domain join / remove](https://www.reddit.com/r/aws/comments/glw8gh/renaming_elastic_beanstalk_windows_host_domain/)
+- url: https://www.reddit.com/r/aws/comments/glw8gh/renaming_elastic_beanstalk_windows_host_domain/
+---
+just looking for advice on the best way to achieve;
+
+-rename of Windows host produced via Elastic Beanstalk, they are all the same, which doesn't work when you want multiple hosts joining domain
+-join of the newly renamed host to AWS managed Microsoft AD, what is the best way to do this ?
+-removal from domain, what is the best way to remove computer from domain on termination for cleanup ?

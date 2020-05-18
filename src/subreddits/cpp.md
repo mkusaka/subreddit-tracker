@@ -125,53 +125,51 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Willing to teach C++ to new programmers for free!](https://www.reddit.com/r/cpp/comments/gl4p3q/willing_to_teach_c_to_new_programmers_for_free/)
-- url: https://www.reddit.com/r/cpp/comments/gl4p3q/willing_to_teach_c_to_new_programmers_for_free/
+## [3][2020-05 C++ Standard Mailing](https://www.reddit.com/r/cpp/comments/glwito/202005_c_standard_mailing/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-05
 ---
-Hello everyone,
 
-A group of fellow CS students and I have created a platform on which we can teach people the fundamentals of a variety of programming languages for free (Python, C++, Go, HTML/CSS, Java, etc.). We have free, live programming classes through Discord at many different times for anyone around the world to join and learn, regardless of age. If you are interested in learning, here's our discord: [https://discord.gg/EzQSWzd](https://discord.gg/EzQSWzd) and our website: [http://codetheuniverse.org/](http://codetheuniverse.org/). If you might like to teach a class on a programming language/topic we do not cover yet, please DM me!
+## [4][Let's unravel the secrets behind C++17's structured bindings](https://www.reddit.com/r/cpp/comments/glnx3w/lets_unravel_the_secrets_behind_c17s_structured/)
+- url: https://jguegant.github.io/blogs/tech/structured-bindings.html
+---
 
-EDIT: Here's a copy of a lecture of ours on Python if you kind of want to see how things work: [https://notes.codetheuniverse.org/python/lecture1.pdf](https://notes.codetheuniverse.org/python/lecture1.pdf)
-## [4][Virtual Italian C++ Conference 2020: registrations, schedule and setup](https://www.reddit.com/r/cpp/comments/glcqvo/virtual_italian_c_conference_2020_registrations/)
+## [5][I created a data visualization application that runs standalone and receives visualization commands through IPC. Contributors wanted!](https://www.reddit.com/r/cpp/comments/gli8sh/i_created_a_data_visualization_application_that/)
+- url: https://youtu.be/Or2qAsF1gD8
+---
+
+## [6][Generating random numbers using C++ standard library: the problems](https://www.reddit.com/r/cpp/comments/gllkcq/generating_random_numbers_using_c_standard/)
+- url: https://codingnest.com/generating-random-numbers-using-c-standard-library-the-problems/
+---
+
+## [7][C++ Weekly: Jonathan Turner (Rust expert, nushell author) Teaches Jason Turner Rust! (Video, Recorded Live Stream)](https://www.reddit.com/r/cpp/comments/gllqps/c_weekly_jonathan_turner_rust_expert_nushell/)
+- url: https://www.youtube.com/watch?v=EzQ7YIIo1rY
+---
+
+## [8][Lomuto's comeback: branch-free sorting in C++ and D (Andrei Alecsandrescu)](https://www.reddit.com/r/cpp/comments/glhaxc/lomutos_comeback_branchfree_sorting_in_c_and_d/)
+- url: https://dlang.org/blog/2020/05/14/lomutos-comeback/
+---
+
+## [9][Project Management Tool Research](https://www.reddit.com/r/cpp/comments/gm12dz/project_management_tool_research/)
+- url: https://www.reddit.com/r/cpp/comments/gm12dz/project_management_tool_research/
+---
+Hi C++ community!
+
+I’m a computer science student from Berlin and part of a research project where we want to understand how project management tools are used in software-development teams.  
+That is why I am asking you: What are your opinions on the tools you use? Help me with my research by filling out the survey below!  
+Thank you!
+
+[Click here to start survey](https://pmtoolstudy.typeform.com/to/sdzA6D)
+## [10][Simple, single-header library for strong typedefs](https://www.reddit.com/r/cpp/comments/glnwfe/simple_singleheader_library_for_strong_typedefs/)
+- url: https://github.com/csb6/strong-types
+---
+
+## [11][Virtual Italian C++ Conference 2020: registrations, schedule and setup](https://www.reddit.com/r/cpp/comments/glcqvo/virtual_italian_c_conference_2020_registrations/)
 - url: https://isocpp.org/blog/2020/05/itcppcon20
 ---
 
-## [5][modern c++ gamedev - thoughts &amp; misconceptions](https://www.reddit.com/r/cpp/comments/gkrquo/modern_c_gamedev_thoughts_misconceptions/)
-- url: https://vittorioromeo.info/index/blog/gamedev_modern_cpp_thoughts.html
+## [12][Interlanguage communication, does COM remain the king?](https://www.reddit.com/r/cpp/comments/gloxs8/interlanguage_communication_does_com_remain_the/)
+- url: https://www.reddit.com/r/cpp/comments/gloxs8/interlanguage_communication_does_com_remain_the/
 ---
+Let's say there is a process that includes multiple components written in different languages (Rust, GO, but mostly C++). I'm looking for a way to communicate (call, share data, etc) between these components. The first thing that comes to mind is to make something similar to COM. Need to implement a codegenerator from  IDL to the target languages, sharable data structures, class registry, etc. Looks doable although not trivial. Am I missing something more "modern"?
 
-## [6][C++: The Next Seismic Shift](https://www.reddit.com/r/cpp/comments/gle6y0/c_the_next_seismic_shift/)
-- url: https://rdmp.org/dmbcs/seismic-c++
----
-
-## [7][Polymorphism Decision Table](https://www.reddit.com/r/cpp/comments/gktyqw/polymorphism_decision_table/)
-- url: https://ukilele.github.io//2020/05/11/polymorphism-decision-table.html
----
-
-## [8][Clash of Code - Dare to join me!](https://www.reddit.com/r/cpp/comments/glejr1/clash_of_code_dare_to_join_me/)
-- url: https://www.codingame.com/clashofcode/clash/1223912a316e03a521b4e5f65281fa389b82896?utm_source=reddit&amp;utm_medium=clash%20of%20code&amp;utm_content=3626792&amp;utm_campaign=Share%20options
----
-
-## [9][Clash of Code](https://www.reddit.com/r/cpp/comments/glejj7/clash_of_code/)
-- url: https://www.codingame.com/multiplayer/clashofcode?utm_source=reddit&amp;utm_medium=detail_page&amp;utm_content=/multiplayer/clashofcode&amp;utm_campaign=Share%20options
----
-
-## [10][Optimizing UTC → Unix Time Conversion For Size And Speed](https://www.reddit.com/r/cpp/comments/gksc1s/optimizing_utc_unix_time_conversion_for_size_and/)
-- url: https://blog.reverberate.org/2020/05/12/optimizing-date-algorithms.html
----
-
-## [11][Why can't compilers use name mangling to manage an ABI break?](https://www.reddit.com/r/cpp/comments/gkkhpu/why_cant_compilers_use_name_mangling_to_manage_an/)
-- url: https://www.reddit.com/r/cpp/comments/gkkhpu/why_cant_compilers_use_name_mangling_to_manage_an/
----
-There has been a lot of talk about ABI breaks lately, criticism that the committee’s unwillingness to break the ABI is holding back improvements to the language, or that the ABI means unique_ptr has more overhead than a raw pointer. I'm pretty ignorant on these things, so maybe someone smarter than me can explain how this is a really dumb idea?
-
-Where there is an ABI break (say with unique_ptr) why can't the compiler produce multiple versions of the symbol, one that is compatible with the old ABI, and one that has the breaking ABI change, differentiate them by name mangling differently. Then work out at link time what ABI the objects being linked were built with, and link to the appropriate version.
-
-The duplicate definitions would only need to stay around for a few years, after which point it'd be safe to assume that everybody has had more than enough time to build against the new ABI. It'd provide a nice migration path between ABI's, that doesn't exist at the moment. Sure size would be ever so slightly larger for libraries, but I don't think this would be that significant?
-
-Please somebody smarter than me explain why this wouldn't actually work. Because if we have a migration path between ABI's, what's all the hoohaa about breaking them?
-## [12][Qt Virtual Tech Con 2020 Videos Available Now](https://www.reddit.com/r/cpp/comments/gktyt9/qt_virtual_tech_con_2020_videos_available_now/)
-- url: https://resources.qt.io/qt-virtual-tech-con-2020
----
-
+A simple solution would be just to call functions with serialized data (Cap'n for instance) but I'd like to make more robust OOP framework and to avoid copying data.

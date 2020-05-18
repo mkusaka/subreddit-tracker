@@ -109,83 +109,76 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][A (Mostly) Complete Guide to React Rendering Behavior](https://www.reddit.com/r/reactjs/comments/gkxs7g/a_mostly_complete_guide_to_react_rendering/)
-- url: https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/
+## [3][Error handling w/ Apollo Client x React is a nightmare.](https://www.reddit.com/r/reactjs/comments/gls732/error_handling_w_apollo_client_x_react_is_a/)
+- url: https://www.reddit.com/r/reactjs/comments/gls732/error_handling_w_apollo_client_x_react_is_a/
+---
+This if my first project using Apollo. Its great, apart from the error handling. There’s always some ‘Unhandled Rejection’ crashing my app. I’m setting up basic user authentication and it’s a pain to handle these expired tokens. For every problem I solve, it seems to create another. 
+
+I’m using apollo-error-link and trying to set up basic default handling in there. 
+
+Am I just being a noob or is this a common sentiment?
+## [4][How to Make your React App a Progressive Web App (PWA) - Full intro to PWAs + tutorial](https://www.reddit.com/r/reactjs/comments/glo1be/how_to_make_your_react_app_a_progressive_web_app/)
+- url: https://felixgerschau.com/how-to-make-your-react-app-a-progressive-web-app-pwa
 ---
 
-## [4][How to get rid of unnecessary props in React.js](https://www.reddit.com/r/reactjs/comments/gldakj/how_to_get_rid_of_unnecessary_props_in_reactjs/)
-- url: https://dev.to/andrzejewsky/how-to-get-rid-of-unnecessary-props-in-react-js-13pj
+## [5][Using Firebase custom claim for role checking in react](https://www.reddit.com/r/reactjs/comments/glv7eo/using_firebase_custom_claim_for_role_checking_in/)
+- url: https://youtu.be/ftwGCvrcWfA
 ---
 
-## [5][Presenting Pocket Radio, My first react app. Listen to 90,000+ radio stations for free!](https://www.reddit.com/r/reactjs/comments/gl5vnu/presenting_pocket_radio_my_first_react_app_listen/)
-- url: https://pocketradio.live
+## [6][How To Mock Fetch in Jest (Covers React &amp; React Testing Library)](https://www.reddit.com/r/reactjs/comments/glgmy8/how_to_mock_fetch_in_jest_covers_react_react/)
+- url: https://www.leighhalliday.com/mock-fetch-jest
 ---
 
-## [6][Issue with material ui tabs](https://www.reddit.com/r/reactjs/comments/glf2z0/issue_with_material_ui_tabs/)
-- url: https://www.reddit.com/r/reactjs/comments/glf2z0/issue_with_material_ui_tabs/
+## [7][AST docgen: generate docs from code](https://www.reddit.com/r/reactjs/comments/glx7dj/ast_docgen_generate_docs_from_code/)
+- url: https://www.reddit.com/r/reactjs/comments/glx7dj/ast_docgen_generate_docs_from_code/
 ---
-Hey I'm trying to render a table inside of a &lt;TabPanel&gt; &lt;/ TabPanel&gt; and I'm getting an error because the table is rendering inside of a &lt;p&gt;&lt;/p&gt;
+So I whipped a little lib over the weekend with the purpose of generating docs from typescript declaration ASTs. I have a video demo of the thing here: https://youtu.be/WBqEIAFfxw0
 
-Is there any ways to force the TabPanel to render as a &lt;div&gt;? Thanks!
-## [7][See twitter trending topics (react web app)](https://www.reddit.com/r/reactjs/comments/glayhy/see_twitter_trending_topics_react_web_app/)
-- url: https://www.reddit.com/r/reactjs/comments/glayhy/see_twitter_trending_topics_react_web_app/
+At this time, I'm solely posting to gauge interest in a tool like this. I don't necessarily know if there is an audience for this so I'm sharing before polishing.
+
+https://github.com/ricokahler/ast-docgen
+
+Let me know if you'd using something like this. Feedback appreciated!
+## [8][Reduce bundle size by importing only the parts of a package you need](https://www.reddit.com/r/reactjs/comments/glw8my/reduce_bundle_size_by_importing_only_the_parts_of/)
+- url: https://medium.com/better-programming/stop-importing-whole-javascript-packages-39a5f3d4c8
 ---
-I believe that one of the best ways to use twitter is by browsing its trending topics, so I made an app showing them directly.
 
-[https://twittertrendingtopics.herokuapp.com/](https://twittertrendingtopics.herokuapp.com/)
+## [9][Am I using the useCallback correctly, and do I need to use it in this situation?](https://www.reddit.com/r/reactjs/comments/glzmtg/am_i_using_the_usecallback_correctly_and_do_i/)
+- url: https://www.reddit.com/r/reactjs/comments/glzmtg/am_i_using_the_usecallback_correctly_and_do_i/
+---
+Am I using the useCallback correctly, and do I need to use it in this situation?
 
 &amp;#x200B;
 
-github repo:
+ 
 
-[https://github.com/GuilhermeSND/twittertrendingtopics](https://github.com/GuilhermeSND/twittertrendingtopics)
-
-any criticism or tips?
-## [8][Modern React From The Beginning - Excursus: Strapi As Back-End](https://www.reddit.com/r/reactjs/comments/gksalu/modern_react_from_the_beginning_excursus_strapi/)
-- url: https://youtu.be/CyaCQ3Qcbvw
+const logout = React.useCallback(() =&gt; {  
+ setAuth({ user: null, isAuthenticated: false });  
+ window.location.href = \`tologinpage\`;  
+    }, \[auth\]);
+## [10][Max Stoiber - The past, present and future of CSS-in-JS](https://www.reddit.com/r/reactjs/comments/gm15i4/max_stoiber_the_past_present_and_future_of_cssinjs/)
+- url: https://www.youtube.com/watch?v=W-zVPl7CGrY
 ---
 
-## [9][Hey Folks, we have used purely ReactJS to implement an Animal Crossing Design Tool](https://www.reddit.com/r/reactjs/comments/gl4ih9/hey_folks_we_have_used_purely_reactjs_to/)
-- url: https://www.reddit.com/r/reactjs/comments/gl4ih9/hey_folks_we_have_used_purely_reactjs_to/
+## [11][Fireact — The open source project for you to fast track your next web app with Firebase and React](https://www.reddit.com/r/reactjs/comments/gm11lc/fireact_the_open_source_project_for_you_to_fast/)
+- url: https://www.reddit.com/r/reactjs/comments/gm11lc/fireact_the_open_source_project_for_you_to_fast/
 ---
-We are a group of two Canadian developers who are new to front end development, so we decided to learn ReactJS and ended up building a cute Animal Crossing Tool Web App :) ([https://acislove.com/](https://acislove.com/))
+Hi All,
 
-We spent total of 2 weeks to build it from scratch and it was a blast \^\_\^
+I have created an open-source project, Fireact, to demonstrate how React works with Firebase. The idea is that it will help developers to fast track projects by skipping building user sign-in and user functions (e.g. update password). It's a fully functional web application now. Would love to hear feedback and get help to work on it together.
 
-Feel free to ask us any questions with ! We would love to hear about your feedback as well.
-## [10][Change an element when it leaves the viewport - A question on How.](https://www.reddit.com/r/reactjs/comments/gl76kq/change_an_element_when_it_leaves_the_viewport_a/)
-- url: https://www.reddit.com/r/reactjs/comments/gl76kq/change_an_element_when_it_leaves_the_viewport_a/
+More details here: [https://medium.com/@chaoming\_li/fireact-the-open-source-project-for-you-to-fast-track-your-next-web-app-with-firebase-and-react-5ab98dcf9c93?source=friends\_link&amp;sk=e3a224c2033a504d82d45dc7be7b3177](https://medium.com/@chaoming_li/fireact-the-open-source-project-for-you-to-fast-track-your-next-web-app-with-firebase-and-react-5ab98dcf9c93?source=friends_link&amp;sk=e3a224c2033a504d82d45dc7be7b3177)
+
+Github link here: [https://github.com/chaoming/fireact](https://github.com/chaoming/fireact)
+
+Cheers,
+## [12][Project Management Tool Survey](https://www.reddit.com/r/reactjs/comments/gm0xk3/project_management_tool_survey/)
+- url: https://www.reddit.com/r/reactjs/comments/gm0xk3/project_management_tool_survey/
 ---
-      const [scroll, setScroll] = useState(false)
-    
-      useEffect(() =&gt; {
-        window.addEventListener("scroll", () =&gt; {
-          window.scrollY &gt; 5 ? setScroll(!scroll) : setScroll(!scroll)
-        })
-        return () =&gt; {
-          setScroll(false)
-        }
-      }, [scroll])
-    
+Hi reactjs community!
 
-So I have the used the above code to create a Header/Navigation to change on scroll, but this doesn't do what I want. I have a select element with 2 buttons under it. When this select element and buttons leave the viewport, I want to create a FAB for navigation, but I'm sort of stuck.
+I’m a computer science student from berlin and part of a research project where we want to understand how project management tools are used in software-development teams.  
+That is why I am asking you: What are your opinions on the tools you use? Help me with my research by filling out the survey below!  
+Thank you!
 
-Before I go forward: The code above doesn't work because I have a scroll event attached to the container the select element is in (it's needed because of layout and spacing)
-
-I'm not really sure how to move forward here, I've come across several code snippets similar to what I gave above, and none work. I *thought* I'd be able to use intersection observer, but I don't have enough information about or on it to move forward without a working example.
-
-Could someone possible help me out or point me in the right direction?
-## [11][React-Router, Link urgent help needed.](https://www.reddit.com/r/reactjs/comments/glbu1t/reactrouter_link_urgent_help_needed/)
-- url: https://www.reddit.com/r/reactjs/comments/glbu1t/reactrouter_link_urgent_help_needed/
----
-I have a protected route. And a Link is trying to go that route and it has search params. When in the development env it works fine but when i make the build and deploy it it says page not found 404. Any kind of help is appreciated as its a little urgent. Thanks
-## [12][Weekend project: ZipStash - Cannabis Dispensary Inventory tracker (Next.js + express.js + Redis + mongo + heroku + terraform)](https://www.reddit.com/r/reactjs/comments/gl23k4/weekend_project_zipstash_cannabis_dispensary/)
-- url: https://www.reddit.com/r/reactjs/comments/gl23k4/weekend_project_zipstash_cannabis_dispensary/
----
-[http://www.zipstash.com/](http://www.zipstash.com/)
-
-Something I pulled together quickly after getting frustrated having to navigate multiple pages + dropdowns and losing history if closing the wrong tab on a certain website.
-
-Turns out this took is actually much faster and I might continue working on it.
-
-If anyone here is interested once it's a bit more polished I might write up a tutorial since it was surprisingly easier than expected. This was my first time using Next.js and the heroku service.
+[Click here to start survey](https://pmtoolstudy.typeform.com/to/sdzA6D)

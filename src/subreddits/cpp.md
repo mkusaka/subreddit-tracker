@@ -125,51 +125,57 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][2020-05 C++ Standard Mailing](https://www.reddit.com/r/cpp/comments/glwito/202005_c_standard_mailing/)
+## [3]["Demystifying pointers". I came across this brilliant video that helped me understand the most mysterious concept in C: "Pointers", better. The great thing about this video is the fact that it addresses the Byte-Addressable Memory, which helped me visualize better.](https://www.reddit.com/r/cpp/comments/gmj6x3/demystifying_pointers_i_came_across_this/)
+- url: https://youtu.be/rB70mUPcLU0
+---
+
+## [4][Revisiting the postcard pathtracer with CUDA and Optix](https://www.reddit.com/r/cpp/comments/gmm76o/revisiting_the_postcard_pathtracer_with_cuda_and/)
+- url: https://fabiensanglard.net/revisiting_the_pathtracer/index.html
+---
+
+## [5][Adding anyref support in a C++ to WebAssembly compiler](https://www.reddit.com/r/cpp/comments/gmn7ce/adding_anyref_support_in_a_c_to_webassembly/)
+- url: https://medium.com/leaningtech/adding-anyref-support-in-a-c-to-webassembly-compiler-2bba3fac707f
+---
+
+## [6][Meeting C++ Blogroll now available as a weekly newsletter](https://www.reddit.com/r/cpp/comments/gmlmoh/meeting_c_blogroll_now_available_as_a_weekly/)
+- url: http://meetingcpp.com/meetingcpp/news/items/Meeting-Cpp-Blogroll-now-available-as-a-weekly-newsletter.html
+---
+
+## [7][State of C++ Static Analysis circa 2020 · Peter Dimov](https://www.reddit.com/r/cpp/comments/gm2ey2/state_of_c_static_analysis_circa_2020_peter_dimov/)
+- url: https://pdimov.github.io/blog/2020/05/17/state-of-c-static-analysis-circa-2020/
+---
+
+## [8][Execute command for c++?](https://www.reddit.com/r/cpp/comments/gmofv5/execute_command_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/gmofv5/execute_command_for_c/
+---
+Hey, sorry for such a noobish question, but basically, I am using Geany, and I want to set an execute command for my main.cpp file. By default, it is:
+
+`"./%e"`
+
+is there a way to change it so that it performs the following tasks:
+
+1. execute the file that I am currently working on (i.e. main.cpp)
+2. automatically take input from file "input.txt" in the same directory
+3. save output in file "output.txt" in the same directory
+
+Note: MOST IMPORTANTLY, if possible, I do **NOT** want to use "freopen" and all such text in my cpp file, again, if possible.
+## [9][Clash of Code - Dare to join me!](https://www.reddit.com/r/cpp/comments/gmnhto/clash_of_code_dare_to_join_me/)
+- url: https://www.codingame.com/clashofcode/clash/12262016fc91604a3a337ff7837c3cfab277f65?utm_source=reddit&amp;utm_medium=clash%20of%20code&amp;utm_content=3626792&amp;utm_campaign=Share%20options
+---
+
+## [10][P1861R1 Secure Networking in C++](https://www.reddit.com/r/cpp/comments/gm40j0/p1861r1_secure_networking_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/gm40j0/p1861r1_secure_networking_in_c/
+---
+Following up on [C++ Networking Must Be Secure By Default](https://wg21.link/p1860r0), we present [Secure Networking in C++](https://wg21.link/P1861R1):
+
+&gt;A description of how a C++ networking library can elegantly support Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS) by default, as well as allow future expansion to include protocols such as [QUIC](https://tools.ietf.org/html/draft-ietf-quic-transport-27).
+
+SG4 Networking (chaired by u/je4d) will be discussing this, we therefore welcome early feedback!
+## [11][2020-05 C++ Standard Mailing](https://www.reddit.com/r/cpp/comments/glwito/202005_c_standard_mailing/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-05
 ---
 
-## [4][Let's unravel the secrets behind C++17's structured bindings](https://www.reddit.com/r/cpp/comments/glnx3w/lets_unravel_the_secrets_behind_c17s_structured/)
-- url: https://jguegant.github.io/blogs/tech/structured-bindings.html
+## [12][Please help me out. Can I do this by using a delayed screen capture of some kind and process that using C++ applying computer vision (no OpenCV)? I can probably control an RBG strip module using the above I guess.](https://www.reddit.com/r/cpp/comments/gmll18/please_help_me_out_can_i_do_this_by_using_a/)
+- url: https://v.redd.it/m0nqwy6q0nz41
 ---
 
-## [5][I created a data visualization application that runs standalone and receives visualization commands through IPC. Contributors wanted!](https://www.reddit.com/r/cpp/comments/gli8sh/i_created_a_data_visualization_application_that/)
-- url: https://youtu.be/Or2qAsF1gD8
----
-
-## [6][Generating random numbers using C++ standard library: the problems](https://www.reddit.com/r/cpp/comments/gllkcq/generating_random_numbers_using_c_standard/)
-- url: https://codingnest.com/generating-random-numbers-using-c-standard-library-the-problems/
----
-
-## [7][C++ Weekly: Jonathan Turner (Rust expert, nushell author) Teaches Jason Turner Rust! (Video, Recorded Live Stream)](https://www.reddit.com/r/cpp/comments/gllqps/c_weekly_jonathan_turner_rust_expert_nushell/)
-- url: https://www.youtube.com/watch?v=EzQ7YIIo1rY
----
-
-## [8][Lomuto's comeback: branch-free sorting in C++ and D (Andrei Alecsandrescu)](https://www.reddit.com/r/cpp/comments/glhaxc/lomutos_comeback_branchfree_sorting_in_c_and_d/)
-- url: https://dlang.org/blog/2020/05/14/lomutos-comeback/
----
-
-## [9][Project Management Tool Research](https://www.reddit.com/r/cpp/comments/gm12dz/project_management_tool_research/)
-- url: https://www.reddit.com/r/cpp/comments/gm12dz/project_management_tool_research/
----
-Hi C++ community!
-
-I’m a computer science student from Berlin and part of a research project where we want to understand how project management tools are used in software-development teams.  
-That is why I am asking you: What are your opinions on the tools you use? Help me with my research by filling out the survey below!  
-Thank you!
-
-[Click here to start survey](https://pmtoolstudy.typeform.com/to/sdzA6D)
-## [10][Simple, single-header library for strong typedefs](https://www.reddit.com/r/cpp/comments/glnwfe/simple_singleheader_library_for_strong_typedefs/)
-- url: https://github.com/csb6/strong-types
----
-
-## [11][Virtual Italian C++ Conference 2020: registrations, schedule and setup](https://www.reddit.com/r/cpp/comments/glcqvo/virtual_italian_c_conference_2020_registrations/)
-- url: https://isocpp.org/blog/2020/05/itcppcon20
----
-
-## [12][Interlanguage communication, does COM remain the king?](https://www.reddit.com/r/cpp/comments/gloxs8/interlanguage_communication_does_com_remain_the/)
-- url: https://www.reddit.com/r/cpp/comments/gloxs8/interlanguage_communication_does_com_remain_the/
----
-Let's say there is a process that includes multiple components written in different languages (Rust, GO, but mostly C++). I'm looking for a way to communicate (call, share data, etc) between these components. The first thing that comes to mind is to make something similar to COM. Need to implement a codegenerator from  IDL to the target languages, sharable data structures, class registry, etc. Looks doable although not trivial. Am I missing something more "modern"?
-
-A simple solution would be just to call functions with serialized data (Cap'n for instance) but I'd like to make more robust OOP framework and to avoid copying data.

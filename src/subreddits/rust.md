@@ -23,98 +23,69 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/glvkxz/whats_everyone_working_on_this_week_212020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-21-2020/42814?u=llogiq)!
-## [3][Rust sessions at Microsoft Build 2020](https://www.reddit.com/r/rust/comments/glv1zk/rust_sessions_at_microsoft_build_2020/)
-- url: https://mybuild.microsoft.com/sessions?t=%257B%2522from%2522%253A%25222020-05-19T00%253A00%253A00%252B02%253A00%2522%252C%2522to%2522%253A%25222020-05-21T23%253A59%253A00%252B02%253A00%2522%257D&amp;q=rust&amp;s=%257B%2522name%2522%253A%2522translate.refine.label.sort.relevance%2522%252C%2522type%2522%253A0%257D
+## [3][Rocket can be compiled on stable Rust 1.45, last blocker has been solved](https://www.reddit.com/r/rust/comments/gmkpsg/rocket_can_be_compiled_on_stable_rust_145_last/)
+- url: https://github.com/SergioBenitez/Rocket/issues/19#issuecomment-630650328
 ---
 
-## [4][Rust/WinRT Brings Microsoft Closer to Adopting Rust Internally](https://www.reddit.com/r/rust/comments/glr1w0/rustwinrt_brings_microsoft_closer_to_adopting/)
-- url: https://www.infoq.com/news/2020/05/rust-winrt-microsoft/
+## [4][A Future for Rust Debugging](https://www.reddit.com/r/rust/comments/gmhdne/a_future_for_rust_debugging/)
+- url: https://nbaksalyar.github.io/2020/05/19/rust-debug.html
 ---
 
-## [5][Educational Rust live coding - Building a web app - Head first into WASM](https://www.reddit.com/r/rust/comments/glx2ka/educational_rust_live_coding_building_a_web_app/)
-- url: https://youtu.be/668vvEzzMnI
+## [5][IntelliJ Rust Changelog #122](https://www.reddit.com/r/rust/comments/gmmumk/intellij_rust_changelog_122/)
+- url: https://intellij-rust.github.io/2020/05/19/changelog-122.html
 ---
 
-## [6][Rust Stream: CLI Project - Part 2 [video]](https://www.reddit.com/r/rust/comments/glxg81/rust_stream_cli_project_part_2_video/)
-- url: https://youtu.be/cLk47gn6A1M
+## [6][Orb.Farm, a virtual aquatic ecosystem, implemented in Rust](https://www.reddit.com/r/rust/comments/gm4whz/orbfarm_a_virtual_aquatic_ecosystem_implemented/)
+- url: https://orb.farm
 ---
 
-## [7][rust-analyzer changelog #25](https://www.reddit.com/r/rust/comments/gm159f/rustanalyzer_changelog_25/)
+## [7][Rocket will compile with stable Rust 1.45](https://www.reddit.com/r/rust/comments/gmlbg4/rocket_will_compile_with_stable_rust_145/)
+- url: https://github.com/SergioBenitez/Rocket/issues/19
+---
+
+## [8][rust-analyzer: next few years](https://www.reddit.com/r/rust/comments/gm1nr6/rustanalyzer_next_few_years/)
+- url: https://rust-analyzer.github.io/blog/2020/05/18/next-few-years.html
+---
+
+## [9][Casbin-RS: An authorization library that supports access control models like ACL, RBAC, ABAC in Rust](https://www.reddit.com/r/rust/comments/gmfdws/casbinrs_an_authorization_library_that_supports/)
+- url: https://github.com/casbin/casbin-rs
+---
+
+## [10][rust-analyzer changelog #25](https://www.reddit.com/r/rust/comments/gm159f/rustanalyzer_changelog_25/)
 - url: https://rust-analyzer.github.io/thisweek/2020/05/18/changelog-25.html
 ---
 
-## [8][proc_macro_hygiene to land on 1.45.0 stable](https://www.reddit.com/r/rust/comments/gllkal/proc_macro_hygiene_to_land_on_1450_stable/)
-- url: https://github.com/rust-lang/rust/pull/68717#issuecomment-629847207
+## [11][Fwd:AD, a forward auto-differentiation crate](https://www.reddit.com/r/rust/comments/gmbpv5/fwdad_a_forward_autodifferentiation_crate/)
+- url: https://www.reddit.com/r/rust/comments/gmbpv5/fwdad_a_forward_autodifferentiation_crate/
 ---
+Hi everyone,
 
-## [9][directories-next &amp; dirs-next: The new home for directories &amp; dirs!](https://www.reddit.com/r/rust/comments/gli4pc/directoriesnext_dirsnext_the_new_home_for/)
-- url: https://www.reddit.com/r/rust/comments/gli4pc/directoriesnext_dirsnext_the_new_home_for/
+[**Fwd:AD**](https://lib.rs/crates/fwd_ad) is a Rust crate to perform [forward auto-differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation#Automatic_differentiation_using_dual_numbers), with a focus on empowering its users to manage memory location and minimize copying. It is made with the goal of being useful and used, so documentation and examples are considered as important as code during development. Its key selling-points are:
+
+1. **Clone-free** by default. Fwd:AD will never clone memory in its functions and `std::ops` implementations, leveraging Rust's ownership system to ensure correctness memory-wise, and leaving it up to the user to be explicit as to when cloning should happen.
+2. **Automatic cloning** on demand. If passed the `implicit-clone` feature, Fwd:AD will implicitly clone when needed. Deciding whether to clone or not is entirely done via the type-system, and hence at compile time.
+3. **Generic in memory location**: Fwd:AD's structs are generic over a container type, allowing them to be backed by any container of your choice: `Vec` to rely on the heap, arrays if you're more of a stack-person, or other. For example, it can be used with `&amp;mut [f64]` to allow an FFI API that won't need to copy memory at its frontier.
+
+I've been working on it for the last months and I think it is mature enough to be shared.
+
+I am very eager to get feedback and to see how it could be used by the community so please share any comment or question you might have.
+
+* **lib.rs**: [https://lib.rs/crates/fwd\_ad](https://lib.rs/crates/fwd_ad)
+* **gitlab**: [https://gitlab.inria.fr/InBio/Public/fwd\_ad](https://gitlab.inria.fr/InBio/Public/fwd_ad)
+* **crates.io**: [https://crates.io/crates/fwd\_ad](https://crates.io/crates/fwd_ad)
+* **docs.rs**: [https://docs.rs/fwd\_ad/0.2.0/fwd\_ad/](https://docs.rs/fwd_ad/0.2.0/fwd_ad/)
+
+Thanks to all the Rust community for helping me during the development, you made every step of it enjoyable.
+## [12][100k r/rust subscribers – how time flies!](https://www.reddit.com/r/rust/comments/gm3a45/100k_rrust_subscribers_how_time_flies/)
+- url: https://www.reddit.com/r/rust/comments/gm3a45/100k_rrust_subscribers_how_time_flies/
 ---
-Hey folks, 
+Feels like yesterday we have reached:
 
-Given that the original maintainer of directories &amp; dirs-rs crate decided to mark it as "abandoned" for a few years due to certain reasons, we have decided to fork it and move it to a new organisation. 
+[30k on Oct 31 2017](https://www.reddit.com/r/rust/comments/79xw22/30k/)   
+[50k on Jan 15 2019](https://www.reddit.com/r/rust/comments/agc1vq/congratulation_with_50k_rustaceans_on_reddit/)     
+[80k on Nov 20 2019](https://www.reddit.com/r/rust/comments/dyx7qd/rrust_hit_80k_subscribers_yesterday/)     
+[100k on May 18 2020](https://www.reddit.com/r/rust/comments/gm3a45/100k_rrust_subscribers_how_time_flies/)    
 
-So presenting the first official announcement of our fork!
+feels good to also look at some [graphs](https://subredditstats.com/r/rust)     
 
-We have moved the repos (including the sys bindings) to a single github repository for easier maintenance: 
-
-**Links**
-Github: [https://github.com/xdg-rs/dirs](https://github.com/xdg-rs/dirs)  
-
-Crates-io:  
-directories-next: [https://crates.io/crates/directories-next](https://crates.io/crates/directories-next)  
-dirs-next: [https://crates.io/crates/dirs-next](https://crates.io/crates/dirs-next)  
-dirs-sys-next: [https://crates.io/crates/dirs-sys-next](https://crates.io/crates/dirs-sys-next)  
-
-**Team**:   
-Lzu Tao (lzutao) &amp; Me (Dylan DPC) 
-
-**Want to join us in maintaining the crates?**
-Reply to this post or DM me here or on discord/zulip (@dpc ). We would love to give an opportunity to newcomers or beginners in the community.
-
-UPDATE: we received  messages from people and we are happy with the team size at the moment. We are not looking to add more people to the team. Thank you 
-
-**Why the -next convention?**
-We decided that to make it easier for people to migrate and knowing the link between the old &amp; the new crates, the best way would be to name it the same way and add `-next` suffix. 
-
-**How to make the change?**
-Renaming the dependency in Cargo.toml and adding -next to the name and imports should suffice. We considered aliases similar to how it is used in some other places in the ecosystem, but we concluded that it could confuse people in the future. We are working on a script that makes it easier for people to migrate. (If anyone wants to do it, feel free)
-
-**Has the API changed?**
-The API has remained the same. The only change besides organisational changes is the change in minimum rust versions. The old crates had a minimum rust version of 1.13 (ancient :P ) which we have bumped to **1.36**. The crate *may* still work for older versions (going all the back to 1.13) but we are no longer testing it or assure to maintain it for pre-1.36 versions in the future. 
-
-**Was the original author contacted?**
-We contacted the original author of the crates and received no reply. Our original idea was to fork and publish to the same crate for minimal disturbance. Sadly, that wasn't possible so we had to release the new crates. You can consider this the de-facto fork going forward.
-
-**The version?**
-The last version of the original crate is 2.0.2. We discussed continuing the version, but it could be misleading. So we decided to "reset" it and since the API is largely stable, have gone forward with 1.0.0 
-
-**What's next?**
-The API is largely stable. The first thing we want to work on is to update the crates that use this, and polish the codebase to use 2018 edition and polish it with newer features wherever applicable in a backwards-compatible fashion. Post that, the crates will receive maintenance updates. 
-
-**Have a fork?**
-It's been a while since the announcement of the original crates was made, so a few users might have forked the original repository and are maintaining it. We are open to discussing the future.
-## [10][Learn Rust from PHP](https://www.reddit.com/r/rust/comments/gm0bsl/learn_rust_from_php/)
-- url: https://www.reddit.com/r/rust/comments/gm0bsl/learn_rust_from_php/
----
-Hi Rustaceans!
-
-I want to learn something new, I'm currently a PHP developer (I use HTML/CSS/JS and MySQL), I'm hesitated between Golang and Rust and I've tested Golang but I don't know if it's for me. So I want to try Rust before.
-
-After reading the book, what can I build (something simple for begining)? Like a cli/tui app.  
-
-
-Maybe Golang is the best for me but Rust has more interesting stuff in the language, so I don't know.
-## [11][Common pitfalls for C# OOP developers](https://www.reddit.com/r/rust/comments/gm0386/common_pitfalls_for_c_oop_developers/)
-- url: https://www.reddit.com/r/rust/comments/gm0386/common_pitfalls_for_c_oop_developers/
----
-Hi, I'm a long-time C# developer and I want to become a rustacean.
-
-I'm excited to learn about Rust but I'm still worried what pitfalls I will need to overcome.  
-For example the ownership paradigm sounds neat but I can see myself not using it correctly because I became lazy during the years developing in a garbage collected world.
-
-Any other .Net developers have some general tips, experience or even caveats during their move to Rust?
-## [12][A crate for indexing and quering json objects](https://www.reddit.com/r/rust/comments/glz519/a_crate_for_indexing_and_quering_json_objects/)
-- url: https://github.com/mambisi/json_indexer
----
-
+Thanks to all Rustaceans out there making this sub on of the bests on reddit – and especially a big thank you to all the mods making such a great work. I think they deserve some ❤️ and we tend to forget about the people behind the scenes making such a great experience. Let this be also a big thank you because you mods are a big reason to the success of this sub, because this is hard work!
